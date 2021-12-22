@@ -580,8 +580,31 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IDeviceModelPlugIn {}
-		public struct IGamutMapModelPlugIn {}
+		[CRepr]
+		public struct IDeviceModelPlugIn : IUnknown
+		{
+			public const new Guid IID = .(0x1cd63475, 0x07c4, 0x46fe, 0xa9, 0x03, 0xd6, 0x55, 0x31, 0x6d, 0x11, 0xfd);
+			
+			public function HRESULT(IDeviceModelPlugIn *self, BSTR bstrXml, uint32 cNumModels, uint32 iModelPosition) Initialize;
+			public function HRESULT(IDeviceModelPlugIn *self, uint32* pNumChannels) GetNumChannels;
+			public function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, uint32 cChannels, float* pDeviceValues, XYZColorF* pXYZColors) DeviceToColorimetricColors;
+			public function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, uint32 cChannels, XYZColorF* pXYZColors, float* pDeviceValues) ColorimetricToDeviceColors;
+			public function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, uint32 cChannels, XYZColorF* pXYZColors, BlackInformation* pBlackInformation, float* pDeviceValues) ColorimetricToDeviceColorsWithBlack;
+			public function HRESULT(IDeviceModelPlugIn *self, uint32 iModelPosition, IDeviceModelPlugIn* pIDeviceModelOther) SetTransformDeviceModelInfo;
+			public function HRESULT(IDeviceModelPlugIn *self, PrimaryXYZColors* pPrimaryColor) GetPrimarySamples;
+			public function HRESULT(IDeviceModelPlugIn *self, uint32* pNumVertices, uint32* pNumTriangles) GetGamutBoundaryMeshSize;
+			public function HRESULT(IDeviceModelPlugIn *self, uint32 cChannels, uint32 cVertices, uint32 cTriangles, float* pVertices, GamutShellTriangle* pTriangles) GetGamutBoundaryMesh;
+			public function HRESULT(IDeviceModelPlugIn *self, uint32* pcColors) GetNeutralAxisSize;
+			public function HRESULT(IDeviceModelPlugIn *self, uint32 cColors, XYZColorF* pXYZColors) GetNeutralAxis;
+		}
+		[CRepr]
+		public struct IGamutMapModelPlugIn : IUnknown
+		{
+			public const new Guid IID = .(0x2dd80115, 0xad1e, 0x41f6, 0xa2, 0x19, 0xa4, 0xf4, 0xb5, 0x83, 0xd1, 0xf9);
+			
+			public function HRESULT(IGamutMapModelPlugIn *self, BSTR bstrXml, IDeviceModelPlugIn* pSrcPlugIn, IDeviceModelPlugIn* pDestPlugIn, GamutBoundaryDescription* pSrcGBD, GamutBoundaryDescription* pDestGBD) Initialize;
+			public function HRESULT(IGamutMapModelPlugIn *self, uint32 cColors, JChColorF* pInputColors, JChColorF* pOutputColors) SourceToDestinationAppearanceColors;
+		}
 		
 		// --- Functions ---
 		

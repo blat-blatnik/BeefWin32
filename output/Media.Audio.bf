@@ -763,7 +763,7 @@ namespace Win32
 		
 		public function void LPWAVECALLBACK(HDRVR hdrvr, uint32 uMsg, uint dwUser, uint dw1, uint dw2);
 		public function void LPMIDICALLBACK(HDRVR hdrvr, uint32 uMsg, uint dwUser, uint dw1, uint dw2);
-		public function void PAudioStateMonitorCallback(IAudioStateMonitor audioStateMonitor, void* context);
+		public function void PAudioStateMonitorCallback(IAudioStateMonitor* audioStateMonitor, void* context);
 		public function BOOL ACMDRIVERENUMCB(HACMDRIVERID hadid, uint dwInstance, uint32 fdwSupport);
 		public function LRESULT LPACMDRIVERPROC(uint param0, HACMDRIVERID param1, uint32 param2, LPARAM param3, LPARAM param4);
 		public function BOOL ACMFORMATTAGENUMCBA(HACMDRIVERID hadid, ACMFORMATTAGDETAILSA* paftd, uint dwInstance, uint32 fdwSupport);
@@ -1464,7 +1464,7 @@ namespace Win32
 			public uint32 MaxDynamicObjectCount;
 			public AUDIO_STREAM_CATEGORY Category;
 			public HANDLE EventHandle;
-			public ISpatialAudioObjectRenderStreamNotify NotifyObject;
+			public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 		}
 		[CRepr]
 		public struct SpatialAudioObjectRenderStreamActivationParams2
@@ -1475,7 +1475,7 @@ namespace Win32
 			public uint32 MaxDynamicObjectCount;
 			public AUDIO_STREAM_CATEGORY Category;
 			public HANDLE EventHandle;
-			public ISpatialAudioObjectRenderStreamNotify NotifyObject;
+			public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 			public SPATIAL_AUDIO_STREAM_OPTIONS Options;
 		}
 		[CRepr]
@@ -1532,7 +1532,7 @@ namespace Win32
 			public uint32 MaxDynamicObjectCount;
 			public AUDIO_STREAM_CATEGORY Category;
 			public HANDLE EventHandle;
-			public ISpatialAudioObjectRenderStreamNotify NotifyObject;
+			public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 			public SpatialAudioHrtfDistanceDecay* DistanceDecay;
 			public SpatialAudioHrtfDirectivityUnion* Directivity;
 			public SpatialAudioHrtfEnvironmentType* Environment;
@@ -1547,7 +1547,7 @@ namespace Win32
 			public uint32 MaxDynamicObjectCount;
 			public AUDIO_STREAM_CATEGORY Category;
 			public HANDLE EventHandle;
-			public ISpatialAudioObjectRenderStreamNotify NotifyObject;
+			public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 			public SpatialAudioHrtfDistanceDecay* DistanceDecay;
 			public SpatialAudioHrtfDirectivityUnion* Directivity;
 			public SpatialAudioHrtfEnvironmentType* Environment;
@@ -1565,9 +1565,9 @@ namespace Win32
 		public struct AudioExtensionParams
 		{
 			public LPARAM AddPageParam;
-			public IMMDevice pEndpoint;
-			public IMMDevice pPnpInterface;
-			public IMMDevice pPnpDevnode;
+			public IMMDevice* pEndpoint;
+			public IMMDevice* pPnpInterface;
+			public IMMDevice* pPnpDevnode;
 		}
 		[CRepr]
 		public struct SpatialAudioMetadataItemsInfo
@@ -1589,7 +1589,7 @@ namespace Win32
 			public Guid MetadataFormatId;
 			public uint16 MaxMetadataItemCount;
 			public PROPVARIANT* MetadataActivationParams;
-			public ISpatialAudioObjectRenderStreamNotify NotifyObject;
+			public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 		}
 		[CRepr]
 		public struct SpatialAudioObjectRenderStreamForMetadataActivationParams2
@@ -1603,7 +1603,7 @@ namespace Win32
 			public Guid MetadataFormatId;
 			public uint32 MaxMetadataItemCount;
 			public PROPVARIANT* MetadataActivationParams;
-			public ISpatialAudioObjectRenderStreamNotify NotifyObject;
+			public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 			public SPATIAL_AUDIO_STREAM_OPTIONS Options;
 		}
 		[CRepr]
@@ -1939,85 +1939,693 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IMessageFilter {}
-		public struct IAudioClient {}
-		public struct IAudioClient2 {}
-		public struct IAudioClient3 {}
-		public struct IAudioRenderClient {}
-		public struct IAudioCaptureClient {}
-		public struct IAudioClock {}
-		public struct IAudioClock2 {}
-		public struct IAudioClockAdjustment {}
-		public struct ISimpleAudioVolume {}
-		public struct IAudioClientDuckingControl {}
-		public struct IAudioEffectsChangedNotificationClient {}
-		public struct IAudioEffectsManager {}
-		public struct IAudioStreamVolume {}
-		public struct IAudioAmbisonicsControl {}
-		public struct IChannelAudioVolume {}
-		public struct IAudioFormatEnumerator {}
-		public struct ISpatialAudioObjectBase {}
-		public struct ISpatialAudioObject {}
-		public struct ISpatialAudioObjectRenderStreamBase {}
-		public struct ISpatialAudioObjectRenderStream {}
-		public struct ISpatialAudioObjectRenderStreamNotify {}
-		public struct ISpatialAudioClient {}
-		public struct ISpatialAudioClient2 {}
-		public struct ISpatialAudioObjectForHrtf {}
-		public struct ISpatialAudioObjectRenderStreamForHrtf {}
-		public struct IMMNotificationClient {}
-		public struct IMMDevice {}
-		public struct IMMDeviceCollection {}
-		public struct IMMEndpoint {}
-		public struct IMMDeviceEnumerator {}
-		public struct IMMDeviceActivator {}
-		public struct IActivateAudioInterfaceCompletionHandler {}
-		public struct IActivateAudioInterfaceAsyncOperation {}
-		public struct IAudioSystemEffectsPropertyChangeNotificationClient {}
-		public struct IAudioSystemEffectsPropertyStore {}
-		public struct IPerChannelDbLevel {}
-		public struct IAudioVolumeLevel {}
-		public struct IAudioChannelConfig {}
-		public struct IAudioLoudness {}
-		public struct IAudioInputSelector {}
-		public struct IAudioOutputSelector {}
-		public struct IAudioMute {}
-		public struct IAudioBass {}
-		public struct IAudioMidrange {}
-		public struct IAudioTreble {}
-		public struct IAudioAutoGainControl {}
-		public struct IAudioPeakMeter {}
-		public struct IDeviceSpecificProperty {}
-		public struct IPartsList {}
-		public struct IPart {}
-		public struct IConnector {}
-		public struct ISubunit {}
-		public struct IControlInterface {}
-		public struct IControlChangeNotify {}
-		public struct IDeviceTopology {}
-		public struct IAudioSessionEvents {}
-		public struct IAudioSessionControl {}
-		public struct IAudioSessionControl2 {}
-		public struct IAudioSessionManager {}
-		public struct IAudioVolumeDuckNotification {}
-		public struct IAudioSessionNotification {}
-		public struct IAudioSessionEnumerator {}
-		public struct IAudioSessionManager2 {}
-		public struct ISpatialAudioMetadataItems {}
-		public struct ISpatialAudioMetadataWriter {}
-		public struct ISpatialAudioMetadataReader {}
-		public struct ISpatialAudioMetadataCopier {}
-		public struct ISpatialAudioMetadataItemsBuffer {}
-		public struct ISpatialAudioMetadataClient {}
-		public struct ISpatialAudioObjectForMetadataCommands {}
-		public struct ISpatialAudioObjectForMetadataItems {}
-		public struct ISpatialAudioObjectRenderStreamForMetadata {}
-		public struct IAudioStateMonitor {}
+		[CRepr]
+		public struct IMessageFilter : IUnknown
+		{
+			public const new Guid IID = .(0x00000016, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function uint32(IMessageFilter *self, uint32 dwCallType, HTASK htaskCaller, uint32 dwTickCount, INTERFACEINFO* lpInterfaceInfo) HandleInComingCall;
+			public function uint32(IMessageFilter *self, HTASK htaskCallee, uint32 dwTickCount, uint32 dwRejectType) RetryRejectedCall;
+			public function uint32(IMessageFilter *self, HTASK htaskCallee, uint32 dwTickCount, uint32 dwPendingType) MessagePending;
+		}
+		[CRepr]
+		public struct IAudioClient : IUnknown
+		{
+			public const new Guid IID = .(0x1cb9ad4c, 0xdbfa, 0x4c32, 0xb1, 0x78, 0xc2, 0xf5, 0x68, 0xa7, 0x03, 0xb2);
+			
+			public function HRESULT(IAudioClient *self, AUDCLNT_SHAREMODE ShareMode, uint32 StreamFlags, int64 hnsBufferDuration, int64 hnsPeriodicity, WAVEFORMATEX* pFormat, Guid* AudioSessionGuid) Initialize;
+			public function HRESULT(IAudioClient *self, uint32* pNumBufferFrames) GetBufferSize;
+			public function HRESULT(IAudioClient *self, int64* phnsLatency) GetStreamLatency;
+			public function HRESULT(IAudioClient *self, uint32* pNumPaddingFrames) GetCurrentPadding;
+			public function HRESULT(IAudioClient *self, AUDCLNT_SHAREMODE ShareMode, WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch) IsFormatSupported;
+			public function HRESULT(IAudioClient *self, WAVEFORMATEX** ppDeviceFormat) GetMixFormat;
+			public function HRESULT(IAudioClient *self, int64* phnsDefaultDevicePeriod, int64* phnsMinimumDevicePeriod) GetDevicePeriod;
+			public function HRESULT(IAudioClient *self) Start;
+			public function HRESULT(IAudioClient *self) Stop;
+			public function HRESULT(IAudioClient *self) Reset;
+			public function HRESULT(IAudioClient *self, HANDLE eventHandle) SetEventHandle;
+			public function HRESULT(IAudioClient *self, Guid* riid, void** ppv) GetService;
+		}
+		[CRepr]
+		public struct IAudioClient2 : IAudioClient
+		{
+			public const new Guid IID = .(0x726778cd, 0xf60a, 0x4eda, 0x82, 0xde, 0xe4, 0x76, 0x10, 0xcd, 0x78, 0xaa);
+			
+			public function HRESULT(IAudioClient2 *self, AUDIO_STREAM_CATEGORY Category, BOOL* pbOffloadCapable) IsOffloadCapable;
+			public function HRESULT(IAudioClient2 *self, AudioClientProperties* pProperties) SetClientProperties;
+			public function HRESULT(IAudioClient2 *self, WAVEFORMATEX* pFormat, BOOL bEventDriven, int64* phnsMinBufferDuration, int64* phnsMaxBufferDuration) GetBufferSizeLimits;
+		}
+		[CRepr]
+		public struct IAudioClient3 : IAudioClient2
+		{
+			public const new Guid IID = .(0x7ed4ee07, 0x8e67, 0x4cd4, 0x8c, 0x1a, 0x2b, 0x7a, 0x59, 0x87, 0xad, 0x42);
+			
+			public function HRESULT(IAudioClient3 *self, WAVEFORMATEX* pFormat, uint32* pDefaultPeriodInFrames, uint32* pFundamentalPeriodInFrames, uint32* pMinPeriodInFrames, uint32* pMaxPeriodInFrames) GetSharedModeEnginePeriod;
+			public function HRESULT(IAudioClient3 *self, WAVEFORMATEX** ppFormat, uint32* pCurrentPeriodInFrames) GetCurrentSharedModeEnginePeriod;
+			public function HRESULT(IAudioClient3 *self, uint32 StreamFlags, uint32 PeriodInFrames, WAVEFORMATEX* pFormat, Guid* AudioSessionGuid) InitializeSharedAudioStream;
+		}
+		[CRepr]
+		public struct IAudioRenderClient : IUnknown
+		{
+			public const new Guid IID = .(0xf294acfc, 0x3146, 0x4483, 0xa7, 0xbf, 0xad, 0xdc, 0xa7, 0xc2, 0x60, 0xe2);
+			
+			public function HRESULT(IAudioRenderClient *self, uint32 NumFramesRequested, uint8** ppData) GetBuffer;
+			public function HRESULT(IAudioRenderClient *self, uint32 NumFramesWritten, uint32 dwFlags) ReleaseBuffer;
+		}
+		[CRepr]
+		public struct IAudioCaptureClient : IUnknown
+		{
+			public const new Guid IID = .(0xc8adbd64, 0xe71e, 0x48a0, 0xa4, 0xde, 0x18, 0x5c, 0x39, 0x5c, 0xd3, 0x17);
+			
+			public function HRESULT(IAudioCaptureClient *self, uint8** ppData, uint32* pNumFramesToRead, uint32* pdwFlags, uint64* pu64DevicePosition, uint64* pu64QPCPosition) GetBuffer;
+			public function HRESULT(IAudioCaptureClient *self, uint32 NumFramesRead) ReleaseBuffer;
+			public function HRESULT(IAudioCaptureClient *self, uint32* pNumFramesInNextPacket) GetNextPacketSize;
+		}
+		[CRepr]
+		public struct IAudioClock : IUnknown
+		{
+			public const new Guid IID = .(0xcd63314f, 0x3fba, 0x4a1b, 0x81, 0x2c, 0xef, 0x96, 0x35, 0x87, 0x28, 0xe7);
+			
+			public function HRESULT(IAudioClock *self, uint64* pu64Frequency) GetFrequency;
+			public function HRESULT(IAudioClock *self, uint64* pu64Position, uint64* pu64QPCPosition) GetPosition;
+			public function HRESULT(IAudioClock *self, uint32* pdwCharacteristics) GetCharacteristics;
+		}
+		[CRepr]
+		public struct IAudioClock2 : IUnknown
+		{
+			public const new Guid IID = .(0x6f49ff73, 0x6727, 0x49ac, 0xa0, 0x08, 0xd9, 0x8c, 0xf5, 0xe7, 0x00, 0x48);
+			
+			public function HRESULT(IAudioClock2 *self, uint64* DevicePosition, uint64* QPCPosition) GetDevicePosition;
+		}
+		[CRepr]
+		public struct IAudioClockAdjustment : IUnknown
+		{
+			public const new Guid IID = .(0xf6e4c0a0, 0x46d9, 0x4fb8, 0xbe, 0x21, 0x57, 0xa3, 0xef, 0x2b, 0x62, 0x6c);
+			
+			public function HRESULT(IAudioClockAdjustment *self, float flSampleRate) SetSampleRate;
+		}
+		[CRepr]
+		public struct ISimpleAudioVolume : IUnknown
+		{
+			public const new Guid IID = .(0x87ce5498, 0x68d6, 0x44e5, 0x92, 0x15, 0x6d, 0xa4, 0x7e, 0xf8, 0x83, 0xd8);
+			
+			public function HRESULT(ISimpleAudioVolume *self, float fLevel, Guid* EventContext) SetMasterVolume;
+			public function HRESULT(ISimpleAudioVolume *self, float* pfLevel) GetMasterVolume;
+			public function HRESULT(ISimpleAudioVolume *self, BOOL bMute, Guid* EventContext) SetMute;
+			public function HRESULT(ISimpleAudioVolume *self, BOOL* pbMute) GetMute;
+		}
+		[CRepr]
+		public struct IAudioClientDuckingControl : IUnknown
+		{
+			public const new Guid IID = .(0xc789d381, 0xa28c, 0x4168, 0xb2, 0x8f, 0xd3, 0xa8, 0x37, 0x92, 0x4d, 0xc3);
+			
+			public function HRESULT(IAudioClientDuckingControl *self, AUDIO_DUCKING_OPTIONS options) SetDuckingOptionsForCurrentStream;
+		}
+		[CRepr]
+		public struct IAudioEffectsChangedNotificationClient : IUnknown
+		{
+			public const new Guid IID = .(0xa5ded44f, 0x3c5d, 0x4b2b, 0xbd, 0x1e, 0x5d, 0xc1, 0xee, 0x20, 0xbb, 0xf6);
+			
+			public function HRESULT(IAudioEffectsChangedNotificationClient *self) OnAudioEffectsChanged;
+		}
+		[CRepr]
+		public struct IAudioEffectsManager : IUnknown
+		{
+			public const new Guid IID = .(0x4460b3ae, 0x4b44, 0x4527, 0x86, 0x76, 0x75, 0x48, 0xa8, 0xac, 0xd2, 0x60);
+			
+			public function HRESULT(IAudioEffectsManager *self, IAudioEffectsChangedNotificationClient* client) RegisterAudioEffectsChangedNotificationCallback;
+			public function HRESULT(IAudioEffectsManager *self, IAudioEffectsChangedNotificationClient* client) UnregisterAudioEffectsChangedNotificationCallback;
+			public function HRESULT(IAudioEffectsManager *self, AUDIO_EFFECT** effects, uint32* numEffects) GetAudioEffects;
+			public function HRESULT(IAudioEffectsManager *self, Guid effectId, AUDIO_EFFECT_STATE state) SetAudioEffectState;
+		}
+		[CRepr]
+		public struct IAudioStreamVolume : IUnknown
+		{
+			public const new Guid IID = .(0x93014887, 0x242d, 0x4068, 0x8a, 0x15, 0xcf, 0x5e, 0x93, 0xb9, 0x0f, 0xe3);
+			
+			public function HRESULT(IAudioStreamVolume *self, uint32* pdwCount) GetChannelCount;
+			public function HRESULT(IAudioStreamVolume *self, uint32 dwIndex, float fLevel) SetChannelVolume;
+			public function HRESULT(IAudioStreamVolume *self, uint32 dwIndex, float* pfLevel) GetChannelVolume;
+			public function HRESULT(IAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) SetAllVolumes;
+			public function HRESULT(IAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) GetAllVolumes;
+		}
+		[CRepr]
+		public struct IAudioAmbisonicsControl : IUnknown
+		{
+			public const new Guid IID = .(0x28724c91, 0xdf35, 0x4856, 0x9f, 0x76, 0xd6, 0xa2, 0x64, 0x13, 0xf3, 0xdf);
+			
+			public function HRESULT(IAudioAmbisonicsControl *self, AMBISONICS_PARAMS* pAmbisonicsParams, uint32 cbAmbisonicsParams) SetData;
+			public function HRESULT(IAudioAmbisonicsControl *self, BOOL bEnableHeadTracking) SetHeadTracking;
+			public function HRESULT(IAudioAmbisonicsControl *self, BOOL* pbEnableHeadTracking) GetHeadTracking;
+			public function HRESULT(IAudioAmbisonicsControl *self, float X, float Y, float Z, float W) SetRotation;
+		}
+		[CRepr]
+		public struct IChannelAudioVolume : IUnknown
+		{
+			public const new Guid IID = .(0x1c158861, 0xb533, 0x4b30, 0xb1, 0xcf, 0xe8, 0x53, 0xe5, 0x1c, 0x59, 0xb8);
+			
+			public function HRESULT(IChannelAudioVolume *self, uint32* pdwCount) GetChannelCount;
+			public function HRESULT(IChannelAudioVolume *self, uint32 dwIndex, float fLevel, Guid* EventContext) SetChannelVolume;
+			public function HRESULT(IChannelAudioVolume *self, uint32 dwIndex, float* pfLevel) GetChannelVolume;
+			public function HRESULT(IChannelAudioVolume *self, uint32 dwCount, float* pfVolumes, Guid* EventContext) SetAllVolumes;
+			public function HRESULT(IChannelAudioVolume *self, uint32 dwCount, float* pfVolumes) GetAllVolumes;
+		}
+		[CRepr]
+		public struct IAudioFormatEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0xdcdaa858, 0x895a, 0x4a22, 0xa5, 0xeb, 0x67, 0xbd, 0xa5, 0x06, 0x09, 0x6d);
+			
+			public function HRESULT(IAudioFormatEnumerator *self, uint32* count) GetCount;
+			public function HRESULT(IAudioFormatEnumerator *self, uint32 index, WAVEFORMATEX** format) GetFormat;
+		}
+		[CRepr]
+		public struct ISpatialAudioObjectBase : IUnknown
+		{
+			public const new Guid IID = .(0xcce0b8f2, 0x8d4d, 0x4efb, 0xa8, 0xcf, 0x3d, 0x6e, 0xcf, 0x1c, 0x30, 0xe0);
+			
+			public function HRESULT(ISpatialAudioObjectBase *self, uint8** buffer, uint32* bufferLength) GetBuffer;
+			public function HRESULT(ISpatialAudioObjectBase *self, uint32 frameCount) SetEndOfStream;
+			public function HRESULT(ISpatialAudioObjectBase *self, BOOL* isActive) IsActive;
+			public function HRESULT(ISpatialAudioObjectBase *self, AudioObjectType* audioObjectType) GetAudioObjectType;
+		}
+		[CRepr]
+		public struct ISpatialAudioObject : ISpatialAudioObjectBase
+		{
+			public const new Guid IID = .(0xdde28967, 0x521b, 0x46e5, 0x8f, 0x00, 0xbd, 0x6f, 0x2b, 0xc8, 0xab, 0x1d);
+			
+			public function HRESULT(ISpatialAudioObject *self, float x, float y, float z) SetPosition;
+			public function HRESULT(ISpatialAudioObject *self, float volume) SetVolume;
+		}
+		[CRepr]
+		public struct ISpatialAudioObjectRenderStreamBase : IUnknown
+		{
+			public const new Guid IID = .(0xfeaaf403, 0xc1d8, 0x450d, 0xaa, 0x05, 0xe0, 0xcc, 0xee, 0x75, 0x02, 0xa8);
+			
+			public function HRESULT(ISpatialAudioObjectRenderStreamBase *self, uint32* value) GetAvailableDynamicObjectCount;
+			public function HRESULT(ISpatialAudioObjectRenderStreamBase *self, Guid* riid, void** service) GetService;
+			public function HRESULT(ISpatialAudioObjectRenderStreamBase *self) Start;
+			public function HRESULT(ISpatialAudioObjectRenderStreamBase *self) Stop;
+			public function HRESULT(ISpatialAudioObjectRenderStreamBase *self) Reset;
+			public function HRESULT(ISpatialAudioObjectRenderStreamBase *self, uint32* availableDynamicObjectCount, uint32* frameCountPerBuffer) BeginUpdatingAudioObjects;
+			public function HRESULT(ISpatialAudioObjectRenderStreamBase *self) EndUpdatingAudioObjects;
+		}
+		[CRepr]
+		public struct ISpatialAudioObjectRenderStream : ISpatialAudioObjectRenderStreamBase
+		{
+			public const new Guid IID = .(0xbab5f473, 0xb423, 0x477b, 0x85, 0xf5, 0xb5, 0xa3, 0x32, 0xa0, 0x41, 0x53);
+			
+			public function HRESULT(ISpatialAudioObjectRenderStream *self, AudioObjectType type, ISpatialAudioObject** audioObject) ActivateSpatialAudioObject;
+		}
+		[CRepr]
+		public struct ISpatialAudioObjectRenderStreamNotify : IUnknown
+		{
+			public const new Guid IID = .(0xdddf83e6, 0x68d7, 0x4c70, 0x88, 0x3f, 0xa1, 0x83, 0x6a, 0xfb, 0x4a, 0x50);
+			
+			public function HRESULT(ISpatialAudioObjectRenderStreamNotify *self, ISpatialAudioObjectRenderStreamBase* sender, int64 hnsComplianceDeadlineTime, uint32 availableDynamicObjectCountChange) OnAvailableDynamicObjectCountChange;
+		}
+		[CRepr]
+		public struct ISpatialAudioClient : IUnknown
+		{
+			public const new Guid IID = .(0xbbf8e066, 0xaaaa, 0x49be, 0x9a, 0x4d, 0xfd, 0x2a, 0x85, 0x8e, 0xa2, 0x7f);
+			
+			public function HRESULT(ISpatialAudioClient *self, AudioObjectType type, float* x, float* y, float* z) GetStaticObjectPosition;
+			public function HRESULT(ISpatialAudioClient *self, AudioObjectType* mask) GetNativeStaticObjectTypeMask;
+			public function HRESULT(ISpatialAudioClient *self, uint32* value) GetMaxDynamicObjectCount;
+			public function HRESULT(ISpatialAudioClient *self, IAudioFormatEnumerator** enumerator) GetSupportedAudioObjectFormatEnumerator;
+			public function HRESULT(ISpatialAudioClient *self, WAVEFORMATEX* objectFormat, uint32* frameCountPerBuffer) GetMaxFrameCount;
+			public function HRESULT(ISpatialAudioClient *self, WAVEFORMATEX* objectFormat) IsAudioObjectFormatSupported;
+			public function HRESULT(ISpatialAudioClient *self, Guid* streamUuid, PROPVARIANT* auxiliaryInfo) IsSpatialAudioStreamAvailable;
+			public function HRESULT(ISpatialAudioClient *self, PROPVARIANT* activationParams, Guid* riid, void** stream) ActivateSpatialAudioStream;
+		}
+		[CRepr]
+		public struct ISpatialAudioClient2 : ISpatialAudioClient
+		{
+			public const new Guid IID = .(0xcaabe452, 0xa66a, 0x4bee, 0xa9, 0x3e, 0xe3, 0x20, 0x46, 0x3f, 0x6a, 0x53);
+			
+			public function HRESULT(ISpatialAudioClient2 *self, AUDIO_STREAM_CATEGORY category, BOOL* isOffloadCapable) IsOffloadCapable;
+			public function HRESULT(ISpatialAudioClient2 *self, AUDIO_STREAM_CATEGORY category, BOOL offloadEnabled, WAVEFORMATEX* objectFormat, uint32* frameCountPerBuffer) GetMaxFrameCountForCategory;
+		}
+		[CRepr]
+		public struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectBase
+		{
+			public const new Guid IID = .(0xd7436ade, 0x1978, 0x4e14, 0xab, 0xa0, 0x55, 0x5b, 0xd8, 0xeb, 0x83, 0xb4);
+			
+			public function HRESULT(ISpatialAudioObjectForHrtf *self, float x, float y, float z) SetPosition;
+			public function HRESULT(ISpatialAudioObjectForHrtf *self, float gain) SetGain;
+			public function HRESULT(ISpatialAudioObjectForHrtf *self, float** orientation) SetOrientation;
+			public function HRESULT(ISpatialAudioObjectForHrtf *self, SpatialAudioHrtfEnvironmentType environment) SetEnvironment;
+			public function HRESULT(ISpatialAudioObjectForHrtf *self, SpatialAudioHrtfDistanceDecay* distanceDecay) SetDistanceDecay;
+			public function HRESULT(ISpatialAudioObjectForHrtf *self, SpatialAudioHrtfDirectivityUnion* directivity) SetDirectivity;
+		}
+		[CRepr]
+		public struct ISpatialAudioObjectRenderStreamForHrtf : ISpatialAudioObjectRenderStreamBase
+		{
+			public const new Guid IID = .(0xe08deef9, 0x5363, 0x406e, 0x9f, 0xdc, 0x08, 0x0e, 0xe2, 0x47, 0xbb, 0xe0);
+			
+			public function HRESULT(ISpatialAudioObjectRenderStreamForHrtf *self, AudioObjectType type, ISpatialAudioObjectForHrtf** audioObject) ActivateSpatialAudioObjectForHrtf;
+		}
+		[CRepr]
+		public struct IMMNotificationClient : IUnknown
+		{
+			public const new Guid IID = .(0x7991eec9, 0x7e89, 0x4d85, 0x83, 0x90, 0x6c, 0x70, 0x3c, 0xec, 0x60, 0xc0);
+			
+			public function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId, uint32 dwNewState) OnDeviceStateChanged;
+			public function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId) OnDeviceAdded;
+			public function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId) OnDeviceRemoved;
+			public function HRESULT(IMMNotificationClient *self, EDataFlow flow, ERole role, PWSTR pwstrDefaultDeviceId) OnDefaultDeviceChanged;
+			public function HRESULT(IMMNotificationClient *self, PWSTR pwstrDeviceId, PROPERTYKEY key) OnPropertyValueChanged;
+		}
+		[CRepr]
+		public struct IMMDevice : IUnknown
+		{
+			public const new Guid IID = .(0xd666063f, 0x1587, 0x4e43, 0x81, 0xf1, 0xb9, 0x48, 0xe8, 0x07, 0x36, 0x3f);
+			
+			public function HRESULT(IMMDevice *self, Guid* iid, uint32 dwClsCtx, PROPVARIANT* pActivationParams, void** ppInterface) Activate;
+			public function HRESULT(IMMDevice *self, uint32 stgmAccess, IPropertyStore** ppProperties) OpenPropertyStore;
+			public function HRESULT(IMMDevice *self, PWSTR* ppstrId) GetId;
+			public function HRESULT(IMMDevice *self, uint32* pdwState) GetState;
+		}
+		[CRepr]
+		public struct IMMDeviceCollection : IUnknown
+		{
+			public const new Guid IID = .(0x0bd7a1be, 0x7a1a, 0x44db, 0x83, 0x97, 0xcc, 0x53, 0x92, 0x38, 0x7b, 0x5e);
+			
+			public function HRESULT(IMMDeviceCollection *self, uint32* pcDevices) GetCount;
+			public function HRESULT(IMMDeviceCollection *self, uint32 nDevice, IMMDevice** ppDevice) Item;
+		}
+		[CRepr]
+		public struct IMMEndpoint : IUnknown
+		{
+			public const new Guid IID = .(0x1be09788, 0x6894, 0x4089, 0x85, 0x86, 0x9a, 0x2a, 0x6c, 0x26, 0x5a, 0xc5);
+			
+			public function HRESULT(IMMEndpoint *self, EDataFlow* pDataFlow) GetDataFlow;
+		}
+		[CRepr]
+		public struct IMMDeviceEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0xa95664d2, 0x9614, 0x4f35, 0xa7, 0x46, 0xde, 0x8d, 0xb6, 0x36, 0x17, 0xe6);
+			
+			public function HRESULT(IMMDeviceEnumerator *self, EDataFlow dataFlow, uint32 dwStateMask, IMMDeviceCollection** ppDevices) EnumAudioEndpoints;
+			public function HRESULT(IMMDeviceEnumerator *self, EDataFlow dataFlow, ERole role, IMMDevice** ppEndpoint) GetDefaultAudioEndpoint;
+			public function HRESULT(IMMDeviceEnumerator *self, PWSTR pwstrId, IMMDevice** ppDevice) GetDevice;
+			public function HRESULT(IMMDeviceEnumerator *self, IMMNotificationClient* pClient) RegisterEndpointNotificationCallback;
+			public function HRESULT(IMMDeviceEnumerator *self, IMMNotificationClient* pClient) UnregisterEndpointNotificationCallback;
+		}
+		[CRepr]
+		public struct IMMDeviceActivator : IUnknown
+		{
+			public const new Guid IID = .(0x3b0d0ea4, 0xd0a9, 0x4b0e, 0x93, 0x5b, 0x09, 0x51, 0x67, 0x46, 0xfa, 0xc0);
+			
+			public function HRESULT(IMMDeviceActivator *self, Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface) Activate;
+		}
+		[CRepr]
+		public struct IActivateAudioInterfaceCompletionHandler : IUnknown
+		{
+			public const new Guid IID = .(0x41d949ab, 0x9862, 0x444a, 0x80, 0xf6, 0xc2, 0x61, 0x33, 0x4d, 0xa5, 0xeb);
+			
+			public function HRESULT(IActivateAudioInterfaceCompletionHandler *self, IActivateAudioInterfaceAsyncOperation* activateOperation) ActivateCompleted;
+		}
+		[CRepr]
+		public struct IActivateAudioInterfaceAsyncOperation : IUnknown
+		{
+			public const new Guid IID = .(0x72a22d78, 0xcde4, 0x431d, 0xb8, 0xcc, 0x84, 0x3a, 0x71, 0x19, 0x9b, 0x6d);
+			
+			public function HRESULT(IActivateAudioInterfaceAsyncOperation *self, HRESULT* activateResult, IUnknown** activatedInterface) GetActivateResult;
+		}
+		[CRepr]
+		public struct IAudioSystemEffectsPropertyChangeNotificationClient : IUnknown
+		{
+			public const new Guid IID = .(0x20049d40, 0x56d5, 0x400e, 0xa2, 0xef, 0x38, 0x55, 0x99, 0xfe, 0xed, 0x49);
+			
+			public function HRESULT(IAudioSystemEffectsPropertyChangeNotificationClient *self, __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002 type, PROPERTYKEY key) OnPropertyChanged;
+		}
+		[CRepr]
+		public struct IAudioSystemEffectsPropertyStore : IUnknown
+		{
+			public const new Guid IID = .(0x302ae7f9, 0xd7e0, 0x43e4, 0x97, 0x1b, 0x1f, 0x82, 0x93, 0x61, 0x3d, 0x2a);
+			
+			public function HRESULT(IAudioSystemEffectsPropertyStore *self, uint32 stgmAccess, IPropertyStore** propStore) OpenDefaultPropertyStore;
+			public function HRESULT(IAudioSystemEffectsPropertyStore *self, uint32 stgmAccess, IPropertyStore** propStore) OpenUserPropertyStore;
+			public function HRESULT(IAudioSystemEffectsPropertyStore *self, uint32 stgmAccess, IPropertyStore** propStore) OpenVolatilePropertyStore;
+			public function HRESULT(IAudioSystemEffectsPropertyStore *self) ResetUserPropertyStore;
+			public function HRESULT(IAudioSystemEffectsPropertyStore *self) ResetVolatilePropertyStore;
+			public function HRESULT(IAudioSystemEffectsPropertyStore *self, IAudioSystemEffectsPropertyChangeNotificationClient* callback) RegisterPropertyChangeNotification;
+			public function HRESULT(IAudioSystemEffectsPropertyStore *self, IAudioSystemEffectsPropertyChangeNotificationClient* callback) UnregisterPropertyChangeNotification;
+		}
+		[CRepr]
+		public struct IPerChannelDbLevel : IUnknown
+		{
+			public const new Guid IID = .(0xc2f8e001, 0xf205, 0x4bc9, 0x99, 0xbc, 0xc1, 0x3b, 0x1e, 0x04, 0x8c, 0xcb);
+			
+			public function HRESULT(IPerChannelDbLevel *self, uint32* pcChannels) GetChannelCount;
+			public function HRESULT(IPerChannelDbLevel *self, uint32 nChannel, float* pfMinLevelDB, float* pfMaxLevelDB, float* pfStepping) GetLevelRange;
+			public function HRESULT(IPerChannelDbLevel *self, uint32 nChannel, float* pfLevelDB) GetLevel;
+			public function HRESULT(IPerChannelDbLevel *self, uint32 nChannel, float fLevelDB, Guid* pguidEventContext) SetLevel;
+			public function HRESULT(IPerChannelDbLevel *self, float fLevelDB, Guid* pguidEventContext) SetLevelUniform;
+			public function HRESULT(IPerChannelDbLevel *self, float* aLevelsDB, uint32 cChannels, Guid* pguidEventContext) SetLevelAllChannels;
+		}
+		[CRepr]
+		public struct IAudioVolumeLevel : IPerChannelDbLevel
+		{
+			public const new Guid IID = .(0x7fb7b48f, 0x531d, 0x44a2, 0xbc, 0xb3, 0x5a, 0xd5, 0xa1, 0x34, 0xb3, 0xdc);
+			
+		}
+		[CRepr]
+		public struct IAudioChannelConfig : IUnknown
+		{
+			public const new Guid IID = .(0xbb11c46f, 0xec28, 0x493c, 0xb8, 0x8a, 0x5d, 0xb8, 0x80, 0x62, 0xce, 0x98);
+			
+			public function HRESULT(IAudioChannelConfig *self, uint32 dwConfig, Guid* pguidEventContext) SetChannelConfig;
+			public function HRESULT(IAudioChannelConfig *self, uint32* pdwConfig) GetChannelConfig;
+		}
+		[CRepr]
+		public struct IAudioLoudness : IUnknown
+		{
+			public const new Guid IID = .(0x7d8b1437, 0xdd53, 0x4350, 0x9c, 0x1b, 0x1e, 0xe2, 0x89, 0x0b, 0xd9, 0x38);
+			
+			public function HRESULT(IAudioLoudness *self, BOOL* pbEnabled) GetEnabled;
+			public function HRESULT(IAudioLoudness *self, BOOL bEnable, Guid* pguidEventContext) SetEnabled;
+		}
+		[CRepr]
+		public struct IAudioInputSelector : IUnknown
+		{
+			public const new Guid IID = .(0x4f03dc02, 0x5e6e, 0x4653, 0x8f, 0x72, 0xa0, 0x30, 0xc1, 0x23, 0xd5, 0x98);
+			
+			public function HRESULT(IAudioInputSelector *self, uint32* pnIdSelected) GetSelection;
+			public function HRESULT(IAudioInputSelector *self, uint32 nIdSelect, Guid* pguidEventContext) SetSelection;
+		}
+		[CRepr]
+		public struct IAudioOutputSelector : IUnknown
+		{
+			public const new Guid IID = .(0xbb515f69, 0x94a7, 0x429e, 0x8b, 0x9c, 0x27, 0x1b, 0x3f, 0x11, 0xa3, 0xab);
+			
+			public function HRESULT(IAudioOutputSelector *self, uint32* pnIdSelected) GetSelection;
+			public function HRESULT(IAudioOutputSelector *self, uint32 nIdSelect, Guid* pguidEventContext) SetSelection;
+		}
+		[CRepr]
+		public struct IAudioMute : IUnknown
+		{
+			public const new Guid IID = .(0xdf45aeea, 0xb74a, 0x4b6b, 0xaf, 0xad, 0x23, 0x66, 0xb6, 0xaa, 0x01, 0x2e);
+			
+			public function HRESULT(IAudioMute *self, BOOL bMuted, Guid* pguidEventContext) SetMute;
+			public function HRESULT(IAudioMute *self, BOOL* pbMuted) GetMute;
+		}
+		[CRepr]
+		public struct IAudioBass : IPerChannelDbLevel
+		{
+			public const new Guid IID = .(0xa2b1a1d9, 0x4db3, 0x425d, 0xa2, 0xb2, 0xbd, 0x33, 0x5c, 0xb3, 0xe2, 0xe5);
+			
+		}
+		[CRepr]
+		public struct IAudioMidrange : IPerChannelDbLevel
+		{
+			public const new Guid IID = .(0x5e54b6d7, 0xb44b, 0x40d9, 0x9a, 0x9e, 0xe6, 0x91, 0xd9, 0xce, 0x6e, 0xdf);
+			
+		}
+		[CRepr]
+		public struct IAudioTreble : IPerChannelDbLevel
+		{
+			public const new Guid IID = .(0x0a717812, 0x694e, 0x4907, 0xb7, 0x4b, 0xba, 0xfa, 0x5c, 0xfd, 0xca, 0x7b);
+			
+		}
+		[CRepr]
+		public struct IAudioAutoGainControl : IUnknown
+		{
+			public const new Guid IID = .(0x85401fd4, 0x6de4, 0x4b9d, 0x98, 0x69, 0x2d, 0x67, 0x53, 0xa8, 0x2f, 0x3c);
+			
+			public function HRESULT(IAudioAutoGainControl *self, BOOL* pbEnabled) GetEnabled;
+			public function HRESULT(IAudioAutoGainControl *self, BOOL bEnable, Guid* pguidEventContext) SetEnabled;
+		}
+		[CRepr]
+		public struct IAudioPeakMeter : IUnknown
+		{
+			public const new Guid IID = .(0xdd79923c, 0x0599, 0x45e0, 0xb8, 0xb6, 0xc8, 0xdf, 0x7d, 0xb6, 0xe7, 0x96);
+			
+			public function HRESULT(IAudioPeakMeter *self, uint32* pcChannels) GetChannelCount;
+			public function HRESULT(IAudioPeakMeter *self, uint32 nChannel, float* pfLevel) GetLevel;
+		}
+		[CRepr]
+		public struct IDeviceSpecificProperty : IUnknown
+		{
+			public const new Guid IID = .(0x3b22bcbf, 0x2586, 0x4af0, 0x85, 0x83, 0x20, 0x5d, 0x39, 0x1b, 0x80, 0x7c);
+			
+			public function HRESULT(IDeviceSpecificProperty *self, uint16* pVType) GetType;
+			public function HRESULT(IDeviceSpecificProperty *self, void* pvValue, uint32* pcbValue) GetValue;
+			public function HRESULT(IDeviceSpecificProperty *self, void* pvValue, uint32 cbValue, Guid* pguidEventContext) SetValue;
+			public function HRESULT(IDeviceSpecificProperty *self, int32* plMin, int32* plMax, int32* plStepping) Get4BRange;
+		}
+		[CRepr]
+		public struct IPartsList : IUnknown
+		{
+			public const new Guid IID = .(0x6daa848c, 0x5eb0, 0x45cc, 0xae, 0xa5, 0x99, 0x8a, 0x2c, 0xda, 0x1f, 0xfb);
+			
+			public function HRESULT(IPartsList *self, uint32* pCount) GetCount;
+			public function HRESULT(IPartsList *self, uint32 nIndex, IPart** ppPart) GetPart;
+		}
+		[CRepr]
+		public struct IPart : IUnknown
+		{
+			public const new Guid IID = .(0xae2de0e4, 0x5bca, 0x4f2d, 0xaa, 0x46, 0x5d, 0x13, 0xf8, 0xfd, 0xb3, 0xa9);
+			
+			public function HRESULT(IPart *self, PWSTR* ppwstrName) GetName;
+			public function HRESULT(IPart *self, uint32* pnId) GetLocalId;
+			public function HRESULT(IPart *self, PWSTR* ppwstrGlobalId) GetGlobalId;
+			public function HRESULT(IPart *self, PartType* pPartType) GetPartType;
+			public function HRESULT(IPart *self, Guid* pSubType) GetSubType;
+			public function HRESULT(IPart *self, uint32* pCount) GetControlInterfaceCount;
+			public function HRESULT(IPart *self, uint32 nIndex, IControlInterface** ppInterfaceDesc) GetControlInterface;
+			public function HRESULT(IPart *self, IPartsList** ppParts) EnumPartsIncoming;
+			public function HRESULT(IPart *self, IPartsList** ppParts) EnumPartsOutgoing;
+			public function HRESULT(IPart *self, IDeviceTopology** ppTopology) GetTopologyObject;
+			public function HRESULT(IPart *self, uint32 dwClsContext, Guid* refiid, void** ppvObject) Activate;
+			public function HRESULT(IPart *self, Guid* riid, IControlChangeNotify* pNotify) RegisterControlChangeCallback;
+			public function HRESULT(IPart *self, IControlChangeNotify* pNotify) UnregisterControlChangeCallback;
+		}
+		[CRepr]
+		public struct IConnector : IUnknown
+		{
+			public const new Guid IID = .(0x9c2c4058, 0x23f5, 0x41de, 0x87, 0x7a, 0xdf, 0x3a, 0xf2, 0x36, 0xa0, 0x9e);
+			
+			public function HRESULT(IConnector *self, ConnectorType* pType) GetType;
+			public function HRESULT(IConnector *self, DataFlow* pFlow) GetDataFlow;
+			public function HRESULT(IConnector *self, IConnector* pConnectTo) ConnectTo;
+			public function HRESULT(IConnector *self) Disconnect;
+			public function HRESULT(IConnector *self, BOOL* pbConnected) IsConnected;
+			public function HRESULT(IConnector *self, IConnector** ppConTo) GetConnectedTo;
+			public function HRESULT(IConnector *self, PWSTR* ppwstrConnectorId) GetConnectorIdConnectedTo;
+			public function HRESULT(IConnector *self, PWSTR* ppwstrDeviceId) GetDeviceIdConnectedTo;
+		}
+		[CRepr]
+		public struct ISubunit : IUnknown
+		{
+			public const new Guid IID = .(0x82149a85, 0xdba6, 0x4487, 0x86, 0xbb, 0xea, 0x8f, 0x7f, 0xef, 0xcc, 0x71);
+			
+		}
+		[CRepr]
+		public struct IControlInterface : IUnknown
+		{
+			public const new Guid IID = .(0x45d37c3f, 0x5140, 0x444a, 0xae, 0x24, 0x40, 0x07, 0x89, 0xf3, 0xcb, 0xf3);
+			
+			public function HRESULT(IControlInterface *self, PWSTR* ppwstrName) GetName;
+			public function HRESULT(IControlInterface *self, Guid* pIID) GetIID;
+		}
+		[CRepr]
+		public struct IControlChangeNotify : IUnknown
+		{
+			public const new Guid IID = .(0xa09513ed, 0xc709, 0x4d21, 0xbd, 0x7b, 0x5f, 0x34, 0xc4, 0x7f, 0x39, 0x47);
+			
+			public function HRESULT(IControlChangeNotify *self, uint32 dwSenderProcessId, Guid* pguidEventContext) OnNotify;
+		}
+		[CRepr]
+		public struct IDeviceTopology : IUnknown
+		{
+			public const new Guid IID = .(0x2a07407e, 0x6497, 0x4a18, 0x97, 0x87, 0x32, 0xf7, 0x9b, 0xd0, 0xd9, 0x8f);
+			
+			public function HRESULT(IDeviceTopology *self, uint32* pCount) GetConnectorCount;
+			public function HRESULT(IDeviceTopology *self, uint32 nIndex, IConnector** ppConnector) GetConnector;
+			public function HRESULT(IDeviceTopology *self, uint32* pCount) GetSubunitCount;
+			public function HRESULT(IDeviceTopology *self, uint32 nIndex, ISubunit** ppSubunit) GetSubunit;
+			public function HRESULT(IDeviceTopology *self, uint32 nId, IPart** ppPart) GetPartById;
+			public function HRESULT(IDeviceTopology *self, PWSTR* ppwstrDeviceId) GetDeviceId;
+			public function HRESULT(IDeviceTopology *self, IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts) GetSignalPath;
+		}
+		[CRepr]
+		public struct IAudioSessionEvents : IUnknown
+		{
+			public const new Guid IID = .(0x24918acc, 0x64b3, 0x37c1, 0x8c, 0xa9, 0x74, 0xa6, 0x6e, 0x99, 0x57, 0xa8);
+			
+			public function HRESULT(IAudioSessionEvents *self, PWSTR NewDisplayName, Guid* EventContext) OnDisplayNameChanged;
+			public function HRESULT(IAudioSessionEvents *self, PWSTR NewIconPath, Guid* EventContext) OnIconPathChanged;
+			public function HRESULT(IAudioSessionEvents *self, float NewVolume, BOOL NewMute, Guid* EventContext) OnSimpleVolumeChanged;
+			public function HRESULT(IAudioSessionEvents *self, uint32 ChannelCount, float* NewChannelVolumeArray, uint32 ChangedChannel, Guid* EventContext) OnChannelVolumeChanged;
+			public function HRESULT(IAudioSessionEvents *self, Guid* NewGroupingParam, Guid* EventContext) OnGroupingParamChanged;
+			public function HRESULT(IAudioSessionEvents *self, AudioSessionState NewState) OnStateChanged;
+			public function HRESULT(IAudioSessionEvents *self, AudioSessionDisconnectReason DisconnectReason) OnSessionDisconnected;
+		}
+		[CRepr]
+		public struct IAudioSessionControl : IUnknown
+		{
+			public const new Guid IID = .(0xf4b1a599, 0x7266, 0x4319, 0xa8, 0xca, 0xe7, 0x0a, 0xcb, 0x11, 0xe8, 0xcd);
+			
+			public function HRESULT(IAudioSessionControl *self, AudioSessionState* pRetVal) GetState;
+			public function HRESULT(IAudioSessionControl *self, PWSTR* pRetVal) GetDisplayName;
+			public function HRESULT(IAudioSessionControl *self, PWSTR Value, Guid* EventContext) SetDisplayName;
+			public function HRESULT(IAudioSessionControl *self, PWSTR* pRetVal) GetIconPath;
+			public function HRESULT(IAudioSessionControl *self, PWSTR Value, Guid* EventContext) SetIconPath;
+			public function HRESULT(IAudioSessionControl *self, Guid* pRetVal) GetGroupingParam;
+			public function HRESULT(IAudioSessionControl *self, Guid* Override, Guid* EventContext) SetGroupingParam;
+			public function HRESULT(IAudioSessionControl *self, IAudioSessionEvents* NewNotifications) RegisterAudioSessionNotification;
+			public function HRESULT(IAudioSessionControl *self, IAudioSessionEvents* NewNotifications) UnregisterAudioSessionNotification;
+		}
+		[CRepr]
+		public struct IAudioSessionControl2 : IAudioSessionControl
+		{
+			public const new Guid IID = .(0xbfb7ff88, 0x7239, 0x4fc9, 0x8f, 0xa2, 0x07, 0xc9, 0x50, 0xbe, 0x9c, 0x6d);
+			
+			public function HRESULT(IAudioSessionControl2 *self, PWSTR* pRetVal) GetSessionIdentifier;
+			public function HRESULT(IAudioSessionControl2 *self, PWSTR* pRetVal) GetSessionInstanceIdentifier;
+			public function HRESULT(IAudioSessionControl2 *self, uint32* pRetVal) GetProcessId;
+			public function HRESULT(IAudioSessionControl2 *self) IsSystemSoundsSession;
+			public function HRESULT(IAudioSessionControl2 *self, BOOL optOut) SetDuckingPreference;
+		}
+		[CRepr]
+		public struct IAudioSessionManager : IUnknown
+		{
+			public const new Guid IID = .(0xbfa971f1, 0x4d5e, 0x40bb, 0x93, 0x5e, 0x96, 0x70, 0x39, 0xbf, 0xbe, 0xe4);
+			
+			public function HRESULT(IAudioSessionManager *self, Guid* AudioSessionGuid, uint32 StreamFlags, IAudioSessionControl** SessionControl) GetAudioSessionControl;
+			public function HRESULT(IAudioSessionManager *self, Guid* AudioSessionGuid, uint32 StreamFlags, ISimpleAudioVolume** AudioVolume) GetSimpleAudioVolume;
+		}
+		[CRepr]
+		public struct IAudioVolumeDuckNotification : IUnknown
+		{
+			public const new Guid IID = .(0xc3b284d4, 0x6d39, 0x4359, 0xb3, 0xcf, 0xb5, 0x6d, 0xdb, 0x3b, 0xb3, 0x9c);
+			
+			public function HRESULT(IAudioVolumeDuckNotification *self, PWSTR sessionID, uint32 countCommunicationSessions) OnVolumeDuckNotification;
+			public function HRESULT(IAudioVolumeDuckNotification *self, PWSTR sessionID) OnVolumeUnduckNotification;
+		}
+		[CRepr]
+		public struct IAudioSessionNotification : IUnknown
+		{
+			public const new Guid IID = .(0x641dd20b, 0x4d41, 0x49cc, 0xab, 0xa3, 0x17, 0x4b, 0x94, 0x77, 0xbb, 0x08);
+			
+			public function HRESULT(IAudioSessionNotification *self, IAudioSessionControl* NewSession) OnSessionCreated;
+		}
+		[CRepr]
+		public struct IAudioSessionEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0xe2f5bb11, 0x0570, 0x40ca, 0xac, 0xdd, 0x3a, 0xa0, 0x12, 0x77, 0xde, 0xe8);
+			
+			public function HRESULT(IAudioSessionEnumerator *self, int32* SessionCount) GetCount;
+			public function HRESULT(IAudioSessionEnumerator *self, int32 SessionCount, IAudioSessionControl** Session) GetSession;
+		}
+		[CRepr]
+		public struct IAudioSessionManager2 : IAudioSessionManager
+		{
+			public const new Guid IID = .(0x77aa99a0, 0x1bd6, 0x484f, 0x8b, 0xc7, 0x2c, 0x65, 0x4c, 0x9a, 0x9b, 0x6f);
+			
+			public function HRESULT(IAudioSessionManager2 *self, IAudioSessionEnumerator** SessionEnum) GetSessionEnumerator;
+			public function HRESULT(IAudioSessionManager2 *self, IAudioSessionNotification* SessionNotification) RegisterSessionNotification;
+			public function HRESULT(IAudioSessionManager2 *self, IAudioSessionNotification* SessionNotification) UnregisterSessionNotification;
+			public function HRESULT(IAudioSessionManager2 *self, PWSTR sessionID, IAudioVolumeDuckNotification* duckNotification) RegisterDuckNotification;
+			public function HRESULT(IAudioSessionManager2 *self, IAudioVolumeDuckNotification* duckNotification) UnregisterDuckNotification;
+		}
+		[CRepr]
+		public struct ISpatialAudioMetadataItems : IUnknown
+		{
+			public const new Guid IID = .(0xbcd7c78f, 0x3098, 0x4f22, 0xb5, 0x47, 0xa2, 0xf2, 0x5a, 0x38, 0x12, 0x69);
+			
+			public function HRESULT(ISpatialAudioMetadataItems *self, uint16* frameCount) GetFrameCount;
+			public function HRESULT(ISpatialAudioMetadataItems *self, uint16* itemCount) GetItemCount;
+			public function HRESULT(ISpatialAudioMetadataItems *self, uint16* maxItemCount) GetMaxItemCount;
+			public function HRESULT(ISpatialAudioMetadataItems *self, uint32* maxValueBufferLength) GetMaxValueBufferLength;
+			public function HRESULT(ISpatialAudioMetadataItems *self, SpatialAudioMetadataItemsInfo* info) GetInfo;
+		}
+		[CRepr]
+		public struct ISpatialAudioMetadataWriter : IUnknown
+		{
+			public const new Guid IID = .(0x1b17ca01, 0x2955, 0x444d, 0xa4, 0x30, 0x53, 0x7d, 0xc5, 0x89, 0xa8, 0x44);
+			
+			public function HRESULT(ISpatialAudioMetadataWriter *self, ISpatialAudioMetadataItems* metadataItems) Open;
+			public function HRESULT(ISpatialAudioMetadataWriter *self, uint16 frameOffset) WriteNextItem;
+			public function HRESULT(ISpatialAudioMetadataWriter *self, uint8 commandID, void* valueBuffer, uint32 valueBufferLength) WriteNextItemCommand;
+			public function HRESULT(ISpatialAudioMetadataWriter *self) Close;
+		}
+		[CRepr]
+		public struct ISpatialAudioMetadataReader : IUnknown
+		{
+			public const new Guid IID = .(0xb78e86a2, 0x31d9, 0x4c32, 0x94, 0xd2, 0x7d, 0xf4, 0x0f, 0xc7, 0xeb, 0xec);
+			
+			public function HRESULT(ISpatialAudioMetadataReader *self, ISpatialAudioMetadataItems* metadataItems) Open;
+			public function HRESULT(ISpatialAudioMetadataReader *self, uint8* commandCount, uint16* frameOffset) ReadNextItem;
+			public function HRESULT(ISpatialAudioMetadataReader *self, uint8* commandID, void* valueBuffer, uint32 maxValueBufferLength, uint32* valueBufferLength) ReadNextItemCommand;
+			public function HRESULT(ISpatialAudioMetadataReader *self) Close;
+		}
+		[CRepr]
+		public struct ISpatialAudioMetadataCopier : IUnknown
+		{
+			public const new Guid IID = .(0xd224b233, 0xe251, 0x4fd0, 0x9c, 0xa2, 0xd5, 0xec, 0xf9, 0xa6, 0x84, 0x04);
+			
+			public function HRESULT(ISpatialAudioMetadataCopier *self, ISpatialAudioMetadataItems* metadataItems) Open;
+			public function HRESULT(ISpatialAudioMetadataCopier *self, uint16 copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ISpatialAudioMetadataItems* dstMetadataItems, uint16* itemsCopied) CopyMetadataForFrames;
+			public function HRESULT(ISpatialAudioMetadataCopier *self) Close;
+		}
+		[CRepr]
+		public struct ISpatialAudioMetadataItemsBuffer : IUnknown
+		{
+			public const new Guid IID = .(0x42640a16, 0xe1bd, 0x42d9, 0x9f, 0xf6, 0x03, 0x1a, 0xb7, 0x1a, 0x2d, 0xba);
+			
+			public function HRESULT(ISpatialAudioMetadataItemsBuffer *self, uint8* buffer, uint32 bufferLength) AttachToBuffer;
+			public function HRESULT(ISpatialAudioMetadataItemsBuffer *self, uint8* buffer, uint32 bufferLength) AttachToPopulatedBuffer;
+			public function HRESULT(ISpatialAudioMetadataItemsBuffer *self) DetachBuffer;
+		}
+		[CRepr]
+		public struct ISpatialAudioMetadataClient : IUnknown
+		{
+			public const new Guid IID = .(0x777d4a3b, 0xf6ff, 0x4a26, 0x85, 0xdc, 0x68, 0xd7, 0xcd, 0xed, 0xa1, 0xd4);
+			
+			public function HRESULT(ISpatialAudioMetadataClient *self, uint16 maxItemCount, uint16 frameCount, ISpatialAudioMetadataItemsBuffer** metadataItemsBuffer, ISpatialAudioMetadataItems** metadataItems) ActivateSpatialAudioMetadataItems;
+			public function HRESULT(ISpatialAudioMetadataClient *self, uint16 maxItemCount, uint32* bufferLength) GetSpatialAudioMetadataItemsBufferLength;
+			public function HRESULT(ISpatialAudioMetadataClient *self, SpatialAudioMetadataWriterOverflowMode overflowMode, ISpatialAudioMetadataWriter** metadataWriter) ActivateSpatialAudioMetadataWriter;
+			public function HRESULT(ISpatialAudioMetadataClient *self, ISpatialAudioMetadataCopier** metadataCopier) ActivateSpatialAudioMetadataCopier;
+			public function HRESULT(ISpatialAudioMetadataClient *self, ISpatialAudioMetadataReader** metadataReader) ActivateSpatialAudioMetadataReader;
+		}
+		[CRepr]
+		public struct ISpatialAudioObjectForMetadataCommands : ISpatialAudioObjectBase
+		{
+			public const new Guid IID = .(0x0df2c94b, 0xf5f9, 0x472d, 0xaf, 0x6b, 0xc4, 0x6e, 0x0a, 0xc9, 0xcd, 0x05);
+			
+			public function HRESULT(ISpatialAudioObjectForMetadataCommands *self, uint8 commandID, void* valueBuffer, uint32 valueBufferLength) WriteNextMetadataCommand;
+		}
+		[CRepr]
+		public struct ISpatialAudioObjectForMetadataItems : ISpatialAudioObjectBase
+		{
+			public const new Guid IID = .(0xddea49ff, 0x3bc0, 0x4377, 0x8a, 0xad, 0x9f, 0xbc, 0xfd, 0x80, 0x85, 0x66);
+			
+			public function HRESULT(ISpatialAudioObjectForMetadataItems *self, ISpatialAudioMetadataItems** metadataItems) GetSpatialAudioMetadataItems;
+		}
+		[CRepr]
+		public struct ISpatialAudioObjectRenderStreamForMetadata : ISpatialAudioObjectRenderStreamBase
+		{
+			public const new Guid IID = .(0xbbc9c907, 0x48d5, 0x4a2e, 0xa0, 0xc7, 0xf7, 0xf0, 0xd6, 0x7c, 0x1f, 0xb1);
+			
+			public function HRESULT(ISpatialAudioObjectRenderStreamForMetadata *self, AudioObjectType type, ISpatialAudioObjectForMetadataCommands** audioObject) ActivateSpatialAudioObjectForMetadataCommands;
+			public function HRESULT(ISpatialAudioObjectRenderStreamForMetadata *self, AudioObjectType type, ISpatialAudioObjectForMetadataItems** audioObject) ActivateSpatialAudioObjectForMetadataItems;
+		}
+		[CRepr]
+		public struct IAudioStateMonitor : IUnknown
+		{
+			public const new Guid IID = .(0x63bd8738, 0xe30d, 0x4c77, 0xbf, 0x5c, 0x83, 0x4e, 0x87, 0xc6, 0x57, 0xe2);
+			
+			public function HRESULT(IAudioStateMonitor *self, PAudioStateMonitorCallback callback, void* context, int64* registration) RegisterCallback;
+			public function void(IAudioStateMonitor *self, int64 registration) UnregisterCallback;
+			public function AudioStateMonitorSoundLevel(IAudioStateMonitor *self) GetSoundLevel;
+		}
 		
 		// --- Functions ---
 		
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoRegisterMessageFilter(IMessageFilter lpMessageFilter, IMessageFilter* lplpMessageFilter);
+		public static extern HRESULT CoRegisterMessageFilter(IMessageFilter* lpMessageFilter, IMessageFilter** lplpMessageFilter);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL sndPlaySoundA(PSTR pszSound, uint32 fuSound);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2231,23 +2839,23 @@ namespace Win32
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 mixerSetControlDetails(HMIXEROBJ hmxobj, MIXERCONTROLDETAILS* pmxcd, uint32 fdwDetails);
 		[Import("mmdevapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ActivateAudioInterfaceAsync(PWSTR deviceInterfacePath, Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler completionHandler, IActivateAudioInterfaceAsyncOperation* activationOperation);
+		public static extern HRESULT ActivateAudioInterfaceAsync(PWSTR deviceInterfacePath, Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
 		[Import("windows.media.mediacontrol.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateRenderAudioStateMonitor(IAudioStateMonitor* audioStateMonitor);
+		public static extern HRESULT CreateRenderAudioStateMonitor(IAudioStateMonitor** audioStateMonitor);
 		[Import("windows.media.mediacontrol.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateRenderAudioStateMonitorForCategory(AUDIO_STREAM_CATEGORY category, IAudioStateMonitor* audioStateMonitor);
+		public static extern HRESULT CreateRenderAudioStateMonitorForCategory(AUDIO_STREAM_CATEGORY category, IAudioStateMonitor** audioStateMonitor);
 		[Import("windows.media.mediacontrol.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateRenderAudioStateMonitorForCategoryAndDeviceRole(AUDIO_STREAM_CATEGORY category, ERole role, IAudioStateMonitor* audioStateMonitor);
+		public static extern HRESULT CreateRenderAudioStateMonitorForCategoryAndDeviceRole(AUDIO_STREAM_CATEGORY category, ERole role, IAudioStateMonitor** audioStateMonitor);
 		[Import("windows.media.mediacontrol.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateRenderAudioStateMonitorForCategoryAndDeviceId(AUDIO_STREAM_CATEGORY category, PWSTR deviceId, IAudioStateMonitor* audioStateMonitor);
+		public static extern HRESULT CreateRenderAudioStateMonitorForCategoryAndDeviceId(AUDIO_STREAM_CATEGORY category, PWSTR deviceId, IAudioStateMonitor** audioStateMonitor);
 		[Import("windows.media.mediacontrol.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateCaptureAudioStateMonitor(IAudioStateMonitor* audioStateMonitor);
+		public static extern HRESULT CreateCaptureAudioStateMonitor(IAudioStateMonitor** audioStateMonitor);
 		[Import("windows.media.mediacontrol.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateCaptureAudioStateMonitorForCategory(AUDIO_STREAM_CATEGORY category, IAudioStateMonitor* audioStateMonitor);
+		public static extern HRESULT CreateCaptureAudioStateMonitorForCategory(AUDIO_STREAM_CATEGORY category, IAudioStateMonitor** audioStateMonitor);
 		[Import("windows.media.mediacontrol.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateCaptureAudioStateMonitorForCategoryAndDeviceRole(AUDIO_STREAM_CATEGORY category, ERole role, IAudioStateMonitor* audioStateMonitor);
+		public static extern HRESULT CreateCaptureAudioStateMonitorForCategoryAndDeviceRole(AUDIO_STREAM_CATEGORY category, ERole role, IAudioStateMonitor** audioStateMonitor);
 		[Import("windows.media.mediacontrol.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateCaptureAudioStateMonitorForCategoryAndDeviceId(AUDIO_STREAM_CATEGORY category, PWSTR deviceId, IAudioStateMonitor* audioStateMonitor);
+		public static extern HRESULT CreateCaptureAudioStateMonitorForCategoryAndDeviceId(AUDIO_STREAM_CATEGORY category, PWSTR deviceId, IAudioStateMonitor** audioStateMonitor);
 		[Import("msacm32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 acmGetVersion();
 		[Import("msacm32.dll"), CLink, CallingConvention(.Stdcall)]

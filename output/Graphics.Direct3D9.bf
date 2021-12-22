@@ -1860,31 +1860,354 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IDirect3D9 {}
-		public struct IDirect3DDevice9 {}
-		public struct IDirect3DStateBlock9 {}
-		public struct IDirect3DSwapChain9 {}
-		public struct IDirect3DResource9 {}
-		public struct IDirect3DVertexDeclaration9 {}
-		public struct IDirect3DVertexShader9 {}
-		public struct IDirect3DPixelShader9 {}
-		public struct IDirect3DBaseTexture9 {}
-		public struct IDirect3DTexture9 {}
-		public struct IDirect3DVolumeTexture9 {}
-		public struct IDirect3DCubeTexture9 {}
-		public struct IDirect3DVertexBuffer9 {}
-		public struct IDirect3DIndexBuffer9 {}
-		public struct IDirect3DSurface9 {}
-		public struct IDirect3DVolume9 {}
-		public struct IDirect3DQuery9 {}
-		public struct IDirect3D9Ex {}
-		public struct IDirect3DDevice9Ex {}
-		public struct IDirect3DSwapChain9Ex {}
+		[CRepr]
+		public struct IDirect3D9 : IUnknown
+		{
+			public const new Guid IID = .(0x81bdcbca, 0x64d4, 0x426d, 0xae, 0x8d, 0xad, 0x01, 0x47, 0xf4, 0x27, 0x5c);
+			
+			public function HRESULT(IDirect3D9 *self, void* pInitializeFunction) RegisterSoftwareDevice;
+			public function uint32(IDirect3D9 *self) GetAdapterCount;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, uint32 Flags, D3DADAPTER_IDENTIFIER9* pIdentifier) GetAdapterIdentifier;
+			public function uint32(IDirect3D9 *self, uint32 Adapter, D3DFORMAT Format) GetAdapterModeCount;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, D3DFORMAT Format, uint32 Mode, D3DDISPLAYMODE* pMode) EnumAdapterModes;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, D3DDISPLAYMODE* pMode) GetAdapterDisplayMode;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, D3DDEVTYPE DevType, D3DFORMAT AdapterFormat, D3DFORMAT BackBufferFormat, BOOL bWindowed) CheckDeviceType;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, uint32 Usage, D3DRESOURCETYPE RType, D3DFORMAT CheckFormat) CheckDeviceFormat;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SurfaceFormat, BOOL Windowed, D3DMULTISAMPLE_TYPE MultiSampleType, uint32* pQualityLevels) CheckDeviceMultiSampleType;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT AdapterFormat, D3DFORMAT RenderTargetFormat, D3DFORMAT DepthStencilFormat) CheckDepthStencilMatch;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DFORMAT SourceFormat, D3DFORMAT TargetFormat) CheckDeviceFormatConversion;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, D3DDEVTYPE DeviceType, D3DCAPS9* pCaps) GetDeviceCaps;
+			public function HMONITOR(IDirect3D9 *self, uint32 Adapter) GetAdapterMonitor;
+			public function HRESULT(IDirect3D9 *self, uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, D3DPRESENT_PARAMETERS* pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface) CreateDevice;
+		}
+		[CRepr]
+		public struct IDirect3DDevice9 : IUnknown
+		{
+			public const new Guid IID = .(0xd0223b96, 0xbf7a, 0x43fd, 0x92, 0xbd, 0xa4, 0x3b, 0x0d, 0x82, 0xb9, 0xeb);
+			
+			public function HRESULT(IDirect3DDevice9 *self) TestCooperativeLevel;
+			public function uint32(IDirect3DDevice9 *self) GetAvailableTextureMem;
+			public function HRESULT(IDirect3DDevice9 *self) EvictManagedResources;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3D9** ppD3D9) GetDirect3D;
+			public function HRESULT(IDirect3DDevice9 *self, D3DCAPS9* pCaps) GetDeviceCaps;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 iSwapChain, D3DDISPLAYMODE* pMode) GetDisplayMode;
+			public function HRESULT(IDirect3DDevice9 *self, D3DDEVICE_CREATION_PARAMETERS* pParameters) GetCreationParameters;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 XHotSpot, uint32 YHotSpot, IDirect3DSurface9* pCursorBitmap) SetCursorProperties;
+			public function void(IDirect3DDevice9 *self, int32 X, int32 Y, uint32 Flags) SetCursorPosition;
+			public function BOOL(IDirect3DDevice9 *self, BOOL bShow) ShowCursor;
+			public function HRESULT(IDirect3DDevice9 *self, D3DPRESENT_PARAMETERS* pPresentationParameters, IDirect3DSwapChain9** pSwapChain) CreateAdditionalSwapChain;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 iSwapChain, IDirect3DSwapChain9** pSwapChain) GetSwapChain;
+			public function uint32(IDirect3DDevice9 *self) GetNumberOfSwapChains;
+			public function HRESULT(IDirect3DDevice9 *self, D3DPRESENT_PARAMETERS* pPresentationParameters) Reset;
+			public function HRESULT(IDirect3DDevice9 *self, RECT* pSourceRect, RECT* pDestRect, HWND hDestWindowOverride, RGNDATA* pDirtyRegion) Present;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 iSwapChain, uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, IDirect3DSurface9** ppBackBuffer) GetBackBuffer;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 iSwapChain, D3DRASTER_STATUS* pRasterStatus) GetRasterStatus;
+			public function HRESULT(IDirect3DDevice9 *self, BOOL bEnableDialogs) SetDialogBoxMode;
+			public function void(IDirect3DDevice9 *self, uint32 iSwapChain, uint32 Flags, D3DGAMMARAMP* pRamp) SetGammaRamp;
+			public function void(IDirect3DDevice9 *self, uint32 iSwapChain, D3DGAMMARAMP* pRamp) GetGammaRamp;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Width, uint32 Height, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, IDirect3DTexture9** ppTexture, HANDLE* pSharedHandle) CreateTexture;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Width, uint32 Height, uint32 Depth, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, IDirect3DVolumeTexture9** ppVolumeTexture, HANDLE* pSharedHandle) CreateVolumeTexture;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 EdgeLength, uint32 Levels, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, IDirect3DCubeTexture9** ppCubeTexture, HANDLE* pSharedHandle) CreateCubeTexture;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Length, uint32 Usage, uint32 FVF, D3DPOOL Pool, IDirect3DVertexBuffer9** ppVertexBuffer, HANDLE* pSharedHandle) CreateVertexBuffer;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Length, uint32 Usage, D3DFORMAT Format, D3DPOOL Pool, IDirect3DIndexBuffer9** ppIndexBuffer, HANDLE* pSharedHandle) CreateIndexBuffer;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle) CreateRenderTarget;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle) CreateDepthStencilSurface;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DSurface9* pSourceSurface, RECT* pSourceRect, IDirect3DSurface9* pDestinationSurface, POINT* pDestPoint) UpdateSurface;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DBaseTexture9* pSourceTexture, IDirect3DBaseTexture9* pDestinationTexture) UpdateTexture;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DSurface9* pRenderTarget, IDirect3DSurface9* pDestSurface) GetRenderTargetData;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 iSwapChain, IDirect3DSurface9* pDestSurface) GetFrontBufferData;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DSurface9* pSourceSurface, RECT* pSourceRect, IDirect3DSurface9* pDestSurface, RECT* pDestRect, D3DTEXTUREFILTERTYPE Filter) StretchRect;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DSurface9* pSurface, RECT* pRect, uint32 color) ColorFill;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle) CreateOffscreenPlainSurface;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 RenderTargetIndex, IDirect3DSurface9* pRenderTarget) SetRenderTarget;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 RenderTargetIndex, IDirect3DSurface9** ppRenderTarget) GetRenderTarget;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DSurface9* pNewZStencil) SetDepthStencilSurface;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DSurface9** ppZStencilSurface) GetDepthStencilSurface;
+			public function HRESULT(IDirect3DDevice9 *self) BeginScene;
+			public function HRESULT(IDirect3DDevice9 *self) EndScene;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Count, D3DRECT* pRects, uint32 Flags, uint32 Color, float Z, uint32 Stencil) Clear;
+			public function HRESULT(IDirect3DDevice9 *self, D3DTRANSFORMSTATETYPE State, D3DMATRIX* pMatrix) SetTransform;
+			public function HRESULT(IDirect3DDevice9 *self, D3DTRANSFORMSTATETYPE State, D3DMATRIX* pMatrix) GetTransform;
+			public function HRESULT(IDirect3DDevice9 *self, D3DTRANSFORMSTATETYPE param0, D3DMATRIX* param1) MultiplyTransform;
+			public function HRESULT(IDirect3DDevice9 *self, D3DVIEWPORT9* pViewport) SetViewport;
+			public function HRESULT(IDirect3DDevice9 *self, D3DVIEWPORT9* pViewport) GetViewport;
+			public function HRESULT(IDirect3DDevice9 *self, D3DMATERIAL9* pMaterial) SetMaterial;
+			public function HRESULT(IDirect3DDevice9 *self, D3DMATERIAL9* pMaterial) GetMaterial;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Index, D3DLIGHT9* param1) SetLight;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Index, D3DLIGHT9* param1) GetLight;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Index, BOOL Enable) LightEnable;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Index, BOOL* pEnable) GetLightEnable;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Index, float* pPlane) SetClipPlane;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Index, float* pPlane) GetClipPlane;
+			public function HRESULT(IDirect3DDevice9 *self, D3DRENDERSTATETYPE State, uint32 Value) SetRenderState;
+			public function HRESULT(IDirect3DDevice9 *self, D3DRENDERSTATETYPE State, uint32* pValue) GetRenderState;
+			public function HRESULT(IDirect3DDevice9 *self, D3DSTATEBLOCKTYPE Type, IDirect3DStateBlock9** ppSB) CreateStateBlock;
+			public function HRESULT(IDirect3DDevice9 *self) BeginStateBlock;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DStateBlock9** ppSB) EndStateBlock;
+			public function HRESULT(IDirect3DDevice9 *self, D3DCLIPSTATUS9* pClipStatus) SetClipStatus;
+			public function HRESULT(IDirect3DDevice9 *self, D3DCLIPSTATUS9* pClipStatus) GetClipStatus;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Stage, IDirect3DBaseTexture9** ppTexture) GetTexture;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Stage, IDirect3DBaseTexture9* pTexture) SetTexture;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, uint32* pValue) GetTextureStageState;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Stage, D3DTEXTURESTAGESTATETYPE Type, uint32 Value) SetTextureStageState;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Sampler, D3DSAMPLERSTATETYPE Type, uint32* pValue) GetSamplerState;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Sampler, D3DSAMPLERSTATETYPE Type, uint32 Value) SetSamplerState;
+			public function HRESULT(IDirect3DDevice9 *self, uint32* pNumPasses) ValidateDevice;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 PaletteNumber, PALETTEENTRY* pEntries) SetPaletteEntries;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 PaletteNumber, PALETTEENTRY* pEntries) GetPaletteEntries;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 PaletteNumber) SetCurrentTexturePalette;
+			public function HRESULT(IDirect3DDevice9 *self, uint32* PaletteNumber) GetCurrentTexturePalette;
+			public function HRESULT(IDirect3DDevice9 *self, RECT* pRect) SetScissorRect;
+			public function HRESULT(IDirect3DDevice9 *self, RECT* pRect) GetScissorRect;
+			public function HRESULT(IDirect3DDevice9 *self, BOOL bSoftware) SetSoftwareVertexProcessing;
+			public function BOOL(IDirect3DDevice9 *self) GetSoftwareVertexProcessing;
+			public function HRESULT(IDirect3DDevice9 *self, float nSegments) SetNPatchMode;
+			public function float(IDirect3DDevice9 *self) GetNPatchMode;
+			public function HRESULT(IDirect3DDevice9 *self, D3DPRIMITIVETYPE PrimitiveType, uint32 StartVertex, uint32 PrimitiveCount) DrawPrimitive;
+			public function HRESULT(IDirect3DDevice9 *self, D3DPRIMITIVETYPE param0, int32 BaseVertexIndex, uint32 MinVertexIndex, uint32 NumVertices, uint32 startIndex, uint32 primCount) DrawIndexedPrimitive;
+			public function HRESULT(IDirect3DDevice9 *self, D3DPRIMITIVETYPE PrimitiveType, uint32 PrimitiveCount, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) DrawPrimitiveUP;
+			public function HRESULT(IDirect3DDevice9 *self, D3DPRIMITIVETYPE PrimitiveType, uint32 MinVertexIndex, uint32 NumVertices, uint32 PrimitiveCount, void* pIndexData, D3DFORMAT IndexDataFormat, void* pVertexStreamZeroData, uint32 VertexStreamZeroStride) DrawIndexedPrimitiveUP;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 SrcStartIndex, uint32 DestIndex, uint32 VertexCount, IDirect3DVertexBuffer9* pDestBuffer, IDirect3DVertexDeclaration9* pVertexDecl, uint32 Flags) ProcessVertices;
+			public function HRESULT(IDirect3DDevice9 *self, D3DVERTEXELEMENT9* pVertexElements, IDirect3DVertexDeclaration9** ppDecl) CreateVertexDeclaration;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DVertexDeclaration9* pDecl) SetVertexDeclaration;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DVertexDeclaration9** ppDecl) GetVertexDeclaration;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 FVF) SetFVF;
+			public function HRESULT(IDirect3DDevice9 *self, uint32* pFVF) GetFVF;
+			public function HRESULT(IDirect3DDevice9 *self, uint32* pFunction, IDirect3DVertexShader9** ppShader) CreateVertexShader;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DVertexShader9* pShader) SetVertexShader;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DVertexShader9** ppShader) GetVertexShader;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, float* pConstantData, uint32 Vector4fCount) SetVertexShaderConstantF;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, float* pConstantData, uint32 Vector4fCount) GetVertexShaderConstantF;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, int32* pConstantData, uint32 Vector4iCount) SetVertexShaderConstantI;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, int32* pConstantData, uint32 Vector4iCount) GetVertexShaderConstantI;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, BOOL* pConstantData, uint32 BoolCount) SetVertexShaderConstantB;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, BOOL* pConstantData, uint32 BoolCount) GetVertexShaderConstantB;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StreamNumber, IDirect3DVertexBuffer9* pStreamData, uint32 OffsetInBytes, uint32 Stride) SetStreamSource;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StreamNumber, IDirect3DVertexBuffer9** ppStreamData, uint32* pOffsetInBytes, uint32* pStride) GetStreamSource;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StreamNumber, uint32 Setting) SetStreamSourceFreq;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StreamNumber, uint32* pSetting) GetStreamSourceFreq;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DIndexBuffer9* pIndexData) SetIndices;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DIndexBuffer9** ppIndexData) GetIndices;
+			public function HRESULT(IDirect3DDevice9 *self, uint32* pFunction, IDirect3DPixelShader9** ppShader) CreatePixelShader;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DPixelShader9* pShader) SetPixelShader;
+			public function HRESULT(IDirect3DDevice9 *self, IDirect3DPixelShader9** ppShader) GetPixelShader;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, float* pConstantData, uint32 Vector4fCount) SetPixelShaderConstantF;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, float* pConstantData, uint32 Vector4fCount) GetPixelShaderConstantF;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, int32* pConstantData, uint32 Vector4iCount) SetPixelShaderConstantI;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, int32* pConstantData, uint32 Vector4iCount) GetPixelShaderConstantI;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, BOOL* pConstantData, uint32 BoolCount) SetPixelShaderConstantB;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 StartRegister, BOOL* pConstantData, uint32 BoolCount) GetPixelShaderConstantB;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Handle, float* pNumSegs, D3DRECTPATCH_INFO* pRectPatchInfo) DrawRectPatch;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Handle, float* pNumSegs, D3DTRIPATCH_INFO* pTriPatchInfo) DrawTriPatch;
+			public function HRESULT(IDirect3DDevice9 *self, uint32 Handle) DeletePatch;
+			public function HRESULT(IDirect3DDevice9 *self, D3DQUERYTYPE Type, IDirect3DQuery9** ppQuery) CreateQuery;
+		}
+		[CRepr]
+		public struct IDirect3DStateBlock9 : IUnknown
+		{
+			public const new Guid IID = .(0xb07c4fe5, 0x310d, 0x4ba8, 0xa2, 0x3c, 0x4f, 0x0f, 0x20, 0x6f, 0x21, 0x8b);
+			
+			public function HRESULT(IDirect3DStateBlock9 *self, IDirect3DDevice9** ppDevice) GetDevice;
+			public function HRESULT(IDirect3DStateBlock9 *self) Capture;
+			public function HRESULT(IDirect3DStateBlock9 *self) Apply;
+		}
+		[CRepr]
+		public struct IDirect3DSwapChain9 : IUnknown
+		{
+			public const new Guid IID = .(0x794950f2, 0xadfc, 0x458a, 0x90, 0x5e, 0x10, 0xa1, 0x0b, 0x0b, 0x50, 0x3b);
+			
+			public function HRESULT(IDirect3DSwapChain9 *self, RECT* pSourceRect, RECT* pDestRect, HWND hDestWindowOverride, RGNDATA* pDirtyRegion, uint32 dwFlags) Present;
+			public function HRESULT(IDirect3DSwapChain9 *self, IDirect3DSurface9* pDestSurface) GetFrontBufferData;
+			public function HRESULT(IDirect3DSwapChain9 *self, uint32 iBackBuffer, D3DBACKBUFFER_TYPE Type, IDirect3DSurface9** ppBackBuffer) GetBackBuffer;
+			public function HRESULT(IDirect3DSwapChain9 *self, D3DRASTER_STATUS* pRasterStatus) GetRasterStatus;
+			public function HRESULT(IDirect3DSwapChain9 *self, D3DDISPLAYMODE* pMode) GetDisplayMode;
+			public function HRESULT(IDirect3DSwapChain9 *self, IDirect3DDevice9** ppDevice) GetDevice;
+			public function HRESULT(IDirect3DSwapChain9 *self, D3DPRESENT_PARAMETERS* pPresentationParameters) GetPresentParameters;
+		}
+		[CRepr]
+		public struct IDirect3DResource9 : IUnknown
+		{
+			public const new Guid IID = .(0x05eec05d, 0x8f7d, 0x4362, 0xb9, 0x99, 0xd1, 0xba, 0xf3, 0x57, 0xc7, 0x04);
+			
+			public function HRESULT(IDirect3DResource9 *self, IDirect3DDevice9** ppDevice) GetDevice;
+			public function HRESULT(IDirect3DResource9 *self, Guid* refguid, void* pData, uint32 SizeOfData, uint32 Flags) SetPrivateData;
+			public function HRESULT(IDirect3DResource9 *self, Guid* refguid, void* pData, uint32* pSizeOfData) GetPrivateData;
+			public function HRESULT(IDirect3DResource9 *self, Guid* refguid) FreePrivateData;
+			public function uint32(IDirect3DResource9 *self, uint32 PriorityNew) SetPriority;
+			public function uint32(IDirect3DResource9 *self) GetPriority;
+			public function void(IDirect3DResource9 *self) PreLoad;
+			public function D3DRESOURCETYPE(IDirect3DResource9 *self) GetType;
+		}
+		[CRepr]
+		public struct IDirect3DVertexDeclaration9 : IUnknown
+		{
+			public const new Guid IID = .(0xdd13c59c, 0x36fa, 0x4098, 0xa8, 0xfb, 0xc7, 0xed, 0x39, 0xdc, 0x85, 0x46);
+			
+			public function HRESULT(IDirect3DVertexDeclaration9 *self, IDirect3DDevice9** ppDevice) GetDevice;
+			public function HRESULT(IDirect3DVertexDeclaration9 *self, D3DVERTEXELEMENT9* pElement, uint32* pNumElements) GetDeclaration;
+		}
+		[CRepr]
+		public struct IDirect3DVertexShader9 : IUnknown
+		{
+			public const new Guid IID = .(0xefc5557e, 0x6265, 0x4613, 0x8a, 0x94, 0x43, 0x85, 0x78, 0x89, 0xeb, 0x36);
+			
+			public function HRESULT(IDirect3DVertexShader9 *self, IDirect3DDevice9** ppDevice) GetDevice;
+			public function HRESULT(IDirect3DVertexShader9 *self, void* param0, uint32* pSizeOfData) GetFunction;
+		}
+		[CRepr]
+		public struct IDirect3DPixelShader9 : IUnknown
+		{
+			public const new Guid IID = .(0x6d3bdbdc, 0x5b02, 0x4415, 0xb8, 0x52, 0xce, 0x5e, 0x8b, 0xcc, 0xb2, 0x89);
+			
+			public function HRESULT(IDirect3DPixelShader9 *self, IDirect3DDevice9** ppDevice) GetDevice;
+			public function HRESULT(IDirect3DPixelShader9 *self, void* param0, uint32* pSizeOfData) GetFunction;
+		}
+		[CRepr]
+		public struct IDirect3DBaseTexture9 : IDirect3DResource9
+		{
+			public const new Guid IID = .(0x580ca87e, 0x1d3c, 0x4d54, 0x99, 0x1d, 0xb7, 0xd3, 0xe3, 0xc2, 0x98, 0xce);
+			
+			public function uint32(IDirect3DBaseTexture9 *self, uint32 LODNew) SetLOD;
+			public function uint32(IDirect3DBaseTexture9 *self) GetLOD;
+			public function uint32(IDirect3DBaseTexture9 *self) GetLevelCount;
+			public function HRESULT(IDirect3DBaseTexture9 *self, D3DTEXTUREFILTERTYPE FilterType) SetAutoGenFilterType;
+			public function D3DTEXTUREFILTERTYPE(IDirect3DBaseTexture9 *self) GetAutoGenFilterType;
+			public function void(IDirect3DBaseTexture9 *self) GenerateMipSubLevels;
+		}
+		[CRepr]
+		public struct IDirect3DTexture9 : IDirect3DBaseTexture9
+		{
+			public const new Guid IID = .(0x85c31227, 0x3de5, 0x4f00, 0x9b, 0x3a, 0xf1, 0x1a, 0xc3, 0x8c, 0x18, 0xb5);
+			
+			public function HRESULT(IDirect3DTexture9 *self, uint32 Level, D3DSURFACE_DESC* pDesc) GetLevelDesc;
+			public function HRESULT(IDirect3DTexture9 *self, uint32 Level, IDirect3DSurface9** ppSurfaceLevel) GetSurfaceLevel;
+			public function HRESULT(IDirect3DTexture9 *self, uint32 Level, D3DLOCKED_RECT* pLockedRect, RECT* pRect, uint32 Flags) LockRect;
+			public function HRESULT(IDirect3DTexture9 *self, uint32 Level) UnlockRect;
+			public function HRESULT(IDirect3DTexture9 *self, RECT* pDirtyRect) AddDirtyRect;
+		}
+		[CRepr]
+		public struct IDirect3DVolumeTexture9 : IDirect3DBaseTexture9
+		{
+			public const new Guid IID = .(0x2518526c, 0xe789, 0x4111, 0xa7, 0xb9, 0x47, 0xef, 0x32, 0x8d, 0x13, 0xe6);
+			
+			public function HRESULT(IDirect3DVolumeTexture9 *self, uint32 Level, D3DVOLUME_DESC* pDesc) GetLevelDesc;
+			public function HRESULT(IDirect3DVolumeTexture9 *self, uint32 Level, IDirect3DVolume9** ppVolumeLevel) GetVolumeLevel;
+			public function HRESULT(IDirect3DVolumeTexture9 *self, uint32 Level, D3DLOCKED_BOX* pLockedVolume, D3DBOX* pBox, uint32 Flags) LockBox;
+			public function HRESULT(IDirect3DVolumeTexture9 *self, uint32 Level) UnlockBox;
+			public function HRESULT(IDirect3DVolumeTexture9 *self, D3DBOX* pDirtyBox) AddDirtyBox;
+		}
+		[CRepr]
+		public struct IDirect3DCubeTexture9 : IDirect3DBaseTexture9
+		{
+			public const new Guid IID = .(0xfff32f81, 0xd953, 0x473a, 0x92, 0x23, 0x93, 0xd6, 0x52, 0xab, 0xa9, 0x3f);
+			
+			public function HRESULT(IDirect3DCubeTexture9 *self, uint32 Level, D3DSURFACE_DESC* pDesc) GetLevelDesc;
+			public function HRESULT(IDirect3DCubeTexture9 *self, D3DCUBEMAP_FACES FaceType, uint32 Level, IDirect3DSurface9** ppCubeMapSurface) GetCubeMapSurface;
+			public function HRESULT(IDirect3DCubeTexture9 *self, D3DCUBEMAP_FACES FaceType, uint32 Level, D3DLOCKED_RECT* pLockedRect, RECT* pRect, uint32 Flags) LockRect;
+			public function HRESULT(IDirect3DCubeTexture9 *self, D3DCUBEMAP_FACES FaceType, uint32 Level) UnlockRect;
+			public function HRESULT(IDirect3DCubeTexture9 *self, D3DCUBEMAP_FACES FaceType, RECT* pDirtyRect) AddDirtyRect;
+		}
+		[CRepr]
+		public struct IDirect3DVertexBuffer9 : IDirect3DResource9
+		{
+			public const new Guid IID = .(0xb64bb1b5, 0xfd70, 0x4df6, 0xbf, 0x91, 0x19, 0xd0, 0xa1, 0x24, 0x55, 0xe3);
+			
+			public function HRESULT(IDirect3DVertexBuffer9 *self, uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) Lock;
+			public function HRESULT(IDirect3DVertexBuffer9 *self) Unlock;
+			public function HRESULT(IDirect3DVertexBuffer9 *self, D3DVERTEXBUFFER_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct IDirect3DIndexBuffer9 : IDirect3DResource9
+		{
+			public const new Guid IID = .(0x7c9dd65e, 0xd3f7, 0x4529, 0xac, 0xee, 0x78, 0x58, 0x30, 0xac, 0xde, 0x35);
+			
+			public function HRESULT(IDirect3DIndexBuffer9 *self, uint32 OffsetToLock, uint32 SizeToLock, void** ppbData, uint32 Flags) Lock;
+			public function HRESULT(IDirect3DIndexBuffer9 *self) Unlock;
+			public function HRESULT(IDirect3DIndexBuffer9 *self, D3DINDEXBUFFER_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct IDirect3DSurface9 : IDirect3DResource9
+		{
+			public const new Guid IID = .(0x0cfbaf3a, 0x9ff6, 0x429a, 0x99, 0xb3, 0xa2, 0x79, 0x6a, 0xf8, 0xb8, 0x9b);
+			
+			public function HRESULT(IDirect3DSurface9 *self, Guid* riid, void** ppContainer) GetContainer;
+			public function HRESULT(IDirect3DSurface9 *self, D3DSURFACE_DESC* pDesc) GetDesc;
+			public function HRESULT(IDirect3DSurface9 *self, D3DLOCKED_RECT* pLockedRect, RECT* pRect, uint32 Flags) LockRect;
+			public function HRESULT(IDirect3DSurface9 *self) UnlockRect;
+			public function HRESULT(IDirect3DSurface9 *self, HDC* phdc) GetDC;
+			public function HRESULT(IDirect3DSurface9 *self, HDC hdc) ReleaseDC;
+		}
+		[CRepr]
+		public struct IDirect3DVolume9 : IUnknown
+		{
+			public const new Guid IID = .(0x24f416e6, 0x1f67, 0x4aa7, 0xb8, 0x8e, 0xd3, 0x3f, 0x6f, 0x31, 0x28, 0xa1);
+			
+			public function HRESULT(IDirect3DVolume9 *self, IDirect3DDevice9** ppDevice) GetDevice;
+			public function HRESULT(IDirect3DVolume9 *self, Guid* refguid, void* pData, uint32 SizeOfData, uint32 Flags) SetPrivateData;
+			public function HRESULT(IDirect3DVolume9 *self, Guid* refguid, void* pData, uint32* pSizeOfData) GetPrivateData;
+			public function HRESULT(IDirect3DVolume9 *self, Guid* refguid) FreePrivateData;
+			public function HRESULT(IDirect3DVolume9 *self, Guid* riid, void** ppContainer) GetContainer;
+			public function HRESULT(IDirect3DVolume9 *self, D3DVOLUME_DESC* pDesc) GetDesc;
+			public function HRESULT(IDirect3DVolume9 *self, D3DLOCKED_BOX* pLockedVolume, D3DBOX* pBox, uint32 Flags) LockBox;
+			public function HRESULT(IDirect3DVolume9 *self) UnlockBox;
+		}
+		[CRepr]
+		public struct IDirect3DQuery9 : IUnknown
+		{
+			public const new Guid IID = .(0xd9771460, 0xa695, 0x4f26, 0xbb, 0xd3, 0x27, 0xb8, 0x40, 0xb5, 0x41, 0xcc);
+			
+			public function HRESULT(IDirect3DQuery9 *self, IDirect3DDevice9** ppDevice) GetDevice;
+			public function D3DQUERYTYPE(IDirect3DQuery9 *self) GetType;
+			public function uint32(IDirect3DQuery9 *self) GetDataSize;
+			public function HRESULT(IDirect3DQuery9 *self, uint32 dwIssueFlags) Issue;
+			public function HRESULT(IDirect3DQuery9 *self, void* pData, uint32 dwSize, uint32 dwGetDataFlags) GetData;
+		}
+		[CRepr]
+		public struct IDirect3D9Ex : IDirect3D9
+		{
+			public const new Guid IID = .(0x02177241, 0x69fc, 0x400c, 0x8f, 0xf1, 0x93, 0xa4, 0x4d, 0xf6, 0x86, 0x1d);
+			
+			public function uint32(IDirect3D9Ex *self, uint32 Adapter, D3DDISPLAYMODEFILTER* pFilter) GetAdapterModeCountEx;
+			public function HRESULT(IDirect3D9Ex *self, uint32 Adapter, D3DDISPLAYMODEFILTER* pFilter, uint32 Mode, D3DDISPLAYMODEEX* pMode) EnumAdapterModesEx;
+			public function HRESULT(IDirect3D9Ex *self, uint32 Adapter, D3DDISPLAYMODEEX* pMode, D3DDISPLAYROTATION* pRotation) GetAdapterDisplayModeEx;
+			public function HRESULT(IDirect3D9Ex *self, uint32 Adapter, D3DDEVTYPE DeviceType, HWND hFocusWindow, uint32 BehaviorFlags, D3DPRESENT_PARAMETERS* pPresentationParameters, D3DDISPLAYMODEEX* pFullscreenDisplayMode, IDirect3DDevice9Ex** ppReturnedDeviceInterface) CreateDeviceEx;
+			public function HRESULT(IDirect3D9Ex *self, uint32 Adapter, LUID* pLUID) GetAdapterLUID;
+		}
+		[CRepr]
+		public struct IDirect3DDevice9Ex : IDirect3DDevice9
+		{
+			public const new Guid IID = .(0xb18b10ce, 0x2649, 0x405a, 0x87, 0x0f, 0x95, 0xf7, 0x77, 0xd4, 0x31, 0x3a);
+			
+			public function HRESULT(IDirect3DDevice9Ex *self, uint32 width, uint32 height, float* rows, float* columns) SetConvolutionMonoKernel;
+			public function HRESULT(IDirect3DDevice9Ex *self, IDirect3DSurface9* pSrc, IDirect3DSurface9* pDst, IDirect3DVertexBuffer9* pSrcRectDescs, uint32 NumRects, IDirect3DVertexBuffer9* pDstRectDescs, D3DCOMPOSERECTSOP Operation, int32 Xoffset, int32 Yoffset) ComposeRects;
+			public function HRESULT(IDirect3DDevice9Ex *self, RECT* pSourceRect, RECT* pDestRect, HWND hDestWindowOverride, RGNDATA* pDirtyRegion, uint32 dwFlags) PresentEx;
+			public function HRESULT(IDirect3DDevice9Ex *self, int32* pPriority) GetGPUThreadPriority;
+			public function HRESULT(IDirect3DDevice9Ex *self, int32 Priority) SetGPUThreadPriority;
+			public function HRESULT(IDirect3DDevice9Ex *self, uint32 iSwapChain) WaitForVBlank;
+			public function HRESULT(IDirect3DDevice9Ex *self, IDirect3DResource9** pResourceArray, uint32 NumResources) CheckResourceResidency;
+			public function HRESULT(IDirect3DDevice9Ex *self, uint32 MaxLatency) SetMaximumFrameLatency;
+			public function HRESULT(IDirect3DDevice9Ex *self, uint32* pMaxLatency) GetMaximumFrameLatency;
+			public function HRESULT(IDirect3DDevice9Ex *self, HWND hDestinationWindow) CheckDeviceState;
+			public function HRESULT(IDirect3DDevice9Ex *self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Lockable, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle, uint32 Usage) CreateRenderTargetEx;
+			public function HRESULT(IDirect3DDevice9Ex *self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle, uint32 Usage) CreateOffscreenPlainSurfaceEx;
+			public function HRESULT(IDirect3DDevice9Ex *self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, uint32 MultisampleQuality, BOOL Discard, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle, uint32 Usage) CreateDepthStencilSurfaceEx;
+			public function HRESULT(IDirect3DDevice9Ex *self, D3DPRESENT_PARAMETERS* pPresentationParameters, D3DDISPLAYMODEEX* pFullscreenDisplayMode) ResetEx;
+			public function HRESULT(IDirect3DDevice9Ex *self, uint32 iSwapChain, D3DDISPLAYMODEEX* pMode, D3DDISPLAYROTATION* pRotation) GetDisplayModeEx;
+		}
+		[CRepr]
+		public struct IDirect3DSwapChain9Ex : IDirect3DSwapChain9
+		{
+			public const new Guid IID = .(0x91886caf, 0x1c3d, 0x4d2e, 0xa0, 0xab, 0x3e, 0x4c, 0x7d, 0x8d, 0x33, 0x03);
+			
+			public function HRESULT(IDirect3DSwapChain9Ex *self, uint32* pLastPresentCount) GetLastPresentCount;
+			public function HRESULT(IDirect3DSwapChain9Ex *self, D3DPRESENTSTATS* pPresentationStatistics) GetPresentStats;
+			public function HRESULT(IDirect3DSwapChain9Ex *self, D3DDISPLAYMODEEX* pMode, D3DDISPLAYROTATION* pRotation) GetDisplayModeEx;
+		}
 		
 		// --- Functions ---
 		
 		[Import("d3d9.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern IDirect3D9 Direct3DCreate9(uint32 SDKVersion);
+		public static extern IDirect3D9* Direct3DCreate9(uint32 SDKVersion);
 		[Import("d3d9.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 D3DPERF_BeginEvent(uint32 col, PWSTR wszName);
 		[Import("d3d9.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1900,7 +2223,7 @@ namespace Win32
 		[Import("d3d9.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 D3DPERF_GetStatus();
 		[Import("d3d9.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT Direct3DCreate9Ex(uint32 SDKVersion, IDirect3D9Ex* param1);
+		public static extern HRESULT Direct3DCreate9Ex(uint32 SDKVersion, IDirect3D9Ex** param1);
 		
 	}
 }

@@ -62,7 +62,13 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IWaaSAssessor {}
+		[CRepr]
+		public struct IWaaSAssessor : IUnknown
+		{
+			public const new Guid IID = .(0x2347bbef, 0x1a3b, 0x45a4, 0x90, 0x2d, 0x3e, 0x09, 0xc2, 0x69, 0xb4, 0x5e);
+			
+			public function HRESULT(IWaaSAssessor *self, OSUpdateAssessment* result) GetOSUpdateAssessment;
+		}
 		
 	}
 }

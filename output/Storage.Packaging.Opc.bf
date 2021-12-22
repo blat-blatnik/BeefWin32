@@ -195,37 +195,344 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IOpcUri {}
-		public struct IOpcPartUri {}
-		public struct IOpcPackage {}
-		public struct IOpcPart {}
-		public struct IOpcRelationship {}
-		public struct IOpcPartSet {}
-		public struct IOpcRelationshipSet {}
-		public struct IOpcPartEnumerator {}
-		public struct IOpcRelationshipEnumerator {}
-		public struct IOpcSignaturePartReference {}
-		public struct IOpcSignatureRelationshipReference {}
-		public struct IOpcRelationshipSelector {}
-		public struct IOpcSignatureReference {}
-		public struct IOpcSignatureCustomObject {}
-		public struct IOpcDigitalSignature {}
-		public struct IOpcSigningOptions {}
-		public struct IOpcDigitalSignatureManager {}
-		public struct IOpcSignaturePartReferenceEnumerator {}
-		public struct IOpcSignatureRelationshipReferenceEnumerator {}
-		public struct IOpcRelationshipSelectorEnumerator {}
-		public struct IOpcSignatureReferenceEnumerator {}
-		public struct IOpcSignatureCustomObjectEnumerator {}
-		public struct IOpcCertificateEnumerator {}
-		public struct IOpcDigitalSignatureEnumerator {}
-		public struct IOpcSignaturePartReferenceSet {}
-		public struct IOpcSignatureRelationshipReferenceSet {}
-		public struct IOpcRelationshipSelectorSet {}
-		public struct IOpcSignatureReferenceSet {}
-		public struct IOpcSignatureCustomObjectSet {}
-		public struct IOpcCertificateSet {}
-		public struct IOpcFactory {}
+		[CRepr]
+		public struct IOpcUri : IUri
+		{
+			public const new Guid IID = .(0xbc9c1b9b, 0xd62c, 0x49eb, 0xae, 0xf0, 0x3b, 0x4e, 0x0b, 0x28, 0xeb, 0xed);
+			
+			public function HRESULT(IOpcUri *self, IOpcPartUri** relationshipPartUri) GetRelationshipsPartUri;
+			public function HRESULT(IOpcUri *self, IOpcPartUri* targetPartUri, IUri** relativeUri) GetRelativeUri;
+			public function HRESULT(IOpcUri *self, IUri* relativeUri, IOpcPartUri** combinedUri) CombinePartUri;
+		}
+		[CRepr]
+		public struct IOpcPartUri : IOpcUri
+		{
+			public const new Guid IID = .(0x7d3babe7, 0x88b2, 0x46ba, 0x85, 0xcb, 0x42, 0x03, 0xcb, 0x01, 0x6c, 0x87);
+			
+			public function HRESULT(IOpcPartUri *self, IOpcPartUri* partUri, int32* comparisonResult) ComparePartUri;
+			public function HRESULT(IOpcPartUri *self, IOpcUri** sourceUri) GetSourceUri;
+			public function HRESULT(IOpcPartUri *self, BOOL* isRelationshipUri) IsRelationshipsPartUri;
+		}
+		[CRepr]
+		public struct IOpcPackage : IUnknown
+		{
+			public const new Guid IID = .(0x42195949, 0x3b79, 0x4fc8, 0x89, 0xc6, 0xfc, 0x7f, 0xb9, 0x79, 0xee, 0x70);
+			
+			public function HRESULT(IOpcPackage *self, IOpcPartSet** partSet) GetPartSet;
+			public function HRESULT(IOpcPackage *self, IOpcRelationshipSet** relationshipSet) GetRelationshipSet;
+		}
+		[CRepr]
+		public struct IOpcPart : IUnknown
+		{
+			public const new Guid IID = .(0x42195949, 0x3b79, 0x4fc8, 0x89, 0xc6, 0xfc, 0x7f, 0xb9, 0x79, 0xee, 0x71);
+			
+			public function HRESULT(IOpcPart *self, IOpcRelationshipSet** relationshipSet) GetRelationshipSet;
+			public function HRESULT(IOpcPart *self, IStream** stream) GetContentStream;
+			public function HRESULT(IOpcPart *self, IOpcPartUri** name) GetName;
+			public function HRESULT(IOpcPart *self, PWSTR* contentType) GetContentType;
+			public function HRESULT(IOpcPart *self, OPC_COMPRESSION_OPTIONS* compressionOptions) GetCompressionOptions;
+		}
+		[CRepr]
+		public struct IOpcRelationship : IUnknown
+		{
+			public const new Guid IID = .(0x42195949, 0x3b79, 0x4fc8, 0x89, 0xc6, 0xfc, 0x7f, 0xb9, 0x79, 0xee, 0x72);
+			
+			public function HRESULT(IOpcRelationship *self, PWSTR* relationshipIdentifier) GetId;
+			public function HRESULT(IOpcRelationship *self, PWSTR* relationshipType) GetRelationshipType;
+			public function HRESULT(IOpcRelationship *self, IOpcUri** sourceUri) GetSourceUri;
+			public function HRESULT(IOpcRelationship *self, IUri** targetUri) GetTargetUri;
+			public function HRESULT(IOpcRelationship *self, OPC_URI_TARGET_MODE* targetMode) GetTargetMode;
+		}
+		[CRepr]
+		public struct IOpcPartSet : IUnknown
+		{
+			public const new Guid IID = .(0x42195949, 0x3b79, 0x4fc8, 0x89, 0xc6, 0xfc, 0x7f, 0xb9, 0x79, 0xee, 0x73);
+			
+			public function HRESULT(IOpcPartSet *self, IOpcPartUri* name, IOpcPart** part) GetPart;
+			public function HRESULT(IOpcPartSet *self, IOpcPartUri* name, PWSTR contentType, OPC_COMPRESSION_OPTIONS compressionOptions, IOpcPart** part) CreatePart;
+			public function HRESULT(IOpcPartSet *self, IOpcPartUri* name) DeletePart;
+			public function HRESULT(IOpcPartSet *self, IOpcPartUri* name, BOOL* partExists) PartExists;
+			public function HRESULT(IOpcPartSet *self, IOpcPartEnumerator** partEnumerator) GetEnumerator;
+		}
+		[CRepr]
+		public struct IOpcRelationshipSet : IUnknown
+		{
+			public const new Guid IID = .(0x42195949, 0x3b79, 0x4fc8, 0x89, 0xc6, 0xfc, 0x7f, 0xb9, 0x79, 0xee, 0x74);
+			
+			public function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipIdentifier, IOpcRelationship** relationship) GetRelationship;
+			public function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipIdentifier, PWSTR relationshipType, IUri* targetUri, OPC_URI_TARGET_MODE targetMode, IOpcRelationship** relationship) CreateRelationship;
+			public function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipIdentifier) DeleteRelationship;
+			public function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipIdentifier, BOOL* relationshipExists) RelationshipExists;
+			public function HRESULT(IOpcRelationshipSet *self, IOpcRelationshipEnumerator** relationshipEnumerator) GetEnumerator;
+			public function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipType, IOpcRelationshipEnumerator** relationshipEnumerator) GetEnumeratorForType;
+			public function HRESULT(IOpcRelationshipSet *self, IStream** contents) GetRelationshipsContentStream;
+		}
+		[CRepr]
+		public struct IOpcPartEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0x42195949, 0x3b79, 0x4fc8, 0x89, 0xc6, 0xfc, 0x7f, 0xb9, 0x79, 0xee, 0x75);
+			
+			public function HRESULT(IOpcPartEnumerator *self, BOOL* hasNext) MoveNext;
+			public function HRESULT(IOpcPartEnumerator *self, BOOL* hasPrevious) MovePrevious;
+			public function HRESULT(IOpcPartEnumerator *self, IOpcPart** part) GetCurrent;
+			public function HRESULT(IOpcPartEnumerator *self, IOpcPartEnumerator** copy) Clone;
+		}
+		[CRepr]
+		public struct IOpcRelationshipEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0x42195949, 0x3b79, 0x4fc8, 0x89, 0xc6, 0xfc, 0x7f, 0xb9, 0x79, 0xee, 0x76);
+			
+			public function HRESULT(IOpcRelationshipEnumerator *self, BOOL* hasNext) MoveNext;
+			public function HRESULT(IOpcRelationshipEnumerator *self, BOOL* hasPrevious) MovePrevious;
+			public function HRESULT(IOpcRelationshipEnumerator *self, IOpcRelationship** relationship) GetCurrent;
+			public function HRESULT(IOpcRelationshipEnumerator *self, IOpcRelationshipEnumerator** copy) Clone;
+		}
+		[CRepr]
+		public struct IOpcSignaturePartReference : IUnknown
+		{
+			public const new Guid IID = .(0xe24231ca, 0x59f4, 0x484e, 0xb6, 0x4b, 0x36, 0xee, 0xda, 0x36, 0x07, 0x2c);
+			
+			public function HRESULT(IOpcSignaturePartReference *self, IOpcPartUri** partName) GetPartName;
+			public function HRESULT(IOpcSignaturePartReference *self, PWSTR* contentType) GetContentType;
+			public function HRESULT(IOpcSignaturePartReference *self, PWSTR* digestMethod) GetDigestMethod;
+			public function HRESULT(IOpcSignaturePartReference *self, uint8** digestValue, uint32* count) GetDigestValue;
+			public function HRESULT(IOpcSignaturePartReference *self, OPC_CANONICALIZATION_METHOD* transformMethod) GetTransformMethod;
+		}
+		[CRepr]
+		public struct IOpcSignatureRelationshipReference : IUnknown
+		{
+			public const new Guid IID = .(0x57babac6, 0x9d4a, 0x4e50, 0x8b, 0x86, 0xe5, 0xd4, 0x05, 0x1e, 0xae, 0x7c);
+			
+			public function HRESULT(IOpcSignatureRelationshipReference *self, IOpcUri** sourceUri) GetSourceUri;
+			public function HRESULT(IOpcSignatureRelationshipReference *self, PWSTR* digestMethod) GetDigestMethod;
+			public function HRESULT(IOpcSignatureRelationshipReference *self, uint8** digestValue, uint32* count) GetDigestValue;
+			public function HRESULT(IOpcSignatureRelationshipReference *self, OPC_CANONICALIZATION_METHOD* transformMethod) GetTransformMethod;
+			public function HRESULT(IOpcSignatureRelationshipReference *self, OPC_RELATIONSHIPS_SIGNING_OPTION* relationshipSigningOption) GetRelationshipSigningOption;
+			public function HRESULT(IOpcSignatureRelationshipReference *self, IOpcRelationshipSelectorEnumerator** selectorEnumerator) GetRelationshipSelectorEnumerator;
+		}
+		[CRepr]
+		public struct IOpcRelationshipSelector : IUnknown
+		{
+			public const new Guid IID = .(0xf8f26c7f, 0xb28f, 0x4899, 0x84, 0xc8, 0x5d, 0x56, 0x39, 0xed, 0xe7, 0x5f);
+			
+			public function HRESULT(IOpcRelationshipSelector *self, OPC_RELATIONSHIP_SELECTOR* selector) GetSelectorType;
+			public function HRESULT(IOpcRelationshipSelector *self, PWSTR* selectionCriterion) GetSelectionCriterion;
+		}
+		[CRepr]
+		public struct IOpcSignatureReference : IUnknown
+		{
+			public const new Guid IID = .(0x1b47005e, 0x3011, 0x4edc, 0xbe, 0x6f, 0x0f, 0x65, 0xe5, 0xab, 0x03, 0x42);
+			
+			public function HRESULT(IOpcSignatureReference *self, PWSTR* referenceId) GetId;
+			public function HRESULT(IOpcSignatureReference *self, IUri** referenceUri) GetUri;
+			public function HRESULT(IOpcSignatureReference *self, PWSTR* type) GetType;
+			public function HRESULT(IOpcSignatureReference *self, OPC_CANONICALIZATION_METHOD* transformMethod) GetTransformMethod;
+			public function HRESULT(IOpcSignatureReference *self, PWSTR* digestMethod) GetDigestMethod;
+			public function HRESULT(IOpcSignatureReference *self, uint8** digestValue, uint32* count) GetDigestValue;
+		}
+		[CRepr]
+		public struct IOpcSignatureCustomObject : IUnknown
+		{
+			public const new Guid IID = .(0x5d77a19e, 0x62c1, 0x44e7, 0xbe, 0xcd, 0x45, 0xda, 0x5a, 0xe5, 0x1a, 0x56);
+			
+			public function HRESULT(IOpcSignatureCustomObject *self, uint8** xmlMarkup, uint32* count) GetXml;
+		}
+		[CRepr]
+		public struct IOpcDigitalSignature : IUnknown
+		{
+			public const new Guid IID = .(0x52ab21dd, 0x1cd0, 0x4949, 0xbc, 0x80, 0x0c, 0x12, 0x32, 0xd0, 0x0c, 0xb4);
+			
+			public function HRESULT(IOpcDigitalSignature *self, PWSTR** prefixes, PWSTR** namespaces, uint32* count) GetNamespaces;
+			public function HRESULT(IOpcDigitalSignature *self, PWSTR* signatureId) GetSignatureId;
+			public function HRESULT(IOpcDigitalSignature *self, IOpcPartUri** signaturePartName) GetSignaturePartName;
+			public function HRESULT(IOpcDigitalSignature *self, PWSTR* signatureMethod) GetSignatureMethod;
+			public function HRESULT(IOpcDigitalSignature *self, OPC_CANONICALIZATION_METHOD* canonicalizationMethod) GetCanonicalizationMethod;
+			public function HRESULT(IOpcDigitalSignature *self, uint8** signatureValue, uint32* count) GetSignatureValue;
+			public function HRESULT(IOpcDigitalSignature *self, IOpcSignaturePartReferenceEnumerator** partReferenceEnumerator) GetSignaturePartReferenceEnumerator;
+			public function HRESULT(IOpcDigitalSignature *self, IOpcSignatureRelationshipReferenceEnumerator** relationshipReferenceEnumerator) GetSignatureRelationshipReferenceEnumerator;
+			public function HRESULT(IOpcDigitalSignature *self, PWSTR* signingTime) GetSigningTime;
+			public function HRESULT(IOpcDigitalSignature *self, OPC_SIGNATURE_TIME_FORMAT* timeFormat) GetTimeFormat;
+			public function HRESULT(IOpcDigitalSignature *self, IOpcSignatureReference** packageObjectReference) GetPackageObjectReference;
+			public function HRESULT(IOpcDigitalSignature *self, IOpcCertificateEnumerator** certificateEnumerator) GetCertificateEnumerator;
+			public function HRESULT(IOpcDigitalSignature *self, IOpcSignatureReferenceEnumerator** customReferenceEnumerator) GetCustomReferenceEnumerator;
+			public function HRESULT(IOpcDigitalSignature *self, IOpcSignatureCustomObjectEnumerator** customObjectEnumerator) GetCustomObjectEnumerator;
+			public function HRESULT(IOpcDigitalSignature *self, uint8** signatureXml, uint32* count) GetSignatureXml;
+		}
+		[CRepr]
+		public struct IOpcSigningOptions : IUnknown
+		{
+			public const new Guid IID = .(0x50d2d6a5, 0x7aeb, 0x46c0, 0xb2, 0x41, 0x43, 0xab, 0x0e, 0x9b, 0x40, 0x7e);
+			
+			public function HRESULT(IOpcSigningOptions *self, PWSTR* signatureId) GetSignatureId;
+			public function HRESULT(IOpcSigningOptions *self, PWSTR signatureId) SetSignatureId;
+			public function HRESULT(IOpcSigningOptions *self, PWSTR* signatureMethod) GetSignatureMethod;
+			public function HRESULT(IOpcSigningOptions *self, PWSTR signatureMethod) SetSignatureMethod;
+			public function HRESULT(IOpcSigningOptions *self, PWSTR* digestMethod) GetDefaultDigestMethod;
+			public function HRESULT(IOpcSigningOptions *self, PWSTR digestMethod) SetDefaultDigestMethod;
+			public function HRESULT(IOpcSigningOptions *self, OPC_CERTIFICATE_EMBEDDING_OPTION* embeddingOption) GetCertificateEmbeddingOption;
+			public function HRESULT(IOpcSigningOptions *self, OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) SetCertificateEmbeddingOption;
+			public function HRESULT(IOpcSigningOptions *self, OPC_SIGNATURE_TIME_FORMAT* timeFormat) GetTimeFormat;
+			public function HRESULT(IOpcSigningOptions *self, OPC_SIGNATURE_TIME_FORMAT timeFormat) SetTimeFormat;
+			public function HRESULT(IOpcSigningOptions *self, IOpcSignaturePartReferenceSet** partReferenceSet) GetSignaturePartReferenceSet;
+			public function HRESULT(IOpcSigningOptions *self, IOpcSignatureRelationshipReferenceSet** relationshipReferenceSet) GetSignatureRelationshipReferenceSet;
+			public function HRESULT(IOpcSigningOptions *self, IOpcSignatureCustomObjectSet** customObjectSet) GetCustomObjectSet;
+			public function HRESULT(IOpcSigningOptions *self, IOpcSignatureReferenceSet** customReferenceSet) GetCustomReferenceSet;
+			public function HRESULT(IOpcSigningOptions *self, IOpcCertificateSet** certificateSet) GetCertificateSet;
+			public function HRESULT(IOpcSigningOptions *self, IOpcPartUri** signaturePartName) GetSignaturePartName;
+			public function HRESULT(IOpcSigningOptions *self, IOpcPartUri* signaturePartName) SetSignaturePartName;
+		}
+		[CRepr]
+		public struct IOpcDigitalSignatureManager : IUnknown
+		{
+			public const new Guid IID = .(0xd5e62a0b, 0x696d, 0x462f, 0x94, 0xdf, 0x72, 0xe3, 0x3c, 0xef, 0x26, 0x59);
+			
+			public function HRESULT(IOpcDigitalSignatureManager *self, IOpcPartUri** signatureOriginPartName) GetSignatureOriginPartName;
+			public function HRESULT(IOpcDigitalSignatureManager *self, IOpcPartUri* signatureOriginPartName) SetSignatureOriginPartName;
+			public function HRESULT(IOpcDigitalSignatureManager *self, IOpcDigitalSignatureEnumerator** signatureEnumerator) GetSignatureEnumerator;
+			public function HRESULT(IOpcDigitalSignatureManager *self, IOpcPartUri* signaturePartName) RemoveSignature;
+			public function HRESULT(IOpcDigitalSignatureManager *self, IOpcSigningOptions** signingOptions) CreateSigningOptions;
+			public function HRESULT(IOpcDigitalSignatureManager *self, IOpcDigitalSignature* signature, CERT_CONTEXT* certificate, OPC_SIGNATURE_VALIDATION_RESULT* validationResult) Validate;
+			public function HRESULT(IOpcDigitalSignatureManager *self, CERT_CONTEXT* certificate, IOpcSigningOptions* signingOptions, IOpcDigitalSignature** digitalSignature) Sign;
+			public function HRESULT(IOpcDigitalSignatureManager *self, IOpcPartUri* signaturePartName, uint8* newSignatureXml, uint32 count, IOpcDigitalSignature** digitalSignature) ReplaceSignatureXml;
+		}
+		[CRepr]
+		public struct IOpcSignaturePartReferenceEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0x80eb1561, 0x8c77, 0x49cf, 0x82, 0x66, 0x45, 0x9b, 0x35, 0x6e, 0xe9, 0x9a);
+			
+			public function HRESULT(IOpcSignaturePartReferenceEnumerator *self, BOOL* hasNext) MoveNext;
+			public function HRESULT(IOpcSignaturePartReferenceEnumerator *self, BOOL* hasPrevious) MovePrevious;
+			public function HRESULT(IOpcSignaturePartReferenceEnumerator *self, IOpcSignaturePartReference** partReference) GetCurrent;
+			public function HRESULT(IOpcSignaturePartReferenceEnumerator *self, IOpcSignaturePartReferenceEnumerator** copy) Clone;
+		}
+		[CRepr]
+		public struct IOpcSignatureRelationshipReferenceEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0x773ba3e4, 0xf021, 0x48e4, 0xaa, 0x04, 0x98, 0x16, 0xdb, 0x5d, 0x34, 0x95);
+			
+			public function HRESULT(IOpcSignatureRelationshipReferenceEnumerator *self, BOOL* hasNext) MoveNext;
+			public function HRESULT(IOpcSignatureRelationshipReferenceEnumerator *self, BOOL* hasPrevious) MovePrevious;
+			public function HRESULT(IOpcSignatureRelationshipReferenceEnumerator *self, IOpcSignatureRelationshipReference** relationshipReference) GetCurrent;
+			public function HRESULT(IOpcSignatureRelationshipReferenceEnumerator *self, IOpcSignatureRelationshipReferenceEnumerator** copy) Clone;
+		}
+		[CRepr]
+		public struct IOpcRelationshipSelectorEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0x5e50a181, 0xa91b, 0x48ac, 0x88, 0xd2, 0xbc, 0xa3, 0xd8, 0xf8, 0xc0, 0xb1);
+			
+			public function HRESULT(IOpcRelationshipSelectorEnumerator *self, BOOL* hasNext) MoveNext;
+			public function HRESULT(IOpcRelationshipSelectorEnumerator *self, BOOL* hasPrevious) MovePrevious;
+			public function HRESULT(IOpcRelationshipSelectorEnumerator *self, IOpcRelationshipSelector** relationshipSelector) GetCurrent;
+			public function HRESULT(IOpcRelationshipSelectorEnumerator *self, IOpcRelationshipSelectorEnumerator** copy) Clone;
+		}
+		[CRepr]
+		public struct IOpcSignatureReferenceEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0xcfa59a45, 0x28b1, 0x4868, 0x96, 0x9e, 0xfa, 0x80, 0x97, 0xfd, 0xc1, 0x2a);
+			
+			public function HRESULT(IOpcSignatureReferenceEnumerator *self, BOOL* hasNext) MoveNext;
+			public function HRESULT(IOpcSignatureReferenceEnumerator *self, BOOL* hasPrevious) MovePrevious;
+			public function HRESULT(IOpcSignatureReferenceEnumerator *self, IOpcSignatureReference** reference) GetCurrent;
+			public function HRESULT(IOpcSignatureReferenceEnumerator *self, IOpcSignatureReferenceEnumerator** copy) Clone;
+		}
+		[CRepr]
+		public struct IOpcSignatureCustomObjectEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0x5ee4fe1d, 0xe1b0, 0x4683, 0x80, 0x79, 0x7e, 0xa0, 0xfc, 0xf8, 0x0b, 0x4c);
+			
+			public function HRESULT(IOpcSignatureCustomObjectEnumerator *self, BOOL* hasNext) MoveNext;
+			public function HRESULT(IOpcSignatureCustomObjectEnumerator *self, BOOL* hasPrevious) MovePrevious;
+			public function HRESULT(IOpcSignatureCustomObjectEnumerator *self, IOpcSignatureCustomObject** customObject) GetCurrent;
+			public function HRESULT(IOpcSignatureCustomObjectEnumerator *self, IOpcSignatureCustomObjectEnumerator** copy) Clone;
+		}
+		[CRepr]
+		public struct IOpcCertificateEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0x85131937, 0x8f24, 0x421f, 0xb4, 0x39, 0x59, 0xab, 0x24, 0xd1, 0x40, 0xb8);
+			
+			public function HRESULT(IOpcCertificateEnumerator *self, BOOL* hasNext) MoveNext;
+			public function HRESULT(IOpcCertificateEnumerator *self, BOOL* hasPrevious) MovePrevious;
+			public function HRESULT(IOpcCertificateEnumerator *self, CERT_CONTEXT** certificate) GetCurrent;
+			public function HRESULT(IOpcCertificateEnumerator *self, IOpcCertificateEnumerator** copy) Clone;
+		}
+		[CRepr]
+		public struct IOpcDigitalSignatureEnumerator : IUnknown
+		{
+			public const new Guid IID = .(0x967b6882, 0x0ba3, 0x4358, 0xb9, 0xe7, 0xb6, 0x4c, 0x75, 0x06, 0x3c, 0x5e);
+			
+			public function HRESULT(IOpcDigitalSignatureEnumerator *self, BOOL* hasNext) MoveNext;
+			public function HRESULT(IOpcDigitalSignatureEnumerator *self, BOOL* hasPrevious) MovePrevious;
+			public function HRESULT(IOpcDigitalSignatureEnumerator *self, IOpcDigitalSignature** digitalSignature) GetCurrent;
+			public function HRESULT(IOpcDigitalSignatureEnumerator *self, IOpcDigitalSignatureEnumerator** copy) Clone;
+		}
+		[CRepr]
+		public struct IOpcSignaturePartReferenceSet : IUnknown
+		{
+			public const new Guid IID = .(0x6c9fe28c, 0xecd9, 0x4b22, 0x9d, 0x36, 0x7f, 0xdd, 0xe6, 0x70, 0xfe, 0xc0);
+			
+			public function HRESULT(IOpcSignaturePartReferenceSet *self, IOpcPartUri* partUri, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignaturePartReference** partReference) Create;
+			public function HRESULT(IOpcSignaturePartReferenceSet *self, IOpcSignaturePartReference* partReference) Delete;
+			public function HRESULT(IOpcSignaturePartReferenceSet *self, IOpcSignaturePartReferenceEnumerator** partReferenceEnumerator) GetEnumerator;
+		}
+		[CRepr]
+		public struct IOpcSignatureRelationshipReferenceSet : IUnknown
+		{
+			public const new Guid IID = .(0x9f863ca5, 0x3631, 0x404c, 0x82, 0x8d, 0x80, 0x7e, 0x07, 0x15, 0x06, 0x9b);
+			
+			public function HRESULT(IOpcSignatureRelationshipReferenceSet *self, IOpcUri* sourceUri, PWSTR digestMethod, OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption, IOpcRelationshipSelectorSet* selectorSet, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureRelationshipReference** relationshipReference) Create;
+			public function HRESULT(IOpcSignatureRelationshipReferenceSet *self, IOpcRelationshipSelectorSet** selectorSet) CreateRelationshipSelectorSet;
+			public function HRESULT(IOpcSignatureRelationshipReferenceSet *self, IOpcSignatureRelationshipReference* relationshipReference) Delete;
+			public function HRESULT(IOpcSignatureRelationshipReferenceSet *self, IOpcSignatureRelationshipReferenceEnumerator** relationshipReferenceEnumerator) GetEnumerator;
+		}
+		[CRepr]
+		public struct IOpcRelationshipSelectorSet : IUnknown
+		{
+			public const new Guid IID = .(0x6e34c269, 0xa4d3, 0x47c0, 0xb5, 0xc4, 0x87, 0xff, 0x2b, 0x3b, 0x61, 0x36);
+			
+			public function HRESULT(IOpcRelationshipSelectorSet *self, OPC_RELATIONSHIP_SELECTOR selector, PWSTR selectionCriterion, IOpcRelationshipSelector** relationshipSelector) Create;
+			public function HRESULT(IOpcRelationshipSelectorSet *self, IOpcRelationshipSelector* relationshipSelector) Delete;
+			public function HRESULT(IOpcRelationshipSelectorSet *self, IOpcRelationshipSelectorEnumerator** relationshipSelectorEnumerator) GetEnumerator;
+		}
+		[CRepr]
+		public struct IOpcSignatureReferenceSet : IUnknown
+		{
+			public const new Guid IID = .(0xf3b02d31, 0xab12, 0x42dd, 0x9e, 0x2f, 0x2b, 0x16, 0x76, 0x1c, 0x3c, 0x1e);
+			
+			public function HRESULT(IOpcSignatureReferenceSet *self, IUri* referenceUri, PWSTR referenceId, PWSTR type, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureReference** reference) Create;
+			public function HRESULT(IOpcSignatureReferenceSet *self, IOpcSignatureReference* reference) Delete;
+			public function HRESULT(IOpcSignatureReferenceSet *self, IOpcSignatureReferenceEnumerator** referenceEnumerator) GetEnumerator;
+		}
+		[CRepr]
+		public struct IOpcSignatureCustomObjectSet : IUnknown
+		{
+			public const new Guid IID = .(0x8f792ac5, 0x7947, 0x4e11, 0xbc, 0x3d, 0x26, 0x59, 0xff, 0x04, 0x6a, 0xe1);
+			
+			public function HRESULT(IOpcSignatureCustomObjectSet *self, uint8* xmlMarkup, uint32 count, IOpcSignatureCustomObject** customObject) Create;
+			public function HRESULT(IOpcSignatureCustomObjectSet *self, IOpcSignatureCustomObject* customObject) Delete;
+			public function HRESULT(IOpcSignatureCustomObjectSet *self, IOpcSignatureCustomObjectEnumerator** customObjectEnumerator) GetEnumerator;
+		}
+		[CRepr]
+		public struct IOpcCertificateSet : IUnknown
+		{
+			public const new Guid IID = .(0x56ea4325, 0x8e2d, 0x4167, 0xb1, 0xa4, 0xe4, 0x86, 0xd2, 0x4c, 0x8f, 0xa7);
+			
+			public function HRESULT(IOpcCertificateSet *self, CERT_CONTEXT* certificate) Add;
+			public function HRESULT(IOpcCertificateSet *self, CERT_CONTEXT* certificate) Remove;
+			public function HRESULT(IOpcCertificateSet *self, IOpcCertificateEnumerator** certificateEnumerator) GetEnumerator;
+		}
+		[CRepr]
+		public struct IOpcFactory : IUnknown
+		{
+			public const new Guid IID = .(0x6d0b4446, 0xcd73, 0x4ab3, 0x94, 0xf4, 0x8c, 0xcd, 0xf6, 0x11, 0x61, 0x54);
+			
+			public function HRESULT(IOpcFactory *self, IOpcUri** rootUri) CreatePackageRootUri;
+			public function HRESULT(IOpcFactory *self, PWSTR pwzUri, IOpcPartUri** partUri) CreatePartUri;
+			public function HRESULT(IOpcFactory *self, PWSTR filename, OPC_STREAM_IO_MODE ioMode, SECURITY_ATTRIBUTES* securityAttributes, uint32 dwFlagsAndAttributes, IStream** stream) CreateStreamOnFile;
+			public function HRESULT(IOpcFactory *self, IOpcPackage** package) CreatePackage;
+			public function HRESULT(IOpcFactory *self, IStream* stream, OPC_READ_FLAGS flags, IOpcPackage** package) ReadPackageFromStream;
+			public function HRESULT(IOpcFactory *self, IOpcPackage* package, OPC_WRITE_FLAGS flags, IStream* stream) WritePackageToStream;
+			public function HRESULT(IOpcFactory *self, IOpcPackage* package, IOpcDigitalSignatureManager** signatureManager) CreateDigitalSignatureManager;
+		}
 		
 	}
 }

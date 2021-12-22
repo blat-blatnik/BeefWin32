@@ -6207,12 +6207,72 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IAVIStream {}
-		public struct IAVIStreaming {}
-		public struct IAVIEditStream {}
-		public struct IAVIPersistFile {}
-		public struct IAVIFile {}
-		public struct IGetFrame {}
+		[CRepr]
+		public struct IAVIStream : IUnknown
+		{
+			public const new Guid IID = .(0x00020021, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IAVIStream *self, LPARAM lParam1, LPARAM lParam2) Create;
+			public function HRESULT(IAVIStream *self, AVISTREAMINFOW* psi, int32 lSize) Info;
+			public function int32(IAVIStream *self, int32 lPos, int32 lFlags) FindSample;
+			public function HRESULT(IAVIStream *self, int32 lPos, void* lpFormat, int32* lpcbFormat) ReadFormat;
+			public function HRESULT(IAVIStream *self, int32 lPos, void* lpFormat, int32 cbFormat) SetFormat;
+			public function HRESULT(IAVIStream *self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, int32* plBytes, int32* plSamples) Read;
+			public function HRESULT(IAVIStream *self, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, uint32 dwFlags, int32* plSampWritten, int32* plBytesWritten) Write;
+			public function HRESULT(IAVIStream *self, int32 lStart, int32 lSamples) Delete;
+			public function HRESULT(IAVIStream *self, uint32 fcc, void* lp, int32* lpcb) ReadData;
+			public function HRESULT(IAVIStream *self, uint32 fcc, void* lp, int32 cb) WriteData;
+			public function HRESULT(IAVIStream *self, AVISTREAMINFOW* lpInfo, int32 cbInfo) SetInfo;
+		}
+		[CRepr]
+		public struct IAVIStreaming : IUnknown
+		{
+			public const new Guid IID = .(0x00020022, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IAVIStreaming *self, int32 lStart, int32 lEnd, int32 lRate) Begin;
+			public function HRESULT(IAVIStreaming *self) End;
+		}
+		[CRepr]
+		public struct IAVIEditStream : IUnknown
+		{
+			public const new Guid IID = .(0x00020024, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IAVIEditStream *self, int32* plStart, int32* plLength, IAVIStream** ppResult) Cut;
+			public function HRESULT(IAVIEditStream *self, int32* plStart, int32* plLength, IAVIStream** ppResult) Copy;
+			public function HRESULT(IAVIEditStream *self, int32* plPos, int32* plLength, IAVIStream* pstream, int32 lStart, int32 lEnd) Paste;
+			public function HRESULT(IAVIEditStream *self, IAVIStream** ppResult) Clone;
+			public function HRESULT(IAVIEditStream *self, AVISTREAMINFOW* lpInfo, int32 cbInfo) SetInfo;
+		}
+		[CRepr]
+		public struct IAVIPersistFile : IPersistFile
+		{
+			public const new Guid IID = .(0x00020025, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IAVIPersistFile *self) Reserved1;
+		}
+		[CRepr]
+		public struct IAVIFile : IUnknown
+		{
+			public const new Guid IID = .(0x00020020, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IAVIFile *self, AVIFILEINFOW* pfi, int32 lSize) Info;
+			public function HRESULT(IAVIFile *self, IAVIStream** ppStream, uint32 fccType, int32 lParam) GetStream;
+			public function HRESULT(IAVIFile *self, IAVIStream** ppStream, AVISTREAMINFOW* psi) CreateStream;
+			public function HRESULT(IAVIFile *self, uint32 ckid, void* lpData, int32 cbData) WriteData;
+			public function HRESULT(IAVIFile *self, uint32 ckid, void* lpData, int32* lpcbData) ReadData;
+			public function HRESULT(IAVIFile *self) EndRecord;
+			public function HRESULT(IAVIFile *self, uint32 fccType, int32 lParam) DeleteStream;
+		}
+		[CRepr]
+		public struct IGetFrame : IUnknown
+		{
+			public const new Guid IID = .(0x00020023, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function void*(IGetFrame *self, int32 lPos) GetFrame;
+			public function HRESULT(IGetFrame *self, int32 lStart, int32 lEnd, int32 lRate) Begin;
+			public function HRESULT(IGetFrame *self) End;
+			public function HRESULT(IGetFrame *self, BITMAPINFOHEADER* lpbi, void* lpBits, int32 x, int32 y, int32 dx, int32 dy) SetFormat;
+		}
 		
 		// --- Functions ---
 		
@@ -6409,87 +6469,87 @@ namespace Win32
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void AVIFileExit();
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 AVIFileAddRef(IAVIFile pfile);
+		public static extern uint32 AVIFileAddRef(IAVIFile* pfile);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 AVIFileRelease(IAVIFile pfile);
+		public static extern uint32 AVIFileRelease(IAVIFile* pfile);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileOpenA(IAVIFile* ppfile, PSTR szFile, uint32 uMode, Guid* lpHandler);
+		public static extern HRESULT AVIFileOpenA(IAVIFile** ppfile, PSTR szFile, uint32 uMode, Guid* lpHandler);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileOpenW(IAVIFile* ppfile, PWSTR szFile, uint32 uMode, Guid* lpHandler);
+		public static extern HRESULT AVIFileOpenW(IAVIFile** ppfile, PWSTR szFile, uint32 uMode, Guid* lpHandler);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileInfoW(IAVIFile pfile, AVIFILEINFOW* pfi, int32 lSize);
+		public static extern HRESULT AVIFileInfoW(IAVIFile* pfile, AVIFILEINFOW* pfi, int32 lSize);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileInfoA(IAVIFile pfile, AVIFILEINFOA* pfi, int32 lSize);
+		public static extern HRESULT AVIFileInfoA(IAVIFile* pfile, AVIFILEINFOA* pfi, int32 lSize);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileGetStream(IAVIFile pfile, IAVIStream* ppavi, uint32 fccType, int32 lParam);
+		public static extern HRESULT AVIFileGetStream(IAVIFile* pfile, IAVIStream** ppavi, uint32 fccType, int32 lParam);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileCreateStreamW(IAVIFile pfile, IAVIStream* ppavi, AVISTREAMINFOW* psi);
+		public static extern HRESULT AVIFileCreateStreamW(IAVIFile* pfile, IAVIStream** ppavi, AVISTREAMINFOW* psi);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileCreateStreamA(IAVIFile pfile, IAVIStream* ppavi, AVISTREAMINFOA* psi);
+		public static extern HRESULT AVIFileCreateStreamA(IAVIFile* pfile, IAVIStream** ppavi, AVISTREAMINFOA* psi);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileWriteData(IAVIFile pfile, uint32 ckid, void* lpData, int32 cbData);
+		public static extern HRESULT AVIFileWriteData(IAVIFile* pfile, uint32 ckid, void* lpData, int32 cbData);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileReadData(IAVIFile pfile, uint32 ckid, void* lpData, int32* lpcbData);
+		public static extern HRESULT AVIFileReadData(IAVIFile* pfile, uint32 ckid, void* lpData, int32* lpcbData);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIFileEndRecord(IAVIFile pfile);
+		public static extern HRESULT AVIFileEndRecord(IAVIFile* pfile);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 AVIStreamAddRef(IAVIStream pavi);
+		public static extern uint32 AVIStreamAddRef(IAVIStream* pavi);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 AVIStreamRelease(IAVIStream pavi);
+		public static extern uint32 AVIStreamRelease(IAVIStream* pavi);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamInfoW(IAVIStream pavi, AVISTREAMINFOW* psi, int32 lSize);
+		public static extern HRESULT AVIStreamInfoW(IAVIStream* pavi, AVISTREAMINFOW* psi, int32 lSize);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamInfoA(IAVIStream pavi, AVISTREAMINFOA* psi, int32 lSize);
+		public static extern HRESULT AVIStreamInfoA(IAVIStream* pavi, AVISTREAMINFOA* psi, int32 lSize);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 AVIStreamFindSample(IAVIStream pavi, int32 lPos, int32 lFlags);
+		public static extern int32 AVIStreamFindSample(IAVIStream* pavi, int32 lPos, int32 lFlags);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamReadFormat(IAVIStream pavi, int32 lPos, void* lpFormat, int32* lpcbFormat);
+		public static extern HRESULT AVIStreamReadFormat(IAVIStream* pavi, int32 lPos, void* lpFormat, int32* lpcbFormat);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamSetFormat(IAVIStream pavi, int32 lPos, void* lpFormat, int32 cbFormat);
+		public static extern HRESULT AVIStreamSetFormat(IAVIStream* pavi, int32 lPos, void* lpFormat, int32 cbFormat);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamReadData(IAVIStream pavi, uint32 fcc, void* lp, int32* lpcb);
+		public static extern HRESULT AVIStreamReadData(IAVIStream* pavi, uint32 fcc, void* lp, int32* lpcb);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamWriteData(IAVIStream pavi, uint32 fcc, void* lp, int32 cb);
+		public static extern HRESULT AVIStreamWriteData(IAVIStream* pavi, uint32 fcc, void* lp, int32 cb);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamRead(IAVIStream pavi, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, int32* plBytes, int32* plSamples);
+		public static extern HRESULT AVIStreamRead(IAVIStream* pavi, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, int32* plBytes, int32* plSamples);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamWrite(IAVIStream pavi, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, uint32 dwFlags, int32* plSampWritten, int32* plBytesWritten);
+		public static extern HRESULT AVIStreamWrite(IAVIStream* pavi, int32 lStart, int32 lSamples, void* lpBuffer, int32 cbBuffer, uint32 dwFlags, int32* plSampWritten, int32* plBytesWritten);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 AVIStreamStart(IAVIStream pavi);
+		public static extern int32 AVIStreamStart(IAVIStream* pavi);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 AVIStreamLength(IAVIStream pavi);
+		public static extern int32 AVIStreamLength(IAVIStream* pavi);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 AVIStreamTimeToSample(IAVIStream pavi, int32 lTime);
+		public static extern int32 AVIStreamTimeToSample(IAVIStream* pavi, int32 lTime);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 AVIStreamSampleToTime(IAVIStream pavi, int32 lSample);
+		public static extern int32 AVIStreamSampleToTime(IAVIStream* pavi, int32 lSample);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamBeginStreaming(IAVIStream pavi, int32 lStart, int32 lEnd, int32 lRate);
+		public static extern HRESULT AVIStreamBeginStreaming(IAVIStream* pavi, int32 lStart, int32 lEnd, int32 lRate);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamEndStreaming(IAVIStream pavi);
+		public static extern HRESULT AVIStreamEndStreaming(IAVIStream* pavi);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern IGetFrame AVIStreamGetFrameOpen(IAVIStream pavi, BITMAPINFOHEADER* lpbiWanted);
+		public static extern IGetFrame* AVIStreamGetFrameOpen(IAVIStream* pavi, BITMAPINFOHEADER* lpbiWanted);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* AVIStreamGetFrame(IGetFrame pg, int32 lPos);
+		public static extern void* AVIStreamGetFrame(IGetFrame* pg, int32 lPos);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamGetFrameClose(IGetFrame pg);
+		public static extern HRESULT AVIStreamGetFrameClose(IGetFrame* pg);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamOpenFromFileA(IAVIStream* ppavi, PSTR szFile, uint32 fccType, int32 lParam, uint32 mode, Guid* pclsidHandler);
+		public static extern HRESULT AVIStreamOpenFromFileA(IAVIStream** ppavi, PSTR szFile, uint32 fccType, int32 lParam, uint32 mode, Guid* pclsidHandler);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamOpenFromFileW(IAVIStream* ppavi, PWSTR szFile, uint32 fccType, int32 lParam, uint32 mode, Guid* pclsidHandler);
+		public static extern HRESULT AVIStreamOpenFromFileW(IAVIStream** ppavi, PWSTR szFile, uint32 fccType, int32 lParam, uint32 mode, Guid* pclsidHandler);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIStreamCreate(IAVIStream* ppavi, int32 lParam1, int32 lParam2, Guid* pclsidHandler);
+		public static extern HRESULT AVIStreamCreate(IAVIStream** ppavi, int32 lParam1, int32 lParam2, Guid* pclsidHandler);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIMakeCompressedStream(IAVIStream* ppsCompressed, IAVIStream ppsSource, AVICOMPRESSOPTIONS* lpOptions, Guid* pclsidHandler);
+		public static extern HRESULT AVIMakeCompressedStream(IAVIStream** ppsCompressed, IAVIStream* ppsSource, AVICOMPRESSOPTIONS* lpOptions, Guid* pclsidHandler);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVISaveA(PSTR szFile, Guid* pclsidHandler, AVISAVECALLBACK lpfnCallback, int32 nStreams, IAVIStream pfile, AVICOMPRESSOPTIONS* lpOptions);
+		public static extern HRESULT AVISaveA(PSTR szFile, Guid* pclsidHandler, AVISAVECALLBACK lpfnCallback, int32 nStreams, IAVIStream* pfile, AVICOMPRESSOPTIONS* lpOptions);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVISaveVA(PSTR szFile, Guid* pclsidHandler, AVISAVECALLBACK lpfnCallback, int32 nStreams, IAVIStream* ppavi, AVICOMPRESSOPTIONS** plpOptions);
+		public static extern HRESULT AVISaveVA(PSTR szFile, Guid* pclsidHandler, AVISAVECALLBACK lpfnCallback, int32 nStreams, IAVIStream** ppavi, AVICOMPRESSOPTIONS** plpOptions);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVISaveW(PWSTR szFile, Guid* pclsidHandler, AVISAVECALLBACK lpfnCallback, int32 nStreams, IAVIStream pfile, AVICOMPRESSOPTIONS* lpOptions);
+		public static extern HRESULT AVISaveW(PWSTR szFile, Guid* pclsidHandler, AVISAVECALLBACK lpfnCallback, int32 nStreams, IAVIStream* pfile, AVICOMPRESSOPTIONS* lpOptions);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVISaveVW(PWSTR szFile, Guid* pclsidHandler, AVISAVECALLBACK lpfnCallback, int32 nStreams, IAVIStream* ppavi, AVICOMPRESSOPTIONS** plpOptions);
+		public static extern HRESULT AVISaveVW(PWSTR szFile, Guid* pclsidHandler, AVISAVECALLBACK lpfnCallback, int32 nStreams, IAVIStream** ppavi, AVICOMPRESSOPTIONS** plpOptions);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int AVISaveOptions(HWND hwnd, uint32 uiFlags, int32 nStreams, IAVIStream* ppavi, AVICOMPRESSOPTIONS** plpOptions);
+		public static extern int AVISaveOptions(HWND hwnd, uint32 uiFlags, int32 nStreams, IAVIStream** ppavi, AVICOMPRESSOPTIONS** plpOptions);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT AVISaveOptionsFree(int32 nStreams, AVICOMPRESSOPTIONS** plpOptions);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6497,33 +6557,33 @@ namespace Win32
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT AVIBuildFilterA(uint8* lpszFilter, int32 cbFilter, BOOL fSaving);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIMakeFileFromStreams(IAVIFile* ppfile, int32 nStreams, IAVIStream* papStreams);
+		public static extern HRESULT AVIMakeFileFromStreams(IAVIFile** ppfile, int32 nStreams, IAVIStream** papStreams);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIMakeStreamFromClipboard(uint32 cfFormat, HANDLE hGlobal, IAVIStream* ppstream);
+		public static extern HRESULT AVIMakeStreamFromClipboard(uint32 cfFormat, HANDLE hGlobal, IAVIStream** ppstream);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIPutFileOnClipboard(IAVIFile pf);
+		public static extern HRESULT AVIPutFileOnClipboard(IAVIFile* pf);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AVIGetFromClipboard(IAVIFile* lppf);
+		public static extern HRESULT AVIGetFromClipboard(IAVIFile** lppf);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT AVIClearClipboard();
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateEditableStream(IAVIStream* ppsEditable, IAVIStream psSource);
+		public static extern HRESULT CreateEditableStream(IAVIStream** ppsEditable, IAVIStream* psSource);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EditStreamCut(IAVIStream pavi, int32* plStart, int32* plLength, IAVIStream* ppResult);
+		public static extern HRESULT EditStreamCut(IAVIStream* pavi, int32* plStart, int32* plLength, IAVIStream** ppResult);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EditStreamCopy(IAVIStream pavi, int32* plStart, int32* plLength, IAVIStream* ppResult);
+		public static extern HRESULT EditStreamCopy(IAVIStream* pavi, int32* plStart, int32* plLength, IAVIStream** ppResult);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EditStreamPaste(IAVIStream pavi, int32* plPos, int32* plLength, IAVIStream pstream, int32 lStart, int32 lEnd);
+		public static extern HRESULT EditStreamPaste(IAVIStream* pavi, int32* plPos, int32* plLength, IAVIStream* pstream, int32 lStart, int32 lEnd);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EditStreamClone(IAVIStream pavi, IAVIStream* ppResult);
+		public static extern HRESULT EditStreamClone(IAVIStream* pavi, IAVIStream** ppResult);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EditStreamSetNameA(IAVIStream pavi, PSTR lpszName);
+		public static extern HRESULT EditStreamSetNameA(IAVIStream* pavi, PSTR lpszName);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EditStreamSetNameW(IAVIStream pavi, PWSTR lpszName);
+		public static extern HRESULT EditStreamSetNameW(IAVIStream* pavi, PWSTR lpszName);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EditStreamSetInfoW(IAVIStream pavi, AVISTREAMINFOW* lpInfo, int32 cbInfo);
+		public static extern HRESULT EditStreamSetInfoW(IAVIStream* pavi, AVISTREAMINFOW* lpInfo, int32 cbInfo);
 		[Import("avifil32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EditStreamSetInfoA(IAVIStream pavi, AVISTREAMINFOA* lpInfo, int32 cbInfo);
+		public static extern HRESULT EditStreamSetInfoA(IAVIStream* pavi, AVISTREAMINFOA* lpInfo, int32 cbInfo);
 		[Import("msvfw32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HWND MCIWndCreateA(HWND hwndParent, HINSTANCE hInstance, uint32 dwStyle, PSTR szFile);
 		[Import("msvfw32.dll"), CLink, CallingConvention(.Stdcall)]

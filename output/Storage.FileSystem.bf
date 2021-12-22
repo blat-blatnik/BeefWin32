@@ -3545,11 +3545,81 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IDiskQuotaUser {}
-		public struct IEnumDiskQuotaUsers {}
-		public struct IDiskQuotaUserBatch {}
-		public struct IDiskQuotaControl {}
-		public struct IDiskQuotaEvents {}
+		[CRepr]
+		public struct IDiskQuotaUser : IUnknown
+		{
+			public const new Guid IID = .(0x7988b574, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
+			
+			public function HRESULT(IDiskQuotaUser *self, uint32* pulID) GetID;
+			public function HRESULT(IDiskQuotaUser *self, PWSTR pszAccountContainer, uint32 cchAccountContainer, PWSTR pszLogonName, uint32 cchLogonName, PWSTR pszDisplayName, uint32 cchDisplayName) GetName;
+			public function HRESULT(IDiskQuotaUser *self, uint32* pdwLength) GetSidLength;
+			public function HRESULT(IDiskQuotaUser *self, uint8* pbSidBuffer, uint32 cbSidBuffer) GetSid;
+			public function HRESULT(IDiskQuotaUser *self, int64* pllThreshold) GetQuotaThreshold;
+			public function HRESULT(IDiskQuotaUser *self, PWSTR pszText, uint32 cchText) GetQuotaThresholdText;
+			public function HRESULT(IDiskQuotaUser *self, int64* pllLimit) GetQuotaLimit;
+			public function HRESULT(IDiskQuotaUser *self, PWSTR pszText, uint32 cchText) GetQuotaLimitText;
+			public function HRESULT(IDiskQuotaUser *self, int64* pllUsed) GetQuotaUsed;
+			public function HRESULT(IDiskQuotaUser *self, PWSTR pszText, uint32 cchText) GetQuotaUsedText;
+			public function HRESULT(IDiskQuotaUser *self, void* pbQuotaInfo, uint32 cbQuotaInfo) GetQuotaInformation;
+			public function HRESULT(IDiskQuotaUser *self, int64 llThreshold, BOOL fWriteThrough) SetQuotaThreshold;
+			public function HRESULT(IDiskQuotaUser *self, int64 llLimit, BOOL fWriteThrough) SetQuotaLimit;
+			public function HRESULT(IDiskQuotaUser *self) Invalidate;
+			public function HRESULT(IDiskQuotaUser *self, uint32* pdwStatus) GetAccountStatus;
+		}
+		[CRepr]
+		public struct IEnumDiskQuotaUsers : IUnknown
+		{
+			public const new Guid IID = .(0x7988b577, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
+			
+			public function HRESULT(IEnumDiskQuotaUsers *self, uint32 cUsers, IDiskQuotaUser** rgUsers, uint32* pcUsersFetched) Next;
+			public function HRESULT(IEnumDiskQuotaUsers *self, uint32 cUsers) Skip;
+			public function HRESULT(IEnumDiskQuotaUsers *self) Reset;
+			public function HRESULT(IEnumDiskQuotaUsers *self, IEnumDiskQuotaUsers** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IDiskQuotaUserBatch : IUnknown
+		{
+			public const new Guid IID = .(0x7988b576, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
+			
+			public function HRESULT(IDiskQuotaUserBatch *self, IDiskQuotaUser* pUser) Add;
+			public function HRESULT(IDiskQuotaUserBatch *self, IDiskQuotaUser* pUser) Remove;
+			public function HRESULT(IDiskQuotaUserBatch *self) RemoveAll;
+			public function HRESULT(IDiskQuotaUserBatch *self) FlushToDisk;
+		}
+		[CRepr]
+		public struct IDiskQuotaControl : IConnectionPointContainer
+		{
+			public const new Guid IID = .(0x7988b572, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
+			
+			public function HRESULT(IDiskQuotaControl *self, PWSTR pszPath, BOOL bReadWrite) Initialize;
+			public function HRESULT(IDiskQuotaControl *self, uint32 dwState) SetQuotaState;
+			public function HRESULT(IDiskQuotaControl *self, uint32* pdwState) GetQuotaState;
+			public function HRESULT(IDiskQuotaControl *self, uint32 dwFlags) SetQuotaLogFlags;
+			public function HRESULT(IDiskQuotaControl *self, uint32* pdwFlags) GetQuotaLogFlags;
+			public function HRESULT(IDiskQuotaControl *self, int64 llThreshold) SetDefaultQuotaThreshold;
+			public function HRESULT(IDiskQuotaControl *self, int64* pllThreshold) GetDefaultQuotaThreshold;
+			public function HRESULT(IDiskQuotaControl *self, PWSTR pszText, uint32 cchText) GetDefaultQuotaThresholdText;
+			public function HRESULT(IDiskQuotaControl *self, int64 llLimit) SetDefaultQuotaLimit;
+			public function HRESULT(IDiskQuotaControl *self, int64* pllLimit) GetDefaultQuotaLimit;
+			public function HRESULT(IDiskQuotaControl *self, PWSTR pszText, uint32 cchText) GetDefaultQuotaLimitText;
+			public function HRESULT(IDiskQuotaControl *self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) AddUserSid;
+			public function HRESULT(IDiskQuotaControl *self, PWSTR pszLogonName, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) AddUserName;
+			public function HRESULT(IDiskQuotaControl *self, IDiskQuotaUser* pUser) DeleteUser;
+			public function HRESULT(IDiskQuotaControl *self, PSID pUserSid, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IDiskQuotaUser** ppUser) FindUserSid;
+			public function HRESULT(IDiskQuotaControl *self, PWSTR pszLogonName, IDiskQuotaUser** ppUser) FindUserName;
+			public function HRESULT(IDiskQuotaControl *self, PSID* rgpUserSids, uint32 cpSids, DISKQUOTA_USERNAME_RESOLVE fNameResolution, IEnumDiskQuotaUsers** ppEnum) CreateEnumUsers;
+			public function HRESULT(IDiskQuotaControl *self, IDiskQuotaUserBatch** ppBatch) CreateUserBatch;
+			public function HRESULT(IDiskQuotaControl *self) InvalidateSidNameCache;
+			public function HRESULT(IDiskQuotaControl *self, IDiskQuotaUser* pUser) GiveUserNameResolutionPriority;
+			public function HRESULT(IDiskQuotaControl *self) ShutdownNameResolution;
+		}
+		[CRepr]
+		public struct IDiskQuotaEvents : IUnknown
+		{
+			public const new Guid IID = .(0x7988b579, 0xec89, 0x11cf, 0x9c, 0x00, 0x00, 0xaa, 0x00, 0xa1, 0x4f, 0x56);
+			
+			public function HRESULT(IDiskQuotaEvents *self, IDiskQuotaUser* pUser) OnUserNameChanged;
+		}
 		
 		// --- Functions ---
 		

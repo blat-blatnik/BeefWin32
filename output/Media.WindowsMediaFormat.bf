@@ -729,7 +729,7 @@ namespace Win32
 		[CRepr]
 		public struct WMT_BUFFER_SEGMENT
 		{
-			public INSSBuffer pBuffer;
+			public INSSBuffer* pBuffer;
 			public uint32 cbOffset;
 			public uint32 cbLength;
 		}
@@ -886,7 +886,7 @@ namespace Win32
 			public BOOL bTemporalCompression;
 			public uint32 lSampleSize;
 			public Guid formattype;
-			public IUnknown pUnk;
+			public IUnknown* pUnk;
 			public uint32 cbFormat;
 			public uint8* pbFormat;
 		}
@@ -1005,141 +1005,1211 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IAMWMBufferPass {}
-		public struct IAMWMBufferPassCallback {}
-		public struct INSSBuffer {}
-		public struct INSSBuffer2 {}
-		public struct INSSBuffer3 {}
-		public struct INSSBuffer4 {}
-		public struct IWMSBufferAllocator {}
-		public struct IWMMediaProps {}
-		public struct IWMVideoMediaProps {}
-		public struct IWMWriter {}
-		public struct IWMDRMWriter {}
-		public struct IWMDRMWriter2 {}
-		public struct IWMDRMWriter3 {}
-		public struct IWMInputMediaProps {}
-		public struct IWMPropertyVault {}
-		public struct IWMIStreamProps {}
-		public struct IWMReader {}
-		public struct IWMSyncReader {}
-		public struct IWMSyncReader2 {}
-		public struct IWMOutputMediaProps {}
-		public struct IWMStatusCallback {}
-		public struct IWMReaderCallback {}
-		public struct IWMCredentialCallback {}
-		public struct IWMMetadataEditor {}
-		public struct IWMMetadataEditor2 {}
-		public struct IWMDRMEditor {}
-		public struct IWMHeaderInfo {}
-		public struct IWMHeaderInfo2 {}
-		public struct IWMHeaderInfo3 {}
-		public struct IWMProfileManager {}
-		public struct IWMProfileManager2 {}
-		public struct IWMProfileManagerLanguage {}
-		public struct IWMProfile {}
-		public struct IWMProfile2 {}
-		public struct IWMProfile3 {}
-		public struct IWMStreamConfig {}
-		public struct IWMStreamConfig2 {}
-		public struct IWMStreamConfig3 {}
-		public struct IWMPacketSize {}
-		public struct IWMPacketSize2 {}
-		public struct IWMStreamList {}
-		public struct IWMMutualExclusion {}
-		public struct IWMMutualExclusion2 {}
-		public struct IWMBandwidthSharing {}
-		public struct IWMStreamPrioritization {}
-		public struct IWMWriterAdvanced {}
-		public struct IWMWriterAdvanced2 {}
-		public struct IWMWriterAdvanced3 {}
-		public struct IWMWriterPreprocess {}
-		public struct IWMWriterPostViewCallback {}
-		public struct IWMWriterPostView {}
-		public struct IWMWriterSink {}
-		public struct IWMRegisterCallback {}
-		public struct IWMWriterFileSink {}
-		public struct IWMWriterFileSink2 {}
-		public struct IWMWriterFileSink3 {}
-		public struct IWMWriterNetworkSink {}
-		public struct IWMClientConnections {}
-		public struct IWMClientConnections2 {}
-		public struct IWMReaderAdvanced {}
-		public struct IWMReaderAdvanced2 {}
-		public struct IWMReaderAdvanced3 {}
-		public struct IWMReaderAdvanced4 {}
-		public struct IWMReaderAdvanced5 {}
-		public struct IWMReaderAdvanced6 {}
-		public struct IWMPlayerHook {}
-		public struct IWMReaderAllocatorEx {}
-		public struct IWMReaderTypeNegotiation {}
-		public struct IWMReaderCallbackAdvanced {}
-		public struct IWMDRMReader {}
-		public struct IWMDRMReader2 {}
-		public struct IWMDRMReader3 {}
-		public struct IWMReaderPlaylistBurn {}
-		public struct IWMReaderNetworkConfig {}
-		public struct IWMReaderNetworkConfig2 {}
-		public struct IWMReaderStreamClock {}
-		public struct IWMIndexer {}
-		public struct IWMIndexer2 {}
-		public struct IWMLicenseBackup {}
-		public struct IWMLicenseRestore {}
-		public struct IWMBackupRestoreProps {}
-		public struct IWMCodecInfo {}
-		public struct IWMCodecInfo2 {}
-		public struct IWMCodecInfo3 {}
-		public struct IWMLanguageList {}
-		public struct IWMWriterPushSink {}
-		public struct IWMDeviceRegistration {}
-		public struct IWMRegisteredDevice {}
-		public struct IWMProximityDetection {}
-		public struct IWMDRMMessageParser {}
-		public struct IWMDRMTranscryptor {}
-		public struct IWMDRMTranscryptor2 {}
-		public struct IWMDRMTranscryptionManager {}
-		public struct IWMWatermarkInfo {}
-		public struct IWMReaderAccelerator {}
-		public struct IWMReaderTimecode {}
-		public struct IWMAddressAccess {}
-		public struct IWMAddressAccess2 {}
-		public struct IWMImageInfo {}
-		public struct IWMLicenseRevocationAgent {}
-		public struct IWMAuthorizer {}
-		public struct IWMSecureChannel {}
-		public struct IWMGetSecureChannel {}
-		public struct INSNetSourceCreator {}
-		public struct IWMPlayerTimestampHook {}
-		public struct IWMCodecAMVideoAccelerator {}
-		public struct IWMCodecVideoAccelerator {}
-		public struct IWMSInternalAdminNetSource {}
-		public struct IWMSInternalAdminNetSource2 {}
-		public struct IWMSInternalAdminNetSource3 {}
+		[CRepr]
+		public struct IAMWMBufferPass : IUnknown
+		{
+			public const new Guid IID = .(0x6dd816d7, 0xe740, 0x4123, 0x9e, 0x24, 0x24, 0x44, 0x41, 0x26, 0x44, 0xd8);
+			
+			public function HRESULT(IAMWMBufferPass *self, IAMWMBufferPassCallback* pCallback) SetNotify;
+		}
+		[CRepr]
+		public struct IAMWMBufferPassCallback : IUnknown
+		{
+			public const new Guid IID = .(0xb25b8372, 0xd2d2, 0x44b2, 0x86, 0x53, 0x1b, 0x8d, 0xae, 0x33, 0x24, 0x89);
+			
+			public function HRESULT(IAMWMBufferPassCallback *self, INSSBuffer3* pNSSBuffer3, IPin* pPin, int64* prtStart, int64* prtEnd) Notify;
+		}
+		[CRepr]
+		public struct INSSBuffer : IUnknown
+		{
+			public const new Guid IID = .(0xe1cd3524, 0x03d7, 0x11d2, 0x9e, 0xed, 0x00, 0x60, 0x97, 0xd2, 0xd7, 0xcf);
+			
+			public function HRESULT(INSSBuffer *self, uint32* pdwLength) GetLength;
+			public function HRESULT(INSSBuffer *self, uint32 dwLength) SetLength;
+			public function HRESULT(INSSBuffer *self, uint32* pdwLength) GetMaxLength;
+			public function HRESULT(INSSBuffer *self, uint8** ppdwBuffer) GetBuffer;
+			public function HRESULT(INSSBuffer *self, uint8** ppdwBuffer, uint32* pdwLength) GetBufferAndLength;
+		}
+		[CRepr]
+		public struct INSSBuffer2 : INSSBuffer
+		{
+			public const new Guid IID = .(0x4f528693, 0x1035, 0x43fe, 0xb4, 0x28, 0x75, 0x75, 0x61, 0xad, 0x3a, 0x68);
+			
+			public function HRESULT(INSSBuffer2 *self, uint32 cbProperties, uint8* pbProperties) GetSampleProperties;
+			public function HRESULT(INSSBuffer2 *self, uint32 cbProperties, uint8* pbProperties) SetSampleProperties;
+		}
+		[CRepr]
+		public struct INSSBuffer3 : INSSBuffer2
+		{
+			public const new Guid IID = .(0xc87ceaaf, 0x75be, 0x4bc4, 0x84, 0xeb, 0xac, 0x27, 0x98, 0x50, 0x76, 0x72);
+			
+			public function HRESULT(INSSBuffer3 *self, Guid guidBufferProperty, void* pvBufferProperty, uint32 dwBufferPropertySize) SetProperty;
+			public function HRESULT(INSSBuffer3 *self, Guid guidBufferProperty, void* pvBufferProperty, uint32* pdwBufferPropertySize) GetProperty;
+		}
+		[CRepr]
+		public struct INSSBuffer4 : INSSBuffer3
+		{
+			public const new Guid IID = .(0xb6b8fd5a, 0x32e2, 0x49d4, 0xa9, 0x10, 0xc2, 0x6c, 0xc8, 0x54, 0x65, 0xed);
+			
+			public function HRESULT(INSSBuffer4 *self, uint32* pcBufferProperties) GetPropertyCount;
+			public function HRESULT(INSSBuffer4 *self, uint32 dwBufferPropertyIndex, Guid* pguidBufferProperty, void* pvBufferProperty, uint32* pdwBufferPropertySize) GetPropertyByIndex;
+		}
+		[CRepr]
+		public struct IWMSBufferAllocator : IUnknown
+		{
+			public const new Guid IID = .(0x61103ca4, 0x2033, 0x11d2, 0x9e, 0xf1, 0x00, 0x60, 0x97, 0xd2, 0xd7, 0xcf);
+			
+			public function HRESULT(IWMSBufferAllocator *self, uint32 dwMaxBufferSize, INSSBuffer** ppBuffer) AllocateBuffer;
+			public function HRESULT(IWMSBufferAllocator *self, uint32 dwMaxBufferSize, INSSBuffer** ppBuffer) AllocatePageSizeBuffer;
+		}
+		[CRepr]
+		public struct IWMMediaProps : IUnknown
+		{
+			public const new Guid IID = .(0x96406bce, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMMediaProps *self, Guid* pguidType) GetType;
+			public function HRESULT(IWMMediaProps *self, WM_MEDIA_TYPE* pType, uint32* pcbType) GetMediaType;
+			public function HRESULT(IWMMediaProps *self, WM_MEDIA_TYPE* pType) SetMediaType;
+		}
+		[CRepr]
+		public struct IWMVideoMediaProps : IWMMediaProps
+		{
+			public const new Guid IID = .(0x96406bcf, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMVideoMediaProps *self, int64* pllTime) GetMaxKeyFrameSpacing;
+			public function HRESULT(IWMVideoMediaProps *self, int64 llTime) SetMaxKeyFrameSpacing;
+			public function HRESULT(IWMVideoMediaProps *self, uint32* pdwQuality) GetQuality;
+			public function HRESULT(IWMVideoMediaProps *self, uint32 dwQuality) SetQuality;
+		}
+		[CRepr]
+		public struct IWMWriter : IUnknown
+		{
+			public const new Guid IID = .(0x96406bd4, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMWriter *self, Guid* guidProfile) SetProfileByID;
+			public function HRESULT(IWMWriter *self, IWMProfile* pProfile) SetProfile;
+			public function HRESULT(IWMWriter *self, PWSTR pwszFilename) SetOutputFilename;
+			public function HRESULT(IWMWriter *self, uint32* pcInputs) GetInputCount;
+			public function HRESULT(IWMWriter *self, uint32 dwInputNum, IWMInputMediaProps** ppInput) GetInputProps;
+			public function HRESULT(IWMWriter *self, uint32 dwInputNum, IWMInputMediaProps* pInput) SetInputProps;
+			public function HRESULT(IWMWriter *self, uint32 dwInputNumber, uint32* pcFormats) GetInputFormatCount;
+			public function HRESULT(IWMWriter *self, uint32 dwInputNumber, uint32 dwFormatNumber, IWMInputMediaProps** pProps) GetInputFormat;
+			public function HRESULT(IWMWriter *self) BeginWriting;
+			public function HRESULT(IWMWriter *self) EndWriting;
+			public function HRESULT(IWMWriter *self, uint32 dwSampleSize, INSSBuffer** ppSample) AllocateSample;
+			public function HRESULT(IWMWriter *self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, INSSBuffer* pSample) WriteSample;
+			public function HRESULT(IWMWriter *self) Flush;
+		}
+		[CRepr]
+		public struct IWMDRMWriter : IUnknown
+		{
+			public const new Guid IID = .(0xd6ea5dd0, 0x12a0, 0x43f4, 0x90, 0xab, 0xa3, 0xfd, 0x45, 0x1e, 0x6a, 0x07);
+			
+			public function HRESULT(IWMDRMWriter *self, char16* pwszKeySeed, uint32* pcwchLength) GenerateKeySeed;
+			public function HRESULT(IWMDRMWriter *self, char16* pwszKeyID, uint32* pcwchLength) GenerateKeyID;
+			public function HRESULT(IWMDRMWriter *self, char16* pwszPrivKey, uint32* pcwchPrivKeyLength, char16* pwszPubKey, uint32* pcwchPubKeyLength) GenerateSigningKeyPair;
+			public function HRESULT(IWMDRMWriter *self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetDRMAttribute;
+		}
+		[CRepr]
+		public struct IWMDRMWriter2 : IWMDRMWriter
+		{
+			public const new Guid IID = .(0x38ee7a94, 0x40e2, 0x4e10, 0xaa, 0x3f, 0x33, 0xfd, 0x32, 0x10, 0xed, 0x5b);
+			
+			public function HRESULT(IWMDRMWriter2 *self, BOOL fSamplesEncrypted, uint8* pbKeyID, uint32 cbKeyID) SetWMDRMNetEncryption;
+		}
+		[CRepr]
+		public struct IWMDRMWriter3 : IWMDRMWriter2
+		{
+			public const new Guid IID = .(0xa7184082, 0xa4aa, 0x4dde, 0xac, 0x9c, 0xe7, 0x5d, 0xbd, 0x11, 0x17, 0xce);
+			
+			public function HRESULT(IWMDRMWriter3 *self, WMDRM_IMPORT_INIT_STRUCT* pImportInitStruct) SetProtectStreamSamples;
+		}
+		[CRepr]
+		public struct IWMInputMediaProps : IWMMediaProps
+		{
+			public const new Guid IID = .(0x96406bd5, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMInputMediaProps *self, char16* pwszName, uint16* pcchName) GetConnectionName;
+			public function HRESULT(IWMInputMediaProps *self, char16* pwszName, uint16* pcchName) GetGroupName;
+		}
+		[CRepr]
+		public struct IWMPropertyVault : IUnknown
+		{
+			public const new Guid IID = .(0x72995a79, 0x5090, 0x42a4, 0x9c, 0x8c, 0xd9, 0xd0, 0xb6, 0xd3, 0x4b, 0xe5);
+			
+			public function HRESULT(IWMPropertyVault *self, uint32* pdwCount) GetPropertyCount;
+			public function HRESULT(IWMPropertyVault *self, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetPropertyByName;
+			public function HRESULT(IWMPropertyVault *self, PWSTR pszName, WMT_ATTR_DATATYPE pType, uint8* pValue, uint32 dwSize) SetProperty;
+			public function HRESULT(IWMPropertyVault *self, uint32 dwIndex, char16* pszName, uint32* pdwNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetPropertyByIndex;
+			public function HRESULT(IWMPropertyVault *self, IWMPropertyVault* pIWMPropertyVault) CopyPropertiesFrom;
+			public function HRESULT(IWMPropertyVault *self) Clear;
+		}
+		[CRepr]
+		public struct IWMIStreamProps : IUnknown
+		{
+			public const new Guid IID = .(0x6816dad3, 0x2b4b, 0x4c8e, 0x81, 0x49, 0x87, 0x4c, 0x34, 0x83, 0xa7, 0x53);
+			
+			public function HRESULT(IWMIStreamProps *self, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetProperty;
+		}
+		[CRepr]
+		public struct IWMReader : IUnknown
+		{
+			public const new Guid IID = .(0x96406bd6, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMReader *self, PWSTR pwszURL, IWMReaderCallback* pCallback, void* pvContext) Open;
+			public function HRESULT(IWMReader *self) Close;
+			public function HRESULT(IWMReader *self, uint32* pcOutputs) GetOutputCount;
+			public function HRESULT(IWMReader *self, uint32 dwOutputNum, IWMOutputMediaProps** ppOutput) GetOutputProps;
+			public function HRESULT(IWMReader *self, uint32 dwOutputNum, IWMOutputMediaProps* pOutput) SetOutputProps;
+			public function HRESULT(IWMReader *self, uint32 dwOutputNumber, uint32* pcFormats) GetOutputFormatCount;
+			public function HRESULT(IWMReader *self, uint32 dwOutputNumber, uint32 dwFormatNumber, IWMOutputMediaProps** ppProps) GetOutputFormat;
+			public function HRESULT(IWMReader *self, uint64 cnsStart, uint64 cnsDuration, float fRate, void* pvContext) Start;
+			public function HRESULT(IWMReader *self) Stop;
+			public function HRESULT(IWMReader *self) Pause;
+			public function HRESULT(IWMReader *self) Resume;
+		}
+		[CRepr]
+		public struct IWMSyncReader : IUnknown
+		{
+			public const new Guid IID = .(0x9397f121, 0x7705, 0x4dc9, 0xb0, 0x49, 0x98, 0xb6, 0x98, 0x18, 0x84, 0x14);
+			
+			public function HRESULT(IWMSyncReader *self, PWSTR pwszFilename) Open;
+			public function HRESULT(IWMSyncReader *self) Close;
+			public function HRESULT(IWMSyncReader *self, uint64 cnsStartTime, int64 cnsDuration) SetRange;
+			public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead) SetRangeByFrame;
+			public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, INSSBuffer** ppSample, uint64* pcnsSampleTime, uint64* pcnsDuration, uint32* pdwFlags, uint32* pdwOutputNum, uint16* pwStreamNum) GetNextSample;
+			public function HRESULT(IWMSyncReader *self, uint16 cStreamCount, uint16* pwStreamNumbers, WMT_STREAM_SELECTION* pSelections) SetStreamsSelected;
+			public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, WMT_STREAM_SELECTION* pSelection) GetStreamSelected;
+			public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, BOOL fCompressed) SetReadStreamSamples;
+			public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, BOOL* pfCompressed) GetReadStreamSamples;
+			public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetOutputSetting;
+			public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
+			public function HRESULT(IWMSyncReader *self, uint32* pcOutputs) GetOutputCount;
+			public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, IWMOutputMediaProps** ppOutput) GetOutputProps;
+			public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, IWMOutputMediaProps* pOutput) SetOutputProps;
+			public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, uint32* pcFormats) GetOutputFormatCount;
+			public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, uint32 dwFormatNum, IWMOutputMediaProps** ppProps) GetOutputFormat;
+			public function HRESULT(IWMSyncReader *self, uint16 wStreamNum, uint32* pdwOutputNum) GetOutputNumberForStream;
+			public function HRESULT(IWMSyncReader *self, uint32 dwOutputNum, uint16* pwStreamNum) GetStreamNumberForOutput;
+			public function HRESULT(IWMSyncReader *self, uint32 dwOutput, uint32* pcbMax) GetMaxOutputSampleSize;
+			public function HRESULT(IWMSyncReader *self, uint16 wStream, uint32* pcbMax) GetMaxStreamSampleSize;
+			public function HRESULT(IWMSyncReader *self, IStream* pStream) OpenStream;
+		}
+		[CRepr]
+		public struct IWMSyncReader2 : IWMSyncReader
+		{
+			public const new Guid IID = .(0xfaed3d21, 0x1b6b, 0x4af7, 0x8c, 0xb6, 0x3e, 0x18, 0x9b, 0xbc, 0x18, 0x7b);
+			
+			public function HRESULT(IWMSyncReader2 *self, uint16 wStreamNum, WMT_TIMECODE_EXTENSION_DATA* pStart, WMT_TIMECODE_EXTENSION_DATA* pEnd) SetRangeByTimecode;
+			public function HRESULT(IWMSyncReader2 *self, uint16 wStreamNum, uint64 qwFrameNumber, int64 cFramesToRead, uint64* pcnsStartTime) SetRangeByFrameEx;
+			public function HRESULT(IWMSyncReader2 *self, uint32 dwOutputNum, IWMReaderAllocatorEx* pAllocator) SetAllocateForOutput;
+			public function HRESULT(IWMSyncReader2 *self, uint32 dwOutputNum, IWMReaderAllocatorEx** ppAllocator) GetAllocateForOutput;
+			public function HRESULT(IWMSyncReader2 *self, uint16 wStreamNum, IWMReaderAllocatorEx* pAllocator) SetAllocateForStream;
+			public function HRESULT(IWMSyncReader2 *self, uint16 dwSreamNum, IWMReaderAllocatorEx** ppAllocator) GetAllocateForStream;
+		}
+		[CRepr]
+		public struct IWMOutputMediaProps : IWMMediaProps
+		{
+			public const new Guid IID = .(0x96406bd7, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMOutputMediaProps *self, char16* pwszName, uint16* pcchName) GetStreamGroupName;
+			public function HRESULT(IWMOutputMediaProps *self, char16* pwszName, uint16* pcchName) GetConnectionName;
+		}
+		[CRepr]
+		public struct IWMStatusCallback : IUnknown
+		{
+			public const new Guid IID = .(0x6d7cdc70, 0x9888, 0x11d3, 0x8e, 0xdc, 0x00, 0xc0, 0x4f, 0x61, 0x09, 0xcf);
+			
+			public function HRESULT(IWMStatusCallback *self, WMT_STATUS Status, HRESULT hr, WMT_ATTR_DATATYPE dwType, uint8* pValue, void* pvContext) OnStatus;
+		}
+		[CRepr]
+		public struct IWMReaderCallback : IWMStatusCallback
+		{
+			public const new Guid IID = .(0x96406bd8, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMReaderCallback *self, uint32 dwOutputNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) OnSample;
+		}
+		[CRepr]
+		public struct IWMCredentialCallback : IUnknown
+		{
+			public const new Guid IID = .(0x342e0eb7, 0xe651, 0x450c, 0x97, 0x5b, 0x2a, 0xce, 0x2c, 0x90, 0xc4, 0x8e);
+			
+			public function HRESULT(IWMCredentialCallback *self, PWSTR pwszRealm, PWSTR pwszSite, char16* pwszUser, uint32 cchUser, char16* pwszPassword, uint32 cchPassword, HRESULT hrStatus, uint32* pdwFlags) AcquireCredentials;
+		}
+		[CRepr]
+		public struct IWMMetadataEditor : IUnknown
+		{
+			public const new Guid IID = .(0x96406bd9, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMMetadataEditor *self, PWSTR pwszFilename) Open;
+			public function HRESULT(IWMMetadataEditor *self) Close;
+			public function HRESULT(IWMMetadataEditor *self) Flush;
+		}
+		[CRepr]
+		public struct IWMMetadataEditor2 : IWMMetadataEditor
+		{
+			public const new Guid IID = .(0x203cffe3, 0x2e18, 0x4fdf, 0xb5, 0x9d, 0x6e, 0x71, 0x53, 0x05, 0x34, 0xcf);
+			
+			public function HRESULT(IWMMetadataEditor2 *self, PWSTR pwszFilename, uint32 dwDesiredAccess, uint32 dwShareMode) OpenEx;
+		}
+		[CRepr]
+		public struct IWMDRMEditor : IUnknown
+		{
+			public const new Guid IID = .(0xff130ebc, 0xa6c3, 0x42a6, 0xb4, 0x01, 0xc3, 0x38, 0x2c, 0x3e, 0x08, 0xb3);
+			
+			public function HRESULT(IWMDRMEditor *self, PWSTR pwstrName, WMT_ATTR_DATATYPE* pdwType, uint8* pValue, uint16* pcbLength) GetDRMProperty;
+		}
+		[CRepr]
+		public struct IWMHeaderInfo : IUnknown
+		{
+			public const new Guid IID = .(0x96406bda, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMHeaderInfo *self, uint16 wStreamNum, uint16* pcAttributes) GetAttributeCount;
+			public function HRESULT(IWMHeaderInfo *self, uint16 wIndex, uint16* pwStreamNum, char16* pwszName, uint16* pcchNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetAttributeByIndex;
+			public function HRESULT(IWMHeaderInfo *self, uint16* pwStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetAttributeByName;
+			public function HRESULT(IWMHeaderInfo *self, uint16 wStreamNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetAttribute;
+			public function HRESULT(IWMHeaderInfo *self, uint16* pcMarkers) GetMarkerCount;
+			public function HRESULT(IWMHeaderInfo *self, uint16 wIndex, char16* pwszMarkerName, uint16* pcchMarkerNameLen, uint64* pcnsMarkerTime) GetMarker;
+			public function HRESULT(IWMHeaderInfo *self, PWSTR pwszMarkerName, uint64 cnsMarkerTime) AddMarker;
+			public function HRESULT(IWMHeaderInfo *self, uint16 wIndex) RemoveMarker;
+			public function HRESULT(IWMHeaderInfo *self, uint16* pcScripts) GetScriptCount;
+			public function HRESULT(IWMHeaderInfo *self, uint16 wIndex, char16* pwszType, uint16* pcchTypeLen, char16* pwszCommand, uint16* pcchCommandLen, uint64* pcnsScriptTime) GetScript;
+			public function HRESULT(IWMHeaderInfo *self, PWSTR pwszType, PWSTR pwszCommand, uint64 cnsScriptTime) AddScript;
+			public function HRESULT(IWMHeaderInfo *self, uint16 wIndex) RemoveScript;
+		}
+		[CRepr]
+		public struct IWMHeaderInfo2 : IWMHeaderInfo
+		{
+			public const new Guid IID = .(0x15cf9781, 0x454e, 0x482e, 0xb3, 0x93, 0x85, 0xfa, 0xe4, 0x87, 0xa8, 0x10);
+			
+			public function HRESULT(IWMHeaderInfo2 *self, uint32* pcCodecInfos) GetCodecInfoCount;
+			public function HRESULT(IWMHeaderInfo2 *self, uint32 wIndex, uint16* pcchName, char16* pwszName, uint16* pcchDescription, char16* pwszDescription, WMT_CODEC_INFO_TYPE* pCodecType, uint16* pcbCodecInfo, uint8* pbCodecInfo) GetCodecInfo;
+		}
+		[CRepr]
+		public struct IWMHeaderInfo3 : IWMHeaderInfo2
+		{
+			public const new Guid IID = .(0x15cc68e3, 0x27cc, 0x4ecd, 0xb2, 0x22, 0x3f, 0x5d, 0x02, 0xd8, 0x0b, 0xd5);
+			
+			public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16* pcAttributes) GetAttributeCountEx;
+			public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, PWSTR pwszName, uint16* pwLangIndex, uint16* pwIndices, uint16* pwCount) GetAttributeIndices;
+			public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16 wIndex, char16* pwszName, uint16* pwNameLen, WMT_ATTR_DATATYPE* pType, uint16* pwLangIndex, uint8* pValue, uint32* pdwDataLength) GetAttributeByIndexEx;
+			public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16 wIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) ModifyAttribute;
+			public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, PWSTR pszName, uint16* pwIndex, WMT_ATTR_DATATYPE Type, uint16 wLangIndex, uint8* pValue, uint32 dwLength) AddAttribute;
+			public function HRESULT(IWMHeaderInfo3 *self, uint16 wStreamNum, uint16 wIndex) DeleteAttribute;
+			public function HRESULT(IWMHeaderInfo3 *self, PWSTR pwszName, PWSTR pwszDescription, WMT_CODEC_INFO_TYPE codecType, uint16 cbCodecInfo, uint8* pbCodecInfo) AddCodecInfo;
+		}
+		[CRepr]
+		public struct IWMProfileManager : IUnknown
+		{
+			public const new Guid IID = .(0xd16679f2, 0x6ca0, 0x472d, 0x8d, 0x31, 0x2f, 0x5d, 0x55, 0xae, 0xe1, 0x55);
+			
+			public function HRESULT(IWMProfileManager *self, WMT_VERSION dwVersion, IWMProfile** ppProfile) CreateEmptyProfile;
+			public function HRESULT(IWMProfileManager *self, Guid* guidProfile, IWMProfile** ppProfile) LoadProfileByID;
+			public function HRESULT(IWMProfileManager *self, PWSTR pwszProfile, IWMProfile** ppProfile) LoadProfileByData;
+			public function HRESULT(IWMProfileManager *self, IWMProfile* pIWMProfile, PWSTR pwszProfile, uint32* pdwLength) SaveProfile;
+			public function HRESULT(IWMProfileManager *self, uint32* pcProfiles) GetSystemProfileCount;
+			public function HRESULT(IWMProfileManager *self, uint32 dwProfileIndex, IWMProfile** ppProfile) LoadSystemProfile;
+		}
+		[CRepr]
+		public struct IWMProfileManager2 : IWMProfileManager
+		{
+			public const new Guid IID = .(0x7a924e51, 0x73c1, 0x494d, 0x80, 0x19, 0x23, 0xd3, 0x7e, 0xd9, 0xb8, 0x9a);
+			
+			public function HRESULT(IWMProfileManager2 *self, WMT_VERSION* pdwVersion) GetSystemProfileVersion;
+			public function HRESULT(IWMProfileManager2 *self, WMT_VERSION dwVersion) SetSystemProfileVersion;
+		}
+		[CRepr]
+		public struct IWMProfileManagerLanguage : IUnknown
+		{
+			public const new Guid IID = .(0xba4dcc78, 0x7ee0, 0x4ab8, 0xb2, 0x7a, 0xdb, 0xce, 0x8b, 0xc5, 0x14, 0x54);
+			
+			public function HRESULT(IWMProfileManagerLanguage *self, uint16* wLangID) GetUserLanguageID;
+			public function HRESULT(IWMProfileManagerLanguage *self, uint16 wLangID) SetUserLanguageID;
+		}
+		[CRepr]
+		public struct IWMProfile : IUnknown
+		{
+			public const new Guid IID = .(0x96406bdb, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMProfile *self, WMT_VERSION* pdwVersion) GetVersion;
+			public function HRESULT(IWMProfile *self, char16* pwszName, uint32* pcchName) GetName;
+			public function HRESULT(IWMProfile *self, PWSTR pwszName) SetName;
+			public function HRESULT(IWMProfile *self, char16* pwszDescription, uint32* pcchDescription) GetDescription;
+			public function HRESULT(IWMProfile *self, PWSTR pwszDescription) SetDescription;
+			public function HRESULT(IWMProfile *self, uint32* pcStreams) GetStreamCount;
+			public function HRESULT(IWMProfile *self, uint32 dwStreamIndex, IWMStreamConfig** ppConfig) GetStream;
+			public function HRESULT(IWMProfile *self, uint16 wStreamNum, IWMStreamConfig** ppConfig) GetStreamByNumber;
+			public function HRESULT(IWMProfile *self, IWMStreamConfig* pConfig) RemoveStream;
+			public function HRESULT(IWMProfile *self, uint16 wStreamNum) RemoveStreamByNumber;
+			public function HRESULT(IWMProfile *self, IWMStreamConfig* pConfig) AddStream;
+			public function HRESULT(IWMProfile *self, IWMStreamConfig* pConfig) ReconfigStream;
+			public function HRESULT(IWMProfile *self, Guid* guidStreamType, IWMStreamConfig** ppConfig) CreateNewStream;
+			public function HRESULT(IWMProfile *self, uint32* pcME) GetMutualExclusionCount;
+			public function HRESULT(IWMProfile *self, uint32 dwMEIndex, IWMMutualExclusion** ppME) GetMutualExclusion;
+			public function HRESULT(IWMProfile *self, IWMMutualExclusion* pME) RemoveMutualExclusion;
+			public function HRESULT(IWMProfile *self, IWMMutualExclusion* pME) AddMutualExclusion;
+			public function HRESULT(IWMProfile *self, IWMMutualExclusion** ppME) CreateNewMutualExclusion;
+		}
+		[CRepr]
+		public struct IWMProfile2 : IWMProfile
+		{
+			public const new Guid IID = .(0x07e72d33, 0xd94e, 0x4be7, 0x88, 0x43, 0x60, 0xae, 0x5f, 0xf7, 0xe5, 0xf5);
+			
+			public function HRESULT(IWMProfile2 *self, Guid* pguidID) GetProfileID;
+		}
+		[CRepr]
+		public struct IWMProfile3 : IWMProfile2
+		{
+			public const new Guid IID = .(0x00ef96cc, 0xa461, 0x4546, 0x8b, 0xcd, 0xc9, 0xa2, 0x8f, 0x0e, 0x06, 0xf5);
+			
+			public function HRESULT(IWMProfile3 *self, WMT_STORAGE_FORMAT* pnStorageFormat) GetStorageFormat;
+			public function HRESULT(IWMProfile3 *self, WMT_STORAGE_FORMAT nStorageFormat) SetStorageFormat;
+			public function HRESULT(IWMProfile3 *self, uint32* pcBS) GetBandwidthSharingCount;
+			public function HRESULT(IWMProfile3 *self, uint32 dwBSIndex, IWMBandwidthSharing** ppBS) GetBandwidthSharing;
+			public function HRESULT(IWMProfile3 *self, IWMBandwidthSharing* pBS) RemoveBandwidthSharing;
+			public function HRESULT(IWMProfile3 *self, IWMBandwidthSharing* pBS) AddBandwidthSharing;
+			public function HRESULT(IWMProfile3 *self, IWMBandwidthSharing** ppBS) CreateNewBandwidthSharing;
+			public function HRESULT(IWMProfile3 *self, IWMStreamPrioritization** ppSP) GetStreamPrioritization;
+			public function HRESULT(IWMProfile3 *self, IWMStreamPrioritization* pSP) SetStreamPrioritization;
+			public function HRESULT(IWMProfile3 *self) RemoveStreamPrioritization;
+			public function HRESULT(IWMProfile3 *self, IWMStreamPrioritization** ppSP) CreateNewStreamPrioritization;
+			public function HRESULT(IWMProfile3 *self, uint64 msDuration, uint64* pcPackets) GetExpectedPacketCount;
+		}
+		[CRepr]
+		public struct IWMStreamConfig : IUnknown
+		{
+			public const new Guid IID = .(0x96406bdc, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMStreamConfig *self, Guid* pguidStreamType) GetStreamType;
+			public function HRESULT(IWMStreamConfig *self, uint16* pwStreamNum) GetStreamNumber;
+			public function HRESULT(IWMStreamConfig *self, uint16 wStreamNum) SetStreamNumber;
+			public function HRESULT(IWMStreamConfig *self, char16* pwszStreamName, uint16* pcchStreamName) GetStreamName;
+			public function HRESULT(IWMStreamConfig *self, PWSTR pwszStreamName) SetStreamName;
+			public function HRESULT(IWMStreamConfig *self, char16* pwszInputName, uint16* pcchInputName) GetConnectionName;
+			public function HRESULT(IWMStreamConfig *self, PWSTR pwszInputName) SetConnectionName;
+			public function HRESULT(IWMStreamConfig *self, uint32* pdwBitrate) GetBitrate;
+			public function HRESULT(IWMStreamConfig *self, uint32 pdwBitrate) SetBitrate;
+			public function HRESULT(IWMStreamConfig *self, uint32* pmsBufferWindow) GetBufferWindow;
+			public function HRESULT(IWMStreamConfig *self, uint32 msBufferWindow) SetBufferWindow;
+		}
+		[CRepr]
+		public struct IWMStreamConfig2 : IWMStreamConfig
+		{
+			public const new Guid IID = .(0x7688d8cb, 0xfc0d, 0x43bd, 0x94, 0x59, 0x5a, 0x8d, 0xec, 0x20, 0x0c, 0xfa);
+			
+			public function HRESULT(IWMStreamConfig2 *self, WMT_TRANSPORT_TYPE* pnTransportType) GetTransportType;
+			public function HRESULT(IWMStreamConfig2 *self, WMT_TRANSPORT_TYPE nTransportType) SetTransportType;
+			public function HRESULT(IWMStreamConfig2 *self, Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) AddDataUnitExtension;
+			public function HRESULT(IWMStreamConfig2 *self, uint16* pcDataUnitExtensions) GetDataUnitExtensionCount;
+			public function HRESULT(IWMStreamConfig2 *self, uint16 wDataUnitExtensionNumber, Guid* pguidExtensionSystemID, uint16* pcbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32* pcbExtensionSystemInfo) GetDataUnitExtension;
+			public function HRESULT(IWMStreamConfig2 *self) RemoveAllDataUnitExtensions;
+		}
+		[CRepr]
+		public struct IWMStreamConfig3 : IWMStreamConfig2
+		{
+			public const new Guid IID = .(0xcb164104, 0x3aa9, 0x45a7, 0x9a, 0xc9, 0x4d, 0xae, 0xe1, 0x31, 0xd6, 0xe1);
+			
+			public function HRESULT(IWMStreamConfig3 *self, char16* pwszLanguageString, uint16* pcchLanguageStringLength) GetLanguage;
+			public function HRESULT(IWMStreamConfig3 *self, PWSTR pwszLanguageString) SetLanguage;
+		}
+		[CRepr]
+		public struct IWMPacketSize : IUnknown
+		{
+			public const new Guid IID = .(0xcdfb97ab, 0x188f, 0x40b3, 0xb6, 0x43, 0x5b, 0x79, 0x03, 0x97, 0x5c, 0x59);
+			
+			public function HRESULT(IWMPacketSize *self, uint32* pdwMaxPacketSize) GetMaxPacketSize;
+			public function HRESULT(IWMPacketSize *self, uint32 dwMaxPacketSize) SetMaxPacketSize;
+		}
+		[CRepr]
+		public struct IWMPacketSize2 : IWMPacketSize
+		{
+			public const new Guid IID = .(0x8bfc2b9e, 0xb646, 0x4233, 0xa8, 0x77, 0x1c, 0x6a, 0x07, 0x96, 0x69, 0xdc);
+			
+			public function HRESULT(IWMPacketSize2 *self, uint32* pdwMinPacketSize) GetMinPacketSize;
+			public function HRESULT(IWMPacketSize2 *self, uint32 dwMinPacketSize) SetMinPacketSize;
+		}
+		[CRepr]
+		public struct IWMStreamList : IUnknown
+		{
+			public const new Guid IID = .(0x96406bdd, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMStreamList *self, uint16* pwStreamNumArray, uint16* pcStreams) GetStreams;
+			public function HRESULT(IWMStreamList *self, uint16 wStreamNum) AddStream;
+			public function HRESULT(IWMStreamList *self, uint16 wStreamNum) RemoveStream;
+		}
+		[CRepr]
+		public struct IWMMutualExclusion : IWMStreamList
+		{
+			public const new Guid IID = .(0x96406bde, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMMutualExclusion *self, Guid* pguidType) GetType;
+			public function HRESULT(IWMMutualExclusion *self, Guid* guidType) SetType;
+		}
+		[CRepr]
+		public struct IWMMutualExclusion2 : IWMMutualExclusion
+		{
+			public const new Guid IID = .(0x0302b57d, 0x89d1, 0x4ba2, 0x85, 0xc9, 0x16, 0x6f, 0x2c, 0x53, 0xeb, 0x91);
+			
+			public function HRESULT(IWMMutualExclusion2 *self, char16* pwszName, uint16* pcchName) GetName;
+			public function HRESULT(IWMMutualExclusion2 *self, PWSTR pwszName) SetName;
+			public function HRESULT(IWMMutualExclusion2 *self, uint16* pwRecordCount) GetRecordCount;
+			public function HRESULT(IWMMutualExclusion2 *self) AddRecord;
+			public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber) RemoveRecord;
+			public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, char16* pwszRecordName, uint16* pcchRecordName) GetRecordName;
+			public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, PWSTR pwszRecordName) SetRecordName;
+			public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, uint16* pwStreamNumArray, uint16* pcStreams) GetStreamsForRecord;
+			public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, uint16 wStreamNumber) AddStreamForRecord;
+			public function HRESULT(IWMMutualExclusion2 *self, uint16 wRecordNumber, uint16 wStreamNumber) RemoveStreamForRecord;
+		}
+		[CRepr]
+		public struct IWMBandwidthSharing : IWMStreamList
+		{
+			public const new Guid IID = .(0xad694af1, 0xf8d9, 0x42f8, 0xbc, 0x47, 0x70, 0x31, 0x1b, 0x0c, 0x4f, 0x9e);
+			
+			public function HRESULT(IWMBandwidthSharing *self, Guid* pguidType) GetType;
+			public function HRESULT(IWMBandwidthSharing *self, Guid* guidType) SetType;
+			public function HRESULT(IWMBandwidthSharing *self, uint32* pdwBitrate, uint32* pmsBufferWindow) GetBandwidth;
+			public function HRESULT(IWMBandwidthSharing *self, uint32 dwBitrate, uint32 msBufferWindow) SetBandwidth;
+		}
+		[CRepr]
+		public struct IWMStreamPrioritization : IUnknown
+		{
+			public const new Guid IID = .(0x8c1c6090, 0xf9a8, 0x4748, 0x8e, 0xc3, 0xdd, 0x11, 0x08, 0xba, 0x1e, 0x77);
+			
+			public function HRESULT(IWMStreamPrioritization *self, WM_STREAM_PRIORITY_RECORD* pRecordArray, uint16* pcRecords) GetPriorityRecords;
+			public function HRESULT(IWMStreamPrioritization *self, WM_STREAM_PRIORITY_RECORD* pRecordArray, uint16 cRecords) SetPriorityRecords;
+		}
+		[CRepr]
+		public struct IWMWriterAdvanced : IUnknown
+		{
+			public const new Guid IID = .(0x96406be3, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMWriterAdvanced *self, uint32* pcSinks) GetSinkCount;
+			public function HRESULT(IWMWriterAdvanced *self, uint32 dwSinkNum, IWMWriterSink** ppSink) GetSink;
+			public function HRESULT(IWMWriterAdvanced *self, IWMWriterSink* pSink) AddSink;
+			public function HRESULT(IWMWriterAdvanced *self, IWMWriterSink* pSink) RemoveSink;
+			public function HRESULT(IWMWriterAdvanced *self, uint16 wStreamNum, uint64 cnsSampleTime, uint32 msSampleSendTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample) WriteStreamSample;
+			public function HRESULT(IWMWriterAdvanced *self, BOOL fIsLiveSource) SetLiveSource;
+			public function HRESULT(IWMWriterAdvanced *self, BOOL* pfRealTime) IsRealTime;
+			public function HRESULT(IWMWriterAdvanced *self, uint64* pcnsCurrentTime) GetWriterTime;
+			public function HRESULT(IWMWriterAdvanced *self, uint16 wStreamNum, WM_WRITER_STATISTICS* pStats) GetStatistics;
+			public function HRESULT(IWMWriterAdvanced *self, uint32 msWindow) SetSyncTolerance;
+			public function HRESULT(IWMWriterAdvanced *self, uint32* pmsWindow) GetSyncTolerance;
+		}
+		[CRepr]
+		public struct IWMWriterAdvanced2 : IWMWriterAdvanced
+		{
+			public const new Guid IID = .(0x962dc1ec, 0xc046, 0x4db8, 0x9c, 0xc7, 0x26, 0xce, 0xae, 0x50, 0x08, 0x17);
+			
+			public function HRESULT(IWMWriterAdvanced2 *self, uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetInputSetting;
+			public function HRESULT(IWMWriterAdvanced2 *self, uint32 dwInputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetInputSetting;
+		}
+		[CRepr]
+		public struct IWMWriterAdvanced3 : IWMWriterAdvanced2
+		{
+			public const new Guid IID = .(0x2cd6492d, 0x7c37, 0x4e76, 0x9d, 0x3b, 0x59, 0x26, 0x11, 0x83, 0xa2, 0x2e);
+			
+			public function HRESULT(IWMWriterAdvanced3 *self, uint16 wStreamNum, WM_WRITER_STATISTICS_EX* pStats) GetStatisticsEx;
+			public function HRESULT(IWMWriterAdvanced3 *self) SetNonBlocking;
+		}
+		[CRepr]
+		public struct IWMWriterPreprocess : IUnknown
+		{
+			public const new Guid IID = .(0xfc54a285, 0x38c4, 0x45b5, 0xaa, 0x23, 0x85, 0xb9, 0xf7, 0xcb, 0x42, 0x4b);
+			
+			public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags, uint32* pdwMaxNumPasses) GetMaxPreprocessingPasses;
+			public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags, uint32 dwNumPasses) SetNumPreprocessingPasses;
+			public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags) BeginPreprocessingPass;
+			public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint64 cnsSampleTime, uint32 dwFlags, INSSBuffer* pSample) PreprocessSample;
+			public function HRESULT(IWMWriterPreprocess *self, uint32 dwInputNum, uint32 dwFlags) EndPreprocessingPass;
+		}
+		[CRepr]
+		public struct IWMWriterPostViewCallback : IWMStatusCallback
+		{
+			public const new Guid IID = .(0xd9d6549d, 0xa193, 0x4f24, 0xb3, 0x08, 0x03, 0x12, 0x3d, 0x9b, 0x7f, 0x8d);
+			
+			public function HRESULT(IWMWriterPostViewCallback *self, uint16 wStreamNumber, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) OnPostViewSample;
+			public function HRESULT(IWMWriterPostViewCallback *self, uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) AllocateForPostView;
+		}
+		[CRepr]
+		public struct IWMWriterPostView : IUnknown
+		{
+			public const new Guid IID = .(0x81e20ce4, 0x75ef, 0x491a, 0x80, 0x04, 0xfc, 0x53, 0xc4, 0x5b, 0xdc, 0x3e);
+			
+			public function HRESULT(IWMWriterPostView *self, IWMWriterPostViewCallback* pCallback, void* pvContext) SetPostViewCallback;
+			public function HRESULT(IWMWriterPostView *self, uint16 wStreamNum, BOOL fReceivePostViewSamples) SetReceivePostViewSamples;
+			public function HRESULT(IWMWriterPostView *self, uint16 wStreamNum, BOOL* pfReceivePostViewSamples) GetReceivePostViewSamples;
+			public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, IWMMediaProps** ppOutput) GetPostViewProps;
+			public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, IWMMediaProps* pOutput) SetPostViewProps;
+			public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, uint32* pcFormats) GetPostViewFormatCount;
+			public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, uint32 dwFormatNumber, IWMMediaProps** ppProps) GetPostViewFormat;
+			public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, BOOL fAllocate) SetAllocateForPostView;
+			public function HRESULT(IWMWriterPostView *self, uint16 wStreamNumber, BOOL* pfAllocate) GetAllocateForPostView;
+		}
+		[CRepr]
+		public struct IWMWriterSink : IUnknown
+		{
+			public const new Guid IID = .(0x96406be4, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMWriterSink *self, INSSBuffer* pHeader) OnHeader;
+			public function HRESULT(IWMWriterSink *self, BOOL* pfRealTime) IsRealTime;
+			public function HRESULT(IWMWriterSink *self, uint32 cbDataUnit, INSSBuffer** ppDataUnit) AllocateDataUnit;
+			public function HRESULT(IWMWriterSink *self, INSSBuffer* pDataUnit) OnDataUnit;
+			public function HRESULT(IWMWriterSink *self) OnEndWriting;
+		}
+		[CRepr]
+		public struct IWMRegisterCallback : IUnknown
+		{
+			public const new Guid IID = .(0xcf4b1f99, 0x4de2, 0x4e49, 0xa3, 0x63, 0x25, 0x27, 0x40, 0xd9, 0x9b, 0xc1);
+			
+			public function HRESULT(IWMRegisterCallback *self, IWMStatusCallback* pCallback, void* pvContext) Advise;
+			public function HRESULT(IWMRegisterCallback *self, IWMStatusCallback* pCallback, void* pvContext) Unadvise;
+		}
+		[CRepr]
+		public struct IWMWriterFileSink : IWMWriterSink
+		{
+			public const new Guid IID = .(0x96406be5, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMWriterFileSink *self, PWSTR pwszFilename) Open;
+		}
+		[CRepr]
+		public struct IWMWriterFileSink2 : IWMWriterFileSink
+		{
+			public const new Guid IID = .(0x14282ba7, 0x4aef, 0x4205, 0x8c, 0xe5, 0xc2, 0x29, 0x03, 0x5a, 0x05, 0xbc);
+			
+			public function HRESULT(IWMWriterFileSink2 *self, uint64 cnsStartTime) Start;
+			public function HRESULT(IWMWriterFileSink2 *self, uint64 cnsStopTime) Stop;
+			public function HRESULT(IWMWriterFileSink2 *self, BOOL* pfStopped) IsStopped;
+			public function HRESULT(IWMWriterFileSink2 *self, uint64* pcnsDuration) GetFileDuration;
+			public function HRESULT(IWMWriterFileSink2 *self, uint64* pcbFile) GetFileSize;
+			public function HRESULT(IWMWriterFileSink2 *self) Close;
+			public function HRESULT(IWMWriterFileSink2 *self, BOOL* pfClosed) IsClosed;
+		}
+		[CRepr]
+		public struct IWMWriterFileSink3 : IWMWriterFileSink2
+		{
+			public const new Guid IID = .(0x3fea4feb, 0x2945, 0x47a7, 0xa1, 0xdd, 0xc5, 0x3a, 0x8f, 0xc4, 0xc4, 0x5c);
+			
+			public function HRESULT(IWMWriterFileSink3 *self, BOOL fDoAutoIndexing) SetAutoIndexing;
+			public function HRESULT(IWMWriterFileSink3 *self, BOOL* pfAutoIndexing) GetAutoIndexing;
+			public function HRESULT(IWMWriterFileSink3 *self, uint16 wStreamNumber, BOOL fShouldControlStartAndStop) SetControlStream;
+			public function HRESULT(IWMWriterFileSink3 *self, uint32* pdwFileSinkMode) GetMode;
+			public function HRESULT(IWMWriterFileSink3 *self, WMT_FILESINK_DATA_UNIT* pFileSinkDataUnit) OnDataUnitEx;
+			public function HRESULT(IWMWriterFileSink3 *self, BOOL fUnbufferedIO, BOOL fRestrictMemUsage) SetUnbufferedIO;
+			public function HRESULT(IWMWriterFileSink3 *self, BOOL* pfUnbufferedIO) GetUnbufferedIO;
+			public function HRESULT(IWMWriterFileSink3 *self) CompleteOperations;
+		}
+		[CRepr]
+		public struct IWMWriterNetworkSink : IWMWriterSink
+		{
+			public const new Guid IID = .(0x96406be7, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMWriterNetworkSink *self, uint32 dwMaxClients) SetMaximumClients;
+			public function HRESULT(IWMWriterNetworkSink *self, uint32* pdwMaxClients) GetMaximumClients;
+			public function HRESULT(IWMWriterNetworkSink *self, WMT_NET_PROTOCOL protocol) SetNetworkProtocol;
+			public function HRESULT(IWMWriterNetworkSink *self, WMT_NET_PROTOCOL* pProtocol) GetNetworkProtocol;
+			public function HRESULT(IWMWriterNetworkSink *self, PWSTR pwszURL, uint32* pcchURL) GetHostURL;
+			public function HRESULT(IWMWriterNetworkSink *self, uint32* pdwPortNum) Open;
+			public function HRESULT(IWMWriterNetworkSink *self) Disconnect;
+			public function HRESULT(IWMWriterNetworkSink *self) Close;
+		}
+		[CRepr]
+		public struct IWMClientConnections : IUnknown
+		{
+			public const new Guid IID = .(0x73c66010, 0xa299, 0x41df, 0xb1, 0xf0, 0xcc, 0xf0, 0x3b, 0x09, 0xc1, 0xc6);
+			
+			public function HRESULT(IWMClientConnections *self, uint32* pcClients) GetClientCount;
+			public function HRESULT(IWMClientConnections *self, uint32 dwClientNum, WM_CLIENT_PROPERTIES* pClientProperties) GetClientProperties;
+		}
+		[CRepr]
+		public struct IWMClientConnections2 : IWMClientConnections
+		{
+			public const new Guid IID = .(0x4091571e, 0x4701, 0x4593, 0xbb, 0x3d, 0xd5, 0xf5, 0xf0, 0xc7, 0x42, 0x46);
+			
+			public function HRESULT(IWMClientConnections2 *self, uint32 dwClientNum, char16* pwszNetworkAddress, uint32* pcchNetworkAddress, char16* pwszPort, uint32* pcchPort, char16* pwszDNSName, uint32* pcchDNSName) GetClientInfo;
+		}
+		[CRepr]
+		public struct IWMReaderAdvanced : IUnknown
+		{
+			public const new Guid IID = .(0x96406bea, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMReaderAdvanced *self, BOOL fUserClock) SetUserProvidedClock;
+			public function HRESULT(IWMReaderAdvanced *self, BOOL* pfUserClock) GetUserProvidedClock;
+			public function HRESULT(IWMReaderAdvanced *self, uint64 cnsTime) DeliverTime;
+			public function HRESULT(IWMReaderAdvanced *self, BOOL fSelection) SetManualStreamSelection;
+			public function HRESULT(IWMReaderAdvanced *self, BOOL* pfSelection) GetManualStreamSelection;
+			public function HRESULT(IWMReaderAdvanced *self, uint16 cStreamCount, uint16* pwStreamNumbers, WMT_STREAM_SELECTION* pSelections) SetStreamsSelected;
+			public function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, WMT_STREAM_SELECTION* pSelection) GetStreamSelected;
+			public function HRESULT(IWMReaderAdvanced *self, BOOL fGetCallbacks) SetReceiveSelectionCallbacks;
+			public function HRESULT(IWMReaderAdvanced *self, BOOL* pfGetCallbacks) GetReceiveSelectionCallbacks;
+			public function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, BOOL fReceiveStreamSamples) SetReceiveStreamSamples;
+			public function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, BOOL* pfReceiveStreamSamples) GetReceiveStreamSamples;
+			public function HRESULT(IWMReaderAdvanced *self, uint32 dwOutputNum, BOOL fAllocate) SetAllocateForOutput;
+			public function HRESULT(IWMReaderAdvanced *self, uint32 dwOutputNum, BOOL* pfAllocate) GetAllocateForOutput;
+			public function HRESULT(IWMReaderAdvanced *self, uint16 wStreamNum, BOOL fAllocate) SetAllocateForStream;
+			public function HRESULT(IWMReaderAdvanced *self, uint16 dwSreamNum, BOOL* pfAllocate) GetAllocateForStream;
+			public function HRESULT(IWMReaderAdvanced *self, WM_READER_STATISTICS* pStatistics) GetStatistics;
+			public function HRESULT(IWMReaderAdvanced *self, WM_READER_CLIENTINFO* pClientInfo) SetClientInfo;
+			public function HRESULT(IWMReaderAdvanced *self, uint32 dwOutput, uint32* pcbMax) GetMaxOutputSampleSize;
+			public function HRESULT(IWMReaderAdvanced *self, uint16 wStream, uint32* pcbMax) GetMaxStreamSampleSize;
+			public function HRESULT(IWMReaderAdvanced *self, uint64 cnsLateness) NotifyLateDelivery;
+		}
+		[CRepr]
+		public struct IWMReaderAdvanced2 : IWMReaderAdvanced
+		{
+			public const new Guid IID = .(0xae14a945, 0xb90c, 0x4d0d, 0x91, 0x27, 0x80, 0xd6, 0x65, 0xf7, 0xd7, 0x3e);
+			
+			public function HRESULT(IWMReaderAdvanced2 *self, WMT_PLAY_MODE Mode) SetPlayMode;
+			public function HRESULT(IWMReaderAdvanced2 *self, WMT_PLAY_MODE* pMode) GetPlayMode;
+			public function HRESULT(IWMReaderAdvanced2 *self, uint32* pdwPercent, uint64* pcnsBuffering) GetBufferProgress;
+			public function HRESULT(IWMReaderAdvanced2 *self, uint32* pdwPercent, uint64* pqwBytesDownloaded, uint64* pcnsDownload) GetDownloadProgress;
+			public function HRESULT(IWMReaderAdvanced2 *self, uint32* pdwPercent) GetSaveAsProgress;
+			public function HRESULT(IWMReaderAdvanced2 *self, PWSTR pwszFilename) SaveFileAs;
+			public function HRESULT(IWMReaderAdvanced2 *self, char16* pwszProtocol, uint32* pcchProtocol) GetProtocolName;
+			public function HRESULT(IWMReaderAdvanced2 *self, uint16 wMarkerIndex, uint64 cnsDuration, float fRate, void* pvContext) StartAtMarker;
+			public function HRESULT(IWMReaderAdvanced2 *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetOutputSetting;
+			public function HRESULT(IWMReaderAdvanced2 *self, uint32 dwOutputNum, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetOutputSetting;
+			public function HRESULT(IWMReaderAdvanced2 *self, uint64 cnsStart, uint64 cnsDuration, float fRate) Preroll;
+			public function HRESULT(IWMReaderAdvanced2 *self, BOOL fLogClientID) SetLogClientID;
+			public function HRESULT(IWMReaderAdvanced2 *self, BOOL* pfLogClientID) GetLogClientID;
+			public function HRESULT(IWMReaderAdvanced2 *self) StopBuffering;
+			public function HRESULT(IWMReaderAdvanced2 *self, IStream* pStream, IWMReaderCallback* pCallback, void* pvContext) OpenStream;
+		}
+		[CRepr]
+		public struct IWMReaderAdvanced3 : IWMReaderAdvanced2
+		{
+			public const new Guid IID = .(0x5dc0674b, 0xf04b, 0x4a4e, 0x9f, 0x2a, 0xb1, 0xaf, 0xde, 0x2c, 0x81, 0x00);
+			
+			public function HRESULT(IWMReaderAdvanced3 *self) StopNetStreaming;
+			public function HRESULT(IWMReaderAdvanced3 *self, uint16 wStreamNum, void* pvOffsetStart, void* pvDuration, WMT_OFFSET_FORMAT dwOffsetFormat, float fRate, void* pvContext) StartAtPosition;
+		}
+		[CRepr]
+		public struct IWMReaderAdvanced4 : IWMReaderAdvanced3
+		{
+			public const new Guid IID = .(0x945a76a2, 0x12ae, 0x4d48, 0xbd, 0x3c, 0xcd, 0x1d, 0x90, 0x39, 0x9b, 0x85);
+			
+			public function HRESULT(IWMReaderAdvanced4 *self, uint32 dwOutputNum, uint16* pwLanguageCount) GetLanguageCount;
+			public function HRESULT(IWMReaderAdvanced4 *self, uint32 dwOutputNum, uint16 wLanguage, char16* pwszLanguageString, uint16* pcchLanguageStringLength) GetLanguage;
+			public function HRESULT(IWMReaderAdvanced4 *self, double* pdblFactor) GetMaxSpeedFactor;
+			public function HRESULT(IWMReaderAdvanced4 *self, BOOL* pfUsingFastCache) IsUsingFastCache;
+			public function HRESULT(IWMReaderAdvanced4 *self, PWSTR wszNameSpace, PWSTR wszName, PWSTR wszValue) AddLogParam;
+			public function HRESULT(IWMReaderAdvanced4 *self) SendLogParams;
+			public function HRESULT(IWMReaderAdvanced4 *self, BOOL* pfCanSave) CanSaveFileAs;
+			public function HRESULT(IWMReaderAdvanced4 *self) CancelSaveFileAs;
+			public function HRESULT(IWMReaderAdvanced4 *self, char16* pwszURL, uint32* pcchURL) GetURL;
+		}
+		[CRepr]
+		public struct IWMReaderAdvanced5 : IWMReaderAdvanced4
+		{
+			public const new Guid IID = .(0x24c44db0, 0x55d1, 0x49ae, 0xa5, 0xcc, 0xf1, 0x38, 0x15, 0xe3, 0x63, 0x63);
+			
+			public function HRESULT(IWMReaderAdvanced5 *self, uint32 dwOutputNum, IWMPlayerHook* pHook) SetPlayerHook;
+		}
+		[CRepr]
+		public struct IWMReaderAdvanced6 : IWMReaderAdvanced5
+		{
+			public const new Guid IID = .(0x18a2e7f8, 0x428f, 0x4acd, 0x8a, 0x00, 0xe6, 0x46, 0x39, 0xbc, 0x93, 0xde);
+			
+			public function HRESULT(IWMReaderAdvanced6 *self, uint8* pbCertificate, uint32 cbCertificate, uint32 dwCertificateType, uint32 dwFlags, uint8* pbInitializationVector, uint32* pcbInitializationVector) SetProtectStreamSamples;
+		}
+		[CRepr]
+		public struct IWMPlayerHook : IUnknown
+		{
+			public const new Guid IID = .(0xe5b7ca9a, 0x0f1c, 0x4f66, 0x90, 0x02, 0x74, 0xec, 0x50, 0xd8, 0xb3, 0x04);
+			
+			public function HRESULT(IWMPlayerHook *self) PreDecode;
+		}
+		[CRepr]
+		public struct IWMReaderAllocatorEx : IUnknown
+		{
+			public const new Guid IID = .(0x9f762fa7, 0xa22e, 0x428d, 0x93, 0xc9, 0xac, 0x82, 0xf3, 0xaa, 0xfe, 0x5a);
+			
+			public function HRESULT(IWMReaderAllocatorEx *self, uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForStreamEx;
+			public function HRESULT(IWMReaderAllocatorEx *self, uint32 dwOutputNum, uint32 cbBuffer, INSSBuffer** ppBuffer, uint32 dwFlags, uint64 cnsSampleTime, uint64 cnsSampleDuration, void* pvContext) AllocateForOutputEx;
+		}
+		[CRepr]
+		public struct IWMReaderTypeNegotiation : IUnknown
+		{
+			public const new Guid IID = .(0xfdbe5592, 0x81a1, 0x41ea, 0x93, 0xbd, 0x73, 0x5c, 0xad, 0x1a, 0xdc, 0x05);
+			
+			public function HRESULT(IWMReaderTypeNegotiation *self, uint32 dwOutputNum, IWMOutputMediaProps* pOutput) TryOutputProps;
+		}
+		[CRepr]
+		public struct IWMReaderCallbackAdvanced : IUnknown
+		{
+			public const new Guid IID = .(0x96406beb, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMReaderCallbackAdvanced *self, uint16 wStreamNum, uint64 cnsSampleTime, uint64 cnsSampleDuration, uint32 dwFlags, INSSBuffer* pSample, void* pvContext) OnStreamSample;
+			public function HRESULT(IWMReaderCallbackAdvanced *self, uint64 cnsCurrentTime, void* pvContext) OnTime;
+			public function HRESULT(IWMReaderCallbackAdvanced *self, uint16 wStreamCount, uint16* pStreamNumbers, WMT_STREAM_SELECTION* pSelections, void* pvContext) OnStreamSelection;
+			public function HRESULT(IWMReaderCallbackAdvanced *self, uint32 dwOutputNum, WM_MEDIA_TYPE* pMediaType, void* pvContext) OnOutputPropsChanged;
+			public function HRESULT(IWMReaderCallbackAdvanced *self, uint16 wStreamNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) AllocateForStream;
+			public function HRESULT(IWMReaderCallbackAdvanced *self, uint32 dwOutputNum, uint32 cbBuffer, INSSBuffer** ppBuffer, void* pvContext) AllocateForOutput;
+		}
+		[CRepr]
+		public struct IWMDRMReader : IUnknown
+		{
+			public const new Guid IID = .(0xd2827540, 0x3ee7, 0x432c, 0xb1, 0x4c, 0xdc, 0x17, 0xf0, 0x85, 0xd3, 0xb3);
+			
+			public function HRESULT(IWMDRMReader *self, uint32 dwFlags) AcquireLicense;
+			public function HRESULT(IWMDRMReader *self) CancelLicenseAcquisition;
+			public function HRESULT(IWMDRMReader *self, uint32 dwFlags) Individualize;
+			public function HRESULT(IWMDRMReader *self) CancelIndividualization;
+			public function HRESULT(IWMDRMReader *self) MonitorLicenseAcquisition;
+			public function HRESULT(IWMDRMReader *self) CancelMonitorLicenseAcquisition;
+			public function HRESULT(IWMDRMReader *self, PWSTR pwstrName, WMT_ATTR_DATATYPE dwType, uint8* pValue, uint16 cbLength) SetDRMProperty;
+			public function HRESULT(IWMDRMReader *self, PWSTR pwstrName, WMT_ATTR_DATATYPE* pdwType, uint8* pValue, uint16* pcbLength) GetDRMProperty;
+		}
+		[CRepr]
+		public struct IWMDRMReader2 : IWMDRMReader
+		{
+			public const new Guid IID = .(0xbefe7a75, 0x9f1d, 0x4075, 0xb9, 0xd9, 0xa3, 0xc3, 0x7b, 0xda, 0x49, 0xa0);
+			
+			public function HRESULT(IWMDRMReader2 *self, BOOL fEvaluate) SetEvaluateOutputLevelLicenses;
+			public function HRESULT(IWMDRMReader2 *self, DRM_PLAY_OPL* pPlayOPL, uint32* pcbLength, uint32* pdwMinAppComplianceLevel) GetPlayOutputLevels;
+			public function HRESULT(IWMDRMReader2 *self, DRM_COPY_OPL* pCopyOPL, uint32* pcbLength, uint32* pdwMinAppComplianceLevel) GetCopyOutputLevels;
+			public function HRESULT(IWMDRMReader2 *self) TryNextLicense;
+		}
+		[CRepr]
+		public struct IWMDRMReader3 : IWMDRMReader2
+		{
+			public const new Guid IID = .(0xe08672de, 0xf1e7, 0x4ff4, 0xa0, 0xa3, 0xfc, 0x4b, 0x08, 0xe4, 0xca, 0xf8);
+			
+			public function HRESULT(IWMDRMReader3 *self, Guid** ppGuids, uint32* pcGuids) GetInclusionList;
+		}
+		[CRepr]
+		public struct IWMReaderPlaylistBurn : IUnknown
+		{
+			public const new Guid IID = .(0xf28c0300, 0x9baa, 0x4477, 0xa8, 0x46, 0x17, 0x44, 0xd9, 0xcb, 0xf5, 0x33);
+			
+			public function HRESULT(IWMReaderPlaylistBurn *self, uint32 cFiles, PWSTR* ppwszFilenames, IWMStatusCallback* pCallback, void* pvContext) InitPlaylistBurn;
+			public function HRESULT(IWMReaderPlaylistBurn *self, uint32 cFiles, HRESULT* phrStati) GetInitResults;
+			public function HRESULT(IWMReaderPlaylistBurn *self) Cancel;
+			public function HRESULT(IWMReaderPlaylistBurn *self, HRESULT hrBurnResult) EndPlaylistBurn;
+		}
+		[CRepr]
+		public struct IWMReaderNetworkConfig : IUnknown
+		{
+			public const new Guid IID = .(0x96406bec, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMReaderNetworkConfig *self, uint64* pcnsBufferingTime) GetBufferingTime;
+			public function HRESULT(IWMReaderNetworkConfig *self, uint64 cnsBufferingTime) SetBufferingTime;
+			public function HRESULT(IWMReaderNetworkConfig *self, WM_PORT_NUMBER_RANGE* pRangeArray, uint32* pcRanges) GetUDPPortRanges;
+			public function HRESULT(IWMReaderNetworkConfig *self, WM_PORT_NUMBER_RANGE* pRangeArray, uint32 cRanges) SetUDPPortRanges;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, WMT_PROXY_SETTINGS* pProxySetting) GetProxySettings;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, WMT_PROXY_SETTINGS ProxySetting) SetProxySettings;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, char16* pwszHostName, uint32* pcchHostName) GetProxyHostName;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, PWSTR pwszHostName) SetProxyHostName;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, uint32* pdwPort) GetProxyPort;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, uint32 dwPort) SetProxyPort;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, char16* pwszExceptionList, uint32* pcchExceptionList) GetProxyExceptionList;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, PWSTR pwszExceptionList) SetProxyExceptionList;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, BOOL* pfBypassForLocal) GetProxyBypassForLocal;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszProtocol, BOOL fBypassForLocal) SetProxyBypassForLocal;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfForceRerunDetection) GetForceRerunAutoProxyDetection;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL fForceRerunDetection) SetForceRerunAutoProxyDetection;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableMulticast) GetEnableMulticast;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableMulticast) SetEnableMulticast;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableHTTP) GetEnableHTTP;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableHTTP) SetEnableHTTP;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableUDP) GetEnableUDP;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableUDP) SetEnableUDP;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL* pfEnableTCP) GetEnableTCP;
+			public function HRESULT(IWMReaderNetworkConfig *self, BOOL fEnableTCP) SetEnableTCP;
+			public function HRESULT(IWMReaderNetworkConfig *self) ResetProtocolRollover;
+			public function HRESULT(IWMReaderNetworkConfig *self, uint32* pdwConnectionBandwidth) GetConnectionBandwidth;
+			public function HRESULT(IWMReaderNetworkConfig *self, uint32 dwConnectionBandwidth) SetConnectionBandwidth;
+			public function HRESULT(IWMReaderNetworkConfig *self, uint32* pcProtocols) GetNumProtocolsSupported;
+			public function HRESULT(IWMReaderNetworkConfig *self, uint32 dwProtocolNum, char16* pwszProtocolName, uint32* pcchProtocolName) GetSupportedProtocolName;
+			public function HRESULT(IWMReaderNetworkConfig *self, PWSTR pwszUrl) AddLoggingUrl;
+			public function HRESULT(IWMReaderNetworkConfig *self, uint32 dwIndex, char16* pwszUrl, uint32* pcchUrl) GetLoggingUrl;
+			public function HRESULT(IWMReaderNetworkConfig *self, uint32* pdwUrlCount) GetLoggingUrlCount;
+			public function HRESULT(IWMReaderNetworkConfig *self) ResetLoggingUrlList;
+		}
+		[CRepr]
+		public struct IWMReaderNetworkConfig2 : IWMReaderNetworkConfig
+		{
+			public const new Guid IID = .(0xd979a853, 0x042b, 0x4050, 0x83, 0x87, 0xc9, 0x39, 0xdb, 0x22, 0x01, 0x3f);
+			
+			public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableContentCaching) GetEnableContentCaching;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableContentCaching) SetEnableContentCaching;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableFastCache) GetEnableFastCache;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableFastCache) SetEnableFastCache;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, uint64* pcnsAccelDuration) GetAcceleratedStreamingDuration;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, uint64 cnsAccelDuration) SetAcceleratedStreamingDuration;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, uint32* pdwAutoReconnectLimit) GetAutoReconnectLimit;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, uint32 dwAutoReconnectLimit) SetAutoReconnectLimit;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableResends) GetEnableResends;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableResends) SetEnableResends;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL* pfEnableThinning) GetEnableThinning;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, BOOL fEnableThinning) SetEnableThinning;
+			public function HRESULT(IWMReaderNetworkConfig2 *self, uint32* pdwMaxNetPacketSize) GetMaxNetPacketSize;
+		}
+		[CRepr]
+		public struct IWMReaderStreamClock : IUnknown
+		{
+			public const new Guid IID = .(0x96406bed, 0x2b2b, 0x11d3, 0xb3, 0x6b, 0x00, 0xc0, 0x4f, 0x61, 0x08, 0xff);
+			
+			public function HRESULT(IWMReaderStreamClock *self, uint64* pcnsNow) GetTime;
+			public function HRESULT(IWMReaderStreamClock *self, uint64 cnsWhen, void* pvParam, uint32* pdwTimerId) SetTimer;
+			public function HRESULT(IWMReaderStreamClock *self, uint32 dwTimerId) KillTimer;
+		}
+		[CRepr]
+		public struct IWMIndexer : IUnknown
+		{
+			public const new Guid IID = .(0x6d7cdc71, 0x9888, 0x11d3, 0x8e, 0xdc, 0x00, 0xc0, 0x4f, 0x61, 0x09, 0xcf);
+			
+			public function HRESULT(IWMIndexer *self, PWSTR pwszURL, IWMStatusCallback* pCallback, void* pvContext) StartIndexing;
+			public function HRESULT(IWMIndexer *self) Cancel;
+		}
+		[CRepr]
+		public struct IWMIndexer2 : IWMIndexer
+		{
+			public const new Guid IID = .(0xb70f1e42, 0x6255, 0x4df0, 0xa6, 0xb9, 0x02, 0xb2, 0x12, 0xd9, 0xe2, 0xbb);
+			
+			public function HRESULT(IWMIndexer2 *self, uint16 wStreamNum, WMT_INDEXER_TYPE nIndexerType, void* pvInterval, void* pvIndexType) Configure;
+		}
+		[CRepr]
+		public struct IWMLicenseBackup : IUnknown
+		{
+			public const new Guid IID = .(0x05e5ac9f, 0x3fb6, 0x4508, 0xbb, 0x43, 0xa4, 0x06, 0x7b, 0xa1, 0xeb, 0xe8);
+			
+			public function HRESULT(IWMLicenseBackup *self, uint32 dwFlags, IWMStatusCallback* pCallback) BackupLicenses;
+			public function HRESULT(IWMLicenseBackup *self) CancelLicenseBackup;
+		}
+		[CRepr]
+		public struct IWMLicenseRestore : IUnknown
+		{
+			public const new Guid IID = .(0xc70b6334, 0xa22e, 0x4efb, 0xa2, 0x45, 0x15, 0xe6, 0x5a, 0x00, 0x4a, 0x13);
+			
+			public function HRESULT(IWMLicenseRestore *self, uint32 dwFlags, IWMStatusCallback* pCallback) RestoreLicenses;
+			public function HRESULT(IWMLicenseRestore *self) CancelLicenseRestore;
+		}
+		[CRepr]
+		public struct IWMBackupRestoreProps : IUnknown
+		{
+			public const new Guid IID = .(0x3c8e0da6, 0x996f, 0x4ff3, 0xa1, 0xaf, 0x48, 0x38, 0xf9, 0x37, 0x7e, 0x2e);
+			
+			public function HRESULT(IWMBackupRestoreProps *self, uint16* pcProps) GetPropCount;
+			public function HRESULT(IWMBackupRestoreProps *self, uint16 wIndex, char16* pwszName, uint16* pcchNameLen, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetPropByIndex;
+			public function HRESULT(IWMBackupRestoreProps *self, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint16* pcbLength) GetPropByName;
+			public function HRESULT(IWMBackupRestoreProps *self, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint16 cbLength) SetProp;
+			public function HRESULT(IWMBackupRestoreProps *self, PWSTR pcwszName) RemoveProp;
+			public function HRESULT(IWMBackupRestoreProps *self) RemoveAllProps;
+		}
+		[CRepr]
+		public struct IWMCodecInfo : IUnknown
+		{
+			public const new Guid IID = .(0xa970f41e, 0x34de, 0x4a98, 0xb3, 0xba, 0xe4, 0xb3, 0xca, 0x75, 0x28, 0xf0);
+			
+			public function HRESULT(IWMCodecInfo *self, Guid* guidType, uint32* pcCodecs) GetCodecInfoCount;
+			public function HRESULT(IWMCodecInfo *self, Guid* guidType, uint32 dwCodecIndex, uint32* pcFormat) GetCodecFormatCount;
+			public function HRESULT(IWMCodecInfo *self, Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, IWMStreamConfig** ppIStreamConfig) GetCodecFormat;
+		}
+		[CRepr]
+		public struct IWMCodecInfo2 : IWMCodecInfo
+		{
+			public const new Guid IID = .(0xaa65e273, 0xb686, 0x4056, 0x91, 0xec, 0xdd, 0x76, 0x8d, 0x4d, 0xf7, 0x10);
+			
+			public function HRESULT(IWMCodecInfo2 *self, Guid* guidType, uint32 dwCodecIndex, char16* wszName, uint32* pcchName) GetCodecName;
+			public function HRESULT(IWMCodecInfo2 *self, Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, IWMStreamConfig** ppIStreamConfig, char16* wszDesc, uint32* pcchDesc) GetCodecFormatDesc;
+		}
+		[CRepr]
+		public struct IWMCodecInfo3 : IWMCodecInfo2
+		{
+			public const new Guid IID = .(0x7e51f487, 0x4d93, 0x4f98, 0x8a, 0xb4, 0x27, 0xd0, 0x56, 0x5a, 0xdc, 0x51);
+			
+			public function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, uint32 dwFormatIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecFormatProp;
+			public function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecProp;
+			public function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE Type, uint8* pValue, uint32 dwSize) SetCodecEnumerationSetting;
+			public function HRESULT(IWMCodecInfo3 *self, Guid* guidType, uint32 dwCodecIndex, PWSTR pszName, WMT_ATTR_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecEnumerationSetting;
+		}
+		[CRepr]
+		public struct IWMLanguageList : IUnknown
+		{
+			public const new Guid IID = .(0xdf683f00, 0x2d49, 0x4d8e, 0x92, 0xb7, 0xfb, 0x19, 0xf6, 0xa0, 0xdc, 0x57);
+			
+			public function HRESULT(IWMLanguageList *self, uint16* pwCount) GetLanguageCount;
+			public function HRESULT(IWMLanguageList *self, uint16 wIndex, char16* pwszLanguageString, uint16* pcchLanguageStringLength) GetLanguageDetails;
+			public function HRESULT(IWMLanguageList *self, PWSTR pwszLanguageString, uint16* pwIndex) AddLanguageByRFC1766String;
+		}
+		[CRepr]
+		public struct IWMWriterPushSink : IWMWriterSink
+		{
+			public const new Guid IID = .(0xdc10e6a5, 0x072c, 0x467d, 0xbf, 0x57, 0x63, 0x30, 0xa9, 0xdd, 0xe1, 0x2a);
+			
+			public function HRESULT(IWMWriterPushSink *self, PWSTR pwszURL, PWSTR pwszTemplateURL, BOOL fAutoDestroy) Connect;
+			public function HRESULT(IWMWriterPushSink *self) Disconnect;
+			public function HRESULT(IWMWriterPushSink *self) EndSession;
+		}
+		[CRepr]
+		public struct IWMDeviceRegistration : IUnknown
+		{
+			public const new Guid IID = .(0xf6211f03, 0x8d21, 0x4e94, 0x93, 0xe6, 0x85, 0x10, 0x80, 0x5f, 0x2d, 0x99);
+			
+			public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, IWMRegisteredDevice** ppDevice) RegisterDevice;
+			public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber) UnregisterDevice;
+			public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint32* pcRegisteredDevices) GetRegistrationStats;
+			public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, IWMRegisteredDevice** ppDevice) GetFirstRegisteredDevice;
+			public function HRESULT(IWMDeviceRegistration *self, IWMRegisteredDevice** ppDevice) GetNextRegisteredDevice;
+			public function HRESULT(IWMDeviceRegistration *self, uint32 dwRegisterType, uint8* pbCertificate, uint32 cbCertificate, DRM_VAL16 SerialNumber, IWMRegisteredDevice** ppDevice) GetRegisteredDeviceByID;
+		}
+		[CRepr]
+		public struct IWMRegisteredDevice : IUnknown
+		{
+			public const new Guid IID = .(0xa4503bec, 0x5508, 0x4148, 0x97, 0xac, 0xbf, 0xa7, 0x57, 0x60, 0xa7, 0x0d);
+			
+			public function HRESULT(IWMRegisteredDevice *self, DRM_VAL16* pSerialNumber) GetDeviceSerialNumber;
+			public function HRESULT(IWMRegisteredDevice *self, INSSBuffer** ppCertificate) GetDeviceCertificate;
+			public function HRESULT(IWMRegisteredDevice *self, uint32* pdwType) GetDeviceType;
+			public function HRESULT(IWMRegisteredDevice *self, uint32* pcAttributes) GetAttributeCount;
+			public function HRESULT(IWMRegisteredDevice *self, uint32 dwIndex, BSTR* pbstrName, BSTR* pbstrValue) GetAttributeByIndex;
+			public function HRESULT(IWMRegisteredDevice *self, BSTR bstrName, BSTR* pbstrValue) GetAttributeByName;
+			public function HRESULT(IWMRegisteredDevice *self, BSTR bstrName, BSTR bstrValue) SetAttributeByName;
+			public function HRESULT(IWMRegisteredDevice *self, BOOL fApprove) Approve;
+			public function HRESULT(IWMRegisteredDevice *self, BOOL* pfValid) IsValid;
+			public function HRESULT(IWMRegisteredDevice *self, BOOL* pfApproved) IsApproved;
+			public function HRESULT(IWMRegisteredDevice *self, BOOL* pfCompliant) IsWmdrmCompliant;
+			public function HRESULT(IWMRegisteredDevice *self, BOOL* pfOpened) IsOpened;
+			public function HRESULT(IWMRegisteredDevice *self) Open;
+			public function HRESULT(IWMRegisteredDevice *self) Close;
+		}
+		[CRepr]
+		public struct IWMProximityDetection : IUnknown
+		{
+			public const new Guid IID = .(0x6a9fd8ee, 0xb651, 0x4bf0, 0xb8, 0x49, 0x7d, 0x4e, 0xce, 0x79, 0xa2, 0xb1);
+			
+			public function HRESULT(IWMProximityDetection *self, uint8* pbRegistrationMsg, uint32 cbRegistrationMsg, uint8* pbLocalAddress, uint32 cbLocalAddress, uint32 dwExtraPortsAllowed, INSSBuffer** ppRegistrationResponseMsg, IWMStatusCallback* pCallback, void* pvContext) StartDetection;
+		}
+		[CRepr]
+		public struct IWMDRMMessageParser : IUnknown
+		{
+			public const new Guid IID = .(0xa73a0072, 0x25a0, 0x4c99, 0xb4, 0xa5, 0xed, 0xe8, 0x10, 0x1a, 0x6c, 0x39);
+			
+			public function HRESULT(IWMDRMMessageParser *self, uint8* pbRegistrationReqMsg, uint32 cbRegistrationReqMsg, INSSBuffer** ppDeviceCert, DRM_VAL16* pDeviceSerialNumber) ParseRegistrationReqMsg;
+			public function HRESULT(IWMDRMMessageParser *self, uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, INSSBuffer** ppDeviceCert, DRM_VAL16* pDeviceSerialNumber, BSTR* pbstrAction) ParseLicenseRequestMsg;
+		}
+		[CRepr]
+		public struct IWMDRMTranscryptor : IUnknown
+		{
+			public const new Guid IID = .(0x69059850, 0x6e6f, 0x4bb2, 0x80, 0x6f, 0x71, 0x86, 0x3d, 0xdf, 0xc4, 0x71);
+			
+			public function HRESULT(IWMDRMTranscryptor *self, BSTR bstrFileName, uint8* pbLicenseRequestMsg, uint32 cbLicenseRequestMsg, INSSBuffer** ppLicenseResponseMsg, IWMStatusCallback* pCallback, void* pvContext) Initialize;
+			public function HRESULT(IWMDRMTranscryptor *self, uint64 hnsTime) Seek;
+			public function HRESULT(IWMDRMTranscryptor *self, uint8* pbData, uint32* pcbData) Read;
+			public function HRESULT(IWMDRMTranscryptor *self) Close;
+		}
+		[CRepr]
+		public struct IWMDRMTranscryptor2 : IWMDRMTranscryptor
+		{
+			public const new Guid IID = .(0xe0da439f, 0xd331, 0x496a, 0xbe, 0xce, 0x18, 0xe5, 0xba, 0xc5, 0xdd, 0x23);
+			
+			public function HRESULT(IWMDRMTranscryptor2 *self, uint64 cnsStartTime, uint64 cnsDuration, float flRate, BOOL fIncludeFileHeader) SeekEx;
+			public function HRESULT(IWMDRMTranscryptor2 *self, BOOL fEnable) ZeroAdjustTimestamps;
+			public function HRESULT(IWMDRMTranscryptor2 *self, uint64* pcnsTime) GetSeekStartTime;
+			public function HRESULT(IWMDRMTranscryptor2 *self, uint64* pcnsDuration) GetDuration;
+		}
+		[CRepr]
+		public struct IWMDRMTranscryptionManager : IUnknown
+		{
+			public const new Guid IID = .(0xb1a887b2, 0xa4f0, 0x407a, 0xb0, 0x2e, 0xef, 0xbd, 0x23, 0xbb, 0xec, 0xdf);
+			
+			public function HRESULT(IWMDRMTranscryptionManager *self, IWMDRMTranscryptor** ppTranscryptor) CreateTranscryptor;
+		}
+		[CRepr]
+		public struct IWMWatermarkInfo : IUnknown
+		{
+			public const new Guid IID = .(0x6f497062, 0xf2e2, 0x4624, 0x8e, 0xa7, 0x9d, 0xd4, 0x0d, 0x81, 0xfc, 0x8d);
+			
+			public function HRESULT(IWMWatermarkInfo *self, WMT_WATERMARK_ENTRY_TYPE wmetType, uint32* pdwCount) GetWatermarkEntryCount;
+			public function HRESULT(IWMWatermarkInfo *self, WMT_WATERMARK_ENTRY_TYPE wmetType, uint32 dwEntryNum, WMT_WATERMARK_ENTRY* pEntry) GetWatermarkEntry;
+		}
+		[CRepr]
+		public struct IWMReaderAccelerator : IUnknown
+		{
+			public const new Guid IID = .(0xbddc4d08, 0x944d, 0x4d52, 0xa6, 0x12, 0x46, 0xc3, 0xfd, 0xa0, 0x7d, 0xd4);
+			
+			public function HRESULT(IWMReaderAccelerator *self, uint32 dwOutputNum, Guid* riid, void** ppvCodecInterface) GetCodecInterface;
+			public function HRESULT(IWMReaderAccelerator *self, uint32 dwOutputNum, WM_MEDIA_TYPE* pSubtype) Notify;
+		}
+		[CRepr]
+		public struct IWMReaderTimecode : IUnknown
+		{
+			public const new Guid IID = .(0xf369e2f0, 0xe081, 0x4fe6, 0x84, 0x50, 0xb8, 0x10, 0xb2, 0xf4, 0x10, 0xd1);
+			
+			public function HRESULT(IWMReaderTimecode *self, uint16 wStreamNum, uint16* pwRangeCount) GetTimecodeRangeCount;
+			public function HRESULT(IWMReaderTimecode *self, uint16 wStreamNum, uint16 wRangeNum, uint32* pStartTimecode, uint32* pEndTimecode) GetTimecodeRangeBounds;
+		}
+		[CRepr]
+		public struct IWMAddressAccess : IUnknown
+		{
+			public const new Guid IID = .(0xbb3c6389, 0x1633, 0x4e92, 0xaf, 0x14, 0x9f, 0x31, 0x73, 0xba, 0x39, 0xd0);
+			
+			public function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, uint32* pcEntries) GetAccessEntryCount;
+			public function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, uint32 dwEntryNum, WM_ADDRESS_ACCESSENTRY* pAddrAccessEntry) GetAccessEntry;
+			public function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, WM_ADDRESS_ACCESSENTRY* pAddrAccessEntry) AddAccessEntry;
+			public function HRESULT(IWMAddressAccess *self, WM_AETYPE aeType, uint32 dwEntryNum) RemoveAccessEntry;
+		}
+		[CRepr]
+		public struct IWMAddressAccess2 : IWMAddressAccess
+		{
+			public const new Guid IID = .(0x65a83fc2, 0x3e98, 0x4d4d, 0x81, 0xb5, 0x2a, 0x74, 0x28, 0x86, 0xb3, 0x3d);
+			
+			public function HRESULT(IWMAddressAccess2 *self, WM_AETYPE aeType, uint32 dwEntryNum, BSTR* pbstrAddress, BSTR* pbstrMask) GetAccessEntryEx;
+			public function HRESULT(IWMAddressAccess2 *self, WM_AETYPE aeType, BSTR bstrAddress, BSTR bstrMask) AddAccessEntryEx;
+		}
+		[CRepr]
+		public struct IWMImageInfo : IUnknown
+		{
+			public const new Guid IID = .(0x9f0aa3b6, 0x7267, 0x4d89, 0x88, 0xf2, 0xba, 0x91, 0x5a, 0xa5, 0xc4, 0xc6);
+			
+			public function HRESULT(IWMImageInfo *self, uint32* pcImages) GetImageCount;
+			public function HRESULT(IWMImageInfo *self, uint32 wIndex, uint16* pcchMIMEType, char16* pwszMIMEType, uint16* pcchDescription, char16* pwszDescription, uint16* pImageType, uint32* pcbImageData, uint8* pbImageData) GetImage;
+		}
+		[CRepr]
+		public struct IWMLicenseRevocationAgent : IUnknown
+		{
+			public const new Guid IID = .(0x6967f2c9, 0x4e26, 0x4b57, 0x88, 0x94, 0x79, 0x98, 0x80, 0xf7, 0xac, 0x7b);
+			
+			public function HRESULT(IWMLicenseRevocationAgent *self, uint8* pMachineID, uint32 dwMachineIDLength, uint8* pChallenge, uint32 dwChallengeLength, uint8* pChallengeOutput, uint32* pdwChallengeOutputLength) GetLRBChallenge;
+			public function HRESULT(IWMLicenseRevocationAgent *self, uint8* pSignedLRB, uint32 dwSignedLRBLength, uint8* pSignedACK, uint32* pdwSignedACKLength) ProcessLRB;
+		}
+		[CRepr]
+		public struct IWMAuthorizer : IUnknown
+		{
+			public const new Guid IID = .(0xd9b67d36, 0xa9ad, 0x4eb4, 0xba, 0xef, 0xdb, 0x28, 0x4e, 0xf5, 0x50, 0x4c);
+			
+			public function HRESULT(IWMAuthorizer *self, uint32* pcCerts) GetCertCount;
+			public function HRESULT(IWMAuthorizer *self, uint32 dwIndex, uint8** ppbCertData) GetCert;
+			public function HRESULT(IWMAuthorizer *self, uint32 dwCertIndex, uint8* pbSharedData, uint8* pbCert, uint8** ppbSharedData) GetSharedData;
+		}
+		[CRepr]
+		public struct IWMSecureChannel : IWMAuthorizer
+		{
+			public const new Guid IID = .(0x2720598a, 0xd0f2, 0x4189, 0xbd, 0x10, 0x91, 0xc4, 0x6e, 0xf0, 0x93, 0x6f);
+			
+			public function HRESULT(IWMSecureChannel *self, IWMAuthorizer* pCert) WMSC_AddCertificate;
+			public function HRESULT(IWMSecureChannel *self, uint8* pbCertSig, uint32 cbCertSig) WMSC_AddSignature;
+			public function HRESULT(IWMSecureChannel *self, IWMSecureChannel* pOtherSide) WMSC_Connect;
+			public function HRESULT(IWMSecureChannel *self, BOOL* pfIsConnected) WMSC_IsConnected;
+			public function HRESULT(IWMSecureChannel *self) WMSC_Disconnect;
+			public function HRESULT(IWMSecureChannel *self, uint8** ppbCertificate, uint32* pdwSignature) WMSC_GetValidCertificate;
+			public function HRESULT(IWMSecureChannel *self, uint8* pbData, uint32 cbData) WMSC_Encrypt;
+			public function HRESULT(IWMSecureChannel *self, uint8* pbData, uint32 cbData) WMSC_Decrypt;
+			public function HRESULT(IWMSecureChannel *self) WMSC_Lock;
+			public function HRESULT(IWMSecureChannel *self) WMSC_Unlock;
+			public function HRESULT(IWMSecureChannel *self, uint32 dwCertIndex, uint8* pbSharedData) WMSC_SetSharedData;
+		}
+		[CRepr]
+		public struct IWMGetSecureChannel : IUnknown
+		{
+			public const new Guid IID = .(0x94bc0598, 0xc3d2, 0x11d3, 0xbe, 0xdf, 0x00, 0xc0, 0x4f, 0x61, 0x29, 0x86);
+			
+			public function HRESULT(IWMGetSecureChannel *self, IWMSecureChannel** ppPeer) GetPeerSecureChannelInterface;
+		}
+		[CRepr]
+		public struct INSNetSourceCreator : IUnknown
+		{
+			public const new Guid IID = .(0x0c0e4080, 0x9081, 0x11d2, 0xbe, 0xec, 0x00, 0x60, 0x08, 0x2f, 0x20, 0x54);
+			
+			public function HRESULT(INSNetSourceCreator *self) Initialize;
+			public function HRESULT(INSNetSourceCreator *self, PWSTR pszStreamName, IUnknown* pMonitor, uint8* pData, IUnknown* pUserContext, IUnknown* pCallback, uint64 qwContext) CreateNetSource;
+			public function HRESULT(INSNetSourceCreator *self, PWSTR pszStreamName, IUnknown** ppPropertiesNode) GetNetSourceProperties;
+			public function HRESULT(INSNetSourceCreator *self, IUnknown** ppSharedNamespace) GetNetSourceSharedNamespace;
+			public function HRESULT(INSNetSourceCreator *self, PWSTR pszStreamName, VARIANT* pVal) GetNetSourceAdminInterface;
+			public function HRESULT(INSNetSourceCreator *self, uint32* pcProtocols) GetNumProtocolsSupported;
+			public function HRESULT(INSNetSourceCreator *self, uint32 dwProtocolNum, PWSTR pwszProtocolName, uint16* pcchProtocolName) GetProtocolName;
+			public function HRESULT(INSNetSourceCreator *self) Shutdown;
+		}
+		[CRepr]
+		public struct IWMPlayerTimestampHook : IUnknown
+		{
+			public const new Guid IID = .(0x28580dda, 0xd98e, 0x48d0, 0xb7, 0xae, 0x69, 0xe4, 0x73, 0xa0, 0x28, 0x25);
+			
+			public function HRESULT(IWMPlayerTimestampHook *self, int64 rtIn, int64* prtOut) MapTimestamp;
+		}
+		[CRepr]
+		public struct IWMCodecAMVideoAccelerator : IUnknown
+		{
+			public const new Guid IID = .(0xd98ee251, 0x34e0, 0x4a2d, 0x93, 0x12, 0x9b, 0x4c, 0x78, 0x8d, 0x9f, 0xa1);
+			
+			public function HRESULT(IWMCodecAMVideoAccelerator *self, IAMVideoAccelerator* pIAMVA) SetAcceleratorInterface;
+			public function HRESULT(IWMCodecAMVideoAccelerator *self, AM_MEDIA_TYPE* pMediaType) NegotiateConnection;
+			public function HRESULT(IWMCodecAMVideoAccelerator *self, IWMPlayerTimestampHook* pHook) SetPlayerNotify;
+		}
+		[CRepr]
+		public struct IWMCodecVideoAccelerator : IUnknown
+		{
+			public const new Guid IID = .(0x990641b0, 0x739f, 0x4e94, 0xa8, 0x08, 0x98, 0x88, 0xda, 0x8f, 0x75, 0xaf);
+			
+			public function HRESULT(IWMCodecVideoAccelerator *self, IAMVideoAccelerator* pIAMVA, AM_MEDIA_TYPE* pMediaType) NegotiateConnection;
+			public function HRESULT(IWMCodecVideoAccelerator *self, IWMPlayerTimestampHook* pHook) SetPlayerNotify;
+		}
+		[CRepr]
+		public struct IWMSInternalAdminNetSource : IUnknown
+		{
+			public const new Guid IID = .(0x8bb23e5f, 0xd127, 0x4afb, 0x8d, 0x02, 0xae, 0x5b, 0x66, 0xd5, 0x4c, 0x78);
+			
+			public function HRESULT(IWMSInternalAdminNetSource *self, IUnknown* pSharedNamespace, IUnknown* pNamespaceNode, INSNetSourceCreator* pNetSourceCreator, BOOL fEmbeddedInServer) Initialize;
+			public function HRESULT(IWMSInternalAdminNetSource *self, INSNetSourceCreator** ppNetSourceCreator) GetNetSourceCreator;
+			public function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrRealm, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentials;
+			public function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrRealm, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) GetCredentials;
+			public function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrRealm) DeleteCredentials;
+			public function HRESULT(IWMSInternalAdminNetSource *self, uint32* lpdwFlags) GetCredentialFlags;
+			public function HRESULT(IWMSInternalAdminNetSource *self, uint32 dwFlags) SetCredentialFlags;
+			public function HRESULT(IWMSInternalAdminNetSource *self, BSTR bstrProtocol, BSTR bstrHost, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint32* pdwProxyContext) FindProxyForURL;
+			public function HRESULT(IWMSInternalAdminNetSource *self, HRESULT hrParam, uint32 dwProxyContext) RegisterProxyFailure;
+			public function HRESULT(IWMSInternalAdminNetSource *self, uint32 dwProxyContext) ShutdownProxyContext;
+			public function HRESULT(IWMSInternalAdminNetSource *self, uint32 dwProxyContext, BOOL* pfIsUsingIE) IsUsingIE;
+		}
+		[CRepr]
+		public struct IWMSInternalAdminNetSource2 : IUnknown
+		{
+			public const new Guid IID = .(0xe74d58c3, 0xcf77, 0x4b51, 0xaf, 0x17, 0x74, 0x46, 0x87, 0xc4, 0x3e, 0xae);
+			
+			public function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood) SetCredentialsEx;
+			public function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, NETSOURCE_URLCREDPOLICY_SETTINGS* pdwUrlPolicy, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) GetCredentialsEx;
+			public function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy) DeleteCredentialsEx;
+			public function HRESULT(IWMSInternalAdminNetSource2 *self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint32* pdwProxyContext) FindProxyForURLEx;
+		}
+		[CRepr]
+		public struct IWMSInternalAdminNetSource3 : IWMSInternalAdminNetSource2
+		{
+			public const new Guid IID = .(0x6b63d08e, 0x4590, 0x44af, 0x9e, 0xb3, 0x57, 0xff, 0x1e, 0x73, 0xbf, 0x80);
+			
+			public function HRESULT(IWMSInternalAdminNetSource3 *self, IUnknown** ppNetSourceCreator) GetNetSourceCreator2;
+			public function HRESULT(IWMSInternalAdminNetSource3 *self, BSTR bstrProtocol, BSTR bstrHost, BSTR bstrUrl, BOOL* pfProxyEnabled, BSTR* pbstrProxyServer, uint32* pdwProxyPort, uint64* pqwProxyContext) FindProxyForURLEx2;
+			public function HRESULT(IWMSInternalAdminNetSource3 *self, HRESULT hrParam, uint64 qwProxyContext) RegisterProxyFailure2;
+			public function HRESULT(IWMSInternalAdminNetSource3 *self, uint64 qwProxyContext) ShutdownProxyContext2;
+			public function HRESULT(IWMSInternalAdminNetSource3 *self, uint64 qwProxyContext, BOOL* pfIsUsingIE) IsUsingIE2;
+			public function HRESULT(IWMSInternalAdminNetSource3 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BSTR bstrName, BSTR bstrPassword, BOOL fPersist, BOOL fConfirmedGood, BOOL fClearTextAuthentication) SetCredentialsEx2;
+			public function HRESULT(IWMSInternalAdminNetSource3 *self, BSTR bstrRealm, BSTR bstrUrl, BOOL fProxy, BOOL fClearTextAuthentication, NETSOURCE_URLCREDPOLICY_SETTINGS* pdwUrlPolicy, BSTR* pbstrName, BSTR* pbstrPassword, BOOL* pfConfirmedGood) GetCredentialsEx2;
+		}
 		
 		// --- Functions ---
 		
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WMIsContentProtected(PWSTR pwszFileName, BOOL* pfIsProtected);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateWriter(IUnknown pUnkCert, IWMWriter* ppWriter);
+		public static extern HRESULT WMCreateWriter(IUnknown* pUnkCert, IWMWriter** ppWriter);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateReader(IUnknown pUnkCert, uint32 dwRights, IWMReader* ppReader);
+		public static extern HRESULT WMCreateReader(IUnknown* pUnkCert, uint32 dwRights, IWMReader** ppReader);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateSyncReader(IUnknown pUnkCert, uint32 dwRights, IWMSyncReader* ppSyncReader);
+		public static extern HRESULT WMCreateSyncReader(IUnknown* pUnkCert, uint32 dwRights, IWMSyncReader** ppSyncReader);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateEditor(IWMMetadataEditor* ppEditor);
+		public static extern HRESULT WMCreateEditor(IWMMetadataEditor** ppEditor);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateIndexer(IWMIndexer* ppIndexer);
+		public static extern HRESULT WMCreateIndexer(IWMIndexer** ppIndexer);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateBackupRestorer(IUnknown pCallback, IWMLicenseBackup* ppBackup);
+		public static extern HRESULT WMCreateBackupRestorer(IUnknown* pCallback, IWMLicenseBackup** ppBackup);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateProfileManager(IWMProfileManager* ppProfileManager);
+		public static extern HRESULT WMCreateProfileManager(IWMProfileManager** ppProfileManager);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateWriterFileSink(IWMWriterFileSink* ppSink);
+		public static extern HRESULT WMCreateWriterFileSink(IWMWriterFileSink** ppSink);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateWriterNetworkSink(IWMWriterNetworkSink* ppSink);
+		public static extern HRESULT WMCreateWriterNetworkSink(IWMWriterNetworkSink** ppSink);
 		[Import("wmvcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WMCreateWriterPushSink(IWMWriterPushSink* ppSink);
+		public static extern HRESULT WMCreateWriterPushSink(IWMWriterPushSink** ppSink);
 		
 	}
 }

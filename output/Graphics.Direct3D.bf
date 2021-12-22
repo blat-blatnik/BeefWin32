@@ -776,9 +776,28 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ID3DBlob {}
-		public struct ID3DDestructionNotifier {}
-		public struct ID3DInclude {}
+		[CRepr]
+		public struct ID3DBlob : IUnknown
+		{
+			public const new Guid IID = .(0x8ba5fb08, 0x5195, 0x40e2, 0xac, 0x58, 0x0d, 0x98, 0x9c, 0x3a, 0x01, 0x02);
+			
+			public function void*(ID3DBlob *self) GetBufferPointer;
+			public function uint(ID3DBlob *self) GetBufferSize;
+		}
+		[CRepr]
+		public struct ID3DDestructionNotifier : IUnknown
+		{
+			public const new Guid IID = .(0xa06eb39a, 0x50da, 0x425b, 0x8c, 0x31, 0x4e, 0xec, 0xd6, 0xc2, 0x70, 0xf3);
+			
+			public function HRESULT(ID3DDestructionNotifier *self, PFN_DESTRUCTION_CALLBACK callbackFn, void* pData, uint32* pCallbackID) RegisterDestructionCallback;
+			public function HRESULT(ID3DDestructionNotifier *self, uint32 callbackID) UnregisterDestructionCallback;
+		}
+		[CRepr]
+		public struct ID3DInclude
+		{
+			public function HRESULT(ID3DInclude *self, D3D_INCLUDE_TYPE IncludeType, PSTR pFileName, void* pParentData, void** ppData, uint32* pBytes) Open;
+			public function HRESULT(ID3DInclude *self, void* pData) Close;
+		}
 		
 	}
 }

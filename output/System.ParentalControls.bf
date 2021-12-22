@@ -548,14 +548,71 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IWPCProviderState {}
-		public struct IWPCProviderConfig {}
-		public struct IWPCSettings {}
-		public struct IWPCGamesSettings {}
-		public struct IWPCWebSettings {}
-		public struct IWindowsParentalControlsCore {}
-		public struct IWindowsParentalControls {}
-		public struct IWPCProviderSupport {}
+		[CRepr]
+		public struct IWPCProviderState : IUnknown
+		{
+			public const new Guid IID = .(0x50b6a267, 0xc4bd, 0x450b, 0xad, 0xb5, 0x75, 0x90, 0x73, 0x83, 0x7c, 0x9e);
+			
+			public function HRESULT(IWPCProviderState *self) Enable;
+			public function HRESULT(IWPCProviderState *self) Disable;
+		}
+		[CRepr]
+		public struct IWPCProviderConfig : IUnknown
+		{
+			public const new Guid IID = .(0xbef54196, 0x2d02, 0x4a26, 0xb6, 0xe5, 0xd6, 0x5a, 0xf2, 0x95, 0xd0, 0xf1);
+			
+			public function HRESULT(IWPCProviderConfig *self, BSTR bstrSID, BSTR* pbstrUserSummary) GetUserSummary;
+			public function HRESULT(IWPCProviderConfig *self, HWND hWnd, BSTR bstrSID) Configure;
+			public function HRESULT(IWPCProviderConfig *self, HWND hWnd, BSTR bstrPath, WPCFLAG_RESTRICTION dwFlags) RequestOverride;
+		}
+		[CRepr]
+		public struct IWPCSettings : IUnknown
+		{
+			public const new Guid IID = .(0x8fdf6ca1, 0x0189, 0x47e4, 0xb6, 0x70, 0x1a, 0x8a, 0x46, 0x36, 0xe3, 0x40);
+			
+			public function HRESULT(IWPCSettings *self, BOOL* pfRequired) IsLoggingRequired;
+			public function HRESULT(IWPCSettings *self, SYSTEMTIME* pTime) GetLastSettingsChangeTime;
+			public function HRESULT(IWPCSettings *self, WPCFLAG_RESTRICTION* pdwRestrictions) GetRestrictions;
+		}
+		[CRepr]
+		public struct IWPCGamesSettings : IWPCSettings
+		{
+			public const new Guid IID = .(0x95e87780, 0xe158, 0x489e, 0xb4, 0x52, 0xbb, 0xb8, 0x50, 0x79, 0x07, 0x15);
+			
+			public function HRESULT(IWPCGamesSettings *self, Guid guidAppID, uint32* pdwReasons) IsBlocked;
+		}
+		[CRepr]
+		public struct IWPCWebSettings : IWPCSettings
+		{
+			public const new Guid IID = .(0xffccbdb8, 0x0992, 0x4c30, 0xb0, 0xf1, 0x1c, 0xbb, 0x09, 0xc2, 0x40, 0xaa);
+			
+			public function HRESULT(IWPCWebSettings *self, WPCFLAG_WEB_SETTING* pdwSettings) GetSettings;
+			public function HRESULT(IWPCWebSettings *self, HWND hWnd, PWSTR pcszURL, uint32 cURLs, PWSTR* ppcszSubURLs, BOOL* pfChanged) RequestURLOverride;
+		}
+		[CRepr]
+		public struct IWindowsParentalControlsCore : IUnknown
+		{
+			public const new Guid IID = .(0x4ff40a0f, 0x3f3b, 0x4d7c, 0xa4, 0x1b, 0x4f, 0x39, 0xd7, 0xb4, 0x4d, 0x05);
+			
+			public function HRESULT(IWindowsParentalControlsCore *self, WPCFLAG_VISIBILITY* peVisibility) GetVisibility;
+			public function HRESULT(IWindowsParentalControlsCore *self, PWSTR pcszSID, IWPCSettings** ppSettings) GetUserSettings;
+			public function HRESULT(IWindowsParentalControlsCore *self, PWSTR pcszSID, IWPCWebSettings** ppSettings) GetWebSettings;
+			public function HRESULT(IWindowsParentalControlsCore *self, Guid* pguidID, PWSTR* ppszName) GetWebFilterInfo;
+		}
+		[CRepr]
+		public struct IWindowsParentalControls : IWindowsParentalControlsCore
+		{
+			public const new Guid IID = .(0x28b4d88b, 0xe072, 0x49e6, 0x80, 0x4d, 0x26, 0xed, 0xbe, 0x21, 0xa7, 0xb9);
+			
+			public function HRESULT(IWindowsParentalControls *self, PWSTR pcszSID, IWPCGamesSettings** ppSettings) GetGamesSettings;
+		}
+		[CRepr]
+		public struct IWPCProviderSupport : IUnknown
+		{
+			public const new Guid IID = .(0x41eba572, 0x23ed, 0x4779, 0xbe, 0xc1, 0x8d, 0xf9, 0x62, 0x06, 0xc4, 0x4c);
+			
+			public function HRESULT(IWPCProviderSupport *self, Guid* pguidProvider) GetCurrent;
+		}
 		
 	}
 }

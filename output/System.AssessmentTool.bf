@@ -53,15 +53,79 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IProvideWinSATAssessmentInfo {}
-		public struct IProvideWinSATResultsInfo {}
-		public struct IQueryRecentWinSATAssessment {}
-		public struct IProvideWinSATVisuals {}
-		public struct IQueryAllWinSATAssessments {}
-		public struct IWinSATInitiateEvents {}
-		public struct IInitiateWinSATAssessment {}
-		public struct IAccessibleWinSAT {}
-		public struct IQueryOEMWinSATCustomization {}
+		[CRepr]
+		public struct IProvideWinSATAssessmentInfo : IDispatch
+		{
+			public const new Guid IID = .(0x0cd1c380, 0x52d3, 0x4678, 0xac, 0x6f, 0xe9, 0x29, 0xe4, 0x80, 0xbe, 0x9e);
+			
+			public function HRESULT(IProvideWinSATAssessmentInfo *self, float* score) get_Score;
+			public function HRESULT(IProvideWinSATAssessmentInfo *self, BSTR* title) get_Title;
+			public function HRESULT(IProvideWinSATAssessmentInfo *self, BSTR* description) get_Description;
+		}
+		[CRepr]
+		public struct IProvideWinSATResultsInfo : IDispatch
+		{
+			public const new Guid IID = .(0xf8334d5d, 0x568e, 0x4075, 0x87, 0x5f, 0x9d, 0xf3, 0x41, 0x50, 0x66, 0x40);
+			
+			public function HRESULT(IProvideWinSATResultsInfo *self, WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) GetAssessmentInfo;
+			public function HRESULT(IProvideWinSATResultsInfo *self, WINSAT_ASSESSMENT_STATE* state) get_AssessmentState;
+			public function HRESULT(IProvideWinSATResultsInfo *self, VARIANT* fileTime) get_AssessmentDateTime;
+			public function HRESULT(IProvideWinSATResultsInfo *self, float* level) get_SystemRating;
+			public function HRESULT(IProvideWinSATResultsInfo *self, BSTR* description) get_RatingStateDesc;
+		}
+		[CRepr]
+		public struct IQueryRecentWinSATAssessment : IDispatch
+		{
+			public const new Guid IID = .(0xf8ad5d1f, 0x3b47, 0x4bdc, 0x93, 0x75, 0x7c, 0x6b, 0x1d, 0xa4, 0xec, 0xa7);
+			
+			public function HRESULT(IQueryRecentWinSATAssessment *self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_XML;
+			public function HRESULT(IQueryRecentWinSATAssessment *self, IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) get_Info;
+		}
+		[CRepr]
+		public struct IProvideWinSATVisuals : IUnknown
+		{
+			public const new Guid IID = .(0xa9f4ade0, 0x871a, 0x42a3, 0xb8, 0x13, 0x30, 0x78, 0xd2, 0x51, 0x62, 0xc9);
+			
+			public function HRESULT(IProvideWinSATVisuals *self, WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) get_Bitmap;
+		}
+		[CRepr]
+		public struct IQueryAllWinSATAssessments : IDispatch
+		{
+			public const new Guid IID = .(0x0b89ed1d, 0x6398, 0x4fea, 0x87, 0xfc, 0x56, 0x7d, 0x8d, 0x19, 0x17, 0x6f);
+			
+			public function HRESULT(IQueryAllWinSATAssessments *self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_AllXML;
+		}
+		[CRepr]
+		public struct IWinSATInitiateEvents : IUnknown
+		{
+			public const new Guid IID = .(0x262a1918, 0xba0d, 0x41d5, 0x92, 0xc2, 0xfa, 0xb4, 0x63, 0x3e, 0xe7, 0x4f);
+			
+			public function HRESULT(IWinSATInitiateEvents *self, HRESULT hresult, PWSTR strDescription) WinSATComplete;
+			public function HRESULT(IWinSATInitiateEvents *self, uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) WinSATUpdate;
+		}
+		[CRepr]
+		public struct IInitiateWinSATAssessment : IUnknown
+		{
+			public const new Guid IID = .(0xd983fc50, 0xf5bf, 0x49d5, 0xb5, 0xed, 0xcc, 0xcb, 0x18, 0xaa, 0x7f, 0xc1);
+			
+			public function HRESULT(IInitiateWinSATAssessment *self, PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateAssessment;
+			public function HRESULT(IInitiateWinSATAssessment *self, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateFormalAssessment;
+			public function HRESULT(IInitiateWinSATAssessment *self) CancelAssessment;
+		}
+		[CRepr]
+		public struct IAccessibleWinSAT : IAccessible
+		{
+			public const new Guid IID = .(0x30e6018a, 0x94a8, 0x4ff8, 0xa6, 0x9a, 0x71, 0xb6, 0x74, 0x13, 0xf0, 0x7b);
+			
+			public function HRESULT(IAccessibleWinSAT *self, PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) SetAccessiblityData;
+		}
+		[CRepr]
+		public struct IQueryOEMWinSATCustomization : IUnknown
+		{
+			public const new Guid IID = .(0xbc9a6a9f, 0xad4e, 0x420e, 0x99, 0x53, 0xb3, 0x46, 0x71, 0xe9, 0xdf, 0x22);
+			
+			public function HRESULT(IQueryOEMWinSATCustomization *self, WINSAT_OEM_DATA_TYPE* state) GetOEMPrePopulationInfo;
+		}
 		
 	}
 }

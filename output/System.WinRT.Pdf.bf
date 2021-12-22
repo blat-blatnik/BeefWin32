@@ -7,7 +7,7 @@ namespace Win32
 	{
 		// --- Function Pointers ---
 		
-		public function HRESULT PFN_PDF_CREATE_RENDERER(IDXGIDevice param0, IPdfRendererNative* param1);
+		public function HRESULT PFN_PDF_CREATE_RENDERER(IDXGIDevice* param0, IPdfRendererNative** param1);
 		
 		// --- Structs ---
 		
@@ -23,12 +23,19 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IPdfRendererNative {}
+		[CRepr]
+		public struct IPdfRendererNative : IUnknown
+		{
+			public const new Guid IID = .(0x7d9dcd91, 0xd277, 0x4947, 0x85, 0x27, 0x07, 0xa0, 0xda, 0xed, 0xa9, 0x4a);
+			
+			public function HRESULT(IPdfRendererNative *self, IUnknown* pdfPage, IDXGISurface* pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams) RenderPageToSurface;
+			public function HRESULT(IPdfRendererNative *self, IUnknown* pdfPage, ID2D1DeviceContext* pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) RenderPageToDeviceContext;
+		}
 		
 		// --- Functions ---
 		
 		[Import("windows.data.pdf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PdfCreateRenderer(IDXGIDevice pDevice, IPdfRendererNative* ppRenderer);
+		public static extern HRESULT PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
 		
 	}
 }

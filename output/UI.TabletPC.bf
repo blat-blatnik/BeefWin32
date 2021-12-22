@@ -1639,22 +1639,22 @@ namespace Win32
 		public struct IEC_STROKEINFO
 		{
 			public NMHDR nmhdr;
-			public IInkCursor Cursor;
-			public IInkStrokeDisp Stroke;
+			public IInkCursor* Cursor;
+			public IInkStrokeDisp* Stroke;
 		}
 		[CRepr]
 		public struct IEC_GESTUREINFO
 		{
 			public NMHDR nmhdr;
-			public IInkCursor Cursor;
-			public IInkStrokes Strokes;
+			public IInkCursor* Cursor;
+			public IInkStrokes* Strokes;
 			public VARIANT Gestures;
 		}
 		[CRepr]
 		public struct IEC_RECOGNITIONRESULTINFO
 		{
 			public NMHDR nmhdr;
-			public IInkRecognitionResult RecognitionResult;
+			public IInkRecognitionResult* RecognitionResult;
 		}
 		[CRepr]
 		public struct StylusInfo
@@ -1674,7 +1674,7 @@ namespace Win32
 		public struct DYNAMIC_RENDERER_CACHED_DATA
 		{
 			public int32 strokeId;
-			public IDynamicRenderer dynamicRenderer;
+			public IDynamicRenderer* dynamicRenderer;
 		}
 		[CRepr]
 		public struct RECO_GUIDE
@@ -1799,75 +1799,1123 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IInkRectangle {}
-		public struct IInkExtendedProperty {}
-		public struct IInkExtendedProperties {}
-		public struct IInkDrawingAttributes {}
-		public struct IInkTransform {}
-		public struct IInkGesture {}
-		public struct IInkCursor {}
-		public struct IInkCursors {}
-		public struct IInkCursorButton {}
-		public struct IInkCursorButtons {}
-		public struct IInkTablet {}
-		public struct IInkTablet2 {}
-		public struct IInkTablet3 {}
-		public struct IInkTablets {}
-		public struct IInkStrokeDisp {}
-		public struct IInkStrokes {}
-		public struct IInkCustomStrokes {}
-		public struct _IInkStrokesEvents {}
-		public struct IInkDisp {}
-		public struct _IInkEvents {}
-		public struct IInkRenderer {}
-		public struct IInkCollector {}
-		public struct _IInkCollectorEvents {}
-		public struct IInkOverlay {}
-		public struct _IInkOverlayEvents {}
-		public struct IInkPicture {}
-		public struct _IInkPictureEvents {}
-		public struct IInkRecognizer {}
-		public struct IInkRecognizer2 {}
-		public struct IInkRecognizers {}
-		public struct _IInkRecognitionEvents {}
-		public struct IInkRecognizerContext {}
-		public struct IInkRecognizerContext2 {}
-		public struct IInkRecognitionResult {}
-		public struct IInkRecognitionAlternate {}
-		public struct IInkRecognitionAlternates {}
-		public struct IInkRecognizerGuide {}
-		public struct IInkWordList {}
-		public struct IInkWordList2 {}
-		public struct IInk {}
-		public struct IInkLineInfo {}
-		public struct ISketchInk {}
-		public struct IInkDivider {}
-		public struct IInkDivisionResult {}
-		public struct IInkDivisionUnit {}
-		public struct IInkDivisionUnits {}
-		public struct IPenInputPanel {}
-		public struct _IPenInputPanelEvents {}
-		public struct IHandwrittenTextInsertion {}
-		public struct ITextInputPanelEventSink {}
-		public struct ITextInputPanel {}
-		public struct IInputPanelWindowHandle {}
-		public struct ITextInputPanelRunInfo {}
-		public struct IInkEdit {}
-		public struct _IInkEditEvents {}
-		public struct IMathInputControl {}
-		public struct _IMathInputControlEvents {}
-		public struct IRealTimeStylus {}
-		public struct IRealTimeStylus2 {}
-		public struct IRealTimeStylus3 {}
-		public struct IRealTimeStylusSynchronization {}
-		public struct IStrokeBuilder {}
-		public struct IStylusPlugin {}
-		public struct IStylusSyncPlugin {}
-		public struct IStylusAsyncPlugin {}
-		public struct IDynamicRenderer {}
-		public struct IGestureRecognizer {}
-		public struct ITipAutoCompleteProvider {}
-		public struct ITipAutoCompleteClient {}
+		[CRepr]
+		public struct IInkRectangle : IDispatch
+		{
+			public const new Guid IID = .(0x9794ff82, 0x6071, 0x4717, 0x8a, 0x8b, 0x6a, 0xc7, 0xc6, 0x4a, 0x68, 0x6e);
+			
+			public function HRESULT(IInkRectangle *self, int32* Units) get_Top;
+			public function HRESULT(IInkRectangle *self, int32 Units) put_Top;
+			public function HRESULT(IInkRectangle *self, int32* Units) get_Left;
+			public function HRESULT(IInkRectangle *self, int32 Units) put_Left;
+			public function HRESULT(IInkRectangle *self, int32* Units) get_Bottom;
+			public function HRESULT(IInkRectangle *self, int32 Units) put_Bottom;
+			public function HRESULT(IInkRectangle *self, int32* Units) get_Right;
+			public function HRESULT(IInkRectangle *self, int32 Units) put_Right;
+			public function HRESULT(IInkRectangle *self, RECT* Rect) get_Data;
+			public function HRESULT(IInkRectangle *self, RECT Rect) put_Data;
+			public function HRESULT(IInkRectangle *self, int32* Top, int32* Left, int32* Bottom, int32* Right) GetRectangle;
+			public function HRESULT(IInkRectangle *self, int32 Top, int32 Left, int32 Bottom, int32 Right) SetRectangle;
+		}
+		[CRepr]
+		public struct IInkExtendedProperty : IDispatch
+		{
+			public const new Guid IID = .(0xdb489209, 0xb7c3, 0x411d, 0x90, 0xf6, 0x15, 0x48, 0xcf, 0xff, 0x27, 0x1e);
+			
+			public function HRESULT(IInkExtendedProperty *self, BSTR* Guid) get_Guid;
+			public function HRESULT(IInkExtendedProperty *self, VARIANT* Data) get_Data;
+			public function HRESULT(IInkExtendedProperty *self, VARIANT Data) put_Data;
+		}
+		[CRepr]
+		public struct IInkExtendedProperties : IDispatch
+		{
+			public const new Guid IID = .(0x89f2a8be, 0x95a9, 0x4530, 0x8b, 0x8f, 0x88, 0xe9, 0x71, 0xe3, 0xe2, 0x5f);
+			
+			public function HRESULT(IInkExtendedProperties *self, int32* Count) get_Count;
+			public function HRESULT(IInkExtendedProperties *self, IUnknown** _NewEnum) get__NewEnum;
+			public function HRESULT(IInkExtendedProperties *self, VARIANT Identifier, IInkExtendedProperty** Item) Item;
+			public function HRESULT(IInkExtendedProperties *self, BSTR Guid, VARIANT Data, IInkExtendedProperty** InkExtendedProperty) Add;
+			public function HRESULT(IInkExtendedProperties *self, VARIANT Identifier) Remove;
+			public function HRESULT(IInkExtendedProperties *self) Clear;
+			public function HRESULT(IInkExtendedProperties *self, BSTR Guid, int16* DoesPropertyExist) DoesPropertyExist;
+		}
+		[CRepr]
+		public struct IInkDrawingAttributes : IDispatch
+		{
+			public const new Guid IID = .(0xbf519b75, 0x0a15, 0x4623, 0xad, 0xc9, 0xc0, 0x0d, 0x43, 0x6a, 0x80, 0x92);
+			
+			public function HRESULT(IInkDrawingAttributes *self, int32* CurrentColor) get_Color;
+			public function HRESULT(IInkDrawingAttributes *self, int32 NewColor) put_Color;
+			public function HRESULT(IInkDrawingAttributes *self, float* CurrentWidth) get_Width;
+			public function HRESULT(IInkDrawingAttributes *self, float NewWidth) put_Width;
+			public function HRESULT(IInkDrawingAttributes *self, float* CurrentHeight) get_Height;
+			public function HRESULT(IInkDrawingAttributes *self, float NewHeight) put_Height;
+			public function HRESULT(IInkDrawingAttributes *self, int16* Flag) get_FitToCurve;
+			public function HRESULT(IInkDrawingAttributes *self, int16 Flag) put_FitToCurve;
+			public function HRESULT(IInkDrawingAttributes *self, int16* Flag) get_IgnorePressure;
+			public function HRESULT(IInkDrawingAttributes *self, int16 Flag) put_IgnorePressure;
+			public function HRESULT(IInkDrawingAttributes *self, int16* Flag) get_AntiAliased;
+			public function HRESULT(IInkDrawingAttributes *self, int16 Flag) put_AntiAliased;
+			public function HRESULT(IInkDrawingAttributes *self, int32* CurrentTransparency) get_Transparency;
+			public function HRESULT(IInkDrawingAttributes *self, int32 NewTransparency) put_Transparency;
+			public function HRESULT(IInkDrawingAttributes *self, InkRasterOperation* CurrentRasterOperation) get_RasterOperation;
+			public function HRESULT(IInkDrawingAttributes *self, InkRasterOperation NewRasterOperation) put_RasterOperation;
+			public function HRESULT(IInkDrawingAttributes *self, InkPenTip* CurrentPenTip) get_PenTip;
+			public function HRESULT(IInkDrawingAttributes *self, InkPenTip NewPenTip) put_PenTip;
+			public function HRESULT(IInkDrawingAttributes *self, IInkExtendedProperties** Properties) get_ExtendedProperties;
+			public function HRESULT(IInkDrawingAttributes *self, IInkDrawingAttributes** DrawingAttributes) Clone;
+		}
+		[CRepr]
+		public struct IInkTransform : IDispatch
+		{
+			public const new Guid IID = .(0x615f1d43, 0x8703, 0x4565, 0x88, 0xe2, 0x82, 0x01, 0xd2, 0xec, 0xd7, 0xb7);
+			
+			public function HRESULT(IInkTransform *self) Reset;
+			public function HRESULT(IInkTransform *self, float HorizontalComponent, float VerticalComponent) Translate;
+			public function HRESULT(IInkTransform *self, float Degrees, float x, float y) Rotate;
+			public function HRESULT(IInkTransform *self, int16 Horizontally, int16 Vertically) Reflect;
+			public function HRESULT(IInkTransform *self, float HorizontalComponent, float VerticalComponent) Shear;
+			public function HRESULT(IInkTransform *self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
+			public function HRESULT(IInkTransform *self, float* eM11, float* eM12, float* eM21, float* eM22, float* eDx, float* eDy) GetTransform;
+			public function HRESULT(IInkTransform *self, float eM11, float eM12, float eM21, float eM22, float eDx, float eDy) SetTransform;
+			public function HRESULT(IInkTransform *self, float* Value) get_eM11;
+			public function HRESULT(IInkTransform *self, float Value) put_eM11;
+			public function HRESULT(IInkTransform *self, float* Value) get_eM12;
+			public function HRESULT(IInkTransform *self, float Value) put_eM12;
+			public function HRESULT(IInkTransform *self, float* Value) get_eM21;
+			public function HRESULT(IInkTransform *self, float Value) put_eM21;
+			public function HRESULT(IInkTransform *self, float* Value) get_eM22;
+			public function HRESULT(IInkTransform *self, float Value) put_eM22;
+			public function HRESULT(IInkTransform *self, float* Value) get_eDx;
+			public function HRESULT(IInkTransform *self, float Value) put_eDx;
+			public function HRESULT(IInkTransform *self, float* Value) get_eDy;
+			public function HRESULT(IInkTransform *self, float Value) put_eDy;
+			public function HRESULT(IInkTransform *self, XFORM* XForm) get_Data;
+			public function HRESULT(IInkTransform *self, XFORM XForm) put_Data;
+		}
+		[CRepr]
+		public struct IInkGesture : IDispatch
+		{
+			public const new Guid IID = .(0x3bdc0a97, 0x04e5, 0x4e26, 0xb8, 0x13, 0x18, 0xf0, 0x52, 0xd4, 0x1d, 0xef);
+			
+			public function HRESULT(IInkGesture *self, InkRecognitionConfidence* Confidence) get_Confidence;
+			public function HRESULT(IInkGesture *self, InkApplicationGesture* Id) get_Id;
+			public function HRESULT(IInkGesture *self, int32* X, int32* Y) GetHotPoint;
+		}
+		[CRepr]
+		public struct IInkCursor : IDispatch
+		{
+			public const new Guid IID = .(0xad30c630, 0x40c5, 0x4350, 0x84, 0x05, 0x9c, 0x71, 0x01, 0x2f, 0xc5, 0x58);
+			
+			public function HRESULT(IInkCursor *self, BSTR* Name) get_Name;
+			public function HRESULT(IInkCursor *self, int32* Id) get_Id;
+			public function HRESULT(IInkCursor *self, int16* Status) get_Inverted;
+			public function HRESULT(IInkCursor *self, IInkDrawingAttributes** Attributes) get_DrawingAttributes;
+			public function HRESULT(IInkCursor *self, IInkDrawingAttributes* Attributes) putref_DrawingAttributes;
+			public function HRESULT(IInkCursor *self, IInkTablet** Tablet) get_Tablet;
+			public function HRESULT(IInkCursor *self, IInkCursorButtons** Buttons) get_Buttons;
+		}
+		[CRepr]
+		public struct IInkCursors : IDispatch
+		{
+			public const new Guid IID = .(0xa248c1ac, 0xc698, 0x4e06, 0x9e, 0x5c, 0xd5, 0x7f, 0x77, 0xc7, 0xe6, 0x47);
+			
+			public function HRESULT(IInkCursors *self, int32* Count) get_Count;
+			public function HRESULT(IInkCursors *self, IUnknown** _NewEnum) get__NewEnum;
+			public function HRESULT(IInkCursors *self, int32 Index, IInkCursor** Cursor) Item;
+		}
+		[CRepr]
+		public struct IInkCursorButton : IDispatch
+		{
+			public const new Guid IID = .(0x85ef9417, 0x1d59, 0x49b2, 0xa1, 0x3c, 0x70, 0x2c, 0x85, 0x43, 0x08, 0x94);
+			
+			public function HRESULT(IInkCursorButton *self, BSTR* Name) get_Name;
+			public function HRESULT(IInkCursorButton *self, BSTR* Id) get_Id;
+			public function HRESULT(IInkCursorButton *self, InkCursorButtonState* CurrentState) get_State;
+		}
+		[CRepr]
+		public struct IInkCursorButtons : IDispatch
+		{
+			public const new Guid IID = .(0x3671cc40, 0xb624, 0x4671, 0x9f, 0xa0, 0xdb, 0x11, 0x9d, 0x95, 0x2d, 0x54);
+			
+			public function HRESULT(IInkCursorButtons *self, int32* Count) get_Count;
+			public function HRESULT(IInkCursorButtons *self, IUnknown** _NewEnum) get__NewEnum;
+			public function HRESULT(IInkCursorButtons *self, VARIANT Identifier, IInkCursorButton** Button) Item;
+		}
+		[CRepr]
+		public struct IInkTablet : IDispatch
+		{
+			public const new Guid IID = .(0x2de25eaa, 0x6ef8, 0x42d5, 0xae, 0xe9, 0x18, 0x5b, 0xc8, 0x1b, 0x91, 0x2d);
+			
+			public function HRESULT(IInkTablet *self, BSTR* Name) get_Name;
+			public function HRESULT(IInkTablet *self, BSTR* Id) get_PlugAndPlayId;
+			public function HRESULT(IInkTablet *self, IInkRectangle** Rectangle) get_MaximumInputRectangle;
+			public function HRESULT(IInkTablet *self, TabletHardwareCapabilities* Capabilities) get_HardwareCapabilities;
+			public function HRESULT(IInkTablet *self, BSTR packetPropertyName, int16* Supported) IsPacketPropertySupported;
+			public function HRESULT(IInkTablet *self, BSTR propertyName, int32* Minimum, int32* Maximum, TabletPropertyMetricUnit* Units, float* Resolution) GetPropertyMetrics;
+		}
+		[CRepr]
+		public struct IInkTablet2 : IDispatch
+		{
+			public const new Guid IID = .(0x90c91ad2, 0xfa36, 0x49d6, 0x95, 0x16, 0xce, 0x8d, 0x57, 0x0f, 0x6f, 0x85);
+			
+			public function HRESULT(IInkTablet2 *self, TabletDeviceKind* Kind) get_DeviceKind;
+		}
+		[CRepr]
+		public struct IInkTablet3 : IDispatch
+		{
+			public const new Guid IID = .(0x7e313997, 0x1327, 0x41dd, 0x8c, 0xa9, 0x79, 0xf2, 0x4b, 0xe1, 0x72, 0x50);
+			
+			public function HRESULT(IInkTablet3 *self, int16* pIsMultiTouch) get_IsMultiTouch;
+			public function HRESULT(IInkTablet3 *self, uint32* pMaximumCursors) get_MaximumCursors;
+		}
+		[CRepr]
+		public struct IInkTablets : IDispatch
+		{
+			public const new Guid IID = .(0x112086d9, 0x7779, 0x4535, 0xa6, 0x99, 0x86, 0x2b, 0x43, 0xac, 0x18, 0x63);
+			
+			public function HRESULT(IInkTablets *self, int32* Count) get_Count;
+			public function HRESULT(IInkTablets *self, IUnknown** _NewEnum) get__NewEnum;
+			public function HRESULT(IInkTablets *self, IInkTablet** DefaultTablet) get_DefaultTablet;
+			public function HRESULT(IInkTablets *self, int32 Index, IInkTablet** Tablet) Item;
+			public function HRESULT(IInkTablets *self, BSTR packetPropertyName, int16* Supported) IsPacketPropertySupported;
+		}
+		[CRepr]
+		public struct IInkStrokeDisp : IDispatch
+		{
+			public const new Guid IID = .(0x43242fea, 0x91d1, 0x4a72, 0x96, 0x3e, 0xfb, 0xb9, 0x18, 0x29, 0xcf, 0xa2);
+			
+			public function HRESULT(IInkStrokeDisp *self, int32* ID) get_ID;
+			public function HRESULT(IInkStrokeDisp *self, VARIANT* Points) get_BezierPoints;
+			public function HRESULT(IInkStrokeDisp *self, IInkDrawingAttributes** DrawAttrs) get_DrawingAttributes;
+			public function HRESULT(IInkStrokeDisp *self, IInkDrawingAttributes* DrawAttrs) putref_DrawingAttributes;
+			public function HRESULT(IInkStrokeDisp *self, IInkDisp** Ink) get_Ink;
+			public function HRESULT(IInkStrokeDisp *self, IInkExtendedProperties** Properties) get_ExtendedProperties;
+			public function HRESULT(IInkStrokeDisp *self, VARIANT* Cusps) get_PolylineCusps;
+			public function HRESULT(IInkStrokeDisp *self, VARIANT* Cusps) get_BezierCusps;
+			public function HRESULT(IInkStrokeDisp *self, VARIANT* Intersections) get_SelfIntersections;
+			public function HRESULT(IInkStrokeDisp *self, int32* plCount) get_PacketCount;
+			public function HRESULT(IInkStrokeDisp *self, int32* plSize) get_PacketSize;
+			public function HRESULT(IInkStrokeDisp *self, VARIANT* PacketDescription) get_PacketDescription;
+			public function HRESULT(IInkStrokeDisp *self, int16* Deleted) get_Deleted;
+			public function HRESULT(IInkStrokeDisp *self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
+			public function HRESULT(IInkStrokeDisp *self, IInkStrokes* Strokes, VARIANT* Intersections) FindIntersections;
+			public function HRESULT(IInkStrokeDisp *self, IInkRectangle* Rectangle, VARIANT* Intersections) GetRectangleIntersections;
+			public function HRESULT(IInkStrokeDisp *self, IInkRectangle* Rectangle) Clip;
+			public function HRESULT(IInkStrokeDisp *self, int32 X, int32 Y, float Radius, int16* Intersects) HitTestCircle;
+			public function HRESULT(IInkStrokeDisp *self, int32 X, int32 Y, float* Distance, float* Point) NearestPoint;
+			public function HRESULT(IInkStrokeDisp *self, float SplitAt, IInkStrokeDisp** NewStroke) Split;
+			public function HRESULT(IInkStrokeDisp *self, BSTR PropertyName, int32* Minimum, int32* Maximum, TabletPropertyMetricUnit* Units, float* Resolution) GetPacketDescriptionPropertyMetrics;
+			public function HRESULT(IInkStrokeDisp *self, int32 Index, int32 Count, VARIANT* Points) GetPoints;
+			public function HRESULT(IInkStrokeDisp *self, VARIANT Points, int32 Index, int32 Count, int32* NumberOfPointsSet) SetPoints;
+			public function HRESULT(IInkStrokeDisp *self, int32 Index, int32 Count, VARIANT* PacketData) GetPacketData;
+			public function HRESULT(IInkStrokeDisp *self, BSTR PropertyName, int32 Index, int32 Count, VARIANT* PacketValues) GetPacketValuesByProperty;
+			public function HRESULT(IInkStrokeDisp *self, BSTR bstrPropertyName, VARIANT PacketValues, int32 Index, int32 Count, int32* NumberOfPacketsSet) SetPacketValuesByProperty;
+			public function HRESULT(IInkStrokeDisp *self, int32 FittingError, VARIANT* FlattenedBezierPoints) GetFlattenedBezierPoints;
+			public function HRESULT(IInkStrokeDisp *self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
+			public function HRESULT(IInkStrokeDisp *self, IInkRectangle* Rectangle) ScaleToRectangle;
+			public function HRESULT(IInkStrokeDisp *self, float HorizontalComponent, float VerticalComponent) Move;
+			public function HRESULT(IInkStrokeDisp *self, float Degrees, float x, float y) Rotate;
+			public function HRESULT(IInkStrokeDisp *self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
+			public function HRESULT(IInkStrokeDisp *self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
+		}
+		[CRepr]
+		public struct IInkStrokes : IDispatch
+		{
+			public const new Guid IID = .(0xf1f4c9d8, 0x590a, 0x4963, 0xb3, 0xae, 0x19, 0x35, 0x67, 0x1b, 0xb6, 0xf3);
+			
+			public function HRESULT(IInkStrokes *self, int32* Count) get_Count;
+			public function HRESULT(IInkStrokes *self, IUnknown** _NewEnum) get__NewEnum;
+			public function HRESULT(IInkStrokes *self, IInkDisp** Ink) get_Ink;
+			public function HRESULT(IInkStrokes *self, IInkRecognitionResult** RecognitionResult) get_RecognitionResult;
+			public function HRESULT(IInkStrokes *self, BSTR* ToString) ToString;
+			public function HRESULT(IInkStrokes *self, int32 Index, IInkStrokeDisp** Stroke) Item;
+			public function HRESULT(IInkStrokes *self, IInkStrokeDisp* InkStroke) Add;
+			public function HRESULT(IInkStrokes *self, IInkStrokes* InkStrokes) AddStrokes;
+			public function HRESULT(IInkStrokes *self, IInkStrokeDisp* InkStroke) Remove;
+			public function HRESULT(IInkStrokes *self, IInkStrokes* InkStrokes) RemoveStrokes;
+			public function HRESULT(IInkStrokes *self, IInkDrawingAttributes* DrawAttrs) ModifyDrawingAttributes;
+			public function HRESULT(IInkStrokes *self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** BoundingBox) GetBoundingBox;
+			public function HRESULT(IInkStrokes *self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
+			public function HRESULT(IInkStrokes *self, IInkRectangle* Rectangle) ScaleToRectangle;
+			public function HRESULT(IInkStrokes *self, float HorizontalComponent, float VerticalComponent) Move;
+			public function HRESULT(IInkStrokes *self, float Degrees, float x, float y) Rotate;
+			public function HRESULT(IInkStrokes *self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
+			public function HRESULT(IInkStrokes *self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
+			public function HRESULT(IInkStrokes *self, IInkRectangle* Rectangle) Clip;
+			public function HRESULT(IInkStrokes *self) RemoveRecognitionResult;
+		}
+		[CRepr]
+		public struct IInkCustomStrokes : IDispatch
+		{
+			public const new Guid IID = .(0x7e23a88f, 0xc30e, 0x420f, 0x9b, 0xdb, 0x28, 0x90, 0x25, 0x43, 0xf0, 0xc1);
+			
+			public function HRESULT(IInkCustomStrokes *self, int32* Count) get_Count;
+			public function HRESULT(IInkCustomStrokes *self, IUnknown** _NewEnum) get__NewEnum;
+			public function HRESULT(IInkCustomStrokes *self, VARIANT Identifier, IInkStrokes** Strokes) Item;
+			public function HRESULT(IInkCustomStrokes *self, BSTR Name, IInkStrokes* Strokes) Add;
+			public function HRESULT(IInkCustomStrokes *self, VARIANT Identifier) Remove;
+			public function HRESULT(IInkCustomStrokes *self) Clear;
+		}
+		[CRepr]
+		public struct _IInkStrokesEvents : IDispatch
+		{
+			public const new Guid IID = .(0xf33053ec, 0x5d25, 0x430a, 0x92, 0x8f, 0x76, 0xa6, 0x49, 0x1d, 0xde, 0x15);
+			
+		}
+		[CRepr]
+		public struct IInkDisp : IDispatch
+		{
+			public const new Guid IID = .(0x9d398fa0, 0xc4e2, 0x4fcd, 0x99, 0x73, 0x97, 0x5c, 0xaa, 0xf4, 0x7e, 0xa6);
+			
+			public function HRESULT(IInkDisp *self, IInkStrokes** Strokes) get_Strokes;
+			public function HRESULT(IInkDisp *self, IInkExtendedProperties** Properties) get_ExtendedProperties;
+			public function HRESULT(IInkDisp *self, int16* Dirty) get_Dirty;
+			public function HRESULT(IInkDisp *self, int16 Dirty) put_Dirty;
+			public function HRESULT(IInkDisp *self, IInkCustomStrokes** ppunkInkCustomStrokes) get_CustomStrokes;
+			public function HRESULT(IInkDisp *self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
+			public function HRESULT(IInkDisp *self, IInkStrokes* Strokes) DeleteStrokes;
+			public function HRESULT(IInkDisp *self, IInkStrokeDisp* Stroke) DeleteStroke;
+			public function HRESULT(IInkDisp *self, IInkStrokes* Strokes, InkExtractFlags ExtractFlags, IInkDisp** ExtractedInk) ExtractStrokes;
+			public function HRESULT(IInkDisp *self, IInkRectangle* Rectangle, InkExtractFlags extractFlags, IInkDisp** ExtractedInk) ExtractWithRectangle;
+			public function HRESULT(IInkDisp *self, IInkRectangle* Rectangle) Clip;
+			public function HRESULT(IInkDisp *self, IInkDisp** NewInk) Clone;
+			public function HRESULT(IInkDisp *self, int32 X, int32 Y, float radius, IInkStrokes** Strokes) HitTestCircle;
+			public function HRESULT(IInkDisp *self, IInkRectangle* SelectionRectangle, float IntersectPercent, IInkStrokes** Strokes) HitTestWithRectangle;
+			public function HRESULT(IInkDisp *self, VARIANT Points, float IntersectPercent, VARIANT* LassoPoints, IInkStrokes** Strokes) HitTestWithLasso;
+			public function HRESULT(IInkDisp *self, int32 X, int32 Y, float* PointOnStroke, float* DistanceFromPacket, IInkStrokeDisp** Stroke) NearestPoint;
+			public function HRESULT(IInkDisp *self, VARIANT StrokeIds, IInkStrokes** Strokes) CreateStrokes;
+			public function HRESULT(IInkDisp *self, IInkStrokes* SourceStrokes, IInkRectangle* TargetRectangle) AddStrokesAtRectangle;
+			public function HRESULT(IInkDisp *self, InkPersistenceFormat PersistenceFormat, InkPersistenceCompressionMode CompressionMode, VARIANT* Data) Save;
+			public function HRESULT(IInkDisp *self, VARIANT Data) Load;
+			public function HRESULT(IInkDisp *self, VARIANT PacketData, VARIANT PacketDescription, IInkStrokeDisp** Stroke) CreateStroke;
+			public function HRESULT(IInkDisp *self, IInkRectangle* Rectangle, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopyWithRectangle;
+			public function HRESULT(IInkDisp *self, IInkStrokes* strokes, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopy;
+			public function HRESULT(IInkDisp *self, IDataObject* DataObject, int16* CanPaste) CanPaste;
+			public function HRESULT(IInkDisp *self, int32 x, int32 y, IDataObject* DataObject, IInkStrokes** Strokes) ClipboardPaste;
+		}
+		[CRepr]
+		public struct _IInkEvents : IDispatch
+		{
+			public const new Guid IID = .(0x427b1865, 0xca3f, 0x479a, 0x83, 0xa9, 0x0f, 0x42, 0x0f, 0x2a, 0x00, 0x73);
+			
+		}
+		[CRepr]
+		public struct IInkRenderer : IDispatch
+		{
+			public const new Guid IID = .(0xe6257a9c, 0xb511, 0x4f4c, 0xa8, 0xb0, 0xa7, 0xdb, 0xc9, 0x50, 0x6b, 0x83);
+			
+			public function HRESULT(IInkRenderer *self, IInkTransform* ViewTransform) GetViewTransform;
+			public function HRESULT(IInkRenderer *self, IInkTransform* ViewTransform) SetViewTransform;
+			public function HRESULT(IInkRenderer *self, IInkTransform* ObjectTransform) GetObjectTransform;
+			public function HRESULT(IInkRenderer *self, IInkTransform* ObjectTransform) SetObjectTransform;
+			public function HRESULT(IInkRenderer *self, int hDC, IInkStrokes* Strokes) Draw;
+			public function HRESULT(IInkRenderer *self, int hDC, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes) DrawStroke;
+			public function HRESULT(IInkRenderer *self, int hDC, int32* x, int32* y) PixelToInkSpace;
+			public function HRESULT(IInkRenderer *self, int hdcDisplay, int32* x, int32* y) InkSpaceToPixel;
+			public function HRESULT(IInkRenderer *self, int hDC, VARIANT* Points) PixelToInkSpaceFromPoints;
+			public function HRESULT(IInkRenderer *self, int hDC, VARIANT* Points) InkSpaceToPixelFromPoints;
+			public function HRESULT(IInkRenderer *self, IInkStrokes* Strokes, IInkRectangle** Rectangle) Measure;
+			public function HRESULT(IInkRenderer *self, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes, IInkRectangle** Rectangle) MeasureStroke;
+			public function HRESULT(IInkRenderer *self, float HorizontalComponent, float VerticalComponent) Move;
+			public function HRESULT(IInkRenderer *self, float Degrees, float x, float y) Rotate;
+			public function HRESULT(IInkRenderer *self, float HorizontalMultiplier, float VerticalMultiplier, int16 ApplyOnPenWidth) ScaleTransform;
+		}
+		[CRepr]
+		public struct IInkCollector : IDispatch
+		{
+			public const new Guid IID = .(0xf0f060b5, 0x8b1f, 0x4a7c, 0x89, 0xec, 0x88, 0x06, 0x92, 0x58, 0x8a, 0x4f);
+			
+			public function HRESULT(IInkCollector *self, int* CurrentWindow) get_hWnd;
+			public function HRESULT(IInkCollector *self, int NewWindow) put_hWnd;
+			public function HRESULT(IInkCollector *self, int16* Collecting) get_Enabled;
+			public function HRESULT(IInkCollector *self, int16 Collecting) put_Enabled;
+			public function HRESULT(IInkCollector *self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
+			public function HRESULT(IInkCollector *self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
+			public function HRESULT(IInkCollector *self, IInkRenderer** CurrentInkRenderer) get_Renderer;
+			public function HRESULT(IInkCollector *self, IInkRenderer* NewInkRenderer) putref_Renderer;
+			public function HRESULT(IInkCollector *self, IInkDisp** Ink) get_Ink;
+			public function HRESULT(IInkCollector *self, IInkDisp* NewInk) putref_Ink;
+			public function HRESULT(IInkCollector *self, int16* AutoRedraw) get_AutoRedraw;
+			public function HRESULT(IInkCollector *self, int16 AutoRedraw) put_AutoRedraw;
+			public function HRESULT(IInkCollector *self, int16* Collecting) get_CollectingInk;
+			public function HRESULT(IInkCollector *self, InkCollectionMode* Mode) get_CollectionMode;
+			public function HRESULT(IInkCollector *self, InkCollectionMode Mode) put_CollectionMode;
+			public function HRESULT(IInkCollector *self, int16* Enabled) get_DynamicRendering;
+			public function HRESULT(IInkCollector *self, int16 Enabled) put_DynamicRendering;
+			public function HRESULT(IInkCollector *self, VARIANT* PacketGuids) get_DesiredPacketDescription;
+			public function HRESULT(IInkCollector *self, VARIANT PacketGuids) put_DesiredPacketDescription;
+			public function HRESULT(IInkCollector *self, IPictureDisp** MouseIcon) get_MouseIcon;
+			public function HRESULT(IInkCollector *self, IPictureDisp* MouseIcon) put_MouseIcon;
+			public function HRESULT(IInkCollector *self, IPictureDisp* MouseIcon) putref_MouseIcon;
+			public function HRESULT(IInkCollector *self, InkMousePointer* MousePointer) get_MousePointer;
+			public function HRESULT(IInkCollector *self, InkMousePointer MousePointer) put_MousePointer;
+			public function HRESULT(IInkCollector *self, IInkCursors** Cursors) get_Cursors;
+			public function HRESULT(IInkCollector *self, int32* MarginX) get_MarginX;
+			public function HRESULT(IInkCollector *self, int32 MarginX) put_MarginX;
+			public function HRESULT(IInkCollector *self, int32* MarginY) get_MarginY;
+			public function HRESULT(IInkCollector *self, int32 MarginY) put_MarginY;
+			public function HRESULT(IInkCollector *self, IInkTablet** SingleTablet) get_Tablet;
+			public function HRESULT(IInkCollector *self, int16* Support) get_SupportHighContrastInk;
+			public function HRESULT(IInkCollector *self, int16 Support) put_SupportHighContrastInk;
+			public function HRESULT(IInkCollector *self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+			public function HRESULT(IInkCollector *self, InkApplicationGesture Gesture, int16* Listening) GetGestureStatus;
+			public function HRESULT(IInkCollector *self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
+			public function HRESULT(IInkCollector *self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
+			public function HRESULT(IInkCollector *self, int16 UseMouseForInput) SetAllTabletsMode;
+			public function HRESULT(IInkCollector *self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
+			public function HRESULT(IInkCollector *self, InkCollectorEventInterest EventId, int16* Listen) GetEventInterest;
+			public function HRESULT(IInkCollector *self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
+		}
+		[CRepr]
+		public struct _IInkCollectorEvents : IDispatch
+		{
+			public const new Guid IID = .(0x11a583f2, 0x712d, 0x4fea, 0xab, 0xcf, 0xab, 0x4a, 0xf3, 0x8e, 0xa0, 0x6b);
+			
+		}
+		[CRepr]
+		public struct IInkOverlay : IDispatch
+		{
+			public const new Guid IID = .(0xb82a463b, 0xc1c5, 0x45a3, 0x99, 0x7c, 0xde, 0xab, 0x56, 0x51, 0xb6, 0x7a);
+			
+			public function HRESULT(IInkOverlay *self, int* CurrentWindow) get_hWnd;
+			public function HRESULT(IInkOverlay *self, int NewWindow) put_hWnd;
+			public function HRESULT(IInkOverlay *self, int16* Collecting) get_Enabled;
+			public function HRESULT(IInkOverlay *self, int16 Collecting) put_Enabled;
+			public function HRESULT(IInkOverlay *self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
+			public function HRESULT(IInkOverlay *self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
+			public function HRESULT(IInkOverlay *self, IInkRenderer** CurrentInkRenderer) get_Renderer;
+			public function HRESULT(IInkOverlay *self, IInkRenderer* NewInkRenderer) putref_Renderer;
+			public function HRESULT(IInkOverlay *self, IInkDisp** Ink) get_Ink;
+			public function HRESULT(IInkOverlay *self, IInkDisp* NewInk) putref_Ink;
+			public function HRESULT(IInkOverlay *self, int16* AutoRedraw) get_AutoRedraw;
+			public function HRESULT(IInkOverlay *self, int16 AutoRedraw) put_AutoRedraw;
+			public function HRESULT(IInkOverlay *self, int16* Collecting) get_CollectingInk;
+			public function HRESULT(IInkOverlay *self, InkCollectionMode* Mode) get_CollectionMode;
+			public function HRESULT(IInkOverlay *self, InkCollectionMode Mode) put_CollectionMode;
+			public function HRESULT(IInkOverlay *self, int16* Enabled) get_DynamicRendering;
+			public function HRESULT(IInkOverlay *self, int16 Enabled) put_DynamicRendering;
+			public function HRESULT(IInkOverlay *self, VARIANT* PacketGuids) get_DesiredPacketDescription;
+			public function HRESULT(IInkOverlay *self, VARIANT PacketGuids) put_DesiredPacketDescription;
+			public function HRESULT(IInkOverlay *self, IPictureDisp** MouseIcon) get_MouseIcon;
+			public function HRESULT(IInkOverlay *self, IPictureDisp* MouseIcon) put_MouseIcon;
+			public function HRESULT(IInkOverlay *self, IPictureDisp* MouseIcon) putref_MouseIcon;
+			public function HRESULT(IInkOverlay *self, InkMousePointer* MousePointer) get_MousePointer;
+			public function HRESULT(IInkOverlay *self, InkMousePointer MousePointer) put_MousePointer;
+			public function HRESULT(IInkOverlay *self, InkOverlayEditingMode* EditingMode) get_EditingMode;
+			public function HRESULT(IInkOverlay *self, InkOverlayEditingMode EditingMode) put_EditingMode;
+			public function HRESULT(IInkOverlay *self, IInkStrokes** Selection) get_Selection;
+			public function HRESULT(IInkOverlay *self, IInkStrokes* Selection) put_Selection;
+			public function HRESULT(IInkOverlay *self, InkOverlayEraserMode* EraserMode) get_EraserMode;
+			public function HRESULT(IInkOverlay *self, InkOverlayEraserMode EraserMode) put_EraserMode;
+			public function HRESULT(IInkOverlay *self, int32* EraserWidth) get_EraserWidth;
+			public function HRESULT(IInkOverlay *self, int32 newEraserWidth) put_EraserWidth;
+			public function HRESULT(IInkOverlay *self, InkOverlayAttachMode* AttachMode) get_AttachMode;
+			public function HRESULT(IInkOverlay *self, InkOverlayAttachMode AttachMode) put_AttachMode;
+			public function HRESULT(IInkOverlay *self, IInkCursors** Cursors) get_Cursors;
+			public function HRESULT(IInkOverlay *self, int32* MarginX) get_MarginX;
+			public function HRESULT(IInkOverlay *self, int32 MarginX) put_MarginX;
+			public function HRESULT(IInkOverlay *self, int32* MarginY) get_MarginY;
+			public function HRESULT(IInkOverlay *self, int32 MarginY) put_MarginY;
+			public function HRESULT(IInkOverlay *self, IInkTablet** SingleTablet) get_Tablet;
+			public function HRESULT(IInkOverlay *self, int16* Support) get_SupportHighContrastInk;
+			public function HRESULT(IInkOverlay *self, int16 Support) put_SupportHighContrastInk;
+			public function HRESULT(IInkOverlay *self, int16* Support) get_SupportHighContrastSelectionUI;
+			public function HRESULT(IInkOverlay *self, int16 Support) put_SupportHighContrastSelectionUI;
+			public function HRESULT(IInkOverlay *self, int32 x, int32 y, SelectionHitResult* SelArea) HitTestSelection;
+			public function HRESULT(IInkOverlay *self, IInkRectangle* Rect) Draw;
+			public function HRESULT(IInkOverlay *self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+			public function HRESULT(IInkOverlay *self, InkApplicationGesture Gesture, int16* Listening) GetGestureStatus;
+			public function HRESULT(IInkOverlay *self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
+			public function HRESULT(IInkOverlay *self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
+			public function HRESULT(IInkOverlay *self, int16 UseMouseForInput) SetAllTabletsMode;
+			public function HRESULT(IInkOverlay *self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
+			public function HRESULT(IInkOverlay *self, InkCollectorEventInterest EventId, int16* Listen) GetEventInterest;
+			public function HRESULT(IInkOverlay *self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
+		}
+		[CRepr]
+		public struct _IInkOverlayEvents : IDispatch
+		{
+			public const new Guid IID = .(0x31179b69, 0xe563, 0x489e, 0xb1, 0x6f, 0x71, 0x2f, 0x1e, 0x8a, 0x06, 0x51);
+			
+		}
+		[CRepr]
+		public struct IInkPicture : IDispatch
+		{
+			public const new Guid IID = .(0xe85662e0, 0x379a, 0x40d7, 0x9b, 0x5c, 0x75, 0x7d, 0x23, 0x3f, 0x99, 0x23);
+			
+			public function HRESULT(IInkPicture *self, int* CurrentWindow) get_hWnd;
+			public function HRESULT(IInkPicture *self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
+			public function HRESULT(IInkPicture *self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
+			public function HRESULT(IInkPicture *self, IInkRenderer** CurrentInkRenderer) get_Renderer;
+			public function HRESULT(IInkPicture *self, IInkRenderer* NewInkRenderer) putref_Renderer;
+			public function HRESULT(IInkPicture *self, IInkDisp** Ink) get_Ink;
+			public function HRESULT(IInkPicture *self, IInkDisp* NewInk) putref_Ink;
+			public function HRESULT(IInkPicture *self, int16* AutoRedraw) get_AutoRedraw;
+			public function HRESULT(IInkPicture *self, int16 AutoRedraw) put_AutoRedraw;
+			public function HRESULT(IInkPicture *self, int16* Collecting) get_CollectingInk;
+			public function HRESULT(IInkPicture *self, InkCollectionMode* Mode) get_CollectionMode;
+			public function HRESULT(IInkPicture *self, InkCollectionMode Mode) put_CollectionMode;
+			public function HRESULT(IInkPicture *self, int16* Enabled) get_DynamicRendering;
+			public function HRESULT(IInkPicture *self, int16 Enabled) put_DynamicRendering;
+			public function HRESULT(IInkPicture *self, VARIANT* PacketGuids) get_DesiredPacketDescription;
+			public function HRESULT(IInkPicture *self, VARIANT PacketGuids) put_DesiredPacketDescription;
+			public function HRESULT(IInkPicture *self, IPictureDisp** MouseIcon) get_MouseIcon;
+			public function HRESULT(IInkPicture *self, IPictureDisp* MouseIcon) put_MouseIcon;
+			public function HRESULT(IInkPicture *self, IPictureDisp* MouseIcon) putref_MouseIcon;
+			public function HRESULT(IInkPicture *self, InkMousePointer* MousePointer) get_MousePointer;
+			public function HRESULT(IInkPicture *self, InkMousePointer MousePointer) put_MousePointer;
+			public function HRESULT(IInkPicture *self, InkOverlayEditingMode* EditingMode) get_EditingMode;
+			public function HRESULT(IInkPicture *self, InkOverlayEditingMode EditingMode) put_EditingMode;
+			public function HRESULT(IInkPicture *self, IInkStrokes** Selection) get_Selection;
+			public function HRESULT(IInkPicture *self, IInkStrokes* Selection) put_Selection;
+			public function HRESULT(IInkPicture *self, InkOverlayEraserMode* EraserMode) get_EraserMode;
+			public function HRESULT(IInkPicture *self, InkOverlayEraserMode EraserMode) put_EraserMode;
+			public function HRESULT(IInkPicture *self, int32* EraserWidth) get_EraserWidth;
+			public function HRESULT(IInkPicture *self, int32 newEraserWidth) put_EraserWidth;
+			public function HRESULT(IInkPicture *self, IPictureDisp* pPicture) putref_Picture;
+			public function HRESULT(IInkPicture *self, IPictureDisp* pPicture) put_Picture;
+			public function HRESULT(IInkPicture *self, IPictureDisp** ppPicture) get_Picture;
+			public function HRESULT(IInkPicture *self, InkPictureSizeMode smNewSizeMode) put_SizeMode;
+			public function HRESULT(IInkPicture *self, InkPictureSizeMode* smSizeMode) get_SizeMode;
+			public function HRESULT(IInkPicture *self, uint32 newColor) put_BackColor;
+			public function HRESULT(IInkPicture *self, uint32* pColor) get_BackColor;
+			public function HRESULT(IInkPicture *self, IInkCursors** Cursors) get_Cursors;
+			public function HRESULT(IInkPicture *self, int32* MarginX) get_MarginX;
+			public function HRESULT(IInkPicture *self, int32 MarginX) put_MarginX;
+			public function HRESULT(IInkPicture *self, int32* MarginY) get_MarginY;
+			public function HRESULT(IInkPicture *self, int32 MarginY) put_MarginY;
+			public function HRESULT(IInkPicture *self, IInkTablet** SingleTablet) get_Tablet;
+			public function HRESULT(IInkPicture *self, int16* Support) get_SupportHighContrastInk;
+			public function HRESULT(IInkPicture *self, int16 Support) put_SupportHighContrastInk;
+			public function HRESULT(IInkPicture *self, int16* Support) get_SupportHighContrastSelectionUI;
+			public function HRESULT(IInkPicture *self, int16 Support) put_SupportHighContrastSelectionUI;
+			public function HRESULT(IInkPicture *self, int32 x, int32 y, SelectionHitResult* SelArea) HitTestSelection;
+			public function HRESULT(IInkPicture *self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+			public function HRESULT(IInkPicture *self, InkApplicationGesture Gesture, int16* Listening) GetGestureStatus;
+			public function HRESULT(IInkPicture *self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
+			public function HRESULT(IInkPicture *self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
+			public function HRESULT(IInkPicture *self, int16 UseMouseForInput) SetAllTabletsMode;
+			public function HRESULT(IInkPicture *self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
+			public function HRESULT(IInkPicture *self, InkCollectorEventInterest EventId, int16* Listen) GetEventInterest;
+			public function HRESULT(IInkPicture *self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
+			public function HRESULT(IInkPicture *self, int16* Collecting) get_InkEnabled;
+			public function HRESULT(IInkPicture *self, int16 Collecting) put_InkEnabled;
+			public function HRESULT(IInkPicture *self, int16* pbool) get_Enabled;
+			public function HRESULT(IInkPicture *self, int16 vbool) put_Enabled;
+		}
+		[CRepr]
+		public struct _IInkPictureEvents : IDispatch
+		{
+			public const new Guid IID = .(0x60ff4fee, 0x22ff, 0x4484, 0xac, 0xc1, 0xd3, 0x08, 0xd9, 0xcd, 0x7e, 0xa3);
+			
+		}
+		[CRepr]
+		public struct IInkRecognizer : IDispatch
+		{
+			public const new Guid IID = .(0x782bf7cf, 0x034b, 0x4396, 0x8a, 0x32, 0x3a, 0x18, 0x33, 0xcf, 0x6b, 0x56);
+			
+			public function HRESULT(IInkRecognizer *self, BSTR* Name) get_Name;
+			public function HRESULT(IInkRecognizer *self, BSTR* Vendor) get_Vendor;
+			public function HRESULT(IInkRecognizer *self, InkRecognizerCapabilities* CapabilitiesFlags) get_Capabilities;
+			public function HRESULT(IInkRecognizer *self, VARIANT* Languages) get_Languages;
+			public function HRESULT(IInkRecognizer *self, VARIANT* SupportedProperties) get_SupportedProperties;
+			public function HRESULT(IInkRecognizer *self, VARIANT* PreferredPacketDescription) get_PreferredPacketDescription;
+			public function HRESULT(IInkRecognizer *self, IInkRecognizerContext** Context) CreateRecognizerContext;
+		}
+		[CRepr]
+		public struct IInkRecognizer2 : IDispatch
+		{
+			public const new Guid IID = .(0x6110118a, 0x3a75, 0x4ad6, 0xb2, 0xaa, 0x04, 0xb2, 0xb7, 0x2b, 0xbe, 0x65);
+			
+			public function HRESULT(IInkRecognizer2 *self, BSTR* pbstrId) get_Id;
+			public function HRESULT(IInkRecognizer2 *self, VARIANT* UnicodeRanges) get_UnicodeRanges;
+		}
+		[CRepr]
+		public struct IInkRecognizers : IDispatch
+		{
+			public const new Guid IID = .(0x9ccc4f12, 0xb0b7, 0x4a8b, 0xbf, 0x58, 0x4a, 0xec, 0xa4, 0xe8, 0xce, 0xfd);
+			
+			public function HRESULT(IInkRecognizers *self, int32* Count) get_Count;
+			public function HRESULT(IInkRecognizers *self, IUnknown** _NewEnum) get__NewEnum;
+			public function HRESULT(IInkRecognizers *self, int32 lcid, IInkRecognizer** DefaultRecognizer) GetDefaultRecognizer;
+			public function HRESULT(IInkRecognizers *self, int32 Index, IInkRecognizer** InkRecognizer) Item;
+		}
+		[CRepr]
+		public struct _IInkRecognitionEvents : IDispatch
+		{
+			public const new Guid IID = .(0x17bce92f, 0x2e21, 0x47fd, 0x9d, 0x33, 0x3c, 0x6a, 0xfb, 0xfd, 0x8c, 0x59);
+			
+		}
+		[CRepr]
+		public struct IInkRecognizerContext : IDispatch
+		{
+			public const new Guid IID = .(0xc68f52f9, 0x32a3, 0x4625, 0x90, 0x6c, 0x44, 0xfc, 0x23, 0xb4, 0x09, 0x58);
+			
+			public function HRESULT(IInkRecognizerContext *self, IInkStrokes** Strokes) get_Strokes;
+			public function HRESULT(IInkRecognizerContext *self, IInkStrokes* Strokes) putref_Strokes;
+			public function HRESULT(IInkRecognizerContext *self, InkRecognizerCharacterAutoCompletionMode* Mode) get_CharacterAutoCompletionMode;
+			public function HRESULT(IInkRecognizerContext *self, InkRecognizerCharacterAutoCompletionMode Mode) put_CharacterAutoCompletionMode;
+			public function HRESULT(IInkRecognizerContext *self, BSTR* Factoid) get_Factoid;
+			public function HRESULT(IInkRecognizerContext *self, BSTR factoid) put_Factoid;
+			public function HRESULT(IInkRecognizerContext *self, IInkRecognizerGuide** RecognizerGuide) get_Guide;
+			public function HRESULT(IInkRecognizerContext *self, IInkRecognizerGuide* RecognizerGuide) putref_Guide;
+			public function HRESULT(IInkRecognizerContext *self, BSTR* Prefix) get_PrefixText;
+			public function HRESULT(IInkRecognizerContext *self, BSTR Prefix) put_PrefixText;
+			public function HRESULT(IInkRecognizerContext *self, BSTR* Suffix) get_SuffixText;
+			public function HRESULT(IInkRecognizerContext *self, BSTR Suffix) put_SuffixText;
+			public function HRESULT(IInkRecognizerContext *self, InkRecognitionModes* Modes) get_RecognitionFlags;
+			public function HRESULT(IInkRecognizerContext *self, InkRecognitionModes Modes) put_RecognitionFlags;
+			public function HRESULT(IInkRecognizerContext *self, IInkWordList** WordList) get_WordList;
+			public function HRESULT(IInkRecognizerContext *self, IInkWordList* WordList) putref_WordList;
+			public function HRESULT(IInkRecognizerContext *self, IInkRecognizer** Recognizer) get_Recognizer;
+			public function HRESULT(IInkRecognizerContext *self, InkRecognitionStatus* RecognitionStatus, IInkRecognitionResult** RecognitionResult) Recognize;
+			public function HRESULT(IInkRecognizerContext *self) StopBackgroundRecognition;
+			public function HRESULT(IInkRecognizerContext *self) EndInkInput;
+			public function HRESULT(IInkRecognizerContext *self, VARIANT CustomData) BackgroundRecognize;
+			public function HRESULT(IInkRecognizerContext *self, VARIANT CustomData) BackgroundRecognizeWithAlternates;
+			public function HRESULT(IInkRecognizerContext *self, IInkRecognizerContext** RecoContext) Clone;
+			public function HRESULT(IInkRecognizerContext *self, BSTR String, int16* Supported) IsStringSupported;
+		}
+		[CRepr]
+		public struct IInkRecognizerContext2 : IDispatch
+		{
+			public const new Guid IID = .(0xd6f0e32f, 0x73d8, 0x408e, 0x8e, 0x9f, 0x5f, 0xea, 0x59, 0x2c, 0x36, 0x3f);
+			
+			public function HRESULT(IInkRecognizerContext2 *self, VARIANT* UnicodeRanges) get_EnabledUnicodeRanges;
+			public function HRESULT(IInkRecognizerContext2 *self, VARIANT UnicodeRanges) put_EnabledUnicodeRanges;
+		}
+		[CRepr]
+		public struct IInkRecognitionResult : IDispatch
+		{
+			public const new Guid IID = .(0x3bc129a8, 0x86cd, 0x45ad, 0xbd, 0xe8, 0xe0, 0xd3, 0x2d, 0x61, 0xc1, 0x6d);
+			
+			public function HRESULT(IInkRecognitionResult *self, BSTR* TopString) get_TopString;
+			public function HRESULT(IInkRecognitionResult *self, IInkRecognitionAlternate** TopAlternate) get_TopAlternate;
+			public function HRESULT(IInkRecognitionResult *self, InkRecognitionConfidence* TopConfidence) get_TopConfidence;
+			public function HRESULT(IInkRecognitionResult *self, IInkStrokes** Strokes) get_Strokes;
+			public function HRESULT(IInkRecognitionResult *self, int32 selectionStart, int32 selectionLength, int32 maximumAlternates, IInkRecognitionAlternates** AlternatesFromSelection) AlternatesFromSelection;
+			public function HRESULT(IInkRecognitionResult *self, IInkRecognitionAlternate* Alternate) ModifyTopAlternate;
+			public function HRESULT(IInkRecognitionResult *self) SetResultOnStrokes;
+		}
+		[CRepr]
+		public struct IInkRecognitionAlternate : IDispatch
+		{
+			public const new Guid IID = .(0xb7e660ad, 0x77e4, 0x429b, 0xad, 0xda, 0x87, 0x37, 0x80, 0xd1, 0xfc, 0x4a);
+			
+			public function HRESULT(IInkRecognitionAlternate *self, BSTR* RecoString) get_String;
+			public function HRESULT(IInkRecognitionAlternate *self, InkRecognitionConfidence* Confidence) get_Confidence;
+			public function HRESULT(IInkRecognitionAlternate *self, VARIANT* Baseline) get_Baseline;
+			public function HRESULT(IInkRecognitionAlternate *self, VARIANT* Midline) get_Midline;
+			public function HRESULT(IInkRecognitionAlternate *self, VARIANT* Ascender) get_Ascender;
+			public function HRESULT(IInkRecognitionAlternate *self, VARIANT* Descender) get_Descender;
+			public function HRESULT(IInkRecognitionAlternate *self, int32* LineNumber) get_LineNumber;
+			public function HRESULT(IInkRecognitionAlternate *self, IInkStrokes** Strokes) get_Strokes;
+			public function HRESULT(IInkRecognitionAlternate *self, IInkRecognitionAlternates** LineAlternates) get_LineAlternates;
+			public function HRESULT(IInkRecognitionAlternate *self, IInkRecognitionAlternates** ConfidenceAlternates) get_ConfidenceAlternates;
+			public function HRESULT(IInkRecognitionAlternate *self, IInkStrokes* Strokes, IInkStrokes** GetStrokesFromStrokeRanges) GetStrokesFromStrokeRanges;
+			public function HRESULT(IInkRecognitionAlternate *self, int32* selectionStart, int32* selectionLength, IInkStrokes** GetStrokesFromTextRange) GetStrokesFromTextRange;
+			public function HRESULT(IInkRecognitionAlternate *self, IInkStrokes* Strokes, int32* selectionStart, int32* selectionLength) GetTextRangeFromStrokes;
+			public function HRESULT(IInkRecognitionAlternate *self, BSTR PropertyType, IInkRecognitionAlternates** AlternatesWithConstantPropertyValues) AlternatesWithConstantPropertyValues;
+			public function HRESULT(IInkRecognitionAlternate *self, BSTR PropertyType, VARIANT* PropertyValue) GetPropertyValue;
+		}
+		[CRepr]
+		public struct IInkRecognitionAlternates : IDispatch
+		{
+			public const new Guid IID = .(0x286a167f, 0x9f19, 0x4c61, 0x9d, 0x53, 0x4f, 0x07, 0xbe, 0x62, 0x2b, 0x84);
+			
+			public function HRESULT(IInkRecognitionAlternates *self, int32* Count) get_Count;
+			public function HRESULT(IInkRecognitionAlternates *self, IUnknown** _NewEnum) get__NewEnum;
+			public function HRESULT(IInkRecognitionAlternates *self, IInkStrokes** Strokes) get_Strokes;
+			public function HRESULT(IInkRecognitionAlternates *self, int32 Index, IInkRecognitionAlternate** InkRecoAlternate) Item;
+		}
+		[CRepr]
+		public struct IInkRecognizerGuide : IDispatch
+		{
+			public const new Guid IID = .(0xd934be07, 0x7b84, 0x4208, 0x91, 0x36, 0x83, 0xc2, 0x09, 0x94, 0xe9, 0x05);
+			
+			public function HRESULT(IInkRecognizerGuide *self, IInkRectangle** Rectangle) get_WritingBox;
+			public function HRESULT(IInkRecognizerGuide *self, IInkRectangle* Rectangle) put_WritingBox;
+			public function HRESULT(IInkRecognizerGuide *self, IInkRectangle** Rectangle) get_DrawnBox;
+			public function HRESULT(IInkRecognizerGuide *self, IInkRectangle* Rectangle) put_DrawnBox;
+			public function HRESULT(IInkRecognizerGuide *self, int32* Units) get_Rows;
+			public function HRESULT(IInkRecognizerGuide *self, int32 Units) put_Rows;
+			public function HRESULT(IInkRecognizerGuide *self, int32* Units) get_Columns;
+			public function HRESULT(IInkRecognizerGuide *self, int32 Units) put_Columns;
+			public function HRESULT(IInkRecognizerGuide *self, int32* Units) get_Midline;
+			public function HRESULT(IInkRecognizerGuide *self, int32 Units) put_Midline;
+			public function HRESULT(IInkRecognizerGuide *self, InkRecoGuide* pRecoGuide) get_GuideData;
+			public function HRESULT(IInkRecognizerGuide *self, InkRecoGuide recoGuide) put_GuideData;
+		}
+		[CRepr]
+		public struct IInkWordList : IDispatch
+		{
+			public const new Guid IID = .(0x76ba3491, 0xcb2f, 0x406b, 0x99, 0x61, 0x0e, 0x0c, 0x4c, 0xda, 0xae, 0xf2);
+			
+			public function HRESULT(IInkWordList *self, BSTR NewWord) AddWord;
+			public function HRESULT(IInkWordList *self, BSTR RemoveWord) RemoveWord;
+			public function HRESULT(IInkWordList *self, IInkWordList* MergeWordList) Merge;
+		}
+		[CRepr]
+		public struct IInkWordList2 : IDispatch
+		{
+			public const new Guid IID = .(0x14542586, 0x11bf, 0x4f5f, 0xb6, 0xe7, 0x49, 0xd0, 0x74, 0x4a, 0xab, 0x6e);
+			
+			public function HRESULT(IInkWordList2 *self, BSTR NewWords) AddWords;
+		}
+		[CRepr]
+		public struct IInk : IDispatch
+		{
+			public const new Guid IID = .(0x03f8e511, 0x43a1, 0x11d3, 0x8b, 0xb6, 0x00, 0x80, 0xc7, 0xd6, 0xba, 0xd5);
+			
+		}
+		[CRepr]
+		public struct IInkLineInfo : IUnknown
+		{
+			public const new Guid IID = .(0x9c1c5ad6, 0xf22f, 0x4de4, 0xb4, 0x53, 0xa2, 0xcc, 0x48, 0x2e, 0x7c, 0x33);
+			
+			public function HRESULT(IInkLineInfo *self, INKMETRIC* pim) SetFormat;
+			public function HRESULT(IInkLineInfo *self, INKMETRIC* pim) GetFormat;
+			public function HRESULT(IInkLineInfo *self, INKMETRIC* pim, uint32* pnWidth) GetInkExtent;
+			public function HRESULT(IInkLineInfo *self, uint32 nCandidateNum, PWSTR pwcRecogWord, uint32* pcwcRecogWord, uint32 dwFlags) GetCandidate;
+			public function HRESULT(IInkLineInfo *self, uint32 nCandidateNum, PWSTR strRecogWord) SetCandidate;
+			public function HRESULT(IInkLineInfo *self) Recognize;
+		}
+		[CRepr]
+		public struct ISketchInk : IDispatch
+		{
+			public const new Guid IID = .(0xb4563688, 0x98eb, 0x4646, 0xb2, 0x79, 0x44, 0xda, 0x14, 0xd4, 0x57, 0x48);
+			
+		}
+		[CRepr]
+		public struct IInkDivider : IDispatch
+		{
+			public const new Guid IID = .(0x5de00405, 0xf9a4, 0x4651, 0xb0, 0xc5, 0xc3, 0x17, 0xde, 0xfd, 0x58, 0xb9);
+			
+			public function HRESULT(IInkDivider *self, IInkStrokes** Strokes) get_Strokes;
+			public function HRESULT(IInkDivider *self, IInkStrokes* Strokes) putref_Strokes;
+			public function HRESULT(IInkDivider *self, IInkRecognizerContext** RecognizerContext) get_RecognizerContext;
+			public function HRESULT(IInkDivider *self, IInkRecognizerContext* RecognizerContext) putref_RecognizerContext;
+			public function HRESULT(IInkDivider *self, int32* LineHeight) get_LineHeight;
+			public function HRESULT(IInkDivider *self, int32 LineHeight) put_LineHeight;
+			public function HRESULT(IInkDivider *self, IInkDivisionResult** InkDivisionResult) Divide;
+		}
+		[CRepr]
+		public struct IInkDivisionResult : IDispatch
+		{
+			public const new Guid IID = .(0x2dbec0a7, 0x74c7, 0x4b38, 0x81, 0xeb, 0xaa, 0x8e, 0xf0, 0xc2, 0x49, 0x00);
+			
+			public function HRESULT(IInkDivisionResult *self, IInkStrokes** Strokes) get_Strokes;
+			public function HRESULT(IInkDivisionResult *self, InkDivisionType divisionType, IInkDivisionUnits** InkDivisionUnits) ResultByType;
+		}
+		[CRepr]
+		public struct IInkDivisionUnit : IDispatch
+		{
+			public const new Guid IID = .(0x85aee342, 0x48b0, 0x4244, 0x9d, 0xd5, 0x1e, 0xd4, 0x35, 0x41, 0x0f, 0xab);
+			
+			public function HRESULT(IInkDivisionUnit *self, IInkStrokes** Strokes) get_Strokes;
+			public function HRESULT(IInkDivisionUnit *self, InkDivisionType* divisionType) get_DivisionType;
+			public function HRESULT(IInkDivisionUnit *self, BSTR* RecoString) get_RecognizedString;
+			public function HRESULT(IInkDivisionUnit *self, IInkTransform** RotationTransform) get_RotationTransform;
+		}
+		[CRepr]
+		public struct IInkDivisionUnits : IDispatch
+		{
+			public const new Guid IID = .(0x1bb5ddc2, 0x31cc, 0x4135, 0xab, 0x82, 0x2c, 0x66, 0xc9, 0xf0, 0x0c, 0x41);
+			
+			public function HRESULT(IInkDivisionUnits *self, int32* Count) get_Count;
+			public function HRESULT(IInkDivisionUnits *self, IUnknown** _NewEnum) get__NewEnum;
+			public function HRESULT(IInkDivisionUnits *self, int32 Index, IInkDivisionUnit** InkDivisionUnit) Item;
+		}
+		[CRepr]
+		public struct IPenInputPanel : IDispatch
+		{
+			public const new Guid IID = .(0xfa7a4083, 0x5747, 0x4040, 0xa1, 0x82, 0x0b, 0x0e, 0x9f, 0xd4, 0xfa, 0xc7);
+			
+			public function HRESULT(IPenInputPanel *self, int16* Busy) get_Busy;
+			public function HRESULT(IPenInputPanel *self, BSTR* Factoid) get_Factoid;
+			public function HRESULT(IPenInputPanel *self, BSTR Factoid) put_Factoid;
+			public function HRESULT(IPenInputPanel *self, int32* AttachedEditWindow) get_AttachedEditWindow;
+			public function HRESULT(IPenInputPanel *self, int32 AttachedEditWindow) put_AttachedEditWindow;
+			public function HRESULT(IPenInputPanel *self, PanelType* CurrentPanel) get_CurrentPanel;
+			public function HRESULT(IPenInputPanel *self, PanelType CurrentPanel) put_CurrentPanel;
+			public function HRESULT(IPenInputPanel *self, PanelType* pDefaultPanel) get_DefaultPanel;
+			public function HRESULT(IPenInputPanel *self, PanelType DefaultPanel) put_DefaultPanel;
+			public function HRESULT(IPenInputPanel *self, int16* Visible) get_Visible;
+			public function HRESULT(IPenInputPanel *self, int16 Visible) put_Visible;
+			public function HRESULT(IPenInputPanel *self, int32* Top) get_Top;
+			public function HRESULT(IPenInputPanel *self, int32* Left) get_Left;
+			public function HRESULT(IPenInputPanel *self, int32* Width) get_Width;
+			public function HRESULT(IPenInputPanel *self, int32* Height) get_Height;
+			public function HRESULT(IPenInputPanel *self, int32* VerticalOffset) get_VerticalOffset;
+			public function HRESULT(IPenInputPanel *self, int32 VerticalOffset) put_VerticalOffset;
+			public function HRESULT(IPenInputPanel *self, int32* HorizontalOffset) get_HorizontalOffset;
+			public function HRESULT(IPenInputPanel *self, int32 HorizontalOffset) put_HorizontalOffset;
+			public function HRESULT(IPenInputPanel *self, int16* pAutoShow) get_AutoShow;
+			public function HRESULT(IPenInputPanel *self, int16 AutoShow) put_AutoShow;
+			public function HRESULT(IPenInputPanel *self, int32 Left, int32 Top) MoveTo;
+			public function HRESULT(IPenInputPanel *self) CommitPendingInput;
+			public function HRESULT(IPenInputPanel *self) Refresh;
+			public function HRESULT(IPenInputPanel *self, int16 Enable) EnableTsf;
+		}
+		[CRepr]
+		public struct _IPenInputPanelEvents : IDispatch
+		{
+			public const new Guid IID = .(0xb7e489da, 0x3719, 0x439f, 0x84, 0x8f, 0xe7, 0xac, 0xbd, 0x82, 0x0f, 0x17);
+			
+		}
+		[CRepr]
+		public struct IHandwrittenTextInsertion : IUnknown
+		{
+			public const new Guid IID = .(0x56fdea97, 0xecd6, 0x43e7, 0xaa, 0x3a, 0x81, 0x6b, 0xe7, 0x78, 0x58, 0x60);
+			
+			public function HRESULT(IHandwrittenTextInsertion *self, SAFEARRAY* psaAlternates, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertRecognitionResultsArray;
+			public function HRESULT(IHandwrittenTextInsertion *self, IInkRecognitionResult* pIInkRecoResult, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertInkRecognitionResult;
+		}
+		[CRepr]
+		public struct ITextInputPanelEventSink : IUnknown
+		{
+			public const new Guid IID = .(0x27560408, 0x8e64, 0x4fe1, 0x80, 0x4e, 0x42, 0x12, 0x01, 0x58, 0x4b, 0x31);
+			
+			public function HRESULT(ITextInputPanelEventSink *self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanging;
+			public function HRESULT(ITextInputPanelEventSink *self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanged;
+			public function HRESULT(ITextInputPanelEventSink *self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanging;
+			public function HRESULT(ITextInputPanelEventSink *self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanged;
+			public function HRESULT(ITextInputPanelEventSink *self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanging;
+			public function HRESULT(ITextInputPanelEventSink *self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanged;
+			public function HRESULT(ITextInputPanelEventSink *self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanging;
+			public function HRESULT(ITextInputPanelEventSink *self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanged;
+			public function HRESULT(ITextInputPanelEventSink *self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanging;
+			public function HRESULT(ITextInputPanelEventSink *self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanged;
+			public function HRESULT(ITextInputPanelEventSink *self, SAFEARRAY* Ink) TextInserting;
+			public function HRESULT(ITextInputPanelEventSink *self, SAFEARRAY* Ink) TextInserted;
+		}
+		[CRepr]
+		public struct ITextInputPanel : IUnknown
+		{
+			public const new Guid IID = .(0x6b6a65a5, 0x6af3, 0x46c2, 0xb6, 0xea, 0x56, 0xcd, 0x1f, 0x80, 0xdf, 0x71);
+			
+			public function HRESULT(ITextInputPanel *self, HWND* AttachedEditWindow) get_AttachedEditWindow;
+			public function HRESULT(ITextInputPanel *self, HWND AttachedEditWindow) put_AttachedEditWindow;
+			public function HRESULT(ITextInputPanel *self, InteractionMode* CurrentInteractionMode) get_CurrentInteractionMode;
+			public function HRESULT(ITextInputPanel *self, InPlaceState* State) get_DefaultInPlaceState;
+			public function HRESULT(ITextInputPanel *self, InPlaceState State) put_DefaultInPlaceState;
+			public function HRESULT(ITextInputPanel *self, InPlaceState* State) get_CurrentInPlaceState;
+			public function HRESULT(ITextInputPanel *self, PanelInputArea* Area) get_DefaultInputArea;
+			public function HRESULT(ITextInputPanel *self, PanelInputArea Area) put_DefaultInputArea;
+			public function HRESULT(ITextInputPanel *self, PanelInputArea* Area) get_CurrentInputArea;
+			public function HRESULT(ITextInputPanel *self, CorrectionMode* Mode) get_CurrentCorrectionMode;
+			public function HRESULT(ITextInputPanel *self, InPlaceDirection* Direction) get_PreferredInPlaceDirection;
+			public function HRESULT(ITextInputPanel *self, InPlaceDirection Direction) put_PreferredInPlaceDirection;
+			public function HRESULT(ITextInputPanel *self, BOOL* Expand) get_ExpandPostInsertionCorrection;
+			public function HRESULT(ITextInputPanel *self, BOOL Expand) put_ExpandPostInsertionCorrection;
+			public function HRESULT(ITextInputPanel *self, BOOL* Visible) get_InPlaceVisibleOnFocus;
+			public function HRESULT(ITextInputPanel *self, BOOL Visible) put_InPlaceVisibleOnFocus;
+			public function HRESULT(ITextInputPanel *self, RECT* BoundingRectangle) get_InPlaceBoundingRectangle;
+			public function HRESULT(ITextInputPanel *self, int32* Height) get_PopUpCorrectionHeight;
+			public function HRESULT(ITextInputPanel *self, int32* Height) get_PopDownCorrectionHeight;
+			public function HRESULT(ITextInputPanel *self) CommitPendingInput;
+			public function HRESULT(ITextInputPanel *self, BOOL Visible) SetInPlaceVisibility;
+			public function HRESULT(ITextInputPanel *self, int32 xPosition, int32 yPosition, CorrectionPosition position) SetInPlacePosition;
+			public function HRESULT(ITextInputPanel *self, int32 xPosition, int32 yPosition) SetInPlaceHoverTargetPosition;
+			public function HRESULT(ITextInputPanel *self, ITextInputPanelEventSink* EventSink, uint32 EventMask) Advise;
+			public function HRESULT(ITextInputPanel *self, ITextInputPanelEventSink* EventSink) Unadvise;
+		}
+		[CRepr]
+		public struct IInputPanelWindowHandle : IUnknown
+		{
+			public const new Guid IID = .(0x4af81847, 0xfdc4, 0x4fc3, 0xad, 0x0b, 0x42, 0x24, 0x79, 0xc1, 0xb9, 0x35);
+			
+			public function HRESULT(IInputPanelWindowHandle *self, int32* AttachedEditWindow) get_AttachedEditWindow32;
+			public function HRESULT(IInputPanelWindowHandle *self, int32 AttachedEditWindow) put_AttachedEditWindow32;
+			public function HRESULT(IInputPanelWindowHandle *self, int64* AttachedEditWindow) get_AttachedEditWindow64;
+			public function HRESULT(IInputPanelWindowHandle *self, int64 AttachedEditWindow) put_AttachedEditWindow64;
+		}
+		[CRepr]
+		public struct ITextInputPanelRunInfo : IUnknown
+		{
+			public const new Guid IID = .(0x9f424568, 0x1920, 0x48cc, 0x98, 0x11, 0xa9, 0x93, 0xcb, 0xf5, 0xad, 0xba);
+			
+			public function HRESULT(ITextInputPanelRunInfo *self, BOOL* pfRunning) IsTipRunning;
+		}
+		[CRepr]
+		public struct IInkEdit : IDispatch
+		{
+			public const new Guid IID = .(0xf2127a19, 0xfbfb, 0x4aed, 0x84, 0x64, 0x3f, 0x36, 0xd7, 0x8c, 0xfe, 0xfb);
+			
+			public function HRESULT(IInkEdit *self, InkEditStatus* pStatus) get_Status;
+			public function HRESULT(IInkEdit *self, int16* pVal) get_UseMouseForInput;
+			public function HRESULT(IInkEdit *self, int16 newVal) put_UseMouseForInput;
+			public function HRESULT(IInkEdit *self, InkMode* pVal) get_InkMode;
+			public function HRESULT(IInkEdit *self, InkMode newVal) put_InkMode;
+			public function HRESULT(IInkEdit *self, InkInsertMode* pVal) get_InkInsertMode;
+			public function HRESULT(IInkEdit *self, InkInsertMode newVal) put_InkInsertMode;
+			public function HRESULT(IInkEdit *self, IInkDrawingAttributes** pVal) get_DrawingAttributes;
+			public function HRESULT(IInkEdit *self, IInkDrawingAttributes* newVal) putref_DrawingAttributes;
+			public function HRESULT(IInkEdit *self, int32* pVal) get_RecognitionTimeout;
+			public function HRESULT(IInkEdit *self, int32 newVal) put_RecognitionTimeout;
+			public function HRESULT(IInkEdit *self, IInkRecognizer** pVal) get_Recognizer;
+			public function HRESULT(IInkEdit *self, IInkRecognizer* newVal) putref_Recognizer;
+			public function HRESULT(IInkEdit *self, BSTR* pVal) get_Factoid;
+			public function HRESULT(IInkEdit *self, BSTR newVal) put_Factoid;
+			public function HRESULT(IInkEdit *self, VARIANT* pSelInk) get_SelInks;
+			public function HRESULT(IInkEdit *self, VARIANT SelInk) put_SelInks;
+			public function HRESULT(IInkEdit *self, InkDisplayMode* pInkDisplayMode) get_SelInksDisplayMode;
+			public function HRESULT(IInkEdit *self, InkDisplayMode InkDisplayMode) put_SelInksDisplayMode;
+			public function HRESULT(IInkEdit *self) Recognize;
+			public function HRESULT(IInkEdit *self, InkApplicationGesture Gesture, int16* pListen) GetGestureStatus;
+			public function HRESULT(IInkEdit *self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+			public function HRESULT(IInkEdit *self, uint32 clr) put_BackColor;
+			public function HRESULT(IInkEdit *self, uint32* pclr) get_BackColor;
+			public function HRESULT(IInkEdit *self, AppearanceConstants* pAppearance) get_Appearance;
+			public function HRESULT(IInkEdit *self, AppearanceConstants pAppearance) put_Appearance;
+			public function HRESULT(IInkEdit *self, BorderStyleConstants* pBorderStyle) get_BorderStyle;
+			public function HRESULT(IInkEdit *self, BorderStyleConstants pBorderStyle) put_BorderStyle;
+			public function HRESULT(IInkEdit *self, uint32* pohHwnd) get_Hwnd;
+			public function HRESULT(IInkEdit *self, IFontDisp** ppFont) get_Font;
+			public function HRESULT(IInkEdit *self, IFontDisp* ppFont) putref_Font;
+			public function HRESULT(IInkEdit *self, BSTR* pbstrText) get_Text;
+			public function HRESULT(IInkEdit *self, BSTR pbstrText) put_Text;
+			public function HRESULT(IInkEdit *self, IPictureDisp** MouseIcon) get_MouseIcon;
+			public function HRESULT(IInkEdit *self, IPictureDisp* MouseIcon) put_MouseIcon;
+			public function HRESULT(IInkEdit *self, IPictureDisp* MouseIcon) putref_MouseIcon;
+			public function HRESULT(IInkEdit *self, InkMousePointer* MousePointer) get_MousePointer;
+			public function HRESULT(IInkEdit *self, InkMousePointer MousePointer) put_MousePointer;
+			public function HRESULT(IInkEdit *self, int16* pVal) get_Locked;
+			public function HRESULT(IInkEdit *self, int16 newVal) put_Locked;
+			public function HRESULT(IInkEdit *self, int16* pVal) get_Enabled;
+			public function HRESULT(IInkEdit *self, int16 newVal) put_Enabled;
+			public function HRESULT(IInkEdit *self, int32* plMaxLength) get_MaxLength;
+			public function HRESULT(IInkEdit *self, int32 lMaxLength) put_MaxLength;
+			public function HRESULT(IInkEdit *self, int16* pVal) get_MultiLine;
+			public function HRESULT(IInkEdit *self, int16 newVal) put_MultiLine;
+			public function HRESULT(IInkEdit *self, ScrollBarsConstants* pVal) get_ScrollBars;
+			public function HRESULT(IInkEdit *self, ScrollBarsConstants newVal) put_ScrollBars;
+			public function HRESULT(IInkEdit *self, int16* pVal) get_DisableNoScroll;
+			public function HRESULT(IInkEdit *self, int16 newVal) put_DisableNoScroll;
+			public function HRESULT(IInkEdit *self, VARIANT* pvarSelAlignment) get_SelAlignment;
+			public function HRESULT(IInkEdit *self, VARIANT pvarSelAlignment) put_SelAlignment;
+			public function HRESULT(IInkEdit *self, VARIANT* pvarSelBold) get_SelBold;
+			public function HRESULT(IInkEdit *self, VARIANT pvarSelBold) put_SelBold;
+			public function HRESULT(IInkEdit *self, VARIANT* pvarSelItalic) get_SelItalic;
+			public function HRESULT(IInkEdit *self, VARIANT pvarSelItalic) put_SelItalic;
+			public function HRESULT(IInkEdit *self, VARIANT* pvarSelUnderline) get_SelUnderline;
+			public function HRESULT(IInkEdit *self, VARIANT pvarSelUnderline) put_SelUnderline;
+			public function HRESULT(IInkEdit *self, VARIANT* pvarSelColor) get_SelColor;
+			public function HRESULT(IInkEdit *self, VARIANT pvarSelColor) put_SelColor;
+			public function HRESULT(IInkEdit *self, VARIANT* pvarSelFontName) get_SelFontName;
+			public function HRESULT(IInkEdit *self, VARIANT pvarSelFontName) put_SelFontName;
+			public function HRESULT(IInkEdit *self, VARIANT* pvarSelFontSize) get_SelFontSize;
+			public function HRESULT(IInkEdit *self, VARIANT pvarSelFontSize) put_SelFontSize;
+			public function HRESULT(IInkEdit *self, VARIANT* pvarSelCharOffset) get_SelCharOffset;
+			public function HRESULT(IInkEdit *self, VARIANT pvarSelCharOffset) put_SelCharOffset;
+			public function HRESULT(IInkEdit *self, BSTR* pbstrTextRTF) get_TextRTF;
+			public function HRESULT(IInkEdit *self, BSTR pbstrTextRTF) put_TextRTF;
+			public function HRESULT(IInkEdit *self, int32* plSelStart) get_SelStart;
+			public function HRESULT(IInkEdit *self, int32 plSelStart) put_SelStart;
+			public function HRESULT(IInkEdit *self, int32* plSelLength) get_SelLength;
+			public function HRESULT(IInkEdit *self, int32 plSelLength) put_SelLength;
+			public function HRESULT(IInkEdit *self, BSTR* pbstrSelText) get_SelText;
+			public function HRESULT(IInkEdit *self, BSTR pbstrSelText) put_SelText;
+			public function HRESULT(IInkEdit *self, BSTR* pbstrSelRTF) get_SelRTF;
+			public function HRESULT(IInkEdit *self, BSTR pbstrSelRTF) put_SelRTF;
+			public function HRESULT(IInkEdit *self) Refresh;
+		}
+		[CRepr]
+		public struct _IInkEditEvents : IDispatch
+		{
+			public const new Guid IID = .(0xe3b0b797, 0xa72e, 0x46db, 0xa0, 0xd7, 0x6c, 0x9e, 0xba, 0x8e, 0x9b, 0xbc);
+			
+		}
+		[CRepr]
+		public struct IMathInputControl : IDispatch
+		{
+			public const new Guid IID = .(0xeba615aa, 0xfac6, 0x4738, 0xba, 0x5f, 0xff, 0x09, 0xe9, 0xfe, 0x47, 0x3e);
+			
+			public function HRESULT(IMathInputControl *self) Show;
+			public function HRESULT(IMathInputControl *self) Hide;
+			public function HRESULT(IMathInputControl *self, int16* pvbShown) IsVisible;
+			public function HRESULT(IMathInputControl *self, int32* Left, int32* Top, int32* Right, int32* Bottom) GetPosition;
+			public function HRESULT(IMathInputControl *self, int32 Left, int32 Top, int32 Right, int32 Bottom) SetPosition;
+			public function HRESULT(IMathInputControl *self) Clear;
+			public function HRESULT(IMathInputControl *self, int32 Element, int16 Paint) SetCustomPaint;
+			public function HRESULT(IMathInputControl *self, BSTR CaptionText) SetCaptionText;
+			public function HRESULT(IMathInputControl *self, IInkDisp* Ink) LoadInk;
+			public function HRESULT(IMathInputControl *self, int OwnerWindow) SetOwnerWindow;
+			public function HRESULT(IMathInputControl *self, int16 Extended) EnableExtendedButtons;
+			public function HRESULT(IMathInputControl *self, int32* Height) GetPreviewHeight;
+			public function HRESULT(IMathInputControl *self, int32 Height) SetPreviewHeight;
+			public function HRESULT(IMathInputControl *self, int16 AutoGrow) EnableAutoGrow;
+			public function HRESULT(IMathInputControl *self, BSTR FunctionName) AddFunctionName;
+			public function HRESULT(IMathInputControl *self, BSTR FunctionName) RemoveFunctionName;
+			public function HRESULT(IMathInputControl *self, IPictureDisp** HoverImage) GetHoverIcon;
+		}
+		[CRepr]
+		public struct _IMathInputControlEvents : IDispatch
+		{
+			public const new Guid IID = .(0x683336b5, 0xa47d, 0x4358, 0x96, 0xf9, 0x87, 0x5a, 0x47, 0x2a, 0xe7, 0x0a);
+			
+		}
+		[CRepr]
+		public struct IRealTimeStylus : IUnknown
+		{
+			public const new Guid IID = .(0xa8bb5d22, 0x3144, 0x4a7b, 0x93, 0xcd, 0xf3, 0x4a, 0x16, 0xbe, 0x51, 0x3a);
+			
+			public function HRESULT(IRealTimeStylus *self, BOOL* pfEnable) get_Enabled;
+			public function HRESULT(IRealTimeStylus *self, BOOL fEnable) put_Enabled;
+			public function HRESULT(IRealTimeStylus *self, HANDLE_PTR* phwnd) get_HWND;
+			public function HRESULT(IRealTimeStylus *self, HANDLE_PTR hwnd) put_HWND;
+			public function HRESULT(IRealTimeStylus *self, RECT* prcWndInputRect) get_WindowInputRectangle;
+			public function HRESULT(IRealTimeStylus *self, RECT* prcWndInputRect) put_WindowInputRectangle;
+			public function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusSyncPlugin* piPlugin) AddStylusSyncPlugin;
+			public function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) RemoveStylusSyncPlugin;
+			public function HRESULT(IRealTimeStylus *self) RemoveAllStylusSyncPlugins;
+			public function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) GetStylusSyncPlugin;
+			public function HRESULT(IRealTimeStylus *self, uint32* pcPlugins) GetStylusSyncPluginCount;
+			public function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusAsyncPlugin* piPlugin) AddStylusAsyncPlugin;
+			public function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) RemoveStylusAsyncPlugin;
+			public function HRESULT(IRealTimeStylus *self) RemoveAllStylusAsyncPlugins;
+			public function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) GetStylusAsyncPlugin;
+			public function HRESULT(IRealTimeStylus *self, uint32* pcPlugins) GetStylusAsyncPluginCount;
+			public function HRESULT(IRealTimeStylus *self, IRealTimeStylus** ppiRTS) get_ChildRealTimeStylusPlugin;
+			public function HRESULT(IRealTimeStylus *self, IRealTimeStylus* piRTS) putref_ChildRealTimeStylusPlugin;
+			public function HRESULT(IRealTimeStylus *self, StylusQueue sq, Guid* pGuidId, uint32 cbData, uint8* pbData) AddCustomStylusDataToQueue;
+			public function HRESULT(IRealTimeStylus *self) ClearStylusQueues;
+			public function HRESULT(IRealTimeStylus *self, BOOL fUseMouseForInput) SetAllTabletsMode;
+			public function HRESULT(IRealTimeStylus *self, IInkTablet* piTablet) SetSingleTabletMode;
+			public function HRESULT(IRealTimeStylus *self, IInkTablet** ppiSingleTablet) GetTablet;
+			public function HRESULT(IRealTimeStylus *self, IInkTablet* piTablet, uint32* ptcid) GetTabletContextIdFromTablet;
+			public function HRESULT(IRealTimeStylus *self, uint32 tcid, IInkTablet** ppiTablet) GetTabletFromTabletContextId;
+			public function HRESULT(IRealTimeStylus *self, uint32* pcTcidCount, uint32** ppTcids) GetAllTabletContextIds;
+			public function HRESULT(IRealTimeStylus *self, IInkCursors** ppiInkCursors) GetStyluses;
+			public function HRESULT(IRealTimeStylus *self, uint32 sid, IInkCursor** ppiInkCursor) GetStylusForId;
+			public function HRESULT(IRealTimeStylus *self, uint32 cProperties, Guid* pPropertyGuids) SetDesiredPacketDescription;
+			public function HRESULT(IRealTimeStylus *self, uint32* pcProperties, Guid** ppPropertyGuids) GetDesiredPacketDescription;
+			public function HRESULT(IRealTimeStylus *self, uint32 tcid, float* pfInkToDeviceScaleX, float* pfInkToDeviceScaleY, uint32* pcPacketProperties, PACKET_PROPERTY** ppPacketProperties) GetPacketDescriptionData;
+		}
+		[CRepr]
+		public struct IRealTimeStylus2 : IUnknown
+		{
+			public const new Guid IID = .(0xb5f2a6cd, 0x3179, 0x4a3e, 0xb9, 0xc4, 0xbb, 0x58, 0x65, 0x96, 0x2b, 0xe2);
+			
+			public function HRESULT(IRealTimeStylus2 *self, BOOL* pfEnable) get_FlicksEnabled;
+			public function HRESULT(IRealTimeStylus2 *self, BOOL fEnable) put_FlicksEnabled;
+		}
+		[CRepr]
+		public struct IRealTimeStylus3 : IUnknown
+		{
+			public const new Guid IID = .(0xd70230a3, 0x6986, 0x4051, 0xb5, 0x7a, 0x1c, 0xf6, 0x9f, 0x4d, 0x9d, 0xb5);
+			
+			public function HRESULT(IRealTimeStylus3 *self, BOOL* pfEnable) get_MultiTouchEnabled;
+			public function HRESULT(IRealTimeStylus3 *self, BOOL fEnable) put_MultiTouchEnabled;
+		}
+		[CRepr]
+		public struct IRealTimeStylusSynchronization : IUnknown
+		{
+			public const new Guid IID = .(0xaa87eab8, 0xab4a, 0x4cea, 0xb5, 0xcb, 0x46, 0xd8, 0x4c, 0x6a, 0x25, 0x09);
+			
+			public function HRESULT(IRealTimeStylusSynchronization *self, RealTimeStylusLockType lock) AcquireLock;
+			public function HRESULT(IRealTimeStylusSynchronization *self, RealTimeStylusLockType lock) ReleaseLock;
+		}
+		[CRepr]
+		public struct IStrokeBuilder : IUnknown
+		{
+			public const new Guid IID = .(0xa5fd4e2d, 0xc44b, 0x4092, 0x91, 0x77, 0x26, 0x09, 0x05, 0xeb, 0x67, 0x2b);
+			
+			public function HRESULT(IStrokeBuilder *self, uint32 cPktBuffLength, int32* pPackets, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) CreateStroke;
+			public function HRESULT(IStrokeBuilder *self, uint32 tcid, uint32 sid, int32* pPacket, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) BeginStroke;
+			public function HRESULT(IStrokeBuilder *self, uint32 tcid, uint32 sid, uint32 cPktBuffLength, int32* pPackets) AppendPackets;
+			public function HRESULT(IStrokeBuilder *self, uint32 tcid, uint32 sid, IInkStrokeDisp** ppIInkStroke, RECT* pDirtyRect) EndStroke;
+			public function HRESULT(IStrokeBuilder *self, IInkDisp** ppiInkObj) get_Ink;
+			public function HRESULT(IStrokeBuilder *self, IInkDisp* piInkObj) putref_Ink;
+		}
+		[CRepr]
+		public struct IStylusPlugin : IUnknown
+		{
+			public const new Guid IID = .(0xa81436d8, 0x4757, 0x4fd1, 0xa1, 0x85, 0x13, 0x3f, 0x97, 0xc6, 0xc5, 0x45);
+			
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusEnabled;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusDisabled;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusInRange;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusOutOfRange;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusDown;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusUp;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 sid, Guid* pGuidStylusButton, POINT* pStylusPos) StylusButtonDown;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 sid, Guid* pGuidStylusButton, POINT* pStylusPos) StylusButtonUp;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, uint32* pcInOutPkts, int32** ppInOutPkts) InAirPackets;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, uint32* pcInOutPkts, int32** ppInOutPkts) Packets;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, Guid* pGuidId, uint32 cbData, uint8* pbData) CustomStylusDataAdded;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid, uint16 event, SYSTEM_EVENT_DATA eventdata) SystemEvent;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, IInkTablet* piTablet) TabletAdded;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, int32 iTabletIndex) TabletRemoved;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, IStylusPlugin* piPlugin, RealTimeStylusDataInterest dataInterest, HRESULT hrErrorCode, int* lptrKey) Error;
+			public function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc) UpdateMapping;
+			public function HRESULT(IStylusPlugin *self, RealTimeStylusDataInterest* pDataInterest) DataInterest;
+		}
+		[CRepr]
+		public struct IStylusSyncPlugin : IStylusPlugin
+		{
+			public const new Guid IID = .(0xa157b174, 0x482f, 0x4d71, 0xa3, 0xf6, 0x3a, 0x41, 0xdd, 0xd1, 0x1b, 0xe9);
+			
+		}
+		[CRepr]
+		public struct IStylusAsyncPlugin : IStylusPlugin
+		{
+			public const new Guid IID = .(0xa7cca85a, 0x31bc, 0x4cd2, 0xaa, 0xdc, 0x32, 0x89, 0xa3, 0xaf, 0x11, 0xc8);
+			
+		}
+		[CRepr]
+		public struct IDynamicRenderer : IUnknown
+		{
+			public const new Guid IID = .(0xa079468e, 0x7165, 0x46f9, 0xb7, 0xaf, 0x98, 0xad, 0x01, 0xa9, 0x30, 0x09);
+			
+			public function HRESULT(IDynamicRenderer *self, BOOL* bEnabled) get_Enabled;
+			public function HRESULT(IDynamicRenderer *self, BOOL bEnabled) put_Enabled;
+			public function HRESULT(IDynamicRenderer *self, HANDLE_PTR* hwnd) get_HWND;
+			public function HRESULT(IDynamicRenderer *self, HANDLE_PTR hwnd) put_HWND;
+			public function HRESULT(IDynamicRenderer *self, RECT* prcClipRect) get_ClipRectangle;
+			public function HRESULT(IDynamicRenderer *self, RECT* prcClipRect) put_ClipRectangle;
+			public function HRESULT(IDynamicRenderer *self, HANDLE_PTR* phClipRgn) get_ClipRegion;
+			public function HRESULT(IDynamicRenderer *self, HANDLE_PTR hClipRgn) put_ClipRegion;
+			public function HRESULT(IDynamicRenderer *self, IInkDrawingAttributes** ppiDA) get_DrawingAttributes;
+			public function HRESULT(IDynamicRenderer *self, IInkDrawingAttributes* piDA) putref_DrawingAttributes;
+			public function HRESULT(IDynamicRenderer *self, BOOL* pfCacheData) get_DataCacheEnabled;
+			public function HRESULT(IDynamicRenderer *self, BOOL fCacheData) put_DataCacheEnabled;
+			public function HRESULT(IDynamicRenderer *self, uint32 strokeId) ReleaseCachedData;
+			public function HRESULT(IDynamicRenderer *self) Refresh;
+			public function HRESULT(IDynamicRenderer *self, HANDLE_PTR hDC) Draw;
+		}
+		[CRepr]
+		public struct IGestureRecognizer : IUnknown
+		{
+			public const new Guid IID = .(0xae9ef86b, 0x7054, 0x45e3, 0xae, 0x22, 0x31, 0x74, 0xdc, 0x88, 0x11, 0xb7);
+			
+			public function HRESULT(IGestureRecognizer *self, BOOL* pfEnabled) get_Enabled;
+			public function HRESULT(IGestureRecognizer *self, BOOL fEnabled) put_Enabled;
+			public function HRESULT(IGestureRecognizer *self, int32* pcStrokes) get_MaxStrokeCount;
+			public function HRESULT(IGestureRecognizer *self, int32 cStrokes) put_MaxStrokeCount;
+			public function HRESULT(IGestureRecognizer *self, uint32 cGestures, int32* pGestures) EnableGestures;
+			public function HRESULT(IGestureRecognizer *self) Reset;
+		}
+		[CRepr]
+		public struct ITipAutoCompleteProvider : IUnknown
+		{
+			public const new Guid IID = .(0x7c6cf46d, 0x8404, 0x46b9, 0xad, 0x33, 0xf5, 0xb6, 0x03, 0x6d, 0x40, 0x07);
+			
+			public function HRESULT(ITipAutoCompleteProvider *self, BSTR bstrPendingText) UpdatePendingText;
+			public function HRESULT(ITipAutoCompleteProvider *self, BOOL fShow) Show;
+		}
+		[CRepr]
+		public struct ITipAutoCompleteClient : IUnknown
+		{
+			public const new Guid IID = .(0x5e078e03, 0x8265, 0x4bbe, 0x94, 0x87, 0xd2, 0x42, 0xed, 0xbe, 0xf9, 0x10);
+			
+			public function HRESULT(ITipAutoCompleteClient *self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) AdviseProvider;
+			public function HRESULT(ITipAutoCompleteClient *self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) UnadviseProvider;
+			public function HRESULT(ITipAutoCompleteClient *self) UserSelection;
+			public function HRESULT(ITipAutoCompleteClient *self, RECT* prcACList, RECT* prcField, RECT* prcModifiedACList, BOOL* pfShownAboveTip) PreferredRects;
+			public function HRESULT(ITipAutoCompleteClient *self, HWND hWndList, BOOL* pfAllowShowing) RequestShowUI;
+		}
 		
 		// --- Functions ---
 		

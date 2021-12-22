@@ -100,8 +100,25 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ISceSvcAttachmentPersistInfo {}
-		public struct ISceSvcAttachmentData {}
+		[CRepr]
+		public struct ISceSvcAttachmentPersistInfo : IUnknown
+		{
+			public const new Guid IID = .(0x6d90e0d0, 0x200d, 0x11d1, 0xaf, 0xfb, 0x00, 0xc0, 0x4f, 0xb9, 0x84, 0xf9);
+			
+			public function HRESULT(ISceSvcAttachmentPersistInfo *self, int8* lpTemplateName, void** scesvcHandle, void** ppvData, BOOL* pbOverwriteAll) Save;
+			public function HRESULT(ISceSvcAttachmentPersistInfo *self, int8* lpTemplateName) IsDirty;
+			public function HRESULT(ISceSvcAttachmentPersistInfo *self, void* pvData) FreeBuffer;
+		}
+		[CRepr]
+		public struct ISceSvcAttachmentData : IUnknown
+		{
+			public const new Guid IID = .(0x17c35fde, 0x200d, 0x11d1, 0xaf, 0xfb, 0x00, 0xc0, 0x4f, 0xb9, 0x84, 0xf9);
+			
+			public function HRESULT(ISceSvcAttachmentData *self, void* scesvcHandle, SCESVC_INFO_TYPE sceType, void** ppvData, uint32* psceEnumHandle) GetData;
+			public function HRESULT(ISceSvcAttachmentData *self, int8* lpServiceName, int8* lpTemplateName, ISceSvcAttachmentPersistInfo* lpSceSvcPersistInfo, void** pscesvcHandle) Initialize;
+			public function HRESULT(ISceSvcAttachmentData *self, void* pvData) FreeBuffer;
+			public function HRESULT(ISceSvcAttachmentData *self, void* scesvcHandle) CloseHandle;
+		}
 		
 	}
 }

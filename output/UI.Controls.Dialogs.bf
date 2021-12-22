@@ -594,7 +594,7 @@ namespace Win32
 			public uint32 nCopies;
 			public HINSTANCE hInstance;
 			public PSTR lpPrintTemplateName;
-			public IUnknown lpCallback;
+			public IUnknown* lpCallback;
 			public uint32 nPropertyPages;
 			public HPROPSHEETPAGE* lphPropertyPages;
 			public uint32 nStartPage;
@@ -619,7 +619,7 @@ namespace Win32
 			public uint32 nCopies;
 			public HINSTANCE hInstance;
 			public PWSTR lpPrintTemplateName;
-			public IUnknown lpCallback;
+			public IUnknown* lpCallback;
 			public uint32 nPropertyPages;
 			public HPROPSHEETPAGE* lphPropertyPages;
 			public uint32 nStartPage;
@@ -672,8 +672,24 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IPrintDialogCallback {}
-		public struct IPrintDialogServices {}
+		[CRepr]
+		public struct IPrintDialogCallback : IUnknown
+		{
+			public const new Guid IID = .(0x5852a2c3, 0x6530, 0x11d1, 0xb6, 0xa3, 0x00, 0x00, 0xf8, 0x75, 0x7b, 0xf9);
+			
+			public function HRESULT(IPrintDialogCallback *self) InitDone;
+			public function HRESULT(IPrintDialogCallback *self) SelectionChange;
+			public function HRESULT(IPrintDialogCallback *self, HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pResult) HandleMessage;
+		}
+		[CRepr]
+		public struct IPrintDialogServices : IUnknown
+		{
+			public const new Guid IID = .(0x509aaeda, 0x5639, 0x11d1, 0xb6, 0xa1, 0x00, 0x00, 0xf8, 0x75, 0x7b, 0xf9);
+			
+			public function HRESULT(IPrintDialogServices *self, DEVMODEA* pDevMode, uint32* pcbSize) GetCurrentDevMode;
+			public function HRESULT(IPrintDialogServices *self, char16* pPrinterName, uint32* pcchSize) GetCurrentPrinterName;
+			public function HRESULT(IPrintDialogServices *self, char16* pPortName, uint32* pcchSize) GetCurrentPortName;
+		}
 		
 		// --- Functions ---
 		

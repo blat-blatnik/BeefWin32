@@ -1194,70 +1194,1046 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IFaxJobStatus {}
-		public struct IFaxServer {}
-		public struct IFaxDeviceProviders {}
-		public struct IFaxDevices {}
-		public struct IFaxInboundRouting {}
-		public struct IFaxFolders {}
-		public struct IFaxLoggingOptions {}
-		public struct IFaxActivity {}
-		public struct IFaxOutboundRouting {}
-		public struct IFaxReceiptOptions {}
-		public struct IFaxSecurity {}
-		public struct IFaxDocument {}
-		public struct IFaxSender {}
-		public struct IFaxRecipient {}
-		public struct IFaxRecipients {}
-		public struct IFaxIncomingArchive {}
-		public struct IFaxIncomingQueue {}
-		public struct IFaxOutgoingArchive {}
-		public struct IFaxOutgoingQueue {}
-		public struct IFaxIncomingMessageIterator {}
-		public struct IFaxIncomingMessage {}
-		public struct IFaxOutgoingJobs {}
-		public struct IFaxOutgoingJob {}
-		public struct IFaxOutgoingMessageIterator {}
-		public struct IFaxOutgoingMessage {}
-		public struct IFaxIncomingJobs {}
-		public struct IFaxIncomingJob {}
-		public struct IFaxDeviceProvider {}
-		public struct IFaxDevice {}
-		public struct IFaxActivityLogging {}
-		public struct IFaxEventLogging {}
-		public struct IFaxOutboundRoutingGroups {}
-		public struct IFaxOutboundRoutingGroup {}
-		public struct IFaxDeviceIds {}
-		public struct IFaxOutboundRoutingRules {}
-		public struct IFaxOutboundRoutingRule {}
-		public struct IFaxInboundRoutingExtensions {}
-		public struct IFaxInboundRoutingExtension {}
-		public struct IFaxInboundRoutingMethods {}
-		public struct IFaxInboundRoutingMethod {}
-		public struct IFaxDocument2 {}
-		public struct IFaxConfiguration {}
-		public struct IFaxServer2 {}
-		public struct IFaxAccountSet {}
-		public struct IFaxAccounts {}
-		public struct IFaxAccount {}
-		public struct IFaxOutgoingJob2 {}
-		public struct IFaxAccountFolders {}
-		public struct IFaxAccountIncomingQueue {}
-		public struct IFaxAccountOutgoingQueue {}
-		public struct IFaxOutgoingMessage2 {}
-		public struct IFaxAccountIncomingArchive {}
-		public struct IFaxAccountOutgoingArchive {}
-		public struct IFaxSecurity2 {}
-		public struct IFaxIncomingMessage2 {}
-		public struct IFaxServerNotify {}
-		public struct _IFaxServerNotify2 {}
-		public struct IFaxServerNotify2 {}
-		public struct _IFaxAccountNotify {}
-		public struct IFaxAccountNotify {}
-		public struct IStillImageW {}
-		public struct IStiDevice {}
-		public struct IStiDeviceControl {}
-		public struct IStiUSD {}
+		[CRepr]
+		public struct IFaxJobStatus : IDispatch
+		{
+			public const new Guid IID = .(0x8b86f485, 0xfd7f, 0x4824, 0x88, 0x6b, 0x40, 0xc5, 0xca, 0xa6, 0x17, 0xcc);
+			
+			public function HRESULT(IFaxJobStatus *self, FAX_JOB_STATUS_ENUM* pStatus) get_Status;
+			public function HRESULT(IFaxJobStatus *self, int32* plPages) get_Pages;
+			public function HRESULT(IFaxJobStatus *self, int32* plSize) get_Size;
+			public function HRESULT(IFaxJobStatus *self, int32* plCurrentPage) get_CurrentPage;
+			public function HRESULT(IFaxJobStatus *self, int32* plDeviceId) get_DeviceId;
+			public function HRESULT(IFaxJobStatus *self, BSTR* pbstrCSID) get_CSID;
+			public function HRESULT(IFaxJobStatus *self, BSTR* pbstrTSID) get_TSID;
+			public function HRESULT(IFaxJobStatus *self, FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) get_ExtendedStatusCode;
+			public function HRESULT(IFaxJobStatus *self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
+			public function HRESULT(IFaxJobStatus *self, FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) get_AvailableOperations;
+			public function HRESULT(IFaxJobStatus *self, int32* plRetries) get_Retries;
+			public function HRESULT(IFaxJobStatus *self, FAX_JOB_TYPE_ENUM* pJobType) get_JobType;
+			public function HRESULT(IFaxJobStatus *self, double* pdateScheduledTime) get_ScheduledTime;
+			public function HRESULT(IFaxJobStatus *self, double* pdateTransmissionStart) get_TransmissionStart;
+			public function HRESULT(IFaxJobStatus *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+			public function HRESULT(IFaxJobStatus *self, BSTR* pbstrCallerId) get_CallerId;
+			public function HRESULT(IFaxJobStatus *self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
+		}
+		[CRepr]
+		public struct IFaxServer : IDispatch
+		{
+			public const new Guid IID = .(0x475b6469, 0x90a5, 0x4878, 0xa5, 0x77, 0x17, 0xa8, 0x6e, 0x8e, 0x34, 0x62);
+			
+			public function HRESULT(IFaxServer *self, BSTR bstrServerName) Connect;
+			public function HRESULT(IFaxServer *self, BSTR* pbstrServerName) get_ServerName;
+			public function HRESULT(IFaxServer *self, IFaxDeviceProviders** ppFaxDeviceProviders) GetDeviceProviders;
+			public function HRESULT(IFaxServer *self, IFaxDevices** ppFaxDevices) GetDevices;
+			public function HRESULT(IFaxServer *self, IFaxInboundRouting** ppFaxInboundRouting) get_InboundRouting;
+			public function HRESULT(IFaxServer *self, IFaxFolders** pFaxFolders) get_Folders;
+			public function HRESULT(IFaxServer *self, IFaxLoggingOptions** ppFaxLoggingOptions) get_LoggingOptions;
+			public function HRESULT(IFaxServer *self, int32* plMajorVersion) get_MajorVersion;
+			public function HRESULT(IFaxServer *self, int32* plMinorVersion) get_MinorVersion;
+			public function HRESULT(IFaxServer *self, int32* plMajorBuild) get_MajorBuild;
+			public function HRESULT(IFaxServer *self, int32* plMinorBuild) get_MinorBuild;
+			public function HRESULT(IFaxServer *self, int16* pbDebug) get_Debug;
+			public function HRESULT(IFaxServer *self, IFaxActivity** ppFaxActivity) get_Activity;
+			public function HRESULT(IFaxServer *self, IFaxOutboundRouting** ppFaxOutboundRouting) get_OutboundRouting;
+			public function HRESULT(IFaxServer *self, IFaxReceiptOptions** ppFaxReceiptOptions) get_ReceiptOptions;
+			public function HRESULT(IFaxServer *self, IFaxSecurity** ppFaxSecurity) get_Security;
+			public function HRESULT(IFaxServer *self) Disconnect;
+			public function HRESULT(IFaxServer *self, BSTR bstrGUID, VARIANT* pvProperty) GetExtensionProperty;
+			public function HRESULT(IFaxServer *self, BSTR bstrGUID, VARIANT vProperty) SetExtensionProperty;
+			public function HRESULT(IFaxServer *self, FAX_SERVER_EVENTS_TYPE_ENUM EventTypes) ListenToServerEvents;
+			public function HRESULT(IFaxServer *self, BSTR bstrGUID, BSTR bstrFriendlyName, BSTR bstrImageName, BSTR TspName, int32 lFSPIVersion) RegisterDeviceProvider;
+			public function HRESULT(IFaxServer *self, BSTR bstrUniqueName) UnregisterDeviceProvider;
+			public function HRESULT(IFaxServer *self, BSTR bstrExtensionName, BSTR bstrFriendlyName, BSTR bstrImageName, VARIANT vMethods) RegisterInboundRoutingExtension;
+			public function HRESULT(IFaxServer *self, BSTR bstrExtensionUniqueName) UnregisterInboundRoutingExtension;
+			public function HRESULT(IFaxServer *self, FAX_SERVER_EVENTS_TYPE_ENUM* pEventTypes) get_RegisteredEvents;
+			public function HRESULT(IFaxServer *self, FAX_SERVER_APIVERSION_ENUM* pAPIVersion) get_APIVersion;
+		}
+		[CRepr]
+		public struct IFaxDeviceProviders : IDispatch
+		{
+			public const new Guid IID = .(0x9fb76f62, 0x4c7e, 0x43a5, 0xb6, 0xfd, 0x50, 0x28, 0x93, 0xf7, 0xe1, 0x3e);
+			
+			public function HRESULT(IFaxDeviceProviders *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxDeviceProviders *self, VARIANT vIndex, IFaxDeviceProvider** pFaxDeviceProvider) get_Item;
+			public function HRESULT(IFaxDeviceProviders *self, int32* plCount) get_Count;
+		}
+		[CRepr]
+		public struct IFaxDevices : IDispatch
+		{
+			public const new Guid IID = .(0x9e46783e, 0xf34f, 0x482e, 0xa3, 0x60, 0x04, 0x16, 0xbe, 0xcb, 0xbd, 0x96);
+			
+			public function HRESULT(IFaxDevices *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxDevices *self, VARIANT vIndex, IFaxDevice** pFaxDevice) get_Item;
+			public function HRESULT(IFaxDevices *self, int32* plCount) get_Count;
+			public function HRESULT(IFaxDevices *self, int32 lId, IFaxDevice** ppFaxDevice) get_ItemById;
+		}
+		[CRepr]
+		public struct IFaxInboundRouting : IDispatch
+		{
+			public const new Guid IID = .(0x8148c20f, 0x9d52, 0x45b1, 0xbf, 0x96, 0x38, 0xfc, 0x12, 0x71, 0x35, 0x27);
+			
+			public function HRESULT(IFaxInboundRouting *self, IFaxInboundRoutingExtensions** pFaxInboundRoutingExtensions) GetExtensions;
+			public function HRESULT(IFaxInboundRouting *self, IFaxInboundRoutingMethods** pFaxInboundRoutingMethods) GetMethods;
+		}
+		[CRepr]
+		public struct IFaxFolders : IDispatch
+		{
+			public const new Guid IID = .(0xdce3b2a8, 0xa7ab, 0x42bc, 0x9d, 0x0a, 0x31, 0x49, 0x45, 0x72, 0x61, 0xa0);
+			
+			public function HRESULT(IFaxFolders *self, IFaxOutgoingQueue** pFaxOutgoingQueue) get_OutgoingQueue;
+			public function HRESULT(IFaxFolders *self, IFaxIncomingQueue** pFaxIncomingQueue) get_IncomingQueue;
+			public function HRESULT(IFaxFolders *self, IFaxIncomingArchive** pFaxIncomingArchive) get_IncomingArchive;
+			public function HRESULT(IFaxFolders *self, IFaxOutgoingArchive** pFaxOutgoingArchive) get_OutgoingArchive;
+		}
+		[CRepr]
+		public struct IFaxLoggingOptions : IDispatch
+		{
+			public const new Guid IID = .(0x34e64fb9, 0x6b31, 0x4d32, 0x8b, 0x27, 0xd2, 0x86, 0xc0, 0xc3, 0x36, 0x06);
+			
+			public function HRESULT(IFaxLoggingOptions *self, IFaxEventLogging** pFaxEventLogging) get_EventLogging;
+			public function HRESULT(IFaxLoggingOptions *self, IFaxActivityLogging** pFaxActivityLogging) get_ActivityLogging;
+		}
+		[CRepr]
+		public struct IFaxActivity : IDispatch
+		{
+			public const new Guid IID = .(0x4b106f97, 0x3df5, 0x40f2, 0xbc, 0x3c, 0x44, 0xcb, 0x81, 0x15, 0xeb, 0xdf);
+			
+			public function HRESULT(IFaxActivity *self, int32* plIncomingMessages) get_IncomingMessages;
+			public function HRESULT(IFaxActivity *self, int32* plRoutingMessages) get_RoutingMessages;
+			public function HRESULT(IFaxActivity *self, int32* plOutgoingMessages) get_OutgoingMessages;
+			public function HRESULT(IFaxActivity *self, int32* plQueuedMessages) get_QueuedMessages;
+			public function HRESULT(IFaxActivity *self) Refresh;
+		}
+		[CRepr]
+		public struct IFaxOutboundRouting : IDispatch
+		{
+			public const new Guid IID = .(0x25dc05a4, 0x9909, 0x41bd, 0xa9, 0x5b, 0x7e, 0x5d, 0x1d, 0xec, 0x1d, 0x43);
+			
+			public function HRESULT(IFaxOutboundRouting *self, IFaxOutboundRoutingGroups** pFaxOutboundRoutingGroups) GetGroups;
+			public function HRESULT(IFaxOutboundRouting *self, IFaxOutboundRoutingRules** pFaxOutboundRoutingRules) GetRules;
+		}
+		[CRepr]
+		public struct IFaxReceiptOptions : IDispatch
+		{
+			public const new Guid IID = .(0x378efaeb, 0x5fcb, 0x4afb, 0xb2, 0xee, 0xe1, 0x6e, 0x80, 0x61, 0x44, 0x87);
+			
+			public function HRESULT(IFaxReceiptOptions *self, FAX_SMTP_AUTHENTICATION_TYPE_ENUM* pType) get_AuthenticationType;
+			public function HRESULT(IFaxReceiptOptions *self, FAX_SMTP_AUTHENTICATION_TYPE_ENUM Type) put_AuthenticationType;
+			public function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPServer) get_SMTPServer;
+			public function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPServer) put_SMTPServer;
+			public function HRESULT(IFaxReceiptOptions *self, int32* plSMTPPort) get_SMTPPort;
+			public function HRESULT(IFaxReceiptOptions *self, int32 lSMTPPort) put_SMTPPort;
+			public function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPSender) get_SMTPSender;
+			public function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPSender) put_SMTPSender;
+			public function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPUser) get_SMTPUser;
+			public function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPUser) put_SMTPUser;
+			public function HRESULT(IFaxReceiptOptions *self, FAX_RECEIPT_TYPE_ENUM* pAllowedReceipts) get_AllowedReceipts;
+			public function HRESULT(IFaxReceiptOptions *self, FAX_RECEIPT_TYPE_ENUM AllowedReceipts) put_AllowedReceipts;
+			public function HRESULT(IFaxReceiptOptions *self, BSTR* pbstrSMTPPassword) get_SMTPPassword;
+			public function HRESULT(IFaxReceiptOptions *self, BSTR bstrSMTPPassword) put_SMTPPassword;
+			public function HRESULT(IFaxReceiptOptions *self) Refresh;
+			public function HRESULT(IFaxReceiptOptions *self) Save;
+			public function HRESULT(IFaxReceiptOptions *self, int16* pbUseForInboundRouting) get_UseForInboundRouting;
+			public function HRESULT(IFaxReceiptOptions *self, int16 bUseForInboundRouting) put_UseForInboundRouting;
+		}
+		[CRepr]
+		public struct IFaxSecurity : IDispatch
+		{
+			public const new Guid IID = .(0x77b508c1, 0x09c0, 0x47a2, 0x91, 0xeb, 0xfc, 0xe7, 0xfd, 0xf2, 0x69, 0x0e);
+			
+			public function HRESULT(IFaxSecurity *self, VARIANT* pvDescriptor) get_Descriptor;
+			public function HRESULT(IFaxSecurity *self, VARIANT vDescriptor) put_Descriptor;
+			public function HRESULT(IFaxSecurity *self, FAX_ACCESS_RIGHTS_ENUM* pGrantedRights) get_GrantedRights;
+			public function HRESULT(IFaxSecurity *self) Refresh;
+			public function HRESULT(IFaxSecurity *self) Save;
+			public function HRESULT(IFaxSecurity *self, int32* plInformationType) get_InformationType;
+			public function HRESULT(IFaxSecurity *self, int32 lInformationType) put_InformationType;
+		}
+		[CRepr]
+		public struct IFaxDocument : IDispatch
+		{
+			public const new Guid IID = .(0xb207a246, 0x09e3, 0x4a4e, 0xa7, 0xdc, 0xfe, 0xa3, 0x1d, 0x29, 0x45, 0x8f);
+			
+			public function HRESULT(IFaxDocument *self, BSTR* pbstrBody) get_Body;
+			public function HRESULT(IFaxDocument *self, BSTR bstrBody) put_Body;
+			public function HRESULT(IFaxDocument *self, IFaxSender** ppFaxSender) get_Sender;
+			public function HRESULT(IFaxDocument *self, IFaxRecipients** ppFaxRecipients) get_Recipients;
+			public function HRESULT(IFaxDocument *self, BSTR* pbstrCoverPage) get_CoverPage;
+			public function HRESULT(IFaxDocument *self, BSTR bstrCoverPage) put_CoverPage;
+			public function HRESULT(IFaxDocument *self, BSTR* pbstrSubject) get_Subject;
+			public function HRESULT(IFaxDocument *self, BSTR bstrSubject) put_Subject;
+			public function HRESULT(IFaxDocument *self, BSTR* pbstrNote) get_Note;
+			public function HRESULT(IFaxDocument *self, BSTR bstrNote) put_Note;
+			public function HRESULT(IFaxDocument *self, double* pdateScheduleTime) get_ScheduleTime;
+			public function HRESULT(IFaxDocument *self, double dateScheduleTime) put_ScheduleTime;
+			public function HRESULT(IFaxDocument *self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
+			public function HRESULT(IFaxDocument *self, BSTR bstrReceiptAddress) put_ReceiptAddress;
+			public function HRESULT(IFaxDocument *self, BSTR* pbstrDocumentName) get_DocumentName;
+			public function HRESULT(IFaxDocument *self, BSTR bstrDocumentName) put_DocumentName;
+			public function HRESULT(IFaxDocument *self, int32* plCallHandle) get_CallHandle;
+			public function HRESULT(IFaxDocument *self, int32 lCallHandle) put_CallHandle;
+			public function HRESULT(IFaxDocument *self, FAX_COVERPAGE_TYPE_ENUM* pCoverPageType) get_CoverPageType;
+			public function HRESULT(IFaxDocument *self, FAX_COVERPAGE_TYPE_ENUM CoverPageType) put_CoverPageType;
+			public function HRESULT(IFaxDocument *self, FAX_SCHEDULE_TYPE_ENUM* pScheduleType) get_ScheduleType;
+			public function HRESULT(IFaxDocument *self, FAX_SCHEDULE_TYPE_ENUM ScheduleType) put_ScheduleType;
+			public function HRESULT(IFaxDocument *self, FAX_RECEIPT_TYPE_ENUM* pReceiptType) get_ReceiptType;
+			public function HRESULT(IFaxDocument *self, FAX_RECEIPT_TYPE_ENUM ReceiptType) put_ReceiptType;
+			public function HRESULT(IFaxDocument *self, int16* pbUseGrouping) get_GroupBroadcastReceipts;
+			public function HRESULT(IFaxDocument *self, int16 bUseGrouping) put_GroupBroadcastReceipts;
+			public function HRESULT(IFaxDocument *self, FAX_PRIORITY_TYPE_ENUM* pPriority) get_Priority;
+			public function HRESULT(IFaxDocument *self, FAX_PRIORITY_TYPE_ENUM Priority) put_Priority;
+			public function HRESULT(IFaxDocument *self, IDispatch** ppTapiConnection) get_TapiConnection;
+			public function HRESULT(IFaxDocument *self, IDispatch* pTapiConnection) putref_TapiConnection;
+			public function HRESULT(IFaxDocument *self, BSTR bstrFaxServerName, VARIANT* pvFaxOutgoingJobIDs) Submit;
+			public function HRESULT(IFaxDocument *self, IFaxServer* pFaxServer, VARIANT* pvFaxOutgoingJobIDs) ConnectedSubmit;
+			public function HRESULT(IFaxDocument *self, int16* pbAttachFax) get_AttachFaxToReceipt;
+			public function HRESULT(IFaxDocument *self, int16 bAttachFax) put_AttachFaxToReceipt;
+		}
+		[CRepr]
+		public struct IFaxSender : IDispatch
+		{
+			public const new Guid IID = .(0x0d879d7d, 0xf57a, 0x4cc6, 0xa6, 0xf9, 0x3e, 0xe5, 0xd5, 0x27, 0xb4, 0x6a);
+			
+			public function HRESULT(IFaxSender *self, BSTR* pbstrBillingCode) get_BillingCode;
+			public function HRESULT(IFaxSender *self, BSTR bstrBillingCode) put_BillingCode;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrCity) get_City;
+			public function HRESULT(IFaxSender *self, BSTR bstrCity) put_City;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrCompany) get_Company;
+			public function HRESULT(IFaxSender *self, BSTR bstrCompany) put_Company;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrCountry) get_Country;
+			public function HRESULT(IFaxSender *self, BSTR bstrCountry) put_Country;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrDepartment) get_Department;
+			public function HRESULT(IFaxSender *self, BSTR bstrDepartment) put_Department;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrEmail) get_Email;
+			public function HRESULT(IFaxSender *self, BSTR bstrEmail) put_Email;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrFaxNumber) get_FaxNumber;
+			public function HRESULT(IFaxSender *self, BSTR bstrFaxNumber) put_FaxNumber;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrHomePhone) get_HomePhone;
+			public function HRESULT(IFaxSender *self, BSTR bstrHomePhone) put_HomePhone;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IFaxSender *self, BSTR bstrName) put_Name;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrTSID) get_TSID;
+			public function HRESULT(IFaxSender *self, BSTR bstrTSID) put_TSID;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrOfficePhone) get_OfficePhone;
+			public function HRESULT(IFaxSender *self, BSTR bstrOfficePhone) put_OfficePhone;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrOfficeLocation) get_OfficeLocation;
+			public function HRESULT(IFaxSender *self, BSTR bstrOfficeLocation) put_OfficeLocation;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrState) get_State;
+			public function HRESULT(IFaxSender *self, BSTR bstrState) put_State;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrStreetAddress) get_StreetAddress;
+			public function HRESULT(IFaxSender *self, BSTR bstrStreetAddress) put_StreetAddress;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrTitle) get_Title;
+			public function HRESULT(IFaxSender *self, BSTR bstrTitle) put_Title;
+			public function HRESULT(IFaxSender *self, BSTR* pbstrZipCode) get_ZipCode;
+			public function HRESULT(IFaxSender *self, BSTR bstrZipCode) put_ZipCode;
+			public function HRESULT(IFaxSender *self) LoadDefaultSender;
+			public function HRESULT(IFaxSender *self) SaveDefaultSender;
+		}
+		[CRepr]
+		public struct IFaxRecipient : IDispatch
+		{
+			public const new Guid IID = .(0x9a3da3a0, 0x538d, 0x42b6, 0x94, 0x44, 0xaa, 0xa5, 0x7d, 0x0c, 0xe2, 0xbc);
+			
+			public function HRESULT(IFaxRecipient *self, BSTR* pbstrFaxNumber) get_FaxNumber;
+			public function HRESULT(IFaxRecipient *self, BSTR bstrFaxNumber) put_FaxNumber;
+			public function HRESULT(IFaxRecipient *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IFaxRecipient *self, BSTR bstrName) put_Name;
+		}
+		[CRepr]
+		public struct IFaxRecipients : IDispatch
+		{
+			public const new Guid IID = .(0xb9c9de5a, 0x894e, 0x4492, 0x9f, 0xa3, 0x08, 0xc6, 0x27, 0xc1, 0x1d, 0x5d);
+			
+			public function HRESULT(IFaxRecipients *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxRecipients *self, int32 lIndex, IFaxRecipient** ppFaxRecipient) get_Item;
+			public function HRESULT(IFaxRecipients *self, int32* plCount) get_Count;
+			public function HRESULT(IFaxRecipients *self, BSTR bstrFaxNumber, BSTR bstrRecipientName, IFaxRecipient** ppFaxRecipient) Add;
+			public function HRESULT(IFaxRecipients *self, int32 lIndex) Remove;
+		}
+		[CRepr]
+		public struct IFaxIncomingArchive : IDispatch
+		{
+			public const new Guid IID = .(0x76062cc7, 0xf714, 0x4fbd, 0xaa, 0x06, 0xed, 0x6e, 0x4a, 0x4b, 0x70, 0xf3);
+			
+			public function HRESULT(IFaxIncomingArchive *self, int16* pbUseArchive) get_UseArchive;
+			public function HRESULT(IFaxIncomingArchive *self, int16 bUseArchive) put_UseArchive;
+			public function HRESULT(IFaxIncomingArchive *self, BSTR* pbstrArchiveFolder) get_ArchiveFolder;
+			public function HRESULT(IFaxIncomingArchive *self, BSTR bstrArchiveFolder) put_ArchiveFolder;
+			public function HRESULT(IFaxIncomingArchive *self, int16* pbSizeQuotaWarning) get_SizeQuotaWarning;
+			public function HRESULT(IFaxIncomingArchive *self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
+			public function HRESULT(IFaxIncomingArchive *self, int32* plHighQuotaWaterMark) get_HighQuotaWaterMark;
+			public function HRESULT(IFaxIncomingArchive *self, int32 lHighQuotaWaterMark) put_HighQuotaWaterMark;
+			public function HRESULT(IFaxIncomingArchive *self, int32* plLowQuotaWaterMark) get_LowQuotaWaterMark;
+			public function HRESULT(IFaxIncomingArchive *self, int32 lLowQuotaWaterMark) put_LowQuotaWaterMark;
+			public function HRESULT(IFaxIncomingArchive *self, int32* plAgeLimit) get_AgeLimit;
+			public function HRESULT(IFaxIncomingArchive *self, int32 lAgeLimit) put_AgeLimit;
+			public function HRESULT(IFaxIncomingArchive *self, int32* plSizeLow) get_SizeLow;
+			public function HRESULT(IFaxIncomingArchive *self, int32* plSizeHigh) get_SizeHigh;
+			public function HRESULT(IFaxIncomingArchive *self) Refresh;
+			public function HRESULT(IFaxIncomingArchive *self) Save;
+			public function HRESULT(IFaxIncomingArchive *self, int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) GetMessages;
+			public function HRESULT(IFaxIncomingArchive *self, BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) GetMessage;
+		}
+		[CRepr]
+		public struct IFaxIncomingQueue : IDispatch
+		{
+			public const new Guid IID = .(0x902e64ef, 0x8fd8, 0x4b75, 0x97, 0x25, 0x60, 0x14, 0xdf, 0x16, 0x15, 0x45);
+			
+			public function HRESULT(IFaxIncomingQueue *self, int16* pbBlocked) get_Blocked;
+			public function HRESULT(IFaxIncomingQueue *self, int16 bBlocked) put_Blocked;
+			public function HRESULT(IFaxIncomingQueue *self) Refresh;
+			public function HRESULT(IFaxIncomingQueue *self) Save;
+			public function HRESULT(IFaxIncomingQueue *self, IFaxIncomingJobs** pFaxIncomingJobs) GetJobs;
+			public function HRESULT(IFaxIncomingQueue *self, BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) GetJob;
+		}
+		[CRepr]
+		public struct IFaxOutgoingArchive : IDispatch
+		{
+			public const new Guid IID = .(0xc9c28f40, 0x8d80, 0x4e53, 0x81, 0x0f, 0x9a, 0x79, 0x91, 0x9b, 0x49, 0xfd);
+			
+			public function HRESULT(IFaxOutgoingArchive *self, int16* pbUseArchive) get_UseArchive;
+			public function HRESULT(IFaxOutgoingArchive *self, int16 bUseArchive) put_UseArchive;
+			public function HRESULT(IFaxOutgoingArchive *self, BSTR* pbstrArchiveFolder) get_ArchiveFolder;
+			public function HRESULT(IFaxOutgoingArchive *self, BSTR bstrArchiveFolder) put_ArchiveFolder;
+			public function HRESULT(IFaxOutgoingArchive *self, int16* pbSizeQuotaWarning) get_SizeQuotaWarning;
+			public function HRESULT(IFaxOutgoingArchive *self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
+			public function HRESULT(IFaxOutgoingArchive *self, int32* plHighQuotaWaterMark) get_HighQuotaWaterMark;
+			public function HRESULT(IFaxOutgoingArchive *self, int32 lHighQuotaWaterMark) put_HighQuotaWaterMark;
+			public function HRESULT(IFaxOutgoingArchive *self, int32* plLowQuotaWaterMark) get_LowQuotaWaterMark;
+			public function HRESULT(IFaxOutgoingArchive *self, int32 lLowQuotaWaterMark) put_LowQuotaWaterMark;
+			public function HRESULT(IFaxOutgoingArchive *self, int32* plAgeLimit) get_AgeLimit;
+			public function HRESULT(IFaxOutgoingArchive *self, int32 lAgeLimit) put_AgeLimit;
+			public function HRESULT(IFaxOutgoingArchive *self, int32* plSizeLow) get_SizeLow;
+			public function HRESULT(IFaxOutgoingArchive *self, int32* plSizeHigh) get_SizeHigh;
+			public function HRESULT(IFaxOutgoingArchive *self) Refresh;
+			public function HRESULT(IFaxOutgoingArchive *self) Save;
+			public function HRESULT(IFaxOutgoingArchive *self, int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) GetMessages;
+			public function HRESULT(IFaxOutgoingArchive *self, BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) GetMessage;
+		}
+		[CRepr]
+		public struct IFaxOutgoingQueue : IDispatch
+		{
+			public const new Guid IID = .(0x80b1df24, 0xd9ac, 0x4333, 0xb3, 0x73, 0x48, 0x7c, 0xed, 0xc8, 0x0c, 0xe5);
+			
+			public function HRESULT(IFaxOutgoingQueue *self, int16* pbBlocked) get_Blocked;
+			public function HRESULT(IFaxOutgoingQueue *self, int16 bBlocked) put_Blocked;
+			public function HRESULT(IFaxOutgoingQueue *self, int16* pbPaused) get_Paused;
+			public function HRESULT(IFaxOutgoingQueue *self, int16 bPaused) put_Paused;
+			public function HRESULT(IFaxOutgoingQueue *self, int16* pbAllowPersonalCoverPages) get_AllowPersonalCoverPages;
+			public function HRESULT(IFaxOutgoingQueue *self, int16 bAllowPersonalCoverPages) put_AllowPersonalCoverPages;
+			public function HRESULT(IFaxOutgoingQueue *self, int16* pbUseDeviceTSID) get_UseDeviceTSID;
+			public function HRESULT(IFaxOutgoingQueue *self, int16 bUseDeviceTSID) put_UseDeviceTSID;
+			public function HRESULT(IFaxOutgoingQueue *self, int32* plRetries) get_Retries;
+			public function HRESULT(IFaxOutgoingQueue *self, int32 lRetries) put_Retries;
+			public function HRESULT(IFaxOutgoingQueue *self, int32* plRetryDelay) get_RetryDelay;
+			public function HRESULT(IFaxOutgoingQueue *self, int32 lRetryDelay) put_RetryDelay;
+			public function HRESULT(IFaxOutgoingQueue *self, double* pdateDiscountRateStart) get_DiscountRateStart;
+			public function HRESULT(IFaxOutgoingQueue *self, double dateDiscountRateStart) put_DiscountRateStart;
+			public function HRESULT(IFaxOutgoingQueue *self, double* pdateDiscountRateEnd) get_DiscountRateEnd;
+			public function HRESULT(IFaxOutgoingQueue *self, double dateDiscountRateEnd) put_DiscountRateEnd;
+			public function HRESULT(IFaxOutgoingQueue *self, int32* plAgeLimit) get_AgeLimit;
+			public function HRESULT(IFaxOutgoingQueue *self, int32 lAgeLimit) put_AgeLimit;
+			public function HRESULT(IFaxOutgoingQueue *self, int16* pbBranding) get_Branding;
+			public function HRESULT(IFaxOutgoingQueue *self, int16 bBranding) put_Branding;
+			public function HRESULT(IFaxOutgoingQueue *self) Refresh;
+			public function HRESULT(IFaxOutgoingQueue *self) Save;
+			public function HRESULT(IFaxOutgoingQueue *self, IFaxOutgoingJobs** pFaxOutgoingJobs) GetJobs;
+			public function HRESULT(IFaxOutgoingQueue *self, BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) GetJob;
+		}
+		[CRepr]
+		public struct IFaxIncomingMessageIterator : IDispatch
+		{
+			public const new Guid IID = .(0xfd73ecc4, 0x6f06, 0x4f52, 0x82, 0xa8, 0xf7, 0xba, 0x06, 0xae, 0x31, 0x08);
+			
+			public function HRESULT(IFaxIncomingMessageIterator *self, IFaxIncomingMessage** pFaxIncomingMessage) get_Message;
+			public function HRESULT(IFaxIncomingMessageIterator *self, int32* plPrefetchSize) get_PrefetchSize;
+			public function HRESULT(IFaxIncomingMessageIterator *self, int32 lPrefetchSize) put_PrefetchSize;
+			public function HRESULT(IFaxIncomingMessageIterator *self, int16* pbEOF) get_AtEOF;
+			public function HRESULT(IFaxIncomingMessageIterator *self) MoveFirst;
+			public function HRESULT(IFaxIncomingMessageIterator *self) MoveNext;
+		}
+		[CRepr]
+		public struct IFaxIncomingMessage : IDispatch
+		{
+			public const new Guid IID = .(0x7cab88fa, 0x2ef9, 0x4851, 0xb2, 0xf3, 0x1d, 0x14, 0x8f, 0xed, 0x84, 0x47);
+			
+			public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrId) get_Id;
+			public function HRESULT(IFaxIncomingMessage *self, int32* plPages) get_Pages;
+			public function HRESULT(IFaxIncomingMessage *self, int32* plSize) get_Size;
+			public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrDeviceName) get_DeviceName;
+			public function HRESULT(IFaxIncomingMessage *self, int32* plRetries) get_Retries;
+			public function HRESULT(IFaxIncomingMessage *self, double* pdateTransmissionStart) get_TransmissionStart;
+			public function HRESULT(IFaxIncomingMessage *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+			public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrCSID) get_CSID;
+			public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrTSID) get_TSID;
+			public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrCallerId) get_CallerId;
+			public function HRESULT(IFaxIncomingMessage *self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
+			public function HRESULT(IFaxIncomingMessage *self, BSTR bstrTiffPath) CopyTiff;
+			public function HRESULT(IFaxIncomingMessage *self) Delete;
+		}
+		[CRepr]
+		public struct IFaxOutgoingJobs : IDispatch
+		{
+			public const new Guid IID = .(0x2c56d8e6, 0x8c2f, 0x4573, 0x94, 0x4c, 0xe5, 0x05, 0xf8, 0xf5, 0xae, 0xed);
+			
+			public function HRESULT(IFaxOutgoingJobs *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxOutgoingJobs *self, VARIANT vIndex, IFaxOutgoingJob** pFaxOutgoingJob) get_Item;
+			public function HRESULT(IFaxOutgoingJobs *self, int32* plCount) get_Count;
+		}
+		[CRepr]
+		public struct IFaxOutgoingJob : IDispatch
+		{
+			public const new Guid IID = .(0x6356daad, 0x6614, 0x4583, 0xbf, 0x7a, 0x3a, 0xd6, 0x7b, 0xbf, 0xc7, 0x1c);
+			
+			public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrSubject) get_Subject;
+			public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrDocumentName) get_DocumentName;
+			public function HRESULT(IFaxOutgoingJob *self, int32* plPages) get_Pages;
+			public function HRESULT(IFaxOutgoingJob *self, int32* plSize) get_Size;
+			public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrSubmissionId) get_SubmissionId;
+			public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrId) get_Id;
+			public function HRESULT(IFaxOutgoingJob *self, double* pdateOriginalScheduledTime) get_OriginalScheduledTime;
+			public function HRESULT(IFaxOutgoingJob *self, double* pdateSubmissionTime) get_SubmissionTime;
+			public function HRESULT(IFaxOutgoingJob *self, FAX_RECEIPT_TYPE_ENUM* pReceiptType) get_ReceiptType;
+			public function HRESULT(IFaxOutgoingJob *self, FAX_PRIORITY_TYPE_ENUM* pPriority) get_Priority;
+			public function HRESULT(IFaxOutgoingJob *self, IFaxSender** ppFaxSender) get_Sender;
+			public function HRESULT(IFaxOutgoingJob *self, IFaxRecipient** ppFaxRecipient) get_Recipient;
+			public function HRESULT(IFaxOutgoingJob *self, int32* plCurrentPage) get_CurrentPage;
+			public function HRESULT(IFaxOutgoingJob *self, int32* plDeviceId) get_DeviceId;
+			public function HRESULT(IFaxOutgoingJob *self, FAX_JOB_STATUS_ENUM* pStatus) get_Status;
+			public function HRESULT(IFaxOutgoingJob *self, FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) get_ExtendedStatusCode;
+			public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
+			public function HRESULT(IFaxOutgoingJob *self, FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) get_AvailableOperations;
+			public function HRESULT(IFaxOutgoingJob *self, int32* plRetries) get_Retries;
+			public function HRESULT(IFaxOutgoingJob *self, double* pdateScheduledTime) get_ScheduledTime;
+			public function HRESULT(IFaxOutgoingJob *self, double* pdateTransmissionStart) get_TransmissionStart;
+			public function HRESULT(IFaxOutgoingJob *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+			public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrCSID) get_CSID;
+			public function HRESULT(IFaxOutgoingJob *self, BSTR* pbstrTSID) get_TSID;
+			public function HRESULT(IFaxOutgoingJob *self, int16* pbGroupBroadcastReceipts) get_GroupBroadcastReceipts;
+			public function HRESULT(IFaxOutgoingJob *self) Pause;
+			public function HRESULT(IFaxOutgoingJob *self) Resume;
+			public function HRESULT(IFaxOutgoingJob *self) Restart;
+			public function HRESULT(IFaxOutgoingJob *self, BSTR bstrTiffPath) CopyTiff;
+			public function HRESULT(IFaxOutgoingJob *self) Refresh;
+			public function HRESULT(IFaxOutgoingJob *self) Cancel;
+		}
+		[CRepr]
+		public struct IFaxOutgoingMessageIterator : IDispatch
+		{
+			public const new Guid IID = .(0xf5ec5d4f, 0xb840, 0x432f, 0x99, 0x80, 0x11, 0x2f, 0xe4, 0x2a, 0x9b, 0x7a);
+			
+			public function HRESULT(IFaxOutgoingMessageIterator *self, IFaxOutgoingMessage** pFaxOutgoingMessage) get_Message;
+			public function HRESULT(IFaxOutgoingMessageIterator *self, int16* pbEOF) get_AtEOF;
+			public function HRESULT(IFaxOutgoingMessageIterator *self, int32* plPrefetchSize) get_PrefetchSize;
+			public function HRESULT(IFaxOutgoingMessageIterator *self, int32 lPrefetchSize) put_PrefetchSize;
+			public function HRESULT(IFaxOutgoingMessageIterator *self) MoveFirst;
+			public function HRESULT(IFaxOutgoingMessageIterator *self) MoveNext;
+		}
+		[CRepr]
+		public struct IFaxOutgoingMessage : IDispatch
+		{
+			public const new Guid IID = .(0xf0ea35de, 0xcaa5, 0x4a7c, 0x82, 0xc7, 0x2b, 0x60, 0xba, 0x5f, 0x2b, 0xe2);
+			
+			public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrSubmissionId) get_SubmissionId;
+			public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrId) get_Id;
+			public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrSubject) get_Subject;
+			public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrDocumentName) get_DocumentName;
+			public function HRESULT(IFaxOutgoingMessage *self, int32* plRetries) get_Retries;
+			public function HRESULT(IFaxOutgoingMessage *self, int32* plPages) get_Pages;
+			public function HRESULT(IFaxOutgoingMessage *self, int32* plSize) get_Size;
+			public function HRESULT(IFaxOutgoingMessage *self, double* pdateOriginalScheduledTime) get_OriginalScheduledTime;
+			public function HRESULT(IFaxOutgoingMessage *self, double* pdateSubmissionTime) get_SubmissionTime;
+			public function HRESULT(IFaxOutgoingMessage *self, FAX_PRIORITY_TYPE_ENUM* pPriority) get_Priority;
+			public function HRESULT(IFaxOutgoingMessage *self, IFaxSender** ppFaxSender) get_Sender;
+			public function HRESULT(IFaxOutgoingMessage *self, IFaxRecipient** ppFaxRecipient) get_Recipient;
+			public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrDeviceName) get_DeviceName;
+			public function HRESULT(IFaxOutgoingMessage *self, double* pdateTransmissionStart) get_TransmissionStart;
+			public function HRESULT(IFaxOutgoingMessage *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+			public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrCSID) get_CSID;
+			public function HRESULT(IFaxOutgoingMessage *self, BSTR* pbstrTSID) get_TSID;
+			public function HRESULT(IFaxOutgoingMessage *self, BSTR bstrTiffPath) CopyTiff;
+			public function HRESULT(IFaxOutgoingMessage *self) Delete;
+		}
+		[CRepr]
+		public struct IFaxIncomingJobs : IDispatch
+		{
+			public const new Guid IID = .(0x011f04e9, 0x4fd6, 0x4c23, 0x95, 0x13, 0xb6, 0xb6, 0x6b, 0xb2, 0x6b, 0xe9);
+			
+			public function HRESULT(IFaxIncomingJobs *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxIncomingJobs *self, VARIANT vIndex, IFaxIncomingJob** pFaxIncomingJob) get_Item;
+			public function HRESULT(IFaxIncomingJobs *self, int32* plCount) get_Count;
+		}
+		[CRepr]
+		public struct IFaxIncomingJob : IDispatch
+		{
+			public const new Guid IID = .(0x207529e6, 0x654a, 0x4916, 0x9f, 0x88, 0x4d, 0x23, 0x2e, 0xe8, 0xa1, 0x07);
+			
+			public function HRESULT(IFaxIncomingJob *self, int32* plSize) get_Size;
+			public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrId) get_Id;
+			public function HRESULT(IFaxIncomingJob *self, int32* plCurrentPage) get_CurrentPage;
+			public function HRESULT(IFaxIncomingJob *self, int32* plDeviceId) get_DeviceId;
+			public function HRESULT(IFaxIncomingJob *self, FAX_JOB_STATUS_ENUM* pStatus) get_Status;
+			public function HRESULT(IFaxIncomingJob *self, FAX_JOB_EXTENDED_STATUS_ENUM* pExtendedStatusCode) get_ExtendedStatusCode;
+			public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrExtendedStatus) get_ExtendedStatus;
+			public function HRESULT(IFaxIncomingJob *self, FAX_JOB_OPERATIONS_ENUM* pAvailableOperations) get_AvailableOperations;
+			public function HRESULT(IFaxIncomingJob *self, int32* plRetries) get_Retries;
+			public function HRESULT(IFaxIncomingJob *self, double* pdateTransmissionStart) get_TransmissionStart;
+			public function HRESULT(IFaxIncomingJob *self, double* pdateTransmissionEnd) get_TransmissionEnd;
+			public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrCSID) get_CSID;
+			public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrTSID) get_TSID;
+			public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrCallerId) get_CallerId;
+			public function HRESULT(IFaxIncomingJob *self, BSTR* pbstrRoutingInformation) get_RoutingInformation;
+			public function HRESULT(IFaxIncomingJob *self, FAX_JOB_TYPE_ENUM* pJobType) get_JobType;
+			public function HRESULT(IFaxIncomingJob *self) Cancel;
+			public function HRESULT(IFaxIncomingJob *self) Refresh;
+			public function HRESULT(IFaxIncomingJob *self, BSTR bstrTiffPath) CopyTiff;
+		}
+		[CRepr]
+		public struct IFaxDeviceProvider : IDispatch
+		{
+			public const new Guid IID = .(0x290eac63, 0x83ec, 0x449c, 0x84, 0x17, 0xf1, 0x48, 0xdf, 0x8c, 0x68, 0x2a);
+			
+			public function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrFriendlyName) get_FriendlyName;
+			public function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrImageName) get_ImageName;
+			public function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrUniqueName) get_UniqueName;
+			public function HRESULT(IFaxDeviceProvider *self, BSTR* pbstrTapiProviderName) get_TapiProviderName;
+			public function HRESULT(IFaxDeviceProvider *self, int32* plMajorVersion) get_MajorVersion;
+			public function HRESULT(IFaxDeviceProvider *self, int32* plMinorVersion) get_MinorVersion;
+			public function HRESULT(IFaxDeviceProvider *self, int32* plMajorBuild) get_MajorBuild;
+			public function HRESULT(IFaxDeviceProvider *self, int32* plMinorBuild) get_MinorBuild;
+			public function HRESULT(IFaxDeviceProvider *self, int16* pbDebug) get_Debug;
+			public function HRESULT(IFaxDeviceProvider *self, FAX_PROVIDER_STATUS_ENUM* pStatus) get_Status;
+			public function HRESULT(IFaxDeviceProvider *self, int32* plInitErrorCode) get_InitErrorCode;
+			public function HRESULT(IFaxDeviceProvider *self, VARIANT* pvDeviceIds) get_DeviceIds;
+		}
+		[CRepr]
+		public struct IFaxDevice : IDispatch
+		{
+			public const new Guid IID = .(0x49306c59, 0xb52e, 0x4867, 0x9d, 0xf4, 0xca, 0x58, 0x41, 0xc9, 0x56, 0xd0);
+			
+			public function HRESULT(IFaxDevice *self, int32* plId) get_Id;
+			public function HRESULT(IFaxDevice *self, BSTR* pbstrDeviceName) get_DeviceName;
+			public function HRESULT(IFaxDevice *self, BSTR* pbstrProviderUniqueName) get_ProviderUniqueName;
+			public function HRESULT(IFaxDevice *self, int16* pbPoweredOff) get_PoweredOff;
+			public function HRESULT(IFaxDevice *self, int16* pbReceivingNow) get_ReceivingNow;
+			public function HRESULT(IFaxDevice *self, int16* pbSendingNow) get_SendingNow;
+			public function HRESULT(IFaxDevice *self, VARIANT* pvUsedRoutingMethods) get_UsedRoutingMethods;
+			public function HRESULT(IFaxDevice *self, BSTR* pbstrDescription) get_Description;
+			public function HRESULT(IFaxDevice *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IFaxDevice *self, int16* pbSendEnabled) get_SendEnabled;
+			public function HRESULT(IFaxDevice *self, int16 bSendEnabled) put_SendEnabled;
+			public function HRESULT(IFaxDevice *self, FAX_DEVICE_RECEIVE_MODE_ENUM* pReceiveMode) get_ReceiveMode;
+			public function HRESULT(IFaxDevice *self, FAX_DEVICE_RECEIVE_MODE_ENUM ReceiveMode) put_ReceiveMode;
+			public function HRESULT(IFaxDevice *self, int32* plRingsBeforeAnswer) get_RingsBeforeAnswer;
+			public function HRESULT(IFaxDevice *self, int32 lRingsBeforeAnswer) put_RingsBeforeAnswer;
+			public function HRESULT(IFaxDevice *self, BSTR* pbstrCSID) get_CSID;
+			public function HRESULT(IFaxDevice *self, BSTR bstrCSID) put_CSID;
+			public function HRESULT(IFaxDevice *self, BSTR* pbstrTSID) get_TSID;
+			public function HRESULT(IFaxDevice *self, BSTR bstrTSID) put_TSID;
+			public function HRESULT(IFaxDevice *self) Refresh;
+			public function HRESULT(IFaxDevice *self) Save;
+			public function HRESULT(IFaxDevice *self, BSTR bstrGUID, VARIANT* pvProperty) GetExtensionProperty;
+			public function HRESULT(IFaxDevice *self, BSTR bstrGUID, VARIANT vProperty) SetExtensionProperty;
+			public function HRESULT(IFaxDevice *self, BSTR bstrMethodGUID, int16 bUse) UseRoutingMethod;
+			public function HRESULT(IFaxDevice *self, int16* pbRingingNow) get_RingingNow;
+			public function HRESULT(IFaxDevice *self) AnswerCall;
+		}
+		[CRepr]
+		public struct IFaxActivityLogging : IDispatch
+		{
+			public const new Guid IID = .(0x1e29078b, 0x5a69, 0x497b, 0x95, 0x92, 0x49, 0xb7, 0xe7, 0xfa, 0xdd, 0xb5);
+			
+			public function HRESULT(IFaxActivityLogging *self, int16* pbLogIncoming) get_LogIncoming;
+			public function HRESULT(IFaxActivityLogging *self, int16 bLogIncoming) put_LogIncoming;
+			public function HRESULT(IFaxActivityLogging *self, int16* pbLogOutgoing) get_LogOutgoing;
+			public function HRESULT(IFaxActivityLogging *self, int16 bLogOutgoing) put_LogOutgoing;
+			public function HRESULT(IFaxActivityLogging *self, BSTR* pbstrDatabasePath) get_DatabasePath;
+			public function HRESULT(IFaxActivityLogging *self, BSTR bstrDatabasePath) put_DatabasePath;
+			public function HRESULT(IFaxActivityLogging *self) Refresh;
+			public function HRESULT(IFaxActivityLogging *self) Save;
+		}
+		[CRepr]
+		public struct IFaxEventLogging : IDispatch
+		{
+			public const new Guid IID = .(0x0880d965, 0x20e8, 0x42e4, 0x8e, 0x17, 0x94, 0x4f, 0x19, 0x2c, 0xaa, 0xd4);
+			
+			public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pInitEventLevel) get_InitEventsLevel;
+			public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM InitEventLevel) put_InitEventsLevel;
+			public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pInboundEventLevel) get_InboundEventsLevel;
+			public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM InboundEventLevel) put_InboundEventsLevel;
+			public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pOutboundEventLevel) get_OutboundEventsLevel;
+			public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM OutboundEventLevel) put_OutboundEventsLevel;
+			public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM* pGeneralEventLevel) get_GeneralEventsLevel;
+			public function HRESULT(IFaxEventLogging *self, FAX_LOG_LEVEL_ENUM GeneralEventLevel) put_GeneralEventsLevel;
+			public function HRESULT(IFaxEventLogging *self) Refresh;
+			public function HRESULT(IFaxEventLogging *self) Save;
+		}
+		[CRepr]
+		public struct IFaxOutboundRoutingGroups : IDispatch
+		{
+			public const new Guid IID = .(0x235cbef7, 0xc2de, 0x4bfd, 0xb8, 0xda, 0x75, 0x09, 0x7c, 0x82, 0xc8, 0x7f);
+			
+			public function HRESULT(IFaxOutboundRoutingGroups *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxOutboundRoutingGroups *self, VARIANT vIndex, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) get_Item;
+			public function HRESULT(IFaxOutboundRoutingGroups *self, int32* plCount) get_Count;
+			public function HRESULT(IFaxOutboundRoutingGroups *self, BSTR bstrName, IFaxOutboundRoutingGroup** pFaxOutboundRoutingGroup) Add;
+			public function HRESULT(IFaxOutboundRoutingGroups *self, VARIANT vIndex) Remove;
+		}
+		[CRepr]
+		public struct IFaxOutboundRoutingGroup : IDispatch
+		{
+			public const new Guid IID = .(0xca6289a1, 0x7e25, 0x4f87, 0x9a, 0x0b, 0x93, 0x36, 0x57, 0x34, 0x96, 0x2c);
+			
+			public function HRESULT(IFaxOutboundRoutingGroup *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IFaxOutboundRoutingGroup *self, FAX_GROUP_STATUS_ENUM* pStatus) get_Status;
+			public function HRESULT(IFaxOutboundRoutingGroup *self, IFaxDeviceIds** pFaxDeviceIds) get_DeviceIds;
+		}
+		[CRepr]
+		public struct IFaxDeviceIds : IDispatch
+		{
+			public const new Guid IID = .(0x2f0f813f, 0x4ce9, 0x443e, 0x8c, 0xa1, 0x73, 0x8c, 0xfa, 0xee, 0xe1, 0x49);
+			
+			public function HRESULT(IFaxDeviceIds *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxDeviceIds *self, int32 lIndex, int32* plDeviceId) get_Item;
+			public function HRESULT(IFaxDeviceIds *self, int32* plCount) get_Count;
+			public function HRESULT(IFaxDeviceIds *self, int32 lDeviceId) Add;
+			public function HRESULT(IFaxDeviceIds *self, int32 lIndex) Remove;
+			public function HRESULT(IFaxDeviceIds *self, int32 lDeviceId, int32 lNewOrder) SetOrder;
+		}
+		[CRepr]
+		public struct IFaxOutboundRoutingRules : IDispatch
+		{
+			public const new Guid IID = .(0xdcefa1e7, 0xae7d, 0x4ed6, 0x85, 0x21, 0x36, 0x9e, 0xdc, 0xca, 0x51, 0x20);
+			
+			public function HRESULT(IFaxOutboundRoutingRules *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxOutboundRoutingRules *self, int32 lIndex, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) get_Item;
+			public function HRESULT(IFaxOutboundRoutingRules *self, int32* plCount) get_Count;
+			public function HRESULT(IFaxOutboundRoutingRules *self, int32 lCountryCode, int32 lAreaCode, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) ItemByCountryAndArea;
+			public function HRESULT(IFaxOutboundRoutingRules *self, int32 lCountryCode, int32 lAreaCode) RemoveByCountryAndArea;
+			public function HRESULT(IFaxOutboundRoutingRules *self, int32 lIndex) Remove;
+			public function HRESULT(IFaxOutboundRoutingRules *self, int32 lCountryCode, int32 lAreaCode, int16 bUseDevice, BSTR bstrGroupName, int32 lDeviceId, IFaxOutboundRoutingRule** pFaxOutboundRoutingRule) Add;
+		}
+		[CRepr]
+		public struct IFaxOutboundRoutingRule : IDispatch
+		{
+			public const new Guid IID = .(0xe1f795d5, 0x07c2, 0x469f, 0xb0, 0x27, 0xac, 0xac, 0xc2, 0x32, 0x19, 0xda);
+			
+			public function HRESULT(IFaxOutboundRoutingRule *self, int32* plCountryCode) get_CountryCode;
+			public function HRESULT(IFaxOutboundRoutingRule *self, int32* plAreaCode) get_AreaCode;
+			public function HRESULT(IFaxOutboundRoutingRule *self, FAX_RULE_STATUS_ENUM* pStatus) get_Status;
+			public function HRESULT(IFaxOutboundRoutingRule *self, int16* pbUseDevice) get_UseDevice;
+			public function HRESULT(IFaxOutboundRoutingRule *self, int16 bUseDevice) put_UseDevice;
+			public function HRESULT(IFaxOutboundRoutingRule *self, int32* plDeviceId) get_DeviceId;
+			public function HRESULT(IFaxOutboundRoutingRule *self, int32 DeviceId) put_DeviceId;
+			public function HRESULT(IFaxOutboundRoutingRule *self, BSTR* pbstrGroupName) get_GroupName;
+			public function HRESULT(IFaxOutboundRoutingRule *self, BSTR bstrGroupName) put_GroupName;
+			public function HRESULT(IFaxOutboundRoutingRule *self) Refresh;
+			public function HRESULT(IFaxOutboundRoutingRule *self) Save;
+		}
+		[CRepr]
+		public struct IFaxInboundRoutingExtensions : IDispatch
+		{
+			public const new Guid IID = .(0x2f6c9673, 0x7b26, 0x42de, 0x8e, 0xb0, 0x91, 0x5d, 0xcd, 0x2a, 0x4f, 0x4c);
+			
+			public function HRESULT(IFaxInboundRoutingExtensions *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxInboundRoutingExtensions *self, VARIANT vIndex, IFaxInboundRoutingExtension** pFaxInboundRoutingExtension) get_Item;
+			public function HRESULT(IFaxInboundRoutingExtensions *self, int32* plCount) get_Count;
+		}
+		[CRepr]
+		public struct IFaxInboundRoutingExtension : IDispatch
+		{
+			public const new Guid IID = .(0x885b5e08, 0xc26c, 0x4ef9, 0xaf, 0x83, 0x51, 0x58, 0x0a, 0x75, 0x0b, 0xe1);
+			
+			public function HRESULT(IFaxInboundRoutingExtension *self, BSTR* pbstrFriendlyName) get_FriendlyName;
+			public function HRESULT(IFaxInboundRoutingExtension *self, BSTR* pbstrImageName) get_ImageName;
+			public function HRESULT(IFaxInboundRoutingExtension *self, BSTR* pbstrUniqueName) get_UniqueName;
+			public function HRESULT(IFaxInboundRoutingExtension *self, int32* plMajorVersion) get_MajorVersion;
+			public function HRESULT(IFaxInboundRoutingExtension *self, int32* plMinorVersion) get_MinorVersion;
+			public function HRESULT(IFaxInboundRoutingExtension *self, int32* plMajorBuild) get_MajorBuild;
+			public function HRESULT(IFaxInboundRoutingExtension *self, int32* plMinorBuild) get_MinorBuild;
+			public function HRESULT(IFaxInboundRoutingExtension *self, int16* pbDebug) get_Debug;
+			public function HRESULT(IFaxInboundRoutingExtension *self, FAX_PROVIDER_STATUS_ENUM* pStatus) get_Status;
+			public function HRESULT(IFaxInboundRoutingExtension *self, int32* plInitErrorCode) get_InitErrorCode;
+			public function HRESULT(IFaxInboundRoutingExtension *self, VARIANT* pvMethods) get_Methods;
+		}
+		[CRepr]
+		public struct IFaxInboundRoutingMethods : IDispatch
+		{
+			public const new Guid IID = .(0x783fca10, 0x8908, 0x4473, 0x9d, 0x69, 0xf6, 0x7f, 0xbe, 0xa0, 0xc6, 0xb9);
+			
+			public function HRESULT(IFaxInboundRoutingMethods *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxInboundRoutingMethods *self, VARIANT vIndex, IFaxInboundRoutingMethod** pFaxInboundRoutingMethod) get_Item;
+			public function HRESULT(IFaxInboundRoutingMethods *self, int32* plCount) get_Count;
+		}
+		[CRepr]
+		public struct IFaxInboundRoutingMethod : IDispatch
+		{
+			public const new Guid IID = .(0x45700061, 0xad9d, 0x4776, 0xa8, 0xc4, 0x64, 0x06, 0x54, 0x92, 0xcf, 0x4b);
+			
+			public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrGUID) get_GUID;
+			public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrFunctionName) get_FunctionName;
+			public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrExtensionFriendlyName) get_ExtensionFriendlyName;
+			public function HRESULT(IFaxInboundRoutingMethod *self, BSTR* pbstrExtensionImageName) get_ExtensionImageName;
+			public function HRESULT(IFaxInboundRoutingMethod *self, int32* plPriority) get_Priority;
+			public function HRESULT(IFaxInboundRoutingMethod *self, int32 lPriority) put_Priority;
+			public function HRESULT(IFaxInboundRoutingMethod *self) Refresh;
+			public function HRESULT(IFaxInboundRoutingMethod *self) Save;
+		}
+		[CRepr]
+		public struct IFaxDocument2 : IFaxDocument
+		{
+			public const new Guid IID = .(0xe1347661, 0xf9ef, 0x4d6d, 0xb4, 0xa5, 0xc0, 0xa0, 0x68, 0xb6, 0x5c, 0xff);
+			
+			public function HRESULT(IFaxDocument2 *self, BSTR* pbstrSubmissionId) get_SubmissionId;
+			public function HRESULT(IFaxDocument2 *self, VARIANT* pvBodies) get_Bodies;
+			public function HRESULT(IFaxDocument2 *self, VARIANT vBodies) put_Bodies;
+			public function HRESULT(IFaxDocument2 *self, BSTR bstrFaxServerName, VARIANT* pvFaxOutgoingJobIDs, int32* plErrorBodyFile) Submit2;
+			public function HRESULT(IFaxDocument2 *self, IFaxServer* pFaxServer, VARIANT* pvFaxOutgoingJobIDs, int32* plErrorBodyFile) ConnectedSubmit2;
+		}
+		[CRepr]
+		public struct IFaxConfiguration : IDispatch
+		{
+			public const new Guid IID = .(0x10f4d0f7, 0x0994, 0x4543, 0xab, 0x6e, 0x50, 0x69, 0x49, 0x12, 0x8c, 0x40);
+			
+			public function HRESULT(IFaxConfiguration *self, int16* pbUseArchive) get_UseArchive;
+			public function HRESULT(IFaxConfiguration *self, int16 bUseArchive) put_UseArchive;
+			public function HRESULT(IFaxConfiguration *self, BSTR* pbstrArchiveLocation) get_ArchiveLocation;
+			public function HRESULT(IFaxConfiguration *self, BSTR bstrArchiveLocation) put_ArchiveLocation;
+			public function HRESULT(IFaxConfiguration *self, int16* pbSizeQuotaWarning) get_SizeQuotaWarning;
+			public function HRESULT(IFaxConfiguration *self, int16 bSizeQuotaWarning) put_SizeQuotaWarning;
+			public function HRESULT(IFaxConfiguration *self, int32* plHighQuotaWaterMark) get_HighQuotaWaterMark;
+			public function HRESULT(IFaxConfiguration *self, int32 lHighQuotaWaterMark) put_HighQuotaWaterMark;
+			public function HRESULT(IFaxConfiguration *self, int32* plLowQuotaWaterMark) get_LowQuotaWaterMark;
+			public function HRESULT(IFaxConfiguration *self, int32 lLowQuotaWaterMark) put_LowQuotaWaterMark;
+			public function HRESULT(IFaxConfiguration *self, int32* plArchiveAgeLimit) get_ArchiveAgeLimit;
+			public function HRESULT(IFaxConfiguration *self, int32 lArchiveAgeLimit) put_ArchiveAgeLimit;
+			public function HRESULT(IFaxConfiguration *self, int32* plSizeLow) get_ArchiveSizeLow;
+			public function HRESULT(IFaxConfiguration *self, int32* plSizeHigh) get_ArchiveSizeHigh;
+			public function HRESULT(IFaxConfiguration *self, int16* pbOutgoingBlocked) get_OutgoingQueueBlocked;
+			public function HRESULT(IFaxConfiguration *self, int16 bOutgoingBlocked) put_OutgoingQueueBlocked;
+			public function HRESULT(IFaxConfiguration *self, int16* pbOutgoingPaused) get_OutgoingQueuePaused;
+			public function HRESULT(IFaxConfiguration *self, int16 bOutgoingPaused) put_OutgoingQueuePaused;
+			public function HRESULT(IFaxConfiguration *self, int16* pbAllowPersonalCoverPages) get_AllowPersonalCoverPages;
+			public function HRESULT(IFaxConfiguration *self, int16 bAllowPersonalCoverPages) put_AllowPersonalCoverPages;
+			public function HRESULT(IFaxConfiguration *self, int16* pbUseDeviceTSID) get_UseDeviceTSID;
+			public function HRESULT(IFaxConfiguration *self, int16 bUseDeviceTSID) put_UseDeviceTSID;
+			public function HRESULT(IFaxConfiguration *self, int32* plRetries) get_Retries;
+			public function HRESULT(IFaxConfiguration *self, int32 lRetries) put_Retries;
+			public function HRESULT(IFaxConfiguration *self, int32* plRetryDelay) get_RetryDelay;
+			public function HRESULT(IFaxConfiguration *self, int32 lRetryDelay) put_RetryDelay;
+			public function HRESULT(IFaxConfiguration *self, double* pdateDiscountRateStart) get_DiscountRateStart;
+			public function HRESULT(IFaxConfiguration *self, double dateDiscountRateStart) put_DiscountRateStart;
+			public function HRESULT(IFaxConfiguration *self, double* pdateDiscountRateEnd) get_DiscountRateEnd;
+			public function HRESULT(IFaxConfiguration *self, double dateDiscountRateEnd) put_DiscountRateEnd;
+			public function HRESULT(IFaxConfiguration *self, int32* plOutgoingQueueAgeLimit) get_OutgoingQueueAgeLimit;
+			public function HRESULT(IFaxConfiguration *self, int32 lOutgoingQueueAgeLimit) put_OutgoingQueueAgeLimit;
+			public function HRESULT(IFaxConfiguration *self, int16* pbBranding) get_Branding;
+			public function HRESULT(IFaxConfiguration *self, int16 bBranding) put_Branding;
+			public function HRESULT(IFaxConfiguration *self, int16* pbIncomingBlocked) get_IncomingQueueBlocked;
+			public function HRESULT(IFaxConfiguration *self, int16 bIncomingBlocked) put_IncomingQueueBlocked;
+			public function HRESULT(IFaxConfiguration *self, int16* pbAutoCreateAccountOnConnect) get_AutoCreateAccountOnConnect;
+			public function HRESULT(IFaxConfiguration *self, int16 bAutoCreateAccountOnConnect) put_AutoCreateAccountOnConnect;
+			public function HRESULT(IFaxConfiguration *self, int16* pbIncomingFaxesArePublic) get_IncomingFaxesArePublic;
+			public function HRESULT(IFaxConfiguration *self, int16 bIncomingFaxesArePublic) put_IncomingFaxesArePublic;
+			public function HRESULT(IFaxConfiguration *self) Refresh;
+			public function HRESULT(IFaxConfiguration *self) Save;
+		}
+		[CRepr]
+		public struct IFaxServer2 : IFaxServer
+		{
+			public const new Guid IID = .(0x571ced0f, 0x5609, 0x4f40, 0x91, 0x76, 0x54, 0x7e, 0x3a, 0x72, 0xca, 0x7c);
+			
+			public function HRESULT(IFaxServer2 *self, IFaxConfiguration** ppFaxConfiguration) get_Configuration;
+			public function HRESULT(IFaxServer2 *self, IFaxAccount** ppCurrentAccount) get_CurrentAccount;
+			public function HRESULT(IFaxServer2 *self, IFaxAccountSet** ppFaxAccountSet) get_FaxAccountSet;
+			public function HRESULT(IFaxServer2 *self, IFaxSecurity2** ppFaxSecurity2) get_Security2;
+		}
+		[CRepr]
+		public struct IFaxAccountSet : IDispatch
+		{
+			public const new Guid IID = .(0x7428fbae, 0x841e, 0x47b8, 0x86, 0xf4, 0x22, 0x88, 0x94, 0x6d, 0xca, 0x1b);
+			
+			public function HRESULT(IFaxAccountSet *self, IFaxAccounts** ppFaxAccounts) GetAccounts;
+			public function HRESULT(IFaxAccountSet *self, BSTR bstrAccountName, IFaxAccount** pFaxAccount) GetAccount;
+			public function HRESULT(IFaxAccountSet *self, BSTR bstrAccountName, IFaxAccount** pFaxAccount) AddAccount;
+			public function HRESULT(IFaxAccountSet *self, BSTR bstrAccountName) RemoveAccount;
+		}
+		[CRepr]
+		public struct IFaxAccounts : IDispatch
+		{
+			public const new Guid IID = .(0x93ea8162, 0x8be7, 0x42d1, 0xae, 0x7b, 0xec, 0x74, 0xe2, 0xd9, 0x89, 0xda);
+			
+			public function HRESULT(IFaxAccounts *self, IUnknown** ppUnk) get__NewEnum;
+			public function HRESULT(IFaxAccounts *self, VARIANT vIndex, IFaxAccount** pFaxAccount) get_Item;
+			public function HRESULT(IFaxAccounts *self, int32* plCount) get_Count;
+		}
+		[CRepr]
+		public struct IFaxAccount : IDispatch
+		{
+			public const new Guid IID = .(0x68535b33, 0x5dc4, 0x4086, 0xbe, 0x26, 0xb7, 0x6f, 0x9b, 0x71, 0x10, 0x06);
+			
+			public function HRESULT(IFaxAccount *self, BSTR* pbstrAccountName) get_AccountName;
+			public function HRESULT(IFaxAccount *self, IFaxAccountFolders** ppFolders) get_Folders;
+			public function HRESULT(IFaxAccount *self, FAX_ACCOUNT_EVENTS_TYPE_ENUM EventTypes) ListenToAccountEvents;
+			public function HRESULT(IFaxAccount *self, FAX_ACCOUNT_EVENTS_TYPE_ENUM* pRegisteredEvents) get_RegisteredEvents;
+		}
+		[CRepr]
+		public struct IFaxOutgoingJob2 : IFaxOutgoingJob
+		{
+			public const new Guid IID = .(0x418a8d96, 0x59a0, 0x4789, 0xb1, 0x76, 0xed, 0xf3, 0xdc, 0x8f, 0xa8, 0xf7);
+			
+			public function HRESULT(IFaxOutgoingJob2 *self, int16* pbHasCoverPage) get_HasCoverPage;
+			public function HRESULT(IFaxOutgoingJob2 *self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
+			public function HRESULT(IFaxOutgoingJob2 *self, FAX_SCHEDULE_TYPE_ENUM* pScheduleType) get_ScheduleType;
+		}
+		[CRepr]
+		public struct IFaxAccountFolders : IDispatch
+		{
+			public const new Guid IID = .(0x6463f89d, 0x23d8, 0x46a9, 0x8f, 0x86, 0xc4, 0x7b, 0x77, 0xca, 0x79, 0x26);
+			
+			public function HRESULT(IFaxAccountFolders *self, IFaxAccountOutgoingQueue** pFaxOutgoingQueue) get_OutgoingQueue;
+			public function HRESULT(IFaxAccountFolders *self, IFaxAccountIncomingQueue** pFaxIncomingQueue) get_IncomingQueue;
+			public function HRESULT(IFaxAccountFolders *self, IFaxAccountIncomingArchive** pFaxIncomingArchive) get_IncomingArchive;
+			public function HRESULT(IFaxAccountFolders *self, IFaxAccountOutgoingArchive** pFaxOutgoingArchive) get_OutgoingArchive;
+		}
+		[CRepr]
+		public struct IFaxAccountIncomingQueue : IDispatch
+		{
+			public const new Guid IID = .(0xdd142d92, 0x0186, 0x4a95, 0xa0, 0x90, 0xcb, 0xc3, 0xea, 0xdb, 0xa6, 0xb4);
+			
+			public function HRESULT(IFaxAccountIncomingQueue *self, IFaxIncomingJobs** pFaxIncomingJobs) GetJobs;
+			public function HRESULT(IFaxAccountIncomingQueue *self, BSTR bstrJobId, IFaxIncomingJob** pFaxIncomingJob) GetJob;
+		}
+		[CRepr]
+		public struct IFaxAccountOutgoingQueue : IDispatch
+		{
+			public const new Guid IID = .(0x0f1424e9, 0xf22d, 0x4553, 0xb7, 0xa5, 0x0d, 0x24, 0xbd, 0x0d, 0x7e, 0x46);
+			
+			public function HRESULT(IFaxAccountOutgoingQueue *self, IFaxOutgoingJobs** pFaxOutgoingJobs) GetJobs;
+			public function HRESULT(IFaxAccountOutgoingQueue *self, BSTR bstrJobId, IFaxOutgoingJob** pFaxOutgoingJob) GetJob;
+		}
+		[CRepr]
+		public struct IFaxOutgoingMessage2 : IFaxOutgoingMessage
+		{
+			public const new Guid IID = .(0xb37df687, 0xbc88, 0x4b46, 0xb3, 0xbe, 0xb4, 0x58, 0xb3, 0xea, 0x9e, 0x7f);
+			
+			public function HRESULT(IFaxOutgoingMessage2 *self, int16* pbHasCoverPage) get_HasCoverPage;
+			public function HRESULT(IFaxOutgoingMessage2 *self, FAX_RECEIPT_TYPE_ENUM* pReceiptType) get_ReceiptType;
+			public function HRESULT(IFaxOutgoingMessage2 *self, BSTR* pbstrReceiptAddress) get_ReceiptAddress;
+			public function HRESULT(IFaxOutgoingMessage2 *self, int16* pbRead) get_Read;
+			public function HRESULT(IFaxOutgoingMessage2 *self, int16 bRead) put_Read;
+			public function HRESULT(IFaxOutgoingMessage2 *self) Save;
+			public function HRESULT(IFaxOutgoingMessage2 *self) Refresh;
+		}
+		[CRepr]
+		public struct IFaxAccountIncomingArchive : IDispatch
+		{
+			public const new Guid IID = .(0xa8a5b6ef, 0xe0d6, 0x4aee, 0x95, 0x5c, 0x91, 0x62, 0x5b, 0xec, 0x9d, 0xb4);
+			
+			public function HRESULT(IFaxAccountIncomingArchive *self, int32* plSizeLow) get_SizeLow;
+			public function HRESULT(IFaxAccountIncomingArchive *self, int32* plSizeHigh) get_SizeHigh;
+			public function HRESULT(IFaxAccountIncomingArchive *self) Refresh;
+			public function HRESULT(IFaxAccountIncomingArchive *self, int32 lPrefetchSize, IFaxIncomingMessageIterator** pFaxIncomingMessageIterator) GetMessages;
+			public function HRESULT(IFaxAccountIncomingArchive *self, BSTR bstrMessageId, IFaxIncomingMessage** pFaxIncomingMessage) GetMessage;
+		}
+		[CRepr]
+		public struct IFaxAccountOutgoingArchive : IDispatch
+		{
+			public const new Guid IID = .(0x5463076d, 0xec14, 0x491f, 0x92, 0x6e, 0xb3, 0xce, 0xda, 0x5e, 0x56, 0x62);
+			
+			public function HRESULT(IFaxAccountOutgoingArchive *self, int32* plSizeLow) get_SizeLow;
+			public function HRESULT(IFaxAccountOutgoingArchive *self, int32* plSizeHigh) get_SizeHigh;
+			public function HRESULT(IFaxAccountOutgoingArchive *self) Refresh;
+			public function HRESULT(IFaxAccountOutgoingArchive *self, int32 lPrefetchSize, IFaxOutgoingMessageIterator** pFaxOutgoingMessageIterator) GetMessages;
+			public function HRESULT(IFaxAccountOutgoingArchive *self, BSTR bstrMessageId, IFaxOutgoingMessage** pFaxOutgoingMessage) GetMessage;
+		}
+		[CRepr]
+		public struct IFaxSecurity2 : IDispatch
+		{
+			public const new Guid IID = .(0x17d851f4, 0xd09b, 0x48fc, 0x99, 0xc9, 0x8f, 0x24, 0xc4, 0xdb, 0x9a, 0xb1);
+			
+			public function HRESULT(IFaxSecurity2 *self, VARIANT* pvDescriptor) get_Descriptor;
+			public function HRESULT(IFaxSecurity2 *self, VARIANT vDescriptor) put_Descriptor;
+			public function HRESULT(IFaxSecurity2 *self, FAX_ACCESS_RIGHTS_ENUM_2* pGrantedRights) get_GrantedRights;
+			public function HRESULT(IFaxSecurity2 *self) Refresh;
+			public function HRESULT(IFaxSecurity2 *self) Save;
+			public function HRESULT(IFaxSecurity2 *self, int32* plInformationType) get_InformationType;
+			public function HRESULT(IFaxSecurity2 *self, int32 lInformationType) put_InformationType;
+		}
+		[CRepr]
+		public struct IFaxIncomingMessage2 : IFaxIncomingMessage
+		{
+			public const new Guid IID = .(0xf9208503, 0xe2bc, 0x48f3, 0x9e, 0xc0, 0xe6, 0x23, 0x6f, 0x9b, 0x50, 0x9a);
+			
+			public function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrSubject) get_Subject;
+			public function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrSubject) put_Subject;
+			public function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrSenderName) get_SenderName;
+			public function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrSenderName) put_SenderName;
+			public function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrSenderFaxNumber) get_SenderFaxNumber;
+			public function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrSenderFaxNumber) put_SenderFaxNumber;
+			public function HRESULT(IFaxIncomingMessage2 *self, int16* pbHasCoverPage) get_HasCoverPage;
+			public function HRESULT(IFaxIncomingMessage2 *self, int16 bHasCoverPage) put_HasCoverPage;
+			public function HRESULT(IFaxIncomingMessage2 *self, BSTR* pbstrRecipients) get_Recipients;
+			public function HRESULT(IFaxIncomingMessage2 *self, BSTR bstrRecipients) put_Recipients;
+			public function HRESULT(IFaxIncomingMessage2 *self, int16* pbWasReAssigned) get_WasReAssigned;
+			public function HRESULT(IFaxIncomingMessage2 *self, int16* pbRead) get_Read;
+			public function HRESULT(IFaxIncomingMessage2 *self, int16 bRead) put_Read;
+			public function HRESULT(IFaxIncomingMessage2 *self) ReAssign;
+			public function HRESULT(IFaxIncomingMessage2 *self) Save;
+			public function HRESULT(IFaxIncomingMessage2 *self) Refresh;
+		}
+		[CRepr]
+		public struct IFaxServerNotify : IDispatch
+		{
+			public const new Guid IID = .(0x2e037b27, 0xcf8a, 0x4abd, 0xb1, 0xe0, 0x57, 0x04, 0x94, 0x3b, 0xea, 0x6f);
+			
+		}
+		[CRepr]
+		public struct _IFaxServerNotify2 : IDispatch
+		{
+			public const new Guid IID = .(0xec9c69b9, 0x5fe7, 0x4805, 0x94, 0x67, 0x82, 0xfc, 0xd9, 0x6a, 0xf9, 0x03);
+			
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnIncomingJobAdded;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnIncomingJobRemoved;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnIncomingJobChanged;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnOutgoingJobAdded;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId) OnOutgoingJobRemoved;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnOutgoingJobChanged;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnIncomingMessageAdded;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnIncomingMessageRemoved;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnOutgoingMessageAdded;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, BSTR bstrMessageId) OnOutgoingMessageRemoved;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnReceiptOptionsChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnActivityLoggingConfigChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnSecurityConfigChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnEventLoggingConfigChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutgoingQueueConfigChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutgoingArchiveConfigChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnIncomingArchiveConfigChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnDevicesConfigChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutboundRoutingGroupsConfigChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnOutboundRoutingRulesConfigChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int32 lIncomingMessages, int32 lRoutingMessages, int32 lOutgoingMessages, int32 lQueuedMessages) OnServerActivityChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int16 bOutgoingQueueBlocked, int16 bOutgoingQueuePaused, int16 bIncomingQueueBlocked) OnQueuesStatusChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int32 lCallId, int32 lDeviceId, BSTR bstrCallerId) OnNewCall;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnServerShutDown;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer, int32 lDeviceId, int16 bPoweredOff, int16 bSending, int16 bReceiving, int16 bRinging) OnDeviceStatusChange;
+			public function HRESULT(_IFaxServerNotify2 *self, IFaxServer2* pFaxServer) OnGeneralServerConfigChanged;
+		}
+		[CRepr]
+		public struct IFaxServerNotify2 : IDispatch
+		{
+			public const new Guid IID = .(0x616ca8d6, 0xa77a, 0x4062, 0xab, 0xfd, 0x0e, 0x47, 0x12, 0x41, 0xc7, 0xaa);
+			
+		}
+		[CRepr]
+		public struct _IFaxAccountNotify : IDispatch
+		{
+			public const new Guid IID = .(0xb9b3bc81, 0xac1b, 0x46f3, 0xb3, 0x9d, 0x0a, 0xdc, 0x30, 0xe1, 0xb7, 0x88);
+			
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnIncomingJobAdded;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnIncomingJobRemoved;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnIncomingJobChanged;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnOutgoingJobAdded;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId) OnOutgoingJobRemoved;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrJobId, IFaxJobStatus* pJobStatus) OnOutgoingJobChanged;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fAddedToReceiveFolder) OnIncomingMessageAdded;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId, int16 fRemovedFromReceiveFolder) OnIncomingMessageRemoved;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId) OnOutgoingMessageAdded;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxAccount* pFaxAccount, BSTR bstrMessageId) OnOutgoingMessageRemoved;
+			public function HRESULT(_IFaxAccountNotify *self, IFaxServer2* pFaxServer) OnServerShutDown;
+		}
+		[CRepr]
+		public struct IFaxAccountNotify : IDispatch
+		{
+			public const new Guid IID = .(0x0b5e5bd1, 0xb8a9, 0x47a0, 0xa3, 0x23, 0xef, 0x4a, 0x29, 0x3b, 0xa0, 0x6a);
+			
+		}
+		[CRepr]
+		public struct IStillImageW : IUnknown
+		{
+			public const new Guid IID = .(0x641bd880, 0x2dc8, 0x11d0, 0x90, 0xea, 0x00, 0xaa, 0x00, 0x60, 0xf8, 0x6c);
+			
+			public function HRESULT(IStillImageW *self, HINSTANCE hinst, uint32 dwVersion) Initialize;
+			public function HRESULT(IStillImageW *self, uint32 dwType, uint32 dwFlags, uint32* pdwItemsReturned, void** ppBuffer) GetDeviceList;
+			public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, void** ppBuffer) GetDeviceInfo;
+			public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, uint32 dwMode, IStiDevice** pDevice, IUnknown* punkOuter) CreateDevice;
+			public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, PWSTR pValueName, uint32* pType, uint8* pData, uint32* cbData) GetDeviceValue;
+			public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, PWSTR pValueName, uint32 Type, uint8* pData, uint32 cbData) SetDeviceValue;
+			public function HRESULT(IStillImageW *self, char16* pwszDeviceName, uint32* pdwEventCode, char16* pwszEventName) GetSTILaunchInformation;
+			public function HRESULT(IStillImageW *self, PWSTR pwszAppName, PWSTR pwszCommandLine) RegisterLaunchApplication;
+			public function HRESULT(IStillImageW *self, PWSTR pwszAppName) UnregisterLaunchApplication;
+			public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, BOOL bNewState) EnableHwNotifications;
+			public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, BOOL* pbCurrentState) GetHwNotificationState;
+			public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName) RefreshDeviceBus;
+			public function HRESULT(IStillImageW *self, PWSTR pwszDeviceName, PWSTR pwszAppName, STINOTIFY* pStiNotify) LaunchApplicationForDevice;
+			public function HRESULT(IStillImageW *self, STI_DEVICE_INFORMATIONW* param0) SetupDeviceParameters;
+			public function HRESULT(IStillImageW *self, uint32 dwMessageType, PWSTR pszMessage) WriteToErrorLog;
+		}
+		[CRepr]
+		public struct IStiDevice : IUnknown
+		{
+			public const new Guid IID = .(0x6cfa5a80, 0x2dc8, 0x11d0, 0x90, 0xea, 0x00, 0xaa, 0x00, 0x60, 0xf8, 0x6c);
+			
+			public function HRESULT(IStiDevice *self, HINSTANCE hinst, PWSTR pwszDeviceName, uint32 dwVersion, uint32 dwMode) Initialize;
+			public function HRESULT(IStiDevice *self, STI_DEV_CAPS* pDevCaps) GetCapabilities;
+			public function HRESULT(IStiDevice *self, STI_DEVICE_STATUS* pDevStatus) GetStatus;
+			public function HRESULT(IStiDevice *self) DeviceReset;
+			public function HRESULT(IStiDevice *self, STI_DIAG* pBuffer) Diagnostic;
+			public function HRESULT(IStiDevice *self, uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, uint32* pdwActualData) Escape;
+			public function HRESULT(IStiDevice *self, uint32* pdwLastDeviceError) GetLastError;
+			public function HRESULT(IStiDevice *self, uint32 dwTimeOut) LockDevice;
+			public function HRESULT(IStiDevice *self) UnLockDevice;
+			public function HRESULT(IStiDevice *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadData;
+			public function HRESULT(IStiDevice *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteData;
+			public function HRESULT(IStiDevice *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadCommand;
+			public function HRESULT(IStiDevice *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteCommand;
+			public function HRESULT(IStiDevice *self, STISUBSCRIBE* lpSubsribe) Subscribe;
+			public function HRESULT(IStiDevice *self, STINOTIFY* lpNotify) GetLastNotificationData;
+			public function HRESULT(IStiDevice *self) UnSubscribe;
+			public function HRESULT(IStiDevice *self, _ERROR_INFOW* pLastErrorInfo) GetLastErrorInfo;
+		}
+		[CRepr]
+		public struct IStiDeviceControl : IUnknown
+		{
+			public const new Guid IID = .(0x128a9860, 0x52dc, 0x11d0, 0x9e, 0xdf, 0x44, 0x45, 0x53, 0x54, 0x00, 0x00);
+			
+			public function HRESULT(IStiDeviceControl *self, uint32 dwDeviceType, uint32 dwMode, PWSTR pwszPortName, uint32 dwFlags) Initialize;
+			public function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadData;
+			public function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteData;
+			public function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadCommand;
+			public function HRESULT(IStiDeviceControl *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteCommand;
+			public function HRESULT(IStiDeviceControl *self, uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 dwOutDataSize, uint32* pdwActualData) RawDeviceControl;
+			public function HRESULT(IStiDeviceControl *self, uint32* lpdwLastError) GetLastError;
+			public function HRESULT(IStiDeviceControl *self, char16* lpszDevicePath, uint32 cwDevicePathSize) GetMyDevicePortName;
+			public function HRESULT(IStiDeviceControl *self, HANDLE* lph) GetMyDeviceHandle;
+			public function HRESULT(IStiDeviceControl *self, uint32* pdwOpenMode) GetMyDeviceOpenMode;
+			public function HRESULT(IStiDeviceControl *self, uint32 dwMessageType, PWSTR pszMessage, uint32 dwErrorCode) WriteToErrorLog;
+		}
+		[CRepr]
+		public struct IStiUSD : IUnknown
+		{
+			public const new Guid IID = .(0x0c9bb460, 0x51ac, 0x11d0, 0x90, 0xea, 0x00, 0xaa, 0x00, 0x60, 0xf8, 0x6c);
+			
+			public function HRESULT(IStiUSD *self, IStiDeviceControl* pHelDcb, uint32 dwStiVersion, HKEY hParametersKey) Initialize;
+			public function HRESULT(IStiUSD *self, STI_USD_CAPS* pDevCaps) GetCapabilities;
+			public function HRESULT(IStiUSD *self, STI_DEVICE_STATUS* pDevStatus) GetStatus;
+			public function HRESULT(IStiUSD *self) DeviceReset;
+			public function HRESULT(IStiUSD *self, STI_DIAG* pBuffer) Diagnostic;
+			public function HRESULT(IStiUSD *self, uint32 EscapeFunction, void* lpInData, uint32 cbInDataSize, void* pOutData, uint32 cbOutDataSize, uint32* pdwActualData) Escape;
+			public function HRESULT(IStiUSD *self, uint32* pdwLastDeviceError) GetLastError;
+			public function HRESULT(IStiUSD *self) LockDevice;
+			public function HRESULT(IStiUSD *self) UnLockDevice;
+			public function HRESULT(IStiUSD *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadData;
+			public function HRESULT(IStiUSD *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteData;
+			public function HRESULT(IStiUSD *self, void* lpBuffer, uint32* lpdwNumberOfBytes, OVERLAPPED* lpOverlapped) RawReadCommand;
+			public function HRESULT(IStiUSD *self, void* lpBuffer, uint32 nNumberOfBytes, OVERLAPPED* lpOverlapped) RawWriteCommand;
+			public function HRESULT(IStiUSD *self, HANDLE hEvent) SetNotificationHandle;
+			public function HRESULT(IStiUSD *self, STINOTIFY* lpNotify) GetNotificationData;
+			public function HRESULT(IStiUSD *self, _ERROR_INFOW* pLastErrorInfo) GetLastErrorInfo;
+		}
 		
 		// --- Functions ---
 		
@@ -1378,7 +2354,7 @@ namespace Win32
 		[Import("fxsutility.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 SendToFaxRecipient(SendToMode sndMode, PWSTR lpFileName);
 		[Import("sti.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StiCreateInstanceW(HINSTANCE hinst, uint32 dwVer, IStillImageW* ppSti, IUnknown punkOuter);
+		public static extern HRESULT StiCreateInstanceW(HINSTANCE hinst, uint32 dwVer, IStillImageW** ppSti, IUnknown* punkOuter);
 		
 	}
 }

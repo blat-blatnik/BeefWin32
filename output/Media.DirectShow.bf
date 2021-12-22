@@ -4351,11 +4351,11 @@ namespace Win32
 		public function HRESULT PDXVA2SW_GETVIDEOPROCESSORSUBSTREAMFORMATS(DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 Count, D3DFORMAT* pFormats);
 		public function HRESULT PDXVA2SW_GETPROCAMPRANGE(DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 ProcAmpCap, DXVA2_ValueRange* pRange);
 		public function HRESULT PDXVA2SW_GETFILTERPROPERTYRANGE(DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 FilterSetting, DXVA2_ValueRange* pRange);
-		public function HRESULT PDXVA2SW_CREATEVIDEOPROCESSDEVICE(IDirect3DDevice9 pD3DD9, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 MaxSubStreams, HANDLE* phDevice);
+		public function HRESULT PDXVA2SW_CREATEVIDEOPROCESSDEVICE(IDirect3DDevice9* pD3DD9, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 MaxSubStreams, HANDLE* phDevice);
 		public function HRESULT PDXVA2SW_DESTROYVIDEOPROCESSDEVICE(HANDLE hDevice);
 		public function HRESULT PDXVA2SW_VIDEOPROCESSBEGINFRAME(HANDLE hDevice);
 		public function HRESULT PDXVA2SW_VIDEOPROCESSENDFRAME(HANDLE hDevice, HANDLE* pHandleComplete);
-		public function HRESULT PDXVA2SW_VIDEOPROCESSSETRENDERTARGET(HANDLE hDevice, IDirect3DSurface9 pRenderTarget);
+		public function HRESULT PDXVA2SW_VIDEOPROCESSSETRENDERTARGET(HANDLE hDevice, IDirect3DSurface9* pRenderTarget);
 		public function HRESULT PDXVA2SW_VIDEOPROCESSBLT(HANDLE hDevice, DXVA2_VIDEOPROCESSBLT* pBlt);
 		
 		// --- Structs ---
@@ -4401,7 +4401,7 @@ namespace Win32
 			public BOOL bTemporalCompression;
 			public uint32 lSampleSize;
 			public Guid formattype;
-			public IUnknown pUnk;
+			public IUnknown* pUnk;
 			public uint32 cbFormat;
 			public uint8* pbFormat;
 		}
@@ -4416,7 +4416,7 @@ namespace Win32
 		[CRepr]
 		public struct PIN_INFO
 		{
-			public IBaseFilter pFilter;
+			public IBaseFilter* pFilter;
 			public PIN_DIRECTION dir;
 			public char16[128] achName;
 		}
@@ -4424,7 +4424,7 @@ namespace Win32
 		public struct FILTER_INFO
 		{
 			public char16[128] achName;
-			public IFilterGraph pGraph;
+			public IFilterGraph* pGraph;
 		}
 		[CRepr]
 		public struct AM_SAMPLE2_PROPERTIES
@@ -4627,7 +4627,7 @@ namespace Win32
 		public struct VMRPRESENTATIONINFO
 		{
 			public uint32 dwFlags;
-			public IDirectDrawSurface7 lpSurf;
+			public IDirectDrawSurface7* lpSurf;
 			public int64 rtStart;
 			public int64 rtEnd;
 			public SIZE szAspectRatio;
@@ -4708,7 +4708,7 @@ namespace Win32
 		{
 			public uint32 dwFlags;
 			public HDC hdc;
-			public IDirectDrawSurface7 pDDS;
+			public IDirectDrawSurface7* pDDS;
 			public RECT rSrc;
 			public NORMALIZEDRECT rDest;
 			public float fAlpha;
@@ -4717,7 +4717,7 @@ namespace Win32
 		[CRepr]
 		public struct VMRVIDEOSTREAMINFO
 		{
-			public IDirectDrawSurface7 pddsVideoSurface;
+			public IDirectDrawSurface7* pddsVideoSurface;
 			public uint32 dwWidth;
 			public uint32 dwHeight;
 			public uint32 dwStrmID;
@@ -5399,7 +5399,7 @@ namespace Win32
 		public struct VMR9PresentationInfo
 		{
 			public uint32 dwFlags;
-			public IDirect3DSurface9 lpSurf;
+			public IDirect3DSurface9* lpSurf;
 			public int64 rtStart;
 			public int64 rtEnd;
 			public SIZE szAspectRatio;
@@ -5453,7 +5453,7 @@ namespace Win32
 		{
 			public uint32 dwFlags;
 			public HDC hdc;
-			public IDirect3DSurface9 pDDS;
+			public IDirect3DSurface9* pDDS;
 			public RECT rSrc;
 			public VMR9NormalizedRect rDest;
 			public float fAlpha;
@@ -5504,7 +5504,7 @@ namespace Win32
 		[CRepr]
 		public struct VMR9VideoStreamInfo
 		{
-			public IDirect3DSurface9 pddsVideoSurface;
+			public IDirect3DSurface9* pddsVideoSurface;
 			public uint32 dwWidth;
 			public uint32 dwHeight;
 			public uint32 dwStrmID;
@@ -7405,575 +7405,6707 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ICreateDevEnum {}
-		public struct IPin {}
-		public struct IEnumPins {}
-		public struct IEnumMediaTypes {}
-		public struct IFilterGraph {}
-		public struct IEnumFilters {}
-		public struct IMediaFilter {}
-		public struct IBaseFilter {}
-		public struct IMediaSample {}
-		public struct IMediaSample2 {}
-		public struct IMediaSample2Config {}
-		public struct IMemAllocator {}
-		public struct IMemAllocatorCallbackTemp {}
-		public struct IMemAllocatorNotifyCallbackTemp {}
-		public struct IMemInputPin {}
-		public struct IAMovieSetup {}
-		public struct IMediaSeeking {}
-		public struct IEnumRegFilters {}
-		public struct IFilterMapper {}
-		public struct IFilterMapper2 {}
-		public struct IFilterMapper3 {}
-		public struct IQualityControl {}
-		public struct IOverlayNotify {}
-		public struct IOverlayNotify2 {}
-		public struct IOverlay {}
-		public struct IMediaEventSink {}
-		public struct IFileSourceFilter {}
-		public struct IFileSinkFilter {}
-		public struct IFileSinkFilter2 {}
-		public struct IGraphBuilder {}
-		public struct ICaptureGraphBuilder {}
-		public struct IAMCopyCaptureFileProgress {}
-		public struct ICaptureGraphBuilder2 {}
-		public struct IFilterGraph2 {}
-		public struct IFilterGraph3 {}
-		public struct IStreamBuilder {}
-		public struct IAsyncReader {}
-		public struct IGraphVersion {}
-		public struct IResourceConsumer {}
-		public struct IResourceManager {}
-		public struct IDistributorNotify {}
-		public struct IAMStreamControl {}
-		public struct ISeekingPassThru {}
-		public struct IAMStreamConfig {}
-		public struct IConfigInterleaving {}
-		public struct IConfigAviMux {}
-		public struct IAMVideoCompression {}
-		public struct IAMVfwCaptureDialogs {}
-		public struct IAMVfwCompressDialogs {}
-		public struct IAMDroppedFrames {}
-		public struct IAMAudioInputMixer {}
-		public struct IAMBufferNegotiation {}
-		public struct IAMAnalogVideoDecoder {}
-		public struct IAMVideoProcAmp {}
-		public struct IAMCameraControl {}
-		public struct IAMVideoControl {}
-		public struct IAMCrossbar {}
-		public struct IAMTuner {}
-		public struct IAMTunerNotification {}
-		public struct IAMTVTuner {}
-		public struct IBPCSatelliteTuner {}
-		public struct IAMTVAudio {}
-		public struct IAMTVAudioNotification {}
-		public struct IAMAnalogVideoEncoder {}
-		public struct IMediaPropertyBag {}
-		public struct IPersistMediaPropertyBag {}
-		public struct IAMPhysicalPinInfo {}
-		public struct IAMExtDevice {}
-		public struct IAMExtTransport {}
-		public struct IAMTimecodeReader {}
-		public struct IAMTimecodeGenerator {}
-		public struct IAMTimecodeDisplay {}
-		public struct IAMDevMemoryAllocator {}
-		public struct IAMDevMemoryControl {}
-		public struct IAMStreamSelect {}
-		public struct IAMResourceControl {}
-		public struct IAMClockAdjust {}
-		public struct IAMFilterMiscFlags {}
-		public struct IDrawVideoImage {}
-		public struct IDecimateVideoImage {}
-		public struct IAMVideoDecimationProperties {}
-		public struct IVideoFrameStep {}
-		public struct IAMLatency {}
-		public struct IAMPushSource {}
-		public struct IAMDeviceRemoval {}
-		public struct IDVEnc {}
-		public struct IIPDVDec {}
-		public struct IDVRGB219 {}
-		public struct IDVSplitter {}
-		public struct IAMAudioRendererStats {}
-		public struct IAMGraphStreams {}
-		public struct IAMOverlayFX {}
-		public struct IAMOpenProgress {}
-		public struct IMpeg2Demultiplexer {}
-		public struct IEnumStreamIdMap {}
-		public struct IMPEG2StreamIdMap {}
-		public struct IRegisterServiceProvider {}
-		public struct IAMClockSlave {}
-		public struct IAMGraphBuilderCallback {}
-		public struct IAMFilterGraphCallback {}
-		public struct IGetCapabilitiesKey {}
-		public struct IEncoderAPI {}
-		public struct IVideoEncoder {}
-		public struct IAMDecoderCaps {}
-		public struct IAMCertifiedOutputProtection {}
-		public struct IAMAsyncReaderTimestampScaling {}
-		public struct IAMPluginControl {}
-		public struct IPinConnection {}
-		public struct IPinFlowControl {}
-		public struct IGraphConfig {}
-		public struct IGraphConfigCallback {}
-		public struct IFilterChain {}
-		public struct IVMRImagePresenter {}
-		public struct IVMRSurfaceAllocator {}
-		public struct IVMRSurfaceAllocatorNotify {}
-		public struct IVMRWindowlessControl {}
-		public struct IVMRMixerControl {}
-		public struct IVMRMonitorConfig {}
-		public struct IVMRFilterConfig {}
-		public struct IVMRAspectRatioControl {}
-		public struct IVMRDeinterlaceControl {}
-		public struct IVMRMixerBitmap {}
-		public struct IVMRImageCompositor {}
-		public struct IVMRVideoStreamControl {}
-		public struct IVMRSurface {}
-		public struct IVMRImagePresenterConfig {}
-		public struct IVMRImagePresenterExclModeConfig {}
-		public struct IVPManager {}
-		public struct IDvdControl {}
-		public struct IDvdInfo {}
-		public struct IDvdCmd {}
-		public struct IDvdState {}
-		public struct IDvdControl2 {}
-		public struct IDvdInfo2 {}
-		public struct IDvdGraphBuilder {}
-		public struct IDDrawExclModeVideo {}
-		public struct IDDrawExclModeVideoCallback {}
-		public struct IBDA_NetworkProvider {}
-		public struct IBDA_EthernetFilter {}
-		public struct IBDA_IPV4Filter {}
-		public struct IBDA_IPV6Filter {}
-		public struct IBDA_DeviceControl {}
-		public struct IBDA_PinControl {}
-		public struct IBDA_SignalProperties {}
-		public struct IBDA_SignalStatistics {}
-		public struct IBDA_Topology {}
-		public struct IBDA_VoidTransform {}
-		public struct IBDA_NullTransform {}
-		public struct IBDA_FrequencyFilter {}
-		public struct IBDA_LNBInfo {}
-		public struct IBDA_DiseqCommand {}
-		public struct IBDA_AutoDemodulate {}
-		public struct IBDA_AutoDemodulateEx {}
-		public struct IBDA_DigitalDemodulator {}
-		public struct IBDA_DigitalDemodulator2 {}
-		public struct IBDA_DigitalDemodulator3 {}
-		public struct ICCSubStreamFiltering {}
-		public struct IBDA_IPSinkControl {}
-		public struct IBDA_IPSinkInfo {}
-		public struct IEnumPIDMap {}
-		public struct IMPEG2PIDMap {}
-		public struct IFrequencyMap {}
-		public struct IBDA_EasMessage {}
-		public struct IBDA_TransportStreamInfo {}
-		public struct IBDA_ConditionalAccess {}
-		public struct IBDA_DiagnosticProperties {}
-		public struct IBDA_DRM {}
-		public struct IBDA_NameValueService {}
-		public struct IBDA_ConditionalAccessEx {}
-		public struct IBDA_ISDBConditionalAccess {}
-		public struct IBDA_EventingService {}
-		public struct IBDA_AUX {}
-		public struct IBDA_Encoder {}
-		public struct IBDA_FDC {}
-		public struct IBDA_GuideDataDeliveryService {}
-		public struct IBDA_DRMService {}
-		public struct IBDA_WMDRMSession {}
-		public struct IBDA_WMDRMTuner {}
-		public struct IBDA_DRIDRMService {}
-		public struct IBDA_DRIWMDRMSession {}
-		public struct IBDA_MUX {}
-		public struct IBDA_TransportStreamSelector {}
-		public struct IBDA_UserActivityService {}
-		public struct IESEvent {}
-		public struct IESEvents {}
-		public struct IBroadcastEvent {}
-		public struct IBroadcastEventEx {}
-		public struct IAMNetShowConfig {}
-		public struct IAMChannelInfo {}
-		public struct IAMNetworkStatus {}
-		public struct IAMExtendedSeeking {}
-		public struct IAMNetShowExProps {}
-		public struct IAMExtendedErrorInfo {}
-		public struct IAMMediaContent {}
-		public struct IAMMediaContent2 {}
-		public struct IAMNetShowPreroll {}
-		public struct IDShowPlugin {}
-		public struct IAMDirectSound {}
-		public struct IAMLine21Decoder {}
-		public struct IAMParse {}
-		public struct IAMCollection {}
-		public struct IMediaControl {}
-		public struct IMediaEvent {}
-		public struct IMediaEventEx {}
-		public struct IMediaPosition {}
-		public struct IBasicAudio {}
-		public struct IVideoWindow {}
-		public struct IBasicVideo {}
-		public struct IBasicVideo2 {}
-		public struct IDeferredCommand {}
-		public struct IQueueCommand {}
-		public struct IFilterInfo {}
-		public struct IRegFilterInfo {}
-		public struct IMediaTypeInfo {}
-		public struct IPinInfo {}
-		public struct IAMStats {}
-		public struct IAMVideoAcceleratorNotify {}
-		public struct IAMVideoAccelerator {}
-		public struct IAMWstDecoder {}
-		public struct IKsTopologyInfo {}
-		public struct ISelector {}
-		public struct ICameraControl {}
-		public struct IVideoProcAmp {}
-		public struct IKsNodeControl {}
-		public struct IConfigAsfWriter {}
-		public struct IConfigAsfWriter2 {}
-		public struct IMultiMediaStream {}
-		public struct IMediaStream {}
-		public struct IStreamSample {}
-		public struct IDirectDrawMediaStream {}
-		public struct IDirectDrawStreamSample {}
-		public struct IAudioMediaStream {}
-		public struct IAudioStreamSample {}
-		public struct IMemoryData {}
-		public struct IAudioData {}
-		public struct IAMMultiMediaStream {}
-		public struct IAMMediaStream {}
-		public struct IMediaStreamFilter {}
-		public struct IDirectDrawMediaSampleAllocator {}
-		public struct IDirectDrawMediaSample {}
-		public struct IAMMediaTypeStream {}
-		public struct IAMMediaTypeSample {}
-		public struct IDirectDrawVideo {}
-		public struct IQualProp {}
-		public struct IFullScreenVideo {}
-		public struct IFullScreenVideoEx {}
-		public struct IBaseVideoMixer {}
-		public struct IDMOWrapperFilter {}
-		public struct IMixerOCXNotify {}
-		public struct IMixerOCX {}
-		public struct IMixerPinConfig {}
-		public struct IMixerPinConfig2 {}
-		public struct IMpegAudioDecoder {}
-		public struct IVMRImagePresenter9 {}
-		public struct IVMRSurfaceAllocator9 {}
-		public struct IVMRSurfaceAllocatorEx9 {}
-		public struct IVMRSurfaceAllocatorNotify9 {}
-		public struct IVMRWindowlessControl9 {}
-		public struct IVMRMixerControl9 {}
-		public struct IVMRMixerBitmap9 {}
-		public struct IVMRSurface9 {}
-		public struct IVMRImagePresenterConfig9 {}
-		public struct IVMRVideoStreamControl9 {}
-		public struct IVMRFilterConfig9 {}
-		public struct IVMRAspectRatioControl9 {}
-		public struct IVMRMonitorConfig9 {}
-		public struct IVMRDeinterlaceControl9 {}
-		public struct IVMRImageCompositor9 {}
-		public struct IVPBaseConfig {}
-		public struct IVPConfig {}
-		public struct IVPVBIConfig {}
-		public struct IVPBaseNotify {}
-		public struct IVPNotify {}
-		public struct IVPNotify2 {}
-		public struct IVPVBINotify {}
-		public struct IMediaParamInfo {}
-		public struct IMediaParams {}
-		public struct IAMPlayListItem {}
-		public struct IAMPlayList {}
-		public struct ISpecifyParticularPages {}
-		public struct IAMRebuild {}
-		public struct IBufferingTime {}
-		public struct ICreatePropBagOnRegKey {}
-		public struct ITuningSpaces {}
-		public struct ITuningSpaceContainer {}
-		public struct ITuningSpace {}
-		public struct IEnumTuningSpaces {}
-		public struct IDVBTuningSpace {}
-		public struct IDVBTuningSpace2 {}
-		public struct IDVBSTuningSpace {}
-		public struct IAuxInTuningSpace {}
-		public struct IAuxInTuningSpace2 {}
-		public struct IAnalogTVTuningSpace {}
-		public struct IATSCTuningSpace {}
-		public struct IDigitalCableTuningSpace {}
-		public struct IAnalogRadioTuningSpace {}
-		public struct IAnalogRadioTuningSpace2 {}
-		public struct ITuneRequest {}
-		public struct IChannelIDTuneRequest {}
-		public struct IChannelTuneRequest {}
-		public struct IATSCChannelTuneRequest {}
-		public struct IDigitalCableTuneRequest {}
-		public struct IDVBTuneRequest {}
-		public struct IMPEG2TuneRequest {}
-		public struct IMPEG2TuneRequestFactory {}
-		public struct IMPEG2TuneRequestSupport {}
-		public struct ITunerCap {}
-		public struct ITunerCapEx {}
-		public struct ITuner {}
-		public struct IScanningTuner {}
-		public struct IScanningTunerEx {}
-		public struct IComponentType {}
-		public struct ILanguageComponentType {}
-		public struct IMPEG2ComponentType {}
-		public struct IATSCComponentType {}
-		public struct IEnumComponentTypes {}
-		public struct IComponentTypes {}
-		public struct IComponent {}
-		public struct IAnalogAudioComponentType {}
-		public struct IMPEG2Component {}
-		public struct IEnumComponents {}
-		public struct IComponents {}
-		public struct IComponentsOld {}
-		public struct ILocator {}
-		public struct IAnalogLocator {}
-		public struct IDigitalLocator {}
-		public struct IATSCLocator {}
-		public struct IATSCLocator2 {}
-		public struct IDigitalCableLocator {}
-		public struct IDVBTLocator {}
-		public struct IDVBTLocator2 {}
-		public struct IDVBSLocator {}
-		public struct IDVBSLocator2 {}
-		public struct IDVBCLocator {}
-		public struct IISDBSLocator {}
-		public struct IESOpenMmiEvent {}
-		public struct IESCloseMmiEvent {}
-		public struct IESValueUpdatedEvent {}
-		public struct IESRequestTunerEvent {}
-		public struct IESIsdbCasResponseEvent {}
-		public struct IGpnvsCommonBase {}
-		public struct IESEventFactory {}
-		public struct IESLicenseRenewalResultEvent {}
-		public struct IESFileExpiryDateEvent {}
-		public struct IESEventService {}
-		public struct IESEventServiceConfiguration {}
-		public struct IRegisterTuner {}
-		public struct IBDAComparable {}
-		public struct IPersistTuneXml {}
-		public struct IPersistTuneXmlUtility {}
-		public struct IPersistTuneXmlUtility2 {}
-		public struct IBDACreateTuneRequestEx {}
-		public struct IETFilterConfig {}
-		public struct IDTFilterConfig {}
-		public struct IXDSCodecConfig {}
-		public struct IDTFilterLicenseRenewal {}
-		public struct IPTFilterLicenseRenewal {}
-		public struct IMceBurnerControl {}
-		public struct IETFilter {}
-		public struct IETFilterEvents {}
-		public struct IDTFilter {}
-		public struct IDTFilter2 {}
-		public struct IDTFilter3 {}
-		public struct IDTFilterEvents {}
-		public struct IXDSCodec {}
-		public struct IXDSCodecEvents {}
-		public struct IXDSToRat {}
-		public struct IEvalRat {}
-		public struct IMSVidRect {}
-		public struct IMSVidGraphSegmentContainer {}
-		public struct IMSVidGraphSegment {}
-		public struct IMSVidGraphSegmentUserInput {}
-		public struct IMSVidCompositionSegment {}
-		public struct IEnumMSVidGraphSegment {}
-		public struct IMSVidVRGraphSegment {}
-		public struct IMSVidDevice {}
-		public struct IMSVidDevice2 {}
-		public struct IMSVidInputDevice {}
-		public struct IMSVidDeviceEvent {}
-		public struct IMSVidInputDeviceEvent {}
-		public struct IMSVidVideoInputDevice {}
-		public struct IMSVidPlayback {}
-		public struct IMSVidPlaybackEvent {}
-		public struct IMSVidTuner {}
-		public struct IMSVidTunerEvent {}
-		public struct IMSVidAnalogTuner {}
-		public struct IMSVidAnalogTuner2 {}
-		public struct IMSVidAnalogTunerEvent {}
-		public struct IMSVidFilePlayback {}
-		public struct IMSVidFilePlayback2 {}
-		public struct IMSVidFilePlaybackEvent {}
-		public struct IMSVidWebDVD {}
-		public struct IMSVidWebDVD2 {}
-		public struct IMSVidWebDVDEvent {}
-		public struct IMSVidWebDVDAdm {}
-		public struct IMSVidOutputDevice {}
-		public struct IMSVidOutputDeviceEvent {}
-		public struct IMSVidFeature {}
-		public struct IMSVidFeatureEvent {}
-		public struct IMSVidEncoder {}
-		public struct IMSVidClosedCaptioning {}
-		public struct IMSVidClosedCaptioning2 {}
-		public struct IMSVidClosedCaptioning3 {}
-		public struct IMSVidXDS {}
-		public struct IMSVidXDSEvent {}
-		public struct IMSVidDataServices {}
-		public struct IMSVidDataServicesEvent {}
-		public struct IMSVidVideoRenderer {}
-		public struct IMSVidVideoRendererEvent {}
-		public struct IMSVidGenericSink {}
-		public struct IMSVidGenericSink2 {}
-		public struct IMSVidStreamBufferRecordingControl {}
-		public struct IMSVidStreamBufferSink {}
-		public struct IMSVidStreamBufferSink2 {}
-		public struct IMSVidStreamBufferSink3 {}
-		public struct IMSVidStreamBufferSinkEvent {}
-		public struct IMSVidStreamBufferSinkEvent2 {}
-		public struct IMSVidStreamBufferSinkEvent3 {}
-		public struct IMSVidStreamBufferSinkEvent4 {}
-		public struct IMSVidStreamBufferSource {}
-		public struct IMSVidStreamBufferSource2 {}
-		public struct IMSVidStreamBufferSourceEvent {}
-		public struct IMSVidStreamBufferSourceEvent2 {}
-		public struct IMSVidStreamBufferSourceEvent3 {}
-		public struct IMSVidStreamBufferV2SourceEvent {}
-		public struct IMSVidVideoRenderer2 {}
-		public struct IMSVidVideoRendererEvent2 {}
-		public struct IMSVidVMR9 {}
-		public struct IMSVidEVR {}
-		public struct IMSVidEVREvent {}
-		public struct IMSVidAudioRenderer {}
-		public struct IMSVidAudioRendererEvent {}
-		public struct IMSVidAudioRendererEvent2 {}
-		public struct IMSVidInputDevices {}
-		public struct IMSVidOutputDevices {}
-		public struct IMSVidVideoRendererDevices {}
-		public struct IMSVidAudioRendererDevices {}
-		public struct IMSVidFeatures {}
-		public struct IMSVidCtl {}
-		public struct IMSEventBinder {}
-		public struct _IMSVidCtlEvents {}
-		public struct IStreamBufferInitialize {}
-		public struct IStreamBufferSink {}
-		public struct IStreamBufferSink2 {}
-		public struct IStreamBufferSink3 {}
-		public struct IStreamBufferSource {}
-		public struct IStreamBufferRecordControl {}
-		public struct IStreamBufferRecComp {}
-		public struct IStreamBufferRecordingAttribute {}
-		public struct IEnumStreamBufferRecordingAttrib {}
-		public struct IStreamBufferConfigure {}
-		public struct IStreamBufferConfigure2 {}
-		public struct IStreamBufferConfigure3 {}
-		public struct IStreamBufferMediaSeeking {}
-		public struct IStreamBufferMediaSeeking2 {}
-		public struct IStreamBufferDataCounters {}
-		public struct ISBE2GlobalEvent {}
-		public struct ISBE2GlobalEvent2 {}
-		public struct ISBE2SpanningEvent {}
-		public struct ISBE2Crossbar {}
-		public struct ISBE2StreamMap {}
-		public struct ISBE2EnumStream {}
-		public struct ISBE2MediaTypeProfile {}
-		public struct ISBE2FileScan {}
-		public struct IMpeg2TableFilter {}
-		public struct IMpeg2Data {}
-		public struct ISectionList {}
-		public struct IMpeg2Stream {}
-		public struct IGenericDescriptor {}
-		public struct IGenericDescriptor2 {}
-		public struct IPAT {}
-		public struct ICAT {}
-		public struct IPMT {}
-		public struct ITSDT {}
-		public struct IPSITables {}
-		public struct IAtscPsipParser {}
-		public struct IATSC_MGT {}
-		public struct IATSC_VCT {}
-		public struct IATSC_EIT {}
-		public struct IATSC_ETT {}
-		public struct IATSC_STT {}
-		public struct ISCTE_EAS {}
-		public struct IAtscContentAdvisoryDescriptor {}
-		public struct ICaptionServiceDescriptor {}
-		public struct IServiceLocationDescriptor {}
-		public struct IAttributeSet {}
-		public struct IAttributeGet {}
-		public struct IDvbSiParser {}
-		public struct IDvbSiParser2 {}
-		public struct IIsdbSiParser2 {}
-		public struct IDVB_NIT {}
-		public struct IDVB_SDT {}
-		public struct IISDB_SDT {}
-		public struct IDVB_EIT {}
-		public struct IDVB_EIT2 {}
-		public struct IDVB_BAT {}
-		public struct IDVB_RST {}
-		public struct IDVB_ST {}
-		public struct IDVB_TDT {}
-		public struct IDVB_TOT {}
-		public struct IDVB_DIT {}
-		public struct IDVB_SIT {}
-		public struct IISDB_BIT {}
-		public struct IISDB_NBIT {}
-		public struct IISDB_LDT {}
-		public struct IISDB_SDTT {}
-		public struct IISDB_CDT {}
-		public struct IISDB_EMM {}
-		public struct IDvbServiceAttributeDescriptor {}
-		public struct IDvbContentIdentifierDescriptor {}
-		public struct IDvbDefaultAuthorityDescriptor {}
-		public struct IDvbSatelliteDeliverySystemDescriptor {}
-		public struct IDvbCableDeliverySystemDescriptor {}
-		public struct IDvbTerrestrialDeliverySystemDescriptor {}
-		public struct IDvbTerrestrial2DeliverySystemDescriptor {}
-		public struct IDvbFrequencyListDescriptor {}
-		public struct IDvbPrivateDataSpecifierDescriptor {}
-		public struct IDvbLogicalChannelDescriptor {}
-		public struct IDvbLogicalChannelDescriptor2 {}
-		public struct IDvbLogicalChannel2Descriptor {}
-		public struct IDvbHDSimulcastLogicalChannelDescriptor {}
-		public struct IDvbDataBroadcastIDDescriptor {}
-		public struct IDvbDataBroadcastDescriptor {}
-		public struct IDvbLinkageDescriptor {}
-		public struct IDvbTeletextDescriptor {}
-		public struct IDvbSubtitlingDescriptor {}
-		public struct IDvbServiceDescriptor {}
-		public struct IDvbServiceDescriptor2 {}
-		public struct IDvbServiceListDescriptor {}
-		public struct IDvbMultilingualServiceNameDescriptor {}
-		public struct IDvbNetworkNameDescriptor {}
-		public struct IDvbShortEventDescriptor {}
-		public struct IDvbExtendedEventDescriptor {}
-		public struct IDvbComponentDescriptor {}
-		public struct IDvbContentDescriptor {}
-		public struct IDvbParentalRatingDescriptor {}
-		public struct IIsdbTerrestrialDeliverySystemDescriptor {}
-		public struct IIsdbTSInformationDescriptor {}
-		public struct IIsdbDigitalCopyControlDescriptor {}
-		public struct IIsdbAudioComponentDescriptor {}
-		public struct IIsdbDataContentDescriptor {}
-		public struct IIsdbCAContractInformationDescriptor {}
-		public struct IIsdbEventGroupDescriptor {}
-		public struct IIsdbComponentGroupDescriptor {}
-		public struct IIsdbSeriesDescriptor {}
-		public struct IIsdbDownloadContentDescriptor {}
-		public struct IIsdbLogoTransmissionDescriptor {}
-		public struct IIsdbSIParameterDescriptor {}
-		public struct IIsdbEmergencyInformationDescriptor {}
-		public struct IIsdbCADescriptor {}
-		public struct IIsdbCAServiceDescriptor {}
-		public struct IIsdbHierarchicalTransmissionDescriptor {}
-		public struct IPBDASiParser {}
-		public struct IPBDA_EIT {}
-		public struct IPBDA_Services {}
-		public struct IPBDAEntitlementDescriptor {}
-		public struct IPBDAAttributesDescriptor {}
-		public struct IBDA_TIF_REGISTRATION {}
-		public struct IMPEG2_TIF_CONTROL {}
-		public struct ITuneRequestInfo {}
-		public struct ITuneRequestInfoEx {}
-		public struct ISIInbandEPGEvent {}
-		public struct ISIInbandEPG {}
-		public struct IGuideDataEvent {}
-		public struct IGuideDataProperty {}
-		public struct IEnumGuideDataProperties {}
-		public struct IEnumTuneRequests {}
-		public struct IGuideData {}
-		public struct IGuideDataLoader {}
+		[CRepr]
+		public struct ICreateDevEnum : IUnknown
+		{
+			public const new Guid IID = .(0x29840822, 0x5b84, 0x11d0, 0xbd, 0x3b, 0x00, 0xa0, 0xc9, 0x11, 0xce, 0x86);
+			
+			public function HRESULT(ICreateDevEnum *self, Guid* clsidDeviceClass, IEnumMoniker** ppEnumMoniker, uint32 dwFlags) CreateClassEnumerator;
+		}
+		[CRepr]
+		public struct IPin : IUnknown
+		{
+			public const new Guid IID = .(0x56a86891, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IPin *self, IPin* pReceivePin, AM_MEDIA_TYPE* pmt) Connect;
+			public function HRESULT(IPin *self, IPin* pConnector, AM_MEDIA_TYPE* pmt) ReceiveConnection;
+			public function HRESULT(IPin *self) Disconnect;
+			public function HRESULT(IPin *self, IPin** pPin) ConnectedTo;
+			public function HRESULT(IPin *self, AM_MEDIA_TYPE* pmt) ConnectionMediaType;
+			public function HRESULT(IPin *self, PIN_INFO* pInfo) QueryPinInfo;
+			public function HRESULT(IPin *self, PIN_DIRECTION* pPinDir) QueryDirection;
+			public function HRESULT(IPin *self, PWSTR* Id) QueryId;
+			public function HRESULT(IPin *self, AM_MEDIA_TYPE* pmt) QueryAccept;
+			public function HRESULT(IPin *self, IEnumMediaTypes** ppEnum) EnumMediaTypes;
+			public function HRESULT(IPin *self, IPin** apPin, uint32* nPin) QueryInternalConnections;
+			public function HRESULT(IPin *self) EndOfStream;
+			public function HRESULT(IPin *self) BeginFlush;
+			public function HRESULT(IPin *self) EndFlush;
+			public function HRESULT(IPin *self, int64 tStart, int64 tStop, double dRate) NewSegment;
+		}
+		[CRepr]
+		public struct IEnumPins : IUnknown
+		{
+			public const new Guid IID = .(0x56a86892, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IEnumPins *self, uint32 cPins, IPin** ppPins, uint32* pcFetched) Next;
+			public function HRESULT(IEnumPins *self, uint32 cPins) Skip;
+			public function HRESULT(IEnumPins *self) Reset;
+			public function HRESULT(IEnumPins *self, IEnumPins** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IEnumMediaTypes : IUnknown
+		{
+			public const new Guid IID = .(0x89c31040, 0x846b, 0x11ce, 0x97, 0xd3, 0x00, 0xaa, 0x00, 0x55, 0x59, 0x5a);
+			
+			public function HRESULT(IEnumMediaTypes *self, uint32 cMediaTypes, AM_MEDIA_TYPE** ppMediaTypes, uint32* pcFetched) Next;
+			public function HRESULT(IEnumMediaTypes *self, uint32 cMediaTypes) Skip;
+			public function HRESULT(IEnumMediaTypes *self) Reset;
+			public function HRESULT(IEnumMediaTypes *self, IEnumMediaTypes** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IFilterGraph : IUnknown
+		{
+			public const new Guid IID = .(0x56a8689f, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IFilterGraph *self, IBaseFilter* pFilter, PWSTR pName) AddFilter;
+			public function HRESULT(IFilterGraph *self, IBaseFilter* pFilter) RemoveFilter;
+			public function HRESULT(IFilterGraph *self, IEnumFilters** ppEnum) EnumFilters;
+			public function HRESULT(IFilterGraph *self, PWSTR pName, IBaseFilter** ppFilter) FindFilterByName;
+			public function HRESULT(IFilterGraph *self, IPin* ppinOut, IPin* ppinIn, AM_MEDIA_TYPE* pmt) ConnectDirect;
+			public function HRESULT(IFilterGraph *self, IPin* ppin) Reconnect;
+			public function HRESULT(IFilterGraph *self, IPin* ppin) Disconnect;
+			public function HRESULT(IFilterGraph *self) SetDefaultSyncSource;
+		}
+		[CRepr]
+		public struct IEnumFilters : IUnknown
+		{
+			public const new Guid IID = .(0x56a86893, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IEnumFilters *self, uint32 cFilters, IBaseFilter** ppFilter, uint32* pcFetched) Next;
+			public function HRESULT(IEnumFilters *self, uint32 cFilters) Skip;
+			public function HRESULT(IEnumFilters *self) Reset;
+			public function HRESULT(IEnumFilters *self, IEnumFilters** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IMediaFilter : IPersist
+		{
+			public const new Guid IID = .(0x56a86899, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMediaFilter *self) Stop;
+			public function HRESULT(IMediaFilter *self) Pause;
+			public function HRESULT(IMediaFilter *self, int64 tStart) Run;
+			public function HRESULT(IMediaFilter *self, uint32 dwMilliSecsTimeout, FILTER_STATE* State) GetState;
+			public function HRESULT(IMediaFilter *self, IReferenceClock* pClock) SetSyncSource;
+			public function HRESULT(IMediaFilter *self, IReferenceClock** pClock) GetSyncSource;
+		}
+		[CRepr]
+		public struct IBaseFilter : IMediaFilter
+		{
+			public const new Guid IID = .(0x56a86895, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IBaseFilter *self, IEnumPins** ppEnum) EnumPins;
+			public function HRESULT(IBaseFilter *self, PWSTR Id, IPin** ppPin) FindPin;
+			public function HRESULT(IBaseFilter *self, FILTER_INFO* pInfo) QueryFilterInfo;
+			public function HRESULT(IBaseFilter *self, IFilterGraph* pGraph, PWSTR pName) JoinFilterGraph;
+			public function HRESULT(IBaseFilter *self, PWSTR* pVendorInfo) QueryVendorInfo;
+		}
+		[CRepr]
+		public struct IMediaSample : IUnknown
+		{
+			public const new Guid IID = .(0x56a8689a, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMediaSample *self, uint8** ppBuffer) GetPointer;
+			public function int32(IMediaSample *self) GetSize;
+			public function HRESULT(IMediaSample *self, int64* pTimeStart, int64* pTimeEnd) GetTime;
+			public function HRESULT(IMediaSample *self, int64* pTimeStart, int64* pTimeEnd) SetTime;
+			public function HRESULT(IMediaSample *self) IsSyncPoint;
+			public function HRESULT(IMediaSample *self, BOOL bIsSyncPoint) SetSyncPoint;
+			public function HRESULT(IMediaSample *self) IsPreroll;
+			public function HRESULT(IMediaSample *self, BOOL bIsPreroll) SetPreroll;
+			public function int32(IMediaSample *self) GetActualDataLength;
+			public function HRESULT(IMediaSample *self, int32 __MIDL__IMediaSample0000) SetActualDataLength;
+			public function HRESULT(IMediaSample *self, AM_MEDIA_TYPE** ppMediaType) GetMediaType;
+			public function HRESULT(IMediaSample *self, AM_MEDIA_TYPE* pMediaType) SetMediaType;
+			public function HRESULT(IMediaSample *self) IsDiscontinuity;
+			public function HRESULT(IMediaSample *self, BOOL bDiscontinuity) SetDiscontinuity;
+			public function HRESULT(IMediaSample *self, int64* pTimeStart, int64* pTimeEnd) GetMediaTime;
+			public function HRESULT(IMediaSample *self, int64* pTimeStart, int64* pTimeEnd) SetMediaTime;
+		}
+		[CRepr]
+		public struct IMediaSample2 : IMediaSample
+		{
+			public const new Guid IID = .(0x36b73884, 0xc2c8, 0x11cf, 0x8b, 0x46, 0x00, 0x80, 0x5f, 0x6c, 0xef, 0x60);
+			
+			public function HRESULT(IMediaSample2 *self, uint32 cbProperties, uint8* pbProperties) GetProperties;
+			public function HRESULT(IMediaSample2 *self, uint32 cbProperties, uint8* pbProperties) SetProperties;
+		}
+		[CRepr]
+		public struct IMediaSample2Config : IUnknown
+		{
+			public const new Guid IID = .(0x68961e68, 0x832b, 0x41ea, 0xbc, 0x91, 0x63, 0x59, 0x3f, 0x3e, 0x70, 0xe3);
+			
+			public function HRESULT(IMediaSample2Config *self, IUnknown** ppDirect3DSurface9) GetSurface;
+		}
+		[CRepr]
+		public struct IMemAllocator : IUnknown
+		{
+			public const new Guid IID = .(0x56a8689c, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMemAllocator *self, ALLOCATOR_PROPERTIES* pRequest, ALLOCATOR_PROPERTIES* pActual) SetProperties;
+			public function HRESULT(IMemAllocator *self, ALLOCATOR_PROPERTIES* pProps) GetProperties;
+			public function HRESULT(IMemAllocator *self) Commit;
+			public function HRESULT(IMemAllocator *self) Decommit;
+			public function HRESULT(IMemAllocator *self, IMediaSample** ppBuffer, int64* pStartTime, int64* pEndTime, uint32 dwFlags) GetBuffer;
+			public function HRESULT(IMemAllocator *self, IMediaSample* pBuffer) ReleaseBuffer;
+		}
+		[CRepr]
+		public struct IMemAllocatorCallbackTemp : IMemAllocator
+		{
+			public const new Guid IID = .(0x379a0cf0, 0xc1de, 0x11d2, 0xab, 0xf5, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function HRESULT(IMemAllocatorCallbackTemp *self, IMemAllocatorNotifyCallbackTemp* pNotify) SetNotify;
+			public function HRESULT(IMemAllocatorCallbackTemp *self, int32* plBuffersFree) GetFreeCount;
+		}
+		[CRepr]
+		public struct IMemAllocatorNotifyCallbackTemp : IUnknown
+		{
+			public const new Guid IID = .(0x92980b30, 0xc1de, 0x11d2, 0xab, 0xf5, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function HRESULT(IMemAllocatorNotifyCallbackTemp *self) NotifyRelease;
+		}
+		[CRepr]
+		public struct IMemInputPin : IUnknown
+		{
+			public const new Guid IID = .(0x56a8689d, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMemInputPin *self, IMemAllocator** ppAllocator) GetAllocator;
+			public function HRESULT(IMemInputPin *self, IMemAllocator* pAllocator, BOOL bReadOnly) NotifyAllocator;
+			public function HRESULT(IMemInputPin *self, ALLOCATOR_PROPERTIES* pProps) GetAllocatorRequirements;
+			public function HRESULT(IMemInputPin *self, IMediaSample* pSample) Receive;
+			public function HRESULT(IMemInputPin *self, IMediaSample** pSamples, int32 nSamples, int32* nSamplesProcessed) ReceiveMultiple;
+			public function HRESULT(IMemInputPin *self) ReceiveCanBlock;
+		}
+		[CRepr]
+		public struct IAMovieSetup : IUnknown
+		{
+			public const new Guid IID = .(0xa3d8cec0, 0x7e5a, 0x11cf, 0xbb, 0xc5, 0x00, 0x80, 0x5f, 0x6c, 0xef, 0x20);
+			
+			public function HRESULT(IAMovieSetup *self) Register;
+			public function HRESULT(IAMovieSetup *self) Unregister;
+		}
+		[CRepr]
+		public struct IMediaSeeking : IUnknown
+		{
+			public const new Guid IID = .(0x36b73880, 0xc2c8, 0x11cf, 0x8b, 0x46, 0x00, 0x80, 0x5f, 0x6c, 0xef, 0x60);
+			
+			public function HRESULT(IMediaSeeking *self, uint32* pCapabilities) GetCapabilities;
+			public function HRESULT(IMediaSeeking *self, uint32* pCapabilities) CheckCapabilities;
+			public function HRESULT(IMediaSeeking *self, Guid* pFormat) IsFormatSupported;
+			public function HRESULT(IMediaSeeking *self, Guid* pFormat) QueryPreferredFormat;
+			public function HRESULT(IMediaSeeking *self, Guid* pFormat) GetTimeFormat;
+			public function HRESULT(IMediaSeeking *self, Guid* pFormat) IsUsingTimeFormat;
+			public function HRESULT(IMediaSeeking *self, Guid* pFormat) SetTimeFormat;
+			public function HRESULT(IMediaSeeking *self, int64* pDuration) GetDuration;
+			public function HRESULT(IMediaSeeking *self, int64* pStop) GetStopPosition;
+			public function HRESULT(IMediaSeeking *self, int64* pCurrent) GetCurrentPosition;
+			public function HRESULT(IMediaSeeking *self, int64* pTarget, Guid* pTargetFormat, int64 Source, Guid* pSourceFormat) ConvertTimeFormat;
+			public function HRESULT(IMediaSeeking *self, int64* pCurrent, uint32 dwCurrentFlags, int64* pStop, uint32 dwStopFlags) SetPositions;
+			public function HRESULT(IMediaSeeking *self, int64* pCurrent, int64* pStop) GetPositions;
+			public function HRESULT(IMediaSeeking *self, int64* pEarliest, int64* pLatest) GetAvailable;
+			public function HRESULT(IMediaSeeking *self, double dRate) SetRate;
+			public function HRESULT(IMediaSeeking *self, double* pdRate) GetRate;
+			public function HRESULT(IMediaSeeking *self, int64* pllPreroll) GetPreroll;
+		}
+		[CRepr]
+		public struct IEnumRegFilters : IUnknown
+		{
+			public const new Guid IID = .(0x56a868a4, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IEnumRegFilters *self, uint32 cFilters, REGFILTER** apRegFilter, uint32* pcFetched) Next;
+			public function HRESULT(IEnumRegFilters *self, uint32 cFilters) Skip;
+			public function HRESULT(IEnumRegFilters *self) Reset;
+			public function HRESULT(IEnumRegFilters *self, IEnumRegFilters** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IFilterMapper : IUnknown
+		{
+			public const new Guid IID = .(0x56a868a3, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IFilterMapper *self, Guid clsid, PWSTR Name, uint32 dwMerit) RegisterFilter;
+			public function HRESULT(IFilterMapper *self, Guid clsid, PWSTR Name, Guid* MRId) RegisterFilterInstance;
+			public function HRESULT(IFilterMapper *self, Guid Filter, PWSTR Name, BOOL bRendered, BOOL bOutput, BOOL bZero, BOOL bMany, Guid ConnectsToFilter, PWSTR ConnectsToPin) RegisterPin;
+			public function HRESULT(IFilterMapper *self, Guid clsFilter, PWSTR strName, Guid clsMajorType, Guid clsSubType) RegisterPinType;
+			public function HRESULT(IFilterMapper *self, Guid Filter) UnregisterFilter;
+			public function HRESULT(IFilterMapper *self, Guid MRId) UnregisterFilterInstance;
+			public function HRESULT(IFilterMapper *self, Guid Filter, PWSTR Name) UnregisterPin;
+			public function HRESULT(IFilterMapper *self, IEnumRegFilters** ppEnum, uint32 dwMerit, BOOL bInputNeeded, Guid clsInMaj, Guid clsInSub, BOOL bRender, BOOL bOututNeeded, Guid clsOutMaj, Guid clsOutSub) EnumMatchingFilters;
+		}
+		[CRepr]
+		public struct IFilterMapper2 : IUnknown
+		{
+			public const new Guid IID = .(0xb79bb0b0, 0x33c1, 0x11d1, 0xab, 0xe1, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function HRESULT(IFilterMapper2 *self, Guid* clsidCategory, uint32 dwCategoryMerit, PWSTR Description) CreateCategory;
+			public function HRESULT(IFilterMapper2 *self, Guid* pclsidCategory, PWSTR szInstance, Guid* Filter) UnregisterFilter;
+			public function HRESULT(IFilterMapper2 *self, Guid* clsidFilter, PWSTR Name, IMoniker** ppMoniker, Guid* pclsidCategory, PWSTR szInstance, REGFILTER2* prf2) RegisterFilter;
+			public function HRESULT(IFilterMapper2 *self, IEnumMoniker** ppEnum, uint32 dwFlags, BOOL bExactMatch, uint32 dwMerit, BOOL bInputNeeded, uint32 cInputTypes, Guid* pInputTypes, REGPINMEDIUM* pMedIn, Guid* pPinCategoryIn, BOOL bRender, BOOL bOutputNeeded, uint32 cOutputTypes, Guid* pOutputTypes, REGPINMEDIUM* pMedOut, Guid* pPinCategoryOut) EnumMatchingFilters;
+		}
+		[CRepr]
+		public struct IFilterMapper3 : IFilterMapper2
+		{
+			public const new Guid IID = .(0xb79bb0b1, 0x33c1, 0x11d1, 0xab, 0xe1, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function HRESULT(IFilterMapper3 *self, ICreateDevEnum** ppEnum) GetICreateDevEnum;
+		}
+		[CRepr]
+		public struct IQualityControl : IUnknown
+		{
+			public const new Guid IID = .(0x56a868a5, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IQualityControl *self, IBaseFilter* pSelf, Quality q) Notify;
+			public function HRESULT(IQualityControl *self, IQualityControl* piqc) SetSink;
+		}
+		[CRepr]
+		public struct IOverlayNotify : IUnknown
+		{
+			public const new Guid IID = .(0x56a868a0, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IOverlayNotify *self, uint32 dwColors, PALETTEENTRY* pPalette) OnPaletteChange;
+			public function HRESULT(IOverlayNotify *self, RECT* pSourceRect, RECT* pDestinationRect, RGNDATA* pRgnData) OnClipChange;
+			public function HRESULT(IOverlayNotify *self, COLORKEY* pColorKey) OnColorKeyChange;
+			public function HRESULT(IOverlayNotify *self, RECT* pSourceRect, RECT* pDestinationRect) OnPositionChange;
+		}
+		[CRepr]
+		public struct IOverlayNotify2 : IOverlayNotify
+		{
+			public const new Guid IID = .(0x680efa10, 0xd535, 0x11d1, 0x87, 0xc8, 0x00, 0xa0, 0xc9, 0x22, 0x31, 0x96);
+			
+			public function HRESULT(IOverlayNotify2 *self, HMONITOR hMonitor) OnDisplayChange;
+		}
+		[CRepr]
+		public struct IOverlay : IUnknown
+		{
+			public const new Guid IID = .(0x56a868a1, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IOverlay *self, uint32* pdwColors, PALETTEENTRY** ppPalette) GetPalette;
+			public function HRESULT(IOverlay *self, uint32 dwColors, PALETTEENTRY* pPalette) SetPalette;
+			public function HRESULT(IOverlay *self, COLORKEY* pColorKey) GetDefaultColorKey;
+			public function HRESULT(IOverlay *self, COLORKEY* pColorKey) GetColorKey;
+			public function HRESULT(IOverlay *self, COLORKEY* pColorKey) SetColorKey;
+			public function HRESULT(IOverlay *self, HWND* pHwnd) GetWindowHandle;
+			public function HRESULT(IOverlay *self, RECT* pSourceRect, RECT* pDestinationRect, RGNDATA** ppRgnData) GetClipList;
+			public function HRESULT(IOverlay *self, RECT* pSourceRect, RECT* pDestinationRect) GetVideoPosition;
+			public function HRESULT(IOverlay *self, IOverlayNotify* pOverlayNotify, uint32 dwInterests) Advise;
+			public function HRESULT(IOverlay *self) Unadvise;
+		}
+		[CRepr]
+		public struct IMediaEventSink : IUnknown
+		{
+			public const new Guid IID = .(0x56a868a2, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMediaEventSink *self, int32 EventCode, int EventParam1, int EventParam2) Notify;
+		}
+		[CRepr]
+		public struct IFileSourceFilter : IUnknown
+		{
+			public const new Guid IID = .(0x56a868a6, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IFileSourceFilter *self, PWSTR pszFileName, AM_MEDIA_TYPE* pmt) Load;
+			public function HRESULT(IFileSourceFilter *self, PWSTR* ppszFileName, AM_MEDIA_TYPE* pmt) GetCurFile;
+		}
+		[CRepr]
+		public struct IFileSinkFilter : IUnknown
+		{
+			public const new Guid IID = .(0xa2104830, 0x7c70, 0x11cf, 0x8b, 0xce, 0x00, 0xaa, 0x00, 0xa3, 0xf1, 0xa6);
+			
+			public function HRESULT(IFileSinkFilter *self, PWSTR pszFileName, AM_MEDIA_TYPE* pmt) SetFileName;
+			public function HRESULT(IFileSinkFilter *self, PWSTR* ppszFileName, AM_MEDIA_TYPE* pmt) GetCurFile;
+		}
+		[CRepr]
+		public struct IFileSinkFilter2 : IFileSinkFilter
+		{
+			public const new Guid IID = .(0x00855b90, 0xce1b, 0x11d0, 0xbd, 0x4f, 0x00, 0xa0, 0xc9, 0x11, 0xce, 0x86);
+			
+			public function HRESULT(IFileSinkFilter2 *self, uint32 dwFlags) SetMode;
+			public function HRESULT(IFileSinkFilter2 *self, uint32* pdwFlags) GetMode;
+		}
+		[CRepr]
+		public struct IGraphBuilder : IFilterGraph
+		{
+			public const new Guid IID = .(0x56a868a9, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IGraphBuilder *self, IPin* ppinOut, IPin* ppinIn) Connect;
+			public function HRESULT(IGraphBuilder *self, IPin* ppinOut) Render;
+			public function HRESULT(IGraphBuilder *self, PWSTR lpcwstrFile, PWSTR lpcwstrPlayList) RenderFile;
+			public function HRESULT(IGraphBuilder *self, PWSTR lpcwstrFileName, PWSTR lpcwstrFilterName, IBaseFilter** ppFilter) AddSourceFilter;
+			public function HRESULT(IGraphBuilder *self, uint hFile) SetLogFile;
+			public function HRESULT(IGraphBuilder *self) Abort;
+			public function HRESULT(IGraphBuilder *self) ShouldOperationContinue;
+		}
+		[CRepr]
+		public struct ICaptureGraphBuilder : IUnknown
+		{
+			public const new Guid IID = .(0xbf87b6e0, 0x8c27, 0x11d0, 0xb3, 0xf0, 0x00, 0xaa, 0x00, 0x37, 0x61, 0xc5);
+			
+			public function HRESULT(ICaptureGraphBuilder *self, IGraphBuilder* pfg) SetFiltergraph;
+			public function HRESULT(ICaptureGraphBuilder *self, IGraphBuilder** ppfg) GetFiltergraph;
+			public function HRESULT(ICaptureGraphBuilder *self, Guid* pType, PWSTR lpstrFile, IBaseFilter** ppf, IFileSinkFilter** ppSink) SetOutputFileName;
+			public function HRESULT(ICaptureGraphBuilder *self, Guid* pCategory, IBaseFilter* pf, Guid* riid, void** ppint) FindInterface;
+			public function HRESULT(ICaptureGraphBuilder *self, Guid* pCategory, IUnknown* pSource, IBaseFilter* pfCompressor, IBaseFilter* pfRenderer) RenderStream;
+			public function HRESULT(ICaptureGraphBuilder *self, Guid* pCategory, IBaseFilter* pFilter, int64* pstart, int64* pstop, uint16 wStartCookie, uint16 wStopCookie) ControlStream;
+			public function HRESULT(ICaptureGraphBuilder *self, PWSTR lpstr, uint64 dwlSize) AllocCapFile;
+			public function HRESULT(ICaptureGraphBuilder *self, PWSTR lpwstrOld, PWSTR lpwstrNew, int32 fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback) CopyCaptureFile;
+		}
+		[CRepr]
+		public struct IAMCopyCaptureFileProgress : IUnknown
+		{
+			public const new Guid IID = .(0x670d1d20, 0xa068, 0x11d0, 0xb3, 0xf0, 0x00, 0xaa, 0x00, 0x37, 0x61, 0xc5);
+			
+			public function HRESULT(IAMCopyCaptureFileProgress *self, int32 iProgress) Progress;
+		}
+		[CRepr]
+		public struct ICaptureGraphBuilder2 : IUnknown
+		{
+			public const new Guid IID = .(0x93e5a4e0, 0x2d50, 0x11d2, 0xab, 0xfa, 0x00, 0xa0, 0xc9, 0xc6, 0xe3, 0x8d);
+			
+			public function HRESULT(ICaptureGraphBuilder2 *self, IGraphBuilder* pfg) SetFiltergraph;
+			public function HRESULT(ICaptureGraphBuilder2 *self, IGraphBuilder** ppfg) GetFiltergraph;
+			public function HRESULT(ICaptureGraphBuilder2 *self, Guid* pType, PWSTR lpstrFile, IBaseFilter** ppf, IFileSinkFilter** ppSink) SetOutputFileName;
+			public function HRESULT(ICaptureGraphBuilder2 *self, Guid* pCategory, Guid* pType, IBaseFilter* pf, Guid* riid, void** ppint) FindInterface;
+			public function HRESULT(ICaptureGraphBuilder2 *self, Guid* pCategory, Guid* pType, IUnknown* pSource, IBaseFilter* pfCompressor, IBaseFilter* pfRenderer) RenderStream;
+			public function HRESULT(ICaptureGraphBuilder2 *self, Guid* pCategory, Guid* pType, IBaseFilter* pFilter, int64* pstart, int64* pstop, uint16 wStartCookie, uint16 wStopCookie) ControlStream;
+			public function HRESULT(ICaptureGraphBuilder2 *self, PWSTR lpstr, uint64 dwlSize) AllocCapFile;
+			public function HRESULT(ICaptureGraphBuilder2 *self, PWSTR lpwstrOld, PWSTR lpwstrNew, int32 fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback) CopyCaptureFile;
+			public function HRESULT(ICaptureGraphBuilder2 *self, IUnknown* pSource, PIN_DIRECTION pindir, Guid* pCategory, Guid* pType, BOOL fUnconnected, int32 num, IPin** ppPin) FindPin;
+		}
+		[CRepr]
+		public struct IFilterGraph2 : IGraphBuilder
+		{
+			public const new Guid IID = .(0x36b73882, 0xc2c8, 0x11cf, 0x8b, 0x46, 0x00, 0x80, 0x5f, 0x6c, 0xef, 0x60);
+			
+			public function HRESULT(IFilterGraph2 *self, IMoniker* pMoniker, IBindCtx* pCtx, PWSTR lpcwstrFilterName, IBaseFilter** ppFilter) AddSourceFilterForMoniker;
+			public function HRESULT(IFilterGraph2 *self, IPin* ppin, AM_MEDIA_TYPE* pmt) ReconnectEx;
+			public function HRESULT(IFilterGraph2 *self, IPin* pPinOut, uint32 dwFlags, uint32* pvContext) RenderEx;
+		}
+		[CRepr]
+		public struct IFilterGraph3 : IFilterGraph2
+		{
+			public const new Guid IID = .(0xaaf38154, 0xb80b, 0x422f, 0x91, 0xe6, 0xb6, 0x64, 0x67, 0x50, 0x9a, 0x07);
+			
+			public function HRESULT(IFilterGraph3 *self, IReferenceClock* pClockForMostOfFilterGraph, IReferenceClock* pClockForFilter, IBaseFilter* pFilter) SetSyncSourceEx;
+		}
+		[CRepr]
+		public struct IStreamBuilder : IUnknown
+		{
+			public const new Guid IID = .(0x56a868bf, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IStreamBuilder *self, IPin* ppinOut, IGraphBuilder* pGraph) Render;
+			public function HRESULT(IStreamBuilder *self, IPin* ppinOut, IGraphBuilder* pGraph) Backout;
+		}
+		[CRepr]
+		public struct IAsyncReader : IUnknown
+		{
+			public const new Guid IID = .(0x56a868aa, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IAsyncReader *self, IMemAllocator* pPreferred, ALLOCATOR_PROPERTIES* pProps, IMemAllocator** ppActual) RequestAllocator;
+			public function HRESULT(IAsyncReader *self, IMediaSample* pSample, uint dwUser) Request;
+			public function HRESULT(IAsyncReader *self, uint32 dwTimeout, IMediaSample** ppSample, uint* pdwUser) WaitForNext;
+			public function HRESULT(IAsyncReader *self, IMediaSample* pSample) SyncReadAligned;
+			public function HRESULT(IAsyncReader *self, int64 llPosition, int32 lLength, uint8* pBuffer) SyncRead;
+			public function HRESULT(IAsyncReader *self, int64* pTotal, int64* pAvailable) Length;
+			public function HRESULT(IAsyncReader *self) BeginFlush;
+			public function HRESULT(IAsyncReader *self) EndFlush;
+		}
+		[CRepr]
+		public struct IGraphVersion : IUnknown
+		{
+			public const new Guid IID = .(0x56a868ab, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IGraphVersion *self, int32* pVersion) QueryVersion;
+		}
+		[CRepr]
+		public struct IResourceConsumer : IUnknown
+		{
+			public const new Guid IID = .(0x56a868ad, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IResourceConsumer *self, int32 idResource) AcquireResource;
+			public function HRESULT(IResourceConsumer *self, int32 idResource) ReleaseResource;
+		}
+		[CRepr]
+		public struct IResourceManager : IUnknown
+		{
+			public const new Guid IID = .(0x56a868ac, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IResourceManager *self, PWSTR pName, int32 cResource, int32* plToken) Register;
+			public function HRESULT(IResourceManager *self, PWSTR pName, int32 cResource, int32* palTokens, int32* plToken) RegisterGroup;
+			public function HRESULT(IResourceManager *self, int32 idResource, IUnknown* pFocusObject, IResourceConsumer* pConsumer) RequestResource;
+			public function HRESULT(IResourceManager *self, int32 idResource, IResourceConsumer* pConsumer, HRESULT hr) NotifyAcquire;
+			public function HRESULT(IResourceManager *self, int32 idResource, IResourceConsumer* pConsumer, BOOL bStillWant) NotifyRelease;
+			public function HRESULT(IResourceManager *self, int32 idResource, IResourceConsumer* pConsumer) CancelRequest;
+			public function HRESULT(IResourceManager *self, IUnknown* pFocusObject) SetFocus;
+			public function HRESULT(IResourceManager *self, IUnknown* pFocusObject) ReleaseFocus;
+		}
+		[CRepr]
+		public struct IDistributorNotify : IUnknown
+		{
+			public const new Guid IID = .(0x56a868af, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IDistributorNotify *self) Stop;
+			public function HRESULT(IDistributorNotify *self) Pause;
+			public function HRESULT(IDistributorNotify *self, int64 tStart) Run;
+			public function HRESULT(IDistributorNotify *self, IReferenceClock* pClock) SetSyncSource;
+			public function HRESULT(IDistributorNotify *self) NotifyGraphChange;
+		}
+		[CRepr]
+		public struct IAMStreamControl : IUnknown
+		{
+			public const new Guid IID = .(0x36b73881, 0xc2c8, 0x11cf, 0x8b, 0x46, 0x00, 0x80, 0x5f, 0x6c, 0xef, 0x60);
+			
+			public function HRESULT(IAMStreamControl *self, int64* ptStart, uint32 dwCookie) StartAt;
+			public function HRESULT(IAMStreamControl *self, int64* ptStop, BOOL bSendExtra, uint32 dwCookie) StopAt;
+			public function HRESULT(IAMStreamControl *self, AM_STREAM_INFO* pInfo) GetInfo;
+		}
+		[CRepr]
+		public struct ISeekingPassThru : IUnknown
+		{
+			public const new Guid IID = .(0x36b73883, 0xc2c8, 0x11cf, 0x8b, 0x46, 0x00, 0x80, 0x5f, 0x6c, 0xef, 0x60);
+			
+			public function HRESULT(ISeekingPassThru *self, BOOL bSupportRendering, IPin* pPin) Init;
+		}
+		[CRepr]
+		public struct IAMStreamConfig : IUnknown
+		{
+			public const new Guid IID = .(0xc6e13340, 0x30ac, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+			
+			public function HRESULT(IAMStreamConfig *self, AM_MEDIA_TYPE* pmt) SetFormat;
+			public function HRESULT(IAMStreamConfig *self, AM_MEDIA_TYPE** ppmt) GetFormat;
+			public function HRESULT(IAMStreamConfig *self, int32* piCount, int32* piSize) GetNumberOfCapabilities;
+			public function HRESULT(IAMStreamConfig *self, int32 iIndex, AM_MEDIA_TYPE** ppmt, uint8* pSCC) GetStreamCaps;
+		}
+		[CRepr]
+		public struct IConfigInterleaving : IUnknown
+		{
+			public const new Guid IID = .(0xbee3d220, 0x157b, 0x11d0, 0xbd, 0x23, 0x00, 0xa0, 0xc9, 0x11, 0xce, 0x86);
+			
+			public function HRESULT(IConfigInterleaving *self, InterleavingMode mode) put_Mode;
+			public function HRESULT(IConfigInterleaving *self, InterleavingMode* pMode) get_Mode;
+			public function HRESULT(IConfigInterleaving *self, int64* prtInterleave, int64* prtPreroll) put_Interleaving;
+			public function HRESULT(IConfigInterleaving *self, int64* prtInterleave, int64* prtPreroll) get_Interleaving;
+		}
+		[CRepr]
+		public struct IConfigAviMux : IUnknown
+		{
+			public const new Guid IID = .(0x5acd6aa0, 0xf482, 0x11ce, 0x8b, 0x67, 0x00, 0xaa, 0x00, 0xa3, 0xf1, 0xa6);
+			
+			public function HRESULT(IConfigAviMux *self, int32 iStream) SetMasterStream;
+			public function HRESULT(IConfigAviMux *self, int32* pStream) GetMasterStream;
+			public function HRESULT(IConfigAviMux *self, BOOL fOldIndex) SetOutputCompatibilityIndex;
+			public function HRESULT(IConfigAviMux *self, BOOL* pfOldIndex) GetOutputCompatibilityIndex;
+		}
+		[CRepr]
+		public struct IAMVideoCompression : IUnknown
+		{
+			public const new Guid IID = .(0xc6e13343, 0x30ac, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+			
+			public function HRESULT(IAMVideoCompression *self, int32 KeyFrameRate) put_KeyFrameRate;
+			public function HRESULT(IAMVideoCompression *self, int32* pKeyFrameRate) get_KeyFrameRate;
+			public function HRESULT(IAMVideoCompression *self, int32 PFramesPerKeyFrame) put_PFramesPerKeyFrame;
+			public function HRESULT(IAMVideoCompression *self, int32* pPFramesPerKeyFrame) get_PFramesPerKeyFrame;
+			public function HRESULT(IAMVideoCompression *self, double Quality) put_Quality;
+			public function HRESULT(IAMVideoCompression *self, double* pQuality) get_Quality;
+			public function HRESULT(IAMVideoCompression *self, uint64 WindowSize) put_WindowSize;
+			public function HRESULT(IAMVideoCompression *self, uint64* pWindowSize) get_WindowSize;
+			public function HRESULT(IAMVideoCompression *self, PWSTR pszVersion, int32* pcbVersion, PWSTR pszDescription, int32* pcbDescription, int32* pDefaultKeyFrameRate, int32* pDefaultPFramesPerKey, double* pDefaultQuality, int32* pCapabilities) GetInfo;
+			public function HRESULT(IAMVideoCompression *self, int32 FrameNumber) OverrideKeyFrame;
+			public function HRESULT(IAMVideoCompression *self, int32 FrameNumber, int32 Size) OverrideFrameSize;
+		}
+		[CRepr]
+		public struct IAMVfwCaptureDialogs : IUnknown
+		{
+			public const new Guid IID = .(0xd8d715a0, 0x6e5e, 0x11d0, 0xb3, 0xf0, 0x00, 0xaa, 0x00, 0x37, 0x61, 0xc5);
+			
+			public function HRESULT(IAMVfwCaptureDialogs *self, int32 iDialog) HasDialog;
+			public function HRESULT(IAMVfwCaptureDialogs *self, int32 iDialog, HWND hwnd) ShowDialog;
+			public function HRESULT(IAMVfwCaptureDialogs *self, int32 iDialog, int32 uMsg, int32 dw1, int32 dw2) SendDriverMessage;
+		}
+		[CRepr]
+		public struct IAMVfwCompressDialogs : IUnknown
+		{
+			public const new Guid IID = .(0xd8d715a3, 0x6e5e, 0x11d0, 0xb3, 0xf0, 0x00, 0xaa, 0x00, 0x37, 0x61, 0xc5);
+			
+			public function HRESULT(IAMVfwCompressDialogs *self, int32 iDialog, HWND hwnd) ShowDialog;
+			public function HRESULT(IAMVfwCompressDialogs *self, void* pState, int32* pcbState) GetState;
+			public function HRESULT(IAMVfwCompressDialogs *self, void* pState, int32 cbState) SetState;
+			public function HRESULT(IAMVfwCompressDialogs *self, int32 uMsg, int32 dw1, int32 dw2) SendDriverMessage;
+		}
+		[CRepr]
+		public struct IAMDroppedFrames : IUnknown
+		{
+			public const new Guid IID = .(0xc6e13344, 0x30ac, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+			
+			public function HRESULT(IAMDroppedFrames *self, int32* plDropped) GetNumDropped;
+			public function HRESULT(IAMDroppedFrames *self, int32* plNotDropped) GetNumNotDropped;
+			public function HRESULT(IAMDroppedFrames *self, int32 lSize, int32* plArray, int32* plNumCopied) GetDroppedInfo;
+			public function HRESULT(IAMDroppedFrames *self, int32* plAverageSize) GetAverageFrameSize;
+		}
+		[CRepr]
+		public struct IAMAudioInputMixer : IUnknown
+		{
+			public const new Guid IID = .(0x54c39221, 0x8380, 0x11d0, 0xb3, 0xf0, 0x00, 0xaa, 0x00, 0x37, 0x61, 0xc5);
+			
+			public function HRESULT(IAMAudioInputMixer *self, BOOL fEnable) put_Enable;
+			public function HRESULT(IAMAudioInputMixer *self, BOOL* pfEnable) get_Enable;
+			public function HRESULT(IAMAudioInputMixer *self, BOOL fMono) put_Mono;
+			public function HRESULT(IAMAudioInputMixer *self, BOOL* pfMono) get_Mono;
+			public function HRESULT(IAMAudioInputMixer *self, double Level) put_MixLevel;
+			public function HRESULT(IAMAudioInputMixer *self, double* pLevel) get_MixLevel;
+			public function HRESULT(IAMAudioInputMixer *self, double Pan) put_Pan;
+			public function HRESULT(IAMAudioInputMixer *self, double* pPan) get_Pan;
+			public function HRESULT(IAMAudioInputMixer *self, BOOL fLoudness) put_Loudness;
+			public function HRESULT(IAMAudioInputMixer *self, BOOL* pfLoudness) get_Loudness;
+			public function HRESULT(IAMAudioInputMixer *self, double Treble) put_Treble;
+			public function HRESULT(IAMAudioInputMixer *self, double* pTreble) get_Treble;
+			public function HRESULT(IAMAudioInputMixer *self, double* pRange) get_TrebleRange;
+			public function HRESULT(IAMAudioInputMixer *self, double Bass) put_Bass;
+			public function HRESULT(IAMAudioInputMixer *self, double* pBass) get_Bass;
+			public function HRESULT(IAMAudioInputMixer *self, double* pRange) get_BassRange;
+		}
+		[CRepr]
+		public struct IAMBufferNegotiation : IUnknown
+		{
+			public const new Guid IID = .(0x56ed71a0, 0xaf5f, 0x11d0, 0xb3, 0xf0, 0x00, 0xaa, 0x00, 0x37, 0x61, 0xc5);
+			
+			public function HRESULT(IAMBufferNegotiation *self, ALLOCATOR_PROPERTIES* pprop) SuggestAllocatorProperties;
+			public function HRESULT(IAMBufferNegotiation *self, ALLOCATOR_PROPERTIES* pprop) GetAllocatorProperties;
+		}
+		[CRepr]
+		public struct IAMAnalogVideoDecoder : IUnknown
+		{
+			public const new Guid IID = .(0xc6e13350, 0x30ac, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+			
+			public function HRESULT(IAMAnalogVideoDecoder *self, int32* lAnalogVideoStandard) get_AvailableTVFormats;
+			public function HRESULT(IAMAnalogVideoDecoder *self, int32 lAnalogVideoStandard) put_TVFormat;
+			public function HRESULT(IAMAnalogVideoDecoder *self, int32* plAnalogVideoStandard) get_TVFormat;
+			public function HRESULT(IAMAnalogVideoDecoder *self, int32* plLocked) get_HorizontalLocked;
+			public function HRESULT(IAMAnalogVideoDecoder *self, int32 lVCRHorizontalLocking) put_VCRHorizontalLocking;
+			public function HRESULT(IAMAnalogVideoDecoder *self, int32* plVCRHorizontalLocking) get_VCRHorizontalLocking;
+			public function HRESULT(IAMAnalogVideoDecoder *self, int32* plNumberOfLines) get_NumberOfLines;
+			public function HRESULT(IAMAnalogVideoDecoder *self, int32 lOutputEnable) put_OutputEnable;
+			public function HRESULT(IAMAnalogVideoDecoder *self, int32* plOutputEnable) get_OutputEnable;
+		}
+		[CRepr]
+		public struct IAMVideoProcAmp : IUnknown
+		{
+			public const new Guid IID = .(0xc6e13360, 0x30ac, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+			
+			public function HRESULT(IAMVideoProcAmp *self, int32 Property, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlags) GetRange;
+			public function HRESULT(IAMVideoProcAmp *self, int32 Property, int32 lValue, int32 Flags) Set;
+			public function HRESULT(IAMVideoProcAmp *self, int32 Property, int32* lValue, int32* Flags) Get;
+		}
+		[CRepr]
+		public struct IAMCameraControl : IUnknown
+		{
+			public const new Guid IID = .(0xc6e13370, 0x30ac, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+			
+			public function HRESULT(IAMCameraControl *self, int32 Property, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlags) GetRange;
+			public function HRESULT(IAMCameraControl *self, int32 Property, int32 lValue, int32 Flags) Set;
+			public function HRESULT(IAMCameraControl *self, int32 Property, int32* lValue, int32* Flags) Get;
+		}
+		[CRepr]
+		public struct IAMVideoControl : IUnknown
+		{
+			public const new Guid IID = .(0x6a2e0670, 0x28e4, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+			
+			public function HRESULT(IAMVideoControl *self, IPin* pPin, int32* pCapsFlags) GetCaps;
+			public function HRESULT(IAMVideoControl *self, IPin* pPin, int32 Mode) SetMode;
+			public function HRESULT(IAMVideoControl *self, IPin* pPin, int32* Mode) GetMode;
+			public function HRESULT(IAMVideoControl *self, IPin* pPin, int64* ActualFrameRate) GetCurrentActualFrameRate;
+			public function HRESULT(IAMVideoControl *self, IPin* pPin, int32 iIndex, SIZE Dimensions, int64* MaxAvailableFrameRate) GetMaxAvailableFrameRate;
+			public function HRESULT(IAMVideoControl *self, IPin* pPin, int32 iIndex, SIZE Dimensions, int32* ListSize, int64** FrameRates) GetFrameRateList;
+		}
+		[CRepr]
+		public struct IAMCrossbar : IUnknown
+		{
+			public const new Guid IID = .(0xc6e13380, 0x30ac, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+			
+			public function HRESULT(IAMCrossbar *self, int32* OutputPinCount, int32* InputPinCount) get_PinCounts;
+			public function HRESULT(IAMCrossbar *self, int32 OutputPinIndex, int32 InputPinIndex) CanRoute;
+			public function HRESULT(IAMCrossbar *self, int32 OutputPinIndex, int32 InputPinIndex) Route;
+			public function HRESULT(IAMCrossbar *self, int32 OutputPinIndex, int32* InputPinIndex) get_IsRoutedTo;
+			public function HRESULT(IAMCrossbar *self, BOOL IsInputPin, int32 PinIndex, int32* PinIndexRelated, int32* PhysicalType) get_CrossbarPinInfo;
+		}
+		[CRepr]
+		public struct IAMTuner : IUnknown
+		{
+			public const new Guid IID = .(0x211a8761, 0x03ac, 0x11d1, 0x8d, 0x13, 0x00, 0xaa, 0x00, 0xbd, 0x83, 0x39);
+			
+			public function HRESULT(IAMTuner *self, int32 lChannel, int32 lVideoSubChannel, int32 lAudioSubChannel) put_Channel;
+			public function HRESULT(IAMTuner *self, int32* plChannel, int32* plVideoSubChannel, int32* plAudioSubChannel) get_Channel;
+			public function HRESULT(IAMTuner *self, int32* lChannelMin, int32* lChannelMax) ChannelMinMax;
+			public function HRESULT(IAMTuner *self, int32 lCountryCode) put_CountryCode;
+			public function HRESULT(IAMTuner *self, int32* plCountryCode) get_CountryCode;
+			public function HRESULT(IAMTuner *self, int32 lTuningSpace) put_TuningSpace;
+			public function HRESULT(IAMTuner *self, int32* plTuningSpace) get_TuningSpace;
+			public function HRESULT(IAMTuner *self, HANDLE hCurrentUser) Logon;
+			public function HRESULT(IAMTuner *self) Logout;
+			public function HRESULT(IAMTuner *self, int32* plSignalStrength) SignalPresent;
+			public function HRESULT(IAMTuner *self, AMTunerModeType lMode) put_Mode;
+			public function HRESULT(IAMTuner *self, AMTunerModeType* plMode) get_Mode;
+			public function HRESULT(IAMTuner *self, int32* plModes) GetAvailableModes;
+			public function HRESULT(IAMTuner *self, IAMTunerNotification* pNotify, int32 lEvents) RegisterNotificationCallBack;
+			public function HRESULT(IAMTuner *self, IAMTunerNotification* pNotify) UnRegisterNotificationCallBack;
+		}
+		[CRepr]
+		public struct IAMTunerNotification : IUnknown
+		{
+			public const new Guid IID = .(0x211a8760, 0x03ac, 0x11d1, 0x8d, 0x13, 0x00, 0xaa, 0x00, 0xbd, 0x83, 0x39);
+			
+			public function HRESULT(IAMTunerNotification *self, AMTunerEventType Event) OnEvent;
+		}
+		[CRepr]
+		public struct IAMTVTuner : IAMTuner
+		{
+			public const new Guid IID = .(0x211a8766, 0x03ac, 0x11d1, 0x8d, 0x13, 0x00, 0xaa, 0x00, 0xbd, 0x83, 0x39);
+			
+			public function HRESULT(IAMTVTuner *self, int32* lAnalogVideoStandard) get_AvailableTVFormats;
+			public function HRESULT(IAMTVTuner *self, int32* plAnalogVideoStandard) get_TVFormat;
+			public function HRESULT(IAMTVTuner *self, int32 lChannel, int32* plFoundSignal) AutoTune;
+			public function HRESULT(IAMTVTuner *self) StoreAutoTune;
+			public function HRESULT(IAMTVTuner *self, int32* plNumInputConnections) get_NumInputConnections;
+			public function HRESULT(IAMTVTuner *self, int32 lIndex, TunerInputType InputType) put_InputType;
+			public function HRESULT(IAMTVTuner *self, int32 lIndex, TunerInputType* pInputType) get_InputType;
+			public function HRESULT(IAMTVTuner *self, int32 lIndex) put_ConnectInput;
+			public function HRESULT(IAMTVTuner *self, int32* plIndex) get_ConnectInput;
+			public function HRESULT(IAMTVTuner *self, int32* lFreq) get_VideoFrequency;
+			public function HRESULT(IAMTVTuner *self, int32* lFreq) get_AudioFrequency;
+		}
+		[CRepr]
+		public struct IBPCSatelliteTuner : IAMTuner
+		{
+			public const new Guid IID = .(0x211a8765, 0x03ac, 0x11d1, 0x8d, 0x13, 0x00, 0xaa, 0x00, 0xbd, 0x83, 0x39);
+			
+			public function HRESULT(IBPCSatelliteTuner *self, int32* plDefaultVideoType, int32* plDefaultAudioType) get_DefaultSubChannelTypes;
+			public function HRESULT(IBPCSatelliteTuner *self, int32 lDefaultVideoType, int32 lDefaultAudioType) put_DefaultSubChannelTypes;
+			public function HRESULT(IBPCSatelliteTuner *self) IsTapingPermitted;
+		}
+		[CRepr]
+		public struct IAMTVAudio : IUnknown
+		{
+			public const new Guid IID = .(0x83ec1c30, 0x23d1, 0x11d1, 0x99, 0xe6, 0x00, 0xa0, 0xc9, 0x56, 0x02, 0x66);
+			
+			public function HRESULT(IAMTVAudio *self, int32* plModes) GetHardwareSupportedTVAudioModes;
+			public function HRESULT(IAMTVAudio *self, int32* plModes) GetAvailableTVAudioModes;
+			public function HRESULT(IAMTVAudio *self, int32* plMode) get_TVAudioMode;
+			public function HRESULT(IAMTVAudio *self, int32 lMode) put_TVAudioMode;
+			public function HRESULT(IAMTVAudio *self, IAMTunerNotification* pNotify, int32 lEvents) RegisterNotificationCallBack;
+			public function HRESULT(IAMTVAudio *self, IAMTunerNotification* pNotify) UnRegisterNotificationCallBack;
+		}
+		[CRepr]
+		public struct IAMTVAudioNotification : IUnknown
+		{
+			public const new Guid IID = .(0x83ec1c33, 0x23d1, 0x11d1, 0x99, 0xe6, 0x00, 0xa0, 0xc9, 0x56, 0x02, 0x66);
+			
+			public function HRESULT(IAMTVAudioNotification *self, AMTVAudioEventType Event) OnEvent;
+		}
+		[CRepr]
+		public struct IAMAnalogVideoEncoder : IUnknown
+		{
+			public const new Guid IID = .(0xc6e133b0, 0x30ac, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+			
+			public function HRESULT(IAMAnalogVideoEncoder *self, int32* lAnalogVideoStandard) get_AvailableTVFormats;
+			public function HRESULT(IAMAnalogVideoEncoder *self, int32 lAnalogVideoStandard) put_TVFormat;
+			public function HRESULT(IAMAnalogVideoEncoder *self, int32* plAnalogVideoStandard) get_TVFormat;
+			public function HRESULT(IAMAnalogVideoEncoder *self, int32 lVideoCopyProtection) put_CopyProtection;
+			public function HRESULT(IAMAnalogVideoEncoder *self, int32* lVideoCopyProtection) get_CopyProtection;
+			public function HRESULT(IAMAnalogVideoEncoder *self, int32 lCCEnable) put_CCEnable;
+			public function HRESULT(IAMAnalogVideoEncoder *self, int32* lCCEnable) get_CCEnable;
+		}
+		[CRepr]
+		public struct IMediaPropertyBag : IPropertyBag
+		{
+			public const new Guid IID = .(0x6025a880, 0xc0d5, 0x11d0, 0xbd, 0x4e, 0x00, 0xa0, 0xc9, 0x11, 0xce, 0x86);
+			
+			public function HRESULT(IMediaPropertyBag *self, uint32 iProperty, VARIANT* pvarPropertyName, VARIANT* pvarPropertyValue) EnumProperty;
+		}
+		[CRepr]
+		public struct IPersistMediaPropertyBag : IPersist
+		{
+			public const new Guid IID = .(0x5738e040, 0xb67f, 0x11d0, 0xbd, 0x4d, 0x00, 0xa0, 0xc9, 0x11, 0xce, 0x86);
+			
+			public function HRESULT(IPersistMediaPropertyBag *self) InitNew;
+			public function HRESULT(IPersistMediaPropertyBag *self, IMediaPropertyBag* pPropBag, IErrorLog* pErrorLog) Load;
+			public function HRESULT(IPersistMediaPropertyBag *self, IMediaPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties) Save;
+		}
+		[CRepr]
+		public struct IAMPhysicalPinInfo : IUnknown
+		{
+			public const new Guid IID = .(0xf938c991, 0x3029, 0x11cf, 0x8c, 0x44, 0x00, 0xaa, 0x00, 0x6b, 0x68, 0x14);
+			
+			public function HRESULT(IAMPhysicalPinInfo *self, int32* pType, PWSTR* ppszType) GetPhysicalType;
+		}
+		[CRepr]
+		public struct IAMExtDevice : IUnknown
+		{
+			public const new Guid IID = .(0xb5730a90, 0x1a2c, 0x11cf, 0x8c, 0x23, 0x00, 0xaa, 0x00, 0x6b, 0x68, 0x14);
+			
+			public function HRESULT(IAMExtDevice *self, int32 Capability, int32* pValue, double* pdblValue) GetCapability;
+			public function HRESULT(IAMExtDevice *self, PWSTR* ppszData) get_ExternalDeviceID;
+			public function HRESULT(IAMExtDevice *self, PWSTR* ppszData) get_ExternalDeviceVersion;
+			public function HRESULT(IAMExtDevice *self, int32 PowerMode) put_DevicePower;
+			public function HRESULT(IAMExtDevice *self, int32* pPowerMode) get_DevicePower;
+			public function HRESULT(IAMExtDevice *self, uint hEvent, int32 Mode, int32* pStatus) Calibrate;
+			public function HRESULT(IAMExtDevice *self, int32 DevicePort) put_DevicePort;
+			public function HRESULT(IAMExtDevice *self, int32* pDevicePort) get_DevicePort;
+		}
+		[CRepr]
+		public struct IAMExtTransport : IUnknown
+		{
+			public const new Guid IID = .(0xa03cd5f0, 0x3045, 0x11cf, 0x8c, 0x44, 0x00, 0xaa, 0x00, 0x6b, 0x68, 0x14);
+			
+			public function HRESULT(IAMExtTransport *self, int32 Capability, int32* pValue, double* pdblValue) GetCapability;
+			public function HRESULT(IAMExtTransport *self, int32 State) put_MediaState;
+			public function HRESULT(IAMExtTransport *self, int32* pState) get_MediaState;
+			public function HRESULT(IAMExtTransport *self, int32 State) put_LocalControl;
+			public function HRESULT(IAMExtTransport *self, int32* pState) get_LocalControl;
+			public function HRESULT(IAMExtTransport *self, int32 StatusItem, int32* pValue) GetStatus;
+			public function HRESULT(IAMExtTransport *self, int32 Param, int32* pValue, PWSTR* ppszData) GetTransportBasicParameters;
+			public function HRESULT(IAMExtTransport *self, int32 Param, int32 Value, PWSTR pszData) SetTransportBasicParameters;
+			public function HRESULT(IAMExtTransport *self, int32 Param, int32* pValue) GetTransportVideoParameters;
+			public function HRESULT(IAMExtTransport *self, int32 Param, int32 Value) SetTransportVideoParameters;
+			public function HRESULT(IAMExtTransport *self, int32 Param, int32* pValue) GetTransportAudioParameters;
+			public function HRESULT(IAMExtTransport *self, int32 Param, int32 Value) SetTransportAudioParameters;
+			public function HRESULT(IAMExtTransport *self, int32 Mode) put_Mode;
+			public function HRESULT(IAMExtTransport *self, int32* pMode) get_Mode;
+			public function HRESULT(IAMExtTransport *self, double dblRate) put_Rate;
+			public function HRESULT(IAMExtTransport *self, double* pdblRate) get_Rate;
+			public function HRESULT(IAMExtTransport *self, int32* pEnabled, int32* pOffset, uint* phEvent) GetChase;
+			public function HRESULT(IAMExtTransport *self, int32 Enable, int32 Offset, uint hEvent) SetChase;
+			public function HRESULT(IAMExtTransport *self, int32* pSpeed, int32* pDuration) GetBump;
+			public function HRESULT(IAMExtTransport *self, int32 Speed, int32 Duration) SetBump;
+			public function HRESULT(IAMExtTransport *self, int32* pEnabled) get_AntiClogControl;
+			public function HRESULT(IAMExtTransport *self, int32 Enable) put_AntiClogControl;
+			public function HRESULT(IAMExtTransport *self, int32 EditID, int32* pState) GetEditPropertySet;
+			public function HRESULT(IAMExtTransport *self, int32* pEditID, int32 State) SetEditPropertySet;
+			public function HRESULT(IAMExtTransport *self, int32 EditID, int32 Param, int32* pValue) GetEditProperty;
+			public function HRESULT(IAMExtTransport *self, int32 EditID, int32 Param, int32 Value) SetEditProperty;
+			public function HRESULT(IAMExtTransport *self, int32* pValue) get_EditStart;
+			public function HRESULT(IAMExtTransport *self, int32 Value) put_EditStart;
+		}
+		[CRepr]
+		public struct IAMTimecodeReader : IUnknown
+		{
+			public const new Guid IID = .(0x9b496ce1, 0x811b, 0x11cf, 0x8c, 0x77, 0x00, 0xaa, 0x00, 0x6b, 0x68, 0x14);
+			
+			public function HRESULT(IAMTimecodeReader *self, int32 Param, int32* pValue) GetTCRMode;
+			public function HRESULT(IAMTimecodeReader *self, int32 Param, int32 Value) SetTCRMode;
+			public function HRESULT(IAMTimecodeReader *self, int32 Line) put_VITCLine;
+			public function HRESULT(IAMTimecodeReader *self, int32* pLine) get_VITCLine;
+			public function HRESULT(IAMTimecodeReader *self, TIMECODE_SAMPLE* pTimecodeSample) GetTimecode;
+		}
+		[CRepr]
+		public struct IAMTimecodeGenerator : IUnknown
+		{
+			public const new Guid IID = .(0x9b496ce0, 0x811b, 0x11cf, 0x8c, 0x77, 0x00, 0xaa, 0x00, 0x6b, 0x68, 0x14);
+			
+			public function HRESULT(IAMTimecodeGenerator *self, int32 Param, int32* pValue) GetTCGMode;
+			public function HRESULT(IAMTimecodeGenerator *self, int32 Param, int32 Value) SetTCGMode;
+			public function HRESULT(IAMTimecodeGenerator *self, int32 Line) put_VITCLine;
+			public function HRESULT(IAMTimecodeGenerator *self, int32* pLine) get_VITCLine;
+			public function HRESULT(IAMTimecodeGenerator *self, TIMECODE_SAMPLE* pTimecodeSample) SetTimecode;
+			public function HRESULT(IAMTimecodeGenerator *self, TIMECODE_SAMPLE* pTimecodeSample) GetTimecode;
+		}
+		[CRepr]
+		public struct IAMTimecodeDisplay : IUnknown
+		{
+			public const new Guid IID = .(0x9b496ce2, 0x811b, 0x11cf, 0x8c, 0x77, 0x00, 0xaa, 0x00, 0x6b, 0x68, 0x14);
+			
+			public function HRESULT(IAMTimecodeDisplay *self, int32* pState) GetTCDisplayEnable;
+			public function HRESULT(IAMTimecodeDisplay *self, int32 State) SetTCDisplayEnable;
+			public function HRESULT(IAMTimecodeDisplay *self, int32 Param, int32* pValue) GetTCDisplay;
+			public function HRESULT(IAMTimecodeDisplay *self, int32 Param, int32 Value) SetTCDisplay;
+		}
+		[CRepr]
+		public struct IAMDevMemoryAllocator : IUnknown
+		{
+			public const new Guid IID = .(0xc6545bf0, 0xe76b, 0x11d0, 0xbd, 0x52, 0x00, 0xa0, 0xc9, 0x11, 0xce, 0x86);
+			
+			public function HRESULT(IAMDevMemoryAllocator *self, uint32* pdwcbTotalFree, uint32* pdwcbLargestFree, uint32* pdwcbTotalMemory, uint32* pdwcbMinimumChunk) GetInfo;
+			public function HRESULT(IAMDevMemoryAllocator *self, uint8* pBuffer) CheckMemory;
+			public function HRESULT(IAMDevMemoryAllocator *self, uint8** ppBuffer, uint32* pdwcbBuffer) Alloc;
+			public function HRESULT(IAMDevMemoryAllocator *self, uint8* pBuffer) Free;
+			public function HRESULT(IAMDevMemoryAllocator *self, IUnknown** ppUnkInnner, IUnknown* pUnkOuter) GetDevMemoryObject;
+		}
+		[CRepr]
+		public struct IAMDevMemoryControl : IUnknown
+		{
+			public const new Guid IID = .(0xc6545bf1, 0xe76b, 0x11d0, 0xbd, 0x52, 0x00, 0xa0, 0xc9, 0x11, 0xce, 0x86);
+			
+			public function HRESULT(IAMDevMemoryControl *self) QueryWriteSync;
+			public function HRESULT(IAMDevMemoryControl *self) WriteSync;
+			public function HRESULT(IAMDevMemoryControl *self, uint32* pdwDevId) GetDevId;
+		}
+		[CRepr]
+		public struct IAMStreamSelect : IUnknown
+		{
+			public const new Guid IID = .(0xc1960960, 0x17f5, 0x11d1, 0xab, 0xe1, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function HRESULT(IAMStreamSelect *self, uint32* pcStreams) Count;
+			public function HRESULT(IAMStreamSelect *self, int32 lIndex, AM_MEDIA_TYPE** ppmt, uint32* pdwFlags, uint32* plcid, uint32* pdwGroup, PWSTR* ppszName, IUnknown** ppObject, IUnknown** ppUnk) Info;
+			public function HRESULT(IAMStreamSelect *self, int32 lIndex, uint32 dwFlags) Enable;
+		}
+		[CRepr]
+		public struct IAMResourceControl : IUnknown
+		{
+			public const new Guid IID = .(0x8389d2d0, 0x77d7, 0x11d1, 0xab, 0xe6, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function HRESULT(IAMResourceControl *self, uint32 dwFlags, void* pvReserved) Reserve;
+		}
+		[CRepr]
+		public struct IAMClockAdjust : IUnknown
+		{
+			public const new Guid IID = .(0x4d5466b0, 0xa49c, 0x11d1, 0xab, 0xe8, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function HRESULT(IAMClockAdjust *self, int64 rtDelta) SetClockDelta;
+		}
+		[CRepr]
+		public struct IAMFilterMiscFlags : IUnknown
+		{
+			public const new Guid IID = .(0x2dd74950, 0xa890, 0x11d1, 0xab, 0xe8, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function uint32(IAMFilterMiscFlags *self) GetMiscFlags;
+		}
+		[CRepr]
+		public struct IDrawVideoImage : IUnknown
+		{
+			public const new Guid IID = .(0x48efb120, 0xab49, 0x11d2, 0xae, 0xd2, 0x00, 0xa0, 0xc9, 0x95, 0xe8, 0xd5);
+			
+			public function HRESULT(IDrawVideoImage *self) DrawVideoImageBegin;
+			public function HRESULT(IDrawVideoImage *self) DrawVideoImageEnd;
+			public function HRESULT(IDrawVideoImage *self, HDC hdc, RECT* lprcSrc, RECT* lprcDst) DrawVideoImageDraw;
+		}
+		[CRepr]
+		public struct IDecimateVideoImage : IUnknown
+		{
+			public const new Guid IID = .(0x2e5ea3e0, 0xe924, 0x11d2, 0xb6, 0xda, 0x00, 0xa0, 0xc9, 0x95, 0xe8, 0xdf);
+			
+			public function HRESULT(IDecimateVideoImage *self, int32 lWidth, int32 lHeight) SetDecimationImageSize;
+			public function HRESULT(IDecimateVideoImage *self) ResetDecimationImageSize;
+		}
+		[CRepr]
+		public struct IAMVideoDecimationProperties : IUnknown
+		{
+			public const new Guid IID = .(0x60d32930, 0x13da, 0x11d3, 0x9e, 0xc6, 0xc4, 0xfc, 0xae, 0xf5, 0xc7, 0xbe);
+			
+			public function HRESULT(IAMVideoDecimationProperties *self, DECIMATION_USAGE* lpUsage) QueryDecimationUsage;
+			public function HRESULT(IAMVideoDecimationProperties *self, DECIMATION_USAGE Usage) SetDecimationUsage;
+		}
+		[CRepr]
+		public struct IVideoFrameStep : IUnknown
+		{
+			public const new Guid IID = .(0xe46a9787, 0x2b71, 0x444d, 0xa4, 0xb5, 0x1f, 0xab, 0x7b, 0x70, 0x8d, 0x6a);
+			
+			public function HRESULT(IVideoFrameStep *self, uint32 dwFrames, IUnknown* pStepObject) Step;
+			public function HRESULT(IVideoFrameStep *self, int32 bMultiple, IUnknown* pStepObject) CanStep;
+			public function HRESULT(IVideoFrameStep *self) CancelStep;
+		}
+		[CRepr]
+		public struct IAMLatency : IUnknown
+		{
+			public const new Guid IID = .(0x62ea93ba, 0xec62, 0x11d2, 0xb7, 0x70, 0x00, 0xc0, 0x4f, 0xb6, 0xbd, 0x3d);
+			
+			public function HRESULT(IAMLatency *self, int64* prtLatency) GetLatency;
+		}
+		[CRepr]
+		public struct IAMPushSource : IAMLatency
+		{
+			public const new Guid IID = .(0xf185fe76, 0xe64e, 0x11d2, 0xb7, 0x6e, 0x00, 0xc0, 0x4f, 0xb6, 0xbd, 0x3d);
+			
+			public function HRESULT(IAMPushSource *self, uint32* pFlags) GetPushSourceFlags;
+			public function HRESULT(IAMPushSource *self, uint32 Flags) SetPushSourceFlags;
+			public function HRESULT(IAMPushSource *self, int64 rtOffset) SetStreamOffset;
+			public function HRESULT(IAMPushSource *self, int64* prtOffset) GetStreamOffset;
+			public function HRESULT(IAMPushSource *self, int64* prtMaxOffset) GetMaxStreamOffset;
+			public function HRESULT(IAMPushSource *self, int64 rtMaxOffset) SetMaxStreamOffset;
+		}
+		[CRepr]
+		public struct IAMDeviceRemoval : IUnknown
+		{
+			public const new Guid IID = .(0xf90a6130, 0xb658, 0x11d2, 0xae, 0x49, 0x00, 0x00, 0xf8, 0x75, 0x4b, 0x99);
+			
+			public function HRESULT(IAMDeviceRemoval *self, Guid* pclsidInterfaceClass, PWSTR* pwszSymbolicLink) DeviceInfo;
+			public function HRESULT(IAMDeviceRemoval *self) Reassociate;
+			public function HRESULT(IAMDeviceRemoval *self) Disassociate;
+		}
+		[CRepr]
+		public struct IDVEnc : IUnknown
+		{
+			public const new Guid IID = .(0xd18e17a0, 0xaacb, 0x11d0, 0xaf, 0xb0, 0x00, 0xaa, 0x00, 0xb6, 0x7a, 0x42);
+			
+			public function HRESULT(IDVEnc *self, int32* VideoFormat, int32* DVFormat, int32* Resolution, uint8 fDVInfo, DVINFO* sDVInfo) get_IFormatResolution;
+			public function HRESULT(IDVEnc *self, int32 VideoFormat, int32 DVFormat, int32 Resolution, uint8 fDVInfo, DVINFO* sDVInfo) put_IFormatResolution;
+		}
+		[CRepr]
+		public struct IIPDVDec : IUnknown
+		{
+			public const new Guid IID = .(0xb8e8bd60, 0x0bfe, 0x11d0, 0xaf, 0x91, 0x00, 0xaa, 0x00, 0xb6, 0x7a, 0x42);
+			
+			public function HRESULT(IIPDVDec *self, int32* displayPix) get_IPDisplay;
+			public function HRESULT(IIPDVDec *self, int32 displayPix) put_IPDisplay;
+		}
+		[CRepr]
+		public struct IDVRGB219 : IUnknown
+		{
+			public const new Guid IID = .(0x58473a19, 0x2bc8, 0x4663, 0x80, 0x12, 0x25, 0xf8, 0x1b, 0xab, 0xdd, 0xd1);
+			
+			public function HRESULT(IDVRGB219 *self, BOOL bState) SetRGB219;
+		}
+		[CRepr]
+		public struct IDVSplitter : IUnknown
+		{
+			public const new Guid IID = .(0x92a3a302, 0xda7c, 0x4a1f, 0xba, 0x7e, 0x18, 0x02, 0xbb, 0x5d, 0x2d, 0x02);
+			
+			public function HRESULT(IDVSplitter *self, int32 nDiscard) DiscardAlternateVideoFrames;
+		}
+		[CRepr]
+		public struct IAMAudioRendererStats : IUnknown
+		{
+			public const new Guid IID = .(0x22320cb2, 0xd41a, 0x11d2, 0xbf, 0x7c, 0xd7, 0xcb, 0x9d, 0xf0, 0xbf, 0x93);
+			
+			public function HRESULT(IAMAudioRendererStats *self, uint32 dwParam, uint32* pdwParam1, uint32* pdwParam2) GetStatParam;
+		}
+		[CRepr]
+		public struct IAMGraphStreams : IUnknown
+		{
+			public const new Guid IID = .(0x632105fa, 0x072e, 0x11d3, 0x8a, 0xf9, 0x00, 0xc0, 0x4f, 0xb6, 0xbd, 0x3d);
+			
+			public function HRESULT(IAMGraphStreams *self, IPin* pPin, Guid* riid, void** ppvInterface, uint32 dwFlags) FindUpstreamInterface;
+			public function HRESULT(IAMGraphStreams *self, BOOL bUseStreamOffset) SyncUsingStreamOffset;
+			public function HRESULT(IAMGraphStreams *self, int64 rtMaxGraphLatency) SetMaxGraphLatency;
+		}
+		[CRepr]
+		public struct IAMOverlayFX : IUnknown
+		{
+			public const new Guid IID = .(0x62fae250, 0x7e65, 0x4460, 0xbf, 0xc9, 0x63, 0x98, 0xb3, 0x22, 0x07, 0x3c);
+			
+			public function HRESULT(IAMOverlayFX *self, uint32* lpdwOverlayFXCaps) QueryOverlayFXCaps;
+			public function HRESULT(IAMOverlayFX *self, uint32 dwOverlayFX) SetOverlayFX;
+			public function HRESULT(IAMOverlayFX *self, uint32* lpdwOverlayFX) GetOverlayFX;
+		}
+		[CRepr]
+		public struct IAMOpenProgress : IUnknown
+		{
+			public const new Guid IID = .(0x8e1c39a1, 0xde53, 0x11cf, 0xaa, 0x63, 0x00, 0x80, 0xc7, 0x44, 0x52, 0x8d);
+			
+			public function HRESULT(IAMOpenProgress *self, int64* pllTotal, int64* pllCurrent) QueryProgress;
+			public function HRESULT(IAMOpenProgress *self) AbortOperation;
+		}
+		[CRepr]
+		public struct IMpeg2Demultiplexer : IUnknown
+		{
+			public const new Guid IID = .(0x436eee9c, 0x264f, 0x4242, 0x90, 0xe1, 0x4e, 0x33, 0x0c, 0x10, 0x75, 0x12);
+			
+			public function HRESULT(IMpeg2Demultiplexer *self, AM_MEDIA_TYPE* pMediaType, PWSTR pszPinName, IPin** ppIPin) CreateOutputPin;
+			public function HRESULT(IMpeg2Demultiplexer *self, PWSTR pszPinName, AM_MEDIA_TYPE* pMediaType) SetOutputPinMediaType;
+			public function HRESULT(IMpeg2Demultiplexer *self, PWSTR pszPinName) DeleteOutputPin;
+		}
+		[CRepr]
+		public struct IEnumStreamIdMap : IUnknown
+		{
+			public const new Guid IID = .(0x945c1566, 0x6202, 0x46fc, 0x96, 0xc7, 0xd8, 0x7f, 0x28, 0x9c, 0x65, 0x34);
+			
+			public function HRESULT(IEnumStreamIdMap *self, uint32 cRequest, STREAM_ID_MAP* pStreamIdMap, uint32* pcReceived) Next;
+			public function HRESULT(IEnumStreamIdMap *self, uint32 cRecords) Skip;
+			public function HRESULT(IEnumStreamIdMap *self) Reset;
+			public function HRESULT(IEnumStreamIdMap *self, IEnumStreamIdMap** ppIEnumStreamIdMap) Clone;
+		}
+		[CRepr]
+		public struct IMPEG2StreamIdMap : IUnknown
+		{
+			public const new Guid IID = .(0xd0e04c47, 0x25b8, 0x4369, 0x92, 0x5a, 0x36, 0x2a, 0x01, 0xd9, 0x54, 0x44);
+			
+			public function HRESULT(IMPEG2StreamIdMap *self, uint32 ulStreamId, uint32 MediaSampleContent, uint32 ulSubstreamFilterValue, int32 iDataOffset) MapStreamId;
+			public function HRESULT(IMPEG2StreamIdMap *self, uint32 culStreamId, uint32* pulStreamId) UnmapStreamId;
+			public function HRESULT(IMPEG2StreamIdMap *self, IEnumStreamIdMap** ppIEnumStreamIdMap) EnumStreamIdMap;
+		}
+		[CRepr]
+		public struct IRegisterServiceProvider : IUnknown
+		{
+			public const new Guid IID = .(0x7b3a2f01, 0x0751, 0x48dd, 0xb5, 0x56, 0x00, 0x47, 0x85, 0x17, 0x1c, 0x54);
+			
+			public function HRESULT(IRegisterServiceProvider *self, Guid* guidService, IUnknown* pUnkObject) RegisterService;
+		}
+		[CRepr]
+		public struct IAMClockSlave : IUnknown
+		{
+			public const new Guid IID = .(0x9fd52741, 0x176d, 0x4b36, 0x8f, 0x51, 0xca, 0x8f, 0x93, 0x32, 0x23, 0xbe);
+			
+			public function HRESULT(IAMClockSlave *self, uint32 dwTolerance) SetErrorTolerance;
+			public function HRESULT(IAMClockSlave *self, uint32* pdwTolerance) GetErrorTolerance;
+		}
+		[CRepr]
+		public struct IAMGraphBuilderCallback : IUnknown
+		{
+			public const new Guid IID = .(0x4995f511, 0x9ddb, 0x4f12, 0xbd, 0x3b, 0xf0, 0x46, 0x11, 0x80, 0x7b, 0x79);
+			
+			public function HRESULT(IAMGraphBuilderCallback *self, IMoniker* pMon) SelectedFilter;
+			public function HRESULT(IAMGraphBuilderCallback *self, IBaseFilter* pFil) CreatedFilter;
+		}
+		[CRepr]
+		public struct IAMFilterGraphCallback : IUnknown
+		{
+			public const new Guid IID = .(0x56a868fd, 0x0ad4, 0x11ce, 0xb0, 0xa3, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IAMFilterGraphCallback *self, IPin* pPin) UnableToRender;
+		}
+		[CRepr]
+		public struct IGetCapabilitiesKey : IUnknown
+		{
+			public const new Guid IID = .(0xa8809222, 0x07bb, 0x48ea, 0x95, 0x1c, 0x33, 0x15, 0x81, 0x00, 0x62, 0x5b);
+			
+			public function HRESULT(IGetCapabilitiesKey *self, HKEY* pHKey) GetCapabilitiesKey;
+		}
+		[CRepr]
+		public struct IEncoderAPI : IUnknown
+		{
+			public const new Guid IID = .(0x70423839, 0x6acc, 0x4b23, 0xb0, 0x79, 0x21, 0xdb, 0xf0, 0x81, 0x56, 0xa5);
+			
+			public function HRESULT(IEncoderAPI *self, Guid* Api) IsSupported;
+			public function HRESULT(IEncoderAPI *self, Guid* Api) IsAvailable;
+			public function HRESULT(IEncoderAPI *self, Guid* Api, VARIANT* ValueMin, VARIANT* ValueMax, VARIANT* SteppingDelta) GetParameterRange;
+			public function HRESULT(IEncoderAPI *self, Guid* Api, VARIANT** Values, uint32* ValuesCount) GetParameterValues;
+			public function HRESULT(IEncoderAPI *self, Guid* Api, VARIANT* Value) GetDefaultValue;
+			public function HRESULT(IEncoderAPI *self, Guid* Api, VARIANT* Value) GetValue;
+			public function HRESULT(IEncoderAPI *self, Guid* Api, VARIANT* Value) SetValue;
+		}
+		[CRepr]
+		public struct IVideoEncoder : IEncoderAPI
+		{
+			public const new Guid IID = .(0x02997c3b, 0x8e1b, 0x460e, 0x92, 0x70, 0x54, 0x5e, 0x0d, 0xe9, 0x56, 0x3e);
+			
+		}
+		[CRepr]
+		public struct IAMDecoderCaps : IUnknown
+		{
+			public const new Guid IID = .(0xc0dff467, 0xd499, 0x4986, 0x97, 0x2b, 0xe1, 0xd9, 0x09, 0x0f, 0xa9, 0x41);
+			
+			public function HRESULT(IAMDecoderCaps *self, uint32 dwCapIndex, uint32* lpdwCap) GetDecoderCaps;
+		}
+		[CRepr]
+		public struct IAMCertifiedOutputProtection : IUnknown
+		{
+			public const new Guid IID = .(0x6feded3e, 0x0ff1, 0x4901, 0xa2, 0xf1, 0x43, 0xf7, 0x01, 0x2c, 0x85, 0x15);
+			
+			public function HRESULT(IAMCertifiedOutputProtection *self, Guid* pRandom, uint8** VarLenCertGH, uint32* pdwLengthCertGH) KeyExchange;
+			public function HRESULT(IAMCertifiedOutputProtection *self, AMCOPPSignature* pSig) SessionSequenceStart;
+			public function HRESULT(IAMCertifiedOutputProtection *self, AMCOPPCommand* cmd) ProtectionCommand;
+			public function HRESULT(IAMCertifiedOutputProtection *self, AMCOPPStatusInput* pStatusInput, AMCOPPStatusOutput* pStatusOutput) ProtectionStatus;
+		}
+		[CRepr]
+		public struct IAMAsyncReaderTimestampScaling : IUnknown
+		{
+			public const new Guid IID = .(0xcf7b26fc, 0x9a00, 0x485b, 0x81, 0x47, 0x3e, 0x78, 0x9d, 0x5e, 0x8f, 0x67);
+			
+			public function HRESULT(IAMAsyncReaderTimestampScaling *self, BOOL* pfRaw) GetTimestampMode;
+			public function HRESULT(IAMAsyncReaderTimestampScaling *self, BOOL fRaw) SetTimestampMode;
+		}
+		[CRepr]
+		public struct IAMPluginControl : IUnknown
+		{
+			public const new Guid IID = .(0x0e26a181, 0xf40c, 0x4635, 0x87, 0x86, 0x97, 0x62, 0x84, 0xb5, 0x29, 0x81);
+			
+			public function HRESULT(IAMPluginControl *self, Guid* subType, Guid* clsid) GetPreferredClsid;
+			public function HRESULT(IAMPluginControl *self, uint32 index, Guid* subType, Guid* clsid) GetPreferredClsidByIndex;
+			public function HRESULT(IAMPluginControl *self, Guid* subType, Guid* clsid) SetPreferredClsid;
+			public function HRESULT(IAMPluginControl *self, Guid* clsid) IsDisabled;
+			public function HRESULT(IAMPluginControl *self, uint32 index, Guid* clsid) GetDisabledByIndex;
+			public function HRESULT(IAMPluginControl *self, Guid* clsid, BOOL disabled) SetDisabled;
+			public function HRESULT(IAMPluginControl *self, PWSTR dllName) IsLegacyDisabled;
+		}
+		[CRepr]
+		public struct IPinConnection : IUnknown
+		{
+			public const new Guid IID = .(0x4a9a62d3, 0x27d4, 0x403d, 0x91, 0xe9, 0x89, 0xf5, 0x40, 0xe5, 0x55, 0x34);
+			
+			public function HRESULT(IPinConnection *self, AM_MEDIA_TYPE* pmt) DynamicQueryAccept;
+			public function HRESULT(IPinConnection *self, HANDLE hNotifyEvent) NotifyEndOfStream;
+			public function HRESULT(IPinConnection *self) IsEndPin;
+			public function HRESULT(IPinConnection *self) DynamicDisconnect;
+		}
+		[CRepr]
+		public struct IPinFlowControl : IUnknown
+		{
+			public const new Guid IID = .(0xc56e9858, 0xdbf3, 0x4f6b, 0x81, 0x19, 0x38, 0x4a, 0xf2, 0x06, 0x0d, 0xeb);
+			
+			public function HRESULT(IPinFlowControl *self, uint32 dwBlockFlags, HANDLE hEvent) Block;
+		}
+		[CRepr]
+		public struct IGraphConfig : IUnknown
+		{
+			public const new Guid IID = .(0x03a1eb8e, 0x32bf, 0x4245, 0x85, 0x02, 0x11, 0x4d, 0x08, 0xa9, 0xcb, 0x88);
+			
+			public function HRESULT(IGraphConfig *self, IPin* pOutputPin, IPin* pInputPin, AM_MEDIA_TYPE* pmtFirstConnection, IBaseFilter* pUsingFilter, HANDLE hAbortEvent, uint32 dwFlags) Reconnect;
+			public function HRESULT(IGraphConfig *self, IGraphConfigCallback* pCallback, void* pvContext, uint32 dwFlags, HANDLE hAbortEvent) Reconfigure;
+			public function HRESULT(IGraphConfig *self, IBaseFilter* pFilter) AddFilterToCache;
+			public function HRESULT(IGraphConfig *self, IEnumFilters** pEnum) EnumCacheFilter;
+			public function HRESULT(IGraphConfig *self, IBaseFilter* pFilter) RemoveFilterFromCache;
+			public function HRESULT(IGraphConfig *self, int64* prtStart) GetStartTime;
+			public function HRESULT(IGraphConfig *self, IPin* pOutputPin, IPinConnection* pConnection, HANDLE hEventAbort) PushThroughData;
+			public function HRESULT(IGraphConfig *self, IBaseFilter* pFilter, uint32 dwFlags) SetFilterFlags;
+			public function HRESULT(IGraphConfig *self, IBaseFilter* pFilter, uint32* pdwFlags) GetFilterFlags;
+			public function HRESULT(IGraphConfig *self, IBaseFilter* pFilter, uint32 Flags) RemoveFilterEx;
+		}
+		[CRepr]
+		public struct IGraphConfigCallback : IUnknown
+		{
+			public const new Guid IID = .(0xade0fd60, 0xd19d, 0x11d2, 0xab, 0xf6, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function HRESULT(IGraphConfigCallback *self, void* pvContext, uint32 dwFlags) Reconfigure;
+		}
+		[CRepr]
+		public struct IFilterChain : IUnknown
+		{
+			public const new Guid IID = .(0xdcfbdcf6, 0x0dc2, 0x45f5, 0x9a, 0xb2, 0x7c, 0x33, 0x0e, 0xa0, 0x9c, 0x29);
+			
+			public function HRESULT(IFilterChain *self, IBaseFilter* pStartFilter, IBaseFilter* pEndFilter) StartChain;
+			public function HRESULT(IFilterChain *self, IBaseFilter* pStartFilter, IBaseFilter* pEndFilter) PauseChain;
+			public function HRESULT(IFilterChain *self, IBaseFilter* pStartFilter, IBaseFilter* pEndFilter) StopChain;
+			public function HRESULT(IFilterChain *self, IBaseFilter* pStartFilter, IBaseFilter* pEndFilter) RemoveChain;
+		}
+		[CRepr]
+		public struct IVMRImagePresenter : IUnknown
+		{
+			public const new Guid IID = .(0xce704fe7, 0xe71e, 0x41fb, 0xba, 0xa2, 0xc4, 0x40, 0x3e, 0x11, 0x82, 0xf5);
+			
+			public function HRESULT(IVMRImagePresenter *self, uint dwUserID) StartPresenting;
+			public function HRESULT(IVMRImagePresenter *self, uint dwUserID) StopPresenting;
+			public function HRESULT(IVMRImagePresenter *self, uint dwUserID, VMRPRESENTATIONINFO* lpPresInfo) PresentImage;
+		}
+		[CRepr]
+		public struct IVMRSurfaceAllocator : IUnknown
+		{
+			public const new Guid IID = .(0x31ce832e, 0x4484, 0x458b, 0x8c, 0xca, 0xf4, 0xd7, 0xe3, 0xdb, 0x0b, 0x52);
+			
+			public function HRESULT(IVMRSurfaceAllocator *self, uint dwUserID, VMRALLOCATIONINFO* lpAllocInfo, uint32* lpdwActualBuffers, IDirectDrawSurface7** lplpSurface) AllocateSurface;
+			public function HRESULT(IVMRSurfaceAllocator *self, uint dwID) FreeSurface;
+			public function HRESULT(IVMRSurfaceAllocator *self, uint dwUserID, IDirectDrawSurface7* lpSurface, uint32 dwSurfaceFlags) PrepareSurface;
+			public function HRESULT(IVMRSurfaceAllocator *self, IVMRSurfaceAllocatorNotify* lpIVMRSurfAllocNotify) AdviseNotify;
+		}
+		[CRepr]
+		public struct IVMRSurfaceAllocatorNotify : IUnknown
+		{
+			public const new Guid IID = .(0xaada05a8, 0x5a4e, 0x4729, 0xaf, 0x0b, 0xce, 0xa2, 0x7a, 0xed, 0x51, 0xe2);
+			
+			public function HRESULT(IVMRSurfaceAllocatorNotify *self, uint dwUserID, IVMRSurfaceAllocator* lpIVRMSurfaceAllocator) AdviseSurfaceAllocator;
+			public function HRESULT(IVMRSurfaceAllocatorNotify *self, IDirectDraw7* lpDDrawDevice, HMONITOR hMonitor) SetDDrawDevice;
+			public function HRESULT(IVMRSurfaceAllocatorNotify *self, IDirectDraw7* lpDDrawDevice, HMONITOR hMonitor) ChangeDDrawDevice;
+			public function HRESULT(IVMRSurfaceAllocatorNotify *self) RestoreDDrawSurfaces;
+			public function HRESULT(IVMRSurfaceAllocatorNotify *self, int32 EventCode, int Param1, int Param2) NotifyEvent;
+			public function HRESULT(IVMRSurfaceAllocatorNotify *self, uint32 clrBorder) SetBorderColor;
+		}
+		[CRepr]
+		public struct IVMRWindowlessControl : IUnknown
+		{
+			public const new Guid IID = .(0x0eb1088c, 0x4dcd, 0x46f0, 0x87, 0x8f, 0x39, 0xda, 0xe8, 0x6a, 0x51, 0xb7);
+			
+			public function HRESULT(IVMRWindowlessControl *self, int32* lpWidth, int32* lpHeight, int32* lpARWidth, int32* lpARHeight) GetNativeVideoSize;
+			public function HRESULT(IVMRWindowlessControl *self, int32* lpWidth, int32* lpHeight) GetMinIdealVideoSize;
+			public function HRESULT(IVMRWindowlessControl *self, int32* lpWidth, int32* lpHeight) GetMaxIdealVideoSize;
+			public function HRESULT(IVMRWindowlessControl *self, RECT* lpSRCRect, RECT* lpDSTRect) SetVideoPosition;
+			public function HRESULT(IVMRWindowlessControl *self, RECT* lpSRCRect, RECT* lpDSTRect) GetVideoPosition;
+			public function HRESULT(IVMRWindowlessControl *self, uint32* lpAspectRatioMode) GetAspectRatioMode;
+			public function HRESULT(IVMRWindowlessControl *self, uint32 AspectRatioMode) SetAspectRatioMode;
+			public function HRESULT(IVMRWindowlessControl *self, HWND hwnd) SetVideoClippingWindow;
+			public function HRESULT(IVMRWindowlessControl *self, HWND hwnd, HDC hdc) RepaintVideo;
+			public function HRESULT(IVMRWindowlessControl *self) DisplayModeChanged;
+			public function HRESULT(IVMRWindowlessControl *self, uint8** lpDib) GetCurrentImage;
+			public function HRESULT(IVMRWindowlessControl *self, uint32 Clr) SetBorderColor;
+			public function HRESULT(IVMRWindowlessControl *self, uint32* lpClr) GetBorderColor;
+			public function HRESULT(IVMRWindowlessControl *self, uint32 Clr) SetColorKey;
+			public function HRESULT(IVMRWindowlessControl *self, uint32* lpClr) GetColorKey;
+		}
+		[CRepr]
+		public struct IVMRMixerControl : IUnknown
+		{
+			public const new Guid IID = .(0x1c1a17b0, 0xbed0, 0x415d, 0x97, 0x4b, 0xdc, 0x66, 0x96, 0x13, 0x15, 0x99);
+			
+			public function HRESULT(IVMRMixerControl *self, uint32 dwStreamID, float Alpha) SetAlpha;
+			public function HRESULT(IVMRMixerControl *self, uint32 dwStreamID, float* pAlpha) GetAlpha;
+			public function HRESULT(IVMRMixerControl *self, uint32 dwStreamID, uint32 dwZ) SetZOrder;
+			public function HRESULT(IVMRMixerControl *self, uint32 dwStreamID, uint32* pZ) GetZOrder;
+			public function HRESULT(IVMRMixerControl *self, uint32 dwStreamID, NORMALIZEDRECT* pRect) SetOutputRect;
+			public function HRESULT(IVMRMixerControl *self, uint32 dwStreamID, NORMALIZEDRECT* pRect) GetOutputRect;
+			public function HRESULT(IVMRMixerControl *self, uint32 ClrBkg) SetBackgroundClr;
+			public function HRESULT(IVMRMixerControl *self, uint32* lpClrBkg) GetBackgroundClr;
+			public function HRESULT(IVMRMixerControl *self, uint32 dwMixerPrefs) SetMixingPrefs;
+			public function HRESULT(IVMRMixerControl *self, uint32* pdwMixerPrefs) GetMixingPrefs;
+		}
+		[CRepr]
+		public struct IVMRMonitorConfig : IUnknown
+		{
+			public const new Guid IID = .(0x9cf0b1b6, 0xfbaa, 0x4b7f, 0x88, 0xcf, 0xcf, 0x1f, 0x13, 0x0a, 0x0d, 0xce);
+			
+			public function HRESULT(IVMRMonitorConfig *self, VMRGUID* pGUID) SetMonitor;
+			public function HRESULT(IVMRMonitorConfig *self, VMRGUID* pGUID) GetMonitor;
+			public function HRESULT(IVMRMonitorConfig *self, VMRGUID* pGUID) SetDefaultMonitor;
+			public function HRESULT(IVMRMonitorConfig *self, VMRGUID* pGUID) GetDefaultMonitor;
+			public function HRESULT(IVMRMonitorConfig *self, VMRMONITORINFO* pInfo, uint32 dwMaxInfoArraySize, uint32* pdwNumDevices) GetAvailableMonitors;
+		}
+		[CRepr]
+		public struct IVMRFilterConfig : IUnknown
+		{
+			public const new Guid IID = .(0x9e5530c5, 0x7034, 0x48b4, 0xbb, 0x46, 0x0b, 0x8a, 0x6e, 0xfc, 0x8e, 0x36);
+			
+			public function HRESULT(IVMRFilterConfig *self, IVMRImageCompositor* lpVMRImgCompositor) SetImageCompositor;
+			public function HRESULT(IVMRFilterConfig *self, uint32 dwMaxStreams) SetNumberOfStreams;
+			public function HRESULT(IVMRFilterConfig *self, uint32* pdwMaxStreams) GetNumberOfStreams;
+			public function HRESULT(IVMRFilterConfig *self, uint32 dwRenderFlags) SetRenderingPrefs;
+			public function HRESULT(IVMRFilterConfig *self, uint32* pdwRenderFlags) GetRenderingPrefs;
+			public function HRESULT(IVMRFilterConfig *self, uint32 Mode) SetRenderingMode;
+			public function HRESULT(IVMRFilterConfig *self, uint32* pMode) GetRenderingMode;
+		}
+		[CRepr]
+		public struct IVMRAspectRatioControl : IUnknown
+		{
+			public const new Guid IID = .(0xede80b5c, 0xbad6, 0x4623, 0xb5, 0x37, 0x65, 0x58, 0x6c, 0x9f, 0x8d, 0xfd);
+			
+			public function HRESULT(IVMRAspectRatioControl *self, uint32* lpdwARMode) GetAspectRatioMode;
+			public function HRESULT(IVMRAspectRatioControl *self, uint32 dwARMode) SetAspectRatioMode;
+		}
+		[CRepr]
+		public struct IVMRDeinterlaceControl : IUnknown
+		{
+			public const new Guid IID = .(0xbb057577, 0x0db8, 0x4e6a, 0x87, 0xa7, 0x1a, 0x8c, 0x9a, 0x50, 0x5a, 0x0f);
+			
+			public function HRESULT(IVMRDeinterlaceControl *self, VMRVideoDesc* lpVideoDescription, uint32* lpdwNumDeinterlaceModes, Guid* lpDeinterlaceModes) GetNumberOfDeinterlaceModes;
+			public function HRESULT(IVMRDeinterlaceControl *self, Guid* lpDeinterlaceMode, VMRVideoDesc* lpVideoDescription, VMRDeinterlaceCaps* lpDeinterlaceCaps) GetDeinterlaceModeCaps;
+			public function HRESULT(IVMRDeinterlaceControl *self, uint32 dwStreamID, Guid* lpDeinterlaceMode) GetDeinterlaceMode;
+			public function HRESULT(IVMRDeinterlaceControl *self, uint32 dwStreamID, Guid* lpDeinterlaceMode) SetDeinterlaceMode;
+			public function HRESULT(IVMRDeinterlaceControl *self, uint32* lpdwDeinterlacePrefs) GetDeinterlacePrefs;
+			public function HRESULT(IVMRDeinterlaceControl *self, uint32 dwDeinterlacePrefs) SetDeinterlacePrefs;
+			public function HRESULT(IVMRDeinterlaceControl *self, uint32 dwStreamID, Guid* lpDeinterlaceMode) GetActualDeinterlaceMode;
+		}
+		[CRepr]
+		public struct IVMRMixerBitmap : IUnknown
+		{
+			public const new Guid IID = .(0x1e673275, 0x0257, 0x40aa, 0xaf, 0x20, 0x7c, 0x60, 0x8d, 0x4a, 0x04, 0x28);
+			
+			public function HRESULT(IVMRMixerBitmap *self, VMRALPHABITMAP* pBmpParms) SetAlphaBitmap;
+			public function HRESULT(IVMRMixerBitmap *self, VMRALPHABITMAP* pBmpParms) UpdateAlphaBitmapParameters;
+			public function HRESULT(IVMRMixerBitmap *self, VMRALPHABITMAP* pBmpParms) GetAlphaBitmapParameters;
+		}
+		[CRepr]
+		public struct IVMRImageCompositor : IUnknown
+		{
+			public const new Guid IID = .(0x7a4fb5af, 0x479f, 0x4074, 0xbb, 0x40, 0xce, 0x67, 0x22, 0xe4, 0x3c, 0x82);
+			
+			public function HRESULT(IVMRImageCompositor *self, IUnknown* pD3DDevice, IDirectDrawSurface7* pddsRenderTarget) InitCompositionTarget;
+			public function HRESULT(IVMRImageCompositor *self, IUnknown* pD3DDevice, IDirectDrawSurface7* pddsRenderTarget) TermCompositionTarget;
+			public function HRESULT(IVMRImageCompositor *self, uint32 dwStrmID, AM_MEDIA_TYPE* pmt, BOOL fTexture) SetStreamMediaType;
+			public function HRESULT(IVMRImageCompositor *self, IUnknown* pD3DDevice, IDirectDrawSurface7* pddsRenderTarget, AM_MEDIA_TYPE* pmtRenderTarget, int64 rtStart, int64 rtEnd, uint32 dwClrBkGnd, VMRVIDEOSTREAMINFO* pVideoStreamInfo, uint32 cStreams) CompositeImage;
+		}
+		[CRepr]
+		public struct IVMRVideoStreamControl : IUnknown
+		{
+			public const new Guid IID = .(0x058d1f11, 0x2a54, 0x4bef, 0xbd, 0x54, 0xdf, 0x70, 0x66, 0x26, 0xb7, 0x27);
+			
+			public function HRESULT(IVMRVideoStreamControl *self, DDCOLORKEY* lpClrKey) SetColorKey;
+			public function HRESULT(IVMRVideoStreamControl *self, DDCOLORKEY* lpClrKey) GetColorKey;
+			public function HRESULT(IVMRVideoStreamControl *self, BOOL fActive) SetStreamActiveState;
+			public function HRESULT(IVMRVideoStreamControl *self, BOOL* lpfActive) GetStreamActiveState;
+		}
+		[CRepr]
+		public struct IVMRSurface : IUnknown
+		{
+			public const new Guid IID = .(0xa9849bbe, 0x9ec8, 0x4263, 0xb7, 0x64, 0x62, 0x73, 0x0f, 0x0d, 0x15, 0xd0);
+			
+			public function HRESULT(IVMRSurface *self) IsSurfaceLocked;
+			public function HRESULT(IVMRSurface *self, uint8** lpSurface) LockSurface;
+			public function HRESULT(IVMRSurface *self) UnlockSurface;
+			public function HRESULT(IVMRSurface *self, IDirectDrawSurface7** lplpSurface) GetSurface;
+		}
+		[CRepr]
+		public struct IVMRImagePresenterConfig : IUnknown
+		{
+			public const new Guid IID = .(0x9f3a1c85, 0x8555, 0x49ba, 0x93, 0x5f, 0xbe, 0x5b, 0x5b, 0x29, 0xd1, 0x78);
+			
+			public function HRESULT(IVMRImagePresenterConfig *self, uint32 dwRenderFlags) SetRenderingPrefs;
+			public function HRESULT(IVMRImagePresenterConfig *self, uint32* dwRenderFlags) GetRenderingPrefs;
+		}
+		[CRepr]
+		public struct IVMRImagePresenterExclModeConfig : IVMRImagePresenterConfig
+		{
+			public const new Guid IID = .(0xe6f7ce40, 0x4673, 0x44f1, 0x8f, 0x77, 0x54, 0x99, 0xd6, 0x8c, 0xb4, 0xea);
+			
+			public function HRESULT(IVMRImagePresenterExclModeConfig *self, IDirectDraw7* lpDDObj, IDirectDrawSurface7* lpPrimarySurf) SetXlcModeDDObjAndPrimarySurface;
+			public function HRESULT(IVMRImagePresenterExclModeConfig *self, IDirectDraw7** lpDDObj, IDirectDrawSurface7** lpPrimarySurf) GetXlcModeDDObjAndPrimarySurface;
+		}
+		[CRepr]
+		public struct IVPManager : IUnknown
+		{
+			public const new Guid IID = .(0xaac18c18, 0xe186, 0x46d2, 0x82, 0x5d, 0xa1, 0xf8, 0xdc, 0x8e, 0x39, 0x5a);
+			
+			public function HRESULT(IVPManager *self, uint32 dwVideoPortIndex) SetVideoPortIndex;
+			public function HRESULT(IVPManager *self, uint32* pdwVideoPortIndex) GetVideoPortIndex;
+		}
+		[CRepr]
+		public struct IDvdControl : IUnknown
+		{
+			public const new Guid IID = .(0xa70efe61, 0xe2a3, 0x11d0, 0xa9, 0xbe, 0x00, 0xaa, 0x00, 0x61, 0xbe, 0x93);
+			
+			public function HRESULT(IDvdControl *self, uint32 ulTitle) TitlePlay;
+			public function HRESULT(IDvdControl *self, uint32 ulTitle, uint32 ulChapter) ChapterPlay;
+			public function HRESULT(IDvdControl *self, uint32 ulTitle, uint32 bcdTime) TimePlay;
+			public function HRESULT(IDvdControl *self) StopForResume;
+			public function HRESULT(IDvdControl *self) GoUp;
+			public function HRESULT(IDvdControl *self, uint32 bcdTime) TimeSearch;
+			public function HRESULT(IDvdControl *self, uint32 ulChapter) ChapterSearch;
+			public function HRESULT(IDvdControl *self) PrevPGSearch;
+			public function HRESULT(IDvdControl *self) TopPGSearch;
+			public function HRESULT(IDvdControl *self) NextPGSearch;
+			public function HRESULT(IDvdControl *self, double dwSpeed) ForwardScan;
+			public function HRESULT(IDvdControl *self, double dwSpeed) BackwardScan;
+			public function HRESULT(IDvdControl *self, DVD_MENU_ID MenuID) MenuCall;
+			public function HRESULT(IDvdControl *self) Resume;
+			public function HRESULT(IDvdControl *self) UpperButtonSelect;
+			public function HRESULT(IDvdControl *self) LowerButtonSelect;
+			public function HRESULT(IDvdControl *self) LeftButtonSelect;
+			public function HRESULT(IDvdControl *self) RightButtonSelect;
+			public function HRESULT(IDvdControl *self) ButtonActivate;
+			public function HRESULT(IDvdControl *self, uint32 ulButton) ButtonSelectAndActivate;
+			public function HRESULT(IDvdControl *self) StillOff;
+			public function HRESULT(IDvdControl *self) PauseOn;
+			public function HRESULT(IDvdControl *self) PauseOff;
+			public function HRESULT(IDvdControl *self, uint32 Language) MenuLanguageSelect;
+			public function HRESULT(IDvdControl *self, uint32 ulAudio) AudioStreamChange;
+			public function HRESULT(IDvdControl *self, uint32 ulSubPicture, BOOL bDisplay) SubpictureStreamChange;
+			public function HRESULT(IDvdControl *self, uint32 ulAngle) AngleChange;
+			public function HRESULT(IDvdControl *self, uint32 ulParentalLevel) ParentalLevelSelect;
+			public function HRESULT(IDvdControl *self, uint16 wCountry) ParentalCountrySelect;
+			public function HRESULT(IDvdControl *self, uint32 ulMode) KaraokeAudioPresentationModeChange;
+			public function HRESULT(IDvdControl *self, uint32 ulPreferredDisplayMode) VideoModePreferrence;
+			public function HRESULT(IDvdControl *self, PWSTR pszPath) SetRoot;
+			public function HRESULT(IDvdControl *self, POINT point) MouseActivate;
+			public function HRESULT(IDvdControl *self, POINT point) MouseSelect;
+			public function HRESULT(IDvdControl *self, uint32 ulTitle, uint32 ulChapter, uint32 ulChaptersToPlay) ChapterPlayAutoStop;
+		}
+		[CRepr]
+		public struct IDvdInfo : IUnknown
+		{
+			public const new Guid IID = .(0xa70efe60, 0xe2a3, 0x11d0, 0xa9, 0xbe, 0x00, 0xaa, 0x00, 0x61, 0xbe, 0x93);
+			
+			public function HRESULT(IDvdInfo *self, DVD_DOMAIN* pDomain) GetCurrentDomain;
+			public function HRESULT(IDvdInfo *self, DVD_PLAYBACK_LOCATION* pLocation) GetCurrentLocation;
+			public function HRESULT(IDvdInfo *self, uint32* pulTotalTime) GetTotalTitleTime;
+			public function HRESULT(IDvdInfo *self, uint32* pulButtonsAvailable, uint32* pulCurrentButton) GetCurrentButton;
+			public function HRESULT(IDvdInfo *self, uint32* pulAnglesAvailable, uint32* pulCurrentAngle) GetCurrentAngle;
+			public function HRESULT(IDvdInfo *self, uint32* pulStreamsAvailable, uint32* pulCurrentStream) GetCurrentAudio;
+			public function HRESULT(IDvdInfo *self, uint32* pulStreamsAvailable, uint32* pulCurrentStream, BOOL* pIsDisabled) GetCurrentSubpicture;
+			public function HRESULT(IDvdInfo *self, uint32* pUOP) GetCurrentUOPS;
+			public function HRESULT(IDvdInfo *self, uint16** pRegisterArray) GetAllSPRMs;
+			public function HRESULT(IDvdInfo *self, uint16** pRegisterArray) GetAllGPRMs;
+			public function HRESULT(IDvdInfo *self, uint32 ulStream, uint32* pLanguage) GetAudioLanguage;
+			public function HRESULT(IDvdInfo *self, uint32 ulStream, uint32* pLanguage) GetSubpictureLanguage;
+			public function HRESULT(IDvdInfo *self, uint32 ulTitle, DVD_ATR* pATR) GetTitleAttributes;
+			public function HRESULT(IDvdInfo *self, DVD_ATR* pATR) GetVMGAttributes;
+			public function HRESULT(IDvdInfo *self, uint8** pATR) GetCurrentVideoAttributes;
+			public function HRESULT(IDvdInfo *self, uint8** pATR) GetCurrentAudioAttributes;
+			public function HRESULT(IDvdInfo *self, uint8** pATR) GetCurrentSubpictureAttributes;
+			public function HRESULT(IDvdInfo *self, uint32* pulNumOfVol, uint32* pulThisVolNum, DVD_DISC_SIDE* pSide, uint32* pulNumOfTitles) GetCurrentVolumeInfo;
+			public function HRESULT(IDvdInfo *self, uint8* pTextManager, uint32 ulBufSize, uint32* pulActualSize) GetDVDTextInfo;
+			public function HRESULT(IDvdInfo *self, uint32* pulParentalLevel, uint32* pulCountryCode) GetPlayerParentalLevel;
+			public function HRESULT(IDvdInfo *self, uint32 ulTitle, uint32* pulNumberOfChapters) GetNumberOfChapters;
+			public function HRESULT(IDvdInfo *self, uint32 ulTitle, uint32* pulParentalLevels) GetTitleParentalLevels;
+			public function HRESULT(IDvdInfo *self, uint8* pRoot, uint32 ulBufSize, uint32* pulActualSize) GetRoot;
+		}
+		[CRepr]
+		public struct IDvdCmd : IUnknown
+		{
+			public const new Guid IID = .(0x5a4a97e4, 0x94ee, 0x4a55, 0x97, 0x51, 0x74, 0xb5, 0x64, 0x3a, 0xa2, 0x7d);
+			
+			public function HRESULT(IDvdCmd *self) WaitForStart;
+			public function HRESULT(IDvdCmd *self) WaitForEnd;
+		}
+		[CRepr]
+		public struct IDvdState : IUnknown
+		{
+			public const new Guid IID = .(0x86303d6d, 0x1c4a, 0x4087, 0xab, 0x42, 0xf7, 0x11, 0x16, 0x70, 0x48, 0xef);
+			
+			public function HRESULT(IDvdState *self, uint64* pullUniqueID) GetDiscID;
+			public function HRESULT(IDvdState *self, uint32* pulParentalLevel) GetParentalLevel;
+		}
+		[CRepr]
+		public struct IDvdControl2 : IUnknown
+		{
+			public const new Guid IID = .(0x33bc7430, 0xeec0, 0x11d2, 0x82, 0x01, 0x00, 0xa0, 0xc9, 0xd7, 0x48, 0x42);
+			
+			public function HRESULT(IDvdControl2 *self, uint32 ulTitle, uint32 dwFlags, IDvdCmd** ppCmd) PlayTitle;
+			public function HRESULT(IDvdControl2 *self, uint32 ulTitle, uint32 ulChapter, uint32 dwFlags, IDvdCmd** ppCmd) PlayChapterInTitle;
+			public function HRESULT(IDvdControl2 *self, uint32 ulTitle, DVD_HMSF_TIMECODE* pStartTime, uint32 dwFlags, IDvdCmd** ppCmd) PlayAtTimeInTitle;
+			public function HRESULT(IDvdControl2 *self) Stop;
+			public function HRESULT(IDvdControl2 *self, uint32 dwFlags, IDvdCmd** ppCmd) ReturnFromSubmenu;
+			public function HRESULT(IDvdControl2 *self, DVD_HMSF_TIMECODE* pTime, uint32 dwFlags, IDvdCmd** ppCmd) PlayAtTime;
+			public function HRESULT(IDvdControl2 *self, uint32 ulChapter, uint32 dwFlags, IDvdCmd** ppCmd) PlayChapter;
+			public function HRESULT(IDvdControl2 *self, uint32 dwFlags, IDvdCmd** ppCmd) PlayPrevChapter;
+			public function HRESULT(IDvdControl2 *self, uint32 dwFlags, IDvdCmd** ppCmd) ReplayChapter;
+			public function HRESULT(IDvdControl2 *self, uint32 dwFlags, IDvdCmd** ppCmd) PlayNextChapter;
+			public function HRESULT(IDvdControl2 *self, double dSpeed, uint32 dwFlags, IDvdCmd** ppCmd) PlayForwards;
+			public function HRESULT(IDvdControl2 *self, double dSpeed, uint32 dwFlags, IDvdCmd** ppCmd) PlayBackwards;
+			public function HRESULT(IDvdControl2 *self, DVD_MENU_ID MenuID, uint32 dwFlags, IDvdCmd** ppCmd) ShowMenu;
+			public function HRESULT(IDvdControl2 *self, uint32 dwFlags, IDvdCmd** ppCmd) Resume;
+			public function HRESULT(IDvdControl2 *self, DVD_RELATIVE_BUTTON buttonDir) SelectRelativeButton;
+			public function HRESULT(IDvdControl2 *self) ActivateButton;
+			public function HRESULT(IDvdControl2 *self, uint32 ulButton) SelectButton;
+			public function HRESULT(IDvdControl2 *self, uint32 ulButton) SelectAndActivateButton;
+			public function HRESULT(IDvdControl2 *self) StillOff;
+			public function HRESULT(IDvdControl2 *self, BOOL bState) Pause;
+			public function HRESULT(IDvdControl2 *self, uint32 ulAudio, uint32 dwFlags, IDvdCmd** ppCmd) SelectAudioStream;
+			public function HRESULT(IDvdControl2 *self, uint32 ulSubPicture, uint32 dwFlags, IDvdCmd** ppCmd) SelectSubpictureStream;
+			public function HRESULT(IDvdControl2 *self, BOOL bState, uint32 dwFlags, IDvdCmd** ppCmd) SetSubpictureState;
+			public function HRESULT(IDvdControl2 *self, uint32 ulAngle, uint32 dwFlags, IDvdCmd** ppCmd) SelectAngle;
+			public function HRESULT(IDvdControl2 *self, uint32 ulParentalLevel) SelectParentalLevel;
+			public function HRESULT(IDvdControl2 *self, uint8* bCountry) SelectParentalCountry;
+			public function HRESULT(IDvdControl2 *self, uint32 ulMode) SelectKaraokeAudioPresentationMode;
+			public function HRESULT(IDvdControl2 *self, uint32 ulPreferredDisplayMode) SelectVideoModePreference;
+			public function HRESULT(IDvdControl2 *self, PWSTR pszwPath) SetDVDDirectory;
+			public function HRESULT(IDvdControl2 *self, POINT point) ActivateAtPosition;
+			public function HRESULT(IDvdControl2 *self, POINT point) SelectAtPosition;
+			public function HRESULT(IDvdControl2 *self, uint32 ulTitle, uint32 ulChapter, uint32 ulChaptersToPlay, uint32 dwFlags, IDvdCmd** ppCmd) PlayChaptersAutoStop;
+			public function HRESULT(IDvdControl2 *self, BOOL bAccept) AcceptParentalLevelChange;
+			public function HRESULT(IDvdControl2 *self, DVD_OPTION_FLAG flag, BOOL fState) SetOption;
+			public function HRESULT(IDvdControl2 *self, IDvdState* pState, uint32 dwFlags, IDvdCmd** ppCmd) SetState;
+			public function HRESULT(IDvdControl2 *self, uint32 ulTitle, DVD_HMSF_TIMECODE* pStartTime, DVD_HMSF_TIMECODE* pEndTime, uint32 dwFlags, IDvdCmd** ppCmd) PlayPeriodInTitleAutoStop;
+			public function HRESULT(IDvdControl2 *self, uint32 ulIndex, uint16 wValue, uint32 dwFlags, IDvdCmd** ppCmd) SetGPRM;
+			public function HRESULT(IDvdControl2 *self, uint32 Language) SelectDefaultMenuLanguage;
+			public function HRESULT(IDvdControl2 *self, uint32 Language, DVD_AUDIO_LANG_EXT audioExtension) SelectDefaultAudioLanguage;
+			public function HRESULT(IDvdControl2 *self, uint32 Language, DVD_SUBPICTURE_LANG_EXT subpictureExtension) SelectDefaultSubpictureLanguage;
+		}
+		[CRepr]
+		public struct IDvdInfo2 : IUnknown
+		{
+			public const new Guid IID = .(0x34151510, 0xeec0, 0x11d2, 0x82, 0x01, 0x00, 0xa0, 0xc9, 0xd7, 0x48, 0x42);
+			
+			public function HRESULT(IDvdInfo2 *self, DVD_DOMAIN* pDomain) GetCurrentDomain;
+			public function HRESULT(IDvdInfo2 *self, DVD_PLAYBACK_LOCATION2* pLocation) GetCurrentLocation;
+			public function HRESULT(IDvdInfo2 *self, DVD_HMSF_TIMECODE* pTotalTime, uint32* ulTimeCodeFlags) GetTotalTitleTime;
+			public function HRESULT(IDvdInfo2 *self, uint32* pulButtonsAvailable, uint32* pulCurrentButton) GetCurrentButton;
+			public function HRESULT(IDvdInfo2 *self, uint32* pulAnglesAvailable, uint32* pulCurrentAngle) GetCurrentAngle;
+			public function HRESULT(IDvdInfo2 *self, uint32* pulStreamsAvailable, uint32* pulCurrentStream) GetCurrentAudio;
+			public function HRESULT(IDvdInfo2 *self, uint32* pulStreamsAvailable, uint32* pulCurrentStream, BOOL* pbIsDisabled) GetCurrentSubpicture;
+			public function HRESULT(IDvdInfo2 *self, uint32* pulUOPs) GetCurrentUOPS;
+			public function HRESULT(IDvdInfo2 *self, uint16** pRegisterArray) GetAllSPRMs;
+			public function HRESULT(IDvdInfo2 *self, uint16** pRegisterArray) GetAllGPRMs;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulStream, uint32* pLanguage) GetAudioLanguage;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulStream, uint32* pLanguage) GetSubpictureLanguage;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulTitle, DVD_MenuAttributes* pMenu, DVD_TitleAttributes* pTitle) GetTitleAttributes;
+			public function HRESULT(IDvdInfo2 *self, DVD_MenuAttributes* pATR) GetVMGAttributes;
+			public function HRESULT(IDvdInfo2 *self, DVD_VideoAttributes* pATR) GetCurrentVideoAttributes;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulStream, DVD_AudioAttributes* pATR) GetAudioAttributes;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulStream, DVD_KaraokeAttributes* pAttributes) GetKaraokeAttributes;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulStream, DVD_SubpictureAttributes* pATR) GetSubpictureAttributes;
+			public function HRESULT(IDvdInfo2 *self, uint32* pulNumOfVolumes, uint32* pulVolume, DVD_DISC_SIDE* pSide, uint32* pulNumOfTitles) GetDVDVolumeInfo;
+			public function HRESULT(IDvdInfo2 *self, uint32* pulNumOfLangs) GetDVDTextNumberOfLanguages;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulLangIndex, uint32* pulNumOfStrings, uint32* pLangCode, DVD_TextCharSet* pbCharacterSet) GetDVDTextLanguageInfo;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulLangIndex, uint32 ulStringIndex, uint8* pbBuffer, uint32 ulMaxBufferSize, uint32* pulActualSize, DVD_TextStringType* pType) GetDVDTextStringAsNative;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulLangIndex, uint32 ulStringIndex, PWSTR pchwBuffer, uint32 ulMaxBufferSize, uint32* pulActualSize, DVD_TextStringType* pType) GetDVDTextStringAsUnicode;
+			public function HRESULT(IDvdInfo2 *self, uint32* pulParentalLevel, uint8* pbCountryCode) GetPlayerParentalLevel;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulTitle, uint32* pulNumOfChapters) GetNumberOfChapters;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulTitle, uint32* pulParentalLevels) GetTitleParentalLevels;
+			public function HRESULT(IDvdInfo2 *self, char16* pszwPath, uint32 ulMaxSize, uint32* pulActualSize) GetDVDDirectory;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulStreamNum, BOOL* pbEnabled) IsAudioStreamEnabled;
+			public function HRESULT(IDvdInfo2 *self, PWSTR pszwPath, uint64* pullDiscID) GetDiscID;
+			public function HRESULT(IDvdInfo2 *self, IDvdState** pStateData) GetState;
+			public function HRESULT(IDvdInfo2 *self, uint32* pLanguages, uint32 ulMaxLanguages, uint32* pulActualLanguages) GetMenuLanguages;
+			public function HRESULT(IDvdInfo2 *self, POINT point, uint32* pulButtonIndex) GetButtonAtPosition;
+			public function HRESULT(IDvdInfo2 *self, int lParam1, IDvdCmd** pCmdObj) GetCmdFromEvent;
+			public function HRESULT(IDvdInfo2 *self, uint32* pLanguage) GetDefaultMenuLanguage;
+			public function HRESULT(IDvdInfo2 *self, uint32* pLanguage, DVD_AUDIO_LANG_EXT* pAudioExtension) GetDefaultAudioLanguage;
+			public function HRESULT(IDvdInfo2 *self, uint32* pLanguage, DVD_SUBPICTURE_LANG_EXT* pSubpictureExtension) GetDefaultSubpictureLanguage;
+			public function HRESULT(IDvdInfo2 *self, DVD_DECODER_CAPS* pCaps) GetDecoderCaps;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulButton, RECT* pRect) GetButtonRect;
+			public function HRESULT(IDvdInfo2 *self, uint32 ulStreamNum, BOOL* pbEnabled) IsSubpictureStreamEnabled;
+		}
+		[CRepr]
+		public struct IDvdGraphBuilder : IUnknown
+		{
+			public const new Guid IID = .(0xfcc152b6, 0xf372, 0x11d0, 0x8e, 0x00, 0x00, 0xc0, 0x4f, 0xd7, 0xc0, 0x8b);
+			
+			public function HRESULT(IDvdGraphBuilder *self, IGraphBuilder** ppGB) GetFiltergraph;
+			public function HRESULT(IDvdGraphBuilder *self, Guid* riid, void** ppvIF) GetDvdInterface;
+			public function HRESULT(IDvdGraphBuilder *self, PWSTR lpcwszPathName, uint32 dwFlags, AM_DVD_RENDERSTATUS* pStatus) RenderDvdVideoVolume;
+		}
+		[CRepr]
+		public struct IDDrawExclModeVideo : IUnknown
+		{
+			public const new Guid IID = .(0x153acc21, 0xd83b, 0x11d1, 0x82, 0xbf, 0x00, 0xa0, 0xc9, 0x69, 0x6c, 0x8f);
+			
+			public function HRESULT(IDDrawExclModeVideo *self, IDirectDraw* pDDrawObject) SetDDrawObject;
+			public function HRESULT(IDDrawExclModeVideo *self, IDirectDraw** ppDDrawObject, BOOL* pbUsingExternal) GetDDrawObject;
+			public function HRESULT(IDDrawExclModeVideo *self, IDirectDrawSurface* pDDrawSurface) SetDDrawSurface;
+			public function HRESULT(IDDrawExclModeVideo *self, IDirectDrawSurface** ppDDrawSurface, BOOL* pbUsingExternal) GetDDrawSurface;
+			public function HRESULT(IDDrawExclModeVideo *self, RECT* prcSource, RECT* prcTarget) SetDrawParameters;
+			public function HRESULT(IDDrawExclModeVideo *self, uint32* pdwVideoWidth, uint32* pdwVideoHeight, uint32* pdwPictAspectRatioX, uint32* pdwPictAspectRatioY) GetNativeVideoProps;
+			public function HRESULT(IDDrawExclModeVideo *self, IDDrawExclModeVideoCallback* pCallback, uint32 dwFlags) SetCallbackInterface;
+		}
+		[CRepr]
+		public struct IDDrawExclModeVideoCallback : IUnknown
+		{
+			public const new Guid IID = .(0x913c24a0, 0x20ab, 0x11d2, 0x90, 0x38, 0x00, 0xa0, 0xc9, 0x69, 0x72, 0x98);
+			
+			public function HRESULT(IDDrawExclModeVideoCallback *self, BOOL bBefore, uint32 dwFlags, BOOL bOldVisible, RECT* prcOldSrc, RECT* prcOldDest, BOOL bNewVisible, RECT* prcNewSrc, RECT* prcNewDest) OnUpdateOverlay;
+			public function HRESULT(IDDrawExclModeVideoCallback *self, COLORKEY* pKey, uint32 dwColor) OnUpdateColorKey;
+			public function HRESULT(IDDrawExclModeVideoCallback *self, uint32 dwWidth, uint32 dwHeight, uint32 dwARWidth, uint32 dwARHeight) OnUpdateSize;
+		}
+		[CRepr]
+		public struct IBDA_NetworkProvider : IUnknown
+		{
+			public const new Guid IID = .(0xfd501041, 0x8ebe, 0x11ce, 0x81, 0x83, 0x00, 0xaa, 0x00, 0x57, 0x7d, 0xa2);
+			
+			public function HRESULT(IBDA_NetworkProvider *self, uint32 ulSignalSource) PutSignalSource;
+			public function HRESULT(IBDA_NetworkProvider *self, uint32* pulSignalSource) GetSignalSource;
+			public function HRESULT(IBDA_NetworkProvider *self, Guid* pguidNetworkType) GetNetworkType;
+			public function HRESULT(IBDA_NetworkProvider *self, Guid* guidTuningSpace) PutTuningSpace;
+			public function HRESULT(IBDA_NetworkProvider *self, Guid* pguidTuingSpace) GetTuningSpace;
+			public function HRESULT(IBDA_NetworkProvider *self, IUnknown* pUnkFilterControl, uint32* ppvRegisitrationContext) RegisterDeviceFilter;
+			public function HRESULT(IBDA_NetworkProvider *self, uint32 pvRegistrationContext) UnRegisterDeviceFilter;
+		}
+		[CRepr]
+		public struct IBDA_EthernetFilter : IUnknown
+		{
+			public const new Guid IID = .(0x71985f43, 0x1ca1, 0x11d3, 0x9c, 0xc8, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xe0);
+			
+			public function HRESULT(IBDA_EthernetFilter *self, uint32* pulcbAddresses) GetMulticastListSize;
+			public function HRESULT(IBDA_EthernetFilter *self, uint32 ulcbAddresses, uint8* pAddressList) PutMulticastList;
+			public function HRESULT(IBDA_EthernetFilter *self, uint32* pulcbAddresses, uint8* pAddressList) GetMulticastList;
+			public function HRESULT(IBDA_EthernetFilter *self, uint32 ulModeMask) PutMulticastMode;
+			public function HRESULT(IBDA_EthernetFilter *self, uint32* pulModeMask) GetMulticastMode;
+		}
+		[CRepr]
+		public struct IBDA_IPV4Filter : IUnknown
+		{
+			public const new Guid IID = .(0x71985f44, 0x1ca1, 0x11d3, 0x9c, 0xc8, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xe0);
+			
+			public function HRESULT(IBDA_IPV4Filter *self, uint32* pulcbAddresses) GetMulticastListSize;
+			public function HRESULT(IBDA_IPV4Filter *self, uint32 ulcbAddresses, uint8* pAddressList) PutMulticastList;
+			public function HRESULT(IBDA_IPV4Filter *self, uint32* pulcbAddresses, uint8* pAddressList) GetMulticastList;
+			public function HRESULT(IBDA_IPV4Filter *self, uint32 ulModeMask) PutMulticastMode;
+			public function HRESULT(IBDA_IPV4Filter *self, uint32* pulModeMask) GetMulticastMode;
+		}
+		[CRepr]
+		public struct IBDA_IPV6Filter : IUnknown
+		{
+			public const new Guid IID = .(0xe1785a74, 0x2a23, 0x4fb3, 0x92, 0x45, 0xa8, 0xf8, 0x80, 0x17, 0xef, 0x33);
+			
+			public function HRESULT(IBDA_IPV6Filter *self, uint32* pulcbAddresses) GetMulticastListSize;
+			public function HRESULT(IBDA_IPV6Filter *self, uint32 ulcbAddresses, uint8* pAddressList) PutMulticastList;
+			public function HRESULT(IBDA_IPV6Filter *self, uint32* pulcbAddresses, uint8* pAddressList) GetMulticastList;
+			public function HRESULT(IBDA_IPV6Filter *self, uint32 ulModeMask) PutMulticastMode;
+			public function HRESULT(IBDA_IPV6Filter *self, uint32* pulModeMask) GetMulticastMode;
+		}
+		[CRepr]
+		public struct IBDA_DeviceControl : IUnknown
+		{
+			public const new Guid IID = .(0xfd0a5af3, 0xb41d, 0x11d2, 0x9c, 0x95, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xe0);
+			
+			public function HRESULT(IBDA_DeviceControl *self) StartChanges;
+			public function HRESULT(IBDA_DeviceControl *self) CheckChanges;
+			public function HRESULT(IBDA_DeviceControl *self) CommitChanges;
+			public function HRESULT(IBDA_DeviceControl *self, uint32* pState) GetChangeState;
+		}
+		[CRepr]
+		public struct IBDA_PinControl : IUnknown
+		{
+			public const new Guid IID = .(0x0ded49d5, 0xa8b7, 0x4d5d, 0x97, 0xa1, 0x12, 0xb0, 0xc1, 0x95, 0x87, 0x4d);
+			
+			public function HRESULT(IBDA_PinControl *self, uint32* pulPinID) GetPinID;
+			public function HRESULT(IBDA_PinControl *self, uint32* pulPinType) GetPinType;
+			public function HRESULT(IBDA_PinControl *self, uint32* pulRegistrationCtx) RegistrationContext;
+		}
+		[CRepr]
+		public struct IBDA_SignalProperties : IUnknown
+		{
+			public const new Guid IID = .(0xd2f1644b, 0xb409, 0x11d2, 0xbc, 0x69, 0x00, 0xa0, 0xc9, 0xee, 0x9e, 0x16);
+			
+			public function HRESULT(IBDA_SignalProperties *self, Guid* guidNetworkType) PutNetworkType;
+			public function HRESULT(IBDA_SignalProperties *self, Guid* pguidNetworkType) GetNetworkType;
+			public function HRESULT(IBDA_SignalProperties *self, uint32 ulSignalSource) PutSignalSource;
+			public function HRESULT(IBDA_SignalProperties *self, uint32* pulSignalSource) GetSignalSource;
+			public function HRESULT(IBDA_SignalProperties *self, Guid* guidTuningSpace) PutTuningSpace;
+			public function HRESULT(IBDA_SignalProperties *self, Guid* pguidTuingSpace) GetTuningSpace;
+		}
+		[CRepr]
+		public struct IBDA_SignalStatistics : IUnknown
+		{
+			public const new Guid IID = .(0x1347d106, 0xcf3a, 0x428a, 0xa5, 0xcb, 0xac, 0x0d, 0x9a, 0x2a, 0x43, 0x38);
+			
+			public function HRESULT(IBDA_SignalStatistics *self, int32 lDbStrength) put_SignalStrength;
+			public function HRESULT(IBDA_SignalStatistics *self, int32* plDbStrength) get_SignalStrength;
+			public function HRESULT(IBDA_SignalStatistics *self, int32 lPercentQuality) put_SignalQuality;
+			public function HRESULT(IBDA_SignalStatistics *self, int32* plPercentQuality) get_SignalQuality;
+			public function HRESULT(IBDA_SignalStatistics *self, BOOLEAN fPresent) put_SignalPresent;
+			public function HRESULT(IBDA_SignalStatistics *self, uint8* pfPresent) get_SignalPresent;
+			public function HRESULT(IBDA_SignalStatistics *self, BOOLEAN fLocked) put_SignalLocked;
+			public function HRESULT(IBDA_SignalStatistics *self, uint8* pfLocked) get_SignalLocked;
+			public function HRESULT(IBDA_SignalStatistics *self, int32 lmsSampleTime) put_SampleTime;
+			public function HRESULT(IBDA_SignalStatistics *self, int32* plmsSampleTime) get_SampleTime;
+		}
+		[CRepr]
+		public struct IBDA_Topology : IUnknown
+		{
+			public const new Guid IID = .(0x79b56888, 0x7fea, 0x4690, 0xb4, 0x5d, 0x38, 0xfd, 0x3c, 0x78, 0x49, 0xbe);
+			
+			public function HRESULT(IBDA_Topology *self, uint32* pulcNodeTypes, uint32 ulcNodeTypesMax, uint32* rgulNodeTypes) GetNodeTypes;
+			public function HRESULT(IBDA_Topology *self, uint32* ulcNodeDescriptors, uint32 ulcNodeDescriptorsMax, BDANODE_DESCRIPTOR* rgNodeDescriptors) GetNodeDescriptors;
+			public function HRESULT(IBDA_Topology *self, uint32 ulNodeType, uint32* pulcInterfaces, uint32 ulcInterfacesMax, Guid* rgguidInterfaces) GetNodeInterfaces;
+			public function HRESULT(IBDA_Topology *self, uint32* pulcPinTypes, uint32 ulcPinTypesMax, uint32* rgulPinTypes) GetPinTypes;
+			public function HRESULT(IBDA_Topology *self, uint32* pulcConnections, uint32 ulcConnectionsMax, BDA_TEMPLATE_CONNECTION* rgConnections) GetTemplateConnections;
+			public function HRESULT(IBDA_Topology *self, uint32 ulPinType, uint32* pulPinId) CreatePin;
+			public function HRESULT(IBDA_Topology *self, uint32 ulPinId) DeletePin;
+			public function HRESULT(IBDA_Topology *self, uint32 ulPinId, AM_MEDIA_TYPE* pMediaType) SetMediaType;
+			public function HRESULT(IBDA_Topology *self, uint32 ulPinId, REGPINMEDIUM* pMedium) SetMedium;
+			public function HRESULT(IBDA_Topology *self, uint32 ulInputPinId, uint32 ulOutputPinId) CreateTopology;
+			public function HRESULT(IBDA_Topology *self, uint32 ulInputPinId, uint32 ulOutputPinId, uint32 ulNodeType, IUnknown** ppControlNode) GetControlNode;
+		}
+		[CRepr]
+		public struct IBDA_VoidTransform : IUnknown
+		{
+			public const new Guid IID = .(0x71985f46, 0x1ca1, 0x11d3, 0x9c, 0xc8, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xe0);
+			
+			public function HRESULT(IBDA_VoidTransform *self) Start;
+			public function HRESULT(IBDA_VoidTransform *self) Stop;
+		}
+		[CRepr]
+		public struct IBDA_NullTransform : IUnknown
+		{
+			public const new Guid IID = .(0xddf15b0d, 0xbd25, 0x11d2, 0x9c, 0xa0, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xe0);
+			
+			public function HRESULT(IBDA_NullTransform *self) Start;
+			public function HRESULT(IBDA_NullTransform *self) Stop;
+		}
+		[CRepr]
+		public struct IBDA_FrequencyFilter : IUnknown
+		{
+			public const new Guid IID = .(0x71985f47, 0x1ca1, 0x11d3, 0x9c, 0xc8, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xe0);
+			
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32 ulTransponder) put_Autotune;
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32* pulTransponder) get_Autotune;
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32 ulFrequency) put_Frequency;
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32* pulFrequency) get_Frequency;
+			public function HRESULT(IBDA_FrequencyFilter *self, Polarisation Polarity) put_Polarity;
+			public function HRESULT(IBDA_FrequencyFilter *self, Polarisation* pPolarity) get_Polarity;
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32 ulRange) put_Range;
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32* pulRange) get_Range;
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32 ulBandwidth) put_Bandwidth;
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32* pulBandwidth) get_Bandwidth;
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32 ulMultiplier) put_FrequencyMultiplier;
+			public function HRESULT(IBDA_FrequencyFilter *self, uint32* pulMultiplier) get_FrequencyMultiplier;
+		}
+		[CRepr]
+		public struct IBDA_LNBInfo : IUnknown
+		{
+			public const new Guid IID = .(0x992cf102, 0x49f9, 0x4719, 0xa6, 0x64, 0xc4, 0xf2, 0x3e, 0x24, 0x08, 0xf4);
+			
+			public function HRESULT(IBDA_LNBInfo *self, uint32 ulLOFLow) put_LocalOscilatorFrequencyLowBand;
+			public function HRESULT(IBDA_LNBInfo *self, uint32* pulLOFLow) get_LocalOscilatorFrequencyLowBand;
+			public function HRESULT(IBDA_LNBInfo *self, uint32 ulLOFHigh) put_LocalOscilatorFrequencyHighBand;
+			public function HRESULT(IBDA_LNBInfo *self, uint32* pulLOFHigh) get_LocalOscilatorFrequencyHighBand;
+			public function HRESULT(IBDA_LNBInfo *self, uint32 ulSwitchFrequency) put_HighLowSwitchFrequency;
+			public function HRESULT(IBDA_LNBInfo *self, uint32* pulSwitchFrequency) get_HighLowSwitchFrequency;
+		}
+		[CRepr]
+		public struct IBDA_DiseqCommand : IUnknown
+		{
+			public const new Guid IID = .(0xf84e2ab0, 0x3c6b, 0x45e3, 0xa0, 0xfc, 0x86, 0x69, 0xd4, 0xb8, 0x1f, 0x11);
+			
+			public function HRESULT(IBDA_DiseqCommand *self, BOOLEAN bEnable) put_EnableDiseqCommands;
+			public function HRESULT(IBDA_DiseqCommand *self, uint32 ulLNBSource) put_DiseqLNBSource;
+			public function HRESULT(IBDA_DiseqCommand *self, BOOLEAN bUseToneBurst) put_DiseqUseToneBurst;
+			public function HRESULT(IBDA_DiseqCommand *self, uint32 ulRepeats) put_DiseqRepeats;
+			public function HRESULT(IBDA_DiseqCommand *self, uint32 ulRequestId, uint32 ulcbCommandLen, uint8* pbCommand) put_DiseqSendCommand;
+			public function HRESULT(IBDA_DiseqCommand *self, uint32 ulRequestId, uint32* pulcbResponseLen, uint8* pbResponse) get_DiseqResponse;
+		}
+		[CRepr]
+		public struct IBDA_AutoDemodulate : IUnknown
+		{
+			public const new Guid IID = .(0xddf15b12, 0xbd25, 0x11d2, 0x9c, 0xa0, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xe0);
+			
+			public function HRESULT(IBDA_AutoDemodulate *self) put_AutoDemodulate;
+		}
+		[CRepr]
+		public struct IBDA_AutoDemodulateEx : IBDA_AutoDemodulate
+		{
+			public const new Guid IID = .(0x34518d13, 0x1182, 0x48e6, 0xb2, 0x8f, 0xb2, 0x49, 0x87, 0x78, 0x73, 0x26);
+			
+			public function HRESULT(IBDA_AutoDemodulateEx *self, uint32 ulcDeviceNodeTypesMax, uint32* pulcDeviceNodeTypes, Guid* pguidDeviceNodeTypes) get_SupportedDeviceNodeTypes;
+			public function HRESULT(IBDA_AutoDemodulateEx *self, uint32* pulAMTunerModeType, uint32* pulAnalogVideoStandard) get_SupportedVideoFormats;
+			public function HRESULT(IBDA_AutoDemodulateEx *self, uint32* pulCompositeCount, uint32* pulSvideoCount) get_AuxInputCount;
+		}
+		[CRepr]
+		public struct IBDA_DigitalDemodulator : IUnknown
+		{
+			public const new Guid IID = .(0xef30f379, 0x985b, 0x4d10, 0xb6, 0x40, 0xa7, 0x9d, 0x5e, 0x04, 0xe1, 0xe0);
+			
+			public function HRESULT(IBDA_DigitalDemodulator *self, ModulationType* pModulationType) put_ModulationType;
+			public function HRESULT(IBDA_DigitalDemodulator *self, ModulationType* pModulationType) get_ModulationType;
+			public function HRESULT(IBDA_DigitalDemodulator *self, FECMethod* pFECMethod) put_InnerFECMethod;
+			public function HRESULT(IBDA_DigitalDemodulator *self, FECMethod* pFECMethod) get_InnerFECMethod;
+			public function HRESULT(IBDA_DigitalDemodulator *self, BinaryConvolutionCodeRate* pFECRate) put_InnerFECRate;
+			public function HRESULT(IBDA_DigitalDemodulator *self, BinaryConvolutionCodeRate* pFECRate) get_InnerFECRate;
+			public function HRESULT(IBDA_DigitalDemodulator *self, FECMethod* pFECMethod) put_OuterFECMethod;
+			public function HRESULT(IBDA_DigitalDemodulator *self, FECMethod* pFECMethod) get_OuterFECMethod;
+			public function HRESULT(IBDA_DigitalDemodulator *self, BinaryConvolutionCodeRate* pFECRate) put_OuterFECRate;
+			public function HRESULT(IBDA_DigitalDemodulator *self, BinaryConvolutionCodeRate* pFECRate) get_OuterFECRate;
+			public function HRESULT(IBDA_DigitalDemodulator *self, uint32* pSymbolRate) put_SymbolRate;
+			public function HRESULT(IBDA_DigitalDemodulator *self, uint32* pSymbolRate) get_SymbolRate;
+			public function HRESULT(IBDA_DigitalDemodulator *self, SpectralInversion* pSpectralInversion) put_SpectralInversion;
+			public function HRESULT(IBDA_DigitalDemodulator *self, SpectralInversion* pSpectralInversion) get_SpectralInversion;
+		}
+		[CRepr]
+		public struct IBDA_DigitalDemodulator2 : IBDA_DigitalDemodulator
+		{
+			public const new Guid IID = .(0x525ed3ee, 0x5cf3, 0x4e1e, 0x9a, 0x06, 0x53, 0x68, 0xa8, 0x4f, 0x9a, 0x6e);
+			
+			public function HRESULT(IBDA_DigitalDemodulator2 *self, GuardInterval* pGuardInterval) put_GuardInterval;
+			public function HRESULT(IBDA_DigitalDemodulator2 *self, GuardInterval* pGuardInterval) get_GuardInterval;
+			public function HRESULT(IBDA_DigitalDemodulator2 *self, TransmissionMode* pTransmissionMode) put_TransmissionMode;
+			public function HRESULT(IBDA_DigitalDemodulator2 *self, TransmissionMode* pTransmissionMode) get_TransmissionMode;
+			public function HRESULT(IBDA_DigitalDemodulator2 *self, RollOff* pRollOff) put_RollOff;
+			public function HRESULT(IBDA_DigitalDemodulator2 *self, RollOff* pRollOff) get_RollOff;
+			public function HRESULT(IBDA_DigitalDemodulator2 *self, Pilot* pPilot) put_Pilot;
+			public function HRESULT(IBDA_DigitalDemodulator2 *self, Pilot* pPilot) get_Pilot;
+		}
+		[CRepr]
+		public struct IBDA_DigitalDemodulator3 : IBDA_DigitalDemodulator2
+		{
+			public const new Guid IID = .(0x13f19604, 0x7d32, 0x4359, 0x93, 0xa2, 0xa0, 0x52, 0x05, 0xd9, 0x0a, 0xc9);
+			
+			public function HRESULT(IBDA_DigitalDemodulator3 *self, BDA_SIGNAL_TIMEOUTS* pSignalTimeouts) put_SignalTimeouts;
+			public function HRESULT(IBDA_DigitalDemodulator3 *self, BDA_SIGNAL_TIMEOUTS* pSignalTimeouts) get_SignalTimeouts;
+			public function HRESULT(IBDA_DigitalDemodulator3 *self, uint32* pPLPNumber) put_PLPNumber;
+			public function HRESULT(IBDA_DigitalDemodulator3 *self, uint32* pPLPNumber) get_PLPNumber;
+		}
+		[CRepr]
+		public struct ICCSubStreamFiltering : IUnknown
+		{
+			public const new Guid IID = .(0x4b2bd7ea, 0x8347, 0x467b, 0x8d, 0xbf, 0x62, 0xf7, 0x84, 0x92, 0x9c, 0xc3);
+			
+			public function HRESULT(ICCSubStreamFiltering *self, int32* pTypes) get_SubstreamTypes;
+			public function HRESULT(ICCSubStreamFiltering *self, int32 Types) put_SubstreamTypes;
+		}
+		[CRepr]
+		public struct IBDA_IPSinkControl : IUnknown
+		{
+			public const new Guid IID = .(0x3f4dc8e2, 0x4050, 0x11d3, 0x8f, 0x4b, 0x00, 0xc0, 0x4f, 0x79, 0x71, 0xe2);
+			
+			public function HRESULT(IBDA_IPSinkControl *self, uint32* pulcbSize, uint8** pbBuffer) GetMulticastList;
+			public function HRESULT(IBDA_IPSinkControl *self, uint32* pulcbSize, uint8** pbBuffer) GetAdapterIPAddress;
+		}
+		[CRepr]
+		public struct IBDA_IPSinkInfo : IUnknown
+		{
+			public const new Guid IID = .(0xa750108f, 0x492e, 0x4d51, 0x95, 0xf7, 0x64, 0x9b, 0x23, 0xff, 0x7a, 0xd7);
+			
+			public function HRESULT(IBDA_IPSinkInfo *self, uint32* pulcbAddresses, uint8** ppbAddressList) get_MulticastList;
+			public function HRESULT(IBDA_IPSinkInfo *self, BSTR* pbstrBuffer) get_AdapterIPAddress;
+			public function HRESULT(IBDA_IPSinkInfo *self, BSTR* pbstrBuffer) get_AdapterDescription;
+		}
+		[CRepr]
+		public struct IEnumPIDMap : IUnknown
+		{
+			public const new Guid IID = .(0xafb6c2a2, 0x2c41, 0x11d3, 0x8a, 0x60, 0x00, 0x00, 0xf8, 0x1e, 0x0e, 0x4a);
+			
+			public function HRESULT(IEnumPIDMap *self, uint32 cRequest, PID_MAP* pPIDMap, uint32* pcReceived) Next;
+			public function HRESULT(IEnumPIDMap *self, uint32 cRecords) Skip;
+			public function HRESULT(IEnumPIDMap *self) Reset;
+			public function HRESULT(IEnumPIDMap *self, IEnumPIDMap** ppIEnumPIDMap) Clone;
+		}
+		[CRepr]
+		public struct IMPEG2PIDMap : IUnknown
+		{
+			public const new Guid IID = .(0xafb6c2a1, 0x2c41, 0x11d3, 0x8a, 0x60, 0x00, 0x00, 0xf8, 0x1e, 0x0e, 0x4a);
+			
+			public function HRESULT(IMPEG2PIDMap *self, uint32 culPID, uint32* pulPID, MEDIA_SAMPLE_CONTENT MediaSampleContent) MapPID;
+			public function HRESULT(IMPEG2PIDMap *self, uint32 culPID, uint32* pulPID) UnmapPID;
+			public function HRESULT(IMPEG2PIDMap *self, IEnumPIDMap** pIEnumPIDMap) EnumPIDMap;
+		}
+		[CRepr]
+		public struct IFrequencyMap : IUnknown
+		{
+			public const new Guid IID = .(0x06fb45c1, 0x693c, 0x4ea7, 0xb7, 0x9f, 0x7a, 0x6a, 0x54, 0xd8, 0xde, 0xf2);
+			
+			public function HRESULT(IFrequencyMap *self, uint32* ulCount, uint32** ppulList) get_FrequencyMapping;
+			public function HRESULT(IFrequencyMap *self, uint32 ulCount, uint32* pList) put_FrequencyMapping;
+			public function HRESULT(IFrequencyMap *self, uint32* pulCountryCode) get_CountryCode;
+			public function HRESULT(IFrequencyMap *self, uint32 ulCountryCode) put_CountryCode;
+			public function HRESULT(IFrequencyMap *self, uint32 ulCountryCode, uint32* pulCount, uint32** ppulList) get_DefaultFrequencyMapping;
+			public function HRESULT(IFrequencyMap *self, uint32* pulCount, uint32** ppulList) get_CountryCodeList;
+		}
+		[CRepr]
+		public struct IBDA_EasMessage : IUnknown
+		{
+			public const new Guid IID = .(0xd806973d, 0x3ebe, 0x46de, 0x8f, 0xbb, 0x63, 0x58, 0xfe, 0x78, 0x42, 0x08);
+			
+			public function HRESULT(IBDA_EasMessage *self, uint32 ulEventID, IUnknown** ppEASObject) get_EasMessage;
+		}
+		[CRepr]
+		public struct IBDA_TransportStreamInfo : IUnknown
+		{
+			public const new Guid IID = .(0x8e882535, 0x5f86, 0x47ab, 0x86, 0xcf, 0xc2, 0x81, 0xa7, 0x2a, 0x05, 0x49);
+			
+			public function HRESULT(IBDA_TransportStreamInfo *self, uint32* pPatTickCount) get_PatTableTickCount;
+		}
+		[CRepr]
+		public struct IBDA_ConditionalAccess : IUnknown
+		{
+			public const new Guid IID = .(0xcd51f1e0, 0x7be9, 0x4123, 0x84, 0x82, 0xa2, 0xa7, 0x96, 0xc0, 0xa6, 0xb0);
+			
+			public function HRESULT(IBDA_ConditionalAccess *self, SmartCardStatusType* pCardStatus, SmartCardAssociationType* pCardAssociation, BSTR* pbstrCardError, int16* pfOOBLocked) get_SmartCardStatus;
+			public function HRESULT(IBDA_ConditionalAccess *self, BSTR* pbstrCardName, BSTR* pbstrCardManufacturer, int16* pfDaylightSavings, uint8* pbyRatingRegion, int32* plTimeZoneOffsetMinutes, BSTR* pbstrLanguage, EALocationCodeType* pEALocationCode) get_SmartCardInfo;
+			public function HRESULT(IBDA_ConditionalAccess *self, uint32* pulcApplications, uint32 ulcApplicationsMax, SmartCardApplication* rgApplications) get_SmartCardApplications;
+			public function HRESULT(IBDA_ConditionalAccess *self, uint16 usVirtualChannel, EntitlementType* pEntitlement) get_Entitlement;
+			public function HRESULT(IBDA_ConditionalAccess *self, uint16 usVirtualChannel) TuneByChannel;
+			public function HRESULT(IBDA_ConditionalAccess *self, uint16 usProgramNumber) SetProgram;
+			public function HRESULT(IBDA_ConditionalAccess *self, uint16 usProgramNumber) AddProgram;
+			public function HRESULT(IBDA_ConditionalAccess *self, uint16 usProgramNumber) RemoveProgram;
+			public function HRESULT(IBDA_ConditionalAccess *self, uint8 byDialogNumber, BSTR* pbstrURL) GetModuleUI;
+			public function HRESULT(IBDA_ConditionalAccess *self, uint8 byDialogNumber, UICloseReasonType CloseReason) InformUIClosed;
+		}
+		[CRepr]
+		public struct IBDA_DiagnosticProperties : IPropertyBag
+		{
+			public const new Guid IID = .(0x20e80cb5, 0xc543, 0x4c1b, 0x8e, 0xb3, 0x49, 0xe7, 0x19, 0xee, 0xe7, 0xd4);
+			
+		}
+		[CRepr]
+		public struct IBDA_DRM : IUnknown
+		{
+			public const new Guid IID = .(0xf98d88b0, 0x1992, 0x4cd6, 0xa6, 0xd9, 0xb9, 0xaf, 0xab, 0x99, 0x33, 0x0d);
+			
+			public function HRESULT(IBDA_DRM *self, uint32* pdwStatus, HRESULT* phError) GetDRMPairingStatus;
+			public function HRESULT(IBDA_DRM *self, BOOL fSync) PerformDRMPairing;
+		}
+		[CRepr]
+		public struct IBDA_NameValueService : IUnknown
+		{
+			public const new Guid IID = .(0x7f0b3150, 0x7b81, 0x4ad4, 0x98, 0xe3, 0x7e, 0x90, 0x97, 0x09, 0x43, 0x01);
+			
+			public function HRESULT(IBDA_NameValueService *self, uint32 ulIndex, BSTR* pbstrName) GetValueNameByIndex;
+			public function HRESULT(IBDA_NameValueService *self, BSTR bstrName, BSTR bstrLanguage, BSTR* pbstrValue) GetValue;
+			public function HRESULT(IBDA_NameValueService *self, uint32 ulDialogRequest, BSTR bstrLanguage, BSTR bstrName, BSTR bstrValue, uint32 ulReserved) SetValue;
+		}
+		[CRepr]
+		public struct IBDA_ConditionalAccessEx : IUnknown
+		{
+			public const new Guid IID = .(0x497c3418, 0x23cb, 0x44ba, 0xbb, 0x62, 0x76, 0x9f, 0x50, 0x6f, 0xce, 0xa7);
+			
+			public function HRESULT(IBDA_ConditionalAccessEx *self, uint32 ulDialogRequest, BSTR bstrLanguage, BDA_CONDITIONALACCESS_REQUESTTYPE RequestType, uint32 ulcbEntitlementTokenLen, uint8* pbEntitlementToken, uint32* pulDescrambleStatus) CheckEntitlementToken;
+			public function HRESULT(IBDA_ConditionalAccessEx *self, uint32 ulcbCaptureTokenLen, uint8* pbCaptureToken) SetCaptureToken;
+			public function HRESULT(IBDA_ConditionalAccessEx *self, uint32 ulDialogRequest, BSTR bstrLanguage, uint32 EventId) OpenBroadcastMmi;
+			public function HRESULT(IBDA_ConditionalAccessEx *self, uint32 ulDialogRequest, BSTR bstrLanguage, uint32 ulDialogNumber, BDA_CONDITIONALACCESS_MMICLOSEREASON ReasonCode, uint32* pulSessionResult) CloseMmiDialog;
+			public function HRESULT(IBDA_ConditionalAccessEx *self, uint32* pulDialogRequestNumber) CreateDialogRequestNumber;
+		}
+		[CRepr]
+		public struct IBDA_ISDBConditionalAccess : IUnknown
+		{
+			public const new Guid IID = .(0x5e68c627, 0x16c2, 0x4e6c, 0xb1, 0xe2, 0xd0, 0x01, 0x70, 0xcd, 0xaa, 0x0f);
+			
+			public function HRESULT(IBDA_ISDBConditionalAccess *self, uint32 ulRequestId, uint32 ulcbRequestBufferLen, uint8* pbRequestBuffer) SetIsdbCasRequest;
+		}
+		[CRepr]
+		public struct IBDA_EventingService : IUnknown
+		{
+			public const new Guid IID = .(0x207c413f, 0x00dc, 0x4c61, 0xba, 0xd6, 0x6f, 0xee, 0x1f, 0xf0, 0x70, 0x64);
+			
+			public function HRESULT(IBDA_EventingService *self, uint32 ulEventID, uint32 ulEventResult) CompleteEvent;
+		}
+		[CRepr]
+		public struct IBDA_AUX : IUnknown
+		{
+			public const new Guid IID = .(0x7def4c09, 0x6e66, 0x4567, 0xa8, 0x19, 0xf0, 0xe1, 0x7f, 0x4a, 0x81, 0xab);
+			
+			public function HRESULT(IBDA_AUX *self, uint32* pdwNumAuxInputsBSTR) QueryCapabilities;
+			public function HRESULT(IBDA_AUX *self, uint32 dwIndex, uint32* dwInputID, Guid* pConnectorType, uint32* ConnTypeNum, uint32* NumVideoStds, uint64* AnalogStds) EnumCapability;
+		}
+		[CRepr]
+		public struct IBDA_Encoder : IUnknown
+		{
+			public const new Guid IID = .(0x3a8bad59, 0x59fe, 0x4559, 0xa0, 0xba, 0x39, 0x6c, 0xfa, 0xa9, 0x8a, 0xe3);
+			
+			public function HRESULT(IBDA_Encoder *self, uint32* NumAudioFmts, uint32* NumVideoFmts) QueryCapabilities;
+			public function HRESULT(IBDA_Encoder *self, uint32 FmtIndex, uint32* MethodID, uint32* AlgorithmType, uint32* SamplingRate, uint32* BitDepth, uint32* NumChannels) EnumAudioCapability;
+			public function HRESULT(IBDA_Encoder *self, uint32 FmtIndex, uint32* MethodID, uint32* AlgorithmType, uint32* VerticalSize, uint32* HorizontalSize, uint32* AspectRatio, uint32* FrameRateCode, uint32* ProgressiveSequence) EnumVideoCapability;
+			public function HRESULT(IBDA_Encoder *self, uint32 AudioBitrateMode, uint32 AudioBitrate, uint32 AudioMethodID, uint32 AudioProgram, uint32 VideoBitrateMode, uint32 VideoBitrate, uint32 VideoMethodID) SetParameters;
+			public function HRESULT(IBDA_Encoder *self, uint32* AudioBitrateMax, uint32* AudioBitrateMin, uint32* AudioBitrateMode, uint32* AudioBitrateStepping, uint32* AudioBitrate, uint32* AudioMethodID, uint32* AvailableAudioPrograms, uint32* AudioProgram, uint32* VideoBitrateMax, uint32* VideoBitrateMin, uint32* VideoBitrateMode, uint32* VideoBitrate, uint32* VideoBitrateStepping, uint32* VideoMethodID, uint32* SignalSourceID, uint64* SignalFormat, BOOL* SignalLock, int32* SignalLevel, uint32* SignalToNoiseRatio) GetState;
+		}
+		[CRepr]
+		public struct IBDA_FDC : IUnknown
+		{
+			public const new Guid IID = .(0x138adc7e, 0x58ae, 0x437f, 0xb0, 0xb4, 0xc9, 0xfe, 0x19, 0xd5, 0xb4, 0xac);
+			
+			public function HRESULT(IBDA_FDC *self, uint32* CurrentBitrate, BOOL* CarrierLock, uint32* CurrentFrequency, BOOL* CurrentSpectrumInversion, BSTR* CurrentPIDList, BSTR* CurrentTIDList, BOOL* Overflow) GetStatus;
+			public function HRESULT(IBDA_FDC *self, BSTR TableIDs) RequestTables;
+			public function HRESULT(IBDA_FDC *self, BSTR PidsToAdd, uint32* RemainingFilterEntries) AddPid;
+			public function HRESULT(IBDA_FDC *self, BSTR PidsToRemove) RemovePid;
+			public function HRESULT(IBDA_FDC *self, BSTR TidsToAdd, BSTR* CurrentTidList) AddTid;
+			public function HRESULT(IBDA_FDC *self, BSTR TidsToRemove) RemoveTid;
+			public function HRESULT(IBDA_FDC *self, uint32* Pid, uint32 MaxBufferSize, uint32* ActualSize, uint8* SecBuffer) GetTableSection;
+		}
+		[CRepr]
+		public struct IBDA_GuideDataDeliveryService : IUnknown
+		{
+			public const new Guid IID = .(0xc0afcb73, 0x23e7, 0x4bc6, 0xba, 0xfa, 0xfd, 0xc1, 0x67, 0xb4, 0x71, 0x9f);
+			
+			public function HRESULT(IBDA_GuideDataDeliveryService *self, Guid* pguidDataType) GetGuideDataType;
+			public function HRESULT(IBDA_GuideDataDeliveryService *self, uint32* pulcbBufferLen, uint8* pbBuffer, uint32* pulGuideDataPercentageProgress) GetGuideData;
+			public function HRESULT(IBDA_GuideDataDeliveryService *self) RequestGuideDataUpdate;
+			public function HRESULT(IBDA_GuideDataDeliveryService *self, uint64 ul64ServiceIdx, BSTR* pbstrTuneXml) GetTuneXmlFromServiceIdx;
+			public function HRESULT(IBDA_GuideDataDeliveryService *self, uint32* pulcbBufferLen, uint8* pbBuffer) GetServices;
+			public function HRESULT(IBDA_GuideDataDeliveryService *self, BSTR bstrTuneXml, BSTR* pbstrServiceDescription) GetServiceInfoFromTuneXml;
+		}
+		[CRepr]
+		public struct IBDA_DRMService : IUnknown
+		{
+			public const new Guid IID = .(0xbff6b5bb, 0xb0ae, 0x484c, 0x9d, 0xca, 0x73, 0x52, 0x8f, 0xb0, 0xb4, 0x6e);
+			
+			public function HRESULT(IBDA_DRMService *self, Guid* puuidNewDrm) SetDRM;
+			public function HRESULT(IBDA_DRMService *self, BSTR* pbstrDrmUuidList, Guid* DrmUuid) GetDRMStatus;
+		}
+		[CRepr]
+		public struct IBDA_WMDRMSession : IUnknown
+		{
+			public const new Guid IID = .(0x4be6fa3d, 0x07cd, 0x4139, 0x8b, 0x80, 0x8c, 0x18, 0xba, 0x3a, 0xec, 0x88);
+			
+			public function HRESULT(IBDA_WMDRMSession *self, uint32* MaxCaptureToken, uint32* MaxStreamingPid, uint32* MaxLicense, uint32* MinSecurityLevel, uint32* RevInfoSequenceNumber, uint64* RevInfoIssuedTime, uint32* RevInfoTTL, uint32* RevListVersion, uint32* ulState) GetStatus;
+			public function HRESULT(IBDA_WMDRMSession *self, uint32 ulRevInfoLen, uint8* pbRevInfo) SetRevInfo;
+			public function HRESULT(IBDA_WMDRMSession *self, uint32 ulCrlLen, uint8* pbCrlLen) SetCrl;
+			public function HRESULT(IBDA_WMDRMSession *self, uint32 ulcbRequest, uint8* pbRequest, uint32* pulcbResponse, uint8* pbResponse) TransactMessage;
+			public function HRESULT(IBDA_WMDRMSession *self, Guid* uuidKey, uint32* pulPackageLen, uint8* pbPackage) GetLicense;
+			public function HRESULT(IBDA_WMDRMSession *self, Guid* uuidKey) ReissueLicense;
+			public function HRESULT(IBDA_WMDRMSession *self, uint32 ulInXmrLicenseLen, uint8* pbInXmrLicense, uint32 ulEntitlementTokenLen, uint8* pbEntitlementToken, uint32* pulDescrambleStatus, uint32* pulOutXmrLicenseLen, uint8* pbOutXmrLicense) RenewLicense;
+			public function HRESULT(IBDA_WMDRMSession *self, uint32* pulKeyInfoLen, uint8* pbKeyInfo) GetKeyInfo;
+		}
+		[CRepr]
+		public struct IBDA_WMDRMTuner : IUnknown
+		{
+			public const new Guid IID = .(0x86d979cf, 0xa8a7, 0x4f94, 0xb5, 0xfb, 0x14, 0xc0, 0xac, 0xa6, 0x8f, 0xe6);
+			
+			public function HRESULT(IBDA_WMDRMTuner *self, uint32 ulDialogRequest, BSTR bstrLanguage, uint32 ulPurchaseTokenLen, uint8* pbPurchaseToken, uint32* pulDescrambleStatus, uint32* pulCaptureTokenLen, uint8* pbCaptureToken) PurchaseEntitlement;
+			public function HRESULT(IBDA_WMDRMTuner *self, uint32 ulCaptureTokenLen, uint8* pbCaptureToken) CancelCaptureToken;
+			public function HRESULT(IBDA_WMDRMTuner *self, uint32 ulPid, Guid* uuidKey) SetPidProtection;
+			public function HRESULT(IBDA_WMDRMTuner *self, uint32 pulPid, Guid* uuidKey) GetPidProtection;
+			public function HRESULT(IBDA_WMDRMTuner *self, uint32 ulSyncValue) SetSyncValue;
+			public function HRESULT(IBDA_WMDRMTuner *self, uint32* pulStartCodeProfileLen, uint8* pbStartCodeProfile) GetStartCodeProfile;
+		}
+		[CRepr]
+		public struct IBDA_DRIDRMService : IUnknown
+		{
+			public const new Guid IID = .(0x1f9bc2a5, 0x44a3, 0x4c52, 0xaa, 0xb1, 0x0b, 0xbc, 0xe5, 0xa1, 0x38, 0x1d);
+			
+			public function HRESULT(IBDA_DRIDRMService *self, BSTR bstrNewDrm) SetDRM;
+			public function HRESULT(IBDA_DRIDRMService *self, BSTR* pbstrDrmUuidList, Guid* DrmUuid) GetDRMStatus;
+			public function HRESULT(IBDA_DRIDRMService *self, BDA_DrmPairingError* penumPairingStatus) GetPairingStatus;
+		}
+		[CRepr]
+		public struct IBDA_DRIWMDRMSession : IUnknown
+		{
+			public const new Guid IID = .(0x05c690f8, 0x56db, 0x4bb2, 0xb0, 0x53, 0x79, 0xc1, 0x20, 0x98, 0xbb, 0x26);
+			
+			public function HRESULT(IBDA_DRIWMDRMSession *self, HRESULT hrLicenseAck) AcknowledgeLicense;
+			public function HRESULT(IBDA_DRIWMDRMSession *self, uint32 dwcbLicenseMessage, uint8* pbLicenseMessage, uint32* pdwcbLicenseResponse, uint8** ppbLicenseResponse) ProcessLicenseChallenge;
+			public function HRESULT(IBDA_DRIWMDRMSession *self, uint32 dwcbRegistrationMessage, uint8* pbRegistrationMessage, uint32* pdwcbRegistrationResponse, uint8** ppbRegistrationResponse) ProcessRegistrationChallenge;
+			public function HRESULT(IBDA_DRIWMDRMSession *self, uint32 dwRevInfoLen, uint8* pbRevInfo, uint32* pdwResponse) SetRevInfo;
+			public function HRESULT(IBDA_DRIWMDRMSession *self, uint32 dwCrlLen, uint8* pbCrlLen, uint32* pdwResponse) SetCrl;
+			public function HRESULT(IBDA_DRIWMDRMSession *self) GetHMSAssociationData;
+			public function HRESULT(IBDA_DRIWMDRMSession *self, uint32* pdwError) GetLastCardeaError;
+		}
+		[CRepr]
+		public struct IBDA_MUX : IUnknown
+		{
+			public const new Guid IID = .(0x942aafec, 0x4c05, 0x4c74, 0xb8, 0xeb, 0x87, 0x06, 0xc2, 0xa4, 0x94, 0x3f);
+			
+			public function HRESULT(IBDA_MUX *self, uint32 ulPidListCount, BDA_MUX_PIDLISTITEM* pbPidListBuffer) SetPidList;
+			public function HRESULT(IBDA_MUX *self, uint32* pulPidListCount, BDA_MUX_PIDLISTITEM* pbPidListBuffer) GetPidList;
+		}
+		[CRepr]
+		public struct IBDA_TransportStreamSelector : IUnknown
+		{
+			public const new Guid IID = .(0x1dcfafe9, 0xb45e, 0x41b3, 0xbb, 0x2a, 0x56, 0x1e, 0xb1, 0x29, 0xae, 0x98);
+			
+			public function HRESULT(IBDA_TransportStreamSelector *self, uint16 usTSID) SetTSID;
+			public function HRESULT(IBDA_TransportStreamSelector *self, uint32* pulTSInformationBufferLen, uint8* pbTSInformationBuffer) GetTSInformation;
+		}
+		[CRepr]
+		public struct IBDA_UserActivityService : IUnknown
+		{
+			public const new Guid IID = .(0x53b14189, 0xe478, 0x4b7a, 0xa1, 0xff, 0x50, 0x6d, 0xb4, 0xb9, 0x9d, 0xfe);
+			
+			public function HRESULT(IBDA_UserActivityService *self, uint32 dwUseReason) SetCurrentTunerUseReason;
+			public function HRESULT(IBDA_UserActivityService *self, uint32* pdwActivityInterval) GetUserActivityInterval;
+			public function HRESULT(IBDA_UserActivityService *self) UserActivityDetected;
+		}
+		[CRepr]
+		public struct IESEvent : IUnknown
+		{
+			public const new Guid IID = .(0x1f0e5357, 0xaf43, 0x44e6, 0x85, 0x47, 0x65, 0x4c, 0x64, 0x51, 0x45, 0xd2);
+			
+			public function HRESULT(IESEvent *self, uint32* pdwEventId) GetEventId;
+			public function HRESULT(IESEvent *self, Guid* pguidEventType) GetEventType;
+			public function HRESULT(IESEvent *self, uint32 dwResult) SetCompletionStatus;
+			public function HRESULT(IESEvent *self, SAFEARRAY** pbData) GetData;
+			public function HRESULT(IESEvent *self, BSTR* pbstrData) GetStringData;
+		}
+		[CRepr]
+		public struct IESEvents : IUnknown
+		{
+			public const new Guid IID = .(0xabd414bf, 0xcfe5, 0x4e5e, 0xaf, 0x5b, 0x4b, 0x4e, 0x49, 0xc5, 0xbf, 0xeb);
+			
+			public function HRESULT(IESEvents *self, Guid guidEventType, IESEvent* pESEvent) OnESEventReceived;
+		}
+		[CRepr]
+		public struct IBroadcastEvent : IUnknown
+		{
+			public const new Guid IID = .(0x3b21263f, 0x26e8, 0x489d, 0xaa, 0xc4, 0x92, 0x4f, 0x7e, 0xfd, 0x95, 0x11);
+			
+			public function HRESULT(IBroadcastEvent *self, Guid EventID) Fire;
+		}
+		[CRepr]
+		public struct IBroadcastEventEx : IBroadcastEvent
+		{
+			public const new Guid IID = .(0x3d9e3887, 0x1929, 0x423f, 0x80, 0x21, 0x43, 0x68, 0x2d, 0xe9, 0x54, 0x48);
+			
+			public function HRESULT(IBroadcastEventEx *self, Guid EventID, uint32 Param1, uint32 Param2, uint32 Param3, uint32 Param4) FireEx;
+		}
+		[CRepr]
+		public struct IAMNetShowConfig : IDispatch
+		{
+			public const new Guid IID = .(0xfa2aa8f1, 0x8b62, 0x11d0, 0xa5, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			
+			public function HRESULT(IAMNetShowConfig *self, double* pBufferingTime) get_BufferingTime;
+			public function HRESULT(IAMNetShowConfig *self, double BufferingTime) put_BufferingTime;
+			public function HRESULT(IAMNetShowConfig *self, int16* pUseFixedUDPPort) get_UseFixedUDPPort;
+			public function HRESULT(IAMNetShowConfig *self, int16 UseFixedUDPPort) put_UseFixedUDPPort;
+			public function HRESULT(IAMNetShowConfig *self, int32* pFixedUDPPort) get_FixedUDPPort;
+			public function HRESULT(IAMNetShowConfig *self, int32 FixedUDPPort) put_FixedUDPPort;
+			public function HRESULT(IAMNetShowConfig *self, int16* pUseHTTPProxy) get_UseHTTPProxy;
+			public function HRESULT(IAMNetShowConfig *self, int16 UseHTTPProxy) put_UseHTTPProxy;
+			public function HRESULT(IAMNetShowConfig *self, int16* pEnableAutoProxy) get_EnableAutoProxy;
+			public function HRESULT(IAMNetShowConfig *self, int16 EnableAutoProxy) put_EnableAutoProxy;
+			public function HRESULT(IAMNetShowConfig *self, BSTR* pbstrHTTPProxyHost) get_HTTPProxyHost;
+			public function HRESULT(IAMNetShowConfig *self, BSTR bstrHTTPProxyHost) put_HTTPProxyHost;
+			public function HRESULT(IAMNetShowConfig *self, int32* pHTTPProxyPort) get_HTTPProxyPort;
+			public function HRESULT(IAMNetShowConfig *self, int32 HTTPProxyPort) put_HTTPProxyPort;
+			public function HRESULT(IAMNetShowConfig *self, int16* pEnableMulticast) get_EnableMulticast;
+			public function HRESULT(IAMNetShowConfig *self, int16 EnableMulticast) put_EnableMulticast;
+			public function HRESULT(IAMNetShowConfig *self, int16* pEnableUDP) get_EnableUDP;
+			public function HRESULT(IAMNetShowConfig *self, int16 EnableUDP) put_EnableUDP;
+			public function HRESULT(IAMNetShowConfig *self, int16* pEnableTCP) get_EnableTCP;
+			public function HRESULT(IAMNetShowConfig *self, int16 EnableTCP) put_EnableTCP;
+			public function HRESULT(IAMNetShowConfig *self, int16* pEnableHTTP) get_EnableHTTP;
+			public function HRESULT(IAMNetShowConfig *self, int16 EnableHTTP) put_EnableHTTP;
+		}
+		[CRepr]
+		public struct IAMChannelInfo : IDispatch
+		{
+			public const new Guid IID = .(0xfa2aa8f2, 0x8b62, 0x11d0, 0xa5, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			
+			public function HRESULT(IAMChannelInfo *self, BSTR* pbstrChannelName) get_ChannelName;
+			public function HRESULT(IAMChannelInfo *self, BSTR* pbstrChannelDescription) get_ChannelDescription;
+			public function HRESULT(IAMChannelInfo *self, BSTR* pbstrChannelURL) get_ChannelURL;
+			public function HRESULT(IAMChannelInfo *self, BSTR* pbstrContactAddress) get_ContactAddress;
+			public function HRESULT(IAMChannelInfo *self, BSTR* pbstrContactPhone) get_ContactPhone;
+			public function HRESULT(IAMChannelInfo *self, BSTR* pbstrContactEmail) get_ContactEmail;
+		}
+		[CRepr]
+		public struct IAMNetworkStatus : IDispatch
+		{
+			public const new Guid IID = .(0xfa2aa8f3, 0x8b62, 0x11d0, 0xa5, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			
+			public function HRESULT(IAMNetworkStatus *self, int32* pReceivedPackets) get_ReceivedPackets;
+			public function HRESULT(IAMNetworkStatus *self, int32* pRecoveredPackets) get_RecoveredPackets;
+			public function HRESULT(IAMNetworkStatus *self, int32* pLostPackets) get_LostPackets;
+			public function HRESULT(IAMNetworkStatus *self, int32* pReceptionQuality) get_ReceptionQuality;
+			public function HRESULT(IAMNetworkStatus *self, int32* pBufferingCount) get_BufferingCount;
+			public function HRESULT(IAMNetworkStatus *self, int16* pIsBroadcast) get_IsBroadcast;
+			public function HRESULT(IAMNetworkStatus *self, int32* pBufferingProgress) get_BufferingProgress;
+		}
+		[CRepr]
+		public struct IAMExtendedSeeking : IDispatch
+		{
+			public const new Guid IID = .(0xfa2aa8f9, 0x8b62, 0x11d0, 0xa5, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			
+			public function HRESULT(IAMExtendedSeeking *self, int32* pExCapabilities) get_ExSeekCapabilities;
+			public function HRESULT(IAMExtendedSeeking *self, int32* pMarkerCount) get_MarkerCount;
+			public function HRESULT(IAMExtendedSeeking *self, int32* pCurrentMarker) get_CurrentMarker;
+			public function HRESULT(IAMExtendedSeeking *self, int32 MarkerNum, double* pMarkerTime) GetMarkerTime;
+			public function HRESULT(IAMExtendedSeeking *self, int32 MarkerNum, BSTR* pbstrMarkerName) GetMarkerName;
+			public function HRESULT(IAMExtendedSeeking *self, double Speed) put_PlaybackSpeed;
+			public function HRESULT(IAMExtendedSeeking *self, double* pSpeed) get_PlaybackSpeed;
+		}
+		[CRepr]
+		public struct IAMNetShowExProps : IDispatch
+		{
+			public const new Guid IID = .(0xfa2aa8f5, 0x8b62, 0x11d0, 0xa5, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			
+			public function HRESULT(IAMNetShowExProps *self, int32* pSourceProtocol) get_SourceProtocol;
+			public function HRESULT(IAMNetShowExProps *self, int32* pBandwidth) get_Bandwidth;
+			public function HRESULT(IAMNetShowExProps *self, BSTR* pbstrErrorCorrection) get_ErrorCorrection;
+			public function HRESULT(IAMNetShowExProps *self, int32* pCodecCount) get_CodecCount;
+			public function HRESULT(IAMNetShowExProps *self, int32 CodecNum, int16* pCodecInstalled) GetCodecInstalled;
+			public function HRESULT(IAMNetShowExProps *self, int32 CodecNum, BSTR* pbstrCodecDescription) GetCodecDescription;
+			public function HRESULT(IAMNetShowExProps *self, int32 CodecNum, BSTR* pbstrCodecURL) GetCodecURL;
+			public function HRESULT(IAMNetShowExProps *self, double* pCreationDate) get_CreationDate;
+			public function HRESULT(IAMNetShowExProps *self, BSTR* pbstrSourceLink) get_SourceLink;
+		}
+		[CRepr]
+		public struct IAMExtendedErrorInfo : IDispatch
+		{
+			public const new Guid IID = .(0xfa2aa8f6, 0x8b62, 0x11d0, 0xa5, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			
+			public function HRESULT(IAMExtendedErrorInfo *self, int16* pHasError) get_HasError;
+			public function HRESULT(IAMExtendedErrorInfo *self, BSTR* pbstrErrorDescription) get_ErrorDescription;
+			public function HRESULT(IAMExtendedErrorInfo *self, int32* pErrorCode) get_ErrorCode;
+		}
+		[CRepr]
+		public struct IAMMediaContent : IDispatch
+		{
+			public const new Guid IID = .(0xfa2aa8f4, 0x8b62, 0x11d0, 0xa5, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrAuthorName) get_AuthorName;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrTitle) get_Title;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrRating) get_Rating;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrDescription) get_Description;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrCopyright) get_Copyright;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrBaseURL) get_BaseURL;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrLogoURL) get_LogoURL;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrLogoURL) get_LogoIconURL;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrWatermarkURL) get_WatermarkURL;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrMoreInfoURL) get_MoreInfoURL;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrMoreInfoBannerImage) get_MoreInfoBannerImage;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrMoreInfoBannerURL) get_MoreInfoBannerURL;
+			public function HRESULT(IAMMediaContent *self, BSTR* pbstrMoreInfoText) get_MoreInfoText;
+		}
+		[CRepr]
+		public struct IAMMediaContent2 : IDispatch
+		{
+			public const new Guid IID = .(0xce8f78c1, 0x74d9, 0x11d2, 0xb0, 0x9d, 0x00, 0xa0, 0xc9, 0xa8, 0x11, 0x17);
+			
+			public function HRESULT(IAMMediaContent2 *self, int32 EntryNum, BSTR bstrName, BSTR* pbstrValue) get_MediaParameter;
+			public function HRESULT(IAMMediaContent2 *self, int32 EntryNum, int32 Index, BSTR* pbstrName) get_MediaParameterName;
+			public function HRESULT(IAMMediaContent2 *self, int32* pNumberEntries) get_PlaylistCount;
+		}
+		[CRepr]
+		public struct IAMNetShowPreroll : IDispatch
+		{
+			public const new Guid IID = .(0xaae7e4e2, 0x6388, 0x11d1, 0x8d, 0x93, 0x00, 0x60, 0x97, 0xc9, 0xa2, 0xb2);
+			
+			public function HRESULT(IAMNetShowPreroll *self, int16 fPreroll) put_Preroll;
+			public function HRESULT(IAMNetShowPreroll *self, int16* pfPreroll) get_Preroll;
+		}
+		[CRepr]
+		public struct IDShowPlugin : IUnknown
+		{
+			public const new Guid IID = .(0x4746b7c8, 0x700e, 0x11d1, 0xbe, 0xcc, 0x00, 0xc0, 0x4f, 0xb6, 0xe9, 0x37);
+			
+			public function HRESULT(IDShowPlugin *self, BSTR* pURL) get_URL;
+			public function HRESULT(IDShowPlugin *self, BSTR* pUserAgent) get_UserAgent;
+		}
+		[CRepr]
+		public struct IAMDirectSound : IUnknown
+		{
+			public function HRESULT(IAMDirectSound *self, IDirectSound** lplpds) GetDirectSoundInterface;
+			public function HRESULT(IAMDirectSound *self, IDirectSoundBuffer** lplpdsb) GetPrimaryBufferInterface;
+			public function HRESULT(IAMDirectSound *self, IDirectSoundBuffer** lplpdsb) GetSecondaryBufferInterface;
+			public function HRESULT(IAMDirectSound *self, IDirectSound* lpds) ReleaseDirectSoundInterface;
+			public function HRESULT(IAMDirectSound *self, IDirectSoundBuffer* lpdsb) ReleasePrimaryBufferInterface;
+			public function HRESULT(IAMDirectSound *self, IDirectSoundBuffer* lpdsb) ReleaseSecondaryBufferInterface;
+			public function HRESULT(IAMDirectSound *self, HWND param0, BOOL param1) SetFocusWindow;
+			public function HRESULT(IAMDirectSound *self, HWND* param0, BOOL* param1) GetFocusWindow;
+		}
+		[CRepr]
+		public struct IAMLine21Decoder : IUnknown
+		{
+			public function HRESULT(IAMLine21Decoder *self, AM_LINE21_CCLEVEL* lpLevel) GetDecoderLevel;
+			public function HRESULT(IAMLine21Decoder *self, AM_LINE21_CCSERVICE* lpService) GetCurrentService;
+			public function HRESULT(IAMLine21Decoder *self, AM_LINE21_CCSERVICE Service) SetCurrentService;
+			public function HRESULT(IAMLine21Decoder *self, AM_LINE21_CCSTATE* lpState) GetServiceState;
+			public function HRESULT(IAMLine21Decoder *self, AM_LINE21_CCSTATE State) SetServiceState;
+			public function HRESULT(IAMLine21Decoder *self, BITMAPINFOHEADER* lpbmih) GetOutputFormat;
+			public function HRESULT(IAMLine21Decoder *self, BITMAPINFO* lpbmi) SetOutputFormat;
+			public function HRESULT(IAMLine21Decoder *self, uint32* pdwPhysColor) GetBackgroundColor;
+			public function HRESULT(IAMLine21Decoder *self, uint32 dwPhysColor) SetBackgroundColor;
+			public function HRESULT(IAMLine21Decoder *self, int32* lpbOption) GetRedrawAlways;
+			public function HRESULT(IAMLine21Decoder *self, BOOL bOption) SetRedrawAlways;
+			public function HRESULT(IAMLine21Decoder *self, AM_LINE21_DRAWBGMODE* lpMode) GetDrawBackgroundMode;
+			public function HRESULT(IAMLine21Decoder *self, AM_LINE21_DRAWBGMODE Mode) SetDrawBackgroundMode;
+		}
+		[CRepr]
+		public struct IAMParse : IUnknown
+		{
+			public const new Guid IID = .(0xc47a3420, 0x005c, 0x11d2, 0x90, 0x38, 0x00, 0xa0, 0xc9, 0x69, 0x72, 0x98);
+			
+			public function HRESULT(IAMParse *self, int64* prtCurrent) GetParseTime;
+			public function HRESULT(IAMParse *self, int64 rtCurrent) SetParseTime;
+			public function HRESULT(IAMParse *self) Flush;
+		}
+		[CRepr]
+		public struct IAMCollection : IDispatch
+		{
+			public const new Guid IID = .(0x56a868b9, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IAMCollection *self, int32* plCount) get_Count;
+			public function HRESULT(IAMCollection *self, int32 lItem, IUnknown** ppUnk) Item;
+			public function HRESULT(IAMCollection *self, IUnknown** ppUnk) get__NewEnum;
+		}
+		[CRepr]
+		public struct IMediaControl : IDispatch
+		{
+			public const new Guid IID = .(0x56a868b1, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMediaControl *self) Run;
+			public function HRESULT(IMediaControl *self) Pause;
+			public function HRESULT(IMediaControl *self) Stop;
+			public function HRESULT(IMediaControl *self, int32 msTimeout, int32* pfs) GetState;
+			public function HRESULT(IMediaControl *self, BSTR strFilename) RenderFile;
+			public function HRESULT(IMediaControl *self, BSTR strFilename, IDispatch** ppUnk) AddSourceFilter;
+			public function HRESULT(IMediaControl *self, IDispatch** ppUnk) get_FilterCollection;
+			public function HRESULT(IMediaControl *self, IDispatch** ppUnk) get_RegFilterCollection;
+			public function HRESULT(IMediaControl *self) StopWhenReady;
+		}
+		[CRepr]
+		public struct IMediaEvent : IDispatch
+		{
+			public const new Guid IID = .(0x56a868b6, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMediaEvent *self, int* hEvent) GetEventHandle;
+			public function HRESULT(IMediaEvent *self, int32* lEventCode, int* lParam1, int* lParam2, int32 msTimeout) GetEvent;
+			public function HRESULT(IMediaEvent *self, int32 msTimeout, int32* pEvCode) WaitForCompletion;
+			public function HRESULT(IMediaEvent *self, int32 lEvCode) CancelDefaultHandling;
+			public function HRESULT(IMediaEvent *self, int32 lEvCode) RestoreDefaultHandling;
+			public function HRESULT(IMediaEvent *self, int32 lEvCode, int lParam1, int lParam2) FreeEventParams;
+		}
+		[CRepr]
+		public struct IMediaEventEx : IMediaEvent
+		{
+			public const new Guid IID = .(0x56a868c0, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMediaEventEx *self, int hwnd, int32 lMsg, int lInstanceData) SetNotifyWindow;
+			public function HRESULT(IMediaEventEx *self, int32 lNoNotifyFlags) SetNotifyFlags;
+			public function HRESULT(IMediaEventEx *self, int32* lplNoNotifyFlags) GetNotifyFlags;
+		}
+		[CRepr]
+		public struct IMediaPosition : IDispatch
+		{
+			public const new Guid IID = .(0x56a868b2, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMediaPosition *self, double* plength) get_Duration;
+			public function HRESULT(IMediaPosition *self, double llTime) put_CurrentPosition;
+			public function HRESULT(IMediaPosition *self, double* pllTime) get_CurrentPosition;
+			public function HRESULT(IMediaPosition *self, double* pllTime) get_StopTime;
+			public function HRESULT(IMediaPosition *self, double llTime) put_StopTime;
+			public function HRESULT(IMediaPosition *self, double* pllTime) get_PrerollTime;
+			public function HRESULT(IMediaPosition *self, double llTime) put_PrerollTime;
+			public function HRESULT(IMediaPosition *self, double dRate) put_Rate;
+			public function HRESULT(IMediaPosition *self, double* pdRate) get_Rate;
+			public function HRESULT(IMediaPosition *self, int32* pCanSeekForward) CanSeekForward;
+			public function HRESULT(IMediaPosition *self, int32* pCanSeekBackward) CanSeekBackward;
+		}
+		[CRepr]
+		public struct IBasicAudio : IDispatch
+		{
+			public const new Guid IID = .(0x56a868b3, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IBasicAudio *self, int32 lVolume) put_Volume;
+			public function HRESULT(IBasicAudio *self, int32* plVolume) get_Volume;
+			public function HRESULT(IBasicAudio *self, int32 lBalance) put_Balance;
+			public function HRESULT(IBasicAudio *self, int32* plBalance) get_Balance;
+		}
+		[CRepr]
+		public struct IVideoWindow : IDispatch
+		{
+			public const new Guid IID = .(0x56a868b4, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IVideoWindow *self, BSTR strCaption) put_Caption;
+			public function HRESULT(IVideoWindow *self, BSTR* strCaption) get_Caption;
+			public function HRESULT(IVideoWindow *self, int32 WindowStyle) put_WindowStyle;
+			public function HRESULT(IVideoWindow *self, int32* WindowStyle) get_WindowStyle;
+			public function HRESULT(IVideoWindow *self, int32 WindowStyleEx) put_WindowStyleEx;
+			public function HRESULT(IVideoWindow *self, int32* WindowStyleEx) get_WindowStyleEx;
+			public function HRESULT(IVideoWindow *self, int32 AutoShow) put_AutoShow;
+			public function HRESULT(IVideoWindow *self, int32* AutoShow) get_AutoShow;
+			public function HRESULT(IVideoWindow *self, int32 WindowState) put_WindowState;
+			public function HRESULT(IVideoWindow *self, int32* WindowState) get_WindowState;
+			public function HRESULT(IVideoWindow *self, int32 BackgroundPalette) put_BackgroundPalette;
+			public function HRESULT(IVideoWindow *self, int32* pBackgroundPalette) get_BackgroundPalette;
+			public function HRESULT(IVideoWindow *self, int32 Visible) put_Visible;
+			public function HRESULT(IVideoWindow *self, int32* pVisible) get_Visible;
+			public function HRESULT(IVideoWindow *self, int32 Left) put_Left;
+			public function HRESULT(IVideoWindow *self, int32* pLeft) get_Left;
+			public function HRESULT(IVideoWindow *self, int32 Width) put_Width;
+			public function HRESULT(IVideoWindow *self, int32* pWidth) get_Width;
+			public function HRESULT(IVideoWindow *self, int32 Top) put_Top;
+			public function HRESULT(IVideoWindow *self, int32* pTop) get_Top;
+			public function HRESULT(IVideoWindow *self, int32 Height) put_Height;
+			public function HRESULT(IVideoWindow *self, int32* pHeight) get_Height;
+			public function HRESULT(IVideoWindow *self, int Owner) put_Owner;
+			public function HRESULT(IVideoWindow *self, int* Owner) get_Owner;
+			public function HRESULT(IVideoWindow *self, int Drain) put_MessageDrain;
+			public function HRESULT(IVideoWindow *self, int* Drain) get_MessageDrain;
+			public function HRESULT(IVideoWindow *self, int32* Color) get_BorderColor;
+			public function HRESULT(IVideoWindow *self, int32 Color) put_BorderColor;
+			public function HRESULT(IVideoWindow *self, int32* FullScreenMode) get_FullScreenMode;
+			public function HRESULT(IVideoWindow *self, int32 FullScreenMode) put_FullScreenMode;
+			public function HRESULT(IVideoWindow *self, int32 Focus) SetWindowForeground;
+			public function HRESULT(IVideoWindow *self, int hwnd, int32 uMsg, int wParam, int lParam) NotifyOwnerMessage;
+			public function HRESULT(IVideoWindow *self, int32 Left, int32 Top, int32 Width, int32 Height) SetWindowPosition;
+			public function HRESULT(IVideoWindow *self, int32* pLeft, int32* pTop, int32* pWidth, int32* pHeight) GetWindowPosition;
+			public function HRESULT(IVideoWindow *self, int32* pWidth, int32* pHeight) GetMinIdealImageSize;
+			public function HRESULT(IVideoWindow *self, int32* pWidth, int32* pHeight) GetMaxIdealImageSize;
+			public function HRESULT(IVideoWindow *self, int32* pLeft, int32* pTop, int32* pWidth, int32* pHeight) GetRestorePosition;
+			public function HRESULT(IVideoWindow *self, OA_BOOL HideCursor) HideCursor;
+			public function HRESULT(IVideoWindow *self, int32* CursorHidden) IsCursorHidden;
+		}
+		[CRepr]
+		public struct IBasicVideo : IDispatch
+		{
+			public const new Guid IID = .(0x56a868b5, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IBasicVideo *self, double* pAvgTimePerFrame) get_AvgTimePerFrame;
+			public function HRESULT(IBasicVideo *self, int32* pBitRate) get_BitRate;
+			public function HRESULT(IBasicVideo *self, int32* pBitErrorRate) get_BitErrorRate;
+			public function HRESULT(IBasicVideo *self, int32* pVideoWidth) get_VideoWidth;
+			public function HRESULT(IBasicVideo *self, int32* pVideoHeight) get_VideoHeight;
+			public function HRESULT(IBasicVideo *self, int32 SourceLeft) put_SourceLeft;
+			public function HRESULT(IBasicVideo *self, int32* pSourceLeft) get_SourceLeft;
+			public function HRESULT(IBasicVideo *self, int32 SourceWidth) put_SourceWidth;
+			public function HRESULT(IBasicVideo *self, int32* pSourceWidth) get_SourceWidth;
+			public function HRESULT(IBasicVideo *self, int32 SourceTop) put_SourceTop;
+			public function HRESULT(IBasicVideo *self, int32* pSourceTop) get_SourceTop;
+			public function HRESULT(IBasicVideo *self, int32 SourceHeight) put_SourceHeight;
+			public function HRESULT(IBasicVideo *self, int32* pSourceHeight) get_SourceHeight;
+			public function HRESULT(IBasicVideo *self, int32 DestinationLeft) put_DestinationLeft;
+			public function HRESULT(IBasicVideo *self, int32* pDestinationLeft) get_DestinationLeft;
+			public function HRESULT(IBasicVideo *self, int32 DestinationWidth) put_DestinationWidth;
+			public function HRESULT(IBasicVideo *self, int32* pDestinationWidth) get_DestinationWidth;
+			public function HRESULT(IBasicVideo *self, int32 DestinationTop) put_DestinationTop;
+			public function HRESULT(IBasicVideo *self, int32* pDestinationTop) get_DestinationTop;
+			public function HRESULT(IBasicVideo *self, int32 DestinationHeight) put_DestinationHeight;
+			public function HRESULT(IBasicVideo *self, int32* pDestinationHeight) get_DestinationHeight;
+			public function HRESULT(IBasicVideo *self, int32 Left, int32 Top, int32 Width, int32 Height) SetSourcePosition;
+			public function HRESULT(IBasicVideo *self, int32* pLeft, int32* pTop, int32* pWidth, int32* pHeight) GetSourcePosition;
+			public function HRESULT(IBasicVideo *self) SetDefaultSourcePosition;
+			public function HRESULT(IBasicVideo *self, int32 Left, int32 Top, int32 Width, int32 Height) SetDestinationPosition;
+			public function HRESULT(IBasicVideo *self, int32* pLeft, int32* pTop, int32* pWidth, int32* pHeight) GetDestinationPosition;
+			public function HRESULT(IBasicVideo *self) SetDefaultDestinationPosition;
+			public function HRESULT(IBasicVideo *self, int32* pWidth, int32* pHeight) GetVideoSize;
+			public function HRESULT(IBasicVideo *self, int32 StartIndex, int32 Entries, int32* pRetrieved, int32* pPalette) GetVideoPaletteEntries;
+			public function HRESULT(IBasicVideo *self, int32* pBufferSize, int32* pDIBImage) GetCurrentImage;
+			public function HRESULT(IBasicVideo *self) IsUsingDefaultSource;
+			public function HRESULT(IBasicVideo *self) IsUsingDefaultDestination;
+		}
+		[CRepr]
+		public struct IBasicVideo2 : IBasicVideo
+		{
+			public const new Guid IID = .(0x329bb360, 0xf6ea, 0x11d1, 0x90, 0x38, 0x00, 0xa0, 0xc9, 0x69, 0x72, 0x98);
+			
+			public function HRESULT(IBasicVideo2 *self, int32* plAspectX, int32* plAspectY) GetPreferredAspectRatio;
+		}
+		[CRepr]
+		public struct IDeferredCommand : IUnknown
+		{
+			public const new Guid IID = .(0x56a868b8, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IDeferredCommand *self) Cancel;
+			public function HRESULT(IDeferredCommand *self, int32* pConfidence) Confidence;
+			public function HRESULT(IDeferredCommand *self, double newtime) Postpone;
+			public function HRESULT(IDeferredCommand *self, HRESULT* phrResult) GetHResult;
+		}
+		[CRepr]
+		public struct IQueueCommand : IUnknown
+		{
+			public const new Guid IID = .(0x56a868b7, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IQueueCommand *self, IDeferredCommand** pCmd, double time, Guid* iid, int32 dispidMethod, int16 wFlags, int32 cArgs, VARIANT* pDispParams, VARIANT* pvarResult, int16* puArgErr) InvokeAtStreamTime;
+			public function HRESULT(IQueueCommand *self, IDeferredCommand** pCmd, double time, Guid* iid, int32 dispidMethod, int16 wFlags, int32 cArgs, VARIANT* pDispParams, VARIANT* pvarResult, int16* puArgErr) InvokeAtPresentationTime;
+		}
+		[CRepr]
+		public struct IFilterInfo : IDispatch
+		{
+			public const new Guid IID = .(0x56a868ba, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IFilterInfo *self, BSTR strPinID, IDispatch** ppUnk) FindPin;
+			public function HRESULT(IFilterInfo *self, BSTR* strName) get_Name;
+			public function HRESULT(IFilterInfo *self, BSTR* strVendorInfo) get_VendorInfo;
+			public function HRESULT(IFilterInfo *self, IUnknown** ppUnk) get_Filter;
+			public function HRESULT(IFilterInfo *self, IDispatch** ppUnk) get_Pins;
+			public function HRESULT(IFilterInfo *self, int32* pbIsSource) get_IsFileSource;
+			public function HRESULT(IFilterInfo *self, BSTR* pstrFilename) get_Filename;
+			public function HRESULT(IFilterInfo *self, BSTR strFilename) put_Filename;
+		}
+		[CRepr]
+		public struct IRegFilterInfo : IDispatch
+		{
+			public const new Guid IID = .(0x56a868bb, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IRegFilterInfo *self, BSTR* strName) get_Name;
+			public function HRESULT(IRegFilterInfo *self, IDispatch** ppUnk) Filter;
+		}
+		[CRepr]
+		public struct IMediaTypeInfo : IDispatch
+		{
+			public const new Guid IID = .(0x56a868bc, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IMediaTypeInfo *self, BSTR* strType) get_Type;
+			public function HRESULT(IMediaTypeInfo *self, BSTR* strType) get_Subtype;
+		}
+		[CRepr]
+		public struct IPinInfo : IDispatch
+		{
+			public const new Guid IID = .(0x56a868bd, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IPinInfo *self, IUnknown** ppUnk) get_Pin;
+			public function HRESULT(IPinInfo *self, IDispatch** ppUnk) get_ConnectedTo;
+			public function HRESULT(IPinInfo *self, IDispatch** ppUnk) get_ConnectionMediaType;
+			public function HRESULT(IPinInfo *self, IDispatch** ppUnk) get_FilterInfo;
+			public function HRESULT(IPinInfo *self, BSTR* ppUnk) get_Name;
+			public function HRESULT(IPinInfo *self, int32* ppDirection) get_Direction;
+			public function HRESULT(IPinInfo *self, BSTR* strPinID) get_PinID;
+			public function HRESULT(IPinInfo *self, IDispatch** ppUnk) get_MediaTypes;
+			public function HRESULT(IPinInfo *self, IUnknown* pPin) Connect;
+			public function HRESULT(IPinInfo *self, IUnknown* pPin) ConnectDirect;
+			public function HRESULT(IPinInfo *self, IUnknown* pPin, IDispatch* pMediaType) ConnectWithType;
+			public function HRESULT(IPinInfo *self) Disconnect;
+			public function HRESULT(IPinInfo *self) Render;
+		}
+		[CRepr]
+		public struct IAMStats : IDispatch
+		{
+			public const new Guid IID = .(0xbc9bcf80, 0xdcd2, 0x11d2, 0xab, 0xf6, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x75);
+			
+			public function HRESULT(IAMStats *self) Reset;
+			public function HRESULT(IAMStats *self, int32* plCount) get_Count;
+			public function HRESULT(IAMStats *self, int32 lIndex, BSTR* szName, int32* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax) GetValueByIndex;
+			public function HRESULT(IAMStats *self, BSTR szName, int32* lIndex, int32* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax) GetValueByName;
+			public function HRESULT(IAMStats *self, BSTR szName, int32 lCreate, int32* plIndex) GetIndex;
+			public function HRESULT(IAMStats *self, int32 lIndex, double dValue) AddValue;
+		}
+		[CRepr]
+		public struct IAMVideoAcceleratorNotify : IUnknown
+		{
+			public const new Guid IID = .(0x256a6a21, 0xfbad, 0x11d1, 0x82, 0xbf, 0x00, 0xa0, 0xc9, 0x69, 0x6c, 0x8f);
+			
+			public function HRESULT(IAMVideoAcceleratorNotify *self, Guid* pGuid, AMVAUncompBufferInfo* pUncompBufferInfo) GetUncompSurfacesInfo;
+			public function HRESULT(IAMVideoAcceleratorNotify *self, uint32 dwActualUncompSurfacesAllocated) SetUncompSurfacesInfo;
+			public function HRESULT(IAMVideoAcceleratorNotify *self, Guid* pGuid, uint32* pdwSizeMiscData, void** ppMiscData) GetCreateVideoAcceleratorData;
+		}
+		[CRepr]
+		public struct IAMVideoAccelerator : IUnknown
+		{
+			public const new Guid IID = .(0x256a6a22, 0xfbad, 0x11d1, 0x82, 0xbf, 0x00, 0xa0, 0xc9, 0x69, 0x6c, 0x8f);
+			
+			public function HRESULT(IAMVideoAccelerator *self, uint32* pdwNumGuidsSupported, Guid* pGuidsSupported) GetVideoAcceleratorGUIDs;
+			public function HRESULT(IAMVideoAccelerator *self, Guid* pGuid, uint32* pdwNumFormatsSupported, DDPIXELFORMAT* pFormatsSupported) GetUncompFormatsSupported;
+			public function HRESULT(IAMVideoAccelerator *self, Guid* pGuid, AMVAUncompDataInfo* pamvaUncompDataInfo, AMVAInternalMemInfo* pamvaInternalMemInfo) GetInternalMemInfo;
+			public function HRESULT(IAMVideoAccelerator *self, Guid* pGuid, AMVAUncompDataInfo* pamvaUncompDataInfo, uint32* pdwNumTypesCompBuffers, AMVACompBufferInfo* pamvaCompBufferInfo) GetCompBufferInfo;
+			public function HRESULT(IAMVideoAccelerator *self, uint32* pdwNumTypesCompBuffers, AMVACompBufferInfo* pamvaCompBufferInfo) GetInternalCompBufferInfo;
+			public function HRESULT(IAMVideoAccelerator *self, AMVABeginFrameInfo* amvaBeginFrameInfo) BeginFrame;
+			public function HRESULT(IAMVideoAccelerator *self, AMVAEndFrameInfo* pEndFrameInfo) EndFrame;
+			public function HRESULT(IAMVideoAccelerator *self, uint32 dwTypeIndex, uint32 dwBufferIndex, BOOL bReadOnly, void** ppBuffer, int32* lpStride) GetBuffer;
+			public function HRESULT(IAMVideoAccelerator *self, uint32 dwTypeIndex, uint32 dwBufferIndex) ReleaseBuffer;
+			public function HRESULT(IAMVideoAccelerator *self, uint32 dwFunction, void* lpPrivateInputData, uint32 cbPrivateInputData, void* lpPrivateOutputDat, uint32 cbPrivateOutputData, uint32 dwNumBuffers, AMVABUFFERINFO* pamvaBufferInfo) Execute;
+			public function HRESULT(IAMVideoAccelerator *self, uint32 dwTypeIndex, uint32 dwBufferIndex, uint32 dwFlags) QueryRenderStatus;
+			public function HRESULT(IAMVideoAccelerator *self, uint32 dwFlipToIndex, IMediaSample* pMediaSample) DisplayFrame;
+		}
+		[CRepr]
+		public struct IAMWstDecoder : IUnknown
+		{
+			public function HRESULT(IAMWstDecoder *self, AM_WST_LEVEL* lpLevel) GetDecoderLevel;
+			public function HRESULT(IAMWstDecoder *self, AM_WST_SERVICE* lpService) GetCurrentService;
+			public function HRESULT(IAMWstDecoder *self, AM_WST_STATE* lpState) GetServiceState;
+			public function HRESULT(IAMWstDecoder *self, AM_WST_STATE State) SetServiceState;
+			public function HRESULT(IAMWstDecoder *self, BITMAPINFOHEADER* lpbmih) GetOutputFormat;
+			public function HRESULT(IAMWstDecoder *self, BITMAPINFO* lpbmi) SetOutputFormat;
+			public function HRESULT(IAMWstDecoder *self, uint32* pdwPhysColor) GetBackgroundColor;
+			public function HRESULT(IAMWstDecoder *self, uint32 dwPhysColor) SetBackgroundColor;
+			public function HRESULT(IAMWstDecoder *self, int32* lpbOption) GetRedrawAlways;
+			public function HRESULT(IAMWstDecoder *self, BOOL bOption) SetRedrawAlways;
+			public function HRESULT(IAMWstDecoder *self, AM_WST_DRAWBGMODE* lpMode) GetDrawBackgroundMode;
+			public function HRESULT(IAMWstDecoder *self, AM_WST_DRAWBGMODE Mode) SetDrawBackgroundMode;
+			public function HRESULT(IAMWstDecoder *self, BOOL bAnswer) SetAnswerMode;
+			public function HRESULT(IAMWstDecoder *self, BOOL* pbAnswer) GetAnswerMode;
+			public function HRESULT(IAMWstDecoder *self, BOOL bHoldPage) SetHoldPage;
+			public function HRESULT(IAMWstDecoder *self, BOOL* pbHoldPage) GetHoldPage;
+			public function HRESULT(IAMWstDecoder *self, AM_WST_PAGE* pWstPage) GetCurrentPage;
+			public function HRESULT(IAMWstDecoder *self, AM_WST_PAGE WstPage) SetCurrentPage;
+		}
+		[CRepr]
+		public struct IKsTopologyInfo : IUnknown
+		{
+			public const new Guid IID = .(0x720d4ac0, 0x7533, 0x11d0, 0xa5, 0xd6, 0x28, 0xdb, 0x04, 0xc1, 0x00, 0x00);
+			
+			public function HRESULT(IKsTopologyInfo *self, uint32* pdwNumCategories) get_NumCategories;
+			public function HRESULT(IKsTopologyInfo *self, uint32 dwIndex, Guid* pCategory) get_Category;
+			public function HRESULT(IKsTopologyInfo *self, uint32* pdwNumConnections) get_NumConnections;
+			public function HRESULT(IKsTopologyInfo *self, uint32 dwIndex, KSTOPOLOGY_CONNECTION* pConnectionInfo) get_ConnectionInfo;
+			public function HRESULT(IKsTopologyInfo *self, uint32 dwNodeId, PWSTR pwchNodeName, uint32 dwBufSize, uint32* pdwNameLen) get_NodeName;
+			public function HRESULT(IKsTopologyInfo *self, uint32* pdwNumNodes) get_NumNodes;
+			public function HRESULT(IKsTopologyInfo *self, uint32 dwNodeId, Guid* pNodeType) get_NodeType;
+			public function HRESULT(IKsTopologyInfo *self, uint32 dwNodeId, Guid* iid, void** ppvObject) CreateNodeInstance;
+		}
+		[CRepr]
+		public struct ISelector : IUnknown
+		{
+			public const new Guid IID = .(0x1abdaeca, 0x68b6, 0x4f83, 0x93, 0x71, 0xb4, 0x13, 0x90, 0x7c, 0x7b, 0x9f);
+			
+			public function HRESULT(ISelector *self, uint32* pdwNumSources) get_NumSources;
+			public function HRESULT(ISelector *self, uint32* pdwPinId) get_SourceNodeId;
+			public function HRESULT(ISelector *self, uint32 dwPinId) put_SourceNodeId;
+		}
+		[CRepr]
+		public struct ICameraControl : IUnknown
+		{
+			public const new Guid IID = .(0x2ba1785d, 0x4d1b, 0x44ef, 0x85, 0xe8, 0xc7, 0xf1, 0xd3, 0xf2, 0x01, 0x84);
+			
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_Exposure;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_Exposure;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Exposure;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_Focus;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_Focus;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Focus;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_Iris;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_Iris;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Iris;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_Zoom;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_Zoom;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Zoom;
+			public function HRESULT(ICameraControl *self, int32* plOcularFocalLength, int32* plObjectiveFocalLengthMin, int32* plObjectiveFocalLengthMax) get_FocalLengths;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_Pan;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_Pan;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Pan;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_Tilt;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_Tilt;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Tilt;
+			public function HRESULT(ICameraControl *self, int32* pPanValue, int32* pTiltValue, int32* pFlags) get_PanTilt;
+			public function HRESULT(ICameraControl *self, int32 PanValue, int32 TiltValue, int32 Flags) put_PanTilt;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_Roll;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_Roll;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Roll;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_ExposureRelative;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_ExposureRelative;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_ExposureRelative;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_FocusRelative;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_FocusRelative;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_FocusRelative;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_IrisRelative;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_IrisRelative;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_IrisRelative;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_ZoomRelative;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_ZoomRelative;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_ZoomRelative;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_PanRelative;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_PanRelative;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_TiltRelative;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_TiltRelative;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_TiltRelative;
+			public function HRESULT(ICameraControl *self, int32* pPanValue, int32* pTiltValue, int32* pFlags) get_PanTiltRelative;
+			public function HRESULT(ICameraControl *self, int32 PanValue, int32 TiltValue, int32 Flags) put_PanTiltRelative;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_PanRelative;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_RollRelative;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_RollRelative;
+			public function HRESULT(ICameraControl *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_RollRelative;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_ScanMode;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_ScanMode;
+			public function HRESULT(ICameraControl *self, int32* pValue, int32* pFlags) get_PrivacyMode;
+			public function HRESULT(ICameraControl *self, int32 Value, int32 Flags) put_PrivacyMode;
+		}
+		[CRepr]
+		public struct IVideoProcAmp : IUnknown
+		{
+			public const new Guid IID = .(0x4050560e, 0x42a7, 0x413a, 0x85, 0xc2, 0x09, 0x26, 0x9a, 0x2d, 0x0f, 0x44);
+			
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_BacklightCompensation;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_BacklightCompensation;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_BacklightCompensation;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_Brightness;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_Brightness;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Brightness;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_ColorEnable;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_ColorEnable;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_ColorEnable;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_Contrast;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_Contrast;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Contrast;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_Gamma;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_Gamma;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Gamma;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_Saturation;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_Saturation;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Saturation;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_Sharpness;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_Sharpness;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Sharpness;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_WhiteBalance;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_WhiteBalance;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_WhiteBalance;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_Gain;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_Gain;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Gain;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_Hue;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_Hue;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_Hue;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_DigitalMultiplier;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_DigitalMultiplier;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_DigitalMultiplier;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue, int32* pFlags) get_PowerlineFrequency;
+			public function HRESULT(IVideoProcAmp *self, int32 Value, int32 Flags) put_PowerlineFrequency;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_PowerlineFrequency;
+			public function HRESULT(IVideoProcAmp *self, int32* pValue1, int32* pValue2, int32* pFlags) get_WhiteBalanceComponent;
+			public function HRESULT(IVideoProcAmp *self, int32 Value1, int32 Value2, int32 Flags) put_WhiteBalanceComponent;
+			public function HRESULT(IVideoProcAmp *self, int32* pMin, int32* pMax, int32* pSteppingDelta, int32* pDefault, int32* pCapsFlag) getRange_WhiteBalanceComponent;
+		}
+		[CRepr]
+		public struct IKsNodeControl : IUnknown
+		{
+			public const new Guid IID = .(0x11737c14, 0x24a7, 0x4bb5, 0x81, 0xa0, 0x0d, 0x00, 0x38, 0x13, 0xb0, 0xc4);
+			
+			public function HRESULT(IKsNodeControl *self, uint32 dwNodeId) put_NodeId;
+			public function HRESULT(IKsNodeControl *self, void* pKsControl) put_KsControl;
+		}
+		[CRepr]
+		public struct IConfigAsfWriter : IUnknown
+		{
+			public const new Guid IID = .(0x45086030, 0xf7e4, 0x486a, 0xb5, 0x04, 0x82, 0x6b, 0xb5, 0x79, 0x2a, 0x3b);
+			
+			public function HRESULT(IConfigAsfWriter *self, uint32 dwProfileId) ConfigureFilterUsingProfileId;
+			public function HRESULT(IConfigAsfWriter *self, uint32* pdwProfileId) GetCurrentProfileId;
+			public function HRESULT(IConfigAsfWriter *self, Guid* guidProfile) ConfigureFilterUsingProfileGuid;
+			public function HRESULT(IConfigAsfWriter *self, Guid* pProfileGuid) GetCurrentProfileGuid;
+			public function HRESULT(IConfigAsfWriter *self, IWMProfile* pProfile) ConfigureFilterUsingProfile;
+			public function HRESULT(IConfigAsfWriter *self, IWMProfile** ppProfile) GetCurrentProfile;
+			public function HRESULT(IConfigAsfWriter *self, BOOL bIndexFile) SetIndexMode;
+			public function HRESULT(IConfigAsfWriter *self, BOOL* pbIndexFile) GetIndexMode;
+		}
+		[CRepr]
+		public struct IConfigAsfWriter2 : IConfigAsfWriter
+		{
+			public const new Guid IID = .(0x7989ccaa, 0x53f0, 0x44f0, 0x88, 0x4a, 0xf3, 0xb0, 0x3f, 0x6a, 0xe0, 0x66);
+			
+			public function HRESULT(IConfigAsfWriter2 *self, IPin* pPin, uint16* pwStreamNum) StreamNumFromPin;
+			public function HRESULT(IConfigAsfWriter2 *self, uint32 dwParam, uint32 dwParam1, uint32 dwParam2) SetParam;
+			public function HRESULT(IConfigAsfWriter2 *self, uint32 dwParam, uint32* pdwParam1, uint32* pdwParam2) GetParam;
+			public function HRESULT(IConfigAsfWriter2 *self) ResetMultiPassState;
+		}
+		[CRepr]
+		public struct IMultiMediaStream : IUnknown
+		{
+			public const new Guid IID = .(0xb502d1bc, 0x9a57, 0x11d0, 0x8f, 0xde, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IMultiMediaStream *self, MMSSF_GET_INFORMATION_FLAGS* pdwFlags, STREAM_TYPE* pStreamType) GetInformation;
+			public function HRESULT(IMultiMediaStream *self, Guid* idPurpose, IMediaStream** ppMediaStream) GetMediaStream;
+			public function HRESULT(IMultiMediaStream *self, int32 Index, IMediaStream** ppMediaStream) EnumMediaStreams;
+			public function HRESULT(IMultiMediaStream *self, STREAM_STATE* pCurrentState) GetState;
+			public function HRESULT(IMultiMediaStream *self, STREAM_STATE NewState) SetState;
+			public function HRESULT(IMultiMediaStream *self, int64* pCurrentTime) GetTime;
+			public function HRESULT(IMultiMediaStream *self, int64* pDuration) GetDuration;
+			public function HRESULT(IMultiMediaStream *self, int64 SeekTime) Seek;
+			public function HRESULT(IMultiMediaStream *self, HANDLE* phEOS) GetEndOfStreamEventHandle;
+		}
+		[CRepr]
+		public struct IMediaStream : IUnknown
+		{
+			public const new Guid IID = .(0xb502d1bd, 0x9a57, 0x11d0, 0x8f, 0xde, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IMediaStream *self, IMultiMediaStream** ppMultiMediaStream) GetMultiMediaStream;
+			public function HRESULT(IMediaStream *self, Guid* pPurposeId, STREAM_TYPE* pType) GetInformation;
+			public function HRESULT(IMediaStream *self, IMediaStream* pStreamThatHasDesiredFormat, uint32 dwFlags) SetSameFormat;
+			public function HRESULT(IMediaStream *self, uint32 dwFlags, IStreamSample** ppSample) AllocateSample;
+			public function HRESULT(IMediaStream *self, IStreamSample* pExistingSample, uint32 dwFlags, IStreamSample** ppNewSample) CreateSharedSample;
+			public function HRESULT(IMediaStream *self, uint32 dwFlags) SendEndOfStream;
+		}
+		[CRepr]
+		public struct IStreamSample : IUnknown
+		{
+			public const new Guid IID = .(0xb502d1be, 0x9a57, 0x11d0, 0x8f, 0xde, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IStreamSample *self, IMediaStream** ppMediaStream) GetMediaStream;
+			public function HRESULT(IStreamSample *self, int64* pStartTime, int64* pEndTime, int64* pCurrentTime) GetSampleTimes;
+			public function HRESULT(IStreamSample *self, int64* pStartTime, int64* pEndTime) SetSampleTimes;
+			public function HRESULT(IStreamSample *self, uint32 dwFlags, HANDLE hEvent, PAPCFUNC pfnAPC, uint dwAPCData) Update;
+			public function HRESULT(IStreamSample *self, uint32 dwFlags, uint32 dwMilliseconds) CompletionStatus;
+		}
+		[CRepr]
+		public struct IDirectDrawMediaStream : IMediaStream
+		{
+			public const new Guid IID = .(0xf4104fce, 0x9a70, 0x11d0, 0x8f, 0xde, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IDirectDrawMediaStream *self, DDSURFACEDESC* pDDSDCurrent, IDirectDrawPalette** ppDirectDrawPalette, DDSURFACEDESC* pDDSDDesired, uint32* pdwFlags) GetFormat;
+			public function HRESULT(IDirectDrawMediaStream *self, DDSURFACEDESC* pDDSurfaceDesc, IDirectDrawPalette* pDirectDrawPalette) SetFormat;
+			public function HRESULT(IDirectDrawMediaStream *self, IDirectDraw** ppDirectDraw) GetDirectDraw;
+			public function HRESULT(IDirectDrawMediaStream *self, IDirectDraw* pDirectDraw) SetDirectDraw;
+			public function HRESULT(IDirectDrawMediaStream *self, IDirectDrawSurface* pSurface, RECT* pRect, uint32 dwFlags, IDirectDrawStreamSample** ppSample) CreateSample;
+			public function HRESULT(IDirectDrawMediaStream *self, int64* pFrameTime) GetTimePerFrame;
+		}
+		[CRepr]
+		public struct IDirectDrawStreamSample : IStreamSample
+		{
+			public const new Guid IID = .(0xf4104fcf, 0x9a70, 0x11d0, 0x8f, 0xde, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IDirectDrawStreamSample *self, IDirectDrawSurface** ppDirectDrawSurface, RECT* pRect) GetSurface;
+			public function HRESULT(IDirectDrawStreamSample *self, RECT* pRect) SetRect;
+		}
+		[CRepr]
+		public struct IAudioMediaStream : IMediaStream
+		{
+			public const new Guid IID = .(0xf7537560, 0xa3be, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);
+			
+			public function HRESULT(IAudioMediaStream *self, WAVEFORMATEX* pWaveFormatCurrent) GetFormat;
+			public function HRESULT(IAudioMediaStream *self, WAVEFORMATEX* lpWaveFormat) SetFormat;
+			public function HRESULT(IAudioMediaStream *self, IAudioData* pAudioData, uint32 dwFlags, IAudioStreamSample** ppSample) CreateSample;
+		}
+		[CRepr]
+		public struct IAudioStreamSample : IStreamSample
+		{
+			public const new Guid IID = .(0x345fee00, 0xaba5, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);
+			
+			public function HRESULT(IAudioStreamSample *self, IAudioData** ppAudio) GetAudioData;
+		}
+		[CRepr]
+		public struct IMemoryData : IUnknown
+		{
+			public const new Guid IID = .(0x327fc560, 0xaf60, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);
+			
+			public function HRESULT(IMemoryData *self, uint32 cbSize, uint8* pbData, uint32 dwFlags) SetBuffer;
+			public function HRESULT(IMemoryData *self, uint32* pdwLength, uint8** ppbData, uint32* pcbActualData) GetInfo;
+			public function HRESULT(IMemoryData *self, uint32 cbDataValid) SetActual;
+		}
+		[CRepr]
+		public struct IAudioData : IMemoryData
+		{
+			public const new Guid IID = .(0x54c719c0, 0xaf60, 0x11d0, 0x82, 0x12, 0x00, 0xc0, 0x4f, 0xc3, 0x2c, 0x45);
+			
+			public function HRESULT(IAudioData *self, WAVEFORMATEX* pWaveFormatCurrent) GetFormat;
+			public function HRESULT(IAudioData *self, WAVEFORMATEX* lpWaveFormat) SetFormat;
+		}
+		[CRepr]
+		public struct IAMMultiMediaStream : IMultiMediaStream
+		{
+			public const new Guid IID = .(0xbebe595c, 0x9a6f, 0x11d0, 0x8f, 0xde, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IAMMultiMediaStream *self, STREAM_TYPE StreamType, AMMSF_MMS_INIT_FLAGS dwFlags, IGraphBuilder* pFilterGraph) Initialize;
+			public function HRESULT(IAMMultiMediaStream *self, IGraphBuilder** ppGraphBuilder) GetFilterGraph;
+			public function HRESULT(IAMMultiMediaStream *self, IMediaStreamFilter** ppFilter) GetFilter;
+			public function HRESULT(IAMMultiMediaStream *self, IUnknown* pStreamObject, Guid* PurposeId, AMMSF_MS_FLAGS dwFlags, IMediaStream** ppNewStream) AddMediaStream;
+			public function HRESULT(IAMMultiMediaStream *self, PWSTR pszFileName, uint32 dwFlags) OpenFile;
+			public function HRESULT(IAMMultiMediaStream *self, IBindCtx* pCtx, IMoniker* pMoniker, uint32 dwFlags) OpenMoniker;
+			public function HRESULT(IAMMultiMediaStream *self, uint32 dwFlags) Render;
+		}
+		[CRepr]
+		public struct IAMMediaStream : IMediaStream
+		{
+			public const new Guid IID = .(0xbebe595d, 0x9a6f, 0x11d0, 0x8f, 0xde, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IAMMediaStream *self, IUnknown* pSourceObject, uint32 dwFlags, Guid* PurposeId, STREAM_TYPE StreamType) Initialize;
+			public function HRESULT(IAMMediaStream *self, FILTER_STATE State) SetState;
+			public function HRESULT(IAMMediaStream *self, IAMMultiMediaStream* pAMMultiMediaStream) JoinAMMultiMediaStream;
+			public function HRESULT(IAMMediaStream *self, IMediaStreamFilter* pMediaStreamFilter) JoinFilter;
+			public function HRESULT(IAMMediaStream *self, IFilterGraph* pFilterGraph) JoinFilterGraph;
+		}
+		[CRepr]
+		public struct IMediaStreamFilter : IBaseFilter
+		{
+			public const new Guid IID = .(0xbebe595e, 0x9a6f, 0x11d0, 0x8f, 0xde, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IMediaStreamFilter *self, IAMMediaStream* pAMMediaStream) AddMediaStream;
+			public function HRESULT(IMediaStreamFilter *self, Guid* idPurpose, IMediaStream** ppMediaStream) GetMediaStream;
+			public function HRESULT(IMediaStreamFilter *self, int32 Index, IMediaStream** ppMediaStream) EnumMediaStreams;
+			public function HRESULT(IMediaStreamFilter *self, BOOL bRenderer) SupportSeeking;
+			public function HRESULT(IMediaStreamFilter *self, int64* pTime) ReferenceTimeToStreamTime;
+			public function HRESULT(IMediaStreamFilter *self, int64* pCurrentStreamTime) GetCurrentStreamTime;
+			public function HRESULT(IMediaStreamFilter *self, int64 WaitStreamTime) WaitUntil;
+			public function HRESULT(IMediaStreamFilter *self, BOOL bCancelEOS) Flush;
+			public function HRESULT(IMediaStreamFilter *self) EndOfStream;
+		}
+		[CRepr]
+		public struct IDirectDrawMediaSampleAllocator : IUnknown
+		{
+			public const new Guid IID = .(0xab6b4afc, 0xf6e4, 0x11d0, 0x90, 0x0d, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IDirectDrawMediaSampleAllocator *self, IDirectDraw** ppDirectDraw) GetDirectDraw;
+		}
+		[CRepr]
+		public struct IDirectDrawMediaSample : IUnknown
+		{
+			public const new Guid IID = .(0xab6b4afe, 0xf6e4, 0x11d0, 0x90, 0x0d, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IDirectDrawMediaSample *self, IDirectDrawSurface** ppDirectDrawSurface, RECT* pRect) GetSurfaceAndReleaseLock;
+			public function HRESULT(IDirectDrawMediaSample *self) LockMediaSamplePointer;
+		}
+		[CRepr]
+		public struct IAMMediaTypeStream : IMediaStream
+		{
+			public const new Guid IID = .(0xab6b4afa, 0xf6e4, 0x11d0, 0x90, 0x0d, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IAMMediaTypeStream *self, AM_MEDIA_TYPE* pMediaType, uint32 dwFlags) GetFormat;
+			public function HRESULT(IAMMediaTypeStream *self, AM_MEDIA_TYPE* pMediaType, uint32 dwFlags) SetFormat;
+			public function HRESULT(IAMMediaTypeStream *self, int32 lSampleSize, uint8* pbBuffer, uint32 dwFlags, IUnknown* pUnkOuter, IAMMediaTypeSample** ppAMMediaTypeSample) CreateSample;
+			public function HRESULT(IAMMediaTypeStream *self, ALLOCATOR_PROPERTIES* pProps) GetStreamAllocatorRequirements;
+			public function HRESULT(IAMMediaTypeStream *self, ALLOCATOR_PROPERTIES* pProps) SetStreamAllocatorRequirements;
+		}
+		[CRepr]
+		public struct IAMMediaTypeSample : IStreamSample
+		{
+			public const new Guid IID = .(0xab6b4afb, 0xf6e4, 0x11d0, 0x90, 0x0d, 0x00, 0xc0, 0x4f, 0xd9, 0x18, 0x9d);
+			
+			public function HRESULT(IAMMediaTypeSample *self, uint8* pBuffer, int32 lSize) SetPointer;
+			public function HRESULT(IAMMediaTypeSample *self, uint8** ppBuffer) GetPointer;
+			public function int32(IAMMediaTypeSample *self) GetSize;
+			public function HRESULT(IAMMediaTypeSample *self, int64* pTimeStart, int64* pTimeEnd) GetTime;
+			public function HRESULT(IAMMediaTypeSample *self, int64* pTimeStart, int64* pTimeEnd) SetTime;
+			public function HRESULT(IAMMediaTypeSample *self) IsSyncPoint;
+			public function HRESULT(IAMMediaTypeSample *self, BOOL bIsSyncPoint) SetSyncPoint;
+			public function HRESULT(IAMMediaTypeSample *self) IsPreroll;
+			public function HRESULT(IAMMediaTypeSample *self, BOOL bIsPreroll) SetPreroll;
+			public function int32(IAMMediaTypeSample *self) GetActualDataLength;
+			public function HRESULT(IAMMediaTypeSample *self, int32 __MIDL__IAMMediaTypeSample0000) SetActualDataLength;
+			public function HRESULT(IAMMediaTypeSample *self, AM_MEDIA_TYPE** ppMediaType) GetMediaType;
+			public function HRESULT(IAMMediaTypeSample *self, AM_MEDIA_TYPE* pMediaType) SetMediaType;
+			public function HRESULT(IAMMediaTypeSample *self) IsDiscontinuity;
+			public function HRESULT(IAMMediaTypeSample *self, BOOL bDiscontinuity) SetDiscontinuity;
+			public function HRESULT(IAMMediaTypeSample *self, int64* pTimeStart, int64* pTimeEnd) GetMediaTime;
+			public function HRESULT(IAMMediaTypeSample *self, int64* pTimeStart, int64* pTimeEnd) SetMediaTime;
+		}
+		[CRepr]
+		public struct IDirectDrawVideo : IUnknown
+		{
+			public function HRESULT(IDirectDrawVideo *self, uint32* pSwitches) GetSwitches;
+			public function HRESULT(IDirectDrawVideo *self, uint32 Switches) SetSwitches;
+			public function HRESULT(IDirectDrawVideo *self, DDCAPS_DX7* pCaps) GetCaps;
+			public function HRESULT(IDirectDrawVideo *self, DDCAPS_DX7* pCaps) GetEmulatedCaps;
+			public function HRESULT(IDirectDrawVideo *self, DDSURFACEDESC* pSurfaceDesc) GetSurfaceDesc;
+			public function HRESULT(IDirectDrawVideo *self, uint32* pCount, uint32* pCodes) GetFourCCCodes;
+			public function HRESULT(IDirectDrawVideo *self, IDirectDraw* pDirectDraw) SetDirectDraw;
+			public function HRESULT(IDirectDrawVideo *self, IDirectDraw** ppDirectDraw) GetDirectDraw;
+			public function HRESULT(IDirectDrawVideo *self, uint32* pSurfaceType) GetSurfaceType;
+			public function HRESULT(IDirectDrawVideo *self) SetDefault;
+			public function HRESULT(IDirectDrawVideo *self, int32 UseScanLine) UseScanLine;
+			public function HRESULT(IDirectDrawVideo *self, int32* UseScanLine) CanUseScanLine;
+			public function HRESULT(IDirectDrawVideo *self, int32 UseOverlayStretch) UseOverlayStretch;
+			public function HRESULT(IDirectDrawVideo *self, int32* UseOverlayStretch) CanUseOverlayStretch;
+			public function HRESULT(IDirectDrawVideo *self, int32 UseWhenFullScreen) UseWhenFullScreen;
+			public function HRESULT(IDirectDrawVideo *self, int32* UseWhenFullScreen) WillUseFullScreen;
+		}
+		[CRepr]
+		public struct IQualProp : IUnknown
+		{
+			public function HRESULT(IQualProp *self, int32* pcFrames) get_FramesDroppedInRenderer;
+			public function HRESULT(IQualProp *self, int32* pcFramesDrawn) get_FramesDrawn;
+			public function HRESULT(IQualProp *self, int32* piAvgFrameRate) get_AvgFrameRate;
+			public function HRESULT(IQualProp *self, int32* iJitter) get_Jitter;
+			public function HRESULT(IQualProp *self, int32* piAvg) get_AvgSyncOffset;
+			public function HRESULT(IQualProp *self, int32* piDev) get_DevSyncOffset;
+		}
+		[CRepr]
+		public struct IFullScreenVideo : IUnknown
+		{
+			public function HRESULT(IFullScreenVideo *self, int32* pModes) CountModes;
+			public function HRESULT(IFullScreenVideo *self, int32 Mode, int32* pWidth, int32* pHeight, int32* pDepth) GetModeInfo;
+			public function HRESULT(IFullScreenVideo *self, int32* pMode) GetCurrentMode;
+			public function HRESULT(IFullScreenVideo *self, int32 Mode) IsModeAvailable;
+			public function HRESULT(IFullScreenVideo *self, int32 Mode) IsModeEnabled;
+			public function HRESULT(IFullScreenVideo *self, int32 Mode, int32 bEnabled) SetEnabled;
+			public function HRESULT(IFullScreenVideo *self, int32* pClipFactor) GetClipFactor;
+			public function HRESULT(IFullScreenVideo *self, int32 ClipFactor) SetClipFactor;
+			public function HRESULT(IFullScreenVideo *self, HWND hwnd) SetMessageDrain;
+			public function HRESULT(IFullScreenVideo *self, HWND* hwnd) GetMessageDrain;
+			public function HRESULT(IFullScreenVideo *self, int32 Monitor) SetMonitor;
+			public function HRESULT(IFullScreenVideo *self, int32* Monitor) GetMonitor;
+			public function HRESULT(IFullScreenVideo *self, int32 Hide) HideOnDeactivate;
+			public function HRESULT(IFullScreenVideo *self) IsHideOnDeactivate;
+			public function HRESULT(IFullScreenVideo *self, BSTR strCaption) SetCaption;
+			public function HRESULT(IFullScreenVideo *self, BSTR* pstrCaption) GetCaption;
+			public function HRESULT(IFullScreenVideo *self) SetDefault;
+		}
+		[CRepr]
+		public struct IFullScreenVideoEx : IFullScreenVideo
+		{
+			public function HRESULT(IFullScreenVideoEx *self, HWND hwnd, HACCEL hAccel) SetAcceleratorTable;
+			public function HRESULT(IFullScreenVideoEx *self, HWND* phwnd, HACCEL* phAccel) GetAcceleratorTable;
+			public function HRESULT(IFullScreenVideoEx *self, int32 KeepAspect) KeepPixelAspectRatio;
+			public function HRESULT(IFullScreenVideoEx *self, int32* pKeepAspect) IsKeepPixelAspectRatio;
+		}
+		[CRepr]
+		public struct IBaseVideoMixer : IUnknown
+		{
+			public function HRESULT(IBaseVideoMixer *self, int32 iPin) SetLeadPin;
+			public function HRESULT(IBaseVideoMixer *self, int32* piPin) GetLeadPin;
+			public function HRESULT(IBaseVideoMixer *self, int32* piPinCount) GetInputPinCount;
+			public function HRESULT(IBaseVideoMixer *self, int32* pbValue) IsUsingClock;
+			public function HRESULT(IBaseVideoMixer *self, int32 bValue) SetUsingClock;
+			public function HRESULT(IBaseVideoMixer *self, int32* pbValue) GetClockPeriod;
+			public function HRESULT(IBaseVideoMixer *self, int32 bValue) SetClockPeriod;
+		}
+		[CRepr]
+		public struct IDMOWrapperFilter : IUnknown
+		{
+			public const new Guid IID = .(0x52d6f586, 0x9f0f, 0x4824, 0x8f, 0xc8, 0xe3, 0x2c, 0xa0, 0x49, 0x30, 0xc2);
+			
+			public function HRESULT(IDMOWrapperFilter *self, Guid* clsidDMO, Guid* catDMO) Init;
+		}
+		[CRepr]
+		public struct IMixerOCXNotify : IUnknown
+		{
+			public const new Guid IID = .(0x81a3bd31, 0xdee1, 0x11d1, 0x85, 0x08, 0x00, 0xa0, 0xc9, 0x1f, 0x9c, 0xa0);
+			
+			public function HRESULT(IMixerOCXNotify *self, RECT* lpcRect) OnInvalidateRect;
+			public function HRESULT(IMixerOCXNotify *self, uint32 ulStatusFlags) OnStatusChange;
+			public function HRESULT(IMixerOCXNotify *self, uint32 ulDataFlags) OnDataChange;
+		}
+		[CRepr]
+		public struct IMixerOCX : IUnknown
+		{
+			public const new Guid IID = .(0x81a3bd32, 0xdee1, 0x11d1, 0x85, 0x08, 0x00, 0xa0, 0xc9, 0x1f, 0x9c, 0xa0);
+			
+			public function HRESULT(IMixerOCX *self, uint32 ulBitsPerPixel, uint32 ulScreenWidth, uint32 ulScreenHeight) OnDisplayChange;
+			public function HRESULT(IMixerOCX *self, uint32* pdwPictAspectRatioX, uint32* pdwPictAspectRatioY) GetAspectRatio;
+			public function HRESULT(IMixerOCX *self, uint32* pdwVideoWidth, uint32* pdwVideoHeight) GetVideoSize;
+			public function HRESULT(IMixerOCX *self, uint32** pdwStatus) GetStatus;
+			public function HRESULT(IMixerOCX *self, HDC hdcDraw, RECT* prcDraw) OnDraw;
+			public function HRESULT(IMixerOCX *self, POINT* lpptTopLeftSC, RECT* prcDrawCC, RECT* lprcClip) SetDrawRegion;
+			public function HRESULT(IMixerOCX *self, IMixerOCXNotify* pmdns) Advise;
+			public function HRESULT(IMixerOCX *self) UnAdvise;
+		}
+		[CRepr]
+		public struct IMixerPinConfig : IUnknown
+		{
+			public function HRESULT(IMixerPinConfig *self, uint32 dwLeft, uint32 dwTop, uint32 dwRight, uint32 dwBottom) SetRelativePosition;
+			public function HRESULT(IMixerPinConfig *self, uint32* pdwLeft, uint32* pdwTop, uint32* pdwRight, uint32* pdwBottom) GetRelativePosition;
+			public function HRESULT(IMixerPinConfig *self, uint32 dwZOrder) SetZOrder;
+			public function HRESULT(IMixerPinConfig *self, uint32* pdwZOrder) GetZOrder;
+			public function HRESULT(IMixerPinConfig *self, COLORKEY* pColorKey) SetColorKey;
+			public function HRESULT(IMixerPinConfig *self, COLORKEY* pColorKey, uint32* pColor) GetColorKey;
+			public function HRESULT(IMixerPinConfig *self, uint32 dwBlendingParameter) SetBlendingParameter;
+			public function HRESULT(IMixerPinConfig *self, uint32* pdwBlendingParameter) GetBlendingParameter;
+			public function HRESULT(IMixerPinConfig *self, AM_ASPECT_RATIO_MODE amAspectRatioMode) SetAspectRatioMode;
+			public function HRESULT(IMixerPinConfig *self, AM_ASPECT_RATIO_MODE* pamAspectRatioMode) GetAspectRatioMode;
+			public function HRESULT(IMixerPinConfig *self, BOOL bStreamTransparent) SetStreamTransparent;
+			public function HRESULT(IMixerPinConfig *self, BOOL* pbStreamTransparent) GetStreamTransparent;
+		}
+		[CRepr]
+		public struct IMixerPinConfig2 : IMixerPinConfig
+		{
+			public function HRESULT(IMixerPinConfig2 *self, DDCOLORCONTROL* pColorControl) SetOverlaySurfaceColorControls;
+			public function HRESULT(IMixerPinConfig2 *self, DDCOLORCONTROL* pColorControl) GetOverlaySurfaceColorControls;
+		}
+		[CRepr]
+		public struct IMpegAudioDecoder : IUnknown
+		{
+			public function HRESULT(IMpegAudioDecoder *self, uint32* pDivider) get_FrequencyDivider;
+			public function HRESULT(IMpegAudioDecoder *self, uint32 Divider) put_FrequencyDivider;
+			public function HRESULT(IMpegAudioDecoder *self, uint32* pAccuracy) get_DecoderAccuracy;
+			public function HRESULT(IMpegAudioDecoder *self, uint32 Accuracy) put_DecoderAccuracy;
+			public function HRESULT(IMpegAudioDecoder *self, uint32* pStereo) get_Stereo;
+			public function HRESULT(IMpegAudioDecoder *self, uint32 Stereo) put_Stereo;
+			public function HRESULT(IMpegAudioDecoder *self, uint32* pWordSize) get_DecoderWordSize;
+			public function HRESULT(IMpegAudioDecoder *self, uint32 WordSize) put_DecoderWordSize;
+			public function HRESULT(IMpegAudioDecoder *self, uint32* pIntDecode) get_IntegerDecode;
+			public function HRESULT(IMpegAudioDecoder *self, uint32 IntDecode) put_IntegerDecode;
+			public function HRESULT(IMpegAudioDecoder *self, uint32* pIntDecode) get_DualMode;
+			public function HRESULT(IMpegAudioDecoder *self, uint32 IntDecode) put_DualMode;
+			public function HRESULT(IMpegAudioDecoder *self, MPEG1WAVEFORMAT* lpFmt) get_AudioFormat;
+		}
+		[CRepr]
+		public struct IVMRImagePresenter9 : IUnknown
+		{
+			public const new Guid IID = .(0x69188c61, 0x12a3, 0x40f0, 0x8f, 0xfc, 0x34, 0x2e, 0x7b, 0x43, 0x3f, 0xd7);
+			
+			public function HRESULT(IVMRImagePresenter9 *self, uint dwUserID) StartPresenting;
+			public function HRESULT(IVMRImagePresenter9 *self, uint dwUserID) StopPresenting;
+			public function HRESULT(IVMRImagePresenter9 *self, uint dwUserID, VMR9PresentationInfo* lpPresInfo) PresentImage;
+		}
+		[CRepr]
+		public struct IVMRSurfaceAllocator9 : IUnknown
+		{
+			public const new Guid IID = .(0x8d5148ea, 0x3f5d, 0x46cf, 0x9d, 0xf1, 0xd1, 0xb8, 0x96, 0xee, 0xdb, 0x1f);
+			
+			public function HRESULT(IVMRSurfaceAllocator9 *self, uint dwUserID, VMR9AllocationInfo* lpAllocInfo, uint32* lpNumBuffers) InitializeDevice;
+			public function HRESULT(IVMRSurfaceAllocator9 *self, uint dwID) TerminateDevice;
+			public function HRESULT(IVMRSurfaceAllocator9 *self, uint dwUserID, uint32 SurfaceIndex, uint32 SurfaceFlags, IDirect3DSurface9** lplpSurface) GetSurface;
+			public function HRESULT(IVMRSurfaceAllocator9 *self, IVMRSurfaceAllocatorNotify9* lpIVMRSurfAllocNotify) AdviseNotify;
+		}
+		[CRepr]
+		public struct IVMRSurfaceAllocatorEx9 : IVMRSurfaceAllocator9
+		{
+			public const new Guid IID = .(0x6de9a68a, 0xa928, 0x4522, 0xbf, 0x57, 0x65, 0x5a, 0xe3, 0x86, 0x64, 0x56);
+			
+			public function HRESULT(IVMRSurfaceAllocatorEx9 *self, uint dwUserID, uint32 SurfaceIndex, uint32 SurfaceFlags, IDirect3DSurface9** lplpSurface, RECT* lprcDst) GetSurfaceEx;
+		}
+		[CRepr]
+		public struct IVMRSurfaceAllocatorNotify9 : IUnknown
+		{
+			public const new Guid IID = .(0xdca3f5df, 0xbb3a, 0x4d03, 0xbd, 0x81, 0x84, 0x61, 0x4b, 0xfb, 0xfa, 0x0c);
+			
+			public function HRESULT(IVMRSurfaceAllocatorNotify9 *self, uint dwUserID, IVMRSurfaceAllocator9* lpIVRMSurfaceAllocator) AdviseSurfaceAllocator;
+			public function HRESULT(IVMRSurfaceAllocatorNotify9 *self, IDirect3DDevice9* lpD3DDevice, HMONITOR hMonitor) SetD3DDevice;
+			public function HRESULT(IVMRSurfaceAllocatorNotify9 *self, IDirect3DDevice9* lpD3DDevice, HMONITOR hMonitor) ChangeD3DDevice;
+			public function HRESULT(IVMRSurfaceAllocatorNotify9 *self, VMR9AllocationInfo* lpAllocInfo, uint32* lpNumBuffers, IDirect3DSurface9** lplpSurface) AllocateSurfaceHelper;
+			public function HRESULT(IVMRSurfaceAllocatorNotify9 *self, int32 EventCode, int Param1, int Param2) NotifyEvent;
+		}
+		[CRepr]
+		public struct IVMRWindowlessControl9 : IUnknown
+		{
+			public const new Guid IID = .(0x8f537d09, 0xf85e, 0x4414, 0xb2, 0x3b, 0x50, 0x2e, 0x54, 0xc7, 0x99, 0x27);
+			
+			public function HRESULT(IVMRWindowlessControl9 *self, int32* lpWidth, int32* lpHeight, int32* lpARWidth, int32* lpARHeight) GetNativeVideoSize;
+			public function HRESULT(IVMRWindowlessControl9 *self, int32* lpWidth, int32* lpHeight) GetMinIdealVideoSize;
+			public function HRESULT(IVMRWindowlessControl9 *self, int32* lpWidth, int32* lpHeight) GetMaxIdealVideoSize;
+			public function HRESULT(IVMRWindowlessControl9 *self, RECT* lpSRCRect, RECT* lpDSTRect) SetVideoPosition;
+			public function HRESULT(IVMRWindowlessControl9 *self, RECT* lpSRCRect, RECT* lpDSTRect) GetVideoPosition;
+			public function HRESULT(IVMRWindowlessControl9 *self, uint32* lpAspectRatioMode) GetAspectRatioMode;
+			public function HRESULT(IVMRWindowlessControl9 *self, uint32 AspectRatioMode) SetAspectRatioMode;
+			public function HRESULT(IVMRWindowlessControl9 *self, HWND hwnd) SetVideoClippingWindow;
+			public function HRESULT(IVMRWindowlessControl9 *self, HWND hwnd, HDC hdc) RepaintVideo;
+			public function HRESULT(IVMRWindowlessControl9 *self) DisplayModeChanged;
+			public function HRESULT(IVMRWindowlessControl9 *self, uint8** lpDib) GetCurrentImage;
+			public function HRESULT(IVMRWindowlessControl9 *self, uint32 Clr) SetBorderColor;
+			public function HRESULT(IVMRWindowlessControl9 *self, uint32* lpClr) GetBorderColor;
+		}
+		[CRepr]
+		public struct IVMRMixerControl9 : IUnknown
+		{
+			public const new Guid IID = .(0x1a777eaa, 0x47c8, 0x4930, 0xb2, 0xc9, 0x8f, 0xee, 0x1c, 0x1b, 0x0f, 0x3b);
+			
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwStreamID, float Alpha) SetAlpha;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwStreamID, float* pAlpha) GetAlpha;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwStreamID, uint32 dwZ) SetZOrder;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwStreamID, uint32* pZ) GetZOrder;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwStreamID, VMR9NormalizedRect* pRect) SetOutputRect;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwStreamID, VMR9NormalizedRect* pRect) GetOutputRect;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 ClrBkg) SetBackgroundClr;
+			public function HRESULT(IVMRMixerControl9 *self, uint32* lpClrBkg) GetBackgroundClr;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwMixerPrefs) SetMixingPrefs;
+			public function HRESULT(IVMRMixerControl9 *self, uint32* pdwMixerPrefs) GetMixingPrefs;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwStreamID, VMR9ProcAmpControl* lpClrControl) SetProcAmpControl;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwStreamID, VMR9ProcAmpControl* lpClrControl) GetProcAmpControl;
+			public function HRESULT(IVMRMixerControl9 *self, uint32 dwStreamID, VMR9ProcAmpControlRange* lpClrControl) GetProcAmpControlRange;
+		}
+		[CRepr]
+		public struct IVMRMixerBitmap9 : IUnknown
+		{
+			public const new Guid IID = .(0xced175e5, 0x1935, 0x4820, 0x81, 0xbd, 0xff, 0x6a, 0xd0, 0x0c, 0x91, 0x08);
+			
+			public function HRESULT(IVMRMixerBitmap9 *self, VMR9AlphaBitmap* pBmpParms) SetAlphaBitmap;
+			public function HRESULT(IVMRMixerBitmap9 *self, VMR9AlphaBitmap* pBmpParms) UpdateAlphaBitmapParameters;
+			public function HRESULT(IVMRMixerBitmap9 *self, VMR9AlphaBitmap* pBmpParms) GetAlphaBitmapParameters;
+		}
+		[CRepr]
+		public struct IVMRSurface9 : IUnknown
+		{
+			public const new Guid IID = .(0xdfc581a1, 0x6e1f, 0x4c3a, 0x8d, 0x0a, 0x5e, 0x97, 0x92, 0xea, 0x2a, 0xfc);
+			
+			public function HRESULT(IVMRSurface9 *self) IsSurfaceLocked;
+			public function HRESULT(IVMRSurface9 *self, uint8** lpSurface) LockSurface;
+			public function HRESULT(IVMRSurface9 *self) UnlockSurface;
+			public function HRESULT(IVMRSurface9 *self, IDirect3DSurface9** lplpSurface) GetSurface;
+		}
+		[CRepr]
+		public struct IVMRImagePresenterConfig9 : IUnknown
+		{
+			public const new Guid IID = .(0x45c15cab, 0x6e22, 0x420a, 0x80, 0x43, 0xae, 0x1f, 0x0a, 0xc0, 0x2c, 0x7d);
+			
+			public function HRESULT(IVMRImagePresenterConfig9 *self, uint32 dwRenderFlags) SetRenderingPrefs;
+			public function HRESULT(IVMRImagePresenterConfig9 *self, uint32* dwRenderFlags) GetRenderingPrefs;
+		}
+		[CRepr]
+		public struct IVMRVideoStreamControl9 : IUnknown
+		{
+			public const new Guid IID = .(0xd0cfe38b, 0x93e7, 0x4772, 0x89, 0x57, 0x04, 0x00, 0xc4, 0x9a, 0x44, 0x85);
+			
+			public function HRESULT(IVMRVideoStreamControl9 *self, BOOL fActive) SetStreamActiveState;
+			public function HRESULT(IVMRVideoStreamControl9 *self, BOOL* lpfActive) GetStreamActiveState;
+		}
+		[CRepr]
+		public struct IVMRFilterConfig9 : IUnknown
+		{
+			public const new Guid IID = .(0x5a804648, 0x4f66, 0x4867, 0x9c, 0x43, 0x4f, 0x5c, 0x82, 0x2c, 0xf1, 0xb8);
+			
+			public function HRESULT(IVMRFilterConfig9 *self, IVMRImageCompositor9* lpVMRImgCompositor) SetImageCompositor;
+			public function HRESULT(IVMRFilterConfig9 *self, uint32 dwMaxStreams) SetNumberOfStreams;
+			public function HRESULT(IVMRFilterConfig9 *self, uint32* pdwMaxStreams) GetNumberOfStreams;
+			public function HRESULT(IVMRFilterConfig9 *self, uint32 dwRenderFlags) SetRenderingPrefs;
+			public function HRESULT(IVMRFilterConfig9 *self, uint32* pdwRenderFlags) GetRenderingPrefs;
+			public function HRESULT(IVMRFilterConfig9 *self, uint32 Mode) SetRenderingMode;
+			public function HRESULT(IVMRFilterConfig9 *self, uint32* pMode) GetRenderingMode;
+		}
+		[CRepr]
+		public struct IVMRAspectRatioControl9 : IUnknown
+		{
+			public const new Guid IID = .(0x00d96c29, 0xbbde, 0x4efc, 0x99, 0x01, 0xbb, 0x50, 0x36, 0x39, 0x21, 0x46);
+			
+			public function HRESULT(IVMRAspectRatioControl9 *self, uint32* lpdwARMode) GetAspectRatioMode;
+			public function HRESULT(IVMRAspectRatioControl9 *self, uint32 dwARMode) SetAspectRatioMode;
+		}
+		[CRepr]
+		public struct IVMRMonitorConfig9 : IUnknown
+		{
+			public const new Guid IID = .(0x46c2e457, 0x8ba0, 0x4eef, 0xb8, 0x0b, 0x06, 0x80, 0xf0, 0x97, 0x87, 0x49);
+			
+			public function HRESULT(IVMRMonitorConfig9 *self, uint32 uDev) SetMonitor;
+			public function HRESULT(IVMRMonitorConfig9 *self, uint32* puDev) GetMonitor;
+			public function HRESULT(IVMRMonitorConfig9 *self, uint32 uDev) SetDefaultMonitor;
+			public function HRESULT(IVMRMonitorConfig9 *self, uint32* puDev) GetDefaultMonitor;
+			public function HRESULT(IVMRMonitorConfig9 *self, VMR9MonitorInfo* pInfo, uint32 dwMaxInfoArraySize, uint32* pdwNumDevices) GetAvailableMonitors;
+		}
+		[CRepr]
+		public struct IVMRDeinterlaceControl9 : IUnknown
+		{
+			public const new Guid IID = .(0xa215fb8d, 0x13c2, 0x4f7f, 0x99, 0x3c, 0x00, 0x3d, 0x62, 0x71, 0xa4, 0x59);
+			
+			public function HRESULT(IVMRDeinterlaceControl9 *self, VMR9VideoDesc* lpVideoDescription, uint32* lpdwNumDeinterlaceModes, Guid* lpDeinterlaceModes) GetNumberOfDeinterlaceModes;
+			public function HRESULT(IVMRDeinterlaceControl9 *self, Guid* lpDeinterlaceMode, VMR9VideoDesc* lpVideoDescription, VMR9DeinterlaceCaps* lpDeinterlaceCaps) GetDeinterlaceModeCaps;
+			public function HRESULT(IVMRDeinterlaceControl9 *self, uint32 dwStreamID, Guid* lpDeinterlaceMode) GetDeinterlaceMode;
+			public function HRESULT(IVMRDeinterlaceControl9 *self, uint32 dwStreamID, Guid* lpDeinterlaceMode) SetDeinterlaceMode;
+			public function HRESULT(IVMRDeinterlaceControl9 *self, uint32* lpdwDeinterlacePrefs) GetDeinterlacePrefs;
+			public function HRESULT(IVMRDeinterlaceControl9 *self, uint32 dwDeinterlacePrefs) SetDeinterlacePrefs;
+			public function HRESULT(IVMRDeinterlaceControl9 *self, uint32 dwStreamID, Guid* lpDeinterlaceMode) GetActualDeinterlaceMode;
+		}
+		[CRepr]
+		public struct IVMRImageCompositor9 : IUnknown
+		{
+			public const new Guid IID = .(0x4a5c89eb, 0xdf51, 0x4654, 0xac, 0x2a, 0xe4, 0x8e, 0x02, 0xbb, 0xab, 0xf6);
+			
+			public function HRESULT(IVMRImageCompositor9 *self, IUnknown* pD3DDevice) InitCompositionDevice;
+			public function HRESULT(IVMRImageCompositor9 *self, IUnknown* pD3DDevice) TermCompositionDevice;
+			public function HRESULT(IVMRImageCompositor9 *self, uint32 dwStrmID, AM_MEDIA_TYPE* pmt, BOOL fTexture) SetStreamMediaType;
+			public function HRESULT(IVMRImageCompositor9 *self, IUnknown* pD3DDevice, IDirect3DSurface9* pddsRenderTarget, AM_MEDIA_TYPE* pmtRenderTarget, int64 rtStart, int64 rtEnd, uint32 dwClrBkGnd, VMR9VideoStreamInfo* pVideoStreamInfo, uint32 cStreams) CompositeImage;
+		}
+		[CRepr]
+		public struct IVPBaseConfig : IUnknown
+		{
+			public function HRESULT(IVPBaseConfig *self, uint32* pdwNumConnectInfo, DDVIDEOPORTCONNECT* pddVPConnectInfo) GetConnectInfo;
+			public function HRESULT(IVPBaseConfig *self, uint32 dwChosenEntry) SetConnectInfo;
+			public function HRESULT(IVPBaseConfig *self, AMVPDATAINFO* pamvpDataInfo) GetVPDataInfo;
+			public function HRESULT(IVPBaseConfig *self, AMVPSIZE* pamvpSize, uint32* pdwMaxPixelsPerSecond) GetMaxPixelRate;
+			public function HRESULT(IVPBaseConfig *self, uint32 dwNumFormats, DDPIXELFORMAT* pDDPixelFormats) InformVPInputFormats;
+			public function HRESULT(IVPBaseConfig *self, uint32* pdwNumFormats, DDPIXELFORMAT* pddPixelFormats) GetVideoFormats;
+			public function HRESULT(IVPBaseConfig *self, uint32 dwChosenEntry) SetVideoFormat;
+			public function HRESULT(IVPBaseConfig *self) SetInvertPolarity;
+			public function HRESULT(IVPBaseConfig *self, IDirectDrawSurface** ppddOverlaySurface) GetOverlaySurface;
+			public function HRESULT(IVPBaseConfig *self, uint dwDDKernelHandle) SetDirectDrawKernelHandle;
+			public function HRESULT(IVPBaseConfig *self, uint32 dwVideoPortID) SetVideoPortID;
+			public function HRESULT(IVPBaseConfig *self, uint32 cHandles, uint* rgDDKernelHandles) SetDDSurfaceKernelHandles;
+			public function HRESULT(IVPBaseConfig *self, uint32 dwPitch, uint32 dwXOrigin, uint32 dwYOrigin) SetSurfaceParameters;
+		}
+		[CRepr]
+		public struct IVPConfig : IVPBaseConfig
+		{
+			public function HRESULT(IVPConfig *self, int32* pbIsDecimationAllowed) IsVPDecimationAllowed;
+			public function HRESULT(IVPConfig *self, AMVPSIZE* pamvpSize) SetScalingFactors;
+		}
+		[CRepr]
+		public struct IVPVBIConfig : IVPBaseConfig
+		{
+		}
+		[CRepr]
+		public struct IVPBaseNotify : IUnknown
+		{
+			public function HRESULT(IVPBaseNotify *self) RenegotiateVPParameters;
+		}
+		[CRepr]
+		public struct IVPNotify : IVPBaseNotify
+		{
+			public function HRESULT(IVPNotify *self, AMVP_MODE mode) SetDeinterlaceMode;
+			public function HRESULT(IVPNotify *self, AMVP_MODE* pMode) GetDeinterlaceMode;
+		}
+		[CRepr]
+		public struct IVPNotify2 : IVPNotify
+		{
+			public function HRESULT(IVPNotify2 *self, BOOL bVPSyncMaster) SetVPSyncMaster;
+			public function HRESULT(IVPNotify2 *self, BOOL* pbVPSyncMaster) GetVPSyncMaster;
+		}
+		[CRepr]
+		public struct IVPVBINotify : IVPBaseNotify
+		{
+		}
+		[CRepr]
+		public struct IMediaParamInfo : IUnknown
+		{
+			public const new Guid IID = .(0x6d6cbb60, 0xa223, 0x44aa, 0x84, 0x2f, 0xa2, 0xf0, 0x67, 0x50, 0xbe, 0x6d);
+			
+			public function HRESULT(IMediaParamInfo *self, uint32* pdwParams) GetParamCount;
+			public function HRESULT(IMediaParamInfo *self, uint32 dwParamIndex, MP_PARAMINFO* pInfo) GetParamInfo;
+			public function HRESULT(IMediaParamInfo *self, uint32 dwParamIndex, uint16** ppwchText) GetParamText;
+			public function HRESULT(IMediaParamInfo *self, uint32* pdwNumTimeFormats) GetNumTimeFormats;
+			public function HRESULT(IMediaParamInfo *self, uint32 dwFormatIndex, Guid* pguidTimeFormat) GetSupportedTimeFormat;
+			public function HRESULT(IMediaParamInfo *self, Guid* pguidTimeFormat, uint32* pTimeData) GetCurrentTimeFormat;
+		}
+		[CRepr]
+		public struct IMediaParams : IUnknown
+		{
+			public const new Guid IID = .(0x6d6cbb61, 0xa223, 0x44aa, 0x84, 0x2f, 0xa2, 0xf0, 0x67, 0x50, 0xbe, 0x6e);
+			
+			public function HRESULT(IMediaParams *self, uint32 dwParamIndex, float* pValue) GetParam;
+			public function HRESULT(IMediaParams *self, uint32 dwParamIndex, float value) SetParam;
+			public function HRESULT(IMediaParams *self, uint32 dwParamIndex, uint32 cSegments, MP_ENVELOPE_SEGMENT* pEnvelopeSegments) AddEnvelope;
+			public function HRESULT(IMediaParams *self, uint32 dwParamIndex, int64 refTimeStart, int64 refTimeEnd) FlushEnvelope;
+			public function HRESULT(IMediaParams *self, Guid guidTimeFormat, uint32 mpTimeData) SetTimeFormat;
+		}
+		[CRepr]
+		public struct IAMPlayListItem : IUnknown
+		{
+			public const new Guid IID = .(0x56a868ff, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IAMPlayListItem *self, uint32* pdwFlags) GetFlags;
+			public function HRESULT(IAMPlayListItem *self, uint32* pdwSources) GetSourceCount;
+			public function HRESULT(IAMPlayListItem *self, uint32 dwSourceIndex, BSTR* pbstrURL) GetSourceURL;
+			public function HRESULT(IAMPlayListItem *self, uint32 dwSourceIndex, int64* prtStart) GetSourceStart;
+			public function HRESULT(IAMPlayListItem *self, uint32 dwSourceIndex, int64* prtDuration) GetSourceDuration;
+			public function HRESULT(IAMPlayListItem *self, uint32 dwSourceIndex, uint32* pdwMarker) GetSourceStartMarker;
+			public function HRESULT(IAMPlayListItem *self, uint32 dwSourceIndex, uint32* pdwMarker) GetSourceEndMarker;
+			public function HRESULT(IAMPlayListItem *self, uint32 dwSourceIndex, BSTR* pbstrStartMarker) GetSourceStartMarkerName;
+			public function HRESULT(IAMPlayListItem *self, uint32 dwSourceIndex, BSTR* pbstrEndMarker) GetSourceEndMarkerName;
+			public function HRESULT(IAMPlayListItem *self, BSTR* pbstrURL) GetLinkURL;
+			public function HRESULT(IAMPlayListItem *self, uint32 dwSourceIndex, int64* prtScanDuration) GetScanDuration;
+		}
+		[CRepr]
+		public struct IAMPlayList : IUnknown
+		{
+			public const new Guid IID = .(0x56a868fe, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IAMPlayList *self, uint32* pdwFlags) GetFlags;
+			public function HRESULT(IAMPlayList *self, uint32* pdwItems) GetItemCount;
+			public function HRESULT(IAMPlayList *self, uint32 dwItemIndex, IAMPlayListItem** ppItem) GetItem;
+			public function HRESULT(IAMPlayList *self, PWSTR pwszEventName, uint32 dwItemIndex, IAMPlayListItem** ppItem, uint32* pdwFlags) GetNamedEvent;
+			public function HRESULT(IAMPlayList *self, uint32* pdwRepeatCount, uint32* pdwRepeatStart, uint32* pdwRepeatEnd) GetRepeatInfo;
+		}
+		[CRepr]
+		public struct ISpecifyParticularPages : IUnknown
+		{
+			public const new Guid IID = .(0x4c437b91, 0x6e9e, 0x11d1, 0xa7, 0x04, 0x00, 0x60, 0x97, 0xc4, 0xe4, 0x76);
+			
+			public function HRESULT(ISpecifyParticularPages *self, Guid* guidWhatPages, CAUUID* pPages) GetPages;
+		}
+		[CRepr]
+		public struct IAMRebuild : IUnknown
+		{
+			public const new Guid IID = .(0x02ef04dd, 0x7580, 0x11d1, 0xbe, 0xce, 0x00, 0xc0, 0x4f, 0xb6, 0xe9, 0x37);
+			
+			public function HRESULT(IAMRebuild *self) RebuildNow;
+		}
+		[CRepr]
+		public struct IBufferingTime : IUnknown
+		{
+			public const new Guid IID = .(0x1e00486a, 0x78dd, 0x11d2, 0x8d, 0xd3, 0x00, 0x60, 0x97, 0xc9, 0xa2, 0xb2);
+			
+			public function HRESULT(IBufferingTime *self, uint32* pdwMilliseconds) GetBufferingTime;
+			public function HRESULT(IBufferingTime *self, uint32 dwMilliseconds) SetBufferingTime;
+		}
+		[CRepr]
+		public struct ICreatePropBagOnRegKey : IUnknown
+		{
+			public const new Guid IID = .(0x8a674b48, 0x1f63, 0x11d3, 0xb6, 0x4c, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(ICreatePropBagOnRegKey *self, HKEY hkey, PWSTR subkey, uint32 ulOptions, uint32 samDesired, Guid* iid, void** ppBag) Create;
+		}
+		[CRepr]
+		public struct ITuningSpaces : IDispatch
+		{
+			public const new Guid IID = .(0x901284e4, 0x33fe, 0x4b69, 0x8d, 0x63, 0x63, 0x4a, 0x59, 0x6f, 0x37, 0x56);
+			
+			public function HRESULT(ITuningSpaces *self, int32* Count) get_Count;
+			public function HRESULT(ITuningSpaces *self, IEnumVARIANT** NewEnum) get__NewEnum;
+			public function HRESULT(ITuningSpaces *self, VARIANT varIndex, ITuningSpace** TuningSpace) get_Item;
+			public function HRESULT(ITuningSpaces *self, IEnumTuningSpaces** NewEnum) get_EnumTuningSpaces;
+		}
+		[CRepr]
+		public struct ITuningSpaceContainer : IDispatch
+		{
+			public const new Guid IID = .(0x5b692e84, 0xe2f1, 0x11d2, 0x94, 0x93, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(ITuningSpaceContainer *self, int32* Count) get_Count;
+			public function HRESULT(ITuningSpaceContainer *self, IEnumVARIANT** NewEnum) get__NewEnum;
+			public function HRESULT(ITuningSpaceContainer *self, VARIANT varIndex, ITuningSpace** TuningSpace) get_Item;
+			public function HRESULT(ITuningSpaceContainer *self, VARIANT varIndex, ITuningSpace* TuningSpace) put_Item;
+			public function HRESULT(ITuningSpaceContainer *self, BSTR SpaceCLSID, ITuningSpaces** NewColl) TuningSpacesForCLSID;
+			public function HRESULT(ITuningSpaceContainer *self, Guid* SpaceCLSID, ITuningSpaces** NewColl) _TuningSpacesForCLSID2;
+			public function HRESULT(ITuningSpaceContainer *self, BSTR Name, ITuningSpaces** NewColl) TuningSpacesForName;
+			public function HRESULT(ITuningSpaceContainer *self, ITuningSpace* TuningSpace, int32* ID) FindID;
+			public function HRESULT(ITuningSpaceContainer *self, ITuningSpace* TuningSpace, VARIANT* NewIndex) Add;
+			public function HRESULT(ITuningSpaceContainer *self, IEnumTuningSpaces** ppEnum) get_EnumTuningSpaces;
+			public function HRESULT(ITuningSpaceContainer *self, VARIANT Index) Remove;
+			public function HRESULT(ITuningSpaceContainer *self, int32* MaxCount) get_MaxCount;
+			public function HRESULT(ITuningSpaceContainer *self, int32 MaxCount) put_MaxCount;
+		}
+		[CRepr]
+		public struct ITuningSpace : IDispatch
+		{
+			public const new Guid IID = .(0x061c6e30, 0xe622, 0x11d2, 0x94, 0x93, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(ITuningSpace *self, BSTR* Name) get_UniqueName;
+			public function HRESULT(ITuningSpace *self, BSTR Name) put_UniqueName;
+			public function HRESULT(ITuningSpace *self, BSTR* Name) get_FriendlyName;
+			public function HRESULT(ITuningSpace *self, BSTR Name) put_FriendlyName;
+			public function HRESULT(ITuningSpace *self, BSTR* SpaceCLSID) get_CLSID;
+			public function HRESULT(ITuningSpace *self, BSTR* NetworkTypeGuid) get_NetworkType;
+			public function HRESULT(ITuningSpace *self, BSTR NetworkTypeGuid) put_NetworkType;
+			public function HRESULT(ITuningSpace *self, Guid* NetworkTypeGuid) get__NetworkType;
+			public function HRESULT(ITuningSpace *self, Guid* NetworkTypeGuid) put__NetworkType;
+			public function HRESULT(ITuningSpace *self, ITuneRequest** TuneRequest) CreateTuneRequest;
+			public function HRESULT(ITuningSpace *self, IEnumGUID** ppEnum) EnumCategoryGUIDs;
+			public function HRESULT(ITuningSpace *self, IEnumMoniker** ppEnum) EnumDeviceMonikers;
+			public function HRESULT(ITuningSpace *self, IComponentTypes** ComponentTypes) get_DefaultPreferredComponentTypes;
+			public function HRESULT(ITuningSpace *self, IComponentTypes* NewComponentTypes) put_DefaultPreferredComponentTypes;
+			public function HRESULT(ITuningSpace *self, BSTR* pMapping) get_FrequencyMapping;
+			public function HRESULT(ITuningSpace *self, BSTR Mapping) put_FrequencyMapping;
+			public function HRESULT(ITuningSpace *self, ILocator** LocatorVal) get_DefaultLocator;
+			public function HRESULT(ITuningSpace *self, ILocator* LocatorVal) put_DefaultLocator;
+			public function HRESULT(ITuningSpace *self, ITuningSpace** NewTS) Clone;
+		}
+		[CRepr]
+		public struct IEnumTuningSpaces : IUnknown
+		{
+			public const new Guid IID = .(0x8b8eb248, 0xfc2b, 0x11d2, 0x9d, 0x8c, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(IEnumTuningSpaces *self, uint32 celt, ITuningSpace** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumTuningSpaces *self, uint32 celt) Skip;
+			public function HRESULT(IEnumTuningSpaces *self) Reset;
+			public function HRESULT(IEnumTuningSpaces *self, IEnumTuningSpaces** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IDVBTuningSpace : ITuningSpace
+		{
+			public const new Guid IID = .(0xada0b268, 0x3b19, 0x4e5b, 0xac, 0xc4, 0x49, 0xf8, 0x52, 0xbe, 0x13, 0xba);
+			
+			public function HRESULT(IDVBTuningSpace *self, DVBSystemType* SysType) get_SystemType;
+			public function HRESULT(IDVBTuningSpace *self, DVBSystemType SysType) put_SystemType;
+		}
+		[CRepr]
+		public struct IDVBTuningSpace2 : IDVBTuningSpace
+		{
+			public const new Guid IID = .(0x843188b4, 0xce62, 0x43db, 0x96, 0x6b, 0x81, 0x45, 0xa0, 0x94, 0xe0, 0x40);
+			
+			public function HRESULT(IDVBTuningSpace2 *self, int32* NetworkID) get_NetworkID;
+			public function HRESULT(IDVBTuningSpace2 *self, int32 NetworkID) put_NetworkID;
+		}
+		[CRepr]
+		public struct IDVBSTuningSpace : IDVBTuningSpace2
+		{
+			public const new Guid IID = .(0xcdf7be60, 0xd954, 0x42fd, 0xa9, 0x72, 0x78, 0x97, 0x19, 0x58, 0xe4, 0x70);
+			
+			public function HRESULT(IDVBSTuningSpace *self, int32* LowOscillator) get_LowOscillator;
+			public function HRESULT(IDVBSTuningSpace *self, int32 LowOscillator) put_LowOscillator;
+			public function HRESULT(IDVBSTuningSpace *self, int32* HighOscillator) get_HighOscillator;
+			public function HRESULT(IDVBSTuningSpace *self, int32 HighOscillator) put_HighOscillator;
+			public function HRESULT(IDVBSTuningSpace *self, int32* LNBSwitch) get_LNBSwitch;
+			public function HRESULT(IDVBSTuningSpace *self, int32 LNBSwitch) put_LNBSwitch;
+			public function HRESULT(IDVBSTuningSpace *self, BSTR* InputRange) get_InputRange;
+			public function HRESULT(IDVBSTuningSpace *self, BSTR InputRange) put_InputRange;
+			public function HRESULT(IDVBSTuningSpace *self, SpectralInversion* SpectralInversionVal) get_SpectralInversion;
+			public function HRESULT(IDVBSTuningSpace *self, SpectralInversion SpectralInversionVal) put_SpectralInversion;
+		}
+		[CRepr]
+		public struct IAuxInTuningSpace : ITuningSpace
+		{
+			public const new Guid IID = .(0xe48244b8, 0x7e17, 0x4f76, 0xa7, 0x63, 0x50, 0x90, 0xff, 0x1e, 0x2f, 0x30);
+			
+		}
+		[CRepr]
+		public struct IAuxInTuningSpace2 : IAuxInTuningSpace
+		{
+			public const new Guid IID = .(0xb10931ed, 0x8bfe, 0x4ab0, 0x9d, 0xce, 0xe4, 0x69, 0xc2, 0x9a, 0x97, 0x29);
+			
+			public function HRESULT(IAuxInTuningSpace2 *self, int32* CountryCodeVal) get_CountryCode;
+			public function HRESULT(IAuxInTuningSpace2 *self, int32 NewCountryCodeVal) put_CountryCode;
+		}
+		[CRepr]
+		public struct IAnalogTVTuningSpace : ITuningSpace
+		{
+			public const new Guid IID = .(0x2a6e293c, 0x2595, 0x11d3, 0xb6, 0x4c, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IAnalogTVTuningSpace *self, int32* MinChannelVal) get_MinChannel;
+			public function HRESULT(IAnalogTVTuningSpace *self, int32 NewMinChannelVal) put_MinChannel;
+			public function HRESULT(IAnalogTVTuningSpace *self, int32* MaxChannelVal) get_MaxChannel;
+			public function HRESULT(IAnalogTVTuningSpace *self, int32 NewMaxChannelVal) put_MaxChannel;
+			public function HRESULT(IAnalogTVTuningSpace *self, TunerInputType* InputTypeVal) get_InputType;
+			public function HRESULT(IAnalogTVTuningSpace *self, TunerInputType NewInputTypeVal) put_InputType;
+			public function HRESULT(IAnalogTVTuningSpace *self, int32* CountryCodeVal) get_CountryCode;
+			public function HRESULT(IAnalogTVTuningSpace *self, int32 NewCountryCodeVal) put_CountryCode;
+		}
+		[CRepr]
+		public struct IATSCTuningSpace : IAnalogTVTuningSpace
+		{
+			public const new Guid IID = .(0x0369b4e2, 0x45b6, 0x11d3, 0xb6, 0x50, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IATSCTuningSpace *self, int32* MinMinorChannelVal) get_MinMinorChannel;
+			public function HRESULT(IATSCTuningSpace *self, int32 NewMinMinorChannelVal) put_MinMinorChannel;
+			public function HRESULT(IATSCTuningSpace *self, int32* MaxMinorChannelVal) get_MaxMinorChannel;
+			public function HRESULT(IATSCTuningSpace *self, int32 NewMaxMinorChannelVal) put_MaxMinorChannel;
+			public function HRESULT(IATSCTuningSpace *self, int32* MinPhysicalChannelVal) get_MinPhysicalChannel;
+			public function HRESULT(IATSCTuningSpace *self, int32 NewMinPhysicalChannelVal) put_MinPhysicalChannel;
+			public function HRESULT(IATSCTuningSpace *self, int32* MaxPhysicalChannelVal) get_MaxPhysicalChannel;
+			public function HRESULT(IATSCTuningSpace *self, int32 NewMaxPhysicalChannelVal) put_MaxPhysicalChannel;
+		}
+		[CRepr]
+		public struct IDigitalCableTuningSpace : IATSCTuningSpace
+		{
+			public const new Guid IID = .(0x013f9f9c, 0xb449, 0x4ec7, 0xa6, 0xd2, 0x9d, 0x4f, 0x2f, 0xc7, 0x0a, 0xe5);
+			
+			public function HRESULT(IDigitalCableTuningSpace *self, int32* MinMajorChannelVal) get_MinMajorChannel;
+			public function HRESULT(IDigitalCableTuningSpace *self, int32 NewMinMajorChannelVal) put_MinMajorChannel;
+			public function HRESULT(IDigitalCableTuningSpace *self, int32* MaxMajorChannelVal) get_MaxMajorChannel;
+			public function HRESULT(IDigitalCableTuningSpace *self, int32 NewMaxMajorChannelVal) put_MaxMajorChannel;
+			public function HRESULT(IDigitalCableTuningSpace *self, int32* MinSourceIDVal) get_MinSourceID;
+			public function HRESULT(IDigitalCableTuningSpace *self, int32 NewMinSourceIDVal) put_MinSourceID;
+			public function HRESULT(IDigitalCableTuningSpace *self, int32* MaxSourceIDVal) get_MaxSourceID;
+			public function HRESULT(IDigitalCableTuningSpace *self, int32 NewMaxSourceIDVal) put_MaxSourceID;
+		}
+		[CRepr]
+		public struct IAnalogRadioTuningSpace : ITuningSpace
+		{
+			public const new Guid IID = .(0x2a6e293b, 0x2595, 0x11d3, 0xb6, 0x4c, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IAnalogRadioTuningSpace *self, int32* MinFrequencyVal) get_MinFrequency;
+			public function HRESULT(IAnalogRadioTuningSpace *self, int32 NewMinFrequencyVal) put_MinFrequency;
+			public function HRESULT(IAnalogRadioTuningSpace *self, int32* MaxFrequencyVal) get_MaxFrequency;
+			public function HRESULT(IAnalogRadioTuningSpace *self, int32 NewMaxFrequencyVal) put_MaxFrequency;
+			public function HRESULT(IAnalogRadioTuningSpace *self, int32* StepVal) get_Step;
+			public function HRESULT(IAnalogRadioTuningSpace *self, int32 NewStepVal) put_Step;
+		}
+		[CRepr]
+		public struct IAnalogRadioTuningSpace2 : IAnalogRadioTuningSpace
+		{
+			public const new Guid IID = .(0x39dd45da, 0x2da8, 0x46ba, 0x8a, 0x8a, 0x87, 0xe2, 0xb7, 0x3d, 0x98, 0x3a);
+			
+			public function HRESULT(IAnalogRadioTuningSpace2 *self, int32* CountryCodeVal) get_CountryCode;
+			public function HRESULT(IAnalogRadioTuningSpace2 *self, int32 NewCountryCodeVal) put_CountryCode;
+		}
+		[CRepr]
+		public struct ITuneRequest : IDispatch
+		{
+			public const new Guid IID = .(0x07ddc146, 0xfc3d, 0x11d2, 0x9d, 0x8c, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(ITuneRequest *self, ITuningSpace** TuningSpace) get_TuningSpace;
+			public function HRESULT(ITuneRequest *self, IComponents** Components) get_Components;
+			public function HRESULT(ITuneRequest *self, ITuneRequest** NewTuneRequest) Clone;
+			public function HRESULT(ITuneRequest *self, ILocator** Locator) get_Locator;
+			public function HRESULT(ITuneRequest *self, ILocator* Locator) put_Locator;
+		}
+		[CRepr]
+		public struct IChannelIDTuneRequest : ITuneRequest
+		{
+			public const new Guid IID = .(0x156eff60, 0x86f4, 0x4e28, 0x89, 0xfc, 0x10, 0x97, 0x99, 0xfd, 0x57, 0xee);
+			
+			public function HRESULT(IChannelIDTuneRequest *self, BSTR* ChannelID) get_ChannelID;
+			public function HRESULT(IChannelIDTuneRequest *self, BSTR ChannelID) put_ChannelID;
+		}
+		[CRepr]
+		public struct IChannelTuneRequest : ITuneRequest
+		{
+			public const new Guid IID = .(0x0369b4e0, 0x45b6, 0x11d3, 0xb6, 0x50, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IChannelTuneRequest *self, int32* Channel) get_Channel;
+			public function HRESULT(IChannelTuneRequest *self, int32 Channel) put_Channel;
+		}
+		[CRepr]
+		public struct IATSCChannelTuneRequest : IChannelTuneRequest
+		{
+			public const new Guid IID = .(0x0369b4e1, 0x45b6, 0x11d3, 0xb6, 0x50, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IATSCChannelTuneRequest *self, int32* MinorChannel) get_MinorChannel;
+			public function HRESULT(IATSCChannelTuneRequest *self, int32 MinorChannel) put_MinorChannel;
+		}
+		[CRepr]
+		public struct IDigitalCableTuneRequest : IATSCChannelTuneRequest
+		{
+			public const new Guid IID = .(0xbad7753b, 0x6b37, 0x4810, 0xae, 0x57, 0x3c, 0xe0, 0xc4, 0xa9, 0xe6, 0xcb);
+			
+			public function HRESULT(IDigitalCableTuneRequest *self, int32* pMajorChannel) get_MajorChannel;
+			public function HRESULT(IDigitalCableTuneRequest *self, int32 MajorChannel) put_MajorChannel;
+			public function HRESULT(IDigitalCableTuneRequest *self, int32* pSourceID) get_SourceID;
+			public function HRESULT(IDigitalCableTuneRequest *self, int32 SourceID) put_SourceID;
+		}
+		[CRepr]
+		public struct IDVBTuneRequest : ITuneRequest
+		{
+			public const new Guid IID = .(0x0d6f567e, 0xa636, 0x42bb, 0x83, 0xba, 0xce, 0x4c, 0x17, 0x04, 0xaf, 0xa2);
+			
+			public function HRESULT(IDVBTuneRequest *self, int32* ONID) get_ONID;
+			public function HRESULT(IDVBTuneRequest *self, int32 ONID) put_ONID;
+			public function HRESULT(IDVBTuneRequest *self, int32* TSID) get_TSID;
+			public function HRESULT(IDVBTuneRequest *self, int32 TSID) put_TSID;
+			public function HRESULT(IDVBTuneRequest *self, int32* SID) get_SID;
+			public function HRESULT(IDVBTuneRequest *self, int32 SID) put_SID;
+		}
+		[CRepr]
+		public struct IMPEG2TuneRequest : ITuneRequest
+		{
+			public const new Guid IID = .(0xeb7d987f, 0x8a01, 0x42ad, 0xb8, 0xae, 0x57, 0x4d, 0xee, 0xe4, 0x4d, 0x1a);
+			
+			public function HRESULT(IMPEG2TuneRequest *self, int32* TSID) get_TSID;
+			public function HRESULT(IMPEG2TuneRequest *self, int32 TSID) put_TSID;
+			public function HRESULT(IMPEG2TuneRequest *self, int32* ProgNo) get_ProgNo;
+			public function HRESULT(IMPEG2TuneRequest *self, int32 ProgNo) put_ProgNo;
+		}
+		[CRepr]
+		public struct IMPEG2TuneRequestFactory : IDispatch
+		{
+			public const new Guid IID = .(0x14e11abd, 0xee37, 0x4893, 0x9e, 0xa1, 0x69, 0x64, 0xde, 0x93, 0x3e, 0x39);
+			
+			public function HRESULT(IMPEG2TuneRequestFactory *self, ITuningSpace* TuningSpace, IMPEG2TuneRequest** TuneRequest) CreateTuneRequest;
+		}
+		[CRepr]
+		public struct IMPEG2TuneRequestSupport : IUnknown
+		{
+			public const new Guid IID = .(0x1b9d5fc3, 0x5bbc, 0x4b6c, 0xbb, 0x18, 0xb9, 0xd1, 0x0e, 0x3e, 0xee, 0xbf);
+			
+		}
+		[CRepr]
+		public struct ITunerCap : IUnknown
+		{
+			public const new Guid IID = .(0xe60dfa45, 0x8d56, 0x4e65, 0xa8, 0xab, 0xd6, 0xbe, 0x94, 0x12, 0xc2, 0x49);
+			
+			public function HRESULT(ITunerCap *self, uint32 ulcNetworkTypesMax, uint32* pulcNetworkTypes, Guid* pguidNetworkTypes) get_SupportedNetworkTypes;
+			public function HRESULT(ITunerCap *self, uint32* pulAMTunerModeType, uint32* pulAnalogVideoStandard) get_SupportedVideoFormats;
+			public function HRESULT(ITunerCap *self, uint32* pulCompositeCount, uint32* pulSvideoCount) get_AuxInputCount;
+		}
+		[CRepr]
+		public struct ITunerCapEx : IUnknown
+		{
+			public const new Guid IID = .(0xed3e0c66, 0x18c8, 0x4ea6, 0x93, 0x00, 0xf6, 0x84, 0x1f, 0xdd, 0x35, 0xdc);
+			
+			public function HRESULT(ITunerCapEx *self, int16* pbHasCaption) get_Has608_708Caption;
+		}
+		[CRepr]
+		public struct ITuner : IUnknown
+		{
+			public const new Guid IID = .(0x28c52640, 0x018a, 0x11d3, 0x9d, 0x8e, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(ITuner *self, ITuningSpace** TuningSpace) get_TuningSpace;
+			public function HRESULT(ITuner *self, ITuningSpace* TuningSpace) put_TuningSpace;
+			public function HRESULT(ITuner *self, IEnumTuningSpaces** ppEnum) EnumTuningSpaces;
+			public function HRESULT(ITuner *self, ITuneRequest** TuneRequest) get_TuneRequest;
+			public function HRESULT(ITuner *self, ITuneRequest* TuneRequest) put_TuneRequest;
+			public function HRESULT(ITuner *self, ITuneRequest* TuneRequest) Validate;
+			public function HRESULT(ITuner *self, IComponentTypes** ComponentTypes) get_PreferredComponentTypes;
+			public function HRESULT(ITuner *self, IComponentTypes* ComponentTypes) put_PreferredComponentTypes;
+			public function HRESULT(ITuner *self, int32* Strength) get_SignalStrength;
+			public function HRESULT(ITuner *self, int32 Interval) TriggerSignalEvents;
+		}
+		[CRepr]
+		public struct IScanningTuner : ITuner
+		{
+			public const new Guid IID = .(0x1dfd0a5c, 0x0284, 0x11d3, 0x9d, 0x8e, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(IScanningTuner *self) SeekUp;
+			public function HRESULT(IScanningTuner *self) SeekDown;
+			public function HRESULT(IScanningTuner *self, int32 MillisecondsPause) ScanUp;
+			public function HRESULT(IScanningTuner *self, int32 MillisecondsPause) ScanDown;
+			public function HRESULT(IScanningTuner *self) AutoProgram;
+		}
+		[CRepr]
+		public struct IScanningTunerEx : IScanningTuner
+		{
+			public const new Guid IID = .(0x04bbd195, 0x0e2d, 0x4593, 0x9b, 0xd5, 0x4f, 0x90, 0x8b, 0xc3, 0x3c, 0xf5);
+			
+			public function HRESULT(IScanningTunerEx *self, ILocator** pILocator) GetCurrentLocator;
+			public function HRESULT(IScanningTunerEx *self, int32 dwLowerFreq, int32 dwHigherFreq, int16 bFineTune, uint hEvent) PerformExhaustiveScan;
+			public function HRESULT(IScanningTunerEx *self, int32* pcurrentFreq) TerminateCurrentScan;
+			public function HRESULT(IScanningTunerEx *self, uint hEvent) ResumeCurrentScan;
+			public function HRESULT(IScanningTunerEx *self, int32* HardwareAssistedScanning, int32* NumStandardsSupported, Guid* BroadcastStandards) GetTunerScanningCapability;
+			public function HRESULT(IScanningTunerEx *self, int32* SecondsLeft, int32* CurrentLockType, int32* AutoDetect, int32* CurrentFreq) GetTunerStatus;
+			public function HRESULT(IScanningTunerEx *self, Guid CurrentBroadcastStandard, int32* SettlingTime, int32* TvStandardsSupported) GetCurrentTunerStandardCapability;
+			public function HRESULT(IScanningTunerEx *self, int32 ScanModulationTypes, int32 AnalogVideoStandard) SetScanSignalTypeFilter;
+		}
+		[CRepr]
+		public struct IComponentType : IDispatch
+		{
+			public const new Guid IID = .(0x6a340dc0, 0x0311, 0x11d3, 0x9d, 0x8e, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(IComponentType *self, ComponentCategory* Category) get_Category;
+			public function HRESULT(IComponentType *self, ComponentCategory Category) put_Category;
+			public function HRESULT(IComponentType *self, BSTR* MediaMajorType) get_MediaMajorType;
+			public function HRESULT(IComponentType *self, BSTR MediaMajorType) put_MediaMajorType;
+			public function HRESULT(IComponentType *self, Guid* MediaMajorTypeGuid) get__MediaMajorType;
+			public function HRESULT(IComponentType *self, Guid* MediaMajorTypeGuid) put__MediaMajorType;
+			public function HRESULT(IComponentType *self, BSTR* MediaSubType) get_MediaSubType;
+			public function HRESULT(IComponentType *self, BSTR MediaSubType) put_MediaSubType;
+			public function HRESULT(IComponentType *self, Guid* MediaSubTypeGuid) get__MediaSubType;
+			public function HRESULT(IComponentType *self, Guid* MediaSubTypeGuid) put__MediaSubType;
+			public function HRESULT(IComponentType *self, BSTR* MediaFormatType) get_MediaFormatType;
+			public function HRESULT(IComponentType *self, BSTR MediaFormatType) put_MediaFormatType;
+			public function HRESULT(IComponentType *self, Guid* MediaFormatTypeGuid) get__MediaFormatType;
+			public function HRESULT(IComponentType *self, Guid* MediaFormatTypeGuid) put__MediaFormatType;
+			public function HRESULT(IComponentType *self, AM_MEDIA_TYPE* MediaType) get_MediaType;
+			public function HRESULT(IComponentType *self, AM_MEDIA_TYPE* MediaType) put_MediaType;
+			public function HRESULT(IComponentType *self, IComponentType** NewCT) Clone;
+		}
+		[CRepr]
+		public struct ILanguageComponentType : IComponentType
+		{
+			public const new Guid IID = .(0xb874c8ba, 0x0fa2, 0x11d3, 0x9d, 0x8e, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(ILanguageComponentType *self, int32* LangID) get_LangID;
+			public function HRESULT(ILanguageComponentType *self, int32 LangID) put_LangID;
+		}
+		[CRepr]
+		public struct IMPEG2ComponentType : ILanguageComponentType
+		{
+			public const new Guid IID = .(0x2c073d84, 0xb51c, 0x48c9, 0xaa, 0x9f, 0x68, 0x97, 0x1e, 0x1f, 0x6e, 0x38);
+			
+			public function HRESULT(IMPEG2ComponentType *self, MPEG2StreamType* MP2StreamType) get_StreamType;
+			public function HRESULT(IMPEG2ComponentType *self, MPEG2StreamType MP2StreamType) put_StreamType;
+		}
+		[CRepr]
+		public struct IATSCComponentType : IMPEG2ComponentType
+		{
+			public const new Guid IID = .(0xfc189e4d, 0x7bd4, 0x4125, 0xb3, 0xb3, 0x3a, 0x76, 0xa3, 0x32, 0xcc, 0x96);
+			
+			public function HRESULT(IATSCComponentType *self, int32* Flags) get_Flags;
+			public function HRESULT(IATSCComponentType *self, int32 flags) put_Flags;
+		}
+		[CRepr]
+		public struct IEnumComponentTypes : IUnknown
+		{
+			public const new Guid IID = .(0x8a674b4a, 0x1f63, 0x11d3, 0xb6, 0x4c, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IEnumComponentTypes *self, uint32 celt, IComponentType** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumComponentTypes *self, uint32 celt) Skip;
+			public function HRESULT(IEnumComponentTypes *self) Reset;
+			public function HRESULT(IEnumComponentTypes *self, IEnumComponentTypes** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IComponentTypes : IDispatch
+		{
+			public const new Guid IID = .(0x0dc13d4a, 0x0313, 0x11d3, 0x9d, 0x8e, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(IComponentTypes *self, int32* Count) get_Count;
+			public function HRESULT(IComponentTypes *self, IEnumVARIANT** ppNewEnum) get__NewEnum;
+			public function HRESULT(IComponentTypes *self, IEnumComponentTypes** ppNewEnum) EnumComponentTypes;
+			public function HRESULT(IComponentTypes *self, VARIANT Index, IComponentType** ComponentType) get_Item;
+			public function HRESULT(IComponentTypes *self, VARIANT Index, IComponentType* ComponentType) put_Item;
+			public function HRESULT(IComponentTypes *self, IComponentType* ComponentType, VARIANT* NewIndex) Add;
+			public function HRESULT(IComponentTypes *self, VARIANT Index) Remove;
+			public function HRESULT(IComponentTypes *self, IComponentTypes** NewList) Clone;
+		}
+		[CRepr]
+		public struct IComponent : IDispatch
+		{
+			public const new Guid IID = .(0x1a5576fc, 0x0e19, 0x11d3, 0x9d, 0x8e, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(IComponent *self, IComponentType** CT) get_Type;
+			public function HRESULT(IComponent *self, IComponentType* CT) put_Type;
+			public function HRESULT(IComponent *self, int32* LangID) get_DescLangID;
+			public function HRESULT(IComponent *self, int32 LangID) put_DescLangID;
+			public function HRESULT(IComponent *self, ComponentStatus* Status) get_Status;
+			public function HRESULT(IComponent *self, ComponentStatus Status) put_Status;
+			public function HRESULT(IComponent *self, BSTR* Description) get_Description;
+			public function HRESULT(IComponent *self, BSTR Description) put_Description;
+			public function HRESULT(IComponent *self, IComponent** NewComponent) Clone;
+		}
+		[CRepr]
+		public struct IAnalogAudioComponentType : IComponentType
+		{
+			public const new Guid IID = .(0x2cfeb2a8, 0x1787, 0x4a24, 0xa9, 0x41, 0xc6, 0xea, 0xec, 0x39, 0xc8, 0x42);
+			
+			public function HRESULT(IAnalogAudioComponentType *self, TVAudioMode* Mode) get_AnalogAudioMode;
+			public function HRESULT(IAnalogAudioComponentType *self, TVAudioMode Mode) put_AnalogAudioMode;
+		}
+		[CRepr]
+		public struct IMPEG2Component : IComponent
+		{
+			public const new Guid IID = .(0x1493e353, 0x1eb6, 0x473c, 0x80, 0x2d, 0x8e, 0x6b, 0x8e, 0xc9, 0xd2, 0xa9);
+			
+			public function HRESULT(IMPEG2Component *self, int32* PID) get_PID;
+			public function HRESULT(IMPEG2Component *self, int32 PID) put_PID;
+			public function HRESULT(IMPEG2Component *self, int32* PCRPID) get_PCRPID;
+			public function HRESULT(IMPEG2Component *self, int32 PCRPID) put_PCRPID;
+			public function HRESULT(IMPEG2Component *self, int32* ProgramNumber) get_ProgramNumber;
+			public function HRESULT(IMPEG2Component *self, int32 ProgramNumber) put_ProgramNumber;
+		}
+		[CRepr]
+		public struct IEnumComponents : IUnknown
+		{
+			public const new Guid IID = .(0x2a6e2939, 0x2595, 0x11d3, 0xb6, 0x4c, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IEnumComponents *self, uint32 celt, IComponent** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumComponents *self, uint32 celt) Skip;
+			public function HRESULT(IEnumComponents *self) Reset;
+			public function HRESULT(IEnumComponents *self, IEnumComponents** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IComponents : IDispatch
+		{
+			public const new Guid IID = .(0x39a48091, 0xfffe, 0x4182, 0xa1, 0x61, 0x3f, 0xf8, 0x02, 0x64, 0x0e, 0x26);
+			
+			public function HRESULT(IComponents *self, int32* Count) get_Count;
+			public function HRESULT(IComponents *self, IEnumVARIANT** ppNewEnum) get__NewEnum;
+			public function HRESULT(IComponents *self, IEnumComponents** ppNewEnum) EnumComponents;
+			public function HRESULT(IComponents *self, VARIANT Index, IComponent** ppComponent) get_Item;
+			public function HRESULT(IComponents *self, IComponent* Component, VARIANT* NewIndex) Add;
+			public function HRESULT(IComponents *self, VARIANT Index) Remove;
+			public function HRESULT(IComponents *self, IComponents** NewList) Clone;
+			public function HRESULT(IComponents *self, VARIANT Index, IComponent* ppComponent) put_Item;
+		}
+		[CRepr]
+		public struct IComponentsOld : IDispatch
+		{
+			public const new Guid IID = .(0xfcd01846, 0x0e19, 0x11d3, 0x9d, 0x8e, 0x00, 0xc0, 0x4f, 0x72, 0xd9, 0x80);
+			
+			public function HRESULT(IComponentsOld *self, int32* Count) get_Count;
+			public function HRESULT(IComponentsOld *self, IEnumVARIANT** ppNewEnum) get__NewEnum;
+			public function HRESULT(IComponentsOld *self, IEnumComponents** ppNewEnum) EnumComponents;
+			public function HRESULT(IComponentsOld *self, VARIANT Index, IComponent** ppComponent) get_Item;
+			public function HRESULT(IComponentsOld *self, IComponent* Component, VARIANT* NewIndex) Add;
+			public function HRESULT(IComponentsOld *self, VARIANT Index) Remove;
+			public function HRESULT(IComponentsOld *self, IComponents** NewList) Clone;
+		}
+		[CRepr]
+		public struct ILocator : IDispatch
+		{
+			public const new Guid IID = .(0x286d7f89, 0x760c, 0x4f89, 0x80, 0xc4, 0x66, 0x84, 0x1d, 0x25, 0x07, 0xaa);
+			
+			public function HRESULT(ILocator *self, int32* Frequency) get_CarrierFrequency;
+			public function HRESULT(ILocator *self, int32 Frequency) put_CarrierFrequency;
+			public function HRESULT(ILocator *self, FECMethod* FEC) get_InnerFEC;
+			public function HRESULT(ILocator *self, FECMethod FEC) put_InnerFEC;
+			public function HRESULT(ILocator *self, BinaryConvolutionCodeRate* FEC) get_InnerFECRate;
+			public function HRESULT(ILocator *self, BinaryConvolutionCodeRate FEC) put_InnerFECRate;
+			public function HRESULT(ILocator *self, FECMethod* FEC) get_OuterFEC;
+			public function HRESULT(ILocator *self, FECMethod FEC) put_OuterFEC;
+			public function HRESULT(ILocator *self, BinaryConvolutionCodeRate* FEC) get_OuterFECRate;
+			public function HRESULT(ILocator *self, BinaryConvolutionCodeRate FEC) put_OuterFECRate;
+			public function HRESULT(ILocator *self, ModulationType* Modulation) get_Modulation;
+			public function HRESULT(ILocator *self, ModulationType Modulation) put_Modulation;
+			public function HRESULT(ILocator *self, int32* Rate) get_SymbolRate;
+			public function HRESULT(ILocator *self, int32 Rate) put_SymbolRate;
+			public function HRESULT(ILocator *self, ILocator** NewLocator) Clone;
+		}
+		[CRepr]
+		public struct IAnalogLocator : ILocator
+		{
+			public const new Guid IID = .(0x34d1f26b, 0xe339, 0x430d, 0xab, 0xce, 0x73, 0x8c, 0xb4, 0x89, 0x84, 0xdc);
+			
+			public function HRESULT(IAnalogLocator *self, AnalogVideoStandard* AVS) get_VideoStandard;
+			public function HRESULT(IAnalogLocator *self, AnalogVideoStandard AVS) put_VideoStandard;
+		}
+		[CRepr]
+		public struct IDigitalLocator : ILocator
+		{
+			public const new Guid IID = .(0x19b595d8, 0x839a, 0x47f0, 0x96, 0xdf, 0x4f, 0x19, 0x4f, 0x3c, 0x76, 0x8c);
+			
+		}
+		[CRepr]
+		public struct IATSCLocator : IDigitalLocator
+		{
+			public const new Guid IID = .(0xbf8d986f, 0x8c2b, 0x4131, 0x94, 0xd7, 0x4d, 0x3d, 0x9f, 0xcc, 0x21, 0xef);
+			
+			public function HRESULT(IATSCLocator *self, int32* PhysicalChannel) get_PhysicalChannel;
+			public function HRESULT(IATSCLocator *self, int32 PhysicalChannel) put_PhysicalChannel;
+			public function HRESULT(IATSCLocator *self, int32* TSID) get_TSID;
+			public function HRESULT(IATSCLocator *self, int32 TSID) put_TSID;
+		}
+		[CRepr]
+		public struct IATSCLocator2 : IATSCLocator
+		{
+			public const new Guid IID = .(0x612aa885, 0x66cf, 0x4090, 0xba, 0x0a, 0x56, 0x6f, 0x53, 0x12, 0xe4, 0xca);
+			
+			public function HRESULT(IATSCLocator2 *self, int32* ProgramNumber) get_ProgramNumber;
+			public function HRESULT(IATSCLocator2 *self, int32 ProgramNumber) put_ProgramNumber;
+		}
+		[CRepr]
+		public struct IDigitalCableLocator : IATSCLocator2
+		{
+			public const new Guid IID = .(0x48f66a11, 0x171a, 0x419a, 0x95, 0x25, 0xbe, 0xee, 0xcd, 0x51, 0x58, 0x4c);
+			
+		}
+		[CRepr]
+		public struct IDVBTLocator : IDigitalLocator
+		{
+			public const new Guid IID = .(0x8664da16, 0xdda2, 0x42ac, 0x92, 0x6a, 0xc1, 0x8f, 0x91, 0x27, 0xc3, 0x02);
+			
+			public function HRESULT(IDVBTLocator *self, int32* BandWidthVal) get_Bandwidth;
+			public function HRESULT(IDVBTLocator *self, int32 BandwidthVal) put_Bandwidth;
+			public function HRESULT(IDVBTLocator *self, FECMethod* FEC) get_LPInnerFEC;
+			public function HRESULT(IDVBTLocator *self, FECMethod FEC) put_LPInnerFEC;
+			public function HRESULT(IDVBTLocator *self, BinaryConvolutionCodeRate* FEC) get_LPInnerFECRate;
+			public function HRESULT(IDVBTLocator *self, BinaryConvolutionCodeRate FEC) put_LPInnerFECRate;
+			public function HRESULT(IDVBTLocator *self, HierarchyAlpha* Alpha) get_HAlpha;
+			public function HRESULT(IDVBTLocator *self, HierarchyAlpha Alpha) put_HAlpha;
+			public function HRESULT(IDVBTLocator *self, GuardInterval* GI) get_Guard;
+			public function HRESULT(IDVBTLocator *self, GuardInterval GI) put_Guard;
+			public function HRESULT(IDVBTLocator *self, TransmissionMode* mode) get_Mode;
+			public function HRESULT(IDVBTLocator *self, TransmissionMode mode) put_Mode;
+			public function HRESULT(IDVBTLocator *self, int16* OtherFrequencyInUseVal) get_OtherFrequencyInUse;
+			public function HRESULT(IDVBTLocator *self, int16 OtherFrequencyInUseVal) put_OtherFrequencyInUse;
+		}
+		[CRepr]
+		public struct IDVBTLocator2 : IDVBTLocator
+		{
+			public const new Guid IID = .(0x448a2edf, 0xae95, 0x4b43, 0xa3, 0xcc, 0x74, 0x78, 0x43, 0xc4, 0x53, 0xd4);
+			
+			public function HRESULT(IDVBTLocator2 *self, int32* PhysicalLayerPipeIdVal) get_PhysicalLayerPipeId;
+			public function HRESULT(IDVBTLocator2 *self, int32 PhysicalLayerPipeIdVal) put_PhysicalLayerPipeId;
+		}
+		[CRepr]
+		public struct IDVBSLocator : IDigitalLocator
+		{
+			public const new Guid IID = .(0x3d7c353c, 0x0d04, 0x45f1, 0xa7, 0x42, 0xf9, 0x7c, 0xc1, 0x18, 0x8d, 0xc8);
+			
+			public function HRESULT(IDVBSLocator *self, Polarisation* PolarisationVal) get_SignalPolarisation;
+			public function HRESULT(IDVBSLocator *self, Polarisation PolarisationVal) put_SignalPolarisation;
+			public function HRESULT(IDVBSLocator *self, int16* WestLongitude) get_WestPosition;
+			public function HRESULT(IDVBSLocator *self, int16 WestLongitude) put_WestPosition;
+			public function HRESULT(IDVBSLocator *self, int32* longitude) get_OrbitalPosition;
+			public function HRESULT(IDVBSLocator *self, int32 longitude) put_OrbitalPosition;
+			public function HRESULT(IDVBSLocator *self, int32* Azimuth) get_Azimuth;
+			public function HRESULT(IDVBSLocator *self, int32 Azimuth) put_Azimuth;
+			public function HRESULT(IDVBSLocator *self, int32* Elevation) get_Elevation;
+			public function HRESULT(IDVBSLocator *self, int32 Elevation) put_Elevation;
+		}
+		[CRepr]
+		public struct IDVBSLocator2 : IDVBSLocator
+		{
+			public const new Guid IID = .(0x6044634a, 0x1733, 0x4f99, 0xb9, 0x82, 0x5f, 0xb1, 0x2a, 0xfc, 0xe4, 0xf0);
+			
+			public function HRESULT(IDVBSLocator2 *self, LNB_Source* DiseqLNBSourceVal) get_DiseqLNBSource;
+			public function HRESULT(IDVBSLocator2 *self, LNB_Source DiseqLNBSourceVal) put_DiseqLNBSource;
+			public function HRESULT(IDVBSLocator2 *self, int32* LocalOscillatorOverrideLowVal) get_LocalOscillatorOverrideLow;
+			public function HRESULT(IDVBSLocator2 *self, int32 LocalOscillatorOverrideLowVal) put_LocalOscillatorOverrideLow;
+			public function HRESULT(IDVBSLocator2 *self, int32* LocalOscillatorOverrideHighVal) get_LocalOscillatorOverrideHigh;
+			public function HRESULT(IDVBSLocator2 *self, int32 LocalOscillatorOverrideHighVal) put_LocalOscillatorOverrideHigh;
+			public function HRESULT(IDVBSLocator2 *self, int32* LocalLNBSwitchOverrideVal) get_LocalLNBSwitchOverride;
+			public function HRESULT(IDVBSLocator2 *self, int32 LocalLNBSwitchOverrideVal) put_LocalLNBSwitchOverride;
+			public function HRESULT(IDVBSLocator2 *self, SpectralInversion* LocalSpectralInversionOverrideVal) get_LocalSpectralInversionOverride;
+			public function HRESULT(IDVBSLocator2 *self, SpectralInversion LocalSpectralInversionOverrideVal) put_LocalSpectralInversionOverride;
+			public function HRESULT(IDVBSLocator2 *self, RollOff* RollOffVal) get_SignalRollOff;
+			public function HRESULT(IDVBSLocator2 *self, RollOff RollOffVal) put_SignalRollOff;
+			public function HRESULT(IDVBSLocator2 *self, Pilot* PilotVal) get_SignalPilot;
+			public function HRESULT(IDVBSLocator2 *self, Pilot PilotVal) put_SignalPilot;
+		}
+		[CRepr]
+		public struct IDVBCLocator : IDigitalLocator
+		{
+			public const new Guid IID = .(0x6e42f36e, 0x1dd2, 0x43c4, 0x9f, 0x78, 0x69, 0xd2, 0x5a, 0xe3, 0x90, 0x34);
+			
+		}
+		[CRepr]
+		public struct IISDBSLocator : IDVBSLocator
+		{
+			public const new Guid IID = .(0xc9897087, 0xe29c, 0x473f, 0x9e, 0x4b, 0x70, 0x72, 0x12, 0x3d, 0xea, 0x14);
+			
+		}
+		[CRepr]
+		public struct IESOpenMmiEvent : IESEvent
+		{
+			public const new Guid IID = .(0xba4b6526, 0x1a35, 0x4635, 0x8b, 0x56, 0x3e, 0xc6, 0x12, 0x74, 0x6a, 0x8c);
+			
+			public function HRESULT(IESOpenMmiEvent *self, uint32* pDialogRequest, uint32* pDialogNumber) GetDialogNumber;
+			public function HRESULT(IESOpenMmiEvent *self, Guid* guidDialogType) GetDialogType;
+			public function HRESULT(IESOpenMmiEvent *self, SAFEARRAY** pbData) GetDialogData;
+			public function HRESULT(IESOpenMmiEvent *self, BSTR* pbstrBaseUrl, BSTR* pbstrData) GetDialogStringData;
+		}
+		[CRepr]
+		public struct IESCloseMmiEvent : IESEvent
+		{
+			public const new Guid IID = .(0x6b80e96f, 0x55e2, 0x45aa, 0xb7, 0x54, 0x0c, 0x23, 0xc8, 0xe7, 0xd5, 0xc1);
+			
+			public function HRESULT(IESCloseMmiEvent *self, uint32* pDialogNumber) GetDialogNumber;
+		}
+		[CRepr]
+		public struct IESValueUpdatedEvent : IESEvent
+		{
+			public const new Guid IID = .(0x8a24c46e, 0xbb63, 0x4664, 0x86, 0x02, 0x5d, 0x9c, 0x71, 0x8c, 0x14, 0x6d);
+			
+			public function HRESULT(IESValueUpdatedEvent *self, SAFEARRAY** pbstrNames) GetValueNames;
+		}
+		[CRepr]
+		public struct IESRequestTunerEvent : IESEvent
+		{
+			public const new Guid IID = .(0x54c7a5e8, 0xc3bb, 0x4f51, 0xaf, 0x14, 0xe0, 0xe2, 0xc0, 0xe3, 0x4c, 0x6d);
+			
+			public function HRESULT(IESRequestTunerEvent *self, uint8* pbyPriority) GetPriority;
+			public function HRESULT(IESRequestTunerEvent *self, uint8* pbyReason) GetReason;
+			public function HRESULT(IESRequestTunerEvent *self, uint8* pbyConsequences) GetConsequences;
+			public function HRESULT(IESRequestTunerEvent *self, uint32* pdwEstimatedTime) GetEstimatedTime;
+		}
+		[CRepr]
+		public struct IESIsdbCasResponseEvent : IESEvent
+		{
+			public const new Guid IID = .(0x2017cb03, 0xdc0f, 0x4c24, 0x83, 0xca, 0x36, 0x30, 0x7b, 0x2c, 0xd1, 0x9f);
+			
+			public function HRESULT(IESIsdbCasResponseEvent *self, uint32* pRequestId) GetRequestId;
+			public function HRESULT(IESIsdbCasResponseEvent *self, uint32* pStatus) GetStatus;
+			public function HRESULT(IESIsdbCasResponseEvent *self, uint32* pRequestLength) GetDataLength;
+			public function HRESULT(IESIsdbCasResponseEvent *self, SAFEARRAY** pbData) GetResponseData;
+		}
+		[CRepr]
+		public struct IGpnvsCommonBase : IUnknown
+		{
+			public const new Guid IID = .(0x907e0b5c, 0xe42d, 0x4f04, 0x91, 0xf0, 0x26, 0xf4, 0x01, 0xf3, 0x69, 0x07);
+			
+			public function HRESULT(IGpnvsCommonBase *self, BSTR* pbstrName) GetValueUpdateName;
+		}
+		[CRepr]
+		public struct IESEventFactory : IUnknown
+		{
+			public const new Guid IID = .(0x506a09b8, 0x7f86, 0x4e04, 0xac, 0x05, 0x33, 0x03, 0xbf, 0xe8, 0xfc, 0x49);
+			
+			public function HRESULT(IESEventFactory *self, IUnknown* pServiceProvider, uint32 dwEventId, Guid guidEventType, uint32 dwEventDataLength, uint8* pEventData, BSTR bstrBaseUrl, IUnknown* pInitContext, IESEvent** ppESEvent) CreateESEvent;
+		}
+		[CRepr]
+		public struct IESLicenseRenewalResultEvent : IESEvent
+		{
+			public const new Guid IID = .(0xd5a48ef5, 0xa81b, 0x4df0, 0xac, 0xaa, 0x5e, 0x35, 0xe7, 0xea, 0x45, 0xd4);
+			
+			public function HRESULT(IESLicenseRenewalResultEvent *self, uint32* pdwCallersId) GetCallersId;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, BSTR* pbstrFilename) GetFileName;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, BOOL* pfRenewalSuccessful) IsRenewalSuccessful;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, BOOL* pfCheckEntTokenCallNeeded) IsCheckEntitlementCallRequired;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, uint32* pDescrambledStatus) GetDescrambledStatus;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, uint32* pdwRenewalResultCode) GetRenewalResultCode;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, uint32* pdwCASFailureCode) GetCASFailureCode;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, HRESULT* phr) GetRenewalHResult;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, uint32* pdwLength) GetEntitlementTokenLength;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, SAFEARRAY** pbData) GetEntitlementToken;
+			public function HRESULT(IESLicenseRenewalResultEvent *self, uint64* pqwExpiryDate) GetExpiryDate;
+		}
+		[CRepr]
+		public struct IESFileExpiryDateEvent : IESEvent
+		{
+			public const new Guid IID = .(0xba9edcb6, 0x4d36, 0x4cfe, 0x8c, 0x56, 0x87, 0xa6, 0xb0, 0xca, 0x48, 0xe1);
+			
+			public function HRESULT(IESFileExpiryDateEvent *self, Guid* pguidTunerId) GetTunerId;
+			public function HRESULT(IESFileExpiryDateEvent *self, uint64* pqwExpiryDate) GetExpiryDate;
+			public function HRESULT(IESFileExpiryDateEvent *self, uint64* pqwExpiryDate) GetFinalExpiryDate;
+			public function HRESULT(IESFileExpiryDateEvent *self, uint32* dwMaxRenewalCount) GetMaxRenewalCount;
+			public function HRESULT(IESFileExpiryDateEvent *self, BOOL* pfEntTokenPresent) IsEntitlementTokenPresent;
+			public function HRESULT(IESFileExpiryDateEvent *self, BOOL* pfExpireAfterFirstUse) DoesExpireAfterFirstUse;
+		}
+		[CRepr]
+		public struct IESEventService : IUnknown
+		{
+			public const new Guid IID = .(0xed89a619, 0x4c06, 0x4b2f, 0x99, 0xeb, 0xc7, 0x66, 0x9b, 0x13, 0x04, 0x7c);
+			
+			public function HRESULT(IESEventService *self, IESEvent* pESEvent) FireESEvent;
+		}
+		[CRepr]
+		public struct IESEventServiceConfiguration : IUnknown
+		{
+			public const new Guid IID = .(0x33b9daae, 0x9309, 0x491d, 0xa0, 0x51, 0xbc, 0xad, 0x2a, 0x70, 0xcd, 0x66);
+			
+			public function HRESULT(IESEventServiceConfiguration *self, IESEventService* pEventService) SetParent;
+			public function HRESULT(IESEventServiceConfiguration *self) RemoveParent;
+			public function HRESULT(IESEventServiceConfiguration *self, IESEvents* pESEvents) SetOwner;
+			public function HRESULT(IESEventServiceConfiguration *self) RemoveOwner;
+			public function HRESULT(IESEventServiceConfiguration *self, IFilterGraph* pGraph) SetGraph;
+			public function HRESULT(IESEventServiceConfiguration *self, IFilterGraph* pGraph) RemoveGraph;
+		}
+		[CRepr]
+		public struct IRegisterTuner : IUnknown
+		{
+			public const new Guid IID = .(0x359b3901, 0x572c, 0x4854, 0xbb, 0x49, 0xcd, 0xef, 0x66, 0x60, 0x6a, 0x25);
+			
+			public function HRESULT(IRegisterTuner *self, ITuner* pTuner, IGraphBuilder* pGraph) Register;
+			public function HRESULT(IRegisterTuner *self) Unregister;
+		}
+		[CRepr]
+		public struct IBDAComparable : IUnknown
+		{
+			public const new Guid IID = .(0xb34505e0, 0x2f0e, 0x497b, 0x80, 0xbc, 0xd4, 0x3f, 0x3b, 0x24, 0xed, 0x7f);
+			
+			public function HRESULT(IBDAComparable *self, IDispatch* CompareTo, int32* Result) CompareExact;
+			public function HRESULT(IBDAComparable *self, IDispatch* CompareTo, uint32 dwFlags, int32* Result) CompareEquivalent;
+			public function HRESULT(IBDAComparable *self, int64* Result) HashExact;
+			public function HRESULT(IBDAComparable *self, int64 PartialResult, int64* Result) HashExactIncremental;
+			public function HRESULT(IBDAComparable *self, uint32 dwFlags, int64* Result) HashEquivalent;
+			public function HRESULT(IBDAComparable *self, int64 PartialResult, uint32 dwFlags, int64* Result) HashEquivalentIncremental;
+		}
+		[CRepr]
+		public struct IPersistTuneXml : IPersist
+		{
+			public const new Guid IID = .(0x0754cd31, 0x8d15, 0x47a9, 0x82, 0x15, 0xd2, 0x00, 0x64, 0x15, 0x72, 0x44);
+			
+			public function HRESULT(IPersistTuneXml *self) InitNew;
+			public function HRESULT(IPersistTuneXml *self, VARIANT varValue) Load;
+			public function HRESULT(IPersistTuneXml *self, VARIANT* pvarFragment) Save;
+		}
+		[CRepr]
+		public struct IPersistTuneXmlUtility : IUnknown
+		{
+			public const new Guid IID = .(0x990237ae, 0xac11, 0x4614, 0xbe, 0x8f, 0xdd, 0x21, 0x7a, 0x4c, 0xb4, 0xcb);
+			
+			public function HRESULT(IPersistTuneXmlUtility *self, VARIANT varValue, IUnknown** ppObject) Deserialize;
+		}
+		[CRepr]
+		public struct IPersistTuneXmlUtility2 : IPersistTuneXmlUtility
+		{
+			public const new Guid IID = .(0x992e165f, 0xea24, 0x4b2f, 0x9a, 0x1d, 0x00, 0x9d, 0x92, 0x12, 0x04, 0x51);
+			
+			public function HRESULT(IPersistTuneXmlUtility2 *self, ITuneRequest* piTuneRequest, BSTR* pString) Serialize;
+		}
+		[CRepr]
+		public struct IBDACreateTuneRequestEx : IUnknown
+		{
+			public const new Guid IID = .(0xc0a4a1d4, 0x2b3c, 0x491a, 0xba, 0x22, 0x49, 0x9f, 0xba, 0xdd, 0x4d, 0x12);
+			
+			public function HRESULT(IBDACreateTuneRequestEx *self, Guid* TuneRequestIID, ITuneRequest** TuneRequest) CreateTuneRequestEx;
+		}
+		[CRepr]
+		public struct IETFilterConfig : IUnknown
+		{
+			public const new Guid IID = .(0xc4c4c4d1, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+			public function HRESULT(IETFilterConfig *self, int32 LicenseId) InitLicense;
+			public function HRESULT(IETFilterConfig *self, IUnknown** ppUnkDRMSecureChannel) GetSecureChannelObject;
+		}
+		[CRepr]
+		public struct IDTFilterConfig : IUnknown
+		{
+			public const new Guid IID = .(0xc4c4c4d2, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+			public function HRESULT(IDTFilterConfig *self, IUnknown** ppUnkDRMSecureChannel) GetSecureChannelObject;
+		}
+		[CRepr]
+		public struct IXDSCodecConfig : IUnknown
+		{
+			public const new Guid IID = .(0xc4c4c4d3, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+			public function HRESULT(IXDSCodecConfig *self, IUnknown** ppUnkDRMSecureChannel) GetSecureChannelObject;
+			public function HRESULT(IXDSCodecConfig *self, uint32 dwPauseBufferTime) SetPauseBufferTime;
+		}
+		[CRepr]
+		public struct IDTFilterLicenseRenewal : IUnknown
+		{
+			public const new Guid IID = .(0x8a78b317, 0xe405, 0x4a43, 0x99, 0x4a, 0x62, 0x0d, 0x8f, 0x5c, 0xe2, 0x5e);
+			
+			public function HRESULT(IDTFilterLicenseRenewal *self, PWSTR* ppwszFileName, PWSTR* ppwszExpiredKid, PWSTR* ppwszTunerId) GetLicenseRenewalData;
+		}
+		[CRepr]
+		public struct IPTFilterLicenseRenewal : IUnknown
+		{
+			public const new Guid IID = .(0x26d836a5, 0x0c15, 0x44c7, 0xac, 0x59, 0xb0, 0xda, 0x87, 0x28, 0xf2, 0x40);
+			
+			public function HRESULT(IPTFilterLicenseRenewal *self, PWSTR wszFileName, PWSTR wszExpiredKid, uint32 dwCallersId, BOOL bHighPriority) RenewLicenses;
+			public function HRESULT(IPTFilterLicenseRenewal *self) CancelLicenseRenewal;
+		}
+		[CRepr]
+		public struct IMceBurnerControl : IUnknown
+		{
+			public const new Guid IID = .(0x5a86b91a, 0xe71e, 0x46c1, 0x88, 0xa9, 0x9b, 0xb3, 0x38, 0x71, 0x05, 0x52);
+			
+			public function HRESULT(IMceBurnerControl *self) GetBurnerNoDecryption;
+		}
+		[CRepr]
+		public struct IETFilter : IUnknown
+		{
+			public const new Guid IID = .(0xc4c4c4b1, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+			public function HRESULT(IETFilter *self, HRESULT* pHrCoCreateRetVal) get_EvalRatObjOK;
+			public function HRESULT(IETFilter *self, EnTvRat_System* pEnSystem, EnTvRat_GenericLevel* pEnRating, int32* plbfEnAttr) GetCurrRating;
+			public function HRESULT(IETFilter *self, ProtType* protType, int32* lpDateTime) GetCurrLicenseExpDate;
+			public function HRESULT(IETFilter *self) GetLastErrorCode;
+			public function HRESULT(IETFilter *self, BOOL fRecState) SetRecordingOn;
+		}
+		[CRepr]
+		public struct IETFilterEvents : IDispatch
+		{
+			public const new Guid IID = .(0xc4c4c4c1, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+		}
+		[CRepr]
+		public struct IDTFilter : IUnknown
+		{
+			public const new Guid IID = .(0xc4c4c4b2, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+			public function HRESULT(IDTFilter *self, HRESULT* pHrCoCreateRetVal) get_EvalRatObjOK;
+			public function HRESULT(IDTFilter *self, EnTvRat_System* pEnSystem, EnTvRat_GenericLevel* pEnRating, int32* plbfEnAttr) GetCurrRating;
+			public function HRESULT(IDTFilter *self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, int32* plbfEnAttr) get_BlockedRatingAttributes;
+			public function HRESULT(IDTFilter *self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, int32 lbfAttrs) put_BlockedRatingAttributes;
+			public function HRESULT(IDTFilter *self, BOOL* pfBlockUnRatedShows) get_BlockUnRated;
+			public function HRESULT(IDTFilter *self, BOOL fBlockUnRatedShows) put_BlockUnRated;
+			public function HRESULT(IDTFilter *self, int32* pmsecsDelayBeforeBlock) get_BlockUnRatedDelay;
+			public function HRESULT(IDTFilter *self, int32 msecsDelayBeforeBlock) put_BlockUnRatedDelay;
+		}
+		[CRepr]
+		public struct IDTFilter2 : IDTFilter
+		{
+			public const new Guid IID = .(0xc4c4c4b4, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+			public function HRESULT(IDTFilter2 *self, BSTR* pbstrChallengeUrl) get_ChallengeUrl;
+			public function HRESULT(IDTFilter2 *self, ProtType* protType, int32* lpDateTime) GetCurrLicenseExpDate;
+			public function HRESULT(IDTFilter2 *self) GetLastErrorCode;
+		}
+		[CRepr]
+		public struct IDTFilter3 : IDTFilter2
+		{
+			public const new Guid IID = .(0x513998cc, 0xe929, 0x4cdf, 0x9f, 0xbd, 0xba, 0xd1, 0xe0, 0x31, 0x48, 0x66);
+			
+			public function HRESULT(IDTFilter3 *self, ProtType* pProtectionType) GetProtectionType;
+			public function HRESULT(IDTFilter3 *self, BOOL* pfLicenseHasExpirationDate) LicenseHasExpirationDate;
+			public function HRESULT(IDTFilter3 *self, BSTR bstrRights) SetRights;
+		}
+		[CRepr]
+		public struct IDTFilterEvents : IDispatch
+		{
+			public const new Guid IID = .(0xc4c4c4c2, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+		}
+		[CRepr]
+		public struct IXDSCodec : IUnknown
+		{
+			public const new Guid IID = .(0xc4c4c4b3, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+			public function HRESULT(IXDSCodec *self, HRESULT* pHrCoCreateRetVal) get_XDSToRatObjOK;
+			public function HRESULT(IXDSCodec *self, int32 SubstreamMask) put_CCSubstreamService;
+			public function HRESULT(IXDSCodec *self, int32* pSubstreamMask) get_CCSubstreamService;
+			public function HRESULT(IXDSCodec *self, int32* pRat, int32* pPktSeqID, int32* pCallSeqID, int64* pTimeStart, int64* pTimeEnd) GetContentAdvisoryRating;
+			public function HRESULT(IXDSCodec *self, int32* pXDSClassPkt, int32* pXDSTypePkt, BSTR* pBstrXDSPkt, int32* pPktSeqID, int32* pCallSeqID, int64* pTimeStart, int64* pTimeEnd) GetXDSPacket;
+			public function HRESULT(IXDSCodec *self, ProtType* protType, int32* lpDateTime) GetCurrLicenseExpDate;
+			public function HRESULT(IXDSCodec *self) GetLastErrorCode;
+		}
+		[CRepr]
+		public struct IXDSCodecEvents : IDispatch
+		{
+			public const new Guid IID = .(0xc4c4c4c3, 0x0049, 0x4e2b, 0x98, 0xfb, 0x95, 0x37, 0xf6, 0xce, 0x51, 0x6d);
+			
+		}
+		[CRepr]
+		public struct IXDSToRat : IDispatch
+		{
+			public const new Guid IID = .(0xc5c5c5b0, 0x3abc, 0x11d6, 0xb2, 0x5b, 0x00, 0xc0, 0x4f, 0xa0, 0xc0, 0x26);
+			
+			public function HRESULT(IXDSToRat *self) Init;
+			public function HRESULT(IXDSToRat *self, uint8 byte1, uint8 byte2, EnTvRat_System* pEnSystem, EnTvRat_GenericLevel* pEnLevel, int32* plBfEnAttributes) ParseXDSBytePair;
+		}
+		[CRepr]
+		public struct IEvalRat : IDispatch
+		{
+			public const new Guid IID = .(0xc5c5c5b1, 0x3abc, 0x11d6, 0xb2, 0x5b, 0x00, 0xc0, 0x4f, 0xa0, 0xc0, 0x26);
+			
+			public function HRESULT(IEvalRat *self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, int32* plbfAttrs) get_BlockedRatingAttributes;
+			public function HRESULT(IEvalRat *self, EnTvRat_System enSystem, EnTvRat_GenericLevel enLevel, int32 lbfAttrs) put_BlockedRatingAttributes;
+			public function HRESULT(IEvalRat *self, BOOL* pfBlockUnRatedShows) get_BlockUnRated;
+			public function HRESULT(IEvalRat *self, BOOL fBlockUnRatedShows) put_BlockUnRated;
+			public function HRESULT(IEvalRat *self, EnTvRat_System enSystem1, EnTvRat_GenericLevel enEnLevel1, int32 lbfEnAttr1, EnTvRat_System enSystem2, EnTvRat_GenericLevel enEnLevel2, int32 lbfEnAttr2, EnTvRat_System* penSystem, EnTvRat_GenericLevel* penEnLevel, int32* plbfEnAttr) MostRestrictiveRating;
+			public function HRESULT(IEvalRat *self, EnTvRat_System enShowSystem, EnTvRat_GenericLevel enShowLevel, int32 lbfEnShowAttributes) TestRating;
+		}
+		[CRepr]
+		public struct IMSVidRect : IDispatch
+		{
+			public const new Guid IID = .(0x7f5000a6, 0xa440, 0x47ca, 0x8a, 0xcc, 0xc0, 0xe7, 0x55, 0x31, 0xa2, 0xc2);
+			
+			public function HRESULT(IMSVidRect *self, int32* TopVal) get_Top;
+			public function HRESULT(IMSVidRect *self, int32 TopVal) put_Top;
+			public function HRESULT(IMSVidRect *self, int32* LeftVal) get_Left;
+			public function HRESULT(IMSVidRect *self, int32 LeftVal) put_Left;
+			public function HRESULT(IMSVidRect *self, int32* WidthVal) get_Width;
+			public function HRESULT(IMSVidRect *self, int32 WidthVal) put_Width;
+			public function HRESULT(IMSVidRect *self, int32* HeightVal) get_Height;
+			public function HRESULT(IMSVidRect *self, int32 HeightVal) put_Height;
+			public function HRESULT(IMSVidRect *self, HWND* HWndVal) get_HWnd;
+			public function HRESULT(IMSVidRect *self, HWND HWndVal) put_HWnd;
+			public function HRESULT(IMSVidRect *self, IMSVidRect* RectVal) put_Rect;
+		}
+		[CRepr]
+		public struct IMSVidGraphSegmentContainer : IUnknown
+		{
+			public const new Guid IID = .(0x3dd2903d, 0xe0aa, 0x11d2, 0xb6, 0x3a, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidGraphSegmentContainer *self, IGraphBuilder** ppGraph) get_Graph;
+			public function HRESULT(IMSVidGraphSegmentContainer *self, IMSVidGraphSegment** ppInput) get_Input;
+			public function HRESULT(IMSVidGraphSegmentContainer *self, IEnumMSVidGraphSegment** ppOutputs) get_Outputs;
+			public function HRESULT(IMSVidGraphSegmentContainer *self, IMSVidGraphSegment** ppVR) get_VideoRenderer;
+			public function HRESULT(IMSVidGraphSegmentContainer *self, IMSVidGraphSegment** ppAR) get_AudioRenderer;
+			public function HRESULT(IMSVidGraphSegmentContainer *self, IEnumMSVidGraphSegment** ppFeatures) get_Features;
+			public function HRESULT(IMSVidGraphSegmentContainer *self, IEnumMSVidGraphSegment** ppComposites) get_Composites;
+			public function HRESULT(IMSVidGraphSegmentContainer *self, IUnknown** ppContainer) get_ParentContainer;
+			public function HRESULT(IMSVidGraphSegmentContainer *self, IMSVidGraphSegment* pSegment) Decompose;
+			public function HRESULT(IMSVidGraphSegmentContainer *self) IsWindowless;
+			public function HRESULT(IMSVidGraphSegmentContainer *self) GetFocus;
+		}
+		[CRepr]
+		public struct IMSVidGraphSegment : IPersist
+		{
+			public const new Guid IID = .(0x238dec54, 0xadeb, 0x4005, 0xa3, 0x49, 0xf7, 0x72, 0xb9, 0xaf, 0xeb, 0xc4);
+			
+			public function HRESULT(IMSVidGraphSegment *self, IUnknown** pInit) get_Init;
+			public function HRESULT(IMSVidGraphSegment *self, IUnknown* pInit) put_Init;
+			public function HRESULT(IMSVidGraphSegment *self, IEnumFilters** pNewEnum) EnumFilters;
+			public function HRESULT(IMSVidGraphSegment *self, IMSVidGraphSegmentContainer** ppCtl) get_Container;
+			public function HRESULT(IMSVidGraphSegment *self, IMSVidGraphSegmentContainer* pCtl) put_Container;
+			public function HRESULT(IMSVidGraphSegment *self, MSVidSegmentType* pType) get_Type;
+			public function HRESULT(IMSVidGraphSegment *self, Guid* pGuid) get_Category;
+			public function HRESULT(IMSVidGraphSegment *self) Build;
+			public function HRESULT(IMSVidGraphSegment *self) PostBuild;
+			public function HRESULT(IMSVidGraphSegment *self) PreRun;
+			public function HRESULT(IMSVidGraphSegment *self) PostRun;
+			public function HRESULT(IMSVidGraphSegment *self) PreStop;
+			public function HRESULT(IMSVidGraphSegment *self) PostStop;
+			public function HRESULT(IMSVidGraphSegment *self, int32 lEventCode, int lEventParm1, int lEventParm2) OnEventNotify;
+			public function HRESULT(IMSVidGraphSegment *self) Decompose;
+		}
+		[CRepr]
+		public struct IMSVidGraphSegmentUserInput : IUnknown
+		{
+			public const new Guid IID = .(0x301c060e, 0x20d9, 0x4587, 0x9b, 0x03, 0xf8, 0x2e, 0xd9, 0xa9, 0x94, 0x3c);
+			
+			public function HRESULT(IMSVidGraphSegmentUserInput *self) Click;
+			public function HRESULT(IMSVidGraphSegmentUserInput *self) DblClick;
+			public function HRESULT(IMSVidGraphSegmentUserInput *self, int16* KeyCode, int16 ShiftState) KeyDown;
+			public function HRESULT(IMSVidGraphSegmentUserInput *self, int16* KeyAscii) KeyPress;
+			public function HRESULT(IMSVidGraphSegmentUserInput *self, int16* KeyCode, int16 ShiftState) KeyUp;
+			public function HRESULT(IMSVidGraphSegmentUserInput *self, int16 ButtonState, int16 ShiftState, int32 x, int32 y) MouseDown;
+			public function HRESULT(IMSVidGraphSegmentUserInput *self, int16 ButtonState, int16 ShiftState, int32 x, int32 y) MouseMove;
+			public function HRESULT(IMSVidGraphSegmentUserInput *self, int16 ButtonState, int16 ShiftState, int32 x, int32 y) MouseUp;
+		}
+		[CRepr]
+		public struct IMSVidCompositionSegment : IMSVidGraphSegment
+		{
+			public const new Guid IID = .(0x1c15d483, 0x911d, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidCompositionSegment *self, IMSVidGraphSegment* upstream, IMSVidGraphSegment* downstream) Compose;
+			public function HRESULT(IMSVidCompositionSegment *self, IMSVidGraphSegment** upstream) get_Up;
+			public function HRESULT(IMSVidCompositionSegment *self, IMSVidGraphSegment** downstream) get_Down;
+		}
+		[CRepr]
+		public struct IEnumMSVidGraphSegment : IUnknown
+		{
+			public const new Guid IID = .(0x3dd2903e, 0xe0aa, 0x11d2, 0xb6, 0x3a, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IEnumMSVidGraphSegment *self, uint32 celt, IMSVidGraphSegment** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumMSVidGraphSegment *self, uint32 celt) Skip;
+			public function HRESULT(IEnumMSVidGraphSegment *self) Reset;
+			public function HRESULT(IEnumMSVidGraphSegment *self, IEnumMSVidGraphSegment** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IMSVidVRGraphSegment : IMSVidGraphSegment
+		{
+			public const new Guid IID = .(0xdd47de3f, 0x9874, 0x4f7b, 0x8b, 0x22, 0x7c, 0xb2, 0x68, 0x84, 0x61, 0xe7);
+			
+			public function HRESULT(IMSVidVRGraphSegment *self, int32 dwMode) put__VMRendererMode;
+			public function HRESULT(IMSVidVRGraphSegment *self, HWND Window) put_Owner;
+			public function HRESULT(IMSVidVRGraphSegment *self, HWND* Window) get_Owner;
+			public function HRESULT(IMSVidVRGraphSegment *self, int16* UseOverlayVal) get_UseOverlay;
+			public function HRESULT(IMSVidVRGraphSegment *self, int16 UseOverlayVal) put_UseOverlay;
+			public function HRESULT(IMSVidVRGraphSegment *self, int16* Visible) get_Visible;
+			public function HRESULT(IMSVidVRGraphSegment *self, int16 Visible) put_Visible;
+			public function HRESULT(IMSVidVRGraphSegment *self, uint32* ColorKey) get_ColorKey;
+			public function HRESULT(IMSVidVRGraphSegment *self, uint32 ColorKey) put_ColorKey;
+			public function HRESULT(IMSVidVRGraphSegment *self, RECT* r) get_Source;
+			public function HRESULT(IMSVidVRGraphSegment *self, RECT r) put_Source;
+			public function HRESULT(IMSVidVRGraphSegment *self, RECT* r) get_Destination;
+			public function HRESULT(IMSVidVRGraphSegment *self, RECT r) put_Destination;
+			public function HRESULT(IMSVidVRGraphSegment *self, SIZE* sizeval, SIZE* aspectratio) get_NativeSize;
+			public function HRESULT(IMSVidVRGraphSegment *self, uint32* color) get_BorderColor;
+			public function HRESULT(IMSVidVRGraphSegment *self, uint32 color) put_BorderColor;
+			public function HRESULT(IMSVidVRGraphSegment *self, int16* fMaintain) get_MaintainAspectRatio;
+			public function HRESULT(IMSVidVRGraphSegment *self, int16 fMaintain) put_MaintainAspectRatio;
+			public function HRESULT(IMSVidVRGraphSegment *self) Refresh;
+			public function HRESULT(IMSVidVRGraphSegment *self) DisplayChange;
+			public function HRESULT(IMSVidVRGraphSegment *self, HDC hdc) RePaint;
+		}
+		[CRepr]
+		public struct IMSVidDevice : IDispatch
+		{
+			public const new Guid IID = .(0x1c15d47c, 0x911d, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidDevice *self, BSTR* Name) get_Name;
+			public function HRESULT(IMSVidDevice *self, int32* Status) get_Status;
+			public function HRESULT(IMSVidDevice *self, int16 Power) put_Power;
+			public function HRESULT(IMSVidDevice *self, int16* Power) get_Power;
+			public function HRESULT(IMSVidDevice *self, BSTR* Guid) get_Category;
+			public function HRESULT(IMSVidDevice *self, BSTR* Clsid) get_ClassID;
+			public function HRESULT(IMSVidDevice *self, Guid* Guid) get__Category;
+			public function HRESULT(IMSVidDevice *self, Guid* Clsid) get__ClassID;
+			public function HRESULT(IMSVidDevice *self, IMSVidDevice* Device, int16* IsEqual) IsEqualDevice;
+		}
+		[CRepr]
+		public struct IMSVidDevice2 : IUnknown
+		{
+			public const new Guid IID = .(0x87bd2783, 0xebc0, 0x478c, 0xb4, 0xa0, 0xe8, 0xe7, 0xf4, 0x3a, 0xb7, 0x8e);
+			
+			public function HRESULT(IMSVidDevice2 *self, BSTR* DevPath) get_DevicePath;
+		}
+		[CRepr]
+		public struct IMSVidInputDevice : IMSVidDevice
+		{
+			public const new Guid IID = .(0x37b0353d, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidInputDevice *self, VARIANT* v, int16* pfViewable) IsViewable;
+			public function HRESULT(IMSVidInputDevice *self, VARIANT* v) View;
+		}
+		[CRepr]
+		public struct IMSVidDeviceEvent : IDispatch
+		{
+			public const new Guid IID = .(0x1c15d480, 0x911d, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidDeviceEvent *self, IMSVidDevice* lpd, int32 oldState, int32 newState) StateChange;
+		}
+		[CRepr]
+		public struct IMSVidInputDeviceEvent : IDispatch
+		{
+			public const new Guid IID = .(0x37b0353e, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidVideoInputDevice : IMSVidInputDevice
+		{
+			public const new Guid IID = .(0x1c15d47f, 0x911d, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidPlayback : IMSVidInputDevice
+		{
+			public const new Guid IID = .(0x37b03538, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidPlayback *self, int16* pVal) get_EnableResetOnStop;
+			public function HRESULT(IMSVidPlayback *self, int16 newVal) put_EnableResetOnStop;
+			public function HRESULT(IMSVidPlayback *self) Run;
+			public function HRESULT(IMSVidPlayback *self) Pause;
+			public function HRESULT(IMSVidPlayback *self) Stop;
+			public function HRESULT(IMSVidPlayback *self, int16 fBackwards, int16* pfCan) get_CanStep;
+			public function HRESULT(IMSVidPlayback *self, int32 lStep) Step;
+			public function HRESULT(IMSVidPlayback *self, double plRate) put_Rate;
+			public function HRESULT(IMSVidPlayback *self, double* plRate) get_Rate;
+			public function HRESULT(IMSVidPlayback *self, int32 lPosition) put_CurrentPosition;
+			public function HRESULT(IMSVidPlayback *self, int32* lPosition) get_CurrentPosition;
+			public function HRESULT(IMSVidPlayback *self, PositionModeList lPositionMode) put_PositionMode;
+			public function HRESULT(IMSVidPlayback *self, PositionModeList* lPositionMode) get_PositionMode;
+			public function HRESULT(IMSVidPlayback *self, int32* lLength) get_Length;
+		}
+		[CRepr]
+		public struct IMSVidPlaybackEvent : IMSVidInputDeviceEvent
+		{
+			public const new Guid IID = .(0x37b0353b, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidPlaybackEvent *self, IMSVidPlayback* lpd) EndOfMedia;
+		}
+		[CRepr]
+		public struct IMSVidTuner : IMSVidVideoInputDevice
+		{
+			public const new Guid IID = .(0x1c15d47d, 0x911d, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidTuner *self, ITuneRequest** ppTR) get_Tune;
+			public function HRESULT(IMSVidTuner *self, ITuneRequest* pTR) put_Tune;
+			public function HRESULT(IMSVidTuner *self, ITuningSpace** plTS) get_TuningSpace;
+			public function HRESULT(IMSVidTuner *self, ITuningSpace* plTS) put_TuningSpace;
+		}
+		[CRepr]
+		public struct IMSVidTunerEvent : IMSVidInputDeviceEvent
+		{
+			public const new Guid IID = .(0x1c15d485, 0x911d, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidTunerEvent *self, IMSVidTuner* lpd) TuneChanged;
+		}
+		[CRepr]
+		public struct IMSVidAnalogTuner : IMSVidTuner
+		{
+			public const new Guid IID = .(0x1c15d47e, 0x911d, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidAnalogTuner *self, int32* Channel) get_Channel;
+			public function HRESULT(IMSVidAnalogTuner *self, int32 Channel) put_Channel;
+			public function HRESULT(IMSVidAnalogTuner *self, int32* lcc) get_VideoFrequency;
+			public function HRESULT(IMSVidAnalogTuner *self, int32* lcc) get_AudioFrequency;
+			public function HRESULT(IMSVidAnalogTuner *self, int32* lcc) get_CountryCode;
+			public function HRESULT(IMSVidAnalogTuner *self, int32 lcc) put_CountryCode;
+			public function HRESULT(IMSVidAnalogTuner *self, int16* pfSapOn) get_SAP;
+			public function HRESULT(IMSVidAnalogTuner *self, int16 fSapOn) put_SAP;
+			public function HRESULT(IMSVidAnalogTuner *self, int32 nChannel, int32* SignalStrength, int16* fSignalPresent) ChannelAvailable;
+		}
+		[CRepr]
+		public struct IMSVidAnalogTuner2 : IMSVidAnalogTuner
+		{
+			public const new Guid IID = .(0x37647bf7, 0x3dde, 0x4cc8, 0xa4, 0xdc, 0x0d, 0x53, 0x4d, 0x3d, 0x00, 0x37);
+			
+			public function HRESULT(IMSVidAnalogTuner2 *self, int32* Formats) get_TVFormats;
+			public function HRESULT(IMSVidAnalogTuner2 *self, int32* Modes) get_TunerModes;
+			public function HRESULT(IMSVidAnalogTuner2 *self, int32* Inputs) get_NumAuxInputs;
+		}
+		[CRepr]
+		public struct IMSVidAnalogTunerEvent : IMSVidTunerEvent
+		{
+			public const new Guid IID = .(0x1c15d486, 0x911d, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidFilePlayback : IMSVidPlayback
+		{
+			public const new Guid IID = .(0x37b03539, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidFilePlayback *self, BSTR* FileName) get_FileName;
+			public function HRESULT(IMSVidFilePlayback *self, BSTR FileName) put_FileName;
+		}
+		[CRepr]
+		public struct IMSVidFilePlayback2 : IMSVidFilePlayback
+		{
+			public const new Guid IID = .(0x2f7e44af, 0x6e52, 0x4660, 0xbc, 0x08, 0xd8, 0xd5, 0x42, 0x58, 0x7d, 0x72);
+			
+			public function HRESULT(IMSVidFilePlayback2 *self, BSTR FileName) put__SourceFilter;
+			public function HRESULT(IMSVidFilePlayback2 *self, Guid FileName) put___SourceFilter;
+		}
+		[CRepr]
+		public struct IMSVidFilePlaybackEvent : IMSVidPlaybackEvent
+		{
+			public const new Guid IID = .(0x37b0353a, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidWebDVD : IMSVidPlayback
+		{
+			public const new Guid IID = .(0xcf45f88b, 0xac56, 0x4ee2, 0xa7, 0x3a, 0xed, 0x04, 0xe2, 0x88, 0x5d, 0x3c);
+			
+			public function HRESULT(IMSVidWebDVD *self, int32 lEvent, int lParam1, int lParam2) OnDVDEvent;
+			public function HRESULT(IMSVidWebDVD *self, int32 lTitle) PlayTitle;
+			public function HRESULT(IMSVidWebDVD *self, int32 lTitle, int32 lChapter) PlayChapterInTitle;
+			public function HRESULT(IMSVidWebDVD *self, int32 lChapter) PlayChapter;
+			public function HRESULT(IMSVidWebDVD *self, int32 lTitle, int32 lstrChapter, int32 lChapterCount) PlayChaptersAutoStop;
+			public function HRESULT(IMSVidWebDVD *self, BSTR strTime) PlayAtTime;
+			public function HRESULT(IMSVidWebDVD *self, int32 lTitle, BSTR strTime) PlayAtTimeInTitle;
+			public function HRESULT(IMSVidWebDVD *self, int32 lTitle, BSTR strStartTime, BSTR strEndTime) PlayPeriodInTitleAutoStop;
+			public function HRESULT(IMSVidWebDVD *self) ReplayChapter;
+			public function HRESULT(IMSVidWebDVD *self) PlayPrevChapter;
+			public function HRESULT(IMSVidWebDVD *self) PlayNextChapter;
+			public function HRESULT(IMSVidWebDVD *self) StillOff;
+			public function HRESULT(IMSVidWebDVD *self, int32 lStream, int16 fFormat, BSTR* strAudioLang) get_AudioLanguage;
+			public function HRESULT(IMSVidWebDVD *self, DVDMenuIDConstants MenuID) ShowMenu;
+			public function HRESULT(IMSVidWebDVD *self) Resume;
+			public function HRESULT(IMSVidWebDVD *self) ReturnFromSubmenu;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_ButtonsAvailable;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_CurrentButton;
+			public function HRESULT(IMSVidWebDVD *self, int32 lButton) SelectAndActivateButton;
+			public function HRESULT(IMSVidWebDVD *self) ActivateButton;
+			public function HRESULT(IMSVidWebDVD *self) SelectRightButton;
+			public function HRESULT(IMSVidWebDVD *self) SelectLeftButton;
+			public function HRESULT(IMSVidWebDVD *self) SelectLowerButton;
+			public function HRESULT(IMSVidWebDVD *self) SelectUpperButton;
+			public function HRESULT(IMSVidWebDVD *self, int32 xPos, int32 yPos) ActivateAtPosition;
+			public function HRESULT(IMSVidWebDVD *self, int32 xPos, int32 yPos) SelectAtPosition;
+			public function HRESULT(IMSVidWebDVD *self, int32 xPos, int32 yPos, int32* plButton) get_ButtonAtPosition;
+			public function HRESULT(IMSVidWebDVD *self, int32 lTitle, int32* pVal) get_NumberOfChapters;
+			public function HRESULT(IMSVidWebDVD *self, BSTR* pVal) get_TotalTitleTime;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_TitlesAvailable;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_VolumesAvailable;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_CurrentVolume;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_CurrentDiscSide;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_CurrentDomain;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_CurrentChapter;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_CurrentTitle;
+			public function HRESULT(IMSVidWebDVD *self, BSTR* pVal) get_CurrentTime;
+			public function HRESULT(IMSVidWebDVD *self, int32 timeCode, BSTR* pTimeStr) DVDTimeCode2bstr;
+			public function HRESULT(IMSVidWebDVD *self, BSTR* pVal) get_DVDDirectory;
+			public function HRESULT(IMSVidWebDVD *self, BSTR newVal) put_DVDDirectory;
+			public function HRESULT(IMSVidWebDVD *self, int32 lstream, int16* fEnabled) IsSubpictureStreamEnabled;
+			public function HRESULT(IMSVidWebDVD *self, int32 lstream, int16* fEnabled) IsAudioStreamEnabled;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_CurrentSubpictureStream;
+			public function HRESULT(IMSVidWebDVD *self, int32 newVal) put_CurrentSubpictureStream;
+			public function HRESULT(IMSVidWebDVD *self, int32 lStream, BSTR* strLanguage) get_SubpictureLanguage;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_CurrentAudioStream;
+			public function HRESULT(IMSVidWebDVD *self, int32 newVal) put_CurrentAudioStream;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_AudioStreamsAvailable;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_AnglesAvailable;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_CurrentAngle;
+			public function HRESULT(IMSVidWebDVD *self, int32 newVal) put_CurrentAngle;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_SubpictureStreamsAvailable;
+			public function HRESULT(IMSVidWebDVD *self, int16* pVal) get_SubpictureOn;
+			public function HRESULT(IMSVidWebDVD *self, int16 newVal) put_SubpictureOn;
+			public function HRESULT(IMSVidWebDVD *self, BSTR* pVal) get_DVDUniqueID;
+			public function HRESULT(IMSVidWebDVD *self, int16 fAccept, BSTR strUserName, BSTR strPassword) AcceptParentalLevelChange;
+			public function HRESULT(IMSVidWebDVD *self, int16 newVal) NotifyParentalLevelChange;
+			public function HRESULT(IMSVidWebDVD *self, int32 lCountry, BSTR strUserName, BSTR strPassword) SelectParentalCountry;
+			public function HRESULT(IMSVidWebDVD *self, int32 lParentalLevel, BSTR strUserName, BSTR strPassword) SelectParentalLevel;
+			public function HRESULT(IMSVidWebDVD *self, int32 lTitle, int32* plParentalLevels) get_TitleParentalLevels;
+			public function HRESULT(IMSVidWebDVD *self, int32* plCountryCode) get_PlayerParentalCountry;
+			public function HRESULT(IMSVidWebDVD *self, int32* plParentalLevel) get_PlayerParentalLevel;
+			public function HRESULT(IMSVidWebDVD *self) Eject;
+			public function HRESULT(IMSVidWebDVD *self, int32 lUOP, int16* pfValid) UOPValid;
+			public function HRESULT(IMSVidWebDVD *self, int32 lIndex, int16* psSPRM) get_SPRM;
+			public function HRESULT(IMSVidWebDVD *self, int32 lIndex, int16* psSPRM) get_GPRM;
+			public function HRESULT(IMSVidWebDVD *self, int32 lIndex, int16 sValue) put_GPRM;
+			public function HRESULT(IMSVidWebDVD *self, int32 lLangIndex, int32 lStringIndex, DVDTextStringType* pType) get_DVDTextStringType;
+			public function HRESULT(IMSVidWebDVD *self, int32 lLangIndex, int32 lStringIndex, BSTR* pstrText) get_DVDTextString;
+			public function HRESULT(IMSVidWebDVD *self, int32 lLangIndex, int32* plNumOfStrings) get_DVDTextNumberOfStrings;
+			public function HRESULT(IMSVidWebDVD *self, int32* plNumOfLangs) get_DVDTextNumberOfLanguages;
+			public function HRESULT(IMSVidWebDVD *self, int32 lLangIndex, int32* lcid) get_DVDTextLanguageLCID;
+			public function HRESULT(IMSVidWebDVD *self) RegionChange;
+			public function HRESULT(IMSVidWebDVD *self, IDispatch** pVal) get_DVDAdm;
+			public function HRESULT(IMSVidWebDVD *self) DeleteBookmark;
+			public function HRESULT(IMSVidWebDVD *self) RestoreBookmark;
+			public function HRESULT(IMSVidWebDVD *self) SaveBookmark;
+			public function HRESULT(IMSVidWebDVD *self, int32 lang, int32 ext) SelectDefaultAudioLanguage;
+			public function HRESULT(IMSVidWebDVD *self, int32 lang, DVDSPExt ext) SelectDefaultSubpictureLanguage;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_PreferredSubpictureStream;
+			public function HRESULT(IMSVidWebDVD *self, int32* lang) get_DefaultMenuLanguage;
+			public function HRESULT(IMSVidWebDVD *self, int32 lang) put_DefaultMenuLanguage;
+			public function HRESULT(IMSVidWebDVD *self, int32* lang) get_DefaultSubpictureLanguage;
+			public function HRESULT(IMSVidWebDVD *self, int32* lang) get_DefaultAudioLanguage;
+			public function HRESULT(IMSVidWebDVD *self, DVDSPExt* ext) get_DefaultSubpictureLanguageExt;
+			public function HRESULT(IMSVidWebDVD *self, int32* ext) get_DefaultAudioLanguageExt;
+			public function HRESULT(IMSVidWebDVD *self, int32 lcid, BSTR* lang) get_LanguageFromLCID;
+			public function HRESULT(IMSVidWebDVD *self, int32* pVal) get_KaraokeAudioPresentationMode;
+			public function HRESULT(IMSVidWebDVD *self, int32 newVal) put_KaraokeAudioPresentationMode;
+			public function HRESULT(IMSVidWebDVD *self, int32 lStream, int32 lChan, int32* lContent) get_KaraokeChannelContent;
+			public function HRESULT(IMSVidWebDVD *self, int32 lStream, int32* lChannelAssignment) get_KaraokeChannelAssignment;
+			public function HRESULT(IMSVidWebDVD *self) RestorePreferredSettings;
+			public function HRESULT(IMSVidWebDVD *self, int32 lButton, IMSVidRect** pRect) get_ButtonRect;
+			public function HRESULT(IMSVidWebDVD *self, IMSVidRect** ppRect) get_DVDScreenInMouseCoordinates;
+			public function HRESULT(IMSVidWebDVD *self, IMSVidRect* pRect) put_DVDScreenInMouseCoordinates;
+		}
+		[CRepr]
+		public struct IMSVidWebDVD2 : IMSVidWebDVD
+		{
+			public const new Guid IID = .(0x7027212f, 0xee9a, 0x4a7c, 0x8b, 0x67, 0xf0, 0x23, 0x71, 0x4c, 0xda, 0xff);
+			
+			public function HRESULT(IMSVidWebDVD2 *self, uint8** ppData, uint32* pDataLength) get_Bookmark;
+			public function HRESULT(IMSVidWebDVD2 *self, uint8* pData, uint32 dwDataLength) put_Bookmark;
+		}
+		[CRepr]
+		public struct IMSVidWebDVDEvent : IMSVidPlaybackEvent
+		{
+			public const new Guid IID = .(0xb4f7a674, 0x9b83, 0x49cb, 0xa3, 0x57, 0xc6, 0x3b, 0x87, 0x1b, 0xe9, 0x58);
+			
+			public function HRESULT(IMSVidWebDVDEvent *self, int32 lEventCode, VARIANT lParam1, VARIANT lParam2) DVDNotify;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PlayForwards;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PlayBackwards;
+			public function HRESULT(IMSVidWebDVDEvent *self, DVDMenuIDConstants MenuID, int16 bEnabled) ShowMenu;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) Resume;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) SelectOrActivateButton;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) StillOff;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PauseOn;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) ChangeCurrentAudioStream;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) ChangeCurrentSubpictureStream;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) ChangeCurrentAngle;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PlayAtTimeInTitle;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PlayAtTime;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PlayChapterInTitle;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PlayChapter;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) ReplayChapter;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PlayNextChapter;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) Stop;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) ReturnFromSubmenu;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PlayTitle;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) PlayPrevChapter;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) ChangeKaraokePresMode;
+			public function HRESULT(IMSVidWebDVDEvent *self, int16 bEnabled) ChangeVideoPresMode;
+		}
+		[CRepr]
+		public struct IMSVidWebDVDAdm : IDispatch
+		{
+			public const new Guid IID = .(0xb8be681a, 0xeb2c, 0x47f0, 0xb4, 0x15, 0x94, 0xd5, 0x45, 0x2f, 0x0e, 0x05);
+			
+			public function HRESULT(IMSVidWebDVDAdm *self, BSTR strUserName, BSTR strOld, BSTR strNew) ChangePassword;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32 level, BSTR strUserName, BSTR strPassword) SaveParentalLevel;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32 country, BSTR strUserName, BSTR strPassword) SaveParentalCountry;
+			public function HRESULT(IMSVidWebDVDAdm *self, BSTR strUserName, BSTR strPassword, int16* pVal) ConfirmPassword;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32* lLevel) GetParentalLevel;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32* lCountry) GetParentalCountry;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32* pVal) get_DefaultAudioLCID;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32 newVal) put_DefaultAudioLCID;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32* pVal) get_DefaultSubpictureLCID;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32 newVal) put_DefaultSubpictureLCID;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32* pVal) get_DefaultMenuLCID;
+			public function HRESULT(IMSVidWebDVDAdm *self, int32 newVal) put_DefaultMenuLCID;
+			public function HRESULT(IMSVidWebDVDAdm *self, int16* pVal) get_BookmarkOnStop;
+			public function HRESULT(IMSVidWebDVDAdm *self, int16 newVal) put_BookmarkOnStop;
+		}
+		[CRepr]
+		public struct IMSVidOutputDevice : IMSVidDevice
+		{
+			public const new Guid IID = .(0x37b03546, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidOutputDeviceEvent : IMSVidDeviceEvent
+		{
+			public const new Guid IID = .(0x2e6a14e2, 0x571c, 0x11d3, 0xb6, 0x52, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidFeature : IMSVidDevice
+		{
+			public const new Guid IID = .(0x37b03547, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidFeatureEvent : IMSVidDeviceEvent
+		{
+			public const new Guid IID = .(0x3dd2903c, 0xe0aa, 0x11d2, 0xb6, 0x3a, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidEncoder : IMSVidFeature
+		{
+			public const new Guid IID = .(0xc0020fd4, 0xbee7, 0x43d9, 0xa4, 0x95, 0x9f, 0x21, 0x31, 0x17, 0x10, 0x3d);
+			
+			public function HRESULT(IMSVidEncoder *self, IUnknown** ppEncInt) get_VideoEncoderInterface;
+			public function HRESULT(IMSVidEncoder *self, IUnknown** ppEncInt) get_AudioEncoderInterface;
+		}
+		[CRepr]
+		public struct IMSVidClosedCaptioning : IMSVidFeature
+		{
+			public const new Guid IID = .(0x99652ea1, 0xc1f7, 0x414f, 0xbb, 0x7b, 0x1c, 0x96, 0x7d, 0xe7, 0x59, 0x83);
+			
+			public function HRESULT(IMSVidClosedCaptioning *self, int16* On) get_Enable;
+			public function HRESULT(IMSVidClosedCaptioning *self, int16 On) put_Enable;
+		}
+		[CRepr]
+		public struct IMSVidClosedCaptioning2 : IMSVidClosedCaptioning
+		{
+			public const new Guid IID = .(0xe00cb864, 0xa029, 0x4310, 0x99, 0x87, 0xa8, 0x73, 0xf5, 0x88, 0x7d, 0x97);
+			
+			public function HRESULT(IMSVidClosedCaptioning2 *self, MSVidCCService* On) get_Service;
+			public function HRESULT(IMSVidClosedCaptioning2 *self, MSVidCCService On) put_Service;
+		}
+		[CRepr]
+		public struct IMSVidClosedCaptioning3 : IMSVidClosedCaptioning2
+		{
+			public const new Guid IID = .(0xc8638e8a, 0x7625, 0x4c51, 0x93, 0x66, 0x2f, 0x40, 0xa9, 0x83, 0x1f, 0xc0);
+			
+			public function HRESULT(IMSVidClosedCaptioning3 *self, IUnknown** punkTTFilter) get_TeleTextFilter;
+		}
+		[CRepr]
+		public struct IMSVidXDS : IMSVidFeature
+		{
+			public const new Guid IID = .(0x11ebc158, 0xe712, 0x4d1f, 0x8b, 0xb3, 0x01, 0xed, 0x52, 0x74, 0xc4, 0xce);
+			
+			public function HRESULT(IMSVidXDS *self, IUnknown** punkCC) get_ChannelChangeInterface;
+		}
+		[CRepr]
+		public struct IMSVidXDSEvent : IMSVidFeatureEvent
+		{
+			public const new Guid IID = .(0x6db2317d, 0x3b23, 0x41ec, 0xba, 0x4b, 0x70, 0x1f, 0x40, 0x7e, 0xaf, 0x3a);
+			
+			public function HRESULT(IMSVidXDSEvent *self, EnTvRat_System PrevRatingSystem, EnTvRat_GenericLevel PrevLevel, BfEnTvRat_GenericAttributes PrevAttributes, EnTvRat_System NewRatingSystem, EnTvRat_GenericLevel NewLevel, BfEnTvRat_GenericAttributes NewAttributes) RatingChange;
+		}
+		[CRepr]
+		public struct IMSVidDataServices : IMSVidFeature
+		{
+			public const new Guid IID = .(0x334125c1, 0x77e5, 0x11d3, 0xb6, 0x53, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidDataServicesEvent : IMSVidDeviceEvent
+		{
+			public const new Guid IID = .(0x334125c2, 0x77e5, 0x11d3, 0xb6, 0x53, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidVideoRenderer : IMSVidOutputDevice
+		{
+			public const new Guid IID = .(0x37b03540, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidVideoRenderer *self, BSTR* CompositorCLSID) get_CustomCompositorClass;
+			public function HRESULT(IMSVidVideoRenderer *self, BSTR CompositorCLSID) put_CustomCompositorClass;
+			public function HRESULT(IMSVidVideoRenderer *self, Guid* CompositorCLSID) get__CustomCompositorClass;
+			public function HRESULT(IMSVidVideoRenderer *self, Guid* CompositorCLSID) put__CustomCompositorClass;
+			public function HRESULT(IMSVidVideoRenderer *self, IVMRImageCompositor** Compositor) get__CustomCompositor;
+			public function HRESULT(IMSVidVideoRenderer *self, IVMRImageCompositor* Compositor) put__CustomCompositor;
+			public function HRESULT(IMSVidVideoRenderer *self, IPictureDisp** MixerPictureDisp) get_MixerBitmap;
+			public function HRESULT(IMSVidVideoRenderer *self, IVMRMixerBitmap** MixerPicture) get__MixerBitmap;
+			public function HRESULT(IMSVidVideoRenderer *self, IPictureDisp* MixerPictureDisp) put_MixerBitmap;
+			public function HRESULT(IMSVidVideoRenderer *self, VMRALPHABITMAP* MixerPicture) put__MixerBitmap;
+			public function HRESULT(IMSVidVideoRenderer *self, IMSVidRect** rDest) get_MixerBitmapPositionRect;
+			public function HRESULT(IMSVidVideoRenderer *self, IMSVidRect* rDest) put_MixerBitmapPositionRect;
+			public function HRESULT(IMSVidVideoRenderer *self, int32* opacity) get_MixerBitmapOpacity;
+			public function HRESULT(IMSVidVideoRenderer *self, int32 opacity) put_MixerBitmapOpacity;
+			public function HRESULT(IMSVidVideoRenderer *self, IPictureDisp* MixerPictureDisp, int32 Opacity, IMSVidRect* rDest) SetupMixerBitmap;
+			public function HRESULT(IMSVidVideoRenderer *self, SourceSizeList* CurrentSize) get_SourceSize;
+			public function HRESULT(IMSVidVideoRenderer *self, SourceSizeList NewSize) put_SourceSize;
+			public function HRESULT(IMSVidVideoRenderer *self, int32* plPercent) get_OverScan;
+			public function HRESULT(IMSVidVideoRenderer *self, int32 lPercent) put_OverScan;
+			public function HRESULT(IMSVidVideoRenderer *self, IMSVidRect** pRect) get_AvailableSourceRect;
+			public function HRESULT(IMSVidVideoRenderer *self, IMSVidRect** ppVidRect) get_MaxVidRect;
+			public function HRESULT(IMSVidVideoRenderer *self, IMSVidRect** ppVidRect) get_MinVidRect;
+			public function HRESULT(IMSVidVideoRenderer *self, IMSVidRect** pRect) get_ClippedSourceRect;
+			public function HRESULT(IMSVidVideoRenderer *self, IMSVidRect* pRect) put_ClippedSourceRect;
+			public function HRESULT(IMSVidVideoRenderer *self, int16* UseOverlayVal) get_UsingOverlay;
+			public function HRESULT(IMSVidVideoRenderer *self, int16 UseOverlayVal) put_UsingOverlay;
+			public function HRESULT(IMSVidVideoRenderer *self, IPictureDisp** currentImage) Capture;
+			public function HRESULT(IMSVidVideoRenderer *self, int32* pVal) get_FramesPerSecond;
+			public function HRESULT(IMSVidVideoRenderer *self, int16* pDeci) get_DecimateInput;
+			public function HRESULT(IMSVidVideoRenderer *self, int16 pDeci) put_DecimateInput;
+		}
+		[CRepr]
+		public struct IMSVidVideoRendererEvent : IMSVidOutputDeviceEvent
+		{
+			public const new Guid IID = .(0x37b03545, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidVideoRendererEvent *self) OverlayUnavailable;
+		}
+		[CRepr]
+		public struct IMSVidGenericSink : IMSVidOutputDevice
+		{
+			public const new Guid IID = .(0x6c29b41d, 0x455b, 0x4c33, 0x96, 0x3a, 0x0d, 0x28, 0xe5, 0xe5, 0x55, 0xea);
+			
+			public function HRESULT(IMSVidGenericSink *self, BSTR bstrName) SetSinkFilter;
+			public function HRESULT(IMSVidGenericSink *self, MSVidSinkStreams* pStreams) get_SinkStreams;
+			public function HRESULT(IMSVidGenericSink *self, MSVidSinkStreams Streams) put_SinkStreams;
+		}
+		[CRepr]
+		public struct IMSVidGenericSink2 : IMSVidGenericSink
+		{
+			public const new Guid IID = .(0x6b5a28f3, 0x47f1, 0x4092, 0xb1, 0x68, 0x60, 0xca, 0xbe, 0xc0, 0x8f, 0x1c);
+			
+			public function HRESULT(IMSVidGenericSink2 *self, BSTR bstrName) AddFilter;
+			public function HRESULT(IMSVidGenericSink2 *self) ResetFilterList;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferRecordingControl : IDispatch
+		{
+			public const new Guid IID = .(0x160621aa, 0xbbbc, 0x4326, 0xa8, 0x24, 0xc3, 0x95, 0xae, 0xbc, 0x6e, 0x74);
+			
+			public function HRESULT(IMSVidStreamBufferRecordingControl *self, int32* rtStart) get_StartTime;
+			public function HRESULT(IMSVidStreamBufferRecordingControl *self, int32 rtStart) put_StartTime;
+			public function HRESULT(IMSVidStreamBufferRecordingControl *self, int32* rtStop) get_StopTime;
+			public function HRESULT(IMSVidStreamBufferRecordingControl *self, int32 rtStop) put_StopTime;
+			public function HRESULT(IMSVidStreamBufferRecordingControl *self, int16* phResult) get_RecordingStopped;
+			public function HRESULT(IMSVidStreamBufferRecordingControl *self, int16* phResult) get_RecordingStarted;
+			public function HRESULT(IMSVidStreamBufferRecordingControl *self, RecordingType* dwType) get_RecordingType;
+			public function HRESULT(IMSVidStreamBufferRecordingControl *self, IUnknown** pRecordingAttribute) get_RecordingAttribute;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSink : IMSVidOutputDevice
+		{
+			public const new Guid IID = .(0x159dbb45, 0xcd1b, 0x4dab, 0x83, 0xea, 0x5c, 0xb1, 0xf4, 0xf2, 0x1d, 0x07);
+			
+			public function HRESULT(IMSVidStreamBufferSink *self, BSTR pszFilename, IMSVidStreamBufferRecordingControl** pRecordingIUnknown) get_ContentRecorder;
+			public function HRESULT(IMSVidStreamBufferSink *self, BSTR pszFilename, IMSVidStreamBufferRecordingControl** pRecordingIUnknown) get_ReferenceRecorder;
+			public function HRESULT(IMSVidStreamBufferSink *self, BSTR* pName) get_SinkName;
+			public function HRESULT(IMSVidStreamBufferSink *self, BSTR Name) put_SinkName;
+			public function HRESULT(IMSVidStreamBufferSink *self) NameSetLock;
+			public function HRESULT(IMSVidStreamBufferSink *self, IUnknown** sbeConfig) get_SBESink;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSink2 : IMSVidStreamBufferSink
+		{
+			public const new Guid IID = .(0x2ca9fc63, 0xc131, 0x4e5a, 0x95, 0x5a, 0x54, 0x4a, 0x47, 0xc6, 0x71, 0x46);
+			
+			public function HRESULT(IMSVidStreamBufferSink2 *self) UnlockProfile;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSink3 : IMSVidStreamBufferSink2
+		{
+			public const new Guid IID = .(0x4f8721d7, 0x7d59, 0x4d8b, 0x99, 0xf5, 0xa7, 0x77, 0x75, 0x58, 0x6b, 0xd5);
+			
+			public function HRESULT(IMSVidStreamBufferSink3 *self, int32* pdwMin) SetMinSeek;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, IUnknown** ppUnk) get_AudioCounter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, IUnknown** ppUnk) get_VideoCounter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, IUnknown** ppUnk) get_CCCounter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, IUnknown** ppUnk) get_WSTCounter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, BSTR szCLSID) put_AudioAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, BSTR* pszCLSID) get_AudioAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, Guid guid) put__AudioAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, Guid* pGuid) get__AudioAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, BSTR szCLSID) put_VideoAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, BSTR* pszCLSID) get_VideoAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, Guid guid) put__VideoAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, Guid* pGuid) get__VideoAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, BSTR szCLSID) put_DataAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, BSTR* pszCLSID) get_DataAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, Guid guid) put__DataAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, Guid* pGuid) get__DataAnalysisFilter;
+			public function HRESULT(IMSVidStreamBufferSink3 *self, HRESULT* hres) get_LicenseErrorCode;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSinkEvent : IMSVidOutputDeviceEvent
+		{
+			public const new Guid IID = .(0xf798a36b, 0xb05b, 0x4bbe, 0x97, 0x03, 0xea, 0xea, 0x7d, 0x61, 0xcd, 0x51);
+			
+			public function HRESULT(IMSVidStreamBufferSinkEvent *self) CertificateFailure;
+			public function HRESULT(IMSVidStreamBufferSinkEvent *self) CertificateSuccess;
+			public function HRESULT(IMSVidStreamBufferSinkEvent *self) WriteFailure;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSinkEvent2 : IMSVidStreamBufferSinkEvent
+		{
+			public const new Guid IID = .(0x3d7a5166, 0x72d7, 0x484b, 0xa0, 0x6f, 0x28, 0x61, 0x87, 0xb8, 0x0c, 0xa1);
+			
+			public function HRESULT(IMSVidStreamBufferSinkEvent2 *self) EncryptionOn;
+			public function HRESULT(IMSVidStreamBufferSinkEvent2 *self) EncryptionOff;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSinkEvent3 : IMSVidStreamBufferSinkEvent2
+		{
+			public const new Guid IID = .(0x735ad8d5, 0xc259, 0x48e9, 0x81, 0xe7, 0xd2, 0x79, 0x53, 0x66, 0x5b, 0x23);
+			
+			public function HRESULT(IMSVidStreamBufferSinkEvent3 *self, int32 dwProt) LicenseChange;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSinkEvent4 : IMSVidStreamBufferSinkEvent3
+		{
+			public const new Guid IID = .(0x1b01dcb0, 0xdaf0, 0x412c, 0xa5, 0xd1, 0x59, 0x0c, 0x7f, 0x62, 0xe2, 0xb8);
+			
+			public function HRESULT(IMSVidStreamBufferSinkEvent4 *self) WriteFailureClear;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSource : IMSVidFilePlayback
+		{
+			public const new Guid IID = .(0xeb0c8cf9, 0x6950, 0x4772, 0x87, 0xb1, 0x47, 0xd1, 0x1c, 0xf3, 0xa0, 0x2f);
+			
+			public function HRESULT(IMSVidStreamBufferSource *self, int32* lStart) get_Start;
+			public function HRESULT(IMSVidStreamBufferSource *self, IUnknown** pRecordingAttribute) get_RecordingAttribute;
+			public function HRESULT(IMSVidStreamBufferSource *self, EnTvRat_System* pEnSystem, EnTvRat_GenericLevel* pEnRating, int32* pBfEnAttr) CurrentRatings;
+			public function HRESULT(IMSVidStreamBufferSource *self, EnTvRat_System enSystem, EnTvRat_GenericLevel enRating, int32 lbfEnAttr) MaxRatingsLevel;
+			public function HRESULT(IMSVidStreamBufferSource *self, int16 bBlock) put_BlockUnrated;
+			public function HRESULT(IMSVidStreamBufferSource *self, int32 dwDelay) put_UnratedDelay;
+			public function HRESULT(IMSVidStreamBufferSource *self, IUnknown** sbeFilter) get_SBESource;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSource2 : IMSVidStreamBufferSource
+		{
+			public const new Guid IID = .(0xe4ba9059, 0xb1ce, 0x40d8, 0xb9, 0xa0, 0xd4, 0xea, 0x4a, 0x99, 0x89, 0xd3);
+			
+			public function HRESULT(IMSVidStreamBufferSource2 *self, double dwRate, uint32 dwFramesPerSecond) put_RateEx;
+			public function HRESULT(IMSVidStreamBufferSource2 *self, IUnknown** ppUnk) get_AudioCounter;
+			public function HRESULT(IMSVidStreamBufferSource2 *self, IUnknown** ppUnk) get_VideoCounter;
+			public function HRESULT(IMSVidStreamBufferSource2 *self, IUnknown** ppUnk) get_CCCounter;
+			public function HRESULT(IMSVidStreamBufferSource2 *self, IUnknown** ppUnk) get_WSTCounter;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSourceEvent : IMSVidFilePlaybackEvent
+		{
+			public const new Guid IID = .(0x50ce8a7d, 0x9c28, 0x4da8, 0x90, 0x42, 0xcd, 0xfa, 0x71, 0x16, 0xf9, 0x79);
+			
+			public function HRESULT(IMSVidStreamBufferSourceEvent *self) CertificateFailure;
+			public function HRESULT(IMSVidStreamBufferSourceEvent *self) CertificateSuccess;
+			public function HRESULT(IMSVidStreamBufferSourceEvent *self) RatingsBlocked;
+			public function HRESULT(IMSVidStreamBufferSourceEvent *self) RatingsUnblocked;
+			public function HRESULT(IMSVidStreamBufferSourceEvent *self) RatingsChanged;
+			public function HRESULT(IMSVidStreamBufferSourceEvent *self, int32 StreamOffsetMS, int32 SizeMS) TimeHole;
+			public function HRESULT(IMSVidStreamBufferSourceEvent *self) StaleDataRead;
+			public function HRESULT(IMSVidStreamBufferSourceEvent *self) ContentBecomingStale;
+			public function HRESULT(IMSVidStreamBufferSourceEvent *self) StaleFileDeleted;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSourceEvent2 : IMSVidStreamBufferSourceEvent
+		{
+			public const new Guid IID = .(0x7aef50ce, 0x8e22, 0x4ba8, 0xbc, 0x06, 0xa9, 0x2a, 0x45, 0x8b, 0x4e, 0xf2);
+			
+			public function HRESULT(IMSVidStreamBufferSourceEvent2 *self, double qwNewRate, double qwOldRate) RateChange;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferSourceEvent3 : IMSVidStreamBufferSourceEvent2
+		{
+			public const new Guid IID = .(0xceabd6ab, 0x9b90, 0x4570, 0xad, 0xf1, 0x3c, 0xe7, 0x6e, 0x00, 0xa7, 0x63);
+			
+			public function HRESULT(IMSVidStreamBufferSourceEvent3 *self, BSTR Guid) BroadcastEvent;
+			public function HRESULT(IMSVidStreamBufferSourceEvent3 *self, BSTR Guid, uint32 Param1, uint32 Param2, uint32 Param3, uint32 Param4) BroadcastEventEx;
+			public function HRESULT(IMSVidStreamBufferSourceEvent3 *self) COPPBlocked;
+			public function HRESULT(IMSVidStreamBufferSourceEvent3 *self) COPPUnblocked;
+			public function HRESULT(IMSVidStreamBufferSourceEvent3 *self) ContentPrimarilyAudio;
+		}
+		[CRepr]
+		public struct IMSVidStreamBufferV2SourceEvent : IMSVidFilePlaybackEvent
+		{
+			public const new Guid IID = .(0x49c771f9, 0x41b2, 0x4cf7, 0x9f, 0x9a, 0xa3, 0x13, 0xa8, 0xf6, 0x02, 0x7e);
+			
+			public function HRESULT(IMSVidStreamBufferV2SourceEvent *self) RatingsChanged;
+			public function HRESULT(IMSVidStreamBufferV2SourceEvent *self, int32 StreamOffsetMS, int32 SizeMS) TimeHole;
+			public function HRESULT(IMSVidStreamBufferV2SourceEvent *self) StaleDataRead;
+			public function HRESULT(IMSVidStreamBufferV2SourceEvent *self) ContentBecomingStale;
+			public function HRESULT(IMSVidStreamBufferV2SourceEvent *self) StaleFileDeleted;
+			public function HRESULT(IMSVidStreamBufferV2SourceEvent *self, double qwNewRate, double qwOldRate) RateChange;
+			public function HRESULT(IMSVidStreamBufferV2SourceEvent *self, BSTR Guid) BroadcastEvent;
+			public function HRESULT(IMSVidStreamBufferV2SourceEvent *self, BSTR Guid, uint32 Param1, uint32 Param2, uint32 Param3, uint32 Param4) BroadcastEventEx;
+			public function HRESULT(IMSVidStreamBufferV2SourceEvent *self) ContentPrimarilyAudio;
+		}
+		[CRepr]
+		public struct IMSVidVideoRenderer2 : IMSVidVideoRenderer
+		{
+			public const new Guid IID = .(0x6bdd5c1e, 0x2810, 0x4159, 0x94, 0xbc, 0x05, 0x51, 0x1a, 0xe8, 0x54, 0x9b);
+			
+			public function HRESULT(IMSVidVideoRenderer2 *self, IUnknown** AllocPresent) get_Allocator;
+			public function HRESULT(IMSVidVideoRenderer2 *self, IVMRSurfaceAllocator** AllocPresent) get__Allocator;
+			public function HRESULT(IMSVidVideoRenderer2 *self, int32* ID) get_Allocator_ID;
+			public function HRESULT(IMSVidVideoRenderer2 *self, IUnknown* AllocPresent, int32 ID) SetAllocator;
+			public function HRESULT(IMSVidVideoRenderer2 *self, IVMRSurfaceAllocator* AllocPresent, int32 ID) _SetAllocator2;
+			public function HRESULT(IMSVidVideoRenderer2 *self, int16 bSuppress) put_SuppressEffects;
+			public function HRESULT(IMSVidVideoRenderer2 *self, int16* bSuppress) get_SuppressEffects;
+		}
+		[CRepr]
+		public struct IMSVidVideoRendererEvent2 : IMSVidOutputDeviceEvent
+		{
+			public const new Guid IID = .(0x7145ed66, 0x4730, 0x4fdb, 0x8a, 0x53, 0xfd, 0xe7, 0x50, 0x8d, 0x3e, 0x5e);
+			
+			public function HRESULT(IMSVidVideoRendererEvent2 *self) OverlayUnavailable;
+		}
+		[CRepr]
+		public struct IMSVidVMR9 : IMSVidVideoRenderer
+		{
+			public const new Guid IID = .(0xd58b0015, 0xebef, 0x44bb, 0xbb, 0xdd, 0x3f, 0x36, 0x99, 0xd7, 0x6e, 0xa1);
+			
+			public function HRESULT(IMSVidVMR9 *self, int32* ID) get_Allocator_ID;
+			public function HRESULT(IMSVidVMR9 *self, IUnknown* AllocPresent, int32 ID) SetAllocator;
+			public function HRESULT(IMSVidVMR9 *self, int16 bSuppress) put_SuppressEffects;
+			public function HRESULT(IMSVidVMR9 *self, int16* bSuppress) get_SuppressEffects;
+			public function HRESULT(IMSVidVMR9 *self, IUnknown** AllocPresent) get_Allocator;
+		}
+		[CRepr]
+		public struct IMSVidEVR : IMSVidVideoRenderer
+		{
+			public const new Guid IID = .(0x15e496ae, 0x82a8, 0x4cf9, 0xa6, 0xb6, 0xc5, 0x61, 0xdc, 0x60, 0x39, 0x8f);
+			
+			public function HRESULT(IMSVidEVR *self, IMFVideoPresenter** ppAllocPresent) get_Presenter;
+			public function HRESULT(IMSVidEVR *self, IMFVideoPresenter* pAllocPresent) put_Presenter;
+			public function HRESULT(IMSVidEVR *self, int16 bSuppress) put_SuppressEffects;
+			public function HRESULT(IMSVidEVR *self, int16* bSuppress) get_SuppressEffects;
+		}
+		[CRepr]
+		public struct IMSVidEVREvent : IMSVidOutputDeviceEvent
+		{
+			public const new Guid IID = .(0x349abb10, 0x883c, 0x4f22, 0x87, 0x14, 0xce, 0xca, 0xee, 0xe4, 0x5d, 0x62);
+			
+			public function HRESULT(IMSVidEVREvent *self, int32 lEventCode) OnUserEvent;
+		}
+		[CRepr]
+		public struct IMSVidAudioRenderer : IMSVidOutputDevice
+		{
+			public const new Guid IID = .(0x37b0353f, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidAudioRenderer *self, int32 lVol) put_Volume;
+			public function HRESULT(IMSVidAudioRenderer *self, int32* lVol) get_Volume;
+			public function HRESULT(IMSVidAudioRenderer *self, int32 lBal) put_Balance;
+			public function HRESULT(IMSVidAudioRenderer *self, int32* lBal) get_Balance;
+		}
+		[CRepr]
+		public struct IMSVidAudioRendererEvent : IMSVidOutputDeviceEvent
+		{
+			public const new Guid IID = .(0x37b03541, 0xa4c8, 0x11d2, 0xb6, 0x34, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IMSVidAudioRendererEvent2 : IMSVidAudioRendererEvent
+		{
+			public const new Guid IID = .(0xe3f55729, 0x353b, 0x4c43, 0xa0, 0x28, 0x50, 0xf7, 0x9a, 0xa9, 0xa9, 0x07);
+			
+			public function HRESULT(IMSVidAudioRendererEvent2 *self) AVDecAudioDualMono;
+			public function HRESULT(IMSVidAudioRendererEvent2 *self) AVAudioSampleRate;
+			public function HRESULT(IMSVidAudioRendererEvent2 *self) AVAudioChannelConfig;
+			public function HRESULT(IMSVidAudioRendererEvent2 *self) AVAudioChannelCount;
+			public function HRESULT(IMSVidAudioRendererEvent2 *self) AVDecCommonMeanBitRate;
+			public function HRESULT(IMSVidAudioRendererEvent2 *self) AVDDSurroundMode;
+			public function HRESULT(IMSVidAudioRendererEvent2 *self) AVDecCommonInputFormat;
+			public function HRESULT(IMSVidAudioRendererEvent2 *self) AVDecCommonOutputFormat;
+		}
+		[CRepr]
+		public struct IMSVidInputDevices : IDispatch
+		{
+			public const new Guid IID = .(0xc5702cd1, 0x9b79, 0x11d3, 0xb6, 0x54, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidInputDevices *self, int32* lCount) get_Count;
+			public function HRESULT(IMSVidInputDevices *self, IEnumVARIANT** pD) get__NewEnum;
+			public function HRESULT(IMSVidInputDevices *self, VARIANT v, IMSVidInputDevice** pDB) get_Item;
+			public function HRESULT(IMSVidInputDevices *self, IMSVidInputDevice* pDB) Add;
+			public function HRESULT(IMSVidInputDevices *self, VARIANT v) Remove;
+		}
+		[CRepr]
+		public struct IMSVidOutputDevices : IDispatch
+		{
+			public const new Guid IID = .(0xc5702cd2, 0x9b79, 0x11d3, 0xb6, 0x54, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidOutputDevices *self, int32* lCount) get_Count;
+			public function HRESULT(IMSVidOutputDevices *self, IEnumVARIANT** pD) get__NewEnum;
+			public function HRESULT(IMSVidOutputDevices *self, VARIANT v, IMSVidOutputDevice** pDB) get_Item;
+			public function HRESULT(IMSVidOutputDevices *self, IMSVidOutputDevice* pDB) Add;
+			public function HRESULT(IMSVidOutputDevices *self, VARIANT v) Remove;
+		}
+		[CRepr]
+		public struct IMSVidVideoRendererDevices : IDispatch
+		{
+			public const new Guid IID = .(0xc5702cd3, 0x9b79, 0x11d3, 0xb6, 0x54, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidVideoRendererDevices *self, int32* lCount) get_Count;
+			public function HRESULT(IMSVidVideoRendererDevices *self, IEnumVARIANT** pD) get__NewEnum;
+			public function HRESULT(IMSVidVideoRendererDevices *self, VARIANT v, IMSVidVideoRenderer** pDB) get_Item;
+			public function HRESULT(IMSVidVideoRendererDevices *self, IMSVidVideoRenderer* pDB) Add;
+			public function HRESULT(IMSVidVideoRendererDevices *self, VARIANT v) Remove;
+		}
+		[CRepr]
+		public struct IMSVidAudioRendererDevices : IDispatch
+		{
+			public const new Guid IID = .(0xc5702cd4, 0x9b79, 0x11d3, 0xb6, 0x54, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidAudioRendererDevices *self, int32* lCount) get_Count;
+			public function HRESULT(IMSVidAudioRendererDevices *self, IEnumVARIANT** pD) get__NewEnum;
+			public function HRESULT(IMSVidAudioRendererDevices *self, VARIANT v, IMSVidAudioRenderer** pDB) get_Item;
+			public function HRESULT(IMSVidAudioRendererDevices *self, IMSVidAudioRenderer* pDB) Add;
+			public function HRESULT(IMSVidAudioRendererDevices *self, VARIANT v) Remove;
+		}
+		[CRepr]
+		public struct IMSVidFeatures : IDispatch
+		{
+			public const new Guid IID = .(0xc5702cd5, 0x9b79, 0x11d3, 0xb6, 0x54, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidFeatures *self, int32* lCount) get_Count;
+			public function HRESULT(IMSVidFeatures *self, IEnumVARIANT** pD) get__NewEnum;
+			public function HRESULT(IMSVidFeatures *self, VARIANT v, IMSVidFeature** pDB) get_Item;
+			public function HRESULT(IMSVidFeatures *self, IMSVidFeature* pDB) Add;
+			public function HRESULT(IMSVidFeatures *self, VARIANT v) Remove;
+		}
+		[CRepr]
+		public struct IMSVidCtl : IDispatch
+		{
+			public const new Guid IID = .(0xb0edf162, 0x910a, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+			public function HRESULT(IMSVidCtl *self, int16* pbool) get_AutoSize;
+			public function HRESULT(IMSVidCtl *self, int16 vbool) put_AutoSize;
+			public function HRESULT(IMSVidCtl *self, uint32* backcolor) get_BackColor;
+			public function HRESULT(IMSVidCtl *self, uint32 backcolor) put_BackColor;
+			public function HRESULT(IMSVidCtl *self, int16* pbool) get_Enabled;
+			public function HRESULT(IMSVidCtl *self, int16 vbool) put_Enabled;
+			public function HRESULT(IMSVidCtl *self, int16* pbool) get_TabStop;
+			public function HRESULT(IMSVidCtl *self, int16 vbool) put_TabStop;
+			public function HRESULT(IMSVidCtl *self, HWND* phwnd) get_Window;
+			public function HRESULT(IMSVidCtl *self) Refresh;
+			public function HRESULT(IMSVidCtl *self, DisplaySizeList* CurrentValue) get_DisplaySize;
+			public function HRESULT(IMSVidCtl *self, DisplaySizeList NewValue) put_DisplaySize;
+			public function HRESULT(IMSVidCtl *self, int16* CurrentValue) get_MaintainAspectRatio;
+			public function HRESULT(IMSVidCtl *self, int16 NewValue) put_MaintainAspectRatio;
+			public function HRESULT(IMSVidCtl *self, uint32* CurrentValue) get_ColorKey;
+			public function HRESULT(IMSVidCtl *self, uint32 NewValue) put_ColorKey;
+			public function HRESULT(IMSVidCtl *self, BSTR CategoryGuid, IMSVidInputDevices** pVal) get_InputsAvailable;
+			public function HRESULT(IMSVidCtl *self, BSTR CategoryGuid, IMSVidOutputDevices** pVal) get_OutputsAvailable;
+			public function HRESULT(IMSVidCtl *self, Guid* CategoryGuid, IMSVidInputDevices** pVal) get__InputsAvailable;
+			public function HRESULT(IMSVidCtl *self, Guid* CategoryGuid, IMSVidOutputDevices** pVal) get__OutputsAvailable;
+			public function HRESULT(IMSVidCtl *self, IMSVidVideoRendererDevices** pVal) get_VideoRenderersAvailable;
+			public function HRESULT(IMSVidCtl *self, IMSVidAudioRendererDevices** pVal) get_AudioRenderersAvailable;
+			public function HRESULT(IMSVidCtl *self, IMSVidFeatures** pVal) get_FeaturesAvailable;
+			public function HRESULT(IMSVidCtl *self, IMSVidInputDevice** pVal) get_InputActive;
+			public function HRESULT(IMSVidCtl *self, IMSVidInputDevice* pVal) put_InputActive;
+			public function HRESULT(IMSVidCtl *self, IMSVidOutputDevices** pVal) get_OutputsActive;
+			public function HRESULT(IMSVidCtl *self, IMSVidOutputDevices* pVal) put_OutputsActive;
+			public function HRESULT(IMSVidCtl *self, IMSVidVideoRenderer** pVal) get_VideoRendererActive;
+			public function HRESULT(IMSVidCtl *self, IMSVidVideoRenderer* pVal) put_VideoRendererActive;
+			public function HRESULT(IMSVidCtl *self, IMSVidAudioRenderer** pVal) get_AudioRendererActive;
+			public function HRESULT(IMSVidCtl *self, IMSVidAudioRenderer* pVal) put_AudioRendererActive;
+			public function HRESULT(IMSVidCtl *self, IMSVidFeatures** pVal) get_FeaturesActive;
+			public function HRESULT(IMSVidCtl *self, IMSVidFeatures* pVal) put_FeaturesActive;
+			public function HRESULT(IMSVidCtl *self, MSVidCtlStateList* lState) get_State;
+			public function HRESULT(IMSVidCtl *self, VARIANT* v) View;
+			public function HRESULT(IMSVidCtl *self) Build;
+			public function HRESULT(IMSVidCtl *self) Pause;
+			public function HRESULT(IMSVidCtl *self) Run;
+			public function HRESULT(IMSVidCtl *self) Stop;
+			public function HRESULT(IMSVidCtl *self) Decompose;
+			public function HRESULT(IMSVidCtl *self) DisableVideo;
+			public function HRESULT(IMSVidCtl *self) DisableAudio;
+			public function HRESULT(IMSVidCtl *self, VARIANT* v) ViewNext;
+		}
+		[CRepr]
+		public struct IMSEventBinder : IDispatch
+		{
+			public const new Guid IID = .(0xc3a9f406, 0x2222, 0x436d, 0x86, 0xd5, 0xba, 0x32, 0x29, 0x27, 0x9e, 0xfb);
+			
+			public function HRESULT(IMSEventBinder *self, IDispatch* pEventObject, BSTR EventName, BSTR EventHandler, int32* CancelID) Bind;
+			public function HRESULT(IMSEventBinder *self, uint32 CancelCookie) Unbind;
+		}
+		[CRepr]
+		public struct _IMSVidCtlEvents : IDispatch
+		{
+			public const new Guid IID = .(0xb0edf164, 0x910a, 0x11d2, 0xb6, 0x32, 0x00, 0xc0, 0x4f, 0x79, 0x49, 0x8e);
+			
+		}
+		[CRepr]
+		public struct IStreamBufferInitialize : IUnknown
+		{
+			public const new Guid IID = .(0x9ce50f2d, 0x6ba7, 0x40fb, 0xa0, 0x34, 0x50, 0xb1, 0xa6, 0x74, 0xec, 0x78);
+			
+			public function HRESULT(IStreamBufferInitialize *self, HKEY hkeyRoot) SetHKEY;
+			public function HRESULT(IStreamBufferInitialize *self, uint32 cSIDs, PSID* ppSID) SetSIDs;
+		}
+		[CRepr]
+		public struct IStreamBufferSink : IUnknown
+		{
+			public const new Guid IID = .(0xafd1f242, 0x7efd, 0x45ee, 0xba, 0x4e, 0x40, 0x7a, 0x25, 0xc9, 0xa7, 0x7a);
+			
+			public function HRESULT(IStreamBufferSink *self, PWSTR pszStreamBufferFilename) LockProfile;
+			public function HRESULT(IStreamBufferSink *self, PWSTR pszFilename, uint32 dwRecordType, IUnknown** pRecordingIUnknown) CreateRecorder;
+			public function HRESULT(IStreamBufferSink *self) IsProfileLocked;
+		}
+		[CRepr]
+		public struct IStreamBufferSink2 : IStreamBufferSink
+		{
+			public const new Guid IID = .(0xdb94a660, 0xf4fb, 0x4bfa, 0xbc, 0xc6, 0xfe, 0x15, 0x9a, 0x4e, 0xea, 0x93);
+			
+			public function HRESULT(IStreamBufferSink2 *self) UnlockProfile;
+		}
+		[CRepr]
+		public struct IStreamBufferSink3 : IStreamBufferSink2
+		{
+			public const new Guid IID = .(0x974723f2, 0x887a, 0x4452, 0x93, 0x66, 0x2c, 0xff, 0x30, 0x57, 0xbc, 0x8f);
+			
+			public function HRESULT(IStreamBufferSink3 *self, int64* prtMin) SetAvailableFilter;
+		}
+		[CRepr]
+		public struct IStreamBufferSource : IUnknown
+		{
+			public const new Guid IID = .(0x1c5bd776, 0x6ced, 0x4f44, 0x81, 0x64, 0x5e, 0xab, 0x0e, 0x98, 0xdb, 0x12);
+			
+			public function HRESULT(IStreamBufferSource *self, IStreamBufferSink* pIStreamBufferSink) SetStreamSink;
+		}
+		[CRepr]
+		public struct IStreamBufferRecordControl : IUnknown
+		{
+			public const new Guid IID = .(0xba9b6c99, 0xf3c7, 0x4ff2, 0x92, 0xdb, 0xcf, 0xdd, 0x48, 0x51, 0xbf, 0x31);
+			
+			public function HRESULT(IStreamBufferRecordControl *self, int64* prtStart) Start;
+			public function HRESULT(IStreamBufferRecordControl *self, int64 rtStop) Stop;
+			public function HRESULT(IStreamBufferRecordControl *self, HRESULT* phResult, BOOL* pbStarted, BOOL* pbStopped) GetRecordingStatus;
+		}
+		[CRepr]
+		public struct IStreamBufferRecComp : IUnknown
+		{
+			public const new Guid IID = .(0x9e259a9b, 0x8815, 0x42ae, 0xb0, 0x9f, 0x22, 0x19, 0x70, 0xb1, 0x54, 0xfd);
+			
+			public function HRESULT(IStreamBufferRecComp *self, PWSTR pszTargetFilename, PWSTR pszSBRecProfileRef) Initialize;
+			public function HRESULT(IStreamBufferRecComp *self, PWSTR pszSBRecording) Append;
+			public function HRESULT(IStreamBufferRecComp *self, PWSTR pszSBRecording, int64 rtStart, int64 rtStop) AppendEx;
+			public function HRESULT(IStreamBufferRecComp *self, uint32* pcSeconds) GetCurrentLength;
+			public function HRESULT(IStreamBufferRecComp *self) Close;
+			public function HRESULT(IStreamBufferRecComp *self) Cancel;
+		}
+		[CRepr]
+		public struct IStreamBufferRecordingAttribute : IUnknown
+		{
+			public const new Guid IID = .(0x16ca4e03, 0xfe69, 0x4705, 0xbd, 0x41, 0x5b, 0x7d, 0xfc, 0x0c, 0x95, 0xf3);
+			
+			public function HRESULT(IStreamBufferRecordingAttribute *self, uint32 ulReserved, PWSTR pszAttributeName, STREAMBUFFER_ATTR_DATATYPE StreamBufferAttributeType, uint8* pbAttribute, uint16 cbAttributeLength) SetAttribute;
+			public function HRESULT(IStreamBufferRecordingAttribute *self, uint32 ulReserved, uint16* pcAttributes) GetAttributeCount;
+			public function HRESULT(IStreamBufferRecordingAttribute *self, PWSTR pszAttributeName, uint32* pulReserved, STREAMBUFFER_ATTR_DATATYPE* pStreamBufferAttributeType, uint8* pbAttribute, uint16* pcbLength) GetAttributeByName;
+			public function HRESULT(IStreamBufferRecordingAttribute *self, uint16 wIndex, uint32* pulReserved, PWSTR pszAttributeName, uint16* pcchNameLength, STREAMBUFFER_ATTR_DATATYPE* pStreamBufferAttributeType, uint8* pbAttribute, uint16* pcbLength) GetAttributeByIndex;
+			public function HRESULT(IStreamBufferRecordingAttribute *self, IEnumStreamBufferRecordingAttrib** ppIEnumStreamBufferAttrib) EnumAttributes;
+		}
+		[CRepr]
+		public struct IEnumStreamBufferRecordingAttrib : IUnknown
+		{
+			public const new Guid IID = .(0xc18a9162, 0x1e82, 0x4142, 0x8c, 0x73, 0x56, 0x90, 0xfa, 0x62, 0xfe, 0x33);
+			
+			public function HRESULT(IEnumStreamBufferRecordingAttrib *self, uint32 cRequest, STREAMBUFFER_ATTRIBUTE* pStreamBufferAttribute, uint32* pcReceived) Next;
+			public function HRESULT(IEnumStreamBufferRecordingAttrib *self, uint32 cRecords) Skip;
+			public function HRESULT(IEnumStreamBufferRecordingAttrib *self) Reset;
+			public function HRESULT(IEnumStreamBufferRecordingAttrib *self, IEnumStreamBufferRecordingAttrib** ppIEnumStreamBufferAttrib) Clone;
+		}
+		[CRepr]
+		public struct IStreamBufferConfigure : IUnknown
+		{
+			public const new Guid IID = .(0xce14dfae, 0x4098, 0x4af7, 0xbb, 0xf7, 0xd6, 0x51, 0x1f, 0x83, 0x54, 0x14);
+			
+			public function HRESULT(IStreamBufferConfigure *self, PWSTR pszDirectoryName) SetDirectory;
+			public function HRESULT(IStreamBufferConfigure *self, PWSTR* ppszDirectoryName) GetDirectory;
+			public function HRESULT(IStreamBufferConfigure *self, uint32 dwMin, uint32 dwMax) SetBackingFileCount;
+			public function HRESULT(IStreamBufferConfigure *self, uint32* pdwMin, uint32* pdwMax) GetBackingFileCount;
+			public function HRESULT(IStreamBufferConfigure *self, uint32 dwSeconds) SetBackingFileDuration;
+			public function HRESULT(IStreamBufferConfigure *self, uint32* pdwSeconds) GetBackingFileDuration;
+		}
+		[CRepr]
+		public struct IStreamBufferConfigure2 : IStreamBufferConfigure
+		{
+			public const new Guid IID = .(0x53e037bf, 0x3992, 0x4282, 0xae, 0x34, 0x24, 0x87, 0xb4, 0xda, 0xe0, 0x6b);
+			
+			public function HRESULT(IStreamBufferConfigure2 *self, uint32 cbBytesPerPacket) SetMultiplexedPacketSize;
+			public function HRESULT(IStreamBufferConfigure2 *self, uint32* pcbBytesPerPacket) GetMultiplexedPacketSize;
+			public function HRESULT(IStreamBufferConfigure2 *self, uint32 dwMaxFullFrameRate, uint32 dwMaxNonSkippingRate) SetFFTransitionRates;
+			public function HRESULT(IStreamBufferConfigure2 *self, uint32* pdwMaxFullFrameRate, uint32* pdwMaxNonSkippingRate) GetFFTransitionRates;
+		}
+		[CRepr]
+		public struct IStreamBufferConfigure3 : IStreamBufferConfigure2
+		{
+			public const new Guid IID = .(0x7e2d2a1e, 0x7192, 0x4bd7, 0x80, 0xc1, 0x06, 0x1f, 0xd1, 0xd1, 0x04, 0x02);
+			
+			public function HRESULT(IStreamBufferConfigure3 *self, BOOL fStartStopsCur) SetStartRecConfig;
+			public function HRESULT(IStreamBufferConfigure3 *self, BOOL* pfStartStopsCur) GetStartRecConfig;
+			public function HRESULT(IStreamBufferConfigure3 *self, PWSTR pszNamespace) SetNamespace;
+			public function HRESULT(IStreamBufferConfigure3 *self, PWSTR* ppszNamespace) GetNamespace;
+		}
+		[CRepr]
+		public struct IStreamBufferMediaSeeking : IMediaSeeking
+		{
+			public const new Guid IID = .(0xf61f5c26, 0x863d, 0x4afa, 0xb0, 0xba, 0x2f, 0x81, 0xdc, 0x97, 0x85, 0x96);
+			
+		}
+		[CRepr]
+		public struct IStreamBufferMediaSeeking2 : IStreamBufferMediaSeeking
+		{
+			public const new Guid IID = .(0x3a439ab0, 0x155f, 0x470a, 0x86, 0xa6, 0x9e, 0xa5, 0x4a, 0xfd, 0x6e, 0xaf);
+			
+			public function HRESULT(IStreamBufferMediaSeeking2 *self, double dRate, uint32 dwFramesPerSec) SetRateEx;
+		}
+		[CRepr]
+		public struct IStreamBufferDataCounters : IUnknown
+		{
+			public const new Guid IID = .(0x9d2a2563, 0x31ab, 0x402e, 0x9a, 0x6b, 0xad, 0xb9, 0x03, 0x48, 0x94, 0x40);
+			
+			public function HRESULT(IStreamBufferDataCounters *self, SBE_PIN_DATA* pPinData) GetData;
+			public function HRESULT(IStreamBufferDataCounters *self) ResetData;
+		}
+		[CRepr]
+		public struct ISBE2GlobalEvent : IUnknown
+		{
+			public const new Guid IID = .(0xcaede759, 0xb6b1, 0x11db, 0xa5, 0x78, 0x00, 0x18, 0xf3, 0xfa, 0x24, 0xc6);
+			
+			public function HRESULT(ISBE2GlobalEvent *self, Guid* idEvt, uint32 param1, uint32 param2, uint32 param3, uint32 param4, BOOL* pSpanning, uint32* pcb, uint8* pb) GetEvent;
+		}
+		[CRepr]
+		public struct ISBE2GlobalEvent2 : ISBE2GlobalEvent
+		{
+			public const new Guid IID = .(0x6d8309bf, 0x00fe, 0x4506, 0x8b, 0x03, 0xf8, 0xc6, 0x5b, 0x5c, 0x9b, 0x39);
+			
+			public function HRESULT(ISBE2GlobalEvent2 *self, Guid* idEvt, uint32 param1, uint32 param2, uint32 param3, uint32 param4, BOOL* pSpanning, uint32* pcb, uint8* pb, int64* pStreamTime) GetEventEx;
+		}
+		[CRepr]
+		public struct ISBE2SpanningEvent : IUnknown
+		{
+			public const new Guid IID = .(0xcaede760, 0xb6b1, 0x11db, 0xa5, 0x78, 0x00, 0x18, 0xf3, 0xfa, 0x24, 0xc6);
+			
+			public function HRESULT(ISBE2SpanningEvent *self, Guid* idEvt, uint32 streamId, uint32* pcb, uint8* pb) GetEvent;
+		}
+		[CRepr]
+		public struct ISBE2Crossbar : IUnknown
+		{
+			public const new Guid IID = .(0x547b6d26, 0x3226, 0x487e, 0x82, 0x53, 0x8a, 0xa1, 0x68, 0x74, 0x94, 0x34);
+			
+			public function HRESULT(ISBE2Crossbar *self, uint32 DefaultFlags) EnableDefaultMode;
+			public function HRESULT(ISBE2Crossbar *self, ISBE2MediaTypeProfile** ppProfile) GetInitialProfile;
+			public function HRESULT(ISBE2Crossbar *self, ISBE2MediaTypeProfile* pProfile, uint32* pcOutputPins, IPin** ppOutputPins) SetOutputProfile;
+			public function HRESULT(ISBE2Crossbar *self, ISBE2EnumStream** ppStreams) EnumStreams;
+		}
+		[CRepr]
+		public struct ISBE2StreamMap : IUnknown
+		{
+			public const new Guid IID = .(0x667c7745, 0x85b1, 0x4c55, 0xae, 0x55, 0x4e, 0x25, 0x05, 0x61, 0x59, 0xfc);
+			
+			public function HRESULT(ISBE2StreamMap *self, uint32 Stream) MapStream;
+			public function HRESULT(ISBE2StreamMap *self, uint32 Stream) UnmapStream;
+			public function HRESULT(ISBE2StreamMap *self, ISBE2EnumStream** ppStreams) EnumMappedStreams;
+		}
+		[CRepr]
+		public struct ISBE2EnumStream : IUnknown
+		{
+			public const new Guid IID = .(0xf7611092, 0x9fbc, 0x46ec, 0xa7, 0xc7, 0x54, 0x8e, 0xa7, 0x8b, 0x71, 0xa4);
+			
+			public function HRESULT(ISBE2EnumStream *self, uint32 cRequest, SBE2_STREAM_DESC* pStreamDesc, uint32* pcReceived) Next;
+			public function HRESULT(ISBE2EnumStream *self, uint32 cRecords) Skip;
+			public function HRESULT(ISBE2EnumStream *self) Reset;
+			public function HRESULT(ISBE2EnumStream *self, ISBE2EnumStream** ppIEnumStream) Clone;
+		}
+		[CRepr]
+		public struct ISBE2MediaTypeProfile : IUnknown
+		{
+			public const new Guid IID = .(0xf238267d, 0x4671, 0x40d7, 0x99, 0x7e, 0x25, 0xdc, 0x32, 0xcf, 0xed, 0x2a);
+			
+			public function HRESULT(ISBE2MediaTypeProfile *self, uint32* pCount) GetStreamCount;
+			public function HRESULT(ISBE2MediaTypeProfile *self, uint32 Index, AM_MEDIA_TYPE** ppMediaType) GetStream;
+			public function HRESULT(ISBE2MediaTypeProfile *self, AM_MEDIA_TYPE* pMediaType) AddStream;
+			public function HRESULT(ISBE2MediaTypeProfile *self, uint32 Index) DeleteStream;
+		}
+		[CRepr]
+		public struct ISBE2FileScan : IUnknown
+		{
+			public const new Guid IID = .(0x3e2bf5a5, 0x4f96, 0x4899, 0xa1, 0xa3, 0x75, 0xe8, 0xbe, 0x9a, 0x5a, 0xc0);
+			
+			public function HRESULT(ISBE2FileScan *self, PWSTR filename) RepairFile;
+		}
+		[CRepr]
+		public struct IMpeg2TableFilter : IUnknown
+		{
+			public const new Guid IID = .(0xbdcdd913, 0x9ecd, 0x4fb2, 0x81, 0xae, 0xad, 0xf7, 0x47, 0xea, 0x75, 0xa5);
+			
+			public function HRESULT(IMpeg2TableFilter *self, uint16 p) AddPID;
+			public function HRESULT(IMpeg2TableFilter *self, uint16 p, uint8 t) AddTable;
+			public function HRESULT(IMpeg2TableFilter *self, uint16 p, uint8 t, uint16 e) AddExtension;
+			public function HRESULT(IMpeg2TableFilter *self, uint16 p) RemovePID;
+			public function HRESULT(IMpeg2TableFilter *self, uint16 p, uint8 t) RemoveTable;
+			public function HRESULT(IMpeg2TableFilter *self, uint16 p, uint8 t, uint16 e) RemoveExtension;
+		}
+		[CRepr]
+		public struct IMpeg2Data : IUnknown
+		{
+			public const new Guid IID = .(0x9b396d40, 0xf380, 0x4e3c, 0xa5, 0x14, 0x1a, 0x82, 0xbf, 0x6e, 0xbf, 0xe6);
+			
+			public function HRESULT(IMpeg2Data *self, uint16 pid, uint8 tid, MPEG2_FILTER* pFilter, uint32 dwTimeout, ISectionList** ppSectionList) GetSection;
+			public function HRESULT(IMpeg2Data *self, uint16 pid, uint8 tid, MPEG2_FILTER* pFilter, uint32 dwTimeout, ISectionList** ppSectionList) GetTable;
+			public function HRESULT(IMpeg2Data *self, uint16 pid, uint8 tid, MPEG2_FILTER* pFilter, HANDLE hDataReadyEvent, IMpeg2Stream** ppMpegStream) GetStreamOfSections;
+		}
+		[CRepr]
+		public struct ISectionList : IUnknown
+		{
+			public const new Guid IID = .(0xafec1eb5, 0x2a64, 0x46c6, 0xbf, 0x4b, 0xae, 0x3c, 0xcb, 0x6a, 0xfd, 0xb0);
+			
+			public function HRESULT(ISectionList *self, MPEG_REQUEST_TYPE requestType, IMpeg2Data* pMpeg2Data, MPEG_CONTEXT* pContext, uint16 pid, uint8 tid, MPEG2_FILTER* pFilter, uint32 timeout, HANDLE hDoneEvent) Initialize;
+			public function HRESULT(ISectionList *self, MPEG_PACKET_LIST* pmplSections) InitializeWithRawSections;
+			public function HRESULT(ISectionList *self) CancelPendingRequest;
+			public function HRESULT(ISectionList *self, uint16* pCount) GetNumberOfSections;
+			public function HRESULT(ISectionList *self, uint16 sectionNumber, uint32* pdwRawPacketLength, SECTION** ppSection) GetSectionData;
+			public function HRESULT(ISectionList *self, uint16* pPid) GetProgramIdentifier;
+			public function HRESULT(ISectionList *self, uint8* pTableId) GetTableIdentifier;
+		}
+		[CRepr]
+		public struct IMpeg2Stream : IUnknown
+		{
+			public const new Guid IID = .(0x400cc286, 0x32a0, 0x4ce4, 0x90, 0x41, 0x39, 0x57, 0x11, 0x25, 0xa6, 0x35);
+			
+			public function HRESULT(IMpeg2Stream *self, MPEG_REQUEST_TYPE requestType, IMpeg2Data* pMpeg2Data, MPEG_CONTEXT* pContext, uint16 pid, uint8 tid, MPEG2_FILTER* pFilter, HANDLE hDataReadyEvent) Initialize;
+			public function HRESULT(IMpeg2Stream *self, MPEG_STREAM_BUFFER* pStreamBuffer) SupplyDataBuffer;
+		}
+		[CRepr]
+		public struct IGenericDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x6a5918f8, 0xa77a, 0x4f61, 0xae, 0xd0, 0x57, 0x02, 0xbd, 0xcd, 0xa3, 0xe6);
+			
+			public function HRESULT(IGenericDescriptor *self, uint8* pbDesc, int32 bCount) Initialize;
+			public function HRESULT(IGenericDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IGenericDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IGenericDescriptor *self, uint8** ppbVal) GetBody;
+		}
+		[CRepr]
+		public struct IGenericDescriptor2 : IGenericDescriptor
+		{
+			public const new Guid IID = .(0xbf02fb7e, 0x9792, 0x4e10, 0xa6, 0x8d, 0x03, 0x3a, 0x2c, 0xc2, 0x46, 0xa5);
+			
+			public function HRESULT(IGenericDescriptor2 *self, uint8* pbDesc, uint16 wCount) Initialize;
+			public function HRESULT(IGenericDescriptor2 *self, uint16* pwVal) GetLength;
+		}
+		[CRepr]
+		public struct IPAT : IUnknown
+		{
+			public const new Guid IID = .(0x6623b511, 0x4b5f, 0x43c3, 0x9a, 0x01, 0xe8, 0xff, 0x84, 0x18, 0x80, 0x60);
+			
+			public function HRESULT(IPAT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IPAT *self, uint16* pwVal) GetTransportStreamId;
+			public function HRESULT(IPAT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IPAT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IPAT *self, uint32 dwIndex, uint16* pwVal) GetRecordProgramNumber;
+			public function HRESULT(IPAT *self, uint32 dwIndex, uint16* pwVal) GetRecordProgramMapPid;
+			public function HRESULT(IPAT *self, uint16 wProgramNumber, uint16* pwVal) FindRecordProgramMapPid;
+			public function HRESULT(IPAT *self, HANDLE hNextTableAvailable) RegisterForNextTable;
+			public function HRESULT(IPAT *self, IPAT** ppPAT) GetNextTable;
+			public function HRESULT(IPAT *self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+			public function HRESULT(IPAT *self) ConvertNextToCurrent;
+		}
+		[CRepr]
+		public struct ICAT : IUnknown
+		{
+			public const new Guid IID = .(0x7c6995fb, 0x2a31, 0x4bd7, 0x95, 0x3e, 0xb1, 0xad, 0x7f, 0xb7, 0xd3, 0x1c);
+			
+			public function HRESULT(ICAT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(ICAT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(ICAT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(ICAT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(ICAT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public function HRESULT(ICAT *self, HANDLE hNextTableAvailable) RegisterForNextTable;
+			public function HRESULT(ICAT *self, uint32 dwTimeout, ICAT** ppCAT) GetNextTable;
+			public function HRESULT(ICAT *self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+			public function HRESULT(ICAT *self) ConvertNextToCurrent;
+		}
+		[CRepr]
+		public struct IPMT : IUnknown
+		{
+			public const new Guid IID = .(0x01f3b398, 0x9527, 0x4736, 0x94, 0xdb, 0x51, 0x95, 0x87, 0x8e, 0x97, 0xa8);
+			
+			public function HRESULT(IPMT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IPMT *self, uint16* pwVal) GetProgramNumber;
+			public function HRESULT(IPMT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IPMT *self, uint16* pPidVal) GetPcrPid;
+			public function HRESULT(IPMT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IPMT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IPMT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public function HRESULT(IPMT *self, uint16* pwVal) GetCountOfRecords;
+			public function HRESULT(IPMT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordStreamType;
+			public function HRESULT(IPMT *self, uint32 dwRecordIndex, uint16* pPidVal) GetRecordElementaryPid;
+			public function HRESULT(IPMT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IPMT *self, uint32 dwRecordIndex, uint32 dwDescIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IPMT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IPMT *self, DSMCC_ELEMENT** ppDSMCCList, uint32* puiCount) QueryServiceGatewayInfo;
+			public function HRESULT(IPMT *self, MPE_ELEMENT** ppMPEList, uint32* puiCount) QueryMPEInfo;
+			public function HRESULT(IPMT *self, HANDLE hNextTableAvailable) RegisterForNextTable;
+			public function HRESULT(IPMT *self, IPMT** ppPMT) GetNextTable;
+			public function HRESULT(IPMT *self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+			public function HRESULT(IPMT *self) ConvertNextToCurrent;
+		}
+		[CRepr]
+		public struct ITSDT : IUnknown
+		{
+			public const new Guid IID = .(0xd19bdb43, 0x405b, 0x4a7c, 0xa7, 0x91, 0xc8, 0x91, 0x10, 0xc3, 0x31, 0x65);
+			
+			public function HRESULT(ITSDT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(ITSDT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(ITSDT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(ITSDT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(ITSDT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public function HRESULT(ITSDT *self, HANDLE hNextTableAvailable) RegisterForNextTable;
+			public function HRESULT(ITSDT *self, ITSDT** ppTSDT) GetNextTable;
+			public function HRESULT(ITSDT *self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+			public function HRESULT(ITSDT *self) ConvertNextToCurrent;
+		}
+		[CRepr]
+		public struct IPSITables : IUnknown
+		{
+			public const new Guid IID = .(0x919f24c5, 0x7b14, 0x42ac, 0xa4, 0xb0, 0x2a, 0xe0, 0x8d, 0xaf, 0x00, 0xac);
+			
+			public function HRESULT(IPSITables *self, uint32 dwTSID, uint32 dwTID_PID, uint32 dwHashedVer, uint32 dwPara4, IUnknown** ppIUnknown) GetTable;
+		}
+		[CRepr]
+		public struct IAtscPsipParser : IUnknown
+		{
+			public const new Guid IID = .(0xb2c98995, 0x5eb2, 0x4fb1, 0xb4, 0x06, 0xf3, 0xe8, 0xe2, 0x02, 0x6a, 0x9a);
+			
+			public function HRESULT(IAtscPsipParser *self, IUnknown* punkMpeg2Data) Initialize;
+			public function HRESULT(IAtscPsipParser *self, IPAT** ppPAT) GetPAT;
+			public function HRESULT(IAtscPsipParser *self, uint32 dwTimeout, ICAT** ppCAT) GetCAT;
+			public function HRESULT(IAtscPsipParser *self, uint16 pid, uint16* pwProgramNumber, IPMT** ppPMT) GetPMT;
+			public function HRESULT(IAtscPsipParser *self, ITSDT** ppTSDT) GetTSDT;
+			public function HRESULT(IAtscPsipParser *self, IATSC_MGT** ppMGT) GetMGT;
+			public function HRESULT(IAtscPsipParser *self, uint8 tableId, BOOL fGetNextTable, IATSC_VCT** ppVCT) GetVCT;
+			public function HRESULT(IAtscPsipParser *self, uint16 pid, uint16* pwSourceId, uint32 dwTimeout, IATSC_EIT** ppEIT) GetEIT;
+			public function HRESULT(IAtscPsipParser *self, uint16 pid, uint16* wSourceId, uint16* pwEventId, IATSC_ETT** ppETT) GetETT;
+			public function HRESULT(IAtscPsipParser *self, IATSC_STT** ppSTT) GetSTT;
+			public function HRESULT(IAtscPsipParser *self, uint16 pid, ISCTE_EAS** ppEAS) GetEAS;
+		}
+		[CRepr]
+		public struct IATSC_MGT : IUnknown
+		{
+			public const new Guid IID = .(0x8877dabd, 0xc137, 0x4073, 0x97, 0xe3, 0x77, 0x94, 0x07, 0xa5, 0xd8, 0x7a);
+			
+			public function HRESULT(IATSC_MGT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IATSC_MGT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IATSC_MGT *self, uint8* pbVal) GetProtocolVersion;
+			public function HRESULT(IATSC_MGT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IATSC_MGT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordType;
+			public function HRESULT(IATSC_MGT *self, uint32 dwRecordIndex, uint16* ppidVal) GetRecordTypePid;
+			public function HRESULT(IATSC_MGT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordVersionNumber;
+			public function HRESULT(IATSC_MGT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IATSC_MGT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IATSC_MGT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IATSC_MGT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IATSC_MGT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IATSC_MGT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+		}
+		[CRepr]
+		public struct IATSC_VCT : IUnknown
+		{
+			public const new Guid IID = .(0x26879a18, 0x32f9, 0x46c6, 0x91, 0xf0, 0xfb, 0x64, 0x79, 0x27, 0x0e, 0x8c);
+			
+			public function HRESULT(IATSC_VCT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IATSC_VCT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IATSC_VCT *self, uint16* pwVal) GetTransportStreamId;
+			public function HRESULT(IATSC_VCT *self, uint8* pbVal) GetProtocolVersion;
+			public function HRESULT(IATSC_VCT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, PWSTR* pwsName) GetRecordName;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordMajorChannelNumber;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordMinorChannelNumber;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordModulationMode;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCarrierFrequency;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordTransportStreamId;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordProgramNumber;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordEtmLocation;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, BOOL* pfVal) GetRecordIsAccessControlledBitSet;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, BOOL* pfVal) GetRecordIsHiddenBitSet;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, BOOL* pfVal) GetRecordIsPathSelectBitSet;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, BOOL* pfVal) GetRecordIsOutOfBandBitSet;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, BOOL* pfVal) GetRecordIsHideGuideBitSet;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordServiceType;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordSourceId;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IATSC_VCT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IATSC_VCT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IATSC_VCT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IATSC_VCT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+		}
+		[CRepr]
+		public struct IATSC_EIT : IUnknown
+		{
+			public const new Guid IID = .(0xd7c212d7, 0x76a2, 0x4b4b, 0xaa, 0x56, 0x84, 0x68, 0x79, 0xa8, 0x00, 0x96);
+			
+			public function HRESULT(IATSC_EIT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IATSC_EIT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IATSC_EIT *self, uint16* pwVal) GetSourceId;
+			public function HRESULT(IATSC_EIT *self, uint8* pbVal) GetProtocolVersion;
+			public function HRESULT(IATSC_EIT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IATSC_EIT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordEventId;
+			public function HRESULT(IATSC_EIT *self, uint32 dwRecordIndex, MPEG_DATE_AND_TIME* pmdtVal) GetRecordStartTime;
+			public function HRESULT(IATSC_EIT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordEtmLocation;
+			public function HRESULT(IATSC_EIT *self, uint32 dwRecordIndex, MPEG_TIME* pmdVal) GetRecordDuration;
+			public function HRESULT(IATSC_EIT *self, uint32 dwRecordIndex, uint32* pdwLength, uint8** ppText) GetRecordTitleText;
+			public function HRESULT(IATSC_EIT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IATSC_EIT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IATSC_EIT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+		}
+		[CRepr]
+		public struct IATSC_ETT : IUnknown
+		{
+			public const new Guid IID = .(0x5a142cc9, 0xb8cf, 0x4a86, 0xa0, 0x40, 0xe9, 0xca, 0xdf, 0x3e, 0xf3, 0xe7);
+			
+			public function HRESULT(IATSC_ETT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IATSC_ETT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IATSC_ETT *self, uint8* pbVal) GetProtocolVersion;
+			public function HRESULT(IATSC_ETT *self, uint32* pdwVal) GetEtmId;
+			public function HRESULT(IATSC_ETT *self, uint32* pdwLength, uint8** ppText) GetExtendedMessageText;
+		}
+		[CRepr]
+		public struct IATSC_STT : IUnknown
+		{
+			public const new Guid IID = .(0x6bf42423, 0x217d, 0x4d6f, 0x81, 0xe1, 0x3a, 0x7b, 0x36, 0x0e, 0xc8, 0x96);
+			
+			public function HRESULT(IATSC_STT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IATSC_STT *self, uint8* pbVal) GetProtocolVersion;
+			public function HRESULT(IATSC_STT *self, MPEG_DATE_AND_TIME* pmdtSystemTime) GetSystemTime;
+			public function HRESULT(IATSC_STT *self, uint8* pbVal) GetGpsUtcOffset;
+			public function HRESULT(IATSC_STT *self, uint16* pwVal) GetDaylightSavings;
+			public function HRESULT(IATSC_STT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IATSC_STT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IATSC_STT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+		}
+		[CRepr]
+		public struct ISCTE_EAS : IUnknown
+		{
+			public const new Guid IID = .(0x1ff544d6, 0x161d, 0x4fae, 0x9f, 0xaa, 0x4f, 0x9f, 0x49, 0x2a, 0xe9, 0x99);
+			
+			public function HRESULT(ISCTE_EAS *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetSequencyNumber;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetProtocolVersion;
+			public function HRESULT(ISCTE_EAS *self, uint16* pwVal) GetEASEventID;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetOriginatorCode;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetEASEventCodeLen;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetEASEventCode;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetRawNatureOfActivationTextLen;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetRawNatureOfActivationText;
+			public function HRESULT(ISCTE_EAS *self, BSTR bstrIS0639code, BSTR* pbstrString) GetNatureOfActivationText;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetTimeRemaining;
+			public function HRESULT(ISCTE_EAS *self, uint32* pdwVal) GetStartTime;
+			public function HRESULT(ISCTE_EAS *self, uint16* pwVal) GetDuration;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetAlertPriority;
+			public function HRESULT(ISCTE_EAS *self, uint16* pwVal) GetDetailsOOBSourceID;
+			public function HRESULT(ISCTE_EAS *self, uint16* pwVal) GetDetailsMajor;
+			public function HRESULT(ISCTE_EAS *self, uint16* pwVal) GetDetailsMinor;
+			public function HRESULT(ISCTE_EAS *self, uint16* pwVal) GetDetailsAudioOOBSourceID;
+			public function HRESULT(ISCTE_EAS *self, BSTR bstrIS0639code, BSTR* pbstrString) GetAlertText;
+			public function HRESULT(ISCTE_EAS *self, uint16* pwVal) GetRawAlertTextLen;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetRawAlertText;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetLocationCount;
+			public function HRESULT(ISCTE_EAS *self, uint8 bIndex, uint8* pbState, uint8* pbCountySubdivision, uint16* pwCounty) GetLocationCodes;
+			public function HRESULT(ISCTE_EAS *self, uint8* pbVal) GetExceptionCount;
+			public function HRESULT(ISCTE_EAS *self, uint8 bIndex, uint8* pbIBRef, uint16* pwFirst, uint16* pwSecond) GetExceptionService;
+			public function HRESULT(ISCTE_EAS *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(ISCTE_EAS *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(ISCTE_EAS *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+		}
+		[CRepr]
+		public struct IAtscContentAdvisoryDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xff76e60c, 0x0283, 0x43ea, 0xba, 0x32, 0xb4, 0x22, 0x23, 0x85, 0x47, 0xee);
+			
+			public function HRESULT(IAtscContentAdvisoryDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IAtscContentAdvisoryDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IAtscContentAdvisoryDescriptor *self, uint8* pbVal) GetRatingRegionCount;
+			public function HRESULT(IAtscContentAdvisoryDescriptor *self, uint8 bIndex, uint8* pbVal) GetRecordRatingRegion;
+			public function HRESULT(IAtscContentAdvisoryDescriptor *self, uint8 bIndex, uint8* pbVal) GetRecordRatedDimensions;
+			public function HRESULT(IAtscContentAdvisoryDescriptor *self, uint8 bIndexOuter, uint8 bIndexInner, uint8* pbVal) GetRecordRatingDimension;
+			public function HRESULT(IAtscContentAdvisoryDescriptor *self, uint8 bIndexOuter, uint8 bIndexInner, uint8* pbVal) GetRecordRatingValue;
+			public function HRESULT(IAtscContentAdvisoryDescriptor *self, uint8 bIndex, uint8* pbLength, uint8** ppText) GetRecordRatingDescriptionText;
+		}
+		[CRepr]
+		public struct ICaptionServiceDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x40834007, 0x6834, 0x46f0, 0xbd, 0x45, 0xd5, 0xf6, 0xa6, 0xbe, 0x25, 0x8c);
+			
+			public function HRESULT(ICaptionServiceDescriptor *self, uint8* pbVal) GetNumberOfServices;
+			public function HRESULT(ICaptionServiceDescriptor *self, uint8 bIndex, uint8* LangCode) GetLanguageCode;
+			public function HRESULT(ICaptionServiceDescriptor *self, uint8 bIndex, uint8* pbVal) GetCaptionServiceNumber;
+			public function HRESULT(ICaptionServiceDescriptor *self, uint8 bIndex, uint8* pbVal) GetCCType;
+			public function HRESULT(ICaptionServiceDescriptor *self, uint8 bIndex, uint8* pbVal) GetEasyReader;
+			public function HRESULT(ICaptionServiceDescriptor *self, uint8 bIndex, uint8* pbVal) GetWideAspectRatio;
+		}
+		[CRepr]
+		public struct IServiceLocationDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x58c3c827, 0x9d91, 0x4215, 0xbf, 0xf3, 0x82, 0x0a, 0x49, 0xf0, 0x90, 0x4c);
+			
+			public function HRESULT(IServiceLocationDescriptor *self, uint16* pwVal) GetPCR_PID;
+			public function HRESULT(IServiceLocationDescriptor *self, uint8* pbVal) GetNumberOfElements;
+			public function HRESULT(IServiceLocationDescriptor *self, uint8 bIndex, uint8* pbVal) GetElementStreamType;
+			public function HRESULT(IServiceLocationDescriptor *self, uint8 bIndex, uint16* pwVal) GetElementPID;
+			public function HRESULT(IServiceLocationDescriptor *self, uint8 bIndex, uint8* LangCode) GetElementLanguageCode;
+		}
+		[CRepr]
+		public struct IAttributeSet : IUnknown
+		{
+			public const new Guid IID = .(0x583ec3cc, 0x4960, 0x4857, 0x98, 0x2b, 0x41, 0xa3, 0x3e, 0xa0, 0xa0, 0x06);
+			
+			public function HRESULT(IAttributeSet *self, Guid guidAttribute, uint8* pbAttribute, uint32 dwAttributeLength) SetAttrib;
+		}
+		[CRepr]
+		public struct IAttributeGet : IUnknown
+		{
+			public const new Guid IID = .(0x52dbd1ec, 0xe48f, 0x4528, 0x92, 0x32, 0xf4, 0x42, 0xa6, 0x8f, 0x0a, 0xe1);
+			
+			public function HRESULT(IAttributeGet *self, int32* plCount) GetCount;
+			public function HRESULT(IAttributeGet *self, int32 lIndex, Guid* pguidAttribute, uint8* pbAttribute, uint32* pdwAttributeLength) GetAttribIndexed;
+			public function HRESULT(IAttributeGet *self, Guid guidAttribute, uint8* pbAttribute, uint32* pdwAttributeLength) GetAttrib;
+		}
+		[CRepr]
+		public struct IDvbSiParser : IUnknown
+		{
+			public const new Guid IID = .(0xb758a7bd, 0x14dc, 0x449d, 0xb8, 0x28, 0x35, 0x90, 0x9a, 0xcb, 0x3b, 0x1e);
+			
+			public function HRESULT(IDvbSiParser *self, IUnknown* punkMpeg2Data) Initialize;
+			public function HRESULT(IDvbSiParser *self, IPAT** ppPAT) GetPAT;
+			public function HRESULT(IDvbSiParser *self, uint32 dwTimeout, ICAT** ppCAT) GetCAT;
+			public function HRESULT(IDvbSiParser *self, uint16 pid, uint16* pwProgramNumber, IPMT** ppPMT) GetPMT;
+			public function HRESULT(IDvbSiParser *self, ITSDT** ppTSDT) GetTSDT;
+			public function HRESULT(IDvbSiParser *self, uint8 tableId, uint16* pwNetworkId, IDVB_NIT** ppNIT) GetNIT;
+			public function HRESULT(IDvbSiParser *self, uint8 tableId, uint16* pwTransportStreamId, IDVB_SDT** ppSDT) GetSDT;
+			public function HRESULT(IDvbSiParser *self, uint8 tableId, uint16* pwServiceId, IDVB_EIT** ppEIT) GetEIT;
+			public function HRESULT(IDvbSiParser *self, uint16* pwBouquetId, IDVB_BAT** ppBAT) GetBAT;
+			public function HRESULT(IDvbSiParser *self, uint32 dwTimeout, IDVB_RST** ppRST) GetRST;
+			public function HRESULT(IDvbSiParser *self, uint16 pid, uint32 dwTimeout, IDVB_ST** ppST) GetST;
+			public function HRESULT(IDvbSiParser *self, IDVB_TDT** ppTDT) GetTDT;
+			public function HRESULT(IDvbSiParser *self, IDVB_TOT** ppTOT) GetTOT;
+			public function HRESULT(IDvbSiParser *self, uint32 dwTimeout, IDVB_DIT** ppDIT) GetDIT;
+			public function HRESULT(IDvbSiParser *self, uint32 dwTimeout, IDVB_SIT** ppSIT) GetSIT;
+		}
+		[CRepr]
+		public struct IDvbSiParser2 : IDvbSiParser
+		{
+			public const new Guid IID = .(0x0ac5525f, 0xf816, 0x42f4, 0x93, 0xba, 0x4c, 0x0f, 0x32, 0xf4, 0x6e, 0x54);
+			
+			public function HRESULT(IDvbSiParser2 *self, uint8 tableId, uint16* pwServiceId, uint8* pbSegment, IDVB_EIT2** ppEIT) GetEIT2;
+		}
+		[CRepr]
+		public struct IIsdbSiParser2 : IDvbSiParser2
+		{
+			public const new Guid IID = .(0x900e4bb7, 0x18cd, 0x453f, 0x98, 0xbe, 0x3b, 0xe6, 0xaa, 0x21, 0x17, 0x72);
+			
+			public function HRESULT(IIsdbSiParser2 *self, uint8 tableId, uint16* pwTransportStreamId, IISDB_SDT** ppSDT) GetSDT;
+			public function HRESULT(IIsdbSiParser2 *self, uint8 tableId, uint16* pwOriginalNetworkId, IISDB_BIT** ppBIT) GetBIT;
+			public function HRESULT(IIsdbSiParser2 *self, uint8 tableId, uint16* pwOriginalNetworkId, IISDB_NBIT** ppNBIT) GetNBIT;
+			public function HRESULT(IIsdbSiParser2 *self, uint8 tableId, uint16* pwOriginalServiceId, IISDB_LDT** ppLDT) GetLDT;
+			public function HRESULT(IIsdbSiParser2 *self, uint8 tableId, uint16* pwTableIdExt, IISDB_SDTT** ppSDTT) GetSDTT;
+			public function HRESULT(IIsdbSiParser2 *self, uint8 tableId, uint8 bSectionNumber, uint16* pwDownloadDataId, IISDB_CDT** ppCDT) GetCDT;
+			public function HRESULT(IIsdbSiParser2 *self, uint16 pid, uint16 wTableIdExt, IISDB_EMM** ppEMM) GetEMM;
+		}
+		[CRepr]
+		public struct IDVB_NIT : IUnknown
+		{
+			public const new Guid IID = .(0xc64935f4, 0x29e4, 0x4e22, 0x91, 0x1a, 0x63, 0xf7, 0xf5, 0x5c, 0xb0, 0x97);
+			
+			public function HRESULT(IDVB_NIT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IDVB_NIT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IDVB_NIT *self, uint16* pwVal) GetNetworkId;
+			public function HRESULT(IDVB_NIT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IDVB_NIT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IDVB_NIT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public function HRESULT(IDVB_NIT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IDVB_NIT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordTransportStreamId;
+			public function HRESULT(IDVB_NIT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordOriginalNetworkId;
+			public function HRESULT(IDVB_NIT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IDVB_NIT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IDVB_NIT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IDVB_NIT *self, HANDLE hNextTableAvailable) RegisterForNextTable;
+			public function HRESULT(IDVB_NIT *self, IDVB_NIT** ppNIT) GetNextTable;
+			public function HRESULT(IDVB_NIT *self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+			public function HRESULT(IDVB_NIT *self) ConvertNextToCurrent;
+			public function HRESULT(IDVB_NIT *self, uint32* pdwVersionHash) GetVersionHash;
+		}
+		[CRepr]
+		public struct IDVB_SDT : IUnknown
+		{
+			public const new Guid IID = .(0x02cad8d3, 0xfe43, 0x48e2, 0x90, 0xbd, 0x45, 0x0e, 0xd9, 0xa8, 0xa5, 0xfd);
+			
+			public function HRESULT(IDVB_SDT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IDVB_SDT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IDVB_SDT *self, uint16* pwVal) GetTransportStreamId;
+			public function HRESULT(IDVB_SDT *self, uint16* pwVal) GetOriginalNetworkId;
+			public function HRESULT(IDVB_SDT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IDVB_SDT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordServiceId;
+			public function HRESULT(IDVB_SDT *self, uint32 dwRecordIndex, BOOL* pfVal) GetRecordEITScheduleFlag;
+			public function HRESULT(IDVB_SDT *self, uint32 dwRecordIndex, BOOL* pfVal) GetRecordEITPresentFollowingFlag;
+			public function HRESULT(IDVB_SDT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordRunningStatus;
+			public function HRESULT(IDVB_SDT *self, uint32 dwRecordIndex, BOOL* pfVal) GetRecordFreeCAMode;
+			public function HRESULT(IDVB_SDT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IDVB_SDT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IDVB_SDT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IDVB_SDT *self, HANDLE hNextTableAvailable) RegisterForNextTable;
+			public function HRESULT(IDVB_SDT *self, IDVB_SDT** ppSDT) GetNextTable;
+			public function HRESULT(IDVB_SDT *self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+			public function HRESULT(IDVB_SDT *self) ConvertNextToCurrent;
+			public function HRESULT(IDVB_SDT *self, uint32* pdwVersionHash) GetVersionHash;
+		}
+		[CRepr]
+		public struct IISDB_SDT : IDVB_SDT
+		{
+			public const new Guid IID = .(0x3f3dc9a2, 0xbb32, 0x4fb9, 0xae, 0x9e, 0xd8, 0x56, 0x84, 0x89, 0x27, 0xa3);
+			
+			public function HRESULT(IISDB_SDT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordEITUserDefinedFlags;
+		}
+		[CRepr]
+		public struct IDVB_EIT : IUnknown
+		{
+			public const new Guid IID = .(0x442db029, 0x02cb, 0x4495, 0x8b, 0x92, 0x1c, 0x13, 0x37, 0x5b, 0xce, 0x99);
+			
+			public function HRESULT(IDVB_EIT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IDVB_EIT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IDVB_EIT *self, uint16* pwVal) GetServiceId;
+			public function HRESULT(IDVB_EIT *self, uint16* pwVal) GetTransportStreamId;
+			public function HRESULT(IDVB_EIT *self, uint16* pwVal) GetOriginalNetworkId;
+			public function HRESULT(IDVB_EIT *self, uint8* pbVal) GetSegmentLastSectionNumber;
+			public function HRESULT(IDVB_EIT *self, uint8* pbVal) GetLastTableId;
+			public function HRESULT(IDVB_EIT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IDVB_EIT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordEventId;
+			public function HRESULT(IDVB_EIT *self, uint32 dwRecordIndex, MPEG_DATE_AND_TIME* pmdtVal) GetRecordStartTime;
+			public function HRESULT(IDVB_EIT *self, uint32 dwRecordIndex, MPEG_TIME* pmdVal) GetRecordDuration;
+			public function HRESULT(IDVB_EIT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordRunningStatus;
+			public function HRESULT(IDVB_EIT *self, uint32 dwRecordIndex, BOOL* pfVal) GetRecordFreeCAMode;
+			public function HRESULT(IDVB_EIT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IDVB_EIT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IDVB_EIT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IDVB_EIT *self, HANDLE hNextTableAvailable) RegisterForNextTable;
+			public function HRESULT(IDVB_EIT *self, IDVB_EIT** ppEIT) GetNextTable;
+			public function HRESULT(IDVB_EIT *self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+			public function HRESULT(IDVB_EIT *self) ConvertNextToCurrent;
+			public function HRESULT(IDVB_EIT *self, uint32* pdwVersionHash) GetVersionHash;
+		}
+		[CRepr]
+		public struct IDVB_EIT2 : IDVB_EIT
+		{
+			public const new Guid IID = .(0x61a389e0, 0x9b9e, 0x4ba0, 0xae, 0xea, 0x5d, 0xdd, 0x15, 0x98, 0x20, 0xea);
+			
+			public function HRESULT(IDVB_EIT2 *self, uint8* pbTid, uint8* pbSegment) GetSegmentInfo;
+			public function HRESULT(IDVB_EIT2 *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordSection;
+		}
+		[CRepr]
+		public struct IDVB_BAT : IUnknown
+		{
+			public const new Guid IID = .(0xece9bb0c, 0x43b6, 0x4558, 0xa0, 0xec, 0x18, 0x12, 0xc3, 0x4c, 0xd6, 0xca);
+			
+			public function HRESULT(IDVB_BAT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IDVB_BAT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IDVB_BAT *self, uint16* pwVal) GetBouquetId;
+			public function HRESULT(IDVB_BAT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IDVB_BAT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IDVB_BAT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public function HRESULT(IDVB_BAT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IDVB_BAT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordTransportStreamId;
+			public function HRESULT(IDVB_BAT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordOriginalNetworkId;
+			public function HRESULT(IDVB_BAT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IDVB_BAT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IDVB_BAT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IDVB_BAT *self, HANDLE hNextTableAvailable) RegisterForNextTable;
+			public function HRESULT(IDVB_BAT *self, IDVB_BAT** ppBAT) GetNextTable;
+			public function HRESULT(IDVB_BAT *self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+			public function HRESULT(IDVB_BAT *self) ConvertNextToCurrent;
+		}
+		[CRepr]
+		public struct IDVB_RST : IUnknown
+		{
+			public const new Guid IID = .(0xf47dcd04, 0x1e23, 0x4fb7, 0x9f, 0x96, 0xb4, 0x0e, 0xea, 0xd1, 0x0b, 0x2b);
+			
+			public function HRESULT(IDVB_RST *self, ISectionList* pSectionList) Initialize;
+			public function HRESULT(IDVB_RST *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IDVB_RST *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordTransportStreamId;
+			public function HRESULT(IDVB_RST *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordOriginalNetworkId;
+			public function HRESULT(IDVB_RST *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordServiceId;
+			public function HRESULT(IDVB_RST *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordEventId;
+			public function HRESULT(IDVB_RST *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordRunningStatus;
+		}
+		[CRepr]
+		public struct IDVB_ST : IUnknown
+		{
+			public const new Guid IID = .(0x4d5b9f23, 0x2a02, 0x45de, 0xbc, 0xda, 0x5d, 0x5d, 0xbf, 0xbf, 0xbe, 0x62);
+			
+			public function HRESULT(IDVB_ST *self, ISectionList* pSectionList) Initialize;
+			public function HRESULT(IDVB_ST *self, uint16* pwVal) GetDataLength;
+			public function HRESULT(IDVB_ST *self, uint8** ppData) GetData;
+		}
+		[CRepr]
+		public struct IDVB_TDT : IUnknown
+		{
+			public const new Guid IID = .(0x0780dc7d, 0xd55c, 0x4aef, 0x97, 0xe6, 0x6b, 0x75, 0x90, 0x6e, 0x27, 0x96);
+			
+			public function HRESULT(IDVB_TDT *self, ISectionList* pSectionList) Initialize;
+			public function HRESULT(IDVB_TDT *self, MPEG_DATE_AND_TIME* pmdtVal) GetUTCTime;
+		}
+		[CRepr]
+		public struct IDVB_TOT : IUnknown
+		{
+			public const new Guid IID = .(0x83295d6a, 0xfaba, 0x4ee1, 0x9b, 0x15, 0x80, 0x67, 0x69, 0x69, 0x10, 0xae);
+			
+			public function HRESULT(IDVB_TOT *self, ISectionList* pSectionList) Initialize;
+			public function HRESULT(IDVB_TOT *self, MPEG_DATE_AND_TIME* pmdtVal) GetUTCTime;
+			public function HRESULT(IDVB_TOT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IDVB_TOT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IDVB_TOT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+		}
+		[CRepr]
+		public struct IDVB_DIT : IUnknown
+		{
+			public const new Guid IID = .(0x91bffdf9, 0x9432, 0x410f, 0x86, 0xef, 0x1c, 0x22, 0x8e, 0xd0, 0xad, 0x70);
+			
+			public function HRESULT(IDVB_DIT *self, ISectionList* pSectionList) Initialize;
+			public function HRESULT(IDVB_DIT *self, BOOL* pfVal) GetTransitionFlag;
+		}
+		[CRepr]
+		public struct IDVB_SIT : IUnknown
+		{
+			public const new Guid IID = .(0x68cdce53, 0x8bea, 0x45c2, 0x9d, 0x9d, 0xac, 0xf5, 0x75, 0xa0, 0x89, 0xb5);
+			
+			public function HRESULT(IDVB_SIT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IDVB_SIT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IDVB_SIT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IDVB_SIT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IDVB_SIT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public function HRESULT(IDVB_SIT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IDVB_SIT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordServiceId;
+			public function HRESULT(IDVB_SIT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordRunningStatus;
+			public function HRESULT(IDVB_SIT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IDVB_SIT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IDVB_SIT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IDVB_SIT *self, HANDLE hNextTableAvailable) RegisterForNextTable;
+			public function HRESULT(IDVB_SIT *self, uint32 dwTimeout, IDVB_SIT** ppSIT) GetNextTable;
+			public function HRESULT(IDVB_SIT *self, HANDLE hNextTableIsCurrent) RegisterForWhenCurrent;
+			public function HRESULT(IDVB_SIT *self) ConvertNextToCurrent;
+		}
+		[CRepr]
+		public struct IISDB_BIT : IUnknown
+		{
+			public const new Guid IID = .(0x537cd71e, 0x0e46, 0x4173, 0x90, 0x01, 0xba, 0x04, 0x3f, 0x3e, 0x49, 0xe2);
+			
+			public function HRESULT(IISDB_BIT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IISDB_BIT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IISDB_BIT *self, uint16* pwVal) GetOriginalNetworkId;
+			public function HRESULT(IISDB_BIT *self, uint8* pbVal) GetBroadcastViewPropriety;
+			public function HRESULT(IISDB_BIT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IISDB_BIT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IISDB_BIT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public function HRESULT(IISDB_BIT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IISDB_BIT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordBroadcasterId;
+			public function HRESULT(IISDB_BIT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IISDB_BIT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IISDB_BIT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IISDB_BIT *self, uint32* pdwVersionHash) GetVersionHash;
+		}
+		[CRepr]
+		public struct IISDB_NBIT : IUnknown
+		{
+			public const new Guid IID = .(0x1b1863ef, 0x08f1, 0x40b7, 0xa5, 0x59, 0x3b, 0x1e, 0xff, 0x8c, 0xaf, 0xa6);
+			
+			public function HRESULT(IISDB_NBIT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IISDB_NBIT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IISDB_NBIT *self, uint16* pwVal) GetOriginalNetworkId;
+			public function HRESULT(IISDB_NBIT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordInformationId;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordInformationType;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordDescriptionBodyLocation;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordMessageSectionNumber;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordUserDefined;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordNumberOfKeys;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint8** pbKeys) GetRecordKeys;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IISDB_NBIT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IISDB_NBIT *self, uint32* pdwVersionHash) GetVersionHash;
+		}
+		[CRepr]
+		public struct IISDB_LDT : IUnknown
+		{
+			public const new Guid IID = .(0x141a546b, 0x02ff, 0x4fb9, 0xa3, 0xa3, 0x2f, 0x07, 0x4b, 0x74, 0xa9, 0xa9);
+			
+			public function HRESULT(IISDB_LDT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IISDB_LDT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IISDB_LDT *self, uint16* pwVal) GetOriginalServiceId;
+			public function HRESULT(IISDB_LDT *self, uint16* pwVal) GetTransportStreamId;
+			public function HRESULT(IISDB_LDT *self, uint16* pwVal) GetOriginalNetworkId;
+			public function HRESULT(IISDB_LDT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IISDB_LDT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordDescriptionId;
+			public function HRESULT(IISDB_LDT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IISDB_LDT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IISDB_LDT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IISDB_LDT *self, uint32* pdwVersionHash) GetVersionHash;
+		}
+		[CRepr]
+		public struct IISDB_SDTT : IUnknown
+		{
+			public const new Guid IID = .(0xee60ef2d, 0x813a, 0x4dc7, 0xbf, 0x92, 0xea, 0x13, 0xda, 0xc8, 0x53, 0x13);
+			
+			public function HRESULT(IISDB_SDTT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IISDB_SDTT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IISDB_SDTT *self, uint16* pwVal) GetTableIdExt;
+			public function HRESULT(IISDB_SDTT *self, uint16* pwVal) GetTransportStreamId;
+			public function HRESULT(IISDB_SDTT *self, uint16* pwVal) GetOriginalNetworkId;
+			public function HRESULT(IISDB_SDTT *self, uint16* pwVal) GetServiceId;
+			public function HRESULT(IISDB_SDTT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordGroup;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordTargetVersion;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint16* pwVal) GetRecordNewVersion;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordDownloadLevel;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordVersionIndicator;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint8* pbVal) GetRecordScheduleTimeShiftInformation;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfSchedules;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint32 dwIndex, MPEG_DATE_AND_TIME* pmdtVal) GetRecordStartTimeByIndex;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint32 dwIndex, MPEG_TIME* pmdVal) GetRecordDurationByIndex;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IISDB_SDTT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+			public function HRESULT(IISDB_SDTT *self, uint32* pdwVersionHash) GetVersionHash;
+		}
+		[CRepr]
+		public struct IISDB_CDT : IUnknown
+		{
+			public const new Guid IID = .(0x25fa92c2, 0x8b80, 0x4787, 0xa8, 0x41, 0x3a, 0x0e, 0x8f, 0x17, 0x98, 0x4b);
+			
+			public function HRESULT(IISDB_CDT *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData, uint8 bSectionNumber) Initialize;
+			public function HRESULT(IISDB_CDT *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IISDB_CDT *self, uint16* pwVal) GetDownloadDataId;
+			public function HRESULT(IISDB_CDT *self, uint8* pbVal) GetSectionNumber;
+			public function HRESULT(IISDB_CDT *self, uint16* pwVal) GetOriginalNetworkId;
+			public function HRESULT(IISDB_CDT *self, uint8* pbVal) GetDataType;
+			public function HRESULT(IISDB_CDT *self, uint32* pdwVal) GetCountOfTableDescriptors;
+			public function HRESULT(IISDB_CDT *self, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetTableDescriptorByIndex;
+			public function HRESULT(IISDB_CDT *self, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetTableDescriptorByTag;
+			public function HRESULT(IISDB_CDT *self, uint32* pdwVal) GetSizeOfDataModule;
+			public function HRESULT(IISDB_CDT *self, uint8** pbData) GetDataModule;
+			public function HRESULT(IISDB_CDT *self, uint32* pdwVersionHash) GetVersionHash;
+		}
+		[CRepr]
+		public struct IISDB_EMM : IUnknown
+		{
+			public const new Guid IID = .(0x0edb556d, 0x43ad, 0x4938, 0x96, 0x68, 0x32, 0x1b, 0x2f, 0xfe, 0xcf, 0xd3);
+			
+			public function HRESULT(IISDB_EMM *self, ISectionList* pSectionList, IMpeg2Data* pMPEGData) Initialize;
+			public function HRESULT(IISDB_EMM *self, uint8* pbVal) GetVersionNumber;
+			public function HRESULT(IISDB_EMM *self, uint16* pwVal) GetTableIdExtension;
+			public function HRESULT(IISDB_EMM *self, uint16* pwBufferLength, uint8* pbBuffer) GetDataBytes;
+			public function HRESULT(IISDB_EMM *self, uint16* pwLength, uint8** ppbMessage) GetSharedEmmMessage;
+			public function HRESULT(IISDB_EMM *self, IUnknown* pUnknown, uint16* pwLength, uint8** ppbMessage) GetIndividualEmmMessage;
+			public function HRESULT(IISDB_EMM *self, uint32* pdwVersionHash) GetVersionHash;
+		}
+		[CRepr]
+		public struct IDvbServiceAttributeDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x0f37bd92, 0xd6a1, 0x4854, 0xb9, 0x50, 0x3a, 0x96, 0x9d, 0x27, 0xf3, 0x0e);
+			
+			public function HRESULT(IDvbServiceAttributeDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbServiceAttributeDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbServiceAttributeDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbServiceAttributeDescriptor *self, uint8 bRecordIndex, uint16* pwVal) GetRecordServiceId;
+			public function HRESULT(IDvbServiceAttributeDescriptor *self, uint8 bRecordIndex, BOOL* pfVal) GetRecordNumericSelectionFlag;
+			public function HRESULT(IDvbServiceAttributeDescriptor *self, uint8 bRecordIndex, BOOL* pfVal) GetRecordVisibleServiceFlag;
+		}
+		[CRepr]
+		public struct IDvbContentIdentifierDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x05e0c1ea, 0xf661, 0x4053, 0x9f, 0xbf, 0xd9, 0x3b, 0x28, 0x35, 0x98, 0x38);
+			
+			public function HRESULT(IDvbContentIdentifierDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbContentIdentifierDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbContentIdentifierDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbContentIdentifierDescriptor *self, uint8 bRecordIndex, uint8* pbType, uint8* pbLocation, uint8* pbLength, uint8** ppbBytes) GetRecordCrid;
+		}
+		[CRepr]
+		public struct IDvbDefaultAuthorityDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x05ec24d1, 0x3a31, 0x44e7, 0xb4, 0x08, 0x67, 0xc6, 0x0a, 0x35, 0x22, 0x76);
+			
+			public function HRESULT(IDvbDefaultAuthorityDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbDefaultAuthorityDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbDefaultAuthorityDescriptor *self, uint8* pbLength, uint8** ppbBytes) GetDefaultAuthority;
+		}
+		[CRepr]
+		public struct IDvbSatelliteDeliverySystemDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x02f2225a, 0x805b, 0x4ec5, 0xa9, 0xa6, 0xf9, 0xb5, 0x91, 0x3c, 0xd4, 0x70);
+			
+			public function HRESULT(IDvbSatelliteDeliverySystemDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbSatelliteDeliverySystemDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbSatelliteDeliverySystemDescriptor *self, uint32* pdwVal) GetFrequency;
+			public function HRESULT(IDvbSatelliteDeliverySystemDescriptor *self, uint16* pwVal) GetOrbitalPosition;
+			public function HRESULT(IDvbSatelliteDeliverySystemDescriptor *self, uint8* pbVal) GetWestEastFlag;
+			public function HRESULT(IDvbSatelliteDeliverySystemDescriptor *self, uint8* pbVal) GetPolarization;
+			public function HRESULT(IDvbSatelliteDeliverySystemDescriptor *self, uint8* pbVal) GetModulation;
+			public function HRESULT(IDvbSatelliteDeliverySystemDescriptor *self, uint32* pdwVal) GetSymbolRate;
+			public function HRESULT(IDvbSatelliteDeliverySystemDescriptor *self, uint8* pbVal) GetFECInner;
+		}
+		[CRepr]
+		public struct IDvbCableDeliverySystemDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xdfb98e36, 0x9e1a, 0x4862, 0x99, 0x46, 0x99, 0x3a, 0x4e, 0x59, 0x01, 0x7b);
+			
+			public function HRESULT(IDvbCableDeliverySystemDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbCableDeliverySystemDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbCableDeliverySystemDescriptor *self, uint32* pdwVal) GetFrequency;
+			public function HRESULT(IDvbCableDeliverySystemDescriptor *self, uint8* pbVal) GetFECOuter;
+			public function HRESULT(IDvbCableDeliverySystemDescriptor *self, uint8* pbVal) GetModulation;
+			public function HRESULT(IDvbCableDeliverySystemDescriptor *self, uint32* pdwVal) GetSymbolRate;
+			public function HRESULT(IDvbCableDeliverySystemDescriptor *self, uint8* pbVal) GetFECInner;
+		}
+		[CRepr]
+		public struct IDvbTerrestrialDeliverySystemDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xed7e1b91, 0xd12e, 0x420c, 0xb4, 0x1d, 0xa4, 0x9d, 0x84, 0xfe, 0x18, 0x23);
+			
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint32* pdwVal) GetCentreFrequency;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetBandwidth;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetConstellation;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetHierarchyInformation;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetCodeRateHPStream;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetCodeRateLPStream;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetGuardInterval;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetTransmissionMode;
+			public function HRESULT(IDvbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetOtherFrequencyFlag;
+		}
+		[CRepr]
+		public struct IDvbTerrestrial2DeliverySystemDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x20ee9be9, 0xcd57, 0x49ab, 0x8f, 0x6e, 0x1d, 0x07, 0xae, 0xb8, 0xe4, 0x82);
+			
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetTagExtension;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint32* pdwVal) GetCentreFrequency;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetPLPId;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint16* pwVal) GetT2SystemId;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetMultipleInputMode;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetBandwidth;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetGuardInterval;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetTransmissionMode;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint16* pwVal) GetCellId;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetOtherFrequencyFlag;
+			public function HRESULT(IDvbTerrestrial2DeliverySystemDescriptor *self, uint8* pbVal) GetTFSFlag;
+		}
+		[CRepr]
+		public struct IDvbFrequencyListDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x1cadb613, 0xe1dd, 0x4512, 0xaf, 0xa8, 0xbb, 0x7a, 0x00, 0x7e, 0xf8, 0xb1);
+			
+			public function HRESULT(IDvbFrequencyListDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbFrequencyListDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbFrequencyListDescriptor *self, uint8* pbVal) GetCodingType;
+			public function HRESULT(IDvbFrequencyListDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbFrequencyListDescriptor *self, uint8 bRecordIndex, uint32* pdwVal) GetRecordCentreFrequency;
+		}
+		[CRepr]
+		public struct IDvbPrivateDataSpecifierDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x5660a019, 0xe75a, 0x4b82, 0x9b, 0x4c, 0xed, 0x22, 0x56, 0xd1, 0x65, 0xa2);
+			
+			public function HRESULT(IDvbPrivateDataSpecifierDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbPrivateDataSpecifierDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbPrivateDataSpecifierDescriptor *self, uint32* pdwVal) GetPrivateDataSpecifier;
+		}
+		[CRepr]
+		public struct IDvbLogicalChannelDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xcf1edaff, 0x3ffd, 0x4cf7, 0x82, 0x01, 0x35, 0x75, 0x6a, 0xcb, 0xf8, 0x5f);
+			
+			public function HRESULT(IDvbLogicalChannelDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbLogicalChannelDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbLogicalChannelDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbLogicalChannelDescriptor *self, uint8 bRecordIndex, uint16* pwVal) GetRecordServiceId;
+			public function HRESULT(IDvbLogicalChannelDescriptor *self, uint8 bRecordIndex, uint16* pwVal) GetRecordLogicalChannelNumber;
+		}
+		[CRepr]
+		public struct IDvbLogicalChannelDescriptor2 : IDvbLogicalChannelDescriptor
+		{
+			public const new Guid IID = .(0x43aca974, 0x4be8, 0x4b98, 0xbc, 0x17, 0x9e, 0xaf, 0xd7, 0x88, 0xb1, 0xd7);
+			
+			public function HRESULT(IDvbLogicalChannelDescriptor2 *self, uint8 bRecordIndex, uint16* pwVal) GetRecordLogicalChannelAndVisibility;
+		}
+		[CRepr]
+		public struct IDvbLogicalChannel2Descriptor : IDvbLogicalChannelDescriptor2
+		{
+			public const new Guid IID = .(0xf69c3747, 0x8a30, 0x4980, 0x99, 0x8c, 0x01, 0xfe, 0x7f, 0x0b, 0xa3, 0x5a);
+			
+			public function HRESULT(IDvbLogicalChannel2Descriptor *self, uint8* pbVal) GetCountOfLists;
+			public function HRESULT(IDvbLogicalChannel2Descriptor *self, uint8 bListIndex, uint8* pbVal) GetListId;
+			public function HRESULT(IDvbLogicalChannel2Descriptor *self, uint8 bListIndex, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetListNameW;
+			public function HRESULT(IDvbLogicalChannel2Descriptor *self, uint8 bListIndex, uint8* pszCode) GetListCountryCode;
+			public function HRESULT(IDvbLogicalChannel2Descriptor *self, uint8 bChannelListIndex, uint8* pbVal) GetListCountOfRecords;
+			public function HRESULT(IDvbLogicalChannel2Descriptor *self, uint8 bListIndex, uint8 bRecordIndex, uint16* pwVal) GetListRecordServiceId;
+			public function HRESULT(IDvbLogicalChannel2Descriptor *self, uint8 bListIndex, uint8 bRecordIndex, uint16* pwVal) GetListRecordLogicalChannelNumber;
+			public function HRESULT(IDvbLogicalChannel2Descriptor *self, uint8 bListIndex, uint8 bRecordIndex, uint16* pwVal) GetListRecordLogicalChannelAndVisibility;
+		}
+		[CRepr]
+		public struct IDvbHDSimulcastLogicalChannelDescriptor : IDvbLogicalChannelDescriptor2
+		{
+			public const new Guid IID = .(0x1ea8b738, 0xa307, 0x4680, 0x9e, 0x26, 0xd0, 0xa9, 0x08, 0xc8, 0x24, 0xf4);
+			
+		}
+		[CRepr]
+		public struct IDvbDataBroadcastIDDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x5f26f518, 0x65c8, 0x4048, 0x91, 0xf2, 0x92, 0x90, 0xf5, 0x9f, 0x7b, 0x90);
+			
+			public function HRESULT(IDvbDataBroadcastIDDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbDataBroadcastIDDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbDataBroadcastIDDescriptor *self, uint16* pwVal) GetDataBroadcastID;
+			public function HRESULT(IDvbDataBroadcastIDDescriptor *self, uint8* pbLen, uint8* pbVal) GetIDSelectorBytes;
+		}
+		[CRepr]
+		public struct IDvbDataBroadcastDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xd1ebc1d6, 0x8b60, 0x4c20, 0x9c, 0xaf, 0xe5, 0x93, 0x82, 0xe7, 0xc4, 0x00);
+			
+			public function HRESULT(IDvbDataBroadcastDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbDataBroadcastDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbDataBroadcastDescriptor *self, uint16* pwVal) GetDataBroadcastID;
+			public function HRESULT(IDvbDataBroadcastDescriptor *self, uint8* pbVal) GetComponentTag;
+			public function HRESULT(IDvbDataBroadcastDescriptor *self, uint8* pbVal) GetSelectorLength;
+			public function HRESULT(IDvbDataBroadcastDescriptor *self, uint8* pbLen, uint8* pbVal) GetSelectorBytes;
+			public function HRESULT(IDvbDataBroadcastDescriptor *self, uint32* pulVal) GetLangID;
+			public function HRESULT(IDvbDataBroadcastDescriptor *self, uint8* pbVal) GetTextLength;
+			public function HRESULT(IDvbDataBroadcastDescriptor *self, uint8* pbLen, uint8* pbVal) GetText;
+		}
+		[CRepr]
+		public struct IDvbLinkageDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x1cdf8b31, 0x994a, 0x46fc, 0xac, 0xfd, 0x6a, 0x6b, 0xe8, 0x93, 0x4d, 0xd5);
+			
+			public function HRESULT(IDvbLinkageDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbLinkageDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbLinkageDescriptor *self, uint16* pwVal) GetTSId;
+			public function HRESULT(IDvbLinkageDescriptor *self, uint16* pwVal) GetONId;
+			public function HRESULT(IDvbLinkageDescriptor *self, uint16* pwVal) GetServiceId;
+			public function HRESULT(IDvbLinkageDescriptor *self, uint8* pbVal) GetLinkageType;
+			public function HRESULT(IDvbLinkageDescriptor *self, uint8* pbVal) GetPrivateDataLength;
+			public function HRESULT(IDvbLinkageDescriptor *self, uint8* pbLen, uint8* pbData) GetPrivateData;
+		}
+		[CRepr]
+		public struct IDvbTeletextDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x9cd29d47, 0x69c6, 0x4f92, 0x98, 0xa9, 0x21, 0x0a, 0xf1, 0xb7, 0x30, 0x3a);
+			
+			public function HRESULT(IDvbTeletextDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbTeletextDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbTeletextDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbTeletextDescriptor *self, uint8 bRecordIndex, uint32* pulVal) GetRecordLangId;
+			public function HRESULT(IDvbTeletextDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordTeletextType;
+			public function HRESULT(IDvbTeletextDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordMagazineNumber;
+			public function HRESULT(IDvbTeletextDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordPageNumber;
+		}
+		[CRepr]
+		public struct IDvbSubtitlingDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x9b25fe1d, 0xfa23, 0x4e50, 0x97, 0x84, 0x6d, 0xf8, 0xb2, 0x6f, 0x8a, 0x49);
+			
+			public function HRESULT(IDvbSubtitlingDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbSubtitlingDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbSubtitlingDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbSubtitlingDescriptor *self, uint8 bRecordIndex, uint32* pulVal) GetRecordLangId;
+			public function HRESULT(IDvbSubtitlingDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordSubtitlingType;
+			public function HRESULT(IDvbSubtitlingDescriptor *self, uint8 bRecordIndex, uint16* pwVal) GetRecordCompositionPageID;
+			public function HRESULT(IDvbSubtitlingDescriptor *self, uint8 bRecordIndex, uint16* pwVal) GetRecordAncillaryPageID;
+		}
+		[CRepr]
+		public struct IDvbServiceDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xf9c7fbcf, 0xe2d6, 0x464d, 0xb3, 0x2d, 0x2e, 0xf5, 0x26, 0xe4, 0x92, 0x90);
+			
+			public function HRESULT(IDvbServiceDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbServiceDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbServiceDescriptor *self, uint8* pbVal) GetServiceType;
+			public function HRESULT(IDvbServiceDescriptor *self, uint8** pszName) GetServiceProviderName;
+			public function HRESULT(IDvbServiceDescriptor *self, BSTR* pbstrName) GetServiceProviderNameW;
+			public function HRESULT(IDvbServiceDescriptor *self, uint8** pszName) GetServiceName;
+			public function HRESULT(IDvbServiceDescriptor *self, BSTR* pbstrName) GetProcessedServiceName;
+			public function HRESULT(IDvbServiceDescriptor *self, BSTR* pbstrName) GetServiceNameEmphasized;
+		}
+		[CRepr]
+		public struct IDvbServiceDescriptor2 : IDvbServiceDescriptor
+		{
+			public const new Guid IID = .(0xd6c76506, 0x85ab, 0x487c, 0x9b, 0x2b, 0x36, 0x41, 0x65, 0x11, 0xe4, 0xa2);
+			
+			public function HRESULT(IDvbServiceDescriptor2 *self, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetServiceProviderNameW;
+			public function HRESULT(IDvbServiceDescriptor2 *self, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetServiceNameW;
+		}
+		[CRepr]
+		public struct IDvbServiceListDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x05db0d8f, 0x6008, 0x491a, 0xac, 0xd3, 0x70, 0x90, 0x95, 0x27, 0x07, 0xd0);
+			
+			public function HRESULT(IDvbServiceListDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbServiceListDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbServiceListDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbServiceListDescriptor *self, uint8 bRecordIndex, uint16* pwVal) GetRecordServiceId;
+			public function HRESULT(IDvbServiceListDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordServiceType;
+		}
+		[CRepr]
+		public struct IDvbMultilingualServiceNameDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x2d80433b, 0xb32c, 0x47ef, 0x98, 0x7f, 0xe7, 0x8e, 0xbb, 0x77, 0x3e, 0x34);
+			
+			public function HRESULT(IDvbMultilingualServiceNameDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbMultilingualServiceNameDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbMultilingualServiceNameDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbMultilingualServiceNameDescriptor *self, uint8 bRecordIndex, uint32* ulVal) GetRecordLangId;
+			public function HRESULT(IDvbMultilingualServiceNameDescriptor *self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetRecordServiceProviderNameW;
+			public function HRESULT(IDvbMultilingualServiceNameDescriptor *self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetRecordServiceNameW;
+		}
+		[CRepr]
+		public struct IDvbNetworkNameDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x5b2a80cf, 0x35b9, 0x446c, 0xb3, 0xe4, 0x04, 0x8b, 0x76, 0x1d, 0xbc, 0x51);
+			
+			public function HRESULT(IDvbNetworkNameDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbNetworkNameDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbNetworkNameDescriptor *self, uint8** pszName) GetNetworkName;
+			public function HRESULT(IDvbNetworkNameDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetNetworkNameW;
+		}
+		[CRepr]
+		public struct IDvbShortEventDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xb170be92, 0x5b75, 0x458e, 0x9c, 0x6e, 0xb0, 0x00, 0x82, 0x31, 0x49, 0x1a);
+			
+			public function HRESULT(IDvbShortEventDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbShortEventDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbShortEventDescriptor *self, uint8* pszCode) GetLanguageCode;
+			public function HRESULT(IDvbShortEventDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetEventNameW;
+			public function HRESULT(IDvbShortEventDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrText) GetTextW;
+		}
+		[CRepr]
+		public struct IDvbExtendedEventDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xc9b22eca, 0x85f4, 0x499f, 0xb1, 0xdb, 0xef, 0xa9, 0x3a, 0x91, 0xee, 0x57);
+			
+			public function HRESULT(IDvbExtendedEventDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, uint8* pbVal) GetDescriptorNumber;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, uint8* pbVal) GetLastDescriptorNumber;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, uint8* pszCode) GetLanguageCode;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, BSTR* pbstrDesc, BSTR* pbstrItem) GetRecordItemW;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, IDvbExtendedEventDescriptor* pFollowingDescriptor, DVB_STRCONV_MODE convMode, BSTR* pbstrDesc, BSTR* pbstrItem) GetConcatenatedItemW;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrText) GetTextW;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, IDvbExtendedEventDescriptor* FollowingDescriptor, DVB_STRCONV_MODE convMode, BSTR* pbstrText) GetConcatenatedTextW;
+			public function HRESULT(IDvbExtendedEventDescriptor *self, uint8 bRecordIndex, uint8** ppbRawItem, uint8* pbItemLength) GetRecordItemRawBytes;
+		}
+		[CRepr]
+		public struct IDvbComponentDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x91e405cf, 0x80e7, 0x457f, 0x90, 0x96, 0x1b, 0x9d, 0x1c, 0xe3, 0x21, 0x41);
+			
+			public function HRESULT(IDvbComponentDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbComponentDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbComponentDescriptor *self, uint8* pbVal) GetStreamContent;
+			public function HRESULT(IDvbComponentDescriptor *self, uint8* pbVal) GetComponentType;
+			public function HRESULT(IDvbComponentDescriptor *self, uint8* pbVal) GetComponentTag;
+			public function HRESULT(IDvbComponentDescriptor *self, uint8* pszCode) GetLanguageCode;
+			public function HRESULT(IDvbComponentDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrText) GetTextW;
+		}
+		[CRepr]
+		public struct IDvbContentDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x2e883881, 0xa467, 0x412a, 0x9d, 0x63, 0x6f, 0x2b, 0x6d, 0xa0, 0x5b, 0xf0);
+			
+			public function HRESULT(IDvbContentDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbContentDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbContentDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbContentDescriptor *self, uint8 bRecordIndex, uint8* pbValLevel1, uint8* pbValLevel2) GetRecordContentNibbles;
+			public function HRESULT(IDvbContentDescriptor *self, uint8 bRecordIndex, uint8* pbVal1, uint8* pbVal2) GetRecordUserNibbles;
+		}
+		[CRepr]
+		public struct IDvbParentalRatingDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x3ad9dde1, 0xfb1b, 0x4186, 0x93, 0x7f, 0x22, 0xe6, 0xb5, 0xa7, 0x2a, 0x10);
+			
+			public function HRESULT(IDvbParentalRatingDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IDvbParentalRatingDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IDvbParentalRatingDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IDvbParentalRatingDescriptor *self, uint8 bRecordIndex, uint8* pszCountryCode, uint8* pbVal) GetRecordRating;
+		}
+		[CRepr]
+		public struct IIsdbTerrestrialDeliverySystemDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x39fae0a6, 0xd151, 0x44dd, 0xa2, 0x8a, 0x76, 0x5d, 0xe5, 0x99, 0x16, 0x70);
+			
+			public function HRESULT(IIsdbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbTerrestrialDeliverySystemDescriptor *self, uint16* pwVal) GetAreaCode;
+			public function HRESULT(IIsdbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetGuardInterval;
+			public function HRESULT(IIsdbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetTransmissionMode;
+			public function HRESULT(IIsdbTerrestrialDeliverySystemDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IIsdbTerrestrialDeliverySystemDescriptor *self, uint8 bRecordIndex, uint32* pdwVal) GetRecordFrequency;
+		}
+		[CRepr]
+		public struct IIsdbTSInformationDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xd7ad183e, 0x38f5, 0x4210, 0xb5, 0x5f, 0xec, 0x8d, 0x60, 0x1b, 0xbd, 0x47);
+			
+			public function HRESULT(IIsdbTSInformationDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbTSInformationDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbTSInformationDescriptor *self, uint8* pbVal) GetRemoteControlKeyId;
+			public function HRESULT(IIsdbTSInformationDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetTSNameW;
+			public function HRESULT(IIsdbTSInformationDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IIsdbTSInformationDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordTransmissionTypeInfo;
+			public function HRESULT(IIsdbTSInformationDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordNumberOfServices;
+			public function HRESULT(IIsdbTSInformationDescriptor *self, uint8 bRecordIndex, uint8 bServiceIndex, uint16* pdwVal) GetRecordServiceIdByIndex;
+		}
+		[CRepr]
+		public struct IIsdbDigitalCopyControlDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x1a28417e, 0x266a, 0x4bb8, 0xa4, 0xbd, 0xd7, 0x82, 0xbc, 0xfb, 0x81, 0x61);
+			
+			public function HRESULT(IIsdbDigitalCopyControlDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbDigitalCopyControlDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbDigitalCopyControlDescriptor *self, uint8* pbDigitalRecordingControlData, uint8* pbCopyControlType, uint8* pbAPSControlData, uint8* pbMaximumBitrate) GetCopyControl;
+			public function HRESULT(IIsdbDigitalCopyControlDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IIsdbDigitalCopyControlDescriptor *self, uint8 bRecordIndex, uint8* pbComponentTag, uint8* pbDigitalRecordingControlData, uint8* pbCopyControlType, uint8* pbAPSControlData, uint8* pbMaximumBitrate) GetRecordCopyControl;
+		}
+		[CRepr]
+		public struct IIsdbAudioComponentDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x679d2002, 0x2425, 0x4be4, 0xa4, 0xc7, 0xd6, 0x63, 0x2a, 0x57, 0x4f, 0x4d);
+			
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pbVal) GetStreamContent;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pbVal) GetComponentType;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pbVal) GetComponentTag;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pbVal) GetStreamType;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pbVal) GetSimulcastGroupTag;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, BOOL* pfVal) GetESMultiLingualFlag;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, BOOL* pfVal) GetMainComponentFlag;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pbVal) GetQualityIndicator;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pbVal) GetSamplingRate;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pszCode) GetLanguageCode;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, uint8* pszCode) GetLanguageCode2;
+			public function HRESULT(IIsdbAudioComponentDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrText) GetTextW;
+		}
+		[CRepr]
+		public struct IIsdbDataContentDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xa428100a, 0xe646, 0x4bd6, 0xaa, 0x14, 0x60, 0x87, 0xbd, 0xc0, 0x8c, 0xd5);
+			
+			public function HRESULT(IIsdbDataContentDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbDataContentDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbDataContentDescriptor *self, uint16* pwVal) GetDataComponentId;
+			public function HRESULT(IIsdbDataContentDescriptor *self, uint8* pbVal) GetEntryComponent;
+			public function HRESULT(IIsdbDataContentDescriptor *self, uint8* pbVal) GetSelectorLength;
+			public function HRESULT(IIsdbDataContentDescriptor *self, uint8 bBufLength, uint8* pbBuf) GetSelectorBytes;
+			public function HRESULT(IIsdbDataContentDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IIsdbDataContentDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordComponentRef;
+			public function HRESULT(IIsdbDataContentDescriptor *self, uint8* pszCode) GetLanguageCode;
+			public function HRESULT(IIsdbDataContentDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrText) GetTextW;
+		}
+		[CRepr]
+		public struct IIsdbCAContractInformationDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x08e18b25, 0xa28f, 0x4e92, 0x82, 0x1e, 0x4f, 0xce, 0xd5, 0xcc, 0x22, 0x91);
+			
+			public function HRESULT(IIsdbCAContractInformationDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbCAContractInformationDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbCAContractInformationDescriptor *self, uint16* pwVal) GetCASystemId;
+			public function HRESULT(IIsdbCAContractInformationDescriptor *self, uint8* pbVal) GetCAUnitId;
+			public function HRESULT(IIsdbCAContractInformationDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IIsdbCAContractInformationDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordComponentTag;
+			public function HRESULT(IIsdbCAContractInformationDescriptor *self, uint8* pbVal) GetContractVerificationInfoLength;
+			public function HRESULT(IIsdbCAContractInformationDescriptor *self, uint8 bBufLength, uint8* pbBuf) GetContractVerificationInfo;
+			public function HRESULT(IIsdbCAContractInformationDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetFeeNameW;
+		}
+		[CRepr]
+		public struct IIsdbEventGroupDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x94b06780, 0x2e2a, 0x44dc, 0xa9, 0x66, 0xcc, 0x56, 0xfd, 0xab, 0xc6, 0xc2);
+			
+			public function HRESULT(IIsdbEventGroupDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbEventGroupDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbEventGroupDescriptor *self, uint8* pbVal) GetGroupType;
+			public function HRESULT(IIsdbEventGroupDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IIsdbEventGroupDescriptor *self, uint8 bRecordIndex, uint16* pwServiceId, uint16* pwEventId) GetRecordEvent;
+			public function HRESULT(IIsdbEventGroupDescriptor *self, uint8* pbVal) GetCountOfRefRecords;
+			public function HRESULT(IIsdbEventGroupDescriptor *self, uint8 bRecordIndex, uint16* pwOriginalNetworkId, uint16* pwTransportStreamId, uint16* pwServiceId, uint16* pwEventId) GetRefRecordEvent;
+		}
+		[CRepr]
+		public struct IIsdbComponentGroupDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xa494f17f, 0xc592, 0x47d8, 0x89, 0x43, 0x64, 0xc9, 0xa3, 0x4b, 0xe7, 0xb9);
+			
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8* pbVal) GetComponentGroupType;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordGroupId;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordNumberOfCAUnit;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8 bRecordIndex, uint8 bCAUnitIndex, uint8* pbVal) GetRecordCAUnitCAUnitId;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8 bRecordIndex, uint8 bCAUnitIndex, uint8* pbVal) GetRecordCAUnitNumberOfComponents;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8 bRecordIndex, uint8 bCAUnitIndex, uint8 bComponentIndex, uint8* pbVal) GetRecordCAUnitComponentTag;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetRecordTotalBitRate;
+			public function HRESULT(IIsdbComponentGroupDescriptor *self, uint8 bRecordIndex, DVB_STRCONV_MODE convMode, BSTR* pbstrText) GetRecordTextW;
+		}
+		[CRepr]
+		public struct IIsdbSeriesDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x07ef6370, 0x1660, 0x4f26, 0x87, 0xfc, 0x61, 0x4a, 0xda, 0xb2, 0x4b, 0x11);
+			
+			public function HRESULT(IIsdbSeriesDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbSeriesDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbSeriesDescriptor *self, uint16* pwVal) GetSeriesId;
+			public function HRESULT(IIsdbSeriesDescriptor *self, uint8* pbVal) GetRepeatLabel;
+			public function HRESULT(IIsdbSeriesDescriptor *self, uint8* pbVal) GetProgramPattern;
+			public function HRESULT(IIsdbSeriesDescriptor *self, BOOL* pfValid, MPEG_DATE_AND_TIME* pmdtVal) GetExpireDate;
+			public function HRESULT(IIsdbSeriesDescriptor *self, uint16* pwVal) GetEpisodeNumber;
+			public function HRESULT(IIsdbSeriesDescriptor *self, uint16* pwVal) GetLastEpisodeNumber;
+			public function HRESULT(IIsdbSeriesDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetSeriesNameW;
+		}
+		[CRepr]
+		public struct IIsdbDownloadContentDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x5298661e, 0xcb88, 0x4f5f, 0xa1, 0xde, 0x5f, 0x44, 0x0c, 0x18, 0x5b, 0x92);
+			
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, BOOL* pfReboot, BOOL* pfAddOn, BOOL* pfCompatibility, BOOL* pfModuleInfo, BOOL* pfTextInfo) GetFlags;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint32* pdwVal) GetComponentSize;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint32* pdwVal) GetDownloadId;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint32* pdwVal) GetTimeOutValueDII;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint32* pdwVal) GetLeakRate;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint8* pbVal) GetComponentTag;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint16* pwLength) GetCompatiblityDescriptorLength;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint8** ppbData) GetCompatiblityDescriptor;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint16* pwVal) GetCountOfRecords;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint16 wRecordIndex, uint16* pwVal) GetRecordModuleId;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint16 wRecordIndex, uint32* pdwVal) GetRecordModuleSize;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint16 wRecordIndex, uint8* pbVal) GetRecordModuleInfoLength;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint16 wRecordIndex, uint8** ppbData) GetRecordModuleInfo;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, uint8* szCode) GetTextLanguageCode;
+			public function HRESULT(IIsdbDownloadContentDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrName) GetTextW;
+		}
+		[CRepr]
+		public struct IIsdbLogoTransmissionDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xe0103f49, 0x4ae1, 0x4f07, 0x90, 0x98, 0x75, 0x6d, 0xb1, 0xfa, 0x88, 0xcd);
+			
+			public function HRESULT(IIsdbLogoTransmissionDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbLogoTransmissionDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbLogoTransmissionDescriptor *self, uint8* pbVal) GetLogoTransmissionType;
+			public function HRESULT(IIsdbLogoTransmissionDescriptor *self, uint16* pwVal) GetLogoId;
+			public function HRESULT(IIsdbLogoTransmissionDescriptor *self, uint16* pwVal) GetLogoVersion;
+			public function HRESULT(IIsdbLogoTransmissionDescriptor *self, uint16* pwVal) GetDownloadDataId;
+			public function HRESULT(IIsdbLogoTransmissionDescriptor *self, DVB_STRCONV_MODE convMode, BSTR* pbstrChar) GetLogoCharW;
+		}
+		[CRepr]
+		public struct IIsdbSIParameterDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xf837dc36, 0x867c, 0x426a, 0x91, 0x11, 0xf6, 0x20, 0x93, 0x95, 0x1a, 0x45);
+			
+			public function HRESULT(IIsdbSIParameterDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbSIParameterDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbSIParameterDescriptor *self, uint8* pbVal) GetParameterVersion;
+			public function HRESULT(IIsdbSIParameterDescriptor *self, MPEG_DATE* pVal) GetUpdateTime;
+			public function HRESULT(IIsdbSIParameterDescriptor *self, uint8* pbVal) GetRecordNumberOfTable;
+			public function HRESULT(IIsdbSIParameterDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetTableId;
+			public function HRESULT(IIsdbSIParameterDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetTableDescriptionLength;
+			public function HRESULT(IIsdbSIParameterDescriptor *self, uint8 bRecordIndex, uint8* pbBufferLength, uint8* pbBuffer) GetTableDescriptionBytes;
+		}
+		[CRepr]
+		public struct IIsdbEmergencyInformationDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xba6fa681, 0xb973, 0x4da1, 0x92, 0x07, 0xac, 0x3e, 0x7f, 0x03, 0x41, 0xeb);
+			
+			public function HRESULT(IIsdbEmergencyInformationDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbEmergencyInformationDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbEmergencyInformationDescriptor *self, uint8* pbVal) GetCountOfRecords;
+			public function HRESULT(IIsdbEmergencyInformationDescriptor *self, uint8 bRecordIndex, uint16* pwVal) GetServiceId;
+			public function HRESULT(IIsdbEmergencyInformationDescriptor *self, uint8 bRecordIndex, uint8* pVal) GetStartEndFlag;
+			public function HRESULT(IIsdbEmergencyInformationDescriptor *self, uint8 bRecordIndex, uint8* pbVal) GetSignalLevel;
+			public function HRESULT(IIsdbEmergencyInformationDescriptor *self, uint8 bRecordIndex, uint16** ppwVal, uint8* pbNumAreaCodes) GetAreaCode;
+		}
+		[CRepr]
+		public struct IIsdbCADescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x0570aa47, 0x52bc, 0x42ae, 0x8c, 0xa5, 0x96, 0x9f, 0x41, 0xe8, 0x1a, 0xea);
+			
+			public function HRESULT(IIsdbCADescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbCADescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbCADescriptor *self, uint16* pwVal) GetCASystemId;
+			public function HRESULT(IIsdbCADescriptor *self, uint8* pbVal) GetReservedBits;
+			public function HRESULT(IIsdbCADescriptor *self, uint16* pwVal) GetCAPID;
+			public function HRESULT(IIsdbCADescriptor *self, uint8* pbBufferLength, uint8* pbBuffer) GetPrivateDataBytes;
+		}
+		[CRepr]
+		public struct IIsdbCAServiceDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x39cbeb97, 0xff0b, 0x42a7, 0x9a, 0xb9, 0x7b, 0x9c, 0xfe, 0x70, 0xa7, 0x7a);
+			
+			public function HRESULT(IIsdbCAServiceDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbCAServiceDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbCAServiceDescriptor *self, uint16* pwVal) GetCASystemId;
+			public function HRESULT(IIsdbCAServiceDescriptor *self, uint8* pbVal) GetCABroadcasterGroupId;
+			public function HRESULT(IIsdbCAServiceDescriptor *self, uint8* pbVal) GetMessageControl;
+			public function HRESULT(IIsdbCAServiceDescriptor *self, uint8* pbNumServiceIds, uint16* pwServiceIds) GetServiceIds;
+		}
+		[CRepr]
+		public struct IIsdbHierarchicalTransmissionDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0xb7b3ae90, 0xee0b, 0x446d, 0x87, 0x69, 0xf7, 0xe2, 0xaa, 0x26, 0x6a, 0xa6);
+			
+			public function HRESULT(IIsdbHierarchicalTransmissionDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IIsdbHierarchicalTransmissionDescriptor *self, uint8* pbVal) GetLength;
+			public function HRESULT(IIsdbHierarchicalTransmissionDescriptor *self, uint8* pbVal) GetFutureUse1;
+			public function HRESULT(IIsdbHierarchicalTransmissionDescriptor *self, uint8* pbVal) GetQualityLevel;
+			public function HRESULT(IIsdbHierarchicalTransmissionDescriptor *self, uint8* pbVal) GetFutureUse2;
+			public function HRESULT(IIsdbHierarchicalTransmissionDescriptor *self, uint16* pwVal) GetReferencePid;
+		}
+		[CRepr]
+		public struct IPBDASiParser : IUnknown
+		{
+			public const new Guid IID = .(0x9de49a74, 0xaba2, 0x4a18, 0x93, 0xe1, 0x21, 0xf1, 0x7f, 0x95, 0xc3, 0xc3);
+			
+			public function HRESULT(IPBDASiParser *self, IUnknown* punk) Initialize;
+			public function HRESULT(IPBDASiParser *self, uint32 dwSize, uint8* pBuffer, IPBDA_EIT** ppEIT) GetEIT;
+			public function HRESULT(IPBDASiParser *self, uint32 dwSize, uint8* pBuffer, IPBDA_Services** ppServices) GetServices;
+		}
+		[CRepr]
+		public struct IPBDA_EIT : IUnknown
+		{
+			public const new Guid IID = .(0xa35f2dea, 0x098f, 0x4ebd, 0x98, 0x4c, 0x2b, 0xd4, 0xc3, 0xc8, 0xce, 0x0a);
+			
+			public function HRESULT(IPBDA_EIT *self, uint32 size, uint8* pBuffer) Initialize;
+			public function HRESULT(IPBDA_EIT *self, uint8* pbVal) GetTableId;
+			public function HRESULT(IPBDA_EIT *self, uint16* pwVal) GetVersionNumber;
+			public function HRESULT(IPBDA_EIT *self, uint64* plwVal) GetServiceIdx;
+			public function HRESULT(IPBDA_EIT *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IPBDA_EIT *self, uint32 dwRecordIndex, uint64* plwVal) GetRecordEventId;
+			public function HRESULT(IPBDA_EIT *self, uint32 dwRecordIndex, MPEG_DATE_AND_TIME* pmdtVal) GetRecordStartTime;
+			public function HRESULT(IPBDA_EIT *self, uint32 dwRecordIndex, MPEG_TIME* pmdVal) GetRecordDuration;
+			public function HRESULT(IPBDA_EIT *self, uint32 dwRecordIndex, uint32* pdwVal) GetRecordCountOfDescriptors;
+			public function HRESULT(IPBDA_EIT *self, uint32 dwRecordIndex, uint32 dwIndex, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByIndex;
+			public function HRESULT(IPBDA_EIT *self, uint32 dwRecordIndex, uint8 bTag, uint32* pdwCookie, IGenericDescriptor** ppDescriptor) GetRecordDescriptorByTag;
+		}
+		[CRepr]
+		public struct IPBDA_Services : IUnknown
+		{
+			public const new Guid IID = .(0x944eab37, 0xeed4, 0x4850, 0xaf, 0xd2, 0x77, 0xe7, 0xef, 0xeb, 0x44, 0x27);
+			
+			public function HRESULT(IPBDA_Services *self, uint32 size, uint8* pBuffer) Initialize;
+			public function HRESULT(IPBDA_Services *self, uint32* pdwVal) GetCountOfRecords;
+			public function HRESULT(IPBDA_Services *self, uint32 dwRecordIndex, uint64* pul64ServiceIdx) GetRecordByIndex;
+		}
+		[CRepr]
+		public struct IPBDAEntitlementDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x22632497, 0x0de3, 0x4587, 0xaa, 0xdc, 0xd8, 0xd9, 0x90, 0x17, 0xe7, 0x60);
+			
+			public function HRESULT(IPBDAEntitlementDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IPBDAEntitlementDescriptor *self, uint16* pwVal) GetLength;
+			public function HRESULT(IPBDAEntitlementDescriptor *self, uint8** ppbTokenBuffer, uint32* pdwTokenLength) GetToken;
+		}
+		[CRepr]
+		public struct IPBDAAttributesDescriptor : IUnknown
+		{
+			public const new Guid IID = .(0x313b3620, 0x3263, 0x45a6, 0x95, 0x33, 0x96, 0x8b, 0xef, 0xbe, 0xac, 0x03);
+			
+			public function HRESULT(IPBDAAttributesDescriptor *self, uint8* pbVal) GetTag;
+			public function HRESULT(IPBDAAttributesDescriptor *self, uint16* pwVal) GetLength;
+			public function HRESULT(IPBDAAttributesDescriptor *self, uint8** ppbAttributeBuffer, uint32* pdwAttributeLength) GetAttributePayload;
+		}
+		[CRepr]
+		public struct IBDA_TIF_REGISTRATION : IUnknown
+		{
+			public const new Guid IID = .(0xdfef4a68, 0xee61, 0x415f, 0x9c, 0xcb, 0xcd, 0x95, 0xf2, 0xf9, 0x8a, 0x3a);
+			
+			public function HRESULT(IBDA_TIF_REGISTRATION *self, IPin* pTIFInputPin, uint32* ppvRegistrationContext, IUnknown** ppMpeg2DataControl) RegisterTIFEx;
+			public function HRESULT(IBDA_TIF_REGISTRATION *self, uint32 pvRegistrationContext) UnregisterTIF;
+		}
+		[CRepr]
+		public struct IMPEG2_TIF_CONTROL : IUnknown
+		{
+			public const new Guid IID = .(0xf9bac2f9, 0x4149, 0x4916, 0xb2, 0xef, 0xfa, 0xa2, 0x02, 0x32, 0x68, 0x62);
+			
+			public function HRESULT(IMPEG2_TIF_CONTROL *self, IUnknown* pUnkTIF, uint32* ppvRegistrationContext) RegisterTIF;
+			public function HRESULT(IMPEG2_TIF_CONTROL *self, uint32 pvRegistrationContext) UnregisterTIF;
+			public function HRESULT(IMPEG2_TIF_CONTROL *self, uint32 ulcPIDs, uint32* pulPIDs) AddPIDs;
+			public function HRESULT(IMPEG2_TIF_CONTROL *self, uint32 ulcPIDs, uint32* pulPIDs) DeletePIDs;
+			public function HRESULT(IMPEG2_TIF_CONTROL *self, uint32* pulcPIDs) GetPIDCount;
+			public function HRESULT(IMPEG2_TIF_CONTROL *self, uint32* pulcPIDs, uint32* pulPIDs) GetPIDs;
+		}
+		[CRepr]
+		public struct ITuneRequestInfo : IUnknown
+		{
+			public const new Guid IID = .(0xa3b152df, 0x7a90, 0x4218, 0xac, 0x54, 0x98, 0x30, 0xbe, 0xe8, 0xc0, 0xb6);
+			
+			public function HRESULT(ITuneRequestInfo *self, ITuneRequest* Request) GetLocatorData;
+			public function HRESULT(ITuneRequestInfo *self, ITuneRequest* CurrentRequest) GetComponentData;
+			public function HRESULT(ITuneRequestInfo *self, ITuneRequest* CurrentRequest) CreateComponentList;
+			public function HRESULT(ITuneRequestInfo *self, ITuneRequest* CurrentRequest, ITuneRequest** TuneRequest) GetNextProgram;
+			public function HRESULT(ITuneRequestInfo *self, ITuneRequest* CurrentRequest, ITuneRequest** TuneRequest) GetPreviousProgram;
+			public function HRESULT(ITuneRequestInfo *self, ITuneRequest* CurrentRequest, ITuneRequest** TuneRequest) GetNextLocator;
+			public function HRESULT(ITuneRequestInfo *self, ITuneRequest* CurrentRequest, ITuneRequest** TuneRequest) GetPreviousLocator;
+		}
+		[CRepr]
+		public struct ITuneRequestInfoEx : ITuneRequestInfo
+		{
+			public const new Guid IID = .(0xee957c52, 0xb0d0, 0x4e78, 0x8d, 0xd1, 0xb8, 0x7a, 0x08, 0xbf, 0xd8, 0x93);
+			
+			public function HRESULT(ITuneRequestInfoEx *self, ITuneRequest* CurrentRequest, IUnknown** ppCurPMT) CreateComponentListEx;
+		}
+		[CRepr]
+		public struct ISIInbandEPGEvent : IUnknown
+		{
+			public const new Guid IID = .(0x7e47913a, 0x5a89, 0x423d, 0x9a, 0x2b, 0xe1, 0x51, 0x68, 0x85, 0x89, 0x34);
+			
+			public function HRESULT(ISIInbandEPGEvent *self, IDVB_EIT2* pIDVB_EIT, uint32 dwTable_ID, uint32 dwService_ID) SIObjectEvent;
+		}
+		[CRepr]
+		public struct ISIInbandEPG : IUnknown
+		{
+			public const new Guid IID = .(0xf90ad9d0, 0xb854, 0x4b68, 0x9c, 0xc1, 0xb2, 0xcc, 0x96, 0x11, 0x9d, 0x85);
+			
+			public function HRESULT(ISIInbandEPG *self) StartSIEPGScan;
+			public function HRESULT(ISIInbandEPG *self) StopSIEPGScan;
+			public function HRESULT(ISIInbandEPG *self, BOOL* bRunning) IsSIEPGScanRunning;
+		}
+		[CRepr]
+		public struct IGuideDataEvent : IUnknown
+		{
+			public const new Guid IID = .(0xefda0c80, 0xf395, 0x42c3, 0x9b, 0x3c, 0x56, 0xb3, 0x7d, 0xec, 0x7b, 0xb7);
+			
+			public function HRESULT(IGuideDataEvent *self) GuideDataAcquired;
+			public function HRESULT(IGuideDataEvent *self, VARIANT varProgramDescriptionID) ProgramChanged;
+			public function HRESULT(IGuideDataEvent *self, VARIANT varServiceDescriptionID) ServiceChanged;
+			public function HRESULT(IGuideDataEvent *self, VARIANT varScheduleEntryDescriptionID) ScheduleEntryChanged;
+			public function HRESULT(IGuideDataEvent *self, VARIANT varProgramDescriptionID) ProgramDeleted;
+			public function HRESULT(IGuideDataEvent *self, VARIANT varServiceDescriptionID) ServiceDeleted;
+			public function HRESULT(IGuideDataEvent *self, VARIANT varScheduleEntryDescriptionID) ScheduleDeleted;
+		}
+		[CRepr]
+		public struct IGuideDataProperty : IUnknown
+		{
+			public const new Guid IID = .(0x88ec5e58, 0xbb73, 0x41d6, 0x99, 0xce, 0x66, 0xc5, 0x24, 0xb8, 0xb5, 0x91);
+			
+			public function HRESULT(IGuideDataProperty *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IGuideDataProperty *self, int32* idLang) get_Language;
+			public function HRESULT(IGuideDataProperty *self, VARIANT* pvar) get_Value;
+		}
+		[CRepr]
+		public struct IEnumGuideDataProperties : IUnknown
+		{
+			public const new Guid IID = .(0xae44423b, 0x4571, 0x475c, 0xad, 0x2c, 0xf4, 0x0a, 0x77, 0x1d, 0x80, 0xef);
+			
+			public function HRESULT(IEnumGuideDataProperties *self, uint32 celt, IGuideDataProperty** ppprop, uint32* pcelt) Next;
+			public function HRESULT(IEnumGuideDataProperties *self, uint32 celt) Skip;
+			public function HRESULT(IEnumGuideDataProperties *self) Reset;
+			public function HRESULT(IEnumGuideDataProperties *self, IEnumGuideDataProperties** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IEnumTuneRequests : IUnknown
+		{
+			public const new Guid IID = .(0x1993299c, 0xced6, 0x4788, 0x87, 0xa3, 0x42, 0x00, 0x67, 0xdc, 0xe0, 0xc7);
+			
+			public function HRESULT(IEnumTuneRequests *self, uint32 celt, ITuneRequest** ppprop, uint32* pcelt) Next;
+			public function HRESULT(IEnumTuneRequests *self, uint32 celt) Skip;
+			public function HRESULT(IEnumTuneRequests *self) Reset;
+			public function HRESULT(IEnumTuneRequests *self, IEnumTuneRequests** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IGuideData : IUnknown
+		{
+			public const new Guid IID = .(0x61571138, 0x5b01, 0x43cd, 0xae, 0xaf, 0x60, 0xb7, 0x84, 0xa0, 0xbf, 0x93);
+			
+			public function HRESULT(IGuideData *self, IEnumTuneRequests** ppEnumTuneRequests) GetServices;
+			public function HRESULT(IGuideData *self, ITuneRequest* pTuneRequest, IEnumGuideDataProperties** ppEnumProperties) GetServiceProperties;
+			public function HRESULT(IGuideData *self, IEnumVARIANT** pEnumPrograms) GetGuideProgramIDs;
+			public function HRESULT(IGuideData *self, VARIANT varProgramDescriptionID, IEnumGuideDataProperties** ppEnumProperties) GetProgramProperties;
+			public function HRESULT(IGuideData *self, IEnumVARIANT** pEnumScheduleEntries) GetScheduleEntryIDs;
+			public function HRESULT(IGuideData *self, VARIANT varScheduleEntryDescriptionID, IEnumGuideDataProperties** ppEnumProperties) GetScheduleEntryProperties;
+		}
+		[CRepr]
+		public struct IGuideDataLoader : IUnknown
+		{
+			public const new Guid IID = .(0x4764ff7c, 0xfa95, 0x4525, 0xaf, 0x4d, 0xd3, 0x22, 0x36, 0xdb, 0x9e, 0x38);
+			
+			public function HRESULT(IGuideDataLoader *self, IGuideData* pGuideStore) Init;
+			public function HRESULT(IGuideDataLoader *self) Terminate;
+		}
 		
 		// --- Functions ---
 		

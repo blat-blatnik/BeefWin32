@@ -378,45 +378,269 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IInitializeWithFile {}
-		public struct IInitializeWithStream {}
-		public struct IPropertyStore {}
-		public struct INamedPropertyStore {}
-		public struct IObjectWithPropertyKey {}
-		public struct IPropertyChange {}
-		public struct IPropertyChangeArray {}
-		public struct IPropertyStoreCapabilities {}
-		public struct IPropertyStoreCache {}
-		public struct IPropertyEnumType {}
-		public struct IPropertyEnumType2 {}
-		public struct IPropertyEnumTypeList {}
-		public struct IPropertyDescription {}
-		public struct IPropertyDescription2 {}
-		public struct IPropertyDescriptionAliasInfo {}
-		public struct IPropertyDescriptionSearchInfo {}
-		public struct IPropertyDescriptionRelatedPropertyInfo {}
-		public struct IPropertySystem {}
-		public struct IPropertyDescriptionList {}
-		public struct IPropertyStoreFactory {}
-		public struct IDelayedPropertyStoreFactory {}
-		public struct IPersistSerializedPropStorage {}
-		public struct IPersistSerializedPropStorage2 {}
-		public struct IPropertySystemChangeNotify {}
-		public struct ICreateObject {}
-		public struct IPropertyUI {}
+		[CRepr]
+		public struct IInitializeWithFile : IUnknown
+		{
+			public const new Guid IID = .(0xb7d14566, 0x0509, 0x4cce, 0xa7, 0x1f, 0x0a, 0x55, 0x42, 0x33, 0xbd, 0x9b);
+			
+			public function HRESULT(IInitializeWithFile *self, PWSTR pszFilePath, uint32 grfMode) Initialize;
+		}
+		[CRepr]
+		public struct IInitializeWithStream : IUnknown
+		{
+			public const new Guid IID = .(0xb824b49d, 0x22ac, 0x4161, 0xac, 0x8a, 0x99, 0x16, 0xe8, 0xfa, 0x3f, 0x7f);
+			
+			public function HRESULT(IInitializeWithStream *self, IStream* pstream, uint32 grfMode) Initialize;
+		}
+		[CRepr]
+		public struct IPropertyStore : IUnknown
+		{
+			public const new Guid IID = .(0x886d8eeb, 0x8cf2, 0x4446, 0x8d, 0x02, 0xcd, 0xba, 0x1d, 0xbd, 0xcf, 0x99);
+			
+			public function HRESULT(IPropertyStore *self, uint32* cProps) GetCount;
+			public function HRESULT(IPropertyStore *self, uint32 iProp, PROPERTYKEY* pkey) GetAt;
+			public function HRESULT(IPropertyStore *self, PROPERTYKEY* key, PROPVARIANT* pv) GetValue;
+			public function HRESULT(IPropertyStore *self, PROPERTYKEY* key, PROPVARIANT* propvar) SetValue;
+			public function HRESULT(IPropertyStore *self) Commit;
+		}
+		[CRepr]
+		public struct INamedPropertyStore : IUnknown
+		{
+			public const new Guid IID = .(0x71604b0f, 0x97b0, 0x4764, 0x85, 0x77, 0x2f, 0x13, 0xe9, 0x8a, 0x14, 0x22);
+			
+			public function HRESULT(INamedPropertyStore *self, PWSTR pszName, PROPVARIANT* ppropvar) GetNamedValue;
+			public function HRESULT(INamedPropertyStore *self, PWSTR pszName, PROPVARIANT* propvar) SetNamedValue;
+			public function HRESULT(INamedPropertyStore *self, uint32* pdwCount) GetNameCount;
+			public function HRESULT(INamedPropertyStore *self, uint32 iProp, BSTR* pbstrName) GetNameAt;
+		}
+		[CRepr]
+		public struct IObjectWithPropertyKey : IUnknown
+		{
+			public const new Guid IID = .(0xfc0ca0a7, 0xc316, 0x4fd2, 0x90, 0x31, 0x3e, 0x62, 0x8e, 0x6d, 0x4f, 0x23);
+			
+			public function HRESULT(IObjectWithPropertyKey *self, PROPERTYKEY* key) SetPropertyKey;
+			public function HRESULT(IObjectWithPropertyKey *self, PROPERTYKEY* pkey) GetPropertyKey;
+		}
+		[CRepr]
+		public struct IPropertyChange : IObjectWithPropertyKey
+		{
+			public const new Guid IID = .(0xf917bc8a, 0x1bba, 0x4478, 0xa2, 0x45, 0x1b, 0xde, 0x03, 0xeb, 0x94, 0x31);
+			
+			public function HRESULT(IPropertyChange *self, PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut) ApplyToPropVariant;
+		}
+		[CRepr]
+		public struct IPropertyChangeArray : IUnknown
+		{
+			public const new Guid IID = .(0x380f5cad, 0x1b5e, 0x42f2, 0x80, 0x5d, 0x63, 0x7f, 0xd3, 0x92, 0xd3, 0x1e);
+			
+			public function HRESULT(IPropertyChangeArray *self, uint32* pcOperations) GetCount;
+			public function HRESULT(IPropertyChangeArray *self, uint32 iIndex, Guid* riid, void** ppv) GetAt;
+			public function HRESULT(IPropertyChangeArray *self, uint32 iIndex, IPropertyChange* ppropChange) InsertAt;
+			public function HRESULT(IPropertyChangeArray *self, IPropertyChange* ppropChange) Append;
+			public function HRESULT(IPropertyChangeArray *self, IPropertyChange* ppropChange) AppendOrReplace;
+			public function HRESULT(IPropertyChangeArray *self, uint32 iIndex) RemoveAt;
+			public function HRESULT(IPropertyChangeArray *self, PROPERTYKEY* key) IsKeyInArray;
+		}
+		[CRepr]
+		public struct IPropertyStoreCapabilities : IUnknown
+		{
+			public const new Guid IID = .(0xc8e2d566, 0x186e, 0x4d49, 0xbf, 0x41, 0x69, 0x09, 0xea, 0xd5, 0x6a, 0xcc);
+			
+			public function HRESULT(IPropertyStoreCapabilities *self, PROPERTYKEY* key) IsPropertyWritable;
+		}
+		[CRepr]
+		public struct IPropertyStoreCache : IPropertyStore
+		{
+			public const new Guid IID = .(0x3017056d, 0x9a91, 0x4e90, 0x93, 0x7d, 0x74, 0x6c, 0x72, 0xab, 0xbf, 0x4f);
+			
+			public function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PSC_STATE* pstate) GetState;
+			public function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE* pstate) GetValueAndState;
+			public function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PSC_STATE state) SetState;
+			public function HRESULT(IPropertyStoreCache *self, PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE state) SetValueAndState;
+		}
+		[CRepr]
+		public struct IPropertyEnumType : IUnknown
+		{
+			public const new Guid IID = .(0x11e1fbf9, 0x2d56, 0x4a6b, 0x8d, 0xb3, 0x7c, 0xd1, 0x93, 0xa4, 0x71, 0xf2);
+			
+			public function HRESULT(IPropertyEnumType *self, PROPENUMTYPE* penumtype) GetEnumType;
+			public function HRESULT(IPropertyEnumType *self, PROPVARIANT* ppropvar) GetValue;
+			public function HRESULT(IPropertyEnumType *self, PROPVARIANT* ppropvarMin) GetRangeMinValue;
+			public function HRESULT(IPropertyEnumType *self, PROPVARIANT* ppropvarSet) GetRangeSetValue;
+			public function HRESULT(IPropertyEnumType *self, PWSTR* ppszDisplay) GetDisplayText;
+		}
+		[CRepr]
+		public struct IPropertyEnumType2 : IPropertyEnumType
+		{
+			public const new Guid IID = .(0x9b6e051c, 0x5ddd, 0x4321, 0x90, 0x70, 0xfe, 0x2a, 0xcb, 0x55, 0xe7, 0x94);
+			
+			public function HRESULT(IPropertyEnumType2 *self, PWSTR* ppszImageRes) GetImageReference;
+		}
+		[CRepr]
+		public struct IPropertyEnumTypeList : IUnknown
+		{
+			public const new Guid IID = .(0xa99400f4, 0x3d84, 0x4557, 0x94, 0xba, 0x12, 0x42, 0xfb, 0x2c, 0xc9, 0xa6);
+			
+			public function HRESULT(IPropertyEnumTypeList *self, uint32* pctypes) GetCount;
+			public function HRESULT(IPropertyEnumTypeList *self, uint32 itype, Guid* riid, void** ppv) GetAt;
+			public function HRESULT(IPropertyEnumTypeList *self, uint32 nIndex, Guid* riid, void** ppv) GetConditionAt;
+			public function HRESULT(IPropertyEnumTypeList *self, PROPVARIANT* propvarCmp, uint32* pnIndex) FindMatchingIndex;
+		}
+		[CRepr]
+		public struct IPropertyDescription : IUnknown
+		{
+			public const new Guid IID = .(0x6f79d558, 0x3e96, 0x4549, 0xa1, 0xd1, 0x7d, 0x75, 0xd2, 0x28, 0x88, 0x14);
+			
+			public function HRESULT(IPropertyDescription *self, PROPERTYKEY* pkey) GetPropertyKey;
+			public function HRESULT(IPropertyDescription *self, PWSTR* ppszName) GetCanonicalName;
+			public function HRESULT(IPropertyDescription *self, uint16* pvartype) GetPropertyType;
+			public function HRESULT(IPropertyDescription *self, PWSTR* ppszName) GetDisplayName;
+			public function HRESULT(IPropertyDescription *self, PWSTR* ppszInvite) GetEditInvitation;
+			public function HRESULT(IPropertyDescription *self, PROPDESC_TYPE_FLAGS mask, PROPDESC_TYPE_FLAGS* ppdtFlags) GetTypeFlags;
+			public function HRESULT(IPropertyDescription *self, PROPDESC_VIEW_FLAGS* ppdvFlags) GetViewFlags;
+			public function HRESULT(IPropertyDescription *self, uint32* pcxChars) GetDefaultColumnWidth;
+			public function HRESULT(IPropertyDescription *self, PROPDESC_DISPLAYTYPE* pdisplaytype) GetDisplayType;
+			public function HRESULT(IPropertyDescription *self, uint32* pcsFlags) GetColumnState;
+			public function HRESULT(IPropertyDescription *self, PROPDESC_GROUPING_RANGE* pgr) GetGroupingRange;
+			public function HRESULT(IPropertyDescription *self, PROPDESC_RELATIVEDESCRIPTION_TYPE* prdt) GetRelativeDescriptionType;
+			public function HRESULT(IPropertyDescription *self, PROPVARIANT* propvar1, PROPVARIANT* propvar2, PWSTR* ppszDesc1, PWSTR* ppszDesc2) GetRelativeDescription;
+			public function HRESULT(IPropertyDescription *self, PROPDESC_SORTDESCRIPTION* psd) GetSortDescription;
+			public function HRESULT(IPropertyDescription *self, BOOL fDescending, PWSTR* ppszDescription) GetSortDescriptionLabel;
+			public function HRESULT(IPropertyDescription *self, PROPDESC_AGGREGATION_TYPE* paggtype) GetAggregationType;
+			public function HRESULT(IPropertyDescription *self, PROPDESC_CONDITION_TYPE* pcontype, CONDITION_OPERATION* popDefault) GetConditionType;
+			public function HRESULT(IPropertyDescription *self, Guid* riid, void** ppv) GetEnumTypeList;
+			public function HRESULT(IPropertyDescription *self, PROPVARIANT* ppropvar) CoerceToCanonicalValue;
+			public function HRESULT(IPropertyDescription *self, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, PWSTR* ppszDisplay) FormatForDisplay;
+			public function HRESULT(IPropertyDescription *self, PROPVARIANT* propvar) IsValueCanonical;
+		}
+		[CRepr]
+		public struct IPropertyDescription2 : IPropertyDescription
+		{
+			public const new Guid IID = .(0x57d2eded, 0x5062, 0x400e, 0xb1, 0x07, 0x5d, 0xae, 0x79, 0xfe, 0x57, 0xa6);
+			
+			public function HRESULT(IPropertyDescription2 *self, PROPVARIANT* propvar, PWSTR* ppszImageRes) GetImageReferenceForValue;
+		}
+		[CRepr]
+		public struct IPropertyDescriptionAliasInfo : IPropertyDescription
+		{
+			public const new Guid IID = .(0xf67104fc, 0x2af9, 0x46fd, 0xb3, 0x2d, 0x24, 0x3c, 0x14, 0x04, 0xf3, 0xd1);
+			
+			public function HRESULT(IPropertyDescriptionAliasInfo *self, Guid* riid, void** ppv) GetSortByAlias;
+			public function HRESULT(IPropertyDescriptionAliasInfo *self, Guid* riid, void** ppv) GetAdditionalSortByAliases;
+		}
+		[CRepr]
+		public struct IPropertyDescriptionSearchInfo : IPropertyDescription
+		{
+			public const new Guid IID = .(0x078f91bd, 0x29a2, 0x440f, 0x92, 0x4e, 0x46, 0xa2, 0x91, 0x52, 0x45, 0x20);
+			
+			public function HRESULT(IPropertyDescriptionSearchInfo *self, PROPDESC_SEARCHINFO_FLAGS* ppdsiFlags) GetSearchInfoFlags;
+			public function HRESULT(IPropertyDescriptionSearchInfo *self, PROPDESC_COLUMNINDEX_TYPE* ppdciType) GetColumnIndexType;
+			public function HRESULT(IPropertyDescriptionSearchInfo *self, PWSTR* ppszProjection) GetProjectionString;
+			public function HRESULT(IPropertyDescriptionSearchInfo *self, uint32* pcbMaxSize) GetMaxSize;
+		}
+		[CRepr]
+		public struct IPropertyDescriptionRelatedPropertyInfo : IPropertyDescription
+		{
+			public const new Guid IID = .(0x507393f4, 0x2a3d, 0x4a60, 0xb5, 0x9e, 0xd9, 0xc7, 0x57, 0x16, 0xc2, 0xdd);
+			
+			public function HRESULT(IPropertyDescriptionRelatedPropertyInfo *self, PWSTR pszRelationshipName, Guid* riid, void** ppv) GetRelatedProperty;
+		}
+		[CRepr]
+		public struct IPropertySystem : IUnknown
+		{
+			public const new Guid IID = .(0xca724e8a, 0xc3e6, 0x442b, 0x88, 0xa4, 0x6f, 0xb0, 0xdb, 0x80, 0x35, 0xa3);
+			
+			public function HRESULT(IPropertySystem *self, PROPERTYKEY* propkey, Guid* riid, void** ppv) GetPropertyDescription;
+			public function HRESULT(IPropertySystem *self, PWSTR pszCanonicalName, Guid* riid, void** ppv) GetPropertyDescriptionByName;
+			public function HRESULT(IPropertySystem *self, PWSTR pszPropList, Guid* riid, void** ppv) GetPropertyDescriptionListFromString;
+			public function HRESULT(IPropertySystem *self, PROPDESC_ENUMFILTER filterOn, Guid* riid, void** ppv) EnumeratePropertyDescriptions;
+			public function HRESULT(IPropertySystem *self, PROPERTYKEY* key, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, char16* pszText, uint32 cchText) FormatForDisplay;
+			public function HRESULT(IPropertySystem *self, PROPERTYKEY* key, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, PWSTR* ppszDisplay) FormatForDisplayAlloc;
+			public function HRESULT(IPropertySystem *self, PWSTR pszPath) RegisterPropertySchema;
+			public function HRESULT(IPropertySystem *self, PWSTR pszPath) UnregisterPropertySchema;
+			public function HRESULT(IPropertySystem *self) RefreshPropertySchema;
+		}
+		[CRepr]
+		public struct IPropertyDescriptionList : IUnknown
+		{
+			public const new Guid IID = .(0x1f9fc1d0, 0xc39b, 0x4b26, 0x81, 0x7f, 0x01, 0x19, 0x67, 0xd3, 0x44, 0x0e);
+			
+			public function HRESULT(IPropertyDescriptionList *self, uint32* pcElem) GetCount;
+			public function HRESULT(IPropertyDescriptionList *self, uint32 iElem, Guid* riid, void** ppv) GetAt;
+		}
+		[CRepr]
+		public struct IPropertyStoreFactory : IUnknown
+		{
+			public const new Guid IID = .(0xbc110b6d, 0x57e8, 0x4148, 0xa9, 0xc6, 0x91, 0x01, 0x5a, 0xb2, 0xf3, 0xa5);
+			
+			public function HRESULT(IPropertyStoreFactory *self, GETPROPERTYSTOREFLAGS flags, IUnknown* pUnkFactory, Guid* riid, void** ppv) GetPropertyStore;
+			public function HRESULT(IPropertyStoreFactory *self, PROPERTYKEY* rgKeys, uint32 cKeys, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv) GetPropertyStoreForKeys;
+		}
+		[CRepr]
+		public struct IDelayedPropertyStoreFactory : IPropertyStoreFactory
+		{
+			public const new Guid IID = .(0x40d4577f, 0xe237, 0x4bdb, 0xbd, 0x69, 0x58, 0xf0, 0x89, 0x43, 0x1b, 0x6a);
+			
+			public function HRESULT(IDelayedPropertyStoreFactory *self, GETPROPERTYSTOREFLAGS flags, uint32 dwStoreId, Guid* riid, void** ppv) GetDelayedPropertyStore;
+		}
+		[CRepr]
+		public struct IPersistSerializedPropStorage : IUnknown
+		{
+			public const new Guid IID = .(0xe318ad57, 0x0aa0, 0x450f, 0xac, 0xa5, 0x6f, 0xab, 0x71, 0x03, 0xd9, 0x17);
+			
+			public function HRESULT(IPersistSerializedPropStorage *self, int32 flags) SetFlags;
+			public function HRESULT(IPersistSerializedPropStorage *self, SERIALIZEDPROPSTORAGE* psps, uint32 cb) SetPropertyStorage;
+			public function HRESULT(IPersistSerializedPropStorage *self, SERIALIZEDPROPSTORAGE** ppsps, uint32* pcb) GetPropertyStorage;
+		}
+		[CRepr]
+		public struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage
+		{
+			public const new Guid IID = .(0x77effa68, 0x4f98, 0x4366, 0xba, 0x72, 0x57, 0x3b, 0x3d, 0x88, 0x05, 0x71);
+			
+			public function HRESULT(IPersistSerializedPropStorage2 *self, uint32* pcb) GetPropertyStorageSize;
+			public function HRESULT(IPersistSerializedPropStorage2 *self, SERIALIZEDPROPSTORAGE* psps, uint32 cb, uint32* pcbWritten) GetPropertyStorageBuffer;
+		}
+		[CRepr]
+		public struct IPropertySystemChangeNotify : IUnknown
+		{
+			public const new Guid IID = .(0xfa955fd9, 0x38be, 0x4879, 0xa6, 0xce, 0x82, 0x4c, 0xf5, 0x2d, 0x60, 0x9f);
+			
+			public function HRESULT(IPropertySystemChangeNotify *self) SchemaRefreshed;
+		}
+		[CRepr]
+		public struct ICreateObject : IUnknown
+		{
+			public const new Guid IID = .(0x75121952, 0xe0d0, 0x43e5, 0x93, 0x80, 0x1d, 0x80, 0x48, 0x3a, 0xcf, 0x72);
+			
+			public function HRESULT(ICreateObject *self, Guid* clsid, IUnknown* pUnkOuter, Guid* riid, void** ppv) CreateObject;
+		}
+		[CRepr]
+		public struct IPropertyUI : IUnknown
+		{
+			public const new Guid IID = .(0x757a7d9f, 0x919a, 0x4118, 0x99, 0xd7, 0xdb, 0xb2, 0x08, 0xc8, 0xcc, 0x66);
+			
+			public function HRESULT(IPropertyUI *self, PWSTR pszName, Guid* pfmtid, uint32* ppid, uint32* pchEaten) ParsePropertyName;
+			public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetCannonicalName;
+			public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, PROPERTYUI_NAME_FLAGS flags, char16* pwszText, uint32 cchText) GetDisplayName;
+			public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, char16* pwszText, uint32 cchText) GetPropertyDescription;
+			public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, uint32* pcxChars) GetDefaultWidth;
+			public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, PROPERTYUI_FLAGS* pflags) GetFlags;
+			public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, PROPVARIANT* ppropvar, PROPERTYUI_FORMAT_FLAGS puiff, char16* pwszText, uint32 cchText) FormatForDisplay;
+			public function HRESULT(IPropertyUI *self, Guid* fmtid, uint32 pid, char16* pwszHelpFile, uint32 cch, uint32* puHelpID) GetHelpInfo;
+		}
 		
 		// --- Functions ---
 		
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PropVariantToWinRTPropertyValue(PROPVARIANT* propvar, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WinRTPropertyValueToPropVariant(IUnknown punkPropertyValue, PROPVARIANT* ppropvar);
+		public static extern HRESULT WinRTPropertyValueToPropVariant(IUnknown* punkPropertyValue, PROPVARIANT* ppropvar);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSFormatForDisplay(PROPERTYKEY* propkey, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, char16* pwszText, uint32 cchText);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSFormatForDisplayAlloc(PROPERTYKEY* key, PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, PWSTR* ppszDisplay);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSFormatPropertyValue(IPropertyStore pps, IPropertyDescription ppd, PROPDESC_FORMAT_FLAGS pdff, PWSTR* ppszDisplay);
+		public static extern HRESULT PSFormatPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, PROPDESC_FORMAT_FLAGS pdff, PWSTR* ppszDisplay);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSGetImageReferenceForValue(PROPERTYKEY* propkey, PROPVARIANT* propvar, PWSTR* ppszImageRes);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
@@ -426,9 +650,9 @@ namespace Win32
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSCreateMemoryPropertyStore(Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSCreateDelayedMultiplexPropertyStore(GETPROPERTYSTOREFLAGS flags, IDelayedPropertyStoreFactory pdpsf, uint32* rgStoreIds, uint32 cStores, Guid* riid, void** ppv);
+		public static extern HRESULT PSCreateDelayedMultiplexPropertyStore(GETPROPERTYSTOREFLAGS flags, IDelayedPropertyStoreFactory* pdpsf, uint32* rgStoreIds, uint32 cStores, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSCreateMultiplexPropertyStore(IUnknown* prgpunkStores, uint32 cStores, Guid* riid, void** ppv);
+		public static extern HRESULT PSCreateMultiplexPropertyStore(IUnknown** prgpunkStores, uint32 cStores, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSCreatePropertyChangeArray(PROPERTYKEY* rgpropkey, PKA_FLAGS* rgflags, PROPVARIANT* rgpropvar, uint32 cChanges, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
@@ -440,13 +664,13 @@ namespace Win32
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSLookupPropertyHandlerCLSID(PWSTR pszFilePath, Guid* pclsid);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSGetItemPropertyHandler(IUnknown punkItem, BOOL fReadWrite, Guid* riid, void** ppv);
+		public static extern HRESULT PSGetItemPropertyHandler(IUnknown* punkItem, BOOL fReadWrite, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSGetItemPropertyHandlerWithCreateObject(IUnknown punkItem, BOOL fReadWrite, IUnknown punkCreateObject, Guid* riid, void** ppv);
+		public static extern HRESULT PSGetItemPropertyHandlerWithCreateObject(IUnknown* punkItem, BOOL fReadWrite, IUnknown* punkCreateObject, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSGetPropertyValue(IPropertyStore pps, IPropertyDescription ppd, PROPVARIANT* ppropvar);
+		public static extern HRESULT PSGetPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, PROPVARIANT* ppropvar);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSSetPropertyValue(IPropertyStore pps, IPropertyDescription ppd, PROPVARIANT* propvar);
+		public static extern HRESULT PSSetPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, PROPVARIANT* propvar);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSRegisterPropertySchema(PWSTR pszPath);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
@@ -464,11 +688,11 @@ namespace Win32
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSGetPropertyDescriptionListFromString(PWSTR pszPropList, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSCreatePropertyStoreFromPropertySetStorage(IPropertySetStorage ppss, uint32 grfMode, Guid* riid, void** ppv);
+		public static extern HRESULT PSCreatePropertyStoreFromPropertySetStorage(IPropertySetStorage* ppss, uint32 grfMode, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSCreatePropertyStoreFromObject(IUnknown punk, uint32 grfMode, Guid* riid, void** ppv);
+		public static extern HRESULT PSCreatePropertyStoreFromObject(IUnknown* punk, uint32 grfMode, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSCreateAdapterFromPropertyStore(IPropertyStore pps, Guid* riid, void** ppv);
+		public static extern HRESULT PSCreateAdapterFromPropertyStore(IPropertyStore* pps, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSGetPropertySystem(Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
@@ -476,71 +700,71 @@ namespace Win32
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PSGetNamedPropertyFromPropertyStorage(SERIALIZEDPROPSTORAGE* psps, uint32 cb, PWSTR pszName, PROPVARIANT* ppropvar);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadType(IPropertyBag propBag, PWSTR propName, VARIANT* @var, uint16 type);
+		public static extern HRESULT PSPropertyBag_ReadType(IPropertyBag* propBag, PWSTR propName, VARIANT* @var, uint16 type);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadStr(IPropertyBag propBag, PWSTR propName, char16* value, int32 characterCount);
+		public static extern HRESULT PSPropertyBag_ReadStr(IPropertyBag* propBag, PWSTR propName, char16* value, int32 characterCount);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadStrAlloc(IPropertyBag propBag, PWSTR propName, PWSTR* value);
+		public static extern HRESULT PSPropertyBag_ReadStrAlloc(IPropertyBag* propBag, PWSTR propName, PWSTR* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadBSTR(IPropertyBag propBag, PWSTR propName, BSTR* value);
+		public static extern HRESULT PSPropertyBag_ReadBSTR(IPropertyBag* propBag, PWSTR propName, BSTR* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteStr(IPropertyBag propBag, PWSTR propName, PWSTR value);
+		public static extern HRESULT PSPropertyBag_WriteStr(IPropertyBag* propBag, PWSTR propName, PWSTR value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteBSTR(IPropertyBag propBag, PWSTR propName, BSTR value);
+		public static extern HRESULT PSPropertyBag_WriteBSTR(IPropertyBag* propBag, PWSTR propName, BSTR value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadInt(IPropertyBag propBag, PWSTR propName, int32* value);
+		public static extern HRESULT PSPropertyBag_ReadInt(IPropertyBag* propBag, PWSTR propName, int32* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteInt(IPropertyBag propBag, PWSTR propName, int32 value);
+		public static extern HRESULT PSPropertyBag_WriteInt(IPropertyBag* propBag, PWSTR propName, int32 value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadSHORT(IPropertyBag propBag, PWSTR propName, int16* value);
+		public static extern HRESULT PSPropertyBag_ReadSHORT(IPropertyBag* propBag, PWSTR propName, int16* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteSHORT(IPropertyBag propBag, PWSTR propName, int16 value);
+		public static extern HRESULT PSPropertyBag_WriteSHORT(IPropertyBag* propBag, PWSTR propName, int16 value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadLONG(IPropertyBag propBag, PWSTR propName, int32* value);
+		public static extern HRESULT PSPropertyBag_ReadLONG(IPropertyBag* propBag, PWSTR propName, int32* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteLONG(IPropertyBag propBag, PWSTR propName, int32 value);
+		public static extern HRESULT PSPropertyBag_WriteLONG(IPropertyBag* propBag, PWSTR propName, int32 value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadDWORD(IPropertyBag propBag, PWSTR propName, uint32* value);
+		public static extern HRESULT PSPropertyBag_ReadDWORD(IPropertyBag* propBag, PWSTR propName, uint32* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteDWORD(IPropertyBag propBag, PWSTR propName, uint32 value);
+		public static extern HRESULT PSPropertyBag_WriteDWORD(IPropertyBag* propBag, PWSTR propName, uint32 value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadBOOL(IPropertyBag propBag, PWSTR propName, BOOL* value);
+		public static extern HRESULT PSPropertyBag_ReadBOOL(IPropertyBag* propBag, PWSTR propName, BOOL* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteBOOL(IPropertyBag propBag, PWSTR propName, BOOL value);
+		public static extern HRESULT PSPropertyBag_WriteBOOL(IPropertyBag* propBag, PWSTR propName, BOOL value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadPOINTL(IPropertyBag propBag, PWSTR propName, POINTL* value);
+		public static extern HRESULT PSPropertyBag_ReadPOINTL(IPropertyBag* propBag, PWSTR propName, POINTL* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WritePOINTL(IPropertyBag propBag, PWSTR propName, POINTL* value);
+		public static extern HRESULT PSPropertyBag_WritePOINTL(IPropertyBag* propBag, PWSTR propName, POINTL* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadPOINTS(IPropertyBag propBag, PWSTR propName, POINTS* value);
+		public static extern HRESULT PSPropertyBag_ReadPOINTS(IPropertyBag* propBag, PWSTR propName, POINTS* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WritePOINTS(IPropertyBag propBag, PWSTR propName, POINTS* value);
+		public static extern HRESULT PSPropertyBag_WritePOINTS(IPropertyBag* propBag, PWSTR propName, POINTS* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadRECTL(IPropertyBag propBag, PWSTR propName, RECTL* value);
+		public static extern HRESULT PSPropertyBag_ReadRECTL(IPropertyBag* propBag, PWSTR propName, RECTL* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteRECTL(IPropertyBag propBag, PWSTR propName, RECTL* value);
+		public static extern HRESULT PSPropertyBag_WriteRECTL(IPropertyBag* propBag, PWSTR propName, RECTL* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadStream(IPropertyBag propBag, PWSTR propName, IStream* value);
+		public static extern HRESULT PSPropertyBag_ReadStream(IPropertyBag* propBag, PWSTR propName, IStream** value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteStream(IPropertyBag propBag, PWSTR propName, IStream value);
+		public static extern HRESULT PSPropertyBag_WriteStream(IPropertyBag* propBag, PWSTR propName, IStream* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_Delete(IPropertyBag propBag, PWSTR propName);
+		public static extern HRESULT PSPropertyBag_Delete(IPropertyBag* propBag, PWSTR propName);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadULONGLONG(IPropertyBag propBag, PWSTR propName, uint64* value);
+		public static extern HRESULT PSPropertyBag_ReadULONGLONG(IPropertyBag* propBag, PWSTR propName, uint64* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteULONGLONG(IPropertyBag propBag, PWSTR propName, uint64 value);
+		public static extern HRESULT PSPropertyBag_WriteULONGLONG(IPropertyBag* propBag, PWSTR propName, uint64 value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadUnknown(IPropertyBag propBag, PWSTR propName, Guid* riid, void** ppv);
+		public static extern HRESULT PSPropertyBag_ReadUnknown(IPropertyBag* propBag, PWSTR propName, Guid* riid, void** ppv);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteUnknown(IPropertyBag propBag, PWSTR propName, IUnknown punk);
+		public static extern HRESULT PSPropertyBag_WriteUnknown(IPropertyBag* propBag, PWSTR propName, IUnknown* punk);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadGUID(IPropertyBag propBag, PWSTR propName, Guid* value);
+		public static extern HRESULT PSPropertyBag_ReadGUID(IPropertyBag* propBag, PWSTR propName, Guid* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WriteGUID(IPropertyBag propBag, PWSTR propName, Guid* value);
+		public static extern HRESULT PSPropertyBag_WriteGUID(IPropertyBag* propBag, PWSTR propName, Guid* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_ReadPropertyKey(IPropertyBag propBag, PWSTR propName, PROPERTYKEY* value);
+		public static extern HRESULT PSPropertyBag_ReadPropertyKey(IPropertyBag* propBag, PWSTR propName, PROPERTYKEY* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PSPropertyBag_WritePropertyKey(IPropertyBag propBag, PWSTR propName, PROPERTYKEY* value);
+		public static extern HRESULT PSPropertyBag_WritePropertyKey(IPropertyBag* propBag, PWSTR propName, PROPERTYKEY* value);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT InitPropVariantFromResource(HINSTANCE hinst, uint32 id, PROPVARIANT* ppropvar);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
@@ -842,9 +1066,9 @@ namespace Win32
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SHGetPropertyStoreFromIDList(ITEMIDLIST* pidl, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SHGetPropertyStoreFromParsingName(PWSTR pszPath, IBindCtx pbc, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv);
+		public static extern HRESULT SHGetPropertyStoreFromParsingName(PWSTR pszPath, IBindCtx* pbc, GETPROPERTYSTOREFLAGS flags, Guid* riid, void** ppv);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SHAddDefaultPropertiesByExt(PWSTR pszExt, IPropertyStore pPropStore);
+		public static extern HRESULT SHAddDefaultPropertiesByExt(PWSTR pszExt, IPropertyStore* pPropStore);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE PifMgr_OpenProperties(PWSTR pszApp, PWSTR pszPIF, uint32 hInf, uint32 flOpt);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -854,11 +1078,11 @@ namespace Win32
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE PifMgr_CloseProperties(HANDLE hProps, uint32 flOpt);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SHPropStgCreate(IPropertySetStorage psstg, Guid* fmtid, Guid* pclsid, uint32 grfFlags, uint32 grfMode, uint32 dwDisposition, IPropertyStorage* ppstg, uint32* puCodePage);
+		public static extern HRESULT SHPropStgCreate(IPropertySetStorage* psstg, Guid* fmtid, Guid* pclsid, uint32 grfFlags, uint32 grfMode, uint32 dwDisposition, IPropertyStorage** ppstg, uint32* puCodePage);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SHPropStgReadMultiple(IPropertyStorage pps, uint32 uCodePage, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgvar);
+		public static extern HRESULT SHPropStgReadMultiple(IPropertyStorage* pps, uint32 uCodePage, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgvar);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SHPropStgWriteMultiple(IPropertyStorage pps, uint32* puCodePage, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgvar, uint32 propidNameFirst);
+		public static extern HRESULT SHPropStgWriteMultiple(IPropertyStorage* pps, uint32* puCodePage, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgvar, uint32 propidNameFirst);
 		[Import("shell32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SHGetPropertyStoreForWindow(HWND hwnd, Guid* riid, void** ppv);
 		

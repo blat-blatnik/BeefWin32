@@ -898,93 +898,1110 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IXMLDOMImplementation {}
-		public struct IXMLDOMNode {}
-		public struct IXMLDOMDocumentFragment {}
-		public struct IXMLDOMDocument {}
-		public struct IXMLDOMNodeList {}
-		public struct IXMLDOMNamedNodeMap {}
-		public struct IXMLDOMCharacterData {}
-		public struct IXMLDOMAttribute {}
-		public struct IXMLDOMElement {}
-		public struct IXMLDOMText {}
-		public struct IXMLDOMComment {}
-		public struct IXMLDOMProcessingInstruction {}
-		public struct IXMLDOMCDATASection {}
-		public struct IXMLDOMDocumentType {}
-		public struct IXMLDOMNotation {}
-		public struct IXMLDOMEntity {}
-		public struct IXMLDOMEntityReference {}
-		public struct IXMLDOMParseError {}
-		public struct IXTLRuntime {}
-		public struct XMLDOMDocumentEvents {}
-		public struct IXMLHttpRequest {}
-		public struct IXMLDSOControl {}
-		public struct IXMLElementCollection {}
-		public struct IXMLDocument {}
-		public struct IXMLDocument2 {}
-		public struct IXMLElement {}
-		public struct IXMLElement2 {}
-		public struct IXMLAttribute {}
-		public struct IXMLError {}
-		public struct IXMLDOMDocument2 {}
-		public struct IXMLDOMDocument3 {}
-		public struct IXMLDOMSchemaCollection {}
-		public struct IXMLDOMSelection {}
-		public struct IXMLDOMParseError2 {}
-		public struct IXMLDOMParseErrorCollection {}
-		public struct IXSLProcessor {}
-		public struct IXSLTemplate {}
-		public struct IXMLHTTPRequest {}
-		public struct IServerXMLHTTPRequest {}
-		public struct IServerXMLHTTPRequest2 {}
-		public struct ISAXXMLReader {}
-		public struct ISAXXMLFilter {}
-		public struct ISAXLocator {}
-		public struct ISAXEntityResolver {}
-		public struct ISAXContentHandler {}
-		public struct ISAXDTDHandler {}
-		public struct ISAXErrorHandler {}
-		public struct ISAXLexicalHandler {}
-		public struct ISAXDeclHandler {}
-		public struct ISAXAttributes {}
-		public struct IVBSAXXMLReader {}
-		public struct IVBSAXXMLFilter {}
-		public struct IVBSAXLocator {}
-		public struct IVBSAXEntityResolver {}
-		public struct IVBSAXContentHandler {}
-		public struct IVBSAXDTDHandler {}
-		public struct IVBSAXErrorHandler {}
-		public struct IVBSAXLexicalHandler {}
-		public struct IVBSAXDeclHandler {}
-		public struct IVBSAXAttributes {}
-		public struct IMXWriter {}
-		public struct IMXAttributes {}
-		public struct IMXReaderControl {}
-		public struct IMXSchemaDeclHandler {}
-		public struct IMXNamespacePrefixes {}
-		public struct IVBMXNamespaceManager {}
-		public struct IMXNamespaceManager {}
-		public struct IMXXMLFilter {}
-		public struct IXMLDOMSchemaCollection2 {}
-		public struct ISchemaStringCollection {}
-		public struct ISchemaItemCollection {}
-		public struct ISchemaItem {}
-		public struct ISchema {}
-		public struct ISchemaParticle {}
-		public struct ISchemaAttribute {}
-		public struct ISchemaElement {}
-		public struct ISchemaType {}
-		public struct ISchemaComplexType {}
-		public struct ISchemaAttributeGroup {}
-		public struct ISchemaModelGroup {}
-		public struct ISchemaAny {}
-		public struct ISchemaIdentityConstraint {}
-		public struct ISchemaNotation {}
-		public struct IXMLHTTPRequest2Callback {}
-		public struct IXMLHTTPRequest2 {}
-		public struct IXMLHTTPRequest3Callback {}
-		public struct IXMLHTTPRequest3 {}
+		[CRepr]
+		public struct IXMLDOMImplementation : IDispatch
+		{
+			public const new Guid IID = .(0x2933bf8f, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMImplementation *self, BSTR feature, BSTR version, int16* hasFeature) hasFeature;
+		}
+		[CRepr]
+		public struct IXMLDOMNode : IDispatch
+		{
+			public const new Guid IID = .(0x2933bf80, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMNode *self, BSTR* name) get_nodeName;
+			public function HRESULT(IXMLDOMNode *self, VARIANT* value) get_nodeValue;
+			public function HRESULT(IXMLDOMNode *self, VARIANT value) put_nodeValue;
+			public function HRESULT(IXMLDOMNode *self, DOMNodeType* type) get_nodeType;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** parent) get_parentNode;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNodeList** childList) get_childNodes;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** firstChild) get_firstChild;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** lastChild) get_lastChild;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** previousSibling) get_previousSibling;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** nextSibling) get_nextSibling;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNamedNodeMap** attributeMap) get_attributes;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* newChild, VARIANT refChild, IXMLDOMNode** outNewChild) insertBefore;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* newChild, IXMLDOMNode* oldChild, IXMLDOMNode** outOldChild) replaceChild;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* childNode, IXMLDOMNode** oldChild) removeChild;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* newChild, IXMLDOMNode** outNewChild) appendChild;
+			public function HRESULT(IXMLDOMNode *self, int16* hasChild) hasChildNodes;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMDocument** XMLDOMDocument) get_ownerDocument;
+			public function HRESULT(IXMLDOMNode *self, int16 deep, IXMLDOMNode** cloneRoot) cloneNode;
+			public function HRESULT(IXMLDOMNode *self, BSTR* nodeType) get_nodeTypeString;
+			public function HRESULT(IXMLDOMNode *self, BSTR* text) get_text;
+			public function HRESULT(IXMLDOMNode *self, BSTR text) put_text;
+			public function HRESULT(IXMLDOMNode *self, int16* isSpecified) get_specified;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode** definitionNode) get_definition;
+			public function HRESULT(IXMLDOMNode *self, VARIANT* typedValue) get_nodeTypedValue;
+			public function HRESULT(IXMLDOMNode *self, VARIANT typedValue) put_nodeTypedValue;
+			public function HRESULT(IXMLDOMNode *self, VARIANT* dataTypeName) get_dataType;
+			public function HRESULT(IXMLDOMNode *self, BSTR dataTypeName) put_dataType;
+			public function HRESULT(IXMLDOMNode *self, BSTR* xmlString) get_xml;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* stylesheet, BSTR* xmlString) transformNode;
+			public function HRESULT(IXMLDOMNode *self, BSTR queryString, IXMLDOMNodeList** resultList) selectNodes;
+			public function HRESULT(IXMLDOMNode *self, BSTR queryString, IXMLDOMNode** resultNode) selectSingleNode;
+			public function HRESULT(IXMLDOMNode *self, int16* isParsed) get_parsed;
+			public function HRESULT(IXMLDOMNode *self, BSTR* namespaceURI) get_namespaceURI;
+			public function HRESULT(IXMLDOMNode *self, BSTR* prefixString) get_prefix;
+			public function HRESULT(IXMLDOMNode *self, BSTR* nameString) get_baseName;
+			public function HRESULT(IXMLDOMNode *self, IXMLDOMNode* stylesheet, VARIANT outputObject) transformNodeToObject;
+		}
+		[CRepr]
+		public struct IXMLDOMDocumentFragment : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x3efaa413, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
+			
+		}
+		[CRepr]
+		public struct IXMLDOMDocument : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x2933bf81, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMDocument *self, IXMLDOMDocumentType** documentType) get_doctype;
+			public function HRESULT(IXMLDOMDocument *self, IXMLDOMImplementation** impl) get_implementation;
+			public function HRESULT(IXMLDOMDocument *self, IXMLDOMElement** DOMElement) get_documentElement;
+			public function HRESULT(IXMLDOMDocument *self, IXMLDOMElement* DOMElement) putref_documentElement;
+			public function HRESULT(IXMLDOMDocument *self, BSTR tagName, IXMLDOMElement** element) createElement;
+			public function HRESULT(IXMLDOMDocument *self, IXMLDOMDocumentFragment** docFrag) createDocumentFragment;
+			public function HRESULT(IXMLDOMDocument *self, BSTR data, IXMLDOMText** text) createTextNode;
+			public function HRESULT(IXMLDOMDocument *self, BSTR data, IXMLDOMComment** comment) createComment;
+			public function HRESULT(IXMLDOMDocument *self, BSTR data, IXMLDOMCDATASection** cdata) createCDATASection;
+			public function HRESULT(IXMLDOMDocument *self, BSTR target, BSTR data, IXMLDOMProcessingInstruction** pi) createProcessingInstruction;
+			public function HRESULT(IXMLDOMDocument *self, BSTR name, IXMLDOMAttribute** attribute) createAttribute;
+			public function HRESULT(IXMLDOMDocument *self, BSTR name, IXMLDOMEntityReference** entityRef) createEntityReference;
+			public function HRESULT(IXMLDOMDocument *self, BSTR tagName, IXMLDOMNodeList** resultList) getElementsByTagName;
+			public function HRESULT(IXMLDOMDocument *self, VARIANT Type, BSTR name, BSTR namespaceURI, IXMLDOMNode** node) createNode;
+			public function HRESULT(IXMLDOMDocument *self, BSTR idString, IXMLDOMNode** node) nodeFromID;
+			public function HRESULT(IXMLDOMDocument *self, VARIANT xmlSource, int16* isSuccessful) load;
+			public function HRESULT(IXMLDOMDocument *self, int32* value) get_readyState;
+			public function HRESULT(IXMLDOMDocument *self, IXMLDOMParseError** errorObj) get_parseError;
+			public function HRESULT(IXMLDOMDocument *self, BSTR* urlString) get_url;
+			public function HRESULT(IXMLDOMDocument *self, int16* isAsync) get_async;
+			public function HRESULT(IXMLDOMDocument *self, int16 isAsync) put_async;
+			public function HRESULT(IXMLDOMDocument *self) abort;
+			public function HRESULT(IXMLDOMDocument *self, BSTR bstrXML, int16* isSuccessful) loadXML;
+			public function HRESULT(IXMLDOMDocument *self, VARIANT destination) save;
+			public function HRESULT(IXMLDOMDocument *self, int16* isValidating) get_validateOnParse;
+			public function HRESULT(IXMLDOMDocument *self, int16 isValidating) put_validateOnParse;
+			public function HRESULT(IXMLDOMDocument *self, int16* isResolving) get_resolveExternals;
+			public function HRESULT(IXMLDOMDocument *self, int16 isResolving) put_resolveExternals;
+			public function HRESULT(IXMLDOMDocument *self, int16* isPreserving) get_preserveWhiteSpace;
+			public function HRESULT(IXMLDOMDocument *self, int16 isPreserving) put_preserveWhiteSpace;
+			public function HRESULT(IXMLDOMDocument *self, VARIANT readystatechangeSink) put_onreadystatechange;
+			public function HRESULT(IXMLDOMDocument *self, VARIANT ondataavailableSink) put_ondataavailable;
+			public function HRESULT(IXMLDOMDocument *self, VARIANT ontransformnodeSink) put_ontransformnode;
+		}
+		[CRepr]
+		public struct IXMLDOMNodeList : IDispatch
+		{
+			public const new Guid IID = .(0x2933bf82, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMNodeList *self, int32 index, IXMLDOMNode** listItem) get_item;
+			public function HRESULT(IXMLDOMNodeList *self, int32* listLength) get_length;
+			public function HRESULT(IXMLDOMNodeList *self, IXMLDOMNode** nextItem) nextNode;
+			public function HRESULT(IXMLDOMNodeList *self) reset;
+			public function HRESULT(IXMLDOMNodeList *self, IUnknown** ppUnk) get__newEnum;
+		}
+		[CRepr]
+		public struct IXMLDOMNamedNodeMap : IDispatch
+		{
+			public const new Guid IID = .(0x2933bf83, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMNamedNodeMap *self, BSTR name, IXMLDOMNode** namedItem) getNamedItem;
+			public function HRESULT(IXMLDOMNamedNodeMap *self, IXMLDOMNode* newItem, IXMLDOMNode** nameItem) setNamedItem;
+			public function HRESULT(IXMLDOMNamedNodeMap *self, BSTR name, IXMLDOMNode** namedItem) removeNamedItem;
+			public function HRESULT(IXMLDOMNamedNodeMap *self, int32 index, IXMLDOMNode** listItem) get_item;
+			public function HRESULT(IXMLDOMNamedNodeMap *self, int32* listLength) get_length;
+			public function HRESULT(IXMLDOMNamedNodeMap *self, BSTR baseName, BSTR namespaceURI, IXMLDOMNode** qualifiedItem) getQualifiedItem;
+			public function HRESULT(IXMLDOMNamedNodeMap *self, BSTR baseName, BSTR namespaceURI, IXMLDOMNode** qualifiedItem) removeQualifiedItem;
+			public function HRESULT(IXMLDOMNamedNodeMap *self, IXMLDOMNode** nextItem) nextNode;
+			public function HRESULT(IXMLDOMNamedNodeMap *self) reset;
+			public function HRESULT(IXMLDOMNamedNodeMap *self, IUnknown** ppUnk) get__newEnum;
+		}
+		[CRepr]
+		public struct IXMLDOMCharacterData : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x2933bf84, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMCharacterData *self, BSTR* data) get_data;
+			public function HRESULT(IXMLDOMCharacterData *self, BSTR data) put_data;
+			public function HRESULT(IXMLDOMCharacterData *self, int32* dataLength) get_length;
+			public function HRESULT(IXMLDOMCharacterData *self, int32 offset, int32 count, BSTR* data) substringData;
+			public function HRESULT(IXMLDOMCharacterData *self, BSTR data) appendData;
+			public function HRESULT(IXMLDOMCharacterData *self, int32 offset, BSTR data) insertData;
+			public function HRESULT(IXMLDOMCharacterData *self, int32 offset, int32 count) deleteData;
+			public function HRESULT(IXMLDOMCharacterData *self, int32 offset, int32 count, BSTR data) replaceData;
+		}
+		[CRepr]
+		public struct IXMLDOMAttribute : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x2933bf85, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMAttribute *self, BSTR* attributeName) get_name;
+			public function HRESULT(IXMLDOMAttribute *self, VARIANT* attributeValue) get_value;
+			public function HRESULT(IXMLDOMAttribute *self, VARIANT attributeValue) put_value;
+		}
+		[CRepr]
+		public struct IXMLDOMElement : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x2933bf86, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMElement *self, BSTR* tagName) get_tagName;
+			public function HRESULT(IXMLDOMElement *self, BSTR name, VARIANT* value) getAttribute;
+			public function HRESULT(IXMLDOMElement *self, BSTR name, VARIANT value) setAttribute;
+			public function HRESULT(IXMLDOMElement *self, BSTR name) removeAttribute;
+			public function HRESULT(IXMLDOMElement *self, BSTR name, IXMLDOMAttribute** attributeNode) getAttributeNode;
+			public function HRESULT(IXMLDOMElement *self, IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode) setAttributeNode;
+			public function HRESULT(IXMLDOMElement *self, IXMLDOMAttribute* DOMAttribute, IXMLDOMAttribute** attributeNode) removeAttributeNode;
+			public function HRESULT(IXMLDOMElement *self, BSTR tagName, IXMLDOMNodeList** resultList) getElementsByTagName;
+			public function HRESULT(IXMLDOMElement *self) normalize;
+		}
+		[CRepr]
+		public struct IXMLDOMText : IXMLDOMCharacterData
+		{
+			public const new Guid IID = .(0x2933bf87, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMText *self, int32 offset, IXMLDOMText** rightHandTextNode) splitText;
+		}
+		[CRepr]
+		public struct IXMLDOMComment : IXMLDOMCharacterData
+		{
+			public const new Guid IID = .(0x2933bf88, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+		}
+		[CRepr]
+		public struct IXMLDOMProcessingInstruction : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x2933bf89, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMProcessingInstruction *self, BSTR* name) get_target;
+			public function HRESULT(IXMLDOMProcessingInstruction *self, BSTR* value) get_data;
+			public function HRESULT(IXMLDOMProcessingInstruction *self, BSTR value) put_data;
+		}
+		[CRepr]
+		public struct IXMLDOMCDATASection : IXMLDOMText
+		{
+			public const new Guid IID = .(0x2933bf8a, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+		}
+		[CRepr]
+		public struct IXMLDOMDocumentType : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x2933bf8b, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMDocumentType *self, BSTR* rootName) get_name;
+			public function HRESULT(IXMLDOMDocumentType *self, IXMLDOMNamedNodeMap** entityMap) get_entities;
+			public function HRESULT(IXMLDOMDocumentType *self, IXMLDOMNamedNodeMap** notationMap) get_notations;
+		}
+		[CRepr]
+		public struct IXMLDOMNotation : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x2933bf8c, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMNotation *self, VARIANT* publicID) get_publicId;
+			public function HRESULT(IXMLDOMNotation *self, VARIANT* systemID) get_systemId;
+		}
+		[CRepr]
+		public struct IXMLDOMEntity : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x2933bf8d, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMEntity *self, VARIANT* publicID) get_publicId;
+			public function HRESULT(IXMLDOMEntity *self, VARIANT* systemID) get_systemId;
+			public function HRESULT(IXMLDOMEntity *self, BSTR* name) get_notationName;
+		}
+		[CRepr]
+		public struct IXMLDOMEntityReference : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x2933bf8e, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+		}
+		[CRepr]
+		public struct IXMLDOMParseError : IDispatch
+		{
+			public const new Guid IID = .(0x3efaa426, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
+			
+			public function HRESULT(IXMLDOMParseError *self, int32* errorCode) get_errorCode;
+			public function HRESULT(IXMLDOMParseError *self, BSTR* urlString) get_url;
+			public function HRESULT(IXMLDOMParseError *self, BSTR* reasonString) get_reason;
+			public function HRESULT(IXMLDOMParseError *self, BSTR* sourceString) get_srcText;
+			public function HRESULT(IXMLDOMParseError *self, int32* lineNumber) get_line;
+			public function HRESULT(IXMLDOMParseError *self, int32* linePosition) get_linepos;
+			public function HRESULT(IXMLDOMParseError *self, int32* filePosition) get_filepos;
+		}
+		[CRepr]
+		public struct IXTLRuntime : IXMLDOMNode
+		{
+			public const new Guid IID = .(0x3efaa425, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
+			
+			public function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pID) uniqueID;
+			public function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pDepth) depth;
+			public function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pNumber) childNumber;
+			public function HRESULT(IXTLRuntime *self, BSTR bstrNodeName, IXMLDOMNode* pNode, int32* pNumber) ancestorChildNumber;
+			public function HRESULT(IXTLRuntime *self, IXMLDOMNode* pNode, int32* pNumber) absoluteChildNumber;
+			public function HRESULT(IXTLRuntime *self, int32 lIndex, BSTR bstrFormat, BSTR* pbstrFormattedString) formatIndex;
+			public function HRESULT(IXTLRuntime *self, double dblNumber, BSTR bstrFormat, BSTR* pbstrFormattedString) formatNumber;
+			public function HRESULT(IXTLRuntime *self, VARIANT varDate, BSTR bstrFormat, VARIANT varDestLocale, BSTR* pbstrFormattedString) formatDate;
+			public function HRESULT(IXTLRuntime *self, VARIANT varTime, BSTR bstrFormat, VARIANT varDestLocale, BSTR* pbstrFormattedString) formatTime;
+		}
+		[CRepr]
+		public struct XMLDOMDocumentEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3efaa427, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
+			
+		}
+		[CRepr]
+		public struct IXMLHttpRequest : IDispatch
+		{
+			public const new Guid IID = .(0xed8c108d, 0x4349, 0x11d2, 0x91, 0xa4, 0x00, 0xc0, 0x4f, 0x79, 0x69, 0xe8);
+			
+			public function HRESULT(IXMLHttpRequest *self, BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) open;
+			public function HRESULT(IXMLHttpRequest *self, BSTR bstrHeader, BSTR bstrValue) setRequestHeader;
+			public function HRESULT(IXMLHttpRequest *self, BSTR bstrHeader, BSTR* pbstrValue) getResponseHeader;
+			public function HRESULT(IXMLHttpRequest *self, BSTR* pbstrHeaders) getAllResponseHeaders;
+			public function HRESULT(IXMLHttpRequest *self, VARIANT varBody) send;
+			public function HRESULT(IXMLHttpRequest *self) abort;
+			public function HRESULT(IXMLHttpRequest *self, int32* plStatus) get_status;
+			public function HRESULT(IXMLHttpRequest *self, BSTR* pbstrStatus) get_statusText;
+			public function HRESULT(IXMLHttpRequest *self, IDispatch** ppBody) get_responseXML;
+			public function HRESULT(IXMLHttpRequest *self, BSTR* pbstrBody) get_responseText;
+			public function HRESULT(IXMLHttpRequest *self, VARIANT* pvarBody) get_responseBody;
+			public function HRESULT(IXMLHttpRequest *self, VARIANT* pvarBody) get_responseStream;
+			public function HRESULT(IXMLHttpRequest *self, int32* plState) get_readyState;
+			public function HRESULT(IXMLHttpRequest *self, IDispatch* pReadyStateSink) put_onreadystatechange;
+		}
+		[CRepr]
+		public struct IXMLDSOControl : IDispatch
+		{
+			public const new Guid IID = .(0x310afa62, 0x0575, 0x11d2, 0x9c, 0xa9, 0x00, 0x60, 0xb0, 0xec, 0x3d, 0x39);
+			
+			public function HRESULT(IXMLDSOControl *self, IXMLDOMDocument** ppDoc) get_XMLDocument;
+			public function HRESULT(IXMLDSOControl *self, IXMLDOMDocument* ppDoc) put_XMLDocument;
+			public function HRESULT(IXMLDSOControl *self, BOOL* fJavaDSOCompatible) get_JavaDSOCompatible;
+			public function HRESULT(IXMLDSOControl *self, BOOL fJavaDSOCompatible) put_JavaDSOCompatible;
+			public function HRESULT(IXMLDSOControl *self, int32* state) get_readyState;
+		}
+		[CRepr]
+		public struct IXMLElementCollection : IDispatch
+		{
+			public const new Guid IID = .(0x65725580, 0x9b5d, 0x11d0, 0x9b, 0xfe, 0x00, 0xc0, 0x4f, 0xc9, 0x9c, 0x8e);
+			
+			public function HRESULT(IXMLElementCollection *self, int32 v) put_length;
+			public function HRESULT(IXMLElementCollection *self, int32* p) get_length;
+			public function HRESULT(IXMLElementCollection *self, IUnknown** ppUnk) get__newEnum;
+			public function HRESULT(IXMLElementCollection *self, VARIANT var1, VARIANT var2, IDispatch** ppDisp) item;
+		}
+		[CRepr]
+		public struct IXMLDocument : IDispatch
+		{
+			public const new Guid IID = .(0xf52e2b61, 0x18a1, 0x11d1, 0xb1, 0x05, 0x00, 0x80, 0x5f, 0x49, 0x91, 0x6b);
+			
+			public function HRESULT(IXMLDocument *self, IXMLElement** p) get_root;
+			public function HRESULT(IXMLDocument *self, BSTR* p) get_fileSize;
+			public function HRESULT(IXMLDocument *self, BSTR* p) get_fileModifiedDate;
+			public function HRESULT(IXMLDocument *self, BSTR* p) get_fileUpdatedDate;
+			public function HRESULT(IXMLDocument *self, BSTR* p) get_URL;
+			public function HRESULT(IXMLDocument *self, BSTR p) put_URL;
+			public function HRESULT(IXMLDocument *self, BSTR* p) get_mimeType;
+			public function HRESULT(IXMLDocument *self, int32* pl) get_readyState;
+			public function HRESULT(IXMLDocument *self, BSTR* p) get_charset;
+			public function HRESULT(IXMLDocument *self, BSTR p) put_charset;
+			public function HRESULT(IXMLDocument *self, BSTR* p) get_version;
+			public function HRESULT(IXMLDocument *self, BSTR* p) get_doctype;
+			public function HRESULT(IXMLDocument *self, BSTR* p) get_dtdURL;
+			public function HRESULT(IXMLDocument *self, VARIANT vType, VARIANT var1, IXMLElement** ppElem) createElement;
+		}
+		[CRepr]
+		public struct IXMLDocument2 : IDispatch
+		{
+			public const new Guid IID = .(0x2b8de2fe, 0x8d2d, 0x11d1, 0xb2, 0xfc, 0x00, 0xc0, 0x4f, 0xd9, 0x15, 0xa9);
+			
+			public function HRESULT(IXMLDocument2 *self, IXMLElement2** p) get_root;
+			public function HRESULT(IXMLDocument2 *self, BSTR* p) get_fileSize;
+			public function HRESULT(IXMLDocument2 *self, BSTR* p) get_fileModifiedDate;
+			public function HRESULT(IXMLDocument2 *self, BSTR* p) get_fileUpdatedDate;
+			public function HRESULT(IXMLDocument2 *self, BSTR* p) get_URL;
+			public function HRESULT(IXMLDocument2 *self, BSTR p) put_URL;
+			public function HRESULT(IXMLDocument2 *self, BSTR* p) get_mimeType;
+			public function HRESULT(IXMLDocument2 *self, int32* pl) get_readyState;
+			public function HRESULT(IXMLDocument2 *self, BSTR* p) get_charset;
+			public function HRESULT(IXMLDocument2 *self, BSTR p) put_charset;
+			public function HRESULT(IXMLDocument2 *self, BSTR* p) get_version;
+			public function HRESULT(IXMLDocument2 *self, BSTR* p) get_doctype;
+			public function HRESULT(IXMLDocument2 *self, BSTR* p) get_dtdURL;
+			public function HRESULT(IXMLDocument2 *self, VARIANT vType, VARIANT var1, IXMLElement2** ppElem) createElement;
+			public function HRESULT(IXMLDocument2 *self, int16* pf) get_async;
+			public function HRESULT(IXMLDocument2 *self, int16 f) put_async;
+		}
+		[CRepr]
+		public struct IXMLElement : IDispatch
+		{
+			public const new Guid IID = .(0x3f7f31ac, 0xe15f, 0x11d0, 0x9c, 0x25, 0x00, 0xc0, 0x4f, 0xc9, 0x9c, 0x8e);
+			
+			public function HRESULT(IXMLElement *self, BSTR* p) get_tagName;
+			public function HRESULT(IXMLElement *self, BSTR p) put_tagName;
+			public function HRESULT(IXMLElement *self, IXMLElement** ppParent) get_parent;
+			public function HRESULT(IXMLElement *self, BSTR strPropertyName, VARIANT PropertyValue) setAttribute;
+			public function HRESULT(IXMLElement *self, BSTR strPropertyName, VARIANT* PropertyValue) getAttribute;
+			public function HRESULT(IXMLElement *self, BSTR strPropertyName) removeAttribute;
+			public function HRESULT(IXMLElement *self, IXMLElementCollection** pp) get_children;
+			public function HRESULT(IXMLElement *self, int32* plType) get_type;
+			public function HRESULT(IXMLElement *self, BSTR* p) get_text;
+			public function HRESULT(IXMLElement *self, BSTR p) put_text;
+			public function HRESULT(IXMLElement *self, IXMLElement* pChildElem, int32 lIndex, int32 lReserved) addChild;
+			public function HRESULT(IXMLElement *self, IXMLElement* pChildElem) removeChild;
+		}
+		[CRepr]
+		public struct IXMLElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x2b8de2ff, 0x8d2d, 0x11d1, 0xb2, 0xfc, 0x00, 0xc0, 0x4f, 0xd9, 0x15, 0xa9);
+			
+			public function HRESULT(IXMLElement2 *self, BSTR* p) get_tagName;
+			public function HRESULT(IXMLElement2 *self, BSTR p) put_tagName;
+			public function HRESULT(IXMLElement2 *self, IXMLElement2** ppParent) get_parent;
+			public function HRESULT(IXMLElement2 *self, BSTR strPropertyName, VARIANT PropertyValue) setAttribute;
+			public function HRESULT(IXMLElement2 *self, BSTR strPropertyName, VARIANT* PropertyValue) getAttribute;
+			public function HRESULT(IXMLElement2 *self, BSTR strPropertyName) removeAttribute;
+			public function HRESULT(IXMLElement2 *self, IXMLElementCollection** pp) get_children;
+			public function HRESULT(IXMLElement2 *self, int32* plType) get_type;
+			public function HRESULT(IXMLElement2 *self, BSTR* p) get_text;
+			public function HRESULT(IXMLElement2 *self, BSTR p) put_text;
+			public function HRESULT(IXMLElement2 *self, IXMLElement2* pChildElem, int32 lIndex, int32 lReserved) addChild;
+			public function HRESULT(IXMLElement2 *self, IXMLElement2* pChildElem) removeChild;
+			public function HRESULT(IXMLElement2 *self, IXMLElementCollection** pp) get_attributes;
+		}
+		[CRepr]
+		public struct IXMLAttribute : IDispatch
+		{
+			public const new Guid IID = .(0xd4d4a0fc, 0x3b73, 0x11d1, 0xb2, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x25, 0x96);
+			
+			public function HRESULT(IXMLAttribute *self, BSTR* n) get_name;
+			public function HRESULT(IXMLAttribute *self, BSTR* v) get_value;
+		}
+		[CRepr]
+		public struct IXMLError : IUnknown
+		{
+			public const new Guid IID = .(0x948c5ad3, 0xc58d, 0x11d0, 0x9c, 0x0b, 0x00, 0xc0, 0x4f, 0xc9, 0x9c, 0x8e);
+			
+			public function HRESULT(IXMLError *self, XML_ERROR* pErrorReturn) GetErrorInfo;
+		}
+		[CRepr]
+		public struct IXMLDOMDocument2 : IXMLDOMDocument
+		{
+			public const new Guid IID = .(0x2933bf95, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMDocument2 *self, IXMLDOMSchemaCollection** namespaceCollection) get_namespaces;
+			public function HRESULT(IXMLDOMDocument2 *self, VARIANT* otherCollection) get_schemas;
+			public function HRESULT(IXMLDOMDocument2 *self, VARIANT otherCollection) putref_schemas;
+			public function HRESULT(IXMLDOMDocument2 *self, IXMLDOMParseError** errorObj) validate;
+			public function HRESULT(IXMLDOMDocument2 *self, BSTR name, VARIANT value) setProperty;
+			public function HRESULT(IXMLDOMDocument2 *self, BSTR name, VARIANT* value) getProperty;
+		}
+		[CRepr]
+		public struct IXMLDOMDocument3 : IXMLDOMDocument2
+		{
+			public const new Guid IID = .(0x2933bf96, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXMLDOMDocument3 *self, IXMLDOMNode* node, IXMLDOMParseError** errorObj) validateNode;
+			public function HRESULT(IXMLDOMDocument3 *self, IXMLDOMNode* node, int16 deep, IXMLDOMNode** clone) importNode;
+		}
+		[CRepr]
+		public struct IXMLDOMSchemaCollection : IDispatch
+		{
+			public const new Guid IID = .(0x373984c8, 0xb845, 0x449b, 0x91, 0xe7, 0x45, 0xac, 0x83, 0x03, 0x6a, 0xde);
+			
+			public function HRESULT(IXMLDOMSchemaCollection *self, BSTR namespaceURI, VARIANT @var) add;
+			public function HRESULT(IXMLDOMSchemaCollection *self, BSTR namespaceURI, IXMLDOMNode** schemaNode) get;
+			public function HRESULT(IXMLDOMSchemaCollection *self, BSTR namespaceURI) remove;
+			public function HRESULT(IXMLDOMSchemaCollection *self, int32* length) get_length;
+			public function HRESULT(IXMLDOMSchemaCollection *self, int32 index, BSTR* length) get_namespaceURI;
+			public function HRESULT(IXMLDOMSchemaCollection *self, IXMLDOMSchemaCollection* otherCollection) addCollection;
+			public function HRESULT(IXMLDOMSchemaCollection *self, IUnknown** ppUnk) get__newEnum;
+		}
+		[CRepr]
+		public struct IXMLDOMSelection : IXMLDOMNodeList
+		{
+			public const new Guid IID = .(0xaa634fc7, 0x5888, 0x44a7, 0xa2, 0x57, 0x3a, 0x47, 0x15, 0x0d, 0x3a, 0x0e);
+			
+			public function HRESULT(IXMLDOMSelection *self, BSTR* expression) get_expr;
+			public function HRESULT(IXMLDOMSelection *self, BSTR expression) put_expr;
+			public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode** ppNode) get_context;
+			public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode* pNode) putref_context;
+			public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode** ppNode) peekNode;
+			public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode* pNode, IXMLDOMNode** ppNode) matches;
+			public function HRESULT(IXMLDOMSelection *self, IXMLDOMNode** ppNode) removeNext;
+			public function HRESULT(IXMLDOMSelection *self) removeAll;
+			public function HRESULT(IXMLDOMSelection *self, IXMLDOMSelection** ppNode) clone;
+			public function HRESULT(IXMLDOMSelection *self, BSTR name, VARIANT* value) getProperty;
+			public function HRESULT(IXMLDOMSelection *self, BSTR name, VARIANT value) setProperty;
+		}
+		[CRepr]
+		public struct IXMLDOMParseError2 : IXMLDOMParseError
+		{
+			public const new Guid IID = .(0x3efaa428, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
+			
+			public function HRESULT(IXMLDOMParseError2 *self, BSTR* xpathexpr) get_errorXPath;
+			public function HRESULT(IXMLDOMParseError2 *self, IXMLDOMParseErrorCollection** allErrors) get_allErrors;
+			public function HRESULT(IXMLDOMParseError2 *self, int32 index, BSTR* param1) errorParameters;
+			public function HRESULT(IXMLDOMParseError2 *self, int32* count) get_errorParametersCount;
+		}
+		[CRepr]
+		public struct IXMLDOMParseErrorCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3efaa429, 0x272f, 0x11d2, 0x83, 0x6f, 0x00, 0x00, 0xf8, 0x7a, 0x77, 0x82);
+			
+			public function HRESULT(IXMLDOMParseErrorCollection *self, int32 index, IXMLDOMParseError2** error) get_item;
+			public function HRESULT(IXMLDOMParseErrorCollection *self, int32* length) get_length;
+			public function HRESULT(IXMLDOMParseErrorCollection *self, IXMLDOMParseError2** error) get_next;
+			public function HRESULT(IXMLDOMParseErrorCollection *self) reset;
+			public function HRESULT(IXMLDOMParseErrorCollection *self, IUnknown** ppunk) get__newEnum;
+		}
+		[CRepr]
+		public struct IXSLProcessor : IDispatch
+		{
+			public const new Guid IID = .(0x2933bf92, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXSLProcessor *self, VARIANT @var) put_input;
+			public function HRESULT(IXSLProcessor *self, VARIANT* pVar) get_input;
+			public function HRESULT(IXSLProcessor *self, IXSLTemplate** ppTemplate) get_ownerTemplate;
+			public function HRESULT(IXSLProcessor *self, BSTR mode, BSTR namespaceURI) setStartMode;
+			public function HRESULT(IXSLProcessor *self, BSTR* mode) get_startMode;
+			public function HRESULT(IXSLProcessor *self, BSTR* namespaceURI) get_startModeURI;
+			public function HRESULT(IXSLProcessor *self, VARIANT output) put_output;
+			public function HRESULT(IXSLProcessor *self, VARIANT* pOutput) get_output;
+			public function HRESULT(IXSLProcessor *self, int16* pDone) transform;
+			public function HRESULT(IXSLProcessor *self) reset;
+			public function HRESULT(IXSLProcessor *self, int32* pReadyState) get_readyState;
+			public function HRESULT(IXSLProcessor *self, BSTR baseName, VARIANT parameter, BSTR namespaceURI) addParameter;
+			public function HRESULT(IXSLProcessor *self, IDispatch* obj, BSTR namespaceURI) addObject;
+			public function HRESULT(IXSLProcessor *self, IXMLDOMNode** stylesheet) get_stylesheet;
+		}
+		[CRepr]
+		public struct IXSLTemplate : IDispatch
+		{
+			public const new Guid IID = .(0x2933bf93, 0x7b36, 0x11d2, 0xb2, 0x0e, 0x00, 0xc0, 0x4f, 0x98, 0x3e, 0x60);
+			
+			public function HRESULT(IXSLTemplate *self, IXMLDOMNode* stylesheet) putref_stylesheet;
+			public function HRESULT(IXSLTemplate *self, IXMLDOMNode** stylesheet) get_stylesheet;
+			public function HRESULT(IXSLTemplate *self, IXSLProcessor** ppProcessor) createProcessor;
+		}
+		[CRepr]
+		public struct IXMLHTTPRequest : IDispatch
+		{
+			public const new Guid IID = .(0xed8c108d, 0x4349, 0x11d2, 0x91, 0xa4, 0x00, 0xc0, 0x4f, 0x79, 0x69, 0xe8);
+			
+			public function HRESULT(IXMLHTTPRequest *self, BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword) open;
+			public function HRESULT(IXMLHTTPRequest *self, BSTR bstrHeader, BSTR bstrValue) setRequestHeader;
+			public function HRESULT(IXMLHTTPRequest *self, BSTR bstrHeader, BSTR* pbstrValue) getResponseHeader;
+			public function HRESULT(IXMLHTTPRequest *self, BSTR* pbstrHeaders) getAllResponseHeaders;
+			public function HRESULT(IXMLHTTPRequest *self, VARIANT varBody) send;
+			public function HRESULT(IXMLHTTPRequest *self) abort;
+			public function HRESULT(IXMLHTTPRequest *self, int32* plStatus) get_status;
+			public function HRESULT(IXMLHTTPRequest *self, BSTR* pbstrStatus) get_statusText;
+			public function HRESULT(IXMLHTTPRequest *self, IDispatch** ppBody) get_responseXML;
+			public function HRESULT(IXMLHTTPRequest *self, BSTR* pbstrBody) get_responseText;
+			public function HRESULT(IXMLHTTPRequest *self, VARIANT* pvarBody) get_responseBody;
+			public function HRESULT(IXMLHTTPRequest *self, VARIANT* pvarBody) get_responseStream;
+			public function HRESULT(IXMLHTTPRequest *self, int32* plState) get_readyState;
+			public function HRESULT(IXMLHTTPRequest *self, IDispatch* pReadyStateSink) put_onreadystatechange;
+		}
+		[CRepr]
+		public struct IServerXMLHTTPRequest : IXMLHTTPRequest
+		{
+			public const new Guid IID = .(0x2e9196bf, 0x13ba, 0x4dd4, 0x91, 0xca, 0x6c, 0x57, 0x1f, 0x28, 0x14, 0x95);
+			
+			public function HRESULT(IServerXMLHTTPRequest *self, int32 resolveTimeout, int32 connectTimeout, int32 sendTimeout, int32 receiveTimeout) setTimeouts;
+			public function HRESULT(IServerXMLHTTPRequest *self, VARIANT timeoutInSeconds, int16* isSuccessful) waitForResponse;
+			public function HRESULT(IServerXMLHTTPRequest *self, SERVERXMLHTTP_OPTION option, VARIANT* value) getOption;
+			public function HRESULT(IServerXMLHTTPRequest *self, SERVERXMLHTTP_OPTION option, VARIANT value) setOption;
+		}
+		[CRepr]
+		public struct IServerXMLHTTPRequest2 : IServerXMLHTTPRequest
+		{
+			public const new Guid IID = .(0x2e01311b, 0xc322, 0x4b0a, 0xbd, 0x77, 0xb9, 0x0c, 0xfd, 0xc8, 0xdc, 0xe7);
+			
+			public function HRESULT(IServerXMLHTTPRequest2 *self, SXH_PROXY_SETTING proxySetting, VARIANT varProxyServer, VARIANT varBypassList) setProxy;
+			public function HRESULT(IServerXMLHTTPRequest2 *self, BSTR bstrUserName, BSTR bstrPassword) setProxyCredentials;
+		}
+		[CRepr]
+		public struct ISAXXMLReader : IUnknown
+		{
+			public const new Guid IID = .(0xa4f96ed0, 0xf829, 0x476e, 0x81, 0xc0, 0xcd, 0xc7, 0xbd, 0x2a, 0x08, 0x02);
+			
+			public function HRESULT(ISAXXMLReader *self, PWSTR pwchName, int16* pvfValue) getFeature;
+			public function HRESULT(ISAXXMLReader *self, PWSTR pwchName, int16 vfValue) putFeature;
+			public function HRESULT(ISAXXMLReader *self, PWSTR pwchName, VARIANT* pvarValue) getProperty;
+			public function HRESULT(ISAXXMLReader *self, PWSTR pwchName, VARIANT varValue) putProperty;
+			public function HRESULT(ISAXXMLReader *self, ISAXEntityResolver** ppResolver) getEntityResolver;
+			public function HRESULT(ISAXXMLReader *self, ISAXEntityResolver* pResolver) putEntityResolver;
+			public function HRESULT(ISAXXMLReader *self, ISAXContentHandler** ppHandler) getContentHandler;
+			public function HRESULT(ISAXXMLReader *self, ISAXContentHandler* pHandler) putContentHandler;
+			public function HRESULT(ISAXXMLReader *self, ISAXDTDHandler** ppHandler) getDTDHandler;
+			public function HRESULT(ISAXXMLReader *self, ISAXDTDHandler* pHandler) putDTDHandler;
+			public function HRESULT(ISAXXMLReader *self, ISAXErrorHandler** ppHandler) getErrorHandler;
+			public function HRESULT(ISAXXMLReader *self, ISAXErrorHandler* pHandler) putErrorHandler;
+			public function HRESULT(ISAXXMLReader *self, uint16** ppwchBaseUrl) getBaseURL;
+			public function HRESULT(ISAXXMLReader *self, PWSTR pwchBaseUrl) putBaseURL;
+			public function HRESULT(ISAXXMLReader *self, uint16** ppwchSecureBaseUrl) getSecureBaseURL;
+			public function HRESULT(ISAXXMLReader *self, PWSTR pwchSecureBaseUrl) putSecureBaseURL;
+			public function HRESULT(ISAXXMLReader *self, VARIANT varInput) parse;
+			public function HRESULT(ISAXXMLReader *self, PWSTR pwchUrl) parseURL;
+		}
+		[CRepr]
+		public struct ISAXXMLFilter : ISAXXMLReader
+		{
+			public const new Guid IID = .(0x70409222, 0xca09, 0x4475, 0xac, 0xb8, 0x40, 0x31, 0x2f, 0xe8, 0xd1, 0x45);
+			
+			public function HRESULT(ISAXXMLFilter *self, ISAXXMLReader** ppReader) getParent;
+			public function HRESULT(ISAXXMLFilter *self, ISAXXMLReader* pReader) putParent;
+		}
+		[CRepr]
+		public struct ISAXLocator : IUnknown
+		{
+			public const new Guid IID = .(0x9b7e472a, 0x0de4, 0x4640, 0xbf, 0xf3, 0x84, 0xd3, 0x8a, 0x05, 0x1c, 0x31);
+			
+			public function HRESULT(ISAXLocator *self, int32* pnColumn) getColumnNumber;
+			public function HRESULT(ISAXLocator *self, int32* pnLine) getLineNumber;
+			public function HRESULT(ISAXLocator *self, uint16** ppwchPublicId) getPublicId;
+			public function HRESULT(ISAXLocator *self, uint16** ppwchSystemId) getSystemId;
+		}
+		[CRepr]
+		public struct ISAXEntityResolver : IUnknown
+		{
+			public const new Guid IID = .(0x99bca7bd, 0xe8c4, 0x4d5f, 0xa0, 0xcf, 0x6d, 0x90, 0x79, 0x01, 0xff, 0x07);
+			
+			public function HRESULT(ISAXEntityResolver *self, PWSTR pwchPublicId, PWSTR pwchSystemId, VARIANT* pvarInput) resolveEntity;
+		}
+		[CRepr]
+		public struct ISAXContentHandler : IUnknown
+		{
+			public const new Guid IID = .(0x1545cdfa, 0x9e4e, 0x4497, 0xa8, 0xa4, 0x2b, 0xf7, 0xd0, 0x11, 0x2c, 0x44);
+			
+			public function HRESULT(ISAXContentHandler *self, ISAXLocator* pLocator) putDocumentLocator;
+			public function HRESULT(ISAXContentHandler *self) startDocument;
+			public function HRESULT(ISAXContentHandler *self) endDocument;
+			public function HRESULT(ISAXContentHandler *self, PWSTR pwchPrefix, int32 cchPrefix, PWSTR pwchUri, int32 cchUri) startPrefixMapping;
+			public function HRESULT(ISAXContentHandler *self, PWSTR pwchPrefix, int32 cchPrefix) endPrefixMapping;
+			public function HRESULT(ISAXContentHandler *self, PWSTR pwchNamespaceUri, int32 cchNamespaceUri, PWSTR pwchLocalName, int32 cchLocalName, PWSTR pwchQName, int32 cchQName, ISAXAttributes* pAttributes) startElement;
+			public function HRESULT(ISAXContentHandler *self, PWSTR pwchNamespaceUri, int32 cchNamespaceUri, PWSTR pwchLocalName, int32 cchLocalName, PWSTR pwchQName, int32 cchQName) endElement;
+			public function HRESULT(ISAXContentHandler *self, PWSTR pwchChars, int32 cchChars) characters;
+			public function HRESULT(ISAXContentHandler *self, PWSTR pwchChars, int32 cchChars) ignorableWhitespace;
+			public function HRESULT(ISAXContentHandler *self, PWSTR pwchTarget, int32 cchTarget, PWSTR pwchData, int32 cchData) processingInstruction;
+			public function HRESULT(ISAXContentHandler *self, PWSTR pwchName, int32 cchName) skippedEntity;
+		}
+		[CRepr]
+		public struct ISAXDTDHandler : IUnknown
+		{
+			public const new Guid IID = .(0xe15c1baf, 0xafb3, 0x4d60, 0x8c, 0x36, 0x19, 0xa8, 0xc4, 0x5d, 0xef, 0xed);
+			
+			public function HRESULT(ISAXDTDHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) notationDecl;
+			public function HRESULT(ISAXDTDHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId, PWSTR pwchNotationName, int32 cchNotationName) unparsedEntityDecl;
+		}
+		[CRepr]
+		public struct ISAXErrorHandler : IUnknown
+		{
+			public const new Guid IID = .(0xa60511c4, 0xccf5, 0x479e, 0x98, 0xa3, 0xdc, 0x8d, 0xc5, 0x45, 0xb7, 0xd0);
+			
+			public function HRESULT(ISAXErrorHandler *self, ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) error;
+			public function HRESULT(ISAXErrorHandler *self, ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) fatalError;
+			public function HRESULT(ISAXErrorHandler *self, ISAXLocator* pLocator, PWSTR pwchErrorMessage, HRESULT hrErrorCode) ignorableWarning;
+		}
+		[CRepr]
+		public struct ISAXLexicalHandler : IUnknown
+		{
+			public const new Guid IID = .(0x7f85d5f5, 0x47a8, 0x4497, 0xbd, 0xa5, 0x84, 0xba, 0x04, 0x81, 0x9e, 0xa6);
+			
+			public function HRESULT(ISAXLexicalHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) startDTD;
+			public function HRESULT(ISAXLexicalHandler *self) endDTD;
+			public function HRESULT(ISAXLexicalHandler *self, PWSTR pwchName, int32 cchName) startEntity;
+			public function HRESULT(ISAXLexicalHandler *self, PWSTR pwchName, int32 cchName) endEntity;
+			public function HRESULT(ISAXLexicalHandler *self) startCDATA;
+			public function HRESULT(ISAXLexicalHandler *self) endCDATA;
+			public function HRESULT(ISAXLexicalHandler *self, PWSTR pwchChars, int32 cchChars) comment;
+		}
+		[CRepr]
+		public struct ISAXDeclHandler : IUnknown
+		{
+			public const new Guid IID = .(0x862629ac, 0x771a, 0x47b2, 0x83, 0x37, 0x4e, 0x68, 0x43, 0xc1, 0xbe, 0x90);
+			
+			public function HRESULT(ISAXDeclHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchModel, int32 cchModel) elementDecl;
+			public function HRESULT(ISAXDeclHandler *self, PWSTR pwchElementName, int32 cchElementName, PWSTR pwchAttributeName, int32 cchAttributeName, PWSTR pwchType, int32 cchType, PWSTR pwchValueDefault, int32 cchValueDefault, PWSTR pwchValue, int32 cchValue) attributeDecl;
+			public function HRESULT(ISAXDeclHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchValue, int32 cchValue) internalEntityDecl;
+			public function HRESULT(ISAXDeclHandler *self, PWSTR pwchName, int32 cchName, PWSTR pwchPublicId, int32 cchPublicId, PWSTR pwchSystemId, int32 cchSystemId) externalEntityDecl;
+		}
+		[CRepr]
+		public struct ISAXAttributes : IUnknown
+		{
+			public const new Guid IID = .(0xf078abe1, 0x45d2, 0x4832, 0x91, 0xea, 0x44, 0x66, 0xce, 0x2f, 0x25, 0xc9);
+			
+			public function HRESULT(ISAXAttributes *self, int32* pnLength) getLength;
+			public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchUri, int32* pcchUri) getURI;
+			public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchLocalName, int32* pcchLocalName) getLocalName;
+			public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchQName, int32* pcchQName) getQName;
+			public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchUri, int32* pcchUri, uint16** ppwchLocalName, int32* pcchLocalName, uint16** ppwchQName, int32* pcchQName) getName;
+			public function HRESULT(ISAXAttributes *self, PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, int32* pnIndex) getIndexFromName;
+			public function HRESULT(ISAXAttributes *self, PWSTR pwchQName, int32 cchQName, int32* pnIndex) getIndexFromQName;
+			public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchType, int32* pcchType) getType;
+			public function HRESULT(ISAXAttributes *self, PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, uint16** ppwchType, int32* pcchType) getTypeFromName;
+			public function HRESULT(ISAXAttributes *self, PWSTR pwchQName, int32 cchQName, uint16** ppwchType, int32* pcchType) getTypeFromQName;
+			public function HRESULT(ISAXAttributes *self, int32 nIndex, uint16** ppwchValue, int32* pcchValue) getValue;
+			public function HRESULT(ISAXAttributes *self, PWSTR pwchUri, int32 cchUri, PWSTR pwchLocalName, int32 cchLocalName, uint16** ppwchValue, int32* pcchValue) getValueFromName;
+			public function HRESULT(ISAXAttributes *self, PWSTR pwchQName, int32 cchQName, uint16** ppwchValue, int32* pcchValue) getValueFromQName;
+		}
+		[CRepr]
+		public struct IVBSAXXMLReader : IDispatch
+		{
+			public const new Guid IID = .(0x8c033caa, 0x6cd6, 0x4f73, 0xb7, 0x28, 0x45, 0x31, 0xaf, 0x74, 0x94, 0x5f);
+			
+			public function HRESULT(IVBSAXXMLReader *self, BSTR strName, int16* fValue) getFeature;
+			public function HRESULT(IVBSAXXMLReader *self, BSTR strName, int16 fValue) putFeature;
+			public function HRESULT(IVBSAXXMLReader *self, BSTR strName, VARIANT* varValue) getProperty;
+			public function HRESULT(IVBSAXXMLReader *self, BSTR strName, VARIANT varValue) putProperty;
+			public function HRESULT(IVBSAXXMLReader *self, IVBSAXEntityResolver** oResolver) get_entityResolver;
+			public function HRESULT(IVBSAXXMLReader *self, IVBSAXEntityResolver* oResolver) putref_entityResolver;
+			public function HRESULT(IVBSAXXMLReader *self, IVBSAXContentHandler** oHandler) get_contentHandler;
+			public function HRESULT(IVBSAXXMLReader *self, IVBSAXContentHandler* oHandler) putref_contentHandler;
+			public function HRESULT(IVBSAXXMLReader *self, IVBSAXDTDHandler** oHandler) get_dtdHandler;
+			public function HRESULT(IVBSAXXMLReader *self, IVBSAXDTDHandler* oHandler) putref_dtdHandler;
+			public function HRESULT(IVBSAXXMLReader *self, IVBSAXErrorHandler** oHandler) get_errorHandler;
+			public function HRESULT(IVBSAXXMLReader *self, IVBSAXErrorHandler* oHandler) putref_errorHandler;
+			public function HRESULT(IVBSAXXMLReader *self, BSTR* strBaseURL) get_baseURL;
+			public function HRESULT(IVBSAXXMLReader *self, BSTR strBaseURL) put_baseURL;
+			public function HRESULT(IVBSAXXMLReader *self, BSTR* strSecureBaseURL) get_secureBaseURL;
+			public function HRESULT(IVBSAXXMLReader *self, BSTR strSecureBaseURL) put_secureBaseURL;
+			public function HRESULT(IVBSAXXMLReader *self, VARIANT varInput) parse;
+			public function HRESULT(IVBSAXXMLReader *self, BSTR strURL) parseURL;
+		}
+		[CRepr]
+		public struct IVBSAXXMLFilter : IDispatch
+		{
+			public const new Guid IID = .(0x1299eb1b, 0x5b88, 0x433e, 0x82, 0xde, 0x82, 0xca, 0x75, 0xad, 0x4e, 0x04);
+			
+			public function HRESULT(IVBSAXXMLFilter *self, IVBSAXXMLReader** oReader) get_parent;
+			public function HRESULT(IVBSAXXMLFilter *self, IVBSAXXMLReader* oReader) putref_parent;
+		}
+		[CRepr]
+		public struct IVBSAXLocator : IDispatch
+		{
+			public const new Guid IID = .(0x796e7ac5, 0x5aa2, 0x4eff, 0xac, 0xad, 0x3f, 0xaa, 0xf0, 0x1a, 0x32, 0x88);
+			
+			public function HRESULT(IVBSAXLocator *self, int32* nColumn) get_columnNumber;
+			public function HRESULT(IVBSAXLocator *self, int32* nLine) get_lineNumber;
+			public function HRESULT(IVBSAXLocator *self, BSTR* strPublicId) get_publicId;
+			public function HRESULT(IVBSAXLocator *self, BSTR* strSystemId) get_systemId;
+		}
+		[CRepr]
+		public struct IVBSAXEntityResolver : IDispatch
+		{
+			public const new Guid IID = .(0x0c05d096, 0xf45b, 0x4aca, 0xad, 0x1a, 0xaa, 0x0b, 0xc2, 0x55, 0x18, 0xdc);
+			
+			public function HRESULT(IVBSAXEntityResolver *self, BSTR* strPublicId, BSTR* strSystemId, VARIANT* varInput) resolveEntity;
+		}
+		[CRepr]
+		public struct IVBSAXContentHandler : IDispatch
+		{
+			public const new Guid IID = .(0x2ed7290a, 0x4dd5, 0x4b46, 0xbb, 0x26, 0x4e, 0x41, 0x55, 0xe7, 0x7f, 0xaa);
+			
+			public function HRESULT(IVBSAXContentHandler *self, IVBSAXLocator* oLocator) putref_documentLocator;
+			public function HRESULT(IVBSAXContentHandler *self) startDocument;
+			public function HRESULT(IVBSAXContentHandler *self) endDocument;
+			public function HRESULT(IVBSAXContentHandler *self, BSTR* strPrefix, BSTR* strURI) startPrefixMapping;
+			public function HRESULT(IVBSAXContentHandler *self, BSTR* strPrefix) endPrefixMapping;
+			public function HRESULT(IVBSAXContentHandler *self, BSTR* strNamespaceURI, BSTR* strLocalName, BSTR* strQName, IVBSAXAttributes* oAttributes) startElement;
+			public function HRESULT(IVBSAXContentHandler *self, BSTR* strNamespaceURI, BSTR* strLocalName, BSTR* strQName) endElement;
+			public function HRESULT(IVBSAXContentHandler *self, BSTR* strChars) characters;
+			public function HRESULT(IVBSAXContentHandler *self, BSTR* strChars) ignorableWhitespace;
+			public function HRESULT(IVBSAXContentHandler *self, BSTR* strTarget, BSTR* strData) processingInstruction;
+			public function HRESULT(IVBSAXContentHandler *self, BSTR* strName) skippedEntity;
+		}
+		[CRepr]
+		public struct IVBSAXDTDHandler : IDispatch
+		{
+			public const new Guid IID = .(0x24fb3297, 0x302d, 0x4620, 0xba, 0x39, 0x3a, 0x73, 0x2d, 0x85, 0x05, 0x58);
+			
+			public function HRESULT(IVBSAXDTDHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) notationDecl;
+			public function HRESULT(IVBSAXDTDHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId, BSTR* strNotationName) unparsedEntityDecl;
+		}
+		[CRepr]
+		public struct IVBSAXErrorHandler : IDispatch
+		{
+			public const new Guid IID = .(0xd963d3fe, 0x173c, 0x4862, 0x90, 0x95, 0xb9, 0x2f, 0x66, 0x99, 0x5f, 0x52);
+			
+			public function HRESULT(IVBSAXErrorHandler *self, IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) error;
+			public function HRESULT(IVBSAXErrorHandler *self, IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) fatalError;
+			public function HRESULT(IVBSAXErrorHandler *self, IVBSAXLocator* oLocator, BSTR* strErrorMessage, int32 nErrorCode) ignorableWarning;
+		}
+		[CRepr]
+		public struct IVBSAXLexicalHandler : IDispatch
+		{
+			public const new Guid IID = .(0x032aac35, 0x8c0e, 0x4d9d, 0x97, 0x9f, 0xe3, 0xb7, 0x02, 0x93, 0x55, 0x76);
+			
+			public function HRESULT(IVBSAXLexicalHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) startDTD;
+			public function HRESULT(IVBSAXLexicalHandler *self) endDTD;
+			public function HRESULT(IVBSAXLexicalHandler *self, BSTR* strName) startEntity;
+			public function HRESULT(IVBSAXLexicalHandler *self, BSTR* strName) endEntity;
+			public function HRESULT(IVBSAXLexicalHandler *self) startCDATA;
+			public function HRESULT(IVBSAXLexicalHandler *self) endCDATA;
+			public function HRESULT(IVBSAXLexicalHandler *self, BSTR* strChars) comment;
+		}
+		[CRepr]
+		public struct IVBSAXDeclHandler : IDispatch
+		{
+			public const new Guid IID = .(0xe8917260, 0x7579, 0x4be1, 0xb5, 0xdd, 0x7a, 0xfb, 0xfa, 0x6f, 0x07, 0x7b);
+			
+			public function HRESULT(IVBSAXDeclHandler *self, BSTR* strName, BSTR* strModel) elementDecl;
+			public function HRESULT(IVBSAXDeclHandler *self, BSTR* strElementName, BSTR* strAttributeName, BSTR* strType, BSTR* strValueDefault, BSTR* strValue) attributeDecl;
+			public function HRESULT(IVBSAXDeclHandler *self, BSTR* strName, BSTR* strValue) internalEntityDecl;
+			public function HRESULT(IVBSAXDeclHandler *self, BSTR* strName, BSTR* strPublicId, BSTR* strSystemId) externalEntityDecl;
+		}
+		[CRepr]
+		public struct IVBSAXAttributes : IDispatch
+		{
+			public const new Guid IID = .(0x10dc0586, 0x132b, 0x4cac, 0x8b, 0xb3, 0xdb, 0x00, 0xac, 0x8b, 0x7e, 0xe0);
+			
+			public function HRESULT(IVBSAXAttributes *self, int32* nLength) get_length;
+			public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strURI) getURI;
+			public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strLocalName) getLocalName;
+			public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strQName) getQName;
+			public function HRESULT(IVBSAXAttributes *self, BSTR strURI, BSTR strLocalName, int32* nIndex) getIndexFromName;
+			public function HRESULT(IVBSAXAttributes *self, BSTR strQName, int32* nIndex) getIndexFromQName;
+			public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strType) getType;
+			public function HRESULT(IVBSAXAttributes *self, BSTR strURI, BSTR strLocalName, BSTR* strType) getTypeFromName;
+			public function HRESULT(IVBSAXAttributes *self, BSTR strQName, BSTR* strType) getTypeFromQName;
+			public function HRESULT(IVBSAXAttributes *self, int32 nIndex, BSTR* strValue) getValue;
+			public function HRESULT(IVBSAXAttributes *self, BSTR strURI, BSTR strLocalName, BSTR* strValue) getValueFromName;
+			public function HRESULT(IVBSAXAttributes *self, BSTR strQName, BSTR* strValue) getValueFromQName;
+		}
+		[CRepr]
+		public struct IMXWriter : IDispatch
+		{
+			public const new Guid IID = .(0x4d7ff4ba, 0x1565, 0x4ea8, 0x94, 0xe1, 0x6e, 0x72, 0x4a, 0x46, 0xf9, 0x8d);
+			
+			public function HRESULT(IMXWriter *self, VARIANT varDestination) put_output;
+			public function HRESULT(IMXWriter *self, VARIANT* varDestination) get_output;
+			public function HRESULT(IMXWriter *self, BSTR strEncoding) put_encoding;
+			public function HRESULT(IMXWriter *self, BSTR* strEncoding) get_encoding;
+			public function HRESULT(IMXWriter *self, int16 fWriteByteOrderMark) put_byteOrderMark;
+			public function HRESULT(IMXWriter *self, int16* fWriteByteOrderMark) get_byteOrderMark;
+			public function HRESULT(IMXWriter *self, int16 fIndentMode) put_indent;
+			public function HRESULT(IMXWriter *self, int16* fIndentMode) get_indent;
+			public function HRESULT(IMXWriter *self, int16 fValue) put_standalone;
+			public function HRESULT(IMXWriter *self, int16* fValue) get_standalone;
+			public function HRESULT(IMXWriter *self, int16 fValue) put_omitXMLDeclaration;
+			public function HRESULT(IMXWriter *self, int16* fValue) get_omitXMLDeclaration;
+			public function HRESULT(IMXWriter *self, BSTR strVersion) put_version;
+			public function HRESULT(IMXWriter *self, BSTR* strVersion) get_version;
+			public function HRESULT(IMXWriter *self, int16 fValue) put_disableOutputEscaping;
+			public function HRESULT(IMXWriter *self, int16* fValue) get_disableOutputEscaping;
+			public function HRESULT(IMXWriter *self) flush;
+		}
+		[CRepr]
+		public struct IMXAttributes : IDispatch
+		{
+			public const new Guid IID = .(0xf10d27cc, 0x3ec0, 0x415c, 0x8e, 0xd8, 0x77, 0xab, 0x1c, 0x5e, 0x72, 0x62);
+			
+			public function HRESULT(IMXAttributes *self, BSTR strURI, BSTR strLocalName, BSTR strQName, BSTR strType, BSTR strValue) addAttribute;
+			public function HRESULT(IMXAttributes *self, VARIANT varAtts, int32 nIndex) addAttributeFromIndex;
+			public function HRESULT(IMXAttributes *self) clear;
+			public function HRESULT(IMXAttributes *self, int32 nIndex) removeAttribute;
+			public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strURI, BSTR strLocalName, BSTR strQName, BSTR strType, BSTR strValue) setAttribute;
+			public function HRESULT(IMXAttributes *self, VARIANT varAtts) setAttributes;
+			public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strLocalName) setLocalName;
+			public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strQName) setQName;
+			public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strType) setType;
+			public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strURI) setURI;
+			public function HRESULT(IMXAttributes *self, int32 nIndex, BSTR strValue) setValue;
+		}
+		[CRepr]
+		public struct IMXReaderControl : IDispatch
+		{
+			public const new Guid IID = .(0x808f4e35, 0x8d5a, 0x4fbe, 0x84, 0x66, 0x33, 0xa4, 0x12, 0x79, 0xed, 0x30);
+			
+			public function HRESULT(IMXReaderControl *self) abort;
+			public function HRESULT(IMXReaderControl *self) resume;
+			public function HRESULT(IMXReaderControl *self) suspend;
+		}
+		[CRepr]
+		public struct IMXSchemaDeclHandler : IDispatch
+		{
+			public const new Guid IID = .(0xfa4bb38c, 0xfaf9, 0x4cca, 0x93, 0x02, 0xd1, 0xdd, 0x0f, 0xe5, 0x20, 0xdb);
+			
+			public function HRESULT(IMXSchemaDeclHandler *self, ISchemaElement* oSchemaElement) schemaElementDecl;
+		}
+		[CRepr]
+		public struct IMXNamespacePrefixes : IDispatch
+		{
+			public const new Guid IID = .(0xc90352f4, 0x643c, 0x4fbc, 0xbb, 0x23, 0xe9, 0x96, 0xeb, 0x2d, 0x51, 0xfd);
+			
+			public function HRESULT(IMXNamespacePrefixes *self, int32 index, BSTR* prefix) get_item;
+			public function HRESULT(IMXNamespacePrefixes *self, int32* length) get_length;
+			public function HRESULT(IMXNamespacePrefixes *self, IUnknown** ppUnk) get__newEnum;
+		}
+		[CRepr]
+		public struct IVBMXNamespaceManager : IDispatch
+		{
+			public const new Guid IID = .(0xc90352f5, 0x643c, 0x4fbc, 0xbb, 0x23, 0xe9, 0x96, 0xeb, 0x2d, 0x51, 0xfd);
+			
+			public function HRESULT(IVBMXNamespaceManager *self, int16 fOverride) put_allowOverride;
+			public function HRESULT(IVBMXNamespaceManager *self, int16* fOverride) get_allowOverride;
+			public function HRESULT(IVBMXNamespaceManager *self) reset;
+			public function HRESULT(IVBMXNamespaceManager *self) pushContext;
+			public function HRESULT(IVBMXNamespaceManager *self, IXMLDOMNode* contextNode, int16 fDeep) pushNodeContext;
+			public function HRESULT(IVBMXNamespaceManager *self) popContext;
+			public function HRESULT(IVBMXNamespaceManager *self, BSTR prefix, BSTR namespaceURI) declarePrefix;
+			public function HRESULT(IVBMXNamespaceManager *self, IMXNamespacePrefixes** prefixes) getDeclaredPrefixes;
+			public function HRESULT(IVBMXNamespaceManager *self, BSTR namespaceURI, IMXNamespacePrefixes** prefixes) getPrefixes;
+			public function HRESULT(IVBMXNamespaceManager *self, BSTR prefix, VARIANT* uri) getURI;
+			public function HRESULT(IVBMXNamespaceManager *self, BSTR strPrefix, IXMLDOMNode* contextNode, VARIANT* uri) getURIFromNode;
+		}
+		[CRepr]
+		public struct IMXNamespaceManager : IUnknown
+		{
+			public const new Guid IID = .(0xc90352f6, 0x643c, 0x4fbc, 0xbb, 0x23, 0xe9, 0x96, 0xeb, 0x2d, 0x51, 0xfd);
+			
+			public function HRESULT(IMXNamespaceManager *self, int16 fOverride) putAllowOverride;
+			public function HRESULT(IMXNamespaceManager *self, int16* fOverride) getAllowOverride;
+			public function HRESULT(IMXNamespaceManager *self) reset;
+			public function HRESULT(IMXNamespaceManager *self) pushContext;
+			public function HRESULT(IMXNamespaceManager *self, IXMLDOMNode* contextNode, int16 fDeep) pushNodeContext;
+			public function HRESULT(IMXNamespaceManager *self) popContext;
+			public function HRESULT(IMXNamespaceManager *self, PWSTR prefix, PWSTR namespaceURI) declarePrefix;
+			public function HRESULT(IMXNamespaceManager *self, int32 nIndex, char16* pwchPrefix, int32* pcchPrefix) getDeclaredPrefix;
+			public function HRESULT(IMXNamespaceManager *self, PWSTR pwszNamespaceURI, int32 nIndex, char16* pwchPrefix, int32* pcchPrefix) getPrefix;
+			public function HRESULT(IMXNamespaceManager *self, PWSTR pwchPrefix, IXMLDOMNode* pContextNode, char16* pwchUri, int32* pcchUri) getURI;
+		}
+		[CRepr]
+		public struct IMXXMLFilter : IDispatch
+		{
+			public const new Guid IID = .(0xc90352f7, 0x643c, 0x4fbc, 0xbb, 0x23, 0xe9, 0x96, 0xeb, 0x2d, 0x51, 0xfd);
+			
+			public function HRESULT(IMXXMLFilter *self, BSTR strName, int16* fValue) getFeature;
+			public function HRESULT(IMXXMLFilter *self, BSTR strName, int16 fValue) putFeature;
+			public function HRESULT(IMXXMLFilter *self, BSTR strName, VARIANT* varValue) getProperty;
+			public function HRESULT(IMXXMLFilter *self, BSTR strName, VARIANT varValue) putProperty;
+			public function HRESULT(IMXXMLFilter *self, IUnknown** oResolver) get_entityResolver;
+			public function HRESULT(IMXXMLFilter *self, IUnknown* oResolver) putref_entityResolver;
+			public function HRESULT(IMXXMLFilter *self, IUnknown** oHandler) get_contentHandler;
+			public function HRESULT(IMXXMLFilter *self, IUnknown* oHandler) putref_contentHandler;
+			public function HRESULT(IMXXMLFilter *self, IUnknown** oHandler) get_dtdHandler;
+			public function HRESULT(IMXXMLFilter *self, IUnknown* oHandler) putref_dtdHandler;
+			public function HRESULT(IMXXMLFilter *self, IUnknown** oHandler) get_errorHandler;
+			public function HRESULT(IMXXMLFilter *self, IUnknown* oHandler) putref_errorHandler;
+		}
+		[CRepr]
+		public struct IXMLDOMSchemaCollection2 : IXMLDOMSchemaCollection
+		{
+			public const new Guid IID = .(0x50ea08b0, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(IXMLDOMSchemaCollection2 *self) validate;
+			public function HRESULT(IXMLDOMSchemaCollection2 *self, int16 validateOnLoad) put_validateOnLoad;
+			public function HRESULT(IXMLDOMSchemaCollection2 *self, int16* validateOnLoad) get_validateOnLoad;
+			public function HRESULT(IXMLDOMSchemaCollection2 *self, BSTR namespaceURI, ISchema** schema) getSchema;
+			public function HRESULT(IXMLDOMSchemaCollection2 *self, IXMLDOMNode* node, ISchemaItem** item) getDeclaration;
+		}
+		[CRepr]
+		public struct ISchemaStringCollection : IDispatch
+		{
+			public const new Guid IID = .(0x50ea08b1, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaStringCollection *self, int32 index, BSTR* bstr) get_item;
+			public function HRESULT(ISchemaStringCollection *self, int32* length) get_length;
+			public function HRESULT(ISchemaStringCollection *self, IUnknown** ppunk) get__newEnum;
+		}
+		[CRepr]
+		public struct ISchemaItemCollection : IDispatch
+		{
+			public const new Guid IID = .(0x50ea08b2, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaItemCollection *self, int32 index, ISchemaItem** item) get_item;
+			public function HRESULT(ISchemaItemCollection *self, BSTR name, ISchemaItem** item) itemByName;
+			public function HRESULT(ISchemaItemCollection *self, BSTR name, BSTR namespaceURI, ISchemaItem** item) itemByQName;
+			public function HRESULT(ISchemaItemCollection *self, int32* length) get_length;
+			public function HRESULT(ISchemaItemCollection *self, IUnknown** ppunk) get__newEnum;
+		}
+		[CRepr]
+		public struct ISchemaItem : IDispatch
+		{
+			public const new Guid IID = .(0x50ea08b3, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaItem *self, BSTR* name) get_name;
+			public function HRESULT(ISchemaItem *self, BSTR* namespaceURI) get_namespaceURI;
+			public function HRESULT(ISchemaItem *self, ISchema** schema) get_schema;
+			public function HRESULT(ISchemaItem *self, BSTR* id) get_id;
+			public function HRESULT(ISchemaItem *self, SOMITEMTYPE* itemType) get_itemType;
+			public function HRESULT(ISchemaItem *self, IVBSAXAttributes** attributes) get_unhandledAttributes;
+			public function HRESULT(ISchemaItem *self, IUnknown* annotationSink, int16* isWritten) writeAnnotation;
+		}
+		[CRepr]
+		public struct ISchema : ISchemaItem
+		{
+			public const new Guid IID = .(0x50ea08b4, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchema *self, BSTR* targetNamespace) get_targetNamespace;
+			public function HRESULT(ISchema *self, BSTR* version) get_version;
+			public function HRESULT(ISchema *self, ISchemaItemCollection** types) get_types;
+			public function HRESULT(ISchema *self, ISchemaItemCollection** elements) get_elements;
+			public function HRESULT(ISchema *self, ISchemaItemCollection** attributes) get_attributes;
+			public function HRESULT(ISchema *self, ISchemaItemCollection** attributeGroups) get_attributeGroups;
+			public function HRESULT(ISchema *self, ISchemaItemCollection** modelGroups) get_modelGroups;
+			public function HRESULT(ISchema *self, ISchemaItemCollection** notations) get_notations;
+			public function HRESULT(ISchema *self, ISchemaStringCollection** schemaLocations) get_schemaLocations;
+		}
+		[CRepr]
+		public struct ISchemaParticle : ISchemaItem
+		{
+			public const new Guid IID = .(0x50ea08b5, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaParticle *self, VARIANT* minOccurs) get_minOccurs;
+			public function HRESULT(ISchemaParticle *self, VARIANT* maxOccurs) get_maxOccurs;
+		}
+		[CRepr]
+		public struct ISchemaAttribute : ISchemaItem
+		{
+			public const new Guid IID = .(0x50ea08b6, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaAttribute *self, ISchemaType** type) get_type;
+			public function HRESULT(ISchemaAttribute *self, ISchemaComplexType** @scope) get_scope;
+			public function HRESULT(ISchemaAttribute *self, BSTR* defaultValue) get_defaultValue;
+			public function HRESULT(ISchemaAttribute *self, BSTR* fixedValue) get_fixedValue;
+			public function HRESULT(ISchemaAttribute *self, SCHEMAUSE* use) get_use;
+			public function HRESULT(ISchemaAttribute *self, int16* reference) get_isReference;
+		}
+		[CRepr]
+		public struct ISchemaElement : ISchemaParticle
+		{
+			public const new Guid IID = .(0x50ea08b7, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaElement *self, ISchemaType** type) get_type;
+			public function HRESULT(ISchemaElement *self, ISchemaComplexType** @scope) get_scope;
+			public function HRESULT(ISchemaElement *self, BSTR* defaultValue) get_defaultValue;
+			public function HRESULT(ISchemaElement *self, BSTR* fixedValue) get_fixedValue;
+			public function HRESULT(ISchemaElement *self, int16* nillable) get_isNillable;
+			public function HRESULT(ISchemaElement *self, ISchemaItemCollection** constraints) get_identityConstraints;
+			public function HRESULT(ISchemaElement *self, ISchemaElement** element) get_substitutionGroup;
+			public function HRESULT(ISchemaElement *self, SCHEMADERIVATIONMETHOD* exclusions) get_substitutionGroupExclusions;
+			public function HRESULT(ISchemaElement *self, SCHEMADERIVATIONMETHOD* disallowed) get_disallowedSubstitutions;
+			public function HRESULT(ISchemaElement *self, int16* @abstract) get_isAbstract;
+			public function HRESULT(ISchemaElement *self, int16* reference) get_isReference;
+		}
+		[CRepr]
+		public struct ISchemaType : ISchemaItem
+		{
+			public const new Guid IID = .(0x50ea08b8, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaType *self, ISchemaItemCollection** baseTypes) get_baseTypes;
+			public function HRESULT(ISchemaType *self, SCHEMADERIVATIONMETHOD* final) get_final;
+			public function HRESULT(ISchemaType *self, SCHEMATYPEVARIETY* variety) get_variety;
+			public function HRESULT(ISchemaType *self, SCHEMADERIVATIONMETHOD* derivedBy) get_derivedBy;
+			public function HRESULT(ISchemaType *self, BSTR data, int16* valid) isValid;
+			public function HRESULT(ISchemaType *self, BSTR* minExclusive) get_minExclusive;
+			public function HRESULT(ISchemaType *self, BSTR* minInclusive) get_minInclusive;
+			public function HRESULT(ISchemaType *self, BSTR* maxExclusive) get_maxExclusive;
+			public function HRESULT(ISchemaType *self, BSTR* maxInclusive) get_maxInclusive;
+			public function HRESULT(ISchemaType *self, VARIANT* totalDigits) get_totalDigits;
+			public function HRESULT(ISchemaType *self, VARIANT* fractionDigits) get_fractionDigits;
+			public function HRESULT(ISchemaType *self, VARIANT* length) get_length;
+			public function HRESULT(ISchemaType *self, VARIANT* minLength) get_minLength;
+			public function HRESULT(ISchemaType *self, VARIANT* maxLength) get_maxLength;
+			public function HRESULT(ISchemaType *self, ISchemaStringCollection** enumeration) get_enumeration;
+			public function HRESULT(ISchemaType *self, SCHEMAWHITESPACE* whitespace) get_whitespace;
+			public function HRESULT(ISchemaType *self, ISchemaStringCollection** patterns) get_patterns;
+		}
+		[CRepr]
+		public struct ISchemaComplexType : ISchemaType
+		{
+			public const new Guid IID = .(0x50ea08b9, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaComplexType *self, int16* @abstract) get_isAbstract;
+			public function HRESULT(ISchemaComplexType *self, ISchemaAny** anyAttribute) get_anyAttribute;
+			public function HRESULT(ISchemaComplexType *self, ISchemaItemCollection** attributes) get_attributes;
+			public function HRESULT(ISchemaComplexType *self, SCHEMACONTENTTYPE* contentType) get_contentType;
+			public function HRESULT(ISchemaComplexType *self, ISchemaModelGroup** contentModel) get_contentModel;
+			public function HRESULT(ISchemaComplexType *self, SCHEMADERIVATIONMETHOD* prohibited) get_prohibitedSubstitutions;
+		}
+		[CRepr]
+		public struct ISchemaAttributeGroup : ISchemaItem
+		{
+			public const new Guid IID = .(0x50ea08ba, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaAttributeGroup *self, ISchemaAny** anyAttribute) get_anyAttribute;
+			public function HRESULT(ISchemaAttributeGroup *self, ISchemaItemCollection** attributes) get_attributes;
+		}
+		[CRepr]
+		public struct ISchemaModelGroup : ISchemaParticle
+		{
+			public const new Guid IID = .(0x50ea08bb, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaModelGroup *self, ISchemaItemCollection** particles) get_particles;
+		}
+		[CRepr]
+		public struct ISchemaAny : ISchemaParticle
+		{
+			public const new Guid IID = .(0x50ea08bc, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaAny *self, ISchemaStringCollection** namespaces) get_namespaces;
+			public function HRESULT(ISchemaAny *self, SCHEMAPROCESSCONTENTS* processContents) get_processContents;
+		}
+		[CRepr]
+		public struct ISchemaIdentityConstraint : ISchemaItem
+		{
+			public const new Guid IID = .(0x50ea08bd, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaIdentityConstraint *self, BSTR* selector) get_selector;
+			public function HRESULT(ISchemaIdentityConstraint *self, ISchemaStringCollection** fields) get_fields;
+			public function HRESULT(ISchemaIdentityConstraint *self, ISchemaIdentityConstraint** key) get_referencedKey;
+		}
+		[CRepr]
+		public struct ISchemaNotation : ISchemaItem
+		{
+			public const new Guid IID = .(0x50ea08be, 0xdd1b, 0x4664, 0x9a, 0x50, 0xc2, 0xf4, 0x0f, 0x4b, 0xd7, 0x9a);
+			
+			public function HRESULT(ISchemaNotation *self, BSTR* uri) get_systemIdentifier;
+			public function HRESULT(ISchemaNotation *self, BSTR* uri) get_publicIdentifier;
+		}
+		[CRepr]
+		public struct IXMLHTTPRequest2Callback : IUnknown
+		{
+			public const new Guid IID = .(0xa44a9299, 0xe321, 0x40de, 0x88, 0x66, 0x34, 0x1b, 0x41, 0x66, 0x91, 0x62);
+			
+			public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, PWSTR pwszRedirectUrl) OnRedirect;
+			public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, uint32 dwStatus, PWSTR pwszStatus) OnHeadersAvailable;
+			public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, ISequentialStream* pResponseStream) OnDataAvailable;
+			public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, ISequentialStream* pResponseStream) OnResponseReceived;
+			public function HRESULT(IXMLHTTPRequest2Callback *self, IXMLHTTPRequest2* pXHR, HRESULT hrError) OnError;
+		}
+		[CRepr]
+		public struct IXMLHTTPRequest2 : IUnknown
+		{
+			public const new Guid IID = .(0xe5d37dc0, 0x552a, 0x4d52, 0x9c, 0xc0, 0xa1, 0x4d, 0x54, 0x6f, 0xbd, 0x04);
+			
+			public function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszMethod, PWSTR pwszUrl, IXMLHTTPRequest2Callback* pStatusCallback, PWSTR pwszUserName, PWSTR pwszPassword, PWSTR pwszProxyUserName, PWSTR pwszProxyPassword) Open;
+			public function HRESULT(IXMLHTTPRequest2 *self, ISequentialStream* pBody, uint64 cbBody) Send;
+			public function HRESULT(IXMLHTTPRequest2 *self) Abort;
+			public function HRESULT(IXMLHTTPRequest2 *self, XHR_COOKIE* pCookie, uint32* pdwCookieState) SetCookie;
+			public function HRESULT(IXMLHTTPRequest2 *self, ISequentialStream* pSequentialStream) SetCustomResponseStream;
+			public function HRESULT(IXMLHTTPRequest2 *self, XHR_PROPERTY eProperty, uint64 ullValue) SetProperty;
+			public function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszHeader, PWSTR pwszValue) SetRequestHeader;
+			public function HRESULT(IXMLHTTPRequest2 *self, uint16** ppwszHeaders) GetAllResponseHeaders;
+			public function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszUrl, PWSTR pwszName, uint32 dwFlags, uint32* pcCookies, XHR_COOKIE** ppCookies) GetCookie;
+			public function HRESULT(IXMLHTTPRequest2 *self, PWSTR pwszHeader, uint16** ppwszValue) GetResponseHeader;
+		}
+		[CRepr]
+		public struct IXMLHTTPRequest3Callback : IXMLHTTPRequest2Callback
+		{
+			public const new Guid IID = .(0xb9e57830, 0x8c6c, 0x4a6f, 0x9c, 0x13, 0x47, 0x77, 0x2b, 0xb0, 0x47, 0xbb);
+			
+			public function HRESULT(IXMLHTTPRequest3Callback *self, IXMLHTTPRequest3* pXHR, uint32 dwCertificateErrors, uint32 cServerCertificateChain, XHR_CERT* rgServerCertificateChain) OnServerCertificateReceived;
+			public function HRESULT(IXMLHTTPRequest3Callback *self, IXMLHTTPRequest3* pXHR, uint32 cIssuerList, uint16** rgpwszIssuerList) OnClientCertificateRequested;
+		}
+		[CRepr]
+		public struct IXMLHTTPRequest3 : IXMLHTTPRequest2
+		{
+			public const new Guid IID = .(0xa1c9feee, 0x0617, 0x4f23, 0x9d, 0x58, 0x89, 0x61, 0xea, 0x43, 0x56, 0x7c);
+			
+			public function HRESULT(IXMLHTTPRequest3 *self, uint32 cbClientCertificateHash, uint8* pbClientCertificateHash, PWSTR pwszPin) SetClientCertificate;
+		}
 		
 	}
 }

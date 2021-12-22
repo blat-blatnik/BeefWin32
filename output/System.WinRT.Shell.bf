@@ -17,7 +17,13 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IDDEInitializer {}
+		[CRepr]
+		public struct IDDEInitializer : IUnknown
+		{
+			public const new Guid IID = .(0x30dc931f, 0x33fc, 0x4ffd, 0xa1, 0x68, 0x94, 0x22, 0x58, 0xcf, 0x3c, 0xa4);
+			
+			public function HRESULT(IDDEInitializer *self, PWSTR fileExtensionOrProtocol, CreateProcessMethod method, PWSTR currentDirectory, IShellItem* execTarget, IUnknown* site, PWSTR application, PWSTR targetFile, PWSTR arguments, PWSTR verb) Initialize;
+		}
 		
 	}
 }

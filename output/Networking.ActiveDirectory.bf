@@ -1019,14 +1019,14 @@ namespace Win32
 			public Guid clsidHandler;
 			public void* pHandlerParameters;
 			public Guid clsidDefaultForm;
-			public IPersistQuery pPersistQuery;
+			public IPersistQuery* pPersistQuery;
 			public _Anonymous_e__Union Anonymous;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
 			{
 				public void* pFormParameters;
-				public IPropertyBag ppbFormParameters;
+				public IPropertyBag* ppbFormParameters;
 			}
 		}
 		[CRepr]
@@ -1481,7 +1481,7 @@ namespace Win32
 			public uint32 dwSize;
 			public uint32 dwFlags;
 			public HRESULT hr;
-			public IDirectoryObject pDsObj;
+			public IDirectoryObject* pDsObj;
 			public PWSTR pwzCN;
 			public ADS_ATTR_INFO* pWritableAttrs;
 		}
@@ -2121,95 +2121,1143 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IQueryForm {}
-		public struct IPersistQuery {}
-		public struct ICommonQuery {}
-		public struct IADs {}
-		public struct IADsContainer {}
-		public struct IADsCollection {}
-		public struct IADsMembers {}
-		public struct IADsPropertyList {}
-		public struct IADsPropertyEntry {}
-		public struct IADsPropertyValue {}
-		public struct IADsPropertyValue2 {}
-		public struct IPrivateDispatch {}
-		public struct IPrivateUnknown {}
-		public struct IADsExtension {}
-		public struct IADsDeleteOps {}
-		public struct IADsNamespaces {}
-		public struct IADsClass {}
-		public struct IADsProperty {}
-		public struct IADsSyntax {}
-		public struct IADsLocality {}
-		public struct IADsO {}
-		public struct IADsOU {}
-		public struct IADsDomain {}
-		public struct IADsComputer {}
-		public struct IADsComputerOperations {}
-		public struct IADsGroup {}
-		public struct IADsUser {}
-		public struct IADsPrintQueue {}
-		public struct IADsPrintQueueOperations {}
-		public struct IADsPrintJob {}
-		public struct IADsPrintJobOperations {}
-		public struct IADsService {}
-		public struct IADsServiceOperations {}
-		public struct IADsFileService {}
-		public struct IADsFileServiceOperations {}
-		public struct IADsFileShare {}
-		public struct IADsSession {}
-		public struct IADsResource {}
-		public struct IADsOpenDSObject {}
-		public struct IDirectoryObject {}
-		public struct IDirectorySearch {}
-		public struct IDirectorySchemaMgmt {}
-		public struct IADsAggregatee {}
-		public struct IADsAggregator {}
-		public struct IADsAccessControlEntry {}
-		public struct IADsAccessControlList {}
-		public struct IADsSecurityDescriptor {}
-		public struct IADsLargeInteger {}
-		public struct IADsNameTranslate {}
-		public struct IADsCaseIgnoreList {}
-		public struct IADsFaxNumber {}
-		public struct IADsNetAddress {}
-		public struct IADsOctetList {}
-		public struct IADsEmail {}
-		public struct IADsPath {}
-		public struct IADsReplicaPointer {}
-		public struct IADsAcl {}
-		public struct IADsTimestamp {}
-		public struct IADsPostalAddress {}
-		public struct IADsBackLink {}
-		public struct IADsTypedName {}
-		public struct IADsHold {}
-		public struct IADsObjectOptions {}
-		public struct IADsPathname {}
-		public struct IADsADSystemInfo {}
-		public struct IADsWinNTSystemInfo {}
-		public struct IADsDNWithBinary {}
-		public struct IADsDNWithString {}
-		public struct IADsSecurityUtility {}
-		public struct IDsBrowseDomainTree {}
-		public struct IDsDisplaySpecifier {}
-		public struct IDsObjectPicker {}
-		public struct IDsObjectPickerCredentials {}
-		public struct IDsAdminCreateObj {}
-		public struct IDsAdminNewObj {}
-		public struct IDsAdminNewObjPrimarySite {}
-		public struct IDsAdminNewObjExt {}
-		public struct IDsAdminNotifyHandler {}
+		[CRepr]
+		public struct IQueryForm : IUnknown
+		{
+			public const new Guid IID = .(0x8cfcee30, 0x39bd, 0x11d0, 0xb8, 0xd1, 0x00, 0xa0, 0x24, 0xab, 0x2d, 0xbb);
+			
+			public function HRESULT(IQueryForm *self, HKEY hkForm) Initialize;
+			public function HRESULT(IQueryForm *self, LPCQADDFORMSPROC pAddFormsProc, LPARAM lParam) AddForms;
+			public function HRESULT(IQueryForm *self, LPCQADDPAGESPROC pAddPagesProc, LPARAM lParam) AddPages;
+		}
+		[CRepr]
+		public struct IPersistQuery : IPersist
+		{
+			public const new Guid IID = .(0x1a3114b8, 0xa62e, 0x11d0, 0xa6, 0xc5, 0x00, 0xa0, 0xc9, 0x06, 0xaf, 0x45);
+			
+			public function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, PWSTR pValue) WriteString;
+			public function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, PWSTR pBuffer, int32 cchBuffer) ReadString;
+			public function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, int32 value) WriteInt;
+			public function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, int32* pValue) ReadInt;
+			public function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) WriteStruct;
+			public function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) ReadStruct;
+			public function HRESULT(IPersistQuery *self) Clear;
+		}
+		[CRepr]
+		public struct ICommonQuery : IUnknown
+		{
+			public const new Guid IID = .(0xab50dec0, 0x6f1d, 0x11d0, 0xa1, 0xc4, 0x00, 0xaa, 0x00, 0xc1, 0x6e, 0x65);
+			
+			public function HRESULT(ICommonQuery *self, HWND hwndParent, OPENQUERYWINDOW* pQueryWnd, IDataObject** ppDataObject) OpenQueryWindow;
+		}
+		[CRepr]
+		public struct IADs : IDispatch
+		{
+			public const new Guid IID = .(0xfd8256d0, 0xfd15, 0x11ce, 0xab, 0xc4, 0x02, 0x60, 0x8c, 0x9e, 0x75, 0x53);
+			
+			public function HRESULT(IADs *self, BSTR* retval) get_Name;
+			public function HRESULT(IADs *self, BSTR* retval) get_Class;
+			public function HRESULT(IADs *self, BSTR* retval) get_GUID;
+			public function HRESULT(IADs *self, BSTR* retval) get_ADsPath;
+			public function HRESULT(IADs *self, BSTR* retval) get_Parent;
+			public function HRESULT(IADs *self, BSTR* retval) get_Schema;
+			public function HRESULT(IADs *self) GetInfo;
+			public function HRESULT(IADs *self) SetInfo;
+			public function HRESULT(IADs *self, BSTR bstrName, VARIANT* pvProp) Get;
+			public function HRESULT(IADs *self, BSTR bstrName, VARIANT vProp) Put;
+			public function HRESULT(IADs *self, BSTR bstrName, VARIANT* pvProp) GetEx;
+			public function HRESULT(IADs *self, int32 lnControlCode, BSTR bstrName, VARIANT vProp) PutEx;
+			public function HRESULT(IADs *self, VARIANT vProperties, int32 lnReserved) GetInfoEx;
+		}
+		[CRepr]
+		public struct IADsContainer : IDispatch
+		{
+			public const new Guid IID = .(0x001677d0, 0xfd16, 0x11ce, 0xab, 0xc4, 0x02, 0x60, 0x8c, 0x9e, 0x75, 0x53);
+			
+			public function HRESULT(IADsContainer *self, int32* retval) get_Count;
+			public function HRESULT(IADsContainer *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(IADsContainer *self, VARIANT* pVar) get_Filter;
+			public function HRESULT(IADsContainer *self, VARIANT Var) put_Filter;
+			public function HRESULT(IADsContainer *self, VARIANT* pvFilter) get_Hints;
+			public function HRESULT(IADsContainer *self, VARIANT vHints) put_Hints;
+			public function HRESULT(IADsContainer *self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) GetObject;
+			public function HRESULT(IADsContainer *self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) Create;
+			public function HRESULT(IADsContainer *self, BSTR bstrClassName, BSTR bstrRelativeName) Delete;
+			public function HRESULT(IADsContainer *self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) CopyHere;
+			public function HRESULT(IADsContainer *self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) MoveHere;
+		}
+		[CRepr]
+		public struct IADsCollection : IDispatch
+		{
+			public const new Guid IID = .(0x72b945e0, 0x253b, 0x11cf, 0xa9, 0x88, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsCollection *self, IUnknown** ppEnumerator) get__NewEnum;
+			public function HRESULT(IADsCollection *self, BSTR bstrName, VARIANT vItem) Add;
+			public function HRESULT(IADsCollection *self, BSTR bstrItemToBeRemoved) Remove;
+			public function HRESULT(IADsCollection *self, BSTR bstrName, VARIANT* pvItem) GetObject;
+		}
+		[CRepr]
+		public struct IADsMembers : IDispatch
+		{
+			public const new Guid IID = .(0x451a0030, 0x72ec, 0x11cf, 0xb0, 0x3b, 0x00, 0xaa, 0x00, 0x6e, 0x09, 0x75);
+			
+			public function HRESULT(IADsMembers *self, int32* plCount) get_Count;
+			public function HRESULT(IADsMembers *self, IUnknown** ppEnumerator) get__NewEnum;
+			public function HRESULT(IADsMembers *self, VARIANT* pvFilter) get_Filter;
+			public function HRESULT(IADsMembers *self, VARIANT pvFilter) put_Filter;
+		}
+		[CRepr]
+		public struct IADsPropertyList : IDispatch
+		{
+			public const new Guid IID = .(0xc6f602b6, 0x8f69, 0x11d0, 0x85, 0x28, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsPropertyList *self, int32* plCount) get_PropertyCount;
+			public function HRESULT(IADsPropertyList *self, VARIANT* pVariant) Next;
+			public function HRESULT(IADsPropertyList *self, int32 cElements) Skip;
+			public function HRESULT(IADsPropertyList *self) Reset;
+			public function HRESULT(IADsPropertyList *self, VARIANT varIndex, VARIANT* pVariant) Item;
+			public function HRESULT(IADsPropertyList *self, BSTR bstrName, int32 lnADsType, VARIANT* pVariant) GetPropertyItem;
+			public function HRESULT(IADsPropertyList *self, VARIANT varData) PutPropertyItem;
+			public function HRESULT(IADsPropertyList *self, VARIANT varEntry) ResetPropertyItem;
+			public function HRESULT(IADsPropertyList *self) PurgePropertyList;
+		}
+		[CRepr]
+		public struct IADsPropertyEntry : IDispatch
+		{
+			public const new Guid IID = .(0x05792c8e, 0x941f, 0x11d0, 0x85, 0x29, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsPropertyEntry *self) Clear;
+			public function HRESULT(IADsPropertyEntry *self, BSTR* retval) get_Name;
+			public function HRESULT(IADsPropertyEntry *self, BSTR bstrName) put_Name;
+			public function HRESULT(IADsPropertyEntry *self, int32* retval) get_ADsType;
+			public function HRESULT(IADsPropertyEntry *self, int32 lnADsType) put_ADsType;
+			public function HRESULT(IADsPropertyEntry *self, int32* retval) get_ControlCode;
+			public function HRESULT(IADsPropertyEntry *self, int32 lnControlCode) put_ControlCode;
+			public function HRESULT(IADsPropertyEntry *self, VARIANT* retval) get_Values;
+			public function HRESULT(IADsPropertyEntry *self, VARIANT vValues) put_Values;
+		}
+		[CRepr]
+		public struct IADsPropertyValue : IDispatch
+		{
+			public const new Guid IID = .(0x79fa9ad0, 0xa97c, 0x11d0, 0x85, 0x34, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsPropertyValue *self) Clear;
+			public function HRESULT(IADsPropertyValue *self, int32* retval) get_ADsType;
+			public function HRESULT(IADsPropertyValue *self, int32 lnADsType) put_ADsType;
+			public function HRESULT(IADsPropertyValue *self, BSTR* retval) get_DNString;
+			public function HRESULT(IADsPropertyValue *self, BSTR bstrDNString) put_DNString;
+			public function HRESULT(IADsPropertyValue *self, BSTR* retval) get_CaseExactString;
+			public function HRESULT(IADsPropertyValue *self, BSTR bstrCaseExactString) put_CaseExactString;
+			public function HRESULT(IADsPropertyValue *self, BSTR* retval) get_CaseIgnoreString;
+			public function HRESULT(IADsPropertyValue *self, BSTR bstrCaseIgnoreString) put_CaseIgnoreString;
+			public function HRESULT(IADsPropertyValue *self, BSTR* retval) get_PrintableString;
+			public function HRESULT(IADsPropertyValue *self, BSTR bstrPrintableString) put_PrintableString;
+			public function HRESULT(IADsPropertyValue *self, BSTR* retval) get_NumericString;
+			public function HRESULT(IADsPropertyValue *self, BSTR bstrNumericString) put_NumericString;
+			public function HRESULT(IADsPropertyValue *self, int32* retval) get_Boolean;
+			public function HRESULT(IADsPropertyValue *self, int32 lnBoolean) put_Boolean;
+			public function HRESULT(IADsPropertyValue *self, int32* retval) get_Integer;
+			public function HRESULT(IADsPropertyValue *self, int32 lnInteger) put_Integer;
+			public function HRESULT(IADsPropertyValue *self, VARIANT* retval) get_OctetString;
+			public function HRESULT(IADsPropertyValue *self, VARIANT vOctetString) put_OctetString;
+			public function HRESULT(IADsPropertyValue *self, IDispatch** retval) get_SecurityDescriptor;
+			public function HRESULT(IADsPropertyValue *self, IDispatch* pSecurityDescriptor) put_SecurityDescriptor;
+			public function HRESULT(IADsPropertyValue *self, IDispatch** retval) get_LargeInteger;
+			public function HRESULT(IADsPropertyValue *self, IDispatch* pLargeInteger) put_LargeInteger;
+			public function HRESULT(IADsPropertyValue *self, double* retval) get_UTCTime;
+			public function HRESULT(IADsPropertyValue *self, double daUTCTime) put_UTCTime;
+		}
+		[CRepr]
+		public struct IADsPropertyValue2 : IDispatch
+		{
+			public const new Guid IID = .(0x306e831c, 0x5bc7, 0x11d1, 0xa3, 0xb8, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsPropertyValue2 *self, int32* lnADsType, VARIANT* pvProp) GetObjectProperty;
+			public function HRESULT(IADsPropertyValue2 *self, int32 lnADsType, VARIANT vProp) PutObjectProperty;
+		}
+		[CRepr]
+		public struct IPrivateDispatch : IUnknown
+		{
+			public const new Guid IID = .(0x86ab4bbe, 0x65f6, 0x11d1, 0x8c, 0x13, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IPrivateDispatch *self, int32 dwExtensionId) ADSIInitializeDispatchManager;
+			public function HRESULT(IPrivateDispatch *self, uint32* pctinfo) ADSIGetTypeInfoCount;
+			public function HRESULT(IPrivateDispatch *self, uint32 itinfo, uint32 lcid, ITypeInfo** pptinfo) ADSIGetTypeInfo;
+			public function HRESULT(IPrivateDispatch *self, Guid* riid, uint16** rgszNames, uint32 cNames, uint32 lcid, int32* rgdispid) ADSIGetIDsOfNames;
+			public function HRESULT(IPrivateDispatch *self, int32 dispidMember, Guid* riid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pvarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) ADSIInvoke;
+		}
+		[CRepr]
+		public struct IPrivateUnknown : IUnknown
+		{
+			public const new Guid IID = .(0x89126bab, 0x6ead, 0x11d1, 0x8c, 0x18, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IPrivateUnknown *self, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved) ADSIInitializeObject;
+			public function HRESULT(IPrivateUnknown *self) ADSIReleaseObject;
+		}
+		[CRepr]
+		public struct IADsExtension : IUnknown
+		{
+			public const new Guid IID = .(0x3d35553c, 0xd2b0, 0x11d1, 0xb1, 0x7b, 0x00, 0x00, 0xf8, 0x75, 0x93, 0xa0);
+			
+			public function HRESULT(IADsExtension *self, uint32 dwCode, VARIANT varData1, VARIANT varData2, VARIANT varData3) Operate;
+			public function HRESULT(IADsExtension *self, Guid* riid, uint16** rgszNames, uint32 cNames, uint32 lcid, int32* rgDispid) PrivateGetIDsOfNames;
+			public function HRESULT(IADsExtension *self, int32 dispidMember, Guid* riid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pvarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) PrivateInvoke;
+		}
+		[CRepr]
+		public struct IADsDeleteOps : IDispatch
+		{
+			public const new Guid IID = .(0xb2bd0902, 0x8878, 0x11d1, 0x8c, 0x21, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsDeleteOps *self, int32 lnFlags) DeleteObject;
+		}
+		[CRepr]
+		public struct IADsNamespaces : IADs
+		{
+			public const new Guid IID = .(0x28b96ba0, 0xb330, 0x11cf, 0xa9, 0xad, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsNamespaces *self, BSTR* retval) get_DefaultContainer;
+			public function HRESULT(IADsNamespaces *self, BSTR bstrDefaultContainer) put_DefaultContainer;
+		}
+		[CRepr]
+		public struct IADsClass : IADs
+		{
+			public const new Guid IID = .(0xc8f93dd0, 0x4ae0, 0x11cf, 0x9e, 0x73, 0x00, 0xaa, 0x00, 0x4a, 0x56, 0x91);
+			
+			public function HRESULT(IADsClass *self, BSTR* retval) get_PrimaryInterface;
+			public function HRESULT(IADsClass *self, BSTR* retval) get_CLSID;
+			public function HRESULT(IADsClass *self, BSTR bstrCLSID) put_CLSID;
+			public function HRESULT(IADsClass *self, BSTR* retval) get_OID;
+			public function HRESULT(IADsClass *self, BSTR bstrOID) put_OID;
+			public function HRESULT(IADsClass *self, int16* retval) get_Abstract;
+			public function HRESULT(IADsClass *self, int16 fAbstract) put_Abstract;
+			public function HRESULT(IADsClass *self, int16* retval) get_Auxiliary;
+			public function HRESULT(IADsClass *self, int16 fAuxiliary) put_Auxiliary;
+			public function HRESULT(IADsClass *self, VARIANT* retval) get_MandatoryProperties;
+			public function HRESULT(IADsClass *self, VARIANT vMandatoryProperties) put_MandatoryProperties;
+			public function HRESULT(IADsClass *self, VARIANT* retval) get_OptionalProperties;
+			public function HRESULT(IADsClass *self, VARIANT vOptionalProperties) put_OptionalProperties;
+			public function HRESULT(IADsClass *self, VARIANT* retval) get_NamingProperties;
+			public function HRESULT(IADsClass *self, VARIANT vNamingProperties) put_NamingProperties;
+			public function HRESULT(IADsClass *self, VARIANT* retval) get_DerivedFrom;
+			public function HRESULT(IADsClass *self, VARIANT vDerivedFrom) put_DerivedFrom;
+			public function HRESULT(IADsClass *self, VARIANT* retval) get_AuxDerivedFrom;
+			public function HRESULT(IADsClass *self, VARIANT vAuxDerivedFrom) put_AuxDerivedFrom;
+			public function HRESULT(IADsClass *self, VARIANT* retval) get_PossibleSuperiors;
+			public function HRESULT(IADsClass *self, VARIANT vPossibleSuperiors) put_PossibleSuperiors;
+			public function HRESULT(IADsClass *self, VARIANT* retval) get_Containment;
+			public function HRESULT(IADsClass *self, VARIANT vContainment) put_Containment;
+			public function HRESULT(IADsClass *self, int16* retval) get_Container;
+			public function HRESULT(IADsClass *self, int16 fContainer) put_Container;
+			public function HRESULT(IADsClass *self, BSTR* retval) get_HelpFileName;
+			public function HRESULT(IADsClass *self, BSTR bstrHelpFileName) put_HelpFileName;
+			public function HRESULT(IADsClass *self, int32* retval) get_HelpFileContext;
+			public function HRESULT(IADsClass *self, int32 lnHelpFileContext) put_HelpFileContext;
+			public function HRESULT(IADsClass *self, IADsCollection** ppQualifiers) Qualifiers;
+		}
+		[CRepr]
+		public struct IADsProperty : IADs
+		{
+			public const new Guid IID = .(0xc8f93dd3, 0x4ae0, 0x11cf, 0x9e, 0x73, 0x00, 0xaa, 0x00, 0x4a, 0x56, 0x91);
+			
+			public function HRESULT(IADsProperty *self, BSTR* retval) get_OID;
+			public function HRESULT(IADsProperty *self, BSTR bstrOID) put_OID;
+			public function HRESULT(IADsProperty *self, BSTR* retval) get_Syntax;
+			public function HRESULT(IADsProperty *self, BSTR bstrSyntax) put_Syntax;
+			public function HRESULT(IADsProperty *self, int32* retval) get_MaxRange;
+			public function HRESULT(IADsProperty *self, int32 lnMaxRange) put_MaxRange;
+			public function HRESULT(IADsProperty *self, int32* retval) get_MinRange;
+			public function HRESULT(IADsProperty *self, int32 lnMinRange) put_MinRange;
+			public function HRESULT(IADsProperty *self, int16* retval) get_MultiValued;
+			public function HRESULT(IADsProperty *self, int16 fMultiValued) put_MultiValued;
+			public function HRESULT(IADsProperty *self, IADsCollection** ppQualifiers) Qualifiers;
+		}
+		[CRepr]
+		public struct IADsSyntax : IADs
+		{
+			public const new Guid IID = .(0xc8f93dd2, 0x4ae0, 0x11cf, 0x9e, 0x73, 0x00, 0xaa, 0x00, 0x4a, 0x56, 0x91);
+			
+			public function HRESULT(IADsSyntax *self, int32* retval) get_OleAutoDataType;
+			public function HRESULT(IADsSyntax *self, int32 lnOleAutoDataType) put_OleAutoDataType;
+		}
+		[CRepr]
+		public struct IADsLocality : IADs
+		{
+			public const new Guid IID = .(0xa05e03a2, 0xeffe, 0x11cf, 0x8a, 0xbc, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsLocality *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsLocality *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsLocality *self, BSTR* retval) get_LocalityName;
+			public function HRESULT(IADsLocality *self, BSTR bstrLocalityName) put_LocalityName;
+			public function HRESULT(IADsLocality *self, BSTR* retval) get_PostalAddress;
+			public function HRESULT(IADsLocality *self, BSTR bstrPostalAddress) put_PostalAddress;
+			public function HRESULT(IADsLocality *self, VARIANT* retval) get_SeeAlso;
+			public function HRESULT(IADsLocality *self, VARIANT vSeeAlso) put_SeeAlso;
+		}
+		[CRepr]
+		public struct IADsO : IADs
+		{
+			public const new Guid IID = .(0xa1cd2dc6, 0xeffe, 0x11cf, 0x8a, 0xbc, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsO *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsO *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsO *self, BSTR* retval) get_LocalityName;
+			public function HRESULT(IADsO *self, BSTR bstrLocalityName) put_LocalityName;
+			public function HRESULT(IADsO *self, BSTR* retval) get_PostalAddress;
+			public function HRESULT(IADsO *self, BSTR bstrPostalAddress) put_PostalAddress;
+			public function HRESULT(IADsO *self, BSTR* retval) get_TelephoneNumber;
+			public function HRESULT(IADsO *self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
+			public function HRESULT(IADsO *self, BSTR* retval) get_FaxNumber;
+			public function HRESULT(IADsO *self, BSTR bstrFaxNumber) put_FaxNumber;
+			public function HRESULT(IADsO *self, VARIANT* retval) get_SeeAlso;
+			public function HRESULT(IADsO *self, VARIANT vSeeAlso) put_SeeAlso;
+		}
+		[CRepr]
+		public struct IADsOU : IADs
+		{
+			public const new Guid IID = .(0xa2f733b8, 0xeffe, 0x11cf, 0x8a, 0xbc, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsOU *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsOU *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsOU *self, BSTR* retval) get_LocalityName;
+			public function HRESULT(IADsOU *self, BSTR bstrLocalityName) put_LocalityName;
+			public function HRESULT(IADsOU *self, BSTR* retval) get_PostalAddress;
+			public function HRESULT(IADsOU *self, BSTR bstrPostalAddress) put_PostalAddress;
+			public function HRESULT(IADsOU *self, BSTR* retval) get_TelephoneNumber;
+			public function HRESULT(IADsOU *self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
+			public function HRESULT(IADsOU *self, BSTR* retval) get_FaxNumber;
+			public function HRESULT(IADsOU *self, BSTR bstrFaxNumber) put_FaxNumber;
+			public function HRESULT(IADsOU *self, VARIANT* retval) get_SeeAlso;
+			public function HRESULT(IADsOU *self, VARIANT vSeeAlso) put_SeeAlso;
+			public function HRESULT(IADsOU *self, BSTR* retval) get_BusinessCategory;
+			public function HRESULT(IADsOU *self, BSTR bstrBusinessCategory) put_BusinessCategory;
+		}
+		[CRepr]
+		public struct IADsDomain : IADs
+		{
+			public const new Guid IID = .(0x00e4c220, 0xfd16, 0x11ce, 0xab, 0xc4, 0x02, 0x60, 0x8c, 0x9e, 0x75, 0x53);
+			
+			public function HRESULT(IADsDomain *self, int16* retval) get_IsWorkgroup;
+			public function HRESULT(IADsDomain *self, int32* retval) get_MinPasswordLength;
+			public function HRESULT(IADsDomain *self, int32 lnMinPasswordLength) put_MinPasswordLength;
+			public function HRESULT(IADsDomain *self, int32* retval) get_MinPasswordAge;
+			public function HRESULT(IADsDomain *self, int32 lnMinPasswordAge) put_MinPasswordAge;
+			public function HRESULT(IADsDomain *self, int32* retval) get_MaxPasswordAge;
+			public function HRESULT(IADsDomain *self, int32 lnMaxPasswordAge) put_MaxPasswordAge;
+			public function HRESULT(IADsDomain *self, int32* retval) get_MaxBadPasswordsAllowed;
+			public function HRESULT(IADsDomain *self, int32 lnMaxBadPasswordsAllowed) put_MaxBadPasswordsAllowed;
+			public function HRESULT(IADsDomain *self, int32* retval) get_PasswordHistoryLength;
+			public function HRESULT(IADsDomain *self, int32 lnPasswordHistoryLength) put_PasswordHistoryLength;
+			public function HRESULT(IADsDomain *self, int32* retval) get_PasswordAttributes;
+			public function HRESULT(IADsDomain *self, int32 lnPasswordAttributes) put_PasswordAttributes;
+			public function HRESULT(IADsDomain *self, int32* retval) get_AutoUnlockInterval;
+			public function HRESULT(IADsDomain *self, int32 lnAutoUnlockInterval) put_AutoUnlockInterval;
+			public function HRESULT(IADsDomain *self, int32* retval) get_LockoutObservationInterval;
+			public function HRESULT(IADsDomain *self, int32 lnLockoutObservationInterval) put_LockoutObservationInterval;
+		}
+		[CRepr]
+		public struct IADsComputer : IADs
+		{
+			public const new Guid IID = .(0xefe3cc70, 0x1d9f, 0x11cf, 0xb1, 0xf3, 0x02, 0x60, 0x8c, 0x9e, 0x75, 0x53);
+			
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_ComputerID;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_Site;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsComputer *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_Location;
+			public function HRESULT(IADsComputer *self, BSTR bstrLocation) put_Location;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_PrimaryUser;
+			public function HRESULT(IADsComputer *self, BSTR bstrPrimaryUser) put_PrimaryUser;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_Owner;
+			public function HRESULT(IADsComputer *self, BSTR bstrOwner) put_Owner;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_Division;
+			public function HRESULT(IADsComputer *self, BSTR bstrDivision) put_Division;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_Department;
+			public function HRESULT(IADsComputer *self, BSTR bstrDepartment) put_Department;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_Role;
+			public function HRESULT(IADsComputer *self, BSTR bstrRole) put_Role;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_OperatingSystem;
+			public function HRESULT(IADsComputer *self, BSTR bstrOperatingSystem) put_OperatingSystem;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_OperatingSystemVersion;
+			public function HRESULT(IADsComputer *self, BSTR bstrOperatingSystemVersion) put_OperatingSystemVersion;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_Model;
+			public function HRESULT(IADsComputer *self, BSTR bstrModel) put_Model;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_Processor;
+			public function HRESULT(IADsComputer *self, BSTR bstrProcessor) put_Processor;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_ProcessorCount;
+			public function HRESULT(IADsComputer *self, BSTR bstrProcessorCount) put_ProcessorCount;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_MemorySize;
+			public function HRESULT(IADsComputer *self, BSTR bstrMemorySize) put_MemorySize;
+			public function HRESULT(IADsComputer *self, BSTR* retval) get_StorageCapacity;
+			public function HRESULT(IADsComputer *self, BSTR bstrStorageCapacity) put_StorageCapacity;
+			public function HRESULT(IADsComputer *self, VARIANT* retval) get_NetAddresses;
+			public function HRESULT(IADsComputer *self, VARIANT vNetAddresses) put_NetAddresses;
+		}
+		[CRepr]
+		public struct IADsComputerOperations : IADs
+		{
+			public const new Guid IID = .(0xef497680, 0x1d9f, 0x11cf, 0xb1, 0xf3, 0x02, 0x60, 0x8c, 0x9e, 0x75, 0x53);
+			
+			public function HRESULT(IADsComputerOperations *self, IDispatch** ppObject) Status;
+			public function HRESULT(IADsComputerOperations *self, int16 bReboot) Shutdown;
+		}
+		[CRepr]
+		public struct IADsGroup : IADs
+		{
+			public const new Guid IID = .(0x27636b00, 0x410f, 0x11cf, 0xb1, 0xff, 0x02, 0x60, 0x8c, 0x9e, 0x75, 0x53);
+			
+			public function HRESULT(IADsGroup *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsGroup *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsGroup *self, IADsMembers** ppMembers) Members;
+			public function HRESULT(IADsGroup *self, BSTR bstrMember, int16* bMember) IsMember;
+			public function HRESULT(IADsGroup *self, BSTR bstrNewItem) Add;
+			public function HRESULT(IADsGroup *self, BSTR bstrItemToBeRemoved) Remove;
+		}
+		[CRepr]
+		public struct IADsUser : IADs
+		{
+			public const new Guid IID = .(0x3e37e320, 0x17e2, 0x11cf, 0xab, 0xc4, 0x02, 0x60, 0x8c, 0x9e, 0x75, 0x53);
+			
+			public function HRESULT(IADsUser *self, BSTR* retval) get_BadLoginAddress;
+			public function HRESULT(IADsUser *self, int32* retval) get_BadLoginCount;
+			public function HRESULT(IADsUser *self, double* retval) get_LastLogin;
+			public function HRESULT(IADsUser *self, double* retval) get_LastLogoff;
+			public function HRESULT(IADsUser *self, double* retval) get_LastFailedLogin;
+			public function HRESULT(IADsUser *self, double* retval) get_PasswordLastChanged;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsUser *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_Division;
+			public function HRESULT(IADsUser *self, BSTR bstrDivision) put_Division;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_Department;
+			public function HRESULT(IADsUser *self, BSTR bstrDepartment) put_Department;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_EmployeeID;
+			public function HRESULT(IADsUser *self, BSTR bstrEmployeeID) put_EmployeeID;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_FullName;
+			public function HRESULT(IADsUser *self, BSTR bstrFullName) put_FullName;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_FirstName;
+			public function HRESULT(IADsUser *self, BSTR bstrFirstName) put_FirstName;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_LastName;
+			public function HRESULT(IADsUser *self, BSTR bstrLastName) put_LastName;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_OtherName;
+			public function HRESULT(IADsUser *self, BSTR bstrOtherName) put_OtherName;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_NamePrefix;
+			public function HRESULT(IADsUser *self, BSTR bstrNamePrefix) put_NamePrefix;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_NameSuffix;
+			public function HRESULT(IADsUser *self, BSTR bstrNameSuffix) put_NameSuffix;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_Title;
+			public function HRESULT(IADsUser *self, BSTR bstrTitle) put_Title;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_Manager;
+			public function HRESULT(IADsUser *self, BSTR bstrManager) put_Manager;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_TelephoneHome;
+			public function HRESULT(IADsUser *self, VARIANT vTelephoneHome) put_TelephoneHome;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_TelephoneMobile;
+			public function HRESULT(IADsUser *self, VARIANT vTelephoneMobile) put_TelephoneMobile;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_TelephoneNumber;
+			public function HRESULT(IADsUser *self, VARIANT vTelephoneNumber) put_TelephoneNumber;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_TelephonePager;
+			public function HRESULT(IADsUser *self, VARIANT vTelephonePager) put_TelephonePager;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_FaxNumber;
+			public function HRESULT(IADsUser *self, VARIANT vFaxNumber) put_FaxNumber;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_OfficeLocations;
+			public function HRESULT(IADsUser *self, VARIANT vOfficeLocations) put_OfficeLocations;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_PostalAddresses;
+			public function HRESULT(IADsUser *self, VARIANT vPostalAddresses) put_PostalAddresses;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_PostalCodes;
+			public function HRESULT(IADsUser *self, VARIANT vPostalCodes) put_PostalCodes;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_SeeAlso;
+			public function HRESULT(IADsUser *self, VARIANT vSeeAlso) put_SeeAlso;
+			public function HRESULT(IADsUser *self, int16* retval) get_AccountDisabled;
+			public function HRESULT(IADsUser *self, int16 fAccountDisabled) put_AccountDisabled;
+			public function HRESULT(IADsUser *self, double* retval) get_AccountExpirationDate;
+			public function HRESULT(IADsUser *self, double daAccountExpirationDate) put_AccountExpirationDate;
+			public function HRESULT(IADsUser *self, int32* retval) get_GraceLoginsAllowed;
+			public function HRESULT(IADsUser *self, int32 lnGraceLoginsAllowed) put_GraceLoginsAllowed;
+			public function HRESULT(IADsUser *self, int32* retval) get_GraceLoginsRemaining;
+			public function HRESULT(IADsUser *self, int32 lnGraceLoginsRemaining) put_GraceLoginsRemaining;
+			public function HRESULT(IADsUser *self, int16* retval) get_IsAccountLocked;
+			public function HRESULT(IADsUser *self, int16 fIsAccountLocked) put_IsAccountLocked;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_LoginHours;
+			public function HRESULT(IADsUser *self, VARIANT vLoginHours) put_LoginHours;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_LoginWorkstations;
+			public function HRESULT(IADsUser *self, VARIANT vLoginWorkstations) put_LoginWorkstations;
+			public function HRESULT(IADsUser *self, int32* retval) get_MaxLogins;
+			public function HRESULT(IADsUser *self, int32 lnMaxLogins) put_MaxLogins;
+			public function HRESULT(IADsUser *self, int32* retval) get_MaxStorage;
+			public function HRESULT(IADsUser *self, int32 lnMaxStorage) put_MaxStorage;
+			public function HRESULT(IADsUser *self, double* retval) get_PasswordExpirationDate;
+			public function HRESULT(IADsUser *self, double daPasswordExpirationDate) put_PasswordExpirationDate;
+			public function HRESULT(IADsUser *self, int32* retval) get_PasswordMinimumLength;
+			public function HRESULT(IADsUser *self, int32 lnPasswordMinimumLength) put_PasswordMinimumLength;
+			public function HRESULT(IADsUser *self, int16* retval) get_PasswordRequired;
+			public function HRESULT(IADsUser *self, int16 fPasswordRequired) put_PasswordRequired;
+			public function HRESULT(IADsUser *self, int16* retval) get_RequireUniquePassword;
+			public function HRESULT(IADsUser *self, int16 fRequireUniquePassword) put_RequireUniquePassword;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_EmailAddress;
+			public function HRESULT(IADsUser *self, BSTR bstrEmailAddress) put_EmailAddress;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_HomeDirectory;
+			public function HRESULT(IADsUser *self, BSTR bstrHomeDirectory) put_HomeDirectory;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_Languages;
+			public function HRESULT(IADsUser *self, VARIANT vLanguages) put_Languages;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_Profile;
+			public function HRESULT(IADsUser *self, BSTR bstrProfile) put_Profile;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_LoginScript;
+			public function HRESULT(IADsUser *self, BSTR bstrLoginScript) put_LoginScript;
+			public function HRESULT(IADsUser *self, VARIANT* retval) get_Picture;
+			public function HRESULT(IADsUser *self, VARIANT vPicture) put_Picture;
+			public function HRESULT(IADsUser *self, BSTR* retval) get_HomePage;
+			public function HRESULT(IADsUser *self, BSTR bstrHomePage) put_HomePage;
+			public function HRESULT(IADsUser *self, IADsMembers** ppGroups) Groups;
+			public function HRESULT(IADsUser *self, BSTR NewPassword) SetPassword;
+			public function HRESULT(IADsUser *self, BSTR bstrOldPassword, BSTR bstrNewPassword) ChangePassword;
+		}
+		[CRepr]
+		public struct IADsPrintQueue : IADs
+		{
+			public const new Guid IID = .(0xb15160d0, 0x1226, 0x11cf, 0xa9, 0x85, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsPrintQueue *self, BSTR* retval) get_PrinterPath;
+			public function HRESULT(IADsPrintQueue *self, BSTR bstrPrinterPath) put_PrinterPath;
+			public function HRESULT(IADsPrintQueue *self, BSTR* retval) get_Model;
+			public function HRESULT(IADsPrintQueue *self, BSTR bstrModel) put_Model;
+			public function HRESULT(IADsPrintQueue *self, BSTR* retval) get_Datatype;
+			public function HRESULT(IADsPrintQueue *self, BSTR bstrDatatype) put_Datatype;
+			public function HRESULT(IADsPrintQueue *self, BSTR* retval) get_PrintProcessor;
+			public function HRESULT(IADsPrintQueue *self, BSTR bstrPrintProcessor) put_PrintProcessor;
+			public function HRESULT(IADsPrintQueue *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsPrintQueue *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsPrintQueue *self, BSTR* retval) get_Location;
+			public function HRESULT(IADsPrintQueue *self, BSTR bstrLocation) put_Location;
+			public function HRESULT(IADsPrintQueue *self, double* retval) get_StartTime;
+			public function HRESULT(IADsPrintQueue *self, double daStartTime) put_StartTime;
+			public function HRESULT(IADsPrintQueue *self, double* retval) get_UntilTime;
+			public function HRESULT(IADsPrintQueue *self, double daUntilTime) put_UntilTime;
+			public function HRESULT(IADsPrintQueue *self, int32* retval) get_DefaultJobPriority;
+			public function HRESULT(IADsPrintQueue *self, int32 lnDefaultJobPriority) put_DefaultJobPriority;
+			public function HRESULT(IADsPrintQueue *self, int32* retval) get_Priority;
+			public function HRESULT(IADsPrintQueue *self, int32 lnPriority) put_Priority;
+			public function HRESULT(IADsPrintQueue *self, BSTR* retval) get_BannerPage;
+			public function HRESULT(IADsPrintQueue *self, BSTR bstrBannerPage) put_BannerPage;
+			public function HRESULT(IADsPrintQueue *self, VARIANT* retval) get_PrintDevices;
+			public function HRESULT(IADsPrintQueue *self, VARIANT vPrintDevices) put_PrintDevices;
+			public function HRESULT(IADsPrintQueue *self, VARIANT* retval) get_NetAddresses;
+			public function HRESULT(IADsPrintQueue *self, VARIANT vNetAddresses) put_NetAddresses;
+		}
+		[CRepr]
+		public struct IADsPrintQueueOperations : IADs
+		{
+			public const new Guid IID = .(0x124be5c0, 0x156e, 0x11cf, 0xa9, 0x86, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsPrintQueueOperations *self, int32* retval) get_Status;
+			public function HRESULT(IADsPrintQueueOperations *self, IADsCollection** pObject) PrintJobs;
+			public function HRESULT(IADsPrintQueueOperations *self) Pause;
+			public function HRESULT(IADsPrintQueueOperations *self) Resume;
+			public function HRESULT(IADsPrintQueueOperations *self) Purge;
+		}
+		[CRepr]
+		public struct IADsPrintJob : IADs
+		{
+			public const new Guid IID = .(0x32fb6780, 0x1ed0, 0x11cf, 0xa9, 0x88, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsPrintJob *self, BSTR* retval) get_HostPrintQueue;
+			public function HRESULT(IADsPrintJob *self, BSTR* retval) get_User;
+			public function HRESULT(IADsPrintJob *self, BSTR* retval) get_UserPath;
+			public function HRESULT(IADsPrintJob *self, double* retval) get_TimeSubmitted;
+			public function HRESULT(IADsPrintJob *self, int32* retval) get_TotalPages;
+			public function HRESULT(IADsPrintJob *self, int32* retval) get_Size;
+			public function HRESULT(IADsPrintJob *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsPrintJob *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsPrintJob *self, int32* retval) get_Priority;
+			public function HRESULT(IADsPrintJob *self, int32 lnPriority) put_Priority;
+			public function HRESULT(IADsPrintJob *self, double* retval) get_StartTime;
+			public function HRESULT(IADsPrintJob *self, double daStartTime) put_StartTime;
+			public function HRESULT(IADsPrintJob *self, double* retval) get_UntilTime;
+			public function HRESULT(IADsPrintJob *self, double daUntilTime) put_UntilTime;
+			public function HRESULT(IADsPrintJob *self, BSTR* retval) get_Notify;
+			public function HRESULT(IADsPrintJob *self, BSTR bstrNotify) put_Notify;
+			public function HRESULT(IADsPrintJob *self, BSTR* retval) get_NotifyPath;
+			public function HRESULT(IADsPrintJob *self, BSTR bstrNotifyPath) put_NotifyPath;
+		}
+		[CRepr]
+		public struct IADsPrintJobOperations : IADs
+		{
+			public const new Guid IID = .(0x9a52db30, 0x1ecf, 0x11cf, 0xa9, 0x88, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsPrintJobOperations *self, int32* retval) get_Status;
+			public function HRESULT(IADsPrintJobOperations *self, int32* retval) get_TimeElapsed;
+			public function HRESULT(IADsPrintJobOperations *self, int32* retval) get_PagesPrinted;
+			public function HRESULT(IADsPrintJobOperations *self, int32* retval) get_Position;
+			public function HRESULT(IADsPrintJobOperations *self, int32 lnPosition) put_Position;
+			public function HRESULT(IADsPrintJobOperations *self) Pause;
+			public function HRESULT(IADsPrintJobOperations *self) Resume;
+		}
+		[CRepr]
+		public struct IADsService : IADs
+		{
+			public const new Guid IID = .(0x68af66e0, 0x31ca, 0x11cf, 0xa9, 0x8a, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsService *self, BSTR* retval) get_HostComputer;
+			public function HRESULT(IADsService *self, BSTR bstrHostComputer) put_HostComputer;
+			public function HRESULT(IADsService *self, BSTR* retval) get_DisplayName;
+			public function HRESULT(IADsService *self, BSTR bstrDisplayName) put_DisplayName;
+			public function HRESULT(IADsService *self, BSTR* retval) get_Version;
+			public function HRESULT(IADsService *self, BSTR bstrVersion) put_Version;
+			public function HRESULT(IADsService *self, int32* retval) get_ServiceType;
+			public function HRESULT(IADsService *self, int32 lnServiceType) put_ServiceType;
+			public function HRESULT(IADsService *self, int32* retval) get_StartType;
+			public function HRESULT(IADsService *self, int32 lnStartType) put_StartType;
+			public function HRESULT(IADsService *self, BSTR* retval) get_Path;
+			public function HRESULT(IADsService *self, BSTR bstrPath) put_Path;
+			public function HRESULT(IADsService *self, BSTR* retval) get_StartupParameters;
+			public function HRESULT(IADsService *self, BSTR bstrStartupParameters) put_StartupParameters;
+			public function HRESULT(IADsService *self, int32* retval) get_ErrorControl;
+			public function HRESULT(IADsService *self, int32 lnErrorControl) put_ErrorControl;
+			public function HRESULT(IADsService *self, BSTR* retval) get_LoadOrderGroup;
+			public function HRESULT(IADsService *self, BSTR bstrLoadOrderGroup) put_LoadOrderGroup;
+			public function HRESULT(IADsService *self, BSTR* retval) get_ServiceAccountName;
+			public function HRESULT(IADsService *self, BSTR bstrServiceAccountName) put_ServiceAccountName;
+			public function HRESULT(IADsService *self, BSTR* retval) get_ServiceAccountPath;
+			public function HRESULT(IADsService *self, BSTR bstrServiceAccountPath) put_ServiceAccountPath;
+			public function HRESULT(IADsService *self, VARIANT* retval) get_Dependencies;
+			public function HRESULT(IADsService *self, VARIANT vDependencies) put_Dependencies;
+		}
+		[CRepr]
+		public struct IADsServiceOperations : IADs
+		{
+			public const new Guid IID = .(0x5d7b33f0, 0x31ca, 0x11cf, 0xa9, 0x8a, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsServiceOperations *self, int32* retval) get_Status;
+			public function HRESULT(IADsServiceOperations *self) Start;
+			public function HRESULT(IADsServiceOperations *self) Stop;
+			public function HRESULT(IADsServiceOperations *self) Pause;
+			public function HRESULT(IADsServiceOperations *self) Continue;
+			public function HRESULT(IADsServiceOperations *self, BSTR bstrNewPassword) SetPassword;
+		}
+		[CRepr]
+		public struct IADsFileService : IADsService
+		{
+			public const new Guid IID = .(0xa89d1900, 0x31ca, 0x11cf, 0xa9, 0x8a, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsFileService *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsFileService *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsFileService *self, int32* retval) get_MaxUserCount;
+			public function HRESULT(IADsFileService *self, int32 lnMaxUserCount) put_MaxUserCount;
+		}
+		[CRepr]
+		public struct IADsFileServiceOperations : IADsServiceOperations
+		{
+			public const new Guid IID = .(0xa02ded10, 0x31ca, 0x11cf, 0xa9, 0x8a, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsFileServiceOperations *self, IADsCollection** ppSessions) Sessions;
+			public function HRESULT(IADsFileServiceOperations *self, IADsCollection** ppResources) Resources;
+		}
+		[CRepr]
+		public struct IADsFileShare : IADs
+		{
+			public const new Guid IID = .(0xeb6dcaf0, 0x4b83, 0x11cf, 0xa9, 0x95, 0x00, 0xaa, 0x00, 0x6b, 0xc1, 0x49);
+			
+			public function HRESULT(IADsFileShare *self, int32* retval) get_CurrentUserCount;
+			public function HRESULT(IADsFileShare *self, BSTR* retval) get_Description;
+			public function HRESULT(IADsFileShare *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IADsFileShare *self, BSTR* retval) get_HostComputer;
+			public function HRESULT(IADsFileShare *self, BSTR bstrHostComputer) put_HostComputer;
+			public function HRESULT(IADsFileShare *self, BSTR* retval) get_Path;
+			public function HRESULT(IADsFileShare *self, BSTR bstrPath) put_Path;
+			public function HRESULT(IADsFileShare *self, int32* retval) get_MaxUserCount;
+			public function HRESULT(IADsFileShare *self, int32 lnMaxUserCount) put_MaxUserCount;
+		}
+		[CRepr]
+		public struct IADsSession : IADs
+		{
+			public const new Guid IID = .(0x398b7da0, 0x4aab, 0x11cf, 0xae, 0x2c, 0x00, 0xaa, 0x00, 0x6e, 0xbf, 0xb9);
+			
+			public function HRESULT(IADsSession *self, BSTR* retval) get_User;
+			public function HRESULT(IADsSession *self, BSTR* retval) get_UserPath;
+			public function HRESULT(IADsSession *self, BSTR* retval) get_Computer;
+			public function HRESULT(IADsSession *self, BSTR* retval) get_ComputerPath;
+			public function HRESULT(IADsSession *self, int32* retval) get_ConnectTime;
+			public function HRESULT(IADsSession *self, int32* retval) get_IdleTime;
+		}
+		[CRepr]
+		public struct IADsResource : IADs
+		{
+			public const new Guid IID = .(0x34a05b20, 0x4aab, 0x11cf, 0xae, 0x2c, 0x00, 0xaa, 0x00, 0x6e, 0xbf, 0xb9);
+			
+			public function HRESULT(IADsResource *self, BSTR* retval) get_User;
+			public function HRESULT(IADsResource *self, BSTR* retval) get_UserPath;
+			public function HRESULT(IADsResource *self, BSTR* retval) get_Path;
+			public function HRESULT(IADsResource *self, int32* retval) get_LockCount;
+		}
+		[CRepr]
+		public struct IADsOpenDSObject : IDispatch
+		{
+			public const new Guid IID = .(0xddf2891e, 0x0f9c, 0x11d0, 0x8a, 0xd4, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsOpenDSObject *self, BSTR lpszDNName, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved, IDispatch** ppOleDsObj) OpenDSObject;
+		}
+		[CRepr]
+		public struct IDirectoryObject : IUnknown
+		{
+			public const new Guid IID = .(0xe798de2c, 0x22e4, 0x11d0, 0x84, 0xfe, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IDirectoryObject *self, ADS_OBJECT_INFO** ppObjInfo) GetObjectInformation;
+			public function HRESULT(IDirectoryObject *self, PWSTR* pAttributeNames, uint32 dwNumberAttributes, ADS_ATTR_INFO** ppAttributeEntries, uint32* pdwNumAttributesReturned) GetObjectAttributes;
+			public function HRESULT(IDirectoryObject *self, ADS_ATTR_INFO* pAttributeEntries, uint32 dwNumAttributes, uint32* pdwNumAttributesModified) SetObjectAttributes;
+			public function HRESULT(IDirectoryObject *self, PWSTR pszRDNName, ADS_ATTR_INFO* pAttributeEntries, uint32 dwNumAttributes, IDispatch** ppObject) CreateDSObject;
+			public function HRESULT(IDirectoryObject *self, PWSTR pszRDNName) DeleteDSObject;
+		}
+		[CRepr]
+		public struct IDirectorySearch : IUnknown
+		{
+			public const new Guid IID = .(0x109ba8ec, 0x92f0, 0x11d0, 0xa7, 0x90, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0xa8);
+			
+			public function HRESULT(IDirectorySearch *self, ads_searchpref_info* pSearchPrefs, uint32 dwNumPrefs) SetSearchPreference;
+			public function HRESULT(IDirectorySearch *self, PWSTR pszSearchFilter, PWSTR* pAttributeNames, uint32 dwNumberAttributes, int* phSearchResult) ExecuteSearch;
+			public function HRESULT(IDirectorySearch *self, int phSearchResult) AbandonSearch;
+			public function HRESULT(IDirectorySearch *self, int hSearchResult) GetFirstRow;
+			public function HRESULT(IDirectorySearch *self, int hSearchResult) GetNextRow;
+			public function HRESULT(IDirectorySearch *self, int hSearchResult) GetPreviousRow;
+			public function HRESULT(IDirectorySearch *self, int hSearchHandle, PWSTR* ppszColumnName) GetNextColumnName;
+			public function HRESULT(IDirectorySearch *self, int hSearchResult, PWSTR szColumnName, ads_search_column* pSearchColumn) GetColumn;
+			public function HRESULT(IDirectorySearch *self, ads_search_column* pSearchColumn) FreeColumn;
+			public function HRESULT(IDirectorySearch *self, int hSearchResult) CloseSearchHandle;
+		}
+		[CRepr]
+		public struct IDirectorySchemaMgmt : IUnknown
+		{
+			public const new Guid IID = .(0x75db3b9c, 0xa4d8, 0x11d0, 0xa7, 0x9c, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0xa8);
+			
+			public function HRESULT(IDirectorySchemaMgmt *self, PWSTR* ppszAttrNames, uint32 dwNumAttributes, ADS_ATTR_DEF** ppAttrDefinition, uint32* pdwNumAttributes) EnumAttributes;
+			public function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszAttributeName, ADS_ATTR_DEF* pAttributeDefinition) CreateAttributeDefinition;
+			public function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszAttributeName, ADS_ATTR_DEF* pAttributeDefinition) WriteAttributeDefinition;
+			public function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszAttributeName) DeleteAttributeDefinition;
+			public function HRESULT(IDirectorySchemaMgmt *self, PWSTR* ppszClassNames, uint32 dwNumClasses, ADS_CLASS_DEF** ppClassDefinition, uint32* pdwNumClasses) EnumClasses;
+			public function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszClassName, ADS_CLASS_DEF* pClassDefinition) WriteClassDefinition;
+			public function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszClassName, ADS_CLASS_DEF* pClassDefinition) CreateClassDefinition;
+			public function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszClassName) DeleteClassDefinition;
+		}
+		[CRepr]
+		public struct IADsAggregatee : IUnknown
+		{
+			public const new Guid IID = .(0x1346ce8c, 0x9039, 0x11d0, 0x85, 0x28, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsAggregatee *self, IUnknown* pOuterUnknown) ConnectAsAggregatee;
+			public function HRESULT(IADsAggregatee *self) DisconnectAsAggregatee;
+			public function HRESULT(IADsAggregatee *self, Guid* riid) RelinquishInterface;
+			public function HRESULT(IADsAggregatee *self, Guid* riid) RestoreInterface;
+		}
+		[CRepr]
+		public struct IADsAggregator : IUnknown
+		{
+			public const new Guid IID = .(0x52db5fb0, 0x941f, 0x11d0, 0x85, 0x29, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsAggregator *self, IUnknown* pAggregatee) ConnectAsAggregator;
+			public function HRESULT(IADsAggregator *self) DisconnectAsAggregator;
+		}
+		[CRepr]
+		public struct IADsAccessControlEntry : IDispatch
+		{
+			public const new Guid IID = .(0xb4f3a14c, 0x9bdd, 0x11d0, 0x85, 0x2c, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsAccessControlEntry *self, int32* retval) get_AccessMask;
+			public function HRESULT(IADsAccessControlEntry *self, int32 lnAccessMask) put_AccessMask;
+			public function HRESULT(IADsAccessControlEntry *self, int32* retval) get_AceType;
+			public function HRESULT(IADsAccessControlEntry *self, int32 lnAceType) put_AceType;
+			public function HRESULT(IADsAccessControlEntry *self, int32* retval) get_AceFlags;
+			public function HRESULT(IADsAccessControlEntry *self, int32 lnAceFlags) put_AceFlags;
+			public function HRESULT(IADsAccessControlEntry *self, int32* retval) get_Flags;
+			public function HRESULT(IADsAccessControlEntry *self, int32 lnFlags) put_Flags;
+			public function HRESULT(IADsAccessControlEntry *self, BSTR* retval) get_ObjectType;
+			public function HRESULT(IADsAccessControlEntry *self, BSTR bstrObjectType) put_ObjectType;
+			public function HRESULT(IADsAccessControlEntry *self, BSTR* retval) get_InheritedObjectType;
+			public function HRESULT(IADsAccessControlEntry *self, BSTR bstrInheritedObjectType) put_InheritedObjectType;
+			public function HRESULT(IADsAccessControlEntry *self, BSTR* retval) get_Trustee;
+			public function HRESULT(IADsAccessControlEntry *self, BSTR bstrTrustee) put_Trustee;
+		}
+		[CRepr]
+		public struct IADsAccessControlList : IDispatch
+		{
+			public const new Guid IID = .(0xb7ee91cc, 0x9bdd, 0x11d0, 0x85, 0x2c, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsAccessControlList *self, int32* retval) get_AclRevision;
+			public function HRESULT(IADsAccessControlList *self, int32 lnAclRevision) put_AclRevision;
+			public function HRESULT(IADsAccessControlList *self, int32* retval) get_AceCount;
+			public function HRESULT(IADsAccessControlList *self, int32 lnAceCount) put_AceCount;
+			public function HRESULT(IADsAccessControlList *self, IDispatch* pAccessControlEntry) AddAce;
+			public function HRESULT(IADsAccessControlList *self, IDispatch* pAccessControlEntry) RemoveAce;
+			public function HRESULT(IADsAccessControlList *self, IDispatch** ppAccessControlList) CopyAccessList;
+			public function HRESULT(IADsAccessControlList *self, IUnknown** retval) get__NewEnum;
+		}
+		[CRepr]
+		public struct IADsSecurityDescriptor : IDispatch
+		{
+			public const new Guid IID = .(0xb8c787ca, 0x9bdd, 0x11d0, 0x85, 0x2c, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsSecurityDescriptor *self, int32* retval) get_Revision;
+			public function HRESULT(IADsSecurityDescriptor *self, int32 lnRevision) put_Revision;
+			public function HRESULT(IADsSecurityDescriptor *self, int32* retval) get_Control;
+			public function HRESULT(IADsSecurityDescriptor *self, int32 lnControl) put_Control;
+			public function HRESULT(IADsSecurityDescriptor *self, BSTR* retval) get_Owner;
+			public function HRESULT(IADsSecurityDescriptor *self, BSTR bstrOwner) put_Owner;
+			public function HRESULT(IADsSecurityDescriptor *self, int16* retval) get_OwnerDefaulted;
+			public function HRESULT(IADsSecurityDescriptor *self, int16 fOwnerDefaulted) put_OwnerDefaulted;
+			public function HRESULT(IADsSecurityDescriptor *self, BSTR* retval) get_Group;
+			public function HRESULT(IADsSecurityDescriptor *self, BSTR bstrGroup) put_Group;
+			public function HRESULT(IADsSecurityDescriptor *self, int16* retval) get_GroupDefaulted;
+			public function HRESULT(IADsSecurityDescriptor *self, int16 fGroupDefaulted) put_GroupDefaulted;
+			public function HRESULT(IADsSecurityDescriptor *self, IDispatch** retval) get_DiscretionaryAcl;
+			public function HRESULT(IADsSecurityDescriptor *self, IDispatch* pDiscretionaryAcl) put_DiscretionaryAcl;
+			public function HRESULT(IADsSecurityDescriptor *self, int16* retval) get_DaclDefaulted;
+			public function HRESULT(IADsSecurityDescriptor *self, int16 fDaclDefaulted) put_DaclDefaulted;
+			public function HRESULT(IADsSecurityDescriptor *self, IDispatch** retval) get_SystemAcl;
+			public function HRESULT(IADsSecurityDescriptor *self, IDispatch* pSystemAcl) put_SystemAcl;
+			public function HRESULT(IADsSecurityDescriptor *self, int16* retval) get_SaclDefaulted;
+			public function HRESULT(IADsSecurityDescriptor *self, int16 fSaclDefaulted) put_SaclDefaulted;
+			public function HRESULT(IADsSecurityDescriptor *self, IDispatch** ppSecurityDescriptor) CopySecurityDescriptor;
+		}
+		[CRepr]
+		public struct IADsLargeInteger : IDispatch
+		{
+			public const new Guid IID = .(0x9068270b, 0x0939, 0x11d1, 0x8b, 0xe1, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0x03);
+			
+			public function HRESULT(IADsLargeInteger *self, int32* retval) get_HighPart;
+			public function HRESULT(IADsLargeInteger *self, int32 lnHighPart) put_HighPart;
+			public function HRESULT(IADsLargeInteger *self, int32* retval) get_LowPart;
+			public function HRESULT(IADsLargeInteger *self, int32 lnLowPart) put_LowPart;
+		}
+		[CRepr]
+		public struct IADsNameTranslate : IDispatch
+		{
+			public const new Guid IID = .(0xb1b272a3, 0x3625, 0x11d1, 0xa3, 0xa4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsNameTranslate *self, int32 lnChaseReferral) put_ChaseReferral;
+			public function HRESULT(IADsNameTranslate *self, int32 lnSetType, BSTR bstrADsPath) Init;
+			public function HRESULT(IADsNameTranslate *self, int32 lnSetType, BSTR bstrADsPath, BSTR bstrUserID, BSTR bstrDomain, BSTR bstrPassword) InitEx;
+			public function HRESULT(IADsNameTranslate *self, int32 lnSetType, BSTR bstrADsPath) Set;
+			public function HRESULT(IADsNameTranslate *self, int32 lnFormatType, BSTR* pbstrADsPath) Get;
+			public function HRESULT(IADsNameTranslate *self, int32 lnFormatType, VARIANT pvar) SetEx;
+			public function HRESULT(IADsNameTranslate *self, int32 lnFormatType, VARIANT* pvar) GetEx;
+		}
+		[CRepr]
+		public struct IADsCaseIgnoreList : IDispatch
+		{
+			public const new Guid IID = .(0x7b66b533, 0x4680, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsCaseIgnoreList *self, VARIANT* retval) get_CaseIgnoreList;
+			public function HRESULT(IADsCaseIgnoreList *self, VARIANT vCaseIgnoreList) put_CaseIgnoreList;
+		}
+		[CRepr]
+		public struct IADsFaxNumber : IDispatch
+		{
+			public const new Guid IID = .(0xa910dea9, 0x4680, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsFaxNumber *self, BSTR* retval) get_TelephoneNumber;
+			public function HRESULT(IADsFaxNumber *self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
+			public function HRESULT(IADsFaxNumber *self, VARIANT* retval) get_Parameters;
+			public function HRESULT(IADsFaxNumber *self, VARIANT vParameters) put_Parameters;
+		}
+		[CRepr]
+		public struct IADsNetAddress : IDispatch
+		{
+			public const new Guid IID = .(0xb21a50a9, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsNetAddress *self, int32* retval) get_AddressType;
+			public function HRESULT(IADsNetAddress *self, int32 lnAddressType) put_AddressType;
+			public function HRESULT(IADsNetAddress *self, VARIANT* retval) get_Address;
+			public function HRESULT(IADsNetAddress *self, VARIANT vAddress) put_Address;
+		}
+		[CRepr]
+		public struct IADsOctetList : IDispatch
+		{
+			public const new Guid IID = .(0x7b28b80f, 0x4680, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsOctetList *self, VARIANT* retval) get_OctetList;
+			public function HRESULT(IADsOctetList *self, VARIANT vOctetList) put_OctetList;
+		}
+		[CRepr]
+		public struct IADsEmail : IDispatch
+		{
+			public const new Guid IID = .(0x97af011a, 0x478e, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsEmail *self, int32* retval) get_Type;
+			public function HRESULT(IADsEmail *self, int32 lnType) put_Type;
+			public function HRESULT(IADsEmail *self, BSTR* retval) get_Address;
+			public function HRESULT(IADsEmail *self, BSTR bstrAddress) put_Address;
+		}
+		[CRepr]
+		public struct IADsPath : IDispatch
+		{
+			public const new Guid IID = .(0xb287fcd5, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsPath *self, int32* retval) get_Type;
+			public function HRESULT(IADsPath *self, int32 lnType) put_Type;
+			public function HRESULT(IADsPath *self, BSTR* retval) get_VolumeName;
+			public function HRESULT(IADsPath *self, BSTR bstrVolumeName) put_VolumeName;
+			public function HRESULT(IADsPath *self, BSTR* retval) get_Path;
+			public function HRESULT(IADsPath *self, BSTR bstrPath) put_Path;
+		}
+		[CRepr]
+		public struct IADsReplicaPointer : IDispatch
+		{
+			public const new Guid IID = .(0xf60fb803, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsReplicaPointer *self, BSTR* retval) get_ServerName;
+			public function HRESULT(IADsReplicaPointer *self, BSTR bstrServerName) put_ServerName;
+			public function HRESULT(IADsReplicaPointer *self, int32* retval) get_ReplicaType;
+			public function HRESULT(IADsReplicaPointer *self, int32 lnReplicaType) put_ReplicaType;
+			public function HRESULT(IADsReplicaPointer *self, int32* retval) get_ReplicaNumber;
+			public function HRESULT(IADsReplicaPointer *self, int32 lnReplicaNumber) put_ReplicaNumber;
+			public function HRESULT(IADsReplicaPointer *self, int32* retval) get_Count;
+			public function HRESULT(IADsReplicaPointer *self, int32 lnCount) put_Count;
+			public function HRESULT(IADsReplicaPointer *self, VARIANT* retval) get_ReplicaAddressHints;
+			public function HRESULT(IADsReplicaPointer *self, VARIANT vReplicaAddressHints) put_ReplicaAddressHints;
+		}
+		[CRepr]
+		public struct IADsAcl : IDispatch
+		{
+			public const new Guid IID = .(0x8452d3ab, 0x0869, 0x11d1, 0xa3, 0x77, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsAcl *self, BSTR* retval) get_ProtectedAttrName;
+			public function HRESULT(IADsAcl *self, BSTR bstrProtectedAttrName) put_ProtectedAttrName;
+			public function HRESULT(IADsAcl *self, BSTR* retval) get_SubjectName;
+			public function HRESULT(IADsAcl *self, BSTR bstrSubjectName) put_SubjectName;
+			public function HRESULT(IADsAcl *self, int32* retval) get_Privileges;
+			public function HRESULT(IADsAcl *self, int32 lnPrivileges) put_Privileges;
+			public function HRESULT(IADsAcl *self, IDispatch** ppAcl) CopyAcl;
+		}
+		[CRepr]
+		public struct IADsTimestamp : IDispatch
+		{
+			public const new Guid IID = .(0xb2f5a901, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsTimestamp *self, int32* retval) get_WholeSeconds;
+			public function HRESULT(IADsTimestamp *self, int32 lnWholeSeconds) put_WholeSeconds;
+			public function HRESULT(IADsTimestamp *self, int32* retval) get_EventID;
+			public function HRESULT(IADsTimestamp *self, int32 lnEventID) put_EventID;
+		}
+		[CRepr]
+		public struct IADsPostalAddress : IDispatch
+		{
+			public const new Guid IID = .(0x7adecf29, 0x4680, 0x11d1, 0xa3, 0xb4, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsPostalAddress *self, VARIANT* retval) get_PostalAddress;
+			public function HRESULT(IADsPostalAddress *self, VARIANT vPostalAddress) put_PostalAddress;
+		}
+		[CRepr]
+		public struct IADsBackLink : IDispatch
+		{
+			public const new Guid IID = .(0xfd1302bd, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsBackLink *self, int32* retval) get_RemoteID;
+			public function HRESULT(IADsBackLink *self, int32 lnRemoteID) put_RemoteID;
+			public function HRESULT(IADsBackLink *self, BSTR* retval) get_ObjectName;
+			public function HRESULT(IADsBackLink *self, BSTR bstrObjectName) put_ObjectName;
+		}
+		[CRepr]
+		public struct IADsTypedName : IDispatch
+		{
+			public const new Guid IID = .(0xb371a349, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsTypedName *self, BSTR* retval) get_ObjectName;
+			public function HRESULT(IADsTypedName *self, BSTR bstrObjectName) put_ObjectName;
+			public function HRESULT(IADsTypedName *self, int32* retval) get_Level;
+			public function HRESULT(IADsTypedName *self, int32 lnLevel) put_Level;
+			public function HRESULT(IADsTypedName *self, int32* retval) get_Interval;
+			public function HRESULT(IADsTypedName *self, int32 lnInterval) put_Interval;
+		}
+		[CRepr]
+		public struct IADsHold : IDispatch
+		{
+			public const new Guid IID = .(0xb3eb3b37, 0x4080, 0x11d1, 0xa3, 0xac, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsHold *self, BSTR* retval) get_ObjectName;
+			public function HRESULT(IADsHold *self, BSTR bstrObjectName) put_ObjectName;
+			public function HRESULT(IADsHold *self, int32* retval) get_Amount;
+			public function HRESULT(IADsHold *self, int32 lnAmount) put_Amount;
+		}
+		[CRepr]
+		public struct IADsObjectOptions : IDispatch
+		{
+			public const new Guid IID = .(0x46f14fda, 0x232b, 0x11d1, 0xa8, 0x08, 0x00, 0xc0, 0x4f, 0xd8, 0xd5, 0xa8);
+			
+			public function HRESULT(IADsObjectOptions *self, int32 lnOption, VARIANT* pvValue) GetOption;
+			public function HRESULT(IADsObjectOptions *self, int32 lnOption, VARIANT vValue) SetOption;
+		}
+		[CRepr]
+		public struct IADsPathname : IDispatch
+		{
+			public const new Guid IID = .(0xd592aed4, 0xf420, 0x11d0, 0xa3, 0x6e, 0x00, 0xc0, 0x4f, 0xb9, 0x50, 0xdc);
+			
+			public function HRESULT(IADsPathname *self, BSTR bstrADsPath, int32 lnSetType) Set;
+			public function HRESULT(IADsPathname *self, int32 lnDisplayType) SetDisplayType;
+			public function HRESULT(IADsPathname *self, int32 lnFormatType, BSTR* pbstrADsPath) Retrieve;
+			public function HRESULT(IADsPathname *self, int32* plnNumPathElements) GetNumElements;
+			public function HRESULT(IADsPathname *self, int32 lnElementIndex, BSTR* pbstrElement) GetElement;
+			public function HRESULT(IADsPathname *self, BSTR bstrLeafElement) AddLeafElement;
+			public function HRESULT(IADsPathname *self) RemoveLeafElement;
+			public function HRESULT(IADsPathname *self, IDispatch** ppAdsPath) CopyPath;
+			public function HRESULT(IADsPathname *self, int32 lnReserved, BSTR bstrInStr, BSTR* pbstrOutStr) GetEscapedElement;
+			public function HRESULT(IADsPathname *self, int32* retval) get_EscapedMode;
+			public function HRESULT(IADsPathname *self, int32 lnEscapedMode) put_EscapedMode;
+		}
+		[CRepr]
+		public struct IADsADSystemInfo : IDispatch
+		{
+			public const new Guid IID = .(0x5bb11929, 0xafd1, 0x11d2, 0x9c, 0xb9, 0x00, 0x00, 0xf8, 0x7a, 0x36, 0x9e);
+			
+			public function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_UserName;
+			public function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_ComputerName;
+			public function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_SiteName;
+			public function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_DomainShortName;
+			public function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_DomainDNSName;
+			public function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_ForestDNSName;
+			public function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_PDCRoleOwner;
+			public function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_SchemaRoleOwner;
+			public function HRESULT(IADsADSystemInfo *self, int16* retval) get_IsNativeMode;
+			public function HRESULT(IADsADSystemInfo *self, BSTR* pszDCName) GetAnyDCName;
+			public function HRESULT(IADsADSystemInfo *self, BSTR szServer, BSTR* pszSiteName) GetDCSiteName;
+			public function HRESULT(IADsADSystemInfo *self) RefreshSchemaCache;
+			public function HRESULT(IADsADSystemInfo *self, VARIANT* pvTrees) GetTrees;
+		}
+		[CRepr]
+		public struct IADsWinNTSystemInfo : IDispatch
+		{
+			public const new Guid IID = .(0x6c6d65dc, 0xafd1, 0x11d2, 0x9c, 0xb9, 0x00, 0x00, 0xf8, 0x7a, 0x36, 0x9e);
+			
+			public function HRESULT(IADsWinNTSystemInfo *self, BSTR* retval) get_UserName;
+			public function HRESULT(IADsWinNTSystemInfo *self, BSTR* retval) get_ComputerName;
+			public function HRESULT(IADsWinNTSystemInfo *self, BSTR* retval) get_DomainName;
+			public function HRESULT(IADsWinNTSystemInfo *self, BSTR* retval) get_PDC;
+		}
+		[CRepr]
+		public struct IADsDNWithBinary : IDispatch
+		{
+			public const new Guid IID = .(0x7e99c0a2, 0xf935, 0x11d2, 0xba, 0x96, 0x00, 0xc0, 0x4f, 0xb6, 0xd0, 0xd1);
+			
+			public function HRESULT(IADsDNWithBinary *self, VARIANT* retval) get_BinaryValue;
+			public function HRESULT(IADsDNWithBinary *self, VARIANT vBinaryValue) put_BinaryValue;
+			public function HRESULT(IADsDNWithBinary *self, BSTR* retval) get_DNString;
+			public function HRESULT(IADsDNWithBinary *self, BSTR bstrDNString) put_DNString;
+		}
+		[CRepr]
+		public struct IADsDNWithString : IDispatch
+		{
+			public const new Guid IID = .(0x370df02e, 0xf934, 0x11d2, 0xba, 0x96, 0x00, 0xc0, 0x4f, 0xb6, 0xd0, 0xd1);
+			
+			public function HRESULT(IADsDNWithString *self, BSTR* retval) get_StringValue;
+			public function HRESULT(IADsDNWithString *self, BSTR bstrStringValue) put_StringValue;
+			public function HRESULT(IADsDNWithString *self, BSTR* retval) get_DNString;
+			public function HRESULT(IADsDNWithString *self, BSTR bstrDNString) put_DNString;
+		}
+		[CRepr]
+		public struct IADsSecurityUtility : IDispatch
+		{
+			public const new Guid IID = .(0xa63251b2, 0x5f21, 0x474b, 0xab, 0x52, 0x4a, 0x8e, 0xfa, 0xd1, 0x08, 0x95);
+			
+			public function HRESULT(IADsSecurityUtility *self, VARIANT varPath, int32 lPathFormat, int32 lFormat, VARIANT* pVariant) GetSecurityDescriptor;
+			public function HRESULT(IADsSecurityUtility *self, VARIANT varPath, int32 lPathFormat, VARIANT varData, int32 lDataFormat) SetSecurityDescriptor;
+			public function HRESULT(IADsSecurityUtility *self, VARIANT varSD, int32 lDataFormat, int32 lOutFormat, VARIANT* pResult) ConvertSecurityDescriptor;
+			public function HRESULT(IADsSecurityUtility *self, int32* retval) get_SecurityMask;
+			public function HRESULT(IADsSecurityUtility *self, int32 lnSecurityMask) put_SecurityMask;
+		}
+		[CRepr]
+		public struct IDsBrowseDomainTree : IUnknown
+		{
+			public const new Guid IID = .(0x7cabcf1e, 0x78f5, 0x11d2, 0x96, 0x0c, 0x00, 0xc0, 0x4f, 0xa3, 0x1a, 0x86);
+			
+			public function HRESULT(IDsBrowseDomainTree *self, HWND hwndParent, PWSTR* ppszTargetPath, uint32 dwFlags) BrowseTo;
+			public function HRESULT(IDsBrowseDomainTree *self, DOMAIN_TREE** ppDomainTree, uint32 dwFlags) GetDomains;
+			public function HRESULT(IDsBrowseDomainTree *self, DOMAIN_TREE** ppDomainTree) FreeDomains;
+			public function HRESULT(IDsBrowseDomainTree *self) FlushCachedDomains;
+			public function HRESULT(IDsBrowseDomainTree *self, PWSTR pszComputerName, PWSTR pszUserName, PWSTR pszPassword) SetComputer;
+		}
+		[CRepr]
+		public struct IDsDisplaySpecifier : IUnknown
+		{
+			public const new Guid IID = .(0x1ab4a8c0, 0x6a0b, 0x11d2, 0xad, 0x49, 0x00, 0xc0, 0x4f, 0xa3, 0x1a, 0x86);
+			
+			public function HRESULT(IDsDisplaySpecifier *self, PWSTR pszServer, PWSTR pszUserName, PWSTR pszPassword, uint32 dwFlags) SetServer;
+			public function HRESULT(IDsDisplaySpecifier *self, uint16 langid) SetLanguageID;
+			public function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, Guid* riid, void** ppv) GetDisplaySpecifier;
+			public function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, uint32 dwFlags, char16* pszBuffer, int32 cchBuffer, int32* presid) GetIconLocation;
+			public function HICON(IDsDisplaySpecifier *self, PWSTR pszObjectClass, uint32 dwFlags, int32 cxIcon, int32 cyIcon) GetIcon;
+			public function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, char16* pszBuffer, int32 cchBuffer) GetFriendlyClassName;
+			public function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, PWSTR pszAttributeName, char16* pszBuffer, uint32 cchBuffer) GetFriendlyAttributeName;
+			public function BOOL(IDsDisplaySpecifier *self, PWSTR pszObjectClass, PWSTR pszADsPath, uint32 dwFlags) IsClassContainer;
+			public function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, DSCLASSCREATIONINFO** ppdscci) GetClassCreationInfo;
+			public function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, LPDSENUMATTRIBUTES pcbEnum, LPARAM lParam) EnumClassAttributes;
+			public function ADSTYPEENUM(IDsDisplaySpecifier *self, PWSTR pszAttributeName) GetAttributeADsType;
+		}
+		[CRepr]
+		public struct IDsObjectPicker : IUnknown
+		{
+			public const new Guid IID = .(0x0c87e64e, 0x3b7a, 0x11d2, 0xb9, 0xe0, 0x00, 0xc0, 0x4f, 0xd8, 0xdb, 0xf7);
+			
+			public function HRESULT(IDsObjectPicker *self, DSOP_INIT_INFO* pInitInfo) Initialize;
+			public function HRESULT(IDsObjectPicker *self, HWND hwndParent, IDataObject** ppdoSelections) InvokeDialog;
+		}
+		[CRepr]
+		public struct IDsObjectPickerCredentials : IDsObjectPicker
+		{
+			public const new Guid IID = .(0xe2d3ec9b, 0xd041, 0x445a, 0x8f, 0x16, 0x47, 0x48, 0xde, 0x8f, 0xb1, 0xcf);
+			
+			public function HRESULT(IDsObjectPickerCredentials *self, PWSTR szUserName, PWSTR szPassword) SetCredentials;
+		}
+		[CRepr]
+		public struct IDsAdminCreateObj : IUnknown
+		{
+			public const new Guid IID = .(0x53554a38, 0xf902, 0x11d2, 0x82, 0xb9, 0x00, 0xc0, 0x4f, 0x68, 0x92, 0x8b);
+			
+			public function HRESULT(IDsAdminCreateObj *self, IADsContainer* pADsContainerObj, IADs* pADsCopySource, PWSTR lpszClassName) Initialize;
+			public function HRESULT(IDsAdminCreateObj *self, HWND hwndParent, IADs** ppADsObj) CreateModal;
+		}
+		[CRepr]
+		public struct IDsAdminNewObj : IUnknown
+		{
+			public const new Guid IID = .(0xf2573587, 0xe6fc, 0x11d2, 0x82, 0xaf, 0x00, 0xc0, 0x4f, 0x68, 0x92, 0x8b);
+			
+			public function HRESULT(IDsAdminNewObj *self, uint32 nCurrIndex, BOOL bValid) SetButtons;
+			public function HRESULT(IDsAdminNewObj *self, int32* pnTotal, int32* pnStartIndex) GetPageCounts;
+		}
+		[CRepr]
+		public struct IDsAdminNewObjPrimarySite : IUnknown
+		{
+			public const new Guid IID = .(0xbe2b487e, 0xf904, 0x11d2, 0x82, 0xb9, 0x00, 0xc0, 0x4f, 0x68, 0x92, 0x8b);
+			
+			public function HRESULT(IDsAdminNewObjPrimarySite *self, PWSTR pszName) CreateNew;
+			public function HRESULT(IDsAdminNewObjPrimarySite *self) Commit;
+		}
+		[CRepr]
+		public struct IDsAdminNewObjExt : IUnknown
+		{
+			public const new Guid IID = .(0x6088eae2, 0xe7bf, 0x11d2, 0x82, 0xaf, 0x00, 0xc0, 0x4f, 0x68, 0x92, 0x8b);
+			
+			public function HRESULT(IDsAdminNewObjExt *self, IADsContainer* pADsContainerObj, IADs* pADsCopySource, PWSTR lpszClassName, IDsAdminNewObj* pDsAdminNewObj, DSA_NEWOBJ_DISPINFO* pDispInfo) Initialize;
+			public function HRESULT(IDsAdminNewObjExt *self, LPFNSVADDPROPSHEETPAGE lpfnAddPage, LPARAM lParam) AddPages;
+			public function HRESULT(IDsAdminNewObjExt *self, IADs* pADsObj) SetObject;
+			public function HRESULT(IDsAdminNewObjExt *self, HWND hWnd, uint32 uContext) WriteData;
+			public function HRESULT(IDsAdminNewObjExt *self, HWND hWnd, HRESULT hr, uint32 uContext) OnError;
+			public function HRESULT(IDsAdminNewObjExt *self, BSTR* pBstrText) GetSummaryInfo;
+		}
+		[CRepr]
+		public struct IDsAdminNotifyHandler : IUnknown
+		{
+			public const new Guid IID = .(0xe4a2b8b3, 0x5a18, 0x11d2, 0x97, 0xc1, 0x00, 0xa0, 0xc9, 0xa0, 0x6d, 0x2d);
+			
+			public function HRESULT(IDsAdminNotifyHandler *self, IDataObject* pExtraInfo, uint32* puEventFlags) Initialize;
+			public function HRESULT(IDsAdminNotifyHandler *self, uint32 uEvent, IDataObject* pArg1, IDataObject* pArg2, uint32* puFlags, BSTR* pBstr) Begin;
+			public function HRESULT(IDsAdminNotifyHandler *self, uint32 nItem, uint32 uFlags) Notify;
+			public function HRESULT(IDsAdminNotifyHandler *self) End;
+		}
 		
 		// --- Functions ---
 		
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ADsGetObject(PWSTR lpszPathName, Guid* riid, void** ppObject);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsBuildEnumerator(IADsContainer pADsContainer, IEnumVARIANT* ppEnumVariant);
+		public static extern HRESULT ADsBuildEnumerator(IADsContainer* pADsContainer, IEnumVARIANT** ppEnumVariant);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsFreeEnumerator(IEnumVARIANT pEnumVariant);
+		public static extern HRESULT ADsFreeEnumerator(IEnumVARIANT* pEnumVariant);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsEnumerateNext(IEnumVARIANT pEnumVariant, uint32 cElements, VARIANT* pvar, uint32* pcElementsFetched);
+		public static extern HRESULT ADsEnumerateNext(IEnumVARIANT* pEnumVariant, uint32 cElements, VARIANT* pvar, uint32* pcElementsFetched);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ADsBuildVarArrayStr(PWSTR* lppPathNames, uint32 dwPathNames, VARIANT* pVar);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2255,7 +3303,7 @@ namespace Win32
 		[Import("dsuiext.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DsGetFriendlyClassName(PWSTR pszObjectClass, char16* pszBuffer, uint32 cchBuffer);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsPropCreateNotifyObj(IDataObject pAppThdDataObj, PWSTR pwzADsObjName, HWND* phNotifyObj);
+		public static extern HRESULT ADsPropCreateNotifyObj(IDataObject* pAppThdDataObj, PWSTR pwzADsObjName, HWND* phNotifyObj);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ADsPropGetInitInfo(HWND hNotifyObj, ADSPROPINITPARAMS* pInitParams);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]

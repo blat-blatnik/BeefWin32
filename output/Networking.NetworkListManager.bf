@@ -127,18 +127,133 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct INetworkListManager {}
-		public struct INetworkListManagerEvents {}
-		public struct INetwork {}
-		public struct IEnumNetworks {}
-		public struct INetworkEvents {}
-		public struct INetworkConnection {}
-		public struct IEnumNetworkConnections {}
-		public struct INetworkConnectionEvents {}
-		public struct INetworkCostManager {}
-		public struct INetworkCostManagerEvents {}
-		public struct INetworkConnectionCost {}
-		public struct INetworkConnectionCostEvents {}
+		[CRepr]
+		public struct INetworkListManager : IDispatch
+		{
+			public const new Guid IID = .(0xdcb00000, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetworkListManager *self, NLM_ENUM_NETWORK Flags, IEnumNetworks** ppEnumNetwork) GetNetworks;
+			public function HRESULT(INetworkListManager *self, Guid gdNetworkId, INetwork** ppNetwork) GetNetwork;
+			public function HRESULT(INetworkListManager *self, IEnumNetworkConnections** ppEnum) GetNetworkConnections;
+			public function HRESULT(INetworkListManager *self, Guid gdNetworkConnectionId, INetworkConnection** ppNetworkConnection) GetNetworkConnection;
+			public function HRESULT(INetworkListManager *self, int16* pbIsConnected) get_IsConnectedToInternet;
+			public function HRESULT(INetworkListManager *self, int16* pbIsConnected) get_IsConnected;
+			public function HRESULT(INetworkListManager *self, NLM_CONNECTIVITY* pConnectivity) GetConnectivity;
+			public function HRESULT(INetworkListManager *self, NLM_SIMULATED_PROFILE_INFO* pSimulatedInfo) SetSimulatedProfileInfo;
+			public function HRESULT(INetworkListManager *self) ClearSimulatedProfileInfo;
+		}
+		[CRepr]
+		public struct INetworkListManagerEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcb00001, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetworkListManagerEvents *self, NLM_CONNECTIVITY newConnectivity) ConnectivityChanged;
+		}
+		[CRepr]
+		public struct INetwork : IDispatch
+		{
+			public const new Guid IID = .(0xdcb00002, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetwork *self, BSTR* pszNetworkName) GetName;
+			public function HRESULT(INetwork *self, BSTR szNetworkNewName) SetName;
+			public function HRESULT(INetwork *self, BSTR* pszDescription) GetDescription;
+			public function HRESULT(INetwork *self, BSTR szDescription) SetDescription;
+			public function HRESULT(INetwork *self, Guid* pgdGuidNetworkId) GetNetworkId;
+			public function HRESULT(INetwork *self, NLM_DOMAIN_TYPE* pNetworkType) GetDomainType;
+			public function HRESULT(INetwork *self, IEnumNetworkConnections** ppEnumNetworkConnection) GetNetworkConnections;
+			public function HRESULT(INetwork *self, uint32* pdwLowDateTimeCreated, uint32* pdwHighDateTimeCreated, uint32* pdwLowDateTimeConnected, uint32* pdwHighDateTimeConnected) GetTimeCreatedAndConnected;
+			public function HRESULT(INetwork *self, int16* pbIsConnected) get_IsConnectedToInternet;
+			public function HRESULT(INetwork *self, int16* pbIsConnected) get_IsConnected;
+			public function HRESULT(INetwork *self, NLM_CONNECTIVITY* pConnectivity) GetConnectivity;
+			public function HRESULT(INetwork *self, NLM_NETWORK_CATEGORY* pCategory) GetCategory;
+			public function HRESULT(INetwork *self, NLM_NETWORK_CATEGORY NewCategory) SetCategory;
+		}
+		[CRepr]
+		public struct IEnumNetworks : IDispatch
+		{
+			public const new Guid IID = .(0xdcb00003, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(IEnumNetworks *self, IEnumVARIANT** ppEnumVar) get__NewEnum;
+			public function HRESULT(IEnumNetworks *self, uint32 celt, INetwork** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumNetworks *self, uint32 celt) Skip;
+			public function HRESULT(IEnumNetworks *self) Reset;
+			public function HRESULT(IEnumNetworks *self, IEnumNetworks** ppEnumNetwork) Clone;
+		}
+		[CRepr]
+		public struct INetworkEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcb00004, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetworkEvents *self, Guid networkId) NetworkAdded;
+			public function HRESULT(INetworkEvents *self, Guid networkId) NetworkDeleted;
+			public function HRESULT(INetworkEvents *self, Guid networkId, NLM_CONNECTIVITY newConnectivity) NetworkConnectivityChanged;
+			public function HRESULT(INetworkEvents *self, Guid networkId, NLM_NETWORK_PROPERTY_CHANGE flags) NetworkPropertyChanged;
+		}
+		[CRepr]
+		public struct INetworkConnection : IDispatch
+		{
+			public const new Guid IID = .(0xdcb00005, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetworkConnection *self, INetwork** ppNetwork) GetNetwork;
+			public function HRESULT(INetworkConnection *self, int16* pbIsConnected) get_IsConnectedToInternet;
+			public function HRESULT(INetworkConnection *self, int16* pbIsConnected) get_IsConnected;
+			public function HRESULT(INetworkConnection *self, NLM_CONNECTIVITY* pConnectivity) GetConnectivity;
+			public function HRESULT(INetworkConnection *self, Guid* pgdConnectionId) GetConnectionId;
+			public function HRESULT(INetworkConnection *self, Guid* pgdAdapterId) GetAdapterId;
+			public function HRESULT(INetworkConnection *self, NLM_DOMAIN_TYPE* pDomainType) GetDomainType;
+		}
+		[CRepr]
+		public struct IEnumNetworkConnections : IDispatch
+		{
+			public const new Guid IID = .(0xdcb00006, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(IEnumNetworkConnections *self, IEnumVARIANT** ppEnumVar) get__NewEnum;
+			public function HRESULT(IEnumNetworkConnections *self, uint32 celt, INetworkConnection** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumNetworkConnections *self, uint32 celt) Skip;
+			public function HRESULT(IEnumNetworkConnections *self) Reset;
+			public function HRESULT(IEnumNetworkConnections *self, IEnumNetworkConnections** ppEnumNetwork) Clone;
+		}
+		[CRepr]
+		public struct INetworkConnectionEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcb00007, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetworkConnectionEvents *self, Guid connectionId, NLM_CONNECTIVITY newConnectivity) NetworkConnectionConnectivityChanged;
+			public function HRESULT(INetworkConnectionEvents *self, Guid connectionId, NLM_CONNECTION_PROPERTY_CHANGE flags) NetworkConnectionPropertyChanged;
+		}
+		[CRepr]
+		public struct INetworkCostManager : IUnknown
+		{
+			public const new Guid IID = .(0xdcb00008, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetworkCostManager *self, uint32* pCost, NLM_SOCKADDR* pDestIPAddr) GetCost;
+			public function HRESULT(INetworkCostManager *self, NLM_DATAPLAN_STATUS* pDataPlanStatus, NLM_SOCKADDR* pDestIPAddr) GetDataPlanStatus;
+			public function HRESULT(INetworkCostManager *self, uint32 length, NLM_SOCKADDR* pDestIPAddrList, int16 bAppend) SetDestinationAddresses;
+		}
+		[CRepr]
+		public struct INetworkCostManagerEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcb00009, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetworkCostManagerEvents *self, uint32 newCost, NLM_SOCKADDR* pDestAddr) CostChanged;
+			public function HRESULT(INetworkCostManagerEvents *self, NLM_SOCKADDR* pDestAddr) DataPlanStatusChanged;
+		}
+		[CRepr]
+		public struct INetworkConnectionCost : IUnknown
+		{
+			public const new Guid IID = .(0xdcb0000a, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetworkConnectionCost *self, uint32* pCost) GetCost;
+			public function HRESULT(INetworkConnectionCost *self, NLM_DATAPLAN_STATUS* pDataPlanStatus) GetDataPlanStatus;
+		}
+		[CRepr]
+		public struct INetworkConnectionCostEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcb0000b, 0x570f, 0x4a9b, 0x8d, 0x69, 0x19, 0x9f, 0xdb, 0xa5, 0x72, 0x3b);
+			
+			public function HRESULT(INetworkConnectionCostEvents *self, Guid connectionId, uint32 newCost) ConnectionCostChanged;
+			public function HRESULT(INetworkConnectionCostEvents *self, Guid connectionId) ConnectionDataPlanStatusChanged;
+		}
 		
 	}
 }

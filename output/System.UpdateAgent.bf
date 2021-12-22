@@ -656,82 +656,816 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IUpdateLockdown {}
-		public struct IStringCollection {}
-		public struct IWebProxy {}
-		public struct ISystemInformation {}
-		public struct IWindowsUpdateAgentInfo {}
-		public struct IAutomaticUpdatesResults {}
-		public struct IAutomaticUpdatesSettings {}
-		public struct IAutomaticUpdatesSettings2 {}
-		public struct IAutomaticUpdatesSettings3 {}
-		public struct IAutomaticUpdates {}
-		public struct IAutomaticUpdates2 {}
-		public struct IUpdateIdentity {}
-		public struct IImageInformation {}
-		public struct ICategory {}
-		public struct ICategoryCollection {}
-		public struct IInstallationBehavior {}
-		public struct IUpdateDownloadContent {}
-		public struct IUpdateDownloadContent2 {}
-		public struct IUpdateDownloadContentCollection {}
-		public struct IUpdate {}
-		public struct IWindowsDriverUpdate {}
-		public struct IUpdate2 {}
-		public struct IUpdate3 {}
-		public struct IUpdate4 {}
-		public struct IUpdate5 {}
-		public struct IWindowsDriverUpdate2 {}
-		public struct IWindowsDriverUpdate3 {}
-		public struct IWindowsDriverUpdateEntry {}
-		public struct IWindowsDriverUpdateEntryCollection {}
-		public struct IWindowsDriverUpdate4 {}
-		public struct IWindowsDriverUpdate5 {}
-		public struct IUpdateCollection {}
-		public struct IUpdateException {}
-		public struct IInvalidProductLicenseException {}
-		public struct IUpdateExceptionCollection {}
-		public struct ISearchResult {}
-		public struct ISearchJob {}
-		public struct ISearchCompletedCallbackArgs {}
-		public struct ISearchCompletedCallback {}
-		public struct IUpdateHistoryEntry {}
-		public struct IUpdateHistoryEntry2 {}
-		public struct IUpdateHistoryEntryCollection {}
-		public struct IUpdateSearcher {}
-		public struct IUpdateSearcher2 {}
-		public struct IUpdateSearcher3 {}
-		public struct IUpdateDownloadResult {}
-		public struct IDownloadResult {}
-		public struct IDownloadProgress {}
-		public struct IDownloadJob {}
-		public struct IDownloadCompletedCallbackArgs {}
-		public struct IDownloadCompletedCallback {}
-		public struct IDownloadProgressChangedCallbackArgs {}
-		public struct IDownloadProgressChangedCallback {}
-		public struct IUpdateDownloader {}
-		public struct IUpdateInstallationResult {}
-		public struct IInstallationResult {}
-		public struct IInstallationProgress {}
-		public struct IInstallationJob {}
-		public struct IInstallationCompletedCallbackArgs {}
-		public struct IInstallationCompletedCallback {}
-		public struct IInstallationProgressChangedCallbackArgs {}
-		public struct IInstallationProgressChangedCallback {}
-		public struct IUpdateInstaller {}
-		public struct IUpdateInstaller2 {}
-		public struct IUpdateInstaller3 {}
-		public struct IUpdateInstaller4 {}
-		public struct IUpdateSession {}
-		public struct IUpdateSession2 {}
-		public struct IUpdateSession3 {}
-		public struct IUpdateService {}
-		public struct IUpdateService2 {}
-		public struct IUpdateServiceCollection {}
-		public struct IUpdateServiceRegistration {}
-		public struct IUpdateServiceManager {}
-		public struct IUpdateServiceManager2 {}
-		public struct IInstallationAgent {}
+		[CRepr]
+		public struct IUpdateLockdown : IUnknown
+		{
+			public const new Guid IID = .(0xa976c28d, 0x75a1, 0x42aa, 0x94, 0xae, 0x8a, 0xf8, 0xb8, 0x72, 0x08, 0x9a);
+			
+			public function HRESULT(IUpdateLockdown *self, int32 flags) LockDown;
+		}
+		[CRepr]
+		public struct IStringCollection : IDispatch
+		{
+			public const new Guid IID = .(0xeff90582, 0x2ddc, 0x480f, 0xa0, 0x6d, 0x60, 0xf3, 0xfb, 0xc3, 0x62, 0xc3);
+			
+			public function HRESULT(IStringCollection *self, int32 index, BSTR* retval) get_Item;
+			public function HRESULT(IStringCollection *self, int32 index, BSTR value) put_Item;
+			public function HRESULT(IStringCollection *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(IStringCollection *self, int32* retval) get_Count;
+			public function HRESULT(IStringCollection *self, int16* retval) get_ReadOnly;
+			public function HRESULT(IStringCollection *self, BSTR value, int32* retval) Add;
+			public function HRESULT(IStringCollection *self) Clear;
+			public function HRESULT(IStringCollection *self, IStringCollection** retval) Copy;
+			public function HRESULT(IStringCollection *self, int32 index, BSTR value) Insert;
+			public function HRESULT(IStringCollection *self, int32 index) RemoveAt;
+		}
+		[CRepr]
+		public struct IWebProxy : IDispatch
+		{
+			public const new Guid IID = .(0x174c81fe, 0xaecd, 0x4dae, 0xb8, 0xa0, 0x2c, 0x63, 0x18, 0xdd, 0x86, 0xa8);
+			
+			public function HRESULT(IWebProxy *self, BSTR* retval) get_Address;
+			public function HRESULT(IWebProxy *self, BSTR value) put_Address;
+			public function HRESULT(IWebProxy *self, IStringCollection** retval) get_BypassList;
+			public function HRESULT(IWebProxy *self, IStringCollection* value) put_BypassList;
+			public function HRESULT(IWebProxy *self, int16* retval) get_BypassProxyOnLocal;
+			public function HRESULT(IWebProxy *self, int16 value) put_BypassProxyOnLocal;
+			public function HRESULT(IWebProxy *self, int16* retval) get_ReadOnly;
+			public function HRESULT(IWebProxy *self, BSTR* retval) get_UserName;
+			public function HRESULT(IWebProxy *self, BSTR value) put_UserName;
+			public function HRESULT(IWebProxy *self, BSTR value) SetPassword;
+			public function HRESULT(IWebProxy *self, IUnknown* parentWindow, BSTR title) PromptForCredentials;
+			public function HRESULT(IWebProxy *self, HWND parentWindow, BSTR title) PromptForCredentialsFromHwnd;
+			public function HRESULT(IWebProxy *self, int16* retval) get_AutoDetect;
+			public function HRESULT(IWebProxy *self, int16 value) put_AutoDetect;
+		}
+		[CRepr]
+		public struct ISystemInformation : IDispatch
+		{
+			public const new Guid IID = .(0xade87bf7, 0x7b56, 0x4275, 0x8f, 0xab, 0xb9, 0xb0, 0xe5, 0x91, 0x84, 0x4b);
+			
+			public function HRESULT(ISystemInformation *self, BSTR* retval) get_OemHardwareSupportLink;
+			public function HRESULT(ISystemInformation *self, int16* retval) get_RebootRequired;
+		}
+		[CRepr]
+		public struct IWindowsUpdateAgentInfo : IDispatch
+		{
+			public const new Guid IID = .(0x85713fa1, 0x7796, 0x4fa2, 0xbe, 0x3b, 0xe2, 0xd6, 0x12, 0x4d, 0xd3, 0x73);
+			
+			public function HRESULT(IWindowsUpdateAgentInfo *self, VARIANT varInfoIdentifier, VARIANT* retval) GetInfo;
+		}
+		[CRepr]
+		public struct IAutomaticUpdatesResults : IDispatch
+		{
+			public const new Guid IID = .(0xe7a4d634, 0x7942, 0x4dd9, 0xa1, 0x11, 0x82, 0x22, 0x8b, 0xa3, 0x39, 0x01);
+			
+			public function HRESULT(IAutomaticUpdatesResults *self, VARIANT* retval) get_LastSearchSuccessDate;
+			public function HRESULT(IAutomaticUpdatesResults *self, VARIANT* retval) get_LastInstallationSuccessDate;
+		}
+		[CRepr]
+		public struct IAutomaticUpdatesSettings : IDispatch
+		{
+			public const new Guid IID = .(0x2ee48f22, 0xaf3c, 0x405f, 0x89, 0x70, 0xf7, 0x1b, 0xe1, 0x2e, 0xe9, 0xa2);
+			
+			public function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesNotificationLevel* retval) get_NotificationLevel;
+			public function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesNotificationLevel value) put_NotificationLevel;
+			public function HRESULT(IAutomaticUpdatesSettings *self, int16* retval) get_ReadOnly;
+			public function HRESULT(IAutomaticUpdatesSettings *self, int16* retval) get_Required;
+			public function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesScheduledInstallationDay* retval) get_ScheduledInstallationDay;
+			public function HRESULT(IAutomaticUpdatesSettings *self, AutomaticUpdatesScheduledInstallationDay value) put_ScheduledInstallationDay;
+			public function HRESULT(IAutomaticUpdatesSettings *self, int32* retval) get_ScheduledInstallationTime;
+			public function HRESULT(IAutomaticUpdatesSettings *self, int32 value) put_ScheduledInstallationTime;
+			public function HRESULT(IAutomaticUpdatesSettings *self) Refresh;
+			public function HRESULT(IAutomaticUpdatesSettings *self) Save;
+		}
+		[CRepr]
+		public struct IAutomaticUpdatesSettings2 : IAutomaticUpdatesSettings
+		{
+			public const new Guid IID = .(0x6abc136a, 0xc3ca, 0x4384, 0x81, 0x71, 0xcb, 0x2b, 0x1e, 0x59, 0xb8, 0xdc);
+			
+			public function HRESULT(IAutomaticUpdatesSettings2 *self, int16* retval) get_IncludeRecommendedUpdates;
+			public function HRESULT(IAutomaticUpdatesSettings2 *self, int16 value) put_IncludeRecommendedUpdates;
+			public function HRESULT(IAutomaticUpdatesSettings2 *self, AutomaticUpdatesUserType userType, AutomaticUpdatesPermissionType permissionType, int16* userHasPermission) CheckPermission;
+		}
+		[CRepr]
+		public struct IAutomaticUpdatesSettings3 : IAutomaticUpdatesSettings2
+		{
+			public const new Guid IID = .(0xb587f5c3, 0xf57e, 0x485f, 0xbb, 0xf5, 0x0d, 0x18, 0x1c, 0x5c, 0xd0, 0xdc);
+			
+			public function HRESULT(IAutomaticUpdatesSettings3 *self, int16* retval) get_NonAdministratorsElevated;
+			public function HRESULT(IAutomaticUpdatesSettings3 *self, int16 value) put_NonAdministratorsElevated;
+			public function HRESULT(IAutomaticUpdatesSettings3 *self, int16* retval) get_FeaturedUpdatesEnabled;
+			public function HRESULT(IAutomaticUpdatesSettings3 *self, int16 value) put_FeaturedUpdatesEnabled;
+		}
+		[CRepr]
+		public struct IAutomaticUpdates : IDispatch
+		{
+			public const new Guid IID = .(0x673425bf, 0xc082, 0x4c7c, 0xbd, 0xfd, 0x56, 0x94, 0x64, 0xb8, 0xe0, 0xce);
+			
+			public function HRESULT(IAutomaticUpdates *self) DetectNow;
+			public function HRESULT(IAutomaticUpdates *self) Pause;
+			public function HRESULT(IAutomaticUpdates *self) Resume;
+			public function HRESULT(IAutomaticUpdates *self) ShowSettingsDialog;
+			public function HRESULT(IAutomaticUpdates *self, IAutomaticUpdatesSettings** retval) get_Settings;
+			public function HRESULT(IAutomaticUpdates *self, int16* retval) get_ServiceEnabled;
+			public function HRESULT(IAutomaticUpdates *self) EnableService;
+		}
+		[CRepr]
+		public struct IAutomaticUpdates2 : IAutomaticUpdates
+		{
+			public const new Guid IID = .(0x4a2f5c31, 0xcfd9, 0x410e, 0xb7, 0xfb, 0x29, 0xa6, 0x53, 0x97, 0x3a, 0x0f);
+			
+			public function HRESULT(IAutomaticUpdates2 *self, IAutomaticUpdatesResults** retval) get_Results;
+		}
+		[CRepr]
+		public struct IUpdateIdentity : IDispatch
+		{
+			public const new Guid IID = .(0x46297823, 0x9940, 0x4c09, 0xae, 0xd9, 0xcd, 0x3e, 0xa6, 0xd0, 0x59, 0x68);
+			
+			public function HRESULT(IUpdateIdentity *self, int32* retval) get_RevisionNumber;
+			public function HRESULT(IUpdateIdentity *self, BSTR* retval) get_UpdateID;
+		}
+		[CRepr]
+		public struct IImageInformation : IDispatch
+		{
+			public const new Guid IID = .(0x7c907864, 0x346c, 0x4aeb, 0x8f, 0x3f, 0x57, 0xda, 0x28, 0x9f, 0x96, 0x9f);
+			
+			public function HRESULT(IImageInformation *self, BSTR* retval) get_AltText;
+			public function HRESULT(IImageInformation *self, int32* retval) get_Height;
+			public function HRESULT(IImageInformation *self, BSTR* retval) get_Source;
+			public function HRESULT(IImageInformation *self, int32* retval) get_Width;
+		}
+		[CRepr]
+		public struct ICategory : IDispatch
+		{
+			public const new Guid IID = .(0x81ddc1b8, 0x9d35, 0x47a6, 0xb4, 0x71, 0x5b, 0x80, 0xf5, 0x19, 0x22, 0x3b);
+			
+			public function HRESULT(ICategory *self, BSTR* retval) get_Name;
+			public function HRESULT(ICategory *self, BSTR* retval) get_CategoryID;
+			public function HRESULT(ICategory *self, ICategoryCollection** retval) get_Children;
+			public function HRESULT(ICategory *self, BSTR* retval) get_Description;
+			public function HRESULT(ICategory *self, IImageInformation** retval) get_Image;
+			public function HRESULT(ICategory *self, int32* retval) get_Order;
+			public function HRESULT(ICategory *self, ICategory** retval) get_Parent;
+			public function HRESULT(ICategory *self, BSTR* retval) get_Type;
+			public function HRESULT(ICategory *self, IUpdateCollection** retval) get_Updates;
+		}
+		[CRepr]
+		public struct ICategoryCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3a56bfb8, 0x576c, 0x43f7, 0x93, 0x35, 0xfe, 0x48, 0x38, 0xfd, 0x7e, 0x37);
+			
+			public function HRESULT(ICategoryCollection *self, int32 index, ICategory** retval) get_Item;
+			public function HRESULT(ICategoryCollection *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ICategoryCollection *self, int32* retval) get_Count;
+		}
+		[CRepr]
+		public struct IInstallationBehavior : IDispatch
+		{
+			public const new Guid IID = .(0xd9a59339, 0xe245, 0x4dbd, 0x96, 0x86, 0x4d, 0x57, 0x63, 0xe3, 0x96, 0x24);
+			
+			public function HRESULT(IInstallationBehavior *self, int16* retval) get_CanRequestUserInput;
+			public function HRESULT(IInstallationBehavior *self, InstallationImpact* retval) get_Impact;
+			public function HRESULT(IInstallationBehavior *self, InstallationRebootBehavior* retval) get_RebootBehavior;
+			public function HRESULT(IInstallationBehavior *self, int16* retval) get_RequiresNetworkConnectivity;
+		}
+		[CRepr]
+		public struct IUpdateDownloadContent : IDispatch
+		{
+			public const new Guid IID = .(0x54a2cb2d, 0x9a0c, 0x48b6, 0x8a, 0x50, 0x9a, 0xbb, 0x69, 0xee, 0x2d, 0x02);
+			
+			public function HRESULT(IUpdateDownloadContent *self, BSTR* retval) get_DownloadUrl;
+		}
+		[CRepr]
+		public struct IUpdateDownloadContent2 : IUpdateDownloadContent
+		{
+			public const new Guid IID = .(0xc97ad11b, 0xf257, 0x420b, 0x9d, 0x9f, 0x37, 0x7f, 0x73, 0x3f, 0x6f, 0x68);
+			
+			public function HRESULT(IUpdateDownloadContent2 *self, int16* retval) get_IsDeltaCompressedContent;
+		}
+		[CRepr]
+		public struct IUpdateDownloadContentCollection : IDispatch
+		{
+			public const new Guid IID = .(0xbc5513c8, 0xb3b8, 0x4bf7, 0xa4, 0xd4, 0x36, 0x1c, 0x0d, 0x8c, 0x88, 0xba);
+			
+			public function HRESULT(IUpdateDownloadContentCollection *self, int32 index, IUpdateDownloadContent** retval) get_Item;
+			public function HRESULT(IUpdateDownloadContentCollection *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(IUpdateDownloadContentCollection *self, int32* retval) get_Count;
+		}
+		[CRepr]
+		public struct IUpdate : IDispatch
+		{
+			public const new Guid IID = .(0x6a92b07a, 0xd821, 0x4682, 0xb4, 0x23, 0x5c, 0x80, 0x50, 0x22, 0xcc, 0x4d);
+			
+			public function HRESULT(IUpdate *self, BSTR* retval) get_Title;
+			public function HRESULT(IUpdate *self, int16* retval) get_AutoSelectOnWebSites;
+			public function HRESULT(IUpdate *self, IUpdateCollection** retval) get_BundledUpdates;
+			public function HRESULT(IUpdate *self, int16* retval) get_CanRequireSource;
+			public function HRESULT(IUpdate *self, ICategoryCollection** retval) get_Categories;
+			public function HRESULT(IUpdate *self, VARIANT* retval) get_Deadline;
+			public function HRESULT(IUpdate *self, int16* retval) get_DeltaCompressedContentAvailable;
+			public function HRESULT(IUpdate *self, int16* retval) get_DeltaCompressedContentPreferred;
+			public function HRESULT(IUpdate *self, BSTR* retval) get_Description;
+			public function HRESULT(IUpdate *self, int16* retval) get_EulaAccepted;
+			public function HRESULT(IUpdate *self, BSTR* retval) get_EulaText;
+			public function HRESULT(IUpdate *self, BSTR* retval) get_HandlerID;
+			public function HRESULT(IUpdate *self, IUpdateIdentity** retval) get_Identity;
+			public function HRESULT(IUpdate *self, IImageInformation** retval) get_Image;
+			public function HRESULT(IUpdate *self, IInstallationBehavior** retval) get_InstallationBehavior;
+			public function HRESULT(IUpdate *self, int16* retval) get_IsBeta;
+			public function HRESULT(IUpdate *self, int16* retval) get_IsDownloaded;
+			public function HRESULT(IUpdate *self, int16* retval) get_IsHidden;
+			public function HRESULT(IUpdate *self, int16 value) put_IsHidden;
+			public function HRESULT(IUpdate *self, int16* retval) get_IsInstalled;
+			public function HRESULT(IUpdate *self, int16* retval) get_IsMandatory;
+			public function HRESULT(IUpdate *self, int16* retval) get_IsUninstallable;
+			public function HRESULT(IUpdate *self, IStringCollection** retval) get_Languages;
+			public function HRESULT(IUpdate *self, double* retval) get_LastDeploymentChangeTime;
+			public function HRESULT(IUpdate *self, DECIMAL* retval) get_MaxDownloadSize;
+			public function HRESULT(IUpdate *self, DECIMAL* retval) get_MinDownloadSize;
+			public function HRESULT(IUpdate *self, IStringCollection** retval) get_MoreInfoUrls;
+			public function HRESULT(IUpdate *self, BSTR* retval) get_MsrcSeverity;
+			public function HRESULT(IUpdate *self, int32* retval) get_RecommendedCpuSpeed;
+			public function HRESULT(IUpdate *self, int32* retval) get_RecommendedHardDiskSpace;
+			public function HRESULT(IUpdate *self, int32* retval) get_RecommendedMemory;
+			public function HRESULT(IUpdate *self, BSTR* retval) get_ReleaseNotes;
+			public function HRESULT(IUpdate *self, IStringCollection** retval) get_SecurityBulletinIDs;
+			public function HRESULT(IUpdate *self, IStringCollection** retval) get_SupersededUpdateIDs;
+			public function HRESULT(IUpdate *self, BSTR* retval) get_SupportUrl;
+			public function HRESULT(IUpdate *self, UpdateType* retval) get_Type;
+			public function HRESULT(IUpdate *self, BSTR* retval) get_UninstallationNotes;
+			public function HRESULT(IUpdate *self, IInstallationBehavior** retval) get_UninstallationBehavior;
+			public function HRESULT(IUpdate *self, IStringCollection** retval) get_UninstallationSteps;
+			public function HRESULT(IUpdate *self, IStringCollection** retval) get_KBArticleIDs;
+			public function HRESULT(IUpdate *self) AcceptEula;
+			public function HRESULT(IUpdate *self, DeploymentAction* retval) get_DeploymentAction;
+			public function HRESULT(IUpdate *self, BSTR path, int16 toExtractCabFiles) CopyFromCache;
+			public function HRESULT(IUpdate *self, DownloadPriority* retval) get_DownloadPriority;
+			public function HRESULT(IUpdate *self, IUpdateDownloadContentCollection** retval) get_DownloadContents;
+		}
+		[CRepr]
+		public struct IWindowsDriverUpdate : IUpdate
+		{
+			public const new Guid IID = .(0xb383cd1a, 0x5ce9, 0x4504, 0x9f, 0x63, 0x76, 0x4b, 0x12, 0x36, 0xf1, 0x91);
+			
+			public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverClass;
+			public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverHardwareID;
+			public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverManufacturer;
+			public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverModel;
+			public function HRESULT(IWindowsDriverUpdate *self, BSTR* retval) get_DriverProvider;
+			public function HRESULT(IWindowsDriverUpdate *self, double* retval) get_DriverVerDate;
+			public function HRESULT(IWindowsDriverUpdate *self, int32* retval) get_DeviceProblemNumber;
+			public function HRESULT(IWindowsDriverUpdate *self, int32* retval) get_DeviceStatus;
+		}
+		[CRepr]
+		public struct IUpdate2 : IUpdate
+		{
+			public const new Guid IID = .(0x144fe9b0, 0xd23d, 0x4a8b, 0x86, 0x34, 0xfb, 0x44, 0x57, 0x53, 0x3b, 0x7a);
+			
+			public function HRESULT(IUpdate2 *self, int16* retval) get_RebootRequired;
+			public function HRESULT(IUpdate2 *self, int16* retval) get_IsPresent;
+			public function HRESULT(IUpdate2 *self, IStringCollection** retval) get_CveIDs;
+			public function HRESULT(IUpdate2 *self, IStringCollection* pFiles) CopyToCache;
+		}
+		[CRepr]
+		public struct IUpdate3 : IUpdate2
+		{
+			public const new Guid IID = .(0x112eda6b, 0x95b3, 0x476f, 0x9d, 0x90, 0xae, 0xe8, 0x2c, 0x6b, 0x81, 0x81);
+			
+			public function HRESULT(IUpdate3 *self, int16* retval) get_BrowseOnly;
+		}
+		[CRepr]
+		public struct IUpdate4 : IUpdate3
+		{
+			public const new Guid IID = .(0x27e94b0d, 0x5139, 0x49a2, 0x9a, 0x61, 0x93, 0x52, 0x2d, 0xc5, 0x46, 0x52);
+			
+			public function HRESULT(IUpdate4 *self, int16* retval) get_PerUser;
+		}
+		[CRepr]
+		public struct IUpdate5 : IUpdate4
+		{
+			public const new Guid IID = .(0xc1c2f21a, 0xd2f4, 0x4902, 0xb5, 0xc6, 0x8a, 0x08, 0x1c, 0x19, 0xa8, 0x90);
+			
+			public function HRESULT(IUpdate5 *self, AutoSelectionMode* retval) get_AutoSelection;
+			public function HRESULT(IUpdate5 *self, AutoDownloadMode* retval) get_AutoDownload;
+		}
+		[CRepr]
+		public struct IWindowsDriverUpdate2 : IWindowsDriverUpdate
+		{
+			public const new Guid IID = .(0x615c4269, 0x7a48, 0x43bd, 0x96, 0xb7, 0xbf, 0x6c, 0xa2, 0x7d, 0x6c, 0x3e);
+			
+			public function HRESULT(IWindowsDriverUpdate2 *self, int16* retval) get_RebootRequired;
+			public function HRESULT(IWindowsDriverUpdate2 *self, int16* retval) get_IsPresent;
+			public function HRESULT(IWindowsDriverUpdate2 *self, IStringCollection** retval) get_CveIDs;
+			public function HRESULT(IWindowsDriverUpdate2 *self, IStringCollection* pFiles) CopyToCache;
+		}
+		[CRepr]
+		public struct IWindowsDriverUpdate3 : IWindowsDriverUpdate2
+		{
+			public const new Guid IID = .(0x49ebd502, 0x4a96, 0x41bd, 0x9e, 0x3e, 0x4c, 0x50, 0x57, 0xf4, 0x25, 0x0c);
+			
+			public function HRESULT(IWindowsDriverUpdate3 *self, int16* retval) get_BrowseOnly;
+		}
+		[CRepr]
+		public struct IWindowsDriverUpdateEntry : IDispatch
+		{
+			public const new Guid IID = .(0xed8bfe40, 0xa60b, 0x42ea, 0x96, 0x52, 0x81, 0x7d, 0xfc, 0xfa, 0x23, 0xec);
+			
+			public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverClass;
+			public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverHardwareID;
+			public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverManufacturer;
+			public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverModel;
+			public function HRESULT(IWindowsDriverUpdateEntry *self, BSTR* retval) get_DriverProvider;
+			public function HRESULT(IWindowsDriverUpdateEntry *self, double* retval) get_DriverVerDate;
+			public function HRESULT(IWindowsDriverUpdateEntry *self, int32* retval) get_DeviceProblemNumber;
+			public function HRESULT(IWindowsDriverUpdateEntry *self, int32* retval) get_DeviceStatus;
+		}
+		[CRepr]
+		public struct IWindowsDriverUpdateEntryCollection : IDispatch
+		{
+			public const new Guid IID = .(0x0d521700, 0xa372, 0x4bef, 0x82, 0x8b, 0x3d, 0x00, 0xc1, 0x0a, 0xde, 0xbd);
+			
+			public function HRESULT(IWindowsDriverUpdateEntryCollection *self, int32 index, IWindowsDriverUpdateEntry** retval) get_Item;
+			public function HRESULT(IWindowsDriverUpdateEntryCollection *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(IWindowsDriverUpdateEntryCollection *self, int32* retval) get_Count;
+		}
+		[CRepr]
+		public struct IWindowsDriverUpdate4 : IWindowsDriverUpdate3
+		{
+			public const new Guid IID = .(0x004c6a2b, 0x0c19, 0x4c69, 0x9f, 0x5c, 0xa2, 0x69, 0xb2, 0x56, 0x0d, 0xb9);
+			
+			public function HRESULT(IWindowsDriverUpdate4 *self, IWindowsDriverUpdateEntryCollection** retval) get_WindowsDriverUpdateEntries;
+			public function HRESULT(IWindowsDriverUpdate4 *self, int16* retval) get_PerUser;
+		}
+		[CRepr]
+		public struct IWindowsDriverUpdate5 : IWindowsDriverUpdate4
+		{
+			public const new Guid IID = .(0x70cf5c82, 0x8642, 0x42bb, 0x9d, 0xbc, 0x0c, 0xfd, 0x26, 0x3c, 0x6c, 0x4f);
+			
+			public function HRESULT(IWindowsDriverUpdate5 *self, AutoSelectionMode* retval) get_AutoSelection;
+			public function HRESULT(IWindowsDriverUpdate5 *self, AutoDownloadMode* retval) get_AutoDownload;
+		}
+		[CRepr]
+		public struct IUpdateCollection : IDispatch
+		{
+			public const new Guid IID = .(0x07f7438c, 0x7709, 0x4ca5, 0xb5, 0x18, 0x91, 0x27, 0x92, 0x88, 0x13, 0x4e);
+			
+			public function HRESULT(IUpdateCollection *self, int32 index, IUpdate** retval) get_Item;
+			public function HRESULT(IUpdateCollection *self, int32 index, IUpdate* value) put_Item;
+			public function HRESULT(IUpdateCollection *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(IUpdateCollection *self, int32* retval) get_Count;
+			public function HRESULT(IUpdateCollection *self, int16* retval) get_ReadOnly;
+			public function HRESULT(IUpdateCollection *self, IUpdate* value, int32* retval) Add;
+			public function HRESULT(IUpdateCollection *self) Clear;
+			public function HRESULT(IUpdateCollection *self, IUpdateCollection** retval) Copy;
+			public function HRESULT(IUpdateCollection *self, int32 index, IUpdate* value) Insert;
+			public function HRESULT(IUpdateCollection *self, int32 index) RemoveAt;
+		}
+		[CRepr]
+		public struct IUpdateException : IDispatch
+		{
+			public const new Guid IID = .(0xa376dd5e, 0x09d4, 0x427f, 0xaf, 0x7c, 0xfe, 0xd5, 0xb6, 0xe1, 0xc1, 0xd6);
+			
+			public function HRESULT(IUpdateException *self, BSTR* retval) get_Message;
+			public function HRESULT(IUpdateException *self, int32* retval) get_HResult;
+			public function HRESULT(IUpdateException *self, UpdateExceptionContext* retval) get_Context;
+		}
+		[CRepr]
+		public struct IInvalidProductLicenseException : IUpdateException
+		{
+			public const new Guid IID = .(0xa37d00f5, 0x7bb0, 0x4953, 0xb4, 0x14, 0xf9, 0xe9, 0x83, 0x26, 0xf2, 0xe8);
+			
+			public function HRESULT(IInvalidProductLicenseException *self, BSTR* retval) get_Product;
+		}
+		[CRepr]
+		public struct IUpdateExceptionCollection : IDispatch
+		{
+			public const new Guid IID = .(0x503626a3, 0x8e14, 0x4729, 0x93, 0x55, 0x0f, 0xe6, 0x64, 0xbd, 0x23, 0x21);
+			
+			public function HRESULT(IUpdateExceptionCollection *self, int32 index, IUpdateException** retval) get_Item;
+			public function HRESULT(IUpdateExceptionCollection *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(IUpdateExceptionCollection *self, int32* retval) get_Count;
+		}
+		[CRepr]
+		public struct ISearchResult : IDispatch
+		{
+			public const new Guid IID = .(0xd40cff62, 0xe08c, 0x4498, 0x94, 0x1a, 0x01, 0xe2, 0x5f, 0x0f, 0xd3, 0x3c);
+			
+			public function HRESULT(ISearchResult *self, OperationResultCode* retval) get_ResultCode;
+			public function HRESULT(ISearchResult *self, ICategoryCollection** retval) get_RootCategories;
+			public function HRESULT(ISearchResult *self, IUpdateCollection** retval) get_Updates;
+			public function HRESULT(ISearchResult *self, IUpdateExceptionCollection** retval) get_Warnings;
+		}
+		[CRepr]
+		public struct ISearchJob : IDispatch
+		{
+			public const new Guid IID = .(0x7366ea16, 0x7a1a, 0x4ea2, 0xb0, 0x42, 0x97, 0x3d, 0x3e, 0x9c, 0xd9, 0x9b);
+			
+			public function HRESULT(ISearchJob *self, VARIANT* retval) get_AsyncState;
+			public function HRESULT(ISearchJob *self, int16* retval) get_IsCompleted;
+			public function HRESULT(ISearchJob *self) CleanUp;
+			public function HRESULT(ISearchJob *self) RequestAbort;
+		}
+		[CRepr]
+		public struct ISearchCompletedCallbackArgs : IDispatch
+		{
+			public const new Guid IID = .(0xa700a634, 0x2850, 0x4c47, 0x93, 0x8a, 0x9e, 0x4b, 0x6e, 0x5a, 0xf9, 0xa6);
+			
+		}
+		[CRepr]
+		public struct ISearchCompletedCallback : IUnknown
+		{
+			public const new Guid IID = .(0x88aee058, 0xd4b0, 0x4725, 0xa2, 0xf1, 0x81, 0x4a, 0x67, 0xae, 0x96, 0x4c);
+			
+			public function HRESULT(ISearchCompletedCallback *self, ISearchJob* searchJob, ISearchCompletedCallbackArgs* callbackArgs) Invoke;
+		}
+		[CRepr]
+		public struct IUpdateHistoryEntry : IDispatch
+		{
+			public const new Guid IID = .(0xbe56a644, 0xaf0e, 0x4e0e, 0xa3, 0x11, 0xc1, 0xd8, 0xe6, 0x95, 0xcb, 0xff);
+			
+			public function HRESULT(IUpdateHistoryEntry *self, UpdateOperation* retval) get_Operation;
+			public function HRESULT(IUpdateHistoryEntry *self, OperationResultCode* retval) get_ResultCode;
+			public function HRESULT(IUpdateHistoryEntry *self, int32* retval) get_HResult;
+			public function HRESULT(IUpdateHistoryEntry *self, double* retval) get_Date;
+			public function HRESULT(IUpdateHistoryEntry *self, IUpdateIdentity** retval) get_UpdateIdentity;
+			public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_Title;
+			public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_Description;
+			public function HRESULT(IUpdateHistoryEntry *self, int32* retval) get_UnmappedResultCode;
+			public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_ClientApplicationID;
+			public function HRESULT(IUpdateHistoryEntry *self, ServerSelection* retval) get_ServerSelection;
+			public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_ServiceID;
+			public function HRESULT(IUpdateHistoryEntry *self, IStringCollection** retval) get_UninstallationSteps;
+			public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_UninstallationNotes;
+			public function HRESULT(IUpdateHistoryEntry *self, BSTR* retval) get_SupportUrl;
+		}
+		[CRepr]
+		public struct IUpdateHistoryEntry2 : IUpdateHistoryEntry
+		{
+			public const new Guid IID = .(0xc2bfb780, 0x4539, 0x4132, 0xab, 0x8c, 0x0a, 0x87, 0x72, 0x01, 0x3a, 0xb6);
+			
+			public function HRESULT(IUpdateHistoryEntry2 *self, ICategoryCollection** retval) get_Categories;
+		}
+		[CRepr]
+		public struct IUpdateHistoryEntryCollection : IDispatch
+		{
+			public const new Guid IID = .(0xa7f04f3c, 0xa290, 0x435b, 0xaa, 0xdf, 0xa1, 0x16, 0xc3, 0x35, 0x7a, 0x5c);
+			
+			public function HRESULT(IUpdateHistoryEntryCollection *self, int32 index, IUpdateHistoryEntry** retval) get_Item;
+			public function HRESULT(IUpdateHistoryEntryCollection *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(IUpdateHistoryEntryCollection *self, int32* retval) get_Count;
+		}
+		[CRepr]
+		public struct IUpdateSearcher : IDispatch
+		{
+			public const new Guid IID = .(0x8f45abf1, 0xf9ae, 0x4b95, 0xa9, 0x33, 0xf0, 0xf6, 0x6e, 0x50, 0x56, 0xea);
+			
+			public function HRESULT(IUpdateSearcher *self, int16* retval) get_CanAutomaticallyUpgradeService;
+			public function HRESULT(IUpdateSearcher *self, int16 value) put_CanAutomaticallyUpgradeService;
+			public function HRESULT(IUpdateSearcher *self, BSTR* retval) get_ClientApplicationID;
+			public function HRESULT(IUpdateSearcher *self, BSTR value) put_ClientApplicationID;
+			public function HRESULT(IUpdateSearcher *self, int16* retval) get_IncludePotentiallySupersededUpdates;
+			public function HRESULT(IUpdateSearcher *self, int16 value) put_IncludePotentiallySupersededUpdates;
+			public function HRESULT(IUpdateSearcher *self, ServerSelection* retval) get_ServerSelection;
+			public function HRESULT(IUpdateSearcher *self, ServerSelection value) put_ServerSelection;
+			public function HRESULT(IUpdateSearcher *self, BSTR criteria, IUnknown* onCompleted, VARIANT state, ISearchJob** retval) BeginSearch;
+			public function HRESULT(IUpdateSearcher *self, ISearchJob* searchJob, ISearchResult** retval) EndSearch;
+			public function HRESULT(IUpdateSearcher *self, BSTR unescaped, BSTR* retval) EscapeString;
+			public function HRESULT(IUpdateSearcher *self, int32 startIndex, int32 count, IUpdateHistoryEntryCollection** retval) QueryHistory;
+			public function HRESULT(IUpdateSearcher *self, BSTR criteria, ISearchResult** retval) Search;
+			public function HRESULT(IUpdateSearcher *self, int16* retval) get_Online;
+			public function HRESULT(IUpdateSearcher *self, int16 value) put_Online;
+			public function HRESULT(IUpdateSearcher *self, int32* retval) GetTotalHistoryCount;
+			public function HRESULT(IUpdateSearcher *self, BSTR* retval) get_ServiceID;
+			public function HRESULT(IUpdateSearcher *self, BSTR value) put_ServiceID;
+		}
+		[CRepr]
+		public struct IUpdateSearcher2 : IUpdateSearcher
+		{
+			public const new Guid IID = .(0x4cbdcb2d, 0x1589, 0x4beb, 0xbd, 0x1c, 0x3e, 0x58, 0x2f, 0xf0, 0xad, 0xd0);
+			
+			public function HRESULT(IUpdateSearcher2 *self, int16* retval) get_IgnoreDownloadPriority;
+			public function HRESULT(IUpdateSearcher2 *self, int16 value) put_IgnoreDownloadPriority;
+		}
+		[CRepr]
+		public struct IUpdateSearcher3 : IUpdateSearcher2
+		{
+			public const new Guid IID = .(0x04c6895d, 0xeaf2, 0x4034, 0x97, 0xf3, 0x31, 0x1d, 0xe9, 0xbe, 0x41, 0x3a);
+			
+			public function HRESULT(IUpdateSearcher3 *self, SearchScope* retval) get_SearchScope;
+			public function HRESULT(IUpdateSearcher3 *self, SearchScope value) put_SearchScope;
+		}
+		[CRepr]
+		public struct IUpdateDownloadResult : IDispatch
+		{
+			public const new Guid IID = .(0xbf99af76, 0xb575, 0x42ad, 0x8a, 0xa4, 0x33, 0xcb, 0xb5, 0x47, 0x7a, 0xf1);
+			
+			public function HRESULT(IUpdateDownloadResult *self, int32* retval) get_HResult;
+			public function HRESULT(IUpdateDownloadResult *self, OperationResultCode* retval) get_ResultCode;
+		}
+		[CRepr]
+		public struct IDownloadResult : IDispatch
+		{
+			public const new Guid IID = .(0xdaa4fdd0, 0x4727, 0x4dbe, 0xa1, 0xe7, 0x74, 0x5d, 0xca, 0x31, 0x71, 0x44);
+			
+			public function HRESULT(IDownloadResult *self, int32* retval) get_HResult;
+			public function HRESULT(IDownloadResult *self, OperationResultCode* retval) get_ResultCode;
+			public function HRESULT(IDownloadResult *self, int32 updateIndex, IUpdateDownloadResult** retval) GetUpdateResult;
+		}
+		[CRepr]
+		public struct IDownloadProgress : IDispatch
+		{
+			public const new Guid IID = .(0xd31a5bac, 0xf719, 0x4178, 0x9d, 0xbb, 0x5e, 0x2c, 0xb4, 0x7f, 0xd1, 0x8a);
+			
+			public function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_CurrentUpdateBytesDownloaded;
+			public function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_CurrentUpdateBytesToDownload;
+			public function HRESULT(IDownloadProgress *self, int32* retval) get_CurrentUpdateIndex;
+			public function HRESULT(IDownloadProgress *self, int32* retval) get_PercentComplete;
+			public function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_TotalBytesDownloaded;
+			public function HRESULT(IDownloadProgress *self, DECIMAL* retval) get_TotalBytesToDownload;
+			public function HRESULT(IDownloadProgress *self, int32 updateIndex, IUpdateDownloadResult** retval) GetUpdateResult;
+			public function HRESULT(IDownloadProgress *self, DownloadPhase* retval) get_CurrentUpdateDownloadPhase;
+			public function HRESULT(IDownloadProgress *self, int32* retval) get_CurrentUpdatePercentComplete;
+		}
+		[CRepr]
+		public struct IDownloadJob : IDispatch
+		{
+			public const new Guid IID = .(0xc574de85, 0x7358, 0x43f6, 0xaa, 0xe8, 0x86, 0x97, 0xe6, 0x2d, 0x8b, 0xa7);
+			
+			public function HRESULT(IDownloadJob *self, VARIANT* retval) get_AsyncState;
+			public function HRESULT(IDownloadJob *self, int16* retval) get_IsCompleted;
+			public function HRESULT(IDownloadJob *self, IUpdateCollection** retval) get_Updates;
+			public function HRESULT(IDownloadJob *self) CleanUp;
+			public function HRESULT(IDownloadJob *self, IDownloadProgress** retval) GetProgress;
+			public function HRESULT(IDownloadJob *self) RequestAbort;
+		}
+		[CRepr]
+		public struct IDownloadCompletedCallbackArgs : IDispatch
+		{
+			public const new Guid IID = .(0xfa565b23, 0x498c, 0x47a0, 0x97, 0x9d, 0xe7, 0xd5, 0xb1, 0x81, 0x33, 0x60);
+			
+		}
+		[CRepr]
+		public struct IDownloadCompletedCallback : IUnknown
+		{
+			public const new Guid IID = .(0x77254866, 0x9f5b, 0x4c8e, 0xb9, 0xe2, 0xc7, 0x7a, 0x85, 0x30, 0xd6, 0x4b);
+			
+			public function HRESULT(IDownloadCompletedCallback *self, IDownloadJob* downloadJob, IDownloadCompletedCallbackArgs* callbackArgs) Invoke;
+		}
+		[CRepr]
+		public struct IDownloadProgressChangedCallbackArgs : IDispatch
+		{
+			public const new Guid IID = .(0x324ff2c6, 0x4981, 0x4b04, 0x94, 0x12, 0x57, 0x48, 0x17, 0x45, 0xab, 0x24);
+			
+			public function HRESULT(IDownloadProgressChangedCallbackArgs *self, IDownloadProgress** retval) get_Progress;
+		}
+		[CRepr]
+		public struct IDownloadProgressChangedCallback : IUnknown
+		{
+			public const new Guid IID = .(0x8c3f1cdd, 0x6173, 0x4591, 0xae, 0xbd, 0xa5, 0x6a, 0x53, 0xca, 0x77, 0xc1);
+			
+			public function HRESULT(IDownloadProgressChangedCallback *self, IDownloadJob* downloadJob, IDownloadProgressChangedCallbackArgs* callbackArgs) Invoke;
+		}
+		[CRepr]
+		public struct IUpdateDownloader : IDispatch
+		{
+			public const new Guid IID = .(0x68f1c6f9, 0x7ecc, 0x4666, 0xa4, 0x64, 0x24, 0x7f, 0xe1, 0x24, 0x96, 0xc3);
+			
+			public function HRESULT(IUpdateDownloader *self, BSTR* retval) get_ClientApplicationID;
+			public function HRESULT(IUpdateDownloader *self, BSTR value) put_ClientApplicationID;
+			public function HRESULT(IUpdateDownloader *self, int16* retval) get_IsForced;
+			public function HRESULT(IUpdateDownloader *self, int16 value) put_IsForced;
+			public function HRESULT(IUpdateDownloader *self, DownloadPriority* retval) get_Priority;
+			public function HRESULT(IUpdateDownloader *self, DownloadPriority value) put_Priority;
+			public function HRESULT(IUpdateDownloader *self, IUpdateCollection** retval) get_Updates;
+			public function HRESULT(IUpdateDownloader *self, IUpdateCollection* value) put_Updates;
+			public function HRESULT(IUpdateDownloader *self, IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IDownloadJob** retval) BeginDownload;
+			public function HRESULT(IUpdateDownloader *self, IDownloadResult** retval) Download;
+			public function HRESULT(IUpdateDownloader *self, IDownloadJob* value, IDownloadResult** retval) EndDownload;
+		}
+		[CRepr]
+		public struct IUpdateInstallationResult : IDispatch
+		{
+			public const new Guid IID = .(0xd940f0f8, 0x3cbb, 0x4fd0, 0x99, 0x3f, 0x47, 0x1e, 0x7f, 0x23, 0x28, 0xad);
+			
+			public function HRESULT(IUpdateInstallationResult *self, int32* retval) get_HResult;
+			public function HRESULT(IUpdateInstallationResult *self, int16* retval) get_RebootRequired;
+			public function HRESULT(IUpdateInstallationResult *self, OperationResultCode* retval) get_ResultCode;
+		}
+		[CRepr]
+		public struct IInstallationResult : IDispatch
+		{
+			public const new Guid IID = .(0xa43c56d6, 0x7451, 0x48d4, 0xaf, 0x96, 0xb6, 0xcd, 0x2d, 0x0d, 0x9b, 0x7a);
+			
+			public function HRESULT(IInstallationResult *self, int32* retval) get_HResult;
+			public function HRESULT(IInstallationResult *self, int16* retval) get_RebootRequired;
+			public function HRESULT(IInstallationResult *self, OperationResultCode* retval) get_ResultCode;
+			public function HRESULT(IInstallationResult *self, int32 updateIndex, IUpdateInstallationResult** retval) GetUpdateResult;
+		}
+		[CRepr]
+		public struct IInstallationProgress : IDispatch
+		{
+			public const new Guid IID = .(0x345c8244, 0x43a3, 0x4e32, 0xa3, 0x68, 0x65, 0xf0, 0x73, 0xb7, 0x6f, 0x36);
+			
+			public function HRESULT(IInstallationProgress *self, int32* retval) get_CurrentUpdateIndex;
+			public function HRESULT(IInstallationProgress *self, int32* retval) get_CurrentUpdatePercentComplete;
+			public function HRESULT(IInstallationProgress *self, int32* retval) get_PercentComplete;
+			public function HRESULT(IInstallationProgress *self, int32 updateIndex, IUpdateInstallationResult** retval) GetUpdateResult;
+		}
+		[CRepr]
+		public struct IInstallationJob : IDispatch
+		{
+			public const new Guid IID = .(0x5c209f0b, 0xbad5, 0x432a, 0x95, 0x56, 0x46, 0x99, 0xbe, 0xd2, 0x63, 0x8a);
+			
+			public function HRESULT(IInstallationJob *self, VARIANT* retval) get_AsyncState;
+			public function HRESULT(IInstallationJob *self, int16* retval) get_IsCompleted;
+			public function HRESULT(IInstallationJob *self, IUpdateCollection** retval) get_Updates;
+			public function HRESULT(IInstallationJob *self) CleanUp;
+			public function HRESULT(IInstallationJob *self, IInstallationProgress** retval) GetProgress;
+			public function HRESULT(IInstallationJob *self) RequestAbort;
+		}
+		[CRepr]
+		public struct IInstallationCompletedCallbackArgs : IDispatch
+		{
+			public const new Guid IID = .(0x250e2106, 0x8efb, 0x4705, 0x96, 0x53, 0xef, 0x13, 0xc5, 0x81, 0xb6, 0xa1);
+			
+		}
+		[CRepr]
+		public struct IInstallationCompletedCallback : IUnknown
+		{
+			public const new Guid IID = .(0x45f4f6f3, 0xd602, 0x4f98, 0x9a, 0x8a, 0x3e, 0xfa, 0x15, 0x2a, 0xd2, 0xd3);
+			
+			public function HRESULT(IInstallationCompletedCallback *self, IInstallationJob* installationJob, IInstallationCompletedCallbackArgs* callbackArgs) Invoke;
+		}
+		[CRepr]
+		public struct IInstallationProgressChangedCallbackArgs : IDispatch
+		{
+			public const new Guid IID = .(0xe4f14e1e, 0x689d, 0x4218, 0xa0, 0xb9, 0xbc, 0x18, 0x9c, 0x48, 0x4a, 0x01);
+			
+			public function HRESULT(IInstallationProgressChangedCallbackArgs *self, IInstallationProgress** retval) get_Progress;
+		}
+		[CRepr]
+		public struct IInstallationProgressChangedCallback : IUnknown
+		{
+			public const new Guid IID = .(0xe01402d5, 0xf8da, 0x43ba, 0xa0, 0x12, 0x38, 0x89, 0x4b, 0xd0, 0x48, 0xf1);
+			
+			public function HRESULT(IInstallationProgressChangedCallback *self, IInstallationJob* installationJob, IInstallationProgressChangedCallbackArgs* callbackArgs) Invoke;
+		}
+		[CRepr]
+		public struct IUpdateInstaller : IDispatch
+		{
+			public const new Guid IID = .(0x7b929c68, 0xccdc, 0x4226, 0x96, 0xb1, 0x87, 0x24, 0x60, 0x0b, 0x54, 0xc2);
+			
+			public function HRESULT(IUpdateInstaller *self, BSTR* retval) get_ClientApplicationID;
+			public function HRESULT(IUpdateInstaller *self, BSTR value) put_ClientApplicationID;
+			public function HRESULT(IUpdateInstaller *self, int16* retval) get_IsForced;
+			public function HRESULT(IUpdateInstaller *self, int16 value) put_IsForced;
+			public function HRESULT(IUpdateInstaller *self, HWND* retval) get_ParentHwnd;
+			public function HRESULT(IUpdateInstaller *self, HWND value) put_ParentHwnd;
+			public function HRESULT(IUpdateInstaller *self, IUnknown* value) put_ParentWindow;
+			public function HRESULT(IUpdateInstaller *self, IUnknown** retval) get_ParentWindow;
+			public function HRESULT(IUpdateInstaller *self, IUpdateCollection** retval) get_Updates;
+			public function HRESULT(IUpdateInstaller *self, IUpdateCollection* value) put_Updates;
+			public function HRESULT(IUpdateInstaller *self, IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IInstallationJob** retval) BeginInstall;
+			public function HRESULT(IUpdateInstaller *self, IUnknown* onProgressChanged, IUnknown* onCompleted, VARIANT state, IInstallationJob** retval) BeginUninstall;
+			public function HRESULT(IUpdateInstaller *self, IInstallationJob* value, IInstallationResult** retval) EndInstall;
+			public function HRESULT(IUpdateInstaller *self, IInstallationJob* value, IInstallationResult** retval) EndUninstall;
+			public function HRESULT(IUpdateInstaller *self, IInstallationResult** retval) Install;
+			public function HRESULT(IUpdateInstaller *self, BSTR dialogTitle, IInstallationResult** retval) RunWizard;
+			public function HRESULT(IUpdateInstaller *self, int16* retval) get_IsBusy;
+			public function HRESULT(IUpdateInstaller *self, IInstallationResult** retval) Uninstall;
+			public function HRESULT(IUpdateInstaller *self, int16* retval) get_AllowSourcePrompts;
+			public function HRESULT(IUpdateInstaller *self, int16 value) put_AllowSourcePrompts;
+			public function HRESULT(IUpdateInstaller *self, int16* retval) get_RebootRequiredBeforeInstallation;
+		}
+		[CRepr]
+		public struct IUpdateInstaller2 : IUpdateInstaller
+		{
+			public const new Guid IID = .(0x3442d4fe, 0x224d, 0x4cee, 0x98, 0xcf, 0x30, 0xe0, 0xc4, 0xd2, 0x29, 0xe6);
+			
+			public function HRESULT(IUpdateInstaller2 *self, int16* retval) get_ForceQuiet;
+			public function HRESULT(IUpdateInstaller2 *self, int16 value) put_ForceQuiet;
+		}
+		[CRepr]
+		public struct IUpdateInstaller3 : IUpdateInstaller2
+		{
+			public const new Guid IID = .(0x16d11c35, 0x099a, 0x48d0, 0x83, 0x38, 0x5f, 0xae, 0x64, 0x04, 0x7f, 0x8e);
+			
+			public function HRESULT(IUpdateInstaller3 *self, int16* retval) get_AttemptCloseAppsIfNecessary;
+			public function HRESULT(IUpdateInstaller3 *self, int16 value) put_AttemptCloseAppsIfNecessary;
+		}
+		[CRepr]
+		public struct IUpdateInstaller4 : IUpdateInstaller3
+		{
+			public const new Guid IID = .(0xef8208ea, 0x2304, 0x492d, 0x91, 0x09, 0x23, 0x81, 0x3b, 0x09, 0x58, 0xe1);
+			
+			public function HRESULT(IUpdateInstaller4 *self, uint32 dwFlags) Commit;
+		}
+		[CRepr]
+		public struct IUpdateSession : IDispatch
+		{
+			public const new Guid IID = .(0x816858a4, 0x260d, 0x4260, 0x93, 0x3a, 0x25, 0x85, 0xf1, 0xab, 0xc7, 0x6b);
+			
+			public function HRESULT(IUpdateSession *self, BSTR* retval) get_ClientApplicationID;
+			public function HRESULT(IUpdateSession *self, BSTR value) put_ClientApplicationID;
+			public function HRESULT(IUpdateSession *self, int16* retval) get_ReadOnly;
+			public function HRESULT(IUpdateSession *self, IWebProxy** retval) get_WebProxy;
+			public function HRESULT(IUpdateSession *self, IWebProxy* value) put_WebProxy;
+			public function HRESULT(IUpdateSession *self, IUpdateSearcher** retval) CreateUpdateSearcher;
+			public function HRESULT(IUpdateSession *self, IUpdateDownloader** retval) CreateUpdateDownloader;
+			public function HRESULT(IUpdateSession *self, IUpdateInstaller** retval) CreateUpdateInstaller;
+		}
+		[CRepr]
+		public struct IUpdateSession2 : IUpdateSession
+		{
+			public const new Guid IID = .(0x91caf7b0, 0xeb23, 0x49ed, 0x99, 0x37, 0xc5, 0x2d, 0x81, 0x7f, 0x46, 0xf7);
+			
+			public function HRESULT(IUpdateSession2 *self, uint32* retval) get_UserLocale;
+			public function HRESULT(IUpdateSession2 *self, uint32 lcid) put_UserLocale;
+		}
+		[CRepr]
+		public struct IUpdateSession3 : IUpdateSession2
+		{
+			public const new Guid IID = .(0x918efd1e, 0xb5d8, 0x4c90, 0x85, 0x40, 0xae, 0xb9, 0xbd, 0xc5, 0x6f, 0x9d);
+			
+			public function HRESULT(IUpdateSession3 *self, IUpdateServiceManager2** retval) CreateUpdateServiceManager;
+			public function HRESULT(IUpdateSession3 *self, BSTR criteria, int32 startIndex, int32 count, IUpdateHistoryEntryCollection** retval) QueryHistory;
+		}
+		[CRepr]
+		public struct IUpdateService : IDispatch
+		{
+			public const new Guid IID = .(0x76b3b17e, 0xaed6, 0x4da5, 0x85, 0xf0, 0x83, 0x58, 0x7f, 0x81, 0xab, 0xe3);
+			
+			public function HRESULT(IUpdateService *self, BSTR* retval) get_Name;
+			public function HRESULT(IUpdateService *self, VARIANT* retval) get_ContentValidationCert;
+			public function HRESULT(IUpdateService *self, double* retval) get_ExpirationDate;
+			public function HRESULT(IUpdateService *self, int16* retval) get_IsManaged;
+			public function HRESULT(IUpdateService *self, int16* retval) get_IsRegisteredWithAU;
+			public function HRESULT(IUpdateService *self, double* retval) get_IssueDate;
+			public function HRESULT(IUpdateService *self, int16* retval) get_OffersWindowsUpdates;
+			public function HRESULT(IUpdateService *self, IStringCollection** retval) get_RedirectUrls;
+			public function HRESULT(IUpdateService *self, BSTR* retval) get_ServiceID;
+			public function HRESULT(IUpdateService *self, int16* retval) get_IsScanPackageService;
+			public function HRESULT(IUpdateService *self, int16* retval) get_CanRegisterWithAU;
+			public function HRESULT(IUpdateService *self, BSTR* retval) get_ServiceUrl;
+			public function HRESULT(IUpdateService *self, BSTR* retval) get_SetupPrefix;
+		}
+		[CRepr]
+		public struct IUpdateService2 : IUpdateService
+		{
+			public const new Guid IID = .(0x1518b460, 0x6518, 0x4172, 0x94, 0x0f, 0xc7, 0x58, 0x83, 0xb2, 0x4c, 0xeb);
+			
+			public function HRESULT(IUpdateService2 *self, int16* retval) get_IsDefaultAUService;
+		}
+		[CRepr]
+		public struct IUpdateServiceCollection : IDispatch
+		{
+			public const new Guid IID = .(0x9b0353aa, 0x0e52, 0x44ff, 0xb8, 0xb0, 0x1f, 0x7f, 0xa0, 0x43, 0x7f, 0x88);
+			
+			public function HRESULT(IUpdateServiceCollection *self, int32 index, IUpdateService** retval) get_Item;
+			public function HRESULT(IUpdateServiceCollection *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(IUpdateServiceCollection *self, int32* retval) get_Count;
+		}
+		[CRepr]
+		public struct IUpdateServiceRegistration : IDispatch
+		{
+			public const new Guid IID = .(0xdde02280, 0x12b3, 0x4e0b, 0x93, 0x7b, 0x67, 0x47, 0xf6, 0xac, 0xb2, 0x86);
+			
+			public function HRESULT(IUpdateServiceRegistration *self, UpdateServiceRegistrationState* retval) get_RegistrationState;
+			public function HRESULT(IUpdateServiceRegistration *self, BSTR* retval) get_ServiceID;
+			public function HRESULT(IUpdateServiceRegistration *self, int16* retval) get_IsPendingRegistrationWithAU;
+			public function HRESULT(IUpdateServiceRegistration *self, IUpdateService2** retval) get_Service;
+		}
+		[CRepr]
+		public struct IUpdateServiceManager : IDispatch
+		{
+			public const new Guid IID = .(0x23857e3c, 0x02ba, 0x44a3, 0x94, 0x23, 0xb1, 0xc9, 0x00, 0x80, 0x5f, 0x37);
+			
+			public function HRESULT(IUpdateServiceManager *self, IUpdateServiceCollection** retval) get_Services;
+			public function HRESULT(IUpdateServiceManager *self, BSTR serviceID, BSTR authorizationCabPath, IUpdateService** retval) AddService;
+			public function HRESULT(IUpdateServiceManager *self, BSTR serviceID) RegisterServiceWithAU;
+			public function HRESULT(IUpdateServiceManager *self, BSTR serviceID) RemoveService;
+			public function HRESULT(IUpdateServiceManager *self, BSTR serviceID) UnregisterServiceWithAU;
+			public function HRESULT(IUpdateServiceManager *self, BSTR serviceName, BSTR scanFileLocation, int32 flags, IUpdateService** ppService) AddScanPackageService;
+			public function HRESULT(IUpdateServiceManager *self, BSTR optionName, VARIANT optionValue) SetOption;
+		}
+		[CRepr]
+		public struct IUpdateServiceManager2 : IUpdateServiceManager
+		{
+			public const new Guid IID = .(0x0bb8531d, 0x7e8d, 0x424f, 0x98, 0x6c, 0xa0, 0xb8, 0xf6, 0x0a, 0x3e, 0x7b);
+			
+			public function HRESULT(IUpdateServiceManager2 *self, BSTR* retval) get_ClientApplicationID;
+			public function HRESULT(IUpdateServiceManager2 *self, BSTR value) put_ClientApplicationID;
+			public function HRESULT(IUpdateServiceManager2 *self, BSTR serviceID, IUpdateServiceRegistration** retval) QueryServiceRegistration;
+			public function HRESULT(IUpdateServiceManager2 *self, BSTR serviceID, int32 flags, BSTR authorizationCabPath, IUpdateServiceRegistration** retval) AddService2;
+		}
+		[CRepr]
+		public struct IInstallationAgent : IDispatch
+		{
+			public const new Guid IID = .(0x925cbc18, 0xa2ea, 0x4648, 0xbf, 0x1c, 0xec, 0x8b, 0xad, 0xcf, 0xe2, 0x0a);
+			
+			public function HRESULT(IInstallationAgent *self, BSTR installationResultCookie, int32 hresult, IStringCollection* extendedReportingData) RecordInstallationResult;
+		}
 		
 	}
 }

@@ -3519,7 +3519,14 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IContentPrefetcherTaskTrigger {}
+		[CRepr]
+		public struct IContentPrefetcherTaskTrigger : IInspectable
+		{
+			public const new Guid IID = .(0x1b35a14a, 0x6094, 0x4799, 0xa6, 0x0e, 0xe4, 0x74, 0xe1, 0x5d, 0x4d, 0xc9);
+			
+			public function HRESULT(IContentPrefetcherTaskTrigger *self, PWSTR packageFullName) TriggerContentPrefetcherTask;
+			public function HRESULT(IContentPrefetcherTaskTrigger *self, PWSTR packageFullName, uint8* isRegistered) IsRegisteredForContentPrefetch;
+		}
 		
 		// --- Functions ---
 		

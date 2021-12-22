@@ -1972,9 +1972,48 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ITraceEvent {}
-		public struct ITraceEventCallback {}
-		public struct ITraceRelogger {}
+		[CRepr]
+		public struct ITraceEvent : IUnknown
+		{
+			public const new Guid IID = .(0x8cc97f40, 0x9028, 0x4ff3, 0x9b, 0x62, 0x7d, 0x1f, 0x79, 0xca, 0x7b, 0xcb);
+			
+			public function HRESULT(ITraceEvent *self, ITraceEvent** NewEvent) Clone;
+			public function HRESULT(ITraceEvent *self, void** UserContext) GetUserContext;
+			public function HRESULT(ITraceEvent *self, EVENT_RECORD** EventRecord) GetEventRecord;
+			public function HRESULT(ITraceEvent *self, uint8* Payload, uint32 PayloadSize) SetPayload;
+			public function HRESULT(ITraceEvent *self, EVENT_DESCRIPTOR* EventDescriptor) SetEventDescriptor;
+			public function HRESULT(ITraceEvent *self, uint32 ProcessId) SetProcessId;
+			public function HRESULT(ITraceEvent *self, uint32 ProcessorIndex) SetProcessorIndex;
+			public function HRESULT(ITraceEvent *self, uint32 ThreadId) SetThreadId;
+			public function HRESULT(ITraceEvent *self, uint32 KernelTime, uint32 UserTime) SetThreadTimes;
+			public function HRESULT(ITraceEvent *self, Guid* ActivityId) SetActivityId;
+			public function HRESULT(ITraceEvent *self, LARGE_INTEGER* TimeStamp) SetTimeStamp;
+			public function HRESULT(ITraceEvent *self, Guid* ProviderId) SetProviderId;
+		}
+		[CRepr]
+		public struct ITraceEventCallback : IUnknown
+		{
+			public const new Guid IID = .(0x3ed25501, 0x593f, 0x43e9, 0x8f, 0x38, 0x3a, 0xb4, 0x6f, 0x5a, 0x4a, 0x52);
+			
+			public function HRESULT(ITraceEventCallback *self, ITraceEvent* HeaderEvent, ITraceRelogger* Relogger) OnBeginProcessTrace;
+			public function HRESULT(ITraceEventCallback *self, ITraceRelogger* Relogger) OnFinalizeProcessTrace;
+			public function HRESULT(ITraceEventCallback *self, ITraceEvent* Event, ITraceRelogger* Relogger) OnEvent;
+		}
+		[CRepr]
+		public struct ITraceRelogger : IUnknown
+		{
+			public const new Guid IID = .(0xf754ad43, 0x3bcc, 0x4286, 0x80, 0x09, 0x9c, 0x5d, 0xa2, 0x14, 0xe8, 0x4e);
+			
+			public function HRESULT(ITraceRelogger *self, BSTR LogfileName, void* UserContext, uint64* TraceHandle) AddLogfileTraceStream;
+			public function HRESULT(ITraceRelogger *self, BSTR LoggerName, void* UserContext, uint64* TraceHandle) AddRealtimeTraceStream;
+			public function HRESULT(ITraceRelogger *self, ITraceEventCallback* Callback) RegisterCallback;
+			public function HRESULT(ITraceRelogger *self, ITraceEvent* Event) Inject;
+			public function HRESULT(ITraceRelogger *self, uint64 TraceHandle, uint32 Flags, ITraceEvent** Event) CreateEventInstance;
+			public function HRESULT(ITraceRelogger *self) ProcessTrace;
+			public function HRESULT(ITraceRelogger *self, BSTR LogfileName) SetOutputFilename;
+			public function HRESULT(ITraceRelogger *self, BOOLEAN CompressionMode) SetCompressionMode;
+			public function HRESULT(ITraceRelogger *self) Cancel;
+		}
 		
 		// --- Functions ---
 		

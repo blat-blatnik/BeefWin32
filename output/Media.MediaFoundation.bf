@@ -5417,7 +5417,7 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT PDXVAHDSW_CreateDevice(IDirect3DDevice9Ex pD3DDevice, HANDLE* phDevice);
+		public function HRESULT PDXVAHDSW_CreateDevice(IDirect3DDevice9Ex* pD3DDevice, HANDLE* phDevice);
 		public function HRESULT PDXVAHDSW_ProposeVideoPrivateFormat(HANDLE hDevice, D3DFORMAT* pFormat);
 		public function HRESULT PDXVAHDSW_GetVideoProcessorDeviceCaps(HANDLE hDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, DXVAHD_VPDEVCAPS* pCaps);
 		public function HRESULT PDXVAHDSW_GetVideoProcessorOutputFormats(HANDLE hDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, uint32 Count, D3DFORMAT* pFormats);
@@ -5431,11 +5431,11 @@ namespace Win32
 		public function HRESULT PDXVAHDSW_GetVideoProcessBltStatePrivate(HANDLE hVideoProcessor, DXVAHD_BLT_STATE_PRIVATE_DATA* pData);
 		public function HRESULT PDXVAHDSW_SetVideoProcessStreamState(HANDLE hVideoProcessor, uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData);
 		public function HRESULT PDXVAHDSW_GetVideoProcessStreamStatePrivate(HANDLE hVideoProcessor, uint32 StreamNumber, DXVAHD_STREAM_STATE_PRIVATE_DATA* pData);
-		public function HRESULT PDXVAHDSW_VideoProcessBltHD(HANDLE hVideoProcessor, IDirect3DSurface9 pOutputSurface, uint32 OutputFrame, uint32 StreamCount, DXVAHD_STREAM_DATA* pStreams);
+		public function HRESULT PDXVAHDSW_VideoProcessBltHD(HANDLE hVideoProcessor, IDirect3DSurface9* pOutputSurface, uint32 OutputFrame, uint32 StreamCount, DXVAHD_STREAM_DATA* pStreams);
 		public function HRESULT PDXVAHDSW_DestroyVideoProcessor(HANDLE hVideoProcessor);
 		public function HRESULT PDXVAHDSW_Plugin(uint32 Size, void* pCallbacks);
-		public function HRESULT PDXVAHD_CreateDevice(IDirect3DDevice9Ex pD3DDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, IDXVAHD_Device* ppDevice);
-		public function void MFPERIODICCALLBACK(IUnknown pContext);
+		public function HRESULT PDXVAHD_CreateDevice(IDirect3DDevice9Ex* pD3DDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, IDXVAHD_Device** ppDevice);
+		public function void MFPERIODICCALLBACK(IUnknown* pContext);
 		
 		// --- Structs ---
 		
@@ -5666,14 +5666,14 @@ namespace Win32
 		public struct D3D12_VIDEO_DECODE_REFERENCE_FRAMES
 		{
 			public uint32 NumTexture2Ds;
-			public ID3D12Resource* ppTexture2Ds;
+			public ID3D12Resource** ppTexture2Ds;
 			public uint32* pSubresources;
-			public ID3D12VideoDecoderHeap* ppHeaps;
+			public ID3D12VideoDecoderHeap** ppHeaps;
 		}
 		[CRepr]
 		public struct D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM
 		{
-			public ID3D12Resource pBuffer;
+			public ID3D12Resource* pBuffer;
 			public uint64 Offset;
 			public uint64 Size;
 		}
@@ -5681,7 +5681,7 @@ namespace Win32
 		public struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS
 		{
 			public BOOL Enable;
-			public ID3D12Resource pReferenceTexture2D;
+			public ID3D12Resource* pReferenceTexture2D;
 			public uint32 ReferenceSubresource;
 			public DXGI_COLOR_SPACE_TYPE OutputColorSpace;
 			public DXGI_COLOR_SPACE_TYPE DecodeColorSpace;
@@ -5693,12 +5693,12 @@ namespace Win32
 			public D3D12_VIDEO_DECODE_FRAME_ARGUMENT[10] FrameArguments;
 			public D3D12_VIDEO_DECODE_REFERENCE_FRAMES ReferenceFrames;
 			public D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM CompressedBitstream;
-			public ID3D12VideoDecoderHeap pHeap;
+			public ID3D12VideoDecoderHeap* pHeap;
 		}
 		[CRepr]
 		public struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS
 		{
-			public ID3D12Resource pOutputTexture2D;
+			public ID3D12Resource* pOutputTexture2D;
 			public uint32 OutputSubresource;
 			public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS ConversionArguments;
 		}
@@ -5752,10 +5752,10 @@ namespace Win32
 		public struct D3D12_VIDEO_PROCESS_REFERENCE_SET
 		{
 			public uint32 NumPastFrames;
-			public ID3D12Resource* ppPastFrames;
+			public ID3D12Resource** ppPastFrames;
 			public uint32* pPastSubresources;
 			public uint32 NumFutureFrames;
-			public ID3D12Resource* ppFutureFrames;
+			public ID3D12Resource** ppFutureFrames;
 			public uint32* pFutureSubresources;
 		}
 		[CRepr]
@@ -5774,7 +5774,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_VIDEO_PROCESS_INPUT_STREAM
 		{
-			public ID3D12Resource pTexture2D;
+			public ID3D12Resource* pTexture2D;
 			public uint32 Subresource;
 			public D3D12_VIDEO_PROCESS_REFERENCE_SET ReferenceSet;
 		}
@@ -5791,7 +5791,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM
 		{
-			public ID3D12Resource pTexture2D;
+			public ID3D12Resource* pTexture2D;
 			public uint32 Subresource;
 		}
 		[CRepr]
@@ -5804,13 +5804,13 @@ namespace Win32
 		public struct D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM
 		{
 			public uint64 Offset;
-			public ID3D12Resource pBuffer;
+			public ID3D12Resource* pBuffer;
 		}
 		[CRepr]
 		public struct D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1
 		{
 			public BOOL Enable;
-			public ID3D12Resource pReferenceTexture2D;
+			public ID3D12Resource* pReferenceTexture2D;
 			public uint32 ReferenceSubresource;
 			public DXGI_COLOR_SPACE_TYPE OutputColorSpace;
 			public DXGI_COLOR_SPACE_TYPE DecodeColorSpace;
@@ -5820,7 +5820,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1
 		{
-			public ID3D12Resource pOutputTexture2D;
+			public ID3D12Resource* pOutputTexture2D;
 			public uint32 OutputSubresource;
 			public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1 ConversionArguments;
 			public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[4] Histograms;
@@ -5896,27 +5896,27 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT
 		{
-			public ID3D12VideoMotionVectorHeap pMotionVectorHeap;
+			public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
 		}
 		[CRepr]
 		public struct D3D12_VIDEO_MOTION_ESTIMATOR_INPUT
 		{
-			public ID3D12Resource pInputTexture2D;
+			public ID3D12Resource* pInputTexture2D;
 			public uint32 InputSubresourceIndex;
-			public ID3D12Resource pReferenceTexture2D;
+			public ID3D12Resource* pReferenceTexture2D;
 			public uint32 ReferenceSubresourceIndex;
-			public ID3D12VideoMotionVectorHeap pHintMotionVectorHeap;
+			public ID3D12VideoMotionVectorHeap* pHintMotionVectorHeap;
 		}
 		[CRepr]
 		public struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT
 		{
-			public ID3D12Resource pMotionVectorTexture2D;
+			public ID3D12Resource* pMotionVectorTexture2D;
 			public D3D12_RESOURCE_COORDINATE MotionVectorCoordinate;
 		}
 		[CRepr]
 		public struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT
 		{
-			public ID3D12VideoMotionVectorHeap pMotionVectorHeap;
+			public ID3D12VideoMotionVectorHeap* pMotionVectorHeap;
 			public uint32 PixelWidth;
 			public uint32 PixelHeight;
 		}
@@ -6524,7 +6524,7 @@ namespace Win32
 		public struct D3D12_VIDEO_ENCODE_REFERENCE_FRAMES
 		{
 			public uint32 NumTexture2Ds;
-			public ID3D12Resource* ppTexture2Ds;
+			public ID3D12Resource** ppTexture2Ds;
 			public uint32* pSubresources;
 		}
 		[CRepr]
@@ -6578,20 +6578,20 @@ namespace Win32
 		{
 			public D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC SequenceControlDesc;
 			public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC PictureControlDesc;
-			public ID3D12Resource pInputFrame;
+			public ID3D12Resource* pInputFrame;
 			public uint32 InputFrameSubresource;
 			public uint32 CurrentFrameBitstreamMetadataSize;
 		}
 		[CRepr]
 		public struct D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM
 		{
-			public ID3D12Resource pBuffer;
+			public ID3D12Resource* pBuffer;
 			public uint64 FrameStartOffset;
 		}
 		[CRepr]
 		public struct D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE
 		{
-			public ID3D12Resource pReconstructedPicture;
+			public ID3D12Resource* pReconstructedPicture;
 			public uint32 ReconstructedPictureSubresource;
 		}
 		[CRepr]
@@ -6622,7 +6622,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER
 		{
-			public ID3D12Resource pBuffer;
+			public ID3D12Resource* pBuffer;
 			public uint64 Offset;
 		}
 		[CRepr]
@@ -7203,9 +7203,9 @@ namespace Win32
 			public uint32 InputFrameOrField;
 			public uint32 PastFrames;
 			public uint32 FutureFrames;
-			public IDirect3DSurface9* ppPastSurfaces;
-			public IDirect3DSurface9 pInputSurface;
-			public IDirect3DSurface9* ppFutureSurfaces;
+			public IDirect3DSurface9** ppPastSurfaces;
+			public IDirect3DSurface9* pInputSurface;
+			public IDirect3DSurface9** ppFutureSurfaces;
 		}
 		[CRepr]
 		public struct DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA
@@ -7383,7 +7383,7 @@ namespace Win32
 			public int64 Start;
 			public int64 End;
 			public DXVA2_ExtendedFormat SampleFormat;
-			public IDirect3DSurface9 SrcSurface;
+			public IDirect3DSurface9* SrcSurface;
 			public RECT SrcRect;
 			public RECT DstRect;
 			public DXVA2_AYUVSample8[16] Pal;
@@ -7747,9 +7747,9 @@ namespace Win32
 		public struct MFT_OUTPUT_DATA_BUFFER
 		{
 			public uint32 dwStreamID;
-			public IMFSample pSample;
+			public IMFSample* pSample;
 			public uint32 dwStatus;
-			public IMFCollection pEvents;
+			public IMFCollection* pEvents;
 		}
 		[CRepr]
 		public struct STREAM_MEDIUM
@@ -7882,9 +7882,9 @@ namespace Win32
 		public struct MF_TRANSCODE_SINK_INFO
 		{
 			public uint32 dwVideoStreamID;
-			public IMFMediaType pVideoMediaType;
+			public IMFMediaType* pVideoMediaType;
 			public uint32 dwAudioStreamID;
-			public IMFMediaType pAudioMediaType;
+			public IMFMediaType* pAudioMediaType;
 		}
 		[CRepr]
 		public struct MFT_REGISTRATION_INFO
@@ -8189,73 +8189,73 @@ namespace Win32
 		{
 			public MFP_EVENT_TYPE eEventType;
 			public HRESULT hrEvent;
-			public IMFPMediaPlayer pMediaPlayer;
+			public IMFPMediaPlayer* pMediaPlayer;
 			public MFP_MEDIAPLAYER_STATE eState;
-			public IPropertyStore pPropertyStore;
+			public IPropertyStore* pPropertyStore;
 		}
 		[CRepr]
 		public struct MFP_PLAY_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
 		public struct MFP_PAUSE_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
 		public struct MFP_STOP_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
 		public struct MFP_POSITION_SET_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
 		public struct MFP_RATE_SET_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 			public float flRate;
 		}
 		[CRepr]
 		public struct MFP_MEDIAITEM_CREATED_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 			public uint dwUserData;
 		}
 		[CRepr]
 		public struct MFP_MEDIAITEM_SET_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
 		public struct MFP_FRAME_STEP_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
 		public struct MFP_MEDIAITEM_CLEARED_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
 		public struct MFP_MF_EVENT
 		{
 			public MFP_EVENT_HEADER header;
 			public uint32 MFEventType;
-			public IMFMediaEvent pMFMediaEvent;
-			public IMFPMediaItem pMediaItem;
+			public IMFMediaEvent* pMFMediaEvent;
+			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
 		public struct MFP_ERROR_EVENT
@@ -8266,7 +8266,7 @@ namespace Win32
 		public struct MFP_PLAYBACK_ENDED_EVENT
 		{
 			public MFP_EVENT_HEADER header;
-			public IMFPMediaItem pMediaItem;
+			public IMFPMediaItem* pMediaItem;
 		}
 		[CRepr]
 		public struct MFP_ACQUIRE_USER_CREDENTIAL_EVENT
@@ -8281,7 +8281,7 @@ namespace Win32
 			public PWSTR pwszPackage;
 			public int32 nRetries;
 			public uint32 flags;
-			public IMFNetCredential pCredential;
+			public IMFNetCredential* pCredential;
 		}
 		[CRepr]
 		public struct DEVICE_INFO
@@ -8313,7 +8313,7 @@ namespace Win32
 			public struct _bitmap_e__Union
 			{
 				public HDC hdc;
-				public IDirect3DSurface9 pDDS;
+				public IDirect3DSurface9* pDDS;
 			}
 		}
 		
@@ -8731,566 +8731,3896 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ICodecAPI {}
-		public struct IDirect3D9ExOverlayExtension {}
-		public struct IDirect3DDevice9Video {}
-		public struct IDirect3DAuthenticatedChannel9 {}
-		public struct IDirect3DCryptoSession9 {}
-		public struct ID3D12VideoDecoderHeap {}
-		public struct ID3D12VideoDevice {}
-		public struct ID3D12VideoDecoder {}
-		public struct ID3D12VideoProcessor {}
-		public struct ID3D12VideoDecodeCommandList {}
-		public struct ID3D12VideoProcessCommandList {}
-		public struct ID3D12VideoDecodeCommandList1 {}
-		public struct ID3D12VideoProcessCommandList1 {}
-		public struct ID3D12VideoMotionEstimator {}
-		public struct ID3D12VideoMotionVectorHeap {}
-		public struct ID3D12VideoDevice1 {}
-		public struct ID3D12VideoEncodeCommandList {}
-		public struct ID3D12VideoDecoder1 {}
-		public struct ID3D12VideoDecoderHeap1 {}
-		public struct ID3D12VideoProcessor1 {}
-		public struct ID3D12VideoExtensionCommand {}
-		public struct ID3D12VideoDevice2 {}
-		public struct ID3D12VideoDecodeCommandList2 {}
-		public struct ID3D12VideoProcessCommandList2 {}
-		public struct ID3D12VideoEncodeCommandList1 {}
-		public struct ID3D12VideoEncoder {}
-		public struct ID3D12VideoEncoderHeap {}
-		public struct ID3D12VideoDevice3 {}
-		public struct ID3D12VideoEncodeCommandList2 {}
-		public struct IWMValidate {}
-		public struct IValidateBinding {}
-		public struct IWMVideoDecoderHurryup {}
-		public struct IWMVideoForceKeyFrame {}
-		public struct IWMCodecStrings {}
-		public struct IWMCodecProps {}
-		public struct IWMCodecLeakyBucket {}
-		public struct IWMCodecOutputTimestamp {}
-		public struct IWMVideoDecoderReconBuffer {}
-		public struct IWMCodecPrivateData {}
-		public struct IWMSampleExtensionSupport {}
-		public struct IWMResamplerProps {}
-		public struct IWMResizerProps {}
-		public struct IWMColorLegalizerProps {}
-		public struct IWMInterlaceProps {}
-		public struct IWMFrameInterpProps {}
-		public struct IWMColorConvProps {}
-		public struct ITocEntry {}
-		public struct ITocEntryList {}
-		public struct IToc {}
-		public struct ITocCollection {}
-		public struct ITocParser {}
-		public struct IFileIo {}
-		public struct IFileClient {}
-		public struct IClusterDetector {}
-		public struct IDXVAHD_Device {}
-		public struct IDXVAHD_VideoProcessor {}
-		public struct IDirect3DDeviceManager9 {}
-		public struct IDirectXVideoAccelerationService {}
-		public struct IDirectXVideoDecoderService {}
-		public struct IDirectXVideoProcessorService {}
-		public struct IDirectXVideoDecoder {}
-		public struct IDirectXVideoProcessor {}
-		public struct IDirectXVideoMemoryConfiguration {}
-		public struct IOPMVideoOutput {}
-		public struct IMFAttributes {}
-		public struct IMFMediaBuffer {}
-		public struct IMFSample {}
-		public struct IMF2DBuffer {}
-		public struct IMF2DBuffer2 {}
-		public struct IMFDXGIBuffer {}
-		public struct IMFMediaType {}
-		public struct IMFAudioMediaType {}
-		public struct IMFVideoMediaType {}
-		public struct IMFAsyncResult {}
-		public struct IMFAsyncCallback {}
-		public struct IMFAsyncCallbackLogging {}
-		public struct IMFMediaEvent {}
-		public struct IMFMediaEventGenerator {}
-		public struct IMFRemoteAsyncCallback {}
-		public struct IMFByteStream {}
-		public struct IMFByteStreamProxyClassFactory {}
-		public struct IMFSampleOutputStream {}
-		public struct IMFCollection {}
-		public struct IMFMediaEventQueue {}
-		public struct IMFActivate {}
-		public struct IMFPluginControl {}
-		public struct IMFPluginControl2 {}
-		public struct IMFDXGIDeviceManager {}
-		public struct IMFMuxStreamAttributesManager {}
-		public struct IMFMuxStreamMediaTypeManager {}
-		public struct IMFMuxStreamSampleManager {}
-		public struct IMFSecureBuffer {}
-		public struct IMFTransform {}
-		public struct IMFMediaSession {}
-		public struct IMFSourceResolver {}
-		public struct IMFMediaSource {}
-		public struct IMFMediaSourceEx {}
-		public struct IMFClockConsumer {}
-		public struct IMFMediaStream {}
-		public struct IMFMediaSink {}
-		public struct IMFStreamSink {}
-		public struct IMFVideoSampleAllocator {}
-		public struct IMFVideoSampleAllocatorNotify {}
-		public struct IMFVideoSampleAllocatorNotifyEx {}
-		public struct IMFVideoSampleAllocatorCallback {}
-		public struct IMFVideoSampleAllocatorEx {}
-		public struct IMFDXGIDeviceManagerSource {}
-		public struct IMFVideoProcessorControl {}
-		public struct IMFVideoProcessorControl2 {}
-		public struct IMFVideoProcessorControl3 {}
-		public struct IMFVideoRendererEffectControl {}
-		public struct IMFTopology {}
-		public struct IMFTopologyNode {}
-		public struct IMFGetService {}
-		public struct IMFClock {}
-		public struct IMFPresentationClock {}
-		public struct IMFPresentationTimeSource {}
-		public struct IMFClockStateSink {}
-		public struct IMFPresentationDescriptor {}
-		public struct IMFStreamDescriptor {}
-		public struct IMFMediaTypeHandler {}
-		public struct IMFTimer {}
-		public struct IMFShutdown {}
-		public struct IMFTopoLoader {}
-		public struct IMFContentProtectionManager {}
-		public struct IMFContentEnabler {}
-		public struct IMFMetadata {}
-		public struct IMFMetadataProvider {}
-		public struct IMFRateSupport {}
-		public struct IMFRateControl {}
-		public struct IMFTimecodeTranslate {}
-		public struct IMFSeekInfo {}
-		public struct IMFSimpleAudioVolume {}
-		public struct IMFAudioStreamVolume {}
-		public struct IMFAudioPolicy {}
-		public struct IMFSampleGrabberSinkCallback {}
-		public struct IMFSampleGrabberSinkCallback2 {}
-		public struct IMFWorkQueueServices {}
-		public struct IMFWorkQueueServicesEx {}
-		public struct IMFQualityManager {}
-		public struct IMFQualityAdvise {}
-		public struct IMFQualityAdvise2 {}
-		public struct IMFQualityAdviseLimits {}
-		public struct IMFRealTimeClient {}
-		public struct IMFRealTimeClientEx {}
-		public struct IMFSequencerSource {}
-		public struct IMFMediaSourceTopologyProvider {}
-		public struct IMFMediaSourcePresentationProvider {}
-		public struct IMFTopologyNodeAttributeEditor {}
-		public struct IMFByteStreamBuffering {}
-		public struct IMFByteStreamCacheControl {}
-		public struct IMFByteStreamTimeSeek {}
-		public struct IMFByteStreamCacheControl2 {}
-		public struct IMFNetCredential {}
-		public struct IMFNetCredentialManager {}
-		public struct IMFNetCredentialCache {}
-		public struct IMFSSLCertificateManager {}
-		public struct IMFNetResourceFilter {}
-		public struct IMFSourceOpenMonitor {}
-		public struct IMFNetProxyLocator {}
-		public struct IMFNetProxyLocatorFactory {}
-		public struct IMFSaveJob {}
-		public struct IMFNetSchemeHandlerConfig {}
-		public struct IMFSchemeHandler {}
-		public struct IMFByteStreamHandler {}
-		public struct IMFTrustedInput {}
-		public struct IMFInputTrustAuthority {}
-		public struct IMFTrustedOutput {}
-		public struct IMFOutputTrustAuthority {}
-		public struct IMFOutputPolicy {}
-		public struct IMFOutputSchema {}
-		public struct IMFSecureChannel {}
-		public struct IMFSampleProtection {}
-		public struct IMFMediaSinkPreroll {}
-		public struct IMFFinalizableMediaSink {}
-		public struct IMFStreamingSinkConfig {}
-		public struct IMFRemoteProxy {}
-		public struct IMFObjectReferenceStream {}
-		public struct IMFPMPHost {}
-		public struct IMFPMPClient {}
-		public struct IMFPMPServer {}
-		public struct IMFRemoteDesktopPlugin {}
-		public struct IMFSAMIStyle {}
-		public struct IMFTranscodeProfile {}
-		public struct IMFTranscodeSinkInfoProvider {}
-		public struct IMFFieldOfUseMFTUnlock {}
-		public struct IMFLocalMFTRegistration {}
-		public struct IMFCapturePhotoConfirmation {}
-		public struct IMFPMPHostApp {}
-		public struct IMFPMPClientApp {}
-		public struct IMFMediaStreamSourceSampleRequest {}
-		public struct IMFTrackedSample {}
-		public struct IMFProtectedEnvironmentAccess {}
-		public struct IMFSignedLibrary {}
-		public struct IMFSystemId {}
-		public struct IMFContentProtectionDevice {}
-		public struct IMFContentDecryptorContext {}
-		public struct IMFNetCrossOriginSupport {}
-		public struct IMFHttpDownloadRequest {}
-		public struct IMFHttpDownloadSession {}
-		public struct IMFHttpDownloadSessionProvider {}
-		public struct IMFMediaSource2 {}
-		public struct IMFMediaStream2 {}
-		public struct IMFSensorDevice {}
-		public struct IMFSensorGroup {}
-		public struct IMFSensorStream {}
-		public struct IMFSensorTransformFactory {}
-		public struct IMFSensorProfile {}
-		public struct IMFSensorProfileCollection {}
-		public struct IMFSensorProcessActivity {}
-		public struct IMFSensorActivityReport {}
-		public struct IMFSensorActivitiesReport {}
-		public struct IMFSensorActivitiesReportCallback {}
-		public struct IMFSensorActivityMonitor {}
-		public struct IMFExtendedCameraIntrinsicModel {}
-		public struct IMFExtendedCameraIntrinsicsDistortionModel6KT {}
-		public struct IMFExtendedCameraIntrinsicsDistortionModelArcTan {}
-		public struct IMFExtendedCameraIntrinsics {}
-		public struct IMFExtendedCameraControl {}
-		public struct IMFExtendedCameraController {}
-		public struct IMFRelativePanelReport {}
-		public struct IMFRelativePanelWatcher {}
-		public struct IMFCameraOcclusionStateReport {}
-		public struct IMFCameraOcclusionStateReportCallback {}
-		public struct IMFCameraOcclusionStateMonitor {}
-		public struct IMFVideoCaptureSampleAllocator {}
-		public struct IMFSampleAllocatorControl {}
-		public struct IMFASFContentInfo {}
-		public struct IMFASFProfile {}
-		public struct IMFASFStreamConfig {}
-		public struct IMFASFMutualExclusion {}
-		public struct IMFASFStreamPrioritization {}
-		public struct IMFASFIndexer {}
-		public struct IMFASFSplitter {}
-		public struct IMFASFMultiplexer {}
-		public struct IMFASFStreamSelector {}
-		public struct IMFDRMNetHelper {}
-		public struct IMFCaptureEngineOnEventCallback {}
-		public struct IMFCaptureEngineOnSampleCallback {}
-		public struct IMFCaptureSink {}
-		public struct IMFCaptureRecordSink {}
-		public struct IMFCapturePreviewSink {}
-		public struct IMFCapturePhotoSink {}
-		public struct IMFCaptureSource {}
-		public struct IMFCaptureEngine {}
-		public struct IMFCaptureEngineClassFactory {}
-		public struct IMFCaptureEngineOnSampleCallback2 {}
-		public struct IMFCaptureSink2 {}
-		public struct IMFD3D12SynchronizationObjectCommands {}
-		public struct IMFD3D12SynchronizationObject {}
-		public struct MFASYNCRESULT {}
-		public struct IMFMediaError {}
-		public struct IMFMediaTimeRange {}
-		public struct IMFMediaEngineNotify {}
-		public struct IMFMediaEngineSrcElements {}
-		public struct IMFMediaEngine {}
-		public struct IMFMediaEngineEx {}
-		public struct IMFMediaEngineAudioEndpointId {}
-		public struct IMFMediaEngineExtension {}
-		public struct IMFMediaEngineProtectedContent {}
-		public struct IAudioSourceProvider {}
-		public struct IMFMediaEngineWebSupport {}
-		public struct IMFMediaSourceExtensionNotify {}
-		public struct IMFBufferListNotify {}
-		public struct IMFSourceBufferNotify {}
-		public struct IMFSourceBuffer {}
-		public struct IMFSourceBufferAppendMode {}
-		public struct IMFSourceBufferList {}
-		public struct IMFMediaSourceExtension {}
-		public struct IMFMediaSourceExtensionLiveSeekableRange {}
-		public struct IMFMediaEngineEME {}
-		public struct IMFMediaEngineSrcElementsEx {}
-		public struct IMFMediaEngineNeedKeyNotify {}
-		public struct IMFMediaKeys {}
-		public struct IMFMediaKeySession {}
-		public struct IMFMediaKeySessionNotify {}
-		public struct IMFCdmSuspendNotify {}
-		public struct IMFHDCPStatus {}
-		public struct IMFMediaEngineOPMInfo {}
-		public struct IMFMediaEngineClassFactory {}
-		public struct IMFMediaEngineClassFactoryEx {}
-		public struct IMFMediaEngineClassFactory2 {}
-		public struct IMFExtendedDRMTypeSupport {}
-		public struct IMFMediaEngineSupportsSourceTransfer {}
-		public struct IMFMediaEngineTransferSource {}
-		public struct IMFTimedText {}
-		public struct IMFTimedTextNotify {}
-		public struct IMFTimedTextTrack {}
-		public struct IMFTimedTextTrackList {}
-		public struct IMFTimedTextCue {}
-		public struct IMFTimedTextFormattedText {}
-		public struct IMFTimedTextStyle {}
-		public struct IMFTimedTextRegion {}
-		public struct IMFTimedTextBinary {}
-		public struct IMFTimedTextCueList {}
-		public struct IMFTimedTextRuby {}
-		public struct IMFTimedTextBouten {}
-		public struct IMFTimedTextStyle2 {}
-		public struct IMFMediaEngineEMENotify {}
-		public struct IMFMediaKeySessionNotify2 {}
-		public struct IMFMediaKeySystemAccess {}
-		public struct IMFMediaEngineClassFactory3 {}
-		public struct IMFMediaKeys2 {}
-		public struct IMFMediaKeySession2 {}
-		public struct IMFMediaEngineClassFactory4 {}
-		public struct IMFDLNASinkInit {}
-		public struct IMFReadWriteClassFactory {}
-		public struct IMFSourceReader {}
-		public struct IMFSourceReaderEx {}
-		public struct IMFSourceReaderCallback {}
-		public struct IMFSourceReaderCallback2 {}
-		public struct IMFSinkWriter {}
-		public struct IMFSinkWriterEx {}
-		public struct IMFSinkWriterEncoderConfig {}
-		public struct IMFSinkWriterCallback {}
-		public struct IMFSinkWriterCallback2 {}
-		public struct IMFVideoPositionMapper {}
-		public struct IMFVideoDeviceID {}
-		public struct IMFVideoDisplayControl {}
-		public struct IMFVideoPresenter {}
-		public struct IMFDesiredSample {}
-		public struct IMFVideoMixerControl {}
-		public struct IMFVideoMixerControl2 {}
-		public struct IMFVideoRenderer {}
-		public struct IEVRFilterConfig {}
-		public struct IEVRFilterConfigEx {}
-		public struct IMFTopologyServiceLookup {}
-		public struct IMFTopologyServiceLookupClient {}
-		public struct IEVRTrustedVideoPlugin {}
-		public struct IMFPMediaPlayer {}
-		public struct IMFPMediaItem {}
-		public struct IMFPMediaPlayerCallback {}
-		public struct IMFSharingEngineClassFactory {}
-		public struct IMFMediaSharingEngine {}
-		public struct IMFMediaSharingEngineClassFactory {}
-		public struct IMFImageSharingEngine {}
-		public struct IMFImageSharingEngineClassFactory {}
-		public struct IPlayToControl {}
-		public struct IPlayToControlWithCapabilities {}
-		public struct IPlayToSourceClassFactory {}
-		public struct IEVRVideoStreamControl {}
-		public struct IMFVideoProcessor {}
-		public struct IMFVideoMixerBitmap {}
-		public struct IAdvancedMediaCaptureInitializationSettings {}
-		public struct IAdvancedMediaCaptureSettings {}
-		public struct IAdvancedMediaCapture {}
-		public struct IMFSpatialAudioObjectBuffer {}
-		public struct IMFSpatialAudioSample {}
-		public struct IMFContentDecryptionModuleSession {}
-		public struct IMFContentDecryptionModuleSessionCallbacks {}
-		public struct IMFContentDecryptionModule {}
-		public struct IMFContentDecryptionModuleAccess {}
-		public struct IMFContentDecryptionModuleFactory {}
-		public struct IMFCameraSyncObject {}
-		public struct IMFVirtualCamera {}
+		[CRepr]
+		public struct ICodecAPI : IUnknown
+		{
+			public const new Guid IID = .(0x901db4c7, 0x31ce, 0x41a2, 0x85, 0xdc, 0x8f, 0xa0, 0xbf, 0x41, 0xb8, 0xda);
+			
+			public function HRESULT(ICodecAPI *self, Guid* Api) IsSupported;
+			public function HRESULT(ICodecAPI *self, Guid* Api) IsModifiable;
+			public function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* ValueMin, VARIANT* ValueMax, VARIANT* SteppingDelta) GetParameterRange;
+			public function HRESULT(ICodecAPI *self, Guid* Api, VARIANT** Values, uint32* ValuesCount) GetParameterValues;
+			public function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* Value) GetDefaultValue;
+			public function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* Value) GetValue;
+			public function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* Value) SetValue;
+			public function HRESULT(ICodecAPI *self, Guid* Api, int userData) RegisterForEvent;
+			public function HRESULT(ICodecAPI *self, Guid* Api) UnregisterForEvent;
+			public function HRESULT(ICodecAPI *self) SetAllDefaults;
+			public function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* Value, Guid** ChangedParam, uint32* ChangedParamCount) SetValueWithNotify;
+			public function HRESULT(ICodecAPI *self, Guid** ChangedParam, uint32* ChangedParamCount) SetAllDefaultsWithNotify;
+			public function HRESULT(ICodecAPI *self, IStream* __MIDL__ICodecAPI0000) GetAllSettings;
+			public function HRESULT(ICodecAPI *self, IStream* __MIDL__ICodecAPI0001) SetAllSettings;
+			public function HRESULT(ICodecAPI *self, IStream* __MIDL__ICodecAPI0002, Guid** ChangedParam, uint32* ChangedParamCount) SetAllSettingsWithNotify;
+		}
+		[CRepr]
+		public struct IDirect3D9ExOverlayExtension : IUnknown
+		{
+			public const new Guid IID = .(0x187aeb13, 0xaaf5, 0x4c59, 0x87, 0x6d, 0xe0, 0x59, 0x08, 0x8c, 0x0d, 0xf8);
+			
+			public function HRESULT(IDirect3D9ExOverlayExtension *self, uint32 Adapter, D3DDEVTYPE DevType, uint32 OverlayWidth, uint32 OverlayHeight, D3DFORMAT OverlayFormat, D3DDISPLAYMODEEX* pDisplayMode, D3DDISPLAYROTATION DisplayRotation, D3DOVERLAYCAPS* pOverlayCaps) CheckDeviceOverlayType;
+		}
+		[CRepr]
+		public struct IDirect3DDevice9Video : IUnknown
+		{
+			public const new Guid IID = .(0x26dc4561, 0xa1ee, 0x4ae7, 0x96, 0xda, 0x11, 0x8a, 0x36, 0xc0, 0xec, 0x95);
+			
+			public function HRESULT(IDirect3DDevice9Video *self, Guid* pCryptoType, Guid* pDecodeProfile, D3DCONTENTPROTECTIONCAPS* pCaps) GetContentProtectionCaps;
+			public function HRESULT(IDirect3DDevice9Video *self, D3DAUTHENTICATEDCHANNELTYPE ChannelType, IDirect3DAuthenticatedChannel9** ppAuthenticatedChannel, HANDLE* pChannelHandle) CreateAuthenticatedChannel;
+			public function HRESULT(IDirect3DDevice9Video *self, Guid* pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, HANDLE* pCryptoHandle) CreateCryptoSession;
+		}
+		[CRepr]
+		public struct IDirect3DAuthenticatedChannel9 : IUnknown
+		{
+			public const new Guid IID = .(0xff24beee, 0xda21, 0x4beb, 0x98, 0xb5, 0xd2, 0xf8, 0x99, 0xf9, 0x8a, 0xf9);
+			
+			public function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32* pCertificateSize) GetCertificateSize;
+			public function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32 CertifacteSize, uint8* ppCertificate) GetCertificate;
+			public function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32 DataSize, void* pData) NegotiateKeyExchange;
+			public function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32 InputSize, void* pInput, uint32 OutputSize, void* pOutput) Query;
+			public function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32 InputSize, void* pInput, D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT* pOutput) Configure;
+		}
+		[CRepr]
+		public struct IDirect3DCryptoSession9 : IUnknown
+		{
+			public const new Guid IID = .(0xfa0ab799, 0x7a9c, 0x48ca, 0x8c, 0x5b, 0x23, 0x7e, 0x71, 0xa5, 0x44, 0x34);
+			
+			public function HRESULT(IDirect3DCryptoSession9 *self, uint32* pCertificateSize) GetCertificateSize;
+			public function HRESULT(IDirect3DCryptoSession9 *self, uint32 CertifacteSize, uint8* ppCertificate) GetCertificate;
+			public function HRESULT(IDirect3DCryptoSession9 *self, uint32 DataSize, void* pData) NegotiateKeyExchange;
+			public function HRESULT(IDirect3DCryptoSession9 *self, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint32 DstSurfaceSize, void* pIV) EncryptionBlt;
+			public function HRESULT(IDirect3DCryptoSession9 *self, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint32 SrcSurfaceSize, D3DENCRYPTED_BLOCK_INFO* pEncryptedBlockInfo, void* pContentKey, void* pIV) DecryptionBlt;
+			public function HRESULT(IDirect3DCryptoSession9 *self, IDirect3DSurface9* pSrcSurface, uint32* pSurfacePitch) GetSurfacePitch;
+			public function HRESULT(IDirect3DCryptoSession9 *self, void* pRandomNumber, uint32 RandomNumberSize) StartSessionKeyRefresh;
+			public function HRESULT(IDirect3DCryptoSession9 *self) FinishSessionKeyRefresh;
+			public function HRESULT(IDirect3DCryptoSession9 *self, void* pReadbackKey, uint32 KeySize) GetEncryptionBltKey;
+		}
+		[CRepr]
+		public struct ID3D12VideoDecoderHeap : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x0946b7c9, 0xebf6, 0x4047, 0xbb, 0x73, 0x86, 0x83, 0xe2, 0x7d, 0xbb, 0x1f);
+			
+			public function D3D12_VIDEO_DECODER_HEAP_DESC(ID3D12VideoDecoderHeap *self) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D12VideoDevice : IUnknown
+		{
+			public const new Guid IID = .(0x1f052807, 0x0b46, 0x4acc, 0x8a, 0x89, 0x36, 0x4f, 0x79, 0x37, 0x18, 0xa4);
+			
+			public function HRESULT(ID3D12VideoDevice *self, D3D12_FEATURE_VIDEO FeatureVideo, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
+			public function HRESULT(ID3D12VideoDevice *self, D3D12_VIDEO_DECODER_DESC* pDesc, Guid* riid, void** ppVideoDecoder) CreateVideoDecoder;
+			public function HRESULT(ID3D12VideoDevice *self, D3D12_VIDEO_DECODER_HEAP_DESC* pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap) CreateVideoDecoderHeap;
+			public function HRESULT(ID3D12VideoDevice *self, uint32 NodeMask, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, Guid* riid, void** ppVideoProcessor) CreateVideoProcessor;
+		}
+		[CRepr]
+		public struct ID3D12VideoDecoder : ID3D12Pageable
+		{
+			public const new Guid IID = .(0xc59b6bdc, 0x7720, 0x4074, 0xa1, 0x36, 0x17, 0xa1, 0x56, 0x03, 0x74, 0x70);
+			
+			public function D3D12_VIDEO_DECODER_DESC(ID3D12VideoDecoder *self) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D12VideoProcessor : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x304fdb32, 0xbede, 0x410a, 0x85, 0x45, 0x94, 0x3a, 0xc6, 0xa4, 0x61, 0x38);
+			
+			public function uint32(ID3D12VideoProcessor *self) GetNodeMask;
+			public function uint32(ID3D12VideoProcessor *self) GetNumInputStreamDescs;
+			public function HRESULT(ID3D12VideoProcessor *self, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs) GetInputStreamDescs;
+			public function D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC(ID3D12VideoProcessor *self) GetOutputStreamDesc;
+		}
+		[CRepr]
+		public struct ID3D12VideoDecodeCommandList : ID3D12CommandList
+		{
+			public const new Guid IID = .(0x3b60536e, 0xad29, 0x4e64, 0xa2, 0x69, 0xf8, 0x53, 0x83, 0x7e, 0x5e, 0x53);
+			
+			public function HRESULT(ID3D12VideoDecodeCommandList *self) Close;
+			public function HRESULT(ID3D12VideoDecodeCommandList *self, ID3D12CommandAllocator* pAllocator) Reset;
+			public function void(ID3D12VideoDecodeCommandList *self) ClearState;
+			public function void(ID3D12VideoDecodeCommandList *self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
+			public function void(ID3D12VideoDecodeCommandList *self, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
+			public function void(ID3D12VideoDecodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
+			public function void(ID3D12VideoDecodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
+			public function void(ID3D12VideoDecodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
+			public function void(ID3D12VideoDecodeCommandList *self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
+			public function void(ID3D12VideoDecodeCommandList *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+			public function void(ID3D12VideoDecodeCommandList *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+			public function void(ID3D12VideoDecodeCommandList *self) EndEvent;
+			public function void(ID3D12VideoDecodeCommandList *self, ID3D12VideoDecoder* pDecoder, D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS* pInputArguments) DecodeFrame;
+			public function void(ID3D12VideoDecodeCommandList *self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
+		}
+		[CRepr]
+		public struct ID3D12VideoProcessCommandList : ID3D12CommandList
+		{
+			public const new Guid IID = .(0xaeb2543a, 0x167f, 0x4682, 0xac, 0xc8, 0xd1, 0x59, 0xed, 0x4a, 0x62, 0x09);
+			
+			public function HRESULT(ID3D12VideoProcessCommandList *self) Close;
+			public function HRESULT(ID3D12VideoProcessCommandList *self, ID3D12CommandAllocator* pAllocator) Reset;
+			public function void(ID3D12VideoProcessCommandList *self) ClearState;
+			public function void(ID3D12VideoProcessCommandList *self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
+			public function void(ID3D12VideoProcessCommandList *self, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
+			public function void(ID3D12VideoProcessCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
+			public function void(ID3D12VideoProcessCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
+			public function void(ID3D12VideoProcessCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
+			public function void(ID3D12VideoProcessCommandList *self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
+			public function void(ID3D12VideoProcessCommandList *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+			public function void(ID3D12VideoProcessCommandList *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+			public function void(ID3D12VideoProcessCommandList *self) EndEvent;
+			public function void(ID3D12VideoProcessCommandList *self, ID3D12VideoProcessor* pVideoProcessor, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS* pInputArguments) ProcessFrames;
+			public function void(ID3D12VideoProcessCommandList *self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
+		}
+		[CRepr]
+		public struct ID3D12VideoDecodeCommandList1 : ID3D12VideoDecodeCommandList
+		{
+			public const new Guid IID = .(0xd52f011b, 0xb56e, 0x453c, 0xa0, 0x5a, 0xa7, 0xf3, 0x11, 0xc8, 0xf4, 0x72);
+			
+			public function void(ID3D12VideoDecodeCommandList1 *self, ID3D12VideoDecoder* pDecoder, D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1* pOutputArguments, D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS* pInputArguments) DecodeFrame1;
+		}
+		[CRepr]
+		public struct ID3D12VideoProcessCommandList1 : ID3D12VideoProcessCommandList
+		{
+			public const new Guid IID = .(0x542c5c4d, 0x7596, 0x434f, 0x8c, 0x93, 0x4e, 0xfa, 0x67, 0x66, 0xf2, 0x67);
+			
+			public function void(ID3D12VideoProcessCommandList1 *self, ID3D12VideoProcessor* pVideoProcessor, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1* pInputArguments) ProcessFrames1;
+		}
+		[CRepr]
+		public struct ID3D12VideoMotionEstimator : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x33fdae0e, 0x098b, 0x428f, 0x87, 0xbb, 0x34, 0xb6, 0x95, 0xde, 0x08, 0xf8);
+			
+			public function D3D12_VIDEO_MOTION_ESTIMATOR_DESC(ID3D12VideoMotionEstimator *self) GetDesc;
+			public function HRESULT(ID3D12VideoMotionEstimator *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12VideoMotionVectorHeap : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x5be17987, 0x743a, 0x4061, 0x83, 0x4b, 0x23, 0xd2, 0x2d, 0xae, 0xa5, 0x05);
+			
+			public function D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC(ID3D12VideoMotionVectorHeap *self) GetDesc;
+			public function HRESULT(ID3D12VideoMotionVectorHeap *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12VideoDevice1 : ID3D12VideoDevice
+		{
+			public const new Guid IID = .(0x981611ad, 0xa144, 0x4c83, 0x98, 0x90, 0xf3, 0x0e, 0x26, 0xd6, 0x58, 0xab);
+			
+			public function HRESULT(ID3D12VideoDevice1 *self, D3D12_VIDEO_MOTION_ESTIMATOR_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) CreateVideoMotionEstimator;
+			public function HRESULT(ID3D12VideoDevice1 *self, D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) CreateVideoMotionVectorHeap;
+		}
+		[CRepr]
+		public struct ID3D12VideoEncodeCommandList : ID3D12CommandList
+		{
+			public const new Guid IID = .(0x8455293a, 0x0cbd, 0x4831, 0x9b, 0x39, 0xfb, 0xdb, 0xab, 0x72, 0x47, 0x23);
+			
+			public function HRESULT(ID3D12VideoEncodeCommandList *self) Close;
+			public function HRESULT(ID3D12VideoEncodeCommandList *self, ID3D12CommandAllocator* pAllocator) Reset;
+			public function void(ID3D12VideoEncodeCommandList *self) ClearState;
+			public function void(ID3D12VideoEncodeCommandList *self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
+			public function void(ID3D12VideoEncodeCommandList *self, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
+			public function void(ID3D12VideoEncodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
+			public function void(ID3D12VideoEncodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
+			public function void(ID3D12VideoEncodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
+			public function void(ID3D12VideoEncodeCommandList *self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
+			public function void(ID3D12VideoEncodeCommandList *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+			public function void(ID3D12VideoEncodeCommandList *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+			public function void(ID3D12VideoEncodeCommandList *self) EndEvent;
+			public function void(ID3D12VideoEncodeCommandList *self, ID3D12VideoMotionEstimator* pMotionEstimator, D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT* pOutputArguments, D3D12_VIDEO_MOTION_ESTIMATOR_INPUT* pInputArguments) EstimateMotion;
+			public function void(ID3D12VideoEncodeCommandList *self, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT* pOutputArguments, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT* pInputArguments) ResolveMotionVectorHeap;
+			public function void(ID3D12VideoEncodeCommandList *self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
+			public function void(ID3D12VideoEncodeCommandList *self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12VideoDecoder1 : ID3D12VideoDecoder
+		{
+			public const new Guid IID = .(0x79a2e5fb, 0xccd2, 0x469a, 0x9f, 0xde, 0x19, 0x5d, 0x10, 0x95, 0x1f, 0x7e);
+			
+			public function HRESULT(ID3D12VideoDecoder1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap
+		{
+			public const new Guid IID = .(0xda1d98c5, 0x539f, 0x41b2, 0xbf, 0x6b, 0x11, 0x98, 0xa0, 0x3b, 0x6d, 0x26);
+			
+			public function HRESULT(ID3D12VideoDecoderHeap1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12VideoProcessor1 : ID3D12VideoProcessor
+		{
+			public const new Guid IID = .(0xf3cfe615, 0x553f, 0x425c, 0x86, 0xd8, 0xee, 0x8c, 0x1b, 0x1f, 0xb0, 0x1c);
+			
+			public function HRESULT(ID3D12VideoProcessor1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12VideoExtensionCommand : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x554e41e8, 0xae8e, 0x4a8c, 0xb7, 0xd2, 0x5b, 0x4f, 0x27, 0x4a, 0x30, 0xe4);
+			
+			public function D3D12_VIDEO_EXTENSION_COMMAND_DESC(ID3D12VideoExtensionCommand *self) GetDesc;
+			public function HRESULT(ID3D12VideoExtensionCommand *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12VideoDevice2 : ID3D12VideoDevice1
+		{
+			public const new Guid IID = .(0xf019ac49, 0xf838, 0x4a95, 0x9b, 0x17, 0x57, 0x94, 0x37, 0xc8, 0xf5, 0x13);
+			
+			public function HRESULT(ID3D12VideoDevice2 *self, D3D12_VIDEO_DECODER_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) CreateVideoDecoder1;
+			public function HRESULT(ID3D12VideoDevice2 *self, D3D12_VIDEO_DECODER_HEAP_DESC* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) CreateVideoDecoderHeap1;
+			public function HRESULT(ID3D12VideoDevice2 *self, uint32 NodeMask, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) CreateVideoProcessor1;
+			public function HRESULT(ID3D12VideoDevice2 *self, D3D12_VIDEO_EXTENSION_COMMAND_DESC* pDesc, void* pCreationParameters, uint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) CreateVideoExtensionCommand;
+			public function HRESULT(ID3D12VideoDevice2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes, void* pOutputData, uint OutputDataSizeInBytes) ExecuteExtensionCommand;
+		}
+		[CRepr]
+		public struct ID3D12VideoDecodeCommandList2 : ID3D12VideoDecodeCommandList1
+		{
+			public const new Guid IID = .(0x6e120880, 0xc114, 0x4153, 0x80, 0x36, 0xd2, 0x47, 0x05, 0x1e, 0x17, 0x29);
+			
+			public function void(ID3D12VideoDecodeCommandList2 *self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
+			public function void(ID3D12VideoDecodeCommandList2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) InitializeExtensionCommand;
+			public function void(ID3D12VideoDecodeCommandList2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) ExecuteExtensionCommand;
+		}
+		[CRepr]
+		public struct ID3D12VideoProcessCommandList2 : ID3D12VideoProcessCommandList1
+		{
+			public const new Guid IID = .(0xdb525ae4, 0x6ad6, 0x473c, 0xba, 0xa7, 0x59, 0xb2, 0xe3, 0x70, 0x82, 0xe4);
+			
+			public function void(ID3D12VideoProcessCommandList2 *self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
+			public function void(ID3D12VideoProcessCommandList2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) InitializeExtensionCommand;
+			public function void(ID3D12VideoProcessCommandList2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) ExecuteExtensionCommand;
+		}
+		[CRepr]
+		public struct ID3D12VideoEncodeCommandList1 : ID3D12VideoEncodeCommandList
+		{
+			public const new Guid IID = .(0x94971eca, 0x2bdb, 0x4769, 0x88, 0xcf, 0x36, 0x75, 0xea, 0x75, 0x7e, 0xbc);
+			
+			public function void(ID3D12VideoEncodeCommandList1 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) InitializeExtensionCommand;
+			public function void(ID3D12VideoEncodeCommandList1 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) ExecuteExtensionCommand;
+		}
+		[CRepr]
+		public struct ID3D12VideoEncoder : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x2e0d212d, 0x8df9, 0x44a6, 0xa7, 0x70, 0xbb, 0x28, 0x9b, 0x18, 0x27, 0x37);
+			
+			public function uint32(ID3D12VideoEncoder *self) GetNodeMask;
+			public function D3D12_VIDEO_ENCODER_FLAGS(ID3D12VideoEncoder *self) GetEncoderFlags;
+			public function D3D12_VIDEO_ENCODER_CODEC(ID3D12VideoEncoder *self) GetCodec;
+			public function HRESULT(ID3D12VideoEncoder *self, D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) GetCodecProfile;
+			public function HRESULT(ID3D12VideoEncoder *self, D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION dstCodecConfig) GetCodecConfiguration;
+			public function DXGI_FORMAT(ID3D12VideoEncoder *self) GetInputFormat;
+			public function D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE(ID3D12VideoEncoder *self) GetMaxMotionEstimationPrecision;
+		}
+		[CRepr]
+		public struct ID3D12VideoEncoderHeap : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x22b35d96, 0x876a, 0x44c0, 0xb2, 0x5e, 0xfb, 0x8c, 0x9c, 0x7f, 0x1c, 0x4a);
+			
+			public function uint32(ID3D12VideoEncoderHeap *self) GetNodeMask;
+			public function D3D12_VIDEO_ENCODER_HEAP_FLAGS(ID3D12VideoEncoderHeap *self) GetEncoderHeapFlags;
+			public function D3D12_VIDEO_ENCODER_CODEC(ID3D12VideoEncoderHeap *self) GetCodec;
+			public function HRESULT(ID3D12VideoEncoderHeap *self, D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) GetCodecProfile;
+			public function HRESULT(ID3D12VideoEncoderHeap *self, D3D12_VIDEO_ENCODER_LEVEL_SETTING dstLevel) GetCodecLevel;
+			public function uint32(ID3D12VideoEncoderHeap *self) GetResolutionListCount;
+			public function HRESULT(ID3D12VideoEncoderHeap *self, uint32 ResolutionsListCount, D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC* pResolutionList) GetResolutionList;
+		}
+		[CRepr]
+		public struct ID3D12VideoDevice3 : ID3D12VideoDevice2
+		{
+			public const new Guid IID = .(0x4243adb4, 0x3a32, 0x4666, 0x97, 0x3c, 0x0c, 0xcc, 0x56, 0x25, 0xdc, 0x44);
+			
+			public function HRESULT(ID3D12VideoDevice3 *self, D3D12_VIDEO_ENCODER_DESC* pDesc, Guid* riid, void** ppVideoEncoder) CreateVideoEncoder;
+			public function HRESULT(ID3D12VideoDevice3 *self, D3D12_VIDEO_ENCODER_HEAP_DESC* pDesc, Guid* riid, void** ppVideoEncoderHeap) CreateVideoEncoderHeap;
+		}
+		[CRepr]
+		public struct ID3D12VideoEncodeCommandList2 : ID3D12VideoEncodeCommandList1
+		{
+			public const new Guid IID = .(0x895491e2, 0xe701, 0x46a9, 0x9a, 0x1f, 0x8d, 0x34, 0x80, 0xed, 0x86, 0x7a);
+			
+			public function void(ID3D12VideoEncodeCommandList2 *self, ID3D12VideoEncoder* pEncoder, ID3D12VideoEncoderHeap* pHeap, D3D12_VIDEO_ENCODER_ENCODEFRAME_INPUT_ARGUMENTS* pInputArguments, D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS* pOutputArguments) EncodeFrame;
+			public function void(ID3D12VideoEncodeCommandList2 *self, D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS* pInputArguments, D3D12_VIDEO_ENCODER_RESOLVE_METADATA_OUTPUT_ARGUMENTS* pOutputArguments) ResolveEncoderOutputMetadata;
+		}
+		[CRepr]
+		public struct IWMValidate : IUnknown
+		{
+			public const new Guid IID = .(0xcee3def2, 0x3808, 0x414d, 0xbe, 0x66, 0xfa, 0xfd, 0x47, 0x22, 0x10, 0xbc);
+			
+			public function HRESULT(IWMValidate *self, Guid guidValidationID) SetIdentifier;
+		}
+		[CRepr]
+		public struct IValidateBinding : IUnknown
+		{
+			public const new Guid IID = .(0x04a578b2, 0xe778, 0x422a, 0xa8, 0x05, 0xb3, 0xee, 0x54, 0xd9, 0x0b, 0xd9);
+			
+			public function HRESULT(IValidateBinding *self, Guid guidLicensorID, uint8* pbEphemeron, uint32 cbEphemeron, uint8** ppbBlobValidationID, uint32* pcbBlobSize) GetIdentifier;
+		}
+		[CRepr]
+		public struct IWMVideoDecoderHurryup : IUnknown
+		{
+			public const new Guid IID = .(0x352bb3bd, 0x2d4d, 0x4323, 0x9e, 0x71, 0xdc, 0xdc, 0xfb, 0xd5, 0x3c, 0xa6);
+			
+			public function HRESULT(IWMVideoDecoderHurryup *self, int32 lHurryup) SetHurryup;
+			public function HRESULT(IWMVideoDecoderHurryup *self, int32* plHurryup) GetHurryup;
+		}
+		[CRepr]
+		public struct IWMVideoForceKeyFrame : IUnknown
+		{
+			public const new Guid IID = .(0x9f8496be, 0x5b9a, 0x41b9, 0xa9, 0xe8, 0xf2, 0x1c, 0xd8, 0x05, 0x96, 0xc2);
+			
+			public function HRESULT(IWMVideoForceKeyFrame *self) SetKeyFrame;
+		}
+		[CRepr]
+		public struct IWMCodecStrings : IUnknown
+		{
+			public const new Guid IID = .(0xa7b2504b, 0xe58a, 0x47fb, 0x95, 0x8b, 0xca, 0xc7, 0x16, 0x5a, 0x05, 0x7d);
+			
+			public function HRESULT(IWMCodecStrings *self, DMO_MEDIA_TYPE* pmt, uint32 cchLength, char16* szName, uint32* pcchLength) GetName;
+			public function HRESULT(IWMCodecStrings *self, DMO_MEDIA_TYPE* pmt, uint32 cchLength, char16* szDescription, uint32* pcchLength) GetDescription;
+		}
+		[CRepr]
+		public struct IWMCodecProps : IUnknown
+		{
+			public const new Guid IID = .(0x2573e11a, 0xf01a, 0x4fdd, 0xa9, 0x8d, 0x63, 0xb8, 0xe0, 0xba, 0x95, 0x89);
+			
+			public function HRESULT(IWMCodecProps *self, DMO_MEDIA_TYPE* pmt, PWSTR pszName, WMT_PROP_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetFormatProp;
+			public function HRESULT(IWMCodecProps *self, uint32 dwFormat, PWSTR pszName, WMT_PROP_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecProp;
+		}
+		[CRepr]
+		public struct IWMCodecLeakyBucket : IUnknown
+		{
+			public const new Guid IID = .(0xa81ba647, 0x6227, 0x43b7, 0xb2, 0x31, 0xc7, 0xb1, 0x51, 0x35, 0xdd, 0x7d);
+			
+			public function HRESULT(IWMCodecLeakyBucket *self, uint32 ulBufferSize) SetBufferSizeBits;
+			public function HRESULT(IWMCodecLeakyBucket *self, uint32* pulBufferSize) GetBufferSizeBits;
+			public function HRESULT(IWMCodecLeakyBucket *self, uint32 ulBufferFullness) SetBufferFullnessBits;
+			public function HRESULT(IWMCodecLeakyBucket *self, uint32* pulBufferFullness) GetBufferFullnessBits;
+		}
+		[CRepr]
+		public struct IWMCodecOutputTimestamp : IUnknown
+		{
+			public const new Guid IID = .(0xb72adf95, 0x7adc, 0x4a72, 0xbc, 0x05, 0x57, 0x7d, 0x8e, 0xa6, 0xbf, 0x68);
+			
+			public function HRESULT(IWMCodecOutputTimestamp *self, int64* prtTime) GetNextOutputTime;
+		}
+		[CRepr]
+		public struct IWMVideoDecoderReconBuffer : IUnknown
+		{
+			public const new Guid IID = .(0x45bda2ac, 0x88e2, 0x4923, 0x98, 0xba, 0x39, 0x49, 0x08, 0x07, 0x11, 0xa3);
+			
+			public function HRESULT(IWMVideoDecoderReconBuffer *self, uint32* pdwSize) GetReconstructedVideoFrameSize;
+			public function HRESULT(IWMVideoDecoderReconBuffer *self, IMediaBuffer* pBuf) GetReconstructedVideoFrame;
+			public function HRESULT(IWMVideoDecoderReconBuffer *self, IMediaBuffer* pBuf) SetReconstructedVideoFrame;
+		}
+		[CRepr]
+		public struct IWMCodecPrivateData : IUnknown
+		{
+			public const new Guid IID = .(0x73f0be8e, 0x57f7, 0x4f01, 0xaa, 0x66, 0x9f, 0x57, 0x34, 0x0c, 0xfe, 0x0e);
+			
+			public function HRESULT(IWMCodecPrivateData *self, DMO_MEDIA_TYPE* pmt) SetPartialOutputType;
+			public function HRESULT(IWMCodecPrivateData *self, uint8* pbData, uint32* pcbData) GetPrivateData;
+		}
+		[CRepr]
+		public struct IWMSampleExtensionSupport : IUnknown
+		{
+			public const new Guid IID = .(0x9bca9884, 0x0604, 0x4c2a, 0x87, 0xda, 0x79, 0x3f, 0xf4, 0xd5, 0x86, 0xc3);
+			
+			public function HRESULT(IWMSampleExtensionSupport *self, BOOL fUseExtensions) SetUseSampleExtensions;
+		}
+		[CRepr]
+		public struct IWMResamplerProps : IUnknown
+		{
+			public const new Guid IID = .(0xe7e9984f, 0xf09f, 0x4da4, 0x90, 0x3f, 0x6e, 0x2e, 0x0e, 0xfe, 0x56, 0xb5);
+			
+			public function HRESULT(IWMResamplerProps *self, int32 lhalfFilterLen) SetHalfFilterLength;
+			public function HRESULT(IWMResamplerProps *self, float* userChannelMtx) SetUserChannelMtx;
+		}
+		[CRepr]
+		public struct IWMResizerProps : IUnknown
+		{
+			public const new Guid IID = .(0x57665d4c, 0x0414, 0x4faa, 0x90, 0x5b, 0x10, 0xe5, 0x46, 0xf8, 0x1c, 0x33);
+			
+			public function HRESULT(IWMResizerProps *self, int32 lquality) SetResizerQuality;
+			public function HRESULT(IWMResizerProps *self, int32 lmode) SetInterlaceMode;
+			public function HRESULT(IWMResizerProps *self, int32 lClipOriXSrc, int32 lClipOriYSrc, int32 lClipWidthSrc, int32 lClipHeightSrc) SetClipRegion;
+			public function HRESULT(IWMResizerProps *self, int32 lClipOriXSrc, int32 lClipOriYSrc, int32 lClipWidthSrc, int32 lClipHeightSrc, int32 lClipOriXDst, int32 lClipOriYDst, int32 lClipWidthDst, int32 lClipHeightDst) SetFullCropRegion;
+			public function HRESULT(IWMResizerProps *self, int32* lClipOriXSrc, int32* lClipOriYSrc, int32* lClipWidthSrc, int32* lClipHeightSrc, int32* lClipOriXDst, int32* lClipOriYDst, int32* lClipWidthDst, int32* lClipHeightDst) GetFullCropRegion;
+		}
+		[CRepr]
+		public struct IWMColorLegalizerProps : IUnknown
+		{
+			public const new Guid IID = .(0x776c93b3, 0xb72d, 0x4508, 0xb6, 0xd0, 0x20, 0x87, 0x85, 0xf5, 0x53, 0xe7);
+			
+			public function HRESULT(IWMColorLegalizerProps *self, int32 lquality) SetColorLegalizerQuality;
+		}
+		[CRepr]
+		public struct IWMInterlaceProps : IUnknown
+		{
+			public const new Guid IID = .(0x7b12e5d1, 0xbd22, 0x48ea, 0xbc, 0x06, 0x98, 0xe8, 0x93, 0x22, 0x1c, 0x89);
+			
+			public function HRESULT(IWMInterlaceProps *self, int32 iProcessType) SetProcessType;
+			public function HRESULT(IWMInterlaceProps *self, int32 iInitPattern) SetInitInverseTeleCinePattern;
+			public function HRESULT(IWMInterlaceProps *self) SetLastFrame;
+		}
+		[CRepr]
+		public struct IWMFrameInterpProps : IUnknown
+		{
+			public const new Guid IID = .(0x4c06bb9b, 0x626c, 0x4614, 0x83, 0x29, 0xcc, 0x6a, 0x21, 0xb9, 0x3f, 0xa0);
+			
+			public function HRESULT(IWMFrameInterpProps *self, int32 lFrameRate, int32 lScale) SetFrameRateIn;
+			public function HRESULT(IWMFrameInterpProps *self, int32 lFrameRate, int32 lScale) SetFrameRateOut;
+			public function HRESULT(IWMFrameInterpProps *self, BOOL bFIEnabled) SetFrameInterpEnabled;
+			public function HRESULT(IWMFrameInterpProps *self, int32 iComplexity) SetComplexityLevel;
+		}
+		[CRepr]
+		public struct IWMColorConvProps : IUnknown
+		{
+			public const new Guid IID = .(0xe6a49e22, 0xc099, 0x421d, 0xaa, 0xd3, 0xc0, 0x61, 0xfb, 0x4a, 0xe8, 0x5b);
+			
+			public function HRESULT(IWMColorConvProps *self, int32 lMode) SetMode;
+			public function HRESULT(IWMColorConvProps *self, int32 lSrcCropLeft, int32 lSrcCropTop, int32 lDstCropLeft, int32 lDstCropTop, int32 lCropWidth, int32 lCropHeight) SetFullCroppingParam;
+		}
+		[CRepr]
+		public struct ITocEntry : IUnknown
+		{
+			public const new Guid IID = .(0xf22f5e06, 0x585c, 0x4def, 0x85, 0x23, 0x65, 0x55, 0xcf, 0xbc, 0x0c, 0xb3);
+			
+			public function HRESULT(ITocEntry *self, PWSTR pwszTitle) SetTitle;
+			public function HRESULT(ITocEntry *self, uint16* pwTitleSize, char16* pwszTitle) GetTitle;
+			public function HRESULT(ITocEntry *self, TOC_ENTRY_DESCRIPTOR* pDescriptor) SetDescriptor;
+			public function HRESULT(ITocEntry *self, TOC_ENTRY_DESCRIPTOR* pDescriptor) GetDescriptor;
+			public function HRESULT(ITocEntry *self, uint32 dwNumSubEntries, uint16* pwSubEntryIndices) SetSubEntries;
+			public function HRESULT(ITocEntry *self, uint32* pdwNumSubEntries, uint16* pwSubEntryIndices) GetSubEntries;
+			public function HRESULT(ITocEntry *self, uint32 dwDescriptionDataSize, uint8* pbtDescriptionData, Guid* pguidType) SetDescriptionData;
+			public function HRESULT(ITocEntry *self, uint32* pdwDescriptionDataSize, uint8* pbtDescriptionData, Guid* pGuidType) GetDescriptionData;
+		}
+		[CRepr]
+		public struct ITocEntryList : IUnknown
+		{
+			public const new Guid IID = .(0x3a8cccbd, 0x0efd, 0x43a3, 0xb8, 0x38, 0xf3, 0x8a, 0x55, 0x2b, 0xa2, 0x37);
+			
+			public function HRESULT(ITocEntryList *self, uint32* pdwEntryCount) GetEntryCount;
+			public function HRESULT(ITocEntryList *self, uint32 dwEntryIndex, ITocEntry** ppEntry) GetEntryByIndex;
+			public function HRESULT(ITocEntryList *self, ITocEntry* pEntry, uint32* pdwEntryIndex) AddEntry;
+			public function HRESULT(ITocEntryList *self, uint32 dwEntryIndex, ITocEntry* pEntry) AddEntryByIndex;
+			public function HRESULT(ITocEntryList *self, uint32 dwEntryIndex) RemoveEntryByIndex;
+		}
+		[CRepr]
+		public struct IToc : IUnknown
+		{
+			public const new Guid IID = .(0xd6f05441, 0xa919, 0x423b, 0x91, 0xa0, 0x89, 0xd5, 0xb4, 0xa8, 0xab, 0x77);
+			
+			public function HRESULT(IToc *self, TOC_DESCRIPTOR* pDescriptor) SetDescriptor;
+			public function HRESULT(IToc *self, TOC_DESCRIPTOR* pDescriptor) GetDescriptor;
+			public function HRESULT(IToc *self, PWSTR pwszDescription) SetDescription;
+			public function HRESULT(IToc *self, uint16* pwDescriptionSize, char16* pwszDescription) GetDescription;
+			public function HRESULT(IToc *self, uint32 dwContextSize, uint8* pbtContext) SetContext;
+			public function HRESULT(IToc *self, uint32* pdwContextSize, uint8* pbtContext) GetContext;
+			public function HRESULT(IToc *self, uint16* pwCount) GetEntryListCount;
+			public function HRESULT(IToc *self, uint16 wEntryListIndex, ITocEntryList** ppEntryList) GetEntryListByIndex;
+			public function HRESULT(IToc *self, ITocEntryList* pEntryList, uint16* pwEntryListIndex) AddEntryList;
+			public function HRESULT(IToc *self, uint16 wEntryListIndex, ITocEntryList* pEntryList) AddEntryListByIndex;
+			public function HRESULT(IToc *self, uint16 wEntryListIndex) RemoveEntryListByIndex;
+		}
+		[CRepr]
+		public struct ITocCollection : IUnknown
+		{
+			public const new Guid IID = .(0x23fee831, 0xae96, 0x42df, 0xb1, 0x70, 0x25, 0xa0, 0x48, 0x47, 0xa3, 0xca);
+			
+			public function HRESULT(ITocCollection *self, uint32* pdwEntryCount) GetEntryCount;
+			public function HRESULT(ITocCollection *self, uint32 dwEntryIndex, IToc** ppToc) GetEntryByIndex;
+			public function HRESULT(ITocCollection *self, IToc* pToc, uint32* pdwEntryIndex) AddEntry;
+			public function HRESULT(ITocCollection *self, uint32 dwEntryIndex, IToc* pToc) AddEntryByIndex;
+			public function HRESULT(ITocCollection *self, uint32 dwEntryIndex) RemoveEntryByIndex;
+		}
+		[CRepr]
+		public struct ITocParser : IUnknown
+		{
+			public const new Guid IID = .(0xecfb9a55, 0x9298, 0x4f49, 0x88, 0x7f, 0x0b, 0x36, 0x20, 0x65, 0x99, 0xd2);
+			
+			public function HRESULT(ITocParser *self, PWSTR pwszFileName) Init;
+			public function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, uint32* pdwTocCount) GetTocCount;
+			public function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, uint32 dwTocIndex, IToc** ppToc) GetTocByIndex;
+			public function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, Guid guidTocType, ITocCollection** ppTocs) GetTocByType;
+			public function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, IToc* pToc, uint32* pdwTocIndex) AddToc;
+			public function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, uint32 dwTocIndex) RemoveTocByIndex;
+			public function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, Guid guidTocType) RemoveTocByType;
+			public function HRESULT(ITocParser *self) Commit;
+		}
+		[CRepr]
+		public struct IFileIo : IUnknown
+		{
+			public const new Guid IID = .(0x11993196, 0x1244, 0x4840, 0xab, 0x44, 0x48, 0x09, 0x75, 0xc4, 0xff, 0xe4);
+			
+			public function HRESULT(IFileIo *self, FILE_ACCESSMODE eAccessMode, FILE_OPENMODE eOpenMode, PWSTR pwszFileName) Initialize;
+			public function HRESULT(IFileIo *self, uint64* pqwLength) GetLength;
+			public function HRESULT(IFileIo *self, uint64 qwLength) SetLength;
+			public function HRESULT(IFileIo *self, uint64* pqwPosition) GetCurrentPosition;
+			public function HRESULT(IFileIo *self, uint64 qwPosition) SetCurrentPosition;
+			public function HRESULT(IFileIo *self, BOOL* pbEndOfStream) IsEndOfStream;
+			public function HRESULT(IFileIo *self, uint8* pbt, uint32 ul, uint32* pulRead) Read;
+			public function HRESULT(IFileIo *self, uint8* pbt, uint32 ul, uint32* pulWritten) Write;
+			public function HRESULT(IFileIo *self, SEEK_ORIGIN eSeekOrigin, uint64 qwSeekOffset, uint32 dwSeekFlags, uint64* pqwCurrentPosition) Seek;
+			public function HRESULT(IFileIo *self) Close;
+		}
+		[CRepr]
+		public struct IFileClient : IUnknown
+		{
+			public const new Guid IID = .(0xbfccd196, 0x1244, 0x4840, 0xab, 0x44, 0x48, 0x09, 0x75, 0xc4, 0xff, 0xe4);
+			
+			public function HRESULT(IFileClient *self, uint64* pqwSize) GetObjectDiskSize;
+			public function HRESULT(IFileClient *self, IFileIo* pFio) Write;
+			public function HRESULT(IFileClient *self, IFileIo* pFio) Read;
+		}
+		[CRepr]
+		public struct IClusterDetector : IUnknown
+		{
+			public const new Guid IID = .(0x3f07f7b7, 0xc680, 0x41d9, 0x94, 0x23, 0x91, 0x51, 0x07, 0xec, 0x9f, 0xf9);
+			
+			public function HRESULT(IClusterDetector *self, uint16 wBaseEntryLevel, uint16 wClusterEntryLevel) Initialize;
+			public function HRESULT(IClusterDetector *self, uint32 dwMaxNumClusters, float fMinClusterDuration, float fMaxClusterDuration, IToc* pSrcToc, IToc** ppDstToc) Detect;
+		}
+		[CRepr]
+		public struct IDXVAHD_Device : IUnknown
+		{
+			public const new Guid IID = .(0x95f12dfd, 0xd77e, 0x49be, 0x81, 0x5f, 0x57, 0xd5, 0x79, 0x63, 0x4d, 0x6d);
+			
+			public function HRESULT(IDXVAHD_Device *self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, uint32 Usage, DXVAHD_SURFACE_TYPE Type, uint32 NumSurfaces, IDirect3DSurface9** ppSurfaces, HANDLE* pSharedHandle) CreateVideoSurface;
+			public function HRESULT(IDXVAHD_Device *self, DXVAHD_VPDEVCAPS* pCaps) GetVideoProcessorDeviceCaps;
+			public function HRESULT(IDXVAHD_Device *self, uint32 Count, D3DFORMAT* pFormats) GetVideoProcessorOutputFormats;
+			public function HRESULT(IDXVAHD_Device *self, uint32 Count, D3DFORMAT* pFormats) GetVideoProcessorInputFormats;
+			public function HRESULT(IDXVAHD_Device *self, uint32 Count, DXVAHD_VPCAPS* pCaps) GetVideoProcessorCaps;
+			public function HRESULT(IDXVAHD_Device *self, Guid* pVPGuid, uint32 Count, DXVAHD_CUSTOM_RATE_DATA* pRates) GetVideoProcessorCustomRates;
+			public function HRESULT(IDXVAHD_Device *self, DXVAHD_FILTER Filter, DXVAHD_FILTER_RANGE_DATA* pRange) GetVideoProcessorFilterRange;
+			public function HRESULT(IDXVAHD_Device *self, Guid* pVPGuid, IDXVAHD_VideoProcessor** ppVideoProcessor) CreateVideoProcessor;
+		}
+		[CRepr]
+		public struct IDXVAHD_VideoProcessor : IUnknown
+		{
+			public const new Guid IID = .(0x95f4edf4, 0x6e03, 0x4cd7, 0xbe, 0x1b, 0x30, 0x75, 0xd6, 0x65, 0xaa, 0x52);
+			
+			public function HRESULT(IDXVAHD_VideoProcessor *self, DXVAHD_BLT_STATE State, uint32 DataSize, void* pData) SetVideoProcessBltState;
+			public function HRESULT(IDXVAHD_VideoProcessor *self, DXVAHD_BLT_STATE State, uint32 DataSize, void* pData) GetVideoProcessBltState;
+			public function HRESULT(IDXVAHD_VideoProcessor *self, uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData) SetVideoProcessStreamState;
+			public function HRESULT(IDXVAHD_VideoProcessor *self, uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData) GetVideoProcessStreamState;
+			public function HRESULT(IDXVAHD_VideoProcessor *self, IDirect3DSurface9* pOutputSurface, uint32 OutputFrame, uint32 StreamCount, DXVAHD_STREAM_DATA* pStreams) VideoProcessBltHD;
+		}
+		[CRepr]
+		public struct IDirect3DDeviceManager9 : IUnknown
+		{
+			public const new Guid IID = .(0xa0cade0f, 0x06d5, 0x4cf4, 0xa1, 0xc7, 0xf3, 0xcd, 0xd7, 0x25, 0xaa, 0x75);
+			
+			public function HRESULT(IDirect3DDeviceManager9 *self, IDirect3DDevice9* pDevice, uint32 resetToken) ResetDevice;
+			public function HRESULT(IDirect3DDeviceManager9 *self, HANDLE* phDevice) OpenDeviceHandle;
+			public function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice) CloseDeviceHandle;
+			public function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice) TestDevice;
+			public function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice, IDirect3DDevice9** ppDevice, BOOL fBlock) LockDevice;
+			public function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice, BOOL fSaveState) UnlockDevice;
+			public function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice, Guid* riid, void** ppService) GetVideoService;
+		}
+		[CRepr]
+		public struct IDirectXVideoAccelerationService : IUnknown
+		{
+			public const new Guid IID = .(0xfc51a550, 0xd5e7, 0x11d9, 0xaf, 0x55, 0x00, 0x05, 0x4e, 0x43, 0xff, 0x02);
+			
+			public function HRESULT(IDirectXVideoAccelerationService *self, uint32 Width, uint32 Height, uint32 BackBuffers, D3DFORMAT Format, D3DPOOL Pool, uint32 Usage, DXVA2_VideoRenderTargetType DxvaType, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle) CreateSurface;
+		}
+		[CRepr]
+		public struct IDirectXVideoDecoderService : IDirectXVideoAccelerationService
+		{
+			public const new Guid IID = .(0xfc51a551, 0xd5e7, 0x11d9, 0xaf, 0x55, 0x00, 0x05, 0x4e, 0x43, 0xff, 0x02);
+			
+			public function HRESULT(IDirectXVideoDecoderService *self, uint32* pCount, Guid** pGuids) GetDecoderDeviceGuids;
+			public function HRESULT(IDirectXVideoDecoderService *self, Guid* Guid, uint32* pCount, D3DFORMAT** pFormats) GetDecoderRenderTargets;
+			public function HRESULT(IDirectXVideoDecoderService *self, Guid* Guid, DXVA2_VideoDesc* pVideoDesc, void* pReserved, uint32* pCount, DXVA2_ConfigPictureDecode** ppConfigs) GetDecoderConfigurations;
+			public function HRESULT(IDirectXVideoDecoderService *self, Guid* Guid, DXVA2_VideoDesc* pVideoDesc, DXVA2_ConfigPictureDecode* pConfig, IDirect3DSurface9** ppDecoderRenderTargets, uint32 NumRenderTargets, IDirectXVideoDecoder** ppDecode) CreateVideoDecoder;
+		}
+		[CRepr]
+		public struct IDirectXVideoProcessorService : IDirectXVideoAccelerationService
+		{
+			public const new Guid IID = .(0xfc51a552, 0xd5e7, 0x11d9, 0xaf, 0x55, 0x00, 0x05, 0x4e, 0x43, 0xff, 0x02);
+			
+			public function HRESULT(IDirectXVideoProcessorService *self, void* pCallbacks) RegisterVideoProcessorSoftwareDevice;
+			public function HRESULT(IDirectXVideoProcessorService *self, DXVA2_VideoDesc* pVideoDesc, uint32* pCount, Guid** pGuids) GetVideoProcessorDeviceGuids;
+			public function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, uint32* pCount, D3DFORMAT** pFormats) GetVideoProcessorRenderTargets;
+			public function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32* pCount, D3DFORMAT** pFormats) GetVideoProcessorSubStreamFormats;
+			public function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, DXVA2_VideoProcessorCaps* pCaps) GetVideoProcessorCaps;
+			public function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 ProcAmpCap, DXVA2_ValueRange* pRange) GetProcAmpRange;
+			public function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 FilterSetting, DXVA2_ValueRange* pRange) GetFilterPropertyRange;
+			public function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess) CreateVideoProcessor;
+		}
+		[CRepr]
+		public struct IDirectXVideoDecoder : IUnknown
+		{
+			public const new Guid IID = .(0xf2b0810a, 0xfd00, 0x43c9, 0x91, 0x8c, 0xdf, 0x94, 0xe2, 0xd8, 0xef, 0x7d);
+			
+			public function HRESULT(IDirectXVideoDecoder *self, IDirectXVideoDecoderService** ppService) GetVideoDecoderService;
+			public function HRESULT(IDirectXVideoDecoder *self, Guid* pDeviceGuid, DXVA2_VideoDesc* pVideoDesc, DXVA2_ConfigPictureDecode* pConfig, IDirect3DSurface9*** pDecoderRenderTargets, uint32* pNumSurfaces) GetCreationParameters;
+			public function HRESULT(IDirectXVideoDecoder *self, DXVA2_BufferfType BufferType, void** ppBuffer, uint32* pBufferSize) GetBuffer;
+			public function HRESULT(IDirectXVideoDecoder *self, uint32 BufferType) ReleaseBuffer;
+			public function HRESULT(IDirectXVideoDecoder *self, IDirect3DSurface9* pRenderTarget, void* pvPVPData) BeginFrame;
+			public function HRESULT(IDirectXVideoDecoder *self, HANDLE* pHandleComplete) EndFrame;
+			public function HRESULT(IDirectXVideoDecoder *self, DXVA2_DecodeExecuteParams* pExecuteParams) Execute;
+		}
+		[CRepr]
+		public struct IDirectXVideoProcessor : IUnknown
+		{
+			public const new Guid IID = .(0x8c3a39f0, 0x916e, 0x4690, 0x80, 0x4f, 0x4c, 0x80, 0x01, 0x35, 0x5d, 0x25);
+			
+			public function HRESULT(IDirectXVideoProcessor *self, IDirectXVideoProcessorService** ppService) GetVideoProcessorService;
+			public function HRESULT(IDirectXVideoProcessor *self, Guid* pDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT* pRenderTargetFormat, uint32* pMaxNumSubStreams) GetCreationParameters;
+			public function HRESULT(IDirectXVideoProcessor *self, DXVA2_VideoProcessorCaps* pCaps) GetVideoProcessorCaps;
+			public function HRESULT(IDirectXVideoProcessor *self, uint32 ProcAmpCap, DXVA2_ValueRange* pRange) GetProcAmpRange;
+			public function HRESULT(IDirectXVideoProcessor *self, uint32 FilterSetting, DXVA2_ValueRange* pRange) GetFilterPropertyRange;
+			public function HRESULT(IDirectXVideoProcessor *self, IDirect3DSurface9* pRenderTarget, DXVA2_VideoProcessBltParams* pBltParams, DXVA2_VideoSample* pSamples, uint32 NumSamples, HANDLE* pHandleComplete) VideoProcessBlt;
+		}
+		[CRepr]
+		public struct IDirectXVideoMemoryConfiguration : IUnknown
+		{
+			public const new Guid IID = .(0xb7f916dd, 0xdb3b, 0x49c1, 0x84, 0xd7, 0xe4, 0x5e, 0xf9, 0x9e, 0xc7, 0x26);
+			
+			public function HRESULT(IDirectXVideoMemoryConfiguration *self, uint32 dwTypeIndex, DXVA2_SurfaceType* pdwType) GetAvailableSurfaceTypeByIndex;
+			public function HRESULT(IDirectXVideoMemoryConfiguration *self, DXVA2_SurfaceType dwType) SetSurfaceType;
+		}
+		[CRepr]
+		public struct IOPMVideoOutput : IUnknown
+		{
+			public const new Guid IID = .(0x0a15159d, 0x41c7, 0x4456, 0x93, 0xe1, 0x28, 0x4c, 0xd6, 0x1d, 0x4e, 0x8d);
+			
+			public function HRESULT(IOPMVideoOutput *self, OPM_RANDOM_NUMBER* prnRandomNumber, uint8** ppbCertificate, uint32* pulCertificateLength) StartInitialization;
+			public function HRESULT(IOPMVideoOutput *self, OPM_ENCRYPTED_INITIALIZATION_PARAMETERS* pParameters) FinishInitialization;
+			public function HRESULT(IOPMVideoOutput *self, OPM_GET_INFO_PARAMETERS* pParameters, OPM_REQUESTED_INFORMATION* pRequestedInformation) GetInformation;
+			public function HRESULT(IOPMVideoOutput *self, OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS* pParameters, OPM_REQUESTED_INFORMATION* pRequestedInformation) COPPCompatibleGetInformation;
+			public function HRESULT(IOPMVideoOutput *self, OPM_CONFIGURE_PARAMETERS* pParameters, uint32 ulAdditionalParametersSize, uint8* pbAdditionalParameters) Configure;
+		}
+		[CRepr]
+		public struct IMFAttributes : IUnknown
+		{
+			public const new Guid IID = .(0x2cd2d921, 0xc447, 0x44a7, 0xa1, 0x3c, 0x4a, 0xda, 0xbf, 0xc2, 0x47, 0xe3);
+			
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, PROPVARIANT* pValue) GetItem;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, MF_ATTRIBUTE_TYPE* pType) GetItemType;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, PROPVARIANT* Value, BOOL* pbResult) CompareItem;
+			public function HRESULT(IMFAttributes *self, IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, BOOL* pbResult) Compare;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, uint32* punValue) GetUINT32;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, uint64* punValue) GetUINT64;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, double* pfValue) GetDouble;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, Guid* pguidValue) GetGUID;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, uint32* pcchLength) GetStringLength;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, char16* pwszValue, uint32 cchBufSize, uint32* pcchLength) GetString;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, PWSTR* ppwszValue, uint32* pcchLength) GetAllocatedString;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, uint32* pcbBlobSize) GetBlobSize;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, uint8* pBuf, uint32 cbBufSize, uint32* pcbBlobSize) GetBlob;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, uint8** ppBuf, uint32* pcbSize) GetAllocatedBlob;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, Guid* riid, void** ppv) GetUnknown;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, PROPVARIANT* Value) SetItem;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey) DeleteItem;
+			public function HRESULT(IMFAttributes *self) DeleteAllItems;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, uint32 unValue) SetUINT32;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, uint64 unValue) SetUINT64;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, double fValue) SetDouble;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, Guid* guidValue) SetGUID;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, PWSTR wszValue) SetString;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, uint8* pBuf, uint32 cbBufSize) SetBlob;
+			public function HRESULT(IMFAttributes *self, Guid* guidKey, IUnknown* pUnknown) SetUnknown;
+			public function HRESULT(IMFAttributes *self) LockStore;
+			public function HRESULT(IMFAttributes *self) UnlockStore;
+			public function HRESULT(IMFAttributes *self, uint32* pcItems) GetCount;
+			public function HRESULT(IMFAttributes *self, uint32 unIndex, Guid* pguidKey, PROPVARIANT* pValue) GetItemByIndex;
+			public function HRESULT(IMFAttributes *self, IMFAttributes* pDest) CopyAllItems;
+		}
+		[CRepr]
+		public struct IMFMediaBuffer : IUnknown
+		{
+			public const new Guid IID = .(0x045fa593, 0x8799, 0x42b8, 0xbc, 0x8d, 0x89, 0x68, 0xc6, 0x45, 0x35, 0x07);
+			
+			public function HRESULT(IMFMediaBuffer *self, uint8** ppbBuffer, uint32* pcbMaxLength, uint32* pcbCurrentLength) Lock;
+			public function HRESULT(IMFMediaBuffer *self) Unlock;
+			public function HRESULT(IMFMediaBuffer *self, uint32* pcbCurrentLength) GetCurrentLength;
+			public function HRESULT(IMFMediaBuffer *self, uint32 cbCurrentLength) SetCurrentLength;
+			public function HRESULT(IMFMediaBuffer *self, uint32* pcbMaxLength) GetMaxLength;
+		}
+		[CRepr]
+		public struct IMFSample : IMFAttributes
+		{
+			public const new Guid IID = .(0xc40a00f2, 0xb93a, 0x4d80, 0xae, 0x8c, 0x5a, 0x1c, 0x63, 0x4f, 0x58, 0xe4);
+			
+			public function HRESULT(IMFSample *self, uint32* pdwSampleFlags) GetSampleFlags;
+			public function HRESULT(IMFSample *self, uint32 dwSampleFlags) SetSampleFlags;
+			public function HRESULT(IMFSample *self, int64* phnsSampleTime) GetSampleTime;
+			public function HRESULT(IMFSample *self, int64 hnsSampleTime) SetSampleTime;
+			public function HRESULT(IMFSample *self, int64* phnsSampleDuration) GetSampleDuration;
+			public function HRESULT(IMFSample *self, int64 hnsSampleDuration) SetSampleDuration;
+			public function HRESULT(IMFSample *self, uint32* pdwBufferCount) GetBufferCount;
+			public function HRESULT(IMFSample *self, uint32 dwIndex, IMFMediaBuffer** ppBuffer) GetBufferByIndex;
+			public function HRESULT(IMFSample *self, IMFMediaBuffer** ppBuffer) ConvertToContiguousBuffer;
+			public function HRESULT(IMFSample *self, IMFMediaBuffer* pBuffer) AddBuffer;
+			public function HRESULT(IMFSample *self, uint32 dwIndex) RemoveBufferByIndex;
+			public function HRESULT(IMFSample *self) RemoveAllBuffers;
+			public function HRESULT(IMFSample *self, uint32* pcbTotalLength) GetTotalLength;
+			public function HRESULT(IMFSample *self, IMFMediaBuffer* pBuffer) CopyToBuffer;
+		}
+		[CRepr]
+		public struct IMF2DBuffer : IUnknown
+		{
+			public const new Guid IID = .(0x7dc9d5f9, 0x9ed9, 0x44ec, 0x9b, 0xbf, 0x06, 0x00, 0xbb, 0x58, 0x9f, 0xbb);
+			
+			public function HRESULT(IMF2DBuffer *self, uint8** ppbScanline0, int32* plPitch) Lock2D;
+			public function HRESULT(IMF2DBuffer *self) Unlock2D;
+			public function HRESULT(IMF2DBuffer *self, uint8** pbScanline0, int32* plPitch) GetScanline0AndPitch;
+			public function HRESULT(IMF2DBuffer *self, BOOL* pfIsContiguous) IsContiguousFormat;
+			public function HRESULT(IMF2DBuffer *self, uint32* pcbLength) GetContiguousLength;
+			public function HRESULT(IMF2DBuffer *self, uint8* pbDestBuffer, uint32 cbDestBuffer) ContiguousCopyTo;
+			public function HRESULT(IMF2DBuffer *self, uint8* pbSrcBuffer, uint32 cbSrcBuffer) ContiguousCopyFrom;
+		}
+		[CRepr]
+		public struct IMF2DBuffer2 : IMF2DBuffer
+		{
+			public const new Guid IID = .(0x33ae5ea6, 0x4316, 0x436f, 0x8d, 0xdd, 0xd7, 0x3d, 0x22, 0xf8, 0x29, 0xec);
+			
+			public function HRESULT(IMF2DBuffer2 *self, MF2DBuffer_LockFlags lockFlags, uint8** ppbScanline0, int32* plPitch, uint8** ppbBufferStart, uint32* pcbBufferLength) Lock2DSize;
+			public function HRESULT(IMF2DBuffer2 *self, IMF2DBuffer2* pDestBuffer) Copy2DTo;
+		}
+		[CRepr]
+		public struct IMFDXGIBuffer : IUnknown
+		{
+			public const new Guid IID = .(0xe7174cfa, 0x1c9e, 0x48b1, 0x88, 0x66, 0x62, 0x62, 0x26, 0xbf, 0xc2, 0x58);
+			
+			public function HRESULT(IMFDXGIBuffer *self, Guid* riid, void** ppvObject) GetResource;
+			public function HRESULT(IMFDXGIBuffer *self, uint32* puSubresource) GetSubresourceIndex;
+			public function HRESULT(IMFDXGIBuffer *self, Guid* guid, Guid* riid, void** ppvObject) GetUnknown;
+			public function HRESULT(IMFDXGIBuffer *self, Guid* guid, IUnknown* pUnkData) SetUnknown;
+		}
+		[CRepr]
+		public struct IMFMediaType : IMFAttributes
+		{
+			public const new Guid IID = .(0x44ae0fa8, 0xea31, 0x4109, 0x8d, 0x2e, 0x4c, 0xae, 0x49, 0x97, 0xc5, 0x55);
+			
+			public function HRESULT(IMFMediaType *self, Guid* pguidMajorType) GetMajorType;
+			public function HRESULT(IMFMediaType *self, BOOL* pfCompressed) IsCompressedFormat;
+			public function HRESULT(IMFMediaType *self, IMFMediaType* pIMediaType, uint32* pdwFlags) IsEqual;
+			public function HRESULT(IMFMediaType *self, Guid guidRepresentation, void** ppvRepresentation) GetRepresentation;
+			public function HRESULT(IMFMediaType *self, Guid guidRepresentation, void* pvRepresentation) FreeRepresentation;
+		}
+		[CRepr]
+		public struct IMFAudioMediaType : IMFMediaType
+		{
+			public const new Guid IID = .(0x26a0adc3, 0xce26, 0x4672, 0x93, 0x04, 0x69, 0x55, 0x2e, 0xdd, 0x3f, 0xaf);
+			
+			public function WAVEFORMATEX*(IMFAudioMediaType *self) GetAudioFormat;
+		}
+		[CRepr]
+		public struct IMFVideoMediaType : IMFMediaType
+		{
+			public const new Guid IID = .(0xb99f381f, 0xa8f9, 0x47a2, 0xa5, 0xaf, 0xca, 0x3a, 0x22, 0x5a, 0x38, 0x90);
+			
+			public function MFVIDEOFORMAT*(IMFVideoMediaType *self) GetVideoFormat;
+			public function HRESULT(IMFVideoMediaType *self, Guid guidRepresentation, void** ppvRepresentation, int32 lStride) GetVideoRepresentation;
+		}
+		[CRepr]
+		public struct IMFAsyncResult : IUnknown
+		{
+			public const new Guid IID = .(0xac6b7889, 0x0740, 0x4d51, 0x86, 0x19, 0x90, 0x59, 0x94, 0xa5, 0x5c, 0xc6);
+			
+			public function HRESULT(IMFAsyncResult *self, IUnknown** ppunkState) GetState;
+			public function HRESULT(IMFAsyncResult *self) GetStatus;
+			public function HRESULT(IMFAsyncResult *self, HRESULT hrStatus) SetStatus;
+			public function HRESULT(IMFAsyncResult *self, IUnknown** ppObject) GetObject;
+			public function IUnknown*(IMFAsyncResult *self) GetStateNoAddRef;
+		}
+		[CRepr]
+		public struct IMFAsyncCallback : IUnknown
+		{
+			public const new Guid IID = .(0xa27003cf, 0x2354, 0x4f2a, 0x8d, 0x6a, 0xab, 0x7c, 0xff, 0x15, 0x43, 0x7e);
+			
+			public function HRESULT(IMFAsyncCallback *self, uint32* pdwFlags, uint32* pdwQueue) GetParameters;
+			public function HRESULT(IMFAsyncCallback *self, IMFAsyncResult* pAsyncResult) Invoke;
+		}
+		[CRepr]
+		public struct IMFAsyncCallbackLogging : IMFAsyncCallback
+		{
+			public const new Guid IID = .(0xc7a4dca1, 0xf5f0, 0x47b6, 0xb9, 0x2b, 0xbf, 0x01, 0x06, 0xd2, 0x57, 0x91);
+			
+			public function void*(IMFAsyncCallbackLogging *self) GetObjectPointer;
+			public function uint32(IMFAsyncCallbackLogging *self) GetObjectTag;
+		}
+		[CRepr]
+		public struct IMFMediaEvent : IMFAttributes
+		{
+			public const new Guid IID = .(0xdf598932, 0xf10c, 0x4e39, 0xbb, 0xa2, 0xc3, 0x08, 0xf1, 0x01, 0xda, 0xa3);
+			
+			public function HRESULT(IMFMediaEvent *self, uint32* pmet) GetType;
+			public function HRESULT(IMFMediaEvent *self, Guid* pguidExtendedType) GetExtendedType;
+			public function HRESULT(IMFMediaEvent *self, HRESULT* phrStatus) GetStatus;
+			public function HRESULT(IMFMediaEvent *self, PROPVARIANT* pvValue) GetValue;
+		}
+		[CRepr]
+		public struct IMFMediaEventGenerator : IUnknown
+		{
+			public const new Guid IID = .(0x2cd0bd52, 0xbcd5, 0x4b89, 0xb6, 0x2c, 0xea, 0xdc, 0x0c, 0x03, 0x1e, 0x7d);
+			
+			public function HRESULT(IMFMediaEventGenerator *self, MEDIA_EVENT_GENERATOR_GET_EVENT_FLAGS dwFlags, IMFMediaEvent** ppEvent) GetEvent;
+			public function HRESULT(IMFMediaEventGenerator *self, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginGetEvent;
+			public function HRESULT(IMFMediaEventGenerator *self, IMFAsyncResult* pResult, IMFMediaEvent** ppEvent) EndGetEvent;
+			public function HRESULT(IMFMediaEventGenerator *self, uint32 met, Guid* guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue) QueueEvent;
+		}
+		[CRepr]
+		public struct IMFRemoteAsyncCallback : IUnknown
+		{
+			public const new Guid IID = .(0xa27003d0, 0x2354, 0x4f2a, 0x8d, 0x6a, 0xab, 0x7c, 0xff, 0x15, 0x43, 0x7e);
+			
+			public function HRESULT(IMFRemoteAsyncCallback *self, HRESULT hr, IUnknown* pRemoteResult) Invoke;
+		}
+		[CRepr]
+		public struct IMFByteStream : IUnknown
+		{
+			public const new Guid IID = .(0xad4c1b00, 0x4bf7, 0x422f, 0x91, 0x75, 0x75, 0x66, 0x93, 0xd9, 0x13, 0x0d);
+			
+			public function HRESULT(IMFByteStream *self, uint32* pdwCapabilities) GetCapabilities;
+			public function HRESULT(IMFByteStream *self, uint64* pqwLength) GetLength;
+			public function HRESULT(IMFByteStream *self, uint64 qwLength) SetLength;
+			public function HRESULT(IMFByteStream *self, uint64* pqwPosition) GetCurrentPosition;
+			public function HRESULT(IMFByteStream *self, uint64 qwPosition) SetCurrentPosition;
+			public function HRESULT(IMFByteStream *self, BOOL* pfEndOfStream) IsEndOfStream;
+			public function HRESULT(IMFByteStream *self, uint8* pb, uint32 cb, uint32* pcbRead) Read;
+			public function HRESULT(IMFByteStream *self, uint8* pb, uint32 cb, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginRead;
+			public function HRESULT(IMFByteStream *self, IMFAsyncResult* pResult, uint32* pcbRead) EndRead;
+			public function HRESULT(IMFByteStream *self, uint8* pb, uint32 cb, uint32* pcbWritten) Write;
+			public function HRESULT(IMFByteStream *self, uint8* pb, uint32 cb, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginWrite;
+			public function HRESULT(IMFByteStream *self, IMFAsyncResult* pResult, uint32* pcbWritten) EndWrite;
+			public function HRESULT(IMFByteStream *self, MFBYTESTREAM_SEEK_ORIGIN SeekOrigin, int64 llSeekOffset, uint32 dwSeekFlags, uint64* pqwCurrentPosition) Seek;
+			public function HRESULT(IMFByteStream *self) Flush;
+			public function HRESULT(IMFByteStream *self) Close;
+		}
+		[CRepr]
+		public struct IMFByteStreamProxyClassFactory : IUnknown
+		{
+			public const new Guid IID = .(0xa6b43f84, 0x5c0a, 0x42e8, 0xa4, 0x4d, 0xb1, 0x85, 0x7a, 0x76, 0x99, 0x2f);
+			
+			public function HRESULT(IMFByteStreamProxyClassFactory *self, IMFByteStream* pByteStream, IMFAttributes* pAttributes, Guid* riid, void** ppvObject) CreateByteStreamProxy;
+		}
+		[CRepr]
+		public struct IMFSampleOutputStream : IUnknown
+		{
+			public const new Guid IID = .(0x8feed468, 0x6f7e, 0x440d, 0x86, 0x9a, 0x49, 0xbd, 0xd2, 0x83, 0xad, 0x0d);
+			
+			public function HRESULT(IMFSampleOutputStream *self, IMFSample* pSample, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginWriteSample;
+			public function HRESULT(IMFSampleOutputStream *self, IMFAsyncResult* pResult) EndWriteSample;
+			public function HRESULT(IMFSampleOutputStream *self) Close;
+		}
+		[CRepr]
+		public struct IMFCollection : IUnknown
+		{
+			public const new Guid IID = .(0x5bc8a76b, 0x869a, 0x46a3, 0x9b, 0x03, 0xfa, 0x21, 0x8a, 0x66, 0xae, 0xbe);
+			
+			public function HRESULT(IMFCollection *self, uint32* pcElements) GetElementCount;
+			public function HRESULT(IMFCollection *self, uint32 dwElementIndex, IUnknown** ppUnkElement) GetElement;
+			public function HRESULT(IMFCollection *self, IUnknown* pUnkElement) AddElement;
+			public function HRESULT(IMFCollection *self, uint32 dwElementIndex, IUnknown** ppUnkElement) RemoveElement;
+			public function HRESULT(IMFCollection *self, uint32 dwIndex, IUnknown* pUnknown) InsertElementAt;
+			public function HRESULT(IMFCollection *self) RemoveAllElements;
+		}
+		[CRepr]
+		public struct IMFMediaEventQueue : IUnknown
+		{
+			public const new Guid IID = .(0x36f846fc, 0x2256, 0x48b6, 0xb5, 0x8e, 0xe2, 0xb6, 0x38, 0x31, 0x65, 0x81);
+			
+			public function HRESULT(IMFMediaEventQueue *self, uint32 dwFlags, IMFMediaEvent** ppEvent) GetEvent;
+			public function HRESULT(IMFMediaEventQueue *self, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginGetEvent;
+			public function HRESULT(IMFMediaEventQueue *self, IMFAsyncResult* pResult, IMFMediaEvent** ppEvent) EndGetEvent;
+			public function HRESULT(IMFMediaEventQueue *self, IMFMediaEvent* pEvent) QueueEvent;
+			public function HRESULT(IMFMediaEventQueue *self, uint32 met, Guid* guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue) QueueEventParamVar;
+			public function HRESULT(IMFMediaEventQueue *self, uint32 met, Guid* guidExtendedType, HRESULT hrStatus, IUnknown* pUnk) QueueEventParamUnk;
+			public function HRESULT(IMFMediaEventQueue *self) Shutdown;
+		}
+		[CRepr]
+		public struct IMFActivate : IMFAttributes
+		{
+			public const new Guid IID = .(0x7fee9e9a, 0x4a89, 0x47a6, 0x89, 0x9c, 0xb6, 0xa5, 0x3a, 0x70, 0xfb, 0x67);
+			
+			public function HRESULT(IMFActivate *self, Guid* riid, void** ppv) ActivateObject;
+			public function HRESULT(IMFActivate *self) ShutdownObject;
+			public function HRESULT(IMFActivate *self) DetachObject;
+		}
+		[CRepr]
+		public struct IMFPluginControl : IUnknown
+		{
+			public const new Guid IID = .(0x5c6c44bf, 0x1db6, 0x435b, 0x92, 0x49, 0xe8, 0xcd, 0x10, 0xfd, 0xec, 0x96);
+			
+			public function HRESULT(IMFPluginControl *self, uint32 pluginType, PWSTR selector, Guid* clsid) GetPreferredClsid;
+			public function HRESULT(IMFPluginControl *self, uint32 pluginType, uint32 index, PWSTR* selector, Guid* clsid) GetPreferredClsidByIndex;
+			public function HRESULT(IMFPluginControl *self, uint32 pluginType, PWSTR selector, Guid* clsid) SetPreferredClsid;
+			public function HRESULT(IMFPluginControl *self, uint32 pluginType, Guid* clsid) IsDisabled;
+			public function HRESULT(IMFPluginControl *self, uint32 pluginType, uint32 index, Guid* clsid) GetDisabledByIndex;
+			public function HRESULT(IMFPluginControl *self, uint32 pluginType, Guid* clsid, BOOL disabled) SetDisabled;
+		}
+		[CRepr]
+		public struct IMFPluginControl2 : IMFPluginControl
+		{
+			public const new Guid IID = .(0xc6982083, 0x3ddc, 0x45cb, 0xaf, 0x5e, 0x0f, 0x7a, 0x8c, 0xe4, 0xde, 0x77);
+			
+			public function HRESULT(IMFPluginControl2 *self, MF_PLUGIN_CONTROL_POLICY policy) SetPolicy;
+		}
+		[CRepr]
+		public struct IMFDXGIDeviceManager : IUnknown
+		{
+			public const new Guid IID = .(0xeb533d5d, 0x2db6, 0x40f8, 0x97, 0xa9, 0x49, 0x46, 0x92, 0x01, 0x4f, 0x07);
+			
+			public function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice) CloseDeviceHandle;
+			public function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice, Guid* riid, void** ppService) GetVideoService;
+			public function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice, Guid* riid, void** ppUnkDevice, BOOL fBlock) LockDevice;
+			public function HRESULT(IMFDXGIDeviceManager *self, HANDLE* phDevice) OpenDeviceHandle;
+			public function HRESULT(IMFDXGIDeviceManager *self, IUnknown* pUnkDevice, uint32 resetToken) ResetDevice;
+			public function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice) TestDevice;
+			public function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice, BOOL fSaveState) UnlockDevice;
+		}
+		[CRepr]
+		public struct IMFMuxStreamAttributesManager : IUnknown
+		{
+			public const new Guid IID = .(0xce8bd576, 0xe440, 0x43b3, 0xbe, 0x34, 0x1e, 0x53, 0xf5, 0x65, 0xf7, 0xe8);
+			
+			public function HRESULT(IMFMuxStreamAttributesManager *self, uint32* pdwMuxStreamCount) GetStreamCount;
+			public function HRESULT(IMFMuxStreamAttributesManager *self, uint32 dwMuxStreamIndex, IMFAttributes** ppStreamAttributes) GetAttributes;
+		}
+		[CRepr]
+		public struct IMFMuxStreamMediaTypeManager : IUnknown
+		{
+			public const new Guid IID = .(0x505a2c72, 0x42f7, 0x4690, 0xae, 0xab, 0x8f, 0x51, 0x3d, 0x0f, 0xfd, 0xb8);
+			
+			public function HRESULT(IMFMuxStreamMediaTypeManager *self, uint32* pdwMuxStreamCount) GetStreamCount;
+			public function HRESULT(IMFMuxStreamMediaTypeManager *self, uint32 dwMuxStreamIndex, IMFMediaType** ppMediaType) GetMediaType;
+			public function HRESULT(IMFMuxStreamMediaTypeManager *self, uint32* pdwCount) GetStreamConfigurationCount;
+			public function HRESULT(IMFMuxStreamMediaTypeManager *self, uint64 ullStreamMask) AddStreamConfiguration;
+			public function HRESULT(IMFMuxStreamMediaTypeManager *self, uint64 ullStreamMask) RemoveStreamConfiguration;
+			public function HRESULT(IMFMuxStreamMediaTypeManager *self, uint32 ulIndex, uint64* pullStreamMask) GetStreamConfiguration;
+		}
+		[CRepr]
+		public struct IMFMuxStreamSampleManager : IUnknown
+		{
+			public const new Guid IID = .(0x74abbc19, 0xb1cc, 0x4e41, 0xbb, 0x8b, 0x9d, 0x9b, 0x86, 0xa8, 0xf6, 0xca);
+			
+			public function HRESULT(IMFMuxStreamSampleManager *self, uint32* pdwMuxStreamCount) GetStreamCount;
+			public function HRESULT(IMFMuxStreamSampleManager *self, uint32 dwMuxStreamIndex, IMFSample** ppSample) GetSample;
+			public function uint64(IMFMuxStreamSampleManager *self) GetStreamConfiguration;
+		}
+		[CRepr]
+		public struct IMFSecureBuffer : IUnknown
+		{
+			public const new Guid IID = .(0xc1209904, 0xe584, 0x4752, 0xa2, 0xd6, 0x7f, 0x21, 0x69, 0x3f, 0x8b, 0x21);
+			
+			public function HRESULT(IMFSecureBuffer *self, Guid* pGuidIdentifier) GetIdentifier;
+		}
+		[CRepr]
+		public struct IMFTransform : IUnknown
+		{
+			public const new Guid IID = .(0xbf94c121, 0x5b05, 0x4e6f, 0x80, 0x00, 0xba, 0x59, 0x89, 0x61, 0x41, 0x4d);
+			
+			public function HRESULT(IMFTransform *self, uint32* pdwInputMinimum, uint32* pdwInputMaximum, uint32* pdwOutputMinimum, uint32* pdwOutputMaximum) GetStreamLimits;
+			public function HRESULT(IMFTransform *self, uint32* pcInputStreams, uint32* pcOutputStreams) GetStreamCount;
+			public function HRESULT(IMFTransform *self, uint32 dwInputIDArraySize, uint32* pdwInputIDs, uint32 dwOutputIDArraySize, uint32* pdwOutputIDs) GetStreamIDs;
+			public function HRESULT(IMFTransform *self, uint32 dwInputStreamID, MFT_INPUT_STREAM_INFO* pStreamInfo) GetInputStreamInfo;
+			public function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, MFT_OUTPUT_STREAM_INFO* pStreamInfo) GetOutputStreamInfo;
+			public function HRESULT(IMFTransform *self, IMFAttributes** pAttributes) GetAttributes;
+			public function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFAttributes** pAttributes) GetInputStreamAttributes;
+			public function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, IMFAttributes** pAttributes) GetOutputStreamAttributes;
+			public function HRESULT(IMFTransform *self, uint32 dwStreamID) DeleteInputStream;
+			public function HRESULT(IMFTransform *self, uint32 cStreams, uint32* adwStreamIDs) AddInputStreams;
+			public function HRESULT(IMFTransform *self, uint32 dwInputStreamID, uint32 dwTypeIndex, IMFMediaType** ppType) GetInputAvailableType;
+			public function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, uint32 dwTypeIndex, IMFMediaType** ppType) GetOutputAvailableType;
+			public function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFMediaType* pType, uint32 dwFlags) SetInputType;
+			public function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, IMFMediaType* pType, uint32 dwFlags) SetOutputType;
+			public function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFMediaType** ppType) GetInputCurrentType;
+			public function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, IMFMediaType** ppType) GetOutputCurrentType;
+			public function HRESULT(IMFTransform *self, uint32 dwInputStreamID, uint32* pdwFlags) GetInputStatus;
+			public function HRESULT(IMFTransform *self, uint32* pdwFlags) GetOutputStatus;
+			public function HRESULT(IMFTransform *self, int64 hnsLowerBound, int64 hnsUpperBound) SetOutputBounds;
+			public function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFMediaEvent* pEvent) ProcessEvent;
+			public function HRESULT(IMFTransform *self, MFT_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
+			public function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFSample* pSample, uint32 dwFlags) ProcessInput;
+			public function HRESULT(IMFTransform *self, uint32 dwFlags, uint32 cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSamples, uint32* pdwStatus) ProcessOutput;
+		}
+		[CRepr]
+		public struct IMFMediaSession : IMFMediaEventGenerator
+		{
+			public const new Guid IID = .(0x90377834, 0x21d0, 0x4dee, 0x82, 0x14, 0xba, 0x2e, 0x3e, 0x6c, 0x11, 0x27);
+			
+			public function HRESULT(IMFMediaSession *self, uint32 dwSetTopologyFlags, IMFTopology* pTopology) SetTopology;
+			public function HRESULT(IMFMediaSession *self) ClearTopologies;
+			public function HRESULT(IMFMediaSession *self, Guid* pguidTimeFormat, PROPVARIANT* pvarStartPosition) Start;
+			public function HRESULT(IMFMediaSession *self) Pause;
+			public function HRESULT(IMFMediaSession *self) Stop;
+			public function HRESULT(IMFMediaSession *self) Close;
+			public function HRESULT(IMFMediaSession *self) Shutdown;
+			public function HRESULT(IMFMediaSession *self, IMFClock** ppClock) GetClock;
+			public function HRESULT(IMFMediaSession *self, uint32* pdwCaps) GetSessionCapabilities;
+			public function HRESULT(IMFMediaSession *self, uint32 dwGetFullTopologyFlags, uint64 TopoId, IMFTopology** ppFullTopology) GetFullTopology;
+		}
+		[CRepr]
+		public struct IMFSourceResolver : IUnknown
+		{
+			public const new Guid IID = .(0xfbe5a32d, 0xa497, 0x4b61, 0xbb, 0x85, 0x97, 0xb1, 0xa8, 0x48, 0xa6, 0xe3);
+			
+			public function HRESULT(IMFSourceResolver *self, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) CreateObjectFromURL;
+			public function HRESULT(IMFSourceResolver *self, IMFByteStream* pByteStream, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) CreateObjectFromByteStream;
+			public function HRESULT(IMFSourceResolver *self, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObjectFromURL;
+			public function HRESULT(IMFSourceResolver *self, IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) EndCreateObjectFromURL;
+			public function HRESULT(IMFSourceResolver *self, IMFByteStream* pByteStream, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObjectFromByteStream;
+			public function HRESULT(IMFSourceResolver *self, IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) EndCreateObjectFromByteStream;
+			public function HRESULT(IMFSourceResolver *self, IUnknown* pIUnknownCancelCookie) CancelObjectCreation;
+		}
+		[CRepr]
+		public struct IMFMediaSource : IMFMediaEventGenerator
+		{
+			public const new Guid IID = .(0x279a808d, 0xaec7, 0x40c8, 0x9c, 0x6b, 0xa6, 0xb4, 0x92, 0xc7, 0x8a, 0x66);
+			
+			public function HRESULT(IMFMediaSource *self, uint32* pdwCharacteristics) GetCharacteristics;
+			public function HRESULT(IMFMediaSource *self, IMFPresentationDescriptor** ppPresentationDescriptor) CreatePresentationDescriptor;
+			public function HRESULT(IMFMediaSource *self, IMFPresentationDescriptor* pPresentationDescriptor, Guid* pguidTimeFormat, PROPVARIANT* pvarStartPosition) Start;
+			public function HRESULT(IMFMediaSource *self) Stop;
+			public function HRESULT(IMFMediaSource *self) Pause;
+			public function HRESULT(IMFMediaSource *self) Shutdown;
+		}
+		[CRepr]
+		public struct IMFMediaSourceEx : IMFMediaSource
+		{
+			public const new Guid IID = .(0x3c9b2eb9, 0x86d5, 0x4514, 0xa3, 0x94, 0xf5, 0x66, 0x64, 0xf9, 0xf0, 0xd8);
+			
+			public function HRESULT(IMFMediaSourceEx *self, IMFAttributes** ppAttributes) GetSourceAttributes;
+			public function HRESULT(IMFMediaSourceEx *self, uint32 dwStreamIdentifier, IMFAttributes** ppAttributes) GetStreamAttributes;
+			public function HRESULT(IMFMediaSourceEx *self, IUnknown* pManager) SetD3DManager;
+		}
+		[CRepr]
+		public struct IMFClockConsumer : IUnknown
+		{
+			public const new Guid IID = .(0x6ef2a662, 0x47c0, 0x4666, 0xb1, 0x3d, 0xcb, 0xb7, 0x17, 0xf2, 0xfa, 0x2c);
+			
+			public function HRESULT(IMFClockConsumer *self, IMFPresentationClock* pPresentationClock) SetPresentationClock;
+			public function HRESULT(IMFClockConsumer *self, IMFPresentationClock** ppPresentationClock) GetPresentationClock;
+		}
+		[CRepr]
+		public struct IMFMediaStream : IMFMediaEventGenerator
+		{
+			public const new Guid IID = .(0xd182108f, 0x4ec6, 0x443f, 0xaa, 0x42, 0xa7, 0x11, 0x06, 0xec, 0x82, 0x5f);
+			
+			public function HRESULT(IMFMediaStream *self, IMFMediaSource** ppMediaSource) GetMediaSource;
+			public function HRESULT(IMFMediaStream *self, IMFStreamDescriptor** ppStreamDescriptor) GetStreamDescriptor;
+			public function HRESULT(IMFMediaStream *self, IUnknown* pToken) RequestSample;
+		}
+		[CRepr]
+		public struct IMFMediaSink : IUnknown
+		{
+			public const new Guid IID = .(0x6ef2a660, 0x47c0, 0x4666, 0xb1, 0x3d, 0xcb, 0xb7, 0x17, 0xf2, 0xfa, 0x2c);
+			
+			public function HRESULT(IMFMediaSink *self, uint32* pdwCharacteristics) GetCharacteristics;
+			public function HRESULT(IMFMediaSink *self, uint32 dwStreamSinkIdentifier, IMFMediaType* pMediaType, IMFStreamSink** ppStreamSink) AddStreamSink;
+			public function HRESULT(IMFMediaSink *self, uint32 dwStreamSinkIdentifier) RemoveStreamSink;
+			public function HRESULT(IMFMediaSink *self, uint32* pcStreamSinkCount) GetStreamSinkCount;
+			public function HRESULT(IMFMediaSink *self, uint32 dwIndex, IMFStreamSink** ppStreamSink) GetStreamSinkByIndex;
+			public function HRESULT(IMFMediaSink *self, uint32 dwStreamSinkIdentifier, IMFStreamSink** ppStreamSink) GetStreamSinkById;
+			public function HRESULT(IMFMediaSink *self, IMFPresentationClock* pPresentationClock) SetPresentationClock;
+			public function HRESULT(IMFMediaSink *self, IMFPresentationClock** ppPresentationClock) GetPresentationClock;
+			public function HRESULT(IMFMediaSink *self) Shutdown;
+		}
+		[CRepr]
+		public struct IMFStreamSink : IMFMediaEventGenerator
+		{
+			public const new Guid IID = .(0x0a97b3cf, 0x8e7c, 0x4a3d, 0x8f, 0x8c, 0x0c, 0x84, 0x3d, 0xc2, 0x47, 0xfb);
+			
+			public function HRESULT(IMFStreamSink *self, IMFMediaSink** ppMediaSink) GetMediaSink;
+			public function HRESULT(IMFStreamSink *self, uint32* pdwIdentifier) GetIdentifier;
+			public function HRESULT(IMFStreamSink *self, IMFMediaTypeHandler** ppHandler) GetMediaTypeHandler;
+			public function HRESULT(IMFStreamSink *self, IMFSample* pSample) ProcessSample;
+			public function HRESULT(IMFStreamSink *self, MFSTREAMSINK_MARKER_TYPE eMarkerType, PROPVARIANT* pvarMarkerValue, PROPVARIANT* pvarContextValue) PlaceMarker;
+			public function HRESULT(IMFStreamSink *self) Flush;
+		}
+		[CRepr]
+		public struct IMFVideoSampleAllocator : IUnknown
+		{
+			public const new Guid IID = .(0x86cbc910, 0xe533, 0x4751, 0x8e, 0x3b, 0xf1, 0x9b, 0x5b, 0x80, 0x6a, 0x03);
+			
+			public function HRESULT(IMFVideoSampleAllocator *self, IUnknown* pManager) SetDirectXManager;
+			public function HRESULT(IMFVideoSampleAllocator *self) UninitializeSampleAllocator;
+			public function HRESULT(IMFVideoSampleAllocator *self, uint32 cRequestedFrames, IMFMediaType* pMediaType) InitializeSampleAllocator;
+			public function HRESULT(IMFVideoSampleAllocator *self, IMFSample** ppSample) AllocateSample;
+		}
+		[CRepr]
+		public struct IMFVideoSampleAllocatorNotify : IUnknown
+		{
+			public const new Guid IID = .(0xa792cdbe, 0xc374, 0x4e89, 0x83, 0x35, 0x27, 0x8e, 0x7b, 0x99, 0x56, 0xa4);
+			
+			public function HRESULT(IMFVideoSampleAllocatorNotify *self) NotifyRelease;
+		}
+		[CRepr]
+		public struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAllocatorNotify
+		{
+			public const new Guid IID = .(0x3978aa1a, 0x6d5b, 0x4b7f, 0xa3, 0x40, 0x90, 0x89, 0x91, 0x89, 0xae, 0x34);
+			
+			public function HRESULT(IMFVideoSampleAllocatorNotifyEx *self, IMFSample* __MIDL__IMFVideoSampleAllocatorNotifyEx0000) NotifyPrune;
+		}
+		[CRepr]
+		public struct IMFVideoSampleAllocatorCallback : IUnknown
+		{
+			public const new Guid IID = .(0x992388b4, 0x3372, 0x4f67, 0x8b, 0x6f, 0xc8, 0x4c, 0x07, 0x1f, 0x47, 0x51);
+			
+			public function HRESULT(IMFVideoSampleAllocatorCallback *self, IMFVideoSampleAllocatorNotify* pNotify) SetCallback;
+			public function HRESULT(IMFVideoSampleAllocatorCallback *self, int32* plSamples) GetFreeSampleCount;
+		}
+		[CRepr]
+		public struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
+		{
+			public const new Guid IID = .(0x545b3a48, 0x3283, 0x4f62, 0x86, 0x6f, 0xa6, 0x2d, 0x8f, 0x59, 0x8f, 0x9f);
+			
+			public function HRESULT(IMFVideoSampleAllocatorEx *self, uint32 cInitialSamples, uint32 cMaximumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType) InitializeSampleAllocatorEx;
+		}
+		[CRepr]
+		public struct IMFDXGIDeviceManagerSource : IUnknown
+		{
+			public const new Guid IID = .(0x20bc074b, 0x7a8d, 0x4609, 0x8c, 0x3b, 0x64, 0xa0, 0xa3, 0xb5, 0xd7, 0xce);
+			
+			public function HRESULT(IMFDXGIDeviceManagerSource *self, IMFDXGIDeviceManager** ppManager) GetManager;
+		}
+		[CRepr]
+		public struct IMFVideoProcessorControl : IUnknown
+		{
+			public const new Guid IID = .(0xa3f675d5, 0x6119, 0x4f7f, 0xa1, 0x00, 0x1d, 0x8b, 0x28, 0x0f, 0x0e, 0xfb);
+			
+			public function HRESULT(IMFVideoProcessorControl *self, MFARGB* pBorderColor) SetBorderColor;
+			public function HRESULT(IMFVideoProcessorControl *self, RECT* pSrcRect) SetSourceRectangle;
+			public function HRESULT(IMFVideoProcessorControl *self, RECT* pDstRect) SetDestinationRectangle;
+			public function HRESULT(IMFVideoProcessorControl *self, MF_VIDEO_PROCESSOR_MIRROR eMirror) SetMirror;
+			public function HRESULT(IMFVideoProcessorControl *self, MF_VIDEO_PROCESSOR_ROTATION eRotation) SetRotation;
+			public function HRESULT(IMFVideoProcessorControl *self, SIZE* pConstrictionSize) SetConstrictionSize;
+		}
+		[CRepr]
+		public struct IMFVideoProcessorControl2 : IMFVideoProcessorControl
+		{
+			public const new Guid IID = .(0xbde633d3, 0xe1dc, 0x4a7f, 0xa6, 0x93, 0xbb, 0xae, 0x39, 0x9c, 0x4a, 0x20);
+			
+			public function HRESULT(IMFVideoProcessorControl2 *self, uint32 uiRotation) SetRotationOverride;
+			public function HRESULT(IMFVideoProcessorControl2 *self, BOOL fEnabled) EnableHardwareEffects;
+			public function HRESULT(IMFVideoProcessorControl2 *self, uint32* puiSupport) GetSupportedHardwareEffects;
+		}
+		[CRepr]
+		public struct IMFVideoProcessorControl3 : IMFVideoProcessorControl2
+		{
+			public const new Guid IID = .(0x2424b3f2, 0xeb23, 0x40f1, 0x91, 0xaa, 0x74, 0xbd, 0xde, 0xea, 0x08, 0x83);
+			
+			public function HRESULT(IMFVideoProcessorControl3 *self, IMFMediaType** ppType) GetNaturalOutputType;
+			public function HRESULT(IMFVideoProcessorControl3 *self, BOOL fEnable, MFVideoSphericalFormat eFormat, MFVideoSphericalProjectionMode eProjectionMode) EnableSphericalVideoProcessing;
+			public function HRESULT(IMFVideoProcessorControl3 *self, float X, float Y, float Z, float W, float fieldOfView) SetSphericalVideoProperties;
+			public function HRESULT(IMFVideoProcessorControl3 *self, IUnknown* pOutputDevice) SetOutputDevice;
+		}
+		[CRepr]
+		public struct IMFVideoRendererEffectControl : IUnknown
+		{
+			public const new Guid IID = .(0x604d33d7, 0xcf23, 0x41d5, 0x82, 0x24, 0x5b, 0xbb, 0xb1, 0xa8, 0x74, 0x75);
+			
+			public function HRESULT(IMFVideoRendererEffectControl *self, IUnknown* pAppServiceConnection) OnAppServiceConnectionEstablished;
+		}
+		[CRepr]
+		public struct IMFTopology : IMFAttributes
+		{
+			public const new Guid IID = .(0x83cf873a, 0xf6da, 0x4bc8, 0x82, 0x3f, 0xba, 0xcf, 0xd5, 0x5d, 0xc4, 0x33);
+			
+			public function HRESULT(IMFTopology *self, uint64* pID) GetTopologyID;
+			public function HRESULT(IMFTopology *self, IMFTopologyNode* pNode) AddNode;
+			public function HRESULT(IMFTopology *self, IMFTopologyNode* pNode) RemoveNode;
+			public function HRESULT(IMFTopology *self, uint16* pwNodes) GetNodeCount;
+			public function HRESULT(IMFTopology *self, uint16 wIndex, IMFTopologyNode** ppNode) GetNode;
+			public function HRESULT(IMFTopology *self) Clear;
+			public function HRESULT(IMFTopology *self, IMFTopology* pTopology) CloneFrom;
+			public function HRESULT(IMFTopology *self, uint64 qwTopoNodeID, IMFTopologyNode** ppNode) GetNodeByID;
+			public function HRESULT(IMFTopology *self, IMFCollection** ppCollection) GetSourceNodeCollection;
+			public function HRESULT(IMFTopology *self, IMFCollection** ppCollection) GetOutputNodeCollection;
+		}
+		[CRepr]
+		public struct IMFTopologyNode : IMFAttributes
+		{
+			public const new Guid IID = .(0x83cf873a, 0xf6da, 0x4bc8, 0x82, 0x3f, 0xba, 0xcf, 0xd5, 0x5d, 0xc4, 0x30);
+			
+			public function HRESULT(IMFTopologyNode *self, IUnknown* pObject) SetObject;
+			public function HRESULT(IMFTopologyNode *self, IUnknown** ppObject) GetObject;
+			public function HRESULT(IMFTopologyNode *self, MF_TOPOLOGY_TYPE* pType) GetNodeType;
+			public function HRESULT(IMFTopologyNode *self, uint64* pID) GetTopoNodeID;
+			public function HRESULT(IMFTopologyNode *self, uint64 ullTopoID) SetTopoNodeID;
+			public function HRESULT(IMFTopologyNode *self, uint32* pcInputs) GetInputCount;
+			public function HRESULT(IMFTopologyNode *self, uint32* pcOutputs) GetOutputCount;
+			public function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex, IMFTopologyNode* pDownstreamNode, uint32 dwInputIndexOnDownstreamNode) ConnectOutput;
+			public function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex) DisconnectOutput;
+			public function HRESULT(IMFTopologyNode *self, uint32 dwInputIndex, IMFTopologyNode** ppUpstreamNode, uint32* pdwOutputIndexOnUpstreamNode) GetInput;
+			public function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex, IMFTopologyNode** ppDownstreamNode, uint32* pdwInputIndexOnDownstreamNode) GetOutput;
+			public function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex, IMFMediaType* pType) SetOutputPrefType;
+			public function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex, IMFMediaType** ppType) GetOutputPrefType;
+			public function HRESULT(IMFTopologyNode *self, uint32 dwInputIndex, IMFMediaType* pType) SetInputPrefType;
+			public function HRESULT(IMFTopologyNode *self, uint32 dwInputIndex, IMFMediaType** ppType) GetInputPrefType;
+			public function HRESULT(IMFTopologyNode *self, IMFTopologyNode* pNode) CloneFrom;
+		}
+		[CRepr]
+		public struct IMFGetService : IUnknown
+		{
+			public const new Guid IID = .(0xfa993888, 0x4383, 0x415a, 0xa9, 0x30, 0xdd, 0x47, 0x2a, 0x8c, 0xf6, 0xf7);
+			
+			public function HRESULT(IMFGetService *self, Guid* guidService, Guid* riid, void** ppvObject) GetService;
+		}
+		[CRepr]
+		public struct IMFClock : IUnknown
+		{
+			public const new Guid IID = .(0x2eb1e945, 0x18b8, 0x4139, 0x9b, 0x1a, 0xd5, 0xd5, 0x84, 0x81, 0x85, 0x30);
+			
+			public function HRESULT(IMFClock *self, uint32* pdwCharacteristics) GetClockCharacteristics;
+			public function HRESULT(IMFClock *self, uint32 dwReserved, int64* pllClockTime, int64* phnsSystemTime) GetCorrelatedTime;
+			public function HRESULT(IMFClock *self, uint32* pdwContinuityKey) GetContinuityKey;
+			public function HRESULT(IMFClock *self, uint32 dwReserved, MFCLOCK_STATE* peClockState) GetState;
+			public function HRESULT(IMFClock *self, MFCLOCK_PROPERTIES* pClockProperties) GetProperties;
+		}
+		[CRepr]
+		public struct IMFPresentationClock : IMFClock
+		{
+			public const new Guid IID = .(0x868ce85c, 0x8ea9, 0x4f55, 0xab, 0x82, 0xb0, 0x09, 0xa9, 0x10, 0xa8, 0x05);
+			
+			public function HRESULT(IMFPresentationClock *self, IMFPresentationTimeSource* pTimeSource) SetTimeSource;
+			public function HRESULT(IMFPresentationClock *self, IMFPresentationTimeSource** ppTimeSource) GetTimeSource;
+			public function HRESULT(IMFPresentationClock *self, int64* phnsClockTime) GetTime;
+			public function HRESULT(IMFPresentationClock *self, IMFClockStateSink* pStateSink) AddClockStateSink;
+			public function HRESULT(IMFPresentationClock *self, IMFClockStateSink* pStateSink) RemoveClockStateSink;
+			public function HRESULT(IMFPresentationClock *self, int64 llClockStartOffset) Start;
+			public function HRESULT(IMFPresentationClock *self) Stop;
+			public function HRESULT(IMFPresentationClock *self) Pause;
+		}
+		[CRepr]
+		public struct IMFPresentationTimeSource : IMFClock
+		{
+			public const new Guid IID = .(0x7ff12cce, 0xf76f, 0x41c2, 0x86, 0x3b, 0x16, 0x66, 0xc8, 0xe5, 0xe1, 0x39);
+			
+			public function HRESULT(IMFPresentationTimeSource *self, IMFClock** ppClock) GetUnderlyingClock;
+		}
+		[CRepr]
+		public struct IMFClockStateSink : IUnknown
+		{
+			public const new Guid IID = .(0xf6696e82, 0x74f7, 0x4f3d, 0xa1, 0x78, 0x8a, 0x5e, 0x09, 0xc3, 0x65, 0x9f);
+			
+			public function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime, int64 llClockStartOffset) OnClockStart;
+			public function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime) OnClockStop;
+			public function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime) OnClockPause;
+			public function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime) OnClockRestart;
+			public function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime, float flRate) OnClockSetRate;
+		}
+		[CRepr]
+		public struct IMFPresentationDescriptor : IMFAttributes
+		{
+			public const new Guid IID = .(0x03cb2711, 0x24d7, 0x4db6, 0xa1, 0x7f, 0xf3, 0xa7, 0xa4, 0x79, 0xa5, 0x36);
+			
+			public function HRESULT(IMFPresentationDescriptor *self, uint32* pdwDescriptorCount) GetStreamDescriptorCount;
+			public function HRESULT(IMFPresentationDescriptor *self, uint32 dwIndex, BOOL* pfSelected, IMFStreamDescriptor** ppDescriptor) GetStreamDescriptorByIndex;
+			public function HRESULT(IMFPresentationDescriptor *self, uint32 dwDescriptorIndex) SelectStream;
+			public function HRESULT(IMFPresentationDescriptor *self, uint32 dwDescriptorIndex) DeselectStream;
+			public function HRESULT(IMFPresentationDescriptor *self, IMFPresentationDescriptor** ppPresentationDescriptor) Clone;
+		}
+		[CRepr]
+		public struct IMFStreamDescriptor : IMFAttributes
+		{
+			public const new Guid IID = .(0x56c03d9c, 0x9dbb, 0x45f5, 0xab, 0x4b, 0xd8, 0x0f, 0x47, 0xc0, 0x59, 0x38);
+			
+			public function HRESULT(IMFStreamDescriptor *self, uint32* pdwStreamIdentifier) GetStreamIdentifier;
+			public function HRESULT(IMFStreamDescriptor *self, IMFMediaTypeHandler** ppMediaTypeHandler) GetMediaTypeHandler;
+		}
+		[CRepr]
+		public struct IMFMediaTypeHandler : IUnknown
+		{
+			public const new Guid IID = .(0xe93dcf6c, 0x4b07, 0x4e1e, 0x81, 0x23, 0xaa, 0x16, 0xed, 0x6e, 0xad, 0xf5);
+			
+			public function HRESULT(IMFMediaTypeHandler *self, IMFMediaType* pMediaType, IMFMediaType** ppMediaType) IsMediaTypeSupported;
+			public function HRESULT(IMFMediaTypeHandler *self, uint32* pdwTypeCount) GetMediaTypeCount;
+			public function HRESULT(IMFMediaTypeHandler *self, uint32 dwIndex, IMFMediaType** ppType) GetMediaTypeByIndex;
+			public function HRESULT(IMFMediaTypeHandler *self, IMFMediaType* pMediaType) SetCurrentMediaType;
+			public function HRESULT(IMFMediaTypeHandler *self, IMFMediaType** ppMediaType) GetCurrentMediaType;
+			public function HRESULT(IMFMediaTypeHandler *self, Guid* pguidMajorType) GetMajorType;
+		}
+		[CRepr]
+		public struct IMFTimer : IUnknown
+		{
+			public const new Guid IID = .(0xe56e4cbd, 0x8f70, 0x49d8, 0xa0, 0xf8, 0xed, 0xb3, 0xd6, 0xab, 0x9b, 0xf2);
+			
+			public function HRESULT(IMFTimer *self, uint32 dwFlags, int64 llClockTime, IMFAsyncCallback* pCallback, IUnknown* punkState, IUnknown** ppunkKey) SetTimer;
+			public function HRESULT(IMFTimer *self, IUnknown* punkKey) CancelTimer;
+		}
+		[CRepr]
+		public struct IMFShutdown : IUnknown
+		{
+			public const new Guid IID = .(0x97ec2ea4, 0x0e42, 0x4937, 0x97, 0xac, 0x9d, 0x6d, 0x32, 0x88, 0x24, 0xe1);
+			
+			public function HRESULT(IMFShutdown *self) Shutdown;
+			public function HRESULT(IMFShutdown *self, MFSHUTDOWN_STATUS* pStatus) GetShutdownStatus;
+		}
+		[CRepr]
+		public struct IMFTopoLoader : IUnknown
+		{
+			public const new Guid IID = .(0xde9a6157, 0xf660, 0x4643, 0xb5, 0x6a, 0xdf, 0x9f, 0x79, 0x98, 0xc7, 0xcd);
+			
+			public function HRESULT(IMFTopoLoader *self, IMFTopology* pInputTopo, IMFTopology** ppOutputTopo, IMFTopology* pCurrentTopo) Load;
+		}
+		[CRepr]
+		public struct IMFContentProtectionManager : IUnknown
+		{
+			public const new Guid IID = .(0xacf92459, 0x6a61, 0x42bd, 0xb5, 0x7c, 0xb4, 0x3e, 0x51, 0x20, 0x3c, 0xb0);
+			
+			public function HRESULT(IMFContentProtectionManager *self, IMFActivate* pEnablerActivate, IMFTopology* pTopo, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginEnableContent;
+			public function HRESULT(IMFContentProtectionManager *self, IMFAsyncResult* pResult) EndEnableContent;
+		}
+		[CRepr]
+		public struct IMFContentEnabler : IUnknown
+		{
+			public const new Guid IID = .(0xd3c4ef59, 0x49ce, 0x4381, 0x90, 0x71, 0xd5, 0xbc, 0xd0, 0x44, 0xc7, 0x70);
+			
+			public function HRESULT(IMFContentEnabler *self, Guid* pType) GetEnableType;
+			public function HRESULT(IMFContentEnabler *self, PWSTR* ppwszURL, uint32* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus) GetEnableURL;
+			public function HRESULT(IMFContentEnabler *self, uint8** ppbData, uint32* pcbData) GetEnableData;
+			public function HRESULT(IMFContentEnabler *self, BOOL* pfAutomatic) IsAutomaticSupported;
+			public function HRESULT(IMFContentEnabler *self) AutomaticEnable;
+			public function HRESULT(IMFContentEnabler *self) MonitorEnable;
+			public function HRESULT(IMFContentEnabler *self) Cancel;
+		}
+		[CRepr]
+		public struct IMFMetadata : IUnknown
+		{
+			public const new Guid IID = .(0xf88cfb8c, 0xef16, 0x4991, 0xb4, 0x50, 0xcb, 0x8c, 0x69, 0xe5, 0x17, 0x04);
+			
+			public function HRESULT(IMFMetadata *self, PWSTR pwszRFC1766) SetLanguage;
+			public function HRESULT(IMFMetadata *self, PWSTR* ppwszRFC1766) GetLanguage;
+			public function HRESULT(IMFMetadata *self, PROPVARIANT* ppvLanguages) GetAllLanguages;
+			public function HRESULT(IMFMetadata *self, PWSTR pwszName, PROPVARIANT* ppvValue) SetProperty;
+			public function HRESULT(IMFMetadata *self, PWSTR pwszName, PROPVARIANT* ppvValue) GetProperty;
+			public function HRESULT(IMFMetadata *self, PWSTR pwszName) DeleteProperty;
+			public function HRESULT(IMFMetadata *self, PROPVARIANT* ppvNames) GetAllPropertyNames;
+		}
+		[CRepr]
+		public struct IMFMetadataProvider : IUnknown
+		{
+			public const new Guid IID = .(0x56181d2d, 0xe221, 0x4adb, 0xb1, 0xc8, 0x3c, 0xee, 0x6a, 0x53, 0xf7, 0x6f);
+			
+			public function HRESULT(IMFMetadataProvider *self, IMFPresentationDescriptor* pPresentationDescriptor, uint32 dwStreamIdentifier, uint32 dwFlags, IMFMetadata** ppMFMetadata) GetMFMetadata;
+		}
+		[CRepr]
+		public struct IMFRateSupport : IUnknown
+		{
+			public const new Guid IID = .(0x0a9ccdbc, 0xd797, 0x4563, 0x96, 0x67, 0x94, 0xec, 0x5d, 0x79, 0x29, 0x2d);
+			
+			public function HRESULT(IMFRateSupport *self, MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate) GetSlowestRate;
+			public function HRESULT(IMFRateSupport *self, MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate) GetFastestRate;
+			public function HRESULT(IMFRateSupport *self, BOOL fThin, float flRate, float* pflNearestSupportedRate) IsRateSupported;
+		}
+		[CRepr]
+		public struct IMFRateControl : IUnknown
+		{
+			public const new Guid IID = .(0x88ddcd21, 0x03c3, 0x4275, 0x91, 0xed, 0x55, 0xee, 0x39, 0x29, 0x32, 0x8f);
+			
+			public function HRESULT(IMFRateControl *self, BOOL fThin, float flRate) SetRate;
+			public function HRESULT(IMFRateControl *self, BOOL* pfThin, float* pflRate) GetRate;
+		}
+		[CRepr]
+		public struct IMFTimecodeTranslate : IUnknown
+		{
+			public const new Guid IID = .(0xab9d8661, 0xf7e8, 0x4ef4, 0x98, 0x61, 0x89, 0xf3, 0x34, 0xf9, 0x4e, 0x74);
+			
+			public function HRESULT(IMFTimecodeTranslate *self, PROPVARIANT* pPropVarTimecode, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginConvertTimecodeToHNS;
+			public function HRESULT(IMFTimecodeTranslate *self, IMFAsyncResult* pResult, int64* phnsTime) EndConvertTimecodeToHNS;
+			public function HRESULT(IMFTimecodeTranslate *self, int64 hnsTime, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginConvertHNSToTimecode;
+			public function HRESULT(IMFTimecodeTranslate *self, IMFAsyncResult* pResult, PROPVARIANT* pPropVarTimecode) EndConvertHNSToTimecode;
+		}
+		[CRepr]
+		public struct IMFSeekInfo : IUnknown
+		{
+			public const new Guid IID = .(0x26afea53, 0xd9ed, 0x42b5, 0xab, 0x80, 0xe6, 0x4f, 0x9e, 0xe3, 0x47, 0x79);
+			
+			public function HRESULT(IMFSeekInfo *self, Guid* pguidTimeFormat, PROPVARIANT* pvarStartPosition, PROPVARIANT* pvarPreviousKeyFrame, PROPVARIANT* pvarNextKeyFrame) GetNearestKeyFrames;
+		}
+		[CRepr]
+		public struct IMFSimpleAudioVolume : IUnknown
+		{
+			public const new Guid IID = .(0x089edf13, 0xcf71, 0x4338, 0x8d, 0x13, 0x9e, 0x56, 0x9d, 0xbd, 0xc3, 0x19);
+			
+			public function HRESULT(IMFSimpleAudioVolume *self, float fLevel) SetMasterVolume;
+			public function HRESULT(IMFSimpleAudioVolume *self, float* pfLevel) GetMasterVolume;
+			public function HRESULT(IMFSimpleAudioVolume *self, BOOL bMute) SetMute;
+			public function HRESULT(IMFSimpleAudioVolume *self, BOOL* pbMute) GetMute;
+		}
+		[CRepr]
+		public struct IMFAudioStreamVolume : IUnknown
+		{
+			public const new Guid IID = .(0x76b1bbdb, 0x4ec8, 0x4f36, 0xb1, 0x06, 0x70, 0xa9, 0x31, 0x6d, 0xf5, 0x93);
+			
+			public function HRESULT(IMFAudioStreamVolume *self, uint32* pdwCount) GetChannelCount;
+			public function HRESULT(IMFAudioStreamVolume *self, uint32 dwIndex, float fLevel) SetChannelVolume;
+			public function HRESULT(IMFAudioStreamVolume *self, uint32 dwIndex, float* pfLevel) GetChannelVolume;
+			public function HRESULT(IMFAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) SetAllVolumes;
+			public function HRESULT(IMFAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) GetAllVolumes;
+		}
+		[CRepr]
+		public struct IMFAudioPolicy : IUnknown
+		{
+			public const new Guid IID = .(0xa0638c2b, 0x6465, 0x4395, 0x9a, 0xe7, 0xa3, 0x21, 0xa9, 0xfd, 0x28, 0x56);
+			
+			public function HRESULT(IMFAudioPolicy *self, Guid* rguidClass) SetGroupingParam;
+			public function HRESULT(IMFAudioPolicy *self, Guid* pguidClass) GetGroupingParam;
+			public function HRESULT(IMFAudioPolicy *self, PWSTR pszName) SetDisplayName;
+			public function HRESULT(IMFAudioPolicy *self, PWSTR* pszName) GetDisplayName;
+			public function HRESULT(IMFAudioPolicy *self, PWSTR pszPath) SetIconPath;
+			public function HRESULT(IMFAudioPolicy *self, PWSTR* pszPath) GetIconPath;
+		}
+		[CRepr]
+		public struct IMFSampleGrabberSinkCallback : IMFClockStateSink
+		{
+			public const new Guid IID = .(0x8c7b80bf, 0xee42, 0x4b59, 0xb1, 0xdf, 0x55, 0x66, 0x8e, 0x1b, 0xdc, 0xa8);
+			
+			public function HRESULT(IMFSampleGrabberSinkCallback *self, IMFPresentationClock* pPresentationClock) OnSetPresentationClock;
+			public function HRESULT(IMFSampleGrabberSinkCallback *self, Guid* guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, uint8* pSampleBuffer, uint32 dwSampleSize) OnProcessSample;
+			public function HRESULT(IMFSampleGrabberSinkCallback *self) OnShutdown;
+		}
+		[CRepr]
+		public struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSinkCallback
+		{
+			public const new Guid IID = .(0xca86aa50, 0xc46e, 0x429e, 0xab, 0x27, 0x16, 0xd6, 0xac, 0x68, 0x44, 0xcb);
+			
+			public function HRESULT(IMFSampleGrabberSinkCallback2 *self, Guid* guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, uint8* pSampleBuffer, uint32 dwSampleSize, IMFAttributes* pAttributes) OnProcessSampleEx;
+		}
+		[CRepr]
+		public struct IMFWorkQueueServices : IUnknown
+		{
+			public const new Guid IID = .(0x35fe1bb8, 0xa3a9, 0x40fe, 0xbb, 0xec, 0xeb, 0x56, 0x9c, 0x9c, 0xcc, 0xa3);
+			
+			public function HRESULT(IMFWorkQueueServices *self, IMFAsyncCallback* pCallback, IUnknown* pState) BeginRegisterTopologyWorkQueuesWithMMCSS;
+			public function HRESULT(IMFWorkQueueServices *self, IMFAsyncResult* pResult) EndRegisterTopologyWorkQueuesWithMMCSS;
+			public function HRESULT(IMFWorkQueueServices *self, IMFAsyncCallback* pCallback, IUnknown* pState) BeginUnregisterTopologyWorkQueuesWithMMCSS;
+			public function HRESULT(IMFWorkQueueServices *self, IMFAsyncResult* pResult) EndUnregisterTopologyWorkQueuesWithMMCSS;
+			public function HRESULT(IMFWorkQueueServices *self, uint32 dwTopologyWorkQueueId, char16* pwszClass, uint32* pcchClass) GetTopologyWorkQueueMMCSSClass;
+			public function HRESULT(IMFWorkQueueServices *self, uint32 dwTopologyWorkQueueId, uint32* pdwTaskId) GetTopologyWorkQueueMMCSSTaskId;
+			public function HRESULT(IMFWorkQueueServices *self, uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, IMFAsyncCallback* pCallback, IUnknown* pState) BeginRegisterPlatformWorkQueueWithMMCSS;
+			public function HRESULT(IMFWorkQueueServices *self, IMFAsyncResult* pResult, uint32* pdwTaskId) EndRegisterPlatformWorkQueueWithMMCSS;
+			public function HRESULT(IMFWorkQueueServices *self, uint32 dwPlatformWorkQueue, IMFAsyncCallback* pCallback, IUnknown* pState) BeginUnregisterPlatformWorkQueueWithMMCSS;
+			public function HRESULT(IMFWorkQueueServices *self, IMFAsyncResult* pResult) EndUnregisterPlatformWorkQueueWithMMCSS;
+			public function HRESULT(IMFWorkQueueServices *self, uint32 dwPlatformWorkQueueId, char16* pwszClass, uint32* pcchClass) GetPlaftormWorkQueueMMCSSClass;
+			public function HRESULT(IMFWorkQueueServices *self, uint32 dwPlatformWorkQueueId, uint32* pdwTaskId) GetPlatformWorkQueueMMCSSTaskId;
+		}
+		[CRepr]
+		public struct IMFWorkQueueServicesEx : IMFWorkQueueServices
+		{
+			public const new Guid IID = .(0x96bf961b, 0x40fe, 0x42f1, 0xba, 0x9d, 0x32, 0x02, 0x38, 0xb4, 0x97, 0x00);
+			
+			public function HRESULT(IMFWorkQueueServicesEx *self, uint32 dwTopologyWorkQueueId, int32* plPriority) GetTopologyWorkQueueMMCSSPriority;
+			public function HRESULT(IMFWorkQueueServicesEx *self, uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, int32 lPriority, IMFAsyncCallback* pCallback, IUnknown* pState) BeginRegisterPlatformWorkQueueWithMMCSSEx;
+			public function HRESULT(IMFWorkQueueServicesEx *self, uint32 dwPlatformWorkQueueId, int32* plPriority) GetPlatformWorkQueueMMCSSPriority;
+		}
+		[CRepr]
+		public struct IMFQualityManager : IUnknown
+		{
+			public const new Guid IID = .(0x8d009d86, 0x5b9f, 0x4115, 0xb1, 0xfc, 0x9f, 0x80, 0xd5, 0x2a, 0xb8, 0xab);
+			
+			public function HRESULT(IMFQualityManager *self, IMFTopology* pTopology) NotifyTopology;
+			public function HRESULT(IMFQualityManager *self, IMFPresentationClock* pClock) NotifyPresentationClock;
+			public function HRESULT(IMFQualityManager *self, IMFTopologyNode* pNode, int32 lInputIndex, IMFSample* pSample) NotifyProcessInput;
+			public function HRESULT(IMFQualityManager *self, IMFTopologyNode* pNode, int32 lOutputIndex, IMFSample* pSample) NotifyProcessOutput;
+			public function HRESULT(IMFQualityManager *self, IUnknown* pObject, IMFMediaEvent* pEvent) NotifyQualityEvent;
+			public function HRESULT(IMFQualityManager *self) Shutdown;
+		}
+		[CRepr]
+		public struct IMFQualityAdvise : IUnknown
+		{
+			public const new Guid IID = .(0xec15e2e9, 0xe36b, 0x4f7c, 0x87, 0x58, 0x77, 0xd4, 0x52, 0xef, 0x4c, 0xe7);
+			
+			public function HRESULT(IMFQualityAdvise *self, MF_QUALITY_DROP_MODE eDropMode) SetDropMode;
+			public function HRESULT(IMFQualityAdvise *self, MF_QUALITY_LEVEL eQualityLevel) SetQualityLevel;
+			public function HRESULT(IMFQualityAdvise *self, MF_QUALITY_DROP_MODE* peDropMode) GetDropMode;
+			public function HRESULT(IMFQualityAdvise *self, MF_QUALITY_LEVEL* peQualityLevel) GetQualityLevel;
+			public function HRESULT(IMFQualityAdvise *self, int64 hnsAmountToDrop) DropTime;
+		}
+		[CRepr]
+		public struct IMFQualityAdvise2 : IMFQualityAdvise
+		{
+			public const new Guid IID = .(0xf3706f0d, 0x8ea2, 0x4886, 0x80, 0x00, 0x71, 0x55, 0xe9, 0xec, 0x2e, 0xae);
+			
+			public function HRESULT(IMFQualityAdvise2 *self, IMFMediaEvent* pEvent, uint32* pdwFlags) NotifyQualityEvent;
+		}
+		[CRepr]
+		public struct IMFQualityAdviseLimits : IUnknown
+		{
+			public const new Guid IID = .(0xdfcd8e4d, 0x30b5, 0x4567, 0xac, 0xaa, 0x8e, 0xb5, 0xb7, 0x85, 0x3d, 0xc9);
+			
+			public function HRESULT(IMFQualityAdviseLimits *self, MF_QUALITY_DROP_MODE* peDropMode) GetMaximumDropMode;
+			public function HRESULT(IMFQualityAdviseLimits *self, MF_QUALITY_LEVEL* peQualityLevel) GetMinimumQualityLevel;
+		}
+		[CRepr]
+		public struct IMFRealTimeClient : IUnknown
+		{
+			public const new Guid IID = .(0x2347d60b, 0x3fb5, 0x480c, 0x88, 0x03, 0x8d, 0xf3, 0xad, 0xcd, 0x3e, 0xf0);
+			
+			public function HRESULT(IMFRealTimeClient *self, uint32 dwTaskIndex, PWSTR wszClass) RegisterThreads;
+			public function HRESULT(IMFRealTimeClient *self) UnregisterThreads;
+			public function HRESULT(IMFRealTimeClient *self, uint32 dwWorkQueueId) SetWorkQueue;
+		}
+		[CRepr]
+		public struct IMFRealTimeClientEx : IUnknown
+		{
+			public const new Guid IID = .(0x03910848, 0xab16, 0x4611, 0xb1, 0x00, 0x17, 0xb8, 0x8a, 0xe2, 0xf2, 0x48);
+			
+			public function HRESULT(IMFRealTimeClientEx *self, uint32* pdwTaskIndex, PWSTR wszClassName, int32 lBasePriority) RegisterThreadsEx;
+			public function HRESULT(IMFRealTimeClientEx *self) UnregisterThreads;
+			public function HRESULT(IMFRealTimeClientEx *self, uint32 dwMultithreadedWorkQueueId, int32 lWorkItemBasePriority) SetWorkQueueEx;
+		}
+		[CRepr]
+		public struct IMFSequencerSource : IUnknown
+		{
+			public const new Guid IID = .(0x197cd219, 0x19cb, 0x4de1, 0xa6, 0x4c, 0xac, 0xf2, 0xed, 0xcb, 0xe5, 0x9e);
+			
+			public function HRESULT(IMFSequencerSource *self, IMFTopology* pTopology, uint32 dwFlags, uint32* pdwId) AppendTopology;
+			public function HRESULT(IMFSequencerSource *self, uint32 dwId) DeleteTopology;
+			public function HRESULT(IMFSequencerSource *self, IMFPresentationDescriptor* pPD, uint32* pId, IMFTopology** ppTopology) GetPresentationContext;
+			public function HRESULT(IMFSequencerSource *self, uint32 dwId, IMFTopology* pTopology) UpdateTopology;
+			public function HRESULT(IMFSequencerSource *self, uint32 dwId, uint32 dwFlags) UpdateTopologyFlags;
+		}
+		[CRepr]
+		public struct IMFMediaSourceTopologyProvider : IUnknown
+		{
+			public const new Guid IID = .(0x0e1d6009, 0xc9f3, 0x442d, 0x8c, 0x51, 0xa4, 0x2d, 0x2d, 0x49, 0x45, 0x2f);
+			
+			public function HRESULT(IMFMediaSourceTopologyProvider *self, IMFPresentationDescriptor* pPresentationDescriptor, IMFTopology** ppTopology) GetMediaSourceTopology;
+		}
+		[CRepr]
+		public struct IMFMediaSourcePresentationProvider : IUnknown
+		{
+			public const new Guid IID = .(0x0e1d600a, 0xc9f3, 0x442d, 0x8c, 0x51, 0xa4, 0x2d, 0x2d, 0x49, 0x45, 0x2f);
+			
+			public function HRESULT(IMFMediaSourcePresentationProvider *self, IMFPresentationDescriptor* pPresentationDescriptor) ForceEndOfPresentation;
+		}
+		[CRepr]
+		public struct IMFTopologyNodeAttributeEditor : IUnknown
+		{
+			public const new Guid IID = .(0x676aa6dd, 0x238a, 0x410d, 0xbb, 0x99, 0x65, 0x66, 0x8d, 0x01, 0x60, 0x5a);
+			
+			public function HRESULT(IMFTopologyNodeAttributeEditor *self, uint64 TopoId, uint32 cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates) UpdateNodeAttributes;
+		}
+		[CRepr]
+		public struct IMFByteStreamBuffering : IUnknown
+		{
+			public const new Guid IID = .(0x6d66d782, 0x1d4f, 0x4db7, 0x8c, 0x63, 0xcb, 0x8c, 0x77, 0xf1, 0xef, 0x5e);
+			
+			public function HRESULT(IMFByteStreamBuffering *self, MFBYTESTREAM_BUFFERING_PARAMS* pParams) SetBufferingParams;
+			public function HRESULT(IMFByteStreamBuffering *self, BOOL fEnable) EnableBuffering;
+			public function HRESULT(IMFByteStreamBuffering *self) StopBuffering;
+		}
+		[CRepr]
+		public struct IMFByteStreamCacheControl : IUnknown
+		{
+			public const new Guid IID = .(0xf5042ea4, 0x7a96, 0x4a75, 0xaa, 0x7b, 0x2b, 0xe1, 0xef, 0x7f, 0x88, 0xd5);
+			
+			public function HRESULT(IMFByteStreamCacheControl *self) StopBackgroundTransfer;
+		}
+		[CRepr]
+		public struct IMFByteStreamTimeSeek : IUnknown
+		{
+			public const new Guid IID = .(0x64976bfa, 0xfb61, 0x4041, 0x90, 0x69, 0x8c, 0x9a, 0x5f, 0x65, 0x9b, 0xeb);
+			
+			public function HRESULT(IMFByteStreamTimeSeek *self, BOOL* pfTimeSeekIsSupported) IsTimeSeekSupported;
+			public function HRESULT(IMFByteStreamTimeSeek *self, uint64 qwTimePosition) TimeSeek;
+			public function HRESULT(IMFByteStreamTimeSeek *self, uint64* pqwStartTime, uint64* pqwStopTime, uint64* pqwDuration) GetTimeSeekResult;
+		}
+		[CRepr]
+		public struct IMFByteStreamCacheControl2 : IMFByteStreamCacheControl
+		{
+			public const new Guid IID = .(0x71ce469c, 0xf34b, 0x49ea, 0xa5, 0x6b, 0x2d, 0x2a, 0x10, 0xe5, 0x11, 0x49);
+			
+			public function HRESULT(IMFByteStreamCacheControl2 *self, uint32* pcRanges, MF_BYTE_STREAM_CACHE_RANGE** ppRanges) GetByteRanges;
+			public function HRESULT(IMFByteStreamCacheControl2 *self, uint64 qwBytes) SetCacheLimit;
+			public function HRESULT(IMFByteStreamCacheControl2 *self, BOOL* pfActive) IsBackgroundTransferActive;
+		}
+		[CRepr]
+		public struct IMFNetCredential : IUnknown
+		{
+			public const new Guid IID = .(0x5b87ef6a, 0x7ed8, 0x434f, 0xba, 0x0e, 0x18, 0x4f, 0xac, 0x16, 0x28, 0xd1);
+			
+			public function HRESULT(IMFNetCredential *self, uint8* pbData, uint32 cbData, BOOL fDataIsEncrypted) SetUser;
+			public function HRESULT(IMFNetCredential *self, uint8* pbData, uint32 cbData, BOOL fDataIsEncrypted) SetPassword;
+			public function HRESULT(IMFNetCredential *self, uint8* pbData, uint32* pcbData, BOOL fEncryptData) GetUser;
+			public function HRESULT(IMFNetCredential *self, uint8* pbData, uint32* pcbData, BOOL fEncryptData) GetPassword;
+			public function HRESULT(IMFNetCredential *self, BOOL* pfLoggedOnUser) LoggedOnUser;
+		}
+		[CRepr]
+		public struct IMFNetCredentialManager : IUnknown
+		{
+			public const new Guid IID = .(0x5b87ef6b, 0x7ed8, 0x434f, 0xba, 0x0e, 0x18, 0x4f, 0xac, 0x16, 0x28, 0xd1);
+			
+			public function HRESULT(IMFNetCredentialManager *self, MFNetCredentialManagerGetParam* pParam, IMFAsyncCallback* pCallback, IUnknown* pState) BeginGetCredentials;
+			public function HRESULT(IMFNetCredentialManager *self, IMFAsyncResult* pResult, IMFNetCredential** ppCred) EndGetCredentials;
+			public function HRESULT(IMFNetCredentialManager *self, IMFNetCredential* pCred, BOOL fGood) SetGood;
+		}
+		[CRepr]
+		public struct IMFNetCredentialCache : IUnknown
+		{
+			public const new Guid IID = .(0x5b87ef6c, 0x7ed8, 0x434f, 0xba, 0x0e, 0x18, 0x4f, 0xac, 0x16, 0x28, 0xd1);
+			
+			public function HRESULT(IMFNetCredentialCache *self, PWSTR pszUrl, PWSTR pszRealm, uint32 dwAuthenticationFlags, IMFNetCredential** ppCred, uint32* pdwRequirementsFlags) GetCredential;
+			public function HRESULT(IMFNetCredentialCache *self, IMFNetCredential* pCred, BOOL fGood) SetGood;
+			public function HRESULT(IMFNetCredentialCache *self, IMFNetCredential* pCred, uint32 dwOptionsFlags) SetUserOptions;
+		}
+		[CRepr]
+		public struct IMFSSLCertificateManager : IUnknown
+		{
+			public const new Guid IID = .(0x61f7d887, 0x1230, 0x4a8b, 0xae, 0xba, 0x8a, 0xd4, 0x34, 0xd1, 0xa6, 0x4d);
+			
+			public function HRESULT(IMFSSLCertificateManager *self, PWSTR pszURL, uint8** ppbData, uint32* pcbData) GetClientCertificate;
+			public function HRESULT(IMFSSLCertificateManager *self, PWSTR pszURL, IMFAsyncCallback* pCallback, IUnknown* pState) BeginGetClientCertificate;
+			public function HRESULT(IMFSSLCertificateManager *self, IMFAsyncResult* pResult, uint8** ppbData, uint32* pcbData) EndGetClientCertificate;
+			public function HRESULT(IMFSSLCertificateManager *self, PWSTR pszURL, BOOL* pfOverrideAutomaticCheck, BOOL* pfClientCertificateAvailable) GetCertificatePolicy;
+			public function HRESULT(IMFSSLCertificateManager *self, PWSTR pszURL, uint8* pbData, uint32 cbData, BOOL* pfIsGood) OnServerCertificate;
+		}
+		[CRepr]
+		public struct IMFNetResourceFilter : IUnknown
+		{
+			public const new Guid IID = .(0x091878a3, 0xbf11, 0x4a5c, 0xbc, 0x9f, 0x33, 0x99, 0x5b, 0x06, 0xef, 0x2d);
+			
+			public function HRESULT(IMFNetResourceFilter *self, PWSTR pszUrl, int16* pvbCancel) OnRedirect;
+			public function HRESULT(IMFNetResourceFilter *self, PWSTR pszUrl) OnSendingRequest;
+		}
+		[CRepr]
+		public struct IMFSourceOpenMonitor : IUnknown
+		{
+			public const new Guid IID = .(0x059054b3, 0x027c, 0x494c, 0xa2, 0x7d, 0x91, 0x13, 0x29, 0x1c, 0xf8, 0x7f);
+			
+			public function HRESULT(IMFSourceOpenMonitor *self, IMFMediaEvent* pEvent) OnSourceEvent;
+		}
+		[CRepr]
+		public struct IMFNetProxyLocator : IUnknown
+		{
+			public const new Guid IID = .(0xe9cd0383, 0xa268, 0x4bb4, 0x82, 0xde, 0x65, 0x8d, 0x53, 0x57, 0x4d, 0x41);
+			
+			public function HRESULT(IMFNetProxyLocator *self, PWSTR pszHost, PWSTR pszUrl, BOOL fReserved) FindFirstProxy;
+			public function HRESULT(IMFNetProxyLocator *self) FindNextProxy;
+			public function HRESULT(IMFNetProxyLocator *self, HRESULT hrOp) RegisterProxyResult;
+			public function HRESULT(IMFNetProxyLocator *self, char16* pszStr, uint32* pcchStr) GetCurrentProxy;
+			public function HRESULT(IMFNetProxyLocator *self, IMFNetProxyLocator** ppProxyLocator) Clone;
+		}
+		[CRepr]
+		public struct IMFNetProxyLocatorFactory : IUnknown
+		{
+			public const new Guid IID = .(0xe9cd0384, 0xa268, 0x4bb4, 0x82, 0xde, 0x65, 0x8d, 0x53, 0x57, 0x4d, 0x41);
+			
+			public function HRESULT(IMFNetProxyLocatorFactory *self, PWSTR pszProtocol, IMFNetProxyLocator** ppProxyLocator) CreateProxyLocator;
+		}
+		[CRepr]
+		public struct IMFSaveJob : IUnknown
+		{
+			public const new Guid IID = .(0xe9931663, 0x80bf, 0x4c6e, 0x98, 0xaf, 0x5d, 0xcf, 0x58, 0x74, 0x7d, 0x1f);
+			
+			public function HRESULT(IMFSaveJob *self, IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState) BeginSave;
+			public function HRESULT(IMFSaveJob *self, IMFAsyncResult* pResult) EndSave;
+			public function HRESULT(IMFSaveJob *self) CancelSave;
+			public function HRESULT(IMFSaveJob *self, uint32* pdwPercentComplete) GetProgress;
+		}
+		[CRepr]
+		public struct IMFNetSchemeHandlerConfig : IUnknown
+		{
+			public const new Guid IID = .(0x7be19e73, 0xc9bf, 0x468a, 0xac, 0x5a, 0xa5, 0xe8, 0x65, 0x3b, 0xec, 0x87);
+			
+			public function HRESULT(IMFNetSchemeHandlerConfig *self, uint32* pcProtocols) GetNumberOfSupportedProtocols;
+			public function HRESULT(IMFNetSchemeHandlerConfig *self, uint32 nProtocolIndex, MFNETSOURCE_PROTOCOL_TYPE* pnProtocolType) GetSupportedProtocolType;
+			public function HRESULT(IMFNetSchemeHandlerConfig *self) ResetProtocolRolloverSettings;
+		}
+		[CRepr]
+		public struct IMFSchemeHandler : IUnknown
+		{
+			public const new Guid IID = .(0x6d4c7b74, 0x52a0, 0x4bb7, 0xb0, 0xdb, 0x55, 0xf2, 0x9f, 0x47, 0xa6, 0x68);
+			
+			public function HRESULT(IMFSchemeHandler *self, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObject;
+			public function HRESULT(IMFSchemeHandler *self, IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) EndCreateObject;
+			public function HRESULT(IMFSchemeHandler *self, IUnknown* pIUnknownCancelCookie) CancelObjectCreation;
+		}
+		[CRepr]
+		public struct IMFByteStreamHandler : IUnknown
+		{
+			public const new Guid IID = .(0xbb420aa4, 0x765b, 0x4a1f, 0x91, 0xfe, 0xd6, 0xa8, 0xa1, 0x43, 0x92, 0x4c);
+			
+			public function HRESULT(IMFByteStreamHandler *self, IMFByteStream* pByteStream, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObject;
+			public function HRESULT(IMFByteStreamHandler *self, IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) EndCreateObject;
+			public function HRESULT(IMFByteStreamHandler *self, IUnknown* pIUnknownCancelCookie) CancelObjectCreation;
+			public function HRESULT(IMFByteStreamHandler *self, uint64* pqwBytes) GetMaxNumberOfBytesRequiredForResolution;
+		}
+		[CRepr]
+		public struct IMFTrustedInput : IUnknown
+		{
+			public const new Guid IID = .(0x542612c4, 0xa1b8, 0x4632, 0xb5, 0x21, 0xde, 0x11, 0xea, 0x64, 0xa0, 0xb0);
+			
+			public function HRESULT(IMFTrustedInput *self, uint32 dwStreamID, Guid* riid, IUnknown** ppunkObject) GetInputTrustAuthority;
+		}
+		[CRepr]
+		public struct IMFInputTrustAuthority : IUnknown
+		{
+			public const new Guid IID = .(0xd19f8e98, 0xb126, 0x4446, 0x89, 0x0c, 0x5d, 0xcb, 0x7a, 0xd7, 0x14, 0x53);
+			
+			public function HRESULT(IMFInputTrustAuthority *self, Guid* riid, void** ppv) GetDecrypter;
+			public function HRESULT(IMFInputTrustAuthority *self, MFPOLICYMANAGER_ACTION Action, IMFActivate** ppContentEnablerActivate) RequestAccess;
+			public function HRESULT(IMFInputTrustAuthority *self, MFPOLICYMANAGER_ACTION Action, IMFOutputPolicy** ppPolicy) GetPolicy;
+			public function HRESULT(IMFInputTrustAuthority *self, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam) BindAccess;
+			public function HRESULT(IMFInputTrustAuthority *self, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam) UpdateAccess;
+			public function HRESULT(IMFInputTrustAuthority *self) Reset;
+		}
+		[CRepr]
+		public struct IMFTrustedOutput : IUnknown
+		{
+			public const new Guid IID = .(0xd19f8e95, 0xb126, 0x4446, 0x89, 0x0c, 0x5d, 0xcb, 0x7a, 0xd7, 0x14, 0x53);
+			
+			public function HRESULT(IMFTrustedOutput *self, uint32* pcOutputTrustAuthorities) GetOutputTrustAuthorityCount;
+			public function HRESULT(IMFTrustedOutput *self, uint32 dwIndex, IMFOutputTrustAuthority** ppauthority) GetOutputTrustAuthorityByIndex;
+			public function HRESULT(IMFTrustedOutput *self, BOOL* pfIsFinal) IsFinal;
+		}
+		[CRepr]
+		public struct IMFOutputTrustAuthority : IUnknown
+		{
+			public const new Guid IID = .(0xd19f8e94, 0xb126, 0x4446, 0x89, 0x0c, 0x5d, 0xcb, 0x7a, 0xd7, 0x14, 0x53);
+			
+			public function HRESULT(IMFOutputTrustAuthority *self, MFPOLICYMANAGER_ACTION* pAction) GetAction;
+			public function HRESULT(IMFOutputTrustAuthority *self, IMFOutputPolicy** ppPolicy, uint32 nPolicy, uint8** ppbTicket, uint32* pcbTicket) SetPolicy;
+		}
+		[CRepr]
+		public struct IMFOutputPolicy : IMFAttributes
+		{
+			public const new Guid IID = .(0x7f00f10a, 0xdaed, 0x41af, 0xab, 0x26, 0x5f, 0xdf, 0xa4, 0xdf, 0xba, 0x3c);
+			
+			public function HRESULT(IMFOutputPolicy *self, uint32 dwAttributes, Guid guidOutputSubType, Guid* rgGuidProtectionSchemasSupported, uint32 cProtectionSchemasSupported, IMFCollection** ppRequiredProtectionSchemas) GenerateRequiredSchemas;
+			public function HRESULT(IMFOutputPolicy *self, Guid* pguidOriginatorID) GetOriginatorID;
+			public function HRESULT(IMFOutputPolicy *self, uint32* pdwMinimumGRLVersion) GetMinimumGRLVersion;
+		}
+		[CRepr]
+		public struct IMFOutputSchema : IMFAttributes
+		{
+			public const new Guid IID = .(0x7be0fc5b, 0xabd9, 0x44fb, 0xa5, 0xc8, 0xf5, 0x01, 0x36, 0xe7, 0x15, 0x99);
+			
+			public function HRESULT(IMFOutputSchema *self, Guid* pguidSchemaType) GetSchemaType;
+			public function HRESULT(IMFOutputSchema *self, uint32* pdwVal) GetConfigurationData;
+			public function HRESULT(IMFOutputSchema *self, Guid* pguidOriginatorID) GetOriginatorID;
+		}
+		[CRepr]
+		public struct IMFSecureChannel : IUnknown
+		{
+			public const new Guid IID = .(0xd0ae555d, 0x3b12, 0x4d97, 0xb0, 0x60, 0x09, 0x90, 0xbc, 0x5a, 0xeb, 0x67);
+			
+			public function HRESULT(IMFSecureChannel *self, uint8** ppCert, uint32* pcbCert) GetCertificate;
+			public function HRESULT(IMFSecureChannel *self, uint8* pbEncryptedSessionKey, uint32 cbSessionKey) SetupSession;
+		}
+		[CRepr]
+		public struct IMFSampleProtection : IUnknown
+		{
+			public const new Guid IID = .(0x8e36395f, 0xc7b9, 0x43c4, 0xa5, 0x4d, 0x51, 0x2b, 0x4a, 0xf6, 0x3c, 0x95);
+			
+			public function HRESULT(IMFSampleProtection *self, uint32* pdwVersion) GetInputProtectionVersion;
+			public function HRESULT(IMFSampleProtection *self, uint32* pdwVersion) GetOutputProtectionVersion;
+			public function HRESULT(IMFSampleProtection *self, uint32 dwVersion, uint8** ppCert, uint32* pcbCert) GetProtectionCertificate;
+			public function HRESULT(IMFSampleProtection *self, uint32 dwVersion, uint32 dwOutputId, uint8* pbCert, uint32 cbCert, uint8** ppbSeed, uint32* pcbSeed) InitOutputProtection;
+			public function HRESULT(IMFSampleProtection *self, uint32 dwVersion, uint32 dwInputId, uint8* pbSeed, uint32 cbSeed) InitInputProtection;
+		}
+		[CRepr]
+		public struct IMFMediaSinkPreroll : IUnknown
+		{
+			public const new Guid IID = .(0x5dfd4b2a, 0x7674, 0x4110, 0xa4, 0xe6, 0x8a, 0x68, 0xfd, 0x5f, 0x36, 0x88);
+			
+			public function HRESULT(IMFMediaSinkPreroll *self, int64 hnsUpcomingStartTime) NotifyPreroll;
+		}
+		[CRepr]
+		public struct IMFFinalizableMediaSink : IMFMediaSink
+		{
+			public const new Guid IID = .(0xeaecb74a, 0x9a50, 0x42ce, 0x95, 0x41, 0x6a, 0x7f, 0x57, 0xaa, 0x4a, 0xd7);
+			
+			public function HRESULT(IMFFinalizableMediaSink *self, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginFinalize;
+			public function HRESULT(IMFFinalizableMediaSink *self, IMFAsyncResult* pResult) EndFinalize;
+		}
+		[CRepr]
+		public struct IMFStreamingSinkConfig : IUnknown
+		{
+			public const new Guid IID = .(0x9db7aa41, 0x3cc5, 0x40d4, 0x85, 0x09, 0x55, 0x58, 0x04, 0xad, 0x34, 0xcc);
+			
+			public function HRESULT(IMFStreamingSinkConfig *self, BOOL fSeekOffsetIsByteOffset, uint64 qwSeekOffset) StartStreaming;
+		}
+		[CRepr]
+		public struct IMFRemoteProxy : IUnknown
+		{
+			public const new Guid IID = .(0x994e23ad, 0x1cc2, 0x493c, 0xb9, 0xfa, 0x46, 0xf1, 0xcb, 0x04, 0x0f, 0xa4);
+			
+			public function HRESULT(IMFRemoteProxy *self, Guid* riid, void** ppv) GetRemoteObject;
+			public function HRESULT(IMFRemoteProxy *self, Guid* riid, void** ppv) GetRemoteHost;
+		}
+		[CRepr]
+		public struct IMFObjectReferenceStream : IUnknown
+		{
+			public const new Guid IID = .(0x09ef5be3, 0xc8a7, 0x469e, 0x8b, 0x70, 0x73, 0xbf, 0x25, 0xbb, 0x19, 0x3f);
+			
+			public function HRESULT(IMFObjectReferenceStream *self, Guid* riid, IUnknown* pUnk) SaveReference;
+			public function HRESULT(IMFObjectReferenceStream *self, Guid* riid, void** ppv) LoadReference;
+		}
+		[CRepr]
+		public struct IMFPMPHost : IUnknown
+		{
+			public const new Guid IID = .(0xf70ca1a9, 0xfdc7, 0x4782, 0xb9, 0x94, 0xad, 0xff, 0xb1, 0xc9, 0x86, 0x06);
+			
+			public function HRESULT(IMFPMPHost *self) LockProcess;
+			public function HRESULT(IMFPMPHost *self) UnlockProcess;
+			public function HRESULT(IMFPMPHost *self, Guid* clsid, IStream* pStream, Guid* riid, void** ppv) CreateObjectByCLSID;
+		}
+		[CRepr]
+		public struct IMFPMPClient : IUnknown
+		{
+			public const new Guid IID = .(0x6c4e655d, 0xead8, 0x4421, 0xb6, 0xb9, 0x54, 0xdc, 0xdb, 0xbd, 0xf8, 0x20);
+			
+			public function HRESULT(IMFPMPClient *self, IMFPMPHost* pPMPHost) SetPMPHost;
+		}
+		[CRepr]
+		public struct IMFPMPServer : IUnknown
+		{
+			public const new Guid IID = .(0x994e23af, 0x1cc2, 0x493c, 0xb9, 0xfa, 0x46, 0xf1, 0xcb, 0x04, 0x0f, 0xa4);
+			
+			public function HRESULT(IMFPMPServer *self) LockProcess;
+			public function HRESULT(IMFPMPServer *self) UnlockProcess;
+			public function HRESULT(IMFPMPServer *self, Guid* clsid, Guid* riid, void** ppObject) CreateObjectByCLSID;
+		}
+		[CRepr]
+		public struct IMFRemoteDesktopPlugin : IUnknown
+		{
+			public const new Guid IID = .(0x1cde6309, 0xcae0, 0x4940, 0x90, 0x7e, 0xc1, 0xec, 0x9c, 0x3d, 0x1d, 0x4a);
+			
+			public function HRESULT(IMFRemoteDesktopPlugin *self, IMFTopology* pTopology) UpdateTopology;
+		}
+		[CRepr]
+		public struct IMFSAMIStyle : IUnknown
+		{
+			public const new Guid IID = .(0xa7e025dd, 0x5303, 0x4a62, 0x89, 0xd6, 0xe7, 0x47, 0xe1, 0xef, 0xac, 0x73);
+			
+			public function HRESULT(IMFSAMIStyle *self, uint32* pdwCount) GetStyleCount;
+			public function HRESULT(IMFSAMIStyle *self, PROPVARIANT* pPropVarStyleArray) GetStyles;
+			public function HRESULT(IMFSAMIStyle *self, PWSTR pwszStyle) SetSelectedStyle;
+			public function HRESULT(IMFSAMIStyle *self, PWSTR* ppwszStyle) GetSelectedStyle;
+		}
+		[CRepr]
+		public struct IMFTranscodeProfile : IUnknown
+		{
+			public const new Guid IID = .(0x4adfdba3, 0x7ab0, 0x4953, 0xa6, 0x2b, 0x46, 0x1e, 0x7f, 0xf3, 0xda, 0x1e);
+			
+			public function HRESULT(IMFTranscodeProfile *self, IMFAttributes* pAttrs) SetAudioAttributes;
+			public function HRESULT(IMFTranscodeProfile *self, IMFAttributes** ppAttrs) GetAudioAttributes;
+			public function HRESULT(IMFTranscodeProfile *self, IMFAttributes* pAttrs) SetVideoAttributes;
+			public function HRESULT(IMFTranscodeProfile *self, IMFAttributes** ppAttrs) GetVideoAttributes;
+			public function HRESULT(IMFTranscodeProfile *self, IMFAttributes* pAttrs) SetContainerAttributes;
+			public function HRESULT(IMFTranscodeProfile *self, IMFAttributes** ppAttrs) GetContainerAttributes;
+		}
+		[CRepr]
+		public struct IMFTranscodeSinkInfoProvider : IUnknown
+		{
+			public const new Guid IID = .(0x8cffcd2e, 0x5a03, 0x4a3a, 0xaf, 0xf7, 0xed, 0xcd, 0x10, 0x7c, 0x62, 0x0e);
+			
+			public function HRESULT(IMFTranscodeSinkInfoProvider *self, PWSTR pwszFileName) SetOutputFile;
+			public function HRESULT(IMFTranscodeSinkInfoProvider *self, IMFActivate* pByteStreamActivate) SetOutputByteStream;
+			public function HRESULT(IMFTranscodeSinkInfoProvider *self, IMFTranscodeProfile* pProfile) SetProfile;
+			public function HRESULT(IMFTranscodeSinkInfoProvider *self, MF_TRANSCODE_SINK_INFO* pSinkInfo) GetSinkInfo;
+		}
+		[CRepr]
+		public struct IMFFieldOfUseMFTUnlock : IUnknown
+		{
+			public const new Guid IID = .(0x508e71d3, 0xec66, 0x4fc3, 0x87, 0x75, 0xb4, 0xb9, 0xed, 0x6b, 0xa8, 0x47);
+			
+			public function HRESULT(IMFFieldOfUseMFTUnlock *self, IUnknown* pUnkMFT) Unlock;
+		}
+		[CRepr]
+		public struct IMFLocalMFTRegistration : IUnknown
+		{
+			public const new Guid IID = .(0x149c4d73, 0xb4be, 0x4f8d, 0x8b, 0x87, 0x07, 0x9e, 0x92, 0x6b, 0x6a, 0xdd);
+			
+			public function HRESULT(IMFLocalMFTRegistration *self, MFT_REGISTRATION_INFO* pMFTs, uint32 cMFTs) RegisterMFTs;
+		}
+		[CRepr]
+		public struct IMFCapturePhotoConfirmation : IUnknown
+		{
+			public const new Guid IID = .(0x19f68549, 0xca8a, 0x4706, 0xa4, 0xef, 0x48, 0x1d, 0xbc, 0x95, 0xe1, 0x2c);
+			
+			public function HRESULT(IMFCapturePhotoConfirmation *self, IMFAsyncCallback* pNotificationCallback) SetPhotoConfirmationCallback;
+			public function HRESULT(IMFCapturePhotoConfirmation *self, Guid subtype) SetPixelFormat;
+			public function HRESULT(IMFCapturePhotoConfirmation *self, Guid* subtype) GetPixelFormat;
+		}
+		[CRepr]
+		public struct IMFPMPHostApp : IUnknown
+		{
+			public const new Guid IID = .(0x84d2054a, 0x3aa1, 0x4728, 0xa3, 0xb0, 0x44, 0x0a, 0x41, 0x8c, 0xf4, 0x9c);
+			
+			public function HRESULT(IMFPMPHostApp *self) LockProcess;
+			public function HRESULT(IMFPMPHostApp *self) UnlockProcess;
+			public function HRESULT(IMFPMPHostApp *self, PWSTR id, IStream* pStream, Guid* riid, void** ppv) ActivateClassById;
+		}
+		[CRepr]
+		public struct IMFPMPClientApp : IUnknown
+		{
+			public const new Guid IID = .(0xc004f646, 0xbe2c, 0x48f3, 0x93, 0xa2, 0xa0, 0x98, 0x3e, 0xba, 0x11, 0x08);
+			
+			public function HRESULT(IMFPMPClientApp *self, IMFPMPHostApp* pPMPHost) SetPMPHost;
+		}
+		[CRepr]
+		public struct IMFMediaStreamSourceSampleRequest : IUnknown
+		{
+			public const new Guid IID = .(0x380b9af9, 0xa85b, 0x4e78, 0xa2, 0xaf, 0xea, 0x5c, 0xe6, 0x45, 0xc6, 0xb4);
+			
+			public function HRESULT(IMFMediaStreamSourceSampleRequest *self, IMFSample* value) SetSample;
+		}
+		[CRepr]
+		public struct IMFTrackedSample : IUnknown
+		{
+			public const new Guid IID = .(0x245bf8e9, 0x0755, 0x40f7, 0x88, 0xa5, 0xae, 0x0f, 0x18, 0xd5, 0x5e, 0x17);
+			
+			public function HRESULT(IMFTrackedSample *self, IMFAsyncCallback* pSampleAllocator, IUnknown* pUnkState) SetAllocator;
+		}
+		[CRepr]
+		public struct IMFProtectedEnvironmentAccess : IUnknown
+		{
+			public const new Guid IID = .(0xef5dc845, 0xf0d9, 0x4ec9, 0xb0, 0x0c, 0xcb, 0x51, 0x83, 0xd3, 0x84, 0x34);
+			
+			public function HRESULT(IMFProtectedEnvironmentAccess *self, uint32 inputLength, uint8* input, uint32 outputLength, uint8* output) Call;
+			public function HRESULT(IMFProtectedEnvironmentAccess *self, uint32* outputLength, uint8** output) ReadGRL;
+		}
+		[CRepr]
+		public struct IMFSignedLibrary : IUnknown
+		{
+			public const new Guid IID = .(0x4a724bca, 0xff6a, 0x4c07, 0x8e, 0x0d, 0x7a, 0x35, 0x84, 0x21, 0xcf, 0x06);
+			
+			public function HRESULT(IMFSignedLibrary *self, PSTR name, void** address) GetProcedureAddress;
+		}
+		[CRepr]
+		public struct IMFSystemId : IUnknown
+		{
+			public const new Guid IID = .(0xfff4af3a, 0x1fc1, 0x4ef9, 0xa2, 0x9b, 0xd2, 0x6c, 0x49, 0xe2, 0xf3, 0x1a);
+			
+			public function HRESULT(IMFSystemId *self, uint32* size, uint8** data) GetData;
+			public function HRESULT(IMFSystemId *self, uint32 stage, uint32 cbIn, uint8* pbIn, uint32* pcbOut, uint8** ppbOut) Setup;
+		}
+		[CRepr]
+		public struct IMFContentProtectionDevice : IUnknown
+		{
+			public const new Guid IID = .(0xe6257174, 0xa060, 0x4c9a, 0xa0, 0x88, 0x3b, 0x1b, 0x47, 0x1c, 0xad, 0x28);
+			
+			public function HRESULT(IMFContentProtectionDevice *self, uint32 FunctionId, uint32 InputBufferByteCount, uint8* InputBuffer, uint32* OutputBufferByteCount, uint8* OutputBuffer) InvokeFunction;
+			public function HRESULT(IMFContentProtectionDevice *self, uint32* PrivateInputByteCount, uint32* PrivateOutputByteCount) GetPrivateDataByteCount;
+		}
+		[CRepr]
+		public struct IMFContentDecryptorContext : IUnknown
+		{
+			public const new Guid IID = .(0x7ec4b1bd, 0x43fb, 0x4763, 0x85, 0xd2, 0x64, 0xfc, 0xb5, 0xc5, 0xf4, 0xcb);
+			
+			public function HRESULT(IMFContentDecryptorContext *self, uint32 InputPrivateDataByteCount, void* InputPrivateData, uint64* OutputPrivateData) InitializeHardwareKey;
+		}
+		[CRepr]
+		public struct IMFNetCrossOriginSupport : IUnknown
+		{
+			public const new Guid IID = .(0xbc2b7d44, 0xa72d, 0x49d5, 0x83, 0x76, 0x14, 0x80, 0xde, 0xe5, 0x8b, 0x22);
+			
+			public function HRESULT(IMFNetCrossOriginSupport *self, MF_CROSS_ORIGIN_POLICY* pPolicy) GetCrossOriginPolicy;
+			public function HRESULT(IMFNetCrossOriginSupport *self, PWSTR* wszSourceOrigin) GetSourceOrigin;
+			public function HRESULT(IMFNetCrossOriginSupport *self, PWSTR wszURL, BOOL* pfIsSameOrigin) IsSameOrigin;
+		}
+		[CRepr]
+		public struct IMFHttpDownloadRequest : IUnknown
+		{
+			public const new Guid IID = .(0xf779fddf, 0x26e7, 0x4270, 0x8a, 0x8b, 0xb9, 0x83, 0xd1, 0x85, 0x9d, 0xe0);
+			
+			public function HRESULT(IMFHttpDownloadRequest *self, PWSTR szHeader) AddHeader;
+			public function HRESULT(IMFHttpDownloadRequest *self, uint8* pbPayload, uint32 cbPayload, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginSendRequest;
+			public function HRESULT(IMFHttpDownloadRequest *self, IMFAsyncResult* pResult) EndSendRequest;
+			public function HRESULT(IMFHttpDownloadRequest *self, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginReceiveResponse;
+			public function HRESULT(IMFHttpDownloadRequest *self, IMFAsyncResult* pResult) EndReceiveResponse;
+			public function HRESULT(IMFHttpDownloadRequest *self, uint8* pb, uint32 cb, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginReadPayload;
+			public function HRESULT(IMFHttpDownloadRequest *self, IMFAsyncResult* pResult, uint64* pqwOffset, uint32* pcbRead) EndReadPayload;
+			public function HRESULT(IMFHttpDownloadRequest *self, PWSTR szHeaderName, uint32 dwIndex, PWSTR* ppszHeaderValue) QueryHeader;
+			public function HRESULT(IMFHttpDownloadRequest *self, PWSTR* ppszURL) GetURL;
+			public function HRESULT(IMFHttpDownloadRequest *self, BOOL* pfNullSourceOrigin) HasNullSourceOrigin;
+			public function HRESULT(IMFHttpDownloadRequest *self, uint64* pqwStartTime, uint64* pqwStopTime, uint64* pqwDuration) GetTimeSeekResult;
+			public function HRESULT(IMFHttpDownloadRequest *self, uint32* pdwHttpStatus) GetHttpStatus;
+			public function HRESULT(IMFHttpDownloadRequest *self, BOOL* pfAtEndOfPayload) GetAtEndOfPayload;
+			public function HRESULT(IMFHttpDownloadRequest *self, uint64* pqwTotalLength) GetTotalLength;
+			public function HRESULT(IMFHttpDownloadRequest *self, uint64* pqwRangeEnd) GetRangeEndOffset;
+			public function HRESULT(IMFHttpDownloadRequest *self) Close;
+		}
+		[CRepr]
+		public struct IMFHttpDownloadSession : IUnknown
+		{
+			public const new Guid IID = .(0x71fa9a2c, 0x53ce, 0x4662, 0xa1, 0x32, 0x1a, 0x7e, 0x8c, 0xbf, 0x62, 0xdb);
+			
+			public function HRESULT(IMFHttpDownloadSession *self, PWSTR szServerName, uint32 nPort) SetServer;
+			public function HRESULT(IMFHttpDownloadSession *self, PWSTR szObjectName, BOOL fBypassProxyCache, BOOL fSecure, PWSTR szVerb, PWSTR szReferrer, IMFHttpDownloadRequest** ppRequest) CreateRequest;
+			public function HRESULT(IMFHttpDownloadSession *self) Close;
+		}
+		[CRepr]
+		public struct IMFHttpDownloadSessionProvider : IUnknown
+		{
+			public const new Guid IID = .(0x1b4cf4b9, 0x3a16, 0x4115, 0x83, 0x9d, 0x03, 0xcc, 0x5c, 0x99, 0xdf, 0x01);
+			
+			public function HRESULT(IMFHttpDownloadSessionProvider *self, PWSTR wszScheme, IMFHttpDownloadSession** ppDownloadSession) CreateHttpDownloadSession;
+		}
+		[CRepr]
+		public struct IMFMediaSource2 : IMFMediaSourceEx
+		{
+			public const new Guid IID = .(0xfbb03414, 0xd13b, 0x4786, 0x83, 0x19, 0x5a, 0xc5, 0x1f, 0xc0, 0xa1, 0x36);
+			
+			public function HRESULT(IMFMediaSource2 *self, uint32 dwStreamID, IMFMediaType* pMediaType) SetMediaType;
+		}
+		[CRepr]
+		public struct IMFMediaStream2 : IMFMediaStream
+		{
+			public const new Guid IID = .(0xc5bc37d6, 0x75c7, 0x46a1, 0xa1, 0x32, 0x81, 0xb5, 0xf7, 0x23, 0xc2, 0x0f);
+			
+			public function HRESULT(IMFMediaStream2 *self, MF_STREAM_STATE value) SetStreamState;
+			public function HRESULT(IMFMediaStream2 *self, MF_STREAM_STATE* value) GetStreamState;
+		}
+		[CRepr]
+		public struct IMFSensorDevice : IUnknown
+		{
+			public const new Guid IID = .(0xfb9f48f2, 0x2a18, 0x4e28, 0x97, 0x30, 0x78, 0x6f, 0x30, 0xf0, 0x4d, 0xc4);
+			
+			public function HRESULT(IMFSensorDevice *self, uint64* pDeviceId) GetDeviceId;
+			public function HRESULT(IMFSensorDevice *self, MFSensorDeviceType* pType) GetDeviceType;
+			public function HRESULT(IMFSensorDevice *self, uint64* pFlags) GetFlags;
+			public function HRESULT(IMFSensorDevice *self, char16* SymbolicLink, int32 cchSymbolicLink, int32* pcchWritten) GetSymbolicLink;
+			public function HRESULT(IMFSensorDevice *self, IMFAttributes** ppAttributes) GetDeviceAttributes;
+			public function HRESULT(IMFSensorDevice *self, MFSensorStreamType eType, uint32* pdwCount) GetStreamAttributesCount;
+			public function HRESULT(IMFSensorDevice *self, MFSensorStreamType eType, uint32 dwIndex, IMFAttributes** ppAttributes) GetStreamAttributes;
+			public function HRESULT(IMFSensorDevice *self, MFSensorDeviceMode eMode) SetSensorDeviceMode;
+			public function HRESULT(IMFSensorDevice *self, MFSensorDeviceMode* peMode) GetSensorDeviceMode;
+		}
+		[CRepr]
+		public struct IMFSensorGroup : IUnknown
+		{
+			public const new Guid IID = .(0x4110243a, 0x9757, 0x461f, 0x89, 0xf1, 0xf2, 0x23, 0x45, 0xbc, 0xab, 0x4e);
+			
+			public function HRESULT(IMFSensorGroup *self, char16* SymbolicLink, int32 cchSymbolicLink, int32* pcchWritten) GetSymbolicLink;
+			public function HRESULT(IMFSensorGroup *self, uint64* pFlags) GetFlags;
+			public function HRESULT(IMFSensorGroup *self, IMFAttributes** ppAttributes) GetSensorGroupAttributes;
+			public function HRESULT(IMFSensorGroup *self, uint32* pdwCount) GetSensorDeviceCount;
+			public function HRESULT(IMFSensorGroup *self, uint32 dwIndex, IMFSensorDevice** ppDevice) GetSensorDevice;
+			public function HRESULT(IMFSensorGroup *self, uint32 dwIndex) SetDefaultSensorDeviceIndex;
+			public function HRESULT(IMFSensorGroup *self, uint32* pdwIndex) GetDefaultSensorDeviceIndex;
+			public function HRESULT(IMFSensorGroup *self, IMFMediaSource** ppSource) CreateMediaSource;
+		}
+		[CRepr]
+		public struct IMFSensorStream : IMFAttributes
+		{
+			public const new Guid IID = .(0xe9a42171, 0xc56e, 0x498a, 0x8b, 0x39, 0xed, 0xa5, 0xa0, 0x70, 0xb7, 0xfc);
+			
+			public function HRESULT(IMFSensorStream *self, uint32* pdwCount) GetMediaTypeCount;
+			public function HRESULT(IMFSensorStream *self, uint32 dwIndex, IMFMediaType** ppMediaType) GetMediaType;
+			public function HRESULT(IMFSensorStream *self, IMFSensorStream** ppStream) CloneSensorStream;
+		}
+		[CRepr]
+		public struct IMFSensorTransformFactory : IUnknown
+		{
+			public const new Guid IID = .(0xeed9c2ee, 0x66b4, 0x4f18, 0xa6, 0x97, 0xac, 0x7d, 0x39, 0x60, 0x21, 0x5c);
+			
+			public function HRESULT(IMFSensorTransformFactory *self, IMFAttributes** ppAttributes) GetFactoryAttributes;
+			public function HRESULT(IMFSensorTransformFactory *self, uint32 dwMaxTransformCount, IMFCollection* pSensorDevices, IMFAttributes* pAttributes) InitializeFactory;
+			public function HRESULT(IMFSensorTransformFactory *self, uint32* pdwCount) GetTransformCount;
+			public function HRESULT(IMFSensorTransformFactory *self, uint32 TransformIndex, Guid* pguidTransformId, IMFAttributes** ppAttributes, IMFCollection** ppStreamInformation) GetTransformInformation;
+			public function HRESULT(IMFSensorTransformFactory *self, Guid* guidSensorTransformID, IMFAttributes* pAttributes, IMFDeviceTransform** ppDeviceMFT) CreateTransform;
+		}
+		[CRepr]
+		public struct IMFSensorProfile : IUnknown
+		{
+			public const new Guid IID = .(0x22f765d1, 0x8dab, 0x4107, 0x84, 0x6d, 0x56, 0xba, 0xf7, 0x22, 0x15, 0xe7);
+			
+			public function HRESULT(IMFSensorProfile *self, SENSORPROFILEID* pId) GetProfileId;
+			public function HRESULT(IMFSensorProfile *self, uint32 StreamId, PWSTR wzFilterSetString) AddProfileFilter;
+			public function HRESULT(IMFSensorProfile *self, uint32 StreamId, IMFMediaType* pMediaType, BOOL* pfSupported) IsMediaTypeSupported;
+			public function HRESULT(IMFSensorProfile *self, PWSTR wzBlockedControl) AddBlockedControl;
+		}
+		[CRepr]
+		public struct IMFSensorProfileCollection : IUnknown
+		{
+			public const new Guid IID = .(0xc95ea55b, 0x0187, 0x48be, 0x93, 0x53, 0x8d, 0x25, 0x07, 0x66, 0x23, 0x51);
+			
+			public function uint32(IMFSensorProfileCollection *self) GetProfileCount;
+			public function HRESULT(IMFSensorProfileCollection *self, uint32 Index, IMFSensorProfile** ppProfile) GetProfile;
+			public function HRESULT(IMFSensorProfileCollection *self, IMFSensorProfile* pProfile) AddProfile;
+			public function HRESULT(IMFSensorProfileCollection *self, SENSORPROFILEID* ProfileId, IMFSensorProfile** ppProfile) FindProfile;
+			public function void(IMFSensorProfileCollection *self, uint32 Index) RemoveProfileByIndex;
+			public function void(IMFSensorProfileCollection *self, SENSORPROFILEID* ProfileId) RemoveProfile;
+		}
+		[CRepr]
+		public struct IMFSensorProcessActivity : IUnknown
+		{
+			public const new Guid IID = .(0x39dc7f4a, 0xb141, 0x4719, 0x81, 0x3c, 0xa7, 0xf4, 0x61, 0x62, 0xa2, 0xb8);
+			
+			public function HRESULT(IMFSensorProcessActivity *self, uint32* pPID) GetProcessId;
+			public function HRESULT(IMFSensorProcessActivity *self, BOOL* pfStreaming) GetStreamingState;
+			public function HRESULT(IMFSensorProcessActivity *self, MFSensorDeviceMode* pMode) GetStreamingMode;
+			public function HRESULT(IMFSensorProcessActivity *self, FILETIME* pft) GetReportTime;
+		}
+		[CRepr]
+		public struct IMFSensorActivityReport : IUnknown
+		{
+			public const new Guid IID = .(0x3e8c4be1, 0xa8c2, 0x4528, 0x90, 0xde, 0x28, 0x51, 0xbd, 0xe5, 0xfe, 0xad);
+			
+			public function HRESULT(IMFSensorActivityReport *self, char16* FriendlyName, uint32 cchFriendlyName, uint32* pcchWritten) GetFriendlyName;
+			public function HRESULT(IMFSensorActivityReport *self, char16* SymbolicLink, uint32 cchSymbolicLink, uint32* pcchWritten) GetSymbolicLink;
+			public function HRESULT(IMFSensorActivityReport *self, uint32* pcCount) GetProcessCount;
+			public function HRESULT(IMFSensorActivityReport *self, uint32 Index, IMFSensorProcessActivity** ppProcessActivity) GetProcessActivity;
+		}
+		[CRepr]
+		public struct IMFSensorActivitiesReport : IUnknown
+		{
+			public const new Guid IID = .(0x683f7a5e, 0x4a19, 0x43cd, 0xb1, 0xa9, 0xdb, 0xf4, 0xab, 0x3f, 0x77, 0x77);
+			
+			public function HRESULT(IMFSensorActivitiesReport *self, uint32* pcCount) GetCount;
+			public function HRESULT(IMFSensorActivitiesReport *self, uint32 Index, IMFSensorActivityReport** sensorActivityReport) GetActivityReport;
+			public function HRESULT(IMFSensorActivitiesReport *self, PWSTR SymbolicName, IMFSensorActivityReport** sensorActivityReport) GetActivityReportByDeviceName;
+		}
+		[CRepr]
+		public struct IMFSensorActivitiesReportCallback : IUnknown
+		{
+			public const new Guid IID = .(0xde5072ee, 0xdbe3, 0x46dc, 0x8a, 0x87, 0xb6, 0xf6, 0x31, 0x19, 0x47, 0x51);
+			
+			public function HRESULT(IMFSensorActivitiesReportCallback *self, IMFSensorActivitiesReport* sensorActivitiesReport) OnActivitiesReport;
+		}
+		[CRepr]
+		public struct IMFSensorActivityMonitor : IUnknown
+		{
+			public const new Guid IID = .(0xd0cef145, 0xb3f4, 0x4340, 0xa2, 0xe5, 0x7a, 0x50, 0x80, 0xca, 0x05, 0xcb);
+			
+			public function HRESULT(IMFSensorActivityMonitor *self) Start;
+			public function HRESULT(IMFSensorActivityMonitor *self) Stop;
+		}
+		[CRepr]
+		public struct IMFExtendedCameraIntrinsicModel : IUnknown
+		{
+			public const new Guid IID = .(0x5c595e64, 0x4630, 0x4231, 0x85, 0x5a, 0x12, 0x84, 0x2f, 0x73, 0x32, 0x45);
+			
+			public function HRESULT(IMFExtendedCameraIntrinsicModel *self, MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel) GetModel;
+			public function HRESULT(IMFExtendedCameraIntrinsicModel *self, MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel) SetModel;
+			public function HRESULT(IMFExtendedCameraIntrinsicModel *self, MFCameraIntrinsic_DistortionModelType* pDistortionModelType) GetDistortionModelType;
+		}
+		[CRepr]
+		public struct IMFExtendedCameraIntrinsicsDistortionModel6KT : IUnknown
+		{
+			public const new Guid IID = .(0x74c2653b, 0x5f55, 0x4eb1, 0x9f, 0x0f, 0x18, 0xb8, 0xf6, 0x8b, 0x7d, 0x3d);
+			
+			public function HRESULT(IMFExtendedCameraIntrinsicsDistortionModel6KT *self, MFCameraIntrinsic_DistortionModel6KT* pDistortionModel) GetDistortionModel;
+			public function HRESULT(IMFExtendedCameraIntrinsicsDistortionModel6KT *self, MFCameraIntrinsic_DistortionModel6KT* pDistortionModel) SetDistortionModel;
+		}
+		[CRepr]
+		public struct IMFExtendedCameraIntrinsicsDistortionModelArcTan : IUnknown
+		{
+			public const new Guid IID = .(0x812d5f95, 0xb572, 0x45dc, 0xba, 0xfc, 0xae, 0x24, 0x19, 0x9d, 0xdd, 0xa8);
+			
+			public function HRESULT(IMFExtendedCameraIntrinsicsDistortionModelArcTan *self, MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel) GetDistortionModel;
+			public function HRESULT(IMFExtendedCameraIntrinsicsDistortionModelArcTan *self, MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel) SetDistortionModel;
+		}
+		[CRepr]
+		public struct IMFExtendedCameraIntrinsics : IUnknown
+		{
+			public const new Guid IID = .(0x687f6dac, 0x6987, 0x4750, 0xa1, 0x6a, 0x73, 0x4d, 0x1e, 0x7a, 0x10, 0xfe);
+			
+			public function HRESULT(IMFExtendedCameraIntrinsics *self, uint8* pbBuffer, uint32 dwBufferSize) InitializeFromBuffer;
+			public function HRESULT(IMFExtendedCameraIntrinsics *self, uint32* pdwBufferSize) GetBufferSize;
+			public function HRESULT(IMFExtendedCameraIntrinsics *self, uint8* pbBuffer, uint32* pdwBufferSize) SerializeToBuffer;
+			public function HRESULT(IMFExtendedCameraIntrinsics *self, uint32* pdwCount) GetIntrinsicModelCount;
+			public function HRESULT(IMFExtendedCameraIntrinsics *self, uint32 dwIndex, IMFExtendedCameraIntrinsicModel** ppIntrinsicModel) GetIntrinsicModelByIndex;
+			public function HRESULT(IMFExtendedCameraIntrinsics *self, IMFExtendedCameraIntrinsicModel* pIntrinsicModel) AddIntrinsicModel;
+		}
+		[CRepr]
+		public struct IMFExtendedCameraControl : IUnknown
+		{
+			public const new Guid IID = .(0x38e33520, 0xfca1, 0x4845, 0xa2, 0x7a, 0x68, 0xb7, 0xc6, 0xab, 0x37, 0x89);
+			
+			public function uint64(IMFExtendedCameraControl *self) GetCapabilities;
+			public function HRESULT(IMFExtendedCameraControl *self, uint64 ulFlags) SetFlags;
+			public function uint64(IMFExtendedCameraControl *self) GetFlags;
+			public function HRESULT(IMFExtendedCameraControl *self, uint8** ppPayload, uint32* pulPayload) LockPayload;
+			public function HRESULT(IMFExtendedCameraControl *self) UnlockPayload;
+			public function HRESULT(IMFExtendedCameraControl *self) CommitSettings;
+		}
+		[CRepr]
+		public struct IMFExtendedCameraController : IUnknown
+		{
+			public const new Guid IID = .(0xb91ebfee, 0xca03, 0x4af4, 0x8a, 0x82, 0xa3, 0x17, 0x52, 0xf4, 0xa0, 0xfc);
+			
+			public function HRESULT(IMFExtendedCameraController *self, uint32 dwStreamIndex, uint32 ulPropertyId, IMFExtendedCameraControl** ppControl) GetExtendedCameraControl;
+		}
+		[CRepr]
+		public struct IMFRelativePanelReport : IUnknown
+		{
+			public const new Guid IID = .(0xf25362ea, 0x2c0e, 0x447f, 0x81, 0xe2, 0x75, 0x59, 0x14, 0xcd, 0xc0, 0xc3);
+			
+			public function HRESULT(IMFRelativePanelReport *self, uint32* panel) GetRelativePanel;
+		}
+		[CRepr]
+		public struct IMFRelativePanelWatcher : IMFShutdown
+		{
+			public const new Guid IID = .(0x421af7f6, 0x573e, 0x4ad0, 0x8f, 0xda, 0x2e, 0x57, 0xce, 0xdb, 0x18, 0xc6);
+			
+			public function HRESULT(IMFRelativePanelWatcher *self, IMFAsyncCallback* pCallback, IUnknown* pState) BeginGetReport;
+			public function HRESULT(IMFRelativePanelWatcher *self, IMFAsyncResult* pResult, IMFRelativePanelReport** ppRelativePanelReport) EndGetReport;
+			public function HRESULT(IMFRelativePanelWatcher *self, IMFRelativePanelReport** ppRelativePanelReport) GetReport;
+		}
+		[CRepr]
+		public struct IMFCameraOcclusionStateReport : IUnknown
+		{
+			public const new Guid IID = .(0x1640b2cf, 0x74da, 0x4462, 0xa4, 0x3b, 0xb7, 0x6d, 0x3b, 0xdc, 0x14, 0x34);
+			
+			public function HRESULT(IMFCameraOcclusionStateReport *self, uint32* occlusionState) GetOcclusionState;
+		}
+		[CRepr]
+		public struct IMFCameraOcclusionStateReportCallback : IUnknown
+		{
+			public const new Guid IID = .(0x6e5841c7, 0x3889, 0x4019, 0x90, 0x35, 0x78, 0x3f, 0xb1, 0x9b, 0x59, 0x48);
+			
+			public function HRESULT(IMFCameraOcclusionStateReportCallback *self, IMFCameraOcclusionStateReport* occlusionStateReport) OnOcclusionStateReport;
+		}
+		[CRepr]
+		public struct IMFCameraOcclusionStateMonitor : IUnknown
+		{
+			public const new Guid IID = .(0xcc692f46, 0xc697, 0x47e2, 0xa7, 0x2d, 0x7b, 0x06, 0x46, 0x17, 0x74, 0x9b);
+			
+			public function HRESULT(IMFCameraOcclusionStateMonitor *self) Start;
+			public function HRESULT(IMFCameraOcclusionStateMonitor *self) Stop;
+			public function uint32(IMFCameraOcclusionStateMonitor *self) GetSupportedStates;
+		}
+		[CRepr]
+		public struct IMFVideoCaptureSampleAllocator : IMFVideoSampleAllocator
+		{
+			public const new Guid IID = .(0x725b77c7, 0xca9f, 0x4fe5, 0x9d, 0x72, 0x99, 0x46, 0xbf, 0x9b, 0x3c, 0x70);
+			
+			public function HRESULT(IMFVideoCaptureSampleAllocator *self, uint32 cbSampleSize, uint32 cbCaptureMetadataSize, uint32 cbAlignment, uint32 cMinimumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType) InitializeCaptureSampleAllocator;
+		}
+		[CRepr]
+		public struct IMFSampleAllocatorControl : IUnknown
+		{
+			public const new Guid IID = .(0xda62b958, 0x3a38, 0x4a97, 0xbd, 0x27, 0x14, 0x9c, 0x64, 0x0c, 0x07, 0x71);
+			
+			public function HRESULT(IMFSampleAllocatorControl *self, uint32 dwOutputStreamID, IUnknown* pAllocator) SetDefaultAllocator;
+			public function HRESULT(IMFSampleAllocatorControl *self, uint32 dwOutputStreamID, uint32* pdwInputStreamID, MFSampleAllocatorUsage* peUsage) GetAllocatorUsage;
+		}
+		[CRepr]
+		public struct IMFASFContentInfo : IUnknown
+		{
+			public const new Guid IID = .(0xb1dca5cd, 0xd5da, 0x4451, 0x8e, 0x9e, 0xdb, 0x5c, 0x59, 0x91, 0x4e, 0xad);
+			
+			public function HRESULT(IMFASFContentInfo *self, IMFMediaBuffer* pIStartOfContent, uint64* cbHeaderSize) GetHeaderSize;
+			public function HRESULT(IMFASFContentInfo *self, IMFMediaBuffer* pIHeaderBuffer, uint64 cbOffsetWithinHeader) ParseHeader;
+			public function HRESULT(IMFASFContentInfo *self, IMFMediaBuffer* pIHeader, uint32* pcbHeader) GenerateHeader;
+			public function HRESULT(IMFASFContentInfo *self, IMFASFProfile** ppIProfile) GetProfile;
+			public function HRESULT(IMFASFContentInfo *self, IMFASFProfile* pIProfile) SetProfile;
+			public function HRESULT(IMFASFContentInfo *self, IMFPresentationDescriptor** ppIPresentationDescriptor) GeneratePresentationDescriptor;
+			public function HRESULT(IMFASFContentInfo *self, uint16 wStreamNumber, IPropertyStore** ppIStore) GetEncodingConfigurationPropertyStore;
+		}
+		[CRepr]
+		public struct IMFASFProfile : IMFAttributes
+		{
+			public const new Guid IID = .(0xd267bf6a, 0x028b, 0x4e0d, 0x90, 0x3d, 0x43, 0xf0, 0xef, 0x82, 0xd0, 0xd4);
+			
+			public function HRESULT(IMFASFProfile *self, uint32* pcStreams) GetStreamCount;
+			public function HRESULT(IMFASFProfile *self, uint32 dwStreamIndex, uint16* pwStreamNumber, IMFASFStreamConfig** ppIStream) GetStream;
+			public function HRESULT(IMFASFProfile *self, uint16 wStreamNumber, IMFASFStreamConfig** ppIStream) GetStreamByNumber;
+			public function HRESULT(IMFASFProfile *self, IMFASFStreamConfig* pIStream) SetStream;
+			public function HRESULT(IMFASFProfile *self, uint16 wStreamNumber) RemoveStream;
+			public function HRESULT(IMFASFProfile *self, IMFMediaType* pIMediaType, IMFASFStreamConfig** ppIStream) CreateStream;
+			public function HRESULT(IMFASFProfile *self, uint32* pcMutexs) GetMutualExclusionCount;
+			public function HRESULT(IMFASFProfile *self, uint32 dwMutexIndex, IMFASFMutualExclusion** ppIMutex) GetMutualExclusion;
+			public function HRESULT(IMFASFProfile *self, IMFASFMutualExclusion* pIMutex) AddMutualExclusion;
+			public function HRESULT(IMFASFProfile *self, uint32 dwMutexIndex) RemoveMutualExclusion;
+			public function HRESULT(IMFASFProfile *self, IMFASFMutualExclusion** ppIMutex) CreateMutualExclusion;
+			public function HRESULT(IMFASFProfile *self, IMFASFStreamPrioritization** ppIStreamPrioritization) GetStreamPrioritization;
+			public function HRESULT(IMFASFProfile *self, IMFASFStreamPrioritization* pIStreamPrioritization) AddStreamPrioritization;
+			public function HRESULT(IMFASFProfile *self) RemoveStreamPrioritization;
+			public function HRESULT(IMFASFProfile *self, IMFASFStreamPrioritization** ppIStreamPrioritization) CreateStreamPrioritization;
+			public function HRESULT(IMFASFProfile *self, IMFASFProfile** ppIProfile) Clone;
+		}
+		[CRepr]
+		public struct IMFASFStreamConfig : IMFAttributes
+		{
+			public const new Guid IID = .(0x9e8ae8d2, 0xdbbd, 0x4200, 0x9a, 0xca, 0x06, 0xe6, 0xdf, 0x48, 0x49, 0x13);
+			
+			public function HRESULT(IMFASFStreamConfig *self, Guid* pguidStreamType) GetStreamType;
+			public function uint16(IMFASFStreamConfig *self) GetStreamNumber;
+			public function HRESULT(IMFASFStreamConfig *self, uint16 wStreamNum) SetStreamNumber;
+			public function HRESULT(IMFASFStreamConfig *self, IMFMediaType** ppIMediaType) GetMediaType;
+			public function HRESULT(IMFASFStreamConfig *self, IMFMediaType* pIMediaType) SetMediaType;
+			public function HRESULT(IMFASFStreamConfig *self, uint16* pcPayloadExtensions) GetPayloadExtensionCount;
+			public function HRESULT(IMFASFStreamConfig *self, uint16 wPayloadExtensionNumber, Guid* pguidExtensionSystemID, uint16* pcbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32* pcbExtensionSystemInfo) GetPayloadExtension;
+			public function HRESULT(IMFASFStreamConfig *self, Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) AddPayloadExtension;
+			public function HRESULT(IMFASFStreamConfig *self) RemoveAllPayloadExtensions;
+			public function HRESULT(IMFASFStreamConfig *self, IMFASFStreamConfig** ppIStreamConfig) Clone;
+		}
+		[CRepr]
+		public struct IMFASFMutualExclusion : IUnknown
+		{
+			public const new Guid IID = .(0x12558291, 0xe399, 0x11d5, 0xbc, 0x2a, 0x00, 0xb0, 0xd0, 0xf3, 0xf4, 0xab);
+			
+			public function HRESULT(IMFASFMutualExclusion *self, Guid* pguidType) GetType;
+			public function HRESULT(IMFASFMutualExclusion *self, Guid* guidType) SetType;
+			public function HRESULT(IMFASFMutualExclusion *self, uint32* pdwRecordCount) GetRecordCount;
+			public function HRESULT(IMFASFMutualExclusion *self, uint32 dwRecordNumber, uint16* pwStreamNumArray, uint32* pcStreams) GetStreamsForRecord;
+			public function HRESULT(IMFASFMutualExclusion *self, uint32 dwRecordNumber, uint16 wStreamNumber) AddStreamForRecord;
+			public function HRESULT(IMFASFMutualExclusion *self, uint32 dwRecordNumber, uint16 wStreamNumber) RemoveStreamFromRecord;
+			public function HRESULT(IMFASFMutualExclusion *self, uint32 dwRecordNumber) RemoveRecord;
+			public function HRESULT(IMFASFMutualExclusion *self, uint32* pdwRecordNumber) AddRecord;
+			public function HRESULT(IMFASFMutualExclusion *self, IMFASFMutualExclusion** ppIMutex) Clone;
+		}
+		[CRepr]
+		public struct IMFASFStreamPrioritization : IUnknown
+		{
+			public const new Guid IID = .(0x699bdc27, 0xbbaf, 0x49ff, 0x8e, 0x38, 0x9c, 0x39, 0xc9, 0xb5, 0xe0, 0x88);
+			
+			public function HRESULT(IMFASFStreamPrioritization *self, uint32* pdwStreamCount) GetStreamCount;
+			public function HRESULT(IMFASFStreamPrioritization *self, uint32 dwStreamIndex, uint16* pwStreamNumber, uint16* pwStreamFlags) GetStream;
+			public function HRESULT(IMFASFStreamPrioritization *self, uint16 wStreamNumber, uint16 wStreamFlags) AddStream;
+			public function HRESULT(IMFASFStreamPrioritization *self, uint32 dwStreamIndex) RemoveStream;
+			public function HRESULT(IMFASFStreamPrioritization *self, IMFASFStreamPrioritization** ppIStreamPrioritization) Clone;
+		}
+		[CRepr]
+		public struct IMFASFIndexer : IUnknown
+		{
+			public const new Guid IID = .(0x53590f48, 0xdc3b, 0x4297, 0x81, 0x3f, 0x78, 0x77, 0x61, 0xad, 0x7b, 0x3e);
+			
+			public function HRESULT(IMFASFIndexer *self, uint32 dwFlags) SetFlags;
+			public function HRESULT(IMFASFIndexer *self, uint32* pdwFlags) GetFlags;
+			public function HRESULT(IMFASFIndexer *self, IMFASFContentInfo* pIContentInfo) Initialize;
+			public function HRESULT(IMFASFIndexer *self, IMFASFContentInfo* pIContentInfo, uint64* pcbIndexOffset) GetIndexPosition;
+			public function HRESULT(IMFASFIndexer *self, IMFByteStream** ppIByteStreams, uint32 cByteStreams) SetIndexByteStreams;
+			public function HRESULT(IMFASFIndexer *self, uint32* pcByteStreams) GetIndexByteStreamCount;
+			public function HRESULT(IMFASFIndexer *self, ASF_INDEX_IDENTIFIER* pIndexIdentifier, BOOL* pfIsIndexed, uint8* pbIndexDescriptor, uint32* pcbIndexDescriptor) GetIndexStatus;
+			public function HRESULT(IMFASFIndexer *self, uint8* pbIndexDescriptor, uint32 cbIndexDescriptor, BOOL fGenerateIndex) SetIndexStatus;
+			public function HRESULT(IMFASFIndexer *self, PROPVARIANT* pvarValue, ASF_INDEX_IDENTIFIER* pIndexIdentifier, uint64* pcbOffsetWithinData, int64* phnsApproxTime, uint32* pdwPayloadNumberOfStreamWithinPacket) GetSeekPositionForValue;
+			public function HRESULT(IMFASFIndexer *self, IMFSample* pIASFPacketSample) GenerateIndexEntries;
+			public function HRESULT(IMFASFIndexer *self, IMFASFContentInfo* pIContentInfo) CommitIndex;
+			public function HRESULT(IMFASFIndexer *self, uint64* pcbIndexWriteSpace) GetIndexWriteSpace;
+			public function HRESULT(IMFASFIndexer *self, IMFMediaBuffer* pIIndexBuffer, uint64 cbOffsetWithinIndex) GetCompletedIndex;
+		}
+		[CRepr]
+		public struct IMFASFSplitter : IUnknown
+		{
+			public const new Guid IID = .(0x12558295, 0xe399, 0x11d5, 0xbc, 0x2a, 0x00, 0xb0, 0xd0, 0xf3, 0xf4, 0xab);
+			
+			public function HRESULT(IMFASFSplitter *self, IMFASFContentInfo* pIContentInfo) Initialize;
+			public function HRESULT(IMFASFSplitter *self, uint32 dwFlags) SetFlags;
+			public function HRESULT(IMFASFSplitter *self, uint32* pdwFlags) GetFlags;
+			public function HRESULT(IMFASFSplitter *self, uint16* pwStreamNumbers, uint16 wNumStreams) SelectStreams;
+			public function HRESULT(IMFASFSplitter *self, uint16* pwStreamNumbers, uint16* pwNumStreams) GetSelectedStreams;
+			public function HRESULT(IMFASFSplitter *self, IMFMediaBuffer* pIBuffer, uint32 cbBufferOffset, uint32 cbLength) ParseData;
+			public function HRESULT(IMFASFSplitter *self, ASF_STATUSFLAGS* pdwStatusFlags, uint16* pwStreamNumber, IMFSample** ppISample) GetNextSample;
+			public function HRESULT(IMFASFSplitter *self) Flush;
+			public function HRESULT(IMFASFSplitter *self, uint32* pdwLastSendTime) GetLastSendTime;
+		}
+		[CRepr]
+		public struct IMFASFMultiplexer : IUnknown
+		{
+			public const new Guid IID = .(0x57bdd80a, 0x9b38, 0x4838, 0xb7, 0x37, 0xc5, 0x8f, 0x67, 0x0d, 0x7d, 0x4f);
+			
+			public function HRESULT(IMFASFMultiplexer *self, IMFASFContentInfo* pIContentInfo) Initialize;
+			public function HRESULT(IMFASFMultiplexer *self, uint32 dwFlags) SetFlags;
+			public function HRESULT(IMFASFMultiplexer *self, uint32* pdwFlags) GetFlags;
+			public function HRESULT(IMFASFMultiplexer *self, uint16 wStreamNumber, IMFSample* pISample, int64 hnsTimestampAdjust) ProcessSample;
+			public function HRESULT(IMFASFMultiplexer *self, uint32* pdwStatusFlags, IMFSample** ppIPacket) GetNextPacket;
+			public function HRESULT(IMFASFMultiplexer *self) Flush;
+			public function HRESULT(IMFASFMultiplexer *self, IMFASFContentInfo* pIContentInfo) End;
+			public function HRESULT(IMFASFMultiplexer *self, uint16 wStreamNumber, ASF_MUX_STATISTICS* pMuxStats) GetStatistics;
+			public function HRESULT(IMFASFMultiplexer *self, uint32 msSyncTolerance) SetSyncTolerance;
+		}
+		[CRepr]
+		public struct IMFASFStreamSelector : IUnknown
+		{
+			public const new Guid IID = .(0xd01bad4a, 0x4fa0, 0x4a60, 0x93, 0x49, 0xc2, 0x7e, 0x62, 0xda, 0x9d, 0x41);
+			
+			public function HRESULT(IMFASFStreamSelector *self, uint32* pcStreams) GetStreamCount;
+			public function HRESULT(IMFASFStreamSelector *self, uint32* pcOutputs) GetOutputCount;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint32* pcStreams) GetOutputStreamCount;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint16* rgwStreamNumbers) GetOutputStreamNumbers;
+			public function HRESULT(IMFASFStreamSelector *self, uint16 wStreamNum, uint32* pdwOutput) GetOutputFromStream;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, ASF_SELECTION_STATUS* pSelection) GetOutputOverride;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, ASF_SELECTION_STATUS Selection) SetOutputOverride;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint32* pcMutexes) GetOutputMutexCount;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint32 dwMutexNum, IUnknown** ppMutex) GetOutputMutex;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint32 dwMutexNum, uint16 wSelectedRecord) SetOutputMutexSelection;
+			public function HRESULT(IMFASFStreamSelector *self, uint32* pcStepCount) GetBandwidthStepCount;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwStepNum, uint32* pdwBitrate, uint16* rgwStreamNumbers, ASF_SELECTION_STATUS* rgSelections) GetBandwidthStep;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwBitrate, uint32* pdwStepNum) BitrateToStepNumber;
+			public function HRESULT(IMFASFStreamSelector *self, uint32 dwStreamSelectorFlags) SetStreamSelectorFlags;
+		}
+		[CRepr]
+		public struct IMFDRMNetHelper : IUnknown
+		{
+			public const new Guid IID = .(0x3d1ff0ea, 0x679a, 0x4190, 0x8d, 0x46, 0x7f, 0xa6, 0x9e, 0x8c, 0x7e, 0x15);
+			
+			public function HRESULT(IMFDRMNetHelper *self, uint8* pLicenseRequest, uint32 cbLicenseRequest, uint8** ppLicenseResponse, uint32* pcbLicenseResponse, BSTR* pbstrKID) ProcessLicenseRequest;
+			public function HRESULT(IMFDRMNetHelper *self, uint8** ppLicenseResponse, uint32* pcbLicenseResponse) GetChainedLicenseResponse;
+		}
+		[CRepr]
+		public struct IMFCaptureEngineOnEventCallback : IUnknown
+		{
+			public const new Guid IID = .(0xaeda51c0, 0x9025, 0x4983, 0x90, 0x12, 0xde, 0x59, 0x7b, 0x88, 0xb0, 0x89);
+			
+			public function HRESULT(IMFCaptureEngineOnEventCallback *self, IMFMediaEvent* pEvent) OnEvent;
+		}
+		[CRepr]
+		public struct IMFCaptureEngineOnSampleCallback : IUnknown
+		{
+			public const new Guid IID = .(0x52150b82, 0xab39, 0x4467, 0x98, 0x0f, 0xe4, 0x8b, 0xf0, 0x82, 0x2e, 0xcd);
+			
+			public function HRESULT(IMFCaptureEngineOnSampleCallback *self, IMFSample* pSample) OnSample;
+		}
+		[CRepr]
+		public struct IMFCaptureSink : IUnknown
+		{
+			public const new Guid IID = .(0x72d6135b, 0x35e9, 0x412c, 0xb9, 0x26, 0xfd, 0x52, 0x65, 0xf2, 0xa8, 0x85);
+			
+			public function HRESULT(IMFCaptureSink *self, uint32 dwSinkStreamIndex, IMFMediaType** ppMediaType) GetOutputMediaType;
+			public function HRESULT(IMFCaptureSink *self, uint32 dwSinkStreamIndex, Guid* rguidService, Guid* riid, IUnknown** ppUnknown) GetService;
+			public function HRESULT(IMFCaptureSink *self, uint32 dwSourceStreamIndex, IMFMediaType* pMediaType, IMFAttributes* pAttributes, uint32* pdwSinkStreamIndex) AddStream;
+			public function HRESULT(IMFCaptureSink *self) Prepare;
+			public function HRESULT(IMFCaptureSink *self) RemoveAllStreams;
+		}
+		[CRepr]
+		public struct IMFCaptureRecordSink : IMFCaptureSink
+		{
+			public const new Guid IID = .(0x3323b55a, 0xf92a, 0x4fe2, 0x8e, 0xdc, 0xe9, 0xbf, 0xc0, 0x63, 0x4d, 0x77);
+			
+			public function HRESULT(IMFCaptureRecordSink *self, IMFByteStream* pByteStream, Guid* guidContainerType) SetOutputByteStream;
+			public function HRESULT(IMFCaptureRecordSink *self, PWSTR fileName) SetOutputFileName;
+			public function HRESULT(IMFCaptureRecordSink *self, uint32 dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback) SetSampleCallback;
+			public function HRESULT(IMFCaptureRecordSink *self, IMFMediaSink* pMediaSink) SetCustomSink;
+			public function HRESULT(IMFCaptureRecordSink *self, uint32 dwStreamIndex, uint32* pdwRotationValue) GetRotation;
+			public function HRESULT(IMFCaptureRecordSink *self, uint32 dwStreamIndex, uint32 dwRotationValue) SetRotation;
+		}
+		[CRepr]
+		public struct IMFCapturePreviewSink : IMFCaptureSink
+		{
+			public const new Guid IID = .(0x77346cfd, 0x5b49, 0x4d73, 0xac, 0xe0, 0x5b, 0x52, 0xa8, 0x59, 0xf2, 0xe0);
+			
+			public function HRESULT(IMFCapturePreviewSink *self, HANDLE handle) SetRenderHandle;
+			public function HRESULT(IMFCapturePreviewSink *self, IUnknown* pSurface) SetRenderSurface;
+			public function HRESULT(IMFCapturePreviewSink *self, MFVideoNormalizedRect* pSrc, RECT* pDst, uint32* pBorderClr) UpdateVideo;
+			public function HRESULT(IMFCapturePreviewSink *self, uint32 dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback) SetSampleCallback;
+			public function HRESULT(IMFCapturePreviewSink *self, BOOL* pfMirrorState) GetMirrorState;
+			public function HRESULT(IMFCapturePreviewSink *self, BOOL fMirrorState) SetMirrorState;
+			public function HRESULT(IMFCapturePreviewSink *self, uint32 dwStreamIndex, uint32* pdwRotationValue) GetRotation;
+			public function HRESULT(IMFCapturePreviewSink *self, uint32 dwStreamIndex, uint32 dwRotationValue) SetRotation;
+			public function HRESULT(IMFCapturePreviewSink *self, IMFMediaSink* pMediaSink) SetCustomSink;
+		}
+		[CRepr]
+		public struct IMFCapturePhotoSink : IMFCaptureSink
+		{
+			public const new Guid IID = .(0xd2d43cc8, 0x48bb, 0x4aa7, 0x95, 0xdb, 0x10, 0xc0, 0x69, 0x77, 0xe7, 0x77);
+			
+			public function HRESULT(IMFCapturePhotoSink *self, PWSTR fileName) SetOutputFileName;
+			public function HRESULT(IMFCapturePhotoSink *self, IMFCaptureEngineOnSampleCallback* pCallback) SetSampleCallback;
+			public function HRESULT(IMFCapturePhotoSink *self, IMFByteStream* pByteStream) SetOutputByteStream;
+		}
+		[CRepr]
+		public struct IMFCaptureSource : IUnknown
+		{
+			public const new Guid IID = .(0x439a42a8, 0x0d2c, 0x4505, 0xbe, 0x83, 0xf7, 0x9b, 0x2a, 0x05, 0xd5, 0xc4);
+			
+			public function HRESULT(IMFCaptureSource *self, MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFMediaSource** ppMediaSource) GetCaptureDeviceSource;
+			public function HRESULT(IMFCaptureSource *self, MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFActivate** ppActivate) GetCaptureDeviceActivate;
+			public function HRESULT(IMFCaptureSource *self, Guid* rguidService, Guid* riid, IUnknown** ppUnknown) GetService;
+			public function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, IUnknown* pUnknown) AddEffect;
+			public function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, IUnknown* pUnknown) RemoveEffect;
+			public function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex) RemoveAllEffects;
+			public function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, uint32 dwMediaTypeIndex, IMFMediaType** ppMediaType) GetAvailableDeviceMediaType;
+			public function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, IMFMediaType* pMediaType) SetCurrentDeviceMediaType;
+			public function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, IMFMediaType** ppMediaType) GetCurrentDeviceMediaType;
+			public function HRESULT(IMFCaptureSource *self, uint32* pdwStreamCount) GetDeviceStreamCount;
+			public function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, MF_CAPTURE_ENGINE_STREAM_CATEGORY* pStreamCategory) GetDeviceStreamCategory;
+			public function HRESULT(IMFCaptureSource *self, uint32 dwStreamIndex, BOOL* pfMirrorState) GetMirrorState;
+			public function HRESULT(IMFCaptureSource *self, uint32 dwStreamIndex, BOOL fMirrorState) SetMirrorState;
+			public function HRESULT(IMFCaptureSource *self, uint32 uifriendlyName, uint32* pdwActualStreamIndex) GetStreamIndexFromFriendlyName;
+		}
+		[CRepr]
+		public struct IMFCaptureEngine : IUnknown
+		{
+			public const new Guid IID = .(0xa6bba433, 0x176b, 0x48b2, 0xb3, 0x75, 0x53, 0xaa, 0x03, 0x47, 0x32, 0x07);
+			
+			public function HRESULT(IMFCaptureEngine *self, IMFCaptureEngineOnEventCallback* pEventCallback, IMFAttributes* pAttributes, IUnknown* pAudioSource, IUnknown* pVideoSource) Initialize;
+			public function HRESULT(IMFCaptureEngine *self) StartPreview;
+			public function HRESULT(IMFCaptureEngine *self) StopPreview;
+			public function HRESULT(IMFCaptureEngine *self) StartRecord;
+			public function HRESULT(IMFCaptureEngine *self, BOOL bFinalize, BOOL bFlushUnprocessedSamples) StopRecord;
+			public function HRESULT(IMFCaptureEngine *self) TakePhoto;
+			public function HRESULT(IMFCaptureEngine *self, MF_CAPTURE_ENGINE_SINK_TYPE mfCaptureEngineSinkType, IMFCaptureSink** ppSink) GetSink;
+			public function HRESULT(IMFCaptureEngine *self, IMFCaptureSource** ppSource) GetSource;
+		}
+		[CRepr]
+		public struct IMFCaptureEngineClassFactory : IUnknown
+		{
+			public const new Guid IID = .(0x8f02d140, 0x56fc, 0x4302, 0xa7, 0x05, 0x3a, 0x97, 0xc7, 0x8b, 0xe7, 0x79);
+			
+			public function HRESULT(IMFCaptureEngineClassFactory *self, Guid* clsid, Guid* riid, void** ppvObject) CreateInstance;
+		}
+		[CRepr]
+		public struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback
+		{
+			public const new Guid IID = .(0xe37ceed7, 0x340f, 0x4514, 0x9f, 0x4d, 0x9c, 0x2a, 0xe0, 0x26, 0x10, 0x0b);
+			
+			public function HRESULT(IMFCaptureEngineOnSampleCallback2 *self, IMFMediaEvent* pEvent) OnSynchronizedEvent;
+		}
+		[CRepr]
+		public struct IMFCaptureSink2 : IMFCaptureSink
+		{
+			public const new Guid IID = .(0xf9e4219e, 0x6197, 0x4b5e, 0xb8, 0x88, 0xbe, 0xe3, 0x10, 0xab, 0x2c, 0x59);
+			
+			public function HRESULT(IMFCaptureSink2 *self, uint32 dwStreamIndex, IMFMediaType* pMediaType, IMFAttributes* pEncodingAttributes) SetOutputMediaType;
+		}
+		[CRepr]
+		public struct IMFD3D12SynchronizationObjectCommands : IUnknown
+		{
+			public const new Guid IID = .(0x09d0f835, 0x92ff, 0x4e53, 0x8e, 0xfa, 0x40, 0xfa, 0xa5, 0x51, 0xf2, 0x33);
+			
+			public function HRESULT(IMFD3D12SynchronizationObjectCommands *self, ID3D12CommandQueue* pProducerCommandQueue) EnqueueResourceReady;
+			public function HRESULT(IMFD3D12SynchronizationObjectCommands *self, ID3D12CommandQueue* pConsumerCommandQueue) EnqueueResourceReadyWait;
+			public function HRESULT(IMFD3D12SynchronizationObjectCommands *self, HANDLE hEvent) SignalEventOnResourceReady;
+			public function HRESULT(IMFD3D12SynchronizationObjectCommands *self, ID3D12CommandQueue* pConsumerCommandQueue) EnqueueResourceRelease;
+		}
+		[CRepr]
+		public struct IMFD3D12SynchronizationObject : IUnknown
+		{
+			public const new Guid IID = .(0x802302b0, 0x82de, 0x45e1, 0xb4, 0x21, 0xf1, 0x9e, 0xe5, 0xbd, 0xaf, 0x23);
+			
+			public function HRESULT(IMFD3D12SynchronizationObject *self, HANDLE hEvent) SignalEventOnFinalResourceRelease;
+			public function HRESULT(IMFD3D12SynchronizationObject *self) Reset;
+		}
+		[CRepr]
+		public struct MFASYNCRESULT : IMFAsyncResult
+		{
+		}
+		[CRepr]
+		public struct IMFMediaError : IUnknown
+		{
+			public const new Guid IID = .(0xfc0e10d2, 0xab2a, 0x4501, 0xa9, 0x51, 0x06, 0xbb, 0x10, 0x75, 0x18, 0x4c);
+			
+			public function uint16(IMFMediaError *self) GetErrorCode;
+			public function HRESULT(IMFMediaError *self) GetExtendedErrorCode;
+			public function HRESULT(IMFMediaError *self, MF_MEDIA_ENGINE_ERR error) SetErrorCode;
+			public function HRESULT(IMFMediaError *self, HRESULT error) SetExtendedErrorCode;
+		}
+		[CRepr]
+		public struct IMFMediaTimeRange : IUnknown
+		{
+			public const new Guid IID = .(0xdb71a2fc, 0x078a, 0x414e, 0x9d, 0xf9, 0x8c, 0x25, 0x31, 0xb0, 0xaa, 0x6c);
+			
+			public function uint32(IMFMediaTimeRange *self) GetLength;
+			public function HRESULT(IMFMediaTimeRange *self, uint32 index, double* pStart) GetStart;
+			public function HRESULT(IMFMediaTimeRange *self, uint32 index, double* pEnd) GetEnd;
+			public function BOOL(IMFMediaTimeRange *self, double time) ContainsTime;
+			public function HRESULT(IMFMediaTimeRange *self, double startTime, double endTime) AddRange;
+			public function HRESULT(IMFMediaTimeRange *self) Clear;
+		}
+		[CRepr]
+		public struct IMFMediaEngineNotify : IUnknown
+		{
+			public const new Guid IID = .(0xfee7c112, 0xe776, 0x42b5, 0x9b, 0xbf, 0x00, 0x48, 0x52, 0x4e, 0x2b, 0xd5);
+			
+			public function HRESULT(IMFMediaEngineNotify *self, uint32 event, uint param1, uint32 param2) EventNotify;
+		}
+		[CRepr]
+		public struct IMFMediaEngineSrcElements : IUnknown
+		{
+			public const new Guid IID = .(0x7a5e5354, 0xb114, 0x4c72, 0xb9, 0x91, 0x31, 0x31, 0xd7, 0x50, 0x32, 0xea);
+			
+			public function uint32(IMFMediaEngineSrcElements *self) GetLength;
+			public function HRESULT(IMFMediaEngineSrcElements *self, uint32 index, BSTR* pURL) GetURL;
+			public function HRESULT(IMFMediaEngineSrcElements *self, uint32 index, BSTR* pType) GetType;
+			public function HRESULT(IMFMediaEngineSrcElements *self, uint32 index, BSTR* pMedia) GetMedia;
+			public function HRESULT(IMFMediaEngineSrcElements *self, BSTR pURL, BSTR pType, BSTR pMedia) AddElement;
+			public function HRESULT(IMFMediaEngineSrcElements *self) RemoveAllElements;
+		}
+		[CRepr]
+		public struct IMFMediaEngine : IUnknown
+		{
+			public const new Guid IID = .(0x98a1b0bb, 0x03eb, 0x4935, 0xae, 0x7c, 0x93, 0xc1, 0xfa, 0x0e, 0x1c, 0x93);
+			
+			public function HRESULT(IMFMediaEngine *self, IMFMediaError** ppError) GetError;
+			public function HRESULT(IMFMediaEngine *self, MF_MEDIA_ENGINE_ERR error) SetErrorCode;
+			public function HRESULT(IMFMediaEngine *self, IMFMediaEngineSrcElements* pSrcElements) SetSourceElements;
+			public function HRESULT(IMFMediaEngine *self, BSTR pUrl) SetSource;
+			public function HRESULT(IMFMediaEngine *self, BSTR* ppUrl) GetCurrentSource;
+			public function uint16(IMFMediaEngine *self) GetNetworkState;
+			public function MF_MEDIA_ENGINE_PRELOAD(IMFMediaEngine *self) GetPreload;
+			public function HRESULT(IMFMediaEngine *self, MF_MEDIA_ENGINE_PRELOAD Preload) SetPreload;
+			public function HRESULT(IMFMediaEngine *self, IMFMediaTimeRange** ppBuffered) GetBuffered;
+			public function HRESULT(IMFMediaEngine *self) Load;
+			public function HRESULT(IMFMediaEngine *self, BSTR type, MF_MEDIA_ENGINE_CANPLAY* pAnswer) CanPlayType;
+			public function uint16(IMFMediaEngine *self) GetReadyState;
+			public function BOOL(IMFMediaEngine *self) IsSeeking;
+			public function double(IMFMediaEngine *self) GetCurrentTime;
+			public function HRESULT(IMFMediaEngine *self, double seekTime) SetCurrentTime;
+			public function double(IMFMediaEngine *self) GetStartTime;
+			public function double(IMFMediaEngine *self) GetDuration;
+			public function BOOL(IMFMediaEngine *self) IsPaused;
+			public function double(IMFMediaEngine *self) GetDefaultPlaybackRate;
+			public function HRESULT(IMFMediaEngine *self, double Rate) SetDefaultPlaybackRate;
+			public function double(IMFMediaEngine *self) GetPlaybackRate;
+			public function HRESULT(IMFMediaEngine *self, double Rate) SetPlaybackRate;
+			public function HRESULT(IMFMediaEngine *self, IMFMediaTimeRange** ppPlayed) GetPlayed;
+			public function HRESULT(IMFMediaEngine *self, IMFMediaTimeRange** ppSeekable) GetSeekable;
+			public function BOOL(IMFMediaEngine *self) IsEnded;
+			public function BOOL(IMFMediaEngine *self) GetAutoPlay;
+			public function HRESULT(IMFMediaEngine *self, BOOL AutoPlay) SetAutoPlay;
+			public function BOOL(IMFMediaEngine *self) GetLoop;
+			public function HRESULT(IMFMediaEngine *self, BOOL Loop) SetLoop;
+			public function HRESULT(IMFMediaEngine *self) Play;
+			public function HRESULT(IMFMediaEngine *self) Pause;
+			public function BOOL(IMFMediaEngine *self) GetMuted;
+			public function HRESULT(IMFMediaEngine *self, BOOL Muted) SetMuted;
+			public function double(IMFMediaEngine *self) GetVolume;
+			public function HRESULT(IMFMediaEngine *self, double Volume) SetVolume;
+			public function BOOL(IMFMediaEngine *self) HasVideo;
+			public function BOOL(IMFMediaEngine *self) HasAudio;
+			public function HRESULT(IMFMediaEngine *self, uint32* cx, uint32* cy) GetNativeVideoSize;
+			public function HRESULT(IMFMediaEngine *self, uint32* cx, uint32* cy) GetVideoAspectRatio;
+			public function HRESULT(IMFMediaEngine *self) Shutdown;
+			public function HRESULT(IMFMediaEngine *self, IUnknown* pDstSurf, MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr) TransferVideoFrame;
+			public function HRESULT(IMFMediaEngine *self, int64* pPts) OnVideoStreamTick;
+		}
+		[CRepr]
+		public struct IMFMediaEngineEx : IMFMediaEngine
+		{
+			public const new Guid IID = .(0x83015ead, 0xb1e6, 0x40d0, 0xa9, 0x8a, 0x37, 0x14, 0x5f, 0xfe, 0x1a, 0xd1);
+			
+			public function HRESULT(IMFMediaEngineEx *self, IMFByteStream* pByteStream, BSTR pURL) SetSourceFromByteStream;
+			public function HRESULT(IMFMediaEngineEx *self, MF_MEDIA_ENGINE_STATISTIC StatisticID, PROPVARIANT* pStatistic) GetStatistics;
+			public function HRESULT(IMFMediaEngineEx *self, MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr) UpdateVideoStream;
+			public function double(IMFMediaEngineEx *self) GetBalance;
+			public function HRESULT(IMFMediaEngineEx *self, double balance) SetBalance;
+			public function BOOL(IMFMediaEngineEx *self, double rate) IsPlaybackRateSupported;
+			public function HRESULT(IMFMediaEngineEx *self, BOOL Forward) FrameStep;
+			public function HRESULT(IMFMediaEngineEx *self, uint32* pCharacteristics) GetResourceCharacteristics;
+			public function HRESULT(IMFMediaEngineEx *self, Guid* guidMFAttribute, PROPVARIANT* pvValue) GetPresentationAttribute;
+			public function HRESULT(IMFMediaEngineEx *self, uint32* pdwStreamCount) GetNumberOfStreams;
+			public function HRESULT(IMFMediaEngineEx *self, uint32 dwStreamIndex, Guid* guidMFAttribute, PROPVARIANT* pvValue) GetStreamAttribute;
+			public function HRESULT(IMFMediaEngineEx *self, uint32 dwStreamIndex, BOOL* pEnabled) GetStreamSelection;
+			public function HRESULT(IMFMediaEngineEx *self, uint32 dwStreamIndex, BOOL Enabled) SetStreamSelection;
+			public function HRESULT(IMFMediaEngineEx *self) ApplyStreamSelections;
+			public function HRESULT(IMFMediaEngineEx *self, BOOL* pProtected) IsProtected;
+			public function HRESULT(IMFMediaEngineEx *self, IUnknown* pEffect, BOOL fOptional) InsertVideoEffect;
+			public function HRESULT(IMFMediaEngineEx *self, IUnknown* pEffect, BOOL fOptional) InsertAudioEffect;
+			public function HRESULT(IMFMediaEngineEx *self) RemoveAllEffects;
+			public function HRESULT(IMFMediaEngineEx *self, double timeToFire) SetTimelineMarkerTimer;
+			public function HRESULT(IMFMediaEngineEx *self, double* pTimeToFire) GetTimelineMarkerTimer;
+			public function HRESULT(IMFMediaEngineEx *self) CancelTimelineMarkerTimer;
+			public function BOOL(IMFMediaEngineEx *self) IsStereo3D;
+			public function HRESULT(IMFMediaEngineEx *self, MF_MEDIA_ENGINE_S3D_PACKING_MODE* packMode) GetStereo3DFramePackingMode;
+			public function HRESULT(IMFMediaEngineEx *self, MF_MEDIA_ENGINE_S3D_PACKING_MODE packMode) SetStereo3DFramePackingMode;
+			public function HRESULT(IMFMediaEngineEx *self, MF3DVideoOutputType* outputType) GetStereo3DRenderMode;
+			public function HRESULT(IMFMediaEngineEx *self, MF3DVideoOutputType outputType) SetStereo3DRenderMode;
+			public function HRESULT(IMFMediaEngineEx *self, BOOL fEnable) EnableWindowlessSwapchainMode;
+			public function HRESULT(IMFMediaEngineEx *self, HANDLE* phSwapchain) GetVideoSwapchainHandle;
+			public function HRESULT(IMFMediaEngineEx *self, BOOL fEnable) EnableHorizontalMirrorMode;
+			public function HRESULT(IMFMediaEngineEx *self, uint32* pCategory) GetAudioStreamCategory;
+			public function HRESULT(IMFMediaEngineEx *self, uint32 category) SetAudioStreamCategory;
+			public function HRESULT(IMFMediaEngineEx *self, uint32* pRole) GetAudioEndpointRole;
+			public function HRESULT(IMFMediaEngineEx *self, uint32 role) SetAudioEndpointRole;
+			public function HRESULT(IMFMediaEngineEx *self, BOOL* pfEnabled) GetRealTimeMode;
+			public function HRESULT(IMFMediaEngineEx *self, BOOL fEnable) SetRealTimeMode;
+			public function HRESULT(IMFMediaEngineEx *self, double seekTime, MF_MEDIA_ENGINE_SEEK_MODE seekMode) SetCurrentTimeEx;
+			public function HRESULT(IMFMediaEngineEx *self, BOOL fEnableTimer) EnableTimeUpdateTimer;
+		}
+		[CRepr]
+		public struct IMFMediaEngineAudioEndpointId : IUnknown
+		{
+			public const new Guid IID = .(0x7a3bac98, 0x0e76, 0x49fb, 0x8c, 0x20, 0x8a, 0x86, 0xfd, 0x98, 0xea, 0xf2);
+			
+			public function HRESULT(IMFMediaEngineAudioEndpointId *self, PWSTR pszEndpointId) SetAudioEndpointId;
+			public function HRESULT(IMFMediaEngineAudioEndpointId *self, PWSTR* ppszEndpointId) GetAudioEndpointId;
+		}
+		[CRepr]
+		public struct IMFMediaEngineExtension : IUnknown
+		{
+			public const new Guid IID = .(0x2f69d622, 0x20b5, 0x41e9, 0xaf, 0xdf, 0x89, 0xce, 0xd1, 0xdd, 0xa0, 0x4e);
+			
+			public function HRESULT(IMFMediaEngineExtension *self, BOOL AudioOnly, BSTR MimeType, MF_MEDIA_ENGINE_CANPLAY* pAnswer) CanPlayType;
+			public function HRESULT(IMFMediaEngineExtension *self, BSTR bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObject;
+			public function HRESULT(IMFMediaEngineExtension *self, IUnknown* pIUnknownCancelCookie) CancelObjectCreation;
+			public function HRESULT(IMFMediaEngineExtension *self, IMFAsyncResult* pResult, IUnknown** ppObject) EndCreateObject;
+		}
+		[CRepr]
+		public struct IMFMediaEngineProtectedContent : IUnknown
+		{
+			public const new Guid IID = .(0x9f8021e8, 0x9c8c, 0x487e, 0xbb, 0x5c, 0x79, 0xaa, 0x47, 0x79, 0x93, 0x8c);
+			
+			public function HRESULT(IMFMediaEngineProtectedContent *self, IUnknown* pUnkDeviceContext) ShareResources;
+			public function HRESULT(IMFMediaEngineProtectedContent *self, uint32* pFrameProtectionFlags) GetRequiredProtections;
+			public function HRESULT(IMFMediaEngineProtectedContent *self, HWND hwnd) SetOPMWindow;
+			public function HRESULT(IMFMediaEngineProtectedContent *self, IUnknown* pDstSurf, MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr, uint32* pFrameProtectionFlags) TransferVideoFrame;
+			public function HRESULT(IMFMediaEngineProtectedContent *self, IMFContentProtectionManager* pCPM) SetContentProtectionManager;
+			public function HRESULT(IMFMediaEngineProtectedContent *self, uint8* pbBlob, uint32 cbBlob) SetApplicationCertificate;
+		}
+		[CRepr]
+		public struct IAudioSourceProvider : IUnknown
+		{
+			public const new Guid IID = .(0xebbaf249, 0xafc2, 0x4582, 0x91, 0xc6, 0xb6, 0x0d, 0xf2, 0xe8, 0x49, 0x54);
+			
+			public function HRESULT(IAudioSourceProvider *self, uint32 dwSampleCount, uint32* pdwChannelCount, float* pInterleavedAudioData) ProvideInput;
+		}
+		[CRepr]
+		public struct IMFMediaEngineWebSupport : IUnknown
+		{
+			public const new Guid IID = .(0xba2743a1, 0x07e0, 0x48ef, 0x84, 0xb6, 0x9a, 0x2e, 0xd0, 0x23, 0xca, 0x6c);
+			
+			public function BOOL(IMFMediaEngineWebSupport *self) ShouldDelayTheLoadEvent;
+			public function HRESULT(IMFMediaEngineWebSupport *self, uint32 dwSampleRate, IAudioSourceProvider** ppSourceProvider) ConnectWebAudio;
+			public function HRESULT(IMFMediaEngineWebSupport *self) DisconnectWebAudio;
+		}
+		[CRepr]
+		public struct IMFMediaSourceExtensionNotify : IUnknown
+		{
+			public const new Guid IID = .(0xa7901327, 0x05dd, 0x4469, 0xa7, 0xb7, 0x0e, 0x01, 0x97, 0x9e, 0x36, 0x1d);
+			
+			public function void(IMFMediaSourceExtensionNotify *self) OnSourceOpen;
+			public function void(IMFMediaSourceExtensionNotify *self) OnSourceEnded;
+			public function void(IMFMediaSourceExtensionNotify *self) OnSourceClose;
+		}
+		[CRepr]
+		public struct IMFBufferListNotify : IUnknown
+		{
+			public const new Guid IID = .(0x24cd47f7, 0x81d8, 0x4785, 0xad, 0xb2, 0xaf, 0x69, 0x7a, 0x96, 0x3c, 0xd2);
+			
+			public function void(IMFBufferListNotify *self) OnAddSourceBuffer;
+			public function void(IMFBufferListNotify *self) OnRemoveSourceBuffer;
+		}
+		[CRepr]
+		public struct IMFSourceBufferNotify : IUnknown
+		{
+			public const new Guid IID = .(0x87e47623, 0x2ceb, 0x45d6, 0x9b, 0x88, 0xd8, 0x52, 0x0c, 0x4d, 0xcb, 0xbc);
+			
+			public function void(IMFSourceBufferNotify *self) OnUpdateStart;
+			public function void(IMFSourceBufferNotify *self) OnAbort;
+			public function void(IMFSourceBufferNotify *self, HRESULT hr) OnError;
+			public function void(IMFSourceBufferNotify *self) OnUpdate;
+			public function void(IMFSourceBufferNotify *self) OnUpdateEnd;
+		}
+		[CRepr]
+		public struct IMFSourceBuffer : IUnknown
+		{
+			public const new Guid IID = .(0xe2cd3a4b, 0xaf25, 0x4d3d, 0x91, 0x10, 0xda, 0x0e, 0x6f, 0x8e, 0xe8, 0x77);
+			
+			public function BOOL(IMFSourceBuffer *self) GetUpdating;
+			public function HRESULT(IMFSourceBuffer *self, IMFMediaTimeRange** ppBuffered) GetBuffered;
+			public function double(IMFSourceBuffer *self) GetTimeStampOffset;
+			public function HRESULT(IMFSourceBuffer *self, double offset) SetTimeStampOffset;
+			public function double(IMFSourceBuffer *self) GetAppendWindowStart;
+			public function HRESULT(IMFSourceBuffer *self, double time) SetAppendWindowStart;
+			public function double(IMFSourceBuffer *self) GetAppendWindowEnd;
+			public function HRESULT(IMFSourceBuffer *self, double time) SetAppendWindowEnd;
+			public function HRESULT(IMFSourceBuffer *self, uint8* pData, uint32 len) Append;
+			public function HRESULT(IMFSourceBuffer *self, IMFByteStream* pStream, uint64* pMaxLen) AppendByteStream;
+			public function HRESULT(IMFSourceBuffer *self) Abort;
+			public function HRESULT(IMFSourceBuffer *self, double start, double end) Remove;
+		}
+		[CRepr]
+		public struct IMFSourceBufferAppendMode : IUnknown
+		{
+			public const new Guid IID = .(0x19666fb4, 0xbabe, 0x4c55, 0xbc, 0x03, 0x0a, 0x07, 0x4d, 0xa3, 0x7e, 0x2a);
+			
+			public function MF_MSE_APPEND_MODE(IMFSourceBufferAppendMode *self) GetAppendMode;
+			public function HRESULT(IMFSourceBufferAppendMode *self, MF_MSE_APPEND_MODE mode) SetAppendMode;
+		}
+		[CRepr]
+		public struct IMFSourceBufferList : IUnknown
+		{
+			public const new Guid IID = .(0x249981f8, 0x8325, 0x41f3, 0xb8, 0x0c, 0x3b, 0x9e, 0x3a, 0xad, 0x0c, 0xbe);
+			
+			public function uint32(IMFSourceBufferList *self) GetLength;
+			public function IMFSourceBuffer*(IMFSourceBufferList *self, uint32 index) GetSourceBuffer;
+		}
+		[CRepr]
+		public struct IMFMediaSourceExtension : IUnknown
+		{
+			public const new Guid IID = .(0xe467b94e, 0xa713, 0x4562, 0xa8, 0x02, 0x81, 0x6a, 0x42, 0xe9, 0x00, 0x8a);
+			
+			public function IMFSourceBufferList*(IMFMediaSourceExtension *self) GetSourceBuffers;
+			public function IMFSourceBufferList*(IMFMediaSourceExtension *self) GetActiveSourceBuffers;
+			public function MF_MSE_READY(IMFMediaSourceExtension *self) GetReadyState;
+			public function double(IMFMediaSourceExtension *self) GetDuration;
+			public function HRESULT(IMFMediaSourceExtension *self, double duration) SetDuration;
+			public function HRESULT(IMFMediaSourceExtension *self, BSTR type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer) AddSourceBuffer;
+			public function HRESULT(IMFMediaSourceExtension *self, IMFSourceBuffer* pSourceBuffer) RemoveSourceBuffer;
+			public function HRESULT(IMFMediaSourceExtension *self, MF_MSE_ERROR error) SetEndOfStream;
+			public function BOOL(IMFMediaSourceExtension *self, BSTR type) IsTypeSupported;
+			public function IMFSourceBuffer*(IMFMediaSourceExtension *self, uint32 dwStreamIndex) GetSourceBuffer;
+		}
+		[CRepr]
+		public struct IMFMediaSourceExtensionLiveSeekableRange : IUnknown
+		{
+			public const new Guid IID = .(0x5d1abfd6, 0x450a, 0x4d92, 0x9e, 0xfc, 0xd6, 0xb6, 0xcb, 0xc1, 0xf4, 0xda);
+			
+			public function HRESULT(IMFMediaSourceExtensionLiveSeekableRange *self, double start, double end) SetLiveSeekableRange;
+			public function HRESULT(IMFMediaSourceExtensionLiveSeekableRange *self) ClearLiveSeekableRange;
+		}
+		[CRepr]
+		public struct IMFMediaEngineEME : IUnknown
+		{
+			public const new Guid IID = .(0x50dc93e4, 0xba4f, 0x4275, 0xae, 0x66, 0x83, 0xe8, 0x36, 0xe5, 0x74, 0x69);
+			
+			public function HRESULT(IMFMediaEngineEME *self, IMFMediaKeys** keys) get_Keys;
+			public function HRESULT(IMFMediaEngineEME *self, IMFMediaKeys* keys) SetMediaKeys;
+		}
+		[CRepr]
+		public struct IMFMediaEngineSrcElementsEx : IMFMediaEngineSrcElements
+		{
+			public const new Guid IID = .(0x654a6bb3, 0xe1a3, 0x424a, 0x99, 0x08, 0x53, 0xa4, 0x3a, 0x0d, 0xfd, 0xa0);
+			
+			public function HRESULT(IMFMediaEngineSrcElementsEx *self, BSTR pURL, BSTR pType, BSTR pMedia, BSTR keySystem) AddElementEx;
+			public function HRESULT(IMFMediaEngineSrcElementsEx *self, uint32 index, BSTR* pType) GetKeySystem;
+		}
+		[CRepr]
+		public struct IMFMediaEngineNeedKeyNotify : IUnknown
+		{
+			public const new Guid IID = .(0x46a30204, 0xa696, 0x4b18, 0x88, 0x04, 0x24, 0x6b, 0x8f, 0x03, 0x1b, 0xb1);
+			
+			public function void(IMFMediaEngineNeedKeyNotify *self, uint8* initData, uint32 cb) NeedKey;
+		}
+		[CRepr]
+		public struct IMFMediaKeys : IUnknown
+		{
+			public const new Guid IID = .(0x5cb31c05, 0x61ff, 0x418f, 0xaf, 0xda, 0xca, 0xaf, 0x41, 0x42, 0x1a, 0x38);
+			
+			public function HRESULT(IMFMediaKeys *self, BSTR mimeType, uint8* initData, uint32 cb, uint8* customData, uint32 cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession) CreateSession;
+			public function HRESULT(IMFMediaKeys *self, BSTR* keySystem) get_KeySystem;
+			public function HRESULT(IMFMediaKeys *self) Shutdown;
+			public function HRESULT(IMFMediaKeys *self, IMFCdmSuspendNotify** notify) GetSuspendNotify;
+		}
+		[CRepr]
+		public struct IMFMediaKeySession : IUnknown
+		{
+			public const new Guid IID = .(0x24fa67d5, 0xd1d0, 0x4dc5, 0x99, 0x5c, 0xc0, 0xef, 0xdc, 0x19, 0x1f, 0xb5);
+			
+			public function HRESULT(IMFMediaKeySession *self, uint16* code, uint32* systemCode) GetError;
+			public function HRESULT(IMFMediaKeySession *self, BSTR* keySystem) get_KeySystem;
+			public function HRESULT(IMFMediaKeySession *self, BSTR* sessionId) get_SessionId;
+			public function HRESULT(IMFMediaKeySession *self, uint8* key, uint32 cb) Update;
+			public function HRESULT(IMFMediaKeySession *self) Close;
+		}
+		[CRepr]
+		public struct IMFMediaKeySessionNotify : IUnknown
+		{
+			public const new Guid IID = .(0x6a0083f9, 0x8947, 0x4c1d, 0x9c, 0xe0, 0xcd, 0xee, 0x22, 0xb2, 0x31, 0x35);
+			
+			public function void(IMFMediaKeySessionNotify *self, BSTR destinationURL, uint8* message, uint32 cb) KeyMessage;
+			public function void(IMFMediaKeySessionNotify *self) KeyAdded;
+			public function void(IMFMediaKeySessionNotify *self, uint16 code, uint32 systemCode) KeyError;
+		}
+		[CRepr]
+		public struct IMFCdmSuspendNotify : IUnknown
+		{
+			public const new Guid IID = .(0x7a5645d2, 0x43bd, 0x47fd, 0x87, 0xb7, 0xdc, 0xd2, 0x4c, 0xc7, 0xd6, 0x92);
+			
+			public function HRESULT(IMFCdmSuspendNotify *self) Begin;
+			public function HRESULT(IMFCdmSuspendNotify *self) End;
+		}
+		[CRepr]
+		public struct IMFHDCPStatus : IUnknown
+		{
+			public const new Guid IID = .(0xde400f54, 0x5bf1, 0x40cf, 0x89, 0x64, 0x0b, 0xea, 0x13, 0x6b, 0x1e, 0x3d);
+			
+			public function HRESULT(IMFHDCPStatus *self, MF_HDCP_STATUS* pStatus, BOOL* pfStatus) Query;
+			public function HRESULT(IMFHDCPStatus *self, MF_HDCP_STATUS status) Set;
+		}
+		[CRepr]
+		public struct IMFMediaEngineOPMInfo : IUnknown
+		{
+			public const new Guid IID = .(0x765763e6, 0x6c01, 0x4b01, 0xbb, 0x0f, 0xb8, 0x29, 0xf6, 0x0e, 0xd2, 0x8c);
+			
+			public function HRESULT(IMFMediaEngineOPMInfo *self, MF_MEDIA_ENGINE_OPM_STATUS* pStatus, BOOL* pConstricted) GetOPMInfo;
+		}
+		[CRepr]
+		public struct IMFMediaEngineClassFactory : IUnknown
+		{
+			public const new Guid IID = .(0x4d645ace, 0x26aa, 0x4688, 0x9b, 0xe1, 0xdf, 0x35, 0x16, 0x99, 0x0b, 0x93);
+			
+			public function HRESULT(IMFMediaEngineClassFactory *self, uint32 dwFlags, IMFAttributes* pAttr, IMFMediaEngine** ppPlayer) CreateInstance;
+			public function HRESULT(IMFMediaEngineClassFactory *self, IMFMediaTimeRange** ppTimeRange) CreateTimeRange;
+			public function HRESULT(IMFMediaEngineClassFactory *self, IMFMediaError** ppError) CreateError;
+		}
+		[CRepr]
+		public struct IMFMediaEngineClassFactoryEx : IMFMediaEngineClassFactory
+		{
+			public const new Guid IID = .(0xc56156c6, 0xea5b, 0x48a5, 0x9d, 0xf8, 0xfb, 0xe0, 0x35, 0xd0, 0x92, 0x9e);
+			
+			public function HRESULT(IMFMediaEngineClassFactoryEx *self, uint32 dwFlags, IMFAttributes* pAttr, IMFMediaSourceExtension** ppMSE) CreateMediaSourceExtension;
+			public function HRESULT(IMFMediaEngineClassFactoryEx *self, BSTR keySystem, BSTR cdmStorePath, IMFMediaKeys** ppKeys) CreateMediaKeys;
+			public function HRESULT(IMFMediaEngineClassFactoryEx *self, BSTR type, BSTR keySystem, BOOL* isSupported) IsTypeSupported;
+		}
+		[CRepr]
+		public struct IMFMediaEngineClassFactory2 : IUnknown
+		{
+			public const new Guid IID = .(0x09083cef, 0x867f, 0x4bf6, 0x87, 0x76, 0xde, 0xe3, 0xa7, 0xb4, 0x2f, 0xca);
+			
+			public function HRESULT(IMFMediaEngineClassFactory2 *self, BSTR keySystem, BSTR defaultCdmStorePath, BSTR inprivateCdmStorePath, IMFMediaKeys** ppKeys) CreateMediaKeys2;
+		}
+		[CRepr]
+		public struct IMFExtendedDRMTypeSupport : IUnknown
+		{
+			public const new Guid IID = .(0x332ec562, 0x3758, 0x468d, 0xa7, 0x84, 0xe3, 0x8f, 0x23, 0x55, 0x21, 0x28);
+			
+			public function HRESULT(IMFExtendedDRMTypeSupport *self, BSTR type, BSTR keySystem, MF_MEDIA_ENGINE_CANPLAY* pAnswer) IsTypeSupportedEx;
+		}
+		[CRepr]
+		public struct IMFMediaEngineSupportsSourceTransfer : IUnknown
+		{
+			public const new Guid IID = .(0xa724b056, 0x1b2e, 0x4642, 0xa6, 0xf3, 0xdb, 0x94, 0x20, 0xc5, 0x29, 0x08);
+			
+			public function HRESULT(IMFMediaEngineSupportsSourceTransfer *self, BOOL* pfShouldTransfer) ShouldTransferSource;
+			public function HRESULT(IMFMediaEngineSupportsSourceTransfer *self, IMFByteStream** ppByteStream, IMFMediaSource** ppMediaSource, IMFMediaSourceExtension** ppMSE) DetachMediaSource;
+			public function HRESULT(IMFMediaEngineSupportsSourceTransfer *self, IMFByteStream* pByteStream, IMFMediaSource* pMediaSource, IMFMediaSourceExtension* pMSE) AttachMediaSource;
+		}
+		[CRepr]
+		public struct IMFMediaEngineTransferSource : IUnknown
+		{
+			public const new Guid IID = .(0x24230452, 0xfe54, 0x40cc, 0x94, 0xf3, 0xfc, 0xc3, 0x94, 0xc3, 0x40, 0xd6);
+			
+			public function HRESULT(IMFMediaEngineTransferSource *self, IMFMediaEngine* destination) TransferSourceToMediaEngine;
+		}
+		[CRepr]
+		public struct IMFTimedText : IUnknown
+		{
+			public const new Guid IID = .(0x1f2a94c9, 0xa3df, 0x430d, 0x9d, 0x0f, 0xac, 0xd8, 0x5d, 0xdc, 0x29, 0xaf);
+			
+			public function HRESULT(IMFTimedText *self, IMFTimedTextNotify* notify) RegisterNotifications;
+			public function HRESULT(IMFTimedText *self, uint32 trackId, BOOL selected) SelectTrack;
+			public function HRESULT(IMFTimedText *self, IMFByteStream* byteStream, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, uint32* trackId) AddDataSource;
+			public function HRESULT(IMFTimedText *self, PWSTR url, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, uint32* trackId) AddDataSourceFromUrl;
+			public function HRESULT(IMFTimedText *self, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, IMFTimedTextTrack** track) AddTrack;
+			public function HRESULT(IMFTimedText *self, IMFTimedTextTrack* track) RemoveTrack;
+			public function HRESULT(IMFTimedText *self, double* offset) GetCueTimeOffset;
+			public function HRESULT(IMFTimedText *self, double offset) SetCueTimeOffset;
+			public function HRESULT(IMFTimedText *self, IMFTimedTextTrackList** tracks) GetTracks;
+			public function HRESULT(IMFTimedText *self, IMFTimedTextTrackList** activeTracks) GetActiveTracks;
+			public function HRESULT(IMFTimedText *self, IMFTimedTextTrackList** textTracks) GetTextTracks;
+			public function HRESULT(IMFTimedText *self, IMFTimedTextTrackList** metadataTracks) GetMetadataTracks;
+			public function HRESULT(IMFTimedText *self, BOOL enabled) SetInBandEnabled;
+			public function BOOL(IMFTimedText *self) IsInBandEnabled;
+		}
+		[CRepr]
+		public struct IMFTimedTextNotify : IUnknown
+		{
+			public const new Guid IID = .(0xdf6b87b6, 0xce12, 0x45db, 0xab, 0xa7, 0x43, 0x2f, 0xe0, 0x54, 0xe5, 0x7d);
+			
+			public function void(IMFTimedTextNotify *self, uint32 trackId) TrackAdded;
+			public function void(IMFTimedTextNotify *self, uint32 trackId) TrackRemoved;
+			public function void(IMFTimedTextNotify *self, uint32 trackId, BOOL selected) TrackSelected;
+			public function void(IMFTimedTextNotify *self, uint32 trackId) TrackReadyStateChanged;
+			public function void(IMFTimedTextNotify *self, MF_TIMED_TEXT_ERROR_CODE errorCode, HRESULT extendedErrorCode, uint32 sourceTrackId) Error;
+			public function void(IMFTimedTextNotify *self, MF_TIMED_TEXT_CUE_EVENT cueEvent, double currentTime, IMFTimedTextCue* cue) Cue;
+			public function void(IMFTimedTextNotify *self) Reset;
+		}
+		[CRepr]
+		public struct IMFTimedTextTrack : IUnknown
+		{
+			public const new Guid IID = .(0x8822c32d, 0x654e, 0x4233, 0xbf, 0x21, 0xd7, 0xf2, 0xe6, 0x7d, 0x30, 0xd4);
+			
+			public function uint32(IMFTimedTextTrack *self) GetId;
+			public function HRESULT(IMFTimedTextTrack *self, PWSTR* label) GetLabel;
+			public function HRESULT(IMFTimedTextTrack *self, PWSTR label) SetLabel;
+			public function HRESULT(IMFTimedTextTrack *self, PWSTR* language) GetLanguage;
+			public function MF_TIMED_TEXT_TRACK_KIND(IMFTimedTextTrack *self) GetTrackKind;
+			public function BOOL(IMFTimedTextTrack *self) IsInBand;
+			public function HRESULT(IMFTimedTextTrack *self, PWSTR* dispatchType) GetInBandMetadataTrackDispatchType;
+			public function BOOL(IMFTimedTextTrack *self) IsActive;
+			public function MF_TIMED_TEXT_ERROR_CODE(IMFTimedTextTrack *self) GetErrorCode;
+			public function HRESULT(IMFTimedTextTrack *self) GetExtendedErrorCode;
+			public function HRESULT(IMFTimedTextTrack *self, Guid* format) GetDataFormat;
+			public function MF_TIMED_TEXT_TRACK_READY_STATE(IMFTimedTextTrack *self) GetReadyState;
+			public function HRESULT(IMFTimedTextTrack *self, IMFTimedTextCueList** cues) GetCueList;
+		}
+		[CRepr]
+		public struct IMFTimedTextTrackList : IUnknown
+		{
+			public const new Guid IID = .(0x23ff334c, 0x442c, 0x445f, 0xbc, 0xcc, 0xed, 0xc4, 0x38, 0xaa, 0x11, 0xe2);
+			
+			public function uint32(IMFTimedTextTrackList *self) GetLength;
+			public function HRESULT(IMFTimedTextTrackList *self, uint32 index, IMFTimedTextTrack** track) GetTrack;
+			public function HRESULT(IMFTimedTextTrackList *self, uint32 trackId, IMFTimedTextTrack** track) GetTrackById;
+		}
+		[CRepr]
+		public struct IMFTimedTextCue : IUnknown
+		{
+			public const new Guid IID = .(0x1e560447, 0x9a2b, 0x43e1, 0xa9, 0x4c, 0xb0, 0xaa, 0xab, 0xfb, 0xfb, 0xc9);
+			
+			public function uint32(IMFTimedTextCue *self) GetId;
+			public function HRESULT(IMFTimedTextCue *self, PWSTR* originalId) GetOriginalId;
+			public function MF_TIMED_TEXT_TRACK_KIND(IMFTimedTextCue *self) GetCueKind;
+			public function double(IMFTimedTextCue *self) GetStartTime;
+			public function double(IMFTimedTextCue *self) GetDuration;
+			public function uint32(IMFTimedTextCue *self) GetTrackId;
+			public function HRESULT(IMFTimedTextCue *self, IMFTimedTextBinary** data) GetData;
+			public function HRESULT(IMFTimedTextCue *self, IMFTimedTextRegion** region) GetRegion;
+			public function HRESULT(IMFTimedTextCue *self, IMFTimedTextStyle** style) GetStyle;
+			public function uint32(IMFTimedTextCue *self) GetLineCount;
+			public function HRESULT(IMFTimedTextCue *self, uint32 index, IMFTimedTextFormattedText** line) GetLine;
+		}
+		[CRepr]
+		public struct IMFTimedTextFormattedText : IUnknown
+		{
+			public const new Guid IID = .(0xe13af3c1, 0x4d47, 0x4354, 0xb1, 0xf5, 0xe8, 0x3a, 0xe0, 0xec, 0xae, 0x60);
+			
+			public function HRESULT(IMFTimedTextFormattedText *self, PWSTR* text) GetText;
+			public function uint32(IMFTimedTextFormattedText *self) GetSubformattingCount;
+			public function HRESULT(IMFTimedTextFormattedText *self, uint32 index, uint32* firstChar, uint32* charLength, IMFTimedTextStyle** style) GetSubformatting;
+		}
+		[CRepr]
+		public struct IMFTimedTextStyle : IUnknown
+		{
+			public const new Guid IID = .(0x09b2455d, 0xb834, 0x4f01, 0xa3, 0x47, 0x90, 0x52, 0xe2, 0x1c, 0x45, 0x0e);
+			
+			public function HRESULT(IMFTimedTextStyle *self, PWSTR* name) GetName;
+			public function BOOL(IMFTimedTextStyle *self) IsExternal;
+			public function HRESULT(IMFTimedTextStyle *self, PWSTR* fontFamily) GetFontFamily;
+			public function HRESULT(IMFTimedTextStyle *self, double* fontSize, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetFontSize;
+			public function HRESULT(IMFTimedTextStyle *self, MFARGB* color) GetColor;
+			public function HRESULT(IMFTimedTextStyle *self, MFARGB* bgColor) GetBackgroundColor;
+			public function HRESULT(IMFTimedTextStyle *self, BOOL* showBackgroundAlways) GetShowBackgroundAlways;
+			public function HRESULT(IMFTimedTextStyle *self, MF_TIMED_TEXT_FONT_STYLE* fontStyle) GetFontStyle;
+			public function HRESULT(IMFTimedTextStyle *self, BOOL* bold) GetBold;
+			public function HRESULT(IMFTimedTextStyle *self, BOOL* rightToLeft) GetRightToLeft;
+			public function HRESULT(IMFTimedTextStyle *self, MF_TIMED_TEXT_ALIGNMENT* textAlign) GetTextAlignment;
+			public function HRESULT(IMFTimedTextStyle *self, uint32* textDecoration) GetTextDecoration;
+			public function HRESULT(IMFTimedTextStyle *self, MFARGB* color, double* thickness, double* blurRadius, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetTextOutline;
+		}
+		[CRepr]
+		public struct IMFTimedTextRegion : IUnknown
+		{
+			public const new Guid IID = .(0xc8d22afc, 0xbc47, 0x4bdf, 0x9b, 0x04, 0x78, 0x7e, 0x49, 0xce, 0x3f, 0x58);
+			
+			public function HRESULT(IMFTimedTextRegion *self, PWSTR* name) GetName;
+			public function HRESULT(IMFTimedTextRegion *self, double* pX, double* pY, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetPosition;
+			public function HRESULT(IMFTimedTextRegion *self, double* pWidth, double* pHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetExtent;
+			public function HRESULT(IMFTimedTextRegion *self, MFARGB* bgColor) GetBackgroundColor;
+			public function HRESULT(IMFTimedTextRegion *self, MF_TIMED_TEXT_WRITING_MODE* writingMode) GetWritingMode;
+			public function HRESULT(IMFTimedTextRegion *self, MF_TIMED_TEXT_DISPLAY_ALIGNMENT* displayAlign) GetDisplayAlignment;
+			public function HRESULT(IMFTimedTextRegion *self, double* pLineHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetLineHeight;
+			public function HRESULT(IMFTimedTextRegion *self, BOOL* clipOverflow) GetClipOverflow;
+			public function HRESULT(IMFTimedTextRegion *self, double* before, double* start, double* after, double* end, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetPadding;
+			public function HRESULT(IMFTimedTextRegion *self, BOOL* wrap) GetWrap;
+			public function HRESULT(IMFTimedTextRegion *self, int32* zIndex) GetZIndex;
+			public function HRESULT(IMFTimedTextRegion *self, MF_TIMED_TEXT_SCROLL_MODE* scrollMode) GetScrollMode;
+		}
+		[CRepr]
+		public struct IMFTimedTextBinary : IUnknown
+		{
+			public const new Guid IID = .(0x4ae3a412, 0x0545, 0x43c4, 0xbf, 0x6f, 0x6b, 0x97, 0xa5, 0xc6, 0xc4, 0x32);
+			
+			public function HRESULT(IMFTimedTextBinary *self, uint8** data, uint32* length) GetData;
+		}
+		[CRepr]
+		public struct IMFTimedTextCueList : IUnknown
+		{
+			public const new Guid IID = .(0xad128745, 0x211b, 0x40a0, 0x99, 0x81, 0xfe, 0x65, 0xf1, 0x66, 0xd0, 0xfd);
+			
+			public function uint32(IMFTimedTextCueList *self) GetLength;
+			public function HRESULT(IMFTimedTextCueList *self, uint32 index, IMFTimedTextCue** cue) GetCueByIndex;
+			public function HRESULT(IMFTimedTextCueList *self, uint32 id, IMFTimedTextCue** cue) GetCueById;
+			public function HRESULT(IMFTimedTextCueList *self, PWSTR originalId, IMFTimedTextCue** cue) GetCueByOriginalId;
+			public function HRESULT(IMFTimedTextCueList *self, double start, double duration, PWSTR text, IMFTimedTextCue** cue) AddTextCue;
+			public function HRESULT(IMFTimedTextCueList *self, double start, double duration, uint8* data, uint32 dataSize, IMFTimedTextCue** cue) AddDataCue;
+			public function HRESULT(IMFTimedTextCueList *self, IMFTimedTextCue* cue) RemoveCue;
+		}
+		[CRepr]
+		public struct IMFTimedTextRuby : IUnknown
+		{
+			public const new Guid IID = .(0x76c6a6f5, 0x4955, 0x4de5, 0xb2, 0x7b, 0x14, 0xb7, 0x34, 0xcc, 0x14, 0xb4);
+			
+			public function HRESULT(IMFTimedTextRuby *self, PWSTR* rubyText) GetRubyText;
+			public function HRESULT(IMFTimedTextRuby *self, MF_TIMED_TEXT_RUBY_POSITION* value) GetRubyPosition;
+			public function HRESULT(IMFTimedTextRuby *self, MF_TIMED_TEXT_RUBY_ALIGN* value) GetRubyAlign;
+			public function HRESULT(IMFTimedTextRuby *self, MF_TIMED_TEXT_RUBY_RESERVE* value) GetRubyReserve;
+		}
+		[CRepr]
+		public struct IMFTimedTextBouten : IUnknown
+		{
+			public const new Guid IID = .(0x3c5f3e8a, 0x90c0, 0x464e, 0x81, 0x36, 0x89, 0x8d, 0x29, 0x75, 0xf8, 0x47);
+			
+			public function HRESULT(IMFTimedTextBouten *self, MF_TIMED_TEXT_BOUTEN_TYPE* value) GetBoutenType;
+			public function HRESULT(IMFTimedTextBouten *self, MFARGB* value) GetBoutenColor;
+			public function HRESULT(IMFTimedTextBouten *self, MF_TIMED_TEXT_BOUTEN_POSITION* value) GetBoutenPosition;
+		}
+		[CRepr]
+		public struct IMFTimedTextStyle2 : IUnknown
+		{
+			public const new Guid IID = .(0xdb639199, 0xc809, 0x4c89, 0xbf, 0xca, 0xd0, 0xbb, 0xb9, 0x72, 0x9d, 0x6e);
+			
+			public function HRESULT(IMFTimedTextStyle2 *self, IMFTimedTextRuby** ruby) GetRuby;
+			public function HRESULT(IMFTimedTextStyle2 *self, IMFTimedTextBouten** bouten) GetBouten;
+			public function HRESULT(IMFTimedTextStyle2 *self, BOOL* value) IsTextCombined;
+			public function HRESULT(IMFTimedTextStyle2 *self, double* value) GetFontAngleInDegrees;
+		}
+		[CRepr]
+		public struct IMFMediaEngineEMENotify : IUnknown
+		{
+			public const new Guid IID = .(0x9e184d15, 0xcdb7, 0x4f86, 0xb4, 0x9e, 0x56, 0x66, 0x89, 0xf4, 0xa6, 0x01);
+			
+			public function void(IMFMediaEngineEMENotify *self, uint8* pbInitData, uint32 cb, BSTR bstrInitDataType) Encrypted;
+			public function void(IMFMediaEngineEMENotify *self) WaitingForKey;
+		}
+		[CRepr]
+		public struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotify
+		{
+			public const new Guid IID = .(0xc3a9e92a, 0xda88, 0x46b0, 0xa1, 0x10, 0x6c, 0xf9, 0x53, 0x02, 0x6c, 0xb9);
+			
+			public function void(IMFMediaKeySessionNotify2 *self, MF_MEDIAKEYSESSION_MESSAGETYPE eMessageType, BSTR destinationURL, uint8* pbMessage, uint32 cbMessage) KeyMessage2;
+			public function void(IMFMediaKeySessionNotify2 *self) KeyStatusChange;
+		}
+		[CRepr]
+		public struct IMFMediaKeySystemAccess : IUnknown
+		{
+			public const new Guid IID = .(0xaec63fda, 0x7a97, 0x4944, 0xb3, 0x5c, 0x6c, 0x6d, 0xf8, 0x08, 0x5c, 0xc3);
+			
+			public function HRESULT(IMFMediaKeySystemAccess *self, IPropertyStore* pCdmCustomConfig, IMFMediaKeys2** ppKeys) CreateMediaKeys;
+			public function HRESULT(IMFMediaKeySystemAccess *self, IPropertyStore** ppSupportedConfiguration) get_SupportedConfiguration;
+			public function HRESULT(IMFMediaKeySystemAccess *self, BSTR* pKeySystem) get_KeySystem;
+		}
+		[CRepr]
+		public struct IMFMediaEngineClassFactory3 : IUnknown
+		{
+			public const new Guid IID = .(0x3787614f, 0x65f7, 0x4003, 0xb6, 0x73, 0xea, 0xd8, 0x29, 0x3a, 0x0e, 0x60);
+			
+			public function HRESULT(IMFMediaEngineClassFactory3 *self, BSTR keySystem, IPropertyStore** ppSupportedConfigurationsArray, uint32 uSize, IMFMediaKeySystemAccess** ppKeyAccess) CreateMediaKeySystemAccess;
+		}
+		[CRepr]
+		public struct IMFMediaKeys2 : IMFMediaKeys
+		{
+			public const new Guid IID = .(0x45892507, 0xad66, 0x4de2, 0x83, 0xa2, 0xac, 0xbb, 0x13, 0xcd, 0x8d, 0x43);
+			
+			public function HRESULT(IMFMediaKeys2 *self, MF_MEDIAKEYSESSION_TYPE eSessionType, IMFMediaKeySessionNotify2* pMFMediaKeySessionNotify2, IMFMediaKeySession2** ppSession) CreateSession2;
+			public function HRESULT(IMFMediaKeys2 *self, uint8* pbServerCertificate, uint32 cb) SetServerCertificate;
+			public function HRESULT(IMFMediaKeys2 *self, HRESULT systemCode, HRESULT* code) GetDOMException;
+		}
+		[CRepr]
+		public struct IMFMediaKeySession2 : IMFMediaKeySession
+		{
+			public const new Guid IID = .(0xe9707e05, 0x6d55, 0x4636, 0xb1, 0x85, 0x3d, 0xe2, 0x12, 0x10, 0xbd, 0x75);
+			
+			public function HRESULT(IMFMediaKeySession2 *self, MFMediaKeyStatus** pKeyStatusesArray, uint32* puSize) get_KeyStatuses;
+			public function HRESULT(IMFMediaKeySession2 *self, BSTR bstrSessionId, BOOL* pfLoaded) Load;
+			public function HRESULT(IMFMediaKeySession2 *self, BSTR initDataType, uint8* pbInitData, uint32 cb) GenerateRequest;
+			public function HRESULT(IMFMediaKeySession2 *self, double* dblExpiration) get_Expiration;
+			public function HRESULT(IMFMediaKeySession2 *self) Remove;
+			public function HRESULT(IMFMediaKeySession2 *self) Shutdown;
+		}
+		[CRepr]
+		public struct IMFMediaEngineClassFactory4 : IUnknown
+		{
+			public const new Guid IID = .(0xfbe256c1, 0x43cf, 0x4a9b, 0x8c, 0xb8, 0xce, 0x86, 0x32, 0xa3, 0x41, 0x86);
+			
+			public function HRESULT(IMFMediaEngineClassFactory4 *self, PWSTR keySystem, Guid* riid, void** ppvObject) CreateContentDecryptionModuleFactory;
+		}
+		[CRepr]
+		public struct IMFDLNASinkInit : IUnknown
+		{
+			public const new Guid IID = .(0x0c012799, 0x1b61, 0x4c10, 0xbd, 0xa9, 0x04, 0x44, 0x5b, 0xe5, 0xf5, 0x61);
+			
+			public function HRESULT(IMFDLNASinkInit *self, IMFByteStream* pByteStream, BOOL fPal) Initialize;
+		}
+		[CRepr]
+		public struct IMFReadWriteClassFactory : IUnknown
+		{
+			public const new Guid IID = .(0xe7fe2e12, 0x661c, 0x40da, 0x92, 0xf9, 0x4f, 0x00, 0x2a, 0xb6, 0x76, 0x27);
+			
+			public function HRESULT(IMFReadWriteClassFactory *self, Guid* clsid, PWSTR pwszURL, IMFAttributes* pAttributes, Guid* riid, void** ppvObject) CreateInstanceFromURL;
+			public function HRESULT(IMFReadWriteClassFactory *self, Guid* clsid, IUnknown* punkObject, IMFAttributes* pAttributes, Guid* riid, void** ppvObject) CreateInstanceFromObject;
+		}
+		[CRepr]
+		public struct IMFSourceReader : IUnknown
+		{
+			public const new Guid IID = .(0x70ae66f2, 0xc809, 0x4e4f, 0x89, 0x15, 0xbd, 0xcb, 0x40, 0x6b, 0x79, 0x93);
+			
+			public function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, BOOL* pfSelected) GetStreamSelection;
+			public function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, BOOL fSelected) SetStreamSelection;
+			public function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, uint32 dwMediaTypeIndex, IMFMediaType** ppMediaType) GetNativeMediaType;
+			public function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, IMFMediaType** ppMediaType) GetCurrentMediaType;
+			public function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, uint32* pdwReserved, IMFMediaType* pMediaType) SetCurrentMediaType;
+			public function HRESULT(IMFSourceReader *self, Guid* guidTimeFormat, PROPVARIANT* varPosition) SetCurrentPosition;
+			public function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, uint32 dwControlFlags, uint32* pdwActualStreamIndex, uint32* pdwStreamFlags, int64* pllTimestamp, IMFSample** ppSample) ReadSample;
+			public function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex) Flush;
+			public function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, Guid* guidService, Guid* riid, void** ppvObject) GetServiceForStream;
+			public function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, Guid* guidAttribute, PROPVARIANT* pvarAttribute) GetPresentationAttribute;
+		}
+		[CRepr]
+		public struct IMFSourceReaderEx : IMFSourceReader
+		{
+			public const new Guid IID = .(0x7b981cf0, 0x560e, 0x4116, 0x98, 0x75, 0xb0, 0x99, 0x89, 0x5f, 0x23, 0xd7);
+			
+			public function HRESULT(IMFSourceReaderEx *self, uint32 dwStreamIndex, IMFMediaType* pMediaType, uint32* pdwStreamFlags) SetNativeMediaType;
+			public function HRESULT(IMFSourceReaderEx *self, uint32 dwStreamIndex, IUnknown* pTransformOrActivate) AddTransformForStream;
+			public function HRESULT(IMFSourceReaderEx *self, uint32 dwStreamIndex) RemoveAllTransformsForStream;
+			public function HRESULT(IMFSourceReaderEx *self, uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform) GetTransformForStream;
+		}
+		[CRepr]
+		public struct IMFSourceReaderCallback : IUnknown
+		{
+			public const new Guid IID = .(0xdeec8d99, 0xfa1d, 0x4d82, 0x84, 0xc2, 0x2c, 0x89, 0x69, 0x94, 0x48, 0x67);
+			
+			public function HRESULT(IMFSourceReaderCallback *self, HRESULT hrStatus, uint32 dwStreamIndex, uint32 dwStreamFlags, int64 llTimestamp, IMFSample* pSample) OnReadSample;
+			public function HRESULT(IMFSourceReaderCallback *self, uint32 dwStreamIndex) OnFlush;
+			public function HRESULT(IMFSourceReaderCallback *self, uint32 dwStreamIndex, IMFMediaEvent* pEvent) OnEvent;
+		}
+		[CRepr]
+		public struct IMFSourceReaderCallback2 : IMFSourceReaderCallback
+		{
+			public const new Guid IID = .(0xcf839fe6, 0x8c2a, 0x4dd2, 0xb6, 0xea, 0xc2, 0x2d, 0x69, 0x61, 0xaf, 0x05);
+			
+			public function HRESULT(IMFSourceReaderCallback2 *self) OnTransformChange;
+			public function HRESULT(IMFSourceReaderCallback2 *self, uint32 dwStreamIndex, HRESULT hrStatus) OnStreamError;
+		}
+		[CRepr]
+		public struct IMFSinkWriter : IUnknown
+		{
+			public const new Guid IID = .(0x3137f1cd, 0xfe5e, 0x4805, 0xa5, 0xd8, 0xfb, 0x47, 0x74, 0x48, 0xcb, 0x3d);
+			
+			public function HRESULT(IMFSinkWriter *self, IMFMediaType* pTargetMediaType, uint32* pdwStreamIndex) AddStream;
+			public function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, IMFMediaType* pInputMediaType, IMFAttributes* pEncodingParameters) SetInputMediaType;
+			public function HRESULT(IMFSinkWriter *self) BeginWriting;
+			public function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, IMFSample* pSample) WriteSample;
+			public function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, int64 llTimestamp) SendStreamTick;
+			public function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, void* pvContext) PlaceMarker;
+			public function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex) NotifyEndOfSegment;
+			public function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex) Flush;
+			public function HRESULT(IMFSinkWriter *self) Finalize;
+			public function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, Guid* guidService, Guid* riid, void** ppvObject) GetServiceForStream;
+			public function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats) GetStatistics;
+		}
+		[CRepr]
+		public struct IMFSinkWriterEx : IMFSinkWriter
+		{
+			public const new Guid IID = .(0x588d72ab, 0x5bc1, 0x496a, 0x87, 0x14, 0xb7, 0x06, 0x17, 0x14, 0x1b, 0x25);
+			
+			public function HRESULT(IMFSinkWriterEx *self, uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform) GetTransformForStream;
+		}
+		[CRepr]
+		public struct IMFSinkWriterEncoderConfig : IUnknown
+		{
+			public const new Guid IID = .(0x17c3779e, 0x3cde, 0x4ede, 0x8c, 0x60, 0x38, 0x99, 0xf5, 0xf5, 0x3a, 0xd6);
+			
+			public function HRESULT(IMFSinkWriterEncoderConfig *self, uint32 dwStreamIndex, IMFMediaType* pTargetMediaType, IMFAttributes* pEncodingParameters) SetTargetMediaType;
+			public function HRESULT(IMFSinkWriterEncoderConfig *self, uint32 dwStreamIndex, IMFAttributes* pEncodingParameters) PlaceEncodingParameters;
+		}
+		[CRepr]
+		public struct IMFSinkWriterCallback : IUnknown
+		{
+			public const new Guid IID = .(0x666f76de, 0x33d2, 0x41b9, 0xa4, 0x58, 0x29, 0xed, 0x0a, 0x97, 0x2c, 0x58);
+			
+			public function HRESULT(IMFSinkWriterCallback *self, HRESULT hrStatus) OnFinalize;
+			public function HRESULT(IMFSinkWriterCallback *self, uint32 dwStreamIndex, void* pvContext) OnMarker;
+		}
+		[CRepr]
+		public struct IMFSinkWriterCallback2 : IMFSinkWriterCallback
+		{
+			public const new Guid IID = .(0x2456bd58, 0xc067, 0x4513, 0x84, 0xfe, 0x8d, 0x0c, 0x88, 0xff, 0xdc, 0x61);
+			
+			public function HRESULT(IMFSinkWriterCallback2 *self) OnTransformChange;
+			public function HRESULT(IMFSinkWriterCallback2 *self, uint32 dwStreamIndex, HRESULT hrStatus) OnStreamError;
+		}
+		[CRepr]
+		public struct IMFVideoPositionMapper : IUnknown
+		{
+			public const new Guid IID = .(0x1f6a9f17, 0xe70b, 0x4e24, 0x8a, 0xe4, 0x0b, 0x2c, 0x3b, 0xa7, 0xa4, 0xae);
+			
+			public function HRESULT(IMFVideoPositionMapper *self, float xOut, float yOut, uint32 dwOutputStreamIndex, uint32 dwInputStreamIndex, float* pxIn, float* pyIn) MapOutputCoordinateToInputStream;
+		}
+		[CRepr]
+		public struct IMFVideoDeviceID : IUnknown
+		{
+			public const new Guid IID = .(0xa38d9567, 0x5a9c, 0x4f3c, 0xb2, 0x93, 0x8e, 0xb4, 0x15, 0xb2, 0x79, 0xba);
+			
+			public function HRESULT(IMFVideoDeviceID *self, Guid* pDeviceID) GetDeviceID;
+		}
+		[CRepr]
+		public struct IMFVideoDisplayControl : IUnknown
+		{
+			public const new Guid IID = .(0xa490b1e4, 0xab84, 0x4d31, 0xa1, 0xb2, 0x18, 0x1e, 0x03, 0xb1, 0x07, 0x7a);
+			
+			public function HRESULT(IMFVideoDisplayControl *self, SIZE* pszVideo, SIZE* pszARVideo) GetNativeVideoSize;
+			public function HRESULT(IMFVideoDisplayControl *self, SIZE* pszMin, SIZE* pszMax) GetIdealVideoSize;
+			public function HRESULT(IMFVideoDisplayControl *self, MFVideoNormalizedRect* pnrcSource, RECT* prcDest) SetVideoPosition;
+			public function HRESULT(IMFVideoDisplayControl *self, MFVideoNormalizedRect* pnrcSource, RECT* prcDest) GetVideoPosition;
+			public function HRESULT(IMFVideoDisplayControl *self, uint32 dwAspectRatioMode) SetAspectRatioMode;
+			public function HRESULT(IMFVideoDisplayControl *self, uint32* pdwAspectRatioMode) GetAspectRatioMode;
+			public function HRESULT(IMFVideoDisplayControl *self, HWND hwndVideo) SetVideoWindow;
+			public function HRESULT(IMFVideoDisplayControl *self, HWND* phwndVideo) GetVideoWindow;
+			public function HRESULT(IMFVideoDisplayControl *self) RepaintVideo;
+			public function HRESULT(IMFVideoDisplayControl *self, BITMAPINFOHEADER* pBih, uint8** pDib, uint32* pcbDib, int64* pTimeStamp) GetCurrentImage;
+			public function HRESULT(IMFVideoDisplayControl *self, uint32 Clr) SetBorderColor;
+			public function HRESULT(IMFVideoDisplayControl *self, uint32* pClr) GetBorderColor;
+			public function HRESULT(IMFVideoDisplayControl *self, uint32 dwRenderFlags) SetRenderingPrefs;
+			public function HRESULT(IMFVideoDisplayControl *self, uint32* pdwRenderFlags) GetRenderingPrefs;
+			public function HRESULT(IMFVideoDisplayControl *self, BOOL fFullscreen) SetFullscreen;
+			public function HRESULT(IMFVideoDisplayControl *self, BOOL* pfFullscreen) GetFullscreen;
+		}
+		[CRepr]
+		public struct IMFVideoPresenter : IMFClockStateSink
+		{
+			public const new Guid IID = .(0x29aff080, 0x182a, 0x4a5d, 0xaf, 0x3b, 0x44, 0x8f, 0x3a, 0x63, 0x46, 0xcb);
+			
+			public function HRESULT(IMFVideoPresenter *self, MFVP_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
+			public function HRESULT(IMFVideoPresenter *self, IMFVideoMediaType** ppMediaType) GetCurrentMediaType;
+		}
+		[CRepr]
+		public struct IMFDesiredSample : IUnknown
+		{
+			public const new Guid IID = .(0x56c294d0, 0x753e, 0x4260, 0x8d, 0x61, 0xa3, 0xd8, 0x82, 0x0b, 0x1d, 0x54);
+			
+			public function HRESULT(IMFDesiredSample *self, int64* phnsSampleTime, int64* phnsSampleDuration) GetDesiredSampleTimeAndDuration;
+			public function void(IMFDesiredSample *self, int64 hnsSampleTime, int64 hnsSampleDuration) SetDesiredSampleTimeAndDuration;
+			public function void(IMFDesiredSample *self) Clear;
+		}
+		[CRepr]
+		public struct IMFVideoMixerControl : IUnknown
+		{
+			public const new Guid IID = .(0xa5c6c53f, 0xc202, 0x4aa5, 0x96, 0x95, 0x17, 0x5b, 0xa8, 0xc5, 0x08, 0xa5);
+			
+			public function HRESULT(IMFVideoMixerControl *self, uint32 dwStreamID, uint32 dwZ) SetStreamZOrder;
+			public function HRESULT(IMFVideoMixerControl *self, uint32 dwStreamID, uint32* pdwZ) GetStreamZOrder;
+			public function HRESULT(IMFVideoMixerControl *self, uint32 dwStreamID, MFVideoNormalizedRect* pnrcOutput) SetStreamOutputRect;
+			public function HRESULT(IMFVideoMixerControl *self, uint32 dwStreamID, MFVideoNormalizedRect* pnrcOutput) GetStreamOutputRect;
+		}
+		[CRepr]
+		public struct IMFVideoMixerControl2 : IMFVideoMixerControl
+		{
+			public const new Guid IID = .(0x8459616d, 0x966e, 0x4930, 0xb6, 0x58, 0x54, 0xfa, 0x7e, 0x5a, 0x16, 0xd3);
+			
+			public function HRESULT(IMFVideoMixerControl2 *self, uint32 dwMixFlags) SetMixingPrefs;
+			public function HRESULT(IMFVideoMixerControl2 *self, uint32* pdwMixFlags) GetMixingPrefs;
+		}
+		[CRepr]
+		public struct IMFVideoRenderer : IUnknown
+		{
+			public const new Guid IID = .(0xdfdfd197, 0xa9ca, 0x43d8, 0xb3, 0x41, 0x6a, 0xf3, 0x50, 0x37, 0x92, 0xcd);
+			
+			public function HRESULT(IMFVideoRenderer *self, IMFTransform* pVideoMixer, IMFVideoPresenter* pVideoPresenter) InitializeRenderer;
+		}
+		[CRepr]
+		public struct IEVRFilterConfig : IUnknown
+		{
+			public const new Guid IID = .(0x83e91e85, 0x82c1, 0x4ea7, 0x80, 0x1d, 0x85, 0xdc, 0x50, 0xb7, 0x50, 0x86);
+			
+			public function HRESULT(IEVRFilterConfig *self, uint32 dwMaxStreams) SetNumberOfStreams;
+			public function HRESULT(IEVRFilterConfig *self, uint32* pdwMaxStreams) GetNumberOfStreams;
+		}
+		[CRepr]
+		public struct IEVRFilterConfigEx : IEVRFilterConfig
+		{
+			public const new Guid IID = .(0xaea36028, 0x796d, 0x454f, 0xbe, 0xee, 0xb4, 0x80, 0x71, 0xe2, 0x43, 0x04);
+			
+			public function HRESULT(IEVRFilterConfigEx *self, uint32 dwConfigFlags) SetConfigPrefs;
+			public function HRESULT(IEVRFilterConfigEx *self, uint32* pdwConfigFlags) GetConfigPrefs;
+		}
+		[CRepr]
+		public struct IMFTopologyServiceLookup : IUnknown
+		{
+			public const new Guid IID = .(0xfa993889, 0x4383, 0x415a, 0xa9, 0x30, 0xdd, 0x47, 0x2a, 0x8c, 0xf6, 0xf7);
+			
+			public function HRESULT(IMFTopologyServiceLookup *self, MF_SERVICE_LOOKUP_TYPE Type, uint32 dwIndex, Guid* guidService, Guid* riid, void** ppvObjects, uint32* pnObjects) LookupService;
+		}
+		[CRepr]
+		public struct IMFTopologyServiceLookupClient : IUnknown
+		{
+			public const new Guid IID = .(0xfa99388a, 0x4383, 0x415a, 0xa9, 0x30, 0xdd, 0x47, 0x2a, 0x8c, 0xf6, 0xf7);
+			
+			public function HRESULT(IMFTopologyServiceLookupClient *self, IMFTopologyServiceLookup* pLookup) InitServicePointers;
+			public function HRESULT(IMFTopologyServiceLookupClient *self) ReleaseServicePointers;
+		}
+		[CRepr]
+		public struct IEVRTrustedVideoPlugin : IUnknown
+		{
+			public const new Guid IID = .(0x83a4ce40, 0x7710, 0x494b, 0xa8, 0x93, 0xa4, 0x72, 0x04, 0x9a, 0xf6, 0x30);
+			
+			public function HRESULT(IEVRTrustedVideoPlugin *self, BOOL* pYes) IsInTrustedVideoMode;
+			public function HRESULT(IEVRTrustedVideoPlugin *self, BOOL* pYes) CanConstrict;
+			public function HRESULT(IEVRTrustedVideoPlugin *self, uint32 dwKPix) SetConstriction;
+			public function HRESULT(IEVRTrustedVideoPlugin *self, BOOL bDisable) DisableImageExport;
+		}
+		[CRepr]
+		public struct IMFPMediaPlayer : IUnknown
+		{
+			public const new Guid IID = .(0xa714590a, 0x58af, 0x430a, 0x85, 0xbf, 0x44, 0xf5, 0xec, 0x83, 0x8d, 0x85);
+			
+			public function HRESULT(IMFPMediaPlayer *self) Play;
+			public function HRESULT(IMFPMediaPlayer *self) Pause;
+			public function HRESULT(IMFPMediaPlayer *self) Stop;
+			public function HRESULT(IMFPMediaPlayer *self) FrameStep;
+			public function HRESULT(IMFPMediaPlayer *self, Guid* guidPositionType, PROPVARIANT* pvPositionValue) SetPosition;
+			public function HRESULT(IMFPMediaPlayer *self, Guid* guidPositionType, PROPVARIANT* pvPositionValue) GetPosition;
+			public function HRESULT(IMFPMediaPlayer *self, Guid* guidPositionType, PROPVARIANT* pvDurationValue) GetDuration;
+			public function HRESULT(IMFPMediaPlayer *self, float flRate) SetRate;
+			public function HRESULT(IMFPMediaPlayer *self, float* pflRate) GetRate;
+			public function HRESULT(IMFPMediaPlayer *self, BOOL fForwardDirection, float* pflSlowestRate, float* pflFastestRate) GetSupportedRates;
+			public function HRESULT(IMFPMediaPlayer *self, MFP_MEDIAPLAYER_STATE* peState) GetState;
+			public function HRESULT(IMFPMediaPlayer *self, PWSTR pwszURL, BOOL fSync, uint dwUserData, IMFPMediaItem** ppMediaItem) CreateMediaItemFromURL;
+			public function HRESULT(IMFPMediaPlayer *self, IUnknown* pIUnknownObj, BOOL fSync, uint dwUserData, IMFPMediaItem** ppMediaItem) CreateMediaItemFromObject;
+			public function HRESULT(IMFPMediaPlayer *self, IMFPMediaItem* pIMFPMediaItem) SetMediaItem;
+			public function HRESULT(IMFPMediaPlayer *self) ClearMediaItem;
+			public function HRESULT(IMFPMediaPlayer *self, IMFPMediaItem** ppIMFPMediaItem) GetMediaItem;
+			public function HRESULT(IMFPMediaPlayer *self, float* pflVolume) GetVolume;
+			public function HRESULT(IMFPMediaPlayer *self, float flVolume) SetVolume;
+			public function HRESULT(IMFPMediaPlayer *self, float* pflBalance) GetBalance;
+			public function HRESULT(IMFPMediaPlayer *self, float flBalance) SetBalance;
+			public function HRESULT(IMFPMediaPlayer *self, BOOL* pfMute) GetMute;
+			public function HRESULT(IMFPMediaPlayer *self, BOOL fMute) SetMute;
+			public function HRESULT(IMFPMediaPlayer *self, SIZE* pszVideo, SIZE* pszARVideo) GetNativeVideoSize;
+			public function HRESULT(IMFPMediaPlayer *self, SIZE* pszMin, SIZE* pszMax) GetIdealVideoSize;
+			public function HRESULT(IMFPMediaPlayer *self, MFVideoNormalizedRect* pnrcSource) SetVideoSourceRect;
+			public function HRESULT(IMFPMediaPlayer *self, MFVideoNormalizedRect* pnrcSource) GetVideoSourceRect;
+			public function HRESULT(IMFPMediaPlayer *self, uint32 dwAspectRatioMode) SetAspectRatioMode;
+			public function HRESULT(IMFPMediaPlayer *self, uint32* pdwAspectRatioMode) GetAspectRatioMode;
+			public function HRESULT(IMFPMediaPlayer *self, HWND* phwndVideo) GetVideoWindow;
+			public function HRESULT(IMFPMediaPlayer *self) UpdateVideo;
+			public function HRESULT(IMFPMediaPlayer *self, uint32 Clr) SetBorderColor;
+			public function HRESULT(IMFPMediaPlayer *self, uint32* pClr) GetBorderColor;
+			public function HRESULT(IMFPMediaPlayer *self, IUnknown* pEffect, BOOL fOptional) InsertEffect;
+			public function HRESULT(IMFPMediaPlayer *self, IUnknown* pEffect) RemoveEffect;
+			public function HRESULT(IMFPMediaPlayer *self) RemoveAllEffects;
+			public function HRESULT(IMFPMediaPlayer *self) Shutdown;
+		}
+		[CRepr]
+		public struct IMFPMediaItem : IUnknown
+		{
+			public const new Guid IID = .(0x90eb3e6b, 0xecbf, 0x45cc, 0xb1, 0xda, 0xc6, 0xfe, 0x3e, 0xa7, 0x0d, 0x57);
+			
+			public function HRESULT(IMFPMediaItem *self, IMFPMediaPlayer** ppMediaPlayer) GetMediaPlayer;
+			public function HRESULT(IMFPMediaItem *self, PWSTR* ppwszURL) GetURL;
+			public function HRESULT(IMFPMediaItem *self, IUnknown** ppIUnknown) GetObject;
+			public function HRESULT(IMFPMediaItem *self, uint* pdwUserData) GetUserData;
+			public function HRESULT(IMFPMediaItem *self, uint dwUserData) SetUserData;
+			public function HRESULT(IMFPMediaItem *self, Guid* pguidStartPositionType, PROPVARIANT* pvStartValue, Guid* pguidStopPositionType, PROPVARIANT* pvStopValue) GetStartStopPosition;
+			public function HRESULT(IMFPMediaItem *self, Guid* pguidStartPositionType, PROPVARIANT* pvStartValue, Guid* pguidStopPositionType, PROPVARIANT* pvStopValue) SetStartStopPosition;
+			public function HRESULT(IMFPMediaItem *self, BOOL* pfHasVideo, BOOL* pfSelected) HasVideo;
+			public function HRESULT(IMFPMediaItem *self, BOOL* pfHasAudio, BOOL* pfSelected) HasAudio;
+			public function HRESULT(IMFPMediaItem *self, BOOL* pfProtected) IsProtected;
+			public function HRESULT(IMFPMediaItem *self, Guid* guidPositionType, PROPVARIANT* pvDurationValue) GetDuration;
+			public function HRESULT(IMFPMediaItem *self, uint32* pdwStreamCount) GetNumberOfStreams;
+			public function HRESULT(IMFPMediaItem *self, uint32 dwStreamIndex, BOOL* pfEnabled) GetStreamSelection;
+			public function HRESULT(IMFPMediaItem *self, uint32 dwStreamIndex, BOOL fEnabled) SetStreamSelection;
+			public function HRESULT(IMFPMediaItem *self, uint32 dwStreamIndex, Guid* guidMFAttribute, PROPVARIANT* pvValue) GetStreamAttribute;
+			public function HRESULT(IMFPMediaItem *self, Guid* guidMFAttribute, PROPVARIANT* pvValue) GetPresentationAttribute;
+			public function HRESULT(IMFPMediaItem *self, uint32* pCharacteristics) GetCharacteristics;
+			public function HRESULT(IMFPMediaItem *self, uint32 dwStreamIndex, IUnknown* pMediaSink) SetStreamSink;
+			public function HRESULT(IMFPMediaItem *self, IPropertyStore** ppMetadataStore) GetMetadata;
+		}
+		[CRepr]
+		public struct IMFPMediaPlayerCallback : IUnknown
+		{
+			public const new Guid IID = .(0x766c8ffb, 0x5fdb, 0x4fea, 0xa2, 0x8d, 0xb9, 0x12, 0x99, 0x6f, 0x51, 0xbd);
+			
+			public function void(IMFPMediaPlayerCallback *self, MFP_EVENT_HEADER* pEventHeader) OnMediaPlayerEvent;
+		}
+		[CRepr]
+		public struct IMFSharingEngineClassFactory : IUnknown
+		{
+			public const new Guid IID = .(0x2ba61f92, 0x8305, 0x413b, 0x97, 0x33, 0xfa, 0xf1, 0x5f, 0x25, 0x93, 0x84);
+			
+			public function HRESULT(IMFSharingEngineClassFactory *self, uint32 dwFlags, IMFAttributes* pAttr, IUnknown** ppEngine) CreateInstance;
+		}
+		[CRepr]
+		public struct IMFMediaSharingEngine : IMFMediaEngine
+		{
+			public const new Guid IID = .(0x8d3ce1bf, 0x2367, 0x40e0, 0x9e, 0xee, 0x40, 0xd3, 0x77, 0xcc, 0x1b, 0x46);
+			
+			public function HRESULT(IMFMediaSharingEngine *self, DEVICE_INFO* pDevice) GetDevice;
+		}
+		[CRepr]
+		public struct IMFMediaSharingEngineClassFactory : IUnknown
+		{
+			public const new Guid IID = .(0x524d2bc4, 0xb2b1, 0x4fe5, 0x8f, 0xac, 0xfa, 0x4e, 0x45, 0x12, 0xb4, 0xe0);
+			
+			public function HRESULT(IMFMediaSharingEngineClassFactory *self, uint32 dwFlags, IMFAttributes* pAttr, IMFMediaSharingEngine** ppEngine) CreateInstance;
+		}
+		[CRepr]
+		public struct IMFImageSharingEngine : IUnknown
+		{
+			public const new Guid IID = .(0xcfa0ae8e, 0x7e1c, 0x44d2, 0xae, 0x68, 0xfc, 0x4c, 0x14, 0x8a, 0x63, 0x54);
+			
+			public function HRESULT(IMFImageSharingEngine *self, IUnknown* pStream) SetSource;
+			public function HRESULT(IMFImageSharingEngine *self, DEVICE_INFO* pDevice) GetDevice;
+			public function HRESULT(IMFImageSharingEngine *self) Shutdown;
+		}
+		[CRepr]
+		public struct IMFImageSharingEngineClassFactory : IUnknown
+		{
+			public const new Guid IID = .(0x1fc55727, 0xa7fb, 0x4fc8, 0x83, 0xae, 0x8a, 0xf0, 0x24, 0x99, 0x0a, 0xf1);
+			
+			public function HRESULT(IMFImageSharingEngineClassFactory *self, BSTR pUniqueDeviceName, IMFImageSharingEngine** ppEngine) CreateInstanceFromUDN;
+		}
+		[CRepr]
+		public struct IPlayToControl : IUnknown
+		{
+			public const new Guid IID = .(0x607574eb, 0xf4b6, 0x45c1, 0xb0, 0x8c, 0xcb, 0x71, 0x51, 0x22, 0x90, 0x1d);
+			
+			public function HRESULT(IPlayToControl *self, IMFSharingEngineClassFactory* pFactory) Connect;
+			public function HRESULT(IPlayToControl *self) Disconnect;
+		}
+		[CRepr]
+		public struct IPlayToControlWithCapabilities : IPlayToControl
+		{
+			public const new Guid IID = .(0xaa9dd80f, 0xc50a, 0x4220, 0x91, 0xc1, 0x33, 0x22, 0x87, 0xf8, 0x2a, 0x34);
+			
+			public function HRESULT(IPlayToControlWithCapabilities *self, PLAYTO_SOURCE_CREATEFLAGS* pCapabilities) GetCapabilities;
+		}
+		[CRepr]
+		public struct IPlayToSourceClassFactory : IUnknown
+		{
+			public const new Guid IID = .(0x842b32a3, 0x9b9b, 0x4d1c, 0xb3, 0xf3, 0x49, 0x19, 0x32, 0x48, 0xa5, 0x54);
+			
+			public function HRESULT(IPlayToSourceClassFactory *self, uint32 dwFlags, IPlayToControl* pControl, IInspectable** ppSource) CreateInstance;
+		}
+		[CRepr]
+		public struct IEVRVideoStreamControl : IUnknown
+		{
+			public const new Guid IID = .(0xd0cfe38b, 0x93e7, 0x4772, 0x89, 0x57, 0x04, 0x00, 0xc4, 0x9a, 0x44, 0x85);
+			
+			public function HRESULT(IEVRVideoStreamControl *self, BOOL fActive) SetStreamActiveState;
+			public function HRESULT(IEVRVideoStreamControl *self, BOOL* lpfActive) GetStreamActiveState;
+		}
+		[CRepr]
+		public struct IMFVideoProcessor : IUnknown
+		{
+			public const new Guid IID = .(0x6ab0000c, 0xfece, 0x4d1f, 0xa2, 0xac, 0xa9, 0x57, 0x35, 0x30, 0x65, 0x6e);
+			
+			public function HRESULT(IMFVideoProcessor *self, uint32* lpdwNumProcessingModes, Guid** ppVideoProcessingModes) GetAvailableVideoProcessorModes;
+			public function HRESULT(IMFVideoProcessor *self, Guid* lpVideoProcessorMode, DXVA2_VideoProcessorCaps* lpVideoProcessorCaps) GetVideoProcessorCaps;
+			public function HRESULT(IMFVideoProcessor *self, Guid* lpMode) GetVideoProcessorMode;
+			public function HRESULT(IMFVideoProcessor *self, Guid* lpMode) SetVideoProcessorMode;
+			public function HRESULT(IMFVideoProcessor *self, uint32 dwProperty, DXVA2_ValueRange* pPropRange) GetProcAmpRange;
+			public function HRESULT(IMFVideoProcessor *self, uint32 dwFlags, DXVA2_ProcAmpValues* Values) GetProcAmpValues;
+			public function HRESULT(IMFVideoProcessor *self, uint32 dwFlags, DXVA2_ProcAmpValues* pValues) SetProcAmpValues;
+			public function HRESULT(IMFVideoProcessor *self, uint32 dwProperty, DXVA2_ValueRange* pPropRange) GetFilteringRange;
+			public function HRESULT(IMFVideoProcessor *self, uint32 dwProperty, DXVA2_Fixed32* pValue) GetFilteringValue;
+			public function HRESULT(IMFVideoProcessor *self, uint32 dwProperty, DXVA2_Fixed32* pValue) SetFilteringValue;
+			public function HRESULT(IMFVideoProcessor *self, uint32* lpClrBkg) GetBackgroundColor;
+			public function HRESULT(IMFVideoProcessor *self, uint32 ClrBkg) SetBackgroundColor;
+		}
+		[CRepr]
+		public struct IMFVideoMixerBitmap : IUnknown
+		{
+			public const new Guid IID = .(0x814c7b20, 0x0fdb, 0x4eec, 0xaf, 0x8f, 0xf9, 0x57, 0xc8, 0xf6, 0x9e, 0xdc);
+			
+			public function HRESULT(IMFVideoMixerBitmap *self, MFVideoAlphaBitmap* pBmpParms) SetAlphaBitmap;
+			public function HRESULT(IMFVideoMixerBitmap *self) ClearAlphaBitmap;
+			public function HRESULT(IMFVideoMixerBitmap *self, MFVideoAlphaBitmapParams* pBmpParms) UpdateAlphaBitmapParameters;
+			public function HRESULT(IMFVideoMixerBitmap *self, MFVideoAlphaBitmapParams* pBmpParms) GetAlphaBitmapParameters;
+		}
+		[CRepr]
+		public struct IAdvancedMediaCaptureInitializationSettings : IUnknown
+		{
+			public const new Guid IID = .(0x3de21209, 0x8ba6, 0x4f2a, 0xa5, 0x77, 0x28, 0x19, 0xb5, 0x6f, 0xf1, 0x4d);
+			
+			public function HRESULT(IAdvancedMediaCaptureInitializationSettings *self, IMFDXGIDeviceManager* value) SetDirectxDeviceManager;
+		}
+		[CRepr]
+		public struct IAdvancedMediaCaptureSettings : IUnknown
+		{
+			public const new Guid IID = .(0x24e0485f, 0xa33e, 0x4aa1, 0xb5, 0x64, 0x60, 0x19, 0xb1, 0xd1, 0x4f, 0x65);
+			
+			public function HRESULT(IAdvancedMediaCaptureSettings *self, IMFDXGIDeviceManager** value) GetDirectxDeviceManager;
+		}
+		[CRepr]
+		public struct IAdvancedMediaCapture : IUnknown
+		{
+			public const new Guid IID = .(0xd0751585, 0xd216, 0x4344, 0xb5, 0xbf, 0x46, 0x3b, 0x68, 0xf9, 0x77, 0xbb);
+			
+			public function HRESULT(IAdvancedMediaCapture *self, IAdvancedMediaCaptureSettings** value) GetAdvancedMediaCaptureSettings;
+		}
+		[CRepr]
+		public struct IMFSpatialAudioObjectBuffer : IMFMediaBuffer
+		{
+			public const new Guid IID = .(0xd396ec8c, 0x605e, 0x4249, 0x97, 0x8d, 0x72, 0xad, 0x1c, 0x31, 0x28, 0x72);
+			
+			public function HRESULT(IMFSpatialAudioObjectBuffer *self, uint32 u32ID) SetID;
+			public function HRESULT(IMFSpatialAudioObjectBuffer *self, uint32* pu32ID) GetID;
+			public function HRESULT(IMFSpatialAudioObjectBuffer *self, AudioObjectType type) SetType;
+			public function HRESULT(IMFSpatialAudioObjectBuffer *self, AudioObjectType* pType) GetType;
+			public function HRESULT(IMFSpatialAudioObjectBuffer *self, ISpatialAudioMetadataItems** ppMetadataItems) GetMetadataItems;
+		}
+		[CRepr]
+		public struct IMFSpatialAudioSample : IMFSample
+		{
+			public const new Guid IID = .(0xabf28a9b, 0x3393, 0x4290, 0xba, 0x79, 0x5f, 0xfc, 0x46, 0xd9, 0x86, 0xb2);
+			
+			public function HRESULT(IMFSpatialAudioSample *self, uint32* pdwObjectCount) GetObjectCount;
+			public function HRESULT(IMFSpatialAudioSample *self, IMFSpatialAudioObjectBuffer* pAudioObjBuffer) AddSpatialAudioObject;
+			public function HRESULT(IMFSpatialAudioSample *self, uint32 dwIndex, IMFSpatialAudioObjectBuffer** ppAudioObjBuffer) GetSpatialAudioObjectByIndex;
+		}
+		[CRepr]
+		public struct IMFContentDecryptionModuleSession : IUnknown
+		{
+			public const new Guid IID = .(0x4e233efd, 0x1dd2, 0x49e8, 0xb5, 0x77, 0xd6, 0x3e, 0xee, 0x4c, 0x0d, 0x33);
+			
+			public function HRESULT(IMFContentDecryptionModuleSession *self, PWSTR* sessionId) GetSessionId;
+			public function HRESULT(IMFContentDecryptionModuleSession *self, double* expiration) GetExpiration;
+			public function HRESULT(IMFContentDecryptionModuleSession *self, MFMediaKeyStatus** keyStatuses, uint32* numKeyStatuses) GetKeyStatuses;
+			public function HRESULT(IMFContentDecryptionModuleSession *self, PWSTR sessionId, BOOL* loaded) Load;
+			public function HRESULT(IMFContentDecryptionModuleSession *self, PWSTR initDataType, uint8* initData, uint32 initDataSize) GenerateRequest;
+			public function HRESULT(IMFContentDecryptionModuleSession *self, uint8* response, uint32 responseSize) Update;
+			public function HRESULT(IMFContentDecryptionModuleSession *self) Close;
+			public function HRESULT(IMFContentDecryptionModuleSession *self) Remove;
+		}
+		[CRepr]
+		public struct IMFContentDecryptionModuleSessionCallbacks : IUnknown
+		{
+			public const new Guid IID = .(0x3f96ee40, 0xad81, 0x4096, 0x84, 0x70, 0x59, 0xa4, 0xb7, 0x70, 0xf8, 0x9a);
+			
+			public function HRESULT(IMFContentDecryptionModuleSessionCallbacks *self, MF_MEDIAKEYSESSION_MESSAGETYPE messageType, uint8* message, uint32 messageSize, PWSTR destinationURL) KeyMessage;
+			public function HRESULT(IMFContentDecryptionModuleSessionCallbacks *self) KeyStatusChanged;
+		}
+		[CRepr]
+		public struct IMFContentDecryptionModule : IUnknown
+		{
+			public const new Guid IID = .(0x87be986c, 0x10be, 0x4943, 0xbf, 0x48, 0x4b, 0x54, 0xce, 0x19, 0x83, 0xa2);
+			
+			public function HRESULT(IMFContentDecryptionModule *self, IMFContentEnabler* contentEnabler, IMFAsyncResult* result) SetContentEnabler;
+			public function HRESULT(IMFContentDecryptionModule *self, IMFCdmSuspendNotify** notify) GetSuspendNotify;
+			public function HRESULT(IMFContentDecryptionModule *self, IMFPMPHostApp* pmpHostApp) SetPMPHostApp;
+			public function HRESULT(IMFContentDecryptionModule *self, MF_MEDIAKEYSESSION_TYPE sessionType, IMFContentDecryptionModuleSessionCallbacks* callbacks, IMFContentDecryptionModuleSession** session) CreateSession;
+			public function HRESULT(IMFContentDecryptionModule *self, uint8* certificate, uint32 certificateSize) SetServerCertificate;
+			public function HRESULT(IMFContentDecryptionModule *self, uint8* contentInitData, uint32 contentInitDataSize, IMFTrustedInput** trustedInput) CreateTrustedInput;
+			public function HRESULT(IMFContentDecryptionModule *self, Guid** systemIds, uint32* count) GetProtectionSystemIds;
+		}
+		[CRepr]
+		public struct IMFContentDecryptionModuleAccess : IUnknown
+		{
+			public const new Guid IID = .(0xa853d1f4, 0xe2a0, 0x4303, 0x9e, 0xdc, 0xf1, 0xa6, 0x8e, 0xe4, 0x31, 0x36);
+			
+			public function HRESULT(IMFContentDecryptionModuleAccess *self, IPropertyStore* contentDecryptionModuleProperties, IMFContentDecryptionModule** contentDecryptionModule) CreateContentDecryptionModule;
+			public function HRESULT(IMFContentDecryptionModuleAccess *self, IPropertyStore** configuration) GetConfiguration;
+			public function HRESULT(IMFContentDecryptionModuleAccess *self, PWSTR* keySystem) GetKeySystem;
+		}
+		[CRepr]
+		public struct IMFContentDecryptionModuleFactory : IUnknown
+		{
+			public const new Guid IID = .(0x7d5abf16, 0x4cbb, 0x4e08, 0xb9, 0x77, 0x9b, 0xa5, 0x90, 0x49, 0x94, 0x3e);
+			
+			public function BOOL(IMFContentDecryptionModuleFactory *self, PWSTR keySystem, PWSTR contentType) IsTypeSupported;
+			public function HRESULT(IMFContentDecryptionModuleFactory *self, PWSTR keySystem, IPropertyStore** configurations, uint32 numConfigurations, IMFContentDecryptionModuleAccess** contentDecryptionModuleAccess) CreateContentDecryptionModuleAccess;
+		}
+		[CRepr]
+		public struct IMFCameraSyncObject : IUnknown
+		{
+			public const new Guid IID = .(0x6338b23a, 0x3042, 0x49d2, 0xa3, 0xea, 0xec, 0x0f, 0xed, 0x81, 0x54, 0x07);
+			
+			public function HRESULT(IMFCameraSyncObject *self, uint32 timeOutInMs) WaitOnSignal;
+			public function void(IMFCameraSyncObject *self) Shutdown;
+		}
+		[CRepr]
+		public struct IMFVirtualCamera : IMFAttributes
+		{
+			public const new Guid IID = .(0x1c08a864, 0xef6c, 0x4c75, 0xaf, 0x59, 0x5f, 0x2d, 0x68, 0xda, 0x95, 0x63);
+			
+			public function HRESULT(IMFVirtualCamera *self, PWSTR DeviceSourceInfo) AddDeviceSourceInfo;
+			public function HRESULT(IMFVirtualCamera *self, DEVPROPKEY* pKey, uint32 Type, uint8* pbData, uint32 cbData) AddProperty;
+			public function HRESULT(IMFVirtualCamera *self, PWSTR EntryName, PWSTR SubkeyPath, uint32 dwRegType, uint8* pbData, uint32 cbData) AddRegistryEntry;
+			public function HRESULT(IMFVirtualCamera *self, IMFAsyncCallback* pCallback) Start;
+			public function HRESULT(IMFVirtualCamera *self) Stop;
+			public function HRESULT(IMFVirtualCamera *self) Remove;
+			public function HRESULT(IMFVirtualCamera *self, IMFMediaSource** ppMediaSource) GetMediaSource;
+			public function HRESULT(IMFVirtualCamera *self, Guid* propertySet, uint32 propertyId, uint32 propertyFlags, void* propertyPayload, uint32 propertyPayloadLength, void* data, uint32 dataLength, uint32* dataWritten) SendCameraProperty;
+			public function HRESULT(IMFVirtualCamera *self, Guid* kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE eventHandle, IMFCameraSyncObject** cameraSyncObject) CreateSyncEvent;
+			public function HRESULT(IMFVirtualCamera *self, Guid* kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE semaphoreHandle, int32 semaphoreAdjustment, IMFCameraSyncObject** cameraSyncObject) CreateSyncSemaphore;
+			public function HRESULT(IMFVirtualCamera *self) Shutdown;
+		}
 		
 		// --- Functions ---
 		
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DXVAHD_CreateDevice(IDirect3DDevice9Ex pD3DDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, IDXVAHD_Device* ppDevice);
+		public static extern HRESULT DXVAHD_CreateDevice(IDirect3DDevice9Ex* pD3DDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, IDXVAHD_Device** ppDevice);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DXVA2CreateDirect3DDeviceManager9(uint32* pResetToken, IDirect3DDeviceManager9* ppDeviceManager);
+		public static extern HRESULT DXVA2CreateDirect3DDeviceManager9(uint32* pResetToken, IDirect3DDeviceManager9** ppDeviceManager);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DXVA2CreateVideoService(IDirect3DDevice9 pDD, Guid* riid, void** ppService);
+		public static extern HRESULT DXVA2CreateVideoService(IDirect3DDevice9* pDD, Guid* riid, void** ppService);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OPMGetVideoOutputsFromHMONITOR(HMONITOR hMonitor, OPM_VIDEO_OUTPUT_SEMANTICS vos, uint32* pulNumVideoOutputs, IOPMVideoOutput** pppOPMVideoOutputArray);
+		public static extern HRESULT OPMGetVideoOutputsFromHMONITOR(HMONITOR hMonitor, OPM_VIDEO_OUTPUT_SEMANTICS vos, uint32* pulNumVideoOutputs, IOPMVideoOutput*** pppOPMVideoOutputArray);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OPMGetVideoOutputForTarget(LUID* pAdapterLuid, uint32 VidPnTarget, OPM_VIDEO_OUTPUT_SEMANTICS vos, IOPMVideoOutput* ppOPMVideoOutput);
+		public static extern HRESULT OPMGetVideoOutputForTarget(LUID* pAdapterLuid, uint32 VidPnTarget, OPM_VIDEO_OUTPUT_SEMANTICS vos, IOPMVideoOutput** ppOPMVideoOutput);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(IDirect3DDevice9 pDirect3DDevice9, OPM_VIDEO_OUTPUT_SEMANTICS vos, uint32* pulNumVideoOutputs, IOPMVideoOutput** pppOPMVideoOutputArray);
+		public static extern HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(IDirect3DDevice9* pDirect3DDevice9, OPM_VIDEO_OUTPUT_SEMANTICS vos, uint32* pulNumVideoOutputs, IOPMVideoOutput*** pppOPMVideoOutputArray);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFSerializeAttributesToStream(IMFAttributes pAttr, uint32 dwOptions, IStream pStm);
+		public static extern HRESULT MFSerializeAttributesToStream(IMFAttributes* pAttr, uint32 dwOptions, IStream* pStm);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFDeserializeAttributesFromStream(IMFAttributes pAttr, uint32 dwOptions, IStream pStm);
+		public static extern HRESULT MFDeserializeAttributesFromStream(IMFAttributes* pAttr, uint32 dwOptions, IStream* pStm);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTransformActivate(IMFActivate* ppActivate);
+		public static extern HRESULT MFCreateTransformActivate(IMFActivate** ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaSession(IMFAttributes pConfiguration, IMFMediaSession* ppMediaSession);
+		public static extern HRESULT MFCreateMediaSession(IMFAttributes* pConfiguration, IMFMediaSession** ppMediaSession);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePMPMediaSession(uint32 dwCreationFlags, IMFAttributes pConfiguration, IMFMediaSession* ppMediaSession, IMFActivate* ppEnablerActivate);
+		public static extern HRESULT MFCreatePMPMediaSession(uint32 dwCreationFlags, IMFAttributes* pConfiguration, IMFMediaSession** ppMediaSession, IMFActivate** ppEnablerActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSourceResolver(IMFSourceResolver* ppISourceResolver);
+		public static extern HRESULT MFCreateSourceResolver(IMFSourceResolver** ppISourceResolver);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreatePropertyStore(IPropertyStore* ppStore);
+		public static extern HRESULT CreatePropertyStore(IPropertyStore** ppStore);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFGetSupportedSchemes(PROPVARIANT* pPropVarSchemeArray);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFGetSupportedMimeTypes(PROPVARIANT* pPropVarMimeTypeArray);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTopology(IMFTopology* ppTopo);
+		public static extern HRESULT MFCreateTopology(IMFTopology** ppTopo);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTopologyNode(MF_TOPOLOGY_TYPE NodeType, IMFTopologyNode* ppNode);
+		public static extern HRESULT MFCreateTopologyNode(MF_TOPOLOGY_TYPE NodeType, IMFTopologyNode** ppNode);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetTopoNodeCurrentType(IMFTopologyNode pNode, uint32 dwStreamIndex, BOOL fOutput, IMFMediaType* ppType);
+		public static extern HRESULT MFGetTopoNodeCurrentType(IMFTopologyNode* pNode, uint32 dwStreamIndex, BOOL fOutput, IMFMediaType** ppType);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetService(IUnknown punkObject, Guid* guidService, Guid* riid, void** ppvObject);
+		public static extern HRESULT MFGetService(IUnknown* punkObject, Guid* guidService, Guid* riid, void** ppvObject);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int64 MFGetSystemTime();
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePresentationClock(IMFPresentationClock* ppPresentationClock);
+		public static extern HRESULT MFCreatePresentationClock(IMFPresentationClock** ppPresentationClock);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSystemTimeSource(IMFPresentationTimeSource* ppSystemTimeSource);
+		public static extern HRESULT MFCreateSystemTimeSource(IMFPresentationTimeSource** ppSystemTimeSource);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePresentationDescriptor(uint32 cStreamDescriptors, IMFStreamDescriptor* apStreamDescriptors, IMFPresentationDescriptor* ppPresentationDescriptor);
+		public static extern HRESULT MFCreatePresentationDescriptor(uint32 cStreamDescriptors, IMFStreamDescriptor** apStreamDescriptors, IMFPresentationDescriptor** ppPresentationDescriptor);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFRequireProtectedEnvironment(IMFPresentationDescriptor pPresentationDescriptor);
+		public static extern HRESULT MFRequireProtectedEnvironment(IMFPresentationDescriptor* pPresentationDescriptor);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFSerializePresentationDescriptor(IMFPresentationDescriptor pPD, uint32* pcbData, uint8** ppbData);
+		public static extern HRESULT MFSerializePresentationDescriptor(IMFPresentationDescriptor* pPD, uint32* pcbData, uint8** ppbData);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFDeserializePresentationDescriptor(uint32 cbData, uint8* pbData, IMFPresentationDescriptor* ppPD);
+		public static extern HRESULT MFDeserializePresentationDescriptor(uint32 cbData, uint8* pbData, IMFPresentationDescriptor** ppPD);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateStreamDescriptor(uint32 dwStreamIdentifier, uint32 cMediaTypes, IMFMediaType* apMediaTypes, IMFStreamDescriptor* ppDescriptor);
+		public static extern HRESULT MFCreateStreamDescriptor(uint32 dwStreamIdentifier, uint32 cMediaTypes, IMFMediaType** apMediaTypes, IMFStreamDescriptor** ppDescriptor);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSimpleTypeHandler(IMFMediaTypeHandler* ppHandler);
+		public static extern HRESULT MFCreateSimpleTypeHandler(IMFMediaTypeHandler** ppHandler);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFShutdownObject(IUnknown pUnk);
+		public static extern HRESULT MFShutdownObject(IUnknown* pUnk);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAudioRenderer(IMFAttributes pAudioAttributes, IMFMediaSink* ppSink);
+		public static extern HRESULT MFCreateAudioRenderer(IMFAttributes* pAudioAttributes, IMFMediaSink** ppSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAudioRendererActivate(IMFActivate* ppActivate);
+		public static extern HRESULT MFCreateAudioRendererActivate(IMFActivate** ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoRendererActivate(HWND hwndVideo, IMFActivate* ppActivate);
+		public static extern HRESULT MFCreateVideoRendererActivate(HWND hwndVideo, IMFActivate** ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMPEG4MediaSink(IMFByteStream pIByteStream, IMFMediaType pVideoMediaType, IMFMediaType pAudioMediaType, IMFMediaSink* ppIMediaSink);
+		public static extern HRESULT MFCreateMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreate3GPMediaSink(IMFByteStream pIByteStream, IMFMediaType pVideoMediaType, IMFMediaType pAudioMediaType, IMFMediaSink* ppIMediaSink);
+		public static extern HRESULT MFCreate3GPMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMP3MediaSink(IMFByteStream pTargetByteStream, IMFMediaSink* ppMediaSink);
+		public static extern HRESULT MFCreateMP3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaSink** ppMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAC3MediaSink(IMFByteStream pTargetByteStream, IMFMediaType pAudioMediaType, IMFMediaSink* ppMediaSink);
+		public static extern HRESULT MFCreateAC3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateADTSMediaSink(IMFByteStream pTargetByteStream, IMFMediaType pAudioMediaType, IMFMediaSink* ppMediaSink);
+		public static extern HRESULT MFCreateADTSMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMuxSink(Guid guidOutputSubType, IMFAttributes pOutputAttributes, IMFByteStream pOutputByteStream, IMFMediaSink* ppMuxSink);
+		public static extern HRESULT MFCreateMuxSink(Guid guidOutputSubType, IMFAttributes* pOutputAttributes, IMFByteStream* pOutputByteStream, IMFMediaSink** ppMuxSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateFMPEG4MediaSink(IMFByteStream pIByteStream, IMFMediaType pVideoMediaType, IMFMediaType pAudioMediaType, IMFMediaSink* ppIMediaSink);
+		public static extern HRESULT MFCreateFMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 		[Import("mfsrcsnk.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAVIMediaSink(IMFByteStream pIByteStream, IMFMediaType pVideoMediaType, IMFMediaType pAudioMediaType, IMFMediaSink* ppIMediaSink);
+		public static extern HRESULT MFCreateAVIMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 		[Import("mfsrcsnk.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWAVEMediaSink(IMFByteStream pTargetByteStream, IMFMediaType pAudioMediaType, IMFMediaSink* ppMediaSink);
+		public static extern HRESULT MFCreateWAVEMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTopoLoader(IMFTopoLoader* ppObj);
+		public static extern HRESULT MFCreateTopoLoader(IMFTopoLoader** ppObj);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSampleGrabberSinkActivate(IMFMediaType pIMFMediaType, IMFSampleGrabberSinkCallback pIMFSampleGrabberSinkCallback, IMFActivate* ppIActivate);
+		public static extern HRESULT MFCreateSampleGrabberSinkActivate(IMFMediaType* pIMFMediaType, IMFSampleGrabberSinkCallback* pIMFSampleGrabberSinkCallback, IMFActivate** ppIActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateStandardQualityManager(IMFQualityManager* ppQualityManager);
+		public static extern HRESULT MFCreateStandardQualityManager(IMFQualityManager** ppQualityManager);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSequencerSource(IUnknown pReserved, IMFSequencerSource* ppSequencerSource);
+		public static extern HRESULT MFCreateSequencerSource(IUnknown* pReserved, IMFSequencerSource** ppSequencerSource);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFCreateSequencerSegmentOffset(uint32 dwId, int64 hnsOffset, PROPVARIANT* pvarSegmentOffset);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAggregateSource(IMFCollection pSourceCollection, IMFMediaSource* ppAggSource);
+		public static extern HRESULT MFCreateAggregateSource(IMFCollection* pSourceCollection, IMFMediaSource** ppAggSource);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateCredentialCache(IMFNetCredentialCache* ppCache);
+		public static extern HRESULT MFCreateCredentialCache(IMFNetCredentialCache** ppCache);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateProxyLocator(PWSTR pszProtocol, IPropertyStore pProxyConfig, IMFNetProxyLocator* ppProxyLocator);
+		public static extern HRESULT MFCreateProxyLocator(PWSTR pszProtocol, IPropertyStore* pProxyConfig, IMFNetProxyLocator** ppProxyLocator);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFCreateNetSchemePlugin(Guid* riid, void** ppvHandler);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePMPServer(uint32 dwCreationFlags, IMFPMPServer* ppPMPServer);
+		public static extern HRESULT MFCreatePMPServer(uint32 dwCreationFlags, IMFPMPServer** ppPMPServer);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateRemoteDesktopPlugin(IMFRemoteDesktopPlugin* ppPlugin);
+		public static extern HRESULT MFCreateRemoteDesktopPlugin(IMFRemoteDesktopPlugin** ppPlugin);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateNamedPropertyStore(INamedPropertyStore* ppStore);
+		public static extern HRESULT CreateNamedPropertyStore(INamedPropertyStore** ppStore);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSampleCopierMFT(IMFTransform* ppCopierMFT);
+		public static extern HRESULT MFCreateSampleCopierMFT(IMFTransform** ppCopierMFT);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTranscodeProfile(IMFTranscodeProfile* ppTranscodeProfile);
+		public static extern HRESULT MFCreateTranscodeProfile(IMFTranscodeProfile** ppTranscodeProfile);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTranscodeTopology(IMFMediaSource pSrc, PWSTR pwszOutputFilePath, IMFTranscodeProfile pProfile, IMFTopology* ppTranscodeTopo);
+		public static extern HRESULT MFCreateTranscodeTopology(IMFMediaSource* pSrc, PWSTR pwszOutputFilePath, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTranscodeTopologyFromByteStream(IMFMediaSource pSrc, IMFByteStream pOutputStream, IMFTranscodeProfile pProfile, IMFTopology* ppTranscodeTopo);
+		public static extern HRESULT MFCreateTranscodeTopologyFromByteStream(IMFMediaSource* pSrc, IMFByteStream* pOutputStream, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes(Guid* guidSubType, uint32 dwMFTFlags, IMFAttributes pCodecConfig, IMFCollection* ppAvailableTypes);
+		public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes(Guid* guidSubType, uint32 dwMFTFlags, IMFAttributes* pCodecConfig, IMFCollection** ppAvailableTypes);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTranscodeSinkActivate(IMFActivate* ppActivate);
+		public static extern HRESULT MFCreateTranscodeSinkActivate(IMFActivate** ppActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTrackedSample(IMFTrackedSample* ppMFSample);
+		public static extern HRESULT MFCreateTrackedSample(IMFTrackedSample** ppMFSample);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMFByteStreamOnStream(IStream pStream, IMFByteStream* ppByteStream);
+		public static extern HRESULT MFCreateMFByteStreamOnStream(IStream* pStream, IMFByteStream** ppByteStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateStreamOnMFByteStream(IMFByteStream pByteStream, IStream* ppStream);
+		public static extern HRESULT MFCreateStreamOnMFByteStream(IMFByteStream* pByteStream, IStream** ppStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMFByteStreamOnStreamEx(IUnknown punkStream, IMFByteStream* ppByteStream);
+		public static extern HRESULT MFCreateMFByteStreamOnStreamEx(IUnknown* punkStream, IMFByteStream** ppByteStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateStreamOnMFByteStreamEx(IMFByteStream pByteStream, Guid* riid, void** ppv);
+		public static extern HRESULT MFCreateStreamOnMFByteStreamEx(IMFByteStream* pByteStream, Guid* riid, void** ppv);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaTypeFromProperties(IUnknown punkStream, IMFMediaType* ppMediaType);
+		public static extern HRESULT MFCreateMediaTypeFromProperties(IUnknown* punkStream, IMFMediaType** ppMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePropertiesFromMediaType(IMFMediaType pMediaType, Guid* riid, void** ppv);
+		public static extern HRESULT MFCreatePropertiesFromMediaType(IMFMediaType* pMediaType, Guid* riid, void** ppv);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFEnumDeviceSources(IMFAttributes pAttributes, IMFActivate** pppSourceActivate, uint32* pcSourceActivate);
+		public static extern HRESULT MFEnumDeviceSources(IMFAttributes* pAttributes, IMFActivate*** pppSourceActivate, uint32* pcSourceActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDeviceSource(IMFAttributes pAttributes, IMFMediaSource* ppSource);
+		public static extern HRESULT MFCreateDeviceSource(IMFAttributes* pAttributes, IMFMediaSource** ppSource);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDeviceSourceActivate(IMFAttributes pAttributes, IMFActivate* ppActivate);
+		public static extern HRESULT MFCreateDeviceSourceActivate(IMFAttributes* pAttributes, IMFActivate** ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateProtectedEnvironmentAccess(IMFProtectedEnvironmentAccess* ppAccess);
+		public static extern HRESULT MFCreateProtectedEnvironmentAccess(IMFProtectedEnvironmentAccess** ppAccess);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFLoadSignedLibrary(PWSTR pszName, IMFSignedLibrary* ppLib);
+		public static extern HRESULT MFLoadSignedLibrary(PWSTR pszName, IMFSignedLibrary** ppLib);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetSystemId(IMFSystemId* ppId);
+		public static extern HRESULT MFGetSystemId(IMFSystemId** ppId);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFGetLocalId(uint8* verifier, uint32 size, PWSTR* id);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateContentProtectionDevice(Guid* ProtectionSystemId, IMFContentProtectionDevice* ContentProtectionDevice);
+		public static extern HRESULT MFCreateContentProtectionDevice(Guid* ProtectionSystemId, IMFContentProtectionDevice** ContentProtectionDevice);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFIsContentProtectionDeviceSupported(Guid* ProtectionSystemId, BOOL* isSupported);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateContentDecryptorContext(Guid* guidMediaProtectionSystemId, IMFDXGIDeviceManager pD3DManager, IMFContentProtectionDevice pContentProtectionDevice, IMFContentDecryptorContext* ppContentDecryptorContext);
+		public static extern HRESULT MFCreateContentDecryptorContext(Guid* guidMediaProtectionSystemId, IMFDXGIDeviceManager* pD3DManager, IMFContentProtectionDevice* pContentProtectionDevice, IMFContentDecryptorContext** ppContentDecryptorContext);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorGroup(PWSTR SensorGroupSymbolicLink, IMFSensorGroup* ppSensorGroup);
+		public static extern HRESULT MFCreateSensorGroup(PWSTR SensorGroupSymbolicLink, IMFSensorGroup** ppSensorGroup);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorStream(uint32 StreamId, IMFAttributes pAttributes, IMFCollection pMediaTypeCollection, IMFSensorStream* ppStream);
+		public static extern HRESULT MFCreateSensorStream(uint32 StreamId, IMFAttributes* pAttributes, IMFCollection* pMediaTypeCollection, IMFSensorStream** ppStream);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorProfile(Guid* ProfileType, uint32 ProfileIndex, PWSTR Constraints, IMFSensorProfile* ppProfile);
+		public static extern HRESULT MFCreateSensorProfile(Guid* ProfileType, uint32 ProfileIndex, PWSTR Constraints, IMFSensorProfile** ppProfile);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorProfileCollection(IMFSensorProfileCollection* ppSensorProfile);
+		public static extern HRESULT MFCreateSensorProfileCollection(IMFSensorProfileCollection** ppSensorProfile);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorActivityMonitor(IMFSensorActivitiesReportCallback pCallback, IMFSensorActivityMonitor* ppActivityMonitor);
+		public static extern HRESULT MFCreateSensorActivityMonitor(IMFSensorActivitiesReportCallback* pCallback, IMFSensorActivityMonitor** ppActivityMonitor);
 		[Import("mfcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateExtendedCameraIntrinsics(IMFExtendedCameraIntrinsics* ppExtendedCameraIntrinsics);
+		public static extern HRESULT MFCreateExtendedCameraIntrinsics(IMFExtendedCameraIntrinsics** ppExtendedCameraIntrinsics);
 		[Import("mfcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateExtendedCameraIntrinsicModel(MFCameraIntrinsic_DistortionModelType distortionModelType, IMFExtendedCameraIntrinsicModel* ppExtendedCameraIntrinsicModel);
+		public static extern HRESULT MFCreateExtendedCameraIntrinsicModel(MFCameraIntrinsic_DistortionModelType distortionModelType, IMFExtendedCameraIntrinsicModel** ppExtendedCameraIntrinsicModel);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateRelativePanelWatcher(PWSTR videoDeviceId, PWSTR displayMonitorDeviceId, IMFRelativePanelWatcher* ppRelativePanelWatcher);
+		public static extern HRESULT MFCreateRelativePanelWatcher(PWSTR videoDeviceId, PWSTR displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateCameraOcclusionStateMonitor(PWSTR symbolicLink, IMFCameraOcclusionStateReportCallback callback, IMFCameraOcclusionStateMonitor* occlusionStateMonitor);
+		public static extern HRESULT MFCreateCameraOcclusionStateMonitor(PWSTR symbolicLink, IMFCameraOcclusionStateReportCallback* callback, IMFCameraOcclusionStateMonitor** occlusionStateMonitor);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFContentInfo(IMFASFContentInfo* ppIContentInfo);
+		public static extern HRESULT MFCreateASFContentInfo(IMFASFContentInfo** ppIContentInfo);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFIndexer(IMFASFIndexer* ppIIndexer);
+		public static extern HRESULT MFCreateASFIndexer(IMFASFIndexer** ppIIndexer);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFIndexerByteStream(IMFByteStream pIContentByteStream, uint64 cbIndexStartOffset, IMFByteStream* pIIndexByteStream);
+		public static extern HRESULT MFCreateASFIndexerByteStream(IMFByteStream* pIContentByteStream, uint64 cbIndexStartOffset, IMFByteStream** pIIndexByteStream);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFSplitter(IMFASFSplitter* ppISplitter);
+		public static extern HRESULT MFCreateASFSplitter(IMFASFSplitter** ppISplitter);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFProfile(IMFASFProfile* ppIProfile);
+		public static extern HRESULT MFCreateASFProfile(IMFASFProfile** ppIProfile);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFProfileFromPresentationDescriptor(IMFPresentationDescriptor pIPD, IMFASFProfile* ppIProfile);
+		public static extern HRESULT MFCreateASFProfileFromPresentationDescriptor(IMFPresentationDescriptor* pIPD, IMFASFProfile** ppIProfile);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePresentationDescriptorFromASFProfile(IMFASFProfile pIProfile, IMFPresentationDescriptor* ppIPD);
+		public static extern HRESULT MFCreatePresentationDescriptorFromASFProfile(IMFASFProfile* pIProfile, IMFPresentationDescriptor** ppIPD);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFMultiplexer(IMFASFMultiplexer* ppIMultiplexer);
+		public static extern HRESULT MFCreateASFMultiplexer(IMFASFMultiplexer** ppIMultiplexer);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFStreamSelector(IMFASFProfile pIASFProfile, IMFASFStreamSelector* ppSelector);
+		public static extern HRESULT MFCreateASFStreamSelector(IMFASFProfile* pIASFProfile, IMFASFStreamSelector** ppSelector);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFMediaSink(IMFByteStream pIByteStream, IMFMediaSink* ppIMediaSink);
+		public static extern HRESULT MFCreateASFMediaSink(IMFByteStream* pIByteStream, IMFMediaSink** ppIMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFMediaSinkActivate(PWSTR pwszFileName, IMFASFContentInfo pContentInfo, IMFActivate* ppIActivate);
+		public static extern HRESULT MFCreateASFMediaSinkActivate(PWSTR pwszFileName, IMFASFContentInfo* pContentInfo, IMFActivate** ppIActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWMVEncoderActivate(IMFMediaType pMediaType, IPropertyStore pEncodingConfigurationProperties, IMFActivate* ppActivate);
+		public static extern HRESULT MFCreateWMVEncoderActivate(IMFMediaType* pMediaType, IPropertyStore* pEncodingConfigurationProperties, IMFActivate** ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWMAEncoderActivate(IMFMediaType pMediaType, IPropertyStore pEncodingConfigurationProperties, IMFActivate* ppActivate);
+		public static extern HRESULT MFCreateWMAEncoderActivate(IMFMediaType* pMediaType, IPropertyStore* pEncodingConfigurationProperties, IMFActivate** ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFStreamingMediaSink(IMFByteStream pIByteStream, IMFMediaSink* ppIMediaSink);
+		public static extern HRESULT MFCreateASFStreamingMediaSink(IMFByteStream* pIByteStream, IMFMediaSink** ppIMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFStreamingMediaSinkActivate(IMFActivate pByteStreamActivate, IMFASFContentInfo pContentInfo, IMFActivate* ppIActivate);
+		public static extern HRESULT MFCreateASFStreamingMediaSinkActivate(IMFActivate* pByteStreamActivate, IMFASFContentInfo* pContentInfo, IMFActivate** ppIActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateD3D12SynchronizationObject(ID3D12Device pDevice, Guid* riid, void** ppvSyncObject);
+		public static extern HRESULT MFCreateD3D12SynchronizationObject(ID3D12Device* pDevice, Guid* riid, void** ppvSyncObject);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFStartup(uint32 Version, uint32 dwFlags);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
@@ -9300,27 +12630,27 @@ namespace Win32
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFUnlockPlatform();
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWorkItem(uint32 dwQueue, IMFAsyncCallback pCallback, IUnknown pState);
+		public static extern HRESULT MFPutWorkItem(uint32 dwQueue, IMFAsyncCallback* pCallback, IUnknown* pState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWorkItem2(uint32 dwQueue, int32 Priority, IMFAsyncCallback pCallback, IUnknown pState);
+		public static extern HRESULT MFPutWorkItem2(uint32 dwQueue, int32 Priority, IMFAsyncCallback* pCallback, IUnknown* pState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWorkItemEx(uint32 dwQueue, IMFAsyncResult pResult);
+		public static extern HRESULT MFPutWorkItemEx(uint32 dwQueue, IMFAsyncResult* pResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWorkItemEx2(uint32 dwQueue, int32 Priority, IMFAsyncResult pResult);
+		public static extern HRESULT MFPutWorkItemEx2(uint32 dwQueue, int32 Priority, IMFAsyncResult* pResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWaitingWorkItem(HANDLE hEvent, int32 Priority, IMFAsyncResult pResult, uint64* pKey);
+		public static extern HRESULT MFPutWaitingWorkItem(HANDLE hEvent, int32 Priority, IMFAsyncResult* pResult, uint64* pKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFAllocateSerialWorkQueue(uint32 dwWorkQueue, uint32* pdwWorkQueue);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFScheduleWorkItemEx(IMFAsyncResult pResult, int64 Timeout, uint64* pKey);
+		public static extern HRESULT MFScheduleWorkItemEx(IMFAsyncResult* pResult, int64 Timeout, uint64* pKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFScheduleWorkItem(IMFAsyncCallback pCallback, IUnknown pState, int64 Timeout, uint64* pKey);
+		public static extern HRESULT MFScheduleWorkItem(IMFAsyncCallback* pCallback, IUnknown* pState, int64 Timeout, uint64* pKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFCancelWorkItem(uint64 Key);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFGetTimerPeriodicity(uint32* Periodicity);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFAddPeriodicCallback(MFPERIODICCALLBACK Callback, IUnknown pContext, uint32* pdwKey);
+		public static extern HRESULT MFAddPeriodicCallback(MFPERIODICCALLBACK Callback, IUnknown* pContext, uint32* pdwKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFRemovePeriodicCallback(uint32 dwKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
@@ -9332,15 +12662,15 @@ namespace Win32
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFUnlockWorkQueue(uint32 dwWorkQueue);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS(uint32 dwWorkQueueId, PWSTR wszClass, uint32 dwTaskId, IMFAsyncCallback pDoneCallback, IUnknown pDoneState);
+		public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS(uint32 dwWorkQueueId, PWSTR wszClass, uint32 dwTaskId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSSEx(uint32 dwWorkQueueId, PWSTR wszClass, uint32 dwTaskId, int32 lPriority, IMFAsyncCallback pDoneCallback, IUnknown pDoneState);
+		public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSSEx(uint32 dwWorkQueueId, PWSTR wszClass, uint32 dwTaskId, int32 lPriority, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFEndRegisterWorkQueueWithMMCSS(IMFAsyncResult pResult, uint32* pdwTaskId);
+		public static extern HRESULT MFEndRegisterWorkQueueWithMMCSS(IMFAsyncResult* pResult, uint32* pdwTaskId);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFBeginUnregisterWorkQueueWithMMCSS(uint32 dwWorkQueueId, IMFAsyncCallback pDoneCallback, IUnknown pDoneState);
+		public static extern HRESULT MFBeginUnregisterWorkQueueWithMMCSS(uint32 dwWorkQueueId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFEndUnregisterWorkQueueWithMMCSS(IMFAsyncResult pResult);
+		public static extern HRESULT MFEndUnregisterWorkQueueWithMMCSS(IMFAsyncResult* pResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFGetWorkQueueMMCSSClass(uint32 dwWorkQueueId, char16* pwszClass, uint32* pcchClass);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
@@ -9354,113 +12684,113 @@ namespace Win32
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFGetWorkQueueMMCSSPriority(uint32 dwWorkQueueId, int32* lPriority);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAsyncResult(IUnknown punkObject, IMFAsyncCallback pCallback, IUnknown punkState, IMFAsyncResult* ppAsyncResult);
+		public static extern HRESULT MFCreateAsyncResult(IUnknown* punkObject, IMFAsyncCallback* pCallback, IUnknown* punkState, IMFAsyncResult** ppAsyncResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInvokeCallback(IMFAsyncResult pAsyncResult);
+		public static extern HRESULT MFInvokeCallback(IMFAsyncResult* pAsyncResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, PWSTR pwszFileURL, IMFByteStream* ppIByteStream);
+		public static extern HRESULT MFCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, PWSTR pwszFileURL, IMFByteStream** ppIByteStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTempFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, IMFByteStream* ppIByteStream);
+		public static extern HRESULT MFCreateTempFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, IMFByteStream** ppIByteStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFBeginCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, PWSTR pwszFilePath, IMFAsyncCallback pCallback, IUnknown pState, IUnknown* ppCancelCookie);
+		public static extern HRESULT MFBeginCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, PWSTR pwszFilePath, IMFAsyncCallback* pCallback, IUnknown* pState, IUnknown** ppCancelCookie);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFEndCreateFile(IMFAsyncResult pResult, IMFByteStream* ppFile);
+		public static extern HRESULT MFEndCreateFile(IMFAsyncResult* pResult, IMFByteStream** ppFile);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCancelCreateFile(IUnknown pCancelCookie);
+		public static extern HRESULT MFCancelCreateFile(IUnknown* pCancelCookie);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMemoryBuffer(uint32 cbMaxLength, IMFMediaBuffer* ppBuffer);
+		public static extern HRESULT MFCreateMemoryBuffer(uint32 cbMaxLength, IMFMediaBuffer** ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaBufferWrapper(IMFMediaBuffer pBuffer, uint32 cbOffset, uint32 dwLength, IMFMediaBuffer* ppBuffer);
+		public static extern HRESULT MFCreateMediaBufferWrapper(IMFMediaBuffer* pBuffer, uint32 cbOffset, uint32 dwLength, IMFMediaBuffer** ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(IMFSample pSample, IMFMediaBuffer pMFMediaBuffer, uint32 cbOffset, IMediaBuffer* ppMediaBuffer);
+		public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(IMFSample* pSample, IMFMediaBuffer* pMFMediaBuffer, uint32 cbOffset, IMediaBuffer** ppMediaBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern DXGI_FORMAT MFMapDX9FormatToDXGIFormat(uint32 dx9);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MFMapDXGIFormatToDX9Format(DXGI_FORMAT dx11);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFLockDXGIDeviceManager(uint32* pResetToken, IMFDXGIDeviceManager* ppManager);
+		public static extern HRESULT MFLockDXGIDeviceManager(uint32* pResetToken, IMFDXGIDeviceManager** ppManager);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFUnlockDXGIDeviceManager();
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDXSurfaceBuffer(Guid* riid, IUnknown punkSurface, BOOL fBottomUpWhenLinear, IMFMediaBuffer* ppBuffer);
+		public static extern HRESULT MFCreateDXSurfaceBuffer(Guid* riid, IUnknown* punkSurface, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWICBitmapBuffer(Guid* riid, IUnknown punkSurface, IMFMediaBuffer* ppBuffer);
+		public static extern HRESULT MFCreateWICBitmapBuffer(Guid* riid, IUnknown* punkSurface, IMFMediaBuffer** ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDXGISurfaceBuffer(Guid* riid, IUnknown punkSurface, uint32 uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer* ppBuffer);
+		public static extern HRESULT MFCreateDXGISurfaceBuffer(Guid* riid, IUnknown* punkSurface, uint32 uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFCreateVideoSampleAllocatorEx(Guid* riid, void** ppSampleAllocator);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDXGIDeviceManager(uint32* resetToken, IMFDXGIDeviceManager* ppDeviceManager);
+		public static extern HRESULT MFCreateDXGIDeviceManager(uint32* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAlignedMemoryBuffer(uint32 cbMaxLength, uint32 cbAligment, IMFMediaBuffer* ppBuffer);
+		public static extern HRESULT MFCreateAlignedMemoryBuffer(uint32 cbMaxLength, uint32 cbAligment, IMFMediaBuffer** ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaEvent(uint32 met, Guid* guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue, IMFMediaEvent* ppEvent);
+		public static extern HRESULT MFCreateMediaEvent(uint32 met, Guid* guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue, IMFMediaEvent** ppEvent);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateEventQueue(IMFMediaEventQueue* ppMediaEventQueue);
+		public static extern HRESULT MFCreateEventQueue(IMFMediaEventQueue** ppMediaEventQueue);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSample(IMFSample* ppIMFSample);
+		public static extern HRESULT MFCreateSample(IMFSample** ppIMFSample);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAttributes(IMFAttributes* ppMFAttributes, uint32 cInitialSize);
+		public static extern HRESULT MFCreateAttributes(IMFAttributes** ppMFAttributes, uint32 cInitialSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitAttributesFromBlob(IMFAttributes pAttributes, uint8* pBuf, uint32 cbBufSize);
+		public static extern HRESULT MFInitAttributesFromBlob(IMFAttributes* pAttributes, uint8* pBuf, uint32 cbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetAttributesAsBlobSize(IMFAttributes pAttributes, uint32* pcbBufSize);
+		public static extern HRESULT MFGetAttributesAsBlobSize(IMFAttributes* pAttributes, uint32* pcbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetAttributesAsBlob(IMFAttributes pAttributes, uint8* pBuf, uint32 cbBufSize);
+		public static extern HRESULT MFGetAttributesAsBlob(IMFAttributes* pAttributes, uint8* pBuf, uint32 cbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTRegister(Guid clsidMFT, Guid guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes pAttributes);
+		public static extern HRESULT MFTRegister(Guid clsidMFT, Guid guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes* pAttributes);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFTUnregister(Guid clsidMFT);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTRegisterLocal(IClassFactory pClassFactory, Guid* guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes);
+		public static extern HRESULT MFTRegisterLocal(IClassFactory* pClassFactory, Guid* guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTUnregisterLocal(IClassFactory pClassFactory);
+		public static extern HRESULT MFTUnregisterLocal(IClassFactory* pClassFactory);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFTRegisterLocalByCLSID(Guid* clisdMFT, Guid* guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFTUnregisterLocalByCLSID(Guid clsidMFT);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTEnum(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes pAttributes, Guid** ppclsidMFT, uint32* pcMFTs);
+		public static extern HRESULT MFTEnum(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, Guid** ppclsidMFT, uint32* pcMFTs);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTEnumEx(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFActivate** pppMFTActivate, uint32* pnumMFTActivate);
+		public static extern HRESULT MFTEnumEx(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFActivate*** pppMFTActivate, uint32* pnumMFTActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTEnum2(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes pAttributes, IMFActivate** pppMFTActivate, uint32* pnumMFTActivate);
+		public static extern HRESULT MFTEnum2(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, IMFActivate*** pppMFTActivate, uint32* pnumMFTActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTGetInfo(Guid clsidMFT, PWSTR* pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, uint32* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, uint32* pcOutputTypes, IMFAttributes* ppAttributes);
+		public static extern HRESULT MFTGetInfo(Guid clsidMFT, PWSTR* pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, uint32* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, uint32* pcOutputTypes, IMFAttributes** ppAttributes);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetPluginControl(IMFPluginControl* ppPluginControl);
+		public static extern HRESULT MFGetPluginControl(IMFPluginControl** ppPluginControl);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetMFTMerit(IUnknown pMFT, uint32 cbVerifier, uint8* verifier, uint32* merit);
+		public static extern HRESULT MFGetMFTMerit(IUnknown* pMFT, uint32 cbVerifier, uint8* verifier, uint32* merit);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFRegisterLocalSchemeHandler(PWSTR szScheme, IMFActivate pActivate);
+		public static extern HRESULT MFRegisterLocalSchemeHandler(PWSTR szScheme, IMFActivate* pActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFRegisterLocalByteStreamHandler(PWSTR szFileExtension, PWSTR szMimeType, IMFActivate pActivate);
+		public static extern HRESULT MFRegisterLocalByteStreamHandler(PWSTR szFileExtension, PWSTR szMimeType, IMFActivate* pActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMFByteStreamWrapper(IMFByteStream pStream, IMFByteStream* ppStreamWrapper);
+		public static extern HRESULT MFCreateMFByteStreamWrapper(IMFByteStream* pStream, IMFByteStream** ppStreamWrapper);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaExtensionActivate(PWSTR szActivatableClassId, IUnknown pConfiguration, Guid* riid, void** ppvObject);
+		public static extern HRESULT MFCreateMediaExtensionActivate(PWSTR szActivatableClassId, IUnknown* pConfiguration, Guid* riid, void** ppvObject);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMuxStreamAttributes(IMFCollection pAttributesToMux, IMFAttributes* ppMuxAttribs);
+		public static extern HRESULT MFCreateMuxStreamAttributes(IMFCollection* pAttributesToMux, IMFAttributes** ppMuxAttribs);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMuxStreamMediaType(IMFCollection pMediaTypesToMux, IMFMediaType* ppMuxMediaType);
+		public static extern HRESULT MFCreateMuxStreamMediaType(IMFCollection* pMediaTypesToMux, IMFMediaType** ppMuxMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMuxStreamSample(IMFCollection pSamplesToMux, IMFSample* ppMuxSample);
+		public static extern HRESULT MFCreateMuxStreamSample(IMFCollection* pSamplesToMux, IMFSample** ppMuxSample);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFValidateMediaTypeSize(Guid FormatType, uint8* pBlock, uint32 cbSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaType(IMFMediaType* ppMFType);
+		public static extern HRESULT MFCreateMediaType(IMFMediaType** ppMFType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMFVideoFormatFromMFMediaType(IMFMediaType pMFType, MFVIDEOFORMAT** ppMFVF, uint32* pcbSize);
+		public static extern HRESULT MFCreateMFVideoFormatFromMFMediaType(IMFMediaType* pMFType, MFVIDEOFORMAT** ppMFVF, uint32* pcbSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWaveFormatExFromMFMediaType(IMFMediaType pMFType, WAVEFORMATEX** ppWF, uint32* pcbSize, uint32 Flags);
+		public static extern HRESULT MFCreateWaveFormatExFromMFMediaType(IMFMediaType* pMFType, WAVEFORMATEX** ppWF, uint32* pcbSize, uint32 Flags);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader(IMFMediaType pMFType, VIDEOINFOHEADER* pVIH, uint32 cbBufSize, Guid* pSubtype);
+		public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader(IMFMediaType* pMFType, VIDEOINFOHEADER* pVIH, uint32 cbBufSize, Guid* pSubtype);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader2(IMFMediaType pMFType, VIDEOINFOHEADER2* pVIH2, uint32 cbBufSize, Guid* pSubtype);
+		public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader2(IMFMediaType* pMFType, VIDEOINFOHEADER2* pVIH2, uint32 cbBufSize, Guid* pSubtype);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromMPEG1VideoInfo(IMFMediaType pMFType, MPEG1VIDEOINFO* pMP1VI, uint32 cbBufSize, Guid* pSubtype);
+		public static extern HRESULT MFInitMediaTypeFromMPEG1VideoInfo(IMFMediaType* pMFType, MPEG1VIDEOINFO* pMP1VI, uint32 cbBufSize, Guid* pSubtype);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromMPEG2VideoInfo(IMFMediaType pMFType, MPEG2VIDEOINFO* pMP2VI, uint32 cbBufSize, Guid* pSubtype);
+		public static extern HRESULT MFInitMediaTypeFromMPEG2VideoInfo(IMFMediaType* pMFType, MPEG2VIDEOINFO* pMP2VI, uint32 cbBufSize, Guid* pSubtype);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFCalculateBitmapImageSize(BITMAPINFOHEADER* pBMIH, uint32 cbBufSize, uint32* pcbImageSize, BOOL* pbKnown);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
@@ -9470,39 +12800,39 @@ namespace Win32
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFAverageTimePerFrameToFrameRate(uint64 unAverageTimePerFrame, uint32* punNumerator, uint32* punDenominator);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromMFVideoFormat(IMFMediaType pMFType, MFVIDEOFORMAT* pMFVF, uint32 cbBufSize);
+		public static extern HRESULT MFInitMediaTypeFromMFVideoFormat(IMFMediaType* pMFType, MFVIDEOFORMAT* pMFVF, uint32 cbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromWaveFormatEx(IMFMediaType pMFType, WAVEFORMATEX* pWaveFormat, uint32 cbBufSize);
+		public static extern HRESULT MFInitMediaTypeFromWaveFormatEx(IMFMediaType* pMFType, WAVEFORMATEX* pWaveFormat, uint32 cbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromAMMediaType(IMFMediaType pMFType, AM_MEDIA_TYPE* pAMType);
+		public static extern HRESULT MFInitMediaTypeFromAMMediaType(IMFMediaType* pMFType, AM_MEDIA_TYPE* pAMType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitAMMediaTypeFromMFMediaType(IMFMediaType pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE* pAMType);
+		public static extern HRESULT MFInitAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE* pAMType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAMMediaTypeFromMFMediaType(IMFMediaType pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE** ppAMType);
+		public static extern HRESULT MFCreateAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE** ppAMType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MFCompareFullToPartialMediaType(IMFMediaType pMFTypeFull, IMFMediaType pMFTypePartial);
+		public static extern BOOL MFCompareFullToPartialMediaType(IMFMediaType* pMFTypeFull, IMFMediaType* pMFTypePartial);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFWrapMediaType(IMFMediaType pOrig, Guid* MajorType, Guid* SubType, IMFMediaType* ppWrap);
+		public static extern HRESULT MFWrapMediaType(IMFMediaType* pOrig, Guid* MajorType, Guid* SubType, IMFMediaType** ppWrap);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFUnwrapMediaType(IMFMediaType pWrap, IMFMediaType* ppOrig);
+		public static extern HRESULT MFUnwrapMediaType(IMFMediaType* pWrap, IMFMediaType** ppOrig);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMediaType(MFVIDEOFORMAT* pVideoFormat, IMFVideoMediaType* ppIVideoMediaType);
+		public static extern HRESULT MFCreateVideoMediaType(MFVIDEOFORMAT* pVideoFormat, IMFVideoMediaType** ppIVideoMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMediaTypeFromSubtype(Guid* pAMSubtype, IMFVideoMediaType* ppIVideoMediaType);
+		public static extern HRESULT MFCreateVideoMediaTypeFromSubtype(Guid* pAMSubtype, IMFVideoMediaType** ppIVideoMediaType);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MFIsFormatYUV(uint32 Format);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader(BITMAPINFOHEADER* pbmihBitMapInfoHeader, uint32 dwPixelAspectRatioX, uint32 dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, uint64 VideoFlags, uint64 qwFramesPerSecondNumerator, uint64 qwFramesPerSecondDenominator, uint32 dwMaxBitRate, IMFVideoMediaType* ppIVideoMediaType);
+		public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader(BITMAPINFOHEADER* pbmihBitMapInfoHeader, uint32 dwPixelAspectRatioX, uint32 dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, uint64 VideoFlags, uint64 qwFramesPerSecondNumerator, uint64 qwFramesPerSecondDenominator, uint32 dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFGetStrideForBitmapInfoHeader(uint32 format, uint32 dwWidth, int32* pStride);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFGetPlaneSize(uint32 format, uint32 dwWidth, uint32 dwHeight, uint32* pdwPlaneSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx(BITMAPINFOHEADER* pbmihBitMapInfoHeader, uint32 cbBitMapInfoHeader, uint32 dwPixelAspectRatioX, uint32 dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, uint64 VideoFlags, uint32 dwFramesPerSecondNumerator, uint32 dwFramesPerSecondDenominator, uint32 dwMaxBitRate, IMFVideoMediaType* ppIVideoMediaType);
+		public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx(BITMAPINFOHEADER* pbmihBitMapInfoHeader, uint32 cbBitMapInfoHeader, uint32 dwPixelAspectRatioX, uint32 dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, uint64 VideoFlags, uint32 dwFramesPerSecondNumerator, uint32 dwFramesPerSecondDenominator, uint32 dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaTypeFromRepresentation(Guid guidRepresentation, void* pvRepresentation, IMFMediaType* ppIMediaType);
+		public static extern HRESULT MFCreateMediaTypeFromRepresentation(Guid guidRepresentation, void* pvRepresentation, IMFMediaType** ppIMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAudioMediaType(WAVEFORMATEX* pAudioFormat, IMFAudioMediaType* ppIAudioMediaType);
+		public static extern HRESULT MFCreateAudioMediaType(WAVEFORMATEX* pAudioFormat, IMFAudioMediaType** ppIAudioMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MFGetUncompressedVideoFormat(MFVIDEOFORMAT* pVideoFormat);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
@@ -9520,11 +12850,11 @@ namespace Win32
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFConvertToFP16Array(uint16* pDest, float* pSrc, uint32 dwCount);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreate2DMediaBuffer(uint32 dwWidth, uint32 dwHeight, uint32 dwFourCC, BOOL fBottomUp, IMFMediaBuffer* ppBuffer);
+		public static extern HRESULT MFCreate2DMediaBuffer(uint32 dwWidth, uint32 dwHeight, uint32 dwFourCC, BOOL fBottomUp, IMFMediaBuffer** ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaBufferFromMediaType(IMFMediaType pMediaType, int64 llDuration, uint32 dwMinLength, uint32 dwMinAlignment, IMFMediaBuffer* ppBuffer);
+		public static extern HRESULT MFCreateMediaBufferFromMediaType(IMFMediaType* pMediaType, int64 llDuration, uint32 dwMinLength, uint32 dwMinAlignment, IMFMediaBuffer** ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateCollection(IMFCollection* ppIMFCollection);
+		public static extern HRESULT MFCreateCollection(IMFCollection** ppIMFCollection);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* MFHeapAlloc(uint nSize, uint32 dwFlags, PSTR pszFile, int32 line, EAllocationType eat);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
@@ -9534,37 +12864,37 @@ namespace Win32
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFGetContentProtectionSystemCLSID(Guid* guidProtectionSystemID, Guid* pclsid);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCombineSamples(IMFSample pSample, IMFSample pSampleToAdd, uint32 dwMaxMergedDurationInMS, BOOL* pMerged);
+		public static extern HRESULT MFCombineSamples(IMFSample* pSample, IMFSample* pSampleToAdd, uint32 dwMaxMergedDurationInMS, BOOL* pMerged);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFSplitSample(IMFSample pSample, IMFSample* pOutputSamples, uint32 dwOutputSampleMaxCount, uint32* pdwOutputSampleCount);
+		public static extern HRESULT MFSplitSample(IMFSample* pSample, IMFSample** pOutputSamples, uint32 dwOutputSampleMaxCount, uint32* pdwOutputSampleCount);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSourceReaderFromURL(PWSTR pwszURL, IMFAttributes pAttributes, IMFSourceReader* ppSourceReader);
+		public static extern HRESULT MFCreateSourceReaderFromURL(PWSTR pwszURL, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSourceReaderFromByteStream(IMFByteStream pByteStream, IMFAttributes pAttributes, IMFSourceReader* ppSourceReader);
+		public static extern HRESULT MFCreateSourceReaderFromByteStream(IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSourceReaderFromMediaSource(IMFMediaSource pMediaSource, IMFAttributes pAttributes, IMFSourceReader* ppSourceReader);
+		public static extern HRESULT MFCreateSourceReaderFromMediaSource(IMFMediaSource* pMediaSource, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSinkWriterFromURL(PWSTR pwszOutputURL, IMFByteStream pByteStream, IMFAttributes pAttributes, IMFSinkWriter* ppSinkWriter);
+		public static extern HRESULT MFCreateSinkWriterFromURL(PWSTR pwszOutputURL, IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSinkWriterFromMediaSink(IMFMediaSink pMediaSink, IMFAttributes pAttributes, IMFSinkWriter* ppSinkWriter);
+		public static extern HRESULT MFCreateSinkWriterFromMediaSink(IMFMediaSink* pMediaSink, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoPresenter(IUnknown pOwner, Guid* riidDevice, Guid* riid, void** ppVideoPresenter);
+		public static extern HRESULT MFCreateVideoPresenter(IUnknown* pOwner, Guid* riidDevice, Guid* riid, void** ppVideoPresenter);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMixer(IUnknown pOwner, Guid* riidDevice, Guid* riid, void** ppv);
+		public static extern HRESULT MFCreateVideoMixer(IUnknown* pOwner, Guid* riidDevice, Guid* riid, void** ppv);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMixerAndPresenter(IUnknown pMixerOwner, IUnknown pPresenterOwner, Guid* riidMixer, void** ppvVideoMixer, Guid* riidPresenter, void** ppvVideoPresenter);
+		public static extern HRESULT MFCreateVideoMixerAndPresenter(IUnknown* pMixerOwner, IUnknown* pPresenterOwner, Guid* riidMixer, void** ppvVideoMixer, Guid* riidPresenter, void** ppvVideoPresenter);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFCreateVideoRenderer(Guid* riidRenderer, void** ppVideoRenderer);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoSampleFromSurface(IUnknown pUnkSurface, IMFSample* ppSample);
+		public static extern HRESULT MFCreateVideoSampleFromSurface(IUnknown* pUnkSurface, IMFSample** ppSample);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFCreateVideoSampleAllocator(Guid* riid, void** ppSampleAllocator);
 		[Import("mfplay.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPCreateMediaPlayer(PWSTR pwszURL, BOOL fStartPlayback, MFP_CREATION_OPTIONS creationOptions, IMFPMediaPlayerCallback pCallback, HWND hWnd, IMFPMediaPlayer* ppMediaPlayer);
+		public static extern HRESULT MFPCreateMediaPlayer(PWSTR pwszURL, BOOL fStartPlayback, MFP_CREATION_OPTIONS creationOptions, IMFPMediaPlayerCallback* pCallback, HWND hWnd, IMFPMediaPlayer** ppMediaPlayer);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateEncryptedMediaExtensionsStoreActivate(IMFPMPHostApp pmpHost, IStream objectStream, PWSTR classId, IMFActivate* activate);
+		public static extern HRESULT MFCreateEncryptedMediaExtensionsStoreActivate(IMFPMPHostApp* pmpHost, IStream* objectStream, PWSTR classId, IMFActivate** activate);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVirtualCamera(__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001 type, __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0002 lifetime, __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0003 access, PWSTR friendlyName, PWSTR sourceId, Guid* categories, uint32 categoryCount, IMFVirtualCamera* virtualCamera);
+		public static extern HRESULT MFCreateVirtualCamera(__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001 type, __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0002 lifetime, __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0003 access, PWSTR friendlyName, PWSTR sourceId, Guid* categories, uint32 categoryCount, IMFVirtualCamera** virtualCamera);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFIsVirtualCameraTypeSupported(__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001 type, BOOL* supported);
 		[Import("opmxbox.dll"), CLink, CallingConvention(.Stdcall)]

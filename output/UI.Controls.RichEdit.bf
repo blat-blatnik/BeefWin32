@@ -1397,8 +1397,8 @@ namespace Win32
 		public function int32 AutoCorrectProc(uint16 langid, PWSTR pszBefore, PWSTR pszAfter, int32 cchAfter, int32* pcchReplaced);
 		public function int32 EDITWORDBREAKPROCEX(PSTR pchText, int32 cchText, uint8 bCharSet, int32 action);
 		public function uint32 EDITSTREAMCALLBACK(uint dwCookie, uint8* pbBuff, int32 cb, int32* pcb);
-		public function HRESULT PCreateTextServices(IUnknown punkOuter, ITextHost pITextHost, IUnknown* ppUnk);
-		public function HRESULT PShutdownTextServices(IUnknown pTextServices);
+		public function HRESULT PCreateTextServices(IUnknown* punkOuter, ITextHost* pITextHost, IUnknown** ppUnk);
+		public function HRESULT PShutdownTextServices(IUnknown* pTextServices);
 		
 		// --- Structs ---
 		
@@ -1448,7 +1448,7 @@ namespace Win32
 			public int32 Ascent;
 			public TEXT_ALIGN_OPTIONS Type;
 			public PWSTR pwszAlternateText;
-			public IStream pIStream;
+			public IStream* pIStream;
 		}
 		[CRepr]
 		public struct ENDCOMPOSITIONNOTIFY
@@ -1809,9 +1809,9 @@ namespace Win32
 			public uint32 cbStruct;
 			public int32 cp;
 			public Guid clsid;
-			public IOleObject poleobj;
-			public IStorage pstg;
-			public IOleClientSite polesite;
+			public IOleObject* poleobj;
+			public IStorage* pstg;
+			public IOleClientSite* polesite;
 			public SIZE sizel;
 			public uint32 dvaspect;
 			public REOBJECT_FLAGS dwFlags;
@@ -1820,30 +1820,670 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ITextServices {}
-		public struct ITextHost {}
-		public struct IRicheditUiaOverrides {}
-		public struct ITextHost2 {}
-		public struct ITextServices2 {}
-		public struct IRichEditOle {}
-		public struct IRichEditOleCallback {}
-		public struct ITextDocument {}
-		public struct ITextRange {}
-		public struct ITextSelection {}
-		public struct ITextFont {}
-		public struct ITextPara {}
-		public struct ITextStoryRanges {}
-		public struct ITextDocument2 {}
-		public struct ITextRange2 {}
-		public struct ITextSelection2 {}
-		public struct ITextFont2 {}
-		public struct ITextPara2 {}
-		public struct ITextStoryRanges2 {}
-		public struct ITextStory {}
-		public struct ITextStrings {}
-		public struct ITextRow {}
-		public struct ITextDisplays {}
-		public struct ITextDocument2Old {}
+		[CRepr]
+		public struct ITextServices : IUnknown
+		{
+			public function HRESULT(ITextServices *self, uint32 msg, WPARAM wparam, LPARAM lparam, LRESULT* plresult) TxSendMessage;
+			public function HRESULT(ITextServices *self, DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcDraw, HDC hicTargetDev, RECTL* lprcBounds, RECTL* lprcWBounds, RECT* lprcUpdate, int pfnContinue, uint32 dwContinue, int32 lViewId) TxDraw;
+			public function HRESULT(ITextServices *self, int32* plMin, int32* plMax, int32* plPos, int32* plPage, BOOL* pfEnabled) TxGetHScroll;
+			public function HRESULT(ITextServices *self, int32* plMin, int32* plMax, int32* plPos, int32* plPage, BOOL* pfEnabled) TxGetVScroll;
+			public function HRESULT(ITextServices *self, DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcDraw, HDC hicTargetDev, RECT* lprcClient, int32 x, int32 y) OnTxSetCursor;
+			public function HRESULT(ITextServices *self, DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcDraw, HDC hicTargetDev, RECT* lprcClient, int32 x, int32 y, uint32* pHitResult) TxQueryHitPoint;
+			public function HRESULT(ITextServices *self, RECT* prcClient) OnTxInPlaceActivate;
+			public function HRESULT(ITextServices *self) OnTxInPlaceDeactivate;
+			public function HRESULT(ITextServices *self) OnTxUIActivate;
+			public function HRESULT(ITextServices *self) OnTxUIDeactivate;
+			public function HRESULT(ITextServices *self, BSTR* pbstrText) TxGetText;
+			public function HRESULT(ITextServices *self, PWSTR pszText) TxSetText;
+			public function HRESULT(ITextServices *self, int32* param0) TxGetCurTargetX;
+			public function HRESULT(ITextServices *self, int32* param0) TxGetBaseLinePos;
+			public function HRESULT(ITextServices *self, uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, DVTARGETDEVICE* ptd, uint32 dwMode, SIZE* psizelExtent, int32* pwidth, int32* pheight) TxGetNaturalSize;
+			public function HRESULT(ITextServices *self, IDropTarget** ppDropTarget) TxGetDropTarget;
+			public function HRESULT(ITextServices *self, uint32 dwMask, uint32 dwBits) OnTxPropertyBitsChange;
+			public function HRESULT(ITextServices *self, uint32* pdwWidth, uint32* pdwHeight) TxGetCachedSize;
+		}
+		[CRepr]
+		public struct ITextHost : IUnknown
+		{
+			public function HDC(ITextHost *self) TxGetDC;
+			public function int32(ITextHost *self, HDC hdc) TxReleaseDC;
+			public function BOOL(ITextHost *self, int32 fnBar, BOOL fShow) TxShowScrollBar;
+			public function BOOL(ITextHost *self, SCROLLBAR_CONSTANTS fuSBFlags, ENABLE_SCROLL_BAR_ARROWS fuArrowflags) TxEnableScrollBar;
+			public function BOOL(ITextHost *self, int32 fnBar, int32 nMinPos, int32 nMaxPos, BOOL fRedraw) TxSetScrollRange;
+			public function BOOL(ITextHost *self, int32 fnBar, int32 nPos, BOOL fRedraw) TxSetScrollPos;
+			public function void(ITextHost *self, RECT* prc, BOOL fMode) TxInvalidateRect;
+			public function void(ITextHost *self, BOOL fUpdate) TxViewChange;
+			public function BOOL(ITextHost *self, HBITMAP hbmp, int32 xWidth, int32 yHeight) TxCreateCaret;
+			public function BOOL(ITextHost *self, BOOL fShow) TxShowCaret;
+			public function BOOL(ITextHost *self, int32 x, int32 y) TxSetCaretPos;
+			public function BOOL(ITextHost *self, uint32 idTimer, uint32 uTimeout) TxSetTimer;
+			public function void(ITextHost *self, uint32 idTimer) TxKillTimer;
+			public function void(ITextHost *self, int32 dx, int32 dy, RECT* lprcScroll, RECT* lprcClip, HRGN hrgnUpdate, RECT* lprcUpdate, SHOW_WINDOW_CMD fuScroll) TxScrollWindowEx;
+			public function void(ITextHost *self, BOOL fCapture) TxSetCapture;
+			public function void(ITextHost *self) TxSetFocus;
+			public function void(ITextHost *self, HCURSOR hcur, BOOL fText) TxSetCursor;
+			public function BOOL(ITextHost *self, POINT* lppt) TxScreenToClient;
+			public function BOOL(ITextHost *self, POINT* lppt) TxClientToScreen;
+			public function HRESULT(ITextHost *self, int32* plOldState) TxActivate;
+			public function HRESULT(ITextHost *self, int32 lNewState) TxDeactivate;
+			public function HRESULT(ITextHost *self, RECT* prc) TxGetClientRect;
+			public function HRESULT(ITextHost *self, RECT* prc) TxGetViewInset;
+			public function HRESULT(ITextHost *self, CHARFORMATW** ppCF) TxGetCharFormat;
+			public function HRESULT(ITextHost *self, PARAFORMAT** ppPF) TxGetParaFormat;
+			public function uint32(ITextHost *self, int32 nIndex) TxGetSysColor;
+			public function HRESULT(ITextHost *self, TXTBACKSTYLE* pstyle) TxGetBackStyle;
+			public function HRESULT(ITextHost *self, uint32* plength) TxGetMaxLength;
+			public function HRESULT(ITextHost *self, uint32* pdwScrollBar) TxGetScrollBars;
+			public function HRESULT(ITextHost *self, int8* pch) TxGetPasswordChar;
+			public function HRESULT(ITextHost *self, int32* pcp) TxGetAcceleratorPos;
+			public function HRESULT(ITextHost *self, SIZE* lpExtent) TxGetExtent;
+			public function HRESULT(ITextHost *self, CHARFORMATW* pCF) OnTxCharFormatChange;
+			public function HRESULT(ITextHost *self, PARAFORMAT* pPF) OnTxParaFormatChange;
+			public function HRESULT(ITextHost *self, uint32 dwMask, uint32* pdwBits) TxGetPropertyBits;
+			public function HRESULT(ITextHost *self, uint32 iNotify, void* pv) TxNotify;
+			public function HIMC(ITextHost *self) TxImmGetContext;
+			public function void(ITextHost *self, HIMC himc) TxImmReleaseContext;
+			public function HRESULT(ITextHost *self, int32* lSelBarWidth) TxGetSelectionBarWidth;
+		}
+		[CRepr]
+		public struct IRicheditUiaOverrides : IUnknown
+		{
+			public function HRESULT(IRicheditUiaOverrides *self, int32 propertyId, VARIANT* pRetValue) GetPropertyOverrideValue;
+		}
+		[CRepr]
+		public struct ITextHost2 : ITextHost
+		{
+			public function BOOL(ITextHost2 *self) TxIsDoubleClickPending;
+			public function HRESULT(ITextHost2 *self, HWND* phwnd) TxGetWindow;
+			public function HRESULT(ITextHost2 *self) TxSetForegroundWindow;
+			public function HPALETTE(ITextHost2 *self) TxGetPalette;
+			public function HRESULT(ITextHost2 *self, int32* pFlags) TxGetEastAsianFlags;
+			public function HCURSOR(ITextHost2 *self, HCURSOR hcur, BOOL bText) TxSetCursor2;
+			public function void(ITextHost2 *self) TxFreeTextServicesNotification;
+			public function HRESULT(ITextHost2 *self, uint32 dwItem, uint32* pdwData) TxGetEditStyle;
+			public function HRESULT(ITextHost2 *self, uint32* pdwStyle, uint32* pdwExStyle) TxGetWindowStyles;
+			public function HRESULT(ITextHost2 *self, BOOL fShow, HDC hdc, RECT* prc) TxShowDropCaret;
+			public function HRESULT(ITextHost2 *self) TxDestroyCaret;
+			public function HRESULT(ITextHost2 *self, int32* plHorzExtent) TxGetHorzExtent;
+		}
+		[CRepr]
+		public struct ITextServices2 : ITextServices
+		{
+			public function HRESULT(ITextServices2 *self, uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, DVTARGETDEVICE* ptd, uint32 dwMode, SIZE* psizelExtent, int32* pwidth, int32* pheight, int32* pascent) TxGetNaturalSize2;
+			public function HRESULT(ITextServices2 *self, ID2D1RenderTarget* pRenderTarget, RECTL* lprcBounds, RECT* lprcUpdate, int32 lViewId) TxDrawD2D;
+		}
+		[CRepr]
+		public struct IRichEditOle : IUnknown
+		{
+			public const new Guid IID = .(0x00020d00, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IRichEditOle *self, IOleClientSite** lplpolesite) GetClientSite;
+			public function int32(IRichEditOle *self) GetObjectCount;
+			public function int32(IRichEditOle *self) GetLinkCount;
+			public function HRESULT(IRichEditOle *self, int32 iob, REOBJECT* lpreobject, RICH_EDIT_GET_OBJECT_FLAGS dwFlags) GetObject;
+			public function HRESULT(IRichEditOle *self, REOBJECT* lpreobject) InsertObject;
+			public function HRESULT(IRichEditOle *self, int32 iob, Guid* rclsidNew, PSTR lpstrUserTypeNew) ConvertObject;
+			public function HRESULT(IRichEditOle *self, Guid* rclsid, Guid* rclsidAs) ActivateAs;
+			public function HRESULT(IRichEditOle *self, PSTR lpstrContainerApp, PSTR lpstrContainerObj) SetHostNames;
+			public function HRESULT(IRichEditOle *self, int32 iob, BOOL fAvailable) SetLinkAvailable;
+			public function HRESULT(IRichEditOle *self, int32 iob, uint32 dvaspect) SetDvaspect;
+			public function HRESULT(IRichEditOle *self, int32 iob) HandsOffStorage;
+			public function HRESULT(IRichEditOle *self, int32 iob, IStorage* lpstg) SaveCompleted;
+			public function HRESULT(IRichEditOle *self) InPlaceDeactivate;
+			public function HRESULT(IRichEditOle *self, BOOL fEnterMode) ContextSensitiveHelp;
+			public function HRESULT(IRichEditOle *self, CHARRANGE* lpchrg, uint32 reco, IDataObject** lplpdataobj) GetClipboardData;
+			public function HRESULT(IRichEditOle *self, IDataObject* lpdataobj, uint16 cf, int hMetaPict) ImportDataObject;
+		}
+		[CRepr]
+		public struct IRichEditOleCallback : IUnknown
+		{
+			public const new Guid IID = .(0x00020d03, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IRichEditOleCallback *self, IStorage** lplpstg) GetNewStorage;
+			public function HRESULT(IRichEditOleCallback *self, IOleInPlaceFrame** lplpFrame, IOleInPlaceUIWindow** lplpDoc, OIFI* lpFrameInfo) GetInPlaceContext;
+			public function HRESULT(IRichEditOleCallback *self, BOOL fShow) ShowContainerUI;
+			public function HRESULT(IRichEditOleCallback *self, Guid* lpclsid, IStorage* lpstg, int32 cp) QueryInsertObject;
+			public function HRESULT(IRichEditOleCallback *self, IOleObject* lpoleobj) DeleteObject;
+			public function HRESULT(IRichEditOleCallback *self, IDataObject* lpdataobj, uint16* lpcfFormat, uint32 reco, BOOL fReally, int hMetaPict) QueryAcceptData;
+			public function HRESULT(IRichEditOleCallback *self, BOOL fEnterMode) ContextSensitiveHelp;
+			public function HRESULT(IRichEditOleCallback *self, CHARRANGE* lpchrg, uint32 reco, IDataObject** lplpdataobj) GetClipboardData;
+			public function HRESULT(IRichEditOleCallback *self, BOOL fDrag, uint32 grfKeyState, uint32* pdwEffect) GetDragDropEffect;
+			public function HRESULT(IRichEditOleCallback *self, RICH_EDIT_GET_CONTEXT_MENU_SEL_TYPE seltype, IOleObject* lpoleobj, CHARRANGE* lpchrg, HMENU* lphmenu) GetContextMenu;
+		}
+		[CRepr]
+		public struct ITextDocument : IDispatch
+		{
+			public const new Guid IID = .(0x8cc497c0, 0xa1df, 0x11ce, 0x80, 0x98, 0x00, 0xaa, 0x00, 0x47, 0xbe, 0x5d);
+			
+			public function HRESULT(ITextDocument *self, BSTR* pName) GetName;
+			public function HRESULT(ITextDocument *self, ITextSelection** ppSel) GetSelection;
+			public function HRESULT(ITextDocument *self, int32* pCount) GetStoryCount;
+			public function HRESULT(ITextDocument *self, ITextStoryRanges** ppStories) GetStoryRanges;
+			public function HRESULT(ITextDocument *self, int32* pValue) GetSaved;
+			public function HRESULT(ITextDocument *self, tomConstants Value) SetSaved;
+			public function HRESULT(ITextDocument *self, float* pValue) GetDefaultTabStop;
+			public function HRESULT(ITextDocument *self, float Value) SetDefaultTabStop;
+			public function HRESULT(ITextDocument *self) New;
+			public function HRESULT(ITextDocument *self, VARIANT* pVar, int32 Flags, int32 CodePage) Open;
+			public function HRESULT(ITextDocument *self, VARIANT* pVar, int32 Flags, int32 CodePage) Save;
+			public function HRESULT(ITextDocument *self, int32* pCount) Freeze;
+			public function HRESULT(ITextDocument *self, int32* pCount) Unfreeze;
+			public function HRESULT(ITextDocument *self) BeginEditCollection;
+			public function HRESULT(ITextDocument *self) EndEditCollection;
+			public function HRESULT(ITextDocument *self, int32 Count, int32* pCount) Undo;
+			public function HRESULT(ITextDocument *self, int32 Count, int32* pCount) Redo;
+			public function HRESULT(ITextDocument *self, int32 cpActive, int32 cpAnchor, ITextRange** ppRange) Range;
+			public function HRESULT(ITextDocument *self, int32 x, int32 y, ITextRange** ppRange) RangeFromPoint;
+		}
+		[CRepr]
+		public struct ITextRange : IDispatch
+		{
+			public const new Guid IID = .(0x8cc497c2, 0xa1df, 0x11ce, 0x80, 0x98, 0x00, 0xaa, 0x00, 0x47, 0xbe, 0x5d);
+			
+			public function HRESULT(ITextRange *self, BSTR* pbstr) GetText;
+			public function HRESULT(ITextRange *self, BSTR bstr) SetText;
+			public function HRESULT(ITextRange *self, int32* pChar) GetChar;
+			public function HRESULT(ITextRange *self, int32 Char) SetChar;
+			public function HRESULT(ITextRange *self, ITextRange** ppRange) GetDuplicate;
+			public function HRESULT(ITextRange *self, ITextRange** ppRange) GetFormattedText;
+			public function HRESULT(ITextRange *self, ITextRange* pRange) SetFormattedText;
+			public function HRESULT(ITextRange *self, int32* pcpFirst) GetStart;
+			public function HRESULT(ITextRange *self, int32 cpFirst) SetStart;
+			public function HRESULT(ITextRange *self, int32* pcpLim) GetEnd;
+			public function HRESULT(ITextRange *self, int32 cpLim) SetEnd;
+			public function HRESULT(ITextRange *self, ITextFont** ppFont) GetFont;
+			public function HRESULT(ITextRange *self, ITextFont* pFont) SetFont;
+			public function HRESULT(ITextRange *self, ITextPara** ppPara) GetPara;
+			public function HRESULT(ITextRange *self, ITextPara* pPara) SetPara;
+			public function HRESULT(ITextRange *self, int32* pCount) GetStoryLength;
+			public function HRESULT(ITextRange *self, int32* pValue) GetStoryType;
+			public function HRESULT(ITextRange *self, int32 bStart) Collapse;
+			public function HRESULT(ITextRange *self, int32 Unit, int32* pDelta) Expand;
+			public function HRESULT(ITextRange *self, int32 Unit, int32* pIndex) GetIndex;
+			public function HRESULT(ITextRange *self, int32 Unit, int32 Index, int32 Extend) SetIndex;
+			public function HRESULT(ITextRange *self, int32 cpAnchor, int32 cpActive) SetRange;
+			public function HRESULT(ITextRange *self, ITextRange* pRange, int32* pValue) InRange;
+			public function HRESULT(ITextRange *self, ITextRange* pRange, int32* pValue) InStory;
+			public function HRESULT(ITextRange *self, ITextRange* pRange, int32* pValue) IsEqual;
+			public function HRESULT(ITextRange *self) Select;
+			public function HRESULT(ITextRange *self, int32 Unit, int32 Extend, int32* pDelta) StartOf;
+			public function HRESULT(ITextRange *self, int32 Unit, int32 Extend, int32* pDelta) EndOf;
+			public function HRESULT(ITextRange *self, int32 Unit, int32 Count, int32* pDelta) Move;
+			public function HRESULT(ITextRange *self, int32 Unit, int32 Count, int32* pDelta) MoveStart;
+			public function HRESULT(ITextRange *self, int32 Unit, int32 Count, int32* pDelta) MoveEnd;
+			public function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveWhile;
+			public function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveStartWhile;
+			public function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveEndWhile;
+			public function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveUntil;
+			public function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveStartUntil;
+			public function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveEndUntil;
+			public function HRESULT(ITextRange *self, BSTR bstr, int32 Count, int32 Flags, int32* pLength) FindText;
+			public function HRESULT(ITextRange *self, BSTR bstr, int32 Count, int32 Flags, int32* pLength) FindTextStart;
+			public function HRESULT(ITextRange *self, BSTR bstr, int32 Count, int32 Flags, int32* pLength) FindTextEnd;
+			public function HRESULT(ITextRange *self, int32 Unit, int32 Count, int32* pDelta) Delete;
+			public function HRESULT(ITextRange *self, VARIANT* pVar) Cut;
+			public function HRESULT(ITextRange *self, VARIANT* pVar) Copy;
+			public function HRESULT(ITextRange *self, VARIANT* pVar, int32 Format) Paste;
+			public function HRESULT(ITextRange *self, VARIANT* pVar, int32 Format, int32* pValue) CanPaste;
+			public function HRESULT(ITextRange *self, int32* pValue) CanEdit;
+			public function HRESULT(ITextRange *self, int32 Type) ChangeCase;
+			public function HRESULT(ITextRange *self, int32 Type, int32* px, int32* py) GetPoint;
+			public function HRESULT(ITextRange *self, int32 x, int32 y, int32 Type, int32 Extend) SetPoint;
+			public function HRESULT(ITextRange *self, int32 Value) ScrollIntoView;
+			public function HRESULT(ITextRange *self, IUnknown** ppObject) GetEmbeddedObject;
+		}
+		[CRepr]
+		public struct ITextSelection : ITextRange
+		{
+			public const new Guid IID = .(0x8cc497c1, 0xa1df, 0x11ce, 0x80, 0x98, 0x00, 0xaa, 0x00, 0x47, 0xbe, 0x5d);
+			
+			public function HRESULT(ITextSelection *self, int32* pFlags) GetFlags;
+			public function HRESULT(ITextSelection *self, int32 Flags) SetFlags;
+			public function HRESULT(ITextSelection *self, int32* pType) GetType;
+			public function HRESULT(ITextSelection *self, int32 Unit, int32 Count, int32 Extend, int32* pDelta) MoveLeft;
+			public function HRESULT(ITextSelection *self, int32 Unit, int32 Count, int32 Extend, int32* pDelta) MoveRight;
+			public function HRESULT(ITextSelection *self, int32 Unit, int32 Count, int32 Extend, int32* pDelta) MoveUp;
+			public function HRESULT(ITextSelection *self, int32 Unit, int32 Count, int32 Extend, int32* pDelta) MoveDown;
+			public function HRESULT(ITextSelection *self, tomConstants Unit, int32 Extend, int32* pDelta) HomeKey;
+			public function HRESULT(ITextSelection *self, int32 Unit, int32 Extend, int32* pDelta) EndKey;
+			public function HRESULT(ITextSelection *self, BSTR bstr) TypeText;
+		}
+		[CRepr]
+		public struct ITextFont : IDispatch
+		{
+			public const new Guid IID = .(0x8cc497c3, 0xa1df, 0x11ce, 0x80, 0x98, 0x00, 0xaa, 0x00, 0x47, 0xbe, 0x5d);
+			
+			public function HRESULT(ITextFont *self, ITextFont** ppFont) GetDuplicate;
+			public function HRESULT(ITextFont *self, ITextFont* pFont) SetDuplicate;
+			public function HRESULT(ITextFont *self, int32* pValue) CanChange;
+			public function HRESULT(ITextFont *self, ITextFont* pFont, int32* pValue) IsEqual;
+			public function HRESULT(ITextFont *self, tomConstants Value) Reset;
+			public function HRESULT(ITextFont *self, int32* pValue) GetStyle;
+			public function HRESULT(ITextFont *self, int32 Value) SetStyle;
+			public function HRESULT(ITextFont *self, int32* pValue) GetAllCaps;
+			public function HRESULT(ITextFont *self, int32 Value) SetAllCaps;
+			public function HRESULT(ITextFont *self, int32* pValue) GetAnimation;
+			public function HRESULT(ITextFont *self, int32 Value) SetAnimation;
+			public function HRESULT(ITextFont *self, int32* pValue) GetBackColor;
+			public function HRESULT(ITextFont *self, int32 Value) SetBackColor;
+			public function HRESULT(ITextFont *self, int32* pValue) GetBold;
+			public function HRESULT(ITextFont *self, int32 Value) SetBold;
+			public function HRESULT(ITextFont *self, int32* pValue) GetEmboss;
+			public function HRESULT(ITextFont *self, int32 Value) SetEmboss;
+			public function HRESULT(ITextFont *self, int32* pValue) GetForeColor;
+			public function HRESULT(ITextFont *self, int32 Value) SetForeColor;
+			public function HRESULT(ITextFont *self, int32* pValue) GetHidden;
+			public function HRESULT(ITextFont *self, int32 Value) SetHidden;
+			public function HRESULT(ITextFont *self, int32* pValue) GetEngrave;
+			public function HRESULT(ITextFont *self, int32 Value) SetEngrave;
+			public function HRESULT(ITextFont *self, int32* pValue) GetItalic;
+			public function HRESULT(ITextFont *self, int32 Value) SetItalic;
+			public function HRESULT(ITextFont *self, float* pValue) GetKerning;
+			public function HRESULT(ITextFont *self, float Value) SetKerning;
+			public function HRESULT(ITextFont *self, int32* pValue) GetLanguageID;
+			public function HRESULT(ITextFont *self, int32 Value) SetLanguageID;
+			public function HRESULT(ITextFont *self, BSTR* pbstr) GetName;
+			public function HRESULT(ITextFont *self, BSTR bstr) SetName;
+			public function HRESULT(ITextFont *self, int32* pValue) GetOutline;
+			public function HRESULT(ITextFont *self, int32 Value) SetOutline;
+			public function HRESULT(ITextFont *self, float* pValue) GetPosition;
+			public function HRESULT(ITextFont *self, float Value) SetPosition;
+			public function HRESULT(ITextFont *self, int32* pValue) GetProtected;
+			public function HRESULT(ITextFont *self, int32 Value) SetProtected;
+			public function HRESULT(ITextFont *self, int32* pValue) GetShadow;
+			public function HRESULT(ITextFont *self, int32 Value) SetShadow;
+			public function HRESULT(ITextFont *self, float* pValue) GetSize;
+			public function HRESULT(ITextFont *self, float Value) SetSize;
+			public function HRESULT(ITextFont *self, int32* pValue) GetSmallCaps;
+			public function HRESULT(ITextFont *self, int32 Value) SetSmallCaps;
+			public function HRESULT(ITextFont *self, float* pValue) GetSpacing;
+			public function HRESULT(ITextFont *self, float Value) SetSpacing;
+			public function HRESULT(ITextFont *self, int32* pValue) GetStrikeThrough;
+			public function HRESULT(ITextFont *self, int32 Value) SetStrikeThrough;
+			public function HRESULT(ITextFont *self, int32* pValue) GetSubscript;
+			public function HRESULT(ITextFont *self, int32 Value) SetSubscript;
+			public function HRESULT(ITextFont *self, int32* pValue) GetSuperscript;
+			public function HRESULT(ITextFont *self, int32 Value) SetSuperscript;
+			public function HRESULT(ITextFont *self, int32* pValue) GetUnderline;
+			public function HRESULT(ITextFont *self, int32 Value) SetUnderline;
+			public function HRESULT(ITextFont *self, int32* pValue) GetWeight;
+			public function HRESULT(ITextFont *self, int32 Value) SetWeight;
+		}
+		[CRepr]
+		public struct ITextPara : IDispatch
+		{
+			public const new Guid IID = .(0x8cc497c4, 0xa1df, 0x11ce, 0x80, 0x98, 0x00, 0xaa, 0x00, 0x47, 0xbe, 0x5d);
+			
+			public function HRESULT(ITextPara *self, ITextPara** ppPara) GetDuplicate;
+			public function HRESULT(ITextPara *self, ITextPara* pPara) SetDuplicate;
+			public function HRESULT(ITextPara *self, int32* pValue) CanChange;
+			public function HRESULT(ITextPara *self, ITextPara* pPara, int32* pValue) IsEqual;
+			public function HRESULT(ITextPara *self, int32 Value) Reset;
+			public function HRESULT(ITextPara *self, int32* pValue) GetStyle;
+			public function HRESULT(ITextPara *self, int32 Value) SetStyle;
+			public function HRESULT(ITextPara *self, int32* pValue) GetAlignment;
+			public function HRESULT(ITextPara *self, int32 Value) SetAlignment;
+			public function HRESULT(ITextPara *self, tomConstants* pValue) GetHyphenation;
+			public function HRESULT(ITextPara *self, int32 Value) SetHyphenation;
+			public function HRESULT(ITextPara *self, float* pValue) GetFirstLineIndent;
+			public function HRESULT(ITextPara *self, tomConstants* pValue) GetKeepTogether;
+			public function HRESULT(ITextPara *self, int32 Value) SetKeepTogether;
+			public function HRESULT(ITextPara *self, tomConstants* pValue) GetKeepWithNext;
+			public function HRESULT(ITextPara *self, int32 Value) SetKeepWithNext;
+			public function HRESULT(ITextPara *self, float* pValue) GetLeftIndent;
+			public function HRESULT(ITextPara *self, float* pValue) GetLineSpacing;
+			public function HRESULT(ITextPara *self, int32* pValue) GetLineSpacingRule;
+			public function HRESULT(ITextPara *self, int32* pValue) GetListAlignment;
+			public function HRESULT(ITextPara *self, int32 Value) SetListAlignment;
+			public function HRESULT(ITextPara *self, int32* pValue) GetListLevelIndex;
+			public function HRESULT(ITextPara *self, int32 Value) SetListLevelIndex;
+			public function HRESULT(ITextPara *self, int32* pValue) GetListStart;
+			public function HRESULT(ITextPara *self, int32 Value) SetListStart;
+			public function HRESULT(ITextPara *self, float* pValue) GetListTab;
+			public function HRESULT(ITextPara *self, float Value) SetListTab;
+			public function HRESULT(ITextPara *self, int32* pValue) GetListType;
+			public function HRESULT(ITextPara *self, int32 Value) SetListType;
+			public function HRESULT(ITextPara *self, int32* pValue) GetNoLineNumber;
+			public function HRESULT(ITextPara *self, int32 Value) SetNoLineNumber;
+			public function HRESULT(ITextPara *self, int32* pValue) GetPageBreakBefore;
+			public function HRESULT(ITextPara *self, int32 Value) SetPageBreakBefore;
+			public function HRESULT(ITextPara *self, float* pValue) GetRightIndent;
+			public function HRESULT(ITextPara *self, float Value) SetRightIndent;
+			public function HRESULT(ITextPara *self, float First, float Left, float Right) SetIndents;
+			public function HRESULT(ITextPara *self, int32 Rule, float Spacing) SetLineSpacing;
+			public function HRESULT(ITextPara *self, float* pValue) GetSpaceAfter;
+			public function HRESULT(ITextPara *self, float Value) SetSpaceAfter;
+			public function HRESULT(ITextPara *self, float* pValue) GetSpaceBefore;
+			public function HRESULT(ITextPara *self, float Value) SetSpaceBefore;
+			public function HRESULT(ITextPara *self, int32* pValue) GetWidowControl;
+			public function HRESULT(ITextPara *self, int32 Value) SetWidowControl;
+			public function HRESULT(ITextPara *self, int32* pCount) GetTabCount;
+			public function HRESULT(ITextPara *self, float tbPos, int32 tbAlign, int32 tbLeader) AddTab;
+			public function HRESULT(ITextPara *self) ClearAllTabs;
+			public function HRESULT(ITextPara *self, float tbPos) DeleteTab;
+			public function HRESULT(ITextPara *self, int32 iTab, float* ptbPos, int32* ptbAlign, int32* ptbLeader) GetTab;
+		}
+		[CRepr]
+		public struct ITextStoryRanges : IDispatch
+		{
+			public const new Guid IID = .(0x8cc497c5, 0xa1df, 0x11ce, 0x80, 0x98, 0x00, 0xaa, 0x00, 0x47, 0xbe, 0x5d);
+			
+			public function HRESULT(ITextStoryRanges *self, IUnknown** ppunkEnum) _NewEnum;
+			public function HRESULT(ITextStoryRanges *self, int32 Index, ITextRange** ppRange) Item;
+			public function HRESULT(ITextStoryRanges *self, int32* pCount) GetCount;
+		}
+		[CRepr]
+		public struct ITextDocument2 : ITextDocument
+		{
+			public const new Guid IID = .(0xc241f5e0, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+			public function HRESULT(ITextDocument2 *self, int32* pValue) GetCaretType;
+			public function HRESULT(ITextDocument2 *self, int32 Value) SetCaretType;
+			public function HRESULT(ITextDocument2 *self, ITextDisplays** ppDisplays) GetDisplays;
+			public function HRESULT(ITextDocument2 *self, ITextFont2** ppFont) GetDocumentFont;
+			public function HRESULT(ITextDocument2 *self, ITextFont2* pFont) SetDocumentFont;
+			public function HRESULT(ITextDocument2 *self, ITextPara2** ppPara) GetDocumentPara;
+			public function HRESULT(ITextDocument2 *self, ITextPara2* pPara) SetDocumentPara;
+			public function HRESULT(ITextDocument2 *self, tomConstants* pFlags) GetEastAsianFlags;
+			public function HRESULT(ITextDocument2 *self, BSTR* pbstr) GetGenerator;
+			public function HRESULT(ITextDocument2 *self, int32 Value) SetIMEInProgress;
+			public function HRESULT(ITextDocument2 *self, int32* pValue) GetNotificationMode;
+			public function HRESULT(ITextDocument2 *self, int32 Value) SetNotificationMode;
+			public function HRESULT(ITextDocument2 *self, ITextSelection2** ppSel) GetSelection2;
+			public function HRESULT(ITextDocument2 *self, ITextStoryRanges2** ppStories) GetStoryRanges2;
+			public function HRESULT(ITextDocument2 *self, int32* pOptions) GetTypographyOptions;
+			public function HRESULT(ITextDocument2 *self, int32* pValue) GetVersion;
+			public function HRESULT(ITextDocument2 *self, int64* pHwnd) GetWindow;
+			public function HRESULT(ITextDocument2 *self, IUnknown* pFilter) AttachMsgFilter;
+			public function HRESULT(ITextDocument2 *self, int32 cch, int32* pcch) CheckTextLimit;
+			public function HRESULT(ITextDocument2 *self, IUnknown** ppVoid) GetCallManager;
+			public function HRESULT(ITextDocument2 *self, tomConstants Type, int32* pLeft, int32* pTop, int32* pRight, int32* pBottom) GetClientRect;
+			public function HRESULT(ITextDocument2 *self, int32 Index, int32* pValue) GetEffectColor;
+			public function HRESULT(ITextDocument2 *self, int64* pContext) GetImmContext;
+			public function HRESULT(ITextDocument2 *self, int32 cp, int32 CharRep, int32 Options, int32 curCharRep, int32 curFontSize, BSTR* pbstr, int32* pPitchAndFamily, int32* pNewFontSize) GetPreferredFont;
+			public function HRESULT(ITextDocument2 *self, int32 Type, int32* pValue) GetProperty;
+			public function HRESULT(ITextDocument2 *self, ITextStrings** ppStrs) GetStrings;
+			public function HRESULT(ITextDocument2 *self, int32 Notify) Notify;
+			public function HRESULT(ITextDocument2 *self, int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) Range2;
+			public function HRESULT(ITextDocument2 *self, int32 x, int32 y, int32 Type, ITextRange2** ppRange) RangeFromPoint2;
+			public function HRESULT(ITextDocument2 *self, IUnknown* pVoid) ReleaseCallManager;
+			public function HRESULT(ITextDocument2 *self, int64 Context) ReleaseImmContext;
+			public function HRESULT(ITextDocument2 *self, int32 Index, int32 Value) SetEffectColor;
+			public function HRESULT(ITextDocument2 *self, int32 Type, int32 Value) SetProperty;
+			public function HRESULT(ITextDocument2 *self, int32 Options, int32 Mask) SetTypographyOptions;
+			public function HRESULT(ITextDocument2 *self) SysBeep;
+			public function HRESULT(ITextDocument2 *self, int32 Value) Update;
+			public function HRESULT(ITextDocument2 *self) UpdateWindow;
+			public function HRESULT(ITextDocument2 *self, int32* pOptions) GetMathProperties;
+			public function HRESULT(ITextDocument2 *self, int32 Options, int32 Mask) SetMathProperties;
+			public function HRESULT(ITextDocument2 *self, ITextStory** ppStory) GetActiveStory;
+			public function HRESULT(ITextDocument2 *self, ITextStory* pStory) SetActiveStory;
+			public function HRESULT(ITextDocument2 *self, ITextStory** ppStory) GetMainStory;
+			public function HRESULT(ITextDocument2 *self, ITextStory** ppStory) GetNewStory;
+			public function HRESULT(ITextDocument2 *self, int32 Index, ITextStory** ppStory) GetStory;
+		}
+		[CRepr]
+		public struct ITextRange2 : ITextSelection
+		{
+			public const new Guid IID = .(0xc241f5e2, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+			public function HRESULT(ITextRange2 *self, int32* pcch) GetCch;
+			public function HRESULT(ITextRange2 *self, IUnknown** ppCells) GetCells;
+			public function HRESULT(ITextRange2 *self, IUnknown** ppColumn) GetColumn;
+			public function HRESULT(ITextRange2 *self, int32* pCount) GetCount;
+			public function HRESULT(ITextRange2 *self, ITextRange2** ppRange) GetDuplicate2;
+			public function HRESULT(ITextRange2 *self, ITextFont2** ppFont) GetFont2;
+			public function HRESULT(ITextRange2 *self, ITextFont2* pFont) SetFont2;
+			public function HRESULT(ITextRange2 *self, ITextRange2** ppRange) GetFormattedText2;
+			public function HRESULT(ITextRange2 *self, ITextRange2* pRange) SetFormattedText2;
+			public function HRESULT(ITextRange2 *self, int32* pValue) GetGravity;
+			public function HRESULT(ITextRange2 *self, int32 Value) SetGravity;
+			public function HRESULT(ITextRange2 *self, ITextPara2** ppPara) GetPara2;
+			public function HRESULT(ITextRange2 *self, ITextPara2* pPara) SetPara2;
+			public function HRESULT(ITextRange2 *self, ITextRow** ppRow) GetRow;
+			public function HRESULT(ITextRange2 *self, int32* pValue) GetStartPara;
+			public function HRESULT(ITextRange2 *self, IUnknown** ppTable) GetTable;
+			public function HRESULT(ITextRange2 *self, BSTR* pbstr) GetURL;
+			public function HRESULT(ITextRange2 *self, BSTR bstr) SetURL;
+			public function HRESULT(ITextRange2 *self, int32 cp1, int32 cp2, int32 Activate) AddSubrange;
+			public function HRESULT(ITextRange2 *self, int32 Flags) BuildUpMath;
+			public function HRESULT(ITextRange2 *self, int32 cpFirst, int32 cpLim) DeleteSubrange;
+			public function HRESULT(ITextRange2 *self, ITextRange2* pRange, int32 Count, int32 Flags, int32* pDelta) Find;
+			public function HRESULT(ITextRange2 *self, int32* pChar, int32 Offset) GetChar2;
+			public function HRESULT(ITextRange2 *self, int32* pcLine, int32* pPosition) GetDropCap;
+			public function HRESULT(ITextRange2 *self, int32* pType, int32* pAlign, int32* pChar, int32* pChar1, int32* pChar2, int32* pCount, int32* pTeXStyle, int32* pcCol, int32* pLevel) GetInlineObject;
+			public function HRESULT(ITextRange2 *self, int32 Type, int32* pValue) GetProperty;
+			public function HRESULT(ITextRange2 *self, int32 Type, int32* pLeft, int32* pTop, int32* pRight, int32* pBottom, int32* pHit) GetRect;
+			public function HRESULT(ITextRange2 *self, int32 iSubrange, int32* pcpFirst, int32* pcpLim) GetSubrange;
+			public function HRESULT(ITextRange2 *self, int32 Flags, BSTR* pbstr) GetText2;
+			public function HRESULT(ITextRange2 *self) HexToUnicode;
+			public function HRESULT(ITextRange2 *self, int32 cCol, int32 cRow, int32 AutoFit) InsertTable;
+			public function HRESULT(ITextRange2 *self, int32 Flags) Linearize;
+			public function HRESULT(ITextRange2 *self, int32 cpAnchor, int32 cpActive) SetActiveSubrange;
+			public function HRESULT(ITextRange2 *self, int32 cLine, int32 Position) SetDropCap;
+			public function HRESULT(ITextRange2 *self, int32 Type, int32 Value) SetProperty;
+			public function HRESULT(ITextRange2 *self, int32 Flags, BSTR bstr) SetText2;
+			public function HRESULT(ITextRange2 *self) UnicodeToHex;
+			public function HRESULT(ITextRange2 *self, int32 Type, int32 Align, int32 Char, int32 Char1, int32 Char2, int32 Count, int32 TeXStyle, int32 cCol) SetInlineObject;
+			public function HRESULT(ITextRange2 *self, BSTR bstr, int32* pValue) GetMathFunctionType;
+			public function HRESULT(ITextRange2 *self, int32 width, int32 height, int32 ascent, TEXT_ALIGN_OPTIONS Type, BSTR bstrAltText, IStream* pStream) InsertImage;
+		}
+		[CRepr]
+		public struct ITextSelection2 : ITextRange2
+		{
+			public const new Guid IID = .(0xc241f5e1, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+		}
+		[CRepr]
+		public struct ITextFont2 : ITextFont
+		{
+			public const new Guid IID = .(0xc241f5e3, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+			public function HRESULT(ITextFont2 *self, int32* pCount) GetCount;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetAutoLigatures;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetAutoLigatures;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetAutospaceAlpha;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetAutospaceAlpha;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetAutospaceNumeric;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetAutospaceNumeric;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetAutospaceParens;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetAutospaceParens;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetCharRep;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetCharRep;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetCompressionMode;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetCompressionMode;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetCookie;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetCookie;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetDoubleStrike;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetDoubleStrike;
+			public function HRESULT(ITextFont2 *self, ITextFont2** ppFont) GetDuplicate2;
+			public function HRESULT(ITextFont2 *self, ITextFont2* pFont) SetDuplicate2;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetLinkType;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetMathZone;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetMathZone;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetModWidthPairs;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetModWidthPairs;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetModWidthSpace;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetModWidthSpace;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetOldNumbers;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetOldNumbers;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetOverlapping;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetOverlapping;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetPositionSubSuper;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetPositionSubSuper;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetScaling;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetScaling;
+			public function HRESULT(ITextFont2 *self, float* pValue) GetSpaceExtension;
+			public function HRESULT(ITextFont2 *self, float Value) SetSpaceExtension;
+			public function HRESULT(ITextFont2 *self, int32* pValue) GetUnderlinePositionMode;
+			public function HRESULT(ITextFont2 *self, int32 Value) SetUnderlinePositionMode;
+			public function HRESULT(ITextFont2 *self, int32* pValue, int32* pMask) GetEffects;
+			public function HRESULT(ITextFont2 *self, int32* pValue, int32* pMask) GetEffects2;
+			public function HRESULT(ITextFont2 *self, int32 Type, int32* pValue) GetProperty;
+			public function HRESULT(ITextFont2 *self, int32 Index, int32* pType, int32* pValue) GetPropertyInfo;
+			public function HRESULT(ITextFont2 *self, ITextFont2* pFont, int32* pB) IsEqual2;
+			public function HRESULT(ITextFont2 *self, int32 Value, int32 Mask) SetEffects;
+			public function HRESULT(ITextFont2 *self, int32 Value, int32 Mask) SetEffects2;
+			public function HRESULT(ITextFont2 *self, int32 Type, int32 Value) SetProperty;
+		}
+		[CRepr]
+		public struct ITextPara2 : ITextPara
+		{
+			public const new Guid IID = .(0xc241f5e4, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+			public function HRESULT(ITextPara2 *self, IUnknown** ppBorders) GetBorders;
+			public function HRESULT(ITextPara2 *self, ITextPara2** ppPara) GetDuplicate2;
+			public function HRESULT(ITextPara2 *self, ITextPara2* pPara) SetDuplicate2;
+			public function HRESULT(ITextPara2 *self, int32* pValue) GetFontAlignment;
+			public function HRESULT(ITextPara2 *self, int32 Value) SetFontAlignment;
+			public function HRESULT(ITextPara2 *self, int32* pValue) GetHangingPunctuation;
+			public function HRESULT(ITextPara2 *self, int32 Value) SetHangingPunctuation;
+			public function HRESULT(ITextPara2 *self, int32* pValue) GetSnapToGrid;
+			public function HRESULT(ITextPara2 *self, int32 Value) SetSnapToGrid;
+			public function HRESULT(ITextPara2 *self, int32* pValue) GetTrimPunctuationAtStart;
+			public function HRESULT(ITextPara2 *self, int32 Value) SetTrimPunctuationAtStart;
+			public function HRESULT(ITextPara2 *self, int32* pValue, int32* pMask) GetEffects;
+			public function HRESULT(ITextPara2 *self, int32 Type, int32* pValue) GetProperty;
+			public function HRESULT(ITextPara2 *self, ITextPara2* pPara, int32* pB) IsEqual2;
+			public function HRESULT(ITextPara2 *self, int32 Value, int32 Mask) SetEffects;
+			public function HRESULT(ITextPara2 *self, int32 Type, int32 Value) SetProperty;
+		}
+		[CRepr]
+		public struct ITextStoryRanges2 : ITextStoryRanges
+		{
+			public const new Guid IID = .(0xc241f5e5, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+			public function HRESULT(ITextStoryRanges2 *self, int32 Index, ITextRange2** ppRange) Item2;
+		}
+		[CRepr]
+		public struct ITextStory : IUnknown
+		{
+			public const new Guid IID = .(0xc241f5f3, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+			public function HRESULT(ITextStory *self, int32* pValue) GetActive;
+			public function HRESULT(ITextStory *self, int32 Value) SetActive;
+			public function HRESULT(ITextStory *self, IUnknown** ppDisplay) GetDisplay;
+			public function HRESULT(ITextStory *self, int32* pValue) GetIndex;
+			public function HRESULT(ITextStory *self, int32* pValue) GetType;
+			public function HRESULT(ITextStory *self, int32 Value) SetType;
+			public function HRESULT(ITextStory *self, int32 Type, int32* pValue) GetProperty;
+			public function HRESULT(ITextStory *self, int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) GetRange;
+			public function HRESULT(ITextStory *self, int32 Flags, BSTR* pbstr) GetText;
+			public function HRESULT(ITextStory *self, IUnknown* pUnk) SetFormattedText;
+			public function HRESULT(ITextStory *self, int32 Type, int32 Value) SetProperty;
+			public function HRESULT(ITextStory *self, int32 Flags, BSTR bstr) SetText;
+		}
+		[CRepr]
+		public struct ITextStrings : IDispatch
+		{
+			public const new Guid IID = .(0xc241f5e7, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+			public function HRESULT(ITextStrings *self, int32 Index, ITextRange2** ppRange) Item;
+			public function HRESULT(ITextStrings *self, int32* pCount) GetCount;
+			public function HRESULT(ITextStrings *self, BSTR bstr) Add;
+			public function HRESULT(ITextStrings *self, ITextRange2* pRange, int32 iString) Append;
+			public function HRESULT(ITextStrings *self, int32 iString) Cat2;
+			public function HRESULT(ITextStrings *self, BSTR bstr) CatTop2;
+			public function HRESULT(ITextStrings *self, ITextRange2* pRange) DeleteRange;
+			public function HRESULT(ITextStrings *self, int32 Type, int32 Align, int32 Char, int32 Char1, int32 Char2, int32 Count, int32 TeXStyle, int32 cCol, ITextRange2* pRange) EncodeFunction;
+			public function HRESULT(ITextStrings *self, int32 iString, int32* pcch) GetCch;
+			public function HRESULT(ITextStrings *self, int32 iString) InsertNullStr;
+			public function HRESULT(ITextStrings *self, int32 iString, int32 cch) MoveBoundary;
+			public function HRESULT(ITextStrings *self, BSTR bstr) PrefixTop;
+			public function HRESULT(ITextStrings *self, int32 iString, int32 cString) Remove;
+			public function HRESULT(ITextStrings *self, ITextRange2* pRangeD, ITextRange2* pRangeS) SetFormattedText;
+			public function HRESULT(ITextStrings *self, int32 iString, int32 cp) SetOpCp;
+			public function HRESULT(ITextStrings *self, BSTR bstr, ITextRange2* pRange) SuffixTop;
+			public function HRESULT(ITextStrings *self) Swap;
+		}
+		[CRepr]
+		public struct ITextRow : IDispatch
+		{
+			public const new Guid IID = .(0xc241f5ef, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+			public function HRESULT(ITextRow *self, int32* pValue) GetAlignment;
+			public function HRESULT(ITextRow *self, int32 Value) SetAlignment;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellCount;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellCount;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellCountCache;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellCountCache;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellIndex;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellIndex;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellMargin;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellMargin;
+			public function HRESULT(ITextRow *self, int32* pValue) GetHeight;
+			public function HRESULT(ITextRow *self, int32 Value) SetHeight;
+			public function HRESULT(ITextRow *self, int32* pValue) GetIndent;
+			public function HRESULT(ITextRow *self, int32 Value) SetIndent;
+			public function HRESULT(ITextRow *self, int32* pValue) GetKeepTogether;
+			public function HRESULT(ITextRow *self, int32 Value) SetKeepTogether;
+			public function HRESULT(ITextRow *self, int32* pValue) GetKeepWithNext;
+			public function HRESULT(ITextRow *self, int32 Value) SetKeepWithNext;
+			public function HRESULT(ITextRow *self, int32* pValue) GetNestLevel;
+			public function HRESULT(ITextRow *self, int32* pValue) GetRTL;
+			public function HRESULT(ITextRow *self, int32 Value) SetRTL;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellAlignment;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellAlignment;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellColorBack;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellColorBack;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellColorFore;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellColorFore;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellMergeFlags;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellMergeFlags;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellShading;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellShading;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellVerticalText;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellVerticalText;
+			public function HRESULT(ITextRow *self, int32* pValue) GetCellWidth;
+			public function HRESULT(ITextRow *self, int32 Value) SetCellWidth;
+			public function HRESULT(ITextRow *self, int32* pcrLeft, int32* pcrTop, int32* pcrRight, int32* pcrBottom) GetCellBorderColors;
+			public function HRESULT(ITextRow *self, int32* pduLeft, int32* pduTop, int32* pduRight, int32* pduBottom) GetCellBorderWidths;
+			public function HRESULT(ITextRow *self, int32 crLeft, int32 crTop, int32 crRight, int32 crBottom) SetCellBorderColors;
+			public function HRESULT(ITextRow *self, int32 duLeft, int32 duTop, int32 duRight, int32 duBottom) SetCellBorderWidths;
+			public function HRESULT(ITextRow *self, int32 cRow, tomConstants Flags) Apply;
+			public function HRESULT(ITextRow *self, int32* pValue) CanChange;
+			public function HRESULT(ITextRow *self, int32 Type, int32* pValue) GetProperty;
+			public function HRESULT(ITextRow *self, int32 cRow) Insert;
+			public function HRESULT(ITextRow *self, ITextRow* pRow, int32* pB) IsEqual;
+			public function HRESULT(ITextRow *self, int32 Value) Reset;
+			public function HRESULT(ITextRow *self, int32 Type, int32 Value) SetProperty;
+		}
+		[CRepr]
+		public struct ITextDisplays : IDispatch
+		{
+			public const new Guid IID = .(0xc241f5f2, 0x7206, 0x11d8, 0xa2, 0xc7, 0x00, 0xa0, 0xd1, 0xd6, 0xc6, 0xb3);
+			
+		}
+		[CRepr]
+		public struct ITextDocument2Old : ITextDocument
+		{
+			public const new Guid IID = .(0x01c25500, 0x4268, 0x11d1, 0x88, 0x3a, 0x3c, 0x8b, 0x00, 0xc1, 0x00, 0x00);
+			
+			public function HRESULT(ITextDocument2Old *self, IUnknown* pFilter) AttachMsgFilter;
+			public function HRESULT(ITextDocument2Old *self, int32 Index, uint32 cr) SetEffectColor;
+			public function HRESULT(ITextDocument2Old *self, int32 Index, uint32* pcr) GetEffectColor;
+			public function HRESULT(ITextDocument2Old *self, int32* pCaretType) GetCaretType;
+			public function HRESULT(ITextDocument2Old *self, int32 CaretType) SetCaretType;
+			public function HRESULT(ITextDocument2Old *self, int64* pContext) GetImmContext;
+			public function HRESULT(ITextDocument2Old *self, int64 Context) ReleaseImmContext;
+			public function HRESULT(ITextDocument2Old *self, int32 cp, int32 CharRep, int32 Option, int32 CharRepCur, int32 curFontSize, BSTR* pbstr, int32* pPitchAndFamily, int32* pNewFontSize) GetPreferredFont;
+			public function HRESULT(ITextDocument2Old *self, int32* pMode) GetNotificationMode;
+			public function HRESULT(ITextDocument2Old *self, int32 Mode) SetNotificationMode;
+			public function HRESULT(ITextDocument2Old *self, int32 Type, int32* pLeft, int32* pTop, int32* pRight, int32* pBottom) GetClientRect;
+			public function HRESULT(ITextDocument2Old *self, ITextSelection** ppSel) GetSelection2;
+			public function HRESULT(ITextDocument2Old *self, int32* phWnd) GetWindow;
+			public function HRESULT(ITextDocument2Old *self, int32* pFlags) GetFEFlags;
+			public function HRESULT(ITextDocument2Old *self) UpdateWindow;
+			public function HRESULT(ITextDocument2Old *self, int32 cch, int32* pcch) CheckTextLimit;
+			public function HRESULT(ITextDocument2Old *self, int32 Value) IMEInProgress;
+			public function HRESULT(ITextDocument2Old *self) SysBeep;
+			public function HRESULT(ITextDocument2Old *self, int32 Mode) Update;
+			public function HRESULT(ITextDocument2Old *self, int32 Notify) Notify;
+			public function HRESULT(ITextDocument2Old *self, ITextFont** ppITextFont) GetDocumentFont;
+			public function HRESULT(ITextDocument2Old *self, ITextPara** ppITextPara) GetDocumentPara;
+			public function HRESULT(ITextDocument2Old *self, IUnknown** ppVoid) GetCallManager;
+			public function HRESULT(ITextDocument2Old *self, IUnknown* pVoid) ReleaseCallManager;
+		}
 		
 	}
 }

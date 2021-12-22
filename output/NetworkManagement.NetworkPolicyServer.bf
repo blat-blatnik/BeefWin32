@@ -840,13 +840,89 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ISdoMachine {}
-		public struct ISdoMachine2 {}
-		public struct ISdoServiceControl {}
-		public struct ISdo {}
-		public struct ISdoCollection {}
-		public struct ITemplateSdo {}
-		public struct ISdoDictionaryOld {}
+		[CRepr]
+		public struct ISdoMachine : IDispatch
+		{
+			public const new Guid IID = .(0x479f6e75, 0x49a2, 0x11d2, 0x8e, 0xca, 0x00, 0xc0, 0x4f, 0xc2, 0xf5, 0x19);
+			
+			public function HRESULT(ISdoMachine *self, BSTR bstrComputerName) Attach;
+			public function HRESULT(ISdoMachine *self, IUnknown** ppDictionarySDO) GetDictionarySDO;
+			public function HRESULT(ISdoMachine *self, IASDATASTORE eDataStore, BSTR bstrServiceName, IUnknown** ppServiceSDO) GetServiceSDO;
+			public function HRESULT(ISdoMachine *self, IASDATASTORE eDataStore, BSTR bstrUserName, IUnknown** ppUserSDO) GetUserSDO;
+			public function HRESULT(ISdoMachine *self, IASOSTYPE* eOSType) GetOSType;
+			public function HRESULT(ISdoMachine *self, IASDOMAINTYPE* eDomainType) GetDomainType;
+			public function HRESULT(ISdoMachine *self, int16* boolDirectoryAvailable) IsDirectoryAvailable;
+			public function HRESULT(ISdoMachine *self, BSTR* bstrComputerName) GetAttachedComputer;
+			public function HRESULT(ISdoMachine *self, IUnknown** ppSDOSchema) GetSDOSchema;
+		}
+		[CRepr]
+		public struct ISdoMachine2 : ISdoMachine
+		{
+			public const new Guid IID = .(0x518e5ffe, 0xd8ce, 0x4f7e, 0xa5, 0xdb, 0xb4, 0x0a, 0x35, 0x41, 0x9d, 0x3b);
+			
+			public function HRESULT(ISdoMachine2 *self, BSTR bstrServiceName, IUnknown** ppTemplatesSDO) GetTemplatesSDO;
+			public function HRESULT(ISdoMachine2 *self) EnableTemplates;
+			public function HRESULT(ISdoMachine2 *self, BSTR bstrServiceName, IUnknown** ppConfigRoot, IUnknown** ppTemplatesRoot, int16 bForcedSync) SyncConfigAgainstTemplates;
+			public function HRESULT(ISdoMachine2 *self, IUnknown* pLocalTemplatesRoot, BSTR bstrRemoteMachineName) ImportRemoteTemplates;
+			public function HRESULT(ISdoMachine2 *self) Reload;
+		}
+		[CRepr]
+		public struct ISdoServiceControl : IDispatch
+		{
+			public const new Guid IID = .(0x479f6e74, 0x49a2, 0x11d2, 0x8e, 0xca, 0x00, 0xc0, 0x4f, 0xc2, 0xf5, 0x19);
+			
+			public function HRESULT(ISdoServiceControl *self) StartService;
+			public function HRESULT(ISdoServiceControl *self) StopService;
+			public function HRESULT(ISdoServiceControl *self, int32* status) GetServiceStatus;
+			public function HRESULT(ISdoServiceControl *self) ResetService;
+		}
+		[CRepr]
+		public struct ISdo : IDispatch
+		{
+			public const new Guid IID = .(0x56bc53de, 0x96db, 0x11d1, 0xbf, 0x3f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			
+			public function HRESULT(ISdo *self, int32 Id, IUnknown** ppPropertyInfo) GetPropertyInfo;
+			public function HRESULT(ISdo *self, int32 Id, VARIANT* pValue) GetProperty;
+			public function HRESULT(ISdo *self, int32 Id, VARIANT* pValue) PutProperty;
+			public function HRESULT(ISdo *self, int32 Id) ResetProperty;
+			public function HRESULT(ISdo *self) Apply;
+			public function HRESULT(ISdo *self) Restore;
+			public function HRESULT(ISdo *self, IUnknown** ppEnumVARIANT) get__NewEnum;
+		}
+		[CRepr]
+		public struct ISdoCollection : IDispatch
+		{
+			public const new Guid IID = .(0x56bc53e2, 0x96db, 0x11d1, 0xbf, 0x3f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+			
+			public function HRESULT(ISdoCollection *self, int32* pCount) get_Count;
+			public function HRESULT(ISdoCollection *self, BSTR bstrName, IDispatch** ppItem) Add;
+			public function HRESULT(ISdoCollection *self, IDispatch* pItem) Remove;
+			public function HRESULT(ISdoCollection *self) RemoveAll;
+			public function HRESULT(ISdoCollection *self) Reload;
+			public function HRESULT(ISdoCollection *self, BSTR bstrName, int16* pBool) IsNameUnique;
+			public function HRESULT(ISdoCollection *self, VARIANT* Name, IDispatch** pItem) Item;
+			public function HRESULT(ISdoCollection *self, IUnknown** ppEnumVARIANT) get__NewEnum;
+		}
+		[CRepr]
+		public struct ITemplateSdo : ISdo
+		{
+			public const new Guid IID = .(0x8aa85302, 0xd2e2, 0x4e20, 0x8b, 0x1f, 0xa5, 0x71, 0xe4, 0x37, 0xd6, 0xc9);
+			
+			public function HRESULT(ITemplateSdo *self, BSTR bstrName, IDispatch* pCollection, IDispatch** ppItem) AddToCollection;
+			public function HRESULT(ITemplateSdo *self, BSTR bstrName, IDispatch* pSdoTarget, IDispatch** ppItem) AddToSdo;
+			public function HRESULT(ITemplateSdo *self, IDispatch* pSdoTarget, int32 id) AddToSdoAsProperty;
+		}
+		[CRepr]
+		public struct ISdoDictionaryOld : IDispatch
+		{
+			public const new Guid IID = .(0xd432e5f4, 0x53d8, 0x11d2, 0x9a, 0x3a, 0x00, 0xc0, 0x4f, 0xb9, 0x98, 0xac);
+			
+			public function HRESULT(ISdoDictionaryOld *self, VARIANT* Id, VARIANT* pValues) EnumAttributes;
+			public function HRESULT(ISdoDictionaryOld *self, ATTRIBUTEID Id, VARIANT* pInfoIDs, VARIANT* pInfoValues) GetAttributeInfo;
+			public function HRESULT(ISdoDictionaryOld *self, ATTRIBUTEID Id, VARIANT* pValueIds, VARIANT* pValuesDesc) EnumAttributeValues;
+			public function HRESULT(ISdoDictionaryOld *self, ATTRIBUTEID Id, IDispatch** ppAttributeObject) CreateAttribute;
+			public function HRESULT(ISdoDictionaryOld *self, BSTR bstrAttributeName, ATTRIBUTEID* pId) GetAttributeID;
+		}
 		
 	}
 }

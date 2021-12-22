@@ -3122,7 +3122,7 @@ namespace Win32
 		public function int32 PFNDAENUMCALLBACKCONST(void* p, void* pData);
 		public function int32 PFNDACOMPARE(void* p1, void* p2, LPARAM lParam);
 		public function int32 PFNDACOMPARECONST(void* p1, void* p2, LPARAM lParam);
-		public function HRESULT PFNDPASTREAM(DPASTREAMINFO* pinfo, IStream pstream, void* pvInstData);
+		public function HRESULT PFNDPASTREAM(DPASTREAMINFO* pinfo, IStream* pstream, void* pvInstData);
 		public function void* PFNDPAMERGE(DPAMM_MESSAGE uMsg, void* pvDest, void* pvSrc, LPARAM lParam);
 		public function void* PFNDPAMERGECONST(DPAMM_MESSAGE uMsg, void* pvDest, void* pvSrc, LPARAM lParam);
 		public function int32 DTT_CALLBACK_PROC(HDC hdc, char16* pszText, int32 cchText, RECT* prc, uint32 dwFlags, LPARAM lParam);
@@ -5517,8 +5517,59 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IImageList {}
-		public struct IImageList2 {}
+		[CRepr]
+		public struct IImageList : IUnknown
+		{
+			public const new Guid IID = .(0x46eb5926, 0x582e, 0x4017, 0x9f, 0xdf, 0xe8, 0x99, 0x8d, 0xaa, 0x09, 0x50);
+			
+			public function HRESULT(IImageList *self, HBITMAP hbmImage, HBITMAP hbmMask, int32* pi) Add;
+			public function HRESULT(IImageList *self, int32 i, HICON hicon, int32* pi) ReplaceIcon;
+			public function HRESULT(IImageList *self, int32 iImage, int32 iOverlay) SetOverlayImage;
+			public function HRESULT(IImageList *self, int32 i, HBITMAP hbmImage, HBITMAP hbmMask) Replace;
+			public function HRESULT(IImageList *self, HBITMAP hbmImage, uint32 crMask, int32* pi) AddMasked;
+			public function HRESULT(IImageList *self, IMAGELISTDRAWPARAMS* pimldp) Draw;
+			public function HRESULT(IImageList *self, int32 i) Remove;
+			public function HRESULT(IImageList *self, int32 i, uint32 flags, HICON* picon) GetIcon;
+			public function HRESULT(IImageList *self, int32 i, IMAGEINFO* pImageInfo) GetImageInfo;
+			public function HRESULT(IImageList *self, int32 iDst, IUnknown* punkSrc, int32 iSrc, uint32 uFlags) Copy;
+			public function HRESULT(IImageList *self, int32 i1, IUnknown* punk2, int32 i2, int32 dx, int32 dy, Guid* riid, void** ppv) Merge;
+			public function HRESULT(IImageList *self, Guid* riid, void** ppv) Clone;
+			public function HRESULT(IImageList *self, int32 i, RECT* prc) GetImageRect;
+			public function HRESULT(IImageList *self, int32* cx, int32* cy) GetIconSize;
+			public function HRESULT(IImageList *self, int32 cx, int32 cy) SetIconSize;
+			public function HRESULT(IImageList *self, int32* pi) GetImageCount;
+			public function HRESULT(IImageList *self, uint32 uNewCount) SetImageCount;
+			public function HRESULT(IImageList *self, uint32 clrBk, uint32* pclr) SetBkColor;
+			public function HRESULT(IImageList *self, uint32* pclr) GetBkColor;
+			public function HRESULT(IImageList *self, int32 iTrack, int32 dxHotspot, int32 dyHotspot) BeginDrag;
+			public function HRESULT(IImageList *self) EndDrag;
+			public function HRESULT(IImageList *self, HWND hwndLock, int32 x, int32 y) DragEnter;
+			public function HRESULT(IImageList *self, HWND hwndLock) DragLeave;
+			public function HRESULT(IImageList *self, int32 x, int32 y) DragMove;
+			public function HRESULT(IImageList *self, IUnknown* punk, int32 iDrag, int32 dxHotspot, int32 dyHotspot) SetDragCursorImage;
+			public function HRESULT(IImageList *self, BOOL fShow) DragShowNolock;
+			public function HRESULT(IImageList *self, POINT* ppt, POINT* pptHotspot, Guid* riid, void** ppv) GetDragImage;
+			public function HRESULT(IImageList *self, int32 i, IMAGE_LIST_ITEM_FLAGS* dwFlags) GetItemFlags;
+			public function HRESULT(IImageList *self, int32 iOverlay, int32* piIndex) GetOverlayImage;
+		}
+		[CRepr]
+		public struct IImageList2 : IImageList
+		{
+			public const new Guid IID = .(0x192b9d83, 0x50fc, 0x457b, 0x90, 0xa0, 0x2b, 0x82, 0xa8, 0xb5, 0xda, 0xe1);
+			
+			public function HRESULT(IImageList2 *self, int32 cxNewIconSize, int32 cyNewIconSize) Resize;
+			public function HRESULT(IImageList2 *self, int32 iImage, uint32 dwFlags, int32* pcx, int32* pcy) GetOriginalSize;
+			public function HRESULT(IImageList2 *self, int32 iImage, int32 cx, int32 cy) SetOriginalSize;
+			public function HRESULT(IImageList2 *self, IUnknown* punk) SetCallback;
+			public function HRESULT(IImageList2 *self, Guid* riid, void** ppv) GetCallback;
+			public function HRESULT(IImageList2 *self, int32 iImage, uint32 dwFlags) ForceImagePresent;
+			public function HRESULT(IImageList2 *self, int32 iFirstImage, int32 iLastImage, uint32 dwFlags) DiscardImages;
+			public function HRESULT(IImageList2 *self, IMAGELISTDRAWPARAMS* pimldp) PreloadImages;
+			public function HRESULT(IImageList2 *self, IMAGELISTSTATS* pils) GetStatistics;
+			public function HRESULT(IImageList2 *self, int32 cx, int32 cy, IMAGELIST_CREATION_FLAGS flags, int32 cInitial, int32 cGrow) Initialize;
+			public function HRESULT(IImageList2 *self, int32 i, HBITMAP hbmImage, HBITMAP hbmMask, IUnknown* punk, uint32 dwFlags) Replace2;
+			public function HRESULT(IImageList2 *self, int32 i, IImageList* pil, int32 iSrc, IUnknown* punk, uint32 dwFlags) ReplaceFromImageList;
+		}
 		
 		// --- Functions ---
 		
@@ -5591,13 +5642,13 @@ namespace Win32
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HIMAGELIST ImageList_GetDragImage(POINT* ppt, POINT* pptHotspot);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HIMAGELIST ImageList_Read(IStream pstm);
+		public static extern HIMAGELIST ImageList_Read(IStream* pstm);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ImageList_Write(HIMAGELIST himl, IStream pstm);
+		public static extern BOOL ImageList_Write(HIMAGELIST himl, IStream* pstm);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ImageList_ReadEx(uint32 dwFlags, IStream pstm, Guid* riid, void** ppv);
+		public static extern HRESULT ImageList_ReadEx(uint32 dwFlags, IStream* pstm, Guid* riid, void** ppv);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ImageList_WriteEx(HIMAGELIST himl, uint32 dwFlags, IStream pstm);
+		public static extern HRESULT ImageList_WriteEx(HIMAGELIST himl, uint32 dwFlags, IStream* pstm);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ImageList_GetIconSize(HIMAGELIST himl, int32* cx, int32* cy);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5701,9 +5752,9 @@ namespace Win32
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DPA_Sort(HDPA hdpa, PFNDACOMPARE pfnCompare, LPARAM lParam);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DPA_LoadStream(HDPA* phdpa, PFNDPASTREAM pfn, IStream pstream, void* pvInstData);
+		public static extern HRESULT DPA_LoadStream(HDPA* phdpa, PFNDPASTREAM pfn, IStream* pstream, void* pvInstData);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DPA_SaveStream(HDPA hdpa, PFNDPASTREAM pfn, IStream pstream, void* pvInstData);
+		public static extern HRESULT DPA_SaveStream(HDPA hdpa, PFNDPASTREAM pfn, IStream* pstream, void* pvInstData);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DPA_Merge(HDPA hdpaDest, HDPA hdpaSrc, uint32 dwFlags, PFNDACOMPARE pfnCompare, PFNDPAMERGE pfnMerge, LPARAM lParam);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5741,7 +5792,7 @@ namespace Win32
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DrawShadowText(HDC hdc, char16* pszText, uint32 cch, RECT* prc, uint32 dwFlags, uint32 crText, uint32 crShadow, int32 ixOffset, int32 iyOffset);
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ImageList_CoCreateInstance(Guid* rclsid, IUnknown punkOuter, Guid* riid, void** ppv);
+		public static extern HRESULT ImageList_CoCreateInstance(Guid* rclsid, IUnknown* punkOuter, Guid* riid, void** ppv);
 		[Import("uxtheme.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL BeginPanningFeedback(HWND hwnd);
 		[Import("uxtheme.dll"), CLink, CallingConvention(.Stdcall)]

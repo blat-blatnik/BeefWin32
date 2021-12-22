@@ -443,48 +443,433 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IDummyMBNUCMExt {}
-		public struct IMbnConnection {}
-		public struct IMbnConnectionEvents {}
-		public struct IMbnInterface {}
-		public struct IMbnInterfaceEvents {}
-		public struct IMbnInterfaceManager {}
-		public struct IMbnInterfaceManagerEvents {}
-		public struct IMbnRegistration {}
-		public struct IMbnRegistrationEvents {}
-		public struct IMbnConnectionManager {}
-		public struct IMbnConnectionManagerEvents {}
-		public struct IMbnPinManager {}
-		public struct IMbnPinManagerEvents {}
-		public struct IMbnPinEvents {}
-		public struct IMbnSubscriberInformation {}
-		public struct IMbnSignal {}
-		public struct IMbnSignalEvents {}
-		public struct IMbnConnectionContext {}
-		public struct IMbnConnectionContextEvents {}
-		public struct IMbnConnectionProfileManager {}
-		public struct IMbnConnectionProfile {}
-		public struct IMbnConnectionProfileEvents {}
-		public struct IMbnSmsConfiguration {}
-		public struct IMbnSmsReadMsgPdu {}
-		public struct IMbnSmsReadMsgTextCdma {}
-		public struct IMbnSms {}
-		public struct IMbnSmsEvents {}
-		public struct IMbnServiceActivation {}
-		public struct IMbnServiceActivationEvents {}
-		public struct IMbnVendorSpecificOperation {}
-		public struct IMbnVendorSpecificEvents {}
-		public struct IMbnConnectionProfileManagerEvents {}
-		public struct IMbnRadio {}
-		public struct IMbnRadioEvents {}
-		public struct IMbnMultiCarrier {}
-		public struct IMbnMultiCarrierEvents {}
-		public struct IMbnDeviceServiceStateEvents {}
-		public struct IMbnDeviceServicesManager {}
-		public struct IMbnDeviceServicesContext {}
-		public struct IMbnDeviceServicesEvents {}
-		public struct IMbnDeviceService {}
-		public struct IMbnPin {}
+		[CRepr]
+		public struct IDummyMBNUCMExt : IDispatch
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0xffff, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+		}
+		[CRepr]
+		public struct IMbnConnection : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x200d, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnection *self, BSTR* ConnectionID) get_ConnectionID;
+			public function HRESULT(IMbnConnection *self, BSTR* InterfaceID) get_InterfaceID;
+			public function HRESULT(IMbnConnection *self, MBN_CONNECTION_MODE connectionMode, PWSTR strProfile, uint32* requestID) Connect;
+			public function HRESULT(IMbnConnection *self, uint32* requestID) Disconnect;
+			public function HRESULT(IMbnConnection *self, MBN_ACTIVATION_STATE* ConnectionState, BSTR* ProfileName) GetConnectionState;
+			public function HRESULT(IMbnConnection *self, MBN_VOICE_CALL_STATE* voiceCallState) GetVoiceCallState;
+			public function HRESULT(IMbnConnection *self, uint32* networkError) GetActivationNetworkError;
+		}
+		[CRepr]
+		public struct IMbnConnectionEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x200e, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnectionEvents *self, IMbnConnection* newConnection, uint32 requestID, HRESULT status) OnConnectComplete;
+			public function HRESULT(IMbnConnectionEvents *self, IMbnConnection* newConnection, uint32 requestID, HRESULT status) OnDisconnectComplete;
+			public function HRESULT(IMbnConnectionEvents *self, IMbnConnection* newConnection) OnConnectStateChange;
+			public function HRESULT(IMbnConnectionEvents *self, IMbnConnection* newConnection) OnVoiceCallStateChange;
+		}
+		[CRepr]
+		public struct IMbnInterface : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2001, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnInterface *self, BSTR* InterfaceID) get_InterfaceID;
+			public function HRESULT(IMbnInterface *self, MBN_INTERFACE_CAPS* interfaceCaps) GetInterfaceCapability;
+			public function HRESULT(IMbnInterface *self, IMbnSubscriberInformation** subscriberInformation) GetSubscriberInformation;
+			public function HRESULT(IMbnInterface *self, MBN_READY_STATE* readyState) GetReadyState;
+			public function HRESULT(IMbnInterface *self, int16* emergencyMode) InEmergencyMode;
+			public function HRESULT(IMbnInterface *self, MBN_PROVIDER* homeProvider) GetHomeProvider;
+			public function HRESULT(IMbnInterface *self, SAFEARRAY** preferredProviders) GetPreferredProviders;
+			public function HRESULT(IMbnInterface *self, SAFEARRAY* preferredProviders, uint32* requestID) SetPreferredProviders;
+			public function HRESULT(IMbnInterface *self, uint32* age, SAFEARRAY** visibleProviders) GetVisibleProviders;
+			public function HRESULT(IMbnInterface *self, uint32* requestID) ScanNetwork;
+			public function HRESULT(IMbnInterface *self, IMbnConnection** mbnConnection) GetConnection;
+		}
+		[CRepr]
+		public struct IMbnInterfaceEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2002, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnInterfaceCapabilityAvailable;
+			public function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnSubscriberInformationChange;
+			public function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnReadyStateChange;
+			public function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnEmergencyModeChange;
+			public function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnHomeProviderAvailable;
+			public function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnPreferredProvidersChange;
+			public function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface, uint32 requestID, HRESULT status) OnSetPreferredProvidersComplete;
+			public function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
+		}
+		[CRepr]
+		public struct IMbnInterfaceManager : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x201b, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnInterfaceManager *self, PWSTR interfaceID, IMbnInterface** mbnInterface) GetInterface;
+			public function HRESULT(IMbnInterfaceManager *self, SAFEARRAY** mbnInterfaces) GetInterfaces;
+		}
+		[CRepr]
+		public struct IMbnInterfaceManagerEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x201c, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnInterfaceManagerEvents *self, IMbnInterface* newInterface) OnInterfaceArrival;
+			public function HRESULT(IMbnInterfaceManagerEvents *self, IMbnInterface* oldInterface) OnInterfaceRemoval;
+		}
+		[CRepr]
+		public struct IMbnRegistration : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2009, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnRegistration *self, MBN_REGISTER_STATE* registerState) GetRegisterState;
+			public function HRESULT(IMbnRegistration *self, MBN_REGISTER_MODE* registerMode) GetRegisterMode;
+			public function HRESULT(IMbnRegistration *self, BSTR* providerID) GetProviderID;
+			public function HRESULT(IMbnRegistration *self, BSTR* providerName) GetProviderName;
+			public function HRESULT(IMbnRegistration *self, BSTR* roamingText) GetRoamingText;
+			public function HRESULT(IMbnRegistration *self, uint32* availableDataClasses) GetAvailableDataClasses;
+			public function HRESULT(IMbnRegistration *self, uint32* currentDataClass) GetCurrentDataClass;
+			public function HRESULT(IMbnRegistration *self, uint32* registrationNetworkError) GetRegistrationNetworkError;
+			public function HRESULT(IMbnRegistration *self, uint32* packetAttachNetworkError) GetPacketAttachNetworkError;
+			public function HRESULT(IMbnRegistration *self, MBN_REGISTER_MODE registerMode, PWSTR providerID, uint32 dataClass, uint32* requestID) SetRegisterMode;
+		}
+		[CRepr]
+		public struct IMbnRegistrationEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x200a, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnRegistrationEvents *self, IMbnRegistration* newInterface) OnRegisterModeAvailable;
+			public function HRESULT(IMbnRegistrationEvents *self, IMbnRegistration* newInterface) OnRegisterStateChange;
+			public function HRESULT(IMbnRegistrationEvents *self, IMbnRegistration* newInterface) OnPacketServiceStateChange;
+			public function HRESULT(IMbnRegistrationEvents *self, IMbnRegistration* newInterface, uint32 requestID, HRESULT status) OnSetRegisterModeComplete;
+		}
+		[CRepr]
+		public struct IMbnConnectionManager : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x201d, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnectionManager *self, PWSTR connectionID, IMbnConnection** mbnConnection) GetConnection;
+			public function HRESULT(IMbnConnectionManager *self, SAFEARRAY** mbnConnections) GetConnections;
+		}
+		[CRepr]
+		public struct IMbnConnectionManagerEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x201e, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnectionManagerEvents *self, IMbnConnection* newConnection) OnConnectionArrival;
+			public function HRESULT(IMbnConnectionManagerEvents *self, IMbnConnection* oldConnection) OnConnectionRemoval;
+		}
+		[CRepr]
+		public struct IMbnPinManager : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2005, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnPinManager *self, SAFEARRAY** pinList) GetPinList;
+			public function HRESULT(IMbnPinManager *self, MBN_PIN_TYPE pinType, IMbnPin** pin) GetPin;
+			public function HRESULT(IMbnPinManager *self, uint32* requestID) GetPinState;
+		}
+		[CRepr]
+		public struct IMbnPinManagerEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2006, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnPinManagerEvents *self, IMbnPinManager* pinManager) OnPinListAvailable;
+			public function HRESULT(IMbnPinManagerEvents *self, IMbnPinManager* pinManager, MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnGetPinStateComplete;
+		}
+		[CRepr]
+		public struct IMbnPinEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2008, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnPinEvents *self, IMbnPin* pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnEnableComplete;
+			public function HRESULT(IMbnPinEvents *self, IMbnPin* pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnDisableComplete;
+			public function HRESULT(IMbnPinEvents *self, IMbnPin* Pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnEnterComplete;
+			public function HRESULT(IMbnPinEvents *self, IMbnPin* Pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnChangeComplete;
+			public function HRESULT(IMbnPinEvents *self, IMbnPin* Pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnUnblockComplete;
+		}
+		[CRepr]
+		public struct IMbnSubscriberInformation : IUnknown
+		{
+			public const new Guid IID = .(0x459ecc43, 0xbcf5, 0x11dc, 0xa8, 0xa8, 0x00, 0x13, 0x21, 0xf1, 0x40, 0x5f);
+			
+			public function HRESULT(IMbnSubscriberInformation *self, BSTR* SubscriberID) get_SubscriberID;
+			public function HRESULT(IMbnSubscriberInformation *self, BSTR* SimIccID) get_SimIccID;
+			public function HRESULT(IMbnSubscriberInformation *self, SAFEARRAY** TelephoneNumbers) get_TelephoneNumbers;
+		}
+		[CRepr]
+		public struct IMbnSignal : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2003, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnSignal *self, uint32* signalStrength) GetSignalStrength;
+			public function HRESULT(IMbnSignal *self, uint32* signalError) GetSignalError;
+		}
+		[CRepr]
+		public struct IMbnSignalEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2004, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnSignalEvents *self, IMbnSignal* newInterface) OnSignalStateChange;
+		}
+		[CRepr]
+		public struct IMbnConnectionContext : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x200b, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnectionContext *self, SAFEARRAY** provisionedContexts) GetProvisionedContexts;
+			public function HRESULT(IMbnConnectionContext *self, MBN_CONTEXT provisionedContexts, PWSTR providerID, uint32* requestID) SetProvisionedContext;
+		}
+		[CRepr]
+		public struct IMbnConnectionContextEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x200c, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnectionContextEvents *self, IMbnConnectionContext* newInterface) OnProvisionedContextListChange;
+			public function HRESULT(IMbnConnectionContextEvents *self, IMbnConnectionContext* newInterface, uint32 requestID, HRESULT status) OnSetProvisionedContextComplete;
+		}
+		[CRepr]
+		public struct IMbnConnectionProfileManager : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x200f, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnectionProfileManager *self, IMbnInterface* mbnInterface, SAFEARRAY** connectionProfiles) GetConnectionProfiles;
+			public function HRESULT(IMbnConnectionProfileManager *self, IMbnInterface* mbnInterface, PWSTR profileName, IMbnConnectionProfile** connectionProfile) GetConnectionProfile;
+			public function HRESULT(IMbnConnectionProfileManager *self, PWSTR xmlProfile) CreateConnectionProfile;
+		}
+		[CRepr]
+		public struct IMbnConnectionProfile : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2010, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnectionProfile *self, BSTR* profileData) GetProfileXmlData;
+			public function HRESULT(IMbnConnectionProfile *self, PWSTR strProfile) UpdateProfile;
+			public function HRESULT(IMbnConnectionProfile *self) Delete;
+		}
+		[CRepr]
+		public struct IMbnConnectionProfileEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2011, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnectionProfileEvents *self, IMbnConnectionProfile* newProfile) OnProfileUpdate;
+		}
+		[CRepr]
+		public struct IMbnSmsConfiguration : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2012, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnSmsConfiguration *self, BSTR* scAddress) get_ServiceCenterAddress;
+			public function HRESULT(IMbnSmsConfiguration *self, PWSTR scAddress) put_ServiceCenterAddress;
+			public function HRESULT(IMbnSmsConfiguration *self, uint32* index) get_MaxMessageIndex;
+			public function HRESULT(IMbnSmsConfiguration *self, uint32* shortMsgSize) get_CdmaShortMsgSize;
+			public function HRESULT(IMbnSmsConfiguration *self, MBN_SMS_FORMAT* smsFormat) get_SmsFormat;
+			public function HRESULT(IMbnSmsConfiguration *self, MBN_SMS_FORMAT smsFormat) put_SmsFormat;
+		}
+		[CRepr]
+		public struct IMbnSmsReadMsgPdu : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2013, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnSmsReadMsgPdu *self, uint32* Index) get_Index;
+			public function HRESULT(IMbnSmsReadMsgPdu *self, MBN_MSG_STATUS* Status) get_Status;
+			public function HRESULT(IMbnSmsReadMsgPdu *self, BSTR* PduData) get_PduData;
+			public function HRESULT(IMbnSmsReadMsgPdu *self, SAFEARRAY** Message) get_Message;
+		}
+		[CRepr]
+		public struct IMbnSmsReadMsgTextCdma : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2014, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnSmsReadMsgTextCdma *self, uint32* Index) get_Index;
+			public function HRESULT(IMbnSmsReadMsgTextCdma *self, MBN_MSG_STATUS* Status) get_Status;
+			public function HRESULT(IMbnSmsReadMsgTextCdma *self, BSTR* Address) get_Address;
+			public function HRESULT(IMbnSmsReadMsgTextCdma *self, BSTR* Timestamp) get_Timestamp;
+			public function HRESULT(IMbnSmsReadMsgTextCdma *self, MBN_SMS_CDMA_ENCODING* EncodingID) get_EncodingID;
+			public function HRESULT(IMbnSmsReadMsgTextCdma *self, MBN_SMS_CDMA_LANG* LanguageID) get_LanguageID;
+			public function HRESULT(IMbnSmsReadMsgTextCdma *self, uint32* SizeInCharacters) get_SizeInCharacters;
+			public function HRESULT(IMbnSmsReadMsgTextCdma *self, SAFEARRAY** Message) get_Message;
+		}
+		[CRepr]
+		public struct IMbnSms : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2015, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnSms *self, IMbnSmsConfiguration** smsConfiguration) GetSmsConfiguration;
+			public function HRESULT(IMbnSms *self, IMbnSmsConfiguration* smsConfiguration, uint32* requestID) SetSmsConfiguration;
+			public function HRESULT(IMbnSms *self, PWSTR pduData, uint8 size, uint32* requestID) SmsSendPdu;
+			public function HRESULT(IMbnSms *self, PWSTR address, MBN_SMS_CDMA_ENCODING encoding, MBN_SMS_CDMA_LANG language, uint32 sizeInCharacters, SAFEARRAY* message, uint32* requestID) SmsSendCdma;
+			public function HRESULT(IMbnSms *self, SAFEARRAY* message, uint32* requestID) SmsSendCdmaPdu;
+			public function HRESULT(IMbnSms *self, MBN_SMS_FILTER* smsFilter, MBN_SMS_FORMAT smsFormat, uint32* requestID) SmsRead;
+			public function HRESULT(IMbnSms *self, MBN_SMS_FILTER* smsFilter, uint32* requestID) SmsDelete;
+			public function HRESULT(IMbnSms *self, MBN_SMS_STATUS_INFO* smsStatusInfo) GetSmsStatus;
+		}
+		[CRepr]
+		public struct IMbnSmsEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2016, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnSmsEvents *self, IMbnSms* sms) OnSmsConfigurationChange;
+			public function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, uint32 requestID, HRESULT status) OnSetSmsConfigurationComplete;
+			public function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, uint32 requestID, HRESULT status) OnSmsSendComplete;
+			public function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, MBN_SMS_FORMAT smsFormat, SAFEARRAY* readMsgs, int16 moreMsgs, uint32 requestID, HRESULT status) OnSmsReadComplete;
+			public function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, MBN_SMS_FORMAT smsFormat, SAFEARRAY* readMsgs) OnSmsNewClass0Message;
+			public function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, uint32 requestID, HRESULT status) OnSmsDeleteComplete;
+			public function HRESULT(IMbnSmsEvents *self, IMbnSms* sms) OnSmsStatusChange;
+		}
+		[CRepr]
+		public struct IMbnServiceActivation : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2017, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnServiceActivation *self, SAFEARRAY* vendorSpecificData, uint32* requestID) Activate;
+		}
+		[CRepr]
+		public struct IMbnServiceActivationEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2018, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnServiceActivationEvents *self, IMbnServiceActivation* serviceActivation, SAFEARRAY* vendorSpecificData, uint32 requestID, HRESULT status, uint32 networkError) OnActivationComplete;
+		}
+		[CRepr]
+		public struct IMbnVendorSpecificOperation : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2019, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnVendorSpecificOperation *self, SAFEARRAY* vendorSpecificData, uint32* requestID) SetVendorSpecific;
+		}
+		[CRepr]
+		public struct IMbnVendorSpecificEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x201a, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnVendorSpecificEvents *self, IMbnVendorSpecificOperation* vendorOperation, SAFEARRAY* vendorSpecificData) OnEventNotification;
+			public function HRESULT(IMbnVendorSpecificEvents *self, IMbnVendorSpecificOperation* vendorOperation, SAFEARRAY* vendorSpecificData, uint32 requestID) OnSetVendorSpecificComplete;
+		}
+		[CRepr]
+		public struct IMbnConnectionProfileManagerEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x201f, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnConnectionProfileManagerEvents *self, IMbnConnectionProfile* newConnectionProfile) OnConnectionProfileArrival;
+			public function HRESULT(IMbnConnectionProfileManagerEvents *self, IMbnConnectionProfile* oldConnectionProfile) OnConnectionProfileRemoval;
+		}
+		[CRepr]
+		public struct IMbnRadio : IUnknown
+		{
+			public const new Guid IID = .(0xdccccab6, 0x201f, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnRadio *self, MBN_RADIO* SoftwareRadioState) get_SoftwareRadioState;
+			public function HRESULT(IMbnRadio *self, MBN_RADIO* HardwareRadioState) get_HardwareRadioState;
+			public function HRESULT(IMbnRadio *self, MBN_RADIO radioState, uint32* requestID) SetSoftwareRadioState;
+		}
+		[CRepr]
+		public struct IMbnRadioEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcdddab6, 0x201f, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnRadioEvents *self, IMbnRadio* newInterface) OnRadioStateChange;
+			public function HRESULT(IMbnRadioEvents *self, IMbnRadio* newInterface, uint32 requestID, HRESULT status) OnSetSoftwareRadioStateComplete;
+		}
+		[CRepr]
+		public struct IMbnMultiCarrier : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2020, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnMultiCarrier *self, MBN_PROVIDER2* homeProvider, uint32* requestID) SetHomeProvider;
+			public function HRESULT(IMbnMultiCarrier *self, SAFEARRAY** preferredMulticarrierProviders) GetPreferredProviders;
+			public function HRESULT(IMbnMultiCarrier *self, uint32* age, SAFEARRAY** visibleProviders) GetVisibleProviders;
+			public function HRESULT(IMbnMultiCarrier *self, SAFEARRAY** cellularClasses) GetSupportedCellularClasses;
+			public function HRESULT(IMbnMultiCarrier *self, MBN_CELLULAR_CLASS* currentCellularClass) GetCurrentCellularClass;
+			public function HRESULT(IMbnMultiCarrier *self, uint32* requestID) ScanNetwork;
+		}
+		[CRepr]
+		public struct IMbnMultiCarrierEvents : IUnknown
+		{
+			public const new Guid IID = .(0xdcdddab6, 0x2021, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface, uint32 requestID, HRESULT status) OnSetHomeProviderComplete;
+			public function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface) OnCurrentCellularClassChange;
+			public function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface) OnPreferredProvidersChange;
+			public function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
+			public function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface) OnInterfaceCapabilityChange;
+		}
+		[CRepr]
+		public struct IMbnDeviceServiceStateEvents : IUnknown
+		{
+			public const new Guid IID = .(0x5d3ff196, 0x89ee, 0x49d8, 0x8b, 0x60, 0x33, 0xff, 0xdd, 0xff, 0xc5, 0x8d);
+			
+			public function HRESULT(IMbnDeviceServiceStateEvents *self, BSTR interfaceID, MBN_DEVICE_SERVICE_SESSIONS_STATE stateChange) OnSessionsStateChange;
+		}
+		[CRepr]
+		public struct IMbnDeviceServicesManager : IUnknown
+		{
+			public const new Guid IID = .(0x20a26258, 0x6811, 0x4478, 0xac, 0x1d, 0x13, 0x32, 0x4e, 0x45, 0xe4, 0x1c);
+			
+			public function HRESULT(IMbnDeviceServicesManager *self, BSTR networkInterfaceID, IMbnDeviceServicesContext** mbnDevicesContext) GetDeviceServicesContext;
+		}
+		[CRepr]
+		public struct IMbnDeviceServicesContext : IUnknown
+		{
+			public const new Guid IID = .(0xfc5ac347, 0x1592, 0x4068, 0x80, 0xbb, 0x6a, 0x57, 0x58, 0x01, 0x50, 0xd8);
+			
+			public function HRESULT(IMbnDeviceServicesContext *self, SAFEARRAY** deviceServices) EnumerateDeviceServices;
+			public function HRESULT(IMbnDeviceServicesContext *self, BSTR deviceServiceID, IMbnDeviceService** mbnDeviceService) GetDeviceService;
+			public function HRESULT(IMbnDeviceServicesContext *self, uint32* maxCommandSize) get_MaxCommandSize;
+			public function HRESULT(IMbnDeviceServicesContext *self, uint32* maxDataSize) get_MaxDataSize;
+		}
+		[CRepr]
+		public struct IMbnDeviceServicesEvents : IUnknown
+		{
+			public const new Guid IID = .(0x0a900c19, 0x6824, 0x4e97, 0xb7, 0x6e, 0xcf, 0x23, 0x9d, 0x0c, 0xa6, 0x42);
+			
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, SAFEARRAY* commandIDList, HRESULT status, uint32 requestID) OnQuerySupportedCommandsComplete;
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnOpenCommandSessionComplete;
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnCloseCommandSessionComplete;
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, uint32 responseID, SAFEARRAY* deviceServiceData, HRESULT status, uint32 requestID) OnSetCommandComplete;
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, uint32 responseID, SAFEARRAY* deviceServiceData, HRESULT status, uint32 requestID) OnQueryCommandComplete;
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, uint32 eventID, SAFEARRAY* deviceServiceData) OnEventNotification;
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnOpenDataSessionComplete;
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnCloseDataSessionComplete;
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnWriteDataComplete;
+			public function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, SAFEARRAY* deviceServiceData) OnReadData;
+			public function HRESULT(IMbnDeviceServicesEvents *self, BSTR interfaceID, MBN_DEVICE_SERVICES_INTERFACE_STATE stateChange) OnInterfaceStateChange;
+		}
+		[CRepr]
+		public struct IMbnDeviceService : IUnknown
+		{
+			public const new Guid IID = .(0xb3bb9a71, 0xdc70, 0x4be9, 0xa4, 0xda, 0x78, 0x86, 0xae, 0x8b, 0x19, 0x1b);
+			
+			public function HRESULT(IMbnDeviceService *self, uint32* requestID) QuerySupportedCommands;
+			public function HRESULT(IMbnDeviceService *self, uint32* requestID) OpenCommandSession;
+			public function HRESULT(IMbnDeviceService *self, uint32* requestID) CloseCommandSession;
+			public function HRESULT(IMbnDeviceService *self, uint32 commandID, SAFEARRAY* deviceServiceData, uint32* requestID) SetCommand;
+			public function HRESULT(IMbnDeviceService *self, uint32 commandID, SAFEARRAY* deviceServiceData, uint32* requestID) QueryCommand;
+			public function HRESULT(IMbnDeviceService *self, uint32* requestID) OpenDataSession;
+			public function HRESULT(IMbnDeviceService *self, uint32* requestID) CloseDataSession;
+			public function HRESULT(IMbnDeviceService *self, SAFEARRAY* deviceServiceData, uint32* requestID) WriteData;
+			public function HRESULT(IMbnDeviceService *self, BSTR* InterfaceID) get_InterfaceID;
+			public function HRESULT(IMbnDeviceService *self, BSTR* DeviceServiceID) get_DeviceServiceID;
+			public function HRESULT(IMbnDeviceService *self, BOOL* value) get_IsCommandSessionOpen;
+			public function HRESULT(IMbnDeviceService *self, BOOL* value) get_IsDataSessionOpen;
+		}
+		[CRepr]
+		public struct IMbnPin : IUnknown
+		{
+			public const new Guid IID = .(0xdcbbbab6, 0x2007, 0x4bbb, 0xaa, 0xee, 0x33, 0x8e, 0x36, 0x8a, 0xf6, 0xfa);
+			
+			public function HRESULT(IMbnPin *self, MBN_PIN_TYPE* PinType) get_PinType;
+			public function HRESULT(IMbnPin *self, MBN_PIN_FORMAT* PinFormat) get_PinFormat;
+			public function HRESULT(IMbnPin *self, uint32* PinLengthMin) get_PinLengthMin;
+			public function HRESULT(IMbnPin *self, uint32* PinLengthMax) get_PinLengthMax;
+			public function HRESULT(IMbnPin *self, MBN_PIN_MODE* PinMode) get_PinMode;
+			public function HRESULT(IMbnPin *self, PWSTR pin, uint32* requestID) Enable;
+			public function HRESULT(IMbnPin *self, PWSTR pin, uint32* requestID) Disable;
+			public function HRESULT(IMbnPin *self, PWSTR pin, uint32* requestID) Enter;
+			public function HRESULT(IMbnPin *self, PWSTR pin, PWSTR newPin, uint32* requestID) Change;
+			public function HRESULT(IMbnPin *self, PWSTR puk, PWSTR newPin, uint32* requestID) Unblock;
+			public function HRESULT(IMbnPin *self, IMbnPinManager** pinManager) GetPinManager;
+		}
 		
 	}
 }

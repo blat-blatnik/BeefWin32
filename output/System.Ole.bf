@@ -1311,13 +1311,13 @@ namespace Win32
 		public struct _wireSAFEARR_UNKNOWN
 		{
 			public uint32 Size;
-			public IUnknown* apUnknown;
+			public IUnknown** apUnknown;
 		}
 		[CRepr]
 		public struct _wireSAFEARR_DISPATCH
 		{
 			public uint32 Size;
-			public IDispatch* apDispatch;
+			public IDispatch** apDispatch;
 		}
 		[CRepr]
 		public struct _wireSAFEARR_VARIANT
@@ -1335,7 +1335,7 @@ namespace Win32
 		public struct _wireSAFEARR_HAVEIID
 		{
 			public uint32 Size;
-			public IUnknown* apUnknown;
+			public IUnknown** apUnknown;
 			public Guid iid;
 		}
 		[CRepr]
@@ -1374,7 +1374,7 @@ namespace Win32
 		{
 			public uint32 fFlags;
 			public uint32 clSize;
-			public IRecordInfo pRecInfo;
+			public IRecordInfo* pRecInfo;
 			public uint8* pRecord;
 		}
 		[CRepr]
@@ -1402,8 +1402,8 @@ namespace Win32
 				public CY cyVal;
 				public double date;
 				public FLAGGED_WORD_BLOB* bstrVal;
-				public IUnknown punkVal;
-				public IDispatch pdispVal;
+				public IUnknown* punkVal;
+				public IDispatch* pdispVal;
 				public _wireSAFEARRAY** parray;
 				public _wireBRECORD* brecVal;
 				public uint8* pbVal;
@@ -1417,8 +1417,8 @@ namespace Win32
 				public CY* pcyVal;
 				public double* pdate;
 				public FLAGGED_WORD_BLOB** pbstrVal;
-				public IUnknown* ppunkVal;
-				public IDispatch* ppdispVal;
+				public IUnknown** ppunkVal;
+				public IDispatch** ppdispVal;
 				public _wireSAFEARRAY*** pparray;
 				public _wireVARIANT** pvarVal;
 				public CHAR cVal;
@@ -1459,7 +1459,7 @@ namespace Win32
 		[CRepr]
 		public struct CLEANLOCALSTORAGE
 		{
-			public IUnknown pInterface;
+			public IUnknown* pInterface;
 			public void* pStorage;
 			public uint32 flags;
 		}
@@ -1603,21 +1603,21 @@ namespace Win32
 		public struct QACONTAINER
 		{
 			public uint32 cbSize;
-			public IOleClientSite pClientSite;
-			public IAdviseSinkEx pAdviseSink;
-			public IPropertyNotifySink pPropertyNotifySink;
-			public IUnknown pUnkEventSink;
+			public IOleClientSite* pClientSite;
+			public IAdviseSinkEx* pAdviseSink;
+			public IPropertyNotifySink* pPropertyNotifySink;
+			public IUnknown* pUnkEventSink;
 			public uint32 dwAmbientFlags;
 			public uint32 colorFore;
 			public uint32 colorBack;
-			public IFont pFont;
-			public IOleUndoManager pUndoMgr;
+			public IFont* pFont;
+			public IOleUndoManager* pUndoMgr;
 			public uint32 dwAppearance;
 			public int32 lcid;
 			public HPALETTE hpal;
-			public IBindHost pBindHost;
-			public IOleControlSite pOleControlSite;
-			public IServiceProvider pServiceProvider;
+			public IBindHost* pBindHost;
+			public IOleControlSite* pOleControlSite;
+			public IServiceProvider* pServiceProvider;
 		}
 		[CRepr]
 		public struct QACONTROL
@@ -1638,7 +1638,7 @@ namespace Win32
 			public int32 y;
 			public PWSTR lpszCaption;
 			public uint32 cObjects;
-			public IUnknown* lplpUnk;
+			public IUnknown** lplpUnk;
 			public uint32 cPages;
 			public Guid* lpPages;
 			public uint32 lcid;
@@ -1745,8 +1745,8 @@ namespace Win32
 			public Guid iid;
 			public uint32 oleRender;
 			public FORMATETC* lpFormatEtc;
-			public IOleClientSite lpIOleClientSite;
-			public IStorage lpIStorage;
+			public IOleClientSite* lpIOleClientSite;
+			public IStorage* lpIStorage;
 			public void** ppvObj;
 			public int32 sc;
 			public int hMetaPict;
@@ -1771,8 +1771,8 @@ namespace Win32
 			public Guid iid;
 			public uint32 oleRender;
 			public FORMATETC* lpFormatEtc;
-			public IOleClientSite lpIOleClientSite;
-			public IStorage lpIStorage;
+			public IOleClientSite* lpIOleClientSite;
+			public IStorage* lpIStorage;
 			public void** ppvObj;
 			public int32 sc;
 			public int hMetaPict;
@@ -1807,7 +1807,7 @@ namespace Win32
 			public HINSTANCE hInstance;
 			public PWSTR lpszTemplate;
 			public HRSRC hResource;
-			public IDataObject lpSrcDataObj;
+			public IDataObject* lpSrcDataObj;
 			public OLEUIPASTEENTRYW* arrPasteEntries;
 			public int32 cPasteEntries;
 			public uint32* arrLinkTypes;
@@ -1831,7 +1831,7 @@ namespace Win32
 			public HINSTANCE hInstance;
 			public PSTR lpszTemplate;
 			public HRSRC hResource;
-			public IDataObject lpSrcDataObj;
+			public IDataObject* lpSrcDataObj;
 			public OLEUIPASTEENTRYA* arrPasteEntries;
 			public int32 cPasteEntries;
 			public uint32* arrLinkTypes;
@@ -1855,7 +1855,7 @@ namespace Win32
 			public HINSTANCE hInstance;
 			public PWSTR lpszTemplate;
 			public HRSRC hResource;
-			public IOleUILinkContainerW lpOleUILinkContainer;
+			public IOleUILinkContainerW* lpOleUILinkContainer;
 		}
 		[CRepr]
 		public struct OLEUIEDITLINKSA
@@ -1869,7 +1869,7 @@ namespace Win32
 			public HINSTANCE hInstance;
 			public PSTR lpszTemplate;
 			public HRSRC hResource;
-			public IOleUILinkContainerA lpOleUILinkContainer;
+			public IOleUILinkContainerA* lpOleUILinkContainer;
 		}
 		[CRepr]
 		public struct OLEUICHANGEICONW
@@ -2001,7 +2001,7 @@ namespace Win32
 			public HRSRC hResource;
 			public OPENFILENAMEW* lpOFN;
 			public uint32[4] dwReserved1;
-			public IOleUILinkContainerW lpOleUILinkContainer;
+			public IOleUILinkContainerW* lpOleUILinkContainer;
 			public uint32 dwLink;
 			public PWSTR lpszDisplayName;
 			public uint32 nFileLength;
@@ -2022,7 +2022,7 @@ namespace Win32
 			public HRSRC hResource;
 			public OPENFILENAMEA* lpOFN;
 			public uint32[4] dwReserved1;
-			public IOleUILinkContainerA lpOleUILinkContainer;
+			public IOleUILinkContainerA* lpOleUILinkContainer;
 			public uint32 dwLink;
 			public PSTR lpszDisplayName;
 			public uint32 nFileLength;
@@ -2106,9 +2106,9 @@ namespace Win32
 			public uint32 dwFlags;
 			public PROPSHEETHEADERW_V2* lpPS;
 			public uint32 dwObject;
-			public IOleUIObjInfoW lpObjInfo;
+			public IOleUIObjInfoW* lpObjInfo;
 			public uint32 dwLink;
-			public IOleUILinkInfoW lpLinkInfo;
+			public IOleUILinkInfoW* lpLinkInfo;
 			public OLEUIGNRLPROPSW* lpGP;
 			public OLEUIVIEWPROPSW* lpVP;
 			public OLEUILINKPROPSW* lpLP;
@@ -2120,9 +2120,9 @@ namespace Win32
 			public uint32 dwFlags;
 			public PROPSHEETHEADERA_V2* lpPS;
 			public uint32 dwObject;
-			public IOleUIObjInfoA lpObjInfo;
+			public IOleUIObjInfoA* lpObjInfo;
 			public uint32 dwLink;
-			public IOleUILinkInfoA lpLinkInfo;
+			public IOleUILinkInfoA* lpLinkInfo;
 			public OLEUIGNRLPROPSA* lpGP;
 			public OLEUIVIEWPROPSA* lpVP;
 			public OLEUILINKPROPSA* lpLP;
@@ -2130,99 +2130,989 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ICreateTypeInfo {}
-		public struct ICreateTypeInfo2 {}
-		public struct ICreateTypeLib {}
-		public struct ICreateTypeLib2 {}
-		public struct IEnumVARIANT {}
-		public struct ITypeChangeEvents {}
-		public struct ICreateErrorInfo {}
-		public struct ITypeFactory {}
-		public struct ITypeMarshal {}
-		public struct IRecordInfo {}
-		public struct IOleAdviseHolder {}
-		public struct IOleCache {}
-		public struct IOleCache2 {}
-		public struct IOleCacheControl {}
-		public struct IParseDisplayName {}
-		public struct IOleContainer {}
-		public struct IOleClientSite {}
-		public struct IOleObject {}
-		public struct IOleWindow {}
-		public struct IOleLink {}
-		public struct IOleItemContainer {}
-		public struct IOleInPlaceUIWindow {}
-		public struct IOleInPlaceActiveObject {}
-		public struct IOleInPlaceFrame {}
-		public struct IOleInPlaceObject {}
-		public struct IOleInPlaceSite {}
-		public struct IContinue {}
-		public struct IViewObject {}
-		public struct IViewObject2 {}
-		public struct IDropSource {}
-		public struct IDropTarget {}
-		public struct IDropSourceNotify {}
-		public struct IEnterpriseDropTarget {}
-		public struct IEnumOLEVERB {}
-		public struct IClassFactory2 {}
-		public struct IProvideClassInfo {}
-		public struct IProvideClassInfo2 {}
-		public struct IProvideMultipleClassInfo {}
-		public struct IOleControl {}
-		public struct IOleControlSite {}
-		public struct IPropertyPage {}
-		public struct IPropertyPage2 {}
-		public struct IPropertyPageSite {}
-		public struct IPropertyNotifySink {}
-		public struct ISpecifyPropertyPages {}
-		public struct IPersistPropertyBag {}
-		public struct ISimpleFrameSite {}
-		public struct IFont {}
-		public struct IPicture {}
-		public struct IPicture2 {}
-		public struct IFontEventsDisp {}
-		public struct IFontDisp {}
-		public struct IPictureDisp {}
-		public struct IOleInPlaceObjectWindowless {}
-		public struct IOleInPlaceSiteEx {}
-		public struct IOleInPlaceSiteWindowless {}
-		public struct IViewObjectEx {}
-		public struct IOleUndoUnit {}
-		public struct IOleParentUndoUnit {}
-		public struct IEnumOleUndoUnits {}
-		public struct IOleUndoManager {}
-		public struct IPointerInactive {}
-		public struct IObjectWithSite {}
-		public struct IPerPropertyBrowsing {}
-		public struct IPersistPropertyBag2 {}
-		public struct IAdviseSinkEx {}
-		public struct IQuickActivate {}
-		public struct IVBGetControl {}
-		public struct IGetOleObject {}
-		public struct IVBFormat {}
-		public struct IGetVBAObject {}
-		public struct IOleDocument {}
-		public struct IOleDocumentSite {}
-		public struct IOleDocumentView {}
-		public struct IEnumOleDocumentViews {}
-		public struct IContinueCallback {}
-		public struct IPrint {}
-		public struct IOleCommandTarget {}
-		public struct IZoomEvents {}
-		public struct IProtectFocus {}
-		public struct IProtectedModeMenuServices {}
-		public struct IOleUILinkContainerW {}
-		public struct IOleUILinkContainerA {}
-		public struct IOleUIObjInfoW {}
-		public struct IOleUIObjInfoA {}
-		public struct IOleUILinkInfoW {}
-		public struct IOleUILinkInfoA {}
-		public struct IDispatchEx {}
-		public struct IDispError {}
-		public struct IVariantChangeType {}
-		public struct IObjectIdentity {}
-		public struct ICanHandleException {}
-		public struct IProvideRuntimeContext {}
+		[CRepr]
+		public struct ICreateTypeInfo : IUnknown
+		{
+			public const new Guid IID = .(0x00020405, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(ICreateTypeInfo *self, Guid* guid) SetGuid;
+			public function HRESULT(ICreateTypeInfo *self, uint32 uTypeFlags) SetTypeFlags;
+			public function HRESULT(ICreateTypeInfo *self, PWSTR pStrDoc) SetDocString;
+			public function HRESULT(ICreateTypeInfo *self, uint32 dwHelpContext) SetHelpContext;
+			public function HRESULT(ICreateTypeInfo *self, uint16 wMajorVerNum, uint16 wMinorVerNum) SetVersion;
+			public function HRESULT(ICreateTypeInfo *self, ITypeInfo* pTInfo, uint32* phRefType) AddRefTypeInfo;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, FUNCDESC* pFuncDesc) AddFuncDesc;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, uint32 hRefType) AddImplType;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, int32 implTypeFlags) SetImplTypeFlags;
+			public function HRESULT(ICreateTypeInfo *self, uint16 cbAlignment) SetAlignment;
+			public function HRESULT(ICreateTypeInfo *self, PWSTR pStrSchema) SetSchema;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, VARDESC* pVarDesc) AddVarDesc;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, PWSTR* rgszNames, uint32 cNames) SetFuncAndParamNames;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, PWSTR szName) SetVarName;
+			public function HRESULT(ICreateTypeInfo *self, TYPEDESC* pTDescAlias) SetTypeDescAlias;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, PWSTR szDllName, PWSTR szProcName) DefineFuncAsDllEntry;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, PWSTR szDocString) SetFuncDocString;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, PWSTR szDocString) SetVarDocString;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, uint32 dwHelpContext) SetFuncHelpContext;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, uint32 dwHelpContext) SetVarHelpContext;
+			public function HRESULT(ICreateTypeInfo *self, uint32 index, BSTR bstrMops) SetMops;
+			public function HRESULT(ICreateTypeInfo *self, IDLDESC* pIdlDesc) SetTypeIdldesc;
+			public function HRESULT(ICreateTypeInfo *self) LayOut;
+		}
+		[CRepr]
+		public struct ICreateTypeInfo2 : ICreateTypeInfo
+		{
+			public const new Guid IID = .(0x0002040e, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 index) DeleteFuncDesc;
+			public function HRESULT(ICreateTypeInfo2 *self, int32 memid, INVOKEKIND invKind) DeleteFuncDescByMemId;
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 index) DeleteVarDesc;
+			public function HRESULT(ICreateTypeInfo2 *self, int32 memid) DeleteVarDescByMemId;
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 index) DeleteImplType;
+			public function HRESULT(ICreateTypeInfo2 *self, Guid* guid, VARIANT* pVarVal) SetCustData;
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 index, Guid* guid, VARIANT* pVarVal) SetFuncCustData;
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 indexFunc, uint32 indexParam, Guid* guid, VARIANT* pVarVal) SetParamCustData;
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 index, Guid* guid, VARIANT* pVarVal) SetVarCustData;
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 index, Guid* guid, VARIANT* pVarVal) SetImplTypeCustData;
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 dwHelpStringContext) SetHelpStringContext;
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 index, uint32 dwHelpStringContext) SetFuncHelpStringContext;
+			public function HRESULT(ICreateTypeInfo2 *self, uint32 index, uint32 dwHelpStringContext) SetVarHelpStringContext;
+			public function HRESULT(ICreateTypeInfo2 *self) Invalidate;
+			public function HRESULT(ICreateTypeInfo2 *self, PWSTR szName) SetName;
+		}
+		[CRepr]
+		public struct ICreateTypeLib : IUnknown
+		{
+			public const new Guid IID = .(0x00020406, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(ICreateTypeLib *self, PWSTR szName, TYPEKIND tkind, ICreateTypeInfo** ppCTInfo) CreateTypeInfo;
+			public function HRESULT(ICreateTypeLib *self, PWSTR szName) SetName;
+			public function HRESULT(ICreateTypeLib *self, uint16 wMajorVerNum, uint16 wMinorVerNum) SetVersion;
+			public function HRESULT(ICreateTypeLib *self, Guid* guid) SetGuid;
+			public function HRESULT(ICreateTypeLib *self, PWSTR szDoc) SetDocString;
+			public function HRESULT(ICreateTypeLib *self, PWSTR szHelpFileName) SetHelpFileName;
+			public function HRESULT(ICreateTypeLib *self, uint32 dwHelpContext) SetHelpContext;
+			public function HRESULT(ICreateTypeLib *self, uint32 lcid) SetLcid;
+			public function HRESULT(ICreateTypeLib *self, uint32 uLibFlags) SetLibFlags;
+			public function HRESULT(ICreateTypeLib *self) SaveAllChanges;
+		}
+		[CRepr]
+		public struct ICreateTypeLib2 : ICreateTypeLib
+		{
+			public const new Guid IID = .(0x0002040f, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(ICreateTypeLib2 *self, PWSTR szName) DeleteTypeInfo;
+			public function HRESULT(ICreateTypeLib2 *self, Guid* guid, VARIANT* pVarVal) SetCustData;
+			public function HRESULT(ICreateTypeLib2 *self, uint32 dwHelpStringContext) SetHelpStringContext;
+			public function HRESULT(ICreateTypeLib2 *self, PWSTR szFileName) SetHelpStringDll;
+		}
+		[CRepr]
+		public struct IEnumVARIANT : IUnknown
+		{
+			public const new Guid IID = .(0x00020404, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IEnumVARIANT *self, uint32 celt, VARIANT* rgVar, uint32* pCeltFetched) Next;
+			public function HRESULT(IEnumVARIANT *self, uint32 celt) Skip;
+			public function HRESULT(IEnumVARIANT *self) Reset;
+			public function HRESULT(IEnumVARIANT *self, IEnumVARIANT** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct ITypeChangeEvents : IUnknown
+		{
+			public const new Guid IID = .(0x00020410, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(ITypeChangeEvents *self, CHANGEKIND changeKind, ITypeInfo* pTInfoBefore, PWSTR pStrName, int32* pfCancel) RequestTypeChange;
+			public function HRESULT(ITypeChangeEvents *self, CHANGEKIND changeKind, ITypeInfo* pTInfoAfter, PWSTR pStrName) AfterTypeChange;
+		}
+		[CRepr]
+		public struct ICreateErrorInfo : IUnknown
+		{
+			public const new Guid IID = .(0x22f03340, 0x547d, 0x101b, 0x8e, 0x65, 0x08, 0x00, 0x2b, 0x2b, 0xd1, 0x19);
+			
+			public function HRESULT(ICreateErrorInfo *self, Guid* rguid) SetGUID;
+			public function HRESULT(ICreateErrorInfo *self, PWSTR szSource) SetSource;
+			public function HRESULT(ICreateErrorInfo *self, PWSTR szDescription) SetDescription;
+			public function HRESULT(ICreateErrorInfo *self, PWSTR szHelpFile) SetHelpFile;
+			public function HRESULT(ICreateErrorInfo *self, uint32 dwHelpContext) SetHelpContext;
+		}
+		[CRepr]
+		public struct ITypeFactory : IUnknown
+		{
+			public const new Guid IID = .(0x0000002e, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(ITypeFactory *self, ITypeInfo* pTypeInfo, Guid* riid, IUnknown** ppv) CreateFromTypeInfo;
+		}
+		[CRepr]
+		public struct ITypeMarshal : IUnknown
+		{
+			public const new Guid IID = .(0x0000002d, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(ITypeMarshal *self, void* pvType, uint32 dwDestContext, void* pvDestContext, uint32* pSize) Size;
+			public function HRESULT(ITypeMarshal *self, void* pvType, uint32 dwDestContext, void* pvDestContext, uint32 cbBufferLength, uint8* pBuffer, uint32* pcbWritten) Marshal;
+			public function HRESULT(ITypeMarshal *self, void* pvType, uint32 dwFlags, uint32 cbBufferLength, uint8* pBuffer, uint32* pcbRead) Unmarshal;
+			public function HRESULT(ITypeMarshal *self, void* pvType) Free;
+		}
+		[CRepr]
+		public struct IRecordInfo : IUnknown
+		{
+			public const new Guid IID = .(0x0000002f, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IRecordInfo *self, void* pvNew) RecordInit;
+			public function HRESULT(IRecordInfo *self, void* pvExisting) RecordClear;
+			public function HRESULT(IRecordInfo *self, void* pvExisting, void* pvNew) RecordCopy;
+			public function HRESULT(IRecordInfo *self, Guid* pguid) GetGuid;
+			public function HRESULT(IRecordInfo *self, BSTR* pbstrName) GetName;
+			public function HRESULT(IRecordInfo *self, uint32* pcbSize) GetSize;
+			public function HRESULT(IRecordInfo *self, ITypeInfo** ppTypeInfo) GetTypeInfo;
+			public function HRESULT(IRecordInfo *self, void* pvData, PWSTR szFieldName, VARIANT* pvarField) GetField;
+			public function HRESULT(IRecordInfo *self, void* pvData, PWSTR szFieldName, VARIANT* pvarField, void** ppvDataCArray) GetFieldNoCopy;
+			public function HRESULT(IRecordInfo *self, uint32 wFlags, void* pvData, PWSTR szFieldName, VARIANT* pvarField) PutField;
+			public function HRESULT(IRecordInfo *self, uint32 wFlags, void* pvData, PWSTR szFieldName, VARIANT* pvarField) PutFieldNoCopy;
+			public function HRESULT(IRecordInfo *self, uint32* pcNames, BSTR* rgBstrNames) GetFieldNames;
+			public function BOOL(IRecordInfo *self, IRecordInfo* pRecordInfo) IsMatchingType;
+			public function void*(IRecordInfo *self) RecordCreate;
+			public function HRESULT(IRecordInfo *self, void* pvSource, void** ppvDest) RecordCreateCopy;
+			public function HRESULT(IRecordInfo *self, void* pvRecord) RecordDestroy;
+		}
+		[CRepr]
+		public struct IOleAdviseHolder : IUnknown
+		{
+			public const new Guid IID = .(0x00000111, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleAdviseHolder *self, IAdviseSink* pAdvise, uint32* pdwConnection) Advise;
+			public function HRESULT(IOleAdviseHolder *self, uint32 dwConnection) Unadvise;
+			public function HRESULT(IOleAdviseHolder *self, IEnumSTATDATA** ppenumAdvise) EnumAdvise;
+			public function HRESULT(IOleAdviseHolder *self, IMoniker* pmk) SendOnRename;
+			public function HRESULT(IOleAdviseHolder *self) SendOnSave;
+			public function HRESULT(IOleAdviseHolder *self) SendOnClose;
+		}
+		[CRepr]
+		public struct IOleCache : IUnknown
+		{
+			public const new Guid IID = .(0x0000011e, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleCache *self, FORMATETC* pformatetc, uint32 advf, uint32* pdwConnection) Cache;
+			public function HRESULT(IOleCache *self, uint32 dwConnection) Uncache;
+			public function HRESULT(IOleCache *self, IEnumSTATDATA** ppenumSTATDATA) EnumCache;
+			public function HRESULT(IOleCache *self, IDataObject* pDataObject) InitCache;
+			public function HRESULT(IOleCache *self, FORMATETC* pformatetc, STGMEDIUM* pmedium, BOOL fRelease) SetData;
+		}
+		[CRepr]
+		public struct IOleCache2 : IOleCache
+		{
+			public const new Guid IID = .(0x00000128, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleCache2 *self, IDataObject* pDataObject, UPDFCACHE_FLAGS grfUpdf, void* pReserved) UpdateCache;
+			public function HRESULT(IOleCache2 *self, uint32 dwDiscardOptions) DiscardCache;
+		}
+		[CRepr]
+		public struct IOleCacheControl : IUnknown
+		{
+			public const new Guid IID = .(0x00000129, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleCacheControl *self, IDataObject* pDataObject) OnRun;
+			public function HRESULT(IOleCacheControl *self) OnStop;
+		}
+		[CRepr]
+		public struct IParseDisplayName : IUnknown
+		{
+			public const new Guid IID = .(0x0000011a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IParseDisplayName *self, IBindCtx* pbc, PWSTR pszDisplayName, uint32* pchEaten, IMoniker** ppmkOut) ParseDisplayName;
+		}
+		[CRepr]
+		public struct IOleContainer : IParseDisplayName
+		{
+			public const new Guid IID = .(0x0000011b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleContainer *self, uint32 grfFlags, IEnumUnknown** ppenum) EnumObjects;
+			public function HRESULT(IOleContainer *self, BOOL fLock) LockContainer;
+		}
+		[CRepr]
+		public struct IOleClientSite : IUnknown
+		{
+			public const new Guid IID = .(0x00000118, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleClientSite *self) SaveObject;
+			public function HRESULT(IOleClientSite *self, uint32 dwAssign, uint32 dwWhichMoniker, IMoniker** ppmk) GetMoniker;
+			public function HRESULT(IOleClientSite *self, IOleContainer** ppContainer) GetContainer;
+			public function HRESULT(IOleClientSite *self) ShowObject;
+			public function HRESULT(IOleClientSite *self, BOOL fShow) OnShowWindow;
+			public function HRESULT(IOleClientSite *self) RequestNewObjectLayout;
+		}
+		[CRepr]
+		public struct IOleObject : IUnknown
+		{
+			public const new Guid IID = .(0x00000112, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleObject *self, IOleClientSite* pClientSite) SetClientSite;
+			public function HRESULT(IOleObject *self, IOleClientSite** ppClientSite) GetClientSite;
+			public function HRESULT(IOleObject *self, PWSTR szContainerApp, PWSTR szContainerObj) SetHostNames;
+			public function HRESULT(IOleObject *self, uint32 dwSaveOption) Close;
+			public function HRESULT(IOleObject *self, uint32 dwWhichMoniker, IMoniker* pmk) SetMoniker;
+			public function HRESULT(IOleObject *self, uint32 dwAssign, uint32 dwWhichMoniker, IMoniker** ppmk) GetMoniker;
+			public function HRESULT(IOleObject *self, IDataObject* pDataObject, BOOL fCreation, uint32 dwReserved) InitFromData;
+			public function HRESULT(IOleObject *self, uint32 dwReserved, IDataObject** ppDataObject) GetClipboardData;
+			public function HRESULT(IOleObject *self, int32 iVerb, MSG* lpmsg, IOleClientSite* pActiveSite, int32 lindex, HWND hwndParent, RECT* lprcPosRect) DoVerb;
+			public function HRESULT(IOleObject *self, IEnumOLEVERB** ppEnumOleVerb) EnumVerbs;
+			public function HRESULT(IOleObject *self) Update;
+			public function HRESULT(IOleObject *self) IsUpToDate;
+			public function HRESULT(IOleObject *self, Guid* pClsid) GetUserClassID;
+			public function HRESULT(IOleObject *self, uint32 dwFormOfType, PWSTR* pszUserType) GetUserType;
+			public function HRESULT(IOleObject *self, uint32 dwDrawAspect, SIZE* psizel) SetExtent;
+			public function HRESULT(IOleObject *self, uint32 dwDrawAspect, SIZE* psizel) GetExtent;
+			public function HRESULT(IOleObject *self, IAdviseSink* pAdvSink, uint32* pdwConnection) Advise;
+			public function HRESULT(IOleObject *self, uint32 dwConnection) Unadvise;
+			public function HRESULT(IOleObject *self, IEnumSTATDATA** ppenumAdvise) EnumAdvise;
+			public function HRESULT(IOleObject *self, uint32 dwAspect, uint32* pdwStatus) GetMiscStatus;
+			public function HRESULT(IOleObject *self, LOGPALETTE* pLogpal) SetColorScheme;
+		}
+		[CRepr]
+		public struct IOleWindow : IUnknown
+		{
+			public const new Guid IID = .(0x00000114, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleWindow *self, HWND* phwnd) GetWindow;
+			public function HRESULT(IOleWindow *self, BOOL fEnterMode) ContextSensitiveHelp;
+		}
+		[CRepr]
+		public struct IOleLink : IUnknown
+		{
+			public const new Guid IID = .(0x0000011d, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleLink *self, uint32 dwUpdateOpt) SetUpdateOptions;
+			public function HRESULT(IOleLink *self, uint32* pdwUpdateOpt) GetUpdateOptions;
+			public function HRESULT(IOleLink *self, IMoniker* pmk, Guid* rclsid) SetSourceMoniker;
+			public function HRESULT(IOleLink *self, IMoniker** ppmk) GetSourceMoniker;
+			public function HRESULT(IOleLink *self, PWSTR pszStatusText) SetSourceDisplayName;
+			public function HRESULT(IOleLink *self, PWSTR* ppszDisplayName) GetSourceDisplayName;
+			public function HRESULT(IOleLink *self, uint32 bindflags, IBindCtx* pbc) BindToSource;
+			public function HRESULT(IOleLink *self) BindIfRunning;
+			public function HRESULT(IOleLink *self, IUnknown** ppunk) GetBoundSource;
+			public function HRESULT(IOleLink *self) UnbindSource;
+			public function HRESULT(IOleLink *self, IBindCtx* pbc) Update;
+		}
+		[CRepr]
+		public struct IOleItemContainer : IOleContainer
+		{
+			public const new Guid IID = .(0x0000011c, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleItemContainer *self, PWSTR pszItem, uint32 dwSpeedNeeded, IBindCtx* pbc, Guid* riid, void** ppvObject) GetObject;
+			public function HRESULT(IOleItemContainer *self, PWSTR pszItem, IBindCtx* pbc, Guid* riid, void** ppvStorage) GetObjectStorage;
+			public function HRESULT(IOleItemContainer *self, PWSTR pszItem) IsRunning;
+		}
+		[CRepr]
+		public struct IOleInPlaceUIWindow : IOleWindow
+		{
+			public const new Guid IID = .(0x00000115, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleInPlaceUIWindow *self, RECT* lprectBorder) GetBorder;
+			public function HRESULT(IOleInPlaceUIWindow *self, RECT* pborderwidths) RequestBorderSpace;
+			public function HRESULT(IOleInPlaceUIWindow *self, RECT* pborderwidths) SetBorderSpace;
+			public function HRESULT(IOleInPlaceUIWindow *self, IOleInPlaceActiveObject* pActiveObject, PWSTR pszObjName) SetActiveObject;
+		}
+		[CRepr]
+		public struct IOleInPlaceActiveObject : IOleWindow
+		{
+			public const new Guid IID = .(0x00000117, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleInPlaceActiveObject *self, MSG* lpmsg) TranslateAccelerator;
+			public function HRESULT(IOleInPlaceActiveObject *self, BOOL fActivate) OnFrameWindowActivate;
+			public function HRESULT(IOleInPlaceActiveObject *self, BOOL fActivate) OnDocWindowActivate;
+			public function HRESULT(IOleInPlaceActiveObject *self, RECT* prcBorder, IOleInPlaceUIWindow* pUIWindow, BOOL fFrameWindow) ResizeBorder;
+			public function HRESULT(IOleInPlaceActiveObject *self, BOOL fEnable) EnableModeless;
+		}
+		[CRepr]
+		public struct IOleInPlaceFrame : IOleInPlaceUIWindow
+		{
+			public const new Guid IID = .(0x00000116, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleInPlaceFrame *self, HMENU hmenuShared, OleMenuGroupWidths* lpMenuWidths) InsertMenus;
+			public function HRESULT(IOleInPlaceFrame *self, HMENU hmenuShared, int holemenu, HWND hwndActiveObject) SetMenu;
+			public function HRESULT(IOleInPlaceFrame *self, HMENU hmenuShared) RemoveMenus;
+			public function HRESULT(IOleInPlaceFrame *self, PWSTR pszStatusText) SetStatusText;
+			public function HRESULT(IOleInPlaceFrame *self, BOOL fEnable) EnableModeless;
+			public function HRESULT(IOleInPlaceFrame *self, MSG* lpmsg, uint16 wID) TranslateAccelerator;
+		}
+		[CRepr]
+		public struct IOleInPlaceObject : IOleWindow
+		{
+			public const new Guid IID = .(0x00000113, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleInPlaceObject *self) InPlaceDeactivate;
+			public function HRESULT(IOleInPlaceObject *self) UIDeactivate;
+			public function HRESULT(IOleInPlaceObject *self, RECT* lprcPosRect, RECT* lprcClipRect) SetObjectRects;
+			public function HRESULT(IOleInPlaceObject *self) ReactivateAndUndo;
+		}
+		[CRepr]
+		public struct IOleInPlaceSite : IOleWindow
+		{
+			public const new Guid IID = .(0x00000119, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IOleInPlaceSite *self) CanInPlaceActivate;
+			public function HRESULT(IOleInPlaceSite *self) OnInPlaceActivate;
+			public function HRESULT(IOleInPlaceSite *self) OnUIActivate;
+			public function HRESULT(IOleInPlaceSite *self, IOleInPlaceFrame** ppFrame, IOleInPlaceUIWindow** ppDoc, RECT* lprcPosRect, RECT* lprcClipRect, OIFI* lpFrameInfo) GetWindowContext;
+			public function HRESULT(IOleInPlaceSite *self, SIZE scrollExtant) Scroll;
+			public function HRESULT(IOleInPlaceSite *self, BOOL fUndoable) OnUIDeactivate;
+			public function HRESULT(IOleInPlaceSite *self) OnInPlaceDeactivate;
+			public function HRESULT(IOleInPlaceSite *self) DiscardUndoState;
+			public function HRESULT(IOleInPlaceSite *self) DeactivateAndUndo;
+			public function HRESULT(IOleInPlaceSite *self, RECT* lprcPosRect) OnPosRectChange;
+		}
+		[CRepr]
+		public struct IContinue : IUnknown
+		{
+			public const new Guid IID = .(0x0000012a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IContinue *self) FContinue;
+		}
+		[CRepr]
+		public struct IViewObject : IUnknown
+		{
+			public const new Guid IID = .(0x0000010d, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IViewObject *self, uint32 dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcTargetDev, HDC hdcDraw, RECTL* lprcBounds, RECTL* lprcWBounds, int pfnContinue, uint dwContinue) Draw;
+			public function HRESULT(IViewObject *self, uint32 dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hicTargetDev, LOGPALETTE** ppColorSet) GetColorSet;
+			public function HRESULT(IViewObject *self, uint32 dwDrawAspect, int32 lindex, void* pvAspect, uint32* pdwFreeze) Freeze;
+			public function HRESULT(IViewObject *self, uint32 dwFreeze) Unfreeze;
+			public function HRESULT(IViewObject *self, uint32 aspects, uint32 advf, IAdviseSink* pAdvSink) SetAdvise;
+			public function HRESULT(IViewObject *self, uint32* pAspects, uint32* pAdvf, IAdviseSink** ppAdvSink) GetAdvise;
+		}
+		[CRepr]
+		public struct IViewObject2 : IViewObject
+		{
+			public const new Guid IID = .(0x00000127, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IViewObject2 *self, uint32 dwDrawAspect, int32 lindex, DVTARGETDEVICE* ptd, SIZE* lpsizel) GetExtent;
+		}
+		[CRepr]
+		public struct IDropSource : IUnknown
+		{
+			public const new Guid IID = .(0x00000121, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IDropSource *self, BOOL fEscapePressed, uint32 grfKeyState) QueryContinueDrag;
+			public function HRESULT(IDropSource *self, uint32 dwEffect) GiveFeedback;
+		}
+		[CRepr]
+		public struct IDropTarget : IUnknown
+		{
+			public const new Guid IID = .(0x00000122, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IDropTarget *self, IDataObject* pDataObj, uint32 grfKeyState, POINTL pt, uint32* pdwEffect) DragEnter;
+			public function HRESULT(IDropTarget *self, uint32 grfKeyState, POINTL pt, uint32* pdwEffect) DragOver;
+			public function HRESULT(IDropTarget *self) DragLeave;
+			public function HRESULT(IDropTarget *self, IDataObject* pDataObj, uint32 grfKeyState, POINTL pt, uint32* pdwEffect) Drop;
+		}
+		[CRepr]
+		public struct IDropSourceNotify : IUnknown
+		{
+			public const new Guid IID = .(0x0000012b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IDropSourceNotify *self, HWND hwndTarget) DragEnterTarget;
+			public function HRESULT(IDropSourceNotify *self) DragLeaveTarget;
+		}
+		[CRepr]
+		public struct IEnterpriseDropTarget : IUnknown
+		{
+			public const new Guid IID = .(0x390e3878, 0xfd55, 0x4e18, 0x81, 0x9d, 0x46, 0x82, 0x08, 0x1c, 0x0c, 0xfd);
+			
+			public function HRESULT(IEnterpriseDropTarget *self, PWSTR identity) SetDropSourceEnterpriseId;
+			public function HRESULT(IEnterpriseDropTarget *self, BOOL* value) IsEvaluatingEdpPolicy;
+		}
+		[CRepr]
+		public struct IEnumOLEVERB : IUnknown
+		{
+			public const new Guid IID = .(0x00000104, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IEnumOLEVERB *self, uint32 celt, OLEVERB* rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumOLEVERB *self, uint32 celt) Skip;
+			public function HRESULT(IEnumOLEVERB *self) Reset;
+			public function HRESULT(IEnumOLEVERB *self, IEnumOLEVERB** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IClassFactory2 : IClassFactory
+		{
+			public const new Guid IID = .(0xb196b28f, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
+			
+			public function HRESULT(IClassFactory2 *self, LICINFO* pLicInfo) GetLicInfo;
+			public function HRESULT(IClassFactory2 *self, uint32 dwReserved, BSTR* pBstrKey) RequestLicKey;
+			public function HRESULT(IClassFactory2 *self, IUnknown* pUnkOuter, IUnknown* pUnkReserved, Guid* riid, BSTR bstrKey, void** ppvObj) CreateInstanceLic;
+		}
+		[CRepr]
+		public struct IProvideClassInfo : IUnknown
+		{
+			public const new Guid IID = .(0xb196b283, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
+			
+			public function HRESULT(IProvideClassInfo *self, ITypeInfo** ppTI) GetClassInfo;
+		}
+		[CRepr]
+		public struct IProvideClassInfo2 : IProvideClassInfo
+		{
+			public const new Guid IID = .(0xa6bc3ac0, 0xdbaa, 0x11ce, 0x9d, 0xe3, 0x00, 0xaa, 0x00, 0x4b, 0xb8, 0x51);
+			
+			public function HRESULT(IProvideClassInfo2 *self, uint32 dwGuidKind, Guid* pGUID) GetGUID;
+		}
+		[CRepr]
+		public struct IProvideMultipleClassInfo : IProvideClassInfo2
+		{
+			public const new Guid IID = .(0xa7aba9c1, 0x8983, 0x11cf, 0x8f, 0x20, 0x00, 0x80, 0x5f, 0x2c, 0xd0, 0x64);
+			
+			public function HRESULT(IProvideMultipleClassInfo *self, uint32* pcti) GetMultiTypeInfoCount;
+			public function HRESULT(IProvideMultipleClassInfo *self, uint32 iti, MULTICLASSINFO_FLAGS dwFlags, ITypeInfo** pptiCoClass, uint32* pdwTIFlags, uint32* pcdispidReserved, Guid* piidPrimary, Guid* piidSource) GetInfoOfIndex;
+		}
+		[CRepr]
+		public struct IOleControl : IUnknown
+		{
+			public const new Guid IID = .(0xb196b288, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
+			
+			public function HRESULT(IOleControl *self, CONTROLINFO* pCI) GetControlInfo;
+			public function HRESULT(IOleControl *self, MSG* pMsg) OnMnemonic;
+			public function HRESULT(IOleControl *self, int32 dispID) OnAmbientPropertyChange;
+			public function HRESULT(IOleControl *self, BOOL bFreeze) FreezeEvents;
+		}
+		[CRepr]
+		public struct IOleControlSite : IUnknown
+		{
+			public const new Guid IID = .(0xb196b289, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
+			
+			public function HRESULT(IOleControlSite *self) OnControlInfoChanged;
+			public function HRESULT(IOleControlSite *self, BOOL fLock) LockInPlaceActive;
+			public function HRESULT(IOleControlSite *self, IDispatch** ppDisp) GetExtendedControl;
+			public function HRESULT(IOleControlSite *self, POINTL* pPtlHimetric, POINTF* pPtfContainer, XFORMCOORDS dwFlags) TransformCoords;
+			public function HRESULT(IOleControlSite *self, MSG* pMsg, uint32 grfModifiers) TranslateAccelerator;
+			public function HRESULT(IOleControlSite *self, BOOL fGotFocus) OnFocus;
+			public function HRESULT(IOleControlSite *self) ShowPropertyFrame;
+		}
+		[CRepr]
+		public struct IPropertyPage : IUnknown
+		{
+			public const new Guid IID = .(0xb196b28d, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
+			
+			public function HRESULT(IPropertyPage *self, IPropertyPageSite* pPageSite) SetPageSite;
+			public function HRESULT(IPropertyPage *self, HWND hWndParent, RECT* pRect, BOOL bModal) Activate;
+			public function HRESULT(IPropertyPage *self) Deactivate;
+			public function HRESULT(IPropertyPage *self, PROPPAGEINFO* pPageInfo) GetPageInfo;
+			public function HRESULT(IPropertyPage *self, uint32 cObjects, IUnknown** ppUnk) SetObjects;
+			public function HRESULT(IPropertyPage *self, uint32 nCmdShow) Show;
+			public function HRESULT(IPropertyPage *self, RECT* pRect) Move;
+			public function HRESULT(IPropertyPage *self) IsPageDirty;
+			public function HRESULT(IPropertyPage *self) Apply;
+			public function HRESULT(IPropertyPage *self, PWSTR pszHelpDir) Help;
+			public function HRESULT(IPropertyPage *self, MSG* pMsg) TranslateAccelerator;
+		}
+		[CRepr]
+		public struct IPropertyPage2 : IPropertyPage
+		{
+			public const new Guid IID = .(0x01e44665, 0x24ac, 0x101b, 0x84, 0xed, 0x08, 0x00, 0x2b, 0x2e, 0xc7, 0x13);
+			
+			public function HRESULT(IPropertyPage2 *self, int32 dispID) EditProperty;
+		}
+		[CRepr]
+		public struct IPropertyPageSite : IUnknown
+		{
+			public const new Guid IID = .(0xb196b28c, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
+			
+			public function HRESULT(IPropertyPageSite *self, PROPPAGESTATUS dwFlags) OnStatusChange;
+			public function HRESULT(IPropertyPageSite *self, uint32* pLocaleID) GetLocaleID;
+			public function HRESULT(IPropertyPageSite *self, IUnknown** ppUnk) GetPageContainer;
+			public function HRESULT(IPropertyPageSite *self, MSG* pMsg) TranslateAccelerator;
+		}
+		[CRepr]
+		public struct IPropertyNotifySink : IUnknown
+		{
+			public const new Guid IID = .(0x9bfbbc02, 0xeff1, 0x101a, 0x84, 0xed, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
+			
+			public function HRESULT(IPropertyNotifySink *self, int32 dispID) OnChanged;
+			public function HRESULT(IPropertyNotifySink *self, int32 dispID) OnRequestEdit;
+		}
+		[CRepr]
+		public struct ISpecifyPropertyPages : IUnknown
+		{
+			public const new Guid IID = .(0xb196b28b, 0xbab4, 0x101a, 0xb6, 0x9c, 0x00, 0xaa, 0x00, 0x34, 0x1d, 0x07);
+			
+			public function HRESULT(ISpecifyPropertyPages *self, CAUUID* pPages) GetPages;
+		}
+		[CRepr]
+		public struct IPersistPropertyBag : IPersist
+		{
+			public const new Guid IID = .(0x37d84f60, 0x42cb, 0x11ce, 0x81, 0x35, 0x00, 0xaa, 0x00, 0x4b, 0xb8, 0x51);
+			
+			public function HRESULT(IPersistPropertyBag *self) InitNew;
+			public function HRESULT(IPersistPropertyBag *self, IPropertyBag* pPropBag, IErrorLog* pErrorLog) Load;
+			public function HRESULT(IPersistPropertyBag *self, IPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties) Save;
+		}
+		[CRepr]
+		public struct ISimpleFrameSite : IUnknown
+		{
+			public const new Guid IID = .(0x742b0e01, 0x14e6, 0x101b, 0x91, 0x4e, 0x00, 0xaa, 0x00, 0x30, 0x0c, 0xab);
+			
+			public function HRESULT(ISimpleFrameSite *self, HWND hWnd, uint32 msg, WPARAM wp, LPARAM lp, LRESULT* plResult, uint32* pdwCookie) PreMessageFilter;
+			public function HRESULT(ISimpleFrameSite *self, HWND hWnd, uint32 msg, WPARAM wp, LPARAM lp, LRESULT* plResult, uint32 dwCookie) PostMessageFilter;
+		}
+		[CRepr]
+		public struct IFont : IUnknown
+		{
+			public const new Guid IID = .(0xbef6e002, 0xa874, 0x101a, 0x8b, 0xba, 0x00, 0xaa, 0x00, 0x30, 0x0c, 0xab);
+			
+			public function HRESULT(IFont *self, BSTR* pName) get_Name;
+			public function HRESULT(IFont *self, BSTR name) put_Name;
+			public function HRESULT(IFont *self, CY* pSize) get_Size;
+			public function HRESULT(IFont *self, CY size) put_Size;
+			public function HRESULT(IFont *self, BOOL* pBold) get_Bold;
+			public function HRESULT(IFont *self, BOOL bold) put_Bold;
+			public function HRESULT(IFont *self, BOOL* pItalic) get_Italic;
+			public function HRESULT(IFont *self, BOOL italic) put_Italic;
+			public function HRESULT(IFont *self, BOOL* pUnderline) get_Underline;
+			public function HRESULT(IFont *self, BOOL underline) put_Underline;
+			public function HRESULT(IFont *self, BOOL* pStrikethrough) get_Strikethrough;
+			public function HRESULT(IFont *self, BOOL strikethrough) put_Strikethrough;
+			public function HRESULT(IFont *self, int16* pWeight) get_Weight;
+			public function HRESULT(IFont *self, int16 weight) put_Weight;
+			public function HRESULT(IFont *self, int16* pCharset) get_Charset;
+			public function HRESULT(IFont *self, int16 charset) put_Charset;
+			public function HRESULT(IFont *self, HFONT* phFont) get_hFont;
+			public function HRESULT(IFont *self, IFont** ppFont) Clone;
+			public function HRESULT(IFont *self, IFont* pFontOther) IsEqual;
+			public function HRESULT(IFont *self, int32 cyLogical, int32 cyHimetric) SetRatio;
+			public function HRESULT(IFont *self, TEXTMETRICW* pTM) QueryTextMetrics;
+			public function HRESULT(IFont *self, HFONT hFont) AddRefHfont;
+			public function HRESULT(IFont *self, HFONT hFont) ReleaseHfont;
+			public function HRESULT(IFont *self, HDC hDC) SetHdc;
+		}
+		[CRepr]
+		public struct IPicture : IUnknown
+		{
+			public const new Guid IID = .(0x7bf80980, 0xbf32, 0x101a, 0x8b, 0xbb, 0x00, 0xaa, 0x00, 0x30, 0x0c, 0xab);
+			
+			public function HRESULT(IPicture *self, uint32* pHandle) get_Handle;
+			public function HRESULT(IPicture *self, uint32* phPal) get_hPal;
+			public function HRESULT(IPicture *self, int16* pType) get_Type;
+			public function HRESULT(IPicture *self, int32* pWidth) get_Width;
+			public function HRESULT(IPicture *self, int32* pHeight) get_Height;
+			public function HRESULT(IPicture *self, HDC hDC, int32 x, int32 y, int32 cx, int32 cy, int32 xSrc, int32 ySrc, int32 cxSrc, int32 cySrc, RECT* pRcWBounds) Render;
+			public function HRESULT(IPicture *self, uint32 hPal) set_hPal;
+			public function HRESULT(IPicture *self, HDC* phDC) get_CurDC;
+			public function HRESULT(IPicture *self, HDC hDCIn, HDC* phDCOut, uint32* phBmpOut) SelectPicture;
+			public function HRESULT(IPicture *self, BOOL* pKeep) get_KeepOriginalFormat;
+			public function HRESULT(IPicture *self, BOOL keep) put_KeepOriginalFormat;
+			public function HRESULT(IPicture *self) PictureChanged;
+			public function HRESULT(IPicture *self, IStream* pStream, BOOL fSaveMemCopy, int32* pCbSize) SaveAsFile;
+			public function HRESULT(IPicture *self, uint32* pDwAttr) get_Attributes;
+		}
+		[CRepr]
+		public struct IPicture2 : IUnknown
+		{
+			public const new Guid IID = .(0xf5185dd8, 0x2012, 0x4b0b, 0xaa, 0xd9, 0xf0, 0x52, 0xc6, 0xbd, 0x48, 0x2b);
+			
+			public function HRESULT(IPicture2 *self, uint* pHandle) get_Handle;
+			public function HRESULT(IPicture2 *self, uint* phPal) get_hPal;
+			public function HRESULT(IPicture2 *self, int16* pType) get_Type;
+			public function HRESULT(IPicture2 *self, int32* pWidth) get_Width;
+			public function HRESULT(IPicture2 *self, int32* pHeight) get_Height;
+			public function HRESULT(IPicture2 *self, HDC hDC, int32 x, int32 y, int32 cx, int32 cy, int32 xSrc, int32 ySrc, int32 cxSrc, int32 cySrc, RECT* pRcWBounds) Render;
+			public function HRESULT(IPicture2 *self, uint hPal) set_hPal;
+			public function HRESULT(IPicture2 *self, HDC* phDC) get_CurDC;
+			public function HRESULT(IPicture2 *self, HDC hDCIn, HDC* phDCOut, uint* phBmpOut) SelectPicture;
+			public function HRESULT(IPicture2 *self, BOOL* pKeep) get_KeepOriginalFormat;
+			public function HRESULT(IPicture2 *self, BOOL keep) put_KeepOriginalFormat;
+			public function HRESULT(IPicture2 *self) PictureChanged;
+			public function HRESULT(IPicture2 *self, IStream* pStream, BOOL fSaveMemCopy, int32* pCbSize) SaveAsFile;
+			public function HRESULT(IPicture2 *self, uint32* pDwAttr) get_Attributes;
+		}
+		[CRepr]
+		public struct IFontEventsDisp : IDispatch
+		{
+			public const new Guid IID = .(0x4ef6100a, 0xaf88, 0x11d0, 0x98, 0x46, 0x00, 0xc0, 0x4f, 0xc2, 0x99, 0x93);
+			
+		}
+		[CRepr]
+		public struct IFontDisp : IDispatch
+		{
+			public const new Guid IID = .(0xbef6e003, 0xa874, 0x101a, 0x8b, 0xba, 0x00, 0xaa, 0x00, 0x30, 0x0c, 0xab);
+			
+		}
+		[CRepr]
+		public struct IPictureDisp : IDispatch
+		{
+			public const new Guid IID = .(0x7bf80981, 0xbf32, 0x101a, 0x8b, 0xbb, 0x00, 0xaa, 0x00, 0x30, 0x0c, 0xab);
+			
+		}
+		[CRepr]
+		public struct IOleInPlaceObjectWindowless : IOleInPlaceObject
+		{
+			public const new Guid IID = .(0x1c2056cc, 0x5ef4, 0x101b, 0x8b, 0xc8, 0x00, 0xaa, 0x00, 0x3e, 0x3b, 0x29);
+			
+			public function HRESULT(IOleInPlaceObjectWindowless *self, uint32 msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) OnWindowMessage;
+			public function HRESULT(IOleInPlaceObjectWindowless *self, IDropTarget** ppDropTarget) GetDropTarget;
+		}
+		[CRepr]
+		public struct IOleInPlaceSiteEx : IOleInPlaceSite
+		{
+			public const new Guid IID = .(0x9c2cad80, 0x3424, 0x11cf, 0xb6, 0x70, 0x00, 0xaa, 0x00, 0x4c, 0xd6, 0xd8);
+			
+			public function HRESULT(IOleInPlaceSiteEx *self, BOOL* pfNoRedraw, uint32 dwFlags) OnInPlaceActivateEx;
+			public function HRESULT(IOleInPlaceSiteEx *self, BOOL fNoRedraw) OnInPlaceDeactivateEx;
+			public function HRESULT(IOleInPlaceSiteEx *self) RequestUIActivate;
+		}
+		[CRepr]
+		public struct IOleInPlaceSiteWindowless : IOleInPlaceSiteEx
+		{
+			public const new Guid IID = .(0x922eada0, 0x3424, 0x11cf, 0xb6, 0x70, 0x00, 0xaa, 0x00, 0x4c, 0xd6, 0xd8);
+			
+			public function HRESULT(IOleInPlaceSiteWindowless *self) CanWindowlessActivate;
+			public function HRESULT(IOleInPlaceSiteWindowless *self) GetCapture;
+			public function HRESULT(IOleInPlaceSiteWindowless *self, BOOL fCapture) SetCapture;
+			public function HRESULT(IOleInPlaceSiteWindowless *self) GetFocus;
+			public function HRESULT(IOleInPlaceSiteWindowless *self, BOOL fFocus) SetFocus;
+			public function HRESULT(IOleInPlaceSiteWindowless *self, RECT* pRect, uint32 grfFlags, HDC* phDC) GetDC;
+			public function HRESULT(IOleInPlaceSiteWindowless *self, HDC hDC) ReleaseDC;
+			public function HRESULT(IOleInPlaceSiteWindowless *self, RECT* pRect, BOOL fErase) InvalidateRect;
+			public function HRESULT(IOleInPlaceSiteWindowless *self, HRGN hRGN, BOOL fErase) InvalidateRgn;
+			public function HRESULT(IOleInPlaceSiteWindowless *self, int32 dx, int32 dy, RECT* pRectScroll, RECT* pRectClip) ScrollRect;
+			public function HRESULT(IOleInPlaceSiteWindowless *self, RECT* prc) AdjustRect;
+			public function HRESULT(IOleInPlaceSiteWindowless *self, uint32 msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) OnDefWindowMessage;
+		}
+		[CRepr]
+		public struct IViewObjectEx : IViewObject2
+		{
+			public const new Guid IID = .(0x3af24292, 0x0c96, 0x11ce, 0xa0, 0xcf, 0x00, 0xaa, 0x00, 0x60, 0x0a, 0xb8);
+			
+			public function HRESULT(IViewObjectEx *self, uint32 dwAspect, RECTL* pRect) GetRect;
+			public function HRESULT(IViewObjectEx *self, uint32* pdwStatus) GetViewStatus;
+			public function HRESULT(IViewObjectEx *self, uint32 dwAspect, RECT* pRectBounds, POINT ptlLoc, int32 lCloseHint, uint32* pHitResult) QueryHitPoint;
+			public function HRESULT(IViewObjectEx *self, uint32 dwAspect, RECT* pRectBounds, RECT* pRectLoc, int32 lCloseHint, uint32* pHitResult) QueryHitRect;
+			public function HRESULT(IViewObjectEx *self, DVASPECT dwAspect, int32 lindex, DVTARGETDEVICE* ptd, HDC hicTargetDev, ExtentInfo* pExtentInfo, SIZE* pSizel) GetNaturalExtent;
+		}
+		[CRepr]
+		public struct IOleUndoUnit : IUnknown
+		{
+			public const new Guid IID = .(0x894ad3b0, 0xef97, 0x11ce, 0x9b, 0xc9, 0x00, 0xaa, 0x00, 0x60, 0x8e, 0x01);
+			
+			public function HRESULT(IOleUndoUnit *self, IOleUndoManager* pUndoManager) Do;
+			public function HRESULT(IOleUndoUnit *self, BSTR* pBstr) GetDescription;
+			public function HRESULT(IOleUndoUnit *self, Guid* pClsid, int32* plID) GetUnitType;
+			public function HRESULT(IOleUndoUnit *self) OnNextAdd;
+		}
+		[CRepr]
+		public struct IOleParentUndoUnit : IOleUndoUnit
+		{
+			public const new Guid IID = .(0xa1faf330, 0xef97, 0x11ce, 0x9b, 0xc9, 0x00, 0xaa, 0x00, 0x60, 0x8e, 0x01);
+			
+			public function HRESULT(IOleParentUndoUnit *self, IOleParentUndoUnit* pPUU) Open;
+			public function HRESULT(IOleParentUndoUnit *self, IOleParentUndoUnit* pPUU, BOOL fCommit) Close;
+			public function HRESULT(IOleParentUndoUnit *self, IOleUndoUnit* pUU) Add;
+			public function HRESULT(IOleParentUndoUnit *self, IOleUndoUnit* pUU) FindUnit;
+			public function HRESULT(IOleParentUndoUnit *self, uint32* pdwState) GetParentState;
+		}
+		[CRepr]
+		public struct IEnumOleUndoUnits : IUnknown
+		{
+			public const new Guid IID = .(0xb3e7c340, 0xef97, 0x11ce, 0x9b, 0xc9, 0x00, 0xaa, 0x00, 0x60, 0x8e, 0x01);
+			
+			public function HRESULT(IEnumOleUndoUnits *self, uint32 cElt, IOleUndoUnit** rgElt, uint32* pcEltFetched) Next;
+			public function HRESULT(IEnumOleUndoUnits *self, uint32 cElt) Skip;
+			public function HRESULT(IEnumOleUndoUnits *self) Reset;
+			public function HRESULT(IEnumOleUndoUnits *self, IEnumOleUndoUnits** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IOleUndoManager : IUnknown
+		{
+			public const new Guid IID = .(0xd001f200, 0xef97, 0x11ce, 0x9b, 0xc9, 0x00, 0xaa, 0x00, 0x60, 0x8e, 0x01);
+			
+			public function HRESULT(IOleUndoManager *self, IOleParentUndoUnit* pPUU) Open;
+			public function HRESULT(IOleUndoManager *self, IOleParentUndoUnit* pPUU, BOOL fCommit) Close;
+			public function HRESULT(IOleUndoManager *self, IOleUndoUnit* pUU) Add;
+			public function HRESULT(IOleUndoManager *self, uint32* pdwState) GetOpenParentState;
+			public function HRESULT(IOleUndoManager *self, IOleUndoUnit* pUU) DiscardFrom;
+			public function HRESULT(IOleUndoManager *self, IOleUndoUnit* pUU) UndoTo;
+			public function HRESULT(IOleUndoManager *self, IOleUndoUnit* pUU) RedoTo;
+			public function HRESULT(IOleUndoManager *self, IEnumOleUndoUnits** ppEnum) EnumUndoable;
+			public function HRESULT(IOleUndoManager *self, IEnumOleUndoUnits** ppEnum) EnumRedoable;
+			public function HRESULT(IOleUndoManager *self, BSTR* pBstr) GetLastUndoDescription;
+			public function HRESULT(IOleUndoManager *self, BSTR* pBstr) GetLastRedoDescription;
+			public function HRESULT(IOleUndoManager *self, BOOL fEnable) Enable;
+		}
+		[CRepr]
+		public struct IPointerInactive : IUnknown
+		{
+			public const new Guid IID = .(0x55980ba0, 0x35aa, 0x11cf, 0xb6, 0x71, 0x00, 0xaa, 0x00, 0x4c, 0xd6, 0xd8);
+			
+			public function HRESULT(IPointerInactive *self, uint32* pdwPolicy) GetActivationPolicy;
+			public function HRESULT(IPointerInactive *self, RECT* pRectBounds, int32 x, int32 y, uint32 grfKeyState) OnInactiveMouseMove;
+			public function HRESULT(IPointerInactive *self, RECT* pRectBounds, int32 x, int32 y, uint32 dwMouseMsg, BOOL fSetAlways) OnInactiveSetCursor;
+		}
+		[CRepr]
+		public struct IObjectWithSite : IUnknown
+		{
+			public const new Guid IID = .(0xfc4801a3, 0x2ba9, 0x11cf, 0xa2, 0x29, 0x00, 0xaa, 0x00, 0x3d, 0x73, 0x52);
+			
+			public function HRESULT(IObjectWithSite *self, IUnknown* pUnkSite) SetSite;
+			public function HRESULT(IObjectWithSite *self, Guid* riid, void** ppvSite) GetSite;
+		}
+		[CRepr]
+		public struct IPerPropertyBrowsing : IUnknown
+		{
+			public const new Guid IID = .(0x376bd3aa, 0x3845, 0x101b, 0x84, 0xed, 0x08, 0x00, 0x2b, 0x2e, 0xc7, 0x13);
+			
+			public function HRESULT(IPerPropertyBrowsing *self, int32 dispID, BSTR* pBstr) GetDisplayString;
+			public function HRESULT(IPerPropertyBrowsing *self, int32 dispID, Guid* pClsid) MapPropertyToPage;
+			public function HRESULT(IPerPropertyBrowsing *self, int32 dispID, CALPOLESTR* pCaStringsOut, CADWORD* pCaCookiesOut) GetPredefinedStrings;
+			public function HRESULT(IPerPropertyBrowsing *self, int32 dispID, uint32 dwCookie, VARIANT* pVarOut) GetPredefinedValue;
+		}
+		[CRepr]
+		public struct IPersistPropertyBag2 : IPersist
+		{
+			public const new Guid IID = .(0x22f55881, 0x280b, 0x11d0, 0xa8, 0xa9, 0x00, 0xa0, 0xc9, 0x0c, 0x20, 0x04);
+			
+			public function HRESULT(IPersistPropertyBag2 *self) InitNew;
+			public function HRESULT(IPersistPropertyBag2 *self, IPropertyBag2* pPropBag, IErrorLog* pErrLog) Load;
+			public function HRESULT(IPersistPropertyBag2 *self, IPropertyBag2* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties) Save;
+			public function HRESULT(IPersistPropertyBag2 *self) IsDirty;
+		}
+		[CRepr]
+		public struct IAdviseSinkEx : IAdviseSink
+		{
+			public const new Guid IID = .(0x3af24290, 0x0c96, 0x11ce, 0xa0, 0xcf, 0x00, 0xaa, 0x00, 0x60, 0x0a, 0xb8);
+			
+			public function void(IAdviseSinkEx *self, uint32 dwViewStatus) OnViewStatusChange;
+		}
+		[CRepr]
+		public struct IQuickActivate : IUnknown
+		{
+			public const new Guid IID = .(0xcf51ed10, 0x62fe, 0x11cf, 0xbf, 0x86, 0x00, 0xa0, 0xc9, 0x03, 0x48, 0x36);
+			
+			public function HRESULT(IQuickActivate *self, QACONTAINER* pQaContainer, QACONTROL* pQaControl) QuickActivate;
+			public function HRESULT(IQuickActivate *self, SIZE* pSizel) SetContentExtent;
+			public function HRESULT(IQuickActivate *self, SIZE* pSizel) GetContentExtent;
+		}
+		[CRepr]
+		public struct IVBGetControl : IUnknown
+		{
+			public const new Guid IID = .(0x40a050a0, 0x3c31, 0x101b, 0xa8, 0x2e, 0x08, 0x00, 0x2b, 0x2b, 0x23, 0x37);
+			
+			public function HRESULT(IVBGetControl *self, OLECONTF dwOleContF, ENUM_CONTROLS_WHICH_FLAGS dwWhich, IEnumUnknown** ppenumUnk) EnumControls;
+		}
+		[CRepr]
+		public struct IGetOleObject : IUnknown
+		{
+			public const new Guid IID = .(0x8a701da0, 0x4feb, 0x101b, 0xa8, 0x2e, 0x08, 0x00, 0x2b, 0x2b, 0x23, 0x37);
+			
+			public function HRESULT(IGetOleObject *self, Guid* riid, void** ppvObj) GetOleObject;
+		}
+		[CRepr]
+		public struct IVBFormat : IUnknown
+		{
+			public const new Guid IID = .(0x9849fd60, 0x3768, 0x101b, 0x8d, 0x72, 0xae, 0x61, 0x64, 0xff, 0xe3, 0xcf);
+			
+			public function HRESULT(IVBFormat *self, VARIANT* vData, BSTR bstrFormat, void* lpBuffer, uint16 cb, int32 lcid, int16 sFirstDayOfWeek, uint16 sFirstWeekOfYear, uint16* rcb) Format;
+		}
+		[CRepr]
+		public struct IGetVBAObject : IUnknown
+		{
+			public const new Guid IID = .(0x91733a60, 0x3f4c, 0x101b, 0xa3, 0xf6, 0x00, 0xaa, 0x00, 0x34, 0xe4, 0xe9);
+			
+			public function HRESULT(IGetVBAObject *self, Guid* riid, void** ppvObj, uint32 dwReserved) GetObject;
+		}
+		[CRepr]
+		public struct IOleDocument : IUnknown
+		{
+			public const new Guid IID = .(0xb722bcc5, 0x4e68, 0x101b, 0xa2, 0xbc, 0x00, 0xaa, 0x00, 0x40, 0x47, 0x70);
+			
+			public function HRESULT(IOleDocument *self, IOleInPlaceSite* pIPSite, IStream* pstm, uint32 dwReserved, IOleDocumentView** ppView) CreateView;
+			public function HRESULT(IOleDocument *self, uint32* pdwStatus) GetDocMiscStatus;
+			public function HRESULT(IOleDocument *self, IEnumOleDocumentViews** ppEnum, IOleDocumentView** ppView) EnumViews;
+		}
+		[CRepr]
+		public struct IOleDocumentSite : IUnknown
+		{
+			public const new Guid IID = .(0xb722bcc7, 0x4e68, 0x101b, 0xa2, 0xbc, 0x00, 0xaa, 0x00, 0x40, 0x47, 0x70);
+			
+			public function HRESULT(IOleDocumentSite *self, IOleDocumentView* pViewToActivate) ActivateMe;
+		}
+		[CRepr]
+		public struct IOleDocumentView : IUnknown
+		{
+			public const new Guid IID = .(0xb722bcc6, 0x4e68, 0x101b, 0xa2, 0xbc, 0x00, 0xaa, 0x00, 0x40, 0x47, 0x70);
+			
+			public function HRESULT(IOleDocumentView *self, IOleInPlaceSite* pIPSite) SetInPlaceSite;
+			public function HRESULT(IOleDocumentView *self, IOleInPlaceSite** ppIPSite) GetInPlaceSite;
+			public function HRESULT(IOleDocumentView *self, IUnknown** ppunk) GetDocument;
+			public function HRESULT(IOleDocumentView *self, RECT* prcView) SetRect;
+			public function HRESULT(IOleDocumentView *self, RECT* prcView) GetRect;
+			public function HRESULT(IOleDocumentView *self, RECT* prcView, RECT* prcHScroll, RECT* prcVScroll, RECT* prcSizeBox) SetRectComplex;
+			public function HRESULT(IOleDocumentView *self, BOOL fShow) Show;
+			public function HRESULT(IOleDocumentView *self, BOOL fUIActivate) UIActivate;
+			public function HRESULT(IOleDocumentView *self) Open;
+			public function HRESULT(IOleDocumentView *self, uint32 dwReserved) CloseView;
+			public function HRESULT(IOleDocumentView *self, IStream* pstm) SaveViewState;
+			public function HRESULT(IOleDocumentView *self, IStream* pstm) ApplyViewState;
+			public function HRESULT(IOleDocumentView *self, IOleInPlaceSite* pIPSiteNew, IOleDocumentView** ppViewNew) Clone;
+		}
+		[CRepr]
+		public struct IEnumOleDocumentViews : IUnknown
+		{
+			public const new Guid IID = .(0xb722bcc8, 0x4e68, 0x101b, 0xa2, 0xbc, 0x00, 0xaa, 0x00, 0x40, 0x47, 0x70);
+			
+			public function HRESULT(IEnumOleDocumentViews *self, uint32 cViews, IOleDocumentView** rgpView, uint32* pcFetched) Next;
+			public function HRESULT(IEnumOleDocumentViews *self, uint32 cViews) Skip;
+			public function HRESULT(IEnumOleDocumentViews *self) Reset;
+			public function HRESULT(IEnumOleDocumentViews *self, IEnumOleDocumentViews** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IContinueCallback : IUnknown
+		{
+			public const new Guid IID = .(0xb722bcca, 0x4e68, 0x101b, 0xa2, 0xbc, 0x00, 0xaa, 0x00, 0x40, 0x47, 0x70);
+			
+			public function HRESULT(IContinueCallback *self) FContinue;
+			public function HRESULT(IContinueCallback *self, int32 nCntPrinted, int32 nCurPage, PWSTR pwszPrintStatus) FContinuePrinting;
+		}
+		[CRepr]
+		public struct IPrint : IUnknown
+		{
+			public const new Guid IID = .(0xb722bcc9, 0x4e68, 0x101b, 0xa2, 0xbc, 0x00, 0xaa, 0x00, 0x40, 0x47, 0x70);
+			
+			public function HRESULT(IPrint *self, int32 nFirstPage) SetInitialPageNum;
+			public function HRESULT(IPrint *self, int32* pnFirstPage, int32* pcPages) GetPageInfo;
+			public function HRESULT(IPrint *self, uint32 grfFlags, DVTARGETDEVICE** pptd, PAGESET** ppPageSet, STGMEDIUM* pstgmOptions, IContinueCallback* pcallback, int32 nFirstPage, int32* pcPagesPrinted, int32* pnLastPage) Print;
+		}
+		[CRepr]
+		public struct IOleCommandTarget : IUnknown
+		{
+			public const new Guid IID = .(0xb722bccb, 0x4e68, 0x101b, 0xa2, 0xbc, 0x00, 0xaa, 0x00, 0x40, 0x47, 0x70);
+			
+			public function HRESULT(IOleCommandTarget *self, Guid* pguidCmdGroup, uint32 cCmds, OLECMD* prgCmds, OLECMDTEXT* pCmdText) QueryStatus;
+			public function HRESULT(IOleCommandTarget *self, Guid* pguidCmdGroup, uint32 nCmdID, uint32 nCmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut) Exec;
+		}
+		[CRepr]
+		public struct IZoomEvents : IUnknown
+		{
+			public const new Guid IID = .(0x41b68150, 0x904c, 0x4e17, 0xa0, 0xba, 0xa4, 0x38, 0x18, 0x2e, 0x35, 0x9d);
+			
+			public function HRESULT(IZoomEvents *self, uint32 ulZoomPercent) OnZoomPercentChanged;
+		}
+		[CRepr]
+		public struct IProtectFocus : IUnknown
+		{
+			public const new Guid IID = .(0xd81f90a3, 0x8156, 0x44f7, 0xad, 0x28, 0x5a, 0xbb, 0x87, 0x00, 0x32, 0x74);
+			
+			public function HRESULT(IProtectFocus *self, BOOL* pfAllow) AllowFocusChange;
+		}
+		[CRepr]
+		public struct IProtectedModeMenuServices : IUnknown
+		{
+			public const new Guid IID = .(0x73c105ee, 0x9dff, 0x4a07, 0xb8, 0x3c, 0x7e, 0xff, 0x29, 0x0c, 0x26, 0x6e);
+			
+			public function HRESULT(IProtectedModeMenuServices *self, HMENU* phMenu) CreateMenu;
+			public function HRESULT(IProtectedModeMenuServices *self, PWSTR pszModuleName, PWSTR pszMenuName, HMENU* phMenu) LoadMenu;
+			public function HRESULT(IProtectedModeMenuServices *self, PWSTR pszModuleName, uint16 wResourceID, HMENU* phMenu) LoadMenuID;
+		}
+		[CRepr]
+		public struct IOleUILinkContainerW : IUnknown
+		{
+			public function uint32(IOleUILinkContainerW *self, uint32 dwLink) GetNextLink;
+			public function HRESULT(IOleUILinkContainerW *self, uint32 dwLink, uint32 dwUpdateOpt) SetLinkUpdateOptions;
+			public function HRESULT(IOleUILinkContainerW *self, uint32 dwLink, uint32* lpdwUpdateOpt) GetLinkUpdateOptions;
+			public function HRESULT(IOleUILinkContainerW *self, uint32 dwLink, PWSTR lpszDisplayName, uint32 lenFileName, uint32* pchEaten, BOOL fValidateSource) SetLinkSource;
+			public function HRESULT(IOleUILinkContainerW *self, uint32 dwLink, PWSTR* lplpszDisplayName, uint32* lplenFileName, PWSTR* lplpszFullLinkType, PWSTR* lplpszShortLinkType, BOOL* lpfSourceAvailable, BOOL* lpfIsSelected) GetLinkSource;
+			public function HRESULT(IOleUILinkContainerW *self, uint32 dwLink) OpenLinkSource;
+			public function HRESULT(IOleUILinkContainerW *self, uint32 dwLink, BOOL fErrorMessage, BOOL fReserved) UpdateLink;
+			public function HRESULT(IOleUILinkContainerW *self, uint32 dwLink) CancelLink;
+		}
+		[CRepr]
+		public struct IOleUILinkContainerA : IUnknown
+		{
+			public function uint32(IOleUILinkContainerA *self, uint32 dwLink) GetNextLink;
+			public function HRESULT(IOleUILinkContainerA *self, uint32 dwLink, uint32 dwUpdateOpt) SetLinkUpdateOptions;
+			public function HRESULT(IOleUILinkContainerA *self, uint32 dwLink, uint32* lpdwUpdateOpt) GetLinkUpdateOptions;
+			public function HRESULT(IOleUILinkContainerA *self, uint32 dwLink, PSTR lpszDisplayName, uint32 lenFileName, uint32* pchEaten, BOOL fValidateSource) SetLinkSource;
+			public function HRESULT(IOleUILinkContainerA *self, uint32 dwLink, PSTR* lplpszDisplayName, uint32* lplenFileName, PSTR* lplpszFullLinkType, PSTR* lplpszShortLinkType, BOOL* lpfSourceAvailable, BOOL* lpfIsSelected) GetLinkSource;
+			public function HRESULT(IOleUILinkContainerA *self, uint32 dwLink) OpenLinkSource;
+			public function HRESULT(IOleUILinkContainerA *self, uint32 dwLink, BOOL fErrorMessage, BOOL fReserved) UpdateLink;
+			public function HRESULT(IOleUILinkContainerA *self, uint32 dwLink) CancelLink;
+		}
+		[CRepr]
+		public struct IOleUIObjInfoW : IUnknown
+		{
+			public function HRESULT(IOleUIObjInfoW *self, uint32 dwObject, uint32* lpdwObjSize, PWSTR* lplpszLabel, PWSTR* lplpszType, PWSTR* lplpszShortType, PWSTR* lplpszLocation) GetObjectInfo;
+			public function HRESULT(IOleUIObjInfoW *self, uint32 dwObject, Guid* lpClassID, uint16* lpwFormat, Guid* lpConvertDefaultClassID, Guid** lplpClsidExclude, uint32* lpcClsidExclude) GetConvertInfo;
+			public function HRESULT(IOleUIObjInfoW *self, uint32 dwObject, Guid* clsidNew) ConvertObject;
+			public function HRESULT(IOleUIObjInfoW *self, uint32 dwObject, int* phMetaPict, uint32* pdvAspect, int32* pnCurrentScale) GetViewInfo;
+			public function HRESULT(IOleUIObjInfoW *self, uint32 dwObject, int hMetaPict, uint32 dvAspect, int32 nCurrentScale, BOOL bRelativeToOrig) SetViewInfo;
+		}
+		[CRepr]
+		public struct IOleUIObjInfoA : IUnknown
+		{
+			public function HRESULT(IOleUIObjInfoA *self, uint32 dwObject, uint32* lpdwObjSize, PSTR* lplpszLabel, PSTR* lplpszType, PSTR* lplpszShortType, PSTR* lplpszLocation) GetObjectInfo;
+			public function HRESULT(IOleUIObjInfoA *self, uint32 dwObject, Guid* lpClassID, uint16* lpwFormat, Guid* lpConvertDefaultClassID, Guid** lplpClsidExclude, uint32* lpcClsidExclude) GetConvertInfo;
+			public function HRESULT(IOleUIObjInfoA *self, uint32 dwObject, Guid* clsidNew) ConvertObject;
+			public function HRESULT(IOleUIObjInfoA *self, uint32 dwObject, int* phMetaPict, uint32* pdvAspect, int32* pnCurrentScale) GetViewInfo;
+			public function HRESULT(IOleUIObjInfoA *self, uint32 dwObject, int hMetaPict, uint32 dvAspect, int32 nCurrentScale, BOOL bRelativeToOrig) SetViewInfo;
+		}
+		[CRepr]
+		public struct IOleUILinkInfoW : IOleUILinkContainerW
+		{
+			public function HRESULT(IOleUILinkInfoW *self, uint32 dwLink, FILETIME* lpLastUpdate) GetLastUpdate;
+		}
+		[CRepr]
+		public struct IOleUILinkInfoA : IOleUILinkContainerA
+		{
+			public function HRESULT(IOleUILinkInfoA *self, uint32 dwLink, FILETIME* lpLastUpdate) GetLastUpdate;
+		}
+		[CRepr]
+		public struct IDispatchEx : IDispatch
+		{
+			public const new Guid IID = .(0xa6ef9860, 0xc720, 0x11d0, 0x93, 0x37, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
+			
+			public function HRESULT(IDispatchEx *self, BSTR bstrName, uint32 grfdex, int32* pid) GetDispID;
+			public function HRESULT(IDispatchEx *self, int32 id, uint32 lcid, uint16 wFlags, DISPPARAMS* pdp, VARIANT* pvarRes, EXCEPINFO* pei, IServiceProvider* pspCaller) InvokeEx;
+			public function HRESULT(IDispatchEx *self, BSTR bstrName, uint32 grfdex) DeleteMemberByName;
+			public function HRESULT(IDispatchEx *self, int32 id) DeleteMemberByDispID;
+			public function HRESULT(IDispatchEx *self, int32 id, uint32 grfdexFetch, uint32* pgrfdex) GetMemberProperties;
+			public function HRESULT(IDispatchEx *self, int32 id, BSTR* pbstrName) GetMemberName;
+			public function HRESULT(IDispatchEx *self, uint32 grfdex, int32 id, int32* pid) GetNextDispID;
+			public function HRESULT(IDispatchEx *self, IUnknown** ppunk) GetNameSpaceParent;
+		}
+		[CRepr]
+		public struct IDispError : IUnknown
+		{
+			public const new Guid IID = .(0xa6ef9861, 0xc720, 0x11d0, 0x93, 0x37, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
+			
+			public function HRESULT(IDispError *self, Guid guidErrorType, IDispError** ppde) QueryErrorInfo;
+			public function HRESULT(IDispError *self, IDispError** ppde) GetNext;
+			public function HRESULT(IDispError *self, HRESULT* phr) GetHresult;
+			public function HRESULT(IDispError *self, BSTR* pbstrSource) GetSource;
+			public function HRESULT(IDispError *self, BSTR* pbstrFileName, uint32* pdwContext) GetHelpInfo;
+			public function HRESULT(IDispError *self, BSTR* pbstrDescription) GetDescription;
+		}
+		[CRepr]
+		public struct IVariantChangeType : IUnknown
+		{
+			public const new Guid IID = .(0xa6ef9862, 0xc720, 0x11d0, 0x93, 0x37, 0x00, 0xa0, 0xc9, 0x0d, 0xca, 0xa9);
+			
+			public function HRESULT(IVariantChangeType *self, VARIANT* pvarDst, VARIANT* pvarSrc, uint32 lcid, uint16 vtNew) ChangeType;
+		}
+		[CRepr]
+		public struct IObjectIdentity : IUnknown
+		{
+			public const new Guid IID = .(0xca04b7e6, 0x0d21, 0x11d1, 0x8c, 0xc5, 0x00, 0xc0, 0x4f, 0xc2, 0xb0, 0x85);
+			
+			public function HRESULT(IObjectIdentity *self, IUnknown* punk) IsEqualObject;
+		}
+		[CRepr]
+		public struct ICanHandleException : IUnknown
+		{
+			public const new Guid IID = .(0xc5598e60, 0xb307, 0x11d1, 0xb2, 0x7d, 0x00, 0x60, 0x08, 0xc3, 0xfb, 0xfb);
+			
+			public function HRESULT(ICanHandleException *self, EXCEPINFO* pExcepInfo, VARIANT* pvar) CanHandleException;
+		}
+		[CRepr]
+		public struct IProvideRuntimeContext : IUnknown
+		{
+			public const new Guid IID = .(0x10e2414a, 0xec59, 0x49d2, 0xbc, 0x51, 0x5a, 0xdd, 0x2c, 0x36, 0xfe, 0xbc);
+			
+			public function HRESULT(IProvideRuntimeContext *self, uint* pdwContext, int16* pfExecutingGlobalCode) GetCurrentSourceContext;
+		}
 		
 		// --- Functions ---
 		
@@ -2285,9 +3175,9 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SafeArrayPtrOfIndex(SAFEARRAY* psa, int32* rgIndices, void** ppvData);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SafeArraySetRecordInfo(SAFEARRAY* psa, IRecordInfo prinfo);
+		public static extern HRESULT SafeArraySetRecordInfo(SAFEARRAY* psa, IRecordInfo* prinfo);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SafeArrayGetRecordInfo(SAFEARRAY* psa, IRecordInfo* prinfo);
+		public static extern HRESULT SafeArrayGetRecordInfo(SAFEARRAY* psa, IRecordInfo** prinfo);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SafeArraySetIID(SAFEARRAY* psa, Guid* guid);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2331,7 +3221,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarUI1FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, uint8* pbOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarUI1FromDisp(IDispatch pdispIn, uint32 lcid, uint8* pbOut);
+		public static extern HRESULT VarUI1FromDisp(IDispatch* pdispIn, uint32 lcid, uint8* pbOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarUI1FromBool(int16 boolIn, uint8* pbOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2361,7 +3251,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarI2FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, int16* psOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarI2FromDisp(IDispatch pdispIn, uint32 lcid, int16* psOut);
+		public static extern HRESULT VarI2FromDisp(IDispatch* pdispIn, uint32 lcid, int16* psOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarI2FromBool(int16 boolIn, int16* psOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2391,7 +3281,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarI4FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, int32* plOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarI4FromDisp(IDispatch pdispIn, uint32 lcid, int32* plOut);
+		public static extern HRESULT VarI4FromDisp(IDispatch* pdispIn, uint32 lcid, int32* plOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarI4FromBool(int16 boolIn, int32* plOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2419,7 +3309,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarI8FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, int64* pi64Out);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarI8FromDisp(IDispatch pdispIn, uint32 lcid, int64* pi64Out);
+		public static extern HRESULT VarI8FromDisp(IDispatch* pdispIn, uint32 lcid, int64* pi64Out);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarI8FromBool(int16 boolIn, int64* pi64Out);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2449,7 +3339,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarR4FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, float* pfltOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarR4FromDisp(IDispatch pdispIn, uint32 lcid, float* pfltOut);
+		public static extern HRESULT VarR4FromDisp(IDispatch* pdispIn, uint32 lcid, float* pfltOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarR4FromBool(int16 boolIn, float* pfltOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2479,7 +3369,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarR8FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, double* pdblOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarR8FromDisp(IDispatch pdispIn, uint32 lcid, double* pdblOut);
+		public static extern HRESULT VarR8FromDisp(IDispatch* pdispIn, uint32 lcid, double* pdblOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarR8FromBool(int16 boolIn, double* pdblOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2509,7 +3399,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarDateFromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, double* pdateOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarDateFromDisp(IDispatch pdispIn, uint32 lcid, double* pdateOut);
+		public static extern HRESULT VarDateFromDisp(IDispatch* pdispIn, uint32 lcid, double* pdateOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarDateFromBool(int16 boolIn, double* pdateOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2539,7 +3429,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarCyFromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, CY* pcyOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarCyFromDisp(IDispatch pdispIn, uint32 lcid, CY* pcyOut);
+		public static extern HRESULT VarCyFromDisp(IDispatch* pdispIn, uint32 lcid, CY* pcyOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarCyFromBool(int16 boolIn, CY* pcyOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2569,7 +3459,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarBstrFromDate(double dateIn, uint32 lcid, uint32 dwFlags, BSTR* pbstrOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarBstrFromDisp(IDispatch pdispIn, uint32 lcid, uint32 dwFlags, BSTR* pbstrOut);
+		public static extern HRESULT VarBstrFromDisp(IDispatch* pdispIn, uint32 lcid, uint32 dwFlags, BSTR* pbstrOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarBstrFromBool(int16 boolIn, uint32 lcid, uint32 dwFlags, BSTR* pbstrOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2601,7 +3491,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarBoolFromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, int16* pboolOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarBoolFromDisp(IDispatch pdispIn, uint32 lcid, int16* pboolOut);
+		public static extern HRESULT VarBoolFromDisp(IDispatch* pdispIn, uint32 lcid, int16* pboolOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarBoolFromI1(CHAR cIn, int16* pboolOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2631,7 +3521,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarI1FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, PSTR pcOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarI1FromDisp(IDispatch pdispIn, uint32 lcid, PSTR pcOut);
+		public static extern HRESULT VarI1FromDisp(IDispatch* pdispIn, uint32 lcid, PSTR pcOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarI1FromBool(int16 boolIn, PSTR pcOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2661,7 +3551,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarUI2FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, uint16* puiOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarUI2FromDisp(IDispatch pdispIn, uint32 lcid, uint16* puiOut);
+		public static extern HRESULT VarUI2FromDisp(IDispatch* pdispIn, uint32 lcid, uint16* puiOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarUI2FromBool(int16 boolIn, uint16* puiOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2691,7 +3581,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarUI4FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, uint32* pulOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarUI4FromDisp(IDispatch pdispIn, uint32 lcid, uint32* pulOut);
+		public static extern HRESULT VarUI4FromDisp(IDispatch* pdispIn, uint32 lcid, uint32* pulOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarUI4FromBool(int16 boolIn, uint32* pulOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2719,7 +3609,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarUI8FromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, uint64* pi64Out);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarUI8FromDisp(IDispatch pdispIn, uint32 lcid, uint64* pi64Out);
+		public static extern HRESULT VarUI8FromDisp(IDispatch* pdispIn, uint32 lcid, uint64* pi64Out);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarUI8FromBool(int16 boolIn, uint64* pi64Out);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2749,7 +3639,7 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarDecFromStr(PWSTR strIn, uint32 lcid, uint32 dwFlags, DECIMAL* pdecOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VarDecFromDisp(IDispatch pdispIn, uint32 lcid, DECIMAL* pdecOut);
+		public static extern HRESULT VarDecFromDisp(IDispatch* pdispIn, uint32 lcid, DECIMAL* pdecOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT VarDecFromBool(int16 boolIn, DECIMAL* pdecOut);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2891,49 +3781,49 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 LHashValOfNameSys(SYSKIND syskind, uint32 lcid, PWSTR szName);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT LoadTypeLib(PWSTR szFile, ITypeLib* pptlib);
+		public static extern HRESULT LoadTypeLib(PWSTR szFile, ITypeLib** pptlib);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT LoadTypeLibEx(PWSTR szFile, REGKIND regkind, ITypeLib* pptlib);
+		public static extern HRESULT LoadTypeLibEx(PWSTR szFile, REGKIND regkind, ITypeLib** pptlib);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT LoadRegTypeLib(Guid* rguid, uint16 wVerMajor, uint16 wVerMinor, uint32 lcid, ITypeLib* pptlib);
+		public static extern HRESULT LoadRegTypeLib(Guid* rguid, uint16 wVerMajor, uint16 wVerMinor, uint32 lcid, ITypeLib** pptlib);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT QueryPathOfRegTypeLib(Guid* guid, uint16 wMaj, uint16 wMin, uint32 lcid, uint16** lpbstrPathName);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RegisterTypeLib(ITypeLib ptlib, PWSTR szFullPath, PWSTR szHelpDir);
+		public static extern HRESULT RegisterTypeLib(ITypeLib* ptlib, PWSTR szFullPath, PWSTR szHelpDir);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UnRegisterTypeLib(Guid* libID, uint16 wVerMajor, uint16 wVerMinor, uint32 lcid, SYSKIND syskind);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RegisterTypeLibForUser(ITypeLib ptlib, PWSTR szFullPath, PWSTR szHelpDir);
+		public static extern HRESULT RegisterTypeLibForUser(ITypeLib* ptlib, PWSTR szFullPath, PWSTR szHelpDir);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UnRegisterTypeLibForUser(Guid* libID, uint16 wMajorVerNum, uint16 wMinorVerNum, uint32 lcid, SYSKIND syskind);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateTypeLib(SYSKIND syskind, PWSTR szFile, ICreateTypeLib* ppctlib);
+		public static extern HRESULT CreateTypeLib(SYSKIND syskind, PWSTR szFile, ICreateTypeLib** ppctlib);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateTypeLib2(SYSKIND syskind, PWSTR szFile, ICreateTypeLib2* ppctlib);
+		public static extern HRESULT CreateTypeLib2(SYSKIND syskind, PWSTR szFile, ICreateTypeLib2** ppctlib);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DispGetParam(DISPPARAMS* pdispparams, uint32 position, uint16 vtTarg, VARIANT* pvarResult, uint32* puArgErr);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DispGetIDsOfNames(ITypeInfo ptinfo, PWSTR* rgszNames, uint32 cNames, int32* rgdispid);
+		public static extern HRESULT DispGetIDsOfNames(ITypeInfo* ptinfo, PWSTR* rgszNames, uint32 cNames, int32* rgdispid);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DispInvoke(void* _this, ITypeInfo ptinfo, int32 dispidMember, uint16 wFlags, DISPPARAMS* pparams, VARIANT* pvarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr);
+		public static extern HRESULT DispInvoke(void* _this, ITypeInfo* ptinfo, int32 dispidMember, uint16 wFlags, DISPPARAMS* pparams, VARIANT* pvarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateDispTypeInfo(INTERFACEDATA* pidata, uint32 lcid, ITypeInfo* pptinfo);
+		public static extern HRESULT CreateDispTypeInfo(INTERFACEDATA* pidata, uint32 lcid, ITypeInfo** pptinfo);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateStdDispatch(IUnknown punkOuter, void* pvThis, ITypeInfo ptinfo, IUnknown* ppunkStdDisp);
+		public static extern HRESULT CreateStdDispatch(IUnknown* punkOuter, void* pvThis, ITypeInfo* ptinfo, IUnknown** ppunkStdDisp);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DispCallFunc(void* pvInstance, uint oVft, CALLCONV cc, uint16 vtReturn, uint32 cActuals, uint16* prgvt, VARIANT** prgpvarg, VARIANT* pvargResult);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RegisterActiveObject(IUnknown punk, Guid* rclsid, uint32 dwFlags, uint32* pdwRegister);
+		public static extern HRESULT RegisterActiveObject(IUnknown* punk, Guid* rclsid, uint32 dwFlags, uint32* pdwRegister);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RevokeActiveObject(uint32 dwRegister, void* pvReserved);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetActiveObject(Guid* rclsid, void* pvReserved, IUnknown* ppunk);
+		public static extern HRESULT GetActiveObject(Guid* rclsid, void* pvReserved, IUnknown** ppunk);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateErrorInfo(ICreateErrorInfo* pperrinfo);
+		public static extern HRESULT CreateErrorInfo(ICreateErrorInfo** pperrinfo);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetRecordInfoFromTypeInfo(ITypeInfo pTypeInfo, IRecordInfo* ppRecInfo);
+		public static extern HRESULT GetRecordInfoFromTypeInfo(ITypeInfo* pTypeInfo, IRecordInfo** ppRecInfo);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetRecordInfoFromGuids(Guid* rGuidTypeLib, uint32 uVerMajor, uint32 uVerMinor, uint32 lcid, Guid* rGuidTypeInfo, IRecordInfo* ppRecInfo);
+		public static extern HRESULT GetRecordInfoFromGuids(Guid* rGuidTypeLib, uint32 uVerMajor, uint32 uVerMinor, uint32 lcid, Guid* rGuidTypeInfo, IRecordInfo** ppRecInfo);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 OaBuildVersion();
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -2947,89 +3837,89 @@ namespace Win32
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void OleUninitialize();
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleQueryLinkFromData(IDataObject pSrcDataObject);
+		public static extern HRESULT OleQueryLinkFromData(IDataObject* pSrcDataObject);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleQueryCreateFromData(IDataObject pSrcDataObject);
+		public static extern HRESULT OleQueryCreateFromData(IDataObject* pSrcDataObject);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreate(Guid* rclsid, Guid* riid, uint32 renderopt, FORMATETC* pFormatEtc, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreate(Guid* rclsid, Guid* riid, uint32 renderopt, FORMATETC* pFormatEtc, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateEx(Guid* rclsid, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink lpAdviseSink, uint32* rgdwConnection, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateEx(Guid* rclsid, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink* lpAdviseSink, uint32* rgdwConnection, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateFromData(IDataObject pSrcDataObj, Guid* riid, uint32 renderopt, FORMATETC* pFormatEtc, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateFromData(IDataObject* pSrcDataObj, Guid* riid, uint32 renderopt, FORMATETC* pFormatEtc, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateFromDataEx(IDataObject pSrcDataObj, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink lpAdviseSink, uint32* rgdwConnection, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateFromDataEx(IDataObject* pSrcDataObj, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink* lpAdviseSink, uint32* rgdwConnection, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateLinkFromData(IDataObject pSrcDataObj, Guid* riid, uint32 renderopt, FORMATETC* pFormatEtc, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateLinkFromData(IDataObject* pSrcDataObj, Guid* riid, uint32 renderopt, FORMATETC* pFormatEtc, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateLinkFromDataEx(IDataObject pSrcDataObj, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink lpAdviseSink, uint32* rgdwConnection, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateLinkFromDataEx(IDataObject* pSrcDataObj, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink* lpAdviseSink, uint32* rgdwConnection, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateStaticFromData(IDataObject pSrcDataObj, Guid* iid, uint32 renderopt, FORMATETC* pFormatEtc, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateStaticFromData(IDataObject* pSrcDataObj, Guid* iid, uint32 renderopt, FORMATETC* pFormatEtc, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateLink(IMoniker pmkLinkSrc, Guid* riid, uint32 renderopt, FORMATETC* lpFormatEtc, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateLink(IMoniker* pmkLinkSrc, Guid* riid, uint32 renderopt, FORMATETC* lpFormatEtc, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateLinkEx(IMoniker pmkLinkSrc, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink lpAdviseSink, uint32* rgdwConnection, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateLinkEx(IMoniker* pmkLinkSrc, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink* lpAdviseSink, uint32* rgdwConnection, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateLinkToFile(PWSTR lpszFileName, Guid* riid, uint32 renderopt, FORMATETC* lpFormatEtc, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateLinkToFile(PWSTR lpszFileName, Guid* riid, uint32 renderopt, FORMATETC* lpFormatEtc, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateLinkToFileEx(PWSTR lpszFileName, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink lpAdviseSink, uint32* rgdwConnection, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateLinkToFileEx(PWSTR lpszFileName, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink* lpAdviseSink, uint32* rgdwConnection, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateFromFile(Guid* rclsid, PWSTR lpszFileName, Guid* riid, uint32 renderopt, FORMATETC* lpFormatEtc, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateFromFile(Guid* rclsid, PWSTR lpszFileName, Guid* riid, uint32 renderopt, FORMATETC* lpFormatEtc, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateFromFileEx(Guid* rclsid, PWSTR lpszFileName, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink lpAdviseSink, uint32* rgdwConnection, IOleClientSite pClientSite, IStorage pStg, void** ppvObj);
+		public static extern HRESULT OleCreateFromFileEx(Guid* rclsid, PWSTR lpszFileName, Guid* riid, uint32 dwFlags, uint32 renderopt, uint32 cFormats, uint32* rgAdvf, FORMATETC* rgFormatEtc, IAdviseSink* lpAdviseSink, uint32* rgdwConnection, IOleClientSite* pClientSite, IStorage* pStg, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleLoad(IStorage pStg, Guid* riid, IOleClientSite pClientSite, void** ppvObj);
+		public static extern HRESULT OleLoad(IStorage* pStg, Guid* riid, IOleClientSite* pClientSite, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleSave(IPersistStorage pPS, IStorage pStg, BOOL fSameAsLoad);
+		public static extern HRESULT OleSave(IPersistStorage* pPS, IStorage* pStg, BOOL fSameAsLoad);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleLoadFromStream(IStream pStm, Guid* iidInterface, void** ppvObj);
+		public static extern HRESULT OleLoadFromStream(IStream* pStm, Guid* iidInterface, void** ppvObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleSaveToStream(IPersistStream pPStm, IStream pStm);
+		public static extern HRESULT OleSaveToStream(IPersistStream* pPStm, IStream* pStm);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleSetContainedObject(IUnknown pUnknown, BOOL fContained);
+		public static extern HRESULT OleSetContainedObject(IUnknown* pUnknown, BOOL fContained);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleNoteObjectVisible(IUnknown pUnknown, BOOL fVisible);
+		public static extern HRESULT OleNoteObjectVisible(IUnknown* pUnknown, BOOL fVisible);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RegisterDragDrop(HWND hwnd, IDropTarget pDropTarget);
+		public static extern HRESULT RegisterDragDrop(HWND hwnd, IDropTarget* pDropTarget);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RevokeDragDrop(HWND hwnd);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DoDragDrop(IDataObject pDataObj, IDropSource pDropSource, uint32 dwOKEffects, uint32* pdwEffect);
+		public static extern HRESULT DoDragDrop(IDataObject* pDataObj, IDropSource* pDropSource, uint32 dwOKEffects, uint32* pdwEffect);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleSetClipboard(IDataObject pDataObj);
+		public static extern HRESULT OleSetClipboard(IDataObject* pDataObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleGetClipboard(IDataObject* ppDataObj);
+		public static extern HRESULT OleGetClipboard(IDataObject** ppDataObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleGetClipboardWithEnterpriseInfo(IDataObject* dataObject, PWSTR* dataEnterpriseId, PWSTR* sourceDescription, PWSTR* targetDescription, PWSTR* dataDescription);
+		public static extern HRESULT OleGetClipboardWithEnterpriseInfo(IDataObject** dataObject, PWSTR* dataEnterpriseId, PWSTR* sourceDescription, PWSTR* targetDescription, PWSTR* dataDescription);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OleFlushClipboard();
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleIsCurrentClipboard(IDataObject pDataObj);
+		public static extern HRESULT OleIsCurrentClipboard(IDataObject* pDataObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int OleCreateMenuDescriptor(HMENU hmenuCombined, OleMenuGroupWidths* lpMenuWidths);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleSetMenuDescriptor(int holemenu, HWND hwndFrame, HWND hwndActiveObject, IOleInPlaceFrame lpFrame, IOleInPlaceActiveObject lpActiveObj);
+		public static extern HRESULT OleSetMenuDescriptor(int holemenu, HWND hwndFrame, HWND hwndActiveObject, IOleInPlaceFrame* lpFrame, IOleInPlaceActiveObject* lpActiveObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OleDestroyMenuDescriptor(int holemenu);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleTranslateAccelerator(IOleInPlaceFrame lpFrame, OIFI* lpFrameInfo, MSG* lpmsg);
+		public static extern HRESULT OleTranslateAccelerator(IOleInPlaceFrame* lpFrame, OIFI* lpFrameInfo, MSG* lpmsg);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE OleDuplicateData(HANDLE hSrc, uint16 cfFormat, uint32 uiFlags);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleDraw(IUnknown pUnknown, uint32 dwAspect, HDC hdcDraw, RECT* lprcBounds);
+		public static extern HRESULT OleDraw(IUnknown* pUnknown, uint32 dwAspect, HDC hdcDraw, RECT* lprcBounds);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleRun(IUnknown pUnknown);
+		public static extern HRESULT OleRun(IUnknown* pUnknown);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL OleIsRunning(IOleObject pObject);
+		public static extern BOOL OleIsRunning(IOleObject* pObject);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleLockRunning(IUnknown pUnknown, BOOL fLock, BOOL fLastUnlockCloses);
+		public static extern HRESULT OleLockRunning(IUnknown* pUnknown, BOOL fLock, BOOL fLastUnlockCloses);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void ReleaseStgMedium(STGMEDIUM* param0);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateOleAdviseHolder(IOleAdviseHolder* ppOAHolder);
+		public static extern HRESULT CreateOleAdviseHolder(IOleAdviseHolder** ppOAHolder);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateDefaultHandler(Guid* clsid, IUnknown pUnkOuter, Guid* riid, void** lplpObj);
+		public static extern HRESULT OleCreateDefaultHandler(Guid* clsid, IUnknown* pUnkOuter, Guid* riid, void** lplpObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreateEmbeddingHelper(Guid* clsid, IUnknown pUnkOuter, uint32 flags, IClassFactory pCF, Guid* riid, void** lplpObj);
+		public static extern HRESULT OleCreateEmbeddingHelper(Guid* clsid, IUnknown* pUnkOuter, uint32 flags, IClassFactory* pCF, Guid* riid, void** lplpObj);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsAccelerator(HACCEL hAccel, int32 cAccelEntries, MSG* lpMsg, uint16* lpwCmd);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3043,11 +3933,11 @@ namespace Win32
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OleRegGetMiscStatus(Guid* clsid, uint32 dwAspect, uint32* pdwStatus);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleRegEnumFormatEtc(Guid* clsid, uint32 dwDirection, IEnumFORMATETC* ppenum);
+		public static extern HRESULT OleRegEnumFormatEtc(Guid* clsid, uint32 dwDirection, IEnumFORMATETC** ppenum);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleRegEnumVerbs(Guid* clsid, IEnumOLEVERB* ppenum);
+		public static extern HRESULT OleRegEnumVerbs(Guid* clsid, IEnumOLEVERB** ppenum);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleDoAutoConvert(IStorage pStg, Guid* pClsidNew);
+		public static extern HRESULT OleDoAutoConvert(IStorage* pStg, Guid* pClsidNew);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OleGetAutoConvert(Guid* clsidOld, Guid* pClsidNew);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3069,7 +3959,7 @@ namespace Win32
 		[Import("api-ms-win-core-marshal-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void HRGN_UserFree64(uint32* param0, HRGN* param1);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleCreatePropertyFrame(HWND hwndOwner, uint32 x, uint32 y, PWSTR lpszCaption, uint32 cObjects, IUnknown* ppUnk, uint32 cPages, Guid* pPageClsID, uint32 lcid, uint32 dwReserved, void* pvReserved);
+		public static extern HRESULT OleCreatePropertyFrame(HWND hwndOwner, uint32 x, uint32 y, PWSTR lpszCaption, uint32 cObjects, IUnknown** ppUnk, uint32 cPages, Guid* pPageClsID, uint32 lcid, uint32 dwReserved, void* pvReserved);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OleCreatePropertyFrameIndirect(OCPFIPARAMS* lpParams);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3079,23 +3969,23 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OleCreatePictureIndirect(PICTDESC* lpPictDesc, Guid* riid, BOOL fOwn, void** lplpvObj);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleLoadPicture(IStream lpstream, int32 lSize, BOOL fRunmode, Guid* riid, void** lplpvObj);
+		public static extern HRESULT OleLoadPicture(IStream* lpstream, int32 lSize, BOOL fRunmode, Guid* riid, void** lplpvObj);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleLoadPictureEx(IStream lpstream, int32 lSize, BOOL fRunmode, Guid* riid, uint32 xSizeDesired, uint32 ySizeDesired, uint32 dwFlags, void** lplpvObj);
+		public static extern HRESULT OleLoadPictureEx(IStream* lpstream, int32 lSize, BOOL fRunmode, Guid* riid, uint32 xSizeDesired, uint32 ySizeDesired, uint32 dwFlags, void** lplpvObj);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleLoadPicturePath(PWSTR szURLorPath, IUnknown punkCaller, uint32 dwReserved, uint32 clrReserved, Guid* riid, void** ppvRet);
+		public static extern HRESULT OleLoadPicturePath(PWSTR szURLorPath, IUnknown* punkCaller, uint32 dwReserved, uint32 clrReserved, Guid* riid, void** ppvRet);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleLoadPictureFile(VARIANT varFileName, IDispatch* lplpdispPicture);
+		public static extern HRESULT OleLoadPictureFile(VARIANT varFileName, IDispatch** lplpdispPicture);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleLoadPictureFileEx(VARIANT varFileName, uint32 xSizeDesired, uint32 ySizeDesired, uint32 dwFlags, IDispatch* lplpdispPicture);
+		public static extern HRESULT OleLoadPictureFileEx(VARIANT varFileName, uint32 xSizeDesired, uint32 ySizeDesired, uint32 dwFlags, IDispatch** lplpdispPicture);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleSavePictureFile(IDispatch lpdispPicture, BSTR bstrFileName);
+		public static extern HRESULT OleSavePictureFile(IDispatch* lpdispPicture, BSTR bstrFileName);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HCURSOR OleIconToCursor(HINSTANCE hinstExe, HICON hIcon);
 		[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL OleUIAddVerbMenuW(IOleObject lpOleObj, PWSTR lpszShortType, HMENU hMenu, uint32 uPos, uint32 uIDVerbMin, uint32 uIDVerbMax, BOOL bAddConvert, uint32 idConvert, HMENU* lphMenu);
+		public static extern BOOL OleUIAddVerbMenuW(IOleObject* lpOleObj, PWSTR lpszShortType, HMENU hMenu, uint32 uPos, uint32 uIDVerbMin, uint32 uIDVerbMax, BOOL bAddConvert, uint32 idConvert, HMENU* lphMenu);
 		[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL OleUIAddVerbMenuA(IOleObject lpOleObj, PSTR lpszShortType, HMENU hMenu, uint32 uPos, uint32 uIDVerbMin, uint32 uIDVerbMax, BOOL bAddConvert, uint32 idConvert, HMENU* lphMenu);
+		public static extern BOOL OleUIAddVerbMenuA(IOleObject* lpOleObj, PSTR lpszShortType, HMENU hMenu, uint32 uPos, uint32 uIDVerbMin, uint32 uIDVerbMax, BOOL bAddConvert, uint32 idConvert, HMENU* lphMenu);
 		[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 OleUIInsertObjectW(OLEUIINSERTOBJECTW* param0);
 		[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3135,9 +4025,9 @@ namespace Win32
 		[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 OleUIPromptUserA(int32 nTemplate, HWND hwndParent);
 		[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL OleUIUpdateLinksW(IOleUILinkContainerW lpOleUILinkCntr, HWND hwndParent, PWSTR lpszTitle, int32 cLinks);
+		public static extern BOOL OleUIUpdateLinksW(IOleUILinkContainerW* lpOleUILinkCntr, HWND hwndParent, PWSTR lpszTitle, int32 cLinks);
 		[Import("oledlg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL OleUIUpdateLinksA(IOleUILinkContainerA lpOleUILinkCntr, HWND hwndParent, PSTR lpszTitle, int32 cLinks);
+		public static extern BOOL OleUIUpdateLinksA(IOleUILinkContainerA* lpOleUILinkCntr, HWND hwndParent, PSTR lpszTitle, int32 cLinks);
 		
 	}
 }

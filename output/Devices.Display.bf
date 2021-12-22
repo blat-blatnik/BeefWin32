@@ -2988,19 +2988,39 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ICloneViewHelper {}
-		public struct IViewHelper {}
+		[CRepr]
+		public struct ICloneViewHelper : IUnknown
+		{
+			public const new Guid IID = .(0xf6a3d4c4, 0x5632, 0x4d83, 0xb0, 0xa1, 0xfb, 0x88, 0x71, 0x2b, 0x1e, 0xb7);
+			
+			public function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) GetConnectedIDs;
+			public function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) GetActiveTopology;
+			public function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) SetActiveTopology;
+			public function HRESULT(ICloneViewHelper *self, BOOL fFinalCall) Commit;
+		}
+		[CRepr]
+		public struct IViewHelper : IUnknown
+		{
+			public const new Guid IID = .(0xe85ccef5, 0xaaaa, 0x47f0, 0xb5, 0xe3, 0x61, 0xf7, 0xae, 0xcd, 0xc4, 0xc1);
+			
+			public function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) GetConnectedIDs;
+			public function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) GetActiveTopology;
+			public function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) SetActiveTopology;
+			public function HRESULT(IViewHelper *self) Commit;
+			public function HRESULT(IViewHelper *self, IStream* pIStream, uint32* pulStatus) SetConfiguration;
+			public function HRESULT(IViewHelper *self) GetProceedOnNewConfiguration;
+		}
 		
 		// --- Functions ---
 		
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetNumberOfPhysicalMonitorsFromHMONITOR(HMONITOR hMonitor, uint32* pdwNumberOfPhysicalMonitors);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(IDirect3DDevice9 pDirect3DDevice9, uint32* pdwNumberOfPhysicalMonitors);
+		public static extern HRESULT GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(IDirect3DDevice9* pDirect3DDevice9, uint32* pdwNumberOfPhysicalMonitors);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetPhysicalMonitorsFromHMONITOR(HMONITOR hMonitor, uint32 dwPhysicalMonitorArraySize, PHYSICAL_MONITOR* pPhysicalMonitorArray);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetPhysicalMonitorsFromIDirect3DDevice9(IDirect3DDevice9 pDirect3DDevice9, uint32 dwPhysicalMonitorArraySize, PHYSICAL_MONITOR* pPhysicalMonitorArray);
+		public static extern HRESULT GetPhysicalMonitorsFromIDirect3DDevice9(IDirect3DDevice9* pDirect3DDevice9, uint32 dwPhysicalMonitorArraySize, PHYSICAL_MONITOR* pPhysicalMonitorArray);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DestroyPhysicalMonitor(HANDLE hMonitor);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]

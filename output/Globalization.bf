@@ -4392,33 +4392,323 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ISpellingError {}
-		public struct IEnumSpellingError {}
-		public struct IOptionDescription {}
-		public struct ISpellCheckerChangedEventHandler {}
-		public struct ISpellChecker {}
-		public struct ISpellChecker2 {}
-		public struct ISpellCheckerFactory {}
-		public struct IUserDictionariesRegistrar {}
-		public struct ISpellCheckProvider {}
-		public struct IComprehensiveSpellCheckProvider {}
-		public struct ISpellCheckProviderFactory {}
-		public struct IMLangStringBufW {}
-		public struct IMLangStringBufA {}
-		public struct IMLangString {}
-		public struct IMLangStringWStr {}
-		public struct IMLangStringAStr {}
-		public struct IMLangLineBreakConsole {}
-		public struct IEnumCodePage {}
-		public struct IEnumRfc1766 {}
-		public struct IEnumScript {}
-		public struct IMLangConvertCharset {}
-		public struct IMultiLanguage {}
-		public struct IMultiLanguage2 {}
-		public struct IMLangCodePages {}
-		public struct IMLangFontLink {}
-		public struct IMLangFontLink2 {}
-		public struct IMultiLanguage3 {}
+		[CRepr]
+		public struct ISpellingError : IUnknown
+		{
+			public const new Guid IID = .(0xb7c82d61, 0xfbe8, 0x4b47, 0x9b, 0x27, 0x6c, 0x0d, 0x2e, 0x0d, 0xe0, 0xa3);
+			
+			public function HRESULT(ISpellingError *self, uint32* value) get_StartIndex;
+			public function HRESULT(ISpellingError *self, uint32* value) get_Length;
+			public function HRESULT(ISpellingError *self, CORRECTIVE_ACTION* value) get_CorrectiveAction;
+			public function HRESULT(ISpellingError *self, PWSTR* value) get_Replacement;
+		}
+		[CRepr]
+		public struct IEnumSpellingError : IUnknown
+		{
+			public const new Guid IID = .(0x803e3bd4, 0x2828, 0x4410, 0x82, 0x90, 0x41, 0x8d, 0x1d, 0x73, 0xc7, 0x62);
+			
+			public function HRESULT(IEnumSpellingError *self, ISpellingError** value) Next;
+		}
+		[CRepr]
+		public struct IOptionDescription : IUnknown
+		{
+			public const new Guid IID = .(0x432e5f85, 0x35cf, 0x4606, 0xa8, 0x01, 0x6f, 0x70, 0x27, 0x7e, 0x1d, 0x7a);
+			
+			public function HRESULT(IOptionDescription *self, PWSTR* value) get_Id;
+			public function HRESULT(IOptionDescription *self, PWSTR* value) get_Heading;
+			public function HRESULT(IOptionDescription *self, PWSTR* value) get_Description;
+			public function HRESULT(IOptionDescription *self, IEnumString** value) get_Labels;
+		}
+		[CRepr]
+		public struct ISpellCheckerChangedEventHandler : IUnknown
+		{
+			public const new Guid IID = .(0x0b83a5b0, 0x792f, 0x4eab, 0x97, 0x99, 0xac, 0xf5, 0x2c, 0x5e, 0xd0, 0x8a);
+			
+			public function HRESULT(ISpellCheckerChangedEventHandler *self, ISpellChecker* sender) Invoke;
+		}
+		[CRepr]
+		public struct ISpellChecker : IUnknown
+		{
+			public const new Guid IID = .(0xb6fd0b71, 0xe2bc, 0x4653, 0x8d, 0x05, 0xf1, 0x97, 0xe4, 0x12, 0x77, 0x0b);
+			
+			public function HRESULT(ISpellChecker *self, PWSTR* value) get_LanguageTag;
+			public function HRESULT(ISpellChecker *self, PWSTR text, IEnumSpellingError** value) Check;
+			public function HRESULT(ISpellChecker *self, PWSTR word, IEnumString** value) Suggest;
+			public function HRESULT(ISpellChecker *self, PWSTR word) Add;
+			public function HRESULT(ISpellChecker *self, PWSTR word) Ignore;
+			public function HRESULT(ISpellChecker *self, PWSTR from, PWSTR to) AutoCorrect;
+			public function HRESULT(ISpellChecker *self, PWSTR optionId, uint8* value) GetOptionValue;
+			public function HRESULT(ISpellChecker *self, IEnumString** value) get_OptionIds;
+			public function HRESULT(ISpellChecker *self, PWSTR* value) get_Id;
+			public function HRESULT(ISpellChecker *self, PWSTR* value) get_LocalizedName;
+			public function HRESULT(ISpellChecker *self, ISpellCheckerChangedEventHandler* handler, uint32* eventCookie) add_SpellCheckerChanged;
+			public function HRESULT(ISpellChecker *self, uint32 eventCookie) remove_SpellCheckerChanged;
+			public function HRESULT(ISpellChecker *self, PWSTR optionId, IOptionDescription** value) GetOptionDescription;
+			public function HRESULT(ISpellChecker *self, PWSTR text, IEnumSpellingError** value) ComprehensiveCheck;
+		}
+		[CRepr]
+		public struct ISpellChecker2 : ISpellChecker
+		{
+			public const new Guid IID = .(0xe7ed1c71, 0x87f7, 0x4378, 0xa8, 0x40, 0xc9, 0x20, 0x0d, 0xac, 0xee, 0x47);
+			
+			public function HRESULT(ISpellChecker2 *self, PWSTR word) Remove;
+		}
+		[CRepr]
+		public struct ISpellCheckerFactory : IUnknown
+		{
+			public const new Guid IID = .(0x8e018a9d, 0x2415, 0x4677, 0xbf, 0x08, 0x79, 0x4e, 0xa6, 0x1f, 0x94, 0xbb);
+			
+			public function HRESULT(ISpellCheckerFactory *self, IEnumString** value) get_SupportedLanguages;
+			public function HRESULT(ISpellCheckerFactory *self, PWSTR languageTag, BOOL* value) IsSupported;
+			public function HRESULT(ISpellCheckerFactory *self, PWSTR languageTag, ISpellChecker** value) CreateSpellChecker;
+		}
+		[CRepr]
+		public struct IUserDictionariesRegistrar : IUnknown
+		{
+			public const new Guid IID = .(0xaa176b85, 0x0e12, 0x4844, 0x8e, 0x1a, 0xee, 0xf1, 0xda, 0x77, 0xf5, 0x86);
+			
+			public function HRESULT(IUserDictionariesRegistrar *self, PWSTR dictionaryPath, PWSTR languageTag) RegisterUserDictionary;
+			public function HRESULT(IUserDictionariesRegistrar *self, PWSTR dictionaryPath, PWSTR languageTag) UnregisterUserDictionary;
+		}
+		[CRepr]
+		public struct ISpellCheckProvider : IUnknown
+		{
+			public const new Guid IID = .(0x73e976e0, 0x8ed4, 0x4eb1, 0x80, 0xd7, 0x1b, 0xe0, 0xa1, 0x6b, 0x0c, 0x38);
+			
+			public function HRESULT(ISpellCheckProvider *self, PWSTR* value) get_LanguageTag;
+			public function HRESULT(ISpellCheckProvider *self, PWSTR text, IEnumSpellingError** value) Check;
+			public function HRESULT(ISpellCheckProvider *self, PWSTR word, IEnumString** value) Suggest;
+			public function HRESULT(ISpellCheckProvider *self, PWSTR optionId, uint8* value) GetOptionValue;
+			public function HRESULT(ISpellCheckProvider *self, PWSTR optionId, uint8 value) SetOptionValue;
+			public function HRESULT(ISpellCheckProvider *self, IEnumString** value) get_OptionIds;
+			public function HRESULT(ISpellCheckProvider *self, PWSTR* value) get_Id;
+			public function HRESULT(ISpellCheckProvider *self, PWSTR* value) get_LocalizedName;
+			public function HRESULT(ISpellCheckProvider *self, PWSTR optionId, IOptionDescription** value) GetOptionDescription;
+			public function HRESULT(ISpellCheckProvider *self, WORDLIST_TYPE wordlistType, IEnumString* words) InitializeWordlist;
+		}
+		[CRepr]
+		public struct IComprehensiveSpellCheckProvider : IUnknown
+		{
+			public const new Guid IID = .(0x0c58f8de, 0x8e94, 0x479e, 0x97, 0x17, 0x70, 0xc4, 0x2c, 0x4a, 0xd2, 0xc3);
+			
+			public function HRESULT(IComprehensiveSpellCheckProvider *self, PWSTR text, IEnumSpellingError** value) ComprehensiveCheck;
+		}
+		[CRepr]
+		public struct ISpellCheckProviderFactory : IUnknown
+		{
+			public const new Guid IID = .(0x9f671e11, 0x77d6, 0x4c92, 0xae, 0xfb, 0x61, 0x52, 0x15, 0xe3, 0xa4, 0xbe);
+			
+			public function HRESULT(ISpellCheckProviderFactory *self, IEnumString** value) get_SupportedLanguages;
+			public function HRESULT(ISpellCheckProviderFactory *self, PWSTR languageTag, BOOL* value) IsSupported;
+			public function HRESULT(ISpellCheckProviderFactory *self, PWSTR languageTag, ISpellCheckProvider** value) CreateSpellCheckProvider;
+		}
+		[CRepr]
+		public struct IMLangStringBufW : IUnknown
+		{
+			public const new Guid IID = .(0xd24acd21, 0xba72, 0x11d0, 0xb1, 0x88, 0x00, 0xaa, 0x00, 0x38, 0xc9, 0x69);
+			
+			public function HRESULT(IMLangStringBufW *self, int32* plFlags, int32* pcchBuf) GetStatus;
+			public function HRESULT(IMLangStringBufW *self, int32 cchOffset, int32 cchMaxLock, uint16** ppszBuf, int32* pcchBuf) LockBuf;
+			public function HRESULT(IMLangStringBufW *self, PWSTR pszBuf, int32 cchOffset, int32 cchWrite) UnlockBuf;
+			public function HRESULT(IMLangStringBufW *self, int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) Insert;
+			public function HRESULT(IMLangStringBufW *self, int32 cchOffset, int32 cchDelete) Delete;
+		}
+		[CRepr]
+		public struct IMLangStringBufA : IUnknown
+		{
+			public const new Guid IID = .(0xd24acd23, 0xba72, 0x11d0, 0xb1, 0x88, 0x00, 0xaa, 0x00, 0x38, 0xc9, 0x69);
+			
+			public function HRESULT(IMLangStringBufA *self, int32* plFlags, int32* pcchBuf) GetStatus;
+			public function HRESULT(IMLangStringBufA *self, int32 cchOffset, int32 cchMaxLock, CHAR** ppszBuf, int32* pcchBuf) LockBuf;
+			public function HRESULT(IMLangStringBufA *self, PSTR pszBuf, int32 cchOffset, int32 cchWrite) UnlockBuf;
+			public function HRESULT(IMLangStringBufA *self, int32 cchOffset, int32 cchMaxInsert, int32* pcchActual) Insert;
+			public function HRESULT(IMLangStringBufA *self, int32 cchOffset, int32 cchDelete) Delete;
+		}
+		[CRepr]
+		public struct IMLangString : IUnknown
+		{
+			public const new Guid IID = .(0xc04d65ce, 0xb70d, 0x11d0, 0xb1, 0x88, 0x00, 0xaa, 0x00, 0x38, 0xc9, 0x69);
+			
+			public function HRESULT(IMLangString *self, BOOL fNoAccess) Sync;
+			public function HRESULT(IMLangString *self, int32* plLen) GetLength;
+			public function HRESULT(IMLangString *self, int32 lDestPos, int32 lDestLen, IUnknown* pSrcMLStr, int32 lSrcPos, int32 lSrcLen) SetMLStr;
+			public function HRESULT(IMLangString *self, int32 lSrcPos, int32 lSrcLen, IUnknown* pUnkOuter, uint32 dwClsContext, Guid* piid, IUnknown** ppDestMLStr, int32* plDestPos, int32* plDestLen) GetMLStr;
+		}
+		[CRepr]
+		public struct IMLangStringWStr : IMLangString
+		{
+			public const new Guid IID = .(0xc04d65d0, 0xb70d, 0x11d0, 0xb1, 0x88, 0x00, 0xaa, 0x00, 0x38, 0xc9, 0x69);
+			
+			public function HRESULT(IMLangStringWStr *self, int32 lDestPos, int32 lDestLen, char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) SetWStr;
+			public function HRESULT(IMLangStringWStr *self, int32 lDestPos, int32 lDestLen, IMLangStringBufW* pSrcBuf, int32* pcchActual, int32* plActualLen) SetStrBufW;
+			public function HRESULT(IMLangStringWStr *self, int32 lSrcPos, int32 lSrcLen, char16* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) GetWStr;
+			public function HRESULT(IMLangStringWStr *self, int32 lSrcPos, int32 lSrcMaxLen, IMLangStringBufW** ppDestBuf, int32* plDestLen) GetStrBufW;
+			public function HRESULT(IMLangStringWStr *self, int32 lSrcPos, int32 lSrcLen, int32 lFlags, int32 cchRequest, PWSTR* ppszDest, int32* pcchDest, int32* plDestLen) LockWStr;
+			public function HRESULT(IMLangStringWStr *self, char16* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) UnlockWStr;
+			public function HRESULT(IMLangStringWStr *self, int32 lDestPos, int32 lDestLen, uint32 locale) SetLocale;
+			public function HRESULT(IMLangStringWStr *self, int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) GetLocale;
+		}
+		[CRepr]
+		public struct IMLangStringAStr : IMLangString
+		{
+			public const new Guid IID = .(0xc04d65d2, 0xb70d, 0x11d0, 0xb1, 0x88, 0x00, 0xaa, 0x00, 0x38, 0xc9, 0x69);
+			
+			public function HRESULT(IMLangStringAStr *self, int32 lDestPos, int32 lDestLen, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) SetAStr;
+			public function HRESULT(IMLangStringAStr *self, int32 lDestPos, int32 lDestLen, uint32 uCodePage, IMLangStringBufA* pSrcBuf, int32* pcchActual, int32* plActualLen) SetStrBufA;
+			public function HRESULT(IMLangStringAStr *self, int32 lSrcPos, int32 lSrcLen, uint32 uCodePageIn, uint32* puCodePageOut, uint8* pszDest, int32 cchDest, int32* pcchActual, int32* plActualLen) GetAStr;
+			public function HRESULT(IMLangStringAStr *self, int32 lSrcPos, int32 lSrcMaxLen, uint32* puDestCodePage, IMLangStringBufA** ppDestBuf, int32* plDestLen) GetStrBufA;
+			public function HRESULT(IMLangStringAStr *self, int32 lSrcPos, int32 lSrcLen, int32 lFlags, uint32 uCodePageIn, int32 cchRequest, uint32* puCodePageOut, PSTR* ppszDest, int32* pcchDest, int32* plDestLen) LockAStr;
+			public function HRESULT(IMLangStringAStr *self, uint8* pszSrc, int32 cchSrc, int32* pcchActual, int32* plActualLen) UnlockAStr;
+			public function HRESULT(IMLangStringAStr *self, int32 lDestPos, int32 lDestLen, uint32 locale) SetLocale;
+			public function HRESULT(IMLangStringAStr *self, int32 lSrcPos, int32 lSrcMaxLen, uint32* plocale, int32* plLocalePos, int32* plLocaleLen) GetLocale;
+		}
+		[CRepr]
+		public struct IMLangLineBreakConsole : IUnknown
+		{
+			public const new Guid IID = .(0xf5be2ee1, 0xbfd7, 0x11d0, 0xb1, 0x88, 0x00, 0xaa, 0x00, 0x38, 0xc9, 0x69);
+			
+			public function HRESULT(IMLangLineBreakConsole *self, IMLangString* pSrcMLStr, int32 lSrcPos, int32 lSrcLen, int32 cMinColumns, int32 cMaxColumns, int32* plLineLen, int32* plSkipLen) BreakLineML;
+			public function HRESULT(IMLangLineBreakConsole *self, uint32 locale, char16* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) BreakLineW;
+			public function HRESULT(IMLangLineBreakConsole *self, uint32 locale, uint32 uCodePage, uint8* pszSrc, int32 cchSrc, int32 cMaxColumns, int32* pcchLine, int32* pcchSkip) BreakLineA;
+		}
+		[CRepr]
+		public struct IEnumCodePage : IUnknown
+		{
+			public const new Guid IID = .(0x275c23e3, 0x3747, 0x11d0, 0x9f, 0xea, 0x00, 0xaa, 0x00, 0x3f, 0x86, 0x46);
+			
+			public function HRESULT(IEnumCodePage *self, IEnumCodePage** ppEnum) Clone;
+			public function HRESULT(IEnumCodePage *self, uint32 celt, MIMECPINFO* rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumCodePage *self) Reset;
+			public function HRESULT(IEnumCodePage *self, uint32 celt) Skip;
+		}
+		[CRepr]
+		public struct IEnumRfc1766 : IUnknown
+		{
+			public const new Guid IID = .(0x3dc39d1d, 0xc030, 0x11d0, 0xb8, 0x1b, 0x00, 0xc0, 0x4f, 0xc9, 0xb3, 0x1f);
+			
+			public function HRESULT(IEnumRfc1766 *self, IEnumRfc1766** ppEnum) Clone;
+			public function HRESULT(IEnumRfc1766 *self, uint32 celt, RFC1766INFO* rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumRfc1766 *self) Reset;
+			public function HRESULT(IEnumRfc1766 *self, uint32 celt) Skip;
+		}
+		[CRepr]
+		public struct IEnumScript : IUnknown
+		{
+			public const new Guid IID = .(0xae5f1430, 0x388b, 0x11d2, 0x83, 0x80, 0x00, 0xc0, 0x4f, 0x8f, 0x5d, 0xa1);
+			
+			public function HRESULT(IEnumScript *self, IEnumScript** ppEnum) Clone;
+			public function HRESULT(IEnumScript *self, uint32 celt, SCRIPTINFO* rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumScript *self) Reset;
+			public function HRESULT(IEnumScript *self, uint32 celt) Skip;
+		}
+		[CRepr]
+		public struct IMLangConvertCharset : IUnknown
+		{
+			public const new Guid IID = .(0xd66d6f98, 0xcdaa, 0x11d0, 0xb8, 0x22, 0x00, 0xc0, 0x4f, 0xc9, 0xb3, 0x1f);
+			
+			public function HRESULT(IMLangConvertCharset *self, uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty) Initialize;
+			public function HRESULT(IMLangConvertCharset *self, uint32* puiSrcCodePage) GetSourceCodePage;
+			public function HRESULT(IMLangConvertCharset *self, uint32* puiDstCodePage) GetDestinationCodePage;
+			public function HRESULT(IMLangConvertCharset *self, uint32* pdwProperty) GetProperty;
+			public function HRESULT(IMLangConvertCharset *self, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) DoConversion;
+			public function HRESULT(IMLangConvertCharset *self, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) DoConversionToUnicode;
+			public function HRESULT(IMLangConvertCharset *self, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) DoConversionFromUnicode;
+		}
+		[CRepr]
+		public struct IMultiLanguage : IUnknown
+		{
+			public const new Guid IID = .(0x275c23e1, 0x3747, 0x11d0, 0x9f, 0xea, 0x00, 0xaa, 0x00, 0x3f, 0x86, 0x46);
+			
+			public function HRESULT(IMultiLanguage *self, uint32* pcCodePage) GetNumberOfCodePageInfo;
+			public function HRESULT(IMultiLanguage *self, uint32 uiCodePage, MIMECPINFO* pCodePageInfo) GetCodePageInfo;
+			public function HRESULT(IMultiLanguage *self, uint32 uiCodePage, uint32* puiFamilyCodePage) GetFamilyCodePage;
+			public function HRESULT(IMultiLanguage *self, uint32 grfFlags, IEnumCodePage** ppEnumCodePage) EnumCodePages;
+			public function HRESULT(IMultiLanguage *self, BSTR Charset, MIMECSETINFO* pCharsetInfo) GetCharsetInfo;
+			public function HRESULT(IMultiLanguage *self, uint32 dwSrcEncoding, uint32 dwDstEncoding) IsConvertible;
+			public function HRESULT(IMultiLanguage *self, uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) ConvertString;
+			public function HRESULT(IMultiLanguage *self, uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) ConvertStringToUnicode;
+			public function HRESULT(IMultiLanguage *self, uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) ConvertStringFromUnicode;
+			public function HRESULT(IMultiLanguage *self) ConvertStringReset;
+			public function HRESULT(IMultiLanguage *self, uint32 Locale, BSTR* pbstrRfc1766) GetRfc1766FromLcid;
+			public function HRESULT(IMultiLanguage *self, uint32* pLocale, BSTR bstrRfc1766) GetLcidFromRfc1766;
+			public function HRESULT(IMultiLanguage *self, IEnumRfc1766** ppEnumRfc1766) EnumRfc1766;
+			public function HRESULT(IMultiLanguage *self, uint32 Locale, RFC1766INFO* pRfc1766Info) GetRfc1766Info;
+			public function HRESULT(IMultiLanguage *self, uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, IMLangConvertCharset** ppMLangConvertCharset) CreateConvertCharset;
+		}
+		[CRepr]
+		public struct IMultiLanguage2 : IUnknown
+		{
+			public const new Guid IID = .(0xdccfc164, 0x2b38, 0x11d2, 0xb7, 0xec, 0x00, 0xc0, 0x4f, 0x8f, 0x5d, 0x9a);
+			
+			public function HRESULT(IMultiLanguage2 *self, uint32* pcCodePage) GetNumberOfCodePageInfo;
+			public function HRESULT(IMultiLanguage2 *self, uint32 uiCodePage, uint16 LangId, MIMECPINFO* pCodePageInfo) GetCodePageInfo;
+			public function HRESULT(IMultiLanguage2 *self, uint32 uiCodePage, uint32* puiFamilyCodePage) GetFamilyCodePage;
+			public function HRESULT(IMultiLanguage2 *self, uint32 grfFlags, uint16 LangId, IEnumCodePage** ppEnumCodePage) EnumCodePages;
+			public function HRESULT(IMultiLanguage2 *self, BSTR Charset, MIMECSETINFO* pCharsetInfo) GetCharsetInfo;
+			public function HRESULT(IMultiLanguage2 *self, uint32 dwSrcEncoding, uint32 dwDstEncoding) IsConvertible;
+			public function HRESULT(IMultiLanguage2 *self, uint32* pdwMode, uint32 dwSrcEncoding, uint32 dwDstEncoding, uint8* pSrcStr, uint32* pcSrcSize, uint8* pDstStr, uint32* pcDstSize) ConvertString;
+			public function HRESULT(IMultiLanguage2 *self, uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize) ConvertStringToUnicode;
+			public function HRESULT(IMultiLanguage2 *self, uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize) ConvertStringFromUnicode;
+			public function HRESULT(IMultiLanguage2 *self) ConvertStringReset;
+			public function HRESULT(IMultiLanguage2 *self, uint32 Locale, BSTR* pbstrRfc1766) GetRfc1766FromLcid;
+			public function HRESULT(IMultiLanguage2 *self, uint32* pLocale, BSTR bstrRfc1766) GetLcidFromRfc1766;
+			public function HRESULT(IMultiLanguage2 *self, uint16 LangId, IEnumRfc1766** ppEnumRfc1766) EnumRfc1766;
+			public function HRESULT(IMultiLanguage2 *self, uint32 Locale, uint16 LangId, RFC1766INFO* pRfc1766Info) GetRfc1766Info;
+			public function HRESULT(IMultiLanguage2 *self, uint32 uiSrcCodePage, uint32 uiDstCodePage, uint32 dwProperty, IMLangConvertCharset** ppMLangConvertCharset) CreateConvertCharset;
+			public function HRESULT(IMultiLanguage2 *self, uint32* pdwMode, uint32 dwFlag, PWSTR lpFallBack, uint32 dwSrcEncoding, uint32 dwDstEncoding, IStream* pstmIn, IStream* pstmOut) ConvertStringInIStream;
+			public function HRESULT(IMultiLanguage2 *self, uint32* pdwMode, uint32 dwEncoding, PSTR pSrcStr, uint32* pcSrcSize, char16* pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) ConvertStringToUnicodeEx;
+			public function HRESULT(IMultiLanguage2 *self, uint32* pdwMode, uint32 dwEncoding, char16* pSrcStr, uint32* pcSrcSize, PSTR pDstStr, uint32* pcDstSize, uint32 dwFlag, PWSTR lpFallBack) ConvertStringFromUnicodeEx;
+			public function HRESULT(IMultiLanguage2 *self, uint32 dwFlag, uint32 dwPrefWinCodePage, IStream* pstmIn, DetectEncodingInfo* lpEncoding, int32* pnScores) DetectCodepageInIStream;
+			public function HRESULT(IMultiLanguage2 *self, uint32 dwFlag, uint32 dwPrefWinCodePage, PSTR pSrcStr, int32* pcSrcSize, DetectEncodingInfo* lpEncoding, int32* pnScores) DetectInputCodepage;
+			public function HRESULT(IMultiLanguage2 *self, uint32 uiCodePage, HWND hwnd) ValidateCodePage;
+			public function HRESULT(IMultiLanguage2 *self, uint32 uiCodePage, uint32 lcid, char16* lpWideCharStr, int32 cchWideChar) GetCodePageDescription;
+			public function HRESULT(IMultiLanguage2 *self, uint32 uiCodePage) IsCodePageInstallable;
+			public function HRESULT(IMultiLanguage2 *self, MIMECONTF dwSource) SetMimeDBSource;
+			public function HRESULT(IMultiLanguage2 *self, uint32* pnScripts) GetNumberOfScripts;
+			public function HRESULT(IMultiLanguage2 *self, uint32 dwFlags, uint16 LangId, IEnumScript** ppEnumScript) EnumScripts;
+			public function HRESULT(IMultiLanguage2 *self, uint32 uiCodePage, HWND hwnd, uint32 dwfIODControl) ValidateCodePageEx;
+		}
+		[CRepr]
+		public struct IMLangCodePages : IUnknown
+		{
+			public const new Guid IID = .(0x359f3443, 0xbd4a, 0x11d0, 0xb1, 0x88, 0x00, 0xaa, 0x00, 0x38, 0xc9, 0x69);
+			
+			public function HRESULT(IMLangCodePages *self, char16 chSrc, uint32* pdwCodePages) GetCharCodePages;
+			public function HRESULT(IMLangCodePages *self, char16* pszSrc, int32 cchSrc, uint32 dwPriorityCodePages, uint32* pdwCodePages, int32* pcchCodePages) GetStrCodePages;
+			public function HRESULT(IMLangCodePages *self, uint32 uCodePage, uint32* pdwCodePages) CodePageToCodePages;
+			public function HRESULT(IMLangCodePages *self, uint32 dwCodePages, uint32 uDefaultCodePage, uint32* puCodePage) CodePagesToCodePage;
+		}
+		[CRepr]
+		public struct IMLangFontLink : IMLangCodePages
+		{
+			public const new Guid IID = .(0x359f3441, 0xbd4a, 0x11d0, 0xb1, 0x88, 0x00, 0xaa, 0x00, 0x38, 0xc9, 0x69);
+			
+			public function HRESULT(IMLangFontLink *self, HDC hDC, HFONT hFont, uint32* pdwCodePages) GetFontCodePages;
+			public function HRESULT(IMLangFontLink *self, HDC hDC, uint32 dwCodePages, HFONT hSrcFont, HFONT* phDestFont) MapFont;
+			public function HRESULT(IMLangFontLink *self, HFONT hFont) ReleaseFont;
+			public function HRESULT(IMLangFontLink *self) ResetFontMapping;
+		}
+		[CRepr]
+		public struct IMLangFontLink2 : IMLangCodePages
+		{
+			public const new Guid IID = .(0xdccfc162, 0x2b38, 0x11d2, 0xb7, 0xec, 0x00, 0xc0, 0x4f, 0x8f, 0x5d, 0x9a);
+			
+			public function HRESULT(IMLangFontLink2 *self, HDC hDC, HFONT hFont, uint32* pdwCodePages) GetFontCodePages;
+			public function HRESULT(IMLangFontLink2 *self, HFONT hFont) ReleaseFont;
+			public function HRESULT(IMLangFontLink2 *self) ResetFontMapping;
+			public function HRESULT(IMLangFontLink2 *self, HDC hDC, uint32 dwCodePages, char16 chSrc, HFONT* pFont) MapFont;
+			public function HRESULT(IMLangFontLink2 *self, HDC hDC, uint32* puiRanges, UNICODERANGE* pUranges) GetFontUnicodeRanges;
+			public function HRESULT(IMLangFontLink2 *self, uint8 sid, uint32 dwFlags, uint32* puiFonts, tagSCRIPFONTINFO* pScriptFont) GetScriptFontInfo;
+			public function HRESULT(IMLangFontLink2 *self, uint32 uiCodePage, uint8* pSid) CodePageToScriptID;
+		}
+		[CRepr]
+		public struct IMultiLanguage3 : IMultiLanguage2
+		{
+			public const new Guid IID = .(0x4e5868ab, 0xb157, 0x4623, 0x9a, 0xcc, 0x6a, 0x1d, 0x9c, 0xae, 0xbe, 0x04);
+			
+			public function HRESULT(IMultiLanguage3 *self, uint32 dwFlags, char16* lpWideCharStr, uint32 cchWideChar, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, uint32* pnDetectedCodePages, PWSTR lpSpecialChar) DetectOutboundCodePage;
+			public function HRESULT(IMultiLanguage3 *self, uint32 dwFlags, IStream* pStrIn, uint32* puiPreferredCodePages, uint32 nPreferredCodePages, uint32* puiDetectedCodePages, uint32* pnDetectedCodePages, PWSTR lpSpecialChar) DetectOutboundCodePageInIStream;
+		}
 		
 		// --- Functions ---
 		

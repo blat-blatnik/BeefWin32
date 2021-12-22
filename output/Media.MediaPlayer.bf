@@ -1063,113 +1063,1462 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IWMPErrorItem {}
-		public struct IWMPError {}
-		public struct IWMPMedia {}
-		public struct IWMPControls {}
-		public struct IWMPSettings {}
-		public struct IWMPClosedCaption {}
-		public struct IWMPPlaylist {}
-		public struct IWMPCdrom {}
-		public struct IWMPCdromCollection {}
-		public struct IWMPStringCollection {}
-		public struct IWMPMediaCollection {}
-		public struct IWMPPlaylistArray {}
-		public struct IWMPPlaylistCollection {}
-		public struct IWMPNetwork {}
-		public struct IWMPCore {}
-		public struct IWMPPlayer {}
-		public struct IWMPPlayer2 {}
-		public struct IWMPMedia2 {}
-		public struct IWMPControls2 {}
-		public struct IWMPDVD {}
-		public struct IWMPCore2 {}
-		public struct IWMPPlayer3 {}
-		public struct IWMPErrorItem2 {}
-		public struct IWMPRemoteMediaServices {}
-		public struct IWMPSkinManager {}
-		public struct IWMPMetadataPicture {}
-		public struct IWMPMetadataText {}
-		public struct IWMPMedia3 {}
-		public struct IWMPSettings2 {}
-		public struct IWMPControls3 {}
-		public struct IWMPClosedCaption2 {}
-		public struct IWMPPlayerApplication {}
-		public struct IWMPCore3 {}
-		public struct IWMPPlayer4 {}
-		public struct IWMPPlayerServices {}
-		public struct IWMPSyncDevice {}
-		public struct IWMPSyncServices {}
-		public struct IWMPPlayerServices2 {}
-		public struct IWMPCdromRip {}
-		public struct IWMPCdromBurn {}
-		public struct IWMPQuery {}
-		public struct IWMPMediaCollection2 {}
-		public struct IWMPStringCollection2 {}
-		public struct IWMPLibrary {}
-		public struct IWMPLibraryServices {}
-		public struct IWMPLibrarySharingServices {}
-		public struct IWMPFolderMonitorServices {}
-		public struct IWMPSyncDevice2 {}
-		public struct IWMPSyncDevice3 {}
-		public struct IWMPLibrary2 {}
-		public struct IWMPEvents {}
-		public struct IWMPEvents2 {}
-		public struct IWMPEvents3 {}
-		public struct IWMPEvents4 {}
-		public struct _WMPOCXEvents {}
-		public struct IWMPNodeRealEstate {}
-		public struct IWMPNodeRealEstateHost {}
-		public struct IWMPNodeWindowed {}
-		public struct IWMPNodeWindowedHost {}
-		public struct IWMPWindowMessageSink {}
-		public struct IWMPNodeWindowless {}
-		public struct IWMPNodeWindowlessHost {}
-		public struct IWMPVideoRenderConfig {}
-		public struct IWMPAudioRenderConfig {}
-		public struct IWMPRenderConfig {}
-		public struct IWMPServices {}
-		public struct IWMPMediaPluginRegistrar {}
-		public struct IWMPPlugin {}
-		public struct IWMPPluginEnable {}
-		public struct IWMPGraphCreation {}
-		public struct IWMPConvert {}
-		public struct IWMPTranscodePolicy {}
-		public struct IWMPUserEventSink {}
-		public struct IXFeedsManager {}
-		public struct IXFeedsEnum {}
-		public struct IXFeedFolder {}
-		public struct IXFeedFolderEvents {}
-		public struct IXFeed {}
-		public struct IXFeed2 {}
-		public struct IXFeedEvents {}
-		public struct IXFeedItem {}
-		public struct IXFeedItem2 {}
-		public struct IXFeedEnclosure {}
-		public struct IFeedsManager {}
-		public struct IFeedsEnum {}
-		public struct IFeedFolder {}
-		public struct IFeedFolderEvents {}
-		public struct IFeed {}
-		public struct IFeed2 {}
-		public struct IFeedEvents {}
-		public struct IFeedItem {}
-		public struct IFeedItem2 {}
-		public struct IFeedEnclosure {}
-		public struct IWMPEffects {}
-		public struct IWMPEffects2 {}
-		public struct IWMPPluginUI {}
-		public struct IWMPContentContainer {}
-		public struct IWMPContentContainerList {}
-		public struct IWMPContentPartnerCallback {}
-		public struct IWMPContentPartner {}
-		public struct IWMPSubscriptionService {}
-		public struct IWMPSubscriptionServiceCallback {}
-		public struct IWMPSubscriptionService2 {}
-		public struct IWMPDownloadItem {}
-		public struct IWMPDownloadItem2 {}
-		public struct IWMPDownloadCollection {}
-		public struct IWMPDownloadManager {}
+		[CRepr]
+		public struct IWMPErrorItem : IDispatch
+		{
+			public const new Guid IID = .(0x3614c646, 0x3b3b, 0x4de7, 0xa8, 0x1e, 0x93, 0x0e, 0x3f, 0x21, 0x27, 0xb3);
+			
+			public function HRESULT(IWMPErrorItem *self, int32* phr) get_errorCode;
+			public function HRESULT(IWMPErrorItem *self, BSTR* pbstrDescription) get_errorDescription;
+			public function HRESULT(IWMPErrorItem *self, VARIANT* pvarContext) get_errorContext;
+			public function HRESULT(IWMPErrorItem *self, int32* plRemedy) get_remedy;
+			public function HRESULT(IWMPErrorItem *self, BSTR* pbstrCustomUrl) get_customUrl;
+		}
+		[CRepr]
+		public struct IWMPError : IDispatch
+		{
+			public const new Guid IID = .(0xa12dcf7d, 0x14ab, 0x4c1b, 0xa8, 0xcd, 0x63, 0x90, 0x9f, 0x06, 0x02, 0x5b);
+			
+			public function HRESULT(IWMPError *self) clearErrorQueue;
+			public function HRESULT(IWMPError *self, int32* plNumErrors) get_errorCount;
+			public function HRESULT(IWMPError *self, int32 dwIndex, IWMPErrorItem** ppErrorItem) get_item;
+			public function HRESULT(IWMPError *self) webHelp;
+		}
+		[CRepr]
+		public struct IWMPMedia : IDispatch
+		{
+			public const new Guid IID = .(0x94d55e95, 0x3fac, 0x11d3, 0xb1, 0x55, 0x00, 0xc0, 0x4f, 0x79, 0xfa, 0xa6);
+			
+			public function HRESULT(IWMPMedia *self, IWMPMedia* pIWMPMedia, int16* pvbool) get_isIdentical;
+			public function HRESULT(IWMPMedia *self, BSTR* pbstrSourceURL) get_sourceURL;
+			public function HRESULT(IWMPMedia *self, BSTR* pbstrName) get_name;
+			public function HRESULT(IWMPMedia *self, BSTR bstrName) put_name;
+			public function HRESULT(IWMPMedia *self, int32* pWidth) get_imageSourceWidth;
+			public function HRESULT(IWMPMedia *self, int32* pHeight) get_imageSourceHeight;
+			public function HRESULT(IWMPMedia *self, int32* pMarkerCount) get_markerCount;
+			public function HRESULT(IWMPMedia *self, int32 MarkerNum, double* pMarkerTime) getMarkerTime;
+			public function HRESULT(IWMPMedia *self, int32 MarkerNum, BSTR* pbstrMarkerName) getMarkerName;
+			public function HRESULT(IWMPMedia *self, double* pDuration) get_duration;
+			public function HRESULT(IWMPMedia *self, BSTR* pbstrDuration) get_durationString;
+			public function HRESULT(IWMPMedia *self, int32* plCount) get_attributeCount;
+			public function HRESULT(IWMPMedia *self, int32 lIndex, BSTR* pbstrItemName) getAttributeName;
+			public function HRESULT(IWMPMedia *self, BSTR bstrItemName, BSTR* pbstrVal) getItemInfo;
+			public function HRESULT(IWMPMedia *self, BSTR bstrItemName, BSTR bstrVal) setItemInfo;
+			public function HRESULT(IWMPMedia *self, int32 lAtom, BSTR* pbstrVal) getItemInfoByAtom;
+			public function HRESULT(IWMPMedia *self, IWMPPlaylist* pPlaylist, int16* pvarfIsMemberOf) isMemberOf;
+			public function HRESULT(IWMPMedia *self, BSTR bstrItemName, int16* pvarfIsReadOnly) isReadOnlyItem;
+		}
+		[CRepr]
+		public struct IWMPControls : IDispatch
+		{
+			public const new Guid IID = .(0x74c09e02, 0xf828, 0x11d2, 0xa7, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0xf3, 0x6e);
+			
+			public function HRESULT(IWMPControls *self, BSTR bstrItem, int16* pIsAvailable) get_isAvailable;
+			public function HRESULT(IWMPControls *self) play;
+			public function HRESULT(IWMPControls *self) stop;
+			public function HRESULT(IWMPControls *self) pause;
+			public function HRESULT(IWMPControls *self) fastForward;
+			public function HRESULT(IWMPControls *self) fastReverse;
+			public function HRESULT(IWMPControls *self, double* pdCurrentPosition) get_currentPosition;
+			public function HRESULT(IWMPControls *self, double dCurrentPosition) put_currentPosition;
+			public function HRESULT(IWMPControls *self, BSTR* pbstrCurrentPosition) get_currentPositionString;
+			public function HRESULT(IWMPControls *self) next;
+			public function HRESULT(IWMPControls *self) previous;
+			public function HRESULT(IWMPControls *self, IWMPMedia** ppIWMPMedia) get_currentItem;
+			public function HRESULT(IWMPControls *self, IWMPMedia* pIWMPMedia) put_currentItem;
+			public function HRESULT(IWMPControls *self, int32* plMarker) get_currentMarker;
+			public function HRESULT(IWMPControls *self, int32 lMarker) put_currentMarker;
+			public function HRESULT(IWMPControls *self, IWMPMedia* pIWMPMedia) playItem;
+		}
+		[CRepr]
+		public struct IWMPSettings : IDispatch
+		{
+			public const new Guid IID = .(0x9104d1ab, 0x80c9, 0x4fed, 0xab, 0xf0, 0x2e, 0x64, 0x17, 0xa6, 0xdf, 0x14);
+			
+			public function HRESULT(IWMPSettings *self, BSTR bstrItem, int16* pIsAvailable) get_isAvailable;
+			public function HRESULT(IWMPSettings *self, int16* pfAutoStart) get_autoStart;
+			public function HRESULT(IWMPSettings *self, int16 fAutoStart) put_autoStart;
+			public function HRESULT(IWMPSettings *self, BSTR* pbstrBaseURL) get_baseURL;
+			public function HRESULT(IWMPSettings *self, BSTR bstrBaseURL) put_baseURL;
+			public function HRESULT(IWMPSettings *self, BSTR* pbstrDefaultFrame) get_defaultFrame;
+			public function HRESULT(IWMPSettings *self, BSTR bstrDefaultFrame) put_defaultFrame;
+			public function HRESULT(IWMPSettings *self, int16* pfInvokeURLs) get_invokeURLs;
+			public function HRESULT(IWMPSettings *self, int16 fInvokeURLs) put_invokeURLs;
+			public function HRESULT(IWMPSettings *self, int16* pfMute) get_mute;
+			public function HRESULT(IWMPSettings *self, int16 fMute) put_mute;
+			public function HRESULT(IWMPSettings *self, int32* plCount) get_playCount;
+			public function HRESULT(IWMPSettings *self, int32 lCount) put_playCount;
+			public function HRESULT(IWMPSettings *self, double* pdRate) get_rate;
+			public function HRESULT(IWMPSettings *self, double dRate) put_rate;
+			public function HRESULT(IWMPSettings *self, int32* plBalance) get_balance;
+			public function HRESULT(IWMPSettings *self, int32 lBalance) put_balance;
+			public function HRESULT(IWMPSettings *self, int32* plVolume) get_volume;
+			public function HRESULT(IWMPSettings *self, int32 lVolume) put_volume;
+			public function HRESULT(IWMPSettings *self, BSTR bstrMode, int16* pvarfMode) getMode;
+			public function HRESULT(IWMPSettings *self, BSTR bstrMode, int16 varfMode) setMode;
+			public function HRESULT(IWMPSettings *self, int16* pfEnableErrorDialogs) get_enableErrorDialogs;
+			public function HRESULT(IWMPSettings *self, int16 fEnableErrorDialogs) put_enableErrorDialogs;
+		}
+		[CRepr]
+		public struct IWMPClosedCaption : IDispatch
+		{
+			public const new Guid IID = .(0x4f2df574, 0xc588, 0x11d3, 0x9e, 0xd0, 0x00, 0xc0, 0x4f, 0xb6, 0xe9, 0x37);
+			
+			public function HRESULT(IWMPClosedCaption *self, BSTR* pbstrSAMIStyle) get_SAMIStyle;
+			public function HRESULT(IWMPClosedCaption *self, BSTR bstrSAMIStyle) put_SAMIStyle;
+			public function HRESULT(IWMPClosedCaption *self, BSTR* pbstrSAMILang) get_SAMILang;
+			public function HRESULT(IWMPClosedCaption *self, BSTR bstrSAMILang) put_SAMILang;
+			public function HRESULT(IWMPClosedCaption *self, BSTR* pbstrSAMIFileName) get_SAMIFileName;
+			public function HRESULT(IWMPClosedCaption *self, BSTR bstrSAMIFileName) put_SAMIFileName;
+			public function HRESULT(IWMPClosedCaption *self, BSTR* pbstrCaptioningID) get_captioningId;
+			public function HRESULT(IWMPClosedCaption *self, BSTR bstrCaptioningID) put_captioningId;
+		}
+		[CRepr]
+		public struct IWMPPlaylist : IDispatch
+		{
+			public const new Guid IID = .(0xd5f0f4f1, 0x130c, 0x11d3, 0xb1, 0x4e, 0x00, 0xc0, 0x4f, 0x79, 0xfa, 0xa6);
+			
+			public function HRESULT(IWMPPlaylist *self, int32* plCount) get_count;
+			public function HRESULT(IWMPPlaylist *self, BSTR* pbstrName) get_name;
+			public function HRESULT(IWMPPlaylist *self, BSTR bstrName) put_name;
+			public function HRESULT(IWMPPlaylist *self, int32* plCount) get_attributeCount;
+			public function HRESULT(IWMPPlaylist *self, int32 lIndex, BSTR* pbstrAttributeName) get_attributeName;
+			public function HRESULT(IWMPPlaylist *self, int32 lIndex, IWMPMedia** ppIWMPMedia) get_item;
+			public function HRESULT(IWMPPlaylist *self, BSTR bstrName, BSTR* pbstrVal) getItemInfo;
+			public function HRESULT(IWMPPlaylist *self, BSTR bstrName, BSTR bstrValue) setItemInfo;
+			public function HRESULT(IWMPPlaylist *self, IWMPPlaylist* pIWMPPlaylist, int16* pvbool) get_isIdentical;
+			public function HRESULT(IWMPPlaylist *self) clear;
+			public function HRESULT(IWMPPlaylist *self, int32 lIndex, IWMPMedia* pIWMPMedia) insertItem;
+			public function HRESULT(IWMPPlaylist *self, IWMPMedia* pIWMPMedia) appendItem;
+			public function HRESULT(IWMPPlaylist *self, IWMPMedia* pIWMPMedia) removeItem;
+			public function HRESULT(IWMPPlaylist *self, int32 lIndexOld, int32 lIndexNew) moveItem;
+		}
+		[CRepr]
+		public struct IWMPCdrom : IDispatch
+		{
+			public const new Guid IID = .(0xcfab6e98, 0x8730, 0x11d3, 0xb3, 0x88, 0x00, 0xc0, 0x4f, 0x68, 0x57, 0x4b);
+			
+			public function HRESULT(IWMPCdrom *self, BSTR* pbstrDrive) get_driveSpecifier;
+			public function HRESULT(IWMPCdrom *self, IWMPPlaylist** ppPlaylist) get_playlist;
+			public function HRESULT(IWMPCdrom *self) eject;
+		}
+		[CRepr]
+		public struct IWMPCdromCollection : IDispatch
+		{
+			public const new Guid IID = .(0xee4c8fe2, 0x34b2, 0x11d3, 0xa3, 0xbf, 0x00, 0x60, 0x97, 0xc9, 0xb3, 0x44);
+			
+			public function HRESULT(IWMPCdromCollection *self, int32* plCount) get_count;
+			public function HRESULT(IWMPCdromCollection *self, int32 lIndex, IWMPCdrom** ppItem) item;
+			public function HRESULT(IWMPCdromCollection *self, BSTR bstrDriveSpecifier, IWMPCdrom** ppCdrom) getByDriveSpecifier;
+		}
+		[CRepr]
+		public struct IWMPStringCollection : IDispatch
+		{
+			public const new Guid IID = .(0x4a976298, 0x8c0d, 0x11d3, 0xb3, 0x89, 0x00, 0xc0, 0x4f, 0x68, 0x57, 0x4b);
+			
+			public function HRESULT(IWMPStringCollection *self, int32* plCount) get_count;
+			public function HRESULT(IWMPStringCollection *self, int32 lIndex, BSTR* pbstrString) item;
+		}
+		[CRepr]
+		public struct IWMPMediaCollection : IDispatch
+		{
+			public const new Guid IID = .(0x8363bc22, 0xb4b4, 0x4b19, 0x98, 0x9d, 0x1c, 0xd7, 0x65, 0x74, 0x9d, 0xd1);
+			
+			public function HRESULT(IWMPMediaCollection *self, BSTR bstrURL, IWMPMedia** ppItem) add;
+			public function HRESULT(IWMPMediaCollection *self, IWMPPlaylist** ppMediaItems) getAll;
+			public function HRESULT(IWMPMediaCollection *self, BSTR bstrName, IWMPPlaylist** ppMediaItems) getByName;
+			public function HRESULT(IWMPMediaCollection *self, BSTR bstrGenre, IWMPPlaylist** ppMediaItems) getByGenre;
+			public function HRESULT(IWMPMediaCollection *self, BSTR bstrAuthor, IWMPPlaylist** ppMediaItems) getByAuthor;
+			public function HRESULT(IWMPMediaCollection *self, BSTR bstrAlbum, IWMPPlaylist** ppMediaItems) getByAlbum;
+			public function HRESULT(IWMPMediaCollection *self, BSTR bstrAttribute, BSTR bstrValue, IWMPPlaylist** ppMediaItems) getByAttribute;
+			public function HRESULT(IWMPMediaCollection *self, IWMPMedia* pItem, int16 varfDeleteFile) remove;
+			public function HRESULT(IWMPMediaCollection *self, BSTR bstrAttribute, BSTR bstrMediaType, IWMPStringCollection** ppStringCollection) getAttributeStringCollection;
+			public function HRESULT(IWMPMediaCollection *self, BSTR bstrItemName, int32* plAtom) getMediaAtom;
+			public function HRESULT(IWMPMediaCollection *self, IWMPMedia* pItem, int16 varfIsDeleted) setDeleted;
+			public function HRESULT(IWMPMediaCollection *self, IWMPMedia* pItem, int16* pvarfIsDeleted) isDeleted;
+		}
+		[CRepr]
+		public struct IWMPPlaylistArray : IDispatch
+		{
+			public const new Guid IID = .(0x679409c0, 0x99f7, 0x11d3, 0x9f, 0xb7, 0x00, 0x10, 0x5a, 0xa6, 0x20, 0xbb);
+			
+			public function HRESULT(IWMPPlaylistArray *self, int32* plCount) get_count;
+			public function HRESULT(IWMPPlaylistArray *self, int32 lIndex, IWMPPlaylist** ppItem) item;
+		}
+		[CRepr]
+		public struct IWMPPlaylistCollection : IDispatch
+		{
+			public const new Guid IID = .(0x10a13217, 0x23a7, 0x439b, 0xb1, 0xc0, 0xd8, 0x47, 0xc7, 0x9b, 0x77, 0x74);
+			
+			public function HRESULT(IWMPPlaylistCollection *self, BSTR bstrName, IWMPPlaylist** ppItem) newPlaylist;
+			public function HRESULT(IWMPPlaylistCollection *self, IWMPPlaylistArray** ppPlaylistArray) getAll;
+			public function HRESULT(IWMPPlaylistCollection *self, BSTR bstrName, IWMPPlaylistArray** ppPlaylistArray) getByName;
+			public function HRESULT(IWMPPlaylistCollection *self, IWMPPlaylist* pItem) remove;
+			public function HRESULT(IWMPPlaylistCollection *self, IWMPPlaylist* pItem, int16 varfIsDeleted) setDeleted;
+			public function HRESULT(IWMPPlaylistCollection *self, IWMPPlaylist* pItem, int16* pvarfIsDeleted) isDeleted;
+			public function HRESULT(IWMPPlaylistCollection *self, IWMPPlaylist* pItem, IWMPPlaylist** ppImportedItem) importPlaylist;
+		}
+		[CRepr]
+		public struct IWMPNetwork : IDispatch
+		{
+			public const new Guid IID = .(0xec21b779, 0xedef, 0x462d, 0xbb, 0xa4, 0xad, 0x9d, 0xde, 0x2b, 0x29, 0xa7);
+			
+			public function HRESULT(IWMPNetwork *self, int32* plBandwidth) get_bandWidth;
+			public function HRESULT(IWMPNetwork *self, int32* plRecoveredPackets) get_recoveredPackets;
+			public function HRESULT(IWMPNetwork *self, BSTR* pbstrSourceProtocol) get_sourceProtocol;
+			public function HRESULT(IWMPNetwork *self, int32* plReceivedPackets) get_receivedPackets;
+			public function HRESULT(IWMPNetwork *self, int32* plLostPackets) get_lostPackets;
+			public function HRESULT(IWMPNetwork *self, int32* plReceptionQuality) get_receptionQuality;
+			public function HRESULT(IWMPNetwork *self, int32* plBufferingCount) get_bufferingCount;
+			public function HRESULT(IWMPNetwork *self, int32* plBufferingProgress) get_bufferingProgress;
+			public function HRESULT(IWMPNetwork *self, int32* plBufferingTime) get_bufferingTime;
+			public function HRESULT(IWMPNetwork *self, int32 lBufferingTime) put_bufferingTime;
+			public function HRESULT(IWMPNetwork *self, int32* plFrameRate) get_frameRate;
+			public function HRESULT(IWMPNetwork *self, int32* plBitRate) get_maxBitRate;
+			public function HRESULT(IWMPNetwork *self, int32* plBitRate) get_bitRate;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, int32* plProxySetting) getProxySettings;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, int32 lProxySetting) setProxySettings;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, BSTR* pbstrProxyName) getProxyName;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, BSTR bstrProxyName) setProxyName;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, int32* lProxyPort) getProxyPort;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, int32 lProxyPort) setProxyPort;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, BSTR* pbstrExceptionList) getProxyExceptionList;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, BSTR pbstrExceptionList) setProxyExceptionList;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, int16* pfBypassForLocal) getProxyBypassForLocal;
+			public function HRESULT(IWMPNetwork *self, BSTR bstrProtocol, int16 fBypassForLocal) setProxyBypassForLocal;
+			public function HRESULT(IWMPNetwork *self, int32* lMaxBandwidth) get_maxBandwidth;
+			public function HRESULT(IWMPNetwork *self, int32 lMaxBandwidth) put_maxBandwidth;
+			public function HRESULT(IWMPNetwork *self, int32* plDownloadProgress) get_downloadProgress;
+			public function HRESULT(IWMPNetwork *self, int32* plFrameRate) get_encodedFrameRate;
+			public function HRESULT(IWMPNetwork *self, int32* plFrames) get_framesSkipped;
+		}
+		[CRepr]
+		public struct IWMPCore : IDispatch
+		{
+			public const new Guid IID = .(0xd84cca99, 0xcce2, 0x11d2, 0x9e, 0xcc, 0x00, 0x00, 0xf8, 0x08, 0x59, 0x81);
+			
+			public function HRESULT(IWMPCore *self) close;
+			public function HRESULT(IWMPCore *self, BSTR* pbstrURL) get_URL;
+			public function HRESULT(IWMPCore *self, BSTR bstrURL) put_URL;
+			public function HRESULT(IWMPCore *self, WMPOpenState* pwmpos) get_openState;
+			public function HRESULT(IWMPCore *self, WMPPlayState* pwmpps) get_playState;
+			public function HRESULT(IWMPCore *self, IWMPControls** ppControl) get_controls;
+			public function HRESULT(IWMPCore *self, IWMPSettings** ppSettings) get_settings;
+			public function HRESULT(IWMPCore *self, IWMPMedia** ppMedia) get_currentMedia;
+			public function HRESULT(IWMPCore *self, IWMPMedia* pMedia) put_currentMedia;
+			public function HRESULT(IWMPCore *self, IWMPMediaCollection** ppMediaCollection) get_mediaCollection;
+			public function HRESULT(IWMPCore *self, IWMPPlaylistCollection** ppPlaylistCollection) get_playlistCollection;
+			public function HRESULT(IWMPCore *self, BSTR* pbstrVersionInfo) get_versionInfo;
+			public function HRESULT(IWMPCore *self, BSTR bstrURL) launchURL;
+			public function HRESULT(IWMPCore *self, IWMPNetwork** ppQNI) get_network;
+			public function HRESULT(IWMPCore *self, IWMPPlaylist** ppPL) get_currentPlaylist;
+			public function HRESULT(IWMPCore *self, IWMPPlaylist* pPL) put_currentPlaylist;
+			public function HRESULT(IWMPCore *self, IWMPCdromCollection** ppCdromCollection) get_cdromCollection;
+			public function HRESULT(IWMPCore *self, IWMPClosedCaption** ppClosedCaption) get_closedCaption;
+			public function HRESULT(IWMPCore *self, int16* pfOnline) get_isOnline;
+			public function HRESULT(IWMPCore *self, IWMPError** ppError) get_error;
+			public function HRESULT(IWMPCore *self, BSTR* pbstrStatus) get_status;
+		}
+		[CRepr]
+		public struct IWMPPlayer : IWMPCore
+		{
+			public const new Guid IID = .(0x6bf52a4f, 0x394a, 0x11d3, 0xb1, 0x53, 0x00, 0xc0, 0x4f, 0x79, 0xfa, 0xa6);
+			
+			public function HRESULT(IWMPPlayer *self, int16* pbEnabled) get_enabled;
+			public function HRESULT(IWMPPlayer *self, int16 bEnabled) put_enabled;
+			public function HRESULT(IWMPPlayer *self, int16* pbFullScreen) get_fullScreen;
+			public function HRESULT(IWMPPlayer *self, int16 bFullScreen) put_fullScreen;
+			public function HRESULT(IWMPPlayer *self, int16* pbEnableContextMenu) get_enableContextMenu;
+			public function HRESULT(IWMPPlayer *self, int16 bEnableContextMenu) put_enableContextMenu;
+			public function HRESULT(IWMPPlayer *self, BSTR bstrMode) put_uiMode;
+			public function HRESULT(IWMPPlayer *self, BSTR* pbstrMode) get_uiMode;
+		}
+		[CRepr]
+		public struct IWMPPlayer2 : IWMPCore
+		{
+			public const new Guid IID = .(0x0e6b01d1, 0xd407, 0x4c85, 0xbf, 0x5f, 0x1c, 0x01, 0xf6, 0x15, 0x02, 0x80);
+			
+			public function HRESULT(IWMPPlayer2 *self, int16* pbEnabled) get_enabled;
+			public function HRESULT(IWMPPlayer2 *self, int16 bEnabled) put_enabled;
+			public function HRESULT(IWMPPlayer2 *self, int16* pbFullScreen) get_fullScreen;
+			public function HRESULT(IWMPPlayer2 *self, int16 bFullScreen) put_fullScreen;
+			public function HRESULT(IWMPPlayer2 *self, int16* pbEnableContextMenu) get_enableContextMenu;
+			public function HRESULT(IWMPPlayer2 *self, int16 bEnableContextMenu) put_enableContextMenu;
+			public function HRESULT(IWMPPlayer2 *self, BSTR bstrMode) put_uiMode;
+			public function HRESULT(IWMPPlayer2 *self, BSTR* pbstrMode) get_uiMode;
+			public function HRESULT(IWMPPlayer2 *self, int16* pbEnabled) get_stretchToFit;
+			public function HRESULT(IWMPPlayer2 *self, int16 bEnabled) put_stretchToFit;
+			public function HRESULT(IWMPPlayer2 *self, int16* pbEnabled) get_windowlessVideo;
+			public function HRESULT(IWMPPlayer2 *self, int16 bEnabled) put_windowlessVideo;
+		}
+		[CRepr]
+		public struct IWMPMedia2 : IWMPMedia
+		{
+			public const new Guid IID = .(0xab7c88bb, 0x143e, 0x4ea4, 0xac, 0xc3, 0xe4, 0x35, 0x0b, 0x21, 0x06, 0xc3);
+			
+			public function HRESULT(IWMPMedia2 *self, IWMPErrorItem** ppIWMPErrorItem) get_error;
+		}
+		[CRepr]
+		public struct IWMPControls2 : IWMPControls
+		{
+			public const new Guid IID = .(0x6f030d25, 0x0890, 0x480f, 0x97, 0x75, 0x1f, 0x7e, 0x40, 0xab, 0x5b, 0x8e);
+			
+			public function HRESULT(IWMPControls2 *self, int32 lStep) step;
+		}
+		[CRepr]
+		public struct IWMPDVD : IDispatch
+		{
+			public const new Guid IID = .(0x8da61686, 0x4668, 0x4a5c, 0xae, 0x5d, 0x80, 0x31, 0x93, 0x29, 0x3d, 0xbe);
+			
+			public function HRESULT(IWMPDVD *self, BSTR bstrItem, int16* pIsAvailable) get_isAvailable;
+			public function HRESULT(IWMPDVD *self, BSTR* strDomain) get_domain;
+			public function HRESULT(IWMPDVD *self) topMenu;
+			public function HRESULT(IWMPDVD *self) titleMenu;
+			public function HRESULT(IWMPDVD *self) back;
+			public function HRESULT(IWMPDVD *self) resume;
+		}
+		[CRepr]
+		public struct IWMPCore2 : IWMPCore
+		{
+			public const new Guid IID = .(0xbc17e5b7, 0x7561, 0x4c18, 0xbb, 0x90, 0x17, 0xd4, 0x85, 0x77, 0x56, 0x59);
+			
+			public function HRESULT(IWMPCore2 *self, IWMPDVD** ppDVD) get_dvd;
+		}
+		[CRepr]
+		public struct IWMPPlayer3 : IWMPCore2
+		{
+			public const new Guid IID = .(0x54062b68, 0x052a, 0x4c25, 0xa3, 0x9f, 0x8b, 0x63, 0x34, 0x65, 0x11, 0xd4);
+			
+			public function HRESULT(IWMPPlayer3 *self, int16* pbEnabled) get_enabled;
+			public function HRESULT(IWMPPlayer3 *self, int16 bEnabled) put_enabled;
+			public function HRESULT(IWMPPlayer3 *self, int16* pbFullScreen) get_fullScreen;
+			public function HRESULT(IWMPPlayer3 *self, int16 bFullScreen) put_fullScreen;
+			public function HRESULT(IWMPPlayer3 *self, int16* pbEnableContextMenu) get_enableContextMenu;
+			public function HRESULT(IWMPPlayer3 *self, int16 bEnableContextMenu) put_enableContextMenu;
+			public function HRESULT(IWMPPlayer3 *self, BSTR bstrMode) put_uiMode;
+			public function HRESULT(IWMPPlayer3 *self, BSTR* pbstrMode) get_uiMode;
+			public function HRESULT(IWMPPlayer3 *self, int16* pbEnabled) get_stretchToFit;
+			public function HRESULT(IWMPPlayer3 *self, int16 bEnabled) put_stretchToFit;
+			public function HRESULT(IWMPPlayer3 *self, int16* pbEnabled) get_windowlessVideo;
+			public function HRESULT(IWMPPlayer3 *self, int16 bEnabled) put_windowlessVideo;
+		}
+		[CRepr]
+		public struct IWMPErrorItem2 : IWMPErrorItem
+		{
+			public const new Guid IID = .(0xf75ccec0, 0xc67c, 0x475c, 0x93, 0x1e, 0x87, 0x19, 0x87, 0x0b, 0xee, 0x7d);
+			
+			public function HRESULT(IWMPErrorItem2 *self, int32* plCondition) get_condition;
+		}
+		[CRepr]
+		public struct IWMPRemoteMediaServices : IUnknown
+		{
+			public const new Guid IID = .(0xcbb92747, 0x741f, 0x44fe, 0xab, 0x5b, 0xf1, 0xa4, 0x8f, 0x3b, 0x2a, 0x59);
+			
+			public function HRESULT(IWMPRemoteMediaServices *self, BSTR* pbstrType) GetServiceType;
+			public function HRESULT(IWMPRemoteMediaServices *self, BSTR* pbstrName) GetApplicationName;
+			public function HRESULT(IWMPRemoteMediaServices *self, BSTR* pbstrName, IDispatch** ppDispatch) GetScriptableObject;
+			public function HRESULT(IWMPRemoteMediaServices *self, BSTR* pbstrFile) GetCustomUIMode;
+		}
+		[CRepr]
+		public struct IWMPSkinManager : IUnknown
+		{
+			public const new Guid IID = .(0x076f2fa6, 0xed30, 0x448b, 0x8c, 0xc5, 0x3f, 0x3e, 0xf3, 0x52, 0x9c, 0x7a);
+			
+			public function HRESULT(IWMPSkinManager *self, BSTR bstrPath) SetVisualStyle;
+		}
+		[CRepr]
+		public struct IWMPMetadataPicture : IDispatch
+		{
+			public const new Guid IID = .(0x5c29bbe0, 0xf87d, 0x4c45, 0xaa, 0x28, 0xa7, 0x0f, 0x02, 0x30, 0xff, 0xa9);
+			
+			public function HRESULT(IWMPMetadataPicture *self, BSTR* pbstrMimeType) get_mimeType;
+			public function HRESULT(IWMPMetadataPicture *self, BSTR* pbstrPictureType) get_pictureType;
+			public function HRESULT(IWMPMetadataPicture *self, BSTR* pbstrDescription) get_description;
+			public function HRESULT(IWMPMetadataPicture *self, BSTR* pbstrURL) get_URL;
+		}
+		[CRepr]
+		public struct IWMPMetadataText : IDispatch
+		{
+			public const new Guid IID = .(0x769a72db, 0x13d2, 0x45e2, 0x9c, 0x48, 0x53, 0xca, 0x9d, 0x5b, 0x74, 0x50);
+			
+			public function HRESULT(IWMPMetadataText *self, BSTR* pbstrDescription) get_description;
+			public function HRESULT(IWMPMetadataText *self, BSTR* pbstrText) get_text;
+		}
+		[CRepr]
+		public struct IWMPMedia3 : IWMPMedia2
+		{
+			public const new Guid IID = .(0xf118efc7, 0xf03a, 0x4fb4, 0x99, 0xc9, 0x1c, 0x02, 0xa5, 0xc1, 0x06, 0x5b);
+			
+			public function HRESULT(IWMPMedia3 *self, BSTR bstrType, BSTR bstrLanguage, int32* plCount) getAttributeCountByType;
+			public function HRESULT(IWMPMedia3 *self, BSTR bstrType, BSTR bstrLanguage, int32 lIndex, VARIANT* pvarValue) getItemInfoByType;
+		}
+		[CRepr]
+		public struct IWMPSettings2 : IWMPSettings
+		{
+			public const new Guid IID = .(0xfda937a4, 0xeece, 0x4da5, 0xa0, 0xb6, 0x39, 0xbf, 0x89, 0xad, 0xe2, 0xc2);
+			
+			public function HRESULT(IWMPSettings2 *self, int32* plLangID) get_defaultAudioLanguage;
+			public function HRESULT(IWMPSettings2 *self, BSTR* pbstrRights) get_mediaAccessRights;
+			public function HRESULT(IWMPSettings2 *self, BSTR bstrDesiredAccess, int16* pvbAccepted) requestMediaAccessRights;
+		}
+		[CRepr]
+		public struct IWMPControls3 : IWMPControls2
+		{
+			public const new Guid IID = .(0xa1d1110e, 0xd545, 0x476a, 0x9a, 0x78, 0xac, 0x3e, 0x4c, 0xb1, 0xe6, 0xbd);
+			
+			public function HRESULT(IWMPControls3 *self, int32* plCount) get_audioLanguageCount;
+			public function HRESULT(IWMPControls3 *self, int32 lIndex, int32* plLangID) getAudioLanguageID;
+			public function HRESULT(IWMPControls3 *self, int32 lIndex, BSTR* pbstrLangDesc) getAudioLanguageDescription;
+			public function HRESULT(IWMPControls3 *self, int32* plLangID) get_currentAudioLanguage;
+			public function HRESULT(IWMPControls3 *self, int32 lLangID) put_currentAudioLanguage;
+			public function HRESULT(IWMPControls3 *self, int32* plIndex) get_currentAudioLanguageIndex;
+			public function HRESULT(IWMPControls3 *self, int32 lIndex) put_currentAudioLanguageIndex;
+			public function HRESULT(IWMPControls3 *self, int32 lLangID, BSTR* pbstrLangName) getLanguageName;
+			public function HRESULT(IWMPControls3 *self, BSTR* bstrTimecode) get_currentPositionTimecode;
+			public function HRESULT(IWMPControls3 *self, BSTR bstrTimecode) put_currentPositionTimecode;
+		}
+		[CRepr]
+		public struct IWMPClosedCaption2 : IWMPClosedCaption
+		{
+			public const new Guid IID = .(0x350ba78b, 0x6bc8, 0x4113, 0xa5, 0xf5, 0x31, 0x20, 0x56, 0x93, 0x4e, 0xb6);
+			
+			public function HRESULT(IWMPClosedCaption2 *self, int32* plCount) get_SAMILangCount;
+			public function HRESULT(IWMPClosedCaption2 *self, int32 nIndex, BSTR* pbstrName) getSAMILangName;
+			public function HRESULT(IWMPClosedCaption2 *self, int32 nIndex, int32* plLangID) getSAMILangID;
+			public function HRESULT(IWMPClosedCaption2 *self, int32* plCount) get_SAMIStyleCount;
+			public function HRESULT(IWMPClosedCaption2 *self, int32 nIndex, BSTR* pbstrName) getSAMIStyleName;
+		}
+		[CRepr]
+		public struct IWMPPlayerApplication : IDispatch
+		{
+			public const new Guid IID = .(0x40897764, 0xceab, 0x47be, 0xad, 0x4a, 0x8e, 0x28, 0x53, 0x7f, 0x9b, 0xbf);
+			
+			public function HRESULT(IWMPPlayerApplication *self) switchToPlayerApplication;
+			public function HRESULT(IWMPPlayerApplication *self) switchToControl;
+			public function HRESULT(IWMPPlayerApplication *self, int16* pbPlayerDocked) get_playerDocked;
+			public function HRESULT(IWMPPlayerApplication *self, int16* pbHasDisplay) get_hasDisplay;
+		}
+		[CRepr]
+		public struct IWMPCore3 : IWMPCore2
+		{
+			public const new Guid IID = .(0x7587c667, 0x628f, 0x499f, 0x88, 0xe7, 0x6a, 0x6f, 0x4e, 0x88, 0x84, 0x64);
+			
+			public function HRESULT(IWMPCore3 *self, BSTR bstrName, BSTR bstrURL, IWMPPlaylist** ppPlaylist) newPlaylist;
+			public function HRESULT(IWMPCore3 *self, BSTR bstrURL, IWMPMedia** ppMedia) newMedia;
+		}
+		[CRepr]
+		public struct IWMPPlayer4 : IWMPCore3
+		{
+			public const new Guid IID = .(0x6c497d62, 0x8919, 0x413c, 0x82, 0xdb, 0xe9, 0x35, 0xfb, 0x3e, 0xc5, 0x84);
+			
+			public function HRESULT(IWMPPlayer4 *self, int16* pbEnabled) get_enabled;
+			public function HRESULT(IWMPPlayer4 *self, int16 bEnabled) put_enabled;
+			public function HRESULT(IWMPPlayer4 *self, int16* pbFullScreen) get_fullScreen;
+			public function HRESULT(IWMPPlayer4 *self, int16 bFullScreen) put_fullScreen;
+			public function HRESULT(IWMPPlayer4 *self, int16* pbEnableContextMenu) get_enableContextMenu;
+			public function HRESULT(IWMPPlayer4 *self, int16 bEnableContextMenu) put_enableContextMenu;
+			public function HRESULT(IWMPPlayer4 *self, BSTR bstrMode) put_uiMode;
+			public function HRESULT(IWMPPlayer4 *self, BSTR* pbstrMode) get_uiMode;
+			public function HRESULT(IWMPPlayer4 *self, int16* pbEnabled) get_stretchToFit;
+			public function HRESULT(IWMPPlayer4 *self, int16 bEnabled) put_stretchToFit;
+			public function HRESULT(IWMPPlayer4 *self, int16* pbEnabled) get_windowlessVideo;
+			public function HRESULT(IWMPPlayer4 *self, int16 bEnabled) put_windowlessVideo;
+			public function HRESULT(IWMPPlayer4 *self, int16* pvarfIsRemote) get_isRemote;
+			public function HRESULT(IWMPPlayer4 *self, IWMPPlayerApplication** ppIWMPPlayerApplication) get_playerApplication;
+			public function HRESULT(IWMPPlayer4 *self, BSTR bstrURL) openPlayer;
+		}
+		[CRepr]
+		public struct IWMPPlayerServices : IUnknown
+		{
+			public const new Guid IID = .(0x1d01fbdb, 0xade2, 0x4c8d, 0x98, 0x42, 0xc1, 0x90, 0xb9, 0x5c, 0x33, 0x06);
+			
+			public function HRESULT(IWMPPlayerServices *self, BSTR bstrPlugin) activateUIPlugin;
+			public function HRESULT(IWMPPlayerServices *self, BSTR bstrTaskPane) setTaskPane;
+			public function HRESULT(IWMPPlayerServices *self, BSTR bstrTaskPane, BSTR bstrURL, BSTR bstrFriendlyName) setTaskPaneURL;
+		}
+		[CRepr]
+		public struct IWMPSyncDevice : IUnknown
+		{
+			public const new Guid IID = .(0x82a2986c, 0x0293, 0x4fd0, 0xb2, 0x79, 0xb2, 0x1b, 0x86, 0xc0, 0x58, 0xbe);
+			
+			public function HRESULT(IWMPSyncDevice *self, BSTR* pbstrName) get_friendlyName;
+			public function HRESULT(IWMPSyncDevice *self, BSTR bstrName) put_friendlyName;
+			public function HRESULT(IWMPSyncDevice *self, BSTR* pbstrName) get_deviceName;
+			public function HRESULT(IWMPSyncDevice *self, BSTR* pbstrDeviceId) get_deviceId;
+			public function HRESULT(IWMPSyncDevice *self, int32* plIndex) get_partnershipIndex;
+			public function HRESULT(IWMPSyncDevice *self, int16* pvbConnected) get_connected;
+			public function HRESULT(IWMPSyncDevice *self, WMPDeviceStatus* pwmpds) get_status;
+			public function HRESULT(IWMPSyncDevice *self, WMPSyncState* pwmpss) get_syncState;
+			public function HRESULT(IWMPSyncDevice *self, int32* plProgress) get_progress;
+			public function HRESULT(IWMPSyncDevice *self, BSTR bstrItemName, BSTR* pbstrVal) getItemInfo;
+			public function HRESULT(IWMPSyncDevice *self, int16 vbShowUI) createPartnership;
+			public function HRESULT(IWMPSyncDevice *self) deletePartnership;
+			public function HRESULT(IWMPSyncDevice *self) start;
+			public function HRESULT(IWMPSyncDevice *self) stop;
+			public function HRESULT(IWMPSyncDevice *self) showSettings;
+			public function HRESULT(IWMPSyncDevice *self, IWMPSyncDevice* pDevice, int16* pvbool) isIdentical;
+		}
+		[CRepr]
+		public struct IWMPSyncServices : IUnknown
+		{
+			public const new Guid IID = .(0x8b5050ff, 0xe0a4, 0x4808, 0xb3, 0xa8, 0x89, 0x3a, 0x9e, 0x1e, 0xd8, 0x94);
+			
+			public function HRESULT(IWMPSyncServices *self, int32* plCount) get_deviceCount;
+			public function HRESULT(IWMPSyncServices *self, int32 lIndex, IWMPSyncDevice** ppDevice) getDevice;
+		}
+		[CRepr]
+		public struct IWMPPlayerServices2 : IWMPPlayerServices
+		{
+			public const new Guid IID = .(0x1bb1592f, 0xf040, 0x418a, 0x9f, 0x71, 0x17, 0xc7, 0x51, 0x2b, 0x4d, 0x70);
+			
+			public function HRESULT(IWMPPlayerServices2 *self, BSTR bstrPriority) setBackgroundProcessingPriority;
+		}
+		[CRepr]
+		public struct IWMPCdromRip : IUnknown
+		{
+			public const new Guid IID = .(0x56e2294f, 0x69ed, 0x4629, 0xa8, 0x69, 0xae, 0xa7, 0x2c, 0x0d, 0xcc, 0x2c);
+			
+			public function HRESULT(IWMPCdromRip *self, WMPRipState* pwmprs) get_ripState;
+			public function HRESULT(IWMPCdromRip *self, int32* plProgress) get_ripProgress;
+			public function HRESULT(IWMPCdromRip *self) startRip;
+			public function HRESULT(IWMPCdromRip *self) stopRip;
+		}
+		[CRepr]
+		public struct IWMPCdromBurn : IUnknown
+		{
+			public const new Guid IID = .(0xbd94dbeb, 0x417f, 0x4928, 0xaa, 0x06, 0x08, 0x7d, 0x56, 0xed, 0x9b, 0x59);
+			
+			public function HRESULT(IWMPCdromBurn *self, BSTR bstrItem, int16* pIsAvailable) isAvailable;
+			public function HRESULT(IWMPCdromBurn *self, BSTR bstrItem, BSTR* pbstrVal) getItemInfo;
+			public function HRESULT(IWMPCdromBurn *self, BSTR* pbstrLabel) get_label;
+			public function HRESULT(IWMPCdromBurn *self, BSTR bstrLabel) put_label;
+			public function HRESULT(IWMPCdromBurn *self, WMPBurnFormat* pwmpbf) get_burnFormat;
+			public function HRESULT(IWMPCdromBurn *self, WMPBurnFormat wmpbf) put_burnFormat;
+			public function HRESULT(IWMPCdromBurn *self, IWMPPlaylist** ppPlaylist) get_burnPlaylist;
+			public function HRESULT(IWMPCdromBurn *self, IWMPPlaylist* pPlaylist) put_burnPlaylist;
+			public function HRESULT(IWMPCdromBurn *self) refreshStatus;
+			public function HRESULT(IWMPCdromBurn *self, WMPBurnState* pwmpbs) get_burnState;
+			public function HRESULT(IWMPCdromBurn *self, int32* plProgress) get_burnProgress;
+			public function HRESULT(IWMPCdromBurn *self) startBurn;
+			public function HRESULT(IWMPCdromBurn *self) stopBurn;
+			public function HRESULT(IWMPCdromBurn *self) erase;
+		}
+		[CRepr]
+		public struct IWMPQuery : IDispatch
+		{
+			public const new Guid IID = .(0xa00918f3, 0xa6b0, 0x4bfb, 0x91, 0x89, 0xfd, 0x83, 0x4c, 0x7b, 0xc5, 0xa5);
+			
+			public function HRESULT(IWMPQuery *self, BSTR bstrAttribute, BSTR bstrOperator, BSTR bstrValue) addCondition;
+			public function HRESULT(IWMPQuery *self) beginNextGroup;
+		}
+		[CRepr]
+		public struct IWMPMediaCollection2 : IWMPMediaCollection
+		{
+			public const new Guid IID = .(0x8ba957f5, 0xfd8c, 0x4791, 0xb8, 0x2d, 0xf8, 0x40, 0x40, 0x1e, 0xe4, 0x74);
+			
+			public function HRESULT(IWMPMediaCollection2 *self, IWMPQuery** ppQuery) createQuery;
+			public function HRESULT(IWMPMediaCollection2 *self, IWMPQuery* pQuery, BSTR bstrMediaType, BSTR bstrSortAttribute, int16 fSortAscending, IWMPPlaylist** ppPlaylist) getPlaylistByQuery;
+			public function HRESULT(IWMPMediaCollection2 *self, BSTR bstrAttribute, IWMPQuery* pQuery, BSTR bstrMediaType, BSTR bstrSortAttribute, int16 fSortAscending, IWMPStringCollection** ppStringCollection) getStringCollectionByQuery;
+			public function HRESULT(IWMPMediaCollection2 *self, BSTR bstrAttribute, BSTR bstrValue, BSTR bstrMediaType, IWMPPlaylist** ppMediaItems) getByAttributeAndMediaType;
+		}
+		[CRepr]
+		public struct IWMPStringCollection2 : IWMPStringCollection
+		{
+			public const new Guid IID = .(0x46ad648d, 0x53f1, 0x4a74, 0x92, 0xe2, 0x2a, 0x1b, 0x68, 0xd6, 0x3f, 0xd4);
+			
+			public function HRESULT(IWMPStringCollection2 *self, IWMPStringCollection2* pIWMPStringCollection2, int16* pvbool) isIdentical;
+			public function HRESULT(IWMPStringCollection2 *self, int32 lCollectionIndex, BSTR bstrItemName, BSTR* pbstrValue) getItemInfo;
+			public function HRESULT(IWMPStringCollection2 *self, int32 lCollectionIndex, BSTR bstrType, BSTR bstrLanguage, int32* plCount) getAttributeCountByType;
+			public function HRESULT(IWMPStringCollection2 *self, int32 lCollectionIndex, BSTR bstrType, BSTR bstrLanguage, int32 lAttributeIndex, VARIANT* pvarValue) getItemInfoByType;
+		}
+		[CRepr]
+		public struct IWMPLibrary : IUnknown
+		{
+			public const new Guid IID = .(0x3df47861, 0x7df1, 0x4c1f, 0xa8, 0x1b, 0x4c, 0x26, 0xf0, 0xf7, 0xa7, 0xc6);
+			
+			public function HRESULT(IWMPLibrary *self, BSTR* pbstrName) get_name;
+			public function HRESULT(IWMPLibrary *self, WMPLibraryType* pwmplt) get_type;
+			public function HRESULT(IWMPLibrary *self, IWMPMediaCollection** ppIWMPMediaCollection) get_mediaCollection;
+			public function HRESULT(IWMPLibrary *self, IWMPLibrary* pIWMPLibrary, int16* pvbool) isIdentical;
+		}
+		[CRepr]
+		public struct IWMPLibraryServices : IUnknown
+		{
+			public const new Guid IID = .(0x39c2f8d5, 0x1cf2, 0x4d5e, 0xae, 0x09, 0xd7, 0x34, 0x92, 0xcf, 0x9e, 0xaa);
+			
+			public function HRESULT(IWMPLibraryServices *self, WMPLibraryType wmplt, int32* plCount) getCountByType;
+			public function HRESULT(IWMPLibraryServices *self, WMPLibraryType wmplt, int32 lIndex, IWMPLibrary** ppIWMPLibrary) getLibraryByType;
+		}
+		[CRepr]
+		public struct IWMPLibrarySharingServices : IUnknown
+		{
+			public const new Guid IID = .(0x82cba86b, 0x9f04, 0x474b, 0xa3, 0x65, 0xd6, 0xdd, 0x14, 0x66, 0xe5, 0x41);
+			
+			public function HRESULT(IWMPLibrarySharingServices *self, int16* pvbShared) isLibraryShared;
+			public function HRESULT(IWMPLibrarySharingServices *self, int16* pvbEnabled) isLibrarySharingEnabled;
+			public function HRESULT(IWMPLibrarySharingServices *self) showLibrarySharing;
+		}
+		[CRepr]
+		public struct IWMPFolderMonitorServices : IUnknown
+		{
+			public const new Guid IID = .(0x788c8743, 0xe57f, 0x439d, 0xa4, 0x68, 0x5b, 0xc7, 0x7f, 0x2e, 0x59, 0xc6);
+			
+			public function HRESULT(IWMPFolderMonitorServices *self, int32* plCount) get_count;
+			public function HRESULT(IWMPFolderMonitorServices *self, int32 lIndex, BSTR* pbstrFolder) item;
+			public function HRESULT(IWMPFolderMonitorServices *self, BSTR bstrFolder) add;
+			public function HRESULT(IWMPFolderMonitorServices *self, int32 lIndex) remove;
+			public function HRESULT(IWMPFolderMonitorServices *self, WMPFolderScanState* pwmpfss) get_scanState;
+			public function HRESULT(IWMPFolderMonitorServices *self, BSTR* pbstrFolder) get_currentFolder;
+			public function HRESULT(IWMPFolderMonitorServices *self, int32* plCount) get_scannedFilesCount;
+			public function HRESULT(IWMPFolderMonitorServices *self, int32* plCount) get_addedFilesCount;
+			public function HRESULT(IWMPFolderMonitorServices *self, int32* plProgress) get_updateProgress;
+			public function HRESULT(IWMPFolderMonitorServices *self) startScan;
+			public function HRESULT(IWMPFolderMonitorServices *self) stopScan;
+		}
+		[CRepr]
+		public struct IWMPSyncDevice2 : IWMPSyncDevice
+		{
+			public const new Guid IID = .(0x88afb4b2, 0x140a, 0x44d2, 0x91, 0xe6, 0x45, 0x43, 0xda, 0x46, 0x7c, 0xd1);
+			
+			public function HRESULT(IWMPSyncDevice2 *self, BSTR bstrItemName, BSTR bstrVal) setItemInfo;
+		}
+		[CRepr]
+		public struct IWMPSyncDevice3 : IWMPSyncDevice2
+		{
+			public const new Guid IID = .(0xb22c85f9, 0x263c, 0x4372, 0xa0, 0xda, 0xb5, 0x18, 0xdb, 0x9b, 0x40, 0x98);
+			
+			public function HRESULT(IWMPSyncDevice3 *self, IWMPPlaylist* pNonRulePlaylist, IWMPPlaylist* pRulesPlaylist) estimateSyncSize;
+			public function HRESULT(IWMPSyncDevice3 *self) cancelEstimation;
+		}
+		[CRepr]
+		public struct IWMPLibrary2 : IWMPLibrary
+		{
+			public const new Guid IID = .(0xdd578a4e, 0x79b1, 0x426c, 0xbf, 0x8f, 0x3a, 0xdd, 0x90, 0x72, 0x50, 0x0b);
+			
+			public function HRESULT(IWMPLibrary2 *self, BSTR bstrItemName, BSTR* pbstrVal) getItemInfo;
+		}
+		[CRepr]
+		public struct IWMPEvents : IUnknown
+		{
+			public const new Guid IID = .(0x19a6627b, 0xda9e, 0x47c1, 0xbb, 0x23, 0x00, 0xb5, 0xe6, 0x68, 0x23, 0x6a);
+			
+			public function void(IWMPEvents *self, int32 NewState) OpenStateChange;
+			public function void(IWMPEvents *self, int32 NewState) PlayStateChange;
+			public function void(IWMPEvents *self, int32 LangID) AudioLanguageChange;
+			public function void(IWMPEvents *self) StatusChange;
+			public function void(IWMPEvents *self, BSTR scType, BSTR Param) ScriptCommand;
+			public function void(IWMPEvents *self) NewStream;
+			public function void(IWMPEvents *self, int32 Result) Disconnect;
+			public function void(IWMPEvents *self, int16 Start) Buffering;
+			public function void(IWMPEvents *self) Error;
+			public function void(IWMPEvents *self, int32 WarningType, int32 Param, BSTR Description) Warning;
+			public function void(IWMPEvents *self, int32 Result) EndOfStream;
+			public function void(IWMPEvents *self, double oldPosition, double newPosition) PositionChange;
+			public function void(IWMPEvents *self, int32 MarkerNum) MarkerHit;
+			public function void(IWMPEvents *self, int32 NewDurationUnit) DurationUnitChange;
+			public function void(IWMPEvents *self, int32 CdromNum) CdromMediaChange;
+			public function void(IWMPEvents *self, IDispatch* Playlist, WMPPlaylistChangeEventType change) PlaylistChange;
+			public function void(IWMPEvents *self, WMPPlaylistChangeEventType change) CurrentPlaylistChange;
+			public function void(IWMPEvents *self, BSTR bstrItemName) CurrentPlaylistItemAvailable;
+			public function void(IWMPEvents *self, IDispatch* Item) MediaChange;
+			public function void(IWMPEvents *self, BSTR bstrItemName) CurrentMediaItemAvailable;
+			public function void(IWMPEvents *self, IDispatch* pdispMedia) CurrentItemChange;
+			public function void(IWMPEvents *self) MediaCollectionChange;
+			public function void(IWMPEvents *self, BSTR bstrAttribName, BSTR bstrAttribVal) MediaCollectionAttributeStringAdded;
+			public function void(IWMPEvents *self, BSTR bstrAttribName, BSTR bstrAttribVal) MediaCollectionAttributeStringRemoved;
+			public function void(IWMPEvents *self, BSTR bstrAttribName, BSTR bstrOldAttribVal, BSTR bstrNewAttribVal) MediaCollectionAttributeStringChanged;
+			public function void(IWMPEvents *self) PlaylistCollectionChange;
+			public function void(IWMPEvents *self, BSTR bstrPlaylistName) PlaylistCollectionPlaylistAdded;
+			public function void(IWMPEvents *self, BSTR bstrPlaylistName) PlaylistCollectionPlaylistRemoved;
+			public function void(IWMPEvents *self, BSTR bstrPlaylistName, int16 varfIsDeleted) PlaylistCollectionPlaylistSetAsDeleted;
+			public function void(IWMPEvents *self, BSTR ModeName, int16 NewValue) ModeChange;
+			public function void(IWMPEvents *self, IDispatch* pMediaObject) MediaError;
+			public function void(IWMPEvents *self, IDispatch* pItem) OpenPlaylistSwitch;
+			public function void(IWMPEvents *self, BSTR strDomain) DomainChange;
+			public function void(IWMPEvents *self) SwitchedToPlayerApplication;
+			public function void(IWMPEvents *self) SwitchedToControl;
+			public function void(IWMPEvents *self) PlayerDockedStateChange;
+			public function void(IWMPEvents *self) PlayerReconnect;
+			public function void(IWMPEvents *self, int16 nButton, int16 nShiftState, int32 fX, int32 fY) Click;
+			public function void(IWMPEvents *self, int16 nButton, int16 nShiftState, int32 fX, int32 fY) DoubleClick;
+			public function void(IWMPEvents *self, int16 nKeyCode, int16 nShiftState) KeyDown;
+			public function void(IWMPEvents *self, int16 nKeyAscii) KeyPress;
+			public function void(IWMPEvents *self, int16 nKeyCode, int16 nShiftState) KeyUp;
+			public function void(IWMPEvents *self, int16 nButton, int16 nShiftState, int32 fX, int32 fY) MouseDown;
+			public function void(IWMPEvents *self, int16 nButton, int16 nShiftState, int32 fX, int32 fY) MouseMove;
+			public function void(IWMPEvents *self, int16 nButton, int16 nShiftState, int32 fX, int32 fY) MouseUp;
+		}
+		[CRepr]
+		public struct IWMPEvents2 : IWMPEvents
+		{
+			public const new Guid IID = .(0x1e7601fa, 0x47ea, 0x4107, 0x9e, 0xa9, 0x90, 0x04, 0xed, 0x96, 0x84, 0xff);
+			
+			public function void(IWMPEvents2 *self, IWMPSyncDevice* pDevice) DeviceConnect;
+			public function void(IWMPEvents2 *self, IWMPSyncDevice* pDevice) DeviceDisconnect;
+			public function void(IWMPEvents2 *self, IWMPSyncDevice* pDevice, WMPDeviceStatus NewStatus) DeviceStatusChange;
+			public function void(IWMPEvents2 *self, IWMPSyncDevice* pDevice, WMPSyncState NewState) DeviceSyncStateChange;
+			public function void(IWMPEvents2 *self, IWMPSyncDevice* pDevice, IDispatch* pMedia) DeviceSyncError;
+			public function void(IWMPEvents2 *self, IWMPSyncDevice* pDevice, HRESULT hrResult) CreatePartnershipComplete;
+		}
+		[CRepr]
+		public struct IWMPEvents3 : IWMPEvents2
+		{
+			public const new Guid IID = .(0x1f504270, 0xa66b, 0x4223, 0x8e, 0x96, 0x26, 0xa0, 0x6c, 0x63, 0xd6, 0x9f);
+			
+			public function void(IWMPEvents3 *self, IWMPCdromRip* pCdromRip, WMPRipState wmprs) CdromRipStateChange;
+			public function void(IWMPEvents3 *self, IWMPCdromRip* pCdromRip, IDispatch* pMedia) CdromRipMediaError;
+			public function void(IWMPEvents3 *self, IWMPCdromBurn* pCdromBurn, WMPBurnState wmpbs) CdromBurnStateChange;
+			public function void(IWMPEvents3 *self, IWMPCdromBurn* pCdromBurn, IDispatch* pMedia) CdromBurnMediaError;
+			public function void(IWMPEvents3 *self, IWMPCdromBurn* pCdromBurn, HRESULT hrError) CdromBurnError;
+			public function void(IWMPEvents3 *self, IWMPLibrary* pLibrary) LibraryConnect;
+			public function void(IWMPEvents3 *self, IWMPLibrary* pLibrary) LibraryDisconnect;
+			public function void(IWMPEvents3 *self, WMPFolderScanState wmpfss) FolderScanStateChange;
+			public function void(IWMPEvents3 *self, IDispatch* pdispStringCollection, WMPStringCollectionChangeEventType change, int32 lCollectionIndex) StringCollectionChange;
+			public function void(IWMPEvents3 *self, IDispatch* pdispMedia) MediaCollectionMediaAdded;
+			public function void(IWMPEvents3 *self, IDispatch* pdispMedia) MediaCollectionMediaRemoved;
+		}
+		[CRepr]
+		public struct IWMPEvents4 : IWMPEvents3
+		{
+			public const new Guid IID = .(0x26dabcfa, 0x306b, 0x404d, 0x9a, 0x6f, 0x63, 0x0a, 0x84, 0x05, 0x04, 0x8d);
+			
+			public function void(IWMPEvents4 *self, IWMPSyncDevice* pDevice, HRESULT hrResult, int64 qwEstimatedUsedSpace, int64 qwEstimatedSpace) DeviceEstimation;
+		}
+		[CRepr]
+		public struct _WMPOCXEvents : IDispatch
+		{
+			public const new Guid IID = .(0x6bf52a51, 0x394a, 0x11d3, 0xb1, 0x53, 0x00, 0xc0, 0x4f, 0x79, 0xfa, 0xa6);
+			
+		}
+		[CRepr]
+		public struct IWMPNodeRealEstate : IUnknown
+		{
+			public const new Guid IID = .(0x42751198, 0x5a50, 0x4460, 0xbc, 0xb4, 0x70, 0x9f, 0x8b, 0xdc, 0x8e, 0x59);
+			
+			public function HRESULT(IWMPNodeRealEstate *self, SIZE* pSize) GetDesiredSize;
+			public function HRESULT(IWMPNodeRealEstate *self, RECT* pSrc, RECT* pDest, RECT* pClip) SetRects;
+			public function HRESULT(IWMPNodeRealEstate *self, RECT* pSrc, RECT* pDest, RECT* pClip) GetRects;
+			public function HRESULT(IWMPNodeRealEstate *self, BOOL fWindowless) SetWindowless;
+			public function HRESULT(IWMPNodeRealEstate *self, BOOL* pfWindowless) GetWindowless;
+			public function HRESULT(IWMPNodeRealEstate *self, BOOL fFullScreen) SetFullScreen;
+			public function HRESULT(IWMPNodeRealEstate *self, BOOL* pfFullScreen) GetFullScreen;
+		}
+		[CRepr]
+		public struct IWMPNodeRealEstateHost : IUnknown
+		{
+			public const new Guid IID = .(0x1491087d, 0x2c6b, 0x44c8, 0xb0, 0x19, 0xb3, 0xc9, 0x29, 0xd2, 0xad, 0xa9);
+			
+			public function HRESULT(IWMPNodeRealEstateHost *self, SIZE* pSize) OnDesiredSizeChange;
+			public function HRESULT(IWMPNodeRealEstateHost *self, BOOL fFullScreen) OnFullScreenTransition;
+		}
+		[CRepr]
+		public struct IWMPNodeWindowed : IUnknown
+		{
+			public const new Guid IID = .(0x96740bfa, 0xc56a, 0x45d1, 0xa3, 0xa4, 0x76, 0x29, 0x14, 0xd4, 0xad, 0xe9);
+			
+			public function HRESULT(IWMPNodeWindowed *self, int hwnd) SetOwnerWindow;
+			public function HRESULT(IWMPNodeWindowed *self, int* phwnd) GetOwnerWindow;
+		}
+		[CRepr]
+		public struct IWMPNodeWindowedHost : IUnknown
+		{
+			public const new Guid IID = .(0xa300415a, 0x54aa, 0x4081, 0xad, 0xbf, 0x3b, 0x13, 0x61, 0x0d, 0x89, 0x58);
+			
+			public function HRESULT(IWMPNodeWindowedHost *self, uint32 uMsg, WPARAM wparam, LPARAM lparam, LRESULT* plRet, BOOL* pfHandled) OnWindowMessageFromRenderer;
+		}
+		[CRepr]
+		public struct IWMPWindowMessageSink : IUnknown
+		{
+			public const new Guid IID = .(0x3a0daa30, 0x908d, 0x4789, 0xba, 0x87, 0xae, 0xd8, 0x79, 0xb5, 0xc4, 0x9b);
+			
+			public function HRESULT(IWMPWindowMessageSink *self, uint32 uMsg, WPARAM wparam, LPARAM lparam, LRESULT* plRet, BOOL* pfHandled) OnWindowMessage;
+		}
+		[CRepr]
+		public struct IWMPNodeWindowless : IWMPWindowMessageSink
+		{
+			public const new Guid IID = .(0x9b9199ad, 0x780c, 0x4eda, 0xb8, 0x16, 0x26, 0x1e, 0xba, 0x5d, 0x15, 0x75);
+			
+			public function HRESULT(IWMPNodeWindowless *self, int hdc, RECT* prcDraw) OnDraw;
+		}
+		[CRepr]
+		public struct IWMPNodeWindowlessHost : IUnknown
+		{
+			public const new Guid IID = .(0xbe7017c6, 0xce34, 0x4901, 0x81, 0x06, 0x77, 0x03, 0x81, 0xaa, 0x6e, 0x3e);
+			
+			public function HRESULT(IWMPNodeWindowlessHost *self, RECT* prc, BOOL fErase) InvalidateRect;
+		}
+		[CRepr]
+		public struct IWMPVideoRenderConfig : IUnknown
+		{
+			public const new Guid IID = .(0x6d6cf803, 0x1ec0, 0x4c8d, 0xb3, 0xca, 0xf1, 0x8e, 0x27, 0x28, 0x20, 0x74);
+			
+			public function HRESULT(IWMPVideoRenderConfig *self, IMFActivate* pActivate) put_presenterActivate;
+		}
+		[CRepr]
+		public struct IWMPAudioRenderConfig : IUnknown
+		{
+			public const new Guid IID = .(0xe79c6349, 0x5997, 0x4ce4, 0x91, 0x7c, 0x22, 0xa3, 0x39, 0x1e, 0xc5, 0x64);
+			
+			public function HRESULT(IWMPAudioRenderConfig *self, BSTR* pbstrOutputDevice) get_audioOutputDevice;
+			public function HRESULT(IWMPAudioRenderConfig *self, BSTR bstrOutputDevice) put_audioOutputDevice;
+		}
+		[CRepr]
+		public struct IWMPRenderConfig : IUnknown
+		{
+			public const new Guid IID = .(0x959506c1, 0x0314, 0x4ec5, 0x9e, 0x61, 0x85, 0x28, 0xdb, 0x5e, 0x54, 0x78);
+			
+			public function HRESULT(IWMPRenderConfig *self, BOOL fInProc) put_inProcOnly;
+			public function HRESULT(IWMPRenderConfig *self, BOOL* pfInProc) get_inProcOnly;
+		}
+		[CRepr]
+		public struct IWMPServices : IUnknown
+		{
+			public const new Guid IID = .(0xafb6b76b, 0x1e20, 0x4198, 0x83, 0xb3, 0x19, 0x1d, 0xb6, 0xe0, 0xb1, 0x49);
+			
+			public function HRESULT(IWMPServices *self, int64* prt) GetStreamTime;
+			public function HRESULT(IWMPServices *self, WMPServices_StreamState* pState) GetStreamState;
+		}
+		[CRepr]
+		public struct IWMPMediaPluginRegistrar : IUnknown
+		{
+			public const new Guid IID = .(0x68e27045, 0x05bd, 0x40b2, 0x97, 0x20, 0x23, 0x08, 0x8c, 0x78, 0xe3, 0x90);
+			
+			public function HRESULT(IWMPMediaPluginRegistrar *self, PWSTR pwszFriendlyName, PWSTR pwszDescription, PWSTR pwszUninstallString, uint32 dwPriority, Guid guidPluginType, Guid clsid, uint32 cMediaTypes, void* pMediaTypes) WMPRegisterPlayerPlugin;
+			public function HRESULT(IWMPMediaPluginRegistrar *self, Guid guidPluginType, Guid clsid) WMPUnRegisterPlayerPlugin;
+		}
+		[CRepr]
+		public struct IWMPPlugin : IUnknown
+		{
+			public const new Guid IID = .(0xf1392a70, 0x024c, 0x42bb, 0xa9, 0x98, 0x73, 0xdf, 0xdf, 0xe7, 0xd5, 0xa7);
+			
+			public function HRESULT(IWMPPlugin *self, uint dwPlaybackContext) Init;
+			public function HRESULT(IWMPPlugin *self) Shutdown;
+			public function HRESULT(IWMPPlugin *self, Guid* pGUID) GetID;
+			public function HRESULT(IWMPPlugin *self, uint32* pdwFlags) GetCaps;
+			public function HRESULT(IWMPPlugin *self, IWMPServices* pWMPServices) AdviseWMPServices;
+			public function HRESULT(IWMPPlugin *self) UnAdviseWMPServices;
+		}
+		[CRepr]
+		public struct IWMPPluginEnable : IUnknown
+		{
+			public const new Guid IID = .(0x5fca444c, 0x7ad1, 0x479d, 0xa4, 0xef, 0x40, 0x56, 0x6a, 0x53, 0x09, 0xd6);
+			
+			public function HRESULT(IWMPPluginEnable *self, BOOL fEnable) SetEnable;
+			public function HRESULT(IWMPPluginEnable *self, BOOL* pfEnable) GetEnable;
+		}
+		[CRepr]
+		public struct IWMPGraphCreation : IUnknown
+		{
+			public const new Guid IID = .(0xbfb377e5, 0xc594, 0x4369, 0xa9, 0x70, 0xde, 0x89, 0x6d, 0x5e, 0xce, 0x74);
+			
+			public function HRESULT(IWMPGraphCreation *self, IUnknown* pFilterGraph, IUnknown* pReserved) GraphCreationPreRender;
+			public function HRESULT(IWMPGraphCreation *self, IUnknown* pFilterGraph) GraphCreationPostRender;
+			public function HRESULT(IWMPGraphCreation *self, uint32* pdwFlags) GetGraphCreationFlags;
+		}
+		[CRepr]
+		public struct IWMPConvert : IUnknown
+		{
+			public const new Guid IID = .(0xd683162f, 0x57d4, 0x4108, 0x83, 0x73, 0x4a, 0x96, 0x76, 0xd1, 0xc2, 0xe9);
+			
+			public function HRESULT(IWMPConvert *self, BSTR bstrInputFile, BSTR bstrDestinationFolder, BSTR* pbstrOutputFile) ConvertFile;
+			public function HRESULT(IWMPConvert *self, BSTR* pbstrURL) GetErrorURL;
+		}
+		[CRepr]
+		public struct IWMPTranscodePolicy : IUnknown
+		{
+			public const new Guid IID = .(0xb64cbac3, 0x401c, 0x4327, 0xa3, 0xe8, 0xb9, 0xfe, 0xb3, 0xa8, 0xc2, 0x5c);
+			
+			public function HRESULT(IWMPTranscodePolicy *self, int16* pvbAllow) allowTranscode;
+		}
+		[CRepr]
+		public struct IWMPUserEventSink : IUnknown
+		{
+			public const new Guid IID = .(0xcfccfa72, 0xc343, 0x48c3, 0xa2, 0xde, 0xb7, 0xa4, 0x40, 0x2e, 0x39, 0xf2);
+			
+			public function HRESULT(IWMPUserEventSink *self, int32 EventCode) NotifyUserEvent;
+		}
+		[CRepr]
+		public struct IXFeedsManager : IUnknown
+		{
+			public const new Guid IID = .(0x5357e238, 0xfb12, 0x4aca, 0xa9, 0x30, 0xca, 0xb7, 0x83, 0x2b, 0x84, 0xbf);
+			
+			public function HRESULT(IXFeedsManager *self, Guid* riid, void** ppv) RootFolder;
+			public function HRESULT(IXFeedsManager *self, PWSTR pszUrl, BOOL* pbSubscribed) IsSubscribed;
+			public function HRESULT(IXFeedsManager *self, PWSTR pszPath, BOOL* pbFeedExists) ExistsFeed;
+			public function HRESULT(IXFeedsManager *self, PWSTR pszPath, Guid* riid, void** ppv) GetFeed;
+			public function HRESULT(IXFeedsManager *self, PWSTR pszUrl, Guid* riid, void** ppv) GetFeedByUrl;
+			public function HRESULT(IXFeedsManager *self, PWSTR pszPath, BOOL* pbFolderExists) ExistsFolder;
+			public function HRESULT(IXFeedsManager *self, PWSTR pszPath, Guid* riid, void** ppv) GetFolder;
+			public function HRESULT(IXFeedsManager *self, PWSTR pszPath) DeleteFeed;
+			public function HRESULT(IXFeedsManager *self, PWSTR pszPath) DeleteFolder;
+			public function HRESULT(IXFeedsManager *self, FEEDS_BACKGROUNDSYNC_ACTION fbsa) BackgroundSync;
+			public function HRESULT(IXFeedsManager *self, FEEDS_BACKGROUNDSYNC_STATUS* pfbss) BackgroundSyncStatus;
+			public function HRESULT(IXFeedsManager *self, uint32* puiInterval) DefaultInterval;
+			public function HRESULT(IXFeedsManager *self, uint32 uiInterval) SetDefaultInterval;
+			public function HRESULT(IXFeedsManager *self) AsyncSyncAll;
+			public function HRESULT(IXFeedsManager *self, IStream* pStreamIn, IStream** ppStreamOut) Normalize;
+			public function HRESULT(IXFeedsManager *self, uint32* puiItemCountLimit) ItemCountLimit;
+		}
+		[CRepr]
+		public struct IXFeedsEnum : IUnknown
+		{
+			public const new Guid IID = .(0xdc43a9d5, 0x5015, 0x4301, 0x8c, 0x96, 0xa4, 0x74, 0x34, 0xb4, 0xd6, 0x58);
+			
+			public function HRESULT(IXFeedsEnum *self, uint32* puiCount) Count;
+			public function HRESULT(IXFeedsEnum *self, uint32 uiIndex, Guid* riid, void** ppv) Item;
+		}
+		[CRepr]
+		public struct IXFeedFolder : IUnknown
+		{
+			public const new Guid IID = .(0x4c963678, 0x3a51, 0x4b88, 0x85, 0x31, 0x98, 0xb9, 0x0b, 0x65, 0x08, 0xf2);
+			
+			public function HRESULT(IXFeedFolder *self, IXFeedsEnum** ppfe) Feeds;
+			public function HRESULT(IXFeedFolder *self, IXFeedsEnum** ppfe) Subfolders;
+			public function HRESULT(IXFeedFolder *self, PWSTR pszName, PWSTR pszUrl, Guid* riid, void** ppv) CreateFeed;
+			public function HRESULT(IXFeedFolder *self, PWSTR pszName, Guid* riid, void** ppv) CreateSubfolder;
+			public function HRESULT(IXFeedFolder *self, PWSTR pszName, BOOL* pbFeedExists) ExistsFeed;
+			public function HRESULT(IXFeedFolder *self, PWSTR pszName, BOOL* pbSubfolderExists) ExistsSubfolder;
+			public function HRESULT(IXFeedFolder *self, PWSTR pszName, Guid* riid, void** ppv) GetFeed;
+			public function HRESULT(IXFeedFolder *self, PWSTR pszName, Guid* riid, void** ppv) GetSubfolder;
+			public function HRESULT(IXFeedFolder *self) Delete;
+			public function HRESULT(IXFeedFolder *self, PWSTR* ppszName) Name;
+			public function HRESULT(IXFeedFolder *self, PWSTR pszName) Rename;
+			public function HRESULT(IXFeedFolder *self, PWSTR* ppszPath) Path;
+			public function HRESULT(IXFeedFolder *self, PWSTR pszPath) Move;
+			public function HRESULT(IXFeedFolder *self, Guid* riid, void** ppv) Parent;
+			public function HRESULT(IXFeedFolder *self, BOOL* pbIsRootFeedFolder) IsRoot;
+			public function HRESULT(IXFeedFolder *self, FEEDS_EVENTS_SCOPE @scope, FEEDS_EVENTS_MASK mask, Guid* riid, void** ppv) GetWatcher;
+			public function HRESULT(IXFeedFolder *self, uint32* puiTotalUnreadItemCount) TotalUnreadItemCount;
+			public function HRESULT(IXFeedFolder *self, uint32* puiTotalItemCount) TotalItemCount;
+		}
+		[CRepr]
+		public struct IXFeedFolderEvents : IUnknown
+		{
+			public const new Guid IID = .(0x7964b769, 0x234a, 0x4bb1, 0xa5, 0xf4, 0x90, 0x45, 0x4c, 0x8a, 0xd0, 0x7e);
+			
+			public function HRESULT(IXFeedFolderEvents *self) Error;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath) FolderAdded;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath) FolderDeleted;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath, PWSTR pszOldPath) FolderRenamed;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath, PWSTR pszOldPath) FolderMovedFrom;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath, PWSTR pszOldPath) FolderMovedTo;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath, int32 feicfFlags) FolderItemCountChanged;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath) FeedAdded;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath) FeedDeleted;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath, PWSTR pszOldPath) FeedRenamed;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath) FeedUrlChanged;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath, PWSTR pszOldPath) FeedMovedFrom;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath, PWSTR pszOldPath) FeedMovedTo;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath) FeedDownloading;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath, FEEDS_DOWNLOAD_ERROR fde) FeedDownloadCompleted;
+			public function HRESULT(IXFeedFolderEvents *self, PWSTR pszPath, int32 feicfFlags) FeedItemCountChanged;
+		}
+		[CRepr]
+		public struct IXFeed : IUnknown
+		{
+			public const new Guid IID = .(0xa44179a4, 0xe0f6, 0x403b, 0xaf, 0x8d, 0xd0, 0x80, 0xf4, 0x25, 0xa4, 0x51);
+			
+			public function HRESULT(IXFeed *self, uint32 uiItemCount, FEEDS_XML_SORT_PROPERTY sortProperty, FEEDS_XML_SORT_ORDER sortOrder, FEEDS_XML_FILTER_FLAGS filterFlags, FEEDS_XML_INCLUDE_FLAGS includeFlags, IStream** pps) Xml;
+			public function HRESULT(IXFeed *self, PWSTR* ppszName) Name;
+			public function HRESULT(IXFeed *self, PWSTR pszName) Rename;
+			public function HRESULT(IXFeed *self, PWSTR* ppszUrl) Url;
+			public function HRESULT(IXFeed *self, PWSTR pszUrl) SetUrl;
+			public function HRESULT(IXFeed *self, Guid* pguid) LocalId;
+			public function HRESULT(IXFeed *self, PWSTR* ppszPath) Path;
+			public function HRESULT(IXFeed *self, PWSTR pszPath) Move;
+			public function HRESULT(IXFeed *self, Guid* riid, void** ppv) Parent;
+			public function HRESULT(IXFeed *self, SYSTEMTIME* pstLastWriteTime) LastWriteTime;
+			public function HRESULT(IXFeed *self) Delete;
+			public function HRESULT(IXFeed *self) Download;
+			public function HRESULT(IXFeed *self) AsyncDownload;
+			public function HRESULT(IXFeed *self) CancelAsyncDownload;
+			public function HRESULT(IXFeed *self, FEEDS_SYNC_SETTING* pfss) SyncSetting;
+			public function HRESULT(IXFeed *self, FEEDS_SYNC_SETTING fss) SetSyncSetting;
+			public function HRESULT(IXFeed *self, uint32* puiInterval) Interval;
+			public function HRESULT(IXFeed *self, uint32 uiInterval) SetInterval;
+			public function HRESULT(IXFeed *self, SYSTEMTIME* pstLastDownloadTime) LastDownloadTime;
+			public function HRESULT(IXFeed *self, PWSTR* ppszPath) LocalEnclosurePath;
+			public function HRESULT(IXFeed *self, IXFeedsEnum** ppfe) Items;
+			public function HRESULT(IXFeed *self, uint32 uiId, Guid* riid, void** ppv) GetItem;
+			public function HRESULT(IXFeed *self) MarkAllItemsRead;
+			public function HRESULT(IXFeed *self, uint32* puiMaxItemCount) MaxItemCount;
+			public function HRESULT(IXFeed *self, uint32 uiMaxItemCount) SetMaxItemCount;
+			public function HRESULT(IXFeed *self, BOOL* pbDownloadEnclosuresAutomatically) DownloadEnclosuresAutomatically;
+			public function HRESULT(IXFeed *self, BOOL bDownloadEnclosuresAutomatically) SetDownloadEnclosuresAutomatically;
+			public function HRESULT(IXFeed *self, FEEDS_DOWNLOAD_STATUS* pfds) DownloadStatus;
+			public function HRESULT(IXFeed *self, FEEDS_DOWNLOAD_ERROR* pfde) LastDownloadError;
+			public function HRESULT(IXFeed *self, IStream* pStream, PWSTR pszUrl) Merge;
+			public function HRESULT(IXFeed *self, PWSTR* ppszUrl) DownloadUrl;
+			public function HRESULT(IXFeed *self, PWSTR* ppszTitle) Title;
+			public function HRESULT(IXFeed *self, PWSTR* ppszDescription) Description;
+			public function HRESULT(IXFeed *self, PWSTR* ppszHomePage) Link;
+			public function HRESULT(IXFeed *self, PWSTR* ppszImageUrl) Image;
+			public function HRESULT(IXFeed *self, SYSTEMTIME* pstLastBuildDate) LastBuildDate;
+			public function HRESULT(IXFeed *self, SYSTEMTIME* pstPubDate) PubDate;
+			public function HRESULT(IXFeed *self, uint32* puiTtl) Ttl;
+			public function HRESULT(IXFeed *self, PWSTR* ppszLanguage) Language;
+			public function HRESULT(IXFeed *self, PWSTR* ppszCopyright) Copyright;
+			public function HRESULT(IXFeed *self, BOOL* pbIsList) IsList;
+			public function HRESULT(IXFeed *self, FEEDS_EVENTS_SCOPE @scope, FEEDS_EVENTS_MASK mask, Guid* riid, void** ppv) GetWatcher;
+			public function HRESULT(IXFeed *self, uint32* puiUnreadItemCount) UnreadItemCount;
+			public function HRESULT(IXFeed *self, uint32* puiItemCount) ItemCount;
+		}
+		[CRepr]
+		public struct IXFeed2 : IXFeed
+		{
+			public const new Guid IID = .(0xce528e77, 0x3716, 0x4eb7, 0x95, 0x6d, 0xf5, 0xe3, 0x75, 0x02, 0xe1, 0x2a);
+			
+			public function HRESULT(IXFeed2 *self, uint32 uiEffectiveId, Guid* riid, void** ppv) GetItemByEffectiveId;
+			public function HRESULT(IXFeed2 *self, SYSTEMTIME* pstLastItemDownloadTime) LastItemDownloadTime;
+			public function HRESULT(IXFeed2 *self, PWSTR* ppszUsername) Username;
+			public function HRESULT(IXFeed2 *self, PWSTR* ppszPassword) Password;
+			public function HRESULT(IXFeed2 *self, PWSTR pszUsername, PWSTR pszPassword) SetCredentials;
+			public function HRESULT(IXFeed2 *self) ClearCredentials;
+		}
+		[CRepr]
+		public struct IXFeedEvents : IUnknown
+		{
+			public const new Guid IID = .(0x1630852e, 0x1263, 0x465b, 0x98, 0xe5, 0xfe, 0x60, 0xff, 0xec, 0x4a, 0xc2);
+			
+			public function HRESULT(IXFeedEvents *self) Error;
+			public function HRESULT(IXFeedEvents *self, PWSTR pszPath) FeedDeleted;
+			public function HRESULT(IXFeedEvents *self, PWSTR pszPath, PWSTR pszOldPath) FeedRenamed;
+			public function HRESULT(IXFeedEvents *self, PWSTR pszPath) FeedUrlChanged;
+			public function HRESULT(IXFeedEvents *self, PWSTR pszPath, PWSTR pszOldPath) FeedMoved;
+			public function HRESULT(IXFeedEvents *self, PWSTR pszPath) FeedDownloading;
+			public function HRESULT(IXFeedEvents *self, PWSTR pszPath, FEEDS_DOWNLOAD_ERROR fde) FeedDownloadCompleted;
+			public function HRESULT(IXFeedEvents *self, PWSTR pszPath, int32 feicfFlags) FeedItemCountChanged;
+		}
+		[CRepr]
+		public struct IXFeedItem : IUnknown
+		{
+			public const new Guid IID = .(0xe757b2f5, 0xe73e, 0x434e, 0xa1, 0xbf, 0x2b, 0xd7, 0xc3, 0xe6, 0x0f, 0xcb);
+			
+			public function HRESULT(IXFeedItem *self, FEEDS_XML_INCLUDE_FLAGS fxif, IStream** pps) Xml;
+			public function HRESULT(IXFeedItem *self, PWSTR* ppszTitle) Title;
+			public function HRESULT(IXFeedItem *self, PWSTR* ppszUrl) Link;
+			public function HRESULT(IXFeedItem *self, PWSTR* ppszGuid) Guid;
+			public function HRESULT(IXFeedItem *self, PWSTR* ppszDescription) Description;
+			public function HRESULT(IXFeedItem *self, SYSTEMTIME* pstPubDate) PubDate;
+			public function HRESULT(IXFeedItem *self, PWSTR* ppszUrl) Comments;
+			public function HRESULT(IXFeedItem *self, PWSTR* ppszAuthor) Author;
+			public function HRESULT(IXFeedItem *self, Guid* riid, void** ppv) Enclosure;
+			public function HRESULT(IXFeedItem *self, BOOL* pbIsRead) IsRead;
+			public function HRESULT(IXFeedItem *self, BOOL bIsRead) SetIsRead;
+			public function HRESULT(IXFeedItem *self, uint32* puiId) LocalId;
+			public function HRESULT(IXFeedItem *self, Guid* riid, void** ppv) Parent;
+			public function HRESULT(IXFeedItem *self) Delete;
+			public function HRESULT(IXFeedItem *self, PWSTR* ppszUrl) DownloadUrl;
+			public function HRESULT(IXFeedItem *self, SYSTEMTIME* pstLastDownloadTime) LastDownloadTime;
+			public function HRESULT(IXFeedItem *self, SYSTEMTIME* pstModifiedTime) Modified;
+		}
+		[CRepr]
+		public struct IXFeedItem2 : IXFeedItem
+		{
+			public const new Guid IID = .(0x6cda2dc7, 0x9013, 0x4522, 0x99, 0x70, 0x2a, 0x9d, 0xd9, 0xea, 0xd5, 0xa3);
+			
+			public function HRESULT(IXFeedItem2 *self, uint32* puiEffectiveId) EffectiveId;
+		}
+		[CRepr]
+		public struct IXFeedEnclosure : IUnknown
+		{
+			public const new Guid IID = .(0xbfbfb953, 0x644f, 0x4792, 0xb6, 0x9c, 0xdf, 0xac, 0xa4, 0xcb, 0xf8, 0x9a);
+			
+			public function HRESULT(IXFeedEnclosure *self, PWSTR* ppszUrl) Url;
+			public function HRESULT(IXFeedEnclosure *self, PWSTR* ppszMimeType) Type;
+			public function HRESULT(IXFeedEnclosure *self, uint32* puiLength) Length;
+			public function HRESULT(IXFeedEnclosure *self) AsyncDownload;
+			public function HRESULT(IXFeedEnclosure *self) CancelAsyncDownload;
+			public function HRESULT(IXFeedEnclosure *self, FEEDS_DOWNLOAD_STATUS* pfds) DownloadStatus;
+			public function HRESULT(IXFeedEnclosure *self, FEEDS_DOWNLOAD_ERROR* pfde) LastDownloadError;
+			public function HRESULT(IXFeedEnclosure *self, PWSTR* ppszPath) LocalPath;
+			public function HRESULT(IXFeedEnclosure *self, Guid* riid, void** ppv) Parent;
+			public function HRESULT(IXFeedEnclosure *self, PWSTR* ppszUrl) DownloadUrl;
+			public function HRESULT(IXFeedEnclosure *self, PWSTR* ppszMimeType) DownloadMimeType;
+			public function HRESULT(IXFeedEnclosure *self) RemoveFile;
+			public function HRESULT(IXFeedEnclosure *self, PWSTR pszDownloadUrl, PWSTR pszDownloadFilePath, PWSTR pszDownloadMimeType, PWSTR pszEnclosureFilename) SetFile;
+		}
+		[CRepr]
+		public struct IFeedsManager : IDispatch
+		{
+			public const new Guid IID = .(0xa74029cc, 0x1f1a, 0x4906, 0x88, 0xf0, 0x81, 0x06, 0x38, 0xd8, 0x65, 0x91);
+			
+			public function HRESULT(IFeedsManager *self, IDispatch** disp) get_RootFolder;
+			public function HRESULT(IFeedsManager *self, BSTR feedUrl, int16* subscribed) IsSubscribed;
+			public function HRESULT(IFeedsManager *self, BSTR feedPath, int16* exists) ExistsFeed;
+			public function HRESULT(IFeedsManager *self, BSTR feedPath, IDispatch** disp) GetFeed;
+			public function HRESULT(IFeedsManager *self, BSTR feedUrl, IDispatch** disp) GetFeedByUrl;
+			public function HRESULT(IFeedsManager *self, BSTR folderPath, int16* exists) ExistsFolder;
+			public function HRESULT(IFeedsManager *self, BSTR folderPath, IDispatch** disp) GetFolder;
+			public function HRESULT(IFeedsManager *self, BSTR feedPath) DeleteFeed;
+			public function HRESULT(IFeedsManager *self, BSTR folderPath) DeleteFolder;
+			public function HRESULT(IFeedsManager *self, FEEDS_BACKGROUNDSYNC_ACTION action) BackgroundSync;
+			public function HRESULT(IFeedsManager *self, FEEDS_BACKGROUNDSYNC_STATUS* status) get_BackgroundSyncStatus;
+			public function HRESULT(IFeedsManager *self, int32* minutes) get_DefaultInterval;
+			public function HRESULT(IFeedsManager *self, int32 minutes) put_DefaultInterval;
+			public function HRESULT(IFeedsManager *self) AsyncSyncAll;
+			public function HRESULT(IFeedsManager *self, BSTR feedXmlIn, BSTR* feedXmlOut) Normalize;
+			public function HRESULT(IFeedsManager *self, int32* itemCountLimit) get_ItemCountLimit;
+		}
+		[CRepr]
+		public struct IFeedsEnum : IDispatch
+		{
+			public const new Guid IID = .(0xe3cd0028, 0x2eed, 0x4c60, 0x8f, 0xae, 0xa3, 0x22, 0x53, 0x09, 0xa8, 0x36);
+			
+			public function HRESULT(IFeedsEnum *self, int32* count) get_Count;
+			public function HRESULT(IFeedsEnum *self, int32 index, IDispatch** disp) Item;
+			public function HRESULT(IFeedsEnum *self, IEnumVARIANT** enumVar) get__NewEnum;
+		}
+		[CRepr]
+		public struct IFeedFolder : IDispatch
+		{
+			public const new Guid IID = .(0x81f04ad1, 0x4194, 0x4d7d, 0x86, 0xd6, 0x11, 0x81, 0x3c, 0xec, 0x16, 0x3c);
+			
+			public function HRESULT(IFeedFolder *self, IDispatch** disp) get_Feeds;
+			public function HRESULT(IFeedFolder *self, IDispatch** disp) get_Subfolders;
+			public function HRESULT(IFeedFolder *self, BSTR feedName, BSTR feedUrl, IDispatch** disp) CreateFeed;
+			public function HRESULT(IFeedFolder *self, BSTR folderName, IDispatch** disp) CreateSubfolder;
+			public function HRESULT(IFeedFolder *self, BSTR feedName, int16* exists) ExistsFeed;
+			public function HRESULT(IFeedFolder *self, BSTR feedName, IDispatch** disp) GetFeed;
+			public function HRESULT(IFeedFolder *self, BSTR folderName, int16* exists) ExistsSubfolder;
+			public function HRESULT(IFeedFolder *self, BSTR folderName, IDispatch** disp) GetSubfolder;
+			public function HRESULT(IFeedFolder *self) Delete;
+			public function HRESULT(IFeedFolder *self, BSTR* folderName) get_Name;
+			public function HRESULT(IFeedFolder *self, BSTR folderName) Rename;
+			public function HRESULT(IFeedFolder *self, BSTR* folderPath) get_Path;
+			public function HRESULT(IFeedFolder *self, BSTR newParentPath) Move;
+			public function HRESULT(IFeedFolder *self, IDispatch** disp) get_Parent;
+			public function HRESULT(IFeedFolder *self, int16* isRoot) get_IsRoot;
+			public function HRESULT(IFeedFolder *self, int32* count) get_TotalUnreadItemCount;
+			public function HRESULT(IFeedFolder *self, int32* count) get_TotalItemCount;
+			public function HRESULT(IFeedFolder *self, FEEDS_EVENTS_SCOPE @scope, FEEDS_EVENTS_MASK mask, IDispatch** disp) GetWatcher;
+		}
+		[CRepr]
+		public struct IFeedFolderEvents : IDispatch
+		{
+			public const new Guid IID = .(0x20a59fa6, 0xa844, 0x4630, 0x9e, 0x98, 0x17, 0x5f, 0x70, 0xb4, 0xd5, 0x5b);
+			
+			public function HRESULT(IFeedFolderEvents *self) Error;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path) FolderAdded;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path) FolderDeleted;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path, BSTR oldPath) FolderRenamed;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path, BSTR oldPath) FolderMovedFrom;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path, BSTR oldPath) FolderMovedTo;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path, int32 itemCountType) FolderItemCountChanged;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path) FeedAdded;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path) FeedDeleted;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path, BSTR oldPath) FeedRenamed;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path) FeedUrlChanged;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path, BSTR oldPath) FeedMovedFrom;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path, BSTR oldPath) FeedMovedTo;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path) FeedDownloading;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path, FEEDS_DOWNLOAD_ERROR error) FeedDownloadCompleted;
+			public function HRESULT(IFeedFolderEvents *self, BSTR path, int32 itemCountType) FeedItemCountChanged;
+		}
+		[CRepr]
+		public struct IFeed : IDispatch
+		{
+			public const new Guid IID = .(0xf7f915d8, 0x2ede, 0x42bc, 0x98, 0xe7, 0xa5, 0xd0, 0x50, 0x63, 0xa7, 0x57);
+			
+			public function HRESULT(IFeed *self, int32 count, FEEDS_XML_SORT_PROPERTY sortProperty, FEEDS_XML_SORT_ORDER sortOrder, FEEDS_XML_FILTER_FLAGS filterFlags, FEEDS_XML_INCLUDE_FLAGS includeFlags, BSTR* xml) Xml;
+			public function HRESULT(IFeed *self, BSTR* name) get_Name;
+			public function HRESULT(IFeed *self, BSTR name) Rename;
+			public function HRESULT(IFeed *self, BSTR* feedUrl) get_Url;
+			public function HRESULT(IFeed *self, BSTR feedUrl) put_Url;
+			public function HRESULT(IFeed *self, BSTR* feedGuid) get_LocalId;
+			public function HRESULT(IFeed *self, BSTR* path) get_Path;
+			public function HRESULT(IFeed *self, BSTR newParentPath) Move;
+			public function HRESULT(IFeed *self, IDispatch** disp) get_Parent;
+			public function HRESULT(IFeed *self, double* lastWrite) get_LastWriteTime;
+			public function HRESULT(IFeed *self) Delete;
+			public function HRESULT(IFeed *self) Download;
+			public function HRESULT(IFeed *self) AsyncDownload;
+			public function HRESULT(IFeed *self) CancelAsyncDownload;
+			public function HRESULT(IFeed *self, FEEDS_SYNC_SETTING* syncSetting) get_SyncSetting;
+			public function HRESULT(IFeed *self, FEEDS_SYNC_SETTING syncSetting) put_SyncSetting;
+			public function HRESULT(IFeed *self, int32* minutes) get_Interval;
+			public function HRESULT(IFeed *self, int32 minutes) put_Interval;
+			public function HRESULT(IFeed *self, double* lastDownload) get_LastDownloadTime;
+			public function HRESULT(IFeed *self, BSTR* path) get_LocalEnclosurePath;
+			public function HRESULT(IFeed *self, IDispatch** disp) get_Items;
+			public function HRESULT(IFeed *self, int32 itemId, IDispatch** disp) GetItem;
+			public function HRESULT(IFeed *self, BSTR* title) get_Title;
+			public function HRESULT(IFeed *self, BSTR* description) get_Description;
+			public function HRESULT(IFeed *self, BSTR* homePage) get_Link;
+			public function HRESULT(IFeed *self, BSTR* imageUrl) get_Image;
+			public function HRESULT(IFeed *self, double* lastBuildDate) get_LastBuildDate;
+			public function HRESULT(IFeed *self, double* lastPopulateDate) get_PubDate;
+			public function HRESULT(IFeed *self, int32* ttl) get_Ttl;
+			public function HRESULT(IFeed *self, BSTR* language) get_Language;
+			public function HRESULT(IFeed *self, BSTR* copyright) get_Copyright;
+			public function HRESULT(IFeed *self, int32* count) get_MaxItemCount;
+			public function HRESULT(IFeed *self, int32 count) put_MaxItemCount;
+			public function HRESULT(IFeed *self, int16* downloadEnclosuresAutomatically) get_DownloadEnclosuresAutomatically;
+			public function HRESULT(IFeed *self, int16 downloadEnclosuresAutomatically) put_DownloadEnclosuresAutomatically;
+			public function HRESULT(IFeed *self, FEEDS_DOWNLOAD_STATUS* status) get_DownloadStatus;
+			public function HRESULT(IFeed *self, FEEDS_DOWNLOAD_ERROR* error) get_LastDownloadError;
+			public function HRESULT(IFeed *self, BSTR feedXml, BSTR feedUrl) Merge;
+			public function HRESULT(IFeed *self, BSTR* feedUrl) get_DownloadUrl;
+			public function HRESULT(IFeed *self, int16* isList) get_IsList;
+			public function HRESULT(IFeed *self) MarkAllItemsRead;
+			public function HRESULT(IFeed *self, FEEDS_EVENTS_SCOPE @scope, FEEDS_EVENTS_MASK mask, IDispatch** disp) GetWatcher;
+			public function HRESULT(IFeed *self, int32* count) get_UnreadItemCount;
+			public function HRESULT(IFeed *self, int32* count) get_ItemCount;
+		}
+		[CRepr]
+		public struct IFeed2 : IFeed
+		{
+			public const new Guid IID = .(0x33f2ea09, 0x1398, 0x4ab9, 0xb6, 0xa4, 0xf9, 0x4b, 0x49, 0xd0, 0xa4, 0x2e);
+			
+			public function HRESULT(IFeed2 *self, int32 itemEffectiveId, IDispatch** disp) GetItemByEffectiveId;
+			public function HRESULT(IFeed2 *self, double* lastItemDownloadTime) get_LastItemDownloadTime;
+			public function HRESULT(IFeed2 *self, BSTR* username) get_Username;
+			public function HRESULT(IFeed2 *self, BSTR* password) get_Password;
+			public function HRESULT(IFeed2 *self, BSTR username, BSTR password) SetCredentials;
+			public function HRESULT(IFeed2 *self) ClearCredentials;
+		}
+		[CRepr]
+		public struct IFeedEvents : IDispatch
+		{
+			public const new Guid IID = .(0xabf35c99, 0x0681, 0x47ea, 0x9a, 0x8c, 0x14, 0x36, 0xa3, 0x75, 0xa9, 0x9e);
+			
+			public function HRESULT(IFeedEvents *self) Error;
+			public function HRESULT(IFeedEvents *self, BSTR path) FeedDeleted;
+			public function HRESULT(IFeedEvents *self, BSTR path, BSTR oldPath) FeedRenamed;
+			public function HRESULT(IFeedEvents *self, BSTR path) FeedUrlChanged;
+			public function HRESULT(IFeedEvents *self, BSTR path, BSTR oldPath) FeedMoved;
+			public function HRESULT(IFeedEvents *self, BSTR path) FeedDownloading;
+			public function HRESULT(IFeedEvents *self, BSTR path, FEEDS_DOWNLOAD_ERROR error) FeedDownloadCompleted;
+			public function HRESULT(IFeedEvents *self, BSTR path, int32 itemCountType) FeedItemCountChanged;
+		}
+		[CRepr]
+		public struct IFeedItem : IDispatch
+		{
+			public const new Guid IID = .(0x0a1e6cad, 0x0a47, 0x4da2, 0xa1, 0x3d, 0x5b, 0xaa, 0xa5, 0xc8, 0xbd, 0x4f);
+			
+			public function HRESULT(IFeedItem *self, FEEDS_XML_INCLUDE_FLAGS includeFlags, BSTR* xml) Xml;
+			public function HRESULT(IFeedItem *self, BSTR* title) get_Title;
+			public function HRESULT(IFeedItem *self, BSTR* linkUrl) get_Link;
+			public function HRESULT(IFeedItem *self, BSTR* itemGuid) get_Guid;
+			public function HRESULT(IFeedItem *self, BSTR* description) get_Description;
+			public function HRESULT(IFeedItem *self, double* pubDate) get_PubDate;
+			public function HRESULT(IFeedItem *self, BSTR* comments) get_Comments;
+			public function HRESULT(IFeedItem *self, BSTR* author) get_Author;
+			public function HRESULT(IFeedItem *self, IDispatch** disp) get_Enclosure;
+			public function HRESULT(IFeedItem *self, int16* isRead) get_IsRead;
+			public function HRESULT(IFeedItem *self, int16 isRead) put_IsRead;
+			public function HRESULT(IFeedItem *self, int32* itemId) get_LocalId;
+			public function HRESULT(IFeedItem *self, IDispatch** disp) get_Parent;
+			public function HRESULT(IFeedItem *self) Delete;
+			public function HRESULT(IFeedItem *self, BSTR* itemUrl) get_DownloadUrl;
+			public function HRESULT(IFeedItem *self, double* lastDownload) get_LastDownloadTime;
+			public function HRESULT(IFeedItem *self, double* modified) get_Modified;
+		}
+		[CRepr]
+		public struct IFeedItem2 : IFeedItem
+		{
+			public const new Guid IID = .(0x79ac9ef4, 0xf9c1, 0x4d2b, 0xa5, 0x0b, 0xa7, 0xff, 0xba, 0x4d, 0xcf, 0x37);
+			
+			public function HRESULT(IFeedItem2 *self, int32* effectiveId) get_EffectiveId;
+		}
+		[CRepr]
+		public struct IFeedEnclosure : IDispatch
+		{
+			public const new Guid IID = .(0x361c26f7, 0x90a4, 0x4e67, 0xae, 0x09, 0x3a, 0x36, 0xa5, 0x46, 0x43, 0x6a);
+			
+			public function HRESULT(IFeedEnclosure *self, BSTR* enclosureUrl) get_Url;
+			public function HRESULT(IFeedEnclosure *self, BSTR* mimeType) get_Type;
+			public function HRESULT(IFeedEnclosure *self, int32* length) get_Length;
+			public function HRESULT(IFeedEnclosure *self) AsyncDownload;
+			public function HRESULT(IFeedEnclosure *self) CancelAsyncDownload;
+			public function HRESULT(IFeedEnclosure *self, FEEDS_DOWNLOAD_STATUS* status) get_DownloadStatus;
+			public function HRESULT(IFeedEnclosure *self, FEEDS_DOWNLOAD_ERROR* error) get_LastDownloadError;
+			public function HRESULT(IFeedEnclosure *self, BSTR* localPath) get_LocalPath;
+			public function HRESULT(IFeedEnclosure *self, IDispatch** disp) get_Parent;
+			public function HRESULT(IFeedEnclosure *self, BSTR* enclosureUrl) get_DownloadUrl;
+			public function HRESULT(IFeedEnclosure *self, BSTR* mimeType) get_DownloadMimeType;
+			public function HRESULT(IFeedEnclosure *self) RemoveFile;
+			public function HRESULT(IFeedEnclosure *self, BSTR downloadUrl, BSTR downloadFilePath, BSTR downloadMimeType, BSTR enclosureFilename) SetFile;
+		}
+		[CRepr]
+		public struct IWMPEffects : IUnknown
+		{
+			public const new Guid IID = .(0xd3984c13, 0xc3cb, 0x48e2, 0x8b, 0xe5, 0x51, 0x68, 0x34, 0x0b, 0x4f, 0x35);
+			
+			public function HRESULT(IWMPEffects *self, TimedLevel* pLevels, HDC hdc, RECT* prc) Render;
+			public function HRESULT(IWMPEffects *self, int32 lChannelCount, int32 lSampleRate, BSTR bstrTitle) MediaInfo;
+			public function HRESULT(IWMPEffects *self, uint32* pdwCapabilities) GetCapabilities;
+			public function HRESULT(IWMPEffects *self, BSTR* bstrTitle) GetTitle;
+			public function HRESULT(IWMPEffects *self, int32 nPreset, BSTR* bstrPresetTitle) GetPresetTitle;
+			public function HRESULT(IWMPEffects *self, int32* pnPresetCount) GetPresetCount;
+			public function HRESULT(IWMPEffects *self, int32 nPreset) SetCurrentPreset;
+			public function HRESULT(IWMPEffects *self, int32* pnPreset) GetCurrentPreset;
+			public function HRESULT(IWMPEffects *self, HWND hwndOwner) DisplayPropertyPage;
+			public function HRESULT(IWMPEffects *self, BOOL fFullScreen) GoFullscreen;
+			public function HRESULT(IWMPEffects *self, TimedLevel* pLevels) RenderFullScreen;
+		}
+		[CRepr]
+		public struct IWMPEffects2 : IWMPEffects
+		{
+			public const new Guid IID = .(0x695386ec, 0xaa3c, 0x4618, 0xa5, 0xe1, 0xdd, 0x9a, 0x8b, 0x98, 0x76, 0x32);
+			
+			public function HRESULT(IWMPEffects2 *self, IWMPCore* pPlayer) SetCore;
+			public function HRESULT(IWMPEffects2 *self, HWND hwndParent) Create;
+			public function HRESULT(IWMPEffects2 *self) Destroy;
+			public function HRESULT(IWMPEffects2 *self, IWMPMedia* pMedia) NotifyNewMedia;
+			public function HRESULT(IWMPEffects2 *self, uint32 msg, WPARAM WParam, LPARAM LParam, LRESULT* plResultParam) OnWindowMessage;
+			public function HRESULT(IWMPEffects2 *self, TimedLevel* pData, BOOL fRequiredRender) RenderWindowed;
+		}
+		[CRepr]
+		public struct IWMPPluginUI : IUnknown
+		{
+			public const new Guid IID = .(0x4c5e8f9f, 0xad3e, 0x4bf9, 0x97, 0x53, 0xfc, 0xd3, 0x0d, 0x6d, 0x38, 0xdd);
+			
+			public function HRESULT(IWMPPluginUI *self, IWMPCore* pCore) SetCore;
+			public function HRESULT(IWMPPluginUI *self, HWND hwndParent, HWND* phwndWindow) Create;
+			public function HRESULT(IWMPPluginUI *self) Destroy;
+			public function HRESULT(IWMPPluginUI *self, HWND hwndParent) DisplayPropertyPage;
+			public function HRESULT(IWMPPluginUI *self, PWSTR pwszName, VARIANT* pvarProperty) GetProperty;
+			public function HRESULT(IWMPPluginUI *self, PWSTR pwszName, VARIANT* pvarProperty) SetProperty;
+			public function HRESULT(IWMPPluginUI *self, MSG* lpmsg) TranslateAccelerator;
+		}
+		[CRepr]
+		public struct IWMPContentContainer : IUnknown
+		{
+			public const new Guid IID = .(0xad7f4d9c, 0x1a9f, 0x4ed2, 0x98, 0x15, 0xec, 0xc0, 0xb5, 0x8c, 0xb6, 0x16);
+			
+			public function HRESULT(IWMPContentContainer *self, uint32* pContentID) GetID;
+			public function HRESULT(IWMPContentContainer *self, BSTR* pbstrPrice) GetPrice;
+			public function HRESULT(IWMPContentContainer *self, BSTR* pbstrType) GetType;
+			public function HRESULT(IWMPContentContainer *self, uint32* pcContent) GetContentCount;
+			public function HRESULT(IWMPContentContainer *self, uint32 idxContent, BSTR* pbstrPrice) GetContentPrice;
+			public function HRESULT(IWMPContentContainer *self, uint32 idxContent, uint32* pContentID) GetContentID;
+		}
+		[CRepr]
+		public struct IWMPContentContainerList : IUnknown
+		{
+			public const new Guid IID = .(0xa9937f78, 0x0802, 0x4af8, 0x8b, 0x8d, 0xe3, 0xf0, 0x45, 0xbc, 0x8a, 0xb5);
+			
+			public function HRESULT(IWMPContentContainerList *self, WMPTransactionType* pwmptt) GetTransactionType;
+			public function HRESULT(IWMPContentContainerList *self, uint32* pcContainer) GetContainerCount;
+			public function HRESULT(IWMPContentContainerList *self, uint32 idxContainer, IWMPContentContainer** ppContent) GetContainer;
+		}
+		[CRepr]
+		public struct IWMPContentPartnerCallback : IUnknown
+		{
+			public const new Guid IID = .(0x9e8f7da2, 0x0695, 0x403c, 0xb6, 0x97, 0xda, 0x10, 0xfa, 0xfa, 0xa6, 0x76);
+			
+			public function HRESULT(IWMPContentPartnerCallback *self, WMPCallbackNotification type, VARIANT* pContext) Notify;
+			public function HRESULT(IWMPContentPartnerCallback *self, HRESULT hrResult, uint32 dwBuyCookie) BuyComplete;
+			public function HRESULT(IWMPContentPartnerCallback *self, uint32 cookie, BSTR bstrTrackURL, uint32 dwServiceTrackID, BSTR bstrDownloadParams, HRESULT hrDownload) DownloadTrack;
+			public function HRESULT(IWMPContentPartnerCallback *self, uint32* pdwVersion, uint32* pdwSchemaVersion, uint32* plcid) GetCatalogVersion;
+			public function HRESULT(IWMPContentPartnerCallback *self, BSTR bstrDeviceName) UpdateDeviceComplete;
+			public function HRESULT(IWMPContentPartnerCallback *self, BSTR bstrType, BSTR bstrID, BSTR bstrFilter) ChangeView;
+			public function HRESULT(IWMPContentPartnerCallback *self, uint32 dwListCookie, uint32 cItems, uint32* prgItems) AddListContents;
+			public function HRESULT(IWMPContentPartnerCallback *self, uint32 dwListCookie, HRESULT hrSuccess) ListContentsComplete;
+			public function HRESULT(IWMPContentPartnerCallback *self, BSTR bstrMsg, BSTR bstrParam, BSTR bstrResult) SendMessageComplete;
+			public function HRESULT(IWMPContentPartnerCallback *self, uint32* pcContentIDs, uint32** pprgIDs) GetContentIDsInLibrary;
+			public function HRESULT(IWMPContentPartnerCallback *self, uint32 dwCookie, uint32 contentID, HRESULT hrRefresh) RefreshLicenseComplete;
+			public function HRESULT(IWMPContentPartnerCallback *self, int32 lIndex, BSTR bstrParameters) ShowPopup;
+			public function HRESULT(IWMPContentPartnerCallback *self, BSTR bstrPermission, VARIANT* pContext, HRESULT hrPermission) VerifyPermissionComplete;
+		}
+		[CRepr]
+		public struct IWMPContentPartner : IUnknown
+		{
+			public const new Guid IID = .(0x55455073, 0x41b5, 0x4e75, 0x87, 0xb8, 0xf1, 0x3b, 0xdb, 0x29, 0x1d, 0x08);
+			
+			public function HRESULT(IWMPContentPartner *self, IWMPContentPartnerCallback* pCallback) SetCallback;
+			public function HRESULT(IWMPContentPartner *self, WMPPartnerNotification type, VARIANT* pContext) Notify;
+			public function HRESULT(IWMPContentPartner *self, BSTR bstrInfoName, VARIANT* pContext, VARIANT* pData) GetItemInfo;
+			public function HRESULT(IWMPContentPartner *self, BSTR bstrInfoName, VARIANT* pData) GetContentPartnerInfo;
+			public function HRESULT(IWMPContentPartner *self, BSTR location, VARIANT* pLocationContext, BSTR itemLocation, uint32 cItemIDs, uint32* prgItemIDs, uint32* pcItemIDs, WMPContextMenuInfo** pprgItems) GetCommands;
+			public function HRESULT(IWMPContentPartner *self, uint32 dwCommandID, BSTR location, VARIANT* pLocationContext, BSTR itemLocation, uint32 cItemIDs, uint32* rgItemIDs) InvokeCommand;
+			public function HRESULT(IWMPContentPartner *self, IWMPContentContainerList* pInfo, BSTR* pbstrTotalPrice, int16* pSilentOK) CanBuySilent;
+			public function HRESULT(IWMPContentPartner *self, IWMPContentContainerList* pInfo, uint32 cookie) Buy;
+			public function HRESULT(IWMPContentPartner *self, WMPStreamingType st, VARIANT* pStreamContext, BSTR* pbstrURL) GetStreamingURL;
+			public function HRESULT(IWMPContentPartner *self, IWMPContentContainerList* pInfo, uint32 cookie) Download;
+			public function HRESULT(IWMPContentPartner *self, HRESULT hrResult, uint32 contentID, BSTR downloadTrackParam) DownloadTrackComplete;
+			public function HRESULT(IWMPContentPartner *self, uint32 dwCookie, int16 fLocal, BSTR bstrURL, WMPStreamingType type, uint32 contentID, BSTR bstrRefreshReason, VARIANT* pReasonContext) RefreshLicense;
+			public function HRESULT(IWMPContentPartner *self, uint32 dwCatalogVersion, uint32 dwCatalogSchemaVersion, uint32 catalogLCID, uint32* pdwNewCatalogVersion, BSTR* pbstrCatalogURL, VARIANT* pExpirationDate) GetCatalogURL;
+			public function HRESULT(IWMPContentPartner *self, WMPTaskType task, BSTR location, VARIANT* pContext, BSTR clickLocation, VARIANT* pClickContext, BSTR bstrFilter, BSTR bstrViewParams, BSTR* pbstrTemplateURL, WMPTemplateSize* pTemplateSize) GetTemplate;
+			public function HRESULT(IWMPContentPartner *self, BSTR bstrDeviceName) UpdateDevice;
+			public function HRESULT(IWMPContentPartner *self, BSTR location, VARIANT* pContext, BSTR bstrListType, BSTR bstrParams, uint32 dwListCookie) GetListContents;
+			public function HRESULT(IWMPContentPartner *self, BLOB userInfo, BLOB pwdInfo, int16 fUsedCachedCreds, int16 fOkToCache) Login;
+			public function HRESULT(IWMPContentPartner *self, BLOB userInfo, BLOB pwdInfo) Authenticate;
+			public function HRESULT(IWMPContentPartner *self) Logout;
+			public function HRESULT(IWMPContentPartner *self, BSTR bstrMsg, BSTR bstrParam) SendMessage;
+			public function HRESULT(IWMPContentPartner *self, BSTR bstrStationEventType, uint32 StationId, uint32 PlaylistIndex, uint32 TrackID, BSTR TrackData, uint32 dwSecondsPlayed) StationEvent;
+			public function HRESULT(IWMPContentPartner *self, IWMPContentContainerList* pListBase, IWMPContentContainerList* pListCompare, int32* pResult) CompareContainerListPrices;
+			public function HRESULT(IWMPContentPartner *self, BSTR bstrPermission, VARIANT* pContext) VerifyPermission;
+		}
+		[CRepr]
+		public struct IWMPSubscriptionService : IUnknown
+		{
+			public const new Guid IID = .(0x376055f8, 0x2a59, 0x4a73, 0x95, 0x01, 0xdc, 0xa5, 0x27, 0x3a, 0x7a, 0x10);
+			
+			public function HRESULT(IWMPSubscriptionService *self, HWND hwnd, IWMPMedia* pMedia, BOOL* pfAllowPlay) allowPlay;
+			public function HRESULT(IWMPSubscriptionService *self, HWND hwnd, IWMPPlaylist* pPlaylist, BOOL* pfAllowBurn) allowCDBurn;
+			public function HRESULT(IWMPSubscriptionService *self, HWND hwnd, IWMPPlaylist* pPlaylist, BOOL* pfAllowTransfer) allowPDATransfer;
+			public function HRESULT(IWMPSubscriptionService *self, HWND hwnd) startBackgroundProcessing;
+		}
+		[CRepr]
+		public struct IWMPSubscriptionServiceCallback : IUnknown
+		{
+			public const new Guid IID = .(0xdd01d127, 0x2dc2, 0x4c3a, 0x87, 0x6e, 0x63, 0x31, 0x20, 0x79, 0xf9, 0xb0);
+			
+			public function HRESULT(IWMPSubscriptionServiceCallback *self, HRESULT hrResult) onComplete;
+		}
+		[CRepr]
+		public struct IWMPSubscriptionService2 : IWMPSubscriptionService
+		{
+			public const new Guid IID = .(0xa94c120e, 0xd600, 0x4ec6, 0xb0, 0x5e, 0xec, 0x9d, 0x56, 0xd8, 0x4d, 0xe0);
+			
+			public function HRESULT(IWMPSubscriptionService2 *self) stopBackgroundProcessing;
+			public function HRESULT(IWMPSubscriptionService2 *self, WMPSubscriptionServiceEvent event) serviceEvent;
+			public function HRESULT(IWMPSubscriptionService2 *self, BSTR bstrDeviceName, IWMPSubscriptionServiceCallback* pCB) deviceAvailable;
+			public function HRESULT(IWMPSubscriptionService2 *self, BSTR bstrFilename, BSTR bstrDeviceName, IWMPSubscriptionServiceCallback* pCB) prepareForSync;
+		}
+		[CRepr]
+		public struct IWMPDownloadItem : IDispatch
+		{
+			public const new Guid IID = .(0xc9470e8e, 0x3f6b, 0x46a9, 0xa0, 0xa9, 0x45, 0x28, 0x15, 0xc3, 0x42, 0x97);
+			
+			public function HRESULT(IWMPDownloadItem *self, BSTR* pbstrURL) get_sourceURL;
+			public function HRESULT(IWMPDownloadItem *self, int32* plSize) get_size;
+			public function HRESULT(IWMPDownloadItem *self, BSTR* pbstrType) get_type;
+			public function HRESULT(IWMPDownloadItem *self, int32* plProgress) get_progress;
+			public function HRESULT(IWMPDownloadItem *self, WMPSubscriptionDownloadState* pwmpsdls) get_downloadState;
+			public function HRESULT(IWMPDownloadItem *self) pause;
+			public function HRESULT(IWMPDownloadItem *self) resume;
+			public function HRESULT(IWMPDownloadItem *self) cancel;
+		}
+		[CRepr]
+		public struct IWMPDownloadItem2 : IWMPDownloadItem
+		{
+			public const new Guid IID = .(0x9fbb3336, 0x6da3, 0x479d, 0xb8, 0xff, 0x67, 0xd4, 0x6e, 0x20, 0xa9, 0x87);
+			
+			public function HRESULT(IWMPDownloadItem2 *self, BSTR bstrItemName, BSTR* pbstrVal) getItemInfo;
+		}
+		[CRepr]
+		public struct IWMPDownloadCollection : IDispatch
+		{
+			public const new Guid IID = .(0x0a319c7f, 0x85f9, 0x436c, 0xb8, 0x8e, 0x82, 0xfd, 0x88, 0x00, 0x0e, 0x1c);
+			
+			public function HRESULT(IWMPDownloadCollection *self, int32* plId) get_id;
+			public function HRESULT(IWMPDownloadCollection *self, int32* plCount) get_count;
+			public function HRESULT(IWMPDownloadCollection *self, int32 lItem, IWMPDownloadItem2** ppDownload) item;
+			public function HRESULT(IWMPDownloadCollection *self, BSTR bstrSourceURL, BSTR bstrType, IWMPDownloadItem2** ppDownload) startDownload;
+			public function HRESULT(IWMPDownloadCollection *self, int32 lItem) removeItem;
+			public function HRESULT(IWMPDownloadCollection *self) Clear;
+		}
+		[CRepr]
+		public struct IWMPDownloadManager : IDispatch
+		{
+			public const new Guid IID = .(0xe15e9ad1, 0x8f20, 0x4cc4, 0x9e, 0xc7, 0x1a, 0x32, 0x8c, 0xa8, 0x6a, 0x0d);
+			
+			public function HRESULT(IWMPDownloadManager *self, int32 lCollectionId, IWMPDownloadCollection** ppCollection) getDownloadCollection;
+			public function HRESULT(IWMPDownloadManager *self, IWMPDownloadCollection** ppCollection) createDownloadCollection;
+		}
 		
 	}
 }

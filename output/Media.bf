@@ -195,9 +195,30 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IReferenceClock {}
-		public struct IReferenceClockTimerControl {}
-		public struct IReferenceClock2 {}
+		[CRepr]
+		public struct IReferenceClock : IUnknown
+		{
+			public const new Guid IID = .(0x56a86897, 0x0ad4, 0x11ce, 0xb0, 0x3a, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70);
+			
+			public function HRESULT(IReferenceClock *self, int64* pTime) GetTime;
+			public function HRESULT(IReferenceClock *self, int64 baseTime, int64 streamTime, HANDLE hEvent, uint* pdwAdviseCookie) AdviseTime;
+			public function HRESULT(IReferenceClock *self, int64 startTime, int64 periodTime, HANDLE hSemaphore, uint* pdwAdviseCookie) AdvisePeriodic;
+			public function HRESULT(IReferenceClock *self, uint dwAdviseCookie) Unadvise;
+		}
+		[CRepr]
+		public struct IReferenceClockTimerControl : IUnknown
+		{
+			public const new Guid IID = .(0xebec459c, 0x2eca, 0x4d42, 0xa8, 0xaf, 0x30, 0xdf, 0x55, 0x76, 0x14, 0xb8);
+			
+			public function HRESULT(IReferenceClockTimerControl *self, int64 timerResolution) SetDefaultTimerResolution;
+			public function HRESULT(IReferenceClockTimerControl *self, int64* pTimerResolution) GetDefaultTimerResolution;
+		}
+		[CRepr]
+		public struct IReferenceClock2 : IReferenceClock
+		{
+			public const new Guid IID = .(0x36b73885, 0xc2c8, 0x11cf, 0x8b, 0x46, 0x00, 0x80, 0x5f, 0x6c, 0xef, 0x60);
+			
+		}
 		
 		// --- Functions ---
 		

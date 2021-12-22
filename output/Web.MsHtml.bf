@@ -9742,9 +9742,9 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT SHOWHTMLDIALOGFN(HWND hwndParent, IMoniker pmk, VARIANT* pvarArgIn, PWSTR pchOptions, VARIANT* pvArgOut);
-		public function HRESULT SHOWHTMLDIALOGEXFN(HWND hwndParent, IMoniker pmk, uint32 dwDialogFlags, VARIANT* pvarArgIn, PWSTR pchOptions, VARIANT* pvArgOut);
-		public function HRESULT SHOWMODELESSHTMLDIALOGFN(HWND hwndParent, IMoniker pmk, VARIANT* pvarArgIn, VARIANT* pvarOptions, IHTMLWindow2* ppWindow);
+		public function HRESULT SHOWHTMLDIALOGFN(HWND hwndParent, IMoniker* pmk, VARIANT* pvarArgIn, PWSTR pchOptions, VARIANT* pvArgOut);
+		public function HRESULT SHOWHTMLDIALOGEXFN(HWND hwndParent, IMoniker* pmk, uint32 dwDialogFlags, VARIANT* pvarArgIn, PWSTR pchOptions, VARIANT* pvArgOut);
+		public function HRESULT SHOWMODELESSHTMLDIALOGFN(HWND hwndParent, IMoniker* pmk, VARIANT* pvarArgIn, VARIANT* pvarOptions, IHTMLWindow2** ppWindow);
 		public function HRESULT IEREGISTERXMLNSFN(PWSTR lpszURI, Guid clsid, BOOL fMachine);
 		public function HRESULT IEISXMLNSREGISTEREDFN(PWSTR lpszURI, Guid* pCLSID);
 		
@@ -10140,967 +10140,12060 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IHTMLFiltersCollection {}
-		public struct IIE70DispatchEx {}
-		public struct IIE80DispatchEx {}
-		public struct IHTMLEventObj {}
-		public struct IElementBehaviorSite {}
-		public struct IElementBehavior {}
-		public struct IElementBehaviorFactory {}
-		public struct IElementBehaviorSiteOM {}
-		public struct IElementBehaviorRender {}
-		public struct IElementBehaviorSiteRender {}
-		public struct IDOMEvent {}
-		public struct IHTMLDOMConstructor {}
-		public struct IHTMLStyleSheetRule {}
-		public struct IHTMLCSSStyleDeclaration {}
-		public struct IHTMLCSSStyleDeclaration2 {}
-		public struct IHTMLCSSStyleDeclaration3 {}
-		public struct IHTMLCSSStyleDeclaration4 {}
-		public struct IHTMLStyleEnabled {}
-		public struct DispHTMLCSSStyleDeclaration {}
-		public struct IHTMLStyle {}
-		public struct IHTMLStyle2 {}
-		public struct IHTMLStyle3 {}
-		public struct IHTMLStyle4 {}
-		public struct IHTMLStyle5 {}
-		public struct IHTMLStyle6 {}
-		public struct IHTMLRuleStyle {}
-		public struct IHTMLRuleStyle2 {}
-		public struct IHTMLRuleStyle3 {}
-		public struct IHTMLRuleStyle4 {}
-		public struct IHTMLRuleStyle5 {}
-		public struct IHTMLRuleStyle6 {}
-		public struct DispHTMLStyle {}
-		public struct DispHTMLRuleStyle {}
-		public struct IHTMLStyleSheetRulesCollection {}
-		public struct IHTMLStyleSheet {}
-		public struct IHTMLCSSRule {}
-		public struct IHTMLCSSImportRule {}
-		public struct IHTMLCSSMediaRule {}
-		public struct IHTMLCSSMediaList {}
-		public struct IHTMLCSSNamespaceRule {}
-		public struct IHTMLMSCSSKeyframeRule {}
-		public struct IHTMLMSCSSKeyframesRule {}
-		public struct DispHTMLCSSRule {}
-		public struct DispHTMLCSSImportRule {}
-		public struct DispHTMLCSSMediaRule {}
-		public struct DispHTMLCSSMediaList {}
-		public struct DispHTMLCSSNamespaceRule {}
-		public struct DispHTMLMSCSSKeyframeRule {}
-		public struct DispHTMLMSCSSKeyframesRule {}
-		public struct IHTMLRenderStyle {}
-		public struct DispHTMLRenderStyle {}
-		public struct IHTMLCurrentStyle {}
-		public struct IHTMLCurrentStyle2 {}
-		public struct IHTMLCurrentStyle3 {}
-		public struct IHTMLCurrentStyle4 {}
-		public struct IHTMLCurrentStyle5 {}
-		public struct DispHTMLCurrentStyle {}
-		public struct IHTMLElement {}
-		public struct IHTMLRect {}
-		public struct IHTMLRect2 {}
-		public struct IHTMLRectCollection {}
-		public struct IHTMLElementCollection {}
-		public struct IHTMLElement2 {}
-		public struct IHTMLAttributeCollection3 {}
-		public struct IDOMDocumentType {}
-		public struct IHTMLDocument7 {}
-		public struct IHTMLDOMNode {}
-		public struct IHTMLDOMNode2 {}
-		public struct IHTMLDOMNode3 {}
-		public struct IHTMLDOMAttribute {}
-		public struct IHTMLDOMAttribute2 {}
-		public struct IHTMLDOMAttribute3 {}
-		public struct IHTMLDOMAttribute4 {}
-		public struct IHTMLDOMTextNode {}
-		public struct IHTMLDOMTextNode2 {}
-		public struct IHTMLDOMTextNode3 {}
-		public struct IHTMLDOMImplementation {}
-		public struct IHTMLDOMImplementation2 {}
-		public struct DispHTMLDOMAttribute {}
-		public struct DispHTMLDOMTextNode {}
-		public struct DispHTMLDOMImplementation {}
-		public struct IHTMLAttributeCollection {}
-		public struct IHTMLAttributeCollection2 {}
-		public struct IHTMLAttributeCollection4 {}
-		public struct IHTMLDOMChildrenCollection {}
-		public struct IHTMLDOMChildrenCollection2 {}
-		public struct DispHTMLAttributeCollection {}
-		public struct DispStaticNodeList {}
-		public struct DispDOMChildrenCollection {}
-		public struct HTMLElementEvents4 {}
-		public struct HTMLElementEvents3 {}
-		public struct HTMLElementEvents2 {}
-		public struct HTMLElementEvents {}
-		public struct IRulesAppliedCollection {}
-		public struct IHTMLElement3 {}
-		public struct IHTMLElement4 {}
-		public struct IElementSelector {}
-		public struct IHTMLElementRender {}
-		public struct IHTMLUniqueName {}
-		public struct IHTMLElement5 {}
-		public struct IHTMLElement6 {}
-		public struct IHTMLElement7 {}
-		public struct IHTMLElementAppliedStyles {}
-		public struct IElementTraversal {}
-		public struct IHTMLDatabinding {}
-		public struct IHTMLDocument {}
-		public struct IHTMLElementDefaults {}
-		public struct DispHTMLDefaults {}
-		public struct IHTCDefaultDispatch {}
-		public struct IHTCPropertyBehavior {}
-		public struct IHTCMethodBehavior {}
-		public struct IHTCEventBehavior {}
-		public struct IHTCAttachBehavior {}
-		public struct IHTCAttachBehavior2 {}
-		public struct IHTCDescBehavior {}
-		public struct DispHTCDefaultDispatch {}
-		public struct DispHTCPropertyBehavior {}
-		public struct DispHTCMethodBehavior {}
-		public struct DispHTCEventBehavior {}
-		public struct DispHTCAttachBehavior {}
-		public struct DispHTCDescBehavior {}
-		public struct IHTMLUrnCollection {}
-		public struct DispHTMLUrnCollection {}
-		public struct IHTMLGenericElement {}
-		public struct DispHTMLGenericElement {}
-		public struct IHTMLStyleSheetRuleApplied {}
-		public struct IHTMLStyleSheetRule2 {}
-		public struct IHTMLStyleSheetRulesCollection2 {}
-		public struct DispHTMLStyleSheetRule {}
-		public struct DispHTMLStyleSheetRulesCollection {}
-		public struct IHTMLStyleSheetPage {}
-		public struct IHTMLStyleSheetPage2 {}
-		public struct IHTMLStyleSheetPagesCollection {}
-		public struct DispHTMLStyleSheetPage {}
-		public struct DispHTMLStyleSheetPagesCollection {}
-		public struct IHTMLStyleSheetsCollection {}
-		public struct IHTMLStyleSheet2 {}
-		public struct IHTMLStyleSheet3 {}
-		public struct IHTMLStyleSheet4 {}
-		public struct DispHTMLStyleSheet {}
-		public struct IHTMLStyleSheetsCollection2 {}
-		public struct DispHTMLStyleSheetsCollection {}
-		public struct HTMLLinkElementEvents2 {}
-		public struct HTMLLinkElementEvents {}
-		public struct IHTMLLinkElement {}
-		public struct IHTMLLinkElement2 {}
-		public struct IHTMLLinkElement3 {}
-		public struct IHTMLLinkElement4 {}
-		public struct IHTMLLinkElement5 {}
-		public struct DispHTMLLinkElement {}
-		public struct IHTMLTxtRange {}
-		public struct IHTMLTextRangeMetrics {}
-		public struct IHTMLTextRangeMetrics2 {}
-		public struct IHTMLTxtRangeCollection {}
-		public struct IHTMLDOMRange {}
-		public struct DispHTMLDOMRange {}
-		public struct HTMLFormElementEvents2 {}
-		public struct HTMLFormElementEvents {}
-		public struct IHTMLFormElement {}
-		public struct IHTMLFormElement2 {}
-		public struct IHTMLFormElement3 {}
-		public struct IHTMLSubmitData {}
-		public struct IHTMLFormElement4 {}
-		public struct DispHTMLFormElement {}
-		public struct HTMLControlElementEvents2 {}
-		public struct HTMLControlElementEvents {}
-		public struct IHTMLControlElement {}
-		public struct IHTMLTextElement {}
-		public struct DispHTMLTextElement {}
-		public struct HTMLTextContainerEvents2 {}
-		public struct HTMLTextContainerEvents {}
-		public struct IHTMLTextContainer {}
-		public struct IHTMLControlRange {}
-		public struct IHTMLControlRange2 {}
-		public struct HTMLImgEvents2 {}
-		public struct HTMLImgEvents {}
-		public struct IHTMLImgElement {}
-		public struct IHTMLImgElement2 {}
-		public struct IHTMLImgElement3 {}
-		public struct IHTMLImgElement4 {}
-		public struct IHTMLMSImgElement {}
-		public struct IHTMLImageElementFactory {}
-		public struct DispHTMLImg {}
-		public struct IHTMLBodyElement {}
-		public struct IHTMLBodyElement2 {}
-		public struct IHTMLBodyElement3 {}
-		public struct IHTMLBodyElement4 {}
-		public struct IHTMLBodyElement5 {}
-		public struct DispHTMLBody {}
-		public struct IHTMLFontElement {}
-		public struct DispHTMLFontElement {}
-		public struct HTMLAnchorEvents2 {}
-		public struct HTMLAnchorEvents {}
-		public struct IHTMLAnchorElement {}
-		public struct IHTMLAnchorElement2 {}
-		public struct IHTMLAnchorElement3 {}
-		public struct DispHTMLAnchorElement {}
-		public struct HTMLLabelEvents2 {}
-		public struct HTMLLabelEvents {}
-		public struct IHTMLLabelElement {}
-		public struct IHTMLLabelElement2 {}
-		public struct DispHTMLLabelElement {}
-		public struct IHTMLListElement {}
-		public struct IHTMLListElement2 {}
-		public struct DispHTMLListElement {}
-		public struct IHTMLUListElement {}
-		public struct DispHTMLUListElement {}
-		public struct IHTMLOListElement {}
-		public struct DispHTMLOListElement {}
-		public struct IHTMLLIElement {}
-		public struct DispHTMLLIElement {}
-		public struct IHTMLBlockElement {}
-		public struct IHTMLBlockElement2 {}
-		public struct IHTMLBlockElement3 {}
-		public struct DispHTMLBlockElement {}
-		public struct IHTMLDivElement {}
-		public struct DispHTMLDivElement {}
-		public struct IHTMLDDElement {}
-		public struct DispHTMLDDElement {}
-		public struct IHTMLDTElement {}
-		public struct DispHTMLDTElement {}
-		public struct IHTMLBRElement {}
-		public struct DispHTMLBRElement {}
-		public struct IHTMLDListElement {}
-		public struct DispHTMLDListElement {}
-		public struct IHTMLHRElement {}
-		public struct DispHTMLHRElement {}
-		public struct IHTMLParaElement {}
-		public struct DispHTMLParaElement {}
-		public struct IHTMLElementCollection2 {}
-		public struct IHTMLElementCollection3 {}
-		public struct IHTMLElementCollection4 {}
-		public struct DispHTMLElementCollection {}
-		public struct IHTMLHeaderElement {}
-		public struct DispHTMLHeaderElement {}
-		public struct HTMLSelectElementEvents2 {}
-		public struct HTMLSelectElementEvents {}
-		public struct IHTMLOptionElement {}
-		public struct IHTMLSelectElementEx {}
-		public struct IHTMLSelectElement {}
-		public struct IHTMLSelectElement2 {}
-		public struct IHTMLSelectElement4 {}
-		public struct IHTMLSelectElement5 {}
-		public struct IHTMLSelectElement6 {}
-		public struct DispHTMLSelectElement {}
-		public struct DispHTMLWndSelectElement {}
-		public struct IHTMLSelectionObject {}
-		public struct IHTMLSelectionObject2 {}
-		public struct IHTMLSelection {}
-		public struct IHTMLOptionElement3 {}
-		public struct IHTMLOptionElement4 {}
-		public struct IHTMLOptionElementFactory {}
-		public struct DispHTMLOptionElement {}
-		public struct DispHTMLWndOptionElement {}
-		public struct HTMLButtonElementEvents2 {}
-		public struct HTMLButtonElementEvents {}
-		public struct HTMLInputTextElementEvents2 {}
-		public struct HTMLOptionButtonElementEvents2 {}
-		public struct HTMLInputFileElementEvents2 {}
-		public struct HTMLInputImageEvents2 {}
-		public struct HTMLInputTextElementEvents {}
-		public struct HTMLOptionButtonElementEvents {}
-		public struct HTMLInputFileElementEvents {}
-		public struct HTMLInputImageEvents {}
-		public struct IHTMLInputElement {}
-		public struct IHTMLInputElement2 {}
-		public struct IHTMLInputElement3 {}
-		public struct IHTMLInputButtonElement {}
-		public struct IHTMLInputHiddenElement {}
-		public struct IHTMLInputTextElement {}
-		public struct IHTMLInputTextElement2 {}
-		public struct IHTMLInputFileElement {}
-		public struct IHTMLOptionButtonElement {}
-		public struct IHTMLInputImage {}
-		public struct IHTMLInputRangeElement {}
-		public struct DispHTMLInputElement {}
-		public struct IHTMLTextAreaElement {}
-		public struct IHTMLTextAreaElement2 {}
-		public struct DispHTMLTextAreaElement {}
-		public struct DispHTMLRichtextElement {}
-		public struct IHTMLButtonElement {}
-		public struct IHTMLButtonElement2 {}
-		public struct DispHTMLButtonElement {}
-		public struct HTMLMarqueeElementEvents2 {}
-		public struct HTMLMarqueeElementEvents {}
-		public struct IHTMLMarqueeElement {}
-		public struct DispHTMLMarqueeElement {}
-		public struct IHTMLHtmlElement {}
-		public struct IHTMLHeadElement {}
-		public struct IHTMLHeadElement2 {}
-		public struct IHTMLTitleElement {}
-		public struct IHTMLMetaElement {}
-		public struct IHTMLMetaElement2 {}
-		public struct IHTMLMetaElement3 {}
-		public struct IHTMLBaseElement {}
-		public struct IHTMLBaseElement2 {}
-		public struct DispHTMLHtmlElement {}
-		public struct DispHTMLHeadElement {}
-		public struct DispHTMLTitleElement {}
-		public struct DispHTMLMetaElement {}
-		public struct DispHTMLBaseElement {}
-		public struct IHTMLIsIndexElement {}
-		public struct IHTMLIsIndexElement2 {}
-		public struct IHTMLNextIdElement {}
-		public struct DispHTMLIsIndexElement {}
-		public struct DispHTMLNextIdElement {}
-		public struct IHTMLBaseFontElement {}
-		public struct DispHTMLBaseFontElement {}
-		public struct IHTMLUnknownElement {}
-		public struct DispHTMLUnknownElement {}
-		public struct IWebGeolocation {}
-		public struct IHTMLMimeTypesCollection {}
-		public struct IHTMLPluginsCollection {}
-		public struct IOmHistory {}
-		public struct IHTMLOpsProfile {}
-		public struct IOmNavigator {}
-		public struct INavigatorGeolocation {}
-		public struct INavigatorDoNotTrack {}
-		public struct IHTMLLocation {}
-		public struct DispHTMLHistory {}
-		public struct DispHTMLNavigator {}
-		public struct DispHTMLLocation {}
-		public struct DispCPlugins {}
-		public struct IHTMLBookmarkCollection {}
-		public struct IHTMLDataTransfer {}
-		public struct IHTMLEventObj2 {}
-		public struct IHTMLEventObj3 {}
-		public struct IHTMLEventObj4 {}
-		public struct IHTMLEventObj5 {}
-		public struct IHTMLEventObj6 {}
-		public struct DispCEventObj {}
-		public struct IHTMLStyleMedia {}
-		public struct DispHTMLStyleMedia {}
-		public struct IHTMLFramesCollection2 {}
-		public struct HTMLWindowEvents3 {}
-		public struct HTMLWindowEvents2 {}
-		public struct HTMLWindowEvents {}
-		public struct IHTMLDocument2 {}
-		public struct IHTMLWindow2 {}
-		public struct IHTMLWindow3 {}
-		public struct IHTMLFrameBase {}
-		public struct IHTMLStorage {}
-		public struct IHTMLPerformance {}
-		public struct IHTMLApplicationCache {}
-		public struct IHTMLScreen {}
-		public struct IHTMLScreen2 {}
-		public struct IHTMLScreen3 {}
-		public struct IHTMLScreen4 {}
-		public struct IHTMLWindow4 {}
-		public struct IHTMLWindow5 {}
-		public struct IHTMLWindow6 {}
-		public struct IHTMLWindow7 {}
-		public struct IHTMLWindow8 {}
-		public struct DispHTMLScreen {}
-		public struct DispHTMLWindow2 {}
-		public struct DispHTMLWindowProxy {}
-		public struct IHTMLDocumentCompatibleInfo {}
-		public struct IHTMLDocumentCompatibleInfoCollection {}
-		public struct DispHTMLDocumentCompatibleInfo {}
-		public struct DispHTMLDocumentCompatibleInfoCollection {}
-		public struct HTMLDocumentEvents4 {}
-		public struct HTMLDocumentEvents3 {}
-		public struct HTMLDocumentEvents2 {}
-		public struct HTMLDocumentEvents {}
-		public struct ISVGSVGElement {}
-		public struct IDOMNodeIterator {}
-		public struct IDOMTreeWalker {}
-		public struct IDOMProcessingInstruction {}
-		public struct IHTMLDocument3 {}
-		public struct IHTMLDocument4 {}
-		public struct IHTMLDocument5 {}
-		public struct IHTMLDocument6 {}
-		public struct IHTMLDocument8 {}
-		public struct IDocumentEvent {}
-		public struct IDocumentRange {}
-		public struct IDocumentSelector {}
-		public struct IDocumentTraversal {}
-		public struct DispHTMLDocument {}
-		public struct DWebBridgeEvents {}
-		public struct IWebBridge {}
-		public struct IWBScriptControl {}
-		public struct IHTMLEmbedElement {}
-		public struct IHTMLEmbedElement2 {}
-		public struct DispHTMLEmbed {}
-		public struct HTMLMapEvents2 {}
-		public struct HTMLMapEvents {}
-		public struct IHTMLAreasCollection {}
-		public struct IHTMLAreasCollection2 {}
-		public struct IHTMLAreasCollection3 {}
-		public struct IHTMLAreasCollection4 {}
-		public struct IHTMLMapElement {}
-		public struct DispHTMLAreasCollection {}
-		public struct DispHTMLMapElement {}
-		public struct HTMLAreaEvents2 {}
-		public struct HTMLAreaEvents {}
-		public struct IHTMLAreaElement {}
-		public struct IHTMLAreaElement2 {}
-		public struct DispHTMLAreaElement {}
-		public struct IHTMLTableCaption {}
-		public struct DispHTMLTableCaption {}
-		public struct IHTMLCommentElement {}
-		public struct IHTMLCommentElement2 {}
-		public struct IHTMLCommentElement3 {}
-		public struct DispHTMLCommentElement {}
-		public struct IHTMLPhraseElement {}
-		public struct IHTMLPhraseElement2 {}
-		public struct IHTMLPhraseElement3 {}
-		public struct IHTMLSpanElement {}
-		public struct DispHTMLPhraseElement {}
-		public struct DispHTMLSpanElement {}
-		public struct HTMLTableEvents2 {}
-		public struct HTMLTableEvents {}
-		public struct IHTMLTableSection {}
-		public struct IHTMLTable {}
-		public struct IHTMLTable2 {}
-		public struct IHTMLTable3 {}
-		public struct IHTMLTable4 {}
-		public struct IHTMLTableCol {}
-		public struct IHTMLTableCol2 {}
-		public struct IHTMLTableCol3 {}
-		public struct IHTMLTableSection2 {}
-		public struct IHTMLTableSection3 {}
-		public struct IHTMLTableSection4 {}
-		public struct IHTMLTableRow {}
-		public struct IHTMLTableRow2 {}
-		public struct IHTMLTableRow3 {}
-		public struct IHTMLTableRow4 {}
-		public struct IHTMLTableRowMetrics {}
-		public struct IHTMLTableCell {}
-		public struct IHTMLTableCell2 {}
-		public struct IHTMLTableCell3 {}
-		public struct DispHTMLTable {}
-		public struct DispHTMLTableCol {}
-		public struct DispHTMLTableSection {}
-		public struct DispHTMLTableRow {}
-		public struct DispHTMLTableCell {}
-		public struct HTMLScriptEvents2 {}
-		public struct HTMLScriptEvents {}
-		public struct IHTMLScriptElement {}
-		public struct IHTMLScriptElement2 {}
-		public struct IHTMLScriptElement3 {}
-		public struct IHTMLScriptElement4 {}
-		public struct DispHTMLScriptElement {}
-		public struct IHTMLNoShowElement {}
-		public struct DispHTMLNoShowElement {}
-		public struct HTMLObjectElementEvents2 {}
-		public struct HTMLObjectElementEvents {}
-		public struct IHTMLObjectElement {}
-		public struct IHTMLObjectElement2 {}
-		public struct IHTMLObjectElement3 {}
-		public struct IHTMLObjectElement4 {}
-		public struct IHTMLObjectElement5 {}
-		public struct IHTMLParamElement {}
-		public struct IHTMLParamElement2 {}
-		public struct DispHTMLObjectElement {}
-		public struct DispHTMLParamElement {}
-		public struct HTMLFrameSiteEvents2 {}
-		public struct HTMLFrameSiteEvents {}
-		public struct IHTMLFrameBase2 {}
-		public struct IHTMLFrameBase3 {}
-		public struct DispHTMLFrameBase {}
-		public struct IHTMLFrameElement {}
-		public struct IHTMLFrameElement2 {}
-		public struct IHTMLFrameElement3 {}
-		public struct DispHTMLFrameElement {}
-		public struct IHTMLIFrameElement {}
-		public struct IHTMLIFrameElement2 {}
-		public struct IHTMLIFrameElement3 {}
-		public struct DispHTMLIFrame {}
-		public struct IHTMLDivPosition {}
-		public struct IHTMLFieldSetElement {}
-		public struct IHTMLFieldSetElement2 {}
-		public struct IHTMLLegendElement {}
-		public struct IHTMLLegendElement2 {}
-		public struct DispHTMLDivPosition {}
-		public struct DispHTMLFieldSetElement {}
-		public struct DispHTMLLegendElement {}
-		public struct IHTMLSpanFlow {}
-		public struct DispHTMLSpanFlow {}
-		public struct IHTMLFrameSetElement {}
-		public struct IHTMLFrameSetElement2 {}
-		public struct IHTMLFrameSetElement3 {}
-		public struct DispHTMLFrameSetSite {}
-		public struct IHTMLBGsound {}
-		public struct DispHTMLBGsound {}
-		public struct IHTMLFontNamesCollection {}
-		public struct IHTMLFontSizesCollection {}
-		public struct IHTMLOptionsHolder {}
-		public struct HTMLStyleElementEvents2 {}
-		public struct HTMLStyleElementEvents {}
-		public struct IHTMLStyleElement {}
-		public struct IHTMLStyleElement2 {}
-		public struct DispHTMLStyleElement {}
-		public struct IHTMLStyleFontFace {}
-		public struct IHTMLStyleFontFace2 {}
-		public struct DispHTMLStyleFontFace {}
-		public struct IHTMLXDomainRequest {}
-		public struct IHTMLXDomainRequestFactory {}
-		public struct DispXDomainRequest {}
-		public struct IHTMLStorage2 {}
-		public struct DispHTMLStorage {}
-		public struct IEventTarget {}
-		public struct DispDOMEvent {}
-		public struct IDOMUIEvent {}
-		public struct DispDOMUIEvent {}
-		public struct IDOMMouseEvent {}
-		public struct DispDOMMouseEvent {}
-		public struct IDOMDragEvent {}
-		public struct DispDOMDragEvent {}
-		public struct IDOMMouseWheelEvent {}
-		public struct DispDOMMouseWheelEvent {}
-		public struct IDOMWheelEvent {}
-		public struct DispDOMWheelEvent {}
-		public struct IDOMTextEvent {}
-		public struct DispDOMTextEvent {}
-		public struct IDOMKeyboardEvent {}
-		public struct DispDOMKeyboardEvent {}
-		public struct IDOMCompositionEvent {}
-		public struct DispDOMCompositionEvent {}
-		public struct IDOMMutationEvent {}
-		public struct DispDOMMutationEvent {}
-		public struct IDOMBeforeUnloadEvent {}
-		public struct DispDOMBeforeUnloadEvent {}
-		public struct IDOMFocusEvent {}
-		public struct DispDOMFocusEvent {}
-		public struct IDOMCustomEvent {}
-		public struct DispDOMCustomEvent {}
-		public struct ICanvasGradient {}
-		public struct ICanvasPattern {}
-		public struct ICanvasTextMetrics {}
-		public struct ICanvasImageData {}
-		public struct ICanvasPixelArray {}
-		public struct IHTMLCanvasElement {}
-		public struct ICanvasRenderingContext2D {}
-		public struct DispCanvasGradient {}
-		public struct DispCanvasPattern {}
-		public struct DispCanvasTextMetrics {}
-		public struct DispCanvasImageData {}
-		public struct DispCanvasRenderingContext2D {}
-		public struct DispHTMLCanvasElement {}
-		public struct IDOMProgressEvent {}
-		public struct DispDOMProgressEvent {}
-		public struct IDOMMessageEvent {}
-		public struct DispDOMMessageEvent {}
-		public struct IDOMSiteModeEvent {}
-		public struct DispDOMSiteModeEvent {}
-		public struct IDOMStorageEvent {}
-		public struct DispDOMStorageEvent {}
-		public struct IXMLHttpRequestEventTarget {}
-		public struct DispXMLHttpRequestEventTarget {}
-		public struct HTMLXMLHttpRequestEvents {}
-		public struct IHTMLXMLHttpRequest {}
-		public struct IHTMLXMLHttpRequest2 {}
-		public struct IHTMLXMLHttpRequestFactory {}
-		public struct DispHTMLXMLHttpRequest {}
-		public struct ISVGAngle {}
-		public struct ISVGElement {}
-		public struct ISVGRect {}
-		public struct ISVGMatrix {}
-		public struct ISVGStringList {}
-		public struct ISVGAnimatedRect {}
-		public struct ISVGAnimatedString {}
-		public struct ISVGAnimatedBoolean {}
-		public struct ISVGAnimatedTransformList {}
-		public struct ISVGAnimatedPreserveAspectRatio {}
-		public struct ISVGStylable {}
-		public struct ISVGLocatable {}
-		public struct ISVGTransformable {}
-		public struct ISVGTests {}
-		public struct ISVGLangSpace {}
-		public struct ISVGExternalResourcesRequired {}
-		public struct ISVGFitToViewBox {}
-		public struct ISVGZoomAndPan {}
-		public struct ISVGURIReference {}
-		public struct ISVGAnimatedAngle {}
-		public struct ISVGTransformList {}
-		public struct ISVGAnimatedEnumeration {}
-		public struct ISVGAnimatedInteger {}
-		public struct ISVGLength {}
-		public struct ISVGAnimatedLength {}
-		public struct ISVGLengthList {}
-		public struct ISVGAnimatedLengthList {}
-		public struct ISVGNumber {}
-		public struct ISVGAnimatedNumber {}
-		public struct ISVGNumberList {}
-		public struct ISVGAnimatedNumberList {}
-		public struct ISVGClipPathElement {}
-		public struct DispSVGClipPathElement {}
-		public struct ISVGDocument {}
-		public struct IGetSVGDocument {}
-		public struct DispSVGElement {}
-		public struct IICCSVGColor {}
-		public struct ISVGPaint {}
-		public struct ISVGPatternElement {}
-		public struct DispSVGPatternElement {}
-		public struct ISVGPathSeg {}
-		public struct ISVGPathSegArcAbs {}
-		public struct ISVGPathSegArcRel {}
-		public struct ISVGPathSegClosePath {}
-		public struct ISVGPathSegMovetoAbs {}
-		public struct ISVGPathSegMovetoRel {}
-		public struct ISVGPathSegLinetoAbs {}
-		public struct ISVGPathSegLinetoRel {}
-		public struct ISVGPathSegCurvetoCubicAbs {}
-		public struct ISVGPathSegCurvetoCubicRel {}
-		public struct ISVGPathSegCurvetoCubicSmoothAbs {}
-		public struct ISVGPathSegCurvetoCubicSmoothRel {}
-		public struct ISVGPathSegCurvetoQuadraticAbs {}
-		public struct ISVGPathSegCurvetoQuadraticRel {}
-		public struct ISVGPathSegCurvetoQuadraticSmoothAbs {}
-		public struct ISVGPathSegCurvetoQuadraticSmoothRel {}
-		public struct ISVGPathSegLinetoHorizontalAbs {}
-		public struct ISVGPathSegLinetoHorizontalRel {}
-		public struct ISVGPathSegLinetoVerticalAbs {}
-		public struct ISVGPathSegLinetoVerticalRel {}
-		public struct DispSVGPathSegArcAbs {}
-		public struct DispSVGPathSegArcRel {}
-		public struct DispSVGPathSegClosePath {}
-		public struct DispSVGPathSegMovetoAbs {}
-		public struct DispSVGPathSegMovetoRel {}
-		public struct DispSVGPathSegLinetoAbs {}
-		public struct DispSVGPathSegLinetoRel {}
-		public struct DispSVGPathSegCurvetoCubicAbs {}
-		public struct DispSVGPathSegCurvetoCubicRel {}
-		public struct DispSVGPathSegCurvetoCubicSmoothAbs {}
-		public struct DispSVGPathSegCurvetoCubicSmoothRel {}
-		public struct DispSVGPathSegCurvetoQuadraticAbs {}
-		public struct DispSVGPathSegCurvetoQuadraticRel {}
-		public struct DispSVGPathSegCurvetoQuadraticSmoothAbs {}
-		public struct DispSVGPathSegCurvetoQuadraticSmoothRel {}
-		public struct DispSVGPathSegLinetoHorizontalAbs {}
-		public struct DispSVGPathSegLinetoHorizontalRel {}
-		public struct DispSVGPathSegLinetoVerticalAbs {}
-		public struct DispSVGPathSegLinetoVerticalRel {}
-		public struct ISVGPathSegList {}
-		public struct ISVGPoint {}
-		public struct ISVGPointList {}
-		public struct ISVGViewSpec {}
-		public struct ISVGTransform {}
-		public struct DispSVGSVGElement {}
-		public struct ISVGElementInstance {}
-		public struct ISVGUseElement {}
-		public struct DispSVGUseElement {}
-		public struct IHTMLStyleSheetRulesAppliedCollection {}
-		public struct IRulesApplied {}
-		public struct DispHTMLStyleSheetRulesAppliedCollection {}
-		public struct DispRulesApplied {}
-		public struct DispRulesAppliedCollection {}
-		public struct DispHTMLW3CComputedStyle {}
-		public struct ISVGAnimatedPoints {}
-		public struct ISVGCircleElement {}
-		public struct ISVGEllipseElement {}
-		public struct ISVGLineElement {}
-		public struct ISVGRectElement {}
-		public struct ISVGPolygonElement {}
-		public struct ISVGPolylineElement {}
-		public struct DispSVGCircleElement {}
-		public struct DispSVGEllipseElement {}
-		public struct DispSVGLineElement {}
-		public struct DispSVGRectElement {}
-		public struct DispSVGPolygonElement {}
-		public struct DispSVGPolylineElement {}
-		public struct ISVGGElement {}
-		public struct DispSVGGElement {}
-		public struct ISVGSymbolElement {}
-		public struct DispSVGSymbolElement {}
-		public struct ISVGDefsElement {}
-		public struct DispSVGDefsElement {}
-		public struct ISVGAnimatedPathData {}
-		public struct ISVGPathElement {}
-		public struct DispSVGPathElement {}
-		public struct ISVGPreserveAspectRatio {}
-		public struct ISVGTextElement {}
-		public struct DispSVGTextElement {}
-		public struct ISVGImageElement {}
-		public struct DispSVGImageElement {}
-		public struct ISVGStopElement {}
-		public struct DispSVGStopElement {}
-		public struct ISVGGradientElement {}
-		public struct DispSVGGradientElement {}
-		public struct ISVGLinearGradientElement {}
-		public struct DispSVGLinearGradientElement {}
-		public struct ISVGRadialGradientElement {}
-		public struct DispSVGRadialGradientElement {}
-		public struct ISVGMaskElement {}
-		public struct DispSVGMaskElement {}
-		public struct ISVGMarkerElement {}
-		public struct DispSVGMarkerElement {}
-		public struct ISVGZoomEvent {}
-		public struct DispSVGZoomEvent {}
-		public struct ISVGAElement {}
-		public struct DispSVGAElement {}
-		public struct ISVGViewElement {}
-		public struct DispSVGViewElement {}
-		public struct IHTMLMediaError {}
-		public struct IHTMLTimeRanges {}
-		public struct IHTMLTimeRanges2 {}
-		public struct IHTMLMediaElement {}
-		public struct IHTMLMediaElement2 {}
-		public struct IHTMLMSMediaElement {}
-		public struct IHTMLSourceElement {}
-		public struct IHTMLAudioElement {}
-		public struct IHTMLVideoElement {}
-		public struct IHTMLAudioElementFactory {}
-		public struct DispHTMLMediaError {}
-		public struct DispHTMLTimeRanges {}
-		public struct DispHTMLMediaElement {}
-		public struct DispHTMLSourceElement {}
-		public struct DispHTMLAudioElement {}
-		public struct DispHTMLVideoElement {}
-		public struct ISVGSwitchElement {}
-		public struct DispSVGSwitchElement {}
-		public struct ISVGDescElement {}
-		public struct DispSVGDescElement {}
-		public struct ISVGTitleElement {}
-		public struct DispSVGTitleElement {}
-		public struct ISVGMetadataElement {}
-		public struct DispSVGMetadataElement {}
-		public struct ISVGElementInstanceList {}
-		public struct DispSVGElementInstance {}
-		public struct DispSVGElementInstanceList {}
-		public struct IDOMException {}
-		public struct DispDOMException {}
-		public struct IRangeException {}
-		public struct DispRangeException {}
-		public struct ISVGException {}
-		public struct DispSVGException {}
-		public struct IEventException {}
-		public struct DispEventException {}
-		public struct ISVGScriptElement {}
-		public struct DispSVGScriptElement {}
-		public struct ISVGStyleElement {}
-		public struct DispSVGStyleElement {}
-		public struct ISVGTextContentElement {}
-		public struct DispSVGTextContentElement {}
-		public struct ISVGTextPositioningElement {}
-		public struct DispSVGTextPositioningElement {}
-		public struct DispDOMDocumentType {}
-		public struct DispNodeIterator {}
-		public struct DispTreeWalker {}
-		public struct DispDOMProcessingInstruction {}
-		public struct IHTMLPerformanceNavigation {}
-		public struct IHTMLPerformanceTiming {}
-		public struct DispHTMLPerformance {}
-		public struct DispHTMLPerformanceNavigation {}
-		public struct DispHTMLPerformanceTiming {}
-		public struct ISVGTSpanElement {}
-		public struct DispSVGTSpanElement {}
-		public struct ITemplatePrinter {}
-		public struct ITemplatePrinter2 {}
-		public struct ITemplatePrinter3 {}
-		public struct IPrintManagerTemplatePrinter {}
-		public struct IPrintManagerTemplatePrinter2 {}
-		public struct DispCPrintManagerTemplatePrinter {}
-		public struct ISVGTextPathElement {}
-		public struct DispSVGTextPathElement {}
-		public struct IDOMXmlSerializer {}
-		public struct IDOMParser {}
-		public struct DispXMLSerializer {}
-		public struct DispDOMParser {}
-		public struct IDOMXmlSerializerFactory {}
-		public struct IDOMParserFactory {}
-		public struct DispHTMLSemanticElement {}
-		public struct IHTMLProgressElement {}
-		public struct DispHTMLProgressElement {}
-		public struct IDOMMSTransitionEvent {}
-		public struct DispDOMMSTransitionEvent {}
-		public struct IDOMMSAnimationEvent {}
-		public struct DispDOMMSAnimationEvent {}
-		public struct IWebGeocoordinates {}
-		public struct IWebGeopositionError {}
-		public struct IWebGeoposition {}
-		public struct DispWebGeolocation {}
-		public struct DispWebGeocoordinates {}
-		public struct DispWebGeopositionError {}
-		public struct DispWebGeoposition {}
-		public struct IClientCaps {}
-		public struct IDOMMSManipulationEvent {}
-		public struct DispDOMMSManipulationEvent {}
-		public struct IDOMCloseEvent {}
-		public struct DispDOMCloseEvent {}
-		public struct DispApplicationCache {}
-		public struct ICSSFilterSite {}
-		public struct IMarkupPointer {}
-		public struct IMarkupContainer {}
-		public struct IMarkupContainer2 {}
-		public struct IHTMLChangeLog {}
-		public struct IHTMLChangeSink {}
-		public struct ISegmentList {}
-		public struct ISegmentListIterator {}
-		public struct IHTMLCaret {}
-		public struct ISegment {}
-		public struct IElementSegment {}
-		public struct IHighlightSegment {}
-		public struct IHighlightRenderingServices {}
-		public struct ILineInfo {}
-		public struct IDisplayPointer {}
-		public struct IDisplayServices {}
-		public struct IHtmlDlgSafeHelper {}
-		public struct IBlockFormats {}
-		public struct IFontNames {}
-		public struct ICSSFilter {}
-		public struct ISecureUrlHost {}
-		public struct IMarkupServices {}
-		public struct IMarkupServices2 {}
-		public struct IHTMLChangePlayback {}
-		public struct IMarkupPointer2 {}
-		public struct IMarkupTextFrags {}
-		public struct IXMLGenericParse {}
-		public struct IHTMLEditHost {}
-		public struct IHTMLEditHost2 {}
-		public struct ISequenceNumber {}
-		public struct IIMEServices {}
-		public struct ISelectionServicesListener {}
-		public struct ISelectionServices {}
-		public struct IHTMLEditDesigner {}
-		public struct IHTMLEditServices {}
-		public struct IHTMLEditServices2 {}
-		public struct IHTMLComputedStyle {}
-		public struct IDeveloperConsoleMessageReceiver {}
-		public struct IScriptEventHandler {}
-		public struct IDebugCallbackNotificationHandler {}
-		public struct IScriptEventHandlerSourceInfo {}
-		public struct IDOMEventRegistrationCallback {}
-		public struct IEventTarget2 {}
-		public struct HTMLNamespaceEvents {}
-		public struct IHTMLNamespace {}
-		public struct IHTMLNamespaceCollection {}
-		public struct DispHTMLNamespace {}
-		public struct DispHTMLNamespaceCollection {}
-		public struct IHTMLPainter {}
-		public struct IHTMLPaintSite {}
-		public struct IHTMLPainterEventInfo {}
-		public struct IHTMLPainterOverlay {}
-		public struct IHTMLIPrintCollection {}
-		public struct IEnumPrivacyRecords {}
-		public struct IWPCBlockedUrls {}
-		public struct IHTMLDOMConstructorCollection {}
-		public struct IHTMLDialog {}
-		public struct IHTMLDialog2 {}
-		public struct IHTMLDialog3 {}
-		public struct IHTMLModelessInit {}
-		public struct IHTMLPopup {}
-		public struct DispHTMLPopup {}
-		public struct IHTMLAppBehavior {}
-		public struct IHTMLAppBehavior2 {}
-		public struct IHTMLAppBehavior3 {}
-		public struct DispHTMLAppBehavior {}
-		public struct DispIHTMLInputButtonElement {}
-		public struct DispIHTMLInputTextElement {}
-		public struct DispIHTMLInputFileElement {}
-		public struct DispIHTMLOptionButtonElement {}
-		public struct DispIHTMLInputImage {}
-		public struct IElementNamespace {}
-		public struct IElementNamespaceTable {}
-		public struct IElementNamespaceFactory {}
-		public struct IElementNamespaceFactory2 {}
-		public struct IElementNamespaceFactoryCallback {}
-		public struct IElementBehaviorSiteOM2 {}
-		public struct IElementBehaviorCategory {}
-		public struct IElementBehaviorSiteCategory {}
-		public struct IElementBehaviorSubmit {}
-		public struct IElementBehaviorFocus {}
-		public struct IElementBehaviorLayout {}
-		public struct IElementBehaviorLayout2 {}
-		public struct IElementBehaviorSiteLayout {}
-		public struct IElementBehaviorSiteLayout2 {}
-		public struct IHostBehaviorInit {}
-		public struct ISurfacePresenter {}
-		public struct IViewObjectPresentSite {}
-		public struct ICanvasPixelArrayData {}
-		public struct IViewObjectPrint {}
-		public struct IViewObjectPresentNotifySite {}
-		public struct IViewObjectPresentNotify {}
-		public struct ITrackingProtection {}
-		public struct IBFCacheable {}
-		public struct IDocObjectService {}
-		public struct IDownloadManager {}
-		public struct IExtensionValidation {}
-		public struct IHomePageSetting {}
-		public struct ITargetNotify {}
-		public struct ITargetNotify2 {}
-		public struct ITargetFrame2 {}
-		public struct ITargetContainer {}
-		public struct ITargetFrame {}
-		public struct ITargetEmbedding {}
-		public struct ITargetFramePriv {}
-		public struct ITargetFramePriv2 {}
-		public struct ISurfacePresenterFlipBuffer {}
-		public struct ISurfacePresenterFlip {}
-		public struct ISurfacePresenterFlip2 {}
-		public struct IViewObjectPresentFlipSite {}
-		public struct IViewObjectPresentFlipSite2 {}
-		public struct IViewObjectPresentFlip {}
-		public struct IViewObjectPresentFlip2 {}
-		public struct IActiveXUIHandlerSite2 {}
-		public struct ICaretPositionProvider {}
-		public struct ITridentTouchInput {}
-		public struct ITridentTouchInputSite {}
-		public struct IMediaActivityNotifySite {}
-		public struct IAudioSessionSite {}
-		public struct IPrintTaskRequestHandler {}
-		public struct IPrintTaskRequestFactory {}
-		public struct IScrollableContextMenu {}
-		public struct IScrollableContextMenu2 {}
-		public struct IActiveXUIHandlerSite {}
-		public struct IActiveXUIHandlerSite3 {}
-		public struct IEnumManagerFrames {}
-		public struct IInternetExplorerManager {}
-		public struct IInternetExplorerManager2 {}
-		public struct IIEWebDriverSite {}
-		public struct IIEWebDriverManager {}
-		public struct IPeerFactory {}
-		public struct IHomePage {}
-		public struct IIntelliForms {}
-		public struct Iwfolders {}
-		public struct IAnchorClick {}
-		public struct IHTMLUserDataOM {}
-		public struct IHTMLPersistDataOM {}
-		public struct IHTMLPersistData {}
-		public struct IDownloadBehavior {}
-		public struct ILayoutRect {}
-		public struct IDeviceRect {}
-		public struct IHeaderFooter {}
-		public struct IHeaderFooter2 {}
-		public struct IHostDialogHelper {}
-		public struct IDocHostUIHandler {}
-		public struct IDocHostUIHandler2 {}
-		public struct ICustomDoc {}
-		public struct IDocHostShowUI {}
-		public struct IClassFactoryEx {}
-		public struct IHTMLOMWindowServices {}
-		public struct IDiagnosticsScriptEngineSite {}
-		public struct IDiagnosticsScriptEngine {}
-		public struct IDiagnosticsScriptEngineProvider {}
-		public struct IOpenServiceActivityInput {}
-		public struct IOpenServiceActivityOutputContext {}
-		public struct IOpenService {}
-		public struct IOpenServiceManager {}
-		public struct IOpenServiceActivity {}
-		public struct IEnumOpenServiceActivity {}
-		public struct IOpenServiceActivityCategory {}
-		public struct IEnumOpenServiceActivityCategory {}
-		public struct IOpenServiceActivityManager {}
-		public struct IPersistHistory {}
-		public struct IEnumSTATURL {}
-		public struct IUrlHistoryStg {}
-		public struct IUrlHistoryStg2 {}
-		public struct IUrlHistoryNotify {}
-		public struct IWebBrowserEventsService {}
-		public struct IWebBrowserEventsUrlService {}
-		public struct ITimerService {}
-		public struct ITimer {}
-		public struct ITimerEx {}
-		public struct ITimerSink {}
-		public struct IMapMIMEToCLSID {}
-		public struct IImageDecodeFilter {}
-		public struct IImageDecodeEventSink {}
-		public struct IImageDecodeEventSink2 {}
-		public struct ISniffStream {}
-		public struct IDithererImpl {}
+		[CRepr]
+		public struct IHTMLFiltersCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3ee, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFiltersCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLFiltersCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLFiltersCollection *self, VARIANT* pvarIndex, VARIANT* pvarResult) item;
+		}
+		[CRepr]
+		public struct IIE70DispatchEx : IDispatchEx
+		{
+			public const new Guid IID = .(0x3051046b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IIE80DispatchEx : IDispatchEx
+		{
+			public const new Guid IID = .(0x3051046c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLEventObj : IDispatch
+		{
+			public const new Guid IID = .(0x3050f32d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEventObj *self, IHTMLElement** p) get_srcElement;
+			public function HRESULT(IHTMLEventObj *self, int16* p) get_altKey;
+			public function HRESULT(IHTMLEventObj *self, int16* p) get_ctrlKey;
+			public function HRESULT(IHTMLEventObj *self, int16* p) get_shiftKey;
+			public function HRESULT(IHTMLEventObj *self, VARIANT v) put_returnValue;
+			public function HRESULT(IHTMLEventObj *self, VARIANT* p) get_returnValue;
+			public function HRESULT(IHTMLEventObj *self, int16 v) put_cancelBubble;
+			public function HRESULT(IHTMLEventObj *self, int16* p) get_cancelBubble;
+			public function HRESULT(IHTMLEventObj *self, IHTMLElement** p) get_fromElement;
+			public function HRESULT(IHTMLEventObj *self, IHTMLElement** p) get_toElement;
+			public function HRESULT(IHTMLEventObj *self, int32 v) put_keyCode;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_keyCode;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_button;
+			public function HRESULT(IHTMLEventObj *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLEventObj *self, BSTR* p) get_qualifier;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_reason;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_x;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_y;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_clientX;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_clientY;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_offsetX;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_offsetY;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_screenX;
+			public function HRESULT(IHTMLEventObj *self, int32* p) get_screenY;
+			public function HRESULT(IHTMLEventObj *self, IDispatch** p) get_srcFilter;
+		}
+		[CRepr]
+		public struct IElementBehaviorSite : IUnknown
+		{
+			public const new Guid IID = .(0x3050f427, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorSite *self, IHTMLElement** ppElement) GetElement;
+			public function HRESULT(IElementBehaviorSite *self, int32 lEvent) RegisterNotification;
+		}
+		[CRepr]
+		public struct IElementBehavior : IUnknown
+		{
+			public const new Guid IID = .(0x3050f425, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehavior *self, IElementBehaviorSite* pBehaviorSite) Init;
+			public function HRESULT(IElementBehavior *self, int32 lEvent, VARIANT* pVar) Notify;
+			public function HRESULT(IElementBehavior *self) Detach;
+		}
+		[CRepr]
+		public struct IElementBehaviorFactory : IUnknown
+		{
+			public const new Guid IID = .(0x3050f429, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorFactory *self, BSTR bstrBehavior, BSTR bstrBehaviorUrl, IElementBehaviorSite* pSite, IElementBehavior** ppBehavior) FindBehavior;
+		}
+		[CRepr]
+		public struct IElementBehaviorSiteOM : IUnknown
+		{
+			public const new Guid IID = .(0x3050f489, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorSiteOM *self, PWSTR pchEvent, int32 lFlags, int32* plCookie) RegisterEvent;
+			public function HRESULT(IElementBehaviorSiteOM *self, PWSTR pchEvent, int32* plCookie) GetEventCookie;
+			public function HRESULT(IElementBehaviorSiteOM *self, int32 lCookie, IHTMLEventObj* pEventObject) FireEvent;
+			public function HRESULT(IElementBehaviorSiteOM *self, IHTMLEventObj** ppEventObject) CreateEventObject;
+			public function HRESULT(IElementBehaviorSiteOM *self, PWSTR pchName) RegisterName;
+			public function HRESULT(IElementBehaviorSiteOM *self, PWSTR pchUrn) RegisterUrn;
+		}
+		[CRepr]
+		public struct IElementBehaviorRender : IUnknown
+		{
+			public const new Guid IID = .(0x3050f4aa, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorRender *self, HDC hdc, int32 lLayer, RECT* pRect, IUnknown* pReserved) Draw;
+			public function HRESULT(IElementBehaviorRender *self, int32* plRenderInfo) GetRenderInfo;
+			public function HRESULT(IElementBehaviorRender *self, POINT* pPoint, IUnknown* pReserved, BOOL* pbHit) HitTestPoint;
+		}
+		[CRepr]
+		public struct IElementBehaviorSiteRender : IUnknown
+		{
+			public const new Guid IID = .(0x3050f4a7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorSiteRender *self, RECT* pRect) Invalidate;
+			public function HRESULT(IElementBehaviorSiteRender *self) InvalidateRenderInfo;
+			public function HRESULT(IElementBehaviorSiteRender *self) InvalidateStyle;
+		}
+		[CRepr]
+		public struct IDOMEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305104ba, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMEvent *self, int16* p) get_bubbles;
+			public function HRESULT(IDOMEvent *self, int16* p) get_cancelable;
+			public function HRESULT(IDOMEvent *self, IEventTarget** p) get_currentTarget;
+			public function HRESULT(IDOMEvent *self, int16* p) get_defaultPrevented;
+			public function HRESULT(IDOMEvent *self, uint16* p) get_eventPhase;
+			public function HRESULT(IDOMEvent *self, IEventTarget** p) get_target;
+			public function HRESULT(IDOMEvent *self, uint64* p) get_timeStamp;
+			public function HRESULT(IDOMEvent *self, BSTR* p) get_type;
+			public function HRESULT(IDOMEvent *self, BSTR eventType, int16 canBubble, int16 cancelable) initEvent;
+			public function HRESULT(IDOMEvent *self) preventDefault;
+			public function HRESULT(IDOMEvent *self) stopPropagation;
+			public function HRESULT(IDOMEvent *self) stopImmediatePropagation;
+			public function HRESULT(IDOMEvent *self, int16* p) get_isTrusted;
+			public function HRESULT(IDOMEvent *self, int16 v) put_cancelBubble;
+			public function HRESULT(IDOMEvent *self, int16* p) get_cancelBubble;
+			public function HRESULT(IDOMEvent *self, IHTMLElement** p) get_srcElement;
+		}
+		[CRepr]
+		public struct IHTMLDOMConstructor : IDispatch
+		{
+			public const new Guid IID = .(0x3051049b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMConstructor *self, IDispatch** p) get_constructor;
+			public function HRESULT(IHTMLDOMConstructor *self, BSTR propname, VARIANT* ppDispHandler) LookupGetter;
+			public function HRESULT(IHTMLDOMConstructor *self, BSTR propname, VARIANT* ppDispHandler) LookupSetter;
+			public function HRESULT(IHTMLDOMConstructor *self, BSTR propname, VARIANT* pdispHandler) DefineGetter;
+			public function HRESULT(IHTMLDOMConstructor *self, BSTR propname, VARIANT* pdispHandler) DefineSetter;
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetRule : IDispatch
+		{
+			public const new Guid IID = .(0x3050f357, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetRule *self, BSTR v) put_selectorText;
+			public function HRESULT(IHTMLStyleSheetRule *self, BSTR* p) get_selectorText;
+			public function HRESULT(IHTMLStyleSheetRule *self, IHTMLRuleStyle** p) get_style;
+			public function HRESULT(IHTMLStyleSheetRule *self, int16* p) get_readOnly;
+		}
+		[CRepr]
+		public struct IHTMLCSSStyleDeclaration : IDispatch
+		{
+			public const new Guid IID = .(0x30510740, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, int32* p) get_length;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_parentRule;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR bstrPropertyName, BSTR* pbstrPropertyValue) getPropertyValue;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR bstrPropertyName, BSTR* pbstrPropertyPriority) getPropertyPriority;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR bstrPropertyName, BSTR* pbstrPropertyValue) removeProperty;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR bstrPropertyName, VARIANT* pvarPropertyValue, VARIANT* pvarPropertyPriority) setProperty;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, int32 index, BSTR* pbstrPropertyName) item;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_fontFamily;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_fontFamily;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_fontStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_fontStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_fontVariant;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_fontVariant;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_fontWeight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_fontWeight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_fontSize;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_fontSize;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_font;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_font;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_color;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_color;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_background;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_background;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_backgroundColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_backgroundColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_backgroundImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_backgroundImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_backgroundRepeat;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_backgroundRepeat;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_backgroundAttachment;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_backgroundAttachment;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_backgroundPosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_backgroundPosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_backgroundPositionX;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_backgroundPositionX;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_backgroundPositionY;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_backgroundPositionY;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_wordSpacing;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_wordSpacing;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_letterSpacing;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_letterSpacing;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textDecoration;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textDecoration;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_verticalAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_verticalAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textTransform;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textTransform;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_textIndent;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_textIndent;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_lineHeight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_lineHeight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_marginTop;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_marginTop;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_marginRight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_marginRight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_marginBottom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_marginBottom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_marginLeft;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_marginLeft;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_margin;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_margin;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_paddingTop;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_paddingTop;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_paddingRight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_paddingRight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_paddingBottom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_paddingBottom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_paddingLeft;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_paddingLeft;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_padding;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_padding;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_border;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_border;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderTop;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderTop;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderRight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderRight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderBottom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderBottom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderLeft;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderLeft;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_borderTopColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_borderTopColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_borderRightColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_borderRightColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_borderBottomColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_borderBottomColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_borderLeftColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_borderLeftColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_borderTopWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_borderTopWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_borderRightWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_borderRightWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_borderBottomWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_borderBottomWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_borderLeftWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_borderLeftWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderTopStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderTopStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderRightStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderRightStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderBottomStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderBottomStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderLeftStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderLeftStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_styleFloat;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_styleFloat;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_clear;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_clear;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_display;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_display;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_visibility;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_visibility;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_listStyleType;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_listStyleType;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_listStylePosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_listStylePosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_listStyleImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_listStyleImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_listStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_listStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_whiteSpace;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_whiteSpace;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_top;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_top;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_left;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_left;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_zIndex;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_zIndex;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_overflow;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_overflow;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_pageBreakBefore;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_pageBreakBefore;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_pageBreakAfter;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_pageBreakAfter;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_cssText;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_cssText;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_cursor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_cursor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_clip;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_clip;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_filter;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_filter;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_tableLayout;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_tableLayout;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderCollapse;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderCollapse;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_direction;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_direction;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_behavior;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_behavior;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_position;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_position;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_unicodeBidi;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_unicodeBidi;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_bottom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_bottom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_right;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_right;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_imeMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_imeMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_rubyAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_rubyAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_rubyPosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_rubyPosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_rubyOverhang;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_rubyOverhang;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_layoutGridChar;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_layoutGridChar;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_layoutGridLine;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_layoutGridLine;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_layoutGridMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_layoutGridMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_layoutGridType;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_layoutGridType;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_layoutGrid;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_layoutGrid;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textAutospace;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textAutospace;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_wordBreak;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_wordBreak;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_lineBreak;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_lineBreak;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textJustify;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textJustify;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textJustifyTrim;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textJustifyTrim;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_textKashida;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_textKashida;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_overflowX;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_overflowX;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_overflowY;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_overflowY;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_accelerator;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_accelerator;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_layoutFlow;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_layoutFlow;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_zoom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_zoom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_wordWrap;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_wordWrap;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textUnderlinePosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textUnderlinePosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_scrollbarBaseColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_scrollbarBaseColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_scrollbarFaceColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_scrollbarFaceColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_scrollbar3dLightColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_scrollbar3dLightColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_scrollbarShadowColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_scrollbarShadowColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_scrollbarHighlightColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_scrollbarHighlightColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_scrollbarDarkShadowColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_scrollbarDarkShadowColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_scrollbarArrowColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_scrollbarArrowColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_scrollbarTrackColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_scrollbarTrackColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_writingMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_writingMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textAlignLast;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textAlignLast;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_textKashidaSpace;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_textKashidaSpace;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textOverflow;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textOverflow;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_minHeight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_minHeight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_msInterpolationMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_msInterpolationMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_maxHeight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_maxHeight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_minWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_minWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_maxWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_maxWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_content;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_content;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_captionSide;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_captionSide;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_counterIncrement;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_counterIncrement;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_counterReset;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_counterReset;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_outline;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_outline;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_outlineWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_outlineWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_outlineStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_outlineStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_outlineColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_outlineColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_boxSizing;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_boxSizing;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderSpacing;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderSpacing;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_orphans;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_orphans;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_widows;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_widows;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_pageBreakInside;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_pageBreakInside;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_emptyCells;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_emptyCells;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_msBlockProgression;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_msBlockProgression;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_quotes;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_quotes;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_alignmentBaseline;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_alignmentBaseline;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_baselineShift;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_baselineShift;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_dominantBaseline;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_dominantBaseline;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_fontSizeAdjust;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_fontSizeAdjust;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_fontStretch;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_fontStretch;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_opacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_opacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_clipPath;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_clipPath;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_clipRule;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_clipRule;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_fill;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_fill;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_fillOpacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_fillOpacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_fillRule;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_fillRule;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_kerning;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_kerning;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_marker;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_marker;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_markerEnd;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_markerEnd;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_markerMid;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_markerMid;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_markerStart;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_markerStart;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_mask;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_mask;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_pointerEvents;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_pointerEvents;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_stopColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_stopColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_stopOpacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_stopOpacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_stroke;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_stroke;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_strokeDasharray;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_strokeDasharray;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_strokeDashoffset;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_strokeDashoffset;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_strokeLinecap;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_strokeLinecap;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_strokeLinejoin;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_strokeLinejoin;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_strokeMiterlimit;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_strokeMiterlimit;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_strokeOpacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_strokeOpacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_strokeWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_strokeWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_textAnchor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_textAnchor;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_glyphOrientationHorizontal;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_glyphOrientationHorizontal;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_glyphOrientationVertical;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_glyphOrientationVertical;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderTopLeftRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderTopLeftRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderTopRightRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderTopRightRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderBottomRightRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderBottomRightRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_borderBottomLeftRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_borderBottomLeftRadius;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_clipTop;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_clipTop;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_clipRight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_clipRight;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_clipBottom;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT v) put_clipLeft;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, VARIANT* p) get_clipLeft;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_cssFloat;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_cssFloat;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_backgroundClip;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_backgroundClip;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_backgroundOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_backgroundOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_backgroundSize;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_backgroundSize;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_boxShadow;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_boxShadow;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_msTransform;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_msTransform;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR v) put_msTransformOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration *self, BSTR* p) get_msTransformOrigin;
+		}
+		[CRepr]
+		public struct IHTMLCSSStyleDeclaration2 : IDispatch
+		{
+			public const new Guid IID = .(0x305107d1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msScrollChaining;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msScrollChaining;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msContentZooming;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msContentZooming;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msContentZoomSnapType;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msContentZoomSnapType;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msScrollRails;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msScrollRails;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msContentZoomChaining;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msContentZoomChaining;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msScrollSnapType;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msScrollSnapType;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msContentZoomLimit;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msContentZoomLimit;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msContentZoomSnap;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msContentZoomSnap;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msContentZoomSnapPoints;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msContentZoomSnapPoints;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msContentZoomLimitMin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msContentZoomLimitMin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msContentZoomLimitMax;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msContentZoomLimitMax;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msScrollSnapX;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msScrollSnapX;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msScrollSnapY;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msScrollSnapY;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msScrollSnapPointsX;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msScrollSnapPointsX;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msScrollSnapPointsY;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msScrollSnapPointsY;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msGridColumn;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msGridColumn;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msGridColumnAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msGridColumnAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msGridColumns;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msGridColumns;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msGridColumnSpan;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msGridColumnSpan;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msGridRow;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msGridRow;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msGridRowAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msGridRowAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msGridRows;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msGridRows;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msGridRowSpan;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msGridRowSpan;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msWrapThrough;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msWrapThrough;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msWrapMargin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msWrapMargin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msWrapFlow;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msWrapFlow;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msAnimationName;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msAnimationName;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msAnimationDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msAnimationDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msAnimationTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msAnimationTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msAnimationDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msAnimationDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msAnimationDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msAnimationDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msAnimationPlayState;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msAnimationPlayState;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msAnimationIterationCount;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msAnimationIterationCount;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msAnimation;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msAnimation;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msAnimationFillMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msAnimationFillMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_colorInterpolationFilters;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_colorInterpolationFilters;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_columnCount;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_columnCount;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_columnWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_columnWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_columnGap;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_columnGap;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_columnFill;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_columnFill;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_columnSpan;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_columnSpan;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_columns;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_columns;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_columnRule;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_columnRule;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_columnRuleColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_columnRuleColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_columnRuleStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_columnRuleStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_columnRuleWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_columnRuleWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_breakBefore;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_breakBefore;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_breakAfter;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_breakAfter;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_breakInside;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_breakInside;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_floodColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_floodColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_floodOpacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_floodOpacity;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_lightingColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_lightingColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msScrollLimitXMin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msScrollLimitXMin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msScrollLimitYMin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msScrollLimitYMin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msScrollLimitXMax;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msScrollLimitXMax;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msScrollLimitYMax;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msScrollLimitYMax;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msScrollLimit;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msScrollLimit;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_textShadow;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_textShadow;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlowFrom;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlowFrom;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlowInto;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlowInto;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msHyphens;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msHyphens;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msHyphenateLimitZone;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msHyphenateLimitZone;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msHyphenateLimitChars;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msHyphenateLimitChars;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msHyphenateLimitLines;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msHyphenateLimitLines;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msHighContrastAdjust;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msHighContrastAdjust;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_enableBackground;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_enableBackground;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFontFeatureSettings;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFontFeatureSettings;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msUserSelect;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msUserSelect;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msOverflowStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msOverflowStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msTransformStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msTransformStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msBackfaceVisibility;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msBackfaceVisibility;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msPerspective;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msPerspective;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msPerspectiveOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msPerspectiveOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msTransitionProperty;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msTransitionProperty;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msTransitionDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msTransitionDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msTransitionTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msTransitionTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msTransitionDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msTransitionDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msTransition;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msTransition;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msTouchAction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msTouchAction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msScrollTranslation;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msScrollTranslation;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlex;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlex;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msFlexPositive;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msFlexPositive;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msFlexNegative;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msFlexNegative;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msFlexPreferredSize;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msFlexPreferredSize;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlexFlow;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlexFlow;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlexDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlexDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlexWrap;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlexWrap;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlexAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlexAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlexItemAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlexItemAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlexPack;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlexPack;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msFlexLinePack;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msFlexLinePack;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_msFlexOrder;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_msFlexOrder;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_msTouchSelect;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_msTouchSelect;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_transform;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_transform;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_transformOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_transformOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_transformStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_transformStyle;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_backfaceVisibility;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_backfaceVisibility;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT v) put_perspective;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, VARIANT* p) get_perspective;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_perspectiveOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_perspectiveOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_transitionProperty;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_transitionProperty;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_transitionDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_transitionDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_transitionTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_transitionTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_transitionDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_transitionDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_transition;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_transition;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_fontFeatureSettings;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_fontFeatureSettings;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_animationName;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_animationName;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_animationDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_animationDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_animationTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_animationTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_animationDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_animationDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_animationDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_animationDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_animationPlayState;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_animationPlayState;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_animationIterationCount;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_animationIterationCount;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_animation;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_animation;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR v) put_animationFillMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration2 *self, BSTR* p) get_animationFillMode;
+		}
+		[CRepr]
+		public struct IHTMLCSSStyleDeclaration3 : IDispatch
+		{
+			public const new Guid IID = .(0x3051085c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_flex;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_flex;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_flexDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_flexDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_flexWrap;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_flexWrap;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_flexFlow;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_flexFlow;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, VARIANT v) put_flexGrow;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, VARIANT* p) get_flexGrow;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, VARIANT v) put_flexShrink;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, VARIANT* p) get_flexShrink;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, VARIANT v) put_flexBasis;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, VARIANT* p) get_flexBasis;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_justifyContent;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_justifyContent;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_alignItems;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_alignItems;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_alignSelf;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_alignSelf;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_alignContent;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_alignContent;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_borderImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_borderImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_borderImageSource;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_borderImageSource;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_borderImageSlice;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_borderImageSlice;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_borderImageWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_borderImageWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_borderImageOutset;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_borderImageOutset;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_borderImageRepeat;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_borderImageRepeat;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_msImeAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_msImeAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_msTextCombineHorizontal;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_msTextCombineHorizontal;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR v) put_touchAction;
+			public function HRESULT(IHTMLCSSStyleDeclaration3 *self, BSTR* p) get_touchAction;
+		}
+		[CRepr]
+		public struct IHTMLCSSStyleDeclaration4 : IDispatch
+		{
+			public const new Guid IID = .(0xd6100f3b, 0x27c8, 0x4132, 0xaf, 0xea, 0xf0, 0xe4, 0xb1, 0xe0, 0x00, 0x60);
+			
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAppearance;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAppearance;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitUserSelect;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitUserSelect;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBoxAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBoxAlign;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT v) put_webkitBoxOrdinalGroup;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT* p) get_webkitBoxOrdinalGroup;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBoxPack;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBoxPack;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT v) put_webkitBoxFlex;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT* p) get_webkitBoxFlex;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBoxOrient;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBoxOrient;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBoxDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBoxDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitTransform;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitTransform;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBackgroundSize;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBackgroundSize;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBackfaceVisibility;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBackfaceVisibility;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAnimation;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAnimation;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitTransition;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitTransition;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAnimationName;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAnimationName;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAnimationDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAnimationDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAnimationTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAnimationTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAnimationDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAnimationDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAnimationIterationCount;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAnimationIterationCount;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAnimationDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAnimationDirection;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAnimationPlayState;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAnimationPlayState;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitTransitionProperty;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitTransitionProperty;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitTransitionDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitTransitionDuration;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitTransitionTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitTransitionTimingFunction;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitTransitionDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitTransitionDelay;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBackgroundAttachment;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBackgroundAttachment;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT v) put_webkitBackgroundColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT* p) get_webkitBackgroundColor;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBackgroundClip;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBackgroundClip;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBackgroundImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBackgroundImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBackgroundRepeat;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBackgroundRepeat;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBackgroundOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBackgroundOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBackgroundPosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBackgroundPosition;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT v) put_webkitBackgroundPositionX;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT* p) get_webkitBackgroundPositionX;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT v) put_webkitBackgroundPositionY;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT* p) get_webkitBackgroundPositionY;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBackground;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBackground;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitTransformOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitTransformOrigin;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT v) put_msTextSizeAdjust;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT* p) get_msTextSizeAdjust;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT v) put_webkitTextSizeAdjust;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, VARIANT* p) get_webkitTextSizeAdjust;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBorderImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBorderImage;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBorderImageSource;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBorderImageSource;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBorderImageSlice;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBorderImageSlice;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBorderImageWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBorderImageWidth;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBorderImageOutset;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBorderImageOutset;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBorderImageRepeat;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBorderImageRepeat;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitBoxSizing;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitBoxSizing;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR v) put_webkitAnimationFillMode;
+			public function HRESULT(IHTMLCSSStyleDeclaration4 *self, BSTR* p) get_webkitAnimationFillMode;
+		}
+		[CRepr]
+		public struct IHTMLStyleEnabled : IDispatch
+		{
+			public const new Guid IID = .(0x305104c2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleEnabled *self, BSTR name, int16* p) msGetPropertyEnabled;
+			public function HRESULT(IHTMLStyleEnabled *self, BSTR name, int16 b) msPutPropertyEnabled;
+		}
+		[CRepr]
+		public struct DispHTMLCSSStyleDeclaration : IDispatch
+		{
+			public const new Guid IID = .(0x3059009a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyle : IDispatch
+		{
+			public const new Guid IID = .(0x3050f25e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_fontFamily;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_fontFamily;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_fontStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_fontStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_fontVariant;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_fontVariant;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_fontWeight;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_fontWeight;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_fontSize;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_fontSize;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_font;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_font;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_color;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_color;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_background;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_background;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_backgroundColor;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_backgroundColor;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_backgroundImage;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_backgroundImage;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_backgroundRepeat;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_backgroundRepeat;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_backgroundAttachment;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_backgroundAttachment;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_backgroundPosition;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_backgroundPosition;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_backgroundPositionX;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_backgroundPositionX;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_backgroundPositionY;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_backgroundPositionY;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_wordSpacing;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_wordSpacing;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_letterSpacing;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_letterSpacing;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_textDecoration;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_textDecoration;
+			public function HRESULT(IHTMLStyle *self, int16 v) put_textDecorationNone;
+			public function HRESULT(IHTMLStyle *self, int16* p) get_textDecorationNone;
+			public function HRESULT(IHTMLStyle *self, int16 v) put_textDecorationUnderline;
+			public function HRESULT(IHTMLStyle *self, int16* p) get_textDecorationUnderline;
+			public function HRESULT(IHTMLStyle *self, int16 v) put_textDecorationOverline;
+			public function HRESULT(IHTMLStyle *self, int16* p) get_textDecorationOverline;
+			public function HRESULT(IHTMLStyle *self, int16 v) put_textDecorationLineThrough;
+			public function HRESULT(IHTMLStyle *self, int16* p) get_textDecorationLineThrough;
+			public function HRESULT(IHTMLStyle *self, int16 v) put_textDecorationBlink;
+			public function HRESULT(IHTMLStyle *self, int16* p) get_textDecorationBlink;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_verticalAlign;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_verticalAlign;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_textTransform;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_textTransform;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_textAlign;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_textAlign;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_textIndent;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_textIndent;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_lineHeight;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_lineHeight;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_marginTop;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_marginTop;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_marginRight;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_marginRight;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_marginBottom;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_marginBottom;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_marginLeft;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_marginLeft;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_margin;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_margin;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_paddingTop;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_paddingTop;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_paddingRight;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_paddingRight;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_paddingBottom;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_paddingBottom;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_paddingLeft;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_paddingLeft;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_padding;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_padding;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_border;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_border;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderTop;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderTop;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderRight;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderRight;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderBottom;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderBottom;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderLeft;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderLeft;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderColor;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderColor;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_borderTopColor;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_borderTopColor;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_borderRightColor;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_borderRightColor;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_borderBottomColor;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_borderBottomColor;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_borderLeftColor;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_borderLeftColor;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderWidth;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderWidth;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_borderTopWidth;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_borderTopWidth;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_borderRightWidth;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_borderRightWidth;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_borderBottomWidth;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_borderBottomWidth;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_borderLeftWidth;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_borderLeftWidth;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderTopStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderTopStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderRightStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderRightStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderBottomStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderBottomStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_borderLeftStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_borderLeftStyle;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_styleFloat;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_styleFloat;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_clear;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_clear;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_display;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_display;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_visibility;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_visibility;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_listStyleType;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_listStyleType;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_listStylePosition;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_listStylePosition;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_listStyleImage;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_listStyleImage;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_listStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_listStyle;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_whiteSpace;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_whiteSpace;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_top;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_top;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_left;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_left;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_position;
+			public function HRESULT(IHTMLStyle *self, VARIANT v) put_zIndex;
+			public function HRESULT(IHTMLStyle *self, VARIANT* p) get_zIndex;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_overflow;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_overflow;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_pageBreakBefore;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_pageBreakBefore;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_pageBreakAfter;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_pageBreakAfter;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_cssText;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_cssText;
+			public function HRESULT(IHTMLStyle *self, int32 v) put_pixelTop;
+			public function HRESULT(IHTMLStyle *self, int32* p) get_pixelTop;
+			public function HRESULT(IHTMLStyle *self, int32 v) put_pixelLeft;
+			public function HRESULT(IHTMLStyle *self, int32* p) get_pixelLeft;
+			public function HRESULT(IHTMLStyle *self, int32 v) put_pixelWidth;
+			public function HRESULT(IHTMLStyle *self, int32* p) get_pixelWidth;
+			public function HRESULT(IHTMLStyle *self, int32 v) put_pixelHeight;
+			public function HRESULT(IHTMLStyle *self, int32* p) get_pixelHeight;
+			public function HRESULT(IHTMLStyle *self, float v) put_posTop;
+			public function HRESULT(IHTMLStyle *self, float* p) get_posTop;
+			public function HRESULT(IHTMLStyle *self, float v) put_posLeft;
+			public function HRESULT(IHTMLStyle *self, float* p) get_posLeft;
+			public function HRESULT(IHTMLStyle *self, float v) put_posWidth;
+			public function HRESULT(IHTMLStyle *self, float* p) get_posWidth;
+			public function HRESULT(IHTMLStyle *self, float v) put_posHeight;
+			public function HRESULT(IHTMLStyle *self, float* p) get_posHeight;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_cursor;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_cursor;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_clip;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_clip;
+			public function HRESULT(IHTMLStyle *self, BSTR v) put_filter;
+			public function HRESULT(IHTMLStyle *self, BSTR* p) get_filter;
+			public function HRESULT(IHTMLStyle *self, BSTR strAttributeName, VARIANT AttributeValue, int32 lFlags) setAttribute;
+			public function HRESULT(IHTMLStyle *self, BSTR strAttributeName, int32 lFlags, VARIANT* AttributeValue) getAttribute;
+			public function HRESULT(IHTMLStyle *self, BSTR strAttributeName, int32 lFlags, int16* pfSuccess) removeAttribute;
+			public function HRESULT(IHTMLStyle *self, BSTR* String) toString;
+		}
+		[CRepr]
+		public struct IHTMLStyle2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4a2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_tableLayout;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_tableLayout;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_borderCollapse;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_borderCollapse;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_direction;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_direction;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_behavior;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_behavior;
+			public function HRESULT(IHTMLStyle2 *self, BSTR propname, BSTR expression, BSTR language) setExpression;
+			public function HRESULT(IHTMLStyle2 *self, BSTR propname, VARIANT* expression) getExpression;
+			public function HRESULT(IHTMLStyle2 *self, BSTR propname, int16* pfSuccess) removeExpression;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_position;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_position;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_unicodeBidi;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_unicodeBidi;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT v) put_bottom;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT* p) get_bottom;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT v) put_right;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT* p) get_right;
+			public function HRESULT(IHTMLStyle2 *self, int32 v) put_pixelBottom;
+			public function HRESULT(IHTMLStyle2 *self, int32* p) get_pixelBottom;
+			public function HRESULT(IHTMLStyle2 *self, int32 v) put_pixelRight;
+			public function HRESULT(IHTMLStyle2 *self, int32* p) get_pixelRight;
+			public function HRESULT(IHTMLStyle2 *self, float v) put_posBottom;
+			public function HRESULT(IHTMLStyle2 *self, float* p) get_posBottom;
+			public function HRESULT(IHTMLStyle2 *self, float v) put_posRight;
+			public function HRESULT(IHTMLStyle2 *self, float* p) get_posRight;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_imeMode;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_imeMode;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_rubyAlign;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_rubyAlign;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_rubyPosition;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_rubyPosition;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_rubyOverhang;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_rubyOverhang;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT v) put_layoutGridChar;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT* p) get_layoutGridChar;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT v) put_layoutGridLine;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT* p) get_layoutGridLine;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_layoutGridMode;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_layoutGridMode;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_layoutGridType;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_layoutGridType;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_layoutGrid;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_layoutGrid;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_wordBreak;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_wordBreak;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_lineBreak;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_lineBreak;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_textJustify;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_textJustify;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_textJustifyTrim;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_textJustifyTrim;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT v) put_textKashida;
+			public function HRESULT(IHTMLStyle2 *self, VARIANT* p) get_textKashida;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_textAutospace;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_textAutospace;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_overflowX;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_overflowX;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_overflowY;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_overflowY;
+			public function HRESULT(IHTMLStyle2 *self, BSTR v) put_accelerator;
+			public function HRESULT(IHTMLStyle2 *self, BSTR* p) get_accelerator;
+		}
+		[CRepr]
+		public struct IHTMLStyle3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f656, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyle3 *self, BSTR v) put_layoutFlow;
+			public function HRESULT(IHTMLStyle3 *self, BSTR* p) get_layoutFlow;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_zoom;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_zoom;
+			public function HRESULT(IHTMLStyle3 *self, BSTR v) put_wordWrap;
+			public function HRESULT(IHTMLStyle3 *self, BSTR* p) get_wordWrap;
+			public function HRESULT(IHTMLStyle3 *self, BSTR v) put_textUnderlinePosition;
+			public function HRESULT(IHTMLStyle3 *self, BSTR* p) get_textUnderlinePosition;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_scrollbarBaseColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_scrollbarBaseColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_scrollbarFaceColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_scrollbarFaceColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_scrollbar3dLightColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_scrollbar3dLightColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_scrollbarShadowColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_scrollbarShadowColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_scrollbarHighlightColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_scrollbarHighlightColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_scrollbarDarkShadowColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_scrollbarDarkShadowColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_scrollbarArrowColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_scrollbarArrowColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_scrollbarTrackColor;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_scrollbarTrackColor;
+			public function HRESULT(IHTMLStyle3 *self, BSTR v) put_writingMode;
+			public function HRESULT(IHTMLStyle3 *self, BSTR* p) get_writingMode;
+			public function HRESULT(IHTMLStyle3 *self, BSTR v) put_textAlignLast;
+			public function HRESULT(IHTMLStyle3 *self, BSTR* p) get_textAlignLast;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT v) put_textKashidaSpace;
+			public function HRESULT(IHTMLStyle3 *self, VARIANT* p) get_textKashidaSpace;
+		}
+		[CRepr]
+		public struct IHTMLStyle4 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f816, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyle4 *self, BSTR v) put_textOverflow;
+			public function HRESULT(IHTMLStyle4 *self, BSTR* p) get_textOverflow;
+			public function HRESULT(IHTMLStyle4 *self, VARIANT v) put_minHeight;
+			public function HRESULT(IHTMLStyle4 *self, VARIANT* p) get_minHeight;
+		}
+		[CRepr]
+		public struct IHTMLStyle5 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f33a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyle5 *self, BSTR v) put_msInterpolationMode;
+			public function HRESULT(IHTMLStyle5 *self, BSTR* p) get_msInterpolationMode;
+			public function HRESULT(IHTMLStyle5 *self, VARIANT v) put_maxHeight;
+			public function HRESULT(IHTMLStyle5 *self, VARIANT* p) get_maxHeight;
+			public function HRESULT(IHTMLStyle5 *self, VARIANT v) put_minWidth;
+			public function HRESULT(IHTMLStyle5 *self, VARIANT* p) get_minWidth;
+			public function HRESULT(IHTMLStyle5 *self, VARIANT v) put_maxWidth;
+			public function HRESULT(IHTMLStyle5 *self, VARIANT* p) get_maxWidth;
+		}
+		[CRepr]
+		public struct IHTMLStyle6 : IDispatch
+		{
+			public const new Guid IID = .(0x30510480, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_content;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_content;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_captionSide;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_captionSide;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_counterIncrement;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_counterIncrement;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_counterReset;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_counterReset;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_outline;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_outline;
+			public function HRESULT(IHTMLStyle6 *self, VARIANT v) put_outlineWidth;
+			public function HRESULT(IHTMLStyle6 *self, VARIANT* p) get_outlineWidth;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_outlineStyle;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_outlineStyle;
+			public function HRESULT(IHTMLStyle6 *self, VARIANT v) put_outlineColor;
+			public function HRESULT(IHTMLStyle6 *self, VARIANT* p) get_outlineColor;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_boxSizing;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_boxSizing;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_borderSpacing;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_borderSpacing;
+			public function HRESULT(IHTMLStyle6 *self, VARIANT v) put_orphans;
+			public function HRESULT(IHTMLStyle6 *self, VARIANT* p) get_orphans;
+			public function HRESULT(IHTMLStyle6 *self, VARIANT v) put_widows;
+			public function HRESULT(IHTMLStyle6 *self, VARIANT* p) get_widows;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_pageBreakInside;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_pageBreakInside;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_emptyCells;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_emptyCells;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_msBlockProgression;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_msBlockProgression;
+			public function HRESULT(IHTMLStyle6 *self, BSTR v) put_quotes;
+			public function HRESULT(IHTMLStyle6 *self, BSTR* p) get_quotes;
+		}
+		[CRepr]
+		public struct IHTMLRuleStyle : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3cf, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_fontFamily;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_fontFamily;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_fontStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_fontStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_fontVariant;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_fontVariant;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_fontWeight;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_fontWeight;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_fontSize;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_fontSize;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_font;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_font;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_color;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_color;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_background;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_background;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_backgroundColor;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_backgroundColor;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_backgroundImage;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_backgroundImage;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_backgroundRepeat;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_backgroundRepeat;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_backgroundAttachment;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_backgroundAttachment;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_backgroundPosition;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_backgroundPosition;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_backgroundPositionX;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_backgroundPositionX;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_backgroundPositionY;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_backgroundPositionY;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_wordSpacing;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_wordSpacing;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_letterSpacing;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_letterSpacing;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_textDecoration;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_textDecoration;
+			public function HRESULT(IHTMLRuleStyle *self, int16 v) put_textDecorationNone;
+			public function HRESULT(IHTMLRuleStyle *self, int16* p) get_textDecorationNone;
+			public function HRESULT(IHTMLRuleStyle *self, int16 v) put_textDecorationUnderline;
+			public function HRESULT(IHTMLRuleStyle *self, int16* p) get_textDecorationUnderline;
+			public function HRESULT(IHTMLRuleStyle *self, int16 v) put_textDecorationOverline;
+			public function HRESULT(IHTMLRuleStyle *self, int16* p) get_textDecorationOverline;
+			public function HRESULT(IHTMLRuleStyle *self, int16 v) put_textDecorationLineThrough;
+			public function HRESULT(IHTMLRuleStyle *self, int16* p) get_textDecorationLineThrough;
+			public function HRESULT(IHTMLRuleStyle *self, int16 v) put_textDecorationBlink;
+			public function HRESULT(IHTMLRuleStyle *self, int16* p) get_textDecorationBlink;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_verticalAlign;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_verticalAlign;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_textTransform;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_textTransform;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_textAlign;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_textAlign;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_textIndent;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_textIndent;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_lineHeight;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_lineHeight;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_marginTop;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_marginTop;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_marginRight;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_marginRight;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_marginBottom;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_marginBottom;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_marginLeft;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_marginLeft;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_margin;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_margin;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_paddingTop;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_paddingTop;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_paddingRight;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_paddingRight;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_paddingBottom;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_paddingBottom;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_paddingLeft;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_paddingLeft;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_padding;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_padding;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_border;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_border;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderTop;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderTop;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderRight;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderRight;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderBottom;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderBottom;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderLeft;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderLeft;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderColor;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderColor;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_borderTopColor;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_borderTopColor;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_borderRightColor;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_borderRightColor;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_borderBottomColor;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_borderBottomColor;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_borderLeftColor;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_borderLeftColor;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderWidth;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderWidth;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_borderTopWidth;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_borderTopWidth;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_borderRightWidth;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_borderRightWidth;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_borderBottomWidth;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_borderBottomWidth;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_borderLeftWidth;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_borderLeftWidth;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderTopStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderTopStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderRightStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderRightStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderBottomStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderBottomStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_borderLeftStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_borderLeftStyle;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_styleFloat;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_styleFloat;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_clear;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_clear;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_display;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_display;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_visibility;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_visibility;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_listStyleType;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_listStyleType;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_listStylePosition;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_listStylePosition;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_listStyleImage;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_listStyleImage;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_listStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_listStyle;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_whiteSpace;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_whiteSpace;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_top;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_top;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_left;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_left;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_position;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT v) put_zIndex;
+			public function HRESULT(IHTMLRuleStyle *self, VARIANT* p) get_zIndex;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_overflow;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_overflow;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_pageBreakBefore;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_pageBreakBefore;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_pageBreakAfter;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_pageBreakAfter;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_cssText;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_cssText;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_cursor;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_cursor;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_clip;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_clip;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR v) put_filter;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR* p) get_filter;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR strAttributeName, VARIANT AttributeValue, int32 lFlags) setAttribute;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR strAttributeName, int32 lFlags, VARIANT* AttributeValue) getAttribute;
+			public function HRESULT(IHTMLRuleStyle *self, BSTR strAttributeName, int32 lFlags, int16* pfSuccess) removeAttribute;
+		}
+		[CRepr]
+		public struct IHTMLRuleStyle2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4ac, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_tableLayout;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_tableLayout;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_borderCollapse;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_borderCollapse;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_direction;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_direction;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_behavior;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_behavior;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_position;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_position;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_unicodeBidi;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_unicodeBidi;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT v) put_bottom;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT* p) get_bottom;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT v) put_right;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT* p) get_right;
+			public function HRESULT(IHTMLRuleStyle2 *self, int32 v) put_pixelBottom;
+			public function HRESULT(IHTMLRuleStyle2 *self, int32* p) get_pixelBottom;
+			public function HRESULT(IHTMLRuleStyle2 *self, int32 v) put_pixelRight;
+			public function HRESULT(IHTMLRuleStyle2 *self, int32* p) get_pixelRight;
+			public function HRESULT(IHTMLRuleStyle2 *self, float v) put_posBottom;
+			public function HRESULT(IHTMLRuleStyle2 *self, float* p) get_posBottom;
+			public function HRESULT(IHTMLRuleStyle2 *self, float v) put_posRight;
+			public function HRESULT(IHTMLRuleStyle2 *self, float* p) get_posRight;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_imeMode;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_imeMode;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_rubyAlign;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_rubyAlign;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_rubyPosition;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_rubyPosition;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_rubyOverhang;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_rubyOverhang;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT v) put_layoutGridChar;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT* p) get_layoutGridChar;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT v) put_layoutGridLine;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT* p) get_layoutGridLine;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_layoutGridMode;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_layoutGridMode;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_layoutGridType;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_layoutGridType;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_layoutGrid;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_layoutGrid;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_textAutospace;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_textAutospace;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_wordBreak;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_wordBreak;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_lineBreak;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_lineBreak;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_textJustify;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_textJustify;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_textJustifyTrim;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_textJustifyTrim;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT v) put_textKashida;
+			public function HRESULT(IHTMLRuleStyle2 *self, VARIANT* p) get_textKashida;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_overflowX;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_overflowX;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_overflowY;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_overflowY;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR v) put_accelerator;
+			public function HRESULT(IHTMLRuleStyle2 *self, BSTR* p) get_accelerator;
+		}
+		[CRepr]
+		public struct IHTMLRuleStyle3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f657, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR v) put_layoutFlow;
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR* p) get_layoutFlow;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_zoom;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_zoom;
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR v) put_wordWrap;
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR* p) get_wordWrap;
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR v) put_textUnderlinePosition;
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR* p) get_textUnderlinePosition;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_scrollbarBaseColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_scrollbarBaseColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_scrollbarFaceColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_scrollbarFaceColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_scrollbar3dLightColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_scrollbar3dLightColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_scrollbarShadowColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_scrollbarShadowColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_scrollbarHighlightColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_scrollbarHighlightColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_scrollbarDarkShadowColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_scrollbarDarkShadowColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_scrollbarArrowColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_scrollbarArrowColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_scrollbarTrackColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_scrollbarTrackColor;
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR v) put_writingMode;
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR* p) get_writingMode;
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR v) put_textAlignLast;
+			public function HRESULT(IHTMLRuleStyle3 *self, BSTR* p) get_textAlignLast;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT v) put_textKashidaSpace;
+			public function HRESULT(IHTMLRuleStyle3 *self, VARIANT* p) get_textKashidaSpace;
+		}
+		[CRepr]
+		public struct IHTMLRuleStyle4 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f817, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRuleStyle4 *self, BSTR v) put_textOverflow;
+			public function HRESULT(IHTMLRuleStyle4 *self, BSTR* p) get_textOverflow;
+			public function HRESULT(IHTMLRuleStyle4 *self, VARIANT v) put_minHeight;
+			public function HRESULT(IHTMLRuleStyle4 *self, VARIANT* p) get_minHeight;
+		}
+		[CRepr]
+		public struct IHTMLRuleStyle5 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f335, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRuleStyle5 *self, BSTR v) put_msInterpolationMode;
+			public function HRESULT(IHTMLRuleStyle5 *self, BSTR* p) get_msInterpolationMode;
+			public function HRESULT(IHTMLRuleStyle5 *self, VARIANT v) put_maxHeight;
+			public function HRESULT(IHTMLRuleStyle5 *self, VARIANT* p) get_maxHeight;
+			public function HRESULT(IHTMLRuleStyle5 *self, VARIANT v) put_minWidth;
+			public function HRESULT(IHTMLRuleStyle5 *self, VARIANT* p) get_minWidth;
+			public function HRESULT(IHTMLRuleStyle5 *self, VARIANT v) put_maxWidth;
+			public function HRESULT(IHTMLRuleStyle5 *self, VARIANT* p) get_maxWidth;
+		}
+		[CRepr]
+		public struct IHTMLRuleStyle6 : IDispatch
+		{
+			public const new Guid IID = .(0x30510471, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_content;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_content;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_captionSide;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_captionSide;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_counterIncrement;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_counterIncrement;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_counterReset;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_counterReset;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_outline;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_outline;
+			public function HRESULT(IHTMLRuleStyle6 *self, VARIANT v) put_outlineWidth;
+			public function HRESULT(IHTMLRuleStyle6 *self, VARIANT* p) get_outlineWidth;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_outlineStyle;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_outlineStyle;
+			public function HRESULT(IHTMLRuleStyle6 *self, VARIANT v) put_outlineColor;
+			public function HRESULT(IHTMLRuleStyle6 *self, VARIANT* p) get_outlineColor;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_boxSizing;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_boxSizing;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_borderSpacing;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_borderSpacing;
+			public function HRESULT(IHTMLRuleStyle6 *self, VARIANT v) put_orphans;
+			public function HRESULT(IHTMLRuleStyle6 *self, VARIANT* p) get_orphans;
+			public function HRESULT(IHTMLRuleStyle6 *self, VARIANT v) put_widows;
+			public function HRESULT(IHTMLRuleStyle6 *self, VARIANT* p) get_widows;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_pageBreakInside;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_pageBreakInside;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_emptyCells;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_emptyCells;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_msBlockProgression;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_msBlockProgression;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR v) put_quotes;
+			public function HRESULT(IHTMLRuleStyle6 *self, BSTR* p) get_quotes;
+		}
+		[CRepr]
+		public struct DispHTMLStyle : IDispatch
+		{
+			public const new Guid IID = .(0x3050f55a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLRuleStyle : IDispatch
+		{
+			public const new Guid IID = .(0x3050f55c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetRulesCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2e5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetRulesCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLStyleSheetRulesCollection *self, int32 index, IHTMLStyleSheetRule** ppHTMLStyleSheetRule) item;
+		}
+		[CRepr]
+		public struct IHTMLStyleSheet : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2e3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheet *self, BSTR v) put_title;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR* p) get_title;
+			public function HRESULT(IHTMLStyleSheet *self, IHTMLStyleSheet** p) get_parentStyleSheet;
+			public function HRESULT(IHTMLStyleSheet *self, IHTMLElement** p) get_owningElement;
+			public function HRESULT(IHTMLStyleSheet *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLStyleSheet *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLStyleSheet *self, int16* p) get_readOnly;
+			public function HRESULT(IHTMLStyleSheet *self, IHTMLStyleSheetsCollection** p) get_imports;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR v) put_href;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR* p) get_href;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR* p) get_id;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR bstrURL, int32 lIndex, int32* plIndex) addImport;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR bstrSelector, BSTR bstrStyle, int32 lIndex, int32* plNewIndex) addRule;
+			public function HRESULT(IHTMLStyleSheet *self, int32 lIndex) removeImport;
+			public function HRESULT(IHTMLStyleSheet *self, int32 lIndex) removeRule;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR v) put_media;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR* p) get_media;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR v) put_cssText;
+			public function HRESULT(IHTMLStyleSheet *self, BSTR* p) get_cssText;
+			public function HRESULT(IHTMLStyleSheet *self, IHTMLStyleSheetRulesCollection** p) get_rules;
+		}
+		[CRepr]
+		public struct IHTMLCSSRule : IDispatch
+		{
+			public const new Guid IID = .(0x305106e9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCSSRule *self, uint16* p) get_type;
+			public function HRESULT(IHTMLCSSRule *self, BSTR v) put_cssText;
+			public function HRESULT(IHTMLCSSRule *self, BSTR* p) get_cssText;
+			public function HRESULT(IHTMLCSSRule *self, IHTMLCSSRule** p) get_parentRule;
+			public function HRESULT(IHTMLCSSRule *self, IHTMLStyleSheet** p) get_parentStyleSheet;
+		}
+		[CRepr]
+		public struct IHTMLCSSImportRule : IDispatch
+		{
+			public const new Guid IID = .(0x305106ea, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCSSImportRule *self, BSTR* p) get_href;
+			public function HRESULT(IHTMLCSSImportRule *self, VARIANT v) put_media;
+			public function HRESULT(IHTMLCSSImportRule *self, VARIANT* p) get_media;
+			public function HRESULT(IHTMLCSSImportRule *self, IHTMLStyleSheet** p) get_styleSheet;
+		}
+		[CRepr]
+		public struct IHTMLCSSMediaRule : IDispatch
+		{
+			public const new Guid IID = .(0x305106eb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCSSMediaRule *self, VARIANT v) put_media;
+			public function HRESULT(IHTMLCSSMediaRule *self, VARIANT* p) get_media;
+			public function HRESULT(IHTMLCSSMediaRule *self, IHTMLStyleSheetRulesCollection** p) get_cssRules;
+			public function HRESULT(IHTMLCSSMediaRule *self, BSTR bstrRule, int32 lIndex, int32* plNewIndex) insertRule;
+			public function HRESULT(IHTMLCSSMediaRule *self, int32 lIndex) deleteRule;
+		}
+		[CRepr]
+		public struct IHTMLCSSMediaList : IDispatch
+		{
+			public const new Guid IID = .(0x30510731, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCSSMediaList *self, BSTR v) put_mediaText;
+			public function HRESULT(IHTMLCSSMediaList *self, BSTR* p) get_mediaText;
+			public function HRESULT(IHTMLCSSMediaList *self, int32* p) get_length;
+			public function HRESULT(IHTMLCSSMediaList *self, int32 index, BSTR* pbstrMedium) item;
+			public function HRESULT(IHTMLCSSMediaList *self, BSTR bstrMedium) appendMedium;
+			public function HRESULT(IHTMLCSSMediaList *self, BSTR bstrMedium) deleteMedium;
+		}
+		[CRepr]
+		public struct IHTMLCSSNamespaceRule : IDispatch
+		{
+			public const new Guid IID = .(0x305106ee, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCSSNamespaceRule *self, BSTR* p) get_namespaceURI;
+			public function HRESULT(IHTMLCSSNamespaceRule *self, BSTR* p) get_prefix;
+		}
+		[CRepr]
+		public struct IHTMLMSCSSKeyframeRule : IDispatch
+		{
+			public const new Guid IID = .(0x3051080c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMSCSSKeyframeRule *self, BSTR v) put_keyText;
+			public function HRESULT(IHTMLMSCSSKeyframeRule *self, BSTR* p) get_keyText;
+			public function HRESULT(IHTMLMSCSSKeyframeRule *self, IHTMLRuleStyle** p) get_style;
+		}
+		[CRepr]
+		public struct IHTMLMSCSSKeyframesRule : IDispatch
+		{
+			public const new Guid IID = .(0x3051080d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMSCSSKeyframesRule *self, BSTR v) put_name;
+			public function HRESULT(IHTMLMSCSSKeyframesRule *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLMSCSSKeyframesRule *self, IHTMLStyleSheetRulesCollection** p) get_cssRules;
+			public function HRESULT(IHTMLMSCSSKeyframesRule *self, BSTR bstrRule) appendRule;
+			public function HRESULT(IHTMLMSCSSKeyframesRule *self, BSTR bstrKey) deleteRule;
+			public function HRESULT(IHTMLMSCSSKeyframesRule *self, BSTR bstrKey, IHTMLMSCSSKeyframeRule** ppMSKeyframeRule) findRule;
+		}
+		[CRepr]
+		public struct DispHTMLCSSRule : IDispatch
+		{
+			public const new Guid IID = .(0x3059007d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLCSSImportRule : IDispatch
+		{
+			public const new Guid IID = .(0x3059007e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLCSSMediaRule : IDispatch
+		{
+			public const new Guid IID = .(0x3059007f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLCSSMediaList : IDispatch
+		{
+			public const new Guid IID = .(0x30590097, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLCSSNamespaceRule : IDispatch
+		{
+			public const new Guid IID = .(0x30590080, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLMSCSSKeyframeRule : IDispatch
+		{
+			public const new Guid IID = .(0x305900de, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLMSCSSKeyframesRule : IDispatch
+		{
+			public const new Guid IID = .(0x305900df, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLRenderStyle : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6ae, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRenderStyle *self, BSTR v) put_textLineThroughStyle;
+			public function HRESULT(IHTMLRenderStyle *self, BSTR* p) get_textLineThroughStyle;
+			public function HRESULT(IHTMLRenderStyle *self, BSTR v) put_textUnderlineStyle;
+			public function HRESULT(IHTMLRenderStyle *self, BSTR* p) get_textUnderlineStyle;
+			public function HRESULT(IHTMLRenderStyle *self, BSTR v) put_textEffect;
+			public function HRESULT(IHTMLRenderStyle *self, BSTR* p) get_textEffect;
+			public function HRESULT(IHTMLRenderStyle *self, VARIANT v) put_textColor;
+			public function HRESULT(IHTMLRenderStyle *self, VARIANT* p) get_textColor;
+			public function HRESULT(IHTMLRenderStyle *self, VARIANT v) put_textBackgroundColor;
+			public function HRESULT(IHTMLRenderStyle *self, VARIANT* p) get_textBackgroundColor;
+			public function HRESULT(IHTMLRenderStyle *self, VARIANT v) put_textDecorationColor;
+			public function HRESULT(IHTMLRenderStyle *self, VARIANT* p) get_textDecorationColor;
+			public function HRESULT(IHTMLRenderStyle *self, int32 v) put_renderingPriority;
+			public function HRESULT(IHTMLRenderStyle *self, int32* p) get_renderingPriority;
+			public function HRESULT(IHTMLRenderStyle *self, BSTR v) put_defaultTextSelection;
+			public function HRESULT(IHTMLRenderStyle *self, BSTR* p) get_defaultTextSelection;
+			public function HRESULT(IHTMLRenderStyle *self, BSTR v) put_textDecoration;
+			public function HRESULT(IHTMLRenderStyle *self, BSTR* p) get_textDecoration;
+		}
+		[CRepr]
+		public struct DispHTMLRenderStyle : IDispatch
+		{
+			public const new Guid IID = .(0x3050f58b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLCurrentStyle : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3db, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_position;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_styleFloat;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_color;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_backgroundColor;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_fontFamily;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_fontStyle;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_fontVariant;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_fontWeight;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_fontSize;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_backgroundImage;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_backgroundPositionX;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_backgroundPositionY;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_backgroundRepeat;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_borderLeftColor;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_borderTopColor;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_borderRightColor;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_borderBottomColor;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_borderTopStyle;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_borderRightStyle;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_borderBottomStyle;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_borderLeftStyle;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_borderTopWidth;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_borderRightWidth;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_borderBottomWidth;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_borderLeftWidth;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_left;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_top;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_paddingLeft;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_paddingTop;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_paddingRight;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_paddingBottom;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_textAlign;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_textDecoration;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_display;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_visibility;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_zIndex;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_letterSpacing;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_lineHeight;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_textIndent;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_verticalAlign;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_backgroundAttachment;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_marginTop;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_marginRight;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_marginBottom;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_marginLeft;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_clear;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_listStyleType;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_listStylePosition;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_listStyleImage;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_clipTop;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_clipRight;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_clipBottom;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_clipLeft;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_overflow;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_pageBreakBefore;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_pageBreakAfter;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_cursor;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_tableLayout;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_borderCollapse;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_direction;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_behavior;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR strAttributeName, int32 lFlags, VARIANT* AttributeValue) getAttribute;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_unicodeBidi;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_right;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_bottom;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_imeMode;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_rubyAlign;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_rubyPosition;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_rubyOverhang;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_textAutospace;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_lineBreak;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_wordBreak;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_textJustify;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_textJustifyTrim;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_textKashida;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_blockDirection;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_layoutGridChar;
+			public function HRESULT(IHTMLCurrentStyle *self, VARIANT* p) get_layoutGridLine;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_layoutGridMode;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_layoutGridType;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_borderStyle;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_borderColor;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_borderWidth;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_padding;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_margin;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_accelerator;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_overflowX;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_overflowY;
+			public function HRESULT(IHTMLCurrentStyle *self, BSTR* p) get_textTransform;
+		}
+		[CRepr]
+		public struct IHTMLCurrentStyle2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f658, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCurrentStyle2 *self, BSTR* p) get_layoutFlow;
+			public function HRESULT(IHTMLCurrentStyle2 *self, BSTR* p) get_wordWrap;
+			public function HRESULT(IHTMLCurrentStyle2 *self, BSTR* p) get_textUnderlinePosition;
+			public function HRESULT(IHTMLCurrentStyle2 *self, int16* p) get_hasLayout;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_scrollbarBaseColor;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_scrollbarFaceColor;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_scrollbar3dLightColor;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_scrollbarShadowColor;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_scrollbarHighlightColor;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_scrollbarDarkShadowColor;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_scrollbarArrowColor;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_scrollbarTrackColor;
+			public function HRESULT(IHTMLCurrentStyle2 *self, BSTR* p) get_writingMode;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_zoom;
+			public function HRESULT(IHTMLCurrentStyle2 *self, BSTR* p) get_filter;
+			public function HRESULT(IHTMLCurrentStyle2 *self, BSTR* p) get_textAlignLast;
+			public function HRESULT(IHTMLCurrentStyle2 *self, VARIANT* p) get_textKashidaSpace;
+			public function HRESULT(IHTMLCurrentStyle2 *self, int16* p) get_isBlock;
+		}
+		[CRepr]
+		public struct IHTMLCurrentStyle3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f818, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCurrentStyle3 *self, BSTR* p) get_textOverflow;
+			public function HRESULT(IHTMLCurrentStyle3 *self, VARIANT* p) get_minHeight;
+			public function HRESULT(IHTMLCurrentStyle3 *self, VARIANT* p) get_wordSpacing;
+			public function HRESULT(IHTMLCurrentStyle3 *self, BSTR* p) get_whiteSpace;
+		}
+		[CRepr]
+		public struct IHTMLCurrentStyle4 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f33b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCurrentStyle4 *self, BSTR* p) get_msInterpolationMode;
+			public function HRESULT(IHTMLCurrentStyle4 *self, VARIANT* p) get_maxHeight;
+			public function HRESULT(IHTMLCurrentStyle4 *self, VARIANT* p) get_minWidth;
+			public function HRESULT(IHTMLCurrentStyle4 *self, VARIANT* p) get_maxWidth;
+		}
+		[CRepr]
+		public struct IHTMLCurrentStyle5 : IDispatch
+		{
+			public const new Guid IID = .(0x30510481, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCurrentStyle5 *self, BSTR* p) get_captionSide;
+			public function HRESULT(IHTMLCurrentStyle5 *self, BSTR* p) get_outline;
+			public function HRESULT(IHTMLCurrentStyle5 *self, VARIANT* p) get_outlineWidth;
+			public function HRESULT(IHTMLCurrentStyle5 *self, BSTR* p) get_outlineStyle;
+			public function HRESULT(IHTMLCurrentStyle5 *self, VARIANT* p) get_outlineColor;
+			public function HRESULT(IHTMLCurrentStyle5 *self, BSTR* p) get_boxSizing;
+			public function HRESULT(IHTMLCurrentStyle5 *self, BSTR* p) get_borderSpacing;
+			public function HRESULT(IHTMLCurrentStyle5 *self, VARIANT* p) get_orphans;
+			public function HRESULT(IHTMLCurrentStyle5 *self, VARIANT* p) get_widows;
+			public function HRESULT(IHTMLCurrentStyle5 *self, BSTR* p) get_pageBreakInside;
+			public function HRESULT(IHTMLCurrentStyle5 *self, BSTR* p) get_emptyCells;
+			public function HRESULT(IHTMLCurrentStyle5 *self, BSTR* p) get_msBlockProgression;
+			public function HRESULT(IHTMLCurrentStyle5 *self, BSTR* p) get_quotes;
+		}
+		[CRepr]
+		public struct DispHTMLCurrentStyle : IDispatch
+		{
+			public const new Guid IID = .(0x3050f557, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1ff, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElement *self, BSTR strAttributeName, VARIANT AttributeValue, int32 lFlags) setAttribute;
+			public function HRESULT(IHTMLElement *self, BSTR strAttributeName, int32 lFlags, VARIANT* AttributeValue) getAttribute;
+			public function HRESULT(IHTMLElement *self, BSTR strAttributeName, int32 lFlags, int16* pfSuccess) removeAttribute;
+			public function HRESULT(IHTMLElement *self, BSTR v) put_className;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_className;
+			public function HRESULT(IHTMLElement *self, BSTR v) put_id;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_id;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_tagName;
+			public function HRESULT(IHTMLElement *self, IHTMLElement** p) get_parentElement;
+			public function HRESULT(IHTMLElement *self, IHTMLStyle** p) get_style;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onhelp;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onhelp;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onclick;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onclick;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_ondblclick;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_ondblclick;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onkeydown;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onkeydown;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onkeyup;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onkeyup;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onkeypress;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onkeypress;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onmouseout;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onmouseout;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onmouseover;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onmouseover;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onmousemove;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onmousemove;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onmousedown;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onmousedown;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onmouseup;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onmouseup;
+			public function HRESULT(IHTMLElement *self, IDispatch** p) get_document;
+			public function HRESULT(IHTMLElement *self, BSTR v) put_title;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_title;
+			public function HRESULT(IHTMLElement *self, BSTR v) put_language;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_language;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onselectstart;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onselectstart;
+			public function HRESULT(IHTMLElement *self, VARIANT varargStart) scrollIntoView;
+			public function HRESULT(IHTMLElement *self, IHTMLElement* pChild, int16* pfResult) contains;
+			public function HRESULT(IHTMLElement *self, int32* p) get_sourceIndex;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_recordNumber;
+			public function HRESULT(IHTMLElement *self, BSTR v) put_lang;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_lang;
+			public function HRESULT(IHTMLElement *self, int32* p) get_offsetLeft;
+			public function HRESULT(IHTMLElement *self, int32* p) get_offsetTop;
+			public function HRESULT(IHTMLElement *self, int32* p) get_offsetWidth;
+			public function HRESULT(IHTMLElement *self, int32* p) get_offsetHeight;
+			public function HRESULT(IHTMLElement *self, IHTMLElement** p) get_offsetParent;
+			public function HRESULT(IHTMLElement *self, BSTR v) put_innerHTML;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_innerHTML;
+			public function HRESULT(IHTMLElement *self, BSTR v) put_innerText;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_innerText;
+			public function HRESULT(IHTMLElement *self, BSTR v) put_outerHTML;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_outerHTML;
+			public function HRESULT(IHTMLElement *self, BSTR v) put_outerText;
+			public function HRESULT(IHTMLElement *self, BSTR* p) get_outerText;
+			public function HRESULT(IHTMLElement *self, BSTR @where, BSTR html) insertAdjacentHTML;
+			public function HRESULT(IHTMLElement *self, BSTR @where, BSTR text) insertAdjacentText;
+			public function HRESULT(IHTMLElement *self, IHTMLElement** p) get_parentTextEdit;
+			public function HRESULT(IHTMLElement *self, int16* p) get_isTextEdit;
+			public function HRESULT(IHTMLElement *self) click;
+			public function HRESULT(IHTMLElement *self, IHTMLFiltersCollection** p) get_filters;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_ondragstart;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_ondragstart;
+			public function HRESULT(IHTMLElement *self, BSTR* String) toString;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onbeforeupdate;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onbeforeupdate;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onafterupdate;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onafterupdate;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onerrorupdate;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onerrorupdate;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onrowexit;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onrowexit;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onrowenter;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onrowenter;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_ondatasetchanged;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_ondatasetchanged;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_ondataavailable;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_ondataavailable;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_ondatasetcomplete;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_ondatasetcomplete;
+			public function HRESULT(IHTMLElement *self, VARIANT v) put_onfilterchange;
+			public function HRESULT(IHTMLElement *self, VARIANT* p) get_onfilterchange;
+			public function HRESULT(IHTMLElement *self, IDispatch** p) get_children;
+			public function HRESULT(IHTMLElement *self, IDispatch** p) get_all;
+		}
+		[CRepr]
+		public struct IHTMLRect : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4a3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRect *self, int32 v) put_left;
+			public function HRESULT(IHTMLRect *self, int32* p) get_left;
+			public function HRESULT(IHTMLRect *self, int32 v) put_top;
+			public function HRESULT(IHTMLRect *self, int32* p) get_top;
+			public function HRESULT(IHTMLRect *self, int32 v) put_right;
+			public function HRESULT(IHTMLRect *self, int32* p) get_right;
+			public function HRESULT(IHTMLRect *self, int32 v) put_bottom;
+			public function HRESULT(IHTMLRect *self, int32* p) get_bottom;
+		}
+		[CRepr]
+		public struct IHTMLRect2 : IDispatch
+		{
+			public const new Guid IID = .(0x3051076c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRect2 *self, float* p) get_width;
+			public function HRESULT(IHTMLRect2 *self, float* p) get_height;
+		}
+		[CRepr]
+		public struct IHTMLRectCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4a4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLRectCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLRectCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLRectCollection *self, VARIANT* pvarIndex, VARIANT* pvarResult) item;
+		}
+		[CRepr]
+		public struct IHTMLElementCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f21f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElementCollection *self, BSTR* String) toString;
+			public function HRESULT(IHTMLElementCollection *self, int32 v) put_length;
+			public function HRESULT(IHTMLElementCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLElementCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLElementCollection *self, VARIANT name, VARIANT index, IDispatch** pdisp) item;
+			public function HRESULT(IHTMLElementCollection *self, VARIANT tagName, IDispatch** pdisp) tags;
+		}
+		[CRepr]
+		public struct IHTMLElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f434, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElement2 *self, BSTR* p) get_scopeName;
+			public function HRESULT(IHTMLElement2 *self, int16 containerCapture) setCapture;
+			public function HRESULT(IHTMLElement2 *self) releaseCapture;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onlosecapture;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onlosecapture;
+			public function HRESULT(IHTMLElement2 *self, int32 x, int32 y, BSTR* component) componentFromPoint;
+			public function HRESULT(IHTMLElement2 *self, VARIANT component) doScroll;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onscroll;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onscroll;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_ondrag;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_ondrag;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_ondragend;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_ondragend;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_ondragenter;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_ondragenter;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_ondragover;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_ondragover;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_ondragleave;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_ondragleave;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_ondrop;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_ondrop;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onbeforecut;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onbeforecut;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_oncut;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_oncut;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onbeforecopy;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onbeforecopy;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_oncopy;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_oncopy;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onbeforepaste;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onbeforepaste;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onpaste;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onpaste;
+			public function HRESULT(IHTMLElement2 *self, IHTMLCurrentStyle** p) get_currentStyle;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onpropertychange;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onpropertychange;
+			public function HRESULT(IHTMLElement2 *self, IHTMLRectCollection** pRectCol) getClientRects;
+			public function HRESULT(IHTMLElement2 *self, IHTMLRect** pRect) getBoundingClientRect;
+			public function HRESULT(IHTMLElement2 *self, BSTR propname, BSTR expression, BSTR language) setExpression;
+			public function HRESULT(IHTMLElement2 *self, BSTR propname, VARIANT* expression) getExpression;
+			public function HRESULT(IHTMLElement2 *self, BSTR propname, int16* pfSuccess) removeExpression;
+			public function HRESULT(IHTMLElement2 *self, int16 v) put_tabIndex;
+			public function HRESULT(IHTMLElement2 *self, int16* p) get_tabIndex;
+			public function HRESULT(IHTMLElement2 *self) focus;
+			public function HRESULT(IHTMLElement2 *self, BSTR v) put_accessKey;
+			public function HRESULT(IHTMLElement2 *self, BSTR* p) get_accessKey;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onblur;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onblur;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onfocus;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onfocus;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onresize;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onresize;
+			public function HRESULT(IHTMLElement2 *self) blur;
+			public function HRESULT(IHTMLElement2 *self, IUnknown* pUnk) addFilter;
+			public function HRESULT(IHTMLElement2 *self, IUnknown* pUnk) removeFilter;
+			public function HRESULT(IHTMLElement2 *self, int32* p) get_clientHeight;
+			public function HRESULT(IHTMLElement2 *self, int32* p) get_clientWidth;
+			public function HRESULT(IHTMLElement2 *self, int32* p) get_clientTop;
+			public function HRESULT(IHTMLElement2 *self, int32* p) get_clientLeft;
+			public function HRESULT(IHTMLElement2 *self, BSTR event, IDispatch* pDisp, int16* pfResult) attachEvent;
+			public function HRESULT(IHTMLElement2 *self, BSTR event, IDispatch* pDisp) detachEvent;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_readyState;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onreadystatechange;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onrowsdelete;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onrowsdelete;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onrowsinserted;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onrowsinserted;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_oncellchange;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_oncellchange;
+			public function HRESULT(IHTMLElement2 *self, BSTR v) put_dir;
+			public function HRESULT(IHTMLElement2 *self, BSTR* p) get_dir;
+			public function HRESULT(IHTMLElement2 *self, IDispatch** range) createControlRange;
+			public function HRESULT(IHTMLElement2 *self, int32* p) get_scrollHeight;
+			public function HRESULT(IHTMLElement2 *self, int32* p) get_scrollWidth;
+			public function HRESULT(IHTMLElement2 *self, int32 v) put_scrollTop;
+			public function HRESULT(IHTMLElement2 *self, int32* p) get_scrollTop;
+			public function HRESULT(IHTMLElement2 *self, int32 v) put_scrollLeft;
+			public function HRESULT(IHTMLElement2 *self, int32* p) get_scrollLeft;
+			public function HRESULT(IHTMLElement2 *self) clearAttributes;
+			public function HRESULT(IHTMLElement2 *self, IHTMLElement* mergeThis) mergeAttributes;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_oncontextmenu;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_oncontextmenu;
+			public function HRESULT(IHTMLElement2 *self, BSTR @where, IHTMLElement* insertedElement, IHTMLElement** inserted) insertAdjacentElement;
+			public function HRESULT(IHTMLElement2 *self, IHTMLElement* apply, BSTR @where, IHTMLElement** applied) applyElement;
+			public function HRESULT(IHTMLElement2 *self, BSTR @where, BSTR* text) getAdjacentText;
+			public function HRESULT(IHTMLElement2 *self, BSTR @where, BSTR newText, BSTR* oldText) replaceAdjacentText;
+			public function HRESULT(IHTMLElement2 *self, int16* p) get_canHaveChildren;
+			public function HRESULT(IHTMLElement2 *self, BSTR bstrUrl, VARIANT* pvarFactory, int32* pCookie) addBehavior;
+			public function HRESULT(IHTMLElement2 *self, int32 cookie, int16* pfResult) removeBehavior;
+			public function HRESULT(IHTMLElement2 *self, IHTMLStyle** p) get_runtimeStyle;
+			public function HRESULT(IHTMLElement2 *self, IDispatch** p) get_behaviorUrns;
+			public function HRESULT(IHTMLElement2 *self, BSTR v) put_tagUrn;
+			public function HRESULT(IHTMLElement2 *self, BSTR* p) get_tagUrn;
+			public function HRESULT(IHTMLElement2 *self, VARIANT v) put_onbeforeeditfocus;
+			public function HRESULT(IHTMLElement2 *self, VARIANT* p) get_onbeforeeditfocus;
+			public function HRESULT(IHTMLElement2 *self, int32* p) get_readyStateValue;
+			public function HRESULT(IHTMLElement2 *self, BSTR v, IHTMLElementCollection** pelColl) getElementsByTagName;
+		}
+		[CRepr]
+		public struct IHTMLAttributeCollection3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510469, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAttributeCollection3 *self, BSTR bstrName, IHTMLDOMAttribute** ppNodeOut) getNamedItem;
+			public function HRESULT(IHTMLAttributeCollection3 *self, IHTMLDOMAttribute* pNodeIn, IHTMLDOMAttribute** ppNodeOut) setNamedItem;
+			public function HRESULT(IHTMLAttributeCollection3 *self, BSTR bstrName, IHTMLDOMAttribute** ppNodeOut) removeNamedItem;
+			public function HRESULT(IHTMLAttributeCollection3 *self, int32 index, IHTMLDOMAttribute** ppNodeOut) item;
+			public function HRESULT(IHTMLAttributeCollection3 *self, int32* p) get_length;
+		}
+		[CRepr]
+		public struct IDOMDocumentType : IDispatch
+		{
+			public const new Guid IID = .(0x30510738, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMDocumentType *self, BSTR* p) get_name;
+			public function HRESULT(IDOMDocumentType *self, IDispatch** p) get_entities;
+			public function HRESULT(IDOMDocumentType *self, IDispatch** p) get_notations;
+			public function HRESULT(IDOMDocumentType *self, VARIANT* p) get_publicId;
+			public function HRESULT(IDOMDocumentType *self, VARIANT* p) get_systemId;
+			public function HRESULT(IDOMDocumentType *self, VARIANT* p) get_internalSubset;
+		}
+		[CRepr]
+		public struct IHTMLDocument7 : IDispatch
+		{
+			public const new Guid IID = .(0x305104b8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDocument7 *self, IHTMLWindow2** p) get_defaultView;
+			public function HRESULT(IHTMLDocument7 *self, BSTR text, IHTMLDOMNode** newCDATASectionNode) createCDATASection;
+			public function HRESULT(IHTMLDocument7 *self, IHTMLSelection** ppIHTMLSelection) getSelection;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* pvarNS, BSTR bstrLocalName, IHTMLElementCollection** pelColl) getElementsByTagNameNS;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* pvarNS, BSTR bstrTag, IHTMLElement** newElem) createElementNS;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* pvarNS, BSTR bstrAttrName, IHTMLDOMAttribute** ppAttribute) createAttributeNS;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onmsthumbnailclick;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onmsthumbnailclick;
+			public function HRESULT(IHTMLDocument7 *self, BSTR* p) get_characterSet;
+			public function HRESULT(IHTMLDocument7 *self, BSTR bstrTag, IHTMLElement** newElem) createElement;
+			public function HRESULT(IHTMLDocument7 *self, BSTR bstrAttrName, IHTMLDOMAttribute** ppAttribute) createAttribute;
+			public function HRESULT(IHTMLDocument7 *self, BSTR v, IHTMLElementCollection** pel) getElementsByClassName;
+			public function HRESULT(IHTMLDocument7 *self, BSTR bstrTarget, BSTR bstrData, IDOMProcessingInstruction** newProcessingInstruction) createProcessingInstruction;
+			public function HRESULT(IHTMLDocument7 *self, IHTMLDOMNode* pNodeSource, IHTMLDOMNode3** ppNodeDest) adoptNode;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onmssitemodejumplistitemremoved;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onmssitemodejumplistitemremoved;
+			public function HRESULT(IHTMLDocument7 *self, IHTMLElementCollection** p) get_all;
+			public function HRESULT(IHTMLDocument7 *self, BSTR* p) get_inputEncoding;
+			public function HRESULT(IHTMLDocument7 *self, BSTR* p) get_xmlEncoding;
+			public function HRESULT(IHTMLDocument7 *self, int16 v) put_xmlStandalone;
+			public function HRESULT(IHTMLDocument7 *self, int16* p) get_xmlStandalone;
+			public function HRESULT(IHTMLDocument7 *self, BSTR v) put_xmlVersion;
+			public function HRESULT(IHTMLDocument7 *self, BSTR* p) get_xmlVersion;
+			public function HRESULT(IHTMLDocument7 *self, int16* pfHasAttributes) hasAttributes;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onabort;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onabort;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onblur;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onblur;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_oncanplay;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_oncanplay;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_oncanplaythrough;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_oncanplaythrough;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onchange;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onchange;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_ondrag;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_ondrag;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_ondragend;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_ondragend;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_ondragenter;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_ondragenter;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_ondragleave;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_ondragleave;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_ondragover;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_ondragover;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_ondrop;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_ondrop;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_ondurationchange;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_ondurationchange;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onemptied;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onemptied;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onended;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onended;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onfocus;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onfocus;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_oninput;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_oninput;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onloadeddata;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onloadeddata;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onloadedmetadata;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onloadedmetadata;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onloadstart;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onloadstart;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onpause;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onpause;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onplay;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onplay;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onplaying;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onplaying;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onprogress;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onprogress;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onratechange;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onratechange;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onreset;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onreset;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onscroll;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onscroll;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onseeked;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onseeked;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onseeking;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onseeking;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onselect;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onselect;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onstalled;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onstalled;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onsubmit;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onsubmit;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onsuspend;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onsuspend;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_ontimeupdate;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_ontimeupdate;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onvolumechange;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onvolumechange;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT v) put_onwaiting;
+			public function HRESULT(IHTMLDocument7 *self, VARIANT* p) get_onwaiting;
+			public function HRESULT(IHTMLDocument7 *self) normalize;
+			public function HRESULT(IHTMLDocument7 *self, IHTMLDOMNode* pNodeSource, int16 fDeep, IHTMLDOMNode3** ppNodeDest) importNode;
+			public function HRESULT(IHTMLDocument7 *self, IHTMLWindow2** p) get_parentWindow;
+			public function HRESULT(IHTMLDocument7 *self, IHTMLElement* v) putref_body;
+			public function HRESULT(IHTMLDocument7 *self, IHTMLElement** p) get_body;
+			public function HRESULT(IHTMLDocument7 *self, IHTMLElement** p) get_head;
+		}
+		[CRepr]
+		public struct IHTMLDOMNode : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5da, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMNode *self, int32* p) get_nodeType;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode** p) get_parentNode;
+			public function HRESULT(IHTMLDOMNode *self, int16* fChildren) hasChildNodes;
+			public function HRESULT(IHTMLDOMNode *self, IDispatch** p) get_childNodes;
+			public function HRESULT(IHTMLDOMNode *self, IDispatch** p) get_attributes;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode* newChild, VARIANT refChild, IHTMLDOMNode** node) insertBefore;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode* oldChild, IHTMLDOMNode** node) removeChild;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode* newChild, IHTMLDOMNode* oldChild, IHTMLDOMNode** node) replaceChild;
+			public function HRESULT(IHTMLDOMNode *self, int16 fDeep, IHTMLDOMNode** clonedNode) cloneNode;
+			public function HRESULT(IHTMLDOMNode *self, int16 fDeep, IHTMLDOMNode** removed) removeNode;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode* otherNode, IHTMLDOMNode** swappedNode) swapNode;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode* replacement, IHTMLDOMNode** replaced) replaceNode;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode* newChild, IHTMLDOMNode** node) appendChild;
+			public function HRESULT(IHTMLDOMNode *self, BSTR* p) get_nodeName;
+			public function HRESULT(IHTMLDOMNode *self, VARIANT v) put_nodeValue;
+			public function HRESULT(IHTMLDOMNode *self, VARIANT* p) get_nodeValue;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode** p) get_firstChild;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode** p) get_lastChild;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode** p) get_previousSibling;
+			public function HRESULT(IHTMLDOMNode *self, IHTMLDOMNode** p) get_nextSibling;
+		}
+		[CRepr]
+		public struct IHTMLDOMNode2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f80b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMNode2 *self, IDispatch** p) get_ownerDocument;
+		}
+		[CRepr]
+		public struct IHTMLDOMNode3 : IDispatch
+		{
+			public const new Guid IID = .(0x305106e0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMNode3 *self, VARIANT v) put_prefix;
+			public function HRESULT(IHTMLDOMNode3 *self, VARIANT* p) get_prefix;
+			public function HRESULT(IHTMLDOMNode3 *self, VARIANT* p) get_localName;
+			public function HRESULT(IHTMLDOMNode3 *self, VARIANT* p) get_namespaceURI;
+			public function HRESULT(IHTMLDOMNode3 *self, VARIANT v) put_textContent;
+			public function HRESULT(IHTMLDOMNode3 *self, VARIANT* p) get_textContent;
+			public function HRESULT(IHTMLDOMNode3 *self, IHTMLDOMNode3* otherNode, int16* isEqual) isEqualNode;
+			public function HRESULT(IHTMLDOMNode3 *self, VARIANT* pvarPrefix, VARIANT* pvarNamespaceURI) lookupNamespaceURI;
+			public function HRESULT(IHTMLDOMNode3 *self, VARIANT* pvarNamespaceURI, VARIANT* pvarPrefix) lookupPrefix;
+			public function HRESULT(IHTMLDOMNode3 *self, VARIANT* pvarNamespace, int16* pfDefaultNamespace) isDefaultNamespace;
+			public function HRESULT(IHTMLDOMNode3 *self, IHTMLDOMNode* newChild, IHTMLDOMNode** node) appendChild;
+			public function HRESULT(IHTMLDOMNode3 *self, IHTMLDOMNode* newChild, VARIANT refChild, IHTMLDOMNode** node) insertBefore;
+			public function HRESULT(IHTMLDOMNode3 *self, IHTMLDOMNode* oldChild, IHTMLDOMNode** node) removeChild;
+			public function HRESULT(IHTMLDOMNode3 *self, IHTMLDOMNode* newChild, IHTMLDOMNode* oldChild, IHTMLDOMNode** node) replaceChild;
+			public function HRESULT(IHTMLDOMNode3 *self, IHTMLDOMNode3* otherNode, int16* isSame) isSameNode;
+			public function HRESULT(IHTMLDOMNode3 *self, IHTMLDOMNode* otherNode, uint16* flags) compareDocumentPosition;
+			public function HRESULT(IHTMLDOMNode3 *self, BSTR feature, VARIANT version, int16* pfisSupported) isSupported;
+		}
+		[CRepr]
+		public struct IHTMLDOMAttribute : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4b0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMAttribute *self, BSTR* p) get_nodeName;
+			public function HRESULT(IHTMLDOMAttribute *self, VARIANT v) put_nodeValue;
+			public function HRESULT(IHTMLDOMAttribute *self, VARIANT* p) get_nodeValue;
+			public function HRESULT(IHTMLDOMAttribute *self, int16* p) get_specified;
+		}
+		[CRepr]
+		public struct IHTMLDOMAttribute2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f810, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMAttribute2 *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLDOMAttribute2 *self, BSTR v) put_value;
+			public function HRESULT(IHTMLDOMAttribute2 *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLDOMAttribute2 *self, int16* p) get_expando;
+			public function HRESULT(IHTMLDOMAttribute2 *self, int32* p) get_nodeType;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IHTMLDOMNode** p) get_parentNode;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IDispatch** p) get_childNodes;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IHTMLDOMNode** p) get_firstChild;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IHTMLDOMNode** p) get_lastChild;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IHTMLDOMNode** p) get_previousSibling;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IHTMLDOMNode** p) get_nextSibling;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IDispatch** p) get_attributes;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IDispatch** p) get_ownerDocument;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IHTMLDOMNode* newChild, VARIANT refChild, IHTMLDOMNode** node) insertBefore;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IHTMLDOMNode* newChild, IHTMLDOMNode* oldChild, IHTMLDOMNode** node) replaceChild;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IHTMLDOMNode* oldChild, IHTMLDOMNode** node) removeChild;
+			public function HRESULT(IHTMLDOMAttribute2 *self, IHTMLDOMNode* newChild, IHTMLDOMNode** node) appendChild;
+			public function HRESULT(IHTMLDOMAttribute2 *self, int16* fChildren) hasChildNodes;
+			public function HRESULT(IHTMLDOMAttribute2 *self, int16 fDeep, IHTMLDOMAttribute** clonedNode) cloneNode;
+		}
+		[CRepr]
+		public struct IHTMLDOMAttribute3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510468, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMAttribute3 *self, VARIANT v) put_nodeValue;
+			public function HRESULT(IHTMLDOMAttribute3 *self, VARIANT* p) get_nodeValue;
+			public function HRESULT(IHTMLDOMAttribute3 *self, BSTR v) put_value;
+			public function HRESULT(IHTMLDOMAttribute3 *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLDOMAttribute3 *self, int16* p) get_specified;
+			public function HRESULT(IHTMLDOMAttribute3 *self, IHTMLElement2** p) get_ownerElement;
+		}
+		[CRepr]
+		public struct IHTMLDOMAttribute4 : IDispatch
+		{
+			public const new Guid IID = .(0x305106f9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMAttribute4 *self, VARIANT v) put_nodeValue;
+			public function HRESULT(IHTMLDOMAttribute4 *self, VARIANT* p) get_nodeValue;
+			public function HRESULT(IHTMLDOMAttribute4 *self, BSTR* p) get_nodeName;
+			public function HRESULT(IHTMLDOMAttribute4 *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLDOMAttribute4 *self, BSTR v) put_value;
+			public function HRESULT(IHTMLDOMAttribute4 *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLDOMAttribute4 *self, IHTMLDOMNode** p) get_firstChild;
+			public function HRESULT(IHTMLDOMAttribute4 *self, IHTMLDOMNode** p) get_lastChild;
+			public function HRESULT(IHTMLDOMAttribute4 *self, IDispatch** p) get_childNodes;
+			public function HRESULT(IHTMLDOMAttribute4 *self, int16* pfHasAttributes) hasAttributes;
+			public function HRESULT(IHTMLDOMAttribute4 *self, int16* fChildren) hasChildNodes;
+			public function HRESULT(IHTMLDOMAttribute4 *self) normalize;
+			public function HRESULT(IHTMLDOMAttribute4 *self, int16* p) get_specified;
+		}
+		[CRepr]
+		public struct IHTMLDOMTextNode : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4b1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMTextNode *self, BSTR v) put_data;
+			public function HRESULT(IHTMLDOMTextNode *self, BSTR* p) get_data;
+			public function HRESULT(IHTMLDOMTextNode *self, BSTR* String) toString;
+			public function HRESULT(IHTMLDOMTextNode *self, int32* p) get_length;
+			public function HRESULT(IHTMLDOMTextNode *self, int32 offset, IHTMLDOMNode** pRetNode) splitText;
+		}
+		[CRepr]
+		public struct IHTMLDOMTextNode2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f809, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMTextNode2 *self, int32 offset, int32 Count, BSTR* pbstrsubString) substringData;
+			public function HRESULT(IHTMLDOMTextNode2 *self, BSTR bstrstring) appendData;
+			public function HRESULT(IHTMLDOMTextNode2 *self, int32 offset, BSTR bstrstring) insertData;
+			public function HRESULT(IHTMLDOMTextNode2 *self, int32 offset, int32 Count) deleteData;
+			public function HRESULT(IHTMLDOMTextNode2 *self, int32 offset, int32 Count, BSTR bstrstring) replaceData;
+		}
+		[CRepr]
+		public struct IHTMLDOMTextNode3 : IDispatch
+		{
+			public const new Guid IID = .(0x3051073e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMTextNode3 *self, int32 offset, int32 Count, BSTR* pbstrsubString) substringData;
+			public function HRESULT(IHTMLDOMTextNode3 *self, int32 offset, BSTR bstrstring) insertData;
+			public function HRESULT(IHTMLDOMTextNode3 *self, int32 offset, int32 Count) deleteData;
+			public function HRESULT(IHTMLDOMTextNode3 *self, int32 offset, int32 Count, BSTR bstrstring) replaceData;
+			public function HRESULT(IHTMLDOMTextNode3 *self, int32 offset, IHTMLDOMNode** pRetNode) splitText;
+			public function HRESULT(IHTMLDOMTextNode3 *self, BSTR* p) get_wholeText;
+			public function HRESULT(IHTMLDOMTextNode3 *self, BSTR bstrText, IHTMLDOMNode** ppRetNode) replaceWholeText;
+			public function HRESULT(IHTMLDOMTextNode3 *self, int16* pfHasAttributes) hasAttributes;
+			public function HRESULT(IHTMLDOMTextNode3 *self) normalize;
+		}
+		[CRepr]
+		public struct IHTMLDOMImplementation : IDispatch
+		{
+			public const new Guid IID = .(0x3050f80d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMImplementation *self, BSTR bstrfeature, VARIANT version, int16* pfHasFeature) hasFeature;
+		}
+		[CRepr]
+		public struct IHTMLDOMImplementation2 : IDispatch
+		{
+			public const new Guid IID = .(0x3051073c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMImplementation2 *self, BSTR bstrQualifiedName, VARIANT* pvarPublicId, VARIANT* pvarSystemId, IDOMDocumentType** newDocumentType) createDocumentType;
+			public function HRESULT(IHTMLDOMImplementation2 *self, VARIANT* pvarNS, VARIANT* pvarTagName, IDOMDocumentType* pDocumentType, IHTMLDocument7** ppnewDocument) createDocument;
+			public function HRESULT(IHTMLDOMImplementation2 *self, BSTR bstrTitle, IHTMLDocument7** ppnewDocument) createHTMLDocument;
+			public function HRESULT(IHTMLDOMImplementation2 *self, BSTR bstrfeature, VARIANT version, int16* pfHasFeature) hasFeature;
+		}
+		[CRepr]
+		public struct DispHTMLDOMAttribute : IDispatch
+		{
+			public const new Guid IID = .(0x3050f564, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLDOMTextNode : IDispatch
+		{
+			public const new Guid IID = .(0x3050f565, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLDOMImplementation : IDispatch
+		{
+			public const new Guid IID = .(0x3050f58f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLAttributeCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4c3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAttributeCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLAttributeCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLAttributeCollection *self, VARIANT* name, IDispatch** pdisp) item;
+		}
+		[CRepr]
+		public struct IHTMLAttributeCollection2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f80a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAttributeCollection2 *self, BSTR bstrName, IHTMLDOMAttribute** newretNode) getNamedItem;
+			public function HRESULT(IHTMLAttributeCollection2 *self, IHTMLDOMAttribute* ppNode, IHTMLDOMAttribute** newretNode) setNamedItem;
+			public function HRESULT(IHTMLAttributeCollection2 *self, BSTR bstrName, IHTMLDOMAttribute** newretNode) removeNamedItem;
+		}
+		[CRepr]
+		public struct IHTMLAttributeCollection4 : IDispatch
+		{
+			public const new Guid IID = .(0x305106fa, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAttributeCollection4 *self, VARIANT* pvarNS, BSTR bstrName, IHTMLDOMAttribute2** ppNodeOut) getNamedItemNS;
+			public function HRESULT(IHTMLAttributeCollection4 *self, IHTMLDOMAttribute2* pNodeIn, IHTMLDOMAttribute2** ppNodeOut) setNamedItemNS;
+			public function HRESULT(IHTMLAttributeCollection4 *self, VARIANT* pvarNS, BSTR bstrName, IHTMLDOMAttribute2** ppNodeOut) removeNamedItemNS;
+			public function HRESULT(IHTMLAttributeCollection4 *self, BSTR bstrName, IHTMLDOMAttribute2** ppNodeOut) getNamedItem;
+			public function HRESULT(IHTMLAttributeCollection4 *self, IHTMLDOMAttribute2* pNodeIn, IHTMLDOMAttribute2** ppNodeOut) setNamedItem;
+			public function HRESULT(IHTMLAttributeCollection4 *self, BSTR bstrName, IHTMLDOMAttribute2** ppNodeOut) removeNamedItem;
+			public function HRESULT(IHTMLAttributeCollection4 *self, int32 index, IHTMLDOMAttribute2** ppNodeOut) item;
+			public function HRESULT(IHTMLAttributeCollection4 *self, int32* p) get_length;
+		}
+		[CRepr]
+		public struct IHTMLDOMChildrenCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5ab, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMChildrenCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLDOMChildrenCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLDOMChildrenCollection *self, int32 index, IDispatch** ppItem) item;
+		}
+		[CRepr]
+		public struct IHTMLDOMChildrenCollection2 : IDispatch
+		{
+			public const new Guid IID = .(0x30510791, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMChildrenCollection2 *self, int32 index, IDispatch** ppItem) item;
+		}
+		[CRepr]
+		public struct DispHTMLAttributeCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f56c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispStaticNodeList : IDispatch
+		{
+			public const new Guid IID = .(0x3050f59b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispDOMChildrenCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f577, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLElementEvents4 : IDispatch
+		{
+			public const new Guid IID = .(0x3051075e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLElementEvents3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f59f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f60f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f33c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IRulesAppliedCollection : IDispatch
+		{
+			public const new Guid IID = .(0x305104be, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IRulesAppliedCollection *self, int32 index, IRulesApplied** ppRulesApplied) item;
+			public function HRESULT(IRulesAppliedCollection *self, int32* p) get_length;
+			public function HRESULT(IRulesAppliedCollection *self, IHTMLElement** p) get_element;
+			public function HRESULT(IRulesAppliedCollection *self, BSTR name, IRulesApplied** ppRulesApplied) propertyInheritedFrom;
+			public function HRESULT(IRulesAppliedCollection *self, int32* p) get_propertyCount;
+			public function HRESULT(IRulesAppliedCollection *self, int32 index, BSTR* pbstrProperty) property;
+			public function HRESULT(IRulesAppliedCollection *self, BSTR name, int32 index, IRulesApplied** ppRulesApplied) propertyInheritedTrace;
+			public function HRESULT(IRulesAppliedCollection *self, BSTR name, int32* pLength) propertyInheritedTraceLength;
+		}
+		[CRepr]
+		public struct IHTMLElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f673, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElement3 *self, IHTMLElement* mergeThis, VARIANT* pvarFlags) mergeAttributes;
+			public function HRESULT(IHTMLElement3 *self, int16* p) get_isMultiLine;
+			public function HRESULT(IHTMLElement3 *self, int16* p) get_canHaveHTML;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onlayoutcomplete;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onlayoutcomplete;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onpage;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onpage;
+			public function HRESULT(IHTMLElement3 *self, int16 v) put_inflateBlock;
+			public function HRESULT(IHTMLElement3 *self, int16* p) get_inflateBlock;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onbeforedeactivate;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onbeforedeactivate;
+			public function HRESULT(IHTMLElement3 *self) setActive;
+			public function HRESULT(IHTMLElement3 *self, BSTR v) put_contentEditable;
+			public function HRESULT(IHTMLElement3 *self, BSTR* p) get_contentEditable;
+			public function HRESULT(IHTMLElement3 *self, int16* p) get_isContentEditable;
+			public function HRESULT(IHTMLElement3 *self, int16 v) put_hideFocus;
+			public function HRESULT(IHTMLElement3 *self, int16* p) get_hideFocus;
+			public function HRESULT(IHTMLElement3 *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLElement3 *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLElement3 *self, int16* p) get_isDisabled;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onmove;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onmove;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_oncontrolselect;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_oncontrolselect;
+			public function HRESULT(IHTMLElement3 *self, BSTR bstrEventName, VARIANT* pvarEventObject, int16* pfCancelled) fireEvent;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onresizestart;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onresizestart;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onresizeend;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onresizeend;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onmovestart;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onmovestart;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onmoveend;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onmoveend;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onmouseenter;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onmouseenter;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onmouseleave;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onmouseleave;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_onactivate;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_onactivate;
+			public function HRESULT(IHTMLElement3 *self, VARIANT v) put_ondeactivate;
+			public function HRESULT(IHTMLElement3 *self, VARIANT* p) get_ondeactivate;
+			public function HRESULT(IHTMLElement3 *self, int16* pfRet) dragDrop;
+			public function HRESULT(IHTMLElement3 *self, int32* p) get_glyphMode;
+		}
+		[CRepr]
+		public struct IHTMLElement4 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f80f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElement4 *self, VARIANT v) put_onmousewheel;
+			public function HRESULT(IHTMLElement4 *self, VARIANT* p) get_onmousewheel;
+			public function HRESULT(IHTMLElement4 *self) normalize;
+			public function HRESULT(IHTMLElement4 *self, BSTR bstrname, IHTMLDOMAttribute** ppAttribute) getAttributeNode;
+			public function HRESULT(IHTMLElement4 *self, IHTMLDOMAttribute* pattr, IHTMLDOMAttribute** ppretAttribute) setAttributeNode;
+			public function HRESULT(IHTMLElement4 *self, IHTMLDOMAttribute* pattr, IHTMLDOMAttribute** ppretAttribute) removeAttributeNode;
+			public function HRESULT(IHTMLElement4 *self, VARIANT v) put_onbeforeactivate;
+			public function HRESULT(IHTMLElement4 *self, VARIANT* p) get_onbeforeactivate;
+			public function HRESULT(IHTMLElement4 *self, VARIANT v) put_onfocusin;
+			public function HRESULT(IHTMLElement4 *self, VARIANT* p) get_onfocusin;
+			public function HRESULT(IHTMLElement4 *self, VARIANT v) put_onfocusout;
+			public function HRESULT(IHTMLElement4 *self, VARIANT* p) get_onfocusout;
+		}
+		[CRepr]
+		public struct IElementSelector : IDispatch
+		{
+			public const new Guid IID = .(0x30510463, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementSelector *self, BSTR v, IHTMLElement** pel) querySelector;
+			public function HRESULT(IElementSelector *self, BSTR v, IHTMLDOMChildrenCollection** pel) querySelectorAll;
+		}
+		[CRepr]
+		public struct IHTMLElementRender : IUnknown
+		{
+			public const new Guid IID = .(0x3050f669, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElementRender *self, HDC hDC) DrawToDC;
+			public function HRESULT(IHTMLElementRender *self, BSTR bstrPrinterName, HDC hDC) SetDocumentPrinter;
+		}
+		[CRepr]
+		public struct IHTMLUniqueName : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4d0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLUniqueName *self, int32* p) get_uniqueNumber;
+			public function HRESULT(IHTMLUniqueName *self, BSTR* p) get_uniqueID;
+		}
+		[CRepr]
+		public struct IHTMLElement5 : IDispatch
+		{
+			public const new Guid IID = .(0x3051045d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElement5 *self, BSTR bstrname, IHTMLDOMAttribute2** ppretAttribute) getAttributeNode;
+			public function HRESULT(IHTMLElement5 *self, IHTMLDOMAttribute2* pattr, IHTMLDOMAttribute2** ppretAttribute) setAttributeNode;
+			public function HRESULT(IHTMLElement5 *self, IHTMLDOMAttribute2* pattr, IHTMLDOMAttribute2** ppretAttribute) removeAttributeNode;
+			public function HRESULT(IHTMLElement5 *self, BSTR name, int16* pfHasAttribute) hasAttribute;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_role;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_role;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaBusy;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaBusy;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaChecked;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaChecked;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaDisabled;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaDisabled;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaExpanded;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaExpanded;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaHaspopup;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaHaspopup;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaHidden;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaHidden;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaInvalid;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaInvalid;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaMultiselectable;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaMultiselectable;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaPressed;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaPressed;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaReadonly;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaReadonly;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaRequired;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaRequired;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaSecret;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaSecret;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaSelected;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaSelected;
+			public function HRESULT(IHTMLElement5 *self, BSTR strAttributeName, VARIANT* AttributeValue) getAttribute;
+			public function HRESULT(IHTMLElement5 *self, BSTR strAttributeName, VARIANT AttributeValue) setAttribute;
+			public function HRESULT(IHTMLElement5 *self, BSTR strAttributeName, int16* pfSuccess) removeAttribute;
+			public function HRESULT(IHTMLElement5 *self, IHTMLAttributeCollection3** p) get_attributes;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaValuenow;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaValuenow;
+			public function HRESULT(IHTMLElement5 *self, int16 v) put_ariaPosinset;
+			public function HRESULT(IHTMLElement5 *self, int16* p) get_ariaPosinset;
+			public function HRESULT(IHTMLElement5 *self, int16 v) put_ariaSetsize;
+			public function HRESULT(IHTMLElement5 *self, int16* p) get_ariaSetsize;
+			public function HRESULT(IHTMLElement5 *self, int16 v) put_ariaLevel;
+			public function HRESULT(IHTMLElement5 *self, int16* p) get_ariaLevel;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaValuemin;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaValuemin;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaValuemax;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaValuemax;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaControls;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaControls;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaDescribedby;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaDescribedby;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaFlowto;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaFlowto;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaLabelledby;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaLabelledby;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaActivedescendant;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaActivedescendant;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaOwns;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaOwns;
+			public function HRESULT(IHTMLElement5 *self, int16* pfHasAttributes) hasAttributes;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaLive;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaLive;
+			public function HRESULT(IHTMLElement5 *self, BSTR v) put_ariaRelevant;
+			public function HRESULT(IHTMLElement5 *self, BSTR* p) get_ariaRelevant;
+		}
+		[CRepr]
+		public struct IHTMLElement6 : IDispatch
+		{
+			public const new Guid IID = .(0x305106f8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElement6 *self, VARIANT* pvarNS, BSTR strAttributeName, VARIANT* AttributeValue) getAttributeNS;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* pvarNS, BSTR strAttributeName, VARIANT* pvarAttributeValue) setAttributeNS;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* pvarNS, BSTR strAttributeName) removeAttributeNS;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* pvarNS, BSTR bstrname, IHTMLDOMAttribute2** ppretAttribute) getAttributeNodeNS;
+			public function HRESULT(IHTMLElement6 *self, IHTMLDOMAttribute2* pattr, IHTMLDOMAttribute2** ppretAttribute) setAttributeNodeNS;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* pvarNS, BSTR name, int16* pfHasAttribute) hasAttributeNS;
+			public function HRESULT(IHTMLElement6 *self, BSTR strAttributeName, VARIANT* AttributeValue) getAttribute;
+			public function HRESULT(IHTMLElement6 *self, BSTR strAttributeName, VARIANT* pvarAttributeValue) setAttribute;
+			public function HRESULT(IHTMLElement6 *self, BSTR strAttributeName) removeAttribute;
+			public function HRESULT(IHTMLElement6 *self, BSTR strAttributeName, IHTMLDOMAttribute2** ppretAttribute) getAttributeNode;
+			public function HRESULT(IHTMLElement6 *self, IHTMLDOMAttribute2* pattr, IHTMLDOMAttribute2** ppretAttribute) setAttributeNode;
+			public function HRESULT(IHTMLElement6 *self, IHTMLDOMAttribute2* pattr, IHTMLDOMAttribute2** ppretAttribute) removeAttributeNode;
+			public function HRESULT(IHTMLElement6 *self, BSTR name, int16* pfHasAttribute) hasAttribute;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* varNS, BSTR bstrLocalName, IHTMLElementCollection** pelColl) getElementsByTagNameNS;
+			public function HRESULT(IHTMLElement6 *self, BSTR* p) get_tagName;
+			public function HRESULT(IHTMLElement6 *self, BSTR* p) get_nodeName;
+			public function HRESULT(IHTMLElement6 *self, BSTR v, IHTMLElementCollection** pel) getElementsByClassName;
+			public function HRESULT(IHTMLElement6 *self, BSTR v, int16* pfMatches) msMatchesSelector;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onabort;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onabort;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_oncanplay;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_oncanplay;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_oncanplaythrough;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_oncanplaythrough;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onchange;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onchange;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_ondurationchange;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_ondurationchange;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onemptied;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onemptied;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onended;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onended;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_oninput;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_oninput;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onloadeddata;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onloadeddata;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onloadedmetadata;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onloadedmetadata;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onloadstart;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onloadstart;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onpause;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onpause;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onplay;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onplay;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onplaying;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onplaying;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onprogress;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onprogress;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onratechange;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onratechange;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onreset;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onreset;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onseeked;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onseeked;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onseeking;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onseeking;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onselect;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onselect;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onstalled;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onstalled;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onsubmit;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onsubmit;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onsuspend;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onsuspend;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_ontimeupdate;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_ontimeupdate;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onvolumechange;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onvolumechange;
+			public function HRESULT(IHTMLElement6 *self, VARIANT v) put_onwaiting;
+			public function HRESULT(IHTMLElement6 *self, VARIANT* p) get_onwaiting;
+			public function HRESULT(IHTMLElement6 *self, int16* pfHasAttributes) hasAttributes;
+		}
+		[CRepr]
+		public struct IHTMLElement7 : IDispatch
+		{
+			public const new Guid IID = .(0x305107aa, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmspointerdown;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmspointerdown;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmspointermove;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmspointermove;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmspointerup;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmspointerup;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmspointerover;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmspointerover;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmspointerout;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmspointerout;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmspointercancel;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmspointercancel;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmspointerhover;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmspointerhover;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmslostpointercapture;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmslostpointercapture;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsgotpointercapture;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsgotpointercapture;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsgesturestart;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsgesturestart;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsgesturechange;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsgesturechange;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsgestureend;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsgestureend;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsgesturehold;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsgesturehold;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsgesturetap;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsgesturetap;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsgesturedoubletap;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsgesturedoubletap;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsinertiastart;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsinertiastart;
+			public function HRESULT(IHTMLElement7 *self, int32 pointerId) msSetPointerCapture;
+			public function HRESULT(IHTMLElement7 *self, int32 pointerId) msReleasePointerCapture;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmstransitionstart;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmstransitionstart;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmstransitionend;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmstransitionend;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsanimationstart;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsanimationstart;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsanimationend;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsanimationend;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsanimationiteration;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsanimationiteration;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_oninvalid;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_oninvalid;
+			public function HRESULT(IHTMLElement7 *self, BSTR v) put_xmsAcceleratorKey;
+			public function HRESULT(IHTMLElement7 *self, BSTR* p) get_xmsAcceleratorKey;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_spellcheck;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_spellcheck;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_onmsmanipulationstatechanged;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_onmsmanipulationstatechanged;
+			public function HRESULT(IHTMLElement7 *self, VARIANT v) put_oncuechange;
+			public function HRESULT(IHTMLElement7 *self, VARIANT* p) get_oncuechange;
+		}
+		[CRepr]
+		public struct IHTMLElementAppliedStyles : IDispatch
+		{
+			public const new Guid IID = .(0x305104bd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElementAppliedStyles *self, IRulesAppliedCollection** ppRulesAppliedCollection) msGetRulesApplied;
+			public function HRESULT(IHTMLElementAppliedStyles *self, VARIANT varContext, IRulesAppliedCollection** ppRulesAppliedCollection) msGetRulesAppliedWithAncestor;
+		}
+		[CRepr]
+		public struct IElementTraversal : IDispatch
+		{
+			public const new Guid IID = .(0x30510736, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementTraversal *self, IHTMLElement** p) get_firstElementChild;
+			public function HRESULT(IElementTraversal *self, IHTMLElement** p) get_lastElementChild;
+			public function HRESULT(IElementTraversal *self, IHTMLElement** p) get_previousElementSibling;
+			public function HRESULT(IElementTraversal *self, IHTMLElement** p) get_nextElementSibling;
+			public function HRESULT(IElementTraversal *self, int32* p) get_childElementCount;
+		}
+		[CRepr]
+		public struct IHTMLDatabinding : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3f2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDatabinding *self, BSTR v) put_dataFld;
+			public function HRESULT(IHTMLDatabinding *self, BSTR* p) get_dataFld;
+			public function HRESULT(IHTMLDatabinding *self, BSTR v) put_dataSrc;
+			public function HRESULT(IHTMLDatabinding *self, BSTR* p) get_dataSrc;
+			public function HRESULT(IHTMLDatabinding *self, BSTR v) put_dataFormatAs;
+			public function HRESULT(IHTMLDatabinding *self, BSTR* p) get_dataFormatAs;
+		}
+		[CRepr]
+		public struct IHTMLDocument : IDispatch
+		{
+			public const new Guid IID = .(0x626fc520, 0xa41e, 0x11cf, 0xa7, 0x31, 0x00, 0xa0, 0xc9, 0x08, 0x26, 0x37);
+			
+			public function HRESULT(IHTMLDocument *self, IDispatch** p) get_Script;
+		}
+		[CRepr]
+		public struct IHTMLElementDefaults : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6c9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElementDefaults *self, IHTMLStyle** p) get_style;
+			public function HRESULT(IHTMLElementDefaults *self, int16 v) put_tabStop;
+			public function HRESULT(IHTMLElementDefaults *self, int16* p) get_tabStop;
+			public function HRESULT(IHTMLElementDefaults *self, int16 v) put_viewInheritStyle;
+			public function HRESULT(IHTMLElementDefaults *self, int16* p) get_viewInheritStyle;
+			public function HRESULT(IHTMLElementDefaults *self, int16 v) put_viewMasterTab;
+			public function HRESULT(IHTMLElementDefaults *self, int16* p) get_viewMasterTab;
+			public function HRESULT(IHTMLElementDefaults *self, int32 v) put_scrollSegmentX;
+			public function HRESULT(IHTMLElementDefaults *self, int32* p) get_scrollSegmentX;
+			public function HRESULT(IHTMLElementDefaults *self, int32 v) put_scrollSegmentY;
+			public function HRESULT(IHTMLElementDefaults *self, int32* p) get_scrollSegmentY;
+			public function HRESULT(IHTMLElementDefaults *self, int16 v) put_isMultiLine;
+			public function HRESULT(IHTMLElementDefaults *self, int16* p) get_isMultiLine;
+			public function HRESULT(IHTMLElementDefaults *self, BSTR v) put_contentEditable;
+			public function HRESULT(IHTMLElementDefaults *self, BSTR* p) get_contentEditable;
+			public function HRESULT(IHTMLElementDefaults *self, int16 v) put_canHaveHTML;
+			public function HRESULT(IHTMLElementDefaults *self, int16* p) get_canHaveHTML;
+			public function HRESULT(IHTMLElementDefaults *self, IHTMLDocument* v) putref_viewLink;
+			public function HRESULT(IHTMLElementDefaults *self, IHTMLDocument** p) get_viewLink;
+			public function HRESULT(IHTMLElementDefaults *self, int16 v) put_frozen;
+			public function HRESULT(IHTMLElementDefaults *self, int16* p) get_frozen;
+		}
+		[CRepr]
+		public struct DispHTMLDefaults : IDispatch
+		{
+			public const new Guid IID = .(0x3050f58c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTCDefaultDispatch : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4fd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTCDefaultDispatch *self, IHTMLElement** p) get_element;
+			public function HRESULT(IHTCDefaultDispatch *self, IHTMLEventObj** eventObj) createEventObject;
+			public function HRESULT(IHTCDefaultDispatch *self, IDispatch** p) get_defaults;
+			public function HRESULT(IHTCDefaultDispatch *self, IDispatch** p) get_document;
+		}
+		[CRepr]
+		public struct IHTCPropertyBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5df, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTCPropertyBehavior *self) fireChange;
+			public function HRESULT(IHTCPropertyBehavior *self, VARIANT v) put_value;
+			public function HRESULT(IHTCPropertyBehavior *self, VARIANT* p) get_value;
+		}
+		[CRepr]
+		public struct IHTCMethodBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f631, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTCEventBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4ff, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTCEventBehavior *self, IHTMLEventObj* pvar) fire;
+		}
+		[CRepr]
+		public struct IHTCAttachBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5f4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTCAttachBehavior *self, IDispatch* evt) fireEvent;
+			public function HRESULT(IHTCAttachBehavior *self) detachEvent;
+		}
+		[CRepr]
+		public struct IHTCAttachBehavior2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f7eb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTCAttachBehavior2 *self, VARIANT evt) fireEvent;
+		}
+		[CRepr]
+		public struct IHTCDescBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5dc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTCDescBehavior *self, BSTR* p) get_urn;
+			public function HRESULT(IHTCDescBehavior *self, BSTR* p) get_name;
+		}
+		[CRepr]
+		public struct DispHTCDefaultDispatch : IDispatch
+		{
+			public const new Guid IID = .(0x3050f573, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTCPropertyBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f57f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTCMethodBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f587, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTCEventBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f574, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTCAttachBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f583, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTCDescBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f57e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLUrnCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5e2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLUrnCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLUrnCollection *self, int32 index, BSTR* ppUrn) item;
+		}
+		[CRepr]
+		public struct DispHTMLUrnCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f551, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLGenericElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4b7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLGenericElement *self, IDispatch** p) get_recordset;
+			public function HRESULT(IHTMLGenericElement *self, BSTR dataMember, VARIANT* hierarchy, IDispatch** ppRecordset) namedRecordset;
+		}
+		[CRepr]
+		public struct DispHTMLGenericElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f563, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetRuleApplied : IDispatch
+		{
+			public const new Guid IID = .(0x305104c1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetRuleApplied *self, int32* p) get_msSpecificity;
+			public function HRESULT(IHTMLStyleSheetRuleApplied *self, int32 index, int32* p) msGetSpecificity;
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetRule2 : IDispatch
+		{
+			public const new Guid IID = .(0x305106fd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetRule2 *self, BSTR v) put_selectorText;
+			public function HRESULT(IHTMLStyleSheetRule2 *self, BSTR* p) get_selectorText;
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetRulesCollection2 : IDispatch
+		{
+			public const new Guid IID = .(0x305106e8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetRulesCollection2 *self, int32* p) get_length;
+			public function HRESULT(IHTMLStyleSheetRulesCollection2 *self, int32 index, IHTMLCSSRule** ppHTMLCSSRule) item;
+		}
+		[CRepr]
+		public struct DispHTMLStyleSheetRule : IDispatch
+		{
+			public const new Guid IID = .(0x3050f50e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLStyleSheetRulesCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f52f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetPage : IDispatch
+		{
+			public const new Guid IID = .(0x3050f7ee, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetPage *self, BSTR* p) get_selector;
+			public function HRESULT(IHTMLStyleSheetPage *self, BSTR* p) get_pseudoClass;
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetPage2 : IDispatch
+		{
+			public const new Guid IID = .(0x305106ed, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetPage2 *self, BSTR v) put_selectorText;
+			public function HRESULT(IHTMLStyleSheetPage2 *self, BSTR* p) get_selectorText;
+			public function HRESULT(IHTMLStyleSheetPage2 *self, IHTMLRuleStyle** p) get_style;
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetPagesCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f7f0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetPagesCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLStyleSheetPagesCollection *self, int32 index, IHTMLStyleSheetPage** ppHTMLStyleSheetPage) item;
+		}
+		[CRepr]
+		public struct DispHTMLStyleSheetPage : IDispatch
+		{
+			public const new Guid IID = .(0x3050f540, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLStyleSheetPagesCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f543, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetsCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f37e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetsCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLStyleSheetsCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLStyleSheetsCollection *self, VARIANT* pvarIndex, VARIANT* pvarResult) item;
+		}
+		[CRepr]
+		public struct IHTMLStyleSheet2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3d1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheet2 *self, IHTMLStyleSheetPagesCollection** p) get_pages;
+			public function HRESULT(IHTMLStyleSheet2 *self, BSTR bstrSelector, BSTR bstrStyle, int32 lIndex, int32* plNewIndex) addPageRule;
+		}
+		[CRepr]
+		public struct IHTMLStyleSheet3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510496, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheet3 *self, BSTR v) put_href;
+			public function HRESULT(IHTMLStyleSheet3 *self, BSTR* p) get_href;
+			public function HRESULT(IHTMLStyleSheet3 *self, int16* p) get_isAlternate;
+			public function HRESULT(IHTMLStyleSheet3 *self, int16* p) get_isPrefAlternate;
+		}
+		[CRepr]
+		public struct IHTMLStyleSheet4 : IDispatch
+		{
+			public const new Guid IID = .(0x305106f4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheet4 *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLStyleSheet4 *self, VARIANT* p) get_href;
+			public function HRESULT(IHTMLStyleSheet4 *self, BSTR* p) get_title;
+			public function HRESULT(IHTMLStyleSheet4 *self, IHTMLElement** p) get_ownerNode;
+			public function HRESULT(IHTMLStyleSheet4 *self, IHTMLCSSRule** p) get_ownerRule;
+			public function HRESULT(IHTMLStyleSheet4 *self, IHTMLStyleSheetRulesCollection** p) get_cssRules;
+			public function HRESULT(IHTMLStyleSheet4 *self, VARIANT* p) get_media;
+			public function HRESULT(IHTMLStyleSheet4 *self, BSTR bstrRule, int32 lIndex, int32* plNewIndex) insertRule;
+			public function HRESULT(IHTMLStyleSheet4 *self, int32 lIndex) deleteRule;
+		}
+		[CRepr]
+		public struct DispHTMLStyleSheet : IDispatch
+		{
+			public const new Guid IID = .(0x3050f58d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetsCollection2 : IDispatch
+		{
+			public const new Guid IID = .(0x305106e7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetsCollection2 *self, int32 index, VARIANT* pvarResult) item;
+		}
+		[CRepr]
+		public struct DispHTMLStyleSheetsCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f547, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLLinkElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f61d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLLinkElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3cc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLLinkElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f205, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLinkElement *self, BSTR v) put_href;
+			public function HRESULT(IHTMLLinkElement *self, BSTR* p) get_href;
+			public function HRESULT(IHTMLLinkElement *self, BSTR v) put_rel;
+			public function HRESULT(IHTMLLinkElement *self, BSTR* p) get_rel;
+			public function HRESULT(IHTMLLinkElement *self, BSTR v) put_rev;
+			public function HRESULT(IHTMLLinkElement *self, BSTR* p) get_rev;
+			public function HRESULT(IHTMLLinkElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLLinkElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLLinkElement *self, BSTR* p) get_readyState;
+			public function HRESULT(IHTMLLinkElement *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLLinkElement *self, VARIANT* p) get_onreadystatechange;
+			public function HRESULT(IHTMLLinkElement *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLLinkElement *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLLinkElement *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLLinkElement *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLLinkElement *self, IHTMLStyleSheet** p) get_styleSheet;
+			public function HRESULT(IHTMLLinkElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLLinkElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLLinkElement *self, BSTR v) put_media;
+			public function HRESULT(IHTMLLinkElement *self, BSTR* p) get_media;
+		}
+		[CRepr]
+		public struct IHTMLLinkElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4e5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLinkElement2 *self, BSTR v) put_target;
+			public function HRESULT(IHTMLLinkElement2 *self, BSTR* p) get_target;
+		}
+		[CRepr]
+		public struct IHTMLLinkElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f81e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLinkElement3 *self, BSTR v) put_charset;
+			public function HRESULT(IHTMLLinkElement3 *self, BSTR* p) get_charset;
+			public function HRESULT(IHTMLLinkElement3 *self, BSTR v) put_hreflang;
+			public function HRESULT(IHTMLLinkElement3 *self, BSTR* p) get_hreflang;
+		}
+		[CRepr]
+		public struct IHTMLLinkElement4 : IDispatch
+		{
+			public const new Guid IID = .(0x3051043a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLinkElement4 *self, BSTR v) put_href;
+			public function HRESULT(IHTMLLinkElement4 *self, BSTR* p) get_href;
+		}
+		[CRepr]
+		public struct IHTMLLinkElement5 : IDispatch
+		{
+			public const new Guid IID = .(0x30510726, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLinkElement5 *self, IHTMLStyleSheet** p) get_sheet;
+		}
+		[CRepr]
+		public struct DispHTMLLinkElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f524, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLTxtRange : IDispatch
+		{
+			public const new Guid IID = .(0x3050f220, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTxtRange *self, BSTR* p) get_htmlText;
+			public function HRESULT(IHTMLTxtRange *self, BSTR v) put_text;
+			public function HRESULT(IHTMLTxtRange *self, BSTR* p) get_text;
+			public function HRESULT(IHTMLTxtRange *self, IHTMLElement** parent) parentElement;
+			public function HRESULT(IHTMLTxtRange *self, IHTMLTxtRange** Duplicate) duplicate;
+			public function HRESULT(IHTMLTxtRange *self, IHTMLTxtRange* Range, int16* InRange) inRange;
+			public function HRESULT(IHTMLTxtRange *self, IHTMLTxtRange* Range, int16* IsEqual) isEqual;
+			public function HRESULT(IHTMLTxtRange *self, int16 fStart) scrollIntoView;
+			public function HRESULT(IHTMLTxtRange *self, int16 Start) collapse;
+			public function HRESULT(IHTMLTxtRange *self, BSTR Unit, int16* Success) expand;
+			public function HRESULT(IHTMLTxtRange *self, BSTR Unit, int32 Count, int32* ActualCount) move;
+			public function HRESULT(IHTMLTxtRange *self, BSTR Unit, int32 Count, int32* ActualCount) moveStart;
+			public function HRESULT(IHTMLTxtRange *self, BSTR Unit, int32 Count, int32* ActualCount) moveEnd;
+			public function HRESULT(IHTMLTxtRange *self) select;
+			public function HRESULT(IHTMLTxtRange *self, BSTR html) pasteHTML;
+			public function HRESULT(IHTMLTxtRange *self, IHTMLElement* element) moveToElementText;
+			public function HRESULT(IHTMLTxtRange *self, BSTR how, IHTMLTxtRange* SourceRange) setEndPoint;
+			public function HRESULT(IHTMLTxtRange *self, BSTR how, IHTMLTxtRange* SourceRange, int32* ret) compareEndPoints;
+			public function HRESULT(IHTMLTxtRange *self, BSTR String, int32 count, int32 Flags, int16* Success) findText;
+			public function HRESULT(IHTMLTxtRange *self, int32 x, int32 y) moveToPoint;
+			public function HRESULT(IHTMLTxtRange *self, BSTR* Boolmark) getBookmark;
+			public function HRESULT(IHTMLTxtRange *self, BSTR Bookmark, int16* Success) moveToBookmark;
+			public function HRESULT(IHTMLTxtRange *self, BSTR cmdID, int16* pfRet) queryCommandSupported;
+			public function HRESULT(IHTMLTxtRange *self, BSTR cmdID, int16* pfRet) queryCommandEnabled;
+			public function HRESULT(IHTMLTxtRange *self, BSTR cmdID, int16* pfRet) queryCommandState;
+			public function HRESULT(IHTMLTxtRange *self, BSTR cmdID, int16* pfRet) queryCommandIndeterm;
+			public function HRESULT(IHTMLTxtRange *self, BSTR cmdID, BSTR* pcmdText) queryCommandText;
+			public function HRESULT(IHTMLTxtRange *self, BSTR cmdID, VARIANT* pcmdValue) queryCommandValue;
+			public function HRESULT(IHTMLTxtRange *self, BSTR cmdID, int16 showUI, VARIANT value, int16* pfRet) execCommand;
+			public function HRESULT(IHTMLTxtRange *self, BSTR cmdID, int16* pfRet) execCommandShowHelp;
+		}
+		[CRepr]
+		public struct IHTMLTextRangeMetrics : IDispatch
+		{
+			public const new Guid IID = .(0x3050f40b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTextRangeMetrics *self, int32* p) get_offsetTop;
+			public function HRESULT(IHTMLTextRangeMetrics *self, int32* p) get_offsetLeft;
+			public function HRESULT(IHTMLTextRangeMetrics *self, int32* p) get_boundingTop;
+			public function HRESULT(IHTMLTextRangeMetrics *self, int32* p) get_boundingLeft;
+			public function HRESULT(IHTMLTextRangeMetrics *self, int32* p) get_boundingWidth;
+			public function HRESULT(IHTMLTextRangeMetrics *self, int32* p) get_boundingHeight;
+		}
+		[CRepr]
+		public struct IHTMLTextRangeMetrics2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4a6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTextRangeMetrics2 *self, IHTMLRectCollection** pRectCol) getClientRects;
+			public function HRESULT(IHTMLTextRangeMetrics2 *self, IHTMLRect** pRect) getBoundingClientRect;
+		}
+		[CRepr]
+		public struct IHTMLTxtRangeCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f7ed, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTxtRangeCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLTxtRangeCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLTxtRangeCollection *self, VARIANT* pvarIndex, VARIANT* pvarResult) item;
+		}
+		[CRepr]
+		public struct IHTMLDOMRange : IDispatch
+		{
+			public const new Guid IID = .(0x305104ae, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMRange *self, IHTMLDOMNode** p) get_startContainer;
+			public function HRESULT(IHTMLDOMRange *self, int32* p) get_startOffset;
+			public function HRESULT(IHTMLDOMRange *self, IHTMLDOMNode** p) get_endContainer;
+			public function HRESULT(IHTMLDOMRange *self, int32* p) get_endOffset;
+			public function HRESULT(IHTMLDOMRange *self, int16* p) get_collapsed;
+			public function HRESULT(IHTMLDOMRange *self, IHTMLDOMNode** p) get_commonAncestorContainer;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* refNode, int32 offset) setStart;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* refNode, int32 offset) setEnd;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* refNode) setStartBefore;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* refNode) setStartAfter;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* refNode) setEndBefore;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* refNode) setEndAfter;
+			public function HRESULT(IHTMLDOMRange *self, int16 toStart) collapse;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* refNode) selectNode;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* refNode) selectNodeContents;
+			public function HRESULT(IHTMLDOMRange *self, int16 how, IDispatch* sourceRange, int32* compareResult) compareBoundaryPoints;
+			public function HRESULT(IHTMLDOMRange *self) deleteContents;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch** ppDocumentFragment) extractContents;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch** ppDocumentFragment) cloneContents;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* newNode) insertNode;
+			public function HRESULT(IHTMLDOMRange *self, IDispatch* newParent) surroundContents;
+			public function HRESULT(IHTMLDOMRange *self, IHTMLDOMRange** ppClonedRange) cloneRange;
+			public function HRESULT(IHTMLDOMRange *self, BSTR* pRangeString) toString;
+			public function HRESULT(IHTMLDOMRange *self) detach;
+			public function HRESULT(IHTMLDOMRange *self, IHTMLRectCollection** ppRectCol) getClientRects;
+			public function HRESULT(IHTMLDOMRange *self, IHTMLRect** ppRect) getBoundingClientRect;
+		}
+		[CRepr]
+		public struct DispHTMLDOMRange : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5a3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLFormElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f614, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLFormElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f364, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLFormElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1f7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFormElement *self, BSTR v) put_action;
+			public function HRESULT(IHTMLFormElement *self, BSTR* p) get_action;
+			public function HRESULT(IHTMLFormElement *self, BSTR v) put_dir;
+			public function HRESULT(IHTMLFormElement *self, BSTR* p) get_dir;
+			public function HRESULT(IHTMLFormElement *self, BSTR v) put_encoding;
+			public function HRESULT(IHTMLFormElement *self, BSTR* p) get_encoding;
+			public function HRESULT(IHTMLFormElement *self, BSTR v) put_method;
+			public function HRESULT(IHTMLFormElement *self, BSTR* p) get_method;
+			public function HRESULT(IHTMLFormElement *self, IDispatch** p) get_elements;
+			public function HRESULT(IHTMLFormElement *self, BSTR v) put_target;
+			public function HRESULT(IHTMLFormElement *self, BSTR* p) get_target;
+			public function HRESULT(IHTMLFormElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLFormElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLFormElement *self, VARIANT v) put_onsubmit;
+			public function HRESULT(IHTMLFormElement *self, VARIANT* p) get_onsubmit;
+			public function HRESULT(IHTMLFormElement *self, VARIANT v) put_onreset;
+			public function HRESULT(IHTMLFormElement *self, VARIANT* p) get_onreset;
+			public function HRESULT(IHTMLFormElement *self) submit;
+			public function HRESULT(IHTMLFormElement *self) reset;
+			public function HRESULT(IHTMLFormElement *self, int32 v) put_length;
+			public function HRESULT(IHTMLFormElement *self, int32* p) get_length;
+			public function HRESULT(IHTMLFormElement *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLFormElement *self, VARIANT name, VARIANT index, IDispatch** pdisp) item;
+			public function HRESULT(IHTMLFormElement *self, VARIANT tagName, IDispatch** pdisp) tags;
+		}
+		[CRepr]
+		public struct IHTMLFormElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4f6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFormElement2 *self, BSTR v) put_acceptCharset;
+			public function HRESULT(IHTMLFormElement2 *self, BSTR* p) get_acceptCharset;
+			public function HRESULT(IHTMLFormElement2 *self, VARIANT urn, IDispatch** pdisp) urns;
+		}
+		[CRepr]
+		public struct IHTMLFormElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f836, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFormElement3 *self, BSTR name, IDispatch** pdisp) namedItem;
+		}
+		[CRepr]
+		public struct IHTMLSubmitData : IDispatch
+		{
+			public const new Guid IID = .(0x3050f645, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSubmitData *self, BSTR name, BSTR value) appendNameValuePair;
+			public function HRESULT(IHTMLSubmitData *self, BSTR name, BSTR filename) appendNameFilePair;
+			public function HRESULT(IHTMLSubmitData *self) appendItemSeparator;
+		}
+		[CRepr]
+		public struct IHTMLFormElement4 : IDispatch
+		{
+			public const new Guid IID = .(0x3051042c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFormElement4 *self, BSTR v) put_action;
+			public function HRESULT(IHTMLFormElement4 *self, BSTR* p) get_action;
+		}
+		[CRepr]
+		public struct DispHTMLFormElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f510, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLControlElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f612, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLControlElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4ea, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLControlElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4e9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLControlElement *self, int16 v) put_tabIndex;
+			public function HRESULT(IHTMLControlElement *self, int16* p) get_tabIndex;
+			public function HRESULT(IHTMLControlElement *self) focus;
+			public function HRESULT(IHTMLControlElement *self, BSTR v) put_accessKey;
+			public function HRESULT(IHTMLControlElement *self, BSTR* p) get_accessKey;
+			public function HRESULT(IHTMLControlElement *self, VARIANT v) put_onblur;
+			public function HRESULT(IHTMLControlElement *self, VARIANT* p) get_onblur;
+			public function HRESULT(IHTMLControlElement *self, VARIANT v) put_onfocus;
+			public function HRESULT(IHTMLControlElement *self, VARIANT* p) get_onfocus;
+			public function HRESULT(IHTMLControlElement *self, VARIANT v) put_onresize;
+			public function HRESULT(IHTMLControlElement *self, VARIANT* p) get_onresize;
+			public function HRESULT(IHTMLControlElement *self) blur;
+			public function HRESULT(IHTMLControlElement *self, IUnknown* pUnk) addFilter;
+			public function HRESULT(IHTMLControlElement *self, IUnknown* pUnk) removeFilter;
+			public function HRESULT(IHTMLControlElement *self, int32* p) get_clientHeight;
+			public function HRESULT(IHTMLControlElement *self, int32* p) get_clientWidth;
+			public function HRESULT(IHTMLControlElement *self, int32* p) get_clientTop;
+			public function HRESULT(IHTMLControlElement *self, int32* p) get_clientLeft;
+		}
+		[CRepr]
+		public struct IHTMLTextElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f218, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLTextElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f537, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLTextContainerEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f624, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLTextContainerEvents : IDispatch
+		{
+			public const new Guid IID = .(0x1ff6aa72, 0x5842, 0x11cf, 0xa7, 0x07, 0x00, 0xaa, 0x00, 0xc0, 0x09, 0x8d);
+			
+		}
+		[CRepr]
+		public struct IHTMLTextContainer : IDispatch
+		{
+			public const new Guid IID = .(0x3050f230, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTextContainer *self, IDispatch** range) createControlRange;
+			public function HRESULT(IHTMLTextContainer *self, int32* p) get_scrollHeight;
+			public function HRESULT(IHTMLTextContainer *self, int32* p) get_scrollWidth;
+			public function HRESULT(IHTMLTextContainer *self, int32 v) put_scrollTop;
+			public function HRESULT(IHTMLTextContainer *self, int32* p) get_scrollTop;
+			public function HRESULT(IHTMLTextContainer *self, int32 v) put_scrollLeft;
+			public function HRESULT(IHTMLTextContainer *self, int32* p) get_scrollLeft;
+			public function HRESULT(IHTMLTextContainer *self, VARIANT v) put_onscroll;
+			public function HRESULT(IHTMLTextContainer *self, VARIANT* p) get_onscroll;
+		}
+		[CRepr]
+		public struct IHTMLControlRange : IDispatch
+		{
+			public const new Guid IID = .(0x3050f29c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLControlRange *self) select;
+			public function HRESULT(IHTMLControlRange *self, IHTMLControlElement* item) add;
+			public function HRESULT(IHTMLControlRange *self, int32 index) remove;
+			public function HRESULT(IHTMLControlRange *self, int32 index, IHTMLElement** pdisp) item;
+			public function HRESULT(IHTMLControlRange *self, VARIANT varargStart) scrollIntoView;
+			public function HRESULT(IHTMLControlRange *self, BSTR cmdID, int16* pfRet) queryCommandSupported;
+			public function HRESULT(IHTMLControlRange *self, BSTR cmdID, int16* pfRet) queryCommandEnabled;
+			public function HRESULT(IHTMLControlRange *self, BSTR cmdID, int16* pfRet) queryCommandState;
+			public function HRESULT(IHTMLControlRange *self, BSTR cmdID, int16* pfRet) queryCommandIndeterm;
+			public function HRESULT(IHTMLControlRange *self, BSTR cmdID, BSTR* pcmdText) queryCommandText;
+			public function HRESULT(IHTMLControlRange *self, BSTR cmdID, VARIANT* pcmdValue) queryCommandValue;
+			public function HRESULT(IHTMLControlRange *self, BSTR cmdID, int16 showUI, VARIANT value, int16* pfRet) execCommand;
+			public function HRESULT(IHTMLControlRange *self, BSTR cmdID, int16* pfRet) execCommandShowHelp;
+			public function HRESULT(IHTMLControlRange *self, IHTMLElement** parent) commonParentElement;
+			public function HRESULT(IHTMLControlRange *self, int32* p) get_length;
+		}
+		[CRepr]
+		public struct IHTMLControlRange2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f65e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLControlRange2 *self, IHTMLElement* item) addElement;
+		}
+		[CRepr]
+		public struct HTMLImgEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f616, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLImgEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f25b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLImgElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f240, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLImgElement *self, int16 v) put_isMap;
+			public function HRESULT(IHTMLImgElement *self, int16* p) get_isMap;
+			public function HRESULT(IHTMLImgElement *self, BSTR v) put_useMap;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_useMap;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_mimeType;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_fileSize;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_fileCreatedDate;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_fileModifiedDate;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_fileUpdatedDate;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_protocol;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_href;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_nameProp;
+			public function HRESULT(IHTMLImgElement *self, VARIANT v) put_border;
+			public function HRESULT(IHTMLImgElement *self, VARIANT* p) get_border;
+			public function HRESULT(IHTMLImgElement *self, int32 v) put_vspace;
+			public function HRESULT(IHTMLImgElement *self, int32* p) get_vspace;
+			public function HRESULT(IHTMLImgElement *self, int32 v) put_hspace;
+			public function HRESULT(IHTMLImgElement *self, int32* p) get_hspace;
+			public function HRESULT(IHTMLImgElement *self, BSTR v) put_alt;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_alt;
+			public function HRESULT(IHTMLImgElement *self, BSTR v) put_src;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLImgElement *self, BSTR v) put_lowsrc;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_lowsrc;
+			public function HRESULT(IHTMLImgElement *self, BSTR v) put_vrml;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_vrml;
+			public function HRESULT(IHTMLImgElement *self, BSTR v) put_dynsrc;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_dynsrc;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_readyState;
+			public function HRESULT(IHTMLImgElement *self, int16* p) get_complete;
+			public function HRESULT(IHTMLImgElement *self, VARIANT v) put_loop;
+			public function HRESULT(IHTMLImgElement *self, VARIANT* p) get_loop;
+			public function HRESULT(IHTMLImgElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLImgElement *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLImgElement *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLImgElement *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLImgElement *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLImgElement *self, VARIANT v) put_onabort;
+			public function HRESULT(IHTMLImgElement *self, VARIANT* p) get_onabort;
+			public function HRESULT(IHTMLImgElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLImgElement *self, int32 v) put_width;
+			public function HRESULT(IHTMLImgElement *self, int32* p) get_width;
+			public function HRESULT(IHTMLImgElement *self, int32 v) put_height;
+			public function HRESULT(IHTMLImgElement *self, int32* p) get_height;
+			public function HRESULT(IHTMLImgElement *self, BSTR v) put_start;
+			public function HRESULT(IHTMLImgElement *self, BSTR* p) get_start;
+		}
+		[CRepr]
+		public struct IHTMLImgElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f826, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLImgElement2 *self, BSTR v) put_longDesc;
+			public function HRESULT(IHTMLImgElement2 *self, BSTR* p) get_longDesc;
+		}
+		[CRepr]
+		public struct IHTMLImgElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510434, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLImgElement3 *self, BSTR v) put_longDesc;
+			public function HRESULT(IHTMLImgElement3 *self, BSTR* p) get_longDesc;
+			public function HRESULT(IHTMLImgElement3 *self, BSTR v) put_vrml;
+			public function HRESULT(IHTMLImgElement3 *self, BSTR* p) get_vrml;
+			public function HRESULT(IHTMLImgElement3 *self, BSTR v) put_lowsrc;
+			public function HRESULT(IHTMLImgElement3 *self, BSTR* p) get_lowsrc;
+			public function HRESULT(IHTMLImgElement3 *self, BSTR v) put_dynsrc;
+			public function HRESULT(IHTMLImgElement3 *self, BSTR* p) get_dynsrc;
+		}
+		[CRepr]
+		public struct IHTMLImgElement4 : IDispatch
+		{
+			public const new Guid IID = .(0x305107f6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLImgElement4 *self, int32* p) get_naturalWidth;
+			public function HRESULT(IHTMLImgElement4 *self, int32* p) get_naturalHeight;
+		}
+		[CRepr]
+		public struct IHTMLMSImgElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510793, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMSImgElement *self, int16 v) put_msPlayToDisabled;
+			public function HRESULT(IHTMLMSImgElement *self, int16* p) get_msPlayToDisabled;
+			public function HRESULT(IHTMLMSImgElement *self, int16 v) put_msPlayToPrimary;
+			public function HRESULT(IHTMLMSImgElement *self, int16* p) get_msPlayToPrimary;
+		}
+		[CRepr]
+		public struct IHTMLImageElementFactory : IDispatch
+		{
+			public const new Guid IID = .(0x3050f38e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLImageElementFactory *self, VARIANT width, VARIANT height, IHTMLImgElement** __MIDL__IHTMLImageElementFactory0000) create;
+		}
+		[CRepr]
+		public struct DispHTMLImg : IDispatch
+		{
+			public const new Guid IID = .(0x3050f51c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLBodyElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1d8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBodyElement *self, BSTR v) put_background;
+			public function HRESULT(IHTMLBodyElement *self, BSTR* p) get_background;
+			public function HRESULT(IHTMLBodyElement *self, BSTR v) put_bgProperties;
+			public function HRESULT(IHTMLBodyElement *self, BSTR* p) get_bgProperties;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_leftMargin;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_leftMargin;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_topMargin;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_topMargin;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_rightMargin;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_rightMargin;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_bottomMargin;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_bottomMargin;
+			public function HRESULT(IHTMLBodyElement *self, int16 v) put_noWrap;
+			public function HRESULT(IHTMLBodyElement *self, int16* p) get_noWrap;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_bgColor;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_bgColor;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_text;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_text;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_link;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_link;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_vLink;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_vLink;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_aLink;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_aLink;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_onunload;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_onunload;
+			public function HRESULT(IHTMLBodyElement *self, BSTR v) put_scroll;
+			public function HRESULT(IHTMLBodyElement *self, BSTR* p) get_scroll;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_onselect;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_onselect;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT v) put_onbeforeunload;
+			public function HRESULT(IHTMLBodyElement *self, VARIANT* p) get_onbeforeunload;
+			public function HRESULT(IHTMLBodyElement *self, IHTMLTxtRange** range) createTextRange;
+		}
+		[CRepr]
+		public struct IHTMLBodyElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5c5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBodyElement2 *self, VARIANT v) put_onbeforeprint;
+			public function HRESULT(IHTMLBodyElement2 *self, VARIANT* p) get_onbeforeprint;
+			public function HRESULT(IHTMLBodyElement2 *self, VARIANT v) put_onafterprint;
+			public function HRESULT(IHTMLBodyElement2 *self, VARIANT* p) get_onafterprint;
+		}
+		[CRepr]
+		public struct IHTMLBodyElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510422, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBodyElement3 *self, BSTR v) put_background;
+			public function HRESULT(IHTMLBodyElement3 *self, BSTR* p) get_background;
+			public function HRESULT(IHTMLBodyElement3 *self, VARIANT v) put_ononline;
+			public function HRESULT(IHTMLBodyElement3 *self, VARIANT* p) get_ononline;
+			public function HRESULT(IHTMLBodyElement3 *self, VARIANT v) put_onoffline;
+			public function HRESULT(IHTMLBodyElement3 *self, VARIANT* p) get_onoffline;
+			public function HRESULT(IHTMLBodyElement3 *self, VARIANT v) put_onhashchange;
+			public function HRESULT(IHTMLBodyElement3 *self, VARIANT* p) get_onhashchange;
+		}
+		[CRepr]
+		public struct IHTMLBodyElement4 : IDispatch
+		{
+			public const new Guid IID = .(0x30510795, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBodyElement4 *self, VARIANT v) put_onmessage;
+			public function HRESULT(IHTMLBodyElement4 *self, VARIANT* p) get_onmessage;
+			public function HRESULT(IHTMLBodyElement4 *self, VARIANT v) put_onstorage;
+			public function HRESULT(IHTMLBodyElement4 *self, VARIANT* p) get_onstorage;
+		}
+		[CRepr]
+		public struct IHTMLBodyElement5 : IDispatch
+		{
+			public const new Guid IID = .(0x30510822, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBodyElement5 *self, VARIANT v) put_onpopstate;
+			public function HRESULT(IHTMLBodyElement5 *self, VARIANT* p) get_onpopstate;
+		}
+		[CRepr]
+		public struct DispHTMLBody : IDispatch
+		{
+			public const new Guid IID = .(0x3050f507, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLFontElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1d9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFontElement *self, VARIANT v) put_color;
+			public function HRESULT(IHTMLFontElement *self, VARIANT* p) get_color;
+			public function HRESULT(IHTMLFontElement *self, BSTR v) put_face;
+			public function HRESULT(IHTMLFontElement *self, BSTR* p) get_face;
+			public function HRESULT(IHTMLFontElement *self, VARIANT v) put_size;
+			public function HRESULT(IHTMLFontElement *self, VARIANT* p) get_size;
+		}
+		[CRepr]
+		public struct DispHTMLFontElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f512, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLAnchorEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f610, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLAnchorEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f29d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLAnchorElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1da, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_href;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_href;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_target;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_target;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_rel;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_rel;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_rev;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_rev;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_urn;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_urn;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_Methods;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_Methods;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_host;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_host;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_hostname;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_hostname;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_pathname;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_pathname;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_port;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_port;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_protocol;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_protocol;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_search;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_search;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_hash;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_hash;
+			public function HRESULT(IHTMLAnchorElement *self, VARIANT v) put_onblur;
+			public function HRESULT(IHTMLAnchorElement *self, VARIANT* p) get_onblur;
+			public function HRESULT(IHTMLAnchorElement *self, VARIANT v) put_onfocus;
+			public function HRESULT(IHTMLAnchorElement *self, VARIANT* p) get_onfocus;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR v) put_accessKey;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_accessKey;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_protocolLong;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_mimeType;
+			public function HRESULT(IHTMLAnchorElement *self, BSTR* p) get_nameProp;
+			public function HRESULT(IHTMLAnchorElement *self, int16 v) put_tabIndex;
+			public function HRESULT(IHTMLAnchorElement *self, int16* p) get_tabIndex;
+			public function HRESULT(IHTMLAnchorElement *self) focus;
+			public function HRESULT(IHTMLAnchorElement *self) blur;
+		}
+		[CRepr]
+		public struct IHTMLAnchorElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f825, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR v) put_charset;
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR* p) get_charset;
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR v) put_coords;
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR* p) get_coords;
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR v) put_hreflang;
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR* p) get_hreflang;
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR v) put_shape;
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR* p) get_shape;
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR v) put_type;
+			public function HRESULT(IHTMLAnchorElement2 *self, BSTR* p) get_type;
+		}
+		[CRepr]
+		public struct IHTMLAnchorElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x3051041d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAnchorElement3 *self, BSTR v) put_shape;
+			public function HRESULT(IHTMLAnchorElement3 *self, BSTR* p) get_shape;
+			public function HRESULT(IHTMLAnchorElement3 *self, BSTR v) put_coords;
+			public function HRESULT(IHTMLAnchorElement3 *self, BSTR* p) get_coords;
+			public function HRESULT(IHTMLAnchorElement3 *self, BSTR v) put_href;
+			public function HRESULT(IHTMLAnchorElement3 *self, BSTR* p) get_href;
+		}
+		[CRepr]
+		public struct DispHTMLAnchorElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f502, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLLabelEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f61c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLLabelEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f329, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLLabelElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f32a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLabelElement *self, BSTR v) put_htmlFor;
+			public function HRESULT(IHTMLLabelElement *self, BSTR* p) get_htmlFor;
+			public function HRESULT(IHTMLLabelElement *self, BSTR v) put_accessKey;
+			public function HRESULT(IHTMLLabelElement *self, BSTR* p) get_accessKey;
+		}
+		[CRepr]
+		public struct IHTMLLabelElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f832, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLabelElement2 *self, IHTMLFormElement** p) get_form;
+		}
+		[CRepr]
+		public struct DispHTMLLabelElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f522, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLListElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f20e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLListElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f822, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLListElement2 *self, int16 v) put_compact;
+			public function HRESULT(IHTMLListElement2 *self, int16* p) get_compact;
+		}
+		[CRepr]
+		public struct DispHTMLListElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f525, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLUListElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1dd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLUListElement *self, int16 v) put_compact;
+			public function HRESULT(IHTMLUListElement *self, int16* p) get_compact;
+			public function HRESULT(IHTMLUListElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLUListElement *self, BSTR* p) get_type;
+		}
+		[CRepr]
+		public struct DispHTMLUListElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f538, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLOListElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1de, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLOListElement *self, int16 v) put_compact;
+			public function HRESULT(IHTMLOListElement *self, int16* p) get_compact;
+			public function HRESULT(IHTMLOListElement *self, int32 v) put_start;
+			public function HRESULT(IHTMLOListElement *self, int32* p) get_start;
+			public function HRESULT(IHTMLOListElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLOListElement *self, BSTR* p) get_type;
+		}
+		[CRepr]
+		public struct DispHTMLOListElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f52a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLLIElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1e0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLIElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLLIElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLLIElement *self, int32 v) put_value;
+			public function HRESULT(IHTMLLIElement *self, int32* p) get_value;
+		}
+		[CRepr]
+		public struct DispHTMLLIElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f523, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLBlockElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f208, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBlockElement *self, BSTR v) put_clear;
+			public function HRESULT(IHTMLBlockElement *self, BSTR* p) get_clear;
+		}
+		[CRepr]
+		public struct IHTMLBlockElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f823, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBlockElement2 *self, BSTR v) put_cite;
+			public function HRESULT(IHTMLBlockElement2 *self, BSTR* p) get_cite;
+			public function HRESULT(IHTMLBlockElement2 *self, BSTR v) put_width;
+			public function HRESULT(IHTMLBlockElement2 *self, BSTR* p) get_width;
+		}
+		[CRepr]
+		public struct IHTMLBlockElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510494, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBlockElement3 *self, BSTR v) put_cite;
+			public function HRESULT(IHTMLBlockElement3 *self, BSTR* p) get_cite;
+		}
+		[CRepr]
+		public struct DispHTMLBlockElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f506, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLDivElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f200, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDivElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLDivElement *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLDivElement *self, int16 v) put_noWrap;
+			public function HRESULT(IHTMLDivElement *self, int16* p) get_noWrap;
+		}
+		[CRepr]
+		public struct DispHTMLDivElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f50c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLDDElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1f2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDDElement *self, int16 v) put_noWrap;
+			public function HRESULT(IHTMLDDElement *self, int16* p) get_noWrap;
+		}
+		[CRepr]
+		public struct DispHTMLDDElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f50b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLDTElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1f3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDTElement *self, int16 v) put_noWrap;
+			public function HRESULT(IHTMLDTElement *self, int16* p) get_noWrap;
+		}
+		[CRepr]
+		public struct DispHTMLDTElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f50d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLBRElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1f0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBRElement *self, BSTR v) put_clear;
+			public function HRESULT(IHTMLBRElement *self, BSTR* p) get_clear;
+		}
+		[CRepr]
+		public struct DispHTMLBRElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f53a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLDListElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1f1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDListElement *self, int16 v) put_compact;
+			public function HRESULT(IHTMLDListElement *self, int16* p) get_compact;
+		}
+		[CRepr]
+		public struct DispHTMLDListElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f53b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLHRElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1f4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLHRElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLHRElement *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLHRElement *self, VARIANT v) put_color;
+			public function HRESULT(IHTMLHRElement *self, VARIANT* p) get_color;
+			public function HRESULT(IHTMLHRElement *self, int16 v) put_noShade;
+			public function HRESULT(IHTMLHRElement *self, int16* p) get_noShade;
+			public function HRESULT(IHTMLHRElement *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLHRElement *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLHRElement *self, VARIANT v) put_size;
+			public function HRESULT(IHTMLHRElement *self, VARIANT* p) get_size;
+		}
+		[CRepr]
+		public struct DispHTMLHRElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f53d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLParaElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1f5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLParaElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLParaElement *self, BSTR* p) get_align;
+		}
+		[CRepr]
+		public struct DispHTMLParaElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f52c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLElementCollection2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5ee, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElementCollection2 *self, VARIANT urn, IDispatch** pdisp) urns;
+		}
+		[CRepr]
+		public struct IHTMLElementCollection3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f835, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElementCollection3 *self, BSTR name, IDispatch** pdisp) namedItem;
+		}
+		[CRepr]
+		public struct IHTMLElementCollection4 : IDispatch
+		{
+			public const new Guid IID = .(0x30510425, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLElementCollection4 *self, int32* p) get_length;
+			public function HRESULT(IHTMLElementCollection4 *self, int32 index, IHTMLElement2** pNode) item;
+			public function HRESULT(IHTMLElementCollection4 *self, BSTR name, IHTMLElement2** pNode) namedItem;
+		}
+		[CRepr]
+		public struct DispHTMLElementCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f56b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLHeaderElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f1f6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLHeaderElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLHeaderElement *self, BSTR* p) get_align;
+		}
+		[CRepr]
+		public struct DispHTMLHeaderElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f515, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLSelectElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f622, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLSelectElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f302, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLOptionElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f211, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLOptionElement *self, int16 v) put_selected;
+			public function HRESULT(IHTMLOptionElement *self, int16* p) get_selected;
+			public function HRESULT(IHTMLOptionElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLOptionElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLOptionElement *self, int16 v) put_defaultSelected;
+			public function HRESULT(IHTMLOptionElement *self, int16* p) get_defaultSelected;
+			public function HRESULT(IHTMLOptionElement *self, int32 v) put_index;
+			public function HRESULT(IHTMLOptionElement *self, int32* p) get_index;
+			public function HRESULT(IHTMLOptionElement *self, BSTR v) put_text;
+			public function HRESULT(IHTMLOptionElement *self, BSTR* p) get_text;
+			public function HRESULT(IHTMLOptionElement *self, IHTMLFormElement** p) get_form;
+		}
+		[CRepr]
+		public struct IHTMLSelectElementEx : IUnknown
+		{
+			public const new Guid IID = .(0x3050f2d1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSelectElementEx *self, BOOL fShow) ShowDropdown;
+			public function HRESULT(IHTMLSelectElementEx *self, uint32 lFlags) SetSelectExFlags;
+			public function HRESULT(IHTMLSelectElementEx *self, uint32* pFlags) GetSelectExFlags;
+			public function HRESULT(IHTMLSelectElementEx *self, BOOL* pfOpen) GetDropdownOpen;
+		}
+		[CRepr]
+		public struct IHTMLSelectElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f244, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSelectElement *self, int32 v) put_size;
+			public function HRESULT(IHTMLSelectElement *self, int32* p) get_size;
+			public function HRESULT(IHTMLSelectElement *self, int16 v) put_multiple;
+			public function HRESULT(IHTMLSelectElement *self, int16* p) get_multiple;
+			public function HRESULT(IHTMLSelectElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLSelectElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLSelectElement *self, IDispatch** p) get_options;
+			public function HRESULT(IHTMLSelectElement *self, VARIANT v) put_onchange;
+			public function HRESULT(IHTMLSelectElement *self, VARIANT* p) get_onchange;
+			public function HRESULT(IHTMLSelectElement *self, int32 v) put_selectedIndex;
+			public function HRESULT(IHTMLSelectElement *self, int32* p) get_selectedIndex;
+			public function HRESULT(IHTMLSelectElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLSelectElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLSelectElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLSelectElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLSelectElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLSelectElement *self, IHTMLFormElement** p) get_form;
+			public function HRESULT(IHTMLSelectElement *self, IHTMLElement* element, VARIANT before) add;
+			public function HRESULT(IHTMLSelectElement *self, int32 index) remove;
+			public function HRESULT(IHTMLSelectElement *self, int32 v) put_length;
+			public function HRESULT(IHTMLSelectElement *self, int32* p) get_length;
+			public function HRESULT(IHTMLSelectElement *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLSelectElement *self, VARIANT name, VARIANT index, IDispatch** pdisp) item;
+			public function HRESULT(IHTMLSelectElement *self, VARIANT tagName, IDispatch** pdisp) tags;
+		}
+		[CRepr]
+		public struct IHTMLSelectElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5ed, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSelectElement2 *self, VARIANT urn, IDispatch** pdisp) urns;
+		}
+		[CRepr]
+		public struct IHTMLSelectElement4 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f838, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSelectElement4 *self, BSTR name, IDispatch** pdisp) namedItem;
+		}
+		[CRepr]
+		public struct IHTMLSelectElement5 : IDispatch
+		{
+			public const new Guid IID = .(0x3051049d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSelectElement5 *self, IHTMLOptionElement* pElem, VARIANT* pvarBefore) add;
+		}
+		[CRepr]
+		public struct IHTMLSelectElement6 : IDispatch
+		{
+			public const new Guid IID = .(0x30510760, 0x98b6, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSelectElement6 *self, IHTMLOptionElement* pElem, VARIANT* pvarBefore) add;
+			public function HRESULT(IHTMLSelectElement6 *self, BSTR v) put_value;
+			public function HRESULT(IHTMLSelectElement6 *self, BSTR* p) get_value;
+		}
+		[CRepr]
+		public struct DispHTMLSelectElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f531, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLWndSelectElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f597, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLSelectionObject : IDispatch
+		{
+			public const new Guid IID = .(0x3050f25a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSelectionObject *self, IDispatch** range) createRange;
+			public function HRESULT(IHTMLSelectionObject *self) empty;
+			public function HRESULT(IHTMLSelectionObject *self) clear;
+			public function HRESULT(IHTMLSelectionObject *self, BSTR* p) get_type;
+		}
+		[CRepr]
+		public struct IHTMLSelectionObject2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f7ec, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSelectionObject2 *self, IDispatch** rangeCollection) createRangeCollection;
+			public function HRESULT(IHTMLSelectionObject2 *self, BSTR* p) get_typeDetail;
+		}
+		[CRepr]
+		public struct IHTMLSelection : IDispatch
+		{
+			public const new Guid IID = .(0x305104b6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSelection *self, IHTMLDOMNode** p) get_anchorNode;
+			public function HRESULT(IHTMLSelection *self, int32* p) get_anchorOffset;
+			public function HRESULT(IHTMLSelection *self, IHTMLDOMNode** p) get_focusNode;
+			public function HRESULT(IHTMLSelection *self, int32* p) get_focusOffset;
+			public function HRESULT(IHTMLSelection *self, int16* p) get_isCollapsed;
+			public function HRESULT(IHTMLSelection *self, IDispatch* parentNode, int32 offfset) collapse;
+			public function HRESULT(IHTMLSelection *self) collapseToStart;
+			public function HRESULT(IHTMLSelection *self) collapseToEnd;
+			public function HRESULT(IHTMLSelection *self, IDispatch* parentNode) selectAllChildren;
+			public function HRESULT(IHTMLSelection *self) deleteFromDocument;
+			public function HRESULT(IHTMLSelection *self, int32* p) get_rangeCount;
+			public function HRESULT(IHTMLSelection *self, int32 index, IHTMLDOMRange** ppRange) getRangeAt;
+			public function HRESULT(IHTMLSelection *self, IDispatch* range) addRange;
+			public function HRESULT(IHTMLSelection *self, IDispatch* range) removeRange;
+			public function HRESULT(IHTMLSelection *self) removeAllRanges;
+			public function HRESULT(IHTMLSelection *self, BSTR* pSelectionString) toString;
+		}
+		[CRepr]
+		public struct IHTMLOptionElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f820, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLOptionElement3 *self, BSTR v) put_label;
+			public function HRESULT(IHTMLOptionElement3 *self, BSTR* p) get_label;
+		}
+		[CRepr]
+		public struct IHTMLOptionElement4 : IDispatch
+		{
+			public const new Guid IID = .(0x305107b4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLOptionElement4 *self, BSTR v) put_value;
+			public function HRESULT(IHTMLOptionElement4 *self, BSTR* p) get_value;
+		}
+		[CRepr]
+		public struct IHTMLOptionElementFactory : IDispatch
+		{
+			public const new Guid IID = .(0x3050f38c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLOptionElementFactory *self, VARIANT text, VARIANT value, VARIANT defaultselected, VARIANT selected, IHTMLOptionElement** __MIDL__IHTMLOptionElementFactory0000) create;
+		}
+		[CRepr]
+		public struct DispHTMLOptionElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f52b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLWndOptionElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f598, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLButtonElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f617, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLButtonElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2b3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLInputTextElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f618, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLOptionButtonElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f619, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLInputFileElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f61a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLInputImageEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f61b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLInputTextElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2a7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLOptionButtonElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2bd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLInputFileElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2af, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLInputImageEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2c3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLInputElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5d2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLInputElement *self, int16 v) put_status;
+			public function HRESULT(IHTMLInputElement *self, int16* p) get_status;
+			public function HRESULT(IHTMLInputElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLInputElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLInputElement *self, IHTMLFormElement** p) get_form;
+			public function HRESULT(IHTMLInputElement *self, int32 v) put_size;
+			public function HRESULT(IHTMLInputElement *self, int32* p) get_size;
+			public function HRESULT(IHTMLInputElement *self, int32 v) put_maxLength;
+			public function HRESULT(IHTMLInputElement *self, int32* p) get_maxLength;
+			public function HRESULT(IHTMLInputElement *self) select;
+			public function HRESULT(IHTMLInputElement *self, VARIANT v) put_onchange;
+			public function HRESULT(IHTMLInputElement *self, VARIANT* p) get_onchange;
+			public function HRESULT(IHTMLInputElement *self, VARIANT v) put_onselect;
+			public function HRESULT(IHTMLInputElement *self, VARIANT* p) get_onselect;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_defaultValue;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_defaultValue;
+			public function HRESULT(IHTMLInputElement *self, int16 v) put_readOnly;
+			public function HRESULT(IHTMLInputElement *self, int16* p) get_readOnly;
+			public function HRESULT(IHTMLInputElement *self, IHTMLTxtRange** range) createTextRange;
+			public function HRESULT(IHTMLInputElement *self, int16 v) put_indeterminate;
+			public function HRESULT(IHTMLInputElement *self, int16* p) get_indeterminate;
+			public function HRESULT(IHTMLInputElement *self, int16 v) put_defaultChecked;
+			public function HRESULT(IHTMLInputElement *self, int16* p) get_defaultChecked;
+			public function HRESULT(IHTMLInputElement *self, int16 v) put_checked;
+			public function HRESULT(IHTMLInputElement *self, int16* p) get_checked;
+			public function HRESULT(IHTMLInputElement *self, VARIANT v) put_border;
+			public function HRESULT(IHTMLInputElement *self, VARIANT* p) get_border;
+			public function HRESULT(IHTMLInputElement *self, int32 v) put_vspace;
+			public function HRESULT(IHTMLInputElement *self, int32* p) get_vspace;
+			public function HRESULT(IHTMLInputElement *self, int32 v) put_hspace;
+			public function HRESULT(IHTMLInputElement *self, int32* p) get_hspace;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_alt;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_alt;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_src;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_lowsrc;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_lowsrc;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_vrml;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_vrml;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_dynsrc;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_dynsrc;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_readyState;
+			public function HRESULT(IHTMLInputElement *self, int16* p) get_complete;
+			public function HRESULT(IHTMLInputElement *self, VARIANT v) put_loop;
+			public function HRESULT(IHTMLInputElement *self, VARIANT* p) get_loop;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLInputElement *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLInputElement *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLInputElement *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLInputElement *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLInputElement *self, VARIANT v) put_onabort;
+			public function HRESULT(IHTMLInputElement *self, VARIANT* p) get_onabort;
+			public function HRESULT(IHTMLInputElement *self, int32 v) put_width;
+			public function HRESULT(IHTMLInputElement *self, int32* p) get_width;
+			public function HRESULT(IHTMLInputElement *self, int32 v) put_height;
+			public function HRESULT(IHTMLInputElement *self, int32* p) get_height;
+			public function HRESULT(IHTMLInputElement *self, BSTR v) put_start;
+			public function HRESULT(IHTMLInputElement *self, BSTR* p) get_start;
+		}
+		[CRepr]
+		public struct IHTMLInputElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f821, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputElement2 *self, BSTR v) put_accept;
+			public function HRESULT(IHTMLInputElement2 *self, BSTR* p) get_accept;
+			public function HRESULT(IHTMLInputElement2 *self, BSTR v) put_useMap;
+			public function HRESULT(IHTMLInputElement2 *self, BSTR* p) get_useMap;
+		}
+		[CRepr]
+		public struct IHTMLInputElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510435, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputElement3 *self, BSTR v) put_src;
+			public function HRESULT(IHTMLInputElement3 *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLInputElement3 *self, BSTR v) put_lowsrc;
+			public function HRESULT(IHTMLInputElement3 *self, BSTR* p) get_lowsrc;
+			public function HRESULT(IHTMLInputElement3 *self, BSTR v) put_vrml;
+			public function HRESULT(IHTMLInputElement3 *self, BSTR* p) get_vrml;
+			public function HRESULT(IHTMLInputElement3 *self, BSTR v) put_dynsrc;
+			public function HRESULT(IHTMLInputElement3 *self, BSTR* p) get_dynsrc;
+		}
+		[CRepr]
+		public struct IHTMLInputButtonElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2b2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputButtonElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLInputButtonElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLInputButtonElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLInputButtonElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLInputButtonElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLInputButtonElement *self, VARIANT v) put_status;
+			public function HRESULT(IHTMLInputButtonElement *self, VARIANT* p) get_status;
+			public function HRESULT(IHTMLInputButtonElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLInputButtonElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLInputButtonElement *self, IHTMLFormElement** p) get_form;
+			public function HRESULT(IHTMLInputButtonElement *self, IHTMLTxtRange** range) createTextRange;
+		}
+		[CRepr]
+		public struct IHTMLInputHiddenElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2a4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputHiddenElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLInputHiddenElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLInputHiddenElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLInputHiddenElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLInputHiddenElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLInputHiddenElement *self, VARIANT v) put_status;
+			public function HRESULT(IHTMLInputHiddenElement *self, VARIANT* p) get_status;
+			public function HRESULT(IHTMLInputHiddenElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLInputHiddenElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLInputHiddenElement *self, IHTMLFormElement** p) get_form;
+			public function HRESULT(IHTMLInputHiddenElement *self, IHTMLTxtRange** range) createTextRange;
+		}
+		[CRepr]
+		public struct IHTMLInputTextElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2a6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputTextElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLInputTextElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLInputTextElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLInputTextElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLInputTextElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLInputTextElement *self, VARIANT v) put_status;
+			public function HRESULT(IHTMLInputTextElement *self, VARIANT* p) get_status;
+			public function HRESULT(IHTMLInputTextElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLInputTextElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLInputTextElement *self, IHTMLFormElement** p) get_form;
+			public function HRESULT(IHTMLInputTextElement *self, BSTR v) put_defaultValue;
+			public function HRESULT(IHTMLInputTextElement *self, BSTR* p) get_defaultValue;
+			public function HRESULT(IHTMLInputTextElement *self, int32 v) put_size;
+			public function HRESULT(IHTMLInputTextElement *self, int32* p) get_size;
+			public function HRESULT(IHTMLInputTextElement *self, int32 v) put_maxLength;
+			public function HRESULT(IHTMLInputTextElement *self, int32* p) get_maxLength;
+			public function HRESULT(IHTMLInputTextElement *self) select;
+			public function HRESULT(IHTMLInputTextElement *self, VARIANT v) put_onchange;
+			public function HRESULT(IHTMLInputTextElement *self, VARIANT* p) get_onchange;
+			public function HRESULT(IHTMLInputTextElement *self, VARIANT v) put_onselect;
+			public function HRESULT(IHTMLInputTextElement *self, VARIANT* p) get_onselect;
+			public function HRESULT(IHTMLInputTextElement *self, int16 v) put_readOnly;
+			public function HRESULT(IHTMLInputTextElement *self, int16* p) get_readOnly;
+			public function HRESULT(IHTMLInputTextElement *self, IHTMLTxtRange** range) createTextRange;
+		}
+		[CRepr]
+		public struct IHTMLInputTextElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2d2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputTextElement2 *self, int32 v) put_selectionStart;
+			public function HRESULT(IHTMLInputTextElement2 *self, int32* p) get_selectionStart;
+			public function HRESULT(IHTMLInputTextElement2 *self, int32 v) put_selectionEnd;
+			public function HRESULT(IHTMLInputTextElement2 *self, int32* p) get_selectionEnd;
+			public function HRESULT(IHTMLInputTextElement2 *self, int32 start, int32 end) setSelectionRange;
+		}
+		[CRepr]
+		public struct IHTMLInputFileElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2ad, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputFileElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLInputFileElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLInputFileElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLInputFileElement *self, VARIANT v) put_status;
+			public function HRESULT(IHTMLInputFileElement *self, VARIANT* p) get_status;
+			public function HRESULT(IHTMLInputFileElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLInputFileElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLInputFileElement *self, IHTMLFormElement** p) get_form;
+			public function HRESULT(IHTMLInputFileElement *self, int32 v) put_size;
+			public function HRESULT(IHTMLInputFileElement *self, int32* p) get_size;
+			public function HRESULT(IHTMLInputFileElement *self, int32 v) put_maxLength;
+			public function HRESULT(IHTMLInputFileElement *self, int32* p) get_maxLength;
+			public function HRESULT(IHTMLInputFileElement *self) select;
+			public function HRESULT(IHTMLInputFileElement *self, VARIANT v) put_onchange;
+			public function HRESULT(IHTMLInputFileElement *self, VARIANT* p) get_onchange;
+			public function HRESULT(IHTMLInputFileElement *self, VARIANT v) put_onselect;
+			public function HRESULT(IHTMLInputFileElement *self, VARIANT* p) get_onselect;
+			public function HRESULT(IHTMLInputFileElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLInputFileElement *self, BSTR* p) get_value;
+		}
+		[CRepr]
+		public struct IHTMLOptionButtonElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2bc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLOptionButtonElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLOptionButtonElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLOptionButtonElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLOptionButtonElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLOptionButtonElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16 v) put_checked;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16* p) get_checked;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16 v) put_defaultChecked;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16* p) get_defaultChecked;
+			public function HRESULT(IHTMLOptionButtonElement *self, VARIANT v) put_onchange;
+			public function HRESULT(IHTMLOptionButtonElement *self, VARIANT* p) get_onchange;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16 v) put_status;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16* p) get_status;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16 v) put_indeterminate;
+			public function HRESULT(IHTMLOptionButtonElement *self, int16* p) get_indeterminate;
+			public function HRESULT(IHTMLOptionButtonElement *self, IHTMLFormElement** p) get_form;
+		}
+		[CRepr]
+		public struct IHTMLInputImage : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2c2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLInputImage *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLInputImage *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLInputImage *self, VARIANT v) put_border;
+			public function HRESULT(IHTMLInputImage *self, VARIANT* p) get_border;
+			public function HRESULT(IHTMLInputImage *self, int32 v) put_vspace;
+			public function HRESULT(IHTMLInputImage *self, int32* p) get_vspace;
+			public function HRESULT(IHTMLInputImage *self, int32 v) put_hspace;
+			public function HRESULT(IHTMLInputImage *self, int32* p) get_hspace;
+			public function HRESULT(IHTMLInputImage *self, BSTR v) put_alt;
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_alt;
+			public function HRESULT(IHTMLInputImage *self, BSTR v) put_src;
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLInputImage *self, BSTR v) put_lowsrc;
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_lowsrc;
+			public function HRESULT(IHTMLInputImage *self, BSTR v) put_vrml;
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_vrml;
+			public function HRESULT(IHTMLInputImage *self, BSTR v) put_dynsrc;
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_dynsrc;
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_readyState;
+			public function HRESULT(IHTMLInputImage *self, int16* p) get_complete;
+			public function HRESULT(IHTMLInputImage *self, VARIANT v) put_loop;
+			public function HRESULT(IHTMLInputImage *self, VARIANT* p) get_loop;
+			public function HRESULT(IHTMLInputImage *self, BSTR v) put_align;
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLInputImage *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLInputImage *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLInputImage *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLInputImage *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLInputImage *self, VARIANT v) put_onabort;
+			public function HRESULT(IHTMLInputImage *self, VARIANT* p) get_onabort;
+			public function HRESULT(IHTMLInputImage *self, BSTR v) put_name;
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLInputImage *self, int32 v) put_width;
+			public function HRESULT(IHTMLInputImage *self, int32* p) get_width;
+			public function HRESULT(IHTMLInputImage *self, int32 v) put_height;
+			public function HRESULT(IHTMLInputImage *self, int32* p) get_height;
+			public function HRESULT(IHTMLInputImage *self, BSTR v) put_start;
+			public function HRESULT(IHTMLInputImage *self, BSTR* p) get_start;
+		}
+		[CRepr]
+		public struct IHTMLInputRangeElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2d4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLInputRangeElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLInputRangeElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR v) put_alt;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR* p) get_alt;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR v) put_min;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR* p) get_min;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR v) put_max;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR* p) get_max;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR v) put_step;
+			public function HRESULT(IHTMLInputRangeElement *self, BSTR* p) get_step;
+			public function HRESULT(IHTMLInputRangeElement *self, double v) put_valueAsNumber;
+			public function HRESULT(IHTMLInputRangeElement *self, double* p) get_valueAsNumber;
+			public function HRESULT(IHTMLInputRangeElement *self, int32 n) stepUp;
+			public function HRESULT(IHTMLInputRangeElement *self, int32 n) stepDown;
+		}
+		[CRepr]
+		public struct DispHTMLInputElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f57d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLTextAreaElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2aa, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTextAreaElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLTextAreaElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLTextAreaElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLTextAreaElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLTextAreaElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLTextAreaElement *self, VARIANT v) put_status;
+			public function HRESULT(IHTMLTextAreaElement *self, VARIANT* p) get_status;
+			public function HRESULT(IHTMLTextAreaElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLTextAreaElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLTextAreaElement *self, IHTMLFormElement** p) get_form;
+			public function HRESULT(IHTMLTextAreaElement *self, BSTR v) put_defaultValue;
+			public function HRESULT(IHTMLTextAreaElement *self, BSTR* p) get_defaultValue;
+			public function HRESULT(IHTMLTextAreaElement *self) select;
+			public function HRESULT(IHTMLTextAreaElement *self, VARIANT v) put_onchange;
+			public function HRESULT(IHTMLTextAreaElement *self, VARIANT* p) get_onchange;
+			public function HRESULT(IHTMLTextAreaElement *self, VARIANT v) put_onselect;
+			public function HRESULT(IHTMLTextAreaElement *self, VARIANT* p) get_onselect;
+			public function HRESULT(IHTMLTextAreaElement *self, int16 v) put_readOnly;
+			public function HRESULT(IHTMLTextAreaElement *self, int16* p) get_readOnly;
+			public function HRESULT(IHTMLTextAreaElement *self, int32 v) put_rows;
+			public function HRESULT(IHTMLTextAreaElement *self, int32* p) get_rows;
+			public function HRESULT(IHTMLTextAreaElement *self, int32 v) put_cols;
+			public function HRESULT(IHTMLTextAreaElement *self, int32* p) get_cols;
+			public function HRESULT(IHTMLTextAreaElement *self, BSTR v) put_wrap;
+			public function HRESULT(IHTMLTextAreaElement *self, BSTR* p) get_wrap;
+			public function HRESULT(IHTMLTextAreaElement *self, IHTMLTxtRange** range) createTextRange;
+		}
+		[CRepr]
+		public struct IHTMLTextAreaElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2d3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTextAreaElement2 *self, int32 v) put_selectionStart;
+			public function HRESULT(IHTMLTextAreaElement2 *self, int32* p) get_selectionStart;
+			public function HRESULT(IHTMLTextAreaElement2 *self, int32 v) put_selectionEnd;
+			public function HRESULT(IHTMLTextAreaElement2 *self, int32* p) get_selectionEnd;
+			public function HRESULT(IHTMLTextAreaElement2 *self, int32 start, int32 end) setSelectionRange;
+		}
+		[CRepr]
+		public struct DispHTMLTextAreaElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f521, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLRichtextElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f54d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLButtonElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2bb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLButtonElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLButtonElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLButtonElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLButtonElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLButtonElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLButtonElement *self, VARIANT v) put_status;
+			public function HRESULT(IHTMLButtonElement *self, VARIANT* p) get_status;
+			public function HRESULT(IHTMLButtonElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLButtonElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLButtonElement *self, IHTMLFormElement** p) get_form;
+			public function HRESULT(IHTMLButtonElement *self, IHTMLTxtRange** range) createTextRange;
+		}
+		[CRepr]
+		public struct IHTMLButtonElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x305106f3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLButtonElement2 *self, BSTR v) put_type;
+			public function HRESULT(IHTMLButtonElement2 *self, BSTR* p) get_type;
+		}
+		[CRepr]
+		public struct DispHTMLButtonElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f51f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLMarqueeElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f61f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLMarqueeElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2b8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLMarqueeElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2b5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT v) put_bgColor;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT* p) get_bgColor;
+			public function HRESULT(IHTMLMarqueeElement *self, int32 v) put_scrollDelay;
+			public function HRESULT(IHTMLMarqueeElement *self, int32* p) get_scrollDelay;
+			public function HRESULT(IHTMLMarqueeElement *self, BSTR v) put_direction;
+			public function HRESULT(IHTMLMarqueeElement *self, BSTR* p) get_direction;
+			public function HRESULT(IHTMLMarqueeElement *self, BSTR v) put_behavior;
+			public function HRESULT(IHTMLMarqueeElement *self, BSTR* p) get_behavior;
+			public function HRESULT(IHTMLMarqueeElement *self, int32 v) put_scrollAmount;
+			public function HRESULT(IHTMLMarqueeElement *self, int32* p) get_scrollAmount;
+			public function HRESULT(IHTMLMarqueeElement *self, int32 v) put_loop;
+			public function HRESULT(IHTMLMarqueeElement *self, int32* p) get_loop;
+			public function HRESULT(IHTMLMarqueeElement *self, int32 v) put_vspace;
+			public function HRESULT(IHTMLMarqueeElement *self, int32* p) get_vspace;
+			public function HRESULT(IHTMLMarqueeElement *self, int32 v) put_hspace;
+			public function HRESULT(IHTMLMarqueeElement *self, int32* p) get_hspace;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT v) put_onfinish;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT* p) get_onfinish;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT v) put_onstart;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT* p) get_onstart;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT v) put_onbounce;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT* p) get_onbounce;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLMarqueeElement *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLMarqueeElement *self, int16 v) put_trueSpeed;
+			public function HRESULT(IHTMLMarqueeElement *self, int16* p) get_trueSpeed;
+			public function HRESULT(IHTMLMarqueeElement *self) start;
+			public function HRESULT(IHTMLMarqueeElement *self) stop;
+		}
+		[CRepr]
+		public struct DispHTMLMarqueeElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f527, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLHtmlElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f81c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLHtmlElement *self, BSTR v) put_version;
+			public function HRESULT(IHTMLHtmlElement *self, BSTR* p) get_version;
+		}
+		[CRepr]
+		public struct IHTMLHeadElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f81d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLHeadElement *self, BSTR v) put_profile;
+			public function HRESULT(IHTMLHeadElement *self, BSTR* p) get_profile;
+		}
+		[CRepr]
+		public struct IHTMLHeadElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3051042f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLHeadElement2 *self, BSTR v) put_profile;
+			public function HRESULT(IHTMLHeadElement2 *self, BSTR* p) get_profile;
+		}
+		[CRepr]
+		public struct IHTMLTitleElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f322, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTitleElement *self, BSTR v) put_text;
+			public function HRESULT(IHTMLTitleElement *self, BSTR* p) get_text;
+		}
+		[CRepr]
+		public struct IHTMLMetaElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f203, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMetaElement *self, BSTR v) put_httpEquiv;
+			public function HRESULT(IHTMLMetaElement *self, BSTR* p) get_httpEquiv;
+			public function HRESULT(IHTMLMetaElement *self, BSTR v) put_content;
+			public function HRESULT(IHTMLMetaElement *self, BSTR* p) get_content;
+			public function HRESULT(IHTMLMetaElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLMetaElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLMetaElement *self, BSTR v) put_url;
+			public function HRESULT(IHTMLMetaElement *self, BSTR* p) get_url;
+			public function HRESULT(IHTMLMetaElement *self, BSTR v) put_charset;
+			public function HRESULT(IHTMLMetaElement *self, BSTR* p) get_charset;
+		}
+		[CRepr]
+		public struct IHTMLMetaElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f81f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMetaElement2 *self, BSTR v) put_scheme;
+			public function HRESULT(IHTMLMetaElement2 *self, BSTR* p) get_scheme;
+		}
+		[CRepr]
+		public struct IHTMLMetaElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510495, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMetaElement3 *self, BSTR v) put_url;
+			public function HRESULT(IHTMLMetaElement3 *self, BSTR* p) get_url;
+		}
+		[CRepr]
+		public struct IHTMLBaseElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f204, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBaseElement *self, BSTR v) put_href;
+			public function HRESULT(IHTMLBaseElement *self, BSTR* p) get_href;
+			public function HRESULT(IHTMLBaseElement *self, BSTR v) put_target;
+			public function HRESULT(IHTMLBaseElement *self, BSTR* p) get_target;
+		}
+		[CRepr]
+		public struct IHTMLBaseElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x30510420, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBaseElement2 *self, BSTR v) put_href;
+			public function HRESULT(IHTMLBaseElement2 *self, BSTR* p) get_href;
+		}
+		[CRepr]
+		public struct DispHTMLHtmlElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f560, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLHeadElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f561, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLTitleElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f516, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLMetaElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f517, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLBaseElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f518, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLIsIndexElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f206, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLIsIndexElement *self, BSTR v) put_prompt;
+			public function HRESULT(IHTMLIsIndexElement *self, BSTR* p) get_prompt;
+			public function HRESULT(IHTMLIsIndexElement *self, BSTR v) put_action;
+			public function HRESULT(IHTMLIsIndexElement *self, BSTR* p) get_action;
+		}
+		[CRepr]
+		public struct IHTMLIsIndexElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f82f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLIsIndexElement2 *self, IHTMLFormElement** p) get_form;
+		}
+		[CRepr]
+		public struct IHTMLNextIdElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f207, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLNextIdElement *self, BSTR v) put_n;
+			public function HRESULT(IHTMLNextIdElement *self, BSTR* p) get_n;
+		}
+		[CRepr]
+		public struct DispHTMLIsIndexElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f519, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLNextIdElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f51a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLBaseFontElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f202, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBaseFontElement *self, VARIANT v) put_color;
+			public function HRESULT(IHTMLBaseFontElement *self, VARIANT* p) get_color;
+			public function HRESULT(IHTMLBaseFontElement *self, BSTR v) put_face;
+			public function HRESULT(IHTMLBaseFontElement *self, BSTR* p) get_face;
+			public function HRESULT(IHTMLBaseFontElement *self, int32 v) put_size;
+			public function HRESULT(IHTMLBaseFontElement *self, int32* p) get_size;
+		}
+		[CRepr]
+		public struct DispHTMLBaseFontElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f504, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLUnknownElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f209, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLUnknownElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f539, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IWebGeolocation : IDispatch
+		{
+			public const new Guid IID = .(0x305107c5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IWebGeolocation *self, IDispatch* successCallback, IDispatch* errorCallback, IDispatch* options) getCurrentPosition;
+			public function HRESULT(IWebGeolocation *self, IDispatch* successCallback, IDispatch* errorCallback, IDispatch* options, int32* watchId) watchPosition;
+			public function HRESULT(IWebGeolocation *self, int32 watchId) clearWatch;
+		}
+		[CRepr]
+		public struct IHTMLMimeTypesCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3fc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMimeTypesCollection *self, int32* p) get_length;
+		}
+		[CRepr]
+		public struct IHTMLPluginsCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3fd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPluginsCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLPluginsCollection *self, int16 reload) refresh;
+		}
+		[CRepr]
+		public struct IOmHistory : IDispatch
+		{
+			public const new Guid IID = .(0xfeceaaa2, 0x8405, 0x11cf, 0x8b, 0xa1, 0x00, 0xaa, 0x00, 0x47, 0x6d, 0xa6);
+			
+			public function HRESULT(IOmHistory *self, int16* p) get_length;
+			public function HRESULT(IOmHistory *self, VARIANT* pvargdistance) back;
+			public function HRESULT(IOmHistory *self, VARIANT* pvargdistance) forward;
+			public function HRESULT(IOmHistory *self, VARIANT* pvargdistance) go;
+		}
+		[CRepr]
+		public struct IHTMLOpsProfile : IDispatch
+		{
+			public const new Guid IID = .(0x3050f401, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLOpsProfile *self, BSTR name, VARIANT reserved, int16* success) addRequest;
+			public function HRESULT(IHTMLOpsProfile *self) clearRequest;
+			public function HRESULT(IHTMLOpsProfile *self, VARIANT usage, VARIANT fname, VARIANT domain, VARIANT path, VARIANT expire, VARIANT reserved) doRequest;
+			public function HRESULT(IHTMLOpsProfile *self, BSTR name, BSTR* value) getAttribute;
+			public function HRESULT(IHTMLOpsProfile *self, BSTR name, BSTR value, VARIANT prefs, int16* success) setAttribute;
+			public function HRESULT(IHTMLOpsProfile *self, int16* success) commitChanges;
+			public function HRESULT(IHTMLOpsProfile *self, BSTR name, VARIANT reserved, int16* success) addReadRequest;
+			public function HRESULT(IHTMLOpsProfile *self, VARIANT usage, VARIANT fname, VARIANT domain, VARIANT path, VARIANT expire, VARIANT reserved) doReadRequest;
+			public function HRESULT(IHTMLOpsProfile *self, int16* success) doWriteRequest;
+		}
+		[CRepr]
+		public struct IOmNavigator : IDispatch
+		{
+			public const new Guid IID = .(0xfeceaaa5, 0x8405, 0x11cf, 0x8b, 0xa1, 0x00, 0xaa, 0x00, 0x47, 0x6d, 0xa6);
+			
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_appCodeName;
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_appName;
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_appVersion;
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_userAgent;
+			public function HRESULT(IOmNavigator *self, int16* enabled) javaEnabled;
+			public function HRESULT(IOmNavigator *self, int16* enabled) taintEnabled;
+			public function HRESULT(IOmNavigator *self, IHTMLMimeTypesCollection** p) get_mimeTypes;
+			public function HRESULT(IOmNavigator *self, IHTMLPluginsCollection** p) get_plugins;
+			public function HRESULT(IOmNavigator *self, int16* p) get_cookieEnabled;
+			public function HRESULT(IOmNavigator *self, IHTMLOpsProfile** p) get_opsProfile;
+			public function HRESULT(IOmNavigator *self, BSTR* string) toString;
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_cpuClass;
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_systemLanguage;
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_browserLanguage;
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_userLanguage;
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_platform;
+			public function HRESULT(IOmNavigator *self, BSTR* p) get_appMinorVersion;
+			public function HRESULT(IOmNavigator *self, int32* p) get_connectionSpeed;
+			public function HRESULT(IOmNavigator *self, int16* p) get_onLine;
+			public function HRESULT(IOmNavigator *self, IHTMLOpsProfile** p) get_userProfile;
+		}
+		[CRepr]
+		public struct INavigatorGeolocation : IDispatch
+		{
+			public const new Guid IID = .(0x305107cf, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(INavigatorGeolocation *self, IWebGeolocation** p) get_geolocation;
+		}
+		[CRepr]
+		public struct INavigatorDoNotTrack : IDispatch
+		{
+			public const new Guid IID = .(0x30510804, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(INavigatorDoNotTrack *self, BSTR* p) get_msDoNotTrack;
+		}
+		[CRepr]
+		public struct IHTMLLocation : IDispatch
+		{
+			public const new Guid IID = .(0x163bb1e0, 0x6e00, 0x11cf, 0x83, 0x7a, 0x48, 0xdc, 0x04, 0xc1, 0x00, 0x00);
+			
+			public function HRESULT(IHTMLLocation *self, BSTR v) put_href;
+			public function HRESULT(IHTMLLocation *self, BSTR* p) get_href;
+			public function HRESULT(IHTMLLocation *self, BSTR v) put_protocol;
+			public function HRESULT(IHTMLLocation *self, BSTR* p) get_protocol;
+			public function HRESULT(IHTMLLocation *self, BSTR v) put_host;
+			public function HRESULT(IHTMLLocation *self, BSTR* p) get_host;
+			public function HRESULT(IHTMLLocation *self, BSTR v) put_hostname;
+			public function HRESULT(IHTMLLocation *self, BSTR* p) get_hostname;
+			public function HRESULT(IHTMLLocation *self, BSTR v) put_port;
+			public function HRESULT(IHTMLLocation *self, BSTR* p) get_port;
+			public function HRESULT(IHTMLLocation *self, BSTR v) put_pathname;
+			public function HRESULT(IHTMLLocation *self, BSTR* p) get_pathname;
+			public function HRESULT(IHTMLLocation *self, BSTR v) put_search;
+			public function HRESULT(IHTMLLocation *self, BSTR* p) get_search;
+			public function HRESULT(IHTMLLocation *self, BSTR v) put_hash;
+			public function HRESULT(IHTMLLocation *self, BSTR* p) get_hash;
+			public function HRESULT(IHTMLLocation *self, int16 flag) reload;
+			public function HRESULT(IHTMLLocation *self, BSTR bstr) replace;
+			public function HRESULT(IHTMLLocation *self, BSTR bstr) assign;
+			public function HRESULT(IHTMLLocation *self, BSTR* string) toString;
+		}
+		[CRepr]
+		public struct DispHTMLHistory : IDispatch
+		{
+			public const new Guid IID = .(0x3050f549, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLNavigator : IDispatch
+		{
+			public const new Guid IID = .(0x3050f54c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLLocation : IDispatch
+		{
+			public const new Guid IID = .(0x3050f54e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispCPlugins : IDispatch
+		{
+			public const new Guid IID = .(0x3050f54a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLBookmarkCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4ce, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBookmarkCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLBookmarkCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLBookmarkCollection *self, int32 index, VARIANT* pVarBookmark) item;
+		}
+		[CRepr]
+		public struct IHTMLDataTransfer : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4b3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDataTransfer *self, BSTR format, VARIANT* data, int16* pret) setData;
+			public function HRESULT(IHTMLDataTransfer *self, BSTR format, VARIANT* pvarRet) getData;
+			public function HRESULT(IHTMLDataTransfer *self, BSTR format, int16* pret) clearData;
+			public function HRESULT(IHTMLDataTransfer *self, BSTR v) put_dropEffect;
+			public function HRESULT(IHTMLDataTransfer *self, BSTR* p) get_dropEffect;
+			public function HRESULT(IHTMLDataTransfer *self, BSTR v) put_effectAllowed;
+			public function HRESULT(IHTMLDataTransfer *self, BSTR* p) get_effectAllowed;
+		}
+		[CRepr]
+		public struct IHTMLEventObj2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f48b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEventObj2 *self, BSTR strAttributeName, VARIANT AttributeValue, int32 lFlags) setAttribute;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR strAttributeName, int32 lFlags, VARIANT* AttributeValue) getAttribute;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR strAttributeName, int32 lFlags, int16* pfSuccess) removeAttribute;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR v) put_propertyName;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR* p) get_propertyName;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLBookmarkCollection* v) putref_bookmarks;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLBookmarkCollection** p) get_bookmarks;
+			public function HRESULT(IHTMLEventObj2 *self, IDispatch* v) putref_recordset;
+			public function HRESULT(IHTMLEventObj2 *self, IDispatch** p) get_recordset;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR v) put_dataFld;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR* p) get_dataFld;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLElementCollection* v) putref_boundElements;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLElementCollection** p) get_boundElements;
+			public function HRESULT(IHTMLEventObj2 *self, int16 v) put_repeat;
+			public function HRESULT(IHTMLEventObj2 *self, int16* p) get_repeat;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR v) put_srcUrn;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR* p) get_srcUrn;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLElement* v) putref_srcElement;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLElement** p) get_srcElement;
+			public function HRESULT(IHTMLEventObj2 *self, int16 v) put_altKey;
+			public function HRESULT(IHTMLEventObj2 *self, int16* p) get_altKey;
+			public function HRESULT(IHTMLEventObj2 *self, int16 v) put_ctrlKey;
+			public function HRESULT(IHTMLEventObj2 *self, int16* p) get_ctrlKey;
+			public function HRESULT(IHTMLEventObj2 *self, int16 v) put_shiftKey;
+			public function HRESULT(IHTMLEventObj2 *self, int16* p) get_shiftKey;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLElement* v) putref_fromElement;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLElement** p) get_fromElement;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLElement* v) putref_toElement;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLElement** p) get_toElement;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_button;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_button;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR v) put_type;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR v) put_qualifier;
+			public function HRESULT(IHTMLEventObj2 *self, BSTR* p) get_qualifier;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_reason;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_reason;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_x;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_x;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_y;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_y;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_clientX;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_clientX;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_clientY;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_clientY;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_offsetX;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_offsetX;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_offsetY;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_offsetY;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_screenX;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_screenX;
+			public function HRESULT(IHTMLEventObj2 *self, int32 v) put_screenY;
+			public function HRESULT(IHTMLEventObj2 *self, int32* p) get_screenY;
+			public function HRESULT(IHTMLEventObj2 *self, IDispatch* v) putref_srcFilter;
+			public function HRESULT(IHTMLEventObj2 *self, IDispatch** p) get_srcFilter;
+			public function HRESULT(IHTMLEventObj2 *self, IHTMLDataTransfer** p) get_dataTransfer;
+		}
+		[CRepr]
+		public struct IHTMLEventObj3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f680, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEventObj3 *self, int16* p) get_contentOverflow;
+			public function HRESULT(IHTMLEventObj3 *self, int16 v) put_shiftLeft;
+			public function HRESULT(IHTMLEventObj3 *self, int16* p) get_shiftLeft;
+			public function HRESULT(IHTMLEventObj3 *self, int16 v) put_altLeft;
+			public function HRESULT(IHTMLEventObj3 *self, int16* p) get_altLeft;
+			public function HRESULT(IHTMLEventObj3 *self, int16 v) put_ctrlLeft;
+			public function HRESULT(IHTMLEventObj3 *self, int16* p) get_ctrlLeft;
+			public function HRESULT(IHTMLEventObj3 *self, int* p) get_imeCompositionChange;
+			public function HRESULT(IHTMLEventObj3 *self, int* p) get_imeNotifyCommand;
+			public function HRESULT(IHTMLEventObj3 *self, int* p) get_imeNotifyData;
+			public function HRESULT(IHTMLEventObj3 *self, int* p) get_imeRequest;
+			public function HRESULT(IHTMLEventObj3 *self, int* p) get_imeRequestData;
+			public function HRESULT(IHTMLEventObj3 *self, int* p) get_keyboardLayout;
+			public function HRESULT(IHTMLEventObj3 *self, int32* p) get_behaviorCookie;
+			public function HRESULT(IHTMLEventObj3 *self, int32* p) get_behaviorPart;
+			public function HRESULT(IHTMLEventObj3 *self, BSTR* p) get_nextPage;
+		}
+		[CRepr]
+		public struct IHTMLEventObj4 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f814, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEventObj4 *self, int32* p) get_wheelDelta;
+		}
+		[CRepr]
+		public struct IHTMLEventObj5 : IDispatch
+		{
+			public const new Guid IID = .(0x30510478, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEventObj5 *self, BSTR v) put_url;
+			public function HRESULT(IHTMLEventObj5 *self, BSTR* p) get_url;
+			public function HRESULT(IHTMLEventObj5 *self, BSTR v) put_data;
+			public function HRESULT(IHTMLEventObj5 *self, BSTR* p) get_data;
+			public function HRESULT(IHTMLEventObj5 *self, IDispatch** p) get_source;
+			public function HRESULT(IHTMLEventObj5 *self, BSTR v) put_origin;
+			public function HRESULT(IHTMLEventObj5 *self, BSTR* p) get_origin;
+			public function HRESULT(IHTMLEventObj5 *self, int16 v) put_issession;
+			public function HRESULT(IHTMLEventObj5 *self, int16* p) get_issession;
+		}
+		[CRepr]
+		public struct IHTMLEventObj6 : IDispatch
+		{
+			public const new Guid IID = .(0x30510734, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEventObj6 *self, BSTR* p) get_actionURL;
+			public function HRESULT(IHTMLEventObj6 *self, int32* p) get_buttonID;
+		}
+		[CRepr]
+		public struct DispCEventObj : IDispatch
+		{
+			public const new Guid IID = .(0x3050f558, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyleMedia : IDispatch
+		{
+			public const new Guid IID = .(0x3051074b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleMedia *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLStyleMedia *self, BSTR mediaQuery, int16* matches) matchMedium;
+		}
+		[CRepr]
+		public struct DispHTMLStyleMedia : IDispatch
+		{
+			public const new Guid IID = .(0x3059009e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLFramesCollection2 : IDispatch
+		{
+			public const new Guid IID = .(0x332c4426, 0x26cb, 0x11d0, 0xb4, 0x83, 0x00, 0xc0, 0x4f, 0xd9, 0x01, 0x19);
+			
+			public function HRESULT(IHTMLFramesCollection2 *self, VARIANT* pvarIndex, VARIANT* pvarResult) item;
+			public function HRESULT(IHTMLFramesCollection2 *self, int32* p) get_length;
+		}
+		[CRepr]
+		public struct HTMLWindowEvents3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5a1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLWindowEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f625, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLWindowEvents : IDispatch
+		{
+			public const new Guid IID = .(0x96a0a4e0, 0xd062, 0x11cf, 0x94, 0xb6, 0x00, 0xaa, 0x00, 0x60, 0x27, 0x5c);
+			
+		}
+		[CRepr]
+		public struct IHTMLDocument2 : IHTMLDocument
+		{
+			public const new Guid IID = .(0x332c4425, 0x26cb, 0x11d0, 0xb4, 0x83, 0x00, 0xc0, 0x4f, 0xd9, 0x01, 0x19);
+			
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElementCollection** p) get_all;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElement** p) get_body;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElement** p) get_activeElement;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElementCollection** p) get_images;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElementCollection** p) get_applets;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElementCollection** p) get_links;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElementCollection** p) get_forms;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElementCollection** p) get_anchors;
+			public function HRESULT(IHTMLDocument2 *self, BSTR v) put_title;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_title;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElementCollection** p) get_scripts;
+			public function HRESULT(IHTMLDocument2 *self, BSTR v) put_designMode;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_designMode;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLSelectionObject** p) get_selection;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_readyState;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLFramesCollection2** p) get_frames;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElementCollection** p) get_embeds;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLElementCollection** p) get_plugins;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_alinkColor;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_alinkColor;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_bgColor;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_bgColor;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_fgColor;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_fgColor;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_linkColor;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_linkColor;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_vlinkColor;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_vlinkColor;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_referrer;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLLocation** p) get_location;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_lastModified;
+			public function HRESULT(IHTMLDocument2 *self, BSTR v) put_URL;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_URL;
+			public function HRESULT(IHTMLDocument2 *self, BSTR v) put_domain;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_domain;
+			public function HRESULT(IHTMLDocument2 *self, BSTR v) put_cookie;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_cookie;
+			public function HRESULT(IHTMLDocument2 *self, int16 v) put_expando;
+			public function HRESULT(IHTMLDocument2 *self, int16* p) get_expando;
+			public function HRESULT(IHTMLDocument2 *self, BSTR v) put_charset;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_charset;
+			public function HRESULT(IHTMLDocument2 *self, BSTR v) put_defaultCharset;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_defaultCharset;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_mimeType;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_fileSize;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_fileCreatedDate;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_fileModifiedDate;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_fileUpdatedDate;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_security;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_protocol;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* p) get_nameProp;
+			public function HRESULT(IHTMLDocument2 *self, SAFEARRAY* psarray) write;
+			public function HRESULT(IHTMLDocument2 *self, SAFEARRAY* psarray) writeln;
+			public function HRESULT(IHTMLDocument2 *self, BSTR url, VARIANT name, VARIANT features, VARIANT replace, IDispatch** pomWindowResult) open;
+			public function HRESULT(IHTMLDocument2 *self) close;
+			public function HRESULT(IHTMLDocument2 *self) clear;
+			public function HRESULT(IHTMLDocument2 *self, BSTR cmdID, int16* pfRet) queryCommandSupported;
+			public function HRESULT(IHTMLDocument2 *self, BSTR cmdID, int16* pfRet) queryCommandEnabled;
+			public function HRESULT(IHTMLDocument2 *self, BSTR cmdID, int16* pfRet) queryCommandState;
+			public function HRESULT(IHTMLDocument2 *self, BSTR cmdID, int16* pfRet) queryCommandIndeterm;
+			public function HRESULT(IHTMLDocument2 *self, BSTR cmdID, BSTR* pcmdText) queryCommandText;
+			public function HRESULT(IHTMLDocument2 *self, BSTR cmdID, VARIANT* pcmdValue) queryCommandValue;
+			public function HRESULT(IHTMLDocument2 *self, BSTR cmdID, int16 showUI, VARIANT value, int16* pfRet) execCommand;
+			public function HRESULT(IHTMLDocument2 *self, BSTR cmdID, int16* pfRet) execCommandShowHelp;
+			public function HRESULT(IHTMLDocument2 *self, BSTR eTag, IHTMLElement** newElem) createElement;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onhelp;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onhelp;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onclick;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onclick;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_ondblclick;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_ondblclick;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onkeyup;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onkeyup;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onkeydown;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onkeydown;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onkeypress;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onkeypress;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onmouseup;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onmouseup;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onmousedown;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onmousedown;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onmousemove;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onmousemove;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onmouseout;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onmouseout;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onmouseover;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onmouseover;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onreadystatechange;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onafterupdate;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onafterupdate;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onrowexit;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onrowexit;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onrowenter;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onrowenter;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_ondragstart;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_ondragstart;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onselectstart;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onselectstart;
+			public function HRESULT(IHTMLDocument2 *self, int32 x, int32 y, IHTMLElement** elementHit) elementFromPoint;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLWindow2** p) get_parentWindow;
+			public function HRESULT(IHTMLDocument2 *self, IHTMLStyleSheetsCollection** p) get_styleSheets;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onbeforeupdate;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onbeforeupdate;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT v) put_onerrorupdate;
+			public function HRESULT(IHTMLDocument2 *self, VARIANT* p) get_onerrorupdate;
+			public function HRESULT(IHTMLDocument2 *self, BSTR* String) toString;
+			public function HRESULT(IHTMLDocument2 *self, BSTR bstrHref, int32 lIndex, IHTMLStyleSheet** ppnewStyleSheet) createStyleSheet;
+		}
+		[CRepr]
+		public struct IHTMLWindow2 : IHTMLFramesCollection2
+		{
+			public const new Guid IID = .(0x332c4427, 0x26cb, 0x11d0, 0xb4, 0x83, 0x00, 0xc0, 0x4f, 0xd9, 0x01, 0x19);
+			
+			public function HRESULT(IHTMLWindow2 *self, IHTMLFramesCollection2** p) get_frames;
+			public function HRESULT(IHTMLWindow2 *self, BSTR v) put_defaultStatus;
+			public function HRESULT(IHTMLWindow2 *self, BSTR* p) get_defaultStatus;
+			public function HRESULT(IHTMLWindow2 *self, BSTR v) put_status;
+			public function HRESULT(IHTMLWindow2 *self, BSTR* p) get_status;
+			public function HRESULT(IHTMLWindow2 *self, BSTR expression, int32 msec, VARIANT* language, int32* timerID) setTimeout;
+			public function HRESULT(IHTMLWindow2 *self, int32 timerID) clearTimeout;
+			public function HRESULT(IHTMLWindow2 *self, BSTR message) alert;
+			public function HRESULT(IHTMLWindow2 *self, BSTR message, int16* confirmed) confirm;
+			public function HRESULT(IHTMLWindow2 *self, BSTR message, BSTR defstr, VARIANT* textdata) prompt;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLImageElementFactory** p) get_Image;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLLocation** p) get_location;
+			public function HRESULT(IHTMLWindow2 *self, IOmHistory** p) get_history;
+			public function HRESULT(IHTMLWindow2 *self) close;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_opener;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_opener;
+			public function HRESULT(IHTMLWindow2 *self, IOmNavigator** p) get_navigator;
+			public function HRESULT(IHTMLWindow2 *self, BSTR v) put_name;
+			public function HRESULT(IHTMLWindow2 *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLWindow2** p) get_parent;
+			public function HRESULT(IHTMLWindow2 *self, BSTR url, BSTR name, BSTR features, int16 replace, IHTMLWindow2** pomWindowResult) open;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLWindow2** p) get_self;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLWindow2** p) get_top;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLWindow2** p) get_window;
+			public function HRESULT(IHTMLWindow2 *self, BSTR url) navigate;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_onfocus;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_onfocus;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_onblur;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_onblur;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_onbeforeunload;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_onbeforeunload;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_onunload;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_onunload;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_onhelp;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_onhelp;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_onresize;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_onresize;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_onscroll;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_onscroll;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLDocument2** p) get_document;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLEventObj** p) get_event;
+			public function HRESULT(IHTMLWindow2 *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLWindow2 *self, BSTR dialog, VARIANT* varArgIn, VARIANT* varOptions, VARIANT* varArgOut) showModalDialog;
+			public function HRESULT(IHTMLWindow2 *self, BSTR helpURL, VARIANT helpArg, BSTR features) showHelp;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLScreen** p) get_screen;
+			public function HRESULT(IHTMLWindow2 *self, IHTMLOptionElementFactory** p) get_Option;
+			public function HRESULT(IHTMLWindow2 *self) focus;
+			public function HRESULT(IHTMLWindow2 *self, int16* p) get_closed;
+			public function HRESULT(IHTMLWindow2 *self) blur;
+			public function HRESULT(IHTMLWindow2 *self, int32 x, int32 y) scroll;
+			public function HRESULT(IHTMLWindow2 *self, IOmNavigator** p) get_clientInformation;
+			public function HRESULT(IHTMLWindow2 *self, BSTR expression, int32 msec, VARIANT* language, int32* timerID) setInterval;
+			public function HRESULT(IHTMLWindow2 *self, int32 timerID) clearInterval;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT v) put_offscreenBuffering;
+			public function HRESULT(IHTMLWindow2 *self, VARIANT* p) get_offscreenBuffering;
+			public function HRESULT(IHTMLWindow2 *self, BSTR code, BSTR language, VARIANT* pvarRet) execScript;
+			public function HRESULT(IHTMLWindow2 *self, BSTR* String) toString;
+			public function HRESULT(IHTMLWindow2 *self, int32 x, int32 y) scrollBy;
+			public function HRESULT(IHTMLWindow2 *self, int32 x, int32 y) scrollTo;
+			public function HRESULT(IHTMLWindow2 *self, int32 x, int32 y) moveTo;
+			public function HRESULT(IHTMLWindow2 *self, int32 x, int32 y) moveBy;
+			public function HRESULT(IHTMLWindow2 *self, int32 x, int32 y) resizeTo;
+			public function HRESULT(IHTMLWindow2 *self, int32 x, int32 y) resizeBy;
+			public function HRESULT(IHTMLWindow2 *self, IDispatch** p) get_external;
+		}
+		[CRepr]
+		public struct IHTMLWindow3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4ae, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLWindow3 *self, int32* p) get_screenLeft;
+			public function HRESULT(IHTMLWindow3 *self, int32* p) get_screenTop;
+			public function HRESULT(IHTMLWindow3 *self, BSTR event, IDispatch* pDisp, int16* pfResult) attachEvent;
+			public function HRESULT(IHTMLWindow3 *self, BSTR event, IDispatch* pDisp) detachEvent;
+			public function HRESULT(IHTMLWindow3 *self, VARIANT* expression, int32 msec, VARIANT* language, int32* timerID) setTimeout;
+			public function HRESULT(IHTMLWindow3 *self, VARIANT* expression, int32 msec, VARIANT* language, int32* timerID) setInterval;
+			public function HRESULT(IHTMLWindow3 *self) print;
+			public function HRESULT(IHTMLWindow3 *self, VARIANT v) put_onbeforeprint;
+			public function HRESULT(IHTMLWindow3 *self, VARIANT* p) get_onbeforeprint;
+			public function HRESULT(IHTMLWindow3 *self, VARIANT v) put_onafterprint;
+			public function HRESULT(IHTMLWindow3 *self, VARIANT* p) get_onafterprint;
+			public function HRESULT(IHTMLWindow3 *self, IHTMLDataTransfer** p) get_clipboardData;
+			public function HRESULT(IHTMLWindow3 *self, BSTR url, VARIANT* varArgIn, VARIANT* options, IHTMLWindow2** pDialog) showModelessDialog;
+		}
+		[CRepr]
+		public struct IHTMLFrameBase : IDispatch
+		{
+			public const new Guid IID = .(0x3050f311, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFrameBase *self, BSTR v) put_src;
+			public function HRESULT(IHTMLFrameBase *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLFrameBase *self, BSTR v) put_name;
+			public function HRESULT(IHTMLFrameBase *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLFrameBase *self, VARIANT v) put_border;
+			public function HRESULT(IHTMLFrameBase *self, VARIANT* p) get_border;
+			public function HRESULT(IHTMLFrameBase *self, BSTR v) put_frameBorder;
+			public function HRESULT(IHTMLFrameBase *self, BSTR* p) get_frameBorder;
+			public function HRESULT(IHTMLFrameBase *self, VARIANT v) put_frameSpacing;
+			public function HRESULT(IHTMLFrameBase *self, VARIANT* p) get_frameSpacing;
+			public function HRESULT(IHTMLFrameBase *self, VARIANT v) put_marginWidth;
+			public function HRESULT(IHTMLFrameBase *self, VARIANT* p) get_marginWidth;
+			public function HRESULT(IHTMLFrameBase *self, VARIANT v) put_marginHeight;
+			public function HRESULT(IHTMLFrameBase *self, VARIANT* p) get_marginHeight;
+			public function HRESULT(IHTMLFrameBase *self, int16 v) put_noResize;
+			public function HRESULT(IHTMLFrameBase *self, int16* p) get_noResize;
+			public function HRESULT(IHTMLFrameBase *self, BSTR v) put_scrolling;
+			public function HRESULT(IHTMLFrameBase *self, BSTR* p) get_scrolling;
+		}
+		[CRepr]
+		public struct IHTMLStorage : IDispatch
+		{
+			public const new Guid IID = .(0x30510474, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStorage *self, int32* p) get_length;
+			public function HRESULT(IHTMLStorage *self, int32* p) get_remainingSpace;
+			public function HRESULT(IHTMLStorage *self, int32 lIndex, BSTR* __MIDL__IHTMLStorage0000) key;
+			public function HRESULT(IHTMLStorage *self, BSTR bstrKey, VARIANT* __MIDL__IHTMLStorage0001) getItem;
+			public function HRESULT(IHTMLStorage *self, BSTR bstrKey, BSTR bstrValue) setItem;
+			public function HRESULT(IHTMLStorage *self, BSTR bstrKey) removeItem;
+			public function HRESULT(IHTMLStorage *self) clear;
+		}
+		[CRepr]
+		public struct IHTMLPerformance : IDispatch
+		{
+			public const new Guid IID = .(0x3051074e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPerformance *self, IHTMLPerformanceNavigation** p) get_navigation;
+			public function HRESULT(IHTMLPerformance *self, IHTMLPerformanceTiming** p) get_timing;
+			public function HRESULT(IHTMLPerformance *self, BSTR* string) toString;
+			public function HRESULT(IHTMLPerformance *self, VARIANT* pVar) toJSON;
+		}
+		[CRepr]
+		public struct IHTMLApplicationCache : IDispatch
+		{
+			public const new Guid IID = .(0x30510828, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLApplicationCache *self, int32* p) get_status;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT v) put_onchecking;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT* p) get_onchecking;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT v) put_onnoupdate;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT* p) get_onnoupdate;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT v) put_ondownloading;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT* p) get_ondownloading;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT v) put_onprogress;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT* p) get_onprogress;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT v) put_onupdateready;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT* p) get_onupdateready;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT v) put_oncached;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT* p) get_oncached;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT v) put_onobsolete;
+			public function HRESULT(IHTMLApplicationCache *self, VARIANT* p) get_onobsolete;
+			public function HRESULT(IHTMLApplicationCache *self) update;
+			public function HRESULT(IHTMLApplicationCache *self) swapCache;
+			public function HRESULT(IHTMLApplicationCache *self) abort;
+		}
+		[CRepr]
+		public struct IHTMLScreen : IDispatch
+		{
+			public const new Guid IID = .(0x3050f35c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLScreen *self, int32* p) get_colorDepth;
+			public function HRESULT(IHTMLScreen *self, int32 v) put_bufferDepth;
+			public function HRESULT(IHTMLScreen *self, int32* p) get_bufferDepth;
+			public function HRESULT(IHTMLScreen *self, int32* p) get_width;
+			public function HRESULT(IHTMLScreen *self, int32* p) get_height;
+			public function HRESULT(IHTMLScreen *self, int32 v) put_updateInterval;
+			public function HRESULT(IHTMLScreen *self, int32* p) get_updateInterval;
+			public function HRESULT(IHTMLScreen *self, int32* p) get_availHeight;
+			public function HRESULT(IHTMLScreen *self, int32* p) get_availWidth;
+			public function HRESULT(IHTMLScreen *self, int16* p) get_fontSmoothingEnabled;
+		}
+		[CRepr]
+		public struct IHTMLScreen2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f84a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLScreen2 *self, int32* p) get_logicalXDPI;
+			public function HRESULT(IHTMLScreen2 *self, int32* p) get_logicalYDPI;
+			public function HRESULT(IHTMLScreen2 *self, int32* p) get_deviceXDPI;
+			public function HRESULT(IHTMLScreen2 *self, int32* p) get_deviceYDPI;
+		}
+		[CRepr]
+		public struct IHTMLScreen3 : IDispatch
+		{
+			public const new Guid IID = .(0x305104a1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLScreen3 *self, int32* p) get_systemXDPI;
+			public function HRESULT(IHTMLScreen3 *self, int32* p) get_systemYDPI;
+		}
+		[CRepr]
+		public struct IHTMLScreen4 : IDispatch
+		{
+			public const new Guid IID = .(0x3051076b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLScreen4 *self, int32* p) get_pixelDepth;
+		}
+		[CRepr]
+		public struct IHTMLWindow4 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6cf, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLWindow4 *self, VARIANT* varArgIn, IDispatch** ppPopup) createPopup;
+			public function HRESULT(IHTMLWindow4 *self, IHTMLFrameBase** p) get_frameElement;
+		}
+		[CRepr]
+		public struct IHTMLWindow5 : IDispatch
+		{
+			public const new Guid IID = .(0x3051040e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLWindow5 *self, VARIANT v) put_XMLHttpRequest;
+			public function HRESULT(IHTMLWindow5 *self, VARIANT* p) get_XMLHttpRequest;
+		}
+		[CRepr]
+		public struct IHTMLWindow6 : IDispatch
+		{
+			public const new Guid IID = .(0x30510453, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLWindow6 *self, VARIANT v) put_XDomainRequest;
+			public function HRESULT(IHTMLWindow6 *self, VARIANT* p) get_XDomainRequest;
+			public function HRESULT(IHTMLWindow6 *self, IHTMLStorage** p) get_sessionStorage;
+			public function HRESULT(IHTMLWindow6 *self, IHTMLStorage** p) get_localStorage;
+			public function HRESULT(IHTMLWindow6 *self, VARIANT v) put_onhashchange;
+			public function HRESULT(IHTMLWindow6 *self, VARIANT* p) get_onhashchange;
+			public function HRESULT(IHTMLWindow6 *self, int32* p) get_maxConnectionsPerServer;
+			public function HRESULT(IHTMLWindow6 *self, BSTR msg, VARIANT targetOrigin) postMessage;
+			public function HRESULT(IHTMLWindow6 *self, BSTR bstrHTML, BSTR* pbstrStaticHTML) toStaticHTML;
+			public function HRESULT(IHTMLWindow6 *self, VARIANT v) put_onmessage;
+			public function HRESULT(IHTMLWindow6 *self, VARIANT* p) get_onmessage;
+			public function HRESULT(IHTMLWindow6 *self, BSTR bstrProfilerMarkName) msWriteProfilerMark;
+		}
+		[CRepr]
+		public struct IHTMLWindow7 : IDispatch
+		{
+			public const new Guid IID = .(0x305104b7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLWindow7 *self, IHTMLSelection** ppIHTMLSelection) getSelection;
+			public function HRESULT(IHTMLWindow7 *self, IHTMLDOMNode* varArgIn, BSTR bstrPseudoElt, IHTMLCSSStyleDeclaration** ppComputedStyle) getComputedStyle;
+			public function HRESULT(IHTMLWindow7 *self, IHTMLStyleMedia** p) get_styleMedia;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_performance;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_performance;
+			public function HRESULT(IHTMLWindow7 *self, int32* p) get_innerWidth;
+			public function HRESULT(IHTMLWindow7 *self, int32* p) get_innerHeight;
+			public function HRESULT(IHTMLWindow7 *self, int32* p) get_pageXOffset;
+			public function HRESULT(IHTMLWindow7 *self, int32* p) get_pageYOffset;
+			public function HRESULT(IHTMLWindow7 *self, int32* p) get_screenX;
+			public function HRESULT(IHTMLWindow7 *self, int32* p) get_screenY;
+			public function HRESULT(IHTMLWindow7 *self, int32* p) get_outerWidth;
+			public function HRESULT(IHTMLWindow7 *self, int32* p) get_outerHeight;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onabort;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onabort;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_oncanplay;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_oncanplay;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_oncanplaythrough;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_oncanplaythrough;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onchange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onchange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onclick;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onclick;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_oncontextmenu;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_oncontextmenu;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ondblclick;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ondblclick;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ondrag;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ondrag;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ondragend;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ondragend;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ondragenter;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ondragenter;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ondragleave;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ondragleave;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ondragover;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ondragover;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ondragstart;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ondragstart;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ondrop;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ondrop;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ondurationchange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ondurationchange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onfocusin;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onfocusin;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onfocusout;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onfocusout;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_oninput;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_oninput;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onemptied;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onemptied;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onended;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onended;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onkeydown;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onkeydown;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onkeypress;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onkeypress;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onkeyup;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onkeyup;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onloadeddata;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onloadeddata;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onloadedmetadata;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onloadedmetadata;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onloadstart;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onloadstart;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onmousedown;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onmousedown;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onmouseenter;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onmouseenter;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onmouseleave;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onmouseleave;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onmousemove;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onmousemove;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onmouseout;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onmouseout;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onmouseover;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onmouseover;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onmouseup;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onmouseup;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onmousewheel;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onmousewheel;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onoffline;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onoffline;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ononline;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ononline;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onprogress;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onprogress;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onratechange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onratechange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onreadystatechange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onreset;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onreset;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onseeked;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onseeked;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onseeking;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onseeking;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onselect;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onselect;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onstalled;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onstalled;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onstorage;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onstorage;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onsubmit;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onsubmit;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onsuspend;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onsuspend;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_ontimeupdate;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_ontimeupdate;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onpause;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onpause;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onplay;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onplay;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onplaying;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onplaying;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onvolumechange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onvolumechange;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT v) put_onwaiting;
+			public function HRESULT(IHTMLWindow7 *self, VARIANT* p) get_onwaiting;
+		}
+		[CRepr]
+		public struct IHTMLWindow8 : IDispatch
+		{
+			public const new Guid IID = .(0x305107ab, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmspointerdown;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmspointerdown;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmspointermove;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmspointermove;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmspointerup;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmspointerup;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmspointerover;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmspointerover;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmspointerout;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmspointerout;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmspointercancel;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmspointercancel;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmspointerhover;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmspointerhover;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmsgesturestart;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmsgesturestart;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmsgesturechange;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmsgesturechange;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmsgestureend;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmsgestureend;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmsgesturehold;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmsgesturehold;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmsgesturetap;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmsgesturetap;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmsgesturedoubletap;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmsgesturedoubletap;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onmsinertiastart;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onmsinertiastart;
+			public function HRESULT(IHTMLWindow8 *self, IHTMLApplicationCache** p) get_applicationCache;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT v) put_onpopstate;
+			public function HRESULT(IHTMLWindow8 *self, VARIANT* p) get_onpopstate;
+		}
+		[CRepr]
+		public struct DispHTMLScreen : IDispatch
+		{
+			public const new Guid IID = .(0x3050f591, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLWindow2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f55d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLWindowProxy : IDispatch
+		{
+			public const new Guid IID = .(0x3050f55e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLDocumentCompatibleInfo : IDispatch
+		{
+			public const new Guid IID = .(0x3051041a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDocumentCompatibleInfo *self, BSTR* p) get_userAgent;
+			public function HRESULT(IHTMLDocumentCompatibleInfo *self, BSTR* p) get_version;
+		}
+		[CRepr]
+		public struct IHTMLDocumentCompatibleInfoCollection : IDispatch
+		{
+			public const new Guid IID = .(0x30510418, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDocumentCompatibleInfoCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLDocumentCompatibleInfoCollection *self, int32 index, IHTMLDocumentCompatibleInfo** compatibleInfo) item;
+		}
+		[CRepr]
+		public struct DispHTMLDocumentCompatibleInfo : IDispatch
+		{
+			public const new Guid IID = .(0x3050f53e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLDocumentCompatibleInfoCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f53f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLDocumentEvents4 : IDispatch
+		{
+			public const new Guid IID = .(0x30510737, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLDocumentEvents3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5a0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLDocumentEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f613, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLDocumentEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f260, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGSVGElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104e7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGSVGElement *self, ISVGAnimatedLength* v) putref_x;
+			public function HRESULT(ISVGSVGElement *self, ISVGAnimatedLength** p) get_x;
+			public function HRESULT(ISVGSVGElement *self, ISVGAnimatedLength* v) putref_y;
+			public function HRESULT(ISVGSVGElement *self, ISVGAnimatedLength** p) get_y;
+			public function HRESULT(ISVGSVGElement *self, ISVGAnimatedLength* v) putref_width;
+			public function HRESULT(ISVGSVGElement *self, ISVGAnimatedLength** p) get_width;
+			public function HRESULT(ISVGSVGElement *self, ISVGAnimatedLength* v) putref_height;
+			public function HRESULT(ISVGSVGElement *self, ISVGAnimatedLength** p) get_height;
+			public function HRESULT(ISVGSVGElement *self, BSTR v) put_contentScriptType;
+			public function HRESULT(ISVGSVGElement *self, BSTR* p) get_contentScriptType;
+			public function HRESULT(ISVGSVGElement *self, BSTR v) put_contentStyleType;
+			public function HRESULT(ISVGSVGElement *self, BSTR* p) get_contentStyleType;
+			public function HRESULT(ISVGSVGElement *self, ISVGRect* v) putref_viewport;
+			public function HRESULT(ISVGSVGElement *self, ISVGRect** p) get_viewport;
+			public function HRESULT(ISVGSVGElement *self, float v) put_pixelUnitToMillimeterX;
+			public function HRESULT(ISVGSVGElement *self, float* p) get_pixelUnitToMillimeterX;
+			public function HRESULT(ISVGSVGElement *self, float v) put_pixelUnitToMillimeterY;
+			public function HRESULT(ISVGSVGElement *self, float* p) get_pixelUnitToMillimeterY;
+			public function HRESULT(ISVGSVGElement *self, float v) put_screenPixelToMillimeterX;
+			public function HRESULT(ISVGSVGElement *self, float* p) get_screenPixelToMillimeterX;
+			public function HRESULT(ISVGSVGElement *self, float v) put_screenPixelToMillimeterY;
+			public function HRESULT(ISVGSVGElement *self, float* p) get_screenPixelToMillimeterY;
+			public function HRESULT(ISVGSVGElement *self, int16 v) put_useCurrentView;
+			public function HRESULT(ISVGSVGElement *self, int16* p) get_useCurrentView;
+			public function HRESULT(ISVGSVGElement *self, ISVGViewSpec* v) putref_currentView;
+			public function HRESULT(ISVGSVGElement *self, ISVGViewSpec** p) get_currentView;
+			public function HRESULT(ISVGSVGElement *self, float v) put_currentScale;
+			public function HRESULT(ISVGSVGElement *self, float* p) get_currentScale;
+			public function HRESULT(ISVGSVGElement *self, ISVGPoint* v) putref_currentTranslate;
+			public function HRESULT(ISVGSVGElement *self, ISVGPoint** p) get_currentTranslate;
+			public function HRESULT(ISVGSVGElement *self, uint32 maxWaitMilliseconds, uint32* pResult) suspendRedraw;
+			public function HRESULT(ISVGSVGElement *self, uint32 suspendHandeID) unsuspendRedraw;
+			public function HRESULT(ISVGSVGElement *self) unsuspendRedrawAll;
+			public function HRESULT(ISVGSVGElement *self) forceRedraw;
+			public function HRESULT(ISVGSVGElement *self) pauseAnimations;
+			public function HRESULT(ISVGSVGElement *self) unpauseAnimations;
+			public function HRESULT(ISVGSVGElement *self, int16* pResult) animationsPaused;
+			public function HRESULT(ISVGSVGElement *self, float* pResult) getCurrentTime;
+			public function HRESULT(ISVGSVGElement *self, float seconds) setCurrentTime;
+			public function HRESULT(ISVGSVGElement *self, ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult) getIntersectionList;
+			public function HRESULT(ISVGSVGElement *self, ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult) getEnclosureList;
+			public function HRESULT(ISVGSVGElement *self, ISVGElement* element, ISVGRect* rect, int16* pResult) checkIntersection;
+			public function HRESULT(ISVGSVGElement *self, ISVGElement* element, ISVGRect* rect, int16* pResult) checkEnclosure;
+			public function HRESULT(ISVGSVGElement *self) deselectAll;
+			public function HRESULT(ISVGSVGElement *self, ISVGNumber** pResult) createSVGNumber;
+			public function HRESULT(ISVGSVGElement *self, ISVGLength** pResult) createSVGLength;
+			public function HRESULT(ISVGSVGElement *self, ISVGAngle** pResult) createSVGAngle;
+			public function HRESULT(ISVGSVGElement *self, ISVGPoint** pResult) createSVGPoint;
+			public function HRESULT(ISVGSVGElement *self, ISVGMatrix** pResult) createSVGMatrix;
+			public function HRESULT(ISVGSVGElement *self, ISVGRect** pResult) createSVGRect;
+			public function HRESULT(ISVGSVGElement *self, ISVGTransform** pResult) createSVGTransform;
+			public function HRESULT(ISVGSVGElement *self, ISVGMatrix* matrix, ISVGTransform** pResult) createSVGTransformFromMatrix;
+			public function HRESULT(ISVGSVGElement *self, BSTR elementId, IHTMLElement** pResult) getElementById;
+		}
+		[CRepr]
+		public struct IDOMNodeIterator : IDispatch
+		{
+			public const new Guid IID = .(0x30510746, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMNodeIterator *self, IDispatch** p) get_root;
+			public function HRESULT(IDOMNodeIterator *self, uint32* p) get_whatToShow;
+			public function HRESULT(IDOMNodeIterator *self, IDispatch** p) get_filter;
+			public function HRESULT(IDOMNodeIterator *self, int16* p) get_expandEntityReferences;
+			public function HRESULT(IDOMNodeIterator *self, IDispatch** ppRetNode) nextNode;
+			public function HRESULT(IDOMNodeIterator *self, IDispatch** ppRetNode) previousNode;
+			public function HRESULT(IDOMNodeIterator *self) detach;
+		}
+		[CRepr]
+		public struct IDOMTreeWalker : IDispatch
+		{
+			public const new Guid IID = .(0x30510748, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** p) get_root;
+			public function HRESULT(IDOMTreeWalker *self, uint32* p) get_whatToShow;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** p) get_filter;
+			public function HRESULT(IDOMTreeWalker *self, int16* p) get_expandEntityReferences;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch* v) putref_currentNode;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** p) get_currentNode;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** ppRetNode) parentNode;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** ppRetNode) firstChild;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** ppRetNode) lastChild;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** ppRetNode) previousSibling;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** ppRetNode) nextSibling;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** ppRetNode) previousNode;
+			public function HRESULT(IDOMTreeWalker *self, IDispatch** ppRetNode) nextNode;
+		}
+		[CRepr]
+		public struct IDOMProcessingInstruction : IDispatch
+		{
+			public const new Guid IID = .(0x30510742, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMProcessingInstruction *self, BSTR* p) get_target;
+			public function HRESULT(IDOMProcessingInstruction *self, BSTR v) put_data;
+			public function HRESULT(IDOMProcessingInstruction *self, BSTR* p) get_data;
+		}
+		[CRepr]
+		public struct IHTMLDocument3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f485, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDocument3 *self) releaseCapture;
+			public function HRESULT(IHTMLDocument3 *self, int16 fForce) recalc;
+			public function HRESULT(IHTMLDocument3 *self, BSTR text, IHTMLDOMNode** newTextNode) createTextNode;
+			public function HRESULT(IHTMLDocument3 *self, IHTMLElement** p) get_documentElement;
+			public function HRESULT(IHTMLDocument3 *self, BSTR* p) get_uniqueID;
+			public function HRESULT(IHTMLDocument3 *self, BSTR event, IDispatch* pDisp, int16* pfResult) attachEvent;
+			public function HRESULT(IHTMLDocument3 *self, BSTR event, IDispatch* pDisp) detachEvent;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_onrowsdelete;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_onrowsdelete;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_onrowsinserted;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_onrowsinserted;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_oncellchange;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_oncellchange;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_ondatasetchanged;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_ondatasetchanged;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_ondataavailable;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_ondataavailable;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_ondatasetcomplete;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_ondatasetcomplete;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_onpropertychange;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_onpropertychange;
+			public function HRESULT(IHTMLDocument3 *self, BSTR v) put_dir;
+			public function HRESULT(IHTMLDocument3 *self, BSTR* p) get_dir;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_oncontextmenu;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_oncontextmenu;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_onstop;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_onstop;
+			public function HRESULT(IHTMLDocument3 *self, IHTMLDocument2** pNewDoc) createDocumentFragment;
+			public function HRESULT(IHTMLDocument3 *self, IHTMLDocument2** p) get_parentDocument;
+			public function HRESULT(IHTMLDocument3 *self, int16 v) put_enableDownload;
+			public function HRESULT(IHTMLDocument3 *self, int16* p) get_enableDownload;
+			public function HRESULT(IHTMLDocument3 *self, BSTR v) put_baseUrl;
+			public function HRESULT(IHTMLDocument3 *self, BSTR* p) get_baseUrl;
+			public function HRESULT(IHTMLDocument3 *self, IDispatch** p) get_childNodes;
+			public function HRESULT(IHTMLDocument3 *self, int16 v) put_inheritStyleSheets;
+			public function HRESULT(IHTMLDocument3 *self, int16* p) get_inheritStyleSheets;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT v) put_onbeforeeditfocus;
+			public function HRESULT(IHTMLDocument3 *self, VARIANT* p) get_onbeforeeditfocus;
+			public function HRESULT(IHTMLDocument3 *self, BSTR v, IHTMLElementCollection** pelColl) getElementsByName;
+			public function HRESULT(IHTMLDocument3 *self, BSTR v, IHTMLElement** pel) getElementById;
+			public function HRESULT(IHTMLDocument3 *self, BSTR v, IHTMLElementCollection** pelColl) getElementsByTagName;
+		}
+		[CRepr]
+		public struct IHTMLDocument4 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f69a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDocument4 *self) focus;
+			public function HRESULT(IHTMLDocument4 *self, int16* pfFocus) hasFocus;
+			public function HRESULT(IHTMLDocument4 *self, VARIANT v) put_onselectionchange;
+			public function HRESULT(IHTMLDocument4 *self, VARIANT* p) get_onselectionchange;
+			public function HRESULT(IHTMLDocument4 *self, IDispatch** p) get_namespaces;
+			public function HRESULT(IHTMLDocument4 *self, BSTR bstrUrl, BSTR bstrOptions, IHTMLDocument2** newDoc) createDocumentFromUrl;
+			public function HRESULT(IHTMLDocument4 *self, BSTR v) put_media;
+			public function HRESULT(IHTMLDocument4 *self, BSTR* p) get_media;
+			public function HRESULT(IHTMLDocument4 *self, VARIANT* pvarEventObject, IHTMLEventObj** ppEventObj) createEventObject;
+			public function HRESULT(IHTMLDocument4 *self, BSTR bstrEventName, VARIANT* pvarEventObject, int16* pfCancelled) fireEvent;
+			public function HRESULT(IHTMLDocument4 *self, BSTR v, IHTMLRenderStyle** ppIHTMLRenderStyle) createRenderStyle;
+			public function HRESULT(IHTMLDocument4 *self, VARIANT v) put_oncontrolselect;
+			public function HRESULT(IHTMLDocument4 *self, VARIANT* p) get_oncontrolselect;
+			public function HRESULT(IHTMLDocument4 *self, BSTR* p) get_URLUnencoded;
+		}
+		[CRepr]
+		public struct IHTMLDocument5 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f80c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDocument5 *self, VARIANT v) put_onmousewheel;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT* p) get_onmousewheel;
+			public function HRESULT(IHTMLDocument5 *self, IHTMLDOMNode** p) get_doctype;
+			public function HRESULT(IHTMLDocument5 *self, IHTMLDOMImplementation** p) get_implementation;
+			public function HRESULT(IHTMLDocument5 *self, BSTR bstrattrName, IHTMLDOMAttribute** ppattribute) createAttribute;
+			public function HRESULT(IHTMLDocument5 *self, BSTR bstrdata, IHTMLDOMNode** ppRetNode) createComment;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT v) put_onfocusin;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT* p) get_onfocusin;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT v) put_onfocusout;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT* p) get_onfocusout;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT v) put_onactivate;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT* p) get_onactivate;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT v) put_ondeactivate;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT* p) get_ondeactivate;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT v) put_onbeforeactivate;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT* p) get_onbeforeactivate;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT v) put_onbeforedeactivate;
+			public function HRESULT(IHTMLDocument5 *self, VARIANT* p) get_onbeforedeactivate;
+			public function HRESULT(IHTMLDocument5 *self, BSTR* p) get_compatMode;
+		}
+		[CRepr]
+		public struct IHTMLDocument6 : IDispatch
+		{
+			public const new Guid IID = .(0x30510417, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDocument6 *self, IHTMLDocumentCompatibleInfoCollection** p) get_compatible;
+			public function HRESULT(IHTMLDocument6 *self, VARIANT* p) get_documentMode;
+			public function HRESULT(IHTMLDocument6 *self, VARIANT v) put_onstorage;
+			public function HRESULT(IHTMLDocument6 *self, VARIANT* p) get_onstorage;
+			public function HRESULT(IHTMLDocument6 *self, VARIANT v) put_onstoragecommit;
+			public function HRESULT(IHTMLDocument6 *self, VARIANT* p) get_onstoragecommit;
+			public function HRESULT(IHTMLDocument6 *self, BSTR bstrId, IHTMLElement2** ppRetElement) getElementById;
+			public function HRESULT(IHTMLDocument6 *self) updateSettings;
+		}
+		[CRepr]
+		public struct IHTMLDocument8 : IDispatch
+		{
+			public const new Guid IID = .(0x305107d0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmscontentzoom;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmscontentzoom;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmspointerdown;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmspointerdown;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmspointermove;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmspointermove;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmspointerup;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmspointerup;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmspointerover;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmspointerover;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmspointerout;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmspointerout;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmspointercancel;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmspointercancel;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmspointerhover;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmspointerhover;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmsgesturestart;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmsgesturestart;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmsgesturechange;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmsgesturechange;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmsgestureend;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmsgestureend;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmsgesturehold;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmsgesturehold;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmsgesturetap;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmsgesturetap;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmsgesturedoubletap;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmsgesturedoubletap;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmsinertiastart;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmsinertiastart;
+			public function HRESULT(IHTMLDocument8 *self, float x, float y, IHTMLDOMChildrenCollection** elementsHit) elementsFromPoint;
+			public function HRESULT(IHTMLDocument8 *self, float left, float top, float width, float height, IHTMLDOMChildrenCollection** elementsHit) elementsFromRect;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT v) put_onmsmanipulationstatechanged;
+			public function HRESULT(IHTMLDocument8 *self, VARIANT* p) get_onmsmanipulationstatechanged;
+			public function HRESULT(IHTMLDocument8 *self, int16 v) put_msCapsLockWarningOff;
+			public function HRESULT(IHTMLDocument8 *self, int16* p) get_msCapsLockWarningOff;
+		}
+		[CRepr]
+		public struct IDocumentEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305104bc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDocumentEvent *self, BSTR eventType, IDOMEvent** ppEvent) createEvent;
+		}
+		[CRepr]
+		public struct IDocumentRange : IDispatch
+		{
+			public const new Guid IID = .(0x305104af, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDocumentRange *self, IHTMLDOMRange** ppIHTMLDOMRange) createRange;
+		}
+		[CRepr]
+		public struct IDocumentSelector : IDispatch
+		{
+			public const new Guid IID = .(0x30510462, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDocumentSelector *self, BSTR v, IHTMLElement** pel) querySelector;
+			public function HRESULT(IDocumentSelector *self, BSTR v, IHTMLDOMChildrenCollection** pel) querySelectorAll;
+		}
+		[CRepr]
+		public struct IDocumentTraversal : IDispatch
+		{
+			public const new Guid IID = .(0x30510744, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDocumentTraversal *self, IDispatch* pRootNode, int32 ulWhatToShow, VARIANT* pFilter, int16 fEntityReferenceExpansion, IDOMNodeIterator** ppNodeIterator) createNodeIterator;
+			public function HRESULT(IDocumentTraversal *self, IDispatch* pRootNode, int32 ulWhatToShow, VARIANT* pFilter, int16 fEntityReferenceExpansion, IDOMTreeWalker** ppTreeWalker) createTreeWalker;
+		}
+		[CRepr]
+		public struct DispHTMLDocument : IDispatch
+		{
+			public const new Guid IID = .(0x3050f55f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DWebBridgeEvents : IDispatch
+		{
+			public const new Guid IID = .(0xa6d897ff, 0x0a95, 0x11d1, 0xb0, 0xba, 0x00, 0x60, 0x08, 0x16, 0x6e, 0x11);
+			
+		}
+		[CRepr]
+		public struct IWebBridge : IDispatch
+		{
+			public const new Guid IID = .(0xae24fdad, 0x03c6, 0x11d1, 0x8b, 0x76, 0x00, 0x80, 0xc7, 0x44, 0xf3, 0x89);
+			
+			public function HRESULT(IWebBridge *self, BSTR v) put_URL;
+			public function HRESULT(IWebBridge *self, BSTR* p) get_URL;
+			public function HRESULT(IWebBridge *self, int16 v) put_Scrollbar;
+			public function HRESULT(IWebBridge *self, int16* p) get_Scrollbar;
+			public function HRESULT(IWebBridge *self, int16 v) put_embed;
+			public function HRESULT(IWebBridge *self, int16* p) get_embed;
+			public function HRESULT(IWebBridge *self, IDispatch** p) get_event;
+			public function HRESULT(IWebBridge *self, int32* p) get_readyState;
+			public function HRESULT(IWebBridge *self) AboutBox;
+		}
+		[CRepr]
+		public struct IWBScriptControl : IDispatch
+		{
+			public const new Guid IID = .(0xa5170870, 0x0cf8, 0x11d1, 0x8b, 0x91, 0x00, 0x80, 0xc7, 0x44, 0xf3, 0x89);
+			
+			public function HRESULT(IWBScriptControl *self, BSTR name, VARIANT eventData) raiseEvent;
+			public function HRESULT(IWBScriptControl *self) bubbleEvent;
+			public function HRESULT(IWBScriptControl *self, VARIANT menuItemPairs) setContextMenu;
+			public function HRESULT(IWBScriptControl *self, int16 v) put_selectableContent;
+			public function HRESULT(IWBScriptControl *self, int16* p) get_selectableContent;
+			public function HRESULT(IWBScriptControl *self, int16* p) get_frozen;
+			public function HRESULT(IWBScriptControl *self, int16 v) put_scrollbar;
+			public function HRESULT(IWBScriptControl *self, int16* p) get_scrollbar;
+			public function HRESULT(IWBScriptControl *self, BSTR* p) get_version;
+			public function HRESULT(IWBScriptControl *self, int16* p) get_visibility;
+			public function HRESULT(IWBScriptControl *self, VARIANT v) put_onvisibilitychange;
+			public function HRESULT(IWBScriptControl *self, VARIANT* p) get_onvisibilitychange;
+		}
+		[CRepr]
+		public struct IHTMLEmbedElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f25f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEmbedElement *self, BSTR v) put_hidden;
+			public function HRESULT(IHTMLEmbedElement *self, BSTR* p) get_hidden;
+			public function HRESULT(IHTMLEmbedElement *self, BSTR* p) get_palette;
+			public function HRESULT(IHTMLEmbedElement *self, BSTR* p) get_pluginspage;
+			public function HRESULT(IHTMLEmbedElement *self, BSTR v) put_src;
+			public function HRESULT(IHTMLEmbedElement *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLEmbedElement *self, BSTR v) put_units;
+			public function HRESULT(IHTMLEmbedElement *self, BSTR* p) get_units;
+			public function HRESULT(IHTMLEmbedElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLEmbedElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLEmbedElement *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLEmbedElement *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLEmbedElement *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLEmbedElement *self, VARIANT* p) get_height;
+		}
+		[CRepr]
+		public struct IHTMLEmbedElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x30510493, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEmbedElement2 *self, BSTR v) put_src;
+			public function HRESULT(IHTMLEmbedElement2 *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLEmbedElement2 *self, BSTR* p) get_pluginspage;
+		}
+		[CRepr]
+		public struct DispHTMLEmbed : IDispatch
+		{
+			public const new Guid IID = .(0x3050f52e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLMapEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f61e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLMapEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3ba, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLAreasCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f383, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAreasCollection *self, int32 v) put_length;
+			public function HRESULT(IHTMLAreasCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLAreasCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLAreasCollection *self, VARIANT name, VARIANT index, IDispatch** pdisp) item;
+			public function HRESULT(IHTMLAreasCollection *self, VARIANT tagName, IDispatch** pdisp) tags;
+			public function HRESULT(IHTMLAreasCollection *self, IHTMLElement* element, VARIANT before) add;
+			public function HRESULT(IHTMLAreasCollection *self, int32 index) remove;
+		}
+		[CRepr]
+		public struct IHTMLAreasCollection2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5ec, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAreasCollection2 *self, VARIANT urn, IDispatch** pdisp) urns;
+		}
+		[CRepr]
+		public struct IHTMLAreasCollection3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f837, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAreasCollection3 *self, BSTR name, IDispatch** pdisp) namedItem;
+		}
+		[CRepr]
+		public struct IHTMLAreasCollection4 : IDispatch
+		{
+			public const new Guid IID = .(0x30510492, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAreasCollection4 *self, int32* p) get_length;
+			public function HRESULT(IHTMLAreasCollection4 *self, int32 index, IHTMLElement2** pNode) item;
+			public function HRESULT(IHTMLAreasCollection4 *self, BSTR name, IHTMLElement2** pNode) namedItem;
+		}
+		[CRepr]
+		public struct IHTMLMapElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f266, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMapElement *self, IHTMLAreasCollection** p) get_areas;
+			public function HRESULT(IHTMLMapElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLMapElement *self, BSTR* p) get_name;
+		}
+		[CRepr]
+		public struct DispHTMLAreasCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f56a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLMapElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f526, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLAreaEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f611, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLAreaEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f366, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLAreaElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f265, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_shape;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_shape;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_coords;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_coords;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_href;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_href;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_target;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_target;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_alt;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_alt;
+			public function HRESULT(IHTMLAreaElement *self, int16 v) put_noHref;
+			public function HRESULT(IHTMLAreaElement *self, int16* p) get_noHref;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_host;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_host;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_hostname;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_hostname;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_pathname;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_pathname;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_port;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_port;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_protocol;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_protocol;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_search;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_search;
+			public function HRESULT(IHTMLAreaElement *self, BSTR v) put_hash;
+			public function HRESULT(IHTMLAreaElement *self, BSTR* p) get_hash;
+			public function HRESULT(IHTMLAreaElement *self, VARIANT v) put_onblur;
+			public function HRESULT(IHTMLAreaElement *self, VARIANT* p) get_onblur;
+			public function HRESULT(IHTMLAreaElement *self, VARIANT v) put_onfocus;
+			public function HRESULT(IHTMLAreaElement *self, VARIANT* p) get_onfocus;
+			public function HRESULT(IHTMLAreaElement *self, int16 v) put_tabIndex;
+			public function HRESULT(IHTMLAreaElement *self, int16* p) get_tabIndex;
+			public function HRESULT(IHTMLAreaElement *self) focus;
+			public function HRESULT(IHTMLAreaElement *self) blur;
+		}
+		[CRepr]
+		public struct IHTMLAreaElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3051041f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAreaElement2 *self, BSTR v) put_shape;
+			public function HRESULT(IHTMLAreaElement2 *self, BSTR* p) get_shape;
+			public function HRESULT(IHTMLAreaElement2 *self, BSTR v) put_coords;
+			public function HRESULT(IHTMLAreaElement2 *self, BSTR* p) get_coords;
+			public function HRESULT(IHTMLAreaElement2 *self, BSTR v) put_href;
+			public function HRESULT(IHTMLAreaElement2 *self, BSTR* p) get_href;
+		}
+		[CRepr]
+		public struct DispHTMLAreaElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f503, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLTableCaption : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2eb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableCaption *self, BSTR v) put_align;
+			public function HRESULT(IHTMLTableCaption *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLTableCaption *self, BSTR v) put_vAlign;
+			public function HRESULT(IHTMLTableCaption *self, BSTR* p) get_vAlign;
+		}
+		[CRepr]
+		public struct DispHTMLTableCaption : IDispatch
+		{
+			public const new Guid IID = .(0x3050f508, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLCommentElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f20c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCommentElement *self, BSTR v) put_text;
+			public function HRESULT(IHTMLCommentElement *self, BSTR* p) get_text;
+			public function HRESULT(IHTMLCommentElement *self, int32 v) put_atomic;
+			public function HRESULT(IHTMLCommentElement *self, int32* p) get_atomic;
+		}
+		[CRepr]
+		public struct IHTMLCommentElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f813, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCommentElement2 *self, BSTR v) put_data;
+			public function HRESULT(IHTMLCommentElement2 *self, BSTR* p) get_data;
+			public function HRESULT(IHTMLCommentElement2 *self, int32* p) get_length;
+			public function HRESULT(IHTMLCommentElement2 *self, int32 offset, int32 Count, BSTR* pbstrsubString) substringData;
+			public function HRESULT(IHTMLCommentElement2 *self, BSTR bstrstring) appendData;
+			public function HRESULT(IHTMLCommentElement2 *self, int32 offset, BSTR bstrstring) insertData;
+			public function HRESULT(IHTMLCommentElement2 *self, int32 offset, int32 Count) deleteData;
+			public function HRESULT(IHTMLCommentElement2 *self, int32 offset, int32 Count, BSTR bstrstring) replaceData;
+		}
+		[CRepr]
+		public struct IHTMLCommentElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x3051073f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCommentElement3 *self, int32 offset, int32 Count, BSTR* pbstrsubString) substringData;
+			public function HRESULT(IHTMLCommentElement3 *self, int32 offset, BSTR bstrstring) insertData;
+			public function HRESULT(IHTMLCommentElement3 *self, int32 offset, int32 Count) deleteData;
+			public function HRESULT(IHTMLCommentElement3 *self, int32 offset, int32 Count, BSTR bstrstring) replaceData;
+		}
+		[CRepr]
+		public struct DispHTMLCommentElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f50a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLPhraseElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f20a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLPhraseElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f824, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPhraseElement2 *self, BSTR v) put_cite;
+			public function HRESULT(IHTMLPhraseElement2 *self, BSTR* p) get_cite;
+			public function HRESULT(IHTMLPhraseElement2 *self, BSTR v) put_dateTime;
+			public function HRESULT(IHTMLPhraseElement2 *self, BSTR* p) get_dateTime;
+		}
+		[CRepr]
+		public struct IHTMLPhraseElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x3051043d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPhraseElement3 *self, BSTR v) put_cite;
+			public function HRESULT(IHTMLPhraseElement3 *self, BSTR* p) get_cite;
+		}
+		[CRepr]
+		public struct IHTMLSpanElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3f3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLPhraseElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f52d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLSpanElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f548, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLTableEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f623, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLTableEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f407, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLTableSection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f23b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableSection *self, BSTR v) put_align;
+			public function HRESULT(IHTMLTableSection *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLTableSection *self, BSTR v) put_vAlign;
+			public function HRESULT(IHTMLTableSection *self, BSTR* p) get_vAlign;
+			public function HRESULT(IHTMLTableSection *self, VARIANT v) put_bgColor;
+			public function HRESULT(IHTMLTableSection *self, VARIANT* p) get_bgColor;
+			public function HRESULT(IHTMLTableSection *self, IHTMLElementCollection** p) get_rows;
+			public function HRESULT(IHTMLTableSection *self, int32 index, IDispatch** row) insertRow;
+			public function HRESULT(IHTMLTableSection *self, int32 index) deleteRow;
+		}
+		[CRepr]
+		public struct IHTMLTable : IDispatch
+		{
+			public const new Guid IID = .(0x3050f21e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTable *self, int32 v) put_cols;
+			public function HRESULT(IHTMLTable *self, int32* p) get_cols;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_border;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_border;
+			public function HRESULT(IHTMLTable *self, BSTR v) put_frame;
+			public function HRESULT(IHTMLTable *self, BSTR* p) get_frame;
+			public function HRESULT(IHTMLTable *self, BSTR v) put_rules;
+			public function HRESULT(IHTMLTable *self, BSTR* p) get_rules;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_cellSpacing;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_cellSpacing;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_cellPadding;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_cellPadding;
+			public function HRESULT(IHTMLTable *self, BSTR v) put_background;
+			public function HRESULT(IHTMLTable *self, BSTR* p) get_background;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_bgColor;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_bgColor;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_borderColor;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_borderColor;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_borderColorLight;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_borderColorLight;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_borderColorDark;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_borderColorDark;
+			public function HRESULT(IHTMLTable *self, BSTR v) put_align;
+			public function HRESULT(IHTMLTable *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLTable *self) refresh;
+			public function HRESULT(IHTMLTable *self, IHTMLElementCollection** p) get_rows;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLTable *self, int32 v) put_dataPageSize;
+			public function HRESULT(IHTMLTable *self, int32* p) get_dataPageSize;
+			public function HRESULT(IHTMLTable *self) nextPage;
+			public function HRESULT(IHTMLTable *self) previousPage;
+			public function HRESULT(IHTMLTable *self, IHTMLTableSection** p) get_tHead;
+			public function HRESULT(IHTMLTable *self, IHTMLTableSection** p) get_tFoot;
+			public function HRESULT(IHTMLTable *self, IHTMLElementCollection** p) get_tBodies;
+			public function HRESULT(IHTMLTable *self, IHTMLTableCaption** p) get_caption;
+			public function HRESULT(IHTMLTable *self, IDispatch** head) createTHead;
+			public function HRESULT(IHTMLTable *self) deleteTHead;
+			public function HRESULT(IHTMLTable *self, IDispatch** foot) createTFoot;
+			public function HRESULT(IHTMLTable *self) deleteTFoot;
+			public function HRESULT(IHTMLTable *self, IHTMLTableCaption** caption) createCaption;
+			public function HRESULT(IHTMLTable *self) deleteCaption;
+			public function HRESULT(IHTMLTable *self, int32 index, IDispatch** row) insertRow;
+			public function HRESULT(IHTMLTable *self, int32 index) deleteRow;
+			public function HRESULT(IHTMLTable *self, BSTR* p) get_readyState;
+			public function HRESULT(IHTMLTable *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLTable *self, VARIANT* p) get_onreadystatechange;
+		}
+		[CRepr]
+		public struct IHTMLTable2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4ad, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTable2 *self) firstPage;
+			public function HRESULT(IHTMLTable2 *self) lastPage;
+			public function HRESULT(IHTMLTable2 *self, IHTMLElementCollection** p) get_cells;
+			public function HRESULT(IHTMLTable2 *self, int32 indexFrom, int32 indexTo, IDispatch** row) moveRow;
+		}
+		[CRepr]
+		public struct IHTMLTable3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f829, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTable3 *self, BSTR v) put_summary;
+			public function HRESULT(IHTMLTable3 *self, BSTR* p) get_summary;
+		}
+		[CRepr]
+		public struct IHTMLTable4 : IDispatch
+		{
+			public const new Guid IID = .(0x305106c2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTable4 *self, IHTMLTableSection* v) putref_tHead;
+			public function HRESULT(IHTMLTable4 *self, IHTMLTableSection** p) get_tHead;
+			public function HRESULT(IHTMLTable4 *self, IHTMLTableSection* v) putref_tFoot;
+			public function HRESULT(IHTMLTable4 *self, IHTMLTableSection** p) get_tFoot;
+			public function HRESULT(IHTMLTable4 *self, IHTMLTableCaption* v) putref_caption;
+			public function HRESULT(IHTMLTable4 *self, IHTMLTableCaption** p) get_caption;
+			public function HRESULT(IHTMLTable4 *self, int32 index, IDispatch** row) insertRow;
+			public function HRESULT(IHTMLTable4 *self, int32 index) deleteRow;
+			public function HRESULT(IHTMLTable4 *self, IHTMLTableSection** tbody) createTBody;
+		}
+		[CRepr]
+		public struct IHTMLTableCol : IDispatch
+		{
+			public const new Guid IID = .(0x3050f23a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableCol *self, int32 v) put_span;
+			public function HRESULT(IHTMLTableCol *self, int32* p) get_span;
+			public function HRESULT(IHTMLTableCol *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLTableCol *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLTableCol *self, BSTR v) put_align;
+			public function HRESULT(IHTMLTableCol *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLTableCol *self, BSTR v) put_vAlign;
+			public function HRESULT(IHTMLTableCol *self, BSTR* p) get_vAlign;
+		}
+		[CRepr]
+		public struct IHTMLTableCol2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f82a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableCol2 *self, BSTR v) put_ch;
+			public function HRESULT(IHTMLTableCol2 *self, BSTR* p) get_ch;
+			public function HRESULT(IHTMLTableCol2 *self, BSTR v) put_chOff;
+			public function HRESULT(IHTMLTableCol2 *self, BSTR* p) get_chOff;
+		}
+		[CRepr]
+		public struct IHTMLTableCol3 : IDispatch
+		{
+			public const new Guid IID = .(0x305106c4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableCol3 *self, BSTR v) put_ch;
+			public function HRESULT(IHTMLTableCol3 *self, BSTR* p) get_ch;
+			public function HRESULT(IHTMLTableCol3 *self, BSTR v) put_chOff;
+			public function HRESULT(IHTMLTableCol3 *self, BSTR* p) get_chOff;
+		}
+		[CRepr]
+		public struct IHTMLTableSection2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5c7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableSection2 *self, int32 indexFrom, int32 indexTo, IDispatch** row) moveRow;
+		}
+		[CRepr]
+		public struct IHTMLTableSection3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f82b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableSection3 *self, BSTR v) put_ch;
+			public function HRESULT(IHTMLTableSection3 *self, BSTR* p) get_ch;
+			public function HRESULT(IHTMLTableSection3 *self, BSTR v) put_chOff;
+			public function HRESULT(IHTMLTableSection3 *self, BSTR* p) get_chOff;
+		}
+		[CRepr]
+		public struct IHTMLTableSection4 : IDispatch
+		{
+			public const new Guid IID = .(0x305106c5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableSection4 *self, BSTR v) put_ch;
+			public function HRESULT(IHTMLTableSection4 *self, BSTR* p) get_ch;
+			public function HRESULT(IHTMLTableSection4 *self, BSTR v) put_chOff;
+			public function HRESULT(IHTMLTableSection4 *self, BSTR* p) get_chOff;
+			public function HRESULT(IHTMLTableSection4 *self, int32 index, IDispatch** row) insertRow;
+			public function HRESULT(IHTMLTableSection4 *self, int32 index) deleteRow;
+		}
+		[CRepr]
+		public struct IHTMLTableRow : IDispatch
+		{
+			public const new Guid IID = .(0x3050f23c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableRow *self, BSTR v) put_align;
+			public function HRESULT(IHTMLTableRow *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLTableRow *self, BSTR v) put_vAlign;
+			public function HRESULT(IHTMLTableRow *self, BSTR* p) get_vAlign;
+			public function HRESULT(IHTMLTableRow *self, VARIANT v) put_bgColor;
+			public function HRESULT(IHTMLTableRow *self, VARIANT* p) get_bgColor;
+			public function HRESULT(IHTMLTableRow *self, VARIANT v) put_borderColor;
+			public function HRESULT(IHTMLTableRow *self, VARIANT* p) get_borderColor;
+			public function HRESULT(IHTMLTableRow *self, VARIANT v) put_borderColorLight;
+			public function HRESULT(IHTMLTableRow *self, VARIANT* p) get_borderColorLight;
+			public function HRESULT(IHTMLTableRow *self, VARIANT v) put_borderColorDark;
+			public function HRESULT(IHTMLTableRow *self, VARIANT* p) get_borderColorDark;
+			public function HRESULT(IHTMLTableRow *self, int32* p) get_rowIndex;
+			public function HRESULT(IHTMLTableRow *self, int32* p) get_sectionRowIndex;
+			public function HRESULT(IHTMLTableRow *self, IHTMLElementCollection** p) get_cells;
+			public function HRESULT(IHTMLTableRow *self, int32 index, IDispatch** row) insertCell;
+			public function HRESULT(IHTMLTableRow *self, int32 index) deleteCell;
+		}
+		[CRepr]
+		public struct IHTMLTableRow2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4a1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableRow2 *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLTableRow2 *self, VARIANT* p) get_height;
+		}
+		[CRepr]
+		public struct IHTMLTableRow3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f82c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableRow3 *self, BSTR v) put_ch;
+			public function HRESULT(IHTMLTableRow3 *self, BSTR* p) get_ch;
+			public function HRESULT(IHTMLTableRow3 *self, BSTR v) put_chOff;
+			public function HRESULT(IHTMLTableRow3 *self, BSTR* p) get_chOff;
+		}
+		[CRepr]
+		public struct IHTMLTableRow4 : IDispatch
+		{
+			public const new Guid IID = .(0x305106c6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableRow4 *self, BSTR v) put_ch;
+			public function HRESULT(IHTMLTableRow4 *self, BSTR* p) get_ch;
+			public function HRESULT(IHTMLTableRow4 *self, BSTR v) put_chOff;
+			public function HRESULT(IHTMLTableRow4 *self, BSTR* p) get_chOff;
+			public function HRESULT(IHTMLTableRow4 *self, int32 index, IDispatch** row) insertCell;
+			public function HRESULT(IHTMLTableRow4 *self, int32 index) deleteCell;
+		}
+		[CRepr]
+		public struct IHTMLTableRowMetrics : IDispatch
+		{
+			public const new Guid IID = .(0x3050f413, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableRowMetrics *self, int32* p) get_clientHeight;
+			public function HRESULT(IHTMLTableRowMetrics *self, int32* p) get_clientWidth;
+			public function HRESULT(IHTMLTableRowMetrics *self, int32* p) get_clientTop;
+			public function HRESULT(IHTMLTableRowMetrics *self, int32* p) get_clientLeft;
+		}
+		[CRepr]
+		public struct IHTMLTableCell : IDispatch
+		{
+			public const new Guid IID = .(0x3050f23d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableCell *self, int32 v) put_rowSpan;
+			public function HRESULT(IHTMLTableCell *self, int32* p) get_rowSpan;
+			public function HRESULT(IHTMLTableCell *self, int32 v) put_colSpan;
+			public function HRESULT(IHTMLTableCell *self, int32* p) get_colSpan;
+			public function HRESULT(IHTMLTableCell *self, BSTR v) put_align;
+			public function HRESULT(IHTMLTableCell *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLTableCell *self, BSTR v) put_vAlign;
+			public function HRESULT(IHTMLTableCell *self, BSTR* p) get_vAlign;
+			public function HRESULT(IHTMLTableCell *self, VARIANT v) put_bgColor;
+			public function HRESULT(IHTMLTableCell *self, VARIANT* p) get_bgColor;
+			public function HRESULT(IHTMLTableCell *self, int16 v) put_noWrap;
+			public function HRESULT(IHTMLTableCell *self, int16* p) get_noWrap;
+			public function HRESULT(IHTMLTableCell *self, BSTR v) put_background;
+			public function HRESULT(IHTMLTableCell *self, BSTR* p) get_background;
+			public function HRESULT(IHTMLTableCell *self, VARIANT v) put_borderColor;
+			public function HRESULT(IHTMLTableCell *self, VARIANT* p) get_borderColor;
+			public function HRESULT(IHTMLTableCell *self, VARIANT v) put_borderColorLight;
+			public function HRESULT(IHTMLTableCell *self, VARIANT* p) get_borderColorLight;
+			public function HRESULT(IHTMLTableCell *self, VARIANT v) put_borderColorDark;
+			public function HRESULT(IHTMLTableCell *self, VARIANT* p) get_borderColorDark;
+			public function HRESULT(IHTMLTableCell *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLTableCell *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLTableCell *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLTableCell *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLTableCell *self, int32* p) get_cellIndex;
+		}
+		[CRepr]
+		public struct IHTMLTableCell2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f82d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableCell2 *self, BSTR v) put_abbr;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR* p) get_abbr;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR v) put_axis;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR* p) get_axis;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR v) put_ch;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR* p) get_ch;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR v) put_chOff;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR* p) get_chOff;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR v) put_headers;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR* p) get_headers;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR v) put_scope;
+			public function HRESULT(IHTMLTableCell2 *self, BSTR* p) get_scope;
+		}
+		[CRepr]
+		public struct IHTMLTableCell3 : IDispatch
+		{
+			public const new Guid IID = .(0x305106c7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTableCell3 *self, BSTR v) put_ch;
+			public function HRESULT(IHTMLTableCell3 *self, BSTR* p) get_ch;
+			public function HRESULT(IHTMLTableCell3 *self, BSTR v) put_chOff;
+			public function HRESULT(IHTMLTableCell3 *self, BSTR* p) get_chOff;
+		}
+		[CRepr]
+		public struct DispHTMLTable : IDispatch
+		{
+			public const new Guid IID = .(0x3050f532, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLTableCol : IDispatch
+		{
+			public const new Guid IID = .(0x3050f533, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLTableSection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f534, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLTableRow : IDispatch
+		{
+			public const new Guid IID = .(0x3050f535, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLTableCell : IDispatch
+		{
+			public const new Guid IID = .(0x3050f536, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLScriptEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f621, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLScriptEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3e2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLScriptElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f28b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLScriptElement *self, BSTR v) put_src;
+			public function HRESULT(IHTMLScriptElement *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLScriptElement *self, BSTR v) put_htmlFor;
+			public function HRESULT(IHTMLScriptElement *self, BSTR* p) get_htmlFor;
+			public function HRESULT(IHTMLScriptElement *self, BSTR v) put_event;
+			public function HRESULT(IHTMLScriptElement *self, BSTR* p) get_event;
+			public function HRESULT(IHTMLScriptElement *self, BSTR v) put_text;
+			public function HRESULT(IHTMLScriptElement *self, BSTR* p) get_text;
+			public function HRESULT(IHTMLScriptElement *self, int16 v) put_defer;
+			public function HRESULT(IHTMLScriptElement *self, int16* p) get_defer;
+			public function HRESULT(IHTMLScriptElement *self, BSTR* p) get_readyState;
+			public function HRESULT(IHTMLScriptElement *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLScriptElement *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLScriptElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLScriptElement *self, BSTR* p) get_type;
+		}
+		[CRepr]
+		public struct IHTMLScriptElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f828, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLScriptElement2 *self, BSTR v) put_charset;
+			public function HRESULT(IHTMLScriptElement2 *self, BSTR* p) get_charset;
+		}
+		[CRepr]
+		public struct IHTMLScriptElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510447, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLScriptElement3 *self, BSTR v) put_src;
+			public function HRESULT(IHTMLScriptElement3 *self, BSTR* p) get_src;
+		}
+		[CRepr]
+		public struct IHTMLScriptElement4 : IDispatch
+		{
+			public const new Guid IID = .(0x30510801, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLScriptElement4 *self, BSTR* p) get_usedCharset;
+		}
+		[CRepr]
+		public struct DispHTMLScriptElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f530, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLNoShowElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f38a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLNoShowElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f528, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLObjectElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f620, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLObjectElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3c4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLObjectElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f24f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLObjectElement *self, IDispatch** p) get_object;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_classid;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_data;
+			public function HRESULT(IHTMLObjectElement *self, IDispatch* v) putref_recordset;
+			public function HRESULT(IHTMLObjectElement *self, IDispatch** p) get_recordset;
+			public function HRESULT(IHTMLObjectElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_align;
+			public function HRESULT(IHTMLObjectElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLObjectElement *self, BSTR v) put_codeBase;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_codeBase;
+			public function HRESULT(IHTMLObjectElement *self, BSTR v) put_codeType;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_codeType;
+			public function HRESULT(IHTMLObjectElement *self, BSTR v) put_code;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_code;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_BaseHref;
+			public function HRESULT(IHTMLObjectElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLObjectElement *self, IHTMLFormElement** p) get_form;
+			public function HRESULT(IHTMLObjectElement *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLObjectElement *self, VARIANT* p) get_width;
+			public function HRESULT(IHTMLObjectElement *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLObjectElement *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLObjectElement *self, int32* p) get_readyState;
+			public function HRESULT(IHTMLObjectElement *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLObjectElement *self, VARIANT* p) get_onreadystatechange;
+			public function HRESULT(IHTMLObjectElement *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLObjectElement *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLObjectElement *self, BSTR v) put_altHtml;
+			public function HRESULT(IHTMLObjectElement *self, BSTR* p) get_altHtml;
+			public function HRESULT(IHTMLObjectElement *self, int32 v) put_vspace;
+			public function HRESULT(IHTMLObjectElement *self, int32* p) get_vspace;
+			public function HRESULT(IHTMLObjectElement *self, int32 v) put_hspace;
+			public function HRESULT(IHTMLObjectElement *self, int32* p) get_hspace;
+		}
+		[CRepr]
+		public struct IHTMLObjectElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4cd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLObjectElement2 *self, BSTR dataMember, VARIANT* hierarchy, IDispatch** ppRecordset) namedRecordset;
+			public function HRESULT(IHTMLObjectElement2 *self, BSTR v) put_classid;
+			public function HRESULT(IHTMLObjectElement2 *self, BSTR* p) get_classid;
+			public function HRESULT(IHTMLObjectElement2 *self, BSTR v) put_data;
+			public function HRESULT(IHTMLObjectElement2 *self, BSTR* p) get_data;
+		}
+		[CRepr]
+		public struct IHTMLObjectElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f827, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLObjectElement3 *self, BSTR v) put_archive;
+			public function HRESULT(IHTMLObjectElement3 *self, BSTR* p) get_archive;
+			public function HRESULT(IHTMLObjectElement3 *self, BSTR v) put_alt;
+			public function HRESULT(IHTMLObjectElement3 *self, BSTR* p) get_alt;
+			public function HRESULT(IHTMLObjectElement3 *self, int16 v) put_declare;
+			public function HRESULT(IHTMLObjectElement3 *self, int16* p) get_declare;
+			public function HRESULT(IHTMLObjectElement3 *self, BSTR v) put_standby;
+			public function HRESULT(IHTMLObjectElement3 *self, BSTR* p) get_standby;
+			public function HRESULT(IHTMLObjectElement3 *self, VARIANT v) put_border;
+			public function HRESULT(IHTMLObjectElement3 *self, VARIANT* p) get_border;
+			public function HRESULT(IHTMLObjectElement3 *self, BSTR v) put_useMap;
+			public function HRESULT(IHTMLObjectElement3 *self, BSTR* p) get_useMap;
+		}
+		[CRepr]
+		public struct IHTMLObjectElement4 : IDispatch
+		{
+			public const new Guid IID = .(0x3051043e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLObjectElement4 *self, IDispatch** p) get_contentDocument;
+			public function HRESULT(IHTMLObjectElement4 *self, BSTR v) put_codeBase;
+			public function HRESULT(IHTMLObjectElement4 *self, BSTR* p) get_codeBase;
+			public function HRESULT(IHTMLObjectElement4 *self, BSTR v) put_data;
+			public function HRESULT(IHTMLObjectElement4 *self, BSTR* p) get_data;
+		}
+		[CRepr]
+		public struct IHTMLObjectElement5 : IDispatch
+		{
+			public const new Guid IID = .(0x305104b5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLObjectElement5 *self, BSTR v) put_object;
+			public function HRESULT(IHTMLObjectElement5 *self, BSTR* p) get_object;
+		}
+		[CRepr]
+		public struct IHTMLParamElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f83d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLParamElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLParamElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLParamElement *self, BSTR v) put_value;
+			public function HRESULT(IHTMLParamElement *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLParamElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLParamElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLParamElement *self, BSTR v) put_valueType;
+			public function HRESULT(IHTMLParamElement *self, BSTR* p) get_valueType;
+		}
+		[CRepr]
+		public struct IHTMLParamElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x30510444, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLParamElement2 *self, BSTR v) put_name;
+			public function HRESULT(IHTMLParamElement2 *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLParamElement2 *self, BSTR v) put_type;
+			public function HRESULT(IHTMLParamElement2 *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLParamElement2 *self, BSTR v) put_value;
+			public function HRESULT(IHTMLParamElement2 *self, BSTR* p) get_value;
+			public function HRESULT(IHTMLParamElement2 *self, BSTR v) put_valueType;
+			public function HRESULT(IHTMLParamElement2 *self, BSTR* p) get_valueType;
+		}
+		[CRepr]
+		public struct DispHTMLObjectElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f529, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLParamElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f590, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLFrameSiteEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f7ff, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLFrameSiteEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f800, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLFrameBase2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6db, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFrameBase2 *self, IHTMLWindow2** p) get_contentWindow;
+			public function HRESULT(IHTMLFrameBase2 *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLFrameBase2 *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLFrameBase2 *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLFrameBase2 *self, VARIANT* p) get_onreadystatechange;
+			public function HRESULT(IHTMLFrameBase2 *self, BSTR* p) get_readyState;
+			public function HRESULT(IHTMLFrameBase2 *self, int16 v) put_allowTransparency;
+			public function HRESULT(IHTMLFrameBase2 *self, int16* p) get_allowTransparency;
+		}
+		[CRepr]
+		public struct IHTMLFrameBase3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f82e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFrameBase3 *self, BSTR v) put_longDesc;
+			public function HRESULT(IHTMLFrameBase3 *self, BSTR* p) get_longDesc;
+		}
+		[CRepr]
+		public struct DispHTMLFrameBase : IDispatch
+		{
+			public const new Guid IID = .(0x3050f541, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLFrameElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f313, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFrameElement *self, VARIANT v) put_borderColor;
+			public function HRESULT(IHTMLFrameElement *self, VARIANT* p) get_borderColor;
+		}
+		[CRepr]
+		public struct IHTMLFrameElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f7f5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFrameElement2 *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLFrameElement2 *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLFrameElement2 *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLFrameElement2 *self, VARIANT* p) get_width;
+		}
+		[CRepr]
+		public struct IHTMLFrameElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x3051042d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFrameElement3 *self, IDispatch** p) get_contentDocument;
+			public function HRESULT(IHTMLFrameElement3 *self, BSTR v) put_src;
+			public function HRESULT(IHTMLFrameElement3 *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLFrameElement3 *self, BSTR v) put_longDesc;
+			public function HRESULT(IHTMLFrameElement3 *self, BSTR* p) get_longDesc;
+			public function HRESULT(IHTMLFrameElement3 *self, BSTR v) put_frameBorder;
+			public function HRESULT(IHTMLFrameElement3 *self, BSTR* p) get_frameBorder;
+		}
+		[CRepr]
+		public struct DispHTMLFrameElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f513, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLIFrameElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f315, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLIFrameElement *self, int32 v) put_vspace;
+			public function HRESULT(IHTMLIFrameElement *self, int32* p) get_vspace;
+			public function HRESULT(IHTMLIFrameElement *self, int32 v) put_hspace;
+			public function HRESULT(IHTMLIFrameElement *self, int32* p) get_hspace;
+			public function HRESULT(IHTMLIFrameElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLIFrameElement *self, BSTR* p) get_align;
+		}
+		[CRepr]
+		public struct IHTMLIFrameElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4e6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLIFrameElement2 *self, VARIANT v) put_height;
+			public function HRESULT(IHTMLIFrameElement2 *self, VARIANT* p) get_height;
+			public function HRESULT(IHTMLIFrameElement2 *self, VARIANT v) put_width;
+			public function HRESULT(IHTMLIFrameElement2 *self, VARIANT* p) get_width;
+		}
+		[CRepr]
+		public struct IHTMLIFrameElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510433, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLIFrameElement3 *self, IDispatch** p) get_contentDocument;
+			public function HRESULT(IHTMLIFrameElement3 *self, BSTR v) put_src;
+			public function HRESULT(IHTMLIFrameElement3 *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLIFrameElement3 *self, BSTR v) put_longDesc;
+			public function HRESULT(IHTMLIFrameElement3 *self, BSTR* p) get_longDesc;
+			public function HRESULT(IHTMLIFrameElement3 *self, BSTR v) put_frameBorder;
+			public function HRESULT(IHTMLIFrameElement3 *self, BSTR* p) get_frameBorder;
+		}
+		[CRepr]
+		public struct DispHTMLIFrame : IDispatch
+		{
+			public const new Guid IID = .(0x3050f51b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLDivPosition : IDispatch
+		{
+			public const new Guid IID = .(0x3050f212, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDivPosition *self, BSTR v) put_align;
+			public function HRESULT(IHTMLDivPosition *self, BSTR* p) get_align;
+		}
+		[CRepr]
+		public struct IHTMLFieldSetElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3e7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFieldSetElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLFieldSetElement *self, BSTR* p) get_align;
+		}
+		[CRepr]
+		public struct IHTMLFieldSetElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f833, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFieldSetElement2 *self, IHTMLFormElement** p) get_form;
+		}
+		[CRepr]
+		public struct IHTMLLegendElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3ea, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLegendElement *self, BSTR v) put_align;
+			public function HRESULT(IHTMLLegendElement *self, BSTR* p) get_align;
+		}
+		[CRepr]
+		public struct IHTMLLegendElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f834, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLLegendElement2 *self, IHTMLFormElement** p) get_form;
+		}
+		[CRepr]
+		public struct DispHTMLDivPosition : IDispatch
+		{
+			public const new Guid IID = .(0x3050f50f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLFieldSetElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f545, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLLegendElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f546, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLSpanFlow : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3e5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSpanFlow *self, BSTR v) put_align;
+			public function HRESULT(IHTMLSpanFlow *self, BSTR* p) get_align;
+		}
+		[CRepr]
+		public struct DispHTMLSpanFlow : IDispatch
+		{
+			public const new Guid IID = .(0x3050f544, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLFrameSetElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f319, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFrameSetElement *self, BSTR v) put_rows;
+			public function HRESULT(IHTMLFrameSetElement *self, BSTR* p) get_rows;
+			public function HRESULT(IHTMLFrameSetElement *self, BSTR v) put_cols;
+			public function HRESULT(IHTMLFrameSetElement *self, BSTR* p) get_cols;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT v) put_border;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT* p) get_border;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT v) put_borderColor;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT* p) get_borderColor;
+			public function HRESULT(IHTMLFrameSetElement *self, BSTR v) put_frameBorder;
+			public function HRESULT(IHTMLFrameSetElement *self, BSTR* p) get_frameBorder;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT v) put_frameSpacing;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT* p) get_frameSpacing;
+			public function HRESULT(IHTMLFrameSetElement *self, BSTR v) put_name;
+			public function HRESULT(IHTMLFrameSetElement *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT v) put_onunload;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT* p) get_onunload;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT v) put_onbeforeunload;
+			public function HRESULT(IHTMLFrameSetElement *self, VARIANT* p) get_onbeforeunload;
+		}
+		[CRepr]
+		public struct IHTMLFrameSetElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5c6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFrameSetElement2 *self, VARIANT v) put_onbeforeprint;
+			public function HRESULT(IHTMLFrameSetElement2 *self, VARIANT* p) get_onbeforeprint;
+			public function HRESULT(IHTMLFrameSetElement2 *self, VARIANT v) put_onafterprint;
+			public function HRESULT(IHTMLFrameSetElement2 *self, VARIANT* p) get_onafterprint;
+		}
+		[CRepr]
+		public struct IHTMLFrameSetElement3 : IDispatch
+		{
+			public const new Guid IID = .(0x30510796, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT v) put_onhashchange;
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT* p) get_onhashchange;
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT v) put_onmessage;
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT* p) get_onmessage;
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT v) put_onoffline;
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT* p) get_onoffline;
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT v) put_ononline;
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT* p) get_ononline;
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT v) put_onstorage;
+			public function HRESULT(IHTMLFrameSetElement3 *self, VARIANT* p) get_onstorage;
+		}
+		[CRepr]
+		public struct DispHTMLFrameSetSite : IDispatch
+		{
+			public const new Guid IID = .(0x3050f514, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLBGsound : IDispatch
+		{
+			public const new Guid IID = .(0x3050f369, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLBGsound *self, BSTR v) put_src;
+			public function HRESULT(IHTMLBGsound *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLBGsound *self, VARIANT v) put_loop;
+			public function HRESULT(IHTMLBGsound *self, VARIANT* p) get_loop;
+			public function HRESULT(IHTMLBGsound *self, VARIANT v) put_volume;
+			public function HRESULT(IHTMLBGsound *self, VARIANT* p) get_volume;
+			public function HRESULT(IHTMLBGsound *self, VARIANT v) put_balance;
+			public function HRESULT(IHTMLBGsound *self, VARIANT* p) get_balance;
+		}
+		[CRepr]
+		public struct DispHTMLBGsound : IDispatch
+		{
+			public const new Guid IID = .(0x3050f53c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLFontNamesCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f376, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFontNamesCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLFontNamesCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLFontNamesCollection *self, int32 index, BSTR* pBstr) item;
+		}
+		[CRepr]
+		public struct IHTMLFontSizesCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f377, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLFontSizesCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLFontSizesCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLFontSizesCollection *self, BSTR* p) get_forFont;
+			public function HRESULT(IHTMLFontSizesCollection *self, int32 index, int32* plSize) item;
+		}
+		[CRepr]
+		public struct IHTMLOptionsHolder : IDispatch
+		{
+			public const new Guid IID = .(0x3050f378, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLOptionsHolder *self, IHTMLDocument2** p) get_document;
+			public function HRESULT(IHTMLOptionsHolder *self, IHTMLFontNamesCollection** p) get_fonts;
+			public function HRESULT(IHTMLOptionsHolder *self, VARIANT v) put_execArg;
+			public function HRESULT(IHTMLOptionsHolder *self, VARIANT* p) get_execArg;
+			public function HRESULT(IHTMLOptionsHolder *self, int32 v) put_errorLine;
+			public function HRESULT(IHTMLOptionsHolder *self, int32* p) get_errorLine;
+			public function HRESULT(IHTMLOptionsHolder *self, int32 v) put_errorCharacter;
+			public function HRESULT(IHTMLOptionsHolder *self, int32* p) get_errorCharacter;
+			public function HRESULT(IHTMLOptionsHolder *self, int32 v) put_errorCode;
+			public function HRESULT(IHTMLOptionsHolder *self, int32* p) get_errorCode;
+			public function HRESULT(IHTMLOptionsHolder *self, BSTR v) put_errorMessage;
+			public function HRESULT(IHTMLOptionsHolder *self, BSTR* p) get_errorMessage;
+			public function HRESULT(IHTMLOptionsHolder *self, int16 v) put_errorDebug;
+			public function HRESULT(IHTMLOptionsHolder *self, int16* p) get_errorDebug;
+			public function HRESULT(IHTMLOptionsHolder *self, IHTMLWindow2** p) get_unsecuredWindowOfDocument;
+			public function HRESULT(IHTMLOptionsHolder *self, BSTR v) put_findText;
+			public function HRESULT(IHTMLOptionsHolder *self, BSTR* p) get_findText;
+			public function HRESULT(IHTMLOptionsHolder *self, int16 v) put_anythingAfterFrameset;
+			public function HRESULT(IHTMLOptionsHolder *self, int16* p) get_anythingAfterFrameset;
+			public function HRESULT(IHTMLOptionsHolder *self, BSTR fontName, IHTMLFontSizesCollection** pSizesCollection) sizes;
+			public function HRESULT(IHTMLOptionsHolder *self, VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, BSTR* pathName) openfiledlg;
+			public function HRESULT(IHTMLOptionsHolder *self, VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, BSTR* pathName) savefiledlg;
+			public function HRESULT(IHTMLOptionsHolder *self, VARIANT initColor, int32* rgbColor) choosecolordlg;
+			public function HRESULT(IHTMLOptionsHolder *self) showSecurityInfo;
+			public function HRESULT(IHTMLOptionsHolder *self, IHTMLObjectElement* object, int16* fApartment) isApartmentModel;
+			public function HRESULT(IHTMLOptionsHolder *self, BSTR fontName, int32* charset) getCharset;
+			public function HRESULT(IHTMLOptionsHolder *self, BSTR* p) get_secureConnectionInfo;
+		}
+		[CRepr]
+		public struct HTMLStyleElementEvents2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f615, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLStyleElementEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3cb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyleElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f375, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLStyleElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLStyleElement *self, BSTR* p) get_readyState;
+			public function HRESULT(IHTMLStyleElement *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLStyleElement *self, VARIANT* p) get_onreadystatechange;
+			public function HRESULT(IHTMLStyleElement *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLStyleElement *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLStyleElement *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLStyleElement *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLStyleElement *self, IHTMLStyleSheet** p) get_styleSheet;
+			public function HRESULT(IHTMLStyleElement *self, int16 v) put_disabled;
+			public function HRESULT(IHTMLStyleElement *self, int16* p) get_disabled;
+			public function HRESULT(IHTMLStyleElement *self, BSTR v) put_media;
+			public function HRESULT(IHTMLStyleElement *self, BSTR* p) get_media;
+		}
+		[CRepr]
+		public struct IHTMLStyleElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x3051072a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleElement2 *self, IHTMLStyleSheet** p) get_sheet;
+		}
+		[CRepr]
+		public struct DispHTMLStyleElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f511, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyleFontFace : IDispatch
+		{
+			public const new Guid IID = .(0x3050f3d5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleFontFace *self, BSTR v) put_fontsrc;
+			public function HRESULT(IHTMLStyleFontFace *self, BSTR* p) get_fontsrc;
+		}
+		[CRepr]
+		public struct IHTMLStyleFontFace2 : IDispatch
+		{
+			public const new Guid IID = .(0x305106ec, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleFontFace2 *self, IHTMLRuleStyle** p) get_style;
+		}
+		[CRepr]
+		public struct DispHTMLStyleFontFace : IDispatch
+		{
+			public const new Guid IID = .(0x30590081, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLXDomainRequest : IDispatch
+		{
+			public const new Guid IID = .(0x30510454, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLXDomainRequest *self, BSTR* p) get_responseText;
+			public function HRESULT(IHTMLXDomainRequest *self, int32 v) put_timeout;
+			public function HRESULT(IHTMLXDomainRequest *self, int32* p) get_timeout;
+			public function HRESULT(IHTMLXDomainRequest *self, BSTR* p) get_contentType;
+			public function HRESULT(IHTMLXDomainRequest *self, VARIANT v) put_onprogress;
+			public function HRESULT(IHTMLXDomainRequest *self, VARIANT* p) get_onprogress;
+			public function HRESULT(IHTMLXDomainRequest *self, VARIANT v) put_onerror;
+			public function HRESULT(IHTMLXDomainRequest *self, VARIANT* p) get_onerror;
+			public function HRESULT(IHTMLXDomainRequest *self, VARIANT v) put_ontimeout;
+			public function HRESULT(IHTMLXDomainRequest *self, VARIANT* p) get_ontimeout;
+			public function HRESULT(IHTMLXDomainRequest *self, VARIANT v) put_onload;
+			public function HRESULT(IHTMLXDomainRequest *self, VARIANT* p) get_onload;
+			public function HRESULT(IHTMLXDomainRequest *self) abort;
+			public function HRESULT(IHTMLXDomainRequest *self, BSTR bstrMethod, BSTR bstrUrl) open;
+			public function HRESULT(IHTMLXDomainRequest *self, VARIANT varBody) send;
+		}
+		[CRepr]
+		public struct IHTMLXDomainRequestFactory : IDispatch
+		{
+			public const new Guid IID = .(0x30510456, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLXDomainRequestFactory *self, IHTMLXDomainRequest** __MIDL__IHTMLXDomainRequestFactory0000) create;
+		}
+		[CRepr]
+		public struct DispXDomainRequest : IDispatch
+		{
+			public const new Guid IID = .(0x3050f599, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStorage2 : IDispatch
+		{
+			public const new Guid IID = .(0x30510799, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStorage2 *self, BSTR bstrKey, BSTR bstrValue) setItem;
+		}
+		[CRepr]
+		public struct DispHTMLStorage : IDispatch
+		{
+			public const new Guid IID = .(0x3050f59d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IEventTarget : IDispatch
+		{
+			public const new Guid IID = .(0x305104b9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IEventTarget *self, BSTR type, IDispatch* listener, int16 useCapture) addEventListener;
+			public function HRESULT(IEventTarget *self, BSTR type, IDispatch* listener, int16 useCapture) removeEventListener;
+			public function HRESULT(IEventTarget *self, IDOMEvent* evt, int16* pfResult) dispatchEvent;
+		}
+		[CRepr]
+		public struct DispDOMEvent : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5a2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMUIEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106ca, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMUIEvent *self, IHTMLWindow2** p) get_view;
+			public function HRESULT(IDOMUIEvent *self, int32* p) get_detail;
+			public function HRESULT(IDOMUIEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* view, int32 detail) initUIEvent;
+		}
+		[CRepr]
+		public struct DispDOMUIEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590072, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMMouseEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106ce, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_screenX;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_screenY;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_clientX;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_clientY;
+			public function HRESULT(IDOMMouseEvent *self, int16* p) get_ctrlKey;
+			public function HRESULT(IDOMMouseEvent *self, int16* p) get_shiftKey;
+			public function HRESULT(IDOMMouseEvent *self, int16* p) get_altKey;
+			public function HRESULT(IDOMMouseEvent *self, int16* p) get_metaKey;
+			public function HRESULT(IDOMMouseEvent *self, uint16* p) get_button;
+			public function HRESULT(IDOMMouseEvent *self, IEventTarget** p) get_relatedTarget;
+			public function HRESULT(IDOMMouseEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* viewArg, int32 detailArg, int32 screenXArg, int32 screenYArg, int32 clientXArg, int32 clientYArg, int16 ctrlKeyArg, int16 altKeyArg, int16 shiftKeyArg, int16 metaKeyArg, uint16 buttonArg, IEventTarget* relatedTargetArg) initMouseEvent;
+			public function HRESULT(IDOMMouseEvent *self, BSTR keyArg, int16* activated) getModifierState;
+			public function HRESULT(IDOMMouseEvent *self, uint16* p) get_buttons;
+			public function HRESULT(IDOMMouseEvent *self, IHTMLElement** p) get_fromElement;
+			public function HRESULT(IDOMMouseEvent *self, IHTMLElement** p) get_toElement;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_x;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_y;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_offsetX;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_offsetY;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_pageX;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_pageY;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_layerX;
+			public function HRESULT(IDOMMouseEvent *self, int32* p) get_layerY;
+			public function HRESULT(IDOMMouseEvent *self, uint16* p) get_which;
+		}
+		[CRepr]
+		public struct DispDOMMouseEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590073, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMDragEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30510761, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMDragEvent *self, IHTMLDataTransfer** p) get_dataTransfer;
+			public function HRESULT(IDOMDragEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* viewArg, int32 detailArg, int32 screenXArg, int32 screenYArg, int32 clientXArg, int32 clientYArg, int16 ctrlKeyArg, int16 altKeyArg, int16 shiftKeyArg, int16 metaKeyArg, uint16 buttonArg, IEventTarget* relatedTargetArg, IHTMLDataTransfer* dataTransferArg) initDragEvent;
+		}
+		[CRepr]
+		public struct DispDOMDragEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305900a7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMMouseWheelEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106d0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMMouseWheelEvent *self, int32* p) get_wheelDelta;
+			public function HRESULT(IDOMMouseWheelEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* viewArg, int32 detailArg, int32 screenXArg, int32 screenYArg, int32 clientXArg, int32 clientYArg, uint16 buttonArg, IEventTarget* relatedTargetArg, BSTR modifiersListArg, int32 wheelDeltaArg) initMouseWheelEvent;
+		}
+		[CRepr]
+		public struct DispDOMMouseWheelEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590074, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMWheelEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106d2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMWheelEvent *self, int32* p) get_deltaX;
+			public function HRESULT(IDOMWheelEvent *self, int32* p) get_deltaY;
+			public function HRESULT(IDOMWheelEvent *self, int32* p) get_deltaZ;
+			public function HRESULT(IDOMWheelEvent *self, uint32* p) get_deltaMode;
+			public function HRESULT(IDOMWheelEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* viewArg, int32 detailArg, int32 screenXArg, int32 screenYArg, int32 clientXArg, int32 clientYArg, uint16 buttonArg, IEventTarget* relatedTargetArg, BSTR modifiersListArg, int32 deltaX, int32 deltaY, int32 deltaZ, uint32 deltaMode) initWheelEvent;
+		}
+		[CRepr]
+		public struct DispDOMWheelEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590075, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMTextEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106d4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMTextEvent *self, BSTR* p) get_data;
+			public function HRESULT(IDOMTextEvent *self, uint32* p) get_inputMethod;
+			public function HRESULT(IDOMTextEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* viewArg, BSTR dataArg, uint32 inputMethod, BSTR locale) initTextEvent;
+			public function HRESULT(IDOMTextEvent *self, BSTR* p) get_locale;
+		}
+		[CRepr]
+		public struct DispDOMTextEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590076, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMKeyboardEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106d6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMKeyboardEvent *self, BSTR* p) get_key;
+			public function HRESULT(IDOMKeyboardEvent *self, uint32* p) get_location;
+			public function HRESULT(IDOMKeyboardEvent *self, int16* p) get_ctrlKey;
+			public function HRESULT(IDOMKeyboardEvent *self, int16* p) get_shiftKey;
+			public function HRESULT(IDOMKeyboardEvent *self, int16* p) get_altKey;
+			public function HRESULT(IDOMKeyboardEvent *self, int16* p) get_metaKey;
+			public function HRESULT(IDOMKeyboardEvent *self, int16* p) get_repeat;
+			public function HRESULT(IDOMKeyboardEvent *self, BSTR keyArg, int16* state) getModifierState;
+			public function HRESULT(IDOMKeyboardEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* viewArg, BSTR keyArg, uint32 locationArg, BSTR modifiersListArg, int16 @repeat, BSTR locale) initKeyboardEvent;
+			public function HRESULT(IDOMKeyboardEvent *self, int32* p) get_keyCode;
+			public function HRESULT(IDOMKeyboardEvent *self, int32* p) get_charCode;
+			public function HRESULT(IDOMKeyboardEvent *self, int32* p) get_which;
+			public function HRESULT(IDOMKeyboardEvent *self, VARIANT* p) get_ie9_char;
+			public function HRESULT(IDOMKeyboardEvent *self, BSTR* p) get_locale;
+		}
+		[CRepr]
+		public struct DispDOMKeyboardEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590077, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMCompositionEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106d8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMCompositionEvent *self, BSTR* p) get_data;
+			public function HRESULT(IDOMCompositionEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* viewArg, BSTR data, BSTR locale) initCompositionEvent;
+			public function HRESULT(IDOMCompositionEvent *self, BSTR* p) get_locale;
+		}
+		[CRepr]
+		public struct DispDOMCompositionEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590078, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMMutationEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106da, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMMutationEvent *self, IDispatch** p) get_relatedNode;
+			public function HRESULT(IDOMMutationEvent *self, BSTR* p) get_prevValue;
+			public function HRESULT(IDOMMutationEvent *self, BSTR* p) get_newValue;
+			public function HRESULT(IDOMMutationEvent *self, BSTR* p) get_attrName;
+			public function HRESULT(IDOMMutationEvent *self, uint16* p) get_attrChange;
+			public function HRESULT(IDOMMutationEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IDispatch* relatedNodeArg, BSTR prevValueArg, BSTR newValueArg, BSTR attrNameArg, uint16 attrChangeArg) initMutationEvent;
+		}
+		[CRepr]
+		public struct DispDOMMutationEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590079, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMBeforeUnloadEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30510763, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMBeforeUnloadEvent *self, VARIANT v) put_returnValue;
+			public function HRESULT(IDOMBeforeUnloadEvent *self, VARIANT* p) get_returnValue;
+		}
+		[CRepr]
+		public struct DispDOMBeforeUnloadEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305900a8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMFocusEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106cc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMFocusEvent *self, IEventTarget** p) get_relatedTarget;
+			public function HRESULT(IDOMFocusEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* view, int32 detail, IEventTarget* relatedTargetArg) initFocusEvent;
+		}
+		[CRepr]
+		public struct DispDOMFocusEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590071, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMCustomEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305106de, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMCustomEvent *self, VARIANT* p) get_detail;
+			public function HRESULT(IDOMCustomEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, VARIANT* detail) initCustomEvent;
+		}
+		[CRepr]
+		public struct DispDOMCustomEvent : IDispatch
+		{
+			public const new Guid IID = .(0x3059007c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ICanvasGradient : IDispatch
+		{
+			public const new Guid IID = .(0x30510714, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ICanvasGradient *self, float offset, BSTR color) addColorStop;
+		}
+		[CRepr]
+		public struct ICanvasPattern : IDispatch
+		{
+			public const new Guid IID = .(0x30510716, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ICanvasTextMetrics : IDispatch
+		{
+			public const new Guid IID = .(0x30510718, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ICanvasTextMetrics *self, float* p) get_width;
+		}
+		[CRepr]
+		public struct ICanvasImageData : IDispatch
+		{
+			public const new Guid IID = .(0x3051071a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ICanvasImageData *self, uint32* p) get_width;
+			public function HRESULT(ICanvasImageData *self, uint32* p) get_height;
+			public function HRESULT(ICanvasImageData *self, VARIANT* p) get_data;
+		}
+		[CRepr]
+		public struct ICanvasPixelArray : IDispatch
+		{
+			public const new Guid IID = .(0x3051071c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ICanvasPixelArray *self, uint32* p) get_length;
+		}
+		[CRepr]
+		public struct IHTMLCanvasElement : IDispatch
+		{
+			public const new Guid IID = .(0x305106e4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCanvasElement *self, int32 v) put_width;
+			public function HRESULT(IHTMLCanvasElement *self, int32* p) get_width;
+			public function HRESULT(IHTMLCanvasElement *self, int32 v) put_height;
+			public function HRESULT(IHTMLCanvasElement *self, int32* p) get_height;
+			public function HRESULT(IHTMLCanvasElement *self, BSTR contextId, ICanvasRenderingContext2D** ppContext) getContext;
+			public function HRESULT(IHTMLCanvasElement *self, BSTR type, VARIANT jpegquality, BSTR* pUrl) toDataURL;
+		}
+		[CRepr]
+		public struct ICanvasRenderingContext2D : IDispatch
+		{
+			public const new Guid IID = .(0x305106ff, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ICanvasRenderingContext2D *self, IHTMLCanvasElement** p) get_canvas;
+			public function HRESULT(ICanvasRenderingContext2D *self) restore;
+			public function HRESULT(ICanvasRenderingContext2D *self) save;
+			public function HRESULT(ICanvasRenderingContext2D *self, float angle) rotate;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y) scale;
+			public function HRESULT(ICanvasRenderingContext2D *self, float m11, float m12, float m21, float m22, float dx, float dy) setTransform;
+			public function HRESULT(ICanvasRenderingContext2D *self, float m11, float m12, float m21, float m22, float dx, float dy) transform;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y) translate;
+			public function HRESULT(ICanvasRenderingContext2D *self, float v) put_globalAlpha;
+			public function HRESULT(ICanvasRenderingContext2D *self, float* p) get_globalAlpha;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR v) put_globalCompositeOperation;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR* p) get_globalCompositeOperation;
+			public function HRESULT(ICanvasRenderingContext2D *self, VARIANT v) put_fillStyle;
+			public function HRESULT(ICanvasRenderingContext2D *self, VARIANT* p) get_fillStyle;
+			public function HRESULT(ICanvasRenderingContext2D *self, VARIANT v) put_strokeStyle;
+			public function HRESULT(ICanvasRenderingContext2D *self, VARIANT* p) get_strokeStyle;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x0, float y0, float x1, float y1, ICanvasGradient** ppCanvasGradient) createLinearGradient;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x0, float y0, float r0, float x1, float y1, float r1, ICanvasGradient** ppCanvasGradient) createRadialGradient;
+			public function HRESULT(ICanvasRenderingContext2D *self, IDispatch* image, VARIANT repetition, ICanvasPattern** ppCanvasPattern) createPattern;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR v) put_lineCap;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR* p) get_lineCap;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR v) put_lineJoin;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR* p) get_lineJoin;
+			public function HRESULT(ICanvasRenderingContext2D *self, float v) put_lineWidth;
+			public function HRESULT(ICanvasRenderingContext2D *self, float* p) get_lineWidth;
+			public function HRESULT(ICanvasRenderingContext2D *self, float v) put_miterLimit;
+			public function HRESULT(ICanvasRenderingContext2D *self, float* p) get_miterLimit;
+			public function HRESULT(ICanvasRenderingContext2D *self, float v) put_shadowBlur;
+			public function HRESULT(ICanvasRenderingContext2D *self, float* p) get_shadowBlur;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR v) put_shadowColor;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR* p) get_shadowColor;
+			public function HRESULT(ICanvasRenderingContext2D *self, float v) put_shadowOffsetX;
+			public function HRESULT(ICanvasRenderingContext2D *self, float* p) get_shadowOffsetX;
+			public function HRESULT(ICanvasRenderingContext2D *self, float v) put_shadowOffsetY;
+			public function HRESULT(ICanvasRenderingContext2D *self, float* p) get_shadowOffsetY;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y, float w, float h) clearRect;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y, float w, float h) fillRect;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y, float w, float h) strokeRect;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y, float radius, float startAngle, float endAngle, BOOL anticlockwise) arc;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x1, float y1, float x2, float y2, float radius) arcTo;
+			public function HRESULT(ICanvasRenderingContext2D *self) beginPath;
+			public function HRESULT(ICanvasRenderingContext2D *self, float cp1x, float cp1y, float cp2x, float cp2y, float x, float y) bezierCurveTo;
+			public function HRESULT(ICanvasRenderingContext2D *self) clip;
+			public function HRESULT(ICanvasRenderingContext2D *self) closePath;
+			public function HRESULT(ICanvasRenderingContext2D *self) fill;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y) lineTo;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y) moveTo;
+			public function HRESULT(ICanvasRenderingContext2D *self, float cpx, float cpy, float x, float y) quadraticCurveTo;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y, float w, float h) rect;
+			public function HRESULT(ICanvasRenderingContext2D *self) stroke;
+			public function HRESULT(ICanvasRenderingContext2D *self, float x, float y, int16* pResult) isPointInPath;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR v) put_font;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR* p) get_font;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR v) put_textAlign;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR* p) get_textAlign;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR v) put_textBaseline;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR* p) get_textBaseline;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR text, float x, float y, VARIANT maxWidth) fillText;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR text, ICanvasTextMetrics** ppCanvasTextMetrics) measureText;
+			public function HRESULT(ICanvasRenderingContext2D *self, BSTR text, float x, float y, VARIANT maxWidth) strokeText;
+			public function HRESULT(ICanvasRenderingContext2D *self, IDispatch* pSrc, VARIANT a1, VARIANT a2, VARIANT a3, VARIANT a4, VARIANT a5, VARIANT a6, VARIANT a7, VARIANT a8) drawImage;
+			public function HRESULT(ICanvasRenderingContext2D *self, VARIANT a1, VARIANT a2, ICanvasImageData** ppCanvasImageData) createImageData;
+			public function HRESULT(ICanvasRenderingContext2D *self, float sx, float sy, float sw, float sh, ICanvasImageData** ppCanvasImageData) getImageData;
+			public function HRESULT(ICanvasRenderingContext2D *self, ICanvasImageData* imagedata, float dx, float dy, VARIANT dirtyX, VARIANT dirtyY, VARIANT dirtyWidth, VARIANT dirtyHeight) putImageData;
+		}
+		[CRepr]
+		public struct DispCanvasGradient : IDispatch
+		{
+			public const new Guid IID = .(0x3059008c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispCanvasPattern : IDispatch
+		{
+			public const new Guid IID = .(0x3059008d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispCanvasTextMetrics : IDispatch
+		{
+			public const new Guid IID = .(0x3059008e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispCanvasImageData : IDispatch
+		{
+			public const new Guid IID = .(0x3059008f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispCanvasRenderingContext2D : IDispatch
+		{
+			public const new Guid IID = .(0x30590082, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLCanvasElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059007b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMProgressEvent : IDispatch
+		{
+			public const new Guid IID = .(0x3051071e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMProgressEvent *self, int16* p) get_lengthComputable;
+			public function HRESULT(IDOMProgressEvent *self, uint64* p) get_loaded;
+			public function HRESULT(IDOMProgressEvent *self, uint64* p) get_total;
+			public function HRESULT(IDOMProgressEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, int16 lengthComputableArg, uint64 loadedArg, uint64 totalArg) initProgressEvent;
+		}
+		[CRepr]
+		public struct DispDOMProgressEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590091, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMMessageEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30510720, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMMessageEvent *self, BSTR* p) get_data;
+			public function HRESULT(IDOMMessageEvent *self, BSTR* p) get_origin;
+			public function HRESULT(IDOMMessageEvent *self, IHTMLWindow2** p) get_source;
+			public function HRESULT(IDOMMessageEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, BSTR data, BSTR origin, BSTR lastEventId, IHTMLWindow2* source) initMessageEvent;
+		}
+		[CRepr]
+		public struct DispDOMMessageEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590092, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMSiteModeEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30510765, 0x98b6, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMSiteModeEvent *self, int32* p) get_buttonID;
+			public function HRESULT(IDOMSiteModeEvent *self, BSTR* p) get_actionURL;
+		}
+		[CRepr]
+		public struct DispDOMSiteModeEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305900a9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMStorageEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30510722, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMStorageEvent *self, BSTR* p) get_key;
+			public function HRESULT(IDOMStorageEvent *self, BSTR* p) get_oldValue;
+			public function HRESULT(IDOMStorageEvent *self, BSTR* p) get_newValue;
+			public function HRESULT(IDOMStorageEvent *self, BSTR* p) get_url;
+			public function HRESULT(IDOMStorageEvent *self, IHTMLStorage** p) get_storageArea;
+			public function HRESULT(IDOMStorageEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, BSTR keyArg, BSTR oldValueArg, BSTR newValueArg, BSTR urlArg, IHTMLStorage* storageAreaArg) initStorageEvent;
+		}
+		[CRepr]
+		public struct DispDOMStorageEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590093, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IXMLHttpRequestEventTarget : IDispatch
+		{
+			public const new Guid IID = .(0x30510830, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispXMLHttpRequestEventTarget : IDispatch
+		{
+			public const new Guid IID = .(0x305900e7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct HTMLXMLHttpRequestEvents : IDispatch
+		{
+			public const new Guid IID = .(0x30510498, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLXMLHttpRequest : IDispatch
+		{
+			public const new Guid IID = .(0x3051040a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLXMLHttpRequest *self, int32* p) get_readyState;
+			public function HRESULT(IHTMLXMLHttpRequest *self, VARIANT* p) get_responseBody;
+			public function HRESULT(IHTMLXMLHttpRequest *self, BSTR* p) get_responseText;
+			public function HRESULT(IHTMLXMLHttpRequest *self, IDispatch** p) get_responseXML;
+			public function HRESULT(IHTMLXMLHttpRequest *self, int32* p) get_status;
+			public function HRESULT(IHTMLXMLHttpRequest *self, BSTR* p) get_statusText;
+			public function HRESULT(IHTMLXMLHttpRequest *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLXMLHttpRequest *self, VARIANT* p) get_onreadystatechange;
+			public function HRESULT(IHTMLXMLHttpRequest *self) abort;
+			public function HRESULT(IHTMLXMLHttpRequest *self, BSTR bstrMethod, BSTR bstrUrl, VARIANT varAsync, VARIANT varUser, VARIANT varPassword) open;
+			public function HRESULT(IHTMLXMLHttpRequest *self, VARIANT varBody) send;
+			public function HRESULT(IHTMLXMLHttpRequest *self, BSTR* __MIDL__IHTMLXMLHttpRequest0000) getAllResponseHeaders;
+			public function HRESULT(IHTMLXMLHttpRequest *self, BSTR bstrHeader, BSTR* __MIDL__IHTMLXMLHttpRequest0001) getResponseHeader;
+			public function HRESULT(IHTMLXMLHttpRequest *self, BSTR bstrHeader, BSTR bstrValue) setRequestHeader;
+		}
+		[CRepr]
+		public struct IHTMLXMLHttpRequest2 : IDispatch
+		{
+			public const new Guid IID = .(0x30510482, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLXMLHttpRequest2 *self, int32 v) put_timeout;
+			public function HRESULT(IHTMLXMLHttpRequest2 *self, int32* p) get_timeout;
+			public function HRESULT(IHTMLXMLHttpRequest2 *self, VARIANT v) put_ontimeout;
+			public function HRESULT(IHTMLXMLHttpRequest2 *self, VARIANT* p) get_ontimeout;
+		}
+		[CRepr]
+		public struct IHTMLXMLHttpRequestFactory : IDispatch
+		{
+			public const new Guid IID = .(0x3051040c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLXMLHttpRequestFactory *self, IHTMLXMLHttpRequest** __MIDL__IHTMLXMLHttpRequestFactory0000) create;
+		}
+		[CRepr]
+		public struct DispHTMLXMLHttpRequest : IDispatch
+		{
+			public const new Guid IID = .(0x3050f596, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGAngle : IDispatch
+		{
+			public const new Guid IID = .(0x305104d3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAngle *self, int16 v) put_unitType;
+			public function HRESULT(ISVGAngle *self, int16* p) get_unitType;
+			public function HRESULT(ISVGAngle *self, float v) put_value;
+			public function HRESULT(ISVGAngle *self, float* p) get_value;
+			public function HRESULT(ISVGAngle *self, float v) put_valueInSpecifiedUnits;
+			public function HRESULT(ISVGAngle *self, float* p) get_valueInSpecifiedUnits;
+			public function HRESULT(ISVGAngle *self, BSTR v) put_valueAsString;
+			public function HRESULT(ISVGAngle *self, BSTR* p) get_valueAsString;
+			public function HRESULT(ISVGAngle *self, int16 unitType, float valueInSpecifiedUnits) newValueSpecifiedUnits;
+			public function HRESULT(ISVGAngle *self, int16 unitType) convertToSpecifiedUnits;
+		}
+		[CRepr]
+		public struct ISVGElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104c5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGElement *self, BSTR v) put_xmlbase;
+			public function HRESULT(ISVGElement *self, BSTR* p) get_xmlbase;
+			public function HRESULT(ISVGElement *self, ISVGSVGElement* v) putref_ownerSVGElement;
+			public function HRESULT(ISVGElement *self, ISVGSVGElement** p) get_ownerSVGElement;
+			public function HRESULT(ISVGElement *self, ISVGElement* v) putref_viewportElement;
+			public function HRESULT(ISVGElement *self, ISVGElement** p) get_viewportElement;
+			public function HRESULT(ISVGElement *self, ISVGAnimatedEnumeration* v) putref_focusable;
+			public function HRESULT(ISVGElement *self, ISVGAnimatedEnumeration** p) get_focusable;
+		}
+		[CRepr]
+		public struct ISVGRect : IDispatch
+		{
+			public const new Guid IID = .(0x305104d7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGRect *self, float v) put_x;
+			public function HRESULT(ISVGRect *self, float* p) get_x;
+			public function HRESULT(ISVGRect *self, float v) put_y;
+			public function HRESULT(ISVGRect *self, float* p) get_y;
+			public function HRESULT(ISVGRect *self, float v) put_width;
+			public function HRESULT(ISVGRect *self, float* p) get_width;
+			public function HRESULT(ISVGRect *self, float v) put_height;
+			public function HRESULT(ISVGRect *self, float* p) get_height;
+		}
+		[CRepr]
+		public struct ISVGMatrix : IDispatch
+		{
+			public const new Guid IID = .(0x305104f6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGMatrix *self, float v) put_a;
+			public function HRESULT(ISVGMatrix *self, float* p) get_a;
+			public function HRESULT(ISVGMatrix *self, float v) put_b;
+			public function HRESULT(ISVGMatrix *self, float* p) get_b;
+			public function HRESULT(ISVGMatrix *self, float v) put_c;
+			public function HRESULT(ISVGMatrix *self, float* p) get_c;
+			public function HRESULT(ISVGMatrix *self, float v) put_d;
+			public function HRESULT(ISVGMatrix *self, float* p) get_d;
+			public function HRESULT(ISVGMatrix *self, float v) put_e;
+			public function HRESULT(ISVGMatrix *self, float* p) get_e;
+			public function HRESULT(ISVGMatrix *self, float v) put_f;
+			public function HRESULT(ISVGMatrix *self, float* p) get_f;
+			public function HRESULT(ISVGMatrix *self, ISVGMatrix* secondMatrix, ISVGMatrix** ppResult) multiply;
+			public function HRESULT(ISVGMatrix *self, ISVGMatrix** ppResult) inverse;
+			public function HRESULT(ISVGMatrix *self, float x, float y, ISVGMatrix** ppResult) translate;
+			public function HRESULT(ISVGMatrix *self, float scaleFactor, ISVGMatrix** ppResult) scale;
+			public function HRESULT(ISVGMatrix *self, float scaleFactorX, float scaleFactorY, ISVGMatrix** ppResult) scaleNonUniform;
+			public function HRESULT(ISVGMatrix *self, float angle, ISVGMatrix** ppResult) rotate;
+			public function HRESULT(ISVGMatrix *self, float x, float y, ISVGMatrix** ppResult) rotateFromVector;
+			public function HRESULT(ISVGMatrix *self, ISVGMatrix** ppResult) flipX;
+			public function HRESULT(ISVGMatrix *self, ISVGMatrix** ppResult) flipY;
+			public function HRESULT(ISVGMatrix *self, float angle, ISVGMatrix** ppResult) skewX;
+			public function HRESULT(ISVGMatrix *self, float angle, ISVGMatrix** ppResult) skewY;
+		}
+		[CRepr]
+		public struct ISVGStringList : IDispatch
+		{
+			public const new Guid IID = .(0x305104c8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGStringList *self, int32 v) put_numberOfItems;
+			public function HRESULT(ISVGStringList *self, int32* p) get_numberOfItems;
+			public function HRESULT(ISVGStringList *self) clear;
+			public function HRESULT(ISVGStringList *self, BSTR newItem, BSTR* ppResult) initialize;
+			public function HRESULT(ISVGStringList *self, int32 index, BSTR* ppResult) getItem;
+			public function HRESULT(ISVGStringList *self, BSTR newItem, int32 index, BSTR* ppResult) insertItemBefore;
+			public function HRESULT(ISVGStringList *self, BSTR newItem, int32 index, BSTR* ppResult) replaceItem;
+			public function HRESULT(ISVGStringList *self, int32 index, BSTR* ppResult) removeItem;
+			public function HRESULT(ISVGStringList *self, BSTR newItem, BSTR* ppResult) appendItem;
+		}
+		[CRepr]
+		public struct ISVGAnimatedRect : IDispatch
+		{
+			public const new Guid IID = .(0x305104d8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedRect *self, ISVGRect* v) putref_baseVal;
+			public function HRESULT(ISVGAnimatedRect *self, ISVGRect** p) get_baseVal;
+			public function HRESULT(ISVGAnimatedRect *self, ISVGRect* v) putref_animVal;
+			public function HRESULT(ISVGAnimatedRect *self, ISVGRect** p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGAnimatedString : IDispatch
+		{
+			public const new Guid IID = .(0x305104c7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedString *self, BSTR v) put_baseVal;
+			public function HRESULT(ISVGAnimatedString *self, BSTR* p) get_baseVal;
+			public function HRESULT(ISVGAnimatedString *self, BSTR* p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGAnimatedBoolean : IDispatch
+		{
+			public const new Guid IID = .(0x305104c6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedBoolean *self, int16 v) put_baseVal;
+			public function HRESULT(ISVGAnimatedBoolean *self, int16* p) get_baseVal;
+			public function HRESULT(ISVGAnimatedBoolean *self, int16 v) put_animVal;
+			public function HRESULT(ISVGAnimatedBoolean *self, int16* p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGAnimatedTransformList : IDispatch
+		{
+			public const new Guid IID = .(0x305104f9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedTransformList *self, ISVGTransformList* v) putref_baseVal;
+			public function HRESULT(ISVGAnimatedTransformList *self, ISVGTransformList** p) get_baseVal;
+			public function HRESULT(ISVGAnimatedTransformList *self, ISVGTransformList* v) putref_animVal;
+			public function HRESULT(ISVGAnimatedTransformList *self, ISVGTransformList** p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGAnimatedPreserveAspectRatio : IDispatch
+		{
+			public const new Guid IID = .(0x305104fb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedPreserveAspectRatio *self, ISVGPreserveAspectRatio* v) putref_baseVal;
+			public function HRESULT(ISVGAnimatedPreserveAspectRatio *self, ISVGPreserveAspectRatio** p) get_baseVal;
+			public function HRESULT(ISVGAnimatedPreserveAspectRatio *self, ISVGPreserveAspectRatio* v) putref_animVal;
+			public function HRESULT(ISVGAnimatedPreserveAspectRatio *self, ISVGPreserveAspectRatio** p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGStylable : IDispatch
+		{
+			public const new Guid IID = .(0x305104da, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGStylable *self, ISVGAnimatedString** p) get_className;
+		}
+		[CRepr]
+		public struct ISVGLocatable : IDispatch
+		{
+			public const new Guid IID = .(0x305104db, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGLocatable *self, ISVGElement** p) get_nearestViewportElement;
+			public function HRESULT(ISVGLocatable *self, ISVGElement** p) get_farthestViewportElement;
+			public function HRESULT(ISVGLocatable *self, ISVGRect** ppResult) getBBox;
+			public function HRESULT(ISVGLocatable *self, ISVGMatrix** ppResult) getCTM;
+			public function HRESULT(ISVGLocatable *self, ISVGMatrix** ppResult) getScreenCTM;
+			public function HRESULT(ISVGLocatable *self, ISVGElement* pElement, ISVGMatrix** ppResult) getTransformToElement;
+		}
+		[CRepr]
+		public struct ISVGTransformable : IDispatch
+		{
+			public const new Guid IID = .(0x305104dc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGTransformable *self, ISVGAnimatedTransformList** p) get_transform;
+		}
+		[CRepr]
+		public struct ISVGTests : IDispatch
+		{
+			public const new Guid IID = .(0x305104dd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGTests *self, ISVGStringList** p) get_requiredFeatures;
+			public function HRESULT(ISVGTests *self, ISVGStringList** p) get_requiredExtensions;
+			public function HRESULT(ISVGTests *self, ISVGStringList** p) get_systemLanguage;
+			public function HRESULT(ISVGTests *self, BSTR @extension, int16* pResult) hasExtension;
+		}
+		[CRepr]
+		public struct ISVGLangSpace : IDispatch
+		{
+			public const new Guid IID = .(0x305104de, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGLangSpace *self, BSTR v) put_xmllang;
+			public function HRESULT(ISVGLangSpace *self, BSTR* p) get_xmllang;
+			public function HRESULT(ISVGLangSpace *self, BSTR v) put_xmlspace;
+			public function HRESULT(ISVGLangSpace *self, BSTR* p) get_xmlspace;
+		}
+		[CRepr]
+		public struct ISVGExternalResourcesRequired : IDispatch
+		{
+			public const new Guid IID = .(0x305104df, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGExternalResourcesRequired *self, ISVGAnimatedBoolean** p) get_externalResourcesRequired;
+		}
+		[CRepr]
+		public struct ISVGFitToViewBox : IDispatch
+		{
+			public const new Guid IID = .(0x305104e0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGFitToViewBox *self, ISVGAnimatedRect** p) get_viewBox;
+			public function HRESULT(ISVGFitToViewBox *self, ISVGAnimatedPreserveAspectRatio* v) putref_preserveAspectRatio;
+			public function HRESULT(ISVGFitToViewBox *self, ISVGAnimatedPreserveAspectRatio** p) get_preserveAspectRatio;
+		}
+		[CRepr]
+		public struct ISVGZoomAndPan : IDispatch
+		{
+			public const new Guid IID = .(0x305104e1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGZoomAndPan *self, int16* p) get_zoomAndPan;
+		}
+		[CRepr]
+		public struct ISVGURIReference : IDispatch
+		{
+			public const new Guid IID = .(0x305104e3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGURIReference *self, ISVGAnimatedString** p) get_href;
+		}
+		[CRepr]
+		public struct ISVGAnimatedAngle : IDispatch
+		{
+			public const new Guid IID = .(0x305104d4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedAngle *self, ISVGAngle* v) putref_baseVal;
+			public function HRESULT(ISVGAnimatedAngle *self, ISVGAngle** p) get_baseVal;
+			public function HRESULT(ISVGAnimatedAngle *self, ISVGAngle* v) putref_animVal;
+			public function HRESULT(ISVGAnimatedAngle *self, ISVGAngle** p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGTransformList : IDispatch
+		{
+			public const new Guid IID = .(0x305104f8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGTransformList *self, int32 v) put_numberOfItems;
+			public function HRESULT(ISVGTransformList *self, int32* p) get_numberOfItems;
+			public function HRESULT(ISVGTransformList *self) clear;
+			public function HRESULT(ISVGTransformList *self, ISVGTransform* newItem, ISVGTransform** ppResult) initialize;
+			public function HRESULT(ISVGTransformList *self, int32 index, ISVGTransform** ppResult) getItem;
+			public function HRESULT(ISVGTransformList *self, ISVGTransform* newItem, int32 index, ISVGTransform** ppResult) insertItemBefore;
+			public function HRESULT(ISVGTransformList *self, ISVGTransform* newItem, int32 index, ISVGTransform** ppResult) replaceItem;
+			public function HRESULT(ISVGTransformList *self, int32 index, ISVGTransform** ppResult) removeItem;
+			public function HRESULT(ISVGTransformList *self, ISVGTransform* newItem, ISVGTransform** ppResult) appendItem;
+			public function HRESULT(ISVGTransformList *self, ISVGMatrix* newItem, ISVGTransform** ppResult) createSVGTransformFromMatrix;
+			public function HRESULT(ISVGTransformList *self, ISVGTransform** ppResult) consolidate;
+		}
+		[CRepr]
+		public struct ISVGAnimatedEnumeration : IDispatch
+		{
+			public const new Guid IID = .(0x305104c9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedEnumeration *self, uint16 v) put_baseVal;
+			public function HRESULT(ISVGAnimatedEnumeration *self, uint16* p) get_baseVal;
+			public function HRESULT(ISVGAnimatedEnumeration *self, uint16 v) put_animVal;
+			public function HRESULT(ISVGAnimatedEnumeration *self, uint16* p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGAnimatedInteger : IDispatch
+		{
+			public const new Guid IID = .(0x305104ca, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedInteger *self, int32 v) put_baseVal;
+			public function HRESULT(ISVGAnimatedInteger *self, int32* p) get_baseVal;
+			public function HRESULT(ISVGAnimatedInteger *self, int32 v) put_animVal;
+			public function HRESULT(ISVGAnimatedInteger *self, int32* p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGLength : IDispatch
+		{
+			public const new Guid IID = .(0x305104cf, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGLength *self, int16 v) put_unitType;
+			public function HRESULT(ISVGLength *self, int16* p) get_unitType;
+			public function HRESULT(ISVGLength *self, float v) put_value;
+			public function HRESULT(ISVGLength *self, float* p) get_value;
+			public function HRESULT(ISVGLength *self, float v) put_valueInSpecifiedUnits;
+			public function HRESULT(ISVGLength *self, float* p) get_valueInSpecifiedUnits;
+			public function HRESULT(ISVGLength *self, BSTR v) put_valueAsString;
+			public function HRESULT(ISVGLength *self, BSTR* p) get_valueAsString;
+			public function HRESULT(ISVGLength *self, int16 unitType, float valueInSpecifiedUnits) newValueSpecifiedUnits;
+			public function HRESULT(ISVGLength *self, int16 unitType) convertToSpecifiedUnits;
+		}
+		[CRepr]
+		public struct ISVGAnimatedLength : IDispatch
+		{
+			public const new Guid IID = .(0x305104d0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedLength *self, ISVGLength* v) putref_baseVal;
+			public function HRESULT(ISVGAnimatedLength *self, ISVGLength** p) get_baseVal;
+			public function HRESULT(ISVGAnimatedLength *self, ISVGLength* v) putref_animVal;
+			public function HRESULT(ISVGAnimatedLength *self, ISVGLength** p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGLengthList : IDispatch
+		{
+			public const new Guid IID = .(0x305104d1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGLengthList *self, int32 v) put_numberOfItems;
+			public function HRESULT(ISVGLengthList *self, int32* p) get_numberOfItems;
+			public function HRESULT(ISVGLengthList *self) clear;
+			public function HRESULT(ISVGLengthList *self, ISVGLength* newItem, ISVGLength** ppResult) initialize;
+			public function HRESULT(ISVGLengthList *self, int32 index, ISVGLength** ppResult) getItem;
+			public function HRESULT(ISVGLengthList *self, ISVGLength* newItem, int32 index, ISVGLength** ppResult) insertItemBefore;
+			public function HRESULT(ISVGLengthList *self, ISVGLength* newItem, int32 index, ISVGLength** ppResult) replaceItem;
+			public function HRESULT(ISVGLengthList *self, int32 index, ISVGLength** ppResult) removeItem;
+			public function HRESULT(ISVGLengthList *self, ISVGLength* newItem, ISVGLength** ppResult) appendItem;
+		}
+		[CRepr]
+		public struct ISVGAnimatedLengthList : IDispatch
+		{
+			public const new Guid IID = .(0x305104d2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedLengthList *self, ISVGLengthList* v) putref_baseVal;
+			public function HRESULT(ISVGAnimatedLengthList *self, ISVGLengthList** p) get_baseVal;
+			public function HRESULT(ISVGAnimatedLengthList *self, ISVGLengthList* v) putref_animVal;
+			public function HRESULT(ISVGAnimatedLengthList *self, ISVGLengthList** p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGNumber : IDispatch
+		{
+			public const new Guid IID = .(0x305104cb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGNumber *self, float v) put_value;
+			public function HRESULT(ISVGNumber *self, float* p) get_value;
+		}
+		[CRepr]
+		public struct ISVGAnimatedNumber : IDispatch
+		{
+			public const new Guid IID = .(0x305104cc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedNumber *self, float v) put_baseVal;
+			public function HRESULT(ISVGAnimatedNumber *self, float* p) get_baseVal;
+			public function HRESULT(ISVGAnimatedNumber *self, float v) put_animVal;
+			public function HRESULT(ISVGAnimatedNumber *self, float* p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGNumberList : IDispatch
+		{
+			public const new Guid IID = .(0x305104cd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGNumberList *self, int32 v) put_numberOfItems;
+			public function HRESULT(ISVGNumberList *self, int32* p) get_numberOfItems;
+			public function HRESULT(ISVGNumberList *self) clear;
+			public function HRESULT(ISVGNumberList *self, ISVGNumber* newItem, ISVGNumber** ppResult) initialize;
+			public function HRESULT(ISVGNumberList *self, int32 index, ISVGNumber** ppResult) getItem;
+			public function HRESULT(ISVGNumberList *self, ISVGNumber* newItem, int32 index, ISVGNumber** ppResult) insertItemBefore;
+			public function HRESULT(ISVGNumberList *self, ISVGNumber* newItem, int32 index, ISVGNumber** ppResult) replaceItem;
+			public function HRESULT(ISVGNumberList *self, int32 index, ISVGNumber** ppResult) removeItem;
+			public function HRESULT(ISVGNumberList *self, ISVGNumber* newItem, ISVGNumber** ppResult) appendItem;
+		}
+		[CRepr]
+		public struct ISVGAnimatedNumberList : IDispatch
+		{
+			public const new Guid IID = .(0x305104ce, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedNumberList *self, ISVGNumberList* v) putref_baseVal;
+			public function HRESULT(ISVGAnimatedNumberList *self, ISVGNumberList** p) get_baseVal;
+			public function HRESULT(ISVGAnimatedNumberList *self, ISVGNumberList* v) putref_animVal;
+			public function HRESULT(ISVGAnimatedNumberList *self, ISVGNumberList** p) get_animVal;
+		}
+		[CRepr]
+		public struct ISVGClipPathElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051052d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGClipPathElement *self, ISVGAnimatedEnumeration* v) putref_clipPathUnits;
+			public function HRESULT(ISVGClipPathElement *self, ISVGAnimatedEnumeration** p) get_clipPathUnits;
+		}
+		[CRepr]
+		public struct DispSVGClipPathElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059003b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGDocument : IDispatch
+		{
+			public const new Guid IID = .(0x305104e6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGDocument *self, ISVGSVGElement** p) get_rootElement;
+		}
+		[CRepr]
+		public struct IGetSVGDocument : IDispatch
+		{
+			public const new Guid IID = .(0x305105ab, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IGetSVGDocument *self, IDispatch** ppSVGDocument) getSVGDocument;
+		}
+		[CRepr]
+		public struct DispSVGElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590000, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IICCSVGColor : IDispatch
+		{
+			public const new Guid IID = .(0x305104d6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGPaint : IDispatch
+		{
+			public const new Guid IID = .(0x30510524, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGPatternElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051052c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedEnumeration* v) putref_patternUnits;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedEnumeration** p) get_patternUnits;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedEnumeration* v) putref_patternContentUnits;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedEnumeration** p) get_patternContentUnits;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedTransformList* v) putref_patternTransform;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedTransformList** p) get_patternTransform;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedLength* v) putref_x;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedLength** p) get_x;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedLength* v) putref_y;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedLength** p) get_y;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedLength* v) putref_width;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedLength** p) get_width;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedLength* v) putref_height;
+			public function HRESULT(ISVGPatternElement *self, ISVGAnimatedLength** p) get_height;
+		}
+		[CRepr]
+		public struct DispSVGPatternElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059002c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGPathSeg : IDispatch
+		{
+			public const new Guid IID = .(0x305104fc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSeg *self, int16 v) put_pathSegType;
+			public function HRESULT(ISVGPathSeg *self, int16* p) get_pathSegType;
+			public function HRESULT(ISVGPathSeg *self, BSTR* p) get_pathSegTypeAsLetter;
+		}
+		[CRepr]
+		public struct ISVGPathSegArcAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30510506, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegArcAbs *self, float v) put_x;
+			public function HRESULT(ISVGPathSegArcAbs *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegArcAbs *self, float v) put_y;
+			public function HRESULT(ISVGPathSegArcAbs *self, float* p) get_y;
+			public function HRESULT(ISVGPathSegArcAbs *self, float v) put_r1;
+			public function HRESULT(ISVGPathSegArcAbs *self, float* p) get_r1;
+			public function HRESULT(ISVGPathSegArcAbs *self, float v) put_r2;
+			public function HRESULT(ISVGPathSegArcAbs *self, float* p) get_r2;
+			public function HRESULT(ISVGPathSegArcAbs *self, float v) put_angle;
+			public function HRESULT(ISVGPathSegArcAbs *self, float* p) get_angle;
+			public function HRESULT(ISVGPathSegArcAbs *self, int16 v) put_largeArcFlag;
+			public function HRESULT(ISVGPathSegArcAbs *self, int16* p) get_largeArcFlag;
+			public function HRESULT(ISVGPathSegArcAbs *self, int16 v) put_sweepFlag;
+			public function HRESULT(ISVGPathSegArcAbs *self, int16* p) get_sweepFlag;
+		}
+		[CRepr]
+		public struct ISVGPathSegArcRel : IDispatch
+		{
+			public const new Guid IID = .(0x30510507, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegArcRel *self, float v) put_x;
+			public function HRESULT(ISVGPathSegArcRel *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegArcRel *self, float v) put_y;
+			public function HRESULT(ISVGPathSegArcRel *self, float* p) get_y;
+			public function HRESULT(ISVGPathSegArcRel *self, float v) put_r1;
+			public function HRESULT(ISVGPathSegArcRel *self, float* p) get_r1;
+			public function HRESULT(ISVGPathSegArcRel *self, float v) put_r2;
+			public function HRESULT(ISVGPathSegArcRel *self, float* p) get_r2;
+			public function HRESULT(ISVGPathSegArcRel *self, float v) put_angle;
+			public function HRESULT(ISVGPathSegArcRel *self, float* p) get_angle;
+			public function HRESULT(ISVGPathSegArcRel *self, int16 v) put_largeArcFlag;
+			public function HRESULT(ISVGPathSegArcRel *self, int16* p) get_largeArcFlag;
+			public function HRESULT(ISVGPathSegArcRel *self, int16 v) put_sweepFlag;
+			public function HRESULT(ISVGPathSegArcRel *self, int16* p) get_sweepFlag;
+		}
+		[CRepr]
+		public struct ISVGPathSegClosePath : IDispatch
+		{
+			public const new Guid IID = .(0x305104fd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGPathSegMovetoAbs : IDispatch
+		{
+			public const new Guid IID = .(0x305104fe, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegMovetoAbs *self, float v) put_x;
+			public function HRESULT(ISVGPathSegMovetoAbs *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegMovetoAbs *self, float v) put_y;
+			public function HRESULT(ISVGPathSegMovetoAbs *self, float* p) get_y;
+		}
+		[CRepr]
+		public struct ISVGPathSegMovetoRel : IDispatch
+		{
+			public const new Guid IID = .(0x305104ff, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegMovetoRel *self, float v) put_x;
+			public function HRESULT(ISVGPathSegMovetoRel *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegMovetoRel *self, float v) put_y;
+			public function HRESULT(ISVGPathSegMovetoRel *self, float* p) get_y;
+		}
+		[CRepr]
+		public struct ISVGPathSegLinetoAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30510500, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegLinetoAbs *self, float v) put_x;
+			public function HRESULT(ISVGPathSegLinetoAbs *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegLinetoAbs *self, float v) put_y;
+			public function HRESULT(ISVGPathSegLinetoAbs *self, float* p) get_y;
+		}
+		[CRepr]
+		public struct ISVGPathSegLinetoRel : IDispatch
+		{
+			public const new Guid IID = .(0x30510501, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegLinetoRel *self, float v) put_x;
+			public function HRESULT(ISVGPathSegLinetoRel *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegLinetoRel *self, float v) put_y;
+			public function HRESULT(ISVGPathSegLinetoRel *self, float* p) get_y;
+		}
+		[CRepr]
+		public struct ISVGPathSegCurvetoCubicAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30510502, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float v) put_x;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float v) put_y;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float* p) get_y;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float v) put_x1;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float* p) get_x1;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float v) put_y1;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float* p) get_y1;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float v) put_x2;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float* p) get_x2;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float v) put_y2;
+			public function HRESULT(ISVGPathSegCurvetoCubicAbs *self, float* p) get_y2;
+		}
+		[CRepr]
+		public struct ISVGPathSegCurvetoCubicRel : IDispatch
+		{
+			public const new Guid IID = .(0x30510503, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float v) put_x;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float v) put_y;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float* p) get_y;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float v) put_x1;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float* p) get_x1;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float v) put_y1;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float* p) get_y1;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float v) put_x2;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float* p) get_x2;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float v) put_y2;
+			public function HRESULT(ISVGPathSegCurvetoCubicRel *self, float* p) get_y2;
+		}
+		[CRepr]
+		public struct ISVGPathSegCurvetoCubicSmoothAbs : IDispatch
+		{
+			public const new Guid IID = .(0x3051050c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothAbs *self, float v) put_x;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothAbs *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothAbs *self, float v) put_y;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothAbs *self, float* p) get_y;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothAbs *self, float v) put_x2;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothAbs *self, float* p) get_x2;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothAbs *self, float v) put_y2;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothAbs *self, float* p) get_y2;
+		}
+		[CRepr]
+		public struct ISVGPathSegCurvetoCubicSmoothRel : IDispatch
+		{
+			public const new Guid IID = .(0x3051050d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothRel *self, float v) put_x;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothRel *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothRel *self, float v) put_y;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothRel *self, float* p) get_y;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothRel *self, float v) put_x2;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothRel *self, float* p) get_x2;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothRel *self, float v) put_y2;
+			public function HRESULT(ISVGPathSegCurvetoCubicSmoothRel *self, float* p) get_y2;
+		}
+		[CRepr]
+		public struct ISVGPathSegCurvetoQuadraticAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30510504, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegCurvetoQuadraticAbs *self, float v) put_x;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticAbs *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticAbs *self, float v) put_y;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticAbs *self, float* p) get_y;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticAbs *self, float v) put_x1;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticAbs *self, float* p) get_x1;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticAbs *self, float v) put_y1;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticAbs *self, float* p) get_y1;
+		}
+		[CRepr]
+		public struct ISVGPathSegCurvetoQuadraticRel : IDispatch
+		{
+			public const new Guid IID = .(0x30510505, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegCurvetoQuadraticRel *self, float v) put_x;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticRel *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticRel *self, float v) put_y;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticRel *self, float* p) get_y;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticRel *self, float v) put_x1;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticRel *self, float* p) get_x1;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticRel *self, float v) put_y1;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticRel *self, float* p) get_y1;
+		}
+		[CRepr]
+		public struct ISVGPathSegCurvetoQuadraticSmoothAbs : IDispatch
+		{
+			public const new Guid IID = .(0x3051050e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegCurvetoQuadraticSmoothAbs *self, float v) put_x;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticSmoothAbs *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticSmoothAbs *self, float v) put_y;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticSmoothAbs *self, float* p) get_y;
+		}
+		[CRepr]
+		public struct ISVGPathSegCurvetoQuadraticSmoothRel : IDispatch
+		{
+			public const new Guid IID = .(0x3051050f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegCurvetoQuadraticSmoothRel *self, float v) put_x;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticSmoothRel *self, float* p) get_x;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticSmoothRel *self, float v) put_y;
+			public function HRESULT(ISVGPathSegCurvetoQuadraticSmoothRel *self, float* p) get_y;
+		}
+		[CRepr]
+		public struct ISVGPathSegLinetoHorizontalAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30510508, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegLinetoHorizontalAbs *self, float v) put_x;
+			public function HRESULT(ISVGPathSegLinetoHorizontalAbs *self, float* p) get_x;
+		}
+		[CRepr]
+		public struct ISVGPathSegLinetoHorizontalRel : IDispatch
+		{
+			public const new Guid IID = .(0x30510509, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegLinetoHorizontalRel *self, float v) put_x;
+			public function HRESULT(ISVGPathSegLinetoHorizontalRel *self, float* p) get_x;
+		}
+		[CRepr]
+		public struct ISVGPathSegLinetoVerticalAbs : IDispatch
+		{
+			public const new Guid IID = .(0x3051050a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegLinetoVerticalAbs *self, float v) put_y;
+			public function HRESULT(ISVGPathSegLinetoVerticalAbs *self, float* p) get_y;
+		}
+		[CRepr]
+		public struct ISVGPathSegLinetoVerticalRel : IDispatch
+		{
+			public const new Guid IID = .(0x3051050b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegLinetoVerticalRel *self, float v) put_y;
+			public function HRESULT(ISVGPathSegLinetoVerticalRel *self, float* p) get_y;
+		}
+		[CRepr]
+		public struct DispSVGPathSegArcAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30590013, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegArcRel : IDispatch
+		{
+			public const new Guid IID = .(0x30590014, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegClosePath : IDispatch
+		{
+			public const new Guid IID = .(0x30590015, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegMovetoAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30590024, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegMovetoRel : IDispatch
+		{
+			public const new Guid IID = .(0x30590025, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegLinetoAbs : IDispatch
+		{
+			public const new Guid IID = .(0x3059001e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegLinetoRel : IDispatch
+		{
+			public const new Guid IID = .(0x30590021, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegCurvetoCubicAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30590016, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegCurvetoCubicRel : IDispatch
+		{
+			public const new Guid IID = .(0x30590017, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegCurvetoCubicSmoothAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30590018, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegCurvetoCubicSmoothRel : IDispatch
+		{
+			public const new Guid IID = .(0x30590019, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegCurvetoQuadraticAbs : IDispatch
+		{
+			public const new Guid IID = .(0x3059001a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegCurvetoQuadraticRel : IDispatch
+		{
+			public const new Guid IID = .(0x3059001b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegCurvetoQuadraticSmoothAbs : IDispatch
+		{
+			public const new Guid IID = .(0x3059001c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegCurvetoQuadraticSmoothRel : IDispatch
+		{
+			public const new Guid IID = .(0x3059001d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegLinetoHorizontalAbs : IDispatch
+		{
+			public const new Guid IID = .(0x3059001f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegLinetoHorizontalRel : IDispatch
+		{
+			public const new Guid IID = .(0x30590020, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegLinetoVerticalAbs : IDispatch
+		{
+			public const new Guid IID = .(0x30590022, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPathSegLinetoVerticalRel : IDispatch
+		{
+			public const new Guid IID = .(0x30590023, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGPathSegList : IDispatch
+		{
+			public const new Guid IID = .(0x30510510, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathSegList *self, int32 v) put_numberOfItems;
+			public function HRESULT(ISVGPathSegList *self, int32* p) get_numberOfItems;
+			public function HRESULT(ISVGPathSegList *self) clear;
+			public function HRESULT(ISVGPathSegList *self, ISVGPathSeg* newItem, ISVGPathSeg** ppResult) initialize;
+			public function HRESULT(ISVGPathSegList *self, int32 index, ISVGPathSeg** ppResult) getItem;
+			public function HRESULT(ISVGPathSegList *self, ISVGPathSeg* newItem, int32 index, ISVGPathSeg** ppResult) insertItemBefore;
+			public function HRESULT(ISVGPathSegList *self, ISVGPathSeg* newItem, int32 index, ISVGPathSeg** ppResult) replaceItem;
+			public function HRESULT(ISVGPathSegList *self, int32 index, ISVGPathSeg** ppResult) removeItem;
+			public function HRESULT(ISVGPathSegList *self, ISVGPathSeg* newItem, ISVGPathSeg** ppResult) appendItem;
+		}
+		[CRepr]
+		public struct ISVGPoint : IDispatch
+		{
+			public const new Guid IID = .(0x305104f4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPoint *self, float v) put_x;
+			public function HRESULT(ISVGPoint *self, float* p) get_x;
+			public function HRESULT(ISVGPoint *self, float v) put_y;
+			public function HRESULT(ISVGPoint *self, float* p) get_y;
+			public function HRESULT(ISVGPoint *self, ISVGMatrix* pMatrix, ISVGPoint** ppResult) matrixTransform;
+		}
+		[CRepr]
+		public struct ISVGPointList : IDispatch
+		{
+			public const new Guid IID = .(0x305104f5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPointList *self, int32 v) put_numberOfItems;
+			public function HRESULT(ISVGPointList *self, int32* p) get_numberOfItems;
+			public function HRESULT(ISVGPointList *self) clear;
+			public function HRESULT(ISVGPointList *self, ISVGPoint* pNewItem, ISVGPoint** ppResult) initialize;
+			public function HRESULT(ISVGPointList *self, int32 index, ISVGPoint** ppResult) getItem;
+			public function HRESULT(ISVGPointList *self, ISVGPoint* pNewItem, int32 index, ISVGPoint** ppResult) insertItemBefore;
+			public function HRESULT(ISVGPointList *self, ISVGPoint* pNewItem, int32 index, ISVGPoint** ppResult) replaceItem;
+			public function HRESULT(ISVGPointList *self, int32 index, ISVGPoint** ppResult) removeItem;
+			public function HRESULT(ISVGPointList *self, ISVGPoint* pNewItem, ISVGPoint** ppResult) appendItem;
+		}
+		[CRepr]
+		public struct ISVGViewSpec : IDispatch
+		{
+			public const new Guid IID = .(0x305104e2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGTransform : IDispatch
+		{
+			public const new Guid IID = .(0x305104f7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGTransform *self, int16 v) put_type;
+			public function HRESULT(ISVGTransform *self, int16* p) get_type;
+			public function HRESULT(ISVGTransform *self, ISVGMatrix* v) putref_matrix;
+			public function HRESULT(ISVGTransform *self, ISVGMatrix** p) get_matrix;
+			public function HRESULT(ISVGTransform *self, float v) put_angle;
+			public function HRESULT(ISVGTransform *self, float* p) get_angle;
+			public function HRESULT(ISVGTransform *self, ISVGMatrix* matrix) setMatrix;
+			public function HRESULT(ISVGTransform *self, float tx, float ty) setTranslate;
+			public function HRESULT(ISVGTransform *self, float sx, float sy) setScale;
+			public function HRESULT(ISVGTransform *self, float angle, float cx, float cy) setRotate;
+			public function HRESULT(ISVGTransform *self, float angle) setSkewX;
+			public function HRESULT(ISVGTransform *self, float angle) setSkewY;
+		}
+		[CRepr]
+		public struct DispSVGSVGElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590001, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGElementInstance : IDispatch
+		{
+			public const new Guid IID = .(0x305104ee, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGElementInstance *self, ISVGElement** p) get_correspondingElement;
+			public function HRESULT(ISVGElementInstance *self, ISVGUseElement** p) get_correspondingUseElement;
+			public function HRESULT(ISVGElementInstance *self, ISVGElementInstance** p) get_parentNode;
+			public function HRESULT(ISVGElementInstance *self, ISVGElementInstanceList** p) get_childNodes;
+			public function HRESULT(ISVGElementInstance *self, ISVGElementInstance** p) get_firstChild;
+			public function HRESULT(ISVGElementInstance *self, ISVGElementInstance** p) get_lastChild;
+			public function HRESULT(ISVGElementInstance *self, ISVGElementInstance** p) get_previousSibling;
+			public function HRESULT(ISVGElementInstance *self, ISVGElementInstance** p) get_nextSibling;
+		}
+		[CRepr]
+		public struct ISVGUseElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104ed, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGUseElement *self, ISVGAnimatedLength* v) putref_x;
+			public function HRESULT(ISVGUseElement *self, ISVGAnimatedLength** p) get_x;
+			public function HRESULT(ISVGUseElement *self, ISVGAnimatedLength* v) putref_y;
+			public function HRESULT(ISVGUseElement *self, ISVGAnimatedLength** p) get_y;
+			public function HRESULT(ISVGUseElement *self, ISVGAnimatedLength* v) putref_width;
+			public function HRESULT(ISVGUseElement *self, ISVGAnimatedLength** p) get_width;
+			public function HRESULT(ISVGUseElement *self, ISVGAnimatedLength* v) putref_height;
+			public function HRESULT(ISVGUseElement *self, ISVGAnimatedLength** p) get_height;
+			public function HRESULT(ISVGUseElement *self, ISVGElementInstance* v) putref_instanceRoot;
+			public function HRESULT(ISVGUseElement *self, ISVGElementInstance** p) get_instanceRoot;
+			public function HRESULT(ISVGUseElement *self, ISVGElementInstance* v) putref_animatedInstanceRoot;
+			public function HRESULT(ISVGUseElement *self, ISVGElementInstance** p) get_animatedInstanceRoot;
+		}
+		[CRepr]
+		public struct DispSVGUseElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590010, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLStyleSheetRulesAppliedCollection : IDispatch
+		{
+			public const new Guid IID = .(0x305104c0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLStyleSheetRulesAppliedCollection *self, int32 index, IHTMLStyleSheetRule** ppHTMLStyleSheetRule) item;
+			public function HRESULT(IHTMLStyleSheetRulesAppliedCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLStyleSheetRulesAppliedCollection *self, BSTR name, IHTMLStyleSheetRule** ppRule) propertyAppliedBy;
+			public function HRESULT(IHTMLStyleSheetRulesAppliedCollection *self, BSTR name, int32 index, IHTMLStyleSheetRule** ppRule) propertyAppliedTrace;
+			public function HRESULT(IHTMLStyleSheetRulesAppliedCollection *self, BSTR name, int32* pLength) propertyAppliedTraceLength;
+		}
+		[CRepr]
+		public struct IRulesApplied : IDispatch
+		{
+			public const new Guid IID = .(0x305104bf, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IRulesApplied *self, IHTMLElement** p) get_element;
+			public function HRESULT(IRulesApplied *self, IHTMLStyle** p) get_inlineStyles;
+			public function HRESULT(IRulesApplied *self, IHTMLStyleSheetRulesAppliedCollection** p) get_appliedRules;
+			public function HRESULT(IRulesApplied *self, BSTR name, int16* p) propertyIsInline;
+			public function HRESULT(IRulesApplied *self, BSTR name, int16* p) propertyIsInheritable;
+			public function HRESULT(IRulesApplied *self, int16* p) hasInheritableProperty;
+		}
+		[CRepr]
+		public struct DispHTMLStyleSheetRulesAppliedCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5a6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispRulesApplied : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5a5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispRulesAppliedCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5a4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLW3CComputedStyle : IDispatch
+		{
+			public const new Guid IID = .(0x30590070, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGAnimatedPoints : IDispatch
+		{
+			public const new Guid IID = .(0x30510517, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedPoints *self, ISVGPointList* v) putref_points;
+			public function HRESULT(ISVGAnimatedPoints *self, ISVGPointList** p) get_points;
+			public function HRESULT(ISVGAnimatedPoints *self, ISVGPointList* v) putref_animatedPoints;
+			public function HRESULT(ISVGAnimatedPoints *self, ISVGPointList** p) get_animatedPoints;
+		}
+		[CRepr]
+		public struct ISVGCircleElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510514, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGCircleElement *self, ISVGAnimatedLength* v) putref_cx;
+			public function HRESULT(ISVGCircleElement *self, ISVGAnimatedLength** p) get_cx;
+			public function HRESULT(ISVGCircleElement *self, ISVGAnimatedLength* v) putref_cy;
+			public function HRESULT(ISVGCircleElement *self, ISVGAnimatedLength** p) get_cy;
+			public function HRESULT(ISVGCircleElement *self, ISVGAnimatedLength* v) putref_r;
+			public function HRESULT(ISVGCircleElement *self, ISVGAnimatedLength** p) get_r;
+		}
+		[CRepr]
+		public struct ISVGEllipseElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510515, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGEllipseElement *self, ISVGAnimatedLength* v) putref_cx;
+			public function HRESULT(ISVGEllipseElement *self, ISVGAnimatedLength** p) get_cx;
+			public function HRESULT(ISVGEllipseElement *self, ISVGAnimatedLength* v) putref_cy;
+			public function HRESULT(ISVGEllipseElement *self, ISVGAnimatedLength** p) get_cy;
+			public function HRESULT(ISVGEllipseElement *self, ISVGAnimatedLength* v) putref_rx;
+			public function HRESULT(ISVGEllipseElement *self, ISVGAnimatedLength** p) get_rx;
+			public function HRESULT(ISVGEllipseElement *self, ISVGAnimatedLength* v) putref_ry;
+			public function HRESULT(ISVGEllipseElement *self, ISVGAnimatedLength** p) get_ry;
+		}
+		[CRepr]
+		public struct ISVGLineElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510516, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGLineElement *self, ISVGAnimatedLength* v) putref_x1;
+			public function HRESULT(ISVGLineElement *self, ISVGAnimatedLength** p) get_x1;
+			public function HRESULT(ISVGLineElement *self, ISVGAnimatedLength* v) putref_y1;
+			public function HRESULT(ISVGLineElement *self, ISVGAnimatedLength** p) get_y1;
+			public function HRESULT(ISVGLineElement *self, ISVGAnimatedLength* v) putref_x2;
+			public function HRESULT(ISVGLineElement *self, ISVGAnimatedLength** p) get_x2;
+			public function HRESULT(ISVGLineElement *self, ISVGAnimatedLength* v) putref_y2;
+			public function HRESULT(ISVGLineElement *self, ISVGAnimatedLength** p) get_y2;
+		}
+		[CRepr]
+		public struct ISVGRectElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510513, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength* v) putref_x;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength** p) get_x;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength* v) putref_y;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength** p) get_y;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength* v) putref_width;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength** p) get_width;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength* v) putref_height;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength** p) get_height;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength* v) putref_rx;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength** p) get_rx;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength* v) putref_ry;
+			public function HRESULT(ISVGRectElement *self, ISVGAnimatedLength** p) get_ry;
+		}
+		[CRepr]
+		public struct ISVGPolygonElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510519, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGPolylineElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510518, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGCircleElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059000a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGEllipseElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059000b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGLineElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059000c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGRectElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590009, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPolygonElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059000d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGPolylineElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059000e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGGElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104e8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGGElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590002, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGSymbolElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104ec, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGSymbolElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590004, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGDefsElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104e9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGDefsElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590003, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGAnimatedPathData : IDispatch
+		{
+			public const new Guid IID = .(0x30510511, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAnimatedPathData *self, ISVGPathSegList* v) putref_pathSegList;
+			public function HRESULT(ISVGAnimatedPathData *self, ISVGPathSegList** p) get_pathSegList;
+			public function HRESULT(ISVGAnimatedPathData *self, ISVGPathSegList* v) putref_normalizedPathSegList;
+			public function HRESULT(ISVGAnimatedPathData *self, ISVGPathSegList** p) get_normalizedPathSegList;
+			public function HRESULT(ISVGAnimatedPathData *self, ISVGPathSegList* v) putref_animatedPathSegList;
+			public function HRESULT(ISVGAnimatedPathData *self, ISVGPathSegList** p) get_animatedPathSegList;
+			public function HRESULT(ISVGAnimatedPathData *self, ISVGPathSegList* v) putref_animatedNormalizedPathSegList;
+			public function HRESULT(ISVGAnimatedPathData *self, ISVGPathSegList** p) get_animatedNormalizedPathSegList;
+		}
+		[CRepr]
+		public struct ISVGPathElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510512, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPathElement *self, ISVGAnimatedNumber* v) putref_pathLength;
+			public function HRESULT(ISVGPathElement *self, ISVGAnimatedNumber** p) get_pathLength;
+			public function HRESULT(ISVGPathElement *self, float* pfltResult) getTotalLength;
+			public function HRESULT(ISVGPathElement *self, float fltdistance, ISVGPoint** ppPointResult) getPointAtLength;
+			public function HRESULT(ISVGPathElement *self, float fltdistance, int32* plResult) getPathSegAtLength;
+			public function HRESULT(ISVGPathElement *self, ISVGPathSegClosePath** ppResult) createSVGPathSegClosePath;
+			public function HRESULT(ISVGPathElement *self, float x, float y, ISVGPathSegMovetoAbs** ppResult) createSVGPathSegMovetoAbs;
+			public function HRESULT(ISVGPathElement *self, float x, float y, ISVGPathSegMovetoRel** ppResult) createSVGPathSegMovetoRel;
+			public function HRESULT(ISVGPathElement *self, float x, float y, ISVGPathSegLinetoAbs** ppResult) createSVGPathSegLinetoAbs;
+			public function HRESULT(ISVGPathElement *self, float x, float y, ISVGPathSegLinetoRel** ppResult) createSVGPathSegLinetoRel;
+			public function HRESULT(ISVGPathElement *self, float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicAbs** ppResult) createSVGPathSegCurvetoCubicAbs;
+			public function HRESULT(ISVGPathElement *self, float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicRel** ppResult) createSVGPathSegCurvetoCubicRel;
+			public function HRESULT(ISVGPathElement *self, float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticAbs** ppResult) createSVGPathSegCurvetoQuadraticAbs;
+			public function HRESULT(ISVGPathElement *self, float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticRel** ppResult) createSVGPathSegCurvetoQuadraticRel;
+			public function HRESULT(ISVGPathElement *self, float x, float y, float r1, float r2, float angle, int16 largeArcFlag, int16 sweepFlag, ISVGPathSegArcAbs** ppResult) createSVGPathSegArcAbs;
+			public function HRESULT(ISVGPathElement *self, float x, float y, float r1, float r2, float angle, int16 largeArcFlag, int16 sweepFlag, ISVGPathSegArcRel** ppResult) createSVGPathSegArcRel;
+			public function HRESULT(ISVGPathElement *self, float x, ISVGPathSegLinetoHorizontalAbs** ppResult) createSVGPathSegLinetoHorizontalAbs;
+			public function HRESULT(ISVGPathElement *self, float x, ISVGPathSegLinetoHorizontalRel** ppResult) createSVGPathSegLinetoHorizontalRel;
+			public function HRESULT(ISVGPathElement *self, float y, ISVGPathSegLinetoVerticalAbs** ppResult) createSVGPathSegLinetoVerticalAbs;
+			public function HRESULT(ISVGPathElement *self, float y, ISVGPathSegLinetoVerticalRel** ppResult) createSVGPathSegLinetoVerticalRel;
+			public function HRESULT(ISVGPathElement *self, float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothAbs** ppResult) createSVGPathSegCurvetoCubicSmoothAbs;
+			public function HRESULT(ISVGPathElement *self, float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothRel** ppResult) createSVGPathSegCurvetoCubicSmoothRel;
+			public function HRESULT(ISVGPathElement *self, float x, float y, ISVGPathSegCurvetoQuadraticSmoothAbs** ppResult) createSVGPathSegCurvetoQuadraticSmoothAbs;
+			public function HRESULT(ISVGPathElement *self, float x, float y, ISVGPathSegCurvetoQuadraticSmoothRel** ppResult) createSVGPathSegCurvetoQuadraticSmoothRel;
+		}
+		[CRepr]
+		public struct DispSVGPathElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590011, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGPreserveAspectRatio : IDispatch
+		{
+			public const new Guid IID = .(0x305104fa, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGPreserveAspectRatio *self, int16 v) put_align;
+			public function HRESULT(ISVGPreserveAspectRatio *self, int16* p) get_align;
+			public function HRESULT(ISVGPreserveAspectRatio *self, int16 v) put_meetOrSlice;
+			public function HRESULT(ISVGPreserveAspectRatio *self, int16* p) get_meetOrSlice;
+		}
+		[CRepr]
+		public struct ISVGTextElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051051c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGTextElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590037, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGImageElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104f0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGImageElement *self, ISVGAnimatedLength* v) putref_x;
+			public function HRESULT(ISVGImageElement *self, ISVGAnimatedLength** p) get_x;
+			public function HRESULT(ISVGImageElement *self, ISVGAnimatedLength* v) putref_y;
+			public function HRESULT(ISVGImageElement *self, ISVGAnimatedLength** p) get_y;
+			public function HRESULT(ISVGImageElement *self, ISVGAnimatedLength* v) putref_width;
+			public function HRESULT(ISVGImageElement *self, ISVGAnimatedLength** p) get_width;
+			public function HRESULT(ISVGImageElement *self, ISVGAnimatedLength* v) putref_height;
+			public function HRESULT(ISVGImageElement *self, ISVGAnimatedLength** p) get_height;
+		}
+		[CRepr]
+		public struct DispSVGImageElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590027, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGStopElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051052b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGStopElement *self, ISVGAnimatedNumber* v) putref_offset;
+			public function HRESULT(ISVGStopElement *self, ISVGAnimatedNumber** p) get_offset;
+		}
+		[CRepr]
+		public struct DispSVGStopElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059002d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGGradientElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510528, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGGradientElement *self, ISVGAnimatedEnumeration* v) putref_gradientUnits;
+			public function HRESULT(ISVGGradientElement *self, ISVGAnimatedEnumeration** p) get_gradientUnits;
+			public function HRESULT(ISVGGradientElement *self, ISVGAnimatedTransformList* v) putref_gradientTransform;
+			public function HRESULT(ISVGGradientElement *self, ISVGAnimatedTransformList** p) get_gradientTransform;
+			public function HRESULT(ISVGGradientElement *self, ISVGAnimatedEnumeration* v) putref_spreadMethod;
+			public function HRESULT(ISVGGradientElement *self, ISVGAnimatedEnumeration** p) get_spreadMethod;
+		}
+		[CRepr]
+		public struct DispSVGGradientElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059002e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGLinearGradientElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510529, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGLinearGradientElement *self, ISVGAnimatedLength* v) putref_x1;
+			public function HRESULT(ISVGLinearGradientElement *self, ISVGAnimatedLength** p) get_x1;
+			public function HRESULT(ISVGLinearGradientElement *self, ISVGAnimatedLength* v) putref_y1;
+			public function HRESULT(ISVGLinearGradientElement *self, ISVGAnimatedLength** p) get_y1;
+			public function HRESULT(ISVGLinearGradientElement *self, ISVGAnimatedLength* v) putref_x2;
+			public function HRESULT(ISVGLinearGradientElement *self, ISVGAnimatedLength** p) get_x2;
+			public function HRESULT(ISVGLinearGradientElement *self, ISVGAnimatedLength* v) putref_y2;
+			public function HRESULT(ISVGLinearGradientElement *self, ISVGAnimatedLength** p) get_y2;
+		}
+		[CRepr]
+		public struct DispSVGLinearGradientElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059002a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGRadialGradientElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051052a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength* v) putref_cx;
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength** p) get_cx;
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength* v) putref_cy;
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength** p) get_cy;
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength* v) putref_r;
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength** p) get_r;
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength* v) putref_fx;
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength** p) get_fx;
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength* v) putref_fy;
+			public function HRESULT(ISVGRadialGradientElement *self, ISVGAnimatedLength** p) get_fy;
+		}
+		[CRepr]
+		public struct DispSVGRadialGradientElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059002b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGMaskElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051052e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedEnumeration* v) putref_maskUnits;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedEnumeration** p) get_maskUnits;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedEnumeration* v) putref_maskContentUnits;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedEnumeration** p) get_maskContentUnits;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedLength* v) putref_x;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedLength** p) get_x;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedLength* v) putref_y;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedLength** p) get_y;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedLength* v) putref_width;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedLength** p) get_width;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedLength* v) putref_height;
+			public function HRESULT(ISVGMaskElement *self, ISVGAnimatedLength** p) get_height;
+		}
+		[CRepr]
+		public struct DispSVGMaskElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059003c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGMarkerElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510525, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedLength* v) putref_refX;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedLength** p) get_refX;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedLength* v) putref_refY;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedLength** p) get_refY;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedEnumeration* v) putref_markerUnits;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedEnumeration** p) get_markerUnits;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedLength* v) putref_markerWidth;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedLength** p) get_markerWidth;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedLength* v) putref_markerHeight;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedLength** p) get_markerHeight;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedEnumeration* v) putref_orientType;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedEnumeration** p) get_orientType;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedAngle* v) putref_orientAngle;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAnimatedAngle** p) get_orientAngle;
+			public function HRESULT(ISVGMarkerElement *self) setOrientToAuto;
+			public function HRESULT(ISVGMarkerElement *self, ISVGAngle* pSVGAngle) setOrientToAngle;
+		}
+		[CRepr]
+		public struct DispSVGMarkerElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590036, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGZoomEvent : IDispatch
+		{
+			public const new Guid IID = .(0x3051054e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGZoomEvent *self, ISVGRect** p) get_zoomRectScreen;
+			public function HRESULT(ISVGZoomEvent *self, float* p) get_previousScale;
+			public function HRESULT(ISVGZoomEvent *self, ISVGPoint** p) get_previousTranslate;
+			public function HRESULT(ISVGZoomEvent *self, float* p) get_newScale;
+			public function HRESULT(ISVGZoomEvent *self, ISVGPoint** p) get_newTranslate;
+		}
+		[CRepr]
+		public struct DispSVGZoomEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30590031, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGAElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051054b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGAElement *self, ISVGAnimatedString* v) putref_target;
+			public function HRESULT(ISVGAElement *self, ISVGAnimatedString** p) get_target;
+		}
+		[CRepr]
+		public struct DispSVGAElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590033, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGViewElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051054c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGViewElement *self, ISVGStringList* v) putref_viewTarget;
+			public function HRESULT(ISVGViewElement *self, ISVGStringList** p) get_viewTarget;
+		}
+		[CRepr]
+		public struct DispSVGViewElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590034, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLMediaError : IDispatch
+		{
+			public const new Guid IID = .(0x30510704, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMediaError *self, int16* p) get_code;
+		}
+		[CRepr]
+		public struct IHTMLTimeRanges : IDispatch
+		{
+			public const new Guid IID = .(0x30510705, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTimeRanges *self, int32* p) get_length;
+			public function HRESULT(IHTMLTimeRanges *self, int32 index, float* startTime) start;
+			public function HRESULT(IHTMLTimeRanges *self, int32 index, float* endTime) end;
+		}
+		[CRepr]
+		public struct IHTMLTimeRanges2 : IDispatch
+		{
+			public const new Guid IID = .(0x3051080b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLTimeRanges2 *self, int32 index, double* startTime) startDouble;
+			public function HRESULT(IHTMLTimeRanges2 *self, int32 index, double* endTime) endDouble;
+		}
+		[CRepr]
+		public struct IHTMLMediaElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510706, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMediaElement *self, IHTMLMediaError** p) get_error;
+			public function HRESULT(IHTMLMediaElement *self, BSTR v) put_src;
+			public function HRESULT(IHTMLMediaElement *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLMediaElement *self, BSTR* p) get_currentSrc;
+			public function HRESULT(IHTMLMediaElement *self, uint16* p) get_networkState;
+			public function HRESULT(IHTMLMediaElement *self, BSTR v) put_preload;
+			public function HRESULT(IHTMLMediaElement *self, BSTR* p) get_preload;
+			public function HRESULT(IHTMLMediaElement *self, IHTMLTimeRanges** p) get_buffered;
+			public function HRESULT(IHTMLMediaElement *self) load;
+			public function HRESULT(IHTMLMediaElement *self, BSTR type, BSTR* canPlay) canPlayType;
+			public function HRESULT(IHTMLMediaElement *self, int16* p) get_seeking;
+			public function HRESULT(IHTMLMediaElement *self, float v) put_currentTime;
+			public function HRESULT(IHTMLMediaElement *self, float* p) get_currentTime;
+			public function HRESULT(IHTMLMediaElement *self, float* p) get_initialTime;
+			public function HRESULT(IHTMLMediaElement *self, float* p) get_duration;
+			public function HRESULT(IHTMLMediaElement *self, int16* p) get_paused;
+			public function HRESULT(IHTMLMediaElement *self, float v) put_defaultPlaybackRate;
+			public function HRESULT(IHTMLMediaElement *self, float* p) get_defaultPlaybackRate;
+			public function HRESULT(IHTMLMediaElement *self, float v) put_playbackRate;
+			public function HRESULT(IHTMLMediaElement *self, float* p) get_playbackRate;
+			public function HRESULT(IHTMLMediaElement *self, IHTMLTimeRanges** p) get_played;
+			public function HRESULT(IHTMLMediaElement *self, IHTMLTimeRanges** p) get_seekable;
+			public function HRESULT(IHTMLMediaElement *self, int16* p) get_ended;
+			public function HRESULT(IHTMLMediaElement *self, int16 v) put_autoplay;
+			public function HRESULT(IHTMLMediaElement *self, int16* p) get_autoplay;
+			public function HRESULT(IHTMLMediaElement *self, int16 v) put_loop;
+			public function HRESULT(IHTMLMediaElement *self, int16* p) get_loop;
+			public function HRESULT(IHTMLMediaElement *self) play;
+			public function HRESULT(IHTMLMediaElement *self) pause;
+			public function HRESULT(IHTMLMediaElement *self, int16 v) put_controls;
+			public function HRESULT(IHTMLMediaElement *self, int16* p) get_controls;
+			public function HRESULT(IHTMLMediaElement *self, float v) put_volume;
+			public function HRESULT(IHTMLMediaElement *self, float* p) get_volume;
+			public function HRESULT(IHTMLMediaElement *self, int16 v) put_muted;
+			public function HRESULT(IHTMLMediaElement *self, int16* p) get_muted;
+			public function HRESULT(IHTMLMediaElement *self, int16 v) put_autobuffer;
+			public function HRESULT(IHTMLMediaElement *self, int16* p) get_autobuffer;
+		}
+		[CRepr]
+		public struct IHTMLMediaElement2 : IDispatch
+		{
+			public const new Guid IID = .(0x30510809, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMediaElement2 *self, double v) put_currentTimeDouble;
+			public function HRESULT(IHTMLMediaElement2 *self, double* p) get_currentTimeDouble;
+			public function HRESULT(IHTMLMediaElement2 *self, double* p) get_initialTimeDouble;
+			public function HRESULT(IHTMLMediaElement2 *self, double* p) get_durationDouble;
+			public function HRESULT(IHTMLMediaElement2 *self, double v) put_defaultPlaybackRateDouble;
+			public function HRESULT(IHTMLMediaElement2 *self, double* p) get_defaultPlaybackRateDouble;
+			public function HRESULT(IHTMLMediaElement2 *self, double v) put_playbackRateDouble;
+			public function HRESULT(IHTMLMediaElement2 *self, double* p) get_playbackRateDouble;
+			public function HRESULT(IHTMLMediaElement2 *self, double v) put_volumeDouble;
+			public function HRESULT(IHTMLMediaElement2 *self, double* p) get_volumeDouble;
+		}
+		[CRepr]
+		public struct IHTMLMSMediaElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510792, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLMSMediaElement *self, int16 v) put_msPlayToDisabled;
+			public function HRESULT(IHTMLMSMediaElement *self, int16* p) get_msPlayToDisabled;
+			public function HRESULT(IHTMLMSMediaElement *self, int16 v) put_msPlayToPrimary;
+			public function HRESULT(IHTMLMSMediaElement *self, int16* p) get_msPlayToPrimary;
+		}
+		[CRepr]
+		public struct IHTMLSourceElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510707, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLSourceElement *self, BSTR v) put_src;
+			public function HRESULT(IHTMLSourceElement *self, BSTR* p) get_src;
+			public function HRESULT(IHTMLSourceElement *self, BSTR v) put_type;
+			public function HRESULT(IHTMLSourceElement *self, BSTR* p) get_type;
+			public function HRESULT(IHTMLSourceElement *self, BSTR v) put_media;
+			public function HRESULT(IHTMLSourceElement *self, BSTR* p) get_media;
+		}
+		[CRepr]
+		public struct IHTMLAudioElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510708, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLVideoElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510709, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLVideoElement *self, int32 v) put_width;
+			public function HRESULT(IHTMLVideoElement *self, int32* p) get_width;
+			public function HRESULT(IHTMLVideoElement *self, int32 v) put_height;
+			public function HRESULT(IHTMLVideoElement *self, int32* p) get_height;
+			public function HRESULT(IHTMLVideoElement *self, uint32* p) get_videoWidth;
+			public function HRESULT(IHTMLVideoElement *self, uint32* p) get_videoHeight;
+			public function HRESULT(IHTMLVideoElement *self, BSTR v) put_poster;
+			public function HRESULT(IHTMLVideoElement *self, BSTR* p) get_poster;
+		}
+		[CRepr]
+		public struct IHTMLAudioElementFactory : IDispatch
+		{
+			public const new Guid IID = .(0x305107eb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAudioElementFactory *self, VARIANT src, IHTMLAudioElement** __MIDL__IHTMLAudioElementFactory0000) create;
+		}
+		[CRepr]
+		public struct DispHTMLMediaError : IDispatch
+		{
+			public const new Guid IID = .(0x30590086, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLTimeRanges : IDispatch
+		{
+			public const new Guid IID = .(0x30590087, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLMediaElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590088, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLSourceElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590089, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLAudioElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059008a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLVideoElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059008b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGSwitchElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104f1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGSwitchElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590030, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGDescElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104ea, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGDescElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590005, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGTitleElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104eb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGTitleElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590006, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGMetadataElement : IDispatch
+		{
+			public const new Guid IID = .(0x30510560, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGMetadataElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059002f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGElementInstanceList : IDispatch
+		{
+			public const new Guid IID = .(0x305104ef, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGElementInstanceList *self, int32* p) get_length;
+			public function HRESULT(ISVGElementInstanceList *self, int32 index, ISVGElementInstance** ppResult) item;
+		}
+		[CRepr]
+		public struct DispSVGElementInstance : IDispatch
+		{
+			public const new Guid IID = .(0x30590007, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGElementInstanceList : IDispatch
+		{
+			public const new Guid IID = .(0x30590008, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMException : IDispatch
+		{
+			public const new Guid IID = .(0x3051072b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMException *self, int32 v) put_code;
+			public function HRESULT(IDOMException *self, int32* p) get_code;
+			public function HRESULT(IDOMException *self, BSTR* p) get_message;
+		}
+		[CRepr]
+		public struct DispDOMException : IDispatch
+		{
+			public const new Guid IID = .(0x30590094, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IRangeException : IDispatch
+		{
+			public const new Guid IID = .(0x3051072d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IRangeException *self, int32 v) put_code;
+			public function HRESULT(IRangeException *self, int32* p) get_code;
+			public function HRESULT(IRangeException *self, BSTR* p) get_message;
+		}
+		[CRepr]
+		public struct DispRangeException : IDispatch
+		{
+			public const new Guid IID = .(0x30590095, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGException : IDispatch
+		{
+			public const new Guid IID = .(0x3051072f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGException *self, int32 v) put_code;
+			public function HRESULT(ISVGException *self, int32* p) get_code;
+			public function HRESULT(ISVGException *self, BSTR* p) get_message;
+		}
+		[CRepr]
+		public struct DispSVGException : IDispatch
+		{
+			public const new Guid IID = .(0x30590096, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IEventException : IDispatch
+		{
+			public const new Guid IID = .(0x3051073a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IEventException *self, int32 v) put_code;
+			public function HRESULT(IEventException *self, int32* p) get_code;
+			public function HRESULT(IEventException *self, BSTR* p) get_message;
+		}
+		[CRepr]
+		public struct DispEventException : IDispatch
+		{
+			public const new Guid IID = .(0x30590099, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGScriptElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051054d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGScriptElement *self, BSTR v) put_type;
+			public function HRESULT(ISVGScriptElement *self, BSTR* p) get_type;
+		}
+		[CRepr]
+		public struct DispSVGScriptElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590039, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGStyleElement : IDispatch
+		{
+			public const new Guid IID = .(0x305104f3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGStyleElement *self, BSTR v) put_type;
+			public function HRESULT(ISVGStyleElement *self, BSTR* p) get_type;
+			public function HRESULT(ISVGStyleElement *self, BSTR v) put_media;
+			public function HRESULT(ISVGStyleElement *self, BSTR* p) get_media;
+		}
+		[CRepr]
+		public struct DispSVGStyleElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590029, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGTextContentElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051051a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGTextContentElement *self, ISVGAnimatedLength* v) putref_textLength;
+			public function HRESULT(ISVGTextContentElement *self, ISVGAnimatedLength** p) get_textLength;
+			public function HRESULT(ISVGTextContentElement *self, ISVGAnimatedEnumeration* v) putref_lengthAdjust;
+			public function HRESULT(ISVGTextContentElement *self, ISVGAnimatedEnumeration** p) get_lengthAdjust;
+			public function HRESULT(ISVGTextContentElement *self, int32* pResult) getNumberOfChars;
+			public function HRESULT(ISVGTextContentElement *self, float* pResult) getComputedTextLength;
+			public function HRESULT(ISVGTextContentElement *self, int32 charnum, int32 nchars, float* pResult) getSubStringLength;
+			public function HRESULT(ISVGTextContentElement *self, int32 charnum, ISVGPoint** ppResult) getStartPositionOfChar;
+			public function HRESULT(ISVGTextContentElement *self, int32 charnum, ISVGPoint** ppResult) getEndPositionOfChar;
+			public function HRESULT(ISVGTextContentElement *self, int32 charnum, ISVGRect** ppResult) getExtentOfChar;
+			public function HRESULT(ISVGTextContentElement *self, int32 charnum, float* pResult) getRotationOfChar;
+			public function HRESULT(ISVGTextContentElement *self, ISVGPoint* point, int32* pResult) getCharNumAtPosition;
+			public function HRESULT(ISVGTextContentElement *self, int32 charnum, int32 nchars) selectSubString;
+		}
+		[CRepr]
+		public struct DispSVGTextContentElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590035, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGTextPositioningElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051051b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedLengthList* v) putref_x;
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedLengthList** p) get_x;
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedLengthList* v) putref_y;
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedLengthList** p) get_y;
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedLengthList* v) putref_dx;
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedLengthList** p) get_dx;
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedLengthList* v) putref_dy;
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedLengthList** p) get_dy;
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedNumberList* v) putref_rotate;
+			public function HRESULT(ISVGTextPositioningElement *self, ISVGAnimatedNumberList** p) get_rotate;
+		}
+		[CRepr]
+		public struct DispSVGTextPositioningElement : IDispatch
+		{
+			public const new Guid IID = .(0x30590038, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispDOMDocumentType : IDispatch
+		{
+			public const new Guid IID = .(0x30590098, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispNodeIterator : IDispatch
+		{
+			public const new Guid IID = .(0x3059009c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispTreeWalker : IDispatch
+		{
+			public const new Guid IID = .(0x3059009d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispDOMProcessingInstruction : IDispatch
+		{
+			public const new Guid IID = .(0x3059009b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLPerformanceNavigation : IDispatch
+		{
+			public const new Guid IID = .(0x30510750, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPerformanceNavigation *self, uint32* p) get_type;
+			public function HRESULT(IHTMLPerformanceNavigation *self, uint32* p) get_redirectCount;
+			public function HRESULT(IHTMLPerformanceNavigation *self, BSTR* string) toString;
+			public function HRESULT(IHTMLPerformanceNavigation *self, VARIANT* pVar) toJSON;
+		}
+		[CRepr]
+		public struct IHTMLPerformanceTiming : IDispatch
+		{
+			public const new Guid IID = .(0x30510752, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_navigationStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_unloadEventStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_unloadEventEnd;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_redirectStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_redirectEnd;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_fetchStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_domainLookupStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_domainLookupEnd;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_connectStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_connectEnd;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_requestStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_responseStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_responseEnd;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_domLoading;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_domInteractive;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_domContentLoadedEventStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_domContentLoadedEventEnd;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_domComplete;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_loadEventStart;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_loadEventEnd;
+			public function HRESULT(IHTMLPerformanceTiming *self, uint64* p) get_msFirstPaint;
+			public function HRESULT(IHTMLPerformanceTiming *self, BSTR* string) toString;
+			public function HRESULT(IHTMLPerformanceTiming *self, VARIANT* pVar) toJSON;
+		}
+		[CRepr]
+		public struct DispHTMLPerformance : IDispatch
+		{
+			public const new Guid IID = .(0x3059009f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLPerformanceNavigation : IDispatch
+		{
+			public const new Guid IID = .(0x305900a0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLPerformanceTiming : IDispatch
+		{
+			public const new Guid IID = .(0x305900a1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGTSpanElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051051d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispSVGTSpanElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059003a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ITemplatePrinter : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6b4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITemplatePrinter *self, BSTR bstrTitle, int16* p) startDoc;
+			public function HRESULT(ITemplatePrinter *self) stopDoc;
+			public function HRESULT(ITemplatePrinter *self) printBlankPage;
+			public function HRESULT(ITemplatePrinter *self, IDispatch* pElemDisp) printPage;
+			public function HRESULT(ITemplatePrinter *self, int16* p) ensurePrintDialogDefaults;
+			public function HRESULT(ITemplatePrinter *self, int16* p) showPrintDialog;
+			public function HRESULT(ITemplatePrinter *self, int16* p) showPageSetupDialog;
+			public function HRESULT(ITemplatePrinter *self, IUnknown* pMarkup, int16* p) printNonNative;
+			public function HRESULT(ITemplatePrinter *self, IUnknown* pMarkup, int16 fActiveFrame) printNonNativeFrames;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_framesetDocument;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_framesetDocument;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_frameActive;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_frameActive;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_frameAsShown;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_frameAsShown;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_selection;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_selection;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_selectedPages;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_selectedPages;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_currentPage;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_currentPage;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_currentPageAvail;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_currentPageAvail;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_collate;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_collate;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_duplex;
+			public function HRESULT(ITemplatePrinter *self, uint16 v) put_copies;
+			public function HRESULT(ITemplatePrinter *self, uint16* p) get_copies;
+			public function HRESULT(ITemplatePrinter *self, uint16 v) put_pageFrom;
+			public function HRESULT(ITemplatePrinter *self, uint16* p) get_pageFrom;
+			public function HRESULT(ITemplatePrinter *self, uint16 v) put_pageTo;
+			public function HRESULT(ITemplatePrinter *self, uint16* p) get_pageTo;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_tableOfLinks;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_tableOfLinks;
+			public function HRESULT(ITemplatePrinter *self, int16 v) put_allLinkedDocuments;
+			public function HRESULT(ITemplatePrinter *self, int16* p) get_allLinkedDocuments;
+			public function HRESULT(ITemplatePrinter *self, BSTR v) put_header;
+			public function HRESULT(ITemplatePrinter *self, BSTR* p) get_header;
+			public function HRESULT(ITemplatePrinter *self, BSTR v) put_footer;
+			public function HRESULT(ITemplatePrinter *self, BSTR* p) get_footer;
+			public function HRESULT(ITemplatePrinter *self, int32 v) put_marginLeft;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_marginLeft;
+			public function HRESULT(ITemplatePrinter *self, int32 v) put_marginRight;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_marginRight;
+			public function HRESULT(ITemplatePrinter *self, int32 v) put_marginTop;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_marginTop;
+			public function HRESULT(ITemplatePrinter *self, int32 v) put_marginBottom;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_marginBottom;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_pageWidth;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_pageHeight;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_unprintableLeft;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_unprintableTop;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_unprintableRight;
+			public function HRESULT(ITemplatePrinter *self, int32* p) get_unprintableBottom;
+			public function HRESULT(ITemplatePrinter *self, int32* p) updatePageStatus;
+		}
+		[CRepr]
+		public struct ITemplatePrinter2 : ITemplatePrinter
+		{
+			public const new Guid IID = .(0x3050f83f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITemplatePrinter2 *self, int16 v) put_selectionEnabled;
+			public function HRESULT(ITemplatePrinter2 *self, int16* p) get_selectionEnabled;
+			public function HRESULT(ITemplatePrinter2 *self, int16 v) put_frameActiveEnabled;
+			public function HRESULT(ITemplatePrinter2 *self, int16* p) get_frameActiveEnabled;
+			public function HRESULT(ITemplatePrinter2 *self, BSTR v) put_orientation;
+			public function HRESULT(ITemplatePrinter2 *self, BSTR* p) get_orientation;
+			public function HRESULT(ITemplatePrinter2 *self, int16 v) put_usePrinterCopyCollate;
+			public function HRESULT(ITemplatePrinter2 *self, int16* p) get_usePrinterCopyCollate;
+			public function HRESULT(ITemplatePrinter2 *self, BSTR bstrProperty, VARIANT* pvar) deviceSupports;
+		}
+		[CRepr]
+		public struct ITemplatePrinter3 : ITemplatePrinter2
+		{
+			public const new Guid IID = .(0x305104a3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITemplatePrinter3 *self, BSTR v) put_headerFooterFont;
+			public function HRESULT(ITemplatePrinter3 *self, BSTR* p) get_headerFooterFont;
+			public function HRESULT(ITemplatePrinter3 *self, IDispatch* pageRule, int32 pageWidth, int32 pageHeight, VARIANT* pMargin) getPageMarginTop;
+			public function HRESULT(ITemplatePrinter3 *self, IDispatch* pageRule, int32 pageWidth, int32 pageHeight, VARIANT* pMargin) getPageMarginRight;
+			public function HRESULT(ITemplatePrinter3 *self, IDispatch* pageRule, int32 pageWidth, int32 pageHeight, VARIANT* pMargin) getPageMarginBottom;
+			public function HRESULT(ITemplatePrinter3 *self, IDispatch* pageRule, int32 pageWidth, int32 pageHeight, VARIANT* pMargin) getPageMarginLeft;
+			public function HRESULT(ITemplatePrinter3 *self, IDispatch* pageRule, int16* pbImportant) getPageMarginTopImportant;
+			public function HRESULT(ITemplatePrinter3 *self, IDispatch* pageRule, int16* pbImportant) getPageMarginRightImportant;
+			public function HRESULT(ITemplatePrinter3 *self, IDispatch* pageRule, int16* pbImportant) getPageMarginBottomImportant;
+			public function HRESULT(ITemplatePrinter3 *self, IDispatch* pageRule, int16* pbImportant) getPageMarginLeftImportant;
+		}
+		[CRepr]
+		public struct IPrintManagerTemplatePrinter : IDispatch
+		{
+			public const new Guid IID = .(0xf633be14, 0x9eff, 0x4c4d, 0x92, 0x9e, 0x05, 0x71, 0x7b, 0x21, 0xb3, 0xe6);
+			
+			public function HRESULT(IPrintManagerTemplatePrinter *self) startPrint;
+			public function HRESULT(IPrintManagerTemplatePrinter *self, IDispatch* pElemDisp, int32 nPage) drawPreviewPage;
+			public function HRESULT(IPrintManagerTemplatePrinter *self, int32 nPage) setPageCount;
+			public function HRESULT(IPrintManagerTemplatePrinter *self) invalidatePreview;
+			public function HRESULT(IPrintManagerTemplatePrinter *self, BSTR bstrKey, VARIANT* pvarin) getPrintTaskOptionValue;
+			public function HRESULT(IPrintManagerTemplatePrinter *self) endPrint;
+		}
+		[CRepr]
+		public struct IPrintManagerTemplatePrinter2 : IPrintManagerTemplatePrinter
+		{
+			public const new Guid IID = .(0xc6403497, 0x7493, 0x4f09, 0x80, 0x16, 0x54, 0xb0, 0x3e, 0x9b, 0xda, 0x69);
+			
+			public function HRESULT(IPrintManagerTemplatePrinter2 *self, int16* p) get_showHeaderFooter;
+			public function HRESULT(IPrintManagerTemplatePrinter2 *self, int16* p) get_shrinkToFit;
+			public function HRESULT(IPrintManagerTemplatePrinter2 *self, float* p) get_percentScale;
+		}
+		[CRepr]
+		public struct DispCPrintManagerTemplatePrinter : IDispatch
+		{
+			public const new Guid IID = .(0x305900e9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ISVGTextPathElement : IDispatch
+		{
+			public const new Guid IID = .(0x3051051f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISVGTextPathElement *self, ISVGAnimatedLength* v) putref_startOffset;
+			public function HRESULT(ISVGTextPathElement *self, ISVGAnimatedLength** p) get_startOffset;
+			public function HRESULT(ISVGTextPathElement *self, ISVGAnimatedEnumeration* v) putref_method;
+			public function HRESULT(ISVGTextPathElement *self, ISVGAnimatedEnumeration** p) get_method;
+			public function HRESULT(ISVGTextPathElement *self, ISVGAnimatedEnumeration* v) putref_spacing;
+			public function HRESULT(ISVGTextPathElement *self, ISVGAnimatedEnumeration** p) get_spacing;
+		}
+		[CRepr]
+		public struct DispSVGTextPathElement : IDispatch
+		{
+			public const new Guid IID = .(0x3059003d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMXmlSerializer : IDispatch
+		{
+			public const new Guid IID = .(0x3051077d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMXmlSerializer *self, IHTMLDOMNode* pNode, BSTR* pString) serializeToString;
+		}
+		[CRepr]
+		public struct IDOMParser : IDispatch
+		{
+			public const new Guid IID = .(0x30510781, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMParser *self, BSTR xmlSource, BSTR mimeType, IHTMLDocument2** ppNode) parseFromString;
+		}
+		[CRepr]
+		public struct DispXMLSerializer : IDispatch
+		{
+			public const new Guid IID = .(0x305900ad, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispDOMParser : IDispatch
+		{
+			public const new Guid IID = .(0x305900ae, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMXmlSerializerFactory : IDispatch
+		{
+			public const new Guid IID = .(0x3051077f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMXmlSerializerFactory *self, IDOMXmlSerializer** __MIDL__IDOMXmlSerializerFactory0000) create;
+		}
+		[CRepr]
+		public struct IDOMParserFactory : IDispatch
+		{
+			public const new Guid IID = .(0x30510783, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMParserFactory *self, IDOMParser** __MIDL__IDOMParserFactory0000) create;
+		}
+		[CRepr]
+		public struct DispHTMLSemanticElement : IDispatch
+		{
+			public const new Guid IID = .(0x305900ba, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLProgressElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f2d6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLProgressElement *self, float v) put_value;
+			public function HRESULT(IHTMLProgressElement *self, float* p) get_value;
+			public function HRESULT(IHTMLProgressElement *self, float v) put_max;
+			public function HRESULT(IHTMLProgressElement *self, float* p) get_max;
+			public function HRESULT(IHTMLProgressElement *self, float* p) get_position;
+			public function HRESULT(IHTMLProgressElement *self, IHTMLFormElement** p) get_form;
+		}
+		[CRepr]
+		public struct DispHTMLProgressElement : IDispatch
+		{
+			public const new Guid IID = .(0x305900af, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMMSTransitionEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305107b5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMMSTransitionEvent *self, BSTR* p) get_propertyName;
+			public function HRESULT(IDOMMSTransitionEvent *self, float* p) get_elapsedTime;
+			public function HRESULT(IDOMMSTransitionEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, BSTR propertyName, float elapsedTime) initMSTransitionEvent;
+		}
+		[CRepr]
+		public struct DispDOMMSTransitionEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305900bb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMMSAnimationEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305107b7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMMSAnimationEvent *self, BSTR* p) get_animationName;
+			public function HRESULT(IDOMMSAnimationEvent *self, float* p) get_elapsedTime;
+			public function HRESULT(IDOMMSAnimationEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, BSTR animationName, float elapsedTime) initMSAnimationEvent;
+		}
+		[CRepr]
+		public struct DispDOMMSAnimationEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305900bc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IWebGeocoordinates : IDispatch
+		{
+			public const new Guid IID = .(0x305107c7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IWebGeocoordinates *self, double* p) get_latitude;
+			public function HRESULT(IWebGeocoordinates *self, double* p) get_longitude;
+			public function HRESULT(IWebGeocoordinates *self, VARIANT* p) get_altitude;
+			public function HRESULT(IWebGeocoordinates *self, double* p) get_accuracy;
+			public function HRESULT(IWebGeocoordinates *self, VARIANT* p) get_altitudeAccuracy;
+			public function HRESULT(IWebGeocoordinates *self, VARIANT* p) get_heading;
+			public function HRESULT(IWebGeocoordinates *self, VARIANT* p) get_speed;
+		}
+		[CRepr]
+		public struct IWebGeopositionError : IDispatch
+		{
+			public const new Guid IID = .(0x305107c9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IWebGeopositionError *self, int32* p) get_code;
+			public function HRESULT(IWebGeopositionError *self, BSTR* p) get_message;
+		}
+		[CRepr]
+		public struct IWebGeoposition : IDispatch
+		{
+			public const new Guid IID = .(0x305107cd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IWebGeoposition *self, IWebGeocoordinates** p) get_coords;
+			public function HRESULT(IWebGeoposition *self, uint64* p) get_timestamp;
+		}
+		[CRepr]
+		public struct DispWebGeolocation : IDispatch
+		{
+			public const new Guid IID = .(0x305900bd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispWebGeocoordinates : IDispatch
+		{
+			public const new Guid IID = .(0x305900be, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispWebGeopositionError : IDispatch
+		{
+			public const new Guid IID = .(0x305900bf, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispWebGeoposition : IDispatch
+		{
+			public const new Guid IID = .(0x305900c1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IClientCaps : IDispatch
+		{
+			public const new Guid IID = .(0x7e8bc44d, 0xaeff, 0x11d1, 0x89, 0xc2, 0x00, 0xc0, 0x4f, 0xb6, 0xbf, 0xc4);
+			
+			public function HRESULT(IClientCaps *self, int16* p) get_javaEnabled;
+			public function HRESULT(IClientCaps *self, int16* p) get_cookieEnabled;
+			public function HRESULT(IClientCaps *self, BSTR* p) get_cpuClass;
+			public function HRESULT(IClientCaps *self, BSTR* p) get_systemLanguage;
+			public function HRESULT(IClientCaps *self, BSTR* p) get_userLanguage;
+			public function HRESULT(IClientCaps *self, BSTR* p) get_platform;
+			public function HRESULT(IClientCaps *self, int32* p) get_connectionSpeed;
+			public function HRESULT(IClientCaps *self, int16* p) get_onLine;
+			public function HRESULT(IClientCaps *self, int32* p) get_colorDepth;
+			public function HRESULT(IClientCaps *self, int32* p) get_bufferDepth;
+			public function HRESULT(IClientCaps *self, int32* p) get_width;
+			public function HRESULT(IClientCaps *self, int32* p) get_height;
+			public function HRESULT(IClientCaps *self, int32* p) get_availHeight;
+			public function HRESULT(IClientCaps *self, int32* p) get_availWidth;
+			public function HRESULT(IClientCaps *self, BSTR* p) get_connectionType;
+			public function HRESULT(IClientCaps *self, BSTR bstrName, BSTR bstrUrl, BSTR bStrVer, int16* p) isComponentInstalled;
+			public function HRESULT(IClientCaps *self, BSTR bstrName, BSTR bstrUrl, BSTR* pbstrVer) getComponentVersion;
+			public function HRESULT(IClientCaps *self, BSTR bstrVer1, BSTR bstrVer2, int32* p) compareVersions;
+			public function HRESULT(IClientCaps *self, BSTR bstrName, BSTR bstrUrl, BSTR bStrVer) addComponentRequest;
+			public function HRESULT(IClientCaps *self, int16* p) doComponentRequest;
+			public function HRESULT(IClientCaps *self) clearComponentRequest;
+		}
+		[CRepr]
+		public struct IDOMMSManipulationEvent : IDispatch
+		{
+			public const new Guid IID = .(0x30510816, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMMSManipulationEvent *self, int32* p) get_lastState;
+			public function HRESULT(IDOMMSManipulationEvent *self, int32* p) get_currentState;
+			public function HRESULT(IDOMMSManipulationEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, IHTMLWindow2* viewArg, int32 detailArg, int32 lastState, int32 currentState) initMSManipulationEvent;
+		}
+		[CRepr]
+		public struct DispDOMMSManipulationEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305900e1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IDOMCloseEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305107ff, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMCloseEvent *self, int16* p) get_wasClean;
+			public function HRESULT(IDOMCloseEvent *self, BSTR eventType, int16 canBubble, int16 cancelable, int16 wasClean, int32 code, BSTR reason) initCloseEvent;
+		}
+		[CRepr]
+		public struct DispDOMCloseEvent : IDispatch
+		{
+			public const new Guid IID = .(0x305900dc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispApplicationCache : IDispatch
+		{
+			public const new Guid IID = .(0x305900e4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct ICSSFilterSite : IUnknown
+		{
+			public const new Guid IID = .(0x3050f3ed, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ICSSFilterSite *self, IHTMLElement** Element) GetElement;
+			public function HRESULT(ICSSFilterSite *self) FireOnFilterChangeEvent;
+		}
+		[CRepr]
+		public struct IMarkupPointer : IUnknown
+		{
+			public const new Guid IID = .(0x3050f49f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IMarkupPointer *self, IHTMLDocument2** ppDoc) OwningDoc;
+			public function HRESULT(IMarkupPointer *self, POINTER_GRAVITY* pGravity) Gravity;
+			public function HRESULT(IMarkupPointer *self, POINTER_GRAVITY Gravity) SetGravity;
+			public function HRESULT(IMarkupPointer *self, BOOL* pfCling) Cling;
+			public function HRESULT(IMarkupPointer *self, BOOL fCLing) SetCling;
+			public function HRESULT(IMarkupPointer *self) Unposition;
+			public function HRESULT(IMarkupPointer *self, BOOL* pfPositioned) IsPositioned;
+			public function HRESULT(IMarkupPointer *self, IMarkupContainer** ppContainer) GetContainer;
+			public function HRESULT(IMarkupPointer *self, IHTMLElement* pElement, ELEMENT_ADJACENCY eAdj) MoveAdjacentToElement;
+			public function HRESULT(IMarkupPointer *self, IMarkupPointer* pPointer) MoveToPointer;
+			public function HRESULT(IMarkupPointer *self, IMarkupContainer* pContainer, BOOL fAtStart) MoveToContainer;
+			public function HRESULT(IMarkupPointer *self, BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, int32* pcch, char16* pchText) Left;
+			public function HRESULT(IMarkupPointer *self, BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, int32* pcch, char16* pchText) Right;
+			public function HRESULT(IMarkupPointer *self, IHTMLElement** ppElemCurrent) CurrentScope;
+			public function HRESULT(IMarkupPointer *self, IMarkupPointer* pPointerThat, BOOL* pfResult) IsLeftOf;
+			public function HRESULT(IMarkupPointer *self, IMarkupPointer* pPointerThat, BOOL* pfResult) IsLeftOfOrEqualTo;
+			public function HRESULT(IMarkupPointer *self, IMarkupPointer* pPointerThat, BOOL* pfResult) IsRightOf;
+			public function HRESULT(IMarkupPointer *self, IMarkupPointer* pPointerThat, BOOL* pfResult) IsRightOfOrEqualTo;
+			public function HRESULT(IMarkupPointer *self, IMarkupPointer* pPointerThat, BOOL* pfAreEqual) IsEqualTo;
+			public function HRESULT(IMarkupPointer *self, MOVEUNIT_ACTION muAction) MoveUnit;
+			public function HRESULT(IMarkupPointer *self, PWSTR pchFindText, uint32 dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch) FindText;
+		}
+		[CRepr]
+		public struct IMarkupContainer : IUnknown
+		{
+			public const new Guid IID = .(0x3050f5f9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IMarkupContainer *self, IHTMLDocument2** ppDoc) OwningDoc;
+		}
+		[CRepr]
+		public struct IMarkupContainer2 : IMarkupContainer
+		{
+			public const new Guid IID = .(0x3050f648, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IMarkupContainer2 *self, IHTMLChangeSink* pChangeSink, IHTMLChangeLog** ppChangeLog, BOOL fForward, BOOL fBackward) CreateChangeLog;
+			public function HRESULT(IMarkupContainer2 *self, IHTMLChangeSink* pChangeSink, uint32* pdwCookie) RegisterForDirtyRange;
+			public function HRESULT(IMarkupContainer2 *self, uint32 dwCookie) UnRegisterForDirtyRange;
+			public function HRESULT(IMarkupContainer2 *self, uint32 dwCookie, IMarkupPointer* pIPointerBegin, IMarkupPointer* pIPointerEnd) GetAndClearDirtyRange;
+			public function int32(IMarkupContainer2 *self) GetVersionNumber;
+			public function HRESULT(IMarkupContainer2 *self, IHTMLElement** ppElementMaster) GetMasterElement;
+		}
+		[CRepr]
+		public struct IHTMLChangeLog : IUnknown
+		{
+			public const new Guid IID = .(0x3050f649, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLChangeLog *self, uint8* pbBuffer, int32 nBufferSize, int32* pnRecordLength) GetNextChange;
+		}
+		[CRepr]
+		public struct IHTMLChangeSink : IUnknown
+		{
+			public const new Guid IID = .(0x3050f64a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLChangeSink *self) Notify;
+		}
+		[CRepr]
+		public struct ISegmentList : IUnknown
+		{
+			public const new Guid IID = .(0x3050f605, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISegmentList *self, ISegmentListIterator** ppIIter) CreateIterator;
+			public function HRESULT(ISegmentList *self, SELECTION_TYPE* peType) GetType;
+			public function HRESULT(ISegmentList *self, BOOL* pfEmpty) IsEmpty;
+		}
+		[CRepr]
+		public struct ISegmentListIterator : IUnknown
+		{
+			public const new Guid IID = .(0x3050f692, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISegmentListIterator *self, ISegment** ppISegment) Current;
+			public function HRESULT(ISegmentListIterator *self) First;
+			public function HRESULT(ISegmentListIterator *self) IsDone;
+			public function HRESULT(ISegmentListIterator *self) Advance;
+		}
+		[CRepr]
+		public struct IHTMLCaret : IUnknown
+		{
+			public const new Guid IID = .(0x3050f604, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLCaret *self, IDisplayPointer* pDispPointer, BOOL fScrollIntoView, CARET_DIRECTION eDir) MoveCaretToPointer;
+			public function HRESULT(IHTMLCaret *self, IDisplayPointer* pDispPointer, BOOL fVisible, BOOL fScrollIntoView, CARET_DIRECTION eDir) MoveCaretToPointerEx;
+			public function HRESULT(IHTMLCaret *self, IMarkupPointer* pIMarkupPointer) MoveMarkupPointerToCaret;
+			public function HRESULT(IHTMLCaret *self, IDisplayPointer* pDispPointer) MoveDisplayPointerToCaret;
+			public function HRESULT(IHTMLCaret *self, BOOL* pIsVisible) IsVisible;
+			public function HRESULT(IHTMLCaret *self, BOOL fScrollIntoView) Show;
+			public function HRESULT(IHTMLCaret *self) Hide;
+			public function HRESULT(IHTMLCaret *self, PWSTR pText, int32 lLen) InsertText;
+			public function HRESULT(IHTMLCaret *self) ScrollIntoView;
+			public function HRESULT(IHTMLCaret *self, POINT* pPoint, BOOL fTranslate) GetLocation;
+			public function HRESULT(IHTMLCaret *self, CARET_DIRECTION* peDir) GetCaretDirection;
+			public function HRESULT(IHTMLCaret *self, CARET_DIRECTION eDir) SetCaretDirection;
+		}
+		[CRepr]
+		public struct ISegment : IUnknown
+		{
+			public const new Guid IID = .(0x3050f683, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISegment *self, IMarkupPointer* pIStart, IMarkupPointer* pIEnd) GetPointers;
+		}
+		[CRepr]
+		public struct IElementSegment : ISegment
+		{
+			public const new Guid IID = .(0x3050f68f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementSegment *self, IHTMLElement** ppIElement) GetElement;
+			public function HRESULT(IElementSegment *self, BOOL fPrimary) SetPrimary;
+			public function HRESULT(IElementSegment *self, BOOL* pfPrimary) IsPrimary;
+		}
+		[CRepr]
+		public struct IHighlightSegment : ISegment
+		{
+			public const new Guid IID = .(0x3050f690, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHighlightRenderingServices : IUnknown
+		{
+			public const new Guid IID = .(0x3050f606, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHighlightRenderingServices *self, IDisplayPointer* pDispPointerStart, IDisplayPointer* pDispPointerEnd, IHTMLRenderStyle* pIRenderStyle, IHighlightSegment** ppISegment) AddSegment;
+			public function HRESULT(IHighlightRenderingServices *self, IHighlightSegment* pISegment, IDisplayPointer* pDispPointerStart, IDisplayPointer* pDispPointerEnd) MoveSegmentToPointers;
+			public function HRESULT(IHighlightRenderingServices *self, IHighlightSegment* pISegment) RemoveSegment;
+		}
+		[CRepr]
+		public struct ILineInfo : IUnknown
+		{
+			public const new Guid IID = .(0x3050f7e2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ILineInfo *self, int32* p) get_x;
+			public function HRESULT(ILineInfo *self, int32* p) get_baseLine;
+			public function HRESULT(ILineInfo *self, int32* p) get_textDescent;
+			public function HRESULT(ILineInfo *self, int32* p) get_textHeight;
+			public function HRESULT(ILineInfo *self, int32* p) get_lineDirection;
+		}
+		[CRepr]
+		public struct IDisplayPointer : IUnknown
+		{
+			public const new Guid IID = .(0x3050f69e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDisplayPointer *self, POINT ptPoint, COORD_SYSTEM eCoordSystem, IHTMLElement* pElementContext, uint32 dwHitTestOptions, uint32* pdwHitTestResults) MoveToPoint;
+			public function HRESULT(IDisplayPointer *self, DISPLAY_MOVEUNIT eMoveUnit, int32 lXPos) MoveUnit;
+			public function HRESULT(IDisplayPointer *self, IMarkupPointer* pMarkupPointer) PositionMarkupPointer;
+			public function HRESULT(IDisplayPointer *self, IDisplayPointer* pDispPointer) MoveToPointer;
+			public function HRESULT(IDisplayPointer *self, POINTER_GRAVITY eGravity) SetPointerGravity;
+			public function HRESULT(IDisplayPointer *self, POINTER_GRAVITY* peGravity) GetPointerGravity;
+			public function HRESULT(IDisplayPointer *self, DISPLAY_GRAVITY eGravity) SetDisplayGravity;
+			public function HRESULT(IDisplayPointer *self, DISPLAY_GRAVITY* peGravity) GetDisplayGravity;
+			public function HRESULT(IDisplayPointer *self, BOOL* pfPositioned) IsPositioned;
+			public function HRESULT(IDisplayPointer *self) Unposition;
+			public function HRESULT(IDisplayPointer *self, IDisplayPointer* pDispPointer, BOOL* pfIsEqual) IsEqualTo;
+			public function HRESULT(IDisplayPointer *self, IDisplayPointer* pDispPointer, BOOL* pfIsLeftOf) IsLeftOf;
+			public function HRESULT(IDisplayPointer *self, IDisplayPointer* pDispPointer, BOOL* pfIsRightOf) IsRightOf;
+			public function HRESULT(IDisplayPointer *self, BOOL* pfBOL) IsAtBOL;
+			public function HRESULT(IDisplayPointer *self, IMarkupPointer* pPointer, IDisplayPointer* pDispLineContext) MoveToMarkupPointer;
+			public function HRESULT(IDisplayPointer *self) ScrollIntoView;
+			public function HRESULT(IDisplayPointer *self, ILineInfo** ppLineInfo) GetLineInfo;
+			public function HRESULT(IDisplayPointer *self, IHTMLElement** ppLayoutElement) GetFlowElement;
+			public function HRESULT(IDisplayPointer *self, uint32* pdwBreaks) QueryBreaks;
+		}
+		[CRepr]
+		public struct IDisplayServices : IUnknown
+		{
+			public const new Guid IID = .(0x3050f69d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDisplayServices *self, IDisplayPointer** ppDispPointer) CreateDisplayPointer;
+			public function HRESULT(IDisplayServices *self, RECT* pRect, COORD_SYSTEM eSource, COORD_SYSTEM eDestination, IHTMLElement* pIElement) TransformRect;
+			public function HRESULT(IDisplayServices *self, POINT* pPoint, COORD_SYSTEM eSource, COORD_SYSTEM eDestination, IHTMLElement* pIElement) TransformPoint;
+			public function HRESULT(IDisplayServices *self, IHTMLCaret** ppCaret) GetCaret;
+			public function HRESULT(IDisplayServices *self, IMarkupPointer* pPointer, IHTMLComputedStyle** ppComputedStyle) GetComputedStyle;
+			public function HRESULT(IDisplayServices *self, IHTMLElement* pIElement, RECT rect) ScrollRectIntoView;
+			public function HRESULT(IDisplayServices *self, IHTMLElement* pIElement, BOOL* pfHasFlowLayout) HasFlowLayout;
+		}
+		[CRepr]
+		public struct IHtmlDlgSafeHelper : IDispatch
+		{
+			public const new Guid IID = .(0x3050f81a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHtmlDlgSafeHelper *self, VARIANT initColor, VARIANT* rgbColor) choosecolordlg;
+			public function HRESULT(IHtmlDlgSafeHelper *self, BSTR fontName, VARIANT* charset) getCharset;
+			public function HRESULT(IHtmlDlgSafeHelper *self, IDispatch** p) get_Fonts;
+			public function HRESULT(IHtmlDlgSafeHelper *self, IDispatch** p) get_BlockFormats;
+		}
+		[CRepr]
+		public struct IBlockFormats : IDispatch
+		{
+			public const new Guid IID = .(0x3050f830, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IBlockFormats *self, IUnknown** p) get__NewEnum;
+			public function HRESULT(IBlockFormats *self, int32* p) get_Count;
+			public function HRESULT(IBlockFormats *self, VARIANT* pvarIndex, BSTR* pbstrBlockFormat) Item;
+		}
+		[CRepr]
+		public struct IFontNames : IDispatch
+		{
+			public const new Guid IID = .(0x3050f839, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IFontNames *self, IUnknown** p) get__NewEnum;
+			public function HRESULT(IFontNames *self, int32* p) get_Count;
+			public function HRESULT(IFontNames *self, VARIANT* pvarIndex, BSTR* pbstrFontName) Item;
+		}
+		[CRepr]
+		public struct ICSSFilter : IUnknown
+		{
+			public const new Guid IID = .(0x3050f3ec, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ICSSFilter *self, ICSSFilterSite* pSink) SetSite;
+			public function HRESULT(ICSSFilter *self, int32 dispid) OnAmbientPropertyChange;
+		}
+		[CRepr]
+		public struct ISecureUrlHost : IUnknown
+		{
+			public const new Guid IID = .(0xc81984c4, 0x74c8, 0x11d2, 0xba, 0xa9, 0x00, 0xc0, 0x4f, 0xc2, 0x04, 0x0e);
+			
+			public function HRESULT(ISecureUrlHost *self, BOOL* pfAllow, PWSTR pchUrlInQuestion, uint32 dwFlags) ValidateSecureUrl;
+		}
+		[CRepr]
+		public struct IMarkupServices : IUnknown
+		{
+			public const new Guid IID = .(0x3050f4a0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IMarkupServices *self, IMarkupPointer** ppPointer) CreateMarkupPointer;
+			public function HRESULT(IMarkupServices *self, IMarkupContainer** ppMarkupContainer) CreateMarkupContainer;
+			public function HRESULT(IMarkupServices *self, ELEMENT_TAG_ID tagID, PWSTR pchAttributes, IHTMLElement** ppElement) CreateElement;
+			public function HRESULT(IMarkupServices *self, IHTMLElement* pElemCloneThis, IHTMLElement** ppElementTheClone) CloneElement;
+			public function HRESULT(IMarkupServices *self, IHTMLElement* pElementInsert, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish) InsertElement;
+			public function HRESULT(IMarkupServices *self, IHTMLElement* pElementRemove) RemoveElement;
+			public function HRESULT(IMarkupServices *self, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish) Remove;
+			public function HRESULT(IMarkupServices *self, IMarkupPointer* pPointerSourceStart, IMarkupPointer* pPointerSourceFinish, IMarkupPointer* pPointerTarget) Copy;
+			public function HRESULT(IMarkupServices *self, IMarkupPointer* pPointerSourceStart, IMarkupPointer* pPointerSourceFinish, IMarkupPointer* pPointerTarget) Move;
+			public function HRESULT(IMarkupServices *self, PWSTR pchText, int32 cch, IMarkupPointer* pPointerTarget) InsertText;
+			public function HRESULT(IMarkupServices *self, PWSTR pchHTML, uint32 dwFlags, IMarkupContainer** ppContainerResult, IMarkupPointer* ppPointerStart, IMarkupPointer* ppPointerFinish) ParseString;
+			public function HRESULT(IMarkupServices *self, int hglobalHTML, uint32 dwFlags, IMarkupContainer** ppContainerResult, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish) ParseGlobal;
+			public function HRESULT(IMarkupServices *self, IHTMLElement* pElement, BOOL* pfScoped) IsScopedElement;
+			public function HRESULT(IMarkupServices *self, IHTMLElement* pElement, ELEMENT_TAG_ID* ptagId) GetElementTagId;
+			public function HRESULT(IMarkupServices *self, BSTR bstrName, ELEMENT_TAG_ID* ptagId) GetTagIDForName;
+			public function HRESULT(IMarkupServices *self, ELEMENT_TAG_ID tagId, BSTR* pbstrName) GetNameForTagID;
+			public function HRESULT(IMarkupServices *self, IHTMLTxtRange* pIRange, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish) MovePointersToRange;
+			public function HRESULT(IMarkupServices *self, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish, IHTMLTxtRange* pIRange) MoveRangeToPointers;
+			public function HRESULT(IMarkupServices *self, PWSTR pchTitle) BeginUndoUnit;
+			public function HRESULT(IMarkupServices *self) EndUndoUnit;
+		}
+		[CRepr]
+		public struct IMarkupServices2 : IMarkupServices
+		{
+			public const new Guid IID = .(0x3050f682, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IMarkupServices2 *self, int hglobalHTML, uint32 dwFlags, IMarkupContainer* pContext, IMarkupContainer** ppContainerResult, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish) ParseGlobalEx;
+			public function HRESULT(IMarkupServices2 *self, IMarkupPointer* pPointerStart, IMarkupPointer* pPointerFinish, IMarkupPointer* pPointerTarget, IMarkupPointer* pPointerStatus, IHTMLElement** ppElemFailBottom, IHTMLElement** ppElemFailTop) ValidateElements;
+			public function HRESULT(IMarkupServices2 *self, ISegmentList* pSegmentList, uint32 dwFlags) SaveSegmentsToClipboard;
+		}
+		[CRepr]
+		public struct IHTMLChangePlayback : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6e0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLChangePlayback *self, uint8* pbRecord, BOOL fForward) ExecChange;
+		}
+		[CRepr]
+		public struct IMarkupPointer2 : IMarkupPointer
+		{
+			public const new Guid IID = .(0x3050f675, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IMarkupPointer2 *self, BOOL* pfAtBreak) IsAtWordBreak;
+			public function HRESULT(IMarkupPointer2 *self, int32* plMP) GetMarkupPosition;
+			public function HRESULT(IMarkupPointer2 *self, IMarkupContainer* pContainer, int32 lMP) MoveToMarkupPosition;
+			public function HRESULT(IMarkupPointer2 *self, MOVEUNIT_ACTION muAction, IMarkupPointer* pIBoundary) MoveUnitBounded;
+			public function HRESULT(IMarkupPointer2 *self, IMarkupPointer* pRight, BOOL* pfResult) IsInsideURL;
+			public function HRESULT(IMarkupPointer2 *self, IHTMLElement* pIElement, BOOL fAtStart) MoveToContent;
+		}
+		[CRepr]
+		public struct IMarkupTextFrags : IUnknown
+		{
+			public const new Guid IID = .(0x3050f5fa, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IMarkupTextFrags *self, int32* pcFrags) GetTextFragCount;
+			public function HRESULT(IMarkupTextFrags *self, int32 iFrag, BSTR* pbstrFrag, IMarkupPointer* pPointerFrag) GetTextFrag;
+			public function HRESULT(IMarkupTextFrags *self, int32 iFrag) RemoveTextFrag;
+			public function HRESULT(IMarkupTextFrags *self, int32 iFrag, BSTR bstrInsert, IMarkupPointer* pPointerInsert) InsertTextFrag;
+			public function HRESULT(IMarkupTextFrags *self, IMarkupPointer* pPointerFind, int32* piFrag, BOOL* pfFragFound) FindTextFragFromMarkupPointer;
+		}
+		[CRepr]
+		public struct IXMLGenericParse : IUnknown
+		{
+			public const new Guid IID = .(0xe4e23071, 0x4d07, 0x11d2, 0xae, 0x76, 0x00, 0x80, 0xc7, 0x3b, 0xc1, 0x99);
+			
+			public function HRESULT(IXMLGenericParse *self, int16 fDoGeneric) SetGenericParse;
+		}
+		[CRepr]
+		public struct IHTMLEditHost : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6a0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEditHost *self, IHTMLElement* pIElement, RECT* prcNew, ELEMENT_CORNER eHandle) SnapRect;
+		}
+		[CRepr]
+		public struct IHTMLEditHost2 : IHTMLEditHost
+		{
+			public const new Guid IID = .(0x3050f848, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0d);
+			
+			public function HRESULT(IHTMLEditHost2 *self) PreDrag;
+		}
+		[CRepr]
+		public struct ISequenceNumber : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6c1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISequenceNumber *self, int32 nCurrent, int32* pnNew) GetSequenceNumber;
+		}
+		[CRepr]
+		public struct IIMEServices : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6ca, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IIMEServices *self, IActiveIMMApp** ppActiveIMM) GetActiveIMM;
+		}
+		[CRepr]
+		public struct ISelectionServicesListener : IUnknown
+		{
+			public const new Guid IID = .(0x3050f699, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISelectionServicesListener *self) BeginSelectionUndo;
+			public function HRESULT(ISelectionServicesListener *self) EndSelectionUndo;
+			public function HRESULT(ISelectionServicesListener *self, IMarkupPointer* pIElementStart, IMarkupPointer* pIElementEnd, IMarkupPointer* pIElementContentStart, IMarkupPointer* pIElementContentEnd) OnSelectedElementExit;
+			public function HRESULT(ISelectionServicesListener *self, SELECTION_TYPE eType, ISelectionServicesListener* pIListener) OnChangeType;
+			public function HRESULT(ISelectionServicesListener *self, BSTR* pTypeDetail) GetTypeDetail;
+		}
+		[CRepr]
+		public struct ISelectionServices : IUnknown
+		{
+			public const new Guid IID = .(0x3050f684, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISelectionServices *self, SELECTION_TYPE eType, ISelectionServicesListener* pIListener) SetSelectionType;
+			public function HRESULT(ISelectionServices *self, IMarkupContainer** ppIContainer) GetMarkupContainer;
+			public function HRESULT(ISelectionServices *self, IMarkupPointer* pIStart, IMarkupPointer* pIEnd, ISegment** ppISegmentAdded) AddSegment;
+			public function HRESULT(ISelectionServices *self, IHTMLElement* pIElement, IElementSegment** ppISegmentAdded) AddElementSegment;
+			public function HRESULT(ISelectionServices *self, ISegment* pISegment) RemoveSegment;
+			public function HRESULT(ISelectionServices *self, ISelectionServicesListener** ppISelectionServicesListener) GetSelectionServicesListener;
+		}
+		[CRepr]
+		public struct IHTMLEditDesigner : IUnknown
+		{
+			public const new Guid IID = .(0x3050f662, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEditDesigner *self, int32 inEvtDispId, IHTMLEventObj* pIEventObj) PreHandleEvent;
+			public function HRESULT(IHTMLEditDesigner *self, int32 inEvtDispId, IHTMLEventObj* pIEventObj) PostHandleEvent;
+			public function HRESULT(IHTMLEditDesigner *self, int32 inEvtDispId, IHTMLEventObj* pIEventObj) TranslateAccelerator;
+			public function HRESULT(IHTMLEditDesigner *self, int32 inEvtDispId, IHTMLEventObj* pIEventObj) PostEditorEventNotify;
+		}
+		[CRepr]
+		public struct IHTMLEditServices : IUnknown
+		{
+			public const new Guid IID = .(0x3050f663, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEditServices *self, IHTMLEditDesigner* pIDesigner) AddDesigner;
+			public function HRESULT(IHTMLEditServices *self, IHTMLEditDesigner* pIDesigner) RemoveDesigner;
+			public function HRESULT(IHTMLEditServices *self, IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc) GetSelectionServices;
+			public function HRESULT(IHTMLEditServices *self, IMarkupPointer* pIStartAnchor) MoveToSelectionAnchor;
+			public function HRESULT(IHTMLEditServices *self, IMarkupPointer* pIEndAnchor) MoveToSelectionEnd;
+			public function HRESULT(IHTMLEditServices *self, IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType) SelectRange;
+		}
+		[CRepr]
+		public struct IHTMLEditServices2 : IHTMLEditServices
+		{
+			public const new Guid IID = .(0x3050f812, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLEditServices2 *self, IDisplayPointer* pIStartAnchor) MoveToSelectionAnchorEx;
+			public function HRESULT(IHTMLEditServices2 *self, IDisplayPointer* pIEndAnchor) MoveToSelectionEndEx;
+			public function HRESULT(IHTMLEditServices2 *self, BOOL fReCompute) FreezeVirtualCaretPos;
+			public function HRESULT(IHTMLEditServices2 *self, BOOL fReset) UnFreezeVirtualCaretPos;
+		}
+		[CRepr]
+		public struct IHTMLComputedStyle : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6c3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_bold;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_italic;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_underline;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_overline;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_strikeOut;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_subScript;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_superScript;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_explicitFace;
+			public function HRESULT(IHTMLComputedStyle *self, int32* p) get_fontWeight;
+			public function HRESULT(IHTMLComputedStyle *self, int32* p) get_fontSize;
+			public function HRESULT(IHTMLComputedStyle *self, int8* p) get_fontName;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_hasBgColor;
+			public function HRESULT(IHTMLComputedStyle *self, uint32* p) get_textColor;
+			public function HRESULT(IHTMLComputedStyle *self, uint32* p) get_backgroundColor;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_preFormatted;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_direction;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_blockDirection;
+			public function HRESULT(IHTMLComputedStyle *self, int16* p) get_OL;
+			public function HRESULT(IHTMLComputedStyle *self, IHTMLComputedStyle* pComputedStyle, int16* pfEqual) IsEqual;
+		}
+		[CRepr]
+		public struct IDeveloperConsoleMessageReceiver : IUnknown
+		{
+			public const new Guid IID = .(0x30510808, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDeveloperConsoleMessageReceiver *self, PWSTR source, DEV_CONSOLE_MESSAGE_LEVEL level, int32 messageId, PWSTR messageText) Write;
+			public function HRESULT(IDeveloperConsoleMessageReceiver *self, PWSTR source, DEV_CONSOLE_MESSAGE_LEVEL level, int32 messageId, PWSTR messageText, PWSTR fileUrl) WriteWithUrl;
+			public function HRESULT(IDeveloperConsoleMessageReceiver *self, PWSTR source, DEV_CONSOLE_MESSAGE_LEVEL level, int32 messageId, PWSTR messageText, PWSTR fileUrl, uint32 line) WriteWithUrlAndLine;
+			public function HRESULT(IDeveloperConsoleMessageReceiver *self, PWSTR source, DEV_CONSOLE_MESSAGE_LEVEL level, int32 messageId, PWSTR messageText, PWSTR fileUrl, uint32 line, uint32 column) WriteWithUrlLineAndColumn;
+		}
+		[CRepr]
+		public struct IScriptEventHandler : IUnknown
+		{
+			public const new Guid IID = .(0x3051083a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IScriptEventHandler *self, BSTR* pbstrFunctionName) FunctionName;
+			public function HRESULT(IScriptEventHandler *self, IUnknown** ppDebugDocumentContext) DebugDocumentContext;
+			public function HRESULT(IScriptEventHandler *self, IDispatch** ppDispHandler) EventHandlerDispatch;
+			public function HRESULT(IScriptEventHandler *self, BOOL* pfUsesCapture) UsesCapture;
+			public function HRESULT(IScriptEventHandler *self, uint64* pullCookie) Cookie;
+		}
+		[CRepr]
+		public struct IDebugCallbackNotificationHandler : IUnknown
+		{
+			public const new Guid IID = .(0x30510842, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDebugCallbackNotificationHandler *self, uint32* pCallbackMask) RequestedCallbackTypes;
+			public function HRESULT(IDebugCallbackNotificationHandler *self, IUnknown* pEvent) BeforeDispatchEvent;
+			public function HRESULT(IDebugCallbackNotificationHandler *self, IUnknown* pEvent, uint32 propagationStatus) DispatchEventComplete;
+			public function HRESULT(IDebugCallbackNotificationHandler *self, IUnknown* pEvent, IScriptEventHandler* pCallback, DOM_EVENT_PHASE eStage, uint32 propagationStatus) BeforeInvokeDomCallback;
+			public function HRESULT(IDebugCallbackNotificationHandler *self, IUnknown* pEvent, IScriptEventHandler* pCallback, DOM_EVENT_PHASE eStage, uint32 propagationStatus) InvokeDomCallbackComplete;
+			public function HRESULT(IDebugCallbackNotificationHandler *self, SCRIPT_TIMER_TYPE eCallbackType, uint32 callbackCookie, IDispatch* pDispHandler, uint64 ullHandlerCookie, BSTR functionName, uint32 line, uint32 column, uint32 cchLength, IUnknown* pDebugDocumentContext) BeforeInvokeCallback;
+			public function HRESULT(IDebugCallbackNotificationHandler *self, SCRIPT_TIMER_TYPE eCallbackType, uint32 callbackCookie, IDispatch* pDispHandler, uint64 ullHandlerCookie, BSTR functionName, uint32 line, uint32 column, uint32 cchLength, IUnknown* pDebugDocumentContext) InvokeCallbackComplete;
+		}
+		[CRepr]
+		public struct IScriptEventHandlerSourceInfo : IUnknown
+		{
+			public const new Guid IID = .(0x30510841, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IScriptEventHandlerSourceInfo *self, BSTR* pbstrFunctionName, uint32* line, uint32* column, uint32* cchLength) GetSourceInfo;
+		}
+		[CRepr]
+		public struct IDOMEventRegistrationCallback : IUnknown
+		{
+			public const new Guid IID = .(0x3051083b, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDOMEventRegistrationCallback *self, PWSTR pszEventType, IScriptEventHandler* pHandler) OnDOMEventListenerAdded;
+			public function HRESULT(IDOMEventRegistrationCallback *self, uint64 ullCookie) OnDOMEventListenerRemoved;
+		}
+		[CRepr]
+		public struct IEventTarget2 : IUnknown
+		{
+			public const new Guid IID = .(0x30510839, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IEventTarget2 *self, SAFEARRAY** ppEventTypeArray) GetRegisteredEventTypes;
+			public function HRESULT(IEventTarget2 *self, PWSTR pszEventType, SAFEARRAY** ppEventHandlerArray) GetListenersForType;
+			public function HRESULT(IEventTarget2 *self, IDOMEventRegistrationCallback* pCallback) RegisterForDOMEventListeners;
+			public function HRESULT(IEventTarget2 *self, IDOMEventRegistrationCallback* pCallback) UnregisterForDOMEventListeners;
+		}
+		[CRepr]
+		public struct HTMLNamespaceEvents : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6bd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLNamespace : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6bb, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLNamespace *self, BSTR* p) get_name;
+			public function HRESULT(IHTMLNamespace *self, BSTR* p) get_urn;
+			public function HRESULT(IHTMLNamespace *self, IDispatch** p) get_tagNames;
+			public function HRESULT(IHTMLNamespace *self, VARIANT* p) get_readyState;
+			public function HRESULT(IHTMLNamespace *self, VARIANT v) put_onreadystatechange;
+			public function HRESULT(IHTMLNamespace *self, VARIANT* p) get_onreadystatechange;
+			public function HRESULT(IHTMLNamespace *self, BSTR bstrImplementationUrl) doImport;
+			public function HRESULT(IHTMLNamespace *self, BSTR event, IDispatch* pDisp, int16* pfResult) attachEvent;
+			public function HRESULT(IHTMLNamespace *self, BSTR event, IDispatch* pDisp) detachEvent;
+		}
+		[CRepr]
+		public struct IHTMLNamespaceCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6b8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLNamespaceCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLNamespaceCollection *self, VARIANT index, IDispatch** ppNamespace) item;
+			public function HRESULT(IHTMLNamespaceCollection *self, BSTR bstrNamespace, BSTR bstrUrn, VARIANT implementationUrl, IDispatch** ppNamespace) add;
+		}
+		[CRepr]
+		public struct DispHTMLNamespace : IDispatch
+		{
+			public const new Guid IID = .(0x3050f54f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispHTMLNamespaceCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f550, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLPainter : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6a6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPainter *self, RECT rcBounds, RECT rcUpdate, int32 lDrawFlags, HDC hdc, void* pvDrawObject) Draw;
+			public function HRESULT(IHTMLPainter *self, SIZE size) OnResize;
+			public function HRESULT(IHTMLPainter *self, HTML_PAINTER_INFO* pInfo) GetPainterInfo;
+			public function HRESULT(IHTMLPainter *self, POINT pt, BOOL* pbHit, int32* plPartID) HitTestPoint;
+		}
+		[CRepr]
+		public struct IHTMLPaintSite : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6a7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPaintSite *self) InvalidatePainterInfo;
+			public function HRESULT(IHTMLPaintSite *self, RECT* prcInvalid) InvalidateRect;
+			public function HRESULT(IHTMLPaintSite *self, HRGN rgnInvalid) InvalidateRegion;
+			public function HRESULT(IHTMLPaintSite *self, int32 lFlags, HTML_PAINT_DRAW_INFO* pDrawInfo) GetDrawInfo;
+			public function HRESULT(IHTMLPaintSite *self, POINT ptGlobal, POINT* pptLocal) TransformGlobalToLocal;
+			public function HRESULT(IHTMLPaintSite *self, POINT ptLocal, POINT* pptGlobal) TransformLocalToGlobal;
+			public function HRESULT(IHTMLPaintSite *self, int32* plCookie) GetHitTestCookie;
+		}
+		[CRepr]
+		public struct IHTMLPainterEventInfo : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6df, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPainterEventInfo *self, int32* plEventInfoFlags) GetEventInfoFlags;
+			public function HRESULT(IHTMLPainterEventInfo *self, IHTMLElement** ppElement) GetEventTarget;
+			public function HRESULT(IHTMLPainterEventInfo *self, int32 lPartID) SetCursor;
+			public function HRESULT(IHTMLPainterEventInfo *self, int32 lPartID, BSTR* pbstrPart) StringFromPartID;
+		}
+		[CRepr]
+		public struct IHTMLPainterOverlay : IUnknown
+		{
+			public const new Guid IID = .(0x3050f7e3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPainterOverlay *self, RECT rcDevice) OnMove;
+		}
+		[CRepr]
+		public struct IHTMLIPrintCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6b5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLIPrintCollection *self, int32* p) get_length;
+			public function HRESULT(IHTMLIPrintCollection *self, IUnknown** p) get__newEnum;
+			public function HRESULT(IHTMLIPrintCollection *self, int32 index, IUnknown** ppIPrint) item;
+		}
+		[CRepr]
+		public struct IEnumPrivacyRecords : IUnknown
+		{
+			public const new Guid IID = .(0x3050f844, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IEnumPrivacyRecords *self) Reset;
+			public function HRESULT(IEnumPrivacyRecords *self, uint32* pSize) GetSize;
+			public function HRESULT(IEnumPrivacyRecords *self, BOOL* pState) GetPrivacyImpacted;
+			public function HRESULT(IEnumPrivacyRecords *self, BSTR* pbstrUrl, BSTR* pbstrPolicyRef, int32* pdwReserved, uint32* pdwPrivacyFlags) Next;
+		}
+		[CRepr]
+		public struct IWPCBlockedUrls : IUnknown
+		{
+			public const new Guid IID = .(0x30510413, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IWPCBlockedUrls *self, uint32* pdwCount) GetCount;
+			public function HRESULT(IWPCBlockedUrls *self, uint32 dwIdx, BSTR* pbstrUrl) GetUrl;
+		}
+		[CRepr]
+		public struct IHTMLDOMConstructorCollection : IDispatch
+		{
+			public const new Guid IID = .(0x3051049c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Attr;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_BehaviorUrnsCollection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_BookmarkCollection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_CompatibleInfo;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_CompatibleInfoCollection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_ControlRangeCollection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_CSSCurrentStyleDeclaration;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_CSSRuleList;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_CSSRuleStyleDeclaration;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_CSSStyleDeclaration;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_CSSStyleRule;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_CSSStyleSheet;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_DataTransfer;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_DOMImplementation;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Element;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Event;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_History;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTCElementBehaviorDefaults;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLAnchorElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLAreaElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLAreasCollection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLBaseElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLBaseFontElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLBGSoundElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLBlockElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLBodyElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLBRElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLButtonElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLCollection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLCommentElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLDDElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLDivElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLDocument;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLDListElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLDTElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLEmbedElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLFieldSetElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLFontElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLFormElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLFrameElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLFrameSetElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLGenericElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLHeadElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLHeadingElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLHRElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLHtmlElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLIFrameElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLImageElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLInputElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLIsIndexElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLLabelElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLLegendElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLLIElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLLinkElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLMapElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLMarqueeElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLMetaElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLModelessDialog;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLNamespaceInfo;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLNamespaceInfoCollection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLNextIdElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLNoShowElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLObjectElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLOListElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLOptionElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLParagraphElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLParamElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLPhraseElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLPluginsCollection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLPopup;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLScriptElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLSelectElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLSpanElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLStyleElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLTableCaptionElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLTableCellElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLTableColElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLTableElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLTableRowElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLTableSectionElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLTextAreaElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLTextElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLTitleElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLUListElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_HTMLUnknownElement;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Image;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Location;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_NamedNodeMap;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Navigator;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_NodeList;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Option;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Screen;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Selection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_StaticNodeList;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Storage;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_StyleSheetList;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_StyleSheetPage;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_StyleSheetPageList;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Text;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_TextRange;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_TextRangeCollection;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_TextRectangle;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_TextRectangleList;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_Window;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_XDomainRequest;
+			public function HRESULT(IHTMLDOMConstructorCollection *self, IDispatch** p) get_XMLHttpRequest;
+		}
+		[CRepr]
+		public struct IHTMLDialog : IDispatch
+		{
+			public const new Guid IID = .(0x3050f216, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDialog *self, VARIANT v) put_dialogTop;
+			public function HRESULT(IHTMLDialog *self, VARIANT* p) get_dialogTop;
+			public function HRESULT(IHTMLDialog *self, VARIANT v) put_dialogLeft;
+			public function HRESULT(IHTMLDialog *self, VARIANT* p) get_dialogLeft;
+			public function HRESULT(IHTMLDialog *self, VARIANT v) put_dialogWidth;
+			public function HRESULT(IHTMLDialog *self, VARIANT* p) get_dialogWidth;
+			public function HRESULT(IHTMLDialog *self, VARIANT v) put_dialogHeight;
+			public function HRESULT(IHTMLDialog *self, VARIANT* p) get_dialogHeight;
+			public function HRESULT(IHTMLDialog *self, VARIANT* p) get_dialogArguments;
+			public function HRESULT(IHTMLDialog *self, VARIANT* p) get_menuArguments;
+			public function HRESULT(IHTMLDialog *self, VARIANT v) put_returnValue;
+			public function HRESULT(IHTMLDialog *self, VARIANT* p) get_returnValue;
+			public function HRESULT(IHTMLDialog *self) close;
+			public function HRESULT(IHTMLDialog *self, BSTR* String) toString;
+		}
+		[CRepr]
+		public struct IHTMLDialog2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5e0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDialog2 *self, BSTR v) put_status;
+			public function HRESULT(IHTMLDialog2 *self, BSTR* p) get_status;
+			public function HRESULT(IHTMLDialog2 *self, BSTR v) put_resizable;
+			public function HRESULT(IHTMLDialog2 *self, BSTR* p) get_resizable;
+		}
+		[CRepr]
+		public struct IHTMLDialog3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f388, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLDialog3 *self, BSTR v) put_unadorned;
+			public function HRESULT(IHTMLDialog3 *self, BSTR* p) get_unadorned;
+			public function HRESULT(IHTMLDialog3 *self, BSTR v) put_dialogHide;
+			public function HRESULT(IHTMLDialog3 *self, BSTR* p) get_dialogHide;
+		}
+		[CRepr]
+		public struct IHTMLModelessInit : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5e4, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLModelessInit *self, VARIANT* p) get_parameters;
+			public function HRESULT(IHTMLModelessInit *self, VARIANT* p) get_optionString;
+			public function HRESULT(IHTMLModelessInit *self, IUnknown** p) get_moniker;
+			public function HRESULT(IHTMLModelessInit *self, IUnknown** p) get_document;
+		}
+		[CRepr]
+		public struct IHTMLPopup : IDispatch
+		{
+			public const new Guid IID = .(0x3050f666, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPopup *self, int32 x, int32 y, int32 w, int32 h, VARIANT* pElement) show;
+			public function HRESULT(IHTMLPopup *self) hide;
+			public function HRESULT(IHTMLPopup *self, IHTMLDocument** p) get_document;
+			public function HRESULT(IHTMLPopup *self, int16* p) get_isOpen;
+		}
+		[CRepr]
+		public struct DispHTMLPopup : IDispatch
+		{
+			public const new Guid IID = .(0x3050f589, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHTMLAppBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5ca, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_applicationName;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_applicationName;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_version;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_version;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_icon;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_icon;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_singleInstance;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_singleInstance;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_minimizeButton;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_minimizeButton;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_maximizeButton;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_maximizeButton;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_border;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_border;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_borderStyle;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_borderStyle;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_sysMenu;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_sysMenu;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_caption;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_caption;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_windowState;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_windowState;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR v) put_showInTaskBar;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_showInTaskBar;
+			public function HRESULT(IHTMLAppBehavior *self, BSTR* p) get_commandLine;
+		}
+		[CRepr]
+		public struct IHTMLAppBehavior2 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5c9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR v) put_contextMenu;
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR* p) get_contextMenu;
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR v) put_innerBorder;
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR* p) get_innerBorder;
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR v) put_scroll;
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR* p) get_scroll;
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR v) put_scrollFlat;
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR* p) get_scrollFlat;
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR v) put_selection;
+			public function HRESULT(IHTMLAppBehavior2 *self, BSTR* p) get_selection;
+		}
+		[CRepr]
+		public struct IHTMLAppBehavior3 : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5cd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLAppBehavior3 *self, BSTR v) put_navigable;
+			public function HRESULT(IHTMLAppBehavior3 *self, BSTR* p) get_navigable;
+		}
+		[CRepr]
+		public struct DispHTMLAppBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f57c, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispIHTMLInputButtonElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f51e, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispIHTMLInputTextElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f520, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispIHTMLInputFileElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f542, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispIHTMLOptionButtonElement : IDispatch
+		{
+			public const new Guid IID = .(0x3050f509, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct DispIHTMLInputImage : IDispatch
+		{
+			public const new Guid IID = .(0x3050f51d, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IElementNamespace : IUnknown
+		{
+			public const new Guid IID = .(0x3050f671, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementNamespace *self, BSTR bstrTagName, int32 lFlags) AddTag;
+		}
+		[CRepr]
+		public struct IElementNamespaceTable : IUnknown
+		{
+			public const new Guid IID = .(0x3050f670, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementNamespaceTable *self, BSTR bstrNamespace, BSTR bstrUrn, int32 lFlags, VARIANT* pvarFactory) AddNamespace;
+		}
+		[CRepr]
+		public struct IElementNamespaceFactory : IUnknown
+		{
+			public const new Guid IID = .(0x3050f672, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementNamespaceFactory *self, IElementNamespace* pNamespace) Create;
+		}
+		[CRepr]
+		public struct IElementNamespaceFactory2 : IElementNamespaceFactory
+		{
+			public const new Guid IID = .(0x3050f805, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementNamespaceFactory2 *self, IElementNamespace* pNamespace, BSTR bstrImplementation) CreateWithImplementation;
+		}
+		[CRepr]
+		public struct IElementNamespaceFactoryCallback : IUnknown
+		{
+			public const new Guid IID = .(0x3050f7fd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementNamespaceFactoryCallback *self, BSTR bstrNamespace, BSTR bstrTagName, BSTR bstrAttrs, IElementNamespace* pNamespace) Resolve;
+		}
+		[CRepr]
+		public struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM
+		{
+			public const new Guid IID = .(0x3050f659, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorSiteOM2 *self, IHTMLElementDefaults** ppDefaults) GetDefaults;
+		}
+		[CRepr]
+		public struct IElementBehaviorCategory : IUnknown
+		{
+			public const new Guid IID = .(0x3050f4ed, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorCategory *self, PWSTR* ppchCategory) GetCategory;
+		}
+		[CRepr]
+		public struct IElementBehaviorSiteCategory : IUnknown
+		{
+			public const new Guid IID = .(0x3050f4ee, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorSiteCategory *self, int32 lDirection, PWSTR pchCategory, IEnumUnknown** ppEnumerator) GetRelatedBehaviors;
+		}
+		[CRepr]
+		public struct IElementBehaviorSubmit : IUnknown
+		{
+			public const new Guid IID = .(0x3050f646, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorSubmit *self, IHTMLSubmitData* pSubmitData) GetSubmitInfo;
+			public function HRESULT(IElementBehaviorSubmit *self) Reset;
+		}
+		[CRepr]
+		public struct IElementBehaviorFocus : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6b6, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorFocus *self, RECT* pRect) GetFocusRect;
+		}
+		[CRepr]
+		public struct IElementBehaviorLayout : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6ba, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorLayout *self, int32 dwFlags, SIZE sizeContent, POINT* pptTranslateBy, POINT* pptTopLeft, SIZE* psizeProposed) GetSize;
+			public function HRESULT(IElementBehaviorLayout *self, int32* plLayoutInfo) GetLayoutInfo;
+			public function HRESULT(IElementBehaviorLayout *self, int32 lFlags, POINT* pptTopLeft) GetPosition;
+			public function HRESULT(IElementBehaviorLayout *self, SIZE* psizeIn, RECT* prcOut) MapSize;
+		}
+		[CRepr]
+		public struct IElementBehaviorLayout2 : IUnknown
+		{
+			public const new Guid IID = .(0x3050f846, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorLayout2 *self, int32* plDescent) GetTextDescent;
+		}
+		[CRepr]
+		public struct IElementBehaviorSiteLayout : IUnknown
+		{
+			public const new Guid IID = .(0x3050f6b7, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorSiteLayout *self) InvalidateLayoutInfo;
+			public function HRESULT(IElementBehaviorSiteLayout *self) InvalidateSize;
+			public function HRESULT(IElementBehaviorSiteLayout *self, SIZE* psizeResolution) GetMediaResolution;
+		}
+		[CRepr]
+		public struct IElementBehaviorSiteLayout2 : IUnknown
+		{
+			public const new Guid IID = .(0x3050f847, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IElementBehaviorSiteLayout2 *self, LOGFONTW* plf) GetFontInfo;
+		}
+		[CRepr]
+		public struct IHostBehaviorInit : IUnknown
+		{
+			public const new Guid IID = .(0x3050f842, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHostBehaviorInit *self) PopulateNamespaceTable;
+		}
+		[CRepr]
+		public struct ISurfacePresenter : IUnknown
+		{
+			public const new Guid IID = .(0x305106e2, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISurfacePresenter *self, uint32 uBuffer, RECT* pDirty) Present;
+			public function HRESULT(ISurfacePresenter *self, uint32 backBufferIndex, Guid* riid, void** ppBuffer) GetBuffer;
+			public function HRESULT(ISurfacePresenter *self, BOOL* pIsCurrent) IsCurrent;
+		}
+		[CRepr]
+		public struct IViewObjectPresentSite : IUnknown
+		{
+			public const new Guid IID = .(0x305106e1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IViewObjectPresentSite *self, IUnknown* pDevice, uint32 width, uint32 height, uint32 backBufferCount, DXGI_FORMAT format, VIEW_OBJECT_ALPHA_MODE mode, ISurfacePresenter** ppQueue) CreateSurfacePresenter;
+			public function HRESULT(IViewObjectPresentSite *self, BOOL* pIsHardwareComposition) IsHardwareComposition;
+			public function HRESULT(IViewObjectPresentSite *self, VIEW_OBJECT_COMPOSITION_MODE mode) SetCompositionMode;
+		}
+		[CRepr]
+		public struct ICanvasPixelArrayData : IUnknown
+		{
+			public const new Guid IID = .(0x305107f9, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ICanvasPixelArrayData *self, uint8** ppBuffer, uint32* pBufferLength) GetBufferPointer;
+		}
+		[CRepr]
+		public struct IViewObjectPrint : IUnknown
+		{
+			public const new Guid IID = .(0x305106e3, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IViewObjectPrint *self, IUnknown** ppPrintBitmap) GetPrintBitmap;
+		}
+		[CRepr]
+		public struct IViewObjectPresentNotifySite : IViewObjectPresentSite
+		{
+			public const new Guid IID = .(0x305107fa, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IViewObjectPresentNotifySite *self) RequestFrame;
+		}
+		[CRepr]
+		public struct IViewObjectPresentNotify : IUnknown
+		{
+			public const new Guid IID = .(0x305107f8, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IViewObjectPresentNotify *self) OnPreRender;
+		}
+		[CRepr]
+		public struct ITrackingProtection : IUnknown
+		{
+			public const new Guid IID = .(0x30510803, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITrackingProtection *self, BSTR bstrUrl, BOOL* pfAllowed) EvaluateUrl;
+			public function HRESULT(ITrackingProtection *self, BOOL* pfEnabled) GetEnabled;
+		}
+		[CRepr]
+		public struct IBFCacheable : IUnknown
+		{
+			public const new Guid IID = .(0x30510861, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IBFCacheable *self) EnterBFCache;
+			public function HRESULT(IBFCacheable *self) ExitBFCache;
+		}
+		[CRepr]
+		public struct IDocObjectService : IUnknown
+		{
+			public const new Guid IID = .(0x3050f801, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDocObjectService *self, IDispatch* pDispatch, PWSTR lpszUrl, uint32 dwFlags, PWSTR lpszFrameName, uint8* pPostData, uint32 cbPostData, PWSTR lpszHeaders, BOOL fPlayNavSound, BOOL* pfCancel) FireBeforeNavigate2;
+			public function HRESULT(IDocObjectService *self, IHTMLWindow2* pHTMLWindow2, uint32 dwFlags) FireNavigateComplete2;
+			public function HRESULT(IDocObjectService *self) FireDownloadBegin;
+			public function HRESULT(IDocObjectService *self) FireDownloadComplete;
+			public function HRESULT(IDocObjectService *self, IHTMLWindow2* pHTMLWindow, uint32 dwFlags) FireDocumentComplete;
+			public function HRESULT(IDocObjectService *self, IHTMLWindow2* pHTMLWindow) UpdateDesktopComponent;
+			public function HRESULT(IDocObjectService *self, BSTR* pbstrPendingUrl) GetPendingUrl;
+			public function HRESULT(IDocObjectService *self, IHTMLElement* pHTMLElement) ActiveElementChanged;
+			public function HRESULT(IDocObjectService *self, BSTR* pbstrSearch) GetUrlSearchComponent;
+			public function HRESULT(IDocObjectService *self, PWSTR lpszUrl, BOOL* pfIsError) IsErrorUrl;
+		}
+		[CRepr]
+		public struct IDownloadManager : IUnknown
+		{
+			public const new Guid IID = .(0x988934a4, 0x064b, 0x11d3, 0xbb, 0x80, 0x00, 0x10, 0x4b, 0x35, 0xe7, 0xf9);
+			
+			public function HRESULT(IDownloadManager *self, IMoniker* pmk, IBindCtx* pbc, uint32 dwBindVerb, int32 grfBINDF, BINDINFO* pBindInfo, PWSTR pszHeaders, PWSTR pszRedir, uint32 uiCP) Download;
+		}
+		[CRepr]
+		public struct IExtensionValidation : IUnknown
+		{
+			public const new Guid IID = .(0x7d33f73d, 0x8525, 0x4e0f, 0x87, 0xdb, 0x83, 0x02, 0x88, 0xba, 0xff, 0x44);
+			
+			public function HRESULT(IExtensionValidation *self, Guid* extensionGuid, PWSTR extensionModulePath, uint32 extensionFileVersionMS, uint32 extensionFileVersionLS, IHTMLDocument2* htmlDocumentTop, IHTMLDocument2* htmlDocumentSubframe, IHTMLElement* htmlElement, ExtensionValidationContexts contexts, ExtensionValidationResults* results) Validate;
+			public function HRESULT(IExtensionValidation *self, PWSTR* displayName) DisplayName;
+		}
+		[CRepr]
+		public struct IHomePageSetting : IUnknown
+		{
+			public const new Guid IID = .(0xfdfc244f, 0x18fa, 0x4ff2, 0xb0, 0x8e, 0x1d, 0x61, 0x8f, 0x3f, 0xfb, 0xe4);
+			
+			public function HRESULT(IHomePageSetting *self, HWND hwnd, PWSTR homePageUri, PWSTR brandingMessage) SetHomePage;
+			public function HRESULT(IHomePageSetting *self, PWSTR uri, BOOL* isDefault) IsHomePage;
+			public function HRESULT(IHomePageSetting *self) SetHomePageToBrowserDefault;
+		}
+		[CRepr]
+		public struct ITargetNotify : IUnknown
+		{
+			public const new Guid IID = .(0x863a99a0, 0x21bc, 0x11d0, 0x82, 0xb4, 0x00, 0xa0, 0xc9, 0x0c, 0x29, 0xc5);
+			
+			public function HRESULT(ITargetNotify *self, IUnknown* pUnkDestination, uint32 cbCookie) OnCreate;
+			public function HRESULT(ITargetNotify *self, IUnknown* pUnkDestination) OnReuse;
+		}
+		[CRepr]
+		public struct ITargetNotify2 : ITargetNotify
+		{
+			public const new Guid IID = .(0x3050f6b1, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITargetNotify2 *self, BSTR* pbstrOptions) GetOptionString;
+		}
+		[CRepr]
+		public struct ITargetFrame2 : IUnknown
+		{
+			public const new Guid IID = .(0x86d52e11, 0x94a8, 0x11d0, 0x82, 0xaf, 0x00, 0xc0, 0x4f, 0xd5, 0xae, 0x38);
+			
+			public function HRESULT(ITargetFrame2 *self, PWSTR pszFrameName) SetFrameName;
+			public function HRESULT(ITargetFrame2 *self, PWSTR* ppszFrameName) GetFrameName;
+			public function HRESULT(ITargetFrame2 *self, IUnknown** ppunkParent) GetParentFrame;
+			public function HRESULT(ITargetFrame2 *self, PWSTR pszFrameSrc) SetFrameSrc;
+			public function HRESULT(ITargetFrame2 *self, PWSTR* ppszFrameSrc) GetFrameSrc;
+			public function HRESULT(ITargetFrame2 *self, IOleContainer** ppContainer) GetFramesContainer;
+			public function HRESULT(ITargetFrame2 *self, uint32 dwFlags) SetFrameOptions;
+			public function HRESULT(ITargetFrame2 *self, uint32* pdwFlags) GetFrameOptions;
+			public function HRESULT(ITargetFrame2 *self, uint32 dwWidth, uint32 dwHeight) SetFrameMargins;
+			public function HRESULT(ITargetFrame2 *self, uint32* pdwWidth, uint32* pdwHeight) GetFrameMargins;
+			public function HRESULT(ITargetFrame2 *self, PWSTR pszTargetName, uint32 dwFlags, IUnknown** ppunkTargetFrame) FindFrame;
+			public function HRESULT(ITargetFrame2 *self, PWSTR pszTargetName, PWSTR* ppszTargetAlias) GetTargetAlias;
+		}
+		[CRepr]
+		public struct ITargetContainer : IUnknown
+		{
+			public const new Guid IID = .(0x7847ec01, 0x2bec, 0x11d0, 0x82, 0xb4, 0x00, 0xa0, 0xc9, 0x0c, 0x29, 0xc5);
+			
+			public function HRESULT(ITargetContainer *self, PWSTR* ppszFrameSrc) GetFrameUrl;
+			public function HRESULT(ITargetContainer *self, IOleContainer** ppContainer) GetFramesContainer;
+		}
+		[CRepr]
+		public struct ITargetFrame : IUnknown
+		{
+			public const new Guid IID = .(0xd5f78c80, 0x5252, 0x11cf, 0x90, 0xfa, 0x00, 0xaa, 0x00, 0x42, 0x10, 0x6e);
+			
+			public function HRESULT(ITargetFrame *self, PWSTR pszFrameName) SetFrameName;
+			public function HRESULT(ITargetFrame *self, PWSTR* ppszFrameName) GetFrameName;
+			public function HRESULT(ITargetFrame *self, IUnknown** ppunkParent) GetParentFrame;
+			public function HRESULT(ITargetFrame *self, PWSTR pszTargetName, IUnknown* ppunkContextFrame, uint32 dwFlags, IUnknown** ppunkTargetFrame) FindFrame;
+			public function HRESULT(ITargetFrame *self, PWSTR pszFrameSrc) SetFrameSrc;
+			public function HRESULT(ITargetFrame *self, PWSTR* ppszFrameSrc) GetFrameSrc;
+			public function HRESULT(ITargetFrame *self, IOleContainer** ppContainer) GetFramesContainer;
+			public function HRESULT(ITargetFrame *self, uint32 dwFlags) SetFrameOptions;
+			public function HRESULT(ITargetFrame *self, uint32* pdwFlags) GetFrameOptions;
+			public function HRESULT(ITargetFrame *self, uint32 dwWidth, uint32 dwHeight) SetFrameMargins;
+			public function HRESULT(ITargetFrame *self, uint32* pdwWidth, uint32* pdwHeight) GetFrameMargins;
+			public function HRESULT(ITargetFrame *self, uint32 cLength, uint32* pulData) RemoteNavigate;
+			public function HRESULT(ITargetFrame *self, IUnknown* pUnkChildFrame) OnChildFrameActivate;
+			public function HRESULT(ITargetFrame *self, IUnknown* pUnkChildFrame) OnChildFrameDeactivate;
+		}
+		[CRepr]
+		public struct ITargetEmbedding : IUnknown
+		{
+			public const new Guid IID = .(0x548793c0, 0x9e74, 0x11cf, 0x96, 0x55, 0x00, 0xa0, 0xc9, 0x03, 0x49, 0x23);
+			
+			public function HRESULT(ITargetEmbedding *self, ITargetFrame** ppTargetFrame) GetTargetFrame;
+		}
+		[CRepr]
+		public struct ITargetFramePriv : IUnknown
+		{
+			public const new Guid IID = .(0x9216e421, 0x2bf5, 0x11d0, 0x82, 0xb4, 0x00, 0xa0, 0xc9, 0x0c, 0x29, 0xc5);
+			
+			public function HRESULT(ITargetFramePriv *self, PWSTR pszTargetName, uint32 dwFlags, IUnknown** ppunkTargetFrame) FindFrameDownwards;
+			public function HRESULT(ITargetFramePriv *self, PWSTR pszTargetName, IUnknown* punkContextFrame, uint32 dwFlags, IUnknown** ppunkTargetFrame) FindFrameInContext;
+			public function HRESULT(ITargetFramePriv *self, IUnknown* pUnkChildFrame) OnChildFrameActivate;
+			public function HRESULT(ITargetFramePriv *self, IUnknown* pUnkChildFrame) OnChildFrameDeactivate;
+			public function HRESULT(ITargetFramePriv *self, uint32 grfHLNF, IBindCtx* pbc, IBindStatusCallback* pibsc, PWSTR pszTargetName, PWSTR pszUrl, PWSTR pszLocation) NavigateHack;
+			public function HRESULT(ITargetFramePriv *self, uint32 dwID, IUnknown** ppunkBrowser) FindBrowserByIndex;
+		}
+		[CRepr]
+		public struct ITargetFramePriv2 : ITargetFramePriv
+		{
+			public const new Guid IID = .(0xb2c867e6, 0x69d6, 0x46f2, 0xa6, 0x11, 0xde, 0xd9, 0xa4, 0xbd, 0x7f, 0xef);
+			
+			public function HRESULT(ITargetFramePriv2 *self, uint32 grfHLNF, IBindCtx* pbc, IBindStatusCallback* pibsc, PWSTR pszTargetName, IUri* pUri, PWSTR pszLocation) AggregatedNavigation2;
+		}
+		[CRepr]
+		public struct ISurfacePresenterFlipBuffer : IUnknown
+		{
+			public const new Guid IID = .(0xe43f4a08, 0x8bbc, 0x4665, 0xac, 0x92, 0xc5, 0x5c, 0xe6, 0x1f, 0xd7, 0xe7);
+			
+			public function HRESULT(ISurfacePresenterFlipBuffer *self, Guid* riid, void** ppBuffer) BeginDraw;
+			public function HRESULT(ISurfacePresenterFlipBuffer *self) EndDraw;
+		}
+		[CRepr]
+		public struct ISurfacePresenterFlip : IUnknown
+		{
+			public const new Guid IID = .(0x30510848, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISurfacePresenterFlip *self) Present;
+			public function HRESULT(ISurfacePresenterFlip *self, uint32 backBufferIndex, Guid* riid, void** ppBuffer) GetBuffer;
+		}
+		[CRepr]
+		public struct ISurfacePresenterFlip2 : IUnknown
+		{
+			public const new Guid IID = .(0x30510865, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ISurfacePresenterFlip2 *self, DXGI_MODE_ROTATION dxgiRotation) SetRotation;
+		}
+		[CRepr]
+		public struct IViewObjectPresentFlipSite : IUnknown
+		{
+			public const new Guid IID = .(0x30510846, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IViewObjectPresentFlipSite *self, IUnknown* pDevice, uint32 width, uint32 height, uint32 backBufferCount, DXGI_FORMAT format, VIEW_OBJECT_ALPHA_MODE mode, ISurfacePresenterFlip** ppSPFlip) CreateSurfacePresenterFlip;
+			public function HRESULT(IViewObjectPresentFlipSite *self, LUID* pLuid) GetDeviceLuid;
+			public function HRESULT(IViewObjectPresentFlipSite *self) EnterFullScreen;
+			public function HRESULT(IViewObjectPresentFlipSite *self) ExitFullScreen;
+			public function HRESULT(IViewObjectPresentFlipSite *self, BOOL* pfFullScreen) IsFullScreen;
+			public function HRESULT(IViewObjectPresentFlipSite *self, RECT* pRect) GetBoundingRect;
+			public function HRESULT(IViewObjectPresentFlipSite *self, POINT* pPos, SIZE* pSize, float* pScaleX, float* pScaleY) GetMetrics;
+			public function HRESULT(IViewObjectPresentFlipSite *self, SIZE* pSize) GetFullScreenSize;
+		}
+		[CRepr]
+		public struct IViewObjectPresentFlipSite2 : IUnknown
+		{
+			public const new Guid IID = .(0xaad0cbf1, 0xe7fd, 0x4f12, 0x89, 0x02, 0xc7, 0x81, 0x32, 0xa8, 0xe0, 0x1d);
+			
+			public function HRESULT(IViewObjectPresentFlipSite2 *self, DXGI_MODE_ROTATION* pDxgiRotation) GetRotationForCurrentOutput;
+		}
+		[CRepr]
+		public struct IViewObjectPresentFlip : IUnknown
+		{
+			public const new Guid IID = .(0x30510847, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IViewObjectPresentFlip *self, BOOL fRecreatePresenter) NotifyRender;
+			public function HRESULT(IViewObjectPresentFlip *self, IUnknown* pBitmap) RenderObjectToBitmap;
+			public function HRESULT(IViewObjectPresentFlip *self, ISurfacePresenterFlipBuffer* pBuffer) RenderObjectToSharedBuffer;
+		}
+		[CRepr]
+		public struct IViewObjectPresentFlip2 : IUnknown
+		{
+			public const new Guid IID = .(0x30510856, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IViewObjectPresentFlip2 *self) NotifyLeavingView;
+		}
+		[CRepr]
+		public struct IActiveXUIHandlerSite2 : IUnknown
+		{
+			public const new Guid IID = .(0x7e3707b2, 0xd087, 0x4542, 0xac, 0x1f, 0xa0, 0xd2, 0xfc, 0xd0, 0x80, 0xfd);
+			
+			public function HRESULT(IActiveXUIHandlerSite2 *self, uint64* pullCookie) AddSuspensionExemption;
+			public function HRESULT(IActiveXUIHandlerSite2 *self, uint64 ullCookie) RemoveSuspensionExemption;
+		}
+		[CRepr]
+		public struct ICaretPositionProvider : IUnknown
+		{
+			public const new Guid IID = .(0x58da43a2, 0x108e, 0x4d5b, 0x9f, 0x75, 0xe5, 0xf7, 0x4f, 0x93, 0xff, 0xf5);
+			
+			public function HRESULT(ICaretPositionProvider *self, POINT* pptCaret, float* pflHeight) GetCaretPosition;
+		}
+		[CRepr]
+		public struct ITridentTouchInput : IUnknown
+		{
+			public const new Guid IID = .(0x30510850, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITridentTouchInput *self, uint32 msg, WPARAM wParam, LPARAM lParam, BOOL* pfAllowManipulations) OnPointerMessage;
+		}
+		[CRepr]
+		public struct ITridentTouchInputSite : IUnknown
+		{
+			public const new Guid IID = .(0x30510849, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITridentTouchInputSite *self, styleMsTouchAction msTouchAction) SetManipulationMode;
+			public function HRESULT(ITridentTouchInputSite *self, int32 x, int32 y) ZoomToPoint;
+		}
+		[CRepr]
+		public struct IMediaActivityNotifySite : IUnknown
+		{
+			public const new Guid IID = .(0x8165cfef, 0x179d, 0x46c2, 0xbc, 0x71, 0x3f, 0xa7, 0x26, 0xdc, 0x1f, 0x8d);
+			
+			public function HRESULT(IMediaActivityNotifySite *self, MediaActivityNotifyType mediaActivityType) OnMediaActivityStarted;
+			public function HRESULT(IMediaActivityNotifySite *self, MediaActivityNotifyType mediaActivityType) OnMediaActivityStopped;
+		}
+		[CRepr]
+		public struct IAudioSessionSite : IUnknown
+		{
+			public const new Guid IID = .(0xd7d8b684, 0xd02d, 0x4517, 0xb6, 0xb7, 0x19, 0xe3, 0xdf, 0xe2, 0x9c, 0x45);
+			
+			public function HRESULT(IAudioSessionSite *self, Guid* audioSessionGuid) GetAudioSessionGuid;
+			public function HRESULT(IAudioSessionSite *self, PWSTR endpointID) OnAudioStreamCreated;
+			public function HRESULT(IAudioSessionSite *self, PWSTR endpointID) OnAudioStreamDestroyed;
+		}
+		[CRepr]
+		public struct IPrintTaskRequestHandler : IUnknown
+		{
+			public const new Guid IID = .(0x191cd340, 0xcf36, 0x44ff, 0xbd, 0x53, 0xd1, 0xb7, 0x01, 0x79, 0x9d, 0x9b);
+			
+			public function HRESULT(IPrintTaskRequestHandler *self, IInspectable* pPrintTaskRequest) HandlePrintTaskRequest;
+		}
+		[CRepr]
+		public struct IPrintTaskRequestFactory : IUnknown
+		{
+			public const new Guid IID = .(0xbb516745, 0x8c34, 0x4f8b, 0x96, 0x05, 0x68, 0x4d, 0xcb, 0x14, 0x4b, 0xe5);
+			
+			public function HRESULT(IPrintTaskRequestFactory *self, IPrintTaskRequestHandler* pPrintTaskRequestHandler) CreatePrintTaskRequest;
+		}
+		[CRepr]
+		public struct IScrollableContextMenu : IUnknown
+		{
+			public const new Guid IID = .(0x30510854, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IScrollableContextMenu *self, PWSTR itemText, uint32 cmdID) AddItem;
+			public function HRESULT(IScrollableContextMenu *self, int32 x, int32 y, uint32* cmdID) ShowModal;
+		}
+		[CRepr]
+		public struct IScrollableContextMenu2 : IScrollableContextMenu
+		{
+			public const new Guid IID = .(0xf77e9056, 0x8674, 0x4936, 0x92, 0x4c, 0x0e, 0x4a, 0x06, 0xfa, 0x63, 0x4a);
+			
+			public function HRESULT(IScrollableContextMenu2 *self) AddSeparator;
+			public function HRESULT(IScrollableContextMenu2 *self, SCROLLABLECONTEXTMENU_PLACEMENT scmp) SetPlacement;
+		}
+		[CRepr]
+		public struct IActiveXUIHandlerSite : IUnknown
+		{
+			public const new Guid IID = .(0x30510853, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IActiveXUIHandlerSite *self, IScrollableContextMenu** scrollableContextMenu) CreateScrollableContextMenu;
+			public function HRESULT(IActiveXUIHandlerSite *self, IUnknown* filePicker, BOOL allowMultipleSelections, IUnknown** result) PickFileAndGetResult;
+		}
+		[CRepr]
+		public struct IActiveXUIHandlerSite3 : IUnknown
+		{
+			public const new Guid IID = .(0x7904009a, 0x1238, 0x47f4, 0x90, 0x1c, 0x87, 0x13, 0x75, 0xc3, 0x46, 0x08);
+			
+			public function HRESULT(IActiveXUIHandlerSite3 *self, HWND hwnd, PWSTR text, PWSTR caption, uint32 type, int32* result) MessageBoxW;
+		}
+		[CRepr]
+		public struct IEnumManagerFrames : IUnknown
+		{
+			public const new Guid IID = .(0x3caa826a, 0x9b1f, 0x4a79, 0xbc, 0x81, 0xf0, 0x43, 0x0d, 0xed, 0x16, 0x48);
+			
+			public function HRESULT(IEnumManagerFrames *self, uint32 celt, HWND** ppWindows, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumManagerFrames *self, uint32* pcelt) Count;
+			public function HRESULT(IEnumManagerFrames *self, uint32 celt) Skip;
+			public function HRESULT(IEnumManagerFrames *self) Reset;
+			public function HRESULT(IEnumManagerFrames *self, IEnumManagerFrames** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IInternetExplorerManager : IUnknown
+		{
+			public const new Guid IID = .(0xacc84351, 0x04ff, 0x44f9, 0xb2, 0x3f, 0x65, 0x5e, 0xd1, 0x68, 0xc6, 0xd5);
+			
+			public function HRESULT(IInternetExplorerManager *self, uint32 dwConfig, PWSTR pszURL, Guid* riid, void** ppv) CreateObject;
+		}
+		[CRepr]
+		public struct IInternetExplorerManager2 : IUnknown
+		{
+			public const new Guid IID = .(0xdfbb5136, 0x9259, 0x4895, 0xb4, 0xa7, 0xc1, 0x93, 0x44, 0x29, 0x91, 0x9a);
+			
+			public function HRESULT(IInternetExplorerManager2 *self, IEnumManagerFrames** ppEnum) EnumFrameWindows;
+		}
+		[CRepr]
+		public struct IIEWebDriverSite : IDispatch
+		{
+			public const new Guid IID = .(0xffb84444, 0x453d, 0x4fbc, 0x9f, 0x9d, 0x8d, 0xb5, 0xc4, 0x71, 0xec, 0x75);
+			
+			public function HRESULT(IIEWebDriverSite *self, uint32 operationCode, uint32 hWnd) WindowOperation;
+			public function HRESULT(IIEWebDriverSite *self, IUnknown* pUnkWD) DetachWebdriver;
+			public function HRESULT(IIEWebDriverSite *self, IUnknown* pUnkWD, PWSTR capName, VARIANT* capValue) GetCapabilityValue;
+		}
+		[CRepr]
+		public struct IIEWebDriverManager : IDispatch
+		{
+			public const new Guid IID = .(0xbd1dc630, 0x6590, 0x4ca2, 0xa2, 0x93, 0x6b, 0xc7, 0x2b, 0x24, 0x38, 0xd8);
+			
+			public function HRESULT(IIEWebDriverManager *self, PWSTR command, PWSTR* response) ExecuteCommand;
+		}
+		[CRepr]
+		public struct IPeerFactory : IUnknown
+		{
+			public const new Guid IID = .(0x6663f9d3, 0xb482, 0x11d1, 0x89, 0xc6, 0x00, 0xc0, 0x4f, 0xb6, 0xbf, 0xc4);
+			
+		}
+		[CRepr]
+		public struct IHomePage : IDispatch
+		{
+			public const new Guid IID = .(0x766bf2af, 0xd650, 0x11d1, 0x98, 0x11, 0x00, 0xc0, 0x4f, 0xc3, 0x1d, 0x2e);
+			
+			public function HRESULT(IHomePage *self) navigateHomePage;
+			public function HRESULT(IHomePage *self, BSTR bstrURL) setHomePage;
+			public function HRESULT(IHomePage *self, BSTR bstrURL, int16* p) isHomePage;
+		}
+		[CRepr]
+		public struct IIntelliForms : IDispatch
+		{
+			public const new Guid IID = .(0x9b9f68e6, 0x1aaa, 0x11d2, 0xbc, 0xa5, 0x00, 0xc0, 0x4f, 0xd9, 0x29, 0xdb);
+			
+			public function HRESULT(IIntelliForms *self, int16* pVal) get_enabled;
+			public function HRESULT(IIntelliForms *self, int16 bVal) put_enabled;
+		}
+		[CRepr]
+		public struct Iwfolders : IDispatch
+		{
+			public const new Guid IID = .(0xbae31f98, 0x1b81, 0x11d2, 0xa9, 0x7a, 0x00, 0xc0, 0x4f, 0x8e, 0xcb, 0x02);
+			
+			public function HRESULT(Iwfolders *self, BSTR bstrUrl, BSTR* pbstrRetVal) navigate;
+			public function HRESULT(Iwfolders *self, BSTR bstrUrl, BSTR bstrTargetFrame, BSTR* pbstrRetVal) navigateFrame;
+			public function HRESULT(Iwfolders *self, BSTR bstrUrl, BSTR bstrTargetFrame, uint32 dwhwnd, IUnknown* pwb) navigateNoSite;
+		}
+		[CRepr]
+		public struct IAnchorClick : IDispatch
+		{
+			public const new Guid IID = .(0x13d5413b, 0x33b9, 0x11d2, 0x95, 0xa7, 0x00, 0xc0, 0x4f, 0x8e, 0xcb, 0x02);
+			
+			public function HRESULT(IAnchorClick *self) ProcOnClick;
+		}
+		[CRepr]
+		public struct IHTMLUserDataOM : IDispatch
+		{
+			public const new Guid IID = .(0x3050f48f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLUserDataOM *self, IDispatch** p) get_XMLDocument;
+			public function HRESULT(IHTMLUserDataOM *self, BSTR strName) save;
+			public function HRESULT(IHTMLUserDataOM *self, BSTR strName) load;
+			public function HRESULT(IHTMLUserDataOM *self, BSTR name, VARIANT* pValue) getAttribute;
+			public function HRESULT(IHTMLUserDataOM *self, BSTR name, VARIANT value) setAttribute;
+			public function HRESULT(IHTMLUserDataOM *self, BSTR name) removeAttribute;
+			public function HRESULT(IHTMLUserDataOM *self, BSTR bstr) put_expires;
+			public function HRESULT(IHTMLUserDataOM *self, BSTR* pbstr) get_expires;
+		}
+		[CRepr]
+		public struct IHTMLPersistDataOM : IDispatch
+		{
+			public const new Guid IID = .(0x3050f4c0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPersistDataOM *self, IDispatch** p) get_XMLDocument;
+			public function HRESULT(IHTMLPersistDataOM *self, BSTR name, VARIANT* pValue) getAttribute;
+			public function HRESULT(IHTMLPersistDataOM *self, BSTR name, VARIANT value) setAttribute;
+			public function HRESULT(IHTMLPersistDataOM *self, BSTR name) removeAttribute;
+		}
+		[CRepr]
+		public struct IHTMLPersistData : IUnknown
+		{
+			public const new Guid IID = .(0x3050f4c5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLPersistData *self, IUnknown* pUnk, int32 lType, int16* fContinueBroacast) save;
+			public function HRESULT(IHTMLPersistData *self, IUnknown* pUnk, int32 lType, int16* fDoDefault) load;
+			public function HRESULT(IHTMLPersistData *self, int32 lType, int16* pfSupportsType) queryType;
+		}
+		[CRepr]
+		public struct IDownloadBehavior : IDispatch
+		{
+			public const new Guid IID = .(0x3050f5bd, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDownloadBehavior *self, BSTR bstrUrl, IDispatch* pdispCallback) startDownload;
+		}
+		[CRepr]
+		public struct ILayoutRect : IDispatch
+		{
+			public const new Guid IID = .(0x3050f665, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ILayoutRect *self, BSTR bstrElementId) put_nextRect;
+			public function HRESULT(ILayoutRect *self, BSTR* pbstrElementId) get_nextRect;
+			public function HRESULT(ILayoutRect *self, VARIANT varContentSrc) put_contentSrc;
+			public function HRESULT(ILayoutRect *self, VARIANT* pvarContentSrc) get_contentSrc;
+			public function HRESULT(ILayoutRect *self, int16 v) put_honorPageBreaks;
+			public function HRESULT(ILayoutRect *self, int16* p) get_honorPageBreaks;
+			public function HRESULT(ILayoutRect *self, int16 v) put_honorPageRules;
+			public function HRESULT(ILayoutRect *self, int16* p) get_honorPageRules;
+			public function HRESULT(ILayoutRect *self, IDispatch* pElem) put_nextRectElement;
+			public function HRESULT(ILayoutRect *self, IDispatch** ppElem) get_nextRectElement;
+			public function HRESULT(ILayoutRect *self, IDispatch** pDoc) get_contentDocument;
+		}
+		[CRepr]
+		public struct IDeviceRect : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6d5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+		}
+		[CRepr]
+		public struct IHeaderFooter : IDispatch
+		{
+			public const new Guid IID = .(0x3050f6ce, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_htmlHead;
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_htmlFoot;
+			public function HRESULT(IHeaderFooter *self, BSTR v) put_textHead;
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_textHead;
+			public function HRESULT(IHeaderFooter *self, BSTR v) put_textFoot;
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_textFoot;
+			public function HRESULT(IHeaderFooter *self, uint32 v) put_page;
+			public function HRESULT(IHeaderFooter *self, uint32* p) get_page;
+			public function HRESULT(IHeaderFooter *self, uint32 v) put_pageTotal;
+			public function HRESULT(IHeaderFooter *self, uint32* p) get_pageTotal;
+			public function HRESULT(IHeaderFooter *self, BSTR v) put_URL;
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_URL;
+			public function HRESULT(IHeaderFooter *self, BSTR v) put_title;
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_title;
+			public function HRESULT(IHeaderFooter *self, BSTR v) put_dateShort;
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_dateShort;
+			public function HRESULT(IHeaderFooter *self, BSTR v) put_dateLong;
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_dateLong;
+			public function HRESULT(IHeaderFooter *self, BSTR v) put_timeShort;
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_timeShort;
+			public function HRESULT(IHeaderFooter *self, BSTR v) put_timeLong;
+			public function HRESULT(IHeaderFooter *self, BSTR* p) get_timeLong;
+		}
+		[CRepr]
+		public struct IHeaderFooter2 : IHeaderFooter
+		{
+			public const new Guid IID = .(0x305104a5, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHeaderFooter2 *self, BSTR v) put_font;
+			public function HRESULT(IHeaderFooter2 *self, BSTR* p) get_font;
+		}
+		[CRepr]
+		public struct IHostDialogHelper : IUnknown
+		{
+			public const new Guid IID = .(0x53dec138, 0xa51e, 0x11d2, 0x86, 0x1e, 0x00, 0xc0, 0x4f, 0xa3, 0x5c, 0x89);
+			
+			public function HRESULT(IHostDialogHelper *self, HWND hwndParent, IMoniker* pMk, VARIANT* pvarArgIn, PWSTR pchOptions, VARIANT* pvarArgOut, IUnknown* punkHost) ShowHTMLDialog;
+		}
+		[CRepr]
+		public struct IDocHostUIHandler : IUnknown
+		{
+			public const new Guid IID = .(0xbd3f23c0, 0xd43e, 0x11cf, 0x89, 0x3b, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x1a);
+			
+			public function HRESULT(IDocHostUIHandler *self, uint32 dwID, POINT* ppt, IUnknown* pcmdtReserved, IDispatch* pdispReserved) ShowContextMenu;
+			public function HRESULT(IDocHostUIHandler *self, DOCHOSTUIINFO* pInfo) GetHostInfo;
+			public function HRESULT(IDocHostUIHandler *self, uint32 dwID, IOleInPlaceActiveObject* pActiveObject, IOleCommandTarget* pCommandTarget, IOleInPlaceFrame* pFrame, IOleInPlaceUIWindow* pDoc) ShowUI;
+			public function HRESULT(IDocHostUIHandler *self) HideUI;
+			public function HRESULT(IDocHostUIHandler *self) UpdateUI;
+			public function HRESULT(IDocHostUIHandler *self, BOOL fEnable) EnableModeless;
+			public function HRESULT(IDocHostUIHandler *self, BOOL fActivate) OnDocWindowActivate;
+			public function HRESULT(IDocHostUIHandler *self, BOOL fActivate) OnFrameWindowActivate;
+			public function HRESULT(IDocHostUIHandler *self, RECT* prcBorder, IOleInPlaceUIWindow* pUIWindow, BOOL fRameWindow) ResizeBorder;
+			public function HRESULT(IDocHostUIHandler *self, MSG* lpMsg, Guid* pguidCmdGroup, uint32 nCmdID) TranslateAccelerator;
+			public function HRESULT(IDocHostUIHandler *self, PWSTR* pchKey, uint32 dw) GetOptionKeyPath;
+			public function HRESULT(IDocHostUIHandler *self, IDropTarget* pDropTarget, IDropTarget** ppDropTarget) GetDropTarget;
+			public function HRESULT(IDocHostUIHandler *self, IDispatch** ppDispatch) GetExternal;
+			public function HRESULT(IDocHostUIHandler *self, uint32 dwTranslate, PWSTR pchURLIn, PWSTR* ppchURLOut) TranslateUrl;
+			public function HRESULT(IDocHostUIHandler *self, IDataObject* pDO, IDataObject** ppDORet) FilterDataObject;
+		}
+		[CRepr]
+		public struct IDocHostUIHandler2 : IDocHostUIHandler
+		{
+			public const new Guid IID = .(0x3050f6d0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDocHostUIHandler2 *self, PWSTR* pchKey, uint32 dw) GetOverrideKeyPath;
+		}
+		[CRepr]
+		public struct ICustomDoc : IUnknown
+		{
+			public const new Guid IID = .(0x3050f3f0, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ICustomDoc *self, IDocHostUIHandler* pUIHandler) SetUIHandler;
+		}
+		[CRepr]
+		public struct IDocHostShowUI : IUnknown
+		{
+			public const new Guid IID = .(0xc4d244b0, 0xd43e, 0x11cf, 0x89, 0x3b, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x1a);
+			
+			public function HRESULT(IDocHostShowUI *self, HWND hwnd, PWSTR lpstrText, PWSTR lpstrCaption, uint32 dwType, PWSTR lpstrHelpFile, uint32 dwHelpContext, LRESULT* plResult) ShowMessage;
+			public function HRESULT(IDocHostShowUI *self, HWND hwnd, PWSTR pszHelpFile, uint32 uCommand, uint32 dwData, POINT ptMouse, IDispatch* pDispatchObjectHit) ShowHelp;
+		}
+		[CRepr]
+		public struct IClassFactoryEx : IClassFactory
+		{
+			public const new Guid IID = .(0x342d1ea0, 0xae25, 0x11d1, 0x89, 0xc5, 0x00, 0x60, 0x08, 0xc3, 0xfb, 0xfc);
+			
+			public function HRESULT(IClassFactoryEx *self, IUnknown* punkContext, IUnknown* punkOuter, Guid* riid, void** ppv) CreateInstanceWithContext;
+		}
+		[CRepr]
+		public struct IHTMLOMWindowServices : IUnknown
+		{
+			public const new Guid IID = .(0x3050f5fc, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IHTMLOMWindowServices *self, int32 x, int32 y) moveTo;
+			public function HRESULT(IHTMLOMWindowServices *self, int32 x, int32 y) moveBy;
+			public function HRESULT(IHTMLOMWindowServices *self, int32 x, int32 y) resizeTo;
+			public function HRESULT(IHTMLOMWindowServices *self, int32 x, int32 y) resizeBy;
+		}
+		[CRepr]
+		public struct IDiagnosticsScriptEngineSite : IUnknown
+		{
+			public const new Guid IID = .(0x30510858, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDiagnosticsScriptEngineSite *self, PWSTR* pszData, uint32 ulDataCount) OnMessage;
+			public function HRESULT(IDiagnosticsScriptEngineSite *self, IActiveScriptError* pScriptError) OnScriptError;
+		}
+		[CRepr]
+		public struct IDiagnosticsScriptEngine : IUnknown
+		{
+			public const new Guid IID = .(0x30510859, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDiagnosticsScriptEngine *self, PWSTR pszScript, PWSTR pszScriptName) EvaluateScript;
+			public function HRESULT(IDiagnosticsScriptEngine *self, PWSTR* pszNames, PWSTR* pszValues, uint32 ulPropertyCount) FireScriptMessageEvent;
+			public function HRESULT(IDiagnosticsScriptEngine *self) Detach;
+		}
+		[CRepr]
+		public struct IDiagnosticsScriptEngineProvider : IUnknown
+		{
+			public const new Guid IID = .(0x3051085a, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(IDiagnosticsScriptEngineProvider *self, IDiagnosticsScriptEngineSite* pScriptSite, BOOL fDebuggingEnabled, uint32 ulProcessId, IDiagnosticsScriptEngine** ppEngine) CreateDiagnosticsScriptEngine;
+		}
+		[CRepr]
+		public struct IOpenServiceActivityInput : IUnknown
+		{
+			public const new Guid IID = .(0x75cb4db9, 0x6da0, 0x4da3, 0x83, 0xce, 0x42, 0x2b, 0x6a, 0x43, 0x33, 0x46);
+			
+			public function HRESULT(IOpenServiceActivityInput *self, PWSTR pwzVariableName, PWSTR pwzVariableType, BSTR* pbstrVariableContent) GetVariable;
+			public function HRESULT(IOpenServiceActivityInput *self, PWSTR pwzVariableName, PWSTR pwzVariableType, BOOL* pfHasVariable) HasVariable;
+			public function HRESULT(IOpenServiceActivityInput *self, OpenServiceActivityContentType* pType) GetType;
+		}
+		[CRepr]
+		public struct IOpenServiceActivityOutputContext : IUnknown
+		{
+			public const new Guid IID = .(0xe289deab, 0xf709, 0x49a9, 0xb9, 0x9e, 0x28, 0x23, 0x64, 0x07, 0x45, 0x71);
+			
+			public function HRESULT(IOpenServiceActivityOutputContext *self, PWSTR pwzUri, PWSTR pwzMethod, PWSTR pwzHeaders, IStream* pPostData) Navigate;
+			public function HRESULT(IOpenServiceActivityOutputContext *self, PWSTR pwzUri, PWSTR pwzMethod, PWSTR pwzHeaders, IStream* pPostData, BOOL* pfCanNavigate) CanNavigate;
+		}
+		[CRepr]
+		public struct IOpenService : IUnknown
+		{
+			public const new Guid IID = .(0xc2952ed1, 0x6a89, 0x4606, 0x92, 0x5f, 0x1e, 0xd8, 0xb4, 0xbe, 0x06, 0x30);
+			
+			public function HRESULT(IOpenService *self, BOOL* pfIsDefault) IsDefault;
+			public function HRESULT(IOpenService *self, BOOL fDefault, HWND hwnd) SetDefault;
+			public function HRESULT(IOpenService *self, BSTR* pbstrID) GetID;
+		}
+		[CRepr]
+		public struct IOpenServiceManager : IUnknown
+		{
+			public const new Guid IID = .(0x5664125f, 0x4e10, 0x4e90, 0x98, 0xe4, 0xe4, 0x51, 0x3d, 0x95, 0x5a, 0x14);
+			
+			public function HRESULT(IOpenServiceManager *self, PWSTR pwzServiceUrl, IOpenService** ppService) InstallService;
+			public function HRESULT(IOpenServiceManager *self, IOpenService* pService) UninstallService;
+			public function HRESULT(IOpenServiceManager *self, PWSTR pwzID, IOpenService** ppService) GetServiceByID;
+		}
+		[CRepr]
+		public struct IOpenServiceActivity : IOpenService
+		{
+			public const new Guid IID = .(0x13645c88, 0x221a, 0x4905, 0x8e, 0xd1, 0x4f, 0x51, 0x12, 0xcf, 0xc1, 0x08);
+			
+			public function HRESULT(IOpenServiceActivity *self, IOpenServiceActivityInput* pInput, IOpenServiceActivityOutputContext* pOutput) Execute;
+			public function HRESULT(IOpenServiceActivity *self, IOpenServiceActivityInput* pInput, IOpenServiceActivityOutputContext* pOutput, BOOL* pfCanExecute) CanExecute;
+			public function HRESULT(IOpenServiceActivity *self, OpenServiceActivityContentType type, BOOL* pfCanExecute) CanExecuteType;
+			public function HRESULT(IOpenServiceActivity *self, IOpenServiceActivityInput* pInput, IOpenServiceActivityOutputContext* pOutput) Preview;
+			public function HRESULT(IOpenServiceActivity *self, IOpenServiceActivityInput* pInput, IOpenServiceActivityOutputContext* pOutput, BOOL* pfCanPreview) CanPreview;
+			public function HRESULT(IOpenServiceActivity *self, OpenServiceActivityContentType type, BOOL* pfCanPreview) CanPreviewType;
+			public function HRESULT(IOpenServiceActivity *self, IOpenServiceActivityInput* pInput, BSTR* pbstrStatusText) GetStatusText;
+			public function HRESULT(IOpenServiceActivity *self, BSTR* pbstrHomepageUrl) GetHomepageUrl;
+			public function HRESULT(IOpenServiceActivity *self, BSTR* pbstrDisplayName) GetDisplayName;
+			public function HRESULT(IOpenServiceActivity *self, BSTR* pbstrDescription) GetDescription;
+			public function HRESULT(IOpenServiceActivity *self, BSTR* pbstrCategoryName) GetCategoryName;
+			public function HRESULT(IOpenServiceActivity *self, BSTR* pbstrIconPath) GetIconPath;
+			public function HRESULT(IOpenServiceActivity *self, BOOL fSmallIcon, HICON* phIcon) GetIcon;
+			public function HRESULT(IOpenServiceActivity *self, BSTR* pbstrXmlPath) GetDescriptionFilePath;
+			public function HRESULT(IOpenServiceActivity *self, BSTR* pbstrXmlUri) GetDownloadUrl;
+			public function HRESULT(IOpenServiceActivity *self, BSTR* pbstrInstallUri) GetInstallUrl;
+			public function HRESULT(IOpenServiceActivity *self, BOOL* pfIsEnabled) IsEnabled;
+			public function HRESULT(IOpenServiceActivity *self, BOOL fEnable) SetEnabled;
+		}
+		[CRepr]
+		public struct IEnumOpenServiceActivity : IUnknown
+		{
+			public const new Guid IID = .(0xa436d7d2, 0x17c3, 0x4ef4, 0xa1, 0xe8, 0x5c, 0x86, 0xfa, 0xff, 0x26, 0xc0);
+			
+			public function HRESULT(IEnumOpenServiceActivity *self, uint32 celt, IOpenServiceActivity** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumOpenServiceActivity *self, uint32 celt) Skip;
+			public function HRESULT(IEnumOpenServiceActivity *self) Reset;
+			public function HRESULT(IEnumOpenServiceActivity *self, IEnumOpenServiceActivity** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IOpenServiceActivityCategory : IUnknown
+		{
+			public const new Guid IID = .(0x850af9d6, 0x7309, 0x40b5, 0xbd, 0xb8, 0x78, 0x6c, 0x10, 0x6b, 0x21, 0x53);
+			
+			public function HRESULT(IOpenServiceActivityCategory *self, BOOL* pfHasDefaultActivity) HasDefaultActivity;
+			public function HRESULT(IOpenServiceActivityCategory *self, IOpenServiceActivity** ppDefaultActivity) GetDefaultActivity;
+			public function HRESULT(IOpenServiceActivityCategory *self, IOpenServiceActivity* pActivity, HWND hwnd) SetDefaultActivity;
+			public function HRESULT(IOpenServiceActivityCategory *self, BSTR* pbstrName) GetName;
+			public function HRESULT(IOpenServiceActivityCategory *self, IOpenServiceActivityInput* pInput, IOpenServiceActivityOutputContext* pOutput, IEnumOpenServiceActivity** ppEnumActivity) GetActivityEnumerator;
+		}
+		[CRepr]
+		public struct IEnumOpenServiceActivityCategory : IUnknown
+		{
+			public const new Guid IID = .(0x33627a56, 0x8c9a, 0x4430, 0x8f, 0xd1, 0xb5, 0xf5, 0xc7, 0x71, 0xaf, 0xb6);
+			
+			public function HRESULT(IEnumOpenServiceActivityCategory *self, uint32 celt, IOpenServiceActivityCategory** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumOpenServiceActivityCategory *self, uint32 celt) Skip;
+			public function HRESULT(IEnumOpenServiceActivityCategory *self) Reset;
+			public function HRESULT(IEnumOpenServiceActivityCategory *self, IEnumOpenServiceActivityCategory** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IOpenServiceActivityManager : IUnknown
+		{
+			public const new Guid IID = .(0x8a2d0a9d, 0xe920, 0x4bdc, 0xa2, 0x91, 0xd3, 0x0f, 0x65, 0x0b, 0xc4, 0xf1);
+			
+			public function HRESULT(IOpenServiceActivityManager *self, OpenServiceActivityContentType eType, IEnumOpenServiceActivityCategory** ppEnum) GetCategoryEnumerator;
+			public function HRESULT(IOpenServiceActivityManager *self, PWSTR pwzActivityID, IOpenServiceActivity** ppActivity) GetActivityByID;
+			public function HRESULT(IOpenServiceActivityManager *self, PWSTR pwzHomepage, PWSTR pwzCategory, IOpenServiceActivity** ppActivity) GetActivityByHomepageAndCategory;
+			public function HRESULT(IOpenServiceActivityManager *self, uint32* pdwVersionCookie) GetVersionCookie;
+		}
+		[CRepr]
+		public struct IPersistHistory : IPersist
+		{
+			public const new Guid IID = .(0x91a565c1, 0xe38f, 0x11d0, 0x94, 0xbf, 0x00, 0xa0, 0xc9, 0x05, 0x5c, 0xbf);
+			
+			public function HRESULT(IPersistHistory *self, IStream* pStream, IBindCtx* pbc) LoadHistory;
+			public function HRESULT(IPersistHistory *self, IStream* pStream) SaveHistory;
+			public function HRESULT(IPersistHistory *self, uint32 dwPositioncookie) SetPositionCookie;
+			public function HRESULT(IPersistHistory *self, uint32* pdwPositioncookie) GetPositionCookie;
+		}
+		[CRepr]
+		public struct IEnumSTATURL : IUnknown
+		{
+			public const new Guid IID = .(0x3c374a42, 0xbae4, 0x11cf, 0xbf, 0x7d, 0x00, 0xaa, 0x00, 0x69, 0x46, 0xee);
+			
+			public function HRESULT(IEnumSTATURL *self, uint32 celt, STATURL* rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumSTATURL *self, uint32 celt) Skip;
+			public function HRESULT(IEnumSTATURL *self) Reset;
+			public function HRESULT(IEnumSTATURL *self, IEnumSTATURL** ppenum) Clone;
+			public function HRESULT(IEnumSTATURL *self, PWSTR poszFilter, uint32 dwFlags) SetFilter;
+		}
+		[CRepr]
+		public struct IUrlHistoryStg : IUnknown
+		{
+			public const new Guid IID = .(0x3c374a41, 0xbae4, 0x11cf, 0xbf, 0x7d, 0x00, 0xaa, 0x00, 0x69, 0x46, 0xee);
+			
+			public function HRESULT(IUrlHistoryStg *self, PWSTR pocsUrl, PWSTR pocsTitle, uint32 dwFlags) AddUrl;
+			public function HRESULT(IUrlHistoryStg *self, PWSTR pocsUrl, uint32 dwFlags) DeleteUrl;
+			public function HRESULT(IUrlHistoryStg *self, PWSTR pocsUrl, uint32 dwFlags, STATURL* lpSTATURL) QueryUrl;
+			public function HRESULT(IUrlHistoryStg *self, PWSTR pocsUrl, Guid* riid, void** ppvOut) BindToObject;
+			public function HRESULT(IUrlHistoryStg *self, IEnumSTATURL** ppEnum) EnumUrls;
+		}
+		[CRepr]
+		public struct IUrlHistoryStg2 : IUrlHistoryStg
+		{
+			public const new Guid IID = .(0xafa0dc11, 0xc313, 0x11d0, 0x83, 0x1a, 0x00, 0xc0, 0x4f, 0xd5, 0xae, 0x38);
+			
+			public function HRESULT(IUrlHistoryStg2 *self, PWSTR pocsUrl, PWSTR pocsTitle, uint32 dwFlags, BOOL fWriteHistory, IOleCommandTarget* poctNotify, IUnknown* punkISFolder) AddUrlAndNotify;
+			public function HRESULT(IUrlHistoryStg2 *self) ClearHistory;
+		}
+		[CRepr]
+		public struct IUrlHistoryNotify : IOleCommandTarget
+		{
+			public const new Guid IID = .(0xbc40bec1, 0xc493, 0x11d0, 0x83, 0x1b, 0x00, 0xc0, 0x4f, 0xd5, 0xae, 0x38);
+			
+		}
+		[CRepr]
+		public struct IWebBrowserEventsService : IUnknown
+		{
+			public const new Guid IID = .(0x54a8f188, 0x9ebd, 0x4795, 0xad, 0x16, 0x9b, 0x49, 0x45, 0x11, 0x96, 0x36);
+			
+			public function HRESULT(IWebBrowserEventsService *self, int16* pfCancel) FireBeforeNavigate2Event;
+			public function HRESULT(IWebBrowserEventsService *self) FireNavigateComplete2Event;
+			public function HRESULT(IWebBrowserEventsService *self) FireDownloadBeginEvent;
+			public function HRESULT(IWebBrowserEventsService *self) FireDownloadCompleteEvent;
+			public function HRESULT(IWebBrowserEventsService *self) FireDocumentCompleteEvent;
+		}
+		[CRepr]
+		public struct IWebBrowserEventsUrlService : IUnknown
+		{
+			public const new Guid IID = .(0x87cc5d04, 0xeafa, 0x4833, 0x98, 0x20, 0x8f, 0x98, 0x65, 0x30, 0xcc, 0x00);
+			
+			public function HRESULT(IWebBrowserEventsUrlService *self, BSTR* pUrl) GetUrlForEvents;
+		}
+		[CRepr]
+		public struct ITimerService : IUnknown
+		{
+			public const new Guid IID = .(0x3050f35f, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITimerService *self, ITimer* pReferenceTimer, ITimer** ppNewTimer) CreateTimer;
+			public function HRESULT(ITimerService *self, Guid* rguidName, ITimer** ppTimer) GetNamedTimer;
+			public function HRESULT(ITimerService *self, Guid* rguidName, ITimer* pReferenceTimer) SetNamedTimerReference;
+		}
+		[CRepr]
+		public struct ITimer : IUnknown
+		{
+			public const new Guid IID = .(0x3050f360, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITimer *self, VARIANT vtimeMin, VARIANT vtimeMax, VARIANT vtimeInterval, uint32 dwFlags, ITimerSink* pTimerSink, uint32* pdwCookie) Advise;
+			public function HRESULT(ITimer *self, uint32 dwCookie) Unadvise;
+			public function HRESULT(ITimer *self, BOOL fFreeze) Freeze;
+			public function HRESULT(ITimer *self, VARIANT* pvtime) GetTime;
+		}
+		[CRepr]
+		public struct ITimerEx : ITimer
+		{
+			public const new Guid IID = .(0x30510414, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITimerEx *self, uint32 dwMode) SetMode;
+		}
+		[CRepr]
+		public struct ITimerSink : IUnknown
+		{
+			public const new Guid IID = .(0x3050f361, 0x98b5, 0x11cf, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b);
+			
+			public function HRESULT(ITimerSink *self, VARIANT vtimeAdvise) OnTimer;
+		}
+		[CRepr]
+		public struct IMapMIMEToCLSID : IUnknown
+		{
+			public const new Guid IID = .(0xd9e89500, 0x30fa, 0x11d0, 0xb7, 0x24, 0x00, 0xaa, 0x00, 0x6c, 0x1a, 0x01);
+			
+			public function HRESULT(IMapMIMEToCLSID *self, BOOL bEnable) EnableDefaultMappings;
+			public function HRESULT(IMapMIMEToCLSID *self, PWSTR pszMIMEType, Guid* pCLSID) MapMIMEToCLSID;
+			public function HRESULT(IMapMIMEToCLSID *self, PWSTR pszMIMEType, uint32 dwMapMode, Guid* clsid) SetMapping;
+		}
+		[CRepr]
+		public struct IImageDecodeFilter : IUnknown
+		{
+			public const new Guid IID = .(0xa3ccedf3, 0x2de2, 0x11d0, 0x86, 0xf4, 0x00, 0xa0, 0xc9, 0x13, 0xf7, 0x50);
+			
+			public function HRESULT(IImageDecodeFilter *self, IImageDecodeEventSink* pEventSink) Initialize;
+			public function HRESULT(IImageDecodeFilter *self, IStream* pStream) Process;
+			public function HRESULT(IImageDecodeFilter *self, HRESULT hrStatus) Terminate;
+		}
+		[CRepr]
+		public struct IImageDecodeEventSink : IUnknown
+		{
+			public const new Guid IID = .(0xbaa342a0, 0x2ded, 0x11d0, 0x86, 0xf4, 0x00, 0xa0, 0xc9, 0x13, 0xf7, 0x50);
+			
+			public function HRESULT(IImageDecodeEventSink *self, int32 nWidth, int32 nHeight, Guid* bfid, uint32 nPasses, uint32 dwHints, IUnknown** ppSurface) GetSurface;
+			public function HRESULT(IImageDecodeEventSink *self, uint32* pdwEvents, uint32* pnFormats, Guid** ppFormats) OnBeginDecode;
+			public function HRESULT(IImageDecodeEventSink *self) OnBitsComplete;
+			public function HRESULT(IImageDecodeEventSink *self, HRESULT hrStatus) OnDecodeComplete;
+			public function HRESULT(IImageDecodeEventSink *self) OnPalette;
+			public function HRESULT(IImageDecodeEventSink *self, RECT* pBounds, BOOL bComplete) OnProgress;
+		}
+		[CRepr]
+		public struct IImageDecodeEventSink2 : IImageDecodeEventSink
+		{
+			public const new Guid IID = .(0x8ebd8a57, 0x8a96, 0x48c9, 0x84, 0xa6, 0x96, 0x2e, 0x2d, 0xb9, 0xc9, 0x31);
+			
+			public function HRESULT(IImageDecodeEventSink2 *self, BOOL* pfPremultAlpha) IsAlphaPremultRequired;
+		}
+		[CRepr]
+		public struct ISniffStream : IUnknown
+		{
+			public const new Guid IID = .(0x4ef17940, 0x30e0, 0x11d0, 0xb7, 0x24, 0x00, 0xaa, 0x00, 0x6c, 0x1a, 0x01);
+			
+			public function HRESULT(ISniffStream *self, IStream* pStream) Init;
+			public function HRESULT(ISniffStream *self, void* pBuffer, uint32 nBytes, uint32* pnBytesRead) Peek;
+		}
+		[CRepr]
+		public struct IDithererImpl : IUnknown
+		{
+			public const new Guid IID = .(0x7c48e840, 0x3910, 0x11d0, 0x86, 0xfc, 0x00, 0xa0, 0xc9, 0x13, 0xf7, 0x50);
+			
+			public function HRESULT(IDithererImpl *self, uint32 nColors, RGBQUAD* prgbColors) SetDestColorTable;
+			public function HRESULT(IDithererImpl *self, IImageDecodeEventSink* pEventSink) SetEventSink;
+		}
 		
 		// --- Functions ---
 		
@@ -11143,11 +22236,11 @@ namespace Win32
 		[Import("msrating.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RatingInit();
 		[Import("imgutil.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateMIMEMap(IMapMIMEToCLSID* ppMap);
+		public static extern HRESULT CreateMIMEMap(IMapMIMEToCLSID** ppMap);
 		[Import("imgutil.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DecodeImage(IStream pStream, IMapMIMEToCLSID pMap, IUnknown pEventSink);
+		public static extern HRESULT DecodeImage(IStream* pStream, IMapMIMEToCLSID* pMap, IUnknown* pEventSink);
 		[Import("imgutil.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SniffStream(IStream pInStream, uint32* pnFormat, IStream* ppOutStream);
+		public static extern HRESULT SniffStream(IStream* pInStream, uint32* pnFormat, IStream** ppOutStream);
 		[Import("imgutil.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetMaxMIMEIDBytes(uint32* pnMaxBytes);
 		[Import("imgutil.dll"), CLink, CallingConvention(.Stdcall)]
@@ -11157,11 +22250,11 @@ namespace Win32
 		[Import("imgutil.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DitherTo8(uint8* pDestBits, int32 nDestPitch, uint8* pSrcBits, int32 nSrcPitch, Guid* bfidSrc, RGBQUAD* prgbDestColors, RGBQUAD* prgbSrcColors, uint8* pbDestInvMap, int32 x, int32 y, int32 cx, int32 cy, int32 lDestTrans, int32 lSrcTrans);
 		[Import("imgutil.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateDDrawSurfaceOnDIB(HBITMAP hbmDib, IDirectDrawSurface* ppSurface);
+		public static extern HRESULT CreateDDrawSurfaceOnDIB(HBITMAP hbmDib, IDirectDrawSurface** ppSurface);
 		[Import("imgutil.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DecodeImageEx(IStream pStream, IMapMIMEToCLSID pMap, IUnknown pEventSink, PWSTR pszMIMETypeParam);
+		public static extern HRESULT DecodeImageEx(IStream* pStream, IMapMIMEToCLSID* pMap, IUnknown* pEventSink, PWSTR pszMIMETypeParam);
 		[Import("shdocvw.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DoPrivacyDlg(HWND hwndOwner, PWSTR pszUrl, IEnumPrivacyRecords pPrivacyEnum, BOOL fReportAllSites);
+		public static extern HRESULT DoPrivacyDlg(HWND hwndOwner, PWSTR pszUrl, IEnumPrivacyRecords* pPrivacyEnum, BOOL fReportAllSites);
 		
 	}
 }

@@ -614,40 +614,403 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IWpdSerializer {}
-		public struct IPortableDeviceValues {}
-		public struct IPortableDeviceKeyCollection {}
-		public struct IPortableDevicePropVariantCollection {}
-		public struct IPortableDeviceValuesCollection {}
-		public struct IPortableDeviceManager {}
-		public struct IPortableDevice {}
-		public struct IPortableDeviceContent {}
-		public struct IPortableDeviceContent2 {}
-		public struct IEnumPortableDeviceObjectIDs {}
-		public struct IPortableDeviceProperties {}
-		public struct IPortableDeviceResources {}
-		public struct IPortableDeviceCapabilities {}
-		public struct IPortableDeviceEventCallback {}
-		public struct IPortableDeviceDataStream {}
-		public struct IPortableDeviceUnitsStream {}
-		public struct IPortableDevicePropertiesBulk {}
-		public struct IPortableDevicePropertiesBulkCallback {}
-		public struct IPortableDeviceServiceManager {}
-		public struct IPortableDeviceService {}
-		public struct IPortableDeviceServiceCapabilities {}
-		public struct IPortableDeviceServiceMethods {}
-		public struct IPortableDeviceServiceMethodCallback {}
-		public struct IPortableDeviceServiceActivation {}
-		public struct IPortableDeviceServiceOpenCallback {}
-		public struct IPortableDeviceDispatchFactory {}
-		public struct IPortableDeviceWebControl {}
-		public struct IEnumPortableDeviceConnectors {}
-		public struct IPortableDeviceConnector {}
-		public struct IConnectionRequestCallback {}
-		public struct IMediaRadioManager {}
-		public struct IRadioInstanceCollection {}
-		public struct IRadioInstance {}
-		public struct IMediaRadioManagerNotifySink {}
+		[CRepr]
+		public struct IWpdSerializer : IUnknown
+		{
+			public const new Guid IID = .(0xb32f4002, 0xbb27, 0x45ff, 0xaf, 0x4f, 0x06, 0x63, 0x1c, 0x1e, 0x8d, 0xad);
+			
+			public function HRESULT(IWpdSerializer *self, uint8* pBuffer, uint32 dwInputBufferLength, IPortableDeviceValues** ppParams) GetIPortableDeviceValuesFromBuffer;
+			public function HRESULT(IWpdSerializer *self, uint32 dwOutputBufferLength, IPortableDeviceValues* pResults, uint8* pBuffer, uint32* pdwBytesWritten) WriteIPortableDeviceValuesToBuffer;
+			public function HRESULT(IWpdSerializer *self, IPortableDeviceValues* pSource, uint8** ppBuffer, uint32* pdwBufferSize) GetBufferFromIPortableDeviceValues;
+			public function HRESULT(IWpdSerializer *self, IPortableDeviceValues* pSource, uint32* pdwSize) GetSerializedSize;
+		}
+		[CRepr]
+		public struct IPortableDeviceValues : IUnknown
+		{
+			public const new Guid IID = .(0x6848f6f2, 0x3155, 0x4f86, 0xb6, 0xf5, 0x26, 0x3e, 0xee, 0xab, 0x31, 0x43);
+			
+			public function HRESULT(IPortableDeviceValues *self, uint32* pcelt) GetCount;
+			public function HRESULT(IPortableDeviceValues *self, uint32 index, PROPERTYKEY* pKey, PROPVARIANT* pValue) GetAt;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PROPVARIANT* pValue) SetValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PROPVARIANT* pValue) GetValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PWSTR Value) SetStringValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PWSTR* pValue) GetStringValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint32 Value) SetUnsignedIntegerValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint32* pValue) GetUnsignedIntegerValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, int32 Value) SetSignedIntegerValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, int32* pValue) GetSignedIntegerValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint64 Value) SetUnsignedLargeIntegerValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint64* pValue) GetUnsignedLargeIntegerValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, int64 Value) SetSignedLargeIntegerValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, int64* pValue) GetSignedLargeIntegerValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, float Value) SetFloatValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, float* pValue) GetFloatValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, HRESULT Value) SetErrorValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, HRESULT* pValue) GetErrorValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PROPERTYKEY* Value) SetKeyValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PROPERTYKEY* pValue) GetKeyValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, BOOL Value) SetBoolValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, BOOL* pValue) GetBoolValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IUnknown* pValue) SetIUnknownValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IUnknown** ppValue) GetIUnknownValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, Guid* Value) SetGuidValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, Guid* pValue) GetGuidValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint8* pValue, uint32 cbValue) SetBufferValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint8** ppValue, uint32* pcbValue) GetBufferValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceValues* pValue) SetIPortableDeviceValuesValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceValues** ppValue) GetIPortableDeviceValuesValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDevicePropVariantCollection* pValue) SetIPortableDevicePropVariantCollectionValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDevicePropVariantCollection** ppValue) GetIPortableDevicePropVariantCollectionValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceKeyCollection* pValue) SetIPortableDeviceKeyCollectionValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceKeyCollection** ppValue) GetIPortableDeviceKeyCollectionValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceValuesCollection* pValue) SetIPortableDeviceValuesCollectionValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceValuesCollection** ppValue) GetIPortableDeviceValuesCollectionValue;
+			public function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key) RemoveValue;
+			public function HRESULT(IPortableDeviceValues *self, IPropertyStore* pStore) CopyValuesFromPropertyStore;
+			public function HRESULT(IPortableDeviceValues *self, IPropertyStore* pStore) CopyValuesToPropertyStore;
+			public function HRESULT(IPortableDeviceValues *self) Clear;
+		}
+		[CRepr]
+		public struct IPortableDeviceKeyCollection : IUnknown
+		{
+			public const new Guid IID = .(0xdada2357, 0xe0ad, 0x492e, 0x98, 0xdb, 0xdd, 0x61, 0xc5, 0x3b, 0xa3, 0x53);
+			
+			public function HRESULT(IPortableDeviceKeyCollection *self, uint32* pcElems) GetCount;
+			public function HRESULT(IPortableDeviceKeyCollection *self, uint32 dwIndex, PROPERTYKEY* pKey) GetAt;
+			public function HRESULT(IPortableDeviceKeyCollection *self, PROPERTYKEY* Key) Add;
+			public function HRESULT(IPortableDeviceKeyCollection *self) Clear;
+			public function HRESULT(IPortableDeviceKeyCollection *self, uint32 dwIndex) RemoveAt;
+		}
+		[CRepr]
+		public struct IPortableDevicePropVariantCollection : IUnknown
+		{
+			public const new Guid IID = .(0x89b2e422, 0x4f1b, 0x4316, 0xbc, 0xef, 0xa4, 0x4a, 0xfe, 0xa8, 0x3e, 0xb3);
+			
+			public function HRESULT(IPortableDevicePropVariantCollection *self, uint32* pcElems) GetCount;
+			public function HRESULT(IPortableDevicePropVariantCollection *self, uint32 dwIndex, PROPVARIANT* pValue) GetAt;
+			public function HRESULT(IPortableDevicePropVariantCollection *self, PROPVARIANT* pValue) Add;
+			public function HRESULT(IPortableDevicePropVariantCollection *self, uint16* pvt) GetType;
+			public function HRESULT(IPortableDevicePropVariantCollection *self, uint16 vt) ChangeType;
+			public function HRESULT(IPortableDevicePropVariantCollection *self) Clear;
+			public function HRESULT(IPortableDevicePropVariantCollection *self, uint32 dwIndex) RemoveAt;
+		}
+		[CRepr]
+		public struct IPortableDeviceValuesCollection : IUnknown
+		{
+			public const new Guid IID = .(0x6e3f2d79, 0x4e07, 0x48c4, 0x82, 0x08, 0xd8, 0xc2, 0xe5, 0xaf, 0x4a, 0x99);
+			
+			public function HRESULT(IPortableDeviceValuesCollection *self, uint32* pcElems) GetCount;
+			public function HRESULT(IPortableDeviceValuesCollection *self, uint32 dwIndex, IPortableDeviceValues** ppValues) GetAt;
+			public function HRESULT(IPortableDeviceValuesCollection *self, IPortableDeviceValues* pValues) Add;
+			public function HRESULT(IPortableDeviceValuesCollection *self) Clear;
+			public function HRESULT(IPortableDeviceValuesCollection *self, uint32 dwIndex) RemoveAt;
+		}
+		[CRepr]
+		public struct IPortableDeviceManager : IUnknown
+		{
+			public const new Guid IID = .(0xa1567595, 0x4c2f, 0x4574, 0xa6, 0xfa, 0xec, 0xef, 0x91, 0x7b, 0x9a, 0x40);
+			
+			public function HRESULT(IPortableDeviceManager *self, PWSTR* pPnPDeviceIDs, uint32* pcPnPDeviceIDs) GetDevices;
+			public function HRESULT(IPortableDeviceManager *self) RefreshDeviceList;
+			public function HRESULT(IPortableDeviceManager *self, PWSTR pszPnPDeviceID, PWSTR pDeviceFriendlyName, uint32* pcchDeviceFriendlyName) GetDeviceFriendlyName;
+			public function HRESULT(IPortableDeviceManager *self, PWSTR pszPnPDeviceID, PWSTR pDeviceDescription, uint32* pcchDeviceDescription) GetDeviceDescription;
+			public function HRESULT(IPortableDeviceManager *self, PWSTR pszPnPDeviceID, PWSTR pDeviceManufacturer, uint32* pcchDeviceManufacturer) GetDeviceManufacturer;
+			public function HRESULT(IPortableDeviceManager *self, PWSTR pszPnPDeviceID, PWSTR pszDevicePropertyName, uint8* pData, uint32* pcbData, uint32* pdwType) GetDeviceProperty;
+			public function HRESULT(IPortableDeviceManager *self, PWSTR* pPnPDeviceIDs, uint32* pcPnPDeviceIDs) GetPrivateDevices;
+		}
+		[CRepr]
+		public struct IPortableDevice : IUnknown
+		{
+			public const new Guid IID = .(0x625e2df8, 0x6392, 0x4cf0, 0x9a, 0xd1, 0x3c, 0xfa, 0x5f, 0x17, 0x77, 0x5c);
+			
+			public function HRESULT(IPortableDevice *self, PWSTR pszPnPDeviceID, IPortableDeviceValues* pClientInfo) Open;
+			public function HRESULT(IPortableDevice *self, uint32 dwFlags, IPortableDeviceValues* pParameters, IPortableDeviceValues** ppResults) SendCommand;
+			public function HRESULT(IPortableDevice *self, IPortableDeviceContent** ppContent) Content;
+			public function HRESULT(IPortableDevice *self, IPortableDeviceCapabilities** ppCapabilities) Capabilities;
+			public function HRESULT(IPortableDevice *self) Cancel;
+			public function HRESULT(IPortableDevice *self) Close;
+			public function HRESULT(IPortableDevice *self, uint32 dwFlags, IPortableDeviceEventCallback* pCallback, IPortableDeviceValues* pParameters, PWSTR* ppszCookie) Advise;
+			public function HRESULT(IPortableDevice *self, PWSTR pszCookie) Unadvise;
+			public function HRESULT(IPortableDevice *self, PWSTR* ppszPnPDeviceID) GetPnPDeviceID;
+		}
+		[CRepr]
+		public struct IPortableDeviceContent : IUnknown
+		{
+			public const new Guid IID = .(0x6a96ed84, 0x7c73, 0x4480, 0x99, 0x38, 0xbf, 0x5a, 0xf4, 0x77, 0xd4, 0x26);
+			
+			public function HRESULT(IPortableDeviceContent *self, uint32 dwFlags, PWSTR pszParentObjectID, IPortableDeviceValues* pFilter, IEnumPortableDeviceObjectIDs** ppEnum) EnumObjects;
+			public function HRESULT(IPortableDeviceContent *self, IPortableDeviceProperties** ppProperties) Properties;
+			public function HRESULT(IPortableDeviceContent *self, IPortableDeviceResources** ppResources) Transfer;
+			public function HRESULT(IPortableDeviceContent *self, IPortableDeviceValues* pValues, PWSTR* ppszObjectID) CreateObjectWithPropertiesOnly;
+			public function HRESULT(IPortableDeviceContent *self, IPortableDeviceValues* pValues, IStream** ppData, uint32* pdwOptimalWriteBufferSize, PWSTR* ppszCookie) CreateObjectWithPropertiesAndData;
+			public function HRESULT(IPortableDeviceContent *self, uint32 dwOptions, IPortableDevicePropVariantCollection* pObjectIDs, IPortableDevicePropVariantCollection** ppResults) Delete;
+			public function HRESULT(IPortableDeviceContent *self, IPortableDevicePropVariantCollection* pPersistentUniqueIDs, IPortableDevicePropVariantCollection** ppObjectIDs) GetObjectIDsFromPersistentUniqueIDs;
+			public function HRESULT(IPortableDeviceContent *self) Cancel;
+			public function HRESULT(IPortableDeviceContent *self, IPortableDevicePropVariantCollection* pObjectIDs, PWSTR pszDestinationFolderObjectID, IPortableDevicePropVariantCollection** ppResults) Move;
+			public function HRESULT(IPortableDeviceContent *self, IPortableDevicePropVariantCollection* pObjectIDs, PWSTR pszDestinationFolderObjectID, IPortableDevicePropVariantCollection** ppResults) Copy;
+		}
+		[CRepr]
+		public struct IPortableDeviceContent2 : IPortableDeviceContent
+		{
+			public const new Guid IID = .(0x9b4add96, 0xf6bf, 0x4034, 0x87, 0x08, 0xec, 0xa7, 0x2b, 0xf1, 0x05, 0x54);
+			
+			public function HRESULT(IPortableDeviceContent2 *self, PWSTR pszObjectID, IPortableDeviceValues* pProperties, IStream** ppData, uint32* pdwOptimalWriteBufferSize) UpdateObjectWithPropertiesAndData;
+		}
+		[CRepr]
+		public struct IEnumPortableDeviceObjectIDs : IUnknown
+		{
+			public const new Guid IID = .(0x10ece955, 0xcf41, 0x4728, 0xbf, 0xa0, 0x41, 0xee, 0xdf, 0x1b, 0xbf, 0x19);
+			
+			public function HRESULT(IEnumPortableDeviceObjectIDs *self, uint32 cObjects, PWSTR* pObjIDs, uint32* pcFetched) Next;
+			public function HRESULT(IEnumPortableDeviceObjectIDs *self, uint32 cObjects) Skip;
+			public function HRESULT(IEnumPortableDeviceObjectIDs *self) Reset;
+			public function HRESULT(IEnumPortableDeviceObjectIDs *self, IEnumPortableDeviceObjectIDs** ppEnum) Clone;
+			public function HRESULT(IEnumPortableDeviceObjectIDs *self) Cancel;
+		}
+		[CRepr]
+		public struct IPortableDeviceProperties : IUnknown
+		{
+			public const new Guid IID = .(0x7f6d695c, 0x03df, 0x4439, 0xa8, 0x09, 0x59, 0x26, 0x6b, 0xee, 0xe3, 0xa6);
+			
+			public function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, IPortableDeviceKeyCollection** ppKeys) GetSupportedProperties;
+			public function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, PROPERTYKEY* Key, IPortableDeviceValues** ppAttributes) GetPropertyAttributes;
+			public function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) GetValues;
+			public function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, IPortableDeviceValues* pValues, IPortableDeviceValues** ppResults) SetValues;
+			public function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, IPortableDeviceKeyCollection* pKeys) Delete;
+			public function HRESULT(IPortableDeviceProperties *self) Cancel;
+		}
+		[CRepr]
+		public struct IPortableDeviceResources : IUnknown
+		{
+			public const new Guid IID = .(0xfd8878ac, 0xd841, 0x4d17, 0x89, 0x1c, 0xe6, 0x82, 0x9c, 0xdb, 0x69, 0x34);
+			
+			public function HRESULT(IPortableDeviceResources *self, PWSTR pszObjectID, IPortableDeviceKeyCollection** ppKeys) GetSupportedResources;
+			public function HRESULT(IPortableDeviceResources *self, PWSTR pszObjectID, PROPERTYKEY* Key, IPortableDeviceValues** ppResourceAttributes) GetResourceAttributes;
+			public function HRESULT(IPortableDeviceResources *self, PWSTR pszObjectID, PROPERTYKEY* Key, uint32 dwMode, uint32* pdwOptimalBufferSize, IStream** ppStream) GetStream;
+			public function HRESULT(IPortableDeviceResources *self, PWSTR pszObjectID, IPortableDeviceKeyCollection* pKeys) Delete;
+			public function HRESULT(IPortableDeviceResources *self) Cancel;
+			public function HRESULT(IPortableDeviceResources *self, IPortableDeviceValues* pResourceAttributes, IStream** ppData, uint32* pdwOptimalWriteBufferSize, PWSTR* ppszCookie) CreateResource;
+		}
+		[CRepr]
+		public struct IPortableDeviceCapabilities : IUnknown
+		{
+			public const new Guid IID = .(0x2c8c6dbf, 0xe3dc, 0x4061, 0xbe, 0xcc, 0x85, 0x42, 0xe8, 0x10, 0xd1, 0x26);
+			
+			public function HRESULT(IPortableDeviceCapabilities *self, IPortableDeviceKeyCollection** ppCommands) GetSupportedCommands;
+			public function HRESULT(IPortableDeviceCapabilities *self, PROPERTYKEY* Command, IPortableDeviceValues** ppOptions) GetCommandOptions;
+			public function HRESULT(IPortableDeviceCapabilities *self, IPortableDevicePropVariantCollection** ppCategories) GetFunctionalCategories;
+			public function HRESULT(IPortableDeviceCapabilities *self, Guid* Category, IPortableDevicePropVariantCollection** ppObjectIDs) GetFunctionalObjects;
+			public function HRESULT(IPortableDeviceCapabilities *self, Guid* Category, IPortableDevicePropVariantCollection** ppContentTypes) GetSupportedContentTypes;
+			public function HRESULT(IPortableDeviceCapabilities *self, Guid* ContentType, IPortableDevicePropVariantCollection** ppFormats) GetSupportedFormats;
+			public function HRESULT(IPortableDeviceCapabilities *self, Guid* Format, IPortableDeviceKeyCollection** ppKeys) GetSupportedFormatProperties;
+			public function HRESULT(IPortableDeviceCapabilities *self, Guid* Format, PROPERTYKEY* Key, IPortableDeviceValues** ppAttributes) GetFixedPropertyAttributes;
+			public function HRESULT(IPortableDeviceCapabilities *self) Cancel;
+			public function HRESULT(IPortableDeviceCapabilities *self, IPortableDevicePropVariantCollection** ppEvents) GetSupportedEvents;
+			public function HRESULT(IPortableDeviceCapabilities *self, Guid* Event, IPortableDeviceValues** ppOptions) GetEventOptions;
+		}
+		[CRepr]
+		public struct IPortableDeviceEventCallback : IUnknown
+		{
+			public const new Guid IID = .(0xa8792a31, 0xf385, 0x493c, 0xa8, 0x93, 0x40, 0xf6, 0x4e, 0xb4, 0x5f, 0x6e);
+			
+			public function HRESULT(IPortableDeviceEventCallback *self, IPortableDeviceValues* pEventParameters) OnEvent;
+		}
+		[CRepr]
+		public struct IPortableDeviceDataStream : IStream
+		{
+			public const new Guid IID = .(0x88e04db3, 0x1012, 0x4d64, 0x99, 0x96, 0xf7, 0x03, 0xa9, 0x50, 0xd3, 0xf4);
+			
+			public function HRESULT(IPortableDeviceDataStream *self, PWSTR* ppszObjectID) GetObjectID;
+			public function HRESULT(IPortableDeviceDataStream *self) Cancel;
+		}
+		[CRepr]
+		public struct IPortableDeviceUnitsStream : IUnknown
+		{
+			public const new Guid IID = .(0x5e98025f, 0xbfc4, 0x47a2, 0x9a, 0x5f, 0xbc, 0x90, 0x0a, 0x50, 0x7c, 0x67);
+			
+			public function HRESULT(IPortableDeviceUnitsStream *self, LARGE_INTEGER dlibMove, WPD_STREAM_UNITS units, uint32 dwOrigin, ULARGE_INTEGER* plibNewPosition) SeekInUnits;
+			public function HRESULT(IPortableDeviceUnitsStream *self) Cancel;
+		}
+		[CRepr]
+		public struct IPortableDevicePropertiesBulk : IUnknown
+		{
+			public const new Guid IID = .(0x482b05c0, 0x4056, 0x44ed, 0x9e, 0x0f, 0x5e, 0x23, 0xb0, 0x09, 0xda, 0x93);
+			
+			public function HRESULT(IPortableDevicePropertiesBulk *self, IPortableDevicePropVariantCollection* pObjectIDs, IPortableDeviceKeyCollection* pKeys, IPortableDevicePropertiesBulkCallback* pCallback, Guid* pContext) QueueGetValuesByObjectList;
+			public function HRESULT(IPortableDevicePropertiesBulk *self, Guid* pguidObjectFormat, PWSTR pszParentObjectID, uint32 dwDepth, IPortableDeviceKeyCollection* pKeys, IPortableDevicePropertiesBulkCallback* pCallback, Guid* pContext) QueueGetValuesByObjectFormat;
+			public function HRESULT(IPortableDevicePropertiesBulk *self, IPortableDeviceValuesCollection* pObjectValues, IPortableDevicePropertiesBulkCallback* pCallback, Guid* pContext) QueueSetValuesByObjectList;
+			public function HRESULT(IPortableDevicePropertiesBulk *self, Guid* pContext) Start;
+			public function HRESULT(IPortableDevicePropertiesBulk *self, Guid* pContext) Cancel;
+		}
+		[CRepr]
+		public struct IPortableDevicePropertiesBulkCallback : IUnknown
+		{
+			public const new Guid IID = .(0x9deacb80, 0x11e8, 0x40e3, 0xa9, 0xf3, 0xf5, 0x57, 0x98, 0x6a, 0x78, 0x45);
+			
+			public function HRESULT(IPortableDevicePropertiesBulkCallback *self, Guid* pContext) OnStart;
+			public function HRESULT(IPortableDevicePropertiesBulkCallback *self, Guid* pContext, IPortableDeviceValuesCollection* pResults) OnProgress;
+			public function HRESULT(IPortableDevicePropertiesBulkCallback *self, Guid* pContext, HRESULT hrStatus) OnEnd;
+		}
+		[CRepr]
+		public struct IPortableDeviceServiceManager : IUnknown
+		{
+			public const new Guid IID = .(0xa8abc4e9, 0xa84a, 0x47a9, 0x80, 0xb3, 0xc5, 0xd9, 0xb1, 0x72, 0xa9, 0x61);
+			
+			public function HRESULT(IPortableDeviceServiceManager *self, PWSTR pszPnPDeviceID, Guid* guidServiceCategory, PWSTR* pServices, uint32* pcServices) GetDeviceServices;
+			public function HRESULT(IPortableDeviceServiceManager *self, PWSTR pszPnPServiceID, PWSTR* ppszPnPDeviceID) GetDeviceForService;
+		}
+		[CRepr]
+		public struct IPortableDeviceService : IUnknown
+		{
+			public const new Guid IID = .(0xd3bd3a44, 0xd7b5, 0x40a9, 0x98, 0xb7, 0x2f, 0xa4, 0xd0, 0x1d, 0xec, 0x08);
+			
+			public function HRESULT(IPortableDeviceService *self, PWSTR pszPnPServiceID, IPortableDeviceValues* pClientInfo) Open;
+			public function HRESULT(IPortableDeviceService *self, IPortableDeviceServiceCapabilities** ppCapabilities) Capabilities;
+			public function HRESULT(IPortableDeviceService *self, IPortableDeviceContent2** ppContent) Content;
+			public function HRESULT(IPortableDeviceService *self, IPortableDeviceServiceMethods** ppMethods) Methods;
+			public function HRESULT(IPortableDeviceService *self) Cancel;
+			public function HRESULT(IPortableDeviceService *self) Close;
+			public function HRESULT(IPortableDeviceService *self, PWSTR* ppszServiceObjectID) GetServiceObjectID;
+			public function HRESULT(IPortableDeviceService *self, PWSTR* ppszPnPServiceID) GetPnPServiceID;
+			public function HRESULT(IPortableDeviceService *self, uint32 dwFlags, IPortableDeviceEventCallback* pCallback, IPortableDeviceValues* pParameters, PWSTR* ppszCookie) Advise;
+			public function HRESULT(IPortableDeviceService *self, PWSTR pszCookie) Unadvise;
+			public function HRESULT(IPortableDeviceService *self, uint32 dwFlags, IPortableDeviceValues* pParameters, IPortableDeviceValues** ppResults) SendCommand;
+		}
+		[CRepr]
+		public struct IPortableDeviceServiceCapabilities : IUnknown
+		{
+			public const new Guid IID = .(0x24dbd89d, 0x413e, 0x43e0, 0xbd, 0x5b, 0x19, 0x7f, 0x3c, 0x56, 0xc8, 0x86);
+			
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, IPortableDevicePropVariantCollection** ppMethods) GetSupportedMethods;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, IPortableDevicePropVariantCollection** ppMethods) GetSupportedMethodsByFormat;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Method, IPortableDeviceValues** ppAttributes) GetMethodAttributes;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Method, PROPERTYKEY* Parameter, IPortableDeviceValues** ppAttributes) GetMethodParameterAttributes;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, IPortableDevicePropVariantCollection** ppFormats) GetSupportedFormats;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, IPortableDeviceValues** ppAttributes) GetFormatAttributes;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, IPortableDeviceKeyCollection** ppKeys) GetSupportedFormatProperties;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, PROPERTYKEY* Property, IPortableDeviceValues** ppAttributes) GetFormatPropertyAttributes;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, IPortableDevicePropVariantCollection** ppEvents) GetSupportedEvents;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Event, IPortableDeviceValues** ppAttributes) GetEventAttributes;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Event, PROPERTYKEY* Parameter, IPortableDeviceValues** ppAttributes) GetEventParameterAttributes;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, uint32 dwInheritanceType, IPortableDevicePropVariantCollection** ppServices) GetInheritedServices;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, IPortableDeviceValuesCollection** ppRenderingProfiles) GetFormatRenderingProfiles;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, IPortableDeviceKeyCollection** ppCommands) GetSupportedCommands;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self, PROPERTYKEY* Command, IPortableDeviceValues** ppOptions) GetCommandOptions;
+			public function HRESULT(IPortableDeviceServiceCapabilities *self) Cancel;
+		}
+		[CRepr]
+		public struct IPortableDeviceServiceMethods : IUnknown
+		{
+			public const new Guid IID = .(0xe20333c9, 0xfd34, 0x412d, 0xa3, 0x81, 0xcc, 0x6f, 0x2d, 0x82, 0x0d, 0xf7);
+			
+			public function HRESULT(IPortableDeviceServiceMethods *self, Guid* Method, IPortableDeviceValues* pParameters, IPortableDeviceValues** ppResults) Invoke;
+			public function HRESULT(IPortableDeviceServiceMethods *self, Guid* Method, IPortableDeviceValues* pParameters, IPortableDeviceServiceMethodCallback* pCallback) InvokeAsync;
+			public function HRESULT(IPortableDeviceServiceMethods *self, IPortableDeviceServiceMethodCallback* pCallback) Cancel;
+		}
+		[CRepr]
+		public struct IPortableDeviceServiceMethodCallback : IUnknown
+		{
+			public const new Guid IID = .(0xc424233c, 0xafce, 0x4828, 0xa7, 0x56, 0x7e, 0xd7, 0xa2, 0x35, 0x00, 0x83);
+			
+			public function HRESULT(IPortableDeviceServiceMethodCallback *self, HRESULT hrStatus, IPortableDeviceValues* pResults) OnComplete;
+		}
+		[CRepr]
+		public struct IPortableDeviceServiceActivation : IUnknown
+		{
+			public const new Guid IID = .(0xe56b0534, 0xd9b9, 0x425c, 0x9b, 0x99, 0x75, 0xf9, 0x7c, 0xb3, 0xd7, 0xc8);
+			
+			public function HRESULT(IPortableDeviceServiceActivation *self, PWSTR pszPnPServiceID, IPortableDeviceValues* pClientInfo, IPortableDeviceServiceOpenCallback* pCallback) OpenAsync;
+			public function HRESULT(IPortableDeviceServiceActivation *self) CancelOpenAsync;
+		}
+		[CRepr]
+		public struct IPortableDeviceServiceOpenCallback : IUnknown
+		{
+			public const new Guid IID = .(0xbced49c8, 0x8efe, 0x41ed, 0x96, 0x0b, 0x61, 0x31, 0x3a, 0xbd, 0x47, 0xa9);
+			
+			public function HRESULT(IPortableDeviceServiceOpenCallback *self, HRESULT hrStatus) OnComplete;
+		}
+		[CRepr]
+		public struct IPortableDeviceDispatchFactory : IUnknown
+		{
+			public const new Guid IID = .(0x5e1eafc3, 0xe3d7, 0x4132, 0x96, 0xfa, 0x75, 0x9c, 0x0f, 0x9d, 0x1e, 0x0f);
+			
+			public function HRESULT(IPortableDeviceDispatchFactory *self, PWSTR pszPnPDeviceID, IDispatch** ppDeviceDispatch) GetDeviceDispatch;
+		}
+		[CRepr]
+		public struct IPortableDeviceWebControl : IDispatch
+		{
+			public const new Guid IID = .(0x94fc7953, 0x5ca1, 0x483a, 0x8a, 0xee, 0xdf, 0x52, 0xe7, 0x74, 0x7d, 0x00);
+			
+			public function HRESULT(IPortableDeviceWebControl *self, BSTR deviceId, IDispatch** ppDevice) GetDeviceFromId;
+			public function HRESULT(IPortableDeviceWebControl *self, BSTR deviceId, IDispatch* pCompletionHandler, IDispatch* pErrorHandler) GetDeviceFromIdAsync;
+		}
+		[CRepr]
+		public struct IEnumPortableDeviceConnectors : IUnknown
+		{
+			public const new Guid IID = .(0xbfdef549, 0x9247, 0x454f, 0xbd, 0x82, 0x06, 0xfe, 0x80, 0x85, 0x3f, 0xaa);
+			
+			public function HRESULT(IEnumPortableDeviceConnectors *self, uint32 cRequested, IPortableDeviceConnector** pConnectors, uint32* pcFetched) Next;
+			public function HRESULT(IEnumPortableDeviceConnectors *self, uint32 cConnectors) Skip;
+			public function HRESULT(IEnumPortableDeviceConnectors *self) Reset;
+			public function HRESULT(IEnumPortableDeviceConnectors *self, IEnumPortableDeviceConnectors** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IPortableDeviceConnector : IUnknown
+		{
+			public const new Guid IID = .(0x625e2df8, 0x6392, 0x4cf0, 0x9a, 0xd1, 0x3c, 0xfa, 0x5f, 0x17, 0x77, 0x5c);
+			
+			public function HRESULT(IPortableDeviceConnector *self, IConnectionRequestCallback* pCallback) Connect;
+			public function HRESULT(IPortableDeviceConnector *self, IConnectionRequestCallback* pCallback) Disconnect;
+			public function HRESULT(IPortableDeviceConnector *self, IConnectionRequestCallback* pCallback) Cancel;
+			public function HRESULT(IPortableDeviceConnector *self, DEVPROPKEY* pPropertyKey, uint32* pPropertyType, uint8** ppData, uint32* pcbData) GetProperty;
+			public function HRESULT(IPortableDeviceConnector *self, DEVPROPKEY* pPropertyKey, uint32 PropertyType, uint8* pData, uint32 cbData) SetProperty;
+			public function HRESULT(IPortableDeviceConnector *self, PWSTR* ppwszPnPID) GetPnPID;
+		}
+		[CRepr]
+		public struct IConnectionRequestCallback : IUnknown
+		{
+			public const new Guid IID = .(0x272c9ae0, 0x7161, 0x4ae0, 0x91, 0xbd, 0x9f, 0x44, 0x8e, 0xe9, 0xc4, 0x27);
+			
+			public function HRESULT(IConnectionRequestCallback *self, HRESULT hrStatus) OnComplete;
+		}
+		[CRepr]
+		public struct IMediaRadioManager : IUnknown
+		{
+			public const new Guid IID = .(0x6cfdcab5, 0xfc47, 0x42a5, 0x92, 0x41, 0x07, 0x4b, 0x58, 0x83, 0x0e, 0x73);
+			
+			public function HRESULT(IMediaRadioManager *self, IRadioInstanceCollection** ppCollection) GetRadioInstances;
+			public function HRESULT(IMediaRadioManager *self, SYSTEM_RADIO_STATE sysRadioState, uint32 uTimeoutSec) OnSystemRadioStateChange;
+		}
+		[CRepr]
+		public struct IRadioInstanceCollection : IUnknown
+		{
+			public const new Guid IID = .(0xe5791fae, 0x5665, 0x4e0c, 0x95, 0xbe, 0x5f, 0xde, 0x31, 0x64, 0x41, 0x85);
+			
+			public function HRESULT(IRadioInstanceCollection *self, uint32* pcInstance) GetCount;
+			public function HRESULT(IRadioInstanceCollection *self, uint32 uIndex, IRadioInstance** ppRadioInstance) GetAt;
+		}
+		[CRepr]
+		public struct IRadioInstance : IUnknown
+		{
+			public const new Guid IID = .(0x70aa1c9e, 0xf2b4, 0x4c61, 0x86, 0xd3, 0x6b, 0x9f, 0xb7, 0x5f, 0xd1, 0xa2);
+			
+			public function HRESULT(IRadioInstance *self, Guid* pguidSignature) GetRadioManagerSignature;
+			public function HRESULT(IRadioInstance *self, BSTR* pbstrId) GetInstanceSignature;
+			public function HRESULT(IRadioInstance *self, uint32 lcid, BSTR* pbstrName) GetFriendlyName;
+			public function HRESULT(IRadioInstance *self, DEVICE_RADIO_STATE* pRadioState) GetRadioState;
+			public function HRESULT(IRadioInstance *self, DEVICE_RADIO_STATE radioState, uint32 uTimeoutSec) SetRadioState;
+			public function BOOL(IRadioInstance *self) IsMultiComm;
+			public function BOOL(IRadioInstance *self) IsAssociatingDevice;
+		}
+		[CRepr]
+		public struct IMediaRadioManagerNotifySink : IUnknown
+		{
+			public const new Guid IID = .(0x89d81f5f, 0xc147, 0x49ed, 0xa1, 0x1c, 0x77, 0xb2, 0x0c, 0x31, 0xe7, 0xc9);
+			
+			public function HRESULT(IMediaRadioManagerNotifySink *self, IRadioInstance* pRadioInstance) OnInstanceAdd;
+			public function HRESULT(IMediaRadioManagerNotifySink *self, BSTR bstrRadioInstanceId) OnInstanceRemove;
+			public function HRESULT(IMediaRadioManagerNotifySink *self, BSTR bstrRadioInstanceId, DEVICE_RADIO_STATE radioState) OnInstanceRadioChange;
+		}
 		
 		// --- Functions ---
 		

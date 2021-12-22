@@ -3907,16 +3907,113 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IDot11AdHocManager {}
-		public struct IDot11AdHocManagerNotificationSink {}
-		public struct IEnumDot11AdHocNetworks {}
-		public struct IDot11AdHocNetwork {}
-		public struct IDot11AdHocNetworkNotificationSink {}
-		public struct IDot11AdHocInterface {}
-		public struct IEnumDot11AdHocInterfaces {}
-		public struct IEnumDot11AdHocSecuritySettings {}
-		public struct IDot11AdHocSecuritySettings {}
-		public struct IDot11AdHocInterfaceNotificationSink {}
+		[CRepr]
+		public struct IDot11AdHocManager : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc26, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IDot11AdHocManager *self, PWSTR Name, PWSTR Password, int32 GeographicalId, IDot11AdHocInterface* pInterface, IDot11AdHocSecuritySettings* pSecurity, Guid* pContextGuid, IDot11AdHocNetwork** pIAdHoc) CreateNetwork;
+			public function HRESULT(IDot11AdHocManager *self, IDot11AdHocNetwork* pIAdHoc, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) CommitCreatedNetwork;
+			public function HRESULT(IDot11AdHocManager *self, Guid* pContextGuid, IEnumDot11AdHocNetworks** ppEnum) GetIEnumDot11AdHocNetworks;
+			public function HRESULT(IDot11AdHocManager *self, IEnumDot11AdHocInterfaces** ppEnum) GetIEnumDot11AdHocInterfaces;
+			public function HRESULT(IDot11AdHocManager *self, Guid* NetworkSignature, IDot11AdHocNetwork** pNetwork) GetNetwork;
+		}
+		[CRepr]
+		public struct IDot11AdHocManagerNotificationSink : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc27, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IDot11AdHocManagerNotificationSink *self, IDot11AdHocNetwork* pIAdHocNetwork) OnNetworkAdd;
+			public function HRESULT(IDot11AdHocManagerNotificationSink *self, Guid* Signature) OnNetworkRemove;
+			public function HRESULT(IDot11AdHocManagerNotificationSink *self, IDot11AdHocInterface* pIAdHocInterface) OnInterfaceAdd;
+			public function HRESULT(IDot11AdHocManagerNotificationSink *self, Guid* Signature) OnInterfaceRemove;
+		}
+		[CRepr]
+		public struct IEnumDot11AdHocNetworks : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc28, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IEnumDot11AdHocNetworks *self, uint32 cElt, IDot11AdHocNetwork** rgElt, uint32* pcEltFetched) Next;
+			public function HRESULT(IEnumDot11AdHocNetworks *self, uint32 cElt) Skip;
+			public function HRESULT(IEnumDot11AdHocNetworks *self) Reset;
+			public function HRESULT(IEnumDot11AdHocNetworks *self, IEnumDot11AdHocNetworks** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IDot11AdHocNetwork : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc29, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IDot11AdHocNetwork *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS* eStatus) GetStatus;
+			public function HRESULT(IDot11AdHocNetwork *self, PWSTR* ppszwSSID) GetSSID;
+			public function HRESULT(IDot11AdHocNetwork *self, uint8* pf11d) HasProfile;
+			public function HRESULT(IDot11AdHocNetwork *self, PWSTR* ppszwProfileName) GetProfileName;
+			public function HRESULT(IDot11AdHocNetwork *self) DeleteProfile;
+			public function HRESULT(IDot11AdHocNetwork *self, uint32* puStrengthValue, uint32* puStrengthMax) GetSignalQuality;
+			public function HRESULT(IDot11AdHocNetwork *self, IDot11AdHocSecuritySettings** pAdHocSecuritySetting) GetSecuritySetting;
+			public function HRESULT(IDot11AdHocNetwork *self, Guid* pContextGuid) GetContextGuid;
+			public function HRESULT(IDot11AdHocNetwork *self, Guid* pSignature) GetSignature;
+			public function HRESULT(IDot11AdHocNetwork *self, IDot11AdHocInterface** pAdHocInterface) GetInterface;
+			public function HRESULT(IDot11AdHocNetwork *self, PWSTR Passphrase, int32 GeographicalId, BOOLEAN fSaveProfile, BOOLEAN fMakeSavedProfileUserSpecific) Connect;
+			public function HRESULT(IDot11AdHocNetwork *self) Disconnect;
+		}
+		[CRepr]
+		public struct IDot11AdHocNetworkNotificationSink : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc2a, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IDot11AdHocNetworkNotificationSink *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnStatusChange;
+			public function HRESULT(IDot11AdHocNetworkNotificationSink *self, DOT11_ADHOC_CONNECT_FAIL_REASON eFailReason) OnConnectFail;
+		}
+		[CRepr]
+		public struct IDot11AdHocInterface : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc2b, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IDot11AdHocInterface *self, Guid* pSignature) GetDeviceSignature;
+			public function HRESULT(IDot11AdHocInterface *self, PWSTR* ppszName) GetFriendlyName;
+			public function HRESULT(IDot11AdHocInterface *self, uint8* pf11d) IsDot11d;
+			public function HRESULT(IDot11AdHocInterface *self, uint8* pfAdHocCapable) IsAdHocCapable;
+			public function HRESULT(IDot11AdHocInterface *self, uint8* pfIsRadioOn) IsRadioOn;
+			public function HRESULT(IDot11AdHocInterface *self, IDot11AdHocNetwork** ppNetwork) GetActiveNetwork;
+			public function HRESULT(IDot11AdHocInterface *self, IEnumDot11AdHocSecuritySettings** ppEnum) GetIEnumSecuritySettings;
+			public function HRESULT(IDot11AdHocInterface *self, Guid* pFilterGuid, IEnumDot11AdHocNetworks** ppEnum) GetIEnumDot11AdHocNetworks;
+			public function HRESULT(IDot11AdHocInterface *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS* pState) GetStatus;
+		}
+		[CRepr]
+		public struct IEnumDot11AdHocInterfaces : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc2c, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IEnumDot11AdHocInterfaces *self, uint32 cElt, IDot11AdHocInterface** rgElt, uint32* pcEltFetched) Next;
+			public function HRESULT(IEnumDot11AdHocInterfaces *self, uint32 cElt) Skip;
+			public function HRESULT(IEnumDot11AdHocInterfaces *self) Reset;
+			public function HRESULT(IEnumDot11AdHocInterfaces *self, IEnumDot11AdHocInterfaces** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IEnumDot11AdHocSecuritySettings : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc2d, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IEnumDot11AdHocSecuritySettings *self, uint32 cElt, IDot11AdHocSecuritySettings** rgElt, uint32* pcEltFetched) Next;
+			public function HRESULT(IEnumDot11AdHocSecuritySettings *self, uint32 cElt) Skip;
+			public function HRESULT(IEnumDot11AdHocSecuritySettings *self) Reset;
+			public function HRESULT(IEnumDot11AdHocSecuritySettings *self, IEnumDot11AdHocSecuritySettings** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IDot11AdHocSecuritySettings : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc2e, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IDot11AdHocSecuritySettings *self, DOT11_ADHOC_AUTH_ALGORITHM* pAuth) GetDot11AuthAlgorithm;
+			public function HRESULT(IDot11AdHocSecuritySettings *self, DOT11_ADHOC_CIPHER_ALGORITHM* pCipher) GetDot11CipherAlgorithm;
+		}
+		[CRepr]
+		public struct IDot11AdHocInterfaceNotificationSink : IUnknown
+		{
+			public const new Guid IID = .(0x8f10cc2f, 0xcf0d, 0x42a0, 0xac, 0xbe, 0xe2, 0xde, 0x70, 0x07, 0x38, 0x4d);
+			
+			public function HRESULT(IDot11AdHocInterfaceNotificationSink *self, DOT11_ADHOC_NETWORK_CONNECTION_STATUS eStatus) OnConnectionStatusChange;
+		}
 		
 		// --- Functions ---
 		

@@ -144,13 +144,82 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IVisualTreeServiceCallback {}
-		public struct IVisualTreeServiceCallback2 {}
-		public struct IVisualTreeService {}
-		public struct IXamlDiagnostics {}
-		public struct IBitmapData {}
-		public struct IVisualTreeService2 {}
-		public struct IVisualTreeService3 {}
+		[CRepr]
+		public struct IVisualTreeServiceCallback : IUnknown
+		{
+			public const new Guid IID = .(0xaa7a8931, 0x80e4, 0x4fec, 0x8f, 0x3b, 0x55, 0x3f, 0x87, 0xb4, 0x96, 0x6e);
+			
+			public function HRESULT(IVisualTreeServiceCallback *self, ParentChildRelation relation, VisualElement element, VisualMutationType mutationType) OnVisualTreeChange;
+		}
+		[CRepr]
+		public struct IVisualTreeServiceCallback2 : IVisualTreeServiceCallback
+		{
+			public const new Guid IID = .(0xbad9eb88, 0xae77, 0x4397, 0xb9, 0x48, 0x5f, 0xa2, 0xdb, 0x0a, 0x19, 0xea);
+			
+			public function HRESULT(IVisualTreeServiceCallback2 *self, uint64 element, VisualElementState elementState, PWSTR context) OnElementStateChanged;
+		}
+		[CRepr]
+		public struct IVisualTreeService : IUnknown
+		{
+			public const new Guid IID = .(0xa593b11a, 0xd17f, 0x48bb, 0x8f, 0x66, 0x83, 0x91, 0x07, 0x31, 0xc8, 0xa5);
+			
+			public function HRESULT(IVisualTreeService *self, IVisualTreeServiceCallback* pCallback) AdviseVisualTreeChange;
+			public function HRESULT(IVisualTreeService *self, IVisualTreeServiceCallback* pCallback) UnadviseVisualTreeChange;
+			public function HRESULT(IVisualTreeService *self, uint32* pCount, EnumType** ppEnums) GetEnums;
+			public function HRESULT(IVisualTreeService *self, BSTR typeName, BSTR value, uint64* pInstanceHandle) CreateInstance;
+			public function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint32* pSourceCount, PropertyChainSource** ppPropertySources, uint32* pPropertyCount, PropertyChainValue** ppPropertyValues) GetPropertyValuesChain;
+			public function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint64 value, uint32 propertyIndex) SetProperty;
+			public function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint32 propertyIndex) ClearProperty;
+			public function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint32* pCollectionSize) GetCollectionCount;
+			public function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint32 startIndex, uint32* pElementCount, CollectionElementValue** ppElementValues) GetCollectionElements;
+			public function HRESULT(IVisualTreeService *self, uint64 parent, uint64 child, uint32 index) AddChild;
+			public function HRESULT(IVisualTreeService *self, uint64 parent, uint32 index) RemoveChild;
+			public function HRESULT(IVisualTreeService *self, uint64 parent) ClearChildren;
+		}
+		[CRepr]
+		public struct IXamlDiagnostics : IUnknown
+		{
+			public const new Guid IID = .(0x18c9e2b6, 0x3f43, 0x4116, 0x9f, 0x2b, 0xff, 0x93, 0x5d, 0x77, 0x70, 0xd2);
+			
+			public function HRESULT(IXamlDiagnostics *self, IInspectable** ppDispatcher) GetDispatcher;
+			public function HRESULT(IXamlDiagnostics *self, IInspectable** ppLayer) GetUiLayer;
+			public function HRESULT(IXamlDiagnostics *self, IInspectable** ppApplication) GetApplication;
+			public function HRESULT(IXamlDiagnostics *self, uint64 instanceHandle, IInspectable** ppInstance) GetIInspectableFromHandle;
+			public function HRESULT(IXamlDiagnostics *self, IInspectable* pInstance, uint64* pHandle) GetHandleFromIInspectable;
+			public function HRESULT(IXamlDiagnostics *self, RECT rect, uint32* pCount, uint64** ppInstanceHandles) HitTest;
+			public function HRESULT(IXamlDiagnostics *self, IInspectable* pInstance, uint64* pInstanceHandle) RegisterInstance;
+			public function HRESULT(IXamlDiagnostics *self, BSTR* pInitializationData) GetInitializationData;
+		}
+		[CRepr]
+		public struct IBitmapData : IUnknown
+		{
+			public const new Guid IID = .(0xd1a34ef2, 0xcad8, 0x4635, 0xa3, 0xd2, 0xfc, 0xda, 0x8d, 0x3f, 0x3c, 0xaf);
+			
+			public function HRESULT(IBitmapData *self, uint32 sourceOffsetInBytes, uint32 maxBytesToCopy, uint8* pvBytes, uint32* numberOfBytesCopied) CopyBytesTo;
+			public function HRESULT(IBitmapData *self, uint32* pStride) GetStride;
+			public function HRESULT(IBitmapData *self, BitmapDescription* pBitmapDescription) GetBitmapDescription;
+			public function HRESULT(IBitmapData *self, BitmapDescription* pBitmapDescription) GetSourceBitmapDescription;
+		}
+		[CRepr]
+		public struct IVisualTreeService2 : IVisualTreeService
+		{
+			public const new Guid IID = .(0x130f5136, 0xec43, 0x4f61, 0x89, 0xc7, 0x98, 0x01, 0xa3, 0x6d, 0x2e, 0x95);
+			
+			public function HRESULT(IVisualTreeService2 *self, uint64 object, PWSTR propertyName, uint32* pPropertyIndex) GetPropertyIndex;
+			public function HRESULT(IVisualTreeService2 *self, uint64 object, uint32 propertyIndex, uint64* pValue) GetProperty;
+			public function HRESULT(IVisualTreeService2 *self, uint64 resourceDictionary, uint64 key, uint64 newValue) ReplaceResource;
+			public function HRESULT(IVisualTreeService2 *self, uint64 handle, RenderTargetBitmapOptions options, uint32 maxPixelWidth, uint32 maxPixelHeight, IBitmapData** ppBitmapData) RenderTargetBitmap;
+		}
+		[CRepr]
+		public struct IVisualTreeService3 : IVisualTreeService2
+		{
+			public const new Guid IID = .(0x0e79c6e0, 0x85a0, 0x4be8, 0xb4, 0x1a, 0x65, 0x5c, 0xf1, 0xfd, 0x19, 0xbd);
+			
+			public function HRESULT(IVisualTreeService3 *self, uint64 resourceContext, PWSTR resourceName, ResourceType resourceType, uint32 propertyIndex) ResolveResource;
+			public function HRESULT(IVisualTreeService3 *self, uint64 dictionaryHandle, PWSTR resourceName, BOOL resourceIsImplicitStyle, uint64* resourceHandle) GetDictionaryItem;
+			public function HRESULT(IVisualTreeService3 *self, uint64 dictionaryHandle, uint64 resourceKey, uint64 resourceHandle) AddDictionaryItem;
+			public function HRESULT(IVisualTreeService3 *self, uint64 dictionaryHandle, uint64 resourceKey) RemoveDictionaryItem;
+		}
 		
 		// --- Functions ---
 		

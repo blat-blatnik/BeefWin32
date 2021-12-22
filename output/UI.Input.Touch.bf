@@ -113,9 +113,97 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct _IManipulationEvents {}
-		public struct IInertiaProcessor {}
-		public struct IManipulationProcessor {}
+		[CRepr]
+		public struct _IManipulationEvents : IUnknown
+		{
+			public const new Guid IID = .(0x4f62c8da, 0x9c53, 0x4b22, 0x93, 0xdf, 0x92, 0x7a, 0x86, 0x2b, 0xbb, 0x03);
+			
+			public function HRESULT(_IManipulationEvents *self, float x, float y) ManipulationStarted;
+			public function HRESULT(_IManipulationEvents *self, float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationDelta;
+			public function HRESULT(_IManipulationEvents *self, float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation) ManipulationCompleted;
+		}
+		[CRepr]
+		public struct IInertiaProcessor : IUnknown
+		{
+			public const new Guid IID = .(0x18b00c6d, 0xc5ee, 0x41b1, 0x90, 0xa9, 0x9d, 0x4a, 0x92, 0x90, 0x95, 0xad);
+			
+			public function HRESULT(IInertiaProcessor *self, float* x) get_InitialOriginX;
+			public function HRESULT(IInertiaProcessor *self, float x) put_InitialOriginX;
+			public function HRESULT(IInertiaProcessor *self, float* y) get_InitialOriginY;
+			public function HRESULT(IInertiaProcessor *self, float y) put_InitialOriginY;
+			public function HRESULT(IInertiaProcessor *self, float* x) get_InitialVelocityX;
+			public function HRESULT(IInertiaProcessor *self, float x) put_InitialVelocityX;
+			public function HRESULT(IInertiaProcessor *self, float* y) get_InitialVelocityY;
+			public function HRESULT(IInertiaProcessor *self, float y) put_InitialVelocityY;
+			public function HRESULT(IInertiaProcessor *self, float* velocity) get_InitialAngularVelocity;
+			public function HRESULT(IInertiaProcessor *self, float velocity) put_InitialAngularVelocity;
+			public function HRESULT(IInertiaProcessor *self, float* velocity) get_InitialExpansionVelocity;
+			public function HRESULT(IInertiaProcessor *self, float velocity) put_InitialExpansionVelocity;
+			public function HRESULT(IInertiaProcessor *self, float* radius) get_InitialRadius;
+			public function HRESULT(IInertiaProcessor *self, float radius) put_InitialRadius;
+			public function HRESULT(IInertiaProcessor *self, float* left) get_BoundaryLeft;
+			public function HRESULT(IInertiaProcessor *self, float left) put_BoundaryLeft;
+			public function HRESULT(IInertiaProcessor *self, float* top) get_BoundaryTop;
+			public function HRESULT(IInertiaProcessor *self, float top) put_BoundaryTop;
+			public function HRESULT(IInertiaProcessor *self, float* right) get_BoundaryRight;
+			public function HRESULT(IInertiaProcessor *self, float right) put_BoundaryRight;
+			public function HRESULT(IInertiaProcessor *self, float* bottom) get_BoundaryBottom;
+			public function HRESULT(IInertiaProcessor *self, float bottom) put_BoundaryBottom;
+			public function HRESULT(IInertiaProcessor *self, float* left) get_ElasticMarginLeft;
+			public function HRESULT(IInertiaProcessor *self, float left) put_ElasticMarginLeft;
+			public function HRESULT(IInertiaProcessor *self, float* top) get_ElasticMarginTop;
+			public function HRESULT(IInertiaProcessor *self, float top) put_ElasticMarginTop;
+			public function HRESULT(IInertiaProcessor *self, float* right) get_ElasticMarginRight;
+			public function HRESULT(IInertiaProcessor *self, float right) put_ElasticMarginRight;
+			public function HRESULT(IInertiaProcessor *self, float* bottom) get_ElasticMarginBottom;
+			public function HRESULT(IInertiaProcessor *self, float bottom) put_ElasticMarginBottom;
+			public function HRESULT(IInertiaProcessor *self, float* displacement) get_DesiredDisplacement;
+			public function HRESULT(IInertiaProcessor *self, float displacement) put_DesiredDisplacement;
+			public function HRESULT(IInertiaProcessor *self, float* rotation) get_DesiredRotation;
+			public function HRESULT(IInertiaProcessor *self, float rotation) put_DesiredRotation;
+			public function HRESULT(IInertiaProcessor *self, float* expansion) get_DesiredExpansion;
+			public function HRESULT(IInertiaProcessor *self, float expansion) put_DesiredExpansion;
+			public function HRESULT(IInertiaProcessor *self, float* deceleration) get_DesiredDeceleration;
+			public function HRESULT(IInertiaProcessor *self, float deceleration) put_DesiredDeceleration;
+			public function HRESULT(IInertiaProcessor *self, float* deceleration) get_DesiredAngularDeceleration;
+			public function HRESULT(IInertiaProcessor *self, float deceleration) put_DesiredAngularDeceleration;
+			public function HRESULT(IInertiaProcessor *self, float* deceleration) get_DesiredExpansionDeceleration;
+			public function HRESULT(IInertiaProcessor *self, float deceleration) put_DesiredExpansionDeceleration;
+			public function HRESULT(IInertiaProcessor *self, uint32* timestamp) get_InitialTimestamp;
+			public function HRESULT(IInertiaProcessor *self, uint32 timestamp) put_InitialTimestamp;
+			public function HRESULT(IInertiaProcessor *self) Reset;
+			public function HRESULT(IInertiaProcessor *self, BOOL* completed) Process;
+			public function HRESULT(IInertiaProcessor *self, uint32 timestamp, BOOL* completed) ProcessTime;
+			public function HRESULT(IInertiaProcessor *self) Complete;
+			public function HRESULT(IInertiaProcessor *self, uint32 timestamp) CompleteTime;
+		}
+		[CRepr]
+		public struct IManipulationProcessor : IUnknown
+		{
+			public const new Guid IID = .(0xa22ac519, 0x8300, 0x48a0, 0xbe, 0xf4, 0xf1, 0xbe, 0x87, 0x37, 0xdb, 0xa4);
+			
+			public function HRESULT(IManipulationProcessor *self, MANIPULATION_PROCESSOR_MANIPULATIONS* manipulations) get_SupportedManipulations;
+			public function HRESULT(IManipulationProcessor *self, MANIPULATION_PROCESSOR_MANIPULATIONS manipulations) put_SupportedManipulations;
+			public function HRESULT(IManipulationProcessor *self, float* pivotPointX) get_PivotPointX;
+			public function HRESULT(IManipulationProcessor *self, float pivotPointX) put_PivotPointX;
+			public function HRESULT(IManipulationProcessor *self, float* pivotPointY) get_PivotPointY;
+			public function HRESULT(IManipulationProcessor *self, float pivotPointY) put_PivotPointY;
+			public function HRESULT(IManipulationProcessor *self, float* pivotRadius) get_PivotRadius;
+			public function HRESULT(IManipulationProcessor *self, float pivotRadius) put_PivotRadius;
+			public function HRESULT(IManipulationProcessor *self) CompleteManipulation;
+			public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y) ProcessDown;
+			public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y) ProcessMove;
+			public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y) ProcessUp;
+			public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessDownWithTime;
+			public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessMoveWithTime;
+			public function HRESULT(IManipulationProcessor *self, uint32 manipulatorId, float x, float y, uint32 timestamp) ProcessUpWithTime;
+			public function HRESULT(IManipulationProcessor *self, float* velocityX) GetVelocityX;
+			public function HRESULT(IManipulationProcessor *self, float* velocityY) GetVelocityY;
+			public function HRESULT(IManipulationProcessor *self, float* expansionVelocity) GetExpansionVelocity;
+			public function HRESULT(IManipulationProcessor *self, float* angularVelocity) GetAngularVelocity;
+			public function HRESULT(IManipulationProcessor *self, float* minRadius) get_MinimumScaleRotateRadius;
+			public function HRESULT(IManipulationProcessor *self, float minRadius) put_MinimumScaleRotateRadius;
+		}
 		
 		// --- Functions ---
 		

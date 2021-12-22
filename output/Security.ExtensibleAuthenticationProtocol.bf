@@ -970,12 +970,62 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IRouterProtocolConfig {}
-		public struct IAuthenticationProviderConfig {}
-		public struct IAccountingProviderConfig {}
-		public struct IEAPProviderConfig {}
-		public struct IEAPProviderConfig2 {}
-		public struct IEAPProviderConfig3 {}
+		[CRepr]
+		public struct IRouterProtocolConfig : IUnknown
+		{
+			public const new Guid IID = .(0x66a2db16, 0xd706, 0x11d0, 0xa3, 0x7b, 0x00, 0xc0, 0x4f, 0xc9, 0xda, 0x04);
+			
+			public function HRESULT(IRouterProtocolConfig *self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, IUnknown* pRouter, uint uReserved1) AddProtocol;
+			public function HRESULT(IRouterProtocolConfig *self, PWSTR pszMachineName, uint32 dwTransportId, uint32 dwProtocolId, HWND hWnd, uint32 dwFlags, IUnknown* pRouter, uint uReserved1) RemoveProtocol;
+		}
+		[CRepr]
+		public struct IAuthenticationProviderConfig : IUnknown
+		{
+			public const new Guid IID = .(0x66a2db17, 0xd706, 0x11d0, 0xa3, 0x7b, 0x00, 0xc0, 0x4f, 0xc9, 0xda, 0x04);
+			
+			public function HRESULT(IAuthenticationProviderConfig *self, PWSTR pszMachineName, uint* puConnectionParam) Initialize;
+			public function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam) Uninitialize;
+			public function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
+			public function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
+			public function HRESULT(IAuthenticationProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
+		}
+		[CRepr]
+		public struct IAccountingProviderConfig : IUnknown
+		{
+			public const new Guid IID = .(0x66a2db18, 0xd706, 0x11d0, 0xa3, 0x7b, 0x00, 0xc0, 0x4f, 0xc9, 0xda, 0x04);
+			
+			public function HRESULT(IAccountingProviderConfig *self, PWSTR pszMachineName, uint* puConnectionParam) Initialize;
+			public function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam) Uninitialize;
+			public function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam, HWND hWnd, uint32 dwFlags, uint uReserved1, uint uReserved2) Configure;
+			public function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Activate;
+			public function HRESULT(IAccountingProviderConfig *self, uint uConnectionParam, uint uReserved1, uint uReserved2) Deactivate;
+		}
+		[CRepr]
+		public struct IEAPProviderConfig : IUnknown
+		{
+			public const new Guid IID = .(0x66a2db19, 0xd706, 0x11d0, 0xa3, 0x7b, 0x00, 0xc0, 0x4f, 0xc9, 0xda, 0x04);
+			
+			public function HRESULT(IEAPProviderConfig *self, PWSTR pszMachineName, uint32 dwEapTypeId, uint* puConnectionParam) Initialize;
+			public function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam) Uninitialize;
+			public function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint uReserved1, uint uReserved2) ServerInvokeConfigUI;
+			public function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8** ppConnectionDataOut, uint32* pdwSizeOfConnectionDataOut) RouterInvokeConfigUI;
+			public function HRESULT(IEAPProviderConfig *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hwndParent, uint32 dwFlags, uint8* pConnectionDataIn, uint32 dwSizeOfConnectionDataIn, uint8* pUserDataIn, uint32 dwSizeOfUserDataIn, uint8** ppUserDataOut, uint32* pdwSizeOfUserDataOut) RouterInvokeCredentialsUI;
+		}
+		[CRepr]
+		public struct IEAPProviderConfig2 : IEAPProviderConfig
+		{
+			public const new Guid IID = .(0xd565917a, 0x85c4, 0x4466, 0x85, 0x6e, 0x67, 0x1c, 0x37, 0x42, 0xea, 0x9a);
+			
+			public function HRESULT(IEAPProviderConfig2 *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint8* pConfigDataIn, uint32 dwSizeOfConfigDataIn, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut) ServerInvokeConfigUI2;
+			public function HRESULT(IEAPProviderConfig2 *self, uint32 dwEapTypeId, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut) GetGlobalConfig;
+		}
+		[CRepr]
+		public struct IEAPProviderConfig3 : IEAPProviderConfig2
+		{
+			public const new Guid IID = .(0xb78ecd12, 0x68bb, 0x4f86, 0x9b, 0xf0, 0x84, 0x38, 0xdd, 0x3b, 0xe9, 0x82);
+			
+			public function HRESULT(IEAPProviderConfig3 *self, uint32 dwEapTypeId, uint uConnectionParam, HWND hWnd, uint8* pConfigDataIn, uint32 dwSizeOfConfigDataIn, uint8** ppConfigDataOut, uint32* pdwSizeOfConfigDataOut, uint uReserved) ServerInvokeCertificateConfigUI;
+		}
 		
 		// --- Functions ---
 		
@@ -998,11 +1048,11 @@ namespace Win32
 		[Import("eappcfg.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 EapHostPeerQueryUIBlobFromInteractiveUIInputFields(uint32 dwVersion, uint32 dwFlags, uint32 dwSizeofUIContextData, uint8* pUIContextData, EAP_INTERACTIVE_UI_DATA* pEapInteractiveUIData, uint32* pdwSizeOfDataFromInteractiveUI, uint8** ppDataFromInteractiveUI, EAP_ERROR** ppEapError, void** ppvReserved);
 		[Import("eappcfg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EapHostPeerConfigXml2Blob(uint32 dwFlags, IXMLDOMNode pConfigDoc, uint32* pdwSizeOfConfigOut, uint8** ppConfigOut, EAP_METHOD_TYPE* pEapMethodType, EAP_ERROR** ppEapError);
+		public static extern uint32 EapHostPeerConfigXml2Blob(uint32 dwFlags, IXMLDOMNode* pConfigDoc, uint32* pdwSizeOfConfigOut, uint8** ppConfigOut, EAP_METHOD_TYPE* pEapMethodType, EAP_ERROR** ppEapError);
 		[Import("eappcfg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EapHostPeerCredentialsXml2Blob(uint32 dwFlags, IXMLDOMNode pCredentialsDoc, uint32 dwSizeOfConfigIn, uint8* pConfigIn, uint32* pdwSizeOfCredentialsOut, uint8** ppCredentialsOut, EAP_METHOD_TYPE* pEapMethodType, EAP_ERROR** ppEapError);
+		public static extern uint32 EapHostPeerCredentialsXml2Blob(uint32 dwFlags, IXMLDOMNode* pCredentialsDoc, uint32 dwSizeOfConfigIn, uint8* pConfigIn, uint32* pdwSizeOfCredentialsOut, uint8** ppCredentialsOut, EAP_METHOD_TYPE* pEapMethodType, EAP_ERROR** ppEapError);
 		[Import("eappcfg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EapHostPeerConfigBlob2Xml(uint32 dwFlags, EAP_METHOD_TYPE eapMethodType, uint32 dwSizeOfConfigIn, uint8* pConfigIn, IXMLDOMDocument2* ppConfigDoc, EAP_ERROR** ppEapError);
+		public static extern uint32 EapHostPeerConfigBlob2Xml(uint32 dwFlags, EAP_METHOD_TYPE eapMethodType, uint32 dwSizeOfConfigIn, uint8* pConfigIn, IXMLDOMDocument2** ppConfigDoc, EAP_ERROR** ppEapError);
 		[Import("eappcfg.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void EapHostPeerFreeMemory(uint8* pData);
 		[Import("eappcfg.dll"), CLink, CallingConvention(.Stdcall)]

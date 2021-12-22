@@ -555,67 +555,803 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IFsrmObject {}
-		public struct IFsrmCollection {}
-		public struct IFsrmMutableCollection {}
-		public struct IFsrmCommittableCollection {}
-		public struct IFsrmAction {}
-		public struct IFsrmActionEmail {}
-		public struct IFsrmActionEmail2 {}
-		public struct IFsrmActionReport {}
-		public struct IFsrmActionEventLog {}
-		public struct IFsrmActionCommand {}
-		public struct IFsrmSetting {}
-		public struct IFsrmPathMapper {}
-		public struct IFsrmExportImport {}
-		public struct IFsrmDerivedObjectsResult {}
-		public struct IFsrmAccessDeniedRemediationClient {}
-		public struct IFsrmQuotaBase {}
-		public struct IFsrmQuotaObject {}
-		public struct IFsrmQuota {}
-		public struct IFsrmAutoApplyQuota {}
-		public struct IFsrmQuotaManager {}
-		public struct IFsrmQuotaManagerEx {}
-		public struct IFsrmQuotaTemplate {}
-		public struct IFsrmQuotaTemplateImported {}
-		public struct IFsrmQuotaTemplateManager {}
-		public struct IFsrmFileGroup {}
-		public struct IFsrmFileGroupImported {}
-		public struct IFsrmFileGroupManager {}
-		public struct IFsrmFileScreenBase {}
-		public struct IFsrmFileScreen {}
-		public struct IFsrmFileScreenException {}
-		public struct IFsrmFileScreenManager {}
-		public struct IFsrmFileScreenTemplate {}
-		public struct IFsrmFileScreenTemplateImported {}
-		public struct IFsrmFileScreenTemplateManager {}
-		public struct IFsrmReportManager {}
-		public struct IFsrmReportJob {}
-		public struct IFsrmReport {}
-		public struct IFsrmReportScheduler {}
-		public struct IFsrmFileManagementJobManager {}
-		public struct IFsrmFileManagementJob {}
-		public struct IFsrmPropertyCondition {}
-		public struct IFsrmFileCondition {}
-		public struct IFsrmFileConditionProperty {}
-		public struct IFsrmPropertyDefinition {}
-		public struct IFsrmPropertyDefinition2 {}
-		public struct IFsrmPropertyDefinitionValue {}
-		public struct IFsrmProperty {}
-		public struct IFsrmRule {}
-		public struct IFsrmClassificationRule {}
-		public struct IFsrmPipelineModuleDefinition {}
-		public struct IFsrmClassifierModuleDefinition {}
-		public struct IFsrmStorageModuleDefinition {}
-		public struct IFsrmClassificationManager {}
-		public struct IFsrmClassificationManager2 {}
-		public struct IFsrmPropertyBag {}
-		public struct IFsrmPropertyBag2 {}
-		public struct IFsrmPipelineModuleImplementation {}
-		public struct IFsrmClassifierModuleImplementation {}
-		public struct IFsrmStorageModuleImplementation {}
-		public struct IFsrmPipelineModuleConnector {}
-		public struct DIFsrmClassificationEvents {}
+		[CRepr]
+		public struct IFsrmObject : IDispatch
+		{
+			public const new Guid IID = .(0x22bcef93, 0x4a3f, 0x4183, 0x89, 0xf9, 0x2f, 0x8b, 0x8a, 0x62, 0x8a, 0xee);
+			
+			public function HRESULT(IFsrmObject *self, Guid* id) get_Id;
+			public function HRESULT(IFsrmObject *self, BSTR* description) get_Description;
+			public function HRESULT(IFsrmObject *self, BSTR description) put_Description;
+			public function HRESULT(IFsrmObject *self) Delete;
+			public function HRESULT(IFsrmObject *self) Commit;
+		}
+		[CRepr]
+		public struct IFsrmCollection : IDispatch
+		{
+			public const new Guid IID = .(0xf76fbf3b, 0x8ddd, 0x4b42, 0xb0, 0x5a, 0xcb, 0x1c, 0x3f, 0xf1, 0xfe, 0xe8);
+			
+			public function HRESULT(IFsrmCollection *self, IUnknown** unknown) get__NewEnum;
+			public function HRESULT(IFsrmCollection *self, int32 index, VARIANT* item) get_Item;
+			public function HRESULT(IFsrmCollection *self, int32* count) get_Count;
+			public function HRESULT(IFsrmCollection *self, FsrmCollectionState* state) get_State;
+			public function HRESULT(IFsrmCollection *self) Cancel;
+			public function HRESULT(IFsrmCollection *self, int32 waitSeconds, int16* completed) WaitForCompletion;
+			public function HRESULT(IFsrmCollection *self, Guid id, VARIANT* entry) GetById;
+		}
+		[CRepr]
+		public struct IFsrmMutableCollection : IFsrmCollection
+		{
+			public const new Guid IID = .(0x1bb617b8, 0x3886, 0x49dc, 0xaf, 0x82, 0xa6, 0xc9, 0x0f, 0xa3, 0x5d, 0xda);
+			
+			public function HRESULT(IFsrmMutableCollection *self, VARIANT item) Add;
+			public function HRESULT(IFsrmMutableCollection *self, int32 index) Remove;
+			public function HRESULT(IFsrmMutableCollection *self, Guid id) RemoveById;
+			public function HRESULT(IFsrmMutableCollection *self, IFsrmMutableCollection** collection) Clone;
+		}
+		[CRepr]
+		public struct IFsrmCommittableCollection : IFsrmMutableCollection
+		{
+			public const new Guid IID = .(0x96deb3b5, 0x8b91, 0x4a2a, 0x9d, 0x93, 0x80, 0xa3, 0x5d, 0x8a, 0xa8, 0x47);
+			
+			public function HRESULT(IFsrmCommittableCollection *self, FsrmCommitOptions options, IFsrmCollection** results) Commit;
+		}
+		[CRepr]
+		public struct IFsrmAction : IDispatch
+		{
+			public const new Guid IID = .(0x6cd6408a, 0xae60, 0x463b, 0x9e, 0xf1, 0xe1, 0x17, 0x53, 0x4d, 0x69, 0xdc);
+			
+			public function HRESULT(IFsrmAction *self, Guid* id) get_Id;
+			public function HRESULT(IFsrmAction *self, FsrmActionType* actionType) get_ActionType;
+			public function HRESULT(IFsrmAction *self, int32* minutes) get_RunLimitInterval;
+			public function HRESULT(IFsrmAction *self, int32 minutes) put_RunLimitInterval;
+			public function HRESULT(IFsrmAction *self) Delete;
+		}
+		[CRepr]
+		public struct IFsrmActionEmail : IFsrmAction
+		{
+			public const new Guid IID = .(0xd646567d, 0x26ae, 0x4caa, 0x9f, 0x84, 0x4e, 0x0a, 0xad, 0x20, 0x7f, 0xca);
+			
+			public function HRESULT(IFsrmActionEmail *self, BSTR* mailFrom) get_MailFrom;
+			public function HRESULT(IFsrmActionEmail *self, BSTR mailFrom) put_MailFrom;
+			public function HRESULT(IFsrmActionEmail *self, BSTR* mailReplyTo) get_MailReplyTo;
+			public function HRESULT(IFsrmActionEmail *self, BSTR mailReplyTo) put_MailReplyTo;
+			public function HRESULT(IFsrmActionEmail *self, BSTR* mailTo) get_MailTo;
+			public function HRESULT(IFsrmActionEmail *self, BSTR mailTo) put_MailTo;
+			public function HRESULT(IFsrmActionEmail *self, BSTR* mailCc) get_MailCc;
+			public function HRESULT(IFsrmActionEmail *self, BSTR mailCc) put_MailCc;
+			public function HRESULT(IFsrmActionEmail *self, BSTR* mailBcc) get_MailBcc;
+			public function HRESULT(IFsrmActionEmail *self, BSTR mailBcc) put_MailBcc;
+			public function HRESULT(IFsrmActionEmail *self, BSTR* mailSubject) get_MailSubject;
+			public function HRESULT(IFsrmActionEmail *self, BSTR mailSubject) put_MailSubject;
+			public function HRESULT(IFsrmActionEmail *self, BSTR* messageText) get_MessageText;
+			public function HRESULT(IFsrmActionEmail *self, BSTR messageText) put_MessageText;
+		}
+		[CRepr]
+		public struct IFsrmActionEmail2 : IFsrmActionEmail
+		{
+			public const new Guid IID = .(0x8276702f, 0x2532, 0x4839, 0x89, 0xbf, 0x48, 0x72, 0x60, 0x9a, 0x2e, 0xa4);
+			
+			public function HRESULT(IFsrmActionEmail2 *self, int32* attachmentFileListSize) get_AttachmentFileListSize;
+			public function HRESULT(IFsrmActionEmail2 *self, int32 attachmentFileListSize) put_AttachmentFileListSize;
+		}
+		[CRepr]
+		public struct IFsrmActionReport : IFsrmAction
+		{
+			public const new Guid IID = .(0x2dbe63c4, 0xb340, 0x48a0, 0xa5, 0xb0, 0x15, 0x8e, 0x07, 0xfc, 0x56, 0x7e);
+			
+			public function HRESULT(IFsrmActionReport *self, SAFEARRAY** reportTypes) get_ReportTypes;
+			public function HRESULT(IFsrmActionReport *self, SAFEARRAY* reportTypes) put_ReportTypes;
+			public function HRESULT(IFsrmActionReport *self, BSTR* mailTo) get_MailTo;
+			public function HRESULT(IFsrmActionReport *self, BSTR mailTo) put_MailTo;
+		}
+		[CRepr]
+		public struct IFsrmActionEventLog : IFsrmAction
+		{
+			public const new Guid IID = .(0x4c8f96c3, 0x5d94, 0x4f37, 0xa4, 0xf4, 0xf5, 0x6a, 0xb4, 0x63, 0x54, 0x6f);
+			
+			public function HRESULT(IFsrmActionEventLog *self, FsrmEventType* eventType) get_EventType;
+			public function HRESULT(IFsrmActionEventLog *self, FsrmEventType eventType) put_EventType;
+			public function HRESULT(IFsrmActionEventLog *self, BSTR* messageText) get_MessageText;
+			public function HRESULT(IFsrmActionEventLog *self, BSTR messageText) put_MessageText;
+		}
+		[CRepr]
+		public struct IFsrmActionCommand : IFsrmAction
+		{
+			public const new Guid IID = .(0x12937789, 0xe247, 0x4917, 0x9c, 0x20, 0xf3, 0xee, 0x9c, 0x7e, 0xe7, 0x83);
+			
+			public function HRESULT(IFsrmActionCommand *self, BSTR* executablePath) get_ExecutablePath;
+			public function HRESULT(IFsrmActionCommand *self, BSTR executablePath) put_ExecutablePath;
+			public function HRESULT(IFsrmActionCommand *self, BSTR* arguments) get_Arguments;
+			public function HRESULT(IFsrmActionCommand *self, BSTR arguments) put_Arguments;
+			public function HRESULT(IFsrmActionCommand *self, FsrmAccountType* account) get_Account;
+			public function HRESULT(IFsrmActionCommand *self, FsrmAccountType account) put_Account;
+			public function HRESULT(IFsrmActionCommand *self, BSTR* workingDirectory) get_WorkingDirectory;
+			public function HRESULT(IFsrmActionCommand *self, BSTR workingDirectory) put_WorkingDirectory;
+			public function HRESULT(IFsrmActionCommand *self, int16* monitorCommand) get_MonitorCommand;
+			public function HRESULT(IFsrmActionCommand *self, int16 monitorCommand) put_MonitorCommand;
+			public function HRESULT(IFsrmActionCommand *self, int32* minutes) get_KillTimeOut;
+			public function HRESULT(IFsrmActionCommand *self, int32 minutes) put_KillTimeOut;
+			public function HRESULT(IFsrmActionCommand *self, int16* logResults) get_LogResult;
+			public function HRESULT(IFsrmActionCommand *self, int16 logResults) put_LogResult;
+		}
+		[CRepr]
+		public struct IFsrmSetting : IDispatch
+		{
+			public const new Guid IID = .(0xf411d4fd, 0x14be, 0x4260, 0x8c, 0x40, 0x03, 0xb7, 0xc9, 0x5e, 0x60, 0x8a);
+			
+			public function HRESULT(IFsrmSetting *self, BSTR* smtpServer) get_SmtpServer;
+			public function HRESULT(IFsrmSetting *self, BSTR smtpServer) put_SmtpServer;
+			public function HRESULT(IFsrmSetting *self, BSTR* mailFrom) get_MailFrom;
+			public function HRESULT(IFsrmSetting *self, BSTR mailFrom) put_MailFrom;
+			public function HRESULT(IFsrmSetting *self, BSTR* adminEmail) get_AdminEmail;
+			public function HRESULT(IFsrmSetting *self, BSTR adminEmail) put_AdminEmail;
+			public function HRESULT(IFsrmSetting *self, int16* disableCommandLine) get_DisableCommandLine;
+			public function HRESULT(IFsrmSetting *self, int16 disableCommandLine) put_DisableCommandLine;
+			public function HRESULT(IFsrmSetting *self, int16* enableScreeningAudit) get_EnableScreeningAudit;
+			public function HRESULT(IFsrmSetting *self, int16 enableScreeningAudit) put_EnableScreeningAudit;
+			public function HRESULT(IFsrmSetting *self, BSTR mailTo) EmailTest;
+			public function HRESULT(IFsrmSetting *self, FsrmActionType actionType, int32 delayTimeMinutes) SetActionRunLimitInterval;
+			public function HRESULT(IFsrmSetting *self, FsrmActionType actionType, int32* delayTimeMinutes) GetActionRunLimitInterval;
+		}
+		[CRepr]
+		public struct IFsrmPathMapper : IDispatch
+		{
+			public const new Guid IID = .(0x6f4dbfff, 0x6920, 0x4821, 0xa6, 0xc3, 0xb7, 0xe9, 0x4c, 0x1f, 0xd6, 0x0c);
+			
+			public function HRESULT(IFsrmPathMapper *self, BSTR localPath, SAFEARRAY** sharePaths) GetSharePathsForLocalPath;
+		}
+		[CRepr]
+		public struct IFsrmExportImport : IDispatch
+		{
+			public const new Guid IID = .(0xefcb0ab1, 0x16c4, 0x4a79, 0x81, 0x2c, 0x72, 0x56, 0x14, 0xc3, 0x30, 0x6b);
+			
+			public function HRESULT(IFsrmExportImport *self, BSTR filePath, VARIANT* fileGroupNamesSafeArray, BSTR remoteHost) ExportFileGroups;
+			public function HRESULT(IFsrmExportImport *self, BSTR filePath, VARIANT* fileGroupNamesSafeArray, BSTR remoteHost, IFsrmCommittableCollection** fileGroups) ImportFileGroups;
+			public function HRESULT(IFsrmExportImport *self, BSTR filePath, VARIANT* templateNamesSafeArray, BSTR remoteHost) ExportFileScreenTemplates;
+			public function HRESULT(IFsrmExportImport *self, BSTR filePath, VARIANT* templateNamesSafeArray, BSTR remoteHost, IFsrmCommittableCollection** templates) ImportFileScreenTemplates;
+			public function HRESULT(IFsrmExportImport *self, BSTR filePath, VARIANT* templateNamesSafeArray, BSTR remoteHost) ExportQuotaTemplates;
+			public function HRESULT(IFsrmExportImport *self, BSTR filePath, VARIANT* templateNamesSafeArray, BSTR remoteHost, IFsrmCommittableCollection** templates) ImportQuotaTemplates;
+		}
+		[CRepr]
+		public struct IFsrmDerivedObjectsResult : IDispatch
+		{
+			public const new Guid IID = .(0x39322a2d, 0x38ee, 0x4d0d, 0x80, 0x95, 0x42, 0x1a, 0x80, 0x84, 0x9a, 0x82);
+			
+			public function HRESULT(IFsrmDerivedObjectsResult *self, IFsrmCollection** derivedObjects) get_DerivedObjects;
+			public function HRESULT(IFsrmDerivedObjectsResult *self, IFsrmCollection** results) get_Results;
+		}
+		[CRepr]
+		public struct IFsrmAccessDeniedRemediationClient : IDispatch
+		{
+			public const new Guid IID = .(0x40002314, 0x590b, 0x45a5, 0x8e, 0x1b, 0x8c, 0x05, 0xda, 0x52, 0x7e, 0x52);
+			
+			public function HRESULT(IFsrmAccessDeniedRemediationClient *self, uint parentWnd, BSTR accessPath, AdrClientErrorType errorType, int32 flags, BSTR windowTitle, BSTR windowMessage, int32* result) Show;
+		}
+		[CRepr]
+		public struct IFsrmQuotaBase : IFsrmObject
+		{
+			public const new Guid IID = .(0x1568a795, 0x3924, 0x4118, 0xb7, 0x4b, 0x68, 0xd8, 0xf0, 0xfa, 0x5d, 0xaf);
+			
+			public function HRESULT(IFsrmQuotaBase *self, VARIANT* quotaLimit) get_QuotaLimit;
+			public function HRESULT(IFsrmQuotaBase *self, VARIANT quotaLimit) put_QuotaLimit;
+			public function HRESULT(IFsrmQuotaBase *self, int32* quotaFlags) get_QuotaFlags;
+			public function HRESULT(IFsrmQuotaBase *self, int32 quotaFlags) put_QuotaFlags;
+			public function HRESULT(IFsrmQuotaBase *self, SAFEARRAY** thresholds) get_Thresholds;
+			public function HRESULT(IFsrmQuotaBase *self, int32 threshold) AddThreshold;
+			public function HRESULT(IFsrmQuotaBase *self, int32 threshold) DeleteThreshold;
+			public function HRESULT(IFsrmQuotaBase *self, int32 threshold, int32 newThreshold) ModifyThreshold;
+			public function HRESULT(IFsrmQuotaBase *self, int32 threshold, FsrmActionType actionType, IFsrmAction** action) CreateThresholdAction;
+			public function HRESULT(IFsrmQuotaBase *self, int32 threshold, IFsrmCollection** actions) EnumThresholdActions;
+		}
+		[CRepr]
+		public struct IFsrmQuotaObject : IFsrmQuotaBase
+		{
+			public const new Guid IID = .(0x42dc3511, 0x61d5, 0x48ae, 0xb6, 0xdc, 0x59, 0xfc, 0x00, 0xc0, 0xa8, 0xd6);
+			
+			public function HRESULT(IFsrmQuotaObject *self, BSTR* path) get_Path;
+			public function HRESULT(IFsrmQuotaObject *self, BSTR* userSid) get_UserSid;
+			public function HRESULT(IFsrmQuotaObject *self, BSTR* userAccount) get_UserAccount;
+			public function HRESULT(IFsrmQuotaObject *self, BSTR* quotaTemplateName) get_SourceTemplateName;
+			public function HRESULT(IFsrmQuotaObject *self, int16* matches) get_MatchesSourceTemplate;
+			public function HRESULT(IFsrmQuotaObject *self, BSTR quotaTemplateName) ApplyTemplate;
+		}
+		[CRepr]
+		public struct IFsrmQuota : IFsrmQuotaObject
+		{
+			public const new Guid IID = .(0x377f739d, 0x9647, 0x4b8e, 0x97, 0xd2, 0x5f, 0xfc, 0xe6, 0xd7, 0x59, 0xcd);
+			
+			public function HRESULT(IFsrmQuota *self, VARIANT* used) get_QuotaUsed;
+			public function HRESULT(IFsrmQuota *self, VARIANT* peakUsage) get_QuotaPeakUsage;
+			public function HRESULT(IFsrmQuota *self, double* peakUsageDateTime) get_QuotaPeakUsageTime;
+			public function HRESULT(IFsrmQuota *self) ResetPeakUsage;
+			public function HRESULT(IFsrmQuota *self) RefreshUsageProperties;
+		}
+		[CRepr]
+		public struct IFsrmAutoApplyQuota : IFsrmQuotaObject
+		{
+			public const new Guid IID = .(0xf82e5729, 0x6aba, 0x4740, 0xbf, 0xc7, 0xc7, 0xf5, 0x8f, 0x75, 0xfb, 0x7b);
+			
+			public function HRESULT(IFsrmAutoApplyQuota *self, SAFEARRAY** folders) get_ExcludeFolders;
+			public function HRESULT(IFsrmAutoApplyQuota *self, SAFEARRAY* folders) put_ExcludeFolders;
+			public function HRESULT(IFsrmAutoApplyQuota *self, FsrmCommitOptions commitOptions, FsrmTemplateApplyOptions applyOptions, IFsrmDerivedObjectsResult** derivedObjectsResult) CommitAndUpdateDerived;
+		}
+		[CRepr]
+		public struct IFsrmQuotaManager : IDispatch
+		{
+			public const new Guid IID = .(0x8bb68c7d, 0x19d8, 0x4ffb, 0x80, 0x9e, 0xbe, 0x4f, 0xc1, 0x73, 0x40, 0x14);
+			
+			public function HRESULT(IFsrmQuotaManager *self, SAFEARRAY** variables) get_ActionVariables;
+			public function HRESULT(IFsrmQuotaManager *self, SAFEARRAY** descriptions) get_ActionVariableDescriptions;
+			public function HRESULT(IFsrmQuotaManager *self, BSTR path, IFsrmQuota** quota) CreateQuota;
+			public function HRESULT(IFsrmQuotaManager *self, BSTR quotaTemplateName, BSTR path, IFsrmAutoApplyQuota** quota) CreateAutoApplyQuota;
+			public function HRESULT(IFsrmQuotaManager *self, BSTR path, IFsrmQuota** quota) GetQuota;
+			public function HRESULT(IFsrmQuotaManager *self, BSTR path, IFsrmAutoApplyQuota** quota) GetAutoApplyQuota;
+			public function HRESULT(IFsrmQuotaManager *self, BSTR path, IFsrmQuota** quota) GetRestrictiveQuota;
+			public function HRESULT(IFsrmQuotaManager *self, BSTR path, FsrmEnumOptions options, IFsrmCommittableCollection** quotas) EnumQuotas;
+			public function HRESULT(IFsrmQuotaManager *self, BSTR path, FsrmEnumOptions options, IFsrmCommittableCollection** quotas) EnumAutoApplyQuotas;
+			public function HRESULT(IFsrmQuotaManager *self, BSTR path, FsrmEnumOptions options, IFsrmCommittableCollection** quotas) EnumEffectiveQuotas;
+			public function HRESULT(IFsrmQuotaManager *self, BSTR strPath) Scan;
+			public function HRESULT(IFsrmQuotaManager *self, IFsrmCommittableCollection** collection) CreateQuotaCollection;
+		}
+		[CRepr]
+		public struct IFsrmQuotaManagerEx : IFsrmQuotaManager
+		{
+			public const new Guid IID = .(0x4846cb01, 0xd430, 0x494f, 0xab, 0xb4, 0xb1, 0x05, 0x49, 0x99, 0xfb, 0x09);
+			
+			public function HRESULT(IFsrmQuotaManagerEx *self, BSTR path, FsrmEnumOptions options, int16* affected) IsAffectedByQuota;
+		}
+		[CRepr]
+		public struct IFsrmQuotaTemplate : IFsrmQuotaBase
+		{
+			public const new Guid IID = .(0xa2efab31, 0x295e, 0x46bb, 0xb9, 0x76, 0xe8, 0x6d, 0x58, 0xb5, 0x2e, 0x8b);
+			
+			public function HRESULT(IFsrmQuotaTemplate *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmQuotaTemplate *self, BSTR name) put_Name;
+			public function HRESULT(IFsrmQuotaTemplate *self, BSTR quotaTemplateName) CopyTemplate;
+			public function HRESULT(IFsrmQuotaTemplate *self, FsrmCommitOptions commitOptions, FsrmTemplateApplyOptions applyOptions, IFsrmDerivedObjectsResult** derivedObjectsResult) CommitAndUpdateDerived;
+		}
+		[CRepr]
+		public struct IFsrmQuotaTemplateImported : IFsrmQuotaTemplate
+		{
+			public const new Guid IID = .(0x9a2bf113, 0xa329, 0x44cc, 0x80, 0x9a, 0x5c, 0x00, 0xfc, 0xe8, 0xda, 0x40);
+			
+			public function HRESULT(IFsrmQuotaTemplateImported *self, int16* overwrite) get_OverwriteOnCommit;
+			public function HRESULT(IFsrmQuotaTemplateImported *self, int16 overwrite) put_OverwriteOnCommit;
+		}
+		[CRepr]
+		public struct IFsrmQuotaTemplateManager : IDispatch
+		{
+			public const new Guid IID = .(0x4173ac41, 0x172d, 0x4d52, 0x96, 0x3c, 0xfd, 0xc7, 0xe4, 0x15, 0xf7, 0x17);
+			
+			public function HRESULT(IFsrmQuotaTemplateManager *self, IFsrmQuotaTemplate** quotaTemplate) CreateTemplate;
+			public function HRESULT(IFsrmQuotaTemplateManager *self, BSTR name, IFsrmQuotaTemplate** quotaTemplate) GetTemplate;
+			public function HRESULT(IFsrmQuotaTemplateManager *self, FsrmEnumOptions options, IFsrmCommittableCollection** quotaTemplates) EnumTemplates;
+			public function HRESULT(IFsrmQuotaTemplateManager *self, VARIANT* quotaTemplateNamesArray, BSTR* serializedQuotaTemplates) ExportTemplates;
+			public function HRESULT(IFsrmQuotaTemplateManager *self, BSTR serializedQuotaTemplates, VARIANT* quotaTemplateNamesArray, IFsrmCommittableCollection** quotaTemplates) ImportTemplates;
+		}
+		[CRepr]
+		public struct IFsrmFileGroup : IFsrmObject
+		{
+			public const new Guid IID = .(0x8dd04909, 0x0e34, 0x4d55, 0xaf, 0xaa, 0x89, 0xe1, 0xf1, 0xa1, 0xbb, 0xb9);
+			
+			public function HRESULT(IFsrmFileGroup *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmFileGroup *self, BSTR name) put_Name;
+			public function HRESULT(IFsrmFileGroup *self, IFsrmMutableCollection** members) get_Members;
+			public function HRESULT(IFsrmFileGroup *self, IFsrmMutableCollection* members) put_Members;
+			public function HRESULT(IFsrmFileGroup *self, IFsrmMutableCollection** nonMembers) get_NonMembers;
+			public function HRESULT(IFsrmFileGroup *self, IFsrmMutableCollection* nonMembers) put_NonMembers;
+		}
+		[CRepr]
+		public struct IFsrmFileGroupImported : IFsrmFileGroup
+		{
+			public const new Guid IID = .(0xad55f10b, 0x5f11, 0x4be7, 0x94, 0xef, 0xd9, 0xee, 0x2e, 0x47, 0x0d, 0xed);
+			
+			public function HRESULT(IFsrmFileGroupImported *self, int16* overwrite) get_OverwriteOnCommit;
+			public function HRESULT(IFsrmFileGroupImported *self, int16 overwrite) put_OverwriteOnCommit;
+		}
+		[CRepr]
+		public struct IFsrmFileGroupManager : IDispatch
+		{
+			public const new Guid IID = .(0x426677d5, 0x018c, 0x485c, 0x8a, 0x51, 0x20, 0xb8, 0x6d, 0x00, 0xbd, 0xc4);
+			
+			public function HRESULT(IFsrmFileGroupManager *self, IFsrmFileGroup** fileGroup) CreateFileGroup;
+			public function HRESULT(IFsrmFileGroupManager *self, BSTR name, IFsrmFileGroup** fileGroup) GetFileGroup;
+			public function HRESULT(IFsrmFileGroupManager *self, FsrmEnumOptions options, IFsrmCommittableCollection** fileGroups) EnumFileGroups;
+			public function HRESULT(IFsrmFileGroupManager *self, VARIANT* fileGroupNamesArray, BSTR* serializedFileGroups) ExportFileGroups;
+			public function HRESULT(IFsrmFileGroupManager *self, BSTR serializedFileGroups, VARIANT* fileGroupNamesArray, IFsrmCommittableCollection** fileGroups) ImportFileGroups;
+		}
+		[CRepr]
+		public struct IFsrmFileScreenBase : IFsrmObject
+		{
+			public const new Guid IID = .(0xf3637e80, 0x5b22, 0x4a2b, 0xa6, 0x37, 0xbb, 0xb6, 0x42, 0xb4, 0x1c, 0xfc);
+			
+			public function HRESULT(IFsrmFileScreenBase *self, IFsrmMutableCollection** blockList) get_BlockedFileGroups;
+			public function HRESULT(IFsrmFileScreenBase *self, IFsrmMutableCollection* blockList) put_BlockedFileGroups;
+			public function HRESULT(IFsrmFileScreenBase *self, int32* fileScreenFlags) get_FileScreenFlags;
+			public function HRESULT(IFsrmFileScreenBase *self, int32 fileScreenFlags) put_FileScreenFlags;
+			public function HRESULT(IFsrmFileScreenBase *self, FsrmActionType actionType, IFsrmAction** action) CreateAction;
+			public function HRESULT(IFsrmFileScreenBase *self, IFsrmCollection** actions) EnumActions;
+		}
+		[CRepr]
+		public struct IFsrmFileScreen : IFsrmFileScreenBase
+		{
+			public const new Guid IID = .(0x5f6325d3, 0xce88, 0x4733, 0x84, 0xc1, 0x2d, 0x6a, 0xef, 0xc5, 0xea, 0x07);
+			
+			public function HRESULT(IFsrmFileScreen *self, BSTR* path) get_Path;
+			public function HRESULT(IFsrmFileScreen *self, BSTR* fileScreenTemplateName) get_SourceTemplateName;
+			public function HRESULT(IFsrmFileScreen *self, int16* matches) get_MatchesSourceTemplate;
+			public function HRESULT(IFsrmFileScreen *self, BSTR* userSid) get_UserSid;
+			public function HRESULT(IFsrmFileScreen *self, BSTR* userAccount) get_UserAccount;
+			public function HRESULT(IFsrmFileScreen *self, BSTR fileScreenTemplateName) ApplyTemplate;
+		}
+		[CRepr]
+		public struct IFsrmFileScreenException : IFsrmObject
+		{
+			public const new Guid IID = .(0xbee7ce02, 0xdf77, 0x4515, 0x93, 0x89, 0x78, 0xf0, 0x1c, 0x5a, 0xfc, 0x1a);
+			
+			public function HRESULT(IFsrmFileScreenException *self, BSTR* path) get_Path;
+			public function HRESULT(IFsrmFileScreenException *self, IFsrmMutableCollection** allowList) get_AllowedFileGroups;
+			public function HRESULT(IFsrmFileScreenException *self, IFsrmMutableCollection* allowList) put_AllowedFileGroups;
+		}
+		[CRepr]
+		public struct IFsrmFileScreenManager : IDispatch
+		{
+			public const new Guid IID = .(0xff4fa04e, 0x5a94, 0x4bda, 0xa3, 0xa0, 0xd5, 0xb4, 0xd3, 0xc5, 0x2e, 0xba);
+			
+			public function HRESULT(IFsrmFileScreenManager *self, SAFEARRAY** variables) get_ActionVariables;
+			public function HRESULT(IFsrmFileScreenManager *self, SAFEARRAY** descriptions) get_ActionVariableDescriptions;
+			public function HRESULT(IFsrmFileScreenManager *self, BSTR path, IFsrmFileScreen** fileScreen) CreateFileScreen;
+			public function HRESULT(IFsrmFileScreenManager *self, BSTR path, IFsrmFileScreen** fileScreen) GetFileScreen;
+			public function HRESULT(IFsrmFileScreenManager *self, BSTR path, FsrmEnumOptions options, IFsrmCommittableCollection** fileScreens) EnumFileScreens;
+			public function HRESULT(IFsrmFileScreenManager *self, BSTR path, IFsrmFileScreenException** fileScreenException) CreateFileScreenException;
+			public function HRESULT(IFsrmFileScreenManager *self, BSTR path, IFsrmFileScreenException** fileScreenException) GetFileScreenException;
+			public function HRESULT(IFsrmFileScreenManager *self, BSTR path, FsrmEnumOptions options, IFsrmCommittableCollection** fileScreenExceptions) EnumFileScreenExceptions;
+			public function HRESULT(IFsrmFileScreenManager *self, IFsrmCommittableCollection** collection) CreateFileScreenCollection;
+		}
+		[CRepr]
+		public struct IFsrmFileScreenTemplate : IFsrmFileScreenBase
+		{
+			public const new Guid IID = .(0x205bebf8, 0xdd93, 0x452a, 0x95, 0xa6, 0x32, 0xb5, 0x66, 0xb3, 0x58, 0x28);
+			
+			public function HRESULT(IFsrmFileScreenTemplate *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmFileScreenTemplate *self, BSTR name) put_Name;
+			public function HRESULT(IFsrmFileScreenTemplate *self, BSTR fileScreenTemplateName) CopyTemplate;
+			public function HRESULT(IFsrmFileScreenTemplate *self, FsrmCommitOptions commitOptions, FsrmTemplateApplyOptions applyOptions, IFsrmDerivedObjectsResult** derivedObjectsResult) CommitAndUpdateDerived;
+		}
+		[CRepr]
+		public struct IFsrmFileScreenTemplateImported : IFsrmFileScreenTemplate
+		{
+			public const new Guid IID = .(0xe1010359, 0x3e5d, 0x4ecd, 0x9f, 0xe4, 0xef, 0x48, 0x62, 0x2f, 0xdf, 0x30);
+			
+			public function HRESULT(IFsrmFileScreenTemplateImported *self, int16* overwrite) get_OverwriteOnCommit;
+			public function HRESULT(IFsrmFileScreenTemplateImported *self, int16 overwrite) put_OverwriteOnCommit;
+		}
+		[CRepr]
+		public struct IFsrmFileScreenTemplateManager : IDispatch
+		{
+			public const new Guid IID = .(0xcfe36cba, 0x1949, 0x4e74, 0xa1, 0x4f, 0xf1, 0xd5, 0x80, 0xce, 0xaf, 0x13);
+			
+			public function HRESULT(IFsrmFileScreenTemplateManager *self, IFsrmFileScreenTemplate** fileScreenTemplate) CreateTemplate;
+			public function HRESULT(IFsrmFileScreenTemplateManager *self, BSTR name, IFsrmFileScreenTemplate** fileScreenTemplate) GetTemplate;
+			public function HRESULT(IFsrmFileScreenTemplateManager *self, FsrmEnumOptions options, IFsrmCommittableCollection** fileScreenTemplates) EnumTemplates;
+			public function HRESULT(IFsrmFileScreenTemplateManager *self, VARIANT* fileScreenTemplateNamesArray, BSTR* serializedFileScreenTemplates) ExportTemplates;
+			public function HRESULT(IFsrmFileScreenTemplateManager *self, BSTR serializedFileScreenTemplates, VARIANT* fileScreenTemplateNamesArray, IFsrmCommittableCollection** fileScreenTemplates) ImportTemplates;
+		}
+		[CRepr]
+		public struct IFsrmReportManager : IDispatch
+		{
+			public const new Guid IID = .(0x27b899fe, 0x6ffa, 0x4481, 0xa1, 0x84, 0xd3, 0xda, 0xad, 0xe8, 0xa0, 0x2b);
+			
+			public function HRESULT(IFsrmReportManager *self, FsrmEnumOptions options, IFsrmCollection** reportJobs) EnumReportJobs;
+			public function HRESULT(IFsrmReportManager *self, IFsrmReportJob** reportJob) CreateReportJob;
+			public function HRESULT(IFsrmReportManager *self, BSTR taskName, IFsrmReportJob** reportJob) GetReportJob;
+			public function HRESULT(IFsrmReportManager *self, FsrmReportGenerationContext context, BSTR* path) GetOutputDirectory;
+			public function HRESULT(IFsrmReportManager *self, FsrmReportGenerationContext context, BSTR path) SetOutputDirectory;
+			public function HRESULT(IFsrmReportManager *self, FsrmReportType reportType, FsrmReportFilter filter, int16* valid) IsFilterValidForReportType;
+			public function HRESULT(IFsrmReportManager *self, FsrmReportType reportType, FsrmReportFilter filter, VARIANT* filterValue) GetDefaultFilter;
+			public function HRESULT(IFsrmReportManager *self, FsrmReportType reportType, FsrmReportFilter filter, VARIANT filterValue) SetDefaultFilter;
+			public function HRESULT(IFsrmReportManager *self, FsrmReportLimit limit, VARIANT* limitValue) GetReportSizeLimit;
+			public function HRESULT(IFsrmReportManager *self, FsrmReportLimit limit, VARIANT limitValue) SetReportSizeLimit;
+		}
+		[CRepr]
+		public struct IFsrmReportJob : IFsrmObject
+		{
+			public const new Guid IID = .(0x38e87280, 0x715c, 0x4c7d, 0xa2, 0x80, 0xea, 0x16, 0x51, 0xa1, 0x9f, 0xef);
+			
+			public function HRESULT(IFsrmReportJob *self, BSTR* taskName) get_Task;
+			public function HRESULT(IFsrmReportJob *self, BSTR taskName) put_Task;
+			public function HRESULT(IFsrmReportJob *self, SAFEARRAY** namespaceRoots) get_NamespaceRoots;
+			public function HRESULT(IFsrmReportJob *self, SAFEARRAY* namespaceRoots) put_NamespaceRoots;
+			public function HRESULT(IFsrmReportJob *self, SAFEARRAY** formats) get_Formats;
+			public function HRESULT(IFsrmReportJob *self, SAFEARRAY* formats) put_Formats;
+			public function HRESULT(IFsrmReportJob *self, BSTR* mailTo) get_MailTo;
+			public function HRESULT(IFsrmReportJob *self, BSTR mailTo) put_MailTo;
+			public function HRESULT(IFsrmReportJob *self, FsrmReportRunningStatus* runningStatus) get_RunningStatus;
+			public function HRESULT(IFsrmReportJob *self, double* lastRun) get_LastRun;
+			public function HRESULT(IFsrmReportJob *self, BSTR* lastError) get_LastError;
+			public function HRESULT(IFsrmReportJob *self, BSTR* path) get_LastGeneratedInDirectory;
+			public function HRESULT(IFsrmReportJob *self, IFsrmCollection** reports) EnumReports;
+			public function HRESULT(IFsrmReportJob *self, FsrmReportType reportType, IFsrmReport** report) CreateReport;
+			public function HRESULT(IFsrmReportJob *self, FsrmReportGenerationContext context) Run;
+			public function HRESULT(IFsrmReportJob *self, int32 waitSeconds, int16* completed) WaitForCompletion;
+			public function HRESULT(IFsrmReportJob *self) Cancel;
+		}
+		[CRepr]
+		public struct IFsrmReport : IDispatch
+		{
+			public const new Guid IID = .(0xd8cc81d9, 0x46b8, 0x4fa4, 0xbf, 0xa5, 0x4a, 0xa9, 0xde, 0xc9, 0xb6, 0x38);
+			
+			public function HRESULT(IFsrmReport *self, FsrmReportType* reportType) get_Type;
+			public function HRESULT(IFsrmReport *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmReport *self, BSTR name) put_Name;
+			public function HRESULT(IFsrmReport *self, BSTR* description) get_Description;
+			public function HRESULT(IFsrmReport *self, BSTR description) put_Description;
+			public function HRESULT(IFsrmReport *self, BSTR* prefix) get_LastGeneratedFileNamePrefix;
+			public function HRESULT(IFsrmReport *self, FsrmReportFilter filter, VARIANT* filterValue) GetFilter;
+			public function HRESULT(IFsrmReport *self, FsrmReportFilter filter, VARIANT filterValue) SetFilter;
+			public function HRESULT(IFsrmReport *self) Delete;
+		}
+		[CRepr]
+		public struct IFsrmReportScheduler : IDispatch
+		{
+			public const new Guid IID = .(0x6879caf9, 0x6617, 0x4484, 0x87, 0x19, 0x71, 0xc3, 0xd8, 0x64, 0x5f, 0x94);
+			
+			public function HRESULT(IFsrmReportScheduler *self, VARIANT* namespacesSafeArray) VerifyNamespaces;
+			public function HRESULT(IFsrmReportScheduler *self, BSTR taskName, VARIANT* namespacesSafeArray, BSTR serializedTask) CreateScheduleTask;
+			public function HRESULT(IFsrmReportScheduler *self, BSTR taskName, VARIANT* namespacesSafeArray, BSTR serializedTask) ModifyScheduleTask;
+			public function HRESULT(IFsrmReportScheduler *self, BSTR taskName) DeleteScheduleTask;
+		}
+		[CRepr]
+		public struct IFsrmFileManagementJobManager : IDispatch
+		{
+			public const new Guid IID = .(0xee321ecb, 0xd95e, 0x48e9, 0x90, 0x7c, 0xc7, 0x68, 0x5a, 0x01, 0x32, 0x35);
+			
+			public function HRESULT(IFsrmFileManagementJobManager *self, SAFEARRAY** variables) get_ActionVariables;
+			public function HRESULT(IFsrmFileManagementJobManager *self, SAFEARRAY** descriptions) get_ActionVariableDescriptions;
+			public function HRESULT(IFsrmFileManagementJobManager *self, FsrmEnumOptions options, IFsrmCollection** fileManagementJobs) EnumFileManagementJobs;
+			public function HRESULT(IFsrmFileManagementJobManager *self, IFsrmFileManagementJob** fileManagementJob) CreateFileManagementJob;
+			public function HRESULT(IFsrmFileManagementJobManager *self, BSTR name, IFsrmFileManagementJob** fileManagementJob) GetFileManagementJob;
+		}
+		[CRepr]
+		public struct IFsrmFileManagementJob : IFsrmObject
+		{
+			public const new Guid IID = .(0x0770687e, 0x9f36, 0x4d6f, 0x87, 0x78, 0x59, 0x9d, 0x18, 0x84, 0x61, 0xc9);
+			
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR name) put_Name;
+			public function HRESULT(IFsrmFileManagementJob *self, SAFEARRAY** namespaceRoots) get_NamespaceRoots;
+			public function HRESULT(IFsrmFileManagementJob *self, SAFEARRAY* namespaceRoots) put_NamespaceRoots;
+			public function HRESULT(IFsrmFileManagementJob *self, int16* enabled) get_Enabled;
+			public function HRESULT(IFsrmFileManagementJob *self, int16 enabled) put_Enabled;
+			public function HRESULT(IFsrmFileManagementJob *self, FsrmFileManagementType* operationType) get_OperationType;
+			public function HRESULT(IFsrmFileManagementJob *self, FsrmFileManagementType operationType) put_OperationType;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR* expirationDirectory) get_ExpirationDirectory;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR expirationDirectory) put_ExpirationDirectory;
+			public function HRESULT(IFsrmFileManagementJob *self, IFsrmActionCommand** action) get_CustomAction;
+			public function HRESULT(IFsrmFileManagementJob *self, SAFEARRAY** notifications) get_Notifications;
+			public function HRESULT(IFsrmFileManagementJob *self, int32* loggingFlags) get_Logging;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 loggingFlags) put_Logging;
+			public function HRESULT(IFsrmFileManagementJob *self, int16* reportEnabled) get_ReportEnabled;
+			public function HRESULT(IFsrmFileManagementJob *self, int16 reportEnabled) put_ReportEnabled;
+			public function HRESULT(IFsrmFileManagementJob *self, SAFEARRAY** formats) get_Formats;
+			public function HRESULT(IFsrmFileManagementJob *self, SAFEARRAY* formats) put_Formats;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR* mailTo) get_MailTo;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR mailTo) put_MailTo;
+			public function HRESULT(IFsrmFileManagementJob *self, int32* daysSinceCreation) get_DaysSinceFileCreated;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 daysSinceCreation) put_DaysSinceFileCreated;
+			public function HRESULT(IFsrmFileManagementJob *self, int32* daysSinceAccess) get_DaysSinceFileLastAccessed;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 daysSinceAccess) put_DaysSinceFileLastAccessed;
+			public function HRESULT(IFsrmFileManagementJob *self, int32* daysSinceModify) get_DaysSinceFileLastModified;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 daysSinceModify) put_DaysSinceFileLastModified;
+			public function HRESULT(IFsrmFileManagementJob *self, IFsrmCollection** propertyConditions) get_PropertyConditions;
+			public function HRESULT(IFsrmFileManagementJob *self, double* fromDate) get_FromDate;
+			public function HRESULT(IFsrmFileManagementJob *self, double fromDate) put_FromDate;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR* taskName) get_Task;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR taskName) put_Task;
+			public function HRESULT(IFsrmFileManagementJob *self, SAFEARRAY** parameters) get_Parameters;
+			public function HRESULT(IFsrmFileManagementJob *self, SAFEARRAY* parameters) put_Parameters;
+			public function HRESULT(IFsrmFileManagementJob *self, FsrmReportRunningStatus* runningStatus) get_RunningStatus;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR* lastError) get_LastError;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR* path) get_LastReportPathWithoutExtension;
+			public function HRESULT(IFsrmFileManagementJob *self, double* lastRun) get_LastRun;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR* fileNamePattern) get_FileNamePattern;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR fileNamePattern) put_FileNamePattern;
+			public function HRESULT(IFsrmFileManagementJob *self, FsrmReportGenerationContext context) Run;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 waitSeconds, int16* completed) WaitForCompletion;
+			public function HRESULT(IFsrmFileManagementJob *self) Cancel;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 days) AddNotification;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 days) DeleteNotification;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 days, int32 newDays) ModifyNotification;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 days, FsrmActionType actionType, IFsrmAction** action) CreateNotificationAction;
+			public function HRESULT(IFsrmFileManagementJob *self, int32 days, IFsrmCollection** actions) EnumNotificationActions;
+			public function HRESULT(IFsrmFileManagementJob *self, BSTR name, IFsrmPropertyCondition** propertyCondition) CreatePropertyCondition;
+			public function HRESULT(IFsrmFileManagementJob *self, IFsrmActionCommand** customAction) CreateCustomAction;
+		}
+		[CRepr]
+		public struct IFsrmPropertyCondition : IDispatch
+		{
+			public const new Guid IID = .(0x326af66f, 0x2ac0, 0x4f68, 0xbf, 0x8c, 0x47, 0x59, 0xf0, 0x54, 0xfa, 0x29);
+			
+			public function HRESULT(IFsrmPropertyCondition *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmPropertyCondition *self, BSTR name) put_Name;
+			public function HRESULT(IFsrmPropertyCondition *self, FsrmPropertyConditionType* type) get_Type;
+			public function HRESULT(IFsrmPropertyCondition *self, FsrmPropertyConditionType type) put_Type;
+			public function HRESULT(IFsrmPropertyCondition *self, BSTR* value) get_Value;
+			public function HRESULT(IFsrmPropertyCondition *self, BSTR value) put_Value;
+			public function HRESULT(IFsrmPropertyCondition *self) Delete;
+		}
+		[CRepr]
+		public struct IFsrmFileCondition : IDispatch
+		{
+			public const new Guid IID = .(0x70684ffc, 0x691a, 0x4a1a, 0xb9, 0x22, 0x97, 0x75, 0x2e, 0x13, 0x8c, 0xc1);
+			
+			public function HRESULT(IFsrmFileCondition *self, FsrmFileConditionType* pVal) get_Type;
+			public function HRESULT(IFsrmFileCondition *self) Delete;
+		}
+		[CRepr]
+		public struct IFsrmFileConditionProperty : IFsrmFileCondition
+		{
+			public const new Guid IID = .(0x81926775, 0xb981, 0x4479, 0x98, 0x8f, 0xda, 0x17, 0x1d, 0x62, 0x73, 0x60);
+			
+			public function HRESULT(IFsrmFileConditionProperty *self, BSTR* pVal) get_PropertyName;
+			public function HRESULT(IFsrmFileConditionProperty *self, BSTR newVal) put_PropertyName;
+			public function HRESULT(IFsrmFileConditionProperty *self, FsrmFileSystemPropertyId* pVal) get_PropertyId;
+			public function HRESULT(IFsrmFileConditionProperty *self, FsrmFileSystemPropertyId newVal) put_PropertyId;
+			public function HRESULT(IFsrmFileConditionProperty *self, FsrmPropertyConditionType* pVal) get_Operator;
+			public function HRESULT(IFsrmFileConditionProperty *self, FsrmPropertyConditionType newVal) put_Operator;
+			public function HRESULT(IFsrmFileConditionProperty *self, FsrmPropertyValueType* pVal) get_ValueType;
+			public function HRESULT(IFsrmFileConditionProperty *self, FsrmPropertyValueType newVal) put_ValueType;
+			public function HRESULT(IFsrmFileConditionProperty *self, VARIANT* pVal) get_Value;
+			public function HRESULT(IFsrmFileConditionProperty *self, VARIANT newVal) put_Value;
+		}
+		[CRepr]
+		public struct IFsrmPropertyDefinition : IFsrmObject
+		{
+			public const new Guid IID = .(0xede0150f, 0xe9a3, 0x419c, 0x87, 0x7c, 0x01, 0xfe, 0x5d, 0x24, 0xc5, 0xd3);
+			
+			public function HRESULT(IFsrmPropertyDefinition *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmPropertyDefinition *self, BSTR name) put_Name;
+			public function HRESULT(IFsrmPropertyDefinition *self, FsrmPropertyDefinitionType* type) get_Type;
+			public function HRESULT(IFsrmPropertyDefinition *self, FsrmPropertyDefinitionType type) put_Type;
+			public function HRESULT(IFsrmPropertyDefinition *self, SAFEARRAY** possibleValues) get_PossibleValues;
+			public function HRESULT(IFsrmPropertyDefinition *self, SAFEARRAY* possibleValues) put_PossibleValues;
+			public function HRESULT(IFsrmPropertyDefinition *self, SAFEARRAY** valueDescriptions) get_ValueDescriptions;
+			public function HRESULT(IFsrmPropertyDefinition *self, SAFEARRAY* valueDescriptions) put_ValueDescriptions;
+			public function HRESULT(IFsrmPropertyDefinition *self, SAFEARRAY** parameters) get_Parameters;
+			public function HRESULT(IFsrmPropertyDefinition *self, SAFEARRAY* parameters) put_Parameters;
+		}
+		[CRepr]
+		public struct IFsrmPropertyDefinition2 : IFsrmPropertyDefinition
+		{
+			public const new Guid IID = .(0x47782152, 0xd16c, 0x4229, 0xb4, 0xe1, 0x0d, 0xdf, 0xe3, 0x08, 0xb9, 0xf6);
+			
+			public function HRESULT(IFsrmPropertyDefinition2 *self, int32* propertyDefinitionFlags) get_PropertyDefinitionFlags;
+			public function HRESULT(IFsrmPropertyDefinition2 *self, BSTR* name) get_DisplayName;
+			public function HRESULT(IFsrmPropertyDefinition2 *self, BSTR name) put_DisplayName;
+			public function HRESULT(IFsrmPropertyDefinition2 *self, int32* appliesTo) get_AppliesTo;
+			public function HRESULT(IFsrmPropertyDefinition2 *self, IFsrmCollection** valueDefinitions) get_ValueDefinitions;
+		}
+		[CRepr]
+		public struct IFsrmPropertyDefinitionValue : IDispatch
+		{
+			public const new Guid IID = .(0xe946d148, 0xbd67, 0x4178, 0x8e, 0x22, 0x1c, 0x44, 0x92, 0x5e, 0xd7, 0x10);
+			
+			public function HRESULT(IFsrmPropertyDefinitionValue *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmPropertyDefinitionValue *self, BSTR* displayName) get_DisplayName;
+			public function HRESULT(IFsrmPropertyDefinitionValue *self, BSTR* description) get_Description;
+			public function HRESULT(IFsrmPropertyDefinitionValue *self, BSTR* uniqueID) get_UniqueID;
+		}
+		[CRepr]
+		public struct IFsrmProperty : IDispatch
+		{
+			public const new Guid IID = .(0x4a73fee4, 0x4102, 0x4fcc, 0x9f, 0xfb, 0x38, 0x61, 0x4f, 0x9e, 0xe7, 0x68);
+			
+			public function HRESULT(IFsrmProperty *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmProperty *self, BSTR* value) get_Value;
+			public function HRESULT(IFsrmProperty *self, SAFEARRAY** sources) get_Sources;
+			public function HRESULT(IFsrmProperty *self, int32* flags) get_PropertyFlags;
+		}
+		[CRepr]
+		public struct IFsrmRule : IFsrmObject
+		{
+			public const new Guid IID = .(0xcb0df960, 0x16f5, 0x4495, 0x90, 0x79, 0x3f, 0x93, 0x60, 0xd8, 0x31, 0xdf);
+			
+			public function HRESULT(IFsrmRule *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmRule *self, BSTR name) put_Name;
+			public function HRESULT(IFsrmRule *self, FsrmRuleType* ruleType) get_RuleType;
+			public function HRESULT(IFsrmRule *self, BSTR* moduleDefinitionName) get_ModuleDefinitionName;
+			public function HRESULT(IFsrmRule *self, BSTR moduleDefinitionName) put_ModuleDefinitionName;
+			public function HRESULT(IFsrmRule *self, SAFEARRAY** namespaceRoots) get_NamespaceRoots;
+			public function HRESULT(IFsrmRule *self, SAFEARRAY* namespaceRoots) put_NamespaceRoots;
+			public function HRESULT(IFsrmRule *self, int32* ruleFlags) get_RuleFlags;
+			public function HRESULT(IFsrmRule *self, int32 ruleFlags) put_RuleFlags;
+			public function HRESULT(IFsrmRule *self, SAFEARRAY** parameters) get_Parameters;
+			public function HRESULT(IFsrmRule *self, SAFEARRAY* parameters) put_Parameters;
+			public function HRESULT(IFsrmRule *self, VARIANT* lastModified) get_LastModified;
+		}
+		[CRepr]
+		public struct IFsrmClassificationRule : IFsrmRule
+		{
+			public const new Guid IID = .(0xafc052c2, 0x5315, 0x45ab, 0x84, 0x1b, 0xc6, 0xdb, 0x0e, 0x12, 0x01, 0x48);
+			
+			public function HRESULT(IFsrmClassificationRule *self, FsrmExecutionOption* executionOption) get_ExecutionOption;
+			public function HRESULT(IFsrmClassificationRule *self, FsrmExecutionOption executionOption) put_ExecutionOption;
+			public function HRESULT(IFsrmClassificationRule *self, BSTR* property) get_PropertyAffected;
+			public function HRESULT(IFsrmClassificationRule *self, BSTR property) put_PropertyAffected;
+			public function HRESULT(IFsrmClassificationRule *self, BSTR* value) get_Value;
+			public function HRESULT(IFsrmClassificationRule *self, BSTR value) put_Value;
+		}
+		[CRepr]
+		public struct IFsrmPipelineModuleDefinition : IFsrmObject
+		{
+			public const new Guid IID = .(0x515c1277, 0x2c81, 0x440e, 0x8f, 0xcf, 0x36, 0x79, 0x21, 0xed, 0x4f, 0x59);
+			
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, BSTR* moduleClsid) get_ModuleClsid;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, BSTR moduleClsid) put_ModuleClsid;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, BSTR name) put_Name;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, BSTR* company) get_Company;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, BSTR company) put_Company;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, BSTR* version) get_Version;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, BSTR version) put_Version;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, FsrmPipelineModuleType* moduleType) get_ModuleType;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, int16* enabled) get_Enabled;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, int16 enabled) put_Enabled;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, int16* needsFileContent) get_NeedsFileContent;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, int16 needsFileContent) put_NeedsFileContent;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, FsrmAccountType* retrievalAccount) get_Account;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, FsrmAccountType retrievalAccount) put_Account;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, SAFEARRAY** supportedExtensions) get_SupportedExtensions;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, SAFEARRAY* supportedExtensions) put_SupportedExtensions;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, SAFEARRAY** parameters) get_Parameters;
+			public function HRESULT(IFsrmPipelineModuleDefinition *self, SAFEARRAY* parameters) put_Parameters;
+		}
+		[CRepr]
+		public struct IFsrmClassifierModuleDefinition : IFsrmPipelineModuleDefinition
+		{
+			public const new Guid IID = .(0xbb36ea26, 0x6318, 0x4b8c, 0x85, 0x92, 0xf7, 0x2d, 0xd6, 0x02, 0xe7, 0xa5);
+			
+			public function HRESULT(IFsrmClassifierModuleDefinition *self, SAFEARRAY** propertiesAffected) get_PropertiesAffected;
+			public function HRESULT(IFsrmClassifierModuleDefinition *self, SAFEARRAY* propertiesAffected) put_PropertiesAffected;
+			public function HRESULT(IFsrmClassifierModuleDefinition *self, SAFEARRAY** propertiesUsed) get_PropertiesUsed;
+			public function HRESULT(IFsrmClassifierModuleDefinition *self, SAFEARRAY* propertiesUsed) put_PropertiesUsed;
+			public function HRESULT(IFsrmClassifierModuleDefinition *self, int16* needsExplicitValue) get_NeedsExplicitValue;
+			public function HRESULT(IFsrmClassifierModuleDefinition *self, int16 needsExplicitValue) put_NeedsExplicitValue;
+		}
+		[CRepr]
+		public struct IFsrmStorageModuleDefinition : IFsrmPipelineModuleDefinition
+		{
+			public const new Guid IID = .(0x15a81350, 0x497d, 0x4aba, 0x80, 0xe9, 0xd4, 0xdb, 0xcc, 0x55, 0x21, 0xfe);
+			
+			public function HRESULT(IFsrmStorageModuleDefinition *self, FsrmStorageModuleCaps* capabilities) get_Capabilities;
+			public function HRESULT(IFsrmStorageModuleDefinition *self, FsrmStorageModuleCaps capabilities) put_Capabilities;
+			public function HRESULT(IFsrmStorageModuleDefinition *self, FsrmStorageModuleType* storageType) get_StorageType;
+			public function HRESULT(IFsrmStorageModuleDefinition *self, FsrmStorageModuleType storageType) put_StorageType;
+			public function HRESULT(IFsrmStorageModuleDefinition *self, int16* updatesFileContent) get_UpdatesFileContent;
+			public function HRESULT(IFsrmStorageModuleDefinition *self, int16 updatesFileContent) put_UpdatesFileContent;
+		}
+		[CRepr]
+		public struct IFsrmClassificationManager : IDispatch
+		{
+			public const new Guid IID = .(0xd2dc89da, 0xee91, 0x48a0, 0x85, 0xd8, 0xcc, 0x72, 0xa5, 0x6f, 0x7d, 0x04);
+			
+			public function HRESULT(IFsrmClassificationManager *self, SAFEARRAY** formats) get_ClassificationReportFormats;
+			public function HRESULT(IFsrmClassificationManager *self, SAFEARRAY* formats) put_ClassificationReportFormats;
+			public function HRESULT(IFsrmClassificationManager *self, int32* logging) get_Logging;
+			public function HRESULT(IFsrmClassificationManager *self, int32 logging) put_Logging;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR* mailTo) get_ClassificationReportMailTo;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR mailTo) put_ClassificationReportMailTo;
+			public function HRESULT(IFsrmClassificationManager *self, int16* reportEnabled) get_ClassificationReportEnabled;
+			public function HRESULT(IFsrmClassificationManager *self, int16 reportEnabled) put_ClassificationReportEnabled;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR* lastReportPath) get_ClassificationLastReportPathWithoutExtension;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR* lastError) get_ClassificationLastError;
+			public function HRESULT(IFsrmClassificationManager *self, FsrmReportRunningStatus* runningStatus) get_ClassificationRunningStatus;
+			public function HRESULT(IFsrmClassificationManager *self, FsrmEnumOptions options, IFsrmCollection** propertyDefinitions) EnumPropertyDefinitions;
+			public function HRESULT(IFsrmClassificationManager *self, IFsrmPropertyDefinition** propertyDefinition) CreatePropertyDefinition;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR propertyName, IFsrmPropertyDefinition** propertyDefinition) GetPropertyDefinition;
+			public function HRESULT(IFsrmClassificationManager *self, FsrmRuleType ruleType, FsrmEnumOptions options, IFsrmCollection** Rules) EnumRules;
+			public function HRESULT(IFsrmClassificationManager *self, FsrmRuleType ruleType, IFsrmRule** Rule) CreateRule;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR ruleName, FsrmRuleType ruleType, IFsrmRule** Rule) GetRule;
+			public function HRESULT(IFsrmClassificationManager *self, FsrmPipelineModuleType moduleType, FsrmEnumOptions options, IFsrmCollection** moduleDefinitions) EnumModuleDefinitions;
+			public function HRESULT(IFsrmClassificationManager *self, FsrmPipelineModuleType moduleType, IFsrmPipelineModuleDefinition** moduleDefinition) CreateModuleDefinition;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR moduleName, FsrmPipelineModuleType moduleType, IFsrmPipelineModuleDefinition** moduleDefinition) GetModuleDefinition;
+			public function HRESULT(IFsrmClassificationManager *self, FsrmReportGenerationContext context, BSTR reserved) RunClassification;
+			public function HRESULT(IFsrmClassificationManager *self, int32 waitSeconds, int16* completed) WaitForClassificationCompletion;
+			public function HRESULT(IFsrmClassificationManager *self) CancelClassification;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR filePath, FsrmGetFilePropertyOptions options, IFsrmCollection** fileProperties) EnumFileProperties;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR filePath, BSTR propertyName, FsrmGetFilePropertyOptions options, IFsrmProperty** property) GetFileProperty;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR filePath, BSTR propertyName, BSTR propertyValue) SetFileProperty;
+			public function HRESULT(IFsrmClassificationManager *self, BSTR filePath, BSTR property) ClearFileProperty;
+		}
+		[CRepr]
+		public struct IFsrmClassificationManager2 : IFsrmClassificationManager
+		{
+			public const new Guid IID = .(0x0004c1c9, 0x127e, 0x4765, 0xba, 0x07, 0x6a, 0x31, 0x47, 0xbc, 0xa1, 0x12);
+			
+			public function HRESULT(IFsrmClassificationManager2 *self, SAFEARRAY* filePaths, SAFEARRAY* propertyNames, SAFEARRAY* propertyValues, FsrmGetFilePropertyOptions options) ClassifyFiles;
+		}
+		[CRepr]
+		public struct IFsrmPropertyBag : IDispatch
+		{
+			public const new Guid IID = .(0x774589d1, 0xd300, 0x4f7a, 0x9a, 0x24, 0xf7, 0xb7, 0x66, 0x80, 0x02, 0x50);
+			
+			public function HRESULT(IFsrmPropertyBag *self, BSTR* name) get_Name;
+			public function HRESULT(IFsrmPropertyBag *self, BSTR* path) get_RelativePath;
+			public function HRESULT(IFsrmPropertyBag *self, BSTR* volumeName) get_VolumeName;
+			public function HRESULT(IFsrmPropertyBag *self, BSTR* relativeNamespaceRoot) get_RelativeNamespaceRoot;
+			public function HRESULT(IFsrmPropertyBag *self, uint32* volumeId) get_VolumeIndex;
+			public function HRESULT(IFsrmPropertyBag *self, VARIANT* fileId) get_FileId;
+			public function HRESULT(IFsrmPropertyBag *self, VARIANT* parentDirectoryId) get_ParentDirectoryId;
+			public function HRESULT(IFsrmPropertyBag *self, VARIANT* size) get_Size;
+			public function HRESULT(IFsrmPropertyBag *self, VARIANT* sizeAllocated) get_SizeAllocated;
+			public function HRESULT(IFsrmPropertyBag *self, VARIANT* creationTime) get_CreationTime;
+			public function HRESULT(IFsrmPropertyBag *self, VARIANT* lastAccessTime) get_LastAccessTime;
+			public function HRESULT(IFsrmPropertyBag *self, VARIANT* lastModificationTime) get_LastModificationTime;
+			public function HRESULT(IFsrmPropertyBag *self, uint32* attributes) get_Attributes;
+			public function HRESULT(IFsrmPropertyBag *self, BSTR* ownerSid) get_OwnerSid;
+			public function HRESULT(IFsrmPropertyBag *self, SAFEARRAY** filePropertyNames) get_FilePropertyNames;
+			public function HRESULT(IFsrmPropertyBag *self, SAFEARRAY** messages) get_Messages;
+			public function HRESULT(IFsrmPropertyBag *self, uint32* flags) get_PropertyBagFlags;
+			public function HRESULT(IFsrmPropertyBag *self, BSTR name, IFsrmProperty** fileProperty) GetFileProperty;
+			public function HRESULT(IFsrmPropertyBag *self, BSTR name, BSTR value) SetFileProperty;
+			public function HRESULT(IFsrmPropertyBag *self, BSTR message) AddMessage;
+			public function HRESULT(IFsrmPropertyBag *self, FsrmFileStreamingMode accessMode, FsrmFileStreamingInterfaceType interfaceType, VARIANT* pStreamInterface) GetFileStreamInterface;
+		}
+		[CRepr]
+		public struct IFsrmPropertyBag2 : IFsrmPropertyBag
+		{
+			public const new Guid IID = .(0x0e46bdbd, 0x2402, 0x4fed, 0x9c, 0x30, 0x92, 0x66, 0xe6, 0xeb, 0x2c, 0xc9);
+			
+			public function HRESULT(IFsrmPropertyBag2 *self, FsrmPropertyBagField field, VARIANT* value) GetFieldValue;
+			public function HRESULT(IFsrmPropertyBag2 *self, IFsrmCollection** props) GetUntrustedInFileProperties;
+		}
+		[CRepr]
+		public struct IFsrmPipelineModuleImplementation : IDispatch
+		{
+			public const new Guid IID = .(0xb7907906, 0x2b02, 0x4cb5, 0x84, 0xa9, 0xfd, 0xf5, 0x46, 0x13, 0xd6, 0xcd);
+			
+			public function HRESULT(IFsrmPipelineModuleImplementation *self, IFsrmPipelineModuleDefinition* moduleDefinition, IFsrmPipelineModuleConnector** moduleConnector) OnLoad;
+			public function HRESULT(IFsrmPipelineModuleImplementation *self) OnUnload;
+		}
+		[CRepr]
+		public struct IFsrmClassifierModuleImplementation : IFsrmPipelineModuleImplementation
+		{
+			public const new Guid IID = .(0x4c968fc6, 0x6edb, 0x4051, 0x9c, 0x18, 0x73, 0xb7, 0x29, 0x1a, 0xe1, 0x06);
+			
+			public function HRESULT(IFsrmClassifierModuleImplementation *self, VARIANT* lastModified) get_LastModified;
+			public function HRESULT(IFsrmClassifierModuleImplementation *self, IFsrmCollection* rules, IFsrmCollection* propertyDefinitions) UseRulesAndDefinitions;
+			public function HRESULT(IFsrmClassifierModuleImplementation *self, IFsrmPropertyBag* propertyBag, SAFEARRAY* arrayRuleIds) OnBeginFile;
+			public function HRESULT(IFsrmClassifierModuleImplementation *self, BSTR property, BSTR value, int16* applyValue, Guid idRule, Guid idPropDef) DoesPropertyValueApply;
+			public function HRESULT(IFsrmClassifierModuleImplementation *self, BSTR property, BSTR* value, Guid idRule, Guid idPropDef) GetPropertyValueToApply;
+			public function HRESULT(IFsrmClassifierModuleImplementation *self) OnEndFile;
+		}
+		[CRepr]
+		public struct IFsrmStorageModuleImplementation : IFsrmPipelineModuleImplementation
+		{
+			public const new Guid IID = .(0x0af4a0da, 0x895a, 0x4e50, 0x87, 0x12, 0xa9, 0x67, 0x24, 0xbc, 0xec, 0x64);
+			
+			public function HRESULT(IFsrmStorageModuleImplementation *self, IFsrmCollection* propertyDefinitions) UseDefinitions;
+			public function HRESULT(IFsrmStorageModuleImplementation *self, IFsrmPropertyBag* propertyBag) LoadProperties;
+			public function HRESULT(IFsrmStorageModuleImplementation *self, IFsrmPropertyBag* propertyBag) SaveProperties;
+		}
+		[CRepr]
+		public struct IFsrmPipelineModuleConnector : IDispatch
+		{
+			public const new Guid IID = .(0xc16014f3, 0x9aa1, 0x46b3, 0xb0, 0xa7, 0xab, 0x14, 0x6e, 0xb2, 0x05, 0xf2);
+			
+			public function HRESULT(IFsrmPipelineModuleConnector *self, IFsrmPipelineModuleImplementation** pipelineModuleImplementation) get_ModuleImplementation;
+			public function HRESULT(IFsrmPipelineModuleConnector *self, BSTR* userName) get_ModuleName;
+			public function HRESULT(IFsrmPipelineModuleConnector *self, BSTR* userAccount) get_HostingUserAccount;
+			public function HRESULT(IFsrmPipelineModuleConnector *self, int32* pid) get_HostingProcessPid;
+			public function HRESULT(IFsrmPipelineModuleConnector *self, IFsrmPipelineModuleDefinition* moduleDefinition, IFsrmPipelineModuleImplementation* moduleImplementation) Bind;
+		}
+		[CRepr]
+		public struct DIFsrmClassificationEvents : IDispatch
+		{
+			public const new Guid IID = .(0x26942db0, 0xdabf, 0x41d8, 0xbb, 0xdd, 0xb1, 0x29, 0xa9, 0xf7, 0x04, 0x24);
+			
+		}
 		
 	}
 }

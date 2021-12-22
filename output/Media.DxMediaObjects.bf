@@ -114,14 +114,14 @@ namespace Win32
 			public BOOL bTemporalCompression;
 			public uint32 lSampleSize;
 			public Guid formattype;
-			public IUnknown pUnk;
+			public IUnknown* pUnk;
 			public uint32 cbFormat;
 			public uint8* pbFormat;
 		}
 		[CRepr]
 		public struct DMO_OUTPUT_DATA_BUFFER
 		{
-			public IMediaBuffer pBuffer;
+			public IMediaBuffer* pBuffer;
 			public uint32 dwStatus;
 			public int64 rtTimestamp;
 			public int64 rtTimelength;
@@ -135,12 +135,80 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IMediaBuffer {}
-		public struct IMediaObject {}
-		public struct IEnumDMO {}
-		public struct IMediaObjectInPlace {}
-		public struct IDMOQualityControl {}
-		public struct IDMOVideoOutputOptimizations {}
+		[CRepr]
+		public struct IMediaBuffer : IUnknown
+		{
+			public const new Guid IID = .(0x59eff8b9, 0x938c, 0x4a26, 0x82, 0xf2, 0x95, 0xcb, 0x84, 0xcd, 0xc8, 0x37);
+			
+			public function HRESULT(IMediaBuffer *self, uint32 cbLength) SetLength;
+			public function HRESULT(IMediaBuffer *self, uint32* pcbMaxLength) GetMaxLength;
+			public function HRESULT(IMediaBuffer *self, uint8** ppBuffer, uint32* pcbLength) GetBufferAndLength;
+		}
+		[CRepr]
+		public struct IMediaObject : IUnknown
+		{
+			public const new Guid IID = .(0xd8ad0f58, 0x5494, 0x4102, 0x97, 0xc5, 0xec, 0x79, 0x8e, 0x59, 0xbc, 0xf4);
+			
+			public function HRESULT(IMediaObject *self, uint32* pcInputStreams, uint32* pcOutputStreams) GetStreamCount;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32* pdwFlags) GetInputStreamInfo;
+			public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, uint32* pdwFlags) GetOutputStreamInfo;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetInputType;
+			public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, uint32 dwTypeIndex, DMO_MEDIA_TYPE* pmt) GetOutputType;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetInputType;
+			public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt, uint32 dwFlags) SetOutputType;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, DMO_MEDIA_TYPE* pmt) GetInputCurrentType;
+			public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt) GetOutputCurrentType;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32* pcbSize, uint32* pcbMaxLookahead, uint32* pcbAlignment) GetInputSizeInfo;
+			public function HRESULT(IMediaObject *self, uint32 dwOutputStreamIndex, uint32* pcbSize, uint32* pcbAlignment) GetOutputSizeInfo;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, int64* prtMaxLatency) GetInputMaxLatency;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, int64 rtMaxLatency) SetInputMaxLatency;
+			public function HRESULT(IMediaObject *self) Flush;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex) Discontinuity;
+			public function HRESULT(IMediaObject *self) AllocateStreamingResources;
+			public function HRESULT(IMediaObject *self) FreeStreamingResources;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, uint32* dwFlags) GetInputStatus;
+			public function HRESULT(IMediaObject *self, uint32 dwInputStreamIndex, IMediaBuffer* pBuffer, uint32 dwFlags, int64 rtTimestamp, int64 rtTimelength) ProcessInput;
+			public function HRESULT(IMediaObject *self, uint32 dwFlags, uint32 cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, uint32* pdwStatus) ProcessOutput;
+			public function HRESULT(IMediaObject *self, int32 bLock) Lock;
+		}
+		[CRepr]
+		public struct IEnumDMO : IUnknown
+		{
+			public const new Guid IID = .(0x2c3cd98a, 0x2bfa, 0x4a53, 0x9c, 0x27, 0x52, 0x49, 0xba, 0x64, 0xba, 0x0f);
+			
+			public function HRESULT(IEnumDMO *self, uint32 cItemsToFetch, Guid* pCLSID, PWSTR* Names, uint32* pcItemsFetched) Next;
+			public function HRESULT(IEnumDMO *self, uint32 cItemsToSkip) Skip;
+			public function HRESULT(IEnumDMO *self) Reset;
+			public function HRESULT(IEnumDMO *self, IEnumDMO** ppEnum) Clone;
+		}
+		[CRepr]
+		public struct IMediaObjectInPlace : IUnknown
+		{
+			public const new Guid IID = .(0x651b9ad0, 0x0fc7, 0x4aa9, 0x95, 0x38, 0xd8, 0x99, 0x31, 0x01, 0x07, 0x41);
+			
+			public function HRESULT(IMediaObjectInPlace *self, uint32 ulSize, uint8* pData, int64 refTimeStart, uint32 dwFlags) Process;
+			public function HRESULT(IMediaObjectInPlace *self, IMediaObjectInPlace** ppMediaObject) Clone;
+			public function HRESULT(IMediaObjectInPlace *self, int64* pLatencyTime) GetLatency;
+		}
+		[CRepr]
+		public struct IDMOQualityControl : IUnknown
+		{
+			public const new Guid IID = .(0x65abea96, 0xcf36, 0x453f, 0xaf, 0x8a, 0x70, 0x5e, 0x98, 0xf1, 0x62, 0x60);
+			
+			public function HRESULT(IDMOQualityControl *self, int64 rtNow) SetNow;
+			public function HRESULT(IDMOQualityControl *self, uint32 dwFlags) SetStatus;
+			public function HRESULT(IDMOQualityControl *self, uint32* pdwFlags) GetStatus;
+		}
+		[CRepr]
+		public struct IDMOVideoOutputOptimizations : IUnknown
+		{
+			public const new Guid IID = .(0xbe8f4f4e, 0x5b16, 0x4d29, 0xb3, 0x50, 0x7f, 0x6b, 0x5d, 0x92, 0x98, 0xac);
+			
+			public function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32* pdwRequestedCapabilities) QueryOperationModePreferences;
+			public function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32 dwEnabledFeatures) SetOperationMode;
+			public function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32* pdwEnabledFeatures) GetCurrentOperationMode;
+			public function HRESULT(IDMOVideoOutputOptimizations *self, uint32 ulOutputStreamIndex, uint32* pdwRequestedFeatures) GetCurrentSampleRequirements;
+		}
 		
 		// --- Functions ---
 		
@@ -149,7 +217,7 @@ namespace Win32
 		[Import("msdmo.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DMOUnregister(Guid* clsidDMO, Guid* guidCategory);
 		[Import("msdmo.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DMOEnum(Guid* guidCategory, uint32 dwFlags, uint32 cInTypes, DMO_PARTIAL_MEDIATYPE* pInTypes, uint32 cOutTypes, DMO_PARTIAL_MEDIATYPE* pOutTypes, IEnumDMO* ppEnum);
+		public static extern HRESULT DMOEnum(Guid* guidCategory, uint32 dwFlags, uint32 cInTypes, DMO_PARTIAL_MEDIATYPE* pInTypes, uint32 cOutTypes, DMO_PARTIAL_MEDIATYPE* pOutTypes, IEnumDMO** ppEnum);
 		[Import("msdmo.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DMOGetTypes(Guid* clsidDMO, uint32 ulInputTypesRequested, uint32* pulInputTypesSupplied, DMO_PARTIAL_MEDIATYPE* pInputTypes, uint32 ulOutputTypesRequested, uint32* pulOutputTypesSupplied, DMO_PARTIAL_MEDIATYPE* pOutputTypes);
 		[Import("msdmo.dll"), CLink, CallingConvention(.Stdcall)]

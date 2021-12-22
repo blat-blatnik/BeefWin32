@@ -1868,107 +1868,1040 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IAudioEndpoint {}
-		public struct IAudioEndpointRT {}
-		public struct IAudioInputEndpointRT {}
-		public struct IAudioOutputEndpointRT {}
-		public struct IAudioDeviceEndpoint {}
-		public struct IAudioEndpointControl {}
-		public struct IADsTSUserEx {}
-		public struct ITSGAuthorizeConnectionSink {}
-		public struct ITSGAuthorizeResourceSink {}
-		public struct ITSGPolicyEngine {}
-		public struct ITSGAccountingEngine {}
-		public struct ITSGAuthenticateUserSink {}
-		public struct ITSGAuthenticationEngine {}
-		public struct IWTSSBPlugin {}
-		public struct IWorkspaceClientExt {}
-		public struct IWorkspace {}
-		public struct IWorkspace2 {}
-		public struct IWorkspace3 {}
-		public struct IWorkspaceRegistration {}
-		public struct IWorkspaceRegistration2 {}
-		public struct IWorkspaceScriptable {}
-		public struct IWorkspaceScriptable2 {}
-		public struct IWorkspaceScriptable3 {}
-		public struct IWorkspaceReportMessage {}
-		public struct _ITSWkspEvents {}
-		public struct ITsSbPlugin {}
-		public struct ITsSbResourcePlugin {}
-		public struct ITsSbServiceNotification {}
-		public struct ITsSbLoadBalancing {}
-		public struct ITsSbPlacement {}
-		public struct ITsSbOrchestration {}
-		public struct ITsSbEnvironment {}
-		public struct ITsSbLoadBalanceResult {}
-		public struct ITsSbTarget {}
-		public struct ITsSbSession {}
-		public struct ITsSbResourceNotification {}
-		public struct ITsSbResourceNotificationEx {}
-		public struct ITsSbTaskInfo {}
-		public struct ITsSbTaskPlugin {}
-		public struct ITsSbPropertySet {}
-		public struct ITsSbPluginPropertySet {}
-		public struct ITsSbClientConnectionPropertySet {}
-		public struct ITsSbTargetPropertySet {}
-		public struct ITsSbEnvironmentPropertySet {}
-		public struct ITsSbBaseNotifySink {}
-		public struct ITsSbPluginNotifySink {}
-		public struct ITsSbLoadBalancingNotifySink {}
-		public struct ITsSbPlacementNotifySink {}
-		public struct ITsSbOrchestrationNotifySink {}
-		public struct ITsSbTaskPluginNotifySink {}
-		public struct ITsSbClientConnection {}
-		public struct ITsSbProvider {}
-		public struct ITsSbResourcePluginStore {}
-		public struct ITsSbFilterPluginStore {}
-		public struct ITsSbGlobalStore {}
-		public struct ITsSbProvisioningPluginNotifySink {}
-		public struct ITsSbProvisioning {}
-		public struct ITsSbGenericNotifySink {}
-		public struct ItsPubPlugin {}
-		public struct ItsPubPlugin2 {}
-		public struct IWorkspaceResTypeRegistry {}
-		public struct IWTSPlugin {}
-		public struct IWTSListener {}
-		public struct IWTSListenerCallback {}
-		public struct IWTSVirtualChannelCallback {}
-		public struct IWTSVirtualChannelManager {}
-		public struct IWTSVirtualChannel {}
-		public struct IWTSPluginServiceProvider {}
-		public struct IWTSBitmapRenderer {}
-		public struct IWTSBitmapRendererCallback {}
-		public struct IWTSBitmapRenderService {}
-		public struct IWRdsGraphicsChannelEvents {}
-		public struct IWRdsGraphicsChannel {}
-		public struct IWRdsGraphicsChannelManager {}
-		public struct IWTSProtocolManager {}
-		public struct IWTSProtocolListener {}
-		public struct IWTSProtocolListenerCallback {}
-		public struct IWTSProtocolConnection {}
-		public struct IWTSProtocolConnectionCallback {}
-		public struct IWTSProtocolShadowConnection {}
-		public struct IWTSProtocolShadowCallback {}
-		public struct IWTSProtocolLicenseConnection {}
-		public struct IWTSProtocolLogonErrorRedirector {}
-		public struct IWRdsProtocolSettings {}
-		public struct IWRdsProtocolManager {}
-		public struct IWRdsProtocolListener {}
-		public struct IWRdsProtocolListenerCallback {}
-		public struct IWRdsProtocolConnection {}
-		public struct IWRdsProtocolConnectionCallback {}
-		public struct IWRdsProtocolShadowConnection {}
-		public struct IWRdsProtocolShadowCallback {}
-		public struct IWRdsProtocolLicenseConnection {}
-		public struct IWRdsProtocolLogonErrorRedirector {}
-		public struct IWRdsWddmIddProps {}
-		public struct IWRdsProtocolConnectionSettings {}
-		public struct IWRdsEnhancedFastReconnectArbitrator {}
-		public struct IRemoteDesktopClientSettings {}
-		public struct IRemoteDesktopClientActions {}
-		public struct IRemoteDesktopClientTouchPointer {}
-		public struct IRemoteDesktopClient {}
-		public struct IRemoteSystemAdditionalInfoProvider {}
+		[CRepr]
+		public struct IAudioEndpoint : IUnknown
+		{
+			public const new Guid IID = .(0x30a99515, 0x1527, 0x4451, 0xaf, 0x9f, 0x00, 0xc5, 0xf0, 0x23, 0x4d, 0xaf);
+			
+			public function HRESULT(IAudioEndpoint *self, WAVEFORMATEX** ppFormat) GetFrameFormat;
+			public function HRESULT(IAudioEndpoint *self, uint32* pFramesPerPacket) GetFramesPerPacket;
+			public function HRESULT(IAudioEndpoint *self, int64* pLatency) GetLatency;
+			public function HRESULT(IAudioEndpoint *self, uint32 streamFlags) SetStreamFlags;
+			public function HRESULT(IAudioEndpoint *self, HANDLE eventHandle) SetEventHandle;
+		}
+		[CRepr]
+		public struct IAudioEndpointRT : IUnknown
+		{
+			public const new Guid IID = .(0xdfd2005f, 0xa6e5, 0x4d39, 0xa2, 0x65, 0x93, 0x9a, 0xda, 0x9f, 0xbb, 0x4d);
+			
+			public function void(IAudioEndpointRT *self, int64* pPadding, AE_CURRENT_POSITION* pAeCurrentPosition) GetCurrentPadding;
+			public function void(IAudioEndpointRT *self) ProcessingComplete;
+			public function HRESULT(IAudioEndpointRT *self) SetPinInactive;
+			public function HRESULT(IAudioEndpointRT *self) SetPinActive;
+		}
+		[CRepr]
+		public struct IAudioInputEndpointRT : IUnknown
+		{
+			public const new Guid IID = .(0x8026ab61, 0x92b2, 0x43c1, 0xa1, 0xdf, 0x5c, 0x37, 0xeb, 0xd0, 0x8d, 0x82);
+			
+			public function void(IAudioInputEndpointRT *self, APO_CONNECTION_PROPERTY* pConnectionProperty, AE_CURRENT_POSITION* pAeTimeStamp) GetInputDataPointer;
+			public function void(IAudioInputEndpointRT *self, uint32 u32FrameCount, uint pDataPointer) ReleaseInputDataPointer;
+			public function void(IAudioInputEndpointRT *self) PulseEndpoint;
+		}
+		[CRepr]
+		public struct IAudioOutputEndpointRT : IUnknown
+		{
+			public const new Guid IID = .(0x8fa906e4, 0xc31c, 0x4e31, 0x93, 0x2e, 0x19, 0xa6, 0x63, 0x85, 0xe9, 0xaa);
+			
+			public function uint(IAudioOutputEndpointRT *self, uint32 u32FrameCount, AE_CURRENT_POSITION* pAeTimeStamp) GetOutputDataPointer;
+			public function void(IAudioOutputEndpointRT *self, APO_CONNECTION_PROPERTY* pConnectionProperty) ReleaseOutputDataPointer;
+			public function void(IAudioOutputEndpointRT *self) PulseEndpoint;
+		}
+		[CRepr]
+		public struct IAudioDeviceEndpoint : IUnknown
+		{
+			public const new Guid IID = .(0xd4952f5a, 0xa0b2, 0x4cc4, 0x8b, 0x82, 0x93, 0x58, 0x48, 0x8d, 0xd8, 0xac);
+			
+			public function HRESULT(IAudioDeviceEndpoint *self, int64 MaxPeriod, uint32 u32LatencyCoefficient) SetBuffer;
+			public function HRESULT(IAudioDeviceEndpoint *self, BOOL* pbIsRTCapable) GetRTCaps;
+			public function HRESULT(IAudioDeviceEndpoint *self, BOOL* pbisEventCapable) GetEventDrivenCapable;
+			public function HRESULT(IAudioDeviceEndpoint *self, uint hTargetProcess, int64 hnsPeriod, int64 hnsBufferDuration, uint32 u32LatencyCoefficient, uint32* pu32SharedMemorySize, uint* phSharedMemory) WriteExclusiveModeParametersToSharedMemory;
+		}
+		[CRepr]
+		public struct IAudioEndpointControl : IUnknown
+		{
+			public const new Guid IID = .(0xc684b72a, 0x6df4, 0x4774, 0xbd, 0xf9, 0x76, 0xb7, 0x75, 0x09, 0xb6, 0x53);
+			
+			public function HRESULT(IAudioEndpointControl *self) Start;
+			public function HRESULT(IAudioEndpointControl *self) Reset;
+			public function HRESULT(IAudioEndpointControl *self) Stop;
+		}
+		[CRepr]
+		public struct IADsTSUserEx : IDispatch
+		{
+			public const new Guid IID = .(0xc4930e79, 0x2989, 0x4462, 0x8a, 0x60, 0x2f, 0xcf, 0x2f, 0x29, 0x55, 0xef);
+			
+			public function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesProfilePath;
+			public function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesProfilePath;
+			public function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesHomeDirectory;
+			public function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesHomeDirectory;
+			public function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesHomeDrive;
+			public function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesHomeDrive;
+			public function HRESULT(IADsTSUserEx *self, int32* pVal) get_AllowLogon;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_AllowLogon;
+			public function HRESULT(IADsTSUserEx *self, int32* pVal) get_EnableRemoteControl;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_EnableRemoteControl;
+			public function HRESULT(IADsTSUserEx *self, int32* pVal) get_MaxDisconnectionTime;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_MaxDisconnectionTime;
+			public function HRESULT(IADsTSUserEx *self, int32* pVal) get_MaxConnectionTime;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_MaxConnectionTime;
+			public function HRESULT(IADsTSUserEx *self, int32* pVal) get_MaxIdleTime;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_MaxIdleTime;
+			public function HRESULT(IADsTSUserEx *self, int32* pNewVal) get_ReconnectionAction;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_ReconnectionAction;
+			public function HRESULT(IADsTSUserEx *self, int32* pNewVal) get_BrokenConnectionAction;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_BrokenConnectionAction;
+			public function HRESULT(IADsTSUserEx *self, int32* pNewVal) get_ConnectClientDrivesAtLogon;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_ConnectClientDrivesAtLogon;
+			public function HRESULT(IADsTSUserEx *self, int32* pVal) get_ConnectClientPrintersAtLogon;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_ConnectClientPrintersAtLogon;
+			public function HRESULT(IADsTSUserEx *self, int32* pVal) get_DefaultToMainPrinter;
+			public function HRESULT(IADsTSUserEx *self, int32 NewVal) put_DefaultToMainPrinter;
+			public function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesWorkDirectory;
+			public function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesWorkDirectory;
+			public function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesInitialProgram;
+			public function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesInitialProgram;
+		}
+		[CRepr]
+		public struct ITSGAuthorizeConnectionSink : IUnknown
+		{
+			public const new Guid IID = .(0xc27ece33, 0x7781, 0x4318, 0x98, 0xef, 0x1c, 0xf2, 0xda, 0x7b, 0x70, 0x05);
+			
+			public function HRESULT(ITSGAuthorizeConnectionSink *self, HRESULT hrIn, Guid mainSessionId, uint32 cbSoHResponse, uint8* pbSoHResponse, uint32 idleTimeout, uint32 sessionTimeout, SESSION_TIMEOUT_ACTION_TYPE sessionTimeoutAction, AATrustClassID trustClass, uint32* policyAttributes) OnConnectionAuthorized;
+		}
+		[CRepr]
+		public struct ITSGAuthorizeResourceSink : IUnknown
+		{
+			public const new Guid IID = .(0xfeddfcd4, 0xfa12, 0x4435, 0xae, 0x55, 0x7a, 0xd1, 0xa9, 0x77, 0x9a, 0xf7);
+			
+			public function HRESULT(ITSGAuthorizeResourceSink *self, HRESULT hrIn, Guid mainSessionId, int32 subSessionId, BSTR* allowedResourceNames, uint32 numAllowedResourceNames, BSTR* failedResourceNames, uint32 numFailedResourceNames) OnChannelAuthorized;
+		}
+		[CRepr]
+		public struct ITSGPolicyEngine : IUnknown
+		{
+			public const new Guid IID = .(0x8bc24f08, 0x6223, 0x42f4, 0xa5, 0xb4, 0x8e, 0x37, 0xcd, 0x13, 0x5b, 0xbd);
+			
+			public function HRESULT(ITSGPolicyEngine *self, Guid mainSessionId, BSTR username, AAAuthSchemes authType, BSTR clientMachineIP, BSTR clientMachineName, uint8* sohData, uint32 numSOHBytes, uint8* cookieData, uint32 numCookieBytes, HANDLE_PTR userToken, ITSGAuthorizeConnectionSink* pSink) AuthorizeConnection;
+			public function HRESULT(ITSGPolicyEngine *self, Guid mainSessionId, int32 subSessionId, BSTR username, BSTR* resourceNames, uint32 numResources, BSTR* alternateResourceNames, uint32 numAlternateResourceName, uint32 portNumber, BSTR operation, uint8* cookie, uint32 numBytesInCookie, ITSGAuthorizeResourceSink* pSink) AuthorizeResource;
+			public function HRESULT(ITSGPolicyEngine *self) Refresh;
+			public function HRESULT(ITSGPolicyEngine *self, BOOL* quarantineEnabled) IsQuarantineEnabled;
+		}
+		[CRepr]
+		public struct ITSGAccountingEngine : IUnknown
+		{
+			public const new Guid IID = .(0x4ce2a0c9, 0xe874, 0x4f1a, 0x86, 0xf4, 0x06, 0xbb, 0xb9, 0x11, 0x53, 0x38);
+			
+			public function HRESULT(ITSGAccountingEngine *self, AAAccountingDataType accountingDataType, AAAccountingData accountingData) DoAccounting;
+		}
+		[CRepr]
+		public struct ITSGAuthenticateUserSink : IUnknown
+		{
+			public const new Guid IID = .(0x2c3e2e73, 0xa782, 0x47f9, 0x8d, 0xfb, 0x77, 0xee, 0x1e, 0xd2, 0x7a, 0x03);
+			
+			public function HRESULT(ITSGAuthenticateUserSink *self, BSTR userName, BSTR userDomain, uint context, HANDLE_PTR userToken) OnUserAuthenticated;
+			public function HRESULT(ITSGAuthenticateUserSink *self, uint context, HRESULT genericErrorCode, HRESULT specificErrorCode) OnUserAuthenticationFailed;
+			public function HRESULT(ITSGAuthenticateUserSink *self, uint context) ReauthenticateUser;
+			public function HRESULT(ITSGAuthenticateUserSink *self, uint context) DisconnectUser;
+		}
+		[CRepr]
+		public struct ITSGAuthenticationEngine : IUnknown
+		{
+			public const new Guid IID = .(0x9ee3e5bf, 0x04ab, 0x4691, 0x99, 0x8c, 0xd7, 0xf6, 0x22, 0x32, 0x1a, 0x56);
+			
+			public function HRESULT(ITSGAuthenticationEngine *self, Guid mainSessionId, uint8* cookieData, uint32 numCookieBytes, uint context, ITSGAuthenticateUserSink* pSink) AuthenticateUser;
+			public function HRESULT(ITSGAuthenticationEngine *self, Guid mainSessionId, uint context) CancelAuthentication;
+		}
+		[CRepr]
+		public struct IWTSSBPlugin : IUnknown
+		{
+			public const new Guid IID = .(0xdc44be78, 0xb18d, 0x4399, 0xb2, 0x10, 0x64, 0x1b, 0xf6, 0x7a, 0x00, 0x2c);
+			
+			public function HRESULT(IWTSSBPlugin *self, uint32* PluginCapabilities) Initialize;
+			public function HRESULT(IWTSSBPlugin *self, WTSSBX_NOTIFICATION_TYPE NotificationType, int32 MachineId, WTSSBX_MACHINE_INFO* pMachineInfo) WTSSBX_MachineChangeNotification;
+			public function HRESULT(IWTSSBPlugin *self, WTSSBX_NOTIFICATION_TYPE NotificationType, int32 MachineId, uint32 NumOfSessions, WTSSBX_SESSION_INFO* SessionInfo) WTSSBX_SessionChangeNotification;
+			public function HRESULT(IWTSSBPlugin *self, PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, PWSTR FarmName, int32* pMachineId) WTSSBX_GetMostSuitableServer;
+			public function HRESULT(IWTSSBPlugin *self) Terminated;
+			public function HRESULT(IWTSSBPlugin *self, PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, WTSSBX_IP_ADDRESS* RedirectorInternalIP, uint32* pSessionId, WTSSBX_MACHINE_CONNECT_INFO* pMachineConnectInfo) WTSSBX_GetUserExternalSession;
+		}
+		[CRepr]
+		public struct IWorkspaceClientExt : IUnknown
+		{
+			public const new Guid IID = .(0x12b952f4, 0x41ca, 0x4f21, 0xa8, 0x29, 0xa6, 0xd0, 0x7d, 0x9a, 0x16, 0xe5);
+			
+			public function HRESULT(IWorkspaceClientExt *self, BSTR* bstrWorkspaceId) GetResourceId;
+			public function HRESULT(IWorkspaceClientExt *self, BSTR* bstrWorkspaceDisplayName) GetResourceDisplayName;
+			public function HRESULT(IWorkspaceClientExt *self) IssueDisconnect;
+		}
+		[CRepr]
+		public struct IWorkspace : IUnknown
+		{
+			public const new Guid IID = .(0xb922bbb8, 0x4c55, 0x4fea, 0x84, 0x96, 0xbe, 0xb0, 0xb4, 0x42, 0x85, 0xe5);
+			
+			public function HRESULT(IWorkspace *self, SAFEARRAY** psaWkspNames) GetWorkspaceNames;
+			public function HRESULT(IWorkspace *self, BSTR bstrWorkspaceId, SAFEARRAY* psaParams) StartRemoteApplication;
+			public function HRESULT(IWorkspace *self, uint32* pulProcessId) GetProcessId;
+		}
+		[CRepr]
+		public struct IWorkspace2 : IWorkspace
+		{
+			public const new Guid IID = .(0x96d8d7cf, 0x783e, 0x4286, 0x83, 0x4c, 0xeb, 0xc0, 0xe9, 0x5f, 0x78, 0x3c);
+			
+			public function HRESULT(IWorkspace2 *self, BSTR bstrWorkspaceId, BSTR bstrRequestingAppId, BSTR bstrRequestingAppFamilyName, int16 bLaunchIntoImmersiveClient, BSTR bstrImmersiveClientActivationContext, SAFEARRAY* psaParams) StartRemoteApplicationEx;
+		}
+		[CRepr]
+		public struct IWorkspace3 : IWorkspace2
+		{
+			public const new Guid IID = .(0x1becbe4a, 0xd654, 0x423b, 0xaf, 0xeb, 0xbe, 0x8d, 0x53, 0x2c, 0x13, 0xc6);
+			
+			public function HRESULT(IWorkspace3 *self, BSTR bstrClaimsHint, BSTR bstrUserHint, uint32 claimCookie, uint32 hwndCredUiParent, RECT rectCredUiParent, BSTR* pbstrAccessToken) GetClaimsToken2;
+			public function HRESULT(IWorkspace3 *self, BSTR bstrAccessToken, uint64 ullAccessTokenExpiration, BSTR bstrRefreshToken) SetClaimsToken;
+		}
+		[CRepr]
+		public struct IWorkspaceRegistration : IUnknown
+		{
+			public const new Guid IID = .(0xb922bbb8, 0x4c55, 0x4fea, 0x84, 0x96, 0xbe, 0xb0, 0xb4, 0x42, 0x85, 0xe6);
+			
+			public function HRESULT(IWorkspaceRegistration *self, IWorkspaceClientExt* pUnk, uint32* pdwCookie) AddResource;
+			public function HRESULT(IWorkspaceRegistration *self, uint32 dwCookieConnection) RemoveResource;
+		}
+		[CRepr]
+		public struct IWorkspaceRegistration2 : IWorkspaceRegistration
+		{
+			public const new Guid IID = .(0xcf59f654, 0x39bb, 0x44d8, 0x94, 0xd0, 0x46, 0x35, 0x72, 0x89, 0x57, 0xe9);
+			
+			public function HRESULT(IWorkspaceRegistration2 *self, IWorkspaceClientExt* pUnk, BSTR bstrEventLogUploadAddress, uint32* pdwCookie, Guid correlationId) AddResourceEx;
+			public function HRESULT(IWorkspaceRegistration2 *self, uint32 dwCookieConnection, Guid correlationId) RemoveResourceEx;
+		}
+		[CRepr]
+		public struct IWorkspaceScriptable : IDispatch
+		{
+			public const new Guid IID = .(0xefea49a2, 0xdda5, 0x429d, 0x8f, 0x42, 0xb2, 0x3b, 0x92, 0xc4, 0xc3, 0x47);
+			
+			public function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId) DisconnectWorkspace;
+			public function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags) StartWorkspace;
+			public function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId, int16 bCountUnauthenticatedCredentials, int16* pbCredExist) IsWorkspaceCredentialSpecified;
+			public function HRESULT(IWorkspaceScriptable *self, int16* pbSSOEnabled) IsWorkspaceSSOEnabled;
+			public function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId) ClearWorkspaceCredential;
+			public function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId, BSTR bstrUserName) OnAuthenticated;
+			public function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceFriendlyName) DisconnectWorkspaceByFriendlyName;
+		}
+		[CRepr]
+		public struct IWorkspaceScriptable2 : IWorkspaceScriptable
+		{
+			public const new Guid IID = .(0xefea49a2, 0xdda5, 0x429d, 0x8f, 0x42, 0xb3, 0x3b, 0xa2, 0xc4, 0xc3, 0x48);
+			
+			public function HRESULT(IWorkspaceScriptable2 *self, BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName, BSTR bstrRedirectorName, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrAppContainer, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags) StartWorkspaceEx;
+			public function HRESULT(IWorkspaceScriptable2 *self, BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName) ResourceDismissed;
+		}
+		[CRepr]
+		public struct IWorkspaceScriptable3 : IWorkspaceScriptable2
+		{
+			public const new Guid IID = .(0x531e6512, 0x2cbf, 0x4bd2, 0x80, 0xa5, 0xd9, 0x0a, 0x71, 0x63, 0x6a, 0x9a);
+			
+			public function HRESULT(IWorkspaceScriptable3 *self, BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName, BSTR bstrRedirectorName, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrAppContainer, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags, BSTR bstrEventLogUploadAddress, Guid correlationId) StartWorkspaceEx2;
+		}
+		[CRepr]
+		public struct IWorkspaceReportMessage : IUnknown
+		{
+			public const new Guid IID = .(0xa7c06739, 0x500f, 0x4e8c, 0x99, 0xa8, 0x2b, 0xd6, 0x95, 0x58, 0x99, 0xeb);
+			
+			public function HRESULT(IWorkspaceReportMessage *self, BSTR bstrMessage) RegisterErrorLogMessage;
+			public function HRESULT(IWorkspaceReportMessage *self, BSTR bstrWkspId, uint32 dwErrorType, BSTR bstrErrorMessageType, uint32 dwErrorCode, int16* pfErrorExist) IsErrorMessageRegistered;
+			public function HRESULT(IWorkspaceReportMessage *self, BSTR bstrWkspId, uint32 dwErrorType, BSTR bstrErrorMessageType, uint32 dwErrorCode) RegisterErrorEvent;
+		}
+		[CRepr]
+		public struct _ITSWkspEvents : IDispatch
+		{
+			public const new Guid IID = .(0xb922bbb8, 0x4c55, 0x4fea, 0x84, 0x96, 0xbe, 0xb0, 0xb4, 0x42, 0x85, 0xe9);
+			
+		}
+		[CRepr]
+		public struct ITsSbPlugin : IUnknown
+		{
+			public const new Guid IID = .(0x48cd7406, 0xcaab, 0x465f, 0xa5, 0xd6, 0xba, 0xa8, 0x63, 0xb9, 0xea, 0x4f);
+			
+			public function HRESULT(ITsSbPlugin *self, ITsSbProvider* pProvider, ITsSbPluginNotifySink* pNotifySink, ITsSbPluginPropertySet* pPropertySet) Initialize;
+			public function HRESULT(ITsSbPlugin *self, HRESULT hr) Terminate;
+		}
+		[CRepr]
+		public struct ITsSbResourcePlugin : ITsSbPlugin
+		{
+			public const new Guid IID = .(0xea8db42c, 0x98ed, 0x4535, 0xa8, 0x8b, 0x2a, 0x16, 0x4f, 0x35, 0x49, 0x0f);
+			
+		}
+		[CRepr]
+		public struct ITsSbServiceNotification : IUnknown
+		{
+			public const new Guid IID = .(0x86cb68ae, 0x86e0, 0x4f57, 0x8a, 0x64, 0xbb, 0x74, 0x06, 0xbc, 0x55, 0x50);
+			
+			public function HRESULT(ITsSbServiceNotification *self) NotifyServiceFailure;
+			public function HRESULT(ITsSbServiceNotification *self) NotifyServiceSuccess;
+		}
+		[CRepr]
+		public struct ITsSbLoadBalancing : ITsSbPlugin
+		{
+			public const new Guid IID = .(0x24329274, 0x9eb7, 0x11dc, 0xae, 0x98, 0xf2, 0xb4, 0x56, 0xd8, 0x95, 0x93);
+			
+			public function HRESULT(ITsSbLoadBalancing *self, ITsSbClientConnection* pConnection, ITsSbLoadBalancingNotifySink* pLBSink) GetMostSuitableTarget;
+		}
+		[CRepr]
+		public struct ITsSbPlacement : ITsSbPlugin
+		{
+			public const new Guid IID = .(0xdaadee5f, 0x6d32, 0x480e, 0x9e, 0x36, 0xdd, 0xab, 0x23, 0x29, 0xf0, 0x6d);
+			
+			public function HRESULT(ITsSbPlacement *self, ITsSbClientConnection* pConnection, ITsSbPlacementNotifySink* pPlacementSink) QueryEnvironmentForTarget;
+		}
+		[CRepr]
+		public struct ITsSbOrchestration : ITsSbPlugin
+		{
+			public const new Guid IID = .(0x64fc1172, 0x9eb7, 0x11dc, 0x8b, 0x00, 0x3a, 0xba, 0x56, 0xd8, 0x95, 0x93);
+			
+			public function HRESULT(ITsSbOrchestration *self, ITsSbClientConnection* pConnection, ITsSbOrchestrationNotifySink* pOrchestrationNotifySink) PrepareTargetForConnect;
+		}
+		[CRepr]
+		public struct ITsSbEnvironment : IUnknown
+		{
+			public const new Guid IID = .(0x8c87f7f7, 0xbf51, 0x4a5c, 0x87, 0xbf, 0x8e, 0x94, 0xfb, 0x6e, 0x22, 0x56);
+			
+			public function HRESULT(ITsSbEnvironment *self, BSTR* pVal) get_Name;
+			public function HRESULT(ITsSbEnvironment *self, uint32* pVal) get_ServerWeight;
+			public function HRESULT(ITsSbEnvironment *self, ITsSbEnvironmentPropertySet** ppPropertySet) get_EnvironmentPropertySet;
+			public function HRESULT(ITsSbEnvironment *self, ITsSbEnvironmentPropertySet* pVal) put_EnvironmentPropertySet;
+		}
+		[CRepr]
+		public struct ITsSbLoadBalanceResult : IUnknown
+		{
+			public const new Guid IID = .(0x24fdb7ac, 0xfea6, 0x11dc, 0x96, 0x72, 0x9a, 0x89, 0x56, 0xd8, 0x95, 0x93);
+			
+			public function HRESULT(ITsSbLoadBalanceResult *self, BSTR* pVal) get_TargetName;
+		}
+		[CRepr]
+		public struct ITsSbTarget : IUnknown
+		{
+			public const new Guid IID = .(0x16616ecc, 0x272d, 0x411d, 0xb3, 0x24, 0x12, 0x68, 0x93, 0x03, 0x38, 0x56);
+			
+			public function HRESULT(ITsSbTarget *self, BSTR* pVal) get_TargetName;
+			public function HRESULT(ITsSbTarget *self, BSTR Val) put_TargetName;
+			public function HRESULT(ITsSbTarget *self, BSTR* pVal) get_FarmName;
+			public function HRESULT(ITsSbTarget *self, BSTR Val) put_FarmName;
+			public function HRESULT(ITsSbTarget *self, BSTR* TargetFqdnName) get_TargetFQDN;
+			public function HRESULT(ITsSbTarget *self, BSTR Val) put_TargetFQDN;
+			public function HRESULT(ITsSbTarget *self, BSTR* TargetNetbiosName) get_TargetNetbios;
+			public function HRESULT(ITsSbTarget *self, BSTR Val) put_TargetNetbios;
+			public function HRESULT(ITsSbTarget *self, TSSD_ConnectionPoint* SOCKADDR, uint32* numAddresses) get_IpAddresses;
+			public function HRESULT(ITsSbTarget *self, TSSD_ConnectionPoint* SOCKADDR, uint32 numAddresses) put_IpAddresses;
+			public function HRESULT(ITsSbTarget *self, TARGET_STATE* pState) get_TargetState;
+			public function HRESULT(ITsSbTarget *self, TARGET_STATE State) put_TargetState;
+			public function HRESULT(ITsSbTarget *self, ITsSbTargetPropertySet** ppPropertySet) get_TargetPropertySet;
+			public function HRESULT(ITsSbTarget *self, ITsSbTargetPropertySet* pVal) put_TargetPropertySet;
+			public function HRESULT(ITsSbTarget *self, BSTR* pVal) get_EnvironmentName;
+			public function HRESULT(ITsSbTarget *self, BSTR Val) put_EnvironmentName;
+			public function HRESULT(ITsSbTarget *self, uint32* pNumSessions) get_NumSessions;
+			public function HRESULT(ITsSbTarget *self, uint32* pNumPendingConnections) get_NumPendingConnections;
+			public function HRESULT(ITsSbTarget *self, uint32* pTargetLoad) get_TargetLoad;
+		}
+		[CRepr]
+		public struct ITsSbSession : IUnknown
+		{
+			public const new Guid IID = .(0xd453aac7, 0xb1d8, 0x4c5e, 0xba, 0x34, 0x9a, 0xfb, 0x4c, 0x8c, 0x55, 0x10);
+			
+			public function HRESULT(ITsSbSession *self, uint32* pVal) get_SessionId;
+			public function HRESULT(ITsSbSession *self, BSTR* targetName) get_TargetName;
+			public function HRESULT(ITsSbSession *self, BSTR targetName) put_TargetName;
+			public function HRESULT(ITsSbSession *self, BSTR* userName) get_Username;
+			public function HRESULT(ITsSbSession *self, BSTR* domain) get_Domain;
+			public function HRESULT(ITsSbSession *self, TSSESSION_STATE* pState) get_State;
+			public function HRESULT(ITsSbSession *self, TSSESSION_STATE State) put_State;
+			public function HRESULT(ITsSbSession *self, FILETIME* pTime) get_CreateTime;
+			public function HRESULT(ITsSbSession *self, FILETIME Time) put_CreateTime;
+			public function HRESULT(ITsSbSession *self, FILETIME* pTime) get_DisconnectTime;
+			public function HRESULT(ITsSbSession *self, FILETIME Time) put_DisconnectTime;
+			public function HRESULT(ITsSbSession *self, BSTR* app) get_InitialProgram;
+			public function HRESULT(ITsSbSession *self, BSTR Application) put_InitialProgram;
+			public function HRESULT(ITsSbSession *self, CLIENT_DISPLAY* pClientDisplay) get_ClientDisplay;
+			public function HRESULT(ITsSbSession *self, CLIENT_DISPLAY pClientDisplay) put_ClientDisplay;
+			public function HRESULT(ITsSbSession *self, uint32* pVal) get_ProtocolType;
+			public function HRESULT(ITsSbSession *self, uint32 Val) put_ProtocolType;
+		}
+		[CRepr]
+		public struct ITsSbResourceNotification : IUnknown
+		{
+			public const new Guid IID = .(0x65d3e85a, 0xc39b, 0x11dc, 0xb9, 0x2d, 0x3c, 0xd2, 0x55, 0xd8, 0x95, 0x93);
+			
+			public function HRESULT(ITsSbResourceNotification *self, TSSESSION_STATE changeType, ITsSbSession* pSession) NotifySessionChange;
+			public function HRESULT(ITsSbResourceNotification *self, uint32 TargetChangeType, ITsSbTarget* pTarget) NotifyTargetChange;
+			public function HRESULT(ITsSbResourceNotification *self, CONNECTION_CHANGE_NOTIFICATION ChangeType, ITsSbClientConnection* pConnection) NotifyClientConnectionStateChange;
+		}
+		[CRepr]
+		public struct ITsSbResourceNotificationEx : IUnknown
+		{
+			public const new Guid IID = .(0xa8a47fde, 0xca91, 0x44d2, 0xb8, 0x97, 0x3a, 0xa2, 0x8a, 0x43, 0xb2, 0xb7);
+			
+			public function HRESULT(ITsSbResourceNotificationEx *self, BSTR targetName, BSTR userName, BSTR domain, uint32 sessionId, TSSESSION_STATE sessionState) NotifySessionChangeEx;
+			public function HRESULT(ITsSbResourceNotificationEx *self, BSTR targetName, uint32 targetChangeType) NotifyTargetChangeEx;
+			public function HRESULT(ITsSbResourceNotificationEx *self, BSTR userName, BSTR domain, BSTR initialProgram, BSTR poolName, BSTR targetName, CONNECTION_CHANGE_NOTIFICATION connectionChangeType) NotifyClientConnectionStateChangeEx;
+		}
+		[CRepr]
+		public struct ITsSbTaskInfo : IUnknown
+		{
+			public const new Guid IID = .(0x523d1083, 0x89be, 0x48dd, 0x99, 0xea, 0x04, 0xe8, 0x2f, 0xfa, 0x72, 0x65);
+			
+			public function HRESULT(ITsSbTaskInfo *self, BSTR* pName) get_TargetId;
+			public function HRESULT(ITsSbTaskInfo *self, FILETIME* pStartTime) get_StartTime;
+			public function HRESULT(ITsSbTaskInfo *self, FILETIME* pEndTime) get_EndTime;
+			public function HRESULT(ITsSbTaskInfo *self, FILETIME* pDeadline) get_Deadline;
+			public function HRESULT(ITsSbTaskInfo *self, BSTR* pIdentifier) get_Identifier;
+			public function HRESULT(ITsSbTaskInfo *self, BSTR* pLabel) get_Label;
+			public function HRESULT(ITsSbTaskInfo *self, SAFEARRAY** pContext) get_Context;
+			public function HRESULT(ITsSbTaskInfo *self, BSTR* pPlugin) get_Plugin;
+			public function HRESULT(ITsSbTaskInfo *self, RDV_TASK_STATUS* pStatus) get_Status;
+		}
+		[CRepr]
+		public struct ITsSbTaskPlugin : ITsSbPlugin
+		{
+			public const new Guid IID = .(0xfa22ef0f, 0x8705, 0x41be, 0x93, 0xbc, 0x44, 0xbd, 0xbc, 0xf1, 0xc9, 0xc4);
+			
+			public function HRESULT(ITsSbTaskPlugin *self, ITsSbTaskPluginNotifySink* pITsSbTaskPluginNotifySink) InitializeTaskPlugin;
+			public function HRESULT(ITsSbTaskPlugin *self, BSTR pszHostName, uint32 SbTaskInfoSize, ITsSbTaskInfo** pITsSbTaskInfo) SetTaskQueue;
+		}
+		[CRepr]
+		public struct ITsSbPropertySet : IPropertyBag
+		{
+			public const new Guid IID = .(0x5c025171, 0xbb1e, 0x4baf, 0xa2, 0x12, 0x6d, 0x5e, 0x97, 0x74, 0xb3, 0x3b);
+			
+		}
+		[CRepr]
+		public struct ITsSbPluginPropertySet : ITsSbPropertySet
+		{
+			public const new Guid IID = .(0x95006e34, 0x7eff, 0x4b6c, 0xbb, 0x40, 0x49, 0xa4, 0xfd, 0xa7, 0xce, 0xa6);
+			
+		}
+		[CRepr]
+		public struct ITsSbClientConnectionPropertySet : ITsSbPropertySet
+		{
+			public const new Guid IID = .(0xe51995b0, 0x46d6, 0x11dd, 0xaa, 0x21, 0xce, 0xdc, 0x55, 0xd8, 0x95, 0x93);
+			
+		}
+		[CRepr]
+		public struct ITsSbTargetPropertySet : ITsSbPropertySet
+		{
+			public const new Guid IID = .(0xf7bda5d6, 0x994c, 0x4e11, 0xa0, 0x79, 0x27, 0x63, 0xb6, 0x18, 0x30, 0xac);
+			
+		}
+		[CRepr]
+		public struct ITsSbEnvironmentPropertySet : ITsSbPropertySet
+		{
+			public const new Guid IID = .(0xd0d1bf7e, 0x7acf, 0x11dd, 0xa2, 0x43, 0xe5, 0x11, 0x56, 0xd8, 0x95, 0x93);
+			
+		}
+		[CRepr]
+		public struct ITsSbBaseNotifySink : IUnknown
+		{
+			public const new Guid IID = .(0x808a6537, 0x1282, 0x4989, 0x9e, 0x09, 0xf4, 0x39, 0x38, 0xb7, 0x17, 0x22);
+			
+			public function HRESULT(ITsSbBaseNotifySink *self, HRESULT hrError) OnError;
+			public function HRESULT(ITsSbBaseNotifySink *self, CLIENT_MESSAGE_TYPE messageType, uint32 messageID) OnReportStatus;
+		}
+		[CRepr]
+		public struct ITsSbPluginNotifySink : ITsSbBaseNotifySink
+		{
+			public const new Guid IID = .(0x44dfe30b, 0xc3be, 0x40f5, 0xbf, 0x82, 0x7a, 0x95, 0xbb, 0x79, 0x5a, 0xdf);
+			
+			public function HRESULT(ITsSbPluginNotifySink *self, HRESULT hr) OnInitialized;
+			public function HRESULT(ITsSbPluginNotifySink *self) OnTerminated;
+		}
+		[CRepr]
+		public struct ITsSbLoadBalancingNotifySink : ITsSbBaseNotifySink
+		{
+			public const new Guid IID = .(0x5f8a8297, 0x3244, 0x4e6a, 0x95, 0x8a, 0x27, 0xc8, 0x22, 0xc1, 0xe1, 0x41);
+			
+			public function HRESULT(ITsSbLoadBalancingNotifySink *self, ITsSbLoadBalanceResult* pLBResult, BOOL fIsNewConnection) OnGetMostSuitableTarget;
+		}
+		[CRepr]
+		public struct ITsSbPlacementNotifySink : ITsSbBaseNotifySink
+		{
+			public const new Guid IID = .(0x68a0c487, 0x2b4f, 0x46c2, 0x94, 0xa1, 0x6c, 0xe6, 0x85, 0x18, 0x36, 0x34);
+			
+			public function HRESULT(ITsSbPlacementNotifySink *self, ITsSbEnvironment* pEnvironment) OnQueryEnvironmentCompleted;
+		}
+		[CRepr]
+		public struct ITsSbOrchestrationNotifySink : ITsSbBaseNotifySink
+		{
+			public const new Guid IID = .(0x36c37d61, 0x926b, 0x442f, 0xbc, 0xa5, 0x11, 0x8c, 0x6d, 0x50, 0xdc, 0xf2);
+			
+			public function HRESULT(ITsSbOrchestrationNotifySink *self, ITsSbTarget* pTarget) OnReadyToConnect;
+		}
+		[CRepr]
+		public struct ITsSbTaskPluginNotifySink : ITsSbBaseNotifySink
+		{
+			public const new Guid IID = .(0x6aaf899e, 0xc2ec, 0x45ee, 0xaa, 0x37, 0x45, 0xe6, 0x08, 0x95, 0x26, 0x1a);
+			
+			public function HRESULT(ITsSbTaskPluginNotifySink *self, BSTR szTargetName, FILETIME TaskStartTime, FILETIME TaskEndTime, FILETIME TaskDeadline, BSTR szTaskLabel, BSTR szTaskIdentifier, BSTR szTaskPlugin, uint32 dwTaskStatus, SAFEARRAY* saContext) OnSetTaskTime;
+			public function HRESULT(ITsSbTaskPluginNotifySink *self, BSTR szTargetName, BSTR szTaskIdentifier) OnDeleteTaskTime;
+			public function HRESULT(ITsSbTaskPluginNotifySink *self, BSTR szTargetName, BSTR TaskIdentifier, RDV_TASK_STATUS TaskStatus) OnUpdateTaskStatus;
+			public function HRESULT(ITsSbTaskPluginNotifySink *self, BSTR szHostName) OnReportTasks;
+		}
+		[CRepr]
+		public struct ITsSbClientConnection : IUnknown
+		{
+			public const new Guid IID = .(0x18857499, 0xad61, 0x4b1b, 0xb7, 0xdf, 0xcb, 0xcd, 0x41, 0xfb, 0x83, 0x38);
+			
+			public function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_UserName;
+			public function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_Domain;
+			public function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_InitialProgram;
+			public function HRESULT(ITsSbClientConnection *self, ITsSbLoadBalanceResult** ppVal) get_LoadBalanceResult;
+			public function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_FarmName;
+			public function HRESULT(ITsSbClientConnection *self, BSTR contextId, VARIANT context, VARIANT* existingContext) PutContext;
+			public function HRESULT(ITsSbClientConnection *self, BSTR contextId, VARIANT* context) GetContext;
+			public function HRESULT(ITsSbClientConnection *self, ITsSbEnvironment** ppEnvironment) get_Environment;
+			public function HRESULT(ITsSbClientConnection *self) get_ConnectionError;
+			public function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_SamUserAccount;
+			public function HRESULT(ITsSbClientConnection *self, ITsSbClientConnectionPropertySet** ppPropertySet) get_ClientConnectionPropertySet;
+			public function HRESULT(ITsSbClientConnection *self, BOOL* ppVal) get_IsFirstAssignment;
+			public function HRESULT(ITsSbClientConnection *self, RD_FARM_TYPE* pRdFarmType) get_RdFarmType;
+			public function HRESULT(ITsSbClientConnection *self, int8** pszUserSidString) get_UserSidString;
+			public function HRESULT(ITsSbClientConnection *self, ITsSbSession** ppSession) GetDisconnectedSession;
+		}
+		[CRepr]
+		public struct ITsSbProvider : IUnknown
+		{
+			public const new Guid IID = .(0x87a4098f, 0x6d7b, 0x44dd, 0xbc, 0x17, 0x8c, 0xe4, 0x4e, 0x37, 0x0d, 0x52);
+			
+			public function HRESULT(ITsSbProvider *self, BSTR TargetName, BSTR EnvironmentName, ITsSbTarget** ppTarget) CreateTargetObject;
+			public function HRESULT(ITsSbProvider *self, BSTR TargetName, ITsSbLoadBalanceResult** ppLBResult) CreateLoadBalanceResultObject;
+			public function HRESULT(ITsSbProvider *self, BSTR TargetName, BSTR UserName, BSTR Domain, uint32 SessionId, ITsSbSession** ppSession) CreateSessionObject;
+			public function HRESULT(ITsSbProvider *self, ITsSbPluginPropertySet** ppPropertySet) CreatePluginPropertySet;
+			public function HRESULT(ITsSbProvider *self, ITsSbTargetPropertySet** ppPropertySet) CreateTargetPropertySetObject;
+			public function HRESULT(ITsSbProvider *self, BSTR Name, uint32 ServerWeight, ITsSbEnvironment** ppEnvironment) CreateEnvironmentObject;
+			public function HRESULT(ITsSbProvider *self, ITsSbResourcePluginStore** ppStore) GetResourcePluginStore;
+			public function HRESULT(ITsSbProvider *self, ITsSbFilterPluginStore** ppStore) GetFilterPluginStore;
+			public function HRESULT(ITsSbProvider *self, uint32 notificationType, BSTR ResourceToMonitor, ITsSbResourceNotification* pPluginNotification) RegisterForNotification;
+			public function HRESULT(ITsSbProvider *self, uint32 notificationType, BSTR ResourceToMonitor) UnRegisterForNotification;
+			public function HRESULT(ITsSbProvider *self, ITsSbGlobalStore** ppGlobalStore) GetInstanceOfGlobalStore;
+			public function HRESULT(ITsSbProvider *self, ITsSbEnvironmentPropertySet** ppPropertySet) CreateEnvironmentPropertySetObject;
+		}
+		[CRepr]
+		public struct ITsSbResourcePluginStore : IUnknown
+		{
+			public const new Guid IID = .(0x5c38f65f, 0xbcf1, 0x4036, 0xa6, 0xbf, 0x9e, 0x3c, 0xcc, 0xae, 0x0b, 0x63);
+			
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR TargetName, BSTR FarmName, ITsSbTarget** ppTarget) QueryTarget;
+			public function HRESULT(ITsSbResourcePluginStore *self, uint32 dwSessionId, BSTR TargetName, ITsSbSession** ppSession) QuerySessionBySessionId;
+			public function HRESULT(ITsSbResourcePluginStore *self, ITsSbTarget* pTarget) AddTargetToStore;
+			public function HRESULT(ITsSbResourcePluginStore *self, ITsSbSession* pSession) AddSessionToStore;
+			public function HRESULT(ITsSbResourcePluginStore *self, ITsSbEnvironment* pEnvironment) AddEnvironmentToStore;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR EnvironmentName, BOOL bIgnoreOwner) RemoveEnvironmentFromStore;
+			public function HRESULT(ITsSbResourcePluginStore *self, uint32* pdwCount, SAFEARRAY** pVal) EnumerateFarms;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR EnvironmentName, ITsSbEnvironment** ppEnvironment) QueryEnvironment;
+			public function HRESULT(ITsSbResourcePluginStore *self, uint32* pdwCount, ITsSbEnvironment*** pVal) EnumerateEnvironments;
+			public function HRESULT(ITsSbResourcePluginStore *self, ITsSbTarget* pTarget, BOOL bForceWrite) SaveTarget;
+			public function HRESULT(ITsSbResourcePluginStore *self, ITsSbEnvironment* pEnvironment, BOOL bForceWrite) SaveEnvironment;
+			public function HRESULT(ITsSbResourcePluginStore *self, ITsSbSession* pSession) SaveSession;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR TargetName, BSTR PropertyName, VARIANT* pProperty) SetTargetProperty;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR EnvironmentName, BSTR PropertyName, VARIANT* pProperty) SetEnvironmentProperty;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR targetName, TARGET_STATE newState, TARGET_STATE* pOldState) SetTargetState;
+			public function HRESULT(ITsSbResourcePluginStore *self, ITsSbSession* sbSession) SetSessionState;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR FarmName, BSTR EnvName, TS_SB_SORT_BY sortByFieldId, BSTR sortyByPropName, uint32* pdwCount, ITsSbTarget*** pVal) EnumerateTargets;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, TSSESSION_STATE* pSessionState, uint32* pdwCount, ITsSbSession*** ppVal) EnumerateSessions;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR farmName, BSTR propertyName, VARIANT* pVarValue) GetFarmProperty;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR targetName, BSTR hostName) DeleteTarget;
+			public function HRESULT(ITsSbResourcePluginStore *self, ITsSbTarget* pTarget, BSTR PropertyName, VARIANT* pProperty) SetTargetPropertyWithVersionCheck;
+			public function HRESULT(ITsSbResourcePluginStore *self, ITsSbEnvironment* pEnvironment, BSTR PropertyName, VARIANT* pProperty) SetEnvironmentPropertyWithVersionCheck;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR targetName, uint32 dwTimeout, IUnknown** ppContext) AcquireTargetLock;
+			public function HRESULT(ITsSbResourcePluginStore *self, IUnknown* pContext) ReleaseTargetLock;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR PoolName, BSTR ServerFQDN, TARGET_STATE NewState, TARGET_STATE TestState, TARGET_STATE* pInitState) TestAndSetServerState;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR PoolName, BSTR serverName) SetServerWaitingToStart;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR PoolName, BSTR ServerFQDN, TARGET_STATE* pState) GetServerState;
+			public function HRESULT(ITsSbResourcePluginStore *self, BSTR ServerFQDN, uint32 DrainMode) SetServerDrainMode;
+		}
+		[CRepr]
+		public struct ITsSbFilterPluginStore : IUnknown
+		{
+			public const new Guid IID = .(0x85b44b0f, 0xed78, 0x413f, 0x97, 0x02, 0xfa, 0x6d, 0x3b, 0x5e, 0xe7, 0x55);
+			
+			public function HRESULT(ITsSbFilterPluginStore *self, ITsSbPropertySet* pPropertySet) SaveProperties;
+			public function HRESULT(ITsSbFilterPluginStore *self, ITsSbPropertySet** ppPropertySet) EnumerateProperties;
+			public function HRESULT(ITsSbFilterPluginStore *self, BSTR propertyName) DeleteProperties;
+		}
+		[CRepr]
+		public struct ITsSbGlobalStore : IUnknown
+		{
+			public const new Guid IID = .(0x9ab60f7b, 0xbd72, 0x4d9f, 0x8a, 0x3a, 0xa0, 0xea, 0x55, 0x74, 0xe6, 0x35);
+			
+			public function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, BSTR TargetName, BSTR FarmName, ITsSbTarget** ppTarget) QueryTarget;
+			public function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, uint32 dwSessionId, BSTR TargetName, ITsSbSession** ppSession) QuerySessionBySessionId;
+			public function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, uint32* pdwCount, SAFEARRAY** pVal) EnumerateFarms;
+			public function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, BSTR FarmName, BSTR EnvName, uint32* pdwCount, ITsSbTarget*** pVal) EnumerateTargets;
+			public function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, uint32* pdwCount, ITsSbEnvironment*** ppVal) EnumerateEnvironmentsByProvider;
+			public function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, TSSESSION_STATE* pSessionState, uint32* pdwCount, ITsSbSession*** ppVal) EnumerateSessions;
+			public function HRESULT(ITsSbGlobalStore *self, BSTR farmName, BSTR propertyName, VARIANT* pVarValue) GetFarmProperty;
+		}
+		[CRepr]
+		public struct ITsSbProvisioningPluginNotifySink : IUnknown
+		{
+			public const new Guid IID = .(0xaca87a8e, 0x818b, 0x4581, 0xa0, 0x32, 0x49, 0xc3, 0xdf, 0xb9, 0xc7, 0x01);
+			
+			public function HRESULT(ITsSbProvisioningPluginNotifySink *self, VM_NOTIFY_INFO* pVmNotifyInfo) OnJobCreated;
+			public function HRESULT(ITsSbProvisioningPluginNotifySink *self, VM_NOTIFY_ENTRY* pVmNotifyEntry, VM_NOTIFY_STATUS VmNotifyStatus, HRESULT ErrorCode, BSTR ErrorDescr) OnVirtualMachineStatusChanged;
+			public function HRESULT(ITsSbProvisioningPluginNotifySink *self, HRESULT ResultCode, BSTR ResultDescription) OnJobCompleted;
+			public function HRESULT(ITsSbProvisioningPluginNotifySink *self) OnJobCancelled;
+			public function HRESULT(ITsSbProvisioningPluginNotifySink *self, VM_NOTIFY_ENTRY* pVmNotifyEntry) LockVirtualMachine;
+			public function HRESULT(ITsSbProvisioningPluginNotifySink *self, BSTR VmHost, VM_HOST_NOTIFY_STATUS VmHostNotifyStatus, HRESULT ErrorCode, BSTR ErrorDescr) OnVirtualMachineHostStatusChanged;
+		}
+		[CRepr]
+		public struct ITsSbProvisioning : ITsSbPlugin
+		{
+			public const new Guid IID = .(0x2f6f0dbb, 0x9e4f, 0x462b, 0x9c, 0x3f, 0xfc, 0xcc, 0x3d, 0xcb, 0x62, 0x32);
+			
+			public function HRESULT(ITsSbProvisioning *self, BSTR JobXmlString, BSTR JobGuid, ITsSbProvisioningPluginNotifySink* pSink) CreateVirtualMachines;
+			public function HRESULT(ITsSbProvisioning *self, BSTR JobXmlString, BSTR JobGuid, ITsSbProvisioningPluginNotifySink* pSink, VM_PATCH_INFO* pVMPatchInfo) PatchVirtualMachines;
+			public function HRESULT(ITsSbProvisioning *self, BSTR JobXmlString, BSTR JobGuid, ITsSbProvisioningPluginNotifySink* pSink) DeleteVirtualMachines;
+			public function HRESULT(ITsSbProvisioning *self, BSTR JobGuid) CancelJob;
+		}
+		[CRepr]
+		public struct ITsSbGenericNotifySink : IUnknown
+		{
+			public const new Guid IID = .(0x4c4c8c4f, 0x300b, 0x46ad, 0x91, 0x64, 0x84, 0x68, 0xa7, 0xe7, 0x56, 0x8c);
+			
+			public function HRESULT(ITsSbGenericNotifySink *self, HRESULT Status) OnCompleted;
+			public function HRESULT(ITsSbGenericNotifySink *self, FILETIME* pftTimeout) GetWaitTimeout;
+		}
+		[CRepr]
+		public struct ItsPubPlugin : IUnknown
+		{
+			public const new Guid IID = .(0x70c04b05, 0xf347, 0x412b, 0x82, 0x2f, 0x36, 0xc9, 0x9c, 0x54, 0xca, 0x45);
+			
+			public function HRESULT(ItsPubPlugin *self, PWSTR userID, int32* pceAppListSize, pluginResource** resourceList) GetResourceList;
+			public function HRESULT(ItsPubPlugin *self, PWSTR alias, int32 flags, pluginResource* resource) GetResource;
+			public function HRESULT(ItsPubPlugin *self, uint64* lastUpdateTime) GetCacheLastUpdateTime;
+			public function HRESULT(ItsPubPlugin *self, BSTR* pVal) get_pluginName;
+			public function HRESULT(ItsPubPlugin *self, BSTR* pVal) get_pluginVersion;
+			public function HRESULT(ItsPubPlugin *self, uint32* resourceType, PWSTR resourceLocation, PWSTR endPointName, PWSTR userID, PWSTR alias) ResolveResource;
+		}
+		[CRepr]
+		public struct ItsPubPlugin2 : ItsPubPlugin
+		{
+			public const new Guid IID = .(0xfa4ce418, 0xaad7, 0x4ec6, 0xba, 0xd1, 0x0a, 0x32, 0x1b, 0xa4, 0x65, 0xd5);
+			
+			public function HRESULT(ItsPubPlugin2 *self, PWSTR userID, int32* pceAppListSize, pluginResource2** resourceList) GetResource2List;
+			public function HRESULT(ItsPubPlugin2 *self, PWSTR alias, int32 flags, pluginResource2* resource) GetResource2;
+			public function HRESULT(ItsPubPlugin2 *self, PWSTR userId, PWSTR poolId, TSPUB_PLUGIN_PD_RESOLUTION_TYPE ePdResolutionType, TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE* pPdAssignmentType, PWSTR endPointName) ResolvePersonalDesktop;
+			public function HRESULT(ItsPubPlugin2 *self, PWSTR userId, PWSTR poolId, PWSTR endpointName) DeletePersonalDesktopAssignment;
+		}
+		[CRepr]
+		public struct IWorkspaceResTypeRegistry : IDispatch
+		{
+			public const new Guid IID = .(0x1d428c79, 0x6e2e, 0x4351, 0xa3, 0x61, 0xc0, 0x40, 0x1a, 0x03, 0xa0, 0xba);
+			
+			public function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) AddResourceType;
+			public function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, BSTR bstrFileExtension) DeleteResourceType;
+			public function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, SAFEARRAY** psaFileExtensions) GetRegisteredFileExtensions;
+			public function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, BSTR bstrFileExtension, BSTR* pbstrLauncher) GetResourceTypeInfo;
+			public function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) ModifyResourceType;
+		}
+		[CRepr]
+		public struct IWTSPlugin : IUnknown
+		{
+			public const new Guid IID = .(0xa1230201, 0x1439, 0x4e62, 0xa4, 0x14, 0x19, 0x0d, 0x0a, 0xc3, 0xd4, 0x0e);
+			
+			public function HRESULT(IWTSPlugin *self, IWTSVirtualChannelManager* pChannelMgr) Initialize;
+			public function HRESULT(IWTSPlugin *self) Connected;
+			public function HRESULT(IWTSPlugin *self, uint32 dwDisconnectCode) Disconnected;
+			public function HRESULT(IWTSPlugin *self) Terminated;
+		}
+		[CRepr]
+		public struct IWTSListener : IUnknown
+		{
+			public const new Guid IID = .(0xa1230206, 0x9a39, 0x4d58, 0x86, 0x74, 0xcd, 0xb4, 0xdf, 0xf4, 0xe7, 0x3b);
+			
+			public function HRESULT(IWTSListener *self, IPropertyBag** ppPropertyBag) GetConfiguration;
+		}
+		[CRepr]
+		public struct IWTSListenerCallback : IUnknown
+		{
+			public const new Guid IID = .(0xa1230203, 0xd6a7, 0x11d8, 0xb9, 0xfd, 0x00, 0x0b, 0xdb, 0xd1, 0xf1, 0x98);
+			
+			public function HRESULT(IWTSListenerCallback *self, IWTSVirtualChannel* pChannel, BSTR data, BOOL* pbAccept, IWTSVirtualChannelCallback** ppCallback) OnNewChannelConnection;
+		}
+		[CRepr]
+		public struct IWTSVirtualChannelCallback : IUnknown
+		{
+			public const new Guid IID = .(0xa1230204, 0xd6a7, 0x11d8, 0xb9, 0xfd, 0x00, 0x0b, 0xdb, 0xd1, 0xf1, 0x98);
+			
+			public function HRESULT(IWTSVirtualChannelCallback *self, uint32 cbSize, uint8* pBuffer) OnDataReceived;
+			public function HRESULT(IWTSVirtualChannelCallback *self) OnClose;
+		}
+		[CRepr]
+		public struct IWTSVirtualChannelManager : IUnknown
+		{
+			public const new Guid IID = .(0xa1230205, 0xd6a7, 0x11d8, 0xb9, 0xfd, 0x00, 0x0b, 0xdb, 0xd1, 0xf1, 0x98);
+			
+			public function HRESULT(IWTSVirtualChannelManager *self, uint8* pszChannelName, uint32 uFlags, IWTSListenerCallback* pListenerCallback, IWTSListener** ppListener) CreateListener;
+		}
+		[CRepr]
+		public struct IWTSVirtualChannel : IUnknown
+		{
+			public const new Guid IID = .(0xa1230207, 0xd6a7, 0x11d8, 0xb9, 0xfd, 0x00, 0x0b, 0xdb, 0xd1, 0xf1, 0x98);
+			
+			public function HRESULT(IWTSVirtualChannel *self, uint32 cbSize, uint8* pBuffer, IUnknown* pReserved) Write;
+			public function HRESULT(IWTSVirtualChannel *self) Close;
+		}
+		[CRepr]
+		public struct IWTSPluginServiceProvider : IUnknown
+		{
+			public const new Guid IID = .(0xd3e07363, 0x087c, 0x476c, 0x86, 0xa7, 0xdb, 0xb1, 0x5f, 0x46, 0xdd, 0xb4);
+			
+			public function HRESULT(IWTSPluginServiceProvider *self, Guid ServiceId, IUnknown** ppunkObject) GetService;
+		}
+		[CRepr]
+		public struct IWTSBitmapRenderer : IUnknown
+		{
+			public const new Guid IID = .(0x5b7acc97, 0xf3c9, 0x46f7, 0x8c, 0x5b, 0xfa, 0x68, 0x5d, 0x34, 0x41, 0xb1);
+			
+			public function HRESULT(IWTSBitmapRenderer *self, Guid imageFormat, uint32 dwWidth, uint32 dwHeight, int32 cbStride, uint32 cbImageBuffer, uint8* pImageBuffer) Render;
+			public function HRESULT(IWTSBitmapRenderer *self, BITMAP_RENDERER_STATISTICS* pStatistics) GetRendererStatistics;
+			public function HRESULT(IWTSBitmapRenderer *self) RemoveMapping;
+		}
+		[CRepr]
+		public struct IWTSBitmapRendererCallback : IUnknown
+		{
+			public const new Guid IID = .(0xd782928e, 0xfe4e, 0x4e77, 0xae, 0x90, 0x9c, 0xd0, 0xb3, 0xe3, 0xb3, 0x53);
+			
+			public function HRESULT(IWTSBitmapRendererCallback *self, RECT rcNewSize) OnTargetSizeChanged;
+		}
+		[CRepr]
+		public struct IWTSBitmapRenderService : IUnknown
+		{
+			public const new Guid IID = .(0xea326091, 0x05fe, 0x40c1, 0xb4, 0x9c, 0x3d, 0x2e, 0xf4, 0x62, 0x6a, 0x0e);
+			
+			public function HRESULT(IWTSBitmapRenderService *self, uint64 mappingId, IWTSBitmapRendererCallback* pMappedRendererCallback, IWTSBitmapRenderer** ppMappedRenderer) GetMappedRenderer;
+		}
+		[CRepr]
+		public struct IWRdsGraphicsChannelEvents : IUnknown
+		{
+			public const new Guid IID = .(0x67f2368c, 0xd674, 0x4fae, 0x66, 0xa5, 0xd2, 0x06, 0x28, 0xa6, 0x40, 0xd2);
+			
+			public function HRESULT(IWRdsGraphicsChannelEvents *self, uint32 cbSize, uint8* pBuffer) OnDataReceived;
+			public function HRESULT(IWRdsGraphicsChannelEvents *self) OnClose;
+			public function HRESULT(IWRdsGraphicsChannelEvents *self, HRESULT OpenResult, IUnknown* pOpenContext) OnChannelOpened;
+			public function HRESULT(IWRdsGraphicsChannelEvents *self, IUnknown* pWriteContext, BOOL bCancelled, uint8* pBuffer, uint32 cbBuffer) OnDataSent;
+			public function HRESULT(IWRdsGraphicsChannelEvents *self, uint32 bandwidth, uint32 RTT, uint64 lastSentByteIndex) OnMetricsUpdate;
+		}
+		[CRepr]
+		public struct IWRdsGraphicsChannel : IUnknown
+		{
+			public const new Guid IID = .(0x684b7a0b, 0xedff, 0x43ad, 0xd5, 0xa2, 0x4a, 0x8d, 0x53, 0x88, 0xf4, 0x01);
+			
+			public function HRESULT(IWRdsGraphicsChannel *self, uint32 cbSize, uint8* pBuffer, IUnknown* pContext) Write;
+			public function HRESULT(IWRdsGraphicsChannel *self) Close;
+			public function HRESULT(IWRdsGraphicsChannel *self, IWRdsGraphicsChannelEvents* pChannelEvents, IUnknown* pOpenContext) Open;
+		}
+		[CRepr]
+		public struct IWRdsGraphicsChannelManager : IUnknown
+		{
+			public const new Guid IID = .(0x0fd57159, 0xe83e, 0x476a, 0xa8, 0xb9, 0x4a, 0x79, 0x76, 0xe7, 0x1e, 0x18);
+			
+			public function HRESULT(IWRdsGraphicsChannelManager *self, uint8* pszChannelName, WRdsGraphicsChannelType channelType, IWRdsGraphicsChannel** ppVirtualChannel) CreateChannel;
+		}
+		[CRepr]
+		public struct IWTSProtocolManager : IUnknown
+		{
+			public const new Guid IID = .(0xf9eaf6cc, 0xed79, 0x4f01, 0x82, 0x1d, 0x1f, 0x88, 0x1b, 0x9f, 0x66, 0xcc);
+			
+			public function HRESULT(IWTSProtocolManager *self, PWSTR wszListenerName, IWTSProtocolListener** pProtocolListener) CreateListener;
+			public function HRESULT(IWTSProtocolManager *self, WTS_SERVICE_STATE* pTSServiceStateChange) NotifyServiceStateChange;
+			public function HRESULT(IWTSProtocolManager *self, WTS_SESSION_ID* SessionId) NotifySessionOfServiceStart;
+			public function HRESULT(IWTSProtocolManager *self, WTS_SESSION_ID* SessionId) NotifySessionOfServiceStop;
+			public function HRESULT(IWTSProtocolManager *self, WTS_SESSION_ID* SessionId, uint32 EventId) NotifySessionStateChange;
+		}
+		[CRepr]
+		public struct IWTSProtocolListener : IUnknown
+		{
+			public const new Guid IID = .(0x23083765, 0x45f0, 0x4394, 0x8f, 0x69, 0x32, 0xb2, 0xbc, 0x0e, 0xf4, 0xca);
+			
+			public function HRESULT(IWTSProtocolListener *self, IWTSProtocolListenerCallback* pCallback) StartListen;
+			public function HRESULT(IWTSProtocolListener *self) StopListen;
+		}
+		[CRepr]
+		public struct IWTSProtocolListenerCallback : IUnknown
+		{
+			public const new Guid IID = .(0x23083765, 0x1a2d, 0x4de2, 0x97, 0xde, 0x4a, 0x35, 0xf2, 0x60, 0xf0, 0xb3);
+			
+			public function HRESULT(IWTSProtocolListenerCallback *self, IWTSProtocolConnection* pConnection, IWTSProtocolConnectionCallback** pCallback) OnConnected;
+		}
+		[CRepr]
+		public struct IWTSProtocolConnection : IUnknown
+		{
+			public const new Guid IID = .(0x23083765, 0x9095, 0x4648, 0x98, 0xbf, 0xef, 0x81, 0xc9, 0x14, 0x03, 0x2d);
+			
+			public function HRESULT(IWTSProtocolConnection *self, IWTSProtocolLogonErrorRedirector** ppLogonErrorRedir) GetLogonErrorRedirector;
+			public function HRESULT(IWTSProtocolConnection *self, WTS_POLICY_DATA* pPolicyData) SendPolicyData;
+			public function HRESULT(IWTSProtocolConnection *self) AcceptConnection;
+			public function HRESULT(IWTSProtocolConnection *self, WTS_CLIENT_DATA* pClientData) GetClientData;
+			public function HRESULT(IWTSProtocolConnection *self, WTS_USER_CREDENTIAL* pUserCreds) GetUserCredentials;
+			public function HRESULT(IWTSProtocolConnection *self, IWTSProtocolLicenseConnection** ppLicenseConnection) GetLicenseConnection;
+			public function HRESULT(IWTSProtocolConnection *self, WTS_SESSION_ID* SessionId) AuthenticateClientToSession;
+			public function HRESULT(IWTSProtocolConnection *self, WTS_SESSION_ID* SessionId) NotifySessionId;
+			public function HRESULT(IWTSProtocolConnection *self, HANDLE_PTR* pKeyboardHandle, HANDLE_PTR* pMouseHandle, HANDLE_PTR* pBeepHandle, HANDLE_PTR* pVideoHandle) GetProtocolHandles;
+			public function HRESULT(IWTSProtocolConnection *self, uint32 SessionId) ConnectNotify;
+			public function HRESULT(IWTSProtocolConnection *self, uint32 SessionId, HANDLE_PTR UserToken, PWSTR pDomainName, PWSTR pUserName) IsUserAllowedToLogon;
+			public function HRESULT(IWTSProtocolConnection *self, HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, uint32* pdwSessionIdentifierCount) SessionArbitrationEnumeration;
+			public function HRESULT(IWTSProtocolConnection *self, HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, WTS_SESSION_ID* SessionId) LogonNotify;
+			public function HRESULT(IWTSProtocolConnection *self, WTS_POLICY_DATA* pPolicyData, WTS_USER_DATA* pClientData) GetUserData;
+			public function HRESULT(IWTSProtocolConnection *self) DisconnectNotify;
+			public function HRESULT(IWTSProtocolConnection *self) Close;
+			public function HRESULT(IWTSProtocolConnection *self, WTS_PROTOCOL_STATUS* pProtocolStatus) GetProtocolStatus;
+			public function HRESULT(IWTSProtocolConnection *self, uint64* pLastInputTime) GetLastInputTime;
+			public function HRESULT(IWTSProtocolConnection *self, uint32 ulError) SetErrorInfo;
+			public function HRESULT(IWTSProtocolConnection *self, uint32 Frequency, uint32 Duration) SendBeep;
+			public function HRESULT(IWTSProtocolConnection *self, PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, uint* phChannel) CreateVirtualChannel;
+			public function HRESULT(IWTSProtocolConnection *self, Guid QueryType, uint32 ulNumEntriesIn, uint32 ulNumEntriesOut, WTS_PROPERTY_VALUE* pPropertyEntriesIn, WTS_PROPERTY_VALUE* pPropertyEntriesOut) QueryProperty;
+			public function HRESULT(IWTSProtocolConnection *self, IWTSProtocolShadowConnection** ppShadowConnection) GetShadowConnection;
+		}
+		[CRepr]
+		public struct IWTSProtocolConnectionCallback : IUnknown
+		{
+			public const new Guid IID = .(0x23083765, 0x75eb, 0x41fe, 0xb4, 0xfb, 0xe0, 0x86, 0x24, 0x2a, 0xfa, 0x0f);
+			
+			public function HRESULT(IWTSProtocolConnectionCallback *self) OnReady;
+			public function HRESULT(IWTSProtocolConnectionCallback *self, uint32 Reason, uint32 Source) BrokenConnection;
+			public function HRESULT(IWTSProtocolConnectionCallback *self) StopScreenUpdates;
+			public function HRESULT(IWTSProtocolConnectionCallback *self, WTS_SMALL_RECT* rect) RedrawWindow;
+			public function HRESULT(IWTSProtocolConnectionCallback *self, WTS_DISPLAY_IOCTL* DisplayIOCtl) DisplayIOCtl;
+		}
+		[CRepr]
+		public struct IWTSProtocolShadowConnection : IUnknown
+		{
+			public const new Guid IID = .(0xee3b0c14, 0x37fb, 0x456b, 0xba, 0xb3, 0x6d, 0x6c, 0xd5, 0x1e, 0x13, 0xbf);
+			
+			public function HRESULT(IWTSProtocolShadowConnection *self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, IWTSProtocolShadowCallback* pShadowCallback) Start;
+			public function HRESULT(IWTSProtocolShadowConnection *self) Stop;
+			public function HRESULT(IWTSProtocolShadowConnection *self, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) DoTarget;
+		}
+		[CRepr]
+		public struct IWTSProtocolShadowCallback : IUnknown
+		{
+			public const new Guid IID = .(0x503a2504, 0xaae5, 0x4ab1, 0x93, 0xe0, 0x6d, 0x1c, 0x4b, 0xc6, 0xf7, 0x1a);
+			
+			public function HRESULT(IWTSProtocolShadowCallback *self) StopShadow;
+			public function HRESULT(IWTSProtocolShadowCallback *self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) InvokeTargetShadow;
+		}
+		[CRepr]
+		public struct IWTSProtocolLicenseConnection : IUnknown
+		{
+			public const new Guid IID = .(0x23083765, 0x178c, 0x4079, 0x8e, 0x4a, 0xfe, 0xa6, 0x49, 0x6a, 0x4d, 0x70);
+			
+			public function HRESULT(IWTSProtocolLicenseConnection *self, WTS_LICENSE_CAPABILITIES* ppLicenseCapabilities, uint32* pcbLicenseCapabilities) RequestLicensingCapabilities;
+			public function HRESULT(IWTSProtocolLicenseConnection *self, uint8* pClientLicense, uint32 cbClientLicense) SendClientLicense;
+			public function HRESULT(IWTSProtocolLicenseConnection *self, uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, uint32* pcbClientLicense) RequestClientLicense;
+			public function HRESULT(IWTSProtocolLicenseConnection *self, uint32 ulComplete) ProtocolComplete;
+		}
+		[CRepr]
+		public struct IWTSProtocolLogonErrorRedirector : IUnknown
+		{
+			public const new Guid IID = .(0xfd9b61a7, 0x2916, 0x4627, 0x8d, 0xee, 0x43, 0x28, 0x71, 0x1a, 0xd6, 0xcb);
+			
+			public function HRESULT(IWTSProtocolLogonErrorRedirector *self) OnBeginPainting;
+			public function HRESULT(IWTSProtocolLogonErrorRedirector *self, PWSTR pszMessage, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectStatus;
+			public function HRESULT(IWTSProtocolLogonErrorRedirector *self, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectMessage;
+			public function HRESULT(IWTSProtocolLogonErrorRedirector *self, int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectLogonError;
+		}
+		[CRepr]
+		public struct IWRdsProtocolSettings : IUnknown
+		{
+			public const new Guid IID = .(0x654a5a6a, 0x2550, 0x47eb, 0xb6, 0xf7, 0xeb, 0xd6, 0x37, 0x47, 0x52, 0x65);
+			
+			public function HRESULT(IWRdsProtocolSettings *self, WRDS_SETTING_TYPE WRdsSettingType, WRDS_SETTING_LEVEL WRdsSettingLevel, WRDS_SETTINGS* pWRdsSettings) GetSettings;
+			public function HRESULT(IWRdsProtocolSettings *self, WRDS_SETTINGS* pWRdsSettings, WRDS_CONNECTION_SETTING_LEVEL WRdsConnectionSettingLevel, WRDS_CONNECTION_SETTINGS* pWRdsConnectionSettings) MergeSettings;
+		}
+		[CRepr]
+		public struct IWRdsProtocolManager : IUnknown
+		{
+			public const new Guid IID = .(0xdc796967, 0x3abb, 0x40cd, 0xa4, 0x46, 0x10, 0x52, 0x76, 0xb5, 0x89, 0x50);
+			
+			public function HRESULT(IWRdsProtocolManager *self, IWRdsProtocolSettings* pIWRdsSettings, WRDS_SETTINGS* pWRdsSettings) Initialize;
+			public function HRESULT(IWRdsProtocolManager *self, PWSTR wszListenerName, IWRdsProtocolListener** pProtocolListener) CreateListener;
+			public function HRESULT(IWRdsProtocolManager *self, WTS_SERVICE_STATE* pTSServiceStateChange) NotifyServiceStateChange;
+			public function HRESULT(IWRdsProtocolManager *self, WTS_SESSION_ID* SessionId) NotifySessionOfServiceStart;
+			public function HRESULT(IWRdsProtocolManager *self, WTS_SESSION_ID* SessionId) NotifySessionOfServiceStop;
+			public function HRESULT(IWRdsProtocolManager *self, WTS_SESSION_ID* SessionId, uint32 EventId) NotifySessionStateChange;
+			public function HRESULT(IWRdsProtocolManager *self, WRDS_SETTINGS* pWRdsSettings) NotifySettingsChange;
+			public function HRESULT(IWRdsProtocolManager *self) Uninitialize;
+		}
+		[CRepr]
+		public struct IWRdsProtocolListener : IUnknown
+		{
+			public const new Guid IID = .(0xfcbc131b, 0xc686, 0x451d, 0xa7, 0x73, 0xe2, 0x79, 0xe2, 0x30, 0xf5, 0x40);
+			
+			public function HRESULT(IWRdsProtocolListener *self, WRDS_LISTENER_SETTING_LEVEL WRdsListenerSettingLevel, WRDS_LISTENER_SETTINGS* pWRdsListenerSettings) GetSettings;
+			public function HRESULT(IWRdsProtocolListener *self, IWRdsProtocolListenerCallback* pCallback) StartListen;
+			public function HRESULT(IWRdsProtocolListener *self) StopListen;
+		}
+		[CRepr]
+		public struct IWRdsProtocolListenerCallback : IUnknown
+		{
+			public const new Guid IID = .(0x3ab27e5b, 0x4449, 0x4dc1, 0xb7, 0x4a, 0x91, 0x62, 0x1d, 0x4f, 0xe9, 0x84);
+			
+			public function HRESULT(IWRdsProtocolListenerCallback *self, IWRdsProtocolConnection* pConnection, WRDS_CONNECTION_SETTINGS* pWRdsConnectionSettings, IWRdsProtocolConnectionCallback** pCallback) OnConnected;
+		}
+		[CRepr]
+		public struct IWRdsProtocolConnection : IUnknown
+		{
+			public const new Guid IID = .(0x324ed94f, 0xfdaf, 0x4ff6, 0x81, 0xa8, 0x42, 0xab, 0xe7, 0x55, 0x83, 0x0b);
+			
+			public function HRESULT(IWRdsProtocolConnection *self, IWRdsProtocolLogonErrorRedirector** ppLogonErrorRedir) GetLogonErrorRedirector;
+			public function HRESULT(IWRdsProtocolConnection *self) AcceptConnection;
+			public function HRESULT(IWRdsProtocolConnection *self, WTS_CLIENT_DATA* pClientData) GetClientData;
+			public function HRESULT(IWRdsProtocolConnection *self, uint32* pNumMonitors, uint32* pPrimaryMonitor) GetClientMonitorData;
+			public function HRESULT(IWRdsProtocolConnection *self, WTS_USER_CREDENTIAL* pUserCreds) GetUserCredentials;
+			public function HRESULT(IWRdsProtocolConnection *self, IWRdsProtocolLicenseConnection** ppLicenseConnection) GetLicenseConnection;
+			public function HRESULT(IWRdsProtocolConnection *self, WTS_SESSION_ID* SessionId) AuthenticateClientToSession;
+			public function HRESULT(IWRdsProtocolConnection *self, WTS_SESSION_ID* SessionId, HANDLE_PTR SessionHandle) NotifySessionId;
+			public function HRESULT(IWRdsProtocolConnection *self, HANDLE_PTR* pKeyboardHandle, HANDLE_PTR* pMouseHandle, HANDLE_PTR* pBeepHandle) GetInputHandles;
+			public function HRESULT(IWRdsProtocolConnection *self, HANDLE_PTR* pVideoHandle) GetVideoHandle;
+			public function HRESULT(IWRdsProtocolConnection *self, uint32 SessionId) ConnectNotify;
+			public function HRESULT(IWRdsProtocolConnection *self, uint32 SessionId, HANDLE_PTR UserToken, PWSTR pDomainName, PWSTR pUserName) IsUserAllowedToLogon;
+			public function HRESULT(IWRdsProtocolConnection *self, HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, uint32* pdwSessionIdentifierCount) SessionArbitrationEnumeration;
+			public function HRESULT(IWRdsProtocolConnection *self, HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, WTS_SESSION_ID* SessionId, WRDS_CONNECTION_SETTINGS* pWRdsConnectionSettings) LogonNotify;
+			public function HRESULT(IWRdsProtocolConnection *self, uint32 DisconnectReason) PreDisconnect;
+			public function HRESULT(IWRdsProtocolConnection *self) DisconnectNotify;
+			public function HRESULT(IWRdsProtocolConnection *self) Close;
+			public function HRESULT(IWRdsProtocolConnection *self, WTS_PROTOCOL_STATUS* pProtocolStatus) GetProtocolStatus;
+			public function HRESULT(IWRdsProtocolConnection *self, uint64* pLastInputTime) GetLastInputTime;
+			public function HRESULT(IWRdsProtocolConnection *self, uint32 ulError) SetErrorInfo;
+			public function HRESULT(IWRdsProtocolConnection *self, PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, uint* phChannel) CreateVirtualChannel;
+			public function HRESULT(IWRdsProtocolConnection *self, Guid QueryType, uint32 ulNumEntriesIn, uint32 ulNumEntriesOut, WTS_PROPERTY_VALUE* pPropertyEntriesIn, WTS_PROPERTY_VALUE* pPropertyEntriesOut) QueryProperty;
+			public function HRESULT(IWRdsProtocolConnection *self, IWRdsProtocolShadowConnection** ppShadowConnection) GetShadowConnection;
+			public function HRESULT(IWRdsProtocolConnection *self, uint32 SessionId) NotifyCommandProcessCreated;
+		}
+		[CRepr]
+		public struct IWRdsProtocolConnectionCallback : IUnknown
+		{
+			public const new Guid IID = .(0xf1d70332, 0xd070, 0x4ef1, 0xa0, 0x88, 0x78, 0x31, 0x35, 0x36, 0xc2, 0xd6);
+			
+			public function HRESULT(IWRdsProtocolConnectionCallback *self) OnReady;
+			public function HRESULT(IWRdsProtocolConnectionCallback *self, uint32 Reason, uint32 Source) BrokenConnection;
+			public function HRESULT(IWRdsProtocolConnectionCallback *self) StopScreenUpdates;
+			public function HRESULT(IWRdsProtocolConnectionCallback *self, WTS_SMALL_RECT* rect) RedrawWindow;
+			public function HRESULT(IWRdsProtocolConnectionCallback *self, uint32* pConnectionId) GetConnectionId;
+		}
+		[CRepr]
+		public struct IWRdsProtocolShadowConnection : IUnknown
+		{
+			public const new Guid IID = .(0x9ae85ce6, 0xcade, 0x4548, 0x8f, 0xeb, 0x99, 0x01, 0x65, 0x97, 0xf6, 0x0a);
+			
+			public function HRESULT(IWRdsProtocolShadowConnection *self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, IWRdsProtocolShadowCallback* pShadowCallback) Start;
+			public function HRESULT(IWRdsProtocolShadowConnection *self) Stop;
+			public function HRESULT(IWRdsProtocolShadowConnection *self, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) DoTarget;
+		}
+		[CRepr]
+		public struct IWRdsProtocolShadowCallback : IUnknown
+		{
+			public const new Guid IID = .(0xe0667ce0, 0x0372, 0x40d6, 0xad, 0xb2, 0xa0, 0xf3, 0x32, 0x26, 0x74, 0xd6);
+			
+			public function HRESULT(IWRdsProtocolShadowCallback *self) StopShadow;
+			public function HRESULT(IWRdsProtocolShadowCallback *self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) InvokeTargetShadow;
+		}
+		[CRepr]
+		public struct IWRdsProtocolLicenseConnection : IUnknown
+		{
+			public const new Guid IID = .(0x1d6a145f, 0xd095, 0x4424, 0x95, 0x7a, 0x40, 0x7f, 0xae, 0x82, 0x2d, 0x84);
+			
+			public function HRESULT(IWRdsProtocolLicenseConnection *self, WTS_LICENSE_CAPABILITIES* ppLicenseCapabilities, uint32* pcbLicenseCapabilities) RequestLicensingCapabilities;
+			public function HRESULT(IWRdsProtocolLicenseConnection *self, uint8* pClientLicense, uint32 cbClientLicense) SendClientLicense;
+			public function HRESULT(IWRdsProtocolLicenseConnection *self, uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, uint32* pcbClientLicense) RequestClientLicense;
+			public function HRESULT(IWRdsProtocolLicenseConnection *self, uint32 ulComplete) ProtocolComplete;
+		}
+		[CRepr]
+		public struct IWRdsProtocolLogonErrorRedirector : IUnknown
+		{
+			public const new Guid IID = .(0x519fe83b, 0x142a, 0x4120, 0xa3, 0xd5, 0xa4, 0x05, 0xd3, 0x15, 0x28, 0x1a);
+			
+			public function HRESULT(IWRdsProtocolLogonErrorRedirector *self) OnBeginPainting;
+			public function HRESULT(IWRdsProtocolLogonErrorRedirector *self, PWSTR pszMessage, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectStatus;
+			public function HRESULT(IWRdsProtocolLogonErrorRedirector *self, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectMessage;
+			public function HRESULT(IWRdsProtocolLogonErrorRedirector *self, int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectLogonError;
+		}
+		[CRepr]
+		public struct IWRdsWddmIddProps : IUnknown
+		{
+			public const new Guid IID = .(0x1382df4d, 0xa289, 0x43d1, 0xa1, 0x84, 0x14, 0x47, 0x26, 0xf9, 0xaf, 0x90);
+			
+			public function HRESULT(IWRdsWddmIddProps *self, char16* pDisplayDriverHardwareId, uint32 Count) GetHardwareId;
+			public function HRESULT(IWRdsWddmIddProps *self, uint32 SessionId, HANDLE_PTR DriverHandle) OnDriverLoad;
+			public function HRESULT(IWRdsWddmIddProps *self, uint32 SessionId) OnDriverUnload;
+			public function HRESULT(IWRdsWddmIddProps *self, BOOL Enabled) EnableWddmIdd;
+		}
+		[CRepr]
+		public struct IWRdsProtocolConnectionSettings : IUnknown
+		{
+			public const new Guid IID = .(0x83fcf5d3, 0xf6f4, 0xea94, 0x9c, 0xd2, 0x32, 0xf2, 0x80, 0xe1, 0xe5, 0x10);
+			
+			public function HRESULT(IWRdsProtocolConnectionSettings *self, Guid PropertyID, WTS_PROPERTY_VALUE* pPropertyEntriesIn) SetConnectionSetting;
+			public function HRESULT(IWRdsProtocolConnectionSettings *self, Guid PropertyID, WTS_PROPERTY_VALUE* pPropertyEntriesOut) GetConnectionSetting;
+		}
+		[CRepr]
+		public struct IWRdsEnhancedFastReconnectArbitrator : IUnknown
+		{
+			public const new Guid IID = .(0x5718ae9b, 0x47f2, 0x499f, 0xb6, 0x34, 0xd8, 0x17, 0x5b, 0xd5, 0x11, 0x31);
+			
+			public function HRESULT(IWRdsEnhancedFastReconnectArbitrator *self, int32* pSessionIdArray, uint32 dwSessionCount, int32* pResultSessionId) GetSessionForEnhancedFastReconnect;
+		}
+		[CRepr]
+		public struct IRemoteDesktopClientSettings : IDispatch
+		{
+			public const new Guid IID = .(0x48a0f2a7, 0x2713, 0x431f, 0xbb, 0xac, 0x6f, 0x45, 0x58, 0xe7, 0xd6, 0x4d);
+			
+			public function HRESULT(IRemoteDesktopClientSettings *self, BSTR rdpFileContents) ApplySettings;
+			public function HRESULT(IRemoteDesktopClientSettings *self, BSTR* rdpFileContents) RetrieveSettings;
+			public function HRESULT(IRemoteDesktopClientSettings *self, BSTR propertyName, VARIANT* value) GetRdpProperty;
+			public function HRESULT(IRemoteDesktopClientSettings *self, BSTR propertyName, VARIANT value) SetRdpProperty;
+		}
+		[CRepr]
+		public struct IRemoteDesktopClientActions : IDispatch
+		{
+			public const new Guid IID = .(0x7d54bc4e, 0x1028, 0x45d4, 0x8b, 0x0a, 0xb9, 0xb6, 0xbf, 0xfb, 0xa1, 0x76);
+			
+			public function HRESULT(IRemoteDesktopClientActions *self) SuspendScreenUpdates;
+			public function HRESULT(IRemoteDesktopClientActions *self) ResumeScreenUpdates;
+			public function HRESULT(IRemoteDesktopClientActions *self, RemoteActionType remoteAction) ExecuteRemoteAction;
+			public function HRESULT(IRemoteDesktopClientActions *self, SnapshotEncodingType snapshotEncoding, SnapshotFormatType snapshotFormat, uint32 snapshotWidth, uint32 snapshotHeight, BSTR* snapshotData) GetSnapshot;
+		}
+		[CRepr]
+		public struct IRemoteDesktopClientTouchPointer : IDispatch
+		{
+			public const new Guid IID = .(0x260ec22d, 0x8cbc, 0x44b5, 0x9e, 0x88, 0x2a, 0x37, 0xf6, 0xc9, 0x3a, 0xe9);
+			
+			public function HRESULT(IRemoteDesktopClientTouchPointer *self, int16 enabled) put_Enabled;
+			public function HRESULT(IRemoteDesktopClientTouchPointer *self, int16* enabled) get_Enabled;
+			public function HRESULT(IRemoteDesktopClientTouchPointer *self, int16 eventsEnabled) put_EventsEnabled;
+			public function HRESULT(IRemoteDesktopClientTouchPointer *self, int16* eventsEnabled) get_EventsEnabled;
+			public function HRESULT(IRemoteDesktopClientTouchPointer *self, uint32 pointerSpeed) put_PointerSpeed;
+			public function HRESULT(IRemoteDesktopClientTouchPointer *self, uint32* pointerSpeed) get_PointerSpeed;
+		}
+		[CRepr]
+		public struct IRemoteDesktopClient : IDispatch
+		{
+			public const new Guid IID = .(0x57d25668, 0x625a, 0x4905, 0xbe, 0x4e, 0x30, 0x4c, 0xaa, 0x13, 0xf8, 0x9c);
+			
+			public function HRESULT(IRemoteDesktopClient *self) Connect;
+			public function HRESULT(IRemoteDesktopClient *self) Disconnect;
+			public function HRESULT(IRemoteDesktopClient *self, uint32 width, uint32 height) Reconnect;
+			public function HRESULT(IRemoteDesktopClient *self, IRemoteDesktopClientSettings** settings) get_Settings;
+			public function HRESULT(IRemoteDesktopClient *self, IRemoteDesktopClientActions** actions) get_Actions;
+			public function HRESULT(IRemoteDesktopClient *self, IRemoteDesktopClientTouchPointer** touchPointer) get_TouchPointer;
+			public function HRESULT(IRemoteDesktopClient *self, BSTR serverName) DeleteSavedCredentials;
+			public function HRESULT(IRemoteDesktopClient *self, uint32 width, uint32 height) UpdateSessionDisplaySettings;
+			public function HRESULT(IRemoteDesktopClient *self, BSTR eventName, IDispatch* callback) attachEvent;
+			public function HRESULT(IRemoteDesktopClient *self, BSTR eventName, IDispatch* callback) detachEvent;
+		}
+		[CRepr]
+		public struct IRemoteSystemAdditionalInfoProvider : IUnknown
+		{
+			public const new Guid IID = .(0xeeaa3d5f, 0xec63, 0x4d27, 0xaf, 0x38, 0xe8, 0x6b, 0x1d, 0x72, 0x92, 0xcb);
+			
+			public function HRESULT(IRemoteSystemAdditionalInfoProvider *self, HSTRING* deduplicationId, Guid* riid, void** mapView) GetAdditionalInfo;
+		}
 		
 		// --- Functions ---
 		

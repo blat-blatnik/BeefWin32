@@ -16,9 +16,31 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IMarshal {}
-		public struct IMarshal2 {}
-		public struct IMarshalingStream {}
+		[CRepr]
+		public struct IMarshal : IUnknown
+		{
+			public const new Guid IID = .(0x00000003, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, Guid* pCid) GetUnmarshalClass;
+			public function HRESULT(IMarshal *self, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, uint32* pSize) GetMarshalSizeMax;
+			public function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void* pv, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags) MarshalInterface;
+			public function HRESULT(IMarshal *self, IStream* pStm, Guid* riid, void** ppv) UnmarshalInterface;
+			public function HRESULT(IMarshal *self, IStream* pStm) ReleaseMarshalData;
+			public function HRESULT(IMarshal *self, uint32 dwReserved) DisconnectObject;
+		}
+		[CRepr]
+		public struct IMarshal2 : IMarshal
+		{
+			public const new Guid IID = .(0x000001cf, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+		}
+		[CRepr]
+		public struct IMarshalingStream : IStream
+		{
+			public const new Guid IID = .(0xd8f2f5e6, 0x6102, 0x4863, 0x9f, 0x26, 0x38, 0x9a, 0x46, 0x76, 0xef, 0xde);
+			
+			public function HRESULT(IMarshalingStream *self, CO_MARSHALING_CONTEXT_ATTRIBUTES attribute, uint* pAttributeValue) GetMarshalingContextAttribute;
+		}
 		
 		// --- Functions ---
 		
@@ -167,23 +189,23 @@ namespace Win32
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void STGMEDIUM_UserFree64(uint32* param0, STGMEDIUM* param1);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoGetMarshalSizeMax(uint32* pulSize, Guid* riid, IUnknown pUnk, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags);
+		public static extern HRESULT CoGetMarshalSizeMax(uint32* pulSize, Guid* riid, IUnknown* pUnk, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoMarshalInterface(IStream pStm, Guid* riid, IUnknown pUnk, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags);
+		public static extern HRESULT CoMarshalInterface(IStream* pStm, Guid* riid, IUnknown* pUnk, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoUnmarshalInterface(IStream pStm, Guid* riid, void** ppv);
+		public static extern HRESULT CoUnmarshalInterface(IStream* pStm, Guid* riid, void** ppv);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoMarshalHresult(IStream pstm, HRESULT hresult);
+		public static extern HRESULT CoMarshalHresult(IStream* pstm, HRESULT hresult);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoUnmarshalHresult(IStream pstm, HRESULT* phresult);
+		public static extern HRESULT CoUnmarshalHresult(IStream* pstm, HRESULT* phresult);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoReleaseMarshalData(IStream pStm);
+		public static extern HRESULT CoReleaseMarshalData(IStream* pStm);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoGetStandardMarshal(Guid* riid, IUnknown pUnk, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, IMarshal* ppMarshal);
+		public static extern HRESULT CoGetStandardMarshal(Guid* riid, IUnknown* pUnk, uint32 dwDestContext, void* pvDestContext, uint32 mshlflags, IMarshal** ppMarshal);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoGetStdMarshalEx(IUnknown pUnkOuter, uint32 smexflags, IUnknown* ppUnkInner);
+		public static extern HRESULT CoGetStdMarshalEx(IUnknown* pUnkOuter, uint32 smexflags, IUnknown** ppUnkInner);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoMarshalInterThreadInterfaceInStream(Guid* riid, IUnknown pUnk, IStream* ppStm);
+		public static extern HRESULT CoMarshalInterThreadInterfaceInStream(Guid* riid, IUnknown* pUnk, IStream** ppStm);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 LPSAFEARRAY_UserSize(uint32* param0, uint32 param1, SAFEARRAY** param2);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]

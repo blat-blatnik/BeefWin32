@@ -114,7 +114,7 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsRelease(void* @ref, uint32* count);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsCreateContext(void* runtime, IDebugApplication64 debugApplication, void** newContext);
+		public static extern JsErrorCode JsCreateContext(void* runtime, IDebugApplication64* debugApplication, void** newContext);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetCurrentContext(void** currentContext);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -122,7 +122,7 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetRuntime(void* context, void** runtime);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsStartDebugging(IDebugApplication64 debugApplication);
+		public static extern JsErrorCode JsStartDebugging(IDebugApplication64* debugApplication);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsIdle(uint32* nextIdleTick);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -256,11 +256,11 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsIsRuntimeExecutionDisabled(void* runtime, Boolean* isDisabled);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsStartProfiling(IActiveScriptProfilerCallback callback, PROFILER_EVENT_MASK eventMask, uint32 context);
+		public static extern JsErrorCode JsStartProfiling(IActiveScriptProfilerCallback* callback, PROFILER_EVENT_MASK eventMask, uint32 context);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsStopProfiling(HRESULT reason);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsEnumerateHeap(IActiveScriptProfilerHeapEnum* enumerator);
+		public static extern JsErrorCode JsEnumerateHeap(IActiveScriptProfilerHeapEnum** enumerator);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsIsEnumeratingHeap(Boolean* isEnumeratingHeap);
 		

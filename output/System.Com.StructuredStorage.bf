@@ -177,7 +177,7 @@ namespace Win32
 		public struct VERSIONEDSTREAM
 		{
 			public Guid guidVersion;
-			public IStream pStream;
+			public IStream* pStream;
 		}
 		[CRepr]
 		public struct CAC
@@ -359,10 +359,10 @@ namespace Win32
 						public BLOB blob;
 						public PSTR pszVal;
 						public PWSTR pwszVal;
-						public IUnknown punkVal;
-						public IDispatch pdispVal;
-						public IStream pStream;
-						public IStorage pStorage;
+						public IUnknown* punkVal;
+						public IDispatch* pdispVal;
+						public IStream* pStream;
+						public IStorage* pStorage;
 						public VERSIONEDSTREAM* pVersionedStream;
 						public SAFEARRAY* parray;
 						public CAC cac;
@@ -403,8 +403,8 @@ namespace Win32
 						public CY* pcyVal;
 						public double* pdate;
 						public BSTR* pbstrVal;
-						public IUnknown* ppunkVal;
-						public IDispatch* ppdispVal;
+						public IUnknown** ppunkVal;
+						public IDispatch** ppdispVal;
 						public SAFEARRAY** pparray;
 						public PROPVARIANT* pvarVal;
 					}
@@ -484,41 +484,187 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IEnumSTATSTG {}
-		public struct IStorage {}
-		public struct IPersistStorage {}
-		public struct ILockBytes {}
-		public struct IRootStorage {}
-		public struct IFillLockBytes {}
-		public struct ILayoutStorage {}
-		public struct IDirectWriterLock {}
-		public struct IPropertyStorage {}
-		public struct IPropertySetStorage {}
-		public struct IEnumSTATPROPSTG {}
-		public struct IEnumSTATPROPSETSTG {}
-		public struct IPropertyBag {}
-		public struct IPropertyBag2 {}
+		[CRepr]
+		public struct IEnumSTATSTG : IUnknown
+		{
+			public const new Guid IID = .(0x0000000d, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IEnumSTATSTG *self, uint32 celt, STATSTG* rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumSTATSTG *self, uint32 celt) Skip;
+			public function HRESULT(IEnumSTATSTG *self) Reset;
+			public function HRESULT(IEnumSTATSTG *self, IEnumSTATSTG** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IStorage : IUnknown
+		{
+			public const new Guid IID = .(0x0000000b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStream** ppstm) CreateStream;
+			public function HRESULT(IStorage *self, PWSTR pwcsName, void* reserved1, uint32 grfMode, uint32 reserved2, IStream** ppstm) OpenStream;
+			public function HRESULT(IStorage *self, PWSTR pwcsName, uint32 grfMode, uint32 reserved1, uint32 reserved2, IStorage** ppstg) CreateStorage;
+			public function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage** ppstg) OpenStorage;
+			public function HRESULT(IStorage *self, uint32 ciidExclude, Guid* rgiidExclude, uint16** snbExclude, IStorage* pstgDest) CopyTo;
+			public function HRESULT(IStorage *self, PWSTR pwcsName, IStorage* pstgDest, PWSTR pwcsNewName, uint32 grfFlags) MoveElementTo;
+			public function HRESULT(IStorage *self, uint32 grfCommitFlags) Commit;
+			public function HRESULT(IStorage *self) Revert;
+			public function HRESULT(IStorage *self, uint32 reserved1, void* reserved2, uint32 reserved3, IEnumSTATSTG** ppenum) EnumElements;
+			public function HRESULT(IStorage *self, PWSTR pwcsName) DestroyElement;
+			public function HRESULT(IStorage *self, PWSTR pwcsOldName, PWSTR pwcsNewName) RenameElement;
+			public function HRESULT(IStorage *self, PWSTR pwcsName, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetElementTimes;
+			public function HRESULT(IStorage *self, Guid* clsid) SetClass;
+			public function HRESULT(IStorage *self, uint32 grfStateBits, uint32 grfMask) SetStateBits;
+			public function HRESULT(IStorage *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
+		}
+		[CRepr]
+		public struct IPersistStorage : IPersist
+		{
+			public const new Guid IID = .(0x0000010a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IPersistStorage *self) IsDirty;
+			public function HRESULT(IPersistStorage *self, IStorage* pStg) InitNew;
+			public function HRESULT(IPersistStorage *self, IStorage* pStg) Load;
+			public function HRESULT(IPersistStorage *self, IStorage* pStgSave, BOOL fSameAsLoad) Save;
+			public function HRESULT(IPersistStorage *self, IStorage* pStgNew) SaveCompleted;
+			public function HRESULT(IPersistStorage *self) HandsOffStorage;
+		}
+		[CRepr]
+		public struct ILockBytes : IUnknown
+		{
+			public const new Guid IID = .(0x0000000a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbRead) ReadAt;
+			public function HRESULT(ILockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) WriteAt;
+			public function HRESULT(ILockBytes *self) Flush;
+			public function HRESULT(ILockBytes *self, ULARGE_INTEGER cb) SetSize;
+			public function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) LockRegion;
+			public function HRESULT(ILockBytes *self, ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, uint32 dwLockType) UnlockRegion;
+			public function HRESULT(ILockBytes *self, STATSTG* pstatstg, uint32 grfStatFlag) Stat;
+		}
+		[CRepr]
+		public struct IRootStorage : IUnknown
+		{
+			public const new Guid IID = .(0x00000012, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IRootStorage *self, PWSTR pszFile) SwitchToFile;
+		}
+		[CRepr]
+		public struct IFillLockBytes : IUnknown
+		{
+			public const new Guid IID = .(0x99caf010, 0x415e, 0x11cf, 0x88, 0x14, 0x00, 0xaa, 0x00, 0xb5, 0x69, 0xf5);
+			
+			public function HRESULT(IFillLockBytes *self, void* pv, uint32 cb, uint32* pcbWritten) FillAppend;
+			public function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulOffset, void* pv, uint32 cb, uint32* pcbWritten) FillAt;
+			public function HRESULT(IFillLockBytes *self, ULARGE_INTEGER ulSize) SetFillSize;
+			public function HRESULT(IFillLockBytes *self, BOOL bCanceled) Terminate;
+		}
+		[CRepr]
+		public struct ILayoutStorage : IUnknown
+		{
+			public const new Guid IID = .(0x0e6d4d90, 0x6738, 0x11cf, 0x96, 0x08, 0x00, 0xaa, 0x00, 0x68, 0x0d, 0xb4);
+			
+			public function HRESULT(ILayoutStorage *self, StorageLayout* pStorageLayout, uint32 nEntries, uint32 glfInterleavedFlag) LayoutScript;
+			public function HRESULT(ILayoutStorage *self) BeginMonitor;
+			public function HRESULT(ILayoutStorage *self) EndMonitor;
+			public function HRESULT(ILayoutStorage *self, PWSTR pwcsNewDfName) ReLayoutDocfile;
+			public function HRESULT(ILayoutStorage *self, ILockBytes* pILockBytes) ReLayoutDocfileOnILockBytes;
+		}
+		[CRepr]
+		public struct IDirectWriterLock : IUnknown
+		{
+			public const new Guid IID = .(0x0e6d4d92, 0x6738, 0x11cf, 0x96, 0x08, 0x00, 0xaa, 0x00, 0x68, 0x0d, 0xb4);
+			
+			public function HRESULT(IDirectWriterLock *self, uint32 dwTimeout) WaitForWriteAccess;
+			public function HRESULT(IDirectWriterLock *self) ReleaseWriteAccess;
+			public function HRESULT(IDirectWriterLock *self) HaveWriteAccess;
+		}
+		[CRepr]
+		public struct IPropertyStorage : IUnknown
+		{
+			public const new Guid IID = .(0x00000138, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) ReadMultiple;
+			public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar, uint32 propidNameFirst) WriteMultiple;
+			public function HRESULT(IPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec) DeleteMultiple;
+			public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) ReadPropertyNames;
+			public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) WritePropertyNames;
+			public function HRESULT(IPropertyStorage *self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
+			public function HRESULT(IPropertyStorage *self, uint32 grfCommitFlags) Commit;
+			public function HRESULT(IPropertyStorage *self) Revert;
+			public function HRESULT(IPropertyStorage *self, IEnumSTATPROPSTG** ppenum) Enum;
+			public function HRESULT(IPropertyStorage *self, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetTimes;
+			public function HRESULT(IPropertyStorage *self, Guid* clsid) SetClass;
+			public function HRESULT(IPropertyStorage *self, STATPROPSETSTG* pstatpsstg) Stat;
+		}
+		[CRepr]
+		public struct IPropertySetStorage : IUnknown
+		{
+			public const new Guid IID = .(0x0000013a, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IPropertySetStorage *self, Guid* rfmtid, Guid* pclsid, uint32 grfFlags, uint32 grfMode, IPropertyStorage** ppprstg) Create;
+			public function HRESULT(IPropertySetStorage *self, Guid* rfmtid, uint32 grfMode, IPropertyStorage** ppprstg) Open;
+			public function HRESULT(IPropertySetStorage *self, Guid* rfmtid) Delete;
+			public function HRESULT(IPropertySetStorage *self, IEnumSTATPROPSETSTG** ppenum) Enum;
+		}
+		[CRepr]
+		public struct IEnumSTATPROPSTG : IUnknown
+		{
+			public const new Guid IID = .(0x00000139, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IEnumSTATPROPSTG *self, uint32 celt, STATPROPSTG* rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumSTATPROPSTG *self, uint32 celt) Skip;
+			public function HRESULT(IEnumSTATPROPSTG *self) Reset;
+			public function HRESULT(IEnumSTATPROPSTG *self, IEnumSTATPROPSTG** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IEnumSTATPROPSETSTG : IUnknown
+		{
+			public const new Guid IID = .(0x0000013b, 0x0000, 0x0000, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x46);
+			
+			public function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt, STATPROPSETSTG* rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumSTATPROPSETSTG *self, uint32 celt) Skip;
+			public function HRESULT(IEnumSTATPROPSETSTG *self) Reset;
+			public function HRESULT(IEnumSTATPROPSETSTG *self, IEnumSTATPROPSETSTG** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IPropertyBag : IUnknown
+		{
+			public const new Guid IID = .(0x55272a00, 0x42cb, 0x11ce, 0x81, 0x35, 0x00, 0xaa, 0x00, 0x4b, 0xb8, 0x51);
+			
+			public function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar, IErrorLog* pErrorLog) Read;
+			public function HRESULT(IPropertyBag *self, PWSTR pszPropName, VARIANT* pVar) Write;
+		}
+		[CRepr]
+		public struct IPropertyBag2 : IUnknown
+		{
+			public const new Guid IID = .(0x22f55882, 0x280b, 0x11d0, 0xa8, 0xa9, 0x00, 0xa0, 0xc9, 0x0c, 0x20, 0x04);
+			
+			public function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, IErrorLog* pErrLog, VARIANT* pvarValue, HRESULT* phrError) Read;
+			public function HRESULT(IPropertyBag2 *self, uint32 cProperties, PROPBAG2* pPropBag, VARIANT* pvarValue) Write;
+			public function HRESULT(IPropertyBag2 *self, uint32* pcProperties) CountProperties;
+			public function HRESULT(IPropertyBag2 *self, uint32 iProperty, uint32 cProperties, PROPBAG2* pPropBag, uint32* pcProperties) GetPropertyInfo;
+			public function HRESULT(IPropertyBag2 *self, PWSTR pstrName, uint32 dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog) LoadObject;
+		}
 		
 		// --- Functions ---
 		
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoGetInstanceFromFile(COSERVERINFO* pServerInfo, Guid* pClsid, IUnknown punkOuter, CLSCTX dwClsCtx, uint32 grfMode, PWSTR pwszName, uint32 dwCount, MULTI_QI* pResults);
+		public static extern HRESULT CoGetInstanceFromFile(COSERVERINFO* pServerInfo, Guid* pClsid, IUnknown* punkOuter, CLSCTX dwClsCtx, uint32 grfMode, PWSTR pwszName, uint32 dwCount, MULTI_QI* pResults);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoGetInstanceFromIStorage(COSERVERINFO* pServerInfo, Guid* pClsid, IUnknown punkOuter, CLSCTX dwClsCtx, IStorage pstg, uint32 dwCount, MULTI_QI* pResults);
+		public static extern HRESULT CoGetInstanceFromIStorage(COSERVERINFO* pServerInfo, Guid* pClsid, IUnknown* punkOuter, CLSCTX dwClsCtx, IStorage* pstg, uint32 dwCount, MULTI_QI* pResults);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgOpenAsyncDocfileOnIFillLockBytes(IFillLockBytes pflb, uint32 grfMode, uint32 asyncFlags, IStorage* ppstgOpen);
+		public static extern HRESULT StgOpenAsyncDocfileOnIFillLockBytes(IFillLockBytes* pflb, uint32 grfMode, uint32 asyncFlags, IStorage** ppstgOpen);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgGetIFillLockBytesOnILockBytes(ILockBytes pilb, IFillLockBytes* ppflb);
+		public static extern HRESULT StgGetIFillLockBytesOnILockBytes(ILockBytes* pilb, IFillLockBytes** ppflb);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgGetIFillLockBytesOnFile(PWSTR pwcsName, IFillLockBytes* ppflb);
+		public static extern HRESULT StgGetIFillLockBytesOnFile(PWSTR pwcsName, IFillLockBytes** ppflb);
 		[Import("dflayout.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgOpenLayoutDocfile(PWSTR pwcsDfName, uint32 grfMode, uint32 reserved, IStorage* ppstgOpen);
+		public static extern HRESULT StgOpenLayoutDocfile(PWSTR pwcsDfName, uint32 grfMode, uint32 reserved, IStorage** ppstgOpen);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateStreamOnHGlobal(int hGlobal, BOOL fDeleteOnRelease, IStream* ppstm);
+		public static extern HRESULT CreateStreamOnHGlobal(int hGlobal, BOOL fDeleteOnRelease, IStream** ppstm);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetHGlobalFromStream(IStream pstm, int* phglobal);
+		public static extern HRESULT GetHGlobalFromStream(IStream* pstm, int* phglobal);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoGetInterfaceAndReleaseStream(IStream pStm, Guid* iid, void** ppv);
+		public static extern HRESULT CoGetInterfaceAndReleaseStream(IStream* pStm, Guid* iid, void** ppv);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PropVariantCopy(PROPVARIANT* pvarDest, PROPVARIANT* pvarSrc);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -526,17 +672,17 @@ namespace Win32
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT FreePropVariantArray(uint32 cVariants, PROPVARIANT* rgvars);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgCreateDocfile(PWSTR pwcsName, uint32 grfMode, uint32 reserved, IStorage* ppstgOpen);
+		public static extern HRESULT StgCreateDocfile(PWSTR pwcsName, uint32 grfMode, uint32 reserved, IStorage** ppstgOpen);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgCreateDocfileOnILockBytes(ILockBytes plkbyt, uint32 grfMode, uint32 reserved, IStorage* ppstgOpen);
+		public static extern HRESULT StgCreateDocfileOnILockBytes(ILockBytes* plkbyt, uint32 grfMode, uint32 reserved, IStorage** ppstgOpen);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgOpenStorage(PWSTR pwcsName, IStorage pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage* ppstgOpen);
+		public static extern HRESULT StgOpenStorage(PWSTR pwcsName, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage** ppstgOpen);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgOpenStorageOnILockBytes(ILockBytes plkbyt, IStorage pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage* ppstgOpen);
+		public static extern HRESULT StgOpenStorageOnILockBytes(ILockBytes* plkbyt, IStorage* pstgPriority, uint32 grfMode, uint16** snbExclude, uint32 reserved, IStorage** ppstgOpen);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT StgIsStorageFile(PWSTR pwcsName);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgIsStorageILockBytes(ILockBytes plkbyt);
+		public static extern HRESULT StgIsStorageILockBytes(ILockBytes* plkbyt);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT StgSetTimes(PWSTR lpszName, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -544,29 +690,29 @@ namespace Win32
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT StgOpenStorageEx(PWSTR pwcsName, uint32 grfMode, uint32 stgfmt, uint32 grfAttrs, STGOPTIONS* pStgOptions, SECURITY_DESCRIPTOR* pSecurityDescriptor, Guid* riid, void** ppObjectOpen);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgCreatePropStg(IUnknown pUnk, Guid* fmtid, Guid* pclsid, uint32 grfFlags, uint32 dwReserved, IPropertyStorage* ppPropStg);
+		public static extern HRESULT StgCreatePropStg(IUnknown* pUnk, Guid* fmtid, Guid* pclsid, uint32 grfFlags, uint32 dwReserved, IPropertyStorage** ppPropStg);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgOpenPropStg(IUnknown pUnk, Guid* fmtid, uint32 grfFlags, uint32 dwReserved, IPropertyStorage* ppPropStg);
+		public static extern HRESULT StgOpenPropStg(IUnknown* pUnk, Guid* fmtid, uint32 grfFlags, uint32 dwReserved, IPropertyStorage** ppPropStg);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT StgCreatePropSetStg(IStorage pStorage, uint32 dwReserved, IPropertySetStorage* ppPropSetStg);
+		public static extern HRESULT StgCreatePropSetStg(IStorage* pStorage, uint32 dwReserved, IPropertySetStorage** ppPropSetStg);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT FmtIdToPropStgName(Guid* pfmtid, PWSTR oszName);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PropStgNameToFmtId(PWSTR oszName, Guid* pfmtid);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ReadClassStg(IStorage pStg, Guid* pclsid);
+		public static extern HRESULT ReadClassStg(IStorage* pStg, Guid* pclsid);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WriteClassStg(IStorage pStg, Guid* rclsid);
+		public static extern HRESULT WriteClassStg(IStorage* pStg, Guid* rclsid);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ReadClassStm(IStream pStm, Guid* pclsid);
+		public static extern HRESULT ReadClassStm(IStream* pStm, Guid* pclsid);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WriteClassStm(IStream pStm, Guid* rclsid);
+		public static extern HRESULT WriteClassStm(IStream* pStm, Guid* rclsid);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetHGlobalFromILockBytes(ILockBytes plkbyt, int* phglobal);
+		public static extern HRESULT GetHGlobalFromILockBytes(ILockBytes* plkbyt, int* phglobal);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateILockBytesOnHGlobal(int hGlobal, BOOL fDeleteOnRelease, ILockBytes* pplkbyt);
+		public static extern HRESULT CreateILockBytesOnHGlobal(int hGlobal, BOOL fDeleteOnRelease, ILockBytes** pplkbyt);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetConvertStg(IStorage pStg);
+		public static extern HRESULT GetConvertStg(IStorage* pStg);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern SERIALIZEDPROPERTYVALUE* StgConvertVariantToProperty(PROPVARIANT* pvar, uint16 CodePage, SERIALIZEDPROPERTYVALUE* pprop, uint32* pcb, uint32 pid, BOOLEAN fReserved, uint32* pcIndirect);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -574,19 +720,19 @@ namespace Win32
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 StgPropertyLengthAsVariant(SERIALIZEDPROPERTYVALUE* pProp, uint32 cbProp, uint16 CodePage, uint8 bReserved);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WriteFmtUserTypeStg(IStorage pstg, uint16 cf, PWSTR lpszUserType);
+		public static extern HRESULT WriteFmtUserTypeStg(IStorage* pstg, uint16 cf, PWSTR lpszUserType);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ReadFmtUserTypeStg(IStorage pstg, uint16* pcf, PWSTR* lplpszUserType);
+		public static extern HRESULT ReadFmtUserTypeStg(IStorage* pstg, uint16* pcf, PWSTR* lplpszUserType);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleConvertOLESTREAMToIStorage(OLESTREAM* lpolestream, IStorage pstg, DVTARGETDEVICE* ptd);
+		public static extern HRESULT OleConvertOLESTREAMToIStorage(OLESTREAM* lpolestream, IStorage* pstg, DVTARGETDEVICE* ptd);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleConvertIStorageToOLESTREAM(IStorage pstg, OLESTREAM* lpolestream);
+		public static extern HRESULT OleConvertIStorageToOLESTREAM(IStorage* pstg, OLESTREAM* lpolestream);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SetConvertStg(IStorage pStg, BOOL fConvert);
+		public static extern HRESULT SetConvertStg(IStorage* pStg, BOOL fConvert);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleConvertIStorageToOLESTREAMEx(IStorage pstg, uint16 cfFormat, int32 lWidth, int32 lHeight, uint32 dwSize, STGMEDIUM* pmedium, OLESTREAM* polestm);
+		public static extern HRESULT OleConvertIStorageToOLESTREAMEx(IStorage* pstg, uint16 cfFormat, int32 lWidth, int32 lHeight, uint32 dwSize, STGMEDIUM* pmedium, OLESTREAM* polestm);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OleConvertOLESTREAMToIStorageEx(OLESTREAM* polestm, IStorage pstg, uint16* pcfFormat, int32* plwWidth, int32* plHeight, uint32* pdwSize, STGMEDIUM* pmedium);
+		public static extern HRESULT OleConvertOLESTREAMToIStorageEx(OLESTREAM* polestm, IStorage* pstg, uint16* pcfFormat, int32* plwWidth, int32* plHeight, uint32* pdwSize, STGMEDIUM* pmedium);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT StgSerializePropVariant(PROPVARIANT* ppropvar, SERIALIZEDPROPERTYVALUE** ppProp, uint32* pcb);
 		[Import("propsys.dll"), CLink, CallingConvention(.Stdcall)]

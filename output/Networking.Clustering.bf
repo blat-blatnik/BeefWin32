@@ -3294,63 +3294,679 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IGetClusterUIInfo {}
-		public struct IGetClusterDataInfo {}
-		public struct IGetClusterObjectInfo {}
-		public struct IGetClusterNodeInfo {}
-		public struct IGetClusterGroupInfo {}
-		public struct IGetClusterResourceInfo {}
-		public struct IGetClusterNetworkInfo {}
-		public struct IGetClusterNetInterfaceInfo {}
-		public struct IWCPropertySheetCallback {}
-		public struct IWEExtendPropertySheet {}
-		public struct IWCWizardCallback {}
-		public struct IWEExtendWizard {}
-		public struct IWCContextMenuCallback {}
-		public struct IWEExtendContextMenu {}
-		public struct IWEInvokeCommand {}
-		public struct IWCWizard97Callback {}
-		public struct IWEExtendWizard97 {}
-		public struct ISClusApplication {}
-		public struct ISDomainNames {}
-		public struct ISClusterNames {}
-		public struct ISClusRefObject {}
-		public struct ISClusVersion {}
-		public struct ISCluster {}
-		public struct ISClusNode {}
-		public struct ISClusNodes {}
-		public struct ISClusNetwork {}
-		public struct ISClusNetworks {}
-		public struct ISClusNetInterface {}
-		public struct ISClusNetInterfaces {}
-		public struct ISClusNodeNetInterfaces {}
-		public struct ISClusNetworkNetInterfaces {}
-		public struct ISClusResGroup {}
-		public struct ISClusResGroups {}
-		public struct ISClusResource {}
-		public struct ISClusResDependencies {}
-		public struct ISClusResGroupResources {}
-		public struct ISClusResTypeResources {}
-		public struct ISClusResources {}
-		public struct ISClusResGroupPreferredOwnerNodes {}
-		public struct ISClusResPossibleOwnerNodes {}
-		public struct ISClusResTypePossibleOwnerNodes {}
-		public struct ISClusResType {}
-		public struct ISClusResTypes {}
-		public struct ISClusProperty {}
-		public struct ISClusPropertyValue {}
-		public struct ISClusPropertyValues {}
-		public struct ISClusProperties {}
-		public struct ISClusPropertyValueData {}
-		public struct ISClusPartition {}
-		public struct ISClusPartitionEx {}
-		public struct ISClusPartitions {}
-		public struct ISClusDisk {}
-		public struct ISClusDisks {}
-		public struct ISClusScsiAddress {}
-		public struct ISClusRegistryKeys {}
-		public struct ISClusCryptoKeys {}
-		public struct ISClusResDependents {}
+		[CRepr]
+		public struct IGetClusterUIInfo : IUnknown
+		{
+			public const new Guid IID = .(0x97dede50, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IGetClusterUIInfo *self, BSTR lpszName, int32* pcchName) GetClusterName;
+			public function uint32(IGetClusterUIInfo *self) GetLocale;
+			public function HFONT(IGetClusterUIInfo *self) GetFont;
+			public function HICON(IGetClusterUIInfo *self) GetIcon;
+		}
+		[CRepr]
+		public struct IGetClusterDataInfo : IUnknown
+		{
+			public const new Guid IID = .(0x97dede51, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IGetClusterDataInfo *self, BSTR lpszName, int32* pcchName) GetClusterName;
+			public function _HCLUSTER*(IGetClusterDataInfo *self) GetClusterHandle;
+			public function int32(IGetClusterDataInfo *self) GetObjectCount;
+		}
+		[CRepr]
+		public struct IGetClusterObjectInfo : IUnknown
+		{
+			public const new Guid IID = .(0x97dede52, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IGetClusterObjectInfo *self, int32 lObjIndex, BSTR lpszName, int32* pcchName) GetObjectName;
+			public function CLUADMEX_OBJECT_TYPE(IGetClusterObjectInfo *self, int32 lObjIndex) GetObjectType;
+		}
+		[CRepr]
+		public struct IGetClusterNodeInfo : IUnknown
+		{
+			public const new Guid IID = .(0x97dede53, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function _HNODE*(IGetClusterNodeInfo *self, int32 lObjIndex) GetNodeHandle;
+		}
+		[CRepr]
+		public struct IGetClusterGroupInfo : IUnknown
+		{
+			public const new Guid IID = .(0x97dede54, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function _HGROUP*(IGetClusterGroupInfo *self, int32 lObjIndex) GetGroupHandle;
+		}
+		[CRepr]
+		public struct IGetClusterResourceInfo : IUnknown
+		{
+			public const new Guid IID = .(0x97dede55, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function _HRESOURCE*(IGetClusterResourceInfo *self, int32 lObjIndex) GetResourceHandle;
+			public function HRESULT(IGetClusterResourceInfo *self, int32 lObjIndex, BSTR lpszResTypeName, int32* pcchResTypeName) GetResourceTypeName;
+			public function BOOL(IGetClusterResourceInfo *self, int32 lObjIndex, BSTR lpszNetName, uint32* pcchNetName) GetResourceNetworkName;
+		}
+		[CRepr]
+		public struct IGetClusterNetworkInfo : IUnknown
+		{
+			public const new Guid IID = .(0x97dede56, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function _HNETWORK*(IGetClusterNetworkInfo *self, int32 lObjIndex) GetNetworkHandle;
+		}
+		[CRepr]
+		public struct IGetClusterNetInterfaceInfo : IUnknown
+		{
+			public const new Guid IID = .(0x97dede57, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function _HNETINTERFACE*(IGetClusterNetInterfaceInfo *self, int32 lObjIndex) GetNetInterfaceHandle;
+		}
+		[CRepr]
+		public struct IWCPropertySheetCallback : IUnknown
+		{
+			public const new Guid IID = .(0x97dede60, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IWCPropertySheetCallback *self, int32* hpage) AddPropertySheetPage;
+		}
+		[CRepr]
+		public struct IWEExtendPropertySheet : IUnknown
+		{
+			public const new Guid IID = .(0x97dede61, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IWEExtendPropertySheet *self, IUnknown* piData, IWCPropertySheetCallback* piCallback) CreatePropertySheetPages;
+		}
+		[CRepr]
+		public struct IWCWizardCallback : IUnknown
+		{
+			public const new Guid IID = .(0x97dede62, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IWCWizardCallback *self, int32* hpage) AddWizardPage;
+			public function HRESULT(IWCWizardCallback *self, int32* hpage, BOOL bEnable) EnableNext;
+		}
+		[CRepr]
+		public struct IWEExtendWizard : IUnknown
+		{
+			public const new Guid IID = .(0x97dede63, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IWEExtendWizard *self, IUnknown* piData, IWCWizardCallback* piCallback) CreateWizardPages;
+		}
+		[CRepr]
+		public struct IWCContextMenuCallback : IUnknown
+		{
+			public const new Guid IID = .(0x97dede64, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IWCContextMenuCallback *self, BSTR lpszName, BSTR lpszStatusBarText, uint32 nCommandID, uint32 nSubmenuCommandID, uint32 uFlags) AddExtensionMenuItem;
+		}
+		[CRepr]
+		public struct IWEExtendContextMenu : IUnknown
+		{
+			public const new Guid IID = .(0x97dede65, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IWEExtendContextMenu *self, IUnknown* piData, IWCContextMenuCallback* piCallback) AddContextMenuItems;
+		}
+		[CRepr]
+		public struct IWEInvokeCommand : IUnknown
+		{
+			public const new Guid IID = .(0x97dede66, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IWEInvokeCommand *self, uint32 nCommandID, IUnknown* piData) InvokeCommand;
+		}
+		[CRepr]
+		public struct IWCWizard97Callback : IUnknown
+		{
+			public const new Guid IID = .(0x97dede67, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IWCWizard97Callback *self, int32* hpage) AddWizard97Page;
+			public function HRESULT(IWCWizard97Callback *self, int32* hpage, BOOL bEnable) EnableNext;
+		}
+		[CRepr]
+		public struct IWEExtendWizard97 : IUnknown
+		{
+			public const new Guid IID = .(0x97dede68, 0xfc6b, 0x11cf, 0xb5, 0xf5, 0x00, 0xa0, 0xc9, 0x0a, 0xb5, 0x05);
+			
+			public function HRESULT(IWEExtendWizard97 *self, IUnknown* piData, IWCWizard97Callback* piCallback) CreateWizard97Pages;
+		}
+		[CRepr]
+		public struct ISClusApplication : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606e6, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusApplication *self, ISDomainNames** ppDomains) get_DomainNames;
+			public function HRESULT(ISClusApplication *self, BSTR bstrDomainName, ISClusterNames** ppClusters) get_ClusterNames;
+			public function HRESULT(ISClusApplication *self, BSTR bstrClusterName, ISCluster** pCluster) OpenCluster;
+		}
+		[CRepr]
+		public struct ISDomainNames : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606e2, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISDomainNames *self, int32* plCount) get_Count;
+			public function HRESULT(ISDomainNames *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISDomainNames *self) Refresh;
+			public function HRESULT(ISDomainNames *self, VARIANT varIndex, BSTR* pbstrDomainName) get_Item;
+		}
+		[CRepr]
+		public struct ISClusterNames : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606ec, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusterNames *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusterNames *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusterNames *self) Refresh;
+			public function HRESULT(ISClusterNames *self, VARIANT varIndex, BSTR* pbstrClusterName) get_Item;
+			public function HRESULT(ISClusterNames *self, BSTR* pbstrDomainName) get_DomainName;
+		}
+		[CRepr]
+		public struct ISClusRefObject : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60702, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusRefObject *self, uint* phandle) get_Handle;
+		}
+		[CRepr]
+		public struct ISClusVersion : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60716, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusVersion *self, BSTR* pbstrClusterName) get_Name;
+			public function HRESULT(ISClusVersion *self, int32* pnMajorVersion) get_MajorVersion;
+			public function HRESULT(ISClusVersion *self, int32* pnMinorVersion) get_MinorVersion;
+			public function HRESULT(ISClusVersion *self, int16* pnBuildNumber) get_BuildNumber;
+			public function HRESULT(ISClusVersion *self, BSTR* pbstrVendorId) get_VendorId;
+			public function HRESULT(ISClusVersion *self, BSTR* pbstrCSDVersion) get_CSDVersion;
+			public function HRESULT(ISClusVersion *self, int32* pnClusterHighestVersion) get_ClusterHighestVersion;
+			public function HRESULT(ISClusVersion *self, int32* pnClusterLowestVersion) get_ClusterLowestVersion;
+			public function HRESULT(ISClusVersion *self, int32* pnFlags) get_Flags;
+			public function HRESULT(ISClusVersion *self, VARIANT* pvarMixedVersion) get_MixedVersion;
+		}
+		[CRepr]
+		public struct ISCluster : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606e4, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_CommonProperties;
+			public function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_PrivateProperties;
+			public function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_CommonROProperties;
+			public function HRESULT(ISCluster *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+			public function HRESULT(ISCluster *self, uint* phandle) get_Handle;
+			public function HRESULT(ISCluster *self, BSTR bstrClusterName) Open;
+			public function HRESULT(ISCluster *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(ISCluster *self, BSTR bstrClusterName) put_Name;
+			public function HRESULT(ISCluster *self, ISClusVersion** ppClusVersion) get_Version;
+			public function HRESULT(ISCluster *self, ISClusResource* pClusterResource) put_QuorumResource;
+			public function HRESULT(ISCluster *self, ISClusResource** pClusterResource) get_QuorumResource;
+			public function HRESULT(ISCluster *self, int32* pnLogSize) get_QuorumLogSize;
+			public function HRESULT(ISCluster *self, int32 nLogSize) put_QuorumLogSize;
+			public function HRESULT(ISCluster *self, BSTR* ppPath) get_QuorumPath;
+			public function HRESULT(ISCluster *self, BSTR pPath) put_QuorumPath;
+			public function HRESULT(ISCluster *self, ISClusNodes** ppNodes) get_Nodes;
+			public function HRESULT(ISCluster *self, ISClusResGroups** ppClusterResourceGroups) get_ResourceGroups;
+			public function HRESULT(ISCluster *self, ISClusResources** ppClusterResources) get_Resources;
+			public function HRESULT(ISCluster *self, ISClusResTypes** ppResourceTypes) get_ResourceTypes;
+			public function HRESULT(ISCluster *self, ISClusNetworks** ppNetworks) get_Networks;
+			public function HRESULT(ISCluster *self, ISClusNetInterfaces** ppNetInterfaces) get_NetInterfaces;
+		}
+		[CRepr]
+		public struct ISClusNode : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606f8, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_CommonProperties;
+			public function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_PrivateProperties;
+			public function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_CommonROProperties;
+			public function HRESULT(ISClusNode *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+			public function HRESULT(ISClusNode *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(ISClusNode *self, uint* phandle) get_Handle;
+			public function HRESULT(ISClusNode *self, BSTR* pbstrNodeID) get_NodeID;
+			public function HRESULT(ISClusNode *self, CLUSTER_NODE_STATE* dwState) get_State;
+			public function HRESULT(ISClusNode *self) Pause;
+			public function HRESULT(ISClusNode *self) Resume;
+			public function HRESULT(ISClusNode *self) Evict;
+			public function HRESULT(ISClusNode *self, ISClusResGroups** ppResourceGroups) get_ResourceGroups;
+			public function HRESULT(ISClusNode *self, ISCluster** ppCluster) get_Cluster;
+			public function HRESULT(ISClusNode *self, ISClusNodeNetInterfaces** ppClusNetInterfaces) get_NetInterfaces;
+		}
+		[CRepr]
+		public struct ISClusNodes : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606fa, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusNodes *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusNodes *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusNodes *self) Refresh;
+			public function HRESULT(ISClusNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
+		}
+		[CRepr]
+		public struct ISClusNetwork : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606f2, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_CommonProperties;
+			public function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_PrivateProperties;
+			public function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_CommonROProperties;
+			public function HRESULT(ISClusNetwork *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+			public function HRESULT(ISClusNetwork *self, uint* phandle) get_Handle;
+			public function HRESULT(ISClusNetwork *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(ISClusNetwork *self, BSTR bstrNetworkName) put_Name;
+			public function HRESULT(ISClusNetwork *self, BSTR* pbstrNetworkID) get_NetworkID;
+			public function HRESULT(ISClusNetwork *self, CLUSTER_NETWORK_STATE* dwState) get_State;
+			public function HRESULT(ISClusNetwork *self, ISClusNetworkNetInterfaces** ppClusNetInterfaces) get_NetInterfaces;
+			public function HRESULT(ISClusNetwork *self, ISCluster** ppCluster) get_Cluster;
+		}
+		[CRepr]
+		public struct ISClusNetworks : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606f4, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusNetworks *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusNetworks *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusNetworks *self) Refresh;
+			public function HRESULT(ISClusNetworks *self, VARIANT varIndex, ISClusNetwork** ppClusNetwork) get_Item;
+		}
+		[CRepr]
+		public struct ISClusNetInterface : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606ee, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_CommonProperties;
+			public function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_PrivateProperties;
+			public function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_CommonROProperties;
+			public function HRESULT(ISClusNetInterface *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+			public function HRESULT(ISClusNetInterface *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(ISClusNetInterface *self, uint* phandle) get_Handle;
+			public function HRESULT(ISClusNetInterface *self, CLUSTER_NETINTERFACE_STATE* dwState) get_State;
+			public function HRESULT(ISClusNetInterface *self, ISCluster** ppCluster) get_Cluster;
+		}
+		[CRepr]
+		public struct ISClusNetInterfaces : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606f0, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusNetInterfaces *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusNetInterfaces *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusNetInterfaces *self) Refresh;
+			public function HRESULT(ISClusNetInterfaces *self, VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) get_Item;
+		}
+		[CRepr]
+		public struct ISClusNodeNetInterfaces : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606fc, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusNodeNetInterfaces *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusNodeNetInterfaces *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusNodeNetInterfaces *self) Refresh;
+			public function HRESULT(ISClusNodeNetInterfaces *self, VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) get_Item;
+		}
+		[CRepr]
+		public struct ISClusNetworkNetInterfaces : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606f6, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusNetworkNetInterfaces *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusNetworkNetInterfaces *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusNetworkNetInterfaces *self) Refresh;
+			public function HRESULT(ISClusNetworkNetInterfaces *self, VARIANT varIndex, ISClusNetInterface** ppClusNetInterface) get_Item;
+		}
+		[CRepr]
+		public struct ISClusResGroup : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60706, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_CommonProperties;
+			public function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_PrivateProperties;
+			public function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_CommonROProperties;
+			public function HRESULT(ISClusResGroup *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+			public function HRESULT(ISClusResGroup *self, uint* phandle) get_Handle;
+			public function HRESULT(ISClusResGroup *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(ISClusResGroup *self, BSTR bstrGroupName) put_Name;
+			public function HRESULT(ISClusResGroup *self, CLUSTER_GROUP_STATE* dwState) get_State;
+			public function HRESULT(ISClusResGroup *self, ISClusNode** ppOwnerNode) get_OwnerNode;
+			public function HRESULT(ISClusResGroup *self, ISClusResGroupResources** ppClusterGroupResources) get_Resources;
+			public function HRESULT(ISClusResGroup *self, ISClusResGroupPreferredOwnerNodes** ppOwnerNodes) get_PreferredOwnerNodes;
+			public function HRESULT(ISClusResGroup *self) Delete;
+			public function HRESULT(ISClusResGroup *self, VARIANT varTimeout, VARIANT varNode, VARIANT* pvarPending) Online;
+			public function HRESULT(ISClusResGroup *self, VARIANT varTimeout, VARIANT varNode, VARIANT* pvarPending) Move;
+			public function HRESULT(ISClusResGroup *self, VARIANT varTimeout, VARIANT* pvarPending) Offline;
+			public function HRESULT(ISClusResGroup *self, ISCluster** ppCluster) get_Cluster;
+		}
+		[CRepr]
+		public struct ISClusResGroups : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60708, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResGroups *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResGroups *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResGroups *self) Refresh;
+			public function HRESULT(ISClusResGroups *self, VARIANT varIndex, ISClusResGroup** ppClusResGroup) get_Item;
+			public function HRESULT(ISClusResGroups *self, BSTR bstrResourceGroupName, ISClusResGroup** ppResourceGroup) CreateItem;
+			public function HRESULT(ISClusResGroups *self, VARIANT varIndex) DeleteItem;
+		}
+		[CRepr]
+		public struct ISClusResource : IDispatch
+		{
+			public const new Guid IID = .(0xf2e6070a, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_CommonProperties;
+			public function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_PrivateProperties;
+			public function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_CommonROProperties;
+			public function HRESULT(ISClusResource *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+			public function HRESULT(ISClusResource *self, uint* phandle) get_Handle;
+			public function HRESULT(ISClusResource *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(ISClusResource *self, BSTR bstrResourceName) put_Name;
+			public function HRESULT(ISClusResource *self, CLUSTER_RESOURCE_STATE* dwState) get_State;
+			public function HRESULT(ISClusResource *self, CLUS_FLAGS* dwCoreFlag) get_CoreFlag;
+			public function HRESULT(ISClusResource *self, BSTR bstrDevicePath, int32 lMaxLogSize) BecomeQuorumResource;
+			public function HRESULT(ISClusResource *self) Delete;
+			public function HRESULT(ISClusResource *self) Fail;
+			public function HRESULT(ISClusResource *self, int32 nTimeout, VARIANT* pvarPending) Online;
+			public function HRESULT(ISClusResource *self, int32 nTimeout, VARIANT* pvarPending) Offline;
+			public function HRESULT(ISClusResource *self, ISClusResGroup* pResourceGroup) ChangeResourceGroup;
+			public function HRESULT(ISClusResource *self, ISClusNode* pNode) AddResourceNode;
+			public function HRESULT(ISClusResource *self, ISClusNode* pNode) RemoveResourceNode;
+			public function HRESULT(ISClusResource *self, ISClusResource* pResource, VARIANT* pvarDependent) CanResourceBeDependent;
+			public function HRESULT(ISClusResource *self, ISClusResPossibleOwnerNodes** ppOwnerNodes) get_PossibleOwnerNodes;
+			public function HRESULT(ISClusResource *self, ISClusResDependencies** ppResDependencies) get_Dependencies;
+			public function HRESULT(ISClusResource *self, ISClusResDependents** ppResDependents) get_Dependents;
+			public function HRESULT(ISClusResource *self, ISClusResGroup** ppResGroup) get_Group;
+			public function HRESULT(ISClusResource *self, ISClusNode** ppOwnerNode) get_OwnerNode;
+			public function HRESULT(ISClusResource *self, ISCluster** ppCluster) get_Cluster;
+			public function HRESULT(ISClusResource *self, CLUSTER_RESOURCE_CLASS* prcClassInfo) get_ClassInfo;
+			public function HRESULT(ISClusResource *self, ISClusDisk** ppDisk) get_Disk;
+			public function HRESULT(ISClusResource *self, ISClusRegistryKeys** ppRegistryKeys) get_RegistryKeys;
+			public function HRESULT(ISClusResource *self, ISClusCryptoKeys** ppCryptoKeys) get_CryptoKeys;
+			public function HRESULT(ISClusResource *self, BSTR* pbstrTypeName) get_TypeName;
+			public function HRESULT(ISClusResource *self, ISClusResType** ppResourceType) get_Type;
+			public function HRESULT(ISClusResource *self, BOOL* pbMaintenanceMode) get_MaintenanceMode;
+			public function HRESULT(ISClusResource *self, BOOL bMaintenanceMode) put_MaintenanceMode;
+		}
+		[CRepr]
+		public struct ISClusResDependencies : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60704, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResDependencies *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResDependencies *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResDependencies *self) Refresh;
+			public function HRESULT(ISClusResDependencies *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+			public function HRESULT(ISClusResDependencies *self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+			public function HRESULT(ISClusResDependencies *self, VARIANT varIndex) DeleteItem;
+			public function HRESULT(ISClusResDependencies *self, ISClusResource* pResource) AddItem;
+			public function HRESULT(ISClusResDependencies *self, VARIANT varIndex) RemoveItem;
+		}
+		[CRepr]
+		public struct ISClusResGroupResources : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606ea, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResGroupResources *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResGroupResources *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResGroupResources *self) Refresh;
+			public function HRESULT(ISClusResGroupResources *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+			public function HRESULT(ISClusResGroupResources *self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+			public function HRESULT(ISClusResGroupResources *self, VARIANT varIndex) DeleteItem;
+		}
+		[CRepr]
+		public struct ISClusResTypeResources : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60714, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResTypeResources *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResTypeResources *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResTypeResources *self) Refresh;
+			public function HRESULT(ISClusResTypeResources *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+			public function HRESULT(ISClusResTypeResources *self, BSTR bstrResourceName, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+			public function HRESULT(ISClusResTypeResources *self, VARIANT varIndex) DeleteItem;
+		}
+		[CRepr]
+		public struct ISClusResources : IDispatch
+		{
+			public const new Guid IID = .(0xf2e6070c, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResources *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResources *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResources *self) Refresh;
+			public function HRESULT(ISClusResources *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+			public function HRESULT(ISClusResources *self, BSTR bstrResourceName, BSTR bstrResourceType, BSTR bstrGroupName, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+			public function HRESULT(ISClusResources *self, VARIANT varIndex) DeleteItem;
+		}
+		[CRepr]
+		public struct ISClusResGroupPreferredOwnerNodes : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606e8, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResGroupPreferredOwnerNodes *self) Refresh;
+			public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
+			public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, ISClusNode* pNode, int32 nPosition) InsertItem;
+			public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, VARIANT varIndex) RemoveItem;
+			public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, VARIANT* pvarModified) get_Modified;
+			public function HRESULT(ISClusResGroupPreferredOwnerNodes *self) SaveChanges;
+			public function HRESULT(ISClusResGroupPreferredOwnerNodes *self, ISClusNode* pNode) AddItem;
+		}
+		[CRepr]
+		public struct ISClusResPossibleOwnerNodes : IDispatch
+		{
+			public const new Guid IID = .(0xf2e6070e, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResPossibleOwnerNodes *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResPossibleOwnerNodes *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResPossibleOwnerNodes *self) Refresh;
+			public function HRESULT(ISClusResPossibleOwnerNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
+			public function HRESULT(ISClusResPossibleOwnerNodes *self, ISClusNode* pNode) AddItem;
+			public function HRESULT(ISClusResPossibleOwnerNodes *self, VARIANT varIndex) RemoveItem;
+			public function HRESULT(ISClusResPossibleOwnerNodes *self, VARIANT* pvarModified) get_Modified;
+		}
+		[CRepr]
+		public struct ISClusResTypePossibleOwnerNodes : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60718, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResTypePossibleOwnerNodes *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResTypePossibleOwnerNodes *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResTypePossibleOwnerNodes *self) Refresh;
+			public function HRESULT(ISClusResTypePossibleOwnerNodes *self, VARIANT varIndex, ISClusNode** ppNode) get_Item;
+		}
+		[CRepr]
+		public struct ISClusResType : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60710, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_CommonProperties;
+			public function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_PrivateProperties;
+			public function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_CommonROProperties;
+			public function HRESULT(ISClusResType *self, ISClusProperties** ppProperties) get_PrivateROProperties;
+			public function HRESULT(ISClusResType *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(ISClusResType *self) Delete;
+			public function HRESULT(ISClusResType *self, ISCluster** ppCluster) get_Cluster;
+			public function HRESULT(ISClusResType *self, ISClusResTypeResources** ppClusterResTypeResources) get_Resources;
+			public function HRESULT(ISClusResType *self, ISClusResTypePossibleOwnerNodes** ppOwnerNodes) get_PossibleOwnerNodes;
+			public function HRESULT(ISClusResType *self, ISClusDisks** ppAvailableDisks) get_AvailableDisks;
+		}
+		[CRepr]
+		public struct ISClusResTypes : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60712, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResTypes *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResTypes *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResTypes *self) Refresh;
+			public function HRESULT(ISClusResTypes *self, VARIANT varIndex, ISClusResType** ppClusResType) get_Item;
+			public function HRESULT(ISClusResTypes *self, BSTR bstrResourceTypeName, BSTR bstrDisplayName, BSTR bstrResourceTypeDll, int32 dwLooksAlivePollInterval, int32 dwIsAlivePollInterval, ISClusResType** ppResourceType) CreateItem;
+			public function HRESULT(ISClusResTypes *self, VARIANT varIndex) DeleteItem;
+		}
+		[CRepr]
+		public struct ISClusProperty : IDispatch
+		{
+			public const new Guid IID = .(0xf2e606fe, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusProperty *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(ISClusProperty *self, int32* pLength) get_Length;
+			public function HRESULT(ISClusProperty *self, int32* pCount) get_ValueCount;
+			public function HRESULT(ISClusProperty *self, ISClusPropertyValues** ppClusterPropertyValues) get_Values;
+			public function HRESULT(ISClusProperty *self, VARIANT* pvarValue) get_Value;
+			public function HRESULT(ISClusProperty *self, VARIANT varValue) put_Value;
+			public function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_TYPE* pType) get_Type;
+			public function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_TYPE Type) put_Type;
+			public function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_FORMAT* pFormat) get_Format;
+			public function HRESULT(ISClusProperty *self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
+			public function HRESULT(ISClusProperty *self, VARIANT* pvarReadOnly) get_ReadOnly;
+			public function HRESULT(ISClusProperty *self, VARIANT* pvarPrivate) get_Private;
+			public function HRESULT(ISClusProperty *self, VARIANT* pvarCommon) get_Common;
+			public function HRESULT(ISClusProperty *self, VARIANT* pvarModified) get_Modified;
+			public function HRESULT(ISClusProperty *self) UseDefaultValue;
+		}
+		[CRepr]
+		public struct ISClusPropertyValue : IDispatch
+		{
+			public const new Guid IID = .(0xf2e6071a, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusPropertyValue *self, VARIANT* pvarValue) get_Value;
+			public function HRESULT(ISClusPropertyValue *self, VARIANT varValue) put_Value;
+			public function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_TYPE* pType) get_Type;
+			public function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_TYPE Type) put_Type;
+			public function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_FORMAT* pFormat) get_Format;
+			public function HRESULT(ISClusPropertyValue *self, CLUSTER_PROPERTY_FORMAT Format) put_Format;
+			public function HRESULT(ISClusPropertyValue *self, int32* pLength) get_Length;
+			public function HRESULT(ISClusPropertyValue *self, int32* pCount) get_DataCount;
+			public function HRESULT(ISClusPropertyValue *self, ISClusPropertyValueData** ppClusterPropertyValueData) get_Data;
+		}
+		[CRepr]
+		public struct ISClusPropertyValues : IDispatch
+		{
+			public const new Guid IID = .(0xf2e6071c, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusPropertyValues *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusPropertyValues *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusPropertyValues *self, VARIANT varIndex, ISClusPropertyValue** ppPropertyValue) get_Item;
+			public function HRESULT(ISClusPropertyValues *self, BSTR bstrName, VARIANT varValue, ISClusPropertyValue** ppPropertyValue) CreateItem;
+			public function HRESULT(ISClusPropertyValues *self, VARIANT varIndex) RemoveItem;
+		}
+		[CRepr]
+		public struct ISClusProperties : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60700, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusProperties *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusProperties *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusProperties *self) Refresh;
+			public function HRESULT(ISClusProperties *self, VARIANT varIndex, ISClusProperty** ppClusProperty) get_Item;
+			public function HRESULT(ISClusProperties *self, BSTR bstrName, VARIANT varValue, ISClusProperty** pProperty) CreateItem;
+			public function HRESULT(ISClusProperties *self, VARIANT varIndex) UseDefaultValue;
+			public function HRESULT(ISClusProperties *self, VARIANT* pvarStatusCode) SaveChanges;
+			public function HRESULT(ISClusProperties *self, VARIANT* pvarReadOnly) get_ReadOnly;
+			public function HRESULT(ISClusProperties *self, VARIANT* pvarPrivate) get_Private;
+			public function HRESULT(ISClusProperties *self, VARIANT* pvarCommon) get_Common;
+			public function HRESULT(ISClusProperties *self, VARIANT* pvarModified) get_Modified;
+		}
+		[CRepr]
+		public struct ISClusPropertyValueData : IDispatch
+		{
+			public const new Guid IID = .(0xf2e6071e, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusPropertyValueData *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusPropertyValueData *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusPropertyValueData *self, VARIANT varIndex, VARIANT* pvarValue) get_Item;
+			public function HRESULT(ISClusPropertyValueData *self, VARIANT varValue, VARIANT* pvarData) CreateItem;
+			public function HRESULT(ISClusPropertyValueData *self, VARIANT varIndex) RemoveItem;
+		}
+		[CRepr]
+		public struct ISClusPartition : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60720, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusPartition *self, int32* plFlags) get_Flags;
+			public function HRESULT(ISClusPartition *self, BSTR* pbstrDeviceName) get_DeviceName;
+			public function HRESULT(ISClusPartition *self, BSTR* pbstrVolumeLabel) get_VolumeLabel;
+			public function HRESULT(ISClusPartition *self, int32* plSerialNumber) get_SerialNumber;
+			public function HRESULT(ISClusPartition *self, int32* plMaximumComponentLength) get_MaximumComponentLength;
+			public function HRESULT(ISClusPartition *self, int32* plFileSystemFlags) get_FileSystemFlags;
+			public function HRESULT(ISClusPartition *self, BSTR* pbstrFileSystem) get_FileSystem;
+		}
+		[CRepr]
+		public struct ISClusPartitionEx : ISClusPartition
+		{
+			public const new Guid IID = .(0x8802d4fe, 0xb32e, 0x4ad1, 0x9d, 0xbd, 0x64, 0xf1, 0x8e, 0x11, 0x66, 0xce);
+			
+			public function HRESULT(ISClusPartitionEx *self, int32* plTotalSize) get_TotalSize;
+			public function HRESULT(ISClusPartitionEx *self, int32* plFreeSpace) get_FreeSpace;
+			public function HRESULT(ISClusPartitionEx *self, int32* plDeviceNumber) get_DeviceNumber;
+			public function HRESULT(ISClusPartitionEx *self, int32* plPartitionNumber) get_PartitionNumber;
+			public function HRESULT(ISClusPartitionEx *self, BSTR* pbstrVolumeGuid) get_VolumeGuid;
+		}
+		[CRepr]
+		public struct ISClusPartitions : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60722, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusPartitions *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusPartitions *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusPartitions *self, VARIANT varIndex, ISClusPartition** ppPartition) get_Item;
+		}
+		[CRepr]
+		public struct ISClusDisk : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60724, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusDisk *self, int32* plSignature) get_Signature;
+			public function HRESULT(ISClusDisk *self, ISClusScsiAddress** ppScsiAddress) get_ScsiAddress;
+			public function HRESULT(ISClusDisk *self, int32* plDiskNumber) get_DiskNumber;
+			public function HRESULT(ISClusDisk *self, ISClusPartitions** ppPartitions) get_Partitions;
+		}
+		[CRepr]
+		public struct ISClusDisks : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60726, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusDisks *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusDisks *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusDisks *self, VARIANT varIndex, ISClusDisk** ppDisk) get_Item;
+		}
+		[CRepr]
+		public struct ISClusScsiAddress : IDispatch
+		{
+			public const new Guid IID = .(0xf2e60728, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusScsiAddress *self, VARIANT* pvarPortNumber) get_PortNumber;
+			public function HRESULT(ISClusScsiAddress *self, VARIANT* pvarPathId) get_PathId;
+			public function HRESULT(ISClusScsiAddress *self, VARIANT* pvarTargetId) get_TargetId;
+			public function HRESULT(ISClusScsiAddress *self, VARIANT* pvarLun) get_Lun;
+		}
+		[CRepr]
+		public struct ISClusRegistryKeys : IDispatch
+		{
+			public const new Guid IID = .(0xf2e6072a, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusRegistryKeys *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusRegistryKeys *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusRegistryKeys *self) Refresh;
+			public function HRESULT(ISClusRegistryKeys *self, VARIANT varIndex, BSTR* pbstrRegistryKey) get_Item;
+			public function HRESULT(ISClusRegistryKeys *self, BSTR bstrRegistryKey) AddItem;
+			public function HRESULT(ISClusRegistryKeys *self, VARIANT varIndex) RemoveItem;
+		}
+		[CRepr]
+		public struct ISClusCryptoKeys : IDispatch
+		{
+			public const new Guid IID = .(0xf2e6072c, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusCryptoKeys *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusCryptoKeys *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusCryptoKeys *self) Refresh;
+			public function HRESULT(ISClusCryptoKeys *self, VARIANT varIndex, BSTR* pbstrCyrptoKey) get_Item;
+			public function HRESULT(ISClusCryptoKeys *self, BSTR bstrCryptoKey) AddItem;
+			public function HRESULT(ISClusCryptoKeys *self, VARIANT varIndex) RemoveItem;
+		}
+		[CRepr]
+		public struct ISClusResDependents : IDispatch
+		{
+			public const new Guid IID = .(0xf2e6072e, 0x2631, 0x11d1, 0x89, 0xf1, 0x00, 0xa0, 0xc9, 0x0d, 0x06, 0x1e);
+			
+			public function HRESULT(ISClusResDependents *self, int32* plCount) get_Count;
+			public function HRESULT(ISClusResDependents *self, IUnknown** retval) get__NewEnum;
+			public function HRESULT(ISClusResDependents *self) Refresh;
+			public function HRESULT(ISClusResDependents *self, VARIANT varIndex, ISClusResource** ppClusResource) get_Item;
+			public function HRESULT(ISClusResDependents *self, BSTR bstrResourceName, BSTR bstrResourceType, CLUSTER_RESOURCE_CREATE_FLAGS dwFlags, ISClusResource** ppClusterResource) CreateItem;
+			public function HRESULT(ISClusResDependents *self, VARIANT varIndex) DeleteItem;
+			public function HRESULT(ISClusResDependents *self, ISClusResource* pResource) AddItem;
+			public function HRESULT(ISClusResDependents *self, VARIANT varIndex) RemoveItem;
+		}
 		
 		// --- Functions ---
 		

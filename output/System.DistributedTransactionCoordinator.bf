@@ -386,72 +386,582 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ITransaction {}
-		public struct ITransactionCloner {}
-		public struct ITransaction2 {}
-		public struct ITransactionDispenser {}
-		public struct ITransactionOptions {}
-		public struct ITransactionOutcomeEvents {}
-		public struct ITmNodeName {}
-		public struct IKernelTransaction {}
-		public struct ITransactionResourceAsync {}
-		public struct ITransactionLastResourceAsync {}
-		public struct ITransactionResource {}
-		public struct ITransactionEnlistmentAsync {}
-		public struct ITransactionLastEnlistmentAsync {}
-		public struct ITransactionExportFactory {}
-		public struct ITransactionImportWhereabouts {}
-		public struct ITransactionExport {}
-		public struct ITransactionImport {}
-		public struct ITipTransaction {}
-		public struct ITipHelper {}
-		public struct ITipPullSink {}
-		public struct IDtcNetworkAccessConfig {}
-		public struct IDtcNetworkAccessConfig2 {}
-		public struct IDtcNetworkAccessConfig3 {}
-		public struct IDtcToXaMapper {}
-		public struct IDtcToXaHelperFactory {}
-		public struct IDtcToXaHelper {}
-		public struct IDtcToXaHelperSinglePipe {}
-		public struct IXATransLookup {}
-		public struct IXATransLookup2 {}
-		public struct IResourceManagerSink {}
-		public struct IResourceManagerAlt {}
-		public struct ILastResourceManager {}
-		public struct IResourceManager2 {}
-		public struct IResourceManagerRejoinable {}
-		public struct IXAConfig {}
-		public struct IRMHelper {}
-		public struct IXAObtainRMInfo {}
-		public struct IResourceManagerFactory {}
-		public struct IResourceManagerFactory2 {}
-		public struct IPrepareInfo {}
-		public struct IPrepareInfo2 {}
-		public struct IGetDispenser {}
-		public struct ITransactionVoterBallotAsync2 {}
-		public struct ITransactionVoterNotifyAsync2 {}
-		public struct ITransactionVoterFactory2 {}
-		public struct ITransactionPhase0EnlistmentAsync {}
-		public struct ITransactionPhase0NotifyAsync {}
-		public struct ITransactionPhase0Factory {}
-		public struct ITransactionTransmitter {}
-		public struct ITransactionTransmitterFactory {}
-		public struct ITransactionReceiver {}
-		public struct ITransactionReceiverFactory {}
-		public struct IDtcLuConfigure {}
-		public struct IDtcLuRecovery {}
-		public struct IDtcLuRecoveryFactory {}
-		public struct IDtcLuRecoveryInitiatedByDtcTransWork {}
-		public struct IDtcLuRecoveryInitiatedByDtcStatusWork {}
-		public struct IDtcLuRecoveryInitiatedByDtc {}
-		public struct IDtcLuRecoveryInitiatedByLuWork {}
-		public struct IDtcLuRecoveryInitiatedByLu {}
-		public struct IDtcLuRmEnlistment {}
-		public struct IDtcLuRmEnlistmentSink {}
-		public struct IDtcLuRmEnlistmentFactory {}
-		public struct IDtcLuSubordinateDtc {}
-		public struct IDtcLuSubordinateDtcSink {}
-		public struct IDtcLuSubordinateDtcFactory {}
+		[CRepr]
+		public struct ITransaction : IUnknown
+		{
+			public const new Guid IID = .(0x0fb15084, 0xaf41, 0x11ce, 0xbd, 0x2b, 0x20, 0x4c, 0x4f, 0x4f, 0x50, 0x20);
+			
+			public function HRESULT(ITransaction *self, BOOL fRetaining, uint32 grfTC, uint32 grfRM) Commit;
+			public function HRESULT(ITransaction *self, BOID* pboidReason, BOOL fRetaining, BOOL fAsync) Abort;
+			public function HRESULT(ITransaction *self, XACTTRANSINFO* pinfo) GetTransactionInfo;
+		}
+		[CRepr]
+		public struct ITransactionCloner : ITransaction
+		{
+			public const new Guid IID = .(0x02656950, 0x2152, 0x11d0, 0x94, 0x4c, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(ITransactionCloner *self, ITransaction** ppITransaction) CloneWithCommitDisabled;
+		}
+		[CRepr]
+		public struct ITransaction2 : ITransactionCloner
+		{
+			public const new Guid IID = .(0x34021548, 0x0065, 0x11d3, 0xba, 0xc1, 0x00, 0xc0, 0x4f, 0x79, 0x7b, 0xe2);
+			
+			public function HRESULT(ITransaction2 *self, XACTTRANSINFO* pinfo) GetTransactionInfo2;
+		}
+		[CRepr]
+		public struct ITransactionDispenser : IUnknown
+		{
+			public const new Guid IID = .(0x3a6ad9e1, 0x23b9, 0x11cf, 0xad, 0x60, 0x00, 0xaa, 0x00, 0xa7, 0x4c, 0xcd);
+			
+			public function HRESULT(ITransactionDispenser *self, ITransactionOptions** ppOptions) GetOptionsObject;
+			public function HRESULT(ITransactionDispenser *self, IUnknown* punkOuter, int32 isoLevel, uint32 isoFlags, ITransactionOptions* pOptions, ITransaction** ppTransaction) BeginTransaction;
+		}
+		[CRepr]
+		public struct ITransactionOptions : IUnknown
+		{
+			public const new Guid IID = .(0x3a6ad9e0, 0x23b9, 0x11cf, 0xad, 0x60, 0x00, 0xaa, 0x00, 0xa7, 0x4c, 0xcd);
+			
+			public function HRESULT(ITransactionOptions *self, XACTOPT* pOptions) SetOptions;
+			public function HRESULT(ITransactionOptions *self, XACTOPT* pOptions) GetOptions;
+		}
+		[CRepr]
+		public struct ITransactionOutcomeEvents : IUnknown
+		{
+			public const new Guid IID = .(0x3a6ad9e2, 0x23b9, 0x11cf, 0xad, 0x60, 0x00, 0xaa, 0x00, 0xa7, 0x4c, 0xcd);
+			
+			public function HRESULT(ITransactionOutcomeEvents *self, BOOL fRetaining, BOID* pNewUOW, HRESULT hr) Committed;
+			public function HRESULT(ITransactionOutcomeEvents *self, BOID* pboidReason, BOOL fRetaining, BOID* pNewUOW, HRESULT hr) Aborted;
+			public function HRESULT(ITransactionOutcomeEvents *self, uint32 dwDecision, BOID* pboidReason, HRESULT hr) HeuristicDecision;
+			public function HRESULT(ITransactionOutcomeEvents *self) Indoubt;
+		}
+		[CRepr]
+		public struct ITmNodeName : IUnknown
+		{
+			public const new Guid IID = .(0x30274f88, 0x6ee4, 0x474e, 0x9b, 0x95, 0x78, 0x07, 0xbc, 0x9e, 0xf8, 0xcf);
+			
+			public function HRESULT(ITmNodeName *self, uint32* pcbNodeNameSize) GetNodeNameSize;
+			public function HRESULT(ITmNodeName *self, uint32 cbNodeNameBufferSize, PWSTR pNodeNameBuffer) GetNodeName;
+		}
+		[CRepr]
+		public struct IKernelTransaction : IUnknown
+		{
+			public const new Guid IID = .(0x79427a2b, 0xf895, 0x40e0, 0xbe, 0x79, 0xb5, 0x7d, 0xc8, 0x2e, 0xd2, 0x31);
+			
+			public function HRESULT(IKernelTransaction *self, HANDLE* pHandle) GetHandle;
+		}
+		[CRepr]
+		public struct ITransactionResourceAsync : IUnknown
+		{
+			public const new Guid IID = .(0x69e971f0, 0x23ce, 0x11cf, 0xad, 0x60, 0x00, 0xaa, 0x00, 0xa7, 0x4c, 0xcd);
+			
+			public function HRESULT(ITransactionResourceAsync *self, BOOL fRetaining, uint32 grfRM, BOOL fWantMoniker, BOOL fSinglePhase) PrepareRequest;
+			public function HRESULT(ITransactionResourceAsync *self, uint32 grfRM, BOID* pNewUOW) CommitRequest;
+			public function HRESULT(ITransactionResourceAsync *self, BOID* pboidReason, BOOL fRetaining, BOID* pNewUOW) AbortRequest;
+			public function HRESULT(ITransactionResourceAsync *self) TMDown;
+		}
+		[CRepr]
+		public struct ITransactionLastResourceAsync : IUnknown
+		{
+			public const new Guid IID = .(0xc82bd532, 0x5b30, 0x11d3, 0x8a, 0x91, 0x00, 0xc0, 0x4f, 0x79, 0xeb, 0x6d);
+			
+			public function HRESULT(ITransactionLastResourceAsync *self, uint32 grfRM) DelegateCommit;
+			public function HRESULT(ITransactionLastResourceAsync *self, BOID* pNewUOW) ForgetRequest;
+		}
+		[CRepr]
+		public struct ITransactionResource : IUnknown
+		{
+			public const new Guid IID = .(0xee5ff7b3, 0x4572, 0x11d0, 0x94, 0x52, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(ITransactionResource *self, BOOL fRetaining, uint32 grfRM, BOOL fWantMoniker, BOOL fSinglePhase) PrepareRequest;
+			public function HRESULT(ITransactionResource *self, uint32 grfRM, BOID* pNewUOW) CommitRequest;
+			public function HRESULT(ITransactionResource *self, BOID* pboidReason, BOOL fRetaining, BOID* pNewUOW) AbortRequest;
+			public function HRESULT(ITransactionResource *self) TMDown;
+		}
+		[CRepr]
+		public struct ITransactionEnlistmentAsync : IUnknown
+		{
+			public const new Guid IID = .(0x0fb15081, 0xaf41, 0x11ce, 0xbd, 0x2b, 0x20, 0x4c, 0x4f, 0x4f, 0x50, 0x20);
+			
+			public function HRESULT(ITransactionEnlistmentAsync *self, HRESULT hr, IMoniker* pmk, BOID* pboidReason) PrepareRequestDone;
+			public function HRESULT(ITransactionEnlistmentAsync *self, HRESULT hr) CommitRequestDone;
+			public function HRESULT(ITransactionEnlistmentAsync *self, HRESULT hr) AbortRequestDone;
+		}
+		[CRepr]
+		public struct ITransactionLastEnlistmentAsync : IUnknown
+		{
+			public const new Guid IID = .(0xc82bd533, 0x5b30, 0x11d3, 0x8a, 0x91, 0x00, 0xc0, 0x4f, 0x79, 0xeb, 0x6d);
+			
+			public function HRESULT(ITransactionLastEnlistmentAsync *self, XACTSTAT XactStat, BOID* pboidReason) TransactionOutcome;
+		}
+		[CRepr]
+		public struct ITransactionExportFactory : IUnknown
+		{
+			public const new Guid IID = .(0xe1cf9b53, 0x8745, 0x11ce, 0xa9, 0xba, 0x00, 0xaa, 0x00, 0x6c, 0x37, 0x06);
+			
+			public function HRESULT(ITransactionExportFactory *self, Guid* pclsid) GetRemoteClassId;
+			public function HRESULT(ITransactionExportFactory *self, uint32 cbWhereabouts, uint8* rgbWhereabouts, ITransactionExport** ppExport) Create;
+		}
+		[CRepr]
+		public struct ITransactionImportWhereabouts : IUnknown
+		{
+			public const new Guid IID = .(0x0141fda4, 0x8fc0, 0x11ce, 0xbd, 0x18, 0x20, 0x4c, 0x4f, 0x4f, 0x50, 0x20);
+			
+			public function HRESULT(ITransactionImportWhereabouts *self, uint32* pcbWhereabouts) GetWhereaboutsSize;
+			public function HRESULT(ITransactionImportWhereabouts *self, uint32 cbWhereabouts, uint8* rgbWhereabouts, uint32* pcbUsed) GetWhereabouts;
+		}
+		[CRepr]
+		public struct ITransactionExport : IUnknown
+		{
+			public const new Guid IID = .(0x0141fda5, 0x8fc0, 0x11ce, 0xbd, 0x18, 0x20, 0x4c, 0x4f, 0x4f, 0x50, 0x20);
+			
+			public function HRESULT(ITransactionExport *self, IUnknown* punkTransaction, uint32* pcbTransactionCookie) Export;
+			public function HRESULT(ITransactionExport *self, IUnknown* punkTransaction, uint32 cbTransactionCookie, uint8* rgbTransactionCookie, uint32* pcbUsed) GetTransactionCookie;
+		}
+		[CRepr]
+		public struct ITransactionImport : IUnknown
+		{
+			public const new Guid IID = .(0xe1cf9b5a, 0x8745, 0x11ce, 0xa9, 0xba, 0x00, 0xaa, 0x00, 0x6c, 0x37, 0x06);
+			
+			public function HRESULT(ITransactionImport *self, uint32 cbTransactionCookie, uint8* rgbTransactionCookie, Guid* piid, void** ppvTransaction) Import;
+		}
+		[CRepr]
+		public struct ITipTransaction : IUnknown
+		{
+			public const new Guid IID = .(0x17cf72d0, 0xbac5, 0x11d1, 0xb1, 0xbf, 0x00, 0xc0, 0x4f, 0xc2, 0xf3, 0xef);
+			
+			public function HRESULT(ITipTransaction *self, uint8* i_pszRemoteTmUrl, PSTR* o_ppszRemoteTxUrl) Push;
+			public function HRESULT(ITipTransaction *self, PSTR* o_ppszLocalTxUrl) GetTransactionUrl;
+		}
+		[CRepr]
+		public struct ITipHelper : IUnknown
+		{
+			public const new Guid IID = .(0x17cf72d1, 0xbac5, 0x11d1, 0xb1, 0xbf, 0x00, 0xc0, 0x4f, 0xc2, 0xf3, 0xef);
+			
+			public function HRESULT(ITipHelper *self, uint8* i_pszTxUrl, ITransaction** o_ppITransaction) Pull;
+			public function HRESULT(ITipHelper *self, uint8* i_pszTxUrl, ITipPullSink* i_pTipPullSink, ITransaction** o_ppITransaction) PullAsync;
+			public function HRESULT(ITipHelper *self, uint8** o_ppszLocalTmUrl) GetLocalTmUrl;
+		}
+		[CRepr]
+		public struct ITipPullSink : IUnknown
+		{
+			public const new Guid IID = .(0x17cf72d2, 0xbac5, 0x11d1, 0xb1, 0xbf, 0x00, 0xc0, 0x4f, 0xc2, 0xf3, 0xef);
+			
+			public function HRESULT(ITipPullSink *self, HRESULT i_hrPull) PullComplete;
+		}
+		[CRepr]
+		public struct IDtcNetworkAccessConfig : IUnknown
+		{
+			public const new Guid IID = .(0x9797c15d, 0xa428, 0x4291, 0x87, 0xb6, 0x09, 0x95, 0x03, 0x1a, 0x67, 0x8d);
+			
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL* pbAnyNetworkAccess) GetAnyNetworkAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL bAnyNetworkAccess) SetAnyNetworkAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL* pbNetworkAdministrationAccess) GetNetworkAdministrationAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL bNetworkAdministrationAccess) SetNetworkAdministrationAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL* pbNetworkTransactionAccess) GetNetworkTransactionAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL bNetworkTransactionAccess) SetNetworkTransactionAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL* pbNetworkClientAccess) GetNetworkClientAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL bNetworkClientAccess) SetNetworkClientAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL* pbNetworkTIPAccess) GetNetworkTIPAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL bNetworkTIPAccess) SetNetworkTIPAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL* pbXAAccess) GetXAAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self, BOOL bXAAccess) SetXAAccess;
+			public function HRESULT(IDtcNetworkAccessConfig *self) RestartDtcService;
+		}
+		[CRepr]
+		public struct IDtcNetworkAccessConfig2 : IDtcNetworkAccessConfig
+		{
+			public const new Guid IID = .(0xa7aa013b, 0xeb7d, 0x4f42, 0xb4, 0x1c, 0xb2, 0xde, 0xc0, 0x9a, 0xe0, 0x34);
+			
+			public function HRESULT(IDtcNetworkAccessConfig2 *self, BOOL* pbInbound) GetNetworkInboundAccess;
+			public function HRESULT(IDtcNetworkAccessConfig2 *self, BOOL* pbOutbound) GetNetworkOutboundAccess;
+			public function HRESULT(IDtcNetworkAccessConfig2 *self, BOOL bInbound) SetNetworkInboundAccess;
+			public function HRESULT(IDtcNetworkAccessConfig2 *self, BOOL bOutbound) SetNetworkOutboundAccess;
+			public function HRESULT(IDtcNetworkAccessConfig2 *self, AUTHENTICATION_LEVEL* pAuthLevel) GetAuthenticationLevel;
+			public function HRESULT(IDtcNetworkAccessConfig2 *self, AUTHENTICATION_LEVEL AuthLevel) SetAuthenticationLevel;
+		}
+		[CRepr]
+		public struct IDtcNetworkAccessConfig3 : IDtcNetworkAccessConfig2
+		{
+			public const new Guid IID = .(0x76e4b4f3, 0x2ca5, 0x466b, 0x89, 0xd5, 0xfd, 0x21, 0x8e, 0xe7, 0x5b, 0x49);
+			
+			public function HRESULT(IDtcNetworkAccessConfig3 *self, BOOL* pbLUAccess) GetLUAccess;
+			public function HRESULT(IDtcNetworkAccessConfig3 *self, BOOL bLUAccess) SetLUAccess;
+		}
+		[CRepr]
+		public struct IDtcToXaMapper : IUnknown
+		{
+			public const new Guid IID = .(0x64ffabe0, 0x7ce9, 0x11d0, 0x8c, 0xe6, 0x00, 0xc0, 0x4f, 0xdc, 0x87, 0x7e);
+			
+			public function HRESULT(IDtcToXaMapper *self, PSTR pszDSN, PSTR pszClientDllName, uint32* pdwRMCookie) RequestNewResourceManager;
+			public function HRESULT(IDtcToXaMapper *self, uint32* pdwITransaction, uint32 dwRMCookie, xid_t* pXid) TranslateTridToXid;
+			public function HRESULT(IDtcToXaMapper *self, uint32 dwRMCookie, uint32* pdwITransaction) EnlistResourceManager;
+			public function HRESULT(IDtcToXaMapper *self, uint32 dwRMCookie) ReleaseResourceManager;
+		}
+		[CRepr]
+		public struct IDtcToXaHelperFactory : IUnknown
+		{
+			public const new Guid IID = .(0xa9861610, 0x304a, 0x11d1, 0x98, 0x13, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcToXaHelperFactory *self, PSTR pszDSN, PSTR pszClientDllName, Guid* pguidRm, IDtcToXaHelper** ppXaHelper) Create;
+		}
+		[CRepr]
+		public struct IDtcToXaHelper : IUnknown
+		{
+			public const new Guid IID = .(0xa9861611, 0x304a, 0x11d1, 0x98, 0x13, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcToXaHelper *self, BOOL i_fDoRecovery) Close;
+			public function HRESULT(IDtcToXaHelper *self, ITransaction* pITransaction, Guid* pguidBqual, xid_t* pXid) TranslateTridToXid;
+		}
+		[CRepr]
+		public struct IDtcToXaHelperSinglePipe : IUnknown
+		{
+			public const new Guid IID = .(0x47ed4971, 0x53b3, 0x11d1, 0xbb, 0xb9, 0x00, 0xc0, 0x4f, 0xd6, 0x58, 0xf6);
+			
+			public function HRESULT(IDtcToXaHelperSinglePipe *self, PSTR pszDSN, PSTR pszClientDll, uint32* pdwRMCookie) XARMCreate;
+			public function HRESULT(IDtcToXaHelperSinglePipe *self, uint32* pdwITrans, uint32 dwRMCookie, xid_t* pxid) ConvertTridToXID;
+			public function HRESULT(IDtcToXaHelperSinglePipe *self, uint32 dwRMCookie, ITransaction* i_pITransaction, ITransactionResourceAsync* i_pITransRes, ITransactionEnlistmentAsync** o_ppITransEnslitment) EnlistWithRM;
+			public function void(IDtcToXaHelperSinglePipe *self, uint32 i_dwRMCookie, BOOL i_fNormal) ReleaseRMCookie;
+		}
+		[CRepr]
+		public struct IXATransLookup : IUnknown
+		{
+			public const new Guid IID = .(0xf3b1f131, 0xeeda, 0x11ce, 0xae, 0xd4, 0x00, 0xaa, 0x00, 0x51, 0xe2, 0xc4);
+			
+			public function HRESULT(IXATransLookup *self, ITransaction** ppTransaction) Lookup;
+		}
+		[CRepr]
+		public struct IXATransLookup2 : IUnknown
+		{
+			public const new Guid IID = .(0xbf193c85, 0x0d1a, 0x4290, 0xb8, 0x8f, 0xd2, 0xcb, 0x88, 0x73, 0xd1, 0xe7);
+			
+			public function HRESULT(IXATransLookup2 *self, xid_t* pXID, ITransaction** ppTransaction) Lookup;
+		}
+		[CRepr]
+		public struct IResourceManagerSink : IUnknown
+		{
+			public const new Guid IID = .(0x0d563181, 0xdefb, 0x11ce, 0xae, 0xd1, 0x00, 0xaa, 0x00, 0x51, 0xe2, 0xc4);
+			
+			public function HRESULT(IResourceManagerSink *self) TMDown;
+		}
+		[CRepr]
+		public struct IResourceManagerAlt : IUnknown
+		{
+			public const new Guid IID = .(0x13741d21, 0x87eb, 0x11ce, 0x80, 0x81, 0x00, 0x80, 0xc7, 0x58, 0x52, 0x7e);
+			
+			public function HRESULT(IResourceManagerAlt *self, ITransaction* pTransaction, ITransactionResourceAsync* pRes, BOID* pUOW, int32* pisoLevel, ITransactionEnlistmentAsync** ppEnlist) Enlist;
+			public function HRESULT(IResourceManagerAlt *self, uint8* pPrepInfo, uint32 cbPrepInfo, uint32 lTimeout, XACTSTAT* pXactStat) Reenlist;
+			public function HRESULT(IResourceManagerAlt *self) ReenlistmentComplete;
+			public function HRESULT(IResourceManagerAlt *self, Guid* iid, void** ppvObject) GetDistributedTransactionManager;
+		}
+		[CRepr]
+		public struct ILastResourceManager : IUnknown
+		{
+			public const new Guid IID = .(0x4d964ad4, 0x5b33, 0x11d3, 0x8a, 0x91, 0x00, 0xc0, 0x4f, 0x79, 0xeb, 0x6d);
+			
+			public function HRESULT(ILastResourceManager *self, uint8* pPrepInfo, uint32 cbPrepInfo) TransactionCommitted;
+			public function HRESULT(ILastResourceManager *self) RecoveryDone;
+		}
+		[CRepr]
+		public struct IResourceManager2 : IResourceManagerAlt
+		{
+			public const new Guid IID = .(0xd136c69a, 0xf749, 0x11d1, 0x8f, 0x47, 0x00, 0xc0, 0x4f, 0x8e, 0xe5, 0x7d);
+			
+			public function HRESULT(IResourceManager2 *self, ITransaction* pTransaction, ITransactionResourceAsync* pResAsync, BOID* pUOW, int32* pisoLevel, xid_t* pXid, ITransactionEnlistmentAsync** ppEnlist) Enlist2;
+			public function HRESULT(IResourceManager2 *self, xid_t* pXid, uint32 dwTimeout, XACTSTAT* pXactStat) Reenlist2;
+		}
+		[CRepr]
+		public struct IResourceManagerRejoinable : IResourceManager2
+		{
+			public const new Guid IID = .(0x6f6de620, 0xb5df, 0x4f3e, 0x9c, 0xfa, 0xc8, 0xae, 0xbd, 0x05, 0x17, 0x2b);
+			
+			public function HRESULT(IResourceManagerRejoinable *self, uint8* pPrepInfo, uint32 cbPrepInfo, uint32 lTimeout, XACTSTAT* pXactStat) Rejoin;
+		}
+		[CRepr]
+		public struct IXAConfig : IUnknown
+		{
+			public const new Guid IID = .(0xc8a6e3a1, 0x9a8c, 0x11cf, 0xa3, 0x08, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IXAConfig *self, Guid clsidHelperDll) Initialize;
+			public function HRESULT(IXAConfig *self) Terminate;
+		}
+		[CRepr]
+		public struct IRMHelper : IUnknown
+		{
+			public const new Guid IID = .(0xe793f6d1, 0xf53d, 0x11cf, 0xa6, 0x0d, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IRMHelper *self, uint32 dwcTotalNumberOfRMs) RMCount;
+			public function HRESULT(IRMHelper *self, xa_switch_t* pXa_Switch, BOOL fCDeclCallingConv, PSTR pszOpenString, PSTR pszCloseString, Guid guidRMRecovery) RMInfo;
+		}
+		[CRepr]
+		public struct IXAObtainRMInfo : IUnknown
+		{
+			public const new Guid IID = .(0xe793f6d2, 0xf53d, 0x11cf, 0xa6, 0x0d, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IXAObtainRMInfo *self, IRMHelper* pIRMHelper) ObtainRMInfo;
+		}
+		[CRepr]
+		public struct IResourceManagerFactory : IUnknown
+		{
+			public const new Guid IID = .(0x13741d20, 0x87eb, 0x11ce, 0x80, 0x81, 0x00, 0x80, 0xc7, 0x58, 0x52, 0x7e);
+			
+			public function HRESULT(IResourceManagerFactory *self, Guid* pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, IResourceManagerAlt** ppResMgr) Create;
+		}
+		[CRepr]
+		public struct IResourceManagerFactory2 : IResourceManagerFactory
+		{
+			public const new Guid IID = .(0x6b369c21, 0xfbd2, 0x11d1, 0x8f, 0x47, 0x00, 0xc0, 0x4f, 0x8e, 0xe5, 0x7d);
+			
+			public function HRESULT(IResourceManagerFactory2 *self, Guid* pguidRM, PSTR pszRMName, IResourceManagerSink* pIResMgrSink, Guid* riidRequested, void** ppvResMgr) CreateEx;
+		}
+		[CRepr]
+		public struct IPrepareInfo : IUnknown
+		{
+			public const new Guid IID = .(0x80c7bfd0, 0x87ee, 0x11ce, 0x80, 0x81, 0x00, 0x80, 0xc7, 0x58, 0x52, 0x7e);
+			
+			public function HRESULT(IPrepareInfo *self, uint32* pcbPrepInfo) GetPrepareInfoSize;
+			public function HRESULT(IPrepareInfo *self, uint8* pPrepInfo) GetPrepareInfo;
+		}
+		[CRepr]
+		public struct IPrepareInfo2 : IUnknown
+		{
+			public const new Guid IID = .(0x5fab2547, 0x9779, 0x11d1, 0xb8, 0x86, 0x00, 0xc0, 0x4f, 0xb9, 0x61, 0x8a);
+			
+			public function HRESULT(IPrepareInfo2 *self, uint32* pcbPrepInfo) GetPrepareInfoSize;
+			public function HRESULT(IPrepareInfo2 *self, uint32 cbPrepareInfo, uint8* pPrepInfo) GetPrepareInfo;
+		}
+		[CRepr]
+		public struct IGetDispenser : IUnknown
+		{
+			public const new Guid IID = .(0xc23cc370, 0x87ef, 0x11ce, 0x80, 0x81, 0x00, 0x80, 0xc7, 0x58, 0x52, 0x7e);
+			
+			public function HRESULT(IGetDispenser *self, Guid* iid, void** ppvObject) GetDispenser;
+		}
+		[CRepr]
+		public struct ITransactionVoterBallotAsync2 : IUnknown
+		{
+			public const new Guid IID = .(0x5433376c, 0x414d, 0x11d3, 0xb2, 0x06, 0x00, 0xc0, 0x4f, 0xc2, 0xf3, 0xef);
+			
+			public function HRESULT(ITransactionVoterBallotAsync2 *self, HRESULT hr, BOID* pboidReason) VoteRequestDone;
+		}
+		[CRepr]
+		public struct ITransactionVoterNotifyAsync2 : ITransactionOutcomeEvents
+		{
+			public const new Guid IID = .(0x5433376b, 0x414d, 0x11d3, 0xb2, 0x06, 0x00, 0xc0, 0x4f, 0xc2, 0xf3, 0xef);
+			
+			public function HRESULT(ITransactionVoterNotifyAsync2 *self) VoteRequest;
+		}
+		[CRepr]
+		public struct ITransactionVoterFactory2 : IUnknown
+		{
+			public const new Guid IID = .(0x5433376a, 0x414d, 0x11d3, 0xb2, 0x06, 0x00, 0xc0, 0x4f, 0xc2, 0xf3, 0xef);
+			
+			public function HRESULT(ITransactionVoterFactory2 *self, ITransaction* pTransaction, ITransactionVoterNotifyAsync2* pVoterNotify, ITransactionVoterBallotAsync2** ppVoterBallot) Create;
+		}
+		[CRepr]
+		public struct ITransactionPhase0EnlistmentAsync : IUnknown
+		{
+			public const new Guid IID = .(0x82dc88e1, 0xa954, 0x11d1, 0x8f, 0x88, 0x00, 0x60, 0x08, 0x95, 0xe7, 0xd5);
+			
+			public function HRESULT(ITransactionPhase0EnlistmentAsync *self) Enable;
+			public function HRESULT(ITransactionPhase0EnlistmentAsync *self) WaitForEnlistment;
+			public function HRESULT(ITransactionPhase0EnlistmentAsync *self) Phase0Done;
+			public function HRESULT(ITransactionPhase0EnlistmentAsync *self) Unenlist;
+			public function HRESULT(ITransactionPhase0EnlistmentAsync *self, ITransaction** ppITransaction) GetTransaction;
+		}
+		[CRepr]
+		public struct ITransactionPhase0NotifyAsync : IUnknown
+		{
+			public const new Guid IID = .(0xef081809, 0x0c76, 0x11d2, 0x87, 0xa6, 0x00, 0xc0, 0x4f, 0x99, 0x0f, 0x34);
+			
+			public function HRESULT(ITransactionPhase0NotifyAsync *self, BOOL fAbortingHint) Phase0Request;
+			public function HRESULT(ITransactionPhase0NotifyAsync *self, HRESULT status) EnlistCompleted;
+		}
+		[CRepr]
+		public struct ITransactionPhase0Factory : IUnknown
+		{
+			public const new Guid IID = .(0x82dc88e0, 0xa954, 0x11d1, 0x8f, 0x88, 0x00, 0x60, 0x08, 0x95, 0xe7, 0xd5);
+			
+			public function HRESULT(ITransactionPhase0Factory *self, ITransactionPhase0NotifyAsync* pPhase0Notify, ITransactionPhase0EnlistmentAsync** ppPhase0Enlistment) Create;
+		}
+		[CRepr]
+		public struct ITransactionTransmitter : IUnknown
+		{
+			public const new Guid IID = .(0x59313e01, 0xb36c, 0x11cf, 0xa5, 0x39, 0x00, 0xaa, 0x00, 0x68, 0x87, 0xc3);
+			
+			public function HRESULT(ITransactionTransmitter *self, ITransaction* pTransaction) Set;
+			public function HRESULT(ITransactionTransmitter *self, uint32* pcbToken) GetPropagationTokenSize;
+			public function HRESULT(ITransactionTransmitter *self, uint32 cbToken, uint8* rgbToken, uint32* pcbUsed) MarshalPropagationToken;
+			public function HRESULT(ITransactionTransmitter *self, uint32 cbReturnToken, uint8* rgbReturnToken) UnmarshalReturnToken;
+			public function HRESULT(ITransactionTransmitter *self) Reset;
+		}
+		[CRepr]
+		public struct ITransactionTransmitterFactory : IUnknown
+		{
+			public const new Guid IID = .(0x59313e00, 0xb36c, 0x11cf, 0xa5, 0x39, 0x00, 0xaa, 0x00, 0x68, 0x87, 0xc3);
+			
+			public function HRESULT(ITransactionTransmitterFactory *self, ITransactionTransmitter** ppTransmitter) Create;
+		}
+		[CRepr]
+		public struct ITransactionReceiver : IUnknown
+		{
+			public const new Guid IID = .(0x59313e03, 0xb36c, 0x11cf, 0xa5, 0x39, 0x00, 0xaa, 0x00, 0x68, 0x87, 0xc3);
+			
+			public function HRESULT(ITransactionReceiver *self, uint32 cbToken, uint8* rgbToken, ITransaction** ppTransaction) UnmarshalPropagationToken;
+			public function HRESULT(ITransactionReceiver *self, uint32* pcbReturnToken) GetReturnTokenSize;
+			public function HRESULT(ITransactionReceiver *self, uint32 cbReturnToken, uint8* rgbReturnToken, uint32* pcbUsed) MarshalReturnToken;
+			public function HRESULT(ITransactionReceiver *self) Reset;
+		}
+		[CRepr]
+		public struct ITransactionReceiverFactory : IUnknown
+		{
+			public const new Guid IID = .(0x59313e02, 0xb36c, 0x11cf, 0xa5, 0x39, 0x00, 0xaa, 0x00, 0x68, 0x87, 0xc3);
+			
+			public function HRESULT(ITransactionReceiverFactory *self, ITransactionReceiver** ppReceiver) Create;
+		}
+		[CRepr]
+		public struct IDtcLuConfigure : IUnknown
+		{
+			public const new Guid IID = .(0x4131e760, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuConfigure *self, uint8* pucLuPair, uint32 cbLuPair) Add;
+			public function HRESULT(IDtcLuConfigure *self, uint8* pucLuPair, uint32 cbLuPair) Delete;
+		}
+		[CRepr]
+		public struct IDtcLuRecovery : IUnknown
+		{
+			public const new Guid IID = .(0xac2b8ad2, 0xd6f0, 0x11d0, 0xb3, 0x86, 0x00, 0xa0, 0xc9, 0x08, 0x33, 0x65);
+			
+		}
+		[CRepr]
+		public struct IDtcLuRecoveryFactory : IUnknown
+		{
+			public const new Guid IID = .(0x4131e762, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuRecoveryFactory *self, uint8* pucLuPair, uint32 cbLuPair, IDtcLuRecovery** ppRecovery) Create;
+		}
+		[CRepr]
+		public struct IDtcLuRecoveryInitiatedByDtcTransWork : IUnknown
+		{
+			public const new Guid IID = .(0x4131e765, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, uint32* pcbOurLogName, uint32* pcbRemoteLogName) GetLogNameSizes;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, _DtcLu_Xln* pXln, uint8* pOurLogName, uint8* pRemoteLogName, uint32* pdwProtocol) GetOurXln;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, _DtcLu_Xln_Confirmation Confirmation) HandleConfirmationFromOurXln;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, _DtcLu_Xln Xln, uint8* pRemoteLogName, uint32 cbRemoteLogName, uint32 dwProtocol, _DtcLu_Xln_Confirmation* pConfirmation) HandleTheirXlnResponse;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, _DtcLu_Xln_Error Error) HandleErrorFromOurXln;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, BOOL* fCompareStates) CheckForCompareStates;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, uint32* pcbOurTransId) GetOurTransIdSize;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, uint8* pOurTransId, _DtcLu_CompareState* pCompareState) GetOurCompareStates;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, _DtcLu_CompareState CompareState, _DtcLu_CompareStates_Confirmation* pConfirmation) HandleTheirCompareStatesResponse;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, _DtcLu_CompareStates_Error Error) HandleErrorFromOurCompareStates;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self) ConversationLost;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, int32* plRecoverySeqNum) GetRecoverySeqNum;
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcTransWork *self, int32 lNewRecoverySeqNum) ObsoleteRecoverySeqNum;
+		}
+		[CRepr]
+		public struct IDtcLuRecoveryInitiatedByDtcStatusWork : IUnknown
+		{
+			public const new Guid IID = .(0x4131e766, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtcStatusWork *self, int32 lRecoverySeqNum) HandleCheckLuStatus;
+		}
+		[CRepr]
+		public struct IDtcLuRecoveryInitiatedByDtc : IUnknown
+		{
+			public const new Guid IID = .(0x4131e764, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuRecoveryInitiatedByDtc *self, _DtcLu_LocalRecovery_Work* pWork, void** ppv) GetWork;
+		}
+		[CRepr]
+		public struct IDtcLuRecoveryInitiatedByLuWork : IUnknown
+		{
+			public const new Guid IID = .(0xac2b8ad1, 0xd6f0, 0x11d0, 0xb3, 0x86, 0x00, 0xa0, 0xc9, 0x08, 0x33, 0x65);
+			
+			public function HRESULT(IDtcLuRecoveryInitiatedByLuWork *self, int32 lRecoverySeqNum, _DtcLu_Xln Xln, uint8* pRemoteLogName, uint32 cbRemoteLogName, uint8* pOurLogName, uint32 cbOurLogName, uint32 dwProtocol, _DtcLu_Xln_Response* pResponse) HandleTheirXln;
+			public function HRESULT(IDtcLuRecoveryInitiatedByLuWork *self, uint32* pcbOurLogName) GetOurLogNameSize;
+			public function HRESULT(IDtcLuRecoveryInitiatedByLuWork *self, _DtcLu_Xln* pXln, uint8* pOurLogName, uint32* pdwProtocol) GetOurXln;
+			public function HRESULT(IDtcLuRecoveryInitiatedByLuWork *self, _DtcLu_Xln_Confirmation Confirmation) HandleConfirmationOfOurXln;
+			public function HRESULT(IDtcLuRecoveryInitiatedByLuWork *self, uint8* pRemoteTransId, uint32 cbRemoteTransId, _DtcLu_CompareState CompareState, _DtcLu_CompareStates_Response* pResponse, _DtcLu_CompareState* pCompareState) HandleTheirCompareStates;
+			public function HRESULT(IDtcLuRecoveryInitiatedByLuWork *self, _DtcLu_CompareStates_Confirmation Confirmation) HandleConfirmationOfOurCompareStates;
+			public function HRESULT(IDtcLuRecoveryInitiatedByLuWork *self, _DtcLu_CompareStates_Error Error) HandleErrorFromOurCompareStates;
+			public function HRESULT(IDtcLuRecoveryInitiatedByLuWork *self) ConversationLost;
+		}
+		[CRepr]
+		public struct IDtcLuRecoveryInitiatedByLu : IUnknown
+		{
+			public const new Guid IID = .(0x4131e768, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuRecoveryInitiatedByLu *self, IDtcLuRecoveryInitiatedByLuWork** ppWork) GetObjectToHandleWorkFromLu;
+		}
+		[CRepr]
+		public struct IDtcLuRmEnlistment : IUnknown
+		{
+			public const new Guid IID = .(0x4131e769, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuRmEnlistment *self, BOOL fConversationLost) Unplug;
+			public function HRESULT(IDtcLuRmEnlistment *self) BackedOut;
+			public function HRESULT(IDtcLuRmEnlistment *self) BackOut;
+			public function HRESULT(IDtcLuRmEnlistment *self) Committed;
+			public function HRESULT(IDtcLuRmEnlistment *self) Forget;
+			public function HRESULT(IDtcLuRmEnlistment *self) RequestCommit;
+		}
+		[CRepr]
+		public struct IDtcLuRmEnlistmentSink : IUnknown
+		{
+			public const new Guid IID = .(0x4131e770, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuRmEnlistmentSink *self) AckUnplug;
+			public function HRESULT(IDtcLuRmEnlistmentSink *self) TmDown;
+			public function HRESULT(IDtcLuRmEnlistmentSink *self) SessionLost;
+			public function HRESULT(IDtcLuRmEnlistmentSink *self) BackedOut;
+			public function HRESULT(IDtcLuRmEnlistmentSink *self) BackOut;
+			public function HRESULT(IDtcLuRmEnlistmentSink *self) Committed;
+			public function HRESULT(IDtcLuRmEnlistmentSink *self) Forget;
+			public function HRESULT(IDtcLuRmEnlistmentSink *self) Prepare;
+			public function HRESULT(IDtcLuRmEnlistmentSink *self) RequestCommit;
+		}
+		[CRepr]
+		public struct IDtcLuRmEnlistmentFactory : IUnknown
+		{
+			public const new Guid IID = .(0x4131e771, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuRmEnlistmentFactory *self, uint8* pucLuPair, uint32 cbLuPair, ITransaction* pITransaction, uint8* pTransId, uint32 cbTransId, IDtcLuRmEnlistmentSink* pRmEnlistmentSink, IDtcLuRmEnlistment** ppRmEnlistment) Create;
+		}
+		[CRepr]
+		public struct IDtcLuSubordinateDtc : IUnknown
+		{
+			public const new Guid IID = .(0x4131e773, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuSubordinateDtc *self, BOOL fConversationLost) Unplug;
+			public function HRESULT(IDtcLuSubordinateDtc *self) BackedOut;
+			public function HRESULT(IDtcLuSubordinateDtc *self) BackOut;
+			public function HRESULT(IDtcLuSubordinateDtc *self) Committed;
+			public function HRESULT(IDtcLuSubordinateDtc *self) Forget;
+			public function HRESULT(IDtcLuSubordinateDtc *self) Prepare;
+			public function HRESULT(IDtcLuSubordinateDtc *self) RequestCommit;
+		}
+		[CRepr]
+		public struct IDtcLuSubordinateDtcSink : IUnknown
+		{
+			public const new Guid IID = .(0x4131e774, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuSubordinateDtcSink *self) AckUnplug;
+			public function HRESULT(IDtcLuSubordinateDtcSink *self) TmDown;
+			public function HRESULT(IDtcLuSubordinateDtcSink *self) SessionLost;
+			public function HRESULT(IDtcLuSubordinateDtcSink *self) BackedOut;
+			public function HRESULT(IDtcLuSubordinateDtcSink *self) BackOut;
+			public function HRESULT(IDtcLuSubordinateDtcSink *self) Committed;
+			public function HRESULT(IDtcLuSubordinateDtcSink *self) Forget;
+			public function HRESULT(IDtcLuSubordinateDtcSink *self) RequestCommit;
+		}
+		[CRepr]
+		public struct IDtcLuSubordinateDtcFactory : IUnknown
+		{
+			public const new Guid IID = .(0x4131e775, 0x1aea, 0x11d0, 0x94, 0x4b, 0x00, 0xa0, 0xc9, 0x05, 0x41, 0x6e);
+			
+			public function HRESULT(IDtcLuSubordinateDtcFactory *self, uint8* pucLuPair, uint32 cbLuPair, IUnknown* punkTransactionOuter, int32 isoLevel, uint32 isoFlags, ITransactionOptions* pOptions, ITransaction** ppTransaction, uint8* pTransId, uint32 cbTransId, IDtcLuSubordinateDtcSink* pSubordinateDtcSink, IDtcLuSubordinateDtc** ppSubordinateDtc) Create;
+		}
 		
 		// --- Functions ---
 		

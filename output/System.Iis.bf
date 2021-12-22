@@ -1381,28 +1381,208 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IFtpProviderConstruct {}
-		public struct IFtpAuthenticationProvider {}
-		public struct AsyncIFtpAuthenticationProvider {}
-		public struct IFtpRoleProvider {}
-		public struct AsyncIFtpRoleProvider {}
-		public struct IFtpHomeDirectoryProvider {}
-		public struct AsyncIFtpHomeDirectoryProvider {}
-		public struct IFtpLogProvider {}
-		public struct AsyncIFtpLogProvider {}
-		public struct IFtpAuthorizationProvider {}
-		public struct AsyncIFtpAuthorizationProvider {}
-		public struct IFtpPreprocessProvider {}
-		public struct AsyncIFtpPreprocessProvider {}
-		public struct IFtpPostprocessProvider {}
-		public struct AsyncIFtpPostprocessProvider {}
-		public struct IADMEXT {}
-		public struct IMSAdminBaseW {}
-		public struct IMSAdminBase2W {}
-		public struct IMSAdminBase3W {}
-		public struct IMSImpExpHelpW {}
-		public struct IMSAdminBaseSinkW {}
-		public struct AsyncIMSAdminBaseSinkW {}
+		[CRepr]
+		public struct IFtpProviderConstruct : IUnknown
+		{
+			public const new Guid IID = .(0x4d1a3f7b, 0x412d, 0x447c, 0xb1, 0x99, 0x64, 0xf9, 0x67, 0xe9, 0xa2, 0xda);
+			
+			public function HRESULT(IFtpProviderConstruct *self, SAFEARRAY* configurationEntries) Construct;
+		}
+		[CRepr]
+		public struct IFtpAuthenticationProvider : IUnknown
+		{
+			public const new Guid IID = .(0x4659f95c, 0xd5a8, 0x4707, 0xb2, 0xfc, 0x6f, 0xd5, 0x79, 0x42, 0x46, 0xcf);
+			
+			public function HRESULT(IFtpAuthenticationProvider *self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword, PWSTR* ppszCanonicalUserName, BOOL* pfAuthenticated) AuthenticateUser;
+		}
+		[CRepr]
+		public struct AsyncIFtpAuthenticationProvider : IUnknown
+		{
+			public const new Guid IID = .(0xc24efb65, 0x9f3e, 0x4996, 0x8f, 0xb1, 0xce, 0x16, 0x69, 0x16, 0xba, 0xb5);
+			
+			public function HRESULT(AsyncIFtpAuthenticationProvider *self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszPassword) Begin_AuthenticateUser;
+			public function HRESULT(AsyncIFtpAuthenticationProvider *self, PWSTR* ppszCanonicalUserName, BOOL* pfAuthenticated) Finish_AuthenticateUser;
+		}
+		[CRepr]
+		public struct IFtpRoleProvider : IUnknown
+		{
+			public const new Guid IID = .(0x909c850d, 0x8ca0, 0x4674, 0x96, 0xb8, 0xcc, 0x29, 0x41, 0x53, 0x57, 0x25);
+			
+			public function HRESULT(IFtpRoleProvider *self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole, BOOL* pfIsInRole) IsUserInRole;
+		}
+		[CRepr]
+		public struct AsyncIFtpRoleProvider : IUnknown
+		{
+			public const new Guid IID = .(0x3e83bf99, 0x70ec, 0x41ca, 0x84, 0xb6, 0xac, 0xa7, 0xc7, 0xa6, 0x2c, 0xaf);
+			
+			public function HRESULT(AsyncIFtpRoleProvider *self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR pszRole) Begin_IsUserInRole;
+			public function HRESULT(AsyncIFtpRoleProvider *self, BOOL* pfIsInRole) Finish_IsUserInRole;
+		}
+		[CRepr]
+		public struct IFtpHomeDirectoryProvider : IUnknown
+		{
+			public const new Guid IID = .(0x0933b392, 0x18dd, 0x4097, 0x8b, 0x9c, 0x83, 0x32, 0x5c, 0x35, 0xd9, 0xa6);
+			
+			public function HRESULT(IFtpHomeDirectoryProvider *self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName, PWSTR* ppszHomeDirectoryData) GetUserHomeDirectoryData;
+		}
+		[CRepr]
+		public struct AsyncIFtpHomeDirectoryProvider : IUnknown
+		{
+			public const new Guid IID = .(0x73f81638, 0x6295, 0x42bd, 0xa2, 0xbe, 0x4a, 0x65, 0x7f, 0x7c, 0x47, 0x9c);
+			
+			public function HRESULT(AsyncIFtpHomeDirectoryProvider *self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszUserName) Begin_GetUserHomeDirectoryData;
+			public function HRESULT(AsyncIFtpHomeDirectoryProvider *self, PWSTR* ppszHomeDirectoryData) Finish_GetUserHomeDirectoryData;
+		}
+		[CRepr]
+		public struct IFtpLogProvider : IUnknown
+		{
+			public const new Guid IID = .(0xa18a94cc, 0x8299, 0x4408, 0x81, 0x6c, 0x7c, 0x3b, 0xac, 0xa1, 0xa4, 0x0e);
+			
+			public function HRESULT(IFtpLogProvider *self, LOGGING_PARAMETERS* pLoggingParameters) Log;
+		}
+		[CRepr]
+		public struct AsyncIFtpLogProvider : IUnknown
+		{
+			public const new Guid IID = .(0x00a0ae46, 0x2498, 0x48b2, 0x95, 0xe6, 0xdf, 0x67, 0x8e, 0xd7, 0xd4, 0x9f);
+			
+			public function HRESULT(AsyncIFtpLogProvider *self, LOGGING_PARAMETERS* pLoggingParameters) Begin_Log;
+			public function HRESULT(AsyncIFtpLogProvider *self) Finish_Log;
+		}
+		[CRepr]
+		public struct IFtpAuthorizationProvider : IUnknown
+		{
+			public const new Guid IID = .(0xa50ae7a1, 0xa35a, 0x42b4, 0xa4, 0xf3, 0xf4, 0xf7, 0x05, 0x7a, 0x05, 0xd1);
+			
+			public function HRESULT(IFtpAuthorizationProvider *self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName, FTP_ACCESS* pFtpAccess) GetUserAccessPermission;
+		}
+		[CRepr]
+		public struct AsyncIFtpAuthorizationProvider : IUnknown
+		{
+			public const new Guid IID = .(0x860dc339, 0x07e5, 0x4a5c, 0x9c, 0x61, 0x88, 0x20, 0xce, 0xa0, 0x12, 0xbc);
+			
+			public function HRESULT(AsyncIFtpAuthorizationProvider *self, PWSTR pszSessionId, PWSTR pszSiteName, PWSTR pszVirtualPath, PWSTR pszUserName) Begin_GetUserAccessPermission;
+			public function HRESULT(AsyncIFtpAuthorizationProvider *self, FTP_ACCESS* pFtpAccess) Finish_GetUserAccessPermission;
+		}
+		[CRepr]
+		public struct IFtpPreprocessProvider : IUnknown
+		{
+			public const new Guid IID = .(0xa3c19b60, 0x5a28, 0x471a, 0x8f, 0x93, 0xab, 0x30, 0x41, 0x1c, 0xee, 0x82);
+			
+			public function HRESULT(IFtpPreprocessProvider *self, PRE_PROCESS_PARAMETERS* pPreProcessParameters, FTP_PROCESS_STATUS* pFtpProcessStatus) HandlePreprocess;
+		}
+		[CRepr]
+		public struct AsyncIFtpPreprocessProvider : IUnknown
+		{
+			public const new Guid IID = .(0x6ff5fd8f, 0xfd8e, 0x48b1, 0xa3, 0xe0, 0xbf, 0x70, 0x73, 0xdb, 0x4d, 0xb5);
+			
+			public function HRESULT(AsyncIFtpPreprocessProvider *self, PRE_PROCESS_PARAMETERS* pPreProcessParameters) Begin_HandlePreprocess;
+			public function HRESULT(AsyncIFtpPreprocessProvider *self, FTP_PROCESS_STATUS* pFtpProcessStatus) Finish_HandlePreprocess;
+		}
+		[CRepr]
+		public struct IFtpPostprocessProvider : IUnknown
+		{
+			public const new Guid IID = .(0x4522cbc6, 0x16cd, 0x49ad, 0x86, 0x53, 0x9a, 0x2c, 0x57, 0x9e, 0x42, 0x80);
+			
+			public function HRESULT(IFtpPostprocessProvider *self, POST_PROCESS_PARAMETERS* pPostProcessParameters, FTP_PROCESS_STATUS* pFtpProcessStatus) HandlePostprocess;
+		}
+		[CRepr]
+		public struct AsyncIFtpPostprocessProvider : IUnknown
+		{
+			public const new Guid IID = .(0xa16b2542, 0x9694, 0x4eb1, 0xa5, 0x64, 0x6c, 0x2e, 0x91, 0xfd, 0xc1, 0x33);
+			
+			public function HRESULT(AsyncIFtpPostprocessProvider *self, POST_PROCESS_PARAMETERS* pPostProcessParameters) Begin_HandlePostprocess;
+			public function HRESULT(AsyncIFtpPostprocessProvider *self, FTP_PROCESS_STATUS* pFtpProcessStatus) Finish_HandlePostprocess;
+		}
+		[CRepr]
+		public struct IADMEXT : IUnknown
+		{
+			public const new Guid IID = .(0x51dfe970, 0xf6f2, 0x11d0, 0xb9, 0xbd, 0x00, 0xa0, 0xc9, 0x22, 0xe7, 0x50);
+			
+			public function HRESULT(IADMEXT *self) Initialize;
+			public function HRESULT(IADMEXT *self, Guid* pclsidDcom, uint32 dwEnumIndex) EnumDcomCLSIDs;
+			public function HRESULT(IADMEXT *self) Terminate;
+		}
+		[CRepr]
+		public struct IMSAdminBaseW : IUnknown
+		{
+			public const new Guid IID = .(0x70b51430, 0xb6ca, 0x11d0, 0xb9, 0xb9, 0x00, 0xa0, 0xc9, 0x22, 0xe7, 0x50);
+			
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath) AddKey;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath) DeleteKey;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath) DeleteChildKeys;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, char16* pszMDName, uint32 dwMDEnumObjectIndex) EnumKeys;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, BOOL bMDOverwriteFlag, BOOL bMDCopyFlag) CopyKey;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, PWSTR pszMDNewName) RenameKey;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, METADATA_RECORD* pmdrMDData) SetData;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, METADATA_RECORD* pmdrMDData, uint32* pdwMDRequiredDataLen) GetData;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType) DeleteData;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, METADATA_RECORD* pmdrMDData, uint32 dwMDEnumDataIndex, uint32* pdwMDRequiredDataLen) EnumData;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, uint32* pdwMDNumDataEntries, uint32* pdwMDDataSetNumber, uint32 dwMDBufferSize, uint8* pbMDBuffer, uint32* pdwMDRequiredBufferSize) GetAllData;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDUserType, uint32 dwMDDataType) DeleteAllData;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDSourceHandle, PWSTR pszMDSourcePath, uint32 hMDDestHandle, PWSTR pszMDDestPath, uint32 dwMDAttributes, uint32 dwMDUserType, uint32 dwMDDataType, BOOL bMDCopyFlag) CopyData;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDIdentifier, uint32 dwMDDataType, uint32 dwMDBufferSize, char16* pszBuffer, uint32* pdwMDRequiredBufferSize) GetDataPaths;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, uint32 dwMDAccessRequested, uint32 dwMDTimeOut, uint32* phMDNewHandle) OpenKey;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle) CloseKey;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, uint32 dwMDTimeOut, uint32 dwMDAccessRequested) ChangePermissions;
+			public function HRESULT(IMSAdminBaseW *self) SaveData;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, METADATA_HANDLE_INFO* pmdhiInfo) GetHandleInfo;
+			public function HRESULT(IMSAdminBaseW *self, uint32* pdwSystemChangeNumber) GetSystemChangeNumber;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, uint32* pdwMDDataSetNumber) GetDataSetNumber;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, FILETIME* pftMDLastChangeTime, BOOL bLocalTime) SetLastChangeTime;
+			public function HRESULT(IMSAdminBaseW *self, uint32 hMDHandle, PWSTR pszMDPath, FILETIME* pftMDLastChangeTime, BOOL bLocalTime) GetLastChangeTime;
+			public function HRESULT(IMSAdminBaseW *self) KeyExchangePhase1;
+			public function HRESULT(IMSAdminBaseW *self) KeyExchangePhase2;
+			public function HRESULT(IMSAdminBaseW *self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) Backup;
+			public function HRESULT(IMSAdminBaseW *self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags) Restore;
+			public function HRESULT(IMSAdminBaseW *self, char16* pszMDBackupLocation, uint32* pdwMDVersion, FILETIME* pftMDBackupTime, uint32 dwMDEnumIndex) EnumBackups;
+			public function HRESULT(IMSAdminBaseW *self, PWSTR pszMDBackupLocation, uint32 dwMDVersion) DeleteBackup;
+			public function HRESULT(IMSAdminBaseW *self, IMSAdminBaseW** piadmbwInterface) UnmarshalInterface;
+			public function HRESULT(IMSAdminBaseW *self) GetServerGuid;
+		}
+		[CRepr]
+		public struct IMSAdminBase2W : IMSAdminBaseW
+		{
+			public const new Guid IID = .(0x8298d101, 0xf992, 0x43b7, 0x8e, 0xca, 0x50, 0x52, 0xd8, 0x85, 0xb9, 0x95);
+			
+			public function HRESULT(IMSAdminBase2W *self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) BackupWithPasswd;
+			public function HRESULT(IMSAdminBase2W *self, PWSTR pszMDBackupLocation, uint32 dwMDVersion, uint32 dwMDFlags, PWSTR pszPasswd) RestoreWithPasswd;
+			public function HRESULT(IMSAdminBase2W *self, PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, uint32 dwMDFlags) Export;
+			public function HRESULT(IMSAdminBase2W *self, PWSTR pszPasswd, PWSTR pszFileName, PWSTR pszSourcePath, PWSTR pszDestPath, uint32 dwMDFlags) Import;
+			public function HRESULT(IMSAdminBase2W *self, PWSTR pszMDHistoryLocation, uint32 dwMDMajorVersion, uint32 dwMDMinorVersion, uint32 dwMDFlags) RestoreHistory;
+			public function HRESULT(IMSAdminBase2W *self, char16* pszMDHistoryLocation, uint32* pdwMDMajorVersion, uint32* pdwMDMinorVersion, FILETIME* pftMDHistoryTime, uint32 dwMDEnumIndex) EnumHistory;
+		}
+		[CRepr]
+		public struct IMSAdminBase3W : IMSAdminBase2W
+		{
+			public const new Guid IID = .(0xf612954d, 0x3b0b, 0x4c56, 0x95, 0x63, 0x22, 0x7b, 0x7b, 0xe6, 0x24, 0xb4);
+			
+			public function HRESULT(IMSAdminBase3W *self, uint32 hMDHandle, PWSTR pszMDPath, uint32 cchMDBufferSize, char16* pszBuffer, uint32* pcchMDRequiredBufferSize) GetChildPaths;
+		}
+		[CRepr]
+		public struct IMSImpExpHelpW : IUnknown
+		{
+			public const new Guid IID = .(0x29ff67ff, 0x8050, 0x480f, 0x9f, 0x30, 0xcc, 0x41, 0x63, 0x5f, 0x2f, 0x9d);
+			
+			public function HRESULT(IMSImpExpHelpW *self, PWSTR pszFileName, PWSTR pszKeyType, uint32 dwMDBufferSize, char16* pszBuffer, uint32* pdwMDRequiredBufferSize) EnumeratePathsInFile;
+		}
+		[CRepr]
+		public struct IMSAdminBaseSinkW : IUnknown
+		{
+			public const new Guid IID = .(0xa9e69612, 0xb80d, 0x11d0, 0xb9, 0xb9, 0x00, 0xa0, 0xc9, 0x22, 0xe7, 0x50);
+			
+			public function HRESULT(IMSAdminBaseSinkW *self, uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) SinkNotify;
+			public function HRESULT(IMSAdminBaseSinkW *self) ShutdownNotify;
+		}
+		[CRepr]
+		public struct AsyncIMSAdminBaseSinkW : IUnknown
+		{
+			public const new Guid IID = .(0xa9e69613, 0xb80d, 0x11d0, 0xb9, 0xb9, 0x00, 0xa0, 0xc9, 0x22, 0xe7, 0x50);
+			
+			public function HRESULT(AsyncIMSAdminBaseSinkW *self, uint32 dwMDNumElements, MD_CHANGE_OBJECT_W* pcoChangeList) Begin_SinkNotify;
+			public function HRESULT(AsyncIMSAdminBaseSinkW *self) Finish_SinkNotify;
+			public function HRESULT(AsyncIMSAdminBaseSinkW *self) Begin_ShutdownNotify;
+			public function HRESULT(AsyncIMSAdminBaseSinkW *self) Finish_ShutdownNotify;
+		}
 		
 		// --- Functions ---
 		

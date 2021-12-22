@@ -1,7 +1,6 @@
 import os
 import json
 
-debug_num_bitfields = 0
 INPUT = 'json'
 OUTPUT = 'output'
 
@@ -23,6 +22,16 @@ REPLACE_TYPE_NAMES = {
     'Void':'void',
     'Single':'float',
     'Double':'double',
+
+    # These types are referenced in some function parameters, but they're never actually defined in the metadata..
+    # But since they're all used as pointers anyway we just replace them with void and they become void* - it's better than nothing.
+    'IPropertyValue':'void',
+    'IGraphicsEffectSource':'void',
+    'ICompositionSurface':'void',
+    'CompositionGraphicsDevice':'void',
+    'CompositionCapabilities':'void',
+    'DesktopWindowTarget':'void',
+    'DispatcherQueueController':'void',
 }
 
 # If you want to pull in a function from a .lib file instead of a .dll (dll is default)
@@ -63,6 +72,11 @@ REPLACE_KEYWORD_NAMES = {
     'internal',
     'defer',
     'mut',
+    'abstract',
+    'where',
+    'stack',
+    'extension',
+    'repeat',
 }
 
 # Some APIs define the same names. To avoid name conflicts add one of them to this list along with a replacement.
@@ -112,7 +126,13 @@ def get_type_name(type: dict) -> str:
     elif kind == 'ApiRef':
         namespace = type['Api']
         name = type['Name']
-        return replace_type_name(name, namespace)
+        target_kind = type['TargetKind']
+        if target_kind == 'Com':
+            return replace_type_name(name, namespace) + '*'
+        elif target_kind != 'Default' and target_kind != 'FunctionPointer':
+            raise RuntimeError(f'Unknown TargetKind "{target_kind}"')
+        else:
+            return replace_type_name(name, namespace)
     elif kind == 'PointerTo' or kind == 'LPArray': # TODO: Not exactly sure what LPArray is.. maybe it's just a *, maybe not..
         child = type['Child']
         return get_type_name(child) + '*'
@@ -126,6 +146,14 @@ def get_type_name(type: dict) -> str:
             return f'{get_type_name(child)}[]'
     else:
         raise RuntimeError(f'Unexpected type kind "{kind}"')
+
+def get_param_type(param: dict) -> str:
+    name = param['Name']
+    type = param['Type']
+    kind = type['Kind']
+    attribs = param['Attrs']
+    type_name = get_type_name(type)
+    return type_name
 
 def remove_duplicate_names(objects: list[dict]) -> list[dict]:
     existing_names = set()
@@ -307,7 +335,7 @@ for filename in filenames:
                     parameters = type['Params']
                     for i, param in enumerate(parameters):
                         param_name = replace_name(param['Name'])
-                        param_type = get_type_name(param['Type'])
+                        param_type = get_param_type(param)
                         output.write(f'{param_type} {param_name}')
                         if i < len(parameters) - 1:
                             output.write(f', ')
@@ -337,8 +365,7 @@ for filename in filenames:
                         for field in fields:
                             field_name = replace_name(field['Name'])
                             if field_name == '_bitfield':
-                                global debug_num_bitfields
-                                debug_num_bitfields += 1
+                                x = 123 # TODO: Do something about bitfields...
                             field_type = get_type_name(field['Type'])
                             output.write(f'{indent}public {field_type} {field_name};\n')
 
@@ -382,11 +409,54 @@ for filename in filenames:
                 output.write(f'{indent}// --- COM Interfaces ---\n')
                 output.write(f'{indent}\n')
 
-                for interface in com_interfaces:
-                    if interface['Kind'] != 'Com':
-                        x = 123
-                    name = replace_type_name(interface['Name'], namespace_name)
-                    output.write(f'{indent}public struct {name} {{}}\n')
+                for com in com_interfaces:
+                    name = replace_type_name(com['Name'], namespace_name)
+                    kind = com['Kind']
+                    if kind != 'Com':
+                        raise RuntimeError(f'Encountered COM interface "{name}" of kind "{kind}". We don\'t know how to handle those.')
+                    interface = com['Interface']
+                    if interface != None and len(interface['Parents']) > 0:
+                        raise RuntimeError(f'Encountered COM interface "{name}" with parents. We don\'t know how to handle those.')
+                    
+                    if interface != None:
+                        interface_namespace = interface['Api']
+                        interface_name = replace_type_name(interface['Name'], interface_namespace)
+                        output.write(f'{indent}[CRepr]\n')
+                        output.write(f'{indent}public struct {name} : {interface_name}\n')
+                    else:
+                        output.write(f'{indent}[CRepr]\n')
+                        output.write(f'{indent}public struct {name}\n')
+                    output.write(f'{indent}{{\n')
+                    indent += '\t'
+
+                    guid = com['Guid']
+                    if guid != None:
+                        output.write(f'{indent}public const new Guid IID = .({process_guid(guid)});\n')
+                        output.write(f'{indent}\n')
+                    
+                    methods = com['Methods']
+                    # Functions could be overloaded here, so we need to mangle the names somehow.
+                    encountered_names = set()
+                    for method in methods:
+                        method_name = method['Name']
+                        if method_name in encountered_names:
+                            i = 2
+                            while f'{method_name}{i}' in encountered_names:
+                                i += 1
+                            method_name = f'{method_name}{i}'
+                        encountered_names.add(method_name)
+                        return_type = get_type_name(method['ReturnType'])
+                        parameters = method['Params']
+                        output.write(f'{indent}public function {return_type}({name} *self')
+                        for param in parameters:
+                            param_name = replace_name(param['Name'])
+                            param_type = get_param_type(param)
+                            if param_type == 'IUnknown':
+                                x = 123
+                            output.write(f', {param_type} {param_name}')
+                        output.write(f') {method_name};\n')
+                    indent = indent[:-1]
+                    output.write(f'{indent}}}\n')
 
                 output.write(f'{indent}\n')
 
@@ -396,12 +466,8 @@ for filename in filenames:
 
                 for function in functions:
                     name = replace_name(function['Name'])
-
-                    # CreateDispatcherQueueController uses a type that's never defined anywhere (DispatcherQueueController)
-                    # So we just skip this function completely.. who needs it anyways :)
-                    if name == 'CreateDispatcherQueueController':
-                        continue
-
+                    if name == 'CoCreateInstance':
+                        x = 123
                     import_name = function['DllImport'].lower()
                     if import_name in USE_LIB_INSTEAD_OF_DLL:
                         import_name += '.lib'
@@ -413,7 +479,7 @@ for filename in filenames:
                     parameters = function['Params']
                     for i, param in enumerate(parameters):
                         param_name = replace_name(param['Name'])
-                        param_type = get_type_name(param['Type'])
+                        param_type = get_param_type(param)
                         output.write(f'{param_type} {param_name}')
                         if i < len(parameters) - 1:
                             output.write(f', ')
@@ -425,5 +491,3 @@ for filename in filenames:
             output.write(f'{indent}}}\n')
             indent = indent[:-1]
             output.write(f'{indent}}}\n')
-
-print(debug_num_bitfields)

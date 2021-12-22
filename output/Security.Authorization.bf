@@ -833,40 +833,578 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IAzAuthorizationStore {}
-		public struct IAzAuthorizationStore2 {}
-		public struct IAzAuthorizationStore3 {}
-		public struct IAzApplication {}
-		public struct IAzApplication2 {}
-		public struct IAzApplications {}
-		public struct IAzOperation {}
-		public struct IAzOperations {}
-		public struct IAzTask {}
-		public struct IAzTasks {}
-		public struct IAzScope {}
-		public struct IAzScopes {}
-		public struct IAzApplicationGroup {}
-		public struct IAzApplicationGroups {}
-		public struct IAzRole {}
-		public struct IAzRoles {}
-		public struct IAzClientContext {}
-		public struct IAzClientContext2 {}
-		public struct IAzBizRuleContext {}
-		public struct IAzBizRuleParameters {}
-		public struct IAzBizRuleInterfaces {}
-		public struct IAzClientContext3 {}
-		public struct IAzScope2 {}
-		public struct IAzApplication3 {}
-		public struct IAzOperation2 {}
-		public struct IAzRoleDefinitions {}
-		public struct IAzRoleDefinition {}
-		public struct IAzRoleAssignment {}
-		public struct IAzRoleAssignments {}
-		public struct IAzPrincipalLocator {}
-		public struct IAzNameResolver {}
-		public struct IAzObjectPicker {}
-		public struct IAzApplicationGroup2 {}
-		public struct IAzTask2 {}
+		[CRepr]
+		public struct IAzAuthorizationStore : IDispatch
+		{
+			public const new Guid IID = .(0xedbd9ca9, 0x9b82, 0x4f6a, 0x9e, 0x8b, 0x98, 0x30, 0x1e, 0x45, 0x0f, 0x14);
+			
+			public function HRESULT(IAzAuthorizationStore *self, BSTR* pbstrDescription) get_Description;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationData) put_ApplicationData;
+			public function HRESULT(IAzAuthorizationStore *self, int32* plProp) get_DomainTimeout;
+			public function HRESULT(IAzAuthorizationStore *self, int32 lProp) put_DomainTimeout;
+			public function HRESULT(IAzAuthorizationStore *self, int32* plProp) get_ScriptEngineTimeout;
+			public function HRESULT(IAzAuthorizationStore *self, int32 lProp) put_ScriptEngineTimeout;
+			public function HRESULT(IAzAuthorizationStore *self, int32* plProp) get_MaxScriptEngines;
+			public function HRESULT(IAzAuthorizationStore *self, int32 lProp) put_MaxScriptEngines;
+			public function HRESULT(IAzAuthorizationStore *self, BOOL* pbProp) get_GenerateAudits;
+			public function HRESULT(IAzAuthorizationStore *self, BOOL bProp) put_GenerateAudits;
+			public function HRESULT(IAzAuthorizationStore *self, BOOL* pfProp) get_Writable;
+			public function HRESULT(IAzAuthorizationStore *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+			public function HRESULT(IAzAuthorizationStore *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+			public function HRESULT(IAzAuthorizationStore *self, AZ_PROP_CONSTANTS lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+			public function HRESULT(IAzAuthorizationStore *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+			public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarAdmins) get_PolicyAdministrators;
+			public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarReaders) get_PolicyReaders;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministrator;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
+			public function HRESULT(IAzAuthorizationStore *self, AZ_PROP_CONSTANTS lFlags, BSTR bstrPolicyURL, VARIANT varReserved) Initialize;
+			public function HRESULT(IAzAuthorizationStore *self, VARIANT varReserved) UpdateCache;
+			public function HRESULT(IAzAuthorizationStore *self, VARIANT varReserved) Delete;
+			public function HRESULT(IAzAuthorizationStore *self, IAzApplications** ppAppCollection) get_Applications;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) OpenApplication;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication** ppApplication) CreateApplication;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, VARIANT varReserved) DeleteApplication;
+			public function HRESULT(IAzAuthorizationStore *self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
+			public function HRESULT(IAzAuthorizationStore *self, int32 lFlags, VARIANT varReserved) Submit;
+			public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsers;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUser;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUser;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR* pbstrTargetMachine) get_TargetMachine;
+			public function HRESULT(IAzAuthorizationStore *self, BOOL* pbApplyStoreSacl) get_ApplyStoreSacl;
+			public function HRESULT(IAzAuthorizationStore *self, BOOL bApplyStoreSacl) put_ApplyStoreSacl;
+			public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarAdmins) get_PolicyAdministratorsName;
+			public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarReaders) get_PolicyReadersName;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministratorName;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReaderName;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReaderName;
+			public function HRESULT(IAzAuthorizationStore *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsersName;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUserName;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUserName;
+			public function HRESULT(IAzAuthorizationStore *self, BSTR bstrApplicationName, int32 lFlag) CloseApplication;
+		}
+		[CRepr]
+		public struct IAzAuthorizationStore2 : IAzAuthorizationStore
+		{
+			public const new Guid IID = .(0xb11e5584, 0xd577, 0x4273, 0xb6, 0xc5, 0x09, 0x73, 0xe0, 0xf8, 0xe8, 0x0d);
+			
+			public function HRESULT(IAzAuthorizationStore2 *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) OpenApplication2;
+			public function HRESULT(IAzAuthorizationStore2 *self, BSTR bstrApplicationName, VARIANT varReserved, IAzApplication2** ppApplication) CreateApplication2;
+		}
+		[CRepr]
+		public struct IAzAuthorizationStore3 : IAzAuthorizationStore2
+		{
+			public const new Guid IID = .(0xabc08425, 0x0c86, 0x4fa0, 0x9b, 0xe3, 0x71, 0x89, 0x95, 0x6c, 0x92, 0x6e);
+			
+			public function HRESULT(IAzAuthorizationStore3 *self, int16* pbIsUpdateNeeded) IsUpdateNeeded;
+			public function HRESULT(IAzAuthorizationStore3 *self, int16* pbSupported) BizruleGroupSupported;
+			public function HRESULT(IAzAuthorizationStore3 *self, int32 lFunctionalLevel) UpgradeStoresFunctionalLevel;
+			public function HRESULT(IAzAuthorizationStore3 *self, int32 lFunctionalLevel, int16* pbSupported) IsFunctionalLevelUpgradeSupported;
+			public function HRESULT(IAzAuthorizationStore3 *self, int32* plMajorVersion, int32* plMinorVersion) GetSchemaVersion;
+		}
+		[CRepr]
+		public struct IAzApplication : IDispatch
+		{
+			public const new Guid IID = .(0x987bc7c7, 0xb813, 0x4d27, 0xbe, 0xde, 0x6b, 0xa5, 0xae, 0x86, 0x7e, 0x95);
+			
+			public function HRESULT(IAzApplication *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IAzApplication *self, BSTR bstrName) put_Name;
+			public function HRESULT(IAzApplication *self, BSTR* pbstrDescription) get_Description;
+			public function HRESULT(IAzApplication *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IAzApplication *self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public function HRESULT(IAzApplication *self, BSTR bstrApplicationData) put_ApplicationData;
+			public function HRESULT(IAzApplication *self, BSTR* pbstrProp) get_AuthzInterfaceClsid;
+			public function HRESULT(IAzApplication *self, BSTR bstrProp) put_AuthzInterfaceClsid;
+			public function HRESULT(IAzApplication *self, BSTR* pbstrProp) get_Version;
+			public function HRESULT(IAzApplication *self, BSTR bstrProp) put_Version;
+			public function HRESULT(IAzApplication *self, BOOL* pbProp) get_GenerateAudits;
+			public function HRESULT(IAzApplication *self, BOOL bProp) put_GenerateAudits;
+			public function HRESULT(IAzApplication *self, BOOL* pbProp) get_ApplyStoreSacl;
+			public function HRESULT(IAzApplication *self, BOOL bProp) put_ApplyStoreSacl;
+			public function HRESULT(IAzApplication *self, BOOL* pfProp) get_Writable;
+			public function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+			public function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+			public function HRESULT(IAzApplication *self, VARIANT* pvarAdmins) get_PolicyAdministrators;
+			public function HRESULT(IAzApplication *self, VARIANT* pvarReaders) get_PolicyReaders;
+			public function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministrator;
+			public function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
+			public function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
+			public function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
+			public function HRESULT(IAzApplication *self, IAzScopes** ppScopeCollection) get_Scopes;
+			public function HRESULT(IAzApplication *self, BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) OpenScope;
+			public function HRESULT(IAzApplication *self, BSTR bstrScopeName, VARIANT varReserved, IAzScope** ppScope) CreateScope;
+			public function HRESULT(IAzApplication *self, BSTR bstrScopeName, VARIANT varReserved) DeleteScope;
+			public function HRESULT(IAzApplication *self, IAzOperations** ppOperationCollection) get_Operations;
+			public function HRESULT(IAzApplication *self, BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) OpenOperation;
+			public function HRESULT(IAzApplication *self, BSTR bstrOperationName, VARIANT varReserved, IAzOperation** ppOperation) CreateOperation;
+			public function HRESULT(IAzApplication *self, BSTR bstrOperationName, VARIANT varReserved) DeleteOperation;
+			public function HRESULT(IAzApplication *self, IAzTasks** ppTaskCollection) get_Tasks;
+			public function HRESULT(IAzApplication *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) OpenTask;
+			public function HRESULT(IAzApplication *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) CreateTask;
+			public function HRESULT(IAzApplication *self, BSTR bstrTaskName, VARIANT varReserved) DeleteTask;
+			public function HRESULT(IAzApplication *self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
+			public function HRESULT(IAzApplication *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
+			public function HRESULT(IAzApplication *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
+			public function HRESULT(IAzApplication *self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
+			public function HRESULT(IAzApplication *self, IAzRoles** ppRoleCollection) get_Roles;
+			public function HRESULT(IAzApplication *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) OpenRole;
+			public function HRESULT(IAzApplication *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) CreateRole;
+			public function HRESULT(IAzApplication *self, BSTR bstrRoleName, VARIANT varReserved) DeleteRole;
+			public function HRESULT(IAzApplication *self, uint64 ullTokenHandle, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromToken;
+			public function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+			public function HRESULT(IAzApplication *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+			public function HRESULT(IAzApplication *self, int32 lFlags, VARIANT varReserved) Submit;
+			public function HRESULT(IAzApplication *self, BSTR ClientName, BSTR DomainName, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromName;
+			public function HRESULT(IAzApplication *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsers;
+			public function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUser;
+			public function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUser;
+			public function HRESULT(IAzApplication *self, BSTR SidString, int32 lOptions, VARIANT varReserved, IAzClientContext** ppClientContext) InitializeClientContextFromStringSid;
+			public function HRESULT(IAzApplication *self, VARIANT* pvarAdmins) get_PolicyAdministratorsName;
+			public function HRESULT(IAzApplication *self, VARIANT* pvarReaders) get_PolicyReadersName;
+			public function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
+			public function HRESULT(IAzApplication *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministratorName;
+			public function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReaderName;
+			public function HRESULT(IAzApplication *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReaderName;
+			public function HRESULT(IAzApplication *self, VARIANT* pvarDelegatedPolicyUsers) get_DelegatedPolicyUsersName;
+			public function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) AddDelegatedPolicyUserName;
+			public function HRESULT(IAzApplication *self, BSTR bstrDelegatedPolicyUser, VARIANT varReserved) DeleteDelegatedPolicyUserName;
+		}
+		[CRepr]
+		public struct IAzApplication2 : IAzApplication
+		{
+			public const new Guid IID = .(0x086a68af, 0xa249, 0x437c, 0xb1, 0x8d, 0xd4, 0xd8, 0x6d, 0x6a, 0x96, 0x60);
+			
+			public function HRESULT(IAzApplication2 *self, uint32 ulTokenHandleLowPart, uint32 ulTokenHandleHighPart, VARIANT varReserved, IAzClientContext2** ppClientContext) InitializeClientContextFromToken2;
+			public function HRESULT(IAzApplication2 *self, BSTR IdentifyingString, VARIANT varReserved, IAzClientContext2** ppClientContext) InitializeClientContext2;
+		}
+		[CRepr]
+		public struct IAzApplications : IDispatch
+		{
+			public const new Guid IID = .(0x929b11a9, 0x95c5, 0x4a84, 0xa2, 0x9a, 0x20, 0xad, 0x42, 0xc2, 0xf1, 0x6c);
+			
+			public function HRESULT(IAzApplications *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+			public function HRESULT(IAzApplications *self, int32* plCount) get_Count;
+			public function HRESULT(IAzApplications *self, IUnknown** ppEnumPtr) get__NewEnum;
+		}
+		[CRepr]
+		public struct IAzOperation : IDispatch
+		{
+			public const new Guid IID = .(0x5e56b24f, 0xea01, 0x4d61, 0xbe, 0x44, 0xc4, 0x9b, 0x5e, 0x4e, 0xaf, 0x74);
+			
+			public function HRESULT(IAzOperation *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IAzOperation *self, BSTR bstrName) put_Name;
+			public function HRESULT(IAzOperation *self, BSTR* pbstrDescription) get_Description;
+			public function HRESULT(IAzOperation *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IAzOperation *self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public function HRESULT(IAzOperation *self, BSTR bstrApplicationData) put_ApplicationData;
+			public function HRESULT(IAzOperation *self, int32* plProp) get_OperationID;
+			public function HRESULT(IAzOperation *self, int32 lProp) put_OperationID;
+			public function HRESULT(IAzOperation *self, BOOL* pfProp) get_Writable;
+			public function HRESULT(IAzOperation *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+			public function HRESULT(IAzOperation *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+			public function HRESULT(IAzOperation *self, int32 lFlags, VARIANT varReserved) Submit;
+		}
+		[CRepr]
+		public struct IAzOperations : IDispatch
+		{
+			public const new Guid IID = .(0x90ef9c07, 0x9706, 0x49d9, 0xaf, 0x80, 0x04, 0x38, 0xa5, 0xf3, 0xec, 0x35);
+			
+			public function HRESULT(IAzOperations *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+			public function HRESULT(IAzOperations *self, int32* plCount) get_Count;
+			public function HRESULT(IAzOperations *self, IUnknown** ppEnumPtr) get__NewEnum;
+		}
+		[CRepr]
+		public struct IAzTask : IDispatch
+		{
+			public const new Guid IID = .(0xcb94e592, 0x2e0e, 0x4a6c, 0xa3, 0x36, 0xb8, 0x9a, 0x6d, 0xc1, 0xe3, 0x88);
+			
+			public function HRESULT(IAzTask *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IAzTask *self, BSTR bstrName) put_Name;
+			public function HRESULT(IAzTask *self, BSTR* pbstrDescription) get_Description;
+			public function HRESULT(IAzTask *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IAzTask *self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public function HRESULT(IAzTask *self, BSTR bstrApplicationData) put_ApplicationData;
+			public function HRESULT(IAzTask *self, BSTR* pbstrProp) get_BizRule;
+			public function HRESULT(IAzTask *self, BSTR bstrProp) put_BizRule;
+			public function HRESULT(IAzTask *self, BSTR* pbstrProp) get_BizRuleLanguage;
+			public function HRESULT(IAzTask *self, BSTR bstrProp) put_BizRuleLanguage;
+			public function HRESULT(IAzTask *self, BSTR* pbstrProp) get_BizRuleImportedPath;
+			public function HRESULT(IAzTask *self, BSTR bstrProp) put_BizRuleImportedPath;
+			public function HRESULT(IAzTask *self, BOOL* pfProp) get_IsRoleDefinition;
+			public function HRESULT(IAzTask *self, BOOL fProp) put_IsRoleDefinition;
+			public function HRESULT(IAzTask *self, VARIANT* pvarProp) get_Operations;
+			public function HRESULT(IAzTask *self, VARIANT* pvarProp) get_Tasks;
+			public function HRESULT(IAzTask *self, BSTR bstrOp, VARIANT varReserved) AddOperation;
+			public function HRESULT(IAzTask *self, BSTR bstrOp, VARIANT varReserved) DeleteOperation;
+			public function HRESULT(IAzTask *self, BSTR bstrTask, VARIANT varReserved) AddTask;
+			public function HRESULT(IAzTask *self, BSTR bstrTask, VARIANT varReserved) DeleteTask;
+			public function HRESULT(IAzTask *self, BOOL* pfProp) get_Writable;
+			public function HRESULT(IAzTask *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+			public function HRESULT(IAzTask *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+			public function HRESULT(IAzTask *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+			public function HRESULT(IAzTask *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+			public function HRESULT(IAzTask *self, int32 lFlags, VARIANT varReserved) Submit;
+		}
+		[CRepr]
+		public struct IAzTasks : IDispatch
+		{
+			public const new Guid IID = .(0xb338ccab, 0x4c85, 0x4388, 0x8c, 0x0a, 0xc5, 0x85, 0x92, 0xba, 0xd3, 0x98);
+			
+			public function HRESULT(IAzTasks *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+			public function HRESULT(IAzTasks *self, int32* plCount) get_Count;
+			public function HRESULT(IAzTasks *self, IUnknown** ppEnumPtr) get__NewEnum;
+		}
+		[CRepr]
+		public struct IAzScope : IDispatch
+		{
+			public const new Guid IID = .(0x00e52487, 0xe08d, 0x4514, 0xb6, 0x2e, 0x87, 0x7d, 0x56, 0x45, 0xf5, 0xab);
+			
+			public function HRESULT(IAzScope *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IAzScope *self, BSTR bstrName) put_Name;
+			public function HRESULT(IAzScope *self, BSTR* pbstrDescription) get_Description;
+			public function HRESULT(IAzScope *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IAzScope *self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public function HRESULT(IAzScope *self, BSTR bstrApplicationData) put_ApplicationData;
+			public function HRESULT(IAzScope *self, BOOL* pfProp) get_Writable;
+			public function HRESULT(IAzScope *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+			public function HRESULT(IAzScope *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+			public function HRESULT(IAzScope *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+			public function HRESULT(IAzScope *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+			public function HRESULT(IAzScope *self, VARIANT* pvarAdmins) get_PolicyAdministrators;
+			public function HRESULT(IAzScope *self, VARIANT* pvarReaders) get_PolicyReaders;
+			public function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministrator;
+			public function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministrator;
+			public function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReader;
+			public function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReader;
+			public function HRESULT(IAzScope *self, IAzApplicationGroups** ppGroupCollection) get_ApplicationGroups;
+			public function HRESULT(IAzScope *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) OpenApplicationGroup;
+			public function HRESULT(IAzScope *self, BSTR bstrGroupName, VARIANT varReserved, IAzApplicationGroup** ppGroup) CreateApplicationGroup;
+			public function HRESULT(IAzScope *self, BSTR bstrGroupName, VARIANT varReserved) DeleteApplicationGroup;
+			public function HRESULT(IAzScope *self, IAzRoles** ppRoleCollection) get_Roles;
+			public function HRESULT(IAzScope *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) OpenRole;
+			public function HRESULT(IAzScope *self, BSTR bstrRoleName, VARIANT varReserved, IAzRole** ppRole) CreateRole;
+			public function HRESULT(IAzScope *self, BSTR bstrRoleName, VARIANT varReserved) DeleteRole;
+			public function HRESULT(IAzScope *self, IAzTasks** ppTaskCollection) get_Tasks;
+			public function HRESULT(IAzScope *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) OpenTask;
+			public function HRESULT(IAzScope *self, BSTR bstrTaskName, VARIANT varReserved, IAzTask** ppTask) CreateTask;
+			public function HRESULT(IAzScope *self, BSTR bstrTaskName, VARIANT varReserved) DeleteTask;
+			public function HRESULT(IAzScope *self, int32 lFlags, VARIANT varReserved) Submit;
+			public function HRESULT(IAzScope *self, BOOL* pfProp) get_CanBeDelegated;
+			public function HRESULT(IAzScope *self, BOOL* pfProp) get_BizrulesWritable;
+			public function HRESULT(IAzScope *self, VARIANT* pvarAdmins) get_PolicyAdministratorsName;
+			public function HRESULT(IAzScope *self, VARIANT* pvarReaders) get_PolicyReadersName;
+			public function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) AddPolicyAdministratorName;
+			public function HRESULT(IAzScope *self, BSTR bstrAdmin, VARIANT varReserved) DeletePolicyAdministratorName;
+			public function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) AddPolicyReaderName;
+			public function HRESULT(IAzScope *self, BSTR bstrReader, VARIANT varReserved) DeletePolicyReaderName;
+		}
+		[CRepr]
+		public struct IAzScopes : IDispatch
+		{
+			public const new Guid IID = .(0x78e14853, 0x9f5e, 0x406d, 0x9b, 0x91, 0x6b, 0xdb, 0xa6, 0x97, 0x35, 0x10);
+			
+			public function HRESULT(IAzScopes *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+			public function HRESULT(IAzScopes *self, int32* plCount) get_Count;
+			public function HRESULT(IAzScopes *self, IUnknown** ppEnumPtr) get__NewEnum;
+		}
+		[CRepr]
+		public struct IAzApplicationGroup : IDispatch
+		{
+			public const new Guid IID = .(0xf1b744cd, 0x58a6, 0x4e06, 0x9f, 0xbf, 0x36, 0xf6, 0xd7, 0x79, 0xe2, 0x1e);
+			
+			public function HRESULT(IAzApplicationGroup *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrName) put_Name;
+			public function HRESULT(IAzApplicationGroup *self, int32* plProp) get_Type;
+			public function HRESULT(IAzApplicationGroup *self, int32 lProp) put_Type;
+			public function HRESULT(IAzApplicationGroup *self, BSTR* pbstrProp) get_LdapQuery;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp) put_LdapQuery;
+			public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_AppMembers;
+			public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_AppNonMembers;
+			public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_Members;
+			public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_NonMembers;
+			public function HRESULT(IAzApplicationGroup *self, BSTR* pbstrDescription) get_Description;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddAppMember;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteAppMember;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddAppNonMember;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteAppNonMember;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddMember;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteMember;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddNonMember;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteNonMember;
+			public function HRESULT(IAzApplicationGroup *self, BOOL* pfProp) get_Writable;
+			public function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+			public function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+			public function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+			public function HRESULT(IAzApplicationGroup *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+			public function HRESULT(IAzApplicationGroup *self, int32 lFlags, VARIANT varReserved) Submit;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddMemberName;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteMemberName;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) AddNonMemberName;
+			public function HRESULT(IAzApplicationGroup *self, BSTR bstrProp, VARIANT varReserved) DeleteNonMemberName;
+			public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_MembersName;
+			public function HRESULT(IAzApplicationGroup *self, VARIANT* pvarProp) get_NonMembersName;
+		}
+		[CRepr]
+		public struct IAzApplicationGroups : IDispatch
+		{
+			public const new Guid IID = .(0x4ce66ad5, 0x9f3c, 0x469d, 0xa9, 0x11, 0xb9, 0x98, 0x87, 0xa7, 0xe6, 0x85);
+			
+			public function HRESULT(IAzApplicationGroups *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+			public function HRESULT(IAzApplicationGroups *self, int32* plCount) get_Count;
+			public function HRESULT(IAzApplicationGroups *self, IUnknown** ppEnumPtr) get__NewEnum;
+		}
+		[CRepr]
+		public struct IAzRole : IDispatch
+		{
+			public const new Guid IID = .(0x859e0d8d, 0x62d7, 0x41d8, 0xa0, 0x34, 0xc0, 0xcd, 0x5d, 0x43, 0xfd, 0xfa);
+			
+			public function HRESULT(IAzRole *self, BSTR* pbstrName) get_Name;
+			public function HRESULT(IAzRole *self, BSTR bstrName) put_Name;
+			public function HRESULT(IAzRole *self, BSTR* pbstrDescription) get_Description;
+			public function HRESULT(IAzRole *self, BSTR bstrDescription) put_Description;
+			public function HRESULT(IAzRole *self, BSTR* pbstrApplicationData) get_ApplicationData;
+			public function HRESULT(IAzRole *self, BSTR bstrApplicationData) put_ApplicationData;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddAppMember;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteAppMember;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddTask;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteTask;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddOperation;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteOperation;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddMember;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteMember;
+			public function HRESULT(IAzRole *self, BOOL* pfProp) get_Writable;
+			public function HRESULT(IAzRole *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+			public function HRESULT(IAzRole *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) SetProperty;
+			public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_AppMembers;
+			public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_Members;
+			public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_Operations;
+			public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_Tasks;
+			public function HRESULT(IAzRole *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) AddPropertyItem;
+			public function HRESULT(IAzRole *self, int32 lPropId, VARIANT varProp, VARIANT varReserved) DeletePropertyItem;
+			public function HRESULT(IAzRole *self, int32 lFlags, VARIANT varReserved) Submit;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) AddMemberName;
+			public function HRESULT(IAzRole *self, BSTR bstrProp, VARIANT varReserved) DeleteMemberName;
+			public function HRESULT(IAzRole *self, VARIANT* pvarProp) get_MembersName;
+		}
+		[CRepr]
+		public struct IAzRoles : IDispatch
+		{
+			public const new Guid IID = .(0x95e0f119, 0x13b4, 0x4dae, 0xb6, 0x5f, 0x2f, 0x7d, 0x60, 0xd8, 0x22, 0xe4);
+			
+			public function HRESULT(IAzRoles *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+			public function HRESULT(IAzRoles *self, int32* plCount) get_Count;
+			public function HRESULT(IAzRoles *self, IUnknown** ppEnumPtr) get__NewEnum;
+		}
+		[CRepr]
+		public struct IAzClientContext : IDispatch
+		{
+			public const new Guid IID = .(0xeff1f00b, 0x488a, 0x466d, 0xaf, 0xd9, 0xa4, 0x01, 0xc5, 0xf9, 0xee, 0xf5);
+			
+			public function HRESULT(IAzClientContext *self, BSTR bstrObjectName, VARIANT varScopeNames, VARIANT varOperations, VARIANT varParameterNames, VARIANT varParameterValues, VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces, VARIANT* pvarResults) AccessCheck;
+			public function HRESULT(IAzClientContext *self, BSTR* pbstrBusinessRuleString) GetBusinessRuleString;
+			public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserDn;
+			public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserSamCompat;
+			public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserDisplay;
+			public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserGuid;
+			public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserCanonical;
+			public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserUpn;
+			public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_UserDnsSamCompat;
+			public function HRESULT(IAzClientContext *self, int32 lPropId, VARIANT varReserved, VARIANT* pvarProp) GetProperty;
+			public function HRESULT(IAzClientContext *self, BSTR bstrScopeName, VARIANT* pvarRoleNames) GetRoles;
+			public function HRESULT(IAzClientContext *self, BSTR* pbstrProp) get_RoleForAccessCheck;
+			public function HRESULT(IAzClientContext *self, BSTR bstrProp) put_RoleForAccessCheck;
+		}
+		[CRepr]
+		public struct IAzClientContext2 : IAzClientContext
+		{
+			public const new Guid IID = .(0x2b0c92b8, 0x208a, 0x488a, 0x8f, 0x81, 0xe4, 0xed, 0xb2, 0x21, 0x11, 0xcd);
+			
+			public function HRESULT(IAzClientContext2 *self, int32 lOptions, int32 PageSize, VARIANT* pvarCursor, VARIANT* pvarScopeNames) GetAssignedScopesPage;
+			public function HRESULT(IAzClientContext2 *self, VARIANT varRoles, BSTR bstrScopeName) AddRoles;
+			public function HRESULT(IAzClientContext2 *self, VARIANT varApplicationGroups) AddApplicationGroups;
+			public function HRESULT(IAzClientContext2 *self, VARIANT varStringSids) AddStringSids;
+			public function HRESULT(IAzClientContext2 *self, BSTR bstrLDAPQueryDN) put_LDAPQueryDN;
+			public function HRESULT(IAzClientContext2 *self, BSTR* pbstrLDAPQueryDN) get_LDAPQueryDN;
+		}
+		[CRepr]
+		public struct IAzBizRuleContext : IDispatch
+		{
+			public const new Guid IID = .(0xe192f17d, 0xd59f, 0x455e, 0xa1, 0x52, 0x94, 0x03, 0x16, 0xcd, 0x77, 0xb2);
+			
+			public function HRESULT(IAzBizRuleContext *self, BOOL bResult) put_BusinessRuleResult;
+			public function HRESULT(IAzBizRuleContext *self, BSTR bstrBusinessRuleString) put_BusinessRuleString;
+			public function HRESULT(IAzBizRuleContext *self, BSTR* pbstrBusinessRuleString) get_BusinessRuleString;
+			public function HRESULT(IAzBizRuleContext *self, BSTR bstrParameterName, VARIANT* pvarParameterValue) GetParameter;
+		}
+		[CRepr]
+		public struct IAzBizRuleParameters : IDispatch
+		{
+			public const new Guid IID = .(0xfc17685f, 0xe25d, 0x4dcd, 0xba, 0xe1, 0x27, 0x6e, 0xc9, 0x53, 0x3c, 0xb5);
+			
+			public function HRESULT(IAzBizRuleParameters *self, BSTR bstrParameterName, VARIANT varParameterValue) AddParameter;
+			public function HRESULT(IAzBizRuleParameters *self, VARIANT varParameterNames, VARIANT varParameterValues) AddParameters;
+			public function HRESULT(IAzBizRuleParameters *self, BSTR bstrParameterName, VARIANT* pvarParameterValue) GetParameterValue;
+			public function HRESULT(IAzBizRuleParameters *self, BSTR varParameterName) Remove;
+			public function HRESULT(IAzBizRuleParameters *self) RemoveAll;
+			public function HRESULT(IAzBizRuleParameters *self, uint32* plCount) get_Count;
+		}
+		[CRepr]
+		public struct IAzBizRuleInterfaces : IDispatch
+		{
+			public const new Guid IID = .(0xe94128c7, 0xe9da, 0x44cc, 0xb0, 0xbd, 0x53, 0x03, 0x6f, 0x3a, 0xab, 0x3d);
+			
+			public function HRESULT(IAzBizRuleInterfaces *self, BSTR bstrInterfaceName, int32 lInterfaceFlag, VARIANT varInterface) AddInterface;
+			public function HRESULT(IAzBizRuleInterfaces *self, VARIANT varInterfaceNames, VARIANT varInterfaceFlags, VARIANT varInterfaces) AddInterfaces;
+			public function HRESULT(IAzBizRuleInterfaces *self, BSTR bstrInterfaceName, int32* lInterfaceFlag, VARIANT* varInterface) GetInterfaceValue;
+			public function HRESULT(IAzBizRuleInterfaces *self, BSTR bstrInterfaceName) Remove;
+			public function HRESULT(IAzBizRuleInterfaces *self) RemoveAll;
+			public function HRESULT(IAzBizRuleInterfaces *self, uint32* plCount) get_Count;
+		}
+		[CRepr]
+		public struct IAzClientContext3 : IAzClientContext2
+		{
+			public const new Guid IID = .(0x11894fde, 0x1deb, 0x4b4b, 0x89, 0x07, 0x6d, 0x1c, 0xda, 0x1f, 0x5d, 0x4f);
+			
+			public function HRESULT(IAzClientContext3 *self, BSTR bstrObjectName, BSTR bstrScopeName, int32 lOperation, uint32* plResult) AccessCheck2;
+			public function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, BSTR bstrRoleName, int16* pbIsInRole) IsInRoleAssignment;
+			public function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, IAzOperations** ppOperationCollection) GetOperations;
+			public function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, IAzTasks** ppTaskCollection) GetTasks;
+			public function HRESULT(IAzClientContext3 *self, IAzBizRuleParameters** ppBizRuleParam) get_BizRuleParameters;
+			public function HRESULT(IAzClientContext3 *self, IAzBizRuleInterfaces** ppBizRuleInterfaces) get_BizRuleInterfaces;
+			public function HRESULT(IAzClientContext3 *self, BSTR bstrScopeName, AZ_PROP_CONSTANTS ulOptions, VARIANT* pGroupArray) GetGroups;
+			public function HRESULT(IAzClientContext3 *self, VARIANT* pStringSidArray) get_Sids;
+		}
+		[CRepr]
+		public struct IAzScope2 : IAzScope
+		{
+			public const new Guid IID = .(0xee9fe8c9, 0xc9f3, 0x40e2, 0xaa, 0x12, 0xd1, 0xd8, 0x59, 0x97, 0x27, 0xfd);
+			
+			public function HRESULT(IAzScope2 *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
+			public function HRESULT(IAzScope2 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) CreateRoleDefinition;
+			public function HRESULT(IAzScope2 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) OpenRoleDefinition;
+			public function HRESULT(IAzScope2 *self, BSTR bstrRoleDefinitionName) DeleteRoleDefinition;
+			public function HRESULT(IAzScope2 *self, IAzRoleAssignments** ppRoleAssignments) get_RoleAssignments;
+			public function HRESULT(IAzScope2 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) CreateRoleAssignment;
+			public function HRESULT(IAzScope2 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) OpenRoleAssignment;
+			public function HRESULT(IAzScope2 *self, BSTR bstrRoleAssignmentName) DeleteRoleAssignment;
+		}
+		[CRepr]
+		public struct IAzApplication3 : IAzApplication2
+		{
+			public const new Guid IID = .(0x181c845e, 0x7196, 0x4a7d, 0xac, 0x2e, 0x02, 0x0c, 0x0b, 0xb7, 0xa3, 0x03);
+			
+			public function HRESULT(IAzApplication3 *self, BSTR bstrScopeName, int16* pbExist) ScopeExists;
+			public function HRESULT(IAzApplication3 *self, BSTR bstrScopeName, IAzScope2** ppScope2) OpenScope2;
+			public function HRESULT(IAzApplication3 *self, BSTR bstrScopeName, IAzScope2** ppScope2) CreateScope2;
+			public function HRESULT(IAzApplication3 *self, BSTR bstrScopeName) DeleteScope2;
+			public function HRESULT(IAzApplication3 *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
+			public function HRESULT(IAzApplication3 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) CreateRoleDefinition;
+			public function HRESULT(IAzApplication3 *self, BSTR bstrRoleDefinitionName, IAzRoleDefinition** ppRoleDefinitions) OpenRoleDefinition;
+			public function HRESULT(IAzApplication3 *self, BSTR bstrRoleDefinitionName) DeleteRoleDefinition;
+			public function HRESULT(IAzApplication3 *self, IAzRoleAssignments** ppRoleAssignments) get_RoleAssignments;
+			public function HRESULT(IAzApplication3 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) CreateRoleAssignment;
+			public function HRESULT(IAzApplication3 *self, BSTR bstrRoleAssignmentName, IAzRoleAssignment** ppRoleAssignment) OpenRoleAssignment;
+			public function HRESULT(IAzApplication3 *self, BSTR bstrRoleAssignmentName) DeleteRoleAssignment;
+			public function HRESULT(IAzApplication3 *self, int16* pbEnabled) get_BizRulesEnabled;
+			public function HRESULT(IAzApplication3 *self, int16 bEnabled) put_BizRulesEnabled;
+		}
+		[CRepr]
+		public struct IAzOperation2 : IAzOperation
+		{
+			public const new Guid IID = .(0x1f5ea01f, 0x44a2, 0x4184, 0x9c, 0x48, 0xa7, 0x5b, 0x4d, 0xcc, 0x8c, 0xcc);
+			
+			public function HRESULT(IAzOperation2 *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+		}
+		[CRepr]
+		public struct IAzRoleDefinitions : IDispatch
+		{
+			public const new Guid IID = .(0x881f25a5, 0xd755, 0x4550, 0x95, 0x7a, 0xd5, 0x03, 0xa3, 0xb3, 0x40, 0x01);
+			
+			public function HRESULT(IAzRoleDefinitions *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+			public function HRESULT(IAzRoleDefinitions *self, int32* plCount) get_Count;
+			public function HRESULT(IAzRoleDefinitions *self, IUnknown** ppEnumPtr) get__NewEnum;
+		}
+		[CRepr]
+		public struct IAzRoleDefinition : IAzTask
+		{
+			public const new Guid IID = .(0xd97fcea1, 0x2599, 0x44f1, 0x9f, 0xc3, 0x58, 0xe9, 0xfb, 0xe0, 0x94, 0x66);
+			
+			public function HRESULT(IAzRoleDefinition *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+			public function HRESULT(IAzRoleDefinition *self, BSTR bstrRoleDefinition) AddRoleDefinition;
+			public function HRESULT(IAzRoleDefinition *self, BSTR bstrRoleDefinition) DeleteRoleDefinition;
+			public function HRESULT(IAzRoleDefinition *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
+		}
+		[CRepr]
+		public struct IAzRoleAssignment : IAzRole
+		{
+			public const new Guid IID = .(0x55647d31, 0x0d5a, 0x4fa3, 0xb4, 0xac, 0x2b, 0x5f, 0x9a, 0xd5, 0xab, 0x76);
+			
+			public function HRESULT(IAzRoleAssignment *self, BSTR bstrRoleDefinition) AddRoleDefinition;
+			public function HRESULT(IAzRoleAssignment *self, BSTR bstrRoleDefinition) DeleteRoleDefinition;
+			public function HRESULT(IAzRoleAssignment *self, IAzRoleDefinitions** ppRoleDefinitions) get_RoleDefinitions;
+			public function HRESULT(IAzRoleAssignment *self, IAzScope** ppScope) get_Scope;
+		}
+		[CRepr]
+		public struct IAzRoleAssignments : IDispatch
+		{
+			public const new Guid IID = .(0x9c80b900, 0xfceb, 0x4d73, 0xa0, 0xf4, 0xc8, 0x3b, 0x0b, 0xbf, 0x24, 0x81);
+			
+			public function HRESULT(IAzRoleAssignments *self, int32 Index, VARIANT* pvarObtPtr) get_Item;
+			public function HRESULT(IAzRoleAssignments *self, int32* plCount) get_Count;
+			public function HRESULT(IAzRoleAssignments *self, IUnknown** ppEnumPtr) get__NewEnum;
+		}
+		[CRepr]
+		public struct IAzPrincipalLocator : IDispatch
+		{
+			public const new Guid IID = .(0xe5c3507d, 0xad6a, 0x4992, 0x9c, 0x7f, 0x74, 0xab, 0x48, 0x0b, 0x44, 0xcc);
+			
+			public function HRESULT(IAzPrincipalLocator *self, IAzNameResolver** ppNameResolver) get_NameResolver;
+			public function HRESULT(IAzPrincipalLocator *self, IAzObjectPicker** ppObjectPicker) get_ObjectPicker;
+		}
+		[CRepr]
+		public struct IAzNameResolver : IDispatch
+		{
+			public const new Guid IID = .(0x504d0f15, 0x73e2, 0x43df, 0xa8, 0x70, 0xa6, 0x4f, 0x40, 0x71, 0x4f, 0x53);
+			
+			public function HRESULT(IAzNameResolver *self, BSTR bstrSid, int32* pSidType, BSTR* pbstrName) NameFromSid;
+			public function HRESULT(IAzNameResolver *self, VARIANT vSids, VARIANT* pvSidTypes, VARIANT* pvNames) NamesFromSids;
+		}
+		[CRepr]
+		public struct IAzObjectPicker : IDispatch
+		{
+			public const new Guid IID = .(0x63130a48, 0x699a, 0x42d8, 0xbf, 0x01, 0xc6, 0x2a, 0xc3, 0xfb, 0x79, 0xf9);
+			
+			public function HRESULT(IAzObjectPicker *self, HWND hParentWnd, BSTR bstrTitle, VARIANT* pvSidTypes, VARIANT* pvNames, VARIANT* pvSids) GetPrincipals;
+			public function HRESULT(IAzObjectPicker *self, BSTR* pbstrName) get_Name;
+		}
+		[CRepr]
+		public struct IAzApplicationGroup2 : IAzApplicationGroup
+		{
+			public const new Guid IID = .(0x3f0613fc, 0xb71a, 0x464e, 0xa1, 0x1d, 0x5b, 0x88, 0x1a, 0x56, 0xce, 0xfa);
+			
+			public function HRESULT(IAzApplicationGroup2 *self, BSTR* pbstrProp) get_BizRule;
+			public function HRESULT(IAzApplicationGroup2 *self, BSTR bstrProp) put_BizRule;
+			public function HRESULT(IAzApplicationGroup2 *self, BSTR* pbstrProp) get_BizRuleLanguage;
+			public function HRESULT(IAzApplicationGroup2 *self, BSTR bstrProp) put_BizRuleLanguage;
+			public function HRESULT(IAzApplicationGroup2 *self, BSTR* pbstrProp) get_BizRuleImportedPath;
+			public function HRESULT(IAzApplicationGroup2 *self, BSTR bstrProp) put_BizRuleImportedPath;
+			public function HRESULT(IAzApplicationGroup2 *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+		}
+		[CRepr]
+		public struct IAzTask2 : IAzTask
+		{
+			public const new Guid IID = .(0x03a9a5ee, 0x48c8, 0x4832, 0x90, 0x25, 0xaa, 0xd5, 0x03, 0xc4, 0x65, 0x26);
+			
+			public function HRESULT(IAzTask2 *self, BSTR bstrScopeName, int16 bRecursive, IAzRoleAssignments** ppRoleAssignments) RoleAssignments;
+		}
 		
 		// --- Functions ---
 		

@@ -1471,15 +1471,87 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ICameraUIControlEventCallback {}
-		public struct ICameraUIControl {}
-		public struct IEditionUpgradeHelper {}
-		public struct IWindowsLockModeHelper {}
-		public struct IEditionUpgradeBroker {}
-		public struct IContainerActivationHelper {}
-		public struct IClipServiceNotificationHelper {}
-		public struct IDefaultBrowserSyncSettings {}
-		public struct IDeleteBrowsingHistory {}
+		[CRepr]
+		public struct ICameraUIControlEventCallback : IUnknown
+		{
+			public const new Guid IID = .(0x1bfa0c2c, 0xfbcd, 0x4776, 0xbd, 0xa4, 0x88, 0xbf, 0x97, 0x4e, 0x74, 0xf4);
+			
+			public function void(ICameraUIControlEventCallback *self) OnStartupComplete;
+			public function void(ICameraUIControlEventCallback *self) OnSuspendComplete;
+			public function void(ICameraUIControlEventCallback *self, PWSTR pszPath) OnItemCaptured;
+			public function void(ICameraUIControlEventCallback *self, PWSTR pszPath) OnItemDeleted;
+			public function void(ICameraUIControlEventCallback *self) OnClosed;
+		}
+		[CRepr]
+		public struct ICameraUIControl : IUnknown
+		{
+			public const new Guid IID = .(0xb8733adf, 0x3d68, 0x4b8f, 0xbb, 0x08, 0xe2, 0x8a, 0x0b, 0xed, 0x03, 0x76);
+			
+			public function HRESULT(ICameraUIControl *self, IUnknown* pWindow, CameraUIControlMode mode, CameraUIControlLinearSelectionMode selectionMode, CameraUIControlCaptureMode captureMode, CameraUIControlPhotoFormat photoFormat, CameraUIControlVideoFormat videoFormat, BOOL bHasCloseButton, ICameraUIControlEventCallback* pEventCallback) Show;
+			public function HRESULT(ICameraUIControl *self) Close;
+			public function HRESULT(ICameraUIControl *self, BOOL* pbDeferralRequired) Suspend;
+			public function HRESULT(ICameraUIControl *self) Resume;
+			public function HRESULT(ICameraUIControl *self, CameraUIControlViewType* pViewType) GetCurrentViewType;
+			public function HRESULT(ICameraUIControl *self, BSTR* pbstrActiveItemPath) GetActiveItem;
+			public function HRESULT(ICameraUIControl *self, SAFEARRAY** ppSelectedItemPaths) GetSelectedItems;
+			public function HRESULT(ICameraUIControl *self, PWSTR pszPath) RemoveCapturedItem;
+		}
+		[CRepr]
+		public struct IEditionUpgradeHelper : IUnknown
+		{
+			public const new Guid IID = .(0xd3e9e342, 0x5deb, 0x43b6, 0x84, 0x9e, 0x69, 0x13, 0xb8, 0x5d, 0x50, 0x3a);
+			
+			public function HRESULT(IEditionUpgradeHelper *self, BOOL* isAllowed) CanUpgrade;
+			public function HRESULT(IEditionUpgradeHelper *self, PWSTR contentId) UpdateOperatingSystem;
+			public function HRESULT(IEditionUpgradeHelper *self) ShowProductKeyUI;
+			public function HRESULT(IEditionUpgradeHelper *self, PWSTR* contentId) GetOsProductContentId;
+			public function HRESULT(IEditionUpgradeHelper *self, BOOL* isGenuine) GetGenuineLocalStatus;
+		}
+		[CRepr]
+		public struct IWindowsLockModeHelper : IUnknown
+		{
+			public const new Guid IID = .(0xf342d19e, 0xcc22, 0x4648, 0xbb, 0x5d, 0x03, 0xcc, 0xf7, 0x5b, 0x47, 0xc5);
+			
+			public function HRESULT(IWindowsLockModeHelper *self, BOOL* isSmode) GetSMode;
+		}
+		[CRepr]
+		public struct IEditionUpgradeBroker : IUnknown
+		{
+			public const new Guid IID = .(0xff19cbcf, 0x9455, 0x4937, 0xb8, 0x72, 0x6b, 0x79, 0x29, 0xa4, 0x60, 0xaf);
+			
+			public function HRESULT(IEditionUpgradeBroker *self, uint32 parentHandle) InitializeParentWindow;
+			public function HRESULT(IEditionUpgradeBroker *self, BSTR parameter) UpdateOperatingSystem;
+			public function HRESULT(IEditionUpgradeBroker *self) ShowProductKeyUI;
+			public function HRESULT(IEditionUpgradeBroker *self) CanUpgrade;
+		}
+		[CRepr]
+		public struct IContainerActivationHelper : IUnknown
+		{
+			public const new Guid IID = .(0xb524f93f, 0x80d5, 0x4ec7, 0xae, 0x9e, 0xd6, 0x6e, 0x93, 0xad, 0xe1, 0xfa);
+			
+			public function HRESULT(IContainerActivationHelper *self, int16* isAllowed) CanActivateClientVM;
+		}
+		[CRepr]
+		public struct IClipServiceNotificationHelper : IUnknown
+		{
+			public const new Guid IID = .(0xc39948f0, 0x6142, 0x44fd, 0x98, 0xca, 0xe1, 0x68, 0x1a, 0x8d, 0x68, 0xb5);
+			
+			public function HRESULT(IClipServiceNotificationHelper *self, BSTR titleText, BSTR bodyText, BSTR packageName, BSTR appId, BSTR launchCommand) ShowToast;
+		}
+		[CRepr]
+		public struct IDefaultBrowserSyncSettings : IUnknown
+		{
+			public const new Guid IID = .(0x7a27faad, 0x5ae6, 0x4255, 0x90, 0x30, 0xc5, 0x30, 0x93, 0x62, 0x92, 0xe3);
+			
+			public function BOOL(IDefaultBrowserSyncSettings *self) IsEnabled;
+		}
+		[CRepr]
+		public struct IDeleteBrowsingHistory : IUnknown
+		{
+			public const new Guid IID = .(0xcf38ed4b, 0x2be7, 0x4461, 0x8b, 0x5e, 0x9a, 0x46, 0x6d, 0xc8, 0x2a, 0xe3);
+			
+			public function HRESULT(IDeleteBrowsingHistory *self, uint32 dwFlags) DeleteBrowsingHistory;
+		}
 		
 		// --- Functions ---
 		

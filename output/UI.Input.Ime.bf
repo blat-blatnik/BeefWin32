@@ -1296,23 +1296,336 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IFEClassFactory {}
-		public struct IFECommon {}
-		public struct IFELanguage {}
-		public struct IFEDictionary {}
-		public struct IImeSpecifyApplets {}
-		public struct IImePadApplet {}
-		public struct IImePad {}
-		public struct IImePlugInDictDictionaryList {}
-		public struct IEnumRegisterWordA {}
-		public struct IEnumRegisterWordW {}
-		public struct IEnumInputContext {}
-		public struct IActiveIMMRegistrar {}
-		public struct IActiveIMMMessagePumpOwner {}
-		public struct IActiveIMMApp {}
-		public struct IActiveIMMIME {}
-		public struct IActiveIME {}
-		public struct IActiveIME2 {}
+		[CRepr]
+		public struct IFEClassFactory : IClassFactory
+		{
+		}
+		[CRepr]
+		public struct IFECommon : IUnknown
+		{
+			public const new Guid IID = .(0x019f7151, 0xe6db, 0x11d0, 0x83, 0xc3, 0x00, 0xc0, 0x4f, 0xdd, 0xb8, 0x2e);
+			
+			public function HRESULT(IFECommon *self, uint8* szName, int32 cszName) IsDefaultIME;
+			public function HRESULT(IFECommon *self) SetDefaultIME;
+			public function HRESULT(IFECommon *self, IMEDLG* pimedlg) InvokeWordRegDialog;
+			public function HRESULT(IFECommon *self, IMEDLG* pimedlg) InvokeDictToolDialog;
+		}
+		[CRepr]
+		public struct IFELanguage : IUnknown
+		{
+			public const new Guid IID = .(0x019f7152, 0xe6db, 0x11d0, 0x83, 0xc3, 0x00, 0xc0, 0x4f, 0xdd, 0xb8, 0x2e);
+			
+			public function HRESULT(IFELanguage *self) Open;
+			public function HRESULT(IFELanguage *self) Close;
+			public function HRESULT(IFELanguage *self, uint32 dwRequest, uint32 dwCMode, int32 cwchInput, PWSTR pwchInput, uint32* pfCInfo, MORRSLT** ppResult) GetJMorphResult;
+			public function HRESULT(IFELanguage *self, uint32* pdwCaps) GetConversionModeCaps;
+			public function HRESULT(IFELanguage *self, BSTR string, int32 start, int32 length, BSTR* phonetic) GetPhonetic;
+			public function HRESULT(IFELanguage *self, BSTR string, int32 start, int32 length, BSTR* result) GetConversion;
+		}
+		[CRepr]
+		public struct IFEDictionary : IUnknown
+		{
+			public const new Guid IID = .(0x019f7153, 0xe6db, 0x11d0, 0x83, 0xc3, 0x00, 0xc0, 0x4f, 0xdd, 0xb8, 0x2e);
+			
+			public function HRESULT(IFEDictionary *self, uint8* pchDictPath, IMESHF* pshf) Open;
+			public function HRESULT(IFEDictionary *self) Close;
+			public function HRESULT(IFEDictionary *self, uint8* pchDictPath, IMESHF* pshf, IMEFMT* pjfmt, uint32* pulType) GetHeader;
+			public function HRESULT(IFEDictionary *self, HWND hwnd) DisplayProperty;
+			public function HRESULT(IFEDictionary *self, POSTBL** prgPosTbl, int32* pcPosTbl) GetPosTable;
+			public function HRESULT(IFEDictionary *self, PWSTR pwchFirst, PWSTR pwchLast, PWSTR pwchDisplay, uint32 ulPos, uint32 ulSelect, uint32 ulWordSrc, uint8* pchBuffer, uint32 cbBuffer, uint32* pcWrd) GetWords;
+			public function HRESULT(IFEDictionary *self, uint8* pchBuffer, uint32 cbBuffer, uint32* pcWrd) NextWords;
+			public function HRESULT(IFEDictionary *self, PSTR pchDictPath, IMESHF* pshf) Create;
+			public function HRESULT(IFEDictionary *self, IMESHF* pshf) SetHeader;
+			public function HRESULT(IFEDictionary *self, IMEWRD* pwrd) ExistWord;
+			public function HRESULT(IFEDictionary *self, IMEDP* pdp) ExistDependency;
+			public function HRESULT(IFEDictionary *self, IMEREG reg, IMEWRD* pwrd) RegisterWord;
+			public function HRESULT(IFEDictionary *self, IMEREG reg, IMEDP* pdp) RegisterDependency;
+			public function HRESULT(IFEDictionary *self, PWSTR pwchKakariReading, PWSTR pwchKakariDisplay, uint32 ulKakariPos, PWSTR pwchUkeReading, PWSTR pwchUkeDisplay, uint32 ulUkePos, IMEREL jrel, uint32 ulWordSrc, uint8* pchBuffer, uint32 cbBuffer, uint32* pcdp) GetDependencies;
+			public function HRESULT(IFEDictionary *self, uint8* pchBuffer, uint32 cbBuffer, uint32* pcDp) NextDependencies;
+			public function HRESULT(IFEDictionary *self, PSTR pchDic, PFNLOG pfnLog, IMEREG reg) ConvertFromOldMSIME;
+			public function HRESULT(IFEDictionary *self) ConvertFromUserToSys;
+		}
+		[CRepr]
+		public struct IImeSpecifyApplets : IUnknown
+		{
+			public const new Guid IID = .(0x5d8e643c, 0xc3a9, 0x11d1, 0xaf, 0xef, 0x00, 0x80, 0x5f, 0x0c, 0x8b, 0x6d);
+			
+			public function HRESULT(IImeSpecifyApplets *self, Guid* refiid, APPLETIDLIST* lpIIDList) GetAppletIIDList;
+		}
+		[CRepr]
+		public struct IImePadApplet : IUnknown
+		{
+			public const new Guid IID = .(0x5d8e643b, 0xc3a9, 0x11d1, 0xaf, 0xef, 0x00, 0x80, 0x5f, 0x0c, 0x8b, 0x6d);
+			
+			public function HRESULT(IImePadApplet *self, IUnknown* lpIImePad) Initialize;
+			public function HRESULT(IImePadApplet *self) Terminate;
+			public function HRESULT(IImePadApplet *self, IMEAPPLETCFG* lpAppletCfg) GetAppletConfig;
+			public function HRESULT(IImePadApplet *self, HWND hwndParent, IMEAPPLETUI* lpImeAppletUI) CreateUI;
+			public function HRESULT(IImePadApplet *self, IUnknown* lpImePad, int32 notify, WPARAM wParam, LPARAM lParam) Notify;
+		}
+		[CRepr]
+		public struct IImePad : IUnknown
+		{
+			public const new Guid IID = .(0x5d8e643a, 0xc3a9, 0x11d1, 0xaf, 0xef, 0x00, 0x80, 0x5f, 0x0c, 0x8b, 0x6d);
+			
+			public function HRESULT(IImePad *self, IImePadApplet* pIImePadApplet, IME_PAD_REQUEST_FLAGS reqId, WPARAM wParam, LPARAM lParam) Request;
+		}
+		[CRepr]
+		public struct IImePlugInDictDictionaryList : IUnknown
+		{
+			public const new Guid IID = .(0x98752974, 0xb0a6, 0x489b, 0x8f, 0x6f, 0xbf, 0xf3, 0x76, 0x9c, 0x8e, 0xeb);
+			
+			public function HRESULT(IImePlugInDictDictionaryList *self, SAFEARRAY** prgDictionaryGUID, SAFEARRAY** prgDateCreated, SAFEARRAY** prgfEncrypted) GetDictionariesInUse;
+			public function HRESULT(IImePlugInDictDictionaryList *self, BSTR bstrDictionaryGUID) DeleteDictionary;
+		}
+		[CRepr]
+		public struct IEnumRegisterWordA : IUnknown
+		{
+			public const new Guid IID = .(0x08c03412, 0xf96b, 0x11d0, 0xa4, 0x75, 0x00, 0xaa, 0x00, 0x6b, 0xcc, 0x59);
+			
+			public function HRESULT(IEnumRegisterWordA *self, IEnumRegisterWordA** ppEnum) Clone;
+			public function HRESULT(IEnumRegisterWordA *self, uint32 ulCount, REGISTERWORDA* rgRegisterWord, uint32* pcFetched) Next;
+			public function HRESULT(IEnumRegisterWordA *self) Reset;
+			public function HRESULT(IEnumRegisterWordA *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct IEnumRegisterWordW : IUnknown
+		{
+			public const new Guid IID = .(0x4955dd31, 0xb159, 0x11d0, 0x8f, 0xcf, 0x00, 0xaa, 0x00, 0x6b, 0xcc, 0x59);
+			
+			public function HRESULT(IEnumRegisterWordW *self, IEnumRegisterWordW** ppEnum) Clone;
+			public function HRESULT(IEnumRegisterWordW *self, uint32 ulCount, REGISTERWORDW* rgRegisterWord, uint32* pcFetched) Next;
+			public function HRESULT(IEnumRegisterWordW *self) Reset;
+			public function HRESULT(IEnumRegisterWordW *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct IEnumInputContext : IUnknown
+		{
+			public const new Guid IID = .(0x09b5eab0, 0xf997, 0x11d1, 0x93, 0xd4, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(IEnumInputContext *self, IEnumInputContext** ppEnum) Clone;
+			public function HRESULT(IEnumInputContext *self, uint32 ulCount, HIMC* rgInputContext, uint32* pcFetched) Next;
+			public function HRESULT(IEnumInputContext *self) Reset;
+			public function HRESULT(IEnumInputContext *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct IActiveIMMRegistrar : IUnknown
+		{
+			public const new Guid IID = .(0xb3458082, 0xbd00, 0x11d1, 0x93, 0x9b, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(IActiveIMMRegistrar *self, Guid* rclsid, uint16 lgid, PWSTR pszIconFile, PWSTR pszDesc) RegisterIME;
+			public function HRESULT(IActiveIMMRegistrar *self, Guid* rclsid) UnregisterIME;
+		}
+		[CRepr]
+		public struct IActiveIMMMessagePumpOwner : IUnknown
+		{
+			public const new Guid IID = .(0xb5cf2cfa, 0x8aeb, 0x11d1, 0x93, 0x64, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(IActiveIMMMessagePumpOwner *self) Start;
+			public function HRESULT(IActiveIMMMessagePumpOwner *self) End;
+			public function HRESULT(IActiveIMMMessagePumpOwner *self, MSG* pMsg) OnTranslateMessage;
+			public function HRESULT(IActiveIMMMessagePumpOwner *self, uint32* pdwCookie) Pause;
+			public function HRESULT(IActiveIMMMessagePumpOwner *self, uint32 dwCookie) Resume;
+		}
+		[CRepr]
+		public struct IActiveIMMApp : IUnknown
+		{
+			public const new Guid IID = .(0x08c0e040, 0x62d1, 0x11d1, 0x93, 0x26, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC hIME, HIMC* phPrev) AssociateContext;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDA* pData) ConfigureIMEA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pData) ConfigureIMEW;
+			public function HRESULT(IActiveIMMApp *self, HIMC* phIMC) CreateContext;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIME) DestroyContext;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, IEnumRegisterWordA** pEnum) EnumRegisterWordA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** pEnum) EnumRegisterWordW;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListA;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountA;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, CANDIDATEFORM* pCandidate) GetCandidateWindow;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTA* plf) GetCompositionFontA;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTW* plf) GetCompositionFontW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringA;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) GetCompositionWindow;
+			public function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC* phIMC) GetContext;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32* pfdwConversion, uint32* pfdwSentence) GetConversionStatus;
+			public function HRESULT(IActiveIMMApp *self, HWND hWnd, HWND* phDefWnd) GetDefaultIMEWnd;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PSTR szDescription, uint32* puCopied) GetDescriptionA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PWSTR szDescription, uint32* puCopied) GetDescriptionW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, uint32* pdwResult) GetGuideLineA;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, uint32* pdwResult) GetGuideLineW;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PSTR szFileName, uint32* puCopied) GetIMEFileNameA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 uBufLen, PWSTR szFileName, uint32* puCopied) GetIMEFileNameW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC) GetOpenStatus;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 fdwIndex, uint32* pdwProperty) GetProperty;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 nItem, STYLEBUFA* pStyleBuf, uint32* puCopied) GetRegisterWordStyleA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puCopied) GetRegisterWordStyleW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, POINT* pptPos) GetStatusWindowPos;
+			public function HRESULT(IActiveIMMApp *self, HWND hWnd, uint32* puVirtualKey) GetVirtualKey;
+			public function HRESULT(IActiveIMMApp *self, PSTR szIMEFileName, PSTR szLayoutText, HKL* phKL) InstallIMEA;
+			public function HRESULT(IActiveIMMApp *self, PWSTR szIMEFileName, PWSTR szLayoutText, HKL* phKL) InstallIMEW;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL) IsIME;
+			public function HRESULT(IActiveIMMApp *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageA;
+			public function HRESULT(IActiveIMMApp *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) NotifyIME;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) RegisterWordA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) RegisterWordW;
+			public function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC hIMC) ReleaseContext;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, CANDIDATEFORM* pCandidate) SetCandidateWindow;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTA* plf) SetCompositionFontA;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, LOGFONTW* plf) SetCompositionFontW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringA;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringW;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) SetCompositionWindow;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) SetConversionStatus;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, BOOL fOpen) SetOpenStatus;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, POINT* pptPos) SetStatusWindowPos;
+			public function HRESULT(IActiveIMMApp *self, HWND hWnd, uint32 dwHotKeyID) SimulateHotKey;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) UnregisterWordA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) UnregisterWordW;
+			public function HRESULT(IActiveIMMApp *self, BOOL fRestoreLayout) Activate;
+			public function HRESULT(IActiveIMMApp *self) Deactivate;
+			public function HRESULT(IActiveIMMApp *self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) OnDefWindowProc;
+			public function HRESULT(IActiveIMMApp *self, uint16* aaClassList, uint32 uSize) FilterClientWindows;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, uint32* uCodePage) GetCodePageA;
+			public function HRESULT(IActiveIMMApp *self, HKL hKL, uint16* plid) GetLangId;
+			public function HRESULT(IActiveIMMApp *self, HWND hWnd, HIMC hIMC, uint32 dwFlags) AssociateContextEx;
+			public function HRESULT(IActiveIMMApp *self, uint32 idThread) DisableIME;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsA;
+			public function HRESULT(IActiveIMMApp *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsW;
+			public function HRESULT(IActiveIMMApp *self, uint32 idThread, IEnumInputContext** ppEnum) EnumInputContext;
+		}
+		[CRepr]
+		public struct IActiveIMMIME : IUnknown
+		{
+			public const new Guid IID = .(0x08c03411, 0xf96b, 0x11d0, 0xa4, 0x75, 0x00, 0xaa, 0x00, 0x6b, 0xcc, 0x59);
+			
+			public function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC hIME, HIMC* phPrev) AssociateContext;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDA* pData) ConfigureIMEA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pData) ConfigureIMEW;
+			public function HRESULT(IActiveIMMIME *self, HIMC* phIMC) CreateContext;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIME) DestroyContext;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister, void* pData, IEnumRegisterWordA** pEnum) EnumRegisterWordA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** pEnum) EnumRegisterWordW;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) EscapeW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListA;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 uBufLen, CANDIDATELIST* pCandList, uint32* puCopied) GetCandidateListW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountA;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pdwListSize, uint32* pdwBufLen) GetCandidateListCountW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, CANDIDATEFORM* pCandidate) GetCandidateWindow;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTA* plf) GetCompositionFontA;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTW* plf) GetCompositionFontW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringA;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, int32* plCopied, void* pBuf) GetCompositionStringW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) GetCompositionWindow;
+			public function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC* phIMC) GetContext;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, PSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, HIMC hIMC, PWSTR pSrc, uint32 uBufLen, uint32 uFlag, CANDIDATELIST* pDst, uint32* puCopied) GetConversionListW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pfdwConversion, uint32* pfdwSentence) GetConversionStatus;
+			public function HRESULT(IActiveIMMIME *self, HWND hWnd, HWND* phDefWnd) GetDefaultIMEWnd;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PSTR szDescription, uint32* puCopied) GetDescriptionA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PWSTR szDescription, uint32* puCopied) GetDescriptionW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PSTR pBuf, uint32* pdwResult) GetGuideLineA;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, uint32 dwBufLen, PWSTR pBuf, uint32* pdwResult) GetGuideLineW;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PSTR szFileName, uint32* puCopied) GetIMEFileNameA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 uBufLen, PWSTR szFileName, uint32* puCopied) GetIMEFileNameW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC) GetOpenStatus;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 fdwIndex, uint32* pdwProperty) GetProperty;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 nItem, STYLEBUFA* pStyleBuf, uint32* puCopied) GetRegisterWordStyleA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puCopied) GetRegisterWordStyleW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, POINT* pptPos) GetStatusWindowPos;
+			public function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32* puVirtualKey) GetVirtualKey;
+			public function HRESULT(IActiveIMMIME *self, PSTR szIMEFileName, PSTR szLayoutText, HKL* phKL) InstallIMEA;
+			public function HRESULT(IActiveIMMIME *self, PWSTR szIMEFileName, PWSTR szLayoutText, HKL* phKL) InstallIMEW;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL) IsIME;
+			public function HRESULT(IActiveIMMIME *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageA;
+			public function HRESULT(IActiveIMMIME *self, HWND hWndIME, uint32 msg, WPARAM wParam, LPARAM lParam) IsUIMessageW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) NotifyIME;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szRegister) RegisterWordA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szRegister) RegisterWordW;
+			public function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC hIMC) ReleaseContext;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, CANDIDATEFORM* pCandidate) SetCandidateWindow;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTA* plf) SetCompositionFontA;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, LOGFONTW* plf) SetCompositionFontW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringA;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionStringW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, COMPOSITIONFORM* pCompForm) SetCompositionWindow;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 fdwConversion, uint32 fdwSentence) SetConversionStatus;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, BOOL fOpen) SetOpenStatus;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, POINT* pptPos) SetStatusWindowPos;
+			public function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32 dwHotKeyID) SimulateHotKey;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, PSTR szReading, uint32 dwStyle, PSTR szUnregister) UnregisterWordA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, PWSTR szReading, uint32 dwStyle, PWSTR szUnregister) UnregisterWordW;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC) GenerateMessage;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, INPUTCONTEXT** ppIMC) LockIMC;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC) UnlockIMC;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32* pdwLockCount) GetIMCLockCount;
+			public function HRESULT(IActiveIMMIME *self, uint32 dwSize, HIMCC* phIMCC) CreateIMCC;
+			public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC) DestroyIMCC;
+			public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, void** ppv) LockIMCC;
+			public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC) UnlockIMCC;
+			public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, uint32 dwSize, HIMCC* phIMCC) ReSizeIMCC;
+			public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, uint32* pdwSize) GetIMCCSize;
+			public function HRESULT(IActiveIMMIME *self, HIMCC hIMCC, uint32* pdwLockCount) GetIMCCLockCount;
+			public function HRESULT(IActiveIMMIME *self, uint32 dwHotKeyID, uint32* puModifiers, uint32* puVKey, HKL* phKL) GetHotKey;
+			public function HRESULT(IActiveIMMIME *self, uint32 dwHotKeyID, uint32 uModifiers, uint32 uVKey, HKL hKL) SetHotKey;
+			public function HRESULT(IActiveIMMIME *self, uint32 uType, HWND hOwner, int32 x, int32 y, HWND* phSoftKbdWnd) CreateSoftKeyboard;
+			public function HRESULT(IActiveIMMIME *self, HWND hSoftKbdWnd) DestroySoftKeyboard;
+			public function HRESULT(IActiveIMMIME *self, HWND hSoftKbdWnd, int32 nCmdShow) ShowSoftKeyboard;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, uint32* uCodePage) GetCodePageA;
+			public function HRESULT(IActiveIMMIME *self, HKL hKL, uint16* plid) GetLangId;
+			public function HRESULT(IActiveIMMIME *self, uint16 lgidIME, uint8 bVk, uint8 bScan, uint32 dwFlags, uint32 dwExtraInfo) KeybdEvent;
+			public function HRESULT(IActiveIMMIME *self) LockModal;
+			public function HRESULT(IActiveIMMIME *self) UnlockModal;
+			public function HRESULT(IActiveIMMIME *self, HWND hWnd, HIMC hIMC, uint32 dwFlags) AssociateContextEx;
+			public function HRESULT(IActiveIMMIME *self, uint32 idThread) DisableIME;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOA* pImeParentMenu, IMEMENUITEMINFOA* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsA;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, uint32 dwFlags, uint32 dwType, IMEMENUITEMINFOW* pImeParentMenu, IMEMENUITEMINFOW* pImeMenu, uint32 dwSize, uint32* pdwResult) GetImeMenuItemsW;
+			public function HRESULT(IActiveIMMIME *self, uint32 idThread, IEnumInputContext** ppEnum) EnumInputContext;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult) RequestMessageA;
+			public function HRESULT(IActiveIMMIME *self, HIMC hIMC, WPARAM wParam, LPARAM lParam, LRESULT* plResult) RequestMessageW;
+			public function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) SendIMCA;
+			public function HRESULT(IActiveIMMIME *self, HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult) SendIMCW;
+			public function HRESULT(IActiveIMMIME *self) IsSleeping;
+		}
+		[CRepr]
+		public struct IActiveIME : IUnknown
+		{
+			public const new Guid IID = .(0x6fe20962, 0xd077, 0x11d0, 0x8f, 0xe7, 0x00, 0xaa, 0x00, 0x6b, 0xcc, 0x59);
+			
+			public function HRESULT(IActiveIME *self, uint32 dwSystemInfoFlags, IMEINFO* pIMEInfo, PWSTR szWndClass, uint32* pdwPrivate) Inquire;
+			public function HRESULT(IActiveIME *self, HIMC hIMC, PWSTR szSource, uint32 uFlag, uint32 uBufLen, CANDIDATELIST* pDest, uint32* puCopied) ConversionList;
+			public function HRESULT(IActiveIME *self, HKL hKL, HWND hWnd, uint32 dwMode, REGISTERWORDW* pRegisterWord) Configure;
+			public function HRESULT(IActiveIME *self, uint32 uReserved) Destroy;
+			public function HRESULT(IActiveIME *self, HIMC hIMC, uint32 uEscape, void* pData, LRESULT* plResult) Escape;
+			public function HRESULT(IActiveIME *self, HIMC hIMC, BOOL fFlag) SetActiveContext;
+			public function HRESULT(IActiveIME *self, HIMC hIMC, uint32 uVirKey, uint32 lParam, uint8* pbKeyState) ProcessKey;
+			public function HRESULT(IActiveIME *self, HIMC hIMC, uint32 dwAction, uint32 dwIndex, uint32 dwValue) Notify;
+			public function HRESULT(IActiveIME *self, HIMC hIMC, BOOL fSelect) Select;
+			public function HRESULT(IActiveIME *self, HIMC hIMC, uint32 dwIndex, void* pComp, uint32 dwCompLen, void* pRead, uint32 dwReadLen) SetCompositionString;
+			public function HRESULT(IActiveIME *self, uint32 uVirKey, uint32 uScanCode, uint8* pbKeyState, uint32 fuState, HIMC hIMC, uint32* pdwTransBuf, uint32* puSize) ToAsciiEx;
+			public function HRESULT(IActiveIME *self, PWSTR szReading, uint32 dwStyle, PWSTR szString) RegisterWord;
+			public function HRESULT(IActiveIME *self, PWSTR szReading, uint32 dwStyle, PWSTR szString) UnregisterWord;
+			public function HRESULT(IActiveIME *self, uint32 nItem, STYLEBUFW* pStyleBuf, uint32* puBufSize) GetRegisterWordStyle;
+			public function HRESULT(IActiveIME *self, PWSTR szReading, uint32 dwStyle, PWSTR szRegister, void* pData, IEnumRegisterWordW** ppEnum) EnumRegisterWord;
+			public function HRESULT(IActiveIME *self, uint32* uCodePage) GetCodePageA;
+			public function HRESULT(IActiveIME *self, uint16* plid) GetLangId;
+		}
+		[CRepr]
+		public struct IActiveIME2 : IActiveIME
+		{
+			public const new Guid IID = .(0xe1c4bf0e, 0x2d53, 0x11d2, 0x93, 0xe1, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(IActiveIME2 *self) Sleep;
+			public function HRESULT(IActiveIME2 *self, BOOL fDead) Unsleep;
+		}
 		
 		// --- Functions ---
 		

@@ -2577,7 +2577,7 @@ namespace Win32
 			public uint32 m_uVersion;
 			public uint32 m_uAnalysisType;
 			public uint32 m_uFeatureMask;
-			public IWbemPath m_pPath;
+			public IWbemPath* m_pPath;
 			public PWSTR m_pszPath;
 			public PWSTR m_pszQueryText;
 			public PWSTR m_pszResultClass;
@@ -2648,76 +2648,829 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IWbemPathKeyList {}
-		public struct IWbemPath {}
-		public struct IWbemQuery {}
-		public struct IWbemClassObject {}
-		public struct IWbemObjectAccess {}
-		public struct IWbemQualifierSet {}
-		public struct IWbemServices {}
-		public struct IWbemLocator {}
-		public struct IWbemObjectSink {}
-		public struct IEnumWbemClassObject {}
-		public struct IWbemCallResult {}
-		public struct IWbemContext {}
-		public struct IUnsecuredApartment {}
-		public struct IWbemUnsecuredApartment {}
-		public struct IWbemStatusCodeText {}
-		public struct IWbemBackupRestore {}
-		public struct IWbemBackupRestoreEx {}
-		public struct IWbemRefresher {}
-		public struct IWbemHiPerfEnum {}
-		public struct IWbemConfigureRefresher {}
-		public struct IWbemObjectSinkEx {}
-		public struct IWbemShutdown {}
-		public struct IWbemObjectTextSrc {}
-		public struct IMofCompiler {}
-		public struct IWbemPropertyProvider {}
-		public struct IWbemUnboundObjectSink {}
-		public struct IWbemEventProvider {}
-		public struct IWbemEventProviderQuerySink {}
-		public struct IWbemEventProviderSecurity {}
-		public struct IWbemEventConsumerProvider {}
-		public struct IWbemProviderInitSink {}
-		public struct IWbemProviderInit {}
-		public struct IWbemHiPerfProvider {}
-		public struct IWbemDecoupledRegistrar {}
-		public struct IWbemProviderIdentity {}
-		public struct IWbemDecoupledBasicEventProvider {}
-		public struct IWbemEventSink {}
-		public struct ISWbemServices {}
-		public struct ISWbemLocator {}
-		public struct ISWbemObject {}
-		public struct ISWbemObjectSet {}
-		public struct ISWbemNamedValue {}
-		public struct ISWbemNamedValueSet {}
-		public struct ISWbemQualifier {}
-		public struct ISWbemQualifierSet {}
-		public struct ISWbemProperty {}
-		public struct ISWbemPropertySet {}
-		public struct ISWbemMethod {}
-		public struct ISWbemMethodSet {}
-		public struct ISWbemEventSource {}
-		public struct ISWbemObjectPath {}
-		public struct ISWbemLastError {}
-		public struct ISWbemSinkEvents {}
-		public struct ISWbemSink {}
-		public struct ISWbemSecurity {}
-		public struct ISWbemPrivilege {}
-		public struct ISWbemPrivilegeSet {}
-		public struct ISWbemServicesEx {}
-		public struct ISWbemObjectEx {}
-		public struct ISWbemDateTime {}
-		public struct ISWbemRefresher {}
-		public struct ISWbemRefreshableItem {}
-		public struct IWMIExtension {}
-		public struct IWbemTransport {}
-		public struct IWbemLevel1Login {}
-		public struct IWbemConnectorLogin {}
-		public struct IWbemAddressResolution {}
-		public struct IWbemClientTransport {}
-		public struct IWbemClientConnectionTransport {}
-		public struct IWbemConstructClassObject {}
+		[CRepr]
+		public struct IWbemPathKeyList : IUnknown
+		{
+			public const new Guid IID = .(0x9ae62877, 0x7544, 0x4bb0, 0xaa, 0x26, 0xa1, 0x38, 0x24, 0x65, 0x9e, 0xd6);
+			
+			public function HRESULT(IWbemPathKeyList *self, uint32* puKeyCount) GetCount;
+			public function HRESULT(IWbemPathKeyList *self, PWSTR wszName, uint32 uFlags, uint32 uCimType, void* pKeyVal) SetKey;
+			public function HRESULT(IWbemPathKeyList *self, PWSTR wszName, uint32 uFlags, uint32 uCimType, VARIANT* pKeyVal) SetKey2;
+			public function HRESULT(IWbemPathKeyList *self, uint32 uKeyIx, uint32 uFlags, uint32* puNameBufSize, char16* pszKeyName, uint32* puKeyValBufSize, void* pKeyVal, uint32* puApparentCimType) GetKey;
+			public function HRESULT(IWbemPathKeyList *self, uint32 uKeyIx, uint32 uFlags, uint32* puNameBufSize, char16* pszKeyName, VARIANT* pKeyValue, uint32* puApparentCimType) GetKey2;
+			public function HRESULT(IWbemPathKeyList *self, PWSTR wszName, uint32 uFlags) RemoveKey;
+			public function HRESULT(IWbemPathKeyList *self, uint32 uFlags) RemoveAllKeys;
+			public function HRESULT(IWbemPathKeyList *self, uint8 bSet) MakeSingleton;
+			public function HRESULT(IWbemPathKeyList *self, uint32 uRequestedInfo, uint64* puResponse) GetInfo;
+			public function HRESULT(IWbemPathKeyList *self, int32 lFlags, uint32* puBuffLength, char16* pszText) GetText;
+		}
+		[CRepr]
+		public struct IWbemPath : IUnknown
+		{
+			public const new Guid IID = .(0x3bc15af2, 0x736c, 0x477e, 0x9e, 0x51, 0x23, 0x8a, 0xf8, 0x66, 0x7d, 0xcc);
+			
+			public function HRESULT(IWbemPath *self, uint32 uMode, PWSTR pszPath) SetText;
+			public function HRESULT(IWbemPath *self, int32 lFlags, uint32* puBuffLength, char16* pszText) GetText;
+			public function HRESULT(IWbemPath *self, uint32 uRequestedInfo, uint64* puResponse) GetInfo;
+			public function HRESULT(IWbemPath *self, PWSTR Name) SetServer;
+			public function HRESULT(IWbemPath *self, uint32* puNameBufLength, char16* pName) GetServer;
+			public function HRESULT(IWbemPath *self, uint32* puCount) GetNamespaceCount;
+			public function HRESULT(IWbemPath *self, uint32 uIndex, PWSTR pszName) SetNamespaceAt;
+			public function HRESULT(IWbemPath *self, uint32 uIndex, uint32* puNameBufLength, char16* pName) GetNamespaceAt;
+			public function HRESULT(IWbemPath *self, uint32 uIndex) RemoveNamespaceAt;
+			public function HRESULT(IWbemPath *self) RemoveAllNamespaces;
+			public function HRESULT(IWbemPath *self, uint32* puCount) GetScopeCount;
+			public function HRESULT(IWbemPath *self, uint32 uIndex, PWSTR pszClass) SetScope;
+			public function HRESULT(IWbemPath *self, uint32 uIndex, PWSTR pszText) SetScopeFromText;
+			public function HRESULT(IWbemPath *self, uint32 uIndex, uint32* puClassNameBufSize, char16* pszClass, IWbemPathKeyList** pKeyList) GetScope;
+			public function HRESULT(IWbemPath *self, uint32 uIndex, uint32* puTextBufSize, char16* pszText) GetScopeAsText;
+			public function HRESULT(IWbemPath *self, uint32 uIndex) RemoveScope;
+			public function HRESULT(IWbemPath *self) RemoveAllScopes;
+			public function HRESULT(IWbemPath *self, PWSTR Name) SetClassName;
+			public function HRESULT(IWbemPath *self, uint32* puBuffLength, char16* pszName) GetClassName;
+			public function HRESULT(IWbemPath *self, IWbemPathKeyList** pOut) GetKeyList;
+			public function HRESULT(IWbemPath *self, int32 lFlags, PWSTR Name) CreateClassPart;
+			public function HRESULT(IWbemPath *self, int32 lFlags) DeleteClassPart;
+			public function BOOL(IWbemPath *self, PWSTR wszMachine, PWSTR wszNamespace) IsRelative;
+			public function BOOL(IWbemPath *self, PWSTR wszMachine, PWSTR wszNamespace, int32 lFlags) IsRelativeOrChild;
+			public function BOOL(IWbemPath *self, PWSTR wszMachine) IsLocal;
+			public function BOOL(IWbemPath *self, PWSTR wszClass) IsSameClassName;
+		}
+		[CRepr]
+		public struct IWbemQuery : IUnknown
+		{
+			public const new Guid IID = .(0x81166f58, 0xdd98, 0x11d3, 0xa1, 0x20, 0x00, 0x10, 0x5a, 0x1f, 0x51, 0x5a);
+			
+			public function HRESULT(IWbemQuery *self) Empty;
+			public function HRESULT(IWbemQuery *self, uint32 uFlags, uint32 uArraySize, uint32* puFeatures) SetLanguageFeatures;
+			public function HRESULT(IWbemQuery *self, uint32 uFlags, uint32* uArraySize, uint32* puFeatures) TestLanguageFeatures;
+			public function HRESULT(IWbemQuery *self, PWSTR pszLang, PWSTR pszQuery, uint32 uFlags) Parse;
+			public function HRESULT(IWbemQuery *self, uint32 uAnalysisType, uint32 uFlags, void** pAnalysis) GetAnalysis;
+			public function HRESULT(IWbemQuery *self, void* pMem) FreeMemory;
+			public function HRESULT(IWbemQuery *self, uint32 uAnalysisType, uint32 uInfoId, uint32 uBufSize, void* pDestBuf) GetQueryInfo;
+		}
+		[CRepr]
+		public struct IWbemClassObject : IUnknown
+		{
+			public const new Guid IID = .(0xdc12a681, 0x737f, 0x11cf, 0x88, 0x4d, 0x00, 0xaa, 0x00, 0x4b, 0x2e, 0x24);
+			
+			public function HRESULT(IWbemClassObject *self, IWbemQualifierSet** ppQualSet) GetQualifierSet;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszName, int32 lFlags, VARIANT* pVal, int32* pType, int32* plFlavor) Get;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszName, int32 lFlags, VARIANT* pVal, int32 Type) Put;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszName) Delete;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszQualifierName, int32 lFlags, VARIANT* pQualifierVal, SAFEARRAY** pNames) GetNames;
+			public function HRESULT(IWbemClassObject *self, int32 lEnumFlags) BeginEnumeration;
+			public function HRESULT(IWbemClassObject *self, int32 lFlags, BSTR* strName, VARIANT* pVal, int32* pType, int32* plFlavor) Next;
+			public function HRESULT(IWbemClassObject *self) EndEnumeration;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszProperty, IWbemQualifierSet** ppQualSet) GetPropertyQualifierSet;
+			public function HRESULT(IWbemClassObject *self, IWbemClassObject** ppCopy) Clone;
+			public function HRESULT(IWbemClassObject *self, int32 lFlags, BSTR* pstrObjectText) GetObjectText;
+			public function HRESULT(IWbemClassObject *self, int32 lFlags, IWbemClassObject** ppNewClass) SpawnDerivedClass;
+			public function HRESULT(IWbemClassObject *self, int32 lFlags, IWbemClassObject** ppNewInstance) SpawnInstance;
+			public function HRESULT(IWbemClassObject *self, int32 lFlags, IWbemClassObject* pCompareTo) CompareTo;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszName, BSTR* pstrClassName) GetPropertyOrigin;
+			public function HRESULT(IWbemClassObject *self, PWSTR strAncestor) InheritsFrom;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszName, int32 lFlags, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature) GetMethod;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszName, int32 lFlags, IWbemClassObject* pInSignature, IWbemClassObject* pOutSignature) PutMethod;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszName) DeleteMethod;
+			public function HRESULT(IWbemClassObject *self, int32 lEnumFlags) BeginMethodEnumeration;
+			public function HRESULT(IWbemClassObject *self, int32 lFlags, BSTR* pstrName, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature) NextMethod;
+			public function HRESULT(IWbemClassObject *self) EndMethodEnumeration;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszMethod, IWbemQualifierSet** ppQualSet) GetMethodQualifierSet;
+			public function HRESULT(IWbemClassObject *self, PWSTR wszMethodName, BSTR* pstrClassName) GetMethodOrigin;
+		}
+		[CRepr]
+		public struct IWbemObjectAccess : IWbemClassObject
+		{
+			public const new Guid IID = .(0x49353c9a, 0x516b, 0x11d1, 0xae, 0xa6, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemObjectAccess *self, PWSTR wszPropertyName, int32* pType, int32* plHandle) GetPropertyHandle;
+			public function HRESULT(IWbemObjectAccess *self, int32 lHandle, int32 lNumBytes, uint8* aData) WritePropertyValue;
+			public function HRESULT(IWbemObjectAccess *self, int32 lHandle, int32 lBufferSize, int32* plNumBytes, uint8* aData) ReadPropertyValue;
+			public function HRESULT(IWbemObjectAccess *self, int32 lHandle, uint32* pdw) ReadDWORD;
+			public function HRESULT(IWbemObjectAccess *self, int32 lHandle, uint32 dw) WriteDWORD;
+			public function HRESULT(IWbemObjectAccess *self, int32 lHandle, uint64* pqw) ReadQWORD;
+			public function HRESULT(IWbemObjectAccess *self, int32 lHandle, uint64 pw) WriteQWORD;
+			public function HRESULT(IWbemObjectAccess *self, int32 lHandle, BSTR* pstrName, int32* pType) GetPropertyInfoByHandle;
+			public function HRESULT(IWbemObjectAccess *self, int32 lFlags) Lock;
+			public function HRESULT(IWbemObjectAccess *self, int32 lFlags) Unlock;
+		}
+		[CRepr]
+		public struct IWbemQualifierSet : IUnknown
+		{
+			public const new Guid IID = .(0xdc12a680, 0x737f, 0x11cf, 0x88, 0x4d, 0x00, 0xaa, 0x00, 0x4b, 0x2e, 0x24);
+			
+			public function HRESULT(IWbemQualifierSet *self, PWSTR wszName, int32 lFlags, VARIANT* pVal, int32* plFlavor) Get;
+			public function HRESULT(IWbemQualifierSet *self, PWSTR wszName, VARIANT* pVal, int32 lFlavor) Put;
+			public function HRESULT(IWbemQualifierSet *self, PWSTR wszName) Delete;
+			public function HRESULT(IWbemQualifierSet *self, int32 lFlags, SAFEARRAY** pNames) GetNames;
+			public function HRESULT(IWbemQualifierSet *self, int32 lFlags) BeginEnumeration;
+			public function HRESULT(IWbemQualifierSet *self, int32 lFlags, BSTR* pstrName, VARIANT* pVal, int32* plFlavor) Next;
+			public function HRESULT(IWbemQualifierSet *self) EndEnumeration;
+		}
+		[CRepr]
+		public struct IWbemServices : IUnknown
+		{
+			public const new Guid IID = .(0x9556dc99, 0x828c, 0x11cf, 0xa3, 0x7e, 0x00, 0xaa, 0x00, 0x32, 0x40, 0xc7);
+			
+			public function HRESULT(IWbemServices *self, BSTR strNamespace, int32 lFlags, IWbemContext* pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult) OpenNamespace;
+			public function HRESULT(IWbemServices *self, IWbemObjectSink* pSink) CancelAsyncCall;
+			public function HRESULT(IWbemServices *self, int32 lFlags, IWbemObjectSink** ppResponseHandler) QueryObjectSink;
+			public function HRESULT(IWbemServices *self, BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult) GetObject;
+			public function HRESULT(IWbemServices *self, BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) GetObjectAsync;
+			public function HRESULT(IWbemServices *self, IWbemClassObject* pObject, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) PutClass;
+			public function HRESULT(IWbemServices *self, IWbemClassObject* pObject, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) PutClassAsync;
+			public function HRESULT(IWbemServices *self, BSTR strClass, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) DeleteClass;
+			public function HRESULT(IWbemServices *self, BSTR strClass, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) DeleteClassAsync;
+			public function HRESULT(IWbemServices *self, BSTR strSuperclass, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) CreateClassEnum;
+			public function HRESULT(IWbemServices *self, BSTR strSuperclass, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) CreateClassEnumAsync;
+			public function HRESULT(IWbemServices *self, IWbemClassObject* pInst, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) PutInstance;
+			public function HRESULT(IWbemServices *self, IWbemClassObject* pInst, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) PutInstanceAsync;
+			public function HRESULT(IWbemServices *self, BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) DeleteInstance;
+			public function HRESULT(IWbemServices *self, BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) DeleteInstanceAsync;
+			public function HRESULT(IWbemServices *self, BSTR strFilter, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) CreateInstanceEnum;
+			public function HRESULT(IWbemServices *self, BSTR strFilter, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) CreateInstanceEnumAsync;
+			public function HRESULT(IWbemServices *self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) ExecQuery;
+			public function HRESULT(IWbemServices *self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) ExecQueryAsync;
+			public function HRESULT(IWbemServices *self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) ExecNotificationQuery;
+			public function HRESULT(IWbemServices *self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) ExecNotificationQueryAsync;
+			public function HRESULT(IWbemServices *self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult) ExecMethod;
+			public function HRESULT(IWbemServices *self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemObjectSink* pResponseHandler) ExecMethodAsync;
+		}
+		[CRepr]
+		public struct IWbemLocator : IUnknown
+		{
+			public const new Guid IID = .(0xdc12a687, 0x737f, 0x11cf, 0x88, 0x4d, 0x00, 0xaa, 0x00, 0x4b, 0x2e, 0x24);
+			
+			public function HRESULT(IWbemLocator *self, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace) ConnectServer;
+		}
+		[CRepr]
+		public struct IWbemObjectSink : IUnknown
+		{
+			public const new Guid IID = .(0x7c857801, 0x7381, 0x11cf, 0x88, 0x4d, 0x00, 0xaa, 0x00, 0x4b, 0x2e, 0x24);
+			
+			public function HRESULT(IWbemObjectSink *self, int32 lObjectCount, IWbemClassObject** apObjArray) Indicate;
+			public function HRESULT(IWbemObjectSink *self, int32 lFlags, HRESULT hResult, BSTR strParam, IWbemClassObject* pObjParam) SetStatus;
+		}
+		[CRepr]
+		public struct IEnumWbemClassObject : IUnknown
+		{
+			public const new Guid IID = .(0x027947e1, 0xd731, 0x11ce, 0xa3, 0x57, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01);
+			
+			public function HRESULT(IEnumWbemClassObject *self) Reset;
+			public function HRESULT(IEnumWbemClassObject *self, int32 lTimeout, uint32 uCount, IWbemClassObject** apObjects, uint32* puReturned) Next;
+			public function HRESULT(IEnumWbemClassObject *self, uint32 uCount, IWbemObjectSink* pSink) NextAsync;
+			public function HRESULT(IEnumWbemClassObject *self, IEnumWbemClassObject** ppEnum) Clone;
+			public function HRESULT(IEnumWbemClassObject *self, int32 lTimeout, uint32 nCount) Skip;
+		}
+		[CRepr]
+		public struct IWbemCallResult : IUnknown
+		{
+			public const new Guid IID = .(0x44aca675, 0xe8fc, 0x11d0, 0xa0, 0x7c, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemCallResult *self, int32 lTimeout, IWbemClassObject** ppResultObject) GetResultObject;
+			public function HRESULT(IWbemCallResult *self, int32 lTimeout, BSTR* pstrResultString) GetResultString;
+			public function HRESULT(IWbemCallResult *self, int32 lTimeout, IWbemServices** ppServices) GetResultServices;
+			public function HRESULT(IWbemCallResult *self, int32 lTimeout, int32* plStatus) GetCallStatus;
+		}
+		[CRepr]
+		public struct IWbemContext : IUnknown
+		{
+			public const new Guid IID = .(0x44aca674, 0xe8fc, 0x11d0, 0xa0, 0x7c, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemContext *self, IWbemContext** ppNewCopy) Clone;
+			public function HRESULT(IWbemContext *self, int32 lFlags, SAFEARRAY** pNames) GetNames;
+			public function HRESULT(IWbemContext *self, int32 lFlags) BeginEnumeration;
+			public function HRESULT(IWbemContext *self, int32 lFlags, BSTR* pstrName, VARIANT* pValue) Next;
+			public function HRESULT(IWbemContext *self) EndEnumeration;
+			public function HRESULT(IWbemContext *self, PWSTR wszName, int32 lFlags, VARIANT* pValue) SetValue;
+			public function HRESULT(IWbemContext *self, PWSTR wszName, int32 lFlags, VARIANT* pValue) GetValue;
+			public function HRESULT(IWbemContext *self, PWSTR wszName, int32 lFlags) DeleteValue;
+			public function HRESULT(IWbemContext *self) DeleteAll;
+		}
+		[CRepr]
+		public struct IUnsecuredApartment : IUnknown
+		{
+			public const new Guid IID = .(0x1cfaba8c, 0x1523, 0x11d1, 0xad, 0x79, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+			
+			public function HRESULT(IUnsecuredApartment *self, IUnknown* pObject, IUnknown** ppStub) CreateObjectStub;
+		}
+		[CRepr]
+		public struct IWbemUnsecuredApartment : IUnsecuredApartment
+		{
+			public const new Guid IID = .(0x31739d04, 0x3471, 0x4cf4, 0x9a, 0x7c, 0x57, 0xa4, 0x4a, 0xe7, 0x19, 0x56);
+			
+			public function HRESULT(IWbemUnsecuredApartment *self, IWbemObjectSink* pSink, uint32 dwFlags, PWSTR wszReserved, IWbemObjectSink** ppStub) CreateSinkStub;
+		}
+		[CRepr]
+		public struct IWbemStatusCodeText : IUnknown
+		{
+			public const new Guid IID = .(0xeb87e1bc, 0x3233, 0x11d2, 0xae, 0xc9, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemStatusCodeText *self, HRESULT hRes, uint32 LocaleId, int32 lFlags, BSTR* MessageText) GetErrorCodeText;
+			public function HRESULT(IWbemStatusCodeText *self, HRESULT hRes, uint32 LocaleId, int32 lFlags, BSTR* MessageText) GetFacilityCodeText;
+		}
+		[CRepr]
+		public struct IWbemBackupRestore : IUnknown
+		{
+			public const new Guid IID = .(0xc49e32c7, 0xbc8b, 0x11d2, 0x85, 0xd4, 0x00, 0x10, 0x5a, 0x1f, 0x83, 0x04);
+			
+			public function HRESULT(IWbemBackupRestore *self, PWSTR strBackupToFile, int32 lFlags) Backup;
+			public function HRESULT(IWbemBackupRestore *self, PWSTR strRestoreFromFile, int32 lFlags) Restore;
+		}
+		[CRepr]
+		public struct IWbemBackupRestoreEx : IWbemBackupRestore
+		{
+			public const new Guid IID = .(0xa359dec5, 0xe813, 0x4834, 0x8a, 0x2a, 0xba, 0x7f, 0x1d, 0x77, 0x7d, 0x76);
+			
+			public function HRESULT(IWbemBackupRestoreEx *self) Pause;
+			public function HRESULT(IWbemBackupRestoreEx *self) Resume;
+		}
+		[CRepr]
+		public struct IWbemRefresher : IUnknown
+		{
+			public const new Guid IID = .(0x49353c99, 0x516b, 0x11d1, 0xae, 0xa6, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemRefresher *self, int32 lFlags) Refresh;
+		}
+		[CRepr]
+		public struct IWbemHiPerfEnum : IUnknown
+		{
+			public const new Guid IID = .(0x2705c288, 0x79ae, 0x11d2, 0xb3, 0x48, 0x00, 0x10, 0x5a, 0x1f, 0x81, 0x77);
+			
+			public function HRESULT(IWbemHiPerfEnum *self, int32 lFlags, uint32 uNumObjects, int32* apIds, IWbemObjectAccess** apObj) AddObjects;
+			public function HRESULT(IWbemHiPerfEnum *self, int32 lFlags, uint32 uNumObjects, int32* apIds) RemoveObjects;
+			public function HRESULT(IWbemHiPerfEnum *self, int32 lFlags, uint32 uNumObjects, IWbemObjectAccess** apObj, uint32* puReturned) GetObjects;
+			public function HRESULT(IWbemHiPerfEnum *self, int32 lFlags) RemoveAll;
+		}
+		[CRepr]
+		public struct IWbemConfigureRefresher : IUnknown
+		{
+			public const new Guid IID = .(0x49353c92, 0x516b, 0x11d1, 0xae, 0xa6, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemConfigureRefresher *self, IWbemServices* pNamespace, PWSTR wszPath, int32 lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, int32* plId) AddObjectByPath;
+			public function HRESULT(IWbemConfigureRefresher *self, IWbemServices* pNamespace, IWbemClassObject* pTemplate, int32 lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, int32* plId) AddObjectByTemplate;
+			public function HRESULT(IWbemConfigureRefresher *self, IWbemRefresher* pRefresher, int32 lFlags, int32* plId) AddRefresher;
+			public function HRESULT(IWbemConfigureRefresher *self, int32 lId, int32 lFlags) Remove;
+			public function HRESULT(IWbemConfigureRefresher *self, IWbemServices* pNamespace, PWSTR wszClassName, int32 lFlags, IWbemContext* pContext, IWbemHiPerfEnum** ppEnum, int32* plId) AddEnum;
+		}
+		[CRepr]
+		public struct IWbemObjectSinkEx : IWbemObjectSink
+		{
+			public const new Guid IID = .(0xe7d35cfa, 0x348b, 0x485e, 0xb5, 0x24, 0x25, 0x27, 0x25, 0xd6, 0x97, 0xca);
+			
+			public function HRESULT(IWbemObjectSinkEx *self, uint32 uChannel, BSTR strMessage) WriteMessage;
+			public function HRESULT(IWbemObjectSinkEx *self, IWbemClassObject* pObjError, uint8* puReturned) WriteError;
+			public function HRESULT(IWbemObjectSinkEx *self, BSTR strMessage, uint8 uPromptType, uint8* puReturned) PromptUser;
+			public function HRESULT(IWbemObjectSinkEx *self, BSTR strActivity, BSTR strCurrentOperation, BSTR strStatusDescription, uint32 uPercentComplete, uint32 uSecondsRemaining) WriteProgress;
+			public function HRESULT(IWbemObjectSinkEx *self, BSTR strName, VARIANT* vtValue, uint32 ulType, uint32 ulFlags) WriteStreamParameter;
+		}
+		[CRepr]
+		public struct IWbemShutdown : IUnknown
+		{
+			public const new Guid IID = .(0xb7b31df9, 0xd515, 0x11d3, 0xa1, 0x1c, 0x00, 0x10, 0x5a, 0x1f, 0x51, 0x5a);
+			
+			public function HRESULT(IWbemShutdown *self, int32 uReason, uint32 uMaxMilliseconds, IWbemContext* pCtx) Shutdown;
+		}
+		[CRepr]
+		public struct IWbemObjectTextSrc : IUnknown
+		{
+			public const new Guid IID = .(0xbfbf883a, 0xcad7, 0x11d3, 0xa1, 0x1b, 0x00, 0x10, 0x5a, 0x1f, 0x51, 0x5a);
+			
+			public function HRESULT(IWbemObjectTextSrc *self, int32 lFlags, IWbemClassObject* pObj, uint32 uObjTextFormat, IWbemContext* pCtx, BSTR* strText) GetText;
+			public function HRESULT(IWbemObjectTextSrc *self, int32 lFlags, BSTR strText, uint32 uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj) CreateFromText;
+		}
+		[CRepr]
+		public struct IMofCompiler : IUnknown
+		{
+			public const new Guid IID = .(0x6daf974e, 0x2e37, 0x11d2, 0xae, 0xc9, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IMofCompiler *self, PWSTR FileName, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo) CompileFile;
+			public function HRESULT(IMofCompiler *self, int32 BuffSize, uint8* pBuffer, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo) CompileBuffer;
+			public function HRESULT(IMofCompiler *self, PWSTR TextFileName, PWSTR BMOFFileName, PWSTR ServerAndNamespace, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo) CreateBMOF;
+		}
+		[CRepr]
+		public struct IWbemPropertyProvider : IUnknown
+		{
+			public const new Guid IID = .(0xce61e841, 0x65bc, 0x11d0, 0xb6, 0xbd, 0x00, 0xaa, 0x00, 0x32, 0x40, 0xc7);
+			
+			public function HRESULT(IWbemPropertyProvider *self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, VARIANT* pvValue) GetProperty;
+			public function HRESULT(IWbemPropertyProvider *self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, VARIANT* pvValue) PutProperty;
+		}
+		[CRepr]
+		public struct IWbemUnboundObjectSink : IUnknown
+		{
+			public const new Guid IID = .(0xe246107b, 0xb06e, 0x11d0, 0xad, 0x61, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+			
+			public function HRESULT(IWbemUnboundObjectSink *self, IWbemClassObject* pLogicalConsumer, int32 lNumObjects, IWbemClassObject** apObjects) IndicateToConsumer;
+		}
+		[CRepr]
+		public struct IWbemEventProvider : IUnknown
+		{
+			public const new Guid IID = .(0xe245105b, 0xb06e, 0x11d0, 0xad, 0x61, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+			
+			public function HRESULT(IWbemEventProvider *self, IWbemObjectSink* pSink, int32 lFlags) ProvideEvents;
+		}
+		[CRepr]
+		public struct IWbemEventProviderQuerySink : IUnknown
+		{
+			public const new Guid IID = .(0x580acaf8, 0xfa1c, 0x11d0, 0xad, 0x72, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+			
+			public function HRESULT(IWbemEventProviderQuerySink *self, uint32 dwId, uint16* wszQueryLanguage, uint16* wszQuery) NewQuery;
+			public function HRESULT(IWbemEventProviderQuerySink *self, uint32 dwId) CancelQuery;
+		}
+		[CRepr]
+		public struct IWbemEventProviderSecurity : IUnknown
+		{
+			public const new Guid IID = .(0x631f7d96, 0xd993, 0x11d2, 0xb3, 0x39, 0x00, 0x10, 0x5a, 0x1f, 0x4a, 0xaf);
+			
+			public function HRESULT(IWbemEventProviderSecurity *self, uint16* wszQueryLanguage, uint16* wszQuery, int32 lSidLength, uint8* pSid) AccessCheck;
+		}
+		[CRepr]
+		public struct IWbemEventConsumerProvider : IUnknown
+		{
+			public const new Guid IID = .(0xe246107a, 0xb06e, 0x11d0, 0xad, 0x61, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+			
+			public function HRESULT(IWbemEventConsumerProvider *self, IWbemClassObject* pLogicalConsumer, IWbemUnboundObjectSink** ppConsumer) FindConsumer;
+		}
+		[CRepr]
+		public struct IWbemProviderInitSink : IUnknown
+		{
+			public const new Guid IID = .(0x1be41571, 0x91dd, 0x11d1, 0xae, 0xb2, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemProviderInitSink *self, int32 lStatus, int32 lFlags) SetStatus;
+		}
+		[CRepr]
+		public struct IWbemProviderInit : IUnknown
+		{
+			public const new Guid IID = .(0x1be41572, 0x91dd, 0x11d1, 0xae, 0xb2, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemProviderInit *self, PWSTR wszUser, int32 lFlags, PWSTR wszNamespace, PWSTR wszLocale, IWbemServices* pNamespace, IWbemContext* pCtx, IWbemProviderInitSink* pInitSink) Initialize;
+		}
+		[CRepr]
+		public struct IWbemHiPerfProvider : IUnknown
+		{
+			public const new Guid IID = .(0x49353c93, 0x516b, 0x11d1, 0xae, 0xa6, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, PWSTR wszClass, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pSink) QueryInstances;
+			public function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, int32 lFlags, IWbemRefresher** ppRefresher) CreateRefresher;
+			public function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, IWbemObjectAccess* pTemplate, IWbemRefresher* pRefresher, int32 lFlags, IWbemContext* pContext, IWbemObjectAccess** ppRefreshable, int32* plId) CreateRefreshableObject;
+			public function HRESULT(IWbemHiPerfProvider *self, IWbemRefresher* pRefresher, int32 lId, int32 lFlags) StopRefreshing;
+			public function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, PWSTR wszClass, IWbemRefresher* pRefresher, int32 lFlags, IWbemContext* pContext, IWbemHiPerfEnum* pHiPerfEnum, int32* plId) CreateRefreshableEnum;
+			public function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, int32 lNumObjects, IWbemObjectAccess** apObj, int32 lFlags, IWbemContext* pContext) GetObjects;
+		}
+		[CRepr]
+		public struct IWbemDecoupledRegistrar : IUnknown
+		{
+			public const new Guid IID = .(0x1005cbcf, 0xe64f, 0x4646, 0xbc, 0xd3, 0x3a, 0x08, 0x9d, 0x8a, 0x84, 0xb4);
+			
+			public function HRESULT(IWbemDecoupledRegistrar *self, int32 a_Flags, IWbemContext* a_Context, PWSTR a_User, PWSTR a_Locale, PWSTR a_Scope, PWSTR a_Registration, IUnknown* pIUnknown) Register;
+			public function HRESULT(IWbemDecoupledRegistrar *self) UnRegister;
+		}
+		[CRepr]
+		public struct IWbemProviderIdentity : IUnknown
+		{
+			public const new Guid IID = .(0x631f7d97, 0xd993, 0x11d2, 0xb3, 0x39, 0x00, 0x10, 0x5a, 0x1f, 0x4a, 0xaf);
+			
+			public function HRESULT(IWbemProviderIdentity *self, int32 lFlags, IWbemClassObject* pProvReg) SetRegistrationObject;
+		}
+		[CRepr]
+		public struct IWbemDecoupledBasicEventProvider : IWbemDecoupledRegistrar
+		{
+			public const new Guid IID = .(0x86336d20, 0xca11, 0x4786, 0x9e, 0xf1, 0xbc, 0x8a, 0x94, 0x6b, 0x42, 0xfc);
+			
+			public function HRESULT(IWbemDecoupledBasicEventProvider *self, int32 a_Flags, IWbemContext* a_Context, IWbemObjectSink** a_Sink) GetSink;
+			public function HRESULT(IWbemDecoupledBasicEventProvider *self, int32 a_Flags, IWbemContext* a_Context, IWbemServices** a_Service) GetService;
+		}
+		[CRepr]
+		public struct IWbemEventSink : IWbemObjectSink
+		{
+			public const new Guid IID = .(0x3ae0080a, 0x7e3a, 0x4366, 0xbf, 0x89, 0x0f, 0xee, 0xdc, 0x93, 0x16, 0x59);
+			
+			public function HRESULT(IWbemEventSink *self, int32 lSDLength, uint8* pSD) SetSinkSecurity;
+			public function HRESULT(IWbemEventSink *self) IsActive;
+			public function HRESULT(IWbemEventSink *self, int32 lNumQueries, PWSTR* awszQueries, IUnknown* pCallback, IWbemEventSink** ppSink) GetRestrictedSink;
+			public function HRESULT(IWbemEventSink *self, int32 lFlags, uint32 dwMaxBufferSize, uint32 dwMaxSendLatency) SetBatchingParameters;
+		}
+		[CRepr]
+		public struct ISWbemServices : IDispatch
+		{
+			public const new Guid IID = .(0x76a6415c, 0xcb41, 0x11d1, 0x8b, 0x02, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemServices *self, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObject** objWbemObject) Get;
+			public function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) GetAsync;
+			public function HRESULT(ISWbemServices *self, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet) Delete;
+			public function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) DeleteAsync;
+			public function HRESULT(ISWbemServices *self, BSTR strClass, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) InstancesOf;
+			public function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strClass, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) InstancesOfAsync;
+			public function HRESULT(ISWbemServices *self, BSTR strSuperclass, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) SubclassesOf;
+			public function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strSuperclass, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) SubclassesOfAsync;
+			public function HRESULT(ISWbemServices *self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) ExecQuery;
+			public function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 lFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ExecQueryAsync;
+			public function HRESULT(ISWbemServices *self, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) AssociatorsOf;
+			public function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) AssociatorsOfAsync;
+			public function HRESULT(ISWbemServices *self, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) ReferencesTo;
+			public function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ReferencesToAsync;
+			public function HRESULT(ISWbemServices *self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemEventSource** objWbemEventSource) ExecNotificationQuery;
+			public function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ExecNotificationQueryAsync;
+			public function HRESULT(ISWbemServices *self, BSTR strObjectPath, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObject** objWbemOutParameters) ExecMethod;
+			public function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ExecMethodAsync;
+			public function HRESULT(ISWbemServices *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+		}
+		[CRepr]
+		public struct ISWbemLocator : IDispatch
+		{
+			public const new Guid IID = .(0x76a6415b, 0xcb41, 0x11d1, 0x8b, 0x02, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemLocator *self, BSTR strServer, BSTR strNamespace, BSTR strUser, BSTR strPassword, BSTR strLocale, BSTR strAuthority, int32 iSecurityFlags, IDispatch* objWbemNamedValueSet, ISWbemServices** objWbemServices) ConnectServer;
+			public function HRESULT(ISWbemLocator *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+		}
+		[CRepr]
+		public struct ISWbemObject : IDispatch
+		{
+			public const new Guid IID = .(0x76a6415a, 0xcb41, 0x11d1, 0x8b, 0x02, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemObject *self, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectPath** objWbemObjectPath) Put_;
+			public function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) PutAsync_;
+			public function HRESULT(ISWbemObject *self, int32 iFlags, IDispatch* objWbemNamedValueSet) Delete_;
+			public function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) DeleteAsync_;
+			public function HRESULT(ISWbemObject *self, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) Instances_;
+			public function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) InstancesAsync_;
+			public function HRESULT(ISWbemObject *self, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) Subclasses_;
+			public function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) SubclassesAsync_;
+			public function HRESULT(ISWbemObject *self, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) Associators_;
+			public function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) AssociatorsAsync_;
+			public function HRESULT(ISWbemObject *self, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) References_;
+			public function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ReferencesAsync_;
+			public function HRESULT(ISWbemObject *self, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObject** objWbemOutParameters) ExecMethod_;
+			public function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ExecMethodAsync_;
+			public function HRESULT(ISWbemObject *self, ISWbemObject** objWbemObject) Clone_;
+			public function HRESULT(ISWbemObject *self, int32 iFlags, BSTR* strObjectText) GetObjectText_;
+			public function HRESULT(ISWbemObject *self, int32 iFlags, ISWbemObject** objWbemObject) SpawnDerivedClass_;
+			public function HRESULT(ISWbemObject *self, int32 iFlags, ISWbemObject** objWbemObject) SpawnInstance_;
+			public function HRESULT(ISWbemObject *self, IDispatch* objWbemObject, int32 iFlags, int16* bResult) CompareTo_;
+			public function HRESULT(ISWbemObject *self, ISWbemQualifierSet** objWbemQualifierSet) get_Qualifiers_;
+			public function HRESULT(ISWbemObject *self, ISWbemPropertySet** objWbemPropertySet) get_Properties_;
+			public function HRESULT(ISWbemObject *self, ISWbemMethodSet** objWbemMethodSet) get_Methods_;
+			public function HRESULT(ISWbemObject *self, VARIANT* strClassNameArray) get_Derivation_;
+			public function HRESULT(ISWbemObject *self, ISWbemObjectPath** objWbemObjectPath) get_Path_;
+			public function HRESULT(ISWbemObject *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+		}
+		[CRepr]
+		public struct ISWbemObjectSet : IDispatch
+		{
+			public const new Guid IID = .(0x76a6415f, 0xcb41, 0x11d1, 0x8b, 0x02, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemObjectSet *self, IUnknown** pUnk) get__NewEnum;
+			public function HRESULT(ISWbemObjectSet *self, BSTR strObjectPath, int32 iFlags, ISWbemObject** objWbemObject) Item;
+			public function HRESULT(ISWbemObjectSet *self, int32* iCount) get_Count;
+			public function HRESULT(ISWbemObjectSet *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+			public function HRESULT(ISWbemObjectSet *self, int32 lIndex, ISWbemObject** objWbemObject) ItemIndex;
+		}
+		[CRepr]
+		public struct ISWbemNamedValue : IDispatch
+		{
+			public const new Guid IID = .(0x76a64164, 0xcb41, 0x11d1, 0x8b, 0x02, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemNamedValue *self, VARIANT* varValue) get_Value;
+			public function HRESULT(ISWbemNamedValue *self, VARIANT* varValue) put_Value;
+			public function HRESULT(ISWbemNamedValue *self, BSTR* strName) get_Name;
+		}
+		[CRepr]
+		public struct ISWbemNamedValueSet : IDispatch
+		{
+			public const new Guid IID = .(0xcf2376ea, 0xce8c, 0x11d1, 0x8b, 0x05, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemNamedValueSet *self, IUnknown** pUnk) get__NewEnum;
+			public function HRESULT(ISWbemNamedValueSet *self, BSTR strName, int32 iFlags, ISWbemNamedValue** objWbemNamedValue) Item;
+			public function HRESULT(ISWbemNamedValueSet *self, int32* iCount) get_Count;
+			public function HRESULT(ISWbemNamedValueSet *self, BSTR strName, VARIANT* varValue, int32 iFlags, ISWbemNamedValue** objWbemNamedValue) Add;
+			public function HRESULT(ISWbemNamedValueSet *self, BSTR strName, int32 iFlags) Remove;
+			public function HRESULT(ISWbemNamedValueSet *self, ISWbemNamedValueSet** objWbemNamedValueSet) Clone;
+			public function HRESULT(ISWbemNamedValueSet *self) DeleteAll;
+		}
+		[CRepr]
+		public struct ISWbemQualifier : IDispatch
+		{
+			public const new Guid IID = .(0x79b05932, 0xd3b7, 0x11d1, 0x8b, 0x06, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemQualifier *self, VARIANT* varValue) get_Value;
+			public function HRESULT(ISWbemQualifier *self, VARIANT* varValue) put_Value;
+			public function HRESULT(ISWbemQualifier *self, BSTR* strName) get_Name;
+			public function HRESULT(ISWbemQualifier *self, int16* bIsLocal) get_IsLocal;
+			public function HRESULT(ISWbemQualifier *self, int16* bPropagatesToSubclass) get_PropagatesToSubclass;
+			public function HRESULT(ISWbemQualifier *self, int16 bPropagatesToSubclass) put_PropagatesToSubclass;
+			public function HRESULT(ISWbemQualifier *self, int16* bPropagatesToInstance) get_PropagatesToInstance;
+			public function HRESULT(ISWbemQualifier *self, int16 bPropagatesToInstance) put_PropagatesToInstance;
+			public function HRESULT(ISWbemQualifier *self, int16* bIsOverridable) get_IsOverridable;
+			public function HRESULT(ISWbemQualifier *self, int16 bIsOverridable) put_IsOverridable;
+			public function HRESULT(ISWbemQualifier *self, int16* bIsAmended) get_IsAmended;
+		}
+		[CRepr]
+		public struct ISWbemQualifierSet : IDispatch
+		{
+			public const new Guid IID = .(0x9b16ed16, 0xd3df, 0x11d1, 0x8b, 0x08, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemQualifierSet *self, IUnknown** pUnk) get__NewEnum;
+			public function HRESULT(ISWbemQualifierSet *self, BSTR name, int32 iFlags, ISWbemQualifier** objWbemQualifier) Item;
+			public function HRESULT(ISWbemQualifierSet *self, int32* iCount) get_Count;
+			public function HRESULT(ISWbemQualifierSet *self, BSTR strName, VARIANT* varVal, int16 bPropagatesToSubclass, int16 bPropagatesToInstance, int16 bIsOverridable, int32 iFlags, ISWbemQualifier** objWbemQualifier) Add;
+			public function HRESULT(ISWbemQualifierSet *self, BSTR strName, int32 iFlags) Remove;
+		}
+		[CRepr]
+		public struct ISWbemProperty : IDispatch
+		{
+			public const new Guid IID = .(0x1a388f98, 0xd4ba, 0x11d1, 0x8b, 0x09, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemProperty *self, VARIANT* varValue) get_Value;
+			public function HRESULT(ISWbemProperty *self, VARIANT* varValue) put_Value;
+			public function HRESULT(ISWbemProperty *self, BSTR* strName) get_Name;
+			public function HRESULT(ISWbemProperty *self, int16* bIsLocal) get_IsLocal;
+			public function HRESULT(ISWbemProperty *self, BSTR* strOrigin) get_Origin;
+			public function HRESULT(ISWbemProperty *self, WbemCimtypeEnum* iCimType) get_CIMType;
+			public function HRESULT(ISWbemProperty *self, ISWbemQualifierSet** objWbemQualifierSet) get_Qualifiers_;
+			public function HRESULT(ISWbemProperty *self, int16* bIsArray) get_IsArray;
+		}
+		[CRepr]
+		public struct ISWbemPropertySet : IDispatch
+		{
+			public const new Guid IID = .(0xdea0a7b2, 0xd4ba, 0x11d1, 0x8b, 0x09, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemPropertySet *self, IUnknown** pUnk) get__NewEnum;
+			public function HRESULT(ISWbemPropertySet *self, BSTR strName, int32 iFlags, ISWbemProperty** objWbemProperty) Item;
+			public function HRESULT(ISWbemPropertySet *self, int32* iCount) get_Count;
+			public function HRESULT(ISWbemPropertySet *self, BSTR strName, WbemCimtypeEnum iCIMType, int16 bIsArray, int32 iFlags, ISWbemProperty** objWbemProperty) Add;
+			public function HRESULT(ISWbemPropertySet *self, BSTR strName, int32 iFlags) Remove;
+		}
+		[CRepr]
+		public struct ISWbemMethod : IDispatch
+		{
+			public const new Guid IID = .(0x422e8e90, 0xd955, 0x11d1, 0x8b, 0x09, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemMethod *self, BSTR* strName) get_Name;
+			public function HRESULT(ISWbemMethod *self, BSTR* strOrigin) get_Origin;
+			public function HRESULT(ISWbemMethod *self, ISWbemObject** objWbemInParameters) get_InParameters;
+			public function HRESULT(ISWbemMethod *self, ISWbemObject** objWbemOutParameters) get_OutParameters;
+			public function HRESULT(ISWbemMethod *self, ISWbemQualifierSet** objWbemQualifierSet) get_Qualifiers_;
+		}
+		[CRepr]
+		public struct ISWbemMethodSet : IDispatch
+		{
+			public const new Guid IID = .(0xc93ba292, 0xd955, 0x11d1, 0x8b, 0x09, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemMethodSet *self, IUnknown** pUnk) get__NewEnum;
+			public function HRESULT(ISWbemMethodSet *self, BSTR strName, int32 iFlags, ISWbemMethod** objWbemMethod) Item;
+			public function HRESULT(ISWbemMethodSet *self, int32* iCount) get_Count;
+		}
+		[CRepr]
+		public struct ISWbemEventSource : IDispatch
+		{
+			public const new Guid IID = .(0x27d54d92, 0x0ebe, 0x11d2, 0x8b, 0x22, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemEventSource *self, int32 iTimeoutMs, ISWbemObject** objWbemObject) NextEvent;
+			public function HRESULT(ISWbemEventSource *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+		}
+		[CRepr]
+		public struct ISWbemObjectPath : IDispatch
+		{
+			public const new Guid IID = .(0x5791bc27, 0xce9c, 0x11d1, 0x97, 0xbf, 0x00, 0x00, 0xf8, 0x1e, 0x84, 0x9c);
+			
+			public function HRESULT(ISWbemObjectPath *self, BSTR* strPath) get_Path;
+			public function HRESULT(ISWbemObjectPath *self, BSTR strPath) put_Path;
+			public function HRESULT(ISWbemObjectPath *self, BSTR* strRelPath) get_RelPath;
+			public function HRESULT(ISWbemObjectPath *self, BSTR strRelPath) put_RelPath;
+			public function HRESULT(ISWbemObjectPath *self, BSTR* strServer) get_Server;
+			public function HRESULT(ISWbemObjectPath *self, BSTR strServer) put_Server;
+			public function HRESULT(ISWbemObjectPath *self, BSTR* strNamespace) get_Namespace;
+			public function HRESULT(ISWbemObjectPath *self, BSTR strNamespace) put_Namespace;
+			public function HRESULT(ISWbemObjectPath *self, BSTR* strParentNamespace) get_ParentNamespace;
+			public function HRESULT(ISWbemObjectPath *self, BSTR* strDisplayName) get_DisplayName;
+			public function HRESULT(ISWbemObjectPath *self, BSTR strDisplayName) put_DisplayName;
+			public function HRESULT(ISWbemObjectPath *self, BSTR* strClass) get_Class;
+			public function HRESULT(ISWbemObjectPath *self, BSTR strClass) put_Class;
+			public function HRESULT(ISWbemObjectPath *self, int16* bIsClass) get_IsClass;
+			public function HRESULT(ISWbemObjectPath *self) SetAsClass;
+			public function HRESULT(ISWbemObjectPath *self, int16* bIsSingleton) get_IsSingleton;
+			public function HRESULT(ISWbemObjectPath *self) SetAsSingleton;
+			public function HRESULT(ISWbemObjectPath *self, ISWbemNamedValueSet** objWbemNamedValueSet) get_Keys;
+			public function HRESULT(ISWbemObjectPath *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+			public function HRESULT(ISWbemObjectPath *self, BSTR* strLocale) get_Locale;
+			public function HRESULT(ISWbemObjectPath *self, BSTR strLocale) put_Locale;
+			public function HRESULT(ISWbemObjectPath *self, BSTR* strAuthority) get_Authority;
+			public function HRESULT(ISWbemObjectPath *self, BSTR strAuthority) put_Authority;
+		}
+		[CRepr]
+		public struct ISWbemLastError : ISWbemObject
+		{
+			public const new Guid IID = .(0xd962db84, 0xd4bb, 0x11d1, 0x8b, 0x09, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+		}
+		[CRepr]
+		public struct ISWbemSinkEvents : IDispatch
+		{
+			public const new Guid IID = .(0x75718ca0, 0xf029, 0x11d1, 0xa1, 0xac, 0x00, 0xc0, 0x4f, 0xb6, 0xc2, 0x23);
+			
+		}
+		[CRepr]
+		public struct ISWbemSink : IDispatch
+		{
+			public const new Guid IID = .(0x75718c9f, 0xf029, 0x11d1, 0xa1, 0xac, 0x00, 0xc0, 0x4f, 0xb6, 0xc2, 0x23);
+			
+			public function HRESULT(ISWbemSink *self) Cancel;
+		}
+		[CRepr]
+		public struct ISWbemSecurity : IDispatch
+		{
+			public const new Guid IID = .(0xb54d66e6, 0x2287, 0x11d2, 0x8b, 0x33, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemSecurity *self, WbemImpersonationLevelEnum* iImpersonationLevel) get_ImpersonationLevel;
+			public function HRESULT(ISWbemSecurity *self, WbemImpersonationLevelEnum iImpersonationLevel) put_ImpersonationLevel;
+			public function HRESULT(ISWbemSecurity *self, WbemAuthenticationLevelEnum* iAuthenticationLevel) get_AuthenticationLevel;
+			public function HRESULT(ISWbemSecurity *self, WbemAuthenticationLevelEnum iAuthenticationLevel) put_AuthenticationLevel;
+			public function HRESULT(ISWbemSecurity *self, ISWbemPrivilegeSet** objWbemPrivilegeSet) get_Privileges;
+		}
+		[CRepr]
+		public struct ISWbemPrivilege : IDispatch
+		{
+			public const new Guid IID = .(0x26ee67bd, 0x5804, 0x11d2, 0x8b, 0x4a, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemPrivilege *self, int16* bIsEnabled) get_IsEnabled;
+			public function HRESULT(ISWbemPrivilege *self, int16 bIsEnabled) put_IsEnabled;
+			public function HRESULT(ISWbemPrivilege *self, BSTR* strDisplayName) get_Name;
+			public function HRESULT(ISWbemPrivilege *self, BSTR* strDisplayName) get_DisplayName;
+			public function HRESULT(ISWbemPrivilege *self, WbemPrivilegeEnum* iPrivilege) get_Identifier;
+		}
+		[CRepr]
+		public struct ISWbemPrivilegeSet : IDispatch
+		{
+			public const new Guid IID = .(0x26ee67bf, 0x5804, 0x11d2, 0x8b, 0x4a, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6);
+			
+			public function HRESULT(ISWbemPrivilegeSet *self, IUnknown** pUnk) get__NewEnum;
+			public function HRESULT(ISWbemPrivilegeSet *self, WbemPrivilegeEnum iPrivilege, ISWbemPrivilege** objWbemPrivilege) Item;
+			public function HRESULT(ISWbemPrivilegeSet *self, int32* iCount) get_Count;
+			public function HRESULT(ISWbemPrivilegeSet *self, WbemPrivilegeEnum iPrivilege, int16 bIsEnabled, ISWbemPrivilege** objWbemPrivilege) Add;
+			public function HRESULT(ISWbemPrivilegeSet *self, WbemPrivilegeEnum iPrivilege) Remove;
+			public function HRESULT(ISWbemPrivilegeSet *self) DeleteAll;
+			public function HRESULT(ISWbemPrivilegeSet *self, BSTR strPrivilege, int16 bIsEnabled, ISWbemPrivilege** objWbemPrivilege) AddAsString;
+		}
+		[CRepr]
+		public struct ISWbemServicesEx : ISWbemServices
+		{
+			public const new Guid IID = .(0xd2f68443, 0x85dc, 0x427e, 0x91, 0xd8, 0x36, 0x65, 0x54, 0xcc, 0x75, 0x4c);
+			
+			public function HRESULT(ISWbemServicesEx *self, ISWbemObjectEx* objWbemObject, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectPath** objWbemObjectPath) Put;
+			public function HRESULT(ISWbemServicesEx *self, ISWbemSink* objWbemSink, ISWbemObjectEx* objWbemObject, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) PutAsync;
+		}
+		[CRepr]
+		public struct ISWbemObjectEx : ISWbemObject
+		{
+			public const new Guid IID = .(0x269ad56a, 0x8a67, 0x4129, 0xbc, 0x8c, 0x05, 0x06, 0xdc, 0xfe, 0x98, 0x80);
+			
+			public function HRESULT(ISWbemObjectEx *self, int32 iFlags, IDispatch* objWbemNamedValueSet) Refresh_;
+			public function HRESULT(ISWbemObjectEx *self, ISWbemPropertySet** objWbemPropertySet) get_SystemProperties_;
+			public function HRESULT(ISWbemObjectEx *self, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, IDispatch* objWbemNamedValueSet, BSTR* bsText) GetText_;
+			public function HRESULT(ISWbemObjectEx *self, BSTR bsText, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, IDispatch* objWbemNamedValueSet) SetFromText_;
+		}
+		[CRepr]
+		public struct ISWbemDateTime : IDispatch
+		{
+			public const new Guid IID = .(0x5e97458a, 0xcf77, 0x11d3, 0xb3, 0x8f, 0x00, 0x10, 0x5a, 0x1f, 0x47, 0x3a);
+			
+			public function HRESULT(ISWbemDateTime *self, BSTR* strValue) get_Value;
+			public function HRESULT(ISWbemDateTime *self, BSTR strValue) put_Value;
+			public function HRESULT(ISWbemDateTime *self, int32* iYear) get_Year;
+			public function HRESULT(ISWbemDateTime *self, int32 iYear) put_Year;
+			public function HRESULT(ISWbemDateTime *self, int16* bYearSpecified) get_YearSpecified;
+			public function HRESULT(ISWbemDateTime *self, int16 bYearSpecified) put_YearSpecified;
+			public function HRESULT(ISWbemDateTime *self, int32* iMonth) get_Month;
+			public function HRESULT(ISWbemDateTime *self, int32 iMonth) put_Month;
+			public function HRESULT(ISWbemDateTime *self, int16* bMonthSpecified) get_MonthSpecified;
+			public function HRESULT(ISWbemDateTime *self, int16 bMonthSpecified) put_MonthSpecified;
+			public function HRESULT(ISWbemDateTime *self, int32* iDay) get_Day;
+			public function HRESULT(ISWbemDateTime *self, int32 iDay) put_Day;
+			public function HRESULT(ISWbemDateTime *self, int16* bDaySpecified) get_DaySpecified;
+			public function HRESULT(ISWbemDateTime *self, int16 bDaySpecified) put_DaySpecified;
+			public function HRESULT(ISWbemDateTime *self, int32* iHours) get_Hours;
+			public function HRESULT(ISWbemDateTime *self, int32 iHours) put_Hours;
+			public function HRESULT(ISWbemDateTime *self, int16* bHoursSpecified) get_HoursSpecified;
+			public function HRESULT(ISWbemDateTime *self, int16 bHoursSpecified) put_HoursSpecified;
+			public function HRESULT(ISWbemDateTime *self, int32* iMinutes) get_Minutes;
+			public function HRESULT(ISWbemDateTime *self, int32 iMinutes) put_Minutes;
+			public function HRESULT(ISWbemDateTime *self, int16* bMinutesSpecified) get_MinutesSpecified;
+			public function HRESULT(ISWbemDateTime *self, int16 bMinutesSpecified) put_MinutesSpecified;
+			public function HRESULT(ISWbemDateTime *self, int32* iSeconds) get_Seconds;
+			public function HRESULT(ISWbemDateTime *self, int32 iSeconds) put_Seconds;
+			public function HRESULT(ISWbemDateTime *self, int16* bSecondsSpecified) get_SecondsSpecified;
+			public function HRESULT(ISWbemDateTime *self, int16 bSecondsSpecified) put_SecondsSpecified;
+			public function HRESULT(ISWbemDateTime *self, int32* iMicroseconds) get_Microseconds;
+			public function HRESULT(ISWbemDateTime *self, int32 iMicroseconds) put_Microseconds;
+			public function HRESULT(ISWbemDateTime *self, int16* bMicrosecondsSpecified) get_MicrosecondsSpecified;
+			public function HRESULT(ISWbemDateTime *self, int16 bMicrosecondsSpecified) put_MicrosecondsSpecified;
+			public function HRESULT(ISWbemDateTime *self, int32* iUTC) get_UTC;
+			public function HRESULT(ISWbemDateTime *self, int32 iUTC) put_UTC;
+			public function HRESULT(ISWbemDateTime *self, int16* bUTCSpecified) get_UTCSpecified;
+			public function HRESULT(ISWbemDateTime *self, int16 bUTCSpecified) put_UTCSpecified;
+			public function HRESULT(ISWbemDateTime *self, int16* bIsInterval) get_IsInterval;
+			public function HRESULT(ISWbemDateTime *self, int16 bIsInterval) put_IsInterval;
+			public function HRESULT(ISWbemDateTime *self, int16 bIsLocal, double* dVarDate) GetVarDate;
+			public function HRESULT(ISWbemDateTime *self, double dVarDate, int16 bIsLocal) SetVarDate;
+			public function HRESULT(ISWbemDateTime *self, int16 bIsLocal, BSTR* strFileTime) GetFileTime;
+			public function HRESULT(ISWbemDateTime *self, BSTR strFileTime, int16 bIsLocal) SetFileTime;
+		}
+		[CRepr]
+		public struct ISWbemRefresher : IDispatch
+		{
+			public const new Guid IID = .(0x14d8250e, 0xd9c2, 0x11d3, 0xb3, 0x8f, 0x00, 0x10, 0x5a, 0x1f, 0x47, 0x3a);
+			
+			public function HRESULT(ISWbemRefresher *self, IUnknown** pUnk) get__NewEnum;
+			public function HRESULT(ISWbemRefresher *self, int32 iIndex, ISWbemRefreshableItem** objWbemRefreshableItem) Item;
+			public function HRESULT(ISWbemRefresher *self, int32* iCount) get_Count;
+			public function HRESULT(ISWbemRefresher *self, ISWbemServicesEx* objWbemServices, BSTR bsInstancePath, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemRefreshableItem** objWbemRefreshableItem) Add;
+			public function HRESULT(ISWbemRefresher *self, ISWbemServicesEx* objWbemServices, BSTR bsClassName, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemRefreshableItem** objWbemRefreshableItem) AddEnum;
+			public function HRESULT(ISWbemRefresher *self, int32 iIndex, int32 iFlags) Remove;
+			public function HRESULT(ISWbemRefresher *self, int32 iFlags) Refresh;
+			public function HRESULT(ISWbemRefresher *self, int16* bCount) get_AutoReconnect;
+			public function HRESULT(ISWbemRefresher *self, int16 bCount) put_AutoReconnect;
+			public function HRESULT(ISWbemRefresher *self) DeleteAll;
+		}
+		[CRepr]
+		public struct ISWbemRefreshableItem : IDispatch
+		{
+			public const new Guid IID = .(0x5ad4bf92, 0xdaab, 0x11d3, 0xb3, 0x8f, 0x00, 0x10, 0x5a, 0x1f, 0x47, 0x3a);
+			
+			public function HRESULT(ISWbemRefreshableItem *self, int32* iIndex) get_Index;
+			public function HRESULT(ISWbemRefreshableItem *self, ISWbemRefresher** objWbemRefresher) get_Refresher;
+			public function HRESULT(ISWbemRefreshableItem *self, int16* bIsSet) get_IsSet;
+			public function HRESULT(ISWbemRefreshableItem *self, ISWbemObjectEx** objWbemObject) get_Object;
+			public function HRESULT(ISWbemRefreshableItem *self, ISWbemObjectSet** objWbemObjectSet) get_ObjectSet;
+			public function HRESULT(ISWbemRefreshableItem *self, int32 iFlags) Remove;
+		}
+		[CRepr]
+		public struct IWMIExtension : IDispatch
+		{
+			public const new Guid IID = .(0xadc1f06e, 0x5c7e, 0x11d2, 0x8b, 0x74, 0x00, 0x10, 0x4b, 0x2a, 0xfb, 0x41);
+			
+			public function HRESULT(IWMIExtension *self, BSTR* strWMIObjectPath) get_WMIObjectPath;
+			public function HRESULT(IWMIExtension *self, ISWbemObject** objWMIObject) GetWMIObject;
+			public function HRESULT(IWMIExtension *self, ISWbemServices** objWMIServices) GetWMIServices;
+		}
+		[CRepr]
+		public struct IWbemTransport : IUnknown
+		{
+			public const new Guid IID = .(0x553fe584, 0x2156, 0x11d0, 0xb6, 0xae, 0x00, 0xaa, 0x00, 0x32, 0x40, 0xc7);
+			
+			public function HRESULT(IWbemTransport *self) Initialize;
+		}
+		[CRepr]
+		public struct IWbemLevel1Login : IUnknown
+		{
+			public const new Guid IID = .(0xf309ad18, 0xd86a, 0x11d0, 0xa0, 0x75, 0x00, 0xc0, 0x4f, 0xb6, 0x88, 0x20);
+			
+			public function HRESULT(IWbemLevel1Login *self, PWSTR wszLocaleList, uint32 dwNumLocales, uint32* reserved) EstablishPosition;
+			public function HRESULT(IWbemLevel1Login *self, PWSTR wszNetworkResource, PWSTR wszUser, uint8* Nonce) RequestChallenge;
+			public function HRESULT(IWbemLevel1Login *self, PWSTR wszPreferredLocale, uint8* AccessToken, int32 lFlags, IWbemContext* pCtx, IWbemServices** ppNamespace) WBEMLogin;
+			public function HRESULT(IWbemLevel1Login *self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, IWbemContext* pCtx, IWbemServices** ppNamespace) NTLMLogin;
+		}
+		[CRepr]
+		public struct IWbemConnectorLogin : IUnknown
+		{
+			public const new Guid IID = .(0xd8ec9cb1, 0xb135, 0x4f10, 0x8b, 0x1b, 0xc7, 0x18, 0x8b, 0xb0, 0xd1, 0x86);
+			
+			public function HRESULT(IWbemConnectorLogin *self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, IWbemContext* pCtx, Guid* riid, void** pInterface) ConnectorLogin;
+		}
+		[CRepr]
+		public struct IWbemAddressResolution : IUnknown
+		{
+			public const new Guid IID = .(0xf7ce2e12, 0x8c90, 0x11d1, 0x9e, 0x7b, 0x00, 0xc0, 0x4f, 0xc3, 0x24, 0xa8);
+			
+			public function HRESULT(IWbemAddressResolution *self, PWSTR wszNamespacePath, PWSTR wszAddressType, uint32* pdwAddressLength, uint8** pabBinaryAddress) Resolve;
+		}
+		[CRepr]
+		public struct IWbemClientTransport : IUnknown
+		{
+			public const new Guid IID = .(0xf7ce2e11, 0x8c90, 0x11d1, 0x9e, 0x7b, 0x00, 0xc0, 0x4f, 0xc3, 0x24, 0xa8);
+			
+			public function HRESULT(IWbemClientTransport *self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace) ConnectServer;
+		}
+		[CRepr]
+		public struct IWbemClientConnectionTransport : IUnknown
+		{
+			public const new Guid IID = .(0xa889c72a, 0xfcc1, 0x4a9e, 0xaf, 0x61, 0xed, 0x07, 0x13, 0x33, 0xfb, 0x5b);
+			
+			public function HRESULT(IWbemClientConnectionTransport *self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, IWbemContext* pCtx, Guid* riid, void** pInterface, IWbemCallResult** pCallRes) Open;
+			public function HRESULT(IWbemClientConnectionTransport *self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, IWbemContext* pCtx, Guid* riid, IWbemObjectSink* pResponseHandler) OpenAsync;
+			public function HRESULT(IWbemClientConnectionTransport *self, int32 lFlags, IWbemObjectSink* pHandler) Cancel;
+		}
+		[CRepr]
+		public struct IWbemConstructClassObject : IUnknown
+		{
+			public const new Guid IID = .(0x9ef76194, 0x70d5, 0x11d1, 0xad, 0x90, 0x00, 0xc0, 0x4f, 0xd8, 0xfd, 0xff);
+			
+			public function HRESULT(IWbemConstructClassObject *self, int32 lNumAntecedents, PWSTR* awszAntecedents) SetInheritanceChain;
+			public function HRESULT(IWbemConstructClassObject *self, PWSTR wszPropertyName, int32 lOriginIndex) SetPropertyOrigin;
+			public function HRESULT(IWbemConstructClassObject *self, PWSTR wszMethodName, int32 lOriginIndex) SetMethodOrigin;
+			public function HRESULT(IWbemConstructClassObject *self, PWSTR wszServer, PWSTR wszNamespace) SetServerNamespace;
+		}
 		
 		// --- Functions ---
 		

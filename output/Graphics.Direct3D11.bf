@@ -2886,8 +2886,8 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT PFN_D3D11_CREATE_DEVICE(IDXGIAdapter param0, D3D_DRIVER_TYPE param1, HINSTANCE param2, uint32 param3, D3D_FEATURE_LEVEL* param4, uint32 FeatureLevels, uint32 param6, ID3D11Device* param7, D3D_FEATURE_LEVEL* param8, ID3D11DeviceContext* param9);
-		public function HRESULT PFN_D3D11_CREATE_DEVICE_AND_SWAP_CHAIN(IDXGIAdapter param0, D3D_DRIVER_TYPE param1, HINSTANCE param2, uint32 param3, D3D_FEATURE_LEVEL* param4, uint32 FeatureLevels, uint32 param6, DXGI_SWAP_CHAIN_DESC* param7, IDXGISwapChain* param8, ID3D11Device* param9, D3D_FEATURE_LEVEL* param10, ID3D11DeviceContext* param11);
+		public function HRESULT PFN_D3D11_CREATE_DEVICE(IDXGIAdapter* param0, D3D_DRIVER_TYPE param1, HINSTANCE param2, uint32 param3, D3D_FEATURE_LEVEL* param4, uint32 FeatureLevels, uint32 param6, ID3D11Device** param7, D3D_FEATURE_LEVEL* param8, ID3D11DeviceContext** param9);
+		public function HRESULT PFN_D3D11_CREATE_DEVICE_AND_SWAP_CHAIN(IDXGIAdapter* param0, D3D_DRIVER_TYPE param1, HINSTANCE param2, uint32 param3, D3D_FEATURE_LEVEL* param4, uint32 FeatureLevels, uint32 param6, DXGI_SWAP_CHAIN_DESC* param7, IDXGISwapChain** param8, ID3D11Device** param9, D3D_FEATURE_LEVEL* param10, ID3D11DeviceContext** param11);
 		
 		// --- Structs ---
 		
@@ -3641,7 +3641,7 @@ namespace Win32
 			public void* pPrivateOutputData;
 			public uint32 PrivateOutputDataSize;
 			public uint32 ResourceCount;
-			public ID3D11Resource* ppResourceList;
+			public ID3D11Resource** ppResourceList;
 		}
 		[CRepr]
 		public struct D3D11_VIDEO_PROCESSOR_CAPS
@@ -3742,12 +3742,12 @@ namespace Win32
 			public uint32 InputFrameOrField;
 			public uint32 PastFrames;
 			public uint32 FutureFrames;
-			public ID3D11VideoProcessorInputView* ppPastSurfaces;
-			public ID3D11VideoProcessorInputView pInputSurface;
-			public ID3D11VideoProcessorInputView* ppFutureSurfaces;
-			public ID3D11VideoProcessorInputView* ppPastSurfacesRight;
-			public ID3D11VideoProcessorInputView pInputSurfaceRight;
-			public ID3D11VideoProcessorInputView* ppFutureSurfacesRight;
+			public ID3D11VideoProcessorInputView** ppPastSurfaces;
+			public ID3D11VideoProcessorInputView* pInputSurface;
+			public ID3D11VideoProcessorInputView** ppFutureSurfaces;
+			public ID3D11VideoProcessorInputView** ppPastSurfacesRight;
+			public ID3D11VideoProcessorInputView* pInputSurfaceRight;
+			public ID3D11VideoProcessorInputView** ppFutureSurfacesRight;
 		}
 		[CRepr]
 		public struct D3D11_OMAC
@@ -4100,7 +4100,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D11_VIDEO_DECODER_BEGIN_FRAME_CRYPTO_SESSION
 		{
-			public ID3D11CryptoSession pCryptoSession;
+			public ID3D11CryptoSession* pCryptoSession;
 			public uint32 BlobSize;
 			public void* pBlob;
 			public Guid* pKeyInfoId;
@@ -4663,125 +4663,1106 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ID3D11DeviceChild {}
-		public struct ID3D11DepthStencilState {}
-		public struct ID3D11BlendState {}
-		public struct ID3D11RasterizerState {}
-		public struct ID3D11Resource {}
-		public struct ID3D11Buffer {}
-		public struct ID3D11Texture1D {}
-		public struct ID3D11Texture2D {}
-		public struct ID3D11Texture3D {}
-		public struct ID3D11View {}
-		public struct ID3D11ShaderResourceView {}
-		public struct ID3D11RenderTargetView {}
-		public struct ID3D11DepthStencilView {}
-		public struct ID3D11UnorderedAccessView {}
-		public struct ID3D11VertexShader {}
-		public struct ID3D11HullShader {}
-		public struct ID3D11DomainShader {}
-		public struct ID3D11GeometryShader {}
-		public struct ID3D11PixelShader {}
-		public struct ID3D11ComputeShader {}
-		public struct ID3D11InputLayout {}
-		public struct ID3D11SamplerState {}
-		public struct ID3D11Asynchronous {}
-		public struct ID3D11Query {}
-		public struct ID3D11Predicate {}
-		public struct ID3D11Counter {}
-		public struct ID3D11ClassInstance {}
-		public struct ID3D11ClassLinkage {}
-		public struct ID3D11CommandList {}
-		public struct ID3D11DeviceContext {}
-		public struct ID3D11VideoDecoder {}
-		public struct ID3D11VideoProcessorEnumerator {}
-		public struct ID3D11VideoProcessor {}
-		public struct ID3D11AuthenticatedChannel {}
-		public struct ID3D11CryptoSession {}
-		public struct ID3D11VideoDecoderOutputView {}
-		public struct ID3D11VideoProcessorInputView {}
-		public struct ID3D11VideoProcessorOutputView {}
-		public struct ID3D11VideoContext {}
-		public struct ID3D11VideoDevice {}
-		public struct ID3D11Device {}
-		public struct ID3D11Debug {}
-		public struct ID3D11SwitchToRef {}
-		public struct ID3D11TracingDevice {}
-		public struct ID3D11RefTrackingOptions {}
-		public struct ID3D11RefDefaultTrackingOptions {}
-		public struct ID3D11InfoQueue {}
-		public struct ID3D11BlendState1 {}
-		public struct ID3D11RasterizerState1 {}
-		public struct ID3DDeviceContextState {}
-		public struct ID3D11DeviceContext1 {}
-		public struct ID3D11VideoContext1 {}
-		public struct ID3D11VideoDevice1 {}
-		public struct ID3D11VideoProcessorEnumerator1 {}
-		public struct ID3D11Device1 {}
-		public struct ID3DUserDefinedAnnotation {}
-		public struct ID3D11DeviceContext2 {}
-		public struct ID3D11Device2 {}
-		public struct ID3D11Texture2D1 {}
-		public struct ID3D11Texture3D1 {}
-		public struct ID3D11RasterizerState2 {}
-		public struct ID3D11ShaderResourceView1 {}
-		public struct ID3D11RenderTargetView1 {}
-		public struct ID3D11UnorderedAccessView1 {}
-		public struct ID3D11Query1 {}
-		public struct ID3D11DeviceContext3 {}
-		public struct ID3D11Fence {}
-		public struct ID3D11DeviceContext4 {}
-		public struct ID3D11Device3 {}
-		public struct ID3D11Device4 {}
-		public struct ID3D11Device5 {}
-		public struct ID3D11Multithread {}
-		public struct ID3D11VideoContext2 {}
-		public struct ID3D11VideoDevice2 {}
-		public struct ID3D11VideoContext3 {}
-		public struct ID3D11ShaderReflectionType {}
-		public struct ID3D11ShaderReflectionVariable {}
-		public struct ID3D11ShaderReflectionConstantBuffer {}
-		public struct ID3D11ShaderReflection {}
-		public struct ID3D11LibraryReflection {}
-		public struct ID3D11FunctionReflection {}
-		public struct ID3D11FunctionParameterReflection {}
-		public struct ID3D11ModuleInstance {}
-		public struct ID3D11Module {}
-		public struct ID3D11Linker {}
-		public struct ID3D11LinkingNode {}
-		public struct ID3D11FunctionLinkingGraph {}
-		public struct ID3D11ShaderTrace {}
-		public struct ID3D11ShaderTraceFactory {}
-		public struct ID3DX11Scan {}
-		public struct ID3DX11SegmentedScan {}
-		public struct ID3DX11FFT {}
+		[CRepr]
+		public struct ID3D11DeviceChild : IUnknown
+		{
+			public const new Guid IID = .(0x1841e5c8, 0x16b0, 0x489b, 0xbc, 0xc8, 0x44, 0xcf, 0xb0, 0xd5, 0xde, 0xae);
+			
+			public function void(ID3D11DeviceChild *self, ID3D11Device** ppDevice) GetDevice;
+			public function HRESULT(ID3D11DeviceChild *self, Guid* guid, uint32* pDataSize, void* pData) GetPrivateData;
+			public function HRESULT(ID3D11DeviceChild *self, Guid* guid, uint32 DataSize, void* pData) SetPrivateData;
+			public function HRESULT(ID3D11DeviceChild *self, Guid* guid, IUnknown* pData) SetPrivateDataInterface;
+		}
+		[CRepr]
+		public struct ID3D11DepthStencilState : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x03823efb, 0x8d8f, 0x4e1c, 0x9a, 0xa2, 0xf6, 0x4b, 0xb2, 0xcb, 0xfd, 0xf1);
+			
+			public function void(ID3D11DepthStencilState *self, D3D11_DEPTH_STENCIL_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11BlendState : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x75b68faa, 0x347d, 0x4159, 0x8f, 0x45, 0xa0, 0x64, 0x0f, 0x01, 0xcd, 0x9a);
+			
+			public function void(ID3D11BlendState *self, D3D11_BLEND_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11RasterizerState : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x9bb4ab81, 0xab1a, 0x4d8f, 0xb5, 0x06, 0xfc, 0x04, 0x20, 0x0b, 0x6e, 0xe7);
+			
+			public function void(ID3D11RasterizerState *self, D3D11_RASTERIZER_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11Resource : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xdc8e63f3, 0xd12b, 0x4952, 0xb4, 0x7b, 0x5e, 0x45, 0x02, 0x6a, 0x86, 0x2d);
+			
+			public function void(ID3D11Resource *self, D3D11_RESOURCE_DIMENSION* pResourceDimension) GetType;
+			public function void(ID3D11Resource *self, uint32 EvictionPriority) SetEvictionPriority;
+			public function uint32(ID3D11Resource *self) GetEvictionPriority;
+		}
+		[CRepr]
+		public struct ID3D11Buffer : ID3D11Resource
+		{
+			public const new Guid IID = .(0x48570b85, 0xd1ee, 0x4fcd, 0xa2, 0x50, 0xeb, 0x35, 0x07, 0x22, 0xb0, 0x37);
+			
+			public function void(ID3D11Buffer *self, D3D11_BUFFER_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11Texture1D : ID3D11Resource
+		{
+			public const new Guid IID = .(0xf8fb5c27, 0xc6b3, 0x4f75, 0xa4, 0xc8, 0x43, 0x9a, 0xf2, 0xef, 0x56, 0x4c);
+			
+			public function void(ID3D11Texture1D *self, D3D11_TEXTURE1D_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11Texture2D : ID3D11Resource
+		{
+			public const new Guid IID = .(0x6f15aaf2, 0xd208, 0x4e89, 0x9a, 0xb4, 0x48, 0x95, 0x35, 0xd3, 0x4f, 0x9c);
+			
+			public function void(ID3D11Texture2D *self, D3D11_TEXTURE2D_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11Texture3D : ID3D11Resource
+		{
+			public const new Guid IID = .(0x037e866e, 0xf56d, 0x4357, 0xa8, 0xaf, 0x9d, 0xab, 0xbe, 0x6e, 0x25, 0x0e);
+			
+			public function void(ID3D11Texture3D *self, D3D11_TEXTURE3D_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11View : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x839d1216, 0xbb2e, 0x412b, 0xb7, 0xf4, 0xa9, 0xdb, 0xeb, 0xe0, 0x8e, 0xd1);
+			
+			public function void(ID3D11View *self, ID3D11Resource** ppResource) GetResource;
+		}
+		[CRepr]
+		public struct ID3D11ShaderResourceView : ID3D11View
+		{
+			public const new Guid IID = .(0xb0e06fe0, 0x8192, 0x4e1a, 0xb1, 0xca, 0x36, 0xd7, 0x41, 0x47, 0x10, 0xb2);
+			
+			public function void(ID3D11ShaderResourceView *self, D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11RenderTargetView : ID3D11View
+		{
+			public const new Guid IID = .(0xdfdba067, 0x0b8d, 0x4865, 0x87, 0x5b, 0xd7, 0xb4, 0x51, 0x6c, 0xc1, 0x64);
+			
+			public function void(ID3D11RenderTargetView *self, D3D11_RENDER_TARGET_VIEW_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11DepthStencilView : ID3D11View
+		{
+			public const new Guid IID = .(0x9fdac92a, 0x1876, 0x48c3, 0xaf, 0xad, 0x25, 0xb9, 0x4f, 0x84, 0xa9, 0xb6);
+			
+			public function void(ID3D11DepthStencilView *self, D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11UnorderedAccessView : ID3D11View
+		{
+			public const new Guid IID = .(0x28acf509, 0x7f5c, 0x48f6, 0x86, 0x11, 0xf3, 0x16, 0x01, 0x0a, 0x63, 0x80);
+			
+			public function void(ID3D11UnorderedAccessView *self, D3D11_UNORDERED_ACCESS_VIEW_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11VertexShader : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x3b301d64, 0xd678, 0x4289, 0x88, 0x97, 0x22, 0xf8, 0x92, 0x8b, 0x72, 0xf3);
+			
+		}
+		[CRepr]
+		public struct ID3D11HullShader : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x8e5c6061, 0x628a, 0x4c8e, 0x82, 0x64, 0xbb, 0xe4, 0x5c, 0xb3, 0xd5, 0xdd);
+			
+		}
+		[CRepr]
+		public struct ID3D11DomainShader : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xf582c508, 0x0f36, 0x490c, 0x99, 0x77, 0x31, 0xee, 0xce, 0x26, 0x8c, 0xfa);
+			
+		}
+		[CRepr]
+		public struct ID3D11GeometryShader : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x38325b96, 0xeffb, 0x4022, 0xba, 0x02, 0x2e, 0x79, 0x5b, 0x70, 0x27, 0x5c);
+			
+		}
+		[CRepr]
+		public struct ID3D11PixelShader : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xea82e40d, 0x51dc, 0x4f33, 0x93, 0xd4, 0xdb, 0x7c, 0x91, 0x25, 0xae, 0x8c);
+			
+		}
+		[CRepr]
+		public struct ID3D11ComputeShader : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x4f5b196e, 0xc2bd, 0x495e, 0xbd, 0x01, 0x1f, 0xde, 0xd3, 0x8e, 0x49, 0x69);
+			
+		}
+		[CRepr]
+		public struct ID3D11InputLayout : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xe4819ddc, 0x4cf0, 0x4025, 0xbd, 0x26, 0x5d, 0xe8, 0x2a, 0x3e, 0x07, 0xb7);
+			
+		}
+		[CRepr]
+		public struct ID3D11SamplerState : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xda6fea51, 0x564c, 0x4487, 0x98, 0x10, 0xf0, 0xd0, 0xf9, 0xb4, 0xe3, 0xa5);
+			
+			public function void(ID3D11SamplerState *self, D3D11_SAMPLER_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11Asynchronous : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x4b35d0cd, 0x1e15, 0x4258, 0x9c, 0x98, 0x1b, 0x13, 0x33, 0xf6, 0xdd, 0x3b);
+			
+			public function uint32(ID3D11Asynchronous *self) GetDataSize;
+		}
+		[CRepr]
+		public struct ID3D11Query : ID3D11Asynchronous
+		{
+			public const new Guid IID = .(0xd6c00747, 0x87b7, 0x425e, 0xb8, 0x4d, 0x44, 0xd1, 0x08, 0x56, 0x0a, 0xfd);
+			
+			public function void(ID3D11Query *self, D3D11_QUERY_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11Predicate : ID3D11Query
+		{
+			public const new Guid IID = .(0x9eb576dd, 0x9f77, 0x4d86, 0x81, 0xaa, 0x8b, 0xab, 0x5f, 0xe4, 0x90, 0xe2);
+			
+		}
+		[CRepr]
+		public struct ID3D11Counter : ID3D11Asynchronous
+		{
+			public const new Guid IID = .(0x6e8c49fb, 0xa371, 0x4770, 0xb4, 0x40, 0x29, 0x08, 0x60, 0x22, 0xb7, 0x41);
+			
+			public function void(ID3D11Counter *self, D3D11_COUNTER_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11ClassInstance : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xa6cd7faa, 0xb0b7, 0x4a2f, 0x94, 0x36, 0x86, 0x62, 0xa6, 0x57, 0x97, 0xcb);
+			
+			public function void(ID3D11ClassInstance *self, ID3D11ClassLinkage** ppLinkage) GetClassLinkage;
+			public function void(ID3D11ClassInstance *self, D3D11_CLASS_INSTANCE_DESC* pDesc) GetDesc;
+			public function void(ID3D11ClassInstance *self, uint8* pInstanceName, uint* pBufferLength) GetInstanceName;
+			public function void(ID3D11ClassInstance *self, uint8* pTypeName, uint* pBufferLength) GetTypeName;
+		}
+		[CRepr]
+		public struct ID3D11ClassLinkage : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xddf57cba, 0x9543, 0x46e4, 0xa1, 0x2b, 0xf2, 0x07, 0xa0, 0xfe, 0x7f, 0xed);
+			
+			public function HRESULT(ID3D11ClassLinkage *self, PSTR pClassInstanceName, uint32 InstanceIndex, ID3D11ClassInstance** ppInstance) GetClassInstance;
+			public function HRESULT(ID3D11ClassLinkage *self, PSTR pClassTypeName, uint32 ConstantBufferOffset, uint32 ConstantVectorOffset, uint32 TextureOffset, uint32 SamplerOffset, ID3D11ClassInstance** ppInstance) CreateClassInstance;
+		}
+		[CRepr]
+		public struct ID3D11CommandList : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xa24bc4d1, 0x769e, 0x43f7, 0x80, 0x13, 0x98, 0xff, 0x56, 0x6c, 0x18, 0xe2);
+			
+			public function uint32(ID3D11CommandList *self) GetContextFlags;
+		}
+		[CRepr]
+		public struct ID3D11DeviceContext : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xc0bfa96c, 0xe089, 0x44fb, 0x8e, 0xaf, 0x26, 0xf8, 0x79, 0x61, 0x90, 0xda);
+			
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) VSSetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) PSSetShaderResources;
+			public function void(ID3D11DeviceContext *self, ID3D11PixelShader* pPixelShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) PSSetShader;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) PSSetSamplers;
+			public function void(ID3D11DeviceContext *self, ID3D11VertexShader* pVertexShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) VSSetShader;
+			public function void(ID3D11DeviceContext *self, uint32 IndexCount, uint32 StartIndexLocation, int32 BaseVertexLocation) DrawIndexed;
+			public function void(ID3D11DeviceContext *self, uint32 VertexCount, uint32 StartVertexLocation) Draw;
+			public function HRESULT(ID3D11DeviceContext *self, ID3D11Resource* pResource, uint32 Subresource, D3D11_MAP MapType, uint32 MapFlags, D3D11_MAPPED_SUBRESOURCE* pMappedResource) Map;
+			public function void(ID3D11DeviceContext *self, ID3D11Resource* pResource, uint32 Subresource) Unmap;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) PSSetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, ID3D11InputLayout* pInputLayout) IASetInputLayout;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) IASetVertexBuffers;
+			public function void(ID3D11DeviceContext *self, ID3D11Buffer* pIndexBuffer, DXGI_FORMAT Format, uint32 Offset) IASetIndexBuffer;
+			public function void(ID3D11DeviceContext *self, uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) DrawIndexedInstanced;
+			public function void(ID3D11DeviceContext *self, uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) DrawInstanced;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) GSSetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, ID3D11GeometryShader* pShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) GSSetShader;
+			public function void(ID3D11DeviceContext *self, D3D_PRIMITIVE_TOPOLOGY Topology) IASetPrimitiveTopology;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) VSSetShaderResources;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) VSSetSamplers;
+			public function void(ID3D11DeviceContext *self, ID3D11Asynchronous* pAsync) Begin;
+			public function void(ID3D11DeviceContext *self, ID3D11Asynchronous* pAsync) End;
+			public function HRESULT(ID3D11DeviceContext *self, ID3D11Asynchronous* pAsync, void* pData, uint32 DataSize, uint32 GetDataFlags) GetData;
+			public function void(ID3D11DeviceContext *self, ID3D11Predicate* pPredicate, BOOL PredicateValue) SetPredication;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) GSSetShaderResources;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) GSSetSamplers;
+			public function void(ID3D11DeviceContext *self, uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView) OMSetRenderTargets;
+			public function void(ID3D11DeviceContext *self, uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) OMSetRenderTargetsAndUnorderedAccessViews;
+			public function void(ID3D11DeviceContext *self, ID3D11BlendState* pBlendState, float* BlendFactor, uint32 SampleMask) OMSetBlendState;
+			public function void(ID3D11DeviceContext *self, ID3D11DepthStencilState* pDepthStencilState, uint32 StencilRef) OMSetDepthStencilState;
+			public function void(ID3D11DeviceContext *self, uint32 NumBuffers, ID3D11Buffer** ppSOTargets, uint32* pOffsets) SOSetTargets;
+			public function void(ID3D11DeviceContext *self) DrawAuto;
+			public function void(ID3D11DeviceContext *self, ID3D11Buffer* pBufferForArgs, uint32 AlignedByteOffsetForArgs) DrawIndexedInstancedIndirect;
+			public function void(ID3D11DeviceContext *self, ID3D11Buffer* pBufferForArgs, uint32 AlignedByteOffsetForArgs) DrawInstancedIndirect;
+			public function void(ID3D11DeviceContext *self, uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) Dispatch;
+			public function void(ID3D11DeviceContext *self, ID3D11Buffer* pBufferForArgs, uint32 AlignedByteOffsetForArgs) DispatchIndirect;
+			public function void(ID3D11DeviceContext *self, ID3D11RasterizerState* pRasterizerState) RSSetState;
+			public function void(ID3D11DeviceContext *self, uint32 NumViewports, D3D11_VIEWPORT* pViewports) RSSetViewports;
+			public function void(ID3D11DeviceContext *self, uint32 NumRects, RECT* pRects) RSSetScissorRects;
+			public function void(ID3D11DeviceContext *self, ID3D11Resource* pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ID3D11Resource* pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) CopySubresourceRegion;
+			public function void(ID3D11DeviceContext *self, ID3D11Resource* pDstResource, ID3D11Resource* pSrcResource) CopyResource;
+			public function void(ID3D11DeviceContext *self, ID3D11Resource* pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) UpdateSubresource;
+			public function void(ID3D11DeviceContext *self, ID3D11Buffer* pDstBuffer, uint32 DstAlignedByteOffset, ID3D11UnorderedAccessView* pSrcView) CopyStructureCount;
+			public function void(ID3D11DeviceContext *self, ID3D11RenderTargetView* pRenderTargetView, float* ColorRGBA) ClearRenderTargetView;
+			public function void(ID3D11DeviceContext *self, ID3D11UnorderedAccessView* pUnorderedAccessView, uint32* Values) ClearUnorderedAccessViewUint;
+			public function void(ID3D11DeviceContext *self, ID3D11UnorderedAccessView* pUnorderedAccessView, float* Values) ClearUnorderedAccessViewFloat;
+			public function void(ID3D11DeviceContext *self, ID3D11DepthStencilView* pDepthStencilView, uint32 ClearFlags, float Depth, uint8 Stencil) ClearDepthStencilView;
+			public function void(ID3D11DeviceContext *self, ID3D11ShaderResourceView* pShaderResourceView) GenerateMips;
+			public function void(ID3D11DeviceContext *self, ID3D11Resource* pResource, float MinLOD) SetResourceMinLOD;
+			public function float(ID3D11DeviceContext *self, ID3D11Resource* pResource) GetResourceMinLOD;
+			public function void(ID3D11DeviceContext *self, ID3D11Resource* pDstResource, uint32 DstSubresource, ID3D11Resource* pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) ResolveSubresource;
+			public function void(ID3D11DeviceContext *self, ID3D11CommandList* pCommandList, BOOL RestoreContextState) ExecuteCommandList;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) HSSetShaderResources;
+			public function void(ID3D11DeviceContext *self, ID3D11HullShader* pHullShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) HSSetShader;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) HSSetSamplers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) HSSetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) DSSetShaderResources;
+			public function void(ID3D11DeviceContext *self, ID3D11DomainShader* pDomainShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) DSSetShader;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) DSSetSamplers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) DSSetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) CSSetShaderResources;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint32* pUAVInitialCounts) CSSetUnorderedAccessViews;
+			public function void(ID3D11DeviceContext *self, ID3D11ComputeShader* pComputeShader, ID3D11ClassInstance** ppClassInstances, uint32 NumClassInstances) CSSetShader;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) CSSetSamplers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) CSSetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) VSGetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) PSGetShaderResources;
+			public function void(ID3D11DeviceContext *self, ID3D11PixelShader** ppPixelShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) PSGetShader;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) PSGetSamplers;
+			public function void(ID3D11DeviceContext *self, ID3D11VertexShader** ppVertexShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) VSGetShader;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) PSGetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, ID3D11InputLayout** ppInputLayout) IAGetInputLayout;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppVertexBuffers, uint32* pStrides, uint32* pOffsets) IAGetVertexBuffers;
+			public function void(ID3D11DeviceContext *self, ID3D11Buffer** pIndexBuffer, DXGI_FORMAT* Format, uint32* Offset) IAGetIndexBuffer;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) GSGetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, ID3D11GeometryShader** ppGeometryShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) GSGetShader;
+			public function void(ID3D11DeviceContext *self, D3D_PRIMITIVE_TOPOLOGY* pTopology) IAGetPrimitiveTopology;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) VSGetShaderResources;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) VSGetSamplers;
+			public function void(ID3D11DeviceContext *self, ID3D11Predicate** ppPredicate, BOOL* pPredicateValue) GetPredication;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) GSGetShaderResources;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) GSGetSamplers;
+			public function void(ID3D11DeviceContext *self, uint32 NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView) OMGetRenderTargets;
+			public function void(ID3D11DeviceContext *self, uint32 NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, uint32 UAVStartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) OMGetRenderTargetsAndUnorderedAccessViews;
+			public function void(ID3D11DeviceContext *self, ID3D11BlendState** ppBlendState, float* BlendFactor, uint32* pSampleMask) OMGetBlendState;
+			public function void(ID3D11DeviceContext *self, ID3D11DepthStencilState** ppDepthStencilState, uint32* pStencilRef) OMGetDepthStencilState;
+			public function void(ID3D11DeviceContext *self, uint32 NumBuffers, ID3D11Buffer** ppSOTargets) SOGetTargets;
+			public function void(ID3D11DeviceContext *self, ID3D11RasterizerState** ppRasterizerState) RSGetState;
+			public function void(ID3D11DeviceContext *self, uint32* pNumViewports, D3D11_VIEWPORT* pViewports) RSGetViewports;
+			public function void(ID3D11DeviceContext *self, uint32* pNumRects, RECT* pRects) RSGetScissorRects;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) HSGetShaderResources;
+			public function void(ID3D11DeviceContext *self, ID3D11HullShader** ppHullShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) HSGetShader;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) HSGetSamplers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) HSGetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) DSGetShaderResources;
+			public function void(ID3D11DeviceContext *self, ID3D11DomainShader** ppDomainShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) DSGetShader;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) DSGetSamplers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) DSGetConstantBuffers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumViews, ID3D11ShaderResourceView** ppShaderResourceViews) CSGetShaderResources;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews) CSGetUnorderedAccessViews;
+			public function void(ID3D11DeviceContext *self, ID3D11ComputeShader** ppComputeShader, ID3D11ClassInstance** ppClassInstances, uint32* pNumClassInstances) CSGetShader;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumSamplers, ID3D11SamplerState** ppSamplers) CSGetSamplers;
+			public function void(ID3D11DeviceContext *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers) CSGetConstantBuffers;
+			public function void(ID3D11DeviceContext *self) ClearState;
+			public function void(ID3D11DeviceContext *self) Flush;
+			public function D3D11_DEVICE_CONTEXT_TYPE(ID3D11DeviceContext *self) GetType;
+			public function uint32(ID3D11DeviceContext *self) GetContextFlags;
+			public function HRESULT(ID3D11DeviceContext *self, BOOL RestoreDeferredContextState, ID3D11CommandList** ppCommandList) FinishCommandList;
+		}
+		[CRepr]
+		public struct ID3D11VideoDecoder : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x3c9c5b51, 0x995d, 0x48d1, 0x9b, 0x8d, 0xfa, 0x5c, 0xae, 0xde, 0xd6, 0x5c);
+			
+			public function HRESULT(ID3D11VideoDecoder *self, D3D11_VIDEO_DECODER_DESC* pVideoDesc, D3D11_VIDEO_DECODER_CONFIG* pConfig) GetCreationParameters;
+			public function HRESULT(ID3D11VideoDecoder *self, HANDLE* pDriverHandle) GetDriverHandle;
+		}
+		[CRepr]
+		public struct ID3D11VideoProcessorEnumerator : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x31627037, 0x53ab, 0x4200, 0x90, 0x61, 0x05, 0xfa, 0xa9, 0xab, 0x45, 0xf9);
+			
+			public function HRESULT(ID3D11VideoProcessorEnumerator *self, D3D11_VIDEO_PROCESSOR_CONTENT_DESC* pContentDesc) GetVideoProcessorContentDesc;
+			public function HRESULT(ID3D11VideoProcessorEnumerator *self, DXGI_FORMAT Format, uint32* pFlags) CheckVideoProcessorFormat;
+			public function HRESULT(ID3D11VideoProcessorEnumerator *self, D3D11_VIDEO_PROCESSOR_CAPS* pCaps) GetVideoProcessorCaps;
+			public function HRESULT(ID3D11VideoProcessorEnumerator *self, uint32 TypeIndex, D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS* pCaps) GetVideoProcessorRateConversionCaps;
+			public function HRESULT(ID3D11VideoProcessorEnumerator *self, uint32 TypeIndex, uint32 CustomRateIndex, D3D11_VIDEO_PROCESSOR_CUSTOM_RATE* pRate) GetVideoProcessorCustomRate;
+			public function HRESULT(ID3D11VideoProcessorEnumerator *self, D3D11_VIDEO_PROCESSOR_FILTER Filter, D3D11_VIDEO_PROCESSOR_FILTER_RANGE* pRange) GetVideoProcessorFilterRange;
+		}
+		[CRepr]
+		public struct ID3D11VideoProcessor : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x1d7b0652, 0x185f, 0x41c6, 0x85, 0xce, 0x0c, 0x5b, 0xe3, 0xd4, 0xae, 0x6c);
+			
+			public function void(ID3D11VideoProcessor *self, D3D11_VIDEO_PROCESSOR_CONTENT_DESC* pDesc) GetContentDesc;
+			public function void(ID3D11VideoProcessor *self, D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS* pCaps) GetRateConversionCaps;
+		}
+		[CRepr]
+		public struct ID3D11AuthenticatedChannel : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x3015a308, 0xdcbd, 0x47aa, 0xa7, 0x47, 0x19, 0x24, 0x86, 0xd1, 0x4d, 0x4a);
+			
+			public function HRESULT(ID3D11AuthenticatedChannel *self, uint32* pCertificateSize) GetCertificateSize;
+			public function HRESULT(ID3D11AuthenticatedChannel *self, uint32 CertificateSize, uint8* pCertificate) GetCertificate;
+			public function void(ID3D11AuthenticatedChannel *self, HANDLE* pChannelHandle) GetChannelHandle;
+		}
+		[CRepr]
+		public struct ID3D11CryptoSession : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x9b32f9ad, 0xbdcc, 0x40a6, 0xa3, 0x9d, 0xd5, 0xc8, 0x65, 0x84, 0x57, 0x20);
+			
+			public function void(ID3D11CryptoSession *self, Guid* pCryptoType) GetCryptoType;
+			public function void(ID3D11CryptoSession *self, Guid* pDecoderProfile) GetDecoderProfile;
+			public function HRESULT(ID3D11CryptoSession *self, uint32* pCertificateSize) GetCertificateSize;
+			public function HRESULT(ID3D11CryptoSession *self, uint32 CertificateSize, uint8* pCertificate) GetCertificate;
+			public function void(ID3D11CryptoSession *self, HANDLE* pCryptoSessionHandle) GetCryptoSessionHandle;
+		}
+		[CRepr]
+		public struct ID3D11VideoDecoderOutputView : ID3D11View
+		{
+			public const new Guid IID = .(0xc2931aea, 0x2a85, 0x4f20, 0x86, 0x0f, 0xfb, 0xa1, 0xfd, 0x25, 0x6e, 0x18);
+			
+			public function void(ID3D11VideoDecoderOutputView *self, D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11VideoProcessorInputView : ID3D11View
+		{
+			public const new Guid IID = .(0x11ec5a5f, 0x51dc, 0x4945, 0xab, 0x34, 0x6e, 0x8c, 0x21, 0x30, 0x0e, 0xa5);
+			
+			public function void(ID3D11VideoProcessorInputView *self, D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11VideoProcessorOutputView : ID3D11View
+		{
+			public const new Guid IID = .(0xa048285e, 0x25a9, 0x4527, 0xbd, 0x93, 0xd6, 0x8b, 0x68, 0xc4, 0x42, 0x54);
+			
+			public function void(ID3D11VideoProcessorOutputView *self, D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11VideoContext : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x61f21c45, 0x3c0e, 0x4a74, 0x9c, 0xea, 0x67, 0x10, 0x0d, 0x9a, 0xd5, 0xe4);
+			
+			public function HRESULT(ID3D11VideoContext *self, ID3D11VideoDecoder* pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type, uint32* pBufferSize, void** ppBuffer) GetDecoderBuffer;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11VideoDecoder* pDecoder, D3D11_VIDEO_DECODER_BUFFER_TYPE Type) ReleaseDecoderBuffer;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint32 ContentKeySize, void* pContentKey) DecoderBeginFrame;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11VideoDecoder* pDecoder) DecoderEndFrame;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11VideoDecoder* pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC* pBufferDesc) SubmitDecoderBuffers;
+			public function int32(ID3D11VideoContext *self, ID3D11VideoDecoder* pDecoder, D3D11_VIDEO_DECODER_EXTENSION* pExtensionData) DecoderExtension;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, BOOL Enable, RECT* pRect) VideoProcessorSetOutputTargetRect;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, BOOL YCbCr, D3D11_VIDEO_COLOR* pColor) VideoProcessorSetOutputBackgroundColor;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, D3D11_VIDEO_PROCESSOR_COLOR_SPACE* pColorSpace) VideoProcessorSetOutputColorSpace;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE AlphaFillMode, uint32 StreamIndex) VideoProcessorSetOutputAlphaFillMode;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, BOOL Enable, SIZE Size) VideoProcessorSetOutputConstriction;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, BOOL Enable) VideoProcessorSetOutputStereoMode;
+			public function int32(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorSetOutputExtension;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, BOOL* Enabled, RECT* pRect) VideoProcessorGetOutputTargetRect;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, BOOL* pYCbCr, D3D11_VIDEO_COLOR* pColor) VideoProcessorGetOutputBackgroundColor;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, D3D11_VIDEO_PROCESSOR_COLOR_SPACE* pColorSpace) VideoProcessorGetOutputColorSpace;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE* pAlphaFillMode, uint32* pStreamIndex) VideoProcessorGetOutputAlphaFillMode;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, BOOL* pEnabled, SIZE* pSize) VideoProcessorGetOutputConstriction;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, BOOL* pEnabled) VideoProcessorGetOutputStereoMode;
+			public function int32(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorGetOutputExtension;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_FRAME_FORMAT FrameFormat) VideoProcessorSetStreamFrameFormat;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_COLOR_SPACE* pColorSpace) VideoProcessorSetStreamColorSpace;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, BOOL RepeatFrame, DXGI_RATIONAL* pCustomRate) VideoProcessorSetStreamOutputRate;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) VideoProcessorSetStreamSourceRect;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL Enable, RECT* pRect) VideoProcessorSetStreamDestRect;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Alpha) VideoProcessorSetStreamAlpha;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) VideoProcessorSetStreamPalette;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL Enable, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio) VideoProcessorSetStreamPixelAspectRatio;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL Enable, float Lower, float Upper) VideoProcessorSetStreamLumaKey;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format, BOOL LeftViewFrame0, BOOL BaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode, int32 MonoOffset) VideoProcessorSetStreamStereoFormat;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL Enable) VideoProcessorSetStreamAutoProcessingMode;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL Enable, int32 Level) VideoProcessorSetStreamFilter;
+			public function int32(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, Guid* pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorSetStreamExtension;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_FRAME_FORMAT* pFrameFormat) VideoProcessorGetStreamFrameFormat;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_COLOR_SPACE* pColorSpace) VideoProcessorGetStreamColorSpace;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE* pOutputRate, BOOL* pRepeatFrame, DXGI_RATIONAL* pCustomRate) VideoProcessorGetStreamOutputRate;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL* pEnabled, RECT* pRect) VideoProcessorGetStreamSourceRect;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL* pEnabled, RECT* pRect) VideoProcessorGetStreamDestRect;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL* pEnabled, float* pAlpha) VideoProcessorGetStreamAlpha;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, uint32 Count, uint32* pEntries) VideoProcessorGetStreamPalette;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL* pEnabled, DXGI_RATIONAL* pSourceAspectRatio, DXGI_RATIONAL* pDestinationAspectRatio) VideoProcessorGetStreamPixelAspectRatio;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL* pEnabled, float* pLower, float* pUpper) VideoProcessorGetStreamLumaKey;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL* pEnable, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT* pFormat, BOOL* pLeftViewFrame0, BOOL* pBaseViewFrame0, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE* pFlipMode, int32* MonoOffset) VideoProcessorGetStreamStereoFormat;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL* pEnabled) VideoProcessorGetStreamAutoProcessingMode;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, D3D11_VIDEO_PROCESSOR_FILTER Filter, BOOL* pEnabled, int32* pLevel) VideoProcessorGetStreamFilter;
+			public function int32(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, Guid* pExtensionGuid, uint32 DataSize, void* pData) VideoProcessorGetStreamExtension;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint32 OutputFrame, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM* pStreams) VideoProcessorBlt;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11CryptoSession* pCryptoSession, uint32 DataSize, void* pData) NegotiateCryptoSessionKeyExchange;
+			public function void(ID3D11VideoContext *self, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, uint32 IVSize, void* pIV) EncryptionBlt;
+			public function void(ID3D11VideoContext *self, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, D3D11_ENCRYPTED_BLOCK_INFO* pEncryptedBlockInfo, uint32 ContentKeySize, void* pContentKey, uint32 IVSize, void* pIV) DecryptionBlt;
+			public function void(ID3D11VideoContext *self, ID3D11CryptoSession* pCryptoSession, uint32 RandomNumberSize, void* pRandomNumber) StartSessionKeyRefresh;
+			public function void(ID3D11VideoContext *self, ID3D11CryptoSession* pCryptoSession) FinishSessionKeyRefresh;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11CryptoSession* pCryptoSession, uint32 KeySize, void* pReadbackKey) GetEncryptionBltKey;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11AuthenticatedChannel* pChannel, uint32 DataSize, void* pData) NegotiateAuthenticatedChannelKeyExchange;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11AuthenticatedChannel* pChannel, uint32 InputSize, void* pInput, uint32 OutputSize, void* pOutput) QueryAuthenticatedChannel;
+			public function HRESULT(ID3D11VideoContext *self, ID3D11AuthenticatedChannel* pChannel, uint32 InputSize, void* pInput, D3D11_AUTHENTICATED_CONFIGURE_OUTPUT* pOutput) ConfigureAuthenticatedChannel;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL Enable, D3D11_VIDEO_PROCESSOR_ROTATION Rotation) VideoProcessorSetStreamRotation;
+			public function void(ID3D11VideoContext *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL* pEnable, D3D11_VIDEO_PROCESSOR_ROTATION* pRotation) VideoProcessorGetStreamRotation;
+		}
+		[CRepr]
+		public struct ID3D11VideoDevice : IUnknown
+		{
+			public const new Guid IID = .(0x10ec4d5b, 0x975a, 0x4689, 0xb9, 0xe4, 0xd0, 0xaa, 0xc3, 0x0f, 0xe3, 0x33);
+			
+			public function HRESULT(ID3D11VideoDevice *self, D3D11_VIDEO_DECODER_DESC* pVideoDesc, D3D11_VIDEO_DECODER_CONFIG* pConfig, ID3D11VideoDecoder** ppDecoder) CreateVideoDecoder;
+			public function HRESULT(ID3D11VideoDevice *self, ID3D11VideoProcessorEnumerator* pEnum, uint32 RateConversionIndex, ID3D11VideoProcessor** ppVideoProcessor) CreateVideoProcessor;
+			public function HRESULT(ID3D11VideoDevice *self, D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType, ID3D11AuthenticatedChannel** ppAuthenticatedChannel) CreateAuthenticatedChannel;
+			public function HRESULT(ID3D11VideoDevice *self, Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession) CreateCryptoSession;
+			public function HRESULT(ID3D11VideoDevice *self, ID3D11Resource* pResource, D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC* pDesc, ID3D11VideoDecoderOutputView** ppVDOVView) CreateVideoDecoderOutputView;
+			public function HRESULT(ID3D11VideoDevice *self, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC* pDesc, ID3D11VideoProcessorInputView** ppVPIView) CreateVideoProcessorInputView;
+			public function HRESULT(ID3D11VideoDevice *self, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC* pDesc, ID3D11VideoProcessorOutputView** ppVPOView) CreateVideoProcessorOutputView;
+			public function HRESULT(ID3D11VideoDevice *self, D3D11_VIDEO_PROCESSOR_CONTENT_DESC* pDesc, ID3D11VideoProcessorEnumerator** ppEnum) CreateVideoProcessorEnumerator;
+			public function uint32(ID3D11VideoDevice *self) GetVideoDecoderProfileCount;
+			public function HRESULT(ID3D11VideoDevice *self, uint32 Index, Guid* pDecoderProfile) GetVideoDecoderProfile;
+			public function HRESULT(ID3D11VideoDevice *self, Guid* pDecoderProfile, DXGI_FORMAT Format, BOOL* pSupported) CheckVideoDecoderFormat;
+			public function HRESULT(ID3D11VideoDevice *self, D3D11_VIDEO_DECODER_DESC* pDesc, uint32* pCount) GetVideoDecoderConfigCount;
+			public function HRESULT(ID3D11VideoDevice *self, D3D11_VIDEO_DECODER_DESC* pDesc, uint32 Index, D3D11_VIDEO_DECODER_CONFIG* pConfig) GetVideoDecoderConfig;
+			public function HRESULT(ID3D11VideoDevice *self, Guid* pCryptoType, Guid* pDecoderProfile, D3D11_VIDEO_CONTENT_PROTECTION_CAPS* pCaps) GetContentProtectionCaps;
+			public function HRESULT(ID3D11VideoDevice *self, Guid* pCryptoType, Guid* pDecoderProfile, uint32 Index, Guid* pKeyExchangeType) CheckCryptoKeyExchange;
+			public function HRESULT(ID3D11VideoDevice *self, Guid* guid, uint32 DataSize, void* pData) SetPrivateData;
+			public function HRESULT(ID3D11VideoDevice *self, Guid* guid, IUnknown* pData) SetPrivateDataInterface;
+		}
+		[CRepr]
+		public struct ID3D11Device : IUnknown
+		{
+			public const new Guid IID = .(0xdb6f6ddb, 0xac77, 0x4e88, 0x82, 0x53, 0x81, 0x9d, 0xf9, 0xbb, 0xf1, 0x40);
+			
+			public function HRESULT(ID3D11Device *self, D3D11_BUFFER_DESC* pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Buffer** ppBuffer) CreateBuffer;
+			public function HRESULT(ID3D11Device *self, D3D11_TEXTURE1D_DESC* pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture1D** ppTexture1D) CreateTexture1D;
+			public function HRESULT(ID3D11Device *self, D3D11_TEXTURE2D_DESC* pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D** ppTexture2D) CreateTexture2D;
+			public function HRESULT(ID3D11Device *self, D3D11_TEXTURE3D_DESC* pDesc, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D** ppTexture3D) CreateTexture3D;
+			public function HRESULT(ID3D11Device *self, ID3D11Resource* pResource, D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc, ID3D11ShaderResourceView** ppSRView) CreateShaderResourceView;
+			public function HRESULT(ID3D11Device *self, ID3D11Resource* pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC* pDesc, ID3D11UnorderedAccessView** ppUAView) CreateUnorderedAccessView;
+			public function HRESULT(ID3D11Device *self, ID3D11Resource* pResource, D3D11_RENDER_TARGET_VIEW_DESC* pDesc, ID3D11RenderTargetView** ppRTView) CreateRenderTargetView;
+			public function HRESULT(ID3D11Device *self, ID3D11Resource* pResource, D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc, ID3D11DepthStencilView** ppDepthStencilView) CreateDepthStencilView;
+			public function HRESULT(ID3D11Device *self, D3D11_INPUT_ELEMENT_DESC* pInputElementDescs, uint32 NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D11InputLayout** ppInputLayout) CreateInputLayout;
+			public function HRESULT(ID3D11Device *self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) CreateVertexShader;
+			public function HRESULT(ID3D11Device *self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) CreateGeometryShader;
+			public function HRESULT(ID3D11Device *self, void* pShaderBytecode, uint BytecodeLength, D3D11_SO_DECLARATION_ENTRY* pSODeclaration, uint32 NumEntries, uint32* pBufferStrides, uint32 NumStrides, uint32 RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) CreateGeometryShaderWithStreamOutput;
+			public function HRESULT(ID3D11Device *self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) CreatePixelShader;
+			public function HRESULT(ID3D11Device *self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) CreateHullShader;
+			public function HRESULT(ID3D11Device *self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) CreateDomainShader;
+			public function HRESULT(ID3D11Device *self, void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) CreateComputeShader;
+			public function HRESULT(ID3D11Device *self, ID3D11ClassLinkage** ppLinkage) CreateClassLinkage;
+			public function HRESULT(ID3D11Device *self, D3D11_BLEND_DESC* pBlendStateDesc, ID3D11BlendState** ppBlendState) CreateBlendState;
+			public function HRESULT(ID3D11Device *self, D3D11_DEPTH_STENCIL_DESC* pDepthStencilDesc, ID3D11DepthStencilState** ppDepthStencilState) CreateDepthStencilState;
+			public function HRESULT(ID3D11Device *self, D3D11_RASTERIZER_DESC* pRasterizerDesc, ID3D11RasterizerState** ppRasterizerState) CreateRasterizerState;
+			public function HRESULT(ID3D11Device *self, D3D11_SAMPLER_DESC* pSamplerDesc, ID3D11SamplerState** ppSamplerState) CreateSamplerState;
+			public function HRESULT(ID3D11Device *self, D3D11_QUERY_DESC* pQueryDesc, ID3D11Query** ppQuery) CreateQuery;
+			public function HRESULT(ID3D11Device *self, D3D11_QUERY_DESC* pPredicateDesc, ID3D11Predicate** ppPredicate) CreatePredicate;
+			public function HRESULT(ID3D11Device *self, D3D11_COUNTER_DESC* pCounterDesc, ID3D11Counter** ppCounter) CreateCounter;
+			public function HRESULT(ID3D11Device *self, uint32 ContextFlags, ID3D11DeviceContext** ppDeferredContext) CreateDeferredContext;
+			public function HRESULT(ID3D11Device *self, HANDLE hResource, Guid* ReturnedInterface, void** ppResource) OpenSharedResource;
+			public function HRESULT(ID3D11Device *self, DXGI_FORMAT Format, uint32* pFormatSupport) CheckFormatSupport;
+			public function HRESULT(ID3D11Device *self, DXGI_FORMAT Format, uint32 SampleCount, uint32* pNumQualityLevels) CheckMultisampleQualityLevels;
+			public function void(ID3D11Device *self, D3D11_COUNTER_INFO* pCounterInfo) CheckCounterInfo;
+			public function HRESULT(ID3D11Device *self, D3D11_COUNTER_DESC* pDesc, D3D11_COUNTER_TYPE* pType, uint32* pActiveCounters, uint8* szName, uint32* pNameLength, uint8* szUnits, uint32* pUnitsLength, uint8* szDescription, uint32* pDescriptionLength) CheckCounter;
+			public function HRESULT(ID3D11Device *self, D3D11_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
+			public function HRESULT(ID3D11Device *self, Guid* guid, uint32* pDataSize, void* pData) GetPrivateData;
+			public function HRESULT(ID3D11Device *self, Guid* guid, uint32 DataSize, void* pData) SetPrivateData;
+			public function HRESULT(ID3D11Device *self, Guid* guid, IUnknown* pData) SetPrivateDataInterface;
+			public function D3D_FEATURE_LEVEL(ID3D11Device *self) GetFeatureLevel;
+			public function uint32(ID3D11Device *self) GetCreationFlags;
+			public function HRESULT(ID3D11Device *self) GetDeviceRemovedReason;
+			public function void(ID3D11Device *self, ID3D11DeviceContext** ppImmediateContext) GetImmediateContext;
+			public function HRESULT(ID3D11Device *self, uint32 RaiseFlags) SetExceptionMode;
+			public function uint32(ID3D11Device *self) GetExceptionMode;
+		}
+		[CRepr]
+		public struct ID3D11Debug : IUnknown
+		{
+			public const new Guid IID = .(0x79cf2233, 0x7536, 0x4948, 0x9d, 0x36, 0x1e, 0x46, 0x92, 0xdc, 0x57, 0x60);
+			
+			public function HRESULT(ID3D11Debug *self, uint32 Mask) SetFeatureMask;
+			public function uint32(ID3D11Debug *self) GetFeatureMask;
+			public function HRESULT(ID3D11Debug *self, uint32 Milliseconds) SetPresentPerRenderOpDelay;
+			public function uint32(ID3D11Debug *self) GetPresentPerRenderOpDelay;
+			public function HRESULT(ID3D11Debug *self, IDXGISwapChain* pSwapChain) SetSwapChain;
+			public function HRESULT(ID3D11Debug *self, IDXGISwapChain** ppSwapChain) GetSwapChain;
+			public function HRESULT(ID3D11Debug *self, ID3D11DeviceContext* pContext) ValidateContext;
+			public function HRESULT(ID3D11Debug *self, D3D11_RLDO_FLAGS Flags) ReportLiveDeviceObjects;
+			public function HRESULT(ID3D11Debug *self, ID3D11DeviceContext* pContext) ValidateContextForDispatch;
+		}
+		[CRepr]
+		public struct ID3D11SwitchToRef : IUnknown
+		{
+			public const new Guid IID = .(0x1ef337e3, 0x58e7, 0x4f83, 0xa6, 0x92, 0xdb, 0x22, 0x1f, 0x5e, 0xd4, 0x7e);
+			
+			public function BOOL(ID3D11SwitchToRef *self, BOOL UseRef) SetUseRef;
+			public function BOOL(ID3D11SwitchToRef *self) GetUseRef;
+		}
+		[CRepr]
+		public struct ID3D11TracingDevice : IUnknown
+		{
+			public const new Guid IID = .(0x1911c771, 0x1587, 0x413e, 0xa7, 0xe0, 0xfb, 0x26, 0xc3, 0xde, 0x02, 0x68);
+			
+			public function HRESULT(ID3D11TracingDevice *self, uint32 ResourceTypeFlags, uint32 Options) SetShaderTrackingOptionsByType;
+			public function HRESULT(ID3D11TracingDevice *self, IUnknown* pShader, uint32 Options) SetShaderTrackingOptions;
+		}
+		[CRepr]
+		public struct ID3D11RefTrackingOptions : IUnknown
+		{
+			public const new Guid IID = .(0x193dacdf, 0x0db2, 0x4c05, 0xa5, 0x5c, 0xef, 0x06, 0xca, 0xc5, 0x6f, 0xd9);
+			
+			public function HRESULT(ID3D11RefTrackingOptions *self, uint32 uOptions) SetTrackingOptions;
+		}
+		[CRepr]
+		public struct ID3D11RefDefaultTrackingOptions : IUnknown
+		{
+			public const new Guid IID = .(0x03916615, 0xc644, 0x418c, 0x9b, 0xf4, 0x75, 0xdb, 0x5b, 0xe6, 0x3c, 0xa0);
+			
+			public function HRESULT(ID3D11RefDefaultTrackingOptions *self, uint32 ResourceTypeFlags, uint32 Options) SetTrackingOptions;
+		}
+		[CRepr]
+		public struct ID3D11InfoQueue : IUnknown
+		{
+			public const new Guid IID = .(0x6543dbb6, 0x1b48, 0x42f5, 0xab, 0x82, 0xe9, 0x7e, 0xc7, 0x43, 0x26, 0xf6);
+			
+			public function HRESULT(ID3D11InfoQueue *self, uint64 MessageCountLimit) SetMessageCountLimit;
+			public function void(ID3D11InfoQueue *self) ClearStoredMessages;
+			public function HRESULT(ID3D11InfoQueue *self, uint64 MessageIndex, D3D11_MESSAGE* pMessage, uint* pMessageByteLength) GetMessage;
+			public function uint64(ID3D11InfoQueue *self) GetNumMessagesAllowedByStorageFilter;
+			public function uint64(ID3D11InfoQueue *self) GetNumMessagesDeniedByStorageFilter;
+			public function uint64(ID3D11InfoQueue *self) GetNumStoredMessages;
+			public function uint64(ID3D11InfoQueue *self) GetNumStoredMessagesAllowedByRetrievalFilter;
+			public function uint64(ID3D11InfoQueue *self) GetNumMessagesDiscardedByMessageCountLimit;
+			public function uint64(ID3D11InfoQueue *self) GetMessageCountLimit;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_INFO_QUEUE_FILTER* pFilter) AddStorageFilterEntries;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetStorageFilter;
+			public function void(ID3D11InfoQueue *self) ClearStorageFilter;
+			public function HRESULT(ID3D11InfoQueue *self) PushEmptyStorageFilter;
+			public function HRESULT(ID3D11InfoQueue *self) PushCopyOfStorageFilter;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_INFO_QUEUE_FILTER* pFilter) PushStorageFilter;
+			public function void(ID3D11InfoQueue *self) PopStorageFilter;
+			public function uint32(ID3D11InfoQueue *self) GetStorageFilterStackSize;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_INFO_QUEUE_FILTER* pFilter) AddRetrievalFilterEntries;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetRetrievalFilter;
+			public function void(ID3D11InfoQueue *self) ClearRetrievalFilter;
+			public function HRESULT(ID3D11InfoQueue *self) PushEmptyRetrievalFilter;
+			public function HRESULT(ID3D11InfoQueue *self) PushCopyOfRetrievalFilter;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_INFO_QUEUE_FILTER* pFilter) PushRetrievalFilter;
+			public function void(ID3D11InfoQueue *self) PopRetrievalFilter;
+			public function uint32(ID3D11InfoQueue *self) GetRetrievalFilterStackSize;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_MESSAGE_CATEGORY Category, D3D11_MESSAGE_SEVERITY Severity, D3D11_MESSAGE_ID ID, PSTR pDescription) AddMessage;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_MESSAGE_SEVERITY Severity, PSTR pDescription) AddApplicationMessage;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_MESSAGE_CATEGORY Category, BOOL bEnable) SetBreakOnCategory;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_MESSAGE_SEVERITY Severity, BOOL bEnable) SetBreakOnSeverity;
+			public function HRESULT(ID3D11InfoQueue *self, D3D11_MESSAGE_ID ID, BOOL bEnable) SetBreakOnID;
+			public function BOOL(ID3D11InfoQueue *self, D3D11_MESSAGE_CATEGORY Category) GetBreakOnCategory;
+			public function BOOL(ID3D11InfoQueue *self, D3D11_MESSAGE_SEVERITY Severity) GetBreakOnSeverity;
+			public function BOOL(ID3D11InfoQueue *self, D3D11_MESSAGE_ID ID) GetBreakOnID;
+			public function void(ID3D11InfoQueue *self, BOOL bMute) SetMuteDebugOutput;
+			public function BOOL(ID3D11InfoQueue *self) GetMuteDebugOutput;
+		}
+		[CRepr]
+		public struct ID3D11BlendState1 : ID3D11BlendState
+		{
+			public const new Guid IID = .(0xcc86fabe, 0xda55, 0x401d, 0x85, 0xe7, 0xe3, 0xc9, 0xde, 0x28, 0x77, 0xe9);
+			
+			public function void(ID3D11BlendState1 *self, D3D11_BLEND_DESC1* pDesc) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3D11RasterizerState1 : ID3D11RasterizerState
+		{
+			public const new Guid IID = .(0x1217d7a6, 0x5039, 0x418c, 0xb0, 0x42, 0x9c, 0xbe, 0x25, 0x6a, 0xfd, 0x6e);
+			
+			public function void(ID3D11RasterizerState1 *self, D3D11_RASTERIZER_DESC1* pDesc) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3DDeviceContextState : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0x5c1e0d8a, 0x7c23, 0x48f9, 0x8c, 0x59, 0xa9, 0x29, 0x58, 0xce, 0xff, 0x11);
+			
+		}
+		[CRepr]
+		public struct ID3D11DeviceContext1 : ID3D11DeviceContext
+		{
+			public const new Guid IID = .(0xbb2c6faa, 0xb5fb, 0x4082, 0x8e, 0x6b, 0x38, 0x8b, 0x8c, 0xfa, 0x90, 0xe1);
+			
+			public function void(ID3D11DeviceContext1 *self, ID3D11Resource* pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, uint32 DstZ, ID3D11Resource* pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox, uint32 CopyFlags) CopySubresourceRegion1;
+			public function void(ID3D11DeviceContext1 *self, ID3D11Resource* pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch, uint32 CopyFlags) UpdateSubresource1;
+			public function void(ID3D11DeviceContext1 *self, ID3D11Resource* pResource) DiscardResource;
+			public function void(ID3D11DeviceContext1 *self, ID3D11View* pResourceView) DiscardView;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) VSSetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) HSSetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) DSSetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) GSSetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) PSSetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) CSSetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) VSGetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) HSGetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) DSGetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) GSGetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) PSGetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, uint32 StartSlot, uint32 NumBuffers, ID3D11Buffer** ppConstantBuffers, uint32* pFirstConstant, uint32* pNumConstants) CSGetConstantBuffers1;
+			public function void(ID3D11DeviceContext1 *self, ID3DDeviceContextState* pState, ID3DDeviceContextState** ppPreviousState) SwapDeviceContextState;
+			public function void(ID3D11DeviceContext1 *self, ID3D11View* pView, float* Color, RECT* pRect, uint32 NumRects) ClearView;
+			public function void(ID3D11DeviceContext1 *self, ID3D11View* pResourceView, RECT* pRects, uint32 NumRects) DiscardView1;
+		}
+		[CRepr]
+		public struct ID3D11VideoContext1 : ID3D11VideoContext
+		{
+			public const new Guid IID = .(0xa7f026da, 0xa5f8, 0x4487, 0xa5, 0x64, 0x15, 0xe3, 0x43, 0x57, 0x65, 0x1e);
+			
+			public function HRESULT(ID3D11VideoContext1 *self, ID3D11VideoDecoder* pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC1* pBufferDesc) SubmitDecoderBuffers1;
+			public function HRESULT(ID3D11VideoContext1 *self, ID3D11CryptoSession* pCryptoSession, uint32 PrivateInputSize, void* pPrivatInputData, uint64* pPrivateOutputData) GetDataForNewHardwareKey;
+			public function HRESULT(ID3D11VideoContext1 *self, ID3D11CryptoSession* pCryptoSession, D3D11_CRYPTO_SESSION_STATUS* pStatus) CheckCryptoSessionStatus;
+			public function HRESULT(ID3D11VideoContext1 *self, ID3D11VideoDecoder* pDecoder, DXGI_COLOR_SPACE_TYPE InputColorSpace, D3D11_VIDEO_SAMPLE_DESC* pOutputDesc, uint32 ReferenceFrameCount) DecoderEnableDownsampling;
+			public function HRESULT(ID3D11VideoContext1 *self, ID3D11VideoDecoder* pDecoder, D3D11_VIDEO_SAMPLE_DESC* pOutputDesc) DecoderUpdateDownsampling;
+			public function void(ID3D11VideoContext1 *self, ID3D11VideoProcessor* pVideoProcessor, DXGI_COLOR_SPACE_TYPE ColorSpace) VideoProcessorSetOutputColorSpace1;
+			public function void(ID3D11VideoContext1 *self, ID3D11VideoProcessor* pVideoProcessor, BOOL ShaderUsage) VideoProcessorSetOutputShaderUsage;
+			public function void(ID3D11VideoContext1 *self, ID3D11VideoProcessor* pVideoProcessor, DXGI_COLOR_SPACE_TYPE* pColorSpace) VideoProcessorGetOutputColorSpace1;
+			public function void(ID3D11VideoContext1 *self, ID3D11VideoProcessor* pVideoProcessor, BOOL* pShaderUsage) VideoProcessorGetOutputShaderUsage;
+			public function void(ID3D11VideoContext1 *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, DXGI_COLOR_SPACE_TYPE ColorSpace) VideoProcessorSetStreamColorSpace1;
+			public function void(ID3D11VideoContext1 *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL Enable, BOOL FlipHorizontal, BOOL FlipVertical) VideoProcessorSetStreamMirror;
+			public function void(ID3D11VideoContext1 *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, DXGI_COLOR_SPACE_TYPE* pColorSpace) VideoProcessorGetStreamColorSpace1;
+			public function void(ID3D11VideoContext1 *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, BOOL* pEnable, BOOL* pFlipHorizontal, BOOL* pFlipVertical) VideoProcessorGetStreamMirror;
+			public function HRESULT(ID3D11VideoContext1 *self, ID3D11VideoProcessor* pVideoProcessor, uint32 OutputWidth, uint32 OutputHeight, DXGI_FORMAT OutputFormat, uint32 StreamCount, D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT* pStreams, uint32* pBehaviorHints) VideoProcessorGetBehaviorHints;
+		}
+		[CRepr]
+		public struct ID3D11VideoDevice1 : ID3D11VideoDevice
+		{
+			public const new Guid IID = .(0x29da1d51, 0x1321, 0x4454, 0x80, 0x4b, 0xf5, 0xfc, 0x9f, 0x86, 0x1f, 0x0f);
+			
+			public function HRESULT(ID3D11VideoDevice1 *self, Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, uint32* pPrivateInputSize, uint32* pPrivateOutputSize) GetCryptoSessionPrivateDataSize;
+			public function HRESULT(ID3D11VideoDevice1 *self, Guid* pDecoderProfile, uint32 SampleWidth, uint32 SampleHeight, DXGI_RATIONAL* pFrameRate, uint32 BitRate, Guid* pCryptoType, uint32* pDecoderCaps) GetVideoDecoderCaps;
+			public function HRESULT(ID3D11VideoDevice1 *self, D3D11_VIDEO_DECODER_DESC* pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, D3D11_VIDEO_DECODER_CONFIG* pInputConfig, DXGI_RATIONAL* pFrameRate, D3D11_VIDEO_SAMPLE_DESC* pOutputDesc, BOOL* pSupported, BOOL* pRealTimeHint) CheckVideoDecoderDownsampling;
+			public function HRESULT(ID3D11VideoDevice1 *self, D3D11_VIDEO_DECODER_DESC* pInputDesc, DXGI_COLOR_SPACE_TYPE InputColorSpace, D3D11_VIDEO_DECODER_CONFIG* pInputConfig, DXGI_RATIONAL* pFrameRate, D3D11_VIDEO_SAMPLE_DESC* pRecommendedOutputDesc) RecommendVideoDecoderDownsampleParameters;
+		}
+		[CRepr]
+		public struct ID3D11VideoProcessorEnumerator1 : ID3D11VideoProcessorEnumerator
+		{
+			public const new Guid IID = .(0x465217f2, 0x5568, 0x43cf, 0xb5, 0xb9, 0xf6, 0x1d, 0x54, 0x53, 0x1c, 0xa1);
+			
+			public function HRESULT(ID3D11VideoProcessorEnumerator1 *self, DXGI_FORMAT InputFormat, DXGI_COLOR_SPACE_TYPE InputColorSpace, DXGI_FORMAT OutputFormat, DXGI_COLOR_SPACE_TYPE OutputColorSpace, BOOL* pSupported) CheckVideoProcessorFormatConversion;
+		}
+		[CRepr]
+		public struct ID3D11Device1 : ID3D11Device
+		{
+			public const new Guid IID = .(0xa04bfb29, 0x08ef, 0x43d6, 0xa4, 0x9c, 0xa9, 0xbd, 0xbd, 0xcb, 0xe6, 0x86);
+			
+			public function void(ID3D11Device1 *self, ID3D11DeviceContext1** ppImmediateContext) GetImmediateContext1;
+			public function HRESULT(ID3D11Device1 *self, uint32 ContextFlags, ID3D11DeviceContext1** ppDeferredContext) CreateDeferredContext1;
+			public function HRESULT(ID3D11Device1 *self, D3D11_BLEND_DESC1* pBlendStateDesc, ID3D11BlendState1** ppBlendState) CreateBlendState1;
+			public function HRESULT(ID3D11Device1 *self, D3D11_RASTERIZER_DESC1* pRasterizerDesc, ID3D11RasterizerState1** ppRasterizerState) CreateRasterizerState1;
+			public function HRESULT(ID3D11Device1 *self, uint32 Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, Guid* EmulatedInterface, D3D_FEATURE_LEVEL* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState) CreateDeviceContextState;
+			public function HRESULT(ID3D11Device1 *self, HANDLE hResource, Guid* returnedInterface, void** ppResource) OpenSharedResource1;
+			public function HRESULT(ID3D11Device1 *self, PWSTR lpName, uint32 dwDesiredAccess, Guid* returnedInterface, void** ppResource) OpenSharedResourceByName;
+		}
+		[CRepr]
+		public struct ID3DUserDefinedAnnotation : IUnknown
+		{
+			public const new Guid IID = .(0xb2daad8b, 0x03d4, 0x4dbf, 0x95, 0xeb, 0x32, 0xab, 0x4b, 0x63, 0xd0, 0xab);
+			
+			public function int32(ID3DUserDefinedAnnotation *self, PWSTR Name) BeginEvent;
+			public function int32(ID3DUserDefinedAnnotation *self) EndEvent;
+			public function void(ID3DUserDefinedAnnotation *self, PWSTR Name) SetMarker;
+			public function BOOL(ID3DUserDefinedAnnotation *self) GetStatus;
+		}
+		[CRepr]
+		public struct ID3D11DeviceContext2 : ID3D11DeviceContext1
+		{
+			public const new Guid IID = .(0x420d5b32, 0xb90c, 0x4da4, 0xbe, 0xf0, 0x35, 0x9f, 0x6a, 0x24, 0xa8, 0x3a);
+			
+			public function HRESULT(ID3D11DeviceContext2 *self, ID3D11Resource* pTiledResource, uint32 NumTiledResourceRegions, D3D11_TILED_RESOURCE_COORDINATE* pTiledResourceRegionStartCoordinates, D3D11_TILE_REGION_SIZE* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint32 NumRanges, uint32* pRangeFlags, uint32* pTilePoolStartOffsets, uint32* pRangeTileCounts, uint32 Flags) UpdateTileMappings;
+			public function HRESULT(ID3D11DeviceContext2 *self, ID3D11Resource* pDestTiledResource, D3D11_TILED_RESOURCE_COORDINATE* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, D3D11_TILED_RESOURCE_COORDINATE* pSourceRegionStartCoordinate, D3D11_TILE_REGION_SIZE* pTileRegionSize, uint32 Flags) CopyTileMappings;
+			public function void(ID3D11DeviceContext2 *self, ID3D11Resource* pTiledResource, D3D11_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate, D3D11_TILE_REGION_SIZE* pTileRegionSize, ID3D11Buffer* pBuffer, uint64 BufferStartOffsetInBytes, uint32 Flags) CopyTiles;
+			public function void(ID3D11DeviceContext2 *self, ID3D11Resource* pDestTiledResource, D3D11_TILED_RESOURCE_COORDINATE* pDestTileRegionStartCoordinate, D3D11_TILE_REGION_SIZE* pDestTileRegionSize, void* pSourceTileData, uint32 Flags) UpdateTiles;
+			public function HRESULT(ID3D11DeviceContext2 *self, ID3D11Buffer* pTilePool, uint64 NewSizeInBytes) ResizeTilePool;
+			public function void(ID3D11DeviceContext2 *self, ID3D11DeviceChild* pTiledResourceOrViewAccessBeforeBarrier, ID3D11DeviceChild* pTiledResourceOrViewAccessAfterBarrier) TiledResourceBarrier;
+			public function BOOL(ID3D11DeviceContext2 *self) IsAnnotationEnabled;
+			public function void(ID3D11DeviceContext2 *self, PWSTR pLabel, int32 Data) SetMarkerInt;
+			public function void(ID3D11DeviceContext2 *self, PWSTR pLabel, int32 Data) BeginEventInt;
+			public function void(ID3D11DeviceContext2 *self) EndEvent;
+		}
+		[CRepr]
+		public struct ID3D11Device2 : ID3D11Device1
+		{
+			public const new Guid IID = .(0x9d06dffa, 0xd1e5, 0x4d07, 0x83, 0xa8, 0x1b, 0xb1, 0x23, 0xf2, 0xf8, 0x41);
+			
+			public function void(ID3D11Device2 *self, ID3D11DeviceContext2** ppImmediateContext) GetImmediateContext2;
+			public function HRESULT(ID3D11Device2 *self, uint32 ContextFlags, ID3D11DeviceContext2** ppDeferredContext) CreateDeferredContext2;
+			public function void(ID3D11Device2 *self, ID3D11Resource* pTiledResource, uint32* pNumTilesForEntireResource, D3D11_PACKED_MIP_DESC* pPackedMipDesc, D3D11_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint32* pNumSubresourceTilings, uint32 FirstSubresourceTilingToGet, D3D11_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips) GetResourceTiling;
+			public function HRESULT(ID3D11Device2 *self, DXGI_FORMAT Format, uint32 SampleCount, uint32 Flags, uint32* pNumQualityLevels) CheckMultisampleQualityLevels1;
+		}
+		[CRepr]
+		public struct ID3D11Texture2D1 : ID3D11Texture2D
+		{
+			public const new Guid IID = .(0x51218251, 0x1e33, 0x4617, 0x9c, 0xcb, 0x4d, 0x3a, 0x43, 0x67, 0xe7, 0xbb);
+			
+			public function void(ID3D11Texture2D1 *self, D3D11_TEXTURE2D_DESC1* pDesc) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3D11Texture3D1 : ID3D11Texture3D
+		{
+			public const new Guid IID = .(0x0c711683, 0x2853, 0x4846, 0x9b, 0xb0, 0xf3, 0xe6, 0x06, 0x39, 0xe4, 0x6a);
+			
+			public function void(ID3D11Texture3D1 *self, D3D11_TEXTURE3D_DESC1* pDesc) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3D11RasterizerState2 : ID3D11RasterizerState1
+		{
+			public const new Guid IID = .(0x6fbd02fb, 0x209f, 0x46c4, 0xb0, 0x59, 0x2e, 0xd1, 0x55, 0x86, 0xa6, 0xac);
+			
+			public function void(ID3D11RasterizerState2 *self, D3D11_RASTERIZER_DESC2* pDesc) GetDesc2;
+		}
+		[CRepr]
+		public struct ID3D11ShaderResourceView1 : ID3D11ShaderResourceView
+		{
+			public const new Guid IID = .(0x91308b87, 0x9040, 0x411d, 0x8c, 0x67, 0xc3, 0x92, 0x53, 0xce, 0x38, 0x02);
+			
+			public function void(ID3D11ShaderResourceView1 *self, D3D11_SHADER_RESOURCE_VIEW_DESC1* pDesc1) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3D11RenderTargetView1 : ID3D11RenderTargetView
+		{
+			public const new Guid IID = .(0xffbe2e23, 0xf011, 0x418a, 0xac, 0x56, 0x5c, 0xee, 0xd7, 0xc5, 0xb9, 0x4b);
+			
+			public function void(ID3D11RenderTargetView1 *self, D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3D11UnorderedAccessView1 : ID3D11UnorderedAccessView
+		{
+			public const new Guid IID = .(0x7b3b6153, 0xa886, 0x4544, 0xab, 0x37, 0x65, 0x37, 0xc8, 0x50, 0x04, 0x03);
+			
+			public function void(ID3D11UnorderedAccessView1 *self, D3D11_UNORDERED_ACCESS_VIEW_DESC1* pDesc1) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3D11Query1 : ID3D11Query
+		{
+			public const new Guid IID = .(0x631b4766, 0x36dc, 0x461d, 0x8d, 0xb6, 0xc4, 0x7e, 0x13, 0xe6, 0x09, 0x16);
+			
+			public function void(ID3D11Query1 *self, D3D11_QUERY_DESC1* pDesc1) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3D11DeviceContext3 : ID3D11DeviceContext2
+		{
+			public const new Guid IID = .(0xb4e3c01d, 0xe79e, 0x4637, 0x91, 0xb2, 0x51, 0x0e, 0x9f, 0x4c, 0x9b, 0x8f);
+			
+			public function void(ID3D11DeviceContext3 *self, D3D11_CONTEXT_TYPE ContextType, HANDLE hEvent) Flush1;
+			public function void(ID3D11DeviceContext3 *self, BOOL HwProtectionEnable) SetHardwareProtectionState;
+			public function void(ID3D11DeviceContext3 *self, BOOL* pHwProtectionEnable) GetHardwareProtectionState;
+		}
+		[CRepr]
+		public struct ID3D11Fence : ID3D11DeviceChild
+		{
+			public const new Guid IID = .(0xaffde9d1, 0x1df7, 0x4bb7, 0x8a, 0x34, 0x0f, 0x46, 0x25, 0x1d, 0xab, 0x80);
+			
+			public function HRESULT(ID3D11Fence *self, SECURITY_ATTRIBUTES* pAttributes, uint32 dwAccess, PWSTR lpName, HANDLE* pHandle) CreateSharedHandle;
+			public function uint64(ID3D11Fence *self) GetCompletedValue;
+			public function HRESULT(ID3D11Fence *self, uint64 Value, HANDLE hEvent) SetEventOnCompletion;
+		}
+		[CRepr]
+		public struct ID3D11DeviceContext4 : ID3D11DeviceContext3
+		{
+			public const new Guid IID = .(0x917600da, 0xf58c, 0x4c33, 0x98, 0xd8, 0x3e, 0x15, 0xb3, 0x90, 0xfa, 0x24);
+			
+			public function HRESULT(ID3D11DeviceContext4 *self, ID3D11Fence* pFence, uint64 Value) Signal;
+			public function HRESULT(ID3D11DeviceContext4 *self, ID3D11Fence* pFence, uint64 Value) Wait;
+		}
+		[CRepr]
+		public struct ID3D11Device3 : ID3D11Device2
+		{
+			public const new Guid IID = .(0xa05c8c37, 0xd2c6, 0x4732, 0xb3, 0xa0, 0x9c, 0xe0, 0xb0, 0xdc, 0x9a, 0xe6);
+			
+			public function HRESULT(ID3D11Device3 *self, D3D11_TEXTURE2D_DESC1* pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture2D1** ppTexture2D) CreateTexture2D1;
+			public function HRESULT(ID3D11Device3 *self, D3D11_TEXTURE3D_DESC1* pDesc1, D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Texture3D1** ppTexture3D) CreateTexture3D1;
+			public function HRESULT(ID3D11Device3 *self, D3D11_RASTERIZER_DESC2* pRasterizerDesc, ID3D11RasterizerState2** ppRasterizerState) CreateRasterizerState2;
+			public function HRESULT(ID3D11Device3 *self, ID3D11Resource* pResource, D3D11_SHADER_RESOURCE_VIEW_DESC1* pDesc1, ID3D11ShaderResourceView1** ppSRView1) CreateShaderResourceView1;
+			public function HRESULT(ID3D11Device3 *self, ID3D11Resource* pResource, D3D11_UNORDERED_ACCESS_VIEW_DESC1* pDesc1, ID3D11UnorderedAccessView1** ppUAView1) CreateUnorderedAccessView1;
+			public function HRESULT(ID3D11Device3 *self, ID3D11Resource* pResource, D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1, ID3D11RenderTargetView1** ppRTView1) CreateRenderTargetView1;
+			public function HRESULT(ID3D11Device3 *self, D3D11_QUERY_DESC1* pQueryDesc1, ID3D11Query1** ppQuery1) CreateQuery1;
+			public function void(ID3D11Device3 *self, ID3D11DeviceContext3** ppImmediateContext) GetImmediateContext3;
+			public function HRESULT(ID3D11Device3 *self, uint32 ContextFlags, ID3D11DeviceContext3** ppDeferredContext) CreateDeferredContext3;
+			public function void(ID3D11Device3 *self, ID3D11Resource* pDstResource, uint32 DstSubresource, D3D11_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) WriteToSubresource;
+			public function void(ID3D11Device3 *self, void* pDstData, uint32 DstRowPitch, uint32 DstDepthPitch, ID3D11Resource* pSrcResource, uint32 SrcSubresource, D3D11_BOX* pSrcBox) ReadFromSubresource;
+		}
+		[CRepr]
+		public struct ID3D11Device4 : ID3D11Device3
+		{
+			public const new Guid IID = .(0x8992ab71, 0x02e6, 0x4b8d, 0xba, 0x48, 0xb0, 0x56, 0xdc, 0xda, 0x42, 0xc4);
+			
+			public function HRESULT(ID3D11Device4 *self, HANDLE hEvent, uint32* pdwCookie) RegisterDeviceRemovedEvent;
+			public function void(ID3D11Device4 *self, uint32 dwCookie) UnregisterDeviceRemoved;
+		}
+		[CRepr]
+		public struct ID3D11Device5 : ID3D11Device4
+		{
+			public const new Guid IID = .(0x8ffde202, 0xa0e7, 0x45df, 0x9e, 0x01, 0xe8, 0x37, 0x80, 0x1b, 0x5e, 0xa0);
+			
+			public function HRESULT(ID3D11Device5 *self, HANDLE hFence, Guid* ReturnedInterface, void** ppFence) OpenSharedFence;
+			public function HRESULT(ID3D11Device5 *self, uint64 InitialValue, D3D11_FENCE_FLAG Flags, Guid* ReturnedInterface, void** ppFence) CreateFence;
+		}
+		[CRepr]
+		public struct ID3D11Multithread : IUnknown
+		{
+			public const new Guid IID = .(0x9b7e4e00, 0x342c, 0x4106, 0xa1, 0x9f, 0x4f, 0x27, 0x04, 0xf6, 0x89, 0xf0);
+			
+			public function void(ID3D11Multithread *self) Enter;
+			public function void(ID3D11Multithread *self) Leave;
+			public function BOOL(ID3D11Multithread *self, BOOL bMTProtect) SetMultithreadProtected;
+			public function BOOL(ID3D11Multithread *self) GetMultithreadProtected;
+		}
+		[CRepr]
+		public struct ID3D11VideoContext2 : ID3D11VideoContext1
+		{
+			public const new Guid IID = .(0xc4e7374c, 0x6243, 0x4d1b, 0xae, 0x87, 0x52, 0xb4, 0xf7, 0x40, 0xe2, 0x61);
+			
+			public function void(ID3D11VideoContext2 *self, ID3D11VideoProcessor* pVideoProcessor, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) VideoProcessorSetOutputHDRMetaData;
+			public function void(ID3D11VideoContext2 *self, ID3D11VideoProcessor* pVideoProcessor, DXGI_HDR_METADATA_TYPE* pType, uint32 Size, void* pMetaData) VideoProcessorGetOutputHDRMetaData;
+			public function void(ID3D11VideoContext2 *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, DXGI_HDR_METADATA_TYPE Type, uint32 Size, void* pHDRMetaData) VideoProcessorSetStreamHDRMetaData;
+			public function void(ID3D11VideoContext2 *self, ID3D11VideoProcessor* pVideoProcessor, uint32 StreamIndex, DXGI_HDR_METADATA_TYPE* pType, uint32 Size, void* pMetaData) VideoProcessorGetStreamHDRMetaData;
+		}
+		[CRepr]
+		public struct ID3D11VideoDevice2 : ID3D11VideoDevice1
+		{
+			public const new Guid IID = .(0x59c0cb01, 0x35f0, 0x4a70, 0x8f, 0x67, 0x87, 0x90, 0x5c, 0x90, 0x6a, 0x53);
+			
+			public function HRESULT(ID3D11VideoDevice2 *self, D3D11_FEATURE_VIDEO Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
+			public function HRESULT(ID3D11VideoDevice2 *self, ID3D11CryptoSession* pCryptoSession, D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, uint32 DataSize, void* pData) NegotiateCryptoSessionKeyExchangeMT;
+		}
+		[CRepr]
+		public struct ID3D11VideoContext3 : ID3D11VideoContext2
+		{
+			public const new Guid IID = .(0xa9e2faa0, 0xcb39, 0x418f, 0xa0, 0xb7, 0xd8, 0xaa, 0xd4, 0xde, 0x67, 0x2e);
+			
+			public function HRESULT(ID3D11VideoContext3 *self, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint32 ContentKeySize, void* pContentKey, uint32 NumComponentHistograms, uint32* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) DecoderBeginFrame1;
+			public function HRESULT(ID3D11VideoContext3 *self, ID3D11VideoDecoder* pDecoder, uint32 NumBuffers, D3D11_VIDEO_DECODER_BUFFER_DESC2* pBufferDesc) SubmitDecoderBuffers2;
+		}
+		[CRepr]
+		public struct ID3D11ShaderReflectionType
+		{
+			public const new Guid IID = .(0x6e6ffa6a, 0x9bae, 0x4613, 0xa5, 0x1e, 0x91, 0x65, 0x2d, 0x50, 0x8c, 0x21);
+			
+			public function HRESULT(ID3D11ShaderReflectionType *self, D3D11_SHADER_TYPE_DESC* pDesc) GetDesc;
+			public function ID3D11ShaderReflectionType*(ID3D11ShaderReflectionType *self, uint32 Index) GetMemberTypeByIndex;
+			public function ID3D11ShaderReflectionType*(ID3D11ShaderReflectionType *self, PSTR Name) GetMemberTypeByName;
+			public function PSTR(ID3D11ShaderReflectionType *self, uint32 Index) GetMemberTypeName;
+			public function HRESULT(ID3D11ShaderReflectionType *self, ID3D11ShaderReflectionType* pType) IsEqual;
+			public function ID3D11ShaderReflectionType*(ID3D11ShaderReflectionType *self) GetSubType;
+			public function ID3D11ShaderReflectionType*(ID3D11ShaderReflectionType *self) GetBaseClass;
+			public function uint32(ID3D11ShaderReflectionType *self) GetNumInterfaces;
+			public function ID3D11ShaderReflectionType*(ID3D11ShaderReflectionType *self, uint32 uIndex) GetInterfaceByIndex;
+			public function HRESULT(ID3D11ShaderReflectionType *self, ID3D11ShaderReflectionType* pType) IsOfType;
+			public function HRESULT(ID3D11ShaderReflectionType *self, ID3D11ShaderReflectionType* pBase) ImplementsInterface;
+		}
+		[CRepr]
+		public struct ID3D11ShaderReflectionVariable
+		{
+			public const new Guid IID = .(0x51f23923, 0xf3e5, 0x4bd1, 0x91, 0xcb, 0x60, 0x61, 0x77, 0xd8, 0xdb, 0x4c);
+			
+			public function HRESULT(ID3D11ShaderReflectionVariable *self, D3D11_SHADER_VARIABLE_DESC* pDesc) GetDesc;
+			public function ID3D11ShaderReflectionType*(ID3D11ShaderReflectionVariable *self) GetType;
+			public function ID3D11ShaderReflectionConstantBuffer*(ID3D11ShaderReflectionVariable *self) GetBuffer;
+			public function uint32(ID3D11ShaderReflectionVariable *self, uint32 uArrayIndex) GetInterfaceSlot;
+		}
+		[CRepr]
+		public struct ID3D11ShaderReflectionConstantBuffer
+		{
+			public const new Guid IID = .(0xeb62d63d, 0x93dd, 0x4318, 0x8a, 0xe8, 0xc6, 0xf8, 0x3a, 0xd3, 0x71, 0xb8);
+			
+			public function HRESULT(ID3D11ShaderReflectionConstantBuffer *self, D3D11_SHADER_BUFFER_DESC* pDesc) GetDesc;
+			public function ID3D11ShaderReflectionVariable*(ID3D11ShaderReflectionConstantBuffer *self, uint32 Index) GetVariableByIndex;
+			public function ID3D11ShaderReflectionVariable*(ID3D11ShaderReflectionConstantBuffer *self, PSTR Name) GetVariableByName;
+		}
+		[CRepr]
+		public struct ID3D11ShaderReflection : IUnknown
+		{
+			public const new Guid IID = .(0x8d536ca1, 0x0cca, 0x4956, 0xa8, 0x37, 0x78, 0x69, 0x63, 0x75, 0x55, 0x84);
+			
+			public function HRESULT(ID3D11ShaderReflection *self, D3D11_SHADER_DESC* pDesc) GetDesc;
+			public function ID3D11ShaderReflectionConstantBuffer*(ID3D11ShaderReflection *self, uint32 Index) GetConstantBufferByIndex;
+			public function ID3D11ShaderReflectionConstantBuffer*(ID3D11ShaderReflection *self, PSTR Name) GetConstantBufferByName;
+			public function HRESULT(ID3D11ShaderReflection *self, uint32 ResourceIndex, D3D11_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDesc;
+			public function HRESULT(ID3D11ShaderReflection *self, uint32 ParameterIndex, D3D11_SIGNATURE_PARAMETER_DESC* pDesc) GetInputParameterDesc;
+			public function HRESULT(ID3D11ShaderReflection *self, uint32 ParameterIndex, D3D11_SIGNATURE_PARAMETER_DESC* pDesc) GetOutputParameterDesc;
+			public function HRESULT(ID3D11ShaderReflection *self, uint32 ParameterIndex, D3D11_SIGNATURE_PARAMETER_DESC* pDesc) GetPatchConstantParameterDesc;
+			public function ID3D11ShaderReflectionVariable*(ID3D11ShaderReflection *self, PSTR Name) GetVariableByName;
+			public function HRESULT(ID3D11ShaderReflection *self, PSTR Name, D3D11_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDescByName;
+			public function uint32(ID3D11ShaderReflection *self) GetMovInstructionCount;
+			public function uint32(ID3D11ShaderReflection *self) GetMovcInstructionCount;
+			public function uint32(ID3D11ShaderReflection *self) GetConversionInstructionCount;
+			public function uint32(ID3D11ShaderReflection *self) GetBitwiseInstructionCount;
+			public function D3D_PRIMITIVE(ID3D11ShaderReflection *self) GetGSInputPrimitive;
+			public function BOOL(ID3D11ShaderReflection *self) IsSampleFrequencyShader;
+			public function uint32(ID3D11ShaderReflection *self) GetNumInterfaceSlots;
+			public function HRESULT(ID3D11ShaderReflection *self, D3D_FEATURE_LEVEL* pLevel) GetMinFeatureLevel;
+			public function uint32(ID3D11ShaderReflection *self, uint32* pSizeX, uint32* pSizeY, uint32* pSizeZ) GetThreadGroupSize;
+			public function uint64(ID3D11ShaderReflection *self) GetRequiresFlags;
+		}
+		[CRepr]
+		public struct ID3D11LibraryReflection : IUnknown
+		{
+			public const new Guid IID = .(0x54384f1b, 0x5b3e, 0x4bb7, 0xae, 0x01, 0x60, 0xba, 0x30, 0x97, 0xcb, 0xb6);
+			
+			public function HRESULT(ID3D11LibraryReflection *self, D3D11_LIBRARY_DESC* pDesc) GetDesc;
+			public function ID3D11FunctionReflection*(ID3D11LibraryReflection *self, int32 FunctionIndex) GetFunctionByIndex;
+		}
+		[CRepr]
+		public struct ID3D11FunctionReflection
+		{
+			public const new Guid IID = .(0x207bcecb, 0xd683, 0x4a06, 0xa8, 0xa3, 0x9b, 0x14, 0x9b, 0x9f, 0x73, 0xa4);
+			
+			public function HRESULT(ID3D11FunctionReflection *self, D3D11_FUNCTION_DESC* pDesc) GetDesc;
+			public function ID3D11ShaderReflectionConstantBuffer*(ID3D11FunctionReflection *self, uint32 BufferIndex) GetConstantBufferByIndex;
+			public function ID3D11ShaderReflectionConstantBuffer*(ID3D11FunctionReflection *self, PSTR Name) GetConstantBufferByName;
+			public function HRESULT(ID3D11FunctionReflection *self, uint32 ResourceIndex, D3D11_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDesc;
+			public function ID3D11ShaderReflectionVariable*(ID3D11FunctionReflection *self, PSTR Name) GetVariableByName;
+			public function HRESULT(ID3D11FunctionReflection *self, PSTR Name, D3D11_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDescByName;
+			public function ID3D11FunctionParameterReflection*(ID3D11FunctionReflection *self, int32 ParameterIndex) GetFunctionParameter;
+		}
+		[CRepr]
+		public struct ID3D11FunctionParameterReflection
+		{
+			public const new Guid IID = .(0x42757488, 0x334f, 0x47fe, 0x98, 0x2e, 0x1a, 0x65, 0xd0, 0x8c, 0xc4, 0x62);
+			
+			public function HRESULT(ID3D11FunctionParameterReflection *self, D3D11_PARAMETER_DESC* pDesc) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D11ModuleInstance : IUnknown
+		{
+			public const new Guid IID = .(0x469e07f7, 0x045a, 0x48d5, 0xaa, 0x12, 0x68, 0xa4, 0x78, 0xcd, 0xf7, 0x5d);
+			
+			public function HRESULT(ID3D11ModuleInstance *self, uint32 uSrcSlot, uint32 uDstSlot, uint32 cbDstOffset) BindConstantBuffer;
+			public function HRESULT(ID3D11ModuleInstance *self, PSTR pName, uint32 uDstSlot, uint32 cbDstOffset) BindConstantBufferByName;
+			public function HRESULT(ID3D11ModuleInstance *self, uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) BindResource;
+			public function HRESULT(ID3D11ModuleInstance *self, PSTR pName, uint32 uDstSlot, uint32 uCount) BindResourceByName;
+			public function HRESULT(ID3D11ModuleInstance *self, uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) BindSampler;
+			public function HRESULT(ID3D11ModuleInstance *self, PSTR pName, uint32 uDstSlot, uint32 uCount) BindSamplerByName;
+			public function HRESULT(ID3D11ModuleInstance *self, uint32 uSrcSlot, uint32 uDstSlot, uint32 uCount) BindUnorderedAccessView;
+			public function HRESULT(ID3D11ModuleInstance *self, PSTR pName, uint32 uDstSlot, uint32 uCount) BindUnorderedAccessViewByName;
+			public function HRESULT(ID3D11ModuleInstance *self, uint32 uSrcSrvSlot, uint32 uDstUavSlot, uint32 uCount) BindResourceAsUnorderedAccessView;
+			public function HRESULT(ID3D11ModuleInstance *self, PSTR pSrvName, uint32 uDstUavSlot, uint32 uCount) BindResourceAsUnorderedAccessViewByName;
+		}
+		[CRepr]
+		public struct ID3D11Module : IUnknown
+		{
+			public const new Guid IID = .(0xcac701ee, 0x80fc, 0x4122, 0x82, 0x42, 0x10, 0xb3, 0x9c, 0x8c, 0xec, 0x34);
+			
+			public function HRESULT(ID3D11Module *self, PSTR pNamespace, ID3D11ModuleInstance** ppModuleInstance) CreateInstance;
+		}
+		[CRepr]
+		public struct ID3D11Linker : IUnknown
+		{
+			public const new Guid IID = .(0x59a6cd0e, 0xe10d, 0x4c1f, 0x88, 0xc0, 0x63, 0xab, 0xa1, 0xda, 0xf3, 0x0e);
+			
+			public function HRESULT(ID3D11Linker *self, ID3D11ModuleInstance* pEntry, PSTR pEntryName, PSTR pTargetName, uint32 uFlags, ID3DBlob** ppShaderBlob, ID3DBlob** ppErrorBuffer) Link;
+			public function HRESULT(ID3D11Linker *self, ID3D11ModuleInstance* pLibraryMI) UseLibrary;
+			public function HRESULT(ID3D11Linker *self, uint32 uCBufferSlot, uint32 uCBufferEntry) AddClipPlaneFromCBuffer;
+		}
+		[CRepr]
+		public struct ID3D11LinkingNode : IUnknown
+		{
+			public const new Guid IID = .(0xd80dd70c, 0x8d2f, 0x4751, 0x94, 0xa1, 0x03, 0xc7, 0x9b, 0x35, 0x56, 0xdb);
+			
+		}
+		[CRepr]
+		public struct ID3D11FunctionLinkingGraph : IUnknown
+		{
+			public const new Guid IID = .(0x54133220, 0x1ce8, 0x43d3, 0x82, 0x36, 0x98, 0x55, 0xc5, 0xce, 0xec, 0xff);
+			
+			public function HRESULT(ID3D11FunctionLinkingGraph *self, ID3D11ModuleInstance** ppModuleInstance, ID3DBlob** ppErrorBuffer) CreateModuleInstance;
+			public function HRESULT(ID3D11FunctionLinkingGraph *self, D3D11_PARAMETER_DESC* pInputParameters, uint32 cInputParameters, ID3D11LinkingNode** ppInputNode) SetInputSignature;
+			public function HRESULT(ID3D11FunctionLinkingGraph *self, D3D11_PARAMETER_DESC* pOutputParameters, uint32 cOutputParameters, ID3D11LinkingNode** ppOutputNode) SetOutputSignature;
+			public function HRESULT(ID3D11FunctionLinkingGraph *self, PSTR pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, PSTR pFunctionName, ID3D11LinkingNode** ppCallNode) CallFunction;
+			public function HRESULT(ID3D11FunctionLinkingGraph *self, ID3D11LinkingNode* pSrcNode, int32 SrcParameterIndex, ID3D11LinkingNode* pDstNode, int32 DstParameterIndex) PassValue;
+			public function HRESULT(ID3D11FunctionLinkingGraph *self, ID3D11LinkingNode* pSrcNode, int32 SrcParameterIndex, PSTR pSrcSwizzle, ID3D11LinkingNode* pDstNode, int32 DstParameterIndex, PSTR pDstSwizzle) PassValueWithSwizzle;
+			public function HRESULT(ID3D11FunctionLinkingGraph *self, ID3DBlob** ppErrorBuffer) GetLastError;
+			public function HRESULT(ID3D11FunctionLinkingGraph *self, uint32 uFlags, ID3DBlob** ppBuffer) GenerateHlsl;
+		}
+		[CRepr]
+		public struct ID3D11ShaderTrace : IUnknown
+		{
+			public const new Guid IID = .(0x36b013e6, 0x2811, 0x4845, 0xba, 0xa7, 0xd6, 0x23, 0xfe, 0x0d, 0xf1, 0x04);
+			
+			public function HRESULT(ID3D11ShaderTrace *self, uint64* pTestCount) TraceReady;
+			public function void(ID3D11ShaderTrace *self) ResetTrace;
+			public function HRESULT(ID3D11ShaderTrace *self, D3D11_TRACE_STATS* pTraceStats) GetTraceStats;
+			public function HRESULT(ID3D11ShaderTrace *self, uint32 stampIndex) PSSelectStamp;
+			public function HRESULT(ID3D11ShaderTrace *self, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue) GetInitialRegisterContents;
+			public function HRESULT(ID3D11ShaderTrace *self, uint32 stepIndex, D3D11_TRACE_STEP* pTraceStep) GetStep;
+			public function HRESULT(ID3D11ShaderTrace *self, uint32 stepIndex, uint32 writtenRegisterIndex, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue) GetWrittenRegister;
+			public function HRESULT(ID3D11ShaderTrace *self, uint32 stepIndex, uint32 readRegisterIndex, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue) GetReadRegister;
+		}
+		[CRepr]
+		public struct ID3D11ShaderTraceFactory : IUnknown
+		{
+			public const new Guid IID = .(0x1fbad429, 0x66ab, 0x41cc, 0x96, 0x17, 0x66, 0x7a, 0xc1, 0x0e, 0x44, 0x59);
+			
+			public function HRESULT(ID3D11ShaderTraceFactory *self, IUnknown* pShader, D3D11_SHADER_TRACE_DESC* pTraceDesc, ID3D11ShaderTrace** ppShaderTrace) CreateShaderTrace;
+		}
+		[CRepr]
+		public struct ID3DX11Scan : IUnknown
+		{
+			public const new Guid IID = .(0x5089b68f, 0xe71d, 0x4d38, 0xbe, 0x8e, 0xf3, 0x63, 0xb9, 0x5a, 0x94, 0x05);
+			
+			public function HRESULT(ID3DX11Scan *self, D3DX11_SCAN_DIRECTION Direction) SetScanDirection;
+			public function HRESULT(ID3DX11Scan *self, D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ID3D11UnorderedAccessView* pSrc, ID3D11UnorderedAccessView* pDst) Scan;
+			public function HRESULT(ID3DX11Scan *self, D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, uint32 ElementScanPitch, uint32 ScanCount, ID3D11UnorderedAccessView* pSrc, ID3D11UnorderedAccessView* pDst) Multiscan;
+		}
+		[CRepr]
+		public struct ID3DX11SegmentedScan : IUnknown
+		{
+			public const new Guid IID = .(0xa915128c, 0xd954, 0x4c79, 0xbf, 0xe1, 0x64, 0xdb, 0x92, 0x31, 0x94, 0xd6);
+			
+			public function HRESULT(ID3DX11SegmentedScan *self, D3DX11_SCAN_DIRECTION Direction) SetScanDirection;
+			public function HRESULT(ID3DX11SegmentedScan *self, D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint32 ElementScanSize, ID3D11UnorderedAccessView* pSrc, ID3D11UnorderedAccessView* pSrcElementFlags, ID3D11UnorderedAccessView* pDst) SegScan;
+		}
+		[CRepr]
+		public struct ID3DX11FFT : IUnknown
+		{
+			public const new Guid IID = .(0xb3f7a938, 0x4c93, 0x4310, 0xa6, 0x75, 0xb3, 0x0d, 0x6d, 0xe5, 0x05, 0x53);
+			
+			public function HRESULT(ID3DX11FFT *self, float ForwardScale) SetForwardScale;
+			public function float(ID3DX11FFT *self) GetForwardScale;
+			public function HRESULT(ID3DX11FFT *self, float InverseScale) SetInverseScale;
+			public function float(ID3DX11FFT *self) GetInverseScale;
+			public function HRESULT(ID3DX11FFT *self, uint32 NumTempBuffers, ID3D11UnorderedAccessView** ppTempBuffers, uint32 NumPrecomputeBuffers, ID3D11UnorderedAccessView** ppPrecomputeBufferSizes) AttachBuffersAndPrecompute;
+			public function HRESULT(ID3DX11FFT *self, ID3D11UnorderedAccessView* pInputBuffer, ID3D11UnorderedAccessView** ppOutputBuffer) ForwardTransform;
+			public function HRESULT(ID3DX11FFT *self, ID3D11UnorderedAccessView* pInputBuffer, ID3D11UnorderedAccessView** ppOutputBuffer) InverseTransform;
+		}
 		
 		// --- Functions ---
 		
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3D11CreateDevice(IDXGIAdapter pAdapter, D3D_DRIVER_TYPE DriverType, HINSTANCE Software, D3D11_CREATE_DEVICE_FLAG Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, ID3D11Device* ppDevice, D3D_FEATURE_LEVEL* pFeatureLevel, ID3D11DeviceContext* ppImmediateContext);
+		public static extern HRESULT D3D11CreateDevice(IDXGIAdapter* pAdapter, D3D_DRIVER_TYPE DriverType, HINSTANCE Software, D3D11_CREATE_DEVICE_FLAG Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, ID3D11Device** ppDevice, D3D_FEATURE_LEVEL* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3D11CreateDeviceAndSwapChain(IDXGIAdapter pAdapter, D3D_DRIVER_TYPE DriverType, HINSTANCE Software, D3D11_CREATE_DEVICE_FLAG Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, IDXGISwapChain* ppSwapChain, ID3D11Device* ppDevice, D3D_FEATURE_LEVEL* pFeatureLevel, ID3D11DeviceContext* ppImmediateContext);
+		public static extern HRESULT D3D11CreateDeviceAndSwapChain(IDXGIAdapter* pAdapter, D3D_DRIVER_TYPE DriverType, HINSTANCE Software, D3D11_CREATE_DEVICE_FLAG Flags, D3D_FEATURE_LEVEL* pFeatureLevels, uint32 FeatureLevels, uint32 SDKVersion, DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, D3D_FEATURE_LEVEL* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 		[Import("d3dcompiler_47.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DDisassemble11Trace(void* pSrcData, uint SrcDataSize, ID3D11ShaderTrace pTrace, uint32 StartStep, uint32 NumSteps, uint32 Flags, ID3DBlob* ppDisassembly);
+		public static extern HRESULT D3DDisassemble11Trace(void* pSrcData, uint SrcDataSize, ID3D11ShaderTrace* pTrace, uint32 StartStep, uint32 NumSteps, uint32 Flags, ID3DBlob** ppDisassembly);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DX11CreateScan(ID3D11DeviceContext pDeviceContext, uint32 MaxElementScanSize, uint32 MaxScanCount, ID3DX11Scan* ppScan);
+		public static extern HRESULT D3DX11CreateScan(ID3D11DeviceContext* pDeviceContext, uint32 MaxElementScanSize, uint32 MaxScanCount, ID3DX11Scan** ppScan);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DX11CreateSegmentedScan(ID3D11DeviceContext pDeviceContext, uint32 MaxElementScanSize, ID3DX11SegmentedScan* ppScan);
+		public static extern HRESULT D3DX11CreateSegmentedScan(ID3D11DeviceContext* pDeviceContext, uint32 MaxElementScanSize, ID3DX11SegmentedScan** ppScan);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DX11CreateFFT(ID3D11DeviceContext pDeviceContext, D3DX11_FFT_DESC* pDesc, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT* ppFFT);
+		public static extern HRESULT D3DX11CreateFFT(ID3D11DeviceContext* pDeviceContext, D3DX11_FFT_DESC* pDesc, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT** ppFFT);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DX11CreateFFT1DReal(ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT* ppFFT);
+		public static extern HRESULT D3DX11CreateFFT1DReal(ID3D11DeviceContext* pDeviceContext, uint32 X, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT** ppFFT);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DX11CreateFFT1DComplex(ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT* ppFFT);
+		public static extern HRESULT D3DX11CreateFFT1DComplex(ID3D11DeviceContext* pDeviceContext, uint32 X, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT** ppFFT);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DX11CreateFFT2DReal(ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Y, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT* ppFFT);
+		public static extern HRESULT D3DX11CreateFFT2DReal(ID3D11DeviceContext* pDeviceContext, uint32 X, uint32 Y, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT** ppFFT);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DX11CreateFFT2DComplex(ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Y, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT* ppFFT);
+		public static extern HRESULT D3DX11CreateFFT2DComplex(ID3D11DeviceContext* pDeviceContext, uint32 X, uint32 Y, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT** ppFFT);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DX11CreateFFT3DReal(ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Y, uint32 Z, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT* ppFFT);
+		public static extern HRESULT D3DX11CreateFFT3DReal(ID3D11DeviceContext* pDeviceContext, uint32 X, uint32 Y, uint32 Z, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT** ppFFT);
 		[Import("d3dcsx.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3DX11CreateFFT3DComplex(ID3D11DeviceContext pDeviceContext, uint32 X, uint32 Y, uint32 Z, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT* ppFFT);
+		public static extern HRESULT D3DX11CreateFFT3DComplex(ID3D11DeviceContext* pDeviceContext, uint32 X, uint32 Y, uint32 Z, uint32 Flags, D3DX11_FFT_BUFFER_INFO* pBufferInfo, ID3DX11FFT** ppFFT);
 		
 	}
 }

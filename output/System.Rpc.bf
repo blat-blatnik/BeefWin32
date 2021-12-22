@@ -1477,7 +1477,7 @@ namespace Win32
 			public void* pvDestContext;
 			public NDR_SCONTEXT_1** SavedContextHandles;
 			public int32 ParamNumber;
-			public IRpcChannelBuffer pRpcChannelBuffer;
+			public IRpcChannelBuffer* pRpcChannelBuffer;
 			public ARRAY_INFO* pArrayInfo;
 			public uint32* SizePtrCountArray;
 			public uint32* SizePtrOffsetArray;
@@ -1702,7 +1702,7 @@ namespace Win32
 			public uint32 BufferSize;
 			public int pfnAllocate;
 			public int pfnFree;
-			public IRpcChannelBuffer pRpcChannelBuffer;
+			public IRpcChannelBuffer* pRpcChannelBuffer;
 			public uint[5] Reserved;
 		}
 		[CRepr]
@@ -2241,11 +2241,11 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT IUnknown_QueryInterface_Proxy(IUnknown This, Guid* riid, void** ppvObject);
+		public static extern HRESULT IUnknown_QueryInterface_Proxy(IUnknown* This, Guid* riid, void** ppvObject);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 IUnknown_AddRef_Proxy(IUnknown This);
+		public static extern uint32 IUnknown_AddRef_Proxy(IUnknown* This);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 IUnknown_Release_Proxy(IUnknown This);
+		public static extern uint32 IUnknown_Release_Proxy(IUnknown* This);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern RPC_STATUS RpcBindingCopy(void* SourceBinding, void** DestinationBinding);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3093,7 +3093,7 @@ namespace Win32
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void NdrAsyncServerCall(RPC_MESSAGE* pRpcMsg);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NdrDcomAsyncStubCall(IRpcStubBuffer pThis, IRpcChannelBuffer pChannel, RPC_MESSAGE* pRpcMsg, uint32* pdwStubPhase);
+		public static extern int32 NdrDcomAsyncStubCall(IRpcStubBuffer* pThis, IRpcChannelBuffer* pChannel, RPC_MESSAGE* pRpcMsg, uint32* pdwStubPhase);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NdrStubCall2(void* pThis, void* pChannel, RPC_MESSAGE* pRpcMsg, uint32* pdwStubPhase);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3165,7 +3165,7 @@ namespace Win32
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern RPC_STATUS NdrGetUserMarshalInfo(uint32* pFlags, uint32 InformationLevel, NDR_USER_MARSHAL_INFO* pMarshalInfo);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern RPC_STATUS NdrCreateServerInterfaceFromStub(IRpcStubBuffer pStub, RPC_SERVER_INTERFACE* pServerIf);
+		public static extern RPC_STATUS NdrCreateServerInterfaceFromStub(IRpcStubBuffer* pStub, RPC_SERVER_INTERFACE* pServerIf);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CLIENT_CALL_RETURN NdrClientCall3(MIDL_STUBLESS_PROXY_INFO* pProxyInfo, uint32 nProcNum, void* pReturnValue);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3177,7 +3177,7 @@ namespace Win32
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void Ndr64AsyncServerCallAll(RPC_MESSAGE* pRpcMsg);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 Ndr64DcomAsyncStubCall(IRpcStubBuffer pThis, IRpcChannelBuffer pChannel, RPC_MESSAGE* pRpcMsg, uint32* pdwStubPhase);
+		public static extern int32 Ndr64DcomAsyncStubCall(IRpcStubBuffer* pThis, IRpcChannelBuffer* pChannel, RPC_MESSAGE* pRpcMsg, uint32* pdwStubPhase);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NdrStubCall3(void* pThis, void* pChannel, RPC_MESSAGE* pRpcMsg, uint32* pdwStubPhase);
 		[Import("rpcrt4.dll"), CLink, CallingConvention(.Stdcall)]

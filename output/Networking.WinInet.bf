@@ -1940,11 +1940,48 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IDialEventSink {}
-		public struct IDialEngine {}
-		public struct IDialBranding {}
-		public struct IProofOfPossessionCookieInfoManager {}
-		public struct IProofOfPossessionCookieInfoManager2 {}
+		[CRepr]
+		public struct IDialEventSink : IUnknown
+		{
+			public const new Guid IID = .(0x2d86f4ff, 0x6e2d, 0x4488, 0xb2, 0xe9, 0x69, 0x34, 0xaf, 0xd4, 0x1b, 0xea);
+			
+			public function HRESULT(IDialEventSink *self, uint32 dwEvent, uint32 dwStatus) OnEvent;
+		}
+		[CRepr]
+		public struct IDialEngine : IUnknown
+		{
+			public const new Guid IID = .(0x39fd782b, 0x7905, 0x40d5, 0x91, 0x48, 0x3c, 0x9b, 0x19, 0x04, 0x23, 0xd5);
+			
+			public function HRESULT(IDialEngine *self, PWSTR pwzConnectoid, IDialEventSink* pIDES) Initialize;
+			public function HRESULT(IDialEngine *self, PWSTR pwzProperty, PWSTR pwzValue, uint32 dwBufSize) GetProperty;
+			public function HRESULT(IDialEngine *self, PWSTR pwzProperty, PWSTR pwzValue) SetProperty;
+			public function HRESULT(IDialEngine *self) Dial;
+			public function HRESULT(IDialEngine *self) HangUp;
+			public function HRESULT(IDialEngine *self, uint32* pdwState) GetConnectedState;
+			public function HRESULT(IDialEngine *self, uint* pdwHandle) GetConnectHandle;
+		}
+		[CRepr]
+		public struct IDialBranding : IUnknown
+		{
+			public const new Guid IID = .(0x8aecafa9, 0x4306, 0x43cc, 0x8c, 0x5a, 0x76, 0x5f, 0x29, 0x79, 0xcc, 0x16);
+			
+			public function HRESULT(IDialBranding *self, PWSTR pwzConnectoid) Initialize;
+			public function HRESULT(IDialBranding *self, uint32 dwIndex, HBITMAP* phBitmap) GetBitmap;
+		}
+		[CRepr]
+		public struct IProofOfPossessionCookieInfoManager : IUnknown
+		{
+			public const new Guid IID = .(0xcdaece56, 0x4edf, 0x43df, 0xb1, 0x13, 0x88, 0xe4, 0x55, 0x6f, 0xa1, 0xbb);
+			
+			public function HRESULT(IProofOfPossessionCookieInfoManager *self, PWSTR uri, uint32* cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoForUri;
+		}
+		[CRepr]
+		public struct IProofOfPossessionCookieInfoManager2 : IUnknown
+		{
+			public const new Guid IID = .(0x15e41407, 0xb42f, 0x4ae7, 0x99, 0x66, 0x34, 0xa0, 0x87, 0xb2, 0xd7, 0x13);
+			
+			public function HRESULT(IProofOfPossessionCookieInfoManager2 *self, IInspectable* webAccount, PWSTR uri, uint32* cookieInfoCount, ProofOfPossessionCookieInfo** cookieInfo) GetCookieInfoWithUriForAccount;
+		}
 		
 		// --- Functions ---
 		

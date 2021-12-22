@@ -329,41 +329,353 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IOfflineFilesEvents {}
-		public struct IOfflineFilesEvents2 {}
-		public struct IOfflineFilesEvents3 {}
-		public struct IOfflineFilesEvents4 {}
-		public struct IOfflineFilesEventsFilter {}
-		public struct IOfflineFilesErrorInfo {}
-		public struct IOfflineFilesSyncErrorItemInfo {}
-		public struct IOfflineFilesSyncErrorInfo {}
-		public struct IOfflineFilesProgress {}
-		public struct IOfflineFilesSimpleProgress {}
-		public struct IOfflineFilesSyncProgress {}
-		public struct IOfflineFilesSyncConflictHandler {}
-		public struct IOfflineFilesItemFilter {}
-		public struct IOfflineFilesItem {}
-		public struct IOfflineFilesServerItem {}
-		public struct IOfflineFilesShareItem {}
-		public struct IOfflineFilesDirectoryItem {}
-		public struct IOfflineFilesFileItem {}
-		public struct IEnumOfflineFilesItems {}
-		public struct IOfflineFilesItemContainer {}
-		public struct IOfflineFilesChangeInfo {}
-		public struct IOfflineFilesDirtyInfo {}
-		public struct IOfflineFilesFileSysInfo {}
-		public struct IOfflineFilesPinInfo {}
-		public struct IOfflineFilesPinInfo2 {}
-		public struct IOfflineFilesTransparentCacheInfo {}
-		public struct IOfflineFilesGhostInfo {}
-		public struct IOfflineFilesConnectionInfo {}
-		public struct IOfflineFilesShareInfo {}
-		public struct IOfflineFilesSuspend {}
-		public struct IOfflineFilesSuspendInfo {}
-		public struct IOfflineFilesSetting {}
-		public struct IEnumOfflineFilesSettings {}
-		public struct IOfflineFilesCache {}
-		public struct IOfflineFilesCache2 {}
+		[CRepr]
+		public struct IOfflineFilesEvents : IUnknown
+		{
+			public const new Guid IID = .(0xe25585c1, 0x0caa, 0x4eb1, 0x87, 0x3b, 0x1c, 0xae, 0x5b, 0x77, 0xc3, 0x14);
+			
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszOldPath, PWSTR pszNewPath) CacheMoved;
+			public function HRESULT(IOfflineFilesEvents *self) CacheIsFull;
+			public function HRESULT(IOfflineFilesEvents *self) CacheIsCorrupted;
+			public function HRESULT(IOfflineFilesEvents *self, BOOL bEnabled) Enabled;
+			public function HRESULT(IOfflineFilesEvents *self, BOOL bWasEncrypted, BOOL bWasPartial, BOOL bIsEncrypted, BOOL bIsPartial) EncryptionChanged;
+			public function HRESULT(IOfflineFilesEvents *self, Guid* rSyncId) SyncBegin;
+			public function HRESULT(IOfflineFilesEvents *self, Guid* rSyncId, PWSTR pszFile, HRESULT hrResult) SyncFileResult;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszConflictPath, FILETIME* pftConflictDateTime, OFFLINEFILES_SYNC_STATE ConflictSyncState) SyncConflictRecAdded;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszConflictPath, FILETIME* pftConflictDateTime, OFFLINEFILES_SYNC_STATE ConflictSyncState) SyncConflictRecUpdated;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszConflictPath, FILETIME* pftConflictDateTime, OFFLINEFILES_SYNC_STATE ConflictSyncState) SyncConflictRecRemoved;
+			public function HRESULT(IOfflineFilesEvents *self, Guid* rSyncId, HRESULT hrResult) SyncEnd;
+			public function HRESULT(IOfflineFilesEvents *self) NetTransportArrived;
+			public function HRESULT(IOfflineFilesEvents *self) NoNetTransports;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszPath, OFFLINEFILES_ITEM_TYPE ItemType) ItemDisconnected;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszPath, OFFLINEFILES_ITEM_TYPE ItemType) ItemReconnected;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszPath, OFFLINEFILES_ITEM_TYPE ItemType) ItemAvailableOffline;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszPath, OFFLINEFILES_ITEM_TYPE ItemType) ItemNotAvailableOffline;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszPath, OFFLINEFILES_ITEM_TYPE ItemType) ItemPinned;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszPath, OFFLINEFILES_ITEM_TYPE ItemType) ItemNotPinned;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszPath, OFFLINEFILES_ITEM_TYPE ItemType, BOOL bModifiedData, BOOL bModifiedAttributes) ItemModified;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszPath, OFFLINEFILES_ITEM_TYPE ItemType) ItemAddedToCache;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszPath, OFFLINEFILES_ITEM_TYPE ItemType) ItemDeletedFromCache;
+			public function HRESULT(IOfflineFilesEvents *self, PWSTR pszOldPath, PWSTR pszNewPath, OFFLINEFILES_ITEM_TYPE ItemType) ItemRenamed;
+			public function HRESULT(IOfflineFilesEvents *self) DataLost;
+			public function HRESULT(IOfflineFilesEvents *self) Ping;
+		}
+		[CRepr]
+		public struct IOfflineFilesEvents2 : IOfflineFilesEvents
+		{
+			public const new Guid IID = .(0x1ead8f56, 0xff76, 0x4faa, 0xa7, 0x95, 0x6f, 0x6e, 0xf7, 0x92, 0x49, 0x8b);
+			
+			public function HRESULT(IOfflineFilesEvents2 *self) ItemReconnectBegin;
+			public function HRESULT(IOfflineFilesEvents2 *self) ItemReconnectEnd;
+			public function HRESULT(IOfflineFilesEvents2 *self) CacheEvictBegin;
+			public function HRESULT(IOfflineFilesEvents2 *self) CacheEvictEnd;
+			public function HRESULT(IOfflineFilesEvents2 *self, uint32 dwSyncControlFlags) BackgroundSyncBegin;
+			public function HRESULT(IOfflineFilesEvents2 *self, uint32 dwSyncControlFlags) BackgroundSyncEnd;
+			public function HRESULT(IOfflineFilesEvents2 *self) PolicyChangeDetected;
+			public function HRESULT(IOfflineFilesEvents2 *self) PreferenceChangeDetected;
+			public function HRESULT(IOfflineFilesEvents2 *self) SettingsChangesApplied;
+		}
+		[CRepr]
+		public struct IOfflineFilesEvents3 : IOfflineFilesEvents2
+		{
+			public const new Guid IID = .(0x9ba04a45, 0xee69, 0x42f0, 0x9a, 0xb1, 0x7d, 0xb5, 0xc8, 0x80, 0x58, 0x08);
+			
+			public function HRESULT(IOfflineFilesEvents3 *self, PWSTR pszPath, OFFLINEFILES_EVENTS EventType, OFFLINEFILES_ITEM_TYPE ItemType, BOOL bModifiedData, BOOL bModifiedAttributes, PWSTR pzsOldPath) TransparentCacheItemNotify;
+			public function HRESULT(IOfflineFilesEvents3 *self, PWSTR pszPath) PrefetchFileBegin;
+			public function HRESULT(IOfflineFilesEvents3 *self, PWSTR pszPath, HRESULT hrResult) PrefetchFileEnd;
+		}
+		[CRepr]
+		public struct IOfflineFilesEvents4 : IOfflineFilesEvents3
+		{
+			public const new Guid IID = .(0xdbd69b1e, 0xc7d2, 0x473e, 0xb3, 0x5f, 0x9d, 0x8c, 0x24, 0xc0, 0xc4, 0x84);
+			
+			public function HRESULT(IOfflineFilesEvents4 *self) PrefetchCloseHandleBegin;
+			public function HRESULT(IOfflineFilesEvents4 *self, uint32 dwClosedHandleCount, uint32 dwOpenHandleCount, HRESULT hrResult) PrefetchCloseHandleEnd;
+		}
+		[CRepr]
+		public struct IOfflineFilesEventsFilter : IUnknown
+		{
+			public const new Guid IID = .(0x33fc4e1b, 0x0716, 0x40fa, 0xba, 0x65, 0x6e, 0x62, 0xa8, 0x4a, 0x84, 0x6f);
+			
+			public function HRESULT(IOfflineFilesEventsFilter *self, PWSTR* ppszFilter, OFFLINEFILES_PATHFILTER_MATCH* pMatch) GetPathFilter;
+			public function HRESULT(IOfflineFilesEventsFilter *self, uint32 cElements, OFFLINEFILES_EVENTS* prgEvents, uint32* pcEvents) GetIncludedEvents;
+			public function HRESULT(IOfflineFilesEventsFilter *self, uint32 cElements, OFFLINEFILES_EVENTS* prgEvents, uint32* pcEvents) GetExcludedEvents;
+		}
+		[CRepr]
+		public struct IOfflineFilesErrorInfo : IUnknown
+		{
+			public const new Guid IID = .(0x7112fa5f, 0x7571, 0x435a, 0x8e, 0xb7, 0x19, 0x5c, 0x7c, 0x14, 0x29, 0xbc);
+			
+			public function HRESULT(IOfflineFilesErrorInfo *self, BYTE_BLOB** ppBlob) GetRawData;
+			public function HRESULT(IOfflineFilesErrorInfo *self, PWSTR* ppszDescription) GetDescription;
+		}
+		[CRepr]
+		public struct IOfflineFilesSyncErrorItemInfo : IUnknown
+		{
+			public const new Guid IID = .(0xecdbaf0d, 0x6a18, 0x4d55, 0x80, 0x17, 0x10, 0x8f, 0x76, 0x60, 0xba, 0x44);
+			
+			public function HRESULT(IOfflineFilesSyncErrorItemInfo *self, uint32* pdwAttributes) GetFileAttributes;
+			public function HRESULT(IOfflineFilesSyncErrorItemInfo *self, FILETIME* pftLastWrite, FILETIME* pftChange) GetFileTimes;
+			public function HRESULT(IOfflineFilesSyncErrorItemInfo *self, LARGE_INTEGER* pSize) GetFileSize;
+		}
+		[CRepr]
+		public struct IOfflineFilesSyncErrorInfo : IOfflineFilesErrorInfo
+		{
+			public const new Guid IID = .(0x59f95e46, 0xeb54, 0x49d1, 0xbe, 0x76, 0xde, 0x95, 0x45, 0x8d, 0x01, 0xb0);
+			
+			public function HRESULT(IOfflineFilesSyncErrorInfo *self, OFFLINEFILES_SYNC_OPERATION* pSyncOp) GetSyncOperation;
+			public function HRESULT(IOfflineFilesSyncErrorInfo *self, uint32* pdwItemChangeFlags) GetItemChangeFlags;
+			public function HRESULT(IOfflineFilesSyncErrorInfo *self, BOOL* pbLocalEnumerated, BOOL* pbRemoteEnumerated, BOOL* pbOriginalEnumerated) InfoEnumerated;
+			public function HRESULT(IOfflineFilesSyncErrorInfo *self, BOOL* pbLocalInfo, BOOL* pbRemoteInfo, BOOL* pbOriginalInfo) InfoAvailable;
+			public function HRESULT(IOfflineFilesSyncErrorInfo *self, IOfflineFilesSyncErrorItemInfo** ppInfo) GetLocalInfo;
+			public function HRESULT(IOfflineFilesSyncErrorInfo *self, IOfflineFilesSyncErrorItemInfo** ppInfo) GetRemoteInfo;
+			public function HRESULT(IOfflineFilesSyncErrorInfo *self, IOfflineFilesSyncErrorItemInfo** ppInfo) GetOriginalInfo;
+		}
+		[CRepr]
+		public struct IOfflineFilesProgress : IUnknown
+		{
+			public const new Guid IID = .(0xfad63237, 0xc55b, 0x4911, 0x98, 0x50, 0xbc, 0xf9, 0x6d, 0x4c, 0x97, 0x9e);
+			
+			public function HRESULT(IOfflineFilesProgress *self, BOOL* pbAbort) Begin;
+			public function HRESULT(IOfflineFilesProgress *self, BOOL* pbAbort) QueryAbort;
+			public function HRESULT(IOfflineFilesProgress *self, HRESULT hrResult) End;
+		}
+		[CRepr]
+		public struct IOfflineFilesSimpleProgress : IOfflineFilesProgress
+		{
+			public const new Guid IID = .(0xc34f7f9b, 0xc43d, 0x4f9d, 0xa7, 0x76, 0xc0, 0xeb, 0x6d, 0xe5, 0xd4, 0x01);
+			
+			public function HRESULT(IOfflineFilesSimpleProgress *self, PWSTR pszFile, OFFLINEFILES_OP_RESPONSE* pResponse) ItemBegin;
+			public function HRESULT(IOfflineFilesSimpleProgress *self, PWSTR pszFile, HRESULT hrResult, OFFLINEFILES_OP_RESPONSE* pResponse) ItemResult;
+		}
+		[CRepr]
+		public struct IOfflineFilesSyncProgress : IOfflineFilesProgress
+		{
+			public const new Guid IID = .(0x6931f49a, 0x6fc7, 0x4c1b, 0xb2, 0x65, 0x56, 0x79, 0x3f, 0xc4, 0x51, 0xb7);
+			
+			public function HRESULT(IOfflineFilesSyncProgress *self, PWSTR pszFile, OFFLINEFILES_OP_RESPONSE* pResponse) SyncItemBegin;
+			public function HRESULT(IOfflineFilesSyncProgress *self, PWSTR pszFile, HRESULT hrResult, IOfflineFilesSyncErrorInfo* pErrorInfo, OFFLINEFILES_OP_RESPONSE* pResponse) SyncItemResult;
+		}
+		[CRepr]
+		public struct IOfflineFilesSyncConflictHandler : IUnknown
+		{
+			public const new Guid IID = .(0xb6dd5092, 0xc65c, 0x46b6, 0x97, 0xb8, 0xfa, 0xdd, 0x08, 0xe7, 0xe1, 0xbe);
+			
+			public function HRESULT(IOfflineFilesSyncConflictHandler *self, PWSTR pszPath, uint32 fStateKnown, OFFLINEFILES_SYNC_STATE state, uint32 fChangeDetails, OFFLINEFILES_SYNC_CONFLICT_RESOLVE* pConflictResolution, PWSTR* ppszNewName) ResolveConflict;
+		}
+		[CRepr]
+		public struct IOfflineFilesItemFilter : IUnknown
+		{
+			public const new Guid IID = .(0xf4b5a26c, 0xdc05, 0x4f20, 0xad, 0xa4, 0x55, 0x1f, 0x10, 0x77, 0xbe, 0x5c);
+			
+			public function HRESULT(IOfflineFilesItemFilter *self, uint64* pullFlags, uint64* pullMask) GetFilterFlags;
+			public function HRESULT(IOfflineFilesItemFilter *self, FILETIME* pftTime, BOOL* pbEvalTimeOfDay, OFFLINEFILES_ITEM_TIME* pTimeType, OFFLINEFILES_COMPARE* pCompare) GetTimeFilter;
+			public function HRESULT(IOfflineFilesItemFilter *self, char16* pszPattern, uint32 cchPattern) GetPatternFilter;
+		}
+		[CRepr]
+		public struct IOfflineFilesItem : IUnknown
+		{
+			public const new Guid IID = .(0x4a753da6, 0xe044, 0x4f12, 0xa7, 0x18, 0x5d, 0x14, 0xd0, 0x79, 0xa9, 0x06);
+			
+			public function HRESULT(IOfflineFilesItem *self, OFFLINEFILES_ITEM_TYPE* pItemType) GetItemType;
+			public function HRESULT(IOfflineFilesItem *self, PWSTR* ppszPath) GetPath;
+			public function HRESULT(IOfflineFilesItem *self, IOfflineFilesItem** ppItem) GetParentItem;
+			public function HRESULT(IOfflineFilesItem *self, uint32 dwQueryFlags) Refresh;
+			public function HRESULT(IOfflineFilesItem *self, BOOL* pbMarkedForDeletion) IsMarkedForDeletion;
+		}
+		[CRepr]
+		public struct IOfflineFilesServerItem : IOfflineFilesItem
+		{
+			public const new Guid IID = .(0x9b1c9576, 0xa92b, 0x4151, 0x8e, 0x9e, 0x7c, 0x7b, 0x3e, 0xc2, 0xe0, 0x16);
+			
+		}
+		[CRepr]
+		public struct IOfflineFilesShareItem : IOfflineFilesItem
+		{
+			public const new Guid IID = .(0xbab7e48d, 0x4804, 0x41b5, 0xa4, 0x4d, 0x0f, 0x19, 0x9b, 0x06, 0xb1, 0x45);
+			
+		}
+		[CRepr]
+		public struct IOfflineFilesDirectoryItem : IOfflineFilesItem
+		{
+			public const new Guid IID = .(0x2273597a, 0xa08c, 0x4a00, 0xa3, 0x7a, 0xc1, 0xae, 0x4e, 0x9a, 0x1c, 0xfd);
+			
+		}
+		[CRepr]
+		public struct IOfflineFilesFileItem : IOfflineFilesItem
+		{
+			public const new Guid IID = .(0x8dfadead, 0x26c2, 0x4eff, 0x8a, 0x72, 0x6b, 0x50, 0x72, 0x3d, 0x9a, 0x00);
+			
+			public function HRESULT(IOfflineFilesFileItem *self, BOOL* pbIsSparse) IsSparse;
+			public function HRESULT(IOfflineFilesFileItem *self, BOOL* pbIsEncrypted) IsEncrypted;
+		}
+		[CRepr]
+		public struct IEnumOfflineFilesItems : IUnknown
+		{
+			public const new Guid IID = .(0xda70e815, 0xc361, 0x4407, 0xbc, 0x0b, 0x0d, 0x70, 0x46, 0xe5, 0xf2, 0xcd);
+			
+			public function HRESULT(IEnumOfflineFilesItems *self, uint32 celt, IOfflineFilesItem** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumOfflineFilesItems *self, uint32 celt) Skip;
+			public function HRESULT(IEnumOfflineFilesItems *self) Reset;
+			public function HRESULT(IEnumOfflineFilesItems *self, IEnumOfflineFilesItems** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IOfflineFilesItemContainer : IUnknown
+		{
+			public const new Guid IID = .(0x3836f049, 0x9413, 0x45dd, 0xbf, 0x46, 0xb5, 0xaa, 0xa8, 0x2d, 0xc3, 0x10);
+			
+			public function HRESULT(IOfflineFilesItemContainer *self, uint32 dwQueryFlags, IEnumOfflineFilesItems** ppenum) EnumItems;
+			public function HRESULT(IOfflineFilesItemContainer *self, IOfflineFilesItemFilter* pIncludeFileFilter, IOfflineFilesItemFilter* pIncludeDirFilter, IOfflineFilesItemFilter* pExcludeFileFilter, IOfflineFilesItemFilter* pExcludeDirFilter, uint32 dwEnumFlags, uint32 dwQueryFlags, IEnumOfflineFilesItems** ppenum) EnumItemsEx;
+		}
+		[CRepr]
+		public struct IOfflineFilesChangeInfo : IUnknown
+		{
+			public const new Guid IID = .(0xa96e6fa4, 0xe0d1, 0x4c29, 0x96, 0x0b, 0xee, 0x50, 0x8f, 0xe6, 0x8c, 0x72);
+			
+			public function HRESULT(IOfflineFilesChangeInfo *self, BOOL* pbDirty) IsDirty;
+			public function HRESULT(IOfflineFilesChangeInfo *self, BOOL* pbDeletedOffline) IsDeletedOffline;
+			public function HRESULT(IOfflineFilesChangeInfo *self, BOOL* pbCreatedOffline) IsCreatedOffline;
+			public function HRESULT(IOfflineFilesChangeInfo *self, BOOL* pbLocallyModifiedData) IsLocallyModifiedData;
+			public function HRESULT(IOfflineFilesChangeInfo *self, BOOL* pbLocallyModifiedAttributes) IsLocallyModifiedAttributes;
+			public function HRESULT(IOfflineFilesChangeInfo *self, BOOL* pbLocallyModifiedTime) IsLocallyModifiedTime;
+		}
+		[CRepr]
+		public struct IOfflineFilesDirtyInfo : IUnknown
+		{
+			public const new Guid IID = .(0x0f50ce33, 0xbac9, 0x4eaa, 0xa1, 0x1d, 0xda, 0x0e, 0x52, 0x7d, 0x04, 0x7d);
+			
+			public function HRESULT(IOfflineFilesDirtyInfo *self, LARGE_INTEGER* pDirtyByteCount) LocalDirtyByteCount;
+			public function HRESULT(IOfflineFilesDirtyInfo *self, LARGE_INTEGER* pDirtyByteCount) RemoteDirtyByteCount;
+		}
+		[CRepr]
+		public struct IOfflineFilesFileSysInfo : IUnknown
+		{
+			public const new Guid IID = .(0xbc1a163f, 0x7bfd, 0x4d88, 0x9c, 0x66, 0x96, 0xea, 0x9a, 0x6a, 0x3d, 0x6b);
+			
+			public function HRESULT(IOfflineFilesFileSysInfo *self, OFFLINEFILES_ITEM_COPY copy, uint32* pdwAttributes) GetAttributes;
+			public function HRESULT(IOfflineFilesFileSysInfo *self, OFFLINEFILES_ITEM_COPY copy, FILETIME* pftCreationTime, FILETIME* pftLastWriteTime, FILETIME* pftChangeTime, FILETIME* pftLastAccessTime) GetTimes;
+			public function HRESULT(IOfflineFilesFileSysInfo *self, OFFLINEFILES_ITEM_COPY copy, LARGE_INTEGER* pSize) GetFileSize;
+		}
+		[CRepr]
+		public struct IOfflineFilesPinInfo : IUnknown
+		{
+			public const new Guid IID = .(0x5b2b0655, 0xb3fd, 0x497d, 0xad, 0xeb, 0xbd, 0x15, 0x6b, 0xc8, 0x35, 0x5b);
+			
+			public function HRESULT(IOfflineFilesPinInfo *self, BOOL* pbPinned) IsPinned;
+			public function HRESULT(IOfflineFilesPinInfo *self, BOOL* pbPinnedForUser, BOOL* pbInherit) IsPinnedForUser;
+			public function HRESULT(IOfflineFilesPinInfo *self, BOOL* pbPinnedForUser, BOOL* pbInherit) IsPinnedForUserByPolicy;
+			public function HRESULT(IOfflineFilesPinInfo *self, BOOL* pbPinnedForComputer, BOOL* pbInherit) IsPinnedForComputer;
+			public function HRESULT(IOfflineFilesPinInfo *self, BOOL* pbPinnedForFolderRedirection, BOOL* pbInherit) IsPinnedForFolderRedirection;
+		}
+		[CRepr]
+		public struct IOfflineFilesPinInfo2 : IOfflineFilesPinInfo
+		{
+			public const new Guid IID = .(0x623c58a2, 0x42ed, 0x4ad7, 0xb6, 0x9a, 0x0f, 0x1b, 0x30, 0xa7, 0x2d, 0x0d);
+			
+			public function HRESULT(IOfflineFilesPinInfo2 *self, BOOL* pbPartlyPinned) IsPartlyPinned;
+		}
+		[CRepr]
+		public struct IOfflineFilesTransparentCacheInfo : IUnknown
+		{
+			public const new Guid IID = .(0xbcaf4a01, 0x5b68, 0x4b56, 0xa6, 0xa1, 0x8d, 0x27, 0x86, 0xed, 0xe8, 0xe3);
+			
+			public function HRESULT(IOfflineFilesTransparentCacheInfo *self, BOOL* pbTransparentlyCached) IsTransparentlyCached;
+		}
+		[CRepr]
+		public struct IOfflineFilesGhostInfo : IUnknown
+		{
+			public const new Guid IID = .(0x2b09d48c, 0x8ab5, 0x464f, 0xa7, 0x55, 0xa5, 0x9d, 0x92, 0xf9, 0x94, 0x29);
+			
+			public function HRESULT(IOfflineFilesGhostInfo *self, BOOL* pbGhosted) IsGhosted;
+		}
+		[CRepr]
+		public struct IOfflineFilesConnectionInfo : IUnknown
+		{
+			public const new Guid IID = .(0xefb23a09, 0xa867, 0x4be8, 0x83, 0xa6, 0x86, 0x96, 0x9a, 0x7d, 0x08, 0x56);
+			
+			public function HRESULT(IOfflineFilesConnectionInfo *self, OFFLINEFILES_CONNECT_STATE* pConnectState, OFFLINEFILES_OFFLINE_REASON* pOfflineReason) GetConnectState;
+			public function HRESULT(IOfflineFilesConnectionInfo *self, HWND hwndParent, uint32 dwFlags, OFFLINEFILES_CONNECT_STATE ConnectState) SetConnectState;
+			public function HRESULT(IOfflineFilesConnectionInfo *self, HWND hwndParent, uint32 dwFlags) TransitionOnline;
+			public function HRESULT(IOfflineFilesConnectionInfo *self, HWND hwndParent, uint32 dwFlags, BOOL bForceOpenFilesClosed, BOOL* pbOpenFilesPreventedTransition) TransitionOffline;
+		}
+		[CRepr]
+		public struct IOfflineFilesShareInfo : IUnknown
+		{
+			public const new Guid IID = .(0x7bcc43e7, 0x31ce, 0x4ca4, 0x8c, 0xcd, 0x1c, 0xff, 0x2d, 0xc4, 0x94, 0xda);
+			
+			public function HRESULT(IOfflineFilesShareInfo *self, IOfflineFilesShareItem** ppShareItem) GetShareItem;
+			public function HRESULT(IOfflineFilesShareInfo *self, OFFLINEFILES_CACHING_MODE* pCachingMode) GetShareCachingMode;
+			public function HRESULT(IOfflineFilesShareInfo *self, BOOL* pbIsDfsJunction) IsShareDfsJunction;
+		}
+		[CRepr]
+		public struct IOfflineFilesSuspend : IUnknown
+		{
+			public const new Guid IID = .(0x62c4560f, 0xbc0b, 0x48ca, 0xad, 0x9d, 0x34, 0xcb, 0x52, 0x8d, 0x99, 0xa9);
+			
+			public function HRESULT(IOfflineFilesSuspend *self, BOOL bSuspend) SuspendRoot;
+		}
+		[CRepr]
+		public struct IOfflineFilesSuspendInfo : IUnknown
+		{
+			public const new Guid IID = .(0xa457c25b, 0x4e9c, 0x4b04, 0x85, 0xaf, 0x89, 0x32, 0xcc, 0xd9, 0x78, 0x89);
+			
+			public function HRESULT(IOfflineFilesSuspendInfo *self, BOOL* pbSuspended, BOOL* pbSuspendedRoot) IsSuspended;
+		}
+		[CRepr]
+		public struct IOfflineFilesSetting : IUnknown
+		{
+			public const new Guid IID = .(0xd871d3f7, 0xf613, 0x48a1, 0x82, 0x7e, 0x7a, 0x34, 0xe5, 0x60, 0xff, 0xf6);
+			
+			public function HRESULT(IOfflineFilesSetting *self, PWSTR* ppszName) GetName;
+			public function HRESULT(IOfflineFilesSetting *self, OFFLINEFILES_SETTING_VALUE_TYPE* pType) GetValueType;
+			public function HRESULT(IOfflineFilesSetting *self, VARIANT* pvarValue, uint32 dwScope) GetPreference;
+			public function HRESULT(IOfflineFilesSetting *self, uint32* pdwScope) GetPreferenceScope;
+			public function HRESULT(IOfflineFilesSetting *self, VARIANT* pvarValue, uint32 dwScope) SetPreference;
+			public function HRESULT(IOfflineFilesSetting *self, uint32 dwScope) DeletePreference;
+			public function HRESULT(IOfflineFilesSetting *self, VARIANT* pvarValue, uint32 dwScope) GetPolicy;
+			public function HRESULT(IOfflineFilesSetting *self, uint32* pdwScope) GetPolicyScope;
+			public function HRESULT(IOfflineFilesSetting *self, VARIANT* pvarValue, BOOL* pbSetByPolicy) GetValue;
+		}
+		[CRepr]
+		public struct IEnumOfflineFilesSettings : IUnknown
+		{
+			public const new Guid IID = .(0x729680c4, 0x1a38, 0x47bc, 0x9e, 0x5c, 0x02, 0xc5, 0x15, 0x62, 0xac, 0x30);
+			
+			public function HRESULT(IEnumOfflineFilesSettings *self, uint32 celt, IOfflineFilesSetting** rgelt, uint32* pceltFetched) Next;
+			public function HRESULT(IEnumOfflineFilesSettings *self, uint32 celt) Skip;
+			public function HRESULT(IEnumOfflineFilesSettings *self) Reset;
+			public function HRESULT(IEnumOfflineFilesSettings *self, IEnumOfflineFilesSettings** ppenum) Clone;
+		}
+		[CRepr]
+		public struct IOfflineFilesCache : IUnknown
+		{
+			public const new Guid IID = .(0x855d6203, 0x7914, 0x48b9, 0x8d, 0x40, 0x4c, 0x56, 0xf5, 0xac, 0xff, 0xc5);
+			
+			public function HRESULT(IOfflineFilesCache *self, HWND hwndParent, PWSTR* rgpszPaths, uint32 cPaths, BOOL bAsync, uint32 dwSyncControl, IOfflineFilesSyncConflictHandler* pISyncConflictHandler, IOfflineFilesSyncProgress* pIProgress, Guid* pSyncId) Synchronize;
+			public function HRESULT(IOfflineFilesCache *self, PWSTR* rgpszPaths, uint32 cPaths, uint32 dwFlags, BOOL bAsync, IOfflineFilesSimpleProgress* pIProgress) DeleteItems;
+			public function HRESULT(IOfflineFilesCache *self, PWSTR pszUser, PWSTR* rgpszPaths, uint32 cPaths, uint32 dwFlags, BOOL bAsync, IOfflineFilesSimpleProgress* pIProgress) DeleteItemsForUser;
+			public function HRESULT(IOfflineFilesCache *self, HWND hwndParent, PWSTR* rgpszPaths, uint32 cPaths, BOOL bDeep, BOOL bAsync, uint32 dwPinControlFlags, IOfflineFilesSyncProgress* pIProgress) Pin;
+			public function HRESULT(IOfflineFilesCache *self, HWND hwndParent, PWSTR* rgpszPaths, uint32 cPaths, BOOL bDeep, BOOL bAsync, uint32 dwPinControlFlags, IOfflineFilesSyncProgress* pIProgress) Unpin;
+			public function HRESULT(IOfflineFilesCache *self, BOOL* pbEncrypted, BOOL* pbPartial) GetEncryptionStatus;
+			public function HRESULT(IOfflineFilesCache *self, HWND hwndParent, BOOL bEncrypt, uint32 dwEncryptionControlFlags, BOOL bAsync, IOfflineFilesSyncProgress* pIProgress) Encrypt;
+			public function HRESULT(IOfflineFilesCache *self, PWSTR pszPath, uint32 dwQueryFlags, IOfflineFilesItem** ppItem) FindItem;
+			public function HRESULT(IOfflineFilesCache *self, PWSTR pszPath, IOfflineFilesItemFilter* pIncludeFileFilter, IOfflineFilesItemFilter* pIncludeDirFilter, IOfflineFilesItemFilter* pExcludeFileFilter, IOfflineFilesItemFilter* pExcludeDirFilter, uint32 dwQueryFlags, IOfflineFilesItem** ppItem) FindItemEx;
+			public function HRESULT(IOfflineFilesCache *self, PWSTR pszPathOriginal, PWSTR pszPathNew, BOOL bReplaceIfExists) RenameItem;
+			public function HRESULT(IOfflineFilesCache *self, PWSTR* ppszPath) GetLocation;
+			public function HRESULT(IOfflineFilesCache *self, uint64* pcbVolumeTotal, uint64* pcbLimit, uint64* pcbUsed, uint64* pcbUnpinnedLimit, uint64* pcbUnpinnedUsed) GetDiskSpaceInformation;
+			public function HRESULT(IOfflineFilesCache *self, uint64 cbLimit, uint64 cbUnpinnedLimit) SetDiskSpaceLimits;
+			public function HRESULT(IOfflineFilesCache *self, IOfflineFilesSyncProgress* pPinProgress, IOfflineFilesSyncProgress* pUnpinProgress) ProcessAdminPinPolicy;
+			public function HRESULT(IOfflineFilesCache *self, PWSTR pszSettingName, IOfflineFilesSetting** ppSetting) GetSettingObject;
+			public function HRESULT(IOfflineFilesCache *self, IEnumOfflineFilesSettings** ppEnum) EnumSettingObjects;
+			public function HRESULT(IOfflineFilesCache *self, PWSTR pszPath, BOOL* pbCacheable, OFFLINEFILES_CACHING_MODE* pShareCachingMode) IsPathCacheable;
+		}
+		[CRepr]
+		public struct IOfflineFilesCache2 : IOfflineFilesCache
+		{
+			public const new Guid IID = .(0x8c075039, 0x1551, 0x4ed9, 0x87, 0x81, 0x56, 0x70, 0x5c, 0x04, 0xd3, 0xc0);
+			
+			public function HRESULT(IOfflineFilesCache2 *self, PWSTR pszPathOriginal, PWSTR pszPathNew, BOOL bReplaceIfExists) RenameItemEx;
+		}
 		
 		// --- Functions ---
 		

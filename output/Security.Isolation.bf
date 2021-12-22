@@ -20,7 +20,13 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IIsolatedAppLauncher {}
+		[CRepr]
+		public struct IIsolatedAppLauncher : IUnknown
+		{
+			public const new Guid IID = .(0xf686878f, 0x7b42, 0x4cc4, 0x96, 0xfb, 0xf4, 0xf3, 0xb6, 0xe3, 0xd2, 0x4d);
+			
+			public function HRESULT(IIsolatedAppLauncher *self, PWSTR appUserModelId, PWSTR arguments, IsolatedAppLauncherTelemetryParameters* telemetryParameters) Launch;
+		}
 		
 		// --- Functions ---
 		

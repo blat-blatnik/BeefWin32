@@ -745,8 +745,8 @@ namespace Win32
 		[CRepr]
 		public struct TS_SELECTION_ANCHOR
 		{
-			public IAnchor paStart;
-			public IAnchor paEnd;
+			public IAnchor* paStart;
+			public IAnchor* paEnd;
 			public TS_SELECTIONSTYLE style;
 		}
 		[CRepr]
@@ -805,7 +805,7 @@ namespace Win32
 		[CRepr]
 		public struct TF_SELECTION
 		{
-			public ITfRange range;
+			public ITfRange* range;
 			public TF_SELECTIONSTYLE style;
 		}
 		[CRepr]
@@ -817,7 +817,7 @@ namespace Win32
 		[CRepr]
 		public struct TF_HALTCOND
 		{
-			public ITfRange pHaltRange;
+			public ITfRange* pHaltRange;
 			public TfAnchor aHaltPos;
 			public uint32 dwFlags;
 		}
@@ -890,162 +890,1564 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ITextStoreACP {}
-		public struct ITextStoreACP2 {}
-		public struct ITextStoreACPSink {}
-		public struct IAnchor {}
-		public struct ITextStoreAnchor {}
-		public struct ITextStoreAnchorSink {}
-		public struct ITfLangBarMgr {}
-		public struct ITfLangBarEventSink {}
-		public struct ITfLangBarItemSink {}
-		public struct IEnumTfLangBarItems {}
-		public struct ITfLangBarItemMgr {}
-		public struct ITfLangBarItem {}
-		public struct ITfSystemLangBarItemSink {}
-		public struct ITfSystemLangBarItem {}
-		public struct ITfSystemLangBarItemText {}
-		public struct ITfSystemDeviceTypeLangBarItem {}
-		public struct ITfLangBarItemButton {}
-		public struct ITfLangBarItemBitmapButton {}
-		public struct ITfLangBarItemBitmap {}
-		public struct ITfLangBarItemBalloon {}
-		public struct ITfMenu {}
-		public struct ITfThreadMgr {}
-		public struct ITfThreadMgrEx {}
-		public struct ITfThreadMgr2 {}
-		public struct ITfThreadMgrEventSink {}
-		public struct ITfConfigureSystemKeystrokeFeed {}
-		public struct IEnumTfDocumentMgrs {}
-		public struct ITfDocumentMgr {}
-		public struct IEnumTfContexts {}
-		public struct ITfCompositionView {}
-		public struct IEnumITfCompositionView {}
-		public struct ITfComposition {}
-		public struct ITfCompositionSink {}
-		public struct ITfContextComposition {}
-		public struct ITfContextOwnerCompositionServices {}
-		public struct ITfContextOwnerCompositionSink {}
-		public struct ITfContextView {}
-		public struct IEnumTfContextViews {}
-		public struct ITfContext {}
-		public struct ITfQueryEmbedded {}
-		public struct ITfInsertAtSelection {}
-		public struct ITfCleanupContextSink {}
-		public struct ITfCleanupContextDurationSink {}
-		public struct ITfReadOnlyProperty {}
-		public struct IEnumTfPropertyValue {}
-		public struct ITfMouseTracker {}
-		public struct ITfMouseTrackerACP {}
-		public struct ITfMouseSink {}
-		public struct ITfEditRecord {}
-		public struct ITfTextEditSink {}
-		public struct ITfTextLayoutSink {}
-		public struct ITfStatusSink {}
-		public struct ITfEditTransactionSink {}
-		public struct ITfContextOwner {}
-		public struct ITfContextOwnerServices {}
-		public struct ITfContextKeyEventSink {}
-		public struct ITfEditSession {}
-		public struct ITfRange {}
-		public struct ITfRangeACP {}
-		public struct ITextStoreACPServices {}
-		public struct ITfRangeBackup {}
-		public struct ITfPropertyStore {}
-		public struct IEnumTfRanges {}
-		public struct ITfCreatePropertyStore {}
-		public struct ITfPersistentPropertyLoaderACP {}
-		public struct ITfProperty {}
-		public struct IEnumTfProperties {}
-		public struct ITfCompartment {}
-		public struct ITfCompartmentEventSink {}
-		public struct ITfCompartmentMgr {}
-		public struct ITfFunction {}
-		public struct ITfFunctionProvider {}
-		public struct IEnumTfFunctionProviders {}
-		public struct ITfInputProcessorProfiles {}
-		public struct ITfInputProcessorProfilesEx {}
-		public struct ITfInputProcessorProfileSubstituteLayout {}
-		public struct ITfActiveLanguageProfileNotifySink {}
-		public struct IEnumTfLanguageProfiles {}
-		public struct ITfLanguageProfileNotifySink {}
-		public struct ITfInputProcessorProfileMgr {}
-		public struct IEnumTfInputProcessorProfiles {}
-		public struct ITfInputProcessorProfileActivationSink {}
-		public struct ITfKeystrokeMgr {}
-		public struct ITfKeyEventSink {}
-		public struct ITfKeyTraceEventSink {}
-		public struct ITfPreservedKeyNotifySink {}
-		public struct ITfMessagePump {}
-		public struct ITfThreadFocusSink {}
-		public struct ITfTextInputProcessor {}
-		public struct ITfTextInputProcessorEx {}
-		public struct ITfClientId {}
-		public struct ITfDisplayAttributeInfo {}
-		public struct IEnumTfDisplayAttributeInfo {}
-		public struct ITfDisplayAttributeProvider {}
-		public struct ITfDisplayAttributeMgr {}
-		public struct ITfDisplayAttributeNotifySink {}
-		public struct ITfCategoryMgr {}
-		public struct ITfSource {}
-		public struct ITfSourceSingle {}
-		public struct ITfUIElementMgr {}
-		public struct IEnumTfUIElements {}
-		public struct ITfUIElementSink {}
-		public struct ITfUIElement {}
-		public struct ITfCandidateListUIElement {}
-		public struct ITfCandidateListUIElementBehavior {}
-		public struct ITfReadingInformationUIElement {}
-		public struct ITfTransitoryExtensionUIElement {}
-		public struct ITfTransitoryExtensionSink {}
-		public struct ITfToolTipUIElement {}
-		public struct ITfReverseConversionList {}
-		public struct ITfReverseConversion {}
-		public struct ITfReverseConversionMgr {}
-		public struct ITfCandidateString {}
-		public struct IEnumTfCandidates {}
-		public struct ITfCandidateList {}
-		public struct ITfFnReconversion {}
-		public struct ITfFnPlayBack {}
-		public struct ITfFnLangProfileUtil {}
-		public struct ITfFnConfigure {}
-		public struct ITfFnConfigureRegisterWord {}
-		public struct ITfFnConfigureRegisterEudc {}
-		public struct ITfFnShowHelp {}
-		public struct ITfFnBalloon {}
-		public struct ITfFnGetSAPIObject {}
-		public struct ITfFnPropertyUIStatus {}
-		public struct IEnumSpeechCommands {}
-		public struct ISpeechCommandProvider {}
-		public struct ITfFnCustomSpeechCommand {}
-		public struct ITfFnLMProcessor {}
-		public struct ITfFnLMInternal {}
-		public struct IEnumTfLatticeElements {}
-		public struct ITfLMLattice {}
-		public struct ITfFnAdviseText {}
-		public struct ITfFnSearchCandidateProvider {}
-		public struct ITfIntegratableCandidateListUIElement {}
-		public struct ITfFnGetPreferredTouchKeyboardLayout {}
-		public struct ITfFnGetLinguisticAlternates {}
-		public struct IUIManagerEventSink {}
-		public struct ITfInputScope {}
-		public struct ITfInputScope2 {}
-		public struct ITfMSAAControl {}
-		public struct IInternalDocWrap {}
-		public struct ITextStoreACPEx {}
-		public struct ITextStoreAnchorEx {}
-		public struct ITextStoreACPSinkEx {}
-		public struct ITextStoreSinkAnchorEx {}
-		public struct IAccDictionary {}
-		public struct IVersionInfo {}
-		public struct ICoCreateLocally {}
-		public struct ICoCreatedLocally {}
-		public struct IAccStore {}
-		public struct IAccServerDocMgr {}
-		public struct IAccClientDocMgr {}
-		public struct IDocWrap {}
-		public struct IClonableWrapper {}
-		public struct ITfSpeechUIServer {}
+		[CRepr]
+		public struct ITextStoreACP : IUnknown
+		{
+			public const new Guid IID = .(0x28888fe3, 0xc2a0, 0x483a, 0xa3, 0xea, 0x8c, 0xb1, 0xce, 0x51, 0xff, 0x3d);
+			
+			public function HRESULT(ITextStoreACP *self, Guid* riid, IUnknown* punk, uint32 dwMask) AdviseSink;
+			public function HRESULT(ITextStoreACP *self, IUnknown* punk) UnadviseSink;
+			public function HRESULT(ITextStoreACP *self, uint32 dwLockFlags, HRESULT* phrSession) RequestLock;
+			public function HRESULT(ITextStoreACP *self, TS_STATUS* pdcs) GetStatus;
+			public function HRESULT(ITextStoreACP *self, int32 acpTestStart, int32 acpTestEnd, uint32 cch, int32* pacpResultStart, int32* pacpResultEnd) QueryInsert;
+			public function HRESULT(ITextStoreACP *self, uint32 ulIndex, uint32 ulCount, TS_SELECTION_ACP* pSelection, uint32* pcFetched) GetSelection;
+			public function HRESULT(ITextStoreACP *self, uint32 ulCount, TS_SELECTION_ACP* pSelection) SetSelection;
+			public function HRESULT(ITextStoreACP *self, int32 acpStart, int32 acpEnd, char16* pchPlain, uint32 cchPlainReq, uint32* pcchPlainRet, TS_RUNINFO* prgRunInfo, uint32 cRunInfoReq, uint32* pcRunInfoRet, int32* pacpNext) GetText;
+			public function HRESULT(ITextStoreACP *self, uint32 dwFlags, int32 acpStart, int32 acpEnd, char16* pchText, uint32 cch, TS_TEXTCHANGE* pChange) SetText;
+			public function HRESULT(ITextStoreACP *self, int32 acpStart, int32 acpEnd, IDataObject** ppDataObject) GetFormattedText;
+			public function HRESULT(ITextStoreACP *self, int32 acpPos, Guid* rguidService, Guid* riid, IUnknown** ppunk) GetEmbedded;
+			public function HRESULT(ITextStoreACP *self, Guid* pguidService, FORMATETC* pFormatEtc, BOOL* pfInsertable) QueryInsertEmbedded;
+			public function HRESULT(ITextStoreACP *self, uint32 dwFlags, int32 acpStart, int32 acpEnd, IDataObject* pDataObject, TS_TEXTCHANGE* pChange) InsertEmbedded;
+			public function HRESULT(ITextStoreACP *self, uint32 dwFlags, char16* pchText, uint32 cch, int32* pacpStart, int32* pacpEnd, TS_TEXTCHANGE* pChange) InsertTextAtSelection;
+			public function HRESULT(ITextStoreACP *self, uint32 dwFlags, IDataObject* pDataObject, int32* pacpStart, int32* pacpEnd, TS_TEXTCHANGE* pChange) InsertEmbeddedAtSelection;
+			public function HRESULT(ITextStoreACP *self, uint32 dwFlags, uint32 cFilterAttrs, Guid* paFilterAttrs) RequestSupportedAttrs;
+			public function HRESULT(ITextStoreACP *self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsAtPosition;
+			public function HRESULT(ITextStoreACP *self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsTransitioningAtPosition;
+			public function HRESULT(ITextStoreACP *self, int32 acpStart, int32 acpHalt, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags, int32* pacpNext, BOOL* pfFound, int32* plFoundOffset) FindNextAttrTransition;
+			public function HRESULT(ITextStoreACP *self, uint32 ulCount, TS_ATTRVAL* paAttrVals, uint32* pcFetched) RetrieveRequestedAttrs;
+			public function HRESULT(ITextStoreACP *self, int32* pacp) GetEndACP;
+			public function HRESULT(ITextStoreACP *self, uint32* pvcView) GetActiveView;
+			public function HRESULT(ITextStoreACP *self, uint32 vcView, POINT* ptScreen, uint32 dwFlags, int32* pacp) GetACPFromPoint;
+			public function HRESULT(ITextStoreACP *self, uint32 vcView, int32 acpStart, int32 acpEnd, RECT* prc, BOOL* pfClipped) GetTextExt;
+			public function HRESULT(ITextStoreACP *self, uint32 vcView, RECT* prc) GetScreenExt;
+			public function HRESULT(ITextStoreACP *self, uint32 vcView, HWND* phwnd) GetWnd;
+		}
+		[CRepr]
+		public struct ITextStoreACP2 : IUnknown
+		{
+			public const new Guid IID = .(0xf86ad89f, 0x5fe4, 0x4b8d, 0xbb, 0x9f, 0xef, 0x37, 0x97, 0xa8, 0x4f, 0x1f);
+			
+			public function HRESULT(ITextStoreACP2 *self, Guid* riid, IUnknown* punk, uint32 dwMask) AdviseSink;
+			public function HRESULT(ITextStoreACP2 *self, IUnknown* punk) UnadviseSink;
+			public function HRESULT(ITextStoreACP2 *self, uint32 dwLockFlags, HRESULT* phrSession) RequestLock;
+			public function HRESULT(ITextStoreACP2 *self, TS_STATUS* pdcs) GetStatus;
+			public function HRESULT(ITextStoreACP2 *self, int32 acpTestStart, int32 acpTestEnd, uint32 cch, int32* pacpResultStart, int32* pacpResultEnd) QueryInsert;
+			public function HRESULT(ITextStoreACP2 *self, uint32 ulIndex, uint32 ulCount, TS_SELECTION_ACP* pSelection, uint32* pcFetched) GetSelection;
+			public function HRESULT(ITextStoreACP2 *self, uint32 ulCount, TS_SELECTION_ACP* pSelection) SetSelection;
+			public function HRESULT(ITextStoreACP2 *self, int32 acpStart, int32 acpEnd, char16* pchPlain, uint32 cchPlainReq, uint32* pcchPlainRet, TS_RUNINFO* prgRunInfo, uint32 cRunInfoReq, uint32* pcRunInfoRet, int32* pacpNext) GetText;
+			public function HRESULT(ITextStoreACP2 *self, uint32 dwFlags, int32 acpStart, int32 acpEnd, char16* pchText, uint32 cch, TS_TEXTCHANGE* pChange) SetText;
+			public function HRESULT(ITextStoreACP2 *self, int32 acpStart, int32 acpEnd, IDataObject** ppDataObject) GetFormattedText;
+			public function HRESULT(ITextStoreACP2 *self, int32 acpPos, Guid* rguidService, Guid* riid, IUnknown** ppunk) GetEmbedded;
+			public function HRESULT(ITextStoreACP2 *self, Guid* pguidService, FORMATETC* pFormatEtc, BOOL* pfInsertable) QueryInsertEmbedded;
+			public function HRESULT(ITextStoreACP2 *self, uint32 dwFlags, int32 acpStart, int32 acpEnd, IDataObject* pDataObject, TS_TEXTCHANGE* pChange) InsertEmbedded;
+			public function HRESULT(ITextStoreACP2 *self, uint32 dwFlags, char16* pchText, uint32 cch, int32* pacpStart, int32* pacpEnd, TS_TEXTCHANGE* pChange) InsertTextAtSelection;
+			public function HRESULT(ITextStoreACP2 *self, uint32 dwFlags, IDataObject* pDataObject, int32* pacpStart, int32* pacpEnd, TS_TEXTCHANGE* pChange) InsertEmbeddedAtSelection;
+			public function HRESULT(ITextStoreACP2 *self, uint32 dwFlags, uint32 cFilterAttrs, Guid* paFilterAttrs) RequestSupportedAttrs;
+			public function HRESULT(ITextStoreACP2 *self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsAtPosition;
+			public function HRESULT(ITextStoreACP2 *self, int32 acpPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsTransitioningAtPosition;
+			public function HRESULT(ITextStoreACP2 *self, int32 acpStart, int32 acpHalt, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags, int32* pacpNext, BOOL* pfFound, int32* plFoundOffset) FindNextAttrTransition;
+			public function HRESULT(ITextStoreACP2 *self, uint32 ulCount, TS_ATTRVAL* paAttrVals, uint32* pcFetched) RetrieveRequestedAttrs;
+			public function HRESULT(ITextStoreACP2 *self, int32* pacp) GetEndACP;
+			public function HRESULT(ITextStoreACP2 *self, uint32* pvcView) GetActiveView;
+			public function HRESULT(ITextStoreACP2 *self, uint32 vcView, POINT* ptScreen, uint32 dwFlags, int32* pacp) GetACPFromPoint;
+			public function HRESULT(ITextStoreACP2 *self, uint32 vcView, int32 acpStart, int32 acpEnd, RECT* prc, BOOL* pfClipped) GetTextExt;
+			public function HRESULT(ITextStoreACP2 *self, uint32 vcView, RECT* prc) GetScreenExt;
+		}
+		[CRepr]
+		public struct ITextStoreACPSink : IUnknown
+		{
+			public const new Guid IID = .(0x22d44c94, 0xa419, 0x4542, 0xa2, 0x72, 0xae, 0x26, 0x09, 0x3e, 0xce, 0xcf);
+			
+			public function HRESULT(ITextStoreACPSink *self, TEXT_STORE_TEXT_CHANGE_FLAGS dwFlags, TS_TEXTCHANGE* pChange) OnTextChange;
+			public function HRESULT(ITextStoreACPSink *self) OnSelectionChange;
+			public function HRESULT(ITextStoreACPSink *self, TsLayoutCode lcode, uint32 vcView) OnLayoutChange;
+			public function HRESULT(ITextStoreACPSink *self, uint32 dwFlags) OnStatusChange;
+			public function HRESULT(ITextStoreACPSink *self, int32 acpStart, int32 acpEnd, uint32 cAttrs, Guid* paAttrs) OnAttrsChange;
+			public function HRESULT(ITextStoreACPSink *self, TEXT_STORE_LOCK_FLAGS dwLockFlags) OnLockGranted;
+			public function HRESULT(ITextStoreACPSink *self) OnStartEditTransaction;
+			public function HRESULT(ITextStoreACPSink *self) OnEndEditTransaction;
+		}
+		[CRepr]
+		public struct IAnchor : IUnknown
+		{
+			public const new Guid IID = .(0x0feb7e34, 0x5a60, 0x4356, 0x8e, 0xf7, 0xab, 0xde, 0xc2, 0xff, 0x7c, 0xf8);
+			
+			public function HRESULT(IAnchor *self, TsGravity gravity) SetGravity;
+			public function HRESULT(IAnchor *self, TsGravity* pgravity) GetGravity;
+			public function HRESULT(IAnchor *self, IAnchor* paWith, BOOL* pfEqual) IsEqual;
+			public function HRESULT(IAnchor *self, IAnchor* paWith, int32* plResult) Compare;
+			public function HRESULT(IAnchor *self, uint32 dwFlags, int32 cchReq, int32* pcch, IAnchor* paHaltAnchor) Shift;
+			public function HRESULT(IAnchor *self, IAnchor* paSite) ShiftTo;
+			public function HRESULT(IAnchor *self, uint32 dwFlags, TsShiftDir dir, BOOL* pfNoRegion) ShiftRegion;
+			public function HRESULT(IAnchor *self, uint32 dwMask) SetChangeHistoryMask;
+			public function HRESULT(IAnchor *self, ANCHOR_CHANGE_HISTORY_FLAGS* pdwHistory) GetChangeHistory;
+			public function HRESULT(IAnchor *self) ClearChangeHistory;
+			public function HRESULT(IAnchor *self, IAnchor** ppaClone) Clone;
+		}
+		[CRepr]
+		public struct ITextStoreAnchor : IUnknown
+		{
+			public const new Guid IID = .(0x9b2077b0, 0x5f18, 0x4dec, 0xbe, 0xe9, 0x3c, 0xc7, 0x22, 0xf5, 0xdf, 0xe0);
+			
+			public function HRESULT(ITextStoreAnchor *self, Guid* riid, IUnknown* punk, uint32 dwMask) AdviseSink;
+			public function HRESULT(ITextStoreAnchor *self, IUnknown* punk) UnadviseSink;
+			public function HRESULT(ITextStoreAnchor *self, uint32 dwLockFlags, HRESULT* phrSession) RequestLock;
+			public function HRESULT(ITextStoreAnchor *self, TS_STATUS* pdcs) GetStatus;
+			public function HRESULT(ITextStoreAnchor *self, IAnchor* paTestStart, IAnchor* paTestEnd, uint32 cch, IAnchor** ppaResultStart, IAnchor** ppaResultEnd) QueryInsert;
+			public function HRESULT(ITextStoreAnchor *self, uint32 ulIndex, uint32 ulCount, TS_SELECTION_ANCHOR* pSelection, uint32* pcFetched) GetSelection;
+			public function HRESULT(ITextStoreAnchor *self, uint32 ulCount, TS_SELECTION_ANCHOR* pSelection) SetSelection;
+			public function HRESULT(ITextStoreAnchor *self, uint32 dwFlags, IAnchor* paStart, IAnchor* paEnd, char16* pchText, uint32 cchReq, uint32* pcch, BOOL fUpdateAnchor) GetText;
+			public function HRESULT(ITextStoreAnchor *self, uint32 dwFlags, IAnchor* paStart, IAnchor* paEnd, char16* pchText, uint32 cch) SetText;
+			public function HRESULT(ITextStoreAnchor *self, IAnchor* paStart, IAnchor* paEnd, IDataObject** ppDataObject) GetFormattedText;
+			public function HRESULT(ITextStoreAnchor *self, uint32 dwFlags, IAnchor* paPos, Guid* rguidService, Guid* riid, IUnknown** ppunk) GetEmbedded;
+			public function HRESULT(ITextStoreAnchor *self, uint32 dwFlags, IAnchor* paStart, IAnchor* paEnd, IDataObject* pDataObject) InsertEmbedded;
+			public function HRESULT(ITextStoreAnchor *self, uint32 dwFlags, uint32 cFilterAttrs, Guid* paFilterAttrs) RequestSupportedAttrs;
+			public function HRESULT(ITextStoreAnchor *self, IAnchor* paPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsAtPosition;
+			public function HRESULT(ITextStoreAnchor *self, IAnchor* paPos, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags) RequestAttrsTransitioningAtPosition;
+			public function HRESULT(ITextStoreAnchor *self, IAnchor* paStart, IAnchor* paHalt, uint32 cFilterAttrs, Guid* paFilterAttrs, uint32 dwFlags, BOOL* pfFound, int32* plFoundOffset) FindNextAttrTransition;
+			public function HRESULT(ITextStoreAnchor *self, uint32 ulCount, TS_ATTRVAL* paAttrVals, uint32* pcFetched) RetrieveRequestedAttrs;
+			public function HRESULT(ITextStoreAnchor *self, IAnchor** ppaStart) GetStart;
+			public function HRESULT(ITextStoreAnchor *self, IAnchor** ppaEnd) GetEnd;
+			public function HRESULT(ITextStoreAnchor *self, uint32* pvcView) GetActiveView;
+			public function HRESULT(ITextStoreAnchor *self, uint32 vcView, POINT* ptScreen, uint32 dwFlags, IAnchor** ppaSite) GetAnchorFromPoint;
+			public function HRESULT(ITextStoreAnchor *self, uint32 vcView, IAnchor* paStart, IAnchor* paEnd, RECT* prc, BOOL* pfClipped) GetTextExt;
+			public function HRESULT(ITextStoreAnchor *self, uint32 vcView, RECT* prc) GetScreenExt;
+			public function HRESULT(ITextStoreAnchor *self, uint32 vcView, HWND* phwnd) GetWnd;
+			public function HRESULT(ITextStoreAnchor *self, Guid* pguidService, FORMATETC* pFormatEtc, BOOL* pfInsertable) QueryInsertEmbedded;
+			public function HRESULT(ITextStoreAnchor *self, uint32 dwFlags, char16* pchText, uint32 cch, IAnchor** ppaStart, IAnchor** ppaEnd) InsertTextAtSelection;
+			public function HRESULT(ITextStoreAnchor *self, uint32 dwFlags, IDataObject* pDataObject, IAnchor** ppaStart, IAnchor** ppaEnd) InsertEmbeddedAtSelection;
+		}
+		[CRepr]
+		public struct ITextStoreAnchorSink : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e905, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITextStoreAnchorSink *self, TEXT_STORE_CHANGE_FLAGS dwFlags, IAnchor* paStart, IAnchor* paEnd) OnTextChange;
+			public function HRESULT(ITextStoreAnchorSink *self) OnSelectionChange;
+			public function HRESULT(ITextStoreAnchorSink *self, TsLayoutCode lcode, uint32 vcView) OnLayoutChange;
+			public function HRESULT(ITextStoreAnchorSink *self, uint32 dwFlags) OnStatusChange;
+			public function HRESULT(ITextStoreAnchorSink *self, IAnchor* paStart, IAnchor* paEnd, uint32 cAttrs, Guid* paAttrs) OnAttrsChange;
+			public function HRESULT(ITextStoreAnchorSink *self, TEXT_STORE_LOCK_FLAGS dwLockFlags) OnLockGranted;
+			public function HRESULT(ITextStoreAnchorSink *self) OnStartEditTransaction;
+			public function HRESULT(ITextStoreAnchorSink *self) OnEndEditTransaction;
+		}
+		[CRepr]
+		public struct ITfLangBarMgr : IUnknown
+		{
+			public const new Guid IID = .(0x87955690, 0xe627, 0x11d2, 0x8d, 0xdb, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfLangBarMgr *self, ITfLangBarEventSink* pSink, HWND hwnd, uint32 dwFlags, uint32* pdwCookie) AdviseEventSink;
+			public function HRESULT(ITfLangBarMgr *self, uint32 dwCookie) UnadviseEventSink;
+			public function HRESULT(ITfLangBarMgr *self, uint32 dwThreadId, uint32 dwType, Guid* riid, IUnknown** ppunk) GetThreadMarshalInterface;
+			public function HRESULT(ITfLangBarMgr *self, uint32 dwThreadId, ITfLangBarItemMgr** pplbi, uint32* pdwThreadid) GetThreadLangBarItemMgr;
+			public function HRESULT(ITfLangBarMgr *self, uint32 dwThreadId, ITfInputProcessorProfiles** ppaip, uint32* pdwThreadid) GetInputProcessorProfiles;
+			public function HRESULT(ITfLangBarMgr *self, uint32* pdwThreadId, BOOL fPrev) RestoreLastFocus;
+			public function HRESULT(ITfLangBarMgr *self, ITfLangBarEventSink* pSink, uint32 dwThreadId, uint32 dwFlags) SetModalInput;
+			public function HRESULT(ITfLangBarMgr *self, uint32 dwFlags) ShowFloating;
+			public function HRESULT(ITfLangBarMgr *self, uint32* pdwFlags) GetShowFloatingStatus;
+		}
+		[CRepr]
+		public struct ITfLangBarEventSink : IUnknown
+		{
+			public const new Guid IID = .(0x18a4e900, 0xe0ae, 0x11d2, 0xaf, 0xdd, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfLangBarEventSink *self, uint32 dwThreadId) OnSetFocus;
+			public function HRESULT(ITfLangBarEventSink *self, uint32 dwThreadId) OnThreadTerminate;
+			public function HRESULT(ITfLangBarEventSink *self, uint32 dwThreadId) OnThreadItemChange;
+			public function HRESULT(ITfLangBarEventSink *self, uint32 dwThreadId, uint32 uMsg, WPARAM wParam, LPARAM lParam) OnModalInput;
+			public function HRESULT(ITfLangBarEventSink *self, uint32 dwFlags) ShowFloating;
+			public function HRESULT(ITfLangBarEventSink *self, uint32 dwThreadId, Guid* rguid, RECT* prc) GetItemFloatingRect;
+		}
+		[CRepr]
+		public struct ITfLangBarItemSink : IUnknown
+		{
+			public const new Guid IID = .(0x57dbe1a0, 0xde25, 0x11d2, 0xaf, 0xdd, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfLangBarItemSink *self, uint32 dwFlags) OnUpdate;
+		}
+		[CRepr]
+		public struct IEnumTfLangBarItems : IUnknown
+		{
+			public const new Guid IID = .(0x583f34d0, 0xde25, 0x11d2, 0xaf, 0xdd, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(IEnumTfLangBarItems *self, IEnumTfLangBarItems** ppEnum) Clone;
+			public function HRESULT(IEnumTfLangBarItems *self, uint32 ulCount, ITfLangBarItem** ppItem, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfLangBarItems *self) Reset;
+			public function HRESULT(IEnumTfLangBarItems *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfLangBarItemMgr : IUnknown
+		{
+			public const new Guid IID = .(0xba468c55, 0x9956, 0x4fb1, 0xa5, 0x9d, 0x52, 0xa7, 0xdd, 0x7c, 0xc6, 0xaa);
+			
+			public function HRESULT(ITfLangBarItemMgr *self, IEnumTfLangBarItems** ppEnum) EnumItems;
+			public function HRESULT(ITfLangBarItemMgr *self, Guid* rguid, ITfLangBarItem** ppItem) GetItem;
+			public function HRESULT(ITfLangBarItemMgr *self, ITfLangBarItem* punk) AddItem;
+			public function HRESULT(ITfLangBarItemMgr *self, ITfLangBarItem* punk) RemoveItem;
+			public function HRESULT(ITfLangBarItemMgr *self, ITfLangBarItemSink* punk, uint32* pdwCookie, Guid* rguidItem) AdviseItemSink;
+			public function HRESULT(ITfLangBarItemMgr *self, uint32 dwCookie) UnadviseItemSink;
+			public function HRESULT(ITfLangBarItemMgr *self, uint32 dwThreadId, Guid* rguid, RECT* prc) GetItemFloatingRect;
+			public function HRESULT(ITfLangBarItemMgr *self, uint32 ulCount, Guid* prgguid, uint32* pdwStatus) GetItemsStatus;
+			public function HRESULT(ITfLangBarItemMgr *self, uint32* pulCount) GetItemNum;
+			public function HRESULT(ITfLangBarItemMgr *self, uint32 ulCount, ITfLangBarItem** ppItem, TF_LANGBARITEMINFO* pInfo, uint32* pdwStatus, uint32* pcFetched) GetItems;
+			public function HRESULT(ITfLangBarItemMgr *self, uint32 ulCount, ITfLangBarItemSink** ppunk, Guid* pguidItem, uint32* pdwCookie) AdviseItemsSink;
+			public function HRESULT(ITfLangBarItemMgr *self, uint32 ulCount, uint32* pdwCookie) UnadviseItemsSink;
+		}
+		[CRepr]
+		public struct ITfLangBarItem : IUnknown
+		{
+			public const new Guid IID = .(0x73540d69, 0xedeb, 0x4ee9, 0x96, 0xc9, 0x23, 0xaa, 0x30, 0xb2, 0x59, 0x16);
+			
+			public function HRESULT(ITfLangBarItem *self, TF_LANGBARITEMINFO* pInfo) GetInfo;
+			public function HRESULT(ITfLangBarItem *self, uint32* pdwStatus) GetStatus;
+			public function HRESULT(ITfLangBarItem *self, BOOL fShow) Show;
+			public function HRESULT(ITfLangBarItem *self, BSTR* pbstrToolTip) GetTooltipString;
+		}
+		[CRepr]
+		public struct ITfSystemLangBarItemSink : IUnknown
+		{
+			public const new Guid IID = .(0x1449d9ab, 0x13cf, 0x4687, 0xaa, 0x3e, 0x8d, 0x8b, 0x18, 0x57, 0x43, 0x96);
+			
+			public function HRESULT(ITfSystemLangBarItemSink *self, ITfMenu* pMenu) InitMenu;
+			public function HRESULT(ITfSystemLangBarItemSink *self, uint32 wID) OnMenuSelect;
+		}
+		[CRepr]
+		public struct ITfSystemLangBarItem : IUnknown
+		{
+			public const new Guid IID = .(0x1e13e9ec, 0x6b33, 0x4d4a, 0xb5, 0xeb, 0x8a, 0x92, 0xf0, 0x29, 0xf3, 0x56);
+			
+			public function HRESULT(ITfSystemLangBarItem *self, HICON hIcon) SetIcon;
+			public function HRESULT(ITfSystemLangBarItem *self, char16* pchToolTip, uint32 cch) SetTooltipString;
+		}
+		[CRepr]
+		public struct ITfSystemLangBarItemText : IUnknown
+		{
+			public const new Guid IID = .(0x5c4ce0e5, 0xba49, 0x4b52, 0xac, 0x6b, 0x3b, 0x39, 0x7b, 0x4f, 0x70, 0x1f);
+			
+			public function HRESULT(ITfSystemLangBarItemText *self, char16* pch, uint32 cch) SetItemText;
+			public function HRESULT(ITfSystemLangBarItemText *self, BSTR* pbstrText) GetItemText;
+		}
+		[CRepr]
+		public struct ITfSystemDeviceTypeLangBarItem : IUnknown
+		{
+			public const new Guid IID = .(0x45672eb9, 0x9059, 0x46a2, 0x83, 0x8d, 0x45, 0x30, 0x35, 0x5f, 0x6a, 0x77);
+			
+			public function HRESULT(ITfSystemDeviceTypeLangBarItem *self, LANG_BAR_ITEM_ICON_MODE_FLAGS dwFlags) SetIconMode;
+			public function HRESULT(ITfSystemDeviceTypeLangBarItem *self, uint32* pdwFlags) GetIconMode;
+		}
+		[CRepr]
+		public struct ITfLangBarItemButton : ITfLangBarItem
+		{
+			public const new Guid IID = .(0x28c7f1d0, 0xde25, 0x11d2, 0xaf, 0xdd, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfLangBarItemButton *self, TfLBIClick click, POINT pt, RECT* prcArea) OnClick;
+			public function HRESULT(ITfLangBarItemButton *self, ITfMenu* pMenu) InitMenu;
+			public function HRESULT(ITfLangBarItemButton *self, uint32 wID) OnMenuSelect;
+			public function HRESULT(ITfLangBarItemButton *self, HICON* phIcon) GetIcon;
+			public function HRESULT(ITfLangBarItemButton *self, BSTR* pbstrText) GetText;
+		}
+		[CRepr]
+		public struct ITfLangBarItemBitmapButton : ITfLangBarItem
+		{
+			public const new Guid IID = .(0xa26a0525, 0x3fae, 0x4fa0, 0x89, 0xee, 0x88, 0xa9, 0x64, 0xf9, 0xf1, 0xb5);
+			
+			public function HRESULT(ITfLangBarItemBitmapButton *self, TfLBIClick click, POINT pt, RECT* prcArea) OnClick;
+			public function HRESULT(ITfLangBarItemBitmapButton *self, ITfMenu* pMenu) InitMenu;
+			public function HRESULT(ITfLangBarItemBitmapButton *self, uint32 wID) OnMenuSelect;
+			public function HRESULT(ITfLangBarItemBitmapButton *self, SIZE* pszDefault, SIZE* psz) GetPreferredSize;
+			public function HRESULT(ITfLangBarItemBitmapButton *self, int32 bmWidth, int32 bmHeight, uint32 dwFlags, HBITMAP* phbmp, HBITMAP* phbmpMask) DrawBitmap;
+			public function HRESULT(ITfLangBarItemBitmapButton *self, BSTR* pbstrText) GetText;
+		}
+		[CRepr]
+		public struct ITfLangBarItemBitmap : ITfLangBarItem
+		{
+			public const new Guid IID = .(0x73830352, 0xd722, 0x4179, 0xad, 0xa5, 0xf0, 0x45, 0xc9, 0x8d, 0xf3, 0x55);
+			
+			public function HRESULT(ITfLangBarItemBitmap *self, TfLBIClick click, POINT pt, RECT* prcArea) OnClick;
+			public function HRESULT(ITfLangBarItemBitmap *self, SIZE* pszDefault, SIZE* psz) GetPreferredSize;
+			public function HRESULT(ITfLangBarItemBitmap *self, int32 bmWidth, int32 bmHeight, uint32 dwFlags, HBITMAP* phbmp, HBITMAP* phbmpMask) DrawBitmap;
+		}
+		[CRepr]
+		public struct ITfLangBarItemBalloon : ITfLangBarItem
+		{
+			public const new Guid IID = .(0x01c2d285, 0xd3c7, 0x4b7b, 0xb5, 0xb5, 0xd9, 0x74, 0x11, 0xd0, 0xc2, 0x83);
+			
+			public function HRESULT(ITfLangBarItemBalloon *self, TfLBIClick click, POINT pt, RECT* prcArea) OnClick;
+			public function HRESULT(ITfLangBarItemBalloon *self, SIZE* pszDefault, SIZE* psz) GetPreferredSize;
+			public function HRESULT(ITfLangBarItemBalloon *self, TF_LBBALLOONINFO* pInfo) GetBalloonInfo;
+		}
+		[CRepr]
+		public struct ITfMenu : IUnknown
+		{
+			public const new Guid IID = .(0x6f8a98e4, 0xaaa0, 0x4f15, 0x8c, 0x5b, 0x07, 0xe0, 0xdf, 0x0a, 0x3d, 0xd8);
+			
+			public function HRESULT(ITfMenu *self, uint32 uId, uint32 dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, char16* pch, uint32 cch, ITfMenu** ppMenu) AddMenuItem;
+		}
+		[CRepr]
+		public struct ITfThreadMgr : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e801, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfThreadMgr *self, uint32* ptid) Activate;
+			public function HRESULT(ITfThreadMgr *self) Deactivate;
+			public function HRESULT(ITfThreadMgr *self, ITfDocumentMgr** ppdim) CreateDocumentMgr;
+			public function HRESULT(ITfThreadMgr *self, IEnumTfDocumentMgrs** ppEnum) EnumDocumentMgrs;
+			public function HRESULT(ITfThreadMgr *self, ITfDocumentMgr** ppdimFocus) GetFocus;
+			public function HRESULT(ITfThreadMgr *self, ITfDocumentMgr* pdimFocus) SetFocus;
+			public function HRESULT(ITfThreadMgr *self, HWND hwnd, ITfDocumentMgr* pdimNew, ITfDocumentMgr** ppdimPrev) AssociateFocus;
+			public function HRESULT(ITfThreadMgr *self, BOOL* pfThreadFocus) IsThreadFocus;
+			public function HRESULT(ITfThreadMgr *self, Guid* clsid, ITfFunctionProvider** ppFuncProv) GetFunctionProvider;
+			public function HRESULT(ITfThreadMgr *self, IEnumTfFunctionProviders** ppEnum) EnumFunctionProviders;
+			public function HRESULT(ITfThreadMgr *self, ITfCompartmentMgr** ppCompMgr) GetGlobalCompartment;
+		}
+		[CRepr]
+		public struct ITfThreadMgrEx : ITfThreadMgr
+		{
+			public const new Guid IID = .(0x3e90ade3, 0x7594, 0x4cb0, 0xbb, 0x58, 0x69, 0x62, 0x8f, 0x5f, 0x45, 0x8c);
+			
+			public function HRESULT(ITfThreadMgrEx *self, uint32* ptid, uint32 dwFlags) ActivateEx;
+			public function HRESULT(ITfThreadMgrEx *self, uint32* lpdwFlags) GetActiveFlags;
+		}
+		[CRepr]
+		public struct ITfThreadMgr2 : IUnknown
+		{
+			public const new Guid IID = .(0x0ab198ef, 0x6477, 0x4ee8, 0x88, 0x12, 0x67, 0x80, 0xed, 0xb8, 0x2d, 0x5e);
+			
+			public function HRESULT(ITfThreadMgr2 *self, uint32* ptid) Activate;
+			public function HRESULT(ITfThreadMgr2 *self) Deactivate;
+			public function HRESULT(ITfThreadMgr2 *self, ITfDocumentMgr** ppdim) CreateDocumentMgr;
+			public function HRESULT(ITfThreadMgr2 *self, IEnumTfDocumentMgrs** ppEnum) EnumDocumentMgrs;
+			public function HRESULT(ITfThreadMgr2 *self, ITfDocumentMgr** ppdimFocus) GetFocus;
+			public function HRESULT(ITfThreadMgr2 *self, ITfDocumentMgr* pdimFocus) SetFocus;
+			public function HRESULT(ITfThreadMgr2 *self, BOOL* pfThreadFocus) IsThreadFocus;
+			public function HRESULT(ITfThreadMgr2 *self, Guid* clsid, ITfFunctionProvider** ppFuncProv) GetFunctionProvider;
+			public function HRESULT(ITfThreadMgr2 *self, IEnumTfFunctionProviders** ppEnum) EnumFunctionProviders;
+			public function HRESULT(ITfThreadMgr2 *self, ITfCompartmentMgr** ppCompMgr) GetGlobalCompartment;
+			public function HRESULT(ITfThreadMgr2 *self, uint32* ptid, uint32 dwFlags) ActivateEx;
+			public function HRESULT(ITfThreadMgr2 *self, uint32* lpdwFlags) GetActiveFlags;
+			public function HRESULT(ITfThreadMgr2 *self) SuspendKeystrokeHandling;
+			public function HRESULT(ITfThreadMgr2 *self) ResumeKeystrokeHandling;
+		}
+		[CRepr]
+		public struct ITfThreadMgrEventSink : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e80e, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfThreadMgrEventSink *self, ITfDocumentMgr* pdim) OnInitDocumentMgr;
+			public function HRESULT(ITfThreadMgrEventSink *self, ITfDocumentMgr* pdim) OnUninitDocumentMgr;
+			public function HRESULT(ITfThreadMgrEventSink *self, ITfDocumentMgr* pdimFocus, ITfDocumentMgr* pdimPrevFocus) OnSetFocus;
+			public function HRESULT(ITfThreadMgrEventSink *self, ITfContext* pic) OnPushContext;
+			public function HRESULT(ITfThreadMgrEventSink *self, ITfContext* pic) OnPopContext;
+		}
+		[CRepr]
+		public struct ITfConfigureSystemKeystrokeFeed : IUnknown
+		{
+			public const new Guid IID = .(0x0d2c969a, 0xbc9c, 0x437c, 0x84, 0xee, 0x95, 0x1c, 0x49, 0xb1, 0xa7, 0x64);
+			
+			public function HRESULT(ITfConfigureSystemKeystrokeFeed *self) DisableSystemKeystrokeFeed;
+			public function HRESULT(ITfConfigureSystemKeystrokeFeed *self) EnableSystemKeystrokeFeed;
+		}
+		[CRepr]
+		public struct IEnumTfDocumentMgrs : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e808, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(IEnumTfDocumentMgrs *self, IEnumTfDocumentMgrs** ppEnum) Clone;
+			public function HRESULT(IEnumTfDocumentMgrs *self, uint32 ulCount, ITfDocumentMgr** rgDocumentMgr, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfDocumentMgrs *self) Reset;
+			public function HRESULT(IEnumTfDocumentMgrs *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfDocumentMgr : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e7f4, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfDocumentMgr *self, uint32 tidOwner, uint32 dwFlags, IUnknown* punk, ITfContext** ppic, uint32* pecTextStore) CreateContext;
+			public function HRESULT(ITfDocumentMgr *self, ITfContext* pic) Push;
+			public function HRESULT(ITfDocumentMgr *self, uint32 dwFlags) Pop;
+			public function HRESULT(ITfDocumentMgr *self, ITfContext** ppic) GetTop;
+			public function HRESULT(ITfDocumentMgr *self, ITfContext** ppic) GetBase;
+			public function HRESULT(ITfDocumentMgr *self, IEnumTfContexts** ppEnum) EnumContexts;
+		}
+		[CRepr]
+		public struct IEnumTfContexts : IUnknown
+		{
+			public const new Guid IID = .(0x8f1a7ea6, 0x1654, 0x4502, 0xa8, 0x6e, 0xb2, 0x90, 0x23, 0x44, 0xd5, 0x07);
+			
+			public function HRESULT(IEnumTfContexts *self, IEnumTfContexts** ppEnum) Clone;
+			public function HRESULT(IEnumTfContexts *self, uint32 ulCount, ITfContext** rgContext, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfContexts *self) Reset;
+			public function HRESULT(IEnumTfContexts *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfCompositionView : IUnknown
+		{
+			public const new Guid IID = .(0xd7540241, 0xf9a1, 0x4364, 0xbe, 0xfc, 0xdb, 0xcd, 0x2c, 0x43, 0x95, 0xb7);
+			
+			public function HRESULT(ITfCompositionView *self, Guid* pclsid) GetOwnerClsid;
+			public function HRESULT(ITfCompositionView *self, ITfRange** ppRange) GetRange;
+		}
+		[CRepr]
+		public struct IEnumITfCompositionView : IUnknown
+		{
+			public const new Guid IID = .(0x5efd22ba, 0x7838, 0x46cb, 0x88, 0xe2, 0xca, 0xdb, 0x14, 0x12, 0x4f, 0x8f);
+			
+			public function HRESULT(IEnumITfCompositionView *self, IEnumITfCompositionView** ppEnum) Clone;
+			public function HRESULT(IEnumITfCompositionView *self, uint32 ulCount, ITfCompositionView** rgCompositionView, uint32* pcFetched) Next;
+			public function HRESULT(IEnumITfCompositionView *self) Reset;
+			public function HRESULT(IEnumITfCompositionView *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfComposition : IUnknown
+		{
+			public const new Guid IID = .(0x20168d64, 0x5a8f, 0x4a5a, 0xb7, 0xbd, 0xcf, 0xa2, 0x9f, 0x4d, 0x0f, 0xd9);
+			
+			public function HRESULT(ITfComposition *self, ITfRange** ppRange) GetRange;
+			public function HRESULT(ITfComposition *self, uint32 ecWrite, ITfRange* pNewStart) ShiftStart;
+			public function HRESULT(ITfComposition *self, uint32 ecWrite, ITfRange* pNewEnd) ShiftEnd;
+			public function HRESULT(ITfComposition *self, uint32 ecWrite) EndComposition;
+		}
+		[CRepr]
+		public struct ITfCompositionSink : IUnknown
+		{
+			public const new Guid IID = .(0xa781718c, 0x579a, 0x4b15, 0xa2, 0x80, 0x32, 0xb8, 0x57, 0x7a, 0xcc, 0x5e);
+			
+			public function HRESULT(ITfCompositionSink *self, uint32 ecWrite, ITfComposition* pComposition) OnCompositionTerminated;
+		}
+		[CRepr]
+		public struct ITfContextComposition : IUnknown
+		{
+			public const new Guid IID = .(0xd40c8aae, 0xac92, 0x4fc7, 0x9a, 0x11, 0x0e, 0xe0, 0xe2, 0x3a, 0xa3, 0x9b);
+			
+			public function HRESULT(ITfContextComposition *self, uint32 ecWrite, ITfRange* pCompositionRange, ITfCompositionSink* pSink, ITfComposition** ppComposition) StartComposition;
+			public function HRESULT(ITfContextComposition *self, IEnumITfCompositionView** ppEnum) EnumCompositions;
+			public function HRESULT(ITfContextComposition *self, uint32 ecRead, ITfRange* pTestRange, IEnumITfCompositionView** ppEnum) FindComposition;
+			public function HRESULT(ITfContextComposition *self, uint32 ecWrite, ITfCompositionView* pComposition, ITfCompositionSink* pSink, ITfComposition** ppComposition) TakeOwnership;
+		}
+		[CRepr]
+		public struct ITfContextOwnerCompositionServices : ITfContextComposition
+		{
+			public const new Guid IID = .(0x86462810, 0x593b, 0x4916, 0x97, 0x64, 0x19, 0xc0, 0x8e, 0x9c, 0xe1, 0x10);
+			
+			public function HRESULT(ITfContextOwnerCompositionServices *self, ITfCompositionView* pComposition) TerminateComposition;
+		}
+		[CRepr]
+		public struct ITfContextOwnerCompositionSink : IUnknown
+		{
+			public const new Guid IID = .(0x5f20aa40, 0xb57a, 0x4f34, 0x96, 0xab, 0x35, 0x76, 0xf3, 0x77, 0xcc, 0x79);
+			
+			public function HRESULT(ITfContextOwnerCompositionSink *self, ITfCompositionView* pComposition, BOOL* pfOk) OnStartComposition;
+			public function HRESULT(ITfContextOwnerCompositionSink *self, ITfCompositionView* pComposition, ITfRange* pRangeNew) OnUpdateComposition;
+			public function HRESULT(ITfContextOwnerCompositionSink *self, ITfCompositionView* pComposition) OnEndComposition;
+		}
+		[CRepr]
+		public struct ITfContextView : IUnknown
+		{
+			public const new Guid IID = .(0x2433bf8e, 0x0f9b, 0x435c, 0xba, 0x2c, 0x18, 0x06, 0x11, 0x97, 0x8c, 0x30);
+			
+			public function HRESULT(ITfContextView *self, uint32 ec, POINT* ppt, uint32 dwFlags, ITfRange** ppRange) GetRangeFromPoint;
+			public function HRESULT(ITfContextView *self, uint32 ec, ITfRange* pRange, RECT* prc, BOOL* pfClipped) GetTextExt;
+			public function HRESULT(ITfContextView *self, RECT* prc) GetScreenExt;
+			public function HRESULT(ITfContextView *self, HWND* phwnd) GetWnd;
+		}
+		[CRepr]
+		public struct IEnumTfContextViews : IUnknown
+		{
+			public const new Guid IID = .(0xf0c0f8dd, 0xcf38, 0x44e1, 0xbb, 0x0f, 0x68, 0xcf, 0x0d, 0x55, 0x1c, 0x78);
+			
+			public function HRESULT(IEnumTfContextViews *self, IEnumTfContextViews** ppEnum) Clone;
+			public function HRESULT(IEnumTfContextViews *self, uint32 ulCount, ITfContextView** rgViews, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfContextViews *self) Reset;
+			public function HRESULT(IEnumTfContextViews *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfContext : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e7fd, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfContext *self, uint32 tid, ITfEditSession* pes, TF_CONTEXT_EDIT_CONTEXT_FLAGS dwFlags, HRESULT* phrSession) RequestEditSession;
+			public function HRESULT(ITfContext *self, uint32 tid, BOOL* pfWriteSession) InWriteSession;
+			public function HRESULT(ITfContext *self, uint32 ec, uint32 ulIndex, uint32 ulCount, TF_SELECTION* pSelection, uint32* pcFetched) GetSelection;
+			public function HRESULT(ITfContext *self, uint32 ec, uint32 ulCount, TF_SELECTION* pSelection) SetSelection;
+			public function HRESULT(ITfContext *self, uint32 ec, ITfRange** ppStart) GetStart;
+			public function HRESULT(ITfContext *self, uint32 ec, ITfRange** ppEnd) GetEnd;
+			public function HRESULT(ITfContext *self, ITfContextView** ppView) GetActiveView;
+			public function HRESULT(ITfContext *self, IEnumTfContextViews** ppEnum) EnumViews;
+			public function HRESULT(ITfContext *self, TS_STATUS* pdcs) GetStatus;
+			public function HRESULT(ITfContext *self, Guid* guidProp, ITfProperty** ppProp) GetProperty;
+			public function HRESULT(ITfContext *self, Guid* guidProp, ITfReadOnlyProperty** ppProp) GetAppProperty;
+			public function HRESULT(ITfContext *self, Guid** prgProp, uint32 cProp, Guid** prgAppProp, uint32 cAppProp, ITfReadOnlyProperty** ppProperty) TrackProperties;
+			public function HRESULT(ITfContext *self, IEnumTfProperties** ppEnum) EnumProperties;
+			public function HRESULT(ITfContext *self, ITfDocumentMgr** ppDm) GetDocumentMgr;
+			public function HRESULT(ITfContext *self, uint32 ec, ITfRange* pRange, ITfRangeBackup** ppBackup) CreateRangeBackup;
+		}
+		[CRepr]
+		public struct ITfQueryEmbedded : IUnknown
+		{
+			public const new Guid IID = .(0x0fab9bdb, 0xd250, 0x4169, 0x84, 0xe5, 0x6b, 0xe1, 0x18, 0xfd, 0xd7, 0xa8);
+			
+			public function HRESULT(ITfQueryEmbedded *self, Guid* pguidService, FORMATETC* pFormatEtc, BOOL* pfInsertable) QueryInsertEmbedded;
+		}
+		[CRepr]
+		public struct ITfInsertAtSelection : IUnknown
+		{
+			public const new Guid IID = .(0x55ce16ba, 0x3014, 0x41c1, 0x9c, 0xeb, 0xfa, 0xde, 0x14, 0x46, 0xac, 0x6c);
+			
+			public function HRESULT(ITfInsertAtSelection *self, uint32 ec, INSERT_TEXT_AT_SELECTION_FLAGS dwFlags, char16* pchText, int32 cch, ITfRange** ppRange) InsertTextAtSelection;
+			public function HRESULT(ITfInsertAtSelection *self, uint32 ec, uint32 dwFlags, IDataObject* pDataObject, ITfRange** ppRange) InsertEmbeddedAtSelection;
+		}
+		[CRepr]
+		public struct ITfCleanupContextSink : IUnknown
+		{
+			public const new Guid IID = .(0x01689689, 0x7acb, 0x4e9b, 0xab, 0x7c, 0x7e, 0xa4, 0x6b, 0x12, 0xb5, 0x22);
+			
+			public function HRESULT(ITfCleanupContextSink *self, uint32 ecWrite, ITfContext* pic) OnCleanupContext;
+		}
+		[CRepr]
+		public struct ITfCleanupContextDurationSink : IUnknown
+		{
+			public const new Guid IID = .(0x45c35144, 0x154e, 0x4797, 0xbe, 0xd8, 0xd3, 0x3a, 0xe7, 0xbf, 0x87, 0x94);
+			
+			public function HRESULT(ITfCleanupContextDurationSink *self) OnStartCleanupContext;
+			public function HRESULT(ITfCleanupContextDurationSink *self) OnEndCleanupContext;
+		}
+		[CRepr]
+		public struct ITfReadOnlyProperty : IUnknown
+		{
+			public const new Guid IID = .(0x17d49a3d, 0xf8b8, 0x4b2f, 0xb2, 0x54, 0x52, 0x31, 0x9d, 0xd6, 0x4c, 0x53);
+			
+			public function HRESULT(ITfReadOnlyProperty *self, Guid* pguid) GetType;
+			public function HRESULT(ITfReadOnlyProperty *self, uint32 ec, IEnumTfRanges** ppEnum, ITfRange* pTargetRange) EnumRanges;
+			public function HRESULT(ITfReadOnlyProperty *self, uint32 ec, ITfRange* pRange, VARIANT* pvarValue) GetValue;
+			public function HRESULT(ITfReadOnlyProperty *self, ITfContext** ppContext) GetContext;
+		}
+		[CRepr]
+		public struct IEnumTfPropertyValue : IUnknown
+		{
+			public const new Guid IID = .(0x8ed8981b, 0x7c10, 0x4d7d, 0x9f, 0xb3, 0xab, 0x72, 0xe9, 0xc7, 0x5f, 0x72);
+			
+			public function HRESULT(IEnumTfPropertyValue *self, IEnumTfPropertyValue** ppEnum) Clone;
+			public function HRESULT(IEnumTfPropertyValue *self, uint32 ulCount, TF_PROPERTYVAL* rgValues, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfPropertyValue *self) Reset;
+			public function HRESULT(IEnumTfPropertyValue *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfMouseTracker : IUnknown
+		{
+			public const new Guid IID = .(0x09d146cd, 0xa544, 0x4132, 0x92, 0x5b, 0x7a, 0xfa, 0x8e, 0xf3, 0x22, 0xd0);
+			
+			public function HRESULT(ITfMouseTracker *self, ITfRange* range, ITfMouseSink* pSink, uint32* pdwCookie) AdviseMouseSink;
+			public function HRESULT(ITfMouseTracker *self, uint32 dwCookie) UnadviseMouseSink;
+		}
+		[CRepr]
+		public struct ITfMouseTrackerACP : IUnknown
+		{
+			public const new Guid IID = .(0x3bdd78e2, 0xc16e, 0x47fd, 0xb8, 0x83, 0xce, 0x6f, 0xac, 0xc1, 0xa2, 0x08);
+			
+			public function HRESULT(ITfMouseTrackerACP *self, ITfRangeACP* range, ITfMouseSink* pSink, uint32* pdwCookie) AdviseMouseSink;
+			public function HRESULT(ITfMouseTrackerACP *self, uint32 dwCookie) UnadviseMouseSink;
+		}
+		[CRepr]
+		public struct ITfMouseSink : IUnknown
+		{
+			public const new Guid IID = .(0xa1adaaa2, 0x3a24, 0x449d, 0xac, 0x96, 0x51, 0x83, 0xe7, 0xf5, 0xc2, 0x17);
+			
+			public function HRESULT(ITfMouseSink *self, uint32 uEdge, uint32 uQuadrant, uint32 dwBtnStatus, BOOL* pfEaten) OnMouseEvent;
+		}
+		[CRepr]
+		public struct ITfEditRecord : IUnknown
+		{
+			public const new Guid IID = .(0x42d4d099, 0x7c1a, 0x4a89, 0xb8, 0x36, 0x6c, 0x6f, 0x22, 0x16, 0x0d, 0xf0);
+			
+			public function HRESULT(ITfEditRecord *self, BOOL* pfChanged) GetSelectionStatus;
+			public function HRESULT(ITfEditRecord *self, GET_TEXT_AND_PROPERTY_UPDATES_FLAGS dwFlags, Guid** prgProperties, uint32 cProperties, IEnumTfRanges** ppEnum) GetTextAndPropertyUpdates;
+		}
+		[CRepr]
+		public struct ITfTextEditSink : IUnknown
+		{
+			public const new Guid IID = .(0x8127d409, 0xccd3, 0x4683, 0x96, 0x7a, 0xb4, 0x3d, 0x5b, 0x48, 0x2b, 0xf7);
+			
+			public function HRESULT(ITfTextEditSink *self, ITfContext* pic, uint32 ecReadOnly, ITfEditRecord* pEditRecord) OnEndEdit;
+		}
+		[CRepr]
+		public struct ITfTextLayoutSink : IUnknown
+		{
+			public const new Guid IID = .(0x2af2d06a, 0xdd5b, 0x4927, 0xa0, 0xb4, 0x54, 0xf1, 0x9c, 0x91, 0xfa, 0xde);
+			
+			public function HRESULT(ITfTextLayoutSink *self, ITfContext* pic, TfLayoutCode lcode, ITfContextView* pView) OnLayoutChange;
+		}
+		[CRepr]
+		public struct ITfStatusSink : IUnknown
+		{
+			public const new Guid IID = .(0x6b7d8d73, 0xb267, 0x4f69, 0xb3, 0x2e, 0x1c, 0xa3, 0x21, 0xce, 0x4f, 0x45);
+			
+			public function HRESULT(ITfStatusSink *self, ITfContext* pic, uint32 dwFlags) OnStatusChange;
+		}
+		[CRepr]
+		public struct ITfEditTransactionSink : IUnknown
+		{
+			public const new Guid IID = .(0x708fbf70, 0xb520, 0x416b, 0xb0, 0x6c, 0x2c, 0x41, 0xab, 0x44, 0xf8, 0xba);
+			
+			public function HRESULT(ITfEditTransactionSink *self, ITfContext* pic) OnStartEditTransaction;
+			public function HRESULT(ITfEditTransactionSink *self, ITfContext* pic) OnEndEditTransaction;
+		}
+		[CRepr]
+		public struct ITfContextOwner : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e80c, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfContextOwner *self, POINT* ptScreen, uint32 dwFlags, int32* pacp) GetACPFromPoint;
+			public function HRESULT(ITfContextOwner *self, int32 acpStart, int32 acpEnd, RECT* prc, BOOL* pfClipped) GetTextExt;
+			public function HRESULT(ITfContextOwner *self, RECT* prc) GetScreenExt;
+			public function HRESULT(ITfContextOwner *self, TS_STATUS* pdcs) GetStatus;
+			public function HRESULT(ITfContextOwner *self, HWND* phwnd) GetWnd;
+			public function HRESULT(ITfContextOwner *self, Guid* rguidAttribute, VARIANT* pvarValue) GetAttribute;
+		}
+		[CRepr]
+		public struct ITfContextOwnerServices : IUnknown
+		{
+			public const new Guid IID = .(0xb23eb630, 0x3e1c, 0x11d3, 0xa7, 0x45, 0x00, 0x50, 0x04, 0x0a, 0xb4, 0x07);
+			
+			public function HRESULT(ITfContextOwnerServices *self) OnLayoutChange;
+			public function HRESULT(ITfContextOwnerServices *self, uint32 dwFlags) OnStatusChange;
+			public function HRESULT(ITfContextOwnerServices *self, Guid* rguidAttribute) OnAttributeChange;
+			public function HRESULT(ITfContextOwnerServices *self, ITfProperty* pProp, ITfRange* pRange, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream) Serialize;
+			public function HRESULT(ITfContextOwnerServices *self, ITfProperty* pProp, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream, ITfPersistentPropertyLoaderACP* pLoader) Unserialize;
+			public function HRESULT(ITfContextOwnerServices *self, ITfProperty* pProp) ForceLoadProperty;
+			public function HRESULT(ITfContextOwnerServices *self, int32 acpStart, int32 acpEnd, ITfRangeACP** ppRange) CreateRange;
+		}
+		[CRepr]
+		public struct ITfContextKeyEventSink : IUnknown
+		{
+			public const new Guid IID = .(0x0552ba5d, 0xc835, 0x4934, 0xbf, 0x50, 0x84, 0x6a, 0xaa, 0x67, 0x43, 0x2f);
+			
+			public function HRESULT(ITfContextKeyEventSink *self, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) OnKeyDown;
+			public function HRESULT(ITfContextKeyEventSink *self, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) OnKeyUp;
+			public function HRESULT(ITfContextKeyEventSink *self, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) OnTestKeyDown;
+			public function HRESULT(ITfContextKeyEventSink *self, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) OnTestKeyUp;
+		}
+		[CRepr]
+		public struct ITfEditSession : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e803, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfEditSession *self, uint32 ec) DoEditSession;
+		}
+		[CRepr]
+		public struct ITfRange : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e7ff, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfRange *self, uint32 ec, uint32 dwFlags, char16* pchText, uint32 cchMax, uint32* pcch) GetText;
+			public function HRESULT(ITfRange *self, uint32 ec, uint32 dwFlags, char16* pchText, int32 cch) SetText;
+			public function HRESULT(ITfRange *self, uint32 ec, IDataObject** ppDataObject) GetFormattedText;
+			public function HRESULT(ITfRange *self, uint32 ec, Guid* rguidService, Guid* riid, IUnknown** ppunk) GetEmbedded;
+			public function HRESULT(ITfRange *self, uint32 ec, uint32 dwFlags, IDataObject* pDataObject) InsertEmbedded;
+			public function HRESULT(ITfRange *self, uint32 ec, int32 cchReq, int32* pcch, TF_HALTCOND* pHalt) ShiftStart;
+			public function HRESULT(ITfRange *self, uint32 ec, int32 cchReq, int32* pcch, TF_HALTCOND* pHalt) ShiftEnd;
+			public function HRESULT(ITfRange *self, uint32 ec, ITfRange* pRange, TfAnchor aPos) ShiftStartToRange;
+			public function HRESULT(ITfRange *self, uint32 ec, ITfRange* pRange, TfAnchor aPos) ShiftEndToRange;
+			public function HRESULT(ITfRange *self, uint32 ec, TfShiftDir dir, BOOL* pfNoRegion) ShiftStartRegion;
+			public function HRESULT(ITfRange *self, uint32 ec, TfShiftDir dir, BOOL* pfNoRegion) ShiftEndRegion;
+			public function HRESULT(ITfRange *self, uint32 ec, BOOL* pfEmpty) IsEmpty;
+			public function HRESULT(ITfRange *self, uint32 ec, TfAnchor aPos) Collapse;
+			public function HRESULT(ITfRange *self, uint32 ec, ITfRange* pWith, TfAnchor aPos, BOOL* pfEqual) IsEqualStart;
+			public function HRESULT(ITfRange *self, uint32 ec, ITfRange* pWith, TfAnchor aPos, BOOL* pfEqual) IsEqualEnd;
+			public function HRESULT(ITfRange *self, uint32 ec, ITfRange* pWith, TfAnchor aPos, int32* plResult) CompareStart;
+			public function HRESULT(ITfRange *self, uint32 ec, ITfRange* pWith, TfAnchor aPos, int32* plResult) CompareEnd;
+			public function HRESULT(ITfRange *self, uint32 ec, uint32 cchInsert, BOOL* pfInsertOk) AdjustForInsert;
+			public function HRESULT(ITfRange *self, TfGravity* pgStart, TfGravity* pgEnd) GetGravity;
+			public function HRESULT(ITfRange *self, uint32 ec, TfGravity gStart, TfGravity gEnd) SetGravity;
+			public function HRESULT(ITfRange *self, ITfRange** ppClone) Clone;
+			public function HRESULT(ITfRange *self, ITfContext** ppContext) GetContext;
+		}
+		[CRepr]
+		public struct ITfRangeACP : ITfRange
+		{
+			public const new Guid IID = .(0x057a6296, 0x029b, 0x4154, 0xb7, 0x9a, 0x0d, 0x46, 0x1d, 0x4e, 0xa9, 0x4c);
+			
+			public function HRESULT(ITfRangeACP *self, int32* pacpAnchor, int32* pcch) GetExtent;
+			public function HRESULT(ITfRangeACP *self, int32 acpAnchor, int32 cch) SetExtent;
+		}
+		[CRepr]
+		public struct ITextStoreACPServices : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e901, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITextStoreACPServices *self, ITfProperty* pProp, ITfRange* pRange, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream) Serialize;
+			public function HRESULT(ITextStoreACPServices *self, ITfProperty* pProp, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream, ITfPersistentPropertyLoaderACP* pLoader) Unserialize;
+			public function HRESULT(ITextStoreACPServices *self, ITfProperty* pProp) ForceLoadProperty;
+			public function HRESULT(ITextStoreACPServices *self, int32 acpStart, int32 acpEnd, ITfRangeACP** ppRange) CreateRange;
+		}
+		[CRepr]
+		public struct ITfRangeBackup : IUnknown
+		{
+			public const new Guid IID = .(0x463a506d, 0x6992, 0x49d2, 0x9b, 0x88, 0x93, 0xd5, 0x5e, 0x70, 0xbb, 0x16);
+			
+			public function HRESULT(ITfRangeBackup *self, uint32 ec, ITfRange* pRange) Restore;
+		}
+		[CRepr]
+		public struct ITfPropertyStore : IUnknown
+		{
+			public const new Guid IID = .(0x6834b120, 0x88cb, 0x11d2, 0xbf, 0x45, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfPropertyStore *self, Guid* pguid) GetType;
+			public function HRESULT(ITfPropertyStore *self, uint32* pdwReserved) GetDataType;
+			public function HRESULT(ITfPropertyStore *self, VARIANT* pvarValue) GetData;
+			public function HRESULT(ITfPropertyStore *self, uint32 dwFlags, ITfRange* pRangeNew, BOOL* pfAccept) OnTextUpdated;
+			public function HRESULT(ITfPropertyStore *self, ITfRange* pRangeNew, BOOL* pfFree) Shrink;
+			public function HRESULT(ITfPropertyStore *self, ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore) Divide;
+			public function HRESULT(ITfPropertyStore *self, ITfPropertyStore** pPropStore) Clone;
+			public function HRESULT(ITfPropertyStore *self, Guid* pclsid) GetPropertyRangeCreator;
+			public function HRESULT(ITfPropertyStore *self, IStream* pStream, uint32* pcb) Serialize;
+		}
+		[CRepr]
+		public struct IEnumTfRanges : IUnknown
+		{
+			public const new Guid IID = .(0xf99d3f40, 0x8e32, 0x11d2, 0xbf, 0x46, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(IEnumTfRanges *self, IEnumTfRanges** ppEnum) Clone;
+			public function HRESULT(IEnumTfRanges *self, uint32 ulCount, ITfRange** ppRange, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfRanges *self) Reset;
+			public function HRESULT(IEnumTfRanges *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfCreatePropertyStore : IUnknown
+		{
+			public const new Guid IID = .(0x2463fbf0, 0xb0af, 0x11d2, 0xaf, 0xc5, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfCreatePropertyStore *self, Guid* guidProp, ITfRange* pRange, ITfPropertyStore* pPropStore, BOOL* pfSerializable) IsStoreSerializable;
+			public function HRESULT(ITfCreatePropertyStore *self, Guid* guidProp, ITfRange* pRange, uint32 cb, IStream* pStream, ITfPropertyStore** ppStore) CreatePropertyStore;
+		}
+		[CRepr]
+		public struct ITfPersistentPropertyLoaderACP : IUnknown
+		{
+			public const new Guid IID = .(0x4ef89150, 0x0807, 0x11d3, 0x8d, 0xf0, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfPersistentPropertyLoaderACP *self, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream** ppStream) LoadProperty;
+		}
+		[CRepr]
+		public struct ITfProperty : ITfReadOnlyProperty
+		{
+			public const new Guid IID = .(0xe2449660, 0x9542, 0x11d2, 0xbf, 0x46, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfProperty *self, uint32 ec, ITfRange* pRange, ITfRange** ppRange, TfAnchor aPos) FindRange;
+			public function HRESULT(ITfProperty *self, uint32 ec, ITfRange* pRange, ITfPropertyStore* pPropStore) SetValueStore;
+			public function HRESULT(ITfProperty *self, uint32 ec, ITfRange* pRange, VARIANT* pvarValue) SetValue;
+			public function HRESULT(ITfProperty *self, uint32 ec, ITfRange* pRange) Clear;
+		}
+		[CRepr]
+		public struct IEnumTfProperties : IUnknown
+		{
+			public const new Guid IID = .(0x19188cb0, 0xaca9, 0x11d2, 0xaf, 0xc5, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(IEnumTfProperties *self, IEnumTfProperties** ppEnum) Clone;
+			public function HRESULT(IEnumTfProperties *self, uint32 ulCount, ITfProperty** ppProp, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfProperties *self) Reset;
+			public function HRESULT(IEnumTfProperties *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfCompartment : IUnknown
+		{
+			public const new Guid IID = .(0xbb08f7a9, 0x607a, 0x4384, 0x86, 0x23, 0x05, 0x68, 0x92, 0xb6, 0x43, 0x71);
+			
+			public function HRESULT(ITfCompartment *self, uint32 tid, VARIANT* pvarValue) SetValue;
+			public function HRESULT(ITfCompartment *self, VARIANT* pvarValue) GetValue;
+		}
+		[CRepr]
+		public struct ITfCompartmentEventSink : IUnknown
+		{
+			public const new Guid IID = .(0x743abd5f, 0xf26d, 0x48df, 0x8c, 0xc5, 0x23, 0x84, 0x92, 0x41, 0x9b, 0x64);
+			
+			public function HRESULT(ITfCompartmentEventSink *self, Guid* rguid) OnChange;
+		}
+		[CRepr]
+		public struct ITfCompartmentMgr : IUnknown
+		{
+			public const new Guid IID = .(0x7dcf57ac, 0x18ad, 0x438b, 0x82, 0x4d, 0x97, 0x9b, 0xff, 0xb7, 0x4b, 0x7c);
+			
+			public function HRESULT(ITfCompartmentMgr *self, Guid* rguid, ITfCompartment** ppcomp) GetCompartment;
+			public function HRESULT(ITfCompartmentMgr *self, uint32 tid, Guid* rguid) ClearCompartment;
+			public function HRESULT(ITfCompartmentMgr *self, IEnumGUID** ppEnum) EnumCompartments;
+		}
+		[CRepr]
+		public struct ITfFunction : IUnknown
+		{
+			public const new Guid IID = .(0xdb593490, 0x098f, 0x11d3, 0x8d, 0xf0, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfFunction *self, BSTR* pbstrName) GetDisplayName;
+		}
+		[CRepr]
+		public struct ITfFunctionProvider : IUnknown
+		{
+			public const new Guid IID = .(0x101d6610, 0x0990, 0x11d3, 0x8d, 0xf0, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfFunctionProvider *self, Guid* pguid) GetType;
+			public function HRESULT(ITfFunctionProvider *self, BSTR* pbstrDesc) GetDescription;
+			public function HRESULT(ITfFunctionProvider *self, Guid* rguid, Guid* riid, IUnknown** ppunk) GetFunction;
+		}
+		[CRepr]
+		public struct IEnumTfFunctionProviders : IUnknown
+		{
+			public const new Guid IID = .(0xe4b24db0, 0x0990, 0x11d3, 0x8d, 0xf0, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(IEnumTfFunctionProviders *self, IEnumTfFunctionProviders** ppEnum) Clone;
+			public function HRESULT(IEnumTfFunctionProviders *self, uint32 ulCount, ITfFunctionProvider** ppCmdobj, uint32* pcFetch) Next;
+			public function HRESULT(IEnumTfFunctionProviders *self) Reset;
+			public function HRESULT(IEnumTfFunctionProviders *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfInputProcessorProfiles : IUnknown
+		{
+			public const new Guid IID = .(0x1f02b6c5, 0x7842, 0x4ee6, 0x8a, 0x0b, 0x9a, 0x24, 0x18, 0x3a, 0x95, 0xca);
+			
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid) Register;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid) Unregister;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid, uint16 langid, Guid* guidProfile, char16* pchDesc, uint32 cchDesc, char16* pchIconFile, uint32 cchFile, uint32 uIconIndex) AddLanguageProfile;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid, uint16 langid, Guid* guidProfile) RemoveLanguageProfile;
+			public function HRESULT(ITfInputProcessorProfiles *self, IEnumGUID** ppEnum) EnumInputProcessorInfo;
+			public function HRESULT(ITfInputProcessorProfiles *self, uint16 langid, Guid* catid, Guid* pclsid, Guid* pguidProfile) GetDefaultLanguageProfile;
+			public function HRESULT(ITfInputProcessorProfiles *self, uint16 langid, Guid* rclsid, Guid* guidProfiles) SetDefaultLanguageProfile;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid, uint16 langid, Guid* guidProfiles) ActivateLanguageProfile;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid, uint16* plangid, Guid* pguidProfile) GetActiveLanguageProfile;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid, uint16 langid, Guid* guidProfile, BSTR* pbstrProfile) GetLanguageProfileDescription;
+			public function HRESULT(ITfInputProcessorProfiles *self, uint16* plangid) GetCurrentLanguage;
+			public function HRESULT(ITfInputProcessorProfiles *self, uint16 langid) ChangeCurrentLanguage;
+			public function HRESULT(ITfInputProcessorProfiles *self, uint16** ppLangId, uint32* pulCount) GetLanguageList;
+			public function HRESULT(ITfInputProcessorProfiles *self, uint16 langid, IEnumTfLanguageProfiles** ppEnum) EnumLanguageProfiles;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid, uint16 langid, Guid* guidProfile, BOOL fEnable) EnableLanguageProfile;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid, uint16 langid, Guid* guidProfile, BOOL* pfEnable) IsEnabledLanguageProfile;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid, uint16 langid, Guid* guidProfile, BOOL fEnable) EnableLanguageProfileByDefault;
+			public function HRESULT(ITfInputProcessorProfiles *self, Guid* rclsid, uint16 langid, Guid* guidProfile, HKL hKL) SubstituteKeyboardLayout;
+		}
+		[CRepr]
+		public struct ITfInputProcessorProfilesEx : ITfInputProcessorProfiles
+		{
+			public const new Guid IID = .(0x892f230f, 0xfe00, 0x4a41, 0xa9, 0x8e, 0xfc, 0xd6, 0xde, 0x0d, 0x35, 0xef);
+			
+			public function HRESULT(ITfInputProcessorProfilesEx *self, Guid* rclsid, uint16 langid, Guid* guidProfile, char16* pchFile, uint32 cchFile, uint32 uResId) SetLanguageProfileDisplayName;
+		}
+		[CRepr]
+		public struct ITfInputProcessorProfileSubstituteLayout : IUnknown
+		{
+			public const new Guid IID = .(0x4fd67194, 0x1002, 0x4513, 0xbf, 0xf2, 0xc0, 0xdd, 0xf6, 0x25, 0x85, 0x52);
+			
+			public function HRESULT(ITfInputProcessorProfileSubstituteLayout *self, Guid* rclsid, uint16 langid, Guid* guidProfile, HKL* phKL) GetSubstituteKeyboardLayout;
+		}
+		[CRepr]
+		public struct ITfActiveLanguageProfileNotifySink : IUnknown
+		{
+			public const new Guid IID = .(0xb246cb75, 0xa93e, 0x4652, 0xbf, 0x8c, 0xb3, 0xfe, 0x0c, 0xfd, 0x7e, 0x57);
+			
+			public function HRESULT(ITfActiveLanguageProfileNotifySink *self, Guid* clsid, Guid* guidProfile, BOOL fActivated) OnActivated;
+		}
+		[CRepr]
+		public struct IEnumTfLanguageProfiles : IUnknown
+		{
+			public const new Guid IID = .(0x3d61bf11, 0xac5f, 0x42c8, 0xa4, 0xcb, 0x93, 0x1b, 0xcc, 0x28, 0xc7, 0x44);
+			
+			public function HRESULT(IEnumTfLanguageProfiles *self, IEnumTfLanguageProfiles** ppEnum) Clone;
+			public function HRESULT(IEnumTfLanguageProfiles *self, uint32 ulCount, TF_LANGUAGEPROFILE* pProfile, uint32* pcFetch) Next;
+			public function HRESULT(IEnumTfLanguageProfiles *self) Reset;
+			public function HRESULT(IEnumTfLanguageProfiles *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfLanguageProfileNotifySink : IUnknown
+		{
+			public const new Guid IID = .(0x43c9fe15, 0xf494, 0x4c17, 0x9d, 0xe2, 0xb8, 0xa4, 0xac, 0x35, 0x0a, 0xa8);
+			
+			public function HRESULT(ITfLanguageProfileNotifySink *self, uint16 langid, BOOL* pfAccept) OnLanguageChange;
+			public function HRESULT(ITfLanguageProfileNotifySink *self) OnLanguageChanged;
+		}
+		[CRepr]
+		public struct ITfInputProcessorProfileMgr : IUnknown
+		{
+			public const new Guid IID = .(0x71c6e74c, 0x0f28, 0x11d8, 0xa8, 0x2a, 0x00, 0x06, 0x5b, 0x84, 0x43, 0x5c);
+			
+			public function HRESULT(ITfInputProcessorProfileMgr *self, uint32 dwProfileType, uint16 langid, Guid* clsid, Guid* guidProfile, HKL hkl, uint32 dwFlags) ActivateProfile;
+			public function HRESULT(ITfInputProcessorProfileMgr *self, uint32 dwProfileType, uint16 langid, Guid* clsid, Guid* guidProfile, HKL hkl, uint32 dwFlags) DeactivateProfile;
+			public function HRESULT(ITfInputProcessorProfileMgr *self, uint32 dwProfileType, uint16 langid, Guid* clsid, Guid* guidProfile, HKL hkl, TF_INPUTPROCESSORPROFILE* pProfile) GetProfile;
+			public function HRESULT(ITfInputProcessorProfileMgr *self, uint16 langid, IEnumTfInputProcessorProfiles** ppEnum) EnumProfiles;
+			public function HRESULT(ITfInputProcessorProfileMgr *self, Guid* rclsid, uint32 dwFlags) ReleaseInputProcessor;
+			public function HRESULT(ITfInputProcessorProfileMgr *self, Guid* rclsid, uint16 langid, Guid* guidProfile, char16* pchDesc, uint32 cchDesc, char16* pchIconFile, uint32 cchFile, uint32 uIconIndex, HKL hklsubstitute, uint32 dwPreferredLayout, BOOL bEnabledByDefault, uint32 dwFlags) RegisterProfile;
+			public function HRESULT(ITfInputProcessorProfileMgr *self, Guid* rclsid, uint16 langid, Guid* guidProfile, uint32 dwFlags) UnregisterProfile;
+			public function HRESULT(ITfInputProcessorProfileMgr *self, Guid* catid, TF_INPUTPROCESSORPROFILE* pProfile) GetActiveProfile;
+		}
+		[CRepr]
+		public struct IEnumTfInputProcessorProfiles : IUnknown
+		{
+			public const new Guid IID = .(0x71c6e74d, 0x0f28, 0x11d8, 0xa8, 0x2a, 0x00, 0x06, 0x5b, 0x84, 0x43, 0x5c);
+			
+			public function HRESULT(IEnumTfInputProcessorProfiles *self, IEnumTfInputProcessorProfiles** ppEnum) Clone;
+			public function HRESULT(IEnumTfInputProcessorProfiles *self, uint32 ulCount, TF_INPUTPROCESSORPROFILE* pProfile, uint32* pcFetch) Next;
+			public function HRESULT(IEnumTfInputProcessorProfiles *self) Reset;
+			public function HRESULT(IEnumTfInputProcessorProfiles *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfInputProcessorProfileActivationSink : IUnknown
+		{
+			public const new Guid IID = .(0x71c6e74e, 0x0f28, 0x11d8, 0xa8, 0x2a, 0x00, 0x06, 0x5b, 0x84, 0x43, 0x5c);
+			
+			public function HRESULT(ITfInputProcessorProfileActivationSink *self, uint32 dwProfileType, uint16 langid, Guid* clsid, Guid* catid, Guid* guidProfile, HKL hkl, uint32 dwFlags) OnActivated;
+		}
+		[CRepr]
+		public struct ITfKeystrokeMgr : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e7f0, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfKeystrokeMgr *self, uint32 tid, ITfKeyEventSink* pSink, BOOL fForeground) AdviseKeyEventSink;
+			public function HRESULT(ITfKeystrokeMgr *self, uint32 tid) UnadviseKeyEventSink;
+			public function HRESULT(ITfKeystrokeMgr *self, Guid* pclsid) GetForeground;
+			public function HRESULT(ITfKeystrokeMgr *self, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) TestKeyDown;
+			public function HRESULT(ITfKeystrokeMgr *self, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) TestKeyUp;
+			public function HRESULT(ITfKeystrokeMgr *self, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) KeyDown;
+			public function HRESULT(ITfKeystrokeMgr *self, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) KeyUp;
+			public function HRESULT(ITfKeystrokeMgr *self, ITfContext* pic, TF_PRESERVEDKEY* pprekey, Guid* pguid) GetPreservedKey;
+			public function HRESULT(ITfKeystrokeMgr *self, Guid* rguid, TF_PRESERVEDKEY* pprekey, BOOL* pfRegistered) IsPreservedKey;
+			public function HRESULT(ITfKeystrokeMgr *self, uint32 tid, Guid* rguid, TF_PRESERVEDKEY* prekey, char16* pchDesc, uint32 cchDesc) PreserveKey;
+			public function HRESULT(ITfKeystrokeMgr *self, Guid* rguid, TF_PRESERVEDKEY* pprekey) UnpreserveKey;
+			public function HRESULT(ITfKeystrokeMgr *self, Guid* rguid, char16* pchDesc, uint32 cchDesc) SetPreservedKeyDescription;
+			public function HRESULT(ITfKeystrokeMgr *self, Guid* rguid, BSTR* pbstrDesc) GetPreservedKeyDescription;
+			public function HRESULT(ITfKeystrokeMgr *self, ITfContext* pic, Guid* rguid, BOOL* pfEaten) SimulatePreservedKey;
+		}
+		[CRepr]
+		public struct ITfKeyEventSink : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e7f5, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfKeyEventSink *self, BOOL fForeground) OnSetFocus;
+			public function HRESULT(ITfKeyEventSink *self, ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) OnTestKeyDown;
+			public function HRESULT(ITfKeyEventSink *self, ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) OnTestKeyUp;
+			public function HRESULT(ITfKeyEventSink *self, ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) OnKeyDown;
+			public function HRESULT(ITfKeyEventSink *self, ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) OnKeyUp;
+			public function HRESULT(ITfKeyEventSink *self, ITfContext* pic, Guid* rguid, BOOL* pfEaten) OnPreservedKey;
+		}
+		[CRepr]
+		public struct ITfKeyTraceEventSink : IUnknown
+		{
+			public const new Guid IID = .(0x1cd4c13b, 0x1c36, 0x4191, 0xa7, 0x0a, 0x7f, 0x3e, 0x61, 0x1f, 0x36, 0x7d);
+			
+			public function HRESULT(ITfKeyTraceEventSink *self, WPARAM wParam, LPARAM lParam) OnKeyTraceDown;
+			public function HRESULT(ITfKeyTraceEventSink *self, WPARAM wParam, LPARAM lParam) OnKeyTraceUp;
+		}
+		[CRepr]
+		public struct ITfPreservedKeyNotifySink : IUnknown
+		{
+			public const new Guid IID = .(0x6f77c993, 0xd2b1, 0x446e, 0x85, 0x3e, 0x59, 0x12, 0xef, 0xc8, 0xa2, 0x86);
+			
+			public function HRESULT(ITfPreservedKeyNotifySink *self, TF_PRESERVEDKEY* pprekey) OnUpdated;
+		}
+		[CRepr]
+		public struct ITfMessagePump : IUnknown
+		{
+			public const new Guid IID = .(0x8f1b8ad8, 0x0b6b, 0x4874, 0x90, 0xc5, 0xbd, 0x76, 0x01, 0x1e, 0x8f, 0x7c);
+			
+			public function HRESULT(ITfMessagePump *self, MSG* pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, uint32 wRemoveMsg, BOOL* pfResult) PeekMessageA;
+			public function HRESULT(ITfMessagePump *self, MSG* pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, BOOL* pfResult) GetMessageA;
+			public function HRESULT(ITfMessagePump *self, MSG* pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, uint32 wRemoveMsg, BOOL* pfResult) PeekMessageW;
+			public function HRESULT(ITfMessagePump *self, MSG* pMsg, HWND hwnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, BOOL* pfResult) GetMessageW;
+		}
+		[CRepr]
+		public struct ITfThreadFocusSink : IUnknown
+		{
+			public const new Guid IID = .(0xc0f1db0c, 0x3a20, 0x405c, 0xa3, 0x03, 0x96, 0xb6, 0x01, 0x0a, 0x88, 0x5f);
+			
+			public function HRESULT(ITfThreadFocusSink *self) OnSetThreadFocus;
+			public function HRESULT(ITfThreadFocusSink *self) OnKillThreadFocus;
+		}
+		[CRepr]
+		public struct ITfTextInputProcessor : IUnknown
+		{
+			public const new Guid IID = .(0xaa80e7f7, 0x2021, 0x11d2, 0x93, 0xe0, 0x00, 0x60, 0xb0, 0x67, 0xb8, 0x6e);
+			
+			public function HRESULT(ITfTextInputProcessor *self, ITfThreadMgr* ptim, uint32 tid) Activate;
+			public function HRESULT(ITfTextInputProcessor *self) Deactivate;
+		}
+		[CRepr]
+		public struct ITfTextInputProcessorEx : ITfTextInputProcessor
+		{
+			public const new Guid IID = .(0x6e4e2102, 0xf9cd, 0x433d, 0xb4, 0x96, 0x30, 0x3c, 0xe0, 0x3a, 0x65, 0x07);
+			
+			public function HRESULT(ITfTextInputProcessorEx *self, ITfThreadMgr* ptim, uint32 tid, uint32 dwFlags) ActivateEx;
+		}
+		[CRepr]
+		public struct ITfClientId : IUnknown
+		{
+			public const new Guid IID = .(0xd60a7b49, 0x1b9f, 0x4be2, 0xb7, 0x02, 0x47, 0xe9, 0xdc, 0x05, 0xde, 0xc3);
+			
+			public function HRESULT(ITfClientId *self, Guid* rclsid, uint32* ptid) GetClientId;
+		}
+		[CRepr]
+		public struct ITfDisplayAttributeInfo : IUnknown
+		{
+			public const new Guid IID = .(0x70528852, 0x2f26, 0x4aea, 0x8c, 0x96, 0x21, 0x51, 0x50, 0x57, 0x89, 0x32);
+			
+			public function HRESULT(ITfDisplayAttributeInfo *self, Guid* pguid) GetGUID;
+			public function HRESULT(ITfDisplayAttributeInfo *self, BSTR* pbstrDesc) GetDescription;
+			public function HRESULT(ITfDisplayAttributeInfo *self, TF_DISPLAYATTRIBUTE* pda) GetAttributeInfo;
+			public function HRESULT(ITfDisplayAttributeInfo *self, TF_DISPLAYATTRIBUTE* pda) SetAttributeInfo;
+			public function HRESULT(ITfDisplayAttributeInfo *self) Reset;
+		}
+		[CRepr]
+		public struct IEnumTfDisplayAttributeInfo : IUnknown
+		{
+			public const new Guid IID = .(0x7cef04d7, 0xcb75, 0x4e80, 0xa7, 0xab, 0x5f, 0x5b, 0xc7, 0xd3, 0x32, 0xde);
+			
+			public function HRESULT(IEnumTfDisplayAttributeInfo *self, IEnumTfDisplayAttributeInfo** ppEnum) Clone;
+			public function HRESULT(IEnumTfDisplayAttributeInfo *self, uint32 ulCount, ITfDisplayAttributeInfo** rgInfo, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfDisplayAttributeInfo *self) Reset;
+			public function HRESULT(IEnumTfDisplayAttributeInfo *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfDisplayAttributeProvider : IUnknown
+		{
+			public const new Guid IID = .(0xfee47777, 0x163c, 0x4769, 0x99, 0x6a, 0x6e, 0x9c, 0x50, 0xad, 0x8f, 0x54);
+			
+			public function HRESULT(ITfDisplayAttributeProvider *self, IEnumTfDisplayAttributeInfo** ppEnum) EnumDisplayAttributeInfo;
+			public function HRESULT(ITfDisplayAttributeProvider *self, Guid* guid, ITfDisplayAttributeInfo** ppInfo) GetDisplayAttributeInfo;
+		}
+		[CRepr]
+		public struct ITfDisplayAttributeMgr : IUnknown
+		{
+			public const new Guid IID = .(0x8ded7393, 0x5db1, 0x475c, 0x9e, 0x71, 0xa3, 0x91, 0x11, 0xb0, 0xff, 0x67);
+			
+			public function HRESULT(ITfDisplayAttributeMgr *self) OnUpdateInfo;
+			public function HRESULT(ITfDisplayAttributeMgr *self, IEnumTfDisplayAttributeInfo** ppEnum) EnumDisplayAttributeInfo;
+			public function HRESULT(ITfDisplayAttributeMgr *self, Guid* guid, ITfDisplayAttributeInfo** ppInfo, Guid* pclsidOwner) GetDisplayAttributeInfo;
+		}
+		[CRepr]
+		public struct ITfDisplayAttributeNotifySink : IUnknown
+		{
+			public const new Guid IID = .(0xad56f402, 0xe162, 0x4f25, 0x90, 0x8f, 0x7d, 0x57, 0x7c, 0xf9, 0xbd, 0xa9);
+			
+			public function HRESULT(ITfDisplayAttributeNotifySink *self) OnUpdateInfo;
+		}
+		[CRepr]
+		public struct ITfCategoryMgr : IUnknown
+		{
+			public const new Guid IID = .(0xc3acefb5, 0xf69d, 0x4905, 0x93, 0x8f, 0xfc, 0xad, 0xcf, 0x4b, 0xe8, 0x30);
+			
+			public function HRESULT(ITfCategoryMgr *self, Guid* rclsid, Guid* rcatid, Guid* rguid) RegisterCategory;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rclsid, Guid* rcatid, Guid* rguid) UnregisterCategory;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rguid, IEnumGUID** ppEnum) EnumCategoriesInItem;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rcatid, IEnumGUID** ppEnum) EnumItemsInCategory;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rguid, Guid* pcatid, Guid** ppcatidList, uint32 ulCount) FindClosestCategory;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rclsid, Guid* rguid, char16* pchDesc, uint32 cch) RegisterGUIDDescription;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rclsid, Guid* rguid) UnregisterGUIDDescription;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rguid, BSTR* pbstrDesc) GetGUIDDescription;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rclsid, Guid* rguid, uint32 dw) RegisterGUIDDWORD;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rclsid, Guid* rguid) UnregisterGUIDDWORD;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rguid, uint32* pdw) GetGUIDDWORD;
+			public function HRESULT(ITfCategoryMgr *self, Guid* rguid, uint32* pguidatom) RegisterGUID;
+			public function HRESULT(ITfCategoryMgr *self, uint32 guidatom, Guid* pguid) GetGUID;
+			public function HRESULT(ITfCategoryMgr *self, uint32 guidatom, Guid* rguid, BOOL* pfEqual) IsEqualTfGuidAtom;
+		}
+		[CRepr]
+		public struct ITfSource : IUnknown
+		{
+			public const new Guid IID = .(0x4ea48a35, 0x60ae, 0x446f, 0x8f, 0xd6, 0xe6, 0xa8, 0xd8, 0x24, 0x59, 0xf7);
+			
+			public function HRESULT(ITfSource *self, Guid* riid, IUnknown* punk, uint32* pdwCookie) AdviseSink;
+			public function HRESULT(ITfSource *self, uint32 dwCookie) UnadviseSink;
+		}
+		[CRepr]
+		public struct ITfSourceSingle : IUnknown
+		{
+			public const new Guid IID = .(0x73131f9c, 0x56a9, 0x49dd, 0xb0, 0xee, 0xd0, 0x46, 0x63, 0x3f, 0x75, 0x28);
+			
+			public function HRESULT(ITfSourceSingle *self, uint32 tid, Guid* riid, IUnknown* punk) AdviseSingleSink;
+			public function HRESULT(ITfSourceSingle *self, uint32 tid, Guid* riid) UnadviseSingleSink;
+		}
+		[CRepr]
+		public struct ITfUIElementMgr : IUnknown
+		{
+			public const new Guid IID = .(0xea1ea135, 0x19df, 0x11d7, 0xa6, 0xd2, 0x00, 0x06, 0x5b, 0x84, 0x43, 0x5c);
+			
+			public function HRESULT(ITfUIElementMgr *self, ITfUIElement* pElement, BOOL* pbShow, uint32* pdwUIElementId) BeginUIElement;
+			public function HRESULT(ITfUIElementMgr *self, uint32 dwUIElementId) UpdateUIElement;
+			public function HRESULT(ITfUIElementMgr *self, uint32 dwUIElementId) EndUIElement;
+			public function HRESULT(ITfUIElementMgr *self, uint32 dwUIELementId, ITfUIElement** ppElement) GetUIElement;
+			public function HRESULT(ITfUIElementMgr *self, IEnumTfUIElements** ppEnum) EnumUIElements;
+		}
+		[CRepr]
+		public struct IEnumTfUIElements : IUnknown
+		{
+			public const new Guid IID = .(0x887aa91e, 0xacba, 0x4931, 0x84, 0xda, 0x3c, 0x52, 0x08, 0xcf, 0x54, 0x3f);
+			
+			public function HRESULT(IEnumTfUIElements *self, IEnumTfUIElements** ppEnum) Clone;
+			public function HRESULT(IEnumTfUIElements *self, uint32 ulCount, ITfUIElement** ppElement, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfUIElements *self) Reset;
+			public function HRESULT(IEnumTfUIElements *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfUIElementSink : IUnknown
+		{
+			public const new Guid IID = .(0xea1ea136, 0x19df, 0x11d7, 0xa6, 0xd2, 0x00, 0x06, 0x5b, 0x84, 0x43, 0x5c);
+			
+			public function HRESULT(ITfUIElementSink *self, uint32 dwUIElementId, BOOL* pbShow) BeginUIElement;
+			public function HRESULT(ITfUIElementSink *self, uint32 dwUIElementId) UpdateUIElement;
+			public function HRESULT(ITfUIElementSink *self, uint32 dwUIElementId) EndUIElement;
+		}
+		[CRepr]
+		public struct ITfUIElement : IUnknown
+		{
+			public const new Guid IID = .(0xea1ea137, 0x19df, 0x11d7, 0xa6, 0xd2, 0x00, 0x06, 0x5b, 0x84, 0x43, 0x5c);
+			
+			public function HRESULT(ITfUIElement *self, BSTR* pbstrDescription) GetDescription;
+			public function HRESULT(ITfUIElement *self, Guid* pguid) GetGUID;
+			public function HRESULT(ITfUIElement *self, BOOL bShow) Show;
+			public function HRESULT(ITfUIElement *self, BOOL* pbShow) IsShown;
+		}
+		[CRepr]
+		public struct ITfCandidateListUIElement : ITfUIElement
+		{
+			public const new Guid IID = .(0xea1ea138, 0x19df, 0x11d7, 0xa6, 0xd2, 0x00, 0x06, 0x5b, 0x84, 0x43, 0x5c);
+			
+			public function HRESULT(ITfCandidateListUIElement *self, uint32* pdwFlags) GetUpdatedFlags;
+			public function HRESULT(ITfCandidateListUIElement *self, ITfDocumentMgr** ppdim) GetDocumentMgr;
+			public function HRESULT(ITfCandidateListUIElement *self, uint32* puCount) GetCount;
+			public function HRESULT(ITfCandidateListUIElement *self, uint32* puIndex) GetSelection;
+			public function HRESULT(ITfCandidateListUIElement *self, uint32 uIndex, BSTR* pstr) GetString;
+			public function HRESULT(ITfCandidateListUIElement *self, uint32* pIndex, uint32 uSize, uint32* puPageCnt) GetPageIndex;
+			public function HRESULT(ITfCandidateListUIElement *self, uint32* pIndex, uint32 uPageCnt) SetPageIndex;
+			public function HRESULT(ITfCandidateListUIElement *self, uint32* puPage) GetCurrentPage;
+		}
+		[CRepr]
+		public struct ITfCandidateListUIElementBehavior : ITfCandidateListUIElement
+		{
+			public const new Guid IID = .(0x85fad185, 0x58ce, 0x497a, 0x94, 0x60, 0x35, 0x53, 0x66, 0xb6, 0x4b, 0x9a);
+			
+			public function HRESULT(ITfCandidateListUIElementBehavior *self, uint32 nIndex) SetSelection;
+			public function HRESULT(ITfCandidateListUIElementBehavior *self) Finalize;
+			public function HRESULT(ITfCandidateListUIElementBehavior *self) Abort;
+		}
+		[CRepr]
+		public struct ITfReadingInformationUIElement : ITfUIElement
+		{
+			public const new Guid IID = .(0xea1ea139, 0x19df, 0x11d7, 0xa6, 0xd2, 0x00, 0x06, 0x5b, 0x84, 0x43, 0x5c);
+			
+			public function HRESULT(ITfReadingInformationUIElement *self, uint32* pdwFlags) GetUpdatedFlags;
+			public function HRESULT(ITfReadingInformationUIElement *self, ITfContext** ppic) GetContext;
+			public function HRESULT(ITfReadingInformationUIElement *self, BSTR* pstr) GetString;
+			public function HRESULT(ITfReadingInformationUIElement *self, uint32* pcchMax) GetMaxReadingStringLength;
+			public function HRESULT(ITfReadingInformationUIElement *self, uint32* pErrorIndex) GetErrorIndex;
+			public function HRESULT(ITfReadingInformationUIElement *self, BOOL* pfVertical) IsVerticalOrderPreferred;
+		}
+		[CRepr]
+		public struct ITfTransitoryExtensionUIElement : ITfUIElement
+		{
+			public const new Guid IID = .(0x858f956a, 0x972f, 0x42a2, 0xa2, 0xf2, 0x03, 0x21, 0xe1, 0xab, 0xe2, 0x09);
+			
+			public function HRESULT(ITfTransitoryExtensionUIElement *self, ITfDocumentMgr** ppdim) GetDocumentMgr;
+		}
+		[CRepr]
+		public struct ITfTransitoryExtensionSink : IUnknown
+		{
+			public const new Guid IID = .(0xa615096f, 0x1c57, 0x4813, 0x8a, 0x15, 0x55, 0xee, 0x6e, 0x5a, 0x83, 0x9c);
+			
+			public function HRESULT(ITfTransitoryExtensionSink *self, ITfContext* pic, uint32 ecReadOnly, ITfRange* pResultRange, ITfRange* pCompositionRange, BOOL* pfDeleteResultRange) OnTransitoryExtensionUpdated;
+		}
+		[CRepr]
+		public struct ITfToolTipUIElement : ITfUIElement
+		{
+			public const new Guid IID = .(0x52b18b5c, 0x555d, 0x46b2, 0xb0, 0x0a, 0xfa, 0x68, 0x01, 0x44, 0xfb, 0xdb);
+			
+			public function HRESULT(ITfToolTipUIElement *self, BSTR* pstr) GetString;
+		}
+		[CRepr]
+		public struct ITfReverseConversionList : IUnknown
+		{
+			public const new Guid IID = .(0x151d69f0, 0x86f4, 0x4674, 0xb7, 0x21, 0x56, 0x91, 0x1e, 0x79, 0x7f, 0x47);
+			
+			public function HRESULT(ITfReverseConversionList *self, uint32* puIndex) GetLength;
+			public function HRESULT(ITfReverseConversionList *self, uint32 uIndex, BSTR* pbstr) GetString;
+		}
+		[CRepr]
+		public struct ITfReverseConversion : IUnknown
+		{
+			public const new Guid IID = .(0xa415e162, 0x157d, 0x417d, 0x8a, 0x8c, 0x0a, 0xb2, 0x6c, 0x7d, 0x27, 0x81);
+			
+			public function HRESULT(ITfReverseConversion *self, PWSTR lpstr, ITfReverseConversionList** ppList) DoReverseConversion;
+		}
+		[CRepr]
+		public struct ITfReverseConversionMgr : IUnknown
+		{
+			public const new Guid IID = .(0xb643c236, 0xc493, 0x41b6, 0xab, 0xb3, 0x69, 0x24, 0x12, 0x77, 0x5c, 0xc4);
+			
+			public function HRESULT(ITfReverseConversionMgr *self, uint16 langid, Guid* guidProfile, uint32 dwflag, ITfReverseConversion** ppReverseConversion) GetReverseConversion;
+		}
+		[CRepr]
+		public struct ITfCandidateString : IUnknown
+		{
+			public const new Guid IID = .(0x581f317e, 0xfd9d, 0x443f, 0xb9, 0x72, 0xed, 0x00, 0x46, 0x7c, 0x5d, 0x40);
+			
+			public function HRESULT(ITfCandidateString *self, BSTR* pbstr) GetString;
+			public function HRESULT(ITfCandidateString *self, uint32* pnIndex) GetIndex;
+		}
+		[CRepr]
+		public struct IEnumTfCandidates : IUnknown
+		{
+			public const new Guid IID = .(0xdefb1926, 0x6c80, 0x4ce8, 0x87, 0xd4, 0xd6, 0xb7, 0x2b, 0x81, 0x2b, 0xde);
+			
+			public function HRESULT(IEnumTfCandidates *self, IEnumTfCandidates** ppEnum) Clone;
+			public function HRESULT(IEnumTfCandidates *self, uint32 ulCount, ITfCandidateString** ppCand, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfCandidates *self) Reset;
+			public function HRESULT(IEnumTfCandidates *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfCandidateList : IUnknown
+		{
+			public const new Guid IID = .(0xa3ad50fb, 0x9bdb, 0x49e3, 0xa8, 0x43, 0x6c, 0x76, 0x52, 0x0f, 0xbf, 0x5d);
+			
+			public function HRESULT(ITfCandidateList *self, IEnumTfCandidates** ppEnum) EnumCandidates;
+			public function HRESULT(ITfCandidateList *self, uint32 nIndex, ITfCandidateString** ppCand) GetCandidate;
+			public function HRESULT(ITfCandidateList *self, uint32* pnCnt) GetCandidateNum;
+			public function HRESULT(ITfCandidateList *self, uint32 nIndex, TfCandidateResult imcr) SetResult;
+		}
+		[CRepr]
+		public struct ITfFnReconversion : ITfFunction
+		{
+			public const new Guid IID = .(0x4cea93c0, 0x0a58, 0x11d3, 0x8d, 0xf0, 0x00, 0x10, 0x5a, 0x27, 0x99, 0xb5);
+			
+			public function HRESULT(ITfFnReconversion *self, ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfConvertable) QueryRange;
+			public function HRESULT(ITfFnReconversion *self, ITfRange* pRange, ITfCandidateList** ppCandList) GetReconversion;
+			public function HRESULT(ITfFnReconversion *self, ITfRange* pRange) Reconvert;
+		}
+		[CRepr]
+		public struct ITfFnPlayBack : ITfFunction
+		{
+			public const new Guid IID = .(0xa3a416a4, 0x0f64, 0x11d3, 0xb5, 0xb7, 0x00, 0xc0, 0x4f, 0xc3, 0x24, 0xa1);
+			
+			public function HRESULT(ITfFnPlayBack *self, ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfPlayable) QueryRange;
+			public function HRESULT(ITfFnPlayBack *self, ITfRange* pRange) Play;
+		}
+		[CRepr]
+		public struct ITfFnLangProfileUtil : ITfFunction
+		{
+			public const new Guid IID = .(0xa87a8574, 0xa6c1, 0x4e15, 0x99, 0xf0, 0x3d, 0x39, 0x65, 0xf5, 0x48, 0xeb);
+			
+			public function HRESULT(ITfFnLangProfileUtil *self) RegisterActiveProfiles;
+			public function HRESULT(ITfFnLangProfileUtil *self, uint16 langid, BOOL* pfAvailable) IsProfileAvailableForLang;
+		}
+		[CRepr]
+		public struct ITfFnConfigure : ITfFunction
+		{
+			public const new Guid IID = .(0x88f567c6, 0x1757, 0x49f8, 0xa1, 0xb2, 0x89, 0x23, 0x4c, 0x1e, 0xef, 0xf9);
+			
+			public function HRESULT(ITfFnConfigure *self, HWND hwndParent, uint16 langid, Guid* rguidProfile) Show;
+		}
+		[CRepr]
+		public struct ITfFnConfigureRegisterWord : ITfFunction
+		{
+			public const new Guid IID = .(0xbb95808a, 0x6d8f, 0x4bca, 0x84, 0x00, 0x53, 0x90, 0xb5, 0x86, 0xae, 0xdf);
+			
+			public function HRESULT(ITfFnConfigureRegisterWord *self, HWND hwndParent, uint16 langid, Guid* rguidProfile, BSTR bstrRegistered) Show;
+		}
+		[CRepr]
+		public struct ITfFnConfigureRegisterEudc : ITfFunction
+		{
+			public const new Guid IID = .(0xb5e26ff5, 0xd7ad, 0x4304, 0x91, 0x3f, 0x21, 0xa2, 0xed, 0x95, 0xa1, 0xb0);
+			
+			public function HRESULT(ITfFnConfigureRegisterEudc *self, HWND hwndParent, uint16 langid, Guid* rguidProfile, BSTR bstrRegistered) Show;
+		}
+		[CRepr]
+		public struct ITfFnShowHelp : ITfFunction
+		{
+			public const new Guid IID = .(0x5ab1d30c, 0x094d, 0x4c29, 0x8e, 0xa5, 0x0b, 0xf5, 0x9b, 0xe8, 0x7b, 0xf3);
+			
+			public function HRESULT(ITfFnShowHelp *self, HWND hwndParent) Show;
+		}
+		[CRepr]
+		public struct ITfFnBalloon : IUnknown
+		{
+			public const new Guid IID = .(0x3bab89e4, 0x5fbe, 0x45f4, 0xa5, 0xbc, 0xdc, 0xa3, 0x6a, 0xd2, 0x25, 0xa8);
+			
+			public function HRESULT(ITfFnBalloon *self, TfLBBalloonStyle style, char16* pch, uint32 cch) UpdateBalloon;
+		}
+		[CRepr]
+		public struct ITfFnGetSAPIObject : ITfFunction
+		{
+			public const new Guid IID = .(0x5c0ab7ea, 0x167d, 0x4f59, 0xbf, 0xb5, 0x46, 0x93, 0x75, 0x5e, 0x90, 0xca);
+			
+			public function HRESULT(ITfFnGetSAPIObject *self, TfSapiObject sObj, IUnknown** ppunk) Get;
+		}
+		[CRepr]
+		public struct ITfFnPropertyUIStatus : ITfFunction
+		{
+			public const new Guid IID = .(0x2338ac6e, 0x2b9d, 0x44c0, 0xa7, 0x5e, 0xee, 0x64, 0xf2, 0x56, 0xb3, 0xbd);
+			
+			public function HRESULT(ITfFnPropertyUIStatus *self, Guid* refguidProp, uint32* pdw) GetStatus;
+			public function HRESULT(ITfFnPropertyUIStatus *self, Guid* refguidProp, uint32 dw) SetStatus;
+		}
+		[CRepr]
+		public struct IEnumSpeechCommands : IUnknown
+		{
+			public const new Guid IID = .(0x8c5dac4f, 0x083c, 0x4b85, 0xa4, 0xc9, 0x71, 0x74, 0x60, 0x48, 0xad, 0xca);
+			
+			public function HRESULT(IEnumSpeechCommands *self, IEnumSpeechCommands** ppEnum) Clone;
+			public function HRESULT(IEnumSpeechCommands *self, uint32 ulCount, uint16** pSpCmds, uint32* pcFetched) Next;
+			public function HRESULT(IEnumSpeechCommands *self) Reset;
+			public function HRESULT(IEnumSpeechCommands *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ISpeechCommandProvider : IUnknown
+		{
+			public const new Guid IID = .(0x38e09d4c, 0x586d, 0x435a, 0xb5, 0x92, 0xc8, 0xa8, 0x66, 0x91, 0xde, 0xc6);
+			
+			public function HRESULT(ISpeechCommandProvider *self, uint16 langid, IEnumSpeechCommands** ppEnum) EnumSpeechCommands;
+			public function HRESULT(ISpeechCommandProvider *self, char16* pszCommand, uint32 cch, uint16 langid) ProcessCommand;
+		}
+		[CRepr]
+		public struct ITfFnCustomSpeechCommand : ITfFunction
+		{
+			public const new Guid IID = .(0xfca6c349, 0xa12f, 0x43a3, 0x8d, 0xd6, 0x5a, 0x5a, 0x42, 0x82, 0x57, 0x7b);
+			
+			public function HRESULT(ITfFnCustomSpeechCommand *self, IUnknown* pspcmdProvider) SetSpeechCommandProvider;
+		}
+		[CRepr]
+		public struct ITfFnLMProcessor : ITfFunction
+		{
+			public const new Guid IID = .(0x7afbf8e7, 0xac4b, 0x4082, 0xb0, 0x58, 0x89, 0x08, 0x99, 0xd3, 0xa0, 0x10);
+			
+			public function HRESULT(ITfFnLMProcessor *self, ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfAccepted) QueryRange;
+			public function HRESULT(ITfFnLMProcessor *self, uint16 langid, BOOL* pfAccepted) QueryLangID;
+			public function HRESULT(ITfFnLMProcessor *self, ITfRange* pRange, ITfCandidateList** ppCandList) GetReconversion;
+			public function HRESULT(ITfFnLMProcessor *self, ITfRange* pRange) Reconvert;
+			public function HRESULT(ITfFnLMProcessor *self, BOOL fUp, WPARAM vKey, LPARAM lparamKeydata, BOOL* pfInterested) QueryKey;
+			public function HRESULT(ITfFnLMProcessor *self, BOOL fUp, WPARAM vKey, LPARAM lparamKeyData) InvokeKey;
+			public function HRESULT(ITfFnLMProcessor *self, ITfContext* pic, Guid* refguidFunc) InvokeFunc;
+		}
+		[CRepr]
+		public struct ITfFnLMInternal : ITfFnLMProcessor
+		{
+			public const new Guid IID = .(0x04b825b1, 0xac9a, 0x4f7b, 0xb5, 0xad, 0xc7, 0x16, 0x8f, 0x1e, 0xe4, 0x45);
+			
+			public function HRESULT(ITfFnLMInternal *self, ITfRange* pRange) ProcessLattice;
+		}
+		[CRepr]
+		public struct IEnumTfLatticeElements : IUnknown
+		{
+			public const new Guid IID = .(0x56988052, 0x47da, 0x4a05, 0x91, 0x1a, 0xe3, 0xd9, 0x41, 0xf1, 0x71, 0x45);
+			
+			public function HRESULT(IEnumTfLatticeElements *self, IEnumTfLatticeElements** ppEnum) Clone;
+			public function HRESULT(IEnumTfLatticeElements *self, uint32 ulCount, TF_LMLATTELEMENT* rgsElements, uint32* pcFetched) Next;
+			public function HRESULT(IEnumTfLatticeElements *self) Reset;
+			public function HRESULT(IEnumTfLatticeElements *self, uint32 ulCount) Skip;
+		}
+		[CRepr]
+		public struct ITfLMLattice : IUnknown
+		{
+			public const new Guid IID = .(0xd4236675, 0xa5bf, 0x4570, 0x9d, 0x42, 0x5d, 0x6d, 0x7b, 0x02, 0xd5, 0x9b);
+			
+			public function HRESULT(ITfLMLattice *self, Guid* rguidType, BOOL* pfSupported) QueryType;
+			public function HRESULT(ITfLMLattice *self, uint32 dwFrameStart, Guid* rguidType, IEnumTfLatticeElements** ppEnum) EnumLatticeElements;
+		}
+		[CRepr]
+		public struct ITfFnAdviseText : ITfFunction
+		{
+			public const new Guid IID = .(0x3527268b, 0x7d53, 0x4dd9, 0x92, 0xb7, 0x72, 0x96, 0xae, 0x46, 0x12, 0x49);
+			
+			public function HRESULT(ITfFnAdviseText *self, ITfRange* pRange, char16* pchText, int32 cch) OnTextUpdate;
+			public function HRESULT(ITfFnAdviseText *self, ITfRange* pRange, ITfLMLattice* pLattice) OnLatticeUpdate;
+		}
+		[CRepr]
+		public struct ITfFnSearchCandidateProvider : ITfFunction
+		{
+			public const new Guid IID = .(0x87a2ad8f, 0xf27b, 0x4920, 0x85, 0x01, 0x67, 0x60, 0x22, 0x80, 0x17, 0x5d);
+			
+			public function HRESULT(ITfFnSearchCandidateProvider *self, BSTR bstrQuery, BSTR bstrApplicationId, ITfCandidateList** pplist) GetSearchCandidates;
+			public function HRESULT(ITfFnSearchCandidateProvider *self, BSTR bstrQuery, BSTR bstrApplicationID, BSTR bstrResult) SetResult;
+		}
+		[CRepr]
+		public struct ITfIntegratableCandidateListUIElement : IUnknown
+		{
+			public const new Guid IID = .(0xc7a6f54f, 0xb180, 0x416f, 0xb2, 0xbf, 0x7b, 0xf2, 0xe4, 0x68, 0x3d, 0x7b);
+			
+			public function HRESULT(ITfIntegratableCandidateListUIElement *self, Guid guidIntegrationStyle) SetIntegrationStyle;
+			public function HRESULT(ITfIntegratableCandidateListUIElement *self, TfIntegratableCandidateListSelectionStyle* ptfSelectionStyle) GetSelectionStyle;
+			public function HRESULT(ITfIntegratableCandidateListUIElement *self, WPARAM wParam, LPARAM lParam, BOOL* pfEaten) OnKeyDown;
+			public function HRESULT(ITfIntegratableCandidateListUIElement *self, BOOL* pfShow) ShowCandidateNumbers;
+			public function HRESULT(ITfIntegratableCandidateListUIElement *self) FinalizeExactCompositionString;
+		}
+		[CRepr]
+		public struct ITfFnGetPreferredTouchKeyboardLayout : ITfFunction
+		{
+			public const new Guid IID = .(0x5f309a41, 0x590a, 0x4acc, 0xa9, 0x7f, 0xd8, 0xef, 0xff, 0x13, 0xfd, 0xfc);
+			
+			public function HRESULT(ITfFnGetPreferredTouchKeyboardLayout *self, TKBLayoutType* pTKBLayoutType, uint16* pwPreferredLayoutId) GetLayout;
+		}
+		[CRepr]
+		public struct ITfFnGetLinguisticAlternates : ITfFunction
+		{
+			public const new Guid IID = .(0xea163ce2, 0x7a65, 0x4506, 0x82, 0xa3, 0xc5, 0x28, 0x21, 0x5d, 0xa6, 0x4e);
+			
+			public function HRESULT(ITfFnGetLinguisticAlternates *self, ITfRange* pRange, ITfCandidateList** ppCandidateList) GetAlternates;
+		}
+		[CRepr]
+		public struct IUIManagerEventSink : IUnknown
+		{
+			public const new Guid IID = .(0xcd91d690, 0xa7e8, 0x4265, 0x9b, 0x38, 0x8b, 0xb3, 0xbb, 0xab, 0xa7, 0xde);
+			
+			public function HRESULT(IUIManagerEventSink *self, RECT* prcBounds) OnWindowOpening;
+			public function HRESULT(IUIManagerEventSink *self, RECT* prcBounds) OnWindowOpened;
+			public function HRESULT(IUIManagerEventSink *self, RECT* prcUpdatedBounds) OnWindowUpdating;
+			public function HRESULT(IUIManagerEventSink *self, RECT* prcUpdatedBounds) OnWindowUpdated;
+			public function HRESULT(IUIManagerEventSink *self) OnWindowClosing;
+			public function HRESULT(IUIManagerEventSink *self) OnWindowClosed;
+		}
+		[CRepr]
+		public struct ITfInputScope : IUnknown
+		{
+			public const new Guid IID = .(0xfde1eaee, 0x6924, 0x4cdf, 0x91, 0xe7, 0xda, 0x38, 0xcf, 0xf5, 0x55, 0x9d);
+			
+			public function HRESULT(ITfInputScope *self, InputScope** pprgInputScopes, uint32* pcCount) GetInputScopes;
+			public function HRESULT(ITfInputScope *self, BSTR** ppbstrPhrases, uint32* pcCount) GetPhrase;
+			public function HRESULT(ITfInputScope *self, BSTR* pbstrRegExp) GetRegularExpression;
+			public function HRESULT(ITfInputScope *self, BSTR* pbstrSRGS) GetSRGS;
+			public function HRESULT(ITfInputScope *self, BSTR* pbstrXML) GetXML;
+		}
+		[CRepr]
+		public struct ITfInputScope2 : ITfInputScope
+		{
+			public const new Guid IID = .(0x5731eaa0, 0x6bc2, 0x4681, 0xa5, 0x32, 0x92, 0xfb, 0xb7, 0x4d, 0x7c, 0x41);
+			
+			public function HRESULT(ITfInputScope2 *self, IEnumString** ppEnumString) EnumWordList;
+		}
+		[CRepr]
+		public struct ITfMSAAControl : IUnknown
+		{
+			public const new Guid IID = .(0xb5f8fb3b, 0x393f, 0x4f7c, 0x84, 0xcb, 0x50, 0x49, 0x24, 0xc2, 0x70, 0x5a);
+			
+			public function HRESULT(ITfMSAAControl *self) SystemEnableMSAA;
+			public function HRESULT(ITfMSAAControl *self) SystemDisableMSAA;
+		}
+		[CRepr]
+		public struct IInternalDocWrap : IUnknown
+		{
+			public const new Guid IID = .(0xe1aa6466, 0x9db4, 0x40ba, 0xbe, 0x03, 0x77, 0xc3, 0x8e, 0x8e, 0x60, 0xb2);
+			
+			public function HRESULT(IInternalDocWrap *self) NotifyRevoke;
+		}
+		[CRepr]
+		public struct ITextStoreACPEx : IUnknown
+		{
+			public const new Guid IID = .(0xa2de3bc2, 0x3d8e, 0x11d3, 0x81, 0xa9, 0xf7, 0x53, 0xfb, 0xe6, 0x1a, 0x00);
+			
+			public function HRESULT(ITextStoreACPEx *self, int32 acpStart, int32 acpEnd, RECT rc, uint32 dwPosition) ScrollToRect;
+		}
+		[CRepr]
+		public struct ITextStoreAnchorEx : IUnknown
+		{
+			public const new Guid IID = .(0xa2de3bc1, 0x3d8e, 0x11d3, 0x81, 0xa9, 0xf7, 0x53, 0xfb, 0xe6, 0x1a, 0x00);
+			
+			public function HRESULT(ITextStoreAnchorEx *self, IAnchor* pStart, IAnchor* pEnd, RECT rc, uint32 dwPosition) ScrollToRect;
+		}
+		[CRepr]
+		public struct ITextStoreACPSinkEx : ITextStoreACPSink
+		{
+			public const new Guid IID = .(0x2bdf9464, 0x41e2, 0x43e3, 0x95, 0x0c, 0xa6, 0x86, 0x5b, 0xa2, 0x5c, 0xd4);
+			
+			public function HRESULT(ITextStoreACPSinkEx *self) OnDisconnect;
+		}
+		[CRepr]
+		public struct ITextStoreSinkAnchorEx : ITextStoreAnchorSink
+		{
+			public const new Guid IID = .(0x25642426, 0x028d, 0x4474, 0x97, 0x7b, 0x11, 0x1b, 0xb1, 0x14, 0xfe, 0x3e);
+			
+			public function HRESULT(ITextStoreSinkAnchorEx *self) OnDisconnect;
+		}
+		[CRepr]
+		public struct IAccDictionary : IUnknown
+		{
+			public const new Guid IID = .(0x1dc4cb5f, 0xd737, 0x474d, 0xad, 0xe9, 0x5c, 0xcf, 0xc9, 0xbc, 0x1c, 0xc9);
+			
+			public function HRESULT(IAccDictionary *self, Guid* Term, uint32 lcid, BSTR* pResult, uint32* plcid) GetLocalizedString;
+			public function HRESULT(IAccDictionary *self, Guid* Term, Guid* pParentTerm) GetParentTerm;
+			public function HRESULT(IAccDictionary *self, Guid* Term, BSTR* pResult) GetMnemonicString;
+			public function HRESULT(IAccDictionary *self, BSTR bstrMnemonic, Guid* pTerm) LookupMnemonicTerm;
+			public function HRESULT(IAccDictionary *self, Guid* Term, uint32 lcid, VARIANT varValue, BSTR* pbstrResult, uint32* plcid) ConvertValueToString;
+		}
+		[CRepr]
+		public struct IVersionInfo : IUnknown
+		{
+			public const new Guid IID = .(0x401518ec, 0xdb00, 0x4611, 0x9b, 0x29, 0x2a, 0x0e, 0x4b, 0x9a, 0xfa, 0x85);
+			
+			public function HRESULT(IVersionInfo *self, uint32 ulSub, uint32* ulCount) GetSubcomponentCount;
+			public function HRESULT(IVersionInfo *self, uint32 ulSub, Guid* implid) GetImplementationID;
+			public function HRESULT(IVersionInfo *self, uint32 ulSub, uint32* pdwMajor, uint32* pdwMinor) GetBuildVersion;
+			public function HRESULT(IVersionInfo *self, uint32 ulSub, BSTR* pImplStr) GetComponentDescription;
+			public function HRESULT(IVersionInfo *self, uint32 ulSub, BSTR* pImplStr) GetInstanceDescription;
+		}
+		[CRepr]
+		public struct ICoCreateLocally : IUnknown
+		{
+			public const new Guid IID = .(0x03de00aa, 0xf272, 0x41e3, 0x99, 0xcb, 0x03, 0xc5, 0xe8, 0x11, 0x4e, 0xa0);
+			
+			public function HRESULT(ICoCreateLocally *self, Guid* rclsid, uint32 dwClsContext, Guid* riid, IUnknown** punk, Guid* riidParam, IUnknown* punkParam, VARIANT varParam) CoCreateLocally;
+		}
+		[CRepr]
+		public struct ICoCreatedLocally : IUnknown
+		{
+			public const new Guid IID = .(0x0a53eb6c, 0x1908, 0x4742, 0x8c, 0xff, 0x2c, 0xee, 0x2e, 0x93, 0xf9, 0x4c);
+			
+			public function HRESULT(ICoCreatedLocally *self, IUnknown* punkLocalObject, Guid* riidParam, IUnknown* punkParam, VARIANT varParam) LocalInit;
+		}
+		[CRepr]
+		public struct IAccStore : IUnknown
+		{
+			public const new Guid IID = .(0xe2cd4a63, 0x2b72, 0x4d48, 0xb7, 0x39, 0x95, 0xe4, 0x76, 0x51, 0x95, 0xba);
+			
+			public function HRESULT(IAccStore *self, Guid* riid, IUnknown* punk) Register;
+			public function HRESULT(IAccStore *self, IUnknown* punk) Unregister;
+			public function HRESULT(IAccStore *self, IEnumUnknown** enumUnknown) GetDocuments;
+			public function HRESULT(IAccStore *self, HWND hWnd, Guid* riid, IUnknown** ppunk) LookupByHWND;
+			public function HRESULT(IAccStore *self, POINT pt, Guid* riid, IUnknown** ppunk) LookupByPoint;
+			public function HRESULT(IAccStore *self, IUnknown* punk) OnDocumentFocus;
+			public function HRESULT(IAccStore *self, Guid* riid, IUnknown** ppunk) GetFocused;
+		}
+		[CRepr]
+		public struct IAccServerDocMgr : IUnknown
+		{
+			public const new Guid IID = .(0xad7c73cf, 0x6dd5, 0x4855, 0xab, 0xc2, 0xb0, 0x4b, 0xad, 0x5b, 0x91, 0x53);
+			
+			public function HRESULT(IAccServerDocMgr *self, Guid* riid, IUnknown* punk) NewDocument;
+			public function HRESULT(IAccServerDocMgr *self, IUnknown* punk) RevokeDocument;
+			public function HRESULT(IAccServerDocMgr *self, IUnknown* punk) OnDocumentFocus;
+		}
+		[CRepr]
+		public struct IAccClientDocMgr : IUnknown
+		{
+			public const new Guid IID = .(0x4c896039, 0x7b6d, 0x49e6, 0xa8, 0xc1, 0x45, 0x11, 0x6a, 0x98, 0x29, 0x2b);
+			
+			public function HRESULT(IAccClientDocMgr *self, IEnumUnknown** enumUnknown) GetDocuments;
+			public function HRESULT(IAccClientDocMgr *self, HWND hWnd, Guid* riid, IUnknown** ppunk) LookupByHWND;
+			public function HRESULT(IAccClientDocMgr *self, POINT pt, Guid* riid, IUnknown** ppunk) LookupByPoint;
+			public function HRESULT(IAccClientDocMgr *self, Guid* riid, IUnknown** ppunk) GetFocused;
+		}
+		[CRepr]
+		public struct IDocWrap : IUnknown
+		{
+			public const new Guid IID = .(0xdcd285fe, 0x0be0, 0x43bd, 0x99, 0xc9, 0xaa, 0xae, 0xc5, 0x13, 0xc5, 0x55);
+			
+			public function HRESULT(IDocWrap *self, Guid* riid, IUnknown* punk) SetDoc;
+			public function HRESULT(IDocWrap *self, Guid* riid, IUnknown** ppunk) GetWrappedDoc;
+		}
+		[CRepr]
+		public struct IClonableWrapper : IUnknown
+		{
+			public const new Guid IID = .(0xb33e75ff, 0xe84c, 0x4dca, 0xa2, 0x5c, 0x33, 0xb8, 0xdc, 0x00, 0x33, 0x74);
+			
+			public function HRESULT(IClonableWrapper *self, Guid* riid, void** ppv) CloneNewWrapper;
+		}
+		[CRepr]
+		public struct ITfSpeechUIServer : IUnknown
+		{
+			public const new Guid IID = .(0x90e9a944, 0x9244, 0x489f, 0xa7, 0x8f, 0xde, 0x67, 0xaf, 0xc0, 0x13, 0xa7);
+			
+			public function HRESULT(ITfSpeechUIServer *self) Initialize;
+			public function HRESULT(ITfSpeechUIServer *self, BOOL fShow) ShowUI;
+			public function HRESULT(ITfSpeechUIServer *self, TfLBBalloonStyle style, char16* pch, uint32 cch) UpdateBalloon;
+		}
 		
 		// --- Functions ---
 		

@@ -973,66 +973,578 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IWICPalette {}
-		public struct IWICBitmapSource {}
-		public struct IWICFormatConverter {}
-		public struct IWICPlanarFormatConverter {}
-		public struct IWICBitmapScaler {}
-		public struct IWICBitmapClipper {}
-		public struct IWICBitmapFlipRotator {}
-		public struct IWICBitmapLock {}
-		public struct IWICBitmap {}
-		public struct IWICColorContext {}
-		public struct IWICColorTransform {}
-		public struct IWICFastMetadataEncoder {}
-		public struct IWICStream {}
-		public struct IWICEnumMetadataItem {}
-		public struct IWICMetadataQueryReader {}
-		public struct IWICMetadataQueryWriter {}
-		public struct IWICBitmapEncoder {}
-		public struct IWICBitmapFrameEncode {}
-		public struct IWICPlanarBitmapFrameEncode {}
-		public struct IWICBitmapDecoder {}
-		public struct IWICBitmapSourceTransform {}
-		public struct IWICPlanarBitmapSourceTransform {}
-		public struct IWICBitmapFrameDecode {}
-		public struct IWICProgressiveLevelControl {}
-		public struct IWICProgressCallback {}
-		public struct IWICBitmapCodecProgressNotification {}
-		public struct IWICComponentInfo {}
-		public struct IWICFormatConverterInfo {}
-		public struct IWICBitmapCodecInfo {}
-		public struct IWICBitmapEncoderInfo {}
-		public struct IWICBitmapDecoderInfo {}
-		public struct IWICPixelFormatInfo {}
-		public struct IWICPixelFormatInfo2 {}
-		public struct IWICImagingFactory {}
-		public struct IWICDevelopRawNotificationCallback {}
-		public struct IWICDevelopRaw {}
-		public struct IWICDdsDecoder {}
-		public struct IWICDdsEncoder {}
-		public struct IWICDdsFrameDecode {}
-		public struct IWICJpegFrameDecode {}
-		public struct IWICJpegFrameEncode {}
-		public struct IWICMetadataBlockReader {}
-		public struct IWICMetadataBlockWriter {}
-		public struct IWICMetadataReader {}
-		public struct IWICMetadataWriter {}
-		public struct IWICStreamProvider {}
-		public struct IWICPersistStream {}
-		public struct IWICMetadataHandlerInfo {}
-		public struct IWICMetadataReaderInfo {}
-		public struct IWICMetadataWriterInfo {}
-		public struct IWICComponentFactory {}
+		[CRepr]
+		public struct IWICPalette : IUnknown
+		{
+			public const new Guid IID = .(0x00000040, 0xa8f2, 0x4877, 0xba, 0x0a, 0xfd, 0x2b, 0x66, 0x45, 0xfb, 0x94);
+			
+			public function HRESULT(IWICPalette *self, WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor) InitializePredefined;
+			public function HRESULT(IWICPalette *self, uint32* pColors, uint32 cCount) InitializeCustom;
+			public function HRESULT(IWICPalette *self, IWICBitmapSource* pISurface, uint32 cCount, BOOL fAddTransparentColor) InitializeFromBitmap;
+			public function HRESULT(IWICPalette *self, IWICPalette* pIPalette) InitializeFromPalette;
+			public function HRESULT(IWICPalette *self, WICBitmapPaletteType* pePaletteType) GetType;
+			public function HRESULT(IWICPalette *self, uint32* pcCount) GetColorCount;
+			public function HRESULT(IWICPalette *self, uint32 cCount, uint32* pColors, uint32* pcActualColors) GetColors;
+			public function HRESULT(IWICPalette *self, BOOL* pfIsBlackWhite) IsBlackWhite;
+			public function HRESULT(IWICPalette *self, BOOL* pfIsGrayscale) IsGrayscale;
+			public function HRESULT(IWICPalette *self, BOOL* pfHasAlpha) HasAlpha;
+		}
+		[CRepr]
+		public struct IWICBitmapSource : IUnknown
+		{
+			public const new Guid IID = .(0x00000120, 0xa8f2, 0x4877, 0xba, 0x0a, 0xfd, 0x2b, 0x66, 0x45, 0xfb, 0x94);
+			
+			public function HRESULT(IWICBitmapSource *self, uint32* puiWidth, uint32* puiHeight) GetSize;
+			public function HRESULT(IWICBitmapSource *self, Guid* pPixelFormat) GetPixelFormat;
+			public function HRESULT(IWICBitmapSource *self, double* pDpiX, double* pDpiY) GetResolution;
+			public function HRESULT(IWICBitmapSource *self, IWICPalette* pIPalette) CopyPalette;
+			public function HRESULT(IWICBitmapSource *self, WICRect* prc, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
+		}
+		[CRepr]
+		public struct IWICFormatConverter : IWICBitmapSource
+		{
+			public const new Guid IID = .(0x00000301, 0xa8f2, 0x4877, 0xba, 0x0a, 0xfd, 0x2b, 0x66, 0x45, 0xfb, 0x94);
+			
+			public function HRESULT(IWICFormatConverter *self, IWICBitmapSource* pISource, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
+			public function HRESULT(IWICFormatConverter *self, Guid* srcPixelFormat, Guid* dstPixelFormat, BOOL* pfCanConvert) CanConvert;
+		}
+		[CRepr]
+		public struct IWICPlanarFormatConverter : IWICBitmapSource
+		{
+			public const new Guid IID = .(0xbebee9cb, 0x83b0, 0x4dcc, 0x81, 0x32, 0xb0, 0xaa, 0xa5, 0x5e, 0xac, 0x96);
+			
+			public function HRESULT(IWICPlanarFormatConverter *self, IWICBitmapSource** ppPlanes, uint32 cPlanes, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
+			public function HRESULT(IWICPlanarFormatConverter *self, Guid* pSrcPixelFormats, uint32 cSrcPlanes, Guid* dstPixelFormat, BOOL* pfCanConvert) CanConvert;
+		}
+		[CRepr]
+		public struct IWICBitmapScaler : IWICBitmapSource
+		{
+			public const new Guid IID = .(0x00000302, 0xa8f2, 0x4877, 0xba, 0x0a, 0xfd, 0x2b, 0x66, 0x45, 0xfb, 0x94);
+			
+			public function HRESULT(IWICBitmapScaler *self, IWICBitmapSource* pISource, uint32 uiWidth, uint32 uiHeight, WICBitmapInterpolationMode mode) Initialize;
+		}
+		[CRepr]
+		public struct IWICBitmapClipper : IWICBitmapSource
+		{
+			public const new Guid IID = .(0xe4fbcf03, 0x223d, 0x4e81, 0x93, 0x33, 0xd6, 0x35, 0x55, 0x6d, 0xd1, 0xb5);
+			
+			public function HRESULT(IWICBitmapClipper *self, IWICBitmapSource* pISource, WICRect* prc) Initialize;
+		}
+		[CRepr]
+		public struct IWICBitmapFlipRotator : IWICBitmapSource
+		{
+			public const new Guid IID = .(0x5009834f, 0x2d6a, 0x41ce, 0x9e, 0x1b, 0x17, 0xc5, 0xaf, 0xf7, 0xa7, 0x82);
+			
+			public function HRESULT(IWICBitmapFlipRotator *self, IWICBitmapSource* pISource, WICBitmapTransformOptions options) Initialize;
+		}
+		[CRepr]
+		public struct IWICBitmapLock : IUnknown
+		{
+			public const new Guid IID = .(0x00000123, 0xa8f2, 0x4877, 0xba, 0x0a, 0xfd, 0x2b, 0x66, 0x45, 0xfb, 0x94);
+			
+			public function HRESULT(IWICBitmapLock *self, uint32* puiWidth, uint32* puiHeight) GetSize;
+			public function HRESULT(IWICBitmapLock *self, uint32* pcbStride) GetStride;
+			public function HRESULT(IWICBitmapLock *self, uint32* pcbBufferSize, uint8** ppbData) GetDataPointer;
+			public function HRESULT(IWICBitmapLock *self, Guid* pPixelFormat) GetPixelFormat;
+		}
+		[CRepr]
+		public struct IWICBitmap : IWICBitmapSource
+		{
+			public const new Guid IID = .(0x00000121, 0xa8f2, 0x4877, 0xba, 0x0a, 0xfd, 0x2b, 0x66, 0x45, 0xfb, 0x94);
+			
+			public function HRESULT(IWICBitmap *self, WICRect* prcLock, uint32 flags, IWICBitmapLock** ppILock) Lock;
+			public function HRESULT(IWICBitmap *self, IWICPalette* pIPalette) SetPalette;
+			public function HRESULT(IWICBitmap *self, double dpiX, double dpiY) SetResolution;
+		}
+		[CRepr]
+		public struct IWICColorContext : IUnknown
+		{
+			public const new Guid IID = .(0x3c613a02, 0x34b2, 0x44ea, 0x9a, 0x7c, 0x45, 0xae, 0xa9, 0xc6, 0xfd, 0x6d);
+			
+			public function HRESULT(IWICColorContext *self, PWSTR wzFilename) InitializeFromFilename;
+			public function HRESULT(IWICColorContext *self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
+			public function HRESULT(IWICColorContext *self, uint32 value) InitializeFromExifColorSpace;
+			public function HRESULT(IWICColorContext *self, WICColorContextType* pType) GetType;
+			public function HRESULT(IWICColorContext *self, uint32 cbBuffer, uint8* pbBuffer, uint32* pcbActual) GetProfileBytes;
+			public function HRESULT(IWICColorContext *self, uint32* pValue) GetExifColorSpace;
+		}
+		[CRepr]
+		public struct IWICColorTransform : IWICBitmapSource
+		{
+			public const new Guid IID = .(0xb66f034f, 0xd0e2, 0x40ab, 0xb4, 0x36, 0x6d, 0xe3, 0x9e, 0x32, 0x1a, 0x94);
+			
+			public function HRESULT(IWICColorTransform *self, IWICBitmapSource* pIBitmapSource, IWICColorContext* pIContextSource, IWICColorContext* pIContextDest, Guid* pixelFmtDest) Initialize;
+		}
+		[CRepr]
+		public struct IWICFastMetadataEncoder : IUnknown
+		{
+			public const new Guid IID = .(0xb84e2c09, 0x78c9, 0x4ac4, 0x8b, 0xd3, 0x52, 0x4a, 0xe1, 0x66, 0x3a, 0x2f);
+			
+			public function HRESULT(IWICFastMetadataEncoder *self) Commit;
+			public function HRESULT(IWICFastMetadataEncoder *self, IWICMetadataQueryWriter** ppIMetadataQueryWriter) GetMetadataQueryWriter;
+		}
+		[CRepr]
+		public struct IWICStream : IStream
+		{
+			public const new Guid IID = .(0x135ff860, 0x22b7, 0x4ddf, 0xb0, 0xf6, 0x21, 0x8f, 0x4f, 0x29, 0x9a, 0x43);
+			
+			public function HRESULT(IWICStream *self, IStream* pIStream) InitializeFromIStream;
+			public function HRESULT(IWICStream *self, PWSTR wzFileName, uint32 dwDesiredAccess) InitializeFromFilename;
+			public function HRESULT(IWICStream *self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
+			public function HRESULT(IWICStream *self, IStream* pIStream, ULARGE_INTEGER ulOffset, ULARGE_INTEGER ulMaxSize) InitializeFromIStreamRegion;
+		}
+		[CRepr]
+		public struct IWICEnumMetadataItem : IUnknown
+		{
+			public const new Guid IID = .(0xdc2bb46d, 0x3f07, 0x481e, 0x86, 0x25, 0x22, 0x0c, 0x4a, 0xed, 0xbb, 0x33);
+			
+			public function HRESULT(IWICEnumMetadataItem *self, uint32 celt, PROPVARIANT* rgeltSchema, PROPVARIANT* rgeltId, PROPVARIANT* rgeltValue, uint32* pceltFetched) Next;
+			public function HRESULT(IWICEnumMetadataItem *self, uint32 celt) Skip;
+			public function HRESULT(IWICEnumMetadataItem *self) Reset;
+			public function HRESULT(IWICEnumMetadataItem *self, IWICEnumMetadataItem** ppIEnumMetadataItem) Clone;
+		}
+		[CRepr]
+		public struct IWICMetadataQueryReader : IUnknown
+		{
+			public const new Guid IID = .(0x30989668, 0xe1c9, 0x4597, 0xb3, 0x95, 0x45, 0x8e, 0xed, 0xb8, 0x08, 0xdf);
+			
+			public function HRESULT(IWICMetadataQueryReader *self, Guid* pguidContainerFormat) GetContainerFormat;
+			public function HRESULT(IWICMetadataQueryReader *self, uint32 cchMaxLength, char16* wzNamespace, uint32* pcchActualLength) GetLocation;
+			public function HRESULT(IWICMetadataQueryReader *self, PWSTR wzName, PROPVARIANT* pvarValue) GetMetadataByName;
+			public function HRESULT(IWICMetadataQueryReader *self, IEnumString** ppIEnumString) GetEnumerator;
+		}
+		[CRepr]
+		public struct IWICMetadataQueryWriter : IWICMetadataQueryReader
+		{
+			public const new Guid IID = .(0xa721791a, 0x0def, 0x4d06, 0xbd, 0x91, 0x21, 0x18, 0xbf, 0x1d, 0xb1, 0x0b);
+			
+			public function HRESULT(IWICMetadataQueryWriter *self, PWSTR wzName, PROPVARIANT* pvarValue) SetMetadataByName;
+			public function HRESULT(IWICMetadataQueryWriter *self, PWSTR wzName) RemoveMetadataByName;
+		}
+		[CRepr]
+		public struct IWICBitmapEncoder : IUnknown
+		{
+			public const new Guid IID = .(0x00000103, 0xa8f2, 0x4877, 0xba, 0x0a, 0xfd, 0x2b, 0x66, 0x45, 0xfb, 0x94);
+			
+			public function HRESULT(IWICBitmapEncoder *self, IStream* pIStream, WICBitmapEncoderCacheOption cacheOption) Initialize;
+			public function HRESULT(IWICBitmapEncoder *self, Guid* pguidContainerFormat) GetContainerFormat;
+			public function HRESULT(IWICBitmapEncoder *self, IWICBitmapEncoderInfo** ppIEncoderInfo) GetEncoderInfo;
+			public function HRESULT(IWICBitmapEncoder *self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
+			public function HRESULT(IWICBitmapEncoder *self, IWICPalette* pIPalette) SetPalette;
+			public function HRESULT(IWICBitmapEncoder *self, IWICBitmapSource* pIThumbnail) SetThumbnail;
+			public function HRESULT(IWICBitmapEncoder *self, IWICBitmapSource* pIPreview) SetPreview;
+			public function HRESULT(IWICBitmapEncoder *self, IWICBitmapFrameEncode** ppIFrameEncode, IPropertyBag2** ppIEncoderOptions) CreateNewFrame;
+			public function HRESULT(IWICBitmapEncoder *self) Commit;
+			public function HRESULT(IWICBitmapEncoder *self, IWICMetadataQueryWriter** ppIMetadataQueryWriter) GetMetadataQueryWriter;
+		}
+		[CRepr]
+		public struct IWICBitmapFrameEncode : IUnknown
+		{
+			public const new Guid IID = .(0x00000105, 0xa8f2, 0x4877, 0xba, 0x0a, 0xfd, 0x2b, 0x66, 0x45, 0xfb, 0x94);
+			
+			public function HRESULT(IWICBitmapFrameEncode *self, IPropertyBag2* pIEncoderOptions) Initialize;
+			public function HRESULT(IWICBitmapFrameEncode *self, uint32 uiWidth, uint32 uiHeight) SetSize;
+			public function HRESULT(IWICBitmapFrameEncode *self, double dpiX, double dpiY) SetResolution;
+			public function HRESULT(IWICBitmapFrameEncode *self, Guid* pPixelFormat) SetPixelFormat;
+			public function HRESULT(IWICBitmapFrameEncode *self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
+			public function HRESULT(IWICBitmapFrameEncode *self, IWICPalette* pIPalette) SetPalette;
+			public function HRESULT(IWICBitmapFrameEncode *self, IWICBitmapSource* pIThumbnail) SetThumbnail;
+			public function HRESULT(IWICBitmapFrameEncode *self, uint32 lineCount, uint32 cbStride, uint32 cbBufferSize, uint8* pbPixels) WritePixels;
+			public function HRESULT(IWICBitmapFrameEncode *self, IWICBitmapSource* pIBitmapSource, WICRect* prc) WriteSource;
+			public function HRESULT(IWICBitmapFrameEncode *self) Commit;
+			public function HRESULT(IWICBitmapFrameEncode *self, IWICMetadataQueryWriter** ppIMetadataQueryWriter) GetMetadataQueryWriter;
+		}
+		[CRepr]
+		public struct IWICPlanarBitmapFrameEncode : IUnknown
+		{
+			public const new Guid IID = .(0xf928b7b8, 0x2221, 0x40c1, 0xb7, 0x2e, 0x7e, 0x82, 0xf1, 0x97, 0x4d, 0x1a);
+			
+			public function HRESULT(IWICPlanarBitmapFrameEncode *self, uint32 lineCount, WICBitmapPlane* pPlanes, uint32 cPlanes) WritePixels;
+			public function HRESULT(IWICPlanarBitmapFrameEncode *self, IWICBitmapSource** ppPlanes, uint32 cPlanes, WICRect* prcSource) WriteSource;
+		}
+		[CRepr]
+		public struct IWICBitmapDecoder : IUnknown
+		{
+			public const new Guid IID = .(0x9edde9e7, 0x8dee, 0x47ea, 0x99, 0xdf, 0xe6, 0xfa, 0xf2, 0xed, 0x44, 0xbf);
+			
+			public function HRESULT(IWICBitmapDecoder *self, IStream* pIStream, uint32* pdwCapability) QueryCapability;
+			public function HRESULT(IWICBitmapDecoder *self, IStream* pIStream, WICDecodeOptions cacheOptions) Initialize;
+			public function HRESULT(IWICBitmapDecoder *self, Guid* pguidContainerFormat) GetContainerFormat;
+			public function HRESULT(IWICBitmapDecoder *self, IWICBitmapDecoderInfo** ppIDecoderInfo) GetDecoderInfo;
+			public function HRESULT(IWICBitmapDecoder *self, IWICPalette* pIPalette) CopyPalette;
+			public function HRESULT(IWICBitmapDecoder *self, IWICMetadataQueryReader** ppIMetadataQueryReader) GetMetadataQueryReader;
+			public function HRESULT(IWICBitmapDecoder *self, IWICBitmapSource** ppIBitmapSource) GetPreview;
+			public function HRESULT(IWICBitmapDecoder *self, uint32 cCount, IWICColorContext** ppIColorContexts, uint32* pcActualCount) GetColorContexts;
+			public function HRESULT(IWICBitmapDecoder *self, IWICBitmapSource** ppIThumbnail) GetThumbnail;
+			public function HRESULT(IWICBitmapDecoder *self, uint32* pCount) GetFrameCount;
+			public function HRESULT(IWICBitmapDecoder *self, uint32 index, IWICBitmapFrameDecode** ppIBitmapFrame) GetFrame;
+		}
+		[CRepr]
+		public struct IWICBitmapSourceTransform : IUnknown
+		{
+			public const new Guid IID = .(0x3b16811b, 0x6a43, 0x4ec9, 0xb7, 0x13, 0x3d, 0x5a, 0x0c, 0x13, 0xb9, 0x40);
+			
+			public function HRESULT(IWICBitmapSourceTransform *self, WICRect* prc, uint32 uiWidth, uint32 uiHeight, Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint32 nStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
+			public function HRESULT(IWICBitmapSourceTransform *self, uint32* puiWidth, uint32* puiHeight) GetClosestSize;
+			public function HRESULT(IWICBitmapSourceTransform *self, Guid* pguidDstFormat) GetClosestPixelFormat;
+			public function HRESULT(IWICBitmapSourceTransform *self, WICBitmapTransformOptions dstTransform, BOOL* pfIsSupported) DoesSupportTransform;
+		}
+		[CRepr]
+		public struct IWICPlanarBitmapSourceTransform : IUnknown
+		{
+			public const new Guid IID = .(0x3aff9cce, 0xbe95, 0x4303, 0xb9, 0x27, 0xe7, 0xd1, 0x6f, 0xf4, 0xa6, 0x13);
+			
+			public function HRESULT(IWICPlanarBitmapSourceTransform *self, uint32* puiWidth, uint32* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint32 cPlanes, BOOL* pfIsSupported) DoesSupportTransform;
+			public function HRESULT(IWICPlanarBitmapSourceTransform *self, WICRect* prcSource, uint32 uiWidth, uint32 uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, WICBitmapPlane* pDstPlanes, uint32 cPlanes) CopyPixels;
+		}
+		[CRepr]
+		public struct IWICBitmapFrameDecode : IWICBitmapSource
+		{
+			public const new Guid IID = .(0x3b16811b, 0x6a43, 0x4ec9, 0xa8, 0x13, 0x3d, 0x93, 0x0c, 0x13, 0xb9, 0x40);
+			
+			public function HRESULT(IWICBitmapFrameDecode *self, IWICMetadataQueryReader** ppIMetadataQueryReader) GetMetadataQueryReader;
+			public function HRESULT(IWICBitmapFrameDecode *self, uint32 cCount, IWICColorContext** ppIColorContexts, uint32* pcActualCount) GetColorContexts;
+			public function HRESULT(IWICBitmapFrameDecode *self, IWICBitmapSource** ppIThumbnail) GetThumbnail;
+		}
+		[CRepr]
+		public struct IWICProgressiveLevelControl : IUnknown
+		{
+			public const new Guid IID = .(0xdaac296f, 0x7aa5, 0x4dbf, 0x8d, 0x15, 0x22, 0x5c, 0x59, 0x76, 0xf8, 0x91);
+			
+			public function HRESULT(IWICProgressiveLevelControl *self, uint32* pcLevels) GetLevelCount;
+			public function HRESULT(IWICProgressiveLevelControl *self, uint32* pnLevel) GetCurrentLevel;
+			public function HRESULT(IWICProgressiveLevelControl *self, uint32 nLevel) SetCurrentLevel;
+		}
+		[CRepr]
+		public struct IWICProgressCallback : IUnknown
+		{
+			public const new Guid IID = .(0x4776f9cd, 0x9517, 0x45fa, 0xbf, 0x24, 0xe8, 0x9c, 0x5e, 0xc5, 0xc6, 0x0c);
+			
+			public function HRESULT(IWICProgressCallback *self, uint32 uFrameNum, WICProgressOperation operation, double dblProgress) Notify;
+		}
+		[CRepr]
+		public struct IWICBitmapCodecProgressNotification : IUnknown
+		{
+			public const new Guid IID = .(0x64c1024e, 0xc3cf, 0x4462, 0x80, 0x78, 0x88, 0xc2, 0xb1, 0x1c, 0x46, 0xd9);
+			
+			public function HRESULT(IWICBitmapCodecProgressNotification *self, PFNProgressNotification pfnProgressNotification, void* pvData, uint32 dwProgressFlags) RegisterProgressNotification;
+		}
+		[CRepr]
+		public struct IWICComponentInfo : IUnknown
+		{
+			public const new Guid IID = .(0x23bc3f0a, 0x698b, 0x4357, 0x88, 0x6b, 0xf2, 0x4d, 0x50, 0x67, 0x13, 0x34);
+			
+			public function HRESULT(IWICComponentInfo *self, WICComponentType* pType) GetComponentType;
+			public function HRESULT(IWICComponentInfo *self, Guid* pclsid) GetCLSID;
+			public function HRESULT(IWICComponentInfo *self, uint32* pStatus) GetSigningStatus;
+			public function HRESULT(IWICComponentInfo *self, uint32 cchAuthor, char16* wzAuthor, uint32* pcchActual) GetAuthor;
+			public function HRESULT(IWICComponentInfo *self, Guid* pguidVendor) GetVendorGUID;
+			public function HRESULT(IWICComponentInfo *self, uint32 cchVersion, char16* wzVersion, uint32* pcchActual) GetVersion;
+			public function HRESULT(IWICComponentInfo *self, uint32 cchSpecVersion, char16* wzSpecVersion, uint32* pcchActual) GetSpecVersion;
+			public function HRESULT(IWICComponentInfo *self, uint32 cchFriendlyName, char16* wzFriendlyName, uint32* pcchActual) GetFriendlyName;
+		}
+		[CRepr]
+		public struct IWICFormatConverterInfo : IWICComponentInfo
+		{
+			public const new Guid IID = .(0x9f34fb65, 0x13f4, 0x4f15, 0xbc, 0x57, 0x37, 0x26, 0xb5, 0xe5, 0x3d, 0x9f);
+			
+			public function HRESULT(IWICFormatConverterInfo *self, uint32 cFormats, Guid* pPixelFormatGUIDs, uint32* pcActual) GetPixelFormats;
+			public function HRESULT(IWICFormatConverterInfo *self, IWICFormatConverter** ppIConverter) CreateInstance;
+		}
+		[CRepr]
+		public struct IWICBitmapCodecInfo : IWICComponentInfo
+		{
+			public const new Guid IID = .(0xe87a44c4, 0xb76e, 0x4c47, 0x8b, 0x09, 0x29, 0x8e, 0xb1, 0x2a, 0x27, 0x14);
+			
+			public function HRESULT(IWICBitmapCodecInfo *self, Guid* pguidContainerFormat) GetContainerFormat;
+			public function HRESULT(IWICBitmapCodecInfo *self, uint32 cFormats, Guid* pguidPixelFormats, uint32* pcActual) GetPixelFormats;
+			public function HRESULT(IWICBitmapCodecInfo *self, uint32 cchColorManagementVersion, char16* wzColorManagementVersion, uint32* pcchActual) GetColorManagementVersion;
+			public function HRESULT(IWICBitmapCodecInfo *self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, uint32* pcchActual) GetDeviceManufacturer;
+			public function HRESULT(IWICBitmapCodecInfo *self, uint32 cchDeviceModels, char16* wzDeviceModels, uint32* pcchActual) GetDeviceModels;
+			public function HRESULT(IWICBitmapCodecInfo *self, uint32 cchMimeTypes, char16* wzMimeTypes, uint32* pcchActual) GetMimeTypes;
+			public function HRESULT(IWICBitmapCodecInfo *self, uint32 cchFileExtensions, char16* wzFileExtensions, uint32* pcchActual) GetFileExtensions;
+			public function HRESULT(IWICBitmapCodecInfo *self, BOOL* pfSupportAnimation) DoesSupportAnimation;
+			public function HRESULT(IWICBitmapCodecInfo *self, BOOL* pfSupportChromakey) DoesSupportChromakey;
+			public function HRESULT(IWICBitmapCodecInfo *self, BOOL* pfSupportLossless) DoesSupportLossless;
+			public function HRESULT(IWICBitmapCodecInfo *self, BOOL* pfSupportMultiframe) DoesSupportMultiframe;
+			public function HRESULT(IWICBitmapCodecInfo *self, PWSTR wzMimeType, BOOL* pfMatches) MatchesMimeType;
+		}
+		[CRepr]
+		public struct IWICBitmapEncoderInfo : IWICBitmapCodecInfo
+		{
+			public const new Guid IID = .(0x94c9b4ee, 0xa09f, 0x4f92, 0x8a, 0x1e, 0x4a, 0x9b, 0xce, 0x7e, 0x76, 0xfb);
+			
+			public function HRESULT(IWICBitmapEncoderInfo *self, IWICBitmapEncoder** ppIBitmapEncoder) CreateInstance;
+		}
+		[CRepr]
+		public struct IWICBitmapDecoderInfo : IWICBitmapCodecInfo
+		{
+			public const new Guid IID = .(0xd8cd007f, 0xd08f, 0x4191, 0x9b, 0xfc, 0x23, 0x6e, 0xa7, 0xf0, 0xe4, 0xb5);
+			
+			public function HRESULT(IWICBitmapDecoderInfo *self, uint32 cbSizePatterns, WICBitmapPattern* pPatterns, uint32* pcPatterns, uint32* pcbPatternsActual) GetPatterns;
+			public function HRESULT(IWICBitmapDecoderInfo *self, IStream* pIStream, BOOL* pfMatches) MatchesPattern;
+			public function HRESULT(IWICBitmapDecoderInfo *self, IWICBitmapDecoder** ppIBitmapDecoder) CreateInstance;
+		}
+		[CRepr]
+		public struct IWICPixelFormatInfo : IWICComponentInfo
+		{
+			public const new Guid IID = .(0xe8eda601, 0x3d48, 0x431a, 0xab, 0x44, 0x69, 0x05, 0x9b, 0xe8, 0x8b, 0xbe);
+			
+			public function HRESULT(IWICPixelFormatInfo *self, Guid* pFormat) GetFormatGUID;
+			public function HRESULT(IWICPixelFormatInfo *self, IWICColorContext** ppIColorContext) GetColorContext;
+			public function HRESULT(IWICPixelFormatInfo *self, uint32* puiBitsPerPixel) GetBitsPerPixel;
+			public function HRESULT(IWICPixelFormatInfo *self, uint32* puiChannelCount) GetChannelCount;
+			public function HRESULT(IWICPixelFormatInfo *self, uint32 uiChannelIndex, uint32 cbMaskBuffer, uint8* pbMaskBuffer, uint32* pcbActual) GetChannelMask;
+		}
+		[CRepr]
+		public struct IWICPixelFormatInfo2 : IWICPixelFormatInfo
+		{
+			public const new Guid IID = .(0xa9db33a2, 0xaf5f, 0x43c7, 0xb6, 0x79, 0x74, 0xf5, 0x98, 0x4b, 0x5a, 0xa4);
+			
+			public function HRESULT(IWICPixelFormatInfo2 *self, BOOL* pfSupportsTransparency) SupportsTransparency;
+			public function HRESULT(IWICPixelFormatInfo2 *self, WICPixelFormatNumericRepresentation* pNumericRepresentation) GetNumericRepresentation;
+		}
+		[CRepr]
+		public struct IWICImagingFactory : IUnknown
+		{
+			public const new Guid IID = .(0xec5ec8a9, 0xc395, 0x4314, 0x9c, 0x77, 0x54, 0xd7, 0xa9, 0x35, 0xff, 0x70);
+			
+			public function HRESULT(IWICImagingFactory *self, PWSTR wzFilename, Guid* pguidVendor, uint32 dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder) CreateDecoderFromFilename;
+			public function HRESULT(IWICImagingFactory *self, IStream* pIStream, Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder) CreateDecoderFromStream;
+			public function HRESULT(IWICImagingFactory *self, uint hFile, Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder) CreateDecoderFromFileHandle;
+			public function HRESULT(IWICImagingFactory *self, Guid* clsidComponent, IWICComponentInfo** ppIInfo) CreateComponentInfo;
+			public function HRESULT(IWICImagingFactory *self, Guid* guidContainerFormat, Guid* pguidVendor, IWICBitmapDecoder** ppIDecoder) CreateDecoder;
+			public function HRESULT(IWICImagingFactory *self, Guid* guidContainerFormat, Guid* pguidVendor, IWICBitmapEncoder** ppIEncoder) CreateEncoder;
+			public function HRESULT(IWICImagingFactory *self, IWICPalette** ppIPalette) CreatePalette;
+			public function HRESULT(IWICImagingFactory *self, IWICFormatConverter** ppIFormatConverter) CreateFormatConverter;
+			public function HRESULT(IWICImagingFactory *self, IWICBitmapScaler** ppIBitmapScaler) CreateBitmapScaler;
+			public function HRESULT(IWICImagingFactory *self, IWICBitmapClipper** ppIBitmapClipper) CreateBitmapClipper;
+			public function HRESULT(IWICImagingFactory *self, IWICBitmapFlipRotator** ppIBitmapFlipRotator) CreateBitmapFlipRotator;
+			public function HRESULT(IWICImagingFactory *self, IWICStream** ppIWICStream) CreateStream;
+			public function HRESULT(IWICImagingFactory *self, IWICColorContext** ppIWICColorContext) CreateColorContext;
+			public function HRESULT(IWICImagingFactory *self, IWICColorTransform** ppIWICColorTransform) CreateColorTransformer;
+			public function HRESULT(IWICImagingFactory *self, uint32 uiWidth, uint32 uiHeight, Guid* pixelFormat, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap) CreateBitmap;
+			public function HRESULT(IWICImagingFactory *self, IWICBitmapSource* pIBitmapSource, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap) CreateBitmapFromSource;
+			public function HRESULT(IWICImagingFactory *self, IWICBitmapSource* pIBitmapSource, uint32 x, uint32 y, uint32 width, uint32 height, IWICBitmap** ppIBitmap) CreateBitmapFromSourceRect;
+			public function HRESULT(IWICImagingFactory *self, uint32 uiWidth, uint32 uiHeight, Guid* pixelFormat, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer, IWICBitmap** ppIBitmap) CreateBitmapFromMemory;
+			public function HRESULT(IWICImagingFactory *self, HBITMAP hBitmap, HPALETTE hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) CreateBitmapFromHBITMAP;
+			public function HRESULT(IWICImagingFactory *self, HICON hIcon, IWICBitmap** ppIBitmap) CreateBitmapFromHICON;
+			public function HRESULT(IWICImagingFactory *self, uint32 componentTypes, uint32 options, IEnumUnknown** ppIEnumUnknown) CreateComponentEnumerator;
+			public function HRESULT(IWICImagingFactory *self, IWICBitmapDecoder* pIDecoder, IWICFastMetadataEncoder** ppIFastEncoder) CreateFastMetadataEncoderFromDecoder;
+			public function HRESULT(IWICImagingFactory *self, IWICBitmapFrameDecode* pIFrameDecoder, IWICFastMetadataEncoder** ppIFastEncoder) CreateFastMetadataEncoderFromFrameDecode;
+			public function HRESULT(IWICImagingFactory *self, Guid* guidMetadataFormat, Guid* pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter) CreateQueryWriter;
+			public function HRESULT(IWICImagingFactory *self, IWICMetadataQueryReader* pIQueryReader, Guid* pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter) CreateQueryWriterFromReader;
+		}
+		[CRepr]
+		public struct IWICDevelopRawNotificationCallback : IUnknown
+		{
+			public const new Guid IID = .(0x95c75a6e, 0x3e8c, 0x4ec2, 0x85, 0xa8, 0xae, 0xbc, 0xc5, 0x51, 0xe5, 0x9b);
+			
+			public function HRESULT(IWICDevelopRawNotificationCallback *self, uint32 NotificationMask) Notify;
+		}
+		[CRepr]
+		public struct IWICDevelopRaw : IWICBitmapFrameDecode
+		{
+			public const new Guid IID = .(0xfbec5e44, 0xf7be, 0x4b65, 0xb7, 0xf8, 0xc0, 0xc8, 0x1f, 0xef, 0x02, 0x6d);
+			
+			public function HRESULT(IWICDevelopRaw *self, WICRawCapabilitiesInfo* pInfo) QueryRawCapabilitiesInfo;
+			public function HRESULT(IWICDevelopRaw *self, WICRawParameterSet ParameterSet) LoadParameterSet;
+			public function HRESULT(IWICDevelopRaw *self, IPropertyBag2** ppCurrentParameterSet) GetCurrentParameterSet;
+			public function HRESULT(IWICDevelopRaw *self, double ev) SetExposureCompensation;
+			public function HRESULT(IWICDevelopRaw *self, double* pEV) GetExposureCompensation;
+			public function HRESULT(IWICDevelopRaw *self, uint32 Red, uint32 Green, uint32 Blue) SetWhitePointRGB;
+			public function HRESULT(IWICDevelopRaw *self, uint32* pRed, uint32* pGreen, uint32* pBlue) GetWhitePointRGB;
+			public function HRESULT(IWICDevelopRaw *self, WICNamedWhitePoint WhitePoint) SetNamedWhitePoint;
+			public function HRESULT(IWICDevelopRaw *self, WICNamedWhitePoint* pWhitePoint) GetNamedWhitePoint;
+			public function HRESULT(IWICDevelopRaw *self, uint32 WhitePointKelvin) SetWhitePointKelvin;
+			public function HRESULT(IWICDevelopRaw *self, uint32* pWhitePointKelvin) GetWhitePointKelvin;
+			public function HRESULT(IWICDevelopRaw *self, uint32* pMinKelvinTemp, uint32* pMaxKelvinTemp, uint32* pKelvinTempStepValue) GetKelvinRangeInfo;
+			public function HRESULT(IWICDevelopRaw *self, double Contrast) SetContrast;
+			public function HRESULT(IWICDevelopRaw *self, double* pContrast) GetContrast;
+			public function HRESULT(IWICDevelopRaw *self, double Gamma) SetGamma;
+			public function HRESULT(IWICDevelopRaw *self, double* pGamma) GetGamma;
+			public function HRESULT(IWICDevelopRaw *self, double Sharpness) SetSharpness;
+			public function HRESULT(IWICDevelopRaw *self, double* pSharpness) GetSharpness;
+			public function HRESULT(IWICDevelopRaw *self, double Saturation) SetSaturation;
+			public function HRESULT(IWICDevelopRaw *self, double* pSaturation) GetSaturation;
+			public function HRESULT(IWICDevelopRaw *self, double Tint) SetTint;
+			public function HRESULT(IWICDevelopRaw *self, double* pTint) GetTint;
+			public function HRESULT(IWICDevelopRaw *self, double NoiseReduction) SetNoiseReduction;
+			public function HRESULT(IWICDevelopRaw *self, double* pNoiseReduction) GetNoiseReduction;
+			public function HRESULT(IWICDevelopRaw *self, IWICColorContext* pColorContext) SetDestinationColorContext;
+			public function HRESULT(IWICDevelopRaw *self, uint32 cbToneCurveSize, WICRawToneCurve* pToneCurve) SetToneCurve;
+			public function HRESULT(IWICDevelopRaw *self, uint32 cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint32* pcbActualToneCurveBufferSize) GetToneCurve;
+			public function HRESULT(IWICDevelopRaw *self, double Rotation) SetRotation;
+			public function HRESULT(IWICDevelopRaw *self, double* pRotation) GetRotation;
+			public function HRESULT(IWICDevelopRaw *self, WICRawRenderMode RenderMode) SetRenderMode;
+			public function HRESULT(IWICDevelopRaw *self, WICRawRenderMode* pRenderMode) GetRenderMode;
+			public function HRESULT(IWICDevelopRaw *self, IWICDevelopRawNotificationCallback* pCallback) SetNotificationCallback;
+		}
+		[CRepr]
+		public struct IWICDdsDecoder : IUnknown
+		{
+			public const new Guid IID = .(0x409cd537, 0x8532, 0x40cb, 0x97, 0x74, 0xe2, 0xfe, 0xb2, 0xdf, 0x4e, 0x9c);
+			
+			public function HRESULT(IWICDdsDecoder *self, WICDdsParameters* pParameters) GetParameters;
+			public function HRESULT(IWICDdsDecoder *self, uint32 arrayIndex, uint32 mipLevel, uint32 sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame) GetFrame;
+		}
+		[CRepr]
+		public struct IWICDdsEncoder : IUnknown
+		{
+			public const new Guid IID = .(0x5cacdb4c, 0x407e, 0x41b3, 0xb9, 0x36, 0xd0, 0xf0, 0x10, 0xcd, 0x67, 0x32);
+			
+			public function HRESULT(IWICDdsEncoder *self, WICDdsParameters* pParameters) SetParameters;
+			public function HRESULT(IWICDdsEncoder *self, WICDdsParameters* pParameters) GetParameters;
+			public function HRESULT(IWICDdsEncoder *self, IWICBitmapFrameEncode** ppIFrameEncode, uint32* pArrayIndex, uint32* pMipLevel, uint32* pSliceIndex) CreateNewFrame;
+		}
+		[CRepr]
+		public struct IWICDdsFrameDecode : IUnknown
+		{
+			public const new Guid IID = .(0x3d4c0c61, 0x18a4, 0x41e4, 0xbd, 0x80, 0x48, 0x1a, 0x4f, 0xc9, 0xf4, 0x64);
+			
+			public function HRESULT(IWICDdsFrameDecode *self, uint32* pWidthInBlocks, uint32* pHeightInBlocks) GetSizeInBlocks;
+			public function HRESULT(IWICDdsFrameDecode *self, WICDdsFormatInfo* pFormatInfo) GetFormatInfo;
+			public function HRESULT(IWICDdsFrameDecode *self, WICRect* prcBoundsInBlocks, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyBlocks;
+		}
+		[CRepr]
+		public struct IWICJpegFrameDecode : IUnknown
+		{
+			public const new Guid IID = .(0x8939f66e, 0xc46a, 0x4c21, 0xa9, 0xd1, 0x98, 0xb3, 0x27, 0xce, 0x16, 0x79);
+			
+			public function HRESULT(IWICJpegFrameDecode *self, BOOL* pfIndexingSupported) DoesSupportIndexing;
+			public function HRESULT(IWICJpegFrameDecode *self, WICJpegIndexingOptions options, uint32 horizontalIntervalSize) SetIndexing;
+			public function HRESULT(IWICJpegFrameDecode *self) ClearIndexing;
+			public function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable) GetAcHuffmanTable;
+			public function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable) GetDcHuffmanTable;
+			public function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable) GetQuantizationTable;
+			public function HRESULT(IWICJpegFrameDecode *self, WICJpegFrameHeader* pFrameHeader) GetFrameHeader;
+			public function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, WICJpegScanHeader* pScanHeader) GetScanHeader;
+			public function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, uint32 scanOffset, uint32 cbScanData, uint8* pbScanData, uint32* pcbScanDataActual) CopyScan;
+			public function HRESULT(IWICJpegFrameDecode *self, uint32 streamOffset, uint32 cbStreamData, uint8* pbStreamData, uint32* pcbStreamDataActual) CopyMinimalStream;
+		}
+		[CRepr]
+		public struct IWICJpegFrameEncode : IUnknown
+		{
+			public const new Guid IID = .(0x2f0c601f, 0xd2c6, 0x468c, 0xab, 0xfa, 0x49, 0x49, 0x5d, 0x98, 0x3e, 0xd1);
+			
+			public function HRESULT(IWICJpegFrameEncode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable) GetAcHuffmanTable;
+			public function HRESULT(IWICJpegFrameEncode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable) GetDcHuffmanTable;
+			public function HRESULT(IWICJpegFrameEncode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable) GetQuantizationTable;
+			public function HRESULT(IWICJpegFrameEncode *self, uint32 cbScanData, uint8* pbScanData) WriteScan;
+		}
+		[CRepr]
+		public struct IWICMetadataBlockReader : IUnknown
+		{
+			public const new Guid IID = .(0xfeaa2a8d, 0xb3f3, 0x43e4, 0xb2, 0x5c, 0xd1, 0xde, 0x99, 0x0a, 0x1a, 0xe1);
+			
+			public function HRESULT(IWICMetadataBlockReader *self, Guid* pguidContainerFormat) GetContainerFormat;
+			public function HRESULT(IWICMetadataBlockReader *self, uint32* pcCount) GetCount;
+			public function HRESULT(IWICMetadataBlockReader *self, uint32 nIndex, IWICMetadataReader** ppIMetadataReader) GetReaderByIndex;
+			public function HRESULT(IWICMetadataBlockReader *self, IEnumUnknown** ppIEnumMetadata) GetEnumerator;
+		}
+		[CRepr]
+		public struct IWICMetadataBlockWriter : IWICMetadataBlockReader
+		{
+			public const new Guid IID = .(0x08fb9676, 0xb444, 0x41e8, 0x8d, 0xbe, 0x6a, 0x53, 0xa5, 0x42, 0xbf, 0xf1);
+			
+			public function HRESULT(IWICMetadataBlockWriter *self, IWICMetadataBlockReader* pIMDBlockReader) InitializeFromBlockReader;
+			public function HRESULT(IWICMetadataBlockWriter *self, uint32 nIndex, IWICMetadataWriter** ppIMetadataWriter) GetWriterByIndex;
+			public function HRESULT(IWICMetadataBlockWriter *self, IWICMetadataWriter* pIMetadataWriter) AddWriter;
+			public function HRESULT(IWICMetadataBlockWriter *self, uint32 nIndex, IWICMetadataWriter* pIMetadataWriter) SetWriterByIndex;
+			public function HRESULT(IWICMetadataBlockWriter *self, uint32 nIndex) RemoveWriterByIndex;
+		}
+		[CRepr]
+		public struct IWICMetadataReader : IUnknown
+		{
+			public const new Guid IID = .(0x9204fe99, 0xd8fc, 0x4fd5, 0xa0, 0x01, 0x95, 0x36, 0xb0, 0x67, 0xa8, 0x99);
+			
+			public function HRESULT(IWICMetadataReader *self, Guid* pguidMetadataFormat) GetMetadataFormat;
+			public function HRESULT(IWICMetadataReader *self, IWICMetadataHandlerInfo** ppIHandler) GetMetadataHandlerInfo;
+			public function HRESULT(IWICMetadataReader *self, uint32* pcCount) GetCount;
+			public function HRESULT(IWICMetadataReader *self, uint32 nIndex, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) GetValueByIndex;
+			public function HRESULT(IWICMetadataReader *self, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) GetValue;
+			public function HRESULT(IWICMetadataReader *self, IWICEnumMetadataItem** ppIEnumMetadata) GetEnumerator;
+		}
+		[CRepr]
+		public struct IWICMetadataWriter : IWICMetadataReader
+		{
+			public const new Guid IID = .(0xf7836e16, 0x3be0, 0x470b, 0x86, 0xbb, 0x16, 0x0d, 0x0a, 0xec, 0xd7, 0xde);
+			
+			public function HRESULT(IWICMetadataWriter *self, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) SetValue;
+			public function HRESULT(IWICMetadataWriter *self, uint32 nIndex, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) SetValueByIndex;
+			public function HRESULT(IWICMetadataWriter *self, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId) RemoveValue;
+			public function HRESULT(IWICMetadataWriter *self, uint32 nIndex) RemoveValueByIndex;
+		}
+		[CRepr]
+		public struct IWICStreamProvider : IUnknown
+		{
+			public const new Guid IID = .(0x449494bc, 0xb468, 0x4927, 0x96, 0xd7, 0xba, 0x90, 0xd3, 0x1a, 0xb5, 0x05);
+			
+			public function HRESULT(IWICStreamProvider *self, IStream** ppIStream) GetStream;
+			public function HRESULT(IWICStreamProvider *self, uint32* pdwPersistOptions) GetPersistOptions;
+			public function HRESULT(IWICStreamProvider *self, Guid* pguidPreferredVendor) GetPreferredVendorGUID;
+			public function HRESULT(IWICStreamProvider *self) RefreshStream;
+		}
+		[CRepr]
+		public struct IWICPersistStream : IPersistStream
+		{
+			public const new Guid IID = .(0x00675040, 0x6908, 0x45f8, 0x86, 0xa3, 0x49, 0xc7, 0xdf, 0xd6, 0xd9, 0xad);
+			
+			public function HRESULT(IWICPersistStream *self, IStream* pIStream, Guid* pguidPreferredVendor, uint32 dwPersistOptions) LoadEx;
+			public function HRESULT(IWICPersistStream *self, IStream* pIStream, uint32 dwPersistOptions, BOOL fClearDirty) SaveEx;
+		}
+		[CRepr]
+		public struct IWICMetadataHandlerInfo : IWICComponentInfo
+		{
+			public const new Guid IID = .(0xaba958bf, 0xc672, 0x44d1, 0x8d, 0x61, 0xce, 0x6d, 0xf2, 0xe6, 0x82, 0xc2);
+			
+			public function HRESULT(IWICMetadataHandlerInfo *self, Guid* pguidMetadataFormat) GetMetadataFormat;
+			public function HRESULT(IWICMetadataHandlerInfo *self, uint32 cContainerFormats, Guid* pguidContainerFormats, uint32* pcchActual) GetContainerFormats;
+			public function HRESULT(IWICMetadataHandlerInfo *self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, uint32* pcchActual) GetDeviceManufacturer;
+			public function HRESULT(IWICMetadataHandlerInfo *self, uint32 cchDeviceModels, char16* wzDeviceModels, uint32* pcchActual) GetDeviceModels;
+			public function HRESULT(IWICMetadataHandlerInfo *self, BOOL* pfRequiresFullStream) DoesRequireFullStream;
+			public function HRESULT(IWICMetadataHandlerInfo *self, BOOL* pfSupportsPadding) DoesSupportPadding;
+			public function HRESULT(IWICMetadataHandlerInfo *self, BOOL* pfFixedSize) DoesRequireFixedSize;
+		}
+		[CRepr]
+		public struct IWICMetadataReaderInfo : IWICMetadataHandlerInfo
+		{
+			public const new Guid IID = .(0xeebf1f5b, 0x07c1, 0x4447, 0xa3, 0xab, 0x22, 0xac, 0xaf, 0x78, 0xa8, 0x04);
+			
+			public function HRESULT(IWICMetadataReaderInfo *self, Guid* guidContainerFormat, uint32 cbSize, WICMetadataPattern* pPattern, uint32* pcCount, uint32* pcbActual) GetPatterns;
+			public function HRESULT(IWICMetadataReaderInfo *self, Guid* guidContainerFormat, IStream* pIStream, BOOL* pfMatches) MatchesPattern;
+			public function HRESULT(IWICMetadataReaderInfo *self, IWICMetadataReader** ppIReader) CreateInstance;
+		}
+		[CRepr]
+		public struct IWICMetadataWriterInfo : IWICMetadataHandlerInfo
+		{
+			public const new Guid IID = .(0xb22e3fba, 0x3925, 0x4323, 0xb5, 0xc1, 0x9e, 0xbf, 0xc4, 0x30, 0xf2, 0x36);
+			
+			public function HRESULT(IWICMetadataWriterInfo *self, Guid* guidContainerFormat, uint32 cbSize, WICMetadataHeader* pHeader, uint32* pcbActual) GetHeader;
+			public function HRESULT(IWICMetadataWriterInfo *self, IWICMetadataWriter** ppIWriter) CreateInstance;
+		}
+		[CRepr]
+		public struct IWICComponentFactory : IWICImagingFactory
+		{
+			public const new Guid IID = .(0x412d0c3a, 0x9650, 0x44fa, 0xaf, 0x5b, 0xdd, 0x2a, 0x06, 0xc8, 0xe8, 0xfb);
+			
+			public function HRESULT(IWICComponentFactory *self, Guid* guidMetadataFormat, Guid* pguidVendor, uint32 dwOptions, IStream* pIStream, IWICMetadataReader** ppIReader) CreateMetadataReader;
+			public function HRESULT(IWICComponentFactory *self, Guid* guidContainerFormat, Guid* pguidVendor, uint32 dwOptions, IStream* pIStream, IWICMetadataReader** ppIReader) CreateMetadataReaderFromContainer;
+			public function HRESULT(IWICComponentFactory *self, Guid* guidMetadataFormat, Guid* pguidVendor, uint32 dwMetadataOptions, IWICMetadataWriter** ppIWriter) CreateMetadataWriter;
+			public function HRESULT(IWICComponentFactory *self, IWICMetadataReader* pIReader, Guid* pguidVendor, IWICMetadataWriter** ppIWriter) CreateMetadataWriterFromReader;
+			public function HRESULT(IWICComponentFactory *self, IWICMetadataBlockReader* pIBlockReader, IWICMetadataQueryReader** ppIQueryReader) CreateQueryReaderFromBlockReader;
+			public function HRESULT(IWICComponentFactory *self, IWICMetadataBlockWriter* pIBlockWriter, IWICMetadataQueryWriter** ppIQueryWriter) CreateQueryWriterFromBlockWriter;
+			public function HRESULT(IWICComponentFactory *self, PROPBAG2* ppropOptions, uint32 cCount, IPropertyBag2** ppIPropertyBag) CreateEncoderPropertyBag;
+		}
 		
 		// --- Functions ---
 		
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICConvertBitmapSource(Guid* dstFormat, IWICBitmapSource pISrc, IWICBitmapSource* ppIDst);
+		public static extern HRESULT WICConvertBitmapSource(Guid* dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICCreateBitmapFromSection(uint32 width, uint32 height, Guid* pixelFormat, HANDLE hSection, uint32 stride, uint32 offset, IWICBitmap* ppIBitmap);
+		public static extern HRESULT WICCreateBitmapFromSection(uint32 width, uint32 height, Guid* pixelFormat, HANDLE hSection, uint32 stride, uint32 offset, IWICBitmap** ppIBitmap);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICCreateBitmapFromSectionEx(uint32 width, uint32 height, Guid* pixelFormat, HANDLE hSection, uint32 stride, uint32 offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap* ppIBitmap);
+		public static extern HRESULT WICCreateBitmapFromSectionEx(uint32 width, uint32 height, Guid* pixelFormat, HANDLE hSection, uint32 stride, uint32 offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WICMapGuidToShortName(Guid* guid, uint32 cchName, char16* wzName, uint32* pcchActual);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1040,11 +1552,11 @@ namespace Win32
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WICMapSchemaToName(Guid* guidMetadataFormat, PWSTR pwzSchema, uint32 cchName, char16* wzName, uint32* pcchActual);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICMatchMetadataContent(Guid* guidContainerFormat, Guid* pguidVendor, IStream pIStream, Guid* pguidMetadataFormat);
+		public static extern HRESULT WICMatchMetadataContent(Guid* guidContainerFormat, Guid* pguidVendor, IStream* pIStream, Guid* pguidMetadataFormat);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICSerializeMetadataContent(Guid* guidContainerFormat, IWICMetadataWriter pIWriter, uint32 dwPersistOptions, IStream pIStream);
+		public static extern HRESULT WICSerializeMetadataContent(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, uint32 dwPersistOptions, IStream* pIStream);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICGetMetadataContentSize(Guid* guidContainerFormat, IWICMetadataWriter pIWriter, ULARGE_INTEGER* pcbSize);
+		public static extern HRESULT WICGetMetadataContentSize(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ULARGE_INTEGER* pcbSize);
 		
 	}
 }

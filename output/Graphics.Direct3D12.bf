@@ -2828,12 +2828,12 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT PFN_D3D12_SERIALIZE_ROOT_SIGNATURE(D3D12_ROOT_SIGNATURE_DESC* pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, ID3DBlob* ppBlob, ID3DBlob* ppErrorBlob);
+		public function HRESULT PFN_D3D12_SERIALIZE_ROOT_SIGNATURE(D3D12_ROOT_SIGNATURE_DESC* pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob);
 		public function HRESULT PFN_D3D12_CREATE_ROOT_SIGNATURE_DESERIALIZER(void* pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
-		public function HRESULT PFN_D3D12_SERIALIZE_VERSIONED_ROOT_SIGNATURE(D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature, ID3DBlob* ppBlob, ID3DBlob* ppErrorBlob);
+		public function HRESULT PFN_D3D12_SERIALIZE_VERSIONED_ROOT_SIGNATURE(D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob);
 		public function HRESULT PFN_D3D12_CREATE_VERSIONED_ROOT_SIGNATURE_DESERIALIZER(void* pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 		public function void D3D12MessageFunc(D3D12_MESSAGE_CATEGORY Category, D3D12_MESSAGE_SEVERITY Severity, D3D12_MESSAGE_ID ID, PSTR pDescription, void* pContext);
-		public function HRESULT PFN_D3D12_CREATE_DEVICE(IUnknown param0, D3D_FEATURE_LEVEL param1, Guid* param2, void** param3);
+		public function HRESULT PFN_D3D12_CREATE_DEVICE(IUnknown* param0, D3D_FEATURE_LEVEL param1, Guid* param2, void** param3);
 		public function HRESULT PFN_D3D12_GET_DEBUG_INTERFACE(Guid* param0, void** param1);
 		public function HRESULT PFN_D3D12_GET_INTERFACE(Guid* param0, Guid* param1, void** param2);
 		
@@ -2987,7 +2987,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_GRAPHICS_PIPELINE_STATE_DESC
 		{
-			public ID3D12RootSignature pRootSignature;
+			public ID3D12RootSignature* pRootSignature;
 			public D3D12_SHADER_BYTECODE VS;
 			public D3D12_SHADER_BYTECODE PS;
 			public D3D12_SHADER_BYTECODE DS;
@@ -3012,7 +3012,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_COMPUTE_PIPELINE_STATE_DESC
 		{
-			public ID3D12RootSignature pRootSignature;
+			public ID3D12RootSignature* pRootSignature;
 			public D3D12_SHADER_BYTECODE CS;
 			public uint32 NodeMask;
 			public D3D12_CACHED_PIPELINE_STATE CachedPSO;
@@ -3388,7 +3388,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_RESOURCE_TRANSITION_BARRIER
 		{
-			public ID3D12Resource pResource;
+			public ID3D12Resource* pResource;
 			public uint32 Subresource;
 			public D3D12_RESOURCE_STATES StateBefore;
 			public D3D12_RESOURCE_STATES StateAfter;
@@ -3396,13 +3396,13 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_RESOURCE_ALIASING_BARRIER
 		{
-			public ID3D12Resource pResourceBefore;
-			public ID3D12Resource pResourceAfter;
+			public ID3D12Resource* pResourceBefore;
+			public ID3D12Resource* pResourceAfter;
 		}
 		[CRepr]
 		public struct D3D12_RESOURCE_UAV_BARRIER
 		{
-			public ID3D12Resource pResource;
+			public ID3D12Resource* pResource;
 		}
 		[CRepr]
 		public struct D3D12_RESOURCE_BARRIER
@@ -3437,7 +3437,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_TEXTURE_COPY_LOCATION
 		{
-			public ID3D12Resource pResource;
+			public ID3D12Resource* pResource;
 			public D3D12_TEXTURE_COPY_TYPE Type;
 			public _Anonymous_e__Union Anonymous;
 			
@@ -4123,12 +4123,12 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_GLOBAL_ROOT_SIGNATURE
 		{
-			public ID3D12RootSignature pGlobalRootSignature;
+			public ID3D12RootSignature* pGlobalRootSignature;
 		}
 		[CRepr]
 		public struct D3D12_LOCAL_ROOT_SIGNATURE
 		{
-			public ID3D12RootSignature pLocalRootSignature;
+			public ID3D12RootSignature* pLocalRootSignature;
 		}
 		[CRepr]
 		public struct D3D12_NODE_MASK
@@ -4152,7 +4152,7 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_EXISTING_COLLECTION_DESC
 		{
-			public ID3D12StateObject pExistingCollection;
+			public ID3D12StateObject* pExistingCollection;
 			public uint32 NumExports;
 			public D3D12_EXPORT_DESC* pExports;
 		}
@@ -4357,8 +4357,8 @@ namespace Win32
 			public PWSTR pCommandListDebugNameW;
 			public uint8* pCommandQueueDebugNameA;
 			public PWSTR pCommandQueueDebugNameW;
-			public ID3D12GraphicsCommandList pCommandList;
-			public ID3D12CommandQueue pCommandQueue;
+			public ID3D12GraphicsCommandList* pCommandList;
+			public ID3D12CommandQueue* pCommandQueue;
 			public uint32 BreadcrumbCount;
 			public uint32* pLastBreadcrumbValue;
 			public D3D12_AUTO_BREADCRUMB_OP* pCommandHistory;
@@ -4377,8 +4377,8 @@ namespace Win32
 			public PWSTR pCommandListDebugNameW;
 			public uint8* pCommandQueueDebugNameA;
 			public PWSTR pCommandQueueDebugNameW;
-			public ID3D12GraphicsCommandList pCommandList;
-			public ID3D12CommandQueue pCommandQueue;
+			public ID3D12GraphicsCommandList* pCommandList;
+			public ID3D12CommandQueue* pCommandQueue;
 			public uint32 BreadcrumbCount;
 			public uint32* pLastBreadcrumbValue;
 			public D3D12_AUTO_BREADCRUMB_OP* pCommandHistory;
@@ -4407,7 +4407,7 @@ namespace Win32
 			public PWSTR ObjectNameW;
 			public D3D12_DRED_ALLOCATION_TYPE AllocationType;
 			public D3D12_DRED_ALLOCATION_NODE1* pNext;
-			public IUnknown pObject;
+			public IUnknown* pObject;
 		}
 		[CRepr]
 		public struct D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT
@@ -4527,8 +4527,8 @@ namespace Win32
 		[CRepr]
 		public struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS
 		{
-			public ID3D12Resource pSrcResource;
-			public ID3D12Resource pDstResource;
+			public ID3D12Resource* pSrcResource;
+			public ID3D12Resource* pDstResource;
 			public uint32 SubresourceCount;
 			public D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS* pSubresourceParameters;
 			public DXGI_FORMAT Format;
@@ -4814,98 +4814,826 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ID3D12Object {}
-		public struct ID3D12DeviceChild {}
-		public struct ID3D12RootSignature {}
-		public struct ID3D12RootSignatureDeserializer {}
-		public struct ID3D12VersionedRootSignatureDeserializer {}
-		public struct ID3D12Pageable {}
-		public struct ID3D12Heap {}
-		public struct ID3D12Resource {}
-		public struct ID3D12CommandAllocator {}
-		public struct ID3D12Fence {}
-		public struct ID3D12Fence1 {}
-		public struct ID3D12PipelineState {}
-		public struct ID3D12DescriptorHeap {}
-		public struct ID3D12QueryHeap {}
-		public struct ID3D12CommandSignature {}
-		public struct ID3D12CommandList {}
-		public struct ID3D12GraphicsCommandList {}
-		public struct ID3D12GraphicsCommandList1 {}
-		public struct ID3D12GraphicsCommandList2 {}
-		public struct ID3D12CommandQueue {}
-		public struct ID3D12Device {}
-		public struct ID3D12PipelineLibrary {}
-		public struct ID3D12PipelineLibrary1 {}
-		public struct ID3D12Device1 {}
-		public struct ID3D12Device2 {}
-		public struct ID3D12Device3 {}
-		public struct ID3D12ProtectedSession {}
-		public struct ID3D12ProtectedResourceSession {}
-		public struct ID3D12Device4 {}
-		public struct ID3D12LifetimeOwner {}
-		public struct ID3D12SwapChainAssistant {}
-		public struct ID3D12LifetimeTracker {}
-		public struct ID3D12StateObject {}
-		public struct ID3D12StateObjectProperties {}
-		public struct ID3D12Device5 {}
-		public struct ID3D12DeviceRemovedExtendedDataSettings {}
-		public struct ID3D12DeviceRemovedExtendedDataSettings1 {}
-		public struct ID3D12DeviceRemovedExtendedData {}
-		public struct ID3D12DeviceRemovedExtendedData1 {}
-		public struct ID3D12DeviceRemovedExtendedData2 {}
-		public struct ID3D12Device6 {}
-		public struct ID3D12ProtectedResourceSession1 {}
-		public struct ID3D12Device7 {}
-		public struct ID3D12Device8 {}
-		public struct ID3D12Resource1 {}
-		public struct ID3D12Resource2 {}
-		public struct ID3D12Heap1 {}
-		public struct ID3D12GraphicsCommandList3 {}
-		public struct ID3D12MetaCommand {}
-		public struct ID3D12GraphicsCommandList4 {}
-		public struct ID3D12ShaderCacheSession {}
-		public struct ID3D12Device9 {}
-		public struct ID3D12Tools {}
-		public struct ID3D12Debug {}
-		public struct ID3D12Debug1 {}
-		public struct ID3D12Debug2 {}
-		public struct ID3D12Debug3 {}
-		public struct ID3D12Debug4 {}
-		public struct ID3D12Debug5 {}
-		public struct ID3D12DebugDevice1 {}
-		public struct ID3D12DebugDevice {}
-		public struct ID3D12DebugDevice2 {}
-		public struct ID3D12DebugCommandQueue {}
-		public struct ID3D12DebugCommandList1 {}
-		public struct ID3D12DebugCommandList {}
-		public struct ID3D12DebugCommandList2 {}
-		public struct ID3D12SharingContract {}
-		public struct ID3D12InfoQueue {}
-		public struct ID3D12InfoQueue1 {}
-		public struct ID3D12SDKConfiguration {}
-		public struct ID3D12GraphicsCommandList5 {}
-		public struct ID3D12GraphicsCommandList6 {}
-		public struct ID3D12ShaderReflectionType {}
-		public struct ID3D12ShaderReflectionVariable {}
-		public struct ID3D12ShaderReflectionConstantBuffer {}
-		public struct ID3D12ShaderReflection {}
-		public struct ID3D12LibraryReflection {}
-		public struct ID3D12FunctionReflection {}
-		public struct ID3D12FunctionParameterReflection {}
+		[CRepr]
+		public struct ID3D12Object : IUnknown
+		{
+			public const new Guid IID = .(0xc4fec28f, 0x7966, 0x4e95, 0x9f, 0x94, 0xf4, 0x31, 0xcb, 0x56, 0xc3, 0xb8);
+			
+			public function HRESULT(ID3D12Object *self, Guid* guid, uint32* pDataSize, void* pData) GetPrivateData;
+			public function HRESULT(ID3D12Object *self, Guid* guid, uint32 DataSize, void* pData) SetPrivateData;
+			public function HRESULT(ID3D12Object *self, Guid* guid, IUnknown* pData) SetPrivateDataInterface;
+			public function HRESULT(ID3D12Object *self, PWSTR Name) SetName;
+		}
+		[CRepr]
+		public struct ID3D12DeviceChild : ID3D12Object
+		{
+			public const new Guid IID = .(0x905db94b, 0xa00c, 0x4140, 0x9d, 0xf5, 0x2b, 0x64, 0xca, 0x9e, 0xa3, 0x57);
+			
+			public function HRESULT(ID3D12DeviceChild *self, Guid* riid, void** ppvDevice) GetDevice;
+		}
+		[CRepr]
+		public struct ID3D12RootSignature : ID3D12DeviceChild
+		{
+			public const new Guid IID = .(0xc54a6b66, 0x72df, 0x4ee8, 0x8b, 0xe5, 0xa9, 0x46, 0xa1, 0x42, 0x92, 0x14);
+			
+		}
+		[CRepr]
+		public struct ID3D12RootSignatureDeserializer : IUnknown
+		{
+			public const new Guid IID = .(0x34ab647b, 0x3cc8, 0x46ac, 0x84, 0x1b, 0xc0, 0x96, 0x56, 0x45, 0xc0, 0x46);
+			
+			public function D3D12_ROOT_SIGNATURE_DESC*(ID3D12RootSignatureDeserializer *self) GetRootSignatureDesc;
+		}
+		[CRepr]
+		public struct ID3D12VersionedRootSignatureDeserializer : IUnknown
+		{
+			public const new Guid IID = .(0x7f91ce67, 0x090c, 0x4bb7, 0xb7, 0x8e, 0xed, 0x8f, 0xf2, 0xe3, 0x1d, 0xa0);
+			
+			public function HRESULT(ID3D12VersionedRootSignatureDeserializer *self, D3D_ROOT_SIGNATURE_VERSION convertToVersion, D3D12_VERSIONED_ROOT_SIGNATURE_DESC** ppDesc) GetRootSignatureDescAtVersion;
+			public function D3D12_VERSIONED_ROOT_SIGNATURE_DESC*(ID3D12VersionedRootSignatureDeserializer *self) GetUnconvertedRootSignatureDesc;
+		}
+		[CRepr]
+		public struct ID3D12Pageable : ID3D12DeviceChild
+		{
+			public const new Guid IID = .(0x63ee58fb, 0x1268, 0x4835, 0x86, 0xda, 0xf0, 0x08, 0xce, 0x62, 0xf0, 0xd6);
+			
+		}
+		[CRepr]
+		public struct ID3D12Heap : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x6b3b2502, 0x6e51, 0x45b3, 0x90, 0xee, 0x98, 0x84, 0x26, 0x5e, 0x8d, 0xf3);
+			
+			public function D3D12_HEAP_DESC(ID3D12Heap *self) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D12Resource : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x696442be, 0xa72e, 0x4059, 0xbc, 0x79, 0x5b, 0x5c, 0x98, 0x04, 0x0f, 0xad);
+			
+			public function HRESULT(ID3D12Resource *self, uint32 Subresource, D3D12_RANGE* pReadRange, void** ppData) Map;
+			public function void(ID3D12Resource *self, uint32 Subresource, D3D12_RANGE* pWrittenRange) Unmap;
+			public function D3D12_RESOURCE_DESC(ID3D12Resource *self) GetDesc;
+			public function uint64(ID3D12Resource *self) GetGPUVirtualAddress;
+			public function HRESULT(ID3D12Resource *self, uint32 DstSubresource, D3D12_BOX* pDstBox, void* pSrcData, uint32 SrcRowPitch, uint32 SrcDepthPitch) WriteToSubresource;
+			public function HRESULT(ID3D12Resource *self, void* pDstData, uint32 DstRowPitch, uint32 DstDepthPitch, uint32 SrcSubresource, D3D12_BOX* pSrcBox) ReadFromSubresource;
+			public function HRESULT(ID3D12Resource *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS* pHeapFlags) GetHeapProperties;
+		}
+		[CRepr]
+		public struct ID3D12CommandAllocator : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x6102dee4, 0xaf59, 0x4b09, 0xb9, 0x99, 0xb4, 0x4d, 0x73, 0xf0, 0x9b, 0x24);
+			
+			public function HRESULT(ID3D12CommandAllocator *self) Reset;
+		}
+		[CRepr]
+		public struct ID3D12Fence : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x0a753dcf, 0xc4d8, 0x4b91, 0xad, 0xf6, 0xbe, 0x5a, 0x60, 0xd9, 0x5a, 0x76);
+			
+			public function uint64(ID3D12Fence *self) GetCompletedValue;
+			public function HRESULT(ID3D12Fence *self, uint64 Value, HANDLE hEvent) SetEventOnCompletion;
+			public function HRESULT(ID3D12Fence *self, uint64 Value) Signal;
+		}
+		[CRepr]
+		public struct ID3D12Fence1 : ID3D12Fence
+		{
+			public const new Guid IID = .(0x433685fe, 0xe22b, 0x4ca0, 0xa8, 0xdb, 0xb5, 0xb4, 0xf4, 0xdd, 0x0e, 0x4a);
+			
+			public function D3D12_FENCE_FLAGS(ID3D12Fence1 *self) GetCreationFlags;
+		}
+		[CRepr]
+		public struct ID3D12PipelineState : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x765a30f3, 0xf624, 0x4c6f, 0xa8, 0x28, 0xac, 0xe9, 0x48, 0x62, 0x24, 0x45);
+			
+			public function HRESULT(ID3D12PipelineState *self, ID3DBlob** ppBlob) GetCachedBlob;
+		}
+		[CRepr]
+		public struct ID3D12DescriptorHeap : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x8efb471d, 0x616c, 0x4f49, 0x90, 0xf7, 0x12, 0x7b, 0xb7, 0x63, 0xfa, 0x51);
+			
+			public function D3D12_DESCRIPTOR_HEAP_DESC(ID3D12DescriptorHeap *self) GetDesc;
+			public function D3D12_CPU_DESCRIPTOR_HANDLE(ID3D12DescriptorHeap *self) GetCPUDescriptorHandleForHeapStart;
+			public function D3D12_GPU_DESCRIPTOR_HANDLE(ID3D12DescriptorHeap *self) GetGPUDescriptorHandleForHeapStart;
+		}
+		[CRepr]
+		public struct ID3D12QueryHeap : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x0d9658ae, 0xed45, 0x469e, 0xa6, 0x1d, 0x97, 0x0e, 0xc5, 0x83, 0xca, 0xb4);
+			
+		}
+		[CRepr]
+		public struct ID3D12CommandSignature : ID3D12Pageable
+		{
+			public const new Guid IID = .(0xc36a797c, 0xec80, 0x4f0a, 0x89, 0x85, 0xa7, 0xb2, 0x47, 0x50, 0x82, 0xd1);
+			
+		}
+		[CRepr]
+		public struct ID3D12CommandList : ID3D12DeviceChild
+		{
+			public const new Guid IID = .(0x7116d91c, 0xe7e4, 0x47ce, 0xb8, 0xc6, 0xec, 0x81, 0x68, 0xf4, 0x37, 0xe5);
+			
+			public function D3D12_COMMAND_LIST_TYPE(ID3D12CommandList *self) GetType;
+		}
+		[CRepr]
+		public struct ID3D12GraphicsCommandList : ID3D12CommandList
+		{
+			public const new Guid IID = .(0x5b160d0f, 0xac1b, 0x4185, 0x8b, 0xa8, 0xb3, 0xae, 0x42, 0xa5, 0xa4, 0x55);
+			
+			public function HRESULT(ID3D12GraphicsCommandList *self) Close;
+			public function HRESULT(ID3D12GraphicsCommandList *self, ID3D12CommandAllocator* pAllocator, ID3D12PipelineState* pInitialState) Reset;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12PipelineState* pPipelineState) ClearState;
+			public function void(ID3D12GraphicsCommandList *self, uint32 VertexCountPerInstance, uint32 InstanceCount, uint32 StartVertexLocation, uint32 StartInstanceLocation) DrawInstanced;
+			public function void(ID3D12GraphicsCommandList *self, uint32 IndexCountPerInstance, uint32 InstanceCount, uint32 StartIndexLocation, int32 BaseVertexLocation, uint32 StartInstanceLocation) DrawIndexedInstanced;
+			public function void(ID3D12GraphicsCommandList *self, uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) Dispatch;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint64 NumBytes) CopyBufferRegion;
+			public function void(ID3D12GraphicsCommandList *self, D3D12_TEXTURE_COPY_LOCATION* pDst, uint32 DstX, uint32 DstY, uint32 DstZ, D3D12_TEXTURE_COPY_LOCATION* pSrc, D3D12_BOX* pSrcBox) CopyTextureRegion;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pDstResource, ID3D12Resource* pSrcResource) CopyResource;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pTiledResource, D3D12_TILED_RESOURCE_COORDINATE* pTileRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pTileRegionSize, ID3D12Resource* pBuffer, uint64 BufferStartOffsetInBytes, D3D12_TILE_COPY_FLAGS Flags) CopyTiles;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pDstResource, uint32 DstSubresource, ID3D12Resource* pSrcResource, uint32 SrcSubresource, DXGI_FORMAT Format) ResolveSubresource;
+			public function void(ID3D12GraphicsCommandList *self, D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology) IASetPrimitiveTopology;
+			public function void(ID3D12GraphicsCommandList *self, uint32 NumViewports, D3D12_VIEWPORT* pViewports) RSSetViewports;
+			public function void(ID3D12GraphicsCommandList *self, uint32 NumRects, RECT* pRects) RSSetScissorRects;
+			public function void(ID3D12GraphicsCommandList *self, float* BlendFactor) OMSetBlendFactor;
+			public function void(ID3D12GraphicsCommandList *self, uint32 StencilRef) OMSetStencilRef;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12PipelineState* pPipelineState) SetPipelineState;
+			public function void(ID3D12GraphicsCommandList *self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12GraphicsCommandList* pCommandList) ExecuteBundle;
+			public function void(ID3D12GraphicsCommandList *self, uint32 NumDescriptorHeaps, ID3D12DescriptorHeap** ppDescriptorHeaps) SetDescriptorHeaps;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12RootSignature* pRootSignature) SetComputeRootSignature;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12RootSignature* pRootSignature) SetGraphicsRootSignature;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor) SetComputeRootDescriptorTable;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, D3D12_GPU_DESCRIPTOR_HANDLE BaseDescriptor) SetGraphicsRootDescriptorTable;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 SrcData, uint32 DestOffsetIn32BitValues) SetComputeRoot32BitConstant;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 SrcData, uint32 DestOffsetIn32BitValues) SetGraphicsRoot32BitConstant;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 Num32BitValuesToSet, void* pSrcData, uint32 DestOffsetIn32BitValues) SetComputeRoot32BitConstants;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint32 Num32BitValuesToSet, void* pSrcData, uint32 DestOffsetIn32BitValues) SetGraphicsRoot32BitConstants;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetComputeRootConstantBufferView;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetGraphicsRootConstantBufferView;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetComputeRootShaderResourceView;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetGraphicsRootShaderResourceView;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetComputeRootUnorderedAccessView;
+			public function void(ID3D12GraphicsCommandList *self, uint32 RootParameterIndex, uint64 BufferLocation) SetGraphicsRootUnorderedAccessView;
+			public function void(ID3D12GraphicsCommandList *self, D3D12_INDEX_BUFFER_VIEW* pView) IASetIndexBuffer;
+			public function void(ID3D12GraphicsCommandList *self, uint32 StartSlot, uint32 NumViews, D3D12_VERTEX_BUFFER_VIEW* pViews) IASetVertexBuffers;
+			public function void(ID3D12GraphicsCommandList *self, uint32 StartSlot, uint32 NumViews, D3D12_STREAM_OUTPUT_BUFFER_VIEW* pViews) SOSetTargets;
+			public function void(ID3D12GraphicsCommandList *self, uint32 NumRenderTargetDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE* pRenderTargetDescriptors, BOOL RTsSingleHandleToDescriptorRange, D3D12_CPU_DESCRIPTOR_HANDLE* pDepthStencilDescriptor) OMSetRenderTargets;
+			public function void(ID3D12GraphicsCommandList *self, D3D12_CPU_DESCRIPTOR_HANDLE DepthStencilView, D3D12_CLEAR_FLAGS ClearFlags, float Depth, uint8 Stencil, uint32 NumRects, RECT* pRects) ClearDepthStencilView;
+			public function void(ID3D12GraphicsCommandList *self, D3D12_CPU_DESCRIPTOR_HANDLE RenderTargetView, float* ColorRGBA, uint32 NumRects, RECT* pRects) ClearRenderTargetView;
+			public function void(ID3D12GraphicsCommandList *self, D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, uint32* Values, uint32 NumRects, RECT* pRects) ClearUnorderedAccessViewUint;
+			public function void(ID3D12GraphicsCommandList *self, D3D12_GPU_DESCRIPTOR_HANDLE ViewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE ViewCPUHandle, ID3D12Resource* pResource, float* Values, uint32 NumRects, RECT* pRects) ClearUnorderedAccessViewFloat;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
+			public function void(ID3D12GraphicsCommandList *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+			public function void(ID3D12GraphicsCommandList *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+			public function void(ID3D12GraphicsCommandList *self) EndEvent;
+			public function void(ID3D12GraphicsCommandList *self, ID3D12CommandSignature* pCommandSignature, uint32 MaxCommandCount, ID3D12Resource* pArgumentBuffer, uint64 ArgumentBufferOffset, ID3D12Resource* pCountBuffer, uint64 CountBufferOffset) ExecuteIndirect;
+		}
+		[CRepr]
+		public struct ID3D12GraphicsCommandList1 : ID3D12GraphicsCommandList
+		{
+			public const new Guid IID = .(0x553103fb, 0x1fe7, 0x4557, 0xbb, 0x38, 0x94, 0x6d, 0x7d, 0x0e, 0x7c, 0xa7);
+			
+			public function void(ID3D12GraphicsCommandList1 *self, ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint32 Dependencies, ID3D12Resource** ppDependentResources, D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges) AtomicCopyBufferUINT;
+			public function void(ID3D12GraphicsCommandList1 *self, ID3D12Resource* pDstBuffer, uint64 DstOffset, ID3D12Resource* pSrcBuffer, uint64 SrcOffset, uint32 Dependencies, ID3D12Resource** ppDependentResources, D3D12_SUBRESOURCE_RANGE_UINT64* pDependentSubresourceRanges) AtomicCopyBufferUINT64;
+			public function void(ID3D12GraphicsCommandList1 *self, float Min, float Max) OMSetDepthBounds;
+			public function void(ID3D12GraphicsCommandList1 *self, uint32 NumSamplesPerPixel, uint32 NumPixels, D3D12_SAMPLE_POSITION* pSamplePositions) SetSamplePositions;
+			public function void(ID3D12GraphicsCommandList1 *self, ID3D12Resource* pDstResource, uint32 DstSubresource, uint32 DstX, uint32 DstY, ID3D12Resource* pSrcResource, uint32 SrcSubresource, RECT* pSrcRect, DXGI_FORMAT Format, D3D12_RESOLVE_MODE ResolveMode) ResolveSubresourceRegion;
+			public function void(ID3D12GraphicsCommandList1 *self, uint32 Mask) SetViewInstanceMask;
+		}
+		[CRepr]
+		public struct ID3D12GraphicsCommandList2 : ID3D12GraphicsCommandList1
+		{
+			public const new Guid IID = .(0x38c3e585, 0xff17, 0x412c, 0x91, 0x50, 0x4f, 0xc6, 0xf9, 0xd7, 0x2a, 0x28);
+			
+			public function void(ID3D12GraphicsCommandList2 *self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
+		}
+		[CRepr]
+		public struct ID3D12CommandQueue : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x0ec870a6, 0x5d7e, 0x4c22, 0x8c, 0xfc, 0x5b, 0xaa, 0xe0, 0x76, 0x16, 0xed);
+			
+			public function void(ID3D12CommandQueue *self, ID3D12Resource* pResource, uint32 NumResourceRegions, D3D12_TILED_RESOURCE_COORDINATE* pResourceRegionStartCoordinates, D3D12_TILE_REGION_SIZE* pResourceRegionSizes, ID3D12Heap* pHeap, uint32 NumRanges, D3D12_TILE_RANGE_FLAGS* pRangeFlags, uint32* pHeapRangeStartOffsets, uint32* pRangeTileCounts, D3D12_TILE_MAPPING_FLAGS Flags) UpdateTileMappings;
+			public function void(ID3D12CommandQueue *self, ID3D12Resource* pDstResource, D3D12_TILED_RESOURCE_COORDINATE* pDstRegionStartCoordinate, ID3D12Resource* pSrcResource, D3D12_TILED_RESOURCE_COORDINATE* pSrcRegionStartCoordinate, D3D12_TILE_REGION_SIZE* pRegionSize, D3D12_TILE_MAPPING_FLAGS Flags) CopyTileMappings;
+			public function void(ID3D12CommandQueue *self, uint32 NumCommandLists, ID3D12CommandList** ppCommandLists) ExecuteCommandLists;
+			public function void(ID3D12CommandQueue *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+			public function void(ID3D12CommandQueue *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+			public function void(ID3D12CommandQueue *self) EndEvent;
+			public function HRESULT(ID3D12CommandQueue *self, ID3D12Fence* pFence, uint64 Value) Signal;
+			public function HRESULT(ID3D12CommandQueue *self, ID3D12Fence* pFence, uint64 Value) Wait;
+			public function HRESULT(ID3D12CommandQueue *self, uint64* pFrequency) GetTimestampFrequency;
+			public function HRESULT(ID3D12CommandQueue *self, uint64* pGpuTimestamp, uint64* pCpuTimestamp) GetClockCalibration;
+			public function D3D12_COMMAND_QUEUE_DESC(ID3D12CommandQueue *self) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D12Device : ID3D12Object
+		{
+			public const new Guid IID = .(0x189819f1, 0x1db6, 0x4b57, 0xbe, 0x54, 0x18, 0x21, 0x33, 0x9b, 0x85, 0xf7);
+			
+			public function uint32(ID3D12Device *self) GetNodeCount;
+			public function HRESULT(ID3D12Device *self, D3D12_COMMAND_QUEUE_DESC* pDesc, Guid* riid, void** ppCommandQueue) CreateCommandQueue;
+			public function HRESULT(ID3D12Device *self, D3D12_COMMAND_LIST_TYPE type, Guid* riid, void** ppCommandAllocator) CreateCommandAllocator;
+			public function HRESULT(ID3D12Device *self, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) CreateGraphicsPipelineState;
+			public function HRESULT(ID3D12Device *self, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) CreateComputePipelineState;
+			public function HRESULT(ID3D12Device *self, uint32 nodeMask, D3D12_COMMAND_LIST_TYPE type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, void** ppCommandList) CreateCommandList;
+			public function HRESULT(ID3D12Device *self, D3D12_FEATURE Feature, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
+			public function HRESULT(ID3D12Device *self, D3D12_DESCRIPTOR_HEAP_DESC* pDescriptorHeapDesc, Guid* riid, void** ppvHeap) CreateDescriptorHeap;
+			public function uint32(ID3D12Device *self, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType) GetDescriptorHandleIncrementSize;
+			public function HRESULT(ID3D12Device *self, uint32 nodeMask, void* pBlobWithRootSignature, uint blobLengthInBytes, Guid* riid, void** ppvRootSignature) CreateRootSignature;
+			public function void(ID3D12Device *self, D3D12_CONSTANT_BUFFER_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateConstantBufferView;
+			public function void(ID3D12Device *self, ID3D12Resource* pResource, D3D12_SHADER_RESOURCE_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateShaderResourceView;
+			public function void(ID3D12Device *self, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, D3D12_UNORDERED_ACCESS_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateUnorderedAccessView;
+			public function void(ID3D12Device *self, ID3D12Resource* pResource, D3D12_RENDER_TARGET_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateRenderTargetView;
+			public function void(ID3D12Device *self, ID3D12Resource* pResource, D3D12_DEPTH_STENCIL_VIEW_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateDepthStencilView;
+			public function void(ID3D12Device *self, D3D12_SAMPLER_DESC* pDesc, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateSampler;
+			public function void(ID3D12Device *self, uint32 NumDestDescriptorRanges, D3D12_CPU_DESCRIPTOR_HANDLE* pDestDescriptorRangeStarts, uint32* pDestDescriptorRangeSizes, uint32 NumSrcDescriptorRanges, D3D12_CPU_DESCRIPTOR_HANDLE* pSrcDescriptorRangeStarts, uint32* pSrcDescriptorRangeSizes, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType) CopyDescriptors;
+			public function void(ID3D12Device *self, uint32 NumDescriptors, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptorRangeStart, D3D12_CPU_DESCRIPTOR_HANDLE SrcDescriptorRangeStart, D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType) CopyDescriptorsSimple;
+			public function D3D12_RESOURCE_ALLOCATION_INFO(ID3D12Device *self, uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs) GetResourceAllocationInfo;
+			public function D3D12_HEAP_PROPERTIES(ID3D12Device *self, uint32 nodeMask, D3D12_HEAP_TYPE heapType) GetCustomHeapProperties;
+			public function HRESULT(ID3D12Device *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riidResource, void** ppvResource) CreateCommittedResource;
+			public function HRESULT(ID3D12Device *self, D3D12_HEAP_DESC* pDesc, Guid* riid, void** ppvHeap) CreateHeap;
+			public function HRESULT(ID3D12Device *self, ID3D12Heap* pHeap, uint64 HeapOffset, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) CreatePlacedResource;
+			public function HRESULT(ID3D12Device *self, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) CreateReservedResource;
+			public function HRESULT(ID3D12Device *self, ID3D12DeviceChild* pObject, SECURITY_ATTRIBUTES* pAttributes, uint32 Access, PWSTR Name, HANDLE* pHandle) CreateSharedHandle;
+			public function HRESULT(ID3D12Device *self, HANDLE NTHandle, Guid* riid, void** ppvObj) OpenSharedHandle;
+			public function HRESULT(ID3D12Device *self, PWSTR Name, uint32 Access, HANDLE* pNTHandle) OpenSharedHandleByName;
+			public function HRESULT(ID3D12Device *self, uint32 NumObjects, ID3D12Pageable** ppObjects) MakeResident;
+			public function HRESULT(ID3D12Device *self, uint32 NumObjects, ID3D12Pageable** ppObjects) Evict;
+			public function HRESULT(ID3D12Device *self, uint64 InitialValue, D3D12_FENCE_FLAGS Flags, Guid* riid, void** ppFence) CreateFence;
+			public function HRESULT(ID3D12Device *self) GetDeviceRemovedReason;
+			public function void(ID3D12Device *self, D3D12_RESOURCE_DESC* pResourceDesc, uint32 FirstSubresource, uint32 NumSubresources, uint64 BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint32* pNumRows, uint64* pRowSizeInBytes, uint64* pTotalBytes) GetCopyableFootprints;
+			public function HRESULT(ID3D12Device *self, D3D12_QUERY_HEAP_DESC* pDesc, Guid* riid, void** ppvHeap) CreateQueryHeap;
+			public function HRESULT(ID3D12Device *self, BOOL Enable) SetStablePowerState;
+			public function HRESULT(ID3D12Device *self, D3D12_COMMAND_SIGNATURE_DESC* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature) CreateCommandSignature;
+			public function void(ID3D12Device *self, ID3D12Resource* pTiledResource, uint32* pNumTilesForEntireResource, D3D12_PACKED_MIP_INFO* pPackedMipDesc, D3D12_TILE_SHAPE* pStandardTileShapeForNonPackedMips, uint32* pNumSubresourceTilings, uint32 FirstSubresourceTilingToGet, D3D12_SUBRESOURCE_TILING* pSubresourceTilingsForNonPackedMips) GetResourceTiling;
+			public function LUID(ID3D12Device *self) GetAdapterLuid;
+		}
+		[CRepr]
+		public struct ID3D12PipelineLibrary : ID3D12DeviceChild
+		{
+			public const new Guid IID = .(0xc64226a8, 0x9201, 0x46af, 0xb4, 0xcc, 0x53, 0xfb, 0x9f, 0xf7, 0x41, 0x4f);
+			
+			public function HRESULT(ID3D12PipelineLibrary *self, PWSTR pName, ID3D12PipelineState* pPipeline) StorePipeline;
+			public function HRESULT(ID3D12PipelineLibrary *self, PWSTR pName, D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) LoadGraphicsPipeline;
+			public function HRESULT(ID3D12PipelineLibrary *self, PWSTR pName, D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, Guid* riid, void** ppPipelineState) LoadComputePipeline;
+			public function uint(ID3D12PipelineLibrary *self) GetSerializedSize;
+			public function HRESULT(ID3D12PipelineLibrary *self, void* pData, uint DataSizeInBytes) Serialize;
+		}
+		[CRepr]
+		public struct ID3D12PipelineLibrary1 : ID3D12PipelineLibrary
+		{
+			public const new Guid IID = .(0x80eabf42, 0x2568, 0x4e5e, 0xbd, 0x82, 0xc3, 0x7f, 0x86, 0x96, 0x1d, 0xc3);
+			
+			public function HRESULT(ID3D12PipelineLibrary1 *self, PWSTR pName, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, Guid* riid, void** ppPipelineState) LoadPipeline;
+		}
+		[CRepr]
+		public struct ID3D12Device1 : ID3D12Device
+		{
+			public const new Guid IID = .(0x77acce80, 0x638e, 0x4e65, 0x88, 0x95, 0xc1, 0xf2, 0x33, 0x86, 0x86, 0x3e);
+			
+			public function HRESULT(ID3D12Device1 *self, void* pLibraryBlob, uint BlobLength, Guid* riid, void** ppPipelineLibrary) CreatePipelineLibrary;
+			public function HRESULT(ID3D12Device1 *self, ID3D12Fence** ppFences, uint64* pFenceValues, uint32 NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, HANDLE hEvent) SetEventOnMultipleFenceCompletion;
+			public function HRESULT(ID3D12Device1 *self, uint32 NumObjects, ID3D12Pageable** ppObjects, D3D12_RESIDENCY_PRIORITY* pPriorities) SetResidencyPriority;
+		}
+		[CRepr]
+		public struct ID3D12Device2 : ID3D12Device1
+		{
+			public const new Guid IID = .(0x30baa41e, 0xb15b, 0x475c, 0xa0, 0xbb, 0x1a, 0xf5, 0xc5, 0xb6, 0x43, 0x28);
+			
+			public function HRESULT(ID3D12Device2 *self, D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, Guid* riid, void** ppPipelineState) CreatePipelineState;
+		}
+		[CRepr]
+		public struct ID3D12Device3 : ID3D12Device2
+		{
+			public const new Guid IID = .(0x81dadc15, 0x2bad, 0x4392, 0x93, 0xc5, 0x10, 0x13, 0x45, 0xc4, 0xaa, 0x98);
+			
+			public function HRESULT(ID3D12Device3 *self, void* pAddress, Guid* riid, void** ppvHeap) OpenExistingHeapFromAddress;
+			public function HRESULT(ID3D12Device3 *self, HANDLE hFileMapping, Guid* riid, void** ppvHeap) OpenExistingHeapFromFileMapping;
+			public function HRESULT(ID3D12Device3 *self, D3D12_RESIDENCY_FLAGS Flags, uint32 NumObjects, ID3D12Pageable** ppObjects, ID3D12Fence* pFenceToSignal, uint64 FenceValueToSignal) EnqueueMakeResident;
+		}
+		[CRepr]
+		public struct ID3D12ProtectedSession : ID3D12DeviceChild
+		{
+			public const new Guid IID = .(0xa1533d18, 0x0ac1, 0x4084, 0x85, 0xb9, 0x89, 0xa9, 0x61, 0x16, 0x80, 0x6b);
+			
+			public function HRESULT(ID3D12ProtectedSession *self, Guid* riid, void** ppFence) GetStatusFence;
+			public function D3D12_PROTECTED_SESSION_STATUS(ID3D12ProtectedSession *self) GetSessionStatus;
+		}
+		[CRepr]
+		public struct ID3D12ProtectedResourceSession : ID3D12ProtectedSession
+		{
+			public const new Guid IID = .(0x6cd696f4, 0xf289, 0x40cc, 0x80, 0x91, 0x5a, 0x6c, 0x0a, 0x09, 0x9c, 0x3d);
+			
+			public function D3D12_PROTECTED_RESOURCE_SESSION_DESC(ID3D12ProtectedResourceSession *self) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D12Device4 : ID3D12Device3
+		{
+			public const new Guid IID = .(0xe865df17, 0xa9ee, 0x46f9, 0xa4, 0x63, 0x30, 0x98, 0x31, 0x5a, 0xa2, 0xe5);
+			
+			public function HRESULT(ID3D12Device4 *self, uint32 nodeMask, D3D12_COMMAND_LIST_TYPE type, D3D12_COMMAND_LIST_FLAGS flags, Guid* riid, void** ppCommandList) CreateCommandList1;
+			public function HRESULT(ID3D12Device4 *self, D3D12_PROTECTED_RESOURCE_SESSION_DESC* pDesc, Guid* riid, void** ppSession) CreateProtectedResourceSession;
+			public function HRESULT(ID3D12Device4 *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource) CreateCommittedResource1;
+			public function HRESULT(ID3D12Device4 *self, D3D12_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap) CreateHeap1;
+			public function HRESULT(ID3D12Device4 *self, D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource) CreateReservedResource1;
+			public function D3D12_RESOURCE_ALLOCATION_INFO(ID3D12Device4 *self, uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC* pResourceDescs, D3D12_RESOURCE_ALLOCATION_INFO1* pResourceAllocationInfo1) GetResourceAllocationInfo1;
+		}
+		[CRepr]
+		public struct ID3D12LifetimeOwner : IUnknown
+		{
+			public const new Guid IID = .(0xe667af9f, 0xcd56, 0x4f46, 0x83, 0xce, 0x03, 0x2e, 0x59, 0x5d, 0x70, 0xa8);
+			
+			public function void(ID3D12LifetimeOwner *self, D3D12_LIFETIME_STATE NewState) LifetimeStateUpdated;
+		}
+		[CRepr]
+		public struct ID3D12SwapChainAssistant : IUnknown
+		{
+			public const new Guid IID = .(0xf1df64b6, 0x57fd, 0x49cd, 0x88, 0x07, 0xc0, 0xeb, 0x88, 0xb4, 0x5c, 0x8f);
+			
+			public function LUID(ID3D12SwapChainAssistant *self) GetLUID;
+			public function HRESULT(ID3D12SwapChainAssistant *self, Guid* riid, void** ppv) GetSwapChainObject;
+			public function HRESULT(ID3D12SwapChainAssistant *self, Guid* riidResource, void** ppvResource, Guid* riidQueue, void** ppvQueue) GetCurrentResourceAndCommandQueue;
+			public function HRESULT(ID3D12SwapChainAssistant *self) InsertImplicitSync;
+		}
+		[CRepr]
+		public struct ID3D12LifetimeTracker : ID3D12DeviceChild
+		{
+			public const new Guid IID = .(0x3fd03d36, 0x4eb1, 0x424a, 0xa5, 0x82, 0x49, 0x4e, 0xcb, 0x8b, 0xa8, 0x13);
+			
+			public function HRESULT(ID3D12LifetimeTracker *self, ID3D12DeviceChild* pObject) DestroyOwnedObject;
+		}
+		[CRepr]
+		public struct ID3D12StateObject : ID3D12Pageable
+		{
+			public const new Guid IID = .(0x47016943, 0xfca8, 0x4594, 0x93, 0xea, 0xaf, 0x25, 0x8b, 0x55, 0x34, 0x6d);
+			
+		}
+		[CRepr]
+		public struct ID3D12StateObjectProperties : IUnknown
+		{
+			public const new Guid IID = .(0xde5fa827, 0x9bf9, 0x4f26, 0x89, 0xff, 0xd7, 0xf5, 0x6f, 0xde, 0x38, 0x60);
+			
+			public function void*(ID3D12StateObjectProperties *self, PWSTR pExportName) GetShaderIdentifier;
+			public function uint64(ID3D12StateObjectProperties *self, PWSTR pExportName) GetShaderStackSize;
+			public function uint64(ID3D12StateObjectProperties *self) GetPipelineStackSize;
+			public function void(ID3D12StateObjectProperties *self, uint64 PipelineStackSizeInBytes) SetPipelineStackSize;
+		}
+		[CRepr]
+		public struct ID3D12Device5 : ID3D12Device4
+		{
+			public const new Guid IID = .(0x8b4f173b, 0x2fea, 0x4b80, 0x8f, 0x58, 0x43, 0x07, 0x19, 0x1a, 0xb9, 0x5d);
+			
+			public function HRESULT(ID3D12Device5 *self, ID3D12LifetimeOwner* pOwner, Guid* riid, void** ppvTracker) CreateLifetimeTracker;
+			public function void(ID3D12Device5 *self) RemoveDevice;
+			public function HRESULT(ID3D12Device5 *self, uint32* pNumMetaCommands, D3D12_META_COMMAND_DESC* pDescs) EnumerateMetaCommands;
+			public function HRESULT(ID3D12Device5 *self, Guid* CommandId, D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint32* pTotalStructureSizeInBytes, uint32* pParameterCount, D3D12_META_COMMAND_PARAMETER_DESC* pParameterDescs) EnumerateMetaCommandParameters;
+			public function HRESULT(ID3D12Device5 *self, Guid* CommandId, uint32 NodeMask, void* pCreationParametersData, uint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) CreateMetaCommand;
+			public function HRESULT(ID3D12Device5 *self, D3D12_STATE_OBJECT_DESC* pDesc, Guid* riid, void** ppStateObject) CreateStateObject;
+			public function void(ID3D12Device5 *self, D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS* pDesc, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO* pInfo) GetRaytracingAccelerationStructurePrebuildInfo;
+			public function D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS(ID3D12Device5 *self, D3D12_SERIALIZED_DATA_TYPE SerializedDataType, D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER* pIdentifierToCheck) CheckDriverMatchingIdentifier;
+		}
+		[CRepr]
+		public struct ID3D12DeviceRemovedExtendedDataSettings : IUnknown
+		{
+			public const new Guid IID = .(0x82bc481c, 0x6b9b, 0x4030, 0xae, 0xdb, 0x7e, 0xe3, 0xd1, 0xdf, 0x1e, 0x63);
+			
+			public function void(ID3D12DeviceRemovedExtendedDataSettings *self, D3D12_DRED_ENABLEMENT Enablement) SetAutoBreadcrumbsEnablement;
+			public function void(ID3D12DeviceRemovedExtendedDataSettings *self, D3D12_DRED_ENABLEMENT Enablement) SetPageFaultEnablement;
+			public function void(ID3D12DeviceRemovedExtendedDataSettings *self, D3D12_DRED_ENABLEMENT Enablement) SetWatsonDumpEnablement;
+		}
+		[CRepr]
+		public struct ID3D12DeviceRemovedExtendedDataSettings1 : ID3D12DeviceRemovedExtendedDataSettings
+		{
+			public const new Guid IID = .(0xdbd5ae51, 0x3317, 0x4f0a, 0xad, 0xf9, 0x1d, 0x7c, 0xed, 0xca, 0xae, 0x0b);
+			
+			public function void(ID3D12DeviceRemovedExtendedDataSettings1 *self, D3D12_DRED_ENABLEMENT Enablement) SetBreadcrumbContextEnablement;
+		}
+		[CRepr]
+		public struct ID3D12DeviceRemovedExtendedData : IUnknown
+		{
+			public const new Guid IID = .(0x98931d33, 0x5ae8, 0x4791, 0xaa, 0x3c, 0x1a, 0x73, 0xa2, 0x93, 0x4e, 0x71);
+			
+			public function HRESULT(ID3D12DeviceRemovedExtendedData *self, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT* pOutput) GetAutoBreadcrumbsOutput;
+			public function HRESULT(ID3D12DeviceRemovedExtendedData *self, D3D12_DRED_PAGE_FAULT_OUTPUT* pOutput) GetPageFaultAllocationOutput;
+		}
+		[CRepr]
+		public struct ID3D12DeviceRemovedExtendedData1 : ID3D12DeviceRemovedExtendedData
+		{
+			public const new Guid IID = .(0x9727a022, 0xcf1d, 0x4dda, 0x9e, 0xba, 0xef, 0xfa, 0x65, 0x3f, 0xc5, 0x06);
+			
+			public function HRESULT(ID3D12DeviceRemovedExtendedData1 *self, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1* pOutput) GetAutoBreadcrumbsOutput1;
+			public function HRESULT(ID3D12DeviceRemovedExtendedData1 *self, D3D12_DRED_PAGE_FAULT_OUTPUT1* pOutput) GetPageFaultAllocationOutput1;
+		}
+		[CRepr]
+		public struct ID3D12DeviceRemovedExtendedData2 : ID3D12DeviceRemovedExtendedData1
+		{
+			public const new Guid IID = .(0x67fc5816, 0xe4ca, 0x4915, 0xbf, 0x18, 0x42, 0x54, 0x12, 0x72, 0xda, 0x54);
+			
+			public function HRESULT(ID3D12DeviceRemovedExtendedData2 *self, D3D12_DRED_PAGE_FAULT_OUTPUT2* pOutput) GetPageFaultAllocationOutput2;
+			public function D3D12_DRED_DEVICE_STATE(ID3D12DeviceRemovedExtendedData2 *self) GetDeviceState;
+		}
+		[CRepr]
+		public struct ID3D12Device6 : ID3D12Device5
+		{
+			public const new Guid IID = .(0xc70b221b, 0x40e4, 0x4a17, 0x89, 0xaf, 0x02, 0x5a, 0x07, 0x27, 0xa6, 0xdc);
+			
+			public function HRESULT(ID3D12Device6 *self, D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, HANDLE hEventToSignalUponCompletion, BOOL* pbFurtherMeasurementsDesired) SetBackgroundProcessingMode;
+		}
+		[CRepr]
+		public struct ID3D12ProtectedResourceSession1 : ID3D12ProtectedResourceSession
+		{
+			public const new Guid IID = .(0xd6f12dd6, 0x76fb, 0x406e, 0x89, 0x61, 0x42, 0x96, 0xee, 0xfc, 0x04, 0x09);
+			
+			public function D3D12_PROTECTED_RESOURCE_SESSION_DESC1(ID3D12ProtectedResourceSession1 *self) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3D12Device7 : ID3D12Device6
+		{
+			public const new Guid IID = .(0x5c014b53, 0x68a1, 0x4b9b, 0x8b, 0xd1, 0xdd, 0x60, 0x46, 0xb9, 0x35, 0x8b);
+			
+			public function HRESULT(ID3D12Device7 *self, D3D12_STATE_OBJECT_DESC* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject) AddToStateObject;
+			public function HRESULT(ID3D12Device7 *self, D3D12_PROTECTED_RESOURCE_SESSION_DESC1* pDesc, Guid* riid, void** ppSession) CreateProtectedResourceSession1;
+		}
+		[CRepr]
+		public struct ID3D12Device8 : ID3D12Device7
+		{
+			public const new Guid IID = .(0x9218e6bb, 0xf944, 0x4f7e, 0xa7, 0x5c, 0xb1, 0xb2, 0xc7, 0xb7, 0x01, 0xf3);
+			
+			public function D3D12_RESOURCE_ALLOCATION_INFO(ID3D12Device8 *self, uint32 visibleMask, uint32 numResourceDescs, D3D12_RESOURCE_DESC1* pResourceDescs, D3D12_RESOURCE_ALLOCATION_INFO1* pResourceAllocationInfo1) GetResourceAllocationInfo2;
+			public function HRESULT(ID3D12Device8 *self, D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, D3D12_RESOURCE_DESC1* pDesc, D3D12_RESOURCE_STATES InitialResourceState, D3D12_CLEAR_VALUE* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource) CreateCommittedResource2;
+			public function HRESULT(ID3D12Device8 *self, ID3D12Heap* pHeap, uint64 HeapOffset, D3D12_RESOURCE_DESC1* pDesc, D3D12_RESOURCE_STATES InitialState, D3D12_CLEAR_VALUE* pOptimizedClearValue, Guid* riid, void** ppvResource) CreatePlacedResource1;
+			public function void(ID3D12Device8 *self, ID3D12Resource* pTargetedResource, ID3D12Resource* pFeedbackResource, D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor) CreateSamplerFeedbackUnorderedAccessView;
+			public function void(ID3D12Device8 *self, D3D12_RESOURCE_DESC1* pResourceDesc, uint32 FirstSubresource, uint32 NumSubresources, uint64 BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint32* pNumRows, uint64* pRowSizeInBytes, uint64* pTotalBytes) GetCopyableFootprints1;
+		}
+		[CRepr]
+		public struct ID3D12Resource1 : ID3D12Resource
+		{
+			public const new Guid IID = .(0x9d5e227a, 0x4430, 0x4161, 0x88, 0xb3, 0x3e, 0xca, 0x6b, 0xb1, 0x6e, 0x19);
+			
+			public function HRESULT(ID3D12Resource1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12Resource2 : ID3D12Resource1
+		{
+			public const new Guid IID = .(0xbe36ec3b, 0xea85, 0x4aeb, 0xa4, 0x5a, 0xe9, 0xd7, 0x64, 0x04, 0xa4, 0x95);
+			
+			public function D3D12_RESOURCE_DESC1(ID3D12Resource2 *self) GetDesc1;
+		}
+		[CRepr]
+		public struct ID3D12Heap1 : ID3D12Heap
+		{
+			public const new Guid IID = .(0x572f7389, 0x2168, 0x49e3, 0x96, 0x93, 0xd6, 0xdf, 0x58, 0x71, 0xbf, 0x6d);
+			
+			public function HRESULT(ID3D12Heap1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12GraphicsCommandList3 : ID3D12GraphicsCommandList2
+		{
+			public const new Guid IID = .(0x6fda83a7, 0xb84c, 0x4e38, 0x9a, 0xc8, 0xc7, 0xbd, 0x22, 0x01, 0x6b, 0x3d);
+			
+			public function void(ID3D12GraphicsCommandList3 *self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
+		}
+		[CRepr]
+		public struct ID3D12MetaCommand : ID3D12Pageable
+		{
+			public const new Guid IID = .(0xdbb84c27, 0x36ce, 0x4fc9, 0xb8, 0x01, 0xf0, 0x48, 0xc4, 0x6a, 0xc5, 0x70);
+			
+			public function uint64(ID3D12MetaCommand *self, D3D12_META_COMMAND_PARAMETER_STAGE Stage, uint32 ParameterIndex) GetRequiredParameterResourceSize;
+		}
+		[CRepr]
+		public struct ID3D12GraphicsCommandList4 : ID3D12GraphicsCommandList3
+		{
+			public const new Guid IID = .(0x8754318e, 0xd3a9, 0x4541, 0x98, 0xcf, 0x64, 0x5b, 0x50, 0xdc, 0x48, 0x74);
+			
+			public function void(ID3D12GraphicsCommandList4 *self, uint32 NumRenderTargets, D3D12_RENDER_PASS_RENDER_TARGET_DESC* pRenderTargets, D3D12_RENDER_PASS_DEPTH_STENCIL_DESC* pDepthStencil, D3D12_RENDER_PASS_FLAGS Flags) BeginRenderPass;
+			public function void(ID3D12GraphicsCommandList4 *self) EndRenderPass;
+			public function void(ID3D12GraphicsCommandList4 *self, ID3D12MetaCommand* pMetaCommand, void* pInitializationParametersData, uint InitializationParametersDataSizeInBytes) InitializeMetaCommand;
+			public function void(ID3D12GraphicsCommandList4 *self, ID3D12MetaCommand* pMetaCommand, void* pExecutionParametersData, uint ExecutionParametersDataSizeInBytes) ExecuteMetaCommand;
+			public function void(ID3D12GraphicsCommandList4 *self, D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC* pDesc, uint32 NumPostbuildInfoDescs, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pPostbuildInfoDescs) BuildRaytracingAccelerationStructure;
+			public function void(ID3D12GraphicsCommandList4 *self, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC* pDesc, uint32 NumSourceAccelerationStructures, uint64* pSourceAccelerationStructureData) EmitRaytracingAccelerationStructurePostbuildInfo;
+			public function void(ID3D12GraphicsCommandList4 *self, uint64 DestAccelerationStructureData, uint64 SourceAccelerationStructureData, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE Mode) CopyRaytracingAccelerationStructure;
+			public function void(ID3D12GraphicsCommandList4 *self, ID3D12StateObject* pStateObject) SetPipelineState1;
+			public function void(ID3D12GraphicsCommandList4 *self, D3D12_DISPATCH_RAYS_DESC* pDesc) DispatchRays;
+		}
+		[CRepr]
+		public struct ID3D12ShaderCacheSession : ID3D12DeviceChild
+		{
+			public const new Guid IID = .(0x28e2495d, 0x0f64, 0x4ae4, 0xa6, 0xec, 0x12, 0x92, 0x55, 0xdc, 0x49, 0xa8);
+			
+			public function HRESULT(ID3D12ShaderCacheSession *self, void* pKey, uint32 KeySize, void* pValue, uint32* pValueSize) FindValue;
+			public function HRESULT(ID3D12ShaderCacheSession *self, void* pKey, uint32 KeySize, void* pValue, uint32 ValueSize) StoreValue;
+			public function void(ID3D12ShaderCacheSession *self) SetDeleteOnDestroy;
+			public function D3D12_SHADER_CACHE_SESSION_DESC(ID3D12ShaderCacheSession *self) GetDesc;
+		}
+		[CRepr]
+		public struct ID3D12Device9 : ID3D12Device8
+		{
+			public const new Guid IID = .(0x4c80e962, 0xf032, 0x4f60, 0xbc, 0x9e, 0xeb, 0xc2, 0xcf, 0xa1, 0xd8, 0x3c);
+			
+			public function HRESULT(ID3D12Device9 *self, D3D12_SHADER_CACHE_SESSION_DESC* pDesc, Guid* riid, void** ppvSession) CreateShaderCacheSession;
+			public function HRESULT(ID3D12Device9 *self, D3D12_SHADER_CACHE_KIND_FLAGS Kinds, D3D12_SHADER_CACHE_CONTROL_FLAGS Control) ShaderCacheControl;
+			public function HRESULT(ID3D12Device9 *self, D3D12_COMMAND_QUEUE_DESC* pDesc, Guid* CreatorID, Guid* riid, void** ppCommandQueue) CreateCommandQueue1;
+		}
+		[CRepr]
+		public struct ID3D12Tools : IUnknown
+		{
+			public const new Guid IID = .(0x7071e1f0, 0xe84b, 0x4b33, 0x97, 0x4f, 0x12, 0xfa, 0x49, 0xde, 0x65, 0xc5);
+			
+			public function void(ID3D12Tools *self, BOOL bEnable) EnableShaderInstrumentation;
+			public function BOOL(ID3D12Tools *self) ShaderInstrumentationEnabled;
+		}
+		[CRepr]
+		public struct ID3D12Debug : IUnknown
+		{
+			public const new Guid IID = .(0x344488b7, 0x6846, 0x474b, 0xb9, 0x89, 0xf0, 0x27, 0x44, 0x82, 0x45, 0xe0);
+			
+			public function void(ID3D12Debug *self) EnableDebugLayer;
+		}
+		[CRepr]
+		public struct ID3D12Debug1 : IUnknown
+		{
+			public const new Guid IID = .(0xaffaa4ca, 0x63fe, 0x4d8e, 0xb8, 0xad, 0x15, 0x90, 0x00, 0xaf, 0x43, 0x04);
+			
+			public function void(ID3D12Debug1 *self) EnableDebugLayer;
+			public function void(ID3D12Debug1 *self, BOOL Enable) SetEnableGPUBasedValidation;
+			public function void(ID3D12Debug1 *self, BOOL Enable) SetEnableSynchronizedCommandQueueValidation;
+		}
+		[CRepr]
+		public struct ID3D12Debug2 : IUnknown
+		{
+			public const new Guid IID = .(0x93a665c4, 0xa3b2, 0x4e5d, 0xb6, 0x92, 0xa2, 0x6a, 0xe1, 0x4e, 0x33, 0x74);
+			
+			public function void(ID3D12Debug2 *self, D3D12_GPU_BASED_VALIDATION_FLAGS Flags) SetGPUBasedValidationFlags;
+		}
+		[CRepr]
+		public struct ID3D12Debug3 : ID3D12Debug
+		{
+			public const new Guid IID = .(0x5cf4e58f, 0xf671, 0x4ff1, 0xa5, 0x42, 0x36, 0x86, 0xe3, 0xd1, 0x53, 0xd1);
+			
+			public function void(ID3D12Debug3 *self, BOOL Enable) SetEnableGPUBasedValidation;
+			public function void(ID3D12Debug3 *self, BOOL Enable) SetEnableSynchronizedCommandQueueValidation;
+			public function void(ID3D12Debug3 *self, D3D12_GPU_BASED_VALIDATION_FLAGS Flags) SetGPUBasedValidationFlags;
+		}
+		[CRepr]
+		public struct ID3D12Debug4 : ID3D12Debug3
+		{
+			public const new Guid IID = .(0x014b816e, 0x9ec5, 0x4a2f, 0xa8, 0x45, 0xff, 0xbe, 0x44, 0x1c, 0xe1, 0x3a);
+			
+			public function void(ID3D12Debug4 *self) DisableDebugLayer;
+		}
+		[CRepr]
+		public struct ID3D12Debug5 : ID3D12Debug4
+		{
+			public const new Guid IID = .(0x548d6b12, 0x09fa, 0x40e0, 0x90, 0x69, 0x5d, 0xcd, 0x58, 0x9a, 0x52, 0xc9);
+			
+			public function void(ID3D12Debug5 *self, BOOL Enable) SetEnableAutoName;
+		}
+		[CRepr]
+		public struct ID3D12DebugDevice1 : IUnknown
+		{
+			public const new Guid IID = .(0xa9b71770, 0xd099, 0x4a65, 0xa6, 0x98, 0x3d, 0xee, 0x10, 0x02, 0x0f, 0x88);
+			
+			public function HRESULT(ID3D12DebugDevice1 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
+			public function HRESULT(ID3D12DebugDevice1 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
+			public function HRESULT(ID3D12DebugDevice1 *self, D3D12_RLDO_FLAGS Flags) ReportLiveDeviceObjects;
+		}
+		[CRepr]
+		public struct ID3D12DebugDevice : IUnknown
+		{
+			public const new Guid IID = .(0x3febd6dd, 0x4973, 0x4787, 0x81, 0x94, 0xe4, 0x5f, 0x9e, 0x28, 0x92, 0x3e);
+			
+			public function HRESULT(ID3D12DebugDevice *self, D3D12_DEBUG_FEATURE Mask) SetFeatureMask;
+			public function D3D12_DEBUG_FEATURE(ID3D12DebugDevice *self) GetFeatureMask;
+			public function HRESULT(ID3D12DebugDevice *self, D3D12_RLDO_FLAGS Flags) ReportLiveDeviceObjects;
+		}
+		[CRepr]
+		public struct ID3D12DebugDevice2 : ID3D12DebugDevice
+		{
+			public const new Guid IID = .(0x60eccbc1, 0x378d, 0x4df1, 0x89, 0x4c, 0xf8, 0xac, 0x5c, 0xe4, 0xd7, 0xdd);
+			
+			public function HRESULT(ID3D12DebugDevice2 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
+			public function HRESULT(ID3D12DebugDevice2 *self, D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
+		}
+		[CRepr]
+		public struct ID3D12DebugCommandQueue : IUnknown
+		{
+			public const new Guid IID = .(0x09e0bf36, 0x54ac, 0x484f, 0x88, 0x47, 0x4b, 0xae, 0xea, 0xb6, 0x05, 0x3a);
+			
+			public function BOOL(ID3D12DebugCommandQueue *self, ID3D12Resource* pResource, uint32 Subresource, uint32 State) AssertResourceState;
+		}
+		[CRepr]
+		public struct ID3D12DebugCommandList1 : IUnknown
+		{
+			public const new Guid IID = .(0x102ca951, 0x311b, 0x4b01, 0xb1, 0x1f, 0xec, 0xb8, 0x3e, 0x06, 0x1b, 0x37);
+			
+			public function BOOL(ID3D12DebugCommandList1 *self, ID3D12Resource* pResource, uint32 Subresource, uint32 State) AssertResourceState;
+			public function HRESULT(ID3D12DebugCommandList1 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
+			public function HRESULT(ID3D12DebugCommandList1 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
+		}
+		[CRepr]
+		public struct ID3D12DebugCommandList : IUnknown
+		{
+			public const new Guid IID = .(0x09e0bf36, 0x54ac, 0x484f, 0x88, 0x47, 0x4b, 0xae, 0xea, 0xb6, 0x05, 0x3f);
+			
+			public function BOOL(ID3D12DebugCommandList *self, ID3D12Resource* pResource, uint32 Subresource, uint32 State) AssertResourceState;
+			public function HRESULT(ID3D12DebugCommandList *self, D3D12_DEBUG_FEATURE Mask) SetFeatureMask;
+			public function D3D12_DEBUG_FEATURE(ID3D12DebugCommandList *self) GetFeatureMask;
+		}
+		[CRepr]
+		public struct ID3D12DebugCommandList2 : ID3D12DebugCommandList
+		{
+			public const new Guid IID = .(0xaeb575cf, 0x4e06, 0x48be, 0xba, 0x3b, 0xc4, 0x50, 0xfc, 0x96, 0x65, 0x2e);
+			
+			public function HRESULT(ID3D12DebugCommandList2 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) SetDebugParameter;
+			public function HRESULT(ID3D12DebugCommandList2 *self, D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, void* pData, uint32 DataSize) GetDebugParameter;
+		}
+		[CRepr]
+		public struct ID3D12SharingContract : IUnknown
+		{
+			public const new Guid IID = .(0x0adf7d52, 0x929c, 0x4e61, 0xad, 0xdb, 0xff, 0xed, 0x30, 0xde, 0x66, 0xef);
+			
+			public function void(ID3D12SharingContract *self, ID3D12Resource* pResource, uint32 Subresource, HWND window) Present;
+			public function void(ID3D12SharingContract *self, ID3D12Fence* pFence, uint64 FenceValue) SharedFenceSignal;
+			public function void(ID3D12SharingContract *self, Guid* guid) BeginCapturableWork;
+			public function void(ID3D12SharingContract *self, Guid* guid) EndCapturableWork;
+		}
+		[CRepr]
+		public struct ID3D12InfoQueue : IUnknown
+		{
+			public const new Guid IID = .(0x0742a90b, 0xc387, 0x483f, 0xb9, 0x46, 0x30, 0xa7, 0xe4, 0xe6, 0x14, 0x58);
+			
+			public function HRESULT(ID3D12InfoQueue *self, uint64 MessageCountLimit) SetMessageCountLimit;
+			public function void(ID3D12InfoQueue *self) ClearStoredMessages;
+			public function HRESULT(ID3D12InfoQueue *self, uint64 MessageIndex, D3D12_MESSAGE* pMessage, uint* pMessageByteLength) GetMessage;
+			public function uint64(ID3D12InfoQueue *self) GetNumMessagesAllowedByStorageFilter;
+			public function uint64(ID3D12InfoQueue *self) GetNumMessagesDeniedByStorageFilter;
+			public function uint64(ID3D12InfoQueue *self) GetNumStoredMessages;
+			public function uint64(ID3D12InfoQueue *self) GetNumStoredMessagesAllowedByRetrievalFilter;
+			public function uint64(ID3D12InfoQueue *self) GetNumMessagesDiscardedByMessageCountLimit;
+			public function uint64(ID3D12InfoQueue *self) GetMessageCountLimit;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) AddStorageFilterEntries;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetStorageFilter;
+			public function void(ID3D12InfoQueue *self) ClearStorageFilter;
+			public function HRESULT(ID3D12InfoQueue *self) PushEmptyStorageFilter;
+			public function HRESULT(ID3D12InfoQueue *self) PushCopyOfStorageFilter;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) PushStorageFilter;
+			public function void(ID3D12InfoQueue *self) PopStorageFilter;
+			public function uint32(ID3D12InfoQueue *self) GetStorageFilterStackSize;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) AddRetrievalFilterEntries;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter, uint* pFilterByteLength) GetRetrievalFilter;
+			public function void(ID3D12InfoQueue *self) ClearRetrievalFilter;
+			public function HRESULT(ID3D12InfoQueue *self) PushEmptyRetrievalFilter;
+			public function HRESULT(ID3D12InfoQueue *self) PushCopyOfRetrievalFilter;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_INFO_QUEUE_FILTER* pFilter) PushRetrievalFilter;
+			public function void(ID3D12InfoQueue *self) PopRetrievalFilter;
+			public function uint32(ID3D12InfoQueue *self) GetRetrievalFilterStackSize;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_CATEGORY Category, D3D12_MESSAGE_SEVERITY Severity, D3D12_MESSAGE_ID ID, PSTR pDescription) AddMessage;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_SEVERITY Severity, PSTR pDescription) AddApplicationMessage;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_CATEGORY Category, BOOL bEnable) SetBreakOnCategory;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_SEVERITY Severity, BOOL bEnable) SetBreakOnSeverity;
+			public function HRESULT(ID3D12InfoQueue *self, D3D12_MESSAGE_ID ID, BOOL bEnable) SetBreakOnID;
+			public function BOOL(ID3D12InfoQueue *self, D3D12_MESSAGE_CATEGORY Category) GetBreakOnCategory;
+			public function BOOL(ID3D12InfoQueue *self, D3D12_MESSAGE_SEVERITY Severity) GetBreakOnSeverity;
+			public function BOOL(ID3D12InfoQueue *self, D3D12_MESSAGE_ID ID) GetBreakOnID;
+			public function void(ID3D12InfoQueue *self, BOOL bMute) SetMuteDebugOutput;
+			public function BOOL(ID3D12InfoQueue *self) GetMuteDebugOutput;
+		}
+		[CRepr]
+		public struct ID3D12InfoQueue1 : ID3D12InfoQueue
+		{
+			public const new Guid IID = .(0x2852dd88, 0xb484, 0x4c0c, 0xb6, 0xb1, 0x67, 0x16, 0x85, 0x00, 0xe6, 0x00);
+			
+			public function HRESULT(ID3D12InfoQueue1 *self, D3D12MessageFunc CallbackFunc, D3D12_MESSAGE_CALLBACK_FLAGS CallbackFilterFlags, void* pContext, uint32* pCallbackCookie) RegisterMessageCallback;
+			public function HRESULT(ID3D12InfoQueue1 *self, uint32 CallbackCookie) UnregisterMessageCallback;
+		}
+		[CRepr]
+		public struct ID3D12SDKConfiguration : IUnknown
+		{
+			public const new Guid IID = .(0xe9eb5314, 0x33aa, 0x42b2, 0xa7, 0x18, 0xd7, 0x7f, 0x58, 0xb1, 0xf1, 0xc7);
+			
+			public function HRESULT(ID3D12SDKConfiguration *self, uint32 SDKVersion, PSTR SDKPath) SetSDKVersion;
+		}
+		[CRepr]
+		public struct ID3D12GraphicsCommandList5 : ID3D12GraphicsCommandList4
+		{
+			public const new Guid IID = .(0x55050859, 0x4024, 0x474c, 0x87, 0xf5, 0x64, 0x72, 0xea, 0xee, 0x44, 0xea);
+			
+			public function void(ID3D12GraphicsCommandList5 *self, D3D12_SHADING_RATE baseShadingRate, D3D12_SHADING_RATE_COMBINER* combiners) RSSetShadingRate;
+			public function void(ID3D12GraphicsCommandList5 *self, ID3D12Resource* shadingRateImage) RSSetShadingRateImage;
+		}
+		[CRepr]
+		public struct ID3D12GraphicsCommandList6 : ID3D12GraphicsCommandList5
+		{
+			public const new Guid IID = .(0xc3827890, 0xe548, 0x4cfa, 0x96, 0xcf, 0x56, 0x89, 0xa9, 0x37, 0x0f, 0x80);
+			
+			public function void(ID3D12GraphicsCommandList6 *self, uint32 ThreadGroupCountX, uint32 ThreadGroupCountY, uint32 ThreadGroupCountZ) DispatchMesh;
+		}
+		[CRepr]
+		public struct ID3D12ShaderReflectionType
+		{
+			public const new Guid IID = .(0xe913c351, 0x783d, 0x48ca, 0xa1, 0xd1, 0x4f, 0x30, 0x62, 0x84, 0xad, 0x56);
+			
+			public function HRESULT(ID3D12ShaderReflectionType *self, D3D12_SHADER_TYPE_DESC* pDesc) GetDesc;
+			public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self, uint32 Index) GetMemberTypeByIndex;
+			public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self, PSTR Name) GetMemberTypeByName;
+			public function PSTR(ID3D12ShaderReflectionType *self, uint32 Index) GetMemberTypeName;
+			public function HRESULT(ID3D12ShaderReflectionType *self, ID3D12ShaderReflectionType* pType) IsEqual;
+			public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self) GetSubType;
+			public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self) GetBaseClass;
+			public function uint32(ID3D12ShaderReflectionType *self) GetNumInterfaces;
+			public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionType *self, uint32 uIndex) GetInterfaceByIndex;
+			public function HRESULT(ID3D12ShaderReflectionType *self, ID3D12ShaderReflectionType* pType) IsOfType;
+			public function HRESULT(ID3D12ShaderReflectionType *self, ID3D12ShaderReflectionType* pBase) ImplementsInterface;
+		}
+		[CRepr]
+		public struct ID3D12ShaderReflectionVariable
+		{
+			public const new Guid IID = .(0x8337a8a6, 0xa216, 0x444a, 0xb2, 0xf4, 0x31, 0x47, 0x33, 0xa7, 0x3a, 0xea);
+			
+			public function HRESULT(ID3D12ShaderReflectionVariable *self, D3D12_SHADER_VARIABLE_DESC* pDesc) GetDesc;
+			public function ID3D12ShaderReflectionType*(ID3D12ShaderReflectionVariable *self) GetType;
+			public function ID3D12ShaderReflectionConstantBuffer*(ID3D12ShaderReflectionVariable *self) GetBuffer;
+			public function uint32(ID3D12ShaderReflectionVariable *self, uint32 uArrayIndex) GetInterfaceSlot;
+		}
+		[CRepr]
+		public struct ID3D12ShaderReflectionConstantBuffer
+		{
+			public const new Guid IID = .(0xc59598b4, 0x48b3, 0x4869, 0xb9, 0xb1, 0xb1, 0x61, 0x8b, 0x14, 0xa8, 0xb7);
+			
+			public function HRESULT(ID3D12ShaderReflectionConstantBuffer *self, D3D12_SHADER_BUFFER_DESC* pDesc) GetDesc;
+			public function ID3D12ShaderReflectionVariable*(ID3D12ShaderReflectionConstantBuffer *self, uint32 Index) GetVariableByIndex;
+			public function ID3D12ShaderReflectionVariable*(ID3D12ShaderReflectionConstantBuffer *self, PSTR Name) GetVariableByName;
+		}
+		[CRepr]
+		public struct ID3D12ShaderReflection : IUnknown
+		{
+			public const new Guid IID = .(0x5a58797d, 0xa72c, 0x478d, 0x8b, 0xa2, 0xef, 0xc6, 0xb0, 0xef, 0xe8, 0x8e);
+			
+			public function HRESULT(ID3D12ShaderReflection *self, D3D12_SHADER_DESC* pDesc) GetDesc;
+			public function ID3D12ShaderReflectionConstantBuffer*(ID3D12ShaderReflection *self, uint32 Index) GetConstantBufferByIndex;
+			public function ID3D12ShaderReflectionConstantBuffer*(ID3D12ShaderReflection *self, PSTR Name) GetConstantBufferByName;
+			public function HRESULT(ID3D12ShaderReflection *self, uint32 ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDesc;
+			public function HRESULT(ID3D12ShaderReflection *self, uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) GetInputParameterDesc;
+			public function HRESULT(ID3D12ShaderReflection *self, uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) GetOutputParameterDesc;
+			public function HRESULT(ID3D12ShaderReflection *self, uint32 ParameterIndex, D3D12_SIGNATURE_PARAMETER_DESC* pDesc) GetPatchConstantParameterDesc;
+			public function ID3D12ShaderReflectionVariable*(ID3D12ShaderReflection *self, PSTR Name) GetVariableByName;
+			public function HRESULT(ID3D12ShaderReflection *self, PSTR Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDescByName;
+			public function uint32(ID3D12ShaderReflection *self) GetMovInstructionCount;
+			public function uint32(ID3D12ShaderReflection *self) GetMovcInstructionCount;
+			public function uint32(ID3D12ShaderReflection *self) GetConversionInstructionCount;
+			public function uint32(ID3D12ShaderReflection *self) GetBitwiseInstructionCount;
+			public function D3D_PRIMITIVE(ID3D12ShaderReflection *self) GetGSInputPrimitive;
+			public function BOOL(ID3D12ShaderReflection *self) IsSampleFrequencyShader;
+			public function uint32(ID3D12ShaderReflection *self) GetNumInterfaceSlots;
+			public function HRESULT(ID3D12ShaderReflection *self, D3D_FEATURE_LEVEL* pLevel) GetMinFeatureLevel;
+			public function uint32(ID3D12ShaderReflection *self, uint32* pSizeX, uint32* pSizeY, uint32* pSizeZ) GetThreadGroupSize;
+			public function uint64(ID3D12ShaderReflection *self) GetRequiresFlags;
+		}
+		[CRepr]
+		public struct ID3D12LibraryReflection : IUnknown
+		{
+			public const new Guid IID = .(0x8e349d19, 0x54db, 0x4a56, 0x9d, 0xc9, 0x11, 0x9d, 0x87, 0xbd, 0xb8, 0x04);
+			
+			public function HRESULT(ID3D12LibraryReflection *self, D3D12_LIBRARY_DESC* pDesc) GetDesc;
+			public function ID3D12FunctionReflection*(ID3D12LibraryReflection *self, int32 FunctionIndex) GetFunctionByIndex;
+		}
+		[CRepr]
+		public struct ID3D12FunctionReflection
+		{
+			public const new Guid IID = .(0x1108795c, 0x2772, 0x4ba9, 0xb2, 0xa8, 0xd4, 0x64, 0xdc, 0x7e, 0x27, 0x99);
+			
+			public function HRESULT(ID3D12FunctionReflection *self, D3D12_FUNCTION_DESC* pDesc) GetDesc;
+			public function ID3D12ShaderReflectionConstantBuffer*(ID3D12FunctionReflection *self, uint32 BufferIndex) GetConstantBufferByIndex;
+			public function ID3D12ShaderReflectionConstantBuffer*(ID3D12FunctionReflection *self, PSTR Name) GetConstantBufferByName;
+			public function HRESULT(ID3D12FunctionReflection *self, uint32 ResourceIndex, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDesc;
+			public function ID3D12ShaderReflectionVariable*(ID3D12FunctionReflection *self, PSTR Name) GetVariableByName;
+			public function HRESULT(ID3D12FunctionReflection *self, PSTR Name, D3D12_SHADER_INPUT_BIND_DESC* pDesc) GetResourceBindingDescByName;
+			public function ID3D12FunctionParameterReflection*(ID3D12FunctionReflection *self, int32 ParameterIndex) GetFunctionParameter;
+		}
+		[CRepr]
+		public struct ID3D12FunctionParameterReflection
+		{
+			public const new Guid IID = .(0xec25f42d, 0x7006, 0x4f2b, 0xb3, 0x3e, 0x02, 0xcc, 0x33, 0x75, 0x73, 0x3f);
+			
+			public function HRESULT(ID3D12FunctionParameterReflection *self, D3D12_PARAMETER_DESC* pDesc) GetDesc;
+		}
 		
 		// --- Functions ---
 		
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3D12SerializeRootSignature(D3D12_ROOT_SIGNATURE_DESC* pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, ID3DBlob* ppBlob, ID3DBlob* ppErrorBlob);
+		public static extern HRESULT D3D12SerializeRootSignature(D3D12_ROOT_SIGNATURE_DESC* pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob);
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D12CreateRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3D12SerializeVersionedRootSignature(D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature, ID3DBlob* ppBlob, ID3DBlob* ppErrorBlob);
+		public static extern HRESULT D3D12SerializeVersionedRootSignature(D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob);
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D12CreateVersionedRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT D3D12CreateDevice(IUnknown pAdapter, D3D_FEATURE_LEVEL MinimumFeatureLevel, Guid* riid, void** ppDevice);
+		public static extern HRESULT D3D12CreateDevice(IUnknown* pAdapter, D3D_FEATURE_LEVEL MinimumFeatureLevel, Guid* riid, void** ppDevice);
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT D3D12GetDebugInterface(Guid* riid, void** ppvDebug);
 		[Import("d3d12.dll"), CLink, CallingConvention(.Stdcall)]

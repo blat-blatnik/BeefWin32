@@ -177,25 +177,126 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IXmlReader {}
-		public struct IXmlResolver {}
-		public struct IXmlWriter {}
-		public struct IXmlWriterLite {}
+		[CRepr]
+		public struct IXmlReader : IUnknown
+		{
+			public const new Guid IID = .(0x7279fc81, 0x709d, 0x4095, 0xb6, 0x3d, 0x69, 0xfe, 0x4b, 0x0d, 0x90, 0x30);
+			
+			public function HRESULT(IXmlReader *self, IUnknown* pInput) SetInput;
+			public function HRESULT(IXmlReader *self, uint32 nProperty, int* ppValue) GetProperty;
+			public function HRESULT(IXmlReader *self, uint32 nProperty, int pValue) SetProperty;
+			public function HRESULT(IXmlReader *self, XmlNodeType* pNodeType) Read;
+			public function HRESULT(IXmlReader *self, XmlNodeType* pNodeType) GetNodeType;
+			public function HRESULT(IXmlReader *self) MoveToFirstAttribute;
+			public function HRESULT(IXmlReader *self) MoveToNextAttribute;
+			public function HRESULT(IXmlReader *self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) MoveToAttributeByName;
+			public function HRESULT(IXmlReader *self) MoveToElement;
+			public function HRESULT(IXmlReader *self, PWSTR* ppwszQualifiedName, uint32* pcwchQualifiedName) GetQualifiedName;
+			public function HRESULT(IXmlReader *self, PWSTR* ppwszNamespaceUri, uint32* pcwchNamespaceUri) GetNamespaceUri;
+			public function HRESULT(IXmlReader *self, PWSTR* ppwszLocalName, uint32* pcwchLocalName) GetLocalName;
+			public function HRESULT(IXmlReader *self, PWSTR* ppwszPrefix, uint32* pcwchPrefix) GetPrefix;
+			public function HRESULT(IXmlReader *self, PWSTR* ppwszValue, uint32* pcwchValue) GetValue;
+			public function HRESULT(IXmlReader *self, char16* pwchBuffer, uint32 cwchChunkSize, uint32* pcwchRead) ReadValueChunk;
+			public function HRESULT(IXmlReader *self, PWSTR* ppwszBaseUri, uint32* pcwchBaseUri) GetBaseUri;
+			public function BOOL(IXmlReader *self) IsDefault;
+			public function BOOL(IXmlReader *self) IsEmptyElement;
+			public function HRESULT(IXmlReader *self, uint32* pnLineNumber) GetLineNumber;
+			public function HRESULT(IXmlReader *self, uint32* pnLinePosition) GetLinePosition;
+			public function HRESULT(IXmlReader *self, uint32* pnAttributeCount) GetAttributeCount;
+			public function HRESULT(IXmlReader *self, uint32* pnDepth) GetDepth;
+			public function BOOL(IXmlReader *self) IsEOF;
+		}
+		[CRepr]
+		public struct IXmlResolver : IUnknown
+		{
+			public const new Guid IID = .(0x7279fc82, 0x709d, 0x4095, 0xb6, 0x3d, 0x69, 0xfe, 0x4b, 0x0d, 0x90, 0x30);
+			
+			public function HRESULT(IXmlResolver *self, PWSTR pwszBaseUri, PWSTR pwszPublicIdentifier, PWSTR pwszSystemIdentifier, IUnknown** ppResolvedInput) ResolveUri;
+		}
+		[CRepr]
+		public struct IXmlWriter : IUnknown
+		{
+			public const new Guid IID = .(0x7279fc88, 0x709d, 0x4095, 0xb6, 0x3d, 0x69, 0xfe, 0x4b, 0x0d, 0x90, 0x30);
+			
+			public function HRESULT(IXmlWriter *self, IUnknown* pOutput) SetOutput;
+			public function HRESULT(IXmlWriter *self, uint32 nProperty, int* ppValue) GetProperty;
+			public function HRESULT(IXmlWriter *self, uint32 nProperty, int pValue) SetProperty;
+			public function HRESULT(IXmlWriter *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteAttributeString;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszText) WriteCData;
+			public function HRESULT(IXmlWriter *self, char16 wch) WriteCharEntity;
+			public function HRESULT(IXmlWriter *self, char16* pwch, uint32 cwch) WriteChars;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszComment) WriteComment;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri, PWSTR pwszValue) WriteElementString;
+			public function HRESULT(IXmlWriter *self) WriteEndDocument;
+			public function HRESULT(IXmlWriter *self) WriteEndElement;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszName) WriteEntityRef;
+			public function HRESULT(IXmlWriter *self) WriteFullEndElement;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszName) WriteName;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszNmToken) WriteNmToken;
+			public function HRESULT(IXmlWriter *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNode;
+			public function HRESULT(IXmlWriter *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteQualifiedName;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszData) WriteRaw;
+			public function HRESULT(IXmlWriter *self, char16* pwch, uint32 cwch) WriteRawChars;
+			public function HRESULT(IXmlWriter *self, XmlStandalone standalone) WriteStartDocument;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszPrefix, PWSTR pwszLocalName, PWSTR pwszNamespaceUri) WriteStartElement;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszText) WriteString;
+			public function HRESULT(IXmlWriter *self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
+			public function HRESULT(IXmlWriter *self, PWSTR pwszWhitespace) WriteWhitespace;
+			public function HRESULT(IXmlWriter *self) Flush;
+		}
+		[CRepr]
+		public struct IXmlWriterLite : IUnknown
+		{
+			public const new Guid IID = .(0x862494c6, 0x1310, 0x4aad, 0xb3, 0xcd, 0x2d, 0xbe, 0xeb, 0xf6, 0x70, 0xd3);
+			
+			public function HRESULT(IXmlWriterLite *self, IUnknown* pOutput) SetOutput;
+			public function HRESULT(IXmlWriterLite *self, uint32 nProperty, int* ppValue) GetProperty;
+			public function HRESULT(IXmlWriterLite *self, uint32 nProperty, int pValue) SetProperty;
+			public function HRESULT(IXmlWriterLite *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteAttributes;
+			public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName, char16* pwszValue, uint32 cwszValue) WriteAttributeString;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszText) WriteCData;
+			public function HRESULT(IXmlWriterLite *self, char16 wch) WriteCharEntity;
+			public function HRESULT(IXmlWriterLite *self, char16* pwch, uint32 cwch) WriteChars;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszComment) WriteComment;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszName, PWSTR pwszPublicId, PWSTR pwszSystemId, PWSTR pwszSubset) WriteDocType;
+			public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName, PWSTR pwszValue) WriteElementString;
+			public function HRESULT(IXmlWriterLite *self) WriteEndDocument;
+			public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName) WriteEndElement;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszName) WriteEntityRef;
+			public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName) WriteFullEndElement;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszName) WriteName;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszNmToken) WriteNmToken;
+			public function HRESULT(IXmlWriterLite *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNode;
+			public function HRESULT(IXmlWriterLite *self, IXmlReader* pReader, BOOL fWriteDefaultAttributes) WriteNodeShallow;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszName, PWSTR pwszText) WriteProcessingInstruction;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszData) WriteRaw;
+			public function HRESULT(IXmlWriterLite *self, char16* pwch, uint32 cwch) WriteRawChars;
+			public function HRESULT(IXmlWriterLite *self, XmlStandalone standalone) WriteStartDocument;
+			public function HRESULT(IXmlWriterLite *self, char16* pwszQName, uint32 cwszQName) WriteStartElement;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszText) WriteString;
+			public function HRESULT(IXmlWriterLite *self, char16 wchLow, char16 wchHigh) WriteSurrogateCharEntity;
+			public function HRESULT(IXmlWriterLite *self, PWSTR pwszWhitespace) WriteWhitespace;
+			public function HRESULT(IXmlWriterLite *self) Flush;
+		}
 		
 		// --- Functions ---
 		
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateXmlReader(Guid* riid, void** ppvObject, IMalloc pMalloc);
+		public static extern HRESULT CreateXmlReader(Guid* riid, void** ppvObject, IMalloc* pMalloc);
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateXmlReaderInputWithEncodingCodePage(IUnknown pInputStream, IMalloc pMalloc, uint32 nEncodingCodePage, BOOL fEncodingHint, PWSTR pwszBaseUri, IUnknown* ppInput);
+		public static extern HRESULT CreateXmlReaderInputWithEncodingCodePage(IUnknown* pInputStream, IMalloc* pMalloc, uint32 nEncodingCodePage, BOOL fEncodingHint, PWSTR pwszBaseUri, IUnknown** ppInput);
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateXmlReaderInputWithEncodingName(IUnknown pInputStream, IMalloc pMalloc, PWSTR pwszEncodingName, BOOL fEncodingHint, PWSTR pwszBaseUri, IUnknown* ppInput);
+		public static extern HRESULT CreateXmlReaderInputWithEncodingName(IUnknown* pInputStream, IMalloc* pMalloc, PWSTR pwszEncodingName, BOOL fEncodingHint, PWSTR pwszBaseUri, IUnknown** ppInput);
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateXmlWriter(Guid* riid, void** ppvObject, IMalloc pMalloc);
+		public static extern HRESULT CreateXmlWriter(Guid* riid, void** ppvObject, IMalloc* pMalloc);
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateXmlWriterOutputWithEncodingCodePage(IUnknown pOutputStream, IMalloc pMalloc, uint32 nEncodingCodePage, IUnknown* ppOutput);
+		public static extern HRESULT CreateXmlWriterOutputWithEncodingCodePage(IUnknown* pOutputStream, IMalloc* pMalloc, uint32 nEncodingCodePage, IUnknown** ppOutput);
 		[Import("xmllite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateXmlWriterOutputWithEncodingName(IUnknown pOutputStream, IMalloc pMalloc, PWSTR pwszEncodingName, IUnknown* ppOutput);
+		public static extern HRESULT CreateXmlWriterOutputWithEncodingName(IUnknown* pOutputStream, IMalloc* pMalloc, PWSTR pwszEncodingName, IUnknown** ppOutput);
 		
 	}
 }

@@ -1706,7 +1706,7 @@ namespace Win32
 		[CRepr]
 		public struct DML_BINDING_TABLE_DESC
 		{
-			public IDMLDispatchable Dispatchable;
+			public IDMLDispatchable* Dispatchable;
 			public D3D12_CPU_DESCRIPTOR_HANDLE CPUDescriptorHandle;
 			public D3D12_GPU_DESCRIPTOR_HANDLE GPUDescriptorHandle;
 			public uint32 SizeInDescriptors;
@@ -1727,7 +1727,7 @@ namespace Win32
 		[CRepr]
 		public struct DML_BUFFER_BINDING
 		{
-			public ID3D12Resource Buffer;
+			public ID3D12Resource* Buffer;
 			public uint64 Offset;
 			public uint64 SizeInBytes;
 		}
@@ -1777,7 +1777,7 @@ namespace Win32
 		[CRepr]
 		public struct DML_OPERATOR_GRAPH_NODE_DESC
 		{
-			public IDMLOperator Operator;
+			public IDMLOperator* Operator;
 			public PSTR Name;
 		}
 		[CRepr]
@@ -1797,25 +1797,110 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct IDMLObject {}
-		public struct IDMLDevice {}
-		public struct IDMLDeviceChild {}
-		public struct IDMLPageable {}
-		public struct IDMLOperator {}
-		public struct IDMLDispatchable {}
-		public struct IDMLCompiledOperator {}
-		public struct IDMLOperatorInitializer {}
-		public struct IDMLBindingTable {}
-		public struct IDMLCommandRecorder {}
-		public struct IDMLDebugDevice {}
-		public struct IDMLDevice1 {}
+		[CRepr]
+		public struct IDMLObject : IUnknown
+		{
+			public const new Guid IID = .(0xc8263aac, 0x9e0c, 0x4a2d, 0x9b, 0x8e, 0x00, 0x75, 0x21, 0xa3, 0x31, 0x7c);
+			
+			public function HRESULT(IDMLObject *self, Guid* guid, uint32* dataSize, void* data) GetPrivateData;
+			public function HRESULT(IDMLObject *self, Guid* guid, uint32 dataSize, void* data) SetPrivateData;
+			public function HRESULT(IDMLObject *self, Guid* guid, IUnknown* data) SetPrivateDataInterface;
+			public function HRESULT(IDMLObject *self, PWSTR name) SetName;
+		}
+		[CRepr]
+		public struct IDMLDevice : IDMLObject
+		{
+			public const new Guid IID = .(0x6dbd6437, 0x96fd, 0x423f, 0xa9, 0x8c, 0xae, 0x5e, 0x7c, 0x2a, 0x57, 0x3f);
+			
+			public function HRESULT(IDMLDevice *self, DML_FEATURE feature, uint32 featureQueryDataSize, void* featureQueryData, uint32 featureSupportDataSize, void* featureSupportData) CheckFeatureSupport;
+			public function HRESULT(IDMLDevice *self, DML_OPERATOR_DESC* desc, Guid* riid, void** ppv) CreateOperator;
+			public function HRESULT(IDMLDevice *self, IDMLOperator* op, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) CompileOperator;
+			public function HRESULT(IDMLDevice *self, uint32 operatorCount, IDMLCompiledOperator** operators, Guid* riid, void** ppv) CreateOperatorInitializer;
+			public function HRESULT(IDMLDevice *self, Guid* riid, void** ppv) CreateCommandRecorder;
+			public function HRESULT(IDMLDevice *self, DML_BINDING_TABLE_DESC* desc, Guid* riid, void** ppv) CreateBindingTable;
+			public function HRESULT(IDMLDevice *self, uint32 count, IDMLPageable** ppObjects) Evict;
+			public function HRESULT(IDMLDevice *self, uint32 count, IDMLPageable** ppObjects) MakeResident;
+			public function HRESULT(IDMLDevice *self) GetDeviceRemovedReason;
+			public function HRESULT(IDMLDevice *self, Guid* riid, void** ppv) GetParentDevice;
+		}
+		[CRepr]
+		public struct IDMLDeviceChild : IDMLObject
+		{
+			public const new Guid IID = .(0x27e83142, 0x8165, 0x49e3, 0x97, 0x4e, 0x2f, 0xd6, 0x6e, 0x4c, 0xb6, 0x9d);
+			
+			public function HRESULT(IDMLDeviceChild *self, Guid* riid, void** ppv) GetDevice;
+		}
+		[CRepr]
+		public struct IDMLPageable : IDMLDeviceChild
+		{
+			public const new Guid IID = .(0xb1ab0825, 0x4542, 0x4a4b, 0x86, 0x17, 0x6d, 0xde, 0x6e, 0x8f, 0x62, 0x01);
+			
+		}
+		[CRepr]
+		public struct IDMLOperator : IDMLDeviceChild
+		{
+			public const new Guid IID = .(0x26caae7a, 0x3081, 0x4633, 0x95, 0x81, 0x22, 0x6f, 0xbe, 0x57, 0x69, 0x5d);
+			
+		}
+		[CRepr]
+		public struct IDMLDispatchable : IDMLPageable
+		{
+			public const new Guid IID = .(0xdcb821a8, 0x1039, 0x441e, 0x9f, 0x1c, 0xb1, 0x75, 0x9c, 0x2f, 0x3c, 0xec);
+			
+			public function DML_BINDING_PROPERTIES(IDMLDispatchable *self) GetBindingProperties;
+		}
+		[CRepr]
+		public struct IDMLCompiledOperator : IDMLDispatchable
+		{
+			public const new Guid IID = .(0x6b15e56a, 0xbf5c, 0x4902, 0x92, 0xd8, 0xda, 0x3a, 0x65, 0x0a, 0xfe, 0xa4);
+			
+		}
+		[CRepr]
+		public struct IDMLOperatorInitializer : IDMLDispatchable
+		{
+			public const new Guid IID = .(0x427c1113, 0x435c, 0x469c, 0x86, 0x76, 0x4d, 0x5d, 0xd0, 0x72, 0xf8, 0x13);
+			
+			public function HRESULT(IDMLOperatorInitializer *self, uint32 operatorCount, IDMLCompiledOperator** operators) Reset;
+		}
+		[CRepr]
+		public struct IDMLBindingTable : IDMLDeviceChild
+		{
+			public const new Guid IID = .(0x29c687dc, 0xde74, 0x4e3b, 0xab, 0x00, 0x11, 0x68, 0xf2, 0xfc, 0x3c, 0xfc);
+			
+			public function void(IDMLBindingTable *self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindInputs;
+			public function void(IDMLBindingTable *self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindOutputs;
+			public function void(IDMLBindingTable *self, DML_BINDING_DESC* binding) BindTemporaryResource;
+			public function void(IDMLBindingTable *self, DML_BINDING_DESC* binding) BindPersistentResource;
+			public function HRESULT(IDMLBindingTable *self, DML_BINDING_TABLE_DESC* desc) Reset;
+		}
+		[CRepr]
+		public struct IDMLCommandRecorder : IDMLDeviceChild
+		{
+			public const new Guid IID = .(0xe6857a76, 0x2e3e, 0x4fdd, 0xbf, 0xf4, 0x5d, 0x2b, 0xa1, 0x0f, 0xb4, 0x53);
+			
+			public function void(IDMLCommandRecorder *self, ID3D12CommandList* commandList, IDMLDispatchable* dispatchable, IDMLBindingTable* bindings) RecordDispatch;
+		}
+		[CRepr]
+		public struct IDMLDebugDevice : IUnknown
+		{
+			public const new Guid IID = .(0x7d6f3ac9, 0x394a, 0x4ac3, 0x92, 0xa7, 0x39, 0x0c, 0xc5, 0x7a, 0x82, 0x17);
+			
+			public function void(IDMLDebugDevice *self, BOOL mute) SetMuteDebugOutput;
+		}
+		[CRepr]
+		public struct IDMLDevice1 : IDMLDevice
+		{
+			public const new Guid IID = .(0xa0884f9a, 0xd2be, 0x4355, 0xaa, 0x5d, 0x59, 0x01, 0x28, 0x1a, 0xd1, 0xd2);
+			
+			public function HRESULT(IDMLDevice1 *self, DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) CompileGraph;
+		}
 		
 		// --- Functions ---
 		
 		[Import("directml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DMLCreateDevice(ID3D12Device d3d12Device, DML_CREATE_DEVICE_FLAGS flags, Guid* riid, void** ppv);
+		public static extern HRESULT DMLCreateDevice(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, Guid* riid, void** ppv);
 		[Import("directml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DMLCreateDevice1(ID3D12Device d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, Guid* riid, void** ppv);
+		public static extern HRESULT DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, Guid* riid, void** ppv);
 		
 	}
 }

@@ -5735,12 +5735,103 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ICertSrvSetupKeyInformation {}
-		public struct ICertSrvSetupKeyInformationCollection {}
-		public struct ICertSrvSetup {}
-		public struct IMSCEPSetup {}
-		public struct ICertificateEnrollmentServerSetup {}
-		public struct ICertificateEnrollmentPolicyServerSetup {}
+		[CRepr]
+		public struct ICertSrvSetupKeyInformation : IDispatch
+		{
+			public const new Guid IID = .(0x6ba73778, 0x36da, 0x4c39, 0x8a, 0x85, 0xbc, 0xfa, 0x7d, 0x00, 0x07, 0x93);
+			
+			public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_ProviderName;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_ProviderName;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, int32* pVal) get_Length;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, int32 lVal) put_Length;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, int16* pVal) get_Existing;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, int16 bVal) put_Existing;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_ContainerName;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_ContainerName;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_HashAlgorithm;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_HashAlgorithm;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, VARIANT* pVal) get_ExistingCACertificate;
+			public function HRESULT(ICertSrvSetupKeyInformation *self, VARIANT varVal) put_ExistingCACertificate;
+		}
+		[CRepr]
+		public struct ICertSrvSetupKeyInformationCollection : IDispatch
+		{
+			public const new Guid IID = .(0xe65c8b00, 0xe58f, 0x41f9, 0xa9, 0xec, 0xa2, 0x8d, 0x74, 0x27, 0xc8, 0x44);
+			
+			public function HRESULT(ICertSrvSetupKeyInformationCollection *self, IUnknown** ppVal) get__NewEnum;
+			public function HRESULT(ICertSrvSetupKeyInformationCollection *self, int32 Index, VARIANT* pVal) get_Item;
+			public function HRESULT(ICertSrvSetupKeyInformationCollection *self, int32* pVal) get_Count;
+			public function HRESULT(ICertSrvSetupKeyInformationCollection *self, ICertSrvSetupKeyInformation* pIKeyInformation) Add;
+		}
+		[CRepr]
+		public struct ICertSrvSetup : IDispatch
+		{
+			public const new Guid IID = .(0xb760a1bb, 0x4784, 0x44c0, 0x8f, 0x12, 0x55, 0x5f, 0x07, 0x80, 0xff, 0x25);
+			
+			public function HRESULT(ICertSrvSetup *self, int32* pVal) get_CAErrorId;
+			public function HRESULT(ICertSrvSetup *self, BSTR* pVal) get_CAErrorString;
+			public function HRESULT(ICertSrvSetup *self, int16 bServer, int16 bClient) InitializeDefaults;
+			public function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, VARIANT* pPropertyValue) GetCASetupProperty;
+			public function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, VARIANT* pPropertyValue) SetCASetupProperty;
+			public function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, int16* pbEditable) IsPropertyEditable;
+			public function HRESULT(ICertSrvSetup *self, VARIANT* pCATypes) GetSupportedCATypes;
+			public function HRESULT(ICertSrvSetup *self, VARIANT* pVal) GetProviderNameList;
+			public function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetKeyLengthList;
+			public function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetHashAlgorithmList;
+			public function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetPrivateKeyContainerList;
+			public function HRESULT(ICertSrvSetup *self, ICertSrvSetupKeyInformationCollection** ppVal) GetExistingCACertificates;
+			public function HRESULT(ICertSrvSetup *self, BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, ICertSrvSetupKeyInformation** ppVal) CAImportPFX;
+			public function HRESULT(ICertSrvSetup *self, BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) SetCADistinguishedName;
+			public function HRESULT(ICertSrvSetup *self, BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) SetDatabaseInformation;
+			public function HRESULT(ICertSrvSetup *self, BSTR bstrCAConfiguration) SetParentCAInformation;
+			public function HRESULT(ICertSrvSetup *self, BSTR bstrCAConfiguration) SetWebCAInformation;
+			public function HRESULT(ICertSrvSetup *self) Install;
+			public function HRESULT(ICertSrvSetup *self, int16 bClientOnly) PreUnInstall;
+			public function HRESULT(ICertSrvSetup *self) PostUnInstall;
+		}
+		[CRepr]
+		public struct IMSCEPSetup : IDispatch
+		{
+			public const new Guid IID = .(0x4f7761bb, 0x9f3b, 0x4592, 0x9e, 0xe0, 0x9a, 0x73, 0x25, 0x9c, 0x31, 0x3e);
+			
+			public function HRESULT(IMSCEPSetup *self, int32* pVal) get_MSCEPErrorId;
+			public function HRESULT(IMSCEPSetup *self, BSTR* pVal) get_MSCEPErrorString;
+			public function HRESULT(IMSCEPSetup *self) InitializeDefaults;
+			public function HRESULT(IMSCEPSetup *self, MSCEPSetupProperty propertyId, VARIANT* pVal) GetMSCEPSetupProperty;
+			public function HRESULT(IMSCEPSetup *self, MSCEPSetupProperty propertyId, VARIANT* pPropertyValue) SetMSCEPSetupProperty;
+			public function HRESULT(IMSCEPSetup *self, BSTR bstrUserName, BSTR bstrPassword) SetAccountInformation;
+			public function HRESULT(IMSCEPSetup *self, int16* pbEmpty) IsMSCEPStoreEmpty;
+			public function HRESULT(IMSCEPSetup *self, int16 bExchange, VARIANT* pVal) GetProviderNameList;
+			public function HRESULT(IMSCEPSetup *self, int16 bExchange, BSTR bstrProviderName, VARIANT* pVal) GetKeyLengthList;
+			public function HRESULT(IMSCEPSetup *self) Install;
+			public function HRESULT(IMSCEPSetup *self) PreUnInstall;
+			public function HRESULT(IMSCEPSetup *self) PostUnInstall;
+		}
+		[CRepr]
+		public struct ICertificateEnrollmentServerSetup : IDispatch
+		{
+			public const new Guid IID = .(0x70027fdb, 0x9dd9, 0x4921, 0x89, 0x44, 0xb3, 0x5c, 0xb3, 0x1b, 0xd2, 0xec);
+			
+			public function HRESULT(ICertificateEnrollmentServerSetup *self, BSTR* pVal) get_ErrorString;
+			public function HRESULT(ICertificateEnrollmentServerSetup *self) InitializeInstallDefaults;
+			public function HRESULT(ICertificateEnrollmentServerSetup *self, CESSetupProperty propertyId, VARIANT* pPropertyValue) GetProperty;
+			public function HRESULT(ICertificateEnrollmentServerSetup *self, CESSetupProperty propertyId, VARIANT* pPropertyValue) SetProperty;
+			public function HRESULT(ICertificateEnrollmentServerSetup *self, BSTR bstrUsername, BSTR bstrPassword) SetApplicationPoolCredentials;
+			public function HRESULT(ICertificateEnrollmentServerSetup *self) Install;
+			public function HRESULT(ICertificateEnrollmentServerSetup *self, VARIANT* pCAConfig, VARIANT* pAuthentication) UnInstall;
+		}
+		[CRepr]
+		public struct ICertificateEnrollmentPolicyServerSetup : IDispatch
+		{
+			public const new Guid IID = .(0x859252cc, 0x238c, 0x4a88, 0xb8, 0xfd, 0xa3, 0x7e, 0x7d, 0x04, 0xe6, 0x8b);
+			
+			public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, BSTR* pVal) get_ErrorString;
+			public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self) InitializeInstallDefaults;
+			public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, CEPSetupProperty propertyId, VARIANT* pPropertyValue) GetProperty;
+			public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, CEPSetupProperty propertyId, VARIANT* pPropertyValue) SetProperty;
+			public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self) Install;
+			public function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, VARIANT* pAuthKeyBasedRenewal) UnInstall;
+		}
 		
 		// --- Functions ---
 		

@@ -79,11 +79,51 @@ namespace Win32
 		
 		// --- COM Interfaces ---
 		
-		public struct ICatalog {}
-		public struct IComponentUtil {}
-		public struct IPackageUtil {}
-		public struct IRemoteComponentUtil {}
-		public struct IRoleAssociationUtil {}
+		[CRepr]
+		public struct ICatalog : IDispatch
+		{
+			public const new Guid IID = .(0x6eb22870, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
+			
+			public function HRESULT(ICatalog *self, BSTR bstrCollName, IDispatch** ppCatalogCollection) GetCollection;
+			public function HRESULT(ICatalog *self, BSTR bstrConnectString, IDispatch** ppCatalogCollection) Connect;
+			public function HRESULT(ICatalog *self, int32* retval) get_MajorVersion;
+			public function HRESULT(ICatalog *self, int32* retval) get_MinorVersion;
+		}
+		[CRepr]
+		public struct IComponentUtil : IDispatch
+		{
+			public const new Guid IID = .(0x6eb22873, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
+			
+			public function HRESULT(IComponentUtil *self, BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) InstallComponent;
+			public function HRESULT(IComponentUtil *self, BSTR bstrCLSID) ImportComponent;
+			public function HRESULT(IComponentUtil *self, BSTR bstrProgID) ImportComponentByName;
+			public function HRESULT(IComponentUtil *self, BSTR bstrDLLFile, BSTR bstrTypelibFile, SAFEARRAY** aCLSIDs) GetCLSIDs;
+		}
+		[CRepr]
+		public struct IPackageUtil : IDispatch
+		{
+			public const new Guid IID = .(0x6eb22874, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
+			
+			public function HRESULT(IPackageUtil *self, BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) InstallPackage;
+			public function HRESULT(IPackageUtil *self, BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) ExportPackage;
+			public function HRESULT(IPackageUtil *self, BSTR bstrPackageID) ShutdownPackage;
+		}
+		[CRepr]
+		public struct IRemoteComponentUtil : IDispatch
+		{
+			public const new Guid IID = .(0x6eb22875, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
+			
+			public function HRESULT(IRemoteComponentUtil *self, BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) InstallRemoteComponent;
+			public function HRESULT(IRemoteComponentUtil *self, BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) InstallRemoteComponentByName;
+		}
+		[CRepr]
+		public struct IRoleAssociationUtil : IDispatch
+		{
+			public const new Guid IID = .(0x6eb22876, 0x8a19, 0x11d0, 0x81, 0xb6, 0x00, 0xa0, 0xc9, 0x23, 0x1c, 0x29);
+			
+			public function HRESULT(IRoleAssociationUtil *self, BSTR bstrRoleID) AssociateRole;
+			public function HRESULT(IRoleAssociationUtil *self, BSTR bstrRoleName) AssociateRoleByName;
+		}
 		
 	}
 }
