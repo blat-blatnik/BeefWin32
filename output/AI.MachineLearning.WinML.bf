@@ -49,7 +49,7 @@ namespace Win32
 		}
 		public enum WINML_RUNTIME_TYPE : int32
 		{
-			WINML_RUNTIME_CNTK = 0,
+			CNTK = 0,
 		}
 		public enum MLOperatorAttributeType : uint32
 		{

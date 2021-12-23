@@ -159,11 +159,11 @@ namespace Win32
 		}
 		public enum CRYPTUI_WIZ_EXPORT_SUBJECT : uint32
 		{
-			ERT_CONTEXT = 1,
-			TL_CONTEXT = 2,
-			RL_CONTEXT = 3,
-			ERT_STORE = 4,
-			ERT_STORE_CERTIFICATES_ONLY = 5,
+			CERT_CONTEXT = 1,
+			CTL_CONTEXT = 2,
+			CRL_CONTEXT = 3,
+			CERT_STORE = 4,
+			CERT_STORE_CERTIFICATES_ONLY = 5,
 		}
 		public enum CRYPTUI_WIZ_DIGITAL_SIGN_SIG_TYPE : uint32
 		{

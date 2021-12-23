@@ -129,16 +129,39 @@ def find_common_enum_prefix(enum_name: str, value_names: list[str]) -> str:
         return ''
     if len(value_names) == 0:
         return ''
-    elif len(value_names) == 1:
-        # TODO: We can still find a prefix for example if the enum name is AN_ENUM and the member name is AN_ENUM_A -> A.
-        return ''
+    
+    def split_name_into_parts(name: str) -> list[str]:
+        # A_B_C -> [A, B, C]
+        # AbcAbc -> [Abc, Abc]
+        # A_AbcAbc -> [A, Abc, Abc]
+        split_points = []
+        prev = ''
+        for i, curr in enumerate(name):
+            if prev.islower() and curr.isupper():
+                split_points.append(i)
+            elif prev == '_' and curr != '_':
+                split_points.append(i)
+            prev = curr
+        if len(split_points) == 0:
+            return [name]
+        parts = []
+        for i, curr in enumerate(split_points):
+            prev = 0 if i == 0 else split_points[i - 1]
+            parts.append(name[prev:curr])
+        parts.append(name[split_points[-1]:])
+        return parts
+
+    if len(value_names) == 1:
+        parts_to_match = [split_name_into_parts(enum_name), split_name_into_parts(value_names[0])]
     else:
-        # TODO: Need to be smarter about this! "ENUM_ABC" + "ENUM_AB" -> "BC" + "B"
-        first_name = value_names[0]
-        index = 1
-        while all(index < len(name) and name.startswith(first_name[:index]) for name in value_names):
-            index += 1
-        return first_name[:index - 1]
+        parts_to_match = [split_name_into_parts(name) for name in value_names]
+
+    first_parts = parts_to_match[0]
+    index = 0
+    while all(index + 1 < len(parts) and parts[index] == first_parts[index] for parts in parts_to_match):
+        index += 1
+    return ''.join(first_parts[:index])
+
 
 def get_type_name(type: dict) -> str:
     kind = type['Kind']

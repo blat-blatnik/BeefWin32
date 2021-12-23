@@ -22,7 +22,7 @@ namespace Win32
 		}
 		public enum SRPHOSTING_VERSION : int32
 		{
-			SRPHOSTING_VERSION1 = 1,
+			VERSION1 = 1,
 		}
 		
 		// --- Structs ---

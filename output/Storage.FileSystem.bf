@@ -439,22 +439,22 @@ namespace Win32
 		[AllowDuplicates]
 		public enum VS_FIXEDFILEINFO_FILE_OS : int32
 		{
-			UNKNOWN = 0,
-			DOS = 65536,
-			OS216 = 131072,
-			OS232 = 196608,
-			NT = 262144,
-			WINCE = 327680,
-			_BASE = 0,
-			_WINDOWS16 = 1,
-			_PM16 = 2,
-			_PM32 = 3,
-			_WINDOWS32 = 4,
-			DOS_WINDOWS16 = 65537,
-			DOS_WINDOWS32 = 65540,
-			OS216_PM16 = 131074,
-			OS232_PM32 = 196611,
-			NT_WINDOWS32 = 262148,
+			VOS_UNKNOWN = 0,
+			VOS_DOS = 65536,
+			VOS_OS216 = 131072,
+			VOS_OS232 = 196608,
+			VOS_NT = 262144,
+			VOS_WINCE = 327680,
+			VOS__BASE = 0,
+			VOS__WINDOWS16 = 1,
+			VOS__PM16 = 2,
+			VOS__PM32 = 3,
+			VOS__WINDOWS32 = 4,
+			VOS_DOS_WINDOWS16 = 65537,
+			VOS_DOS_WINDOWS32 = 65540,
+			VOS_OS216_PM16 = 131074,
+			VOS_OS232_PM32 = 196611,
+			VOS_NT_WINDOWS32 = 262148,
 		}
 		public enum VS_FIXEDFILEINFO_FILE_TYPE : int32
 		{
@@ -1035,15 +1035,15 @@ namespace Win32
 		}
 		public enum NtmsLibRequestFlags : int32
 		{
-			AUTOPURGE = 1,
-			FAILEDPURGE = 2,
+			NOAUTOPURGE = 1,
+			NOFAILEDPURGE = 2,
 		}
 		public enum NtmsOpRequestFlags : int32
 		{
-			AUTOPURGE = 1,
-			FAILEDPURGE = 2,
-			ALERTS = 16,
-			TRAYICON = 32,
+			NOAUTOPURGE = 1,
+			NOFAILEDPURGE = 2,
+			NOALERTS = 16,
+			NOTRAYICON = 32,
 		}
 		public enum NtmsMediaPoolPolicy : int32
 		{
@@ -1102,10 +1102,10 @@ namespace Win32
 		}
 		public enum NtmsUIOperations : int32
 		{
-			DEST_ADD = 1,
-			DEST_DELETE = 2,
-			DEST_DELETEALL = 3,
-			OPERATION_MAX = 4,
+			UIDEST_ADD = 1,
+			UIDEST_DELETE = 2,
+			UIDEST_DELETEALL = 3,
+			UIOPERATION_MAX = 4,
 		}
 		public enum NtmsNotificationOperations : int32
 		{
@@ -1203,16 +1203,16 @@ namespace Win32
 		}
 		public enum IORING_CREATE_REQUIRED_FLAGS : int32
 		{
-			IORING_CREATE_REQUIRED_FLAGS_NONE = 0,
+			FLAGS_NONE = 0,
 		}
 		public enum IORING_CREATE_ADVISORY_FLAGS : int32
 		{
-			IORING_CREATE_ADVISORY_FLAGS_NONE = 0,
+			FLAGS_NONE = 0,
 		}
 		public enum IORING_REF_KIND : int32
 		{
-			AW = 0,
-			EGISTERED = 1,
+			RAW = 0,
+			REGISTERED = 1,
 		}
 		public enum TRANSACTION_OUTCOME : int32
 		{
@@ -1222,28 +1222,28 @@ namespace Win32
 		}
 		public enum STORAGE_BUS_TYPE : int32
 		{
-			Unknown = 0,
-			Scsi = 1,
-			Atapi = 2,
-			Ata = 3,
-			_1394 = 4,
-			Ssa = 5,
-			Fibre = 6,
-			Usb = 7,
-			RAID = 8,
-			iScsi = 9,
-			Sas = 10,
-			Sata = 11,
-			Sd = 12,
-			Mmc = 13,
-			Virtual = 14,
-			FileBackedVirtual = 15,
-			Spaces = 16,
-			Nvme = 17,
-			SCM = 18,
-			Ufs = 19,
-			Max = 20,
-			MaxReserved = 127,
+			TypeUnknown = 0,
+			TypeScsi = 1,
+			TypeAtapi = 2,
+			TypeAta = 3,
+			Type1394 = 4,
+			TypeSsa = 5,
+			TypeFibre = 6,
+			TypeUsb = 7,
+			TypeRAID = 8,
+			TypeiScsi = 9,
+			TypeSas = 10,
+			TypeSata = 11,
+			TypeSd = 12,
+			TypeMmc = 13,
+			TypeVirtual = 14,
+			TypeFileBackedVirtual = 15,
+			TypeSpaces = 16,
+			TypeNvme = 17,
+			TypeSCM = 18,
+			TypeUfs = 19,
+			TypeMax = 20,
+			TypeMaxReserved = 127,
 		}
 		public enum COPYFILE2_MESSAGE_TYPE : int32
 		{

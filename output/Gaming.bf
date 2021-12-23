@@ -15,8 +15,8 @@ namespace Win32
 		}
 		public enum GAMESTATS_OPEN_TYPE : int32
 		{
-			RCREATE = 0,
-			NLY = 1,
+			OPENORCREATE = 0,
+			OPENONLY = 1,
 		}
 		public enum GAMESTATS_OPEN_RESULT : int32
 		{

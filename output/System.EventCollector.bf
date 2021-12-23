@@ -95,8 +95,8 @@ namespace Win32
 		}
 		public enum EC_SUBSCRIPTION_DELIVERY_MODE : int32
 		{
-			ll = 1,
-			sh = 2,
+			Pull = 1,
+			Push = 2,
 		}
 		public enum EC_SUBSCRIPTION_CONTENT_FORMAT : int32
 		{

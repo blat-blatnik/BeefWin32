@@ -1685,21 +1685,21 @@ namespace Win32
 		}
 		public enum MSV1_0_LOGON_SUBMIT_TYPE : int32
 		{
-			InteractiveLogon = 2,
-			Lm20Logon = 3,
-			NetworkLogon = 4,
-			SubAuthLogon = 5,
-			WorkstationUnlockLogon = 7,
-			S4ULogon = 12,
-			VirtualLogon = 82,
-			NoElevationLogon = 83,
-			LuidLogon = 84,
+			_0InteractiveLogon = 2,
+			_0Lm20Logon = 3,
+			_0NetworkLogon = 4,
+			_0SubAuthLogon = 5,
+			_0WorkstationUnlockLogon = 7,
+			_0S4ULogon = 12,
+			_0VirtualLogon = 82,
+			_0NoElevationLogon = 83,
+			_0LuidLogon = 84,
 		}
 		public enum MSV1_0_PROFILE_BUFFER_TYPE : int32
 		{
-			InteractiveProfile = 2,
-			Lm20LogonProfile = 3,
-			SmartCardProfile = 4,
+			_0InteractiveProfile = 2,
+			_0Lm20LogonProfile = 3,
+			_0SmartCardProfile = 4,
 		}
 		public enum MSV1_0_CREDENTIAL_KEY_TYPE : int32
 		{
@@ -1725,31 +1725,31 @@ namespace Win32
 		}
 		public enum MSV1_0_PROTOCOL_MESSAGE_TYPE : int32
 		{
-			Lm20ChallengeRequest = 0,
-			Lm20GetChallengeResponse = 1,
-			EnumerateUsers = 2,
-			GetUserInfo = 3,
-			ReLogonUsers = 4,
-			ChangePassword = 5,
-			ChangeCachedPassword = 6,
-			GenericPassthrough = 7,
-			CacheLogon = 8,
-			SubAuth = 9,
-			DeriveCredential = 10,
-			CacheLookup = 11,
-			SetProcessOption = 12,
-			ConfigLocalAliases = 13,
-			ClearCachedCredentials = 14,
-			LookupToken = 15,
-			ValidateAuth = 16,
-			CacheLookupEx = 17,
-			GetCredentialKey = 18,
-			SetThreadOption = 19,
-			DecryptDpapiMasterKey = 20,
-			GetStrongCredentialKey = 21,
-			TransferCred = 22,
-			ProvisionTbal = 23,
-			DeleteTbalSecrets = 24,
+			_0Lm20ChallengeRequest = 0,
+			_0Lm20GetChallengeResponse = 1,
+			_0EnumerateUsers = 2,
+			_0GetUserInfo = 3,
+			_0ReLogonUsers = 4,
+			_0ChangePassword = 5,
+			_0ChangeCachedPassword = 6,
+			_0GenericPassthrough = 7,
+			_0CacheLogon = 8,
+			_0SubAuth = 9,
+			_0DeriveCredential = 10,
+			_0CacheLookup = 11,
+			_0SetProcessOption = 12,
+			_0ConfigLocalAliases = 13,
+			_0ClearCachedCredentials = 14,
+			_0LookupToken = 15,
+			_0ValidateAuth = 16,
+			_0CacheLookupEx = 17,
+			_0GetCredentialKey = 18,
+			_0SetThreadOption = 19,
+			_0DecryptDpapiMasterKey = 20,
+			_0GetStrongCredentialKey = 21,
+			_0TransferCred = 22,
+			_0ProvisionTbal = 23,
+			_0DeleteTbalSecrets = 24,
 		}
 		public enum KERB_LOGON_SUBMIT_TYPE : int32
 		{
@@ -1863,8 +1863,8 @@ namespace Win32
 		}
 		public enum SASL_AUTHZID_STATE : int32
 		{
-			Forbidden = 0,
-			Processed = 1,
+			ZIDForbidden = 0,
+			ZIDProcessed = 1,
 		}
 		public enum LSA_TOKEN_INFORMATION_TYPE : int32
 		{
@@ -1954,7 +1954,7 @@ namespace Win32
 		}
 		public enum TOKENBINDING_EXTENSION_FORMAT : int32
 		{
-			TOKENBINDING_EXTENSION_FORMAT_UNDEFINED = 0,
+			FORMAT_UNDEFINED = 0,
 		}
 		public enum TOKENBINDING_KEY_PARAMETERS_TYPE : int32
 		{

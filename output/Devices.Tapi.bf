@@ -1475,8 +1475,8 @@ namespace Win32
 		}
 		public enum FINISH_MODE : int32
 		{
-			TRANSFER = 0,
-			CONFERENCE = 1,
+			ASTRANSFER = 0,
+			ASCONFERENCE = 1,
 		}
 		public enum PHONE_PRIVILEGE : int32
 		{
@@ -1491,10 +1491,10 @@ namespace Win32
 		}
 		public enum PHONE_HOOK_SWITCH_STATE : int32
 		{
-			NHOOK = 1,
-			FFHOOK_MIC_ONLY = 2,
-			FFHOOK_SPEAKER_ONLY = 4,
-			FFHOOK = 8,
+			ONHOOK = 1,
+			OFFHOOK_MIC_ONLY = 2,
+			OFFHOOK_SPEAKER_ONLY = 4,
+			OFFHOOK = 8,
 		}
 		public enum PHONE_LAMP_MODE : int32
 		{
@@ -1521,9 +1521,9 @@ namespace Win32
 		}
 		public enum PHONECAPS_STRING : int32
 		{
-			HONENAME = 0,
-			HONEINFO = 1,
-			ROVIDERINFO = 2,
+			PHONENAME = 0,
+			PHONEINFO = 1,
+			PROVIDERINFO = 2,
 		}
 		public enum PHONECAPS_BUFFER : int32
 		{

@@ -47,8 +47,8 @@ namespace Win32
 		}
 		public enum RenderTargetBitmapOptions : int32
 		{
-			t = 0,
-			tAndChildren = 1,
+			Target = 0,
+			TargetAndChildren = 1,
 		}
 		public enum ResourceType : int32
 		{

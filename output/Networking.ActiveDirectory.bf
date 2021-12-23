@@ -728,7 +728,7 @@ namespace Win32
 		}
 		public enum ADS_SD_REVISION_ENUM : int32
 		{
-			ADS_SD_REVISION_DS = 4,
+			DS = 4,
 		}
 		public enum ADS_NAME_TYPE_ENUM : int32
 		{
@@ -885,7 +885,7 @@ namespace Win32
 		}
 		public enum DS_KCC_TASKID : int32
 		{
-			DS_KCC_TASKID_UPDATE_TOPOLOGY = 0,
+			TASKID_UPDATE_TOPOLOGY = 0,
 		}
 		public enum DS_REPL_INFO_TYPE : int32
 		{

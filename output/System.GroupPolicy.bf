@@ -215,11 +215,11 @@ namespace Win32
 		}
 		public enum SETTINGSTATUS : int32
 		{
-			Unspecified = 0,
-			Applied = 1,
-			Ignored = 2,
-			Failed = 3,
-			SubsettingFailed = 4,
+			RSOPUnspecified = 0,
+			RSOPApplied = 1,
+			RSOPIgnored = 2,
+			RSOPFailed = 3,
+			RSOPSubsettingFailed = 4,
 		}
 		public enum INSTALLSPECTYPE : int32
 		{

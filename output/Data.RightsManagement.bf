@@ -77,8 +77,8 @@ namespace Win32
 		
 		public enum DRMTIMETYPE : int32
 		{
-			UTC = 0,
-			LOCAL = 1,
+			SYSTEMUTC = 0,
+			SYSTEMLOCAL = 1,
 		}
 		public enum DRMENCODINGTYPE : int32
 		{

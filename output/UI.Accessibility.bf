@@ -1045,12 +1045,12 @@ namespace Win32
 		}
 		public enum StructureChangeType : int32
 		{
-			Added = 0,
-			Removed = 1,
-			renInvalidated = 2,
-			renBulkAdded = 3,
-			renBulkRemoved = 4,
-			renReordered = 5,
+			ChildAdded = 0,
+			ChildRemoved = 1,
+			ChildrenInvalidated = 2,
+			ChildrenBulkAdded = 3,
+			ChildrenBulkRemoved = 4,
+			ChildrenReordered = 5,
 		}
 		public enum TextEditChangeType : int32
 		{

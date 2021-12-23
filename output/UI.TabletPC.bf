@@ -445,60 +445,60 @@ namespace Win32
 		}
 		public enum DISPID_InkRectangle : int32
 		{
-			Top = 1,
-			Left = 2,
-			Bottom = 3,
-			Right = 4,
-			GetRectangle = 5,
-			SetRectangle = 6,
-			Data = 7,
+			IRTop = 1,
+			IRLeft = 2,
+			IRBottom = 3,
+			IRRight = 4,
+			IRGetRectangle = 5,
+			IRSetRectangle = 6,
+			IRData = 7,
 		}
 		public enum DISPID_InkExtendedProperty : int32
 		{
-			Guid = 1,
-			Data = 2,
+			IEPGuid = 1,
+			IEPData = 2,
 		}
 		public enum DISPID_InkExtendedProperties : int32
 		{
-			_NewEnum = -4,
-			Item = 0,
-			Count = 1,
-			Add = 2,
-			Remove = 3,
-			Clear = 4,
-			DoesPropertyExist = 5,
+			IEPs_NewEnum = -4,
+			IEPsItem = 0,
+			IEPsCount = 1,
+			IEPsAdd = 2,
+			IEPsRemove = 3,
+			IEPsClear = 4,
+			IEPsDoesPropertyExist = 5,
 		}
 		public enum DISPID_InkDrawingAttributes : int32
 		{
-			Height = 1,
-			Color = 2,
-			Width = 3,
-			FitToCurve = 4,
-			IgnorePressure = 5,
-			AntiAliased = 6,
-			Transparency = 7,
-			RasterOperation = 8,
-			PenTip = 9,
-			Clone = 10,
-			ExtendedProperties = 11,
+			DAHeight = 1,
+			DAColor = 2,
+			DAWidth = 3,
+			DAFitToCurve = 4,
+			DAIgnorePressure = 5,
+			DAAntiAliased = 6,
+			DATransparency = 7,
+			DARasterOperation = 8,
+			DAPenTip = 9,
+			DAClone = 10,
+			DAExtendedProperties = 11,
 		}
 		public enum DISPID_InkTransform : int32
 		{
-			Reset = 1,
-			Translate = 2,
-			Rotate = 3,
-			Reflect = 4,
-			Shear = 5,
-			Scale = 6,
-			eM11 = 7,
-			eM12 = 8,
-			eM21 = 9,
-			eM22 = 10,
-			eDx = 11,
-			eDy = 12,
-			GetTransform = 13,
-			SetTransform = 14,
-			Data = 15,
+			ITReset = 1,
+			ITTranslate = 2,
+			ITRotate = 3,
+			ITReflect = 4,
+			ITShear = 5,
+			ITScale = 6,
+			ITeM11 = 7,
+			ITeM12 = 8,
+			ITeM21 = 9,
+			ITeM22 = 10,
+			ITeDx = 11,
+			ITeDy = 12,
+			ITGetTransform = 13,
+			ITSetTransform = 14,
+			ITData = 15,
 		}
 		public enum InkApplicationGesture : int32
 		{
@@ -568,9 +568,9 @@ namespace Win32
 		}
 		public enum DISPID_InkGesture : int32
 		{
-			Id = 0,
-			GetHotPoint = 1,
-			Confidence = 2,
+			IGId = 0,
+			IGGetHotPoint = 1,
+			IGConfidence = 2,
 		}
 		public enum DISPID_InkCursor : int32
 		{
@@ -583,9 +583,9 @@ namespace Win32
 		}
 		public enum DISPID_InkCursors : int32
 		{
-			_NewEnum = -4,
-			Item = 0,
-			Count = 1,
+			ICs_NewEnum = -4,
+			ICsItem = 0,
+			ICsCount = 1,
 		}
 		public enum InkCursorButtonState : int32
 		{
@@ -595,15 +595,15 @@ namespace Win32
 		}
 		public enum DISPID_InkCursorButton : int32
 		{
-			Name = 0,
-			Id = 1,
-			State = 2,
+			ICBName = 0,
+			ICBId = 1,
+			ICBState = 2,
 		}
 		public enum DISPID_InkCursorButtons : int32
 		{
-			_NewEnum = -4,
-			Item = 0,
-			Count = 1,
+			ICBs_NewEnum = -4,
+			ICBsItem = 0,
+			ICBsCount = 1,
 		}
 		public enum TabletHardwareCapabilities : int32
 		{
@@ -625,12 +625,12 @@ namespace Win32
 		}
 		public enum DISPID_InkTablet : int32
 		{
-			Name = 0,
-			PlugAndPlayId = 1,
-			PropertyMetrics = 2,
-			IsPacketPropertySupported = 3,
-			MaximumInputRectangle = 4,
-			HardwareCapabilities = 5,
+			ITName = 0,
+			ITPlugAndPlayId = 1,
+			ITPropertyMetrics = 2,
+			ITIsPacketPropertySupported = 3,
+			ITMaximumInputRectangle = 4,
+			ITHardwareCapabilities = 5,
 		}
 		public enum TabletDeviceKind : int32
 		{
@@ -640,89 +640,89 @@ namespace Win32
 		}
 		public enum DISPID_InkTablet2 : int32
 		{
-			DISPID_IT2DeviceKind = 0,
+			IT2DeviceKind = 0,
 		}
 		public enum DISPID_InkTablet3 : int32
 		{
-			IsMultiTouch = 0,
-			MaximumCursors = 1,
+			IT3IsMultiTouch = 0,
+			IT3MaximumCursors = 1,
 		}
 		public enum DISPID_InkTablets : int32
 		{
-			_NewEnum = -4,
-			Item = 0,
-			DefaultTablet = 1,
-			Count = 2,
-			IsPacketPropertySupported = 3,
+			ITs_NewEnum = -4,
+			ITsItem = 0,
+			ITsDefaultTablet = 1,
+			ITsCount = 2,
+			ITsIsPacketPropertySupported = 3,
 		}
 		public enum DISPID_InkStrokeDisp : int32
 		{
-			InkIndex = 1,
-			ID = 2,
-			GetBoundingBox = 3,
-			DrawingAttributes = 4,
-			FindIntersections = 5,
-			GetRectangleIntersections = 6,
-			Clip = 7,
-			HitTestCircle = 8,
-			NearestPoint = 9,
-			Split = 10,
-			ExtendedProperties = 11,
-			Ink = 12,
-			BezierPoints = 13,
-			PolylineCusps = 14,
-			BezierCusps = 15,
-			SelfIntersections = 16,
-			PacketCount = 17,
-			PacketSize = 18,
-			PacketDescription = 19,
-			Deleted = 20,
-			GetPacketDescriptionPropertyMetrics = 21,
-			GetPoints = 22,
-			SetPoints = 23,
-			GetPacketData = 24,
-			GetPacketValuesByProperty = 25,
-			SetPacketValuesByProperty = 26,
-			GetFlattenedBezierPoints = 27,
-			ScaleToRectangle = 28,
-			Transform = 29,
-			Move = 30,
-			Rotate = 31,
-			Shear = 32,
-			Scale = 33,
+			ISDInkIndex = 1,
+			ISDID = 2,
+			ISDGetBoundingBox = 3,
+			ISDDrawingAttributes = 4,
+			ISDFindIntersections = 5,
+			ISDGetRectangleIntersections = 6,
+			ISDClip = 7,
+			ISDHitTestCircle = 8,
+			ISDNearestPoint = 9,
+			ISDSplit = 10,
+			ISDExtendedProperties = 11,
+			ISDInk = 12,
+			ISDBezierPoints = 13,
+			ISDPolylineCusps = 14,
+			ISDBezierCusps = 15,
+			ISDSelfIntersections = 16,
+			ISDPacketCount = 17,
+			ISDPacketSize = 18,
+			ISDPacketDescription = 19,
+			ISDDeleted = 20,
+			ISDGetPacketDescriptionPropertyMetrics = 21,
+			ISDGetPoints = 22,
+			ISDSetPoints = 23,
+			ISDGetPacketData = 24,
+			ISDGetPacketValuesByProperty = 25,
+			ISDSetPacketValuesByProperty = 26,
+			ISDGetFlattenedBezierPoints = 27,
+			ISDScaleToRectangle = 28,
+			ISDTransform = 29,
+			ISDMove = 30,
+			ISDRotate = 31,
+			ISDShear = 32,
+			ISDScale = 33,
 		}
 		public enum DISPID_InkStrokes : int32
 		{
-			_NewEnum = -4,
-			Item = 0,
-			Count = 1,
-			Valid = 2,
-			Ink = 3,
-			Add = 4,
-			AddStrokes = 5,
-			Remove = 6,
-			RemoveStrokes = 7,
-			ToString = 8,
-			ModifyDrawingAttributes = 9,
-			GetBoundingBox = 10,
-			ScaleToRectangle = 11,
-			Transform = 12,
-			Move = 13,
-			Rotate = 14,
-			Shear = 15,
-			Scale = 16,
-			Clip = 17,
-			RecognitionResult = 18,
-			RemoveRecognitionResult = 19,
+			ISs_NewEnum = -4,
+			ISsItem = 0,
+			ISsCount = 1,
+			ISsValid = 2,
+			ISsInk = 3,
+			ISsAdd = 4,
+			ISsAddStrokes = 5,
+			ISsRemove = 6,
+			ISsRemoveStrokes = 7,
+			ISsToString = 8,
+			ISsModifyDrawingAttributes = 9,
+			ISsGetBoundingBox = 10,
+			ISsScaleToRectangle = 11,
+			ISsTransform = 12,
+			ISsMove = 13,
+			ISsRotate = 14,
+			ISsShear = 15,
+			ISsScale = 16,
+			ISsClip = 17,
+			ISsRecognitionResult = 18,
+			ISsRemoveRecognitionResult = 19,
 		}
 		public enum DISPID_InkCustomStrokes : int32
 		{
-			_NewEnum = -4,
-			Item = 0,
-			Count = 1,
-			Add = 2,
-			Remove = 3,
-			Clear = 4,
+			ICSs_NewEnum = -4,
+			ICSsItem = 0,
+			ICSsCount = 1,
+			ICSsAdd = 2,
+			ICSsRemove = 3,
+			ICSsClear = 4,
 		}
 		public enum DISPID_StrokeEvent : int32
 		{
@@ -731,31 +731,31 @@ namespace Win32
 		}
 		public enum DISPID_Ink : int32
 		{
-			Strokes = 1,
-			ExtendedProperties = 2,
-			GetBoundingBox = 3,
-			DeleteStrokes = 4,
-			DeleteStroke = 5,
-			ExtractStrokes = 6,
-			ExtractWithRectangle = 7,
-			Dirty = 8,
-			CustomStrokes = 9,
-			Clone = 10,
-			HitTestCircle = 11,
-			HitTestWithRectangle = 12,
-			HitTestWithLasso = 13,
-			NearestPoint = 14,
-			CreateStrokes = 15,
-			CreateStroke = 16,
-			AddStrokesAtRectangle = 17,
-			Clip = 18,
-			Save = 19,
-			Load = 20,
-			CreateStrokeFromPoints = 21,
-			ClipboardCopyWithRectangle = 22,
-			ClipboardCopy = 23,
-			CanPaste = 24,
-			ClipboardPaste = 25,
+			IStrokes = 1,
+			IExtendedProperties = 2,
+			IGetBoundingBox = 3,
+			IDeleteStrokes = 4,
+			IDeleteStroke = 5,
+			IExtractStrokes = 6,
+			IExtractWithRectangle = 7,
+			IDirty = 8,
+			ICustomStrokes = 9,
+			IClone = 10,
+			IHitTestCircle = 11,
+			IHitTestWithRectangle = 12,
+			IHitTestWithLasso = 13,
+			INearestPoint = 14,
+			ICreateStrokes = 15,
+			ICreateStroke = 16,
+			IAddStrokesAtRectangle = 17,
+			IClip = 18,
+			ISave = 19,
+			ILoad = 20,
+			ICreateStrokeFromPoints = 21,
+			IClipboardCopyWithRectangle = 22,
+			IClipboardCopy = 23,
+			ICanPaste = 24,
+			IClipboardPaste = 25,
 		}
 		public enum DISPID_InkEvent : int32
 		{
@@ -764,21 +764,21 @@ namespace Win32
 		}
 		public enum DISPID_InkRenderer : int32
 		{
-			GetViewTransform = 1,
-			SetViewTransform = 2,
-			GetObjectTransform = 3,
-			SetObjectTransform = 4,
-			Draw = 5,
-			DrawStroke = 6,
-			PixelToInkSpace = 7,
-			InkSpaceToPixel = 8,
-			PixelToInkSpaceFromPoints = 9,
-			InkSpaceToPixelFromPoints = 10,
-			Measure = 11,
-			MeasureStroke = 12,
-			Move = 13,
-			Rotate = 14,
-			Scale = 15,
+			IRGetViewTransform = 1,
+			IRSetViewTransform = 2,
+			IRGetObjectTransform = 3,
+			IRSetObjectTransform = 4,
+			IRDraw = 5,
+			IRDrawStroke = 6,
+			IRPixelToInkSpace = 7,
+			IRInkSpaceToPixel = 8,
+			IRPixelToInkSpaceFromPoints = 9,
+			IRInkSpaceToPixelFromPoints = 10,
+			IRMeasure = 11,
+			IRMeasureStroke = 12,
+			IRMove = 13,
+			IRRotate = 14,
+			IRScale = 15,
 		}
 		public enum InkCollectorEventInterest : int32
 		{
@@ -815,47 +815,47 @@ namespace Win32
 		}
 		public enum DISPID_InkCollectorEvent : int32
 		{
-			CEStroke = 1,
-			CECursorDown = 2,
-			CENewPackets = 3,
-			CENewInAirPackets = 4,
-			CECursorButtonDown = 5,
-			CECursorButtonUp = 6,
-			CECursorInRange = 7,
-			CECursorOutOfRange = 8,
-			CESystemGesture = 9,
-			CEGesture = 10,
-			CETabletAdded = 11,
-			CETabletRemoved = 12,
-			OEPainting = 13,
-			OEPainted = 14,
-			OESelectionChanging = 15,
-			OESelectionChanged = 16,
-			OESelectionMoving = 17,
-			OESelectionMoved = 18,
-			OESelectionResizing = 19,
-			OESelectionResized = 20,
-			OEStrokesDeleting = 21,
-			OEStrokesDeleted = 22,
-			PEChangeUICues = 23,
-			PEClick = 24,
-			PEDblClick = 25,
-			PEInvalidated = 26,
-			PEMouseDown = 27,
-			PEMouseEnter = 28,
-			PEMouseHover = 29,
-			PEMouseLeave = 30,
-			PEMouseMove = 31,
-			PEMouseUp = 32,
-			PEMouseWheel = 33,
-			PESizeModeChanged = 34,
-			PEStyleChanged = 35,
-			PESystemColorsChanged = 36,
-			PEKeyDown = 37,
-			PEKeyPress = 38,
-			PEKeyUp = 39,
-			PEResize = 40,
-			PESizeChanged = 41,
+			ICEStroke = 1,
+			ICECursorDown = 2,
+			ICENewPackets = 3,
+			ICENewInAirPackets = 4,
+			ICECursorButtonDown = 5,
+			ICECursorButtonUp = 6,
+			ICECursorInRange = 7,
+			ICECursorOutOfRange = 8,
+			ICESystemGesture = 9,
+			ICEGesture = 10,
+			ICETabletAdded = 11,
+			ICETabletRemoved = 12,
+			IOEPainting = 13,
+			IOEPainted = 14,
+			IOESelectionChanging = 15,
+			IOESelectionChanged = 16,
+			IOESelectionMoving = 17,
+			IOESelectionMoved = 18,
+			IOESelectionResizing = 19,
+			IOESelectionResized = 20,
+			IOEStrokesDeleting = 21,
+			IOEStrokesDeleted = 22,
+			IPEChangeUICues = 23,
+			IPEClick = 24,
+			IPEDblClick = 25,
+			IPEInvalidated = 26,
+			IPEMouseDown = 27,
+			IPEMouseEnter = 28,
+			IPEMouseHover = 29,
+			IPEMouseLeave = 30,
+			IPEMouseMove = 31,
+			IPEMouseUp = 32,
+			IPEMouseWheel = 33,
+			IPESizeModeChanged = 34,
+			IPEStyleChanged = 35,
+			IPESystemColorsChanged = 36,
+			IPEKeyDown = 37,
+			IPEKeyPress = 38,
+			IPEKeyUp = 39,
+			IPEResize = 40,
+			IPESizeChanged = 41,
 		}
 		public enum InkOverlayEditingMode : int32
 		{
@@ -888,45 +888,45 @@ namespace Win32
 		}
 		public enum DISPID_InkCollector : int32
 		{
-			CEnabled = 1,
-			CHwnd = 2,
-			CPaint = 3,
-			CText = 4,
-			CDefaultDrawingAttributes = 5,
-			CRenderer = 6,
-			CInk = 7,
-			CAutoRedraw = 8,
-			CCollectingInk = 9,
-			CSetEventInterest = 10,
-			CGetEventInterest = 11,
-			OEditingMode = 12,
-			OSelection = 13,
-			OAttachMode = 14,
-			OHitTestSelection = 15,
-			ODraw = 16,
-			PPicture = 17,
-			PSizeMode = 18,
-			PBackColor = 19,
-			CCursors = 20,
-			CMarginX = 21,
-			CMarginY = 22,
-			CSetWindowInputRectangle = 23,
-			CGetWindowInputRectangle = 24,
-			CTablet = 25,
-			CSetAllTabletsMode = 26,
-			CSetSingleTabletIntegratedMode = 27,
-			CCollectionMode = 28,
-			CSetGestureStatus = 29,
-			CGetGestureStatus = 30,
-			CDynamicRendering = 31,
-			CDesiredPacketDescription = 32,
-			OEraserMode = 33,
-			OEraserWidth = 34,
-			CMouseIcon = 35,
-			CMousePointer = 36,
-			PInkEnabled = 37,
-			CSupportHighContrastInk = 38,
-			OSupportHighContrastSelectionUI = 39,
+			ICEnabled = 1,
+			ICHwnd = 2,
+			ICPaint = 3,
+			ICText = 4,
+			ICDefaultDrawingAttributes = 5,
+			ICRenderer = 6,
+			ICInk = 7,
+			ICAutoRedraw = 8,
+			ICCollectingInk = 9,
+			ICSetEventInterest = 10,
+			ICGetEventInterest = 11,
+			IOEditingMode = 12,
+			IOSelection = 13,
+			IOAttachMode = 14,
+			IOHitTestSelection = 15,
+			IODraw = 16,
+			IPPicture = 17,
+			IPSizeMode = 18,
+			IPBackColor = 19,
+			ICCursors = 20,
+			ICMarginX = 21,
+			ICMarginY = 22,
+			ICSetWindowInputRectangle = 23,
+			ICGetWindowInputRectangle = 24,
+			ICTablet = 25,
+			ICSetAllTabletsMode = 26,
+			ICSetSingleTabletIntegratedMode = 27,
+			ICCollectionMode = 28,
+			ICSetGestureStatus = 29,
+			ICGetGestureStatus = 30,
+			ICDynamicRendering = 31,
+			ICDesiredPacketDescription = 32,
+			IOEraserMode = 33,
+			IOEraserWidth = 34,
+			ICMouseIcon = 35,
+			ICMousePointer = 36,
+			IPInkEnabled = 37,
+			ICSupportHighContrastInk = 38,
+			IOSupportHighContrastSelectionUI = 39,
 		}
 		public enum DISPID_InkRecognizer : int32
 		{
@@ -971,10 +971,10 @@ namespace Win32
 		}
 		public enum DISPID_InkRecognizers : int32
 		{
-			_NewEnum = -4,
-			Item = 0,
-			Count = 1,
-			GetDefaultRecognizer = 2,
+			IRecos_NewEnum = -4,
+			IRecosItem = 0,
+			IRecosCount = 1,
+			IRecosGetDefaultRecognizer = 2,
 		}
 		public enum InkRecognizerCharacterAutoCompletionMode : int32
 		{
@@ -996,8 +996,8 @@ namespace Win32
 		}
 		public enum DISPID_InkRecognitionEvent : int32
 		{
-			nWithAlternates = 1,
-			n = 2,
+			IRERecognitionWithAlternates = 1,
+			IRERecognition = 2,
 		}
 		public enum DISPID_InkRecoContext : int32
 		{
@@ -1021,7 +1021,7 @@ namespace Win32
 		}
 		public enum DISPID_InkRecoContext2 : int32
 		{
-			DISPID_IRecoCtx2_EnabledUnicodeRanges = 0,
+			IRecoCtx2_EnabledUnicodeRanges = 0,
 		}
 		public enum InkRecognitionAlternatesSelection : int32
 		{
@@ -1066,12 +1066,12 @@ namespace Win32
 		}
 		public enum DISPID_InkRecognizerGuide : int32
 		{
-			WritingBox = 1,
-			DrawnBox = 2,
-			Rows = 3,
-			Columns = 4,
-			Midline = 5,
-			GuideData = 6,
+			IRGWritingBox = 1,
+			IRGDrawnBox = 2,
+			IRGRows = 3,
+			IRGColumns = 4,
+			IRGMidline = 5,
+			IRGGuideData = 6,
 		}
 		public enum DISPID_InkWordList : int32
 		{
@@ -1081,7 +1081,7 @@ namespace Win32
 		}
 		public enum DISPID_InkWordList2 : int32
 		{
-			DISPID_InkWordList2_AddWords = 3,
+			List2_AddWords = 3,
 		}
 		public enum InkDivisionType : int32
 		{
@@ -1117,30 +1117,30 @@ namespace Win32
 		}
 		public enum DISPID_PenInputPanel : int32
 		{
-			AttachedEditWindow = 0,
-			Factoid = 1,
-			CurrentPanel = 2,
-			DefaultPanel = 3,
-			Visible = 4,
-			Top = 5,
-			Left = 6,
-			Width = 7,
-			Height = 8,
-			MoveTo = 9,
-			CommitPendingInput = 10,
-			Refresh = 11,
-			Busy = 12,
-			VerticalOffset = 13,
-			HorizontalOffset = 14,
-			EnableTsf = 15,
-			AutoShow = 16,
+			PIPAttachedEditWindow = 0,
+			PIPFactoid = 1,
+			PIPCurrentPanel = 2,
+			PIPDefaultPanel = 3,
+			PIPVisible = 4,
+			PIPTop = 5,
+			PIPLeft = 6,
+			PIPWidth = 7,
+			PIPHeight = 8,
+			PIPMoveTo = 9,
+			PIPCommitPendingInput = 10,
+			PIPRefresh = 11,
+			PIPBusy = 12,
+			PIPVerticalOffset = 13,
+			PIPHorizontalOffset = 14,
+			PIPEnableTsf = 15,
+			PIPAutoShow = 16,
 		}
 		public enum DISPID_PenInputPanelEvents : int32
 		{
-			VisibleChanged = 0,
-			PanelChanged = 1,
-			InputFailed = 2,
-			PanelMoving = 3,
+			PIPEVisibleChanged = 0,
+			PIPEPanelChanged = 1,
+			PIPEInputFailed = 2,
+			PIPEPanelMoving = 3,
 		}
 		public enum VisualState : int32
 		{
@@ -1388,10 +1388,10 @@ namespace Win32
 		}
 		public enum DISPID_MathInputControlEvents : int32
 		{
-			Insert = 0,
-			Close = 1,
-			Paint = 2,
-			Clear = 3,
+			MICInsert = 0,
+			MICClose = 1,
+			MICPaint = 2,
+			MICClear = 3,
 		}
 		public enum RealTimeStylusDataInterest : int32
 		{
@@ -1452,8 +1452,8 @@ namespace Win32
 		}
 		public enum enumRECO_TYPE : int32
 		{
-			STRING = 0,
-			CHAR = 1,
+			WSTRING = 0,
+			WCHAR = 1,
 		}
 		
 		// --- Function Pointers ---

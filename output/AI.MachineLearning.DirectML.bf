@@ -218,8 +218,8 @@ namespace Win32
 		}
 		public enum DML_CONVOLUTION_MODE : int32
 		{
-			ONVOLUTION = 0,
-			ROSS_CORRELATION = 1,
+			CONVOLUTION = 0,
+			CROSS_CORRELATION = 1,
 		}
 		public enum DML_CONVOLUTION_DIRECTION : int32
 		{
@@ -268,7 +268,7 @@ namespace Win32
 		}
 		public enum DML_RANDOM_GENERATOR_TYPE : int32
 		{
-			DML_RANDOM_GENERATOR_TYPE_PHILOX_4X32_10 = 0,
+			TYPE_PHILOX_4X32_10 = 0,
 		}
 		public enum DML_FEATURE_LEVEL : int32
 		{

@@ -376,8 +376,8 @@ namespace Win32
 		}
 		public enum GROUP_NAME_SYNTAX : uint32
 		{
-			EFAULT = 0,
-			CE = 3,
+			DEFAULT = 0,
+			DCE = 3,
 		}
 		public enum SEC_WINNT_AUTH_IDENTITY : uint32
 		{
@@ -452,9 +452,9 @@ namespace Win32
 		}
 		public enum RpcLocalAddressFormat : int32
 		{
-			nvalid = 0,
-			Pv4 = 1,
-			Pv6 = 2,
+			Invalid = 0,
+			IPv4 = 1,
+			IPv6 = 2,
 		}
 		public enum RpcCallType : int32
 		{
@@ -472,9 +472,9 @@ namespace Win32
 		}
 		public enum RPC_NOTIFICATIONS : int32
 		{
-			allNone = 0,
-			lientDisconnect = 1,
-			allCancel = 2,
+			CallNone = 0,
+			ClientDisconnect = 1,
+			CallCancel = 2,
 		}
 		public enum USER_MARSHAL_CB_TYPE : int32
 		{

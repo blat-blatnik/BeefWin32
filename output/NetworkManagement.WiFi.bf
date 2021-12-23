@@ -808,7 +808,7 @@ namespace Win32
 		
 		public enum WLAN_SET_EAPHOST_FLAGS : uint32
 		{
-			WLAN_SET_EAPHOST_DATA_ALL_USERS = 1,
+			DATA_ALL_USERS = 1,
 		}
 		public enum WLAN_CONNECTION_NOTIFICATION_FLAGS : uint32
 		{
@@ -1260,9 +1260,9 @@ namespace Win32
 		}
 		public enum WL_DISPLAY_PAGES : int32
 		{
-			ConnectionPage = 0,
-			SecurityPage = 1,
-			AdvPage = 2,
+			WLConnectionPage = 0,
+			WLSecurityPage = 1,
+			WLAdvPage = 2,
 		}
 		public enum WLAN_HOSTED_NETWORK_STATE : int32
 		{
@@ -1366,11 +1366,11 @@ namespace Win32
 		[AllowDuplicates]
 		public enum ONEX_NOTIFICATION_TYPE : int32
 		{
-			PublicNotificationBase = 0,
-			NotificationTypeResultUpdate = 1,
-			NotificationTypeAuthRestarted = 2,
-			NotificationTypeEventInvalid = 3,
-			NumNotifications = 3,
+			XPublicNotificationBase = 0,
+			XNotificationTypeResultUpdate = 1,
+			XNotificationTypeAuthRestarted = 2,
+			XNotificationTypeEventInvalid = 3,
+			XNumNotifications = 3,
 		}
 		public enum ONEX_AUTH_RESTART_REASON : int32
 		{

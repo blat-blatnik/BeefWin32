@@ -756,7 +756,7 @@ namespace Win32
 		}
 		public enum WLDP_POLICY_SETTING : int32
 		{
-			WLDP_POLICY_SETTING_AV_PERF_MODE = 1000,
+			SETTING_AV_PERF_MODE = 1000,
 		}
 		
 		// --- Function Pointers ---

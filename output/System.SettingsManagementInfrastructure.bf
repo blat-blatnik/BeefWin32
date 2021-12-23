@@ -67,8 +67,8 @@ namespace Win32
 		
 		public enum WcmTargetMode : int32
 		{
-			fflineMode = 1,
-			nlineMode = 2,
+			OfflineMode = 1,
+			OnlineMode = 2,
 		}
 		public enum WcmNamespaceEnumerationFlags : int32
 		{
@@ -105,11 +105,11 @@ namespace Win32
 		}
 		public enum WcmUserStatus : int32
 		{
-			nknownStatus = 0,
-			serRegistered = 1,
-			serUnregistered = 2,
-			serLoaded = 3,
-			serUnloaded = 4,
+			UnknownStatus = 0,
+			UserRegistered = 1,
+			UserUnregistered = 2,
+			UserLoaded = 3,
+			UserUnloaded = 4,
 		}
 		public enum WcmNamespaceAccess : int32
 		{

@@ -182,7 +182,7 @@ namespace Win32
 		}
 		public enum DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG : int32
 		{
-			DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 1,
+			FLAG_PRESENT = 1,
 		}
 		public enum DXGI_MEMORY_SEGMENT_GROUP : int32
 		{
@@ -191,7 +191,7 @@ namespace Win32
 		}
 		public enum DXGI_OUTDUPL_FLAG : int32
 		{
-			DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY = 1,
+			COMPOSITED_UI_CAPTURE_ONLY = 1,
 		}
 		public enum DXGI_HDR_METADATA_TYPE : int32
 		{
@@ -201,7 +201,7 @@ namespace Win32
 		}
 		public enum DXGI_OFFER_RESOURCE_FLAGS : int32
 		{
-			DXGI_OFFER_RESOURCE_FLAG_ALLOW_DECOMMIT = 1,
+			FLAG_ALLOW_DECOMMIT = 1,
 		}
 		public enum DXGI_RECLAIM_RESOURCE_RESULTS : int32
 		{
@@ -211,7 +211,7 @@ namespace Win32
 		}
 		public enum DXGI_FEATURE : int32
 		{
-			DXGI_FEATURE_PRESENT_ALLOW_TEARING = 0,
+			FEATURE_PRESENT_ALLOW_TEARING = 0,
 		}
 		public enum DXGI_ADAPTER_FLAG3 : uint32
 		{

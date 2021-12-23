@@ -28,9 +28,9 @@ namespace Win32
 		}
 		public enum BROADCAST_SYSTEM_MESSAGE_INFO : uint32
 		{
-			LLCOMPONENTS = 0,
-			LLDESKTOPS = 16,
-			PPLICATIONS = 8,
+			ALLCOMPONENTS = 0,
+			ALLDESKTOPS = 16,
+			APPLICATIONS = 8,
 		}
 		public enum USER_OBJECT_INFORMATION_INDEX : uint32
 		{

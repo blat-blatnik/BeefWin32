@@ -116,9 +116,9 @@ namespace Win32
 		}
 		public enum TAP_PARAMETER : int32
 		{
-			IN_CONTACT_COUNT = 0,
-			AX_CONTACT_COUNT = 1,
-			AX = -1,
+			MIN_CONTACT_COUNT = 0,
+			MAX_CONTACT_COUNT = 1,
+			MAX = -1,
 		}
 		public enum HOLD_PARAMETER : int32
 		{
@@ -130,9 +130,9 @@ namespace Win32
 		}
 		public enum TRANSLATION_PARAMETER : int32
 		{
-			IN_CONTACT_COUNT = 0,
-			AX_CONTACT_COUNT = 1,
-			AX = -1,
+			MIN_CONTACT_COUNT = 0,
+			MAX_CONTACT_COUNT = 1,
+			MAX = -1,
 		}
 		public enum MANIPULATION_RAILS_STATE : int32
 		{

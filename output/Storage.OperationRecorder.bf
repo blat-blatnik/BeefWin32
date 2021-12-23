@@ -9,11 +9,11 @@ namespace Win32
 		
 		public enum OPERATION_START_FLAGS : uint32
 		{
-			OPERATION_START_TRACE_CURRENT_THREAD = 1,
+			TRACE_CURRENT_THREAD = 1,
 		}
 		public enum OPERATION_END_PARAMETERS_FLAGS : uint32
 		{
-			OPERATION_END_DISCARD = 1,
+			DISCARD = 1,
 		}
 		
 		// --- Structs ---

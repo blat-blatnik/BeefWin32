@@ -1238,8 +1238,8 @@ namespace Win32
 		}
 		public enum SETUP_DI_BUILD_DRIVER_DRIVER_TYPE : uint32
 		{
-			LASSDRIVER = 1,
-			OMPATDRIVER = 2,
+			CLASSDRIVER = 1,
+			COMPATDRIVER = 2,
 		}
 		public enum SP_INF_STYLE : uint32
 		{

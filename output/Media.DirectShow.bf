@@ -1019,8 +1019,8 @@ namespace Win32
 		
 		public enum OA_BOOL : int32
 		{
-			TRUE = -1,
-			FALSE = 0,
+			OATRUE = -1,
+			OAFALSE = 0,
 		}
 		public enum MPEG2VIDEOINFO_FLAGS : uint32
 		{
@@ -1069,17 +1069,17 @@ namespace Win32
 		[AllowDuplicates]
 		public enum AM_SAMPLE_PROPERTY_FLAGS : int32
 		{
-			AMPLE_SPLICEPOINT = 1,
-			AMPLE_PREROLL = 2,
-			AMPLE_DATADISCONTINUITY = 4,
-			AMPLE_TYPECHANGED = 8,
-			AMPLE_TIMEVALID = 16,
-			AMPLE_TIMEDISCONTINUITY = 64,
-			AMPLE_FLUSH_ON_PAUSE = 128,
-			AMPLE_STOPVALID = 256,
-			AMPLE_ENDOFSTREAM = 512,
-			TREAM_MEDIA = 0,
-			TREAM_CONTROL = 1,
+			SAMPLE_SPLICEPOINT = 1,
+			SAMPLE_PREROLL = 2,
+			SAMPLE_DATADISCONTINUITY = 4,
+			SAMPLE_TYPECHANGED = 8,
+			SAMPLE_TIMEVALID = 16,
+			SAMPLE_TIMEDISCONTINUITY = 64,
+			SAMPLE_FLUSH_ON_PAUSE = 128,
+			SAMPLE_STOPVALID = 256,
+			SAMPLE_ENDOFSTREAM = 512,
+			STREAM_MEDIA = 0,
+			STREAM_CONTROL = 1,
 		}
 		[AllowDuplicates]
 		public enum AM_SEEKING_SeekingFlags : int32
@@ -1108,7 +1108,7 @@ namespace Win32
 		}
 		public enum AM_MEDIAEVENT_FLAGS : int32
 		{
-			AM_MEDIAEVENT_NONOTIFY = 1,
+			NONOTIFY = 1,
 		}
 		public enum IFILTERMAPPER_MERIT : int32
 		{
@@ -1128,8 +1128,8 @@ namespace Win32
 		}
 		public enum QualityMessageType : int32
 		{
-			amine = 0,
-			lood = 1,
+			Famine = 0,
+			Flood = 1,
 		}
 		public enum COLORKEY_TYPE : int32
 		{
@@ -1148,7 +1148,7 @@ namespace Win32
 		}
 		public enum AM_FILESINK_FLAGS : int32
 		{
-			AM_FILE_OVERWRITE = 1,
+			FILE_OVERWRITE = 1,
 		}
 		public enum _AM_RENSDEREXFLAGS : int32
 		{
@@ -1191,30 +1191,30 @@ namespace Win32
 		}
 		public enum AnalogVideoStandard : int32
 		{
-			_None = 0,
-			_NTSC_M = 1,
-			_NTSC_M_J = 2,
-			_NTSC_433 = 4,
-			_PAL_B = 16,
-			_PAL_D = 32,
-			_PAL_G = 64,
-			_PAL_H = 128,
-			_PAL_I = 256,
-			_PAL_M = 512,
-			_PAL_N = 1024,
-			_PAL_60 = 2048,
-			_SECAM_B = 4096,
-			_SECAM_D = 8192,
-			_SECAM_G = 16384,
-			_SECAM_H = 32768,
-			_SECAM_K = 65536,
-			_SECAM_K1 = 131072,
-			_SECAM_L = 262144,
-			_SECAM_L1 = 524288,
-			_PAL_N_COMBO = 1048576,
-			Mask_MCE_NTSC = 1052167,
-			Mask_MCE_PAL = 496,
-			Mask_MCE_SECAM = 1044480,
+			Video_None = 0,
+			Video_NTSC_M = 1,
+			Video_NTSC_M_J = 2,
+			Video_NTSC_433 = 4,
+			Video_PAL_B = 16,
+			Video_PAL_D = 32,
+			Video_PAL_G = 64,
+			Video_PAL_H = 128,
+			Video_PAL_I = 256,
+			Video_PAL_M = 512,
+			Video_PAL_N = 1024,
+			Video_PAL_60 = 2048,
+			Video_SECAM_B = 4096,
+			Video_SECAM_D = 8192,
+			Video_SECAM_G = 16384,
+			Video_SECAM_H = 32768,
+			Video_SECAM_K = 65536,
+			Video_SECAM_K1 = 131072,
+			Video_SECAM_L = 262144,
+			Video_SECAM_L1 = 524288,
+			Video_PAL_N_COMBO = 1048576,
+			VideoMask_MCE_NTSC = 1052167,
+			VideoMask_MCE_PAL = 496,
+			VideoMask_MCE_SECAM = 1044480,
 		}
 		public enum TunerInputType : int32
 		{
@@ -1340,13 +1340,13 @@ namespace Win32
 		}
 		public enum _AMSTREAMSELECTINFOFLAGS : int32
 		{
-			NABLED = 1,
-			XCLUSIVE = 2,
+			ENABLED = 1,
+			EXCLUSIVE = 2,
 		}
 		public enum _AMSTREAMSELECTENABLEFLAGS : int32
 		{
-			E = 1,
-			EALL = 2,
+			ENABLE = 1,
+			ENABLEALL = 2,
 		}
 		public enum _AMRESCTL_RESERVEFLAGS : int32
 		{
@@ -1368,11 +1368,11 @@ namespace Win32
 		}
 		public enum _AM_PUSHSOURCE_FLAGS : int32
 		{
-			CAPS_INTERNAL_RM = 1,
-			CAPS_NOT_LIVE = 2,
-			CAPS_PRIVATE_CLOCK = 4,
-			REQS_USE_STREAM_CLOCK = 65536,
-			REQS_USE_CLOCK_CHAIN = 131072,
+			PUSHSOURCECAPS_INTERNAL_RM = 1,
+			PUSHSOURCECAPS_NOT_LIVE = 2,
+			PUSHSOURCECAPS_PRIVATE_CLOCK = 4,
+			PUSHSOURCEREQS_USE_STREAM_CLOCK = 65536,
+			PUSHSOURCEREQS_USE_CLOCK_CHAIN = 131072,
 		}
 		public enum _DVENCODERRESOLUTION : int32
 		{
@@ -1388,9 +1388,9 @@ namespace Win32
 		}
 		public enum _DVENCODERFORMAT : int32
 		{
-			SD = 2007,
-			HD = 2008,
-			SL = 2009,
+			DVSD = 2007,
+			DVHD = 2008,
+			DVSL = 2009,
 		}
 		public enum _DVDECODERRESOLUTION : int32
 		{
@@ -1450,7 +1450,7 @@ namespace Win32
 		}
 		public enum AM_FILTER_FLAGS : int32
 		{
-			AM_FILTER_FLAGS_REMOVABLE = 1,
+			FLAGS_REMOVABLE = 1,
 		}
 		public enum VMRPresentationFlags : int32
 		{
@@ -1885,8 +1885,8 @@ namespace Win32
 		}
 		public enum ISDBCAS_REQUEST_ID : int32
 		{
-			G = 56,
-			D = 58,
+			EMG = 56,
+			EMD = 58,
 		}
 		public enum MUX_PID_TYPE : int32
 		{
@@ -1904,20 +1904,20 @@ namespace Win32
 		}
 		public enum BDA_Channel : int32
 		{
-			BDA_UNDEFINED_CHANNEL = -1,
+			UNDEFINED_CHANNEL = -1,
 		}
 		public enum ComponentCategory : int32
 		{
-			ategoryNotSet = -1,
-			ategoryOther = 0,
-			ategoryVideo = 1,
-			ategoryAudio = 2,
-			ategoryText = 3,
-			ategorySubtitles = 4,
-			ategoryCaptions = 5,
-			ategorySuperimpose = 6,
-			ategoryData = 7,
-			ATEGORY_COUNT = 8,
+			CategoryNotSet = -1,
+			CategoryOther = 0,
+			CategoryVideo = 1,
+			CategoryAudio = 2,
+			CategoryText = 3,
+			CategorySubtitles = 4,
+			CategoryCaptions = 5,
+			CategorySuperimpose = 6,
+			CategoryData = 7,
+			CATEGORY_COUNT = 8,
 		}
 		public enum ComponentStatus : int32
 		{
@@ -2292,7 +2292,7 @@ namespace Win32
 		}
 		public enum AM_LINE21_CCLEVEL : int32
 		{
-			AM_L21_CCLEVEL_TC2 = 0,
+			L21_CCLEVEL_TC2 = 0,
 		}
 		public enum AM_LINE21_CCSERVICE : int32
 		{
@@ -2307,8 +2307,8 @@ namespace Win32
 		}
 		public enum AM_LINE21_CCSTATE : int32
 		{
-			ff = 0,
-			n = 1,
+			Off = 0,
+			On = 1,
 		}
 		public enum AM_LINE21_CCSTYLE : int32
 		{
@@ -2324,7 +2324,7 @@ namespace Win32
 		}
 		public enum AM_WST_LEVEL : int32
 		{
-			AM_WST_LEVEL_1_5 = 0,
+			LEVEL_1_5 = 0,
 		}
 		public enum AM_WST_SERVICE : int32
 		{
@@ -2335,8 +2335,8 @@ namespace Win32
 		}
 		public enum AM_WST_STATE : int32
 		{
-			ff = 0,
-			n = 1,
+			Off = 0,
+			On = 1,
 		}
 		public enum AM_WST_STYLE : int32
 		{
@@ -2378,11 +2378,11 @@ namespace Win32
 		}
 		public enum DDSFF_FLAGS : uint32
 		{
-			DDSFF_PROGRESSIVERENDER = 1,
+			PROGRESSIVERENDER = 1,
 		}
 		public enum AMMSF_MMS_INIT_FLAGS : uint32
 		{
-			AMMSF_NOGRAPHTHREAD = 1,
+			NOGRAPHTHREAD = 1,
 		}
 		public enum AMMSF_MS_FLAGS : uint32
 		{
@@ -2698,31 +2698,31 @@ namespace Win32
 		}
 		public enum DXVA2_SampleFlags : int32
 		{
-			_Palette_Changed = 1,
-			_SrcRect_Changed = 2,
-			_DstRect_Changed = 4,
-			_ColorData_Changed = 8,
-			_PlanarAlpha_Changed = 16,
-			_RFF = 65536,
-			_TFF = 131072,
-			_RFF_TFF_Present = 262144,
-			sMask = -65505,
+			Flag_Palette_Changed = 1,
+			Flag_SrcRect_Changed = 2,
+			Flag_DstRect_Changed = 4,
+			Flag_ColorData_Changed = 8,
+			Flag_PlanarAlpha_Changed = 16,
+			Flag_RFF = 65536,
+			Flag_TFF = 131072,
+			Flag_RFF_TFF_Present = 262144,
+			FlagsMask = -65505,
 		}
 		public enum DXVA2_DestinationFlags : int32
 		{
-			_Background_Changed = 1,
-			_TargetRect_Changed = 2,
-			_ColorData_Changed = 4,
-			_Alpha_Changed = 8,
-			_RFF = 65536,
-			_TFF = 131072,
-			_RFF_TFF_Present = 262144,
-			Mask = -65521,
+			Flag_Background_Changed = 1,
+			Flag_TargetRect_Changed = 2,
+			Flag_ColorData_Changed = 4,
+			Flag_Alpha_Changed = 8,
+			Flag_RFF = 65536,
+			Flag_TFF = 131072,
+			Flag_RFF_TFF_Present = 262144,
+			FlagMask = -65521,
 		}
 		public enum AMPlayListItemFlags : int32
 		{
-			SKIP = 1,
-			BIND = 2,
+			CANSKIP = 1,
+			CANBIND = 2,
 		}
 		public enum AMPlayListFlags : int32
 		{
@@ -3005,8 +3005,8 @@ namespace Win32
 		}
 		public enum CPRecordingStatus : int32
 		{
-			OPPED = 0,
-			ARTED = 1,
+			STOPPED = 0,
+			STARTED = 1,
 		}
 		public enum CPEventBitShift : int32
 		{
@@ -3481,35 +3481,35 @@ namespace Win32
 		}
 		public enum MSViddispidList : int32
 		{
-			Inputs = 0,
-			Outputs = 1,
-			_Inputs = 2,
-			_Outputs = 3,
-			VideoRenderers = 4,
-			AudioRenderers = 5,
-			Features = 6,
-			Input = 7,
-			Output = 8,
-			VideoRenderer = 9,
-			AudioRenderer = 10,
-			SelectedFeatures = 11,
-			View = 12,
-			Build = 13,
-			Pause = 14,
-			Run = 15,
-			Stop = 16,
-			Decompose = 17,
-			DisplaySize = 18,
-			MaintainAspectRatio = 19,
-			ColorKey = 20,
-			StateChange = 21,
-			getState = 22,
-			unbind = 23,
-			bind = 24,
-			DisableVideo = 25,
-			DisableAudio = 26,
-			ViewNext = 27,
-			ServiceP = 28,
+			dispidInputs = 0,
+			dispidOutputs = 1,
+			dispid_Inputs = 2,
+			dispid_Outputs = 3,
+			dispidVideoRenderers = 4,
+			dispidAudioRenderers = 5,
+			dispidFeatures = 6,
+			dispidInput = 7,
+			dispidOutput = 8,
+			dispidVideoRenderer = 9,
+			dispidAudioRenderer = 10,
+			dispidSelectedFeatures = 11,
+			dispidView = 12,
+			dispidBuild = 13,
+			dispidPause = 14,
+			dispidRun = 15,
+			dispidStop = 16,
+			dispidDecompose = 17,
+			dispidDisplaySize = 18,
+			dispidMaintainAspectRatio = 19,
+			dispidColorKey = 20,
+			dispidStateChange = 21,
+			dispidgetState = 22,
+			dispidunbind = 23,
+			dispidbind = 24,
+			dispidDisableVideo = 25,
+			dispidDisableAudio = 26,
+			dispidViewNext = 27,
+			dispidServiceP = 28,
 		}
 		[AllowDuplicates]
 		public enum DisplaySizeList : int32
@@ -3688,13 +3688,13 @@ namespace Win32
 		}
 		public enum KSPROPERTY_BDA_SIGNAL_STATS : int32
 		{
-			IGNAL_STRENGTH = 0,
-			IGNAL_QUALITY = 1,
-			IGNAL_PRESENT = 2,
-			IGNAL_LOCKED = 3,
-			AMPLE_TIME = 4,
-			IGNAL_LOCK_CAPS = 5,
-			IGNAL_LOCK_TYPE = 6,
+			SIGNAL_STRENGTH = 0,
+			SIGNAL_QUALITY = 1,
+			SIGNAL_PRESENT = 2,
+			SIGNAL_LOCKED = 3,
+			SAMPLE_TIME = 4,
+			SIGNAL_LOCK_CAPS = 5,
+			SIGNAL_LOCK_TYPE = 6,
 		}
 		public enum BDA_LockType : int32
 		{
@@ -3739,13 +3739,13 @@ namespace Win32
 		}
 		public enum KSPROPERTY_BDA_VOID_TRANSFORM : int32
 		{
-			ART = 0,
-			OP = 1,
+			START = 0,
+			STOP = 1,
 		}
 		public enum KSPROPERTY_BDA_NULL_TRANSFORM : int32
 		{
-			ART = 0,
-			OP = 1,
+			START = 0,
+			STOP = 1,
 		}
 		public enum KSPROPERTY_BDA_FREQUENCY_FILTER : int32
 		{
@@ -3779,7 +3779,7 @@ namespace Win32
 		}
 		public enum KSEVENT_BDA_TUNER : int32
 		{
-			KSEVENT_BDA_TUNER_SCAN = 0,
+			TUNER_SCAN = 0,
 		}
 		public enum KSPROPERTY_BDA_LNB_INFO : int32
 		{
@@ -3818,12 +3818,12 @@ namespace Win32
 		}
 		public enum KSPROPERTY_BDA_AUTODEMODULATE : int32
 		{
-			ART = 0,
-			OP = 1,
+			START = 0,
+			STOP = 1,
 		}
 		public enum KSPROPERTY_IDS_BDA_TABLE : int32
 		{
-			KSPROPERTY_BDA_TABLE_SECTION = 0,
+			BDA_TABLE_SECTION = 0,
 		}
 		public enum KSPROPERTY_BDA_PIDFILTER : int32
 		{
@@ -3879,7 +3879,7 @@ namespace Win32
 		}
 		public enum KSEVENT_BDA_EVENT_TYPE : int32
 		{
-			KSEVENT_BDA_EVENT_PENDINGEVENT = 0,
+			PENDINGEVENT = 0,
 		}
 		public enum KSMETHOD_BDA_DEBUG_SERVICE : int32
 		{
@@ -3906,12 +3906,12 @@ namespace Win32
 		}
 		public enum KSMETHOD_BDA_SCAN_SERVICE : int32
 		{
-			_CAPABILTIES = 0,
-			NING_STATE = 1,
-			_FILTER = 2,
-			_START = 3,
-			_RESUME = 4,
-			_STOP = 5,
+			SCAN_CAPABILTIES = 0,
+			SCANNING_STATE = 1,
+			SCAN_FILTER = 2,
+			SCAN_START = 3,
+			SCAN_RESUME = 4,
+			SCAN_STOP = 5,
 		}
 		public enum KSMETHOD_BDA_GDDS_SERVICE : int32
 		{
@@ -4027,8 +4027,8 @@ namespace Win32
 		}
 		public enum COPP_StatusHDCPFlags : int32
 		{
-			Repeater = 1,
-			FlagsReserved = -2,
+			HDCPRepeater = 1,
+			HDCPFlagsReserved = -2,
 		}
 		public enum COPP_ConnectorType : int32
 		{

@@ -319,141 +319,141 @@ namespace Win32
 		}
 		public enum WICBitmapCreateCacheOption : int32
 		{
-			itmapNoCache = 0,
-			itmapCacheOnDemand = 1,
-			itmapCacheOnLoad = 2,
-			ITMAPCREATECACHEOPTION_FORCE_DWORD = 2147483647,
+			WICBitmapNoCache = 0,
+			WICBitmapCacheOnDemand = 1,
+			WICBitmapCacheOnLoad = 2,
+			WICBITMAPCREATECACHEOPTION_FORCE_DWORD = 2147483647,
 		}
 		public enum WICDecodeOptions : int32
 		{
-			DecodeMetadataCacheOnDemand = 0,
-			DecodeMetadataCacheOnLoad = 1,
-			METADATACACHEOPTION_FORCE_DWORD = 2147483647,
+			WICDecodeMetadataCacheOnDemand = 0,
+			WICDecodeMetadataCacheOnLoad = 1,
+			WICMETADATACACHEOPTION_FORCE_DWORD = 2147483647,
 		}
 		public enum WICBitmapEncoderCacheOption : int32
 		{
-			itmapEncoderCacheInMemory = 0,
-			itmapEncoderCacheTempFile = 1,
-			itmapEncoderNoCache = 2,
-			ITMAPENCODERCACHEOPTION_FORCE_DWORD = 2147483647,
+			WICBitmapEncoderCacheInMemory = 0,
+			WICBitmapEncoderCacheTempFile = 1,
+			WICBitmapEncoderNoCache = 2,
+			WICBITMAPENCODERCACHEOPTION_FORCE_DWORD = 2147483647,
 		}
 		public enum WICComponentType : int32
 		{
-			Decoder = 1,
-			Encoder = 2,
-			PixelFormatConverter = 4,
-			MetadataReader = 8,
-			MetadataWriter = 16,
-			PixelFormat = 32,
-			AllComponents = 63,
-			COMPONENTTYPE_FORCE_DWORD = 2147483647,
+			WICDecoder = 1,
+			WICEncoder = 2,
+			WICPixelFormatConverter = 4,
+			WICMetadataReader = 8,
+			WICMetadataWriter = 16,
+			WICPixelFormat = 32,
+			WICAllComponents = 63,
+			WICCOMPONENTTYPE_FORCE_DWORD = 2147483647,
 		}
 		public enum WICComponentEnumerateOptions : int32
 		{
-			omponentEnumerateDefault = 0,
-			omponentEnumerateRefresh = 1,
-			omponentEnumerateDisabled = -2147483648,
-			omponentEnumerateUnsigned = 1073741824,
-			omponentEnumerateBuiltInOnly = 536870912,
-			OMPONENTENUMERATEOPTIONS_FORCE_DWORD = 2147483647,
+			WICComponentEnumerateDefault = 0,
+			WICComponentEnumerateRefresh = 1,
+			WICComponentEnumerateDisabled = -2147483648,
+			WICComponentEnumerateUnsigned = 1073741824,
+			WICComponentEnumerateBuiltInOnly = 536870912,
+			WICCOMPONENTENUMERATEOPTIONS_FORCE_DWORD = 2147483647,
 		}
 		public enum WICBitmapInterpolationMode : int32
 		{
-			itmapInterpolationModeNearestNeighbor = 0,
-			itmapInterpolationModeLinear = 1,
-			itmapInterpolationModeCubic = 2,
-			itmapInterpolationModeFant = 3,
-			itmapInterpolationModeHighQualityCubic = 4,
-			ITMAPINTERPOLATIONMODE_FORCE_DWORD = 2147483647,
+			WICBitmapInterpolationModeNearestNeighbor = 0,
+			WICBitmapInterpolationModeLinear = 1,
+			WICBitmapInterpolationModeCubic = 2,
+			WICBitmapInterpolationModeFant = 3,
+			WICBitmapInterpolationModeHighQualityCubic = 4,
+			WICBITMAPINTERPOLATIONMODE_FORCE_DWORD = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum WICBitmapPaletteType : int32
 		{
-			itmapPaletteTypeCustom = 0,
-			itmapPaletteTypeMedianCut = 1,
-			itmapPaletteTypeFixedBW = 2,
-			itmapPaletteTypeFixedHalftone8 = 3,
-			itmapPaletteTypeFixedHalftone27 = 4,
-			itmapPaletteTypeFixedHalftone64 = 5,
-			itmapPaletteTypeFixedHalftone125 = 6,
-			itmapPaletteTypeFixedHalftone216 = 7,
-			itmapPaletteTypeFixedWebPalette = 7,
-			itmapPaletteTypeFixedHalftone252 = 8,
-			itmapPaletteTypeFixedHalftone256 = 9,
-			itmapPaletteTypeFixedGray4 = 10,
-			itmapPaletteTypeFixedGray16 = 11,
-			itmapPaletteTypeFixedGray256 = 12,
-			ITMAPPALETTETYPE_FORCE_DWORD = 2147483647,
+			WICBitmapPaletteTypeCustom = 0,
+			WICBitmapPaletteTypeMedianCut = 1,
+			WICBitmapPaletteTypeFixedBW = 2,
+			WICBitmapPaletteTypeFixedHalftone8 = 3,
+			WICBitmapPaletteTypeFixedHalftone27 = 4,
+			WICBitmapPaletteTypeFixedHalftone64 = 5,
+			WICBitmapPaletteTypeFixedHalftone125 = 6,
+			WICBitmapPaletteTypeFixedHalftone216 = 7,
+			WICBitmapPaletteTypeFixedWebPalette = 7,
+			WICBitmapPaletteTypeFixedHalftone252 = 8,
+			WICBitmapPaletteTypeFixedHalftone256 = 9,
+			WICBitmapPaletteTypeFixedGray4 = 10,
+			WICBitmapPaletteTypeFixedGray16 = 11,
+			WICBitmapPaletteTypeFixedGray256 = 12,
+			WICBITMAPPALETTETYPE_FORCE_DWORD = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum WICBitmapDitherType : int32
 		{
-			itmapDitherTypeNone = 0,
-			itmapDitherTypeSolid = 0,
-			itmapDitherTypeOrdered4x4 = 1,
-			itmapDitherTypeOrdered8x8 = 2,
-			itmapDitherTypeOrdered16x16 = 3,
-			itmapDitherTypeSpiral4x4 = 4,
-			itmapDitherTypeSpiral8x8 = 5,
-			itmapDitherTypeDualSpiral4x4 = 6,
-			itmapDitherTypeDualSpiral8x8 = 7,
-			itmapDitherTypeErrorDiffusion = 8,
-			ITMAPDITHERTYPE_FORCE_DWORD = 2147483647,
+			WICBitmapDitherTypeNone = 0,
+			WICBitmapDitherTypeSolid = 0,
+			WICBitmapDitherTypeOrdered4x4 = 1,
+			WICBitmapDitherTypeOrdered8x8 = 2,
+			WICBitmapDitherTypeOrdered16x16 = 3,
+			WICBitmapDitherTypeSpiral4x4 = 4,
+			WICBitmapDitherTypeSpiral8x8 = 5,
+			WICBitmapDitherTypeDualSpiral4x4 = 6,
+			WICBitmapDitherTypeDualSpiral8x8 = 7,
+			WICBitmapDitherTypeErrorDiffusion = 8,
+			WICBITMAPDITHERTYPE_FORCE_DWORD = 2147483647,
 		}
 		public enum WICBitmapAlphaChannelOption : int32
 		{
-			itmapUseAlpha = 0,
-			itmapUsePremultipliedAlpha = 1,
-			itmapIgnoreAlpha = 2,
-			ITMAPALPHACHANNELOPTIONS_FORCE_DWORD = 2147483647,
+			WICBitmapUseAlpha = 0,
+			WICBitmapUsePremultipliedAlpha = 1,
+			WICBitmapIgnoreAlpha = 2,
+			WICBITMAPALPHACHANNELOPTIONS_FORCE_DWORD = 2147483647,
 		}
 		public enum WICBitmapTransformOptions : int32
 		{
-			itmapTransformRotate0 = 0,
-			itmapTransformRotate90 = 1,
-			itmapTransformRotate180 = 2,
-			itmapTransformRotate270 = 3,
-			itmapTransformFlipHorizontal = 8,
-			itmapTransformFlipVertical = 16,
-			ITMAPTRANSFORMOPTIONS_FORCE_DWORD = 2147483647,
+			WICBitmapTransformRotate0 = 0,
+			WICBitmapTransformRotate90 = 1,
+			WICBitmapTransformRotate180 = 2,
+			WICBitmapTransformRotate270 = 3,
+			WICBitmapTransformFlipHorizontal = 8,
+			WICBitmapTransformFlipVertical = 16,
+			WICBITMAPTRANSFORMOPTIONS_FORCE_DWORD = 2147483647,
 		}
 		public enum WICBitmapLockFlags : int32
 		{
-			itmapLockRead = 1,
-			itmapLockWrite = 2,
-			ITMAPLOCKFLAGS_FORCE_DWORD = 2147483647,
+			WICBitmapLockRead = 1,
+			WICBitmapLockWrite = 2,
+			WICBITMAPLOCKFLAGS_FORCE_DWORD = 2147483647,
 		}
 		public enum WICBitmapDecoderCapabilities : int32
 		{
-			itmapDecoderCapabilitySameEncoder = 1,
-			itmapDecoderCapabilityCanDecodeAllImages = 2,
-			itmapDecoderCapabilityCanDecodeSomeImages = 4,
-			itmapDecoderCapabilityCanEnumerateMetadata = 8,
-			itmapDecoderCapabilityCanDecodeThumbnail = 16,
-			ITMAPDECODERCAPABILITIES_FORCE_DWORD = 2147483647,
+			WICBitmapDecoderCapabilitySameEncoder = 1,
+			WICBitmapDecoderCapabilityCanDecodeAllImages = 2,
+			WICBitmapDecoderCapabilityCanDecodeSomeImages = 4,
+			WICBitmapDecoderCapabilityCanEnumerateMetadata = 8,
+			WICBitmapDecoderCapabilityCanDecodeThumbnail = 16,
+			WICBITMAPDECODERCAPABILITIES_FORCE_DWORD = 2147483647,
 		}
 		public enum WICProgressOperation : int32
 		{
-			rogressOperationCopyPixels = 1,
-			rogressOperationWritePixels = 2,
-			rogressOperationAll = 65535,
-			ROGRESSOPERATION_FORCE_DWORD = 2147483647,
+			WICProgressOperationCopyPixels = 1,
+			WICProgressOperationWritePixels = 2,
+			WICProgressOperationAll = 65535,
+			WICPROGRESSOPERATION_FORCE_DWORD = 2147483647,
 		}
 		public enum WICProgressNotification : int32
 		{
-			rogressNotificationBegin = 65536,
-			rogressNotificationEnd = 131072,
-			rogressNotificationFrequent = 262144,
-			rogressNotificationAll = -65536,
-			ROGRESSNOTIFICATION_FORCE_DWORD = 2147483647,
+			WICProgressNotificationBegin = 65536,
+			WICProgressNotificationEnd = 131072,
+			WICProgressNotificationFrequent = 262144,
+			WICProgressNotificationAll = -65536,
+			WICPROGRESSNOTIFICATION_FORCE_DWORD = 2147483647,
 		}
 		public enum WICComponentSigning : int32
 		{
-			omponentSigned = 1,
-			omponentUnsigned = 2,
-			omponentSafe = 4,
-			omponentDisabled = -2147483648,
-			OMPONENTSIGNING_FORCE_DWORD = 2147483647,
+			WICComponentSigned = 1,
+			WICComponentUnsigned = 2,
+			WICComponentSafe = 4,
+			WICComponentDisabled = -2147483648,
+			WICCOMPONENTSIGNING_FORCE_DWORD = 2147483647,
 		}
 		public enum WICGifLogicalScreenDescriptorProperties : uint32
 		{
@@ -576,9 +576,9 @@ namespace Win32
 		}
 		public enum WICPngIccpProperties : uint32
 		{
-			fileName = 1,
-			fileData = 2,
-			perties_FORCE_DWORD = 2147483647,
+			ProfileName = 1,
+			ProfileData = 2,
+			Properties_FORCE_DWORD = 2147483647,
 		}
 		public enum WICPngSrgbProperties : uint32
 		{
@@ -621,138 +621,138 @@ namespace Win32
 		}
 		public enum WICSectionAccessLevel : uint32
 		{
-			Read = 1,
-			ReadWrite = 3,
-			_FORCE_DWORD = 2147483647,
+			LevelRead = 1,
+			LevelReadWrite = 3,
+			Level_FORCE_DWORD = 2147483647,
 		}
 		public enum WICPixelFormatNumericRepresentation : uint32
 		{
-			Unspecified = 0,
-			Indexed = 1,
-			UnsignedInteger = 2,
-			SignedInteger = 3,
-			Fixed = 4,
-			Float = 5,
-			_FORCE_DWORD = 2147483647,
+			RepresentationUnspecified = 0,
+			RepresentationIndexed = 1,
+			RepresentationUnsignedInteger = 2,
+			RepresentationSignedInteger = 3,
+			RepresentationFixed = 4,
+			RepresentationFloat = 5,
+			Representation_FORCE_DWORD = 2147483647,
 		}
 		public enum WICPlanarOptions : int32
 		{
-			lanarOptionsDefault = 0,
-			lanarOptionsPreserveSubsampling = 1,
-			LANAROPTIONS_FORCE_DWORD = 2147483647,
+			WICPlanarOptionsDefault = 0,
+			WICPlanarOptionsPreserveSubsampling = 1,
+			WICPLANAROPTIONS_FORCE_DWORD = 2147483647,
 		}
 		public enum WICJpegIndexingOptions : uint32
 		{
-			GenerateOnDemand = 0,
-			GenerateOnLoad = 1,
-			_FORCE_DWORD = 2147483647,
+			OptionsGenerateOnDemand = 0,
+			OptionsGenerateOnLoad = 1,
+			Options_FORCE_DWORD = 2147483647,
 		}
 		public enum WICJpegTransferMatrix : uint32
 		{
-			Identity = 0,
-			BT601 = 1,
-			_FORCE_DWORD = 2147483647,
+			MatrixIdentity = 0,
+			MatrixBT601 = 1,
+			Matrix_FORCE_DWORD = 2147483647,
 		}
 		public enum WICJpegScanType : uint32
 		{
-			Interleaved = 0,
-			PlanarComponents = 1,
-			Progressive = 2,
-			_FORCE_DWORD = 2147483647,
+			TypeInterleaved = 0,
+			TypePlanarComponents = 1,
+			TypeProgressive = 2,
+			Type_FORCE_DWORD = 2147483647,
 		}
 		public enum WICTiffCompressionOption : int32
 		{
-			iffCompressionDontCare = 0,
-			iffCompressionNone = 1,
-			iffCompressionCCITT3 = 2,
-			iffCompressionCCITT4 = 3,
-			iffCompressionLZW = 4,
-			iffCompressionRLE = 5,
-			iffCompressionZIP = 6,
-			iffCompressionLZWHDifferencing = 7,
-			IFFCOMPRESSIONOPTION_FORCE_DWORD = 2147483647,
+			WICTiffCompressionDontCare = 0,
+			WICTiffCompressionNone = 1,
+			WICTiffCompressionCCITT3 = 2,
+			WICTiffCompressionCCITT4 = 3,
+			WICTiffCompressionLZW = 4,
+			WICTiffCompressionRLE = 5,
+			WICTiffCompressionZIP = 6,
+			WICTiffCompressionLZWHDifferencing = 7,
+			WICTIFFCOMPRESSIONOPTION_FORCE_DWORD = 2147483647,
 		}
 		public enum WICJpegYCrCbSubsamplingOption : int32
 		{
-			pegYCrCbSubsamplingDefault = 0,
-			pegYCrCbSubsampling420 = 1,
-			pegYCrCbSubsampling422 = 2,
-			pegYCrCbSubsampling444 = 3,
-			pegYCrCbSubsampling440 = 4,
-			PEGYCRCBSUBSAMPLING_FORCE_DWORD = 2147483647,
+			WICJpegYCrCbSubsamplingDefault = 0,
+			WICJpegYCrCbSubsampling420 = 1,
+			WICJpegYCrCbSubsampling422 = 2,
+			WICJpegYCrCbSubsampling444 = 3,
+			WICJpegYCrCbSubsampling440 = 4,
+			WICJPEGYCRCBSUBSAMPLING_FORCE_DWORD = 2147483647,
 		}
 		public enum WICPngFilterOption : int32
 		{
-			ngFilterUnspecified = 0,
-			ngFilterNone = 1,
-			ngFilterSub = 2,
-			ngFilterUp = 3,
-			ngFilterAverage = 4,
-			ngFilterPaeth = 5,
-			ngFilterAdaptive = 6,
-			NGFILTEROPTION_FORCE_DWORD = 2147483647,
+			WICPngFilterUnspecified = 0,
+			WICPngFilterNone = 1,
+			WICPngFilterSub = 2,
+			WICPngFilterUp = 3,
+			WICPngFilterAverage = 4,
+			WICPngFilterPaeth = 5,
+			WICPngFilterAdaptive = 6,
+			WICPNGFILTEROPTION_FORCE_DWORD = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum WICNamedWhitePoint : int32
 		{
-			WhitePointDefault = 1,
-			WhitePointDaylight = 2,
-			WhitePointCloudy = 4,
-			WhitePointShade = 8,
-			WhitePointTungsten = 16,
-			WhitePointFluorescent = 32,
-			WhitePointFlash = 64,
-			WhitePointUnderwater = 128,
-			WhitePointCustom = 256,
-			WhitePointAutoWhiteBalance = 512,
-			WhitePointAsShot = 1,
-			NAMEDWHITEPOINT_FORCE_DWORD = 2147483647,
+			WICWhitePointDefault = 1,
+			WICWhitePointDaylight = 2,
+			WICWhitePointCloudy = 4,
+			WICWhitePointShade = 8,
+			WICWhitePointTungsten = 16,
+			WICWhitePointFluorescent = 32,
+			WICWhitePointFlash = 64,
+			WICWhitePointUnderwater = 128,
+			WICWhitePointCustom = 256,
+			WICWhitePointAutoWhiteBalance = 512,
+			WICWhitePointAsShot = 1,
+			WICNAMEDWHITEPOINT_FORCE_DWORD = 2147483647,
 		}
 		public enum WICRawCapabilities : int32
 		{
-			awCapabilityNotSupported = 0,
-			awCapabilityGetSupported = 1,
-			awCapabilityFullySupported = 2,
-			AWCAPABILITIES_FORCE_DWORD = 2147483647,
+			WICRawCapabilityNotSupported = 0,
+			WICRawCapabilityGetSupported = 1,
+			WICRawCapabilityFullySupported = 2,
+			WICRAWCAPABILITIES_FORCE_DWORD = 2147483647,
 		}
 		public enum WICRawRotationCapabilities : int32
 		{
-			awRotationCapabilityNotSupported = 0,
-			awRotationCapabilityGetSupported = 1,
-			awRotationCapabilityNinetyDegreesSupported = 2,
-			awRotationCapabilityFullySupported = 3,
-			AWROTATIONCAPABILITIES_FORCE_DWORD = 2147483647,
+			WICRawRotationCapabilityNotSupported = 0,
+			WICRawRotationCapabilityGetSupported = 1,
+			WICRawRotationCapabilityNinetyDegreesSupported = 2,
+			WICRawRotationCapabilityFullySupported = 3,
+			WICRAWROTATIONCAPABILITIES_FORCE_DWORD = 2147483647,
 		}
 		public enum WICRawParameterSet : int32
 		{
-			AsShotParameterSet = 1,
-			UserAdjustedParameterSet = 2,
-			AutoAdjustedParameterSet = 3,
-			RAWPARAMETERSET_FORCE_DWORD = 2147483647,
+			WICAsShotParameterSet = 1,
+			WICUserAdjustedParameterSet = 2,
+			WICAutoAdjustedParameterSet = 3,
+			WICRAWPARAMETERSET_FORCE_DWORD = 2147483647,
 		}
 		public enum WICRawRenderMode : int32
 		{
-			awRenderModeDraft = 1,
-			awRenderModeNormal = 2,
-			awRenderModeBestQuality = 3,
-			AWRENDERMODE_FORCE_DWORD = 2147483647,
+			WICRawRenderModeDraft = 1,
+			WICRawRenderModeNormal = 2,
+			WICRawRenderModeBestQuality = 3,
+			WICRAWRENDERMODE_FORCE_DWORD = 2147483647,
 		}
 		public enum WICDdsDimension : int32
 		{
-			dsTexture1D = 0,
-			dsTexture2D = 1,
-			dsTexture3D = 2,
-			dsTextureCube = 3,
-			DSTEXTURE_FORCE_DWORD = 2147483647,
+			WICDdsTexture1D = 0,
+			WICDdsTexture2D = 1,
+			WICDdsTexture3D = 2,
+			WICDdsTextureCube = 3,
+			WICDDSTEXTURE_FORCE_DWORD = 2147483647,
 		}
 		public enum WICDdsAlphaMode : int32
 		{
-			dsAlphaModeUnknown = 0,
-			dsAlphaModeStraight = 1,
-			dsAlphaModePremultiplied = 2,
-			dsAlphaModeOpaque = 3,
-			dsAlphaModeCustom = 4,
-			DSALPHAMODE_FORCE_DWORD = 2147483647,
+			WICDdsAlphaModeUnknown = 0,
+			WICDdsAlphaModeStraight = 1,
+			WICDdsAlphaModePremultiplied = 2,
+			WICDdsAlphaModeOpaque = 3,
+			WICDdsAlphaModeCustom = 4,
+			WICDDSALPHAMODE_FORCE_DWORD = 2147483647,
 		}
 		[AllowDuplicates]
 		public enum WICMetadataCreationOptions : int32

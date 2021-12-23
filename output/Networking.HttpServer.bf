@@ -117,19 +117,19 @@ namespace Win32
 		}
 		public enum HTTP_SERVER_PROPERTY : int32
 		{
-			AuthenticationProperty = 0,
-			LoggingProperty = 1,
-			QosProperty = 2,
-			TimeoutsProperty = 3,
-			QueueLengthProperty = 4,
-			StateProperty = 5,
-			_503VerbosityProperty = 6,
-			BindingProperty = 7,
-			ExtendedAuthenticationProperty = 8,
-			ListenEndpointProperty = 9,
-			ChannelBindProperty = 10,
-			ProtectionLevelProperty = 11,
-			DelegationProperty = 16,
+			ServerAuthenticationProperty = 0,
+			ServerLoggingProperty = 1,
+			ServerQosProperty = 2,
+			ServerTimeoutsProperty = 3,
+			ServerQueueLengthProperty = 4,
+			ServerStateProperty = 5,
+			Server503VerbosityProperty = 6,
+			ServerBindingProperty = 7,
+			ServerExtendedAuthenticationProperty = 8,
+			ServerListenEndpointProperty = 9,
+			ServerChannelBindProperty = 10,
+			ServerProtectionLevelProperty = 11,
+			ServerDelegationProperty = 16,
 		}
 		public enum HTTP_ENABLED_STATE : int32
 		{
@@ -448,12 +448,12 @@ namespace Win32
 		}
 		public enum HTTP_FEATURE_ID : int32
 		{
-			Unknown = 0,
-			ResponseTrailers = 1,
-			ApiTimings = 2,
-			DelegateEx = 3,
-			Http3 = 4,
-			max = -1,
+			FeatureUnknown = 0,
+			FeatureResponseTrailers = 1,
+			FeatureApiTimings = 2,
+			FeatureDelegateEx = 3,
+			FeatureHttp3 = 4,
+			Featuremax = -1,
 		}
 		
 		// --- Structs ---

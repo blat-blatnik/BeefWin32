@@ -1421,18 +1421,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DRAWSTATE_FLAGS : uint32
 		{
-			T_COMPLEX = 0,
-			T_TEXT = 1,
-			T_PREFIXTEXT = 2,
-			T_ICON = 3,
-			T_BITMAP = 4,
-			S_NORMAL = 0,
-			S_UNION = 16,
-			S_DISABLED = 32,
-			S_MONO = 128,
-			S_HIDEPREFIX = 512,
-			S_PREFIXONLY = 1024,
-			S_RIGHT = 32768,
+			DST_COMPLEX = 0,
+			DST_TEXT = 1,
+			DST_PREFIXTEXT = 2,
+			DST_ICON = 3,
+			DST_BITMAP = 4,
+			DSS_NORMAL = 0,
+			DSS_UNION = 16,
+			DSS_DISABLED = 32,
+			DSS_MONO = 128,
+			DSS_HIDEPREFIX = 512,
+			DSS_PREFIXONLY = 1024,
+			DSS_RIGHT = 32768,
 		}
 		public enum REDRAW_WINDOW_FLAGS : uint32
 		{
@@ -1627,9 +1627,9 @@ namespace Win32
 		}
 		public enum MONITOR_FROM_FLAGS : uint32
 		{
-			NEAREST = 2,
-			NULL = 0,
-			PRIMARY = 1,
+			DEFAULTTONEAREST = 2,
+			DEFAULTTONULL = 0,
+			DEFAULTTOPRIMARY = 1,
 		}
 		public enum FONT_RESOURCE_CHARACTERISTICS : uint32
 		{
@@ -1699,8 +1699,8 @@ namespace Win32
 		}
 		public enum ARC_DIRECTION : uint32
 		{
-			OUNTERCLOCKWISE = 1,
-			LOCKWISE = 2,
+			COUNTERCLOCKWISE = 1,
+			CLOCKWISE = 2,
 		}
 		public enum TTLOAD_EMBEDDED_FONT_STATUS : uint32
 		{
@@ -1797,8 +1797,8 @@ namespace Win32
 		}
 		public enum EXT_FLOOD_FILL_TYPE : uint32
 		{
-			BORDER = 0,
-			SURFACE = 1,
+			FLOODFILLBORDER = 0,
+			FLOODFILLSURFACE = 1,
 		}
 		public enum HATCH_BRUSH_STYLE : uint32
 		{

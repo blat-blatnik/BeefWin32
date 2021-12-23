@@ -156,8 +156,8 @@ namespace Win32
 		}
 		public enum OPEN_FILENAME_FLAGS_EX : uint32
 		{
-			NE = 0,
-			PLACESBAR = 1,
+			NONE = 0,
+			NOPLACESBAR = 1,
 		}
 		[AllowDuplicates]
 		public enum PAGESETUPDLG_FLAGS : uint32

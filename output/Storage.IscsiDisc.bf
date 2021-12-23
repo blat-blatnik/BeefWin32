@@ -225,7 +225,7 @@ namespace Win32
 		}
 		public enum IKE_AUTHENTICATION_METHOD : int32
 		{
-			IKE_AUTHENTICATION_PRESHARED_KEY_METHOD = 1,
+			PRESHARED_KEY_METHOD = 1,
 		}
 		public enum TARGETPROTOCOLTYPE : int32
 		{

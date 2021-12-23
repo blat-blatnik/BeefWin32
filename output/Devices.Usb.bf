@@ -562,8 +562,8 @@ namespace Win32
 		}
 		public enum USB_DEVICE_TYPE : int32
 		{
-			_11Device = 0,
-			_20Device = 1,
+			Usb11Device = 0,
+			Usb20Device = 1,
 		}
 		public enum USB_CONTROLLER_FLAVOR : int32
 		{

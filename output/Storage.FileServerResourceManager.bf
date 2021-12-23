@@ -170,7 +170,7 @@ namespace Win32
 		}
 		public enum FsrmFileScreenFlags : int32
 		{
-			FsrmFileScreenFlags_Enforce = 1,
+			Flags_Enforce = 1,
 		}
 		public enum FsrmCollectionState : int32
 		{
@@ -308,8 +308,8 @@ namespace Win32
 		}
 		public enum FsrmPropertyDefinitionAppliesTo : int32
 		{
-			iles = 1,
-			olders = 2,
+			Files = 1,
+			Folders = 2,
 		}
 		public enum FsrmRuleType : int32
 		{

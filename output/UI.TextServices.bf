@@ -476,8 +476,8 @@ namespace Win32
 		}
 		public enum TEXT_STORE_LOCK_FLAGS : uint32
 		{
-			D = 2,
-			DWRITE = 6,
+			READ = 2,
+			READWRITE = 6,
 		}
 		public enum GET_TEXT_AND_PROPERTY_UPDATES_FLAGS : uint32
 		{

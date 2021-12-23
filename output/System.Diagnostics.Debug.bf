@@ -2272,9 +2272,9 @@ namespace Win32
 		}
 		public enum VER_PLATFORM : uint32
 		{
-			s = 0,
-			_WINDOWS = 1,
-			_NT = 2,
+			WIN32s = 0,
+			WIN32_WINDOWS = 1,
+			WIN32_NT = 2,
 		}
 		public enum IMAGE_DEBUG_TYPE : uint32
 		{
@@ -2333,15 +2333,15 @@ namespace Win32
 		}
 		public enum SymbolKind : int32
 		{
-			l = 0,
-			lModule = 1,
-			lType = 2,
-			lField = 3,
-			lConstant = 4,
-			lData = 5,
-			lBaseClass = 6,
-			lPublic = 7,
-			lFunction = 8,
+			Symbol = 0,
+			SymbolModule = 1,
+			SymbolType = 2,
+			SymbolField = 3,
+			SymbolConstant = 4,
+			SymbolData = 5,
+			SymbolBaseClass = 6,
+			SymbolPublic = 7,
+			SymbolFunction = 8,
 		}
 		public enum TypeKind : int32
 		{
@@ -2415,8 +2415,8 @@ namespace Win32
 		}
 		public enum RawSearchFlags : int32
 		{
-			ne = 0,
-			Bases = 1,
+			None = 0,
+			NoBases = 1,
 		}
 		public enum ErrorClass : int32
 		{
@@ -2451,7 +2451,7 @@ namespace Win32
 		}
 		public enum ScriptChangeKind : int32
 		{
-			ScriptRename = 0,
+			Rename = 0,
 		}
 		public enum ScriptDebugState : int32
 		{
@@ -2947,7 +2947,7 @@ namespace Win32
 		}
 		public enum PROFILER_HEAP_SUMMARY_VERSION : int32
 		{
-			PROFILER_HEAP_SUMMARY_VERSION_1 = 1,
+			VERSION_1 = 1,
 		}
 		public enum IMAGEHLP_STATUS_REASON : int32
 		{
@@ -2974,10 +2974,10 @@ namespace Win32
 		}
 		public enum ADDRESS_MODE : int32
 		{
-			_1616 = 0,
-			_1632 = 1,
-			Real = 2,
-			Flat = 3,
+			Mode1616 = 0,
+			Mode1632 = 1,
+			ModeReal = 2,
+			ModeFlat = 3,
 		}
 		public enum SYM_TYPE : int32
 		{
@@ -3101,8 +3101,8 @@ namespace Win32
 		}
 		public enum JS_PROPERTY_MEMBERS : int32
 		{
-			LL = 0,
-			RGUMENTS = 1,
+			ALL = 0,
+			ARGUMENTS = 1,
 		}
 		public enum JS_PROPERTY_ATTRIBUTES : int32
 		{

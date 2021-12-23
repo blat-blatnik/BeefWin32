@@ -272,7 +272,7 @@ namespace Win32
 		}
 		public enum CCM_COMMANDID_MASK_CONSTANTS : uint32
 		{
-			CCM_COMMANDID_MASK_RESERVED = 4294901760,
+			RESERVED = 4294901760,
 		}
 		public enum CCM_SPECIAL : int32
 		{

@@ -820,7 +820,7 @@ namespace Win32
 		}
 		public enum WMPPlugin_Caps : int32
 		{
-			WMPPlugin_Caps_CannotConvertFormats = 1,
+			Caps_CannotConvertFormats = 1,
 		}
 		public enum FEEDS_BACKGROUNDSYNC_ACTION : int32
 		{
@@ -841,8 +841,8 @@ namespace Win32
 		}
 		public enum FEEDS_EVENTS_MASK : int32
 		{
-			OLDEREVENTS = 1,
-			EEDEVENTS = 2,
+			FOLDEREVENTS = 1,
+			FEEDEVENTS = 2,
 		}
 		public enum FEEDS_XML_SORT_PROPERTY : int32
 		{

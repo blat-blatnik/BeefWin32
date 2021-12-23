@@ -1529,8 +1529,8 @@ namespace Win32
 		}
 		public enum XPSRAS_RENDERING_MODE : int32
 		{
-			NTIALIASED = 0,
-			LIASED = 1,
+			ANTIALIASED = 0,
+			ALIASED = 1,
 		}
 		public enum XPSRAS_PIXEL_FORMAT : int32
 		{

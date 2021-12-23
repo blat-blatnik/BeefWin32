@@ -47,7 +47,7 @@ namespace Win32
 		}
 		public enum PRJ_EXT_INFO_TYPE : int32
 		{
-			PRJ_EXT_INFO_TYPE_SYMLINK = 1,
+			TYPE_SYMLINK = 1,
 		}
 		public enum PRJ_STARTVIRTUALIZING_FLAGS : uint32
 		{
@@ -56,7 +56,7 @@ namespace Win32
 		}
 		public enum PRJ_PLACEHOLDER_ID : int32
 		{
-			PRJ_PLACEHOLDER_ID_LENGTH = 128,
+			ID_LENGTH = 128,
 		}
 		public enum PRJ_UPDATE_TYPES : uint32
 		{
@@ -87,8 +87,8 @@ namespace Win32
 		}
 		public enum PRJ_CALLBACK_DATA_FLAGS : int32
 		{
-			START_SCAN = 1,
-			TURN_SINGLE_ENTRY = 2,
+			RESTART_SCAN = 1,
+			RETURN_SINGLE_ENTRY = 2,
 		}
 		public enum PRJ_COMPLETE_COMMAND_TYPE : int32
 		{

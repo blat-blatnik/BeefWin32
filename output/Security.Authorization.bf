@@ -158,7 +158,7 @@ namespace Win32
 		}
 		public enum AUTHZ_ACCESS_CHECK_FLAGS : uint32
 		{
-			AUTHZ_ACCESS_CHECK_NO_DEEP_COPY_SD = 1,
+			NO_DEEP_COPY_SD = 1,
 		}
 		public enum AUTHZ_INITIALIZE_OBJECT_ACCESS_AUDIT_EVENT_FLAGS : uint32
 		{
@@ -179,10 +179,10 @@ namespace Win32
 		}
 		public enum ACTRL_ACCESS_ENTRY_ACCESS_FLAGS : uint32
 		{
-			CCESS_ALLOWED = 1,
-			CCESS_DENIED = 2,
-			UDIT_SUCCESS = 4,
-			UDIT_FAILURE = 8,
+			ACCESS_ALLOWED = 1,
+			ACCESS_DENIED = 2,
+			AUDIT_SUCCESS = 4,
+			AUDIT_FAILURE = 8,
 		}
 		public enum AUTHZ_SECURITY_ATTRIBUTE_FLAGS : uint32
 		{

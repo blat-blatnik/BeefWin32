@@ -93,8 +93,8 @@ namespace Win32
 		}
 		public enum SHARINGCONNECTIONTYPE : int32
 		{
-			UBLIC = 0,
-			RIVATE = 1,
+			PUBLIC = 0,
+			PRIVATE = 1,
 		}
 		public enum SHARINGCONNECTION_ENUM_FLAGS : int32
 		{

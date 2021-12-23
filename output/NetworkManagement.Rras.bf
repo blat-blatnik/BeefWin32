@@ -713,8 +713,8 @@ namespace Win32
 		}
 		public enum RASENTRY_DIAL_MODE : uint32
 		{
-			ll = 1,
-			sNeeded = 2,
+			All = 1,
+			AsNeeded = 2,
 		}
 		[AllowDuplicates]
 		public enum RAS_FLAGS : uint32
@@ -735,9 +735,9 @@ namespace Win32
 		}
 		public enum RASPPP_PROJECTION_INFO_SERVER_AUTH_DATA : uint32
 		{
-			D5 = 5,
-			S = 128,
-			SV2 = 129,
+			MD5 = 5,
+			MS = 128,
+			MSV2 = 129,
 		}
 		public enum PPP_LCP : uint32
 		{
@@ -755,9 +755,9 @@ namespace Win32
 		}
 		public enum PPP_LCP_INFO_AUTH_DATA : uint32
 		{
-			D5 = 5,
-			S = 128,
-			SV2 = 129,
+			MD5 = 5,
+			MS = 128,
+			MSV2 = 129,
 		}
 		public enum RASIKEV_PROJECTION_INFO_FLAGS : uint32
 		{
@@ -911,13 +911,13 @@ namespace Win32
 		}
 		public enum MPR_VPN_TS_TYPE : int32
 		{
-			_4_ADDR_RANGE = 7,
-			_6_ADDR_RANGE = 8,
+			IPv4_ADDR_RANGE = 7,
+			IPv6_ADDR_RANGE = 8,
 		}
 		public enum MGM_ENUM_TYPES : int32
 		{
-			NY_SOURCE = 0,
-			LL_SOURCES = 1,
+			ANY_SOURCE = 0,
+			ALL_SOURCES = 1,
 		}
 		public enum RTM_EVENT_TYPE : int32
 		{

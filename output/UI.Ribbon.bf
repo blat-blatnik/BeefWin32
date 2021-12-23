@@ -115,7 +115,7 @@ namespace Win32
 		}
 		public enum UI_VIEWTYPE : int32
 		{
-			UI_VIEWTYPE_RIBBON = 1,
+			VIEWTYPE_RIBBON = 1,
 		}
 		public enum UI_VIEWVERB : int32
 		{

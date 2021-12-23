@@ -1865,19 +1865,19 @@ namespace Win32
 		}
 		public enum NDIS_802_11_STATUS_TYPE : int32
 		{
-			_Authentication = 0,
-			_MediaStreamMode = 1,
-			_PMKID_CandidateList = 2,
-			Max = 3,
+			Type_Authentication = 0,
+			Type_MediaStreamMode = 1,
+			Type_PMKID_CandidateList = 2,
+			TypeMax = 3,
 		}
 		public enum NDIS_802_11_NETWORK_TYPE : int32
 		{
-			FH = 0,
-			DS = 1,
-			OFDM5 = 2,
-			OFDM24 = 3,
-			Automode = 4,
-			NetworkTypeMax = 5,
+			_11FH = 0,
+			_11DS = 1,
+			_11OFDM5 = 2,
+			_11OFDM24 = 3,
+			_11Automode = 4,
+			_11NetworkTypeMax = 5,
 		}
 		public enum NDIS_802_11_POWER_MODE : int32
 		{
@@ -1888,10 +1888,10 @@ namespace Win32
 		}
 		public enum NDIS_802_11_NETWORK_INFRASTRUCTURE : int32
 		{
-			IBSS = 0,
-			Infrastructure = 1,
-			AutoUnknown = 2,
-			InfrastructureMax = 3,
+			_11IBSS = 0,
+			_11Infrastructure = 1,
+			_11AutoUnknown = 2,
+			_11InfrastructureMax = 3,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_AUTHENTICATION_MODE : int32
@@ -1912,24 +1912,24 @@ namespace Win32
 		}
 		public enum NDIS_802_11_PRIVACY_FILTER : int32
 		{
-			AcceptAll = 0,
-			_8021xWEP = 1,
+			FilterAcceptAll = 0,
+			Filter8021xWEP = 1,
 		}
 		[AllowDuplicates]
 		public enum NDIS_802_11_WEP_STATUS : int32
 		{
-			WEPEnabled = 0,
-			Encryption1Enabled = 0,
-			WEPDisabled = 1,
-			EncryptionDisabled = 1,
-			WEPKeyAbsent = 2,
-			Encryption1KeyAbsent = 2,
-			WEPNotSupported = 3,
-			EncryptionNotSupported = 3,
-			Encryption2Enabled = 4,
-			Encryption2KeyAbsent = 5,
-			Encryption3Enabled = 6,
-			Encryption3KeyAbsent = 7,
+			_11WEPEnabled = 0,
+			_11Encryption1Enabled = 0,
+			_11WEPDisabled = 1,
+			_11EncryptionDisabled = 1,
+			_11WEPKeyAbsent = 2,
+			_11Encryption1KeyAbsent = 2,
+			_11WEPNotSupported = 3,
+			_11EncryptionNotSupported = 3,
+			_11Encryption2Enabled = 4,
+			_11Encryption2KeyAbsent = 5,
+			_11Encryption3Enabled = 6,
+			_11Encryption3KeyAbsent = 7,
 		}
 		public enum NDIS_802_11_RELOAD_DEFAULTS : int32
 		{
@@ -1937,8 +1937,8 @@ namespace Win32
 		}
 		public enum NDIS_802_11_MEDIA_STREAM_MODE : int32
 		{
-			ff = 0,
-			n = 1,
+			Off = 0,
+			On = 1,
 		}
 		public enum NDIS_802_11_RADIO_STATUS : int32
 		{
@@ -1975,52 +1975,52 @@ namespace Win32
 		}
 		public enum NDIS_MEDIUM : int32
 		{
-			_802_3 = 0,
-			_802_5 = 1,
-			Fddi = 2,
-			Wan = 3,
-			LocalTalk = 4,
-			Dix = 5,
-			ArcnetRaw = 6,
-			Arcnet878_2 = 7,
-			Atm = 8,
-			WirelessWan = 9,
-			Irda = 10,
-			Bpc = 11,
-			CoWan = 12,
-			_1394 = 13,
-			InfiniBand = 14,
-			Tunnel = 15,
-			Native802_11 = 16,
-			Loopback = 17,
-			WiMAX = 18,
-			IP = 19,
-			Max = 20,
+			Medium802_3 = 0,
+			Medium802_5 = 1,
+			MediumFddi = 2,
+			MediumWan = 3,
+			MediumLocalTalk = 4,
+			MediumDix = 5,
+			MediumArcnetRaw = 6,
+			MediumArcnet878_2 = 7,
+			MediumAtm = 8,
+			MediumWirelessWan = 9,
+			MediumIrda = 10,
+			MediumBpc = 11,
+			MediumCoWan = 12,
+			Medium1394 = 13,
+			MediumInfiniBand = 14,
+			MediumTunnel = 15,
+			MediumNative802_11 = 16,
+			MediumLoopback = 17,
+			MediumWiMAX = 18,
+			MediumIP = 19,
+			MediumMax = 20,
 		}
 		public enum NDIS_PHYSICAL_MEDIUM : int32
 		{
-			Unspecified = 0,
-			WirelessLan = 1,
-			CableModem = 2,
-			PhoneLine = 3,
-			PowerLine = 4,
-			DSL = 5,
-			FibreChannel = 6,
-			_1394 = 7,
-			WirelessWan = 8,
-			Native802_11 = 9,
-			Bluetooth = 10,
-			Infiniband = 11,
-			WiMax = 12,
-			UWB = 13,
-			_802_3 = 14,
-			_802_5 = 15,
-			Irda = 16,
-			WiredWAN = 17,
-			WiredCoWan = 18,
-			Other = 19,
-			Native802_15_4 = 20,
-			Max = 21,
+			MediumUnspecified = 0,
+			MediumWirelessLan = 1,
+			MediumCableModem = 2,
+			MediumPhoneLine = 3,
+			MediumPowerLine = 4,
+			MediumDSL = 5,
+			MediumFibreChannel = 6,
+			Medium1394 = 7,
+			MediumWirelessWan = 8,
+			MediumNative802_11 = 9,
+			MediumBluetooth = 10,
+			MediumInfiniband = 11,
+			MediumWiMax = 12,
+			MediumUWB = 13,
+			Medium802_3 = 14,
+			Medium802_5 = 15,
+			MediumIrda = 16,
+			MediumWiredWAN = 17,
+			MediumWiredCoWan = 18,
+			MediumOther = 19,
+			MediumNative802_15_4 = 20,
+			MediumMax = 21,
 		}
 		public enum NDIS_HARDWARE_STATUS : int32
 		{
@@ -2134,11 +2134,11 @@ namespace Win32
 		}
 		public enum NDIS_PORT_TYPE : int32
 		{
-			Undefined = 0,
-			Bridge = 1,
-			RasConnection = 2,
-			_8021xSupplicant = 3,
-			Max = 4,
+			TypeUndefined = 0,
+			TypeBridge = 1,
+			TypeRasConnection = 2,
+			Type8021xSupplicant = 3,
+			TypeMax = 4,
 		}
 		public enum NDIS_PORT_AUTHORIZATION_STATE : int32
 		{
@@ -2170,12 +2170,12 @@ namespace Win32
 		}
 		public enum NDK_RDMA_TECHNOLOGY : int32
 		{
-			Undefined = 0,
-			iWarp = 1,
-			InfiniBand = 2,
-			RoCE = 3,
-			RoCEv2 = 4,
-			MaxTechnology = 5,
+			NdkUndefined = 0,
+			NdkiWarp = 1,
+			NdkInfiniBand = 2,
+			NdkRoCE = 3,
+			NdkRoCEv2 = 4,
+			NdkMaxTechnology = 5,
 		}
 		public enum DOT11EXT_IHV_CONNECTION_PHASE : int32
 		{

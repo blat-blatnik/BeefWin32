@@ -1717,8 +1717,8 @@ namespace Win32
 		
 		public enum MEDIA_EVENT_GENERATOR_GET_EVENT_FLAGS : uint32
 		{
-			NE = 0,
-			_WAIT = 1,
+			NONE = 0,
+			NO_WAIT = 1,
 		}
 		public enum MF_Plugin_Type : int32
 		{
@@ -1778,7 +1778,7 @@ namespace Win32
 		}
 		public enum D3D12_BITSTREAM_ENCRYPTION_TYPE : int32
 		{
-			D3D12_BITSTREAM_ENCRYPTION_TYPE_NONE = 0,
+			TYPE_NONE = 0,
 		}
 		public enum D3D12_VIDEO_PROCESS_FILTER : int32
 		{
@@ -1944,7 +1944,7 @@ namespace Win32
 		}
 		public enum D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION : int32
 		{
-			D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_QUARTER_PEL = 0,
+			PRECISION_QUARTER_PEL = 0,
 		}
 		public enum D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_FLAGS : uint32
 		{
@@ -2006,8 +2006,8 @@ namespace Win32
 		}
 		public enum D3D12_VIDEO_ENCODER_CODEC : int32
 		{
-			_264 = 0,
-			EVC = 1,
+			H264 = 0,
+			HEVC = 1,
 		}
 		public enum D3D12_VIDEO_ENCODER_PROFILE_H264 : int32
 		{
@@ -2017,8 +2017,8 @@ namespace Win32
 		}
 		public enum D3D12_VIDEO_ENCODER_PROFILE_HEVC : int32
 		{
-			N = 0,
-			N10 = 1,
+			MAIN = 0,
+			MAIN10 = 1,
 		}
 		public enum D3D12_VIDEO_ENCODER_LEVELS_H264 : int32
 		{
@@ -2079,7 +2079,7 @@ namespace Win32
 		}
 		public enum D3D12_VIDEO_ENCODER_HEAP_FLAGS : uint32
 		{
-			D3D12_VIDEO_ENCODER_HEAP_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_H264_FLAGS : uint32
 		{
@@ -2204,7 +2204,7 @@ namespace Win32
 		}
 		public enum D3D12_VIDEO_ENCODER_FLAGS : uint32
 		{
-			D3D12_VIDEO_ENCODER_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum D3D12_VIDEO_ENCODER_FRAME_TYPE_H264 : int32
 		{
@@ -2350,77 +2350,77 @@ namespace Win32
 		}
 		public enum DXVA_VideoTransferFunction : int32
 		{
-			Shift = 27,
-			Mask = -134217728,
-			_Unknown = 0,
-			_10 = 1,
-			_18 = 2,
-			_20 = 3,
-			_22 = 4,
-			_22_709 = 5,
-			_22_240M = 6,
-			_22_8bit_sRGB = 7,
-			_28 = 8,
+			FuncShift = 27,
+			FuncMask = -134217728,
+			Func_Unknown = 0,
+			Func_10 = 1,
+			Func_18 = 2,
+			Func_20 = 3,
+			Func_22 = 4,
+			Func_22_709 = 5,
+			Func_22_240M = 6,
+			Func_22_8bit_sRGB = 7,
+			Func_28 = 8,
 		}
 		public enum DXVA_VideoPrimaries : int32
 		{
-			Shift = 22,
-			Mask = 130023424,
-			_Unknown = 0,
-			_reserved = 1,
-			_BT709 = 2,
-			_BT470_2_SysM = 3,
-			_BT470_2_SysBG = 4,
-			_SMPTE170M = 5,
-			_SMPTE240M = 6,
-			_EBU3213 = 7,
-			_SMPTE_C = 8,
+			PrimariesShift = 22,
+			PrimariesMask = 130023424,
+			Primaries_Unknown = 0,
+			Primaries_reserved = 1,
+			Primaries_BT709 = 2,
+			Primaries_BT470_2_SysM = 3,
+			Primaries_BT470_2_SysBG = 4,
+			Primaries_SMPTE170M = 5,
+			Primaries_SMPTE240M = 6,
+			Primaries_EBU3213 = 7,
+			Primaries_SMPTE_C = 8,
 		}
 		public enum DXVA_VideoLighting : int32
 		{
-			Shift = 18,
-			Mask = 3932160,
-			_Unknown = 0,
-			_bright = 1,
-			_office = 2,
-			_dim = 3,
-			_dark = 4,
+			LightingShift = 18,
+			LightingMask = 3932160,
+			Lighting_Unknown = 0,
+			Lighting_bright = 1,
+			Lighting_office = 2,
+			Lighting_dim = 3,
+			Lighting_dark = 4,
 		}
 		public enum DXVA_VideoTransferMatrix : int32
 		{
-			Shift = 15,
-			Mask = 229376,
-			_Unknown = 0,
-			_BT709 = 1,
-			_BT601 = 2,
-			_SMPTE240M = 3,
+			MatrixShift = 15,
+			MatrixMask = 229376,
+			Matrix_Unknown = 0,
+			Matrix_BT709 = 1,
+			Matrix_BT601 = 2,
+			Matrix_SMPTE240M = 3,
 		}
 		[AllowDuplicates]
 		public enum DXVA_NominalRange : int32
 		{
-			Shift = 12,
-			Mask = 28672,
-			_Unknown = 0,
-			_Normal = 1,
-			_Wide = 2,
-			_0_255 = 1,
-			_16_235 = 2,
-			_48_208 = 3,
+			RangeShift = 12,
+			RangeMask = 28672,
+			Range_Unknown = 0,
+			Range_Normal = 1,
+			Range_Wide = 2,
+			Range_0_255 = 1,
+			Range_16_235 = 2,
+			Range_48_208 = 3,
 		}
 		[AllowDuplicates]
 		public enum DXVA_VideoChromaSubsampling : int32
 		{
-			Shift = 8,
-			Mask = 3840,
-			_Unknown = 0,
-			_ProgressiveChroma = 8,
-			_Horizontally_Cosited = 4,
-			_Vertically_Cosited = 2,
-			_Vertically_AlignedChromaPlanes = 1,
-			_MPEG2 = 5,
-			_MPEG1 = 1,
-			_DV_PAL = 6,
-			_Cosited = 7,
+			SubsamplingShift = 8,
+			SubsamplingMask = 3840,
+			Subsampling_Unknown = 0,
+			Subsampling_ProgressiveChroma = 8,
+			Subsampling_Horizontally_Cosited = 4,
+			Subsampling_Vertically_Cosited = 2,
+			Subsampling_Vertically_AlignedChromaPlanes = 1,
+			Subsampling_MPEG2 = 5,
+			Subsampling_MPEG1 = 1,
+			Subsampling_DV_PAL = 6,
+			Subsampling_Cosited = 7,
 		}
 		public enum DXVA_VideoProcessCaps : int32
 		{
@@ -2449,19 +2449,19 @@ namespace Win32
 		}
 		public enum DXVA_SampleFlags : int32
 		{
-			sMask = 15,
-			_Palette_Changed = 1,
-			_SrcRect_Changed = 2,
-			_DstRect_Changed = 4,
-			_ColorData_Changed = 8,
+			FlagsMask = 15,
+			Flag_Palette_Changed = 1,
+			Flag_SrcRect_Changed = 2,
+			Flag_DstRect_Changed = 4,
+			Flag_ColorData_Changed = 8,
 		}
 		public enum DXVA_DestinationFlags : int32
 		{
-			Mask = 15,
-			_Background_Changed = 1,
-			_TargetRect_Changed = 2,
-			_ColorData_Changed = 4,
-			_Alpha_Changed = 8,
+			FlagMask = 15,
+			Flag_Background_Changed = 1,
+			Flag_TargetRect_Changed = 2,
+			Flag_ColorData_Changed = 4,
+			Flag_Alpha_Changed = 8,
 		}
 		public enum DXVA_ProcAmpControlProp : int32
 		{
@@ -2515,8 +2515,8 @@ namespace Win32
 		}
 		public enum eAVDecVideoMPEG2ErrorConcealment : int32
 		{
-			ff = 0,
-			n = 1,
+			Off = 0,
+			On = 1,
 		}
 		public enum eAVDecVideoCodecType : int32
 		{
@@ -2769,56 +2769,56 @@ namespace Win32
 		}
 		public enum eAVEncH263VLevel : int32
 		{
-			_1 = 10,
-			_2 = 20,
-			_3 = 30,
-			_4 = 40,
-			_4_5 = 45,
-			_5 = 50,
-			_6 = 60,
-			_7 = 70,
+			H263VLevel1 = 10,
+			H263VLevel2 = 20,
+			H263VLevel3 = 30,
+			H263VLevel4 = 40,
+			H263VLevel4_5 = 45,
+			H263VLevel5 = 50,
+			H263VLevel6 = 60,
+			H263VLevel7 = 70,
 		}
 		[AllowDuplicates]
 		public enum eAVEncH264VLevel : int32
 		{
-			_1 = 10,
-			_1_b = 11,
-			_1_1 = 11,
-			_1_2 = 12,
-			_1_3 = 13,
-			_2 = 20,
-			_2_1 = 21,
-			_2_2 = 22,
-			_3 = 30,
-			_3_1 = 31,
-			_3_2 = 32,
-			_4 = 40,
-			_4_1 = 41,
-			_4_2 = 42,
-			_5 = 50,
-			_5_1 = 51,
-			_5_2 = 52,
+			H264VLevel1 = 10,
+			H264VLevel1_b = 11,
+			H264VLevel1_1 = 11,
+			H264VLevel1_2 = 12,
+			H264VLevel1_3 = 13,
+			H264VLevel2 = 20,
+			H264VLevel2_1 = 21,
+			H264VLevel2_2 = 22,
+			H264VLevel3 = 30,
+			H264VLevel3_1 = 31,
+			H264VLevel3_2 = 32,
+			H264VLevel4 = 40,
+			H264VLevel4_1 = 41,
+			H264VLevel4_2 = 42,
+			H264VLevel5 = 50,
+			H264VLevel5_1 = 51,
+			H264VLevel5_2 = 52,
 		}
 		public enum eAVEncH265VLevel : int32
 		{
-			_1 = 30,
-			_2 = 60,
-			_2_1 = 63,
-			_3 = 90,
-			_3_1 = 93,
-			_4 = 120,
-			_4_1 = 123,
-			_5 = 150,
-			_5_1 = 153,
-			_5_2 = 156,
-			_6 = 180,
-			_6_1 = 183,
-			_6_2 = 186,
+			H265VLevel1 = 30,
+			H265VLevel2 = 60,
+			H265VLevel2_1 = 63,
+			H265VLevel3 = 90,
+			H265VLevel3_1 = 93,
+			H265VLevel4 = 120,
+			H265VLevel4_1 = 123,
+			H265VLevel5 = 150,
+			H265VLevel5_1 = 153,
+			H265VLevel5_2 = 156,
+			H265VLevel6 = 180,
+			H265VLevel6_1 = 183,
+			H265VLevel6_2 = 186,
 		}
 		public enum eAVEncMPVFrameFieldMode : int32
 		{
-			ieldMode = 0,
-			rameMode = 1,
+			FieldMode = 0,
+			FrameMode = 1,
 		}
 		public enum eAVEncMPVSceneDetection : int32
 		{
@@ -2900,8 +2900,8 @@ namespace Win32
 		}
 		public enum eAVEncDDPreferredStereoDownMixMode : int32
 		{
-			tRt = 0,
-			oRo = 1,
+			LtRt = 0,
+			LoRo = 1,
 		}
 		public enum eAVEncDDAtoDConverterType : int32
 		{
@@ -2934,8 +2934,8 @@ namespace Win32
 		}
 		public enum eAVDecHEAACDynamicRangeControl : int32
 		{
-			FF = 0,
-			N = 1,
+			OFF = 0,
+			ON = 1,
 		}
 		public enum eAVDecAudioDualMono : int32
 		{
@@ -3014,9 +3014,9 @@ namespace Win32
 		}
 		public enum eAVEncChromaEncodeMode : int32
 		{
-			_20 = 0,
-			_44 = 1,
-			_44_v2 = 2,
+			_420 = 0,
+			_444 = 1,
+			_444_v2 = 2,
 		}
 		public enum DXVAHD_FRAME_FORMAT : int32
 		{
@@ -3163,70 +3163,70 @@ namespace Win32
 		[AllowDuplicates]
 		public enum DXVA2_VideoChromaSubSampling : int32
 		{
-			Mask = 15,
-			_Unknown = 0,
-			_ProgressiveChroma = 8,
-			_Horizontally_Cosited = 4,
-			_Vertically_Cosited = 2,
-			_Vertically_AlignedChromaPlanes = 1,
-			_MPEG2 = 5,
-			_MPEG1 = 1,
-			_DV_PAL = 6,
-			_Cosited = 7,
+			SubsamplingMask = 15,
+			Subsampling_Unknown = 0,
+			Subsampling_ProgressiveChroma = 8,
+			Subsampling_Horizontally_Cosited = 4,
+			Subsampling_Vertically_Cosited = 2,
+			Subsampling_Vertically_AlignedChromaPlanes = 1,
+			Subsampling_MPEG2 = 5,
+			Subsampling_MPEG1 = 1,
+			Subsampling_DV_PAL = 6,
+			Subsampling_Cosited = 7,
 		}
 		[AllowDuplicates]
 		public enum DXVA2_NominalRange : int32
 		{
-			Mask = 7,
-			_Unknown = 0,
-			_Normal = 1,
-			_Wide = 2,
-			_0_255 = 1,
-			_16_235 = 2,
-			_48_208 = 3,
+			RangeMask = 7,
+			Range_Unknown = 0,
+			Range_Normal = 1,
+			Range_Wide = 2,
+			Range_0_255 = 1,
+			Range_16_235 = 2,
+			Range_48_208 = 3,
 		}
 		public enum DXVA2_VideoTransferMatrix : int32
 		{
-			Mask = 7,
-			_Unknown = 0,
-			_BT709 = 1,
-			_BT601 = 2,
-			_SMPTE240M = 3,
+			MatrixMask = 7,
+			Matrix_Unknown = 0,
+			Matrix_BT709 = 1,
+			Matrix_BT601 = 2,
+			Matrix_SMPTE240M = 3,
 		}
 		public enum DXVA2_VideoLighting : int32
 		{
-			Mask = 15,
-			_Unknown = 0,
-			_bright = 1,
-			_office = 2,
-			_dim = 3,
-			_dark = 4,
+			LightingMask = 15,
+			Lighting_Unknown = 0,
+			Lighting_bright = 1,
+			Lighting_office = 2,
+			Lighting_dim = 3,
+			Lighting_dark = 4,
 		}
 		public enum DXVA2_VideoPrimaries : int32
 		{
-			Mask = 31,
-			_Unknown = 0,
-			_reserved = 1,
-			_BT709 = 2,
-			_BT470_2_SysM = 3,
-			_BT470_2_SysBG = 4,
-			_SMPTE170M = 5,
-			_SMPTE240M = 6,
-			_EBU3213 = 7,
-			_SMPTE_C = 8,
+			PrimariesMask = 31,
+			Primaries_Unknown = 0,
+			Primaries_reserved = 1,
+			Primaries_BT709 = 2,
+			Primaries_BT470_2_SysM = 3,
+			Primaries_BT470_2_SysBG = 4,
+			Primaries_SMPTE170M = 5,
+			Primaries_SMPTE240M = 6,
+			Primaries_EBU3213 = 7,
+			Primaries_SMPTE_C = 8,
 		}
 		public enum DXVA2_VideoTransferFunction : int32
 		{
-			Mask = 31,
-			_Unknown = 0,
-			_10 = 1,
-			_18 = 2,
-			_20 = 3,
-			_22 = 4,
-			_709 = 5,
-			_240M = 6,
-			_sRGB = 7,
-			_28 = 8,
+			FuncMask = 31,
+			Func_Unknown = 0,
+			Func_10 = 1,
+			Func_18 = 2,
+			Func_20 = 3,
+			Func_22 = 4,
+			Func_709 = 5,
+			Func_240M = 6,
+			Func_sRGB = 7,
+			Func_28 = 8,
 		}
 		public enum DXVA2_DeinterlaceTech : int32
 		{
@@ -3385,25 +3385,25 @@ namespace Win32
 		}
 		public enum PM_CONNECTOR_TYPE : int32
 		{
-			NNECTOR_TYPE_OTHER = -1,
-			NNECTOR_TYPE_VGA = 0,
-			NNECTOR_TYPE_SVIDEO = 1,
-			NNECTOR_TYPE_COMPOSITE_VIDEO = 2,
-			NNECTOR_TYPE_COMPONENT_VIDEO = 3,
-			NNECTOR_TYPE_DVI = 4,
-			NNECTOR_TYPE_HDMI = 5,
-			NNECTOR_TYPE_LVDS = 6,
-			NNECTOR_TYPE_D_JPN = 8,
-			NNECTOR_TYPE_SDI = 9,
-			NNECTOR_TYPE_DISPLAYPORT_EXTERNAL = 10,
-			NNECTOR_TYPE_DISPLAYPORT_EMBEDDED = 11,
-			NNECTOR_TYPE_UDI_EXTERNAL = 12,
-			NNECTOR_TYPE_UDI_EMBEDDED = 13,
-			NNECTOR_TYPE_RESERVED = 14,
-			NNECTOR_TYPE_MIRACAST = 15,
-			NNECTOR_TYPE_TRANSPORT_AGNOSTIC_DIGITAL_MODE_A = 16,
-			NNECTOR_TYPE_TRANSPORT_AGNOSTIC_DIGITAL_MODE_B = 17,
-			PP_COMPATIBLE_CONNECTOR_TYPE_INTERNAL = -2147483648,
+			CONNECTOR_TYPE_OTHER = -1,
+			CONNECTOR_TYPE_VGA = 0,
+			CONNECTOR_TYPE_SVIDEO = 1,
+			CONNECTOR_TYPE_COMPOSITE_VIDEO = 2,
+			CONNECTOR_TYPE_COMPONENT_VIDEO = 3,
+			CONNECTOR_TYPE_DVI = 4,
+			CONNECTOR_TYPE_HDMI = 5,
+			CONNECTOR_TYPE_LVDS = 6,
+			CONNECTOR_TYPE_D_JPN = 8,
+			CONNECTOR_TYPE_SDI = 9,
+			CONNECTOR_TYPE_DISPLAYPORT_EXTERNAL = 10,
+			CONNECTOR_TYPE_DISPLAYPORT_EMBEDDED = 11,
+			CONNECTOR_TYPE_UDI_EXTERNAL = 12,
+			CONNECTOR_TYPE_UDI_EMBEDDED = 13,
+			CONNECTOR_TYPE_RESERVED = 14,
+			CONNECTOR_TYPE_MIRACAST = 15,
+			CONNECTOR_TYPE_TRANSPORT_AGNOSTIC_DIGITAL_MODE_A = 16,
+			CONNECTOR_TYPE_TRANSPORT_AGNOSTIC_DIGITAL_MODE_B = 17,
+			COPP_COMPATIBLE_CONNECTOR_TYPE_INTERNAL = -2147483648,
 		}
 		public enum OPM_DVI_CHARACTERISTIC : int32
 		{
@@ -3536,7 +3536,7 @@ namespace Win32
 		}
 		public enum MF_ATTRIBUTE_SERIALIZE_OPTIONS : int32
 		{
-			MF_ATTRIBUTE_SERIALIZE_UNKNOWN_BYREF = 1,
+			UNKNOWN_BYREF = 1,
 		}
 		[AllowDuplicates]
 		public enum MF2DBuffer_LockFlags : int32
@@ -3652,26 +3652,26 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MFVideoFlags : int32
 		{
-			_PAD_TO_Mask = 3,
-			_PAD_TO_None = 0,
-			_PAD_TO_4x3 = 1,
-			_PAD_TO_16x9 = 2,
-			_SrcContentHintMask = 28,
-			_SrcContentHintNone = 0,
-			_SrcContentHint16x9 = 4,
-			_SrcContentHint235_1 = 8,
-			_AnalogProtected = 32,
-			_DigitallyProtected = 64,
-			_ProgressiveContent = 128,
-			_FieldRepeatCountMask = 1792,
-			_FieldRepeatCountShift = 8,
-			_ProgressiveSeqReset = 2048,
-			_PanScanEnabled = 131072,
-			_LowerFieldFirst = 262144,
-			_BottomUpLinearRep = 524288,
-			s_DXVASurface = 1048576,
-			s_RenderTargetSurface = 4194304,
-			s_ForceQWORD = 2147483647,
+			Flag_PAD_TO_Mask = 3,
+			Flag_PAD_TO_None = 0,
+			Flag_PAD_TO_4x3 = 1,
+			Flag_PAD_TO_16x9 = 2,
+			Flag_SrcContentHintMask = 28,
+			Flag_SrcContentHintNone = 0,
+			Flag_SrcContentHint16x9 = 4,
+			Flag_SrcContentHint235_1 = 8,
+			Flag_AnalogProtected = 32,
+			Flag_DigitallyProtected = 64,
+			Flag_ProgressiveContent = 128,
+			Flag_FieldRepeatCountMask = 1792,
+			Flag_FieldRepeatCountShift = 8,
+			Flag_ProgressiveSeqReset = 2048,
+			Flag_PanScanEnabled = 131072,
+			Flag_LowerFieldFirst = 262144,
+			Flag_BottomUpLinearRep = 524288,
+			Flags_DXVASurface = 1048576,
+			Flags_RenderTargetSurface = 4194304,
+			Flags_ForceQWORD = 2147483647,
 		}
 		public enum MFStandardVideoFormat : int32
 		{
@@ -3689,126 +3689,126 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MF_EVENT_TYPE : int32
 		{
-			Unknown = 0,
-			Error = 1,
-			ExtendedType = 2,
-			NonFatalError = 3,
-			GenericV1Anchor = 3,
-			SessionUnknown = 100,
-			SessionTopologySet = 101,
-			SessionTopologiesCleared = 102,
-			SessionStarted = 103,
-			SessionPaused = 104,
-			SessionStopped = 105,
-			SessionClosed = 106,
-			SessionEnded = 107,
-			SessionRateChanged = 108,
-			SessionScrubSampleComplete = 109,
-			SessionCapabilitiesChanged = 110,
-			SessionTopologyStatus = 111,
-			SessionNotifyPresentationTime = 112,
-			NewPresentation = 113,
-			LicenseAcquisitionStart = 114,
-			LicenseAcquisitionCompleted = 115,
-			IndividualizationStart = 116,
-			IndividualizationCompleted = 117,
-			EnablerProgress = 118,
-			EnablerCompleted = 119,
-			PolicyError = 120,
-			PolicyReport = 121,
-			BufferingStarted = 122,
-			BufferingStopped = 123,
-			ConnectStart = 124,
-			ConnectEnd = 125,
-			ReconnectStart = 126,
-			ReconnectEnd = 127,
-			RendererEvent = 128,
-			SessionStreamSinkFormatChanged = 129,
-			SessionV1Anchor = 129,
-			SourceUnknown = 200,
-			SourceStarted = 201,
-			StreamStarted = 202,
-			SourceSeeked = 203,
-			StreamSeeked = 204,
-			NewStream = 205,
-			UpdatedStream = 206,
-			SourceStopped = 207,
-			StreamStopped = 208,
-			SourcePaused = 209,
-			StreamPaused = 210,
-			EndOfPresentation = 211,
-			EndOfStream = 212,
-			MediaSample = 213,
-			StreamTick = 214,
-			StreamThinMode = 215,
-			StreamFormatChanged = 216,
-			SourceRateChanged = 217,
-			EndOfPresentationSegment = 218,
-			SourceCharacteristicsChanged = 219,
-			SourceRateChangeRequested = 220,
-			SourceMetadataChanged = 221,
-			SequencerSourceTopologyUpdated = 222,
-			SourceV1Anchor = 222,
-			SinkUnknown = 300,
-			StreamSinkStarted = 301,
-			StreamSinkStopped = 302,
-			StreamSinkPaused = 303,
-			StreamSinkRateChanged = 304,
-			StreamSinkRequestSample = 305,
-			StreamSinkMarker = 306,
-			StreamSinkPrerolled = 307,
-			StreamSinkScrubSampleComplete = 308,
-			StreamSinkFormatChanged = 309,
-			StreamSinkDeviceChanged = 310,
-			QualityNotify = 311,
-			SinkInvalidated = 312,
-			AudioSessionNameChanged = 313,
-			AudioSessionVolumeChanged = 314,
-			AudioSessionDeviceRemoved = 315,
-			AudioSessionServerShutdown = 316,
-			AudioSessionGroupingParamChanged = 317,
-			AudioSessionIconChanged = 318,
-			AudioSessionFormatChanged = 319,
-			AudioSessionDisconnected = 320,
-			AudioSessionExclusiveModeOverride = 321,
-			SinkV1Anchor = 321,
-			CaptureAudioSessionVolumeChanged = 322,
-			CaptureAudioSessionDeviceRemoved = 323,
-			CaptureAudioSessionFormatChanged = 324,
-			CaptureAudioSessionDisconnected = 325,
-			CaptureAudioSessionExclusiveModeOverride = 326,
-			CaptureAudioSessionServerShutdown = 327,
-			SinkV2Anchor = 327,
-			TrustUnknown = 400,
-			PolicyChanged = 401,
-			ContentProtectionMessage = 402,
-			PolicySet = 403,
-			TrustV1Anchor = 403,
-			WMDRMLicenseBackupCompleted = 500,
-			WMDRMLicenseBackupProgress = 501,
-			WMDRMLicenseRestoreCompleted = 502,
-			WMDRMLicenseRestoreProgress = 503,
-			WMDRMLicenseAcquisitionCompleted = 506,
-			WMDRMIndividualizationCompleted = 508,
-			WMDRMIndividualizationProgress = 513,
-			WMDRMProximityCompleted = 514,
-			WMDRMLicenseStoreCleaned = 515,
-			WMDRMRevocationDownloadCompleted = 516,
-			WMDRMV1Anchor = 516,
-			TransformUnknown = 600,
-			TransformNeedInput = 601,
-			TransformHaveOutput = 602,
-			TransformDrainComplete = 603,
-			TransformMarker = 604,
-			TransformInputStreamStateChanged = 605,
-			ByteStreamCharacteristicsChanged = 700,
-			VideoCaptureDeviceRemoved = 800,
-			VideoCaptureDevicePreempted = 801,
-			StreamSinkFormatInvalidated = 802,
-			EncodingParameters = 803,
-			ContentProtectionMetadata = 900,
-			DeviceThermalStateChanged = 950,
-			ReservedMax = 10000,
+			MEUnknown = 0,
+			MEError = 1,
+			MEExtendedType = 2,
+			MENonFatalError = 3,
+			MEGenericV1Anchor = 3,
+			MESessionUnknown = 100,
+			MESessionTopologySet = 101,
+			MESessionTopologiesCleared = 102,
+			MESessionStarted = 103,
+			MESessionPaused = 104,
+			MESessionStopped = 105,
+			MESessionClosed = 106,
+			MESessionEnded = 107,
+			MESessionRateChanged = 108,
+			MESessionScrubSampleComplete = 109,
+			MESessionCapabilitiesChanged = 110,
+			MESessionTopologyStatus = 111,
+			MESessionNotifyPresentationTime = 112,
+			MENewPresentation = 113,
+			MELicenseAcquisitionStart = 114,
+			MELicenseAcquisitionCompleted = 115,
+			MEIndividualizationStart = 116,
+			MEIndividualizationCompleted = 117,
+			MEEnablerProgress = 118,
+			MEEnablerCompleted = 119,
+			MEPolicyError = 120,
+			MEPolicyReport = 121,
+			MEBufferingStarted = 122,
+			MEBufferingStopped = 123,
+			MEConnectStart = 124,
+			MEConnectEnd = 125,
+			MEReconnectStart = 126,
+			MEReconnectEnd = 127,
+			MERendererEvent = 128,
+			MESessionStreamSinkFormatChanged = 129,
+			MESessionV1Anchor = 129,
+			MESourceUnknown = 200,
+			MESourceStarted = 201,
+			MEStreamStarted = 202,
+			MESourceSeeked = 203,
+			MEStreamSeeked = 204,
+			MENewStream = 205,
+			MEUpdatedStream = 206,
+			MESourceStopped = 207,
+			MEStreamStopped = 208,
+			MESourcePaused = 209,
+			MEStreamPaused = 210,
+			MEEndOfPresentation = 211,
+			MEEndOfStream = 212,
+			MEMediaSample = 213,
+			MEStreamTick = 214,
+			MEStreamThinMode = 215,
+			MEStreamFormatChanged = 216,
+			MESourceRateChanged = 217,
+			MEEndOfPresentationSegment = 218,
+			MESourceCharacteristicsChanged = 219,
+			MESourceRateChangeRequested = 220,
+			MESourceMetadataChanged = 221,
+			MESequencerSourceTopologyUpdated = 222,
+			MESourceV1Anchor = 222,
+			MESinkUnknown = 300,
+			MEStreamSinkStarted = 301,
+			MEStreamSinkStopped = 302,
+			MEStreamSinkPaused = 303,
+			MEStreamSinkRateChanged = 304,
+			MEStreamSinkRequestSample = 305,
+			MEStreamSinkMarker = 306,
+			MEStreamSinkPrerolled = 307,
+			MEStreamSinkScrubSampleComplete = 308,
+			MEStreamSinkFormatChanged = 309,
+			MEStreamSinkDeviceChanged = 310,
+			MEQualityNotify = 311,
+			MESinkInvalidated = 312,
+			MEAudioSessionNameChanged = 313,
+			MEAudioSessionVolumeChanged = 314,
+			MEAudioSessionDeviceRemoved = 315,
+			MEAudioSessionServerShutdown = 316,
+			MEAudioSessionGroupingParamChanged = 317,
+			MEAudioSessionIconChanged = 318,
+			MEAudioSessionFormatChanged = 319,
+			MEAudioSessionDisconnected = 320,
+			MEAudioSessionExclusiveModeOverride = 321,
+			MESinkV1Anchor = 321,
+			MECaptureAudioSessionVolumeChanged = 322,
+			MECaptureAudioSessionDeviceRemoved = 323,
+			MECaptureAudioSessionFormatChanged = 324,
+			MECaptureAudioSessionDisconnected = 325,
+			MECaptureAudioSessionExclusiveModeOverride = 326,
+			MECaptureAudioSessionServerShutdown = 327,
+			MESinkV2Anchor = 327,
+			METrustUnknown = 400,
+			MEPolicyChanged = 401,
+			MEContentProtectionMessage = 402,
+			MEPolicySet = 403,
+			METrustV1Anchor = 403,
+			MEWMDRMLicenseBackupCompleted = 500,
+			MEWMDRMLicenseBackupProgress = 501,
+			MEWMDRMLicenseRestoreCompleted = 502,
+			MEWMDRMLicenseRestoreProgress = 503,
+			MEWMDRMLicenseAcquisitionCompleted = 506,
+			MEWMDRMIndividualizationCompleted = 508,
+			MEWMDRMIndividualizationProgress = 513,
+			MEWMDRMProximityCompleted = 514,
+			MEWMDRMLicenseStoreCleaned = 515,
+			MEWMDRMRevocationDownloadCompleted = 516,
+			MEWMDRMV1Anchor = 516,
+			METransformUnknown = 600,
+			METransformNeedInput = 601,
+			METransformHaveOutput = 602,
+			METransformDrainComplete = 603,
+			METransformMarker = 604,
+			METransformInputStreamStateChanged = 605,
+			MEByteStreamCharacteristicsChanged = 700,
+			MEVideoCaptureDeviceRemoved = 800,
+			MEVideoCaptureDevicePreempted = 801,
+			MEStreamSinkFormatInvalidated = 802,
+			MEEncodingParameters = 803,
+			MEContentProtectionMetadata = 900,
+			MEDeviceThermalStateChanged = 950,
+			MEReservedMax = 10000,
 		}
 		public enum MFBYTESTREAM_SEEK_ORIGIN : int32
 		{
@@ -3958,7 +3958,7 @@ namespace Win32
 		}
 		public enum MFSESSION_GETFULLTOPOLOGY_FLAGS : int32
 		{
-			MFSESSION_GETFULLTOPOLOGY_CURRENT = 1,
+			CURRENT = 1,
 		}
 		public enum MFPMPSESSION_CREATION_FLAGS : int32
 		{
@@ -4020,8 +4020,8 @@ namespace Win32
 		}
 		public enum MF_VIDEO_PROCESSOR_ROTATION : int32
 		{
-			NE = 0,
-			RMAL = 1,
+			NONE = 0,
+			NORMAL = 1,
 		}
 		public enum MF_VIDEO_PROCESSOR_MIRROR : int32
 		{
@@ -4088,19 +4088,19 @@ namespace Win32
 		}
 		public enum MFCLOCK_RELATIONAL_FLAGS : int32
 		{
-			MFCLOCK_RELATIONAL_FLAG_JITTER_NEVER_AHEAD = 1,
+			FLAG_JITTER_NEVER_AHEAD = 1,
 		}
 		public enum MFTIMER_FLAGS : int32
 		{
-			MFTIMER_RELATIVE = 1,
+			RELATIVE = 1,
 		}
 		public enum MF_ACTIVATE_CUSTOM_MIXER : int32
 		{
-			MF_ACTIVATE_CUSTOM_MIXER_ALLOWFAIL = 1,
+			MIXER_ALLOWFAIL = 1,
 		}
 		public enum MF_ACTIVATE_CUSTOM_PRESENTER : int32
 		{
-			MF_ACTIVATE_CUSTOM_PRESENTER_ALLOWFAIL = 1,
+			PRESENTER_ALLOWFAIL = 1,
 		}
 		public enum MFSHUTDOWN_STATUS : int32
 		{
@@ -4140,7 +4140,7 @@ namespace Win32
 		}
 		public enum MF_QUALITY_ADVISE_FLAGS : int32
 		{
-			MF_QUALITY_CANNOT_KEEP_UP = 1,
+			CANNOT_KEEP_UP = 1,
 		}
 		public enum MFSequencerTopologyFlags : int32
 		{
@@ -4254,11 +4254,11 @@ namespace Win32
 		}
 		public enum MFAudioConstriction : int32
 		{
-			Off = 0,
-			_48_16 = 1,
-			_44_16 = 2,
-			_14_14 = 3,
-			Mute = 4,
+			ConstrictionOff = 0,
+			Constriction48_16 = 1,
+			Constriction44_16 = 2,
+			Constriction14_14 = 3,
+			ConstrictionMute = 4,
 		}
 		public enum SAMPLE_PROTECTION_VERSION : int32
 		{
@@ -4340,9 +4340,9 @@ namespace Win32
 		}
 		public enum MFCameraOcclusionState : int32
 		{
-			pen = 0,
-			ccludedByLid = 1,
-			ccludedByCameraHardware = 2,
+			Open = 0,
+			OccludedByLid = 1,
+			OccludedByCameraHardware = 2,
 		}
 		public enum MFSampleAllocatorUsage : int32
 		{
@@ -4368,7 +4368,7 @@ namespace Win32
 		}
 		public enum MFASF_MULTIPLEXERFLAGS : int32
 		{
-			MFASF_MULTIPLEXER_AUTOADJUST_BITRATE = 1,
+			MULTIPLEXER_AUTOADJUST_BITRATE = 1,
 		}
 		public enum MFASF_STREAMSELECTOR_FLAGS : int32
 		{
@@ -4438,8 +4438,8 @@ namespace Win32
 		}
 		public enum MF_MT_D3D_RESOURCE_VERSION_ENUM : int32
 		{
-			_1_RESOURCE = 0,
-			_2_RESOURCE = 1,
+			D3D11_RESOURCE = 0,
+			D3D12_RESOURCE = 1,
 		}
 		public enum MFASYNC_WORKQUEUE_TYPE : int32
 		{
@@ -4665,13 +4665,13 @@ namespace Win32
 		}
 		public enum MF_MSE_OPUS_SUPPORT_TYPE : int32
 		{
-			N = 0,
-			FF = 1,
+			ON = 0,
+			OFF = 1,
 		}
 		public enum MF_MSE_APPEND_MODE : int32
 		{
-			GMENTS = 0,
-			QUENCE = 1,
+			SEGMENTS = 0,
+			SEQUENCE = 1,
 		}
 		public enum MF_MSE_READY : int32
 		{
@@ -4697,9 +4697,9 @@ namespace Win32
 		}
 		public enum MF_HDCP_STATUS : int32
 		{
-			N = 0,
-			FF = 1,
-			N_WITH_TYPE_ENFORCEMENT = 2,
+			ON = 0,
+			OFF = 1,
+			ON_WITH_TYPE_ENFORCEMENT = 2,
 		}
 		public enum MF_MEDIA_ENGINE_OPM_STATUS : int32
 		{
@@ -4734,8 +4734,8 @@ namespace Win32
 		}
 		public enum MF_TIMED_TEXT_UNIT_TYPE : int32
 		{
-			IXELS = 0,
-			ERCENTAGE = 1,
+			PIXELS = 0,
+			PERCENTAGE = 1,
 		}
 		public enum MF_TIMED_TEXT_FONT_STYLE : int32
 		{
@@ -4862,7 +4862,7 @@ namespace Win32
 		}
 		public enum MF_SOURCE_READER_CONTROL_FLAG : int32
 		{
-			MF_SOURCE_READER_CONTROLF_DRAIN = 1,
+			CONTROLF_DRAIN = 1,
 		}
 		[AllowDuplicates]
 		public enum MF_SOURCE_READER_CONSTANTS : int32
@@ -4876,7 +4876,7 @@ namespace Win32
 		}
 		public enum MF_SOURCE_READER_CURRENT_TYPE_CONSTANTS : int32
 		{
-			MF_SOURCE_READER_CURRENT_TYPE_INDEX = -1,
+			INDEX = -1,
 		}
 		[AllowDuplicates]
 		public enum MF_SINK_WRITER_CONSTANTS : uint32
@@ -4998,7 +4998,7 @@ namespace Win32
 		}
 		public enum MF_MEDIA_SHARING_ENGINE_EVENT : int32
 		{
-			MF_MEDIA_SHARING_ENGINE_EVENT_DISCONNECT = 2000,
+			EVENT_DISCONNECT = 2000,
 		}
 		public enum PLAYTO_SOURCE_CREATEFLAGS : int32
 		{
@@ -5024,8 +5024,8 @@ namespace Win32
 		}
 		public enum __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0002 : int32
 		{
-			ession = 0,
-			ystem = 1,
+			Session = 0,
+			System = 1,
 		}
 		public enum __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0003 : int32
 		{
@@ -5039,8 +5039,8 @@ namespace Win32
 		}
 		public enum OPM_HDCP_STATUS : int32
 		{
-			N = 0,
-			FF = 1,
+			ON = 0,
+			OFF = 1,
 		}
 		
 		// --- Function Pointers ---

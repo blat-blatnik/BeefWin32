@@ -1099,7 +1099,7 @@ namespace Win32
 		}
 		public enum FILE_STORAGE_TIER_FLAGS : uint32
 		{
-			FILE_STORAGE_TIER_FLAG_NO_SEEK_PENALTY = 131072,
+			FLAG_NO_SEEK_PENALTY = 131072,
 		}
 		public enum CHANGER_ELEMENT_STATUS_FLAGS : uint32
 		{
@@ -1282,9 +1282,9 @@ namespace Win32
 		}
 		public enum STORAGE_ID_NAA_FORMAT : int32
 		{
-			Extended = 2,
-			Registered = 3,
-			ERegisteredExtended = 5,
+			IEEEExtended = 2,
+			IEEERegistered = 3,
+			IEEEERegisteredExtended = 5,
 		}
 		public enum STORAGE_ASSOCIATION_TYPE : int32
 		{
@@ -1309,11 +1309,11 @@ namespace Win32
 		}
 		public enum STORAGE_CRYPTO_KEY_SIZE : int32
 		{
-			Unknown = 0,
-			_128Bits = 1,
-			_192Bits = 2,
-			_256Bits = 3,
-			_512Bits = 4,
+			SizeUnknown = 0,
+			Size128Bits = 1,
+			Size192Bits = 2,
+			Size256Bits = 3,
+			Size512Bits = 4,
 		}
 		public enum STORAGE_TIER_MEDIA_TYPE : int32
 		{
@@ -1366,17 +1366,17 @@ namespace Win32
 		}
 		public enum STORAGE_DEVICE_FORM_FACTOR : int32
 		{
-			Unknown = 0,
-			_3_5 = 1,
-			_2_5 = 2,
-			_1_8 = 3,
-			_1_8Less = 4,
-			Embedded = 5,
-			MemoryCard = 6,
-			mSata = 7,
-			M_2 = 8,
-			PCIeBoard = 9,
-			Dimm = 10,
+			FactorUnknown = 0,
+			Factor3_5 = 1,
+			Factor2_5 = 2,
+			Factor1_8 = 3,
+			Factor1_8Less = 4,
+			FactorEmbedded = 5,
+			FactorMemoryCard = 6,
+			FactormSata = 7,
+			FactorM_2 = 8,
+			FactorPCIeBoard = 9,
+			FactorDimm = 10,
 		}
 		public enum STORAGE_COMPONENT_HEALTH_STATUS : int32
 		{
@@ -1487,12 +1487,12 @@ namespace Win32
 		}
 		public enum DEVICE_INTERNAL_STATUS_DATA_SET : int32
 		{
-			Undefined = 0,
-			_1 = 1,
-			_2 = 2,
-			_3 = 3,
-			_4 = 4,
-			Max = 5,
+			SetUndefined = 0,
+			Set1 = 1,
+			Set2 = 2,
+			Set3 = 3,
+			Set4 = 4,
+			SetMax = 5,
 		}
 		public enum STORAGE_SANITIZE_METHOD : int32
 		{
@@ -1687,14 +1687,14 @@ namespace Win32
 		}
 		public enum SCM_PD_LAST_FW_ACTIVATION_STATUS : int32
 		{
-			tionStatus_None = 0,
-			tionStatus_Success = 1,
-			tionStatus_FwNotFound = 2,
-			tionStatus_ColdRebootRequired = 3,
-			itonStatus_ActivationInProgress = 4,
-			itonStatus_Retry = 5,
-			itonStatus_FwUnsupported = 6,
-			itonStatus_UnknownError = 7,
+			ActivationStatus_None = 0,
+			ActivationStatus_Success = 1,
+			ActivationStatus_FwNotFound = 2,
+			ActivationStatus_ColdRebootRequired = 3,
+			ActivaitonStatus_ActivationInProgress = 4,
+			ActivaitonStatus_Retry = 5,
+			ActivaitonStatus_FwUnsupported = 6,
+			ActivaitonStatus_UnknownError = 7,
 		}
 		public enum SCM_PD_FIRMWARE_ACTIVATION_STATE : int32
 		{

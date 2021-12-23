@@ -537,11 +537,11 @@ namespace Win32
 		}
 		public enum EmulationType : int32
 		{
-			None = 0,
-			_12MFloppy = 1,
-			_144MFloppy = 2,
-			_288MFloppy = 3,
-			HardDisk = 4,
+			EmulationNone = 0,
+			Emulation12MFloppy = 1,
+			Emulation144MFloppy = 2,
+			Emulation288MFloppy = 3,
+			EmulationHardDisk = 4,
 		}
 		public enum PlatformId : int32
 		{
@@ -568,8 +568,8 @@ namespace Win32
 		}
 		public enum RECORDER_TYPES : int32
 		{
-			R = 1,
-			RW = 2,
+			CDR = 1,
+			CDRW = 2,
 		}
 		public enum IMMPID_MP_ENUM : int32
 		{
@@ -693,9 +693,9 @@ namespace Win32
 		}
 		public enum IMMPID_CPV_ENUM : int32
 		{
-			V_BEFORE__ = 32767,
-			_START = 32768,
-			V_AFTER__ = 32769,
+			CPV_BEFORE__ = 32767,
+			CP_START = 32768,
+			CPV_AFTER__ = 32769,
 		}
 		
 		// --- Function Pointers ---

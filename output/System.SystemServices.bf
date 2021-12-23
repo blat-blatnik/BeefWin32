@@ -3395,10 +3395,10 @@ namespace Win32
 		}
 		public enum SharedVirtualDiskSupportType : int32
 		{
-			sUnsupported = 0,
-			sSupported = 1,
-			SnapshotsSupported = 3,
-			CDPSnapshotsSupported = 7,
+			DisksUnsupported = 0,
+			DisksSupported = 1,
+			DiskSnapshotsSupported = 3,
+			DiskCDPSnapshotsSupported = 7,
 		}
 		public enum SharedVirtualDiskHandleState : int32
 		{
@@ -3504,18 +3504,18 @@ namespace Win32
 		}
 		public enum HIBERFILE_BUCKET_SIZE : int32
 		{
-			_1GB = 0,
-			_2GB = 1,
-			_4GB = 2,
-			_8GB = 3,
-			_16GB = 4,
-			_32GB = 5,
-			Unlimited = 6,
-			Max = 7,
+			Bucket1GB = 0,
+			Bucket2GB = 1,
+			Bucket4GB = 2,
+			Bucket8GB = 3,
+			Bucket16GB = 4,
+			Bucket32GB = 5,
+			BucketUnlimited = 6,
+			BucketMax = 7,
 		}
 		public enum IMAGE_AUX_SYMBOL_TYPE : int32
 		{
-			IMAGE_AUX_SYMBOL_TYPE_TOKEN_DEF = 1,
+			TYPE_TOKEN_DEF = 1,
 		}
 		public enum ARM64_FNPDATA_FLAGS : int32
 		{

@@ -24,9 +24,9 @@ namespace Win32
 		}
 		public enum RID_DEVICE_INFO_TYPE : uint32
 		{
-			MOUSE = 0,
-			KEYBOARD = 1,
-			HID = 2,
+			TYPEMOUSE = 0,
+			TYPEKEYBOARD = 1,
+			TYPEHID = 2,
 		}
 		[AllowDuplicates]
 		public enum RAWINPUTDEVICE_FLAGS : uint32

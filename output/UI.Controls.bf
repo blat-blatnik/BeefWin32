@@ -2258,8 +2258,8 @@ namespace Win32
 		}
 		public enum LVITEMA_GROUP_ID : int32
 		{
-			CALLBACK = -1,
-			NONE = -2,
+			GROUPIDCALLBACK = -1,
+			GROUPIDNONE = -2,
 		}
 		public enum NMTBHOTITEM_FLAGS : uint32
 		{
@@ -2291,10 +2291,10 @@ namespace Win32
 		}
 		public enum NMPGSCROLL_DIR : uint32
 		{
-			DOWN = 2,
-			LEFT = 4,
-			RIGHT = 8,
-			UP = 1,
+			SCROLLDOWN = 2,
+			SCROLLLEFT = 4,
+			SCROLLRIGHT = 8,
+			SCROLLUP = 1,
 		}
 		public enum LVCOLUMNW_MASK : uint32
 		{
@@ -2382,8 +2382,8 @@ namespace Win32
 		}
 		public enum NMPGCALCSIZE_FLAGS : uint32
 		{
-			HEIGHT = 2,
-			WIDTH = 1,
+			CALCHEIGHT = 2,
+			CALCWIDTH = 1,
 		}
 		public enum NMLVCUSTOMDRAW_ALIGN : uint32
 		{

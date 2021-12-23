@@ -71,7 +71,7 @@ namespace Win32
 		}
 		public enum CF_POPULATION_POLICY_MODIFIER : uint16
 		{
-			CF_POPULATION_POLICY_MODIFIER_NONE = 0,
+			MODIFIER_NONE = 0,
 		}
 		public enum CF_PLACEHOLDER_MANAGEMENT_POLICY : int32
 		{
@@ -122,7 +122,7 @@ namespace Win32
 		}
 		public enum CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS : uint32
 		{
-			CF_CALLBACK_FETCH_PLACEHOLDERS_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_CALLBACK_OPEN_COMPLETION_FLAGS : uint32
 		{
@@ -154,7 +154,7 @@ namespace Win32
 		}
 		public enum CF_CALLBACK_DELETE_COMPLETION_FLAGS : uint32
 		{
-			CF_CALLBACK_DELETE_COMPLETION_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_CALLBACK_RENAME_FLAGS : uint32
 		{
@@ -165,7 +165,7 @@ namespace Win32
 		}
 		public enum CF_CALLBACK_RENAME_COMPLETION_FLAGS : uint32
 		{
-			CF_CALLBACK_RENAME_COMPLETION_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_CALLBACK_DEHYDRATION_REASON : int32
 		{
@@ -212,15 +212,15 @@ namespace Win32
 		}
 		public enum CF_OPERATION_TRANSFER_DATA_FLAGS : uint32
 		{
-			CF_OPERATION_TRANSFER_DATA_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_OPERATION_RETRIEVE_DATA_FLAGS : uint32
 		{
-			CF_OPERATION_RETRIEVE_DATA_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_OPERATION_ACK_DATA_FLAGS : uint32
 		{
-			CF_OPERATION_ACK_DATA_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_OPERATION_RESTART_HYDRATION_FLAGS : uint32
 		{
@@ -235,15 +235,15 @@ namespace Win32
 		}
 		public enum CF_OPERATION_ACK_DEHYDRATE_FLAGS : uint32
 		{
-			CF_OPERATION_ACK_DEHYDRATE_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_OPERATION_ACK_RENAME_FLAGS : uint32
 		{
-			CF_OPERATION_ACK_RENAME_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_OPERATION_ACK_DELETE_FLAGS : uint32
 		{
-			CF_OPERATION_ACK_DELETE_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_CREATE_FLAGS : uint32
 		{
@@ -284,11 +284,11 @@ namespace Win32
 		}
 		public enum CF_REVERT_FLAGS : uint32
 		{
-			CF_REVERT_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_HYDRATE_FLAGS : uint32
 		{
-			CF_HYDRATE_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_DEHYDRATE_FLAGS : uint32
 		{
@@ -317,7 +317,7 @@ namespace Win32
 		}
 		public enum CF_SET_IN_SYNC_FLAGS : uint32
 		{
-			CF_SET_IN_SYNC_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum CF_PLACEHOLDER_STATE : uint32
 		{

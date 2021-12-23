@@ -607,11 +607,11 @@ namespace Win32
 		}
 		public enum D3D11_MAP_FLAG : int32
 		{
-			D3D11_MAP_FLAG_DO_NOT_WAIT = 1048576,
+			FLAG_DO_NOT_WAIT = 1048576,
 		}
 		public enum D3D11_RAISE_FLAG : int32
 		{
-			D3D11_RAISE_FLAG_DRIVER_INTERNAL_ERROR = 1,
+			FLAG_DRIVER_INTERNAL_ERROR = 1,
 		}
 		public enum D3D11_CLEAR_FLAG : int32
 		{
@@ -692,7 +692,7 @@ namespace Win32
 		}
 		public enum D3D11_BUFFEREX_SRV_FLAG : int32
 		{
-			D3D11_BUFFEREX_SRV_FLAG_RAW = 1,
+			FLAG_RAW = 1,
 		}
 		public enum D3D11_DSV_FLAG : int32
 		{
@@ -815,7 +815,7 @@ namespace Win32
 		}
 		public enum D3D11_ASYNC_GETDATA_FLAG : int32
 		{
-			D3D11_ASYNC_GETDATA_DONOTFLUSH = 1,
+			DONOTFLUSH = 1,
 		}
 		public enum D3D11_QUERY : int32
 		{
@@ -838,11 +838,11 @@ namespace Win32
 		}
 		public enum D3D11_QUERY_MISC_FLAG : int32
 		{
-			D3D11_QUERY_MISC_PREDICATEHINT = 1,
+			PREDICATEHINT = 1,
 		}
 		public enum D3D11_COUNTER : int32
 		{
-			D3D11_COUNTER_DEVICE_DEPENDENT_0 = 1073741824,
+			COUNTER_DEVICE_DEPENDENT_0 = 1073741824,
 		}
 		public enum D3D11_COUNTER_TYPE : int32
 		{
@@ -887,8 +887,8 @@ namespace Win32
 		}
 		public enum D3D11_SHADER_MIN_PRECISION_SUPPORT : int32
 		{
-			_0_BIT = 1,
-			_6_BIT = 2,
+			_10_BIT = 1,
+			_16_BIT = 2,
 		}
 		public enum D3D11_TILED_RESOURCES_TIER : int32
 		{
@@ -1103,9 +1103,9 @@ namespace Win32
 		}
 		public enum D3D11_AUTHENTICATED_CHANNEL_TYPE : int32
 		{
-			_3D11 = 1,
-			RIVER_SOFTWARE = 2,
-			RIVER_HARDWARE = 3,
+			D3D11 = 1,
+			DRIVER_SOFTWARE = 2,
+			DRIVER_HARDWARE = 3,
 		}
 		public enum D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE : int32
 		{
@@ -2577,7 +2577,7 @@ namespace Win32
 		}
 		public enum D3D11_1_CREATE_DEVICE_CONTEXT_STATE_FLAG : int32
 		{
-			D3D11_1_CREATE_DEVICE_CONTEXT_STATE_SINGLETHREADED = 1,
+			SINGLETHREADED = 1,
 		}
 		public enum D3D11_VIDEO_DECODER_CAPS : int32
 		{
@@ -2602,7 +2602,7 @@ namespace Win32
 		}
 		public enum D3D11_TILE_MAPPING_FLAG : int32
 		{
-			D3D11_TILE_MAPPING_NO_OVERWRITE = 1,
+			NO_OVERWRITE = 1,
 		}
 		public enum D3D11_TILE_RANGE_FLAG : int32
 		{
@@ -2612,7 +2612,7 @@ namespace Win32
 		}
 		public enum D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG : int32
 		{
-			D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_TILED_RESOURCE = 1,
+			TILED_RESOURCE = 1,
 		}
 		public enum D3D11_TILE_COPY_FLAG : int32
 		{
@@ -2636,8 +2636,8 @@ namespace Win32
 		}
 		public enum D3D11_CONSERVATIVE_RASTERIZATION_MODE : int32
 		{
-			FF = 0,
-			N = 1,
+			OFF = 0,
+			ON = 1,
 		}
 		public enum D3D11_FENCE_FLAG : uint32
 		{
@@ -2648,7 +2648,7 @@ namespace Win32
 		}
 		public enum D3D11_FEATURE_VIDEO : int32
 		{
-			D3D11_FEATURE_VIDEO_DECODER_HISTOGRAM = 0,
+			VIDEO_DECODER_HISTOGRAM = 0,
 		}
 		[AllowDuplicates]
 		public enum D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT : int32
@@ -2675,7 +2675,7 @@ namespace Win32
 		}
 		public enum D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS : uint32
 		{
-			D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum D3D11_SHADER_VERSION_TYPE : int32
 		{
@@ -2778,7 +2778,7 @@ namespace Win32
 		}
 		public enum D3DX11_FFT_CREATE_FLAG : int32
 		{
-			D3DX11_FFT_CREATE_FLAG_NO_PRECOMPUTE_BUFFERS = 1,
+			FLAG_NO_PRECOMPUTE_BUFFERS = 1,
 		}
 		
 		// --- Function Pointers ---

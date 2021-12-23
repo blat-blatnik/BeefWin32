@@ -801,10 +801,10 @@ namespace Win32
 		}
 		public enum TRANSLATE_CHARSET_INFO_FLAGS : uint32
 		{
-			CHARSET = 1,
-			CODEPAGE = 2,
-			FONTSIG = 3,
-			LOCALE = 4096,
+			SRCCHARSET = 1,
+			SRCCODEPAGE = 2,
+			SRCFONTSIG = 3,
+			SRCLOCALE = 4096,
 		}
 		public enum TIME_FORMAT_FLAGS : uint32
 		{
@@ -2409,8 +2409,8 @@ namespace Win32
 		}
 		public enum UBiDiMirroring : int32
 		{
-			FF = 0,
-			N = 1,
+			OFF = 0,
+			ON = 1,
 		}
 		public enum USetSpanCondition : int32
 		{
@@ -2445,20 +2445,20 @@ namespace Win32
 		}
 		public enum UStringPrepProfileType : int32
 		{
-			_3491_NAMEPREP = 0,
-			_3530_NFS4_CS_PREP = 1,
-			_3530_NFS4_CS_PREP_CI = 2,
-			_3530_NFS4_CIS_PREP = 3,
-			_3530_NFS4_MIXED_PREP_PREFIX = 4,
-			_3530_NFS4_MIXED_PREP_SUFFIX = 5,
-			_3722_ISCSI = 6,
-			_3920_NODEPREP = 7,
-			_3920_RESOURCEPREP = 8,
-			_4011_MIB = 9,
-			_4013_SASLPREP = 10,
-			_4505_TRACE = 11,
-			_4518_LDAP = 12,
-			_4518_LDAP_CI = 13,
+			RFC3491_NAMEPREP = 0,
+			RFC3530_NFS4_CS_PREP = 1,
+			RFC3530_NFS4_CS_PREP_CI = 2,
+			RFC3530_NFS4_CIS_PREP = 3,
+			RFC3530_NFS4_MIXED_PREP_PREFIX = 4,
+			RFC3530_NFS4_MIXED_PREP_SUFFIX = 5,
+			RFC3722_ISCSI = 6,
+			RFC3920_NODEPREP = 7,
+			RFC3920_RESOURCEPREP = 8,
+			RFC4011_MIB = 9,
+			RFC4013_SASLPREP = 10,
+			RFC4505_TRACE = 11,
+			RFC4518_LDAP = 12,
+			RFC4518_LDAP_CI = 13,
 		}
 		public enum UBreakIteratorType : int32
 		{
@@ -2602,10 +2602,10 @@ namespace Win32
 		}
 		public enum UCalendarWeekdayType : int32
 		{
-			DAY = 0,
-			END = 1,
-			END_ONSET = 2,
-			END_CEASE = 3,
+			WEEKDAY = 0,
+			WEEKEND = 1,
+			WEEKEND_ONSET = 2,
+			WEEKEND_CEASE = 3,
 		}
 		public enum UTimeZoneTransitionType : int32
 		{

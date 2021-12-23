@@ -329,13 +329,13 @@ namespace Win32
 		[AllowDuplicates]
 		public enum MQMSGAUTHENTICATION : int32
 		{
-			ION_NOT_REQUESTED = 0,
-			ION_REQUESTED = 1,
-			ED_SIG10 = 1,
-			ION_REQUESTED_EX = 3,
-			ED_SIG20 = 3,
-			ED_SIG30 = 5,
-			ED_SIGXML = 9,
+			AUTHENTICATION_NOT_REQUESTED = 0,
+			AUTHENTICATION_REQUESTED = 1,
+			AUTHENTICATED_SIG10 = 1,
+			AUTHENTICATION_REQUESTED_EX = 3,
+			AUTHENTICATED_SIG20 = 3,
+			AUTHENTICATED_SIG30 = 5,
+			AUTHENTICATED_SIGXML = 9,
 		}
 		public enum MQSHARE : int32
 		{
@@ -351,18 +351,18 @@ namespace Win32
 		}
 		public enum MQJOURNAL : int32
 		{
-			L_NONE = 0,
-			L = 1,
+			JOURNAL_NONE = 0,
+			JOURNAL = 1,
 		}
 		public enum MQTRANSACTIONAL : int32
 		{
-			L_NONE = 0,
-			L = 1,
+			TRANSACTIONAL_NONE = 0,
+			TRANSACTIONAL = 1,
 		}
 		public enum MQAUTHENTICATE : int32
 		{
-			E_NONE = 0,
-			E = 1,
+			AUTHENTICATE_NONE = 0,
+			AUTHENTICATE = 1,
 		}
 		public enum MQPRIVLEVEL : int32
 		{
@@ -372,8 +372,8 @@ namespace Win32
 		}
 		public enum MQPRIORITY : int32
 		{
-			IN_PRIORITY = 0,
-			AX_PRIORITY = 7,
+			MIN_PRIORITY = 0,
+			MAX_PRIORITY = 7,
 		}
 		[AllowDuplicates]
 		public enum MQMAX : int32

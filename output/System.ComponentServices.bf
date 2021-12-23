@@ -30,8 +30,8 @@ namespace Win32
 		}
 		public enum COMAdminComponentType : int32
 		{
-			_32BitComponent = 1,
-			_64BitComponent = 2,
+			COMAdmin32BitComponent = 1,
+			COMAdmin64BitComponent = 2,
 		}
 		public enum COMAdminApplicationInstallOptions : int32
 		{
@@ -116,47 +116,47 @@ namespace Win32
 		}
 		public enum COMAdminOS : int32
 		{
-			NotInitialized = 0,
-			Windows3_1 = 1,
-			Windows9x = 2,
-			Windows2000 = 3,
-			Windows2000AdvancedServer = 4,
-			Windows2000Unknown = 5,
-			Unknown = 6,
-			WindowsXPPersonal = 11,
-			WindowsXPProfessional = 12,
-			WindowsNETStandardServer = 13,
-			WindowsNETEnterpriseServer = 14,
-			WindowsNETDatacenterServer = 15,
-			WindowsNETWebServer = 16,
-			WindowsLonghornPersonal = 17,
-			WindowsLonghornProfessional = 18,
-			WindowsLonghornStandardServer = 19,
-			WindowsLonghornEnterpriseServer = 20,
-			WindowsLonghornDatacenterServer = 21,
-			WindowsLonghornWebServer = 22,
-			Windows7Personal = 23,
-			Windows7Professional = 24,
-			Windows7StandardServer = 25,
-			Windows7EnterpriseServer = 26,
-			Windows7DatacenterServer = 27,
-			Windows7WebServer = 28,
-			Windows8Personal = 29,
-			Windows8Professional = 30,
-			Windows8StandardServer = 31,
-			Windows8EnterpriseServer = 32,
-			Windows8DatacenterServer = 33,
-			Windows8WebServer = 34,
-			WindowsBluePersonal = 35,
-			WindowsBlueProfessional = 36,
-			WindowsBlueStandardServer = 37,
-			WindowsBlueEnterpriseServer = 38,
-			WindowsBlueDatacenterServer = 39,
-			WindowsBlueWebServer = 40,
+			OSNotInitialized = 0,
+			OSWindows3_1 = 1,
+			OSWindows9x = 2,
+			OSWindows2000 = 3,
+			OSWindows2000AdvancedServer = 4,
+			OSWindows2000Unknown = 5,
+			OSUnknown = 6,
+			OSWindowsXPPersonal = 11,
+			OSWindowsXPProfessional = 12,
+			OSWindowsNETStandardServer = 13,
+			OSWindowsNETEnterpriseServer = 14,
+			OSWindowsNETDatacenterServer = 15,
+			OSWindowsNETWebServer = 16,
+			OSWindowsLonghornPersonal = 17,
+			OSWindowsLonghornProfessional = 18,
+			OSWindowsLonghornStandardServer = 19,
+			OSWindowsLonghornEnterpriseServer = 20,
+			OSWindowsLonghornDatacenterServer = 21,
+			OSWindowsLonghornWebServer = 22,
+			OSWindows7Personal = 23,
+			OSWindows7Professional = 24,
+			OSWindows7StandardServer = 25,
+			OSWindows7EnterpriseServer = 26,
+			OSWindows7DatacenterServer = 27,
+			OSWindows7WebServer = 28,
+			OSWindows8Personal = 29,
+			OSWindows8Professional = 30,
+			OSWindows8StandardServer = 31,
+			OSWindows8EnterpriseServer = 32,
+			OSWindows8DatacenterServer = 33,
+			OSWindows8WebServer = 34,
+			OSWindowsBluePersonal = 35,
+			OSWindowsBlueProfessional = 36,
+			OSWindowsBlueStandardServer = 37,
+			OSWindowsBlueEnterpriseServer = 38,
+			OSWindowsBlueDatacenterServer = 39,
+			OSWindowsBlueWebServer = 40,
 		}
 		public enum COMAdminServiceOptions : int32
 		{
-			COMAdminServiceLoadBalanceRouter = 1,
+			LoadBalanceRouter = 1,
 		}
 		public enum COMAdminServiceStatusOptions : int32
 		{
@@ -338,8 +338,8 @@ namespace Win32
 		}
 		public enum CSC_InheritanceConfig : int32
 		{
-			nherit = 0,
-			gnore = 1,
+			Inherit = 0,
+			Ignore = 1,
 		}
 		public enum CSC_ThreadPool : int32
 		{

@@ -1906,19 +1906,19 @@ namespace Win32
 		}
 		public enum MESSAGEBOX_RESULT : int32
 		{
-			OK = 1,
-			CANCEL = 2,
-			ABORT = 3,
-			RETRY = 4,
-			IGNORE = 5,
-			YES = 6,
-			NO = 7,
-			CLOSE = 8,
-			HELP = 9,
-			TRYAGAIN = 10,
-			CONTINUE = 11,
-			ASYNC = 32001,
-			TIMEOUT = 32000,
+			IDOK = 1,
+			IDCANCEL = 2,
+			IDABORT = 3,
+			IDRETRY = 4,
+			IDIGNORE = 5,
+			IDYES = 6,
+			IDNO = 7,
+			IDCLOSE = 8,
+			IDHELP = 9,
+			IDTRYAGAIN = 10,
+			IDCONTINUE = 11,
+			IDASYNC = 32001,
+			IDTIMEOUT = 32000,
 		}
 		[AllowDuplicates]
 		public enum MENU_ITEM_STATE : uint32
@@ -1942,24 +1942,24 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GET_CLASS_LONG_INDEX : int32
 		{
-			W_ATOM = -32,
-			L_CBCLSEXTRA = -20,
-			L_CBWNDEXTRA = -18,
-			L_HBRBACKGROUND = -10,
-			L_HCURSOR = -12,
-			L_HICON = -14,
-			L_HICONSM = -34,
-			L_HMODULE = -16,
-			L_MENUNAME = -8,
-			L_STYLE = -26,
-			L_WNDPROC = -24,
-			LP_HBRBACKGROUND = -10,
-			LP_HCURSOR = -12,
-			LP_HICON = -14,
-			LP_HICONSM = -34,
-			LP_HMODULE = -16,
-			LP_MENUNAME = -8,
-			LP_WNDPROC = -24,
+			GCW_ATOM = -32,
+			GCL_CBCLSEXTRA = -20,
+			GCL_CBWNDEXTRA = -18,
+			GCL_HBRBACKGROUND = -10,
+			GCL_HCURSOR = -12,
+			GCL_HICON = -14,
+			GCL_HICONSM = -34,
+			GCL_HMODULE = -16,
+			GCL_MENUNAME = -8,
+			GCL_STYLE = -26,
+			GCL_WNDPROC = -24,
+			GCLP_HBRBACKGROUND = -10,
+			GCLP_HCURSOR = -12,
+			GCLP_HICON = -14,
+			GCLP_HICONSM = -34,
+			GCLP_HMODULE = -16,
+			GCLP_MENUNAME = -8,
+			GCLP_WNDPROC = -24,
 		}
 		public enum UPDATE_LAYERED_WINDOW_FLAGS : uint32
 		{
@@ -1971,18 +1971,18 @@ namespace Win32
 		[AllowDuplicates]
 		public enum WINDOW_LONG_PTR_INDEX : int32
 		{
-			_EXSTYLE = -20,
-			P_HINSTANCE = -6,
-			P_HWNDPARENT = -8,
-			P_ID = -12,
-			_STYLE = -16,
-			P_USERDATA = -21,
-			P_WNDPROC = -4,
-			_HINSTANCE = -6,
-			_ID = -12,
-			_USERDATA = -21,
-			_WNDPROC = -4,
-			_HWNDPARENT = -8,
+			GWL_EXSTYLE = -20,
+			GWLP_HINSTANCE = -6,
+			GWLP_HWNDPARENT = -8,
+			GWLP_ID = -12,
+			GWL_STYLE = -16,
+			GWLP_USERDATA = -21,
+			GWLP_WNDPROC = -4,
+			GWL_HINSTANCE = -6,
+			GWL_ID = -12,
+			GWL_USERDATA = -21,
+			GWL_WNDPROC = -4,
+			GWL_HWNDPARENT = -8,
 		}
 		public enum ANIMATE_WINDOW_FLAGS : uint32
 		{
@@ -2050,22 +2050,22 @@ namespace Win32
 		[AllowDuplicates]
 		public enum SET_WINDOW_POS_FLAGS : uint32
 		{
-			ASYNCWINDOWPOS = 16384,
-			DEFERERASE = 8192,
-			DRAWFRAME = 32,
-			FRAMECHANGED = 32,
-			HIDEWINDOW = 128,
-			NOACTIVATE = 16,
-			NOCOPYBITS = 256,
-			NOMOVE = 2,
-			NOOWNERZORDER = 512,
-			NOREDRAW = 8,
-			NOREPOSITION = 512,
-			NOSENDCHANGING = 1024,
-			NOSIZE = 1,
-			NOZORDER = 4,
-			SHOWWINDOW = 64,
-			_NOOWNERZORDER = 512,
+			SWP_ASYNCWINDOWPOS = 16384,
+			SWP_DEFERERASE = 8192,
+			SWP_DRAWFRAME = 32,
+			SWP_FRAMECHANGED = 32,
+			SWP_HIDEWINDOW = 128,
+			SWP_NOACTIVATE = 16,
+			SWP_NOCOPYBITS = 256,
+			SWP_NOMOVE = 2,
+			SWP_NOOWNERZORDER = 512,
+			SWP_NOREDRAW = 8,
+			SWP_NOREPOSITION = 512,
+			SWP_NOSENDCHANGING = 1024,
+			SWP_NOSIZE = 1,
+			SWP_NOZORDER = 4,
+			SWP_SHOWWINDOW = 64,
+			SWP__NOOWNERZORDER = 512,
 		}
 		public enum MSG_WAIT_FOR_MULTIPLE_OBJECTS_EX_FLAGS : uint32
 		{
@@ -2327,8 +2327,8 @@ namespace Win32
 		}
 		public enum MOUSEHOOKSTRUCTEX_MOUSE_DATA : uint32
 		{
-			_1 = 1,
-			_2 = 2,
+			XBUTTON1 = 1,
+			XBUTTON2 = 2,
 		}
 		public enum MENU_ITEM_MASK : uint32
 		{
@@ -2353,8 +2353,8 @@ namespace Win32
 		}
 		public enum CURSORINFO_FLAGS : uint32
 		{
-			HOWING = 1,
-			UPPRESSED = 2,
+			SHOWING = 1,
+			SUPPRESSED = 2,
 		}
 		public enum MENUINFO_STYLE : uint32
 		{

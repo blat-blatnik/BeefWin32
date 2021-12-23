@@ -13,9 +13,9 @@ namespace Win32
 		
 		public enum JsRuntimeVersion : int32
 		{
-			_10 = 0,
-			_11 = 1,
-			Edge = -1,
+			Version10 = 0,
+			Version11 = 1,
+			VersionEdge = -1,
 		}
 		public enum JsErrorCode : uint32
 		{

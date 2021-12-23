@@ -485,7 +485,7 @@ namespace Win32
 		}
 		public enum WMT_NET_PROTOCOL : int32
 		{
-			WMT_PROTOCOL_HTTP = 0,
+			PROTOCOL_HTTP = 0,
 		}
 		public enum WMT_PLAY_MODE : int32
 		{

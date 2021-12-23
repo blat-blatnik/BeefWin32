@@ -435,9 +435,9 @@ namespace Win32
 		}
 		public enum DHCP_SUBNET_ELEMENT_TYPE_V6 : int32
 		{
-			IpRanges = 0,
-			ReservedIps = 1,
-			ExcludedIpRanges = 2,
+			Dhcpv6IpRanges = 0,
+			Dhcpv6ReservedIps = 1,
+			Dhcpv6ExcludedIpRanges = 2,
 		}
 		public enum DHCP_SEARCH_INFO_TYPE_V6 : int32
 		{

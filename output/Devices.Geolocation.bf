@@ -111,7 +111,7 @@ namespace Win32
 		}
 		public enum GNSS_GEOREGIONTYPE : int32
 		{
-			GNSS_GeoRegion_Circle = 1,
+			GeoRegion_Circle = 1,
 		}
 		public enum GNSS_GEOFENCE_STATE : int32
 		{

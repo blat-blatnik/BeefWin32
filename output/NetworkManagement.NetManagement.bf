@@ -2130,8 +2130,8 @@ namespace Win32
 		}
 		public enum MSA_INFO_LEVEL : int32
 		{
-			_0 = 0,
-			Max = 1,
+			Level0 = 0,
+			LevelMax = 1,
 		}
 		public enum MSA_INFO_STATE : int32
 		{
@@ -2222,8 +2222,8 @@ namespace Win32
 		}
 		public enum NETWORK_INSTALL_TIME : int32
 		{
-			RIMARYINSTALL = 1,
-			OSTSYSINSTALL = 2,
+			PRIMARYINSTALL = 1,
+			POSTSYSINSTALL = 2,
 		}
 		public enum NETWORK_UPGRADE_TYPE : int32
 		{

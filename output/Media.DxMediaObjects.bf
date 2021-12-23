@@ -84,11 +84,11 @@ namespace Win32
 		}
 		public enum DMO_REGISTER_FLAGS : int32
 		{
-			DMO_REGISTERF_IS_KEYED = 1,
+			REGISTERF_IS_KEYED = 1,
 		}
 		public enum DMO_ENUM_FLAGS : int32
 		{
-			DMO_ENUMF_INCLUDE_KEYED = 1,
+			ENUMF_INCLUDE_KEYED = 1,
 		}
 		
 		// --- Structs ---

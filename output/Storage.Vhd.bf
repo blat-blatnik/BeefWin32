@@ -103,7 +103,7 @@ namespace Win32
 		}
 		public enum DETACH_VIRTUAL_DISK_FLAG : uint32
 		{
-			DETACH_VIRTUAL_DISK_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum DEPENDENT_DISK_FLAG : uint32
 		{
@@ -172,9 +172,9 @@ namespace Win32
 		}
 		public enum COMPACT_VIRTUAL_DISK_FLAG : uint32
 		{
-			NE = 0,
-			_ZERO_SCAN = 1,
-			_BLOCK_MOVES = 2,
+			NONE = 0,
+			NO_ZERO_SCAN = 1,
+			NO_BLOCK_MOVES = 2,
 		}
 		public enum MERGE_VIRTUAL_DISK_VERSION : int32
 		{
@@ -184,7 +184,7 @@ namespace Win32
 		}
 		public enum MERGE_VIRTUAL_DISK_FLAG : uint32
 		{
-			MERGE_VIRTUAL_DISK_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum EXPAND_VIRTUAL_DISK_VERSION : int32
 		{
@@ -193,8 +193,8 @@ namespace Win32
 		}
 		public enum EXPAND_VIRTUAL_DISK_FLAG : uint32
 		{
-			NE = 0,
-			TIFY_CHANGE = 1,
+			NONE = 0,
+			NOTIFY_CHANGE = 1,
 		}
 		public enum RESIZE_VIRTUAL_DISK_VERSION : int32
 		{
@@ -222,7 +222,7 @@ namespace Win32
 		}
 		public enum QUERY_CHANGES_VIRTUAL_DISK_FLAG : uint32
 		{
-			QUERY_CHANGES_VIRTUAL_DISK_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum TAKE_SNAPSHOT_VHDSET_FLAG : uint32
 		{
@@ -268,7 +268,7 @@ namespace Win32
 		}
 		public enum RAW_SCSI_VIRTUAL_DISK_FLAG : uint32
 		{
-			RAW_SCSI_VIRTUAL_DISK_FLAG_NONE = 0,
+			FLAG_NONE = 0,
 		}
 		public enum RAW_SCSI_VIRTUAL_DISK_VERSION : int32
 		{

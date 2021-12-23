@@ -950,8 +950,8 @@ namespace Win32
 		}
 		public enum PROXY_AUTO_DETECT_TYPE : uint32
 		{
-			HCP = 1,
-			NS_A = 2,
+			DHCP = 1,
+			DNS_A = 2,
 		}
 		public enum INTERNET_AUTODIAL : uint32
 		{

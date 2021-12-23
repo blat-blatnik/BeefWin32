@@ -55,13 +55,13 @@ namespace Win32
 		}
 		public enum SYNC_STATISTICS : int32
 		{
-			SYNC_STATISTICS_RANGE_COUNT = 0,
+			STATISTICS_RANGE_COUNT = 0,
 		}
 		public enum SYNC_SERIALIZATION_VERSION : int32
 		{
-			_1 = 1,
-			_2 = 4,
-			_3 = 5,
+			V1 = 1,
+			V2 = 4,
+			V3 = 5,
 		}
 		public enum FILTERING_TYPE : int32
 		{

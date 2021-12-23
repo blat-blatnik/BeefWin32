@@ -32,8 +32,8 @@ namespace Win32
 		}
 		public enum AgileReferenceOptions : int32
 		{
-			FAULT = 0,
-			LAYEDMARSHAL = 1,
+			DEFAULT = 0,
+			DELAYEDMARSHAL = 1,
 		}
 		public enum TrustLevel : int32
 		{

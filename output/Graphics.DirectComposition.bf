@@ -54,9 +54,9 @@ namespace Win32
 		}
 		public enum COMPOSITION_FRAME_ID_TYPE : int32
 		{
-			REATED = 0,
-			ONFIRMED = 1,
-			OMPLETED = 2,
+			CREATED = 0,
+			CONFIRMED = 1,
+			COMPLETED = 2,
 		}
 		
 		// --- Structs ---

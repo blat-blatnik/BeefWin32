@@ -80,7 +80,7 @@ namespace Win32
 		}
 		public enum TASK_ENUM_FLAGS : int32
 		{
-			TASK_ENUM_HIDDEN = 1,
+			HIDDEN = 1,
 		}
 		public enum TASK_LOGON_TYPE : int32
 		{

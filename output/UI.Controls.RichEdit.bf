@@ -1351,22 +1351,22 @@ namespace Win32
 		}
 		public enum MANCODE : int32
 		{
-			BOLD = 16,
-			ITAL = 32,
-			GREEK = 64,
-			ROMN = 0,
-			SCRP = 1,
-			FRAK = 2,
-			OPEN = 3,
-			SANS = 4,
-			MONO = 5,
-			MATH = 6,
-			ISOL = 7,
-			INIT = 8,
-			TAIL = 9,
-			STRCH = 10,
-			LOOP = 11,
-			OPENA = 12,
+			MBOLD = 16,
+			MITAL = 32,
+			MGREEK = 64,
+			MROMN = 0,
+			MSCRP = 1,
+			MFRAK = 2,
+			MOPEN = 3,
+			MSANS = 4,
+			MMONO = 5,
+			MMATH = 6,
+			MISOL = 7,
+			MINIT = 8,
+			MTAIL = 9,
+			MSTRCH = 10,
+			MLOOP = 11,
+			MOPENA = 12,
 		}
 		
 		// --- Function Pointers ---

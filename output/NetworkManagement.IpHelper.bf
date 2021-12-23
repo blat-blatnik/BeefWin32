@@ -613,8 +613,8 @@ namespace Win32
 		}
 		public enum MIB_IF_ENTRY_LEVEL : int32
 		{
-			l = 0,
-			lWithoutStatistics = 2,
+			Normal = 0,
+			NormalWithoutStatistics = 2,
 		}
 		public enum MIB_IF_TABLE_LEVEL : int32
 		{
@@ -736,7 +736,7 @@ namespace Win32
 		}
 		public enum TCPIP_OWNER_MODULE_INFO_CLASS : int32
 		{
-			TCPIP_OWNER_MODULE_INFO_BASIC = 0,
+			BASIC = 0,
 		}
 		public enum TCP_ESTATS_TYPE : int32
 		{
@@ -790,8 +790,8 @@ namespace Win32
 		}
 		public enum PFADDRESSTYPE : int32
 		{
-			_4 = 0,
-			_6 = 1,
+			IPV4 = 0,
+			IPV6 = 1,
 		}
 		public enum PFFRAMETYPE : int32
 		{

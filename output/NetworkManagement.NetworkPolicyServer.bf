@@ -477,9 +477,9 @@ namespace Win32
 		}
 		public enum SHVTEMPLATEPROPERTIES : int32
 		{
-			_COMBINATION_TYPE = 1024,
-			_LIST = 1025,
-			CONFIG_LIST = 1026,
+			SHV_COMBINATION_TYPE = 1024,
+			SHV_LIST = 1025,
+			SHVCONFIG_LIST = 1026,
 		}
 		public enum IPFILTERPROPERTIES : int32
 		{
@@ -570,20 +570,20 @@ namespace Win32
 		}
 		public enum IASOSTYPE : int32
 		{
-			_4_WORKSTATION = 0,
-			_5_WORKSTATION = 1,
-			_6_WORKSTATION = 2,
-			_6_1_WORKSTATION = 3,
-			_6_2_WORKSTATION = 4,
-			_6_3_WORKSTATION = 5,
-			_10_0_WORKSTATION = 6,
-			_4_SERVER = 7,
-			_5_SERVER = 8,
-			_6_SERVER = 9,
-			_6_1_SERVER = 10,
-			_6_2_SERVER = 11,
-			_6_3_SERVER = 12,
-			_10_0_SERVER = 13,
+			NT4_WORKSTATION = 0,
+			NT5_WORKSTATION = 1,
+			NT6_WORKSTATION = 2,
+			NT6_1_WORKSTATION = 3,
+			NT6_2_WORKSTATION = 4,
+			NT6_3_WORKSTATION = 5,
+			NT10_0_WORKSTATION = 6,
+			NT4_SERVER = 7,
+			NT5_SERVER = 8,
+			NT6_SERVER = 9,
+			NT6_1_SERVER = 10,
+			NT6_2_SERVER = 11,
+			NT6_3_SERVER = 12,
+			NT10_0_SERVER = 13,
 		}
 		public enum IASDOMAINTYPE : int32
 		{
@@ -725,8 +725,8 @@ namespace Win32
 		}
 		public enum RADIUS_EXTENSION_POINT : int32
 		{
-			entication = 0,
-			orization = 1,
+			Authentication = 0,
+			Authorization = 1,
 		}
 		
 		// --- Function Pointers ---

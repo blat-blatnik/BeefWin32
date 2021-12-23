@@ -377,7 +377,7 @@ namespace Win32
 		}
 		public enum QUERYASMINFO_FLAGS : uint32
 		{
-			QUERYASMINFO_FLAG_VALIDATE = 1,
+			FLAG_VALIDATE = 1,
 		}
 		public enum RESULTTYPES : int32
 		{
@@ -615,8 +615,8 @@ namespace Win32
 		}
 		public enum MSICODE : int32
 		{
-			RODUCT = 0,
-			ATCH = 1073741824,
+			PRODUCT = 0,
+			PATCH = 1073741824,
 		}
 		public enum MSITRANSACTION : int32
 		{
@@ -856,26 +856,26 @@ namespace Win32
 		}
 		public enum msidbLocatorType : int32
 		{
-			Directory = 0,
-			FileName = 1,
-			RawValue = 2,
-			_64bit = 16,
+			TypeDirectory = 0,
+			TypeFileName = 1,
+			TypeRawValue = 2,
+			Type64bit = 16,
 		}
 		public enum msidbComponentAttributes : int32
 		{
-			LocalOnly = 0,
-			SourceOnly = 1,
-			Optional = 2,
-			RegistryKeyPath = 4,
-			SharedDllRefCount = 8,
-			Permanent = 16,
-			ODBCDataSource = 32,
-			Transitive = 64,
-			NeverOverwrite = 128,
-			_64bit = 256,
-			DisableRegistryReflection = 512,
-			UninstallOnSupersedence = 1024,
-			Shared = 2048,
+			AttributesLocalOnly = 0,
+			AttributesSourceOnly = 1,
+			AttributesOptional = 2,
+			AttributesRegistryKeyPath = 4,
+			AttributesSharedDllRefCount = 8,
+			AttributesPermanent = 16,
+			AttributesODBCDataSource = 32,
+			AttributesTransitive = 64,
+			AttributesNeverOverwrite = 128,
+			Attributes64bit = 256,
+			AttributesDisableRegistryReflection = 512,
+			AttributesUninstallOnSupersedence = 1024,
+			AttributesShared = 2048,
 		}
 		public enum msidbAssemblyAttributes : int32
 		{
@@ -885,29 +885,29 @@ namespace Win32
 		[AllowDuplicates]
 		public enum msidbCustomActionType : int32
 		{
-			Dll = 1,
-			Exe = 2,
-			TextData = 3,
-			JScript = 5,
-			VBScript = 6,
-			Install = 7,
-			BinaryData = 0,
-			SourceFile = 16,
-			Directory = 32,
-			Property = 48,
-			Continue = 64,
-			Async = 128,
-			FirstSequence = 256,
-			OncePerProcess = 512,
-			ClientRepeat = 768,
-			InScript = 1024,
-			Rollback = 256,
-			Commit = 512,
-			NoImpersonate = 2048,
-			TSAware = 16384,
-			_64BitScript = 4096,
-			HideTarget = 8192,
-			PatchUninstall = 32768,
+			TypeDll = 1,
+			TypeExe = 2,
+			TypeTextData = 3,
+			TypeJScript = 5,
+			TypeVBScript = 6,
+			TypeInstall = 7,
+			TypeBinaryData = 0,
+			TypeSourceFile = 16,
+			TypeDirectory = 32,
+			TypeProperty = 48,
+			TypeContinue = 64,
+			TypeAsync = 128,
+			TypeFirstSequence = 256,
+			TypeOncePerProcess = 512,
+			TypeClientRepeat = 768,
+			TypeInScript = 1024,
+			TypeRollback = 256,
+			TypeCommit = 512,
+			TypeNoImpersonate = 2048,
+			TypeTSAware = 16384,
+			Type64BitScript = 4096,
+			TypeHideTarget = 8192,
+			TypePatchUninstall = 32768,
 		}
 		public enum msidbDialogAttributes : int32
 		{
@@ -961,7 +961,7 @@ namespace Win32
 		}
 		public enum msidbMoveFileOptions : int32
 		{
-			msidbMoveFileOptionsMove = 1,
+			OptionsMove = 1,
 		}
 		public enum msidbODBCDataSourceRegistration : int32
 		{
@@ -970,11 +970,11 @@ namespace Win32
 		}
 		public enum msidbClassAttributes : int32
 		{
-			msidbClassAttributesRelativePath = 1,
+			AttributesRelativePath = 1,
 		}
 		public enum msidbPatchAttributes : int32
 		{
-			msidbPatchAttributesNonVital = 1,
+			AttributesNonVital = 1,
 		}
 		public enum msidbRegistryRoot : int32
 		{
@@ -1006,7 +1006,7 @@ namespace Win32
 		}
 		public enum msidbServiceInstallErrorControl : int32
 		{
-			msidbServiceInstallErrorControlVital = 32768,
+			ControlVital = 32768,
 		}
 		public enum msidbTextStyleStyleBits : int32
 		{

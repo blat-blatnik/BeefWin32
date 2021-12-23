@@ -22,8 +22,8 @@ namespace Win32
 		
 		public enum FDICREATE_CPU_TYPE : uint32
 		{
-			_286 = 0,
-			_386 = 1,
+			cpu80286 = 0,
+			cpu80386 = 1,
 		}
 		public enum FCIERROR : int32
 		{

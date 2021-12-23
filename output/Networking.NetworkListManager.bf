@@ -75,7 +75,7 @@ namespace Win32
 		}
 		public enum NLM_CONNECTION_PROPERTY_CHANGE : int32
 		{
-			NLM_CONNECTION_PROPERTY_CHANGE_AUTHENTICATION = 1,
+			CHANGE_AUTHENTICATION = 1,
 		}
 		
 		// --- Structs ---

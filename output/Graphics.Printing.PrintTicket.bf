@@ -24,9 +24,9 @@ namespace Win32
 		}
 		public enum EPrintTicketScope : int32
 		{
-			PageScope = 0,
-			DocumentScope = 1,
-			JobScope = 2,
+			PTPageScope = 0,
+			PTDocumentScope = 1,
+			PTJobScope = 2,
 		}
 		
 		// --- Functions ---

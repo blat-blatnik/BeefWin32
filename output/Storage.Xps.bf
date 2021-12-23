@@ -180,8 +180,8 @@ namespace Win32
 		}
 		public enum XPS_COLOR_INTERPOLATION : int32
 		{
-			CRGBLINEAR = 1,
-			RGBLINEAR = 2,
+			SCRGBLINEAR = 1,
+			SRGBLINEAR = 2,
 		}
 		public enum XPS_SPREAD_METHOD : int32
 		{
@@ -280,8 +280,8 @@ namespace Win32
 		}
 		public enum XPS_INTERLEAVING : int32
 		{
-			FF = 1,
-			N = 2,
+			OFF = 1,
+			ON = 2,
 		}
 		public enum XPS_DOCUMENT_TYPE : int32
 		{

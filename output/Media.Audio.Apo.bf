@@ -57,21 +57,21 @@ namespace Win32
 		}
 		public enum AUDIO_FLOW_TYPE : int32
 		{
-			LL = 0,
-			SH = 1,
+			PULL = 0,
+			PUSH = 1,
 		}
 		public enum EAudioConstriction : int32
 		{
-			Off = 0,
-			_48_16 = 1,
-			_44_16 = 2,
-			_14_14 = 3,
-			Mute = 4,
+			ConstrictionOff = 0,
+			Constriction48_16 = 1,
+			Constriction44_16 = 2,
+			Constriction14_14 = 3,
+			ConstrictionMute = 4,
 		}
 		public enum AUDIO_SYSTEMEFFECT_STATE : int32
 		{
-			FF = 0,
-			N = 1,
+			OFF = 0,
+			ON = 1,
 		}
 		public enum APO_LOG_LEVEL : int32
 		{

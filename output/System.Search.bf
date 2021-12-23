@@ -3585,9 +3585,9 @@ namespace Win32
 		}
 		public enum DBCOLUMNFLAGSENUM21 : int32
 		{
-			ROWURL = 65536,
-			DEFAULTSTREAM = 131072,
-			COLLECTION = 262144,
+			ISROWURL = 65536,
+			ISDEFAULTSTREAM = 131072,
+			ISCOLLECTION = 262144,
 		}
 		public enum DBCOLUMNFLAGSENUM26 : int32
 		{
@@ -3879,11 +3879,11 @@ namespace Win32
 		}
 		public enum DBPARAMFLAGSENUM : int32
 		{
-			INPUT = 1,
-			OUTPUT = 2,
-			SIGNED = 16,
-			NULLABLE = 64,
-			LONG = 128,
+			ISINPUT = 1,
+			ISOUTPUT = 2,
+			ISSIGNED = 16,
+			ISNULLABLE = 64,
+			ISLONG = 128,
 		}
 		public enum DBPARAMFLAGSENUM20 : int32
 		{
@@ -3986,10 +3986,10 @@ namespace Win32
 		}
 		public enum DBREASONENUM15 : int32
 		{
-			POSITION_CHANGED = 15,
-			POSITION_CHAPTERCHANGED = 16,
-			POSITION_CLEARED = 17,
-			_ASYNCHINSERT = 18,
+			ROWPOSITION_CHANGED = 15,
+			ROWPOSITION_CHAPTERCHANGED = 16,
+			ROWPOSITION_CLEARED = 17,
+			ROW_ASYNCHINSERT = 18,
 		}
 		public enum DBCOMPAREOPSENUM : int32
 		{
@@ -4007,8 +4007,8 @@ namespace Win32
 		}
 		public enum DBCOMPAREOPSENUM20 : int32
 		{
-			BEGINSWITH = 9,
-			CONTAINS = 10,
+			NOTBEGINSWITH = 9,
+			NOTCONTAINS = 10,
 		}
 		public enum DBASYNCHOPENUM : int32
 		{
@@ -4058,8 +4058,8 @@ namespace Win32
 		}
 		public enum DBDEFERRABILITYENUM : int32
 		{
-			ED = 1,
-			ABLE = 2,
+			DEFERRED = 1,
+			DEFERRABLE = 2,
 		}
 		public enum DBACCESSORFLAGSENUM : int32
 		{
@@ -4238,8 +4238,8 @@ namespace Win32
 		}
 		public enum DBDELETEFLAGSENUM : int32
 		{
-			SYNC = 256,
-			TOMIC = 4096,
+			ASYNC = 256,
+			ATOMIC = 4096,
 		}
 		public enum STRUCTURED_QUERY_SYNTAX : int32
 		{
@@ -4596,22 +4596,22 @@ namespace Win32
 		}
 		public enum DBPROPENUM25_DEPRECATED : int32
 		{
-			CommandCost = 141,
-			CommandTree = 142,
-			CommandValidate = 143,
-			DBSchemaCommand = 144,
-			ProvideMoniker = 125,
-			Query = 146,
-			ReadData = 147,
-			RowsetAsynch = 148,
-			RowsetCopyRows = 149,
-			RowsetKeys = 151,
-			RowsetNewRowAfter = 152,
-			RowsetNextRowset = 153,
-			RowsetWatchAll = 155,
-			RowsetWatchNotify = 156,
-			RowsetWatchRegion = 157,
-			RowsetWithParameters = 158,
+			ICommandCost = 141,
+			ICommandTree = 142,
+			ICommandValidate = 143,
+			IDBSchemaCommand = 144,
+			IProvideMoniker = 125,
+			IQuery = 146,
+			IReadData = 147,
+			IRowsetAsynch = 148,
+			IRowsetCopyRows = 149,
+			IRowsetKeys = 151,
+			IRowsetNewRowAfter = 152,
+			IRowsetNextRowset = 153,
+			IRowsetWatchAll = 155,
+			IRowsetWatchNotify = 156,
+			IRowsetWatchRegion = 157,
+			IRowsetWithParameters = 158,
 		}
 		public enum DBREASONENUM25 : int32
 		{

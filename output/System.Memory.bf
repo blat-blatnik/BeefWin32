@@ -129,11 +129,11 @@ namespace Win32
 		[AllowDuplicates]
 		public enum GLOBAL_ALLOC_FLAGS : uint32
 		{
-			HND = 66,
-			MEM_FIXED = 0,
-			MEM_MOVEABLE = 2,
-			MEM_ZEROINIT = 64,
-			PTR = 64,
+			GHND = 66,
+			GMEM_FIXED = 0,
+			GMEM_MOVEABLE = 2,
+			GMEM_ZEROINIT = 64,
+			GPTR = 64,
 		}
 		public enum PAGE_TYPE : uint32
 		{

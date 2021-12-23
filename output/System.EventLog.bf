@@ -32,8 +32,8 @@ namespace Win32
 		}
 		public enum READ_EVENT_LOG_READ_FLAGS : uint32
 		{
-			EK_READ = 2,
-			QUENTIAL_READ = 1,
+			SEEK_READ = 2,
+			SEQUENTIAL_READ = 1,
 		}
 		public enum EVT_VARIANT_TYPE : int32
 		{
@@ -261,16 +261,16 @@ namespace Win32
 		}
 		public enum EVT_EVENT_METADATA_PROPERTY_ID : int32
 		{
-			entMetadataEventID = 0,
-			entMetadataEventVersion = 1,
-			entMetadataEventChannel = 2,
-			entMetadataEventLevel = 3,
-			entMetadataEventOpcode = 4,
-			entMetadataEventTask = 5,
-			entMetadataEventKeyword = 6,
-			entMetadataEventMessageID = 7,
-			entMetadataEventTemplate = 8,
-			tEventMetadataPropertyIdEND = 9,
+			EventMetadataEventID = 0,
+			EventMetadataEventVersion = 1,
+			EventMetadataEventChannel = 2,
+			EventMetadataEventLevel = 3,
+			EventMetadataEventOpcode = 4,
+			EventMetadataEventTask = 5,
+			EventMetadataEventKeyword = 6,
+			EventMetadataEventMessageID = 7,
+			EventMetadataEventTemplate = 8,
+			EvtEventMetadataPropertyIdEND = 9,
 		}
 		public enum EVT_QUERY_PROPERTY_ID : int32
 		{

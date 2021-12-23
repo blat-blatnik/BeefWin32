@@ -1918,8 +1918,8 @@ namespace Win32
 		}
 		public enum CRYPT_SET_HASH_PARAM : uint32
 		{
-			MAC_INFO = 5,
-			ASHVAL = 2,
+			HMAC_INFO = 5,
+			HASHVAL = 2,
 		}
 		public enum CERT_SYSTEM_STORE_FLAGS : uint32
 		{
@@ -2023,8 +2023,8 @@ namespace Win32
 		}
 		public enum BCRYPT_DSA_MAGIC : uint32
 		{
-			UBLIC_MAGIC = 1112560452,
-			RIVATE_MAGIC = 1448104772,
+			PUBLIC_MAGIC = 1112560452,
+			PRIVATE_MAGIC = 1448104772,
 		}
 		public enum CRYPT_XML_X509DATA_TYPE : uint32
 		{
@@ -2107,9 +2107,9 @@ namespace Win32
 		}
 		public enum BCRYPT_RSAKEY_BLOB_MAGIC : uint32
 		{
-			PUBLIC_MAGIC = 826364754,
-			PRIVATE_MAGIC = 843141970,
-			FULLPRIVATE_MAGIC = 859919186,
+			RSAPUBLIC_MAGIC = 826364754,
+			RSAPRIVATE_MAGIC = 843141970,
+			RSAFULLPRIVATE_MAGIC = 859919186,
 		}
 		public enum CRYPT_XML_KEYINFO_TYPE : uint32
 		{
@@ -2136,8 +2136,8 @@ namespace Win32
 		}
 		public enum BCRYPT_DH_KEY_BLOB_MAGIC : uint32
 		{
-			UBLIC_MAGIC = 1112557636,
-			RIVATE_MAGIC = 1448101956,
+			PUBLIC_MAGIC = 1112557636,
+			PRIVATE_MAGIC = 1448101956,
 		}
 		public enum CRYPT_XML_STATUS_ERROR_STATUS : uint32
 		{
@@ -2175,9 +2175,9 @@ namespace Win32
 		}
 		public enum HASHALGORITHM_ENUM : int32
 		{
-			_1 = 0,
-			_256 = 1,
-			_512 = 2,
+			SHA1 = 0,
+			SHA256 = 1,
+			SHA512 = 2,
 		}
 		public enum DSAFIPSVERSION_ENUM : int32
 		{
@@ -2191,7 +2191,7 @@ namespace Win32
 		}
 		public enum BCRYPT_MULTI_OPERATION_TYPE : int32
 		{
-			BCRYPT_OPERATION_TYPE_HASH = 1,
+			OPERATION_TYPE_HASH = 1,
 		}
 		public enum CertKeyType : uint32
 		{

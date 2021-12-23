@@ -207,8 +207,8 @@ namespace Win32
 		}
 		public enum SERVICE_TRIGGER_ACTION : uint32
 		{
-			ART = 1,
-			OP = 2,
+			START = 1,
+			STOP = 2,
 		}
 		public enum SERVICE_TRIGGER_TYPE : uint32
 		{
@@ -248,11 +248,11 @@ namespace Win32
 		}
 		public enum SC_STATUS_TYPE : int32
 		{
-			SC_STATUS_PROCESS_INFO = 0,
+			PROCESS_INFO = 0,
 		}
 		public enum SC_ENUM_TYPE : int32
 		{
-			SC_ENUM_PROCESS_INFO = 0,
+			PROCESS_INFO = 0,
 		}
 		public enum SC_EVENT_TYPE : int32
 		{

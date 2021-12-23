@@ -360,13 +360,13 @@ namespace Win32
 		}
 		public enum ADVF : int32
 		{
-			_NODATA = 1,
-			_PRIMEFIRST = 2,
-			_ONLYONCE = 4,
-			_DATAONSTOP = 64,
-			CACHE_NOHANDLER = 8,
-			CACHE_FORCEBUILTIN = 16,
-			CACHE_ONSAVE = 32,
+			ADVF_NODATA = 1,
+			ADVF_PRIMEFIRST = 2,
+			ADVF_ONLYONCE = 4,
+			ADVF_DATAONSTOP = 64,
+			ADVFCACHE_NOHANDLER = 8,
+			ADVFCACHE_FORCEBUILTIN = 16,
+			ADVFCACHE_ONSAVE = 32,
 		}
 		public enum TYMED : int32
 		{
@@ -444,14 +444,14 @@ namespace Win32
 		}
 		public enum CWMO_FLAGS : int32
 		{
-			EFAULT = 0,
-			ISPATCH_CALLS = 1,
-			ISPATCH_WINDOW_MESSAGES = 2,
+			DEFAULT = 0,
+			DISPATCH_CALLS = 1,
+			DISPATCH_WINDOW_MESSAGES = 2,
 		}
 		public enum BINDINFOF : int32
 		{
-			STGMEDDATA = 1,
-			DEXTRAINFO = 2,
+			URLENCODESTGMEDDATA = 1,
+			URLENCODEDEXTRAINFO = 2,
 		}
 		[AllowDuplicates]
 		public enum Uri_PROPERTY : int32

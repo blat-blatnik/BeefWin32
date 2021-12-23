@@ -695,8 +695,8 @@ namespace Win32
 		}
 		public enum DWRITE_OUTLINE_THRESHOLD : int32
 		{
-			NTIALIASED = 0,
-			LIASED = 1,
+			ANTIALIASED = 0,
+			ALIASED = 1,
 		}
 		public enum DWRITE_BASELINE : int32
 		{
@@ -729,8 +729,8 @@ namespace Win32
 		}
 		public enum DWRITE_OPTICAL_ALIGNMENT : int32
 		{
-			NE = 0,
-			_SIDE_BEARINGS = 1,
+			NONE = 0,
+			NO_SIDE_BEARINGS = 1,
 		}
 		public enum DWRITE_GRID_FIT_MODE : int32
 		{

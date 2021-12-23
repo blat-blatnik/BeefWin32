@@ -40,8 +40,8 @@ namespace Win32
 		}
 		public enum MBN_PROVIDER_CONSTANTS : int32
 		{
-			NAME_LEN = 20,
-			ID_LEN = 6,
+			PROVIDERNAME_LEN = 20,
+			PROVIDERID_LEN = 6,
 		}
 		[AllowDuplicates]
 		public enum MBN_INTERFACE_CAPS_CONSTANTS : int32
@@ -294,12 +294,12 @@ namespace Win32
 		}
 		public enum MBN_RADIO : int32
 		{
-			FF = 0,
-			N = 1,
+			OFF = 0,
+			ON = 1,
 		}
 		public enum MBN_DEVICE_SERVICE_SESSIONS_STATE : int32
 		{
-			MBN_DEVICE_SERVICE_SESSIONS_RESTORED = 0,
+			RESTORED = 0,
 		}
 		public enum MBN_DEVICE_SERVICES_INTERFACE_STATE : int32
 		{

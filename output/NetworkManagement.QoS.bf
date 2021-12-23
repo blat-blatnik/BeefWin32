@@ -534,9 +534,9 @@ namespace Win32
 		}
 		public enum QOS_SHAPING : int32
 		{
-			ShapeOnly = 0,
-			ShapeAndMark = 1,
-			UseNonConformantMarkings = 2,
+			QOSShapeOnly = 0,
+			QOSShapeAndMark = 1,
+			QOSUseNonConformantMarkings = 2,
 		}
 		public enum QOS_QUERY_FLOW : int32
 		{
@@ -552,12 +552,12 @@ namespace Win32
 		}
 		public enum FilterType : int32
 		{
-			V4 = 1,
-			V6 = 2,
-			V6_FLOW = 3,
-			V4_GPI = 4,
-			V6_GPI = 5,
-			_END = 6,
+			FILTERSPECV4 = 1,
+			FILTERSPECV6 = 2,
+			FILTERSPECV6_FLOW = 3,
+			FILTERSPECV4_GPI = 4,
+			FILTERSPECV6_GPI = 5,
+			FILTERSPEC_END = 6,
 		}
 		
 		// --- Function Pointers ---

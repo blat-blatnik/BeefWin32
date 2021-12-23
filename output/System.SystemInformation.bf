@@ -390,11 +390,11 @@ namespace Win32
 		}
 		public enum DEP_SYSTEM_POLICY_TYPE : int32
 		{
-			PolicyAlwaysOff = 0,
-			PolicyAlwaysOn = 1,
-			PolicyOptIn = 2,
-			PolicyOptOut = 3,
-			TotalPolicyCount = 4,
+			DEPPolicyAlwaysOff = 0,
+			DEPPolicyAlwaysOn = 1,
+			DEPPolicyOptIn = 2,
+			DEPPolicyOptOut = 3,
+			DEPTotalPolicyCount = 4,
 		}
 		
 		// --- Function Pointers ---

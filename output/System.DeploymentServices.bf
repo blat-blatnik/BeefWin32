@@ -313,11 +313,11 @@ namespace Win32
 		}
 		public enum WDSTRANSPORT_NETWORK_PROFILE_TYPE : int32
 		{
-			Unknown = 0,
-			Custom = 1,
-			_10Mbps = 2,
-			_100Mbps = 3,
-			_1Gbps = 4,
+			ProfileUnknown = 0,
+			ProfileCustom = 1,
+			Profile10Mbps = 2,
+			Profile100Mbps = 3,
+			Profile1Gbps = 4,
 		}
 		public enum WDSTRANSPORT_DIAGNOSTICS_COMPONENT_FLAGS : int32
 		{

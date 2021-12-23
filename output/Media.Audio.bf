@@ -569,21 +569,21 @@ namespace Win32
 		}
 		public enum AUDIO_DUCKING_OPTIONS : uint32
 		{
-			EFAULT = 0,
-			O_NOT_DUCK_OTHER_STREAMS = 1,
+			DEFAULT = 0,
+			DO_NOT_DUCK_OTHER_STREAMS = 1,
 		}
 		public enum AUDIO_EFFECT_STATE : int32
 		{
-			FF = 0,
-			N = 1,
+			OFF = 0,
+			ON = 1,
 		}
 		public enum AMBISONICS_TYPE : int32
 		{
-			AMBISONICS_TYPE_FULL3D = 0,
+			TYPE_FULL3D = 0,
 		}
 		public enum AMBISONICS_CHANNEL_ORDERING : int32
 		{
-			AMBISONICS_CHANNEL_ORDERING_ACN = 0,
+			ORDERING_ACN = 0,
 		}
 		public enum AMBISONICS_NORMALIZATION : int32
 		{

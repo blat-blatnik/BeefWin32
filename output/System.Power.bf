@@ -150,8 +150,8 @@ namespace Win32
 		
 		public enum POWER_PLATFORM_ROLE_VERSION : uint32
 		{
-			_1 = 1,
-			_2 = 2,
+			V1 = 1,
+			V2 = 2,
 		}
 		public enum POWER_SETTING_REGISTER_NOTIFICATION_FLAGS : uint32
 		{

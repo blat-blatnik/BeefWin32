@@ -932,8 +932,8 @@ namespace Win32
 		}
 		public enum BlackScreenDiagnosticsCalloutParam : int32
 		{
-			agnosticsData = 1,
-			splayRecovery = 2,
+			DiagnosticsData = 1,
+			DisplayRecovery = 2,
 		}
 		public enum VIDEO_BANK_TYPE : int32
 		{
@@ -970,8 +970,8 @@ namespace Win32
 		}
 		public enum COLORSPACE_TRANSFORM_DATA_TYPE : int32
 		{
-			IXED_POINT = 0,
-			LOAT = 1,
+			FIXED_POINT = 0,
+			FLOAT = 1,
 		}
 		[AllowDuplicates]
 		public enum COLORSPACE_TRANSFORM_TARGET_CAPS_VERSION : int32

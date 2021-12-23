@@ -101,9 +101,9 @@ namespace Win32
 		[AllowDuplicates]
 		public enum PEERDIST_RETRIEVAL_OPTIONS_CONTENTINFO_VERSION_VALUE : uint32
 		{
-			N_1 = 1,
-			N_2 = 2,
-			N = 2,
+			VERSION_1 = 1,
+			VERSION_2 = 2,
+			VERSION = 2,
 		}
 		public enum PNRP_SCOPE : int32
 		{
@@ -240,7 +240,7 @@ namespace Win32
 		}
 		public enum PEER_MEMBER_FLAGS : int32
 		{
-			PEER_MEMBER_PRESENT = 1,
+			PRESENT = 1,
 		}
 		public enum PEER_MEMBER_CHANGE_TYPE : int32
 		{
@@ -252,7 +252,7 @@ namespace Win32
 		}
 		public enum PEER_GROUP_ISSUE_CREDENTIAL_FLAGS : int32
 		{
-			PEER_GROUP_STORE_CREDENTIALS = 1,
+			STORE_CREDENTIALS = 1,
 		}
 		public enum PEER_SIGNIN_FLAGS : int32
 		{
@@ -354,7 +354,7 @@ namespace Win32
 		}
 		public enum DRT_REGISTRATION_STATE : int32
 		{
-			DRT_REGISTRATION_STATE_UNRESOLVEABLE = 1,
+			STATE_UNRESOLVEABLE = 1,
 		}
 		public enum DRT_ADDRESS_FLAGS : int32
 		{

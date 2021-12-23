@@ -70,17 +70,17 @@ namespace Win32
 		}
 		public enum PROGRESS_DIALOG_CHECKBOX_ID : int32
 		{
-			PROGRESS_DIALOG_CHECKBOX_ID_DEFAULT = 0,
+			ID_DEFAULT = 0,
 		}
 		public enum DEVICE_SELECTION_DEVICE_TYPE : int32
 		{
-			T_UNKNOWN_DEVICE = 0,
-			T_WPD_DEVICE = 1,
-			T_WIA_DEVICE = 2,
-			T_STI_DEVICE = 3,
-			F_TWAIN_DEVICE = 4,
-			T_FS_DEVICE = 5,
-			T_DV_DEVICE = 6,
+			DST_UNKNOWN_DEVICE = 0,
+			DST_WPD_DEVICE = 1,
+			DST_WIA_DEVICE = 2,
+			DST_STI_DEVICE = 3,
+			DSF_TWAIN_DEVICE = 4,
+			DST_FS_DEVICE = 5,
+			DST_DV_DEVICE = 6,
 		}
 		
 		// --- COM Class IDs ---

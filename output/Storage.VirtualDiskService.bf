@@ -537,28 +537,28 @@ namespace Win32
 		[AllowDuplicates]
 		public enum VDS_STORAGE_BUS_TYPE : int32
 		{
-			Unknown = 0,
-			Scsi = 1,
-			Atapi = 2,
-			Ata = 3,
-			_1394 = 4,
-			Ssa = 5,
-			Fibre = 6,
-			Usb = 7,
-			RAID = 8,
-			iScsi = 9,
-			Sas = 10,
-			Sata = 11,
-			Sd = 12,
-			Mmc = 13,
-			Max = 14,
-			Virtual = 14,
-			FileBackedVirtual = 15,
-			Spaces = 16,
-			NVMe = 17,
-			Scm = 18,
-			Ufs = 19,
-			MaxReserved = 127,
+			TypeUnknown = 0,
+			TypeScsi = 1,
+			TypeAtapi = 2,
+			TypeAta = 3,
+			Type1394 = 4,
+			TypeSsa = 5,
+			TypeFibre = 6,
+			TypeUsb = 7,
+			TypeRAID = 8,
+			TypeiScsi = 9,
+			TypeSas = 10,
+			TypeSata = 11,
+			TypeSd = 12,
+			TypeMmc = 13,
+			TypeMax = 14,
+			TypeVirtual = 14,
+			TypeFileBackedVirtual = 15,
+			TypeSpaces = 16,
+			TypeNVMe = 17,
+			TypeScm = 18,
+			TypeUfs = 19,
+			TypeMaxReserved = 127,
 		}
 		public enum VDS_INTERCONNECT_ADDRESS_TYPE : int32
 		{
@@ -865,22 +865,22 @@ namespace Win32
 		}
 		public enum VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG : int32
 		{
-			_2_LUNS = 1,
-			_3_LUNS = 2,
-			_4_LUNS = 4,
-			_5_LUNS = 8,
-			_6_LUNS = 16,
-			_01_LUNS = 32,
-			_03_LUNS = 64,
-			_05_LUNS = 128,
-			_10_LUNS = 256,
-			_15_LUNS = 512,
-			_30_LUNS = 1024,
-			_50_LUNS = 2048,
-			_51_LUNS = 4096,
-			_53_LUNS = 8192,
-			_60_LUNS = 16384,
-			_61_LUNS = 32768,
+			RAID2_LUNS = 1,
+			RAID3_LUNS = 2,
+			RAID4_LUNS = 4,
+			RAID5_LUNS = 8,
+			RAID6_LUNS = 16,
+			RAID01_LUNS = 32,
+			RAID03_LUNS = 64,
+			RAID05_LUNS = 128,
+			RAID10_LUNS = 256,
+			RAID15_LUNS = 512,
+			RAID30_LUNS = 1024,
+			RAID50_LUNS = 2048,
+			RAID51_LUNS = 4096,
+			RAID53_LUNS = 8192,
+			RAID60_LUNS = 16384,
+			RAID61_LUNS = 32768,
 		}
 		public enum VDS_INTERCONNECT_FLAG : int32
 		{
@@ -1003,7 +1003,7 @@ namespace Win32
 		}
 		public enum VDS_LUN_PLEX_FLAG : int32
 		{
-			VDS_LPF_LBN_REMAP_ENABLED = 1,
+			LPF_LBN_REMAP_ENABLED = 1,
 		}
 		public enum VDS_ISCSI_PORTAL_STATUS : int32
 		{

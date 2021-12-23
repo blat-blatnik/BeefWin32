@@ -191,7 +191,7 @@ namespace Win32
 		}
 		public enum CRED_ENUMERATE_FLAGS : uint32
 		{
-			CRED_ENUMERATE_ALL_CREDENTIALS = 1,
+			ALL_CREDENTIALS = 1,
 		}
 		public enum CREDUIWIN_FLAGS : uint32
 		{
@@ -239,9 +239,9 @@ namespace Win32
 		}
 		public enum KeyCredentialManagerOperationType : int32
 		{
-			rovisioning = 0,
-			inChange = 1,
-			inReset = 2,
+			Provisioning = 0,
+			PinChange = 1,
+			PinReset = 2,
 		}
 		public enum CRED_MARSHAL_TYPE : int32
 		{

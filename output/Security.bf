@@ -103,8 +103,8 @@ namespace Win32
 		}
 		public enum ACE_REVISION : uint32
 		{
-			N = 2,
-			N_DS = 4,
+			REVISION = 2,
+			REVISION_DS = 4,
 		}
 		public enum TOKEN_MANDATORY_POLICY_ID : uint32
 		{

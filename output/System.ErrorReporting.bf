@@ -87,17 +87,17 @@ namespace Win32
 		}
 		public enum WER_REPORT_UI : int32
 		{
-			AdditionalDataDlgHeader = 1,
-			IconFilePath = 2,
-			ConsentDlgHeader = 3,
-			ConsentDlgBody = 4,
-			OnlineSolutionCheckText = 5,
-			OfflineSolutionCheckText = 6,
-			CloseText = 7,
-			CloseDlgHeader = 8,
-			CloseDlgBody = 9,
-			CloseDlgButtonText = 10,
-			Max = 11,
+			UIAdditionalDataDlgHeader = 1,
+			UIIconFilePath = 2,
+			UIConsentDlgHeader = 3,
+			UIConsentDlgBody = 4,
+			UIOnlineSolutionCheckText = 5,
+			UIOfflineSolutionCheckText = 6,
+			UICloseText = 7,
+			UICloseDlgHeader = 8,
+			UICloseDlgBody = 9,
+			UICloseDlgButtonText = 10,
+			UIMax = 11,
 		}
 		public enum WER_REGISTER_FILE_TYPE : int32
 		{

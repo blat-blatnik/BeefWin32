@@ -160,8 +160,8 @@ namespace Win32
 		}
 		public enum SNMP_STATUS : uint32
 		{
-			N = 1,
-			FF = 0,
+			ON = 1,
+			OFF = 0,
 		}
 		public enum SNMP_OUTPUT_LOG_TYPE : uint32
 		{

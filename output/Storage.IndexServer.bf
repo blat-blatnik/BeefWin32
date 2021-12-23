@@ -165,7 +165,7 @@ namespace Win32
 		}
 		public enum IFILTER_FLAGS : int32
 		{
-			IFILTER_FLAGS_OLE_PROPERTIES = 1,
+			FLAGS_OLE_PROPERTIES = 1,
 		}
 		public enum CHUNKSTATE : int32
 		{
@@ -183,10 +183,10 @@ namespace Win32
 		}
 		public enum WORDREP_BREAK_TYPE : int32
 		{
-			W = 0,
-			S = 1,
-			P = 2,
-			C = 3,
+			EOW = 0,
+			EOS = 1,
+			EOP = 2,
+			EOC = 3,
 		}
 		public enum DBKINDENUM : int32
 		{

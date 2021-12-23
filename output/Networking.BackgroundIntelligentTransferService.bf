@@ -313,7 +313,7 @@ namespace Win32
 		}
 		public enum BITS_FILE_PROPERTY_ID : int32
 		{
-			BITS_FILE_PROPERTY_ID_HTTP_RESPONSE_HEADERS = 1,
+			ID_HTTP_RESPONSE_HEADERS = 1,
 		}
 		public enum GROUPPROP : int32
 		{

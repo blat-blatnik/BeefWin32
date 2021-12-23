@@ -410,8 +410,8 @@ namespace Win32
 		}
 		public enum WHV_X64_PENDING_EVENT_TYPE : int32
 		{
-			ception = 0,
-			tInt = 5,
+			Exception = 0,
+			ExtInt = 5,
 		}
 		public enum WHV_RUN_VP_EXIT_REASON : int32
 		{
@@ -573,12 +573,12 @@ namespace Win32
 		}
 		public enum HDV_PCI_BAR_SELECTOR : int32
 		{
-			_0 = 0,
-			_1 = 1,
-			_2 = 2,
-			_3 = 3,
-			_4 = 4,
-			_5 = 5,
+			BAR0 = 0,
+			BAR1 = 1,
+			BAR2 = 2,
+			BAR3 = 3,
+			BAR4 = 4,
+			BAR5 = 5,
 		}
 		public enum HDV_DOORBELL_FLAGS : int32
 		{
@@ -597,8 +597,8 @@ namespace Win32
 		}
 		public enum HDV_PCI_INTERFACE_VERSION : int32
 		{
-			Invalid = 0,
-			_1 = 1,
+			VersionInvalid = 0,
+			Version1 = 1,
 		}
 		public enum PAGING_MODE : int32
 		{
