@@ -13,12 +13,11 @@ This is a **mostly untested work in progress**. Use at your own peril.
 - Some COM classes have `ToString`, `GetType`, `GetFlags`, or `Equals` methods. Since every class/struct in Beef implicitly defines these methods, I had to rename them `ComToString`, `ComGetType`, `ComGetFlags`, `ComEquals` respectively.
 - Some functions and COM methods take parameters with types that are never defined in the metadata. For now, I've changed their signature so they all take `void*` instead.
 - Structs and unions with anonymous members are very annoying to access since Beef doesn't support anonymous members yet. I plan to add properties to make this easier.
-- Currently I ignore `[In]`/`[Out]`/`[Optional]` attributes on function parameters, but I plan to make use of them to add `in`/`out`/`ref` qualifiers at some point.
 - Bitfields are just smushed into an integral type in the metadata. Which makes working with some structures very tedious. The only way to fix this would be to manually add in properties for them.
 
 ## How to use
 
-Copy the `output/` directory into your Beef project's `src/` directory (You can also rename it to `Win32` instead of `output` if you want). You can then access all of the Win32 types, constants, and functions through the `Win32` class inside of the `Win32` namespace.
+Copy the [`output/`](./output/) directory into your Beef project's `src/` directory (You can also rename it to `Win32` instead of `output` if you want). You can then access all of the Win32 types, constants, and functions through the `Win32` class inside of the `Win32` namespace.
 
 ## Examples
 
@@ -30,12 +29,10 @@ using Win32;
 namespace Example {
     class Program {
         public static void Main() {
-            Win32.LARGE_INTEGER qpc = ?, first = ?;
-            Win32.LARGE_INTEGER qpf = ?;
-            Win32.QueryPerformanceFrequency(&qpf);
-            Win32.QueryPerformanceCounter(&first);
+            Win32.QueryPerformanceFrequency(var qpf);
+            Win32.QueryPerformanceCounter(var first);
             while (true) {
-                Win32.QueryPerformanceCounter(&qpc);
+                Win32.QueryPerformanceCounter(var qpc);
                 int64 delta = qpc.QuadPart - first.QuadPart;
                 double seconds = delta / (double)qpf.QuadPart;
                 Console.WriteLine(seconds);
@@ -54,29 +51,23 @@ namespace Example {
     class Program {
         static void Main() {
             Win32.IFileOpenDialog* dialog = null;
-            var iid = Win32.IFileOpenDialog.IID;
-            var cid = Win32.CLSID_FileOpenDialog;
-            Win32.CoCreateInstance(&cid, null, .ALL, &iid, (void**)&dialog);
+            Win32.CoCreateInstance(Win32.CLSID_FileOpenDialog, null, .ALL, Win32.IFileOpenDialog.IID, (void**)&dialog);
+            defer dialog.Release();
 
-            Win32._FILEOPENDIALOGOPTIONS options = ?;
-            dialog.GetOptions((uint32*)&options);
-            options |= .PICKFOLDERS | .PATHMUSTEXIST;
-            dialog.SetOptions((uint32)options);
+            dialog.GetOptions(var options);
+            options |= (uint32)(Win32.FILEOPENDIALOGOPTIONS.PICKFOLDERS | .PATHMUSTEXIST);
+            dialog.SetOptions(options);
             dialog.SetTitle("Hello Win32".ToScopedNativeWChar!());
             dialog.Show(0);
-            
-            Win32.IShellItem* resultFolder = null;
-            if (0 < dialog.GetResult(&resultFolder)) {
-                char16* result16 = null;
-                resultFolder.GetDisplayName(.FILESYSPATH, &result16);
+
+            if (dialog.GetResult(var resultFolder) >= 0) {
+                defer resultFolder.Release();
+                resultFolder.GetDisplayName(.FILESYSPATH, var result16);
+                defer Win32.CoTaskMemFree(result16);
 
                 String result = scope .(result16);
                 Console.WriteLine($"You chose '{result}'");
-
-                Win32.CoTaskMemFree(result16);
-                resultFolder.Release();
             }
-            dialog.Release();
         }
     }
 }
@@ -88,7 +79,9 @@ namespace Example {
 $ python3 generator.py
 ```
 
-This will parse JSON files from `json/`, and the output Beef files will be placed at `output/`. You need Python 3.9+ to run this.
+This will parse JSON files from [`json/`](./json/), and the output Beef files will be placed at [`output/`](./output/). You need Python 3.9+ to run this.
+
+At the top of [`generator.py`](./generator.py) there are some configuration options that control how the code is generated. Take a look at them if you want to customize the generation.
 
 ## How it works
 
