@@ -25,12 +25,12 @@ namespace Win32
 			
 			public HRESULT Activate(PWSTR appUserModelId, PWSTR invokedArgs, NOTIFICATION_USER_INPUT_DATA* data, uint32 count) mut
 			{
-				return VT.Activate(&this, appUserModelId, invokedArgs, data, count);
+				return VT.Activate(ref this, appUserModelId, invokedArgs, data, count);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(INotificationActivationCallback *self, PWSTR appUserModelId, PWSTR invokedArgs, NOTIFICATION_USER_INPUT_DATA* data, uint32 count) Activate;
+				public new function HRESULT(ref INotificationActivationCallback self, PWSTR appUserModelId, PWSTR invokedArgs, NOTIFICATION_USER_INPUT_DATA* data, uint32 count) Activate;
 			}
 		}
 		

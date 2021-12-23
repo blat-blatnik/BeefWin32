@@ -2306,100 +2306,100 @@ namespace Win32
 		
 		public function void* PFN_NCRYPT_ALLOC(uint cbSize);
 		public function void PFN_NCRYPT_FREE(void* pv);
-		public function BOOL PCRYPT_DECRYPT_PRIVATE_KEY_FUNC(CRYPT_ALGORITHM_IDENTIFIER Algorithm, CRYPTOAPI_BLOB EncryptedPrivateKey, uint8* pbClearTextKey, uint32* pcbClearTextKey, void* pVoidDecryptFunc);
-		public function BOOL PCRYPT_ENCRYPT_PRIVATE_KEY_FUNC(CRYPT_ALGORITHM_IDENTIFIER* pAlgorithm, CRYPTOAPI_BLOB* pClearTextPrivateKey, uint8* pbEncryptedKey, uint32* pcbEncryptedKey, void* pVoidEncryptFunc);
-		public function BOOL PCRYPT_RESOLVE_HCRYPTPROV_FUNC(CRYPT_PRIVATE_KEY_INFO* pPrivateKeyInfo, uint* phCryptProv, void* pVoidResolveFunc);
+		public function BOOL PCRYPT_DECRYPT_PRIVATE_KEY_FUNC(CRYPT_ALGORITHM_IDENTIFIER Algorithm, CRYPTOAPI_BLOB EncryptedPrivateKey, uint8* pbClearTextKey, out uint32 pcbClearTextKey, void* pVoidDecryptFunc);
+		public function BOOL PCRYPT_ENCRYPT_PRIVATE_KEY_FUNC(out CRYPT_ALGORITHM_IDENTIFIER pAlgorithm, ref CRYPTOAPI_BLOB pClearTextPrivateKey, uint8* pbEncryptedKey, out uint32 pcbEncryptedKey, void* pVoidEncryptFunc);
+		public function BOOL PCRYPT_RESOLVE_HCRYPTPROV_FUNC(out CRYPT_PRIVATE_KEY_INFO pPrivateKeyInfo, out uint phCryptProv, void* pVoidResolveFunc);
 		public function void* PFN_CRYPT_ALLOC(uint cbSize);
 		public function void PFN_CRYPT_FREE(void* pv);
 		public function BOOL PFN_CRYPT_ENUM_OID_FUNC(uint32 dwEncodingType, PSTR pszFuncName, PSTR pszOID, uint32 cValue, uint32* rgdwValueType, PWSTR* rgpwszValueName, uint8** rgpbValueData, uint32* rgcbValueData, void* pvArg);
-		public function BOOL PFN_CRYPT_ENUM_OID_INFO(CRYPT_OID_INFO* pInfo, void* pvArg);
+		public function BOOL PFN_CRYPT_ENUM_OID_INFO(ref CRYPT_OID_INFO pInfo, void* pvArg);
 		public function BOOL PFN_CMSG_STREAM_OUTPUT(void* pvArg, uint8* pbData, uint32 cbData, BOOL fFinal);
 		public function void* PFN_CMSG_ALLOC(uint cb);
 		public function void PFN_CMSG_FREE(void* pv);
-		public function BOOL PFN_CMSG_GEN_ENCRYPT_KEY(uint* phCryptProv, CRYPT_ALGORITHM_IDENTIFIER* paiEncrypt, void* pvEncryptAuxInfo, CERT_PUBLIC_KEY_INFO* pPublicKeyInfo, PFN_CMSG_ALLOC pfnAlloc, uint* phEncryptKey, uint8** ppbEncryptParameters, uint32* pcbEncryptParameters);
-		public function BOOL PFN_CMSG_EXPORT_ENCRYPT_KEY(uint hCryptProv, uint hEncryptKey, CERT_PUBLIC_KEY_INFO* pPublicKeyInfo, uint8* pbData, uint32* pcbData);
-		public function BOOL PFN_CMSG_IMPORT_ENCRYPT_KEY(uint hCryptProv, uint32 dwKeySpec, CRYPT_ALGORITHM_IDENTIFIER* paiEncrypt, CRYPT_ALGORITHM_IDENTIFIER* paiPubKey, uint8* pbEncodedKey, uint32 cbEncodedKey, uint* phEncryptKey);
-		public function BOOL PFN_CMSG_GEN_CONTENT_ENCRYPT_KEY(CMSG_CONTENT_ENCRYPT_INFO* pContentEncryptInfo, uint32 dwFlags, void* pvReserved);
-		public function BOOL PFN_CMSG_EXPORT_KEY_TRANS(CMSG_CONTENT_ENCRYPT_INFO* pContentEncryptInfo, CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTransEncodeInfo, CMSG_KEY_TRANS_ENCRYPT_INFO* pKeyTransEncryptInfo, uint32 dwFlags, void* pvReserved);
-		public function BOOL PFN_CMSG_EXPORT_KEY_AGREE(CMSG_CONTENT_ENCRYPT_INFO* pContentEncryptInfo, CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgreeEncodeInfo, CMSG_KEY_AGREE_ENCRYPT_INFO* pKeyAgreeEncryptInfo, uint32 dwFlags, void* pvReserved);
-		public function BOOL PFN_CMSG_EXPORT_MAIL_LIST(CMSG_CONTENT_ENCRYPT_INFO* pContentEncryptInfo, CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailListEncodeInfo, CMSG_MAIL_LIST_ENCRYPT_INFO* pMailListEncryptInfo, uint32 dwFlags, void* pvReserved);
-		public function BOOL PFN_CMSG_IMPORT_KEY_TRANS(CRYPT_ALGORITHM_IDENTIFIER* pContentEncryptionAlgorithm, CMSG_CTRL_KEY_TRANS_DECRYPT_PARA* pKeyTransDecryptPara, uint32 dwFlags, void* pvReserved, uint* phContentEncryptKey);
-		public function BOOL PFN_CMSG_IMPORT_KEY_AGREE(CRYPT_ALGORITHM_IDENTIFIER* pContentEncryptionAlgorithm, CMSG_CTRL_KEY_AGREE_DECRYPT_PARA* pKeyAgreeDecryptPara, uint32 dwFlags, void* pvReserved, uint* phContentEncryptKey);
-		public function BOOL PFN_CMSG_IMPORT_MAIL_LIST(CRYPT_ALGORITHM_IDENTIFIER* pContentEncryptionAlgorithm, CMSG_CTRL_MAIL_LIST_DECRYPT_PARA* pMailListDecryptPara, uint32 dwFlags, void* pvReserved, uint* phContentEncryptKey);
-		public function BOOL PFN_CMSG_CNG_IMPORT_KEY_TRANS(CMSG_CNG_CONTENT_DECRYPT_INFO* pCNGContentDecryptInfo, CMSG_CTRL_KEY_TRANS_DECRYPT_PARA* pKeyTransDecryptPara, uint32 dwFlags, void* pvReserved);
-		public function BOOL PFN_CMSG_CNG_IMPORT_KEY_AGREE(CMSG_CNG_CONTENT_DECRYPT_INFO* pCNGContentDecryptInfo, CMSG_CTRL_KEY_AGREE_DECRYPT_PARA* pKeyAgreeDecryptPara, uint32 dwFlags, void* pvReserved);
-		public function BOOL PFN_CMSG_CNG_IMPORT_CONTENT_ENCRYPT_KEY(CMSG_CNG_CONTENT_DECRYPT_INFO* pCNGContentDecryptInfo, uint32 dwFlags, void* pvReserved);
-		public function BOOL PFN_CERT_DLL_OPEN_STORE_PROV_FUNC(PSTR lpszStoreProvider, CERT_QUERY_ENCODING_TYPE dwEncodingType, uint hCryptProv, CERT_OPEN_STORE_FLAGS dwFlags, void* pvPara, void* hCertStore, CERT_STORE_PROV_INFO* pStoreProvInfo);
+		public function BOOL PFN_CMSG_GEN_ENCRYPT_KEY(out uint phCryptProv, ref CRYPT_ALGORITHM_IDENTIFIER paiEncrypt, void* pvEncryptAuxInfo, ref CERT_PUBLIC_KEY_INFO pPublicKeyInfo, PFN_CMSG_ALLOC pfnAlloc, out uint phEncryptKey, out uint8* ppbEncryptParameters, out uint32 pcbEncryptParameters);
+		public function BOOL PFN_CMSG_EXPORT_ENCRYPT_KEY(uint hCryptProv, uint hEncryptKey, ref CERT_PUBLIC_KEY_INFO pPublicKeyInfo, uint8* pbData, out uint32 pcbData);
+		public function BOOL PFN_CMSG_IMPORT_ENCRYPT_KEY(uint hCryptProv, uint32 dwKeySpec, ref CRYPT_ALGORITHM_IDENTIFIER paiEncrypt, ref CRYPT_ALGORITHM_IDENTIFIER paiPubKey, ref uint8 pbEncodedKey, uint32 cbEncodedKey, out uint phEncryptKey);
+		public function BOOL PFN_CMSG_GEN_CONTENT_ENCRYPT_KEY(out CMSG_CONTENT_ENCRYPT_INFO pContentEncryptInfo, uint32 dwFlags, void* pvReserved);
+		public function BOOL PFN_CMSG_EXPORT_KEY_TRANS(ref CMSG_CONTENT_ENCRYPT_INFO pContentEncryptInfo, ref CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO pKeyTransEncodeInfo, out CMSG_KEY_TRANS_ENCRYPT_INFO pKeyTransEncryptInfo, uint32 dwFlags, void* pvReserved);
+		public function BOOL PFN_CMSG_EXPORT_KEY_AGREE(ref CMSG_CONTENT_ENCRYPT_INFO pContentEncryptInfo, ref CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO pKeyAgreeEncodeInfo, out CMSG_KEY_AGREE_ENCRYPT_INFO pKeyAgreeEncryptInfo, uint32 dwFlags, void* pvReserved);
+		public function BOOL PFN_CMSG_EXPORT_MAIL_LIST(ref CMSG_CONTENT_ENCRYPT_INFO pContentEncryptInfo, ref CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO pMailListEncodeInfo, out CMSG_MAIL_LIST_ENCRYPT_INFO pMailListEncryptInfo, uint32 dwFlags, void* pvReserved);
+		public function BOOL PFN_CMSG_IMPORT_KEY_TRANS(ref CRYPT_ALGORITHM_IDENTIFIER pContentEncryptionAlgorithm, ref CMSG_CTRL_KEY_TRANS_DECRYPT_PARA pKeyTransDecryptPara, uint32 dwFlags, void* pvReserved, out uint phContentEncryptKey);
+		public function BOOL PFN_CMSG_IMPORT_KEY_AGREE(ref CRYPT_ALGORITHM_IDENTIFIER pContentEncryptionAlgorithm, ref CMSG_CTRL_KEY_AGREE_DECRYPT_PARA pKeyAgreeDecryptPara, uint32 dwFlags, void* pvReserved, out uint phContentEncryptKey);
+		public function BOOL PFN_CMSG_IMPORT_MAIL_LIST(ref CRYPT_ALGORITHM_IDENTIFIER pContentEncryptionAlgorithm, ref CMSG_CTRL_MAIL_LIST_DECRYPT_PARA pMailListDecryptPara, uint32 dwFlags, void* pvReserved, out uint phContentEncryptKey);
+		public function BOOL PFN_CMSG_CNG_IMPORT_KEY_TRANS(out CMSG_CNG_CONTENT_DECRYPT_INFO pCNGContentDecryptInfo, ref CMSG_CTRL_KEY_TRANS_DECRYPT_PARA pKeyTransDecryptPara, uint32 dwFlags, void* pvReserved);
+		public function BOOL PFN_CMSG_CNG_IMPORT_KEY_AGREE(out CMSG_CNG_CONTENT_DECRYPT_INFO pCNGContentDecryptInfo, ref CMSG_CTRL_KEY_AGREE_DECRYPT_PARA pKeyAgreeDecryptPara, uint32 dwFlags, void* pvReserved);
+		public function BOOL PFN_CMSG_CNG_IMPORT_CONTENT_ENCRYPT_KEY(out CMSG_CNG_CONTENT_DECRYPT_INFO pCNGContentDecryptInfo, uint32 dwFlags, void* pvReserved);
+		public function BOOL PFN_CERT_DLL_OPEN_STORE_PROV_FUNC(PSTR lpszStoreProvider, CERT_QUERY_ENCODING_TYPE dwEncodingType, uint hCryptProv, CERT_OPEN_STORE_FLAGS dwFlags, void* pvPara, void* hCertStore, out CERT_STORE_PROV_INFO pStoreProvInfo);
 		public function void PFN_CERT_STORE_PROV_CLOSE(void* hStoreProv, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_READ_CERT(void* hStoreProv, CERT_CONTEXT* pStoreCertContext, uint32 dwFlags, CERT_CONTEXT** ppProvCertContext);
-		public function BOOL PFN_CERT_STORE_PROV_WRITE_CERT(void* hStoreProv, CERT_CONTEXT* pCertContext, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_DELETE_CERT(void* hStoreProv, CERT_CONTEXT* pCertContext, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_SET_CERT_PROPERTY(void* hStoreProv, CERT_CONTEXT* pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
-		public function BOOL PFN_CERT_STORE_PROV_READ_CRL(void* hStoreProv, CRL_CONTEXT* pStoreCrlContext, uint32 dwFlags, CRL_CONTEXT** ppProvCrlContext);
-		public function BOOL PFN_CERT_STORE_PROV_WRITE_CRL(void* hStoreProv, CRL_CONTEXT* pCrlContext, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_DELETE_CRL(void* hStoreProv, CRL_CONTEXT* pCrlContext, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_SET_CRL_PROPERTY(void* hStoreProv, CRL_CONTEXT* pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
-		public function BOOL PFN_CERT_STORE_PROV_READ_CTL(void* hStoreProv, CTL_CONTEXT* pStoreCtlContext, uint32 dwFlags, CTL_CONTEXT** ppProvCtlContext);
-		public function BOOL PFN_CERT_STORE_PROV_WRITE_CTL(void* hStoreProv, CTL_CONTEXT* pCtlContext, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_DELETE_CTL(void* hStoreProv, CTL_CONTEXT* pCtlContext, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_SET_CTL_PROPERTY(void* hStoreProv, CTL_CONTEXT* pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
+		public function BOOL PFN_CERT_STORE_PROV_READ_CERT(void* hStoreProv, in CERT_CONTEXT pStoreCertContext, uint32 dwFlags, out CERT_CONTEXT* ppProvCertContext);
+		public function BOOL PFN_CERT_STORE_PROV_WRITE_CERT(void* hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwFlags);
+		public function BOOL PFN_CERT_STORE_PROV_DELETE_CERT(void* hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwFlags);
+		public function BOOL PFN_CERT_STORE_PROV_SET_CERT_PROPERTY(void* hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
+		public function BOOL PFN_CERT_STORE_PROV_READ_CRL(void* hStoreProv, ref CRL_CONTEXT pStoreCrlContext, uint32 dwFlags, out CRL_CONTEXT* ppProvCrlContext);
+		public function BOOL PFN_CERT_STORE_PROV_WRITE_CRL(void* hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwFlags);
+		public function BOOL PFN_CERT_STORE_PROV_DELETE_CRL(void* hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwFlags);
+		public function BOOL PFN_CERT_STORE_PROV_SET_CRL_PROPERTY(void* hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
+		public function BOOL PFN_CERT_STORE_PROV_READ_CTL(void* hStoreProv, ref CTL_CONTEXT pStoreCtlContext, uint32 dwFlags, out CTL_CONTEXT* ppProvCtlContext);
+		public function BOOL PFN_CERT_STORE_PROV_WRITE_CTL(void* hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwFlags);
+		public function BOOL PFN_CERT_STORE_PROV_DELETE_CTL(void* hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwFlags);
+		public function BOOL PFN_CERT_STORE_PROV_SET_CTL_PROPERTY(void* hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
 		public function BOOL PFN_CERT_STORE_PROV_CONTROL(void* hStoreProv, uint32 dwFlags, uint32 dwCtrlType, void* pvCtrlPara);
-		public function BOOL PFN_CERT_STORE_PROV_FIND_CERT(void* hStoreProv, CERT_STORE_PROV_FIND_INFO* pFindInfo, CERT_CONTEXT* pPrevCertContext, uint32 dwFlags, void** ppvStoreProvFindInfo, CERT_CONTEXT** ppProvCertContext);
-		public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CERT(void* hStoreProv, CERT_CONTEXT* pCertContext, void* pvStoreProvFindInfo, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_GET_CERT_PROPERTY(void* hStoreProv, CERT_CONTEXT* pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData, uint32* pcbData);
-		public function BOOL PFN_CERT_STORE_PROV_FIND_CRL(void* hStoreProv, CERT_STORE_PROV_FIND_INFO* pFindInfo, CRL_CONTEXT* pPrevCrlContext, uint32 dwFlags, void** ppvStoreProvFindInfo, CRL_CONTEXT** ppProvCrlContext);
-		public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CRL(void* hStoreProv, CRL_CONTEXT* pCrlContext, void* pvStoreProvFindInfo, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_GET_CRL_PROPERTY(void* hStoreProv, CRL_CONTEXT* pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData, uint32* pcbData);
-		public function BOOL PFN_CERT_STORE_PROV_FIND_CTL(void* hStoreProv, CERT_STORE_PROV_FIND_INFO* pFindInfo, CTL_CONTEXT* pPrevCtlContext, uint32 dwFlags, void** ppvStoreProvFindInfo, CTL_CONTEXT** ppProvCtlContext);
-		public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CTL(void* hStoreProv, CTL_CONTEXT* pCtlContext, void* pvStoreProvFindInfo, uint32 dwFlags);
-		public function BOOL PFN_CERT_STORE_PROV_GET_CTL_PROPERTY(void* hStoreProv, CTL_CONTEXT* pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData, uint32* pcbData);
+		public function BOOL PFN_CERT_STORE_PROV_FIND_CERT(void* hStoreProv, ref CERT_STORE_PROV_FIND_INFO pFindInfo, in CERT_CONTEXT pPrevCertContext, uint32 dwFlags, void** ppvStoreProvFindInfo, out CERT_CONTEXT* ppProvCertContext);
+		public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CERT(void* hStoreProv, in CERT_CONTEXT pCertContext, void* pvStoreProvFindInfo, uint32 dwFlags);
+		public function BOOL PFN_CERT_STORE_PROV_GET_CERT_PROPERTY(void* hStoreProv, in CERT_CONTEXT pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData, out uint32 pcbData);
+		public function BOOL PFN_CERT_STORE_PROV_FIND_CRL(void* hStoreProv, ref CERT_STORE_PROV_FIND_INFO pFindInfo, ref CRL_CONTEXT pPrevCrlContext, uint32 dwFlags, void** ppvStoreProvFindInfo, out CRL_CONTEXT* ppProvCrlContext);
+		public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CRL(void* hStoreProv, ref CRL_CONTEXT pCrlContext, void* pvStoreProvFindInfo, uint32 dwFlags);
+		public function BOOL PFN_CERT_STORE_PROV_GET_CRL_PROPERTY(void* hStoreProv, ref CRL_CONTEXT pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData, out uint32 pcbData);
+		public function BOOL PFN_CERT_STORE_PROV_FIND_CTL(void* hStoreProv, ref CERT_STORE_PROV_FIND_INFO pFindInfo, ref CTL_CONTEXT pPrevCtlContext, uint32 dwFlags, void** ppvStoreProvFindInfo, out CTL_CONTEXT* ppProvCtlContext);
+		public function BOOL PFN_CERT_STORE_PROV_FREE_FIND_CTL(void* hStoreProv, ref CTL_CONTEXT pCtlContext, void* pvStoreProvFindInfo, uint32 dwFlags);
+		public function BOOL PFN_CERT_STORE_PROV_GET_CTL_PROPERTY(void* hStoreProv, ref CTL_CONTEXT pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData, out uint32 pcbData);
 		public function BOOL PFN_CERT_CREATE_CONTEXT_SORT_FUNC(uint32 cbTotalEncoded, uint32 cbRemainEncoded, uint32 cEntry, void* pvSort);
 		public function BOOL PFN_CERT_ENUM_SYSTEM_STORE_LOCATION(PWSTR pwszStoreLocation, uint32 dwFlags, void* pvReserved, void* pvArg);
-		public function BOOL PFN_CERT_ENUM_SYSTEM_STORE(void* pvSystemStore, CERT_SYSTEM_STORE_FLAGS dwFlags, CERT_SYSTEM_STORE_INFO* pStoreInfo, void* pvReserved, void* pvArg);
-		public function BOOL PFN_CERT_ENUM_PHYSICAL_STORE(void* pvSystemStore, uint32 dwFlags, PWSTR pwszStoreName, CERT_PHYSICAL_STORE_INFO* pStoreInfo, void* pvReserved, void* pvArg);
-		public function BOOL PFN_CRYPT_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC(uint32 dwCertEncodingType, CRYPT_ALGORITHM_IDENTIFIER* pSignatureAlgorithm, void** ppvDecodedSignPara, PWSTR* ppwszCNGHashAlgid);
-		public function BOOL PFN_CRYPT_SIGN_AND_ENCODE_HASH_FUNC(uint hKey, uint32 dwCertEncodingType, CRYPT_ALGORITHM_IDENTIFIER* pSignatureAlgorithm, void* pvDecodedSignPara, PWSTR pwszCNGPubKeyAlgid, PWSTR pwszCNGHashAlgid, uint8* pbComputedHash, uint32 cbComputedHash, uint8* pbSignature, uint32* pcbSignature);
-		public function BOOL PFN_CRYPT_VERIFY_ENCODED_SIGNATURE_FUNC(uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pPubKeyInfo, CRYPT_ALGORITHM_IDENTIFIER* pSignatureAlgorithm, void* pvDecodedSignPara, PWSTR pwszCNGPubKeyAlgid, PWSTR pwszCNGHashAlgid, uint8* pbComputedHash, uint32 cbComputedHash, uint8* pbSignature, uint32 cbSignature);
-		public function BOOL PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC(uint hNCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, uint32* pcbInfo);
-		public function BOOL PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_FROM_BCRYPT_HANDLE_FUNC(BCRYPT_KEY_HANDLE hBCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, uint32* pcbInfo);
-		public function BOOL PFN_IMPORT_PUBLIC_KEY_INFO_EX2_FUNC(uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pInfo, uint32 dwFlags, void* pvAuxInfo, BCRYPT_KEY_HANDLE* phKey);
-		public function BOOL PFN_IMPORT_PRIV_KEY_FUNC(uint hCryptProv, CRYPT_PRIVATE_KEY_INFO* pPrivateKeyInfo, uint32 dwFlags, void* pvAuxInfo);
-		public function BOOL PFN_EXPORT_PRIV_KEY_FUNC(uint hCryptProv, uint32 dwKeySpec, PSTR pszPrivateKeyObjId, uint32 dwFlags, void* pvAuxInfo, CRYPT_PRIVATE_KEY_INFO* pPrivateKeyInfo, uint32* pcbPrivateKeyInfo);
-		public function CERT_CONTEXT* PFN_CRYPT_GET_SIGNER_CERTIFICATE(void* pvGetArg, uint32 dwCertEncodingType, CERT_INFO* pSignerId, void* hMsgCertStore);
+		public function BOOL PFN_CERT_ENUM_SYSTEM_STORE(void* pvSystemStore, CERT_SYSTEM_STORE_FLAGS dwFlags, ref CERT_SYSTEM_STORE_INFO pStoreInfo, void* pvReserved, void* pvArg);
+		public function BOOL PFN_CERT_ENUM_PHYSICAL_STORE(void* pvSystemStore, uint32 dwFlags, PWSTR pwszStoreName, ref CERT_PHYSICAL_STORE_INFO pStoreInfo, void* pvReserved, void* pvArg);
+		public function BOOL PFN_CRYPT_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC(uint32 dwCertEncodingType, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void** ppvDecodedSignPara, out PWSTR ppwszCNGHashAlgid);
+		public function BOOL PFN_CRYPT_SIGN_AND_ENCODE_HASH_FUNC(uint hKey, uint32 dwCertEncodingType, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvDecodedSignPara, PWSTR pwszCNGPubKeyAlgid, PWSTR pwszCNGHashAlgid, ref uint8 pbComputedHash, uint32 cbComputedHash, uint8* pbSignature, out uint32 pcbSignature);
+		public function BOOL PFN_CRYPT_VERIFY_ENCODED_SIGNATURE_FUNC(uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pPubKeyInfo, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvDecodedSignPara, PWSTR pwszCNGPubKeyAlgid, PWSTR pwszCNGHashAlgid, ref uint8 pbComputedHash, uint32 cbComputedHash, ref uint8 pbSignature, uint32 cbSignature);
+		public function BOOL PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC(uint hNCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
+		public function BOOL PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_FROM_BCRYPT_HANDLE_FUNC(BCRYPT_KEY_HANDLE hBCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
+		public function BOOL PFN_IMPORT_PUBLIC_KEY_INFO_EX2_FUNC(uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pInfo, uint32 dwFlags, void* pvAuxInfo, out BCRYPT_KEY_HANDLE phKey);
+		public function BOOL PFN_IMPORT_PRIV_KEY_FUNC(uint hCryptProv, ref CRYPT_PRIVATE_KEY_INFO pPrivateKeyInfo, uint32 dwFlags, void* pvAuxInfo);
+		public function BOOL PFN_EXPORT_PRIV_KEY_FUNC(uint hCryptProv, uint32 dwKeySpec, PSTR pszPrivateKeyObjId, uint32 dwFlags, void* pvAuxInfo, CRYPT_PRIVATE_KEY_INFO* pPrivateKeyInfo, out uint32 pcbPrivateKeyInfo);
+		public function CERT_CONTEXT* PFN_CRYPT_GET_SIGNER_CERTIFICATE(void* pvGetArg, uint32 dwCertEncodingType, ref CERT_INFO pSignerId, void* hMsgCertStore);
 		public function void PFN_CRYPT_ASYNC_PARAM_FREE_FUNC(PSTR pszParamOid, void* pvParam);
-		public function void PFN_FREE_ENCODED_OBJECT_FUNC(PSTR pszObjectOid, CRYPT_BLOB_ARRAY* pObject, void* pvFreeContext);
+		public function void PFN_FREE_ENCODED_OBJECT_FUNC(PSTR pszObjectOid, out CRYPT_BLOB_ARRAY pObject, void* pvFreeContext);
 		public function BOOL PFN_CRYPT_CANCEL_RETRIEVAL(uint32 dwFlags, void* pvArg);
 		public function void PFN_CRYPT_ASYNC_RETRIEVAL_COMPLETION_FUNC(void* pvCompletion, uint32 dwCompletionCode, PSTR pszUrl, PSTR pszObjectOid, void* pvObject);
 		public function BOOL PFN_CANCEL_ASYNC_RETRIEVAL_FUNC(HCRYPTASYNC hAsyncRetrieve);
-		public function BOOL PFN_CRYPT_ENUM_KEYID_PROP(CRYPTOAPI_BLOB* pKeyIdentifier, uint32 dwFlags, void* pvReserved, void* pvArg, uint32 cProp, uint32* rgdwPropId, void** rgpvData, uint32* rgcbData);
-		public function BOOL PFN_CERT_CHAIN_FIND_BY_ISSUER_CALLBACK(CERT_CONTEXT* pCert, void* pvFindArg);
-		public function void PFN_CERT_SERVER_OCSP_RESPONSE_UPDATE_CALLBACK(CERT_CHAIN_CONTEXT* pChainContext, CERT_SERVER_OCSP_RESPONSE_CONTEXT* pServerOcspResponseContext, CRL_CONTEXT* pNewCrlContext, CRL_CONTEXT* pPrevCrlContext, void* pvArg, uint32 dwWriteOcspFileError);
+		public function BOOL PFN_CRYPT_ENUM_KEYID_PROP(in CRYPTOAPI_BLOB pKeyIdentifier, uint32 dwFlags, void* pvReserved, void* pvArg, uint32 cProp, uint32* rgdwPropId, void** rgpvData, uint32* rgcbData);
+		public function BOOL PFN_CERT_CHAIN_FIND_BY_ISSUER_CALLBACK(in CERT_CONTEXT pCert, void* pvFindArg);
+		public function void PFN_CERT_SERVER_OCSP_RESPONSE_UPDATE_CALLBACK(ref CERT_CHAIN_CONTEXT pChainContext, ref CERT_SERVER_OCSP_RESPONSE_CONTEXT pServerOcspResponseContext, ref CRL_CONTEXT pNewCrlContext, CRL_CONTEXT* pPrevCrlContext, void* pvArg, uint32 dwWriteOcspFileError);
 		public function BOOL PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH(void* pContext, CRYPTOAPI_BLOB** rgIdentifierOrNameList, uint32 dwIdentifierOrNameListCount);
-		public function BOOL PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET(void* pPluginContext, CRYPTOAPI_BLOB* pIdentifier, uint32 dwNameType, CRYPTOAPI_BLOB* pNameBlob, uint8** ppbContent, uint32* pcbContent, PWSTR* ppwszPassword, CRYPTOAPI_BLOB** ppIdentifier);
+		public function BOOL PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET(void* pPluginContext, CRYPTOAPI_BLOB* pIdentifier, uint32 dwNameType, ref CRYPTOAPI_BLOB pNameBlob, out uint8* ppbContent, out uint32 pcbContent, PWSTR* ppwszPassword, CRYPTOAPI_BLOB** ppIdentifier);
 		public function void PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE(CRYPT_OBJECT_LOCATOR_RELEASE_REASON dwReason, void* pPluginContext);
 		public function void PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD(void* pPluginContext, PWSTR pwszPassword);
-		public function void PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE(void* pPluginContext, uint8* pbData);
-		public function void PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER(void* pPluginContext, CRYPTOAPI_BLOB* pIdentifier);
-		public function BOOL PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE(PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH pfnFlush, void* pContext, uint32* pdwExpectedObjectCount, CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE** ppFuncTable, void** ppPluginContext);
+		public function void PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE(void* pPluginContext, ref uint8 pbData);
+		public function void PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER(void* pPluginContext, ref CRYPTOAPI_BLOB pIdentifier);
+		public function BOOL PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE(PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH pfnFlush, void* pContext, out uint32 pdwExpectedObjectCount, out CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE* ppFuncTable, void** ppPluginContext);
 		public function BOOL PFN_CERT_IS_WEAK_HASH(uint32 dwHashUseType, PWSTR pwszCNGHashAlgid, uint32 dwChainFlags, CERT_CHAIN_CONTEXT* pSignerChainContext, FILETIME* pTimeStamp, PWSTR pwszFileName);
-		public function int32 PFNCryptStreamOutputCallback(void* pvCallbackCtxt, uint8* pbData, uint cbData, BOOL fFinal);
+		public function int32 PFNCryptStreamOutputCallback(void* pvCallbackCtxt, in uint8 pbData, uint cbData, BOOL fFinal);
 		public function int32 PFNCryptStreamOutputCallbackEx(void* pvCallbackCtxt, uint8* pbData, uint cbData, NCRYPT_DESCRIPTOR_HANDLE hDescriptor, BOOL fFinal);
-		public function HRESULT PFN_CRYPT_XML_WRITE_CALLBACK(void* pvCallbackState, uint8* pbData, uint32 cbData);
-		public function HRESULT PFN_CRYPT_XML_DATA_PROVIDER_READ(void* pvCallbackState, uint8* pbData, uint32 cbData, uint32* pcbRead);
+		public function HRESULT PFN_CRYPT_XML_WRITE_CALLBACK(void* pvCallbackState, in uint8 pbData, uint32 cbData);
+		public function HRESULT PFN_CRYPT_XML_DATA_PROVIDER_READ(void* pvCallbackState, out uint8 pbData, uint32 cbData, out uint32 pcbRead);
 		public function HRESULT PFN_CRYPT_XML_DATA_PROVIDER_CLOSE(void* pvCallbackState);
-		public function HRESULT PFN_CRYPT_XML_CREATE_TRANSFORM(CRYPT_XML_ALGORITHM* pTransform, CRYPT_XML_DATA_PROVIDER* pProviderIn, CRYPT_XML_DATA_PROVIDER* pProviderOut);
-		public function BOOL PFN_CRYPT_XML_ENUM_ALG_INFO(CRYPT_XML_ALGORITHM_INFO* pInfo, void* pvArg);
-		public function HRESULT CryptXmlDllGetInterface(uint32 dwFlags, CRYPT_XML_ALGORITHM_INFO* pMethod, CRYPT_XML_CRYPTOGRAPHIC_INTERFACE* pInterface);
-		public function HRESULT CryptXmlDllEncodeAlgorithm(CRYPT_XML_ALGORITHM_INFO* pAlgInfo, CRYPT_XML_CHARSET dwCharset, void* pvCallbackState, PFN_CRYPT_XML_WRITE_CALLBACK pfnWrite);
-		public function HRESULT CryptXmlDllCreateDigest(CRYPT_XML_ALGORITHM* pDigestMethod, uint32* pcbSize, void** phDigest);
-		public function HRESULT CryptXmlDllDigestData(void* hDigest, uint8* pbData, uint32 cbData);
-		public function HRESULT CryptXmlDllFinalizeDigest(void* hDigest, uint8* pbDigest, uint32 cbDigest);
+		public function HRESULT PFN_CRYPT_XML_CREATE_TRANSFORM(in CRYPT_XML_ALGORITHM pTransform, ref CRYPT_XML_DATA_PROVIDER pProviderIn, out CRYPT_XML_DATA_PROVIDER pProviderOut);
+		public function BOOL PFN_CRYPT_XML_ENUM_ALG_INFO(in CRYPT_XML_ALGORITHM_INFO pInfo, void* pvArg);
+		public function HRESULT CryptXmlDllGetInterface(uint32 dwFlags, in CRYPT_XML_ALGORITHM_INFO pMethod, out CRYPT_XML_CRYPTOGRAPHIC_INTERFACE pInterface);
+		public function HRESULT CryptXmlDllEncodeAlgorithm(in CRYPT_XML_ALGORITHM_INFO pAlgInfo, CRYPT_XML_CHARSET dwCharset, void* pvCallbackState, PFN_CRYPT_XML_WRITE_CALLBACK pfnWrite);
+		public function HRESULT CryptXmlDllCreateDigest(in CRYPT_XML_ALGORITHM pDigestMethod, out uint32 pcbSize, void** phDigest);
+		public function HRESULT CryptXmlDllDigestData(void* hDigest, in uint8 pbData, uint32 cbData);
+		public function HRESULT CryptXmlDllFinalizeDigest(void* hDigest, out uint8 pbDigest, uint32 cbDigest);
 		public function HRESULT CryptXmlDllCloseDigest(void* hDigest);
-		public function HRESULT CryptXmlDllSignData(CRYPT_XML_ALGORITHM* pSignatureMethod, uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint8* pbInput, uint32 cbInput, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult);
-		public function HRESULT CryptXmlDllVerifySignature(CRYPT_XML_ALGORITHM* pSignatureMethod, BCRYPT_KEY_HANDLE hKey, uint8* pbInput, uint32 cbInput, uint8* pbSignature, uint32 cbSignature);
-		public function HRESULT CryptXmlDllGetAlgorithmInfo(CRYPT_XML_ALGORITHM* pXmlAlgorithm, CRYPT_XML_ALGORITHM_INFO** ppAlgInfo);
+		public function HRESULT CryptXmlDllSignData(in CRYPT_XML_ALGORITHM pSignatureMethod, uint hCryptProvOrNCryptKey, uint32 dwKeySpec, in uint8 pbInput, uint32 cbInput, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult);
+		public function HRESULT CryptXmlDllVerifySignature(in CRYPT_XML_ALGORITHM pSignatureMethod, BCRYPT_KEY_HANDLE hKey, in uint8 pbInput, uint32 cbInput, in uint8 pbSignature, uint32 cbSignature);
+		public function HRESULT CryptXmlDllGetAlgorithmInfo(in CRYPT_XML_ALGORITHM pXmlAlgorithm, out CRYPT_XML_ALGORITHM_INFO* ppAlgInfo);
 		public function HRESULT CryptXmlDllEncodeKeyValue(uint hKey, CRYPT_XML_CHARSET dwCharset, void* pvCallbackState, PFN_CRYPT_XML_WRITE_CALLBACK pfnWrite);
-		public function HRESULT CryptXmlDllCreateKey(CRYPT_XML_BLOB* pEncoded, BCRYPT_KEY_HANDLE* phKey);
+		public function HRESULT CryptXmlDllCreateKey(in CRYPT_XML_BLOB pEncoded, out BCRYPT_KEY_HANDLE phKey);
 		
 		// --- Structs ---
 		
@@ -5661,69 +5661,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProviderName(BSTR* pVal) mut
+			public HRESULT get_ProviderName(out BSTR pVal) mut
 			{
-				return VT.get_ProviderName(&this, pVal);
+				return VT.get_ProviderName(ref this, out pVal);
 			}
 			public HRESULT put_ProviderName(BSTR bstrVal) mut
 			{
-				return VT.put_ProviderName(&this, bstrVal);
+				return VT.put_ProviderName(ref this, bstrVal);
 			}
-			public HRESULT get_Length(int32* pVal) mut
+			public HRESULT get_Length(out int32 pVal) mut
 			{
-				return VT.get_Length(&this, pVal);
+				return VT.get_Length(ref this, out pVal);
 			}
 			public HRESULT put_Length(int32 lVal) mut
 			{
-				return VT.put_Length(&this, lVal);
+				return VT.put_Length(ref this, lVal);
 			}
-			public HRESULT get_Existing(int16* pVal) mut
+			public HRESULT get_Existing(out int16 pVal) mut
 			{
-				return VT.get_Existing(&this, pVal);
+				return VT.get_Existing(ref this, out pVal);
 			}
 			public HRESULT put_Existing(int16 bVal) mut
 			{
-				return VT.put_Existing(&this, bVal);
+				return VT.put_Existing(ref this, bVal);
 			}
-			public HRESULT get_ContainerName(BSTR* pVal) mut
+			public HRESULT get_ContainerName(out BSTR pVal) mut
 			{
-				return VT.get_ContainerName(&this, pVal);
+				return VT.get_ContainerName(ref this, out pVal);
 			}
 			public HRESULT put_ContainerName(BSTR bstrVal) mut
 			{
-				return VT.put_ContainerName(&this, bstrVal);
+				return VT.put_ContainerName(ref this, bstrVal);
 			}
-			public HRESULT get_HashAlgorithm(BSTR* pVal) mut
+			public HRESULT get_HashAlgorithm(out BSTR pVal) mut
 			{
-				return VT.get_HashAlgorithm(&this, pVal);
+				return VT.get_HashAlgorithm(ref this, out pVal);
 			}
 			public HRESULT put_HashAlgorithm(BSTR bstrVal) mut
 			{
-				return VT.put_HashAlgorithm(&this, bstrVal);
+				return VT.put_HashAlgorithm(ref this, bstrVal);
 			}
-			public HRESULT get_ExistingCACertificate(VARIANT* pVal) mut
+			public HRESULT get_ExistingCACertificate(out VARIANT pVal) mut
 			{
-				return VT.get_ExistingCACertificate(&this, pVal);
+				return VT.get_ExistingCACertificate(ref this, out pVal);
 			}
 			public HRESULT put_ExistingCACertificate(VARIANT varVal) mut
 			{
-				return VT.put_ExistingCACertificate(&this, varVal);
+				return VT.put_ExistingCACertificate(ref this, varVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_ProviderName;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_ProviderName;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, int32* pVal) get_Length;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, int32 lVal) put_Length;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, int16* pVal) get_Existing;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, int16 bVal) put_Existing;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_ContainerName;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_ContainerName;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR* pVal) get_HashAlgorithm;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, BSTR bstrVal) put_HashAlgorithm;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, VARIANT* pVal) get_ExistingCACertificate;
-				public new function HRESULT(ICertSrvSetupKeyInformation *self, VARIANT varVal) put_ExistingCACertificate;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out BSTR pVal) get_ProviderName;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, BSTR bstrVal) put_ProviderName;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out int32 pVal) get_Length;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, int32 lVal) put_Length;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out int16 pVal) get_Existing;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, int16 bVal) put_Existing;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out BSTR pVal) get_ContainerName;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, BSTR bstrVal) put_ContainerName;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out BSTR pVal) get_HashAlgorithm;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, BSTR bstrVal) put_HashAlgorithm;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, out VARIANT pVal) get_ExistingCACertificate;
+				public new function HRESULT(ref ICertSrvSetupKeyInformation self, VARIANT varVal) put_ExistingCACertificate;
 			}
 		}
 		[CRepr]
@@ -5733,29 +5733,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** ppVal) mut
+			public HRESULT get__NewEnum(out IUnknown* ppVal) mut
 			{
-				return VT.get__NewEnum(&this, ppVal);
+				return VT.get__NewEnum(ref this, out ppVal);
 			}
-			public HRESULT get_Item(int32 Index, VARIANT* pVal) mut
+			public HRESULT get_Item(int32 Index, out VARIANT pVal) mut
 			{
-				return VT.get_Item(&this, Index, pVal);
+				return VT.get_Item(ref this, Index, out pVal);
 			}
-			public HRESULT get_Count(int32* pVal) mut
+			public HRESULT get_Count(out int32 pVal) mut
 			{
-				return VT.get_Count(&this, pVal);
+				return VT.get_Count(ref this, out pVal);
 			}
-			public HRESULT Add(ICertSrvSetupKeyInformation* pIKeyInformation) mut
+			public HRESULT Add(ref ICertSrvSetupKeyInformation pIKeyInformation) mut
 			{
-				return VT.Add(&this, pIKeyInformation);
+				return VT.Add(ref this, ref pIKeyInformation);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ICertSrvSetupKeyInformationCollection *self, IUnknown** ppVal) get__NewEnum;
-				public new function HRESULT(ICertSrvSetupKeyInformationCollection *self, int32 Index, VARIANT* pVal) get_Item;
-				public new function HRESULT(ICertSrvSetupKeyInformationCollection *self, int32* pVal) get_Count;
-				public new function HRESULT(ICertSrvSetupKeyInformationCollection *self, ICertSrvSetupKeyInformation* pIKeyInformation) Add;
+				public new function HRESULT(ref ICertSrvSetupKeyInformationCollection self, out IUnknown* ppVal) get__NewEnum;
+				public new function HRESULT(ref ICertSrvSetupKeyInformationCollection self, int32 Index, out VARIANT pVal) get_Item;
+				public new function HRESULT(ref ICertSrvSetupKeyInformationCollection self, out int32 pVal) get_Count;
+				public new function HRESULT(ref ICertSrvSetupKeyInformationCollection self, ref ICertSrvSetupKeyInformation pIKeyInformation) Add;
 			}
 		}
 		[CRepr]
@@ -5765,109 +5765,109 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CAErrorId(int32* pVal) mut
+			public HRESULT get_CAErrorId(out int32 pVal) mut
 			{
-				return VT.get_CAErrorId(&this, pVal);
+				return VT.get_CAErrorId(ref this, out pVal);
 			}
-			public HRESULT get_CAErrorString(BSTR* pVal) mut
+			public HRESULT get_CAErrorString(out BSTR pVal) mut
 			{
-				return VT.get_CAErrorString(&this, pVal);
+				return VT.get_CAErrorString(ref this, out pVal);
 			}
 			public HRESULT InitializeDefaults(int16 bServer, int16 bClient) mut
 			{
-				return VT.InitializeDefaults(&this, bServer, bClient);
+				return VT.InitializeDefaults(ref this, bServer, bClient);
 			}
-			public HRESULT GetCASetupProperty(CASetupProperty propertyId, VARIANT* pPropertyValue) mut
+			public HRESULT GetCASetupProperty(CASetupProperty propertyId, out VARIANT pPropertyValue) mut
 			{
-				return VT.GetCASetupProperty(&this, propertyId, pPropertyValue);
+				return VT.GetCASetupProperty(ref this, propertyId, out pPropertyValue);
 			}
-			public HRESULT SetCASetupProperty(CASetupProperty propertyId, VARIANT* pPropertyValue) mut
+			public HRESULT SetCASetupProperty(CASetupProperty propertyId, ref VARIANT pPropertyValue) mut
 			{
-				return VT.SetCASetupProperty(&this, propertyId, pPropertyValue);
+				return VT.SetCASetupProperty(ref this, propertyId, ref pPropertyValue);
 			}
-			public HRESULT IsPropertyEditable(CASetupProperty propertyId, int16* pbEditable) mut
+			public HRESULT IsPropertyEditable(CASetupProperty propertyId, out int16 pbEditable) mut
 			{
-				return VT.IsPropertyEditable(&this, propertyId, pbEditable);
+				return VT.IsPropertyEditable(ref this, propertyId, out pbEditable);
 			}
-			public HRESULT GetSupportedCATypes(VARIANT* pCATypes) mut
+			public HRESULT GetSupportedCATypes(out VARIANT pCATypes) mut
 			{
-				return VT.GetSupportedCATypes(&this, pCATypes);
+				return VT.GetSupportedCATypes(ref this, out pCATypes);
 			}
-			public HRESULT GetProviderNameList(VARIANT* pVal) mut
+			public HRESULT GetProviderNameList(out VARIANT pVal) mut
 			{
-				return VT.GetProviderNameList(&this, pVal);
+				return VT.GetProviderNameList(ref this, out pVal);
 			}
-			public HRESULT GetKeyLengthList(BSTR bstrProviderName, VARIANT* pVal) mut
+			public HRESULT GetKeyLengthList(BSTR bstrProviderName, out VARIANT pVal) mut
 			{
-				return VT.GetKeyLengthList(&this, bstrProviderName, pVal);
+				return VT.GetKeyLengthList(ref this, bstrProviderName, out pVal);
 			}
-			public HRESULT GetHashAlgorithmList(BSTR bstrProviderName, VARIANT* pVal) mut
+			public HRESULT GetHashAlgorithmList(BSTR bstrProviderName, out VARIANT pVal) mut
 			{
-				return VT.GetHashAlgorithmList(&this, bstrProviderName, pVal);
+				return VT.GetHashAlgorithmList(ref this, bstrProviderName, out pVal);
 			}
-			public HRESULT GetPrivateKeyContainerList(BSTR bstrProviderName, VARIANT* pVal) mut
+			public HRESULT GetPrivateKeyContainerList(BSTR bstrProviderName, out VARIANT pVal) mut
 			{
-				return VT.GetPrivateKeyContainerList(&this, bstrProviderName, pVal);
+				return VT.GetPrivateKeyContainerList(ref this, bstrProviderName, out pVal);
 			}
-			public HRESULT GetExistingCACertificates(ICertSrvSetupKeyInformationCollection** ppVal) mut
+			public HRESULT GetExistingCACertificates(out ICertSrvSetupKeyInformationCollection* ppVal) mut
 			{
-				return VT.GetExistingCACertificates(&this, ppVal);
+				return VT.GetExistingCACertificates(ref this, out ppVal);
 			}
-			public HRESULT CAImportPFX(BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, ICertSrvSetupKeyInformation** ppVal) mut
+			public HRESULT CAImportPFX(BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, out ICertSrvSetupKeyInformation* ppVal) mut
 			{
-				return VT.CAImportPFX(&this, bstrFileName, bstrPasswd, bOverwriteExistingKey, ppVal);
+				return VT.CAImportPFX(ref this, bstrFileName, bstrPasswd, bOverwriteExistingKey, out ppVal);
 			}
 			public HRESULT SetCADistinguishedName(BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) mut
 			{
-				return VT.SetCADistinguishedName(&this, bstrCADN, bIgnoreUnicode, bOverwriteExistingKey, bOverwriteExistingCAInDS);
+				return VT.SetCADistinguishedName(ref this, bstrCADN, bIgnoreUnicode, bOverwriteExistingKey, bOverwriteExistingCAInDS);
 			}
 			public HRESULT SetDatabaseInformation(BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) mut
 			{
-				return VT.SetDatabaseInformation(&this, bstrDBDirectory, bstrLogDirectory, bstrSharedFolder, bForceOverwrite);
+				return VT.SetDatabaseInformation(ref this, bstrDBDirectory, bstrLogDirectory, bstrSharedFolder, bForceOverwrite);
 			}
 			public HRESULT SetParentCAInformation(BSTR bstrCAConfiguration) mut
 			{
-				return VT.SetParentCAInformation(&this, bstrCAConfiguration);
+				return VT.SetParentCAInformation(ref this, bstrCAConfiguration);
 			}
 			public HRESULT SetWebCAInformation(BSTR bstrCAConfiguration) mut
 			{
-				return VT.SetWebCAInformation(&this, bstrCAConfiguration);
+				return VT.SetWebCAInformation(ref this, bstrCAConfiguration);
 			}
 			public HRESULT Install() mut
 			{
-				return VT.Install(&this);
+				return VT.Install(ref this);
 			}
 			public HRESULT PreUnInstall(int16 bClientOnly) mut
 			{
-				return VT.PreUnInstall(&this, bClientOnly);
+				return VT.PreUnInstall(ref this, bClientOnly);
 			}
 			public HRESULT PostUnInstall() mut
 			{
-				return VT.PostUnInstall(&this);
+				return VT.PostUnInstall(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ICertSrvSetup *self, int32* pVal) get_CAErrorId;
-				public new function HRESULT(ICertSrvSetup *self, BSTR* pVal) get_CAErrorString;
-				public new function HRESULT(ICertSrvSetup *self, int16 bServer, int16 bClient) InitializeDefaults;
-				public new function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, VARIANT* pPropertyValue) GetCASetupProperty;
-				public new function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, VARIANT* pPropertyValue) SetCASetupProperty;
-				public new function HRESULT(ICertSrvSetup *self, CASetupProperty propertyId, int16* pbEditable) IsPropertyEditable;
-				public new function HRESULT(ICertSrvSetup *self, VARIANT* pCATypes) GetSupportedCATypes;
-				public new function HRESULT(ICertSrvSetup *self, VARIANT* pVal) GetProviderNameList;
-				public new function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetKeyLengthList;
-				public new function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetHashAlgorithmList;
-				public new function HRESULT(ICertSrvSetup *self, BSTR bstrProviderName, VARIANT* pVal) GetPrivateKeyContainerList;
-				public new function HRESULT(ICertSrvSetup *self, ICertSrvSetupKeyInformationCollection** ppVal) GetExistingCACertificates;
-				public new function HRESULT(ICertSrvSetup *self, BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, ICertSrvSetupKeyInformation** ppVal) CAImportPFX;
-				public new function HRESULT(ICertSrvSetup *self, BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) SetCADistinguishedName;
-				public new function HRESULT(ICertSrvSetup *self, BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) SetDatabaseInformation;
-				public new function HRESULT(ICertSrvSetup *self, BSTR bstrCAConfiguration) SetParentCAInformation;
-				public new function HRESULT(ICertSrvSetup *self, BSTR bstrCAConfiguration) SetWebCAInformation;
-				public new function HRESULT(ICertSrvSetup *self) Install;
-				public new function HRESULT(ICertSrvSetup *self, int16 bClientOnly) PreUnInstall;
-				public new function HRESULT(ICertSrvSetup *self) PostUnInstall;
+				public new function HRESULT(ref ICertSrvSetup self, out int32 pVal) get_CAErrorId;
+				public new function HRESULT(ref ICertSrvSetup self, out BSTR pVal) get_CAErrorString;
+				public new function HRESULT(ref ICertSrvSetup self, int16 bServer, int16 bClient) InitializeDefaults;
+				public new function HRESULT(ref ICertSrvSetup self, CASetupProperty propertyId, out VARIANT pPropertyValue) GetCASetupProperty;
+				public new function HRESULT(ref ICertSrvSetup self, CASetupProperty propertyId, ref VARIANT pPropertyValue) SetCASetupProperty;
+				public new function HRESULT(ref ICertSrvSetup self, CASetupProperty propertyId, out int16 pbEditable) IsPropertyEditable;
+				public new function HRESULT(ref ICertSrvSetup self, out VARIANT pCATypes) GetSupportedCATypes;
+				public new function HRESULT(ref ICertSrvSetup self, out VARIANT pVal) GetProviderNameList;
+				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrProviderName, out VARIANT pVal) GetKeyLengthList;
+				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrProviderName, out VARIANT pVal) GetHashAlgorithmList;
+				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrProviderName, out VARIANT pVal) GetPrivateKeyContainerList;
+				public new function HRESULT(ref ICertSrvSetup self, out ICertSrvSetupKeyInformationCollection* ppVal) GetExistingCACertificates;
+				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrFileName, BSTR bstrPasswd, int16 bOverwriteExistingKey, out ICertSrvSetupKeyInformation* ppVal) CAImportPFX;
+				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrCADN, int16 bIgnoreUnicode, int16 bOverwriteExistingKey, int16 bOverwriteExistingCAInDS) SetCADistinguishedName;
+				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrDBDirectory, BSTR bstrLogDirectory, BSTR bstrSharedFolder, int16 bForceOverwrite) SetDatabaseInformation;
+				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrCAConfiguration) SetParentCAInformation;
+				public new function HRESULT(ref ICertSrvSetup self, BSTR bstrCAConfiguration) SetWebCAInformation;
+				public new function HRESULT(ref ICertSrvSetup self) Install;
+				public new function HRESULT(ref ICertSrvSetup self, int16 bClientOnly) PreUnInstall;
+				public new function HRESULT(ref ICertSrvSetup self) PostUnInstall;
 			}
 		}
 		[CRepr]
@@ -5877,69 +5877,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MSCEPErrorId(int32* pVal) mut
+			public HRESULT get_MSCEPErrorId(out int32 pVal) mut
 			{
-				return VT.get_MSCEPErrorId(&this, pVal);
+				return VT.get_MSCEPErrorId(ref this, out pVal);
 			}
-			public HRESULT get_MSCEPErrorString(BSTR* pVal) mut
+			public HRESULT get_MSCEPErrorString(out BSTR pVal) mut
 			{
-				return VT.get_MSCEPErrorString(&this, pVal);
+				return VT.get_MSCEPErrorString(ref this, out pVal);
 			}
 			public HRESULT InitializeDefaults() mut
 			{
-				return VT.InitializeDefaults(&this);
+				return VT.InitializeDefaults(ref this);
 			}
-			public HRESULT GetMSCEPSetupProperty(MSCEPSetupProperty propertyId, VARIANT* pVal) mut
+			public HRESULT GetMSCEPSetupProperty(MSCEPSetupProperty propertyId, out VARIANT pVal) mut
 			{
-				return VT.GetMSCEPSetupProperty(&this, propertyId, pVal);
+				return VT.GetMSCEPSetupProperty(ref this, propertyId, out pVal);
 			}
-			public HRESULT SetMSCEPSetupProperty(MSCEPSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			public HRESULT SetMSCEPSetupProperty(MSCEPSetupProperty propertyId, ref VARIANT pPropertyValue) mut
 			{
-				return VT.SetMSCEPSetupProperty(&this, propertyId, pPropertyValue);
+				return VT.SetMSCEPSetupProperty(ref this, propertyId, ref pPropertyValue);
 			}
 			public HRESULT SetAccountInformation(BSTR bstrUserName, BSTR bstrPassword) mut
 			{
-				return VT.SetAccountInformation(&this, bstrUserName, bstrPassword);
+				return VT.SetAccountInformation(ref this, bstrUserName, bstrPassword);
 			}
-			public HRESULT IsMSCEPStoreEmpty(int16* pbEmpty) mut
+			public HRESULT IsMSCEPStoreEmpty(out int16 pbEmpty) mut
 			{
-				return VT.IsMSCEPStoreEmpty(&this, pbEmpty);
+				return VT.IsMSCEPStoreEmpty(ref this, out pbEmpty);
 			}
-			public HRESULT GetProviderNameList(int16 bExchange, VARIANT* pVal) mut
+			public HRESULT GetProviderNameList(int16 bExchange, out VARIANT pVal) mut
 			{
-				return VT.GetProviderNameList(&this, bExchange, pVal);
+				return VT.GetProviderNameList(ref this, bExchange, out pVal);
 			}
-			public HRESULT GetKeyLengthList(int16 bExchange, BSTR bstrProviderName, VARIANT* pVal) mut
+			public HRESULT GetKeyLengthList(int16 bExchange, BSTR bstrProviderName, out VARIANT pVal) mut
 			{
-				return VT.GetKeyLengthList(&this, bExchange, bstrProviderName, pVal);
+				return VT.GetKeyLengthList(ref this, bExchange, bstrProviderName, out pVal);
 			}
 			public HRESULT Install() mut
 			{
-				return VT.Install(&this);
+				return VT.Install(ref this);
 			}
 			public HRESULT PreUnInstall() mut
 			{
-				return VT.PreUnInstall(&this);
+				return VT.PreUnInstall(ref this);
 			}
 			public HRESULT PostUnInstall() mut
 			{
-				return VT.PostUnInstall(&this);
+				return VT.PostUnInstall(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IMSCEPSetup *self, int32* pVal) get_MSCEPErrorId;
-				public new function HRESULT(IMSCEPSetup *self, BSTR* pVal) get_MSCEPErrorString;
-				public new function HRESULT(IMSCEPSetup *self) InitializeDefaults;
-				public new function HRESULT(IMSCEPSetup *self, MSCEPSetupProperty propertyId, VARIANT* pVal) GetMSCEPSetupProperty;
-				public new function HRESULT(IMSCEPSetup *self, MSCEPSetupProperty propertyId, VARIANT* pPropertyValue) SetMSCEPSetupProperty;
-				public new function HRESULT(IMSCEPSetup *self, BSTR bstrUserName, BSTR bstrPassword) SetAccountInformation;
-				public new function HRESULT(IMSCEPSetup *self, int16* pbEmpty) IsMSCEPStoreEmpty;
-				public new function HRESULT(IMSCEPSetup *self, int16 bExchange, VARIANT* pVal) GetProviderNameList;
-				public new function HRESULT(IMSCEPSetup *self, int16 bExchange, BSTR bstrProviderName, VARIANT* pVal) GetKeyLengthList;
-				public new function HRESULT(IMSCEPSetup *self) Install;
-				public new function HRESULT(IMSCEPSetup *self) PreUnInstall;
-				public new function HRESULT(IMSCEPSetup *self) PostUnInstall;
+				public new function HRESULT(ref IMSCEPSetup self, out int32 pVal) get_MSCEPErrorId;
+				public new function HRESULT(ref IMSCEPSetup self, out BSTR pVal) get_MSCEPErrorString;
+				public new function HRESULT(ref IMSCEPSetup self) InitializeDefaults;
+				public new function HRESULT(ref IMSCEPSetup self, MSCEPSetupProperty propertyId, out VARIANT pVal) GetMSCEPSetupProperty;
+				public new function HRESULT(ref IMSCEPSetup self, MSCEPSetupProperty propertyId, ref VARIANT pPropertyValue) SetMSCEPSetupProperty;
+				public new function HRESULT(ref IMSCEPSetup self, BSTR bstrUserName, BSTR bstrPassword) SetAccountInformation;
+				public new function HRESULT(ref IMSCEPSetup self, out int16 pbEmpty) IsMSCEPStoreEmpty;
+				public new function HRESULT(ref IMSCEPSetup self, int16 bExchange, out VARIANT pVal) GetProviderNameList;
+				public new function HRESULT(ref IMSCEPSetup self, int16 bExchange, BSTR bstrProviderName, out VARIANT pVal) GetKeyLengthList;
+				public new function HRESULT(ref IMSCEPSetup self) Install;
+				public new function HRESULT(ref IMSCEPSetup self) PreUnInstall;
+				public new function HRESULT(ref IMSCEPSetup self) PostUnInstall;
 			}
 		}
 		[CRepr]
@@ -5949,44 +5949,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ErrorString(BSTR* pVal) mut
+			public HRESULT get_ErrorString(out BSTR pVal) mut
 			{
-				return VT.get_ErrorString(&this, pVal);
+				return VT.get_ErrorString(ref this, out pVal);
 			}
 			public HRESULT InitializeInstallDefaults() mut
 			{
-				return VT.InitializeInstallDefaults(&this);
+				return VT.InitializeInstallDefaults(ref this);
 			}
-			public HRESULT GetProperty(CESSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			public HRESULT GetProperty(CESSetupProperty propertyId, out VARIANT pPropertyValue) mut
 			{
-				return VT.GetProperty(&this, propertyId, pPropertyValue);
+				return VT.GetProperty(ref this, propertyId, out pPropertyValue);
 			}
-			public HRESULT SetProperty(CESSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			public HRESULT SetProperty(CESSetupProperty propertyId, ref VARIANT pPropertyValue) mut
 			{
-				return VT.SetProperty(&this, propertyId, pPropertyValue);
+				return VT.SetProperty(ref this, propertyId, ref pPropertyValue);
 			}
 			public HRESULT SetApplicationPoolCredentials(BSTR bstrUsername, BSTR bstrPassword) mut
 			{
-				return VT.SetApplicationPoolCredentials(&this, bstrUsername, bstrPassword);
+				return VT.SetApplicationPoolCredentials(ref this, bstrUsername, bstrPassword);
 			}
 			public HRESULT Install() mut
 			{
-				return VT.Install(&this);
+				return VT.Install(ref this);
 			}
-			public HRESULT UnInstall(VARIANT* pCAConfig, VARIANT* pAuthentication) mut
+			public HRESULT UnInstall(ref VARIANT pCAConfig, ref VARIANT pAuthentication) mut
 			{
-				return VT.UnInstall(&this, pCAConfig, pAuthentication);
+				return VT.UnInstall(ref this, ref pCAConfig, ref pAuthentication);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ICertificateEnrollmentServerSetup *self, BSTR* pVal) get_ErrorString;
-				public new function HRESULT(ICertificateEnrollmentServerSetup *self) InitializeInstallDefaults;
-				public new function HRESULT(ICertificateEnrollmentServerSetup *self, CESSetupProperty propertyId, VARIANT* pPropertyValue) GetProperty;
-				public new function HRESULT(ICertificateEnrollmentServerSetup *self, CESSetupProperty propertyId, VARIANT* pPropertyValue) SetProperty;
-				public new function HRESULT(ICertificateEnrollmentServerSetup *self, BSTR bstrUsername, BSTR bstrPassword) SetApplicationPoolCredentials;
-				public new function HRESULT(ICertificateEnrollmentServerSetup *self) Install;
-				public new function HRESULT(ICertificateEnrollmentServerSetup *self, VARIANT* pCAConfig, VARIANT* pAuthentication) UnInstall;
+				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, out BSTR pVal) get_ErrorString;
+				public new function HRESULT(ref ICertificateEnrollmentServerSetup self) InitializeInstallDefaults;
+				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, CESSetupProperty propertyId, out VARIANT pPropertyValue) GetProperty;
+				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, CESSetupProperty propertyId, ref VARIANT pPropertyValue) SetProperty;
+				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, BSTR bstrUsername, BSTR bstrPassword) SetApplicationPoolCredentials;
+				public new function HRESULT(ref ICertificateEnrollmentServerSetup self) Install;
+				public new function HRESULT(ref ICertificateEnrollmentServerSetup self, ref VARIANT pCAConfig, ref VARIANT pAuthentication) UnInstall;
 			}
 		}
 		[CRepr]
@@ -5996,152 +5996,152 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ErrorString(BSTR* pVal) mut
+			public HRESULT get_ErrorString(out BSTR pVal) mut
 			{
-				return VT.get_ErrorString(&this, pVal);
+				return VT.get_ErrorString(ref this, out pVal);
 			}
 			public HRESULT InitializeInstallDefaults() mut
 			{
-				return VT.InitializeInstallDefaults(&this);
+				return VT.InitializeInstallDefaults(ref this);
 			}
-			public HRESULT GetProperty(CEPSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			public HRESULT GetProperty(CEPSetupProperty propertyId, out VARIANT pPropertyValue) mut
 			{
-				return VT.GetProperty(&this, propertyId, pPropertyValue);
+				return VT.GetProperty(ref this, propertyId, out pPropertyValue);
 			}
-			public HRESULT SetProperty(CEPSetupProperty propertyId, VARIANT* pPropertyValue) mut
+			public HRESULT SetProperty(CEPSetupProperty propertyId, ref VARIANT pPropertyValue) mut
 			{
-				return VT.SetProperty(&this, propertyId, pPropertyValue);
+				return VT.SetProperty(ref this, propertyId, ref pPropertyValue);
 			}
 			public HRESULT Install() mut
 			{
-				return VT.Install(&this);
+				return VT.Install(ref this);
 			}
-			public HRESULT UnInstall(VARIANT* pAuthKeyBasedRenewal) mut
+			public HRESULT UnInstall(ref VARIANT pAuthKeyBasedRenewal) mut
 			{
-				return VT.UnInstall(&this, pAuthKeyBasedRenewal);
+				return VT.UnInstall(ref this, ref pAuthKeyBasedRenewal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, BSTR* pVal) get_ErrorString;
-				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self) InitializeInstallDefaults;
-				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, CEPSetupProperty propertyId, VARIANT* pPropertyValue) GetProperty;
-				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, CEPSetupProperty propertyId, VARIANT* pPropertyValue) SetProperty;
-				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self) Install;
-				public new function HRESULT(ICertificateEnrollmentPolicyServerSetup *self, VARIANT* pAuthKeyBasedRenewal) UnInstall;
+				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, out BSTR pVal) get_ErrorString;
+				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self) InitializeInstallDefaults;
+				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, CEPSetupProperty propertyId, out VARIANT pPropertyValue) GetProperty;
+				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, CEPSetupProperty propertyId, ref VARIANT pPropertyValue) SetProperty;
+				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self) Install;
+				public new function HRESULT(ref ICertificateEnrollmentPolicyServerSetup self, ref VARIANT pAuthKeyBasedRenewal) UnInstall;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptAcquireContextA(uint* phProv, PSTR szContainer, PSTR szProvider, uint32 dwProvType, uint32 dwFlags);
+		public static extern BOOL CryptAcquireContextA(out uint phProv, PSTR szContainer, PSTR szProvider, uint32 dwProvType, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptAcquireContextW(uint* phProv, PWSTR szContainer, PWSTR szProvider, uint32 dwProvType, uint32 dwFlags);
+		public static extern BOOL CryptAcquireContextW(out uint phProv, PWSTR szContainer, PWSTR szProvider, uint32 dwProvType, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptReleaseContext(uint hProv, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGenKey(uint hProv, uint32 Algid, CRYPT_KEY_FLAGS dwFlags, uint* phKey);
+		public static extern BOOL CryptGenKey(uint hProv, uint32 Algid, CRYPT_KEY_FLAGS dwFlags, out uint phKey);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptDeriveKey(uint hProv, uint32 Algid, uint hBaseData, uint32 dwFlags, uint* phKey);
+		public static extern BOOL CryptDeriveKey(uint hProv, uint32 Algid, uint hBaseData, uint32 dwFlags, out uint phKey);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptDestroyKey(uint hKey);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSetKeyParam(uint hKey, CRYPT_KEY_PARAM_ID dwParam, uint8* pbData, uint32 dwFlags);
+		public static extern BOOL CryptSetKeyParam(uint hKey, CRYPT_KEY_PARAM_ID dwParam, in uint8 pbData, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGetKeyParam(uint hKey, CRYPT_KEY_PARAM_ID dwParam, uint8* pbData, uint32* pdwDataLen, uint32 dwFlags);
+		public static extern BOOL CryptGetKeyParam(uint hKey, CRYPT_KEY_PARAM_ID dwParam, uint8* pbData, out uint32 pdwDataLen, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSetHashParam(uint hHash, CRYPT_SET_HASH_PARAM dwParam, uint8* pbData, uint32 dwFlags);
+		public static extern BOOL CryptSetHashParam(uint hHash, CRYPT_SET_HASH_PARAM dwParam, in uint8 pbData, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGetHashParam(uint hHash, uint32 dwParam, uint8* pbData, uint32* pdwDataLen, uint32 dwFlags);
+		public static extern BOOL CryptGetHashParam(uint hHash, uint32 dwParam, uint8* pbData, out uint32 pdwDataLen, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSetProvParam(uint hProv, CRYPT_SET_PROV_PARAM_ID dwParam, uint8* pbData, uint32 dwFlags);
+		public static extern BOOL CryptSetProvParam(uint hProv, CRYPT_SET_PROV_PARAM_ID dwParam, in uint8 pbData, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGetProvParam(uint hProv, uint32 dwParam, uint8* pbData, uint32* pdwDataLen, uint32 dwFlags);
+		public static extern BOOL CryptGetProvParam(uint hProv, uint32 dwParam, uint8* pbData, out uint32 pdwDataLen, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGenRandom(uint hProv, uint32 dwLen, uint8* pbBuffer);
+		public static extern BOOL CryptGenRandom(uint hProv, uint32 dwLen, out uint8 pbBuffer);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGetUserKey(uint hProv, uint32 dwKeySpec, uint* phUserKey);
+		public static extern BOOL CryptGetUserKey(uint hProv, uint32 dwKeySpec, out uint phUserKey);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptExportKey(uint hKey, uint hExpKey, uint32 dwBlobType, CRYPT_KEY_FLAGS dwFlags, uint8* pbData, uint32* pdwDataLen);
+		public static extern BOOL CryptExportKey(uint hKey, uint hExpKey, uint32 dwBlobType, CRYPT_KEY_FLAGS dwFlags, uint8* pbData, out uint32 pdwDataLen);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptImportKey(uint hProv, uint8* pbData, uint32 dwDataLen, uint hPubKey, CRYPT_KEY_FLAGS dwFlags, uint* phKey);
+		public static extern BOOL CryptImportKey(uint hProv, in uint8 pbData, uint32 dwDataLen, uint hPubKey, CRYPT_KEY_FLAGS dwFlags, out uint phKey);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptEncrypt(uint hKey, uint hHash, BOOL Final, uint32 dwFlags, uint8* pbData, uint32* pdwDataLen, uint32 dwBufLen);
+		public static extern BOOL CryptEncrypt(uint hKey, uint hHash, BOOL Final, uint32 dwFlags, uint8* pbData, out uint32 pdwDataLen, uint32 dwBufLen);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptDecrypt(uint hKey, uint hHash, BOOL Final, uint32 dwFlags, uint8* pbData, uint32* pdwDataLen);
+		public static extern BOOL CryptDecrypt(uint hKey, uint hHash, BOOL Final, uint32 dwFlags, out uint8 pbData, out uint32 pdwDataLen);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptCreateHash(uint hProv, uint32 Algid, uint hKey, uint32 dwFlags, uint* phHash);
+		public static extern BOOL CryptCreateHash(uint hProv, uint32 Algid, uint hKey, uint32 dwFlags, out uint phHash);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptHashData(uint hHash, uint8* pbData, uint32 dwDataLen, uint32 dwFlags);
+		public static extern BOOL CryptHashData(uint hHash, in uint8 pbData, uint32 dwDataLen, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptHashSessionKey(uint hHash, uint hKey, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptDestroyHash(uint hHash);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSignHashA(uint hHash, uint32 dwKeySpec, PSTR szDescription, uint32 dwFlags, uint8* pbSignature, uint32* pdwSigLen);
+		public static extern BOOL CryptSignHashA(uint hHash, uint32 dwKeySpec, PSTR szDescription, uint32 dwFlags, uint8* pbSignature, out uint32 pdwSigLen);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSignHashW(uint hHash, uint32 dwKeySpec, PWSTR szDescription, uint32 dwFlags, uint8* pbSignature, uint32* pdwSigLen);
+		public static extern BOOL CryptSignHashW(uint hHash, uint32 dwKeySpec, PWSTR szDescription, uint32 dwFlags, uint8* pbSignature, out uint32 pdwSigLen);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptVerifySignatureA(uint hHash, uint8* pbSignature, uint32 dwSigLen, uint hPubKey, PSTR szDescription, uint32 dwFlags);
+		public static extern BOOL CryptVerifySignatureA(uint hHash, in uint8 pbSignature, uint32 dwSigLen, uint hPubKey, PSTR szDescription, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptVerifySignatureW(uint hHash, uint8* pbSignature, uint32 dwSigLen, uint hPubKey, PWSTR szDescription, uint32 dwFlags);
+		public static extern BOOL CryptVerifySignatureW(uint hHash, in uint8 pbSignature, uint32 dwSigLen, uint hPubKey, PWSTR szDescription, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptSetProviderA(PSTR pszProvName, uint32 dwProvType);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptSetProviderW(PWSTR pszProvName, uint32 dwProvType);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSetProviderExA(PSTR pszProvName, uint32 dwProvType, uint32* pdwReserved, uint32 dwFlags);
+		public static extern BOOL CryptSetProviderExA(PSTR pszProvName, uint32 dwProvType, out uint32 pdwReserved, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSetProviderExW(PWSTR pszProvName, uint32 dwProvType, uint32* pdwReserved, uint32 dwFlags);
+		public static extern BOOL CryptSetProviderExW(PWSTR pszProvName, uint32 dwProvType, out uint32 pdwReserved, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGetDefaultProviderA(uint32 dwProvType, uint32* pdwReserved, uint32 dwFlags, PSTR pszProvName, uint32* pcbProvName);
+		public static extern BOOL CryptGetDefaultProviderA(uint32 dwProvType, out uint32 pdwReserved, uint32 dwFlags, PSTR pszProvName, out uint32 pcbProvName);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGetDefaultProviderW(uint32 dwProvType, uint32* pdwReserved, uint32 dwFlags, PWSTR pszProvName, uint32* pcbProvName);
+		public static extern BOOL CryptGetDefaultProviderW(uint32 dwProvType, out uint32 pdwReserved, uint32 dwFlags, PWSTR pszProvName, out uint32 pcbProvName);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptEnumProviderTypesA(uint32 dwIndex, uint32* pdwReserved, uint32 dwFlags, uint32* pdwProvType, PSTR szTypeName, uint32* pcbTypeName);
+		public static extern BOOL CryptEnumProviderTypesA(uint32 dwIndex, out uint32 pdwReserved, uint32 dwFlags, out uint32 pdwProvType, PSTR szTypeName, out uint32 pcbTypeName);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptEnumProviderTypesW(uint32 dwIndex, uint32* pdwReserved, uint32 dwFlags, uint32* pdwProvType, PWSTR szTypeName, uint32* pcbTypeName);
+		public static extern BOOL CryptEnumProviderTypesW(uint32 dwIndex, out uint32 pdwReserved, uint32 dwFlags, out uint32 pdwProvType, PWSTR szTypeName, out uint32 pcbTypeName);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptEnumProvidersA(uint32 dwIndex, uint32* pdwReserved, uint32 dwFlags, uint32* pdwProvType, PSTR szProvName, uint32* pcbProvName);
+		public static extern BOOL CryptEnumProvidersA(uint32 dwIndex, out uint32 pdwReserved, uint32 dwFlags, out uint32 pdwProvType, PSTR szProvName, out uint32 pcbProvName);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptEnumProvidersW(uint32 dwIndex, uint32* pdwReserved, uint32 dwFlags, uint32* pdwProvType, PWSTR szProvName, uint32* pcbProvName);
+		public static extern BOOL CryptEnumProvidersW(uint32 dwIndex, out uint32 pdwReserved, uint32 dwFlags, out uint32 pdwProvType, PWSTR szProvName, out uint32 pcbProvName);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptContextAddRef(uint hProv, uint32* pdwReserved, uint32 dwFlags);
+		public static extern BOOL CryptContextAddRef(uint hProv, out uint32 pdwReserved, uint32 dwFlags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptDuplicateKey(uint hKey, uint32* pdwReserved, uint32 dwFlags, uint* phKey);
+		public static extern BOOL CryptDuplicateKey(uint hKey, out uint32 pdwReserved, uint32 dwFlags, out uint phKey);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptDuplicateHash(uint hHash, uint32* pdwReserved, uint32 dwFlags, uint* phHash);
+		public static extern BOOL CryptDuplicateHash(uint hHash, out uint32 pdwReserved, uint32 dwFlags, out uint phHash);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptOpenAlgorithmProvider(BCRYPT_ALG_HANDLE* phAlgorithm, PWSTR pszAlgId, PWSTR pszImplementation, BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS dwFlags);
+		public static extern NTSTATUS BCryptOpenAlgorithmProvider(out BCRYPT_ALG_HANDLE phAlgorithm, PWSTR pszAlgId, PWSTR pszImplementation, BCRYPT_OPEN_ALGORITHM_PROVIDER_FLAGS dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptEnumAlgorithms(BCRYPT_OPERATION dwAlgOperations, uint32* pAlgCount, BCRYPT_ALGORITHM_IDENTIFIER** ppAlgList, uint32 dwFlags);
+		public static extern NTSTATUS BCryptEnumAlgorithms(BCRYPT_OPERATION dwAlgOperations, out uint32 pAlgCount, out BCRYPT_ALGORITHM_IDENTIFIER* ppAlgList, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptEnumProviders(PWSTR pszAlgId, uint32* pImplCount, BCRYPT_PROVIDER_NAME** ppImplList, uint32 dwFlags);
+		public static extern NTSTATUS BCryptEnumProviders(PWSTR pszAlgId, out uint32 pImplCount, out BCRYPT_PROVIDER_NAME* ppImplList, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptGetProperty(void* hObject, PWSTR pszProperty, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult, uint32 dwFlags);
+		public static extern NTSTATUS BCryptGetProperty(void* hObject, PWSTR pszProperty, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptSetProperty(void* hObject, PWSTR pszProperty, uint8* pbInput, uint32 cbInput, uint32 dwFlags);
+		public static extern NTSTATUS BCryptSetProperty(void* hObject, PWSTR pszProperty, ref uint8 pbInput, uint32 cbInput, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptCloseAlgorithmProvider(BCRYPT_ALG_HANDLE hAlgorithm, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void BCryptFreeBuffer(void* pvBuffer);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptGenerateSymmetricKey(BCRYPT_ALG_HANDLE hAlgorithm, BCRYPT_KEY_HANDLE* phKey, uint8* pbKeyObject, uint32 cbKeyObject, uint8* pbSecret, uint32 cbSecret, uint32 dwFlags);
+		public static extern NTSTATUS BCryptGenerateSymmetricKey(BCRYPT_ALG_HANDLE hAlgorithm, out BCRYPT_KEY_HANDLE phKey, uint8* pbKeyObject, uint32 cbKeyObject, ref uint8 pbSecret, uint32 cbSecret, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptGenerateKeyPair(BCRYPT_ALG_HANDLE hAlgorithm, BCRYPT_KEY_HANDLE* phKey, uint32 dwLength, uint32 dwFlags);
+		public static extern NTSTATUS BCryptGenerateKeyPair(BCRYPT_ALG_HANDLE hAlgorithm, out BCRYPT_KEY_HANDLE phKey, uint32 dwLength, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptEncrypt(BCRYPT_KEY_HANDLE hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbIV, uint32 cbIV, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult, NCRYPT_FLAGS dwFlags);
+		public static extern NTSTATUS BCryptEncrypt(BCRYPT_KEY_HANDLE hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbIV, uint32 cbIV, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptDecrypt(BCRYPT_KEY_HANDLE hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbIV, uint32 cbIV, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult, NCRYPT_FLAGS dwFlags);
+		public static extern NTSTATUS BCryptDecrypt(BCRYPT_KEY_HANDLE hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbIV, uint32 cbIV, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptExportKey(BCRYPT_KEY_HANDLE hKey, BCRYPT_KEY_HANDLE hExportKey, PWSTR pszBlobType, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult, uint32 dwFlags);
+		public static extern NTSTATUS BCryptExportKey(BCRYPT_KEY_HANDLE hKey, BCRYPT_KEY_HANDLE hExportKey, PWSTR pszBlobType, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptImportKey(BCRYPT_ALG_HANDLE hAlgorithm, BCRYPT_KEY_HANDLE hImportKey, PWSTR pszBlobType, BCRYPT_KEY_HANDLE* phKey, uint8* pbKeyObject, uint32 cbKeyObject, uint8* pbInput, uint32 cbInput, uint32 dwFlags);
+		public static extern NTSTATUS BCryptImportKey(BCRYPT_ALG_HANDLE hAlgorithm, BCRYPT_KEY_HANDLE hImportKey, PWSTR pszBlobType, out BCRYPT_KEY_HANDLE phKey, uint8* pbKeyObject, uint32 cbKeyObject, ref uint8 pbInput, uint32 cbInput, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptImportKeyPair(BCRYPT_ALG_HANDLE hAlgorithm, BCRYPT_KEY_HANDLE hImportKey, PWSTR pszBlobType, BCRYPT_KEY_HANDLE* phKey, uint8* pbInput, uint32 cbInput, uint32 dwFlags);
+		public static extern NTSTATUS BCryptImportKeyPair(BCRYPT_ALG_HANDLE hAlgorithm, BCRYPT_KEY_HANDLE hImportKey, PWSTR pszBlobType, out BCRYPT_KEY_HANDLE phKey, ref uint8 pbInput, uint32 cbInput, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptDuplicateKey(BCRYPT_KEY_HANDLE hKey, BCRYPT_KEY_HANDLE* phNewKey, uint8* pbKeyObject, uint32 cbKeyObject, uint32 dwFlags);
+		public static extern NTSTATUS BCryptDuplicateKey(BCRYPT_KEY_HANDLE hKey, out BCRYPT_KEY_HANDLE phNewKey, uint8* pbKeyObject, uint32 cbKeyObject, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptFinalizeKeyPair(BCRYPT_KEY_HANDLE hKey, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6149,21 +6149,21 @@ namespace Win32
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptDestroySecret(void* hSecret);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptSignHash(BCRYPT_KEY_HANDLE hKey, void* pPaddingInfo, uint8* pbInput, uint32 cbInput, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult, NCRYPT_FLAGS dwFlags);
+		public static extern NTSTATUS BCryptSignHash(BCRYPT_KEY_HANDLE hKey, void* pPaddingInfo, ref uint8 pbInput, uint32 cbInput, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptVerifySignature(BCRYPT_KEY_HANDLE hKey, void* pPaddingInfo, uint8* pbHash, uint32 cbHash, uint8* pbSignature, uint32 cbSignature, NCRYPT_FLAGS dwFlags);
+		public static extern NTSTATUS BCryptVerifySignature(BCRYPT_KEY_HANDLE hKey, void* pPaddingInfo, ref uint8 pbHash, uint32 cbHash, ref uint8 pbSignature, uint32 cbSignature, NCRYPT_FLAGS dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptSecretAgreement(BCRYPT_KEY_HANDLE hPrivKey, BCRYPT_KEY_HANDLE hPubKey, void** phAgreedSecret, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptDeriveKey(void* hSharedSecret, PWSTR pwszKDF, BCryptBufferDesc* pParameterList, uint8* pbDerivedKey, uint32 cbDerivedKey, uint32* pcbResult, uint32 dwFlags);
+		public static extern NTSTATUS BCryptDeriveKey(void* hSharedSecret, PWSTR pwszKDF, BCryptBufferDesc* pParameterList, uint8* pbDerivedKey, uint32 cbDerivedKey, out uint32 pcbResult, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptKeyDerivation(BCRYPT_KEY_HANDLE hKey, BCryptBufferDesc* pParameterList, uint8* pbDerivedKey, uint32 cbDerivedKey, uint32* pcbResult, uint32 dwFlags);
+		public static extern NTSTATUS BCryptKeyDerivation(BCRYPT_KEY_HANDLE hKey, BCryptBufferDesc* pParameterList, out uint8 pbDerivedKey, uint32 cbDerivedKey, out uint32 pcbResult, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptCreateHash(BCRYPT_ALG_HANDLE hAlgorithm, void** phHash, uint8* pbHashObject, uint32 cbHashObject, uint8* pbSecret, uint32 cbSecret, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptHashData(void* hHash, uint8* pbInput, uint32 cbInput, uint32 dwFlags);
+		public static extern NTSTATUS BCryptHashData(void* hHash, ref uint8 pbInput, uint32 cbInput, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptFinishHash(void* hHash, uint8* pbOutput, uint32 cbOutput, uint32 dwFlags);
+		public static extern NTSTATUS BCryptFinishHash(void* hHash, out uint8 pbOutput, uint32 cbOutput, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptCreateMultiHash(BCRYPT_ALG_HANDLE hAlgorithm, void** phHash, uint32 nHashes, uint8* pbHashObject, uint32 cbHashObject, uint8* pbSecret, uint32 cbSecret, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6173,85 +6173,85 @@ namespace Win32
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptDestroyHash(void* hHash);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptHash(BCRYPT_ALG_HANDLE hAlgorithm, uint8* pbSecret, uint32 cbSecret, uint8* pbInput, uint32 cbInput, uint8* pbOutput, uint32 cbOutput);
+		public static extern NTSTATUS BCryptHash(BCRYPT_ALG_HANDLE hAlgorithm, uint8* pbSecret, uint32 cbSecret, ref uint8 pbInput, uint32 cbInput, out uint8 pbOutput, uint32 cbOutput);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptGenRandom(BCRYPT_ALG_HANDLE hAlgorithm, uint8* pbBuffer, uint32 cbBuffer, uint32 dwFlags);
+		public static extern NTSTATUS BCryptGenRandom(BCRYPT_ALG_HANDLE hAlgorithm, out uint8 pbBuffer, uint32 cbBuffer, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptDeriveKeyCapi(void* hHash, BCRYPT_ALG_HANDLE hTargetAlg, uint8* pbDerivedKey, uint32 cbDerivedKey, uint32 dwFlags);
+		public static extern NTSTATUS BCryptDeriveKeyCapi(void* hHash, BCRYPT_ALG_HANDLE hTargetAlg, out uint8 pbDerivedKey, uint32 cbDerivedKey, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptDeriveKeyPBKDF2(BCRYPT_ALG_HANDLE hPrf, uint8* pbPassword, uint32 cbPassword, uint8* pbSalt, uint32 cbSalt, uint64 cIterations, uint8* pbDerivedKey, uint32 cbDerivedKey, uint32 dwFlags);
+		public static extern NTSTATUS BCryptDeriveKeyPBKDF2(BCRYPT_ALG_HANDLE hPrf, uint8* pbPassword, uint32 cbPassword, uint8* pbSalt, uint32 cbSalt, uint64 cIterations, out uint8 pbDerivedKey, uint32 cbDerivedKey, uint32 dwFlags);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptQueryProviderRegistration(PWSTR pszProvider, BCRYPT_QUERY_PROVIDER_MODE dwMode, BCRYPT_INTERFACE dwInterface, uint32* pcbBuffer, CRYPT_PROVIDER_REG** ppBuffer);
+		public static extern NTSTATUS BCryptQueryProviderRegistration(PWSTR pszProvider, BCRYPT_QUERY_PROVIDER_MODE dwMode, BCRYPT_INTERFACE dwInterface, out uint32 pcbBuffer, out CRYPT_PROVIDER_REG* ppBuffer);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptEnumRegisteredProviders(uint32* pcbBuffer, CRYPT_PROVIDERS** ppBuffer);
+		public static extern NTSTATUS BCryptEnumRegisteredProviders(out uint32 pcbBuffer, out CRYPT_PROVIDERS* ppBuffer);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptCreateContext(BCRYPT_TABLE dwTable, PWSTR pszContext, CRYPT_CONTEXT_CONFIG* pConfig);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptDeleteContext(BCRYPT_TABLE dwTable, PWSTR pszContext);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptEnumContexts(BCRYPT_TABLE dwTable, uint32* pcbBuffer, CRYPT_CONTEXTS** ppBuffer);
+		public static extern NTSTATUS BCryptEnumContexts(BCRYPT_TABLE dwTable, out uint32 pcbBuffer, out CRYPT_CONTEXTS* ppBuffer);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptConfigureContext(BCRYPT_TABLE dwTable, PWSTR pszContext, CRYPT_CONTEXT_CONFIG* pConfig);
+		public static extern NTSTATUS BCryptConfigureContext(BCRYPT_TABLE dwTable, PWSTR pszContext, ref CRYPT_CONTEXT_CONFIG pConfig);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptQueryContextConfiguration(BCRYPT_TABLE dwTable, PWSTR pszContext, uint32* pcbBuffer, CRYPT_CONTEXT_CONFIG** ppBuffer);
+		public static extern NTSTATUS BCryptQueryContextConfiguration(BCRYPT_TABLE dwTable, PWSTR pszContext, out uint32 pcbBuffer, out CRYPT_CONTEXT_CONFIG* ppBuffer);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptAddContextFunction(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, uint32 dwPosition);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptRemoveContextFunction(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptEnumContextFunctions(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, uint32* pcbBuffer, CRYPT_CONTEXT_FUNCTIONS** ppBuffer);
+		public static extern NTSTATUS BCryptEnumContextFunctions(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, out uint32 pcbBuffer, out CRYPT_CONTEXT_FUNCTIONS* ppBuffer);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptConfigureContextFunction(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, CRYPT_CONTEXT_FUNCTION_CONFIG* pConfig);
+		public static extern NTSTATUS BCryptConfigureContextFunction(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, ref CRYPT_CONTEXT_FUNCTION_CONFIG pConfig);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptQueryContextFunctionConfiguration(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, uint32* pcbBuffer, CRYPT_CONTEXT_FUNCTION_CONFIG** ppBuffer);
+		public static extern NTSTATUS BCryptQueryContextFunctionConfiguration(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, out uint32 pcbBuffer, out CRYPT_CONTEXT_FUNCTION_CONFIG* ppBuffer);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptEnumContextFunctionProviders(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, uint32* pcbBuffer, CRYPT_CONTEXT_FUNCTION_PROVIDERS** ppBuffer);
+		public static extern NTSTATUS BCryptEnumContextFunctionProviders(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, out uint32 pcbBuffer, out CRYPT_CONTEXT_FUNCTION_PROVIDERS* ppBuffer);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptSetContextFunctionProperty(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, PWSTR pszProperty, uint32 cbValue, uint8* pbValue);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptQueryContextFunctionProperty(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, PWSTR pszProperty, uint32* pcbValue, uint8** ppbValue);
+		public static extern NTSTATUS BCryptQueryContextFunctionProperty(BCRYPT_TABLE dwTable, PWSTR pszContext, BCRYPT_INTERFACE dwInterface, PWSTR pszFunction, PWSTR pszProperty, out uint32 pcbValue, out uint8* ppbValue);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptRegisterConfigChangeNotify(HANDLE* phEvent);
+		public static extern NTSTATUS BCryptRegisterConfigChangeNotify(out HANDLE phEvent);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern NTSTATUS BCryptUnregisterConfigChangeNotify(HANDLE hEvent);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptResolveProviders(PWSTR pszContext, uint32 dwInterface, PWSTR pszFunction, PWSTR pszProvider, BCRYPT_QUERY_PROVIDER_MODE dwMode, BCRYPT_RESOLVE_PROVIDERS_FLAGS dwFlags, uint32* pcbBuffer, CRYPT_PROVIDER_REFS** ppBuffer);
+		public static extern NTSTATUS BCryptResolveProviders(PWSTR pszContext, uint32 dwInterface, PWSTR pszFunction, PWSTR pszProvider, BCRYPT_QUERY_PROVIDER_MODE dwMode, BCRYPT_RESOLVE_PROVIDERS_FLAGS dwFlags, out uint32 pcbBuffer, out CRYPT_PROVIDER_REFS* ppBuffer);
 		[Import("bcrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS BCryptGetFipsAlgorithmMode(uint8* pfEnabled);
+		public static extern NTSTATUS BCryptGetFipsAlgorithmMode(out uint8 pfEnabled);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptOpenStorageProvider(uint* phProvider, PWSTR pszProviderName, uint32 dwFlags);
+		public static extern int32 NCryptOpenStorageProvider(out uint phProvider, PWSTR pszProviderName, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptEnumAlgorithms(uint hProvider, NCRYPT_OPERATION dwAlgOperations, uint32* pdwAlgCount, NCryptAlgorithmName** ppAlgList, uint32 dwFlags);
+		public static extern int32 NCryptEnumAlgorithms(uint hProvider, NCRYPT_OPERATION dwAlgOperations, out uint32 pdwAlgCount, out NCryptAlgorithmName* ppAlgList, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NCryptIsAlgSupported(uint hProvider, PWSTR pszAlgId, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptEnumKeys(uint hProvider, PWSTR pszScope, NCryptKeyName** ppKeyName, void** ppEnumState, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptEnumKeys(uint hProvider, PWSTR pszScope, out NCryptKeyName* ppKeyName, void** ppEnumState, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptEnumStorageProviders(uint32* pdwProviderCount, NCryptProviderName** ppProviderList, uint32 dwFlags);
+		public static extern int32 NCryptEnumStorageProviders(out uint32 pdwProviderCount, out NCryptProviderName* ppProviderList, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NCryptFreeBuffer(void* pvInput);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptOpenKey(uint hProvider, uint* phKey, PWSTR pszKeyName, CERT_KEY_SPEC dwLegacyKeySpec, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptOpenKey(uint hProvider, out uint phKey, PWSTR pszKeyName, CERT_KEY_SPEC dwLegacyKeySpec, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptCreatePersistedKey(uint hProvider, uint* phKey, PWSTR pszAlgId, PWSTR pszKeyName, CERT_KEY_SPEC dwLegacyKeySpec, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptCreatePersistedKey(uint hProvider, out uint phKey, PWSTR pszAlgId, PWSTR pszKeyName, CERT_KEY_SPEC dwLegacyKeySpec, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptGetProperty(uint hObject, PWSTR pszProperty, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult, OBJECT_SECURITY_INFORMATION dwFlags);
+		public static extern int32 NCryptGetProperty(uint hObject, PWSTR pszProperty, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, OBJECT_SECURITY_INFORMATION dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptSetProperty(uint hObject, PWSTR pszProperty, uint8* pbInput, uint32 cbInput, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptSetProperty(uint hObject, PWSTR pszProperty, ref uint8 pbInput, uint32 cbInput, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NCryptFinalizeKey(uint hKey, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptEncrypt(uint hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptEncrypt(uint hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptDecrypt(uint hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptDecrypt(uint hKey, uint8* pbInput, uint32 cbInput, void* pPaddingInfo, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptImportKey(uint hProvider, uint hImportKey, PWSTR pszBlobType, BCryptBufferDesc* pParameterList, uint* phKey, uint8* pbData, uint32 cbData, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptImportKey(uint hProvider, uint hImportKey, PWSTR pszBlobType, BCryptBufferDesc* pParameterList, out uint phKey, ref uint8 pbData, uint32 cbData, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptExportKey(uint hKey, uint hExportKey, PWSTR pszBlobType, BCryptBufferDesc* pParameterList, uint8* pbOutput, uint32 cbOutput, uint32* pcbResult, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptExportKey(uint hKey, uint hExportKey, PWSTR pszBlobType, BCryptBufferDesc* pParameterList, uint8* pbOutput, uint32 cbOutput, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptSignHash(uint hKey, void* pPaddingInfo, uint8* pbHashValue, uint32 cbHashValue, uint8* pbSignature, uint32 cbSignature, uint32* pcbResult, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptSignHash(uint hKey, void* pPaddingInfo, ref uint8 pbHashValue, uint32 cbHashValue, uint8* pbSignature, uint32 cbSignature, out uint32 pcbResult, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptVerifySignature(uint hKey, void* pPaddingInfo, uint8* pbHashValue, uint32 cbHashValue, uint8* pbSignature, uint32 cbSignature, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptVerifySignature(uint hKey, void* pPaddingInfo, ref uint8 pbHashValue, uint32 cbHashValue, ref uint8 pbSignature, uint32 cbSignature, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NCryptDeleteKey(uint hKey, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6259,29 +6259,29 @@ namespace Win32
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL NCryptIsKeyHandle(uint hKey);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptTranslateHandle(uint* phProvider, uint* phKey, uint hLegacyProv, uint hLegacyKey, CERT_KEY_SPEC dwLegacyKeySpec, uint32 dwFlags);
+		public static extern int32 NCryptTranslateHandle(uint* phProvider, out uint phKey, uint hLegacyProv, uint hLegacyKey, CERT_KEY_SPEC dwLegacyKeySpec, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptNotifyChangeKey(uint hProvider, HANDLE* phEvent, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptNotifyChangeKey(uint hProvider, out HANDLE phEvent, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptSecretAgreement(uint hPrivKey, uint hPubKey, uint* phAgreedSecret, NCRYPT_FLAGS dwFlags);
+		public static extern int32 NCryptSecretAgreement(uint hPrivKey, uint hPubKey, out uint phAgreedSecret, NCRYPT_FLAGS dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptDeriveKey(uint hSharedSecret, PWSTR pwszKDF, BCryptBufferDesc* pParameterList, uint8* pbDerivedKey, uint32 cbDerivedKey, uint32* pcbResult, uint32 dwFlags);
+		public static extern int32 NCryptDeriveKey(uint hSharedSecret, PWSTR pwszKDF, BCryptBufferDesc* pParameterList, uint8* pbDerivedKey, uint32 cbDerivedKey, out uint32 pcbResult, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptKeyDerivation(uint hKey, BCryptBufferDesc* pParameterList, uint8* pbDerivedKey, uint32 cbDerivedKey, uint32* pcbResult, uint32 dwFlags);
+		public static extern int32 NCryptKeyDerivation(uint hKey, BCryptBufferDesc* pParameterList, out uint8 pbDerivedKey, uint32 cbDerivedKey, out uint32 pcbResult, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptCreateClaim(uint hSubjectKey, uint hAuthorityKey, uint32 dwClaimType, BCryptBufferDesc* pParameterList, uint8* pbClaimBlob, uint32 cbClaimBlob, uint32* pcbResult, uint32 dwFlags);
+		public static extern int32 NCryptCreateClaim(uint hSubjectKey, uint hAuthorityKey, uint32 dwClaimType, BCryptBufferDesc* pParameterList, uint8* pbClaimBlob, uint32 cbClaimBlob, out uint32 pcbResult, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptVerifyClaim(uint hSubjectKey, uint hAuthorityKey, uint32 dwClaimType, BCryptBufferDesc* pParameterList, uint8* pbClaimBlob, uint32 cbClaimBlob, BCryptBufferDesc* pOutput, uint32 dwFlags);
+		public static extern int32 NCryptVerifyClaim(uint hSubjectKey, uint hAuthorityKey, uint32 dwClaimType, BCryptBufferDesc* pParameterList, ref uint8 pbClaimBlob, uint32 cbClaimBlob, out BCryptBufferDesc pOutput, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptFormatObject(uint32 dwCertEncodingType, uint32 dwFormatType, uint32 dwFormatStrType, void* pFormatStruct, PSTR lpszStructType, uint8* pbEncoded, uint32 cbEncoded, void* pbFormat, uint32* pcbFormat);
+		public static extern BOOL CryptFormatObject(uint32 dwCertEncodingType, uint32 dwFormatType, uint32 dwFormatStrType, void* pFormatStruct, PSTR lpszStructType, in uint8 pbEncoded, uint32 cbEncoded, void* pbFormat, out uint32 pcbFormat);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptEncodeObjectEx(CERT_QUERY_ENCODING_TYPE dwCertEncodingType, PSTR lpszStructType, void* pvStructInfo, CRYPT_ENCODE_OBJECT_FLAGS dwFlags, CRYPT_ENCODE_PARA* pEncodePara, void* pvEncoded, uint32* pcbEncoded);
+		public static extern BOOL CryptEncodeObjectEx(CERT_QUERY_ENCODING_TYPE dwCertEncodingType, PSTR lpszStructType, void* pvStructInfo, CRYPT_ENCODE_OBJECT_FLAGS dwFlags, CRYPT_ENCODE_PARA* pEncodePara, void* pvEncoded, out uint32 pcbEncoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptEncodeObject(uint32 dwCertEncodingType, PSTR lpszStructType, void* pvStructInfo, uint8* pbEncoded, uint32* pcbEncoded);
+		public static extern BOOL CryptEncodeObject(uint32 dwCertEncodingType, PSTR lpszStructType, void* pvStructInfo, uint8* pbEncoded, out uint32 pcbEncoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptDecodeObjectEx(uint32 dwCertEncodingType, PSTR lpszStructType, uint8* pbEncoded, uint32 cbEncoded, uint32 dwFlags, CRYPT_DECODE_PARA* pDecodePara, void* pvStructInfo, uint32* pcbStructInfo);
+		public static extern BOOL CryptDecodeObjectEx(uint32 dwCertEncodingType, PSTR lpszStructType, in uint8 pbEncoded, uint32 cbEncoded, uint32 dwFlags, CRYPT_DECODE_PARA* pDecodePara, void* pvStructInfo, out uint32 pcbStructInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptDecodeObject(uint32 dwCertEncodingType, PSTR lpszStructType, uint8* pbEncoded, uint32 cbEncoded, uint32 dwFlags, void* pvStructInfo, uint32* pcbStructInfo);
+		public static extern BOOL CryptDecodeObject(uint32 dwCertEncodingType, PSTR lpszStructType, in uint8 pbEncoded, uint32 cbEncoded, uint32 dwFlags, void* pvStructInfo, out uint32 pcbStructInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptInstallOIDFunctionAddress(HINSTANCE hModule, uint32 dwEncodingType, PSTR pszFuncName, uint32 cFuncEntry, CRYPT_OID_FUNC_ENTRY* rgFuncEntry, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6289,7 +6289,7 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptGetOIDFunctionAddress(void* hFuncSet, uint32 dwEncodingType, PSTR pszOID, uint32 dwFlags, void** ppvFuncAddr, void** phFuncAddr);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGetDefaultOIDDllList(void* hFuncSet, uint32 dwEncodingType, char16* pwszDllList, uint32* pcchDllList);
+		public static extern BOOL CryptGetDefaultOIDDllList(void* hFuncSet, uint32 dwEncodingType, char16* pwszDllList, out uint32 pcchDllList);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptGetDefaultOIDFunctionAddress(void* hFuncSet, uint32 dwEncodingType, PWSTR pwszDll, uint32 dwFlags, void** ppvFuncAddr, void** phFuncAddr);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6311,9 +6311,9 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CRYPT_OID_INFO* CryptFindOIDInfo(uint32 dwKeyType, void* pvKey, uint32 dwGroupId);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptRegisterOIDInfo(CRYPT_OID_INFO* pInfo, uint32 dwFlags);
+		public static extern BOOL CryptRegisterOIDInfo(ref CRYPT_OID_INFO pInfo, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptUnregisterOIDInfo(CRYPT_OID_INFO* pInfo);
+		public static extern BOOL CryptUnregisterOIDInfo(ref CRYPT_OID_INFO pInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptEnumOIDInfo(uint32 dwGroupId, uint32 dwFlags, void* pvArg, PFN_CRYPT_ENUM_OID_INFO pfnEnumOIDInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6323,7 +6323,7 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CryptMsgCalculateEncodedLength(uint32 dwMsgEncodingType, uint32 dwFlags, uint32 dwMsgType, void* pvMsgEncodeInfo, PSTR pszInnerContentObjID, uint32 cbData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* CryptMsgOpenToDecode(uint32 dwMsgEncodingType, uint32 dwFlags, uint32 dwMsgType, uint hCryptProv, CERT_INFO* pRecipientInfo, CMSG_STREAM_INFO* pStreamInfo);
+		public static extern void* CryptMsgOpenToDecode(uint32 dwMsgEncodingType, uint32 dwFlags, uint32 dwMsgType, uint hCryptProv, out CERT_INFO pRecipientInfo, CMSG_STREAM_INFO* pStreamInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* CryptMsgDuplicate(void* hCryptMsg);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6331,17 +6331,17 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptMsgUpdate(void* hCryptMsg, uint8* pbData, uint32 cbData, BOOL fFinal);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptMsgGetParam(void* hCryptMsg, uint32 dwParamType, uint32 dwIndex, void* pvData, uint32* pcbData);
+		public static extern BOOL CryptMsgGetParam(void* hCryptMsg, uint32 dwParamType, uint32 dwIndex, void* pvData, out uint32 pcbData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptMsgControl(void* hCryptMsg, uint32 dwFlags, uint32 dwCtrlType, void* pvCtrlPara);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptMsgVerifyCountersignatureEncoded(uint hCryptProv, uint32 dwEncodingType, uint8* pbSignerInfo, uint32 cbSignerInfo, uint8* pbSignerInfoCountersignature, uint32 cbSignerInfoCountersignature, CERT_INFO* pciCountersigner);
+		public static extern BOOL CryptMsgVerifyCountersignatureEncoded(uint hCryptProv, uint32 dwEncodingType, ref uint8 pbSignerInfo, uint32 cbSignerInfo, ref uint8 pbSignerInfoCountersignature, uint32 cbSignerInfoCountersignature, ref CERT_INFO pciCountersigner);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptMsgVerifyCountersignatureEncodedEx(uint hCryptProv, uint32 dwEncodingType, uint8* pbSignerInfo, uint32 cbSignerInfo, uint8* pbSignerInfoCountersignature, uint32 cbSignerInfoCountersignature, uint32 dwSignerType, void* pvSigner, uint32 dwFlags, void* pvExtra);
+		public static extern BOOL CryptMsgVerifyCountersignatureEncodedEx(uint hCryptProv, uint32 dwEncodingType, ref uint8 pbSignerInfo, uint32 cbSignerInfo, ref uint8 pbSignerInfoCountersignature, uint32 cbSignerInfoCountersignature, uint32 dwSignerType, void* pvSigner, uint32 dwFlags, void* pvExtra);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptMsgCountersign(void* hCryptMsg, uint32 dwIndex, uint32 cCountersigners, CMSG_SIGNER_ENCODE_INFO* rgCountersigners);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptMsgCountersignEncoded(uint32 dwEncodingType, uint8* pbSignerInfo, uint32 cbSignerInfo, uint32 cCountersigners, CMSG_SIGNER_ENCODE_INFO* rgCountersigners, uint8* pbCountersignature, uint32* pcbCountersignature);
+		public static extern BOOL CryptMsgCountersignEncoded(uint32 dwEncodingType, ref uint8 pbSignerInfo, uint32 cbSignerInfo, uint32 cCountersigners, CMSG_SIGNER_ENCODE_INFO* rgCountersigners, uint8* pbCountersignature, out uint32 pcbCountersignature);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* CertOpenStore(PSTR lpszStoreProvider, CERT_QUERY_ENCODING_TYPE dwEncodingType, uint hCryptProv, CERT_OPEN_STORE_FLAGS dwFlags, void* pvPara);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6351,33 +6351,33 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertCloseStore(void* hCertStore, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CERT_CONTEXT* CertGetSubjectCertificateFromStore(void* hCertStore, uint32 dwCertEncodingType, CERT_INFO* pCertId);
+		public static extern CERT_CONTEXT* CertGetSubjectCertificateFromStore(void* hCertStore, uint32 dwCertEncodingType, ref CERT_INFO pCertId);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CERT_CONTEXT* CertEnumCertificatesInStore(void* hCertStore, CERT_CONTEXT* pPrevCertContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CERT_CONTEXT* CertFindCertificateInStore(void* hCertStore, uint32 dwCertEncodingType, uint32 dwFindFlags, CERT_FIND_FLAGS dwFindType, void* pvFindPara, CERT_CONTEXT* pPrevCertContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CERT_CONTEXT* CertGetIssuerCertificateFromStore(void* hCertStore, CERT_CONTEXT* pSubjectContext, CERT_CONTEXT* pPrevIssuerContext, uint32* pdwFlags);
+		public static extern CERT_CONTEXT* CertGetIssuerCertificateFromStore(void* hCertStore, in CERT_CONTEXT pSubjectContext, CERT_CONTEXT* pPrevIssuerContext, out uint32 pdwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertVerifySubjectCertificateContext(CERT_CONTEXT* pSubject, CERT_CONTEXT* pIssuer, uint32* pdwFlags);
+		public static extern BOOL CertVerifySubjectCertificateContext(in CERT_CONTEXT pSubject, CERT_CONTEXT* pIssuer, out uint32 pdwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CERT_CONTEXT* CertDuplicateCertificateContext(CERT_CONTEXT* pCertContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CERT_CONTEXT* CertCreateCertificateContext(uint32 dwCertEncodingType, uint8* pbCertEncoded, uint32 cbCertEncoded);
+		public static extern CERT_CONTEXT* CertCreateCertificateContext(uint32 dwCertEncodingType, in uint8 pbCertEncoded, uint32 cbCertEncoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertFreeCertificateContext(CERT_CONTEXT* pCertContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertSetCertificateContextProperty(CERT_CONTEXT* pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
+		public static extern BOOL CertSetCertificateContextProperty(in CERT_CONTEXT pCertContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertGetCertificateContextProperty(CERT_CONTEXT* pCertContext, uint32 dwPropId, void* pvData, uint32* pcbData);
+		public static extern BOOL CertGetCertificateContextProperty(in CERT_CONTEXT pCertContext, uint32 dwPropId, void* pvData, out uint32 pcbData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertEnumCertificateContextProperties(CERT_CONTEXT* pCertContext, uint32 dwPropId);
+		public static extern uint32 CertEnumCertificateContextProperties(in CERT_CONTEXT pCertContext, uint32 dwPropId);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertCreateCTLEntryFromCertificateContextProperties(CERT_CONTEXT* pCertContext, uint32 cOptAttr, CRYPT_ATTRIBUTE* rgOptAttr, uint32 dwFlags, void* pvReserved, CTL_ENTRY* pCtlEntry, uint32* pcbCtlEntry);
+		public static extern BOOL CertCreateCTLEntryFromCertificateContextProperties(in CERT_CONTEXT pCertContext, uint32 cOptAttr, CRYPT_ATTRIBUTE* rgOptAttr, uint32 dwFlags, void* pvReserved, CTL_ENTRY* pCtlEntry, out uint32 pcbCtlEntry);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertSetCertificateContextPropertiesFromCTLEntry(CERT_CONTEXT* pCertContext, CTL_ENTRY* pCtlEntry, uint32 dwFlags);
+		public static extern BOOL CertSetCertificateContextPropertiesFromCTLEntry(in CERT_CONTEXT pCertContext, ref CTL_ENTRY pCtlEntry, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CRL_CONTEXT* CertGetCRLFromStore(void* hCertStore, CERT_CONTEXT* pIssuerContext, CRL_CONTEXT* pPrevCrlContext, uint32* pdwFlags);
+		public static extern CRL_CONTEXT* CertGetCRLFromStore(void* hCertStore, CERT_CONTEXT* pIssuerContext, CRL_CONTEXT* pPrevCrlContext, out uint32 pdwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CRL_CONTEXT* CertEnumCRLsInStore(void* hCertStore, CRL_CONTEXT* pPrevCrlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6385,69 +6385,69 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CRL_CONTEXT* CertDuplicateCRLContext(CRL_CONTEXT* pCrlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CRL_CONTEXT* CertCreateCRLContext(uint32 dwCertEncodingType, uint8* pbCrlEncoded, uint32 cbCrlEncoded);
+		public static extern CRL_CONTEXT* CertCreateCRLContext(uint32 dwCertEncodingType, in uint8 pbCrlEncoded, uint32 cbCrlEncoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertFreeCRLContext(CRL_CONTEXT* pCrlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertSetCRLContextProperty(CRL_CONTEXT* pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
+		public static extern BOOL CertSetCRLContextProperty(ref CRL_CONTEXT pCrlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertGetCRLContextProperty(CRL_CONTEXT* pCrlContext, uint32 dwPropId, void* pvData, uint32* pcbData);
+		public static extern BOOL CertGetCRLContextProperty(ref CRL_CONTEXT pCrlContext, uint32 dwPropId, void* pvData, out uint32 pcbData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertEnumCRLContextProperties(CRL_CONTEXT* pCrlContext, uint32 dwPropId);
+		public static extern uint32 CertEnumCRLContextProperties(ref CRL_CONTEXT pCrlContext, uint32 dwPropId);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertFindCertificateInCRL(CERT_CONTEXT* pCert, CRL_CONTEXT* pCrlContext, uint32 dwFlags, void* pvReserved, CRL_ENTRY** ppCrlEntry);
+		public static extern BOOL CertFindCertificateInCRL(in CERT_CONTEXT pCert, ref CRL_CONTEXT pCrlContext, uint32 dwFlags, void* pvReserved, CRL_ENTRY** ppCrlEntry);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertIsValidCRLForCertificate(CERT_CONTEXT* pCert, CRL_CONTEXT* pCrl, uint32 dwFlags, void* pvReserved);
+		public static extern BOOL CertIsValidCRLForCertificate(in CERT_CONTEXT pCert, ref CRL_CONTEXT pCrl, uint32 dwFlags, void* pvReserved);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddEncodedCertificateToStore(void* hCertStore, uint32 dwCertEncodingType, uint8* pbCertEncoded, uint32 cbCertEncoded, uint32 dwAddDisposition, CERT_CONTEXT** ppCertContext);
+		public static extern BOOL CertAddEncodedCertificateToStore(void* hCertStore, uint32 dwCertEncodingType, in uint8 pbCertEncoded, uint32 cbCertEncoded, uint32 dwAddDisposition, CERT_CONTEXT** ppCertContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddCertificateContextToStore(void* hCertStore, CERT_CONTEXT* pCertContext, uint32 dwAddDisposition, CERT_CONTEXT** ppStoreContext);
+		public static extern BOOL CertAddCertificateContextToStore(void* hCertStore, in CERT_CONTEXT pCertContext, uint32 dwAddDisposition, CERT_CONTEXT** ppStoreContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddSerializedElementToStore(void* hCertStore, uint8* pbElement, uint32 cbElement, uint32 dwAddDisposition, uint32 dwFlags, uint32 dwContextTypeFlags, uint32* pdwContextType, void** ppvContext);
+		public static extern BOOL CertAddSerializedElementToStore(void* hCertStore, in uint8 pbElement, uint32 cbElement, uint32 dwAddDisposition, uint32 dwFlags, uint32 dwContextTypeFlags, uint32* pdwContextType, void** ppvContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertDeleteCertificateFromStore(CERT_CONTEXT* pCertContext);
+		public static extern BOOL CertDeleteCertificateFromStore(in CERT_CONTEXT pCertContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddEncodedCRLToStore(void* hCertStore, uint32 dwCertEncodingType, uint8* pbCrlEncoded, uint32 cbCrlEncoded, uint32 dwAddDisposition, CRL_CONTEXT** ppCrlContext);
+		public static extern BOOL CertAddEncodedCRLToStore(void* hCertStore, uint32 dwCertEncodingType, in uint8 pbCrlEncoded, uint32 cbCrlEncoded, uint32 dwAddDisposition, CRL_CONTEXT** ppCrlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddCRLContextToStore(void* hCertStore, CRL_CONTEXT* pCrlContext, uint32 dwAddDisposition, CRL_CONTEXT** ppStoreContext);
+		public static extern BOOL CertAddCRLContextToStore(void* hCertStore, ref CRL_CONTEXT pCrlContext, uint32 dwAddDisposition, CRL_CONTEXT** ppStoreContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertDeleteCRLFromStore(CRL_CONTEXT* pCrlContext);
+		public static extern BOOL CertDeleteCRLFromStore(ref CRL_CONTEXT pCrlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertSerializeCertificateStoreElement(CERT_CONTEXT* pCertContext, uint32 dwFlags, uint8* pbElement, uint32* pcbElement);
+		public static extern BOOL CertSerializeCertificateStoreElement(in CERT_CONTEXT pCertContext, uint32 dwFlags, uint8* pbElement, out uint32 pcbElement);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertSerializeCRLStoreElement(CRL_CONTEXT* pCrlContext, uint32 dwFlags, uint8* pbElement, uint32* pcbElement);
+		public static extern BOOL CertSerializeCRLStoreElement(ref CRL_CONTEXT pCrlContext, uint32 dwFlags, uint8* pbElement, out uint32 pcbElement);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CTL_CONTEXT* CertDuplicateCTLContext(CTL_CONTEXT* pCtlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CTL_CONTEXT* CertCreateCTLContext(uint32 dwMsgAndCertEncodingType, uint8* pbCtlEncoded, uint32 cbCtlEncoded);
+		public static extern CTL_CONTEXT* CertCreateCTLContext(uint32 dwMsgAndCertEncodingType, in uint8 pbCtlEncoded, uint32 cbCtlEncoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertFreeCTLContext(CTL_CONTEXT* pCtlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertSetCTLContextProperty(CTL_CONTEXT* pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
+		public static extern BOOL CertSetCTLContextProperty(ref CTL_CONTEXT pCtlContext, uint32 dwPropId, uint32 dwFlags, void* pvData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertGetCTLContextProperty(CTL_CONTEXT* pCtlContext, uint32 dwPropId, void* pvData, uint32* pcbData);
+		public static extern BOOL CertGetCTLContextProperty(ref CTL_CONTEXT pCtlContext, uint32 dwPropId, void* pvData, out uint32 pcbData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertEnumCTLContextProperties(CTL_CONTEXT* pCtlContext, uint32 dwPropId);
+		public static extern uint32 CertEnumCTLContextProperties(ref CTL_CONTEXT pCtlContext, uint32 dwPropId);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CTL_CONTEXT* CertEnumCTLsInStore(void* hCertStore, CTL_CONTEXT* pPrevCtlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CTL_ENTRY* CertFindSubjectInCTL(uint32 dwEncodingType, uint32 dwSubjectType, void* pvSubject, CTL_CONTEXT* pCtlContext, uint32 dwFlags);
+		public static extern CTL_ENTRY* CertFindSubjectInCTL(uint32 dwEncodingType, uint32 dwSubjectType, void* pvSubject, ref CTL_CONTEXT pCtlContext, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CTL_CONTEXT* CertFindCTLInStore(void* hCertStore, uint32 dwMsgAndCertEncodingType, uint32 dwFindFlags, CERT_FIND_TYPE dwFindType, void* pvFindPara, CTL_CONTEXT* pPrevCtlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddEncodedCTLToStore(void* hCertStore, uint32 dwMsgAndCertEncodingType, uint8* pbCtlEncoded, uint32 cbCtlEncoded, uint32 dwAddDisposition, CTL_CONTEXT** ppCtlContext);
+		public static extern BOOL CertAddEncodedCTLToStore(void* hCertStore, uint32 dwMsgAndCertEncodingType, in uint8 pbCtlEncoded, uint32 cbCtlEncoded, uint32 dwAddDisposition, CTL_CONTEXT** ppCtlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddCTLContextToStore(void* hCertStore, CTL_CONTEXT* pCtlContext, uint32 dwAddDisposition, CTL_CONTEXT** ppStoreContext);
+		public static extern BOOL CertAddCTLContextToStore(void* hCertStore, ref CTL_CONTEXT pCtlContext, uint32 dwAddDisposition, CTL_CONTEXT** ppStoreContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertSerializeCTLStoreElement(CTL_CONTEXT* pCtlContext, uint32 dwFlags, uint8* pbElement, uint32* pcbElement);
+		public static extern BOOL CertSerializeCTLStoreElement(ref CTL_CONTEXT pCtlContext, uint32 dwFlags, uint8* pbElement, out uint32 pcbElement);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertDeleteCTLFromStore(CTL_CONTEXT* pCtlContext);
+		public static extern BOOL CertDeleteCTLFromStore(ref CTL_CONTEXT pCtlContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddCertificateLinkToStore(void* hCertStore, CERT_CONTEXT* pCertContext, uint32 dwAddDisposition, CERT_CONTEXT** ppStoreContext);
+		public static extern BOOL CertAddCertificateLinkToStore(void* hCertStore, in CERT_CONTEXT pCertContext, uint32 dwAddDisposition, CERT_CONTEXT** ppStoreContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddCRLLinkToStore(void* hCertStore, CRL_CONTEXT* pCrlContext, uint32 dwAddDisposition, CRL_CONTEXT** ppStoreContext);
+		public static extern BOOL CertAddCRLLinkToStore(void* hCertStore, ref CRL_CONTEXT pCrlContext, uint32 dwAddDisposition, CRL_CONTEXT** ppStoreContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddCTLLinkToStore(void* hCertStore, CTL_CONTEXT* pCtlContext, uint32 dwAddDisposition, CTL_CONTEXT** ppStoreContext);
+		public static extern BOOL CertAddCTLLinkToStore(void* hCertStore, ref CTL_CONTEXT pCtlContext, uint32 dwAddDisposition, CTL_CONTEXT** ppStoreContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertAddStoreToCollection(void* hCollectionStore, void* hSiblingStore, uint32 dwUpdateFlags, uint32 dwPriority);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6457,13 +6457,13 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertSetStoreProperty(void* hCertStore, uint32 dwPropId, uint32 dwFlags, void* pvData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertGetStoreProperty(void* hCertStore, uint32 dwPropId, void* pvData, uint32* pcbData);
+		public static extern BOOL CertGetStoreProperty(void* hCertStore, uint32 dwPropId, void* pvData, out uint32 pcbData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* CertCreateContext(uint32 dwContextType, uint32 dwEncodingType, uint8* pbEncoded, uint32 cbEncoded, uint32 dwFlags, CERT_CREATE_CONTEXT_PARA* pCreatePara);
+		public static extern void* CertCreateContext(uint32 dwContextType, uint32 dwEncodingType, in uint8 pbEncoded, uint32 cbEncoded, uint32 dwFlags, CERT_CREATE_CONTEXT_PARA* pCreatePara);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertRegisterSystemStore(void* pvSystemStore, uint32 dwFlags, CERT_SYSTEM_STORE_INFO* pStoreInfo, void* pvReserved);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertRegisterPhysicalStore(void* pvSystemStore, uint32 dwFlags, PWSTR pwszStoreName, CERT_PHYSICAL_STORE_INFO* pStoreInfo, void* pvReserved);
+		public static extern BOOL CertRegisterPhysicalStore(void* pvSystemStore, uint32 dwFlags, PWSTR pwszStoreName, ref CERT_PHYSICAL_STORE_INFO pStoreInfo, void* pvReserved);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertUnregisterSystemStore(void* pvSystemStore, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6475,65 +6475,65 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertEnumPhysicalStore(void* pvSystemStore, uint32 dwFlags, void* pvArg, PFN_CERT_ENUM_PHYSICAL_STORE pfnEnum);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertGetEnhancedKeyUsage(CERT_CONTEXT* pCertContext, uint32 dwFlags, CTL_USAGE* pUsage, uint32* pcbUsage);
+		public static extern BOOL CertGetEnhancedKeyUsage(in CERT_CONTEXT pCertContext, uint32 dwFlags, CTL_USAGE* pUsage, out uint32 pcbUsage);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertSetEnhancedKeyUsage(CERT_CONTEXT* pCertContext, CTL_USAGE* pUsage);
+		public static extern BOOL CertSetEnhancedKeyUsage(in CERT_CONTEXT pCertContext, CTL_USAGE* pUsage);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddEnhancedKeyUsageIdentifier(CERT_CONTEXT* pCertContext, PSTR pszUsageIdentifier);
+		public static extern BOOL CertAddEnhancedKeyUsageIdentifier(in CERT_CONTEXT pCertContext, PSTR pszUsageIdentifier);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertRemoveEnhancedKeyUsageIdentifier(CERT_CONTEXT* pCertContext, PSTR pszUsageIdentifier);
+		public static extern BOOL CertRemoveEnhancedKeyUsageIdentifier(in CERT_CONTEXT pCertContext, PSTR pszUsageIdentifier);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertGetValidUsages(uint32 cCerts, CERT_CONTEXT** rghCerts, int32* cNumOIDs, PSTR* rghOIDs, uint32* pcbOIDs);
+		public static extern BOOL CertGetValidUsages(uint32 cCerts, CERT_CONTEXT** rghCerts, out int32 cNumOIDs, PSTR* rghOIDs, out uint32 pcbOIDs);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptMsgGetAndVerifySigner(void* hCryptMsg, uint32 cSignerStore, void** rghSignerStore, uint32 dwFlags, CERT_CONTEXT** ppSigner, uint32* pdwSignerIndex);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptMsgSignCTL(uint32 dwMsgEncodingType, uint8* pbCtlContent, uint32 cbCtlContent, CMSG_SIGNED_ENCODE_INFO* pSignInfo, uint32 dwFlags, uint8* pbEncoded, uint32* pcbEncoded);
+		public static extern BOOL CryptMsgSignCTL(uint32 dwMsgEncodingType, ref uint8 pbCtlContent, uint32 cbCtlContent, ref CMSG_SIGNED_ENCODE_INFO pSignInfo, uint32 dwFlags, uint8* pbEncoded, out uint32 pcbEncoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptMsgEncodeAndSignCTL(uint32 dwMsgEncodingType, CTL_INFO* pCtlInfo, CMSG_SIGNED_ENCODE_INFO* pSignInfo, uint32 dwFlags, uint8* pbEncoded, uint32* pcbEncoded);
+		public static extern BOOL CryptMsgEncodeAndSignCTL(uint32 dwMsgEncodingType, ref CTL_INFO pCtlInfo, ref CMSG_SIGNED_ENCODE_INFO pSignInfo, uint32 dwFlags, uint8* pbEncoded, out uint32 pcbEncoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertFindSubjectInSortedCTL(CRYPTOAPI_BLOB* pSubjectIdentifier, CTL_CONTEXT* pCtlContext, uint32 dwFlags, void* pvReserved, CRYPTOAPI_BLOB* pEncodedAttributes);
+		public static extern BOOL CertFindSubjectInSortedCTL(ref CRYPTOAPI_BLOB pSubjectIdentifier, ref CTL_CONTEXT pCtlContext, uint32 dwFlags, void* pvReserved, CRYPTOAPI_BLOB* pEncodedAttributes);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertEnumSubjectInSortedCTL(CTL_CONTEXT* pCtlContext, void** ppvNextSubject, CRYPTOAPI_BLOB* pSubjectIdentifier, CRYPTOAPI_BLOB* pEncodedAttributes);
+		public static extern BOOL CertEnumSubjectInSortedCTL(ref CTL_CONTEXT pCtlContext, void** ppvNextSubject, CRYPTOAPI_BLOB* pSubjectIdentifier, CRYPTOAPI_BLOB* pEncodedAttributes);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertVerifyCTLUsage(uint32 dwEncodingType, uint32 dwSubjectType, void* pvSubject, CTL_USAGE* pSubjectUsage, uint32 dwFlags, CTL_VERIFY_USAGE_PARA* pVerifyUsagePara, CTL_VERIFY_USAGE_STATUS* pVerifyUsageStatus);
+		public static extern BOOL CertVerifyCTLUsage(uint32 dwEncodingType, uint32 dwSubjectType, void* pvSubject, ref CTL_USAGE pSubjectUsage, uint32 dwFlags, CTL_VERIFY_USAGE_PARA* pVerifyUsagePara, out CTL_VERIFY_USAGE_STATUS pVerifyUsageStatus);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertVerifyRevocation(uint32 dwEncodingType, uint32 dwRevType, uint32 cContext, void** rgpvContext, uint32 dwFlags, CERT_REVOCATION_PARA* pRevPara, CERT_REVOCATION_STATUS* pRevStatus);
+		public static extern BOOL CertVerifyRevocation(uint32 dwEncodingType, uint32 dwRevType, uint32 cContext, void** rgpvContext, uint32 dwFlags, CERT_REVOCATION_PARA* pRevPara, out CERT_REVOCATION_STATUS pRevStatus);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertCompareIntegerBlob(CRYPTOAPI_BLOB* pInt1, CRYPTOAPI_BLOB* pInt2);
+		public static extern BOOL CertCompareIntegerBlob(ref CRYPTOAPI_BLOB pInt1, ref CRYPTOAPI_BLOB pInt2);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertCompareCertificate(uint32 dwCertEncodingType, CERT_INFO* pCertId1, CERT_INFO* pCertId2);
+		public static extern BOOL CertCompareCertificate(uint32 dwCertEncodingType, ref CERT_INFO pCertId1, ref CERT_INFO pCertId2);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertCompareCertificateName(uint32 dwCertEncodingType, CRYPTOAPI_BLOB* pCertName1, CRYPTOAPI_BLOB* pCertName2);
+		public static extern BOOL CertCompareCertificateName(uint32 dwCertEncodingType, ref CRYPTOAPI_BLOB pCertName1, ref CRYPTOAPI_BLOB pCertName2);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertIsRDNAttrsInCertificateName(uint32 dwCertEncodingType, uint32 dwFlags, CRYPTOAPI_BLOB* pCertName, CERT_RDN* pRDN);
+		public static extern BOOL CertIsRDNAttrsInCertificateName(uint32 dwCertEncodingType, uint32 dwFlags, ref CRYPTOAPI_BLOB pCertName, ref CERT_RDN pRDN);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertComparePublicKeyInfo(uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pPublicKey1, CERT_PUBLIC_KEY_INFO* pPublicKey2);
+		public static extern BOOL CertComparePublicKeyInfo(uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pPublicKey1, ref CERT_PUBLIC_KEY_INFO pPublicKey2);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertGetPublicKeyLength(uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pPublicKey);
+		public static extern uint32 CertGetPublicKeyLength(uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pPublicKey);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptVerifyCertificateSignature(uint hCryptProv, uint32 dwCertEncodingType, uint8* pbEncoded, uint32 cbEncoded, CERT_PUBLIC_KEY_INFO* pPublicKey);
+		public static extern BOOL CryptVerifyCertificateSignature(uint hCryptProv, uint32 dwCertEncodingType, in uint8 pbEncoded, uint32 cbEncoded, ref CERT_PUBLIC_KEY_INFO pPublicKey);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptVerifyCertificateSignatureEx(uint hCryptProv, uint32 dwCertEncodingType, uint32 dwSubjectType, void* pvSubject, uint32 dwIssuerType, void* pvIssuer, CRYPT_VERIFY_CERT_FLAGS dwFlags, void* pvExtra);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertIsStrongHashToSign(CERT_STRONG_SIGN_PARA* pStrongSignPara, PWSTR pwszCNGHashAlgid, CERT_CONTEXT* pSigningCert);
+		public static extern BOOL CertIsStrongHashToSign(ref CERT_STRONG_SIGN_PARA pStrongSignPara, PWSTR pwszCNGHashAlgid, CERT_CONTEXT* pSigningCert);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptHashToBeSigned(uint hCryptProv, uint32 dwCertEncodingType, uint8* pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, uint32* pcbComputedHash);
+		public static extern BOOL CryptHashToBeSigned(uint hCryptProv, uint32 dwCertEncodingType, in uint8 pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, out uint32 pcbComputedHash);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptHashCertificate(uint hCryptProv, uint32 Algid, uint32 dwFlags, uint8* pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, uint32* pcbComputedHash);
+		public static extern BOOL CryptHashCertificate(uint hCryptProv, uint32 Algid, uint32 dwFlags, in uint8 pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, out uint32 pcbComputedHash);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptHashCertificate2(PWSTR pwszCNGHashAlgid, uint32 dwFlags, void* pvReserved, uint8* pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, uint32* pcbComputedHash);
+		public static extern BOOL CryptHashCertificate2(PWSTR pwszCNGHashAlgid, uint32 dwFlags, void* pvReserved, uint8* pbEncoded, uint32 cbEncoded, uint8* pbComputedHash, out uint32 pcbComputedHash);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSignCertificate(uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, uint8* pbEncodedToBeSigned, uint32 cbEncodedToBeSigned, CRYPT_ALGORITHM_IDENTIFIER* pSignatureAlgorithm, void* pvHashAuxInfo, uint8* pbSignature, uint32* pcbSignature);
+		public static extern BOOL CryptSignCertificate(uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, in uint8 pbEncodedToBeSigned, uint32 cbEncodedToBeSigned, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvHashAuxInfo, uint8* pbSignature, out uint32 pcbSignature);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSignAndEncodeCertificate(uint hCryptProvOrNCryptKey, CERT_KEY_SPEC dwKeySpec, uint32 dwCertEncodingType, PSTR lpszStructType, void* pvStructInfo, CRYPT_ALGORITHM_IDENTIFIER* pSignatureAlgorithm, void* pvHashAuxInfo, uint8* pbEncoded, uint32* pcbEncoded);
+		public static extern BOOL CryptSignAndEncodeCertificate(uint hCryptProvOrNCryptKey, CERT_KEY_SPEC dwKeySpec, uint32 dwCertEncodingType, PSTR lpszStructType, void* pvStructInfo, ref CRYPT_ALGORITHM_IDENTIFIER pSignatureAlgorithm, void* pvHashAuxInfo, uint8* pbEncoded, out uint32 pcbEncoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 CertVerifyTimeValidity(FILETIME* pTimeToVerify, CERT_INFO* pCertInfo);
+		public static extern int32 CertVerifyTimeValidity(FILETIME* pTimeToVerify, ref CERT_INFO pCertInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 CertVerifyCRLTimeValidity(FILETIME* pTimeToVerify, CRL_INFO* pCrlInfo);
+		public static extern int32 CertVerifyCRLTimeValidity(FILETIME* pTimeToVerify, ref CRL_INFO pCrlInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertVerifyValidityNesting(CERT_INFO* pSubjectInfo, CERT_INFO* pIssuerInfo);
+		public static extern BOOL CertVerifyValidityNesting(ref CERT_INFO pSubjectInfo, ref CERT_INFO pIssuerInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertVerifyCRLRevocation(uint32 dwCertEncodingType, CERT_INFO* pCertId, uint32 cCrlInfo, CRL_INFO** rgpCrlInfo);
+		public static extern BOOL CertVerifyCRLRevocation(uint32 dwCertEncodingType, ref CERT_INFO pCertId, uint32 cCrlInfo, CRL_INFO** rgpCrlInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern PSTR CertAlgIdToOID(uint32 dwAlgId);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6543,91 +6543,91 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CRYPT_ATTRIBUTE* CertFindAttribute(PSTR pszObjId, uint32 cAttr, CRYPT_ATTRIBUTE* rgAttr);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CERT_RDN_ATTR* CertFindRDNAttr(PSTR pszObjId, CERT_NAME_INFO* pName);
+		public static extern CERT_RDN_ATTR* CertFindRDNAttr(PSTR pszObjId, ref CERT_NAME_INFO pName);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertGetIntendedKeyUsage(uint32 dwCertEncodingType, CERT_INFO* pCertInfo, uint8* pbKeyUsage, uint32 cbKeyUsage);
+		public static extern BOOL CertGetIntendedKeyUsage(uint32 dwCertEncodingType, ref CERT_INFO pCertInfo, out uint8 pbKeyUsage, uint32 cbKeyUsage);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptInstallDefaultContext(uint hCryptProv, CRYPT_DEFAULT_CONTEXT_TYPE dwDefaultType, void* pvDefaultPara, CRYPT_DEFAULT_CONTEXT_FLAGS dwFlags, void* pvReserved, void** phDefaultContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptUninstallDefaultContext(void* hDefaultContext, uint32 dwFlags, void* pvReserved);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptExportPublicKeyInfo(uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pInfo, uint32* pcbInfo);
+		public static extern BOOL CryptExportPublicKeyInfo(uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptExportPublicKeyInfoEx(uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, uint32* pcbInfo);
+		public static extern BOOL CryptExportPublicKeyInfoEx(uint hCryptProvOrNCryptKey, uint32 dwKeySpec, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptExportPublicKeyInfoFromBCryptKeyHandle(BCRYPT_KEY_HANDLE hBCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, uint32* pcbInfo);
+		public static extern BOOL CryptExportPublicKeyInfoFromBCryptKeyHandle(BCRYPT_KEY_HANDLE hBCryptKey, uint32 dwCertEncodingType, PSTR pszPublicKeyObjId, uint32 dwFlags, void* pvAuxInfo, CERT_PUBLIC_KEY_INFO* pInfo, out uint32 pcbInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptImportPublicKeyInfo(uint hCryptProv, uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pInfo, uint* phKey);
+		public static extern BOOL CryptImportPublicKeyInfo(uint hCryptProv, uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pInfo, out uint phKey);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptImportPublicKeyInfoEx(uint hCryptProv, uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pInfo, uint32 aiKeyAlg, uint32 dwFlags, void* pvAuxInfo, uint* phKey);
+		public static extern BOOL CryptImportPublicKeyInfoEx(uint hCryptProv, uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pInfo, uint32 aiKeyAlg, uint32 dwFlags, void* pvAuxInfo, out uint phKey);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptImportPublicKeyInfoEx2(uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pInfo, CRYPT_IMPORT_PUBLIC_KEY_FLAGS dwFlags, void* pvAuxInfo, BCRYPT_KEY_HANDLE* phKey);
+		public static extern BOOL CryptImportPublicKeyInfoEx2(uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pInfo, CRYPT_IMPORT_PUBLIC_KEY_FLAGS dwFlags, void* pvAuxInfo, out BCRYPT_KEY_HANDLE phKey);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptAcquireCertificatePrivateKey(CERT_CONTEXT* pCert, CRYPT_ACQUIRE_FLAGS dwFlags, void* pvParameters, uint* phCryptProvOrNCryptKey, CERT_KEY_SPEC* pdwKeySpec, BOOL* pfCallerFreeProvOrNCryptKey);
+		public static extern BOOL CryptAcquireCertificatePrivateKey(in CERT_CONTEXT pCert, CRYPT_ACQUIRE_FLAGS dwFlags, void* pvParameters, out uint phCryptProvOrNCryptKey, CERT_KEY_SPEC* pdwKeySpec, BOOL* pfCallerFreeProvOrNCryptKey);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptFindCertificateKeyProvInfo(CERT_CONTEXT* pCert, CRYPT_FIND_FLAGS dwFlags, void* pvReserved);
+		public static extern BOOL CryptFindCertificateKeyProvInfo(in CERT_CONTEXT pCert, CRYPT_FIND_FLAGS dwFlags, void* pvReserved);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptImportPKCS8(CRYPT_PKCS8_IMPORT_PARAMS sPrivateKeyAndParams, CRYPT_KEY_FLAGS dwFlags, uint* phCryptProv, void* pvAuxInfo);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptExportPKCS8(uint hCryptProv, uint32 dwKeySpec, PSTR pszPrivateKeyObjId, uint32 dwFlags, void* pvAuxInfo, uint8* pbPrivateKeyBlob, uint32* pcbPrivateKeyBlob);
+		public static extern BOOL CryptExportPKCS8(uint hCryptProv, uint32 dwKeySpec, PSTR pszPrivateKeyObjId, uint32 dwFlags, void* pvAuxInfo, uint8* pbPrivateKeyBlob, out uint32 pcbPrivateKeyBlob);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptHashPublicKeyInfo(uint hCryptProv, uint32 Algid, uint32 dwFlags, uint32 dwCertEncodingType, CERT_PUBLIC_KEY_INFO* pInfo, uint8* pbComputedHash, uint32* pcbComputedHash);
+		public static extern BOOL CryptHashPublicKeyInfo(uint hCryptProv, uint32 Algid, uint32 dwFlags, uint32 dwCertEncodingType, ref CERT_PUBLIC_KEY_INFO pInfo, uint8* pbComputedHash, out uint32 pcbComputedHash);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertRDNValueToStrA(uint32 dwValueType, CRYPTOAPI_BLOB* pValue, uint8* psz, uint32 csz);
+		public static extern uint32 CertRDNValueToStrA(uint32 dwValueType, ref CRYPTOAPI_BLOB pValue, uint8* psz, uint32 csz);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertRDNValueToStrW(uint32 dwValueType, CRYPTOAPI_BLOB* pValue, char16* psz, uint32 csz);
+		public static extern uint32 CertRDNValueToStrW(uint32 dwValueType, ref CRYPTOAPI_BLOB pValue, char16* psz, uint32 csz);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertNameToStrA(uint32 dwCertEncodingType, CRYPTOAPI_BLOB* pName, CERT_STRING_TYPE dwStrType, uint8* psz, uint32 csz);
+		public static extern uint32 CertNameToStrA(uint32 dwCertEncodingType, ref CRYPTOAPI_BLOB pName, CERT_STRING_TYPE dwStrType, uint8* psz, uint32 csz);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertNameToStrW(uint32 dwCertEncodingType, CRYPTOAPI_BLOB* pName, CERT_STRING_TYPE dwStrType, char16* psz, uint32 csz);
+		public static extern uint32 CertNameToStrW(uint32 dwCertEncodingType, ref CRYPTOAPI_BLOB pName, CERT_STRING_TYPE dwStrType, char16* psz, uint32 csz);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertStrToNameA(uint32 dwCertEncodingType, PSTR pszX500, CERT_STRING_TYPE dwStrType, void* pvReserved, uint8* pbEncoded, uint32* pcbEncoded, PSTR* ppszError);
+		public static extern BOOL CertStrToNameA(uint32 dwCertEncodingType, PSTR pszX500, CERT_STRING_TYPE dwStrType, void* pvReserved, uint8* pbEncoded, out uint32 pcbEncoded, PSTR* ppszError);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertStrToNameW(uint32 dwCertEncodingType, PWSTR pszX500, CERT_STRING_TYPE dwStrType, void* pvReserved, uint8* pbEncoded, uint32* pcbEncoded, PWSTR* ppszError);
+		public static extern BOOL CertStrToNameW(uint32 dwCertEncodingType, PWSTR pszX500, CERT_STRING_TYPE dwStrType, void* pvReserved, uint8* pbEncoded, out uint32 pcbEncoded, PWSTR* ppszError);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertGetNameStringA(CERT_CONTEXT* pCertContext, uint32 dwType, uint32 dwFlags, void* pvTypePara, uint8* pszNameString, uint32 cchNameString);
+		public static extern uint32 CertGetNameStringA(in CERT_CONTEXT pCertContext, uint32 dwType, uint32 dwFlags, void* pvTypePara, uint8* pszNameString, uint32 cchNameString);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CertGetNameStringW(CERT_CONTEXT* pCertContext, uint32 dwType, uint32 dwFlags, void* pvTypePara, char16* pszNameString, uint32 cchNameString);
+		public static extern uint32 CertGetNameStringW(in CERT_CONTEXT pCertContext, uint32 dwType, uint32 dwFlags, void* pvTypePara, char16* pszNameString, uint32 cchNameString);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSignMessage(CRYPT_SIGN_MESSAGE_PARA* pSignPara, BOOL fDetachedSignature, uint32 cToBeSigned, uint8** rgpbToBeSigned, uint32* rgcbToBeSigned, uint8* pbSignedBlob, uint32* pcbSignedBlob);
+		public static extern BOOL CryptSignMessage(ref CRYPT_SIGN_MESSAGE_PARA pSignPara, BOOL fDetachedSignature, uint32 cToBeSigned, uint8** rgpbToBeSigned, uint32* rgcbToBeSigned, uint8* pbSignedBlob, out uint32 pcbSignedBlob);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptVerifyMessageSignature(CRYPT_VERIFY_MESSAGE_PARA* pVerifyPara, uint32 dwSignerIndex, uint8* pbSignedBlob, uint32 cbSignedBlob, uint8* pbDecoded, uint32* pcbDecoded, CERT_CONTEXT** ppSignerCert);
+		public static extern BOOL CryptVerifyMessageSignature(ref CRYPT_VERIFY_MESSAGE_PARA pVerifyPara, uint32 dwSignerIndex, in uint8 pbSignedBlob, uint32 cbSignedBlob, uint8* pbDecoded, uint32* pcbDecoded, CERT_CONTEXT** ppSignerCert);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 CryptGetMessageSignerCount(uint32 dwMsgEncodingType, uint8* pbSignedBlob, uint32 cbSignedBlob);
+		public static extern int32 CryptGetMessageSignerCount(uint32 dwMsgEncodingType, in uint8 pbSignedBlob, uint32 cbSignedBlob);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* CryptGetMessageCertificates(uint32 dwMsgAndCertEncodingType, uint hCryptProv, uint32 dwFlags, uint8* pbSignedBlob, uint32 cbSignedBlob);
+		public static extern void* CryptGetMessageCertificates(uint32 dwMsgAndCertEncodingType, uint hCryptProv, uint32 dwFlags, in uint8 pbSignedBlob, uint32 cbSignedBlob);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptVerifyDetachedMessageSignature(CRYPT_VERIFY_MESSAGE_PARA* pVerifyPara, uint32 dwSignerIndex, uint8* pbDetachedSignBlob, uint32 cbDetachedSignBlob, uint32 cToBeSigned, uint8** rgpbToBeSigned, uint32* rgcbToBeSigned, CERT_CONTEXT** ppSignerCert);
+		public static extern BOOL CryptVerifyDetachedMessageSignature(ref CRYPT_VERIFY_MESSAGE_PARA pVerifyPara, uint32 dwSignerIndex, in uint8 pbDetachedSignBlob, uint32 cbDetachedSignBlob, uint32 cToBeSigned, uint8** rgpbToBeSigned, uint32* rgcbToBeSigned, CERT_CONTEXT** ppSignerCert);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptEncryptMessage(CRYPT_ENCRYPT_MESSAGE_PARA* pEncryptPara, uint32 cRecipientCert, CERT_CONTEXT** rgpRecipientCert, uint8* pbToBeEncrypted, uint32 cbToBeEncrypted, uint8* pbEncryptedBlob, uint32* pcbEncryptedBlob);
+		public static extern BOOL CryptEncryptMessage(ref CRYPT_ENCRYPT_MESSAGE_PARA pEncryptPara, uint32 cRecipientCert, CERT_CONTEXT** rgpRecipientCert, uint8* pbToBeEncrypted, uint32 cbToBeEncrypted, uint8* pbEncryptedBlob, out uint32 pcbEncryptedBlob);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptDecryptMessage(CRYPT_DECRYPT_MESSAGE_PARA* pDecryptPara, uint8* pbEncryptedBlob, uint32 cbEncryptedBlob, uint8* pbDecrypted, uint32* pcbDecrypted, CERT_CONTEXT** ppXchgCert);
+		public static extern BOOL CryptDecryptMessage(ref CRYPT_DECRYPT_MESSAGE_PARA pDecryptPara, in uint8 pbEncryptedBlob, uint32 cbEncryptedBlob, uint8* pbDecrypted, uint32* pcbDecrypted, CERT_CONTEXT** ppXchgCert);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSignAndEncryptMessage(CRYPT_SIGN_MESSAGE_PARA* pSignPara, CRYPT_ENCRYPT_MESSAGE_PARA* pEncryptPara, uint32 cRecipientCert, CERT_CONTEXT** rgpRecipientCert, uint8* pbToBeSignedAndEncrypted, uint32 cbToBeSignedAndEncrypted, uint8* pbSignedAndEncryptedBlob, uint32* pcbSignedAndEncryptedBlob);
+		public static extern BOOL CryptSignAndEncryptMessage(ref CRYPT_SIGN_MESSAGE_PARA pSignPara, ref CRYPT_ENCRYPT_MESSAGE_PARA pEncryptPara, uint32 cRecipientCert, CERT_CONTEXT** rgpRecipientCert, in uint8 pbToBeSignedAndEncrypted, uint32 cbToBeSignedAndEncrypted, uint8* pbSignedAndEncryptedBlob, out uint32 pcbSignedAndEncryptedBlob);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptDecryptAndVerifyMessageSignature(CRYPT_DECRYPT_MESSAGE_PARA* pDecryptPara, CRYPT_VERIFY_MESSAGE_PARA* pVerifyPara, uint32 dwSignerIndex, uint8* pbEncryptedBlob, uint32 cbEncryptedBlob, uint8* pbDecrypted, uint32* pcbDecrypted, CERT_CONTEXT** ppXchgCert, CERT_CONTEXT** ppSignerCert);
+		public static extern BOOL CryptDecryptAndVerifyMessageSignature(ref CRYPT_DECRYPT_MESSAGE_PARA pDecryptPara, ref CRYPT_VERIFY_MESSAGE_PARA pVerifyPara, uint32 dwSignerIndex, in uint8 pbEncryptedBlob, uint32 cbEncryptedBlob, uint8* pbDecrypted, uint32* pcbDecrypted, CERT_CONTEXT** ppXchgCert, CERT_CONTEXT** ppSignerCert);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptDecodeMessage(uint32 dwMsgTypeFlags, CRYPT_DECRYPT_MESSAGE_PARA* pDecryptPara, CRYPT_VERIFY_MESSAGE_PARA* pVerifyPara, uint32 dwSignerIndex, uint8* pbEncodedBlob, uint32 cbEncodedBlob, uint32 dwPrevInnerContentType, uint32* pdwMsgType, uint32* pdwInnerContentType, uint8* pbDecoded, uint32* pcbDecoded, CERT_CONTEXT** ppXchgCert, CERT_CONTEXT** ppSignerCert);
+		public static extern BOOL CryptDecodeMessage(uint32 dwMsgTypeFlags, CRYPT_DECRYPT_MESSAGE_PARA* pDecryptPara, CRYPT_VERIFY_MESSAGE_PARA* pVerifyPara, uint32 dwSignerIndex, in uint8 pbEncodedBlob, uint32 cbEncodedBlob, uint32 dwPrevInnerContentType, uint32* pdwMsgType, uint32* pdwInnerContentType, uint8* pbDecoded, uint32* pcbDecoded, CERT_CONTEXT** ppXchgCert, CERT_CONTEXT** ppSignerCert);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptHashMessage(CRYPT_HASH_MESSAGE_PARA* pHashPara, BOOL fDetachedHash, uint32 cToBeHashed, uint8** rgpbToBeHashed, uint32* rgcbToBeHashed, uint8* pbHashedBlob, uint32* pcbHashedBlob, uint8* pbComputedHash, uint32* pcbComputedHash);
+		public static extern BOOL CryptHashMessage(ref CRYPT_HASH_MESSAGE_PARA pHashPara, BOOL fDetachedHash, uint32 cToBeHashed, uint8** rgpbToBeHashed, uint32* rgcbToBeHashed, uint8* pbHashedBlob, uint32* pcbHashedBlob, uint8* pbComputedHash, uint32* pcbComputedHash);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptVerifyMessageHash(CRYPT_HASH_MESSAGE_PARA* pHashPara, uint8* pbHashedBlob, uint32 cbHashedBlob, uint8* pbToBeHashed, uint32* pcbToBeHashed, uint8* pbComputedHash, uint32* pcbComputedHash);
+		public static extern BOOL CryptVerifyMessageHash(ref CRYPT_HASH_MESSAGE_PARA pHashPara, ref uint8 pbHashedBlob, uint32 cbHashedBlob, uint8* pbToBeHashed, uint32* pcbToBeHashed, uint8* pbComputedHash, uint32* pcbComputedHash);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptVerifyDetachedMessageHash(CRYPT_HASH_MESSAGE_PARA* pHashPara, uint8* pbDetachedHashBlob, uint32 cbDetachedHashBlob, uint32 cToBeHashed, uint8** rgpbToBeHashed, uint32* rgcbToBeHashed, uint8* pbComputedHash, uint32* pcbComputedHash);
+		public static extern BOOL CryptVerifyDetachedMessageHash(ref CRYPT_HASH_MESSAGE_PARA pHashPara, ref uint8 pbDetachedHashBlob, uint32 cbDetachedHashBlob, uint32 cToBeHashed, uint8** rgpbToBeHashed, uint32* rgcbToBeHashed, uint8* pbComputedHash, uint32* pcbComputedHash);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSignMessageWithKey(CRYPT_KEY_SIGN_MESSAGE_PARA* pSignPara, uint8* pbToBeSigned, uint32 cbToBeSigned, uint8* pbSignedBlob, uint32* pcbSignedBlob);
+		public static extern BOOL CryptSignMessageWithKey(ref CRYPT_KEY_SIGN_MESSAGE_PARA pSignPara, in uint8 pbToBeSigned, uint32 cbToBeSigned, uint8* pbSignedBlob, out uint32 pcbSignedBlob);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptVerifyMessageSignatureWithKey(CRYPT_KEY_VERIFY_MESSAGE_PARA* pVerifyPara, CERT_PUBLIC_KEY_INFO* pPublicKeyInfo, uint8* pbSignedBlob, uint32 cbSignedBlob, uint8* pbDecoded, uint32* pcbDecoded);
+		public static extern BOOL CryptVerifyMessageSignatureWithKey(ref CRYPT_KEY_VERIFY_MESSAGE_PARA pVerifyPara, CERT_PUBLIC_KEY_INFO* pPublicKeyInfo, in uint8 pbSignedBlob, uint32 cbSignedBlob, uint8* pbDecoded, uint32* pcbDecoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* CertOpenSystemStoreA(uint hProv, PSTR szSubsystemProtocol);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* CertOpenSystemStoreW(uint hProv, PWSTR szSubsystemProtocol);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddEncodedCertificateToSystemStoreA(PSTR szCertStoreName, uint8* pbCertEncoded, uint32 cbCertEncoded);
+		public static extern BOOL CertAddEncodedCertificateToSystemStoreA(PSTR szCertStoreName, in uint8 pbCertEncoded, uint32 cbCertEncoded);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertAddEncodedCertificateToSystemStoreW(PWSTR szCertStoreName, uint8* pbCertEncoded, uint32 cbCertEncoded);
+		public static extern BOOL CertAddEncodedCertificateToSystemStoreW(PWSTR szCertStoreName, in uint8 pbCertEncoded, uint32 cbCertEncoded);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT FindCertsByIssuer(CERT_CHAIN* pCertChains, uint32* pcbCertChains, uint32* pcCertChains, uint8* pbEncodedIssuerName, uint32 cbEncodedIssuerName, PWSTR pwszPurpose, uint32 dwKeySpec);
+		public static extern HRESULT FindCertsByIssuer(CERT_CHAIN* pCertChains, out uint32 pcbCertChains, out uint32 pcCertChains, uint8* pbEncodedIssuerName, uint32 cbEncodedIssuerName, PWSTR pwszPurpose, uint32 dwKeySpec);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptQueryObject(CERT_QUERY_OBJECT_TYPE dwObjectType, void* pvObject, CERT_QUERY_CONTENT_TYPE_FLAGS dwExpectedContentTypeFlags, CERT_QUERY_FORMAT_TYPE_FLAGS dwExpectedFormatTypeFlags, uint32 dwFlags, CERT_QUERY_ENCODING_TYPE* pdwMsgAndCertEncodingType, CERT_QUERY_CONTENT_TYPE* pdwContentType, CERT_QUERY_FORMAT_TYPE* pdwFormatType, void** phCertStore, void** phMsg, void** ppvContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6637,7 +6637,7 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void CryptMemFree(void* pv);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptCreateAsyncHandle(uint32 dwFlags, HCRYPTASYNC* phAsync);
+		public static extern BOOL CryptCreateAsyncHandle(uint32 dwFlags, out HCRYPTASYNC phAsync);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptSetAsyncParam(HCRYPTASYNC hAsync, PSTR pszParamOid, void* pvParam, PFN_CRYPT_ASYNC_PARAM_FREE_FUNC pfnFree);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6653,53 +6653,53 @@ namespace Win32
 		[Import("cryptnet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptUninstallCancelRetrieval(uint32 dwFlags, void* pvReserved);
 		[Import("cryptnet.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGetObjectUrl(PSTR pszUrlOid, void* pvPara, CRYPT_GET_URL_FLAGS dwFlags, CRYPT_URL_ARRAY* pUrlArray, uint32* pcbUrlArray, CRYPT_URL_INFO* pUrlInfo, uint32* pcbUrlInfo, void* pvReserved);
+		public static extern BOOL CryptGetObjectUrl(PSTR pszUrlOid, void* pvPara, CRYPT_GET_URL_FLAGS dwFlags, CRYPT_URL_ARRAY* pUrlArray, out uint32 pcbUrlArray, CRYPT_URL_INFO* pUrlInfo, uint32* pcbUrlInfo, void* pvReserved);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CERT_CONTEXT* CertCreateSelfSignCertificate(uint hCryptProvOrNCryptKey, CRYPTOAPI_BLOB* pSubjectIssuerBlob, CERT_CREATE_SELFSIGN_FLAGS dwFlags, CRYPT_KEY_PROV_INFO* pKeyProvInfo, CRYPT_ALGORITHM_IDENTIFIER* pSignatureAlgorithm, SYSTEMTIME* pStartTime, SYSTEMTIME* pEndTime, CERT_EXTENSIONS* pExtensions);
+		public static extern CERT_CONTEXT* CertCreateSelfSignCertificate(uint hCryptProvOrNCryptKey, ref CRYPTOAPI_BLOB pSubjectIssuerBlob, CERT_CREATE_SELFSIGN_FLAGS dwFlags, CRYPT_KEY_PROV_INFO* pKeyProvInfo, CRYPT_ALGORITHM_IDENTIFIER* pSignatureAlgorithm, SYSTEMTIME* pStartTime, SYSTEMTIME* pEndTime, CERT_EXTENSIONS* pExtensions);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptGetKeyIdentifierProperty(CRYPTOAPI_BLOB* pKeyIdentifier, uint32 dwPropId, uint32 dwFlags, PWSTR pwszComputerName, void* pvReserved, void* pvData, uint32* pcbData);
+		public static extern BOOL CryptGetKeyIdentifierProperty(in CRYPTOAPI_BLOB pKeyIdentifier, uint32 dwPropId, uint32 dwFlags, PWSTR pwszComputerName, void* pvReserved, void* pvData, out uint32 pcbData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSetKeyIdentifierProperty(CRYPTOAPI_BLOB* pKeyIdentifier, uint32 dwPropId, uint32 dwFlags, PWSTR pwszComputerName, void* pvReserved, void* pvData);
+		public static extern BOOL CryptSetKeyIdentifierProperty(in CRYPTOAPI_BLOB pKeyIdentifier, uint32 dwPropId, uint32 dwFlags, PWSTR pwszComputerName, void* pvReserved, void* pvData);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptEnumKeyIdentifierProperties(CRYPTOAPI_BLOB* pKeyIdentifier, uint32 dwPropId, uint32 dwFlags, PWSTR pwszComputerName, void* pvReserved, void* pvArg, PFN_CRYPT_ENUM_KEYID_PROP pfnEnum);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptCreateKeyIdentifierFromCSP(uint32 dwCertEncodingType, PSTR pszPubKeyOID, PUBLICKEYSTRUC* pPubKeyStruc, uint32 cbPubKeyStruc, uint32 dwFlags, void* pvReserved, uint8* pbHash, uint32* pcbHash);
+		public static extern BOOL CryptCreateKeyIdentifierFromCSP(uint32 dwCertEncodingType, PSTR pszPubKeyOID, in PUBLICKEYSTRUC pPubKeyStruc, uint32 cbPubKeyStruc, uint32 dwFlags, void* pvReserved, uint8* pbHash, out uint32 pcbHash);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertCreateCertificateChainEngine(CERT_CHAIN_ENGINE_CONFIG* pConfig, HCERTCHAINENGINE* phChainEngine);
+		public static extern BOOL CertCreateCertificateChainEngine(ref CERT_CHAIN_ENGINE_CONFIG pConfig, out HCERTCHAINENGINE phChainEngine);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void CertFreeCertificateChainEngine(HCERTCHAINENGINE hChainEngine);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertResyncCertificateChainEngine(HCERTCHAINENGINE hChainEngine);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertGetCertificateChain(HCERTCHAINENGINE hChainEngine, CERT_CONTEXT* pCertContext, FILETIME* pTime, void* hAdditionalStore, CERT_CHAIN_PARA* pChainPara, uint32 dwFlags, void* pvReserved, CERT_CHAIN_CONTEXT** ppChainContext);
+		public static extern BOOL CertGetCertificateChain(HCERTCHAINENGINE hChainEngine, in CERT_CONTEXT pCertContext, FILETIME* pTime, void* hAdditionalStore, ref CERT_CHAIN_PARA pChainPara, uint32 dwFlags, void* pvReserved, out CERT_CHAIN_CONTEXT* ppChainContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void CertFreeCertificateChain(CERT_CHAIN_CONTEXT* pChainContext);
+		public static extern void CertFreeCertificateChain(ref CERT_CHAIN_CONTEXT pChainContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CERT_CHAIN_CONTEXT* CertDuplicateCertificateChain(CERT_CHAIN_CONTEXT* pChainContext);
+		public static extern CERT_CHAIN_CONTEXT* CertDuplicateCertificateChain(ref CERT_CHAIN_CONTEXT pChainContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CERT_CHAIN_CONTEXT* CertFindChainInStore(void* hCertStore, uint32 dwCertEncodingType, CERT_FIND_CHAIN_IN_STORE_FLAGS dwFindFlags, uint32 dwFindType, void* pvFindPara, CERT_CHAIN_CONTEXT* pPrevChainContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertVerifyCertificateChainPolicy(PSTR pszPolicyOID, CERT_CHAIN_CONTEXT* pChainContext, CERT_CHAIN_POLICY_PARA* pPolicyPara, CERT_CHAIN_POLICY_STATUS* pPolicyStatus);
+		public static extern BOOL CertVerifyCertificateChainPolicy(PSTR pszPolicyOID, ref CERT_CHAIN_CONTEXT pChainContext, ref CERT_CHAIN_POLICY_PARA pPolicyPara, out CERT_CHAIN_POLICY_STATUS pPolicyStatus);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptStringToBinaryA(uint8* pszString, uint32 cchString, CRYPT_STRING dwFlags, uint8* pbBinary, uint32* pcbBinary, uint32* pdwSkip, uint32* pdwFlags);
+		public static extern BOOL CryptStringToBinaryA(uint8* pszString, uint32 cchString, CRYPT_STRING dwFlags, uint8* pbBinary, out uint32 pcbBinary, uint32* pdwSkip, uint32* pdwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptStringToBinaryW(char16* pszString, uint32 cchString, CRYPT_STRING dwFlags, uint8* pbBinary, uint32* pcbBinary, uint32* pdwSkip, uint32* pdwFlags);
+		public static extern BOOL CryptStringToBinaryW(char16* pszString, uint32 cchString, CRYPT_STRING dwFlags, uint8* pbBinary, out uint32 pcbBinary, uint32* pdwSkip, uint32* pdwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptBinaryToStringA(uint8* pbBinary, uint32 cbBinary, CRYPT_STRING dwFlags, uint8* pszString, uint32* pcchString);
+		public static extern BOOL CryptBinaryToStringA(in uint8 pbBinary, uint32 cbBinary, CRYPT_STRING dwFlags, uint8* pszString, out uint32 pcchString);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptBinaryToStringW(uint8* pbBinary, uint32 cbBinary, CRYPT_STRING dwFlags, char16* pszString, uint32* pcchString);
+		public static extern BOOL CryptBinaryToStringW(in uint8 pbBinary, uint32 cbBinary, CRYPT_STRING dwFlags, char16* pszString, out uint32 pcchString);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* PFXImportCertStore(CRYPTOAPI_BLOB* pPFX, PWSTR szPassword, CRYPT_KEY_FLAGS dwFlags);
+		public static extern void* PFXImportCertStore(ref CRYPTOAPI_BLOB pPFX, PWSTR szPassword, CRYPT_KEY_FLAGS dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PFXIsPFXBlob(CRYPTOAPI_BLOB* pPFX);
+		public static extern BOOL PFXIsPFXBlob(ref CRYPTOAPI_BLOB pPFX);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PFXVerifyPassword(CRYPTOAPI_BLOB* pPFX, PWSTR szPassword, uint32 dwFlags);
+		public static extern BOOL PFXVerifyPassword(ref CRYPTOAPI_BLOB pPFX, PWSTR szPassword, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PFXExportCertStoreEx(void* hStore, CRYPTOAPI_BLOB* pPFX, PWSTR szPassword, void* pvPara, uint32 dwFlags);
+		public static extern BOOL PFXExportCertStoreEx(void* hStore, out CRYPTOAPI_BLOB pPFX, PWSTR szPassword, void* pvPara, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PFXExportCertStore(void* hStore, CRYPTOAPI_BLOB* pPFX, PWSTR szPassword, uint32 dwFlags);
+		public static extern BOOL PFXExportCertStore(void* hStore, out CRYPTOAPI_BLOB pPFX, PWSTR szPassword, uint32 dwFlags);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* CertOpenServerOcspResponse(CERT_CHAIN_CONTEXT* pChainContext, uint32 dwFlags, CERT_SERVER_OCSP_RESPONSE_OPEN_PARA* pOpenPara);
+		public static extern void* CertOpenServerOcspResponse(ref CERT_CHAIN_CONTEXT pChainContext, uint32 dwFlags, CERT_SERVER_OCSP_RESPONSE_OPEN_PARA* pOpenPara);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void CertAddRefServerOcspResponse(void* hServerOcspResponse);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6711,21 +6711,21 @@ namespace Win32
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void CertFreeServerOcspResponseContext(CERT_SERVER_OCSP_RESPONSE_CONTEXT* pServerOcspResponseContext);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertRetrieveLogoOrBiometricInfo(CERT_CONTEXT* pCertContext, PSTR lpszLogoOrBiometricType, uint32 dwRetrievalFlags, uint32 dwTimeout, uint32 dwFlags, void* pvReserved, uint8** ppbData, uint32* pcbData, PWSTR* ppwszMimeType);
+		public static extern BOOL CertRetrieveLogoOrBiometricInfo(in CERT_CONTEXT pCertContext, PSTR lpszLogoOrBiometricType, uint32 dwRetrievalFlags, uint32 dwTimeout, uint32 dwFlags, void* pvReserved, out uint8* ppbData, out uint32 pcbData, PWSTR* ppwszMimeType);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CertSelectCertificateChains(Guid* pSelectionContext, uint32 dwFlags, CERT_SELECT_CHAIN_PARA* pChainParameters, uint32 cCriteria, CERT_SELECT_CRITERIA* rgpCriteria, void* hStore, uint32* pcSelection, CERT_CHAIN_CONTEXT*** pprgpSelection);
+		public static extern BOOL CertSelectCertificateChains(Guid* pSelectionContext, uint32 dwFlags, CERT_SELECT_CHAIN_PARA* pChainParameters, uint32 cCriteria, CERT_SELECT_CRITERIA* rgpCriteria, void* hStore, out uint32 pcSelection, out CERT_CHAIN_CONTEXT** pprgpSelection);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void CertFreeCertificateChainList(CERT_CHAIN_CONTEXT** prgpSelection);
+		public static extern void CertFreeCertificateChainList(ref CERT_CHAIN_CONTEXT* prgpSelection);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptRetrieveTimeStamp(PWSTR wszUrl, uint32 dwRetrievalFlags, uint32 dwTimeout, PSTR pszHashId, CRYPT_TIMESTAMP_PARA* pPara, uint8* pbData, uint32 cbData, CRYPT_TIMESTAMP_CONTEXT** ppTsContext, CERT_CONTEXT** ppTsSigner, void** phStore);
+		public static extern BOOL CryptRetrieveTimeStamp(PWSTR wszUrl, uint32 dwRetrievalFlags, uint32 dwTimeout, PSTR pszHashId, CRYPT_TIMESTAMP_PARA* pPara, in uint8 pbData, uint32 cbData, out CRYPT_TIMESTAMP_CONTEXT* ppTsContext, CERT_CONTEXT** ppTsSigner, void** phStore);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptVerifyTimeStampSignature(uint8* pbTSContentInfo, uint32 cbTSContentInfo, uint8* pbData, uint32 cbData, void* hAdditionalStore, CRYPT_TIMESTAMP_CONTEXT** ppTsContext, CERT_CONTEXT** ppTsSigner, void** phStore);
+		public static extern BOOL CryptVerifyTimeStampSignature(in uint8 pbTSContentInfo, uint32 cbTSContentInfo, uint8* pbData, uint32 cbData, void* hAdditionalStore, out CRYPT_TIMESTAMP_CONTEXT* ppTsContext, CERT_CONTEXT** ppTsSigner, void** phStore);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CertIsWeakHash(uint32 dwHashUseType, PWSTR pwszCNGHashAlgid, uint32 dwChainFlags, CERT_CHAIN_CONTEXT* pSignerChainContext, FILETIME* pTimeStamp, PWSTR pwszFileName);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptProtectData(CRYPTOAPI_BLOB* pDataIn, PWSTR szDataDescr, CRYPTOAPI_BLOB* pOptionalEntropy, void* pvReserved, CRYPTPROTECT_PROMPTSTRUCT* pPromptStruct, uint32 dwFlags, CRYPTOAPI_BLOB* pDataOut);
+		public static extern BOOL CryptProtectData(ref CRYPTOAPI_BLOB pDataIn, PWSTR szDataDescr, CRYPTOAPI_BLOB* pOptionalEntropy, void* pvReserved, CRYPTPROTECT_PROMPTSTRUCT* pPromptStruct, uint32 dwFlags, out CRYPTOAPI_BLOB pDataOut);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptUnprotectData(CRYPTOAPI_BLOB* pDataIn, PWSTR* ppszDataDescr, CRYPTOAPI_BLOB* pOptionalEntropy, void* pvReserved, CRYPTPROTECT_PROMPTSTRUCT* pPromptStruct, uint32 dwFlags, CRYPTOAPI_BLOB* pDataOut);
+		public static extern BOOL CryptUnprotectData(ref CRYPTOAPI_BLOB pDataIn, PWSTR* ppszDataDescr, CRYPTOAPI_BLOB* pOptionalEntropy, void* pvReserved, CRYPTPROTECT_PROMPTSTRUCT* pPromptStruct, uint32 dwFlags, out CRYPTOAPI_BLOB pDataOut);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptUpdateProtectedState(PSID pOldSid, PWSTR pwszOldPassword, uint32 dwFlags, uint32* pdwSuccessCount, uint32* pdwFailureCount);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6735,97 +6735,97 @@ namespace Win32
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NCryptRegisterProtectionDescriptorName(PWSTR pwszName, PWSTR pwszDescriptorString, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptQueryProtectionDescriptorName(PWSTR pwszName, char16* pwszDescriptorString, uint* pcDescriptorString, uint32 dwFlags);
+		public static extern int32 NCryptQueryProtectionDescriptorName(PWSTR pwszName, char16* pwszDescriptorString, out uint pcDescriptorString, uint32 dwFlags);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptCreateProtectionDescriptor(PWSTR pwszDescriptorString, uint32 dwFlags, NCRYPT_DESCRIPTOR_HANDLE* phDescriptor);
+		public static extern int32 NCryptCreateProtectionDescriptor(PWSTR pwszDescriptorString, uint32 dwFlags, out NCRYPT_DESCRIPTOR_HANDLE phDescriptor);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NCryptCloseProtectionDescriptor(NCRYPT_DESCRIPTOR_HANDLE hDescriptor);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NCryptGetProtectionDescriptorInfo(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, NCRYPT_ALLOC_PARA* pMemPara, uint32 dwInfoType, void** ppvInfo);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptProtectSecret(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, uint32 dwFlags, uint8* pbData, uint32 cbData, NCRYPT_ALLOC_PARA* pMemPara, HWND hWnd, uint8** ppbProtectedBlob, uint32* pcbProtectedBlob);
+		public static extern int32 NCryptProtectSecret(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, uint32 dwFlags, in uint8 pbData, uint32 cbData, NCRYPT_ALLOC_PARA* pMemPara, HWND hWnd, out uint8* ppbProtectedBlob, out uint32 pcbProtectedBlob);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptUnprotectSecret(NCRYPT_DESCRIPTOR_HANDLE* phDescriptor, NCRYPT_FLAGS dwFlags, uint8* pbProtectedBlob, uint32 cbProtectedBlob, NCRYPT_ALLOC_PARA* pMemPara, HWND hWnd, uint8** ppbData, uint32* pcbData);
+		public static extern int32 NCryptUnprotectSecret(NCRYPT_DESCRIPTOR_HANDLE* phDescriptor, NCRYPT_FLAGS dwFlags, in uint8 pbProtectedBlob, uint32 cbProtectedBlob, NCRYPT_ALLOC_PARA* pMemPara, HWND hWnd, out uint8* ppbData, out uint32 pcbData);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptStreamOpenToProtect(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, uint32 dwFlags, HWND hWnd, NCRYPT_PROTECT_STREAM_INFO* pStreamInfo, NCRYPT_STREAM_HANDLE* phStream);
+		public static extern int32 NCryptStreamOpenToProtect(NCRYPT_DESCRIPTOR_HANDLE hDescriptor, uint32 dwFlags, HWND hWnd, ref NCRYPT_PROTECT_STREAM_INFO pStreamInfo, out NCRYPT_STREAM_HANDLE phStream);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptStreamOpenToUnprotect(NCRYPT_PROTECT_STREAM_INFO* pStreamInfo, uint32 dwFlags, HWND hWnd, NCRYPT_STREAM_HANDLE* phStream);
+		public static extern int32 NCryptStreamOpenToUnprotect(ref NCRYPT_PROTECT_STREAM_INFO pStreamInfo, uint32 dwFlags, HWND hWnd, out NCRYPT_STREAM_HANDLE phStream);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptStreamOpenToUnprotectEx(NCRYPT_PROTECT_STREAM_INFO_EX* pStreamInfo, uint32 dwFlags, HWND hWnd, NCRYPT_STREAM_HANDLE* phStream);
+		public static extern int32 NCryptStreamOpenToUnprotectEx(ref NCRYPT_PROTECT_STREAM_INFO_EX pStreamInfo, uint32 dwFlags, HWND hWnd, out NCRYPT_STREAM_HANDLE phStream);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 NCryptStreamUpdate(NCRYPT_STREAM_HANDLE hStream, uint8* pbData, uint cbData, BOOL fFinal);
+		public static extern int32 NCryptStreamUpdate(NCRYPT_STREAM_HANDLE hStream, in uint8 pbData, uint cbData, BOOL fFinal);
 		[Import("ncrypt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 NCryptStreamClose(NCRYPT_STREAM_HANDLE hStream);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CryptXmlClose(void* hCryptXml);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlGetTransforms(CRYPT_XML_TRANSFORM_CHAIN_CONFIG** ppConfig);
+		public static extern HRESULT CryptXmlGetTransforms(out CRYPT_XML_TRANSFORM_CHAIN_CONFIG* ppConfig);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CryptXmlOpenToEncode(CRYPT_XML_TRANSFORM_CHAIN_CONFIG* pConfig, CRYPT_XML_FLAGS dwFlags, PWSTR wszId, CRYPT_XML_PROPERTY* rgProperty, uint32 cProperty, CRYPT_XML_BLOB* pEncoded, void** phSignature);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlOpenToDecode(CRYPT_XML_TRANSFORM_CHAIN_CONFIG* pConfig, CRYPT_XML_FLAGS dwFlags, CRYPT_XML_PROPERTY* rgProperty, uint32 cProperty, CRYPT_XML_BLOB* pEncoded, void** phCryptXml);
+		public static extern HRESULT CryptXmlOpenToDecode(CRYPT_XML_TRANSFORM_CHAIN_CONFIG* pConfig, CRYPT_XML_FLAGS dwFlags, CRYPT_XML_PROPERTY* rgProperty, uint32 cProperty, in CRYPT_XML_BLOB pEncoded, void** phCryptXml);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlAddObject(void* hSignatureOrObject, uint32 dwFlags, CRYPT_XML_PROPERTY* rgProperty, uint32 cProperty, CRYPT_XML_BLOB* pEncoded, CRYPT_XML_OBJECT** ppObject);
+		public static extern HRESULT CryptXmlAddObject(void* hSignatureOrObject, uint32 dwFlags, CRYPT_XML_PROPERTY* rgProperty, uint32 cProperty, in CRYPT_XML_BLOB pEncoded, CRYPT_XML_OBJECT** ppObject);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlCreateReference(void* hCryptXml, uint32 dwFlags, PWSTR wszId, PWSTR wszURI, PWSTR wszType, CRYPT_XML_ALGORITHM* pDigestMethod, uint32 cTransform, CRYPT_XML_ALGORITHM* rgTransform, void** phReference);
+		public static extern HRESULT CryptXmlCreateReference(void* hCryptXml, uint32 dwFlags, PWSTR wszId, PWSTR wszURI, PWSTR wszType, in CRYPT_XML_ALGORITHM pDigestMethod, uint32 cTransform, CRYPT_XML_ALGORITHM* rgTransform, void** phReference);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlDigestReference(void* hReference, uint32 dwFlags, CRYPT_XML_DATA_PROVIDER* pDataProviderIn);
+		public static extern HRESULT CryptXmlDigestReference(void* hReference, uint32 dwFlags, ref CRYPT_XML_DATA_PROVIDER pDataProviderIn);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlSetHMACSecret(void* hSignature, uint8* pbSecret, uint32 cbSecret);
+		public static extern HRESULT CryptXmlSetHMACSecret(void* hSignature, in uint8 pbSecret, uint32 cbSecret);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlSign(void* hSignature, uint hKey, CERT_KEY_SPEC dwKeySpec, CRYPT_XML_FLAGS dwFlags, CRYPT_XML_KEYINFO_SPEC dwKeyInfoSpec, void* pvKeyInfoSpec, CRYPT_XML_ALGORITHM* pSignatureMethod, CRYPT_XML_ALGORITHM* pCanonicalization);
+		public static extern HRESULT CryptXmlSign(void* hSignature, uint hKey, CERT_KEY_SPEC dwKeySpec, CRYPT_XML_FLAGS dwFlags, CRYPT_XML_KEYINFO_SPEC dwKeyInfoSpec, void* pvKeyInfoSpec, in CRYPT_XML_ALGORITHM pSignatureMethod, in CRYPT_XML_ALGORITHM pCanonicalization);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlImportPublicKey(CRYPT_XML_FLAGS dwFlags, CRYPT_XML_KEY_VALUE* pKeyValue, BCRYPT_KEY_HANDLE* phKey);
+		public static extern HRESULT CryptXmlImportPublicKey(CRYPT_XML_FLAGS dwFlags, in CRYPT_XML_KEY_VALUE pKeyValue, out BCRYPT_KEY_HANDLE phKey);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CryptXmlVerifySignature(void* hSignature, BCRYPT_KEY_HANDLE hKey, CRYPT_XML_FLAGS dwFlags);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlGetDocContext(void* hCryptXml, CRYPT_XML_DOC_CTXT** ppStruct);
+		public static extern HRESULT CryptXmlGetDocContext(void* hCryptXml, out CRYPT_XML_DOC_CTXT* ppStruct);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlGetSignature(void* hCryptXml, CRYPT_XML_SIGNATURE** ppStruct);
+		public static extern HRESULT CryptXmlGetSignature(void* hCryptXml, out CRYPT_XML_SIGNATURE* ppStruct);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlGetReference(void* hCryptXml, CRYPT_XML_REFERENCE** ppStruct);
+		public static extern HRESULT CryptXmlGetReference(void* hCryptXml, out CRYPT_XML_REFERENCE* ppStruct);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlGetStatus(void* hCryptXml, CRYPT_XML_STATUS* pStatus);
+		public static extern HRESULT CryptXmlGetStatus(void* hCryptXml, out CRYPT_XML_STATUS pStatus);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CryptXmlEncode(void* hCryptXml, CRYPT_XML_CHARSET dwCharset, CRYPT_XML_PROPERTY* rgProperty, uint32 cProperty, void* pvCallbackState, PFN_CRYPT_XML_WRITE_CALLBACK pfnWrite);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CryptXmlGetAlgorithmInfo(CRYPT_XML_ALGORITHM* pXmlAlgorithm, CRYPT_XML_FLAGS dwFlags, CRYPT_XML_ALGORITHM_INFO** ppAlgInfo);
+		public static extern HRESULT CryptXmlGetAlgorithmInfo(in CRYPT_XML_ALGORITHM pXmlAlgorithm, CRYPT_XML_FLAGS dwFlags, out CRYPT_XML_ALGORITHM_INFO* ppAlgInfo);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CRYPT_XML_ALGORITHM_INFO* CryptXmlFindAlgorithmInfo(uint32 dwFindByType, void* pvFindBy, uint32 dwGroupId, uint32 dwFlags);
 		[Import("cryptxml.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CryptXmlEnumAlgorithmInfo(uint32 dwGroupId, uint32 dwFlags, void* pvArg, PFN_CRYPT_XML_ENUM_ALG_INFO pfnEnumAlgInfo);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetToken(uint32 cPolicyChain, POLICY_ELEMENT* pPolicyChain, GENERIC_XML_TOKEN** securityToken, INFORMATIONCARD_CRYPTO_HANDLE** phProofTokenCrypto);
+		public static extern HRESULT GetToken(uint32 cPolicyChain, POLICY_ELEMENT* pPolicyChain, out GENERIC_XML_TOKEN* securityToken, out INFORMATIONCARD_CRYPTO_HANDLE* phProofTokenCrypto);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ManageCardSpace();
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ImportInformationCard(PWSTR fileName);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT Encrypt(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto, BOOL fOAEP, uint32 cbInData, uint8* pInData, uint32* pcbOutData, uint8** ppOutData);
+		public static extern HRESULT Encrypt(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, BOOL fOAEP, uint32 cbInData, ref uint8 pInData, out uint32 pcbOutData, out uint8* ppOutData);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT Decrypt(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto, BOOL fOAEP, uint32 cbInData, uint8* pInData, uint32* pcbOutData, uint8** ppOutData);
+		public static extern HRESULT Decrypt(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, BOOL fOAEP, uint32 cbInData, ref uint8 pInData, out uint32 pcbOutData, out uint8* ppOutData);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SignHash(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto, uint32 cbHash, uint8* pHash, PWSTR hashAlgOid, uint32* pcbSig, uint8** ppSig);
+		public static extern HRESULT SignHash(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, uint32 cbHash, ref uint8 pHash, PWSTR hashAlgOid, out uint32 pcbSig, out uint8* ppSig);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT VerifyHash(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto, uint32 cbHash, uint8* pHash, PWSTR hashAlgOid, uint32 cbSig, uint8* pSig, BOOL* pfVerified);
+		public static extern HRESULT VerifyHash(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, uint32 cbHash, ref uint8 pHash, PWSTR hashAlgOid, uint32 cbSig, ref uint8 pSig, out BOOL pfVerified);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetCryptoTransform(INFORMATIONCARD_CRYPTO_HANDLE* hSymmetricCrypto, uint32 mode, PaddingMode padding, uint32 feedbackSize, Direction direction, uint32 cbIV, uint8* pIV, INFORMATIONCARD_CRYPTO_HANDLE** pphTransform);
+		public static extern HRESULT GetCryptoTransform(ref INFORMATIONCARD_CRYPTO_HANDLE hSymmetricCrypto, uint32 mode, PaddingMode padding, uint32 feedbackSize, Direction direction, uint32 cbIV, ref uint8 pIV, out INFORMATIONCARD_CRYPTO_HANDLE* pphTransform);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetKeyedHash(INFORMATIONCARD_CRYPTO_HANDLE* hSymmetricCrypto, INFORMATIONCARD_CRYPTO_HANDLE** pphHash);
+		public static extern HRESULT GetKeyedHash(ref INFORMATIONCARD_CRYPTO_HANDLE hSymmetricCrypto, out INFORMATIONCARD_CRYPTO_HANDLE* pphHash);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT TransformBlock(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto, uint32 cbInData, uint8* pInData, uint32* pcbOutData, uint8** ppOutData);
+		public static extern HRESULT TransformBlock(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, uint32 cbInData, ref uint8 pInData, out uint32 pcbOutData, out uint8* ppOutData);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT TransformFinalBlock(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto, uint32 cbInData, uint8* pInData, uint32* pcbOutData, uint8** ppOutData);
+		public static extern HRESULT TransformFinalBlock(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, uint32 cbInData, ref uint8 pInData, out uint32 pcbOutData, out uint8* ppOutData);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HashCore(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto, uint32 cbInData, uint8* pInData);
+		public static extern HRESULT HashCore(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, uint32 cbInData, ref uint8 pInData);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HashFinal(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto, uint32 cbInData, uint8* pInData, uint32* pcbOutData, uint8** ppOutData);
+		public static extern HRESULT HashFinal(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, uint32 cbInData, ref uint8 pInData, out uint32 pcbOutData, out uint8* ppOutData);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL FreeToken(GENERIC_XML_TOKEN* pAllocMemory);
+		public static extern BOOL FreeToken(ref GENERIC_XML_TOKEN pAllocMemory);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CloseCryptoHandle(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto);
+		public static extern HRESULT CloseCryptoHandle(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GenerateDerivedKey(INFORMATIONCARD_CRYPTO_HANDLE* hCrypto, uint32 cbLabel, uint8* pLabel, uint32 cbNonce, uint8* pNonce, uint32 derivedKeyLength, uint32 offset, PWSTR algId, uint32* pcbKey, uint8** ppKey);
+		public static extern HRESULT GenerateDerivedKey(ref INFORMATIONCARD_CRYPTO_HANDLE hCrypto, uint32 cbLabel, ref uint8 pLabel, uint32 cbNonce, ref uint8 pNonce, uint32 derivedKeyLength, uint32 offset, PWSTR algId, out uint32 pcbKey, out uint8* ppKey);
 		[Import("infocardapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetBrowserToken(uint32 dwParamType, void* pParam, uint32* pcbToken, uint8** ppToken);
 		

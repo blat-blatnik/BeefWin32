@@ -65,19 +65,19 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function uint32 LPMAPILOGON(uint ulUIParam, PSTR lpszProfileName, PSTR lpszPassword, uint32 flFlags, uint32 ulReserved, uint* lplhSession);
+		public function uint32 LPMAPILOGON(uint ulUIParam, PSTR lpszProfileName, PSTR lpszPassword, uint32 flFlags, uint32 ulReserved, out uint lplhSession);
 		public function uint32 LPMAPILOGOFF(uint lhSession, uint ulUIParam, uint32 flFlags, uint32 ulReserved);
-		public function uint32 LPMAPISENDMAIL(uint lhSession, uint ulUIParam, MapiMessage* lpMessage, uint32 flFlags, uint32 ulReserved);
-		public function uint32 LPMAPISENDMAILW(uint lhSession, uint ulUIParam, MapiMessageW* lpMessage, uint32 flFlags, uint32 ulReserved);
+		public function uint32 LPMAPISENDMAIL(uint lhSession, uint ulUIParam, out MapiMessage lpMessage, uint32 flFlags, uint32 ulReserved);
+		public function uint32 LPMAPISENDMAILW(uint lhSession, uint ulUIParam, ref MapiMessageW lpMessage, uint32 flFlags, uint32 ulReserved);
 		public function uint32 LPMAPISENDDOCUMENTS(uint ulUIParam, PSTR lpszDelimChar, PSTR lpszFilePaths, PSTR lpszFileNames, uint32 ulReserved);
 		public function uint32 LPMAPIFINDNEXT(uint lhSession, uint ulUIParam, PSTR lpszMessageType, PSTR lpszSeedMessageID, uint32 flFlags, uint32 ulReserved, PSTR lpszMessageID);
-		public function uint32 LPMAPIREADMAIL(uint lhSession, uint ulUIParam, PSTR lpszMessageID, uint32 flFlags, uint32 ulReserved, MapiMessage** lppMessage);
-		public function uint32 LPMAPISAVEMAIL(uint lhSession, uint ulUIParam, MapiMessage* lpMessage, uint32 flFlags, uint32 ulReserved, PSTR lpszMessageID);
+		public function uint32 LPMAPIREADMAIL(uint lhSession, uint ulUIParam, PSTR lpszMessageID, uint32 flFlags, uint32 ulReserved, out MapiMessage* lppMessage);
+		public function uint32 LPMAPISAVEMAIL(uint lhSession, uint ulUIParam, out MapiMessage lpMessage, uint32 flFlags, uint32 ulReserved, PSTR lpszMessageID);
 		public function uint32 LPMAPIDELETEMAIL(uint lhSession, uint ulUIParam, PSTR lpszMessageID, uint32 flFlags, uint32 ulReserved);
 		public function uint32 LPMAPIFREEBUFFER(void* pv);
-		public function uint32 LPMAPIADDRESS(uint lhSession, uint ulUIParam, PSTR lpszCaption, uint32 nEditFields, PSTR lpszLabels, uint32 nRecips, MapiRecipDesc* lpRecips, uint32 flFlags, uint32 ulReserved, uint32* lpnNewRecips, MapiRecipDesc** lppNewRecips);
-		public function uint32 LPMAPIDETAILS(uint lhSession, uint ulUIParam, MapiRecipDesc* lpRecip, uint32 flFlags, uint32 ulReserved);
-		public function uint32 LPMAPIRESOLVENAME(uint lhSession, uint ulUIParam, PSTR lpszName, uint32 flFlags, uint32 ulReserved, MapiRecipDesc** lppRecip);
+		public function uint32 LPMAPIADDRESS(uint lhSession, uint ulUIParam, PSTR lpszCaption, uint32 nEditFields, PSTR lpszLabels, uint32 nRecips, out MapiRecipDesc lpRecips, uint32 flFlags, uint32 ulReserved, out uint32 lpnNewRecips, out MapiRecipDesc* lppNewRecips);
+		public function uint32 LPMAPIDETAILS(uint lhSession, uint ulUIParam, out MapiRecipDesc lpRecip, uint32 flFlags, uint32 ulReserved);
+		public function uint32 LPMAPIRESOLVENAME(uint lhSession, uint ulUIParam, PSTR lpszName, uint32 flFlags, uint32 ulReserved, out MapiRecipDesc* lppRecip);
 		
 		// --- Structs ---
 		

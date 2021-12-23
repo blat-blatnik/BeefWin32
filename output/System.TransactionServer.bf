@@ -84,29 +84,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCollection(BSTR bstrCollName, IDispatch** ppCatalogCollection) mut
+			public HRESULT GetCollection(BSTR bstrCollName, out IDispatch* ppCatalogCollection) mut
 			{
-				return VT.GetCollection(&this, bstrCollName, ppCatalogCollection);
+				return VT.GetCollection(ref this, bstrCollName, out ppCatalogCollection);
 			}
-			public HRESULT Connect(BSTR bstrConnectString, IDispatch** ppCatalogCollection) mut
+			public HRESULT Connect(BSTR bstrConnectString, out IDispatch* ppCatalogCollection) mut
 			{
-				return VT.Connect(&this, bstrConnectString, ppCatalogCollection);
+				return VT.Connect(ref this, bstrConnectString, out ppCatalogCollection);
 			}
-			public HRESULT get_MajorVersion(int32* retval) mut
+			public HRESULT get_MajorVersion(out int32 retval) mut
 			{
-				return VT.get_MajorVersion(&this, retval);
+				return VT.get_MajorVersion(ref this, out retval);
 			}
-			public HRESULT get_MinorVersion(int32* retval) mut
+			public HRESULT get_MinorVersion(out int32 retval) mut
 			{
-				return VT.get_MinorVersion(&this, retval);
+				return VT.get_MinorVersion(ref this, out retval);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ICatalog *self, BSTR bstrCollName, IDispatch** ppCatalogCollection) GetCollection;
-				public new function HRESULT(ICatalog *self, BSTR bstrConnectString, IDispatch** ppCatalogCollection) Connect;
-				public new function HRESULT(ICatalog *self, int32* retval) get_MajorVersion;
-				public new function HRESULT(ICatalog *self, int32* retval) get_MinorVersion;
+				public new function HRESULT(ref ICatalog self, BSTR bstrCollName, out IDispatch* ppCatalogCollection) GetCollection;
+				public new function HRESULT(ref ICatalog self, BSTR bstrConnectString, out IDispatch* ppCatalogCollection) Connect;
+				public new function HRESULT(ref ICatalog self, out int32 retval) get_MajorVersion;
+				public new function HRESULT(ref ICatalog self, out int32 retval) get_MinorVersion;
 			}
 		}
 		[CRepr]
@@ -118,27 +118,27 @@ namespace Win32
 			
 			public HRESULT InstallComponent(BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) mut
 			{
-				return VT.InstallComponent(&this, bstrDLLFile, bstrTypelibFile, bstrProxyStubDLLFile);
+				return VT.InstallComponent(ref this, bstrDLLFile, bstrTypelibFile, bstrProxyStubDLLFile);
 			}
 			public HRESULT ImportComponent(BSTR bstrCLSID) mut
 			{
-				return VT.ImportComponent(&this, bstrCLSID);
+				return VT.ImportComponent(ref this, bstrCLSID);
 			}
 			public HRESULT ImportComponentByName(BSTR bstrProgID) mut
 			{
-				return VT.ImportComponentByName(&this, bstrProgID);
+				return VT.ImportComponentByName(ref this, bstrProgID);
 			}
-			public HRESULT GetCLSIDs(BSTR bstrDLLFile, BSTR bstrTypelibFile, SAFEARRAY** aCLSIDs) mut
+			public HRESULT GetCLSIDs(BSTR bstrDLLFile, BSTR bstrTypelibFile, out SAFEARRAY* aCLSIDs) mut
 			{
-				return VT.GetCLSIDs(&this, bstrDLLFile, bstrTypelibFile, aCLSIDs);
+				return VT.GetCLSIDs(ref this, bstrDLLFile, bstrTypelibFile, out aCLSIDs);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IComponentUtil *self, BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) InstallComponent;
-				public new function HRESULT(IComponentUtil *self, BSTR bstrCLSID) ImportComponent;
-				public new function HRESULT(IComponentUtil *self, BSTR bstrProgID) ImportComponentByName;
-				public new function HRESULT(IComponentUtil *self, BSTR bstrDLLFile, BSTR bstrTypelibFile, SAFEARRAY** aCLSIDs) GetCLSIDs;
+				public new function HRESULT(ref IComponentUtil self, BSTR bstrDLLFile, BSTR bstrTypelibFile, BSTR bstrProxyStubDLLFile) InstallComponent;
+				public new function HRESULT(ref IComponentUtil self, BSTR bstrCLSID) ImportComponent;
+				public new function HRESULT(ref IComponentUtil self, BSTR bstrProgID) ImportComponentByName;
+				public new function HRESULT(ref IComponentUtil self, BSTR bstrDLLFile, BSTR bstrTypelibFile, out SAFEARRAY* aCLSIDs) GetCLSIDs;
 			}
 		}
 		[CRepr]
@@ -150,22 +150,22 @@ namespace Win32
 			
 			public HRESULT InstallPackage(BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) mut
 			{
-				return VT.InstallPackage(&this, bstrPackageFile, bstrInstallPath, lOptions);
+				return VT.InstallPackage(ref this, bstrPackageFile, bstrInstallPath, lOptions);
 			}
 			public HRESULT ExportPackage(BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) mut
 			{
-				return VT.ExportPackage(&this, bstrPackageID, bstrPackageFile, lOptions);
+				return VT.ExportPackage(ref this, bstrPackageID, bstrPackageFile, lOptions);
 			}
 			public HRESULT ShutdownPackage(BSTR bstrPackageID) mut
 			{
-				return VT.ShutdownPackage(&this, bstrPackageID);
+				return VT.ShutdownPackage(ref this, bstrPackageID);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPackageUtil *self, BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) InstallPackage;
-				public new function HRESULT(IPackageUtil *self, BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) ExportPackage;
-				public new function HRESULT(IPackageUtil *self, BSTR bstrPackageID) ShutdownPackage;
+				public new function HRESULT(ref IPackageUtil self, BSTR bstrPackageFile, BSTR bstrInstallPath, int32 lOptions) InstallPackage;
+				public new function HRESULT(ref IPackageUtil self, BSTR bstrPackageID, BSTR bstrPackageFile, int32 lOptions) ExportPackage;
+				public new function HRESULT(ref IPackageUtil self, BSTR bstrPackageID) ShutdownPackage;
 			}
 		}
 		[CRepr]
@@ -177,17 +177,17 @@ namespace Win32
 			
 			public HRESULT InstallRemoteComponent(BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) mut
 			{
-				return VT.InstallRemoteComponent(&this, bstrServer, bstrPackageID, bstrCLSID);
+				return VT.InstallRemoteComponent(ref this, bstrServer, bstrPackageID, bstrCLSID);
 			}
 			public HRESULT InstallRemoteComponentByName(BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) mut
 			{
-				return VT.InstallRemoteComponentByName(&this, bstrServer, bstrPackageName, bstrProgID);
+				return VT.InstallRemoteComponentByName(ref this, bstrServer, bstrPackageName, bstrProgID);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRemoteComponentUtil *self, BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) InstallRemoteComponent;
-				public new function HRESULT(IRemoteComponentUtil *self, BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) InstallRemoteComponentByName;
+				public new function HRESULT(ref IRemoteComponentUtil self, BSTR bstrServer, BSTR bstrPackageID, BSTR bstrCLSID) InstallRemoteComponent;
+				public new function HRESULT(ref IRemoteComponentUtil self, BSTR bstrServer, BSTR bstrPackageName, BSTR bstrProgID) InstallRemoteComponentByName;
 			}
 		}
 		[CRepr]
@@ -199,17 +199,17 @@ namespace Win32
 			
 			public HRESULT AssociateRole(BSTR bstrRoleID) mut
 			{
-				return VT.AssociateRole(&this, bstrRoleID);
+				return VT.AssociateRole(ref this, bstrRoleID);
 			}
 			public HRESULT AssociateRoleByName(BSTR bstrRoleName) mut
 			{
-				return VT.AssociateRoleByName(&this, bstrRoleName);
+				return VT.AssociateRoleByName(ref this, bstrRoleName);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRoleAssociationUtil *self, BSTR bstrRoleID) AssociateRole;
-				public new function HRESULT(IRoleAssociationUtil *self, BSTR bstrRoleName) AssociateRoleByName;
+				public new function HRESULT(ref IRoleAssociationUtil self, BSTR bstrRoleID) AssociateRole;
+				public new function HRESULT(ref IRoleAssociationUtil self, BSTR bstrRoleName) AssociateRoleByName;
 			}
 		}
 		

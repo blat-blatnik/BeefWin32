@@ -813,23 +813,23 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT WHV_EMULATOR_IO_PORT_CALLBACK(void* Context, WHV_EMULATOR_IO_ACCESS_INFO* IoAccess);
-		public function HRESULT WHV_EMULATOR_MEMORY_CALLBACK(void* Context, WHV_EMULATOR_MEMORY_ACCESS_INFO* MemoryAccess);
+		public function HRESULT WHV_EMULATOR_IO_PORT_CALLBACK(void* Context, out WHV_EMULATOR_IO_ACCESS_INFO IoAccess);
+		public function HRESULT WHV_EMULATOR_MEMORY_CALLBACK(void* Context, out WHV_EMULATOR_MEMORY_ACCESS_INFO MemoryAccess);
 		public function HRESULT WHV_EMULATOR_GET_VIRTUAL_PROCESSOR_REGISTERS_CALLBACK(void* Context, WHV_REGISTER_NAME* RegisterNames, uint32 RegisterCount, WHV_REGISTER_VALUE* RegisterValues);
 		public function HRESULT WHV_EMULATOR_SET_VIRTUAL_PROCESSOR_REGISTERS_CALLBACK(void* Context, WHV_REGISTER_NAME* RegisterNames, uint32 RegisterCount, WHV_REGISTER_VALUE* RegisterValues);
-		public function HRESULT WHV_EMULATOR_TRANSLATE_GVA_PAGE_CALLBACK(void* Context, uint64 Gva, WHV_TRANSLATE_GVA_FLAGS TranslateFlags, WHV_TRANSLATE_GVA_RESULT_CODE* TranslationResult, uint64* Gpa);
+		public function HRESULT WHV_EMULATOR_TRANSLATE_GVA_PAGE_CALLBACK(void* Context, uint64 Gva, WHV_TRANSLATE_GVA_FLAGS TranslateFlags, out WHV_TRANSLATE_GVA_RESULT_CODE TranslationResult, out uint64 Gpa);
 		public function HRESULT HDV_PCI_DEVICE_INITIALIZE(void* deviceContext);
 		public function void HDV_PCI_DEVICE_TEARDOWN(void* deviceContext);
 		public function HRESULT HDV_PCI_DEVICE_SET_CONFIGURATION(void* deviceContext, uint32 configurationValueCount, PWSTR* configurationValues);
-		public function HRESULT HDV_PCI_DEVICE_GET_DETAILS(void* deviceContext, HDV_PCI_PNP_ID* pnpId, uint32 probedBarsCount, uint32* probedBars);
+		public function HRESULT HDV_PCI_DEVICE_GET_DETAILS(void* deviceContext, out HDV_PCI_PNP_ID pnpId, uint32 probedBarsCount, uint32* probedBars);
 		public function HRESULT HDV_PCI_DEVICE_START(void* deviceContext);
 		public function void HDV_PCI_DEVICE_STOP(void* deviceContext);
-		public function HRESULT HDV_PCI_READ_CONFIG_SPACE(void* deviceContext, uint32 offset, uint32* value);
+		public function HRESULT HDV_PCI_READ_CONFIG_SPACE(void* deviceContext, uint32 offset, out uint32 value);
 		public function HRESULT HDV_PCI_WRITE_CONFIG_SPACE(void* deviceContext, uint32 offset, uint32 value);
 		public function HRESULT HDV_PCI_READ_INTERCEPTED_MEMORY(void* deviceContext, HDV_PCI_BAR_SELECTOR barIndex, uint64 offset, uint64 length, uint8* value);
 		public function HRESULT HDV_PCI_WRITE_INTERCEPTED_MEMORY(void* deviceContext, HDV_PCI_BAR_SELECTOR barIndex, uint64 offset, uint64 length, uint8* value);
 		public function void GUEST_SYMBOLS_PROVIDER_DEBUG_INFO_CALLBACK(PSTR InfoMessage);
-		public function BOOL FOUND_IMAGE_CALLBACK(void* Context, DOS_IMAGE_INFO* ImageInfo);
+		public function BOOL FOUND_IMAGE_CALLBACK(void* Context, ref DOS_IMAGE_INFO ImageInfo);
 		
 		// --- Structs ---
 		
@@ -925,7 +925,7 @@ namespace Win32
 			public struct _Anonymous_e__Union
 			{
 				public _Anonymous_e__Struct Anonymous;
-				public uint64[] AsUINT64;
+				public uint64[0] AsUINT64;
 				
 				[CRepr]
 				public struct _Anonymous_e__Struct
@@ -1081,10 +1081,10 @@ namespace Win32
 			public WHV_PROCESSOR_XSAVE_FEATURES ProcessorXsaveFeatures;
 			public uint8 ProcessorClFlushSize;
 			public uint32 ProcessorCount;
-			public uint32[] CpuidExitList;
-			public WHV_X64_CPUID_RESULT[] CpuidResultList;
-			public WHV_X64_CPUID_RESULT2[] CpuidResultList2;
-			public WHV_MSR_ACTION_ENTRY[] MsrActionList;
+			public uint32[0] CpuidExitList;
+			public WHV_X64_CPUID_RESULT[0] CpuidResultList;
+			public WHV_X64_CPUID_RESULT2[0] CpuidResultList2;
+			public WHV_MSR_ACTION_ENTRY[0] MsrActionList;
 			public WHV_MSR_ACTION UnimplementedMsrAction;
 			public uint64 ExceptionExitBitmap;
 			public WHV_X64_LOCAL_APIC_EMULATION_MODE LocalApicEmulationMode;
@@ -1738,7 +1738,7 @@ namespace Win32
 			public uint32 Vector;
 			public WHV_VPCI_INTERRUPT_TARGET_FLAGS Flags;
 			public uint32 ProcessorCount;
-			public uint32[] Processors;
+			public uint32[0] Processors;
 		}
 		[CRepr]
 		public struct WHV_TRIGGER_PARAMETERS
@@ -2028,7 +2028,7 @@ namespace Win32
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvGetCapability(WHV_CAPABILITY_CODE CapabilityCode, void* CapabilityBuffer, uint32 CapabilityBufferSizeInBytes, uint32* WrittenSizeInBytes);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvCreatePartition(WHV_PARTITION_HANDLE* Partition);
+		public static extern HRESULT WHvCreatePartition(out WHV_PARTITION_HANDLE Partition);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvSetupPartition(WHV_PARTITION_HANDLE Partition);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2050,7 +2050,7 @@ namespace Win32
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvUnmapGpaRange(WHV_PARTITION_HANDLE Partition, uint64 GuestAddress, uint64 SizeInBytes);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvTranslateGva(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, uint64 Gva, WHV_TRANSLATE_GVA_FLAGS TranslateFlags, WHV_TRANSLATE_GVA_RESULT* TranslationResult, uint64* Gpa);
+		public static extern HRESULT WHvTranslateGva(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, uint64 Gva, WHV_TRANSLATE_GVA_FLAGS TranslateFlags, out WHV_TRANSLATE_GVA_RESULT TranslationResult, out uint64 Gpa);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvCreateVirtualProcessor(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, uint32 Flags);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2070,9 +2070,9 @@ namespace Win32
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvSetVirtualProcessorInterruptControllerState(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, void* State, uint32 StateSize);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvRequestInterrupt(WHV_PARTITION_HANDLE Partition, WHV_INTERRUPT_CONTROL* Interrupt, uint32 InterruptControlSize);
+		public static extern HRESULT WHvRequestInterrupt(WHV_PARTITION_HANDLE Partition, in WHV_INTERRUPT_CONTROL Interrupt, uint32 InterruptControlSize);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvGetVirtualProcessorXsaveState(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, void* Buffer, uint32 BufferSizeInBytes, uint32* BytesWritten);
+		public static extern HRESULT WHvGetVirtualProcessorXsaveState(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, void* Buffer, uint32 BufferSizeInBytes, out uint32 BytesWritten);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvSetVirtualProcessorXsaveState(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, void* Buffer, uint32 BufferSizeInBytes);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2086,9 +2086,9 @@ namespace Win32
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvSetVirtualProcessorInterruptControllerState2(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, void* State, uint32 StateSize);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvRegisterPartitionDoorbellEvent(WHV_PARTITION_HANDLE Partition, WHV_DOORBELL_MATCH_DATA* MatchData, HANDLE EventHandle);
+		public static extern HRESULT WHvRegisterPartitionDoorbellEvent(WHV_PARTITION_HANDLE Partition, in WHV_DOORBELL_MATCH_DATA MatchData, HANDLE EventHandle);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvUnregisterPartitionDoorbellEvent(WHV_PARTITION_HANDLE Partition, WHV_DOORBELL_MATCH_DATA* MatchData);
+		public static extern HRESULT WHvUnregisterPartitionDoorbellEvent(WHV_PARTITION_HANDLE Partition, in WHV_DOORBELL_MATCH_DATA MatchData);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvAdviseGpaRange(WHV_PARTITION_HANDLE Partition, WHV_MEMORY_RANGE_ENTRY* GpaRanges, uint32 GpaRangesCount, WHV_ADVISE_GPA_RANGE_CODE Advice, void* AdviceBuffer, uint32 AdviceBufferSizeInBytes);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2102,7 +2102,7 @@ namespace Win32
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvSetVirtualProcessorState(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, WHV_VIRTUAL_PROCESSOR_STATE_TYPE StateType, void* Buffer, uint32 BufferSizeInBytes);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvAllocateVpciResource(Guid* ProviderId, WHV_ALLOCATE_VPCI_RESOURCE_FLAGS Flags, void* ResourceDescriptor, uint32 ResourceDescriptorSizeInBytes, HANDLE* VpciResource);
+		public static extern HRESULT WHvAllocateVpciResource(Guid* ProviderId, WHV_ALLOCATE_VPCI_RESOURCE_FLAGS Flags, void* ResourceDescriptor, uint32 ResourceDescriptorSizeInBytes, out HANDLE VpciResource);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvCreateVpciDevice(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, HANDLE VpciResource, WHV_CREATE_VPCI_DEVICE_FLAGS Flags, HANDLE NotificationEventHandle);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2110,35 +2110,35 @@ namespace Win32
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvGetVpciDeviceProperty(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, WHV_VPCI_DEVICE_PROPERTY_CODE PropertyCode, void* PropertyBuffer, uint32 PropertyBufferSizeInBytes, uint32* WrittenSizeInBytes);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvGetVpciDeviceNotification(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, WHV_VPCI_DEVICE_NOTIFICATION* Notification, uint32 NotificationSizeInBytes);
+		public static extern HRESULT WHvGetVpciDeviceNotification(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, out WHV_VPCI_DEVICE_NOTIFICATION Notification, uint32 NotificationSizeInBytes);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvMapVpciDeviceMmioRanges(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, uint32* MappingCount, WHV_VPCI_MMIO_MAPPING** Mappings);
+		public static extern HRESULT WHvMapVpciDeviceMmioRanges(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, out uint32 MappingCount, out WHV_VPCI_MMIO_MAPPING* Mappings);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvUnmapVpciDeviceMmioRanges(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvSetVpciDevicePowerState(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, DEVICE_POWER_STATE PowerState);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvReadVpciDeviceRegister(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, WHV_VPCI_DEVICE_REGISTER* Register, void* Data);
+		public static extern HRESULT WHvReadVpciDeviceRegister(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, in WHV_VPCI_DEVICE_REGISTER Register, void* Data);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvWriteVpciDeviceRegister(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, WHV_VPCI_DEVICE_REGISTER* Register, void* Data);
+		public static extern HRESULT WHvWriteVpciDeviceRegister(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, in WHV_VPCI_DEVICE_REGISTER Register, void* Data);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvMapVpciDeviceInterrupt(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, uint32 Index, uint32 MessageCount, WHV_VPCI_INTERRUPT_TARGET* Target, uint64* MsiAddress, uint32* MsiData);
+		public static extern HRESULT WHvMapVpciDeviceInterrupt(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, uint32 Index, uint32 MessageCount, in WHV_VPCI_INTERRUPT_TARGET Target, out uint64 MsiAddress, out uint32 MsiData);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvUnmapVpciDeviceInterrupt(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, uint32 Index);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvRetargetVpciDeviceInterrupt(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, uint64 MsiAddress, uint32 MsiData, WHV_VPCI_INTERRUPT_TARGET* Target);
+		public static extern HRESULT WHvRetargetVpciDeviceInterrupt(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, uint64 MsiAddress, uint32 MsiData, in WHV_VPCI_INTERRUPT_TARGET Target);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvRequestVpciDeviceInterrupt(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, uint64 MsiAddress, uint32 MsiData);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvGetVpciDeviceInterruptTarget(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, uint32 Index, uint32 MultiMessageNumber, WHV_VPCI_INTERRUPT_TARGET* Target, uint32 TargetSizeInBytes, uint32* BytesWritten);
+		public static extern HRESULT WHvGetVpciDeviceInterruptTarget(WHV_PARTITION_HANDLE Partition, uint64 LogicalDeviceId, uint32 Index, uint32 MultiMessageNumber, out WHV_VPCI_INTERRUPT_TARGET Target, uint32 TargetSizeInBytes, uint32* BytesWritten);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvCreateTrigger(WHV_PARTITION_HANDLE Partition, WHV_TRIGGER_PARAMETERS* Parameters, void** TriggerHandle, HANDLE* EventHandle);
+		public static extern HRESULT WHvCreateTrigger(WHV_PARTITION_HANDLE Partition, in WHV_TRIGGER_PARAMETERS Parameters, void** TriggerHandle, out HANDLE EventHandle);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvUpdateTriggerParameters(WHV_PARTITION_HANDLE Partition, WHV_TRIGGER_PARAMETERS* Parameters, void* TriggerHandle);
+		public static extern HRESULT WHvUpdateTriggerParameters(WHV_PARTITION_HANDLE Partition, in WHV_TRIGGER_PARAMETERS Parameters, void* TriggerHandle);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvDeleteTrigger(WHV_PARTITION_HANDLE Partition, void* TriggerHandle);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvCreateNotificationPort(WHV_PARTITION_HANDLE Partition, WHV_NOTIFICATION_PORT_PARAMETERS* Parameters, HANDLE EventHandle, void** PortHandle);
+		public static extern HRESULT WHvCreateNotificationPort(WHV_PARTITION_HANDLE Partition, in WHV_NOTIFICATION_PORT_PARAMETERS Parameters, HANDLE EventHandle, void** PortHandle);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvSetNotificationPortProperty(WHV_PARTITION_HANDLE Partition, void* PortHandle, WHV_NOTIFICATION_PORT_PROPERTY_CODE PropertyCode, uint64 PropertyValue);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2146,31 +2146,31 @@ namespace Win32
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvPostVirtualProcessorSynicMessage(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, uint32 SintIndex, void* Message, uint32 MessageSizeInBytes);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvGetVirtualProcessorCpuidOutput(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, uint32 Eax, uint32 Ecx, WHV_CPUID_OUTPUT* CpuidOutput);
+		public static extern HRESULT WHvGetVirtualProcessorCpuidOutput(WHV_PARTITION_HANDLE Partition, uint32 VpIndex, uint32 Eax, uint32 Ecx, out WHV_CPUID_OUTPUT CpuidOutput);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvGetInterruptTargetVpSet(WHV_PARTITION_HANDLE Partition, uint64 Destination, WHV_INTERRUPT_DESTINATION_MODE DestinationMode, uint32* TargetVps, uint32 VpCount, uint32* TargetVpCount);
+		public static extern HRESULT WHvGetInterruptTargetVpSet(WHV_PARTITION_HANDLE Partition, uint64 Destination, WHV_INTERRUPT_DESTINATION_MODE DestinationMode, uint32* TargetVps, uint32 VpCount, out uint32 TargetVpCount);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvStartPartitionMigration(WHV_PARTITION_HANDLE Partition, HANDLE* MigrationHandle);
+		public static extern HRESULT WHvStartPartitionMigration(WHV_PARTITION_HANDLE Partition, out HANDLE MigrationHandle);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvCancelPartitionMigration(WHV_PARTITION_HANDLE Partition);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvCompletePartitionMigration(WHV_PARTITION_HANDLE Partition);
 		[Import("winhvplatform.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvAcceptPartitionMigration(HANDLE MigrationHandle, WHV_PARTITION_HANDLE* Partition);
+		public static extern HRESULT WHvAcceptPartitionMigration(HANDLE MigrationHandle, out WHV_PARTITION_HANDLE Partition);
 		[Import("winhvemulation.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvEmulatorCreateEmulator(WHV_EMULATOR_CALLBACKS* Callbacks, void** Emulator);
+		public static extern HRESULT WHvEmulatorCreateEmulator(in WHV_EMULATOR_CALLBACKS Callbacks, void** Emulator);
 		[Import("winhvemulation.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WHvEmulatorDestroyEmulator(void* Emulator);
 		[Import("winhvemulation.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvEmulatorTryIoEmulation(void* Emulator, void* Context, WHV_VP_EXIT_CONTEXT* VpContext, WHV_X64_IO_PORT_ACCESS_CONTEXT* IoInstructionContext, WHV_EMULATOR_STATUS* EmulatorReturnStatus);
+		public static extern HRESULT WHvEmulatorTryIoEmulation(void* Emulator, void* Context, in WHV_VP_EXIT_CONTEXT VpContext, in WHV_X64_IO_PORT_ACCESS_CONTEXT IoInstructionContext, out WHV_EMULATOR_STATUS EmulatorReturnStatus);
 		[Import("winhvemulation.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WHvEmulatorTryMmioEmulation(void* Emulator, void* Context, WHV_VP_EXIT_CONTEXT* VpContext, WHV_MEMORY_ACCESS_CONTEXT* MmioInstructionContext, WHV_EMULATOR_STATUS* EmulatorReturnStatus);
+		public static extern HRESULT WHvEmulatorTryMmioEmulation(void* Emulator, void* Context, in WHV_VP_EXIT_CONTEXT VpContext, in WHV_MEMORY_ACCESS_CONTEXT MmioInstructionContext, out WHV_EMULATOR_STATUS EmulatorReturnStatus);
 		[Import("vmdevicehost.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HdvInitializeDeviceHost(HCS_SYSTEM computeSystem, void** deviceHostHandle);
 		[Import("vmdevicehost.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HdvTeardownDeviceHost(void* deviceHostHandle);
 		[Import("vmdevicehost.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HdvCreateDeviceInstance(void* deviceHostHandle, HDV_DEVICE_TYPE deviceType, Guid* deviceClassId, Guid* deviceInstanceId, void* deviceInterface, void* deviceContext, void** deviceHandle);
+		public static extern HRESULT HdvCreateDeviceInstance(void* deviceHostHandle, HDV_DEVICE_TYPE deviceType, in Guid deviceClassId, in Guid deviceInstanceId, void* deviceInterface, void* deviceContext, void** deviceHandle);
 		[Import("vmdevicehost.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HdvReadGuestMemory(void* requestor, uint64 guestPhysicalAddress, uint32 byteCount, uint8* buffer);
 		[Import("vmdevicehost.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2190,7 +2190,7 @@ namespace Win32
 		[Import("vmdevicehost.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HdvDestroySectionBackedMmioRange(void* requestor, HDV_PCI_BAR_SELECTOR barIndex, uint64 offsetInPages);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT LocateSavedStateFiles(PWSTR vmName, PWSTR snapshotName, PWSTR* binPath, PWSTR* vsvPath, PWSTR* vmrsPath);
+		public static extern HRESULT LocateSavedStateFiles(PWSTR vmName, PWSTR snapshotName, out PWSTR binPath, out PWSTR vsvPath, out PWSTR vmrsPath);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT LoadSavedStateFile(PWSTR vmrsFile, void** vmSavedStateDumpHandle);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2200,53 +2200,53 @@ namespace Win32
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ReleaseSavedStateFiles(void* vmSavedStateDumpHandle);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetGuestEnabledVirtualTrustLevels(void* vmSavedStateDumpHandle, uint32* virtualTrustLevels);
+		public static extern HRESULT GetGuestEnabledVirtualTrustLevels(void* vmSavedStateDumpHandle, out uint32 virtualTrustLevels);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetGuestOsInfo(void* vmSavedStateDumpHandle, uint8 virtualTrustLevel, GUEST_OS_INFO* guestOsInfo);
+		public static extern HRESULT GetGuestOsInfo(void* vmSavedStateDumpHandle, uint8 virtualTrustLevel, out GUEST_OS_INFO guestOsInfo);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetVpCount(void* vmSavedStateDumpHandle, uint32* vpCount);
+		public static extern HRESULT GetVpCount(void* vmSavedStateDumpHandle, out uint32 vpCount);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetArchitecture(void* vmSavedStateDumpHandle, uint32 vpId, VIRTUAL_PROCESSOR_ARCH* architecture);
+		public static extern HRESULT GetArchitecture(void* vmSavedStateDumpHandle, uint32 vpId, out VIRTUAL_PROCESSOR_ARCH architecture);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ForceArchitecture(void* vmSavedStateDumpHandle, uint32 vpId, VIRTUAL_PROCESSOR_ARCH architecture);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetActiveVirtualTrustLevel(void* vmSavedStateDumpHandle, uint32 vpId, uint8* virtualTrustLevel);
+		public static extern HRESULT GetActiveVirtualTrustLevel(void* vmSavedStateDumpHandle, uint32 vpId, out uint8 virtualTrustLevel);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetEnabledVirtualTrustLevels(void* vmSavedStateDumpHandle, uint32 vpId, uint32* virtualTrustLevels);
+		public static extern HRESULT GetEnabledVirtualTrustLevels(void* vmSavedStateDumpHandle, uint32 vpId, out uint32 virtualTrustLevels);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ForceActiveVirtualTrustLevel(void* vmSavedStateDumpHandle, uint32 vpId, uint8 virtualTrustLevel);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT IsActiveVirtualTrustLevelEnabled(void* vmSavedStateDumpHandle, uint32 vpId, BOOL* activeVirtualTrustLevelEnabled);
+		public static extern HRESULT IsActiveVirtualTrustLevelEnabled(void* vmSavedStateDumpHandle, uint32 vpId, out BOOL activeVirtualTrustLevelEnabled);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT IsNestedVirtualizationEnabled(void* vmSavedStateDumpHandle, BOOL* enabled);
+		public static extern HRESULT IsNestedVirtualizationEnabled(void* vmSavedStateDumpHandle, out BOOL enabled);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetNestedVirtualizationMode(void* vmSavedStateDumpHandle, uint32 vpId, BOOL* enabled);
+		public static extern HRESULT GetNestedVirtualizationMode(void* vmSavedStateDumpHandle, uint32 vpId, out BOOL enabled);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ForceNestedHostMode(void* vmSavedStateDumpHandle, uint32 vpId, BOOL hostMode, BOOL* oldMode);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT InKernelSpace(void* vmSavedStateDumpHandle, uint32 vpId, BOOL* inKernelSpace);
+		public static extern HRESULT InKernelSpace(void* vmSavedStateDumpHandle, uint32 vpId, out BOOL inKernelSpace);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetRegisterValue(void* vmSavedStateDumpHandle, uint32 vpId, uint32 registerId, VIRTUAL_PROCESSOR_REGISTER* registerValue);
+		public static extern HRESULT GetRegisterValue(void* vmSavedStateDumpHandle, uint32 vpId, uint32 registerId, out VIRTUAL_PROCESSOR_REGISTER registerValue);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetPagingMode(void* vmSavedStateDumpHandle, uint32 vpId, PAGING_MODE* pagingMode);
+		public static extern HRESULT GetPagingMode(void* vmSavedStateDumpHandle, uint32 vpId, out PAGING_MODE pagingMode);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ForcePagingMode(void* vmSavedStateDumpHandle, uint32 vpId, PAGING_MODE pagingMode);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ReadGuestPhysicalAddress(void* vmSavedStateDumpHandle, uint64 physicalAddress, void* buffer, uint32 bufferSize, uint32* bytesRead);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GuestVirtualAddressToPhysicalAddress(void* vmSavedStateDumpHandle, uint32 vpId, uint64 virtualAddress, uint64* physicalAddress, uint64* unmappedRegionSize);
+		public static extern HRESULT GuestVirtualAddressToPhysicalAddress(void* vmSavedStateDumpHandle, uint32 vpId, uint64 virtualAddress, out uint64 physicalAddress, uint64* unmappedRegionSize);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetGuestPhysicalMemoryChunks(void* vmSavedStateDumpHandle, uint64* memoryChunkPageSize, GPA_MEMORY_CHUNK* memoryChunks, uint64* memoryChunkCount);
+		public static extern HRESULT GetGuestPhysicalMemoryChunks(void* vmSavedStateDumpHandle, out uint64 memoryChunkPageSize, out GPA_MEMORY_CHUNK memoryChunks, out uint64 memoryChunkCount);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GuestPhysicalAddressToRawSavedMemoryOffset(void* vmSavedStateDumpHandle, uint64 physicalAddress, uint64* rawSavedMemoryOffset);
+		public static extern HRESULT GuestPhysicalAddressToRawSavedMemoryOffset(void* vmSavedStateDumpHandle, uint64 physicalAddress, out uint64 rawSavedMemoryOffset);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ReadGuestRawSavedMemory(void* vmSavedStateDumpHandle, uint64 rawSavedMemoryOffset, void* buffer, uint32 bufferSize, uint32* bytesRead);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetGuestRawSavedMemorySize(void* vmSavedStateDumpHandle, uint64* guestRawSavedMemorySize);
+		public static extern HRESULT GetGuestRawSavedMemorySize(void* vmSavedStateDumpHandle, out uint64 guestRawSavedMemorySize);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SetMemoryBlockCacheLimit(void* vmSavedStateDumpHandle, uint64 memoryBlockCacheLimit);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetMemoryBlockCacheLimit(void* vmSavedStateDumpHandle, uint64* memoryBlockCacheLimit);
+		public static extern HRESULT GetMemoryBlockCacheLimit(void* vmSavedStateDumpHandle, out uint64 memoryBlockCacheLimit);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ApplyGuestMemoryFix(void* vmSavedStateDumpHandle, uint32 vpId, uint64 virtualAddress, void* fixBuffer, uint32 fixBufferSize);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2262,19 +2262,19 @@ namespace Win32
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT LoadSavedStateModuleSymbolsEx(void* vmSavedStateDumpHandle, PSTR imageName, uint32 imageTimestamp, PSTR moduleName, uint64 baseAddress, uint32 sizeOfBase);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ResolveSavedStateGlobalVariableAddress(void* vmSavedStateDumpHandle, uint32 vpId, PSTR globalName, uint64* virtualAddress, uint32* size);
+		public static extern HRESULT ResolveSavedStateGlobalVariableAddress(void* vmSavedStateDumpHandle, uint32 vpId, PSTR globalName, out uint64 virtualAddress, uint32* size);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ReadSavedStateGlobalVariable(void* vmSavedStateDumpHandle, uint32 vpId, PSTR globalName, void* buffer, uint32 bufferSize);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetSavedStateSymbolTypeSize(void* vmSavedStateDumpHandle, uint32 vpId, PSTR typeName, uint32* size);
+		public static extern HRESULT GetSavedStateSymbolTypeSize(void* vmSavedStateDumpHandle, uint32 vpId, PSTR typeName, out uint32 size);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT FindSavedStateSymbolFieldInType(void* vmSavedStateDumpHandle, uint32 vpId, PSTR typeName, PWSTR fieldName, uint32* offset, BOOL* found);
+		public static extern HRESULT FindSavedStateSymbolFieldInType(void* vmSavedStateDumpHandle, uint32 vpId, PSTR typeName, PWSTR fieldName, out uint32 offset, out BOOL found);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetSavedStateSymbolFieldInfo(void* vmSavedStateDumpHandle, uint32 vpId, PSTR typeName, PWSTR* typeFieldInfoMap);
+		public static extern HRESULT GetSavedStateSymbolFieldInfo(void* vmSavedStateDumpHandle, uint32 vpId, PSTR typeName, out PWSTR typeFieldInfoMap);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ScanMemoryForDosImages(void* vmSavedStateDumpHandle, uint32 vpId, uint64 startAddress, uint64 endAddress, void* callbackContext, FOUND_IMAGE_CALLBACK foundImageCallback, uint64* standaloneAddress, uint32 standaloneAddressCount);
+		public static extern HRESULT ScanMemoryForDosImages(void* vmSavedStateDumpHandle, uint32 vpId, uint64 startAddress, uint64 endAddress, void* callbackContext, FOUND_IMAGE_CALLBACK foundImageCallback, ref uint64 standaloneAddress, uint32 standaloneAddressCount);
 		[Import("vmsavedstatedumpprovider.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CallStackUnwind(void* vmSavedStateDumpHandle, uint32 vpId, MODULE_INFO* imageInfo, uint32 imageInfoCount, uint32 frameCount, PWSTR* callStack);
+		public static extern HRESULT CallStackUnwind(void* vmSavedStateDumpHandle, uint32 vpId, ref MODULE_INFO imageInfo, uint32 imageInfoCount, uint32 frameCount, out PWSTR callStack);
 		
 	}
 }

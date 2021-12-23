@@ -61,29 +61,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIndex(uint32* puiIndex) mut
+			public HRESULT GetIndex(out uint32 puiIndex) mut
 			{
-				return VT.GetIndex(&this, puiIndex);
+				return VT.GetIndex(ref this, out puiIndex);
 			}
-			public HRESULT GetOptimalFormat(Guid* pFormat) mut
+			public HRESULT GetOptimalFormat(out Guid pFormat) mut
 			{
-				return VT.GetOptimalFormat(&this, pFormat);
+				return VT.GetOptimalFormat(ref this, out pFormat);
 			}
-			public HRESULT GetNumberFormats(uint32* pulNumberFormats) mut
+			public HRESULT GetNumberFormats(out uint32 pulNumberFormats) mut
 			{
-				return VT.GetNumberFormats(&this, pulNumberFormats);
+				return VT.GetNumberFormats(ref this, out pulNumberFormats);
 			}
-			public HRESULT GetFormat(uint32 ulIndex, Guid* pFormat) mut
+			public HRESULT GetFormat(uint32 ulIndex, out Guid pFormat) mut
 			{
-				return VT.GetFormat(&this, ulIndex, pFormat);
+				return VT.GetFormat(ref this, ulIndex, out pFormat);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectConnectorInfo *self, uint32* puiIndex) GetIndex;
-				public new function HRESULT(IMILBitmapEffectConnectorInfo *self, Guid* pFormat) GetOptimalFormat;
-				public new function HRESULT(IMILBitmapEffectConnectorInfo *self, uint32* pulNumberFormats) GetNumberFormats;
-				public new function HRESULT(IMILBitmapEffectConnectorInfo *self, uint32 ulIndex, Guid* pFormat) GetFormat;
+				public new function HRESULT(ref IMILBitmapEffectConnectorInfo self, out uint32 puiIndex) GetIndex;
+				public new function HRESULT(ref IMILBitmapEffectConnectorInfo self, out Guid pFormat) GetOptimalFormat;
+				public new function HRESULT(ref IMILBitmapEffectConnectorInfo self, out uint32 pulNumberFormats) GetNumberFormats;
+				public new function HRESULT(ref IMILBitmapEffectConnectorInfo self, uint32 ulIndex, out Guid pFormat) GetFormat;
 			}
 		}
 		[CRepr]
@@ -93,29 +93,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNumberInputs(uint32* puiNumInputs) mut
+			public HRESULT GetNumberInputs(out uint32 puiNumInputs) mut
 			{
-				return VT.GetNumberInputs(&this, puiNumInputs);
+				return VT.GetNumberInputs(ref this, out puiNumInputs);
 			}
-			public HRESULT GetNumberOutputs(uint32* puiNumOutputs) mut
+			public HRESULT GetNumberOutputs(out uint32 puiNumOutputs) mut
 			{
-				return VT.GetNumberOutputs(&this, puiNumOutputs);
+				return VT.GetNumberOutputs(ref this, out puiNumOutputs);
 			}
-			public HRESULT GetInputConnectorInfo(uint32 uiIndex, IMILBitmapEffectConnectorInfo** ppConnectorInfo) mut
+			public HRESULT GetInputConnectorInfo(uint32 uiIndex, out IMILBitmapEffectConnectorInfo* ppConnectorInfo) mut
 			{
-				return VT.GetInputConnectorInfo(&this, uiIndex, ppConnectorInfo);
+				return VT.GetInputConnectorInfo(ref this, uiIndex, out ppConnectorInfo);
 			}
-			public HRESULT GetOutputConnectorInfo(uint32 uiIndex, IMILBitmapEffectConnectorInfo** ppConnectorInfo) mut
+			public HRESULT GetOutputConnectorInfo(uint32 uiIndex, out IMILBitmapEffectConnectorInfo* ppConnectorInfo) mut
 			{
-				return VT.GetOutputConnectorInfo(&this, uiIndex, ppConnectorInfo);
+				return VT.GetOutputConnectorInfo(ref this, uiIndex, out ppConnectorInfo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectConnectionsInfo *self, uint32* puiNumInputs) GetNumberInputs;
-				public new function HRESULT(IMILBitmapEffectConnectionsInfo *self, uint32* puiNumOutputs) GetNumberOutputs;
-				public new function HRESULT(IMILBitmapEffectConnectionsInfo *self, uint32 uiIndex, IMILBitmapEffectConnectorInfo** ppConnectorInfo) GetInputConnectorInfo;
-				public new function HRESULT(IMILBitmapEffectConnectionsInfo *self, uint32 uiIndex, IMILBitmapEffectConnectorInfo** ppConnectorInfo) GetOutputConnectorInfo;
+				public new function HRESULT(ref IMILBitmapEffectConnectionsInfo self, out uint32 puiNumInputs) GetNumberInputs;
+				public new function HRESULT(ref IMILBitmapEffectConnectionsInfo self, out uint32 puiNumOutputs) GetNumberOutputs;
+				public new function HRESULT(ref IMILBitmapEffectConnectionsInfo self, uint32 uiIndex, out IMILBitmapEffectConnectorInfo* ppConnectorInfo) GetInputConnectorInfo;
+				public new function HRESULT(ref IMILBitmapEffectConnectionsInfo self, uint32 uiIndex, out IMILBitmapEffectConnectorInfo* ppConnectorInfo) GetOutputConnectorInfo;
 			}
 		}
 		[CRepr]
@@ -125,19 +125,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInputConnector(uint32 uiIndex, IMILBitmapEffectInputConnector** ppConnector) mut
+			public HRESULT GetInputConnector(uint32 uiIndex, out IMILBitmapEffectInputConnector* ppConnector) mut
 			{
-				return VT.GetInputConnector(&this, uiIndex, ppConnector);
+				return VT.GetInputConnector(ref this, uiIndex, out ppConnector);
 			}
-			public HRESULT GetOutputConnector(uint32 uiIndex, IMILBitmapEffectOutputConnector** ppConnector) mut
+			public HRESULT GetOutputConnector(uint32 uiIndex, out IMILBitmapEffectOutputConnector* ppConnector) mut
 			{
-				return VT.GetOutputConnector(&this, uiIndex, ppConnector);
+				return VT.GetOutputConnector(ref this, uiIndex, out ppConnector);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectConnections *self, uint32 uiIndex, IMILBitmapEffectInputConnector** ppConnector) GetInputConnector;
-				public new function HRESULT(IMILBitmapEffectConnections *self, uint32 uiIndex, IMILBitmapEffectOutputConnector** ppConnector) GetOutputConnector;
+				public new function HRESULT(ref IMILBitmapEffectConnections self, uint32 uiIndex, out IMILBitmapEffectInputConnector* ppConnector) GetInputConnector;
+				public new function HRESULT(ref IMILBitmapEffectConnections self, uint32 uiIndex, out IMILBitmapEffectOutputConnector* ppConnector) GetOutputConnector;
 			}
 		}
 		[CRepr]
@@ -147,24 +147,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOutput(uint32 uiIndex, IMILBitmapEffectRenderContext* pContext, IWICBitmapSource** ppBitmapSource) mut
+			public HRESULT GetOutput(uint32 uiIndex, ref IMILBitmapEffectRenderContext pContext, out IWICBitmapSource* ppBitmapSource) mut
 			{
-				return VT.GetOutput(&this, uiIndex, pContext, ppBitmapSource);
+				return VT.GetOutput(ref this, uiIndex, ref pContext, out ppBitmapSource);
 			}
-			public HRESULT GetParentEffect(IMILBitmapEffectGroup** ppParentEffect) mut
+			public HRESULT GetParentEffect(out IMILBitmapEffectGroup* ppParentEffect) mut
 			{
-				return VT.GetParentEffect(&this, ppParentEffect);
+				return VT.GetParentEffect(ref this, out ppParentEffect);
 			}
-			public HRESULT SetInputSource(uint32 uiIndex, IWICBitmapSource* pBitmapSource) mut
+			public HRESULT SetInputSource(uint32 uiIndex, ref IWICBitmapSource pBitmapSource) mut
 			{
-				return VT.SetInputSource(&this, uiIndex, pBitmapSource);
+				return VT.SetInputSource(ref this, uiIndex, ref pBitmapSource);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffect *self, uint32 uiIndex, IMILBitmapEffectRenderContext* pContext, IWICBitmapSource** ppBitmapSource) GetOutput;
-				public new function HRESULT(IMILBitmapEffect *self, IMILBitmapEffectGroup** ppParentEffect) GetParentEffect;
-				public new function HRESULT(IMILBitmapEffect *self, uint32 uiIndex, IWICBitmapSource* pBitmapSource) SetInputSource;
+				public new function HRESULT(ref IMILBitmapEffect self, uint32 uiIndex, ref IMILBitmapEffectRenderContext pContext, out IWICBitmapSource* ppBitmapSource) GetOutput;
+				public new function HRESULT(ref IMILBitmapEffect self, out IMILBitmapEffectGroup* ppParentEffect) GetParentEffect;
+				public new function HRESULT(ref IMILBitmapEffect self, uint32 uiIndex, ref IWICBitmapSource pBitmapSource) SetInputSource;
 			}
 		}
 		[CRepr]
@@ -174,44 +174,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsInPlaceModificationAllowed(IMILBitmapEffectOutputConnector* pOutputConnector, int16* pfModifyInPlace) mut
+			public HRESULT IsInPlaceModificationAllowed(ref IMILBitmapEffectOutputConnector pOutputConnector, out int16 pfModifyInPlace) mut
 			{
-				return VT.IsInPlaceModificationAllowed(&this, pOutputConnector, pfModifyInPlace);
+				return VT.IsInPlaceModificationAllowed(ref this, ref pOutputConnector, out pfModifyInPlace);
 			}
-			public HRESULT SetParentEffect(IMILBitmapEffectGroup* pParentEffect) mut
+			public HRESULT SetParentEffect(ref IMILBitmapEffectGroup pParentEffect) mut
 			{
-				return VT.SetParentEffect(&this, pParentEffect);
+				return VT.SetParentEffect(ref this, ref pParentEffect);
 			}
-			public HRESULT GetInputSource(uint32 uiIndex, IWICBitmapSource** ppBitmapSource) mut
+			public HRESULT GetInputSource(uint32 uiIndex, out IWICBitmapSource* ppBitmapSource) mut
 			{
-				return VT.GetInputSource(&this, uiIndex, ppBitmapSource);
+				return VT.GetInputSource(ref this, uiIndex, out ppBitmapSource);
 			}
-			public HRESULT GetInputSourceBounds(uint32 uiIndex, MilRectD* pRect) mut
+			public HRESULT GetInputSourceBounds(uint32 uiIndex, out MilRectD pRect) mut
 			{
-				return VT.GetInputSourceBounds(&this, uiIndex, pRect);
+				return VT.GetInputSourceBounds(ref this, uiIndex, out pRect);
 			}
-			public HRESULT GetInputBitmapSource(uint32 uiIndex, IMILBitmapEffectRenderContext* pRenderContext, int16* pfModifyInPlace, IWICBitmapSource** ppBitmapSource) mut
+			public HRESULT GetInputBitmapSource(uint32 uiIndex, ref IMILBitmapEffectRenderContext pRenderContext, out int16 pfModifyInPlace, out IWICBitmapSource* ppBitmapSource) mut
 			{
-				return VT.GetInputBitmapSource(&this, uiIndex, pRenderContext, pfModifyInPlace, ppBitmapSource);
+				return VT.GetInputBitmapSource(ref this, uiIndex, ref pRenderContext, out pfModifyInPlace, out ppBitmapSource);
 			}
-			public HRESULT GetOutputBitmapSource(uint32 uiIndex, IMILBitmapEffectRenderContext* pRenderContext, int16* pfModifyInPlace, IWICBitmapSource** ppBitmapSource) mut
+			public HRESULT GetOutputBitmapSource(uint32 uiIndex, ref IMILBitmapEffectRenderContext pRenderContext, out int16 pfModifyInPlace, out IWICBitmapSource* ppBitmapSource) mut
 			{
-				return VT.GetOutputBitmapSource(&this, uiIndex, pRenderContext, pfModifyInPlace, ppBitmapSource);
+				return VT.GetOutputBitmapSource(ref this, uiIndex, ref pRenderContext, out pfModifyInPlace, out ppBitmapSource);
 			}
-			public HRESULT Initialize(IUnknown* pInner) mut
+			public HRESULT Initialize(ref IUnknown pInner) mut
 			{
-				return VT.Initialize(&this, pInner);
+				return VT.Initialize(ref this, ref pInner);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectImpl *self, IMILBitmapEffectOutputConnector* pOutputConnector, int16* pfModifyInPlace) IsInPlaceModificationAllowed;
-				public new function HRESULT(IMILBitmapEffectImpl *self, IMILBitmapEffectGroup* pParentEffect) SetParentEffect;
-				public new function HRESULT(IMILBitmapEffectImpl *self, uint32 uiIndex, IWICBitmapSource** ppBitmapSource) GetInputSource;
-				public new function HRESULT(IMILBitmapEffectImpl *self, uint32 uiIndex, MilRectD* pRect) GetInputSourceBounds;
-				public new function HRESULT(IMILBitmapEffectImpl *self, uint32 uiIndex, IMILBitmapEffectRenderContext* pRenderContext, int16* pfModifyInPlace, IWICBitmapSource** ppBitmapSource) GetInputBitmapSource;
-				public new function HRESULT(IMILBitmapEffectImpl *self, uint32 uiIndex, IMILBitmapEffectRenderContext* pRenderContext, int16* pfModifyInPlace, IWICBitmapSource** ppBitmapSource) GetOutputBitmapSource;
-				public new function HRESULT(IMILBitmapEffectImpl *self, IUnknown* pInner) Initialize;
+				public new function HRESULT(ref IMILBitmapEffectImpl self, ref IMILBitmapEffectOutputConnector pOutputConnector, out int16 pfModifyInPlace) IsInPlaceModificationAllowed;
+				public new function HRESULT(ref IMILBitmapEffectImpl self, ref IMILBitmapEffectGroup pParentEffect) SetParentEffect;
+				public new function HRESULT(ref IMILBitmapEffectImpl self, uint32 uiIndex, out IWICBitmapSource* ppBitmapSource) GetInputSource;
+				public new function HRESULT(ref IMILBitmapEffectImpl self, uint32 uiIndex, out MilRectD pRect) GetInputSourceBounds;
+				public new function HRESULT(ref IMILBitmapEffectImpl self, uint32 uiIndex, ref IMILBitmapEffectRenderContext pRenderContext, out int16 pfModifyInPlace, out IWICBitmapSource* ppBitmapSource) GetInputBitmapSource;
+				public new function HRESULT(ref IMILBitmapEffectImpl self, uint32 uiIndex, ref IMILBitmapEffectRenderContext pRenderContext, out int16 pfModifyInPlace, out IWICBitmapSource* ppBitmapSource) GetOutputBitmapSource;
+				public new function HRESULT(ref IMILBitmapEffectImpl self, ref IUnknown pInner) Initialize;
 			}
 		}
 		[CRepr]
@@ -221,24 +221,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInteriorInputConnector(uint32 uiIndex, IMILBitmapEffectOutputConnector** ppConnector) mut
+			public HRESULT GetInteriorInputConnector(uint32 uiIndex, out IMILBitmapEffectOutputConnector* ppConnector) mut
 			{
-				return VT.GetInteriorInputConnector(&this, uiIndex, ppConnector);
+				return VT.GetInteriorInputConnector(ref this, uiIndex, out ppConnector);
 			}
-			public HRESULT GetInteriorOutputConnector(uint32 uiIndex, IMILBitmapEffectInputConnector** ppConnector) mut
+			public HRESULT GetInteriorOutputConnector(uint32 uiIndex, out IMILBitmapEffectInputConnector* ppConnector) mut
 			{
-				return VT.GetInteriorOutputConnector(&this, uiIndex, ppConnector);
+				return VT.GetInteriorOutputConnector(ref this, uiIndex, out ppConnector);
 			}
-			public HRESULT Add(IMILBitmapEffect* pEffect) mut
+			public HRESULT Add(ref IMILBitmapEffect pEffect) mut
 			{
-				return VT.Add(&this, pEffect);
+				return VT.Add(ref this, ref pEffect);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectGroup *self, uint32 uiIndex, IMILBitmapEffectOutputConnector** ppConnector) GetInteriorInputConnector;
-				public new function HRESULT(IMILBitmapEffectGroup *self, uint32 uiIndex, IMILBitmapEffectInputConnector** ppConnector) GetInteriorOutputConnector;
-				public new function HRESULT(IMILBitmapEffectGroup *self, IMILBitmapEffect* pEffect) Add;
+				public new function HRESULT(ref IMILBitmapEffectGroup self, uint32 uiIndex, out IMILBitmapEffectOutputConnector* ppConnector) GetInteriorInputConnector;
+				public new function HRESULT(ref IMILBitmapEffectGroup self, uint32 uiIndex, out IMILBitmapEffectInputConnector* ppConnector) GetInteriorOutputConnector;
+				public new function HRESULT(ref IMILBitmapEffectGroup self, ref IMILBitmapEffect pEffect) Add;
 			}
 		}
 		[CRepr]
@@ -248,24 +248,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Preprocess(IMILBitmapEffectRenderContext* pContext) mut
+			public HRESULT Preprocess(ref IMILBitmapEffectRenderContext pContext) mut
 			{
-				return VT.Preprocess(&this, pContext);
+				return VT.Preprocess(ref this, ref pContext);
 			}
-			public HRESULT GetNumberChildren(uint32* puiNumberChildren) mut
+			public HRESULT GetNumberChildren(out uint32 puiNumberChildren) mut
 			{
-				return VT.GetNumberChildren(&this, puiNumberChildren);
+				return VT.GetNumberChildren(ref this, out puiNumberChildren);
 			}
-			public HRESULT GetChildren(IMILBitmapEffects** pChildren) mut
+			public HRESULT GetChildren(out IMILBitmapEffects* pChildren) mut
 			{
-				return VT.GetChildren(&this, pChildren);
+				return VT.GetChildren(ref this, out pChildren);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectGroupImpl *self, IMILBitmapEffectRenderContext* pContext) Preprocess;
-				public new function HRESULT(IMILBitmapEffectGroupImpl *self, uint32* puiNumberChildren) GetNumberChildren;
-				public new function HRESULT(IMILBitmapEffectGroupImpl *self, IMILBitmapEffects** pChildren) GetChildren;
+				public new function HRESULT(ref IMILBitmapEffectGroupImpl self, ref IMILBitmapEffectRenderContext pContext) Preprocess;
+				public new function HRESULT(ref IMILBitmapEffectGroupImpl self, out uint32 puiNumberChildren) GetNumberChildren;
+				public new function HRESULT(ref IMILBitmapEffectGroupImpl self, out IMILBitmapEffects* pChildren) GetChildren;
 			}
 		}
 		[CRepr]
@@ -275,49 +275,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOutputPixelFormat(Guid* format) mut
+			public HRESULT SetOutputPixelFormat(ref Guid format) mut
 			{
-				return VT.SetOutputPixelFormat(&this, format);
+				return VT.SetOutputPixelFormat(ref this, ref format);
 			}
-			public HRESULT GetOutputPixelFormat(Guid* pFormat) mut
+			public HRESULT GetOutputPixelFormat(out Guid pFormat) mut
 			{
-				return VT.GetOutputPixelFormat(&this, pFormat);
+				return VT.GetOutputPixelFormat(ref this, out pFormat);
 			}
 			public HRESULT SetUseSoftwareRenderer(int16 fSoftware) mut
 			{
-				return VT.SetUseSoftwareRenderer(&this, fSoftware);
+				return VT.SetUseSoftwareRenderer(ref this, fSoftware);
 			}
-			public HRESULT SetInitialTransform(MILMatrixF* pMatrix) mut
+			public HRESULT SetInitialTransform(ref MILMatrixF pMatrix) mut
 			{
-				return VT.SetInitialTransform(&this, pMatrix);
+				return VT.SetInitialTransform(ref this, ref pMatrix);
 			}
-			public HRESULT GetFinalTransform(MILMatrixF* pMatrix) mut
+			public HRESULT GetFinalTransform(out MILMatrixF pMatrix) mut
 			{
-				return VT.GetFinalTransform(&this, pMatrix);
+				return VT.GetFinalTransform(ref this, out pMatrix);
 			}
 			public HRESULT SetOutputDPI(double dblDpiX, double dblDpiY) mut
 			{
-				return VT.SetOutputDPI(&this, dblDpiX, dblDpiY);
+				return VT.SetOutputDPI(ref this, dblDpiX, dblDpiY);
 			}
-			public HRESULT GetOutputDPI(double* pdblDpiX, double* pdblDpiY) mut
+			public HRESULT GetOutputDPI(out double pdblDpiX, out double pdblDpiY) mut
 			{
-				return VT.GetOutputDPI(&this, pdblDpiX, pdblDpiY);
+				return VT.GetOutputDPI(ref this, out pdblDpiX, out pdblDpiY);
 			}
-			public HRESULT SetRegionOfInterest(MilRectD* pRect) mut
+			public HRESULT SetRegionOfInterest(ref MilRectD pRect) mut
 			{
-				return VT.SetRegionOfInterest(&this, pRect);
+				return VT.SetRegionOfInterest(ref this, ref pRect);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectRenderContext *self, Guid* format) SetOutputPixelFormat;
-				public new function HRESULT(IMILBitmapEffectRenderContext *self, Guid* pFormat) GetOutputPixelFormat;
-				public new function HRESULT(IMILBitmapEffectRenderContext *self, int16 fSoftware) SetUseSoftwareRenderer;
-				public new function HRESULT(IMILBitmapEffectRenderContext *self, MILMatrixF* pMatrix) SetInitialTransform;
-				public new function HRESULT(IMILBitmapEffectRenderContext *self, MILMatrixF* pMatrix) GetFinalTransform;
-				public new function HRESULT(IMILBitmapEffectRenderContext *self, double dblDpiX, double dblDpiY) SetOutputDPI;
-				public new function HRESULT(IMILBitmapEffectRenderContext *self, double* pdblDpiX, double* pdblDpiY) GetOutputDPI;
-				public new function HRESULT(IMILBitmapEffectRenderContext *self, MilRectD* pRect) SetRegionOfInterest;
+				public new function HRESULT(ref IMILBitmapEffectRenderContext self, ref Guid format) SetOutputPixelFormat;
+				public new function HRESULT(ref IMILBitmapEffectRenderContext self, out Guid pFormat) GetOutputPixelFormat;
+				public new function HRESULT(ref IMILBitmapEffectRenderContext self, int16 fSoftware) SetUseSoftwareRenderer;
+				public new function HRESULT(ref IMILBitmapEffectRenderContext self, ref MILMatrixF pMatrix) SetInitialTransform;
+				public new function HRESULT(ref IMILBitmapEffectRenderContext self, out MILMatrixF pMatrix) GetFinalTransform;
+				public new function HRESULT(ref IMILBitmapEffectRenderContext self, double dblDpiX, double dblDpiY) SetOutputDPI;
+				public new function HRESULT(ref IMILBitmapEffectRenderContext self, out double pdblDpiX, out double pdblDpiY) GetOutputDPI;
+				public new function HRESULT(ref IMILBitmapEffectRenderContext self, ref MilRectD pRect) SetRegionOfInterest;
 			}
 		}
 		[CRepr]
@@ -327,34 +327,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUseSoftwareRenderer(int16* pfSoftware) mut
+			public HRESULT GetUseSoftwareRenderer(out int16 pfSoftware) mut
 			{
-				return VT.GetUseSoftwareRenderer(&this, pfSoftware);
+				return VT.GetUseSoftwareRenderer(ref this, out pfSoftware);
 			}
-			public HRESULT GetTransform(MILMatrixF* pMatrix) mut
+			public HRESULT GetTransform(out MILMatrixF pMatrix) mut
 			{
-				return VT.GetTransform(&this, pMatrix);
+				return VT.GetTransform(ref this, out pMatrix);
 			}
-			public HRESULT UpdateTransform(MILMatrixF* pMatrix) mut
+			public HRESULT UpdateTransform(ref MILMatrixF pMatrix) mut
 			{
-				return VT.UpdateTransform(&this, pMatrix);
+				return VT.UpdateTransform(ref this, ref pMatrix);
 			}
-			public HRESULT GetOutputBounds(MilRectD* pRect) mut
+			public HRESULT GetOutputBounds(out MilRectD pRect) mut
 			{
-				return VT.GetOutputBounds(&this, pRect);
+				return VT.GetOutputBounds(ref this, out pRect);
 			}
-			public HRESULT UpdateOutputBounds(MilRectD* pRect) mut
+			public HRESULT UpdateOutputBounds(ref MilRectD pRect) mut
 			{
-				return VT.UpdateOutputBounds(&this, pRect);
+				return VT.UpdateOutputBounds(ref this, ref pRect);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectRenderContextImpl *self, int16* pfSoftware) GetUseSoftwareRenderer;
-				public new function HRESULT(IMILBitmapEffectRenderContextImpl *self, MILMatrixF* pMatrix) GetTransform;
-				public new function HRESULT(IMILBitmapEffectRenderContextImpl *self, MILMatrixF* pMatrix) UpdateTransform;
-				public new function HRESULT(IMILBitmapEffectRenderContextImpl *self, MilRectD* pRect) GetOutputBounds;
-				public new function HRESULT(IMILBitmapEffectRenderContextImpl *self, MilRectD* pRect) UpdateOutputBounds;
+				public new function HRESULT(ref IMILBitmapEffectRenderContextImpl self, out int16 pfSoftware) GetUseSoftwareRenderer;
+				public new function HRESULT(ref IMILBitmapEffectRenderContextImpl self, out MILMatrixF pMatrix) GetTransform;
+				public new function HRESULT(ref IMILBitmapEffectRenderContextImpl self, ref MILMatrixF pMatrix) UpdateTransform;
+				public new function HRESULT(ref IMILBitmapEffectRenderContextImpl self, out MilRectD pRect) GetOutputBounds;
+				public new function HRESULT(ref IMILBitmapEffectRenderContextImpl self, ref MilRectD pRect) UpdateOutputBounds;
 			}
 		}
 		[CRepr]
@@ -364,24 +364,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEffect(Guid* pguidEffect, IMILBitmapEffect** ppEffect) mut
+			public HRESULT CreateEffect(in Guid pguidEffect, out IMILBitmapEffect* ppEffect) mut
 			{
-				return VT.CreateEffect(&this, pguidEffect, ppEffect);
+				return VT.CreateEffect(ref this, pguidEffect, out ppEffect);
 			}
-			public HRESULT CreateContext(IMILBitmapEffectRenderContext** ppContext) mut
+			public HRESULT CreateContext(out IMILBitmapEffectRenderContext* ppContext) mut
 			{
-				return VT.CreateContext(&this, ppContext);
+				return VT.CreateContext(ref this, out ppContext);
 			}
-			public HRESULT CreateEffectOuter(IMILBitmapEffect** ppEffect) mut
+			public HRESULT CreateEffectOuter(out IMILBitmapEffect* ppEffect) mut
 			{
-				return VT.CreateEffectOuter(&this, ppEffect);
+				return VT.CreateEffectOuter(ref this, out ppEffect);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectFactory *self, Guid* pguidEffect, IMILBitmapEffect** ppEffect) CreateEffect;
-				public new function HRESULT(IMILBitmapEffectFactory *self, IMILBitmapEffectRenderContext** ppContext) CreateContext;
-				public new function HRESULT(IMILBitmapEffectFactory *self, IMILBitmapEffect** ppEffect) CreateEffectOuter;
+				public new function HRESULT(ref IMILBitmapEffectFactory self, in Guid pguidEffect, out IMILBitmapEffect* ppEffect) CreateEffect;
+				public new function HRESULT(ref IMILBitmapEffectFactory self, out IMILBitmapEffectRenderContext* ppContext) CreateContext;
+				public new function HRESULT(ref IMILBitmapEffectFactory self, out IMILBitmapEffect* ppEffect) CreateEffectOuter;
 			}
 		}
 		[CRepr]
@@ -391,39 +391,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOutput(uint32 uiIndex, IMILBitmapEffectRenderContext* pContext, int16* pfModifyInPlace, IWICBitmapSource** ppBitmapSource) mut
+			public HRESULT GetOutput(uint32 uiIndex, ref IMILBitmapEffectRenderContext pContext, out int16 pfModifyInPlace, out IWICBitmapSource* ppBitmapSource) mut
 			{
-				return VT.GetOutput(&this, uiIndex, pContext, pfModifyInPlace, ppBitmapSource);
+				return VT.GetOutput(ref this, uiIndex, ref pContext, out pfModifyInPlace, out ppBitmapSource);
 			}
-			public HRESULT TransformPoint(uint32 uiIndex, MilPoint2D* p, int16 fForwardTransform, IMILBitmapEffectRenderContext* pContext, int16* pfPointTransformed) mut
+			public HRESULT TransformPoint(uint32 uiIndex, out MilPoint2D p, int16 fForwardTransform, ref IMILBitmapEffectRenderContext pContext, out int16 pfPointTransformed) mut
 			{
-				return VT.TransformPoint(&this, uiIndex, p, fForwardTransform, pContext, pfPointTransformed);
+				return VT.TransformPoint(ref this, uiIndex, out p, fForwardTransform, ref pContext, out pfPointTransformed);
 			}
-			public HRESULT TransformRect(uint32 uiIndex, MilRectD* p, int16 fForwardTransform, IMILBitmapEffectRenderContext* pContext) mut
+			public HRESULT TransformRect(uint32 uiIndex, out MilRectD p, int16 fForwardTransform, ref IMILBitmapEffectRenderContext pContext) mut
 			{
-				return VT.TransformRect(&this, uiIndex, p, fForwardTransform, pContext);
+				return VT.TransformRect(ref this, uiIndex, out p, fForwardTransform, ref pContext);
 			}
-			public HRESULT HasAffineTransform(uint32 uiIndex, int16* pfAffine) mut
+			public HRESULT HasAffineTransform(uint32 uiIndex, out int16 pfAffine) mut
 			{
-				return VT.HasAffineTransform(&this, uiIndex, pfAffine);
+				return VT.HasAffineTransform(ref this, uiIndex, out pfAffine);
 			}
-			public HRESULT HasInverseTransform(uint32 uiIndex, int16* pfHasInverse) mut
+			public HRESULT HasInverseTransform(uint32 uiIndex, out int16 pfHasInverse) mut
 			{
-				return VT.HasInverseTransform(&this, uiIndex, pfHasInverse);
+				return VT.HasInverseTransform(ref this, uiIndex, out pfHasInverse);
 			}
-			public HRESULT GetAffineMatrix(uint32 uiIndex, MilMatrix3x2D* pMatrix) mut
+			public HRESULT GetAffineMatrix(uint32 uiIndex, out MilMatrix3x2D pMatrix) mut
 			{
-				return VT.GetAffineMatrix(&this, uiIndex, pMatrix);
+				return VT.GetAffineMatrix(ref this, uiIndex, out pMatrix);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectPrimitive *self, uint32 uiIndex, IMILBitmapEffectRenderContext* pContext, int16* pfModifyInPlace, IWICBitmapSource** ppBitmapSource) GetOutput;
-				public new function HRESULT(IMILBitmapEffectPrimitive *self, uint32 uiIndex, MilPoint2D* p, int16 fForwardTransform, IMILBitmapEffectRenderContext* pContext, int16* pfPointTransformed) TransformPoint;
-				public new function HRESULT(IMILBitmapEffectPrimitive *self, uint32 uiIndex, MilRectD* p, int16 fForwardTransform, IMILBitmapEffectRenderContext* pContext) TransformRect;
-				public new function HRESULT(IMILBitmapEffectPrimitive *self, uint32 uiIndex, int16* pfAffine) HasAffineTransform;
-				public new function HRESULT(IMILBitmapEffectPrimitive *self, uint32 uiIndex, int16* pfHasInverse) HasInverseTransform;
-				public new function HRESULT(IMILBitmapEffectPrimitive *self, uint32 uiIndex, MilMatrix3x2D* pMatrix) GetAffineMatrix;
+				public new function HRESULT(ref IMILBitmapEffectPrimitive self, uint32 uiIndex, ref IMILBitmapEffectRenderContext pContext, out int16 pfModifyInPlace, out IWICBitmapSource* ppBitmapSource) GetOutput;
+				public new function HRESULT(ref IMILBitmapEffectPrimitive self, uint32 uiIndex, out MilPoint2D p, int16 fForwardTransform, ref IMILBitmapEffectRenderContext pContext, out int16 pfPointTransformed) TransformPoint;
+				public new function HRESULT(ref IMILBitmapEffectPrimitive self, uint32 uiIndex, out MilRectD p, int16 fForwardTransform, ref IMILBitmapEffectRenderContext pContext) TransformRect;
+				public new function HRESULT(ref IMILBitmapEffectPrimitive self, uint32 uiIndex, out int16 pfAffine) HasAffineTransform;
+				public new function HRESULT(ref IMILBitmapEffectPrimitive self, uint32 uiIndex, out int16 pfHasInverse) HasInverseTransform;
+				public new function HRESULT(ref IMILBitmapEffectPrimitive self, uint32 uiIndex, out MilMatrix3x2D pMatrix) GetAffineMatrix;
 			}
 		}
 		[CRepr]
@@ -433,19 +433,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsDirty(uint32 uiOutputIndex, int16* pfDirty) mut
+			public HRESULT IsDirty(uint32 uiOutputIndex, out int16 pfDirty) mut
 			{
-				return VT.IsDirty(&this, uiOutputIndex, pfDirty);
+				return VT.IsDirty(ref this, uiOutputIndex, out pfDirty);
 			}
-			public HRESULT IsVolatile(uint32 uiOutputIndex, int16* pfVolatile) mut
+			public HRESULT IsVolatile(uint32 uiOutputIndex, out int16 pfVolatile) mut
 			{
-				return VT.IsVolatile(&this, uiOutputIndex, pfVolatile);
+				return VT.IsVolatile(ref this, uiOutputIndex, out pfVolatile);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectPrimitiveImpl *self, uint32 uiOutputIndex, int16* pfDirty) IsDirty;
-				public new function HRESULT(IMILBitmapEffectPrimitiveImpl *self, uint32 uiOutputIndex, int16* pfVolatile) IsVolatile;
+				public new function HRESULT(ref IMILBitmapEffectPrimitiveImpl self, uint32 uiOutputIndex, out int16 pfDirty) IsDirty;
+				public new function HRESULT(ref IMILBitmapEffectPrimitiveImpl self, uint32 uiOutputIndex, out int16 pfVolatile) IsVolatile;
 			}
 		}
 		[CRepr]
@@ -455,29 +455,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT _NewEnum(IUnknown** ppiuReturn) mut
+			public HRESULT _NewEnum(out IUnknown* ppiuReturn) mut
 			{
-				return VT._NewEnum(&this, ppiuReturn);
+				return VT._NewEnum(ref this, out ppiuReturn);
 			}
-			public HRESULT get_Parent(IMILBitmapEffectGroup** ppEffect) mut
+			public HRESULT get_Parent(out IMILBitmapEffectGroup* ppEffect) mut
 			{
-				return VT.get_Parent(&this, ppEffect);
+				return VT.get_Parent(ref this, out ppEffect);
 			}
-			public HRESULT Item(uint32 uindex, IMILBitmapEffect** ppEffect) mut
+			public HRESULT Item(uint32 uindex, out IMILBitmapEffect* ppEffect) mut
 			{
-				return VT.Item(&this, uindex, ppEffect);
+				return VT.Item(ref this, uindex, out ppEffect);
 			}
-			public HRESULT get_Count(uint32* puiCount) mut
+			public HRESULT get_Count(out uint32 puiCount) mut
 			{
-				return VT.get_Count(&this, puiCount);
+				return VT.get_Count(ref this, out puiCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffects *self, IUnknown** ppiuReturn) _NewEnum;
-				public new function HRESULT(IMILBitmapEffects *self, IMILBitmapEffectGroup** ppEffect) get_Parent;
-				public new function HRESULT(IMILBitmapEffects *self, uint32 uindex, IMILBitmapEffect** ppEffect) Item;
-				public new function HRESULT(IMILBitmapEffects *self, uint32* puiCount) get_Count;
+				public new function HRESULT(ref IMILBitmapEffects self, out IUnknown* ppiuReturn) _NewEnum;
+				public new function HRESULT(ref IMILBitmapEffects self, out IMILBitmapEffectGroup* ppEffect) get_Parent;
+				public new function HRESULT(ref IMILBitmapEffects self, uint32 uindex, out IMILBitmapEffect* ppEffect) Item;
+				public new function HRESULT(ref IMILBitmapEffects self, out uint32 puiCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -487,19 +487,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsConnected(int16* pfConnected) mut
+			public HRESULT IsConnected(out int16 pfConnected) mut
 			{
-				return VT.IsConnected(&this, pfConnected);
+				return VT.IsConnected(ref this, out pfConnected);
 			}
-			public HRESULT GetBitmapEffect(IMILBitmapEffect** ppEffect) mut
+			public HRESULT GetBitmapEffect(out IMILBitmapEffect* ppEffect) mut
 			{
-				return VT.GetBitmapEffect(&this, ppEffect);
+				return VT.GetBitmapEffect(ref this, out ppEffect);
 			}
 			[CRepr]
 			public struct VTable : IMILBitmapEffectConnectorInfo.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectConnector *self, int16* pfConnected) IsConnected;
-				public new function HRESULT(IMILBitmapEffectConnector *self, IMILBitmapEffect** ppEffect) GetBitmapEffect;
+				public new function HRESULT(ref IMILBitmapEffectConnector self, out int16 pfConnected) IsConnected;
+				public new function HRESULT(ref IMILBitmapEffectConnector self, out IMILBitmapEffect* ppEffect) GetBitmapEffect;
 			}
 		}
 		[CRepr]
@@ -509,19 +509,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectTo(IMILBitmapEffectOutputConnector* pConnector) mut
+			public HRESULT ConnectTo(ref IMILBitmapEffectOutputConnector pConnector) mut
 			{
-				return VT.ConnectTo(&this, pConnector);
+				return VT.ConnectTo(ref this, ref pConnector);
 			}
-			public HRESULT GetConnection(IMILBitmapEffectOutputConnector** ppConnector) mut
+			public HRESULT GetConnection(out IMILBitmapEffectOutputConnector* ppConnector) mut
 			{
-				return VT.GetConnection(&this, ppConnector);
+				return VT.GetConnection(ref this, out ppConnector);
 			}
 			[CRepr]
 			public struct VTable : IMILBitmapEffectConnector.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectInputConnector *self, IMILBitmapEffectOutputConnector* pConnector) ConnectTo;
-				public new function HRESULT(IMILBitmapEffectInputConnector *self, IMILBitmapEffectOutputConnector** ppConnector) GetConnection;
+				public new function HRESULT(ref IMILBitmapEffectInputConnector self, ref IMILBitmapEffectOutputConnector pConnector) ConnectTo;
+				public new function HRESULT(ref IMILBitmapEffectInputConnector self, out IMILBitmapEffectOutputConnector* ppConnector) GetConnection;
 			}
 		}
 		[CRepr]
@@ -531,19 +531,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNumberConnections(uint32* puiNumberConnections) mut
+			public HRESULT GetNumberConnections(out uint32 puiNumberConnections) mut
 			{
-				return VT.GetNumberConnections(&this, puiNumberConnections);
+				return VT.GetNumberConnections(ref this, out puiNumberConnections);
 			}
-			public HRESULT GetConnection(uint32 uiIndex, IMILBitmapEffectInputConnector** ppConnection) mut
+			public HRESULT GetConnection(uint32 uiIndex, out IMILBitmapEffectInputConnector* ppConnection) mut
 			{
-				return VT.GetConnection(&this, uiIndex, ppConnection);
+				return VT.GetConnection(ref this, uiIndex, out ppConnection);
 			}
 			[CRepr]
 			public struct VTable : IMILBitmapEffectConnector.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectOutputConnector *self, uint32* puiNumberConnections) GetNumberConnections;
-				public new function HRESULT(IMILBitmapEffectOutputConnector *self, uint32 uiIndex, IMILBitmapEffectInputConnector** ppConnection) GetConnection;
+				public new function HRESULT(ref IMILBitmapEffectOutputConnector self, out uint32 puiNumberConnections) GetNumberConnections;
+				public new function HRESULT(ref IMILBitmapEffectOutputConnector self, uint32 uiIndex, out IMILBitmapEffectInputConnector* ppConnection) GetConnection;
 			}
 		}
 		[CRepr]
@@ -553,19 +553,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddBackLink(IMILBitmapEffectInputConnector* pConnection) mut
+			public HRESULT AddBackLink(ref IMILBitmapEffectInputConnector pConnection) mut
 			{
-				return VT.AddBackLink(&this, pConnection);
+				return VT.AddBackLink(ref this, ref pConnection);
 			}
-			public HRESULT RemoveBackLink(IMILBitmapEffectInputConnector* pConnection) mut
+			public HRESULT RemoveBackLink(ref IMILBitmapEffectInputConnector pConnection) mut
 			{
-				return VT.RemoveBackLink(&this, pConnection);
+				return VT.RemoveBackLink(ref this, ref pConnection);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectOutputConnectorImpl *self, IMILBitmapEffectInputConnector* pConnection) AddBackLink;
-				public new function HRESULT(IMILBitmapEffectOutputConnectorImpl *self, IMILBitmapEffectInputConnector* pConnection) RemoveBackLink;
+				public new function HRESULT(ref IMILBitmapEffectOutputConnectorImpl self, ref IMILBitmapEffectInputConnector pConnection) AddBackLink;
+				public new function HRESULT(ref IMILBitmapEffectOutputConnectorImpl self, ref IMILBitmapEffectInputConnector pConnection) RemoveBackLink;
 			}
 		}
 		[CRepr]
@@ -575,14 +575,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInputConnector(IMILBitmapEffectInputConnector** pInputConnector) mut
+			public HRESULT GetInputConnector(out IMILBitmapEffectInputConnector* pInputConnector) mut
 			{
-				return VT.GetInputConnector(&this, pInputConnector);
+				return VT.GetInputConnector(ref this, out pInputConnector);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectInteriorInputConnector *self, IMILBitmapEffectInputConnector** pInputConnector) GetInputConnector;
+				public new function HRESULT(ref IMILBitmapEffectInteriorInputConnector self, out IMILBitmapEffectInputConnector* pInputConnector) GetInputConnector;
 			}
 		}
 		[CRepr]
@@ -592,14 +592,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOutputConnector(IMILBitmapEffectOutputConnector** pOutputConnector) mut
+			public HRESULT GetOutputConnector(out IMILBitmapEffectOutputConnector* pOutputConnector) mut
 			{
-				return VT.GetOutputConnector(&this, pOutputConnector);
+				return VT.GetOutputConnector(ref this, out pOutputConnector);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectInteriorOutputConnector *self, IMILBitmapEffectOutputConnector** pOutputConnector) GetOutputConnector;
+				public new function HRESULT(ref IMILBitmapEffectInteriorOutputConnector self, out IMILBitmapEffectOutputConnector* pOutputConnector) GetOutputConnector;
 			}
 		}
 		[CRepr]
@@ -609,19 +609,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PropertyChange(IMILBitmapEffect* pEffect, BSTR bstrPropertyName) mut
+			public HRESULT PropertyChange(ref IMILBitmapEffect pEffect, BSTR bstrPropertyName) mut
 			{
-				return VT.PropertyChange(&this, pEffect, bstrPropertyName);
+				return VT.PropertyChange(ref this, ref pEffect, bstrPropertyName);
 			}
-			public HRESULT DirtyRegion(IMILBitmapEffect* pEffect, MilRectD* pRect) mut
+			public HRESULT DirtyRegion(ref IMILBitmapEffect pEffect, ref MilRectD pRect) mut
 			{
-				return VT.DirtyRegion(&this, pEffect, pRect);
+				return VT.DirtyRegion(ref this, ref pEffect, ref pRect);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMILBitmapEffectEvents *self, IMILBitmapEffect* pEffect, BSTR bstrPropertyName) PropertyChange;
-				public new function HRESULT(IMILBitmapEffectEvents *self, IMILBitmapEffect* pEffect, MilRectD* pRect) DirtyRegion;
+				public new function HRESULT(ref IMILBitmapEffectEvents self, ref IMILBitmapEffect pEffect, BSTR bstrPropertyName) PropertyChange;
+				public new function HRESULT(ref IMILBitmapEffectEvents self, ref IMILBitmapEffect pEffect, ref MilRectD pRect) DirtyRegion;
 			}
 		}
 		

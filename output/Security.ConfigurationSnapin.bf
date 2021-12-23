@@ -51,12 +51,12 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function uint32 PFSCE_QUERY_INFO(void* sceHandle, SCESVC_INFO_TYPE sceType, int8* lpPrefix, BOOL bExact, void** ppvInfo, uint32* psceEnumHandle);
-		public function uint32 PFSCE_SET_INFO(void* sceHandle, SCESVC_INFO_TYPE sceType, int8* lpPrefix, BOOL bExact, void* pvInfo);
+		public function uint32 PFSCE_QUERY_INFO(void* sceHandle, SCESVC_INFO_TYPE sceType, out int8 lpPrefix, BOOL bExact, void** ppvInfo, out uint32 psceEnumHandle);
+		public function uint32 PFSCE_SET_INFO(void* sceHandle, SCESVC_INFO_TYPE sceType, out int8 lpPrefix, BOOL bExact, void* pvInfo);
 		public function uint32 PFSCE_FREE_INFO(void* pvServiceInfo);
-		public function uint32 PFSCE_LOG_INFO(SCE_LOG_ERR_LEVEL ErrLevel, uint32 Win32rc, int8* pErrFmt);
-		public function uint32 PF_ConfigAnalyzeService(SCESVC_CALLBACK_INFO* pSceCbInfo);
-		public function uint32 PF_UpdateService(SCESVC_CALLBACK_INFO* pSceCbInfo, SCESVC_CONFIGURATION_INFO* ServiceInfo);
+		public function uint32 PFSCE_LOG_INFO(SCE_LOG_ERR_LEVEL ErrLevel, uint32 Win32rc, out int8 pErrFmt);
+		public function uint32 PF_ConfigAnalyzeService(out SCESVC_CALLBACK_INFO pSceCbInfo);
+		public function uint32 PF_UpdateService(out SCESVC_CALLBACK_INFO pSceCbInfo, out SCESVC_CONFIGURATION_INFO ServiceInfo);
 		
 		// --- Structs ---
 		
@@ -105,24 +105,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Save(int8* lpTemplateName, void** scesvcHandle, void** ppvData, BOOL* pbOverwriteAll) mut
+			public HRESULT Save(out int8 lpTemplateName, void** scesvcHandle, void** ppvData, out BOOL pbOverwriteAll) mut
 			{
-				return VT.Save(&this, lpTemplateName, scesvcHandle, ppvData, pbOverwriteAll);
+				return VT.Save(ref this, out lpTemplateName, scesvcHandle, ppvData, out pbOverwriteAll);
 			}
-			public HRESULT IsDirty(int8* lpTemplateName) mut
+			public HRESULT IsDirty(out int8 lpTemplateName) mut
 			{
-				return VT.IsDirty(&this, lpTemplateName);
+				return VT.IsDirty(ref this, out lpTemplateName);
 			}
 			public HRESULT FreeBuffer(void* pvData) mut
 			{
-				return VT.FreeBuffer(&this, pvData);
+				return VT.FreeBuffer(ref this, pvData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISceSvcAttachmentPersistInfo *self, int8* lpTemplateName, void** scesvcHandle, void** ppvData, BOOL* pbOverwriteAll) Save;
-				public new function HRESULT(ISceSvcAttachmentPersistInfo *self, int8* lpTemplateName) IsDirty;
-				public new function HRESULT(ISceSvcAttachmentPersistInfo *self, void* pvData) FreeBuffer;
+				public new function HRESULT(ref ISceSvcAttachmentPersistInfo self, out int8 lpTemplateName, void** scesvcHandle, void** ppvData, out BOOL pbOverwriteAll) Save;
+				public new function HRESULT(ref ISceSvcAttachmentPersistInfo self, out int8 lpTemplateName) IsDirty;
+				public new function HRESULT(ref ISceSvcAttachmentPersistInfo self, void* pvData) FreeBuffer;
 			}
 		}
 		[CRepr]
@@ -132,29 +132,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetData(void* scesvcHandle, SCESVC_INFO_TYPE sceType, void** ppvData, uint32* psceEnumHandle) mut
+			public HRESULT GetData(void* scesvcHandle, SCESVC_INFO_TYPE sceType, void** ppvData, out uint32 psceEnumHandle) mut
 			{
-				return VT.GetData(&this, scesvcHandle, sceType, ppvData, psceEnumHandle);
+				return VT.GetData(ref this, scesvcHandle, sceType, ppvData, out psceEnumHandle);
 			}
-			public HRESULT Initialize(int8* lpServiceName, int8* lpTemplateName, ISceSvcAttachmentPersistInfo* lpSceSvcPersistInfo, void** pscesvcHandle) mut
+			public HRESULT Initialize(out int8 lpServiceName, out int8 lpTemplateName, ref ISceSvcAttachmentPersistInfo lpSceSvcPersistInfo, void** pscesvcHandle) mut
 			{
-				return VT.Initialize(&this, lpServiceName, lpTemplateName, lpSceSvcPersistInfo, pscesvcHandle);
+				return VT.Initialize(ref this, out lpServiceName, out lpTemplateName, ref lpSceSvcPersistInfo, pscesvcHandle);
 			}
 			public HRESULT FreeBuffer(void* pvData) mut
 			{
-				return VT.FreeBuffer(&this, pvData);
+				return VT.FreeBuffer(ref this, pvData);
 			}
 			public HRESULT CloseHandle(void* scesvcHandle) mut
 			{
-				return VT.CloseHandle(&this, scesvcHandle);
+				return VT.CloseHandle(ref this, scesvcHandle);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISceSvcAttachmentData *self, void* scesvcHandle, SCESVC_INFO_TYPE sceType, void** ppvData, uint32* psceEnumHandle) GetData;
-				public new function HRESULT(ISceSvcAttachmentData *self, int8* lpServiceName, int8* lpTemplateName, ISceSvcAttachmentPersistInfo* lpSceSvcPersistInfo, void** pscesvcHandle) Initialize;
-				public new function HRESULT(ISceSvcAttachmentData *self, void* pvData) FreeBuffer;
-				public new function HRESULT(ISceSvcAttachmentData *self, void* scesvcHandle) CloseHandle;
+				public new function HRESULT(ref ISceSvcAttachmentData self, void* scesvcHandle, SCESVC_INFO_TYPE sceType, void** ppvData, out uint32 psceEnumHandle) GetData;
+				public new function HRESULT(ref ISceSvcAttachmentData self, out int8 lpServiceName, out int8 lpTemplateName, ref ISceSvcAttachmentPersistInfo lpSceSvcPersistInfo, void** pscesvcHandle) Initialize;
+				public new function HRESULT(ref ISceSvcAttachmentData self, void* pvData) FreeBuffer;
+				public new function HRESULT(ref ISceSvcAttachmentData self, void* scesvcHandle) CloseHandle;
 			}
 		}
 		

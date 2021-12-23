@@ -343,42 +343,42 @@ namespace Win32
 			
 			public void SetFillMode(D2D1_FILL_MODE fillMode) mut
 			{
-				VT.SetFillMode(&this, fillMode);
+				VT.SetFillMode(ref this, fillMode);
 			}
 			public void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags) mut
 			{
-				VT.SetSegmentFlags(&this, vertexFlags);
+				VT.SetSegmentFlags(ref this, vertexFlags);
 			}
 			public void BeginFigure(D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin) mut
 			{
-				VT.BeginFigure(&this, startPoint, figureBegin);
+				VT.BeginFigure(ref this, startPoint, figureBegin);
 			}
 			public void AddLines(D2D_POINT_2F* points, uint32 pointsCount) mut
 			{
-				VT.AddLines(&this, points, pointsCount);
+				VT.AddLines(ref this, points, pointsCount);
 			}
 			public void AddBeziers(D2D1_BEZIER_SEGMENT* beziers, uint32 beziersCount) mut
 			{
-				VT.AddBeziers(&this, beziers, beziersCount);
+				VT.AddBeziers(ref this, beziers, beziersCount);
 			}
 			public void EndFigure(D2D1_FIGURE_END figureEnd) mut
 			{
-				VT.EndFigure(&this, figureEnd);
+				VT.EndFigure(ref this, figureEnd);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ID2D1SimplifiedGeometrySink *self, D2D1_FILL_MODE fillMode) SetFillMode;
-				public new function void(ID2D1SimplifiedGeometrySink *self, D2D1_PATH_SEGMENT vertexFlags) SetSegmentFlags;
-				public new function void(ID2D1SimplifiedGeometrySink *self, D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin) BeginFigure;
-				public new function void(ID2D1SimplifiedGeometrySink *self, D2D_POINT_2F* points, uint32 pointsCount) AddLines;
-				public new function void(ID2D1SimplifiedGeometrySink *self, D2D1_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddBeziers;
-				public new function void(ID2D1SimplifiedGeometrySink *self, D2D1_FIGURE_END figureEnd) EndFigure;
-				public new function HRESULT(ID2D1SimplifiedGeometrySink *self) Close;
+				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D1_FILL_MODE fillMode) SetFillMode;
+				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D1_PATH_SEGMENT vertexFlags) SetSegmentFlags;
+				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin) BeginFigure;
+				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D_POINT_2F* points, uint32 pointsCount) AddLines;
+				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D1_BEZIER_SEGMENT* beziers, uint32 beziersCount) AddBeziers;
+				public new function void(ref ID2D1SimplifiedGeometrySink self, D2D1_FIGURE_END figureEnd) EndFigure;
+				public new function HRESULT(ref ID2D1SimplifiedGeometrySink self) Close;
 			}
 		}
 		

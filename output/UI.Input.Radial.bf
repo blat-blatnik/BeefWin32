@@ -14,14 +14,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateForWindow(HWND hwnd, Guid* riid, void** ppv) mut
+			public HRESULT CreateForWindow(HWND hwnd, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateForWindow(&this, hwnd, riid, ppv);
+				return VT.CreateForWindow(ref this, hwnd, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IRadialControllerInterop *self, HWND hwnd, Guid* riid, void** ppv) CreateForWindow;
+				public new function HRESULT(ref IRadialControllerInterop self, HWND hwnd, in Guid riid, void** ppv) CreateForWindow;
 			}
 		}
 		[CRepr]
@@ -31,14 +31,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND hwnd, Guid* riid, void** ppv) mut
+			public HRESULT GetForWindow(HWND hwnd, in Guid riid, void** ppv) mut
 			{
-				return VT.GetForWindow(&this, hwnd, riid, ppv);
+				return VT.GetForWindow(ref this, hwnd, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IRadialControllerConfigurationInterop *self, HWND hwnd, Guid* riid, void** ppv) GetForWindow;
+				public new function HRESULT(ref IRadialControllerConfigurationInterop self, HWND hwnd, in Guid riid, void** ppv) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -48,14 +48,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateForWindow(HWND hwnd, Guid* riid, void** ppv) mut
+			public HRESULT CreateForWindow(HWND hwnd, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateForWindow(&this, hwnd, riid, ppv);
+				return VT.CreateForWindow(ref this, hwnd, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IRadialControllerIndependentInputSourceInterop *self, HWND hwnd, Guid* riid, void** ppv) CreateForWindow;
+				public new function HRESULT(ref IRadialControllerIndependentInputSourceInterop self, HWND hwnd, in Guid riid, void** ppv) CreateForWindow;
 			}
 		}
 		

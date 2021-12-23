@@ -60,12 +60,12 @@ namespace Win32
 			
 			public HRESULT IdentityUpdated(IdentityUpdateEvent dwIdentityUpdateEvents, PWSTR lpszUniqueID) mut
 			{
-				return VT.IdentityUpdated(&this, dwIdentityUpdateEvents, lpszUniqueID);
+				return VT.IdentityUpdated(ref this, dwIdentityUpdateEvents, lpszUniqueID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IIdentityAdvise *self, IdentityUpdateEvent dwIdentityUpdateEvents, PWSTR lpszUniqueID) IdentityUpdated;
+				public new function HRESULT(ref IIdentityAdvise self, IdentityUpdateEvent dwIdentityUpdateEvents, PWSTR lpszUniqueID) IdentityUpdated;
 			}
 		}
 		[CRepr]
@@ -77,17 +77,17 @@ namespace Win32
 			
 			public HRESULT Begin_IdentityUpdated(uint32 dwIdentityUpdateEvents, PWSTR lpszUniqueID) mut
 			{
-				return VT.Begin_IdentityUpdated(&this, dwIdentityUpdateEvents, lpszUniqueID);
+				return VT.Begin_IdentityUpdated(ref this, dwIdentityUpdateEvents, lpszUniqueID);
 			}
 			public HRESULT Finish_IdentityUpdated() mut
 			{
-				return VT.Finish_IdentityUpdated(&this);
+				return VT.Finish_IdentityUpdated(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(AsyncIIdentityAdvise *self, uint32 dwIdentityUpdateEvents, PWSTR lpszUniqueID) Begin_IdentityUpdated;
-				public new function HRESULT(AsyncIIdentityAdvise *self) Finish_IdentityUpdated;
+				public new function HRESULT(ref AsyncIIdentityAdvise self, uint32 dwIdentityUpdateEvents, PWSTR lpszUniqueID) Begin_IdentityUpdated;
+				public new function HRESULT(ref AsyncIIdentityAdvise self) Finish_IdentityUpdated;
 			}
 		}
 		[CRepr]
@@ -99,47 +99,47 @@ namespace Win32
 			
 			public HRESULT GetIdentityEnum(IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue, IEnumUnknown** ppIdentityEnum) mut
 			{
-				return VT.GetIdentityEnum(&this, eIdentityType, pFilterkey, pFilterPropVarValue, ppIdentityEnum);
+				return VT.GetIdentityEnum(ref this, eIdentityType, pFilterkey, pFilterPropVarValue, ppIdentityEnum);
 			}
-			public HRESULT Create(PWSTR lpszUserName, IPropertyStore** ppPropertyStore, PROPVARIANT* pKeywordsToAdd) mut
+			public HRESULT Create(PWSTR lpszUserName, IPropertyStore** ppPropertyStore, in PROPVARIANT pKeywordsToAdd) mut
 			{
-				return VT.Create(&this, lpszUserName, ppPropertyStore, pKeywordsToAdd);
+				return VT.Create(ref this, lpszUserName, ppPropertyStore, pKeywordsToAdd);
 			}
 			public HRESULT Import(IPropertyStore* pPropertyStore) mut
 			{
-				return VT.Import(&this, pPropertyStore);
+				return VT.Import(ref this, pPropertyStore);
 			}
-			public HRESULT Delete(PWSTR lpszUniqueID, PROPVARIANT* pKeywordsToDelete) mut
+			public HRESULT Delete(PWSTR lpszUniqueID, in PROPVARIANT pKeywordsToDelete) mut
 			{
-				return VT.Delete(&this, lpszUniqueID, pKeywordsToDelete);
+				return VT.Delete(ref this, lpszUniqueID, pKeywordsToDelete);
 			}
 			public HRESULT FindByUniqueID(PWSTR lpszUniqueID, IPropertyStore** ppPropertyStore) mut
 			{
-				return VT.FindByUniqueID(&this, lpszUniqueID, ppPropertyStore);
+				return VT.FindByUniqueID(ref this, lpszUniqueID, ppPropertyStore);
 			}
 			public HRESULT GetProviderPropertyStore(IPropertyStore** ppPropertyStore) mut
 			{
-				return VT.GetProviderPropertyStore(&this, ppPropertyStore);
+				return VT.GetProviderPropertyStore(ref this, ppPropertyStore);
 			}
-			public HRESULT Advise(IIdentityAdvise* pIdentityAdvise, IdentityUpdateEvent dwIdentityUpdateEvents, uint32* pdwCookie) mut
+			public HRESULT Advise(IIdentityAdvise* pIdentityAdvise, IdentityUpdateEvent dwIdentityUpdateEvents, out uint32 pdwCookie) mut
 			{
-				return VT.Advise(&this, pIdentityAdvise, dwIdentityUpdateEvents, pdwCookie);
+				return VT.Advise(ref this, pIdentityAdvise, dwIdentityUpdateEvents, out pdwCookie);
 			}
 			public HRESULT UnAdvise(uint32 dwCookie) mut
 			{
-				return VT.UnAdvise(&this, dwCookie);
+				return VT.UnAdvise(ref this, dwCookie);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IIdentityProvider *self, IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue, IEnumUnknown** ppIdentityEnum) GetIdentityEnum;
-				public new function HRESULT(IIdentityProvider *self, PWSTR lpszUserName, IPropertyStore** ppPropertyStore, PROPVARIANT* pKeywordsToAdd) Create;
-				public new function HRESULT(IIdentityProvider *self, IPropertyStore* pPropertyStore) Import;
-				public new function HRESULT(IIdentityProvider *self, PWSTR lpszUniqueID, PROPVARIANT* pKeywordsToDelete) Delete;
-				public new function HRESULT(IIdentityProvider *self, PWSTR lpszUniqueID, IPropertyStore** ppPropertyStore) FindByUniqueID;
-				public new function HRESULT(IIdentityProvider *self, IPropertyStore** ppPropertyStore) GetProviderPropertyStore;
-				public new function HRESULT(IIdentityProvider *self, IIdentityAdvise* pIdentityAdvise, IdentityUpdateEvent dwIdentityUpdateEvents, uint32* pdwCookie) Advise;
-				public new function HRESULT(IIdentityProvider *self, uint32 dwCookie) UnAdvise;
+				public new function HRESULT(ref IIdentityProvider self, IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue, IEnumUnknown** ppIdentityEnum) GetIdentityEnum;
+				public new function HRESULT(ref IIdentityProvider self, PWSTR lpszUserName, IPropertyStore** ppPropertyStore, in PROPVARIANT pKeywordsToAdd) Create;
+				public new function HRESULT(ref IIdentityProvider self, IPropertyStore* pPropertyStore) Import;
+				public new function HRESULT(ref IIdentityProvider self, PWSTR lpszUniqueID, in PROPVARIANT pKeywordsToDelete) Delete;
+				public new function HRESULT(ref IIdentityProvider self, PWSTR lpszUniqueID, IPropertyStore** ppPropertyStore) FindByUniqueID;
+				public new function HRESULT(ref IIdentityProvider self, IPropertyStore** ppPropertyStore) GetProviderPropertyStore;
+				public new function HRESULT(ref IIdentityProvider self, IIdentityAdvise* pIdentityAdvise, IdentityUpdateEvent dwIdentityUpdateEvents, out uint32 pdwCookie) Advise;
+				public new function HRESULT(ref IIdentityProvider self, uint32 dwCookie) UnAdvise;
 			}
 		}
 		[CRepr]
@@ -151,87 +151,87 @@ namespace Win32
 			
 			public HRESULT Begin_GetIdentityEnum(IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue) mut
 			{
-				return VT.Begin_GetIdentityEnum(&this, eIdentityType, pFilterkey, pFilterPropVarValue);
+				return VT.Begin_GetIdentityEnum(ref this, eIdentityType, pFilterkey, pFilterPropVarValue);
 			}
 			public HRESULT Finish_GetIdentityEnum(IEnumUnknown** ppIdentityEnum) mut
 			{
-				return VT.Finish_GetIdentityEnum(&this, ppIdentityEnum);
+				return VT.Finish_GetIdentityEnum(ref this, ppIdentityEnum);
 			}
-			public HRESULT Begin_Create(PWSTR lpszUserName, PROPVARIANT* pKeywordsToAdd) mut
+			public HRESULT Begin_Create(PWSTR lpszUserName, in PROPVARIANT pKeywordsToAdd) mut
 			{
-				return VT.Begin_Create(&this, lpszUserName, pKeywordsToAdd);
+				return VT.Begin_Create(ref this, lpszUserName, pKeywordsToAdd);
 			}
 			public HRESULT Finish_Create(IPropertyStore** ppPropertyStore) mut
 			{
-				return VT.Finish_Create(&this, ppPropertyStore);
+				return VT.Finish_Create(ref this, ppPropertyStore);
 			}
 			public HRESULT Begin_Import(IPropertyStore* pPropertyStore) mut
 			{
-				return VT.Begin_Import(&this, pPropertyStore);
+				return VT.Begin_Import(ref this, pPropertyStore);
 			}
 			public HRESULT Finish_Import() mut
 			{
-				return VT.Finish_Import(&this);
+				return VT.Finish_Import(ref this);
 			}
-			public HRESULT Begin_Delete(PWSTR lpszUniqueID, PROPVARIANT* pKeywordsToDelete) mut
+			public HRESULT Begin_Delete(PWSTR lpszUniqueID, in PROPVARIANT pKeywordsToDelete) mut
 			{
-				return VT.Begin_Delete(&this, lpszUniqueID, pKeywordsToDelete);
+				return VT.Begin_Delete(ref this, lpszUniqueID, pKeywordsToDelete);
 			}
 			public HRESULT Finish_Delete() mut
 			{
-				return VT.Finish_Delete(&this);
+				return VT.Finish_Delete(ref this);
 			}
 			public HRESULT Begin_FindByUniqueID(PWSTR lpszUniqueID) mut
 			{
-				return VT.Begin_FindByUniqueID(&this, lpszUniqueID);
+				return VT.Begin_FindByUniqueID(ref this, lpszUniqueID);
 			}
 			public HRESULT Finish_FindByUniqueID(IPropertyStore** ppPropertyStore) mut
 			{
-				return VT.Finish_FindByUniqueID(&this, ppPropertyStore);
+				return VT.Finish_FindByUniqueID(ref this, ppPropertyStore);
 			}
 			public HRESULT Begin_GetProviderPropertyStore() mut
 			{
-				return VT.Begin_GetProviderPropertyStore(&this);
+				return VT.Begin_GetProviderPropertyStore(ref this);
 			}
 			public HRESULT Finish_GetProviderPropertyStore(IPropertyStore** ppPropertyStore) mut
 			{
-				return VT.Finish_GetProviderPropertyStore(&this, ppPropertyStore);
+				return VT.Finish_GetProviderPropertyStore(ref this, ppPropertyStore);
 			}
 			public HRESULT Begin_Advise(IIdentityAdvise* pIdentityAdvise, uint32 dwIdentityUpdateEvents) mut
 			{
-				return VT.Begin_Advise(&this, pIdentityAdvise, dwIdentityUpdateEvents);
+				return VT.Begin_Advise(ref this, pIdentityAdvise, dwIdentityUpdateEvents);
 			}
-			public HRESULT Finish_Advise(uint32* pdwCookie) mut
+			public HRESULT Finish_Advise(out uint32 pdwCookie) mut
 			{
-				return VT.Finish_Advise(&this, pdwCookie);
+				return VT.Finish_Advise(ref this, out pdwCookie);
 			}
 			public HRESULT Begin_UnAdvise(uint32 dwCookie) mut
 			{
-				return VT.Begin_UnAdvise(&this, dwCookie);
+				return VT.Begin_UnAdvise(ref this, dwCookie);
 			}
 			public HRESULT Finish_UnAdvise() mut
 			{
-				return VT.Finish_UnAdvise(&this);
+				return VT.Finish_UnAdvise(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(AsyncIIdentityProvider *self, IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue) Begin_GetIdentityEnum;
-				public new function HRESULT(AsyncIIdentityProvider *self, IEnumUnknown** ppIdentityEnum) Finish_GetIdentityEnum;
-				public new function HRESULT(AsyncIIdentityProvider *self, PWSTR lpszUserName, PROPVARIANT* pKeywordsToAdd) Begin_Create;
-				public new function HRESULT(AsyncIIdentityProvider *self, IPropertyStore** ppPropertyStore) Finish_Create;
-				public new function HRESULT(AsyncIIdentityProvider *self, IPropertyStore* pPropertyStore) Begin_Import;
-				public new function HRESULT(AsyncIIdentityProvider *self) Finish_Import;
-				public new function HRESULT(AsyncIIdentityProvider *self, PWSTR lpszUniqueID, PROPVARIANT* pKeywordsToDelete) Begin_Delete;
-				public new function HRESULT(AsyncIIdentityProvider *self) Finish_Delete;
-				public new function HRESULT(AsyncIIdentityProvider *self, PWSTR lpszUniqueID) Begin_FindByUniqueID;
-				public new function HRESULT(AsyncIIdentityProvider *self, IPropertyStore** ppPropertyStore) Finish_FindByUniqueID;
-				public new function HRESULT(AsyncIIdentityProvider *self) Begin_GetProviderPropertyStore;
-				public new function HRESULT(AsyncIIdentityProvider *self, IPropertyStore** ppPropertyStore) Finish_GetProviderPropertyStore;
-				public new function HRESULT(AsyncIIdentityProvider *self, IIdentityAdvise* pIdentityAdvise, uint32 dwIdentityUpdateEvents) Begin_Advise;
-				public new function HRESULT(AsyncIIdentityProvider *self, uint32* pdwCookie) Finish_Advise;
-				public new function HRESULT(AsyncIIdentityProvider *self, uint32 dwCookie) Begin_UnAdvise;
-				public new function HRESULT(AsyncIIdentityProvider *self) Finish_UnAdvise;
+				public new function HRESULT(ref AsyncIIdentityProvider self, IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue) Begin_GetIdentityEnum;
+				public new function HRESULT(ref AsyncIIdentityProvider self, IEnumUnknown** ppIdentityEnum) Finish_GetIdentityEnum;
+				public new function HRESULT(ref AsyncIIdentityProvider self, PWSTR lpszUserName, in PROPVARIANT pKeywordsToAdd) Begin_Create;
+				public new function HRESULT(ref AsyncIIdentityProvider self, IPropertyStore** ppPropertyStore) Finish_Create;
+				public new function HRESULT(ref AsyncIIdentityProvider self, IPropertyStore* pPropertyStore) Begin_Import;
+				public new function HRESULT(ref AsyncIIdentityProvider self) Finish_Import;
+				public new function HRESULT(ref AsyncIIdentityProvider self, PWSTR lpszUniqueID, in PROPVARIANT pKeywordsToDelete) Begin_Delete;
+				public new function HRESULT(ref AsyncIIdentityProvider self) Finish_Delete;
+				public new function HRESULT(ref AsyncIIdentityProvider self, PWSTR lpszUniqueID) Begin_FindByUniqueID;
+				public new function HRESULT(ref AsyncIIdentityProvider self, IPropertyStore** ppPropertyStore) Finish_FindByUniqueID;
+				public new function HRESULT(ref AsyncIIdentityProvider self) Begin_GetProviderPropertyStore;
+				public new function HRESULT(ref AsyncIIdentityProvider self, IPropertyStore** ppPropertyStore) Finish_GetProviderPropertyStore;
+				public new function HRESULT(ref AsyncIIdentityProvider self, IIdentityAdvise* pIdentityAdvise, uint32 dwIdentityUpdateEvents) Begin_Advise;
+				public new function HRESULT(ref AsyncIIdentityProvider self, out uint32 pdwCookie) Finish_Advise;
+				public new function HRESULT(ref AsyncIIdentityProvider self, uint32 dwCookie) Begin_UnAdvise;
+				public new function HRESULT(ref AsyncIIdentityProvider self) Finish_UnAdvise;
 			}
 		}
 		[CRepr]
@@ -243,22 +243,22 @@ namespace Win32
 			
 			public HRESULT AssociateIdentity(HWND hwndParent, IPropertyStore** ppPropertyStore) mut
 			{
-				return VT.AssociateIdentity(&this, hwndParent, ppPropertyStore);
+				return VT.AssociateIdentity(ref this, hwndParent, ppPropertyStore);
 			}
 			public HRESULT DisassociateIdentity(HWND hwndParent, PWSTR lpszUniqueID) mut
 			{
-				return VT.DisassociateIdentity(&this, hwndParent, lpszUniqueID);
+				return VT.DisassociateIdentity(ref this, hwndParent, lpszUniqueID);
 			}
 			public HRESULT ChangeCredential(HWND hwndParent, PWSTR lpszUniqueID) mut
 			{
-				return VT.ChangeCredential(&this, hwndParent, lpszUniqueID);
+				return VT.ChangeCredential(ref this, hwndParent, lpszUniqueID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAssociatedIdentityProvider *self, HWND hwndParent, IPropertyStore** ppPropertyStore) AssociateIdentity;
-				public new function HRESULT(IAssociatedIdentityProvider *self, HWND hwndParent, PWSTR lpszUniqueID) DisassociateIdentity;
-				public new function HRESULT(IAssociatedIdentityProvider *self, HWND hwndParent, PWSTR lpszUniqueID) ChangeCredential;
+				public new function HRESULT(ref IAssociatedIdentityProvider self, HWND hwndParent, IPropertyStore** ppPropertyStore) AssociateIdentity;
+				public new function HRESULT(ref IAssociatedIdentityProvider self, HWND hwndParent, PWSTR lpszUniqueID) DisassociateIdentity;
+				public new function HRESULT(ref IAssociatedIdentityProvider self, HWND hwndParent, PWSTR lpszUniqueID) ChangeCredential;
 			}
 		}
 		[CRepr]
@@ -270,37 +270,37 @@ namespace Win32
 			
 			public HRESULT Begin_AssociateIdentity(HWND hwndParent) mut
 			{
-				return VT.Begin_AssociateIdentity(&this, hwndParent);
+				return VT.Begin_AssociateIdentity(ref this, hwndParent);
 			}
 			public HRESULT Finish_AssociateIdentity(IPropertyStore** ppPropertyStore) mut
 			{
-				return VT.Finish_AssociateIdentity(&this, ppPropertyStore);
+				return VT.Finish_AssociateIdentity(ref this, ppPropertyStore);
 			}
 			public HRESULT Begin_DisassociateIdentity(HWND hwndParent, PWSTR lpszUniqueID) mut
 			{
-				return VT.Begin_DisassociateIdentity(&this, hwndParent, lpszUniqueID);
+				return VT.Begin_DisassociateIdentity(ref this, hwndParent, lpszUniqueID);
 			}
 			public HRESULT Finish_DisassociateIdentity() mut
 			{
-				return VT.Finish_DisassociateIdentity(&this);
+				return VT.Finish_DisassociateIdentity(ref this);
 			}
 			public HRESULT Begin_ChangeCredential(HWND hwndParent, PWSTR lpszUniqueID) mut
 			{
-				return VT.Begin_ChangeCredential(&this, hwndParent, lpszUniqueID);
+				return VT.Begin_ChangeCredential(ref this, hwndParent, lpszUniqueID);
 			}
 			public HRESULT Finish_ChangeCredential() mut
 			{
-				return VT.Finish_ChangeCredential(&this);
+				return VT.Finish_ChangeCredential(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(AsyncIAssociatedIdentityProvider *self, HWND hwndParent) Begin_AssociateIdentity;
-				public new function HRESULT(AsyncIAssociatedIdentityProvider *self, IPropertyStore** ppPropertyStore) Finish_AssociateIdentity;
-				public new function HRESULT(AsyncIAssociatedIdentityProvider *self, HWND hwndParent, PWSTR lpszUniqueID) Begin_DisassociateIdentity;
-				public new function HRESULT(AsyncIAssociatedIdentityProvider *self) Finish_DisassociateIdentity;
-				public new function HRESULT(AsyncIAssociatedIdentityProvider *self, HWND hwndParent, PWSTR lpszUniqueID) Begin_ChangeCredential;
-				public new function HRESULT(AsyncIAssociatedIdentityProvider *self) Finish_ChangeCredential;
+				public new function HRESULT(ref AsyncIAssociatedIdentityProvider self, HWND hwndParent) Begin_AssociateIdentity;
+				public new function HRESULT(ref AsyncIAssociatedIdentityProvider self, IPropertyStore** ppPropertyStore) Finish_AssociateIdentity;
+				public new function HRESULT(ref AsyncIAssociatedIdentityProvider self, HWND hwndParent, PWSTR lpszUniqueID) Begin_DisassociateIdentity;
+				public new function HRESULT(ref AsyncIAssociatedIdentityProvider self) Finish_DisassociateIdentity;
+				public new function HRESULT(ref AsyncIAssociatedIdentityProvider self, HWND hwndParent, PWSTR lpszUniqueID) Begin_ChangeCredential;
+				public new function HRESULT(ref AsyncIAssociatedIdentityProvider self) Finish_ChangeCredential;
 			}
 		}
 		[CRepr]
@@ -312,32 +312,32 @@ namespace Win32
 			
 			public HRESULT ConnectIdentity(uint8* AuthBuffer, uint32 AuthBufferSize) mut
 			{
-				return VT.ConnectIdentity(&this, AuthBuffer, AuthBufferSize);
+				return VT.ConnectIdentity(ref this, AuthBuffer, AuthBufferSize);
 			}
 			public HRESULT DisconnectIdentity() mut
 			{
-				return VT.DisconnectIdentity(&this);
+				return VT.DisconnectIdentity(ref this);
 			}
-			public HRESULT IsConnected(BOOL* Connected) mut
+			public HRESULT IsConnected(out BOOL Connected) mut
 			{
-				return VT.IsConnected(&this, Connected);
+				return VT.IsConnected(ref this, out Connected);
 			}
-			public HRESULT GetUrl(IDENTITY_URL Identifier, IBindCtx* Context, VARIANT* PostData, PWSTR* Url) mut
+			public HRESULT GetUrl(IDENTITY_URL Identifier, IBindCtx* Context, out VARIANT PostData, PWSTR* Url) mut
 			{
-				return VT.GetUrl(&this, Identifier, Context, PostData, Url);
+				return VT.GetUrl(ref this, Identifier, Context, out PostData, Url);
 			}
-			public HRESULT GetAccountState(ACCOUNT_STATE* pState) mut
+			public HRESULT GetAccountState(out ACCOUNT_STATE pState) mut
 			{
-				return VT.GetAccountState(&this, pState);
+				return VT.GetAccountState(ref this, out pState);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IConnectedIdentityProvider *self, uint8* AuthBuffer, uint32 AuthBufferSize) ConnectIdentity;
-				public new function HRESULT(IConnectedIdentityProvider *self) DisconnectIdentity;
-				public new function HRESULT(IConnectedIdentityProvider *self, BOOL* Connected) IsConnected;
-				public new function HRESULT(IConnectedIdentityProvider *self, IDENTITY_URL Identifier, IBindCtx* Context, VARIANT* PostData, PWSTR* Url) GetUrl;
-				public new function HRESULT(IConnectedIdentityProvider *self, ACCOUNT_STATE* pState) GetAccountState;
+				public new function HRESULT(ref IConnectedIdentityProvider self, uint8* AuthBuffer, uint32 AuthBufferSize) ConnectIdentity;
+				public new function HRESULT(ref IConnectedIdentityProvider self) DisconnectIdentity;
+				public new function HRESULT(ref IConnectedIdentityProvider self, out BOOL Connected) IsConnected;
+				public new function HRESULT(ref IConnectedIdentityProvider self, IDENTITY_URL Identifier, IBindCtx* Context, out VARIANT PostData, PWSTR* Url) GetUrl;
+				public new function HRESULT(ref IConnectedIdentityProvider self, out ACCOUNT_STATE pState) GetAccountState;
 			}
 		}
 		[CRepr]
@@ -349,57 +349,57 @@ namespace Win32
 			
 			public HRESULT Begin_ConnectIdentity(uint8* AuthBuffer, uint32 AuthBufferSize) mut
 			{
-				return VT.Begin_ConnectIdentity(&this, AuthBuffer, AuthBufferSize);
+				return VT.Begin_ConnectIdentity(ref this, AuthBuffer, AuthBufferSize);
 			}
 			public HRESULT Finish_ConnectIdentity() mut
 			{
-				return VT.Finish_ConnectIdentity(&this);
+				return VT.Finish_ConnectIdentity(ref this);
 			}
 			public HRESULT Begin_DisconnectIdentity() mut
 			{
-				return VT.Begin_DisconnectIdentity(&this);
+				return VT.Begin_DisconnectIdentity(ref this);
 			}
 			public HRESULT Finish_DisconnectIdentity() mut
 			{
-				return VT.Finish_DisconnectIdentity(&this);
+				return VT.Finish_DisconnectIdentity(ref this);
 			}
 			public HRESULT Begin_IsConnected() mut
 			{
-				return VT.Begin_IsConnected(&this);
+				return VT.Begin_IsConnected(ref this);
 			}
-			public HRESULT Finish_IsConnected(BOOL* Connected) mut
+			public HRESULT Finish_IsConnected(out BOOL Connected) mut
 			{
-				return VT.Finish_IsConnected(&this, Connected);
+				return VT.Finish_IsConnected(ref this, out Connected);
 			}
 			public HRESULT Begin_GetUrl(IDENTITY_URL Identifier, IBindCtx* Context) mut
 			{
-				return VT.Begin_GetUrl(&this, Identifier, Context);
+				return VT.Begin_GetUrl(ref this, Identifier, Context);
 			}
-			public HRESULT Finish_GetUrl(VARIANT* PostData, PWSTR* Url) mut
+			public HRESULT Finish_GetUrl(out VARIANT PostData, PWSTR* Url) mut
 			{
-				return VT.Finish_GetUrl(&this, PostData, Url);
+				return VT.Finish_GetUrl(ref this, out PostData, Url);
 			}
 			public HRESULT Begin_GetAccountState() mut
 			{
-				return VT.Begin_GetAccountState(&this);
+				return VT.Begin_GetAccountState(ref this);
 			}
-			public HRESULT Finish_GetAccountState(ACCOUNT_STATE* pState) mut
+			public HRESULT Finish_GetAccountState(out ACCOUNT_STATE pState) mut
 			{
-				return VT.Finish_GetAccountState(&this, pState);
+				return VT.Finish_GetAccountState(ref this, out pState);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self, uint8* AuthBuffer, uint32 AuthBufferSize) Begin_ConnectIdentity;
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self) Finish_ConnectIdentity;
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self) Begin_DisconnectIdentity;
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self) Finish_DisconnectIdentity;
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self) Begin_IsConnected;
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self, BOOL* Connected) Finish_IsConnected;
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self, IDENTITY_URL Identifier, IBindCtx* Context) Begin_GetUrl;
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self, VARIANT* PostData, PWSTR* Url) Finish_GetUrl;
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self) Begin_GetAccountState;
-				public new function HRESULT(AsyncIConnectedIdentityProvider *self, ACCOUNT_STATE* pState) Finish_GetAccountState;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self, uint8* AuthBuffer, uint32 AuthBufferSize) Begin_ConnectIdentity;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self) Finish_ConnectIdentity;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self) Begin_DisconnectIdentity;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self) Finish_DisconnectIdentity;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self) Begin_IsConnected;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self, out BOOL Connected) Finish_IsConnected;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self, IDENTITY_URL Identifier, IBindCtx* Context) Begin_GetUrl;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self, out VARIANT PostData, PWSTR* Url) Finish_GetUrl;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self) Begin_GetAccountState;
+				public new function HRESULT(ref AsyncIConnectedIdentityProvider self, out ACCOUNT_STATE pState) Finish_GetAccountState;
 			}
 		}
 		[CRepr]
@@ -411,17 +411,17 @@ namespace Win32
 			
 			public HRESULT SetIdentityCredential(uint8* CredBuffer, uint32 CredBufferLength) mut
 			{
-				return VT.SetIdentityCredential(&this, CredBuffer, CredBufferLength);
+				return VT.SetIdentityCredential(ref this, CredBuffer, CredBufferLength);
 			}
 			public HRESULT ValidateIdentityCredential(uint8* CredBuffer, uint32 CredBufferLength, IPropertyStore** ppIdentityProperties) mut
 			{
-				return VT.ValidateIdentityCredential(&this, CredBuffer, CredBufferLength, ppIdentityProperties);
+				return VT.ValidateIdentityCredential(ref this, CredBuffer, CredBufferLength, ppIdentityProperties);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IIdentityAuthentication *self, uint8* CredBuffer, uint32 CredBufferLength) SetIdentityCredential;
-				public new function HRESULT(IIdentityAuthentication *self, uint8* CredBuffer, uint32 CredBufferLength, IPropertyStore** ppIdentityProperties) ValidateIdentityCredential;
+				public new function HRESULT(ref IIdentityAuthentication self, uint8* CredBuffer, uint32 CredBufferLength) SetIdentityCredential;
+				public new function HRESULT(ref IIdentityAuthentication self, uint8* CredBuffer, uint32 CredBufferLength, IPropertyStore** ppIdentityProperties) ValidateIdentityCredential;
 			}
 		}
 		[CRepr]
@@ -433,27 +433,27 @@ namespace Win32
 			
 			public HRESULT Begin_SetIdentityCredential(uint8* CredBuffer, uint32 CredBufferLength) mut
 			{
-				return VT.Begin_SetIdentityCredential(&this, CredBuffer, CredBufferLength);
+				return VT.Begin_SetIdentityCredential(ref this, CredBuffer, CredBufferLength);
 			}
 			public HRESULT Finish_SetIdentityCredential() mut
 			{
-				return VT.Finish_SetIdentityCredential(&this);
+				return VT.Finish_SetIdentityCredential(ref this);
 			}
 			public HRESULT Begin_ValidateIdentityCredential(uint8* CredBuffer, uint32 CredBufferLength, IPropertyStore** ppIdentityProperties) mut
 			{
-				return VT.Begin_ValidateIdentityCredential(&this, CredBuffer, CredBufferLength, ppIdentityProperties);
+				return VT.Begin_ValidateIdentityCredential(ref this, CredBuffer, CredBufferLength, ppIdentityProperties);
 			}
 			public HRESULT Finish_ValidateIdentityCredential(IPropertyStore** ppIdentityProperties) mut
 			{
-				return VT.Finish_ValidateIdentityCredential(&this, ppIdentityProperties);
+				return VT.Finish_ValidateIdentityCredential(ref this, ppIdentityProperties);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(AsyncIIdentityAuthentication *self, uint8* CredBuffer, uint32 CredBufferLength) Begin_SetIdentityCredential;
-				public new function HRESULT(AsyncIIdentityAuthentication *self) Finish_SetIdentityCredential;
-				public new function HRESULT(AsyncIIdentityAuthentication *self, uint8* CredBuffer, uint32 CredBufferLength, IPropertyStore** ppIdentityProperties) Begin_ValidateIdentityCredential;
-				public new function HRESULT(AsyncIIdentityAuthentication *self, IPropertyStore** ppIdentityProperties) Finish_ValidateIdentityCredential;
+				public new function HRESULT(ref AsyncIIdentityAuthentication self, uint8* CredBuffer, uint32 CredBufferLength) Begin_SetIdentityCredential;
+				public new function HRESULT(ref AsyncIIdentityAuthentication self) Finish_SetIdentityCredential;
+				public new function HRESULT(ref AsyncIIdentityAuthentication self, uint8* CredBuffer, uint32 CredBufferLength, IPropertyStore** ppIdentityProperties) Begin_ValidateIdentityCredential;
+				public new function HRESULT(ref AsyncIIdentityAuthentication self, IPropertyStore** ppIdentityProperties) Finish_ValidateIdentityCredential;
 			}
 		}
 		[CRepr]
@@ -463,39 +463,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* pdwProviders) mut
+			public HRESULT GetCount(out uint32 pdwProviders) mut
 			{
-				return VT.GetCount(&this, pdwProviders);
+				return VT.GetCount(ref this, out pdwProviders);
 			}
 			public HRESULT GetAt(uint32 dwProvider, Guid* pProvGuid, IUnknown** ppIdentityProvider) mut
 			{
-				return VT.GetAt(&this, dwProvider, pProvGuid, ppIdentityProvider);
+				return VT.GetAt(ref this, dwProvider, pProvGuid, ppIdentityProvider);
 			}
-			public HRESULT AddToCache(PWSTR lpszUniqueID, Guid* ProviderGUID) mut
+			public HRESULT AddToCache(PWSTR lpszUniqueID, in Guid ProviderGUID) mut
 			{
-				return VT.AddToCache(&this, lpszUniqueID, ProviderGUID);
+				return VT.AddToCache(ref this, lpszUniqueID, ProviderGUID);
 			}
-			public HRESULT ConvertToSid(PWSTR lpszUniqueID, Guid* ProviderGUID, uint16 cbSid, uint8* pSid, uint16* pcbRequiredSid) mut
+			public HRESULT ConvertToSid(PWSTR lpszUniqueID, in Guid ProviderGUID, uint16 cbSid, uint8* pSid, out uint16 pcbRequiredSid) mut
 			{
-				return VT.ConvertToSid(&this, lpszUniqueID, ProviderGUID, cbSid, pSid, pcbRequiredSid);
+				return VT.ConvertToSid(ref this, lpszUniqueID, ProviderGUID, cbSid, pSid, out pcbRequiredSid);
 			}
 			public HRESULT EnumerateIdentities(IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue, IEnumUnknown** ppIdentityEnum) mut
 			{
-				return VT.EnumerateIdentities(&this, eIdentityType, pFilterkey, pFilterPropVarValue, ppIdentityEnum);
+				return VT.EnumerateIdentities(ref this, eIdentityType, pFilterkey, pFilterPropVarValue, ppIdentityEnum);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IIdentityStore *self, uint32* pdwProviders) GetCount;
-				public new function HRESULT(IIdentityStore *self, uint32 dwProvider, Guid* pProvGuid, IUnknown** ppIdentityProvider) GetAt;
-				public new function HRESULT(IIdentityStore *self, PWSTR lpszUniqueID, Guid* ProviderGUID) AddToCache;
-				public new function HRESULT(IIdentityStore *self, PWSTR lpszUniqueID, Guid* ProviderGUID, uint16 cbSid, uint8* pSid, uint16* pcbRequiredSid) ConvertToSid;
-				public new function HRESULT(IIdentityStore *self, IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue, IEnumUnknown** ppIdentityEnum) EnumerateIdentities;
-				public new function HRESULT(IIdentityStore *self) Reset;
+				public new function HRESULT(ref IIdentityStore self, out uint32 pdwProviders) GetCount;
+				public new function HRESULT(ref IIdentityStore self, uint32 dwProvider, Guid* pProvGuid, IUnknown** ppIdentityProvider) GetAt;
+				public new function HRESULT(ref IIdentityStore self, PWSTR lpszUniqueID, in Guid ProviderGUID) AddToCache;
+				public new function HRESULT(ref IIdentityStore self, PWSTR lpszUniqueID, in Guid ProviderGUID, uint16 cbSid, uint8* pSid, out uint16 pcbRequiredSid) ConvertToSid;
+				public new function HRESULT(ref IIdentityStore self, IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue, IEnumUnknown** ppIdentityEnum) EnumerateIdentities;
+				public new function HRESULT(ref IIdentityStore self) Reset;
 			}
 		}
 		[CRepr]
@@ -507,67 +507,67 @@ namespace Win32
 			
 			public HRESULT Begin_GetCount() mut
 			{
-				return VT.Begin_GetCount(&this);
+				return VT.Begin_GetCount(ref this);
 			}
-			public HRESULT Finish_GetCount(uint32* pdwProviders) mut
+			public HRESULT Finish_GetCount(out uint32 pdwProviders) mut
 			{
-				return VT.Finish_GetCount(&this, pdwProviders);
+				return VT.Finish_GetCount(ref this, out pdwProviders);
 			}
 			public HRESULT Begin_GetAt(uint32 dwProvider, Guid* pProvGuid) mut
 			{
-				return VT.Begin_GetAt(&this, dwProvider, pProvGuid);
+				return VT.Begin_GetAt(ref this, dwProvider, pProvGuid);
 			}
 			public HRESULT Finish_GetAt(Guid* pProvGuid, IUnknown** ppIdentityProvider) mut
 			{
-				return VT.Finish_GetAt(&this, pProvGuid, ppIdentityProvider);
+				return VT.Finish_GetAt(ref this, pProvGuid, ppIdentityProvider);
 			}
-			public HRESULT Begin_AddToCache(PWSTR lpszUniqueID, Guid* ProviderGUID) mut
+			public HRESULT Begin_AddToCache(PWSTR lpszUniqueID, in Guid ProviderGUID) mut
 			{
-				return VT.Begin_AddToCache(&this, lpszUniqueID, ProviderGUID);
+				return VT.Begin_AddToCache(ref this, lpszUniqueID, ProviderGUID);
 			}
 			public HRESULT Finish_AddToCache() mut
 			{
-				return VT.Finish_AddToCache(&this);
+				return VT.Finish_AddToCache(ref this);
 			}
-			public HRESULT Begin_ConvertToSid(PWSTR lpszUniqueID, Guid* ProviderGUID, uint16 cbSid, uint8* pSid) mut
+			public HRESULT Begin_ConvertToSid(PWSTR lpszUniqueID, in Guid ProviderGUID, uint16 cbSid, uint8* pSid) mut
 			{
-				return VT.Begin_ConvertToSid(&this, lpszUniqueID, ProviderGUID, cbSid, pSid);
+				return VT.Begin_ConvertToSid(ref this, lpszUniqueID, ProviderGUID, cbSid, pSid);
 			}
-			public HRESULT Finish_ConvertToSid(uint8* pSid, uint16* pcbRequiredSid) mut
+			public HRESULT Finish_ConvertToSid(uint8* pSid, out uint16 pcbRequiredSid) mut
 			{
-				return VT.Finish_ConvertToSid(&this, pSid, pcbRequiredSid);
+				return VT.Finish_ConvertToSid(ref this, pSid, out pcbRequiredSid);
 			}
 			public HRESULT Begin_EnumerateIdentities(IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue) mut
 			{
-				return VT.Begin_EnumerateIdentities(&this, eIdentityType, pFilterkey, pFilterPropVarValue);
+				return VT.Begin_EnumerateIdentities(ref this, eIdentityType, pFilterkey, pFilterPropVarValue);
 			}
 			public HRESULT Finish_EnumerateIdentities(IEnumUnknown** ppIdentityEnum) mut
 			{
-				return VT.Finish_EnumerateIdentities(&this, ppIdentityEnum);
+				return VT.Finish_EnumerateIdentities(ref this, ppIdentityEnum);
 			}
 			public HRESULT Begin_Reset() mut
 			{
-				return VT.Begin_Reset(&this);
+				return VT.Begin_Reset(ref this);
 			}
 			public HRESULT Finish_Reset() mut
 			{
-				return VT.Finish_Reset(&this);
+				return VT.Finish_Reset(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(AsyncIIdentityStore *self) Begin_GetCount;
-				public new function HRESULT(AsyncIIdentityStore *self, uint32* pdwProviders) Finish_GetCount;
-				public new function HRESULT(AsyncIIdentityStore *self, uint32 dwProvider, Guid* pProvGuid) Begin_GetAt;
-				public new function HRESULT(AsyncIIdentityStore *self, Guid* pProvGuid, IUnknown** ppIdentityProvider) Finish_GetAt;
-				public new function HRESULT(AsyncIIdentityStore *self, PWSTR lpszUniqueID, Guid* ProviderGUID) Begin_AddToCache;
-				public new function HRESULT(AsyncIIdentityStore *self) Finish_AddToCache;
-				public new function HRESULT(AsyncIIdentityStore *self, PWSTR lpszUniqueID, Guid* ProviderGUID, uint16 cbSid, uint8* pSid) Begin_ConvertToSid;
-				public new function HRESULT(AsyncIIdentityStore *self, uint8* pSid, uint16* pcbRequiredSid) Finish_ConvertToSid;
-				public new function HRESULT(AsyncIIdentityStore *self, IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue) Begin_EnumerateIdentities;
-				public new function HRESULT(AsyncIIdentityStore *self, IEnumUnknown** ppIdentityEnum) Finish_EnumerateIdentities;
-				public new function HRESULT(AsyncIIdentityStore *self) Begin_Reset;
-				public new function HRESULT(AsyncIIdentityStore *self) Finish_Reset;
+				public new function HRESULT(ref AsyncIIdentityStore self) Begin_GetCount;
+				public new function HRESULT(ref AsyncIIdentityStore self, out uint32 pdwProviders) Finish_GetCount;
+				public new function HRESULT(ref AsyncIIdentityStore self, uint32 dwProvider, Guid* pProvGuid) Begin_GetAt;
+				public new function HRESULT(ref AsyncIIdentityStore self, Guid* pProvGuid, IUnknown** ppIdentityProvider) Finish_GetAt;
+				public new function HRESULT(ref AsyncIIdentityStore self, PWSTR lpszUniqueID, in Guid ProviderGUID) Begin_AddToCache;
+				public new function HRESULT(ref AsyncIIdentityStore self) Finish_AddToCache;
+				public new function HRESULT(ref AsyncIIdentityStore self, PWSTR lpszUniqueID, in Guid ProviderGUID, uint16 cbSid, uint8* pSid) Begin_ConvertToSid;
+				public new function HRESULT(ref AsyncIIdentityStore self, uint8* pSid, out uint16 pcbRequiredSid) Finish_ConvertToSid;
+				public new function HRESULT(ref AsyncIIdentityStore self, IDENTITY_TYPE eIdentityType, PROPERTYKEY* pFilterkey, PROPVARIANT* pFilterPropVarValue) Begin_EnumerateIdentities;
+				public new function HRESULT(ref AsyncIIdentityStore self, IEnumUnknown** ppIdentityEnum) Finish_EnumerateIdentities;
+				public new function HRESULT(ref AsyncIIdentityStore self) Begin_Reset;
+				public new function HRESULT(ref AsyncIIdentityStore self) Finish_Reset;
 			}
 		}
 		[CRepr]
@@ -577,19 +577,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateConnectedIdentity(PWSTR LocalName, PWSTR ConnectedName, Guid* ProviderGUID) mut
+			public HRESULT CreateConnectedIdentity(PWSTR LocalName, PWSTR ConnectedName, in Guid ProviderGUID) mut
 			{
-				return VT.CreateConnectedIdentity(&this, LocalName, ConnectedName, ProviderGUID);
+				return VT.CreateConnectedIdentity(ref this, LocalName, ConnectedName, ProviderGUID);
 			}
-			public HRESULT DeleteConnectedIdentity(PWSTR ConnectedName, Guid* ProviderGUID) mut
+			public HRESULT DeleteConnectedIdentity(PWSTR ConnectedName, in Guid ProviderGUID) mut
 			{
-				return VT.DeleteConnectedIdentity(&this, ConnectedName, ProviderGUID);
+				return VT.DeleteConnectedIdentity(ref this, ConnectedName, ProviderGUID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IIdentityStoreEx *self, PWSTR LocalName, PWSTR ConnectedName, Guid* ProviderGUID) CreateConnectedIdentity;
-				public new function HRESULT(IIdentityStoreEx *self, PWSTR ConnectedName, Guid* ProviderGUID) DeleteConnectedIdentity;
+				public new function HRESULT(ref IIdentityStoreEx self, PWSTR LocalName, PWSTR ConnectedName, in Guid ProviderGUID) CreateConnectedIdentity;
+				public new function HRESULT(ref IIdentityStoreEx self, PWSTR ConnectedName, in Guid ProviderGUID) DeleteConnectedIdentity;
 			}
 		}
 		[CRepr]
@@ -599,29 +599,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Begin_CreateConnectedIdentity(PWSTR LocalName, PWSTR ConnectedName, Guid* ProviderGUID) mut
+			public HRESULT Begin_CreateConnectedIdentity(PWSTR LocalName, PWSTR ConnectedName, in Guid ProviderGUID) mut
 			{
-				return VT.Begin_CreateConnectedIdentity(&this, LocalName, ConnectedName, ProviderGUID);
+				return VT.Begin_CreateConnectedIdentity(ref this, LocalName, ConnectedName, ProviderGUID);
 			}
 			public HRESULT Finish_CreateConnectedIdentity() mut
 			{
-				return VT.Finish_CreateConnectedIdentity(&this);
+				return VT.Finish_CreateConnectedIdentity(ref this);
 			}
-			public HRESULT Begin_DeleteConnectedIdentity(PWSTR ConnectedName, Guid* ProviderGUID) mut
+			public HRESULT Begin_DeleteConnectedIdentity(PWSTR ConnectedName, in Guid ProviderGUID) mut
 			{
-				return VT.Begin_DeleteConnectedIdentity(&this, ConnectedName, ProviderGUID);
+				return VT.Begin_DeleteConnectedIdentity(ref this, ConnectedName, ProviderGUID);
 			}
 			public HRESULT Finish_DeleteConnectedIdentity() mut
 			{
-				return VT.Finish_DeleteConnectedIdentity(&this);
+				return VT.Finish_DeleteConnectedIdentity(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(AsyncIIdentityStoreEx *self, PWSTR LocalName, PWSTR ConnectedName, Guid* ProviderGUID) Begin_CreateConnectedIdentity;
-				public new function HRESULT(AsyncIIdentityStoreEx *self) Finish_CreateConnectedIdentity;
-				public new function HRESULT(AsyncIIdentityStoreEx *self, PWSTR ConnectedName, Guid* ProviderGUID) Begin_DeleteConnectedIdentity;
-				public new function HRESULT(AsyncIIdentityStoreEx *self) Finish_DeleteConnectedIdentity;
+				public new function HRESULT(ref AsyncIIdentityStoreEx self, PWSTR LocalName, PWSTR ConnectedName, in Guid ProviderGUID) Begin_CreateConnectedIdentity;
+				public new function HRESULT(ref AsyncIIdentityStoreEx self) Finish_CreateConnectedIdentity;
+				public new function HRESULT(ref AsyncIIdentityStoreEx self, PWSTR ConnectedName, in Guid ProviderGUID) Begin_DeleteConnectedIdentity;
+				public new function HRESULT(ref AsyncIIdentityStoreEx self) Finish_DeleteConnectedIdentity;
 			}
 		}
 		

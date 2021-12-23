@@ -27,7 +27,7 @@ namespace Win32
 		// --- Function Pointers ---
 		
 		public function uint32 PFNDAVAUTHCALLBACK_FREECRED(void* pbuffer);
-		public function uint32 PFNDAVAUTHCALLBACK(PWSTR lpwzServerName, PWSTR lpwzRemoteName, uint32 dwAuthScheme, uint32 dwFlags, DAV_CALLBACK_CRED* pCallbackCred, AUTHNEXTSTEP* NextStep, PFNDAVAUTHCALLBACK_FREECRED* pFreeCred);
+		public function uint32 PFNDAVAUTHCALLBACK(PWSTR lpwzServerName, PWSTR lpwzRemoteName, uint32 dwAuthScheme, uint32 dwFlags, out DAV_CALLBACK_CRED pCallbackCred, out AUTHNEXTSTEP NextStep, out PFNDAVAUTHCALLBACK_FREECRED pFreeCred);
 		
 		// --- Structs ---
 		
@@ -58,17 +58,17 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DavAddConnection(HANDLE* ConnectionHandle, PWSTR RemoteName, PWSTR UserName, PWSTR Password, uint8* ClientCert, uint32 CertSize);
+		public static extern uint32 DavAddConnection(out HANDLE ConnectionHandle, PWSTR RemoteName, PWSTR UserName, PWSTR Password, ref uint8 ClientCert, uint32 CertSize);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DavDeleteConnection(HANDLE ConnectionHandle);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DavGetUNCFromHTTPPath(PWSTR Url, char16* UncPath, uint32* lpSize);
+		public static extern uint32 DavGetUNCFromHTTPPath(PWSTR Url, char16* UncPath, out uint32 lpSize);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DavGetHTTPFromUNCPath(PWSTR UncPath, char16* Url, uint32* lpSize);
+		public static extern uint32 DavGetHTTPFromUNCPath(PWSTR UncPath, char16* Url, out uint32 lpSize);
 		[Import("davclnt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DavGetTheLockOwnerOfTheFile(PWSTR FileName, PWSTR LockOwnerName, uint32* LockOwnerNameLengthInBytes);
+		public static extern uint32 DavGetTheLockOwnerOfTheFile(PWSTR FileName, PWSTR LockOwnerName, out uint32 LockOwnerNameLengthInBytes);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DavGetExtendedError(HANDLE hFile, uint32* ExtError, char16* ExtErrorString, uint32* cChSize);
+		public static extern uint32 DavGetExtendedError(HANDLE hFile, out uint32 ExtError, char16* ExtErrorString, out uint32 cChSize);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DavFlushFile(HANDLE hFile);
 		[Import("davclnt.dll"), CLink, CallingConvention(.Stdcall)]

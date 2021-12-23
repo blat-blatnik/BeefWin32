@@ -128,19 +128,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStringProperty(FH_TARGET_PROPERTY_TYPE PropertyType, BSTR* PropertyValue) mut
+			public HRESULT GetStringProperty(FH_TARGET_PROPERTY_TYPE PropertyType, out BSTR PropertyValue) mut
 			{
-				return VT.GetStringProperty(&this, PropertyType, PropertyValue);
+				return VT.GetStringProperty(ref this, PropertyType, out PropertyValue);
 			}
-			public HRESULT GetNumericalProperty(FH_TARGET_PROPERTY_TYPE PropertyType, uint64* PropertyValue) mut
+			public HRESULT GetNumericalProperty(FH_TARGET_PROPERTY_TYPE PropertyType, out uint64 PropertyValue) mut
 			{
-				return VT.GetNumericalProperty(&this, PropertyType, PropertyValue);
+				return VT.GetNumericalProperty(ref this, PropertyType, out PropertyValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IFhTarget *self, FH_TARGET_PROPERTY_TYPE PropertyType, BSTR* PropertyValue) GetStringProperty;
-				public new function HRESULT(IFhTarget *self, FH_TARGET_PROPERTY_TYPE PropertyType, uint64* PropertyValue) GetNumericalProperty;
+				public new function HRESULT(ref IFhTarget self, FH_TARGET_PROPERTY_TYPE PropertyType, out BSTR PropertyValue) GetStringProperty;
+				public new function HRESULT(ref IFhTarget self, FH_TARGET_PROPERTY_TYPE PropertyType, out uint64 PropertyValue) GetNumericalProperty;
 			}
 		}
 		[CRepr]
@@ -152,17 +152,17 @@ namespace Win32
 			
 			public HRESULT MoveToNextItem() mut
 			{
-				return VT.MoveToNextItem(&this);
+				return VT.MoveToNextItem(ref this);
 			}
-			public HRESULT GetItem(BSTR* Item) mut
+			public HRESULT GetItem(out BSTR Item) mut
 			{
-				return VT.GetItem(&this, Item);
+				return VT.GetItem(ref this, out Item);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IFhScopeIterator *self) MoveToNextItem;
-				public new function HRESULT(IFhScopeIterator *self, BSTR* Item) GetItem;
+				public new function HRESULT(ref IFhScopeIterator self) MoveToNextItem;
+				public new function HRESULT(ref IFhScopeIterator self, out BSTR Item) GetItem;
 			}
 		}
 		[CRepr]
@@ -174,77 +174,77 @@ namespace Win32
 			
 			public HRESULT LoadConfiguration() mut
 			{
-				return VT.LoadConfiguration(&this);
+				return VT.LoadConfiguration(ref this);
 			}
 			public HRESULT CreateDefaultConfiguration(BOOL OverwriteIfExists) mut
 			{
-				return VT.CreateDefaultConfiguration(&this, OverwriteIfExists);
+				return VT.CreateDefaultConfiguration(ref this, OverwriteIfExists);
 			}
 			public HRESULT SaveConfiguration() mut
 			{
-				return VT.SaveConfiguration(&this);
+				return VT.SaveConfiguration(ref this);
 			}
 			public HRESULT AddRemoveExcludeRule(BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) mut
 			{
-				return VT.AddRemoveExcludeRule(&this, Add, Category, Item);
+				return VT.AddRemoveExcludeRule(ref this, Add, Category, Item);
 			}
-			public HRESULT GetIncludeExcludeRules(BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, IFhScopeIterator** Iterator) mut
+			public HRESULT GetIncludeExcludeRules(BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, out IFhScopeIterator* Iterator) mut
 			{
-				return VT.GetIncludeExcludeRules(&this, Include, Category, Iterator);
+				return VT.GetIncludeExcludeRules(ref this, Include, Category, out Iterator);
 			}
-			public HRESULT GetLocalPolicy(FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64* PolicyValue) mut
+			public HRESULT GetLocalPolicy(FH_LOCAL_POLICY_TYPE LocalPolicyType, out uint64 PolicyValue) mut
 			{
-				return VT.GetLocalPolicy(&this, LocalPolicyType, PolicyValue);
+				return VT.GetLocalPolicy(ref this, LocalPolicyType, out PolicyValue);
 			}
 			public HRESULT SetLocalPolicy(FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) mut
 			{
-				return VT.SetLocalPolicy(&this, LocalPolicyType, PolicyValue);
+				return VT.SetLocalPolicy(ref this, LocalPolicyType, PolicyValue);
 			}
-			public HRESULT GetBackupStatus(FH_BACKUP_STATUS* BackupStatus) mut
+			public HRESULT GetBackupStatus(out FH_BACKUP_STATUS BackupStatus) mut
 			{
-				return VT.GetBackupStatus(&this, BackupStatus);
+				return VT.GetBackupStatus(ref this, out BackupStatus);
 			}
 			public HRESULT SetBackupStatus(FH_BACKUP_STATUS BackupStatus) mut
 			{
-				return VT.SetBackupStatus(&this, BackupStatus);
+				return VT.SetBackupStatus(ref this, BackupStatus);
 			}
-			public HRESULT GetDefaultTarget(IFhTarget** DefaultTarget) mut
+			public HRESULT GetDefaultTarget(out IFhTarget* DefaultTarget) mut
 			{
-				return VT.GetDefaultTarget(&this, DefaultTarget);
+				return VT.GetDefaultTarget(ref this, out DefaultTarget);
 			}
-			public HRESULT ValidateTarget(BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) mut
+			public HRESULT ValidateTarget(BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) mut
 			{
-				return VT.ValidateTarget(&this, TargetUrl, ValidationResult);
+				return VT.ValidateTarget(ref this, TargetUrl, out ValidationResult);
 			}
 			public HRESULT ProvisionAndSetNewTarget(BSTR TargetUrl, BSTR TargetName) mut
 			{
-				return VT.ProvisionAndSetNewTarget(&this, TargetUrl, TargetName);
+				return VT.ProvisionAndSetNewTarget(ref this, TargetUrl, TargetName);
 			}
 			public HRESULT ChangeDefaultTargetRecommendation(BOOL Recommend) mut
 			{
-				return VT.ChangeDefaultTargetRecommendation(&this, Recommend);
+				return VT.ChangeDefaultTargetRecommendation(ref this, Recommend);
 			}
-			public HRESULT QueryProtectionStatus(uint32* ProtectionState, BSTR* ProtectedUntilTime) mut
+			public HRESULT QueryProtectionStatus(out uint32 ProtectionState, out BSTR ProtectedUntilTime) mut
 			{
-				return VT.QueryProtectionStatus(&this, ProtectionState, ProtectedUntilTime);
+				return VT.QueryProtectionStatus(ref this, out ProtectionState, out ProtectedUntilTime);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IFhConfigMgr *self) LoadConfiguration;
-				public new function HRESULT(IFhConfigMgr *self, BOOL OverwriteIfExists) CreateDefaultConfiguration;
-				public new function HRESULT(IFhConfigMgr *self) SaveConfiguration;
-				public new function HRESULT(IFhConfigMgr *self, BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) AddRemoveExcludeRule;
-				public new function HRESULT(IFhConfigMgr *self, BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, IFhScopeIterator** Iterator) GetIncludeExcludeRules;
-				public new function HRESULT(IFhConfigMgr *self, FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64* PolicyValue) GetLocalPolicy;
-				public new function HRESULT(IFhConfigMgr *self, FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) SetLocalPolicy;
-				public new function HRESULT(IFhConfigMgr *self, FH_BACKUP_STATUS* BackupStatus) GetBackupStatus;
-				public new function HRESULT(IFhConfigMgr *self, FH_BACKUP_STATUS BackupStatus) SetBackupStatus;
-				public new function HRESULT(IFhConfigMgr *self, IFhTarget** DefaultTarget) GetDefaultTarget;
-				public new function HRESULT(IFhConfigMgr *self, BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) ValidateTarget;
-				public new function HRESULT(IFhConfigMgr *self, BSTR TargetUrl, BSTR TargetName) ProvisionAndSetNewTarget;
-				public new function HRESULT(IFhConfigMgr *self, BOOL Recommend) ChangeDefaultTargetRecommendation;
-				public new function HRESULT(IFhConfigMgr *self, uint32* ProtectionState, BSTR* ProtectedUntilTime) QueryProtectionStatus;
+				public new function HRESULT(ref IFhConfigMgr self) LoadConfiguration;
+				public new function HRESULT(ref IFhConfigMgr self, BOOL OverwriteIfExists) CreateDefaultConfiguration;
+				public new function HRESULT(ref IFhConfigMgr self) SaveConfiguration;
+				public new function HRESULT(ref IFhConfigMgr self, BOOL Add, FH_PROTECTED_ITEM_CATEGORY Category, BSTR Item) AddRemoveExcludeRule;
+				public new function HRESULT(ref IFhConfigMgr self, BOOL Include, FH_PROTECTED_ITEM_CATEGORY Category, out IFhScopeIterator* Iterator) GetIncludeExcludeRules;
+				public new function HRESULT(ref IFhConfigMgr self, FH_LOCAL_POLICY_TYPE LocalPolicyType, out uint64 PolicyValue) GetLocalPolicy;
+				public new function HRESULT(ref IFhConfigMgr self, FH_LOCAL_POLICY_TYPE LocalPolicyType, uint64 PolicyValue) SetLocalPolicy;
+				public new function HRESULT(ref IFhConfigMgr self, out FH_BACKUP_STATUS BackupStatus) GetBackupStatus;
+				public new function HRESULT(ref IFhConfigMgr self, FH_BACKUP_STATUS BackupStatus) SetBackupStatus;
+				public new function HRESULT(ref IFhConfigMgr self, out IFhTarget* DefaultTarget) GetDefaultTarget;
+				public new function HRESULT(ref IFhConfigMgr self, BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) ValidateTarget;
+				public new function HRESULT(ref IFhConfigMgr self, BSTR TargetUrl, BSTR TargetName) ProvisionAndSetNewTarget;
+				public new function HRESULT(ref IFhConfigMgr self, BOOL Recommend) ChangeDefaultTargetRecommendation;
+				public new function HRESULT(ref IFhConfigMgr self, out uint32 ProtectionState, out BSTR ProtectedUntilTime) QueryProtectionStatus;
 			}
 		}
 		[CRepr]
@@ -254,41 +254,41 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ValidateTarget(BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) mut
+			public HRESULT ValidateTarget(BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) mut
 			{
-				return VT.ValidateTarget(&this, TargetUrl, ValidationResult);
+				return VT.ValidateTarget(ref this, TargetUrl, out ValidationResult);
 			}
 			public HRESULT ScanTargetForConfigurations(BSTR TargetUrl) mut
 			{
-				return VT.ScanTargetForConfigurations(&this, TargetUrl);
+				return VT.ScanTargetForConfigurations(ref this, TargetUrl);
 			}
-			public HRESULT GetConfigurationDetails(uint32 Index, BSTR* UserName, BSTR* PcName, FILETIME* BackupTime) mut
+			public HRESULT GetConfigurationDetails(uint32 Index, out BSTR UserName, out BSTR PcName, out FILETIME BackupTime) mut
 			{
-				return VT.GetConfigurationDetails(&this, Index, UserName, PcName, BackupTime);
+				return VT.GetConfigurationDetails(ref this, Index, out UserName, out PcName, out BackupTime);
 			}
 			public HRESULT SelectConfiguration(uint32 Index) mut
 			{
-				return VT.SelectConfiguration(&this, Index);
+				return VT.SelectConfiguration(ref this, Index);
 			}
 			public HRESULT PerformReassociation(BOOL OverwriteIfExists) mut
 			{
-				return VT.PerformReassociation(&this, OverwriteIfExists);
+				return VT.PerformReassociation(ref this, OverwriteIfExists);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IFhReassociation *self, BSTR TargetUrl, FH_DEVICE_VALIDATION_RESULT* ValidationResult) ValidateTarget;
-				public new function HRESULT(IFhReassociation *self, BSTR TargetUrl) ScanTargetForConfigurations;
-				public new function HRESULT(IFhReassociation *self, uint32 Index, BSTR* UserName, BSTR* PcName, FILETIME* BackupTime) GetConfigurationDetails;
-				public new function HRESULT(IFhReassociation *self, uint32 Index) SelectConfiguration;
-				public new function HRESULT(IFhReassociation *self, BOOL OverwriteIfExists) PerformReassociation;
+				public new function HRESULT(ref IFhReassociation self, BSTR TargetUrl, out FH_DEVICE_VALIDATION_RESULT ValidationResult) ValidateTarget;
+				public new function HRESULT(ref IFhReassociation self, BSTR TargetUrl) ScanTargetForConfigurations;
+				public new function HRESULT(ref IFhReassociation self, uint32 Index, out BSTR UserName, out BSTR PcName, out FILETIME BackupTime) GetConfigurationDetails;
+				public new function HRESULT(ref IFhReassociation self, uint32 Index) SelectConfiguration;
+				public new function HRESULT(ref IFhReassociation self, BOOL OverwriteIfExists) PerformReassociation;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("fhsvcctl.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT FhServiceOpenPipe(BOOL StartServiceIfStopped, FH_SERVICE_PIPE_HANDLE* Pipe);
+		public static extern HRESULT FhServiceOpenPipe(BOOL StartServiceIfStopped, out FH_SERVICE_PIPE_HANDLE Pipe);
 		[Import("fhsvcctl.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT FhServiceClosePipe(FH_SERVICE_PIPE_HANDLE Pipe);
 		[Import("fhsvcctl.dll"), CLink, CallingConvention(.Stdcall)]

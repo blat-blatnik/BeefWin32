@@ -67,14 +67,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOSUpdateAssessment(OSUpdateAssessment* result) mut
+			public HRESULT GetOSUpdateAssessment(out OSUpdateAssessment result) mut
 			{
-				return VT.GetOSUpdateAssessment(&this, result);
+				return VT.GetOSUpdateAssessment(ref this, out result);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWaaSAssessor *self, OSUpdateAssessment* result) GetOSUpdateAssessment;
+				public new function HRESULT(ref IWaaSAssessor self, out OSUpdateAssessment result) GetOSUpdateAssessment;
 			}
 		}
 		

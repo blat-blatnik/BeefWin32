@@ -25,13 +25,13 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RtlInitializeCorrelationVector(CORRELATION_VECTOR* CorrelationVector, int32 Version, Guid* Guid);
+		public static extern uint32 RtlInitializeCorrelationVector(out CORRELATION_VECTOR CorrelationVector, int32 Version, Guid* Guid);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RtlIncrementCorrelationVector(CORRELATION_VECTOR* CorrelationVector);
+		public static extern uint32 RtlIncrementCorrelationVector(out CORRELATION_VECTOR CorrelationVector);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RtlExtendCorrelationVector(CORRELATION_VECTOR* CorrelationVector);
+		public static extern uint32 RtlExtendCorrelationVector(out CORRELATION_VECTOR CorrelationVector);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RtlValidateCorrelationVector(CORRELATION_VECTOR* Vector);
+		public static extern uint32 RtlValidateCorrelationVector(ref CORRELATION_VECTOR Vector);
 		
 	}
 }

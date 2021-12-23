@@ -495,7 +495,7 @@ namespace Win32
 			public uint8 EfficiencyClass;
 			public uint8[20] Reserved;
 			public uint16 GroupCount;
-			public GROUP_AFFINITY[] GroupMask;
+			public GROUP_AFFINITY[0] GroupMask;
 		}
 		[CRepr]
 		public struct NUMA_NODE_RELATIONSHIP
@@ -509,7 +509,7 @@ namespace Win32
 			public struct _Anonymous_e__Union
 			{
 				public GROUP_AFFINITY GroupMask;
-				public GROUP_AFFINITY[] GroupMasks;
+				public GROUP_AFFINITY[0] GroupMasks;
 			}
 		}
 		[CRepr]
@@ -528,7 +528,7 @@ namespace Win32
 			public struct _Anonymous_e__Union
 			{
 				public GROUP_AFFINITY GroupMask;
-				public GROUP_AFFINITY[] GroupMasks;
+				public GROUP_AFFINITY[0] GroupMasks;
 			}
 		}
 		[CRepr]
@@ -545,7 +545,7 @@ namespace Win32
 			public uint16 MaximumGroupCount;
 			public uint16 ActiveGroupCount;
 			public uint8[20] Reserved;
-			public PROCESSOR_GROUP_INFO[] GroupInfo;
+			public PROCESSOR_GROUP_INFO[0] GroupInfo;
 		}
 		[CRepr]
 		public struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX
@@ -691,31 +691,31 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GlobalMemoryStatusEx(MEMORYSTATUSEX* lpBuffer);
+		public static extern BOOL GlobalMemoryStatusEx(out MEMORYSTATUSEX lpBuffer);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void GetSystemInfo(SYSTEM_INFO* lpSystemInfo);
+		public static extern void GetSystemInfo(out SYSTEM_INFO lpSystemInfo);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void GetSystemTime(SYSTEMTIME* lpSystemTime);
+		public static extern void GetSystemTime(out SYSTEMTIME lpSystemTime);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void GetSystemTimeAsFileTime(FILETIME* lpSystemTimeAsFileTime);
+		public static extern void GetSystemTimeAsFileTime(out FILETIME lpSystemTimeAsFileTime);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void GetLocalTime(SYSTEMTIME* lpSystemTime);
+		public static extern void GetLocalTime(out SYSTEMTIME lpSystemTime);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsUserCetAvailableInEnvironment(USER_CET_ENVIRONMENT UserCetEnvironment);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetSystemLeapSecondInformation(BOOL* Enabled, uint32* Flags);
+		public static extern BOOL GetSystemLeapSecondInformation(out BOOL Enabled, out uint32 Flags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetVersion();
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetLocalTime(SYSTEMTIME* lpSystemTime);
+		public static extern BOOL SetLocalTime(in SYSTEMTIME lpSystemTime);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetTickCount();
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint64 GetTickCount64();
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetSystemTimeAdjustment(uint32* lpTimeAdjustment, uint32* lpTimeIncrement, BOOL* lpTimeAdjustmentDisabled);
+		public static extern BOOL GetSystemTimeAdjustment(out uint32 lpTimeAdjustment, out uint32 lpTimeIncrement, out BOOL lpTimeAdjustmentDisabled);
 		[Import("api-ms-win-core-sysinfo-l1-2-4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetSystemTimeAdjustmentPrecise(uint64* lpTimeAdjustment, uint64* lpTimeIncrement, BOOL* lpTimeAdjustmentDisabled);
+		public static extern BOOL GetSystemTimeAdjustmentPrecise(out uint64 lpTimeAdjustment, out uint64 lpTimeIncrement, out BOOL lpTimeAdjustmentDisabled);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetSystemDirectoryA(uint8* lpBuffer, uint32 uSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -729,39 +729,39 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetSystemWindowsDirectoryW(char16* lpBuffer, uint32 uSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetComputerNameExA(COMPUTER_NAME_FORMAT NameType, uint8* lpBuffer, uint32* nSize);
+		public static extern BOOL GetComputerNameExA(COMPUTER_NAME_FORMAT NameType, uint8* lpBuffer, out uint32 nSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetComputerNameExW(COMPUTER_NAME_FORMAT NameType, char16* lpBuffer, uint32* nSize);
+		public static extern BOOL GetComputerNameExW(COMPUTER_NAME_FORMAT NameType, char16* lpBuffer, out uint32 nSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetComputerNameExW(COMPUTER_NAME_FORMAT NameType, PWSTR lpBuffer);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetSystemTime(SYSTEMTIME* lpSystemTime);
+		public static extern BOOL SetSystemTime(in SYSTEMTIME lpSystemTime);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetVersionExA(OSVERSIONINFOA* lpVersionInformation);
+		public static extern BOOL GetVersionExA(out OSVERSIONINFOA lpVersionInformation);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetVersionExW(OSVERSIONINFOW* lpVersionInformation);
+		public static extern BOOL GetVersionExW(out OSVERSIONINFOW lpVersionInformation);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetLogicalProcessorInformation(SYSTEM_LOGICAL_PROCESSOR_INFORMATION* Buffer, uint32* ReturnedLength);
+		public static extern BOOL GetLogicalProcessorInformation(SYSTEM_LOGICAL_PROCESSOR_INFORMATION* Buffer, out uint32 ReturnedLength);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetLogicalProcessorInformationEx(LOGICAL_PROCESSOR_RELATIONSHIP RelationshipType, SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX* Buffer, uint32* ReturnedLength);
+		public static extern BOOL GetLogicalProcessorInformationEx(LOGICAL_PROCESSOR_RELATIONSHIP RelationshipType, SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX* Buffer, out uint32 ReturnedLength);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void GetNativeSystemInfo(SYSTEM_INFO* lpSystemInfo);
+		public static extern void GetNativeSystemInfo(out SYSTEM_INFO lpSystemInfo);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void GetSystemTimePreciseAsFileTime(FILETIME* lpSystemTimeAsFileTime);
+		public static extern void GetSystemTimePreciseAsFileTime(out FILETIME lpSystemTimeAsFileTime);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetProductInfo(uint32 dwOSMajorVersion, uint32 dwOSMinorVersion, uint32 dwSpMajorVersion, uint32 dwSpMinorVersion, OS_PRODUCT_TYPE* pdwReturnedProductType);
+		public static extern BOOL GetProductInfo(uint32 dwOSMajorVersion, uint32 dwOSMinorVersion, uint32 dwSpMajorVersion, uint32 dwSpMinorVersion, out OS_PRODUCT_TYPE pdwReturnedProductType);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint64 VerSetConditionMask(uint64 ConditionMask, VER_FLAGS TypeMask, uint8 Condition);
 		[Import("api-ms-win-core-sysinfo-l1-2-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetOsSafeBootMode(uint32* Flags);
+		public static extern BOOL GetOsSafeBootMode(out uint32 Flags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 EnumSystemFirmwareTables(FIRMWARE_TABLE_PROVIDER FirmwareTableProviderSignature, FIRMWARE_TABLE_ID* pFirmwareTableEnumBuffer, uint32 BufferSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetSystemFirmwareTable(FIRMWARE_TABLE_PROVIDER FirmwareTableProviderSignature, FIRMWARE_TABLE_ID FirmwareTableID, void* pFirmwareTableBuffer, uint32 BufferSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL DnsHostnameToComputerNameExW(PWSTR Hostname, char16* ComputerName, uint32* nSize);
+		public static extern BOOL DnsHostnameToComputerNameExW(PWSTR Hostname, char16* ComputerName, out uint32 nSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPhysicallyInstalledSystemMemory(uint64* TotalMemoryInKilobytes);
+		public static extern BOOL GetPhysicallyInstalledSystemMemory(out uint64 TotalMemoryInKilobytes);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetComputerNameEx2W(COMPUTER_NAME_FORMAT NameType, uint32 Flags, PWSTR lpBuffer);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -769,11 +769,11 @@ namespace Win32
 		[Import("api-ms-win-core-sysinfo-l1-2-4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetSystemTimeAdjustmentPrecise(uint64 dwTimeAdjustment, BOOL bTimeAdjustmentDisabled);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetProcessorSystemCycleTime(uint16 Group, SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION* Buffer, uint32* ReturnedLength);
+		public static extern BOOL GetProcessorSystemCycleTime(uint16 Group, SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION* Buffer, out uint32 ReturnedLength);
 		[Import("api-ms-win-core-sysinfo-l1-2-3.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetOsManufacturingMode(BOOL* pbEnabled);
+		public static extern BOOL GetOsManufacturingMode(out BOOL pbEnabled);
 		[Import("api-ms-win-core-sysinfo-l1-2-3.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetIntegratedDisplaySize(double* sizeInInches);
+		public static extern HRESULT GetIntegratedDisplaySize(out double sizeInInches);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetComputerNameA(PSTR lpComputerName);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -781,7 +781,7 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetComputerNameExA(COMPUTER_NAME_FORMAT NameType, PSTR lpBuffer);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetSystemCpuSetInformation(SYSTEM_CPU_SET_INFORMATION* Information, uint32 BufferLength, uint32* ReturnedLength, HANDLE Process, uint32 Flags);
+		public static extern BOOL GetSystemCpuSetInformation(SYSTEM_CPU_SET_INFORMATION* Information, uint32 BufferLength, out uint32 ReturnedLength, HANDLE Process, uint32 Flags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetSystemWow64DirectoryA(uint8* lpBuffer, uint32 uSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -791,9 +791,9 @@ namespace Win32
 		[Import("api-ms-win-core-wow64-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetSystemWow64Directory2W(char16* lpBuffer, uint32 uSize, uint16 ImageFileMachineType);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT IsWow64GuestMachineSupported(uint16 WowGuestMachine, BOOL* MachineIsSupported);
+		public static extern HRESULT IsWow64GuestMachineSupported(uint16 WowGuestMachine, out BOOL MachineIsSupported);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOLEAN RtlGetProductInfo(uint32 OSMajorVersion, uint32 OSMinorVersion, uint32 SpMajorVersion, uint32 SpMinorVersion, uint32* ReturnedProductType);
+		public static extern BOOLEAN RtlGetProductInfo(uint32 OSMajorVersion, uint32 OSMinorVersion, uint32 SpMajorVersion, uint32 SpMinorVersion, out uint32 ReturnedProductType);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern OS_DEPLOYEMENT_STATE_VALUES RtlOsDeploymentState(uint32 Flags);
 		[Import("ntdllk.dll"), CLink, CallingConvention(.Stdcall)]
@@ -801,19 +801,19 @@ namespace Win32
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void RtlGetDeviceFamilyInfoEnum(uint64* pullUAPInfo, DEVICEFAMILYINFOENUM* pulDeviceFamily, DEVICEFAMILYDEVICEFORM* pulDeviceForm);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RtlConvertDeviceFamilyInfoToString(uint32* pulDeviceFamilyBufferSize, uint32* pulDeviceFormBufferSize, PWSTR DeviceFamily, PWSTR DeviceForm);
+		public static extern uint32 RtlConvertDeviceFamilyInfoToString(out uint32 pulDeviceFamilyBufferSize, out uint32 pulDeviceFormBufferSize, PWSTR DeviceFamily, PWSTR DeviceForm);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RtlSwitchedVVI(OSVERSIONINFOEXW* VersionInfo, uint32 TypeMask, uint64 ConditionMask);
+		public static extern uint32 RtlSwitchedVVI(ref OSVERSIONINFOEXW VersionInfo, uint32 TypeMask, uint64 ConditionMask);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void GlobalMemoryStatus(MEMORYSTATUS* lpBuffer);
+		public static extern void GlobalMemoryStatus(out MEMORYSTATUS lpBuffer);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern DEP_SYSTEM_POLICY_TYPE GetSystemDEPPolicy();
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetFirmwareType(FIRMWARE_TYPE* FirmwareType);
+		public static extern BOOL GetFirmwareType(out FIRMWARE_TYPE FirmwareType);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL VerifyVersionInfoA(OSVERSIONINFOEXA* lpVersionInformation, VER_FLAGS dwTypeMask, uint64 dwlConditionMask);
+		public static extern BOOL VerifyVersionInfoA(out OSVERSIONINFOEXA lpVersionInformation, VER_FLAGS dwTypeMask, uint64 dwlConditionMask);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL VerifyVersionInfoW(OSVERSIONINFOEXW* lpVersionInformation, VER_FLAGS dwTypeMask, uint64 dwlConditionMask);
+		public static extern BOOL VerifyVersionInfoW(out OSVERSIONINFOEXW lpVersionInformation, VER_FLAGS dwTypeMask, uint64 dwlConditionMask);
 		
 	}
 }

@@ -98,14 +98,14 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT PRJ_START_DIRECTORY_ENUMERATION_CB(PRJ_CALLBACK_DATA* callbackData, Guid* enumerationId);
-		public function HRESULT PRJ_GET_DIRECTORY_ENUMERATION_CB(PRJ_CALLBACK_DATA* callbackData, Guid* enumerationId, PWSTR searchExpression, PRJ_DIR_ENTRY_BUFFER_HANDLE dirEntryBufferHandle);
-		public function HRESULT PRJ_END_DIRECTORY_ENUMERATION_CB(PRJ_CALLBACK_DATA* callbackData, Guid* enumerationId);
-		public function HRESULT PRJ_GET_PLACEHOLDER_INFO_CB(PRJ_CALLBACK_DATA* callbackData);
-		public function HRESULT PRJ_GET_FILE_DATA_CB(PRJ_CALLBACK_DATA* callbackData, uint64 byteOffset, uint32 length);
-		public function HRESULT PRJ_QUERY_FILE_NAME_CB(PRJ_CALLBACK_DATA* callbackData);
-		public function HRESULT PRJ_NOTIFICATION_CB(PRJ_CALLBACK_DATA* callbackData, BOOLEAN isDirectory, PRJ_NOTIFICATION notification, PWSTR destinationFileName, PRJ_NOTIFICATION_PARAMETERS* operationParameters);
-		public function void PRJ_CANCEL_COMMAND_CB(PRJ_CALLBACK_DATA* callbackData);
+		public function HRESULT PRJ_START_DIRECTORY_ENUMERATION_CB(in PRJ_CALLBACK_DATA callbackData, in Guid enumerationId);
+		public function HRESULT PRJ_GET_DIRECTORY_ENUMERATION_CB(in PRJ_CALLBACK_DATA callbackData, in Guid enumerationId, PWSTR searchExpression, PRJ_DIR_ENTRY_BUFFER_HANDLE dirEntryBufferHandle);
+		public function HRESULT PRJ_END_DIRECTORY_ENUMERATION_CB(in PRJ_CALLBACK_DATA callbackData, in Guid enumerationId);
+		public function HRESULT PRJ_GET_PLACEHOLDER_INFO_CB(in PRJ_CALLBACK_DATA callbackData);
+		public function HRESULT PRJ_GET_FILE_DATA_CB(in PRJ_CALLBACK_DATA callbackData, uint64 byteOffset, uint32 length);
+		public function HRESULT PRJ_QUERY_FILE_NAME_CB(in PRJ_CALLBACK_DATA callbackData);
+		public function HRESULT PRJ_NOTIFICATION_CB(in PRJ_CALLBACK_DATA callbackData, BOOLEAN isDirectory, PRJ_NOTIFICATION notification, PWSTR destinationFileName, out PRJ_NOTIFICATION_PARAMETERS operationParameters);
+		public function void PRJ_CANCEL_COMMAND_CB(in PRJ_CALLBACK_DATA callbackData);
 		
 		// --- Structs ---
 		
@@ -174,7 +174,7 @@ namespace Win32
 			public _SecurityInformation_e__Struct SecurityInformation;
 			public _StreamsInformation_e__Struct StreamsInformation;
 			public PRJ_PLACEHOLDER_VERSION_INFO VersionInfo;
-			public uint8[] VariableData;
+			public uint8[0] VariableData;
 			
 			[CRepr]
 			public struct _StreamsInformation_e__Struct
@@ -273,27 +273,27 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrjStartVirtualizing(PWSTR virtualizationRootPath, PRJ_CALLBACKS* callbacks, void* instanceContext, PRJ_STARTVIRTUALIZING_OPTIONS* options, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT* namespaceVirtualizationContext);
+		public static extern HRESULT PrjStartVirtualizing(PWSTR virtualizationRootPath, in PRJ_CALLBACKS callbacks, void* instanceContext, PRJ_STARTVIRTUALIZING_OPTIONS* options, out PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void PrjStopVirtualizing(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PrjClearNegativePathCache(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, uint32* totalEntryNumber);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrjGetVirtualizationInstanceInfo(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, PRJ_VIRTUALIZATION_INSTANCE_INFO* virtualizationInstanceInfo);
+		public static extern HRESULT PrjGetVirtualizationInstanceInfo(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, out PRJ_VIRTUALIZATION_INSTANCE_INFO virtualizationInstanceInfo);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrjMarkDirectoryAsPlaceholder(PWSTR rootPathName, PWSTR targetPathName, PRJ_PLACEHOLDER_VERSION_INFO* versionInfo, Guid* virtualizationInstanceID);
+		public static extern HRESULT PrjMarkDirectoryAsPlaceholder(PWSTR rootPathName, PWSTR targetPathName, PRJ_PLACEHOLDER_VERSION_INFO* versionInfo, in Guid virtualizationInstanceID);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrjWritePlaceholderInfo(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, PWSTR destinationFileName, PRJ_PLACEHOLDER_INFO* placeholderInfo, uint32 placeholderInfoSize);
+		public static extern HRESULT PrjWritePlaceholderInfo(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, PWSTR destinationFileName, in PRJ_PLACEHOLDER_INFO placeholderInfo, uint32 placeholderInfoSize);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrjWritePlaceholderInfo2(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, PWSTR destinationFileName, PRJ_PLACEHOLDER_INFO* placeholderInfo, uint32 placeholderInfoSize, PRJ_EXTENDED_INFO* ExtendedInfo);
+		public static extern HRESULT PrjWritePlaceholderInfo2(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, PWSTR destinationFileName, in PRJ_PLACEHOLDER_INFO placeholderInfo, uint32 placeholderInfoSize, PRJ_EXTENDED_INFO* ExtendedInfo);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrjUpdateFileIfNeeded(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, PWSTR destinationFileName, PRJ_PLACEHOLDER_INFO* placeholderInfo, uint32 placeholderInfoSize, PRJ_UPDATE_TYPES updateFlags, PRJ_UPDATE_FAILURE_CAUSES* failureReason);
+		public static extern HRESULT PrjUpdateFileIfNeeded(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, PWSTR destinationFileName, in PRJ_PLACEHOLDER_INFO placeholderInfo, uint32 placeholderInfoSize, PRJ_UPDATE_TYPES updateFlags, PRJ_UPDATE_FAILURE_CAUSES* failureReason);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT PrjDeleteFile(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, PWSTR destinationFileName, PRJ_UPDATE_TYPES updateFlags, PRJ_UPDATE_FAILURE_CAUSES* failureReason);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrjWriteFileData(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, Guid* dataStreamId, void* buffer, uint64 byteOffset, uint32 length);
+		public static extern HRESULT PrjWriteFileData(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, in Guid dataStreamId, void* buffer, uint64 byteOffset, uint32 length);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrjGetOnDiskFileState(PWSTR destinationFileName, PRJ_FILE_STATE* fileState);
+		public static extern HRESULT PrjGetOnDiskFileState(PWSTR destinationFileName, out PRJ_FILE_STATE fileState);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* PrjAllocateAlignedBuffer(PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT namespaceVirtualizationContext, uint size);
 		[Import("projectedfslib.dll"), CLink, CallingConvention(.Stdcall)]

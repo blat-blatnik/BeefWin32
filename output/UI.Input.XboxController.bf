@@ -150,19 +150,19 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 XInputGetState(uint32 dwUserIndex, XINPUT_STATE* pState);
+		public static extern uint32 XInputGetState(uint32 dwUserIndex, out XINPUT_STATE pState);
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 XInputSetState(uint32 dwUserIndex, XINPUT_VIBRATION* pVibration);
+		public static extern uint32 XInputSetState(uint32 dwUserIndex, ref XINPUT_VIBRATION pVibration);
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 XInputGetCapabilities(uint32 dwUserIndex, uint32 dwFlags, XINPUT_CAPABILITIES* pCapabilities);
+		public static extern uint32 XInputGetCapabilities(uint32 dwUserIndex, uint32 dwFlags, out XINPUT_CAPABILITIES pCapabilities);
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void XInputEnable(BOOL enable);
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 XInputGetAudioDeviceIds(uint32 dwUserIndex, char16* pRenderDeviceId, uint32* pRenderCount, char16* pCaptureDeviceId, uint32* pCaptureCount);
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 XInputGetBatteryInformation(uint32 dwUserIndex, uint8 devType, XINPUT_BATTERY_INFORMATION* pBatteryInformation);
+		public static extern uint32 XInputGetBatteryInformation(uint32 dwUserIndex, uint8 devType, out XINPUT_BATTERY_INFORMATION pBatteryInformation);
 		[Import("xinputuap.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 XInputGetKeystroke(uint32 dwUserIndex, uint32 dwReserved, XINPUT_KEYSTROKE* pKeystroke);
+		public static extern uint32 XInputGetKeystroke(uint32 dwUserIndex, uint32 dwReserved, out XINPUT_KEYSTROKE pKeystroke);
 		
 	}
 }

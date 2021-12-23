@@ -2497,7 +2497,7 @@ namespace Win32
 		public function BOOL NAMEENUMPROCA(PSTR param0, LPARAM param1);
 		public function BOOL NAMEENUMPROCW(PWSTR param0, LPARAM param1);
 		public function BOOLEAN PREGISTERCLASSNAMEW(PWSTR param0);
-		public function void MSGBOXCALLBACK(HELPINFO* lpHelpInfo);
+		public function void MSGBOXCALLBACK(out HELPINFO lpHelpInfo);
 		
 		// --- Structs ---
 		
@@ -2506,7 +2506,7 @@ namespace Win32
 		{
 			public uint16 Length;
 			public uint16 Flags;
-			public uint8[] Text;
+			public uint8[0] Text;
 		}
 		[CRepr]
 		public struct MESSAGE_RESOURCE_BLOCK
@@ -2519,7 +2519,7 @@ namespace Win32
 		public struct MESSAGE_RESOURCE_DATA
 		{
 			public uint32 NumberOfBlocks;
-			public MESSAGE_RESOURCE_BLOCK[] Blocks;
+			public MESSAGE_RESOURCE_BLOCK[0] Blocks;
 		}
 		[CRepr]
 		public struct CBT_CREATEWNDA
@@ -2930,7 +2930,7 @@ namespace Win32
 		{
 			public uint16 mtOption;
 			public uint16 mtID;
-			public char16[] mtString;
+			public char16[0] mtString;
 		}
 		[CRepr]
 		public struct ICONINFO
@@ -3224,9 +3224,9 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 LoadStringW(HINSTANCE hInstance, uint32 uID, char16* lpBuffer, int32 cchBufferMax);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 wvsprintfA(PSTR param0, PSTR param1, int8* arglist);
+		public static extern int32 wvsprintfA(PSTR param0, PSTR param1, ref int8 arglist);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 wvsprintfW(PWSTR param0, PWSTR param1, int8* arglist);
+		public static extern int32 wvsprintfW(PWSTR param0, PWSTR param1, ref int8 arglist);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 wsprintfA(PSTR param0, PSTR param1);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3240,21 +3240,21 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RegisterWindowMessageW(PWSTR lpString);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetMessageA(MSG* lpMsg, HWND hWnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax);
+		public static extern BOOL GetMessageA(out MSG lpMsg, HWND hWnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetMessageW(MSG* lpMsg, HWND hWnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax);
+		public static extern BOOL GetMessageW(out MSG lpMsg, HWND hWnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL TranslateMessage(MSG* lpMsg);
+		public static extern BOOL TranslateMessage(in MSG lpMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern LRESULT DispatchMessageA(MSG* lpMsg);
+		public static extern LRESULT DispatchMessageA(in MSG lpMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern LRESULT DispatchMessageW(MSG* lpMsg);
+		public static extern LRESULT DispatchMessageW(in MSG lpMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetMessageQueue(int32 cMessagesMax);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PeekMessageA(MSG* lpMsg, HWND hWnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, PEEK_MESSAGE_REMOVE_TYPE wRemoveMsg);
+		public static extern BOOL PeekMessageA(out MSG lpMsg, HWND hWnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, PEEK_MESSAGE_REMOVE_TYPE wRemoveMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PeekMessageW(MSG* lpMsg, HWND hWnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, PEEK_MESSAGE_REMOVE_TYPE wRemoveMsg);
+		public static extern BOOL PeekMessageW(out MSG lpMsg, HWND hWnd, uint32 wMsgFilterMin, uint32 wMsgFilterMax, PEEK_MESSAGE_REMOVE_TYPE wRemoveMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetMessagePos();
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3312,25 +3312,25 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 InSendMessageEx(void* lpReserved);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint16 RegisterClassA(WNDCLASSA* lpWndClass);
+		public static extern uint16 RegisterClassA(in WNDCLASSA lpWndClass);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint16 RegisterClassW(WNDCLASSW* lpWndClass);
+		public static extern uint16 RegisterClassW(in WNDCLASSW lpWndClass);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UnregisterClassA(PSTR lpClassName, HINSTANCE hInstance);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UnregisterClassW(PWSTR lpClassName, HINSTANCE hInstance);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetClassInfoA(HINSTANCE hInstance, PSTR lpClassName, WNDCLASSA* lpWndClass);
+		public static extern BOOL GetClassInfoA(HINSTANCE hInstance, PSTR lpClassName, out WNDCLASSA lpWndClass);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetClassInfoW(HINSTANCE hInstance, PWSTR lpClassName, WNDCLASSW* lpWndClass);
+		public static extern BOOL GetClassInfoW(HINSTANCE hInstance, PWSTR lpClassName, out WNDCLASSW lpWndClass);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint16 RegisterClassExA(WNDCLASSEXA* param0);
+		public static extern uint16 RegisterClassExA(in WNDCLASSEXA param0);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint16 RegisterClassExW(WNDCLASSEXW* param0);
+		public static extern uint16 RegisterClassExW(in WNDCLASSEXW param0);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetClassInfoExA(HINSTANCE hInstance, PSTR lpszClass, WNDCLASSEXA* lpwcx);
+		public static extern BOOL GetClassInfoExA(HINSTANCE hInstance, PSTR lpszClass, out WNDCLASSEXA lpwcx);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetClassInfoExW(HINSTANCE hInstance, PWSTR lpszClass, WNDCLASSEXW* lpwcx);
+		public static extern BOOL GetClassInfoExW(HINSTANCE hInstance, PWSTR lpszClass, out WNDCLASSEXW lpwcx);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HWND CreateWindowExA(WINDOW_EX_STYLE dwExStyle, PSTR lpClassName, PSTR lpWindowName, WINDOW_STYLE dwStyle, int32 X, int32 Y, int32 nWidth, int32 nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, void* lpParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3350,7 +3350,7 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UpdateLayeredWindow(HWND hWnd, HDC hdcDst, POINT* pptDst, SIZE* psize, HDC hdcSrc, POINT* pptSrc, uint32 crKey, BLENDFUNCTION* pblend, UPDATE_LAYERED_WINDOW_FLAGS dwFlags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL UpdateLayeredWindowIndirect(HWND hWnd, UPDATELAYEREDWINDOWINFO* pULWInfo);
+		public static extern BOOL UpdateLayeredWindowIndirect(HWND hWnd, in UPDATELAYEREDWINDOWINFO pULWInfo);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GetLayeredWindowAttributes(HWND hwnd, uint32* pcrKey, uint8* pbAlpha, LAYERED_WINDOW_ATTRIBUTES_FLAGS* pdwFlags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3360,7 +3360,7 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FlashWindow(HWND hWnd, BOOL bInvert);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL FlashWindowEx(FLASHWINFO* pfwi);
+		public static extern BOOL FlashWindowEx(ref FLASHWINFO pfwi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ShowOwnedPopups(HWND hWnd, BOOL fShow);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3372,11 +3372,11 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int32 X, int32 Y, int32 cx, int32 cy, SET_WINDOW_POS_FLAGS uFlags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetWindowPlacement(HWND hWnd, WINDOWPLACEMENT* lpwndpl);
+		public static extern BOOL GetWindowPlacement(HWND hWnd, out WINDOWPLACEMENT lpwndpl);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetWindowPlacement(HWND hWnd, WINDOWPLACEMENT* lpwndpl);
+		public static extern BOOL SetWindowPlacement(HWND hWnd, in WINDOWPLACEMENT lpwndpl);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetWindowDisplayAffinity(HWND hWnd, uint32* pdwAffinity);
+		public static extern BOOL GetWindowDisplayAffinity(HWND hWnd, out uint32 pdwAffinity);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetWindowDisplayAffinity(HWND hWnd, WINDOW_DISPLAY_AFFINITY dwAffinity);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3400,17 +3400,17 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HWND CreateDialogParamW(HINSTANCE hInstance, PWSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HWND CreateDialogIndirectParamA(HINSTANCE hInstance, DLGTEMPLATE* lpTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
+		public static extern HWND CreateDialogIndirectParamA(HINSTANCE hInstance, ref DLGTEMPLATE lpTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HWND CreateDialogIndirectParamW(HINSTANCE hInstance, DLGTEMPLATE* lpTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
+		public static extern HWND CreateDialogIndirectParamW(HINSTANCE hInstance, ref DLGTEMPLATE lpTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int DialogBoxParamA(HINSTANCE hInstance, PSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int DialogBoxParamW(HINSTANCE hInstance, PWSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int DialogBoxIndirectParamA(HINSTANCE hInstance, DLGTEMPLATE* hDialogTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
+		public static extern int DialogBoxIndirectParamA(HINSTANCE hInstance, ref DLGTEMPLATE hDialogTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int DialogBoxIndirectParamW(HINSTANCE hInstance, DLGTEMPLATE* hDialogTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
+		public static extern int DialogBoxIndirectParamW(HINSTANCE hInstance, ref DLGTEMPLATE hDialogTemplate, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EndDialog(HWND hDlg, int nResult);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3444,9 +3444,9 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern LRESULT DefDlgProcW(HWND hDlg, uint32 Msg, WPARAM wParam, LPARAM lParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CallMsgFilterA(MSG* lpMsg, int32 nCode);
+		public static extern BOOL CallMsgFilterA(ref MSG lpMsg, int32 nCode);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CallMsgFilterW(MSG* lpMsg, int32 nCode);
+		public static extern BOOL CallMsgFilterW(ref MSG lpMsg, int32 nCode);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CharToOemA(PSTR pSrc, PSTR pDst);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3536,9 +3536,9 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 CopyAcceleratorTableW(HACCEL hAccelSrc, ACCEL* lpAccelDst, int32 cAccelEntries);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 TranslateAcceleratorA(HWND hWnd, HACCEL hAccTable, MSG* lpMsg);
+		public static extern int32 TranslateAcceleratorA(HWND hWnd, HACCEL hAccTable, ref MSG lpMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 TranslateAcceleratorW(HWND hWnd, HACCEL hAccTable, MSG* lpMsg);
+		public static extern int32 TranslateAcceleratorW(HWND hWnd, HACCEL hAccTable, ref MSG lpMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetSystemMetrics(SYSTEM_METRICS_INDEX nIndex);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3606,35 +3606,35 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetMenuCheckMarkDimensions();
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL TrackPopupMenu(HMENU hMenu, TRACK_POPUP_MENU_FLAGS uFlags, int32 x, int32 y, int32 nReserved, HWND hWnd, RECT* prcRect);
+		public static extern BOOL TrackPopupMenu(HMENU hMenu, TRACK_POPUP_MENU_FLAGS uFlags, int32 x, int32 y, int32 nReserved, HWND hWnd, in RECT prcRect);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL TrackPopupMenuEx(HMENU hMenu, uint32 uFlags, int32 x, int32 y, HWND hwnd, TPMPARAMS* lptpm);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CalculatePopupWindowPosition(POINT* anchorPoint, SIZE* windowSize, uint32 flags, RECT* excludeRect, RECT* popupWindowPosition);
+		public static extern BOOL CalculatePopupWindowPosition(in POINT anchorPoint, in SIZE windowSize, uint32 flags, RECT* excludeRect, out RECT popupWindowPosition);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetMenuInfo(HMENU param0, MENUINFO* param1);
+		public static extern BOOL GetMenuInfo(HMENU param0, out MENUINFO param1);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetMenuInfo(HMENU param0, MENUINFO* param1);
+		public static extern BOOL SetMenuInfo(HMENU param0, ref MENUINFO param1);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EndMenu();
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL InsertMenuItemA(HMENU hmenu, uint32 item, BOOL fByPosition, MENUITEMINFOA* lpmi);
+		public static extern BOOL InsertMenuItemA(HMENU hmenu, uint32 item, BOOL fByPosition, ref MENUITEMINFOA lpmi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL InsertMenuItemW(HMENU hmenu, uint32 item, BOOL fByPosition, MENUITEMINFOW* lpmi);
+		public static extern BOOL InsertMenuItemW(HMENU hmenu, uint32 item, BOOL fByPosition, ref MENUITEMINFOW lpmi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetMenuItemInfoA(HMENU hmenu, uint32 item, BOOL fByPosition, MENUITEMINFOA* lpmii);
+		public static extern BOOL GetMenuItemInfoA(HMENU hmenu, uint32 item, BOOL fByPosition, out MENUITEMINFOA lpmii);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetMenuItemInfoW(HMENU hmenu, uint32 item, BOOL fByPosition, MENUITEMINFOW* lpmii);
+		public static extern BOOL GetMenuItemInfoW(HMENU hmenu, uint32 item, BOOL fByPosition, out MENUITEMINFOW lpmii);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetMenuItemInfoA(HMENU hmenu, uint32 item, BOOL fByPositon, MENUITEMINFOA* lpmii);
+		public static extern BOOL SetMenuItemInfoA(HMENU hmenu, uint32 item, BOOL fByPositon, ref MENUITEMINFOA lpmii);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetMenuItemInfoW(HMENU hmenu, uint32 item, BOOL fByPositon, MENUITEMINFOW* lpmii);
+		public static extern BOOL SetMenuItemInfoW(HMENU hmenu, uint32 item, BOOL fByPositon, ref MENUITEMINFOW lpmii);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetMenuDefaultItem(HMENU hMenu, uint32 fByPos, GET_MENU_DEFAULT_ITEM_FLAGS gmdiFlags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetMenuDefaultItem(HMENU hMenu, uint32 uItem, uint32 fByPos);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetMenuItemRect(HWND hWnd, HMENU hMenu, uint32 uItem, RECT* lprcItem);
+		public static extern BOOL GetMenuItemRect(HWND hWnd, HMENU hMenu, uint32 uItem, out RECT lprcItem);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 MenuItemFromPoint(HWND hWnd, HMENU hMenu, POINT ptScreen);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3660,7 +3660,7 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetScrollPos(HWND hWnd, SCROLLBAR_CONSTANTS nBar);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetScrollRange(HWND hWnd, SCROLLBAR_CONSTANTS nBar, int32* lpMinPos, int32* lpMaxPos);
+		public static extern BOOL GetScrollRange(HWND hWnd, SCROLLBAR_CONSTANTS nBar, out int32 lpMinPos, out int32 lpMaxPos);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetPropA(HWND hWnd, PSTR lpString, HANDLE hData);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3694,13 +3694,13 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetWindowTextLengthW(HWND hWnd);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetClientRect(HWND hWnd, RECT* lpRect);
+		public static extern BOOL GetClientRect(HWND hWnd, out RECT lpRect);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetWindowRect(HWND hWnd, RECT* lpRect);
+		public static extern BOOL GetWindowRect(HWND hWnd, out RECT lpRect);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AdjustWindowRect(RECT* lpRect, WINDOW_STYLE dwStyle, BOOL bMenu);
+		public static extern BOOL AdjustWindowRect(out RECT lpRect, WINDOW_STYLE dwStyle, BOOL bMenu);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AdjustWindowRectEx(RECT* lpRect, WINDOW_STYLE dwStyle, BOOL bMenu, WINDOW_EX_STYLE dwExStyle);
+		public static extern BOOL AdjustWindowRectEx(out RECT lpRect, WINDOW_STYLE dwStyle, BOOL bMenu, WINDOW_EX_STYLE dwExStyle);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern MESSAGEBOX_RESULT MessageBoxA(HWND hWnd, PSTR lpText, PSTR lpCaption, MESSAGEBOX_STYLE uType);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3710,9 +3710,9 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern MESSAGEBOX_RESULT MessageBoxExW(HWND hWnd, PWSTR lpText, PWSTR lpCaption, MESSAGEBOX_STYLE uType, uint16 wLanguageId);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern MESSAGEBOX_RESULT MessageBoxIndirectA(MSGBOXPARAMSA* lpmbp);
+		public static extern MESSAGEBOX_RESULT MessageBoxIndirectA(in MSGBOXPARAMSA lpmbp);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern MESSAGEBOX_RESULT MessageBoxIndirectW(MSGBOXPARAMSW* lpmbp);
+		public static extern MESSAGEBOX_RESULT MessageBoxIndirectW(in MSGBOXPARAMSW lpmbp);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 ShowCursor(BOOL bShow);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3722,11 +3722,11 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HCURSOR SetCursor(HCURSOR hCursor);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetCursorPos(POINT* lpPoint);
+		public static extern BOOL GetCursorPos(out POINT lpPoint);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPhysicalCursorPos(POINT* lpPoint);
+		public static extern BOOL GetPhysicalCursorPos(out POINT lpPoint);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetClipCursor(RECT* lpRect);
+		public static extern BOOL GetClipCursor(out RECT lpRect);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HCURSOR GetCursor();
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3744,11 +3744,11 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetCaretPos(int32 X, int32 Y);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetCaretPos(POINT* lpPoint);
+		public static extern BOOL GetCaretPos(out POINT lpPoint);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL LogicalToPhysicalPoint(HWND hWnd, POINT* lpPoint);
+		public static extern BOOL LogicalToPhysicalPoint(HWND hWnd, out POINT lpPoint);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PhysicalToLogicalPoint(HWND hWnd, POINT* lpPoint);
+		public static extern BOOL PhysicalToLogicalPoint(HWND hWnd, out POINT lpPoint);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HWND WindowFromPoint(POINT Point);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3804,7 +3804,7 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint SetClassLongPtrW(HWND hWnd, GET_CLASS_LONG_INDEX nIndex, int dwNewLong);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetProcessDefaultLayout(uint32* pdwDefaultLayout);
+		public static extern BOOL GetProcessDefaultLayout(out uint32 pdwDefaultLayout);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetProcessDefaultLayout(uint32 dwDefaultLayout);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3890,13 +3890,13 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DestroyIcon(HICON hIcon);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 LookupIconIdFromDirectory(uint8* presbits, BOOL fIcon);
+		public static extern int32 LookupIconIdFromDirectory(ref uint8 presbits, BOOL fIcon);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 LookupIconIdFromDirectoryEx(uint8* presbits, BOOL fIcon, int32 cxDesired, int32 cyDesired, IMAGE_FLAGS Flags);
+		public static extern int32 LookupIconIdFromDirectoryEx(ref uint8 presbits, BOOL fIcon, int32 cxDesired, int32 cyDesired, IMAGE_FLAGS Flags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HICON CreateIconFromResource(uint8* presbits, uint32 dwResSize, BOOL fIcon, uint32 dwVer);
+		public static extern HICON CreateIconFromResource(ref uint8 presbits, uint32 dwResSize, BOOL fIcon, uint32 dwVer);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HICON CreateIconFromResourceEx(uint8* presbits, uint32 dwResSize, BOOL fIcon, uint32 dwVer, int32 cxDesired, int32 cyDesired, IMAGE_FLAGS Flags);
+		public static extern HICON CreateIconFromResourceEx(ref uint8 presbits, uint32 dwResSize, BOOL fIcon, uint32 dwVer, int32 cxDesired, int32 cyDesired, IMAGE_FLAGS Flags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE LoadImageA(HINSTANCE hInst, PSTR name, GDI_IMAGE_TYPE type, int32 cx, int32 cy, IMAGE_FLAGS fuLoad);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3906,23 +3906,23 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DrawIconEx(HDC hdc, int32 xLeft, int32 yTop, HICON hIcon, int32 cxWidth, int32 cyWidth, uint32 istepIfAniCur, HBRUSH hbrFlickerFreeDraw, DI_FLAGS diFlags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HICON CreateIconIndirect(ICONINFO* piconinfo);
+		public static extern HICON CreateIconIndirect(ref ICONINFO piconinfo);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HICON CopyIcon(HICON hIcon);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetIconInfo(HICON hIcon, ICONINFO* piconinfo);
+		public static extern BOOL GetIconInfo(HICON hIcon, out ICONINFO piconinfo);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetIconInfoExA(HICON hicon, ICONINFOEXA* piconinfo);
+		public static extern BOOL GetIconInfoExA(HICON hicon, out ICONINFOEXA piconinfo);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetIconInfoExW(HICON hicon, ICONINFOEXW* piconinfo);
+		public static extern BOOL GetIconInfoExW(HICON hicon, out ICONINFOEXW piconinfo);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL IsDialogMessageA(HWND hDlg, MSG* lpMsg);
+		public static extern BOOL IsDialogMessageA(HWND hDlg, ref MSG lpMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL IsDialogMessageW(HWND hDlg, MSG* lpMsg);
+		public static extern BOOL IsDialogMessageW(HWND hDlg, ref MSG lpMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MapDialogRect(HWND hDlg, RECT* lpRect);
+		public static extern BOOL MapDialogRect(HWND hDlg, out RECT lpRect);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetScrollInfo(HWND hwnd, SCROLLBAR_CONSTANTS nBar, SCROLLINFO* lpsi);
+		public static extern BOOL GetScrollInfo(HWND hwnd, SCROLLBAR_CONSTANTS nBar, out SCROLLINFO lpsi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern LRESULT DefFrameProcA(HWND hWnd, HWND hWndMDIClient, uint32 uMsg, WPARAM wParam, LPARAM lParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3932,7 +3932,7 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern LRESULT DefMDIChildProcW(HWND hWnd, uint32 uMsg, WPARAM wParam, LPARAM lParam);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL TranslateMDISysAccel(HWND hWndClient, MSG* lpMsg);
+		public static extern BOOL TranslateMDISysAccel(HWND hWndClient, ref MSG lpMsg);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ArrangeIconicWindows(HWND hWnd);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3956,7 +3956,7 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CancelShutdown();
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetGUIThreadInfo(uint32 idThread, GUITHREADINFO* pgui);
+		public static extern BOOL GetGUIThreadInfo(uint32 idThread, out GUITHREADINFO pgui);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetProcessDPIAware();
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3968,15 +3968,15 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetWindowModuleFileNameW(HWND hwnd, char16* pszFileName, uint32 cchFileNameMax);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetCursorInfo(CURSORINFO* pci);
+		public static extern BOOL GetCursorInfo(out CURSORINFO pci);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetWindowInfo(HWND hwnd, WINDOWINFO* pwi);
+		public static extern BOOL GetWindowInfo(HWND hwnd, out WINDOWINFO pwi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetTitleBarInfo(HWND hwnd, TITLEBARINFO* pti);
+		public static extern BOOL GetTitleBarInfo(HWND hwnd, out TITLEBARINFO pti);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetMenuBarInfo(HWND hwnd, OBJECT_IDENTIFIER idObject, int32 idItem, MENUBARINFO* pmbi);
+		public static extern BOOL GetMenuBarInfo(HWND hwnd, OBJECT_IDENTIFIER idObject, int32 idItem, out MENUBARINFO pmbi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetScrollBarInfo(HWND hwnd, OBJECT_IDENTIFIER idObject, SCROLLBARINFO* psbi);
+		public static extern BOOL GetScrollBarInfo(HWND hwnd, OBJECT_IDENTIFIER idObject, out SCROLLBARINFO psbi);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HWND GetAncestor(HWND hwnd, GET_ANCESTOR_FLAGS gaFlags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3986,9 +3986,9 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RealGetWindowClassW(HWND hwnd, char16* ptszClassName, uint32 cchClassNameMax);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetAltTabInfoA(HWND hwnd, int32 iItem, ALTTABINFO* pati, uint8* pszItemText, uint32 cchItemText);
+		public static extern BOOL GetAltTabInfoA(HWND hwnd, int32 iItem, out ALTTABINFO pati, uint8* pszItemText, uint32 cchItemText);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetAltTabInfoW(HWND hwnd, int32 iItem, ALTTABINFO* pati, char16* pszItemText, uint32 cchItemText);
+		public static extern BOOL GetAltTabInfoW(HWND hwnd, int32 iItem, out ALTTABINFO pati, char16* pszItemText, uint32 cchItemText);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ChangeWindowMessageFilter(uint32 message, CHANGE_WINDOW_MESSAGE_FILTER_FLAGS dwFlag);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3998,25 +3998,25 @@ namespace Win32
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DestroyResourceIndexer(void* resourceIndexer);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT IndexFilePath(void* resourceIndexer, PWSTR filePath, PWSTR* ppResourceUri, uint32* pQualifierCount, IndexedResourceQualifier** ppQualifiers);
+		public static extern HRESULT IndexFilePath(void* resourceIndexer, PWSTR filePath, out PWSTR ppResourceUri, out uint32 pQualifierCount, IndexedResourceQualifier** ppQualifiers);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DestroyIndexedResults(PWSTR resourceUri, uint32 qualifierCount, IndexedResourceQualifier* qualifiers);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmCreateResourceIndexer(PWSTR packageFamilyName, PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, MrmResourceIndexerHandle* indexer);
+		public static extern HRESULT MrmCreateResourceIndexer(PWSTR packageFamilyName, PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, out MrmResourceIndexerHandle indexer);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmCreateResourceIndexerFromPreviousSchemaFile(PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, PWSTR schemaFile, MrmResourceIndexerHandle* indexer);
+		public static extern HRESULT MrmCreateResourceIndexerFromPreviousSchemaFile(PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, PWSTR schemaFile, out MrmResourceIndexerHandle indexer);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmCreateResourceIndexerFromPreviousPriFile(PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, PWSTR priFile, MrmResourceIndexerHandle* indexer);
+		public static extern HRESULT MrmCreateResourceIndexerFromPreviousPriFile(PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, PWSTR priFile, out MrmResourceIndexerHandle indexer);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmCreateResourceIndexerFromPreviousSchemaData(PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, uint8* schemaXmlData, uint32 schemaXmlSize, MrmResourceIndexerHandle* indexer);
+		public static extern HRESULT MrmCreateResourceIndexerFromPreviousSchemaData(PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, ref uint8 schemaXmlData, uint32 schemaXmlSize, out MrmResourceIndexerHandle indexer);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmCreateResourceIndexerFromPreviousPriData(PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, uint8* priData, uint32 priSize, MrmResourceIndexerHandle* indexer);
+		public static extern HRESULT MrmCreateResourceIndexerFromPreviousPriData(PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, ref uint8 priData, uint32 priSize, out MrmResourceIndexerHandle indexer);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmCreateResourceIndexerWithFlags(PWSTR packageFamilyName, PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, MrmIndexerFlags flags, MrmResourceIndexerHandle* indexer);
+		public static extern HRESULT MrmCreateResourceIndexerWithFlags(PWSTR packageFamilyName, PWSTR projectRoot, MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, MrmIndexerFlags flags, out MrmResourceIndexerHandle indexer);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MrmIndexString(MrmResourceIndexerHandle indexer, PWSTR resourceUri, PWSTR resourceString, PWSTR qualifiers);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmIndexEmbeddedData(MrmResourceIndexerHandle indexer, PWSTR resourceUri, uint8* embeddedData, uint32 embeddedDataSize, PWSTR qualifiers);
+		public static extern HRESULT MrmIndexEmbeddedData(MrmResourceIndexerHandle indexer, PWSTR resourceUri, in uint8 embeddedData, uint32 embeddedDataSize, PWSTR qualifiers);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MrmIndexFile(MrmResourceIndexerHandle indexer, PWSTR resourceUri, PWSTR filePath, PWSTR qualifiers);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4028,25 +4028,25 @@ namespace Win32
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MrmCreateResourceFileWithChecksum(MrmResourceIndexerHandle indexer, MrmPackagingMode packagingMode, MrmPackagingOptions packagingOptions, uint32 checksum, PWSTR outputDirectory);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmCreateResourceFileInMemory(MrmResourceIndexerHandle indexer, MrmPackagingMode packagingMode, MrmPackagingOptions packagingOptions, uint8** outputPriData, uint32* outputPriSize);
+		public static extern HRESULT MrmCreateResourceFileInMemory(MrmResourceIndexerHandle indexer, MrmPackagingMode packagingMode, MrmPackagingOptions packagingOptions, out uint8* outputPriData, out uint32 outputPriSize);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmPeekResourceIndexerMessages(MrmResourceIndexerHandle handle, MrmResourceIndexerMessage** messages, uint32* numMsgs);
+		public static extern HRESULT MrmPeekResourceIndexerMessages(MrmResourceIndexerHandle handle, MrmResourceIndexerMessage** messages, out uint32 numMsgs);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MrmDestroyIndexerAndMessages(MrmResourceIndexerHandle indexer);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmFreeMemory(uint8* data);
+		public static extern HRESULT MrmFreeMemory(ref uint8 data);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MrmDumpPriFile(PWSTR indexFileName, PWSTR schemaPriFile, MrmDumpType dumpType, PWSTR outputXmlFile);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmDumpPriFileInMemory(PWSTR indexFileName, PWSTR schemaPriFile, MrmDumpType dumpType, uint8** outputXmlData, uint32* outputXmlSize);
+		public static extern HRESULT MrmDumpPriFileInMemory(PWSTR indexFileName, PWSTR schemaPriFile, MrmDumpType dumpType, out uint8* outputXmlData, out uint32 outputXmlSize);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmDumpPriDataInMemory(uint8* inputPriData, uint32 inputPriSize, uint8* schemaPriData, uint32 schemaPriSize, MrmDumpType dumpType, uint8** outputXmlData, uint32* outputXmlSize);
+		public static extern HRESULT MrmDumpPriDataInMemory(ref uint8 inputPriData, uint32 inputPriSize, uint8* schemaPriData, uint32 schemaPriSize, MrmDumpType dumpType, out uint8* outputXmlData, out uint32 outputXmlSize);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MrmCreateConfig(MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, PWSTR outputXmlFile);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmCreateConfigInMemory(MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, uint8** outputXmlData, uint32* outputXmlSize);
+		public static extern HRESULT MrmCreateConfigInMemory(MrmPlatformVersion platformVersion, PWSTR defaultQualifiers, out uint8* outputXmlData, out uint32 outputXmlSize);
 		[Import("mrmsupport.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MrmGetPriFileContentChecksum(PWSTR priFile, uint32* checksum);
+		public static extern HRESULT MrmGetPriFileContentChecksum(PWSTR priFile, out uint32 checksum);
 		
 	}
 }

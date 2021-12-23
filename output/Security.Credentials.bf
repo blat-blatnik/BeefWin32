@@ -666,33 +666,33 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("keycredmgr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT KeyCredentialManagerGetOperationErrorStates(KeyCredentialManagerOperationType keyCredentialManagerOperationType, BOOL* isReady, KeyCredentialManagerOperationErrorStates* keyCredentialManagerOperationErrorStates);
+		public static extern HRESULT KeyCredentialManagerGetOperationErrorStates(KeyCredentialManagerOperationType keyCredentialManagerOperationType, out BOOL isReady, out KeyCredentialManagerOperationErrorStates keyCredentialManagerOperationErrorStates);
 		[Import("keycredmgr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT KeyCredentialManagerShowUIOperation(HWND hWndOwner, KeyCredentialManagerOperationType keyCredentialManagerOperationType);
 		[Import("keycredmgr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT KeyCredentialManagerGetInformation(KeyCredentialManagerInfo** keyCredentialManagerInfo);
+		public static extern HRESULT KeyCredentialManagerGetInformation(out KeyCredentialManagerInfo* keyCredentialManagerInfo);
 		[Import("keycredmgr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void KeyCredentialManagerFreeInformation(KeyCredentialManagerInfo* keyCredentialManagerInfo);
+		public static extern void KeyCredentialManagerFreeInformation(ref KeyCredentialManagerInfo keyCredentialManagerInfo);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredWriteW(CREDENTIALW* Credential, uint32 Flags);
+		public static extern BOOL CredWriteW(ref CREDENTIALW Credential, uint32 Flags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredWriteA(CREDENTIALA* Credential, uint32 Flags);
+		public static extern BOOL CredWriteA(ref CREDENTIALA Credential, uint32 Flags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredReadW(PWSTR TargetName, uint32 Type, uint32 Flags, CREDENTIALW** Credential);
+		public static extern BOOL CredReadW(PWSTR TargetName, uint32 Type, uint32 Flags, out CREDENTIALW* Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredReadA(PSTR TargetName, uint32 Type, uint32 Flags, CREDENTIALA** Credential);
+		public static extern BOOL CredReadA(PSTR TargetName, uint32 Type, uint32 Flags, out CREDENTIALA* Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredEnumerateW(PWSTR Filter, CRED_ENUMERATE_FLAGS Flags, uint32* Count, CREDENTIALW*** Credential);
+		public static extern BOOL CredEnumerateW(PWSTR Filter, CRED_ENUMERATE_FLAGS Flags, out uint32 Count, out CREDENTIALW** Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredEnumerateA(PSTR Filter, CRED_ENUMERATE_FLAGS Flags, uint32* Count, CREDENTIALA*** Credential);
+		public static extern BOOL CredEnumerateA(PSTR Filter, CRED_ENUMERATE_FLAGS Flags, out uint32 Count, out CREDENTIALA** Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredWriteDomainCredentialsW(CREDENTIAL_TARGET_INFORMATIONW* TargetInfo, CREDENTIALW* Credential, uint32 Flags);
+		public static extern BOOL CredWriteDomainCredentialsW(ref CREDENTIAL_TARGET_INFORMATIONW TargetInfo, ref CREDENTIALW Credential, uint32 Flags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredWriteDomainCredentialsA(CREDENTIAL_TARGET_INFORMATIONA* TargetInfo, CREDENTIALA* Credential, uint32 Flags);
+		public static extern BOOL CredWriteDomainCredentialsA(ref CREDENTIAL_TARGET_INFORMATIONA TargetInfo, ref CREDENTIALA Credential, uint32 Flags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredReadDomainCredentialsW(CREDENTIAL_TARGET_INFORMATIONW* TargetInfo, uint32 Flags, uint32* Count, CREDENTIALW*** Credential);
+		public static extern BOOL CredReadDomainCredentialsW(ref CREDENTIAL_TARGET_INFORMATIONW TargetInfo, uint32 Flags, out uint32 Count, out CREDENTIALW** Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredReadDomainCredentialsA(CREDENTIAL_TARGET_INFORMATIONA* TargetInfo, uint32 Flags, uint32* Count, CREDENTIALA*** Credential);
+		public static extern BOOL CredReadDomainCredentialsA(ref CREDENTIAL_TARGET_INFORMATIONA TargetInfo, uint32 Flags, out uint32 Count, out CREDENTIALA** Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CredDeleteW(PWSTR TargetName, uint32 Type, uint32 Flags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -702,65 +702,65 @@ namespace Win32
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CredRenameA(PSTR OldTargetName, PSTR NewTargetName, uint32 Type, uint32 Flags);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredGetTargetInfoW(PWSTR TargetName, uint32 Flags, CREDENTIAL_TARGET_INFORMATIONW** TargetInfo);
+		public static extern BOOL CredGetTargetInfoW(PWSTR TargetName, uint32 Flags, out CREDENTIAL_TARGET_INFORMATIONW* TargetInfo);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredGetTargetInfoA(PSTR TargetName, uint32 Flags, CREDENTIAL_TARGET_INFORMATIONA** TargetInfo);
+		public static extern BOOL CredGetTargetInfoA(PSTR TargetName, uint32 Flags, out CREDENTIAL_TARGET_INFORMATIONA* TargetInfo);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredMarshalCredentialW(CRED_MARSHAL_TYPE CredType, void* Credential, PWSTR* MarshaledCredential);
+		public static extern BOOL CredMarshalCredentialW(CRED_MARSHAL_TYPE CredType, void* Credential, out PWSTR MarshaledCredential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredMarshalCredentialA(CRED_MARSHAL_TYPE CredType, void* Credential, PSTR* MarshaledCredential);
+		public static extern BOOL CredMarshalCredentialA(CRED_MARSHAL_TYPE CredType, void* Credential, out PSTR MarshaledCredential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredUnmarshalCredentialW(PWSTR MarshaledCredential, CRED_MARSHAL_TYPE* CredType, void** Credential);
+		public static extern BOOL CredUnmarshalCredentialW(PWSTR MarshaledCredential, out CRED_MARSHAL_TYPE CredType, void** Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredUnmarshalCredentialA(PSTR MarshaledCredential, CRED_MARSHAL_TYPE* CredType, void** Credential);
+		public static extern BOOL CredUnmarshalCredentialA(PSTR MarshaledCredential, out CRED_MARSHAL_TYPE CredType, void** Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CredIsMarshaledCredentialW(PWSTR MarshaledCredential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CredIsMarshaledCredentialA(PSTR MarshaledCredential);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredUnPackAuthenticationBufferW(CRED_PACK_FLAGS dwFlags, void* pAuthBuffer, uint32 cbAuthBuffer, char16* pszUserName, uint32* pcchMaxUserName, char16* pszDomainName, uint32* pcchMaxDomainName, char16* pszPassword, uint32* pcchMaxPassword);
+		public static extern BOOL CredUnPackAuthenticationBufferW(CRED_PACK_FLAGS dwFlags, void* pAuthBuffer, uint32 cbAuthBuffer, char16* pszUserName, out uint32 pcchMaxUserName, char16* pszDomainName, uint32* pcchMaxDomainName, char16* pszPassword, out uint32 pcchMaxPassword);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredUnPackAuthenticationBufferA(CRED_PACK_FLAGS dwFlags, void* pAuthBuffer, uint32 cbAuthBuffer, uint8* pszUserName, uint32* pcchlMaxUserName, uint8* pszDomainName, uint32* pcchMaxDomainName, uint8* pszPassword, uint32* pcchMaxPassword);
+		public static extern BOOL CredUnPackAuthenticationBufferA(CRED_PACK_FLAGS dwFlags, void* pAuthBuffer, uint32 cbAuthBuffer, uint8* pszUserName, out uint32 pcchlMaxUserName, uint8* pszDomainName, uint32* pcchMaxDomainName, uint8* pszPassword, out uint32 pcchMaxPassword);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredPackAuthenticationBufferW(CRED_PACK_FLAGS dwFlags, PWSTR pszUserName, PWSTR pszPassword, uint8* pPackedCredentials, uint32* pcbPackedCredentials);
+		public static extern BOOL CredPackAuthenticationBufferW(CRED_PACK_FLAGS dwFlags, PWSTR pszUserName, PWSTR pszPassword, uint8* pPackedCredentials, out uint32 pcbPackedCredentials);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredPackAuthenticationBufferA(CRED_PACK_FLAGS dwFlags, PSTR pszUserName, PSTR pszPassword, uint8* pPackedCredentials, uint32* pcbPackedCredentials);
+		public static extern BOOL CredPackAuthenticationBufferA(CRED_PACK_FLAGS dwFlags, PSTR pszUserName, PSTR pszPassword, uint8* pPackedCredentials, out uint32 pcbPackedCredentials);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredProtectW(BOOL fAsSelf, char16* pszCredentials, uint32 cchCredentials, char16* pszProtectedCredentials, uint32* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
+		public static extern BOOL CredProtectW(BOOL fAsSelf, char16* pszCredentials, uint32 cchCredentials, char16* pszProtectedCredentials, out uint32 pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredProtectA(BOOL fAsSelf, uint8* pszCredentials, uint32 cchCredentials, uint8* pszProtectedCredentials, uint32* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
+		public static extern BOOL CredProtectA(BOOL fAsSelf, uint8* pszCredentials, uint32 cchCredentials, uint8* pszProtectedCredentials, out uint32 pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredUnprotectW(BOOL fAsSelf, char16* pszProtectedCredentials, uint32 cchProtectedCredentials, char16* pszCredentials, uint32* pcchMaxChars);
+		public static extern BOOL CredUnprotectW(BOOL fAsSelf, char16* pszProtectedCredentials, uint32 cchProtectedCredentials, char16* pszCredentials, out uint32 pcchMaxChars);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredUnprotectA(BOOL fAsSelf, uint8* pszProtectedCredentials, uint32 cchProtectedCredentials, uint8* pszCredentials, uint32* pcchMaxChars);
+		public static extern BOOL CredUnprotectA(BOOL fAsSelf, uint8* pszProtectedCredentials, uint32 cchProtectedCredentials, uint8* pszCredentials, out uint32 pcchMaxChars);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredIsProtectedW(PWSTR pszProtectedCredentials, CRED_PROTECTION_TYPE* pProtectionType);
+		public static extern BOOL CredIsProtectedW(PWSTR pszProtectedCredentials, out CRED_PROTECTION_TYPE pProtectionType);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredIsProtectedA(PSTR pszProtectedCredentials, CRED_PROTECTION_TYPE* pProtectionType);
+		public static extern BOOL CredIsProtectedA(PSTR pszProtectedCredentials, out CRED_PROTECTION_TYPE pProtectionType);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredFindBestCredentialW(PWSTR TargetName, uint32 Type, uint32 Flags, CREDENTIALW** Credential);
+		public static extern BOOL CredFindBestCredentialW(PWSTR TargetName, uint32 Type, uint32 Flags, out CREDENTIALW* Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CredFindBestCredentialA(PSTR TargetName, uint32 Type, uint32 Flags, CREDENTIALA** Credential);
+		public static extern BOOL CredFindBestCredentialA(PSTR TargetName, uint32 Type, uint32 Flags, out CREDENTIALA* Credential);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CredGetSessionTypes(uint32 MaximumPersistCount, uint32* MaximumPersist);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void CredFree(void* Buffer);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CredUIPromptForCredentialsW(CREDUI_INFOW* pUiInfo, PWSTR pszTargetName, SecHandle* pContext, uint32 dwAuthError, char16* pszUserName, uint32 ulUserNameBufferSize, char16* pszPassword, uint32 ulPasswordBufferSize, BOOL* save, CREDUI_FLAGS dwFlags);
+		public static extern uint32 CredUIPromptForCredentialsW(CREDUI_INFOW* pUiInfo, PWSTR pszTargetName, out SecHandle pContext, uint32 dwAuthError, char16* pszUserName, uint32 ulUserNameBufferSize, char16* pszPassword, uint32 ulPasswordBufferSize, BOOL* save, CREDUI_FLAGS dwFlags);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CredUIPromptForCredentialsA(CREDUI_INFOA* pUiInfo, PSTR pszTargetName, SecHandle* pContext, uint32 dwAuthError, uint8* pszUserName, uint32 ulUserNameBufferSize, uint8* pszPassword, uint32 ulPasswordBufferSize, BOOL* save, CREDUI_FLAGS dwFlags);
+		public static extern uint32 CredUIPromptForCredentialsA(CREDUI_INFOA* pUiInfo, PSTR pszTargetName, out SecHandle pContext, uint32 dwAuthError, uint8* pszUserName, uint32 ulUserNameBufferSize, uint8* pszPassword, uint32 ulPasswordBufferSize, BOOL* save, CREDUI_FLAGS dwFlags);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CredUIPromptForWindowsCredentialsW(CREDUI_INFOW* pUiInfo, uint32 dwAuthError, uint32* pulAuthPackage, void* pvInAuthBuffer, uint32 ulInAuthBufferSize, void** ppvOutAuthBuffer, uint32* pulOutAuthBufferSize, BOOL* pfSave, CREDUIWIN_FLAGS dwFlags);
+		public static extern uint32 CredUIPromptForWindowsCredentialsW(CREDUI_INFOW* pUiInfo, uint32 dwAuthError, out uint32 pulAuthPackage, void* pvInAuthBuffer, uint32 ulInAuthBufferSize, void** ppvOutAuthBuffer, out uint32 pulOutAuthBufferSize, BOOL* pfSave, CREDUIWIN_FLAGS dwFlags);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CredUIPromptForWindowsCredentialsA(CREDUI_INFOA* pUiInfo, uint32 dwAuthError, uint32* pulAuthPackage, void* pvInAuthBuffer, uint32 ulInAuthBufferSize, void** ppvOutAuthBuffer, uint32* pulOutAuthBufferSize, BOOL* pfSave, CREDUIWIN_FLAGS dwFlags);
+		public static extern uint32 CredUIPromptForWindowsCredentialsA(CREDUI_INFOA* pUiInfo, uint32 dwAuthError, out uint32 pulAuthPackage, void* pvInAuthBuffer, uint32 ulInAuthBufferSize, void** ppvOutAuthBuffer, out uint32 pulOutAuthBufferSize, BOOL* pfSave, CREDUIWIN_FLAGS dwFlags);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CredUIParseUserNameW(PWSTR UserName, char16* user, uint32 userBufferSize, char16* domain, uint32 domainBufferSize);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CredUIParseUserNameA(PSTR userName, uint8* user, uint32 userBufferSize, uint8* domain, uint32 domainBufferSize);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CredUICmdLinePromptForCredentialsW(PWSTR pszTargetName, SecHandle* pContext, uint32 dwAuthError, char16* UserName, uint32 ulUserBufferSize, char16* pszPassword, uint32 ulPasswordBufferSize, BOOL* pfSave, CREDUI_FLAGS dwFlags);
+		public static extern uint32 CredUICmdLinePromptForCredentialsW(PWSTR pszTargetName, out SecHandle pContext, uint32 dwAuthError, char16* UserName, uint32 ulUserBufferSize, char16* pszPassword, uint32 ulPasswordBufferSize, BOOL* pfSave, CREDUI_FLAGS dwFlags);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CredUICmdLinePromptForCredentialsA(PSTR pszTargetName, SecHandle* pContext, uint32 dwAuthError, uint8* UserName, uint32 ulUserBufferSize, uint8* pszPassword, uint32 ulPasswordBufferSize, BOOL* pfSave, CREDUI_FLAGS dwFlags);
+		public static extern uint32 CredUICmdLinePromptForCredentialsA(PSTR pszTargetName, out SecHandle pContext, uint32 dwAuthError, uint8* UserName, uint32 ulUserBufferSize, uint8* pszPassword, uint32 ulPasswordBufferSize, BOOL* pfSave, CREDUI_FLAGS dwFlags);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CredUIConfirmCredentialsW(PWSTR pszTargetName, BOOL bConfirm);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
@@ -768,37 +768,37 @@ namespace Win32
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CredUIStoreSSOCredW(PWSTR pszRealm, PWSTR pszUsername, PWSTR pszPassword, BOOL bPersist);
 		[Import("credui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CredUIReadSSOCredW(PWSTR pszRealm, PWSTR* ppszUsername);
+		public static extern uint32 CredUIReadSSOCredW(PWSTR pszRealm, out PWSTR ppszUsername);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardEstablishContext(SCARD_SCOPE dwScope, void* pvReserved1, void* pvReserved2, uint* phContext);
+		public static extern int32 SCardEstablishContext(SCARD_SCOPE dwScope, void* pvReserved1, void* pvReserved2, out uint phContext);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardReleaseContext(uint hContext);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardIsValidContext(uint hContext);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListReaderGroupsA(uint hContext, uint8* mszGroups, uint32* pcchGroups);
+		public static extern int32 SCardListReaderGroupsA(uint hContext, uint8* mszGroups, out uint32 pcchGroups);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListReaderGroupsW(uint hContext, char16* mszGroups, uint32* pcchGroups);
+		public static extern int32 SCardListReaderGroupsW(uint hContext, char16* mszGroups, out uint32 pcchGroups);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListReadersA(uint hContext, PSTR mszGroups, PSTR mszReaders, uint32* pcchReaders);
+		public static extern int32 SCardListReadersA(uint hContext, PSTR mszGroups, PSTR mszReaders, out uint32 pcchReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListReadersW(uint hContext, PWSTR mszGroups, PWSTR mszReaders, uint32* pcchReaders);
+		public static extern int32 SCardListReadersW(uint hContext, PWSTR mszGroups, PWSTR mszReaders, out uint32 pcchReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListCardsA(uint hContext, uint8* pbAtr, Guid* rgquidInterfaces, uint32 cguidInterfaceCount, PSTR mszCards, uint32* pcchCards);
+		public static extern int32 SCardListCardsA(uint hContext, uint8* pbAtr, Guid* rgquidInterfaces, uint32 cguidInterfaceCount, PSTR mszCards, out uint32 pcchCards);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListCardsW(uint hContext, uint8* pbAtr, Guid* rgquidInterfaces, uint32 cguidInterfaceCount, PWSTR mszCards, uint32* pcchCards);
+		public static extern int32 SCardListCardsW(uint hContext, uint8* pbAtr, Guid* rgquidInterfaces, uint32 cguidInterfaceCount, PWSTR mszCards, out uint32 pcchCards);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListInterfacesA(uint hContext, PSTR szCard, Guid* pguidInterfaces, uint32* pcguidInterfaces);
+		public static extern int32 SCardListInterfacesA(uint hContext, PSTR szCard, out Guid pguidInterfaces, out uint32 pcguidInterfaces);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListInterfacesW(uint hContext, PWSTR szCard, Guid* pguidInterfaces, uint32* pcguidInterfaces);
+		public static extern int32 SCardListInterfacesW(uint hContext, PWSTR szCard, out Guid pguidInterfaces, out uint32 pcguidInterfaces);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetProviderIdA(uint hContext, PSTR szCard, Guid* pguidProviderId);
+		public static extern int32 SCardGetProviderIdA(uint hContext, PSTR szCard, out Guid pguidProviderId);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetProviderIdW(uint hContext, PWSTR szCard, Guid* pguidProviderId);
+		public static extern int32 SCardGetProviderIdW(uint hContext, PWSTR szCard, out Guid pguidProviderId);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetCardTypeProviderNameA(uint hContext, PSTR szCardName, uint32 dwProviderId, uint8* szProvider, uint32* pcchProvider);
+		public static extern int32 SCardGetCardTypeProviderNameA(uint hContext, PSTR szCardName, uint32 dwProviderId, uint8* szProvider, out uint32 pcchProvider);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetCardTypeProviderNameW(uint hContext, PWSTR szCardName, uint32 dwProviderId, char16* szProvider, uint32* pcchProvider);
+		public static extern int32 SCardGetCardTypeProviderNameW(uint hContext, PWSTR szCardName, uint32 dwProviderId, char16* szProvider, out uint32 pcchProvider);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardIntroduceReaderGroupA(uint hContext, PSTR szGroupName);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
@@ -824,9 +824,9 @@ namespace Win32
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardRemoveReaderFromGroupW(uint hContext, PWSTR szReaderName, PWSTR szGroupName);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardIntroduceCardTypeA(uint hContext, PSTR szCardName, Guid* pguidPrimaryProvider, Guid* rgguidInterfaces, uint32 dwInterfaceCount, uint8* pbAtr, uint8* pbAtrMask, uint32 cbAtrLen);
+		public static extern int32 SCardIntroduceCardTypeA(uint hContext, PSTR szCardName, Guid* pguidPrimaryProvider, Guid* rgguidInterfaces, uint32 dwInterfaceCount, ref uint8 pbAtr, ref uint8 pbAtrMask, uint32 cbAtrLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardIntroduceCardTypeW(uint hContext, PWSTR szCardName, Guid* pguidPrimaryProvider, Guid* rgguidInterfaces, uint32 dwInterfaceCount, uint8* pbAtr, uint8* pbAtrMask, uint32 cbAtrLen);
+		public static extern int32 SCardIntroduceCardTypeW(uint hContext, PWSTR szCardName, Guid* pguidPrimaryProvider, Guid* rgguidInterfaces, uint32 dwInterfaceCount, ref uint8 pbAtr, ref uint8 pbAtrMask, uint32 cbAtrLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardSetCardTypeProviderNameA(uint hContext, PSTR szCardName, uint32 dwProviderId, PSTR szProvider);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
@@ -842,23 +842,23 @@ namespace Win32
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void SCardReleaseStartedEvent();
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardLocateCardsA(uint hContext, PSTR mszCards, SCARD_READERSTATEA* rgReaderStates, uint32 cReaders);
+		public static extern int32 SCardLocateCardsA(uint hContext, PSTR mszCards, out SCARD_READERSTATEA rgReaderStates, uint32 cReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardLocateCardsW(uint hContext, PWSTR mszCards, SCARD_READERSTATEW* rgReaderStates, uint32 cReaders);
+		public static extern int32 SCardLocateCardsW(uint hContext, PWSTR mszCards, out SCARD_READERSTATEW rgReaderStates, uint32 cReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardLocateCardsByATRA(uint hContext, SCARD_ATRMASK* rgAtrMasks, uint32 cAtrs, SCARD_READERSTATEA* rgReaderStates, uint32 cReaders);
+		public static extern int32 SCardLocateCardsByATRA(uint hContext, ref SCARD_ATRMASK rgAtrMasks, uint32 cAtrs, out SCARD_READERSTATEA rgReaderStates, uint32 cReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardLocateCardsByATRW(uint hContext, SCARD_ATRMASK* rgAtrMasks, uint32 cAtrs, SCARD_READERSTATEW* rgReaderStates, uint32 cReaders);
+		public static extern int32 SCardLocateCardsByATRW(uint hContext, ref SCARD_ATRMASK rgAtrMasks, uint32 cAtrs, out SCARD_READERSTATEW rgReaderStates, uint32 cReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetStatusChangeA(uint hContext, uint32 dwTimeout, SCARD_READERSTATEA* rgReaderStates, uint32 cReaders);
+		public static extern int32 SCardGetStatusChangeA(uint hContext, uint32 dwTimeout, out SCARD_READERSTATEA rgReaderStates, uint32 cReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetStatusChangeW(uint hContext, uint32 dwTimeout, SCARD_READERSTATEW* rgReaderStates, uint32 cReaders);
+		public static extern int32 SCardGetStatusChangeW(uint hContext, uint32 dwTimeout, out SCARD_READERSTATEW rgReaderStates, uint32 cReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardCancel(uint hContext);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardConnectA(uint hContext, PSTR szReader, uint32 dwShareMode, uint32 dwPreferredProtocols, uint* phCard, uint32* pdwActiveProtocol);
+		public static extern int32 SCardConnectA(uint hContext, PSTR szReader, uint32 dwShareMode, uint32 dwPreferredProtocols, out uint phCard, out uint32 pdwActiveProtocol);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardConnectW(uint hContext, PWSTR szReader, uint32 dwShareMode, uint32 dwPreferredProtocols, uint* phCard, uint32* pdwActiveProtocol);
+		public static extern int32 SCardConnectW(uint hContext, PWSTR szReader, uint32 dwShareMode, uint32 dwPreferredProtocols, out uint phCard, out uint32 pdwActiveProtocol);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardReconnect(uint hCard, uint32 dwShareMode, uint32 dwPreferredProtocols, uint32 dwInitialization, uint32* pdwActiveProtocol);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
@@ -868,55 +868,55 @@ namespace Win32
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardEndTransaction(uint hCard, uint32 dwDisposition);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardState(uint hCard, uint32* pdwState, uint32* pdwProtocol, uint8* pbAtr, uint32* pcbAtrLen);
+		public static extern int32 SCardState(uint hCard, out uint32 pdwState, out uint32 pdwProtocol, out uint8 pbAtr, out uint32 pcbAtrLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardStatusA(uint hCard, PSTR mszReaderNames, uint32* pcchReaderLen, uint32* pdwState, uint32* pdwProtocol, uint8* pbAtr, uint32* pcbAtrLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardStatusW(uint hCard, PWSTR mszReaderNames, uint32* pcchReaderLen, uint32* pdwState, uint32* pdwProtocol, uint8* pbAtr, uint32* pcbAtrLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardTransmit(uint hCard, SCARD_IO_REQUEST* pioSendPci, uint8* pbSendBuffer, uint32 cbSendLength, SCARD_IO_REQUEST* pioRecvPci, uint8* pbRecvBuffer, uint32* pcbRecvLength);
+		public static extern int32 SCardTransmit(uint hCard, ref SCARD_IO_REQUEST pioSendPci, ref uint8 pbSendBuffer, uint32 cbSendLength, SCARD_IO_REQUEST* pioRecvPci, out uint8 pbRecvBuffer, out uint32 pcbRecvLength);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetTransmitCount(uint hCard, uint32* pcTransmitCount);
+		public static extern int32 SCardGetTransmitCount(uint hCard, out uint32 pcTransmitCount);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardControl(uint hCard, uint32 dwControlCode, void* lpInBuffer, uint32 cbInBufferSize, void* lpOutBuffer, uint32 cbOutBufferSize, uint32* lpBytesReturned);
+		public static extern int32 SCardControl(uint hCard, uint32 dwControlCode, void* lpInBuffer, uint32 cbInBufferSize, void* lpOutBuffer, uint32 cbOutBufferSize, out uint32 lpBytesReturned);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetAttrib(uint hCard, uint32 dwAttrId, uint8* pbAttr, uint32* pcbAttrLen);
+		public static extern int32 SCardGetAttrib(uint hCard, uint32 dwAttrId, uint8* pbAttr, out uint32 pcbAttrLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardSetAttrib(uint hCard, uint32 dwAttrId, uint8* pbAttr, uint32 cbAttrLen);
+		public static extern int32 SCardSetAttrib(uint hCard, uint32 dwAttrId, ref uint8 pbAttr, uint32 cbAttrLen);
 		[Import("scarddlg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardUIDlgSelectCardA(OPENCARDNAME_EXA* param0);
+		public static extern int32 SCardUIDlgSelectCardA(out OPENCARDNAME_EXA param0);
 		[Import("scarddlg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardUIDlgSelectCardW(OPENCARDNAME_EXW* param0);
+		public static extern int32 SCardUIDlgSelectCardW(out OPENCARDNAME_EXW param0);
 		[Import("scarddlg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetOpenCardNameA(OPENCARDNAMEA* param0);
+		public static extern int32 GetOpenCardNameA(out OPENCARDNAMEA param0);
 		[Import("scarddlg.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetOpenCardNameW(OPENCARDNAMEW* param0);
+		public static extern int32 GetOpenCardNameW(out OPENCARDNAMEW param0);
 		[Import("scarddlg.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardDlgExtendedError();
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardReadCacheA(uint hContext, Guid* CardIdentifier, uint32 FreshnessCounter, PSTR LookupName, uint8* Data, uint32* DataLen);
+		public static extern int32 SCardReadCacheA(uint hContext, ref Guid CardIdentifier, uint32 FreshnessCounter, PSTR LookupName, out uint8 Data, out uint32 DataLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardReadCacheW(uint hContext, Guid* CardIdentifier, uint32 FreshnessCounter, PWSTR LookupName, uint8* Data, uint32* DataLen);
+		public static extern int32 SCardReadCacheW(uint hContext, ref Guid CardIdentifier, uint32 FreshnessCounter, PWSTR LookupName, out uint8 Data, out uint32 DataLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardWriteCacheA(uint hContext, Guid* CardIdentifier, uint32 FreshnessCounter, PSTR LookupName, uint8* Data, uint32 DataLen);
+		public static extern int32 SCardWriteCacheA(uint hContext, ref Guid CardIdentifier, uint32 FreshnessCounter, PSTR LookupName, ref uint8 Data, uint32 DataLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardWriteCacheW(uint hContext, Guid* CardIdentifier, uint32 FreshnessCounter, PWSTR LookupName, uint8* Data, uint32 DataLen);
+		public static extern int32 SCardWriteCacheW(uint hContext, ref Guid CardIdentifier, uint32 FreshnessCounter, PWSTR LookupName, ref uint8 Data, uint32 DataLen);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetReaderIconA(uint hContext, PSTR szReaderName, uint8* pbIcon, uint32* pcbIcon);
+		public static extern int32 SCardGetReaderIconA(uint hContext, PSTR szReaderName, uint8* pbIcon, out uint32 pcbIcon);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetReaderIconW(uint hContext, PWSTR szReaderName, uint8* pbIcon, uint32* pcbIcon);
+		public static extern int32 SCardGetReaderIconW(uint hContext, PWSTR szReaderName, uint8* pbIcon, out uint32 pcbIcon);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetDeviceTypeIdA(uint hContext, PSTR szReaderName, uint32* pdwDeviceTypeId);
+		public static extern int32 SCardGetDeviceTypeIdA(uint hContext, PSTR szReaderName, out uint32 pdwDeviceTypeId);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetDeviceTypeIdW(uint hContext, PWSTR szReaderName, uint32* pdwDeviceTypeId);
+		public static extern int32 SCardGetDeviceTypeIdW(uint hContext, PWSTR szReaderName, out uint32 pdwDeviceTypeId);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetReaderDeviceInstanceIdA(uint hContext, PSTR szReaderName, PSTR szDeviceInstanceId, uint32* pcchDeviceInstanceId);
+		public static extern int32 SCardGetReaderDeviceInstanceIdA(uint hContext, PSTR szReaderName, PSTR szDeviceInstanceId, out uint32 pcchDeviceInstanceId);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardGetReaderDeviceInstanceIdW(uint hContext, PWSTR szReaderName, PWSTR szDeviceInstanceId, uint32* pcchDeviceInstanceId);
+		public static extern int32 SCardGetReaderDeviceInstanceIdW(uint hContext, PWSTR szReaderName, PWSTR szDeviceInstanceId, out uint32 pcchDeviceInstanceId);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListReadersWithDeviceInstanceIdA(uint hContext, PSTR szDeviceInstanceId, PSTR mszReaders, uint32* pcchReaders);
+		public static extern int32 SCardListReadersWithDeviceInstanceIdA(uint hContext, PSTR szDeviceInstanceId, PSTR mszReaders, out uint32 pcchReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SCardListReadersWithDeviceInstanceIdW(uint hContext, PWSTR szDeviceInstanceId, PWSTR mszReaders, uint32* pcchReaders);
+		public static extern int32 SCardListReadersWithDeviceInstanceIdW(uint hContext, PWSTR szDeviceInstanceId, PWSTR mszReaders, out uint32 pcchReaders);
 		[Import("winscard.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SCardAudit(uint hContext, uint32 dwEvent);
 		

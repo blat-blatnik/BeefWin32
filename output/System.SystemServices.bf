@@ -3715,8 +3715,8 @@ namespace Win32
 		
 		public function void PUMS_SCHEDULER_ENTRY_POINT(RTL_UMS_SCHEDULER_REASON Reason, uint ActivationPayload, void* SchedulerParam);
 		public function void PTERMINATION_HANDLER(BOOLEAN _abnormal_termination, uint64 EstablisherFrame);
-		public function uint32 POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK(HANDLE Process, void* TableAddress, uint32* Entries, IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY** Functions);
-		public function int32 PEXCEPTION_FILTER(EXCEPTION_POINTERS* ExceptionPointers, void* EstablisherFrame);
+		public function uint32 POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK(HANDLE Process, void* TableAddress, out uint32 Entries, out IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY* Functions);
+		public function int32 PEXCEPTION_FILTER(out EXCEPTION_POINTERS ExceptionPointers, void* EstablisherFrame);
 		public function void PIMAGE_TLS_CALLBACK(void* DllHandle, uint32 Reason, void* Reserved);
 		public function void WORKERCALLBACKFUNC(void* param0);
 		public function void APC_CALLBACK_FUNCTION(uint32 param0, void* param1, void* param2);
@@ -3740,7 +3740,7 @@ namespace Win32
 		{
 			public int32 fNullHGlobal;
 			public uint32 cbData;
-			public uint8[] data;
+			public uint8[0] data;
 		}
 		[CRepr]
 		public struct RemHMETAFILEPICT
@@ -3749,31 +3749,31 @@ namespace Win32
 			public int32 xExt;
 			public int32 yExt;
 			public uint32 cbData;
-			public uint8[] data;
+			public uint8[0] data;
 		}
 		[CRepr]
 		public struct RemHENHMETAFILE
 		{
 			public uint32 cbData;
-			public uint8[] data;
+			public uint8[0] data;
 		}
 		[CRepr]
 		public struct RemHBITMAP
 		{
 			public uint32 cbData;
-			public uint8[] data;
+			public uint8[0] data;
 		}
 		[CRepr]
 		public struct RemHPALETTE
 		{
 			public uint32 cbData;
-			public uint8[] data;
+			public uint8[0] data;
 		}
 		[CRepr]
 		public struct RemBRUSH
 		{
 			public uint32 cbData;
-			public uint8[] data;
+			public uint8[0] data;
 		}
 		[CRepr]
 		public struct userCLIPFORMAT
@@ -3875,7 +3875,7 @@ namespace Win32
 			public uint16 bmPlanes;
 			public uint16 bmBitsPixel;
 			public uint32 cbSize;
-			public uint8[] pBuffer;
+			public uint8[0] pBuffer;
 		}
 		[CRepr]
 		public struct userHBITMAP
@@ -4031,7 +4031,7 @@ namespace Win32
 			public uint32 dbcp_size;
 			public uint32 dbcp_devicetype;
 			public uint32 dbcp_reserved;
-			public CHAR[] dbcp_name;
+			public CHAR[0] dbcp_name;
 		}
 		[CRepr]
 		public struct DEV_BROADCAST_PORT_W
@@ -4039,7 +4039,7 @@ namespace Win32
 			public uint32 dbcp_size;
 			public uint32 dbcp_devicetype;
 			public uint32 dbcp_reserved;
-			public char16[] dbcp_name;
+			public char16[0] dbcp_name;
 		}
 		[CRepr]
 		public struct DEV_BROADCAST_NET
@@ -4057,7 +4057,7 @@ namespace Win32
 			public uint32 dbcc_devicetype;
 			public uint32 dbcc_reserved;
 			public Guid dbcc_classguid;
-			public CHAR[] dbcc_name;
+			public CHAR[0] dbcc_name;
 		}
 		[CRepr]
 		public struct DEV_BROADCAST_DEVICEINTERFACE_W
@@ -4066,7 +4066,7 @@ namespace Win32
 			public uint32 dbcc_devicetype;
 			public uint32 dbcc_reserved;
 			public Guid dbcc_classguid;
-			public char16[] dbcc_name;
+			public char16[0] dbcc_name;
 		}
 		[CRepr]
 		public struct DEV_BROADCAST_HANDLE
@@ -4078,7 +4078,7 @@ namespace Win32
 			public void* dbch_hdevnotify;
 			public Guid dbch_eventguid;
 			public int32 dbch_nameoffset;
-			public uint8[] dbch_data;
+			public uint8[0] dbch_data;
 		}
 		[CRepr]
 		public struct DEV_BROADCAST_HANDLE32
@@ -4090,7 +4090,7 @@ namespace Win32
 			public uint32 dbch_hdevnotify;
 			public Guid dbch_eventguid;
 			public int32 dbch_nameoffset;
-			public uint8[] dbch_data;
+			public uint8[0] dbch_data;
 		}
 		[CRepr]
 		public struct DEV_BROADCAST_HANDLE64
@@ -4102,13 +4102,13 @@ namespace Win32
 			public uint64 dbch_hdevnotify;
 			public Guid dbch_eventguid;
 			public int32 dbch_nameoffset;
-			public uint8[] dbch_data;
+			public uint8[0] dbch_data;
 		}
 		[CRepr]
 		public struct _DEV_BROADCAST_USERDEFINED
 		{
 			public DEV_BROADCAST_HDR dbud_dbh;
-			public CHAR[] dbud_szName;
+			public CHAR[0] dbud_szName;
 		}
 		[CRepr]
 		public struct AtlThunkData_t
@@ -4146,7 +4146,7 @@ namespace Win32
 		public struct SCOPE_TABLE_AMD64
 		{
 			public uint32 Count;
-			public _Anonymous_e__Struct[] ScopeRecord;
+			public _Anonymous_e__Struct[0] ScopeRecord;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -4161,7 +4161,7 @@ namespace Win32
 		public struct SCOPE_TABLE_ARM
 		{
 			public uint32 Count;
-			public _Anonymous_e__Struct[] ScopeRecord;
+			public _Anonymous_e__Struct[0] ScopeRecord;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -4176,7 +4176,7 @@ namespace Win32
 		public struct SCOPE_TABLE_ARM64
 		{
 			public uint32 Count;
-			public _Anonymous_e__Struct[] ScopeRecord;
+			public _Anonymous_e__Struct[0] ScopeRecord;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -4679,7 +4679,7 @@ namespace Win32
 			public uint16 Flags;
 			public uint16 NumberOfParityExtents;
 			public uint16 MaximumNumberOfParityExtents;
-			public SCRUB_PARITY_EXTENT[] ParityExtents;
+			public SCRUB_PARITY_EXTENT[0] ParityExtents;
 		}
 		[CRepr]
 		public struct SCRUB_DATA_OUTPUT
@@ -4847,7 +4847,7 @@ namespace Win32
 			public uint32 TargetState;
 			public uint32 OldState;
 			public uint64 TargetProcessors;
-			public PPM_WMI_IDLE_STATE[] State;
+			public PPM_WMI_IDLE_STATE[0] State;
 		}
 		[CRepr]
 		public struct PPM_WMI_IDLE_STATES_EX
@@ -4857,7 +4857,7 @@ namespace Win32
 			public uint32 TargetState;
 			public uint32 OldState;
 			public void* TargetProcessors;
-			public PPM_WMI_IDLE_STATE[] State;
+			public PPM_WMI_IDLE_STATE[0] State;
 		}
 		[CRepr]
 		public struct PPM_WMI_PERF_STATE
@@ -4900,7 +4900,7 @@ namespace Win32
 			public uint32 FeedbackHandler;
 			public uint32 Reserved1;
 			public uint64 Reserved2;
-			public PPM_WMI_PERF_STATE[] State;
+			public PPM_WMI_PERF_STATE[0] State;
 		}
 		[CRepr]
 		public struct PPM_WMI_PERF_STATES_EX
@@ -4925,7 +4925,7 @@ namespace Win32
 			public uint32 FeedbackHandler;
 			public uint32 Reserved1;
 			public uint64 Reserved2;
-			public PPM_WMI_PERF_STATE[] State;
+			public PPM_WMI_PERF_STATE[0] State;
 		}
 		[CRepr]
 		public struct PPM_IDLE_STATE_ACCOUNTING
@@ -4943,7 +4943,7 @@ namespace Win32
 			public uint32 TotalTransitions;
 			public uint32 ResetCount;
 			public uint64 StartTime;
-			public PPM_IDLE_STATE_ACCOUNTING[] State;
+			public PPM_IDLE_STATE_ACCOUNTING[0] State;
 		}
 		[CRepr]
 		public struct PPM_IDLE_STATE_BUCKET_EX
@@ -4973,7 +4973,7 @@ namespace Win32
 			public uint32 ResetCount;
 			public uint32 AbortCount;
 			public uint64 StartTime;
-			public PPM_IDLE_STATE_ACCOUNTING_EX[] State;
+			public PPM_IDLE_STATE_ACCOUNTING_EX[0] State;
 		}
 		[CRepr]
 		public struct PPM_PERFSTATE_EVENT
@@ -5475,7 +5475,7 @@ namespace Win32
 		public struct IMAGE_IMPORT_BY_NAME
 		{
 			public uint16 Hint;
-			public CHAR[] Name;
+			public CHAR[0] Name;
 		}
 		[CRepr]
 		public struct IMAGE_TLS_DIRECTORY64
@@ -5599,13 +5599,13 @@ namespace Win32
 		public struct IMAGE_RESOURCE_DIRECTORY_STRING
 		{
 			public uint16 Length;
-			public CHAR[] NameString;
+			public CHAR[0] NameString;
 		}
 		[CRepr]
 		public struct IMAGE_RESOURCE_DIR_STRING_U
 		{
 			public uint16 Length;
-			public char16[] NameString;
+			public char16[0] NameString;
 		}
 		[CRepr]
 		public struct IMAGE_RESOURCE_DATA_ENTRY
@@ -5770,7 +5770,7 @@ namespace Win32
 			public uint32 Length;
 			public BOOLEAN Unicode;
 			public uint8[3] Reserved;
-			public uint8[] Data;
+			public uint8[0] Data;
 		}
 		[CRepr]
 		public struct IMAGE_SEPARATE_DEBUG_HEADER
@@ -5863,7 +5863,7 @@ namespace Win32
 			public uint8 Version;
 			public uint8[7] Reserved0;
 			public uint64 ApplicationId;
-			public IMAGE_POLICY_ENTRY[] Policies;
+			public IMAGE_POLICY_ENTRY[0] Policies;
 		}
 		[CRepr]
 		public struct HEAP_OPTIMIZE_RESOURCES_INFORMATION
@@ -5887,7 +5887,7 @@ namespace Win32
 		{
 			public uint32 ulSize;
 			public uint32 ulNumEventsForLogFile;
-			public uint32[] ulOffsets;
+			public uint32[0] ulOffsets;
 		}
 		[CRepr]
 		public struct TAPE_GET_DRIVE_PARAMETERS
@@ -5963,7 +5963,7 @@ namespace Win32
 		public struct TRANSACTIONMANAGER_LOGPATH_INFORMATION
 		{
 			public uint32 LogPathLength;
-			public char16[] LogPath;
+			public char16[0] LogPath;
 		}
 		[CRepr]
 		public struct TRANSACTIONMANAGER_RECOVERY_INFORMATION
@@ -5983,7 +5983,7 @@ namespace Win32
 			public LARGE_INTEGER Timeout;
 			public uint32 Outcome;
 			public uint32 DescriptionLength;
-			public char16[] Description;
+			public char16[0] Description;
 		}
 		[CRepr]
 		public struct TRANSACTION_BIND_INFORMATION
@@ -6000,7 +6000,7 @@ namespace Win32
 		public struct TRANSACTION_ENLISTMENTS_INFORMATION
 		{
 			public uint32 NumberOfEnlistments;
-			public TRANSACTION_ENLISTMENT_PAIR[] EnlistmentPair;
+			public TRANSACTION_ENLISTMENT_PAIR[0] EnlistmentPair;
 		}
 		[CRepr]
 		public struct TRANSACTION_SUPERIOR_ENLISTMENT_INFORMATION
@@ -6012,7 +6012,7 @@ namespace Win32
 		{
 			public Guid ResourceManagerId;
 			public uint32 DescriptionLength;
-			public char16[] Description;
+			public char16[0] Description;
 		}
 		[CRepr]
 		public struct RESOURCEMANAGER_COMPLETION_INFORMATION
@@ -6043,14 +6043,14 @@ namespace Win32
 		public struct TRANSACTION_LIST_INFORMATION
 		{
 			public uint32 NumberOfTransactions;
-			public TRANSACTION_LIST_ENTRY[] TransactionInformation;
+			public TRANSACTION_LIST_ENTRY[0] TransactionInformation;
 		}
 		[CRepr]
 		public struct KTMOBJECT_CURSOR
 		{
 			public Guid LastQuery;
 			public uint32 ObjectIdCount;
-			public Guid[] ObjectIds;
+			public Guid[0] ObjectIds;
 		}
 		
 		// --- Functions ---

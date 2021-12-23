@@ -14,23 +14,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInterface(Guid* iid, void** p) mut
+			public HRESULT GetInterface(in Guid iid, void** p) mut
 			{
-				return VT.GetInterface(&this, iid, p);
+				return VT.GetInterface(ref this, iid, p);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirect3DDxgiInterfaceAccess *self, Guid* iid, void** p) GetInterface;
+				public new function HRESULT(ref IDirect3DDxgiInterfaceAccess self, in Guid iid, void** p) GetInterface;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateDirect3D11DeviceFromDXGIDevice(IDXGIDevice* dxgiDevice, IInspectable** graphicsDevice);
+		public static extern HRESULT CreateDirect3D11DeviceFromDXGIDevice(ref IDXGIDevice dxgiDevice, out IInspectable* graphicsDevice);
 		[Import("d3d11.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateDirect3D11SurfaceFromDXGISurface(IDXGISurface* dgxiSurface, IInspectable** graphicsSurface);
+		public static extern HRESULT CreateDirect3D11SurfaceFromDXGISurface(ref IDXGISurface dgxiSurface, out IInspectable* graphicsSurface);
 		
 	}
 }

@@ -49,35 +49,35 @@ namespace Win32
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MagSetWindowSource(HWND hwnd, RECT rect);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagGetWindowSource(HWND hwnd, RECT* pRect);
+		public static extern BOOL MagGetWindowSource(HWND hwnd, out RECT pRect);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagSetWindowTransform(HWND hwnd, MAGTRANSFORM* pTransform);
+		public static extern BOOL MagSetWindowTransform(HWND hwnd, out MAGTRANSFORM pTransform);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagGetWindowTransform(HWND hwnd, MAGTRANSFORM* pTransform);
+		public static extern BOOL MagGetWindowTransform(HWND hwnd, out MAGTRANSFORM pTransform);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagSetWindowFilterList(HWND hwnd, uint32 dwFilterMode, int32 count, HWND* pHWND);
+		public static extern BOOL MagSetWindowFilterList(HWND hwnd, uint32 dwFilterMode, int32 count, out HWND pHWND);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 MagGetWindowFilterList(HWND hwnd, uint32* pdwFilterMode, int32 count, HWND* pHWND);
+		public static extern int32 MagGetWindowFilterList(HWND hwnd, out uint32 pdwFilterMode, int32 count, out HWND pHWND);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MagSetImageScalingCallback(HWND hwnd, MagImageScalingCallback callback);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern MagImageScalingCallback MagGetImageScalingCallback(HWND hwnd);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagSetColorEffect(HWND hwnd, MAGCOLOREFFECT* pEffect);
+		public static extern BOOL MagSetColorEffect(HWND hwnd, out MAGCOLOREFFECT pEffect);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagGetColorEffect(HWND hwnd, MAGCOLOREFFECT* pEffect);
+		public static extern BOOL MagGetColorEffect(HWND hwnd, out MAGCOLOREFFECT pEffect);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MagSetFullscreenTransform(float magLevel, int32 xOffset, int32 yOffset);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagGetFullscreenTransform(float* pMagLevel, int32* pxOffset, int32* pyOffset);
+		public static extern BOOL MagGetFullscreenTransform(out float pMagLevel, out int32 pxOffset, out int32 pyOffset);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagSetFullscreenColorEffect(MAGCOLOREFFECT* pEffect);
+		public static extern BOOL MagSetFullscreenColorEffect(ref MAGCOLOREFFECT pEffect);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagGetFullscreenColorEffect(MAGCOLOREFFECT* pEffect);
+		public static extern BOOL MagGetFullscreenColorEffect(out MAGCOLOREFFECT pEffect);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagSetInputTransform(BOOL fEnabled, RECT* pRectSource, RECT* pRectDest);
+		public static extern BOOL MagSetInputTransform(BOOL fEnabled, in RECT pRectSource, in RECT pRectDest);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MagGetInputTransform(BOOL* pfEnabled, RECT* pRectSource, RECT* pRectDest);
+		public static extern BOOL MagGetInputTransform(out BOOL pfEnabled, out RECT pRectSource, out RECT pRectDest);
 		[Import("magnification.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MagShowSystemCursor(BOOL fShowCursor);
 		

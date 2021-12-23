@@ -275,34 +275,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public int32 Init(uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, uint32* pFlags) mut
+			public int32 Init(uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, out uint32 pFlags) mut
 			{
-				return VT.Init(&this, grfFlags, cAttributes, aAttributes, pFlags);
+				return VT.Init(ref this, grfFlags, cAttributes, aAttributes, out pFlags);
 			}
-			public int32 GetChunk(STAT_CHUNK* pStat) mut
+			public int32 GetChunk(out STAT_CHUNK pStat) mut
 			{
-				return VT.GetChunk(&this, pStat);
+				return VT.GetChunk(ref this, out pStat);
 			}
-			public int32 GetText(uint32* pcwcBuffer, char16* awcBuffer) mut
+			public int32 GetText(out uint32 pcwcBuffer, char16* awcBuffer) mut
 			{
-				return VT.GetText(&this, pcwcBuffer, awcBuffer);
+				return VT.GetText(ref this, out pcwcBuffer, awcBuffer);
 			}
-			public int32 GetValue(PROPVARIANT** ppPropValue) mut
+			public int32 GetValue(out PROPVARIANT* ppPropValue) mut
 			{
-				return VT.GetValue(&this, ppPropValue);
+				return VT.GetValue(ref this, out ppPropValue);
 			}
-			public int32 BindRegion(FILTERREGION origPos, Guid* riid, void** ppunk) mut
+			public int32 BindRegion(FILTERREGION origPos, in Guid riid, void** ppunk) mut
 			{
-				return VT.BindRegion(&this, origPos, riid, ppunk);
+				return VT.BindRegion(ref this, origPos, riid, ppunk);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function int32(IFilter *self, uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, uint32* pFlags) Init;
-				public new function int32(IFilter *self, STAT_CHUNK* pStat) GetChunk;
-				public new function int32(IFilter *self, uint32* pcwcBuffer, char16* awcBuffer) GetText;
-				public new function int32(IFilter *self, PROPVARIANT** ppPropValue) GetValue;
-				public new function int32(IFilter *self, FILTERREGION origPos, Guid* riid, void** ppunk) BindRegion;
+				public new function int32(ref IFilter self, uint32 grfFlags, uint32 cAttributes, FULLPROPSPEC* aAttributes, out uint32 pFlags) Init;
+				public new function int32(ref IFilter self, out STAT_CHUNK pStat) GetChunk;
+				public new function int32(ref IFilter self, out uint32 pcwcBuffer, char16* awcBuffer) GetText;
+				public new function int32(ref IFilter self, out PROPVARIANT* ppPropValue) GetValue;
+				public new function int32(ref IFilter self, FILTERREGION origPos, in Guid riid, void** ppunk) BindRegion;
 			}
 		}
 		[CRepr]
@@ -314,30 +314,30 @@ namespace Win32
 			
 			public HRESULT PutSmallPhrase(PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) mut
 			{
-				return VT.PutSmallPhrase(&this, pwcNoun, cwcNoun, pwcModifier, cwcModifier, ulAttachmentType);
+				return VT.PutSmallPhrase(ref this, pwcNoun, cwcNoun, pwcModifier, cwcModifier, ulAttachmentType);
 			}
 			public HRESULT PutPhrase(PWSTR pwcPhrase, uint32 cwcPhrase) mut
 			{
-				return VT.PutPhrase(&this, pwcPhrase, cwcPhrase);
+				return VT.PutPhrase(ref this, pwcPhrase, cwcPhrase);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhraseSink *self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) PutSmallPhrase;
-				public new function HRESULT(IPhraseSink *self, PWSTR pwcPhrase, uint32 cwcPhrase) PutPhrase;
+				public new function HRESULT(ref IPhraseSink self, PWSTR pwcNoun, uint32 cwcNoun, PWSTR pwcModifier, uint32 cwcModifier, uint32 ulAttachmentType) PutSmallPhrase;
+				public new function HRESULT(ref IPhraseSink self, PWSTR pwcPhrase, uint32 cwcPhrase) PutPhrase;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("query.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT LoadIFilter(PWSTR pwcsPath, IUnknown* pUnkOuter, void** ppIUnk);
+		public static extern HRESULT LoadIFilter(PWSTR pwcsPath, ref IUnknown pUnkOuter, void** ppIUnk);
 		[Import("query.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT LoadIFilterEx(PWSTR pwcsPath, uint32 dwFlags, Guid* riid, void** ppIUnk);
+		public static extern HRESULT LoadIFilterEx(PWSTR pwcsPath, uint32 dwFlags, in Guid riid, void** ppIUnk);
 		[Import("query.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT BindIFilterFromStorage(IStorage* pStg, IUnknown* pUnkOuter, void** ppIUnk);
+		public static extern HRESULT BindIFilterFromStorage(ref IStorage pStg, ref IUnknown pUnkOuter, void** ppIUnk);
 		[Import("query.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT BindIFilterFromStream(IStream* pStm, IUnknown* pUnkOuter, void** ppIUnk);
+		public static extern HRESULT BindIFilterFromStream(ref IStream pStm, ref IUnknown pUnkOuter, void** ppIUnk);
 		
 	}
 }

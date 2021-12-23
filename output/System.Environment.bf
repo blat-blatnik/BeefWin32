@@ -39,18 +39,18 @@ namespace Win32
 		// --- Function Pointers ---
 		
 		public function void VBS_BASIC_ENCLAVE_BASIC_CALL_RETURN_FROM_ENCLAVE(uint ReturnValue);
-		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_RETURN_FROM_EXCEPTION(VBS_BASIC_ENCLAVE_EXCEPTION_AMD64* ExceptionRecord);
-		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_TERMINATE_THREAD(VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64* ThreadDescriptor);
-		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_INTERRUPT_THREAD(VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64* ThreadDescriptor);
+		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_RETURN_FROM_EXCEPTION(ref VBS_BASIC_ENCLAVE_EXCEPTION_AMD64 ExceptionRecord);
+		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_TERMINATE_THREAD(ref VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64 ThreadDescriptor);
+		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_INTERRUPT_THREAD(ref VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64 ThreadDescriptor);
 		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_COMMIT_PAGES(void* EnclaveAddress, uint NumberOfBytes, void* SourceAddress, uint32 PageProtection);
 		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_DECOMMIT_PAGES(void* EnclaveAddress, uint NumberOfBytes);
 		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_PROTECT_PAGES(void* EnclaveAddress, uint NumberOfytes, uint32 PageProtection);
-		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_CREATE_THREAD(VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64* ThreadDescriptor);
-		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GET_ENCLAVE_INFORMATION(ENCLAVE_INFORMATION* EnclaveInfo);
-		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GENERATE_KEY(ENCLAVE_VBS_BASIC_KEY_REQUEST* KeyRequest, uint32 RequestedKeySize, uint8* ReturnedKey);
-		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GENERATE_REPORT(uint8* EnclaveData, void* Report, uint32 BufferSize, uint32* OutputSize);
+		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_CREATE_THREAD(ref VBS_BASIC_ENCLAVE_THREAD_DESCRIPTOR64 ThreadDescriptor);
+		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GET_ENCLAVE_INFORMATION(out ENCLAVE_INFORMATION EnclaveInfo);
+		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GENERATE_KEY(out ENCLAVE_VBS_BASIC_KEY_REQUEST KeyRequest, uint32 RequestedKeySize, uint8* ReturnedKey);
+		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GENERATE_REPORT(uint8* EnclaveData, void* Report, uint32 BufferSize, out uint32 OutputSize);
 		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_VERIFY_REPORT(void* Report, uint32 ReportSize);
-		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GENERATE_RANDOM_DATA(uint8* Buffer, uint32 NumberOfBytes, uint64* Generation);
+		public function int32 VBS_BASIC_ENCLAVE_BASIC_CALL_GENERATE_RANDOM_DATA(out uint8 Buffer, uint32 NumberOfBytes, out uint64 Generation);
 		
 		// --- Structs ---
 		
@@ -102,7 +102,7 @@ namespace Win32
 			public uint8[16] FamilyId;
 			public uint8[16] ImageId;
 			public uint32 Svn;
-			public char16[] ModuleName;
+			public char16[0] ModuleName;
 		}
 		[CRepr]
 		public struct ENCLAVE_INFORMATION
@@ -225,7 +225,7 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* CreateEnclave(HANDLE hProcess, void* lpAddress, uint dwSize, uint dwInitialCommitment, uint32 flEnclaveType, void* lpEnclaveInformation, uint32 dwInfoLength, uint32* lpEnclaveError);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL LoadEnclaveData(HANDLE hProcess, void* lpAddress, void* lpBuffer, uint nSize, uint32 flProtect, void* lpPageInformation, uint32 dwInfoLength, uint* lpNumberOfBytesWritten, uint32* lpEnclaveError);
+		public static extern BOOL LoadEnclaveData(HANDLE hProcess, void* lpAddress, void* lpBuffer, uint nSize, uint32 flProtect, void* lpPageInformation, uint32 dwInfoLength, out uint lpNumberOfBytesWritten, uint32* lpEnclaveError);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL InitializeEnclave(HANDLE hProcess, void* lpAddress, void* lpEnclaveInformation, uint32 dwInfoLength, uint32* lpEnclaveError);
 		[Import("api-ms-win-core-enclave-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
@@ -239,15 +239,15 @@ namespace Win32
 		[Import("api-ms-win-core-enclave-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeleteEnclave(void* lpAddress);
 		[Import("vertdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EnclaveGetAttestationReport(uint8* EnclaveData, void* Report, uint32 BufferSize, uint32* OutputSize);
+		public static extern HRESULT EnclaveGetAttestationReport(uint8* EnclaveData, void* Report, uint32 BufferSize, out uint32 OutputSize);
 		[Import("vertdll.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT EnclaveVerifyAttestationReport(uint32 EnclaveType, void* Report, uint32 ReportSize);
 		[Import("vertdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EnclaveSealData(void* DataToEncrypt, uint32 DataToEncryptSize, ENCLAVE_SEALING_IDENTITY_POLICY IdentityPolicy, uint32 RuntimePolicy, void* ProtectedBlob, uint32 BufferSize, uint32* ProtectedBlobSize);
+		public static extern HRESULT EnclaveSealData(void* DataToEncrypt, uint32 DataToEncryptSize, ENCLAVE_SEALING_IDENTITY_POLICY IdentityPolicy, uint32 RuntimePolicy, void* ProtectedBlob, uint32 BufferSize, out uint32 ProtectedBlobSize);
 		[Import("vertdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EnclaveUnsealData(void* ProtectedBlob, uint32 ProtectedBlobSize, void* DecryptedData, uint32 BufferSize, uint32* DecryptedDataSize, ENCLAVE_IDENTITY* SealingIdentity, uint32* UnsealingFlags);
+		public static extern HRESULT EnclaveUnsealData(void* ProtectedBlob, uint32 ProtectedBlobSize, void* DecryptedData, uint32 BufferSize, out uint32 DecryptedDataSize, ENCLAVE_IDENTITY* SealingIdentity, uint32* UnsealingFlags);
 		[Import("vertdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT EnclaveGetEnclaveInformation(uint32 InformationSize, ENCLAVE_INFORMATION* EnclaveInformation);
+		public static extern HRESULT EnclaveGetEnclaveInformation(uint32 InformationSize, out ENCLAVE_INFORMATION EnclaveInformation);
 		
 	}
 }

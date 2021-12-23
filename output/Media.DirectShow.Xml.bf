@@ -18,24 +18,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BuildFromXML(IGraphBuilder* pGraph, IXMLElement* pxml) mut
+			public HRESULT BuildFromXML(ref IGraphBuilder pGraph, ref IXMLElement pxml) mut
 			{
-				return VT.BuildFromXML(&this, pGraph, pxml);
+				return VT.BuildFromXML(ref this, ref pGraph, ref pxml);
 			}
-			public HRESULT SaveToXML(IGraphBuilder* pGraph, BSTR* pbstrxml) mut
+			public HRESULT SaveToXML(ref IGraphBuilder pGraph, out BSTR pbstrxml) mut
 			{
-				return VT.SaveToXML(&this, pGraph, pbstrxml);
+				return VT.SaveToXML(ref this, ref pGraph, out pbstrxml);
 			}
-			public HRESULT BuildFromXMLFile(IGraphBuilder* pGraph, PWSTR wszFileName, PWSTR wszBaseURL) mut
+			public HRESULT BuildFromXMLFile(ref IGraphBuilder pGraph, PWSTR wszFileName, PWSTR wszBaseURL) mut
 			{
-				return VT.BuildFromXMLFile(&this, pGraph, wszFileName, wszBaseURL);
+				return VT.BuildFromXMLFile(ref this, ref pGraph, wszFileName, wszBaseURL);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXMLGraphBuilder *self, IGraphBuilder* pGraph, IXMLElement* pxml) BuildFromXML;
-				public new function HRESULT(IXMLGraphBuilder *self, IGraphBuilder* pGraph, BSTR* pbstrxml) SaveToXML;
-				public new function HRESULT(IXMLGraphBuilder *self, IGraphBuilder* pGraph, PWSTR wszFileName, PWSTR wszBaseURL) BuildFromXMLFile;
+				public new function HRESULT(ref IXMLGraphBuilder self, ref IGraphBuilder pGraph, ref IXMLElement pxml) BuildFromXML;
+				public new function HRESULT(ref IXMLGraphBuilder self, ref IGraphBuilder pGraph, out BSTR pbstrxml) SaveToXML;
+				public new function HRESULT(ref IXMLGraphBuilder self, ref IGraphBuilder pGraph, PWSTR wszFileName, PWSTR wszBaseURL) BuildFromXMLFile;
 			}
 		}
 		

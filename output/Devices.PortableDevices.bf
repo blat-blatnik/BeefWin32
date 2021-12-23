@@ -590,29 +590,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIPortableDeviceValuesFromBuffer(uint8* pBuffer, uint32 dwInputBufferLength, IPortableDeviceValues** ppParams) mut
+			public HRESULT GetIPortableDeviceValuesFromBuffer(uint8* pBuffer, uint32 dwInputBufferLength, out IPortableDeviceValues* ppParams) mut
 			{
-				return VT.GetIPortableDeviceValuesFromBuffer(&this, pBuffer, dwInputBufferLength, ppParams);
+				return VT.GetIPortableDeviceValuesFromBuffer(ref this, pBuffer, dwInputBufferLength, out ppParams);
 			}
-			public HRESULT WriteIPortableDeviceValuesToBuffer(uint32 dwOutputBufferLength, IPortableDeviceValues* pResults, uint8* pBuffer, uint32* pdwBytesWritten) mut
+			public HRESULT WriteIPortableDeviceValuesToBuffer(uint32 dwOutputBufferLength, ref IPortableDeviceValues pResults, uint8* pBuffer, out uint32 pdwBytesWritten) mut
 			{
-				return VT.WriteIPortableDeviceValuesToBuffer(&this, dwOutputBufferLength, pResults, pBuffer, pdwBytesWritten);
+				return VT.WriteIPortableDeviceValuesToBuffer(ref this, dwOutputBufferLength, ref pResults, pBuffer, out pdwBytesWritten);
 			}
-			public HRESULT GetBufferFromIPortableDeviceValues(IPortableDeviceValues* pSource, uint8** ppBuffer, uint32* pdwBufferSize) mut
+			public HRESULT GetBufferFromIPortableDeviceValues(ref IPortableDeviceValues pSource, uint8** ppBuffer, out uint32 pdwBufferSize) mut
 			{
-				return VT.GetBufferFromIPortableDeviceValues(&this, pSource, ppBuffer, pdwBufferSize);
+				return VT.GetBufferFromIPortableDeviceValues(ref this, ref pSource, ppBuffer, out pdwBufferSize);
 			}
-			public HRESULT GetSerializedSize(IPortableDeviceValues* pSource, uint32* pdwSize) mut
+			public HRESULT GetSerializedSize(ref IPortableDeviceValues pSource, out uint32 pdwSize) mut
 			{
-				return VT.GetSerializedSize(&this, pSource, pdwSize);
+				return VT.GetSerializedSize(ref this, ref pSource, out pdwSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWpdSerializer *self, uint8* pBuffer, uint32 dwInputBufferLength, IPortableDeviceValues** ppParams) GetIPortableDeviceValuesFromBuffer;
-				public new function HRESULT(IWpdSerializer *self, uint32 dwOutputBufferLength, IPortableDeviceValues* pResults, uint8* pBuffer, uint32* pdwBytesWritten) WriteIPortableDeviceValuesToBuffer;
-				public new function HRESULT(IWpdSerializer *self, IPortableDeviceValues* pSource, uint8** ppBuffer, uint32* pdwBufferSize) GetBufferFromIPortableDeviceValues;
-				public new function HRESULT(IWpdSerializer *self, IPortableDeviceValues* pSource, uint32* pdwSize) GetSerializedSize;
+				public new function HRESULT(ref IWpdSerializer self, uint8* pBuffer, uint32 dwInputBufferLength, out IPortableDeviceValues* ppParams) GetIPortableDeviceValuesFromBuffer;
+				public new function HRESULT(ref IWpdSerializer self, uint32 dwOutputBufferLength, ref IPortableDeviceValues pResults, uint8* pBuffer, out uint32 pdwBytesWritten) WriteIPortableDeviceValuesToBuffer;
+				public new function HRESULT(ref IWpdSerializer self, ref IPortableDeviceValues pSource, uint8** ppBuffer, out uint32 pdwBufferSize) GetBufferFromIPortableDeviceValues;
+				public new function HRESULT(ref IWpdSerializer self, ref IPortableDeviceValues pSource, out uint32 pdwSize) GetSerializedSize;
 			}
 		}
 		[CRepr]
@@ -622,209 +622,209 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* pcelt) mut
+			public HRESULT GetCount(ref uint32 pcelt) mut
 			{
-				return VT.GetCount(&this, pcelt);
+				return VT.GetCount(ref this, ref pcelt);
 			}
-			public HRESULT GetAt(uint32 index, PROPERTYKEY* pKey, PROPVARIANT* pValue) mut
+			public HRESULT GetAt(uint32 index, out PROPERTYKEY pKey, out PROPVARIANT pValue) mut
 			{
-				return VT.GetAt(&this, index, pKey, pValue);
+				return VT.GetAt(ref this, index, out pKey, out pValue);
 			}
-			public HRESULT SetValue(PROPERTYKEY* key, PROPVARIANT* pValue) mut
+			public HRESULT SetValue(in PROPERTYKEY key, in PROPVARIANT pValue) mut
 			{
-				return VT.SetValue(&this, key, pValue);
+				return VT.SetValue(ref this, key, pValue);
 			}
-			public HRESULT GetValue(PROPERTYKEY* key, PROPVARIANT* pValue) mut
+			public HRESULT GetValue(in PROPERTYKEY key, out PROPVARIANT pValue) mut
 			{
-				return VT.GetValue(&this, key, pValue);
+				return VT.GetValue(ref this, key, out pValue);
 			}
-			public HRESULT SetStringValue(PROPERTYKEY* key, PWSTR Value) mut
+			public HRESULT SetStringValue(in PROPERTYKEY key, PWSTR Value) mut
 			{
-				return VT.SetStringValue(&this, key, Value);
+				return VT.SetStringValue(ref this, key, Value);
 			}
-			public HRESULT GetStringValue(PROPERTYKEY* key, PWSTR* pValue) mut
+			public HRESULT GetStringValue(in PROPERTYKEY key, out PWSTR pValue) mut
 			{
-				return VT.GetStringValue(&this, key, pValue);
+				return VT.GetStringValue(ref this, key, out pValue);
 			}
-			public HRESULT SetUnsignedIntegerValue(PROPERTYKEY* key, uint32 Value) mut
+			public HRESULT SetUnsignedIntegerValue(in PROPERTYKEY key, uint32 Value) mut
 			{
-				return VT.SetUnsignedIntegerValue(&this, key, Value);
+				return VT.SetUnsignedIntegerValue(ref this, key, Value);
 			}
-			public HRESULT GetUnsignedIntegerValue(PROPERTYKEY* key, uint32* pValue) mut
+			public HRESULT GetUnsignedIntegerValue(in PROPERTYKEY key, out uint32 pValue) mut
 			{
-				return VT.GetUnsignedIntegerValue(&this, key, pValue);
+				return VT.GetUnsignedIntegerValue(ref this, key, out pValue);
 			}
-			public HRESULT SetSignedIntegerValue(PROPERTYKEY* key, int32 Value) mut
+			public HRESULT SetSignedIntegerValue(in PROPERTYKEY key, int32 Value) mut
 			{
-				return VT.SetSignedIntegerValue(&this, key, Value);
+				return VT.SetSignedIntegerValue(ref this, key, Value);
 			}
-			public HRESULT GetSignedIntegerValue(PROPERTYKEY* key, int32* pValue) mut
+			public HRESULT GetSignedIntegerValue(in PROPERTYKEY key, out int32 pValue) mut
 			{
-				return VT.GetSignedIntegerValue(&this, key, pValue);
+				return VT.GetSignedIntegerValue(ref this, key, out pValue);
 			}
-			public HRESULT SetUnsignedLargeIntegerValue(PROPERTYKEY* key, uint64 Value) mut
+			public HRESULT SetUnsignedLargeIntegerValue(in PROPERTYKEY key, uint64 Value) mut
 			{
-				return VT.SetUnsignedLargeIntegerValue(&this, key, Value);
+				return VT.SetUnsignedLargeIntegerValue(ref this, key, Value);
 			}
-			public HRESULT GetUnsignedLargeIntegerValue(PROPERTYKEY* key, uint64* pValue) mut
+			public HRESULT GetUnsignedLargeIntegerValue(in PROPERTYKEY key, out uint64 pValue) mut
 			{
-				return VT.GetUnsignedLargeIntegerValue(&this, key, pValue);
+				return VT.GetUnsignedLargeIntegerValue(ref this, key, out pValue);
 			}
-			public HRESULT SetSignedLargeIntegerValue(PROPERTYKEY* key, int64 Value) mut
+			public HRESULT SetSignedLargeIntegerValue(in PROPERTYKEY key, int64 Value) mut
 			{
-				return VT.SetSignedLargeIntegerValue(&this, key, Value);
+				return VT.SetSignedLargeIntegerValue(ref this, key, Value);
 			}
-			public HRESULT GetSignedLargeIntegerValue(PROPERTYKEY* key, int64* pValue) mut
+			public HRESULT GetSignedLargeIntegerValue(in PROPERTYKEY key, out int64 pValue) mut
 			{
-				return VT.GetSignedLargeIntegerValue(&this, key, pValue);
+				return VT.GetSignedLargeIntegerValue(ref this, key, out pValue);
 			}
-			public HRESULT SetFloatValue(PROPERTYKEY* key, float Value) mut
+			public HRESULT SetFloatValue(in PROPERTYKEY key, float Value) mut
 			{
-				return VT.SetFloatValue(&this, key, Value);
+				return VT.SetFloatValue(ref this, key, Value);
 			}
-			public HRESULT GetFloatValue(PROPERTYKEY* key, float* pValue) mut
+			public HRESULT GetFloatValue(in PROPERTYKEY key, out float pValue) mut
 			{
-				return VT.GetFloatValue(&this, key, pValue);
+				return VT.GetFloatValue(ref this, key, out pValue);
 			}
-			public HRESULT SetErrorValue(PROPERTYKEY* key, HRESULT Value) mut
+			public HRESULT SetErrorValue(in PROPERTYKEY key, HRESULT Value) mut
 			{
-				return VT.SetErrorValue(&this, key, Value);
+				return VT.SetErrorValue(ref this, key, Value);
 			}
-			public HRESULT GetErrorValue(PROPERTYKEY* key, HRESULT* pValue) mut
+			public HRESULT GetErrorValue(in PROPERTYKEY key, out HRESULT pValue) mut
 			{
-				return VT.GetErrorValue(&this, key, pValue);
+				return VT.GetErrorValue(ref this, key, out pValue);
 			}
-			public HRESULT SetKeyValue(PROPERTYKEY* key, PROPERTYKEY* Value) mut
+			public HRESULT SetKeyValue(in PROPERTYKEY key, in PROPERTYKEY Value) mut
 			{
-				return VT.SetKeyValue(&this, key, Value);
+				return VT.SetKeyValue(ref this, key, Value);
 			}
-			public HRESULT GetKeyValue(PROPERTYKEY* key, PROPERTYKEY* pValue) mut
+			public HRESULT GetKeyValue(in PROPERTYKEY key, out PROPERTYKEY pValue) mut
 			{
-				return VT.GetKeyValue(&this, key, pValue);
+				return VT.GetKeyValue(ref this, key, out pValue);
 			}
-			public HRESULT SetBoolValue(PROPERTYKEY* key, BOOL Value) mut
+			public HRESULT SetBoolValue(in PROPERTYKEY key, BOOL Value) mut
 			{
-				return VT.SetBoolValue(&this, key, Value);
+				return VT.SetBoolValue(ref this, key, Value);
 			}
-			public HRESULT GetBoolValue(PROPERTYKEY* key, BOOL* pValue) mut
+			public HRESULT GetBoolValue(in PROPERTYKEY key, out BOOL pValue) mut
 			{
-				return VT.GetBoolValue(&this, key, pValue);
+				return VT.GetBoolValue(ref this, key, out pValue);
 			}
-			public HRESULT SetIUnknownValue(PROPERTYKEY* key, IUnknown* pValue) mut
+			public HRESULT SetIUnknownValue(in PROPERTYKEY key, ref IUnknown pValue) mut
 			{
-				return VT.SetIUnknownValue(&this, key, pValue);
+				return VT.SetIUnknownValue(ref this, key, ref pValue);
 			}
-			public HRESULT GetIUnknownValue(PROPERTYKEY* key, IUnknown** ppValue) mut
+			public HRESULT GetIUnknownValue(in PROPERTYKEY key, out IUnknown* ppValue) mut
 			{
-				return VT.GetIUnknownValue(&this, key, ppValue);
+				return VT.GetIUnknownValue(ref this, key, out ppValue);
 			}
-			public HRESULT SetGuidValue(PROPERTYKEY* key, Guid* Value) mut
+			public HRESULT SetGuidValue(in PROPERTYKEY key, in Guid Value) mut
 			{
-				return VT.SetGuidValue(&this, key, Value);
+				return VT.SetGuidValue(ref this, key, Value);
 			}
-			public HRESULT GetGuidValue(PROPERTYKEY* key, Guid* pValue) mut
+			public HRESULT GetGuidValue(in PROPERTYKEY key, out Guid pValue) mut
 			{
-				return VT.GetGuidValue(&this, key, pValue);
+				return VT.GetGuidValue(ref this, key, out pValue);
 			}
-			public HRESULT SetBufferValue(PROPERTYKEY* key, uint8* pValue, uint32 cbValue) mut
+			public HRESULT SetBufferValue(in PROPERTYKEY key, uint8* pValue, uint32 cbValue) mut
 			{
-				return VT.SetBufferValue(&this, key, pValue, cbValue);
+				return VT.SetBufferValue(ref this, key, pValue, cbValue);
 			}
-			public HRESULT GetBufferValue(PROPERTYKEY* key, uint8** ppValue, uint32* pcbValue) mut
+			public HRESULT GetBufferValue(in PROPERTYKEY key, uint8** ppValue, out uint32 pcbValue) mut
 			{
-				return VT.GetBufferValue(&this, key, ppValue, pcbValue);
+				return VT.GetBufferValue(ref this, key, ppValue, out pcbValue);
 			}
-			public HRESULT SetIPortableDeviceValuesValue(PROPERTYKEY* key, IPortableDeviceValues* pValue) mut
+			public HRESULT SetIPortableDeviceValuesValue(in PROPERTYKEY key, ref IPortableDeviceValues pValue) mut
 			{
-				return VT.SetIPortableDeviceValuesValue(&this, key, pValue);
+				return VT.SetIPortableDeviceValuesValue(ref this, key, ref pValue);
 			}
-			public HRESULT GetIPortableDeviceValuesValue(PROPERTYKEY* key, IPortableDeviceValues** ppValue) mut
+			public HRESULT GetIPortableDeviceValuesValue(in PROPERTYKEY key, out IPortableDeviceValues* ppValue) mut
 			{
-				return VT.GetIPortableDeviceValuesValue(&this, key, ppValue);
+				return VT.GetIPortableDeviceValuesValue(ref this, key, out ppValue);
 			}
-			public HRESULT SetIPortableDevicePropVariantCollectionValue(PROPERTYKEY* key, IPortableDevicePropVariantCollection* pValue) mut
+			public HRESULT SetIPortableDevicePropVariantCollectionValue(in PROPERTYKEY key, ref IPortableDevicePropVariantCollection pValue) mut
 			{
-				return VT.SetIPortableDevicePropVariantCollectionValue(&this, key, pValue);
+				return VT.SetIPortableDevicePropVariantCollectionValue(ref this, key, ref pValue);
 			}
-			public HRESULT GetIPortableDevicePropVariantCollectionValue(PROPERTYKEY* key, IPortableDevicePropVariantCollection** ppValue) mut
+			public HRESULT GetIPortableDevicePropVariantCollectionValue(in PROPERTYKEY key, out IPortableDevicePropVariantCollection* ppValue) mut
 			{
-				return VT.GetIPortableDevicePropVariantCollectionValue(&this, key, ppValue);
+				return VT.GetIPortableDevicePropVariantCollectionValue(ref this, key, out ppValue);
 			}
-			public HRESULT SetIPortableDeviceKeyCollectionValue(PROPERTYKEY* key, IPortableDeviceKeyCollection* pValue) mut
+			public HRESULT SetIPortableDeviceKeyCollectionValue(in PROPERTYKEY key, ref IPortableDeviceKeyCollection pValue) mut
 			{
-				return VT.SetIPortableDeviceKeyCollectionValue(&this, key, pValue);
+				return VT.SetIPortableDeviceKeyCollectionValue(ref this, key, ref pValue);
 			}
-			public HRESULT GetIPortableDeviceKeyCollectionValue(PROPERTYKEY* key, IPortableDeviceKeyCollection** ppValue) mut
+			public HRESULT GetIPortableDeviceKeyCollectionValue(in PROPERTYKEY key, out IPortableDeviceKeyCollection* ppValue) mut
 			{
-				return VT.GetIPortableDeviceKeyCollectionValue(&this, key, ppValue);
+				return VT.GetIPortableDeviceKeyCollectionValue(ref this, key, out ppValue);
 			}
-			public HRESULT SetIPortableDeviceValuesCollectionValue(PROPERTYKEY* key, IPortableDeviceValuesCollection* pValue) mut
+			public HRESULT SetIPortableDeviceValuesCollectionValue(in PROPERTYKEY key, ref IPortableDeviceValuesCollection pValue) mut
 			{
-				return VT.SetIPortableDeviceValuesCollectionValue(&this, key, pValue);
+				return VT.SetIPortableDeviceValuesCollectionValue(ref this, key, ref pValue);
 			}
-			public HRESULT GetIPortableDeviceValuesCollectionValue(PROPERTYKEY* key, IPortableDeviceValuesCollection** ppValue) mut
+			public HRESULT GetIPortableDeviceValuesCollectionValue(in PROPERTYKEY key, out IPortableDeviceValuesCollection* ppValue) mut
 			{
-				return VT.GetIPortableDeviceValuesCollectionValue(&this, key, ppValue);
+				return VT.GetIPortableDeviceValuesCollectionValue(ref this, key, out ppValue);
 			}
-			public HRESULT RemoveValue(PROPERTYKEY* key) mut
+			public HRESULT RemoveValue(in PROPERTYKEY key) mut
 			{
-				return VT.RemoveValue(&this, key);
+				return VT.RemoveValue(ref this, key);
 			}
-			public HRESULT CopyValuesFromPropertyStore(IPropertyStore* pStore) mut
+			public HRESULT CopyValuesFromPropertyStore(ref IPropertyStore pStore) mut
 			{
-				return VT.CopyValuesFromPropertyStore(&this, pStore);
+				return VT.CopyValuesFromPropertyStore(ref this, ref pStore);
 			}
-			public HRESULT CopyValuesToPropertyStore(IPropertyStore* pStore) mut
+			public HRESULT CopyValuesToPropertyStore(ref IPropertyStore pStore) mut
 			{
-				return VT.CopyValuesToPropertyStore(&this, pStore);
+				return VT.CopyValuesToPropertyStore(ref this, ref pStore);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceValues *self, uint32* pcelt) GetCount;
-				public new function HRESULT(IPortableDeviceValues *self, uint32 index, PROPERTYKEY* pKey, PROPVARIANT* pValue) GetAt;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PROPVARIANT* pValue) SetValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PROPVARIANT* pValue) GetValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PWSTR Value) SetStringValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PWSTR* pValue) GetStringValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint32 Value) SetUnsignedIntegerValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint32* pValue) GetUnsignedIntegerValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, int32 Value) SetSignedIntegerValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, int32* pValue) GetSignedIntegerValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint64 Value) SetUnsignedLargeIntegerValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint64* pValue) GetUnsignedLargeIntegerValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, int64 Value) SetSignedLargeIntegerValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, int64* pValue) GetSignedLargeIntegerValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, float Value) SetFloatValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, float* pValue) GetFloatValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, HRESULT Value) SetErrorValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, HRESULT* pValue) GetErrorValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PROPERTYKEY* Value) SetKeyValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, PROPERTYKEY* pValue) GetKeyValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, BOOL Value) SetBoolValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, BOOL* pValue) GetBoolValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IUnknown* pValue) SetIUnknownValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IUnknown** ppValue) GetIUnknownValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, Guid* Value) SetGuidValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, Guid* pValue) GetGuidValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint8* pValue, uint32 cbValue) SetBufferValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, uint8** ppValue, uint32* pcbValue) GetBufferValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceValues* pValue) SetIPortableDeviceValuesValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceValues** ppValue) GetIPortableDeviceValuesValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDevicePropVariantCollection* pValue) SetIPortableDevicePropVariantCollectionValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDevicePropVariantCollection** ppValue) GetIPortableDevicePropVariantCollectionValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceKeyCollection* pValue) SetIPortableDeviceKeyCollectionValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceKeyCollection** ppValue) GetIPortableDeviceKeyCollectionValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceValuesCollection* pValue) SetIPortableDeviceValuesCollectionValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key, IPortableDeviceValuesCollection** ppValue) GetIPortableDeviceValuesCollectionValue;
-				public new function HRESULT(IPortableDeviceValues *self, PROPERTYKEY* key) RemoveValue;
-				public new function HRESULT(IPortableDeviceValues *self, IPropertyStore* pStore) CopyValuesFromPropertyStore;
-				public new function HRESULT(IPortableDeviceValues *self, IPropertyStore* pStore) CopyValuesToPropertyStore;
-				public new function HRESULT(IPortableDeviceValues *self) Clear;
+				public new function HRESULT(ref IPortableDeviceValues self, ref uint32 pcelt) GetCount;
+				public new function HRESULT(ref IPortableDeviceValues self, uint32 index, out PROPERTYKEY pKey, out PROPVARIANT pValue) GetAt;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, in PROPVARIANT pValue) SetValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out PROPVARIANT pValue) GetValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, PWSTR Value) SetStringValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out PWSTR pValue) GetStringValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, uint32 Value) SetUnsignedIntegerValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out uint32 pValue) GetUnsignedIntegerValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, int32 Value) SetSignedIntegerValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out int32 pValue) GetSignedIntegerValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, uint64 Value) SetUnsignedLargeIntegerValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out uint64 pValue) GetUnsignedLargeIntegerValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, int64 Value) SetSignedLargeIntegerValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out int64 pValue) GetSignedLargeIntegerValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, float Value) SetFloatValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out float pValue) GetFloatValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, HRESULT Value) SetErrorValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out HRESULT pValue) GetErrorValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, in PROPERTYKEY Value) SetKeyValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out PROPERTYKEY pValue) GetKeyValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, BOOL Value) SetBoolValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out BOOL pValue) GetBoolValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, ref IUnknown pValue) SetIUnknownValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out IUnknown* ppValue) GetIUnknownValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, in Guid Value) SetGuidValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out Guid pValue) GetGuidValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, uint8* pValue, uint32 cbValue) SetBufferValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, uint8** ppValue, out uint32 pcbValue) GetBufferValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, ref IPortableDeviceValues pValue) SetIPortableDeviceValuesValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out IPortableDeviceValues* ppValue) GetIPortableDeviceValuesValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, ref IPortableDevicePropVariantCollection pValue) SetIPortableDevicePropVariantCollectionValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out IPortableDevicePropVariantCollection* ppValue) GetIPortableDevicePropVariantCollectionValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, ref IPortableDeviceKeyCollection pValue) SetIPortableDeviceKeyCollectionValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out IPortableDeviceKeyCollection* ppValue) GetIPortableDeviceKeyCollectionValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, ref IPortableDeviceValuesCollection pValue) SetIPortableDeviceValuesCollectionValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key, out IPortableDeviceValuesCollection* ppValue) GetIPortableDeviceValuesCollectionValue;
+				public new function HRESULT(ref IPortableDeviceValues self, in PROPERTYKEY key) RemoveValue;
+				public new function HRESULT(ref IPortableDeviceValues self, ref IPropertyStore pStore) CopyValuesFromPropertyStore;
+				public new function HRESULT(ref IPortableDeviceValues self, ref IPropertyStore pStore) CopyValuesToPropertyStore;
+				public new function HRESULT(ref IPortableDeviceValues self) Clear;
 			}
 		}
 		[CRepr]
@@ -834,34 +834,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* pcElems) mut
+			public HRESULT GetCount(ref uint32 pcElems) mut
 			{
-				return VT.GetCount(&this, pcElems);
+				return VT.GetCount(ref this, ref pcElems);
 			}
-			public HRESULT GetAt(uint32 dwIndex, PROPERTYKEY* pKey) mut
+			public HRESULT GetAt(uint32 dwIndex, ref PROPERTYKEY pKey) mut
 			{
-				return VT.GetAt(&this, dwIndex, pKey);
+				return VT.GetAt(ref this, dwIndex, ref pKey);
 			}
-			public HRESULT Add(PROPERTYKEY* Key) mut
+			public HRESULT Add(in PROPERTYKEY Key) mut
 			{
-				return VT.Add(&this, Key);
+				return VT.Add(ref this, Key);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT RemoveAt(uint32 dwIndex) mut
 			{
-				return VT.RemoveAt(&this, dwIndex);
+				return VT.RemoveAt(ref this, dwIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceKeyCollection *self, uint32* pcElems) GetCount;
-				public new function HRESULT(IPortableDeviceKeyCollection *self, uint32 dwIndex, PROPERTYKEY* pKey) GetAt;
-				public new function HRESULT(IPortableDeviceKeyCollection *self, PROPERTYKEY* Key) Add;
-				public new function HRESULT(IPortableDeviceKeyCollection *self) Clear;
-				public new function HRESULT(IPortableDeviceKeyCollection *self, uint32 dwIndex) RemoveAt;
+				public new function HRESULT(ref IPortableDeviceKeyCollection self, ref uint32 pcElems) GetCount;
+				public new function HRESULT(ref IPortableDeviceKeyCollection self, uint32 dwIndex, ref PROPERTYKEY pKey) GetAt;
+				public new function HRESULT(ref IPortableDeviceKeyCollection self, in PROPERTYKEY Key) Add;
+				public new function HRESULT(ref IPortableDeviceKeyCollection self) Clear;
+				public new function HRESULT(ref IPortableDeviceKeyCollection self, uint32 dwIndex) RemoveAt;
 			}
 		}
 		[CRepr]
@@ -871,44 +871,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* pcElems) mut
+			public HRESULT GetCount(ref uint32 pcElems) mut
 			{
-				return VT.GetCount(&this, pcElems);
+				return VT.GetCount(ref this, ref pcElems);
 			}
-			public HRESULT GetAt(uint32 dwIndex, PROPVARIANT* pValue) mut
+			public HRESULT GetAt(uint32 dwIndex, ref PROPVARIANT pValue) mut
 			{
-				return VT.GetAt(&this, dwIndex, pValue);
+				return VT.GetAt(ref this, dwIndex, ref pValue);
 			}
-			public HRESULT Add(PROPVARIANT* pValue) mut
+			public HRESULT Add(in PROPVARIANT pValue) mut
 			{
-				return VT.Add(&this, pValue);
+				return VT.Add(ref this, pValue);
 			}
-			public HRESULT ComGetType(uint16* pvt) mut
+			public HRESULT ComGetType(out uint16 pvt) mut
 			{
-				return VT.ComGetType(&this, pvt);
+				return VT.ComGetType(ref this, out pvt);
 			}
 			public HRESULT ChangeType(uint16 vt) mut
 			{
-				return VT.ChangeType(&this, vt);
+				return VT.ChangeType(ref this, vt);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT RemoveAt(uint32 dwIndex) mut
 			{
-				return VT.RemoveAt(&this, dwIndex);
+				return VT.RemoveAt(ref this, dwIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDevicePropVariantCollection *self, uint32* pcElems) GetCount;
-				public new function HRESULT(IPortableDevicePropVariantCollection *self, uint32 dwIndex, PROPVARIANT* pValue) GetAt;
-				public new function HRESULT(IPortableDevicePropVariantCollection *self, PROPVARIANT* pValue) Add;
-				public new function HRESULT(IPortableDevicePropVariantCollection *self, uint16* pvt) ComGetType;
-				public new function HRESULT(IPortableDevicePropVariantCollection *self, uint16 vt) ChangeType;
-				public new function HRESULT(IPortableDevicePropVariantCollection *self) Clear;
-				public new function HRESULT(IPortableDevicePropVariantCollection *self, uint32 dwIndex) RemoveAt;
+				public new function HRESULT(ref IPortableDevicePropVariantCollection self, ref uint32 pcElems) GetCount;
+				public new function HRESULT(ref IPortableDevicePropVariantCollection self, uint32 dwIndex, ref PROPVARIANT pValue) GetAt;
+				public new function HRESULT(ref IPortableDevicePropVariantCollection self, in PROPVARIANT pValue) Add;
+				public new function HRESULT(ref IPortableDevicePropVariantCollection self, out uint16 pvt) ComGetType;
+				public new function HRESULT(ref IPortableDevicePropVariantCollection self, uint16 vt) ChangeType;
+				public new function HRESULT(ref IPortableDevicePropVariantCollection self) Clear;
+				public new function HRESULT(ref IPortableDevicePropVariantCollection self, uint32 dwIndex) RemoveAt;
 			}
 		}
 		[CRepr]
@@ -918,34 +918,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* pcElems) mut
+			public HRESULT GetCount(ref uint32 pcElems) mut
 			{
-				return VT.GetCount(&this, pcElems);
+				return VT.GetCount(ref this, ref pcElems);
 			}
-			public HRESULT GetAt(uint32 dwIndex, IPortableDeviceValues** ppValues) mut
+			public HRESULT GetAt(uint32 dwIndex, out IPortableDeviceValues* ppValues) mut
 			{
-				return VT.GetAt(&this, dwIndex, ppValues);
+				return VT.GetAt(ref this, dwIndex, out ppValues);
 			}
-			public HRESULT Add(IPortableDeviceValues* pValues) mut
+			public HRESULT Add(ref IPortableDeviceValues pValues) mut
 			{
-				return VT.Add(&this, pValues);
+				return VT.Add(ref this, ref pValues);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT RemoveAt(uint32 dwIndex) mut
 			{
-				return VT.RemoveAt(&this, dwIndex);
+				return VT.RemoveAt(ref this, dwIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceValuesCollection *self, uint32* pcElems) GetCount;
-				public new function HRESULT(IPortableDeviceValuesCollection *self, uint32 dwIndex, IPortableDeviceValues** ppValues) GetAt;
-				public new function HRESULT(IPortableDeviceValuesCollection *self, IPortableDeviceValues* pValues) Add;
-				public new function HRESULT(IPortableDeviceValuesCollection *self) Clear;
-				public new function HRESULT(IPortableDeviceValuesCollection *self, uint32 dwIndex) RemoveAt;
+				public new function HRESULT(ref IPortableDeviceValuesCollection self, ref uint32 pcElems) GetCount;
+				public new function HRESULT(ref IPortableDeviceValuesCollection self, uint32 dwIndex, out IPortableDeviceValues* ppValues) GetAt;
+				public new function HRESULT(ref IPortableDeviceValuesCollection self, ref IPortableDeviceValues pValues) Add;
+				public new function HRESULT(ref IPortableDeviceValuesCollection self) Clear;
+				public new function HRESULT(ref IPortableDeviceValuesCollection self, uint32 dwIndex) RemoveAt;
 			}
 		}
 		[CRepr]
@@ -955,44 +955,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevices(PWSTR* pPnPDeviceIDs, uint32* pcPnPDeviceIDs) mut
+			public HRESULT GetDevices(out PWSTR pPnPDeviceIDs, out uint32 pcPnPDeviceIDs) mut
 			{
-				return VT.GetDevices(&this, pPnPDeviceIDs, pcPnPDeviceIDs);
+				return VT.GetDevices(ref this, out pPnPDeviceIDs, out pcPnPDeviceIDs);
 			}
 			public HRESULT RefreshDeviceList() mut
 			{
-				return VT.RefreshDeviceList(&this);
+				return VT.RefreshDeviceList(ref this);
 			}
-			public HRESULT GetDeviceFriendlyName(PWSTR pszPnPDeviceID, PWSTR pDeviceFriendlyName, uint32* pcchDeviceFriendlyName) mut
+			public HRESULT GetDeviceFriendlyName(PWSTR pszPnPDeviceID, PWSTR pDeviceFriendlyName, out uint32 pcchDeviceFriendlyName) mut
 			{
-				return VT.GetDeviceFriendlyName(&this, pszPnPDeviceID, pDeviceFriendlyName, pcchDeviceFriendlyName);
+				return VT.GetDeviceFriendlyName(ref this, pszPnPDeviceID, pDeviceFriendlyName, out pcchDeviceFriendlyName);
 			}
-			public HRESULT GetDeviceDescription(PWSTR pszPnPDeviceID, PWSTR pDeviceDescription, uint32* pcchDeviceDescription) mut
+			public HRESULT GetDeviceDescription(PWSTR pszPnPDeviceID, PWSTR pDeviceDescription, out uint32 pcchDeviceDescription) mut
 			{
-				return VT.GetDeviceDescription(&this, pszPnPDeviceID, pDeviceDescription, pcchDeviceDescription);
+				return VT.GetDeviceDescription(ref this, pszPnPDeviceID, pDeviceDescription, out pcchDeviceDescription);
 			}
-			public HRESULT GetDeviceManufacturer(PWSTR pszPnPDeviceID, PWSTR pDeviceManufacturer, uint32* pcchDeviceManufacturer) mut
+			public HRESULT GetDeviceManufacturer(PWSTR pszPnPDeviceID, PWSTR pDeviceManufacturer, out uint32 pcchDeviceManufacturer) mut
 			{
-				return VT.GetDeviceManufacturer(&this, pszPnPDeviceID, pDeviceManufacturer, pcchDeviceManufacturer);
+				return VT.GetDeviceManufacturer(ref this, pszPnPDeviceID, pDeviceManufacturer, out pcchDeviceManufacturer);
 			}
-			public HRESULT GetDeviceProperty(PWSTR pszPnPDeviceID, PWSTR pszDevicePropertyName, uint8* pData, uint32* pcbData, uint32* pdwType) mut
+			public HRESULT GetDeviceProperty(PWSTR pszPnPDeviceID, PWSTR pszDevicePropertyName, out uint8 pData, out uint32 pcbData, out uint32 pdwType) mut
 			{
-				return VT.GetDeviceProperty(&this, pszPnPDeviceID, pszDevicePropertyName, pData, pcbData, pdwType);
+				return VT.GetDeviceProperty(ref this, pszPnPDeviceID, pszDevicePropertyName, out pData, out pcbData, out pdwType);
 			}
-			public HRESULT GetPrivateDevices(PWSTR* pPnPDeviceIDs, uint32* pcPnPDeviceIDs) mut
+			public HRESULT GetPrivateDevices(out PWSTR pPnPDeviceIDs, out uint32 pcPnPDeviceIDs) mut
 			{
-				return VT.GetPrivateDevices(&this, pPnPDeviceIDs, pcPnPDeviceIDs);
+				return VT.GetPrivateDevices(ref this, out pPnPDeviceIDs, out pcPnPDeviceIDs);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceManager *self, PWSTR* pPnPDeviceIDs, uint32* pcPnPDeviceIDs) GetDevices;
-				public new function HRESULT(IPortableDeviceManager *self) RefreshDeviceList;
-				public new function HRESULT(IPortableDeviceManager *self, PWSTR pszPnPDeviceID, PWSTR pDeviceFriendlyName, uint32* pcchDeviceFriendlyName) GetDeviceFriendlyName;
-				public new function HRESULT(IPortableDeviceManager *self, PWSTR pszPnPDeviceID, PWSTR pDeviceDescription, uint32* pcchDeviceDescription) GetDeviceDescription;
-				public new function HRESULT(IPortableDeviceManager *self, PWSTR pszPnPDeviceID, PWSTR pDeviceManufacturer, uint32* pcchDeviceManufacturer) GetDeviceManufacturer;
-				public new function HRESULT(IPortableDeviceManager *self, PWSTR pszPnPDeviceID, PWSTR pszDevicePropertyName, uint8* pData, uint32* pcbData, uint32* pdwType) GetDeviceProperty;
-				public new function HRESULT(IPortableDeviceManager *self, PWSTR* pPnPDeviceIDs, uint32* pcPnPDeviceIDs) GetPrivateDevices;
+				public new function HRESULT(ref IPortableDeviceManager self, out PWSTR pPnPDeviceIDs, out uint32 pcPnPDeviceIDs) GetDevices;
+				public new function HRESULT(ref IPortableDeviceManager self) RefreshDeviceList;
+				public new function HRESULT(ref IPortableDeviceManager self, PWSTR pszPnPDeviceID, PWSTR pDeviceFriendlyName, out uint32 pcchDeviceFriendlyName) GetDeviceFriendlyName;
+				public new function HRESULT(ref IPortableDeviceManager self, PWSTR pszPnPDeviceID, PWSTR pDeviceDescription, out uint32 pcchDeviceDescription) GetDeviceDescription;
+				public new function HRESULT(ref IPortableDeviceManager self, PWSTR pszPnPDeviceID, PWSTR pDeviceManufacturer, out uint32 pcchDeviceManufacturer) GetDeviceManufacturer;
+				public new function HRESULT(ref IPortableDeviceManager self, PWSTR pszPnPDeviceID, PWSTR pszDevicePropertyName, out uint8 pData, out uint32 pcbData, out uint32 pdwType) GetDeviceProperty;
+				public new function HRESULT(ref IPortableDeviceManager self, out PWSTR pPnPDeviceIDs, out uint32 pcPnPDeviceIDs) GetPrivateDevices;
 			}
 		}
 		[CRepr]
@@ -1002,54 +1002,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(PWSTR pszPnPDeviceID, IPortableDeviceValues* pClientInfo) mut
+			public HRESULT Open(PWSTR pszPnPDeviceID, ref IPortableDeviceValues pClientInfo) mut
 			{
-				return VT.Open(&this, pszPnPDeviceID, pClientInfo);
+				return VT.Open(ref this, pszPnPDeviceID, ref pClientInfo);
 			}
-			public HRESULT SendCommand(uint32 dwFlags, IPortableDeviceValues* pParameters, IPortableDeviceValues** ppResults) mut
+			public HRESULT SendCommand(uint32 dwFlags, ref IPortableDeviceValues pParameters, out IPortableDeviceValues* ppResults) mut
 			{
-				return VT.SendCommand(&this, dwFlags, pParameters, ppResults);
+				return VT.SendCommand(ref this, dwFlags, ref pParameters, out ppResults);
 			}
-			public HRESULT Content(IPortableDeviceContent** ppContent) mut
+			public HRESULT Content(out IPortableDeviceContent* ppContent) mut
 			{
-				return VT.Content(&this, ppContent);
+				return VT.Content(ref this, out ppContent);
 			}
-			public HRESULT Capabilities(IPortableDeviceCapabilities** ppCapabilities) mut
+			public HRESULT Capabilities(out IPortableDeviceCapabilities* ppCapabilities) mut
 			{
-				return VT.Capabilities(&this, ppCapabilities);
+				return VT.Capabilities(ref this, out ppCapabilities);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
-			public HRESULT Advise(uint32 dwFlags, IPortableDeviceEventCallback* pCallback, IPortableDeviceValues* pParameters, PWSTR* ppszCookie) mut
+			public HRESULT Advise(uint32 dwFlags, ref IPortableDeviceEventCallback pCallback, ref IPortableDeviceValues pParameters, out PWSTR ppszCookie) mut
 			{
-				return VT.Advise(&this, dwFlags, pCallback, pParameters, ppszCookie);
+				return VT.Advise(ref this, dwFlags, ref pCallback, ref pParameters, out ppszCookie);
 			}
 			public HRESULT Unadvise(PWSTR pszCookie) mut
 			{
-				return VT.Unadvise(&this, pszCookie);
+				return VT.Unadvise(ref this, pszCookie);
 			}
-			public HRESULT GetPnPDeviceID(PWSTR* ppszPnPDeviceID) mut
+			public HRESULT GetPnPDeviceID(out PWSTR ppszPnPDeviceID) mut
 			{
-				return VT.GetPnPDeviceID(&this, ppszPnPDeviceID);
+				return VT.GetPnPDeviceID(ref this, out ppszPnPDeviceID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDevice *self, PWSTR pszPnPDeviceID, IPortableDeviceValues* pClientInfo) Open;
-				public new function HRESULT(IPortableDevice *self, uint32 dwFlags, IPortableDeviceValues* pParameters, IPortableDeviceValues** ppResults) SendCommand;
-				public new function HRESULT(IPortableDevice *self, IPortableDeviceContent** ppContent) Content;
-				public new function HRESULT(IPortableDevice *self, IPortableDeviceCapabilities** ppCapabilities) Capabilities;
-				public new function HRESULT(IPortableDevice *self) Cancel;
-				public new function HRESULT(IPortableDevice *self) Close;
-				public new function HRESULT(IPortableDevice *self, uint32 dwFlags, IPortableDeviceEventCallback* pCallback, IPortableDeviceValues* pParameters, PWSTR* ppszCookie) Advise;
-				public new function HRESULT(IPortableDevice *self, PWSTR pszCookie) Unadvise;
-				public new function HRESULT(IPortableDevice *self, PWSTR* ppszPnPDeviceID) GetPnPDeviceID;
+				public new function HRESULT(ref IPortableDevice self, PWSTR pszPnPDeviceID, ref IPortableDeviceValues pClientInfo) Open;
+				public new function HRESULT(ref IPortableDevice self, uint32 dwFlags, ref IPortableDeviceValues pParameters, out IPortableDeviceValues* ppResults) SendCommand;
+				public new function HRESULT(ref IPortableDevice self, out IPortableDeviceContent* ppContent) Content;
+				public new function HRESULT(ref IPortableDevice self, out IPortableDeviceCapabilities* ppCapabilities) Capabilities;
+				public new function HRESULT(ref IPortableDevice self) Cancel;
+				public new function HRESULT(ref IPortableDevice self) Close;
+				public new function HRESULT(ref IPortableDevice self, uint32 dwFlags, ref IPortableDeviceEventCallback pCallback, ref IPortableDeviceValues pParameters, out PWSTR ppszCookie) Advise;
+				public new function HRESULT(ref IPortableDevice self, PWSTR pszCookie) Unadvise;
+				public new function HRESULT(ref IPortableDevice self, out PWSTR ppszPnPDeviceID) GetPnPDeviceID;
 			}
 		}
 		[CRepr]
@@ -1059,59 +1059,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumObjects(uint32 dwFlags, PWSTR pszParentObjectID, IPortableDeviceValues* pFilter, IEnumPortableDeviceObjectIDs** ppEnum) mut
+			public HRESULT EnumObjects(uint32 dwFlags, PWSTR pszParentObjectID, ref IPortableDeviceValues pFilter, out IEnumPortableDeviceObjectIDs* ppEnum) mut
 			{
-				return VT.EnumObjects(&this, dwFlags, pszParentObjectID, pFilter, ppEnum);
+				return VT.EnumObjects(ref this, dwFlags, pszParentObjectID, ref pFilter, out ppEnum);
 			}
-			public HRESULT Properties(IPortableDeviceProperties** ppProperties) mut
+			public HRESULT Properties(out IPortableDeviceProperties* ppProperties) mut
 			{
-				return VT.Properties(&this, ppProperties);
+				return VT.Properties(ref this, out ppProperties);
 			}
-			public HRESULT Transfer(IPortableDeviceResources** ppResources) mut
+			public HRESULT Transfer(out IPortableDeviceResources* ppResources) mut
 			{
-				return VT.Transfer(&this, ppResources);
+				return VT.Transfer(ref this, out ppResources);
 			}
-			public HRESULT CreateObjectWithPropertiesOnly(IPortableDeviceValues* pValues, PWSTR* ppszObjectID) mut
+			public HRESULT CreateObjectWithPropertiesOnly(ref IPortableDeviceValues pValues, out PWSTR ppszObjectID) mut
 			{
-				return VT.CreateObjectWithPropertiesOnly(&this, pValues, ppszObjectID);
+				return VT.CreateObjectWithPropertiesOnly(ref this, ref pValues, out ppszObjectID);
 			}
-			public HRESULT CreateObjectWithPropertiesAndData(IPortableDeviceValues* pValues, IStream** ppData, uint32* pdwOptimalWriteBufferSize, PWSTR* ppszCookie) mut
+			public HRESULT CreateObjectWithPropertiesAndData(ref IPortableDeviceValues pValues, out IStream* ppData, out uint32 pdwOptimalWriteBufferSize, out PWSTR ppszCookie) mut
 			{
-				return VT.CreateObjectWithPropertiesAndData(&this, pValues, ppData, pdwOptimalWriteBufferSize, ppszCookie);
+				return VT.CreateObjectWithPropertiesAndData(ref this, ref pValues, out ppData, out pdwOptimalWriteBufferSize, out ppszCookie);
 			}
-			public HRESULT Delete(uint32 dwOptions, IPortableDevicePropVariantCollection* pObjectIDs, IPortableDevicePropVariantCollection** ppResults) mut
+			public HRESULT Delete(uint32 dwOptions, ref IPortableDevicePropVariantCollection pObjectIDs, out IPortableDevicePropVariantCollection* ppResults) mut
 			{
-				return VT.Delete(&this, dwOptions, pObjectIDs, ppResults);
+				return VT.Delete(ref this, dwOptions, ref pObjectIDs, out ppResults);
 			}
-			public HRESULT GetObjectIDsFromPersistentUniqueIDs(IPortableDevicePropVariantCollection* pPersistentUniqueIDs, IPortableDevicePropVariantCollection** ppObjectIDs) mut
+			public HRESULT GetObjectIDsFromPersistentUniqueIDs(ref IPortableDevicePropVariantCollection pPersistentUniqueIDs, out IPortableDevicePropVariantCollection* ppObjectIDs) mut
 			{
-				return VT.GetObjectIDsFromPersistentUniqueIDs(&this, pPersistentUniqueIDs, ppObjectIDs);
+				return VT.GetObjectIDsFromPersistentUniqueIDs(ref this, ref pPersistentUniqueIDs, out ppObjectIDs);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
-			public HRESULT Move(IPortableDevicePropVariantCollection* pObjectIDs, PWSTR pszDestinationFolderObjectID, IPortableDevicePropVariantCollection** ppResults) mut
+			public HRESULT Move(ref IPortableDevicePropVariantCollection pObjectIDs, PWSTR pszDestinationFolderObjectID, out IPortableDevicePropVariantCollection* ppResults) mut
 			{
-				return VT.Move(&this, pObjectIDs, pszDestinationFolderObjectID, ppResults);
+				return VT.Move(ref this, ref pObjectIDs, pszDestinationFolderObjectID, out ppResults);
 			}
-			public HRESULT Copy(IPortableDevicePropVariantCollection* pObjectIDs, PWSTR pszDestinationFolderObjectID, IPortableDevicePropVariantCollection** ppResults) mut
+			public HRESULT Copy(ref IPortableDevicePropVariantCollection pObjectIDs, PWSTR pszDestinationFolderObjectID, out IPortableDevicePropVariantCollection* ppResults) mut
 			{
-				return VT.Copy(&this, pObjectIDs, pszDestinationFolderObjectID, ppResults);
+				return VT.Copy(ref this, ref pObjectIDs, pszDestinationFolderObjectID, out ppResults);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceContent *self, uint32 dwFlags, PWSTR pszParentObjectID, IPortableDeviceValues* pFilter, IEnumPortableDeviceObjectIDs** ppEnum) EnumObjects;
-				public new function HRESULT(IPortableDeviceContent *self, IPortableDeviceProperties** ppProperties) Properties;
-				public new function HRESULT(IPortableDeviceContent *self, IPortableDeviceResources** ppResources) Transfer;
-				public new function HRESULT(IPortableDeviceContent *self, IPortableDeviceValues* pValues, PWSTR* ppszObjectID) CreateObjectWithPropertiesOnly;
-				public new function HRESULT(IPortableDeviceContent *self, IPortableDeviceValues* pValues, IStream** ppData, uint32* pdwOptimalWriteBufferSize, PWSTR* ppszCookie) CreateObjectWithPropertiesAndData;
-				public new function HRESULT(IPortableDeviceContent *self, uint32 dwOptions, IPortableDevicePropVariantCollection* pObjectIDs, IPortableDevicePropVariantCollection** ppResults) Delete;
-				public new function HRESULT(IPortableDeviceContent *self, IPortableDevicePropVariantCollection* pPersistentUniqueIDs, IPortableDevicePropVariantCollection** ppObjectIDs) GetObjectIDsFromPersistentUniqueIDs;
-				public new function HRESULT(IPortableDeviceContent *self) Cancel;
-				public new function HRESULT(IPortableDeviceContent *self, IPortableDevicePropVariantCollection* pObjectIDs, PWSTR pszDestinationFolderObjectID, IPortableDevicePropVariantCollection** ppResults) Move;
-				public new function HRESULT(IPortableDeviceContent *self, IPortableDevicePropVariantCollection* pObjectIDs, PWSTR pszDestinationFolderObjectID, IPortableDevicePropVariantCollection** ppResults) Copy;
+				public new function HRESULT(ref IPortableDeviceContent self, uint32 dwFlags, PWSTR pszParentObjectID, ref IPortableDeviceValues pFilter, out IEnumPortableDeviceObjectIDs* ppEnum) EnumObjects;
+				public new function HRESULT(ref IPortableDeviceContent self, out IPortableDeviceProperties* ppProperties) Properties;
+				public new function HRESULT(ref IPortableDeviceContent self, out IPortableDeviceResources* ppResources) Transfer;
+				public new function HRESULT(ref IPortableDeviceContent self, ref IPortableDeviceValues pValues, out PWSTR ppszObjectID) CreateObjectWithPropertiesOnly;
+				public new function HRESULT(ref IPortableDeviceContent self, ref IPortableDeviceValues pValues, out IStream* ppData, out uint32 pdwOptimalWriteBufferSize, out PWSTR ppszCookie) CreateObjectWithPropertiesAndData;
+				public new function HRESULT(ref IPortableDeviceContent self, uint32 dwOptions, ref IPortableDevicePropVariantCollection pObjectIDs, out IPortableDevicePropVariantCollection* ppResults) Delete;
+				public new function HRESULT(ref IPortableDeviceContent self, ref IPortableDevicePropVariantCollection pPersistentUniqueIDs, out IPortableDevicePropVariantCollection* ppObjectIDs) GetObjectIDsFromPersistentUniqueIDs;
+				public new function HRESULT(ref IPortableDeviceContent self) Cancel;
+				public new function HRESULT(ref IPortableDeviceContent self, ref IPortableDevicePropVariantCollection pObjectIDs, PWSTR pszDestinationFolderObjectID, out IPortableDevicePropVariantCollection* ppResults) Move;
+				public new function HRESULT(ref IPortableDeviceContent self, ref IPortableDevicePropVariantCollection pObjectIDs, PWSTR pszDestinationFolderObjectID, out IPortableDevicePropVariantCollection* ppResults) Copy;
 			}
 		}
 		[CRepr]
@@ -1121,14 +1121,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdateObjectWithPropertiesAndData(PWSTR pszObjectID, IPortableDeviceValues* pProperties, IStream** ppData, uint32* pdwOptimalWriteBufferSize) mut
+			public HRESULT UpdateObjectWithPropertiesAndData(PWSTR pszObjectID, ref IPortableDeviceValues pProperties, out IStream* ppData, out uint32 pdwOptimalWriteBufferSize) mut
 			{
-				return VT.UpdateObjectWithPropertiesAndData(&this, pszObjectID, pProperties, ppData, pdwOptimalWriteBufferSize);
+				return VT.UpdateObjectWithPropertiesAndData(ref this, pszObjectID, ref pProperties, out ppData, out pdwOptimalWriteBufferSize);
 			}
 			[CRepr]
 			public struct VTable : IPortableDeviceContent.VTable
 			{
-				public new function HRESULT(IPortableDeviceContent2 *self, PWSTR pszObjectID, IPortableDeviceValues* pProperties, IStream** ppData, uint32* pdwOptimalWriteBufferSize) UpdateObjectWithPropertiesAndData;
+				public new function HRESULT(ref IPortableDeviceContent2 self, PWSTR pszObjectID, ref IPortableDeviceValues pProperties, out IStream* ppData, out uint32 pdwOptimalWriteBufferSize) UpdateObjectWithPropertiesAndData;
 			}
 		}
 		[CRepr]
@@ -1138,34 +1138,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cObjects, PWSTR* pObjIDs, uint32* pcFetched) mut
+			public HRESULT Next(uint32 cObjects, PWSTR* pObjIDs, out uint32 pcFetched) mut
 			{
-				return VT.Next(&this, cObjects, pObjIDs, pcFetched);
+				return VT.Next(ref this, cObjects, pObjIDs, out pcFetched);
 			}
 			public HRESULT Skip(uint32 cObjects) mut
 			{
-				return VT.Skip(&this, cObjects);
+				return VT.Skip(ref this, cObjects);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT Clone(IEnumPortableDeviceObjectIDs** ppEnum) mut
+			public HRESULT Clone(out IEnumPortableDeviceObjectIDs* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumPortableDeviceObjectIDs *self, uint32 cObjects, PWSTR* pObjIDs, uint32* pcFetched) Next;
-				public new function HRESULT(IEnumPortableDeviceObjectIDs *self, uint32 cObjects) Skip;
-				public new function HRESULT(IEnumPortableDeviceObjectIDs *self) Reset;
-				public new function HRESULT(IEnumPortableDeviceObjectIDs *self, IEnumPortableDeviceObjectIDs** ppEnum) Clone;
-				public new function HRESULT(IEnumPortableDeviceObjectIDs *self) Cancel;
+				public new function HRESULT(ref IEnumPortableDeviceObjectIDs self, uint32 cObjects, PWSTR* pObjIDs, out uint32 pcFetched) Next;
+				public new function HRESULT(ref IEnumPortableDeviceObjectIDs self, uint32 cObjects) Skip;
+				public new function HRESULT(ref IEnumPortableDeviceObjectIDs self) Reset;
+				public new function HRESULT(ref IEnumPortableDeviceObjectIDs self, out IEnumPortableDeviceObjectIDs* ppEnum) Clone;
+				public new function HRESULT(ref IEnumPortableDeviceObjectIDs self) Cancel;
 			}
 		}
 		[CRepr]
@@ -1175,39 +1175,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSupportedProperties(PWSTR pszObjectID, IPortableDeviceKeyCollection** ppKeys) mut
+			public HRESULT GetSupportedProperties(PWSTR pszObjectID, out IPortableDeviceKeyCollection* ppKeys) mut
 			{
-				return VT.GetSupportedProperties(&this, pszObjectID, ppKeys);
+				return VT.GetSupportedProperties(ref this, pszObjectID, out ppKeys);
 			}
-			public HRESULT GetPropertyAttributes(PWSTR pszObjectID, PROPERTYKEY* Key, IPortableDeviceValues** ppAttributes) mut
+			public HRESULT GetPropertyAttributes(PWSTR pszObjectID, in PROPERTYKEY Key, out IPortableDeviceValues* ppAttributes) mut
 			{
-				return VT.GetPropertyAttributes(&this, pszObjectID, Key, ppAttributes);
+				return VT.GetPropertyAttributes(ref this, pszObjectID, Key, out ppAttributes);
 			}
-			public HRESULT GetValues(PWSTR pszObjectID, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) mut
+			public HRESULT GetValues(PWSTR pszObjectID, ref IPortableDeviceKeyCollection pKeys, out IPortableDeviceValues* ppValues) mut
 			{
-				return VT.GetValues(&this, pszObjectID, pKeys, ppValues);
+				return VT.GetValues(ref this, pszObjectID, ref pKeys, out ppValues);
 			}
-			public HRESULT SetValues(PWSTR pszObjectID, IPortableDeviceValues* pValues, IPortableDeviceValues** ppResults) mut
+			public HRESULT SetValues(PWSTR pszObjectID, ref IPortableDeviceValues pValues, out IPortableDeviceValues* ppResults) mut
 			{
-				return VT.SetValues(&this, pszObjectID, pValues, ppResults);
+				return VT.SetValues(ref this, pszObjectID, ref pValues, out ppResults);
 			}
-			public HRESULT Delete(PWSTR pszObjectID, IPortableDeviceKeyCollection* pKeys) mut
+			public HRESULT Delete(PWSTR pszObjectID, ref IPortableDeviceKeyCollection pKeys) mut
 			{
-				return VT.Delete(&this, pszObjectID, pKeys);
+				return VT.Delete(ref this, pszObjectID, ref pKeys);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, IPortableDeviceKeyCollection** ppKeys) GetSupportedProperties;
-				public new function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, PROPERTYKEY* Key, IPortableDeviceValues** ppAttributes) GetPropertyAttributes;
-				public new function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) GetValues;
-				public new function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, IPortableDeviceValues* pValues, IPortableDeviceValues** ppResults) SetValues;
-				public new function HRESULT(IPortableDeviceProperties *self, PWSTR pszObjectID, IPortableDeviceKeyCollection* pKeys) Delete;
-				public new function HRESULT(IPortableDeviceProperties *self) Cancel;
+				public new function HRESULT(ref IPortableDeviceProperties self, PWSTR pszObjectID, out IPortableDeviceKeyCollection* ppKeys) GetSupportedProperties;
+				public new function HRESULT(ref IPortableDeviceProperties self, PWSTR pszObjectID, in PROPERTYKEY Key, out IPortableDeviceValues* ppAttributes) GetPropertyAttributes;
+				public new function HRESULT(ref IPortableDeviceProperties self, PWSTR pszObjectID, ref IPortableDeviceKeyCollection pKeys, out IPortableDeviceValues* ppValues) GetValues;
+				public new function HRESULT(ref IPortableDeviceProperties self, PWSTR pszObjectID, ref IPortableDeviceValues pValues, out IPortableDeviceValues* ppResults) SetValues;
+				public new function HRESULT(ref IPortableDeviceProperties self, PWSTR pszObjectID, ref IPortableDeviceKeyCollection pKeys) Delete;
+				public new function HRESULT(ref IPortableDeviceProperties self) Cancel;
 			}
 		}
 		[CRepr]
@@ -1217,39 +1217,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSupportedResources(PWSTR pszObjectID, IPortableDeviceKeyCollection** ppKeys) mut
+			public HRESULT GetSupportedResources(PWSTR pszObjectID, out IPortableDeviceKeyCollection* ppKeys) mut
 			{
-				return VT.GetSupportedResources(&this, pszObjectID, ppKeys);
+				return VT.GetSupportedResources(ref this, pszObjectID, out ppKeys);
 			}
-			public HRESULT GetResourceAttributes(PWSTR pszObjectID, PROPERTYKEY* Key, IPortableDeviceValues** ppResourceAttributes) mut
+			public HRESULT GetResourceAttributes(PWSTR pszObjectID, in PROPERTYKEY Key, out IPortableDeviceValues* ppResourceAttributes) mut
 			{
-				return VT.GetResourceAttributes(&this, pszObjectID, Key, ppResourceAttributes);
+				return VT.GetResourceAttributes(ref this, pszObjectID, Key, out ppResourceAttributes);
 			}
-			public HRESULT GetStream(PWSTR pszObjectID, PROPERTYKEY* Key, uint32 dwMode, uint32* pdwOptimalBufferSize, IStream** ppStream) mut
+			public HRESULT GetStream(PWSTR pszObjectID, in PROPERTYKEY Key, uint32 dwMode, out uint32 pdwOptimalBufferSize, out IStream* ppStream) mut
 			{
-				return VT.GetStream(&this, pszObjectID, Key, dwMode, pdwOptimalBufferSize, ppStream);
+				return VT.GetStream(ref this, pszObjectID, Key, dwMode, out pdwOptimalBufferSize, out ppStream);
 			}
-			public HRESULT Delete(PWSTR pszObjectID, IPortableDeviceKeyCollection* pKeys) mut
+			public HRESULT Delete(PWSTR pszObjectID, ref IPortableDeviceKeyCollection pKeys) mut
 			{
-				return VT.Delete(&this, pszObjectID, pKeys);
+				return VT.Delete(ref this, pszObjectID, ref pKeys);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
-			public HRESULT CreateResource(IPortableDeviceValues* pResourceAttributes, IStream** ppData, uint32* pdwOptimalWriteBufferSize, PWSTR* ppszCookie) mut
+			public HRESULT CreateResource(ref IPortableDeviceValues pResourceAttributes, out IStream* ppData, out uint32 pdwOptimalWriteBufferSize, out PWSTR ppszCookie) mut
 			{
-				return VT.CreateResource(&this, pResourceAttributes, ppData, pdwOptimalWriteBufferSize, ppszCookie);
+				return VT.CreateResource(ref this, ref pResourceAttributes, out ppData, out pdwOptimalWriteBufferSize, out ppszCookie);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceResources *self, PWSTR pszObjectID, IPortableDeviceKeyCollection** ppKeys) GetSupportedResources;
-				public new function HRESULT(IPortableDeviceResources *self, PWSTR pszObjectID, PROPERTYKEY* Key, IPortableDeviceValues** ppResourceAttributes) GetResourceAttributes;
-				public new function HRESULT(IPortableDeviceResources *self, PWSTR pszObjectID, PROPERTYKEY* Key, uint32 dwMode, uint32* pdwOptimalBufferSize, IStream** ppStream) GetStream;
-				public new function HRESULT(IPortableDeviceResources *self, PWSTR pszObjectID, IPortableDeviceKeyCollection* pKeys) Delete;
-				public new function HRESULT(IPortableDeviceResources *self) Cancel;
-				public new function HRESULT(IPortableDeviceResources *self, IPortableDeviceValues* pResourceAttributes, IStream** ppData, uint32* pdwOptimalWriteBufferSize, PWSTR* ppszCookie) CreateResource;
+				public new function HRESULT(ref IPortableDeviceResources self, PWSTR pszObjectID, out IPortableDeviceKeyCollection* ppKeys) GetSupportedResources;
+				public new function HRESULT(ref IPortableDeviceResources self, PWSTR pszObjectID, in PROPERTYKEY Key, out IPortableDeviceValues* ppResourceAttributes) GetResourceAttributes;
+				public new function HRESULT(ref IPortableDeviceResources self, PWSTR pszObjectID, in PROPERTYKEY Key, uint32 dwMode, out uint32 pdwOptimalBufferSize, out IStream* ppStream) GetStream;
+				public new function HRESULT(ref IPortableDeviceResources self, PWSTR pszObjectID, ref IPortableDeviceKeyCollection pKeys) Delete;
+				public new function HRESULT(ref IPortableDeviceResources self) Cancel;
+				public new function HRESULT(ref IPortableDeviceResources self, ref IPortableDeviceValues pResourceAttributes, out IStream* ppData, out uint32 pdwOptimalWriteBufferSize, out PWSTR ppszCookie) CreateResource;
 			}
 		}
 		[CRepr]
@@ -1259,64 +1259,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSupportedCommands(IPortableDeviceKeyCollection** ppCommands) mut
+			public HRESULT GetSupportedCommands(out IPortableDeviceKeyCollection* ppCommands) mut
 			{
-				return VT.GetSupportedCommands(&this, ppCommands);
+				return VT.GetSupportedCommands(ref this, out ppCommands);
 			}
-			public HRESULT GetCommandOptions(PROPERTYKEY* Command, IPortableDeviceValues** ppOptions) mut
+			public HRESULT GetCommandOptions(in PROPERTYKEY Command, out IPortableDeviceValues* ppOptions) mut
 			{
-				return VT.GetCommandOptions(&this, Command, ppOptions);
+				return VT.GetCommandOptions(ref this, Command, out ppOptions);
 			}
-			public HRESULT GetFunctionalCategories(IPortableDevicePropVariantCollection** ppCategories) mut
+			public HRESULT GetFunctionalCategories(out IPortableDevicePropVariantCollection* ppCategories) mut
 			{
-				return VT.GetFunctionalCategories(&this, ppCategories);
+				return VT.GetFunctionalCategories(ref this, out ppCategories);
 			}
-			public HRESULT GetFunctionalObjects(Guid* Category, IPortableDevicePropVariantCollection** ppObjectIDs) mut
+			public HRESULT GetFunctionalObjects(in Guid Category, out IPortableDevicePropVariantCollection* ppObjectIDs) mut
 			{
-				return VT.GetFunctionalObjects(&this, Category, ppObjectIDs);
+				return VT.GetFunctionalObjects(ref this, Category, out ppObjectIDs);
 			}
-			public HRESULT GetSupportedContentTypes(Guid* Category, IPortableDevicePropVariantCollection** ppContentTypes) mut
+			public HRESULT GetSupportedContentTypes(in Guid Category, out IPortableDevicePropVariantCollection* ppContentTypes) mut
 			{
-				return VT.GetSupportedContentTypes(&this, Category, ppContentTypes);
+				return VT.GetSupportedContentTypes(ref this, Category, out ppContentTypes);
 			}
-			public HRESULT GetSupportedFormats(Guid* ContentType, IPortableDevicePropVariantCollection** ppFormats) mut
+			public HRESULT GetSupportedFormats(in Guid ContentType, out IPortableDevicePropVariantCollection* ppFormats) mut
 			{
-				return VT.GetSupportedFormats(&this, ContentType, ppFormats);
+				return VT.GetSupportedFormats(ref this, ContentType, out ppFormats);
 			}
-			public HRESULT GetSupportedFormatProperties(Guid* Format, IPortableDeviceKeyCollection** ppKeys) mut
+			public HRESULT GetSupportedFormatProperties(in Guid Format, out IPortableDeviceKeyCollection* ppKeys) mut
 			{
-				return VT.GetSupportedFormatProperties(&this, Format, ppKeys);
+				return VT.GetSupportedFormatProperties(ref this, Format, out ppKeys);
 			}
-			public HRESULT GetFixedPropertyAttributes(Guid* Format, PROPERTYKEY* Key, IPortableDeviceValues** ppAttributes) mut
+			public HRESULT GetFixedPropertyAttributes(in Guid Format, in PROPERTYKEY Key, out IPortableDeviceValues* ppAttributes) mut
 			{
-				return VT.GetFixedPropertyAttributes(&this, Format, Key, ppAttributes);
+				return VT.GetFixedPropertyAttributes(ref this, Format, Key, out ppAttributes);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
-			public HRESULT GetSupportedEvents(IPortableDevicePropVariantCollection** ppEvents) mut
+			public HRESULT GetSupportedEvents(out IPortableDevicePropVariantCollection* ppEvents) mut
 			{
-				return VT.GetSupportedEvents(&this, ppEvents);
+				return VT.GetSupportedEvents(ref this, out ppEvents);
 			}
-			public HRESULT GetEventOptions(Guid* Event, IPortableDeviceValues** ppOptions) mut
+			public HRESULT GetEventOptions(in Guid Event, out IPortableDeviceValues* ppOptions) mut
 			{
-				return VT.GetEventOptions(&this, Event, ppOptions);
+				return VT.GetEventOptions(ref this, Event, out ppOptions);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceCapabilities *self, IPortableDeviceKeyCollection** ppCommands) GetSupportedCommands;
-				public new function HRESULT(IPortableDeviceCapabilities *self, PROPERTYKEY* Command, IPortableDeviceValues** ppOptions) GetCommandOptions;
-				public new function HRESULT(IPortableDeviceCapabilities *self, IPortableDevicePropVariantCollection** ppCategories) GetFunctionalCategories;
-				public new function HRESULT(IPortableDeviceCapabilities *self, Guid* Category, IPortableDevicePropVariantCollection** ppObjectIDs) GetFunctionalObjects;
-				public new function HRESULT(IPortableDeviceCapabilities *self, Guid* Category, IPortableDevicePropVariantCollection** ppContentTypes) GetSupportedContentTypes;
-				public new function HRESULT(IPortableDeviceCapabilities *self, Guid* ContentType, IPortableDevicePropVariantCollection** ppFormats) GetSupportedFormats;
-				public new function HRESULT(IPortableDeviceCapabilities *self, Guid* Format, IPortableDeviceKeyCollection** ppKeys) GetSupportedFormatProperties;
-				public new function HRESULT(IPortableDeviceCapabilities *self, Guid* Format, PROPERTYKEY* Key, IPortableDeviceValues** ppAttributes) GetFixedPropertyAttributes;
-				public new function HRESULT(IPortableDeviceCapabilities *self) Cancel;
-				public new function HRESULT(IPortableDeviceCapabilities *self, IPortableDevicePropVariantCollection** ppEvents) GetSupportedEvents;
-				public new function HRESULT(IPortableDeviceCapabilities *self, Guid* Event, IPortableDeviceValues** ppOptions) GetEventOptions;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, out IPortableDeviceKeyCollection* ppCommands) GetSupportedCommands;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, in PROPERTYKEY Command, out IPortableDeviceValues* ppOptions) GetCommandOptions;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, out IPortableDevicePropVariantCollection* ppCategories) GetFunctionalCategories;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, in Guid Category, out IPortableDevicePropVariantCollection* ppObjectIDs) GetFunctionalObjects;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, in Guid Category, out IPortableDevicePropVariantCollection* ppContentTypes) GetSupportedContentTypes;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, in Guid ContentType, out IPortableDevicePropVariantCollection* ppFormats) GetSupportedFormats;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, in Guid Format, out IPortableDeviceKeyCollection* ppKeys) GetSupportedFormatProperties;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, in Guid Format, in PROPERTYKEY Key, out IPortableDeviceValues* ppAttributes) GetFixedPropertyAttributes;
+				public new function HRESULT(ref IPortableDeviceCapabilities self) Cancel;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, out IPortableDevicePropVariantCollection* ppEvents) GetSupportedEvents;
+				public new function HRESULT(ref IPortableDeviceCapabilities self, in Guid Event, out IPortableDeviceValues* ppOptions) GetEventOptions;
 			}
 		}
 		[CRepr]
@@ -1326,14 +1326,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnEvent(IPortableDeviceValues* pEventParameters) mut
+			public HRESULT OnEvent(ref IPortableDeviceValues pEventParameters) mut
 			{
-				return VT.OnEvent(&this, pEventParameters);
+				return VT.OnEvent(ref this, ref pEventParameters);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceEventCallback *self, IPortableDeviceValues* pEventParameters) OnEvent;
+				public new function HRESULT(ref IPortableDeviceEventCallback self, ref IPortableDeviceValues pEventParameters) OnEvent;
 			}
 		}
 		[CRepr]
@@ -1343,19 +1343,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObjectID(PWSTR* ppszObjectID) mut
+			public HRESULT GetObjectID(out PWSTR ppszObjectID) mut
 			{
-				return VT.GetObjectID(&this, ppszObjectID);
+				return VT.GetObjectID(ref this, out ppszObjectID);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public new function HRESULT(IPortableDeviceDataStream *self, PWSTR* ppszObjectID) GetObjectID;
-				public new function HRESULT(IPortableDeviceDataStream *self) Cancel;
+				public new function HRESULT(ref IPortableDeviceDataStream self, out PWSTR ppszObjectID) GetObjectID;
+				public new function HRESULT(ref IPortableDeviceDataStream self) Cancel;
 			}
 		}
 		[CRepr]
@@ -1367,17 +1367,17 @@ namespace Win32
 			
 			public HRESULT SeekInUnits(LARGE_INTEGER dlibMove, WPD_STREAM_UNITS units, uint32 dwOrigin, ULARGE_INTEGER* plibNewPosition) mut
 			{
-				return VT.SeekInUnits(&this, dlibMove, units, dwOrigin, plibNewPosition);
+				return VT.SeekInUnits(ref this, dlibMove, units, dwOrigin, plibNewPosition);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceUnitsStream *self, LARGE_INTEGER dlibMove, WPD_STREAM_UNITS units, uint32 dwOrigin, ULARGE_INTEGER* plibNewPosition) SeekInUnits;
-				public new function HRESULT(IPortableDeviceUnitsStream *self) Cancel;
+				public new function HRESULT(ref IPortableDeviceUnitsStream self, LARGE_INTEGER dlibMove, WPD_STREAM_UNITS units, uint32 dwOrigin, ULARGE_INTEGER* plibNewPosition) SeekInUnits;
+				public new function HRESULT(ref IPortableDeviceUnitsStream self) Cancel;
 			}
 		}
 		[CRepr]
@@ -1387,34 +1387,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueueGetValuesByObjectList(IPortableDevicePropVariantCollection* pObjectIDs, IPortableDeviceKeyCollection* pKeys, IPortableDevicePropertiesBulkCallback* pCallback, Guid* pContext) mut
+			public HRESULT QueueGetValuesByObjectList(ref IPortableDevicePropVariantCollection pObjectIDs, ref IPortableDeviceKeyCollection pKeys, ref IPortableDevicePropertiesBulkCallback pCallback, out Guid pContext) mut
 			{
-				return VT.QueueGetValuesByObjectList(&this, pObjectIDs, pKeys, pCallback, pContext);
+				return VT.QueueGetValuesByObjectList(ref this, ref pObjectIDs, ref pKeys, ref pCallback, out pContext);
 			}
-			public HRESULT QueueGetValuesByObjectFormat(Guid* pguidObjectFormat, PWSTR pszParentObjectID, uint32 dwDepth, IPortableDeviceKeyCollection* pKeys, IPortableDevicePropertiesBulkCallback* pCallback, Guid* pContext) mut
+			public HRESULT QueueGetValuesByObjectFormat(in Guid pguidObjectFormat, PWSTR pszParentObjectID, uint32 dwDepth, ref IPortableDeviceKeyCollection pKeys, ref IPortableDevicePropertiesBulkCallback pCallback, out Guid pContext) mut
 			{
-				return VT.QueueGetValuesByObjectFormat(&this, pguidObjectFormat, pszParentObjectID, dwDepth, pKeys, pCallback, pContext);
+				return VT.QueueGetValuesByObjectFormat(ref this, pguidObjectFormat, pszParentObjectID, dwDepth, ref pKeys, ref pCallback, out pContext);
 			}
-			public HRESULT QueueSetValuesByObjectList(IPortableDeviceValuesCollection* pObjectValues, IPortableDevicePropertiesBulkCallback* pCallback, Guid* pContext) mut
+			public HRESULT QueueSetValuesByObjectList(ref IPortableDeviceValuesCollection pObjectValues, ref IPortableDevicePropertiesBulkCallback pCallback, out Guid pContext) mut
 			{
-				return VT.QueueSetValuesByObjectList(&this, pObjectValues, pCallback, pContext);
+				return VT.QueueSetValuesByObjectList(ref this, ref pObjectValues, ref pCallback, out pContext);
 			}
-			public HRESULT Start(Guid* pContext) mut
+			public HRESULT Start(in Guid pContext) mut
 			{
-				return VT.Start(&this, pContext);
+				return VT.Start(ref this, pContext);
 			}
-			public HRESULT Cancel(Guid* pContext) mut
+			public HRESULT Cancel(in Guid pContext) mut
 			{
-				return VT.Cancel(&this, pContext);
+				return VT.Cancel(ref this, pContext);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDevicePropertiesBulk *self, IPortableDevicePropVariantCollection* pObjectIDs, IPortableDeviceKeyCollection* pKeys, IPortableDevicePropertiesBulkCallback* pCallback, Guid* pContext) QueueGetValuesByObjectList;
-				public new function HRESULT(IPortableDevicePropertiesBulk *self, Guid* pguidObjectFormat, PWSTR pszParentObjectID, uint32 dwDepth, IPortableDeviceKeyCollection* pKeys, IPortableDevicePropertiesBulkCallback* pCallback, Guid* pContext) QueueGetValuesByObjectFormat;
-				public new function HRESULT(IPortableDevicePropertiesBulk *self, IPortableDeviceValuesCollection* pObjectValues, IPortableDevicePropertiesBulkCallback* pCallback, Guid* pContext) QueueSetValuesByObjectList;
-				public new function HRESULT(IPortableDevicePropertiesBulk *self, Guid* pContext) Start;
-				public new function HRESULT(IPortableDevicePropertiesBulk *self, Guid* pContext) Cancel;
+				public new function HRESULT(ref IPortableDevicePropertiesBulk self, ref IPortableDevicePropVariantCollection pObjectIDs, ref IPortableDeviceKeyCollection pKeys, ref IPortableDevicePropertiesBulkCallback pCallback, out Guid pContext) QueueGetValuesByObjectList;
+				public new function HRESULT(ref IPortableDevicePropertiesBulk self, in Guid pguidObjectFormat, PWSTR pszParentObjectID, uint32 dwDepth, ref IPortableDeviceKeyCollection pKeys, ref IPortableDevicePropertiesBulkCallback pCallback, out Guid pContext) QueueGetValuesByObjectFormat;
+				public new function HRESULT(ref IPortableDevicePropertiesBulk self, ref IPortableDeviceValuesCollection pObjectValues, ref IPortableDevicePropertiesBulkCallback pCallback, out Guid pContext) QueueSetValuesByObjectList;
+				public new function HRESULT(ref IPortableDevicePropertiesBulk self, in Guid pContext) Start;
+				public new function HRESULT(ref IPortableDevicePropertiesBulk self, in Guid pContext) Cancel;
 			}
 		}
 		[CRepr]
@@ -1424,24 +1424,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnStart(Guid* pContext) mut
+			public HRESULT OnStart(in Guid pContext) mut
 			{
-				return VT.OnStart(&this, pContext);
+				return VT.OnStart(ref this, pContext);
 			}
-			public HRESULT OnProgress(Guid* pContext, IPortableDeviceValuesCollection* pResults) mut
+			public HRESULT OnProgress(in Guid pContext, ref IPortableDeviceValuesCollection pResults) mut
 			{
-				return VT.OnProgress(&this, pContext, pResults);
+				return VT.OnProgress(ref this, pContext, ref pResults);
 			}
-			public HRESULT OnEnd(Guid* pContext, HRESULT hrStatus) mut
+			public HRESULT OnEnd(in Guid pContext, HRESULT hrStatus) mut
 			{
-				return VT.OnEnd(&this, pContext, hrStatus);
+				return VT.OnEnd(ref this, pContext, hrStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDevicePropertiesBulkCallback *self, Guid* pContext) OnStart;
-				public new function HRESULT(IPortableDevicePropertiesBulkCallback *self, Guid* pContext, IPortableDeviceValuesCollection* pResults) OnProgress;
-				public new function HRESULT(IPortableDevicePropertiesBulkCallback *self, Guid* pContext, HRESULT hrStatus) OnEnd;
+				public new function HRESULT(ref IPortableDevicePropertiesBulkCallback self, in Guid pContext) OnStart;
+				public new function HRESULT(ref IPortableDevicePropertiesBulkCallback self, in Guid pContext, ref IPortableDeviceValuesCollection pResults) OnProgress;
+				public new function HRESULT(ref IPortableDevicePropertiesBulkCallback self, in Guid pContext, HRESULT hrStatus) OnEnd;
 			}
 		}
 		[CRepr]
@@ -1451,19 +1451,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceServices(PWSTR pszPnPDeviceID, Guid* guidServiceCategory, PWSTR* pServices, uint32* pcServices) mut
+			public HRESULT GetDeviceServices(PWSTR pszPnPDeviceID, in Guid guidServiceCategory, out PWSTR pServices, out uint32 pcServices) mut
 			{
-				return VT.GetDeviceServices(&this, pszPnPDeviceID, guidServiceCategory, pServices, pcServices);
+				return VT.GetDeviceServices(ref this, pszPnPDeviceID, guidServiceCategory, out pServices, out pcServices);
 			}
-			public HRESULT GetDeviceForService(PWSTR pszPnPServiceID, PWSTR* ppszPnPDeviceID) mut
+			public HRESULT GetDeviceForService(PWSTR pszPnPServiceID, out PWSTR ppszPnPDeviceID) mut
 			{
-				return VT.GetDeviceForService(&this, pszPnPServiceID, ppszPnPDeviceID);
+				return VT.GetDeviceForService(ref this, pszPnPServiceID, out ppszPnPDeviceID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceServiceManager *self, PWSTR pszPnPDeviceID, Guid* guidServiceCategory, PWSTR* pServices, uint32* pcServices) GetDeviceServices;
-				public new function HRESULT(IPortableDeviceServiceManager *self, PWSTR pszPnPServiceID, PWSTR* ppszPnPDeviceID) GetDeviceForService;
+				public new function HRESULT(ref IPortableDeviceServiceManager self, PWSTR pszPnPDeviceID, in Guid guidServiceCategory, out PWSTR pServices, out uint32 pcServices) GetDeviceServices;
+				public new function HRESULT(ref IPortableDeviceServiceManager self, PWSTR pszPnPServiceID, out PWSTR ppszPnPDeviceID) GetDeviceForService;
 			}
 		}
 		[CRepr]
@@ -1473,64 +1473,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(PWSTR pszPnPServiceID, IPortableDeviceValues* pClientInfo) mut
+			public HRESULT Open(PWSTR pszPnPServiceID, ref IPortableDeviceValues pClientInfo) mut
 			{
-				return VT.Open(&this, pszPnPServiceID, pClientInfo);
+				return VT.Open(ref this, pszPnPServiceID, ref pClientInfo);
 			}
-			public HRESULT Capabilities(IPortableDeviceServiceCapabilities** ppCapabilities) mut
+			public HRESULT Capabilities(out IPortableDeviceServiceCapabilities* ppCapabilities) mut
 			{
-				return VT.Capabilities(&this, ppCapabilities);
+				return VT.Capabilities(ref this, out ppCapabilities);
 			}
-			public HRESULT Content(IPortableDeviceContent2** ppContent) mut
+			public HRESULT Content(out IPortableDeviceContent2* ppContent) mut
 			{
-				return VT.Content(&this, ppContent);
+				return VT.Content(ref this, out ppContent);
 			}
-			public HRESULT Methods(IPortableDeviceServiceMethods** ppMethods) mut
+			public HRESULT Methods(out IPortableDeviceServiceMethods* ppMethods) mut
 			{
-				return VT.Methods(&this, ppMethods);
+				return VT.Methods(ref this, out ppMethods);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
-			public HRESULT GetServiceObjectID(PWSTR* ppszServiceObjectID) mut
+			public HRESULT GetServiceObjectID(out PWSTR ppszServiceObjectID) mut
 			{
-				return VT.GetServiceObjectID(&this, ppszServiceObjectID);
+				return VT.GetServiceObjectID(ref this, out ppszServiceObjectID);
 			}
-			public HRESULT GetPnPServiceID(PWSTR* ppszPnPServiceID) mut
+			public HRESULT GetPnPServiceID(out PWSTR ppszPnPServiceID) mut
 			{
-				return VT.GetPnPServiceID(&this, ppszPnPServiceID);
+				return VT.GetPnPServiceID(ref this, out ppszPnPServiceID);
 			}
-			public HRESULT Advise(uint32 dwFlags, IPortableDeviceEventCallback* pCallback, IPortableDeviceValues* pParameters, PWSTR* ppszCookie) mut
+			public HRESULT Advise(uint32 dwFlags, ref IPortableDeviceEventCallback pCallback, ref IPortableDeviceValues pParameters, out PWSTR ppszCookie) mut
 			{
-				return VT.Advise(&this, dwFlags, pCallback, pParameters, ppszCookie);
+				return VT.Advise(ref this, dwFlags, ref pCallback, ref pParameters, out ppszCookie);
 			}
 			public HRESULT Unadvise(PWSTR pszCookie) mut
 			{
-				return VT.Unadvise(&this, pszCookie);
+				return VT.Unadvise(ref this, pszCookie);
 			}
-			public HRESULT SendCommand(uint32 dwFlags, IPortableDeviceValues* pParameters, IPortableDeviceValues** ppResults) mut
+			public HRESULT SendCommand(uint32 dwFlags, ref IPortableDeviceValues pParameters, out IPortableDeviceValues* ppResults) mut
 			{
-				return VT.SendCommand(&this, dwFlags, pParameters, ppResults);
+				return VT.SendCommand(ref this, dwFlags, ref pParameters, out ppResults);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceService *self, PWSTR pszPnPServiceID, IPortableDeviceValues* pClientInfo) Open;
-				public new function HRESULT(IPortableDeviceService *self, IPortableDeviceServiceCapabilities** ppCapabilities) Capabilities;
-				public new function HRESULT(IPortableDeviceService *self, IPortableDeviceContent2** ppContent) Content;
-				public new function HRESULT(IPortableDeviceService *self, IPortableDeviceServiceMethods** ppMethods) Methods;
-				public new function HRESULT(IPortableDeviceService *self) Cancel;
-				public new function HRESULT(IPortableDeviceService *self) Close;
-				public new function HRESULT(IPortableDeviceService *self, PWSTR* ppszServiceObjectID) GetServiceObjectID;
-				public new function HRESULT(IPortableDeviceService *self, PWSTR* ppszPnPServiceID) GetPnPServiceID;
-				public new function HRESULT(IPortableDeviceService *self, uint32 dwFlags, IPortableDeviceEventCallback* pCallback, IPortableDeviceValues* pParameters, PWSTR* ppszCookie) Advise;
-				public new function HRESULT(IPortableDeviceService *self, PWSTR pszCookie) Unadvise;
-				public new function HRESULT(IPortableDeviceService *self, uint32 dwFlags, IPortableDeviceValues* pParameters, IPortableDeviceValues** ppResults) SendCommand;
+				public new function HRESULT(ref IPortableDeviceService self, PWSTR pszPnPServiceID, ref IPortableDeviceValues pClientInfo) Open;
+				public new function HRESULT(ref IPortableDeviceService self, out IPortableDeviceServiceCapabilities* ppCapabilities) Capabilities;
+				public new function HRESULT(ref IPortableDeviceService self, out IPortableDeviceContent2* ppContent) Content;
+				public new function HRESULT(ref IPortableDeviceService self, out IPortableDeviceServiceMethods* ppMethods) Methods;
+				public new function HRESULT(ref IPortableDeviceService self) Cancel;
+				public new function HRESULT(ref IPortableDeviceService self) Close;
+				public new function HRESULT(ref IPortableDeviceService self, out PWSTR ppszServiceObjectID) GetServiceObjectID;
+				public new function HRESULT(ref IPortableDeviceService self, out PWSTR ppszPnPServiceID) GetPnPServiceID;
+				public new function HRESULT(ref IPortableDeviceService self, uint32 dwFlags, ref IPortableDeviceEventCallback pCallback, ref IPortableDeviceValues pParameters, out PWSTR ppszCookie) Advise;
+				public new function HRESULT(ref IPortableDeviceService self, PWSTR pszCookie) Unadvise;
+				public new function HRESULT(ref IPortableDeviceService self, uint32 dwFlags, ref IPortableDeviceValues pParameters, out IPortableDeviceValues* ppResults) SendCommand;
 			}
 		}
 		[CRepr]
@@ -1540,89 +1540,89 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSupportedMethods(IPortableDevicePropVariantCollection** ppMethods) mut
+			public HRESULT GetSupportedMethods(out IPortableDevicePropVariantCollection* ppMethods) mut
 			{
-				return VT.GetSupportedMethods(&this, ppMethods);
+				return VT.GetSupportedMethods(ref this, out ppMethods);
 			}
-			public HRESULT GetSupportedMethodsByFormat(Guid* Format, IPortableDevicePropVariantCollection** ppMethods) mut
+			public HRESULT GetSupportedMethodsByFormat(in Guid Format, out IPortableDevicePropVariantCollection* ppMethods) mut
 			{
-				return VT.GetSupportedMethodsByFormat(&this, Format, ppMethods);
+				return VT.GetSupportedMethodsByFormat(ref this, Format, out ppMethods);
 			}
-			public HRESULT GetMethodAttributes(Guid* Method, IPortableDeviceValues** ppAttributes) mut
+			public HRESULT GetMethodAttributes(in Guid Method, out IPortableDeviceValues* ppAttributes) mut
 			{
-				return VT.GetMethodAttributes(&this, Method, ppAttributes);
+				return VT.GetMethodAttributes(ref this, Method, out ppAttributes);
 			}
-			public HRESULT GetMethodParameterAttributes(Guid* Method, PROPERTYKEY* Parameter, IPortableDeviceValues** ppAttributes) mut
+			public HRESULT GetMethodParameterAttributes(in Guid Method, in PROPERTYKEY Parameter, out IPortableDeviceValues* ppAttributes) mut
 			{
-				return VT.GetMethodParameterAttributes(&this, Method, Parameter, ppAttributes);
+				return VT.GetMethodParameterAttributes(ref this, Method, Parameter, out ppAttributes);
 			}
-			public HRESULT GetSupportedFormats(IPortableDevicePropVariantCollection** ppFormats) mut
+			public HRESULT GetSupportedFormats(out IPortableDevicePropVariantCollection* ppFormats) mut
 			{
-				return VT.GetSupportedFormats(&this, ppFormats);
+				return VT.GetSupportedFormats(ref this, out ppFormats);
 			}
-			public HRESULT GetFormatAttributes(Guid* Format, IPortableDeviceValues** ppAttributes) mut
+			public HRESULT GetFormatAttributes(in Guid Format, out IPortableDeviceValues* ppAttributes) mut
 			{
-				return VT.GetFormatAttributes(&this, Format, ppAttributes);
+				return VT.GetFormatAttributes(ref this, Format, out ppAttributes);
 			}
-			public HRESULT GetSupportedFormatProperties(Guid* Format, IPortableDeviceKeyCollection** ppKeys) mut
+			public HRESULT GetSupportedFormatProperties(in Guid Format, out IPortableDeviceKeyCollection* ppKeys) mut
 			{
-				return VT.GetSupportedFormatProperties(&this, Format, ppKeys);
+				return VT.GetSupportedFormatProperties(ref this, Format, out ppKeys);
 			}
-			public HRESULT GetFormatPropertyAttributes(Guid* Format, PROPERTYKEY* Property, IPortableDeviceValues** ppAttributes) mut
+			public HRESULT GetFormatPropertyAttributes(in Guid Format, in PROPERTYKEY Property, out IPortableDeviceValues* ppAttributes) mut
 			{
-				return VT.GetFormatPropertyAttributes(&this, Format, Property, ppAttributes);
+				return VT.GetFormatPropertyAttributes(ref this, Format, Property, out ppAttributes);
 			}
-			public HRESULT GetSupportedEvents(IPortableDevicePropVariantCollection** ppEvents) mut
+			public HRESULT GetSupportedEvents(out IPortableDevicePropVariantCollection* ppEvents) mut
 			{
-				return VT.GetSupportedEvents(&this, ppEvents);
+				return VT.GetSupportedEvents(ref this, out ppEvents);
 			}
-			public HRESULT GetEventAttributes(Guid* Event, IPortableDeviceValues** ppAttributes) mut
+			public HRESULT GetEventAttributes(in Guid Event, out IPortableDeviceValues* ppAttributes) mut
 			{
-				return VT.GetEventAttributes(&this, Event, ppAttributes);
+				return VT.GetEventAttributes(ref this, Event, out ppAttributes);
 			}
-			public HRESULT GetEventParameterAttributes(Guid* Event, PROPERTYKEY* Parameter, IPortableDeviceValues** ppAttributes) mut
+			public HRESULT GetEventParameterAttributes(in Guid Event, in PROPERTYKEY Parameter, out IPortableDeviceValues* ppAttributes) mut
 			{
-				return VT.GetEventParameterAttributes(&this, Event, Parameter, ppAttributes);
+				return VT.GetEventParameterAttributes(ref this, Event, Parameter, out ppAttributes);
 			}
-			public HRESULT GetInheritedServices(uint32 dwInheritanceType, IPortableDevicePropVariantCollection** ppServices) mut
+			public HRESULT GetInheritedServices(uint32 dwInheritanceType, out IPortableDevicePropVariantCollection* ppServices) mut
 			{
-				return VT.GetInheritedServices(&this, dwInheritanceType, ppServices);
+				return VT.GetInheritedServices(ref this, dwInheritanceType, out ppServices);
 			}
-			public HRESULT GetFormatRenderingProfiles(Guid* Format, IPortableDeviceValuesCollection** ppRenderingProfiles) mut
+			public HRESULT GetFormatRenderingProfiles(in Guid Format, out IPortableDeviceValuesCollection* ppRenderingProfiles) mut
 			{
-				return VT.GetFormatRenderingProfiles(&this, Format, ppRenderingProfiles);
+				return VT.GetFormatRenderingProfiles(ref this, Format, out ppRenderingProfiles);
 			}
-			public HRESULT GetSupportedCommands(IPortableDeviceKeyCollection** ppCommands) mut
+			public HRESULT GetSupportedCommands(out IPortableDeviceKeyCollection* ppCommands) mut
 			{
-				return VT.GetSupportedCommands(&this, ppCommands);
+				return VT.GetSupportedCommands(ref this, out ppCommands);
 			}
-			public HRESULT GetCommandOptions(PROPERTYKEY* Command, IPortableDeviceValues** ppOptions) mut
+			public HRESULT GetCommandOptions(in PROPERTYKEY Command, out IPortableDeviceValues* ppOptions) mut
 			{
-				return VT.GetCommandOptions(&this, Command, ppOptions);
+				return VT.GetCommandOptions(ref this, Command, out ppOptions);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, IPortableDevicePropVariantCollection** ppMethods) GetSupportedMethods;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, IPortableDevicePropVariantCollection** ppMethods) GetSupportedMethodsByFormat;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Method, IPortableDeviceValues** ppAttributes) GetMethodAttributes;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Method, PROPERTYKEY* Parameter, IPortableDeviceValues** ppAttributes) GetMethodParameterAttributes;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, IPortableDevicePropVariantCollection** ppFormats) GetSupportedFormats;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, IPortableDeviceValues** ppAttributes) GetFormatAttributes;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, IPortableDeviceKeyCollection** ppKeys) GetSupportedFormatProperties;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, PROPERTYKEY* Property, IPortableDeviceValues** ppAttributes) GetFormatPropertyAttributes;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, IPortableDevicePropVariantCollection** ppEvents) GetSupportedEvents;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Event, IPortableDeviceValues** ppAttributes) GetEventAttributes;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Event, PROPERTYKEY* Parameter, IPortableDeviceValues** ppAttributes) GetEventParameterAttributes;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, uint32 dwInheritanceType, IPortableDevicePropVariantCollection** ppServices) GetInheritedServices;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, Guid* Format, IPortableDeviceValuesCollection** ppRenderingProfiles) GetFormatRenderingProfiles;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, IPortableDeviceKeyCollection** ppCommands) GetSupportedCommands;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self, PROPERTYKEY* Command, IPortableDeviceValues** ppOptions) GetCommandOptions;
-				public new function HRESULT(IPortableDeviceServiceCapabilities *self) Cancel;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, out IPortableDevicePropVariantCollection* ppMethods) GetSupportedMethods;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in Guid Format, out IPortableDevicePropVariantCollection* ppMethods) GetSupportedMethodsByFormat;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in Guid Method, out IPortableDeviceValues* ppAttributes) GetMethodAttributes;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in Guid Method, in PROPERTYKEY Parameter, out IPortableDeviceValues* ppAttributes) GetMethodParameterAttributes;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, out IPortableDevicePropVariantCollection* ppFormats) GetSupportedFormats;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in Guid Format, out IPortableDeviceValues* ppAttributes) GetFormatAttributes;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in Guid Format, out IPortableDeviceKeyCollection* ppKeys) GetSupportedFormatProperties;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in Guid Format, in PROPERTYKEY Property, out IPortableDeviceValues* ppAttributes) GetFormatPropertyAttributes;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, out IPortableDevicePropVariantCollection* ppEvents) GetSupportedEvents;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in Guid Event, out IPortableDeviceValues* ppAttributes) GetEventAttributes;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in Guid Event, in PROPERTYKEY Parameter, out IPortableDeviceValues* ppAttributes) GetEventParameterAttributes;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, uint32 dwInheritanceType, out IPortableDevicePropVariantCollection* ppServices) GetInheritedServices;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in Guid Format, out IPortableDeviceValuesCollection* ppRenderingProfiles) GetFormatRenderingProfiles;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, out IPortableDeviceKeyCollection* ppCommands) GetSupportedCommands;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self, in PROPERTYKEY Command, out IPortableDeviceValues* ppOptions) GetCommandOptions;
+				public new function HRESULT(ref IPortableDeviceServiceCapabilities self) Cancel;
 			}
 		}
 		[CRepr]
@@ -1632,24 +1632,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Invoke(Guid* Method, IPortableDeviceValues* pParameters, IPortableDeviceValues** ppResults) mut
+			public HRESULT Invoke(in Guid Method, ref IPortableDeviceValues pParameters, out IPortableDeviceValues* ppResults) mut
 			{
-				return VT.Invoke(&this, Method, pParameters, ppResults);
+				return VT.Invoke(ref this, Method, ref pParameters, out ppResults);
 			}
-			public HRESULT InvokeAsync(Guid* Method, IPortableDeviceValues* pParameters, IPortableDeviceServiceMethodCallback* pCallback) mut
+			public HRESULT InvokeAsync(in Guid Method, ref IPortableDeviceValues pParameters, ref IPortableDeviceServiceMethodCallback pCallback) mut
 			{
-				return VT.InvokeAsync(&this, Method, pParameters, pCallback);
+				return VT.InvokeAsync(ref this, Method, ref pParameters, ref pCallback);
 			}
-			public HRESULT Cancel(IPortableDeviceServiceMethodCallback* pCallback) mut
+			public HRESULT Cancel(ref IPortableDeviceServiceMethodCallback pCallback) mut
 			{
-				return VT.Cancel(&this, pCallback);
+				return VT.Cancel(ref this, ref pCallback);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceServiceMethods *self, Guid* Method, IPortableDeviceValues* pParameters, IPortableDeviceValues** ppResults) Invoke;
-				public new function HRESULT(IPortableDeviceServiceMethods *self, Guid* Method, IPortableDeviceValues* pParameters, IPortableDeviceServiceMethodCallback* pCallback) InvokeAsync;
-				public new function HRESULT(IPortableDeviceServiceMethods *self, IPortableDeviceServiceMethodCallback* pCallback) Cancel;
+				public new function HRESULT(ref IPortableDeviceServiceMethods self, in Guid Method, ref IPortableDeviceValues pParameters, out IPortableDeviceValues* ppResults) Invoke;
+				public new function HRESULT(ref IPortableDeviceServiceMethods self, in Guid Method, ref IPortableDeviceValues pParameters, ref IPortableDeviceServiceMethodCallback pCallback) InvokeAsync;
+				public new function HRESULT(ref IPortableDeviceServiceMethods self, ref IPortableDeviceServiceMethodCallback pCallback) Cancel;
 			}
 		}
 		[CRepr]
@@ -1659,14 +1659,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnComplete(HRESULT hrStatus, IPortableDeviceValues* pResults) mut
+			public HRESULT OnComplete(HRESULT hrStatus, ref IPortableDeviceValues pResults) mut
 			{
-				return VT.OnComplete(&this, hrStatus, pResults);
+				return VT.OnComplete(ref this, hrStatus, ref pResults);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceServiceMethodCallback *self, HRESULT hrStatus, IPortableDeviceValues* pResults) OnComplete;
+				public new function HRESULT(ref IPortableDeviceServiceMethodCallback self, HRESULT hrStatus, ref IPortableDeviceValues pResults) OnComplete;
 			}
 		}
 		[CRepr]
@@ -1676,19 +1676,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenAsync(PWSTR pszPnPServiceID, IPortableDeviceValues* pClientInfo, IPortableDeviceServiceOpenCallback* pCallback) mut
+			public HRESULT OpenAsync(PWSTR pszPnPServiceID, ref IPortableDeviceValues pClientInfo, ref IPortableDeviceServiceOpenCallback pCallback) mut
 			{
-				return VT.OpenAsync(&this, pszPnPServiceID, pClientInfo, pCallback);
+				return VT.OpenAsync(ref this, pszPnPServiceID, ref pClientInfo, ref pCallback);
 			}
 			public HRESULT CancelOpenAsync() mut
 			{
-				return VT.CancelOpenAsync(&this);
+				return VT.CancelOpenAsync(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceServiceActivation *self, PWSTR pszPnPServiceID, IPortableDeviceValues* pClientInfo, IPortableDeviceServiceOpenCallback* pCallback) OpenAsync;
-				public new function HRESULT(IPortableDeviceServiceActivation *self) CancelOpenAsync;
+				public new function HRESULT(ref IPortableDeviceServiceActivation self, PWSTR pszPnPServiceID, ref IPortableDeviceValues pClientInfo, ref IPortableDeviceServiceOpenCallback pCallback) OpenAsync;
+				public new function HRESULT(ref IPortableDeviceServiceActivation self) CancelOpenAsync;
 			}
 		}
 		[CRepr]
@@ -1700,12 +1700,12 @@ namespace Win32
 			
 			public HRESULT OnComplete(HRESULT hrStatus) mut
 			{
-				return VT.OnComplete(&this, hrStatus);
+				return VT.OnComplete(ref this, hrStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceServiceOpenCallback *self, HRESULT hrStatus) OnComplete;
+				public new function HRESULT(ref IPortableDeviceServiceOpenCallback self, HRESULT hrStatus) OnComplete;
 			}
 		}
 		[CRepr]
@@ -1715,14 +1715,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceDispatch(PWSTR pszPnPDeviceID, IDispatch** ppDeviceDispatch) mut
+			public HRESULT GetDeviceDispatch(PWSTR pszPnPDeviceID, out IDispatch* ppDeviceDispatch) mut
 			{
-				return VT.GetDeviceDispatch(&this, pszPnPDeviceID, ppDeviceDispatch);
+				return VT.GetDeviceDispatch(ref this, pszPnPDeviceID, out ppDeviceDispatch);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceDispatchFactory *self, PWSTR pszPnPDeviceID, IDispatch** ppDeviceDispatch) GetDeviceDispatch;
+				public new function HRESULT(ref IPortableDeviceDispatchFactory self, PWSTR pszPnPDeviceID, out IDispatch* ppDeviceDispatch) GetDeviceDispatch;
 			}
 		}
 		[CRepr]
@@ -1732,19 +1732,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceFromId(BSTR deviceId, IDispatch** ppDevice) mut
+			public HRESULT GetDeviceFromId(BSTR deviceId, out IDispatch* ppDevice) mut
 			{
-				return VT.GetDeviceFromId(&this, deviceId, ppDevice);
+				return VT.GetDeviceFromId(ref this, deviceId, out ppDevice);
 			}
-			public HRESULT GetDeviceFromIdAsync(BSTR deviceId, IDispatch* pCompletionHandler, IDispatch* pErrorHandler) mut
+			public HRESULT GetDeviceFromIdAsync(BSTR deviceId, ref IDispatch pCompletionHandler, IDispatch* pErrorHandler) mut
 			{
-				return VT.GetDeviceFromIdAsync(&this, deviceId, pCompletionHandler, pErrorHandler);
+				return VT.GetDeviceFromIdAsync(ref this, deviceId, ref pCompletionHandler, pErrorHandler);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPortableDeviceWebControl *self, BSTR deviceId, IDispatch** ppDevice) GetDeviceFromId;
-				public new function HRESULT(IPortableDeviceWebControl *self, BSTR deviceId, IDispatch* pCompletionHandler, IDispatch* pErrorHandler) GetDeviceFromIdAsync;
+				public new function HRESULT(ref IPortableDeviceWebControl self, BSTR deviceId, out IDispatch* ppDevice) GetDeviceFromId;
+				public new function HRESULT(ref IPortableDeviceWebControl self, BSTR deviceId, ref IDispatch pCompletionHandler, IDispatch* pErrorHandler) GetDeviceFromIdAsync;
 			}
 		}
 		[CRepr]
@@ -1754,29 +1754,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cRequested, IPortableDeviceConnector** pConnectors, uint32* pcFetched) mut
+			public HRESULT Next(uint32 cRequested, IPortableDeviceConnector** pConnectors, out uint32 pcFetched) mut
 			{
-				return VT.Next(&this, cRequested, pConnectors, pcFetched);
+				return VT.Next(ref this, cRequested, pConnectors, out pcFetched);
 			}
 			public HRESULT Skip(uint32 cConnectors) mut
 			{
-				return VT.Skip(&this, cConnectors);
+				return VT.Skip(ref this, cConnectors);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT Clone(IEnumPortableDeviceConnectors** ppEnum) mut
+			public HRESULT Clone(out IEnumPortableDeviceConnectors* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumPortableDeviceConnectors *self, uint32 cRequested, IPortableDeviceConnector** pConnectors, uint32* pcFetched) Next;
-				public new function HRESULT(IEnumPortableDeviceConnectors *self, uint32 cConnectors) Skip;
-				public new function HRESULT(IEnumPortableDeviceConnectors *self) Reset;
-				public new function HRESULT(IEnumPortableDeviceConnectors *self, IEnumPortableDeviceConnectors** ppEnum) Clone;
+				public new function HRESULT(ref IEnumPortableDeviceConnectors self, uint32 cRequested, IPortableDeviceConnector** pConnectors, out uint32 pcFetched) Next;
+				public new function HRESULT(ref IEnumPortableDeviceConnectors self, uint32 cConnectors) Skip;
+				public new function HRESULT(ref IEnumPortableDeviceConnectors self) Reset;
+				public new function HRESULT(ref IEnumPortableDeviceConnectors self, out IEnumPortableDeviceConnectors* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1786,39 +1786,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Connect(IConnectionRequestCallback* pCallback) mut
+			public HRESULT Connect(ref IConnectionRequestCallback pCallback) mut
 			{
-				return VT.Connect(&this, pCallback);
+				return VT.Connect(ref this, ref pCallback);
 			}
-			public HRESULT Disconnect(IConnectionRequestCallback* pCallback) mut
+			public HRESULT Disconnect(ref IConnectionRequestCallback pCallback) mut
 			{
-				return VT.Disconnect(&this, pCallback);
+				return VT.Disconnect(ref this, ref pCallback);
 			}
-			public HRESULT Cancel(IConnectionRequestCallback* pCallback) mut
+			public HRESULT Cancel(ref IConnectionRequestCallback pCallback) mut
 			{
-				return VT.Cancel(&this, pCallback);
+				return VT.Cancel(ref this, ref pCallback);
 			}
-			public HRESULT GetProperty(DEVPROPKEY* pPropertyKey, uint32* pPropertyType, uint8** ppData, uint32* pcbData) mut
+			public HRESULT GetProperty(in DEVPROPKEY pPropertyKey, out uint32 pPropertyType, uint8** ppData, out uint32 pcbData) mut
 			{
-				return VT.GetProperty(&this, pPropertyKey, pPropertyType, ppData, pcbData);
+				return VT.GetProperty(ref this, pPropertyKey, out pPropertyType, ppData, out pcbData);
 			}
-			public HRESULT SetProperty(DEVPROPKEY* pPropertyKey, uint32 PropertyType, uint8* pData, uint32 cbData) mut
+			public HRESULT SetProperty(in DEVPROPKEY pPropertyKey, uint32 PropertyType, uint8* pData, uint32 cbData) mut
 			{
-				return VT.SetProperty(&this, pPropertyKey, PropertyType, pData, cbData);
+				return VT.SetProperty(ref this, pPropertyKey, PropertyType, pData, cbData);
 			}
-			public HRESULT GetPnPID(PWSTR* ppwszPnPID) mut
+			public HRESULT GetPnPID(out PWSTR ppwszPnPID) mut
 			{
-				return VT.GetPnPID(&this, ppwszPnPID);
+				return VT.GetPnPID(ref this, out ppwszPnPID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPortableDeviceConnector *self, IConnectionRequestCallback* pCallback) Connect;
-				public new function HRESULT(IPortableDeviceConnector *self, IConnectionRequestCallback* pCallback) Disconnect;
-				public new function HRESULT(IPortableDeviceConnector *self, IConnectionRequestCallback* pCallback) Cancel;
-				public new function HRESULT(IPortableDeviceConnector *self, DEVPROPKEY* pPropertyKey, uint32* pPropertyType, uint8** ppData, uint32* pcbData) GetProperty;
-				public new function HRESULT(IPortableDeviceConnector *self, DEVPROPKEY* pPropertyKey, uint32 PropertyType, uint8* pData, uint32 cbData) SetProperty;
-				public new function HRESULT(IPortableDeviceConnector *self, PWSTR* ppwszPnPID) GetPnPID;
+				public new function HRESULT(ref IPortableDeviceConnector self, ref IConnectionRequestCallback pCallback) Connect;
+				public new function HRESULT(ref IPortableDeviceConnector self, ref IConnectionRequestCallback pCallback) Disconnect;
+				public new function HRESULT(ref IPortableDeviceConnector self, ref IConnectionRequestCallback pCallback) Cancel;
+				public new function HRESULT(ref IPortableDeviceConnector self, in DEVPROPKEY pPropertyKey, out uint32 pPropertyType, uint8** ppData, out uint32 pcbData) GetProperty;
+				public new function HRESULT(ref IPortableDeviceConnector self, in DEVPROPKEY pPropertyKey, uint32 PropertyType, uint8* pData, uint32 cbData) SetProperty;
+				public new function HRESULT(ref IPortableDeviceConnector self, out PWSTR ppwszPnPID) GetPnPID;
 			}
 		}
 		[CRepr]
@@ -1830,12 +1830,12 @@ namespace Win32
 			
 			public HRESULT OnComplete(HRESULT hrStatus) mut
 			{
-				return VT.OnComplete(&this, hrStatus);
+				return VT.OnComplete(ref this, hrStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IConnectionRequestCallback *self, HRESULT hrStatus) OnComplete;
+				public new function HRESULT(ref IConnectionRequestCallback self, HRESULT hrStatus) OnComplete;
 			}
 		}
 		[CRepr]
@@ -1845,19 +1845,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRadioInstances(IRadioInstanceCollection** ppCollection) mut
+			public HRESULT GetRadioInstances(out IRadioInstanceCollection* ppCollection) mut
 			{
-				return VT.GetRadioInstances(&this, ppCollection);
+				return VT.GetRadioInstances(ref this, out ppCollection);
 			}
 			public HRESULT OnSystemRadioStateChange(SYSTEM_RADIO_STATE sysRadioState, uint32 uTimeoutSec) mut
 			{
-				return VT.OnSystemRadioStateChange(&this, sysRadioState, uTimeoutSec);
+				return VT.OnSystemRadioStateChange(ref this, sysRadioState, uTimeoutSec);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMediaRadioManager *self, IRadioInstanceCollection** ppCollection) GetRadioInstances;
-				public new function HRESULT(IMediaRadioManager *self, SYSTEM_RADIO_STATE sysRadioState, uint32 uTimeoutSec) OnSystemRadioStateChange;
+				public new function HRESULT(ref IMediaRadioManager self, out IRadioInstanceCollection* ppCollection) GetRadioInstances;
+				public new function HRESULT(ref IMediaRadioManager self, SYSTEM_RADIO_STATE sysRadioState, uint32 uTimeoutSec) OnSystemRadioStateChange;
 			}
 		}
 		[CRepr]
@@ -1867,19 +1867,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* pcInstance) mut
+			public HRESULT GetCount(out uint32 pcInstance) mut
 			{
-				return VT.GetCount(&this, pcInstance);
+				return VT.GetCount(ref this, out pcInstance);
 			}
-			public HRESULT GetAt(uint32 uIndex, IRadioInstance** ppRadioInstance) mut
+			public HRESULT GetAt(uint32 uIndex, out IRadioInstance* ppRadioInstance) mut
 			{
-				return VT.GetAt(&this, uIndex, ppRadioInstance);
+				return VT.GetAt(ref this, uIndex, out ppRadioInstance);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRadioInstanceCollection *self, uint32* pcInstance) GetCount;
-				public new function HRESULT(IRadioInstanceCollection *self, uint32 uIndex, IRadioInstance** ppRadioInstance) GetAt;
+				public new function HRESULT(ref IRadioInstanceCollection self, out uint32 pcInstance) GetCount;
+				public new function HRESULT(ref IRadioInstanceCollection self, uint32 uIndex, out IRadioInstance* ppRadioInstance) GetAt;
 			}
 		}
 		[CRepr]
@@ -1889,44 +1889,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRadioManagerSignature(Guid* pguidSignature) mut
+			public HRESULT GetRadioManagerSignature(out Guid pguidSignature) mut
 			{
-				return VT.GetRadioManagerSignature(&this, pguidSignature);
+				return VT.GetRadioManagerSignature(ref this, out pguidSignature);
 			}
-			public HRESULT GetInstanceSignature(BSTR* pbstrId) mut
+			public HRESULT GetInstanceSignature(out BSTR pbstrId) mut
 			{
-				return VT.GetInstanceSignature(&this, pbstrId);
+				return VT.GetInstanceSignature(ref this, out pbstrId);
 			}
-			public HRESULT GetFriendlyName(uint32 lcid, BSTR* pbstrName) mut
+			public HRESULT GetFriendlyName(uint32 lcid, out BSTR pbstrName) mut
 			{
-				return VT.GetFriendlyName(&this, lcid, pbstrName);
+				return VT.GetFriendlyName(ref this, lcid, out pbstrName);
 			}
-			public HRESULT GetRadioState(DEVICE_RADIO_STATE* pRadioState) mut
+			public HRESULT GetRadioState(out DEVICE_RADIO_STATE pRadioState) mut
 			{
-				return VT.GetRadioState(&this, pRadioState);
+				return VT.GetRadioState(ref this, out pRadioState);
 			}
 			public HRESULT SetRadioState(DEVICE_RADIO_STATE radioState, uint32 uTimeoutSec) mut
 			{
-				return VT.SetRadioState(&this, radioState, uTimeoutSec);
+				return VT.SetRadioState(ref this, radioState, uTimeoutSec);
 			}
 			public BOOL IsMultiComm() mut
 			{
-				return VT.IsMultiComm(&this);
+				return VT.IsMultiComm(ref this);
 			}
 			public BOOL IsAssociatingDevice() mut
 			{
-				return VT.IsAssociatingDevice(&this);
+				return VT.IsAssociatingDevice(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRadioInstance *self, Guid* pguidSignature) GetRadioManagerSignature;
-				public new function HRESULT(IRadioInstance *self, BSTR* pbstrId) GetInstanceSignature;
-				public new function HRESULT(IRadioInstance *self, uint32 lcid, BSTR* pbstrName) GetFriendlyName;
-				public new function HRESULT(IRadioInstance *self, DEVICE_RADIO_STATE* pRadioState) GetRadioState;
-				public new function HRESULT(IRadioInstance *self, DEVICE_RADIO_STATE radioState, uint32 uTimeoutSec) SetRadioState;
-				public new function BOOL(IRadioInstance *self) IsMultiComm;
-				public new function BOOL(IRadioInstance *self) IsAssociatingDevice;
+				public new function HRESULT(ref IRadioInstance self, out Guid pguidSignature) GetRadioManagerSignature;
+				public new function HRESULT(ref IRadioInstance self, out BSTR pbstrId) GetInstanceSignature;
+				public new function HRESULT(ref IRadioInstance self, uint32 lcid, out BSTR pbstrName) GetFriendlyName;
+				public new function HRESULT(ref IRadioInstance self, out DEVICE_RADIO_STATE pRadioState) GetRadioState;
+				public new function HRESULT(ref IRadioInstance self, DEVICE_RADIO_STATE radioState, uint32 uTimeoutSec) SetRadioState;
+				public new function BOOL(ref IRadioInstance self) IsMultiComm;
+				public new function BOOL(ref IRadioInstance self) IsAssociatingDevice;
 			}
 		}
 		[CRepr]
@@ -1936,31 +1936,31 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnInstanceAdd(IRadioInstance* pRadioInstance) mut
+			public HRESULT OnInstanceAdd(ref IRadioInstance pRadioInstance) mut
 			{
-				return VT.OnInstanceAdd(&this, pRadioInstance);
+				return VT.OnInstanceAdd(ref this, ref pRadioInstance);
 			}
 			public HRESULT OnInstanceRemove(BSTR bstrRadioInstanceId) mut
 			{
-				return VT.OnInstanceRemove(&this, bstrRadioInstanceId);
+				return VT.OnInstanceRemove(ref this, bstrRadioInstanceId);
 			}
 			public HRESULT OnInstanceRadioChange(BSTR bstrRadioInstanceId, DEVICE_RADIO_STATE radioState) mut
 			{
-				return VT.OnInstanceRadioChange(&this, bstrRadioInstanceId, radioState);
+				return VT.OnInstanceRadioChange(ref this, bstrRadioInstanceId, radioState);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMediaRadioManagerNotifySink *self, IRadioInstance* pRadioInstance) OnInstanceAdd;
-				public new function HRESULT(IMediaRadioManagerNotifySink *self, BSTR bstrRadioInstanceId) OnInstanceRemove;
-				public new function HRESULT(IMediaRadioManagerNotifySink *self, BSTR bstrRadioInstanceId, DEVICE_RADIO_STATE radioState) OnInstanceRadioChange;
+				public new function HRESULT(ref IMediaRadioManagerNotifySink self, ref IRadioInstance pRadioInstance) OnInstanceAdd;
+				public new function HRESULT(ref IMediaRadioManagerNotifySink self, BSTR bstrRadioInstanceId) OnInstanceRemove;
+				public new function HRESULT(ref IMediaRadioManagerNotifySink self, BSTR bstrRadioInstanceId, DEVICE_RADIO_STATE radioState) OnInstanceRadioChange;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("dmprocessxmlfiltered.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DMProcessConfigXMLFiltered(PWSTR pszXmlIn, PWSTR* rgszAllowedCspNodes, uint32 dwNumAllowedCspNodes, BSTR* pbstrXmlOut);
+		public static extern HRESULT DMProcessConfigXMLFiltered(PWSTR pszXmlIn, PWSTR* rgszAllowedCspNodes, uint32 dwNumAllowedCspNodes, out BSTR pbstrXmlOut);
 		
 	}
 }

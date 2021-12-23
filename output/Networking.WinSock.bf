@@ -1483,109 +1483,109 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function int32 LPCONDITIONPROC(WSABUF* lpCallerId, WSABUF* lpCallerData, QOS* lpSQOS, QOS* lpGQOS, WSABUF* lpCalleeId, WSABUF* lpCalleeData, uint32* g, uint dwCallbackData);
-		public function void LPWSAOVERLAPPED_COMPLETION_ROUTINE(uint32 dwError, uint32 cbTransferred, OVERLAPPED* lpOverlapped, uint32 dwFlags);
+		public function int32 LPCONDITIONPROC(out WSABUF lpCallerId, out WSABUF lpCallerData, out QOS lpSQOS, out QOS lpGQOS, out WSABUF lpCalleeId, out WSABUF lpCalleeData, out uint32 g, uint dwCallbackData);
+		public function void LPWSAOVERLAPPED_COMPLETION_ROUTINE(uint32 dwError, uint32 cbTransferred, out OVERLAPPED lpOverlapped, uint32 dwFlags);
 		public function BOOL LPFN_TRANSMITFILE(SOCKET hSocket, HANDLE hFile, uint32 nNumberOfBytesToWrite, uint32 nNumberOfBytesPerSend, OVERLAPPED* lpOverlapped, TRANSMIT_FILE_BUFFERS* lpTransmitBuffers, uint32 dwReserved);
-		public function BOOL LPFN_ACCEPTEX(SOCKET sListenSocket, SOCKET sAcceptSocket, void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, uint32* lpdwBytesReceived, OVERLAPPED* lpOverlapped);
-		public function void LPFN_GETACCEPTEXSOCKADDRS(void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, SOCKADDR** LocalSockaddr, int32* LocalSockaddrLength, SOCKADDR** RemoteSockaddr, int32* RemoteSockaddrLength);
+		public function BOOL LPFN_ACCEPTEX(SOCKET sListenSocket, SOCKET sAcceptSocket, void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, out uint32 lpdwBytesReceived, out OVERLAPPED lpOverlapped);
+		public function void LPFN_GETACCEPTEXSOCKADDRS(void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, out SOCKADDR* LocalSockaddr, out int32 LocalSockaddrLength, out SOCKADDR* RemoteSockaddr, out int32 RemoteSockaddrLength);
 		public function BOOL LPFN_TRANSMITPACKETS(SOCKET hSocket, TRANSMIT_PACKETS_ELEMENT* lpPacketArray, uint32 nElementCount, uint32 nSendSize, OVERLAPPED* lpOverlapped, uint32 dwFlags);
-		public function BOOL LPFN_CONNECTEX(SOCKET s, SOCKADDR* name, int32 namelen, void* lpSendBuffer, uint32 dwSendDataLength, uint32* lpdwBytesSent, OVERLAPPED* lpOverlapped);
+		public function BOOL LPFN_CONNECTEX(SOCKET s, in SOCKADDR name, int32 namelen, void* lpSendBuffer, uint32 dwSendDataLength, out uint32 lpdwBytesSent, out OVERLAPPED lpOverlapped);
 		public function BOOL LPFN_DISCONNECTEX(SOCKET s, OVERLAPPED* lpOverlapped, uint32 dwFlags, uint32 dwReserved);
-		public function int32 LPFN_WSARECVMSG(SOCKET s, WSAMSG* lpMsg, uint32* lpdwNumberOfBytesRecvd, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-		public function int32 LPFN_WSASENDMSG(SOCKET s, WSAMSG* lpMsg, uint32 dwFlags, uint32* lpNumberOfBytesSent, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
-		public function int32 LPFN_WSAPOLL(WSAPOLLFD* fdarray, uint32 nfds, int32 timeout);
-		public function BOOL LPFN_RIORECEIVE(RIO_RQ_t* SocketQueue, RIO_BUF* pData, uint32 DataBufferCount, uint32 Flags, void* RequestContext);
-		public function int32 LPFN_RIORECEIVEEX(RIO_RQ_t* SocketQueue, RIO_BUF* pData, uint32 DataBufferCount, RIO_BUF* pLocalAddress, RIO_BUF* pRemoteAddress, RIO_BUF* pControlContext, RIO_BUF* pFlags, uint32 Flags, void* RequestContext);
-		public function BOOL LPFN_RIOSEND(RIO_RQ_t* SocketQueue, RIO_BUF* pData, uint32 DataBufferCount, uint32 Flags, void* RequestContext);
-		public function BOOL LPFN_RIOSENDEX(RIO_RQ_t* SocketQueue, RIO_BUF* pData, uint32 DataBufferCount, RIO_BUF* pLocalAddress, RIO_BUF* pRemoteAddress, RIO_BUF* pControlContext, RIO_BUF* pFlags, uint32 Flags, void* RequestContext);
-		public function void LPFN_RIOCLOSECOMPLETIONQUEUE(RIO_CQ_t* CQ);
+		public function int32 LPFN_WSARECVMSG(SOCKET s, out WSAMSG lpMsg, uint32* lpdwNumberOfBytesRecvd, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
+		public function int32 LPFN_WSASENDMSG(SOCKET s, ref WSAMSG lpMsg, uint32 dwFlags, uint32* lpNumberOfBytesSent, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
+		public function int32 LPFN_WSAPOLL(out WSAPOLLFD fdarray, uint32 nfds, int32 timeout);
+		public function BOOL LPFN_RIORECEIVE(ref RIO_RQ_t SocketQueue, RIO_BUF* pData, uint32 DataBufferCount, uint32 Flags, void* RequestContext);
+		public function int32 LPFN_RIORECEIVEEX(ref RIO_RQ_t SocketQueue, RIO_BUF* pData, uint32 DataBufferCount, RIO_BUF* pLocalAddress, RIO_BUF* pRemoteAddress, RIO_BUF* pControlContext, RIO_BUF* pFlags, uint32 Flags, void* RequestContext);
+		public function BOOL LPFN_RIOSEND(ref RIO_RQ_t SocketQueue, RIO_BUF* pData, uint32 DataBufferCount, uint32 Flags, void* RequestContext);
+		public function BOOL LPFN_RIOSENDEX(ref RIO_RQ_t SocketQueue, RIO_BUF* pData, uint32 DataBufferCount, RIO_BUF* pLocalAddress, RIO_BUF* pRemoteAddress, RIO_BUF* pControlContext, RIO_BUF* pFlags, uint32 Flags, void* RequestContext);
+		public function void LPFN_RIOCLOSECOMPLETIONQUEUE(ref RIO_CQ_t CQ);
 		public function RIO_CQ_t* LPFN_RIOCREATECOMPLETIONQUEUE(uint32 QueueSize, RIO_NOTIFICATION_COMPLETION* NotificationCompletion);
-		public function RIO_RQ_t* LPFN_RIOCREATEREQUESTQUEUE(SOCKET Socket, uint32 MaxOutstandingReceive, uint32 MaxReceiveDataBuffers, uint32 MaxOutstandingSend, uint32 MaxSendDataBuffers, RIO_CQ_t* ReceiveCQ, RIO_CQ_t* SendCQ, void* SocketContext);
-		public function uint32 LPFN_RIODEQUEUECOMPLETION(RIO_CQ_t* CQ, RIORESULT* Array, uint32 ArraySize);
-		public function void LPFN_RIODEREGISTERBUFFER(RIO_BUFFERID_t* BufferId);
-		public function int32 LPFN_RIONOTIFY(RIO_CQ_t* CQ);
+		public function RIO_RQ_t* LPFN_RIOCREATEREQUESTQUEUE(SOCKET Socket, uint32 MaxOutstandingReceive, uint32 MaxReceiveDataBuffers, uint32 MaxOutstandingSend, uint32 MaxSendDataBuffers, ref RIO_CQ_t ReceiveCQ, ref RIO_CQ_t SendCQ, void* SocketContext);
+		public function uint32 LPFN_RIODEQUEUECOMPLETION(ref RIO_CQ_t CQ, RIORESULT* Array, uint32 ArraySize);
+		public function void LPFN_RIODEREGISTERBUFFER(ref RIO_BUFFERID_t BufferId);
+		public function int32 LPFN_RIONOTIFY(ref RIO_CQ_t CQ);
 		public function RIO_BUFFERID_t* LPFN_RIOREGISTERBUFFER(PSTR DataBuffer, uint32 DataLength);
-		public function BOOL LPFN_RIORESIZECOMPLETIONQUEUE(RIO_CQ_t* CQ, uint32 QueueSize);
-		public function BOOL LPFN_RIORESIZEREQUESTQUEUE(RIO_RQ_t* RQ, uint32 MaxOutstandingReceive, uint32 MaxOutstandingSend);
+		public function BOOL LPFN_RIORESIZECOMPLETIONQUEUE(ref RIO_CQ_t CQ, uint32 QueueSize);
+		public function BOOL LPFN_RIORESIZEREQUESTQUEUE(ref RIO_RQ_t RQ, uint32 MaxOutstandingReceive, uint32 MaxOutstandingSend);
 		public function BOOL LPBLOCKINGCALLBACK(uint dwContext);
 		public function void LPWSAUSERAPC(uint dwContext);
-		public function SOCKET LPWSPACCEPT(SOCKET s, SOCKADDR* addr, int32* addrlen, LPCONDITIONPROC lpfnCondition, uint dwCallbackData, int32* lpErrno);
-		public function int32 LPWSPADDRESSTOSTRING(SOCKADDR* lpsaAddress, uint32 dwAddressLength, WSAPROTOCOL_INFOW* lpProtocolInfo, char16* lpszAddressString, uint32* lpdwAddressStringLength, int32* lpErrno);
-		public function int32 LPWSPASYNCSELECT(SOCKET s, HWND hWnd, uint32 wMsg, int32 lEvent, int32* lpErrno);
-		public function int32 LPWSPBIND(SOCKET s, SOCKADDR* name, int32 namelen, int32* lpErrno);
-		public function int32 LPWSPCANCELBLOCKINGCALL(int32* lpErrno);
-		public function int32 LPWSPCLEANUP(int32* lpErrno);
-		public function int32 LPWSPCLOSESOCKET(SOCKET s, int32* lpErrno);
-		public function int32 LPWSPCONNECT(SOCKET s, SOCKADDR* name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS, int32* lpErrno);
-		public function int32 LPWSPDUPLICATESOCKET(SOCKET s, uint32 dwProcessId, WSAPROTOCOL_INFOW* lpProtocolInfo, int32* lpErrno);
-		public function int32 LPWSPENUMNETWORKEVENTS(SOCKET s, HANDLE hEventObject, WSANETWORKEVENTS* lpNetworkEvents, int32* lpErrno);
-		public function int32 LPWSPEVENTSELECT(SOCKET s, HANDLE hEventObject, int32 lNetworkEvents, int32* lpErrno);
-		public function BOOL LPWSPGETOVERLAPPEDRESULT(SOCKET s, OVERLAPPED* lpOverlapped, uint32* lpcbTransfer, BOOL fWait, uint32* lpdwFlags, int32* lpErrno);
-		public function int32 LPWSPGETPEERNAME(SOCKET s, SOCKADDR* name, int32* namelen, int32* lpErrno);
-		public function int32 LPWSPGETSOCKNAME(SOCKET s, SOCKADDR* name, int32* namelen, int32* lpErrno);
-		public function int32 LPWSPGETSOCKOPT(SOCKET s, int32 level, int32 optname, PSTR optval, int32* optlen, int32* lpErrno);
-		public function BOOL LPWSPGETQOSBYNAME(SOCKET s, WSABUF* lpQOSName, QOS* lpQOS, int32* lpErrno);
-		public function int32 LPWSPIOCTL(SOCKET s, uint32 dwIoControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, uint32* lpcbBytesReturned, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, int32* lpErrno);
-		public function SOCKET LPWSPJOINLEAF(SOCKET s, SOCKADDR* name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS, uint32 dwFlags, int32* lpErrno);
-		public function int32 LPWSPLISTEN(SOCKET s, int32 backlog, int32* lpErrno);
-		public function int32 LPWSPRECV(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, uint32* lpFlags, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, int32* lpErrno);
-		public function int32 LPWSPRECVDISCONNECT(SOCKET s, WSABUF* lpInboundDisconnectData, int32* lpErrno);
-		public function int32 LPWSPRECVFROM(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, uint32* lpFlags, SOCKADDR* lpFrom, int32* lpFromlen, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, int32* lpErrno);
-		public function int32 LPWSPSELECT(int32 nfds, fd_set* readfds, fd_set* writefds, fd_set* exceptfds, timeval* timeout, int32* lpErrno);
-		public function int32 LPWSPSEND(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesSent, uint32 dwFlags, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, int32* lpErrno);
-		public function int32 LPWSPSENDDISCONNECT(SOCKET s, WSABUF* lpOutboundDisconnectData, int32* lpErrno);
-		public function int32 LPWSPSENDTO(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesSent, uint32 dwFlags, SOCKADDR* lpTo, int32 iTolen, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, int32* lpErrno);
-		public function int32 LPWSPSETSOCKOPT(SOCKET s, int32 level, int32 optname, PSTR optval, int32 optlen, int32* lpErrno);
-		public function int32 LPWSPSHUTDOWN(SOCKET s, int32 how, int32* lpErrno);
-		public function SOCKET LPWSPSOCKET(int32 af, int32 type, int32 protocol, WSAPROTOCOL_INFOW* lpProtocolInfo, uint32 g, uint32 dwFlags, int32* lpErrno);
-		public function int32 LPWSPSTRINGTOADDRESS(PWSTR AddressString, int32 AddressFamily, WSAPROTOCOL_INFOW* lpProtocolInfo, SOCKADDR* lpAddress, int32* lpAddressLength, int32* lpErrno);
-		public function BOOL LPWPUCLOSEEVENT(HANDLE hEvent, int32* lpErrno);
-		public function int32 LPWPUCLOSESOCKETHANDLE(SOCKET s, int32* lpErrno);
-		public function HANDLE LPWPUCREATEEVENT(int32* lpErrno);
-		public function SOCKET LPWPUCREATESOCKETHANDLE(uint32 dwCatalogEntryId, uint dwContext, int32* lpErrno);
-		public function int32 LPWPUFDISSET(SOCKET s, fd_set* fdset);
-		public function int32 LPWPUGETPROVIDERPATH(Guid* lpProviderId, char16* lpszProviderDllPath, int32* lpProviderDllPathLen, int32* lpErrno);
-		public function SOCKET LPWPUMODIFYIFSHANDLE(uint32 dwCatalogEntryId, SOCKET ProposedHandle, int32* lpErrno);
+		public function SOCKET LPWSPACCEPT(SOCKET s, SOCKADDR* addr, int32* addrlen, LPCONDITIONPROC lpfnCondition, uint dwCallbackData, out int32 lpErrno);
+		public function int32 LPWSPADDRESSTOSTRING(ref SOCKADDR lpsaAddress, uint32 dwAddressLength, WSAPROTOCOL_INFOW* lpProtocolInfo, char16* lpszAddressString, out uint32 lpdwAddressStringLength, out int32 lpErrno);
+		public function int32 LPWSPASYNCSELECT(SOCKET s, HWND hWnd, uint32 wMsg, int32 lEvent, out int32 lpErrno);
+		public function int32 LPWSPBIND(SOCKET s, in SOCKADDR name, int32 namelen, out int32 lpErrno);
+		public function int32 LPWSPCANCELBLOCKINGCALL(out int32 lpErrno);
+		public function int32 LPWSPCLEANUP(out int32 lpErrno);
+		public function int32 LPWSPCLOSESOCKET(SOCKET s, out int32 lpErrno);
+		public function int32 LPWSPCONNECT(SOCKET s, in SOCKADDR name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS, out int32 lpErrno);
+		public function int32 LPWSPDUPLICATESOCKET(SOCKET s, uint32 dwProcessId, out WSAPROTOCOL_INFOW lpProtocolInfo, out int32 lpErrno);
+		public function int32 LPWSPENUMNETWORKEVENTS(SOCKET s, HANDLE hEventObject, out WSANETWORKEVENTS lpNetworkEvents, out int32 lpErrno);
+		public function int32 LPWSPEVENTSELECT(SOCKET s, HANDLE hEventObject, int32 lNetworkEvents, out int32 lpErrno);
+		public function BOOL LPWSPGETOVERLAPPEDRESULT(SOCKET s, ref OVERLAPPED lpOverlapped, out uint32 lpcbTransfer, BOOL fWait, out uint32 lpdwFlags, out int32 lpErrno);
+		public function int32 LPWSPGETPEERNAME(SOCKET s, out SOCKADDR name, out int32 namelen, out int32 lpErrno);
+		public function int32 LPWSPGETSOCKNAME(SOCKET s, out SOCKADDR name, out int32 namelen, out int32 lpErrno);
+		public function int32 LPWSPGETSOCKOPT(SOCKET s, int32 level, int32 optname, PSTR optval, out int32 optlen, out int32 lpErrno);
+		public function BOOL LPWSPGETQOSBYNAME(SOCKET s, ref WSABUF lpQOSName, out QOS lpQOS, out int32 lpErrno);
+		public function int32 LPWSPIOCTL(SOCKET s, uint32 dwIoControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, out uint32 lpcbBytesReturned, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, out int32 lpErrno);
+		public function SOCKET LPWSPJOINLEAF(SOCKET s, in SOCKADDR name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS, uint32 dwFlags, out int32 lpErrno);
+		public function int32 LPWSPLISTEN(SOCKET s, int32 backlog, out int32 lpErrno);
+		public function int32 LPWSPRECV(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, out uint32 lpFlags, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, ref int32 lpErrno);
+		public function int32 LPWSPRECVDISCONNECT(SOCKET s, WSABUF* lpInboundDisconnectData, out int32 lpErrno);
+		public function int32 LPWSPRECVFROM(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, out uint32 lpFlags, SOCKADDR* lpFrom, int32* lpFromlen, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, out int32 lpErrno);
+		public function int32 LPWSPSELECT(int32 nfds, fd_set* readfds, fd_set* writefds, fd_set* exceptfds, timeval* timeout, out int32 lpErrno);
+		public function int32 LPWSPSEND(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesSent, uint32 dwFlags, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, out int32 lpErrno);
+		public function int32 LPWSPSENDDISCONNECT(SOCKET s, WSABUF* lpOutboundDisconnectData, out int32 lpErrno);
+		public function int32 LPWSPSENDTO(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesSent, uint32 dwFlags, SOCKADDR* lpTo, int32 iTolen, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine, WSATHREADID* lpThreadId, out int32 lpErrno);
+		public function int32 LPWSPSETSOCKOPT(SOCKET s, int32 level, int32 optname, PSTR optval, int32 optlen, out int32 lpErrno);
+		public function int32 LPWSPSHUTDOWN(SOCKET s, int32 how, out int32 lpErrno);
+		public function SOCKET LPWSPSOCKET(int32 af, int32 type, int32 protocol, WSAPROTOCOL_INFOW* lpProtocolInfo, uint32 g, uint32 dwFlags, out int32 lpErrno);
+		public function int32 LPWSPSTRINGTOADDRESS(PWSTR AddressString, int32 AddressFamily, WSAPROTOCOL_INFOW* lpProtocolInfo, out SOCKADDR lpAddress, out int32 lpAddressLength, out int32 lpErrno);
+		public function BOOL LPWPUCLOSEEVENT(HANDLE hEvent, out int32 lpErrno);
+		public function int32 LPWPUCLOSESOCKETHANDLE(SOCKET s, out int32 lpErrno);
+		public function HANDLE LPWPUCREATEEVENT(out int32 lpErrno);
+		public function SOCKET LPWPUCREATESOCKETHANDLE(uint32 dwCatalogEntryId, uint dwContext, out int32 lpErrno);
+		public function int32 LPWPUFDISSET(SOCKET s, ref fd_set fdset);
+		public function int32 LPWPUGETPROVIDERPATH(ref Guid lpProviderId, char16* lpszProviderDllPath, out int32 lpProviderDllPathLen, out int32 lpErrno);
+		public function SOCKET LPWPUMODIFYIFSHANDLE(uint32 dwCatalogEntryId, SOCKET ProposedHandle, out int32 lpErrno);
 		public function BOOL LPWPUPOSTMESSAGE(HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam);
-		public function int32 LPWPUQUERYBLOCKINGCALLBACK(uint32 dwCatalogEntryId, LPBLOCKINGCALLBACK* lplpfnCallback, uint* lpdwContext, int32* lpErrno);
-		public function int32 LPWPUQUERYSOCKETHANDLECONTEXT(SOCKET s, uint* lpContext, int32* lpErrno);
-		public function int32 LPWPUQUEUEAPC(WSATHREADID* lpThreadId, LPWSAUSERAPC lpfnUserApc, uint dwContext, int32* lpErrno);
-		public function BOOL LPWPURESETEVENT(HANDLE hEvent, int32* lpErrno);
-		public function BOOL LPWPUSETEVENT(HANDLE hEvent, int32* lpErrno);
-		public function int32 LPWPUOPENCURRENTTHREAD(WSATHREADID* lpThreadId, int32* lpErrno);
-		public function int32 LPWPUCLOSETHREAD(WSATHREADID* lpThreadId, int32* lpErrno);
-		public function int32 LPWPUCOMPLETEOVERLAPPEDREQUEST(SOCKET s, OVERLAPPED* lpOverlapped, uint32 dwError, uint32 cbTransferred, int32* lpErrno);
-		public function int32 LPWSPSTARTUP(uint16 wVersionRequested, WSPData* lpWSPData, WSAPROTOCOL_INFOW* lpProtocolInfo, WSPUPCALLTABLE UpcallTable, WSPPROC_TABLE* lpProcTable);
-		public function int32 LPWSCENUMPROTOCOLS(int32* lpiProtocols, WSAPROTOCOL_INFOW* lpProtocolBuffer, uint32* lpdwBufferLength, int32* lpErrno);
-		public function int32 LPWSCDEINSTALLPROVIDER(Guid* lpProviderId, int32* lpErrno);
-		public function int32 LPWSCINSTALLPROVIDER(Guid* lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, int32* lpErrno);
-		public function int32 LPWSCGETPROVIDERPATH(Guid* lpProviderId, char16* lpszProviderDllPath, int32* lpProviderDllPathLen, int32* lpErrno);
-		public function int32 LPWSCUPDATEPROVIDER(Guid* lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, int32* lpErrno);
-		public function int32 LPWSCINSTALLNAMESPACE(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, Guid* lpProviderId);
-		public function int32 LPWSCUNINSTALLNAMESPACE(Guid* lpProviderId);
-		public function int32 LPWSCENABLENSPROVIDER(Guid* lpProviderId, BOOL fEnable);
-		public function int32 LPNSPCLEANUP(Guid* lpProviderId);
-		public function int32 LPNSPLOOKUPSERVICEBEGIN(Guid* lpProviderId, WSAQUERYSETW* lpqsRestrictions, WSASERVICECLASSINFOW* lpServiceClassInfo, uint32 dwControlFlags, HANDLE* lphLookup);
-		public function int32 LPNSPLOOKUPSERVICENEXT(HANDLE hLookup, uint32 dwControlFlags, uint32* lpdwBufferLength, WSAQUERYSETW* lpqsResults);
-		public function int32 LPNSPIOCTL(HANDLE hLookup, uint32 dwControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, uint32* lpcbBytesReturned, WSACOMPLETION* lpCompletion, WSATHREADID* lpThreadId);
+		public function int32 LPWPUQUERYBLOCKINGCALLBACK(uint32 dwCatalogEntryId, out LPBLOCKINGCALLBACK lplpfnCallback, out uint lpdwContext, out int32 lpErrno);
+		public function int32 LPWPUQUERYSOCKETHANDLECONTEXT(SOCKET s, out uint lpContext, out int32 lpErrno);
+		public function int32 LPWPUQUEUEAPC(ref WSATHREADID lpThreadId, LPWSAUSERAPC lpfnUserApc, uint dwContext, out int32 lpErrno);
+		public function BOOL LPWPURESETEVENT(HANDLE hEvent, out int32 lpErrno);
+		public function BOOL LPWPUSETEVENT(HANDLE hEvent, out int32 lpErrno);
+		public function int32 LPWPUOPENCURRENTTHREAD(out WSATHREADID lpThreadId, out int32 lpErrno);
+		public function int32 LPWPUCLOSETHREAD(ref WSATHREADID lpThreadId, out int32 lpErrno);
+		public function int32 LPWPUCOMPLETEOVERLAPPEDREQUEST(SOCKET s, out OVERLAPPED lpOverlapped, uint32 dwError, uint32 cbTransferred, out int32 lpErrno);
+		public function int32 LPWSPSTARTUP(uint16 wVersionRequested, ref WSPData lpWSPData, ref WSAPROTOCOL_INFOW lpProtocolInfo, WSPUPCALLTABLE UpcallTable, out WSPPROC_TABLE lpProcTable);
+		public function int32 LPWSCENUMPROTOCOLS(int32* lpiProtocols, WSAPROTOCOL_INFOW* lpProtocolBuffer, out uint32 lpdwBufferLength, out int32 lpErrno);
+		public function int32 LPWSCDEINSTALLPROVIDER(ref Guid lpProviderId, out int32 lpErrno);
+		public function int32 LPWSCINSTALLPROVIDER(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
+		public function int32 LPWSCGETPROVIDERPATH(ref Guid lpProviderId, char16* lpszProviderDllPath, out int32 lpProviderDllPathLen, out int32 lpErrno);
+		public function int32 LPWSCUPDATEPROVIDER(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
+		public function int32 LPWSCINSTALLNAMESPACE(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, ref Guid lpProviderId);
+		public function int32 LPWSCUNINSTALLNAMESPACE(ref Guid lpProviderId);
+		public function int32 LPWSCENABLENSPROVIDER(ref Guid lpProviderId, BOOL fEnable);
+		public function int32 LPNSPCLEANUP(ref Guid lpProviderId);
+		public function int32 LPNSPLOOKUPSERVICEBEGIN(ref Guid lpProviderId, ref WSAQUERYSETW lpqsRestrictions, ref WSASERVICECLASSINFOW lpServiceClassInfo, uint32 dwControlFlags, out HANDLE lphLookup);
+		public function int32 LPNSPLOOKUPSERVICENEXT(HANDLE hLookup, uint32 dwControlFlags, out uint32 lpdwBufferLength, out WSAQUERYSETW lpqsResults);
+		public function int32 LPNSPIOCTL(HANDLE hLookup, uint32 dwControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, out uint32 lpcbBytesReturned, WSACOMPLETION* lpCompletion, ref WSATHREADID lpThreadId);
 		public function int32 LPNSPLOOKUPSERVICEEND(HANDLE hLookup);
-		public function int32 LPNSPSETSERVICE(Guid* lpProviderId, WSASERVICECLASSINFOW* lpServiceClassInfo, WSAQUERYSETW* lpqsRegInfo, WSAESETSERVICEOP essOperation, uint32 dwControlFlags);
-		public function int32 LPNSPINSTALLSERVICECLASS(Guid* lpProviderId, WSASERVICECLASSINFOW* lpServiceClassInfo);
-		public function int32 LPNSPREMOVESERVICECLASS(Guid* lpProviderId, Guid* lpServiceClassId);
-		public function int32 LPNSPGETSERVICECLASSINFO(Guid* lpProviderId, uint32* lpdwBufSize, WSASERVICECLASSINFOW* lpServiceClassInfo);
-		public function int32 LPNSPSTARTUP(Guid* lpProviderId, NSP_ROUTINE* lpnspRoutines);
-		public function int32 LPNSPV2STARTUP(Guid* lpProviderId, void** ppvClientSessionArg);
-		public function int32 LPNSPV2CLEANUP(Guid* lpProviderId, void* pvClientSessionArg);
-		public function int32 LPNSPV2LOOKUPSERVICEBEGIN(Guid* lpProviderId, WSAQUERYSET2W* lpqsRestrictions, uint32 dwControlFlags, void* lpvClientSessionArg, HANDLE* lphLookup);
-		public function void LPNSPV2LOOKUPSERVICENEXTEX(HANDLE hAsyncCall, HANDLE hLookup, uint32 dwControlFlags, uint32* lpdwBufferLength, WSAQUERYSET2W* lpqsResults);
+		public function int32 LPNSPSETSERVICE(ref Guid lpProviderId, ref WSASERVICECLASSINFOW lpServiceClassInfo, ref WSAQUERYSETW lpqsRegInfo, WSAESETSERVICEOP essOperation, uint32 dwControlFlags);
+		public function int32 LPNSPINSTALLSERVICECLASS(ref Guid lpProviderId, ref WSASERVICECLASSINFOW lpServiceClassInfo);
+		public function int32 LPNSPREMOVESERVICECLASS(ref Guid lpProviderId, ref Guid lpServiceClassId);
+		public function int32 LPNSPGETSERVICECLASSINFO(ref Guid lpProviderId, ref uint32 lpdwBufSize, ref WSASERVICECLASSINFOW lpServiceClassInfo);
+		public function int32 LPNSPSTARTUP(ref Guid lpProviderId, out NSP_ROUTINE lpnspRoutines);
+		public function int32 LPNSPV2STARTUP(ref Guid lpProviderId, void** ppvClientSessionArg);
+		public function int32 LPNSPV2CLEANUP(ref Guid lpProviderId, void* pvClientSessionArg);
+		public function int32 LPNSPV2LOOKUPSERVICEBEGIN(ref Guid lpProviderId, ref WSAQUERYSET2W lpqsRestrictions, uint32 dwControlFlags, void* lpvClientSessionArg, out HANDLE lphLookup);
+		public function void LPNSPV2LOOKUPSERVICENEXTEX(HANDLE hAsyncCall, HANDLE hLookup, uint32 dwControlFlags, ref uint32 lpdwBufferLength, out WSAQUERYSET2W lpqsResults);
 		public function int32 LPNSPV2LOOKUPSERVICEEND(HANDLE hLookup);
-		public function void LPNSPV2SETSERVICEEX(HANDLE hAsyncCall, Guid* lpProviderId, WSAQUERYSET2W* lpqsRegInfo, WSAESETSERVICEOP essOperation, uint32 dwControlFlags, void* lpvClientSessionArg);
-		public function void LPNSPV2CLIENTSESSIONRUNDOWN(Guid* lpProviderId, void* pvClientSessionArg);
+		public function void LPNSPV2SETSERVICEEX(HANDLE hAsyncCall, ref Guid lpProviderId, ref WSAQUERYSET2W lpqsRegInfo, WSAESETSERVICEOP essOperation, uint32 dwControlFlags, void* lpvClientSessionArg);
+		public function void LPNSPV2CLIENTSESSIONRUNDOWN(ref Guid lpProviderId, void* pvClientSessionArg);
 		public function uint32 LPFN_NSPAPI();
 		public function void LPSERVICE_CALLBACK_PROC(LPARAM lParam, HANDLE hAsyncTaskHandle);
-		public function void LPLOOKUPSERVICE_COMPLETION_ROUTINE(uint32 dwError, uint32 dwBytes, OVERLAPPED* lpOverlapped);
-		public function int32 LPWSCWRITEPROVIDERORDER(uint32* lpwdCatalogEntryId, uint32 dwNumberOfEntries);
-		public function int32 LPWSCWRITENAMESPACEORDER(Guid* lpProviderId, uint32 dwNumberOfEntries);
+		public function void LPLOOKUPSERVICE_COMPLETION_ROUTINE(uint32 dwError, uint32 dwBytes, ref OVERLAPPED lpOverlapped);
+		public function int32 LPWSCWRITEPROVIDERORDER(out uint32 lpwdCatalogEntryId, uint32 dwNumberOfEntries);
+		public function int32 LPWSCWRITENAMESPACEORDER(out Guid lpProviderId, uint32 dwNumberOfEntries);
 		
 		// --- Structs ---
 		
@@ -1645,7 +1645,7 @@ namespace Win32
 		public struct SOCKET_ADDRESS_LIST
 		{
 			public int32 iAddressCount;
-			public SOCKET_ADDRESS[] Address;
+			public SOCKET_ADDRESS[0] Address;
 		}
 		[CRepr]
 		public struct CSADDR_INFO
@@ -2361,7 +2361,7 @@ namespace Win32
 			public IN_ADDR imsf_interface;
 			public MULTICAST_MODE_TYPE imsf_fmode;
 			public uint32 imsf_numsrc;
-			public IN_ADDR[] imsf_slist;
+			public IN_ADDR[0] imsf_slist;
 		}
 		[CRepr]
 		public struct IPV6_MREQ
@@ -2389,7 +2389,7 @@ namespace Win32
 			public SOCKADDR_STORAGE gf_group;
 			public MULTICAST_MODE_TYPE gf_fmode;
 			public uint32 gf_numsrc;
-			public SOCKADDR_STORAGE[] gf_slist;
+			public SOCKADDR_STORAGE[0] gf_slist;
 		}
 		[CRepr]
 		public struct IN_PKTINFO
@@ -2566,13 +2566,13 @@ namespace Win32
 		public struct WINDOWS_DEVICELIST
 		{
 			public uint32 numDevice;
-			public WINDOWS_IRDA_DEVICE_INFO[] Device;
+			public WINDOWS_IRDA_DEVICE_INFO[0] Device;
 		}
 		[CRepr]
 		public struct WCE_DEVICELIST
 		{
 			public uint32 numDevice;
-			public WCE_IRDA_DEVICE_INFO[] Device;
+			public WCE_IRDA_DEVICE_INFO[0] Device;
 		}
 		[CRepr]
 		public struct WINDOWS_IAS_SET
@@ -2829,7 +2829,7 @@ namespace Win32
 			public uint32 UserNameStringLen;
 			public uint32 DomainNameStringLen;
 			public uint32 PasswordStringLen;
-			public char16[] AllStrings;
+			public char16[0] AllStrings;
 		}
 		[CRepr]
 		public struct SOCKET_PEER_TARGET_NAME
@@ -2837,7 +2837,7 @@ namespace Win32
 			public SOCKET_SECURITY_PROTOCOL SecurityProtocol;
 			public SOCKADDR_STORAGE PeerAddress;
 			public uint32 PeerTargetNameStringLen;
-			public char16[] AllStrings;
+			public char16[0] AllStrings;
 		}
 		[CRepr]
 		public struct SOCKET_SECURITY_QUERY_TEMPLATE
@@ -2943,7 +2943,7 @@ namespace Win32
 		{
 			public Q2931_IE_TYPE IEType;
 			public uint32 IELength;
-			public uint8[] IE;
+			public uint8[0] IE;
 		}
 		[CRepr]
 		public struct AAL5_PARAMETERS
@@ -3040,7 +3040,7 @@ namespace Win32
 			public uint8 TypeOfNetworkId;
 			public uint8 NetworkIdPlan;
 			public uint8 NetworkIdLength;
-			public uint8[] NetworkId;
+			public uint8[0] NetworkId;
 		}
 		[CRepr]
 		public struct ATM_CONNECTION_ID
@@ -3110,7 +3110,7 @@ namespace Win32
 			[CRepr, Union]
 			public struct _data_e__Union
 			{
-				public CHAR[] rawData;
+				public CHAR[0] rawData;
 				public _interfaceData_e__Struct interfaceData;
 				public _locationData_e__Struct locationData;
 				public _connectivity_e__Struct connectivity;
@@ -3134,14 +3134,14 @@ namespace Win32
 				[CRepr]
 				public struct _locationData_e__Struct
 				{
-					public CHAR[] information;
+					public CHAR[0] information;
 				}
 				[CRepr]
 				public struct _interfaceData_e__Struct
 				{
 					public uint32 dwType;
 					public uint32 dwSpeed;
-					public CHAR[] adapterName;
+					public CHAR[0] adapterName;
 				}
 				[CRepr]
 				public struct _connectivity_e__Struct
@@ -3164,7 +3164,7 @@ namespace Win32
 			public int32 result;
 			public uint32 fds;
 			public int32 timeout;
-			public WSAPOLLFD[] fdArray;
+			public WSAPOLLFD[0] fdArray;
 		}
 		[CRepr]
 		public struct WSASENDMSG
@@ -3368,21 +3368,21 @@ namespace Win32
 		{
 			public uint32 dwTypeNameOffset;
 			public uint32 dwValueCount;
-			public SERVICE_TYPE_VALUE[] Values;
+			public SERVICE_TYPE_VALUE[0] Values;
 		}
 		[CRepr]
 		public struct SERVICE_TYPE_INFO_ABSA
 		{
 			public PSTR lpTypeName;
 			public uint32 dwValueCount;
-			public SERVICE_TYPE_VALUE_ABSA[] Values;
+			public SERVICE_TYPE_VALUE_ABSA[0] Values;
 		}
 		[CRepr]
 		public struct SERVICE_TYPE_INFO_ABSW
 		{
 			public PWSTR lpTypeName;
 			public uint32 dwValueCount;
-			public SERVICE_TYPE_VALUE_ABSW[] Values;
+			public SERVICE_TYPE_VALUE_ABSW[0] Values;
 		}
 		[CRepr]
 		public struct SERVICE_ADDRESS
@@ -3398,7 +3398,7 @@ namespace Win32
 		public struct SERVICE_ADDRESSES
 		{
 			public uint32 dwAddressCount;
-			public SERVICE_ADDRESS[] Addresses;
+			public SERVICE_ADDRESS[0] Addresses;
 		}
 		[CRepr]
 		public struct SERVICE_INFOA
@@ -3545,23 +3545,23 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 __WSAFDIsSet(SOCKET fd, fd_set* param1);
+		public static extern int32 __WSAFDIsSet(SOCKET fd, out fd_set param1);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern SOCKET accept(SOCKET s, SOCKADDR* addr, int32* addrlen);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 bind(SOCKET s, SOCKADDR* name, int32 namelen);
+		public static extern int32 bind(SOCKET s, in SOCKADDR name, int32 namelen);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 closesocket(SOCKET s);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 connect(SOCKET s, SOCKADDR* name, int32 namelen);
+		public static extern int32 connect(SOCKET s, in SOCKADDR name, int32 namelen);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ioctlsocket(SOCKET s, int32 cmd, uint32* argp);
+		public static extern int32 ioctlsocket(SOCKET s, int32 cmd, out uint32 argp);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 getpeername(SOCKET s, SOCKADDR* name, int32* namelen);
+		public static extern int32 getpeername(SOCKET s, out SOCKADDR name, out int32 namelen);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 getsockname(SOCKET s, SOCKADDR* name, int32* namelen);
+		public static extern int32 getsockname(SOCKET s, out SOCKADDR name, out int32 namelen);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 getsockopt(SOCKET s, int32 level, int32 optname, PSTR optval, int32* optlen);
+		public static extern int32 getsockopt(SOCKET s, int32 level, int32 optname, PSTR optval, out int32 optlen);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 htonl(uint32 hostlong);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3585,7 +3585,7 @@ namespace Win32
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 send(SOCKET s, PSTR buf, int32 len, SEND_FLAGS flags);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 sendto(SOCKET s, PSTR buf, int32 len, int32 flags, SOCKADDR* to, int32 tolen);
+		public static extern int32 sendto(SOCKET s, PSTR buf, int32 len, int32 flags, in SOCKADDR to, int32 tolen);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 setsockopt(SOCKET s, int32 level, int32 optname, PSTR optval, int32 optlen);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3609,7 +3609,7 @@ namespace Win32
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern protoent* getprotobyname(PSTR name);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAStartup(uint16 wVersionRequested, WSAData* lpWSAData);
+		public static extern int32 WSAStartup(uint16 wVersionRequested, out WSAData lpWSAData);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSACleanup();
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3645,55 +3645,55 @@ namespace Win32
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WSACloseEvent(HANDLE hEvent);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAConnect(SOCKET s, SOCKADDR* name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS);
+		public static extern int32 WSAConnect(SOCKET s, in SOCKADDR name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WSAConnectByNameW(SOCKET s, PWSTR nodename, PWSTR servicename, uint32* LocalAddressLength, SOCKADDR* LocalAddress, uint32* RemoteAddressLength, SOCKADDR* RemoteAddress, timeval* timeout, OVERLAPPED* Reserved);
+		public static extern BOOL WSAConnectByNameW(SOCKET s, PWSTR nodename, PWSTR servicename, uint32* LocalAddressLength, SOCKADDR* LocalAddress, uint32* RemoteAddressLength, SOCKADDR* RemoteAddress, timeval* timeout, out OVERLAPPED Reserved);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WSAConnectByNameA(SOCKET s, PSTR nodename, PSTR servicename, uint32* LocalAddressLength, SOCKADDR* LocalAddress, uint32* RemoteAddressLength, SOCKADDR* RemoteAddress, timeval* timeout, OVERLAPPED* Reserved);
+		public static extern BOOL WSAConnectByNameA(SOCKET s, PSTR nodename, PSTR servicename, uint32* LocalAddressLength, SOCKADDR* LocalAddress, uint32* RemoteAddressLength, SOCKADDR* RemoteAddress, timeval* timeout, out OVERLAPPED Reserved);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WSAConnectByList(SOCKET s, SOCKET_ADDRESS_LIST* SocketAddress, uint32* LocalAddressLength, SOCKADDR* LocalAddress, uint32* RemoteAddressLength, SOCKADDR* RemoteAddress, timeval* timeout, OVERLAPPED* Reserved);
+		public static extern BOOL WSAConnectByList(SOCKET s, ref SOCKET_ADDRESS_LIST SocketAddress, uint32* LocalAddressLength, SOCKADDR* LocalAddress, uint32* RemoteAddressLength, SOCKADDR* RemoteAddress, timeval* timeout, out OVERLAPPED Reserved);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE WSACreateEvent();
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSADuplicateSocketA(SOCKET s, uint32 dwProcessId, WSAPROTOCOL_INFOA* lpProtocolInfo);
+		public static extern int32 WSADuplicateSocketA(SOCKET s, uint32 dwProcessId, out WSAPROTOCOL_INFOA lpProtocolInfo);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSADuplicateSocketW(SOCKET s, uint32 dwProcessId, WSAPROTOCOL_INFOW* lpProtocolInfo);
+		public static extern int32 WSADuplicateSocketW(SOCKET s, uint32 dwProcessId, out WSAPROTOCOL_INFOW lpProtocolInfo);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAEnumNetworkEvents(SOCKET s, HANDLE hEventObject, WSANETWORKEVENTS* lpNetworkEvents);
+		public static extern int32 WSAEnumNetworkEvents(SOCKET s, HANDLE hEventObject, out WSANETWORKEVENTS lpNetworkEvents);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAEnumProtocolsA(int32* lpiProtocols, WSAPROTOCOL_INFOA* lpProtocolBuffer, uint32* lpdwBufferLength);
+		public static extern int32 WSAEnumProtocolsA(int32* lpiProtocols, WSAPROTOCOL_INFOA* lpProtocolBuffer, out uint32 lpdwBufferLength);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAEnumProtocolsW(int32* lpiProtocols, WSAPROTOCOL_INFOW* lpProtocolBuffer, uint32* lpdwBufferLength);
+		public static extern int32 WSAEnumProtocolsW(int32* lpiProtocols, WSAPROTOCOL_INFOW* lpProtocolBuffer, out uint32 lpdwBufferLength);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSAEventSelect(SOCKET s, HANDLE hEventObject, int32 lNetworkEvents);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WSAGetOverlappedResult(SOCKET s, OVERLAPPED* lpOverlapped, uint32* lpcbTransfer, BOOL fWait, uint32* lpdwFlags);
+		public static extern BOOL WSAGetOverlappedResult(SOCKET s, ref OVERLAPPED lpOverlapped, out uint32 lpcbTransfer, BOOL fWait, out uint32 lpdwFlags);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WSAGetQOSByName(SOCKET s, WSABUF* lpQOSName, QOS* lpQOS);
+		public static extern BOOL WSAGetQOSByName(SOCKET s, ref WSABUF lpQOSName, out QOS lpQOS);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAHtonl(SOCKET s, uint32 hostlong, uint32* lpnetlong);
+		public static extern int32 WSAHtonl(SOCKET s, uint32 hostlong, out uint32 lpnetlong);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAHtons(SOCKET s, uint16 hostshort, uint16* lpnetshort);
+		public static extern int32 WSAHtons(SOCKET s, uint16 hostshort, out uint16 lpnetshort);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAIoctl(SOCKET s, uint32 dwIoControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, uint32* lpcbBytesReturned, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
+		public static extern int32 WSAIoctl(SOCKET s, uint32 dwIoControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, out uint32 lpcbBytesReturned, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern SOCKET WSAJoinLeaf(SOCKET s, SOCKADDR* name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS, uint32 dwFlags);
+		public static extern SOCKET WSAJoinLeaf(SOCKET s, in SOCKADDR name, int32 namelen, WSABUF* lpCallerData, WSABUF* lpCalleeData, QOS* lpSQOS, QOS* lpGQOS, uint32 dwFlags);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSANtohl(SOCKET s, uint32 netlong, uint32* lphostlong);
+		public static extern int32 WSANtohl(SOCKET s, uint32 netlong, out uint32 lphostlong);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSANtohs(SOCKET s, uint16 netshort, uint16* lphostshort);
+		public static extern int32 WSANtohs(SOCKET s, uint16 netshort, out uint16 lphostshort);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSARecv(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, uint32* lpFlags, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
+		public static extern int32 WSARecv(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, out uint32 lpFlags, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSARecvDisconnect(SOCKET s, WSABUF* lpInboundDisconnectData);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSARecvFrom(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, uint32* lpFlags, SOCKADDR* lpFrom, int32* lpFromlen, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
+		public static extern int32 WSARecvFrom(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesRecvd, out uint32 lpFlags, SOCKADDR* lpFrom, int32* lpFromlen, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WSAResetEvent(HANDLE hEvent);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSASend(SOCKET s, WSABUF* lpBuffers, uint32 dwBufferCount, uint32* lpNumberOfBytesSent, uint32 dwFlags, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSASendMsg(SOCKET Handle, WSAMSG* lpMsg, uint32 dwFlags, uint32* lpNumberOfBytesSent, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
+		public static extern int32 WSASendMsg(SOCKET Handle, ref WSAMSG lpMsg, uint32 dwFlags, uint32* lpNumberOfBytesSent, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSASendDisconnect(SOCKET s, WSABUF* lpOutboundDisconnectData);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3707,203 +3707,203 @@ namespace Win32
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WSAWaitForMultipleEvents(uint32 cEvents, HANDLE* lphEvents, BOOL fWaitAll, uint32 dwTimeout, BOOL fAlertable);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAAddressToStringA(SOCKADDR* lpsaAddress, uint32 dwAddressLength, WSAPROTOCOL_INFOA* lpProtocolInfo, uint8* lpszAddressString, uint32* lpdwAddressStringLength);
+		public static extern int32 WSAAddressToStringA(ref SOCKADDR lpsaAddress, uint32 dwAddressLength, WSAPROTOCOL_INFOA* lpProtocolInfo, uint8* lpszAddressString, out uint32 lpdwAddressStringLength);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAAddressToStringW(SOCKADDR* lpsaAddress, uint32 dwAddressLength, WSAPROTOCOL_INFOW* lpProtocolInfo, char16* lpszAddressString, uint32* lpdwAddressStringLength);
+		public static extern int32 WSAAddressToStringW(ref SOCKADDR lpsaAddress, uint32 dwAddressLength, WSAPROTOCOL_INFOW* lpProtocolInfo, char16* lpszAddressString, out uint32 lpdwAddressStringLength);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAStringToAddressA(PSTR AddressString, int32 AddressFamily, WSAPROTOCOL_INFOA* lpProtocolInfo, SOCKADDR* lpAddress, int32* lpAddressLength);
+		public static extern int32 WSAStringToAddressA(PSTR AddressString, int32 AddressFamily, WSAPROTOCOL_INFOA* lpProtocolInfo, out SOCKADDR lpAddress, out int32 lpAddressLength);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAStringToAddressW(PWSTR AddressString, int32 AddressFamily, WSAPROTOCOL_INFOW* lpProtocolInfo, SOCKADDR* lpAddress, int32* lpAddressLength);
+		public static extern int32 WSAStringToAddressW(PWSTR AddressString, int32 AddressFamily, WSAPROTOCOL_INFOW* lpProtocolInfo, out SOCKADDR lpAddress, out int32 lpAddressLength);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSALookupServiceBeginA(WSAQUERYSETA* lpqsRestrictions, uint32 dwControlFlags, HANDLE* lphLookup);
+		public static extern int32 WSALookupServiceBeginA(ref WSAQUERYSETA lpqsRestrictions, uint32 dwControlFlags, out HANDLE lphLookup);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSALookupServiceBeginW(WSAQUERYSETW* lpqsRestrictions, uint32 dwControlFlags, HANDLE* lphLookup);
+		public static extern int32 WSALookupServiceBeginW(ref WSAQUERYSETW lpqsRestrictions, uint32 dwControlFlags, out HANDLE lphLookup);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSALookupServiceNextA(HANDLE hLookup, uint32 dwControlFlags, uint32* lpdwBufferLength, WSAQUERYSETA* lpqsResults);
+		public static extern int32 WSALookupServiceNextA(HANDLE hLookup, uint32 dwControlFlags, out uint32 lpdwBufferLength, out WSAQUERYSETA lpqsResults);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSALookupServiceNextW(HANDLE hLookup, uint32 dwControlFlags, uint32* lpdwBufferLength, WSAQUERYSETW* lpqsResults);
+		public static extern int32 WSALookupServiceNextW(HANDLE hLookup, uint32 dwControlFlags, out uint32 lpdwBufferLength, WSAQUERYSETW* lpqsResults);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSANSPIoctl(HANDLE hLookup, uint32 dwControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, uint32* lpcbBytesReturned, WSACOMPLETION* lpCompletion);
+		public static extern int32 WSANSPIoctl(HANDLE hLookup, uint32 dwControlCode, void* lpvInBuffer, uint32 cbInBuffer, void* lpvOutBuffer, uint32 cbOutBuffer, out uint32 lpcbBytesReturned, WSACOMPLETION* lpCompletion);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSALookupServiceEnd(HANDLE hLookup);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAInstallServiceClassA(WSASERVICECLASSINFOA* lpServiceClassInfo);
+		public static extern int32 WSAInstallServiceClassA(ref WSASERVICECLASSINFOA lpServiceClassInfo);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAInstallServiceClassW(WSASERVICECLASSINFOW* lpServiceClassInfo);
+		public static extern int32 WSAInstallServiceClassW(ref WSASERVICECLASSINFOW lpServiceClassInfo);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSARemoveServiceClass(Guid* lpServiceClassId);
+		public static extern int32 WSARemoveServiceClass(ref Guid lpServiceClassId);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAGetServiceClassInfoA(Guid* lpProviderId, Guid* lpServiceClassId, uint32* lpdwBufSize, WSASERVICECLASSINFOA* lpServiceClassInfo);
+		public static extern int32 WSAGetServiceClassInfoA(ref Guid lpProviderId, ref Guid lpServiceClassId, out uint32 lpdwBufSize, out WSASERVICECLASSINFOA lpServiceClassInfo);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAGetServiceClassInfoW(Guid* lpProviderId, Guid* lpServiceClassId, uint32* lpdwBufSize, WSASERVICECLASSINFOW* lpServiceClassInfo);
+		public static extern int32 WSAGetServiceClassInfoW(ref Guid lpProviderId, ref Guid lpServiceClassId, out uint32 lpdwBufSize, out WSASERVICECLASSINFOW lpServiceClassInfo);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAEnumNameSpaceProvidersA(uint32* lpdwBufferLength, WSANAMESPACE_INFOA* lpnspBuffer);
+		public static extern int32 WSAEnumNameSpaceProvidersA(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOA lpnspBuffer);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAEnumNameSpaceProvidersW(uint32* lpdwBufferLength, WSANAMESPACE_INFOW* lpnspBuffer);
+		public static extern int32 WSAEnumNameSpaceProvidersW(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOW lpnspBuffer);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAEnumNameSpaceProvidersExA(uint32* lpdwBufferLength, WSANAMESPACE_INFOEXA* lpnspBuffer);
+		public static extern int32 WSAEnumNameSpaceProvidersExA(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOEXA lpnspBuffer);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAEnumNameSpaceProvidersExW(uint32* lpdwBufferLength, WSANAMESPACE_INFOEXW* lpnspBuffer);
+		public static extern int32 WSAEnumNameSpaceProvidersExW(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOEXW lpnspBuffer);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAGetServiceClassNameByClassIdA(Guid* lpServiceClassId, PSTR lpszServiceClassName, uint32* lpdwBufferLength);
+		public static extern int32 WSAGetServiceClassNameByClassIdA(ref Guid lpServiceClassId, PSTR lpszServiceClassName, out uint32 lpdwBufferLength);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAGetServiceClassNameByClassIdW(Guid* lpServiceClassId, PWSTR lpszServiceClassName, uint32* lpdwBufferLength);
+		public static extern int32 WSAGetServiceClassNameByClassIdW(ref Guid lpServiceClassId, PWSTR lpszServiceClassName, out uint32 lpdwBufferLength);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSASetServiceA(WSAQUERYSETA* lpqsRegInfo, WSAESETSERVICEOP essoperation, uint32 dwControlFlags);
+		public static extern int32 WSASetServiceA(ref WSAQUERYSETA lpqsRegInfo, WSAESETSERVICEOP essoperation, uint32 dwControlFlags);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSASetServiceW(WSAQUERYSETW* lpqsRegInfo, WSAESETSERVICEOP essoperation, uint32 dwControlFlags);
+		public static extern int32 WSASetServiceW(ref WSAQUERYSETW lpqsRegInfo, WSAESETSERVICEOP essoperation, uint32 dwControlFlags);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAProviderConfigChange(HANDLE* lpNotificationHandle, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
+		public static extern int32 WSAProviderConfigChange(out HANDLE lpNotificationHandle, OVERLAPPED* lpOverlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAPoll(WSAPOLLFD* fdArray, uint32 fds, int32 timeout);
+		public static extern int32 WSAPoll(out WSAPOLLFD fdArray, uint32 fds, int32 timeout);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 ProcessSocketNotifications(HANDLE completionPort, uint32 registrationCount, SOCK_NOTIFY_REGISTRATION* registrationInfos, uint32 timeoutMs, uint32 completionCount, OVERLAPPED_ENTRY* completionPortEntries, uint32* receivedEntryCount);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern PSTR RtlIpv4AddressToStringA(IN_ADDR* Addr, uint8* S);
+		public static extern PSTR RtlIpv4AddressToStringA(in IN_ADDR Addr, uint8* S);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv4AddressToStringExA(IN_ADDR* Address, uint16 Port, uint8* AddressString, uint32* AddressStringLength);
+		public static extern int32 RtlIpv4AddressToStringExA(in IN_ADDR Address, uint16 Port, uint8* AddressString, out uint32 AddressStringLength);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern PWSTR RtlIpv4AddressToStringW(IN_ADDR* Addr, char16* S);
+		public static extern PWSTR RtlIpv4AddressToStringW(in IN_ADDR Addr, char16* S);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv4AddressToStringExW(IN_ADDR* Address, uint16 Port, char16* AddressString, uint32* AddressStringLength);
+		public static extern int32 RtlIpv4AddressToStringExW(in IN_ADDR Address, uint16 Port, char16* AddressString, out uint32 AddressStringLength);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv4StringToAddressA(PSTR S, BOOLEAN Strict, PSTR* Terminator, IN_ADDR* Addr);
+		public static extern int32 RtlIpv4StringToAddressA(PSTR S, BOOLEAN Strict, out PSTR Terminator, out IN_ADDR Addr);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv4StringToAddressExA(PSTR AddressString, BOOLEAN Strict, IN_ADDR* Address, uint16* Port);
+		public static extern int32 RtlIpv4StringToAddressExA(PSTR AddressString, BOOLEAN Strict, out IN_ADDR Address, out uint16 Port);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv4StringToAddressW(PWSTR S, BOOLEAN Strict, PWSTR* Terminator, IN_ADDR* Addr);
+		public static extern int32 RtlIpv4StringToAddressW(PWSTR S, BOOLEAN Strict, out PWSTR Terminator, out IN_ADDR Addr);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv4StringToAddressExW(PWSTR AddressString, BOOLEAN Strict, IN_ADDR* Address, uint16* Port);
+		public static extern int32 RtlIpv4StringToAddressExW(PWSTR AddressString, BOOLEAN Strict, out IN_ADDR Address, out uint16 Port);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern PSTR RtlIpv6AddressToStringA(IN6_ADDR* Addr, uint8* S);
+		public static extern PSTR RtlIpv6AddressToStringA(in IN6_ADDR Addr, uint8* S);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv6AddressToStringExA(IN6_ADDR* Address, uint32 ScopeId, uint16 Port, uint8* AddressString, uint32* AddressStringLength);
+		public static extern int32 RtlIpv6AddressToStringExA(in IN6_ADDR Address, uint32 ScopeId, uint16 Port, uint8* AddressString, out uint32 AddressStringLength);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern PWSTR RtlIpv6AddressToStringW(IN6_ADDR* Addr, char16* S);
+		public static extern PWSTR RtlIpv6AddressToStringW(in IN6_ADDR Addr, char16* S);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv6AddressToStringExW(IN6_ADDR* Address, uint32 ScopeId, uint16 Port, char16* AddressString, uint32* AddressStringLength);
+		public static extern int32 RtlIpv6AddressToStringExW(in IN6_ADDR Address, uint32 ScopeId, uint16 Port, char16* AddressString, out uint32 AddressStringLength);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv6StringToAddressA(PSTR S, PSTR* Terminator, IN6_ADDR* Addr);
+		public static extern int32 RtlIpv6StringToAddressA(PSTR S, out PSTR Terminator, out IN6_ADDR Addr);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv6StringToAddressExA(PSTR AddressString, IN6_ADDR* Address, uint32* ScopeId, uint16* Port);
+		public static extern int32 RtlIpv6StringToAddressExA(PSTR AddressString, out IN6_ADDR Address, out uint32 ScopeId, out uint16 Port);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv6StringToAddressW(PWSTR S, PWSTR* Terminator, IN6_ADDR* Addr);
+		public static extern int32 RtlIpv6StringToAddressW(PWSTR S, out PWSTR Terminator, out IN6_ADDR Addr);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlIpv6StringToAddressExW(PWSTR AddressString, IN6_ADDR* Address, uint32* ScopeId, uint16* Port);
+		public static extern int32 RtlIpv6StringToAddressExW(PWSTR AddressString, out IN6_ADDR Address, out uint32 ScopeId, out uint16 Port);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern PSTR RtlEthernetAddressToStringA(DL_EUI48* Addr, uint8* S);
+		public static extern PSTR RtlEthernetAddressToStringA(in DL_EUI48 Addr, uint8* S);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern PWSTR RtlEthernetAddressToStringW(DL_EUI48* Addr, char16* S);
+		public static extern PWSTR RtlEthernetAddressToStringW(in DL_EUI48 Addr, char16* S);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlEthernetStringToAddressA(PSTR S, PSTR* Terminator, DL_EUI48* Addr);
+		public static extern int32 RtlEthernetStringToAddressA(PSTR S, out PSTR Terminator, out DL_EUI48 Addr);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 RtlEthernetStringToAddressW(PWSTR S, PWSTR* Terminator, DL_EUI48* Addr);
+		public static extern int32 RtlEthernetStringToAddressW(PWSTR S, out PWSTR Terminator, out DL_EUI48 Addr);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSARecvEx(SOCKET s, PSTR buf, int32 len, int32* flags);
+		public static extern int32 WSARecvEx(SOCKET s, PSTR buf, int32 len, out int32 flags);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL TransmitFile(SOCKET hSocket, HANDLE hFile, uint32 nNumberOfBytesToWrite, uint32 nNumberOfBytesPerSend, OVERLAPPED* lpOverlapped, TRANSMIT_FILE_BUFFERS* lpTransmitBuffers, uint32 dwReserved);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AcceptEx(SOCKET sListenSocket, SOCKET sAcceptSocket, void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, uint32* lpdwBytesReceived, OVERLAPPED* lpOverlapped);
+		public static extern BOOL AcceptEx(SOCKET sListenSocket, SOCKET sAcceptSocket, void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, out uint32 lpdwBytesReceived, out OVERLAPPED lpOverlapped);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void GetAcceptExSockaddrs(void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, SOCKADDR** LocalSockaddr, int32* LocalSockaddrLength, SOCKADDR** RemoteSockaddr, int32* RemoteSockaddrLength);
+		public static extern void GetAcceptExSockaddrs(void* lpOutputBuffer, uint32 dwReceiveDataLength, uint32 dwLocalAddressLength, uint32 dwRemoteAddressLength, out SOCKADDR* LocalSockaddr, out int32 LocalSockaddrLength, out SOCKADDR* RemoteSockaddr, out int32 RemoteSockaddrLength);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCEnumProtocols(int32* lpiProtocols, WSAPROTOCOL_INFOW* lpProtocolBuffer, uint32* lpdwBufferLength, int32* lpErrno);
+		public static extern int32 WSCEnumProtocols(int32* lpiProtocols, WSAPROTOCOL_INFOW* lpProtocolBuffer, out uint32 lpdwBufferLength, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCEnumProtocols32(int32* lpiProtocols, WSAPROTOCOL_INFOW* lpProtocolBuffer, uint32* lpdwBufferLength, int32* lpErrno);
+		public static extern int32 WSCEnumProtocols32(int32* lpiProtocols, out WSAPROTOCOL_INFOW lpProtocolBuffer, out uint32 lpdwBufferLength, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCDeinstallProvider(Guid* lpProviderId, int32* lpErrno);
+		public static extern int32 WSCDeinstallProvider(ref Guid lpProviderId, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCDeinstallProvider32(Guid* lpProviderId, int32* lpErrno);
+		public static extern int32 WSCDeinstallProvider32(ref Guid lpProviderId, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCInstallProvider(Guid* lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, int32* lpErrno);
+		public static extern int32 WSCInstallProvider(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCInstallProvider64_32(Guid* lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, int32* lpErrno);
+		public static extern int32 WSCInstallProvider64_32(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCGetProviderPath(Guid* lpProviderId, char16* lpszProviderDllPath, int32* lpProviderDllPathLen, int32* lpErrno);
+		public static extern int32 WSCGetProviderPath(ref Guid lpProviderId, char16* lpszProviderDllPath, out int32 lpProviderDllPathLen, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCGetProviderPath32(Guid* lpProviderId, char16* lpszProviderDllPath, int32* lpProviderDllPathLen, int32* lpErrno);
+		public static extern int32 WSCGetProviderPath32(ref Guid lpProviderId, char16* lpszProviderDllPath, out int32 lpProviderDllPathLen, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCUpdateProvider(Guid* lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, int32* lpErrno);
+		public static extern int32 WSCUpdateProvider(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCUpdateProvider32(Guid* lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, int32* lpErrno);
+		public static extern int32 WSCUpdateProvider32(ref Guid lpProviderId, PWSTR lpszProviderDllPath, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCSetProviderInfo(Guid* lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, uint8* Info, uint InfoSize, uint32 Flags, int32* lpErrno);
+		public static extern int32 WSCSetProviderInfo(ref Guid lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, ref uint8 Info, uint InfoSize, uint32 Flags, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCGetProviderInfo(Guid* lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, uint8* Info, uint* InfoSize, uint32 Flags, int32* lpErrno);
+		public static extern int32 WSCGetProviderInfo(ref Guid lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, out uint8 Info, out uint InfoSize, uint32 Flags, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCSetProviderInfo32(Guid* lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, uint8* Info, uint InfoSize, uint32 Flags, int32* lpErrno);
+		public static extern int32 WSCSetProviderInfo32(ref Guid lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, ref uint8 Info, uint InfoSize, uint32 Flags, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCGetProviderInfo32(Guid* lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, uint8* Info, uint* InfoSize, uint32 Flags, int32* lpErrno);
+		public static extern int32 WSCGetProviderInfo32(ref Guid lpProviderId, WSC_PROVIDER_INFO_TYPE InfoType, out uint8 Info, out uint InfoSize, uint32 Flags, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCSetApplicationCategory(char16* Path, uint32 PathLength, char16* Extra, uint32 ExtraLength, uint32 PermittedLspCategories, uint32* pPrevPermLspCat, int32* lpErrno);
+		public static extern int32 WSCSetApplicationCategory(char16* Path, uint32 PathLength, char16* Extra, uint32 ExtraLength, uint32 PermittedLspCategories, uint32* pPrevPermLspCat, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCGetApplicationCategory(char16* Path, uint32 PathLength, char16* Extra, uint32 ExtraLength, uint32* pPermittedLspCategories, int32* lpErrno);
+		public static extern int32 WSCGetApplicationCategory(char16* Path, uint32 PathLength, char16* Extra, uint32 ExtraLength, out uint32 pPermittedLspCategories, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WPUCompleteOverlappedRequest(SOCKET s, OVERLAPPED* lpOverlapped, uint32 dwError, uint32 cbTransferred, int32* lpErrno);
+		public static extern int32 WPUCompleteOverlappedRequest(SOCKET s, out OVERLAPPED lpOverlapped, uint32 dwError, uint32 cbTransferred, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCEnumNameSpaceProviders32(uint32* lpdwBufferLength, WSANAMESPACE_INFOW* lpnspBuffer);
+		public static extern int32 WSCEnumNameSpaceProviders32(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOW lpnspBuffer);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCEnumNameSpaceProvidersEx32(uint32* lpdwBufferLength, WSANAMESPACE_INFOEXW* lpnspBuffer);
+		public static extern int32 WSCEnumNameSpaceProvidersEx32(out uint32 lpdwBufferLength, out WSANAMESPACE_INFOEXW lpnspBuffer);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCInstallNameSpace(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, Guid* lpProviderId);
+		public static extern int32 WSCInstallNameSpace(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, ref Guid lpProviderId);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCInstallNameSpace32(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, Guid* lpProviderId);
+		public static extern int32 WSCInstallNameSpace32(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, ref Guid lpProviderId);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCUnInstallNameSpace(Guid* lpProviderId);
+		public static extern int32 WSCUnInstallNameSpace(ref Guid lpProviderId);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCInstallNameSpaceEx(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, Guid* lpProviderId, BLOB* lpProviderSpecific);
+		public static extern int32 WSCInstallNameSpaceEx(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, ref Guid lpProviderId, ref BLOB lpProviderSpecific);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCInstallNameSpaceEx32(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, Guid* lpProviderId, BLOB* lpProviderSpecific);
+		public static extern int32 WSCInstallNameSpaceEx32(PWSTR lpszIdentifier, PWSTR lpszPathName, uint32 dwNameSpace, uint32 dwVersion, ref Guid lpProviderId, ref BLOB lpProviderSpecific);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCUnInstallNameSpace32(Guid* lpProviderId);
+		public static extern int32 WSCUnInstallNameSpace32(ref Guid lpProviderId);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCEnableNSProvider(Guid* lpProviderId, BOOL fEnable);
+		public static extern int32 WSCEnableNSProvider(ref Guid lpProviderId, BOOL fEnable);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCEnableNSProvider32(Guid* lpProviderId, BOOL fEnable);
+		public static extern int32 WSCEnableNSProvider32(ref Guid lpProviderId, BOOL fEnable);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCInstallProviderAndChains64_32(Guid* lpProviderId, PWSTR lpszProviderDllPath, PWSTR lpszProviderDllPath32, PWSTR lpszLspName, uint32 dwServiceFlags, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, uint32* lpdwCatalogEntryId, int32* lpErrno);
+		public static extern int32 WSCInstallProviderAndChains64_32(ref Guid lpProviderId, PWSTR lpszProviderDllPath, PWSTR lpszProviderDllPath32, PWSTR lpszLspName, uint32 dwServiceFlags, WSAPROTOCOL_INFOW* lpProtocolInfoList, uint32 dwNumberOfEntries, uint32* lpdwCatalogEntryId, out int32 lpErrno);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAAdvertiseProvider(Guid* puuidProviderId, NSPV2_ROUTINE* pNSPv2Routine);
+		public static extern int32 WSAAdvertiseProvider(in Guid puuidProviderId, in NSPV2_ROUTINE pNSPv2Routine);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAUnadvertiseProvider(Guid* puuidProviderId);
+		public static extern int32 WSAUnadvertiseProvider(in Guid puuidProviderId);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSAProviderCompleteAsyncCall(HANDLE hAsyncCall, int32 iRetCode);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 EnumProtocolsA(int32* lpiProtocols, void* lpProtocolBuffer, uint32* lpdwBufferLength);
+		public static extern int32 EnumProtocolsA(int32* lpiProtocols, void* lpProtocolBuffer, out uint32 lpdwBufferLength);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 EnumProtocolsW(int32* lpiProtocols, void* lpProtocolBuffer, uint32* lpdwBufferLength);
+		public static extern int32 EnumProtocolsW(int32* lpiProtocols, void* lpProtocolBuffer, out uint32 lpdwBufferLength);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetAddressByNameA(uint32 dwNameSpace, Guid* lpServiceType, PSTR lpServiceName, int32* lpiProtocols, uint32 dwResolution, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, void* lpCsaddrBuffer, uint32* lpdwBufferLength, uint8* lpAliasBuffer, uint32* lpdwAliasBufferLength);
+		public static extern int32 GetAddressByNameA(uint32 dwNameSpace, ref Guid lpServiceType, PSTR lpServiceName, int32* lpiProtocols, uint32 dwResolution, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, void* lpCsaddrBuffer, out uint32 lpdwBufferLength, uint8* lpAliasBuffer, out uint32 lpdwAliasBufferLength);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetAddressByNameW(uint32 dwNameSpace, Guid* lpServiceType, PWSTR lpServiceName, int32* lpiProtocols, uint32 dwResolution, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, void* lpCsaddrBuffer, uint32* lpdwBufferLength, char16* lpAliasBuffer, uint32* lpdwAliasBufferLength);
+		public static extern int32 GetAddressByNameW(uint32 dwNameSpace, ref Guid lpServiceType, PWSTR lpServiceName, int32* lpiProtocols, uint32 dwResolution, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, void* lpCsaddrBuffer, out uint32 lpdwBufferLength, char16* lpAliasBuffer, out uint32 lpdwAliasBufferLength);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetTypeByNameA(PSTR lpServiceName, Guid* lpServiceType);
+		public static extern int32 GetTypeByNameA(PSTR lpServiceName, out Guid lpServiceType);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetTypeByNameW(PWSTR lpServiceName, Guid* lpServiceType);
+		public static extern int32 GetTypeByNameW(PWSTR lpServiceName, out Guid lpServiceType);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetNameByTypeA(Guid* lpServiceType, PSTR lpServiceName, uint32 dwNameLength);
+		public static extern int32 GetNameByTypeA(ref Guid lpServiceType, PSTR lpServiceName, uint32 dwNameLength);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetNameByTypeW(Guid* lpServiceType, PWSTR lpServiceName, uint32 dwNameLength);
+		public static extern int32 GetNameByTypeW(ref Guid lpServiceType, PWSTR lpServiceName, uint32 dwNameLength);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SetServiceA(uint32 dwNameSpace, SET_SERVICE_OPERATION dwOperation, uint32 dwFlags, SERVICE_INFOA* lpServiceInfo, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, uint32* lpdwStatusFlags);
+		public static extern int32 SetServiceA(uint32 dwNameSpace, SET_SERVICE_OPERATION dwOperation, uint32 dwFlags, ref SERVICE_INFOA lpServiceInfo, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, out uint32 lpdwStatusFlags);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SetServiceW(uint32 dwNameSpace, SET_SERVICE_OPERATION dwOperation, uint32 dwFlags, SERVICE_INFOW* lpServiceInfo, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, uint32* lpdwStatusFlags);
+		public static extern int32 SetServiceW(uint32 dwNameSpace, SET_SERVICE_OPERATION dwOperation, uint32 dwFlags, ref SERVICE_INFOW lpServiceInfo, SERVICE_ASYNC_INFO* lpServiceAsyncInfo, out uint32 lpdwStatusFlags);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetServiceA(uint32 dwNameSpace, Guid* lpGuid, PSTR lpServiceName, uint32 dwProperties, void* lpBuffer, uint32* lpdwBufferSize, SERVICE_ASYNC_INFO* lpServiceAsyncInfo);
+		public static extern int32 GetServiceA(uint32 dwNameSpace, ref Guid lpGuid, PSTR lpServiceName, uint32 dwProperties, void* lpBuffer, out uint32 lpdwBufferSize, SERVICE_ASYNC_INFO* lpServiceAsyncInfo);
 		[Import("mswsock.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetServiceW(uint32 dwNameSpace, Guid* lpGuid, PWSTR lpServiceName, uint32 dwProperties, void* lpBuffer, uint32* lpdwBufferSize, SERVICE_ASYNC_INFO* lpServiceAsyncInfo);
+		public static extern int32 GetServiceW(uint32 dwNameSpace, ref Guid lpGuid, PWSTR lpServiceName, uint32 dwProperties, void* lpBuffer, out uint32 lpdwBufferSize, SERVICE_ASYNC_INFO* lpServiceAsyncInfo);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 getaddrinfo(PSTR pNodeName, PSTR pServiceName, ADDRINFOA* pHints, ADDRINFOA** ppResult);
+		public static extern int32 getaddrinfo(PSTR pNodeName, PSTR pServiceName, ADDRINFOA* pHints, out ADDRINFOA* ppResult);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetAddrInfoW(PWSTR pNodeName, PWSTR pServiceName, addrinfoW* pHints, addrinfoW** ppResult);
+		public static extern int32 GetAddrInfoW(PWSTR pNodeName, PWSTR pServiceName, addrinfoW* pHints, out addrinfoW* ppResult);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetAddrInfoExA(PSTR pName, PSTR pServiceName, uint32 dwNameSpace, Guid* lpNspId, addrinfoexA* hints, addrinfoexA** ppResult, timeval* timeout, OVERLAPPED* lpOverlapped, LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine, HANDLE* lpNameHandle);
+		public static extern int32 GetAddrInfoExA(PSTR pName, PSTR pServiceName, uint32 dwNameSpace, Guid* lpNspId, addrinfoexA* hints, out addrinfoexA* ppResult, timeval* timeout, OVERLAPPED* lpOverlapped, LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine, HANDLE* lpNameHandle);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetAddrInfoExW(PWSTR pName, PWSTR pServiceName, uint32 dwNameSpace, Guid* lpNspId, addrinfoexW* hints, addrinfoexW** ppResult, timeval* timeout, OVERLAPPED* lpOverlapped, LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine, HANDLE* lpHandle);
+		public static extern int32 GetAddrInfoExW(PWSTR pName, PWSTR pServiceName, uint32 dwNameSpace, Guid* lpNspId, addrinfoexW* hints, out addrinfoexW* ppResult, timeval* timeout, OVERLAPPED* lpOverlapped, LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine, HANDLE* lpHandle);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetAddrInfoExCancel(HANDLE* lpHandle);
+		public static extern int32 GetAddrInfoExCancel(ref HANDLE lpHandle);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetAddrInfoExOverlappedResult(OVERLAPPED* lpOverlapped);
+		public static extern int32 GetAddrInfoExOverlappedResult(ref OVERLAPPED lpOverlapped);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SetAddrInfoExA(PSTR pName, PSTR pServiceName, SOCKET_ADDRESS* pAddresses, uint32 dwAddressCount, BLOB* lpBlob, uint32 dwFlags, uint32 dwNameSpace, Guid* lpNspId, timeval* timeout, OVERLAPPED* lpOverlapped, LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine, HANDLE* lpNameHandle);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3917,9 +3917,9 @@ namespace Win32
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void FreeAddrInfoExW(addrinfoexW* pAddrInfoEx);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 getnameinfo(SOCKADDR* pSockaddr, int32 SockaddrLength, uint8* pNodeBuffer, uint32 NodeBufferSize, uint8* pServiceBuffer, uint32 ServiceBufferSize, int32 Flags);
+		public static extern int32 getnameinfo(in SOCKADDR pSockaddr, int32 SockaddrLength, uint8* pNodeBuffer, uint32 NodeBufferSize, uint8* pServiceBuffer, uint32 ServiceBufferSize, int32 Flags);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetNameInfoW(SOCKADDR* pSockaddr, int32 SockaddrLength, char16* pNodeBuffer, uint32 NodeBufferSize, char16* pServiceBuffer, uint32 ServiceBufferSize, int32 Flags);
+		public static extern int32 GetNameInfoW(in SOCKADDR pSockaddr, int32 SockaddrLength, char16* pNodeBuffer, uint32 NodeBufferSize, char16* pServiceBuffer, uint32 ServiceBufferSize, int32 Flags);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 inet_pton(int32 Family, PSTR pszAddrString, void* pAddrBuf);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3931,11 +3931,11 @@ namespace Win32
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSASetSocketSecurity(SOCKET Socket, SOCKET_SECURITY_SETTINGS* SecuritySettings, uint32 SecuritySettingsLen, OVERLAPPED* Overlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE CompletionRoutine);
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSAQuerySocketSecurity(SOCKET Socket, SOCKET_SECURITY_QUERY_TEMPLATE* SecurityQueryTemplate, uint32 SecurityQueryTemplateLen, SOCKET_SECURITY_QUERY_INFO* SecurityQueryInfo, uint32* SecurityQueryInfoLen, OVERLAPPED* Overlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE CompletionRoutine);
+		public static extern int32 WSAQuerySocketSecurity(SOCKET Socket, SOCKET_SECURITY_QUERY_TEMPLATE* SecurityQueryTemplate, uint32 SecurityQueryTemplateLen, SOCKET_SECURITY_QUERY_INFO* SecurityQueryInfo, out uint32 SecurityQueryInfoLen, OVERLAPPED* Overlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE CompletionRoutine);
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSASetSocketPeerTargetName(SOCKET Socket, SOCKET_PEER_TARGET_NAME* PeerTargetName, uint32 PeerTargetNameLen, OVERLAPPED* Overlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE CompletionRoutine);
+		public static extern int32 WSASetSocketPeerTargetName(SOCKET Socket, in SOCKET_PEER_TARGET_NAME PeerTargetName, uint32 PeerTargetNameLen, OVERLAPPED* Overlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE CompletionRoutine);
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSADeleteSocketPeerTargetName(SOCKET Socket, SOCKADDR* PeerAddr, uint32 PeerAddrLen, OVERLAPPED* Overlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE CompletionRoutine);
+		public static extern int32 WSADeleteSocketPeerTargetName(SOCKET Socket, in SOCKADDR PeerAddr, uint32 PeerAddrLen, OVERLAPPED* Overlapped, LPWSAOVERLAPPED_COMPLETION_ROUTINE CompletionRoutine);
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 WSAImpersonateSocketPeer(SOCKET Socket, SOCKADDR* PeerAddr, uint32 PeerAddrLen);
 		[Import("fwpuclnt.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3943,13 +3943,13 @@ namespace Win32
 		[Import("windows.networking.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SetSocketMediaStreamingMode(BOOL value);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCWriteProviderOrder(uint32* lpwdCatalogEntryId, uint32 dwNumberOfEntries);
+		public static extern int32 WSCWriteProviderOrder(out uint32 lpwdCatalogEntryId, uint32 dwNumberOfEntries);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCWriteProviderOrder32(uint32* lpwdCatalogEntryId, uint32 dwNumberOfEntries);
+		public static extern int32 WSCWriteProviderOrder32(out uint32 lpwdCatalogEntryId, uint32 dwNumberOfEntries);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCWriteNameSpaceOrder(Guid* lpProviderId, uint32 dwNumberOfEntries);
+		public static extern int32 WSCWriteNameSpaceOrder(out Guid lpProviderId, uint32 dwNumberOfEntries);
 		[Import("ws2_32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WSCWriteNameSpaceOrder32(Guid* lpProviderId, uint32 dwNumberOfEntries);
+		public static extern int32 WSCWriteNameSpaceOrder32(out Guid lpProviderId, uint32 dwNumberOfEntries);
 		
 	}
 }

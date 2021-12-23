@@ -108,15 +108,15 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RmStartSession(uint32* pSessionHandle, uint32 dwSessionFlags, PWSTR strSessionKey);
+		public static extern uint32 RmStartSession(out uint32 pSessionHandle, uint32 dwSessionFlags, PWSTR strSessionKey);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RmJoinSession(uint32* pSessionHandle, PWSTR strSessionKey);
+		public static extern uint32 RmJoinSession(out uint32 pSessionHandle, PWSTR strSessionKey);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RmEndSession(uint32 dwSessionHandle);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RmRegisterResources(uint32 dwSessionHandle, uint32 nFiles, PWSTR* rgsFileNames, uint32 nApplications, RM_UNIQUE_PROCESS* rgApplications, uint32 nServices, PWSTR* rgsServiceNames);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RmGetList(uint32 dwSessionHandle, uint32* pnProcInfoNeeded, uint32* pnProcInfo, RM_PROCESS_INFO* rgAffectedApps, uint32* lpdwRebootReasons);
+		public static extern uint32 RmGetList(uint32 dwSessionHandle, out uint32 pnProcInfoNeeded, out uint32 pnProcInfo, RM_PROCESS_INFO* rgAffectedApps, out uint32 lpdwRebootReasons);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RmShutdown(uint32 dwSessionHandle, uint32 lActionFlags, RM_WRITE_STATUS_CALLBACK fnStatus);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
@@ -128,7 +128,7 @@ namespace Win32
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RmRemoveFilter(uint32 dwSessionHandle, PWSTR strModuleName, RM_UNIQUE_PROCESS* pProcess, PWSTR strServiceShortName);
 		[Import("rstrtmgr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RmGetFilterList(uint32 dwSessionHandle, uint8* pbFilterBuf, uint32 cbFilterBuf, uint32* cbFilterBufNeeded);
+		public static extern uint32 RmGetFilterList(uint32 dwSessionHandle, uint8* pbFilterBuf, uint32 cbFilterBuf, out uint32 cbFilterBufNeeded);
 		
 	}
 }

@@ -142,14 +142,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Resolve(Guid* riid, void** ppvObjectReference) mut
+			public HRESULT Resolve(in Guid riid, void** ppvObjectReference) mut
 			{
-				return VT.Resolve(&this, riid, ppvObjectReference);
+				return VT.Resolve(ref this, riid, ppvObjectReference);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAgileReference *self, Guid* riid, void** ppvObjectReference) Resolve;
+				public new function HRESULT(ref IAgileReference self, in Guid riid, void** ppvObjectReference) Resolve;
 			}
 		}
 		[CRepr]
@@ -161,12 +161,12 @@ namespace Win32
 			
 			public void OnUninitialize(uint64 ui64ApartmentIdentifier) mut
 			{
-				VT.OnUninitialize(&this, ui64ApartmentIdentifier);
+				VT.OnUninitialize(ref this, ui64ApartmentIdentifier);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IApartmentShutdown *self, uint64 ui64ApartmentIdentifier) OnUninitialize;
+				public new function void(ref IApartmentShutdown self, uint64 ui64ApartmentIdentifier) OnUninitialize;
 			}
 		}
 		[CRepr]
@@ -176,14 +176,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND window, Guid* riid, void** spatialInteractionManager) mut
+			public HRESULT GetForWindow(HWND window, in Guid riid, void** spatialInteractionManager) mut
 			{
-				return VT.GetForWindow(&this, window, riid, spatialInteractionManager);
+				return VT.GetForWindow(ref this, window, riid, spatialInteractionManager);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ISpatialInteractionManagerInterop *self, HWND window, Guid* riid, void** spatialInteractionManager) GetForWindow;
+				public new function HRESULT(ref ISpatialInteractionManagerInterop self, HWND window, in Guid riid, void** spatialInteractionManager) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -193,14 +193,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateForWindow(HWND window, Guid* riid, void** holographicSpace) mut
+			public HRESULT CreateForWindow(HWND window, in Guid riid, void** holographicSpace) mut
 			{
-				return VT.CreateForWindow(&this, window, riid, holographicSpace);
+				return VT.CreateForWindow(ref this, window, riid, holographicSpace);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IHolographicSpaceInterop *self, HWND window, Guid* riid, void** holographicSpace) CreateForWindow;
+				public new function HRESULT(ref IHolographicSpaceInterop self, HWND window, in Guid riid, void** holographicSpace) CreateForWindow;
 			}
 		}
 		[CRepr]
@@ -210,24 +210,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIids(uint32* iidCount, Guid** iids) mut
+			public HRESULT GetIids(out uint32 iidCount, Guid** iids) mut
 			{
-				return VT.GetIids(&this, iidCount, iids);
+				return VT.GetIids(ref this, out iidCount, iids);
 			}
 			public HRESULT GetRuntimeClassName(HSTRING* className) mut
 			{
-				return VT.GetRuntimeClassName(&this, className);
+				return VT.GetRuntimeClassName(ref this, className);
 			}
-			public HRESULT GetTrustLevel(TrustLevel* trustLevel) mut
+			public HRESULT GetTrustLevel(out TrustLevel trustLevel) mut
 			{
-				return VT.GetTrustLevel(&this, trustLevel);
+				return VT.GetTrustLevel(ref this, out trustLevel);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInspectable *self, uint32* iidCount, Guid** iids) GetIids;
-				public new function HRESULT(IInspectable *self, HSTRING* className) GetRuntimeClassName;
-				public new function HRESULT(IInspectable *self, TrustLevel* trustLevel) GetTrustLevel;
+				public new function HRESULT(ref IInspectable self, out uint32 iidCount, Guid** iids) GetIids;
+				public new function HRESULT(ref IInspectable self, HSTRING* className) GetRuntimeClassName;
+				public new function HRESULT(ref IInspectable self, out TrustLevel trustLevel) GetTrustLevel;
 			}
 		}
 		[CRepr]
@@ -237,24 +237,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, Guid* riid, void** accountsSettingsPane) mut
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** accountsSettingsPane) mut
 			{
-				return VT.GetForWindow(&this, appWindow, riid, accountsSettingsPane);
+				return VT.GetForWindow(ref this, appWindow, riid, accountsSettingsPane);
 			}
-			public HRESULT ShowManageAccountsForWindowAsync(HWND appWindow, Guid* riid, void** asyncAction) mut
+			public HRESULT ShowManageAccountsForWindowAsync(HWND appWindow, in Guid riid, void** asyncAction) mut
 			{
-				return VT.ShowManageAccountsForWindowAsync(&this, appWindow, riid, asyncAction);
+				return VT.ShowManageAccountsForWindowAsync(ref this, appWindow, riid, asyncAction);
 			}
-			public HRESULT ShowAddAccountForWindowAsync(HWND appWindow, Guid* riid, void** asyncAction) mut
+			public HRESULT ShowAddAccountForWindowAsync(HWND appWindow, in Guid riid, void** asyncAction) mut
 			{
-				return VT.ShowAddAccountForWindowAsync(&this, appWindow, riid, asyncAction);
+				return VT.ShowAddAccountForWindowAsync(ref this, appWindow, riid, asyncAction);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IAccountsSettingsPaneInterop *self, HWND appWindow, Guid* riid, void** accountsSettingsPane) GetForWindow;
-				public new function HRESULT(IAccountsSettingsPaneInterop *self, HWND appWindow, Guid* riid, void** asyncAction) ShowManageAccountsForWindowAsync;
-				public new function HRESULT(IAccountsSettingsPaneInterop *self, HWND appWindow, Guid* riid, void** asyncAction) ShowAddAccountForWindowAsync;
+				public new function HRESULT(ref IAccountsSettingsPaneInterop self, HWND appWindow, in Guid riid, void** accountsSettingsPane) GetForWindow;
+				public new function HRESULT(ref IAccountsSettingsPaneInterop self, HWND appWindow, in Guid riid, void** asyncAction) ShowManageAccountsForWindowAsync;
+				public new function HRESULT(ref IAccountsSettingsPaneInterop self, HWND appWindow, in Guid riid, void** asyncAction) ShowAddAccountForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -264,14 +264,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenForExtendedExecutionAsync(Guid* riid, void** operation) mut
+			public HRESULT OpenForExtendedExecutionAsync(in Guid riid, void** operation) mut
 			{
-				return VT.OpenForExtendedExecutionAsync(&this, riid, operation);
+				return VT.OpenForExtendedExecutionAsync(ref this, riid, operation);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAppServiceConnectionExtendedExecution *self, Guid* riid, void** operation) OpenForExtendedExecutionAsync;
+				public new function HRESULT(ref IAppServiceConnectionExtendedExecution self, in Guid riid, void** operation) OpenForExtendedExecutionAsync;
 			}
 		}
 		[CRepr]
@@ -281,14 +281,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CorrelationVector(HSTRING* cv) mut
+			public HRESULT get_CorrelationVector(out HSTRING cv) mut
 			{
-				return VT.get_CorrelationVector(&this, cv);
+				return VT.get_CorrelationVector(ref this, out cv);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ICorrelationVectorSource *self, HSTRING* cv) get_CorrelationVector;
+				public new function HRESULT(ref ICorrelationVectorSource self, out HSTRING cv) get_CorrelationVector;
 			}
 		}
 		[CRepr]
@@ -300,17 +300,17 @@ namespace Win32
 			
 			public HRESULT OnStateChanged(CASTING_CONNECTION_STATE newState) mut
 			{
-				return VT.OnStateChanged(&this, newState);
+				return VT.OnStateChanged(ref this, newState);
 			}
 			public HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, PWSTR errorMessage) mut
 			{
-				return VT.OnError(&this, errorStatus, errorMessage);
+				return VT.OnError(ref this, errorStatus, errorMessage);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ICastingEventHandler *self, CASTING_CONNECTION_STATE newState) OnStateChanged;
-				public new function HRESULT(ICastingEventHandler *self, CASTING_CONNECTION_ERROR_STATUS errorStatus, PWSTR errorMessage) OnError;
+				public new function HRESULT(ref ICastingEventHandler self, CASTING_CONNECTION_STATE newState) OnStateChanged;
+				public new function HRESULT(ref ICastingEventHandler self, CASTING_CONNECTION_ERROR_STATUS errorStatus, PWSTR errorMessage) OnError;
 			}
 		}
 		[CRepr]
@@ -320,34 +320,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IUnknown* castingEngine, IUnknown* castingSource) mut
+			public HRESULT Initialize(ref IUnknown castingEngine, ref IUnknown castingSource) mut
 			{
-				return VT.Initialize(&this, castingEngine, castingSource);
+				return VT.Initialize(ref this, ref castingEngine, ref castingSource);
 			}
 			public HRESULT Connect() mut
 			{
-				return VT.Connect(&this);
+				return VT.Connect(ref this);
 			}
 			public HRESULT Disconnect() mut
 			{
-				return VT.Disconnect(&this);
+				return VT.Disconnect(ref this);
 			}
-			public HRESULT Advise(ICastingEventHandler* eventHandler, uint32* cookie) mut
+			public HRESULT Advise(ref ICastingEventHandler eventHandler, out uint32 cookie) mut
 			{
-				return VT.Advise(&this, eventHandler, cookie);
+				return VT.Advise(ref this, ref eventHandler, out cookie);
 			}
 			public HRESULT UnAdvise(uint32 cookie) mut
 			{
-				return VT.UnAdvise(&this, cookie);
+				return VT.UnAdvise(ref this, cookie);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ICastingController *self, IUnknown* castingEngine, IUnknown* castingSource) Initialize;
-				public new function HRESULT(ICastingController *self) Connect;
-				public new function HRESULT(ICastingController *self) Disconnect;
-				public new function HRESULT(ICastingController *self, ICastingEventHandler* eventHandler, uint32* cookie) Advise;
-				public new function HRESULT(ICastingController *self, uint32 cookie) UnAdvise;
+				public new function HRESULT(ref ICastingController self, ref IUnknown castingEngine, ref IUnknown castingSource) Initialize;
+				public new function HRESULT(ref ICastingController self) Connect;
+				public new function HRESULT(ref ICastingController self) Disconnect;
+				public new function HRESULT(ref ICastingController self, ref ICastingEventHandler eventHandler, out uint32 cookie) Advise;
+				public new function HRESULT(ref ICastingController self, uint32 cookie) UnAdvise;
 			}
 		}
 		[CRepr]
@@ -357,19 +357,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetController(ICastingController** controller) mut
+			public HRESULT GetController(out ICastingController* controller) mut
 			{
-				return VT.GetController(&this, controller);
+				return VT.GetController(ref this, out controller);
 			}
-			public HRESULT GetProperties(INamedPropertyStore** props) mut
+			public HRESULT GetProperties(out INamedPropertyStore* props) mut
 			{
-				return VT.GetProperties(&this, props);
+				return VT.GetProperties(ref this, out props);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ICastingSourceInfo *self, ICastingController** controller) GetController;
-				public new function HRESULT(ICastingSourceInfo *self, INamedPropertyStore** props) GetProperties;
+				public new function HRESULT(ref ICastingSourceInfo self, out ICastingController* controller) GetController;
+				public new function HRESULT(ref ICastingSourceInfo self, out INamedPropertyStore* props) GetProperties;
 			}
 		}
 		[CRepr]
@@ -379,14 +379,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND hwnd, Guid* riid, void** ppv) mut
+			public HRESULT GetForWindow(HWND hwnd, in Guid riid, void** ppv) mut
 			{
-				return VT.GetForWindow(&this, hwnd, riid, ppv);
+				return VT.GetForWindow(ref this, hwnd, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IDragDropManagerInterop *self, HWND hwnd, Guid* riid, void** ppv) GetForWindow;
+				public new function HRESULT(ref IDragDropManagerInterop self, HWND hwnd, in Guid riid, void** ppv) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -396,14 +396,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, Guid* riid, void** inputPane) mut
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** inputPane) mut
 			{
-				return VT.GetForWindow(&this, appWindow, riid, inputPane);
+				return VT.GetForWindow(ref this, appWindow, riid, inputPane);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IInputPaneInterop *self, HWND appWindow, Guid* riid, void** inputPane) GetForWindow;
+				public new function HRESULT(ref IInputPaneInterop self, HWND appWindow, in Guid riid, void** inputPane) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -413,19 +413,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, Guid* riid, void** playToManager) mut
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** playToManager) mut
 			{
-				return VT.GetForWindow(&this, appWindow, riid, playToManager);
+				return VT.GetForWindow(ref this, appWindow, riid, playToManager);
 			}
 			public HRESULT ShowPlayToUIForWindow(HWND appWindow) mut
 			{
-				return VT.ShowPlayToUIForWindow(&this, appWindow);
+				return VT.ShowPlayToUIForWindow(ref this, appWindow);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IPlayToManagerInterop *self, HWND appWindow, Guid* riid, void** playToManager) GetForWindow;
-				public new function HRESULT(IPlayToManagerInterop *self, HWND appWindow) ShowPlayToUIForWindow;
+				public new function HRESULT(ref IPlayToManagerInterop self, HWND appWindow, in Guid riid, void** playToManager) GetForWindow;
+				public new function HRESULT(ref IPlayToManagerInterop self, HWND appWindow) ShowPlayToUIForWindow;
 			}
 		}
 		[CRepr]
@@ -435,24 +435,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LastCorrelationVectorForThread(HSTRING* cv) mut
+			public HRESULT get_LastCorrelationVectorForThread(out HSTRING cv) mut
 			{
-				return VT.get_LastCorrelationVectorForThread(&this, cv);
+				return VT.get_LastCorrelationVectorForThread(ref this, out cv);
 			}
-			public HRESULT get_NextCorrelationVectorForThread(HSTRING* cv) mut
+			public HRESULT get_NextCorrelationVectorForThread(out HSTRING cv) mut
 			{
-				return VT.get_NextCorrelationVectorForThread(&this, cv);
+				return VT.get_NextCorrelationVectorForThread(ref this, out cv);
 			}
 			public HRESULT put_NextCorrelationVectorForThread(HSTRING cv) mut
 			{
-				return VT.put_NextCorrelationVectorForThread(&this, cv);
+				return VT.put_NextCorrelationVectorForThread(ref this, cv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ICorrelationVectorInformation *self, HSTRING* cv) get_LastCorrelationVectorForThread;
-				public new function HRESULT(ICorrelationVectorInformation *self, HSTRING* cv) get_NextCorrelationVectorForThread;
-				public new function HRESULT(ICorrelationVectorInformation *self, HSTRING cv) put_NextCorrelationVectorForThread;
+				public new function HRESULT(ref ICorrelationVectorInformation self, out HSTRING cv) get_LastCorrelationVectorForThread;
+				public new function HRESULT(ref ICorrelationVectorInformation self, out HSTRING cv) get_NextCorrelationVectorForThread;
+				public new function HRESULT(ref ICorrelationVectorInformation self, HSTRING cv) put_NextCorrelationVectorForThread;
 			}
 		}
 		[CRepr]
@@ -462,14 +462,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND hwnd, Guid* riid, void** ppv) mut
+			public HRESULT GetForWindow(HWND hwnd, in Guid riid, void** ppv) mut
 			{
-				return VT.GetForWindow(&this, hwnd, riid, ppv);
+				return VT.GetForWindow(ref this, hwnd, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IUIViewSettingsInterop *self, HWND hwnd, Guid* riid, void** ppv) GetForWindow;
+				public new function HRESULT(ref IUIViewSettingsInterop self, HWND hwnd, in Guid riid, void** ppv) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -479,14 +479,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSessionForWindow(HWND window, Guid* iid, void** value) mut
+			public HRESULT CreateSessionForWindow(HWND window, in Guid iid, void** value) mut
 			{
-				return VT.CreateSessionForWindow(&this, window, iid, value);
+				return VT.CreateSessionForWindow(ref this, window, iid, value);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IUserActivityInterop *self, HWND window, Guid* iid, void** value) CreateSessionForWindow;
+				public new function HRESULT(ref IUserActivityInterop self, HWND window, in Guid iid, void** value) CreateSessionForWindow;
 			}
 		}
 		[CRepr]
@@ -498,12 +498,12 @@ namespace Win32
 			
 			public HRESULT SetActivitySourceHost(HSTRING activitySourceHost) mut
 			{
-				return VT.SetActivitySourceHost(&this, activitySourceHost);
+				return VT.SetActivitySourceHost(ref this, activitySourceHost);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IUserActivitySourceHostInterop *self, HSTRING activitySourceHost) SetActivitySourceHost;
+				public new function HRESULT(ref IUserActivitySourceHostInterop self, HSTRING activitySourceHost) SetActivitySourceHost;
 			}
 		}
 		[CRepr]
@@ -513,14 +513,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND window, Guid* iid, void** value) mut
+			public HRESULT GetForWindow(HWND window, in Guid iid, void** value) mut
 			{
-				return VT.GetForWindow(&this, window, iid, value);
+				return VT.GetForWindow(ref this, window, iid, value);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IUserActivityRequestManagerInterop *self, HWND window, Guid* iid, void** value) GetForWindow;
+				public new function HRESULT(ref IUserActivityRequestManagerInterop self, HWND window, in Guid iid, void** value) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -530,14 +530,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, Guid* riid, void** asyncOperation) mut
+			public HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, in Guid riid, void** asyncOperation) mut
 			{
-				return VT.RequestVerificationForWindowAsync(&this, appWindow, message, riid, asyncOperation);
+				return VT.RequestVerificationForWindowAsync(ref this, appWindow, message, riid, asyncOperation);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IUserConsentVerifierInterop *self, HWND appWindow, HSTRING message, Guid* riid, void** asyncOperation) RequestVerificationForWindowAsync;
+				public new function HRESULT(ref IUserConsentVerifierInterop self, HWND appWindow, HSTRING message, in Guid riid, void** asyncOperation) RequestVerificationForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -547,19 +547,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestTokenForWindowAsync(HWND appWindow, IInspectable* request, Guid* riid, void** asyncInfo) mut
+			public HRESULT RequestTokenForWindowAsync(HWND appWindow, ref IInspectable request, in Guid riid, void** asyncInfo) mut
 			{
-				return VT.RequestTokenForWindowAsync(&this, appWindow, request, riid, asyncInfo);
+				return VT.RequestTokenForWindowAsync(ref this, appWindow, ref request, riid, asyncInfo);
 			}
-			public HRESULT RequestTokenWithWebAccountForWindowAsync(HWND appWindow, IInspectable* request, IInspectable* webAccount, Guid* riid, void** asyncInfo) mut
+			public HRESULT RequestTokenWithWebAccountForWindowAsync(HWND appWindow, ref IInspectable request, ref IInspectable webAccount, in Guid riid, void** asyncInfo) mut
 			{
-				return VT.RequestTokenWithWebAccountForWindowAsync(&this, appWindow, request, webAccount, riid, asyncInfo);
+				return VT.RequestTokenWithWebAccountForWindowAsync(ref this, appWindow, ref request, ref webAccount, riid, asyncInfo);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IWebAuthenticationCoreManagerInterop *self, HWND appWindow, IInspectable* request, Guid* riid, void** asyncInfo) RequestTokenForWindowAsync;
-				public new function HRESULT(IWebAuthenticationCoreManagerInterop *self, HWND appWindow, IInspectable* request, IInspectable* webAccount, Guid* riid, void** asyncInfo) RequestTokenWithWebAccountForWindowAsync;
+				public new function HRESULT(ref IWebAuthenticationCoreManagerInterop self, HWND appWindow, ref IInspectable request, in Guid riid, void** asyncInfo) RequestTokenForWindowAsync;
+				public new function HRESULT(ref IWebAuthenticationCoreManagerInterop self, HWND appWindow, ref IInspectable request, ref IInspectable webAccount, in Guid riid, void** asyncInfo) RequestTokenWithWebAccountForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -569,19 +569,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetErrorDetails(BSTR* description, HRESULT* error, BSTR* restrictedDescription, BSTR* capabilitySid) mut
+			public HRESULT GetErrorDetails(out BSTR description, out HRESULT error, out BSTR restrictedDescription, out BSTR capabilitySid) mut
 			{
-				return VT.GetErrorDetails(&this, description, error, restrictedDescription, capabilitySid);
+				return VT.GetErrorDetails(ref this, out description, out error, out restrictedDescription, out capabilitySid);
 			}
-			public HRESULT GetReference(BSTR* reference) mut
+			public HRESULT GetReference(out BSTR reference) mut
 			{
-				return VT.GetReference(&this, reference);
+				return VT.GetReference(ref this, out reference);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRestrictedErrorInfo *self, BSTR* description, HRESULT* error, BSTR* restrictedDescription, BSTR* capabilitySid) GetErrorDetails;
-				public new function HRESULT(IRestrictedErrorInfo *self, BSTR* reference) GetReference;
+				public new function HRESULT(ref IRestrictedErrorInfo self, out BSTR description, out HRESULT error, out BSTR restrictedDescription, out BSTR capabilitySid) GetErrorDetails;
+				public new function HRESULT(ref IRestrictedErrorInfo self, out BSTR reference) GetReference;
 			}
 		}
 		[CRepr]
@@ -591,14 +591,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLanguageException(IUnknown** languageException) mut
+			public HRESULT GetLanguageException(out IUnknown* languageException) mut
 			{
-				return VT.GetLanguageException(&this, languageException);
+				return VT.GetLanguageException(ref this, out languageException);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILanguageExceptionErrorInfo *self, IUnknown** languageException) GetLanguageException;
+				public new function HRESULT(ref ILanguageExceptionErrorInfo self, out IUnknown* languageException) GetLanguageException;
 			}
 		}
 		[CRepr]
@@ -608,14 +608,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTransformedRestrictedErrorInfo(IRestrictedErrorInfo** restrictedErrorInfo) mut
+			public HRESULT GetTransformedRestrictedErrorInfo(out IRestrictedErrorInfo* restrictedErrorInfo) mut
 			{
-				return VT.GetTransformedRestrictedErrorInfo(&this, restrictedErrorInfo);
+				return VT.GetTransformedRestrictedErrorInfo(ref this, out restrictedErrorInfo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILanguageExceptionTransform *self, IRestrictedErrorInfo** restrictedErrorInfo) GetTransformedRestrictedErrorInfo;
+				public new function HRESULT(ref ILanguageExceptionTransform self, out IRestrictedErrorInfo* restrictedErrorInfo) GetTransformedRestrictedErrorInfo;
 			}
 		}
 		[CRepr]
@@ -625,14 +625,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStackBackTrace(uint32 maxFramesToCapture, uint* stackBackTrace, uint32* framesCaptured) mut
+			public HRESULT GetStackBackTrace(uint32 maxFramesToCapture, out uint stackBackTrace, out uint32 framesCaptured) mut
 			{
-				return VT.GetStackBackTrace(&this, maxFramesToCapture, stackBackTrace, framesCaptured);
+				return VT.GetStackBackTrace(ref this, maxFramesToCapture, out stackBackTrace, out framesCaptured);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILanguageExceptionStackBackTrace *self, uint32 maxFramesToCapture, uint* stackBackTrace, uint32* framesCaptured) GetStackBackTrace;
+				public new function HRESULT(ref ILanguageExceptionStackBackTrace self, uint32 maxFramesToCapture, out uint stackBackTrace, out uint32 framesCaptured) GetStackBackTrace;
 			}
 		}
 		[CRepr]
@@ -642,24 +642,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPreviousLanguageExceptionErrorInfo(ILanguageExceptionErrorInfo2** previousLanguageExceptionErrorInfo) mut
+			public HRESULT GetPreviousLanguageExceptionErrorInfo(out ILanguageExceptionErrorInfo2* previousLanguageExceptionErrorInfo) mut
 			{
-				return VT.GetPreviousLanguageExceptionErrorInfo(&this, previousLanguageExceptionErrorInfo);
+				return VT.GetPreviousLanguageExceptionErrorInfo(ref this, out previousLanguageExceptionErrorInfo);
 			}
-			public HRESULT CapturePropagationContext(IUnknown* languageException) mut
+			public HRESULT CapturePropagationContext(ref IUnknown languageException) mut
 			{
-				return VT.CapturePropagationContext(&this, languageException);
+				return VT.CapturePropagationContext(ref this, ref languageException);
 			}
-			public HRESULT GetPropagationContextHead(ILanguageExceptionErrorInfo2** propagatedLanguageExceptionErrorInfoHead) mut
+			public HRESULT GetPropagationContextHead(out ILanguageExceptionErrorInfo2* propagatedLanguageExceptionErrorInfoHead) mut
 			{
-				return VT.GetPropagationContextHead(&this, propagatedLanguageExceptionErrorInfoHead);
+				return VT.GetPropagationContextHead(ref this, out propagatedLanguageExceptionErrorInfoHead);
 			}
 			[CRepr]
 			public struct VTable : ILanguageExceptionErrorInfo.VTable
 			{
-				public new function HRESULT(ILanguageExceptionErrorInfo2 *self, ILanguageExceptionErrorInfo2** previousLanguageExceptionErrorInfo) GetPreviousLanguageExceptionErrorInfo;
-				public new function HRESULT(ILanguageExceptionErrorInfo2 *self, IUnknown* languageException) CapturePropagationContext;
-				public new function HRESULT(ILanguageExceptionErrorInfo2 *self, ILanguageExceptionErrorInfo2** propagatedLanguageExceptionErrorInfoHead) GetPropagationContextHead;
+				public new function HRESULT(ref ILanguageExceptionErrorInfo2 self, out ILanguageExceptionErrorInfo2* previousLanguageExceptionErrorInfo) GetPreviousLanguageExceptionErrorInfo;
+				public new function HRESULT(ref ILanguageExceptionErrorInfo2 self, ref IUnknown languageException) CapturePropagationContext;
+				public new function HRESULT(ref ILanguageExceptionErrorInfo2 self, out ILanguageExceptionErrorInfo2* propagatedLanguageExceptionErrorInfoHead) GetPropagationContextHead;
 			}
 		}
 		[CRepr]
@@ -671,12 +671,12 @@ namespace Win32
 			
 			public HRESULT ActivateInstance(IInspectable** instance) mut
 			{
-				return VT.ActivateInstance(&this, instance);
+				return VT.ActivateInstance(ref this, instance);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IActivationFactory *self, IInspectable** instance) ActivateInstance;
+				public new function HRESULT(ref IActivationFactory self, IInspectable** instance) ActivateInstance;
 			}
 		}
 		[CRepr]
@@ -686,14 +686,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Buffer(uint8** value) mut
+			public HRESULT Buffer(out uint8* value) mut
 			{
-				return VT.Buffer(&this, value);
+				return VT.Buffer(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IBufferByteAccess *self, uint8** value) Buffer;
+				public new function HRESULT(ref IBufferByteAccess self, out uint8* value) Buffer;
 			}
 		}
 		[CRepr]
@@ -704,57 +704,57 @@ namespace Win32
 			
 			public HRESULT SetWinRtInterface(Guid iid) mut
 			{
-				return VT.SetWinRtInterface(&this, iid);
+				return VT.SetWinRtInterface(ref this, iid);
 			}
 			public HRESULT SetDelegate(Guid iid) mut
 			{
-				return VT.SetDelegate(&this, iid);
+				return VT.SetDelegate(ref this, iid);
 			}
 			public HRESULT SetInterfaceGroupSimpleDefault(PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) mut
 			{
-				return VT.SetInterfaceGroupSimpleDefault(&this, name, defaultInterfaceName, defaultInterfaceIID);
+				return VT.SetInterfaceGroupSimpleDefault(ref this, name, defaultInterfaceName, defaultInterfaceIID);
 			}
 			public HRESULT SetInterfaceGroupParameterizedDefault(PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) mut
 			{
-				return VT.SetInterfaceGroupParameterizedDefault(&this, name, elementCount, defaultInterfaceNameElements);
+				return VT.SetInterfaceGroupParameterizedDefault(ref this, name, elementCount, defaultInterfaceNameElements);
 			}
 			public HRESULT SetRuntimeClassSimpleDefault(PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) mut
 			{
-				return VT.SetRuntimeClassSimpleDefault(&this, name, defaultInterfaceName, defaultInterfaceIID);
+				return VT.SetRuntimeClassSimpleDefault(ref this, name, defaultInterfaceName, defaultInterfaceIID);
 			}
 			public HRESULT SetRuntimeClassParameterizedDefault(PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) mut
 			{
-				return VT.SetRuntimeClassParameterizedDefault(&this, name, elementCount, defaultInterfaceNameElements);
+				return VT.SetRuntimeClassParameterizedDefault(ref this, name, elementCount, defaultInterfaceNameElements);
 			}
 			public HRESULT SetStruct(PWSTR name, uint32 numFields, PWSTR* fieldTypeNames) mut
 			{
-				return VT.SetStruct(&this, name, numFields, fieldTypeNames);
+				return VT.SetStruct(ref this, name, numFields, fieldTypeNames);
 			}
 			public HRESULT SetEnum(PWSTR name, PWSTR baseType) mut
 			{
-				return VT.SetEnum(&this, name, baseType);
+				return VT.SetEnum(ref this, name, baseType);
 			}
 			public HRESULT SetParameterizedInterface(Guid piid, uint32 numArgs) mut
 			{
-				return VT.SetParameterizedInterface(&this, piid, numArgs);
+				return VT.SetParameterizedInterface(ref this, piid, numArgs);
 			}
 			public HRESULT SetParameterizedDelegate(Guid piid, uint32 numArgs) mut
 			{
-				return VT.SetParameterizedDelegate(&this, piid, numArgs);
+				return VT.SetParameterizedDelegate(ref this, piid, numArgs);
 			}
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, Guid iid) SetWinRtInterface;
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, Guid iid) SetDelegate;
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetInterfaceGroupSimpleDefault;
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetInterfaceGroupParameterizedDefault;
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetRuntimeClassSimpleDefault;
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetRuntimeClassParameterizedDefault;
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, uint32 numFields, PWSTR* fieldTypeNames) SetStruct;
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, PWSTR name, PWSTR baseType) SetEnum;
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, Guid piid, uint32 numArgs) SetParameterizedInterface;
-				public new function HRESULT(IRoSimpleMetaDataBuilder *self, Guid piid, uint32 numArgs) SetParameterizedDelegate;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, Guid iid) SetWinRtInterface;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, Guid iid) SetDelegate;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetInterfaceGroupSimpleDefault;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetInterfaceGroupParameterizedDefault;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, PWSTR defaultInterfaceName, Guid* defaultInterfaceIID) SetRuntimeClassSimpleDefault;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, uint32 elementCount, PWSTR* defaultInterfaceNameElements) SetRuntimeClassParameterizedDefault;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, uint32 numFields, PWSTR* fieldTypeNames) SetStruct;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, PWSTR name, PWSTR baseType) SetEnum;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, Guid piid, uint32 numArgs) SetParameterizedInterface;
+				public new function HRESULT(ref IRoSimpleMetaDataBuilder self, Guid piid, uint32 numArgs) SetParameterizedDelegate;
 			}
 		}
 		[CRepr]
@@ -763,14 +763,14 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Locate(PWSTR nameElement, IRoSimpleMetaDataBuilder* metaDataDestination) mut
+			public HRESULT Locate(PWSTR nameElement, ref IRoSimpleMetaDataBuilder metaDataDestination) mut
 			{
-				return VT.Locate(&this, nameElement, metaDataDestination);
+				return VT.Locate(ref this, nameElement, ref metaDataDestination);
 			}
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(IRoMetaDataLocator *self, PWSTR nameElement, IRoSimpleMetaDataBuilder* metaDataDestination) Locate;
+				public new function HRESULT(ref IRoMetaDataLocator self, PWSTR nameElement, ref IRoSimpleMetaDataBuilder metaDataDestination) Locate;
 			}
 		}
 		[CRepr]
@@ -780,14 +780,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBuffer(uint8** value, uint32* capacity) mut
+			public HRESULT GetBuffer(out uint8* value, out uint32 capacity) mut
 			{
-				return VT.GetBuffer(&this, value, capacity);
+				return VT.GetBuffer(ref this, out value, out capacity);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMemoryBufferByteAccess *self, uint8** value, uint32* capacity) GetBuffer;
+				public new function HRESULT(ref IMemoryBufferByteAccess self, out uint8* value, out uint32 capacity) GetBuffer;
 			}
 		}
 		[CRepr]
@@ -797,14 +797,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Resolve(Guid* riid, void** objectReference) mut
+			public HRESULT Resolve(in Guid riid, void** objectReference) mut
 			{
-				return VT.Resolve(&this, riid, objectReference);
+				return VT.Resolve(ref this, riid, objectReference);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWeakReference *self, Guid* riid, void** objectReference) Resolve;
+				public new function HRESULT(ref IWeakReference self, in Guid riid, void** objectReference) Resolve;
 			}
 		}
 		[CRepr]
@@ -816,12 +816,12 @@ namespace Win32
 			
 			public HRESULT GetWeakReference(IWeakReference** weakReference) mut
 			{
-				return VT.GetWeakReference(&this, weakReference);
+				return VT.GetWeakReference(ref this, weakReference);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWeakReferenceSource *self, IWeakReference** weakReference) GetWeakReference;
+				public new function HRESULT(ref IWeakReferenceSource self, IWeakReference** weakReference) GetWeakReference;
 			}
 		}
 		[CRepr]
@@ -831,14 +831,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, Guid* riid, void** mediaTransportControl) mut
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** mediaTransportControl) mut
 			{
-				return VT.GetForWindow(&this, appWindow, riid, mediaTransportControl);
+				return VT.GetForWindow(ref this, appWindow, riid, mediaTransportControl);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(ISystemMediaTransportControlsInterop *self, HWND appWindow, Guid* riid, void** mediaTransportControl) GetForWindow;
+				public new function HRESULT(ref ISystemMediaTransportControlsInterop self, HWND appWindow, in Guid riid, void** mediaTransportControl) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -848,14 +848,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWindow(HWND* value) mut
+			public HRESULT GetWindow(out HWND value) mut
 			{
-				return VT.GetWindow(&this, value);
+				return VT.GetWindow(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IShareWindowCommandEventArgsInterop *self, HWND* value) GetWindow;
+				public new function HRESULT(ref IShareWindowCommandEventArgsInterop self, out HWND value) GetWindow;
 			}
 		}
 		[CRepr]
@@ -865,14 +865,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, Guid* riid, void** shareWindowCommandSource) mut
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** shareWindowCommandSource) mut
 			{
-				return VT.GetForWindow(&this, appWindow, riid, shareWindowCommandSource);
+				return VT.GetForWindow(ref this, appWindow, riid, shareWindowCommandSource);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IShareWindowCommandSourceInterop *self, HWND appWindow, Guid* riid, void** shareWindowCommandSource) GetForWindow;
+				public new function HRESULT(ref IShareWindowCommandSourceInterop self, HWND appWindow, in Guid riid, void** shareWindowCommandSource) GetForWindow;
 			}
 		}
 		[CRepr]
@@ -884,41 +884,41 @@ namespace Win32
 			
 			public HRESULT PumpMessages() mut
 			{
-				return VT.PumpMessages(&this);
+				return VT.PumpMessages(ref this);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IMessageDispatcher *self) PumpMessages;
+				public new function HRESULT(ref IMessageDispatcher self) PumpMessages;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CoDecodeProxy(uint32 dwClientPid, uint64 ui64ProxyAddress, ServerInformation* pServerInformation);
+		public static extern HRESULT CoDecodeProxy(uint32 dwClientPid, uint64 ui64ProxyAddress, out ServerInformation pServerInformation);
 		[Import("ole32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoGetAgileReference(AgileReferenceOptions options, Guid* riid, IUnknown* pUnk, IAgileReference** ppAgileReference);
+		public static extern HRESULT RoGetAgileReference(AgileReferenceOptions options, in Guid riid, ref IUnknown pUnk, out IAgileReference* ppAgileReference);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 HSTRING_UserSize(uint32* param0, uint32 param1, HSTRING* param2);
+		public static extern uint32 HSTRING_UserSize(ref uint32 param0, uint32 param1, ref HSTRING param2);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint8* HSTRING_UserMarshal(uint32* param0, uint8* param1, HSTRING* param2);
+		public static extern uint8* HSTRING_UserMarshal(ref uint32 param0, out uint8 param1, ref HSTRING param2);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint8* HSTRING_UserUnmarshal(uint32* param0, uint8* param1, HSTRING* param2);
+		public static extern uint8* HSTRING_UserUnmarshal(ref uint32 param0, uint8* param1, out HSTRING param2);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void HSTRING_UserFree(uint32* param0, HSTRING* param1);
+		public static extern void HSTRING_UserFree(ref uint32 param0, ref HSTRING param1);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 HSTRING_UserSize64(uint32* param0, uint32 param1, HSTRING* param2);
+		public static extern uint32 HSTRING_UserSize64(ref uint32 param0, uint32 param1, ref HSTRING param2);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint8* HSTRING_UserMarshal64(uint32* param0, uint8* param1, HSTRING* param2);
+		public static extern uint8* HSTRING_UserMarshal64(ref uint32 param0, out uint8 param1, ref HSTRING param2);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint8* HSTRING_UserUnmarshal64(uint32* param0, uint8* param1, HSTRING* param2);
+		public static extern uint8* HSTRING_UserUnmarshal64(ref uint32 param0, uint8* param1, out HSTRING param2);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void HSTRING_UserFree64(uint32* param0, HSTRING* param1);
+		public static extern void HSTRING_UserFree64(ref uint32 param0, ref HSTRING param1);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WindowsCreateString(char16* sourceString, uint32 length, HSTRING* string);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WindowsCreateStringReference(PWSTR sourceString, uint32 length, HSTRING_HEADER* hstringHeader, HSTRING* string);
+		public static extern HRESULT WindowsCreateStringReference(PWSTR sourceString, uint32 length, out HSTRING_HEADER hstringHeader, HSTRING* string);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WindowsDeleteString(HSTRING string);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
@@ -930,9 +930,9 @@ namespace Win32
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WindowsIsStringEmpty(HSTRING string);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WindowsStringHasEmbeddedNull(HSTRING string, BOOL* hasEmbedNull);
+		public static extern HRESULT WindowsStringHasEmbeddedNull(HSTRING string, out BOOL hasEmbedNull);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WindowsCompareStringOrdinal(HSTRING string1, HSTRING string2, int32* result);
+		public static extern HRESULT WindowsCompareStringOrdinal(HSTRING string1, HSTRING string2, out int32 result);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WindowsSubstring(HSTRING string, uint32 startIndex, HSTRING* newString);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
@@ -946,15 +946,15 @@ namespace Win32
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WindowsTrimStringEnd(HSTRING string, HSTRING trimString, HSTRING* newString);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WindowsPreallocateStringBuffer(uint32 length, uint16** charBuffer, HSTRING_BUFFER* bufferHandle);
+		public static extern HRESULT WindowsPreallocateStringBuffer(uint32 length, out uint16* charBuffer, out HSTRING_BUFFER bufferHandle);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WindowsPromoteStringBuffer(HSTRING_BUFFER bufferHandle, HSTRING* string);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WindowsDeleteStringBuffer(HSTRING_BUFFER bufferHandle);
 		[Import("api-ms-win-core-winrt-string-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WindowsInspectString(uint targetHString, uint16 machine, PINSPECT_HSTRING_CALLBACK callback, void* context, uint32* length, uint* targetStringAddress);
+		public static extern HRESULT WindowsInspectString(uint targetHString, uint16 machine, PINSPECT_HSTRING_CALLBACK callback, void* context, out uint32 length, out uint targetStringAddress);
 		[Import("api-ms-win-core-winrt-string-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WindowsInspectString2(uint64 targetHString, uint16 machine, PINSPECT_HSTRING_CALLBACK2 callback, void* context, uint32* length, uint64* targetStringAddress);
+		public static extern HRESULT WindowsInspectString2(uint64 targetHString, uint16 machine, PINSPECT_HSTRING_CALLBACK2 callback, void* context, out uint32 length, out uint64 targetStringAddress);
 		[Import("coremessaging.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CreateDispatcherQueueController(DispatcherQueueOptions options, void* dispatcherQueueController);
 		[Import("api-ms-win-core-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
@@ -962,27 +962,27 @@ namespace Win32
 		[Import("api-ms-win-core-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void RoUninitialize();
 		[Import("api-ms-win-core-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoActivateInstance(HSTRING activatableClassId, IInspectable** instance);
+		public static extern HRESULT RoActivateInstance(HSTRING activatableClassId, out IInspectable* instance);
 		[Import("api-ms-win-core-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoRegisterActivationFactories(HSTRING* activatableClassIds, int* activationFactoryCallbacks, uint32 count, int* cookie);
+		public static extern HRESULT RoRegisterActivationFactories(HSTRING* activatableClassIds, int* activationFactoryCallbacks, uint32 count, out int cookie);
 		[Import("api-ms-win-core-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void RoRevokeActivationFactories(int cookie);
 		[Import("api-ms-win-core-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoGetActivationFactory(HSTRING activatableClassId, Guid* iid, void** factory);
+		public static extern HRESULT RoGetActivationFactory(HSTRING activatableClassId, in Guid iid, void** factory);
 		[Import("api-ms-win-core-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoRegisterForApartmentShutdown(IApartmentShutdown* callbackObject, uint64* apartmentIdentifier, APARTMENT_SHUTDOWN_REGISTRATION_COOKIE* regCookie);
+		public static extern HRESULT RoRegisterForApartmentShutdown(ref IApartmentShutdown callbackObject, out uint64 apartmentIdentifier, out APARTMENT_SHUTDOWN_REGISTRATION_COOKIE regCookie);
 		[Import("api-ms-win-core-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RoUnregisterForApartmentShutdown(APARTMENT_SHUTDOWN_REGISTRATION_COOKIE regCookie);
 		[Import("api-ms-win-core-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoGetApartmentIdentifier(uint64* apartmentIdentifier);
+		public static extern HRESULT RoGetApartmentIdentifier(out uint64 apartmentIdentifier);
 		[Import("api-ms-win-core-winrt-robuffer-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoGetBufferMarshaler(IMarshal** bufferMarshaler);
+		public static extern HRESULT RoGetBufferMarshaler(out IMarshal* bufferMarshaler);
 		[Import("api-ms-win-core-winrt-error-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoGetErrorReportingFlags(uint32* pflags);
+		public static extern HRESULT RoGetErrorReportingFlags(out uint32 pflags);
 		[Import("api-ms-win-core-winrt-error-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT RoSetErrorReportingFlags(uint32 flags);
 		[Import("api-ms-win-core-winrt-error-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoResolveRestrictedErrorInfoReference(PWSTR reference, IRestrictedErrorInfo** ppRestrictedErrorInfo);
+		public static extern HRESULT RoResolveRestrictedErrorInfoReference(PWSTR reference, out IRestrictedErrorInfo* ppRestrictedErrorInfo);
 		[Import("api-ms-win-core-winrt-error-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SetRestrictedErrorInfo(IRestrictedErrorInfo* pRestrictedErrorInfo);
 		[Import("api-ms-win-core-winrt-error-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1004,33 +1004,33 @@ namespace Win32
 		[Import("api-ms-win-core-winrt-error-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void RoClearError();
 		[Import("api-ms-win-core-winrt-error-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoReportUnhandledError(IRestrictedErrorInfo* pRestrictedErrorInfo);
+		public static extern HRESULT RoReportUnhandledError(ref IRestrictedErrorInfo pRestrictedErrorInfo);
 		[Import("api-ms-win-core-winrt-error-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoInspectThreadErrorInfo(uint targetTebAddress, uint16 machine, PINSPECT_MEMORY_CALLBACK readMemoryCallback, void* context, uint* targetErrorInfoAddress);
+		public static extern HRESULT RoInspectThreadErrorInfo(uint targetTebAddress, uint16 machine, PINSPECT_MEMORY_CALLBACK readMemoryCallback, void* context, out uint targetErrorInfoAddress);
 		[Import("api-ms-win-core-winrt-error-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoInspectCapturedStackBackTrace(uint targetErrorInfoAddress, uint16 machine, PINSPECT_MEMORY_CALLBACK readMemoryCallback, void* context, uint32* frameCount, uint* targetBackTraceAddress);
+		public static extern HRESULT RoInspectCapturedStackBackTrace(uint targetErrorInfoAddress, uint16 machine, PINSPECT_MEMORY_CALLBACK readMemoryCallback, void* context, out uint32 frameCount, out uint targetBackTraceAddress);
 		[Import("api-ms-win-core-winrt-error-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoGetMatchingRestrictedErrorInfo(HRESULT hrIn, IRestrictedErrorInfo** ppRestrictedErrorInfo);
+		public static extern HRESULT RoGetMatchingRestrictedErrorInfo(HRESULT hrIn, out IRestrictedErrorInfo* ppRestrictedErrorInfo);
 		[Import("api-ms-win-core-winrt-error-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoReportFailedDelegate(IUnknown* punkDelegate, IRestrictedErrorInfo* pRestrictedErrorInfo);
+		public static extern HRESULT RoReportFailedDelegate(ref IUnknown punkDelegate, ref IRestrictedErrorInfo pRestrictedErrorInfo);
 		[Import("api-ms-win-core-winrt-error-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsErrorPropagationEnabled();
 		[Import("rometadata.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MetaDataGetDispenser(Guid* rclsid, Guid* riid, void** ppv);
+		public static extern HRESULT MetaDataGetDispenser(in Guid rclsid, in Guid riid, void** ppv);
 		[Import("api-ms-win-core-winrt-roparameterizediid-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoGetParameterizedTypeInstanceIID(uint32 nameElementCount, PWSTR* nameElements, IRoMetaDataLocator* metaDataLocator, Guid* iid, ROPARAMIIDHANDLE* pExtra);
+		public static extern HRESULT RoGetParameterizedTypeInstanceIID(uint32 nameElementCount, PWSTR* nameElements, in IRoMetaDataLocator metaDataLocator, out Guid iid, ROPARAMIIDHANDLE* pExtra);
 		[Import("api-ms-win-core-winrt-roparameterizediid-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void RoFreeParameterizedTypeExtra(ROPARAMIIDHANDLE extra);
 		[Import("api-ms-win-core-winrt-roparameterizediid-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern PSTR RoParameterizedTypeExtraGetTypeSignature(ROPARAMIIDHANDLE extra);
 		[Import("api-ms-win-core-winrt-registration-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RoGetServerActivatableClasses(HSTRING serverName, HSTRING** activatableClassIds, uint32* count);
+		public static extern HRESULT RoGetServerActivatableClasses(HSTRING serverName, out HSTRING* activatableClassIds, out uint32 count);
 		[Import("api-ms-win-shcore-stream-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateRandomAccessStreamOnFile(PWSTR filePath, uint32 accessMode, Guid* riid, void** ppv);
+		public static extern HRESULT CreateRandomAccessStreamOnFile(PWSTR filePath, uint32 accessMode, in Guid riid, void** ppv);
 		[Import("api-ms-win-shcore-stream-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateRandomAccessStreamOverStream(IStream* stream, BSOS_OPTIONS options, Guid* riid, void** ppv);
+		public static extern HRESULT CreateRandomAccessStreamOverStream(ref IStream stream, BSOS_OPTIONS options, in Guid riid, void** ppv);
 		[Import("api-ms-win-shcore-stream-winrt-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateStreamOverRandomAccessStream(IUnknown* randomAccessStream, Guid* riid, void** ppv);
+		public static extern HRESULT CreateStreamOverRandomAccessStream(ref IUnknown randomAccessStream, in Guid riid, void** ppv);
 		
 	}
 }

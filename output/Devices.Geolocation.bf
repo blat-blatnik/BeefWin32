@@ -239,7 +239,7 @@ namespace Win32
 			public uint32 Reserved;
 			public uint32 CommandDataSize;
 			public uint8[512] Unused;
-			public uint8[] CommandData;
+			public uint8[0] CommandData;
 		}
 		[CRepr]
 		public struct GNSS_SINGLESHOT_PARAM
@@ -625,7 +625,7 @@ namespace Win32
 				public GNSS_BREADCRUMBING_ALERT_DATA BreadcrumbAlertData;
 				public GNSS_GEOFENCES_TRACKINGSTATUS_DATA GeofencesTrackingStatus;
 				public GNSS_DRIVER_REQUEST_DATA DriverRequestData;
-				public uint8[] CustomData;
+				public uint8[0] CustomData;
 			}
 		}
 		[CRepr]
@@ -651,7 +651,7 @@ namespace Win32
 				public GNSS_BREADCRUMBING_ALERT_DATA BreadcrumbAlertData;
 				public GNSS_GEOFENCES_TRACKINGSTATUS_DATA GeofencesTrackingStatus;
 				public GNSS_DRIVER_REQUEST_DATA DriverRequestData;
-				public uint8[] CustomData;
+				public uint8[0] CustomData;
 			}
 		}
 		[CRepr]
@@ -680,7 +680,7 @@ namespace Win32
 			public uint32 BlobVersion;
 			public uint32 AgnssFormat;
 			public uint32 BlobSize;
-			public uint8[] BlobData;
+			public uint8[0] BlobData;
 		}
 		[CRepr]
 		public struct GNSS_AGNSS_INJECT
@@ -720,7 +720,7 @@ namespace Win32
 			public CHAR[260] SuplCertName;
 			public uint32 CertSize;
 			public uint8[512] Unused;
-			public uint8[] CertData;
+			public uint8[0] CertData;
 		}
 		[CRepr]
 		public struct GNSS_V2UPL_CONFIG
@@ -758,7 +758,7 @@ namespace Win32
 			public uint32 TestType;
 			public uint8[512] Unused;
 			public uint32 InBufLen;
-			public uint8[] InBuffer;
+			public uint8[0] InBuffer;
 		}
 		[CRepr]
 		public struct GNSS_SELFTESTRESULT
@@ -770,7 +770,7 @@ namespace Win32
 			public uint32 PinFailedBitMask;
 			public uint8[512] Unused;
 			public uint32 OutBufLen;
-			public uint8[] OutBuffer;
+			public uint8[0] OutBuffer;
 		}
 		[CRepr]
 		public struct GNSS_CHIPSETINFO
@@ -803,24 +803,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSensorID(Guid* pSensorID) mut
+			public HRESULT GetSensorID(out Guid pSensorID) mut
 			{
-				return VT.GetSensorID(&this, pSensorID);
+				return VT.GetSensorID(ref this, out pSensorID);
 			}
-			public HRESULT GetTimestamp(SYSTEMTIME* pCreationTime) mut
+			public HRESULT GetTimestamp(out SYSTEMTIME pCreationTime) mut
 			{
-				return VT.GetTimestamp(&this, pCreationTime);
+				return VT.GetTimestamp(ref this, out pCreationTime);
 			}
-			public HRESULT GetValue(PROPERTYKEY* pKey, PROPVARIANT* pValue) mut
+			public HRESULT GetValue(in PROPERTYKEY pKey, out PROPVARIANT pValue) mut
 			{
-				return VT.GetValue(&this, pKey, pValue);
+				return VT.GetValue(ref this, pKey, out pValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILocationReport *self, Guid* pSensorID) GetSensorID;
-				public new function HRESULT(ILocationReport *self, SYSTEMTIME* pCreationTime) GetTimestamp;
-				public new function HRESULT(ILocationReport *self, PROPERTYKEY* pKey, PROPVARIANT* pValue) GetValue;
+				public new function HRESULT(ref ILocationReport self, out Guid pSensorID) GetSensorID;
+				public new function HRESULT(ref ILocationReport self, out SYSTEMTIME pCreationTime) GetTimestamp;
+				public new function HRESULT(ref ILocationReport self, in PROPERTYKEY pKey, out PROPVARIANT pValue) GetValue;
 			}
 		}
 		[CRepr]
@@ -830,34 +830,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLatitude(double* pLatitude) mut
+			public HRESULT GetLatitude(out double pLatitude) mut
 			{
-				return VT.GetLatitude(&this, pLatitude);
+				return VT.GetLatitude(ref this, out pLatitude);
 			}
-			public HRESULT GetLongitude(double* pLongitude) mut
+			public HRESULT GetLongitude(out double pLongitude) mut
 			{
-				return VT.GetLongitude(&this, pLongitude);
+				return VT.GetLongitude(ref this, out pLongitude);
 			}
-			public HRESULT GetErrorRadius(double* pErrorRadius) mut
+			public HRESULT GetErrorRadius(out double pErrorRadius) mut
 			{
-				return VT.GetErrorRadius(&this, pErrorRadius);
+				return VT.GetErrorRadius(ref this, out pErrorRadius);
 			}
-			public HRESULT GetAltitude(double* pAltitude) mut
+			public HRESULT GetAltitude(out double pAltitude) mut
 			{
-				return VT.GetAltitude(&this, pAltitude);
+				return VT.GetAltitude(ref this, out pAltitude);
 			}
-			public HRESULT GetAltitudeError(double* pAltitudeError) mut
+			public HRESULT GetAltitudeError(out double pAltitudeError) mut
 			{
-				return VT.GetAltitudeError(&this, pAltitudeError);
+				return VT.GetAltitudeError(ref this, out pAltitudeError);
 			}
 			[CRepr]
 			public struct VTable : ILocationReport.VTable
 			{
-				public new function HRESULT(ILatLongReport *self, double* pLatitude) GetLatitude;
-				public new function HRESULT(ILatLongReport *self, double* pLongitude) GetLongitude;
-				public new function HRESULT(ILatLongReport *self, double* pErrorRadius) GetErrorRadius;
-				public new function HRESULT(ILatLongReport *self, double* pAltitude) GetAltitude;
-				public new function HRESULT(ILatLongReport *self, double* pAltitudeError) GetAltitudeError;
+				public new function HRESULT(ref ILatLongReport self, out double pLatitude) GetLatitude;
+				public new function HRESULT(ref ILatLongReport self, out double pLongitude) GetLongitude;
+				public new function HRESULT(ref ILatLongReport self, out double pErrorRadius) GetErrorRadius;
+				public new function HRESULT(ref ILatLongReport self, out double pAltitude) GetAltitude;
+				public new function HRESULT(ref ILatLongReport self, out double pAltitudeError) GetAltitudeError;
 			}
 		}
 		[CRepr]
@@ -869,42 +869,42 @@ namespace Win32
 			
 			public HRESULT GetAddressLine1(BSTR* pbstrAddress1) mut
 			{
-				return VT.GetAddressLine1(&this, pbstrAddress1);
+				return VT.GetAddressLine1(ref this, pbstrAddress1);
 			}
 			public HRESULT GetAddressLine2(BSTR* pbstrAddress2) mut
 			{
-				return VT.GetAddressLine2(&this, pbstrAddress2);
+				return VT.GetAddressLine2(ref this, pbstrAddress2);
 			}
 			public HRESULT GetCity(BSTR* pbstrCity) mut
 			{
-				return VT.GetCity(&this, pbstrCity);
+				return VT.GetCity(ref this, pbstrCity);
 			}
 			public HRESULT GetStateProvince(BSTR* pbstrStateProvince) mut
 			{
-				return VT.GetStateProvince(&this, pbstrStateProvince);
+				return VT.GetStateProvince(ref this, pbstrStateProvince);
 			}
 			public HRESULT GetPostalCode(BSTR* pbstrPostalCode) mut
 			{
-				return VT.GetPostalCode(&this, pbstrPostalCode);
+				return VT.GetPostalCode(ref this, pbstrPostalCode);
 			}
 			public HRESULT GetCountryRegion(BSTR* pbstrCountryRegion) mut
 			{
-				return VT.GetCountryRegion(&this, pbstrCountryRegion);
+				return VT.GetCountryRegion(ref this, pbstrCountryRegion);
 			}
-			public HRESULT GetDetailLevel(uint32* pDetailLevel) mut
+			public HRESULT GetDetailLevel(out uint32 pDetailLevel) mut
 			{
-				return VT.GetDetailLevel(&this, pDetailLevel);
+				return VT.GetDetailLevel(ref this, out pDetailLevel);
 			}
 			[CRepr]
 			public struct VTable : ILocationReport.VTable
 			{
-				public new function HRESULT(ICivicAddressReport *self, BSTR* pbstrAddress1) GetAddressLine1;
-				public new function HRESULT(ICivicAddressReport *self, BSTR* pbstrAddress2) GetAddressLine2;
-				public new function HRESULT(ICivicAddressReport *self, BSTR* pbstrCity) GetCity;
-				public new function HRESULT(ICivicAddressReport *self, BSTR* pbstrStateProvince) GetStateProvince;
-				public new function HRESULT(ICivicAddressReport *self, BSTR* pbstrPostalCode) GetPostalCode;
-				public new function HRESULT(ICivicAddressReport *self, BSTR* pbstrCountryRegion) GetCountryRegion;
-				public new function HRESULT(ICivicAddressReport *self, uint32* pDetailLevel) GetDetailLevel;
+				public new function HRESULT(ref ICivicAddressReport self, BSTR* pbstrAddress1) GetAddressLine1;
+				public new function HRESULT(ref ICivicAddressReport self, BSTR* pbstrAddress2) GetAddressLine2;
+				public new function HRESULT(ref ICivicAddressReport self, BSTR* pbstrCity) GetCity;
+				public new function HRESULT(ref ICivicAddressReport self, BSTR* pbstrStateProvince) GetStateProvince;
+				public new function HRESULT(ref ICivicAddressReport self, BSTR* pbstrPostalCode) GetPostalCode;
+				public new function HRESULT(ref ICivicAddressReport self, BSTR* pbstrCountryRegion) GetCountryRegion;
+				public new function HRESULT(ref ICivicAddressReport self, out uint32 pDetailLevel) GetDetailLevel;
 			}
 		}
 		[CRepr]
@@ -914,54 +914,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterForReport(ILocationEvents* pEvents, Guid* reportType, uint32 dwRequestedReportInterval) mut
+			public HRESULT RegisterForReport(ILocationEvents* pEvents, in Guid reportType, uint32 dwRequestedReportInterval) mut
 			{
-				return VT.RegisterForReport(&this, pEvents, reportType, dwRequestedReportInterval);
+				return VT.RegisterForReport(ref this, pEvents, reportType, dwRequestedReportInterval);
 			}
-			public HRESULT UnregisterForReport(Guid* reportType) mut
+			public HRESULT UnregisterForReport(in Guid reportType) mut
 			{
-				return VT.UnregisterForReport(&this, reportType);
+				return VT.UnregisterForReport(ref this, reportType);
 			}
-			public HRESULT GetReport(Guid* reportType, ILocationReport** ppLocationReport) mut
+			public HRESULT GetReport(in Guid reportType, ILocationReport** ppLocationReport) mut
 			{
-				return VT.GetReport(&this, reportType, ppLocationReport);
+				return VT.GetReport(ref this, reportType, ppLocationReport);
 			}
-			public HRESULT GetReportStatus(Guid* reportType, LOCATION_REPORT_STATUS* pStatus) mut
+			public HRESULT GetReportStatus(in Guid reportType, out LOCATION_REPORT_STATUS pStatus) mut
 			{
-				return VT.GetReportStatus(&this, reportType, pStatus);
+				return VT.GetReportStatus(ref this, reportType, out pStatus);
 			}
-			public HRESULT GetReportInterval(Guid* reportType, uint32* pMilliseconds) mut
+			public HRESULT GetReportInterval(in Guid reportType, out uint32 pMilliseconds) mut
 			{
-				return VT.GetReportInterval(&this, reportType, pMilliseconds);
+				return VT.GetReportInterval(ref this, reportType, out pMilliseconds);
 			}
-			public HRESULT SetReportInterval(Guid* reportType, uint32 millisecondsRequested) mut
+			public HRESULT SetReportInterval(in Guid reportType, uint32 millisecondsRequested) mut
 			{
-				return VT.SetReportInterval(&this, reportType, millisecondsRequested);
+				return VT.SetReportInterval(ref this, reportType, millisecondsRequested);
 			}
-			public HRESULT GetDesiredAccuracy(Guid* reportType, LOCATION_DESIRED_ACCURACY* pDesiredAccuracy) mut
+			public HRESULT GetDesiredAccuracy(in Guid reportType, out LOCATION_DESIRED_ACCURACY pDesiredAccuracy) mut
 			{
-				return VT.GetDesiredAccuracy(&this, reportType, pDesiredAccuracy);
+				return VT.GetDesiredAccuracy(ref this, reportType, out pDesiredAccuracy);
 			}
-			public HRESULT SetDesiredAccuracy(Guid* reportType, LOCATION_DESIRED_ACCURACY desiredAccuracy) mut
+			public HRESULT SetDesiredAccuracy(in Guid reportType, LOCATION_DESIRED_ACCURACY desiredAccuracy) mut
 			{
-				return VT.SetDesiredAccuracy(&this, reportType, desiredAccuracy);
+				return VT.SetDesiredAccuracy(ref this, reportType, desiredAccuracy);
 			}
 			public HRESULT RequestPermissions(HWND hParent, Guid* pReportTypes, uint32 count, BOOL fModal) mut
 			{
-				return VT.RequestPermissions(&this, hParent, pReportTypes, count, fModal);
+				return VT.RequestPermissions(ref this, hParent, pReportTypes, count, fModal);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILocation *self, ILocationEvents* pEvents, Guid* reportType, uint32 dwRequestedReportInterval) RegisterForReport;
-				public new function HRESULT(ILocation *self, Guid* reportType) UnregisterForReport;
-				public new function HRESULT(ILocation *self, Guid* reportType, ILocationReport** ppLocationReport) GetReport;
-				public new function HRESULT(ILocation *self, Guid* reportType, LOCATION_REPORT_STATUS* pStatus) GetReportStatus;
-				public new function HRESULT(ILocation *self, Guid* reportType, uint32* pMilliseconds) GetReportInterval;
-				public new function HRESULT(ILocation *self, Guid* reportType, uint32 millisecondsRequested) SetReportInterval;
-				public new function HRESULT(ILocation *self, Guid* reportType, LOCATION_DESIRED_ACCURACY* pDesiredAccuracy) GetDesiredAccuracy;
-				public new function HRESULT(ILocation *self, Guid* reportType, LOCATION_DESIRED_ACCURACY desiredAccuracy) SetDesiredAccuracy;
-				public new function HRESULT(ILocation *self, HWND hParent, Guid* pReportTypes, uint32 count, BOOL fModal) RequestPermissions;
+				public new function HRESULT(ref ILocation self, ILocationEvents* pEvents, in Guid reportType, uint32 dwRequestedReportInterval) RegisterForReport;
+				public new function HRESULT(ref ILocation self, in Guid reportType) UnregisterForReport;
+				public new function HRESULT(ref ILocation self, in Guid reportType, ILocationReport** ppLocationReport) GetReport;
+				public new function HRESULT(ref ILocation self, in Guid reportType, out LOCATION_REPORT_STATUS pStatus) GetReportStatus;
+				public new function HRESULT(ref ILocation self, in Guid reportType, out uint32 pMilliseconds) GetReportInterval;
+				public new function HRESULT(ref ILocation self, in Guid reportType, uint32 millisecondsRequested) SetReportInterval;
+				public new function HRESULT(ref ILocation self, in Guid reportType, out LOCATION_DESIRED_ACCURACY pDesiredAccuracy) GetDesiredAccuracy;
+				public new function HRESULT(ref ILocation self, in Guid reportType, LOCATION_DESIRED_ACCURACY desiredAccuracy) SetDesiredAccuracy;
+				public new function HRESULT(ref ILocation self, HWND hParent, Guid* pReportTypes, uint32 count, BOOL fModal) RequestPermissions;
 			}
 		}
 		[CRepr]
@@ -973,17 +973,17 @@ namespace Win32
 			
 			public HRESULT Connect() mut
 			{
-				return VT.Connect(&this);
+				return VT.Connect(ref this);
 			}
 			public HRESULT Disconnect() mut
 			{
-				return VT.Disconnect(&this);
+				return VT.Disconnect(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILocationPower *self) Connect;
-				public new function HRESULT(ILocationPower *self) Disconnect;
+				public new function HRESULT(ref ILocationPower self) Connect;
+				public new function HRESULT(ref ILocationPower self) Disconnect;
 			}
 		}
 		[CRepr]
@@ -993,19 +993,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetReport(Guid* reportType, ILocationReport* pLocationReport) mut
+			public HRESULT SetReport(in Guid reportType, ILocationReport* pLocationReport) mut
 			{
-				return VT.SetReport(&this, reportType, pLocationReport);
+				return VT.SetReport(ref this, reportType, pLocationReport);
 			}
-			public HRESULT GetReport(Guid* reportType, ILocationReport** ppLocationReport) mut
+			public HRESULT GetReport(in Guid reportType, ILocationReport** ppLocationReport) mut
 			{
-				return VT.GetReport(&this, reportType, ppLocationReport);
+				return VT.GetReport(ref this, reportType, ppLocationReport);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDefaultLocation *self, Guid* reportType, ILocationReport* pLocationReport) SetReport;
-				public new function HRESULT(IDefaultLocation *self, Guid* reportType, ILocationReport** ppLocationReport) GetReport;
+				public new function HRESULT(ref IDefaultLocation self, in Guid reportType, ILocationReport* pLocationReport) SetReport;
+				public new function HRESULT(ref IDefaultLocation self, in Guid reportType, ILocationReport** ppLocationReport) GetReport;
 			}
 		}
 		[CRepr]
@@ -1015,19 +1015,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnLocationChanged(Guid* reportType, ILocationReport* pLocationReport) mut
+			public HRESULT OnLocationChanged(in Guid reportType, ILocationReport* pLocationReport) mut
 			{
-				return VT.OnLocationChanged(&this, reportType, pLocationReport);
+				return VT.OnLocationChanged(ref this, reportType, pLocationReport);
 			}
-			public HRESULT OnStatusChanged(Guid* reportType, LOCATION_REPORT_STATUS newStatus) mut
+			public HRESULT OnStatusChanged(in Guid reportType, LOCATION_REPORT_STATUS newStatus) mut
 			{
-				return VT.OnStatusChanged(&this, reportType, newStatus);
+				return VT.OnStatusChanged(ref this, reportType, newStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILocationEvents *self, Guid* reportType, ILocationReport* pLocationReport) OnLocationChanged;
-				public new function HRESULT(ILocationEvents *self, Guid* reportType, LOCATION_REPORT_STATUS newStatus) OnStatusChanged;
+				public new function HRESULT(ref ILocationEvents self, in Guid reportType, ILocationReport* pLocationReport) OnLocationChanged;
+				public new function HRESULT(ref ILocationEvents self, in Guid reportType, LOCATION_REPORT_STATUS newStatus) OnStatusChanged;
 			}
 		}
 		[CRepr]
@@ -1037,39 +1037,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Latitude(double* pVal) mut
+			public HRESULT get_Latitude(out double pVal) mut
 			{
-				return VT.get_Latitude(&this, pVal);
+				return VT.get_Latitude(ref this, out pVal);
 			}
-			public HRESULT get_Longitude(double* pVal) mut
+			public HRESULT get_Longitude(out double pVal) mut
 			{
-				return VT.get_Longitude(&this, pVal);
+				return VT.get_Longitude(ref this, out pVal);
 			}
-			public HRESULT get_ErrorRadius(double* pVal) mut
+			public HRESULT get_ErrorRadius(out double pVal) mut
 			{
-				return VT.get_ErrorRadius(&this, pVal);
+				return VT.get_ErrorRadius(ref this, out pVal);
 			}
-			public HRESULT get_Altitude(double* pVal) mut
+			public HRESULT get_Altitude(out double pVal) mut
 			{
-				return VT.get_Altitude(&this, pVal);
+				return VT.get_Altitude(ref this, out pVal);
 			}
-			public HRESULT get_AltitudeError(double* pVal) mut
+			public HRESULT get_AltitudeError(out double pVal) mut
 			{
-				return VT.get_AltitudeError(&this, pVal);
+				return VT.get_AltitudeError(ref this, out pVal);
 			}
-			public HRESULT get_Timestamp(double* pVal) mut
+			public HRESULT get_Timestamp(out double pVal) mut
 			{
-				return VT.get_Timestamp(&this, pVal);
+				return VT.get_Timestamp(ref this, out pVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IDispLatLongReport *self, double* pVal) get_Latitude;
-				public new function HRESULT(IDispLatLongReport *self, double* pVal) get_Longitude;
-				public new function HRESULT(IDispLatLongReport *self, double* pVal) get_ErrorRadius;
-				public new function HRESULT(IDispLatLongReport *self, double* pVal) get_Altitude;
-				public new function HRESULT(IDispLatLongReport *self, double* pVal) get_AltitudeError;
-				public new function HRESULT(IDispLatLongReport *self, double* pVal) get_Timestamp;
+				public new function HRESULT(ref IDispLatLongReport self, out double pVal) get_Latitude;
+				public new function HRESULT(ref IDispLatLongReport self, out double pVal) get_Longitude;
+				public new function HRESULT(ref IDispLatLongReport self, out double pVal) get_ErrorRadius;
+				public new function HRESULT(ref IDispLatLongReport self, out double pVal) get_Altitude;
+				public new function HRESULT(ref IDispLatLongReport self, out double pVal) get_AltitudeError;
+				public new function HRESULT(ref IDispLatLongReport self, out double pVal) get_Timestamp;
 			}
 		}
 		[CRepr]
@@ -1081,47 +1081,47 @@ namespace Win32
 			
 			public HRESULT get_AddressLine1(BSTR* pAddress1) mut
 			{
-				return VT.get_AddressLine1(&this, pAddress1);
+				return VT.get_AddressLine1(ref this, pAddress1);
 			}
 			public HRESULT get_AddressLine2(BSTR* pAddress2) mut
 			{
-				return VT.get_AddressLine2(&this, pAddress2);
+				return VT.get_AddressLine2(ref this, pAddress2);
 			}
 			public HRESULT get_City(BSTR* pCity) mut
 			{
-				return VT.get_City(&this, pCity);
+				return VT.get_City(ref this, pCity);
 			}
 			public HRESULT get_StateProvince(BSTR* pStateProvince) mut
 			{
-				return VT.get_StateProvince(&this, pStateProvince);
+				return VT.get_StateProvince(ref this, pStateProvince);
 			}
 			public HRESULT get_PostalCode(BSTR* pPostalCode) mut
 			{
-				return VT.get_PostalCode(&this, pPostalCode);
+				return VT.get_PostalCode(ref this, pPostalCode);
 			}
 			public HRESULT get_CountryRegion(BSTR* pCountryRegion) mut
 			{
-				return VT.get_CountryRegion(&this, pCountryRegion);
+				return VT.get_CountryRegion(ref this, pCountryRegion);
 			}
-			public HRESULT get_DetailLevel(uint32* pDetailLevel) mut
+			public HRESULT get_DetailLevel(out uint32 pDetailLevel) mut
 			{
-				return VT.get_DetailLevel(&this, pDetailLevel);
+				return VT.get_DetailLevel(ref this, out pDetailLevel);
 			}
-			public HRESULT get_Timestamp(double* pVal) mut
+			public HRESULT get_Timestamp(out double pVal) mut
 			{
-				return VT.get_Timestamp(&this, pVal);
+				return VT.get_Timestamp(ref this, out pVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IDispCivicAddressReport *self, BSTR* pAddress1) get_AddressLine1;
-				public new function HRESULT(IDispCivicAddressReport *self, BSTR* pAddress2) get_AddressLine2;
-				public new function HRESULT(IDispCivicAddressReport *self, BSTR* pCity) get_City;
-				public new function HRESULT(IDispCivicAddressReport *self, BSTR* pStateProvince) get_StateProvince;
-				public new function HRESULT(IDispCivicAddressReport *self, BSTR* pPostalCode) get_PostalCode;
-				public new function HRESULT(IDispCivicAddressReport *self, BSTR* pCountryRegion) get_CountryRegion;
-				public new function HRESULT(IDispCivicAddressReport *self, uint32* pDetailLevel) get_DetailLevel;
-				public new function HRESULT(IDispCivicAddressReport *self, double* pVal) get_Timestamp;
+				public new function HRESULT(ref IDispCivicAddressReport self, BSTR* pAddress1) get_AddressLine1;
+				public new function HRESULT(ref IDispCivicAddressReport self, BSTR* pAddress2) get_AddressLine2;
+				public new function HRESULT(ref IDispCivicAddressReport self, BSTR* pCity) get_City;
+				public new function HRESULT(ref IDispCivicAddressReport self, BSTR* pStateProvince) get_StateProvince;
+				public new function HRESULT(ref IDispCivicAddressReport self, BSTR* pPostalCode) get_PostalCode;
+				public new function HRESULT(ref IDispCivicAddressReport self, BSTR* pCountryRegion) get_CountryRegion;
+				public new function HRESULT(ref IDispCivicAddressReport self, out uint32 pDetailLevel) get_DetailLevel;
+				public new function HRESULT(ref IDispCivicAddressReport self, out double pVal) get_Timestamp;
 			}
 		}
 		[CRepr]
@@ -1133,47 +1133,47 @@ namespace Win32
 			
 			public HRESULT ListenForReports(uint32 requestedReportInterval) mut
 			{
-				return VT.ListenForReports(&this, requestedReportInterval);
+				return VT.ListenForReports(ref this, requestedReportInterval);
 			}
 			public HRESULT StopListeningForReports() mut
 			{
-				return VT.StopListeningForReports(&this);
+				return VT.StopListeningForReports(ref this);
 			}
-			public HRESULT get_Status(uint32* pVal) mut
+			public HRESULT get_Status(out uint32 pVal) mut
 			{
-				return VT.get_Status(&this, pVal);
+				return VT.get_Status(ref this, out pVal);
 			}
-			public HRESULT get_ReportInterval(uint32* pMilliseconds) mut
+			public HRESULT get_ReportInterval(out uint32 pMilliseconds) mut
 			{
-				return VT.get_ReportInterval(&this, pMilliseconds);
+				return VT.get_ReportInterval(ref this, out pMilliseconds);
 			}
 			public HRESULT put_ReportInterval(uint32 millisecondsRequested) mut
 			{
-				return VT.put_ReportInterval(&this, millisecondsRequested);
+				return VT.put_ReportInterval(ref this, millisecondsRequested);
 			}
-			public HRESULT get_DesiredAccuracy(uint32* pDesiredAccuracy) mut
+			public HRESULT get_DesiredAccuracy(out uint32 pDesiredAccuracy) mut
 			{
-				return VT.get_DesiredAccuracy(&this, pDesiredAccuracy);
+				return VT.get_DesiredAccuracy(ref this, out pDesiredAccuracy);
 			}
 			public HRESULT put_DesiredAccuracy(uint32 desiredAccuracy) mut
 			{
-				return VT.put_DesiredAccuracy(&this, desiredAccuracy);
+				return VT.put_DesiredAccuracy(ref this, desiredAccuracy);
 			}
-			public HRESULT RequestPermissions(uint32* hWnd) mut
+			public HRESULT RequestPermissions(ref uint32 hWnd) mut
 			{
-				return VT.RequestPermissions(&this, hWnd);
+				return VT.RequestPermissions(ref this, ref hWnd);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ILocationReportFactory *self, uint32 requestedReportInterval) ListenForReports;
-				public new function HRESULT(ILocationReportFactory *self) StopListeningForReports;
-				public new function HRESULT(ILocationReportFactory *self, uint32* pVal) get_Status;
-				public new function HRESULT(ILocationReportFactory *self, uint32* pMilliseconds) get_ReportInterval;
-				public new function HRESULT(ILocationReportFactory *self, uint32 millisecondsRequested) put_ReportInterval;
-				public new function HRESULT(ILocationReportFactory *self, uint32* pDesiredAccuracy) get_DesiredAccuracy;
-				public new function HRESULT(ILocationReportFactory *self, uint32 desiredAccuracy) put_DesiredAccuracy;
-				public new function HRESULT(ILocationReportFactory *self, uint32* hWnd) RequestPermissions;
+				public new function HRESULT(ref ILocationReportFactory self, uint32 requestedReportInterval) ListenForReports;
+				public new function HRESULT(ref ILocationReportFactory self) StopListeningForReports;
+				public new function HRESULT(ref ILocationReportFactory self, out uint32 pVal) get_Status;
+				public new function HRESULT(ref ILocationReportFactory self, out uint32 pMilliseconds) get_ReportInterval;
+				public new function HRESULT(ref ILocationReportFactory self, uint32 millisecondsRequested) put_ReportInterval;
+				public new function HRESULT(ref ILocationReportFactory self, out uint32 pDesiredAccuracy) get_DesiredAccuracy;
+				public new function HRESULT(ref ILocationReportFactory self, uint32 desiredAccuracy) put_DesiredAccuracy;
+				public new function HRESULT(ref ILocationReportFactory self, ref uint32 hWnd) RequestPermissions;
 			}
 		}
 		[CRepr]
@@ -1185,12 +1185,12 @@ namespace Win32
 			
 			public HRESULT get_LatLongReport(IDispLatLongReport** pVal) mut
 			{
-				return VT.get_LatLongReport(&this, pVal);
+				return VT.get_LatLongReport(ref this, pVal);
 			}
 			[CRepr]
 			public struct VTable : ILocationReportFactory.VTable
 			{
-				public new function HRESULT(ILatLongReportFactory *self, IDispLatLongReport** pVal) get_LatLongReport;
+				public new function HRESULT(ref ILatLongReportFactory self, IDispLatLongReport** pVal) get_LatLongReport;
 			}
 		}
 		[CRepr]
@@ -1202,12 +1202,12 @@ namespace Win32
 			
 			public HRESULT get_CivicAddressReport(IDispCivicAddressReport** pVal) mut
 			{
-				return VT.get_CivicAddressReport(&this, pVal);
+				return VT.get_CivicAddressReport(ref this, pVal);
 			}
 			[CRepr]
 			public struct VTable : ILocationReportFactory.VTable
 			{
-				public new function HRESULT(ICivicAddressReportFactory *self, IDispCivicAddressReport** pVal) get_CivicAddressReport;
+				public new function HRESULT(ref ICivicAddressReportFactory self, IDispCivicAddressReport** pVal) get_CivicAddressReport;
 			}
 		}
 		[CRepr]

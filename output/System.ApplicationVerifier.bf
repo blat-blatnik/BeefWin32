@@ -49,9 +49,9 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function uint32 AVRF_RESOURCE_ENUMERATE_CALLBACK(void* ResourceDescription, void* EnumerationContext, uint32* EnumerationLevel);
-		public function uint32 AVRF_HEAPALLOCATION_ENUMERATE_CALLBACK(AVRF_HEAP_ALLOCATION* HeapAllocation, void* EnumerationContext, uint32* EnumerationLevel);
-		public function uint32 AVRF_HANDLEOPERATION_ENUMERATE_CALLBACK(AVRF_HANDLE_OPERATION* HandleOperation, void* EnumerationContext, uint32* EnumerationLevel);
+		public function uint32 AVRF_RESOURCE_ENUMERATE_CALLBACK(void* ResourceDescription, void* EnumerationContext, out uint32 EnumerationLevel);
+		public function uint32 AVRF_HEAPALLOCATION_ENUMERATE_CALLBACK(out AVRF_HEAP_ALLOCATION HeapAllocation, void* EnumerationContext, out uint32 EnumerationLevel);
+		public function uint32 AVRF_HANDLEOPERATION_ENUMERATE_CALLBACK(out AVRF_HANDLE_OPERATION HandleOperation, void* EnumerationContext, out uint32 EnumerationLevel);
 		
 		// --- Structs ---
 		

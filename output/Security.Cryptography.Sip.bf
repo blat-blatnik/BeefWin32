@@ -29,15 +29,15 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function BOOL pCryptSIPGetSignedDataMsg(SIP_SUBJECTINFO* pSubjectInfo, uint32* pdwEncodingType, uint32 dwIndex, uint32* pcbSignedDataMsg, uint8* pbSignedDataMsg);
-		public function BOOL pCryptSIPPutSignedDataMsg(SIP_SUBJECTINFO* pSubjectInfo, uint32 dwEncodingType, uint32* pdwIndex, uint32 cbSignedDataMsg, uint8* pbSignedDataMsg);
-		public function BOOL pCryptSIPCreateIndirectData(SIP_SUBJECTINFO* pSubjectInfo, uint32* pcbIndirectData, SIP_INDIRECT_DATA* pIndirectData);
-		public function BOOL pCryptSIPVerifyIndirectData(SIP_SUBJECTINFO* pSubjectInfo, SIP_INDIRECT_DATA* pIndirectData);
-		public function BOOL pCryptSIPRemoveSignedDataMsg(SIP_SUBJECTINFO* pSubjectInfo, uint32 dwIndex);
-		public function BOOL pfnIsFileSupported(HANDLE hFile, Guid* pgSubject);
-		public function BOOL pfnIsFileSupportedName(PWSTR pwszFileName, Guid* pgSubject);
-		public function BOOL pCryptSIPGetCaps(SIP_SUBJECTINFO* pSubjInfo, SIP_CAP_SET_V3* pCaps);
-		public function BOOL pCryptSIPGetSealedDigest(SIP_SUBJECTINFO* pSubjectInfo, uint8* pSig, uint32 dwSig, uint8* pbDigest, uint32* pcbDigest);
+		public function BOOL pCryptSIPGetSignedDataMsg(out SIP_SUBJECTINFO pSubjectInfo, out uint32 pdwEncodingType, uint32 dwIndex, out uint32 pcbSignedDataMsg, out uint8 pbSignedDataMsg);
+		public function BOOL pCryptSIPPutSignedDataMsg(out SIP_SUBJECTINFO pSubjectInfo, uint32 dwEncodingType, out uint32 pdwIndex, uint32 cbSignedDataMsg, out uint8 pbSignedDataMsg);
+		public function BOOL pCryptSIPCreateIndirectData(out SIP_SUBJECTINFO pSubjectInfo, out uint32 pcbIndirectData, out SIP_INDIRECT_DATA pIndirectData);
+		public function BOOL pCryptSIPVerifyIndirectData(out SIP_SUBJECTINFO pSubjectInfo, out SIP_INDIRECT_DATA pIndirectData);
+		public function BOOL pCryptSIPRemoveSignedDataMsg(out SIP_SUBJECTINFO pSubjectInfo, uint32 dwIndex);
+		public function BOOL pfnIsFileSupported(HANDLE hFile, out Guid pgSubject);
+		public function BOOL pfnIsFileSupportedName(PWSTR pwszFileName, out Guid pgSubject);
+		public function BOOL pCryptSIPGetCaps(ref SIP_SUBJECTINFO pSubjInfo, out SIP_CAP_SET_V3 pCaps);
+		public function BOOL pCryptSIPGetSealedDigest(ref SIP_SUBJECTINFO pSubjectInfo, uint8* pSig, uint32 dwSig, uint8* pbDigest, out uint32 pcbDigest);
 		
 		// --- Structs ---
 		
@@ -154,29 +154,29 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPGetSignedDataMsg(SIP_SUBJECTINFO* pSubjectInfo, CERT_QUERY_ENCODING_TYPE* pdwEncodingType, uint32 dwIndex, uint32* pcbSignedDataMsg, uint8* pbSignedDataMsg);
+		public static extern BOOL CryptSIPGetSignedDataMsg(out SIP_SUBJECTINFO pSubjectInfo, out CERT_QUERY_ENCODING_TYPE pdwEncodingType, uint32 dwIndex, out uint32 pcbSignedDataMsg, out uint8 pbSignedDataMsg);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPPutSignedDataMsg(SIP_SUBJECTINFO* pSubjectInfo, CERT_QUERY_ENCODING_TYPE dwEncodingType, uint32* pdwIndex, uint32 cbSignedDataMsg, uint8* pbSignedDataMsg);
+		public static extern BOOL CryptSIPPutSignedDataMsg(out SIP_SUBJECTINFO pSubjectInfo, CERT_QUERY_ENCODING_TYPE dwEncodingType, out uint32 pdwIndex, uint32 cbSignedDataMsg, out uint8 pbSignedDataMsg);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPCreateIndirectData(SIP_SUBJECTINFO* pSubjectInfo, uint32* pcbIndirectData, SIP_INDIRECT_DATA* pIndirectData);
+		public static extern BOOL CryptSIPCreateIndirectData(out SIP_SUBJECTINFO pSubjectInfo, out uint32 pcbIndirectData, out SIP_INDIRECT_DATA pIndirectData);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPVerifyIndirectData(SIP_SUBJECTINFO* pSubjectInfo, SIP_INDIRECT_DATA* pIndirectData);
+		public static extern BOOL CryptSIPVerifyIndirectData(out SIP_SUBJECTINFO pSubjectInfo, out SIP_INDIRECT_DATA pIndirectData);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPRemoveSignedDataMsg(SIP_SUBJECTINFO* pSubjectInfo, uint32 dwIndex);
+		public static extern BOOL CryptSIPRemoveSignedDataMsg(out SIP_SUBJECTINFO pSubjectInfo, uint32 dwIndex);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPLoad(Guid* pgSubject, uint32 dwFlags, SIP_DISPATCH_INFO* pSipDispatch);
+		public static extern BOOL CryptSIPLoad(in Guid pgSubject, uint32 dwFlags, out SIP_DISPATCH_INFO pSipDispatch);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPRetrieveSubjectGuid(PWSTR FileName, HANDLE hFileIn, Guid* pgSubject);
+		public static extern BOOL CryptSIPRetrieveSubjectGuid(PWSTR FileName, HANDLE hFileIn, out Guid pgSubject);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPRetrieveSubjectGuidForCatalogFile(PWSTR FileName, HANDLE hFileIn, Guid* pgSubject);
+		public static extern BOOL CryptSIPRetrieveSubjectGuidForCatalogFile(PWSTR FileName, HANDLE hFileIn, out Guid pgSubject);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPAddProvider(SIP_ADD_NEWPROVIDER* psNewProv);
+		public static extern BOOL CryptSIPAddProvider(out SIP_ADD_NEWPROVIDER psNewProv);
 		[Import("crypt32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPRemoveProvider(Guid* pgProv);
+		public static extern BOOL CryptSIPRemoveProvider(out Guid pgProv);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPGetCaps(SIP_SUBJECTINFO* pSubjInfo, SIP_CAP_SET_V3* pCaps);
+		public static extern BOOL CryptSIPGetCaps(ref SIP_SUBJECTINFO pSubjInfo, out SIP_CAP_SET_V3 pCaps);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptSIPGetSealedDigest(SIP_SUBJECTINFO* pSubjectInfo, uint8* pSig, uint32 dwSig, uint8* pbDigest, uint32* pcbDigest);
+		public static extern BOOL CryptSIPGetSealedDigest(ref SIP_SUBJECTINFO pSubjectInfo, uint8* pSig, uint32 dwSig, uint8* pbDigest, out uint32 pcbDigest);
 		
 	}
 }

@@ -31,39 +31,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEffectId(Guid* id) mut
+			public HRESULT GetEffectId(out Guid id) mut
 			{
-				return VT.GetEffectId(&this, id);
+				return VT.GetEffectId(ref this, out id);
 			}
-			public HRESULT GetNamedPropertyMapping(PWSTR name, uint32* index, GRAPHICS_EFFECT_PROPERTY_MAPPING* mapping) mut
+			public HRESULT GetNamedPropertyMapping(PWSTR name, out uint32 index, out GRAPHICS_EFFECT_PROPERTY_MAPPING mapping) mut
 			{
-				return VT.GetNamedPropertyMapping(&this, name, index, mapping);
+				return VT.GetNamedPropertyMapping(ref this, name, out index, out mapping);
 			}
-			public HRESULT GetPropertyCount(uint32* count) mut
+			public HRESULT GetPropertyCount(out uint32 count) mut
 			{
-				return VT.GetPropertyCount(&this, count);
+				return VT.GetPropertyCount(ref this, out count);
 			}
 			public HRESULT GetProperty(uint32 index, void* value) mut
 			{
-				return VT.GetProperty(&this, index, value);
+				return VT.GetProperty(ref this, index, value);
 			}
 			public HRESULT GetSource(uint32 index, void* source) mut
 			{
-				return VT.GetSource(&this, index, source);
+				return VT.GetSource(ref this, index, source);
 			}
-			public HRESULT GetSourceCount(uint32* count) mut
+			public HRESULT GetSourceCount(out uint32 count) mut
 			{
-				return VT.GetSourceCount(&this, count);
+				return VT.GetSourceCount(ref this, out count);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IGraphicsEffectD2D1Interop *self, Guid* id) GetEffectId;
-				public new function HRESULT(IGraphicsEffectD2D1Interop *self, PWSTR name, uint32* index, GRAPHICS_EFFECT_PROPERTY_MAPPING* mapping) GetNamedPropertyMapping;
-				public new function HRESULT(IGraphicsEffectD2D1Interop *self, uint32* count) GetPropertyCount;
-				public new function HRESULT(IGraphicsEffectD2D1Interop *self, uint32 index, void* value) GetProperty;
-				public new function HRESULT(IGraphicsEffectD2D1Interop *self, uint32 index, void* source) GetSource;
-				public new function HRESULT(IGraphicsEffectD2D1Interop *self, uint32* count) GetSourceCount;
+				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, out Guid id) GetEffectId;
+				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, PWSTR name, out uint32 index, out GRAPHICS_EFFECT_PROPERTY_MAPPING mapping) GetNamedPropertyMapping;
+				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, out uint32 count) GetPropertyCount;
+				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, uint32 index, void* value) GetProperty;
+				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, uint32 index, void* source) GetSource;
+				public new function HRESULT(ref IGraphicsEffectD2D1Interop self, out uint32 count) GetSourceCount;
 			}
 		}
 		[CRepr]
@@ -73,19 +73,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGeometry(ID2D1Geometry** value) mut
+			public HRESULT GetGeometry(out ID2D1Geometry* value) mut
 			{
-				return VT.GetGeometry(&this, value);
+				return VT.GetGeometry(ref this, out value);
 			}
-			public HRESULT TryGetGeometryUsingFactory(ID2D1Factory* factory, ID2D1Geometry** value) mut
+			public HRESULT TryGetGeometryUsingFactory(ref ID2D1Factory factory, ID2D1Geometry** value) mut
 			{
-				return VT.TryGetGeometryUsingFactory(&this, factory, value);
+				return VT.TryGetGeometryUsingFactory(ref this, ref factory, value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IGeometrySource2DInterop *self, ID2D1Geometry** value) GetGeometry;
-				public new function HRESULT(IGeometrySource2DInterop *self, ID2D1Factory* factory, ID2D1Geometry** value) TryGetGeometryUsingFactory;
+				public new function HRESULT(ref IGeometrySource2DInterop self, out ID2D1Geometry* value) GetGeometry;
+				public new function HRESULT(ref IGeometrySource2DInterop self, ref ID2D1Factory factory, ID2D1Geometry** value) TryGetGeometryUsingFactory;
 			}
 		}
 		

@@ -93,7 +93,7 @@ namespace Win32
 		public struct SHITEMID
 		{
 			public uint16 cb;
-			public uint8[] abID;
+			public uint8[0] abID;
 		}
 		[CRepr]
 		public struct ITEMIDLIST
@@ -137,19 +137,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* pcObjects) mut
+			public HRESULT GetCount(out uint32 pcObjects) mut
 			{
-				return VT.GetCount(&this, pcObjects);
+				return VT.GetCount(ref this, out pcObjects);
 			}
-			public HRESULT GetAt(uint32 uiIndex, Guid* riid, void** ppv) mut
+			public HRESULT GetAt(uint32 uiIndex, in Guid riid, void** ppv) mut
 			{
-				return VT.GetAt(&this, uiIndex, riid, ppv);
+				return VT.GetAt(ref this, uiIndex, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IObjectArray *self, uint32* pcObjects) GetCount;
-				public new function HRESULT(IObjectArray *self, uint32 uiIndex, Guid* riid, void** ppv) GetAt;
+				public new function HRESULT(ref IObjectArray self, out uint32 pcObjects) GetCount;
+				public new function HRESULT(ref IObjectArray self, uint32 uiIndex, in Guid riid, void** ppv) GetAt;
 			}
 		}
 		[CRepr]
@@ -159,29 +159,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddObject(IUnknown* punk) mut
+			public HRESULT AddObject(ref IUnknown punk) mut
 			{
-				return VT.AddObject(&this, punk);
+				return VT.AddObject(ref this, ref punk);
 			}
-			public HRESULT AddFromArray(IObjectArray* poaSource) mut
+			public HRESULT AddFromArray(ref IObjectArray poaSource) mut
 			{
-				return VT.AddFromArray(&this, poaSource);
+				return VT.AddFromArray(ref this, ref poaSource);
 			}
 			public HRESULT RemoveObjectAt(uint32 uiIndex) mut
 			{
-				return VT.RemoveObjectAt(&this, uiIndex);
+				return VT.RemoveObjectAt(ref this, uiIndex);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IObjectArray.VTable
 			{
-				public new function HRESULT(IObjectCollection *self, IUnknown* punk) AddObject;
-				public new function HRESULT(IObjectCollection *self, IObjectArray* poaSource) AddFromArray;
-				public new function HRESULT(IObjectCollection *self, uint32 uiIndex) RemoveObjectAt;
-				public new function HRESULT(IObjectCollection *self) Clear;
+				public new function HRESULT(ref IObjectCollection self, ref IUnknown punk) AddObject;
+				public new function HRESULT(ref IObjectCollection self, ref IObjectArray poaSource) AddFromArray;
+				public new function HRESULT(ref IObjectCollection self, uint32 uiIndex) RemoveObjectAt;
+				public new function HRESULT(ref IObjectCollection self) Clear;
 			}
 		}
 		

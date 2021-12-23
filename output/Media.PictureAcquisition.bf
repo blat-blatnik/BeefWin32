@@ -103,52 +103,52 @@ namespace Win32
 			
 			public HRESULT GetItemName(BSTR* pbstrItemName) mut
 			{
-				return VT.GetItemName(&this, pbstrItemName);
+				return VT.GetItemName(ref this, pbstrItemName);
 			}
 			public HRESULT GetThumbnail(SIZE sizeThumbnail, HBITMAP* phbmpThumbnail) mut
 			{
-				return VT.GetThumbnail(&this, sizeThumbnail, phbmpThumbnail);
+				return VT.GetThumbnail(ref this, sizeThumbnail, phbmpThumbnail);
 			}
-			public HRESULT GetProperty(PROPERTYKEY* key, PROPVARIANT* pv) mut
+			public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT pv) mut
 			{
-				return VT.GetProperty(&this, key, pv);
+				return VT.GetProperty(ref this, key, out pv);
 			}
-			public HRESULT SetProperty(PROPERTYKEY* key, PROPVARIANT* pv) mut
+			public HRESULT SetProperty(in PROPERTYKEY key, in PROPVARIANT pv) mut
 			{
-				return VT.SetProperty(&this, key, pv);
+				return VT.SetProperty(ref this, key, pv);
 			}
 			public HRESULT GetStream(IStream** ppStream) mut
 			{
-				return VT.GetStream(&this, ppStream);
+				return VT.GetStream(ref this, ppStream);
 			}
-			public HRESULT CanDelete(BOOL* pfCanDelete) mut
+			public HRESULT CanDelete(out BOOL pfCanDelete) mut
 			{
-				return VT.CanDelete(&this, pfCanDelete);
+				return VT.CanDelete(ref this, out pfCanDelete);
 			}
 			public HRESULT Delete() mut
 			{
-				return VT.Delete(&this);
+				return VT.Delete(ref this);
 			}
-			public HRESULT GetSubItemCount(uint32* pnCount) mut
+			public HRESULT GetSubItemCount(out uint32 pnCount) mut
 			{
-				return VT.GetSubItemCount(&this, pnCount);
+				return VT.GetSubItemCount(ref this, out pnCount);
 			}
 			public HRESULT GetSubItemAt(uint32 nItemIndex, IPhotoAcquireItem** ppPhotoAcquireItem) mut
 			{
-				return VT.GetSubItemAt(&this, nItemIndex, ppPhotoAcquireItem);
+				return VT.GetSubItemAt(ref this, nItemIndex, ppPhotoAcquireItem);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoAcquireItem *self, BSTR* pbstrItemName) GetItemName;
-				public new function HRESULT(IPhotoAcquireItem *self, SIZE sizeThumbnail, HBITMAP* phbmpThumbnail) GetThumbnail;
-				public new function HRESULT(IPhotoAcquireItem *self, PROPERTYKEY* key, PROPVARIANT* pv) GetProperty;
-				public new function HRESULT(IPhotoAcquireItem *self, PROPERTYKEY* key, PROPVARIANT* pv) SetProperty;
-				public new function HRESULT(IPhotoAcquireItem *self, IStream** ppStream) GetStream;
-				public new function HRESULT(IPhotoAcquireItem *self, BOOL* pfCanDelete) CanDelete;
-				public new function HRESULT(IPhotoAcquireItem *self) Delete;
-				public new function HRESULT(IPhotoAcquireItem *self, uint32* pnCount) GetSubItemCount;
-				public new function HRESULT(IPhotoAcquireItem *self, uint32 nItemIndex, IPhotoAcquireItem** ppPhotoAcquireItem) GetSubItemAt;
+				public new function HRESULT(ref IPhotoAcquireItem self, BSTR* pbstrItemName) GetItemName;
+				public new function HRESULT(ref IPhotoAcquireItem self, SIZE sizeThumbnail, HBITMAP* phbmpThumbnail) GetThumbnail;
+				public new function HRESULT(ref IPhotoAcquireItem self, in PROPERTYKEY key, out PROPVARIANT pv) GetProperty;
+				public new function HRESULT(ref IPhotoAcquireItem self, in PROPERTYKEY key, in PROPVARIANT pv) SetProperty;
+				public new function HRESULT(ref IPhotoAcquireItem self, IStream** ppStream) GetStream;
+				public new function HRESULT(ref IPhotoAcquireItem self, out BOOL pfCanDelete) CanDelete;
+				public new function HRESULT(ref IPhotoAcquireItem self) Delete;
+				public new function HRESULT(ref IPhotoAcquireItem self, out uint32 pnCount) GetSubItemCount;
+				public new function HRESULT(ref IPhotoAcquireItem self, uint32 nItemIndex, IPhotoAcquireItem** ppPhotoAcquireItem) GetSubItemAt;
 			}
 		}
 		[CRepr]
@@ -160,57 +160,57 @@ namespace Win32
 			
 			public HRESULT GetSubmitButtonText(BSTR* pbstrSubmitButtonText) mut
 			{
-				return VT.GetSubmitButtonText(&this, pbstrSubmitButtonText);
+				return VT.GetSubmitButtonText(ref this, pbstrSubmitButtonText);
 			}
 			public HRESULT GetPrompt(BSTR* pbstrPromptTitle) mut
 			{
-				return VT.GetPrompt(&this, pbstrPromptTitle);
+				return VT.GetPrompt(ref this, pbstrPromptTitle);
 			}
 			public HRESULT GetStringId(BSTR* pbstrStringId) mut
 			{
-				return VT.GetStringId(&this, pbstrStringId);
+				return VT.GetStringId(ref this, pbstrStringId);
 			}
-			public HRESULT GetStringType(USER_INPUT_STRING_TYPE* pnStringType) mut
+			public HRESULT GetStringType(out USER_INPUT_STRING_TYPE pnStringType) mut
 			{
-				return VT.GetStringType(&this, pnStringType);
+				return VT.GetStringType(ref this, out pnStringType);
 			}
 			public HRESULT GetTooltipText(BSTR* pbstrTooltipText) mut
 			{
-				return VT.GetTooltipText(&this, pbstrTooltipText);
+				return VT.GetTooltipText(ref this, pbstrTooltipText);
 			}
-			public HRESULT GetMaxLength(uint32* pcchMaxLength) mut
+			public HRESULT GetMaxLength(out uint32 pcchMaxLength) mut
 			{
-				return VT.GetMaxLength(&this, pcchMaxLength);
+				return VT.GetMaxLength(ref this, out pcchMaxLength);
 			}
 			public HRESULT GetDefault(BSTR* pbstrDefault) mut
 			{
-				return VT.GetDefault(&this, pbstrDefault);
+				return VT.GetDefault(ref this, pbstrDefault);
 			}
-			public HRESULT GetMruCount(uint32* pnMruCount) mut
+			public HRESULT GetMruCount(out uint32 pnMruCount) mut
 			{
-				return VT.GetMruCount(&this, pnMruCount);
+				return VT.GetMruCount(ref this, out pnMruCount);
 			}
 			public HRESULT GetMruEntryAt(uint32 nIndex, BSTR* pbstrMruEntry) mut
 			{
-				return VT.GetMruEntryAt(&this, nIndex, pbstrMruEntry);
+				return VT.GetMruEntryAt(ref this, nIndex, pbstrMruEntry);
 			}
 			public HRESULT GetImage(uint32 nSize, HBITMAP* phBitmap, HICON* phIcon) mut
 			{
-				return VT.GetImage(&this, nSize, phBitmap, phIcon);
+				return VT.GetImage(ref this, nSize, phBitmap, phIcon);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUserInputString *self, BSTR* pbstrSubmitButtonText) GetSubmitButtonText;
-				public new function HRESULT(IUserInputString *self, BSTR* pbstrPromptTitle) GetPrompt;
-				public new function HRESULT(IUserInputString *self, BSTR* pbstrStringId) GetStringId;
-				public new function HRESULT(IUserInputString *self, USER_INPUT_STRING_TYPE* pnStringType) GetStringType;
-				public new function HRESULT(IUserInputString *self, BSTR* pbstrTooltipText) GetTooltipText;
-				public new function HRESULT(IUserInputString *self, uint32* pcchMaxLength) GetMaxLength;
-				public new function HRESULT(IUserInputString *self, BSTR* pbstrDefault) GetDefault;
-				public new function HRESULT(IUserInputString *self, uint32* pnMruCount) GetMruCount;
-				public new function HRESULT(IUserInputString *self, uint32 nIndex, BSTR* pbstrMruEntry) GetMruEntryAt;
-				public new function HRESULT(IUserInputString *self, uint32 nSize, HBITMAP* phBitmap, HICON* phIcon) GetImage;
+				public new function HRESULT(ref IUserInputString self, BSTR* pbstrSubmitButtonText) GetSubmitButtonText;
+				public new function HRESULT(ref IUserInputString self, BSTR* pbstrPromptTitle) GetPrompt;
+				public new function HRESULT(ref IUserInputString self, BSTR* pbstrStringId) GetStringId;
+				public new function HRESULT(ref IUserInputString self, out USER_INPUT_STRING_TYPE pnStringType) GetStringType;
+				public new function HRESULT(ref IUserInputString self, BSTR* pbstrTooltipText) GetTooltipText;
+				public new function HRESULT(ref IUserInputString self, out uint32 pcchMaxLength) GetMaxLength;
+				public new function HRESULT(ref IUserInputString self, BSTR* pbstrDefault) GetDefault;
+				public new function HRESULT(ref IUserInputString self, out uint32 pnMruCount) GetMruCount;
+				public new function HRESULT(ref IUserInputString self, uint32 nIndex, BSTR* pbstrMruEntry) GetMruEntryAt;
+				public new function HRESULT(ref IUserInputString self, uint32 nSize, HBITMAP* phBitmap, HICON* phIcon) GetImage;
 			}
 		}
 		[CRepr]
@@ -220,104 +220,104 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Cancelled(BOOL* pfCancelled) mut
+			public HRESULT Cancelled(out BOOL pfCancelled) mut
 			{
-				return VT.Cancelled(&this, pfCancelled);
+				return VT.Cancelled(ref this, out pfCancelled);
 			}
 			public HRESULT StartEnumeration(IPhotoAcquireSource* pPhotoAcquireSource) mut
 			{
-				return VT.StartEnumeration(&this, pPhotoAcquireSource);
+				return VT.StartEnumeration(ref this, pPhotoAcquireSource);
 			}
 			public HRESULT FoundItem(IPhotoAcquireItem* pPhotoAcquireItem) mut
 			{
-				return VT.FoundItem(&this, pPhotoAcquireItem);
+				return VT.FoundItem(ref this, pPhotoAcquireItem);
 			}
 			public HRESULT EndEnumeration(HRESULT hr) mut
 			{
-				return VT.EndEnumeration(&this, hr);
+				return VT.EndEnumeration(ref this, hr);
 			}
 			public HRESULT StartTransfer(IPhotoAcquireSource* pPhotoAcquireSource) mut
 			{
-				return VT.StartTransfer(&this, pPhotoAcquireSource);
+				return VT.StartTransfer(ref this, pPhotoAcquireSource);
 			}
 			public HRESULT StartItemTransfer(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) mut
 			{
-				return VT.StartItemTransfer(&this, nItemIndex, pPhotoAcquireItem);
+				return VT.StartItemTransfer(ref this, nItemIndex, pPhotoAcquireItem);
 			}
 			public HRESULT DirectoryCreated(PWSTR pszDirectory) mut
 			{
-				return VT.DirectoryCreated(&this, pszDirectory);
+				return VT.DirectoryCreated(ref this, pszDirectory);
 			}
 			public HRESULT UpdateTransferPercent(BOOL fOverall, uint32 nPercent) mut
 			{
-				return VT.UpdateTransferPercent(&this, fOverall, nPercent);
+				return VT.UpdateTransferPercent(ref this, fOverall, nPercent);
 			}
 			public HRESULT EndItemTransfer(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) mut
 			{
-				return VT.EndItemTransfer(&this, nItemIndex, pPhotoAcquireItem, hr);
+				return VT.EndItemTransfer(ref this, nItemIndex, pPhotoAcquireItem, hr);
 			}
 			public HRESULT EndTransfer(HRESULT hr) mut
 			{
-				return VT.EndTransfer(&this, hr);
+				return VT.EndTransfer(ref this, hr);
 			}
 			public HRESULT StartDelete(IPhotoAcquireSource* pPhotoAcquireSource) mut
 			{
-				return VT.StartDelete(&this, pPhotoAcquireSource);
+				return VT.StartDelete(ref this, pPhotoAcquireSource);
 			}
 			public HRESULT StartItemDelete(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) mut
 			{
-				return VT.StartItemDelete(&this, nItemIndex, pPhotoAcquireItem);
+				return VT.StartItemDelete(ref this, nItemIndex, pPhotoAcquireItem);
 			}
 			public HRESULT UpdateDeletePercent(uint32 nPercent) mut
 			{
-				return VT.UpdateDeletePercent(&this, nPercent);
+				return VT.UpdateDeletePercent(ref this, nPercent);
 			}
 			public HRESULT EndItemDelete(uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) mut
 			{
-				return VT.EndItemDelete(&this, nItemIndex, pPhotoAcquireItem, hr);
+				return VT.EndItemDelete(ref this, nItemIndex, pPhotoAcquireItem, hr);
 			}
 			public HRESULT EndDelete(HRESULT hr) mut
 			{
-				return VT.EndDelete(&this, hr);
+				return VT.EndDelete(ref this, hr);
 			}
 			public HRESULT EndSession(HRESULT hr) mut
 			{
-				return VT.EndSession(&this, hr);
+				return VT.EndSession(ref this, hr);
 			}
-			public HRESULT GetDeleteAfterAcquire(BOOL* pfDeleteAfterAcquire) mut
+			public HRESULT GetDeleteAfterAcquire(out BOOL pfDeleteAfterAcquire) mut
 			{
-				return VT.GetDeleteAfterAcquire(&this, pfDeleteAfterAcquire);
+				return VT.GetDeleteAfterAcquire(ref this, out pfDeleteAfterAcquire);
 			}
-			public HRESULT ErrorAdvise(HRESULT hr, PWSTR pszErrorMessage, ERROR_ADVISE_MESSAGE_TYPE nMessageType, ERROR_ADVISE_RESULT* pnErrorAdviseResult) mut
+			public HRESULT ErrorAdvise(HRESULT hr, PWSTR pszErrorMessage, ERROR_ADVISE_MESSAGE_TYPE nMessageType, out ERROR_ADVISE_RESULT pnErrorAdviseResult) mut
 			{
-				return VT.ErrorAdvise(&this, hr, pszErrorMessage, nMessageType, pnErrorAdviseResult);
+				return VT.ErrorAdvise(ref this, hr, pszErrorMessage, nMessageType, out pnErrorAdviseResult);
 			}
-			public HRESULT GetUserInput(Guid* riidType, IUnknown* pUnknown, PROPVARIANT* pPropVarResult, PROPVARIANT* pPropVarDefault) mut
+			public HRESULT GetUserInput(in Guid riidType, IUnknown* pUnknown, out PROPVARIANT pPropVarResult, PROPVARIANT* pPropVarDefault) mut
 			{
-				return VT.GetUserInput(&this, riidType, pUnknown, pPropVarResult, pPropVarDefault);
+				return VT.GetUserInput(ref this, riidType, pUnknown, out pPropVarResult, pPropVarDefault);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoAcquireProgressCB *self, BOOL* pfCancelled) Cancelled;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, IPhotoAcquireSource* pPhotoAcquireSource) StartEnumeration;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, IPhotoAcquireItem* pPhotoAcquireItem) FoundItem;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, HRESULT hr) EndEnumeration;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, IPhotoAcquireSource* pPhotoAcquireSource) StartTransfer;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) StartItemTransfer;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, PWSTR pszDirectory) DirectoryCreated;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, BOOL fOverall, uint32 nPercent) UpdateTransferPercent;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) EndItemTransfer;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, HRESULT hr) EndTransfer;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, IPhotoAcquireSource* pPhotoAcquireSource) StartDelete;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) StartItemDelete;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, uint32 nPercent) UpdateDeletePercent;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) EndItemDelete;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, HRESULT hr) EndDelete;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, HRESULT hr) EndSession;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, BOOL* pfDeleteAfterAcquire) GetDeleteAfterAcquire;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, HRESULT hr, PWSTR pszErrorMessage, ERROR_ADVISE_MESSAGE_TYPE nMessageType, ERROR_ADVISE_RESULT* pnErrorAdviseResult) ErrorAdvise;
-				public new function HRESULT(IPhotoAcquireProgressCB *self, Guid* riidType, IUnknown* pUnknown, PROPVARIANT* pPropVarResult, PROPVARIANT* pPropVarDefault) GetUserInput;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, out BOOL pfCancelled) Cancelled;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, IPhotoAcquireSource* pPhotoAcquireSource) StartEnumeration;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, IPhotoAcquireItem* pPhotoAcquireItem) FoundItem;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, HRESULT hr) EndEnumeration;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, IPhotoAcquireSource* pPhotoAcquireSource) StartTransfer;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) StartItemTransfer;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, PWSTR pszDirectory) DirectoryCreated;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, BOOL fOverall, uint32 nPercent) UpdateTransferPercent;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) EndItemTransfer;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, HRESULT hr) EndTransfer;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, IPhotoAcquireSource* pPhotoAcquireSource) StartDelete;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem) StartItemDelete;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, uint32 nPercent) UpdateDeletePercent;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, uint32 nItemIndex, IPhotoAcquireItem* pPhotoAcquireItem, HRESULT hr) EndItemDelete;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, HRESULT hr) EndDelete;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, HRESULT hr) EndSession;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, out BOOL pfDeleteAfterAcquire) GetDeleteAfterAcquire;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, HRESULT hr, PWSTR pszErrorMessage, ERROR_ADVISE_MESSAGE_TYPE nMessageType, out ERROR_ADVISE_RESULT pnErrorAdviseResult) ErrorAdvise;
+				public new function HRESULT(ref IPhotoAcquireProgressCB self, in Guid riidType, IUnknown* pUnknown, out PROPVARIANT pPropVarResult, PROPVARIANT* pPropVarDefault) GetUserInput;
 			}
 		}
 		[CRepr]
@@ -329,12 +329,12 @@ namespace Win32
 			
 			public HRESULT DoAction(HWND hWndParent) mut
 			{
-				return VT.DoAction(&this, hWndParent);
+				return VT.DoAction(ref this, hWndParent);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoProgressActionCB *self, HWND hWndParent) DoAction;
+				public new function HRESULT(ref IPhotoProgressActionCB self, HWND hWndParent) DoAction;
 			}
 		}
 		[CRepr]
@@ -346,97 +346,97 @@ namespace Win32
 			
 			public HRESULT Create(HWND hwndParent) mut
 			{
-				return VT.Create(&this, hwndParent);
+				return VT.Create(ref this, hwndParent);
 			}
 			public HRESULT GetWindow(HWND* phwndProgressDialog) mut
 			{
-				return VT.GetWindow(&this, phwndProgressDialog);
+				return VT.GetWindow(ref this, phwndProgressDialog);
 			}
 			public HRESULT Destroy() mut
 			{
-				return VT.Destroy(&this);
+				return VT.Destroy(ref this);
 			}
 			public HRESULT SetTitle(PWSTR pszTitle) mut
 			{
-				return VT.SetTitle(&this, pszTitle);
+				return VT.SetTitle(ref this, pszTitle);
 			}
 			public HRESULT ShowCheckbox(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fShow) mut
 			{
-				return VT.ShowCheckbox(&this, nCheckboxId, fShow);
+				return VT.ShowCheckbox(ref this, nCheckboxId, fShow);
 			}
 			public HRESULT SetCheckboxText(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxText) mut
 			{
-				return VT.SetCheckboxText(&this, nCheckboxId, pszCheckboxText);
+				return VT.SetCheckboxText(ref this, nCheckboxId, pszCheckboxText);
 			}
 			public HRESULT SetCheckboxCheck(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fChecked) mut
 			{
-				return VT.SetCheckboxCheck(&this, nCheckboxId, fChecked);
+				return VT.SetCheckboxCheck(ref this, nCheckboxId, fChecked);
 			}
 			public HRESULT SetCheckboxTooltip(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxTooltipText) mut
 			{
-				return VT.SetCheckboxTooltip(&this, nCheckboxId, pszCheckboxTooltipText);
+				return VT.SetCheckboxTooltip(ref this, nCheckboxId, pszCheckboxTooltipText);
 			}
-			public HRESULT IsCheckboxChecked(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL* pfChecked) mut
+			public HRESULT IsCheckboxChecked(PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, out BOOL pfChecked) mut
 			{
-				return VT.IsCheckboxChecked(&this, nCheckboxId, pfChecked);
+				return VT.IsCheckboxChecked(ref this, nCheckboxId, out pfChecked);
 			}
 			public HRESULT SetCaption(PWSTR pszTitle) mut
 			{
-				return VT.SetCaption(&this, pszTitle);
+				return VT.SetCaption(ref this, pszTitle);
 			}
 			public HRESULT SetImage(PROGRESS_DIALOG_IMAGE_TYPE nImageType, HICON hIcon, HBITMAP hBitmap) mut
 			{
-				return VT.SetImage(&this, nImageType, hIcon, hBitmap);
+				return VT.SetImage(ref this, nImageType, hIcon, hBitmap);
 			}
 			public HRESULT SetPercentComplete(int32 nPercent) mut
 			{
-				return VT.SetPercentComplete(&this, nPercent);
+				return VT.SetPercentComplete(ref this, nPercent);
 			}
 			public HRESULT SetProgressText(PWSTR pszProgressText) mut
 			{
-				return VT.SetProgressText(&this, pszProgressText);
+				return VT.SetProgressText(ref this, pszProgressText);
 			}
 			public HRESULT SetActionLinkCallback(IPhotoProgressActionCB* pPhotoProgressActionCB) mut
 			{
-				return VT.SetActionLinkCallback(&this, pPhotoProgressActionCB);
+				return VT.SetActionLinkCallback(ref this, pPhotoProgressActionCB);
 			}
 			public HRESULT SetActionLinkText(PWSTR pszCaption) mut
 			{
-				return VT.SetActionLinkText(&this, pszCaption);
+				return VT.SetActionLinkText(ref this, pszCaption);
 			}
 			public HRESULT ShowActionLink(BOOL fShow) mut
 			{
-				return VT.ShowActionLink(&this, fShow);
+				return VT.ShowActionLink(ref this, fShow);
 			}
-			public HRESULT IsCancelled(BOOL* pfCancelled) mut
+			public HRESULT IsCancelled(out BOOL pfCancelled) mut
 			{
-				return VT.IsCancelled(&this, pfCancelled);
+				return VT.IsCancelled(ref this, out pfCancelled);
 			}
-			public HRESULT GetUserInput(Guid* riidType, IUnknown* pUnknown, PROPVARIANT* pPropVarResult, PROPVARIANT* pPropVarDefault) mut
+			public HRESULT GetUserInput(in Guid riidType, IUnknown* pUnknown, out PROPVARIANT pPropVarResult, PROPVARIANT* pPropVarDefault) mut
 			{
-				return VT.GetUserInput(&this, riidType, pUnknown, pPropVarResult, pPropVarDefault);
+				return VT.GetUserInput(ref this, riidType, pUnknown, out pPropVarResult, pPropVarDefault);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoProgressDialog *self, HWND hwndParent) Create;
-				public new function HRESULT(IPhotoProgressDialog *self, HWND* phwndProgressDialog) GetWindow;
-				public new function HRESULT(IPhotoProgressDialog *self) Destroy;
-				public new function HRESULT(IPhotoProgressDialog *self, PWSTR pszTitle) SetTitle;
-				public new function HRESULT(IPhotoProgressDialog *self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fShow) ShowCheckbox;
-				public new function HRESULT(IPhotoProgressDialog *self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxText) SetCheckboxText;
-				public new function HRESULT(IPhotoProgressDialog *self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fChecked) SetCheckboxCheck;
-				public new function HRESULT(IPhotoProgressDialog *self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxTooltipText) SetCheckboxTooltip;
-				public new function HRESULT(IPhotoProgressDialog *self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL* pfChecked) IsCheckboxChecked;
-				public new function HRESULT(IPhotoProgressDialog *self, PWSTR pszTitle) SetCaption;
-				public new function HRESULT(IPhotoProgressDialog *self, PROGRESS_DIALOG_IMAGE_TYPE nImageType, HICON hIcon, HBITMAP hBitmap) SetImage;
-				public new function HRESULT(IPhotoProgressDialog *self, int32 nPercent) SetPercentComplete;
-				public new function HRESULT(IPhotoProgressDialog *self, PWSTR pszProgressText) SetProgressText;
-				public new function HRESULT(IPhotoProgressDialog *self, IPhotoProgressActionCB* pPhotoProgressActionCB) SetActionLinkCallback;
-				public new function HRESULT(IPhotoProgressDialog *self, PWSTR pszCaption) SetActionLinkText;
-				public new function HRESULT(IPhotoProgressDialog *self, BOOL fShow) ShowActionLink;
-				public new function HRESULT(IPhotoProgressDialog *self, BOOL* pfCancelled) IsCancelled;
-				public new function HRESULT(IPhotoProgressDialog *self, Guid* riidType, IUnknown* pUnknown, PROPVARIANT* pPropVarResult, PROPVARIANT* pPropVarDefault) GetUserInput;
+				public new function HRESULT(ref IPhotoProgressDialog self, HWND hwndParent) Create;
+				public new function HRESULT(ref IPhotoProgressDialog self, HWND* phwndProgressDialog) GetWindow;
+				public new function HRESULT(ref IPhotoProgressDialog self) Destroy;
+				public new function HRESULT(ref IPhotoProgressDialog self, PWSTR pszTitle) SetTitle;
+				public new function HRESULT(ref IPhotoProgressDialog self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fShow) ShowCheckbox;
+				public new function HRESULT(ref IPhotoProgressDialog self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxText) SetCheckboxText;
+				public new function HRESULT(ref IPhotoProgressDialog self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, BOOL fChecked) SetCheckboxCheck;
+				public new function HRESULT(ref IPhotoProgressDialog self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, PWSTR pszCheckboxTooltipText) SetCheckboxTooltip;
+				public new function HRESULT(ref IPhotoProgressDialog self, PROGRESS_DIALOG_CHECKBOX_ID nCheckboxId, out BOOL pfChecked) IsCheckboxChecked;
+				public new function HRESULT(ref IPhotoProgressDialog self, PWSTR pszTitle) SetCaption;
+				public new function HRESULT(ref IPhotoProgressDialog self, PROGRESS_DIALOG_IMAGE_TYPE nImageType, HICON hIcon, HBITMAP hBitmap) SetImage;
+				public new function HRESULT(ref IPhotoProgressDialog self, int32 nPercent) SetPercentComplete;
+				public new function HRESULT(ref IPhotoProgressDialog self, PWSTR pszProgressText) SetProgressText;
+				public new function HRESULT(ref IPhotoProgressDialog self, IPhotoProgressActionCB* pPhotoProgressActionCB) SetActionLinkCallback;
+				public new function HRESULT(ref IPhotoProgressDialog self, PWSTR pszCaption) SetActionLinkText;
+				public new function HRESULT(ref IPhotoProgressDialog self, BOOL fShow) ShowActionLink;
+				public new function HRESULT(ref IPhotoProgressDialog self, out BOOL pfCancelled) IsCancelled;
+				public new function HRESULT(ref IPhotoProgressDialog self, in Guid riidType, IUnknown* pUnknown, out PROPVARIANT pPropVarResult, PROPVARIANT* pPropVarDefault) GetUserInput;
 			}
 		}
 		[CRepr]
@@ -448,47 +448,47 @@ namespace Win32
 			
 			public HRESULT GetFriendlyName(BSTR* pbstrFriendlyName) mut
 			{
-				return VT.GetFriendlyName(&this, pbstrFriendlyName);
+				return VT.GetFriendlyName(ref this, pbstrFriendlyName);
 			}
 			public HRESULT GetDeviceIcons(uint32 nSize, HICON* phLargeIcon, HICON* phSmallIcon) mut
 			{
-				return VT.GetDeviceIcons(&this, nSize, phLargeIcon, phSmallIcon);
+				return VT.GetDeviceIcons(ref this, nSize, phLargeIcon, phSmallIcon);
 			}
 			public HRESULT InitializeItemList(BOOL fForceEnumeration, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB, uint32* pnItemCount) mut
 			{
-				return VT.InitializeItemList(&this, fForceEnumeration, pPhotoAcquireProgressCB, pnItemCount);
+				return VT.InitializeItemList(ref this, fForceEnumeration, pPhotoAcquireProgressCB, pnItemCount);
 			}
-			public HRESULT GetItemCount(uint32* pnItemCount) mut
+			public HRESULT GetItemCount(out uint32 pnItemCount) mut
 			{
-				return VT.GetItemCount(&this, pnItemCount);
+				return VT.GetItemCount(ref this, out pnItemCount);
 			}
 			public HRESULT GetItemAt(uint32 nIndex, IPhotoAcquireItem** ppPhotoAcquireItem) mut
 			{
-				return VT.GetItemAt(&this, nIndex, ppPhotoAcquireItem);
+				return VT.GetItemAt(ref this, nIndex, ppPhotoAcquireItem);
 			}
 			public HRESULT GetPhotoAcquireSettings(IPhotoAcquireSettings** ppPhotoAcquireSettings) mut
 			{
-				return VT.GetPhotoAcquireSettings(&this, ppPhotoAcquireSettings);
+				return VT.GetPhotoAcquireSettings(ref this, ppPhotoAcquireSettings);
 			}
 			public HRESULT GetDeviceId(BSTR* pbstrDeviceId) mut
 			{
-				return VT.GetDeviceId(&this, pbstrDeviceId);
+				return VT.GetDeviceId(ref this, pbstrDeviceId);
 			}
-			public HRESULT BindToObject(Guid* riid, void** ppv) mut
+			public HRESULT BindToObject(in Guid riid, void** ppv) mut
 			{
-				return VT.BindToObject(&this, riid, ppv);
+				return VT.BindToObject(ref this, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoAcquireSource *self, BSTR* pbstrFriendlyName) GetFriendlyName;
-				public new function HRESULT(IPhotoAcquireSource *self, uint32 nSize, HICON* phLargeIcon, HICON* phSmallIcon) GetDeviceIcons;
-				public new function HRESULT(IPhotoAcquireSource *self, BOOL fForceEnumeration, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB, uint32* pnItemCount) InitializeItemList;
-				public new function HRESULT(IPhotoAcquireSource *self, uint32* pnItemCount) GetItemCount;
-				public new function HRESULT(IPhotoAcquireSource *self, uint32 nIndex, IPhotoAcquireItem** ppPhotoAcquireItem) GetItemAt;
-				public new function HRESULT(IPhotoAcquireSource *self, IPhotoAcquireSettings** ppPhotoAcquireSettings) GetPhotoAcquireSettings;
-				public new function HRESULT(IPhotoAcquireSource *self, BSTR* pbstrDeviceId) GetDeviceId;
-				public new function HRESULT(IPhotoAcquireSource *self, Guid* riid, void** ppv) BindToObject;
+				public new function HRESULT(ref IPhotoAcquireSource self, BSTR* pbstrFriendlyName) GetFriendlyName;
+				public new function HRESULT(ref IPhotoAcquireSource self, uint32 nSize, HICON* phLargeIcon, HICON* phSmallIcon) GetDeviceIcons;
+				public new function HRESULT(ref IPhotoAcquireSource self, BOOL fForceEnumeration, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB, uint32* pnItemCount) InitializeItemList;
+				public new function HRESULT(ref IPhotoAcquireSource self, out uint32 pnItemCount) GetItemCount;
+				public new function HRESULT(ref IPhotoAcquireSource self, uint32 nIndex, IPhotoAcquireItem** ppPhotoAcquireItem) GetItemAt;
+				public new function HRESULT(ref IPhotoAcquireSource self, IPhotoAcquireSettings** ppPhotoAcquireSettings) GetPhotoAcquireSettings;
+				public new function HRESULT(ref IPhotoAcquireSource self, BSTR* pbstrDeviceId) GetDeviceId;
+				public new function HRESULT(ref IPhotoAcquireSource self, in Guid riid, void** ppv) BindToObject;
 			}
 		}
 		[CRepr]
@@ -500,22 +500,22 @@ namespace Win32
 			
 			public HRESULT CreatePhotoSource(PWSTR pszDevice, IPhotoAcquireSource** ppPhotoAcquireSource) mut
 			{
-				return VT.CreatePhotoSource(&this, pszDevice, ppPhotoAcquireSource);
+				return VT.CreatePhotoSource(ref this, pszDevice, ppPhotoAcquireSource);
 			}
 			public HRESULT Acquire(IPhotoAcquireSource* pPhotoAcquireSource, BOOL fShowProgress, HWND hWndParent, PWSTR pszApplicationName, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) mut
 			{
-				return VT.Acquire(&this, pPhotoAcquireSource, fShowProgress, hWndParent, pszApplicationName, pPhotoAcquireProgressCB);
+				return VT.Acquire(ref this, pPhotoAcquireSource, fShowProgress, hWndParent, pszApplicationName, pPhotoAcquireProgressCB);
 			}
 			public HRESULT EnumResults(IEnumString** ppEnumFilePaths) mut
 			{
-				return VT.EnumResults(&this, ppEnumFilePaths);
+				return VT.EnumResults(ref this, ppEnumFilePaths);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoAcquire *self, PWSTR pszDevice, IPhotoAcquireSource** ppPhotoAcquireSource) CreatePhotoSource;
-				public new function HRESULT(IPhotoAcquire *self, IPhotoAcquireSource* pPhotoAcquireSource, BOOL fShowProgress, HWND hWndParent, PWSTR pszApplicationName, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) Acquire;
-				public new function HRESULT(IPhotoAcquire *self, IEnumString** ppEnumFilePaths) EnumResults;
+				public new function HRESULT(ref IPhotoAcquire self, PWSTR pszDevice, IPhotoAcquireSource** ppPhotoAcquireSource) CreatePhotoSource;
+				public new function HRESULT(ref IPhotoAcquire self, IPhotoAcquireSource* pPhotoAcquireSource, BOOL fShowProgress, HWND hWndParent, PWSTR pszApplicationName, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) Acquire;
+				public new function HRESULT(ref IPhotoAcquire self, IEnumString** ppEnumFilePaths) EnumResults;
 			}
 		}
 		[CRepr]
@@ -527,72 +527,72 @@ namespace Win32
 			
 			public HRESULT InitializeFromRegistry(PWSTR pszRegistryKey) mut
 			{
-				return VT.InitializeFromRegistry(&this, pszRegistryKey);
+				return VT.InitializeFromRegistry(ref this, pszRegistryKey);
 			}
 			public HRESULT SetFlags(uint32 dwPhotoAcquireFlags) mut
 			{
-				return VT.SetFlags(&this, dwPhotoAcquireFlags);
+				return VT.SetFlags(ref this, dwPhotoAcquireFlags);
 			}
 			public HRESULT SetOutputFilenameTemplate(PWSTR pszTemplate) mut
 			{
-				return VT.SetOutputFilenameTemplate(&this, pszTemplate);
+				return VT.SetOutputFilenameTemplate(ref this, pszTemplate);
 			}
 			public HRESULT SetSequencePaddingWidth(uint32 dwWidth) mut
 			{
-				return VT.SetSequencePaddingWidth(&this, dwWidth);
+				return VT.SetSequencePaddingWidth(ref this, dwWidth);
 			}
 			public HRESULT SetSequenceZeroPadding(BOOL fZeroPad) mut
 			{
-				return VT.SetSequenceZeroPadding(&this, fZeroPad);
+				return VT.SetSequenceZeroPadding(ref this, fZeroPad);
 			}
 			public HRESULT SetGroupTag(PWSTR pszGroupTag) mut
 			{
-				return VT.SetGroupTag(&this, pszGroupTag);
+				return VT.SetGroupTag(ref this, pszGroupTag);
 			}
-			public HRESULT SetAcquisitionTime(FILETIME* pftAcquisitionTime) mut
+			public HRESULT SetAcquisitionTime(in FILETIME pftAcquisitionTime) mut
 			{
-				return VT.SetAcquisitionTime(&this, pftAcquisitionTime);
+				return VT.SetAcquisitionTime(ref this, pftAcquisitionTime);
 			}
-			public HRESULT ComGetFlags(uint32* pdwPhotoAcquireFlags) mut
+			public HRESULT ComGetFlags(out uint32 pdwPhotoAcquireFlags) mut
 			{
-				return VT.ComGetFlags(&this, pdwPhotoAcquireFlags);
+				return VT.ComGetFlags(ref this, out pdwPhotoAcquireFlags);
 			}
 			public HRESULT GetOutputFilenameTemplate(BSTR* pbstrTemplate) mut
 			{
-				return VT.GetOutputFilenameTemplate(&this, pbstrTemplate);
+				return VT.GetOutputFilenameTemplate(ref this, pbstrTemplate);
 			}
-			public HRESULT GetSequencePaddingWidth(uint32* pdwWidth) mut
+			public HRESULT GetSequencePaddingWidth(out uint32 pdwWidth) mut
 			{
-				return VT.GetSequencePaddingWidth(&this, pdwWidth);
+				return VT.GetSequencePaddingWidth(ref this, out pdwWidth);
 			}
-			public HRESULT GetSequenceZeroPadding(BOOL* pfZeroPad) mut
+			public HRESULT GetSequenceZeroPadding(out BOOL pfZeroPad) mut
 			{
-				return VT.GetSequenceZeroPadding(&this, pfZeroPad);
+				return VT.GetSequenceZeroPadding(ref this, out pfZeroPad);
 			}
 			public HRESULT GetGroupTag(BSTR* pbstrGroupTag) mut
 			{
-				return VT.GetGroupTag(&this, pbstrGroupTag);
+				return VT.GetGroupTag(ref this, pbstrGroupTag);
 			}
-			public HRESULT GetAcquisitionTime(FILETIME* pftAcquisitionTime) mut
+			public HRESULT GetAcquisitionTime(out FILETIME pftAcquisitionTime) mut
 			{
-				return VT.GetAcquisitionTime(&this, pftAcquisitionTime);
+				return VT.GetAcquisitionTime(ref this, out pftAcquisitionTime);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoAcquireSettings *self, PWSTR pszRegistryKey) InitializeFromRegistry;
-				public new function HRESULT(IPhotoAcquireSettings *self, uint32 dwPhotoAcquireFlags) SetFlags;
-				public new function HRESULT(IPhotoAcquireSettings *self, PWSTR pszTemplate) SetOutputFilenameTemplate;
-				public new function HRESULT(IPhotoAcquireSettings *self, uint32 dwWidth) SetSequencePaddingWidth;
-				public new function HRESULT(IPhotoAcquireSettings *self, BOOL fZeroPad) SetSequenceZeroPadding;
-				public new function HRESULT(IPhotoAcquireSettings *self, PWSTR pszGroupTag) SetGroupTag;
-				public new function HRESULT(IPhotoAcquireSettings *self, FILETIME* pftAcquisitionTime) SetAcquisitionTime;
-				public new function HRESULT(IPhotoAcquireSettings *self, uint32* pdwPhotoAcquireFlags) ComGetFlags;
-				public new function HRESULT(IPhotoAcquireSettings *self, BSTR* pbstrTemplate) GetOutputFilenameTemplate;
-				public new function HRESULT(IPhotoAcquireSettings *self, uint32* pdwWidth) GetSequencePaddingWidth;
-				public new function HRESULT(IPhotoAcquireSettings *self, BOOL* pfZeroPad) GetSequenceZeroPadding;
-				public new function HRESULT(IPhotoAcquireSettings *self, BSTR* pbstrGroupTag) GetGroupTag;
-				public new function HRESULT(IPhotoAcquireSettings *self, FILETIME* pftAcquisitionTime) GetAcquisitionTime;
+				public new function HRESULT(ref IPhotoAcquireSettings self, PWSTR pszRegistryKey) InitializeFromRegistry;
+				public new function HRESULT(ref IPhotoAcquireSettings self, uint32 dwPhotoAcquireFlags) SetFlags;
+				public new function HRESULT(ref IPhotoAcquireSettings self, PWSTR pszTemplate) SetOutputFilenameTemplate;
+				public new function HRESULT(ref IPhotoAcquireSettings self, uint32 dwWidth) SetSequencePaddingWidth;
+				public new function HRESULT(ref IPhotoAcquireSettings self, BOOL fZeroPad) SetSequenceZeroPadding;
+				public new function HRESULT(ref IPhotoAcquireSettings self, PWSTR pszGroupTag) SetGroupTag;
+				public new function HRESULT(ref IPhotoAcquireSettings self, in FILETIME pftAcquisitionTime) SetAcquisitionTime;
+				public new function HRESULT(ref IPhotoAcquireSettings self, out uint32 pdwPhotoAcquireFlags) ComGetFlags;
+				public new function HRESULT(ref IPhotoAcquireSettings self, BSTR* pbstrTemplate) GetOutputFilenameTemplate;
+				public new function HRESULT(ref IPhotoAcquireSettings self, out uint32 pdwWidth) GetSequencePaddingWidth;
+				public new function HRESULT(ref IPhotoAcquireSettings self, out BOOL pfZeroPad) GetSequenceZeroPadding;
+				public new function HRESULT(ref IPhotoAcquireSettings self, BSTR* pbstrGroupTag) GetGroupTag;
+				public new function HRESULT(ref IPhotoAcquireSettings self, out FILETIME pftAcquisitionTime) GetAcquisitionTime;
 			}
 		}
 		[CRepr]
@@ -604,32 +604,32 @@ namespace Win32
 			
 			public HRESULT Initialize(PWSTR pszRegistryRoot) mut
 			{
-				return VT.Initialize(&this, pszRegistryRoot);
+				return VT.Initialize(ref this, pszRegistryRoot);
 			}
 			public HRESULT Create(HWND hWndParent, HWND* phWndDialog) mut
 			{
-				return VT.Create(&this, hWndParent, phWndDialog);
+				return VT.Create(ref this, hWndParent, phWndDialog);
 			}
 			public HRESULT Destroy() mut
 			{
-				return VT.Destroy(&this);
+				return VT.Destroy(ref this);
 			}
 			public HRESULT DoModal(HWND hWndParent, int* ppnReturnCode) mut
 			{
-				return VT.DoModal(&this, hWndParent, ppnReturnCode);
+				return VT.DoModal(ref this, hWndParent, ppnReturnCode);
 			}
 			public HRESULT SaveData() mut
 			{
-				return VT.SaveData(&this);
+				return VT.SaveData(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoAcquireOptionsDialog *self, PWSTR pszRegistryRoot) Initialize;
-				public new function HRESULT(IPhotoAcquireOptionsDialog *self, HWND hWndParent, HWND* phWndDialog) Create;
-				public new function HRESULT(IPhotoAcquireOptionsDialog *self) Destroy;
-				public new function HRESULT(IPhotoAcquireOptionsDialog *self, HWND hWndParent, int* ppnReturnCode) DoModal;
-				public new function HRESULT(IPhotoAcquireOptionsDialog *self) SaveData;
+				public new function HRESULT(ref IPhotoAcquireOptionsDialog self, PWSTR pszRegistryRoot) Initialize;
+				public new function HRESULT(ref IPhotoAcquireOptionsDialog self, HWND hWndParent, HWND* phWndDialog) Create;
+				public new function HRESULT(ref IPhotoAcquireOptionsDialog self) Destroy;
+				public new function HRESULT(ref IPhotoAcquireOptionsDialog self, HWND hWndParent, int* ppnReturnCode) DoModal;
+				public new function HRESULT(ref IPhotoAcquireOptionsDialog self) SaveData;
 			}
 		}
 		[CRepr]
@@ -641,22 +641,22 @@ namespace Win32
 			
 			public HRESULT SetTitle(PWSTR pszTitle) mut
 			{
-				return VT.SetTitle(&this, pszTitle);
+				return VT.SetTitle(ref this, pszTitle);
 			}
 			public HRESULT SetSubmitButtonText(PWSTR pszSubmitButtonText) mut
 			{
-				return VT.SetSubmitButtonText(&this, pszSubmitButtonText);
+				return VT.SetSubmitButtonText(ref this, pszSubmitButtonText);
 			}
 			public HRESULT DoModal(HWND hWndParent, uint32 dwDeviceFlags, BSTR* pbstrDeviceId, DEVICE_SELECTION_DEVICE_TYPE* pnDeviceType) mut
 			{
-				return VT.DoModal(&this, hWndParent, dwDeviceFlags, pbstrDeviceId, pnDeviceType);
+				return VT.DoModal(ref this, hWndParent, dwDeviceFlags, pbstrDeviceId, pnDeviceType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoAcquireDeviceSelectionDialog *self, PWSTR pszTitle) SetTitle;
-				public new function HRESULT(IPhotoAcquireDeviceSelectionDialog *self, PWSTR pszSubmitButtonText) SetSubmitButtonText;
-				public new function HRESULT(IPhotoAcquireDeviceSelectionDialog *self, HWND hWndParent, uint32 dwDeviceFlags, BSTR* pbstrDeviceId, DEVICE_SELECTION_DEVICE_TYPE* pnDeviceType) DoModal;
+				public new function HRESULT(ref IPhotoAcquireDeviceSelectionDialog self, PWSTR pszTitle) SetTitle;
+				public new function HRESULT(ref IPhotoAcquireDeviceSelectionDialog self, PWSTR pszSubmitButtonText) SetSubmitButtonText;
+				public new function HRESULT(ref IPhotoAcquireDeviceSelectionDialog self, HWND hWndParent, uint32 dwDeviceFlags, BSTR* pbstrDeviceId, DEVICE_SELECTION_DEVICE_TYPE* pnDeviceType) DoModal;
 			}
 		}
 		[CRepr]
@@ -668,27 +668,27 @@ namespace Win32
 			
 			public HRESULT Initialize(IPhotoAcquireSource* pPhotoAcquireSource, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) mut
 			{
-				return VT.Initialize(&this, pPhotoAcquireSource, pPhotoAcquireProgressCB);
+				return VT.Initialize(ref this, pPhotoAcquireSource, pPhotoAcquireProgressCB);
 			}
 			public HRESULT ProcessItem(uint32 dwAcquireStage, IPhotoAcquireItem* pPhotoAcquireItem, IStream* pOriginalItemStream, PWSTR pszFinalFilename, IPropertyStore* pPropertyStore) mut
 			{
-				return VT.ProcessItem(&this, dwAcquireStage, pPhotoAcquireItem, pOriginalItemStream, pszFinalFilename, pPropertyStore);
+				return VT.ProcessItem(ref this, dwAcquireStage, pPhotoAcquireItem, pOriginalItemStream, pszFinalFilename, pPropertyStore);
 			}
 			public HRESULT TransferComplete(HRESULT hr) mut
 			{
-				return VT.TransferComplete(&this, hr);
+				return VT.TransferComplete(ref this, hr);
 			}
 			public HRESULT DisplayConfigureDialog(HWND hWndParent) mut
 			{
-				return VT.DisplayConfigureDialog(&this, hWndParent);
+				return VT.DisplayConfigureDialog(ref this, hWndParent);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPhotoAcquirePlugin *self, IPhotoAcquireSource* pPhotoAcquireSource, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) Initialize;
-				public new function HRESULT(IPhotoAcquirePlugin *self, uint32 dwAcquireStage, IPhotoAcquireItem* pPhotoAcquireItem, IStream* pOriginalItemStream, PWSTR pszFinalFilename, IPropertyStore* pPropertyStore) ProcessItem;
-				public new function HRESULT(IPhotoAcquirePlugin *self, HRESULT hr) TransferComplete;
-				public new function HRESULT(IPhotoAcquirePlugin *self, HWND hWndParent) DisplayConfigureDialog;
+				public new function HRESULT(ref IPhotoAcquirePlugin self, IPhotoAcquireSource* pPhotoAcquireSource, IPhotoAcquireProgressCB* pPhotoAcquireProgressCB) Initialize;
+				public new function HRESULT(ref IPhotoAcquirePlugin self, uint32 dwAcquireStage, IPhotoAcquireItem* pPhotoAcquireItem, IStream* pOriginalItemStream, PWSTR pszFinalFilename, IPropertyStore* pPropertyStore) ProcessItem;
+				public new function HRESULT(ref IPhotoAcquirePlugin self, HRESULT hr) TransferComplete;
+				public new function HRESULT(ref IPhotoAcquirePlugin self, HWND hWndParent) DisplayConfigureDialog;
 			}
 		}
 		

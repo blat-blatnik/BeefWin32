@@ -1762,12 +1762,12 @@ namespace Win32
 		public function void LINECALLBACK(uint32 hDevice, uint32 dwMessage, uint dwInstance, uint dwParam1, uint dwParam2, uint dwParam3);
 		public function void PHONECALLBACK(uint32 hDevice, uint32 dwMessage, uint dwInstance, uint dwParam1, uint dwParam2, uint dwParam3);
 		public function void ASYNC_COMPLETION(uint32 dwRequestID, int32 lResult);
-		public function void LINEEVENT(HTAPILINE__* htLine, HTAPICALL__* htCall, uint32 dwMsg, uint dwParam1, uint dwParam2, uint dwParam3);
-		public function void PHONEEVENT(HTAPIPHONE__* htPhone, uint32 dwMsg, uint dwParam1, uint dwParam2, uint dwParam3);
+		public function void LINEEVENT(out HTAPILINE__ htLine, out HTAPICALL__ htCall, uint32 dwMsg, uint dwParam1, uint dwParam2, uint dwParam3);
+		public function void PHONEEVENT(out HTAPIPHONE__ htPhone, uint32 dwMsg, uint dwParam1, uint dwParam2, uint dwParam3);
 		public function int32 TUISPIDLLCALLBACK(uint dwObjectID, uint32 dwObjectType, void* lpParams, uint32 dwSize);
-		public function HRESULT LPOPENTNEFSTREAM(void* lpvSupport, IStream* lpStream, int8* lpszStreamName, uint32 ulFlags, IMessage* lpMessage, uint16 wKeyVal, ITnef** lppTNEF);
-		public function HRESULT LPOPENTNEFSTREAMEX(void* lpvSupport, IStream* lpStream, int8* lpszStreamName, uint32 ulFlags, IMessage* lpMessage, uint16 wKeyVal, IAddrBook* lpAdressBook, ITnef** lppTNEF);
-		public function HRESULT LPGETTNEFSTREAMCODEPAGE(IStream* lpStream, uint32* lpulCodepage, uint32* lpulSubCodepage);
+		public function HRESULT LPOPENTNEFSTREAM(void* lpvSupport, ref IStream lpStream, ref int8 lpszStreamName, uint32 ulFlags, ref IMessage lpMessage, uint16 wKeyVal, out ITnef* lppTNEF);
+		public function HRESULT LPOPENTNEFSTREAMEX(void* lpvSupport, ref IStream lpStream, ref int8 lpszStreamName, uint32 ulFlags, ref IMessage lpMessage, uint16 wKeyVal, ref IAddrBook lpAdressBook, out ITnef* lppTNEF);
+		public function HRESULT LPGETTNEFSTREAMCODEPAGE(ref IStream lpStream, out uint32 lpulCodepage, out uint32 lpulSubCodepage);
 		
 		// --- Structs ---
 		
@@ -2382,7 +2382,7 @@ namespace Win32
 		{
 			public uint32 dwTotalSize;
 			public uint32 dwNumEntries;
-			public LINEFORWARD[] ForwardList;
+			public LINEFORWARD[0] ForwardList;
 		}
 		[CRepr]
 		public struct LINEGENERATETONE
@@ -2624,7 +2624,7 @@ namespace Win32
 					public uint32 dwAddressID;
 					public uint32 dwAgentExtensionIDIndex;
 					public uint32 dwSize;
-					public uint8[] Params;
+					public uint8[0] Params;
 				}
 				[CRepr]
 				public struct _SetAgentState_e__Struct
@@ -3022,7 +3022,7 @@ namespace Win32
 				public struct _MSP_TSP_DATA_e__Struct
 				{
 					public uint32 dwBufferSize;
-					public uint8[] pBuffer;
+					public uint8[0] pBuffer;
 				}
 				[CRepr]
 				public struct _MSP_TTS_TERMINAL_EVENT_INFO_e__Struct
@@ -3044,7 +3044,7 @@ namespace Win32
 		public struct STnefProblemArray
 		{
 			public uint32 cProblem;
-			public STnefProblem[] aProblem;
+			public STnefProblem[0] aProblem;
 		}
 		[CRepr]
 		public struct _renddata
@@ -3096,7 +3096,7 @@ namespace Win32
 			public struct _address_e__Union
 			{
 				public _ADDR_ALIAS alias;
-				public CHAR[] rgchInterNet;
+				public CHAR[0] rgchInterNet;
 			}
 		}
 		
@@ -3119,87 +3119,87 @@ namespace Win32
 			
 			public HRESULT Initialize() mut
 			{
-				return VT.Initialize(&this);
+				return VT.Initialize(ref this);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
-			public HRESULT get_Addresses(VARIANT* pVariant) mut
+			public HRESULT get_Addresses(out VARIANT pVariant) mut
 			{
-				return VT.get_Addresses(&this, pVariant);
+				return VT.get_Addresses(ref this, out pVariant);
 			}
-			public HRESULT EnumerateAddresses(IEnumAddress** ppEnumAddress) mut
+			public HRESULT EnumerateAddresses(out IEnumAddress* ppEnumAddress) mut
 			{
-				return VT.EnumerateAddresses(&this, ppEnumAddress);
+				return VT.EnumerateAddresses(ref this, out ppEnumAddress);
 			}
-			public HRESULT RegisterCallNotifications(ITAddress* pAddress, int16 fMonitor, int16 fOwner, int32 lMediaTypes, int32 lCallbackInstance, int32* plRegister) mut
+			public HRESULT RegisterCallNotifications(ref ITAddress pAddress, int16 fMonitor, int16 fOwner, int32 lMediaTypes, int32 lCallbackInstance, out int32 plRegister) mut
 			{
-				return VT.RegisterCallNotifications(&this, pAddress, fMonitor, fOwner, lMediaTypes, lCallbackInstance, plRegister);
+				return VT.RegisterCallNotifications(ref this, ref pAddress, fMonitor, fOwner, lMediaTypes, lCallbackInstance, out plRegister);
 			}
 			public HRESULT UnregisterNotifications(int32 lRegister) mut
 			{
-				return VT.UnregisterNotifications(&this, lRegister);
+				return VT.UnregisterNotifications(ref this, lRegister);
 			}
-			public HRESULT get_CallHubs(VARIANT* pVariant) mut
+			public HRESULT get_CallHubs(out VARIANT pVariant) mut
 			{
-				return VT.get_CallHubs(&this, pVariant);
+				return VT.get_CallHubs(ref this, out pVariant);
 			}
-			public HRESULT EnumerateCallHubs(IEnumCallHub** ppEnumCallHub) mut
+			public HRESULT EnumerateCallHubs(out IEnumCallHub* ppEnumCallHub) mut
 			{
-				return VT.EnumerateCallHubs(&this, ppEnumCallHub);
+				return VT.EnumerateCallHubs(ref this, out ppEnumCallHub);
 			}
 			public HRESULT SetCallHubTracking(VARIANT pAddresses, int16 bTracking) mut
 			{
-				return VT.SetCallHubTracking(&this, pAddresses, bTracking);
+				return VT.SetCallHubTracking(ref this, pAddresses, bTracking);
 			}
-			public HRESULT EnumeratePrivateTAPIObjects(IEnumUnknown** ppEnumUnknown) mut
+			public HRESULT EnumeratePrivateTAPIObjects(out IEnumUnknown* ppEnumUnknown) mut
 			{
-				return VT.EnumeratePrivateTAPIObjects(&this, ppEnumUnknown);
+				return VT.EnumeratePrivateTAPIObjects(ref this, out ppEnumUnknown);
 			}
-			public HRESULT get_PrivateTAPIObjects(VARIANT* pVariant) mut
+			public HRESULT get_PrivateTAPIObjects(out VARIANT pVariant) mut
 			{
-				return VT.get_PrivateTAPIObjects(&this, pVariant);
+				return VT.get_PrivateTAPIObjects(ref this, out pVariant);
 			}
 			public HRESULT RegisterRequestRecipient(int32 lRegistrationInstance, int32 lRequestMode, int16 fEnable) mut
 			{
-				return VT.RegisterRequestRecipient(&this, lRegistrationInstance, lRequestMode, fEnable);
+				return VT.RegisterRequestRecipient(ref this, lRegistrationInstance, lRequestMode, fEnable);
 			}
 			public HRESULT SetAssistedTelephonyPriority(BSTR pAppFilename, int16 fPriority) mut
 			{
-				return VT.SetAssistedTelephonyPriority(&this, pAppFilename, fPriority);
+				return VT.SetAssistedTelephonyPriority(ref this, pAppFilename, fPriority);
 			}
 			public HRESULT SetApplicationPriority(BSTR pAppFilename, int32 lMediaType, int16 fPriority) mut
 			{
-				return VT.SetApplicationPriority(&this, pAppFilename, lMediaType, fPriority);
+				return VT.SetApplicationPriority(ref this, pAppFilename, lMediaType, fPriority);
 			}
 			public HRESULT put_EventFilter(int32 lFilterMask) mut
 			{
-				return VT.put_EventFilter(&this, lFilterMask);
+				return VT.put_EventFilter(ref this, lFilterMask);
 			}
-			public HRESULT get_EventFilter(int32* plFilterMask) mut
+			public HRESULT get_EventFilter(out int32 plFilterMask) mut
 			{
-				return VT.get_EventFilter(&this, plFilterMask);
+				return VT.get_EventFilter(ref this, out plFilterMask);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITTAPI *self) Initialize;
-				public new function HRESULT(ITTAPI *self) Shutdown;
-				public new function HRESULT(ITTAPI *self, VARIANT* pVariant) get_Addresses;
-				public new function HRESULT(ITTAPI *self, IEnumAddress** ppEnumAddress) EnumerateAddresses;
-				public new function HRESULT(ITTAPI *self, ITAddress* pAddress, int16 fMonitor, int16 fOwner, int32 lMediaTypes, int32 lCallbackInstance, int32* plRegister) RegisterCallNotifications;
-				public new function HRESULT(ITTAPI *self, int32 lRegister) UnregisterNotifications;
-				public new function HRESULT(ITTAPI *self, VARIANT* pVariant) get_CallHubs;
-				public new function HRESULT(ITTAPI *self, IEnumCallHub** ppEnumCallHub) EnumerateCallHubs;
-				public new function HRESULT(ITTAPI *self, VARIANT pAddresses, int16 bTracking) SetCallHubTracking;
-				public new function HRESULT(ITTAPI *self, IEnumUnknown** ppEnumUnknown) EnumeratePrivateTAPIObjects;
-				public new function HRESULT(ITTAPI *self, VARIANT* pVariant) get_PrivateTAPIObjects;
-				public new function HRESULT(ITTAPI *self, int32 lRegistrationInstance, int32 lRequestMode, int16 fEnable) RegisterRequestRecipient;
-				public new function HRESULT(ITTAPI *self, BSTR pAppFilename, int16 fPriority) SetAssistedTelephonyPriority;
-				public new function HRESULT(ITTAPI *self, BSTR pAppFilename, int32 lMediaType, int16 fPriority) SetApplicationPriority;
-				public new function HRESULT(ITTAPI *self, int32 lFilterMask) put_EventFilter;
-				public new function HRESULT(ITTAPI *self, int32* plFilterMask) get_EventFilter;
+				public new function HRESULT(ref ITTAPI self) Initialize;
+				public new function HRESULT(ref ITTAPI self) Shutdown;
+				public new function HRESULT(ref ITTAPI self, out VARIANT pVariant) get_Addresses;
+				public new function HRESULT(ref ITTAPI self, out IEnumAddress* ppEnumAddress) EnumerateAddresses;
+				public new function HRESULT(ref ITTAPI self, ref ITAddress pAddress, int16 fMonitor, int16 fOwner, int32 lMediaTypes, int32 lCallbackInstance, out int32 plRegister) RegisterCallNotifications;
+				public new function HRESULT(ref ITTAPI self, int32 lRegister) UnregisterNotifications;
+				public new function HRESULT(ref ITTAPI self, out VARIANT pVariant) get_CallHubs;
+				public new function HRESULT(ref ITTAPI self, out IEnumCallHub* ppEnumCallHub) EnumerateCallHubs;
+				public new function HRESULT(ref ITTAPI self, VARIANT pAddresses, int16 bTracking) SetCallHubTracking;
+				public new function HRESULT(ref ITTAPI self, out IEnumUnknown* ppEnumUnknown) EnumeratePrivateTAPIObjects;
+				public new function HRESULT(ref ITTAPI self, out VARIANT pVariant) get_PrivateTAPIObjects;
+				public new function HRESULT(ref ITTAPI self, int32 lRegistrationInstance, int32 lRequestMode, int16 fEnable) RegisterRequestRecipient;
+				public new function HRESULT(ref ITTAPI self, BSTR pAppFilename, int16 fPriority) SetAssistedTelephonyPriority;
+				public new function HRESULT(ref ITTAPI self, BSTR pAppFilename, int32 lMediaType, int16 fPriority) SetApplicationPriority;
+				public new function HRESULT(ref ITTAPI self, int32 lFilterMask) put_EventFilter;
+				public new function HRESULT(ref ITTAPI self, out int32 plFilterMask) get_EventFilter;
 			}
 		}
 		[CRepr]
@@ -3209,24 +3209,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Phones(VARIANT* pPhones) mut
+			public HRESULT get_Phones(out VARIANT pPhones) mut
 			{
-				return VT.get_Phones(&this, pPhones);
+				return VT.get_Phones(ref this, out pPhones);
 			}
-			public HRESULT EnumeratePhones(IEnumPhone** ppEnumPhone) mut
+			public HRESULT EnumeratePhones(out IEnumPhone* ppEnumPhone) mut
 			{
-				return VT.EnumeratePhones(&this, ppEnumPhone);
+				return VT.EnumeratePhones(ref this, out ppEnumPhone);
 			}
-			public HRESULT CreateEmptyCollectionObject(ITCollection2** ppCollection) mut
+			public HRESULT CreateEmptyCollectionObject(out ITCollection2* ppCollection) mut
 			{
-				return VT.CreateEmptyCollectionObject(&this, ppCollection);
+				return VT.CreateEmptyCollectionObject(ref this, out ppCollection);
 			}
 			[CRepr]
 			public struct VTable : ITTAPI.VTable
 			{
-				public new function HRESULT(ITTAPI2 *self, VARIANT* pPhones) get_Phones;
-				public new function HRESULT(ITTAPI2 *self, IEnumPhone** ppEnumPhone) EnumeratePhones;
-				public new function HRESULT(ITTAPI2 *self, ITCollection2** ppCollection) CreateEmptyCollectionObject;
+				public new function HRESULT(ref ITTAPI2 self, out VARIANT pPhones) get_Phones;
+				public new function HRESULT(ref ITTAPI2 self, out IEnumPhone* ppEnumPhone) EnumeratePhones;
+				public new function HRESULT(ref ITTAPI2 self, out ITCollection2* ppCollection) CreateEmptyCollectionObject;
 			}
 		}
 		[CRepr]
@@ -3236,19 +3236,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MediaTypes(int32* plMediaTypes) mut
+			public HRESULT get_MediaTypes(out int32 plMediaTypes) mut
 			{
-				return VT.get_MediaTypes(&this, plMediaTypes);
+				return VT.get_MediaTypes(ref this, out plMediaTypes);
 			}
-			public HRESULT QueryMediaType(int32 lMediaType, int16* pfSupport) mut
+			public HRESULT QueryMediaType(int32 lMediaType, out int16 pfSupport) mut
 			{
-				return VT.QueryMediaType(&this, lMediaType, pfSupport);
+				return VT.QueryMediaType(ref this, lMediaType, out pfSupport);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITMediaSupport *self, int32* plMediaTypes) get_MediaTypes;
-				public new function HRESULT(ITMediaSupport *self, int32 lMediaType, int16* pfSupport) QueryMediaType;
+				public new function HRESULT(ref ITMediaSupport self, out int32 plMediaTypes) get_MediaTypes;
+				public new function HRESULT(ref ITMediaSupport self, int32 lMediaType, out int16 pfSupport) QueryMediaType;
 			}
 		}
 		[CRepr]
@@ -3258,44 +3258,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* pName) mut
+			public HRESULT get_Name(out BSTR pName) mut
 			{
-				return VT.get_Name(&this, pName);
+				return VT.get_Name(ref this, out pName);
 			}
-			public HRESULT get_Company(BSTR* pCompany) mut
+			public HRESULT get_Company(out BSTR pCompany) mut
 			{
-				return VT.get_Company(&this, pCompany);
+				return VT.get_Company(ref this, out pCompany);
 			}
-			public HRESULT get_Version(BSTR* pVersion) mut
+			public HRESULT get_Version(out BSTR pVersion) mut
 			{
-				return VT.get_Version(&this, pVersion);
+				return VT.get_Version(ref this, out pVersion);
 			}
-			public HRESULT get_TerminalClass(BSTR* pTerminalClass) mut
+			public HRESULT get_TerminalClass(out BSTR pTerminalClass) mut
 			{
-				return VT.get_TerminalClass(&this, pTerminalClass);
+				return VT.get_TerminalClass(ref this, out pTerminalClass);
 			}
-			public HRESULT get_CLSID(BSTR* pCLSID) mut
+			public HRESULT get_CLSID(out BSTR pCLSID) mut
 			{
-				return VT.get_CLSID(&this, pCLSID);
+				return VT.get_CLSID(ref this, out pCLSID);
 			}
-			public HRESULT get_Direction(TERMINAL_DIRECTION* pDirection) mut
+			public HRESULT get_Direction(out TERMINAL_DIRECTION pDirection) mut
 			{
-				return VT.get_Direction(&this, pDirection);
+				return VT.get_Direction(ref this, out pDirection);
 			}
-			public HRESULT get_MediaTypes(int32* pMediaTypes) mut
+			public HRESULT get_MediaTypes(out int32 pMediaTypes) mut
 			{
-				return VT.get_MediaTypes(&this, pMediaTypes);
+				return VT.get_MediaTypes(ref this, out pMediaTypes);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITPluggableTerminalClassInfo *self, BSTR* pName) get_Name;
-				public new function HRESULT(ITPluggableTerminalClassInfo *self, BSTR* pCompany) get_Company;
-				public new function HRESULT(ITPluggableTerminalClassInfo *self, BSTR* pVersion) get_Version;
-				public new function HRESULT(ITPluggableTerminalClassInfo *self, BSTR* pTerminalClass) get_TerminalClass;
-				public new function HRESULT(ITPluggableTerminalClassInfo *self, BSTR* pCLSID) get_CLSID;
-				public new function HRESULT(ITPluggableTerminalClassInfo *self, TERMINAL_DIRECTION* pDirection) get_Direction;
-				public new function HRESULT(ITPluggableTerminalClassInfo *self, int32* pMediaTypes) get_MediaTypes;
+				public new function HRESULT(ref ITPluggableTerminalClassInfo self, out BSTR pName) get_Name;
+				public new function HRESULT(ref ITPluggableTerminalClassInfo self, out BSTR pCompany) get_Company;
+				public new function HRESULT(ref ITPluggableTerminalClassInfo self, out BSTR pVersion) get_Version;
+				public new function HRESULT(ref ITPluggableTerminalClassInfo self, out BSTR pTerminalClass) get_TerminalClass;
+				public new function HRESULT(ref ITPluggableTerminalClassInfo self, out BSTR pCLSID) get_CLSID;
+				public new function HRESULT(ref ITPluggableTerminalClassInfo self, out TERMINAL_DIRECTION pDirection) get_Direction;
+				public new function HRESULT(ref ITPluggableTerminalClassInfo self, out int32 pMediaTypes) get_MediaTypes;
 			}
 		}
 		[CRepr]
@@ -3305,19 +3305,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* pName) mut
+			public HRESULT get_Name(out BSTR pName) mut
 			{
-				return VT.get_Name(&this, pName);
+				return VT.get_Name(ref this, out pName);
 			}
-			public HRESULT get_CLSID(BSTR* pCLSID) mut
+			public HRESULT get_CLSID(out BSTR pCLSID) mut
 			{
-				return VT.get_CLSID(&this, pCLSID);
+				return VT.get_CLSID(ref this, out pCLSID);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITPluggableTerminalSuperclassInfo *self, BSTR* pName) get_Name;
-				public new function HRESULT(ITPluggableTerminalSuperclassInfo *self, BSTR* pCLSID) get_CLSID;
+				public new function HRESULT(ref ITPluggableTerminalSuperclassInfo self, out BSTR pName) get_Name;
+				public new function HRESULT(ref ITPluggableTerminalSuperclassInfo self, out BSTR pCLSID) get_CLSID;
 			}
 		}
 		[CRepr]
@@ -3327,39 +3327,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StaticTerminals(VARIANT* pVariant) mut
+			public HRESULT get_StaticTerminals(out VARIANT pVariant) mut
 			{
-				return VT.get_StaticTerminals(&this, pVariant);
+				return VT.get_StaticTerminals(ref this, out pVariant);
 			}
-			public HRESULT EnumerateStaticTerminals(IEnumTerminal** ppTerminalEnumerator) mut
+			public HRESULT EnumerateStaticTerminals(out IEnumTerminal* ppTerminalEnumerator) mut
 			{
-				return VT.EnumerateStaticTerminals(&this, ppTerminalEnumerator);
+				return VT.EnumerateStaticTerminals(ref this, out ppTerminalEnumerator);
 			}
-			public HRESULT get_DynamicTerminalClasses(VARIANT* pVariant) mut
+			public HRESULT get_DynamicTerminalClasses(out VARIANT pVariant) mut
 			{
-				return VT.get_DynamicTerminalClasses(&this, pVariant);
+				return VT.get_DynamicTerminalClasses(ref this, out pVariant);
 			}
-			public HRESULT EnumerateDynamicTerminalClasses(IEnumTerminalClass** ppTerminalClassEnumerator) mut
+			public HRESULT EnumerateDynamicTerminalClasses(out IEnumTerminalClass* ppTerminalClassEnumerator) mut
 			{
-				return VT.EnumerateDynamicTerminalClasses(&this, ppTerminalClassEnumerator);
+				return VT.EnumerateDynamicTerminalClasses(ref this, out ppTerminalClassEnumerator);
 			}
-			public HRESULT CreateTerminal(BSTR pTerminalClass, int32 lMediaType, TERMINAL_DIRECTION Direction, ITTerminal** ppTerminal) mut
+			public HRESULT CreateTerminal(BSTR pTerminalClass, int32 lMediaType, TERMINAL_DIRECTION Direction, out ITTerminal* ppTerminal) mut
 			{
-				return VT.CreateTerminal(&this, pTerminalClass, lMediaType, Direction, ppTerminal);
+				return VT.CreateTerminal(ref this, pTerminalClass, lMediaType, Direction, out ppTerminal);
 			}
-			public HRESULT GetDefaultStaticTerminal(int32 lMediaType, TERMINAL_DIRECTION Direction, ITTerminal** ppTerminal) mut
+			public HRESULT GetDefaultStaticTerminal(int32 lMediaType, TERMINAL_DIRECTION Direction, out ITTerminal* ppTerminal) mut
 			{
-				return VT.GetDefaultStaticTerminal(&this, lMediaType, Direction, ppTerminal);
+				return VT.GetDefaultStaticTerminal(ref this, lMediaType, Direction, out ppTerminal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITTerminalSupport *self, VARIANT* pVariant) get_StaticTerminals;
-				public new function HRESULT(ITTerminalSupport *self, IEnumTerminal** ppTerminalEnumerator) EnumerateStaticTerminals;
-				public new function HRESULT(ITTerminalSupport *self, VARIANT* pVariant) get_DynamicTerminalClasses;
-				public new function HRESULT(ITTerminalSupport *self, IEnumTerminalClass** ppTerminalClassEnumerator) EnumerateDynamicTerminalClasses;
-				public new function HRESULT(ITTerminalSupport *self, BSTR pTerminalClass, int32 lMediaType, TERMINAL_DIRECTION Direction, ITTerminal** ppTerminal) CreateTerminal;
-				public new function HRESULT(ITTerminalSupport *self, int32 lMediaType, TERMINAL_DIRECTION Direction, ITTerminal** ppTerminal) GetDefaultStaticTerminal;
+				public new function HRESULT(ref ITTerminalSupport self, out VARIANT pVariant) get_StaticTerminals;
+				public new function HRESULT(ref ITTerminalSupport self, out IEnumTerminal* ppTerminalEnumerator) EnumerateStaticTerminals;
+				public new function HRESULT(ref ITTerminalSupport self, out VARIANT pVariant) get_DynamicTerminalClasses;
+				public new function HRESULT(ref ITTerminalSupport self, out IEnumTerminalClass* ppTerminalClassEnumerator) EnumerateDynamicTerminalClasses;
+				public new function HRESULT(ref ITTerminalSupport self, BSTR pTerminalClass, int32 lMediaType, TERMINAL_DIRECTION Direction, out ITTerminal* ppTerminal) CreateTerminal;
+				public new function HRESULT(ref ITTerminalSupport self, int32 lMediaType, TERMINAL_DIRECTION Direction, out ITTerminal* ppTerminal) GetDefaultStaticTerminal;
 			}
 		}
 		[CRepr]
@@ -3369,29 +3369,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PluggableSuperclasses(VARIANT* pVariant) mut
+			public HRESULT get_PluggableSuperclasses(out VARIANT pVariant) mut
 			{
-				return VT.get_PluggableSuperclasses(&this, pVariant);
+				return VT.get_PluggableSuperclasses(ref this, out pVariant);
 			}
-			public HRESULT EnumeratePluggableSuperclasses(IEnumPluggableSuperclassInfo** ppSuperclassEnumerator) mut
+			public HRESULT EnumeratePluggableSuperclasses(out IEnumPluggableSuperclassInfo* ppSuperclassEnumerator) mut
 			{
-				return VT.EnumeratePluggableSuperclasses(&this, ppSuperclassEnumerator);
+				return VT.EnumeratePluggableSuperclasses(ref this, out ppSuperclassEnumerator);
 			}
-			public HRESULT get_PluggableTerminalClasses(BSTR bstrTerminalSuperclass, int32 lMediaType, VARIANT* pVariant) mut
+			public HRESULT get_PluggableTerminalClasses(BSTR bstrTerminalSuperclass, int32 lMediaType, out VARIANT pVariant) mut
 			{
-				return VT.get_PluggableTerminalClasses(&this, bstrTerminalSuperclass, lMediaType, pVariant);
+				return VT.get_PluggableTerminalClasses(ref this, bstrTerminalSuperclass, lMediaType, out pVariant);
 			}
-			public HRESULT EnumeratePluggableTerminalClasses(Guid iidTerminalSuperclass, int32 lMediaType, IEnumPluggableTerminalClassInfo** ppClassEnumerator) mut
+			public HRESULT EnumeratePluggableTerminalClasses(Guid iidTerminalSuperclass, int32 lMediaType, out IEnumPluggableTerminalClassInfo* ppClassEnumerator) mut
 			{
-				return VT.EnumeratePluggableTerminalClasses(&this, iidTerminalSuperclass, lMediaType, ppClassEnumerator);
+				return VT.EnumeratePluggableTerminalClasses(ref this, iidTerminalSuperclass, lMediaType, out ppClassEnumerator);
 			}
 			[CRepr]
 			public struct VTable : ITTerminalSupport.VTable
 			{
-				public new function HRESULT(ITTerminalSupport2 *self, VARIANT* pVariant) get_PluggableSuperclasses;
-				public new function HRESULT(ITTerminalSupport2 *self, IEnumPluggableSuperclassInfo** ppSuperclassEnumerator) EnumeratePluggableSuperclasses;
-				public new function HRESULT(ITTerminalSupport2 *self, BSTR bstrTerminalSuperclass, int32 lMediaType, VARIANT* pVariant) get_PluggableTerminalClasses;
-				public new function HRESULT(ITTerminalSupport2 *self, Guid iidTerminalSuperclass, int32 lMediaType, IEnumPluggableTerminalClassInfo** ppClassEnumerator) EnumeratePluggableTerminalClasses;
+				public new function HRESULT(ref ITTerminalSupport2 self, out VARIANT pVariant) get_PluggableSuperclasses;
+				public new function HRESULT(ref ITTerminalSupport2 self, out IEnumPluggableSuperclassInfo* ppSuperclassEnumerator) EnumeratePluggableSuperclasses;
+				public new function HRESULT(ref ITTerminalSupport2 self, BSTR bstrTerminalSuperclass, int32 lMediaType, out VARIANT pVariant) get_PluggableTerminalClasses;
+				public new function HRESULT(ref ITTerminalSupport2 self, Guid iidTerminalSuperclass, int32 lMediaType, out IEnumPluggableTerminalClassInfo* ppClassEnumerator) EnumeratePluggableTerminalClasses;
 			}
 		}
 		[CRepr]
@@ -3401,84 +3401,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_State(ADDRESS_STATE* pAddressState) mut
+			public HRESULT get_State(out ADDRESS_STATE pAddressState) mut
 			{
-				return VT.get_State(&this, pAddressState);
+				return VT.get_State(ref this, out pAddressState);
 			}
-			public HRESULT get_AddressName(BSTR* ppName) mut
+			public HRESULT get_AddressName(out BSTR ppName) mut
 			{
-				return VT.get_AddressName(&this, ppName);
+				return VT.get_AddressName(ref this, out ppName);
 			}
-			public HRESULT get_ServiceProviderName(BSTR* ppName) mut
+			public HRESULT get_ServiceProviderName(out BSTR ppName) mut
 			{
-				return VT.get_ServiceProviderName(&this, ppName);
+				return VT.get_ServiceProviderName(ref this, out ppName);
 			}
-			public HRESULT get_TAPIObject(ITTAPI** ppTapiObject) mut
+			public HRESULT get_TAPIObject(out ITTAPI* ppTapiObject) mut
 			{
-				return VT.get_TAPIObject(&this, ppTapiObject);
+				return VT.get_TAPIObject(ref this, out ppTapiObject);
 			}
-			public HRESULT CreateCall(BSTR pDestAddress, int32 lAddressType, int32 lMediaTypes, ITBasicCallControl** ppCall) mut
+			public HRESULT CreateCall(BSTR pDestAddress, int32 lAddressType, int32 lMediaTypes, out ITBasicCallControl* ppCall) mut
 			{
-				return VT.CreateCall(&this, pDestAddress, lAddressType, lMediaTypes, ppCall);
+				return VT.CreateCall(ref this, pDestAddress, lAddressType, lMediaTypes, out ppCall);
 			}
-			public HRESULT get_Calls(VARIANT* pVariant) mut
+			public HRESULT get_Calls(out VARIANT pVariant) mut
 			{
-				return VT.get_Calls(&this, pVariant);
+				return VT.get_Calls(ref this, out pVariant);
 			}
-			public HRESULT EnumerateCalls(IEnumCall** ppCallEnum) mut
+			public HRESULT EnumerateCalls(out IEnumCall* ppCallEnum) mut
 			{
-				return VT.EnumerateCalls(&this, ppCallEnum);
+				return VT.EnumerateCalls(ref this, out ppCallEnum);
 			}
-			public HRESULT get_DialableAddress(BSTR* pDialableAddress) mut
+			public HRESULT get_DialableAddress(out BSTR pDialableAddress) mut
 			{
-				return VT.get_DialableAddress(&this, pDialableAddress);
+				return VT.get_DialableAddress(ref this, out pDialableAddress);
 			}
-			public HRESULT CreateForwardInfoObject(ITForwardInformation** ppForwardInfo) mut
+			public HRESULT CreateForwardInfoObject(out ITForwardInformation* ppForwardInfo) mut
 			{
-				return VT.CreateForwardInfoObject(&this, ppForwardInfo);
+				return VT.CreateForwardInfoObject(ref this, out ppForwardInfo);
 			}
-			public HRESULT Forward(ITForwardInformation* pForwardInfo, ITBasicCallControl* pCall) mut
+			public HRESULT Forward(ref ITForwardInformation pForwardInfo, ref ITBasicCallControl pCall) mut
 			{
-				return VT.Forward(&this, pForwardInfo, pCall);
+				return VT.Forward(ref this, ref pForwardInfo, ref pCall);
 			}
-			public HRESULT get_CurrentForwardInfo(ITForwardInformation** ppForwardInfo) mut
+			public HRESULT get_CurrentForwardInfo(out ITForwardInformation* ppForwardInfo) mut
 			{
-				return VT.get_CurrentForwardInfo(&this, ppForwardInfo);
+				return VT.get_CurrentForwardInfo(ref this, out ppForwardInfo);
 			}
 			public HRESULT put_MessageWaiting(int16 fMessageWaiting) mut
 			{
-				return VT.put_MessageWaiting(&this, fMessageWaiting);
+				return VT.put_MessageWaiting(ref this, fMessageWaiting);
 			}
-			public HRESULT get_MessageWaiting(int16* pfMessageWaiting) mut
+			public HRESULT get_MessageWaiting(out int16 pfMessageWaiting) mut
 			{
-				return VT.get_MessageWaiting(&this, pfMessageWaiting);
+				return VT.get_MessageWaiting(ref this, out pfMessageWaiting);
 			}
 			public HRESULT put_DoNotDisturb(int16 fDoNotDisturb) mut
 			{
-				return VT.put_DoNotDisturb(&this, fDoNotDisturb);
+				return VT.put_DoNotDisturb(ref this, fDoNotDisturb);
 			}
-			public HRESULT get_DoNotDisturb(int16* pfDoNotDisturb) mut
+			public HRESULT get_DoNotDisturb(out int16 pfDoNotDisturb) mut
 			{
-				return VT.get_DoNotDisturb(&this, pfDoNotDisturb);
+				return VT.get_DoNotDisturb(ref this, out pfDoNotDisturb);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAddress *self, ADDRESS_STATE* pAddressState) get_State;
-				public new function HRESULT(ITAddress *self, BSTR* ppName) get_AddressName;
-				public new function HRESULT(ITAddress *self, BSTR* ppName) get_ServiceProviderName;
-				public new function HRESULT(ITAddress *self, ITTAPI** ppTapiObject) get_TAPIObject;
-				public new function HRESULT(ITAddress *self, BSTR pDestAddress, int32 lAddressType, int32 lMediaTypes, ITBasicCallControl** ppCall) CreateCall;
-				public new function HRESULT(ITAddress *self, VARIANT* pVariant) get_Calls;
-				public new function HRESULT(ITAddress *self, IEnumCall** ppCallEnum) EnumerateCalls;
-				public new function HRESULT(ITAddress *self, BSTR* pDialableAddress) get_DialableAddress;
-				public new function HRESULT(ITAddress *self, ITForwardInformation** ppForwardInfo) CreateForwardInfoObject;
-				public new function HRESULT(ITAddress *self, ITForwardInformation* pForwardInfo, ITBasicCallControl* pCall) Forward;
-				public new function HRESULT(ITAddress *self, ITForwardInformation** ppForwardInfo) get_CurrentForwardInfo;
-				public new function HRESULT(ITAddress *self, int16 fMessageWaiting) put_MessageWaiting;
-				public new function HRESULT(ITAddress *self, int16* pfMessageWaiting) get_MessageWaiting;
-				public new function HRESULT(ITAddress *self, int16 fDoNotDisturb) put_DoNotDisturb;
-				public new function HRESULT(ITAddress *self, int16* pfDoNotDisturb) get_DoNotDisturb;
+				public new function HRESULT(ref ITAddress self, out ADDRESS_STATE pAddressState) get_State;
+				public new function HRESULT(ref ITAddress self, out BSTR ppName) get_AddressName;
+				public new function HRESULT(ref ITAddress self, out BSTR ppName) get_ServiceProviderName;
+				public new function HRESULT(ref ITAddress self, out ITTAPI* ppTapiObject) get_TAPIObject;
+				public new function HRESULT(ref ITAddress self, BSTR pDestAddress, int32 lAddressType, int32 lMediaTypes, out ITBasicCallControl* ppCall) CreateCall;
+				public new function HRESULT(ref ITAddress self, out VARIANT pVariant) get_Calls;
+				public new function HRESULT(ref ITAddress self, out IEnumCall* ppCallEnum) EnumerateCalls;
+				public new function HRESULT(ref ITAddress self, out BSTR pDialableAddress) get_DialableAddress;
+				public new function HRESULT(ref ITAddress self, out ITForwardInformation* ppForwardInfo) CreateForwardInfoObject;
+				public new function HRESULT(ref ITAddress self, ref ITForwardInformation pForwardInfo, ref ITBasicCallControl pCall) Forward;
+				public new function HRESULT(ref ITAddress self, out ITForwardInformation* ppForwardInfo) get_CurrentForwardInfo;
+				public new function HRESULT(ref ITAddress self, int16 fMessageWaiting) put_MessageWaiting;
+				public new function HRESULT(ref ITAddress self, out int16 pfMessageWaiting) get_MessageWaiting;
+				public new function HRESULT(ref ITAddress self, int16 fDoNotDisturb) put_DoNotDisturb;
+				public new function HRESULT(ref ITAddress self, out int16 pfDoNotDisturb) get_DoNotDisturb;
 			}
 		}
 		[CRepr]
@@ -3488,59 +3488,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Phones(VARIANT* pPhones) mut
+			public HRESULT get_Phones(out VARIANT pPhones) mut
 			{
-				return VT.get_Phones(&this, pPhones);
+				return VT.get_Phones(ref this, out pPhones);
 			}
-			public HRESULT EnumeratePhones(IEnumPhone** ppEnumPhone) mut
+			public HRESULT EnumeratePhones(out IEnumPhone* ppEnumPhone) mut
 			{
-				return VT.EnumeratePhones(&this, ppEnumPhone);
+				return VT.EnumeratePhones(ref this, out ppEnumPhone);
 			}
-			public HRESULT GetPhoneFromTerminal(ITTerminal* pTerminal, ITPhone** ppPhone) mut
+			public HRESULT GetPhoneFromTerminal(ref ITTerminal pTerminal, out ITPhone* ppPhone) mut
 			{
-				return VT.GetPhoneFromTerminal(&this, pTerminal, ppPhone);
+				return VT.GetPhoneFromTerminal(ref this, ref pTerminal, out ppPhone);
 			}
-			public HRESULT get_PreferredPhones(VARIANT* pPhones) mut
+			public HRESULT get_PreferredPhones(out VARIANT pPhones) mut
 			{
-				return VT.get_PreferredPhones(&this, pPhones);
+				return VT.get_PreferredPhones(ref this, out pPhones);
 			}
-			public HRESULT EnumeratePreferredPhones(IEnumPhone** ppEnumPhone) mut
+			public HRESULT EnumeratePreferredPhones(out IEnumPhone* ppEnumPhone) mut
 			{
-				return VT.EnumeratePreferredPhones(&this, ppEnumPhone);
+				return VT.EnumeratePreferredPhones(ref this, out ppEnumPhone);
 			}
-			public HRESULT get_EventFilter(TAPI_EVENT TapiEvent, int32 lSubEvent, int16* pEnable) mut
+			public HRESULT get_EventFilter(TAPI_EVENT TapiEvent, int32 lSubEvent, out int16 pEnable) mut
 			{
-				return VT.get_EventFilter(&this, TapiEvent, lSubEvent, pEnable);
+				return VT.get_EventFilter(ref this, TapiEvent, lSubEvent, out pEnable);
 			}
 			public HRESULT put_EventFilter(TAPI_EVENT TapiEvent, int32 lSubEvent, int16 bEnable) mut
 			{
-				return VT.put_EventFilter(&this, TapiEvent, lSubEvent, bEnable);
+				return VT.put_EventFilter(ref this, TapiEvent, lSubEvent, bEnable);
 			}
-			public HRESULT DeviceSpecific(ITCallInfo* pCall, uint8* pParams, uint32 dwSize) mut
+			public HRESULT DeviceSpecific(ref ITCallInfo pCall, ref uint8 pParams, uint32 dwSize) mut
 			{
-				return VT.DeviceSpecific(&this, pCall, pParams, dwSize);
+				return VT.DeviceSpecific(ref this, ref pCall, ref pParams, dwSize);
 			}
-			public HRESULT DeviceSpecificVariant(ITCallInfo* pCall, VARIANT varDevSpecificByteArray) mut
+			public HRESULT DeviceSpecificVariant(ref ITCallInfo pCall, VARIANT varDevSpecificByteArray) mut
 			{
-				return VT.DeviceSpecificVariant(&this, pCall, varDevSpecificByteArray);
+				return VT.DeviceSpecificVariant(ref this, ref pCall, varDevSpecificByteArray);
 			}
-			public HRESULT NegotiateExtVersion(int32 lLowVersion, int32 lHighVersion, int32* plExtVersion) mut
+			public HRESULT NegotiateExtVersion(int32 lLowVersion, int32 lHighVersion, out int32 plExtVersion) mut
 			{
-				return VT.NegotiateExtVersion(&this, lLowVersion, lHighVersion, plExtVersion);
+				return VT.NegotiateExtVersion(ref this, lLowVersion, lHighVersion, out plExtVersion);
 			}
 			[CRepr]
 			public struct VTable : ITAddress.VTable
 			{
-				public new function HRESULT(ITAddress2 *self, VARIANT* pPhones) get_Phones;
-				public new function HRESULT(ITAddress2 *self, IEnumPhone** ppEnumPhone) EnumeratePhones;
-				public new function HRESULT(ITAddress2 *self, ITTerminal* pTerminal, ITPhone** ppPhone) GetPhoneFromTerminal;
-				public new function HRESULT(ITAddress2 *self, VARIANT* pPhones) get_PreferredPhones;
-				public new function HRESULT(ITAddress2 *self, IEnumPhone** ppEnumPhone) EnumeratePreferredPhones;
-				public new function HRESULT(ITAddress2 *self, TAPI_EVENT TapiEvent, int32 lSubEvent, int16* pEnable) get_EventFilter;
-				public new function HRESULT(ITAddress2 *self, TAPI_EVENT TapiEvent, int32 lSubEvent, int16 bEnable) put_EventFilter;
-				public new function HRESULT(ITAddress2 *self, ITCallInfo* pCall, uint8* pParams, uint32 dwSize) DeviceSpecific;
-				public new function HRESULT(ITAddress2 *self, ITCallInfo* pCall, VARIANT varDevSpecificByteArray) DeviceSpecificVariant;
-				public new function HRESULT(ITAddress2 *self, int32 lLowVersion, int32 lHighVersion, int32* plExtVersion) NegotiateExtVersion;
+				public new function HRESULT(ref ITAddress2 self, out VARIANT pPhones) get_Phones;
+				public new function HRESULT(ref ITAddress2 self, out IEnumPhone* ppEnumPhone) EnumeratePhones;
+				public new function HRESULT(ref ITAddress2 self, ref ITTerminal pTerminal, out ITPhone* ppPhone) GetPhoneFromTerminal;
+				public new function HRESULT(ref ITAddress2 self, out VARIANT pPhones) get_PreferredPhones;
+				public new function HRESULT(ref ITAddress2 self, out IEnumPhone* ppEnumPhone) EnumeratePreferredPhones;
+				public new function HRESULT(ref ITAddress2 self, TAPI_EVENT TapiEvent, int32 lSubEvent, out int16 pEnable) get_EventFilter;
+				public new function HRESULT(ref ITAddress2 self, TAPI_EVENT TapiEvent, int32 lSubEvent, int16 bEnable) put_EventFilter;
+				public new function HRESULT(ref ITAddress2 self, ref ITCallInfo pCall, ref uint8 pParams, uint32 dwSize) DeviceSpecific;
+				public new function HRESULT(ref ITAddress2 self, ref ITCallInfo pCall, VARIANT varDevSpecificByteArray) DeviceSpecificVariant;
+				public new function HRESULT(ref ITAddress2 self, int32 lLowVersion, int32 lHighVersion, out int32 plExtVersion) NegotiateExtVersion;
 			}
 		}
 		[CRepr]
@@ -3550,49 +3550,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AddressCapability(ADDRESS_CAPABILITY AddressCap, int32* plCapability) mut
+			public HRESULT get_AddressCapability(ADDRESS_CAPABILITY AddressCap, out int32 plCapability) mut
 			{
-				return VT.get_AddressCapability(&this, AddressCap, plCapability);
+				return VT.get_AddressCapability(ref this, AddressCap, out plCapability);
 			}
-			public HRESULT get_AddressCapabilityString(ADDRESS_CAPABILITY_STRING AddressCapString, BSTR* ppCapabilityString) mut
+			public HRESULT get_AddressCapabilityString(ADDRESS_CAPABILITY_STRING AddressCapString, out BSTR ppCapabilityString) mut
 			{
-				return VT.get_AddressCapabilityString(&this, AddressCapString, ppCapabilityString);
+				return VT.get_AddressCapabilityString(ref this, AddressCapString, out ppCapabilityString);
 			}
-			public HRESULT get_CallTreatments(VARIANT* pVariant) mut
+			public HRESULT get_CallTreatments(out VARIANT pVariant) mut
 			{
-				return VT.get_CallTreatments(&this, pVariant);
+				return VT.get_CallTreatments(ref this, out pVariant);
 			}
-			public HRESULT EnumerateCallTreatments(IEnumBstr** ppEnumCallTreatment) mut
+			public HRESULT EnumerateCallTreatments(out IEnumBstr* ppEnumCallTreatment) mut
 			{
-				return VT.EnumerateCallTreatments(&this, ppEnumCallTreatment);
+				return VT.EnumerateCallTreatments(ref this, out ppEnumCallTreatment);
 			}
-			public HRESULT get_CompletionMessages(VARIANT* pVariant) mut
+			public HRESULT get_CompletionMessages(out VARIANT pVariant) mut
 			{
-				return VT.get_CompletionMessages(&this, pVariant);
+				return VT.get_CompletionMessages(ref this, out pVariant);
 			}
-			public HRESULT EnumerateCompletionMessages(IEnumBstr** ppEnumCompletionMessage) mut
+			public HRESULT EnumerateCompletionMessages(out IEnumBstr* ppEnumCompletionMessage) mut
 			{
-				return VT.EnumerateCompletionMessages(&this, ppEnumCompletionMessage);
+				return VT.EnumerateCompletionMessages(ref this, out ppEnumCompletionMessage);
 			}
-			public HRESULT get_DeviceClasses(VARIANT* pVariant) mut
+			public HRESULT get_DeviceClasses(out VARIANT pVariant) mut
 			{
-				return VT.get_DeviceClasses(&this, pVariant);
+				return VT.get_DeviceClasses(ref this, out pVariant);
 			}
-			public HRESULT EnumerateDeviceClasses(IEnumBstr** ppEnumDeviceClass) mut
+			public HRESULT EnumerateDeviceClasses(out IEnumBstr* ppEnumDeviceClass) mut
 			{
-				return VT.EnumerateDeviceClasses(&this, ppEnumDeviceClass);
+				return VT.EnumerateDeviceClasses(ref this, out ppEnumDeviceClass);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAddressCapabilities *self, ADDRESS_CAPABILITY AddressCap, int32* plCapability) get_AddressCapability;
-				public new function HRESULT(ITAddressCapabilities *self, ADDRESS_CAPABILITY_STRING AddressCapString, BSTR* ppCapabilityString) get_AddressCapabilityString;
-				public new function HRESULT(ITAddressCapabilities *self, VARIANT* pVariant) get_CallTreatments;
-				public new function HRESULT(ITAddressCapabilities *self, IEnumBstr** ppEnumCallTreatment) EnumerateCallTreatments;
-				public new function HRESULT(ITAddressCapabilities *self, VARIANT* pVariant) get_CompletionMessages;
-				public new function HRESULT(ITAddressCapabilities *self, IEnumBstr** ppEnumCompletionMessage) EnumerateCompletionMessages;
-				public new function HRESULT(ITAddressCapabilities *self, VARIANT* pVariant) get_DeviceClasses;
-				public new function HRESULT(ITAddressCapabilities *self, IEnumBstr** ppEnumDeviceClass) EnumerateDeviceClasses;
+				public new function HRESULT(ref ITAddressCapabilities self, ADDRESS_CAPABILITY AddressCap, out int32 plCapability) get_AddressCapability;
+				public new function HRESULT(ref ITAddressCapabilities self, ADDRESS_CAPABILITY_STRING AddressCapString, out BSTR ppCapabilityString) get_AddressCapabilityString;
+				public new function HRESULT(ref ITAddressCapabilities self, out VARIANT pVariant) get_CallTreatments;
+				public new function HRESULT(ref ITAddressCapabilities self, out IEnumBstr* ppEnumCallTreatment) EnumerateCallTreatments;
+				public new function HRESULT(ref ITAddressCapabilities self, out VARIANT pVariant) get_CompletionMessages;
+				public new function HRESULT(ref ITAddressCapabilities self, out IEnumBstr* ppEnumCompletionMessage) EnumerateCompletionMessages;
+				public new function HRESULT(ref ITAddressCapabilities self, out VARIANT pVariant) get_DeviceClasses;
+				public new function HRESULT(ref ITAddressCapabilities self, out IEnumBstr* ppEnumDeviceClass) EnumerateDeviceClasses;
 			}
 		}
 		[CRepr]
@@ -3604,172 +3604,172 @@ namespace Win32
 			
 			public HRESULT Open(PHONE_PRIVILEGE Privilege) mut
 			{
-				return VT.Open(&this, Privilege);
+				return VT.Open(ref this, Privilege);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
-			public HRESULT get_Addresses(VARIANT* pAddresses) mut
+			public HRESULT get_Addresses(out VARIANT pAddresses) mut
 			{
-				return VT.get_Addresses(&this, pAddresses);
+				return VT.get_Addresses(ref this, out pAddresses);
 			}
-			public HRESULT EnumerateAddresses(IEnumAddress** ppEnumAddress) mut
+			public HRESULT EnumerateAddresses(out IEnumAddress* ppEnumAddress) mut
 			{
-				return VT.EnumerateAddresses(&this, ppEnumAddress);
+				return VT.EnumerateAddresses(ref this, out ppEnumAddress);
 			}
-			public HRESULT get_PhoneCapsLong(PHONECAPS_LONG pclCap, int32* plCapability) mut
+			public HRESULT get_PhoneCapsLong(PHONECAPS_LONG pclCap, out int32 plCapability) mut
 			{
-				return VT.get_PhoneCapsLong(&this, pclCap, plCapability);
+				return VT.get_PhoneCapsLong(ref this, pclCap, out plCapability);
 			}
-			public HRESULT get_PhoneCapsString(PHONECAPS_STRING pcsCap, BSTR* ppCapability) mut
+			public HRESULT get_PhoneCapsString(PHONECAPS_STRING pcsCap, out BSTR ppCapability) mut
 			{
-				return VT.get_PhoneCapsString(&this, pcsCap, ppCapability);
+				return VT.get_PhoneCapsString(ref this, pcsCap, out ppCapability);
 			}
-			public HRESULT get_Terminals(ITAddress* pAddress, VARIANT* pTerminals) mut
+			public HRESULT get_Terminals(ref ITAddress pAddress, out VARIANT pTerminals) mut
 			{
-				return VT.get_Terminals(&this, pAddress, pTerminals);
+				return VT.get_Terminals(ref this, ref pAddress, out pTerminals);
 			}
-			public HRESULT EnumerateTerminals(ITAddress* pAddress, IEnumTerminal** ppEnumTerminal) mut
+			public HRESULT EnumerateTerminals(ref ITAddress pAddress, out IEnumTerminal* ppEnumTerminal) mut
 			{
-				return VT.EnumerateTerminals(&this, pAddress, ppEnumTerminal);
+				return VT.EnumerateTerminals(ref this, ref pAddress, out ppEnumTerminal);
 			}
-			public HRESULT get_ButtonMode(int32 lButtonID, PHONE_BUTTON_MODE* pButtonMode) mut
+			public HRESULT get_ButtonMode(int32 lButtonID, out PHONE_BUTTON_MODE pButtonMode) mut
 			{
-				return VT.get_ButtonMode(&this, lButtonID, pButtonMode);
+				return VT.get_ButtonMode(ref this, lButtonID, out pButtonMode);
 			}
 			public HRESULT put_ButtonMode(int32 lButtonID, PHONE_BUTTON_MODE ButtonMode) mut
 			{
-				return VT.put_ButtonMode(&this, lButtonID, ButtonMode);
+				return VT.put_ButtonMode(ref this, lButtonID, ButtonMode);
 			}
-			public HRESULT get_ButtonFunction(int32 lButtonID, PHONE_BUTTON_FUNCTION* pButtonFunction) mut
+			public HRESULT get_ButtonFunction(int32 lButtonID, out PHONE_BUTTON_FUNCTION pButtonFunction) mut
 			{
-				return VT.get_ButtonFunction(&this, lButtonID, pButtonFunction);
+				return VT.get_ButtonFunction(ref this, lButtonID, out pButtonFunction);
 			}
 			public HRESULT put_ButtonFunction(int32 lButtonID, PHONE_BUTTON_FUNCTION ButtonFunction) mut
 			{
-				return VT.put_ButtonFunction(&this, lButtonID, ButtonFunction);
+				return VT.put_ButtonFunction(ref this, lButtonID, ButtonFunction);
 			}
-			public HRESULT get_ButtonText(int32 lButtonID, BSTR* ppButtonText) mut
+			public HRESULT get_ButtonText(int32 lButtonID, out BSTR ppButtonText) mut
 			{
-				return VT.get_ButtonText(&this, lButtonID, ppButtonText);
+				return VT.get_ButtonText(ref this, lButtonID, out ppButtonText);
 			}
 			public HRESULT put_ButtonText(int32 lButtonID, BSTR bstrButtonText) mut
 			{
-				return VT.put_ButtonText(&this, lButtonID, bstrButtonText);
+				return VT.put_ButtonText(ref this, lButtonID, bstrButtonText);
 			}
-			public HRESULT get_ButtonState(int32 lButtonID, PHONE_BUTTON_STATE* pButtonState) mut
+			public HRESULT get_ButtonState(int32 lButtonID, out PHONE_BUTTON_STATE pButtonState) mut
 			{
-				return VT.get_ButtonState(&this, lButtonID, pButtonState);
+				return VT.get_ButtonState(ref this, lButtonID, out pButtonState);
 			}
-			public HRESULT get_HookSwitchState(PHONE_HOOK_SWITCH_DEVICE HookSwitchDevice, PHONE_HOOK_SWITCH_STATE* pHookSwitchState) mut
+			public HRESULT get_HookSwitchState(PHONE_HOOK_SWITCH_DEVICE HookSwitchDevice, out PHONE_HOOK_SWITCH_STATE pHookSwitchState) mut
 			{
-				return VT.get_HookSwitchState(&this, HookSwitchDevice, pHookSwitchState);
+				return VT.get_HookSwitchState(ref this, HookSwitchDevice, out pHookSwitchState);
 			}
 			public HRESULT put_HookSwitchState(PHONE_HOOK_SWITCH_DEVICE HookSwitchDevice, PHONE_HOOK_SWITCH_STATE HookSwitchState) mut
 			{
-				return VT.put_HookSwitchState(&this, HookSwitchDevice, HookSwitchState);
+				return VT.put_HookSwitchState(ref this, HookSwitchDevice, HookSwitchState);
 			}
 			public HRESULT put_RingMode(int32 lRingMode) mut
 			{
-				return VT.put_RingMode(&this, lRingMode);
+				return VT.put_RingMode(ref this, lRingMode);
 			}
-			public HRESULT get_RingMode(int32* plRingMode) mut
+			public HRESULT get_RingMode(out int32 plRingMode) mut
 			{
-				return VT.get_RingMode(&this, plRingMode);
+				return VT.get_RingMode(ref this, out plRingMode);
 			}
 			public HRESULT put_RingVolume(int32 lRingVolume) mut
 			{
-				return VT.put_RingVolume(&this, lRingVolume);
+				return VT.put_RingVolume(ref this, lRingVolume);
 			}
-			public HRESULT get_RingVolume(int32* plRingVolume) mut
+			public HRESULT get_RingVolume(out int32 plRingVolume) mut
 			{
-				return VT.get_RingVolume(&this, plRingVolume);
+				return VT.get_RingVolume(ref this, out plRingVolume);
 			}
-			public HRESULT get_Privilege(PHONE_PRIVILEGE* pPrivilege) mut
+			public HRESULT get_Privilege(out PHONE_PRIVILEGE pPrivilege) mut
 			{
-				return VT.get_Privilege(&this, pPrivilege);
+				return VT.get_Privilege(ref this, out pPrivilege);
 			}
-			public HRESULT GetPhoneCapsBuffer(PHONECAPS_BUFFER pcbCaps, uint32* pdwSize, uint8** ppPhoneCapsBuffer) mut
+			public HRESULT GetPhoneCapsBuffer(PHONECAPS_BUFFER pcbCaps, out uint32 pdwSize, out uint8* ppPhoneCapsBuffer) mut
 			{
-				return VT.GetPhoneCapsBuffer(&this, pcbCaps, pdwSize, ppPhoneCapsBuffer);
+				return VT.GetPhoneCapsBuffer(ref this, pcbCaps, out pdwSize, out ppPhoneCapsBuffer);
 			}
-			public HRESULT get_PhoneCapsBuffer(PHONECAPS_BUFFER pcbCaps, VARIANT* pVarBuffer) mut
+			public HRESULT get_PhoneCapsBuffer(PHONECAPS_BUFFER pcbCaps, out VARIANT pVarBuffer) mut
 			{
-				return VT.get_PhoneCapsBuffer(&this, pcbCaps, pVarBuffer);
+				return VT.get_PhoneCapsBuffer(ref this, pcbCaps, out pVarBuffer);
 			}
-			public HRESULT get_LampMode(int32 lLampID, PHONE_LAMP_MODE* pLampMode) mut
+			public HRESULT get_LampMode(int32 lLampID, out PHONE_LAMP_MODE pLampMode) mut
 			{
-				return VT.get_LampMode(&this, lLampID, pLampMode);
+				return VT.get_LampMode(ref this, lLampID, out pLampMode);
 			}
 			public HRESULT put_LampMode(int32 lLampID, PHONE_LAMP_MODE LampMode) mut
 			{
-				return VT.put_LampMode(&this, lLampID, LampMode);
+				return VT.put_LampMode(ref this, lLampID, LampMode);
 			}
-			public HRESULT get_Display(BSTR* pbstrDisplay) mut
+			public HRESULT get_Display(out BSTR pbstrDisplay) mut
 			{
-				return VT.get_Display(&this, pbstrDisplay);
+				return VT.get_Display(ref this, out pbstrDisplay);
 			}
 			public HRESULT SetDisplay(int32 lRow, int32 lColumn, BSTR bstrDisplay) mut
 			{
-				return VT.SetDisplay(&this, lRow, lColumn, bstrDisplay);
+				return VT.SetDisplay(ref this, lRow, lColumn, bstrDisplay);
 			}
-			public HRESULT get_PreferredAddresses(VARIANT* pAddresses) mut
+			public HRESULT get_PreferredAddresses(out VARIANT pAddresses) mut
 			{
-				return VT.get_PreferredAddresses(&this, pAddresses);
+				return VT.get_PreferredAddresses(ref this, out pAddresses);
 			}
-			public HRESULT EnumeratePreferredAddresses(IEnumAddress** ppEnumAddress) mut
+			public HRESULT EnumeratePreferredAddresses(out IEnumAddress* ppEnumAddress) mut
 			{
-				return VT.EnumeratePreferredAddresses(&this, ppEnumAddress);
+				return VT.EnumeratePreferredAddresses(ref this, out ppEnumAddress);
 			}
-			public HRESULT DeviceSpecific(uint8* pParams, uint32 dwSize) mut
+			public HRESULT DeviceSpecific(ref uint8 pParams, uint32 dwSize) mut
 			{
-				return VT.DeviceSpecific(&this, pParams, dwSize);
+				return VT.DeviceSpecific(ref this, ref pParams, dwSize);
 			}
 			public HRESULT DeviceSpecificVariant(VARIANT varDevSpecificByteArray) mut
 			{
-				return VT.DeviceSpecificVariant(&this, varDevSpecificByteArray);
+				return VT.DeviceSpecificVariant(ref this, varDevSpecificByteArray);
 			}
-			public HRESULT NegotiateExtVersion(int32 lLowVersion, int32 lHighVersion, int32* plExtVersion) mut
+			public HRESULT NegotiateExtVersion(int32 lLowVersion, int32 lHighVersion, out int32 plExtVersion) mut
 			{
-				return VT.NegotiateExtVersion(&this, lLowVersion, lHighVersion, plExtVersion);
+				return VT.NegotiateExtVersion(ref this, lLowVersion, lHighVersion, out plExtVersion);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITPhone *self, PHONE_PRIVILEGE Privilege) Open;
-				public new function HRESULT(ITPhone *self) Close;
-				public new function HRESULT(ITPhone *self, VARIANT* pAddresses) get_Addresses;
-				public new function HRESULT(ITPhone *self, IEnumAddress** ppEnumAddress) EnumerateAddresses;
-				public new function HRESULT(ITPhone *self, PHONECAPS_LONG pclCap, int32* plCapability) get_PhoneCapsLong;
-				public new function HRESULT(ITPhone *self, PHONECAPS_STRING pcsCap, BSTR* ppCapability) get_PhoneCapsString;
-				public new function HRESULT(ITPhone *self, ITAddress* pAddress, VARIANT* pTerminals) get_Terminals;
-				public new function HRESULT(ITPhone *self, ITAddress* pAddress, IEnumTerminal** ppEnumTerminal) EnumerateTerminals;
-				public new function HRESULT(ITPhone *self, int32 lButtonID, PHONE_BUTTON_MODE* pButtonMode) get_ButtonMode;
-				public new function HRESULT(ITPhone *self, int32 lButtonID, PHONE_BUTTON_MODE ButtonMode) put_ButtonMode;
-				public new function HRESULT(ITPhone *self, int32 lButtonID, PHONE_BUTTON_FUNCTION* pButtonFunction) get_ButtonFunction;
-				public new function HRESULT(ITPhone *self, int32 lButtonID, PHONE_BUTTON_FUNCTION ButtonFunction) put_ButtonFunction;
-				public new function HRESULT(ITPhone *self, int32 lButtonID, BSTR* ppButtonText) get_ButtonText;
-				public new function HRESULT(ITPhone *self, int32 lButtonID, BSTR bstrButtonText) put_ButtonText;
-				public new function HRESULT(ITPhone *self, int32 lButtonID, PHONE_BUTTON_STATE* pButtonState) get_ButtonState;
-				public new function HRESULT(ITPhone *self, PHONE_HOOK_SWITCH_DEVICE HookSwitchDevice, PHONE_HOOK_SWITCH_STATE* pHookSwitchState) get_HookSwitchState;
-				public new function HRESULT(ITPhone *self, PHONE_HOOK_SWITCH_DEVICE HookSwitchDevice, PHONE_HOOK_SWITCH_STATE HookSwitchState) put_HookSwitchState;
-				public new function HRESULT(ITPhone *self, int32 lRingMode) put_RingMode;
-				public new function HRESULT(ITPhone *self, int32* plRingMode) get_RingMode;
-				public new function HRESULT(ITPhone *self, int32 lRingVolume) put_RingVolume;
-				public new function HRESULT(ITPhone *self, int32* plRingVolume) get_RingVolume;
-				public new function HRESULT(ITPhone *self, PHONE_PRIVILEGE* pPrivilege) get_Privilege;
-				public new function HRESULT(ITPhone *self, PHONECAPS_BUFFER pcbCaps, uint32* pdwSize, uint8** ppPhoneCapsBuffer) GetPhoneCapsBuffer;
-				public new function HRESULT(ITPhone *self, PHONECAPS_BUFFER pcbCaps, VARIANT* pVarBuffer) get_PhoneCapsBuffer;
-				public new function HRESULT(ITPhone *self, int32 lLampID, PHONE_LAMP_MODE* pLampMode) get_LampMode;
-				public new function HRESULT(ITPhone *self, int32 lLampID, PHONE_LAMP_MODE LampMode) put_LampMode;
-				public new function HRESULT(ITPhone *self, BSTR* pbstrDisplay) get_Display;
-				public new function HRESULT(ITPhone *self, int32 lRow, int32 lColumn, BSTR bstrDisplay) SetDisplay;
-				public new function HRESULT(ITPhone *self, VARIANT* pAddresses) get_PreferredAddresses;
-				public new function HRESULT(ITPhone *self, IEnumAddress** ppEnumAddress) EnumeratePreferredAddresses;
-				public new function HRESULT(ITPhone *self, uint8* pParams, uint32 dwSize) DeviceSpecific;
-				public new function HRESULT(ITPhone *self, VARIANT varDevSpecificByteArray) DeviceSpecificVariant;
-				public new function HRESULT(ITPhone *self, int32 lLowVersion, int32 lHighVersion, int32* plExtVersion) NegotiateExtVersion;
+				public new function HRESULT(ref ITPhone self, PHONE_PRIVILEGE Privilege) Open;
+				public new function HRESULT(ref ITPhone self) Close;
+				public new function HRESULT(ref ITPhone self, out VARIANT pAddresses) get_Addresses;
+				public new function HRESULT(ref ITPhone self, out IEnumAddress* ppEnumAddress) EnumerateAddresses;
+				public new function HRESULT(ref ITPhone self, PHONECAPS_LONG pclCap, out int32 plCapability) get_PhoneCapsLong;
+				public new function HRESULT(ref ITPhone self, PHONECAPS_STRING pcsCap, out BSTR ppCapability) get_PhoneCapsString;
+				public new function HRESULT(ref ITPhone self, ref ITAddress pAddress, out VARIANT pTerminals) get_Terminals;
+				public new function HRESULT(ref ITPhone self, ref ITAddress pAddress, out IEnumTerminal* ppEnumTerminal) EnumerateTerminals;
+				public new function HRESULT(ref ITPhone self, int32 lButtonID, out PHONE_BUTTON_MODE pButtonMode) get_ButtonMode;
+				public new function HRESULT(ref ITPhone self, int32 lButtonID, PHONE_BUTTON_MODE ButtonMode) put_ButtonMode;
+				public new function HRESULT(ref ITPhone self, int32 lButtonID, out PHONE_BUTTON_FUNCTION pButtonFunction) get_ButtonFunction;
+				public new function HRESULT(ref ITPhone self, int32 lButtonID, PHONE_BUTTON_FUNCTION ButtonFunction) put_ButtonFunction;
+				public new function HRESULT(ref ITPhone self, int32 lButtonID, out BSTR ppButtonText) get_ButtonText;
+				public new function HRESULT(ref ITPhone self, int32 lButtonID, BSTR bstrButtonText) put_ButtonText;
+				public new function HRESULT(ref ITPhone self, int32 lButtonID, out PHONE_BUTTON_STATE pButtonState) get_ButtonState;
+				public new function HRESULT(ref ITPhone self, PHONE_HOOK_SWITCH_DEVICE HookSwitchDevice, out PHONE_HOOK_SWITCH_STATE pHookSwitchState) get_HookSwitchState;
+				public new function HRESULT(ref ITPhone self, PHONE_HOOK_SWITCH_DEVICE HookSwitchDevice, PHONE_HOOK_SWITCH_STATE HookSwitchState) put_HookSwitchState;
+				public new function HRESULT(ref ITPhone self, int32 lRingMode) put_RingMode;
+				public new function HRESULT(ref ITPhone self, out int32 plRingMode) get_RingMode;
+				public new function HRESULT(ref ITPhone self, int32 lRingVolume) put_RingVolume;
+				public new function HRESULT(ref ITPhone self, out int32 plRingVolume) get_RingVolume;
+				public new function HRESULT(ref ITPhone self, out PHONE_PRIVILEGE pPrivilege) get_Privilege;
+				public new function HRESULT(ref ITPhone self, PHONECAPS_BUFFER pcbCaps, out uint32 pdwSize, out uint8* ppPhoneCapsBuffer) GetPhoneCapsBuffer;
+				public new function HRESULT(ref ITPhone self, PHONECAPS_BUFFER pcbCaps, out VARIANT pVarBuffer) get_PhoneCapsBuffer;
+				public new function HRESULT(ref ITPhone self, int32 lLampID, out PHONE_LAMP_MODE pLampMode) get_LampMode;
+				public new function HRESULT(ref ITPhone self, int32 lLampID, PHONE_LAMP_MODE LampMode) put_LampMode;
+				public new function HRESULT(ref ITPhone self, out BSTR pbstrDisplay) get_Display;
+				public new function HRESULT(ref ITPhone self, int32 lRow, int32 lColumn, BSTR bstrDisplay) SetDisplay;
+				public new function HRESULT(ref ITPhone self, out VARIANT pAddresses) get_PreferredAddresses;
+				public new function HRESULT(ref ITPhone self, out IEnumAddress* ppEnumAddress) EnumeratePreferredAddresses;
+				public new function HRESULT(ref ITPhone self, ref uint8 pParams, uint32 dwSize) DeviceSpecific;
+				public new function HRESULT(ref ITPhone self, VARIANT varDevSpecificByteArray) DeviceSpecificVariant;
+				public new function HRESULT(ref ITPhone self, int32 lLowVersion, int32 lHighVersion, out int32 plExtVersion) NegotiateExtVersion;
 			}
 		}
 		[CRepr]
@@ -3781,167 +3781,167 @@ namespace Win32
 			
 			public HRESULT StartTone(PHONE_TONE Tone, int32 lDuration) mut
 			{
-				return VT.StartTone(&this, Tone, lDuration);
+				return VT.StartTone(ref this, Tone, lDuration);
 			}
 			public HRESULT StopTone() mut
 			{
-				return VT.StopTone(&this);
+				return VT.StopTone(ref this);
 			}
-			public HRESULT get_Tone(PHONE_TONE* pTone) mut
+			public HRESULT get_Tone(out PHONE_TONE pTone) mut
 			{
-				return VT.get_Tone(&this, pTone);
+				return VT.get_Tone(ref this, out pTone);
 			}
 			public HRESULT StartRinger(int32 lRingMode, int32 lDuration) mut
 			{
-				return VT.StartRinger(&this, lRingMode, lDuration);
+				return VT.StartRinger(ref this, lRingMode, lDuration);
 			}
 			public HRESULT StopRinger() mut
 			{
-				return VT.StopRinger(&this);
+				return VT.StopRinger(ref this);
 			}
-			public HRESULT get_Ringer(int16* pfRinging) mut
+			public HRESULT get_Ringer(out int16 pfRinging) mut
 			{
-				return VT.get_Ringer(&this, pfRinging);
+				return VT.get_Ringer(ref this, out pfRinging);
 			}
 			public HRESULT put_PhoneHandlingEnabled(int16 fEnabled) mut
 			{
-				return VT.put_PhoneHandlingEnabled(&this, fEnabled);
+				return VT.put_PhoneHandlingEnabled(ref this, fEnabled);
 			}
-			public HRESULT get_PhoneHandlingEnabled(int16* pfEnabled) mut
+			public HRESULT get_PhoneHandlingEnabled(out int16 pfEnabled) mut
 			{
-				return VT.get_PhoneHandlingEnabled(&this, pfEnabled);
+				return VT.get_PhoneHandlingEnabled(ref this, out pfEnabled);
 			}
 			public HRESULT put_AutoEndOfNumberTimeout(int32 lTimeout) mut
 			{
-				return VT.put_AutoEndOfNumberTimeout(&this, lTimeout);
+				return VT.put_AutoEndOfNumberTimeout(ref this, lTimeout);
 			}
-			public HRESULT get_AutoEndOfNumberTimeout(int32* plTimeout) mut
+			public HRESULT get_AutoEndOfNumberTimeout(out int32 plTimeout) mut
 			{
-				return VT.get_AutoEndOfNumberTimeout(&this, plTimeout);
+				return VT.get_AutoEndOfNumberTimeout(ref this, out plTimeout);
 			}
 			public HRESULT put_AutoDialtone(int16 fEnabled) mut
 			{
-				return VT.put_AutoDialtone(&this, fEnabled);
+				return VT.put_AutoDialtone(ref this, fEnabled);
 			}
-			public HRESULT get_AutoDialtone(int16* pfEnabled) mut
+			public HRESULT get_AutoDialtone(out int16 pfEnabled) mut
 			{
-				return VT.get_AutoDialtone(&this, pfEnabled);
+				return VT.get_AutoDialtone(ref this, out pfEnabled);
 			}
 			public HRESULT put_AutoStopTonesOnOnHook(int16 fEnabled) mut
 			{
-				return VT.put_AutoStopTonesOnOnHook(&this, fEnabled);
+				return VT.put_AutoStopTonesOnOnHook(ref this, fEnabled);
 			}
-			public HRESULT get_AutoStopTonesOnOnHook(int16* pfEnabled) mut
+			public HRESULT get_AutoStopTonesOnOnHook(out int16 pfEnabled) mut
 			{
-				return VT.get_AutoStopTonesOnOnHook(&this, pfEnabled);
+				return VT.get_AutoStopTonesOnOnHook(ref this, out pfEnabled);
 			}
 			public HRESULT put_AutoStopRingOnOffHook(int16 fEnabled) mut
 			{
-				return VT.put_AutoStopRingOnOffHook(&this, fEnabled);
+				return VT.put_AutoStopRingOnOffHook(ref this, fEnabled);
 			}
-			public HRESULT get_AutoStopRingOnOffHook(int16* pfEnabled) mut
+			public HRESULT get_AutoStopRingOnOffHook(out int16 pfEnabled) mut
 			{
-				return VT.get_AutoStopRingOnOffHook(&this, pfEnabled);
+				return VT.get_AutoStopRingOnOffHook(ref this, out pfEnabled);
 			}
 			public HRESULT put_AutoKeypadTones(int16 fEnabled) mut
 			{
-				return VT.put_AutoKeypadTones(&this, fEnabled);
+				return VT.put_AutoKeypadTones(ref this, fEnabled);
 			}
-			public HRESULT get_AutoKeypadTones(int16* pfEnabled) mut
+			public HRESULT get_AutoKeypadTones(out int16 pfEnabled) mut
 			{
-				return VT.get_AutoKeypadTones(&this, pfEnabled);
+				return VT.get_AutoKeypadTones(ref this, out pfEnabled);
 			}
 			public HRESULT put_AutoKeypadTonesMinimumDuration(int32 lDuration) mut
 			{
-				return VT.put_AutoKeypadTonesMinimumDuration(&this, lDuration);
+				return VT.put_AutoKeypadTonesMinimumDuration(ref this, lDuration);
 			}
-			public HRESULT get_AutoKeypadTonesMinimumDuration(int32* plDuration) mut
+			public HRESULT get_AutoKeypadTonesMinimumDuration(out int32 plDuration) mut
 			{
-				return VT.get_AutoKeypadTonesMinimumDuration(&this, plDuration);
+				return VT.get_AutoKeypadTonesMinimumDuration(ref this, out plDuration);
 			}
 			public HRESULT put_AutoVolumeControl(int16 fEnabled) mut
 			{
-				return VT.put_AutoVolumeControl(&this, fEnabled);
+				return VT.put_AutoVolumeControl(ref this, fEnabled);
 			}
-			public HRESULT get_AutoVolumeControl(int16* fEnabled) mut
+			public HRESULT get_AutoVolumeControl(out int16 fEnabled) mut
 			{
-				return VT.get_AutoVolumeControl(&this, fEnabled);
+				return VT.get_AutoVolumeControl(ref this, out fEnabled);
 			}
 			public HRESULT put_AutoVolumeControlStep(int32 lStepSize) mut
 			{
-				return VT.put_AutoVolumeControlStep(&this, lStepSize);
+				return VT.put_AutoVolumeControlStep(ref this, lStepSize);
 			}
-			public HRESULT get_AutoVolumeControlStep(int32* plStepSize) mut
+			public HRESULT get_AutoVolumeControlStep(out int32 plStepSize) mut
 			{
-				return VT.get_AutoVolumeControlStep(&this, plStepSize);
+				return VT.get_AutoVolumeControlStep(ref this, out plStepSize);
 			}
 			public HRESULT put_AutoVolumeControlRepeatDelay(int32 lDelay) mut
 			{
-				return VT.put_AutoVolumeControlRepeatDelay(&this, lDelay);
+				return VT.put_AutoVolumeControlRepeatDelay(ref this, lDelay);
 			}
-			public HRESULT get_AutoVolumeControlRepeatDelay(int32* plDelay) mut
+			public HRESULT get_AutoVolumeControlRepeatDelay(out int32 plDelay) mut
 			{
-				return VT.get_AutoVolumeControlRepeatDelay(&this, plDelay);
+				return VT.get_AutoVolumeControlRepeatDelay(ref this, out plDelay);
 			}
 			public HRESULT put_AutoVolumeControlRepeatPeriod(int32 lPeriod) mut
 			{
-				return VT.put_AutoVolumeControlRepeatPeriod(&this, lPeriod);
+				return VT.put_AutoVolumeControlRepeatPeriod(ref this, lPeriod);
 			}
-			public HRESULT get_AutoVolumeControlRepeatPeriod(int32* plPeriod) mut
+			public HRESULT get_AutoVolumeControlRepeatPeriod(out int32 plPeriod) mut
 			{
-				return VT.get_AutoVolumeControlRepeatPeriod(&this, plPeriod);
+				return VT.get_AutoVolumeControlRepeatPeriod(ref this, out plPeriod);
 			}
-			public HRESULT SelectCall(ITCallInfo* pCall, int16 fSelectDefaultTerminals) mut
+			public HRESULT SelectCall(ref ITCallInfo pCall, int16 fSelectDefaultTerminals) mut
 			{
-				return VT.SelectCall(&this, pCall, fSelectDefaultTerminals);
+				return VT.SelectCall(ref this, ref pCall, fSelectDefaultTerminals);
 			}
-			public HRESULT UnselectCall(ITCallInfo* pCall) mut
+			public HRESULT UnselectCall(ref ITCallInfo pCall) mut
 			{
-				return VT.UnselectCall(&this, pCall);
+				return VT.UnselectCall(ref this, ref pCall);
 			}
-			public HRESULT EnumerateSelectedCalls(IEnumCall** ppCallEnum) mut
+			public HRESULT EnumerateSelectedCalls(out IEnumCall* ppCallEnum) mut
 			{
-				return VT.EnumerateSelectedCalls(&this, ppCallEnum);
+				return VT.EnumerateSelectedCalls(ref this, out ppCallEnum);
 			}
-			public HRESULT get_SelectedCalls(VARIANT* pVariant) mut
+			public HRESULT get_SelectedCalls(out VARIANT pVariant) mut
 			{
-				return VT.get_SelectedCalls(&this, pVariant);
+				return VT.get_SelectedCalls(ref this, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAutomatedPhoneControl *self, PHONE_TONE Tone, int32 lDuration) StartTone;
-				public new function HRESULT(ITAutomatedPhoneControl *self) StopTone;
-				public new function HRESULT(ITAutomatedPhoneControl *self, PHONE_TONE* pTone) get_Tone;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32 lRingMode, int32 lDuration) StartRinger;
-				public new function HRESULT(ITAutomatedPhoneControl *self) StopRinger;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16* pfRinging) get_Ringer;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16 fEnabled) put_PhoneHandlingEnabled;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16* pfEnabled) get_PhoneHandlingEnabled;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32 lTimeout) put_AutoEndOfNumberTimeout;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32* plTimeout) get_AutoEndOfNumberTimeout;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16 fEnabled) put_AutoDialtone;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16* pfEnabled) get_AutoDialtone;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16 fEnabled) put_AutoStopTonesOnOnHook;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16* pfEnabled) get_AutoStopTonesOnOnHook;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16 fEnabled) put_AutoStopRingOnOffHook;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16* pfEnabled) get_AutoStopRingOnOffHook;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16 fEnabled) put_AutoKeypadTones;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16* pfEnabled) get_AutoKeypadTones;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32 lDuration) put_AutoKeypadTonesMinimumDuration;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32* plDuration) get_AutoKeypadTonesMinimumDuration;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16 fEnabled) put_AutoVolumeControl;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int16* fEnabled) get_AutoVolumeControl;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32 lStepSize) put_AutoVolumeControlStep;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32* plStepSize) get_AutoVolumeControlStep;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32 lDelay) put_AutoVolumeControlRepeatDelay;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32* plDelay) get_AutoVolumeControlRepeatDelay;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32 lPeriod) put_AutoVolumeControlRepeatPeriod;
-				public new function HRESULT(ITAutomatedPhoneControl *self, int32* plPeriod) get_AutoVolumeControlRepeatPeriod;
-				public new function HRESULT(ITAutomatedPhoneControl *self, ITCallInfo* pCall, int16 fSelectDefaultTerminals) SelectCall;
-				public new function HRESULT(ITAutomatedPhoneControl *self, ITCallInfo* pCall) UnselectCall;
-				public new function HRESULT(ITAutomatedPhoneControl *self, IEnumCall** ppCallEnum) EnumerateSelectedCalls;
-				public new function HRESULT(ITAutomatedPhoneControl *self, VARIANT* pVariant) get_SelectedCalls;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, PHONE_TONE Tone, int32 lDuration) StartTone;
+				public new function HRESULT(ref ITAutomatedPhoneControl self) StopTone;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out PHONE_TONE pTone) get_Tone;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int32 lRingMode, int32 lDuration) StartRinger;
+				public new function HRESULT(ref ITAutomatedPhoneControl self) StopRinger;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int16 pfRinging) get_Ringer;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int16 fEnabled) put_PhoneHandlingEnabled;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int16 pfEnabled) get_PhoneHandlingEnabled;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int32 lTimeout) put_AutoEndOfNumberTimeout;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int32 plTimeout) get_AutoEndOfNumberTimeout;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int16 fEnabled) put_AutoDialtone;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int16 pfEnabled) get_AutoDialtone;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int16 fEnabled) put_AutoStopTonesOnOnHook;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int16 pfEnabled) get_AutoStopTonesOnOnHook;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int16 fEnabled) put_AutoStopRingOnOffHook;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int16 pfEnabled) get_AutoStopRingOnOffHook;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int16 fEnabled) put_AutoKeypadTones;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int16 pfEnabled) get_AutoKeypadTones;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int32 lDuration) put_AutoKeypadTonesMinimumDuration;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int32 plDuration) get_AutoKeypadTonesMinimumDuration;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int16 fEnabled) put_AutoVolumeControl;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int16 fEnabled) get_AutoVolumeControl;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int32 lStepSize) put_AutoVolumeControlStep;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int32 plStepSize) get_AutoVolumeControlStep;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int32 lDelay) put_AutoVolumeControlRepeatDelay;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int32 plDelay) get_AutoVolumeControlRepeatDelay;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, int32 lPeriod) put_AutoVolumeControlRepeatPeriod;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out int32 plPeriod) get_AutoVolumeControlRepeatPeriod;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, ref ITCallInfo pCall, int16 fSelectDefaultTerminals) SelectCall;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, ref ITCallInfo pCall) UnselectCall;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out IEnumCall* ppCallEnum) EnumerateSelectedCalls;
+				public new function HRESULT(ref ITAutomatedPhoneControl self, out VARIANT pVariant) get_SelectedCalls;
 			}
 		}
 		[CRepr]
@@ -3953,97 +3953,97 @@ namespace Win32
 			
 			public HRESULT Connect(int16 fSync) mut
 			{
-				return VT.Connect(&this, fSync);
+				return VT.Connect(ref this, fSync);
 			}
 			public HRESULT Answer() mut
 			{
-				return VT.Answer(&this);
+				return VT.Answer(ref this);
 			}
 			public HRESULT Disconnect(DISCONNECT_CODE code) mut
 			{
-				return VT.Disconnect(&this, code);
+				return VT.Disconnect(ref this, code);
 			}
 			public HRESULT Hold(int16 fHold) mut
 			{
-				return VT.Hold(&this, fHold);
+				return VT.Hold(ref this, fHold);
 			}
 			public HRESULT HandoffDirect(BSTR pApplicationName) mut
 			{
-				return VT.HandoffDirect(&this, pApplicationName);
+				return VT.HandoffDirect(ref this, pApplicationName);
 			}
 			public HRESULT HandoffIndirect(int32 lMediaType) mut
 			{
-				return VT.HandoffIndirect(&this, lMediaType);
+				return VT.HandoffIndirect(ref this, lMediaType);
 			}
-			public HRESULT Conference(ITBasicCallControl* pCall, int16 fSync) mut
+			public HRESULT Conference(ref ITBasicCallControl pCall, int16 fSync) mut
 			{
-				return VT.Conference(&this, pCall, fSync);
+				return VT.Conference(ref this, ref pCall, fSync);
 			}
-			public HRESULT Transfer(ITBasicCallControl* pCall, int16 fSync) mut
+			public HRESULT Transfer(ref ITBasicCallControl pCall, int16 fSync) mut
 			{
-				return VT.Transfer(&this, pCall, fSync);
+				return VT.Transfer(ref this, ref pCall, fSync);
 			}
 			public HRESULT BlindTransfer(BSTR pDestAddress) mut
 			{
-				return VT.BlindTransfer(&this, pDestAddress);
+				return VT.BlindTransfer(ref this, pDestAddress);
 			}
-			public HRESULT SwapHold(ITBasicCallControl* pCall) mut
+			public HRESULT SwapHold(ref ITBasicCallControl pCall) mut
 			{
-				return VT.SwapHold(&this, pCall);
+				return VT.SwapHold(ref this, ref pCall);
 			}
 			public HRESULT ParkDirect(BSTR pParkAddress) mut
 			{
-				return VT.ParkDirect(&this, pParkAddress);
+				return VT.ParkDirect(ref this, pParkAddress);
 			}
-			public HRESULT ParkIndirect(BSTR* ppNonDirAddress) mut
+			public HRESULT ParkIndirect(out BSTR ppNonDirAddress) mut
 			{
-				return VT.ParkIndirect(&this, ppNonDirAddress);
+				return VT.ParkIndirect(ref this, out ppNonDirAddress);
 			}
 			public HRESULT Unpark() mut
 			{
-				return VT.Unpark(&this);
+				return VT.Unpark(ref this);
 			}
 			public HRESULT SetQOS(int32 lMediaType, QOS_SERVICE_LEVEL ServiceLevel) mut
 			{
-				return VT.SetQOS(&this, lMediaType, ServiceLevel);
+				return VT.SetQOS(ref this, lMediaType, ServiceLevel);
 			}
 			public HRESULT Pickup(BSTR pGroupID) mut
 			{
-				return VT.Pickup(&this, pGroupID);
+				return VT.Pickup(ref this, pGroupID);
 			}
 			public HRESULT Dial(BSTR pDestAddress) mut
 			{
-				return VT.Dial(&this, pDestAddress);
+				return VT.Dial(ref this, pDestAddress);
 			}
 			public HRESULT Finish(FINISH_MODE finishMode) mut
 			{
-				return VT.Finish(&this, finishMode);
+				return VT.Finish(ref this, finishMode);
 			}
 			public HRESULT RemoveFromConference() mut
 			{
-				return VT.RemoveFromConference(&this);
+				return VT.RemoveFromConference(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITBasicCallControl *self, int16 fSync) Connect;
-				public new function HRESULT(ITBasicCallControl *self) Answer;
-				public new function HRESULT(ITBasicCallControl *self, DISCONNECT_CODE code) Disconnect;
-				public new function HRESULT(ITBasicCallControl *self, int16 fHold) Hold;
-				public new function HRESULT(ITBasicCallControl *self, BSTR pApplicationName) HandoffDirect;
-				public new function HRESULT(ITBasicCallControl *self, int32 lMediaType) HandoffIndirect;
-				public new function HRESULT(ITBasicCallControl *self, ITBasicCallControl* pCall, int16 fSync) Conference;
-				public new function HRESULT(ITBasicCallControl *self, ITBasicCallControl* pCall, int16 fSync) Transfer;
-				public new function HRESULT(ITBasicCallControl *self, BSTR pDestAddress) BlindTransfer;
-				public new function HRESULT(ITBasicCallControl *self, ITBasicCallControl* pCall) SwapHold;
-				public new function HRESULT(ITBasicCallControl *self, BSTR pParkAddress) ParkDirect;
-				public new function HRESULT(ITBasicCallControl *self, BSTR* ppNonDirAddress) ParkIndirect;
-				public new function HRESULT(ITBasicCallControl *self) Unpark;
-				public new function HRESULT(ITBasicCallControl *self, int32 lMediaType, QOS_SERVICE_LEVEL ServiceLevel) SetQOS;
-				public new function HRESULT(ITBasicCallControl *self, BSTR pGroupID) Pickup;
-				public new function HRESULT(ITBasicCallControl *self, BSTR pDestAddress) Dial;
-				public new function HRESULT(ITBasicCallControl *self, FINISH_MODE finishMode) Finish;
-				public new function HRESULT(ITBasicCallControl *self) RemoveFromConference;
+				public new function HRESULT(ref ITBasicCallControl self, int16 fSync) Connect;
+				public new function HRESULT(ref ITBasicCallControl self) Answer;
+				public new function HRESULT(ref ITBasicCallControl self, DISCONNECT_CODE code) Disconnect;
+				public new function HRESULT(ref ITBasicCallControl self, int16 fHold) Hold;
+				public new function HRESULT(ref ITBasicCallControl self, BSTR pApplicationName) HandoffDirect;
+				public new function HRESULT(ref ITBasicCallControl self, int32 lMediaType) HandoffIndirect;
+				public new function HRESULT(ref ITBasicCallControl self, ref ITBasicCallControl pCall, int16 fSync) Conference;
+				public new function HRESULT(ref ITBasicCallControl self, ref ITBasicCallControl pCall, int16 fSync) Transfer;
+				public new function HRESULT(ref ITBasicCallControl self, BSTR pDestAddress) BlindTransfer;
+				public new function HRESULT(ref ITBasicCallControl self, ref ITBasicCallControl pCall) SwapHold;
+				public new function HRESULT(ref ITBasicCallControl self, BSTR pParkAddress) ParkDirect;
+				public new function HRESULT(ref ITBasicCallControl self, out BSTR ppNonDirAddress) ParkIndirect;
+				public new function HRESULT(ref ITBasicCallControl self) Unpark;
+				public new function HRESULT(ref ITBasicCallControl self, int32 lMediaType, QOS_SERVICE_LEVEL ServiceLevel) SetQOS;
+				public new function HRESULT(ref ITBasicCallControl self, BSTR pGroupID) Pickup;
+				public new function HRESULT(ref ITBasicCallControl self, BSTR pDestAddress) Dial;
+				public new function HRESULT(ref ITBasicCallControl self, FINISH_MODE finishMode) Finish;
+				public new function HRESULT(ref ITBasicCallControl self) RemoveFromConference;
 			}
 		}
 		[CRepr]
@@ -4053,74 +4053,74 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Address(ITAddress** ppAddress) mut
+			public HRESULT get_Address(out ITAddress* ppAddress) mut
 			{
-				return VT.get_Address(&this, ppAddress);
+				return VT.get_Address(ref this, out ppAddress);
 			}
-			public HRESULT get_CallState(CALL_STATE* pCallState) mut
+			public HRESULT get_CallState(out CALL_STATE pCallState) mut
 			{
-				return VT.get_CallState(&this, pCallState);
+				return VT.get_CallState(ref this, out pCallState);
 			}
-			public HRESULT get_Privilege(CALL_PRIVILEGE* pPrivilege) mut
+			public HRESULT get_Privilege(out CALL_PRIVILEGE pPrivilege) mut
 			{
-				return VT.get_Privilege(&this, pPrivilege);
+				return VT.get_Privilege(ref this, out pPrivilege);
 			}
-			public HRESULT get_CallHub(ITCallHub** ppCallHub) mut
+			public HRESULT get_CallHub(out ITCallHub* ppCallHub) mut
 			{
-				return VT.get_CallHub(&this, ppCallHub);
+				return VT.get_CallHub(ref this, out ppCallHub);
 			}
-			public HRESULT get_CallInfoLong(CALLINFO_LONG CallInfoLong, int32* plCallInfoLongVal) mut
+			public HRESULT get_CallInfoLong(CALLINFO_LONG CallInfoLong, out int32 plCallInfoLongVal) mut
 			{
-				return VT.get_CallInfoLong(&this, CallInfoLong, plCallInfoLongVal);
+				return VT.get_CallInfoLong(ref this, CallInfoLong, out plCallInfoLongVal);
 			}
 			public HRESULT put_CallInfoLong(CALLINFO_LONG CallInfoLong, int32 lCallInfoLongVal) mut
 			{
-				return VT.put_CallInfoLong(&this, CallInfoLong, lCallInfoLongVal);
+				return VT.put_CallInfoLong(ref this, CallInfoLong, lCallInfoLongVal);
 			}
-			public HRESULT get_CallInfoString(CALLINFO_STRING CallInfoString, BSTR* ppCallInfoString) mut
+			public HRESULT get_CallInfoString(CALLINFO_STRING CallInfoString, out BSTR ppCallInfoString) mut
 			{
-				return VT.get_CallInfoString(&this, CallInfoString, ppCallInfoString);
+				return VT.get_CallInfoString(ref this, CallInfoString, out ppCallInfoString);
 			}
 			public HRESULT put_CallInfoString(CALLINFO_STRING CallInfoString, BSTR pCallInfoString) mut
 			{
-				return VT.put_CallInfoString(&this, CallInfoString, pCallInfoString);
+				return VT.put_CallInfoString(ref this, CallInfoString, pCallInfoString);
 			}
-			public HRESULT get_CallInfoBuffer(CALLINFO_BUFFER CallInfoBuffer, VARIANT* ppCallInfoBuffer) mut
+			public HRESULT get_CallInfoBuffer(CALLINFO_BUFFER CallInfoBuffer, out VARIANT ppCallInfoBuffer) mut
 			{
-				return VT.get_CallInfoBuffer(&this, CallInfoBuffer, ppCallInfoBuffer);
+				return VT.get_CallInfoBuffer(ref this, CallInfoBuffer, out ppCallInfoBuffer);
 			}
 			public HRESULT put_CallInfoBuffer(CALLINFO_BUFFER CallInfoBuffer, VARIANT pCallInfoBuffer) mut
 			{
-				return VT.put_CallInfoBuffer(&this, CallInfoBuffer, pCallInfoBuffer);
+				return VT.put_CallInfoBuffer(ref this, CallInfoBuffer, pCallInfoBuffer);
 			}
-			public HRESULT GetCallInfoBuffer(CALLINFO_BUFFER CallInfoBuffer, uint32* pdwSize, uint8** ppCallInfoBuffer) mut
+			public HRESULT GetCallInfoBuffer(CALLINFO_BUFFER CallInfoBuffer, out uint32 pdwSize, uint8** ppCallInfoBuffer) mut
 			{
-				return VT.GetCallInfoBuffer(&this, CallInfoBuffer, pdwSize, ppCallInfoBuffer);
+				return VT.GetCallInfoBuffer(ref this, CallInfoBuffer, out pdwSize, ppCallInfoBuffer);
 			}
 			public HRESULT SetCallInfoBuffer(CALLINFO_BUFFER CallInfoBuffer, uint32 dwSize, uint8* pCallInfoBuffer) mut
 			{
-				return VT.SetCallInfoBuffer(&this, CallInfoBuffer, dwSize, pCallInfoBuffer);
+				return VT.SetCallInfoBuffer(ref this, CallInfoBuffer, dwSize, pCallInfoBuffer);
 			}
 			public HRESULT ReleaseUserUserInfo() mut
 			{
-				return VT.ReleaseUserUserInfo(&this);
+				return VT.ReleaseUserUserInfo(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCallInfo *self, ITAddress** ppAddress) get_Address;
-				public new function HRESULT(ITCallInfo *self, CALL_STATE* pCallState) get_CallState;
-				public new function HRESULT(ITCallInfo *self, CALL_PRIVILEGE* pPrivilege) get_Privilege;
-				public new function HRESULT(ITCallInfo *self, ITCallHub** ppCallHub) get_CallHub;
-				public new function HRESULT(ITCallInfo *self, CALLINFO_LONG CallInfoLong, int32* plCallInfoLongVal) get_CallInfoLong;
-				public new function HRESULT(ITCallInfo *self, CALLINFO_LONG CallInfoLong, int32 lCallInfoLongVal) put_CallInfoLong;
-				public new function HRESULT(ITCallInfo *self, CALLINFO_STRING CallInfoString, BSTR* ppCallInfoString) get_CallInfoString;
-				public new function HRESULT(ITCallInfo *self, CALLINFO_STRING CallInfoString, BSTR pCallInfoString) put_CallInfoString;
-				public new function HRESULT(ITCallInfo *self, CALLINFO_BUFFER CallInfoBuffer, VARIANT* ppCallInfoBuffer) get_CallInfoBuffer;
-				public new function HRESULT(ITCallInfo *self, CALLINFO_BUFFER CallInfoBuffer, VARIANT pCallInfoBuffer) put_CallInfoBuffer;
-				public new function HRESULT(ITCallInfo *self, CALLINFO_BUFFER CallInfoBuffer, uint32* pdwSize, uint8** ppCallInfoBuffer) GetCallInfoBuffer;
-				public new function HRESULT(ITCallInfo *self, CALLINFO_BUFFER CallInfoBuffer, uint32 dwSize, uint8* pCallInfoBuffer) SetCallInfoBuffer;
-				public new function HRESULT(ITCallInfo *self) ReleaseUserUserInfo;
+				public new function HRESULT(ref ITCallInfo self, out ITAddress* ppAddress) get_Address;
+				public new function HRESULT(ref ITCallInfo self, out CALL_STATE pCallState) get_CallState;
+				public new function HRESULT(ref ITCallInfo self, out CALL_PRIVILEGE pPrivilege) get_Privilege;
+				public new function HRESULT(ref ITCallInfo self, out ITCallHub* ppCallHub) get_CallHub;
+				public new function HRESULT(ref ITCallInfo self, CALLINFO_LONG CallInfoLong, out int32 plCallInfoLongVal) get_CallInfoLong;
+				public new function HRESULT(ref ITCallInfo self, CALLINFO_LONG CallInfoLong, int32 lCallInfoLongVal) put_CallInfoLong;
+				public new function HRESULT(ref ITCallInfo self, CALLINFO_STRING CallInfoString, out BSTR ppCallInfoString) get_CallInfoString;
+				public new function HRESULT(ref ITCallInfo self, CALLINFO_STRING CallInfoString, BSTR pCallInfoString) put_CallInfoString;
+				public new function HRESULT(ref ITCallInfo self, CALLINFO_BUFFER CallInfoBuffer, out VARIANT ppCallInfoBuffer) get_CallInfoBuffer;
+				public new function HRESULT(ref ITCallInfo self, CALLINFO_BUFFER CallInfoBuffer, VARIANT pCallInfoBuffer) put_CallInfoBuffer;
+				public new function HRESULT(ref ITCallInfo self, CALLINFO_BUFFER CallInfoBuffer, out uint32 pdwSize, uint8** ppCallInfoBuffer) GetCallInfoBuffer;
+				public new function HRESULT(ref ITCallInfo self, CALLINFO_BUFFER CallInfoBuffer, uint32 dwSize, uint8* pCallInfoBuffer) SetCallInfoBuffer;
+				public new function HRESULT(ref ITCallInfo self) ReleaseUserUserInfo;
 			}
 		}
 		[CRepr]
@@ -4130,19 +4130,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EventFilter(TAPI_EVENT TapiEvent, int32 lSubEvent, int16* pEnable) mut
+			public HRESULT get_EventFilter(TAPI_EVENT TapiEvent, int32 lSubEvent, out int16 pEnable) mut
 			{
-				return VT.get_EventFilter(&this, TapiEvent, lSubEvent, pEnable);
+				return VT.get_EventFilter(ref this, TapiEvent, lSubEvent, out pEnable);
 			}
 			public HRESULT put_EventFilter(TAPI_EVENT TapiEvent, int32 lSubEvent, int16 bEnable) mut
 			{
-				return VT.put_EventFilter(&this, TapiEvent, lSubEvent, bEnable);
+				return VT.put_EventFilter(ref this, TapiEvent, lSubEvent, bEnable);
 			}
 			[CRepr]
 			public struct VTable : ITCallInfo.VTable
 			{
-				public new function HRESULT(ITCallInfo2 *self, TAPI_EVENT TapiEvent, int32 lSubEvent, int16* pEnable) get_EventFilter;
-				public new function HRESULT(ITCallInfo2 *self, TAPI_EVENT TapiEvent, int32 lSubEvent, int16 bEnable) put_EventFilter;
+				public new function HRESULT(ref ITCallInfo2 self, TAPI_EVENT TapiEvent, int32 lSubEvent, out int16 pEnable) get_EventFilter;
+				public new function HRESULT(ref ITCallInfo2 self, TAPI_EVENT TapiEvent, int32 lSubEvent, int16 bEnable) put_EventFilter;
 			}
 		}
 		[CRepr]
@@ -4152,39 +4152,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* ppName) mut
+			public HRESULT get_Name(out BSTR ppName) mut
 			{
-				return VT.get_Name(&this, ppName);
+				return VT.get_Name(ref this, out ppName);
 			}
-			public HRESULT get_State(TERMINAL_STATE* pTerminalState) mut
+			public HRESULT get_State(out TERMINAL_STATE pTerminalState) mut
 			{
-				return VT.get_State(&this, pTerminalState);
+				return VT.get_State(ref this, out pTerminalState);
 			}
-			public HRESULT get_TerminalType(TERMINAL_TYPE* pType) mut
+			public HRESULT get_TerminalType(out TERMINAL_TYPE pType) mut
 			{
-				return VT.get_TerminalType(&this, pType);
+				return VT.get_TerminalType(ref this, out pType);
 			}
-			public HRESULT get_TerminalClass(BSTR* ppTerminalClass) mut
+			public HRESULT get_TerminalClass(out BSTR ppTerminalClass) mut
 			{
-				return VT.get_TerminalClass(&this, ppTerminalClass);
+				return VT.get_TerminalClass(ref this, out ppTerminalClass);
 			}
-			public HRESULT get_MediaType(int32* plMediaType) mut
+			public HRESULT get_MediaType(out int32 plMediaType) mut
 			{
-				return VT.get_MediaType(&this, plMediaType);
+				return VT.get_MediaType(ref this, out plMediaType);
 			}
-			public HRESULT get_Direction(TERMINAL_DIRECTION* pDirection) mut
+			public HRESULT get_Direction(out TERMINAL_DIRECTION pDirection) mut
 			{
-				return VT.get_Direction(&this, pDirection);
+				return VT.get_Direction(ref this, out pDirection);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITTerminal *self, BSTR* ppName) get_Name;
-				public new function HRESULT(ITTerminal *self, TERMINAL_STATE* pTerminalState) get_State;
-				public new function HRESULT(ITTerminal *self, TERMINAL_TYPE* pType) get_TerminalType;
-				public new function HRESULT(ITTerminal *self, BSTR* ppTerminalClass) get_TerminalClass;
-				public new function HRESULT(ITTerminal *self, int32* plMediaType) get_MediaType;
-				public new function HRESULT(ITTerminal *self, TERMINAL_DIRECTION* pDirection) get_Direction;
+				public new function HRESULT(ref ITTerminal self, out BSTR ppName) get_Name;
+				public new function HRESULT(ref ITTerminal self, out TERMINAL_STATE pTerminalState) get_State;
+				public new function HRESULT(ref ITTerminal self, out TERMINAL_TYPE pType) get_TerminalType;
+				public new function HRESULT(ref ITTerminal self, out BSTR ppTerminalClass) get_TerminalClass;
+				public new function HRESULT(ref ITTerminal self, out int32 plMediaType) get_MediaType;
+				public new function HRESULT(ref ITTerminal self, out TERMINAL_DIRECTION pDirection) get_Direction;
 			}
 		}
 		[CRepr]
@@ -4194,39 +4194,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TrackTerminals(VARIANT* pVariant) mut
+			public HRESULT get_TrackTerminals(out VARIANT pVariant) mut
 			{
-				return VT.get_TrackTerminals(&this, pVariant);
+				return VT.get_TrackTerminals(ref this, out pVariant);
 			}
-			public HRESULT EnumerateTrackTerminals(IEnumTerminal** ppEnumTerminal) mut
+			public HRESULT EnumerateTrackTerminals(out IEnumTerminal* ppEnumTerminal) mut
 			{
-				return VT.EnumerateTrackTerminals(&this, ppEnumTerminal);
+				return VT.EnumerateTrackTerminals(ref this, out ppEnumTerminal);
 			}
-			public HRESULT CreateTrackTerminal(int32 MediaType, TERMINAL_DIRECTION TerminalDirection, ITTerminal** ppTerminal) mut
+			public HRESULT CreateTrackTerminal(int32 MediaType, TERMINAL_DIRECTION TerminalDirection, out ITTerminal* ppTerminal) mut
 			{
-				return VT.CreateTrackTerminal(&this, MediaType, TerminalDirection, ppTerminal);
+				return VT.CreateTrackTerminal(ref this, MediaType, TerminalDirection, out ppTerminal);
 			}
-			public HRESULT get_MediaTypesInUse(int32* plMediaTypesInUse) mut
+			public HRESULT get_MediaTypesInUse(out int32 plMediaTypesInUse) mut
 			{
-				return VT.get_MediaTypesInUse(&this, plMediaTypesInUse);
+				return VT.get_MediaTypesInUse(ref this, out plMediaTypesInUse);
 			}
-			public HRESULT get_DirectionsInUse(TERMINAL_DIRECTION* plDirectionsInUsed) mut
+			public HRESULT get_DirectionsInUse(out TERMINAL_DIRECTION plDirectionsInUsed) mut
 			{
-				return VT.get_DirectionsInUse(&this, plDirectionsInUsed);
+				return VT.get_DirectionsInUse(ref this, out plDirectionsInUsed);
 			}
-			public HRESULT RemoveTrackTerminal(ITTerminal* pTrackTerminalToRemove) mut
+			public HRESULT RemoveTrackTerminal(ref ITTerminal pTrackTerminalToRemove) mut
 			{
-				return VT.RemoveTrackTerminal(&this, pTrackTerminalToRemove);
+				return VT.RemoveTrackTerminal(ref this, ref pTrackTerminalToRemove);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITMultiTrackTerminal *self, VARIANT* pVariant) get_TrackTerminals;
-				public new function HRESULT(ITMultiTrackTerminal *self, IEnumTerminal** ppEnumTerminal) EnumerateTrackTerminals;
-				public new function HRESULT(ITMultiTrackTerminal *self, int32 MediaType, TERMINAL_DIRECTION TerminalDirection, ITTerminal** ppTerminal) CreateTrackTerminal;
-				public new function HRESULT(ITMultiTrackTerminal *self, int32* plMediaTypesInUse) get_MediaTypesInUse;
-				public new function HRESULT(ITMultiTrackTerminal *self, TERMINAL_DIRECTION* plDirectionsInUsed) get_DirectionsInUse;
-				public new function HRESULT(ITMultiTrackTerminal *self, ITTerminal* pTrackTerminalToRemove) RemoveTrackTerminal;
+				public new function HRESULT(ref ITMultiTrackTerminal self, out VARIANT pVariant) get_TrackTerminals;
+				public new function HRESULT(ref ITMultiTrackTerminal self, out IEnumTerminal* ppEnumTerminal) EnumerateTrackTerminals;
+				public new function HRESULT(ref ITMultiTrackTerminal self, int32 MediaType, TERMINAL_DIRECTION TerminalDirection, out ITTerminal* ppTerminal) CreateTrackTerminal;
+				public new function HRESULT(ref ITMultiTrackTerminal self, out int32 plMediaTypesInUse) get_MediaTypesInUse;
+				public new function HRESULT(ref ITMultiTrackTerminal self, out TERMINAL_DIRECTION plDirectionsInUsed) get_DirectionsInUse;
+				public new function HRESULT(ref ITMultiTrackTerminal self, ref ITTerminal pTrackTerminalToRemove) RemoveTrackTerminal;
 			}
 		}
 		[CRepr]
@@ -4236,39 +4236,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Format(AM_MEDIA_TYPE** ppmt) mut
+			public HRESULT get_Format(out AM_MEDIA_TYPE* ppmt) mut
 			{
-				return VT.get_Format(&this, ppmt);
+				return VT.get_Format(ref this, out ppmt);
 			}
-			public HRESULT put_Format(AM_MEDIA_TYPE* pmt) mut
+			public HRESULT put_Format(in AM_MEDIA_TYPE pmt) mut
 			{
-				return VT.put_Format(&this, pmt);
+				return VT.put_Format(ref this, pmt);
 			}
-			public HRESULT get_ControllingTerminal(ITTerminal** ppControllingTerminal) mut
+			public HRESULT get_ControllingTerminal(out ITTerminal* ppControllingTerminal) mut
 			{
-				return VT.get_ControllingTerminal(&this, ppControllingTerminal);
+				return VT.get_ControllingTerminal(ref this, out ppControllingTerminal);
 			}
-			public HRESULT get_AudioFormatForScripting(ITScriptableAudioFormat** ppAudioFormat) mut
+			public HRESULT get_AudioFormatForScripting(out ITScriptableAudioFormat* ppAudioFormat) mut
 			{
-				return VT.get_AudioFormatForScripting(&this, ppAudioFormat);
+				return VT.get_AudioFormatForScripting(ref this, out ppAudioFormat);
 			}
-			public HRESULT put_AudioFormatForScripting(ITScriptableAudioFormat* pAudioFormat) mut
+			public HRESULT put_AudioFormatForScripting(ref ITScriptableAudioFormat pAudioFormat) mut
 			{
-				return VT.put_AudioFormatForScripting(&this, pAudioFormat);
+				return VT.put_AudioFormatForScripting(ref this, ref pAudioFormat);
 			}
-			public HRESULT get_EmptyAudioFormatForScripting(ITScriptableAudioFormat** ppAudioFormat) mut
+			public HRESULT get_EmptyAudioFormatForScripting(out ITScriptableAudioFormat* ppAudioFormat) mut
 			{
-				return VT.get_EmptyAudioFormatForScripting(&this, ppAudioFormat);
+				return VT.get_EmptyAudioFormatForScripting(ref this, out ppAudioFormat);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITFileTrack *self, AM_MEDIA_TYPE** ppmt) get_Format;
-				public new function HRESULT(ITFileTrack *self, AM_MEDIA_TYPE* pmt) put_Format;
-				public new function HRESULT(ITFileTrack *self, ITTerminal** ppControllingTerminal) get_ControllingTerminal;
-				public new function HRESULT(ITFileTrack *self, ITScriptableAudioFormat** ppAudioFormat) get_AudioFormatForScripting;
-				public new function HRESULT(ITFileTrack *self, ITScriptableAudioFormat* pAudioFormat) put_AudioFormatForScripting;
-				public new function HRESULT(ITFileTrack *self, ITScriptableAudioFormat** ppAudioFormat) get_EmptyAudioFormatForScripting;
+				public new function HRESULT(ref ITFileTrack self, out AM_MEDIA_TYPE* ppmt) get_Format;
+				public new function HRESULT(ref ITFileTrack self, in AM_MEDIA_TYPE pmt) put_Format;
+				public new function HRESULT(ref ITFileTrack self, out ITTerminal* ppControllingTerminal) get_ControllingTerminal;
+				public new function HRESULT(ref ITFileTrack self, out ITScriptableAudioFormat* ppAudioFormat) get_AudioFormatForScripting;
+				public new function HRESULT(ref ITFileTrack self, ref ITScriptableAudioFormat pAudioFormat) put_AudioFormatForScripting;
+				public new function HRESULT(ref ITFileTrack self, out ITScriptableAudioFormat* ppAudioFormat) get_EmptyAudioFormatForScripting;
 			}
 		}
 		[CRepr]
@@ -4280,17 +4280,17 @@ namespace Win32
 			
 			public HRESULT put_PlayList(VARIANT PlayListVariant) mut
 			{
-				return VT.put_PlayList(&this, PlayListVariant);
+				return VT.put_PlayList(ref this, PlayListVariant);
 			}
-			public HRESULT get_PlayList(VARIANT* pPlayListVariant) mut
+			public HRESULT get_PlayList(out VARIANT pPlayListVariant) mut
 			{
-				return VT.get_PlayList(&this, pPlayListVariant);
+				return VT.get_PlayList(ref this, out pPlayListVariant);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITMediaPlayback *self, VARIANT PlayListVariant) put_PlayList;
-				public new function HRESULT(ITMediaPlayback *self, VARIANT* pPlayListVariant) get_PlayList;
+				public new function HRESULT(ref ITMediaPlayback self, VARIANT PlayListVariant) put_PlayList;
+				public new function HRESULT(ref ITMediaPlayback self, out VARIANT pPlayListVariant) get_PlayList;
 			}
 		}
 		[CRepr]
@@ -4302,17 +4302,17 @@ namespace Win32
 			
 			public HRESULT put_FileName(BSTR bstrFileName) mut
 			{
-				return VT.put_FileName(&this, bstrFileName);
+				return VT.put_FileName(ref this, bstrFileName);
 			}
-			public HRESULT get_FileName(BSTR* pbstrFileName) mut
+			public HRESULT get_FileName(out BSTR pbstrFileName) mut
 			{
-				return VT.get_FileName(&this, pbstrFileName);
+				return VT.get_FileName(ref this, out pbstrFileName);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITMediaRecord *self, BSTR bstrFileName) put_FileName;
-				public new function HRESULT(ITMediaRecord *self, BSTR* pbstrFileName) get_FileName;
+				public new function HRESULT(ref ITMediaRecord self, BSTR bstrFileName) put_FileName;
+				public new function HRESULT(ref ITMediaRecord self, out BSTR pbstrFileName) get_FileName;
 			}
 		}
 		[CRepr]
@@ -4324,27 +4324,27 @@ namespace Win32
 			
 			public HRESULT Start() mut
 			{
-				return VT.Start(&this);
+				return VT.Start(ref this);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
-			public HRESULT get_MediaState(TERMINAL_MEDIA_STATE* pTerminalMediaState) mut
+			public HRESULT get_MediaState(out TERMINAL_MEDIA_STATE pTerminalMediaState) mut
 			{
-				return VT.get_MediaState(&this, pTerminalMediaState);
+				return VT.get_MediaState(ref this, out pTerminalMediaState);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITMediaControl *self) Start;
-				public new function HRESULT(ITMediaControl *self) Stop;
-				public new function HRESULT(ITMediaControl *self) Pause;
-				public new function HRESULT(ITMediaControl *self, TERMINAL_MEDIA_STATE* pTerminalMediaState) get_MediaState;
+				public new function HRESULT(ref ITMediaControl self) Start;
+				public new function HRESULT(ref ITMediaControl self) Stop;
+				public new function HRESULT(ref ITMediaControl self) Pause;
+				public new function HRESULT(ref ITMediaControl self, out TERMINAL_MEDIA_STATE pTerminalMediaState) get_MediaState;
 			}
 		}
 		[CRepr]
@@ -4356,27 +4356,27 @@ namespace Win32
 			
 			public HRESULT put_Volume(int32 lVolume) mut
 			{
-				return VT.put_Volume(&this, lVolume);
+				return VT.put_Volume(ref this, lVolume);
 			}
-			public HRESULT get_Volume(int32* plVolume) mut
+			public HRESULT get_Volume(out int32 plVolume) mut
 			{
-				return VT.get_Volume(&this, plVolume);
+				return VT.get_Volume(ref this, out plVolume);
 			}
 			public HRESULT put_Balance(int32 lBalance) mut
 			{
-				return VT.put_Balance(&this, lBalance);
+				return VT.put_Balance(ref this, lBalance);
 			}
-			public HRESULT get_Balance(int32* plBalance) mut
+			public HRESULT get_Balance(out int32 plBalance) mut
 			{
-				return VT.get_Balance(&this, plBalance);
+				return VT.get_Balance(ref this, out plBalance);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITBasicAudioTerminal *self, int32 lVolume) put_Volume;
-				public new function HRESULT(ITBasicAudioTerminal *self, int32* plVolume) get_Volume;
-				public new function HRESULT(ITBasicAudioTerminal *self, int32 lBalance) put_Balance;
-				public new function HRESULT(ITBasicAudioTerminal *self, int32* plBalance) get_Balance;
+				public new function HRESULT(ref ITBasicAudioTerminal self, int32 lVolume) put_Volume;
+				public new function HRESULT(ref ITBasicAudioTerminal self, out int32 plVolume) get_Volume;
+				public new function HRESULT(ref ITBasicAudioTerminal self, int32 lBalance) put_Balance;
+				public new function HRESULT(ref ITBasicAudioTerminal self, out int32 plBalance) get_Balance;
 			}
 		}
 		[CRepr]
@@ -4386,14 +4386,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_WaveId(int32* plWaveId) mut
+			public HRESULT get_WaveId(out int32 plWaveId) mut
 			{
-				return VT.get_WaveId(&this, plWaveId);
+				return VT.get_WaveId(ref this, out plWaveId);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITStaticAudioTerminal *self, int32* plWaveId) get_WaveId;
+				public new function HRESULT(ref ITStaticAudioTerminal self, out int32 plWaveId) get_WaveId;
 			}
 		}
 		[CRepr]
@@ -4405,32 +4405,32 @@ namespace Win32
 			
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
-			public HRESULT EnumerateCalls(IEnumCall** ppEnumCall) mut
+			public HRESULT EnumerateCalls(out IEnumCall* ppEnumCall) mut
 			{
-				return VT.EnumerateCalls(&this, ppEnumCall);
+				return VT.EnumerateCalls(ref this, out ppEnumCall);
 			}
-			public HRESULT get_Calls(VARIANT* pCalls) mut
+			public HRESULT get_Calls(out VARIANT pCalls) mut
 			{
-				return VT.get_Calls(&this, pCalls);
+				return VT.get_Calls(ref this, out pCalls);
 			}
-			public HRESULT get_NumCalls(int32* plCalls) mut
+			public HRESULT get_NumCalls(out int32 plCalls) mut
 			{
-				return VT.get_NumCalls(&this, plCalls);
+				return VT.get_NumCalls(ref this, out plCalls);
 			}
-			public HRESULT get_State(CALLHUB_STATE* pState) mut
+			public HRESULT get_State(out CALLHUB_STATE pState) mut
 			{
-				return VT.get_State(&this, pState);
+				return VT.get_State(ref this, out pState);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCallHub *self) Clear;
-				public new function HRESULT(ITCallHub *self, IEnumCall** ppEnumCall) EnumerateCalls;
-				public new function HRESULT(ITCallHub *self, VARIANT* pCalls) get_Calls;
-				public new function HRESULT(ITCallHub *self, int32* plCalls) get_NumCalls;
-				public new function HRESULT(ITCallHub *self, CALLHUB_STATE* pState) get_State;
+				public new function HRESULT(ref ITCallHub self) Clear;
+				public new function HRESULT(ref ITCallHub self, out IEnumCall* ppEnumCall) EnumerateCalls;
+				public new function HRESULT(ref ITCallHub self, out VARIANT pCalls) get_Calls;
+				public new function HRESULT(ref ITCallHub self, out int32 plCalls) get_NumCalls;
+				public new function HRESULT(ref ITCallHub self, out CALLHUB_STATE pState) get_State;
 			}
 		}
 		[CRepr]
@@ -4440,24 +4440,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetID(BSTR pDeviceClass, uint32* pdwSize, uint8** ppDeviceID) mut
+			public HRESULT GetID(BSTR pDeviceClass, out uint32 pdwSize, uint8** ppDeviceID) mut
 			{
-				return VT.GetID(&this, pDeviceClass, pdwSize, ppDeviceID);
+				return VT.GetID(ref this, pDeviceClass, out pdwSize, ppDeviceID);
 			}
-			public HRESULT GetDevConfig(BSTR pDeviceClass, uint32* pdwSize, uint8** ppDeviceConfig) mut
+			public HRESULT GetDevConfig(BSTR pDeviceClass, out uint32 pdwSize, uint8** ppDeviceConfig) mut
 			{
-				return VT.GetDevConfig(&this, pDeviceClass, pdwSize, ppDeviceConfig);
+				return VT.GetDevConfig(ref this, pDeviceClass, out pdwSize, ppDeviceConfig);
 			}
 			public HRESULT SetDevConfig(BSTR pDeviceClass, uint32 dwSize, uint8* pDeviceConfig) mut
 			{
-				return VT.SetDevConfig(&this, pDeviceClass, dwSize, pDeviceConfig);
+				return VT.SetDevConfig(ref this, pDeviceClass, dwSize, pDeviceConfig);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITLegacyAddressMediaControl *self, BSTR pDeviceClass, uint32* pdwSize, uint8** ppDeviceID) GetID;
-				public new function HRESULT(ITLegacyAddressMediaControl *self, BSTR pDeviceClass, uint32* pdwSize, uint8** ppDeviceConfig) GetDevConfig;
-				public new function HRESULT(ITLegacyAddressMediaControl *self, BSTR pDeviceClass, uint32 dwSize, uint8* pDeviceConfig) SetDevConfig;
+				public new function HRESULT(ref ITLegacyAddressMediaControl self, BSTR pDeviceClass, out uint32 pdwSize, uint8** ppDeviceID) GetID;
+				public new function HRESULT(ref ITLegacyAddressMediaControl self, BSTR pDeviceClass, out uint32 pdwSize, uint8** ppDeviceConfig) GetDevConfig;
+				public new function HRESULT(ref ITLegacyAddressMediaControl self, BSTR pDeviceClass, uint32 dwSize, uint8* pDeviceConfig) SetDevConfig;
 			}
 		}
 		[CRepr]
@@ -4467,34 +4467,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Address(ITAddress** ppAddress) mut
+			public HRESULT get_Address(out ITAddress* ppAddress) mut
 			{
-				return VT.get_Address(&this, ppAddress);
+				return VT.get_Address(ref this, out ppAddress);
 			}
-			public HRESULT get_Call(ITCallInfo** ppCallInfo) mut
+			public HRESULT get_Call(out ITCallInfo* ppCallInfo) mut
 			{
-				return VT.get_Call(&this, ppCallInfo);
+				return VT.get_Call(ref this, out ppCallInfo);
 			}
-			public HRESULT get_CallHub(ITCallHub** ppCallHub) mut
+			public HRESULT get_CallHub(out ITCallHub* ppCallHub) mut
 			{
-				return VT.get_CallHub(&this, ppCallHub);
+				return VT.get_CallHub(ref this, out ppCallHub);
 			}
-			public HRESULT get_EventCode(int32* plEventCode) mut
+			public HRESULT get_EventCode(out int32 plEventCode) mut
 			{
-				return VT.get_EventCode(&this, plEventCode);
+				return VT.get_EventCode(ref this, out plEventCode);
 			}
-			public HRESULT get_EventInterface(IDispatch** pEventInterface) mut
+			public HRESULT get_EventInterface(out IDispatch* pEventInterface) mut
 			{
-				return VT.get_EventInterface(&this, pEventInterface);
+				return VT.get_EventInterface(ref this, out pEventInterface);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITPrivateEvent *self, ITAddress** ppAddress) get_Address;
-				public new function HRESULT(ITPrivateEvent *self, ITCallInfo** ppCallInfo) get_Call;
-				public new function HRESULT(ITPrivateEvent *self, ITCallHub** ppCallHub) get_CallHub;
-				public new function HRESULT(ITPrivateEvent *self, int32* plEventCode) get_EventCode;
-				public new function HRESULT(ITPrivateEvent *self, IDispatch** pEventInterface) get_EventInterface;
+				public new function HRESULT(ref ITPrivateEvent self, out ITAddress* ppAddress) get_Address;
+				public new function HRESULT(ref ITPrivateEvent self, out ITCallInfo* ppCallInfo) get_Call;
+				public new function HRESULT(ref ITPrivateEvent self, out ITCallHub* ppCallHub) get_CallHub;
+				public new function HRESULT(ref ITPrivateEvent self, out int32 plEventCode) get_EventCode;
+				public new function HRESULT(ref ITPrivateEvent self, out IDispatch* pEventInterface) get_EventInterface;
 			}
 		}
 		[CRepr]
@@ -4506,17 +4506,17 @@ namespace Win32
 			
 			public HRESULT ConfigDialog(HWND hwndOwner, BSTR pDeviceClass) mut
 			{
-				return VT.ConfigDialog(&this, hwndOwner, pDeviceClass);
+				return VT.ConfigDialog(ref this, hwndOwner, pDeviceClass);
 			}
-			public HRESULT ConfigDialogEdit(HWND hwndOwner, BSTR pDeviceClass, uint32 dwSizeIn, uint8* pDeviceConfigIn, uint32* pdwSizeOut, uint8** ppDeviceConfigOut) mut
+			public HRESULT ConfigDialogEdit(HWND hwndOwner, BSTR pDeviceClass, uint32 dwSizeIn, uint8* pDeviceConfigIn, out uint32 pdwSizeOut, uint8** ppDeviceConfigOut) mut
 			{
-				return VT.ConfigDialogEdit(&this, hwndOwner, pDeviceClass, dwSizeIn, pDeviceConfigIn, pdwSizeOut, ppDeviceConfigOut);
+				return VT.ConfigDialogEdit(ref this, hwndOwner, pDeviceClass, dwSizeIn, pDeviceConfigIn, out pdwSizeOut, ppDeviceConfigOut);
 			}
 			[CRepr]
 			public struct VTable : ITLegacyAddressMediaControl.VTable
 			{
-				public new function HRESULT(ITLegacyAddressMediaControl2 *self, HWND hwndOwner, BSTR pDeviceClass) ConfigDialog;
-				public new function HRESULT(ITLegacyAddressMediaControl2 *self, HWND hwndOwner, BSTR pDeviceClass, uint32 dwSizeIn, uint8* pDeviceConfigIn, uint32* pdwSizeOut, uint8** ppDeviceConfigOut) ConfigDialogEdit;
+				public new function HRESULT(ref ITLegacyAddressMediaControl2 self, HWND hwndOwner, BSTR pDeviceClass) ConfigDialog;
+				public new function HRESULT(ref ITLegacyAddressMediaControl2 self, HWND hwndOwner, BSTR pDeviceClass, uint32 dwSizeIn, uint8* pDeviceConfigIn, out uint32 pdwSizeOut, uint8** ppDeviceConfigOut) ConfigDialogEdit;
 			}
 		}
 		[CRepr]
@@ -4528,32 +4528,32 @@ namespace Win32
 			
 			public HRESULT DetectDigits(int32 DigitMode) mut
 			{
-				return VT.DetectDigits(&this, DigitMode);
+				return VT.DetectDigits(ref this, DigitMode);
 			}
 			public HRESULT GenerateDigits(BSTR pDigits, int32 DigitMode) mut
 			{
-				return VT.GenerateDigits(&this, pDigits, DigitMode);
+				return VT.GenerateDigits(ref this, pDigits, DigitMode);
 			}
-			public HRESULT GetID(BSTR pDeviceClass, uint32* pdwSize, uint8** ppDeviceID) mut
+			public HRESULT GetID(BSTR pDeviceClass, out uint32 pdwSize, uint8** ppDeviceID) mut
 			{
-				return VT.GetID(&this, pDeviceClass, pdwSize, ppDeviceID);
+				return VT.GetID(ref this, pDeviceClass, out pdwSize, ppDeviceID);
 			}
 			public HRESULT SetMediaType(int32 lMediaType) mut
 			{
-				return VT.SetMediaType(&this, lMediaType);
+				return VT.SetMediaType(ref this, lMediaType);
 			}
 			public HRESULT MonitorMedia(int32 lMediaType) mut
 			{
-				return VT.MonitorMedia(&this, lMediaType);
+				return VT.MonitorMedia(ref this, lMediaType);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITLegacyCallMediaControl *self, int32 DigitMode) DetectDigits;
-				public new function HRESULT(ITLegacyCallMediaControl *self, BSTR pDigits, int32 DigitMode) GenerateDigits;
-				public new function HRESULT(ITLegacyCallMediaControl *self, BSTR pDeviceClass, uint32* pdwSize, uint8** ppDeviceID) GetID;
-				public new function HRESULT(ITLegacyCallMediaControl *self, int32 lMediaType) SetMediaType;
-				public new function HRESULT(ITLegacyCallMediaControl *self, int32 lMediaType) MonitorMedia;
+				public new function HRESULT(ref ITLegacyCallMediaControl self, int32 DigitMode) DetectDigits;
+				public new function HRESULT(ref ITLegacyCallMediaControl self, BSTR pDigits, int32 DigitMode) GenerateDigits;
+				public new function HRESULT(ref ITLegacyCallMediaControl self, BSTR pDeviceClass, out uint32 pdwSize, uint8** ppDeviceID) GetID;
+				public new function HRESULT(ref ITLegacyCallMediaControl self, int32 lMediaType) SetMediaType;
+				public new function HRESULT(ref ITLegacyCallMediaControl self, int32 lMediaType) MonitorMedia;
 			}
 		}
 		[CRepr]
@@ -4565,57 +4565,57 @@ namespace Win32
 			
 			public HRESULT GenerateDigits2(BSTR pDigits, int32 DigitMode, int32 lDuration) mut
 			{
-				return VT.GenerateDigits2(&this, pDigits, DigitMode, lDuration);
+				return VT.GenerateDigits2(ref this, pDigits, DigitMode, lDuration);
 			}
 			public HRESULT GatherDigits(int32 DigitMode, int32 lNumDigits, BSTR pTerminationDigits, int32 lFirstDigitTimeout, int32 lInterDigitTimeout) mut
 			{
-				return VT.GatherDigits(&this, DigitMode, lNumDigits, pTerminationDigits, lFirstDigitTimeout, lInterDigitTimeout);
+				return VT.GatherDigits(ref this, DigitMode, lNumDigits, pTerminationDigits, lFirstDigitTimeout, lInterDigitTimeout);
 			}
-			public HRESULT DetectTones(TAPI_DETECTTONE* pToneList, int32 lNumTones) mut
+			public HRESULT DetectTones(ref TAPI_DETECTTONE pToneList, int32 lNumTones) mut
 			{
-				return VT.DetectTones(&this, pToneList, lNumTones);
+				return VT.DetectTones(ref this, ref pToneList, lNumTones);
 			}
-			public HRESULT DetectTonesByCollection(ITCollection2* pDetectToneCollection) mut
+			public HRESULT DetectTonesByCollection(ref ITCollection2 pDetectToneCollection) mut
 			{
-				return VT.DetectTonesByCollection(&this, pDetectToneCollection);
+				return VT.DetectTonesByCollection(ref this, ref pDetectToneCollection);
 			}
 			public HRESULT GenerateTone(TAPI_TONEMODE ToneMode, int32 lDuration) mut
 			{
-				return VT.GenerateTone(&this, ToneMode, lDuration);
+				return VT.GenerateTone(ref this, ToneMode, lDuration);
 			}
-			public HRESULT GenerateCustomTones(TAPI_CUSTOMTONE* pToneList, int32 lNumTones, int32 lDuration) mut
+			public HRESULT GenerateCustomTones(ref TAPI_CUSTOMTONE pToneList, int32 lNumTones, int32 lDuration) mut
 			{
-				return VT.GenerateCustomTones(&this, pToneList, lNumTones, lDuration);
+				return VT.GenerateCustomTones(ref this, ref pToneList, lNumTones, lDuration);
 			}
-			public HRESULT GenerateCustomTonesByCollection(ITCollection2* pCustomToneCollection, int32 lDuration) mut
+			public HRESULT GenerateCustomTonesByCollection(ref ITCollection2 pCustomToneCollection, int32 lDuration) mut
 			{
-				return VT.GenerateCustomTonesByCollection(&this, pCustomToneCollection, lDuration);
+				return VT.GenerateCustomTonesByCollection(ref this, ref pCustomToneCollection, lDuration);
 			}
-			public HRESULT CreateDetectToneObject(ITDetectTone** ppDetectTone) mut
+			public HRESULT CreateDetectToneObject(out ITDetectTone* ppDetectTone) mut
 			{
-				return VT.CreateDetectToneObject(&this, ppDetectTone);
+				return VT.CreateDetectToneObject(ref this, out ppDetectTone);
 			}
-			public HRESULT CreateCustomToneObject(ITCustomTone** ppCustomTone) mut
+			public HRESULT CreateCustomToneObject(out ITCustomTone* ppCustomTone) mut
 			{
-				return VT.CreateCustomToneObject(&this, ppCustomTone);
+				return VT.CreateCustomToneObject(ref this, out ppCustomTone);
 			}
-			public HRESULT GetIDAsVariant(BSTR bstrDeviceClass, VARIANT* pVarDeviceID) mut
+			public HRESULT GetIDAsVariant(BSTR bstrDeviceClass, out VARIANT pVarDeviceID) mut
 			{
-				return VT.GetIDAsVariant(&this, bstrDeviceClass, pVarDeviceID);
+				return VT.GetIDAsVariant(ref this, bstrDeviceClass, out pVarDeviceID);
 			}
 			[CRepr]
 			public struct VTable : ITLegacyCallMediaControl.VTable
 			{
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, BSTR pDigits, int32 DigitMode, int32 lDuration) GenerateDigits2;
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, int32 DigitMode, int32 lNumDigits, BSTR pTerminationDigits, int32 lFirstDigitTimeout, int32 lInterDigitTimeout) GatherDigits;
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, TAPI_DETECTTONE* pToneList, int32 lNumTones) DetectTones;
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, ITCollection2* pDetectToneCollection) DetectTonesByCollection;
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, TAPI_TONEMODE ToneMode, int32 lDuration) GenerateTone;
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, TAPI_CUSTOMTONE* pToneList, int32 lNumTones, int32 lDuration) GenerateCustomTones;
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, ITCollection2* pCustomToneCollection, int32 lDuration) GenerateCustomTonesByCollection;
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, ITDetectTone** ppDetectTone) CreateDetectToneObject;
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, ITCustomTone** ppCustomTone) CreateCustomToneObject;
-				public new function HRESULT(ITLegacyCallMediaControl2 *self, BSTR bstrDeviceClass, VARIANT* pVarDeviceID) GetIDAsVariant;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, BSTR pDigits, int32 DigitMode, int32 lDuration) GenerateDigits2;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, int32 DigitMode, int32 lNumDigits, BSTR pTerminationDigits, int32 lFirstDigitTimeout, int32 lInterDigitTimeout) GatherDigits;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, ref TAPI_DETECTTONE pToneList, int32 lNumTones) DetectTones;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, ref ITCollection2 pDetectToneCollection) DetectTonesByCollection;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, TAPI_TONEMODE ToneMode, int32 lDuration) GenerateTone;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, ref TAPI_CUSTOMTONE pToneList, int32 lNumTones, int32 lDuration) GenerateCustomTones;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, ref ITCollection2 pCustomToneCollection, int32 lDuration) GenerateCustomTonesByCollection;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, out ITDetectTone* ppDetectTone) CreateDetectToneObject;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, out ITCustomTone* ppCustomTone) CreateCustomToneObject;
+				public new function HRESULT(ref ITLegacyCallMediaControl2 self, BSTR bstrDeviceClass, out VARIANT pVarDeviceID) GetIDAsVariant;
 			}
 		}
 		[CRepr]
@@ -4625,39 +4625,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AppSpecific(int32* plAppSpecific) mut
+			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut
 			{
-				return VT.get_AppSpecific(&this, plAppSpecific);
+				return VT.get_AppSpecific(ref this, out plAppSpecific);
 			}
 			public HRESULT put_AppSpecific(int32 lAppSpecific) mut
 			{
-				return VT.put_AppSpecific(&this, lAppSpecific);
+				return VT.put_AppSpecific(ref this, lAppSpecific);
 			}
-			public HRESULT get_Duration(int32* plDuration) mut
+			public HRESULT get_Duration(out int32 plDuration) mut
 			{
-				return VT.get_Duration(&this, plDuration);
+				return VT.get_Duration(ref this, out plDuration);
 			}
 			public HRESULT put_Duration(int32 lDuration) mut
 			{
-				return VT.put_Duration(&this, lDuration);
+				return VT.put_Duration(ref this, lDuration);
 			}
-			public HRESULT get_Frequency(int32 Index, int32* plFrequency) mut
+			public HRESULT get_Frequency(int32 Index, out int32 plFrequency) mut
 			{
-				return VT.get_Frequency(&this, Index, plFrequency);
+				return VT.get_Frequency(ref this, Index, out plFrequency);
 			}
 			public HRESULT put_Frequency(int32 Index, int32 lFrequency) mut
 			{
-				return VT.put_Frequency(&this, Index, lFrequency);
+				return VT.put_Frequency(ref this, Index, lFrequency);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITDetectTone *self, int32* plAppSpecific) get_AppSpecific;
-				public new function HRESULT(ITDetectTone *self, int32 lAppSpecific) put_AppSpecific;
-				public new function HRESULT(ITDetectTone *self, int32* plDuration) get_Duration;
-				public new function HRESULT(ITDetectTone *self, int32 lDuration) put_Duration;
-				public new function HRESULT(ITDetectTone *self, int32 Index, int32* plFrequency) get_Frequency;
-				public new function HRESULT(ITDetectTone *self, int32 Index, int32 lFrequency) put_Frequency;
+				public new function HRESULT(ref ITDetectTone self, out int32 plAppSpecific) get_AppSpecific;
+				public new function HRESULT(ref ITDetectTone self, int32 lAppSpecific) put_AppSpecific;
+				public new function HRESULT(ref ITDetectTone self, out int32 plDuration) get_Duration;
+				public new function HRESULT(ref ITDetectTone self, int32 lDuration) put_Duration;
+				public new function HRESULT(ref ITDetectTone self, int32 Index, out int32 plFrequency) get_Frequency;
+				public new function HRESULT(ref ITDetectTone self, int32 Index, int32 lFrequency) put_Frequency;
 			}
 		}
 		[CRepr]
@@ -4667,49 +4667,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Frequency(int32* plFrequency) mut
+			public HRESULT get_Frequency(out int32 plFrequency) mut
 			{
-				return VT.get_Frequency(&this, plFrequency);
+				return VT.get_Frequency(ref this, out plFrequency);
 			}
 			public HRESULT put_Frequency(int32 lFrequency) mut
 			{
-				return VT.put_Frequency(&this, lFrequency);
+				return VT.put_Frequency(ref this, lFrequency);
 			}
-			public HRESULT get_CadenceOn(int32* plCadenceOn) mut
+			public HRESULT get_CadenceOn(out int32 plCadenceOn) mut
 			{
-				return VT.get_CadenceOn(&this, plCadenceOn);
+				return VT.get_CadenceOn(ref this, out plCadenceOn);
 			}
 			public HRESULT put_CadenceOn(int32 CadenceOn) mut
 			{
-				return VT.put_CadenceOn(&this, CadenceOn);
+				return VT.put_CadenceOn(ref this, CadenceOn);
 			}
-			public HRESULT get_CadenceOff(int32* plCadenceOff) mut
+			public HRESULT get_CadenceOff(out int32 plCadenceOff) mut
 			{
-				return VT.get_CadenceOff(&this, plCadenceOff);
+				return VT.get_CadenceOff(ref this, out plCadenceOff);
 			}
 			public HRESULT put_CadenceOff(int32 lCadenceOff) mut
 			{
-				return VT.put_CadenceOff(&this, lCadenceOff);
+				return VT.put_CadenceOff(ref this, lCadenceOff);
 			}
-			public HRESULT get_Volume(int32* plVolume) mut
+			public HRESULT get_Volume(out int32 plVolume) mut
 			{
-				return VT.get_Volume(&this, plVolume);
+				return VT.get_Volume(ref this, out plVolume);
 			}
 			public HRESULT put_Volume(int32 lVolume) mut
 			{
-				return VT.put_Volume(&this, lVolume);
+				return VT.put_Volume(ref this, lVolume);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCustomTone *self, int32* plFrequency) get_Frequency;
-				public new function HRESULT(ITCustomTone *self, int32 lFrequency) put_Frequency;
-				public new function HRESULT(ITCustomTone *self, int32* plCadenceOn) get_CadenceOn;
-				public new function HRESULT(ITCustomTone *self, int32 CadenceOn) put_CadenceOn;
-				public new function HRESULT(ITCustomTone *self, int32* plCadenceOff) get_CadenceOff;
-				public new function HRESULT(ITCustomTone *self, int32 lCadenceOff) put_CadenceOff;
-				public new function HRESULT(ITCustomTone *self, int32* plVolume) get_Volume;
-				public new function HRESULT(ITCustomTone *self, int32 lVolume) put_Volume;
+				public new function HRESULT(ref ITCustomTone self, out int32 plFrequency) get_Frequency;
+				public new function HRESULT(ref ITCustomTone self, int32 lFrequency) put_Frequency;
+				public new function HRESULT(ref ITCustomTone self, out int32 plCadenceOn) get_CadenceOn;
+				public new function HRESULT(ref ITCustomTone self, int32 CadenceOn) put_CadenceOn;
+				public new function HRESULT(ref ITCustomTone self, out int32 plCadenceOff) get_CadenceOff;
+				public new function HRESULT(ref ITCustomTone self, int32 lCadenceOff) put_CadenceOff;
+				public new function HRESULT(ref ITCustomTone self, out int32 plVolume) get_Volume;
+				public new function HRESULT(ref ITCustomTone self, int32 lVolume) put_Volume;
 			}
 		}
 		[CRepr]
@@ -4721,27 +4721,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, ITPhone** ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumPhone** ppEnum) mut
+			public HRESULT Clone(out IEnumPhone* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumPhone *self, uint32 celt, ITPhone** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumPhone *self) Reset;
-				public new function HRESULT(IEnumPhone *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumPhone *self, IEnumPhone** ppEnum) Clone;
+				public new function HRESULT(ref IEnumPhone self, uint32 celt, ITPhone** ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumPhone self) Reset;
+				public new function HRESULT(ref IEnumPhone self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumPhone self, out IEnumPhone* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4751,29 +4751,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITTerminal** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out ITTerminal* ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, out ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumTerminal** ppEnum) mut
+			public HRESULT Clone(out IEnumTerminal* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumTerminal *self, uint32 celt, ITTerminal** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumTerminal *self) Reset;
-				public new function HRESULT(IEnumTerminal *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumTerminal *self, IEnumTerminal** ppEnum) Clone;
+				public new function HRESULT(ref IEnumTerminal self, uint32 celt, out ITTerminal* ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumTerminal self) Reset;
+				public new function HRESULT(ref IEnumTerminal self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumTerminal self, out IEnumTerminal* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4785,27 +4785,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, Guid* pElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, pElements, pceltFetched);
+				return VT.Next(ref this, celt, pElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumTerminalClass** ppEnum) mut
+			public HRESULT Clone(out IEnumTerminalClass* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumTerminalClass *self, uint32 celt, Guid* pElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumTerminalClass *self) Reset;
-				public new function HRESULT(IEnumTerminalClass *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumTerminalClass *self, IEnumTerminalClass** ppEnum) Clone;
+				public new function HRESULT(ref IEnumTerminalClass self, uint32 celt, Guid* pElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumTerminalClass self) Reset;
+				public new function HRESULT(ref IEnumTerminalClass self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumTerminalClass self, out IEnumTerminalClass* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4815,29 +4815,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITCallInfo** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out ITCallInfo* ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, out ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumCall** ppEnum) mut
+			public HRESULT Clone(out IEnumCall* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumCall *self, uint32 celt, ITCallInfo** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumCall *self) Reset;
-				public new function HRESULT(IEnumCall *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumCall *self, IEnumCall** ppEnum) Clone;
+				public new function HRESULT(ref IEnumCall self, uint32 celt, out ITCallInfo* ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumCall self) Reset;
+				public new function HRESULT(ref IEnumCall self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumCall self, out IEnumCall* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4849,27 +4849,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, ITAddress** ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumAddress** ppEnum) mut
+			public HRESULT Clone(out IEnumAddress* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumAddress *self, uint32 celt, ITAddress** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumAddress *self) Reset;
-				public new function HRESULT(IEnumAddress *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumAddress *self, IEnumAddress** ppEnum) Clone;
+				public new function HRESULT(ref IEnumAddress self, uint32 celt, ITAddress** ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumAddress self) Reset;
+				public new function HRESULT(ref IEnumAddress self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumAddress self, out IEnumAddress* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4881,27 +4881,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, ITCallHub** ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumCallHub** ppEnum) mut
+			public HRESULT Clone(out IEnumCallHub* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumCallHub *self, uint32 celt, ITCallHub** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumCallHub *self) Reset;
-				public new function HRESULT(IEnumCallHub *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumCallHub *self, IEnumCallHub** ppEnum) Clone;
+				public new function HRESULT(ref IEnumCallHub self, uint32 celt, ITCallHub** ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumCallHub self) Reset;
+				public new function HRESULT(ref IEnumCallHub self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumCallHub self, out IEnumCallHub* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4913,27 +4913,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, BSTR* ppStrings, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppStrings, pceltFetched);
+				return VT.Next(ref this, celt, ppStrings, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumBstr** ppEnum) mut
+			public HRESULT Clone(out IEnumBstr* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumBstr *self, uint32 celt, BSTR* ppStrings, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumBstr *self) Reset;
-				public new function HRESULT(IEnumBstr *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumBstr *self, IEnumBstr** ppEnum) Clone;
+				public new function HRESULT(ref IEnumBstr self, uint32 celt, BSTR* ppStrings, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumBstr self) Reset;
+				public new function HRESULT(ref IEnumBstr self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumBstr self, out IEnumBstr* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4945,27 +4945,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, ITPluggableTerminalClassInfo** ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumPluggableTerminalClassInfo** ppEnum) mut
+			public HRESULT Clone(out IEnumPluggableTerminalClassInfo* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumPluggableTerminalClassInfo *self, uint32 celt, ITPluggableTerminalClassInfo** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumPluggableTerminalClassInfo *self) Reset;
-				public new function HRESULT(IEnumPluggableTerminalClassInfo *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumPluggableTerminalClassInfo *self, IEnumPluggableTerminalClassInfo** ppEnum) Clone;
+				public new function HRESULT(ref IEnumPluggableTerminalClassInfo self, uint32 celt, ITPluggableTerminalClassInfo** ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumPluggableTerminalClassInfo self) Reset;
+				public new function HRESULT(ref IEnumPluggableTerminalClassInfo self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumPluggableTerminalClassInfo self, out IEnumPluggableTerminalClassInfo* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -4977,27 +4977,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, ITPluggableTerminalSuperclassInfo** ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumPluggableSuperclassInfo** ppEnum) mut
+			public HRESULT Clone(out IEnumPluggableSuperclassInfo* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumPluggableSuperclassInfo *self, uint32 celt, ITPluggableTerminalSuperclassInfo** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumPluggableSuperclassInfo *self) Reset;
-				public new function HRESULT(IEnumPluggableSuperclassInfo *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumPluggableSuperclassInfo *self, IEnumPluggableSuperclassInfo** ppEnum) Clone;
+				public new function HRESULT(ref IEnumPluggableSuperclassInfo self, uint32 celt, ITPluggableTerminalSuperclassInfo** ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumPluggableSuperclassInfo self) Reset;
+				public new function HRESULT(ref IEnumPluggableSuperclassInfo self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumPluggableSuperclassInfo self, out IEnumPluggableSuperclassInfo* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -5007,54 +5007,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Phone(ITPhone** ppPhone) mut
+			public HRESULT get_Phone(out ITPhone* ppPhone) mut
 			{
-				return VT.get_Phone(&this, ppPhone);
+				return VT.get_Phone(ref this, out ppPhone);
 			}
-			public HRESULT get_Event(PHONE_EVENT* pEvent) mut
+			public HRESULT get_Event(out PHONE_EVENT pEvent) mut
 			{
-				return VT.get_Event(&this, pEvent);
+				return VT.get_Event(ref this, out pEvent);
 			}
-			public HRESULT get_ButtonState(PHONE_BUTTON_STATE* pState) mut
+			public HRESULT get_ButtonState(out PHONE_BUTTON_STATE pState) mut
 			{
-				return VT.get_ButtonState(&this, pState);
+				return VT.get_ButtonState(ref this, out pState);
 			}
-			public HRESULT get_HookSwitchState(PHONE_HOOK_SWITCH_STATE* pState) mut
+			public HRESULT get_HookSwitchState(out PHONE_HOOK_SWITCH_STATE pState) mut
 			{
-				return VT.get_HookSwitchState(&this, pState);
+				return VT.get_HookSwitchState(ref this, out pState);
 			}
-			public HRESULT get_HookSwitchDevice(PHONE_HOOK_SWITCH_DEVICE* pDevice) mut
+			public HRESULT get_HookSwitchDevice(out PHONE_HOOK_SWITCH_DEVICE pDevice) mut
 			{
-				return VT.get_HookSwitchDevice(&this, pDevice);
+				return VT.get_HookSwitchDevice(ref this, out pDevice);
 			}
-			public HRESULT get_RingMode(int32* plRingMode) mut
+			public HRESULT get_RingMode(out int32 plRingMode) mut
 			{
-				return VT.get_RingMode(&this, plRingMode);
+				return VT.get_RingMode(ref this, out plRingMode);
 			}
-			public HRESULT get_ButtonLampId(int32* plButtonLampId) mut
+			public HRESULT get_ButtonLampId(out int32 plButtonLampId) mut
 			{
-				return VT.get_ButtonLampId(&this, plButtonLampId);
+				return VT.get_ButtonLampId(ref this, out plButtonLampId);
 			}
-			public HRESULT get_NumberGathered(BSTR* ppNumber) mut
+			public HRESULT get_NumberGathered(out BSTR ppNumber) mut
 			{
-				return VT.get_NumberGathered(&this, ppNumber);
+				return VT.get_NumberGathered(ref this, out ppNumber);
 			}
-			public HRESULT get_Call(ITCallInfo** ppCallInfo) mut
+			public HRESULT get_Call(out ITCallInfo* ppCallInfo) mut
 			{
-				return VT.get_Call(&this, ppCallInfo);
+				return VT.get_Call(ref this, out ppCallInfo);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITPhoneEvent *self, ITPhone** ppPhone) get_Phone;
-				public new function HRESULT(ITPhoneEvent *self, PHONE_EVENT* pEvent) get_Event;
-				public new function HRESULT(ITPhoneEvent *self, PHONE_BUTTON_STATE* pState) get_ButtonState;
-				public new function HRESULT(ITPhoneEvent *self, PHONE_HOOK_SWITCH_STATE* pState) get_HookSwitchState;
-				public new function HRESULT(ITPhoneEvent *self, PHONE_HOOK_SWITCH_DEVICE* pDevice) get_HookSwitchDevice;
-				public new function HRESULT(ITPhoneEvent *self, int32* plRingMode) get_RingMode;
-				public new function HRESULT(ITPhoneEvent *self, int32* plButtonLampId) get_ButtonLampId;
-				public new function HRESULT(ITPhoneEvent *self, BSTR* ppNumber) get_NumberGathered;
-				public new function HRESULT(ITPhoneEvent *self, ITCallInfo** ppCallInfo) get_Call;
+				public new function HRESULT(ref ITPhoneEvent self, out ITPhone* ppPhone) get_Phone;
+				public new function HRESULT(ref ITPhoneEvent self, out PHONE_EVENT pEvent) get_Event;
+				public new function HRESULT(ref ITPhoneEvent self, out PHONE_BUTTON_STATE pState) get_ButtonState;
+				public new function HRESULT(ref ITPhoneEvent self, out PHONE_HOOK_SWITCH_STATE pState) get_HookSwitchState;
+				public new function HRESULT(ref ITPhoneEvent self, out PHONE_HOOK_SWITCH_DEVICE pDevice) get_HookSwitchDevice;
+				public new function HRESULT(ref ITPhoneEvent self, out int32 plRingMode) get_RingMode;
+				public new function HRESULT(ref ITPhoneEvent self, out int32 plButtonLampId) get_ButtonLampId;
+				public new function HRESULT(ref ITPhoneEvent self, out BSTR ppNumber) get_NumberGathered;
+				public new function HRESULT(ref ITPhoneEvent self, out ITCallInfo* ppCallInfo) get_Call;
 			}
 		}
 		[CRepr]
@@ -5064,29 +5064,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Call(ITCallInfo** ppCallInfo) mut
+			public HRESULT get_Call(out ITCallInfo* ppCallInfo) mut
 			{
-				return VT.get_Call(&this, ppCallInfo);
+				return VT.get_Call(ref this, out ppCallInfo);
 			}
-			public HRESULT get_State(CALL_STATE* pCallState) mut
+			public HRESULT get_State(out CALL_STATE pCallState) mut
 			{
-				return VT.get_State(&this, pCallState);
+				return VT.get_State(ref this, out pCallState);
 			}
-			public HRESULT get_Cause(CALL_STATE_EVENT_CAUSE* pCEC) mut
+			public HRESULT get_Cause(out CALL_STATE_EVENT_CAUSE pCEC) mut
 			{
-				return VT.get_Cause(&this, pCEC);
+				return VT.get_Cause(ref this, out pCEC);
 			}
-			public HRESULT get_CallbackInstance(int32* plCallbackInstance) mut
+			public HRESULT get_CallbackInstance(out int32 plCallbackInstance) mut
 			{
-				return VT.get_CallbackInstance(&this, plCallbackInstance);
+				return VT.get_CallbackInstance(ref this, out plCallbackInstance);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCallStateEvent *self, ITCallInfo** ppCallInfo) get_Call;
-				public new function HRESULT(ITCallStateEvent *self, CALL_STATE* pCallState) get_State;
-				public new function HRESULT(ITCallStateEvent *self, CALL_STATE_EVENT_CAUSE* pCEC) get_Cause;
-				public new function HRESULT(ITCallStateEvent *self, int32* plCallbackInstance) get_CallbackInstance;
+				public new function HRESULT(ref ITCallStateEvent self, out ITCallInfo* ppCallInfo) get_Call;
+				public new function HRESULT(ref ITCallStateEvent self, out CALL_STATE pCallState) get_State;
+				public new function HRESULT(ref ITCallStateEvent self, out CALL_STATE_EVENT_CAUSE pCEC) get_Cause;
+				public new function HRESULT(ref ITCallStateEvent self, out int32 plCallbackInstance) get_CallbackInstance;
 			}
 		}
 		[CRepr]
@@ -5096,29 +5096,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Phone(ITPhone** ppPhone) mut
+			public HRESULT get_Phone(out ITPhone* ppPhone) mut
 			{
-				return VT.get_Phone(&this, ppPhone);
+				return VT.get_Phone(ref this, out ppPhone);
 			}
-			public HRESULT get_lParam1(int32* pParam1) mut
+			public HRESULT get_lParam1(out int32 pParam1) mut
 			{
-				return VT.get_lParam1(&this, pParam1);
+				return VT.get_lParam1(ref this, out pParam1);
 			}
-			public HRESULT get_lParam2(int32* pParam2) mut
+			public HRESULT get_lParam2(out int32 pParam2) mut
 			{
-				return VT.get_lParam2(&this, pParam2);
+				return VT.get_lParam2(ref this, out pParam2);
 			}
-			public HRESULT get_lParam3(int32* pParam3) mut
+			public HRESULT get_lParam3(out int32 pParam3) mut
 			{
-				return VT.get_lParam3(&this, pParam3);
+				return VT.get_lParam3(ref this, out pParam3);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITPhoneDeviceSpecificEvent *self, ITPhone** ppPhone) get_Phone;
-				public new function HRESULT(ITPhoneDeviceSpecificEvent *self, int32* pParam1) get_lParam1;
-				public new function HRESULT(ITPhoneDeviceSpecificEvent *self, int32* pParam2) get_lParam2;
-				public new function HRESULT(ITPhoneDeviceSpecificEvent *self, int32* pParam3) get_lParam3;
+				public new function HRESULT(ref ITPhoneDeviceSpecificEvent self, out ITPhone* ppPhone) get_Phone;
+				public new function HRESULT(ref ITPhoneDeviceSpecificEvent self, out int32 pParam1) get_lParam1;
+				public new function HRESULT(ref ITPhoneDeviceSpecificEvent self, out int32 pParam2) get_lParam2;
+				public new function HRESULT(ref ITPhoneDeviceSpecificEvent self, out int32 pParam3) get_lParam3;
 			}
 		}
 		[CRepr]
@@ -5128,39 +5128,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Call(ITCallInfo** ppCallInfo) mut
+			public HRESULT get_Call(out ITCallInfo* ppCallInfo) mut
 			{
-				return VT.get_Call(&this, ppCallInfo);
+				return VT.get_Call(ref this, out ppCallInfo);
 			}
-			public HRESULT get_Event(CALL_MEDIA_EVENT* pCallMediaEvent) mut
+			public HRESULT get_Event(out CALL_MEDIA_EVENT pCallMediaEvent) mut
 			{
-				return VT.get_Event(&this, pCallMediaEvent);
+				return VT.get_Event(ref this, out pCallMediaEvent);
 			}
-			public HRESULT get_Error(HRESULT* phrError) mut
+			public HRESULT get_Error(out HRESULT phrError) mut
 			{
-				return VT.get_Error(&this, phrError);
+				return VT.get_Error(ref this, out phrError);
 			}
-			public HRESULT get_Terminal(ITTerminal** ppTerminal) mut
+			public HRESULT get_Terminal(out ITTerminal* ppTerminal) mut
 			{
-				return VT.get_Terminal(&this, ppTerminal);
+				return VT.get_Terminal(ref this, out ppTerminal);
 			}
-			public HRESULT get_Stream(ITStream** ppStream) mut
+			public HRESULT get_Stream(out ITStream* ppStream) mut
 			{
-				return VT.get_Stream(&this, ppStream);
+				return VT.get_Stream(ref this, out ppStream);
 			}
-			public HRESULT get_Cause(CALL_MEDIA_EVENT_CAUSE* pCause) mut
+			public HRESULT get_Cause(out CALL_MEDIA_EVENT_CAUSE pCause) mut
 			{
-				return VT.get_Cause(&this, pCause);
+				return VT.get_Cause(ref this, out pCause);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCallMediaEvent *self, ITCallInfo** ppCallInfo) get_Call;
-				public new function HRESULT(ITCallMediaEvent *self, CALL_MEDIA_EVENT* pCallMediaEvent) get_Event;
-				public new function HRESULT(ITCallMediaEvent *self, HRESULT* phrError) get_Error;
-				public new function HRESULT(ITCallMediaEvent *self, ITTerminal** ppTerminal) get_Terminal;
-				public new function HRESULT(ITCallMediaEvent *self, ITStream** ppStream) get_Stream;
-				public new function HRESULT(ITCallMediaEvent *self, CALL_MEDIA_EVENT_CAUSE* pCause) get_Cause;
+				public new function HRESULT(ref ITCallMediaEvent self, out ITCallInfo* ppCallInfo) get_Call;
+				public new function HRESULT(ref ITCallMediaEvent self, out CALL_MEDIA_EVENT pCallMediaEvent) get_Event;
+				public new function HRESULT(ref ITCallMediaEvent self, out HRESULT phrError) get_Error;
+				public new function HRESULT(ref ITCallMediaEvent self, out ITTerminal* ppTerminal) get_Terminal;
+				public new function HRESULT(ref ITCallMediaEvent self, out ITStream* ppStream) get_Stream;
+				public new function HRESULT(ref ITCallMediaEvent self, out CALL_MEDIA_EVENT_CAUSE pCause) get_Cause;
 			}
 		}
 		[CRepr]
@@ -5170,34 +5170,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Call(ITCallInfo** ppCallInfo) mut
+			public HRESULT get_Call(out ITCallInfo* ppCallInfo) mut
 			{
-				return VT.get_Call(&this, ppCallInfo);
+				return VT.get_Call(ref this, out ppCallInfo);
 			}
-			public HRESULT get_Digit(uint8* pucDigit) mut
+			public HRESULT get_Digit(out uint8 pucDigit) mut
 			{
-				return VT.get_Digit(&this, pucDigit);
+				return VT.get_Digit(ref this, out pucDigit);
 			}
-			public HRESULT get_DigitMode(int32* pDigitMode) mut
+			public HRESULT get_DigitMode(out int32 pDigitMode) mut
 			{
-				return VT.get_DigitMode(&this, pDigitMode);
+				return VT.get_DigitMode(ref this, out pDigitMode);
 			}
-			public HRESULT get_TickCount(int32* plTickCount) mut
+			public HRESULT get_TickCount(out int32 plTickCount) mut
 			{
-				return VT.get_TickCount(&this, plTickCount);
+				return VT.get_TickCount(ref this, out plTickCount);
 			}
-			public HRESULT get_CallbackInstance(int32* plCallbackInstance) mut
+			public HRESULT get_CallbackInstance(out int32 plCallbackInstance) mut
 			{
-				return VT.get_CallbackInstance(&this, plCallbackInstance);
+				return VT.get_CallbackInstance(ref this, out plCallbackInstance);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITDigitDetectionEvent *self, ITCallInfo** ppCallInfo) get_Call;
-				public new function HRESULT(ITDigitDetectionEvent *self, uint8* pucDigit) get_Digit;
-				public new function HRESULT(ITDigitDetectionEvent *self, int32* pDigitMode) get_DigitMode;
-				public new function HRESULT(ITDigitDetectionEvent *self, int32* plTickCount) get_TickCount;
-				public new function HRESULT(ITDigitDetectionEvent *self, int32* plCallbackInstance) get_CallbackInstance;
+				public new function HRESULT(ref ITDigitDetectionEvent self, out ITCallInfo* ppCallInfo) get_Call;
+				public new function HRESULT(ref ITDigitDetectionEvent self, out uint8 pucDigit) get_Digit;
+				public new function HRESULT(ref ITDigitDetectionEvent self, out int32 pDigitMode) get_DigitMode;
+				public new function HRESULT(ref ITDigitDetectionEvent self, out int32 plTickCount) get_TickCount;
+				public new function HRESULT(ref ITDigitDetectionEvent self, out int32 plCallbackInstance) get_CallbackInstance;
 			}
 		}
 		[CRepr]
@@ -5207,29 +5207,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Call(ITCallInfo** ppCallInfo) mut
+			public HRESULT get_Call(out ITCallInfo* ppCallInfo) mut
 			{
-				return VT.get_Call(&this, ppCallInfo);
+				return VT.get_Call(ref this, out ppCallInfo);
 			}
-			public HRESULT get_GenerationTermination(int32* plGenerationTermination) mut
+			public HRESULT get_GenerationTermination(out int32 plGenerationTermination) mut
 			{
-				return VT.get_GenerationTermination(&this, plGenerationTermination);
+				return VT.get_GenerationTermination(ref this, out plGenerationTermination);
 			}
-			public HRESULT get_TickCount(int32* plTickCount) mut
+			public HRESULT get_TickCount(out int32 plTickCount) mut
 			{
-				return VT.get_TickCount(&this, plTickCount);
+				return VT.get_TickCount(ref this, out plTickCount);
 			}
-			public HRESULT get_CallbackInstance(int32* plCallbackInstance) mut
+			public HRESULT get_CallbackInstance(out int32 plCallbackInstance) mut
 			{
-				return VT.get_CallbackInstance(&this, plCallbackInstance);
+				return VT.get_CallbackInstance(ref this, out plCallbackInstance);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITDigitGenerationEvent *self, ITCallInfo** ppCallInfo) get_Call;
-				public new function HRESULT(ITDigitGenerationEvent *self, int32* plGenerationTermination) get_GenerationTermination;
-				public new function HRESULT(ITDigitGenerationEvent *self, int32* plTickCount) get_TickCount;
-				public new function HRESULT(ITDigitGenerationEvent *self, int32* plCallbackInstance) get_CallbackInstance;
+				public new function HRESULT(ref ITDigitGenerationEvent self, out ITCallInfo* ppCallInfo) get_Call;
+				public new function HRESULT(ref ITDigitGenerationEvent self, out int32 plGenerationTermination) get_GenerationTermination;
+				public new function HRESULT(ref ITDigitGenerationEvent self, out int32 plTickCount) get_TickCount;
+				public new function HRESULT(ref ITDigitGenerationEvent self, out int32 plCallbackInstance) get_CallbackInstance;
 			}
 		}
 		[CRepr]
@@ -5239,34 +5239,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Call(ITCallInfo** ppCallInfo) mut
+			public HRESULT get_Call(out ITCallInfo* ppCallInfo) mut
 			{
-				return VT.get_Call(&this, ppCallInfo);
+				return VT.get_Call(ref this, out ppCallInfo);
 			}
-			public HRESULT get_Digits(BSTR* ppDigits) mut
+			public HRESULT get_Digits(out BSTR ppDigits) mut
 			{
-				return VT.get_Digits(&this, ppDigits);
+				return VT.get_Digits(ref this, out ppDigits);
 			}
-			public HRESULT get_GatherTermination(TAPI_GATHERTERM* pGatherTermination) mut
+			public HRESULT get_GatherTermination(out TAPI_GATHERTERM pGatherTermination) mut
 			{
-				return VT.get_GatherTermination(&this, pGatherTermination);
+				return VT.get_GatherTermination(ref this, out pGatherTermination);
 			}
-			public HRESULT get_TickCount(int32* plTickCount) mut
+			public HRESULT get_TickCount(out int32 plTickCount) mut
 			{
-				return VT.get_TickCount(&this, plTickCount);
+				return VT.get_TickCount(ref this, out plTickCount);
 			}
-			public HRESULT get_CallbackInstance(int32* plCallbackInstance) mut
+			public HRESULT get_CallbackInstance(out int32 plCallbackInstance) mut
 			{
-				return VT.get_CallbackInstance(&this, plCallbackInstance);
+				return VT.get_CallbackInstance(ref this, out plCallbackInstance);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITDigitsGatheredEvent *self, ITCallInfo** ppCallInfo) get_Call;
-				public new function HRESULT(ITDigitsGatheredEvent *self, BSTR* ppDigits) get_Digits;
-				public new function HRESULT(ITDigitsGatheredEvent *self, TAPI_GATHERTERM* pGatherTermination) get_GatherTermination;
-				public new function HRESULT(ITDigitsGatheredEvent *self, int32* plTickCount) get_TickCount;
-				public new function HRESULT(ITDigitsGatheredEvent *self, int32* plCallbackInstance) get_CallbackInstance;
+				public new function HRESULT(ref ITDigitsGatheredEvent self, out ITCallInfo* ppCallInfo) get_Call;
+				public new function HRESULT(ref ITDigitsGatheredEvent self, out BSTR ppDigits) get_Digits;
+				public new function HRESULT(ref ITDigitsGatheredEvent self, out TAPI_GATHERTERM pGatherTermination) get_GatherTermination;
+				public new function HRESULT(ref ITDigitsGatheredEvent self, out int32 plTickCount) get_TickCount;
+				public new function HRESULT(ref ITDigitsGatheredEvent self, out int32 plCallbackInstance) get_CallbackInstance;
 			}
 		}
 		[CRepr]
@@ -5276,29 +5276,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Call(ITCallInfo** ppCallInfo) mut
+			public HRESULT get_Call(out ITCallInfo* ppCallInfo) mut
 			{
-				return VT.get_Call(&this, ppCallInfo);
+				return VT.get_Call(ref this, out ppCallInfo);
 			}
-			public HRESULT get_AppSpecific(int32* plAppSpecific) mut
+			public HRESULT get_AppSpecific(out int32 plAppSpecific) mut
 			{
-				return VT.get_AppSpecific(&this, plAppSpecific);
+				return VT.get_AppSpecific(ref this, out plAppSpecific);
 			}
-			public HRESULT get_TickCount(int32* plTickCount) mut
+			public HRESULT get_TickCount(out int32 plTickCount) mut
 			{
-				return VT.get_TickCount(&this, plTickCount);
+				return VT.get_TickCount(ref this, out plTickCount);
 			}
-			public HRESULT get_CallbackInstance(int32* plCallbackInstance) mut
+			public HRESULT get_CallbackInstance(out int32 plCallbackInstance) mut
 			{
-				return VT.get_CallbackInstance(&this, plCallbackInstance);
+				return VT.get_CallbackInstance(ref this, out plCallbackInstance);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITToneDetectionEvent *self, ITCallInfo** ppCallInfo) get_Call;
-				public new function HRESULT(ITToneDetectionEvent *self, int32* plAppSpecific) get_AppSpecific;
-				public new function HRESULT(ITToneDetectionEvent *self, int32* plTickCount) get_TickCount;
-				public new function HRESULT(ITToneDetectionEvent *self, int32* plCallbackInstance) get_CallbackInstance;
+				public new function HRESULT(ref ITToneDetectionEvent self, out ITCallInfo* ppCallInfo) get_Call;
+				public new function HRESULT(ref ITToneDetectionEvent self, out int32 plAppSpecific) get_AppSpecific;
+				public new function HRESULT(ref ITToneDetectionEvent self, out int32 plTickCount) get_TickCount;
+				public new function HRESULT(ref ITToneDetectionEvent self, out int32 plCallbackInstance) get_CallbackInstance;
 			}
 		}
 		[CRepr]
@@ -5308,29 +5308,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TAPIObject(ITTAPI** ppTAPIObject) mut
+			public HRESULT get_TAPIObject(out ITTAPI* ppTAPIObject) mut
 			{
-				return VT.get_TAPIObject(&this, ppTAPIObject);
+				return VT.get_TAPIObject(ref this, out ppTAPIObject);
 			}
-			public HRESULT get_Event(TAPIOBJECT_EVENT* pEvent) mut
+			public HRESULT get_Event(out TAPIOBJECT_EVENT pEvent) mut
 			{
-				return VT.get_Event(&this, pEvent);
+				return VT.get_Event(ref this, out pEvent);
 			}
-			public HRESULT get_Address(ITAddress** ppAddress) mut
+			public HRESULT get_Address(out ITAddress* ppAddress) mut
 			{
-				return VT.get_Address(&this, ppAddress);
+				return VT.get_Address(ref this, out ppAddress);
 			}
-			public HRESULT get_CallbackInstance(int32* plCallbackInstance) mut
+			public HRESULT get_CallbackInstance(out int32 plCallbackInstance) mut
 			{
-				return VT.get_CallbackInstance(&this, plCallbackInstance);
+				return VT.get_CallbackInstance(ref this, out plCallbackInstance);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITTAPIObjectEvent *self, ITTAPI** ppTAPIObject) get_TAPIObject;
-				public new function HRESULT(ITTAPIObjectEvent *self, TAPIOBJECT_EVENT* pEvent) get_Event;
-				public new function HRESULT(ITTAPIObjectEvent *self, ITAddress** ppAddress) get_Address;
-				public new function HRESULT(ITTAPIObjectEvent *self, int32* plCallbackInstance) get_CallbackInstance;
+				public new function HRESULT(ref ITTAPIObjectEvent self, out ITTAPI* ppTAPIObject) get_TAPIObject;
+				public new function HRESULT(ref ITTAPIObjectEvent self, out TAPIOBJECT_EVENT pEvent) get_Event;
+				public new function HRESULT(ref ITTAPIObjectEvent self, out ITAddress* ppAddress) get_Address;
+				public new function HRESULT(ref ITTAPIObjectEvent self, out int32 plCallbackInstance) get_CallbackInstance;
 			}
 		}
 		[CRepr]
@@ -5340,14 +5340,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Phone(ITPhone** ppPhone) mut
+			public HRESULT get_Phone(out ITPhone* ppPhone) mut
 			{
-				return VT.get_Phone(&this, ppPhone);
+				return VT.get_Phone(ref this, out ppPhone);
 			}
 			[CRepr]
 			public struct VTable : ITTAPIObjectEvent.VTable
 			{
-				public new function HRESULT(ITTAPIObjectEvent2 *self, ITPhone** ppPhone) get_Phone;
+				public new function HRESULT(ref ITTAPIObjectEvent2 self, out ITPhone* ppPhone) get_Phone;
 			}
 		}
 		[CRepr]
@@ -5357,14 +5357,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Event(TAPI_EVENT TapiEvent, IDispatch* pEvent) mut
+			public HRESULT Event(TAPI_EVENT TapiEvent, ref IDispatch pEvent) mut
 			{
-				return VT.Event(&this, TapiEvent, pEvent);
+				return VT.Event(ref this, TapiEvent, ref pEvent);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITTAPIEventNotification *self, TAPI_EVENT TapiEvent, IDispatch* pEvent) Event;
+				public new function HRESULT(ref ITTAPIEventNotification self, TAPI_EVENT TapiEvent, ref IDispatch pEvent) Event;
 			}
 		}
 		[CRepr]
@@ -5374,24 +5374,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Event(CALLHUB_EVENT* pEvent) mut
+			public HRESULT get_Event(out CALLHUB_EVENT pEvent) mut
 			{
-				return VT.get_Event(&this, pEvent);
+				return VT.get_Event(ref this, out pEvent);
 			}
-			public HRESULT get_CallHub(ITCallHub** ppCallHub) mut
+			public HRESULT get_CallHub(out ITCallHub* ppCallHub) mut
 			{
-				return VT.get_CallHub(&this, ppCallHub);
+				return VT.get_CallHub(ref this, out ppCallHub);
 			}
-			public HRESULT get_Call(ITCallInfo** ppCall) mut
+			public HRESULT get_Call(out ITCallInfo* ppCall) mut
 			{
-				return VT.get_Call(&this, ppCall);
+				return VT.get_Call(ref this, out ppCall);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCallHubEvent *self, CALLHUB_EVENT* pEvent) get_Event;
-				public new function HRESULT(ITCallHubEvent *self, ITCallHub** ppCallHub) get_CallHub;
-				public new function HRESULT(ITCallHubEvent *self, ITCallInfo** ppCall) get_Call;
+				public new function HRESULT(ref ITCallHubEvent self, out CALLHUB_EVENT pEvent) get_Event;
+				public new function HRESULT(ref ITCallHubEvent self, out ITCallHub* ppCallHub) get_CallHub;
+				public new function HRESULT(ref ITCallHubEvent self, out ITCallInfo* ppCall) get_Call;
 			}
 		}
 		[CRepr]
@@ -5401,24 +5401,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Address(ITAddress** ppAddress) mut
+			public HRESULT get_Address(out ITAddress* ppAddress) mut
 			{
-				return VT.get_Address(&this, ppAddress);
+				return VT.get_Address(ref this, out ppAddress);
 			}
-			public HRESULT get_Event(ADDRESS_EVENT* pEvent) mut
+			public HRESULT get_Event(out ADDRESS_EVENT pEvent) mut
 			{
-				return VT.get_Event(&this, pEvent);
+				return VT.get_Event(ref this, out pEvent);
 			}
-			public HRESULT get_Terminal(ITTerminal** ppTerminal) mut
+			public HRESULT get_Terminal(out ITTerminal* ppTerminal) mut
 			{
-				return VT.get_Terminal(&this, ppTerminal);
+				return VT.get_Terminal(ref this, out ppTerminal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAddressEvent *self, ITAddress** ppAddress) get_Address;
-				public new function HRESULT(ITAddressEvent *self, ADDRESS_EVENT* pEvent) get_Event;
-				public new function HRESULT(ITAddressEvent *self, ITTerminal** ppTerminal) get_Terminal;
+				public new function HRESULT(ref ITAddressEvent self, out ITAddress* ppAddress) get_Address;
+				public new function HRESULT(ref ITAddressEvent self, out ADDRESS_EVENT pEvent) get_Event;
+				public new function HRESULT(ref ITAddressEvent self, out ITTerminal* ppTerminal) get_Terminal;
 			}
 		}
 		[CRepr]
@@ -5428,34 +5428,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Address(ITAddress** ppAddress) mut
+			public HRESULT get_Address(out ITAddress* ppAddress) mut
 			{
-				return VT.get_Address(&this, ppAddress);
+				return VT.get_Address(ref this, out ppAddress);
 			}
-			public HRESULT get_Call(ITCallInfo** ppCall) mut
+			public HRESULT get_Call(out ITCallInfo* ppCall) mut
 			{
-				return VT.get_Call(&this, ppCall);
+				return VT.get_Call(ref this, out ppCall);
 			}
-			public HRESULT get_lParam1(int32* pParam1) mut
+			public HRESULT get_lParam1(out int32 pParam1) mut
 			{
-				return VT.get_lParam1(&this, pParam1);
+				return VT.get_lParam1(ref this, out pParam1);
 			}
-			public HRESULT get_lParam2(int32* pParam2) mut
+			public HRESULT get_lParam2(out int32 pParam2) mut
 			{
-				return VT.get_lParam2(&this, pParam2);
+				return VT.get_lParam2(ref this, out pParam2);
 			}
-			public HRESULT get_lParam3(int32* pParam3) mut
+			public HRESULT get_lParam3(out int32 pParam3) mut
 			{
-				return VT.get_lParam3(&this, pParam3);
+				return VT.get_lParam3(ref this, out pParam3);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAddressDeviceSpecificEvent *self, ITAddress** ppAddress) get_Address;
-				public new function HRESULT(ITAddressDeviceSpecificEvent *self, ITCallInfo** ppCall) get_Call;
-				public new function HRESULT(ITAddressDeviceSpecificEvent *self, int32* pParam1) get_lParam1;
-				public new function HRESULT(ITAddressDeviceSpecificEvent *self, int32* pParam2) get_lParam2;
-				public new function HRESULT(ITAddressDeviceSpecificEvent *self, int32* pParam3) get_lParam3;
+				public new function HRESULT(ref ITAddressDeviceSpecificEvent self, out ITAddress* ppAddress) get_Address;
+				public new function HRESULT(ref ITAddressDeviceSpecificEvent self, out ITCallInfo* ppCall) get_Call;
+				public new function HRESULT(ref ITAddressDeviceSpecificEvent self, out int32 pParam1) get_lParam1;
+				public new function HRESULT(ref ITAddressDeviceSpecificEvent self, out int32 pParam2) get_lParam2;
+				public new function HRESULT(ref ITAddressDeviceSpecificEvent self, out int32 pParam3) get_lParam3;
 			}
 		}
 		[CRepr]
@@ -5465,39 +5465,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Terminal(ITTerminal** ppTerminal) mut
+			public HRESULT get_Terminal(out ITTerminal* ppTerminal) mut
 			{
-				return VT.get_Terminal(&this, ppTerminal);
+				return VT.get_Terminal(ref this, out ppTerminal);
 			}
-			public HRESULT get_Track(ITFileTrack** ppTrackTerminal) mut
+			public HRESULT get_Track(out ITFileTrack* ppTrackTerminal) mut
 			{
-				return VT.get_Track(&this, ppTrackTerminal);
+				return VT.get_Track(ref this, out ppTrackTerminal);
 			}
-			public HRESULT get_Call(ITCallInfo** ppCall) mut
+			public HRESULT get_Call(out ITCallInfo* ppCall) mut
 			{
-				return VT.get_Call(&this, ppCall);
+				return VT.get_Call(ref this, out ppCall);
 			}
-			public HRESULT get_State(TERMINAL_MEDIA_STATE* pState) mut
+			public HRESULT get_State(out TERMINAL_MEDIA_STATE pState) mut
 			{
-				return VT.get_State(&this, pState);
+				return VT.get_State(ref this, out pState);
 			}
-			public HRESULT get_Cause(FT_STATE_EVENT_CAUSE* pCause) mut
+			public HRESULT get_Cause(out FT_STATE_EVENT_CAUSE pCause) mut
 			{
-				return VT.get_Cause(&this, pCause);
+				return VT.get_Cause(ref this, out pCause);
 			}
-			public HRESULT get_Error(HRESULT* phrErrorCode) mut
+			public HRESULT get_Error(out HRESULT phrErrorCode) mut
 			{
-				return VT.get_Error(&this, phrErrorCode);
+				return VT.get_Error(ref this, out phrErrorCode);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITFileTerminalEvent *self, ITTerminal** ppTerminal) get_Terminal;
-				public new function HRESULT(ITFileTerminalEvent *self, ITFileTrack** ppTrackTerminal) get_Track;
-				public new function HRESULT(ITFileTerminalEvent *self, ITCallInfo** ppCall) get_Call;
-				public new function HRESULT(ITFileTerminalEvent *self, TERMINAL_MEDIA_STATE* pState) get_State;
-				public new function HRESULT(ITFileTerminalEvent *self, FT_STATE_EVENT_CAUSE* pCause) get_Cause;
-				public new function HRESULT(ITFileTerminalEvent *self, HRESULT* phrErrorCode) get_Error;
+				public new function HRESULT(ref ITFileTerminalEvent self, out ITTerminal* ppTerminal) get_Terminal;
+				public new function HRESULT(ref ITFileTerminalEvent self, out ITFileTrack* ppTrackTerminal) get_Track;
+				public new function HRESULT(ref ITFileTerminalEvent self, out ITCallInfo* ppCall) get_Call;
+				public new function HRESULT(ref ITFileTerminalEvent self, out TERMINAL_MEDIA_STATE pState) get_State;
+				public new function HRESULT(ref ITFileTerminalEvent self, out FT_STATE_EVENT_CAUSE pCause) get_Cause;
+				public new function HRESULT(ref ITFileTerminalEvent self, out HRESULT phrErrorCode) get_Error;
 			}
 		}
 		[CRepr]
@@ -5507,24 +5507,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Terminal(ITTerminal** ppTerminal) mut
+			public HRESULT get_Terminal(out ITTerminal* ppTerminal) mut
 			{
-				return VT.get_Terminal(&this, ppTerminal);
+				return VT.get_Terminal(ref this, out ppTerminal);
 			}
-			public HRESULT get_Call(ITCallInfo** ppCall) mut
+			public HRESULT get_Call(out ITCallInfo* ppCall) mut
 			{
-				return VT.get_Call(&this, ppCall);
+				return VT.get_Call(ref this, out ppCall);
 			}
-			public HRESULT get_Error(HRESULT* phrErrorCode) mut
+			public HRESULT get_Error(out HRESULT phrErrorCode) mut
 			{
-				return VT.get_Error(&this, phrErrorCode);
+				return VT.get_Error(ref this, out phrErrorCode);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITTTSTerminalEvent *self, ITTerminal** ppTerminal) get_Terminal;
-				public new function HRESULT(ITTTSTerminalEvent *self, ITCallInfo** ppCall) get_Call;
-				public new function HRESULT(ITTTSTerminalEvent *self, HRESULT* phrErrorCode) get_Error;
+				public new function HRESULT(ref ITTTSTerminalEvent self, out ITTerminal* ppTerminal) get_Terminal;
+				public new function HRESULT(ref ITTTSTerminalEvent self, out ITCallInfo* ppCall) get_Call;
+				public new function HRESULT(ref ITTTSTerminalEvent self, out HRESULT phrErrorCode) get_Error;
 			}
 		}
 		[CRepr]
@@ -5534,24 +5534,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Terminal(ITTerminal** ppTerminal) mut
+			public HRESULT get_Terminal(out ITTerminal* ppTerminal) mut
 			{
-				return VT.get_Terminal(&this, ppTerminal);
+				return VT.get_Terminal(ref this, out ppTerminal);
 			}
-			public HRESULT get_Call(ITCallInfo** ppCall) mut
+			public HRESULT get_Call(out ITCallInfo* ppCall) mut
 			{
-				return VT.get_Call(&this, ppCall);
+				return VT.get_Call(ref this, out ppCall);
 			}
-			public HRESULT get_Error(HRESULT* phrErrorCode) mut
+			public HRESULT get_Error(out HRESULT phrErrorCode) mut
 			{
-				return VT.get_Error(&this, phrErrorCode);
+				return VT.get_Error(ref this, out phrErrorCode);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITASRTerminalEvent *self, ITTerminal** ppTerminal) get_Terminal;
-				public new function HRESULT(ITASRTerminalEvent *self, ITCallInfo** ppCall) get_Call;
-				public new function HRESULT(ITASRTerminalEvent *self, HRESULT* phrErrorCode) get_Error;
+				public new function HRESULT(ref ITASRTerminalEvent self, out ITTerminal* ppTerminal) get_Terminal;
+				public new function HRESULT(ref ITASRTerminalEvent self, out ITCallInfo* ppCall) get_Call;
+				public new function HRESULT(ref ITASRTerminalEvent self, out HRESULT phrErrorCode) get_Error;
 			}
 		}
 		[CRepr]
@@ -5561,24 +5561,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Terminal(ITTerminal** ppTerminal) mut
+			public HRESULT get_Terminal(out ITTerminal* ppTerminal) mut
 			{
-				return VT.get_Terminal(&this, ppTerminal);
+				return VT.get_Terminal(ref this, out ppTerminal);
 			}
-			public HRESULT get_Call(ITCallInfo** ppCall) mut
+			public HRESULT get_Call(out ITCallInfo* ppCall) mut
 			{
-				return VT.get_Call(&this, ppCall);
+				return VT.get_Call(ref this, out ppCall);
 			}
-			public HRESULT get_Error(HRESULT* phrErrorCode) mut
+			public HRESULT get_Error(out HRESULT phrErrorCode) mut
 			{
-				return VT.get_Error(&this, phrErrorCode);
+				return VT.get_Error(ref this, out phrErrorCode);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITToneTerminalEvent *self, ITTerminal** ppTerminal) get_Terminal;
-				public new function HRESULT(ITToneTerminalEvent *self, ITCallInfo** ppCall) get_Call;
-				public new function HRESULT(ITToneTerminalEvent *self, HRESULT* phrErrorCode) get_Error;
+				public new function HRESULT(ref ITToneTerminalEvent self, out ITTerminal* ppTerminal) get_Terminal;
+				public new function HRESULT(ref ITToneTerminalEvent self, out ITCallInfo* ppCall) get_Call;
+				public new function HRESULT(ref ITToneTerminalEvent self, out HRESULT phrErrorCode) get_Error;
 			}
 		}
 		[CRepr]
@@ -5588,24 +5588,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Call(ITCallInfo** ppCall) mut
+			public HRESULT get_Call(out ITCallInfo* ppCall) mut
 			{
-				return VT.get_Call(&this, ppCall);
+				return VT.get_Call(ref this, out ppCall);
 			}
-			public HRESULT get_Event(QOS_EVENT* pQosEvent) mut
+			public HRESULT get_Event(out QOS_EVENT pQosEvent) mut
 			{
-				return VT.get_Event(&this, pQosEvent);
+				return VT.get_Event(ref this, out pQosEvent);
 			}
-			public HRESULT get_MediaType(int32* plMediaType) mut
+			public HRESULT get_MediaType(out int32 plMediaType) mut
 			{
-				return VT.get_MediaType(&this, plMediaType);
+				return VT.get_MediaType(ref this, out plMediaType);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITQOSEvent *self, ITCallInfo** ppCall) get_Call;
-				public new function HRESULT(ITQOSEvent *self, QOS_EVENT* pQosEvent) get_Event;
-				public new function HRESULT(ITQOSEvent *self, int32* plMediaType) get_MediaType;
+				public new function HRESULT(ref ITQOSEvent self, out ITCallInfo* ppCall) get_Call;
+				public new function HRESULT(ref ITQOSEvent self, out QOS_EVENT pQosEvent) get_Event;
+				public new function HRESULT(ref ITQOSEvent self, out int32 plMediaType) get_MediaType;
 			}
 		}
 		[CRepr]
@@ -5615,24 +5615,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Call(ITCallInfo** ppCall) mut
+			public HRESULT get_Call(out ITCallInfo* ppCall) mut
 			{
-				return VT.get_Call(&this, ppCall);
+				return VT.get_Call(ref this, out ppCall);
 			}
-			public HRESULT get_Cause(CALLINFOCHANGE_CAUSE* pCIC) mut
+			public HRESULT get_Cause(out CALLINFOCHANGE_CAUSE pCIC) mut
 			{
-				return VT.get_Cause(&this, pCIC);
+				return VT.get_Cause(ref this, out pCIC);
 			}
-			public HRESULT get_CallbackInstance(int32* plCallbackInstance) mut
+			public HRESULT get_CallbackInstance(out int32 plCallbackInstance) mut
 			{
-				return VT.get_CallbackInstance(&this, plCallbackInstance);
+				return VT.get_CallbackInstance(ref this, out plCallbackInstance);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCallInfoChangeEvent *self, ITCallInfo** ppCall) get_Call;
-				public new function HRESULT(ITCallInfoChangeEvent *self, CALLINFOCHANGE_CAUSE* pCIC) get_Cause;
-				public new function HRESULT(ITCallInfoChangeEvent *self, int32* plCallbackInstance) get_CallbackInstance;
+				public new function HRESULT(ref ITCallInfoChangeEvent self, out ITCallInfo* ppCall) get_Call;
+				public new function HRESULT(ref ITCallInfoChangeEvent self, out CALLINFOCHANGE_CAUSE pCIC) get_Cause;
+				public new function HRESULT(ref ITCallInfoChangeEvent self, out int32 plCallbackInstance) get_CallbackInstance;
 			}
 		}
 		[CRepr]
@@ -5644,12 +5644,12 @@ namespace Win32
 			
 			public HRESULT MakeCall(BSTR pDestAddress, BSTR pAppName, BSTR pCalledParty, BSTR pComment) mut
 			{
-				return VT.MakeCall(&this, pDestAddress, pAppName, pCalledParty, pComment);
+				return VT.MakeCall(ref this, pDestAddress, pAppName, pCalledParty, pComment);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITRequest *self, BSTR pDestAddress, BSTR pAppName, BSTR pCalledParty, BSTR pComment) MakeCall;
+				public new function HRESULT(ref ITRequest self, BSTR pDestAddress, BSTR pAppName, BSTR pCalledParty, BSTR pComment) MakeCall;
 			}
 		}
 		[CRepr]
@@ -5659,39 +5659,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_RegistrationInstance(int32* plRegistrationInstance) mut
+			public HRESULT get_RegistrationInstance(out int32 plRegistrationInstance) mut
 			{
-				return VT.get_RegistrationInstance(&this, plRegistrationInstance);
+				return VT.get_RegistrationInstance(ref this, out plRegistrationInstance);
 			}
-			public HRESULT get_RequestMode(int32* plRequestMode) mut
+			public HRESULT get_RequestMode(out int32 plRequestMode) mut
 			{
-				return VT.get_RequestMode(&this, plRequestMode);
+				return VT.get_RequestMode(ref this, out plRequestMode);
 			}
-			public HRESULT get_DestAddress(BSTR* ppDestAddress) mut
+			public HRESULT get_DestAddress(out BSTR ppDestAddress) mut
 			{
-				return VT.get_DestAddress(&this, ppDestAddress);
+				return VT.get_DestAddress(ref this, out ppDestAddress);
 			}
-			public HRESULT get_AppName(BSTR* ppAppName) mut
+			public HRESULT get_AppName(out BSTR ppAppName) mut
 			{
-				return VT.get_AppName(&this, ppAppName);
+				return VT.get_AppName(ref this, out ppAppName);
 			}
-			public HRESULT get_CalledParty(BSTR* ppCalledParty) mut
+			public HRESULT get_CalledParty(out BSTR ppCalledParty) mut
 			{
-				return VT.get_CalledParty(&this, ppCalledParty);
+				return VT.get_CalledParty(ref this, out ppCalledParty);
 			}
-			public HRESULT get_Comment(BSTR* ppComment) mut
+			public HRESULT get_Comment(out BSTR ppComment) mut
 			{
-				return VT.get_Comment(&this, ppComment);
+				return VT.get_Comment(ref this, out ppComment);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITRequestEvent *self, int32* plRegistrationInstance) get_RegistrationInstance;
-				public new function HRESULT(ITRequestEvent *self, int32* plRequestMode) get_RequestMode;
-				public new function HRESULT(ITRequestEvent *self, BSTR* ppDestAddress) get_DestAddress;
-				public new function HRESULT(ITRequestEvent *self, BSTR* ppAppName) get_AppName;
-				public new function HRESULT(ITRequestEvent *self, BSTR* ppCalledParty) get_CalledParty;
-				public new function HRESULT(ITRequestEvent *self, BSTR* ppComment) get_Comment;
+				public new function HRESULT(ref ITRequestEvent self, out int32 plRegistrationInstance) get_RegistrationInstance;
+				public new function HRESULT(ref ITRequestEvent self, out int32 plRequestMode) get_RequestMode;
+				public new function HRESULT(ref ITRequestEvent self, out BSTR ppDestAddress) get_DestAddress;
+				public new function HRESULT(ref ITRequestEvent self, out BSTR ppAppName) get_AppName;
+				public new function HRESULT(ref ITRequestEvent self, out BSTR ppCalledParty) get_CalledParty;
+				public new function HRESULT(ref ITRequestEvent self, out BSTR ppComment) get_Comment;
 			}
 		}
 		[CRepr]
@@ -5701,24 +5701,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* lCount) mut
+			public HRESULT get_Count(out int32 lCount) mut
 			{
-				return VT.get_Count(&this, lCount);
+				return VT.get_Count(ref this, out lCount);
 			}
-			public HRESULT get_Item(int32 Index, VARIANT* pVariant) mut
+			public HRESULT get_Item(int32 Index, out VARIANT pVariant) mut
 			{
-				return VT.get_Item(&this, Index, pVariant);
+				return VT.get_Item(ref this, Index, out pVariant);
 			}
-			public HRESULT get__NewEnum(IUnknown** ppNewEnum) mut
+			public HRESULT get__NewEnum(out IUnknown* ppNewEnum) mut
 			{
-				return VT.get__NewEnum(&this, ppNewEnum);
+				return VT.get__NewEnum(ref this, out ppNewEnum);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCollection *self, int32* lCount) get_Count;
-				public new function HRESULT(ITCollection *self, int32 Index, VARIANT* pVariant) get_Item;
-				public new function HRESULT(ITCollection *self, IUnknown** ppNewEnum) get__NewEnum;
+				public new function HRESULT(ref ITCollection self, out int32 lCount) get_Count;
+				public new function HRESULT(ref ITCollection self, int32 Index, out VARIANT pVariant) get_Item;
+				public new function HRESULT(ref ITCollection self, out IUnknown* ppNewEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5728,19 +5728,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(int32 Index, VARIANT* pVariant) mut
+			public HRESULT Add(int32 Index, ref VARIANT pVariant) mut
 			{
-				return VT.Add(&this, Index, pVariant);
+				return VT.Add(ref this, Index, ref pVariant);
 			}
 			public HRESULT Remove(int32 Index) mut
 			{
-				return VT.Remove(&this, Index);
+				return VT.Remove(ref this, Index);
 			}
 			[CRepr]
 			public struct VTable : ITCollection.VTable
 			{
-				public new function HRESULT(ITCollection2 *self, int32 Index, VARIANT* pVariant) Add;
-				public new function HRESULT(ITCollection2 *self, int32 Index) Remove;
+				public new function HRESULT(ref ITCollection2 self, int32 Index, ref VARIANT pVariant) Add;
+				public new function HRESULT(ref ITCollection2 self, int32 Index) Remove;
 			}
 		}
 		[CRepr]
@@ -5752,42 +5752,42 @@ namespace Win32
 			
 			public HRESULT put_NumRingsNoAnswer(int32 lNumRings) mut
 			{
-				return VT.put_NumRingsNoAnswer(&this, lNumRings);
+				return VT.put_NumRingsNoAnswer(ref this, lNumRings);
 			}
-			public HRESULT get_NumRingsNoAnswer(int32* plNumRings) mut
+			public HRESULT get_NumRingsNoAnswer(out int32 plNumRings) mut
 			{
-				return VT.get_NumRingsNoAnswer(&this, plNumRings);
+				return VT.get_NumRingsNoAnswer(ref this, out plNumRings);
 			}
 			public HRESULT SetForwardType(int32 ForwardType, BSTR pDestAddress, BSTR pCallerAddress) mut
 			{
-				return VT.SetForwardType(&this, ForwardType, pDestAddress, pCallerAddress);
+				return VT.SetForwardType(ref this, ForwardType, pDestAddress, pCallerAddress);
 			}
-			public HRESULT get_ForwardTypeDestination(int32 ForwardType, BSTR* ppDestAddress) mut
+			public HRESULT get_ForwardTypeDestination(int32 ForwardType, out BSTR ppDestAddress) mut
 			{
-				return VT.get_ForwardTypeDestination(&this, ForwardType, ppDestAddress);
+				return VT.get_ForwardTypeDestination(ref this, ForwardType, out ppDestAddress);
 			}
-			public HRESULT get_ForwardTypeCaller(int32 Forwardtype, BSTR* ppCallerAddress) mut
+			public HRESULT get_ForwardTypeCaller(int32 Forwardtype, out BSTR ppCallerAddress) mut
 			{
-				return VT.get_ForwardTypeCaller(&this, Forwardtype, ppCallerAddress);
+				return VT.get_ForwardTypeCaller(ref this, Forwardtype, out ppCallerAddress);
 			}
-			public HRESULT GetForwardType(int32 ForwardType, BSTR* ppDestinationAddress, BSTR* ppCallerAddress) mut
+			public HRESULT GetForwardType(int32 ForwardType, out BSTR ppDestinationAddress, out BSTR ppCallerAddress) mut
 			{
-				return VT.GetForwardType(&this, ForwardType, ppDestinationAddress, ppCallerAddress);
+				return VT.GetForwardType(ref this, ForwardType, out ppDestinationAddress, out ppCallerAddress);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITForwardInformation *self, int32 lNumRings) put_NumRingsNoAnswer;
-				public new function HRESULT(ITForwardInformation *self, int32* plNumRings) get_NumRingsNoAnswer;
-				public new function HRESULT(ITForwardInformation *self, int32 ForwardType, BSTR pDestAddress, BSTR pCallerAddress) SetForwardType;
-				public new function HRESULT(ITForwardInformation *self, int32 ForwardType, BSTR* ppDestAddress) get_ForwardTypeDestination;
-				public new function HRESULT(ITForwardInformation *self, int32 Forwardtype, BSTR* ppCallerAddress) get_ForwardTypeCaller;
-				public new function HRESULT(ITForwardInformation *self, int32 ForwardType, BSTR* ppDestinationAddress, BSTR* ppCallerAddress) GetForwardType;
-				public new function HRESULT(ITForwardInformation *self) Clear;
+				public new function HRESULT(ref ITForwardInformation self, int32 lNumRings) put_NumRingsNoAnswer;
+				public new function HRESULT(ref ITForwardInformation self, out int32 plNumRings) get_NumRingsNoAnswer;
+				public new function HRESULT(ref ITForwardInformation self, int32 ForwardType, BSTR pDestAddress, BSTR pCallerAddress) SetForwardType;
+				public new function HRESULT(ref ITForwardInformation self, int32 ForwardType, out BSTR ppDestAddress) get_ForwardTypeDestination;
+				public new function HRESULT(ref ITForwardInformation self, int32 Forwardtype, out BSTR ppCallerAddress) get_ForwardTypeCaller;
+				public new function HRESULT(ref ITForwardInformation self, int32 ForwardType, out BSTR ppDestinationAddress, out BSTR ppCallerAddress) GetForwardType;
+				public new function HRESULT(ref ITForwardInformation self) Clear;
 			}
 		}
 		[CRepr]
@@ -5799,27 +5799,27 @@ namespace Win32
 			
 			public HRESULT SetForwardType2(int32 ForwardType, BSTR pDestAddress, int32 DestAddressType, BSTR pCallerAddress, int32 CallerAddressType) mut
 			{
-				return VT.SetForwardType2(&this, ForwardType, pDestAddress, DestAddressType, pCallerAddress, CallerAddressType);
+				return VT.SetForwardType2(ref this, ForwardType, pDestAddress, DestAddressType, pCallerAddress, CallerAddressType);
 			}
-			public HRESULT GetForwardType2(int32 ForwardType, BSTR* ppDestinationAddress, int32* pDestAddressType, BSTR* ppCallerAddress, int32* pCallerAddressType) mut
+			public HRESULT GetForwardType2(int32 ForwardType, out BSTR ppDestinationAddress, out int32 pDestAddressType, out BSTR ppCallerAddress, out int32 pCallerAddressType) mut
 			{
-				return VT.GetForwardType2(&this, ForwardType, ppDestinationAddress, pDestAddressType, ppCallerAddress, pCallerAddressType);
+				return VT.GetForwardType2(ref this, ForwardType, out ppDestinationAddress, out pDestAddressType, out ppCallerAddress, out pCallerAddressType);
 			}
-			public HRESULT get_ForwardTypeDestinationAddressType(int32 ForwardType, int32* pDestAddressType) mut
+			public HRESULT get_ForwardTypeDestinationAddressType(int32 ForwardType, out int32 pDestAddressType) mut
 			{
-				return VT.get_ForwardTypeDestinationAddressType(&this, ForwardType, pDestAddressType);
+				return VT.get_ForwardTypeDestinationAddressType(ref this, ForwardType, out pDestAddressType);
 			}
-			public HRESULT get_ForwardTypeCallerAddressType(int32 Forwardtype, int32* pCallerAddressType) mut
+			public HRESULT get_ForwardTypeCallerAddressType(int32 Forwardtype, out int32 pCallerAddressType) mut
 			{
-				return VT.get_ForwardTypeCallerAddressType(&this, Forwardtype, pCallerAddressType);
+				return VT.get_ForwardTypeCallerAddressType(ref this, Forwardtype, out pCallerAddressType);
 			}
 			[CRepr]
 			public struct VTable : ITForwardInformation.VTable
 			{
-				public new function HRESULT(ITForwardInformation2 *self, int32 ForwardType, BSTR pDestAddress, int32 DestAddressType, BSTR pCallerAddress, int32 CallerAddressType) SetForwardType2;
-				public new function HRESULT(ITForwardInformation2 *self, int32 ForwardType, BSTR* ppDestinationAddress, int32* pDestAddressType, BSTR* ppCallerAddress, int32* pCallerAddressType) GetForwardType2;
-				public new function HRESULT(ITForwardInformation2 *self, int32 ForwardType, int32* pDestAddressType) get_ForwardTypeDestinationAddressType;
-				public new function HRESULT(ITForwardInformation2 *self, int32 Forwardtype, int32* pCallerAddressType) get_ForwardTypeCallerAddressType;
+				public new function HRESULT(ref ITForwardInformation2 self, int32 ForwardType, BSTR pDestAddress, int32 DestAddressType, BSTR pCallerAddress, int32 CallerAddressType) SetForwardType2;
+				public new function HRESULT(ref ITForwardInformation2 self, int32 ForwardType, out BSTR ppDestinationAddress, out int32 pDestAddressType, out BSTR ppCallerAddress, out int32 pCallerAddressType) GetForwardType2;
+				public new function HRESULT(ref ITForwardInformation2 self, int32 ForwardType, out int32 pDestAddressType) get_ForwardTypeDestinationAddressType;
+				public new function HRESULT(ref ITForwardInformation2 self, int32 Forwardtype, out int32 pCallerAddressType) get_ForwardTypeCallerAddressType;
 			}
 		}
 		[CRepr]
@@ -5829,39 +5829,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TranslateAddress(BSTR pAddressToTranslate, int32 lCard, int32 lTranslateOptions, ITAddressTranslationInfo** ppTranslated) mut
+			public HRESULT TranslateAddress(BSTR pAddressToTranslate, int32 lCard, int32 lTranslateOptions, out ITAddressTranslationInfo* ppTranslated) mut
 			{
-				return VT.TranslateAddress(&this, pAddressToTranslate, lCard, lTranslateOptions, ppTranslated);
+				return VT.TranslateAddress(ref this, pAddressToTranslate, lCard, lTranslateOptions, out ppTranslated);
 			}
 			public HRESULT TranslateDialog(int hwndOwner, BSTR pAddressIn) mut
 			{
-				return VT.TranslateDialog(&this, hwndOwner, pAddressIn);
+				return VT.TranslateDialog(ref this, hwndOwner, pAddressIn);
 			}
-			public HRESULT EnumerateLocations(IEnumLocation** ppEnumLocation) mut
+			public HRESULT EnumerateLocations(out IEnumLocation* ppEnumLocation) mut
 			{
-				return VT.EnumerateLocations(&this, ppEnumLocation);
+				return VT.EnumerateLocations(ref this, out ppEnumLocation);
 			}
-			public HRESULT get_Locations(VARIANT* pVariant) mut
+			public HRESULT get_Locations(out VARIANT pVariant) mut
 			{
-				return VT.get_Locations(&this, pVariant);
+				return VT.get_Locations(ref this, out pVariant);
 			}
-			public HRESULT EnumerateCallingCards(IEnumCallingCard** ppEnumCallingCard) mut
+			public HRESULT EnumerateCallingCards(out IEnumCallingCard* ppEnumCallingCard) mut
 			{
-				return VT.EnumerateCallingCards(&this, ppEnumCallingCard);
+				return VT.EnumerateCallingCards(ref this, out ppEnumCallingCard);
 			}
-			public HRESULT get_CallingCards(VARIANT* pVariant) mut
+			public HRESULT get_CallingCards(out VARIANT pVariant) mut
 			{
-				return VT.get_CallingCards(&this, pVariant);
+				return VT.get_CallingCards(ref this, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAddressTranslation *self, BSTR pAddressToTranslate, int32 lCard, int32 lTranslateOptions, ITAddressTranslationInfo** ppTranslated) TranslateAddress;
-				public new function HRESULT(ITAddressTranslation *self, int hwndOwner, BSTR pAddressIn) TranslateDialog;
-				public new function HRESULT(ITAddressTranslation *self, IEnumLocation** ppEnumLocation) EnumerateLocations;
-				public new function HRESULT(ITAddressTranslation *self, VARIANT* pVariant) get_Locations;
-				public new function HRESULT(ITAddressTranslation *self, IEnumCallingCard** ppEnumCallingCard) EnumerateCallingCards;
-				public new function HRESULT(ITAddressTranslation *self, VARIANT* pVariant) get_CallingCards;
+				public new function HRESULT(ref ITAddressTranslation self, BSTR pAddressToTranslate, int32 lCard, int32 lTranslateOptions, out ITAddressTranslationInfo* ppTranslated) TranslateAddress;
+				public new function HRESULT(ref ITAddressTranslation self, int hwndOwner, BSTR pAddressIn) TranslateDialog;
+				public new function HRESULT(ref ITAddressTranslation self, out IEnumLocation* ppEnumLocation) EnumerateLocations;
+				public new function HRESULT(ref ITAddressTranslation self, out VARIANT pVariant) get_Locations;
+				public new function HRESULT(ref ITAddressTranslation self, out IEnumCallingCard* ppEnumCallingCard) EnumerateCallingCards;
+				public new function HRESULT(ref ITAddressTranslation self, out VARIANT pVariant) get_CallingCards;
 			}
 		}
 		[CRepr]
@@ -5871,34 +5871,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DialableString(BSTR* ppDialableString) mut
+			public HRESULT get_DialableString(out BSTR ppDialableString) mut
 			{
-				return VT.get_DialableString(&this, ppDialableString);
+				return VT.get_DialableString(ref this, out ppDialableString);
 			}
-			public HRESULT get_DisplayableString(BSTR* ppDisplayableString) mut
+			public HRESULT get_DisplayableString(out BSTR ppDisplayableString) mut
 			{
-				return VT.get_DisplayableString(&this, ppDisplayableString);
+				return VT.get_DisplayableString(ref this, out ppDisplayableString);
 			}
-			public HRESULT get_CurrentCountryCode(int32* CountryCode) mut
+			public HRESULT get_CurrentCountryCode(out int32 CountryCode) mut
 			{
-				return VT.get_CurrentCountryCode(&this, CountryCode);
+				return VT.get_CurrentCountryCode(ref this, out CountryCode);
 			}
-			public HRESULT get_DestinationCountryCode(int32* CountryCode) mut
+			public HRESULT get_DestinationCountryCode(out int32 CountryCode) mut
 			{
-				return VT.get_DestinationCountryCode(&this, CountryCode);
+				return VT.get_DestinationCountryCode(ref this, out CountryCode);
 			}
-			public HRESULT get_TranslationResults(int32* plResults) mut
+			public HRESULT get_TranslationResults(out int32 plResults) mut
 			{
-				return VT.get_TranslationResults(&this, plResults);
+				return VT.get_TranslationResults(ref this, out plResults);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAddressTranslationInfo *self, BSTR* ppDialableString) get_DialableString;
-				public new function HRESULT(ITAddressTranslationInfo *self, BSTR* ppDisplayableString) get_DisplayableString;
-				public new function HRESULT(ITAddressTranslationInfo *self, int32* CountryCode) get_CurrentCountryCode;
-				public new function HRESULT(ITAddressTranslationInfo *self, int32* CountryCode) get_DestinationCountryCode;
-				public new function HRESULT(ITAddressTranslationInfo *self, int32* plResults) get_TranslationResults;
+				public new function HRESULT(ref ITAddressTranslationInfo self, out BSTR ppDialableString) get_DialableString;
+				public new function HRESULT(ref ITAddressTranslationInfo self, out BSTR ppDisplayableString) get_DisplayableString;
+				public new function HRESULT(ref ITAddressTranslationInfo self, out int32 CountryCode) get_CurrentCountryCode;
+				public new function HRESULT(ref ITAddressTranslationInfo self, out int32 CountryCode) get_DestinationCountryCode;
+				public new function HRESULT(ref ITAddressTranslationInfo self, out int32 plResults) get_TranslationResults;
 			}
 		}
 		[CRepr]
@@ -5908,64 +5908,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PermanentLocationID(int32* plLocationID) mut
+			public HRESULT get_PermanentLocationID(out int32 plLocationID) mut
 			{
-				return VT.get_PermanentLocationID(&this, plLocationID);
+				return VT.get_PermanentLocationID(ref this, out plLocationID);
 			}
-			public HRESULT get_CountryCode(int32* plCountryCode) mut
+			public HRESULT get_CountryCode(out int32 plCountryCode) mut
 			{
-				return VT.get_CountryCode(&this, plCountryCode);
+				return VT.get_CountryCode(ref this, out plCountryCode);
 			}
-			public HRESULT get_CountryID(int32* plCountryID) mut
+			public HRESULT get_CountryID(out int32 plCountryID) mut
 			{
-				return VT.get_CountryID(&this, plCountryID);
+				return VT.get_CountryID(ref this, out plCountryID);
 			}
-			public HRESULT get_Options(int32* plOptions) mut
+			public HRESULT get_Options(out int32 plOptions) mut
 			{
-				return VT.get_Options(&this, plOptions);
+				return VT.get_Options(ref this, out plOptions);
 			}
-			public HRESULT get_PreferredCardID(int32* plCardID) mut
+			public HRESULT get_PreferredCardID(out int32 plCardID) mut
 			{
-				return VT.get_PreferredCardID(&this, plCardID);
+				return VT.get_PreferredCardID(ref this, out plCardID);
 			}
-			public HRESULT get_LocationName(BSTR* ppLocationName) mut
+			public HRESULT get_LocationName(out BSTR ppLocationName) mut
 			{
-				return VT.get_LocationName(&this, ppLocationName);
+				return VT.get_LocationName(ref this, out ppLocationName);
 			}
-			public HRESULT get_CityCode(BSTR* ppCode) mut
+			public HRESULT get_CityCode(out BSTR ppCode) mut
 			{
-				return VT.get_CityCode(&this, ppCode);
+				return VT.get_CityCode(ref this, out ppCode);
 			}
-			public HRESULT get_LocalAccessCode(BSTR* ppCode) mut
+			public HRESULT get_LocalAccessCode(out BSTR ppCode) mut
 			{
-				return VT.get_LocalAccessCode(&this, ppCode);
+				return VT.get_LocalAccessCode(ref this, out ppCode);
 			}
-			public HRESULT get_LongDistanceAccessCode(BSTR* ppCode) mut
+			public HRESULT get_LongDistanceAccessCode(out BSTR ppCode) mut
 			{
-				return VT.get_LongDistanceAccessCode(&this, ppCode);
+				return VT.get_LongDistanceAccessCode(ref this, out ppCode);
 			}
-			public HRESULT get_TollPrefixList(BSTR* ppTollList) mut
+			public HRESULT get_TollPrefixList(out BSTR ppTollList) mut
 			{
-				return VT.get_TollPrefixList(&this, ppTollList);
+				return VT.get_TollPrefixList(ref this, out ppTollList);
 			}
-			public HRESULT get_CancelCallWaitingCode(BSTR* ppCode) mut
+			public HRESULT get_CancelCallWaitingCode(out BSTR ppCode) mut
 			{
-				return VT.get_CancelCallWaitingCode(&this, ppCode);
+				return VT.get_CancelCallWaitingCode(ref this, out ppCode);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITLocationInfo *self, int32* plLocationID) get_PermanentLocationID;
-				public new function HRESULT(ITLocationInfo *self, int32* plCountryCode) get_CountryCode;
-				public new function HRESULT(ITLocationInfo *self, int32* plCountryID) get_CountryID;
-				public new function HRESULT(ITLocationInfo *self, int32* plOptions) get_Options;
-				public new function HRESULT(ITLocationInfo *self, int32* plCardID) get_PreferredCardID;
-				public new function HRESULT(ITLocationInfo *self, BSTR* ppLocationName) get_LocationName;
-				public new function HRESULT(ITLocationInfo *self, BSTR* ppCode) get_CityCode;
-				public new function HRESULT(ITLocationInfo *self, BSTR* ppCode) get_LocalAccessCode;
-				public new function HRESULT(ITLocationInfo *self, BSTR* ppCode) get_LongDistanceAccessCode;
-				public new function HRESULT(ITLocationInfo *self, BSTR* ppTollList) get_TollPrefixList;
-				public new function HRESULT(ITLocationInfo *self, BSTR* ppCode) get_CancelCallWaitingCode;
+				public new function HRESULT(ref ITLocationInfo self, out int32 plLocationID) get_PermanentLocationID;
+				public new function HRESULT(ref ITLocationInfo self, out int32 plCountryCode) get_CountryCode;
+				public new function HRESULT(ref ITLocationInfo self, out int32 plCountryID) get_CountryID;
+				public new function HRESULT(ref ITLocationInfo self, out int32 plOptions) get_Options;
+				public new function HRESULT(ref ITLocationInfo self, out int32 plCardID) get_PreferredCardID;
+				public new function HRESULT(ref ITLocationInfo self, out BSTR ppLocationName) get_LocationName;
+				public new function HRESULT(ref ITLocationInfo self, out BSTR ppCode) get_CityCode;
+				public new function HRESULT(ref ITLocationInfo self, out BSTR ppCode) get_LocalAccessCode;
+				public new function HRESULT(ref ITLocationInfo self, out BSTR ppCode) get_LongDistanceAccessCode;
+				public new function HRESULT(ref ITLocationInfo self, out BSTR ppTollList) get_TollPrefixList;
+				public new function HRESULT(ref ITLocationInfo self, out BSTR ppCode) get_CancelCallWaitingCode;
 			}
 		}
 		[CRepr]
@@ -5975,29 +5975,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITLocationInfo** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out ITLocationInfo* ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, out ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumLocation** ppEnum) mut
+			public HRESULT Clone(out IEnumLocation* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumLocation *self, uint32 celt, ITLocationInfo** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumLocation *self) Reset;
-				public new function HRESULT(IEnumLocation *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumLocation *self, IEnumLocation** ppEnum) Clone;
+				public new function HRESULT(ref IEnumLocation self, uint32 celt, out ITLocationInfo* ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumLocation self) Reset;
+				public new function HRESULT(ref IEnumLocation self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumLocation self, out IEnumLocation* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -6007,44 +6007,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PermanentCardID(int32* plCardID) mut
+			public HRESULT get_PermanentCardID(out int32 plCardID) mut
 			{
-				return VT.get_PermanentCardID(&this, plCardID);
+				return VT.get_PermanentCardID(ref this, out plCardID);
 			}
-			public HRESULT get_NumberOfDigits(int32* plDigits) mut
+			public HRESULT get_NumberOfDigits(out int32 plDigits) mut
 			{
-				return VT.get_NumberOfDigits(&this, plDigits);
+				return VT.get_NumberOfDigits(ref this, out plDigits);
 			}
-			public HRESULT get_Options(int32* plOptions) mut
+			public HRESULT get_Options(out int32 plOptions) mut
 			{
-				return VT.get_Options(&this, plOptions);
+				return VT.get_Options(ref this, out plOptions);
 			}
-			public HRESULT get_CardName(BSTR* ppCardName) mut
+			public HRESULT get_CardName(out BSTR ppCardName) mut
 			{
-				return VT.get_CardName(&this, ppCardName);
+				return VT.get_CardName(ref this, out ppCardName);
 			}
-			public HRESULT get_SameAreaDialingRule(BSTR* ppRule) mut
+			public HRESULT get_SameAreaDialingRule(out BSTR ppRule) mut
 			{
-				return VT.get_SameAreaDialingRule(&this, ppRule);
+				return VT.get_SameAreaDialingRule(ref this, out ppRule);
 			}
-			public HRESULT get_LongDistanceDialingRule(BSTR* ppRule) mut
+			public HRESULT get_LongDistanceDialingRule(out BSTR ppRule) mut
 			{
-				return VT.get_LongDistanceDialingRule(&this, ppRule);
+				return VT.get_LongDistanceDialingRule(ref this, out ppRule);
 			}
-			public HRESULT get_InternationalDialingRule(BSTR* ppRule) mut
+			public HRESULT get_InternationalDialingRule(out BSTR ppRule) mut
 			{
-				return VT.get_InternationalDialingRule(&this, ppRule);
+				return VT.get_InternationalDialingRule(ref this, out ppRule);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCallingCard *self, int32* plCardID) get_PermanentCardID;
-				public new function HRESULT(ITCallingCard *self, int32* plDigits) get_NumberOfDigits;
-				public new function HRESULT(ITCallingCard *self, int32* plOptions) get_Options;
-				public new function HRESULT(ITCallingCard *self, BSTR* ppCardName) get_CardName;
-				public new function HRESULT(ITCallingCard *self, BSTR* ppRule) get_SameAreaDialingRule;
-				public new function HRESULT(ITCallingCard *self, BSTR* ppRule) get_LongDistanceDialingRule;
-				public new function HRESULT(ITCallingCard *self, BSTR* ppRule) get_InternationalDialingRule;
+				public new function HRESULT(ref ITCallingCard self, out int32 plCardID) get_PermanentCardID;
+				public new function HRESULT(ref ITCallingCard self, out int32 plDigits) get_NumberOfDigits;
+				public new function HRESULT(ref ITCallingCard self, out int32 plOptions) get_Options;
+				public new function HRESULT(ref ITCallingCard self, out BSTR ppCardName) get_CardName;
+				public new function HRESULT(ref ITCallingCard self, out BSTR ppRule) get_SameAreaDialingRule;
+				public new function HRESULT(ref ITCallingCard self, out BSTR ppRule) get_LongDistanceDialingRule;
+				public new function HRESULT(ref ITCallingCard self, out BSTR ppRule) get_InternationalDialingRule;
 			}
 		}
 		[CRepr]
@@ -6054,29 +6054,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITCallingCard** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out ITCallingCard* ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, out ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumCallingCard** ppEnum) mut
+			public HRESULT Clone(out IEnumCallingCard* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumCallingCard *self, uint32 celt, ITCallingCard** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumCallingCard *self) Reset;
-				public new function HRESULT(IEnumCallingCard *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumCallingCard *self, IEnumCallingCard** ppEnum) Clone;
+				public new function HRESULT(ref IEnumCallingCard self, uint32 celt, out ITCallingCard* ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumCallingCard self) Reset;
+				public new function HRESULT(ref IEnumCallingCard self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumCallingCard self, out IEnumCallingCard* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -6086,24 +6086,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Call(ITCallInfo** ppCall) mut
+			public HRESULT get_Call(out ITCallInfo* ppCall) mut
 			{
-				return VT.get_Call(&this, ppCall);
+				return VT.get_Call(ref this, out ppCall);
 			}
-			public HRESULT get_Event(CALL_NOTIFICATION_EVENT* pCallNotificationEvent) mut
+			public HRESULT get_Event(out CALL_NOTIFICATION_EVENT pCallNotificationEvent) mut
 			{
-				return VT.get_Event(&this, pCallNotificationEvent);
+				return VT.get_Event(ref this, out pCallNotificationEvent);
 			}
-			public HRESULT get_CallbackInstance(int32* plCallbackInstance) mut
+			public HRESULT get_CallbackInstance(out int32 plCallbackInstance) mut
 			{
-				return VT.get_CallbackInstance(&this, plCallbackInstance);
+				return VT.get_CallbackInstance(ref this, out plCallbackInstance);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITCallNotificationEvent *self, ITCallInfo** ppCall) get_Call;
-				public new function HRESULT(ITCallNotificationEvent *self, CALL_NOTIFICATION_EVENT* pCallNotificationEvent) get_Event;
-				public new function HRESULT(ITCallNotificationEvent *self, int32* plCallbackInstance) get_CallbackInstance;
+				public new function HRESULT(ref ITCallNotificationEvent self, out ITCallInfo* ppCall) get_Call;
+				public new function HRESULT(ref ITCallNotificationEvent self, out CALL_NOTIFICATION_EVENT pCallNotificationEvent) get_Event;
+				public new function HRESULT(ref ITCallNotificationEvent self, out int32 plCallbackInstance) get_CallbackInstance;
 			}
 		}
 		[CRepr]
@@ -6113,14 +6113,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryDispatchInterface(BSTR pIID, IDispatch* pInterfaceToMap, IDispatch** ppReturnedInterface) mut
+			public HRESULT QueryDispatchInterface(BSTR pIID, ref IDispatch pInterfaceToMap, out IDispatch* ppReturnedInterface) mut
 			{
-				return VT.QueryDispatchInterface(&this, pIID, pInterfaceToMap, ppReturnedInterface);
+				return VT.QueryDispatchInterface(ref this, pIID, ref pInterfaceToMap, out ppReturnedInterface);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITDispatchMapper *self, BSTR pIID, IDispatch* pInterfaceToMap, IDispatch** ppReturnedInterface) QueryDispatchInterface;
+				public new function HRESULT(ref ITDispatchMapper self, BSTR pIID, ref IDispatch pInterfaceToMap, out IDispatch* ppReturnedInterface) QueryDispatchInterface;
 			}
 		}
 		[CRepr]
@@ -6130,29 +6130,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateStream(int32 lMediaType, TERMINAL_DIRECTION td, ITStream** ppStream) mut
+			public HRESULT CreateStream(int32 lMediaType, TERMINAL_DIRECTION td, out ITStream* ppStream) mut
 			{
-				return VT.CreateStream(&this, lMediaType, td, ppStream);
+				return VT.CreateStream(ref this, lMediaType, td, out ppStream);
 			}
-			public HRESULT RemoveStream(ITStream* pStream) mut
+			public HRESULT RemoveStream(ref ITStream pStream) mut
 			{
-				return VT.RemoveStream(&this, pStream);
+				return VT.RemoveStream(ref this, ref pStream);
 			}
-			public HRESULT EnumerateStreams(IEnumStream** ppEnumStream) mut
+			public HRESULT EnumerateStreams(out IEnumStream* ppEnumStream) mut
 			{
-				return VT.EnumerateStreams(&this, ppEnumStream);
+				return VT.EnumerateStreams(ref this, out ppEnumStream);
 			}
-			public HRESULT get_Streams(VARIANT* pVariant) mut
+			public HRESULT get_Streams(out VARIANT pVariant) mut
 			{
-				return VT.get_Streams(&this, pVariant);
+				return VT.get_Streams(ref this, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITStreamControl *self, int32 lMediaType, TERMINAL_DIRECTION td, ITStream** ppStream) CreateStream;
-				public new function HRESULT(ITStreamControl *self, ITStream* pStream) RemoveStream;
-				public new function HRESULT(ITStreamControl *self, IEnumStream** ppEnumStream) EnumerateStreams;
-				public new function HRESULT(ITStreamControl *self, VARIANT* pVariant) get_Streams;
+				public new function HRESULT(ref ITStreamControl self, int32 lMediaType, TERMINAL_DIRECTION td, out ITStream* ppStream) CreateStream;
+				public new function HRESULT(ref ITStreamControl self, ref ITStream pStream) RemoveStream;
+				public new function HRESULT(ref ITStreamControl self, out IEnumStream* ppEnumStream) EnumerateStreams;
+				public new function HRESULT(ref ITStreamControl self, out VARIANT pVariant) get_Streams;
 			}
 		}
 		[CRepr]
@@ -6162,59 +6162,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MediaType(int32* plMediaType) mut
+			public HRESULT get_MediaType(out int32 plMediaType) mut
 			{
-				return VT.get_MediaType(&this, plMediaType);
+				return VT.get_MediaType(ref this, out plMediaType);
 			}
-			public HRESULT get_Direction(TERMINAL_DIRECTION* pTD) mut
+			public HRESULT get_Direction(out TERMINAL_DIRECTION pTD) mut
 			{
-				return VT.get_Direction(&this, pTD);
+				return VT.get_Direction(ref this, out pTD);
 			}
-			public HRESULT get_Name(BSTR* ppName) mut
+			public HRESULT get_Name(out BSTR ppName) mut
 			{
-				return VT.get_Name(&this, ppName);
+				return VT.get_Name(ref this, out ppName);
 			}
 			public HRESULT StartStream() mut
 			{
-				return VT.StartStream(&this);
+				return VT.StartStream(ref this);
 			}
 			public HRESULT PauseStream() mut
 			{
-				return VT.PauseStream(&this);
+				return VT.PauseStream(ref this);
 			}
 			public HRESULT StopStream() mut
 			{
-				return VT.StopStream(&this);
+				return VT.StopStream(ref this);
 			}
-			public HRESULT SelectTerminal(ITTerminal* pTerminal) mut
+			public HRESULT SelectTerminal(ref ITTerminal pTerminal) mut
 			{
-				return VT.SelectTerminal(&this, pTerminal);
+				return VT.SelectTerminal(ref this, ref pTerminal);
 			}
-			public HRESULT UnselectTerminal(ITTerminal* pTerminal) mut
+			public HRESULT UnselectTerminal(ref ITTerminal pTerminal) mut
 			{
-				return VT.UnselectTerminal(&this, pTerminal);
+				return VT.UnselectTerminal(ref this, ref pTerminal);
 			}
-			public HRESULT EnumerateTerminals(IEnumTerminal** ppEnumTerminal) mut
+			public HRESULT EnumerateTerminals(out IEnumTerminal* ppEnumTerminal) mut
 			{
-				return VT.EnumerateTerminals(&this, ppEnumTerminal);
+				return VT.EnumerateTerminals(ref this, out ppEnumTerminal);
 			}
-			public HRESULT get_Terminals(VARIANT* pTerminals) mut
+			public HRESULT get_Terminals(out VARIANT pTerminals) mut
 			{
-				return VT.get_Terminals(&this, pTerminals);
+				return VT.get_Terminals(ref this, out pTerminals);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITStream *self, int32* plMediaType) get_MediaType;
-				public new function HRESULT(ITStream *self, TERMINAL_DIRECTION* pTD) get_Direction;
-				public new function HRESULT(ITStream *self, BSTR* ppName) get_Name;
-				public new function HRESULT(ITStream *self) StartStream;
-				public new function HRESULT(ITStream *self) PauseStream;
-				public new function HRESULT(ITStream *self) StopStream;
-				public new function HRESULT(ITStream *self, ITTerminal* pTerminal) SelectTerminal;
-				public new function HRESULT(ITStream *self, ITTerminal* pTerminal) UnselectTerminal;
-				public new function HRESULT(ITStream *self, IEnumTerminal** ppEnumTerminal) EnumerateTerminals;
-				public new function HRESULT(ITStream *self, VARIANT* pTerminals) get_Terminals;
+				public new function HRESULT(ref ITStream self, out int32 plMediaType) get_MediaType;
+				public new function HRESULT(ref ITStream self, out TERMINAL_DIRECTION pTD) get_Direction;
+				public new function HRESULT(ref ITStream self, out BSTR ppName) get_Name;
+				public new function HRESULT(ref ITStream self) StartStream;
+				public new function HRESULT(ref ITStream self) PauseStream;
+				public new function HRESULT(ref ITStream self) StopStream;
+				public new function HRESULT(ref ITStream self, ref ITTerminal pTerminal) SelectTerminal;
+				public new function HRESULT(ref ITStream self, ref ITTerminal pTerminal) UnselectTerminal;
+				public new function HRESULT(ref ITStream self, out IEnumTerminal* ppEnumTerminal) EnumerateTerminals;
+				public new function HRESULT(ref ITStream self, out VARIANT pTerminals) get_Terminals;
 			}
 		}
 		[CRepr]
@@ -6224,29 +6224,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITStream** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out ITStream* ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, out ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumStream** ppEnum) mut
+			public HRESULT Clone(out IEnumStream* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumStream *self, uint32 celt, ITStream** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumStream *self) Reset;
-				public new function HRESULT(IEnumStream *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumStream *self, IEnumStream** ppEnum) Clone;
+				public new function HRESULT(ref IEnumStream self, uint32 celt, out ITStream* ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumStream self) Reset;
+				public new function HRESULT(ref IEnumStream self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumStream self, out IEnumStream* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -6256,29 +6256,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSubStream(ITSubStream** ppSubStream) mut
+			public HRESULT CreateSubStream(out ITSubStream* ppSubStream) mut
 			{
-				return VT.CreateSubStream(&this, ppSubStream);
+				return VT.CreateSubStream(ref this, out ppSubStream);
 			}
-			public HRESULT RemoveSubStream(ITSubStream* pSubStream) mut
+			public HRESULT RemoveSubStream(ref ITSubStream pSubStream) mut
 			{
-				return VT.RemoveSubStream(&this, pSubStream);
+				return VT.RemoveSubStream(ref this, ref pSubStream);
 			}
-			public HRESULT EnumerateSubStreams(IEnumSubStream** ppEnumSubStream) mut
+			public HRESULT EnumerateSubStreams(out IEnumSubStream* ppEnumSubStream) mut
 			{
-				return VT.EnumerateSubStreams(&this, ppEnumSubStream);
+				return VT.EnumerateSubStreams(ref this, out ppEnumSubStream);
 			}
-			public HRESULT get_SubStreams(VARIANT* pVariant) mut
+			public HRESULT get_SubStreams(out VARIANT pVariant) mut
 			{
-				return VT.get_SubStreams(&this, pVariant);
+				return VT.get_SubStreams(ref this, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITSubStreamControl *self, ITSubStream** ppSubStream) CreateSubStream;
-				public new function HRESULT(ITSubStreamControl *self, ITSubStream* pSubStream) RemoveSubStream;
-				public new function HRESULT(ITSubStreamControl *self, IEnumSubStream** ppEnumSubStream) EnumerateSubStreams;
-				public new function HRESULT(ITSubStreamControl *self, VARIANT* pVariant) get_SubStreams;
+				public new function HRESULT(ref ITSubStreamControl self, out ITSubStream* ppSubStream) CreateSubStream;
+				public new function HRESULT(ref ITSubStreamControl self, ref ITSubStream pSubStream) RemoveSubStream;
+				public new function HRESULT(ref ITSubStreamControl self, out IEnumSubStream* ppEnumSubStream) EnumerateSubStreams;
+				public new function HRESULT(ref ITSubStreamControl self, out VARIANT pVariant) get_SubStreams;
 			}
 		}
 		[CRepr]
@@ -6290,47 +6290,47 @@ namespace Win32
 			
 			public HRESULT StartSubStream() mut
 			{
-				return VT.StartSubStream(&this);
+				return VT.StartSubStream(ref this);
 			}
 			public HRESULT PauseSubStream() mut
 			{
-				return VT.PauseSubStream(&this);
+				return VT.PauseSubStream(ref this);
 			}
 			public HRESULT StopSubStream() mut
 			{
-				return VT.StopSubStream(&this);
+				return VT.StopSubStream(ref this);
 			}
-			public HRESULT SelectTerminal(ITTerminal* pTerminal) mut
+			public HRESULT SelectTerminal(ref ITTerminal pTerminal) mut
 			{
-				return VT.SelectTerminal(&this, pTerminal);
+				return VT.SelectTerminal(ref this, ref pTerminal);
 			}
-			public HRESULT UnselectTerminal(ITTerminal* pTerminal) mut
+			public HRESULT UnselectTerminal(ref ITTerminal pTerminal) mut
 			{
-				return VT.UnselectTerminal(&this, pTerminal);
+				return VT.UnselectTerminal(ref this, ref pTerminal);
 			}
-			public HRESULT EnumerateTerminals(IEnumTerminal** ppEnumTerminal) mut
+			public HRESULT EnumerateTerminals(out IEnumTerminal* ppEnumTerminal) mut
 			{
-				return VT.EnumerateTerminals(&this, ppEnumTerminal);
+				return VT.EnumerateTerminals(ref this, out ppEnumTerminal);
 			}
-			public HRESULT get_Terminals(VARIANT* pTerminals) mut
+			public HRESULT get_Terminals(out VARIANT pTerminals) mut
 			{
-				return VT.get_Terminals(&this, pTerminals);
+				return VT.get_Terminals(ref this, out pTerminals);
 			}
-			public HRESULT get_Stream(ITStream** ppITStream) mut
+			public HRESULT get_Stream(out ITStream* ppITStream) mut
 			{
-				return VT.get_Stream(&this, ppITStream);
+				return VT.get_Stream(ref this, out ppITStream);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITSubStream *self) StartSubStream;
-				public new function HRESULT(ITSubStream *self) PauseSubStream;
-				public new function HRESULT(ITSubStream *self) StopSubStream;
-				public new function HRESULT(ITSubStream *self, ITTerminal* pTerminal) SelectTerminal;
-				public new function HRESULT(ITSubStream *self, ITTerminal* pTerminal) UnselectTerminal;
-				public new function HRESULT(ITSubStream *self, IEnumTerminal** ppEnumTerminal) EnumerateTerminals;
-				public new function HRESULT(ITSubStream *self, VARIANT* pTerminals) get_Terminals;
-				public new function HRESULT(ITSubStream *self, ITStream** ppITStream) get_Stream;
+				public new function HRESULT(ref ITSubStream self) StartSubStream;
+				public new function HRESULT(ref ITSubStream self) PauseSubStream;
+				public new function HRESULT(ref ITSubStream self) StopSubStream;
+				public new function HRESULT(ref ITSubStream self, ref ITTerminal pTerminal) SelectTerminal;
+				public new function HRESULT(ref ITSubStream self, ref ITTerminal pTerminal) UnselectTerminal;
+				public new function HRESULT(ref ITSubStream self, out IEnumTerminal* ppEnumTerminal) EnumerateTerminals;
+				public new function HRESULT(ref ITSubStream self, out VARIANT pTerminals) get_Terminals;
+				public new function HRESULT(ref ITSubStream self, out ITStream* ppITStream) get_Stream;
 			}
 		}
 		[CRepr]
@@ -6340,29 +6340,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITSubStream** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out ITSubStream* ppElements, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, out ppElements, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumSubStream** ppEnum) mut
+			public HRESULT Clone(out IEnumSubStream* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumSubStream *self, uint32 celt, ITSubStream** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumSubStream *self) Reset;
-				public new function HRESULT(IEnumSubStream *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumSubStream *self, IEnumSubStream** ppEnum) Clone;
+				public new function HRESULT(ref IEnumSubStream self, uint32 celt, out ITSubStream* ppElements, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumSubStream self) Reset;
+				public new function HRESULT(ref IEnumSubStream self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumSubStream self, out IEnumSubStream* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -6372,14 +6372,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsFullDuplex(FULLDUPLEX_SUPPORT* pSupport) mut
+			public HRESULT IsFullDuplex(out FULLDUPLEX_SUPPORT pSupport) mut
 			{
-				return VT.IsFullDuplex(&this, pSupport);
+				return VT.IsFullDuplex(ref this, out pSupport);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITLegacyWaveSupport *self, FULLDUPLEX_SUPPORT* pSupport) IsFullDuplex;
+				public new function HRESULT(ref ITLegacyWaveSupport self, out FULLDUPLEX_SUPPORT pSupport) IsFullDuplex;
 			}
 		}
 		[CRepr]
@@ -6389,24 +6389,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestTerminal(BSTR bstrTerminalClassGUID, int32 lMediaType, TERMINAL_DIRECTION Direction, ITTerminal** ppTerminal) mut
+			public HRESULT RequestTerminal(BSTR bstrTerminalClassGUID, int32 lMediaType, TERMINAL_DIRECTION Direction, out ITTerminal* ppTerminal) mut
 			{
-				return VT.RequestTerminal(&this, bstrTerminalClassGUID, lMediaType, Direction, ppTerminal);
+				return VT.RequestTerminal(ref this, bstrTerminalClassGUID, lMediaType, Direction, out ppTerminal);
 			}
-			public HRESULT SelectTerminalOnCall(ITTerminal* pTerminal) mut
+			public HRESULT SelectTerminalOnCall(ref ITTerminal pTerminal) mut
 			{
-				return VT.SelectTerminalOnCall(&this, pTerminal);
+				return VT.SelectTerminalOnCall(ref this, ref pTerminal);
 			}
-			public HRESULT UnselectTerminalOnCall(ITTerminal* pTerminal) mut
+			public HRESULT UnselectTerminalOnCall(ref ITTerminal pTerminal) mut
 			{
-				return VT.UnselectTerminalOnCall(&this, pTerminal);
+				return VT.UnselectTerminalOnCall(ref this, ref pTerminal);
 			}
 			[CRepr]
 			public struct VTable : ITBasicCallControl.VTable
 			{
-				public new function HRESULT(ITBasicCallControl2 *self, BSTR bstrTerminalClassGUID, int32 lMediaType, TERMINAL_DIRECTION Direction, ITTerminal** ppTerminal) RequestTerminal;
-				public new function HRESULT(ITBasicCallControl2 *self, ITTerminal* pTerminal) SelectTerminalOnCall;
-				public new function HRESULT(ITBasicCallControl2 *self, ITTerminal* pTerminal) UnselectTerminalOnCall;
+				public new function HRESULT(ref ITBasicCallControl2 self, BSTR bstrTerminalClassGUID, int32 lMediaType, TERMINAL_DIRECTION Direction, out ITTerminal* ppTerminal) RequestTerminal;
+				public new function HRESULT(ref ITBasicCallControl2 self, ref ITTerminal pTerminal) SelectTerminalOnCall;
+				public new function HRESULT(ref ITBasicCallControl2 self, ref ITTerminal pTerminal) UnselectTerminalOnCall;
 			}
 		}
 		[CRepr]
@@ -6416,69 +6416,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Channels(int32* pVal) mut
+			public HRESULT get_Channels(out int32 pVal) mut
 			{
-				return VT.get_Channels(&this, pVal);
+				return VT.get_Channels(ref this, out pVal);
 			}
 			public HRESULT put_Channels(int32 nNewVal) mut
 			{
-				return VT.put_Channels(&this, nNewVal);
+				return VT.put_Channels(ref this, nNewVal);
 			}
-			public HRESULT get_SamplesPerSec(int32* pVal) mut
+			public HRESULT get_SamplesPerSec(out int32 pVal) mut
 			{
-				return VT.get_SamplesPerSec(&this, pVal);
+				return VT.get_SamplesPerSec(ref this, out pVal);
 			}
 			public HRESULT put_SamplesPerSec(int32 nNewVal) mut
 			{
-				return VT.put_SamplesPerSec(&this, nNewVal);
+				return VT.put_SamplesPerSec(ref this, nNewVal);
 			}
-			public HRESULT get_AvgBytesPerSec(int32* pVal) mut
+			public HRESULT get_AvgBytesPerSec(out int32 pVal) mut
 			{
-				return VT.get_AvgBytesPerSec(&this, pVal);
+				return VT.get_AvgBytesPerSec(ref this, out pVal);
 			}
 			public HRESULT put_AvgBytesPerSec(int32 nNewVal) mut
 			{
-				return VT.put_AvgBytesPerSec(&this, nNewVal);
+				return VT.put_AvgBytesPerSec(ref this, nNewVal);
 			}
-			public HRESULT get_BlockAlign(int32* pVal) mut
+			public HRESULT get_BlockAlign(out int32 pVal) mut
 			{
-				return VT.get_BlockAlign(&this, pVal);
+				return VT.get_BlockAlign(ref this, out pVal);
 			}
 			public HRESULT put_BlockAlign(int32 nNewVal) mut
 			{
-				return VT.put_BlockAlign(&this, nNewVal);
+				return VT.put_BlockAlign(ref this, nNewVal);
 			}
-			public HRESULT get_BitsPerSample(int32* pVal) mut
+			public HRESULT get_BitsPerSample(out int32 pVal) mut
 			{
-				return VT.get_BitsPerSample(&this, pVal);
+				return VT.get_BitsPerSample(ref this, out pVal);
 			}
 			public HRESULT put_BitsPerSample(int32 nNewVal) mut
 			{
-				return VT.put_BitsPerSample(&this, nNewVal);
+				return VT.put_BitsPerSample(ref this, nNewVal);
 			}
-			public HRESULT get_FormatTag(int32* pVal) mut
+			public HRESULT get_FormatTag(out int32 pVal) mut
 			{
-				return VT.get_FormatTag(&this, pVal);
+				return VT.get_FormatTag(ref this, out pVal);
 			}
 			public HRESULT put_FormatTag(int32 nNewVal) mut
 			{
-				return VT.put_FormatTag(&this, nNewVal);
+				return VT.put_FormatTag(ref this, nNewVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITScriptableAudioFormat *self, int32* pVal) get_Channels;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32 nNewVal) put_Channels;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32* pVal) get_SamplesPerSec;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32 nNewVal) put_SamplesPerSec;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32* pVal) get_AvgBytesPerSec;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32 nNewVal) put_AvgBytesPerSec;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32* pVal) get_BlockAlign;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32 nNewVal) put_BlockAlign;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32* pVal) get_BitsPerSample;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32 nNewVal) put_BitsPerSample;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32* pVal) get_FormatTag;
-				public new function HRESULT(ITScriptableAudioFormat *self, int32 nNewVal) put_FormatTag;
+				public new function HRESULT(ref ITScriptableAudioFormat self, out int32 pVal) get_Channels;
+				public new function HRESULT(ref ITScriptableAudioFormat self, int32 nNewVal) put_Channels;
+				public new function HRESULT(ref ITScriptableAudioFormat self, out int32 pVal) get_SamplesPerSec;
+				public new function HRESULT(ref ITScriptableAudioFormat self, int32 nNewVal) put_SamplesPerSec;
+				public new function HRESULT(ref ITScriptableAudioFormat self, out int32 pVal) get_AvgBytesPerSec;
+				public new function HRESULT(ref ITScriptableAudioFormat self, int32 nNewVal) put_AvgBytesPerSec;
+				public new function HRESULT(ref ITScriptableAudioFormat self, out int32 pVal) get_BlockAlign;
+				public new function HRESULT(ref ITScriptableAudioFormat self, int32 nNewVal) put_BlockAlign;
+				public new function HRESULT(ref ITScriptableAudioFormat self, out int32 pVal) get_BitsPerSample;
+				public new function HRESULT(ref ITScriptableAudioFormat self, int32 nNewVal) put_BitsPerSample;
+				public new function HRESULT(ref ITScriptableAudioFormat self, out int32 pVal) get_FormatTag;
+				public new function HRESULT(ref ITScriptableAudioFormat self, int32 nNewVal) put_FormatTag;
 			}
 		}
 		[CRepr]
@@ -6490,92 +6490,92 @@ namespace Win32
 			
 			public HRESULT EnumerateAgentSessions(IEnumAgentSession** ppEnumAgentSession) mut
 			{
-				return VT.EnumerateAgentSessions(&this, ppEnumAgentSession);
+				return VT.EnumerateAgentSessions(ref this, ppEnumAgentSession);
 			}
 			public HRESULT CreateSession(ITACDGroup* pACDGroup, ITAddress* pAddress, ITAgentSession** ppAgentSession) mut
 			{
-				return VT.CreateSession(&this, pACDGroup, pAddress, ppAgentSession);
+				return VT.CreateSession(ref this, pACDGroup, pAddress, ppAgentSession);
 			}
 			public HRESULT CreateSessionWithPIN(ITACDGroup* pACDGroup, ITAddress* pAddress, BSTR pPIN, ITAgentSession** ppAgentSession) mut
 			{
-				return VT.CreateSessionWithPIN(&this, pACDGroup, pAddress, pPIN, ppAgentSession);
+				return VT.CreateSessionWithPIN(ref this, pACDGroup, pAddress, pPIN, ppAgentSession);
 			}
 			public HRESULT get_ID(BSTR* ppID) mut
 			{
-				return VT.get_ID(&this, ppID);
+				return VT.get_ID(ref this, ppID);
 			}
 			public HRESULT get_User(BSTR* ppUser) mut
 			{
-				return VT.get_User(&this, ppUser);
+				return VT.get_User(ref this, ppUser);
 			}
 			public HRESULT put_State(AGENT_STATE AgentState) mut
 			{
-				return VT.put_State(&this, AgentState);
+				return VT.put_State(ref this, AgentState);
 			}
-			public HRESULT get_State(AGENT_STATE* pAgentState) mut
+			public HRESULT get_State(out AGENT_STATE pAgentState) mut
 			{
-				return VT.get_State(&this, pAgentState);
+				return VT.get_State(ref this, out pAgentState);
 			}
 			public HRESULT put_MeasurementPeriod(int32 lPeriod) mut
 			{
-				return VT.put_MeasurementPeriod(&this, lPeriod);
+				return VT.put_MeasurementPeriod(ref this, lPeriod);
 			}
-			public HRESULT get_MeasurementPeriod(int32* plPeriod) mut
+			public HRESULT get_MeasurementPeriod(out int32 plPeriod) mut
 			{
-				return VT.get_MeasurementPeriod(&this, plPeriod);
+				return VT.get_MeasurementPeriod(ref this, out plPeriod);
 			}
-			public HRESULT get_OverallCallRate(CY* pcyCallrate) mut
+			public HRESULT get_OverallCallRate(out CY pcyCallrate) mut
 			{
-				return VT.get_OverallCallRate(&this, pcyCallrate);
+				return VT.get_OverallCallRate(ref this, out pcyCallrate);
 			}
-			public HRESULT get_NumberOfACDCalls(int32* plCalls) mut
+			public HRESULT get_NumberOfACDCalls(out int32 plCalls) mut
 			{
-				return VT.get_NumberOfACDCalls(&this, plCalls);
+				return VT.get_NumberOfACDCalls(ref this, out plCalls);
 			}
-			public HRESULT get_NumberOfIncomingCalls(int32* plCalls) mut
+			public HRESULT get_NumberOfIncomingCalls(out int32 plCalls) mut
 			{
-				return VT.get_NumberOfIncomingCalls(&this, plCalls);
+				return VT.get_NumberOfIncomingCalls(ref this, out plCalls);
 			}
-			public HRESULT get_NumberOfOutgoingCalls(int32* plCalls) mut
+			public HRESULT get_NumberOfOutgoingCalls(out int32 plCalls) mut
 			{
-				return VT.get_NumberOfOutgoingCalls(&this, plCalls);
+				return VT.get_NumberOfOutgoingCalls(ref this, out plCalls);
 			}
-			public HRESULT get_TotalACDTalkTime(int32* plTalkTime) mut
+			public HRESULT get_TotalACDTalkTime(out int32 plTalkTime) mut
 			{
-				return VT.get_TotalACDTalkTime(&this, plTalkTime);
+				return VT.get_TotalACDTalkTime(ref this, out plTalkTime);
 			}
-			public HRESULT get_TotalACDCallTime(int32* plCallTime) mut
+			public HRESULT get_TotalACDCallTime(out int32 plCallTime) mut
 			{
-				return VT.get_TotalACDCallTime(&this, plCallTime);
+				return VT.get_TotalACDCallTime(ref this, out plCallTime);
 			}
-			public HRESULT get_TotalWrapUpTime(int32* plWrapUpTime) mut
+			public HRESULT get_TotalWrapUpTime(out int32 plWrapUpTime) mut
 			{
-				return VT.get_TotalWrapUpTime(&this, plWrapUpTime);
+				return VT.get_TotalWrapUpTime(ref this, out plWrapUpTime);
 			}
-			public HRESULT get_AgentSessions(VARIANT* pVariant) mut
+			public HRESULT get_AgentSessions(out VARIANT pVariant) mut
 			{
-				return VT.get_AgentSessions(&this, pVariant);
+				return VT.get_AgentSessions(ref this, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAgent *self, IEnumAgentSession** ppEnumAgentSession) EnumerateAgentSessions;
-				public new function HRESULT(ITAgent *self, ITACDGroup* pACDGroup, ITAddress* pAddress, ITAgentSession** ppAgentSession) CreateSession;
-				public new function HRESULT(ITAgent *self, ITACDGroup* pACDGroup, ITAddress* pAddress, BSTR pPIN, ITAgentSession** ppAgentSession) CreateSessionWithPIN;
-				public new function HRESULT(ITAgent *self, BSTR* ppID) get_ID;
-				public new function HRESULT(ITAgent *self, BSTR* ppUser) get_User;
-				public new function HRESULT(ITAgent *self, AGENT_STATE AgentState) put_State;
-				public new function HRESULT(ITAgent *self, AGENT_STATE* pAgentState) get_State;
-				public new function HRESULT(ITAgent *self, int32 lPeriod) put_MeasurementPeriod;
-				public new function HRESULT(ITAgent *self, int32* plPeriod) get_MeasurementPeriod;
-				public new function HRESULT(ITAgent *self, CY* pcyCallrate) get_OverallCallRate;
-				public new function HRESULT(ITAgent *self, int32* plCalls) get_NumberOfACDCalls;
-				public new function HRESULT(ITAgent *self, int32* plCalls) get_NumberOfIncomingCalls;
-				public new function HRESULT(ITAgent *self, int32* plCalls) get_NumberOfOutgoingCalls;
-				public new function HRESULT(ITAgent *self, int32* plTalkTime) get_TotalACDTalkTime;
-				public new function HRESULT(ITAgent *self, int32* plCallTime) get_TotalACDCallTime;
-				public new function HRESULT(ITAgent *self, int32* plWrapUpTime) get_TotalWrapUpTime;
-				public new function HRESULT(ITAgent *self, VARIANT* pVariant) get_AgentSessions;
+				public new function HRESULT(ref ITAgent self, IEnumAgentSession** ppEnumAgentSession) EnumerateAgentSessions;
+				public new function HRESULT(ref ITAgent self, ITACDGroup* pACDGroup, ITAddress* pAddress, ITAgentSession** ppAgentSession) CreateSession;
+				public new function HRESULT(ref ITAgent self, ITACDGroup* pACDGroup, ITAddress* pAddress, BSTR pPIN, ITAgentSession** ppAgentSession) CreateSessionWithPIN;
+				public new function HRESULT(ref ITAgent self, BSTR* ppID) get_ID;
+				public new function HRESULT(ref ITAgent self, BSTR* ppUser) get_User;
+				public new function HRESULT(ref ITAgent self, AGENT_STATE AgentState) put_State;
+				public new function HRESULT(ref ITAgent self, out AGENT_STATE pAgentState) get_State;
+				public new function HRESULT(ref ITAgent self, int32 lPeriod) put_MeasurementPeriod;
+				public new function HRESULT(ref ITAgent self, out int32 plPeriod) get_MeasurementPeriod;
+				public new function HRESULT(ref ITAgent self, out CY pcyCallrate) get_OverallCallRate;
+				public new function HRESULT(ref ITAgent self, out int32 plCalls) get_NumberOfACDCalls;
+				public new function HRESULT(ref ITAgent self, out int32 plCalls) get_NumberOfIncomingCalls;
+				public new function HRESULT(ref ITAgent self, out int32 plCalls) get_NumberOfOutgoingCalls;
+				public new function HRESULT(ref ITAgent self, out int32 plTalkTime) get_TotalACDTalkTime;
+				public new function HRESULT(ref ITAgent self, out int32 plCallTime) get_TotalACDCallTime;
+				public new function HRESULT(ref ITAgent self, out int32 plWrapUpTime) get_TotalWrapUpTime;
+				public new function HRESULT(ref ITAgent self, out VARIANT pVariant) get_AgentSessions;
 			}
 		}
 		[CRepr]
@@ -6587,92 +6587,92 @@ namespace Win32
 			
 			public HRESULT get_Agent(ITAgent** ppAgent) mut
 			{
-				return VT.get_Agent(&this, ppAgent);
+				return VT.get_Agent(ref this, ppAgent);
 			}
 			public HRESULT get_Address(ITAddress** ppAddress) mut
 			{
-				return VT.get_Address(&this, ppAddress);
+				return VT.get_Address(ref this, ppAddress);
 			}
 			public HRESULT get_ACDGroup(ITACDGroup** ppACDGroup) mut
 			{
-				return VT.get_ACDGroup(&this, ppACDGroup);
+				return VT.get_ACDGroup(ref this, ppACDGroup);
 			}
 			public HRESULT put_State(AGENT_SESSION_STATE SessionState) mut
 			{
-				return VT.put_State(&this, SessionState);
+				return VT.put_State(ref this, SessionState);
 			}
-			public HRESULT get_State(AGENT_SESSION_STATE* pSessionState) mut
+			public HRESULT get_State(out AGENT_SESSION_STATE pSessionState) mut
 			{
-				return VT.get_State(&this, pSessionState);
+				return VT.get_State(ref this, out pSessionState);
 			}
-			public HRESULT get_SessionStartTime(double* pdateSessionStart) mut
+			public HRESULT get_SessionStartTime(out double pdateSessionStart) mut
 			{
-				return VT.get_SessionStartTime(&this, pdateSessionStart);
+				return VT.get_SessionStartTime(ref this, out pdateSessionStart);
 			}
-			public HRESULT get_SessionDuration(int32* plDuration) mut
+			public HRESULT get_SessionDuration(out int32 plDuration) mut
 			{
-				return VT.get_SessionDuration(&this, plDuration);
+				return VT.get_SessionDuration(ref this, out plDuration);
 			}
-			public HRESULT get_NumberOfCalls(int32* plCalls) mut
+			public HRESULT get_NumberOfCalls(out int32 plCalls) mut
 			{
-				return VT.get_NumberOfCalls(&this, plCalls);
+				return VT.get_NumberOfCalls(ref this, out plCalls);
 			}
-			public HRESULT get_TotalTalkTime(int32* plTalkTime) mut
+			public HRESULT get_TotalTalkTime(out int32 plTalkTime) mut
 			{
-				return VT.get_TotalTalkTime(&this, plTalkTime);
+				return VT.get_TotalTalkTime(ref this, out plTalkTime);
 			}
-			public HRESULT get_AverageTalkTime(int32* plTalkTime) mut
+			public HRESULT get_AverageTalkTime(out int32 plTalkTime) mut
 			{
-				return VT.get_AverageTalkTime(&this, plTalkTime);
+				return VT.get_AverageTalkTime(ref this, out plTalkTime);
 			}
-			public HRESULT get_TotalCallTime(int32* plCallTime) mut
+			public HRESULT get_TotalCallTime(out int32 plCallTime) mut
 			{
-				return VT.get_TotalCallTime(&this, plCallTime);
+				return VT.get_TotalCallTime(ref this, out plCallTime);
 			}
-			public HRESULT get_AverageCallTime(int32* plCallTime) mut
+			public HRESULT get_AverageCallTime(out int32 plCallTime) mut
 			{
-				return VT.get_AverageCallTime(&this, plCallTime);
+				return VT.get_AverageCallTime(ref this, out plCallTime);
 			}
-			public HRESULT get_TotalWrapUpTime(int32* plWrapUpTime) mut
+			public HRESULT get_TotalWrapUpTime(out int32 plWrapUpTime) mut
 			{
-				return VT.get_TotalWrapUpTime(&this, plWrapUpTime);
+				return VT.get_TotalWrapUpTime(ref this, out plWrapUpTime);
 			}
-			public HRESULT get_AverageWrapUpTime(int32* plWrapUpTime) mut
+			public HRESULT get_AverageWrapUpTime(out int32 plWrapUpTime) mut
 			{
-				return VT.get_AverageWrapUpTime(&this, plWrapUpTime);
+				return VT.get_AverageWrapUpTime(ref this, out plWrapUpTime);
 			}
-			public HRESULT get_ACDCallRate(CY* pcyCallrate) mut
+			public HRESULT get_ACDCallRate(out CY pcyCallrate) mut
 			{
-				return VT.get_ACDCallRate(&this, pcyCallrate);
+				return VT.get_ACDCallRate(ref this, out pcyCallrate);
 			}
-			public HRESULT get_LongestTimeToAnswer(int32* plAnswerTime) mut
+			public HRESULT get_LongestTimeToAnswer(out int32 plAnswerTime) mut
 			{
-				return VT.get_LongestTimeToAnswer(&this, plAnswerTime);
+				return VT.get_LongestTimeToAnswer(ref this, out plAnswerTime);
 			}
-			public HRESULT get_AverageTimeToAnswer(int32* plAnswerTime) mut
+			public HRESULT get_AverageTimeToAnswer(out int32 plAnswerTime) mut
 			{
-				return VT.get_AverageTimeToAnswer(&this, plAnswerTime);
+				return VT.get_AverageTimeToAnswer(ref this, out plAnswerTime);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAgentSession *self, ITAgent** ppAgent) get_Agent;
-				public new function HRESULT(ITAgentSession *self, ITAddress** ppAddress) get_Address;
-				public new function HRESULT(ITAgentSession *self, ITACDGroup** ppACDGroup) get_ACDGroup;
-				public new function HRESULT(ITAgentSession *self, AGENT_SESSION_STATE SessionState) put_State;
-				public new function HRESULT(ITAgentSession *self, AGENT_SESSION_STATE* pSessionState) get_State;
-				public new function HRESULT(ITAgentSession *self, double* pdateSessionStart) get_SessionStartTime;
-				public new function HRESULT(ITAgentSession *self, int32* plDuration) get_SessionDuration;
-				public new function HRESULT(ITAgentSession *self, int32* plCalls) get_NumberOfCalls;
-				public new function HRESULT(ITAgentSession *self, int32* plTalkTime) get_TotalTalkTime;
-				public new function HRESULT(ITAgentSession *self, int32* plTalkTime) get_AverageTalkTime;
-				public new function HRESULT(ITAgentSession *self, int32* plCallTime) get_TotalCallTime;
-				public new function HRESULT(ITAgentSession *self, int32* plCallTime) get_AverageCallTime;
-				public new function HRESULT(ITAgentSession *self, int32* plWrapUpTime) get_TotalWrapUpTime;
-				public new function HRESULT(ITAgentSession *self, int32* plWrapUpTime) get_AverageWrapUpTime;
-				public new function HRESULT(ITAgentSession *self, CY* pcyCallrate) get_ACDCallRate;
-				public new function HRESULT(ITAgentSession *self, int32* plAnswerTime) get_LongestTimeToAnswer;
-				public new function HRESULT(ITAgentSession *self, int32* plAnswerTime) get_AverageTimeToAnswer;
+				public new function HRESULT(ref ITAgentSession self, ITAgent** ppAgent) get_Agent;
+				public new function HRESULT(ref ITAgentSession self, ITAddress** ppAddress) get_Address;
+				public new function HRESULT(ref ITAgentSession self, ITACDGroup** ppACDGroup) get_ACDGroup;
+				public new function HRESULT(ref ITAgentSession self, AGENT_SESSION_STATE SessionState) put_State;
+				public new function HRESULT(ref ITAgentSession self, out AGENT_SESSION_STATE pSessionState) get_State;
+				public new function HRESULT(ref ITAgentSession self, out double pdateSessionStart) get_SessionStartTime;
+				public new function HRESULT(ref ITAgentSession self, out int32 plDuration) get_SessionDuration;
+				public new function HRESULT(ref ITAgentSession self, out int32 plCalls) get_NumberOfCalls;
+				public new function HRESULT(ref ITAgentSession self, out int32 plTalkTime) get_TotalTalkTime;
+				public new function HRESULT(ref ITAgentSession self, out int32 plTalkTime) get_AverageTalkTime;
+				public new function HRESULT(ref ITAgentSession self, out int32 plCallTime) get_TotalCallTime;
+				public new function HRESULT(ref ITAgentSession self, out int32 plCallTime) get_AverageCallTime;
+				public new function HRESULT(ref ITAgentSession self, out int32 plWrapUpTime) get_TotalWrapUpTime;
+				public new function HRESULT(ref ITAgentSession self, out int32 plWrapUpTime) get_AverageWrapUpTime;
+				public new function HRESULT(ref ITAgentSession self, out CY pcyCallrate) get_ACDCallRate;
+				public new function HRESULT(ref ITAgentSession self, out int32 plAnswerTime) get_LongestTimeToAnswer;
+				public new function HRESULT(ref ITAgentSession self, out int32 plAnswerTime) get_AverageTimeToAnswer;
 			}
 		}
 		[CRepr]
@@ -6684,22 +6684,22 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* ppName) mut
 			{
-				return VT.get_Name(&this, ppName);
+				return VT.get_Name(ref this, ppName);
 			}
 			public HRESULT EnumerateQueues(IEnumQueue** ppEnumQueue) mut
 			{
-				return VT.EnumerateQueues(&this, ppEnumQueue);
+				return VT.EnumerateQueues(ref this, ppEnumQueue);
 			}
-			public HRESULT get_Queues(VARIANT* pVariant) mut
+			public HRESULT get_Queues(out VARIANT pVariant) mut
 			{
-				return VT.get_Queues(&this, pVariant);
+				return VT.get_Queues(ref this, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITACDGroup *self, BSTR* ppName) get_Name;
-				public new function HRESULT(ITACDGroup *self, IEnumQueue** ppEnumQueue) EnumerateQueues;
-				public new function HRESULT(ITACDGroup *self, VARIANT* pVariant) get_Queues;
+				public new function HRESULT(ref ITACDGroup self, BSTR* ppName) get_Name;
+				public new function HRESULT(ref ITACDGroup self, IEnumQueue** ppEnumQueue) EnumerateQueues;
+				public new function HRESULT(ref ITACDGroup self, out VARIANT pVariant) get_Queues;
 			}
 		}
 		[CRepr]
@@ -6711,67 +6711,67 @@ namespace Win32
 			
 			public HRESULT put_MeasurementPeriod(int32 lPeriod) mut
 			{
-				return VT.put_MeasurementPeriod(&this, lPeriod);
+				return VT.put_MeasurementPeriod(ref this, lPeriod);
 			}
-			public HRESULT get_MeasurementPeriod(int32* plPeriod) mut
+			public HRESULT get_MeasurementPeriod(out int32 plPeriod) mut
 			{
-				return VT.get_MeasurementPeriod(&this, plPeriod);
+				return VT.get_MeasurementPeriod(ref this, out plPeriod);
 			}
-			public HRESULT get_TotalCallsQueued(int32* plCalls) mut
+			public HRESULT get_TotalCallsQueued(out int32 plCalls) mut
 			{
-				return VT.get_TotalCallsQueued(&this, plCalls);
+				return VT.get_TotalCallsQueued(ref this, out plCalls);
 			}
-			public HRESULT get_CurrentCallsQueued(int32* plCalls) mut
+			public HRESULT get_CurrentCallsQueued(out int32 plCalls) mut
 			{
-				return VT.get_CurrentCallsQueued(&this, plCalls);
+				return VT.get_CurrentCallsQueued(ref this, out plCalls);
 			}
-			public HRESULT get_TotalCallsAbandoned(int32* plCalls) mut
+			public HRESULT get_TotalCallsAbandoned(out int32 plCalls) mut
 			{
-				return VT.get_TotalCallsAbandoned(&this, plCalls);
+				return VT.get_TotalCallsAbandoned(ref this, out plCalls);
 			}
-			public HRESULT get_TotalCallsFlowedIn(int32* plCalls) mut
+			public HRESULT get_TotalCallsFlowedIn(out int32 plCalls) mut
 			{
-				return VT.get_TotalCallsFlowedIn(&this, plCalls);
+				return VT.get_TotalCallsFlowedIn(ref this, out plCalls);
 			}
-			public HRESULT get_TotalCallsFlowedOut(int32* plCalls) mut
+			public HRESULT get_TotalCallsFlowedOut(out int32 plCalls) mut
 			{
-				return VT.get_TotalCallsFlowedOut(&this, plCalls);
+				return VT.get_TotalCallsFlowedOut(ref this, out plCalls);
 			}
-			public HRESULT get_LongestEverWaitTime(int32* plWaitTime) mut
+			public HRESULT get_LongestEverWaitTime(out int32 plWaitTime) mut
 			{
-				return VT.get_LongestEverWaitTime(&this, plWaitTime);
+				return VT.get_LongestEverWaitTime(ref this, out plWaitTime);
 			}
-			public HRESULT get_CurrentLongestWaitTime(int32* plWaitTime) mut
+			public HRESULT get_CurrentLongestWaitTime(out int32 plWaitTime) mut
 			{
-				return VT.get_CurrentLongestWaitTime(&this, plWaitTime);
+				return VT.get_CurrentLongestWaitTime(ref this, out plWaitTime);
 			}
-			public HRESULT get_AverageWaitTime(int32* plWaitTime) mut
+			public HRESULT get_AverageWaitTime(out int32 plWaitTime) mut
 			{
-				return VT.get_AverageWaitTime(&this, plWaitTime);
+				return VT.get_AverageWaitTime(ref this, out plWaitTime);
 			}
-			public HRESULT get_FinalDisposition(int32* plCalls) mut
+			public HRESULT get_FinalDisposition(out int32 plCalls) mut
 			{
-				return VT.get_FinalDisposition(&this, plCalls);
+				return VT.get_FinalDisposition(ref this, out plCalls);
 			}
 			public HRESULT get_Name(BSTR* ppName) mut
 			{
-				return VT.get_Name(&this, ppName);
+				return VT.get_Name(ref this, ppName);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITQueue *self, int32 lPeriod) put_MeasurementPeriod;
-				public new function HRESULT(ITQueue *self, int32* plPeriod) get_MeasurementPeriod;
-				public new function HRESULT(ITQueue *self, int32* plCalls) get_TotalCallsQueued;
-				public new function HRESULT(ITQueue *self, int32* plCalls) get_CurrentCallsQueued;
-				public new function HRESULT(ITQueue *self, int32* plCalls) get_TotalCallsAbandoned;
-				public new function HRESULT(ITQueue *self, int32* plCalls) get_TotalCallsFlowedIn;
-				public new function HRESULT(ITQueue *self, int32* plCalls) get_TotalCallsFlowedOut;
-				public new function HRESULT(ITQueue *self, int32* plWaitTime) get_LongestEverWaitTime;
-				public new function HRESULT(ITQueue *self, int32* plWaitTime) get_CurrentLongestWaitTime;
-				public new function HRESULT(ITQueue *self, int32* plWaitTime) get_AverageWaitTime;
-				public new function HRESULT(ITQueue *self, int32* plCalls) get_FinalDisposition;
-				public new function HRESULT(ITQueue *self, BSTR* ppName) get_Name;
+				public new function HRESULT(ref ITQueue self, int32 lPeriod) put_MeasurementPeriod;
+				public new function HRESULT(ref ITQueue self, out int32 plPeriod) get_MeasurementPeriod;
+				public new function HRESULT(ref ITQueue self, out int32 plCalls) get_TotalCallsQueued;
+				public new function HRESULT(ref ITQueue self, out int32 plCalls) get_CurrentCallsQueued;
+				public new function HRESULT(ref ITQueue self, out int32 plCalls) get_TotalCallsAbandoned;
+				public new function HRESULT(ref ITQueue self, out int32 plCalls) get_TotalCallsFlowedIn;
+				public new function HRESULT(ref ITQueue self, out int32 plCalls) get_TotalCallsFlowedOut;
+				public new function HRESULT(ref ITQueue self, out int32 plWaitTime) get_LongestEverWaitTime;
+				public new function HRESULT(ref ITQueue self, out int32 plWaitTime) get_CurrentLongestWaitTime;
+				public new function HRESULT(ref ITQueue self, out int32 plWaitTime) get_AverageWaitTime;
+				public new function HRESULT(ref ITQueue self, out int32 plCalls) get_FinalDisposition;
+				public new function HRESULT(ref ITQueue self, BSTR* ppName) get_Name;
 			}
 		}
 		[CRepr]
@@ -6783,17 +6783,17 @@ namespace Win32
 			
 			public HRESULT get_Agent(ITAgent** ppAgent) mut
 			{
-				return VT.get_Agent(&this, ppAgent);
+				return VT.get_Agent(ref this, ppAgent);
 			}
-			public HRESULT get_Event(AGENT_EVENT* pEvent) mut
+			public HRESULT get_Event(out AGENT_EVENT pEvent) mut
 			{
-				return VT.get_Event(&this, pEvent);
+				return VT.get_Event(ref this, out pEvent);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAgentEvent *self, ITAgent** ppAgent) get_Agent;
-				public new function HRESULT(ITAgentEvent *self, AGENT_EVENT* pEvent) get_Event;
+				public new function HRESULT(ref ITAgentEvent self, ITAgent** ppAgent) get_Agent;
+				public new function HRESULT(ref ITAgentEvent self, out AGENT_EVENT pEvent) get_Event;
 			}
 		}
 		[CRepr]
@@ -6805,17 +6805,17 @@ namespace Win32
 			
 			public HRESULT get_Session(ITAgentSession** ppSession) mut
 			{
-				return VT.get_Session(&this, ppSession);
+				return VT.get_Session(ref this, ppSession);
 			}
-			public HRESULT get_Event(AGENT_SESSION_EVENT* pEvent) mut
+			public HRESULT get_Event(out AGENT_SESSION_EVENT pEvent) mut
 			{
-				return VT.get_Event(&this, pEvent);
+				return VT.get_Event(ref this, out pEvent);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAgentSessionEvent *self, ITAgentSession** ppSession) get_Session;
-				public new function HRESULT(ITAgentSessionEvent *self, AGENT_SESSION_EVENT* pEvent) get_Event;
+				public new function HRESULT(ref ITAgentSessionEvent self, ITAgentSession** ppSession) get_Session;
+				public new function HRESULT(ref ITAgentSessionEvent self, out AGENT_SESSION_EVENT pEvent) get_Event;
 			}
 		}
 		[CRepr]
@@ -6827,17 +6827,17 @@ namespace Win32
 			
 			public HRESULT get_Group(ITACDGroup** ppGroup) mut
 			{
-				return VT.get_Group(&this, ppGroup);
+				return VT.get_Group(ref this, ppGroup);
 			}
-			public HRESULT get_Event(ACDGROUP_EVENT* pEvent) mut
+			public HRESULT get_Event(out ACDGROUP_EVENT pEvent) mut
 			{
-				return VT.get_Event(&this, pEvent);
+				return VT.get_Event(ref this, out pEvent);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITACDGroupEvent *self, ITACDGroup** ppGroup) get_Group;
-				public new function HRESULT(ITACDGroupEvent *self, ACDGROUP_EVENT* pEvent) get_Event;
+				public new function HRESULT(ref ITACDGroupEvent self, ITACDGroup** ppGroup) get_Group;
+				public new function HRESULT(ref ITACDGroupEvent self, out ACDGROUP_EVENT pEvent) get_Event;
 			}
 		}
 		[CRepr]
@@ -6849,17 +6849,17 @@ namespace Win32
 			
 			public HRESULT get_Queue(ITQueue** ppQueue) mut
 			{
-				return VT.get_Queue(&this, ppQueue);
+				return VT.get_Queue(ref this, ppQueue);
 			}
-			public HRESULT get_Event(ACDQUEUE_EVENT* pEvent) mut
+			public HRESULT get_Event(out ACDQUEUE_EVENT pEvent) mut
 			{
-				return VT.get_Event(&this, pEvent);
+				return VT.get_Event(ref this, out pEvent);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITQueueEvent *self, ITQueue** ppQueue) get_Queue;
-				public new function HRESULT(ITQueueEvent *self, ACDQUEUE_EVENT* pEvent) get_Event;
+				public new function HRESULT(ref ITQueueEvent self, ITQueue** ppQueue) get_Queue;
+				public new function HRESULT(ref ITQueueEvent self, out ACDQUEUE_EVENT pEvent) get_Event;
 			}
 		}
 		[CRepr]
@@ -6871,17 +6871,17 @@ namespace Win32
 			
 			public HRESULT get_AgentHandler(ITAgentHandler** ppAgentHandler) mut
 			{
-				return VT.get_AgentHandler(&this, ppAgentHandler);
+				return VT.get_AgentHandler(ref this, ppAgentHandler);
 			}
-			public HRESULT get_Event(AGENTHANDLER_EVENT* pEvent) mut
+			public HRESULT get_Event(out AGENTHANDLER_EVENT pEvent) mut
 			{
-				return VT.get_Event(&this, pEvent);
+				return VT.get_Event(ref this, out pEvent);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAgentHandlerEvent *self, ITAgentHandler** ppAgentHandler) get_AgentHandler;
-				public new function HRESULT(ITAgentHandlerEvent *self, AGENTHANDLER_EVENT* pEvent) get_Event;
+				public new function HRESULT(ref ITAgentHandlerEvent self, ITAgentHandler** ppAgentHandler) get_AgentHandler;
+				public new function HRESULT(ref ITAgentHandlerEvent self, out AGENTHANDLER_EVENT pEvent) get_Event;
 			}
 		}
 		[CRepr]
@@ -6893,17 +6893,17 @@ namespace Win32
 			
 			public HRESULT EnumerateAgentHandlers(IEnumAgentHandler** ppEnumHandler) mut
 			{
-				return VT.EnumerateAgentHandlers(&this, ppEnumHandler);
+				return VT.EnumerateAgentHandlers(ref this, ppEnumHandler);
 			}
-			public HRESULT get_AgentHandlers(VARIANT* pVariant) mut
+			public HRESULT get_AgentHandlers(out VARIANT pVariant) mut
 			{
-				return VT.get_AgentHandlers(&this, pVariant);
+				return VT.get_AgentHandlers(ref this, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITTAPICallCenter *self, IEnumAgentHandler** ppEnumHandler) EnumerateAgentHandlers;
-				public new function HRESULT(ITTAPICallCenter *self, VARIANT* pVariant) get_AgentHandlers;
+				public new function HRESULT(ref ITTAPICallCenter self, IEnumAgentHandler** ppEnumHandler) EnumerateAgentHandlers;
+				public new function HRESULT(ref ITTAPICallCenter self, out VARIANT pVariant) get_AgentHandlers;
 			}
 		}
 		[CRepr]
@@ -6915,42 +6915,42 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* ppName) mut
 			{
-				return VT.get_Name(&this, ppName);
+				return VT.get_Name(ref this, ppName);
 			}
 			public HRESULT CreateAgent(ITAgent** ppAgent) mut
 			{
-				return VT.CreateAgent(&this, ppAgent);
+				return VT.CreateAgent(ref this, ppAgent);
 			}
 			public HRESULT CreateAgentWithID(BSTR pID, BSTR pPIN, ITAgent** ppAgent) mut
 			{
-				return VT.CreateAgentWithID(&this, pID, pPIN, ppAgent);
+				return VT.CreateAgentWithID(ref this, pID, pPIN, ppAgent);
 			}
 			public HRESULT EnumerateACDGroups(IEnumACDGroup** ppEnumACDGroup) mut
 			{
-				return VT.EnumerateACDGroups(&this, ppEnumACDGroup);
+				return VT.EnumerateACDGroups(ref this, ppEnumACDGroup);
 			}
 			public HRESULT EnumerateUsableAddresses(IEnumAddress** ppEnumAddress) mut
 			{
-				return VT.EnumerateUsableAddresses(&this, ppEnumAddress);
+				return VT.EnumerateUsableAddresses(ref this, ppEnumAddress);
 			}
-			public HRESULT get_ACDGroups(VARIANT* pVariant) mut
+			public HRESULT get_ACDGroups(out VARIANT pVariant) mut
 			{
-				return VT.get_ACDGroups(&this, pVariant);
+				return VT.get_ACDGroups(ref this, out pVariant);
 			}
-			public HRESULT get_UsableAddresses(VARIANT* pVariant) mut
+			public HRESULT get_UsableAddresses(out VARIANT pVariant) mut
 			{
-				return VT.get_UsableAddresses(&this, pVariant);
+				return VT.get_UsableAddresses(ref this, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITAgentHandler *self, BSTR* ppName) get_Name;
-				public new function HRESULT(ITAgentHandler *self, ITAgent** ppAgent) CreateAgent;
-				public new function HRESULT(ITAgentHandler *self, BSTR pID, BSTR pPIN, ITAgent** ppAgent) CreateAgentWithID;
-				public new function HRESULT(ITAgentHandler *self, IEnumACDGroup** ppEnumACDGroup) EnumerateACDGroups;
-				public new function HRESULT(ITAgentHandler *self, IEnumAddress** ppEnumAddress) EnumerateUsableAddresses;
-				public new function HRESULT(ITAgentHandler *self, VARIANT* pVariant) get_ACDGroups;
-				public new function HRESULT(ITAgentHandler *self, VARIANT* pVariant) get_UsableAddresses;
+				public new function HRESULT(ref ITAgentHandler self, BSTR* ppName) get_Name;
+				public new function HRESULT(ref ITAgentHandler self, ITAgent** ppAgent) CreateAgent;
+				public new function HRESULT(ref ITAgentHandler self, BSTR pID, BSTR pPIN, ITAgent** ppAgent) CreateAgentWithID;
+				public new function HRESULT(ref ITAgentHandler self, IEnumACDGroup** ppEnumACDGroup) EnumerateACDGroups;
+				public new function HRESULT(ref ITAgentHandler self, IEnumAddress** ppEnumAddress) EnumerateUsableAddresses;
+				public new function HRESULT(ref ITAgentHandler self, out VARIANT pVariant) get_ACDGroups;
+				public new function HRESULT(ref ITAgentHandler self, out VARIANT pVariant) get_UsableAddresses;
 			}
 		}
 		[CRepr]
@@ -6960,29 +6960,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITAgent** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, ITAgent** ppElements, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, out pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Clone(IEnumAgent** ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumAgent *self, uint32 celt, ITAgent** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumAgent *self) Reset;
-				public new function HRESULT(IEnumAgent *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumAgent *self, IEnumAgent** ppEnum) Clone;
+				public new function HRESULT(ref IEnumAgent self, uint32 celt, ITAgent** ppElements, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumAgent self) Reset;
+				public new function HRESULT(ref IEnumAgent self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumAgent self, IEnumAgent** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -6992,29 +6992,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITAgentSession** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, ITAgentSession** ppElements, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, out pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Clone(IEnumAgentSession** ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumAgentSession *self, uint32 celt, ITAgentSession** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumAgentSession *self) Reset;
-				public new function HRESULT(IEnumAgentSession *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumAgentSession *self, IEnumAgentSession** ppEnum) Clone;
+				public new function HRESULT(ref IEnumAgentSession self, uint32 celt, ITAgentSession** ppElements, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumAgentSession self) Reset;
+				public new function HRESULT(ref IEnumAgentSession self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumAgentSession self, IEnumAgentSession** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7024,29 +7024,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITQueue** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, ITQueue** ppElements, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, out pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Clone(IEnumQueue** ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumQueue *self, uint32 celt, ITQueue** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumQueue *self) Reset;
-				public new function HRESULT(IEnumQueue *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumQueue *self, IEnumQueue** ppEnum) Clone;
+				public new function HRESULT(ref IEnumQueue self, uint32 celt, ITQueue** ppElements, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumQueue self) Reset;
+				public new function HRESULT(ref IEnumQueue self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumQueue self, IEnumQueue** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7056,29 +7056,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITACDGroup** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, ITACDGroup** ppElements, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, out pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Clone(IEnumACDGroup** ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumACDGroup *self, uint32 celt, ITACDGroup** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumACDGroup *self) Reset;
-				public new function HRESULT(IEnumACDGroup *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumACDGroup *self, IEnumACDGroup** ppEnum) Clone;
+				public new function HRESULT(ref IEnumACDGroup self, uint32 celt, ITACDGroup** ppElements, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumACDGroup self) Reset;
+				public new function HRESULT(ref IEnumACDGroup self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumACDGroup self, IEnumACDGroup** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7088,29 +7088,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ITAgentHandler** ppElements, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, ITAgentHandler** ppElements, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pceltFetched);
+				return VT.Next(ref this, celt, ppElements, out pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Clone(IEnumAgentHandler** ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumAgentHandler *self, uint32 celt, ITAgentHandler** ppElements, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumAgentHandler *self) Reset;
-				public new function HRESULT(IEnumAgentHandler *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumAgentHandler *self, IEnumAgentHandler** ppEnum) Clone;
+				public new function HRESULT(ref IEnumAgentHandler self, uint32 celt, ITAgentHandler** ppElements, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumAgentHandler self) Reset;
+				public new function HRESULT(ref IEnumAgentHandler self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumAgentHandler self, IEnumAgentHandler** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7122,17 +7122,17 @@ namespace Win32
 			
 			public HRESULT get_MediaFormat(AM_MEDIA_TYPE** ppmt) mut
 			{
-				return VT.get_MediaFormat(&this, ppmt);
+				return VT.get_MediaFormat(ref this, ppmt);
 			}
-			public HRESULT put_MediaFormat(AM_MEDIA_TYPE* pmt) mut
+			public HRESULT put_MediaFormat(in AM_MEDIA_TYPE pmt) mut
 			{
-				return VT.put_MediaFormat(&this, pmt);
+				return VT.put_MediaFormat(ref this, pmt);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITAMMediaFormat *self, AM_MEDIA_TYPE** ppmt) get_MediaFormat;
-				public new function HRESULT(ITAMMediaFormat *self, AM_MEDIA_TYPE* pmt) put_MediaFormat;
+				public new function HRESULT(ref ITAMMediaFormat self, AM_MEDIA_TYPE** ppmt) get_MediaFormat;
+				public new function HRESULT(ref ITAMMediaFormat self, in AM_MEDIA_TYPE pmt) put_MediaFormat;
 			}
 		}
 		[CRepr]
@@ -7142,39 +7142,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllocatorProperties(ALLOCATOR_PROPERTIES* pAllocProperties) mut
+			public HRESULT SetAllocatorProperties(ref ALLOCATOR_PROPERTIES pAllocProperties) mut
 			{
-				return VT.SetAllocatorProperties(&this, pAllocProperties);
+				return VT.SetAllocatorProperties(ref this, ref pAllocProperties);
 			}
-			public HRESULT GetAllocatorProperties(ALLOCATOR_PROPERTIES* pAllocProperties) mut
+			public HRESULT GetAllocatorProperties(out ALLOCATOR_PROPERTIES pAllocProperties) mut
 			{
-				return VT.GetAllocatorProperties(&this, pAllocProperties);
+				return VT.GetAllocatorProperties(ref this, out pAllocProperties);
 			}
 			public HRESULT SetAllocateBuffers(BOOL bAllocBuffers) mut
 			{
-				return VT.SetAllocateBuffers(&this, bAllocBuffers);
+				return VT.SetAllocateBuffers(ref this, bAllocBuffers);
 			}
-			public HRESULT GetAllocateBuffers(BOOL* pbAllocBuffers) mut
+			public HRESULT GetAllocateBuffers(out BOOL pbAllocBuffers) mut
 			{
-				return VT.GetAllocateBuffers(&this, pbAllocBuffers);
+				return VT.GetAllocateBuffers(ref this, out pbAllocBuffers);
 			}
 			public HRESULT SetBufferSize(uint32 BufferSize) mut
 			{
-				return VT.SetBufferSize(&this, BufferSize);
+				return VT.SetBufferSize(ref this, BufferSize);
 			}
-			public HRESULT GetBufferSize(uint32* pBufferSize) mut
+			public HRESULT GetBufferSize(out uint32 pBufferSize) mut
 			{
-				return VT.GetBufferSize(&this, pBufferSize);
+				return VT.GetBufferSize(ref this, out pBufferSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITAllocatorProperties *self, ALLOCATOR_PROPERTIES* pAllocProperties) SetAllocatorProperties;
-				public new function HRESULT(ITAllocatorProperties *self, ALLOCATOR_PROPERTIES* pAllocProperties) GetAllocatorProperties;
-				public new function HRESULT(ITAllocatorProperties *self, BOOL bAllocBuffers) SetAllocateBuffers;
-				public new function HRESULT(ITAllocatorProperties *self, BOOL* pbAllocBuffers) GetAllocateBuffers;
-				public new function HRESULT(ITAllocatorProperties *self, uint32 BufferSize) SetBufferSize;
-				public new function HRESULT(ITAllocatorProperties *self, uint32* pBufferSize) GetBufferSize;
+				public new function HRESULT(ref ITAllocatorProperties self, ref ALLOCATOR_PROPERTIES pAllocProperties) SetAllocatorProperties;
+				public new function HRESULT(ref ITAllocatorProperties self, out ALLOCATOR_PROPERTIES pAllocProperties) GetAllocatorProperties;
+				public new function HRESULT(ref ITAllocatorProperties self, BOOL bAllocBuffers) SetAllocateBuffers;
+				public new function HRESULT(ref ITAllocatorProperties self, out BOOL pbAllocBuffers) GetAllocateBuffers;
+				public new function HRESULT(ref ITAllocatorProperties self, uint32 BufferSize) SetBufferSize;
+				public new function HRESULT(ref ITAllocatorProperties self, out uint32 pBufferSize) GetBufferSize;
 			}
 		}
 		[CRepr]
@@ -7184,14 +7184,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FireEvent(MSP_EVENT_INFO* pMspEventInfo) mut
+			public HRESULT FireEvent(in MSP_EVENT_INFO pMspEventInfo) mut
 			{
-				return VT.FireEvent(&this, pMspEventInfo);
+				return VT.FireEvent(ref this, pMspEventInfo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITPluggableTerminalEventSink *self, MSP_EVENT_INFO* pMspEventInfo) FireEvent;
+				public new function HRESULT(ref ITPluggableTerminalEventSink self, in MSP_EVENT_INFO pMspEventInfo) FireEvent;
 			}
 		}
 		[CRepr]
@@ -7203,17 +7203,17 @@ namespace Win32
 			
 			public HRESULT RegisterSink(ITPluggableTerminalEventSink* pEventSink) mut
 			{
-				return VT.RegisterSink(&this, pEventSink);
+				return VT.RegisterSink(ref this, pEventSink);
 			}
 			public HRESULT UnregisterSink() mut
 			{
-				return VT.UnregisterSink(&this);
+				return VT.UnregisterSink(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITPluggableTerminalEventSinkRegistration *self, ITPluggableTerminalEventSink* pEventSink) RegisterSink;
-				public new function HRESULT(ITPluggableTerminalEventSinkRegistration *self) UnregisterSink;
+				public new function HRESULT(ref ITPluggableTerminalEventSinkRegistration self, ITPluggableTerminalEventSink* pEventSink) RegisterSink;
+				public new function HRESULT(ref ITPluggableTerminalEventSinkRegistration self) UnregisterSink;
 			}
 		}
 		[CRepr]
@@ -7223,39 +7223,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(int32* hEvent) mut
+			public HRESULT Initialize(ref int32 hEvent) mut
 			{
-				return VT.Initialize(&this, hEvent);
+				return VT.Initialize(ref this, ref hEvent);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
-			public HRESULT CreateMSPCall(int32* hCall, uint32 dwReserved, uint32 dwMediaType, IUnknown* pOuterUnknown, IUnknown** ppStreamControl) mut
+			public HRESULT CreateMSPCall(ref int32 hCall, uint32 dwReserved, uint32 dwMediaType, IUnknown* pOuterUnknown, IUnknown** ppStreamControl) mut
 			{
-				return VT.CreateMSPCall(&this, hCall, dwReserved, dwMediaType, pOuterUnknown, ppStreamControl);
+				return VT.CreateMSPCall(ref this, ref hCall, dwReserved, dwMediaType, pOuterUnknown, ppStreamControl);
 			}
 			public HRESULT ShutdownMSPCall(IUnknown* pStreamControl) mut
 			{
-				return VT.ShutdownMSPCall(&this, pStreamControl);
+				return VT.ShutdownMSPCall(ref this, pStreamControl);
 			}
 			public HRESULT ReceiveTSPData(IUnknown* pMSPCall, uint8* pBuffer, uint32 dwSize) mut
 			{
-				return VT.ReceiveTSPData(&this, pMSPCall, pBuffer, dwSize);
+				return VT.ReceiveTSPData(ref this, pMSPCall, pBuffer, dwSize);
 			}
-			public HRESULT GetEvent(uint32* pdwSize, uint8* pEventBuffer) mut
+			public HRESULT GetEvent(out uint32 pdwSize, uint8* pEventBuffer) mut
 			{
-				return VT.GetEvent(&this, pdwSize, pEventBuffer);
+				return VT.GetEvent(ref this, out pdwSize, pEventBuffer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITMSPAddress *self, int32* hEvent) Initialize;
-				public new function HRESULT(ITMSPAddress *self) Shutdown;
-				public new function HRESULT(ITMSPAddress *self, int32* hCall, uint32 dwReserved, uint32 dwMediaType, IUnknown* pOuterUnknown, IUnknown** ppStreamControl) CreateMSPCall;
-				public new function HRESULT(ITMSPAddress *self, IUnknown* pStreamControl) ShutdownMSPCall;
-				public new function HRESULT(ITMSPAddress *self, IUnknown* pMSPCall, uint8* pBuffer, uint32 dwSize) ReceiveTSPData;
-				public new function HRESULT(ITMSPAddress *self, uint32* pdwSize, uint8* pEventBuffer) GetEvent;
+				public new function HRESULT(ref ITMSPAddress self, ref int32 hEvent) Initialize;
+				public new function HRESULT(ref ITMSPAddress self) Shutdown;
+				public new function HRESULT(ref ITMSPAddress self, ref int32 hCall, uint32 dwReserved, uint32 dwMediaType, IUnknown* pOuterUnknown, IUnknown** ppStreamControl) CreateMSPCall;
+				public new function HRESULT(ref ITMSPAddress self, IUnknown* pStreamControl) ShutdownMSPCall;
+				public new function HRESULT(ref ITMSPAddress self, IUnknown* pMSPCall, uint8* pBuffer, uint32 dwSize) ReceiveTSPData;
+				public new function HRESULT(ref ITMSPAddress self, out uint32 pdwSize, uint8* pEventBuffer) GetEvent;
 			}
 		}
 		[CRepr]
@@ -7277,84 +7277,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Protocol(BSTR* ppProtocol) mut
+			public HRESULT get_Protocol(out BSTR ppProtocol) mut
 			{
-				return VT.get_Protocol(&this, ppProtocol);
+				return VT.get_Protocol(ref this, out ppProtocol);
 			}
-			public HRESULT get_Originator(BSTR* ppOriginator) mut
+			public HRESULT get_Originator(out BSTR ppOriginator) mut
 			{
-				return VT.get_Originator(&this, ppOriginator);
+				return VT.get_Originator(ref this, out ppOriginator);
 			}
 			public HRESULT put_Originator(BSTR pOriginator) mut
 			{
-				return VT.put_Originator(&this, pOriginator);
+				return VT.put_Originator(ref this, pOriginator);
 			}
-			public HRESULT get_AdvertisingScope(RND_ADVERTISING_SCOPE* pAdvertisingScope) mut
+			public HRESULT get_AdvertisingScope(out RND_ADVERTISING_SCOPE pAdvertisingScope) mut
 			{
-				return VT.get_AdvertisingScope(&this, pAdvertisingScope);
+				return VT.get_AdvertisingScope(ref this, out pAdvertisingScope);
 			}
 			public HRESULT put_AdvertisingScope(RND_ADVERTISING_SCOPE AdvertisingScope) mut
 			{
-				return VT.put_AdvertisingScope(&this, AdvertisingScope);
+				return VT.put_AdvertisingScope(ref this, AdvertisingScope);
 			}
-			public HRESULT get_Url(BSTR* ppUrl) mut
+			public HRESULT get_Url(out BSTR ppUrl) mut
 			{
-				return VT.get_Url(&this, ppUrl);
+				return VT.get_Url(ref this, out ppUrl);
 			}
 			public HRESULT put_Url(BSTR pUrl) mut
 			{
-				return VT.put_Url(&this, pUrl);
+				return VT.put_Url(ref this, pUrl);
 			}
-			public HRESULT get_Description(BSTR* ppDescription) mut
+			public HRESULT get_Description(out BSTR ppDescription) mut
 			{
-				return VT.get_Description(&this, ppDescription);
+				return VT.get_Description(ref this, out ppDescription);
 			}
 			public HRESULT put_Description(BSTR pDescription) mut
 			{
-				return VT.put_Description(&this, pDescription);
+				return VT.put_Description(ref this, pDescription);
 			}
-			public HRESULT get_IsEncrypted(int16* pfEncrypted) mut
+			public HRESULT get_IsEncrypted(out int16 pfEncrypted) mut
 			{
-				return VT.get_IsEncrypted(&this, pfEncrypted);
+				return VT.get_IsEncrypted(ref this, out pfEncrypted);
 			}
 			public HRESULT put_IsEncrypted(int16 fEncrypted) mut
 			{
-				return VT.put_IsEncrypted(&this, fEncrypted);
+				return VT.put_IsEncrypted(ref this, fEncrypted);
 			}
-			public HRESULT get_StartTime(double* pDate) mut
+			public HRESULT get_StartTime(out double pDate) mut
 			{
-				return VT.get_StartTime(&this, pDate);
+				return VT.get_StartTime(ref this, out pDate);
 			}
 			public HRESULT put_StartTime(double Date) mut
 			{
-				return VT.put_StartTime(&this, Date);
+				return VT.put_StartTime(ref this, Date);
 			}
-			public HRESULT get_StopTime(double* pDate) mut
+			public HRESULT get_StopTime(out double pDate) mut
 			{
-				return VT.get_StopTime(&this, pDate);
+				return VT.get_StopTime(ref this, out pDate);
 			}
 			public HRESULT put_StopTime(double Date) mut
 			{
-				return VT.put_StopTime(&this, Date);
+				return VT.put_StopTime(ref this, Date);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITDirectoryObjectConference *self, BSTR* ppProtocol) get_Protocol;
-				public new function HRESULT(ITDirectoryObjectConference *self, BSTR* ppOriginator) get_Originator;
-				public new function HRESULT(ITDirectoryObjectConference *self, BSTR pOriginator) put_Originator;
-				public new function HRESULT(ITDirectoryObjectConference *self, RND_ADVERTISING_SCOPE* pAdvertisingScope) get_AdvertisingScope;
-				public new function HRESULT(ITDirectoryObjectConference *self, RND_ADVERTISING_SCOPE AdvertisingScope) put_AdvertisingScope;
-				public new function HRESULT(ITDirectoryObjectConference *self, BSTR* ppUrl) get_Url;
-				public new function HRESULT(ITDirectoryObjectConference *self, BSTR pUrl) put_Url;
-				public new function HRESULT(ITDirectoryObjectConference *self, BSTR* ppDescription) get_Description;
-				public new function HRESULT(ITDirectoryObjectConference *self, BSTR pDescription) put_Description;
-				public new function HRESULT(ITDirectoryObjectConference *self, int16* pfEncrypted) get_IsEncrypted;
-				public new function HRESULT(ITDirectoryObjectConference *self, int16 fEncrypted) put_IsEncrypted;
-				public new function HRESULT(ITDirectoryObjectConference *self, double* pDate) get_StartTime;
-				public new function HRESULT(ITDirectoryObjectConference *self, double Date) put_StartTime;
-				public new function HRESULT(ITDirectoryObjectConference *self, double* pDate) get_StopTime;
-				public new function HRESULT(ITDirectoryObjectConference *self, double Date) put_StopTime;
+				public new function HRESULT(ref ITDirectoryObjectConference self, out BSTR ppProtocol) get_Protocol;
+				public new function HRESULT(ref ITDirectoryObjectConference self, out BSTR ppOriginator) get_Originator;
+				public new function HRESULT(ref ITDirectoryObjectConference self, BSTR pOriginator) put_Originator;
+				public new function HRESULT(ref ITDirectoryObjectConference self, out RND_ADVERTISING_SCOPE pAdvertisingScope) get_AdvertisingScope;
+				public new function HRESULT(ref ITDirectoryObjectConference self, RND_ADVERTISING_SCOPE AdvertisingScope) put_AdvertisingScope;
+				public new function HRESULT(ref ITDirectoryObjectConference self, out BSTR ppUrl) get_Url;
+				public new function HRESULT(ref ITDirectoryObjectConference self, BSTR pUrl) put_Url;
+				public new function HRESULT(ref ITDirectoryObjectConference self, out BSTR ppDescription) get_Description;
+				public new function HRESULT(ref ITDirectoryObjectConference self, BSTR pDescription) put_Description;
+				public new function HRESULT(ref ITDirectoryObjectConference self, out int16 pfEncrypted) get_IsEncrypted;
+				public new function HRESULT(ref ITDirectoryObjectConference self, int16 fEncrypted) put_IsEncrypted;
+				public new function HRESULT(ref ITDirectoryObjectConference self, out double pDate) get_StartTime;
+				public new function HRESULT(ref ITDirectoryObjectConference self, double Date) put_StartTime;
+				public new function HRESULT(ref ITDirectoryObjectConference self, out double pDate) get_StopTime;
+				public new function HRESULT(ref ITDirectoryObjectConference self, double Date) put_StopTime;
 			}
 		}
 		[CRepr]
@@ -7364,19 +7364,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IPPhonePrimary(BSTR* ppName) mut
+			public HRESULT get_IPPhonePrimary(out BSTR ppName) mut
 			{
-				return VT.get_IPPhonePrimary(&this, ppName);
+				return VT.get_IPPhonePrimary(ref this, out ppName);
 			}
 			public HRESULT put_IPPhonePrimary(BSTR pName) mut
 			{
-				return VT.put_IPPhonePrimary(&this, pName);
+				return VT.put_IPPhonePrimary(ref this, pName);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITDirectoryObjectUser *self, BSTR* ppName) get_IPPhonePrimary;
-				public new function HRESULT(ITDirectoryObjectUser *self, BSTR pName) put_IPPhonePrimary;
+				public new function HRESULT(ref ITDirectoryObjectUser self, out BSTR ppName) get_IPPhonePrimary;
+				public new function HRESULT(ref ITDirectoryObjectUser self, BSTR pName) put_IPPhonePrimary;
 			}
 		}
 		[CRepr]
@@ -7388,27 +7388,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, BSTR* ppElements, uint32* pcFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pcFetched);
+				return VT.Next(ref this, celt, ppElements, pcFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumDialableAddrs** ppEnum) mut
+			public HRESULT Clone(out IEnumDialableAddrs* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumDialableAddrs *self, uint32 celt, BSTR* ppElements, uint32* pcFetched) Next;
-				public new function HRESULT(IEnumDialableAddrs *self) Reset;
-				public new function HRESULT(IEnumDialableAddrs *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumDialableAddrs *self, IEnumDialableAddrs** ppEnum) Clone;
+				public new function HRESULT(ref IEnumDialableAddrs self, uint32 celt, BSTR* ppElements, uint32* pcFetched) Next;
+				public new function HRESULT(ref IEnumDialableAddrs self) Reset;
+				public new function HRESULT(ref IEnumDialableAddrs self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumDialableAddrs self, out IEnumDialableAddrs* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7418,44 +7418,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ObjectType(DIRECTORY_OBJECT_TYPE* pObjectType) mut
+			public HRESULT get_ObjectType(out DIRECTORY_OBJECT_TYPE pObjectType) mut
 			{
-				return VT.get_ObjectType(&this, pObjectType);
+				return VT.get_ObjectType(ref this, out pObjectType);
 			}
-			public HRESULT get_Name(BSTR* ppName) mut
+			public HRESULT get_Name(out BSTR ppName) mut
 			{
-				return VT.get_Name(&this, ppName);
+				return VT.get_Name(ref this, out ppName);
 			}
 			public HRESULT put_Name(BSTR pName) mut
 			{
-				return VT.put_Name(&this, pName);
+				return VT.put_Name(ref this, pName);
 			}
-			public HRESULT get_DialableAddrs(int32 dwAddressType, VARIANT* pVariant) mut
+			public HRESULT get_DialableAddrs(int32 dwAddressType, out VARIANT pVariant) mut
 			{
-				return VT.get_DialableAddrs(&this, dwAddressType, pVariant);
+				return VT.get_DialableAddrs(ref this, dwAddressType, out pVariant);
 			}
-			public HRESULT EnumerateDialableAddrs(uint32 dwAddressType, IEnumDialableAddrs** ppEnumDialableAddrs) mut
+			public HRESULT EnumerateDialableAddrs(uint32 dwAddressType, out IEnumDialableAddrs* ppEnumDialableAddrs) mut
 			{
-				return VT.EnumerateDialableAddrs(&this, dwAddressType, ppEnumDialableAddrs);
+				return VT.EnumerateDialableAddrs(ref this, dwAddressType, out ppEnumDialableAddrs);
 			}
-			public HRESULT get_SecurityDescriptor(IDispatch** ppSecDes) mut
+			public HRESULT get_SecurityDescriptor(out IDispatch* ppSecDes) mut
 			{
-				return VT.get_SecurityDescriptor(&this, ppSecDes);
+				return VT.get_SecurityDescriptor(ref this, out ppSecDes);
 			}
-			public HRESULT put_SecurityDescriptor(IDispatch* pSecDes) mut
+			public HRESULT put_SecurityDescriptor(ref IDispatch pSecDes) mut
 			{
-				return VT.put_SecurityDescriptor(&this, pSecDes);
+				return VT.put_SecurityDescriptor(ref this, ref pSecDes);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITDirectoryObject *self, DIRECTORY_OBJECT_TYPE* pObjectType) get_ObjectType;
-				public new function HRESULT(ITDirectoryObject *self, BSTR* ppName) get_Name;
-				public new function HRESULT(ITDirectoryObject *self, BSTR pName) put_Name;
-				public new function HRESULT(ITDirectoryObject *self, int32 dwAddressType, VARIANT* pVariant) get_DialableAddrs;
-				public new function HRESULT(ITDirectoryObject *self, uint32 dwAddressType, IEnumDialableAddrs** ppEnumDialableAddrs) EnumerateDialableAddrs;
-				public new function HRESULT(ITDirectoryObject *self, IDispatch** ppSecDes) get_SecurityDescriptor;
-				public new function HRESULT(ITDirectoryObject *self, IDispatch* pSecDes) put_SecurityDescriptor;
+				public new function HRESULT(ref ITDirectoryObject self, out DIRECTORY_OBJECT_TYPE pObjectType) get_ObjectType;
+				public new function HRESULT(ref ITDirectoryObject self, out BSTR ppName) get_Name;
+				public new function HRESULT(ref ITDirectoryObject self, BSTR pName) put_Name;
+				public new function HRESULT(ref ITDirectoryObject self, int32 dwAddressType, out VARIANT pVariant) get_DialableAddrs;
+				public new function HRESULT(ref ITDirectoryObject self, uint32 dwAddressType, out IEnumDialableAddrs* ppEnumDialableAddrs) EnumerateDialableAddrs;
+				public new function HRESULT(ref ITDirectoryObject self, out IDispatch* ppSecDes) get_SecurityDescriptor;
+				public new function HRESULT(ref ITDirectoryObject self, ref IDispatch pSecDes) put_SecurityDescriptor;
 			}
 		}
 		[CRepr]
@@ -7467,27 +7467,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, ITDirectoryObject** pVal, uint32* pcFetched) mut
 			{
-				return VT.Next(&this, celt, pVal, pcFetched);
+				return VT.Next(ref this, celt, pVal, pcFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumDirectoryObject** ppEnum) mut
+			public HRESULT Clone(out IEnumDirectoryObject* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumDirectoryObject *self, uint32 celt, ITDirectoryObject** pVal, uint32* pcFetched) Next;
-				public new function HRESULT(IEnumDirectoryObject *self) Reset;
-				public new function HRESULT(IEnumDirectoryObject *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumDirectoryObject *self, IEnumDirectoryObject** ppEnum) Clone;
+				public new function HRESULT(ref IEnumDirectoryObject self, uint32 celt, ITDirectoryObject** pVal, uint32* pcFetched) Next;
+				public new function HRESULT(ref IEnumDirectoryObject self) Reset;
+				public new function HRESULT(ref IEnumDirectoryObject self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumDirectoryObject self, out IEnumDirectoryObject* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7497,19 +7497,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Port(int32* pPort) mut
+			public HRESULT get_Port(out int32 pPort) mut
 			{
-				return VT.get_Port(&this, pPort);
+				return VT.get_Port(ref this, out pPort);
 			}
 			public HRESULT put_Port(int32 Port) mut
 			{
-				return VT.put_Port(&this, Port);
+				return VT.put_Port(ref this, Port);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITILSConfig *self, int32* pPort) get_Port;
-				public new function HRESULT(ITILSConfig *self, int32 Port) put_Port;
+				public new function HRESULT(ref ITILSConfig self, out int32 pPort) get_Port;
+				public new function HRESULT(ref ITILSConfig self, int32 Port) put_Port;
 			}
 		}
 		[CRepr]
@@ -7519,79 +7519,79 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DirectoryType(DIRECTORY_TYPE* pDirectoryType) mut
+			public HRESULT get_DirectoryType(out DIRECTORY_TYPE pDirectoryType) mut
 			{
-				return VT.get_DirectoryType(&this, pDirectoryType);
+				return VT.get_DirectoryType(ref this, out pDirectoryType);
 			}
-			public HRESULT get_DisplayName(BSTR* pName) mut
+			public HRESULT get_DisplayName(out BSTR pName) mut
 			{
-				return VT.get_DisplayName(&this, pName);
+				return VT.get_DisplayName(ref this, out pName);
 			}
-			public HRESULT get_IsDynamic(int16* pfDynamic) mut
+			public HRESULT get_IsDynamic(out int16 pfDynamic) mut
 			{
-				return VT.get_IsDynamic(&this, pfDynamic);
+				return VT.get_IsDynamic(ref this, out pfDynamic);
 			}
-			public HRESULT get_DefaultObjectTTL(int32* pTTL) mut
+			public HRESULT get_DefaultObjectTTL(out int32 pTTL) mut
 			{
-				return VT.get_DefaultObjectTTL(&this, pTTL);
+				return VT.get_DefaultObjectTTL(ref this, out pTTL);
 			}
 			public HRESULT put_DefaultObjectTTL(int32 TTL) mut
 			{
-				return VT.put_DefaultObjectTTL(&this, TTL);
+				return VT.put_DefaultObjectTTL(ref this, TTL);
 			}
 			public HRESULT EnableAutoRefresh(int16 fEnable) mut
 			{
-				return VT.EnableAutoRefresh(&this, fEnable);
+				return VT.EnableAutoRefresh(ref this, fEnable);
 			}
 			public HRESULT Connect(int16 fSecure) mut
 			{
-				return VT.Connect(&this, fSecure);
+				return VT.Connect(ref this, fSecure);
 			}
 			public HRESULT Bind(BSTR pDomainName, BSTR pUserName, BSTR pPassword, int32 lFlags) mut
 			{
-				return VT.Bind(&this, pDomainName, pUserName, pPassword, lFlags);
+				return VT.Bind(ref this, pDomainName, pUserName, pPassword, lFlags);
 			}
-			public HRESULT AddDirectoryObject(ITDirectoryObject* pDirectoryObject) mut
+			public HRESULT AddDirectoryObject(ref ITDirectoryObject pDirectoryObject) mut
 			{
-				return VT.AddDirectoryObject(&this, pDirectoryObject);
+				return VT.AddDirectoryObject(ref this, ref pDirectoryObject);
 			}
-			public HRESULT ModifyDirectoryObject(ITDirectoryObject* pDirectoryObject) mut
+			public HRESULT ModifyDirectoryObject(ref ITDirectoryObject pDirectoryObject) mut
 			{
-				return VT.ModifyDirectoryObject(&this, pDirectoryObject);
+				return VT.ModifyDirectoryObject(ref this, ref pDirectoryObject);
 			}
-			public HRESULT RefreshDirectoryObject(ITDirectoryObject* pDirectoryObject) mut
+			public HRESULT RefreshDirectoryObject(ref ITDirectoryObject pDirectoryObject) mut
 			{
-				return VT.RefreshDirectoryObject(&this, pDirectoryObject);
+				return VT.RefreshDirectoryObject(ref this, ref pDirectoryObject);
 			}
-			public HRESULT DeleteDirectoryObject(ITDirectoryObject* pDirectoryObject) mut
+			public HRESULT DeleteDirectoryObject(ref ITDirectoryObject pDirectoryObject) mut
 			{
-				return VT.DeleteDirectoryObject(&this, pDirectoryObject);
+				return VT.DeleteDirectoryObject(ref this, ref pDirectoryObject);
 			}
-			public HRESULT get_DirectoryObjects(DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, VARIANT* pVariant) mut
+			public HRESULT get_DirectoryObjects(DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, out VARIANT pVariant) mut
 			{
-				return VT.get_DirectoryObjects(&this, DirectoryObjectType, pName, pVariant);
+				return VT.get_DirectoryObjects(ref this, DirectoryObjectType, pName, out pVariant);
 			}
-			public HRESULT EnumerateDirectoryObjects(DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, IEnumDirectoryObject** ppEnumObject) mut
+			public HRESULT EnumerateDirectoryObjects(DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, out IEnumDirectoryObject* ppEnumObject) mut
 			{
-				return VT.EnumerateDirectoryObjects(&this, DirectoryObjectType, pName, ppEnumObject);
+				return VT.EnumerateDirectoryObjects(ref this, DirectoryObjectType, pName, out ppEnumObject);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITDirectory *self, DIRECTORY_TYPE* pDirectoryType) get_DirectoryType;
-				public new function HRESULT(ITDirectory *self, BSTR* pName) get_DisplayName;
-				public new function HRESULT(ITDirectory *self, int16* pfDynamic) get_IsDynamic;
-				public new function HRESULT(ITDirectory *self, int32* pTTL) get_DefaultObjectTTL;
-				public new function HRESULT(ITDirectory *self, int32 TTL) put_DefaultObjectTTL;
-				public new function HRESULT(ITDirectory *self, int16 fEnable) EnableAutoRefresh;
-				public new function HRESULT(ITDirectory *self, int16 fSecure) Connect;
-				public new function HRESULT(ITDirectory *self, BSTR pDomainName, BSTR pUserName, BSTR pPassword, int32 lFlags) Bind;
-				public new function HRESULT(ITDirectory *self, ITDirectoryObject* pDirectoryObject) AddDirectoryObject;
-				public new function HRESULT(ITDirectory *self, ITDirectoryObject* pDirectoryObject) ModifyDirectoryObject;
-				public new function HRESULT(ITDirectory *self, ITDirectoryObject* pDirectoryObject) RefreshDirectoryObject;
-				public new function HRESULT(ITDirectory *self, ITDirectoryObject* pDirectoryObject) DeleteDirectoryObject;
-				public new function HRESULT(ITDirectory *self, DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, VARIANT* pVariant) get_DirectoryObjects;
-				public new function HRESULT(ITDirectory *self, DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, IEnumDirectoryObject** ppEnumObject) EnumerateDirectoryObjects;
+				public new function HRESULT(ref ITDirectory self, out DIRECTORY_TYPE pDirectoryType) get_DirectoryType;
+				public new function HRESULT(ref ITDirectory self, out BSTR pName) get_DisplayName;
+				public new function HRESULT(ref ITDirectory self, out int16 pfDynamic) get_IsDynamic;
+				public new function HRESULT(ref ITDirectory self, out int32 pTTL) get_DefaultObjectTTL;
+				public new function HRESULT(ref ITDirectory self, int32 TTL) put_DefaultObjectTTL;
+				public new function HRESULT(ref ITDirectory self, int16 fEnable) EnableAutoRefresh;
+				public new function HRESULT(ref ITDirectory self, int16 fSecure) Connect;
+				public new function HRESULT(ref ITDirectory self, BSTR pDomainName, BSTR pUserName, BSTR pPassword, int32 lFlags) Bind;
+				public new function HRESULT(ref ITDirectory self, ref ITDirectoryObject pDirectoryObject) AddDirectoryObject;
+				public new function HRESULT(ref ITDirectory self, ref ITDirectoryObject pDirectoryObject) ModifyDirectoryObject;
+				public new function HRESULT(ref ITDirectory self, ref ITDirectoryObject pDirectoryObject) RefreshDirectoryObject;
+				public new function HRESULT(ref ITDirectory self, ref ITDirectoryObject pDirectoryObject) DeleteDirectoryObject;
+				public new function HRESULT(ref ITDirectory self, DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, out VARIANT pVariant) get_DirectoryObjects;
+				public new function HRESULT(ref ITDirectory self, DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, out IEnumDirectoryObject* ppEnumObject) EnumerateDirectoryObjects;
 			}
 		}
 		[CRepr]
@@ -7603,27 +7603,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, ITDirectory** ppElements, uint32* pcFetched) mut
 			{
-				return VT.Next(&this, celt, ppElements, pcFetched);
+				return VT.Next(ref this, celt, ppElements, pcFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
-			public HRESULT Clone(IEnumDirectory** ppEnum) mut
+			public HRESULT Clone(out IEnumDirectory* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumDirectory *self, uint32 celt, ITDirectory** ppElements, uint32* pcFetched) Next;
-				public new function HRESULT(IEnumDirectory *self) Reset;
-				public new function HRESULT(IEnumDirectory *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumDirectory *self, IEnumDirectory** ppEnum) Clone;
+				public new function HRESULT(ref IEnumDirectory self, uint32 celt, ITDirectory** ppElements, uint32* pcFetched) Next;
+				public new function HRESULT(ref IEnumDirectory self) Reset;
+				public new function HRESULT(ref IEnumDirectory self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumDirectory self, out IEnumDirectory* ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7633,29 +7633,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DefaultDirectories(VARIANT* pVariant) mut
+			public HRESULT get_DefaultDirectories(out VARIANT pVariant) mut
 			{
-				return VT.get_DefaultDirectories(&this, pVariant);
+				return VT.get_DefaultDirectories(ref this, out pVariant);
 			}
-			public HRESULT EnumerateDefaultDirectories(IEnumDirectory** ppEnumDirectory) mut
+			public HRESULT EnumerateDefaultDirectories(out IEnumDirectory* ppEnumDirectory) mut
 			{
-				return VT.EnumerateDefaultDirectories(&this, ppEnumDirectory);
+				return VT.EnumerateDefaultDirectories(ref this, out ppEnumDirectory);
 			}
-			public HRESULT CreateDirectory(DIRECTORY_TYPE DirectoryType, BSTR pName, ITDirectory** ppDir) mut
+			public HRESULT CreateDirectory(DIRECTORY_TYPE DirectoryType, BSTR pName, out ITDirectory* ppDir) mut
 			{
-				return VT.CreateDirectory(&this, DirectoryType, pName, ppDir);
+				return VT.CreateDirectory(ref this, DirectoryType, pName, out ppDir);
 			}
-			public HRESULT CreateDirectoryObject(DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, ITDirectoryObject** ppDirectoryObject) mut
+			public HRESULT CreateDirectoryObject(DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, out ITDirectoryObject* ppDirectoryObject) mut
 			{
-				return VT.CreateDirectoryObject(&this, DirectoryObjectType, pName, ppDirectoryObject);
+				return VT.CreateDirectoryObject(ref this, DirectoryObjectType, pName, out ppDirectoryObject);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITRendezvous *self, VARIANT* pVariant) get_DefaultDirectories;
-				public new function HRESULT(ITRendezvous *self, IEnumDirectory** ppEnumDirectory) EnumerateDefaultDirectories;
-				public new function HRESULT(ITRendezvous *self, DIRECTORY_TYPE DirectoryType, BSTR pName, ITDirectory** ppDir) CreateDirectory;
-				public new function HRESULT(ITRendezvous *self, DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, ITDirectoryObject** ppDirectoryObject) CreateDirectoryObject;
+				public new function HRESULT(ref ITRendezvous self, out VARIANT pVariant) get_DefaultDirectories;
+				public new function HRESULT(ref ITRendezvous self, out IEnumDirectory* ppEnumDirectory) EnumerateDefaultDirectories;
+				public new function HRESULT(ref ITRendezvous self, DIRECTORY_TYPE DirectoryType, BSTR pName, out ITDirectory* ppDir) CreateDirectory;
+				public new function HRESULT(ref ITRendezvous self, DIRECTORY_OBJECT_TYPE DirectoryObjectType, BSTR pName, out ITDirectoryObject* ppDirectoryObject) CreateDirectoryObject;
 			}
 		}
 		[CRepr]
@@ -7665,34 +7665,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ScopeID(int32* pID) mut
+			public HRESULT get_ScopeID(out int32 pID) mut
 			{
-				return VT.get_ScopeID(&this, pID);
+				return VT.get_ScopeID(ref this, out pID);
 			}
-			public HRESULT get_ServerID(int32* pID) mut
+			public HRESULT get_ServerID(out int32 pID) mut
 			{
-				return VT.get_ServerID(&this, pID);
+				return VT.get_ServerID(ref this, out pID);
 			}
-			public HRESULT get_InterfaceID(int32* pID) mut
+			public HRESULT get_InterfaceID(out int32 pID) mut
 			{
-				return VT.get_InterfaceID(&this, pID);
+				return VT.get_InterfaceID(ref this, out pID);
 			}
 			public HRESULT get_ScopeDescription(BSTR* ppDescription) mut
 			{
-				return VT.get_ScopeDescription(&this, ppDescription);
+				return VT.get_ScopeDescription(ref this, ppDescription);
 			}
-			public HRESULT get_TTL(int32* pTTL) mut
+			public HRESULT get_TTL(out int32 pTTL) mut
 			{
-				return VT.get_TTL(&this, pTTL);
+				return VT.get_TTL(ref this, out pTTL);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IMcastScope *self, int32* pID) get_ScopeID;
-				public new function HRESULT(IMcastScope *self, int32* pID) get_ServerID;
-				public new function HRESULT(IMcastScope *self, int32* pID) get_InterfaceID;
-				public new function HRESULT(IMcastScope *self, BSTR* ppDescription) get_ScopeDescription;
-				public new function HRESULT(IMcastScope *self, int32* pTTL) get_TTL;
+				public new function HRESULT(ref IMcastScope self, out int32 pID) get_ScopeID;
+				public new function HRESULT(ref IMcastScope self, out int32 pID) get_ServerID;
+				public new function HRESULT(ref IMcastScope self, out int32 pID) get_InterfaceID;
+				public new function HRESULT(ref IMcastScope self, BSTR* ppDescription) get_ScopeDescription;
+				public new function HRESULT(ref IMcastScope self, out int32 pTTL) get_TTL;
 			}
 		}
 		[CRepr]
@@ -7704,57 +7704,57 @@ namespace Win32
 			
 			public HRESULT get_RequestID(BSTR* ppRequestID) mut
 			{
-				return VT.get_RequestID(&this, ppRequestID);
+				return VT.get_RequestID(ref this, ppRequestID);
 			}
-			public HRESULT get_LeaseStartTime(double* pTime) mut
+			public HRESULT get_LeaseStartTime(out double pTime) mut
 			{
-				return VT.get_LeaseStartTime(&this, pTime);
+				return VT.get_LeaseStartTime(ref this, out pTime);
 			}
 			public HRESULT put_LeaseStartTime(double time) mut
 			{
-				return VT.put_LeaseStartTime(&this, time);
+				return VT.put_LeaseStartTime(ref this, time);
 			}
-			public HRESULT get_LeaseStopTime(double* pTime) mut
+			public HRESULT get_LeaseStopTime(out double pTime) mut
 			{
-				return VT.get_LeaseStopTime(&this, pTime);
+				return VT.get_LeaseStopTime(ref this, out pTime);
 			}
 			public HRESULT put_LeaseStopTime(double time) mut
 			{
-				return VT.put_LeaseStopTime(&this, time);
+				return VT.put_LeaseStopTime(ref this, time);
 			}
-			public HRESULT get_AddressCount(int32* pCount) mut
+			public HRESULT get_AddressCount(out int32 pCount) mut
 			{
-				return VT.get_AddressCount(&this, pCount);
+				return VT.get_AddressCount(ref this, out pCount);
 			}
 			public HRESULT get_ServerAddress(BSTR* ppAddress) mut
 			{
-				return VT.get_ServerAddress(&this, ppAddress);
+				return VT.get_ServerAddress(ref this, ppAddress);
 			}
-			public HRESULT get_TTL(int32* pTTL) mut
+			public HRESULT get_TTL(out int32 pTTL) mut
 			{
-				return VT.get_TTL(&this, pTTL);
+				return VT.get_TTL(ref this, out pTTL);
 			}
-			public HRESULT get_Addresses(VARIANT* pVariant) mut
+			public HRESULT get_Addresses(out VARIANT pVariant) mut
 			{
-				return VT.get_Addresses(&this, pVariant);
+				return VT.get_Addresses(ref this, out pVariant);
 			}
 			public HRESULT EnumerateAddresses(IEnumBstr** ppEnumAddresses) mut
 			{
-				return VT.EnumerateAddresses(&this, ppEnumAddresses);
+				return VT.EnumerateAddresses(ref this, ppEnumAddresses);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IMcastLeaseInfo *self, BSTR* ppRequestID) get_RequestID;
-				public new function HRESULT(IMcastLeaseInfo *self, double* pTime) get_LeaseStartTime;
-				public new function HRESULT(IMcastLeaseInfo *self, double time) put_LeaseStartTime;
-				public new function HRESULT(IMcastLeaseInfo *self, double* pTime) get_LeaseStopTime;
-				public new function HRESULT(IMcastLeaseInfo *self, double time) put_LeaseStopTime;
-				public new function HRESULT(IMcastLeaseInfo *self, int32* pCount) get_AddressCount;
-				public new function HRESULT(IMcastLeaseInfo *self, BSTR* ppAddress) get_ServerAddress;
-				public new function HRESULT(IMcastLeaseInfo *self, int32* pTTL) get_TTL;
-				public new function HRESULT(IMcastLeaseInfo *self, VARIANT* pVariant) get_Addresses;
-				public new function HRESULT(IMcastLeaseInfo *self, IEnumBstr** ppEnumAddresses) EnumerateAddresses;
+				public new function HRESULT(ref IMcastLeaseInfo self, BSTR* ppRequestID) get_RequestID;
+				public new function HRESULT(ref IMcastLeaseInfo self, out double pTime) get_LeaseStartTime;
+				public new function HRESULT(ref IMcastLeaseInfo self, double time) put_LeaseStartTime;
+				public new function HRESULT(ref IMcastLeaseInfo self, out double pTime) get_LeaseStopTime;
+				public new function HRESULT(ref IMcastLeaseInfo self, double time) put_LeaseStopTime;
+				public new function HRESULT(ref IMcastLeaseInfo self, out int32 pCount) get_AddressCount;
+				public new function HRESULT(ref IMcastLeaseInfo self, BSTR* ppAddress) get_ServerAddress;
+				public new function HRESULT(ref IMcastLeaseInfo self, out int32 pTTL) get_TTL;
+				public new function HRESULT(ref IMcastLeaseInfo self, out VARIANT pVariant) get_Addresses;
+				public new function HRESULT(ref IMcastLeaseInfo self, IEnumBstr** ppEnumAddresses) EnumerateAddresses;
 			}
 		}
 		[CRepr]
@@ -7766,27 +7766,27 @@ namespace Win32
 			
 			public HRESULT Next(uint32 celt, IMcastScope** ppScopes, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppScopes, pceltFetched);
+				return VT.Next(ref this, celt, ppScopes, pceltFetched);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Clone(IEnumMcastScope** ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumMcastScope *self, uint32 celt, IMcastScope** ppScopes, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumMcastScope *self) Reset;
-				public new function HRESULT(IEnumMcastScope *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumMcastScope *self, IEnumMcastScope** ppEnum) Clone;
+				public new function HRESULT(ref IEnumMcastScope self, uint32 celt, IMcastScope** ppScopes, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumMcastScope self) Reset;
+				public new function HRESULT(ref IEnumMcastScope self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumMcastScope self, IEnumMcastScope** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -7796,44 +7796,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Scopes(VARIANT* pVariant) mut
+			public HRESULT get_Scopes(out VARIANT pVariant) mut
 			{
-				return VT.get_Scopes(&this, pVariant);
+				return VT.get_Scopes(ref this, out pVariant);
 			}
 			public HRESULT EnumerateScopes(IEnumMcastScope** ppEnumMcastScope) mut
 			{
-				return VT.EnumerateScopes(&this, ppEnumMcastScope);
+				return VT.EnumerateScopes(ref this, ppEnumMcastScope);
 			}
 			public HRESULT RequestAddress(IMcastScope* pScope, double LeaseStartTime, double LeaseStopTime, int32 NumAddresses, IMcastLeaseInfo** ppLeaseResponse) mut
 			{
-				return VT.RequestAddress(&this, pScope, LeaseStartTime, LeaseStopTime, NumAddresses, ppLeaseResponse);
+				return VT.RequestAddress(ref this, pScope, LeaseStartTime, LeaseStopTime, NumAddresses, ppLeaseResponse);
 			}
 			public HRESULT RenewAddress(int32 lReserved, IMcastLeaseInfo* pRenewRequest, IMcastLeaseInfo** ppRenewResponse) mut
 			{
-				return VT.RenewAddress(&this, lReserved, pRenewRequest, ppRenewResponse);
+				return VT.RenewAddress(ref this, lReserved, pRenewRequest, ppRenewResponse);
 			}
 			public HRESULT ReleaseAddress(IMcastLeaseInfo* pReleaseRequest) mut
 			{
-				return VT.ReleaseAddress(&this, pReleaseRequest);
+				return VT.ReleaseAddress(ref this, pReleaseRequest);
 			}
 			public HRESULT CreateLeaseInfo(double LeaseStartTime, double LeaseStopTime, uint32 dwNumAddresses, PWSTR* ppAddresses, PWSTR pRequestID, PWSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) mut
 			{
-				return VT.CreateLeaseInfo(&this, LeaseStartTime, LeaseStopTime, dwNumAddresses, ppAddresses, pRequestID, pServerAddress, ppReleaseRequest);
+				return VT.CreateLeaseInfo(ref this, LeaseStartTime, LeaseStopTime, dwNumAddresses, ppAddresses, pRequestID, pServerAddress, ppReleaseRequest);
 			}
 			public HRESULT CreateLeaseInfoFromVariant(double LeaseStartTime, double LeaseStopTime, VARIANT vAddresses, BSTR pRequestID, BSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) mut
 			{
-				return VT.CreateLeaseInfoFromVariant(&this, LeaseStartTime, LeaseStopTime, vAddresses, pRequestID, pServerAddress, ppReleaseRequest);
+				return VT.CreateLeaseInfoFromVariant(ref this, LeaseStartTime, LeaseStopTime, vAddresses, pRequestID, pServerAddress, ppReleaseRequest);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IMcastAddressAllocation *self, VARIANT* pVariant) get_Scopes;
-				public new function HRESULT(IMcastAddressAllocation *self, IEnumMcastScope** ppEnumMcastScope) EnumerateScopes;
-				public new function HRESULT(IMcastAddressAllocation *self, IMcastScope* pScope, double LeaseStartTime, double LeaseStopTime, int32 NumAddresses, IMcastLeaseInfo** ppLeaseResponse) RequestAddress;
-				public new function HRESULT(IMcastAddressAllocation *self, int32 lReserved, IMcastLeaseInfo* pRenewRequest, IMcastLeaseInfo** ppRenewResponse) RenewAddress;
-				public new function HRESULT(IMcastAddressAllocation *self, IMcastLeaseInfo* pReleaseRequest) ReleaseAddress;
-				public new function HRESULT(IMcastAddressAllocation *self, double LeaseStartTime, double LeaseStopTime, uint32 dwNumAddresses, PWSTR* ppAddresses, PWSTR pRequestID, PWSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) CreateLeaseInfo;
-				public new function HRESULT(IMcastAddressAllocation *self, double LeaseStartTime, double LeaseStopTime, VARIANT vAddresses, BSTR pRequestID, BSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) CreateLeaseInfoFromVariant;
+				public new function HRESULT(ref IMcastAddressAllocation self, out VARIANT pVariant) get_Scopes;
+				public new function HRESULT(ref IMcastAddressAllocation self, IEnumMcastScope** ppEnumMcastScope) EnumerateScopes;
+				public new function HRESULT(ref IMcastAddressAllocation self, IMcastScope* pScope, double LeaseStartTime, double LeaseStopTime, int32 NumAddresses, IMcastLeaseInfo** ppLeaseResponse) RequestAddress;
+				public new function HRESULT(ref IMcastAddressAllocation self, int32 lReserved, IMcastLeaseInfo* pRenewRequest, IMcastLeaseInfo** ppRenewResponse) RenewAddress;
+				public new function HRESULT(ref IMcastAddressAllocation self, IMcastLeaseInfo* pReleaseRequest) ReleaseAddress;
+				public new function HRESULT(ref IMcastAddressAllocation self, double LeaseStartTime, double LeaseStopTime, uint32 dwNumAddresses, PWSTR* ppAddresses, PWSTR pRequestID, PWSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) CreateLeaseInfo;
+				public new function HRESULT(ref IMcastAddressAllocation self, double LeaseStartTime, double LeaseStopTime, VARIANT vAddresses, BSTR pRequestID, BSTR pServerAddress, IMcastLeaseInfo** ppReleaseRequest) CreateLeaseInfoFromVariant;
 			}
 		}
 		[CRepr]
@@ -7841,44 +7841,44 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddProps(uint32 ulFlags, uint32 ulElemID, void* lpvData, SPropTagArray* lpPropList) mut
+			public HRESULT AddProps(uint32 ulFlags, uint32 ulElemID, void* lpvData, out SPropTagArray lpPropList) mut
 			{
-				return VT.AddProps(&this, ulFlags, ulElemID, lpvData, lpPropList);
+				return VT.AddProps(ref this, ulFlags, ulElemID, lpvData, out lpPropList);
 			}
-			public HRESULT ExtractProps(uint32 ulFlags, SPropTagArray* lpPropList, STnefProblemArray** lpProblems) mut
+			public HRESULT ExtractProps(uint32 ulFlags, out SPropTagArray lpPropList, out STnefProblemArray* lpProblems) mut
 			{
-				return VT.ExtractProps(&this, ulFlags, lpPropList, lpProblems);
+				return VT.ExtractProps(ref this, ulFlags, out lpPropList, out lpProblems);
 			}
-			public HRESULT Finish(uint32 ulFlags, uint16* lpKey, STnefProblemArray** lpProblems) mut
+			public HRESULT Finish(uint32 ulFlags, out uint16 lpKey, out STnefProblemArray* lpProblems) mut
 			{
-				return VT.Finish(&this, ulFlags, lpKey, lpProblems);
+				return VT.Finish(ref this, ulFlags, out lpKey, out lpProblems);
 			}
-			public HRESULT OpenTaggedBody(IMessage* lpMessage, uint32 ulFlags, IStream** lppStream) mut
+			public HRESULT OpenTaggedBody(ref IMessage lpMessage, uint32 ulFlags, out IStream* lppStream) mut
 			{
-				return VT.OpenTaggedBody(&this, lpMessage, ulFlags, lppStream);
+				return VT.OpenTaggedBody(ref this, ref lpMessage, ulFlags, out lppStream);
 			}
-			public HRESULT SetProps(uint32 ulFlags, uint32 ulElemID, uint32 cValues, SPropValue* lpProps) mut
+			public HRESULT SetProps(uint32 ulFlags, uint32 ulElemID, uint32 cValues, out SPropValue lpProps) mut
 			{
-				return VT.SetProps(&this, ulFlags, ulElemID, cValues, lpProps);
+				return VT.SetProps(ref this, ulFlags, ulElemID, cValues, out lpProps);
 			}
-			public HRESULT EncodeRecips(uint32 ulFlags, IMAPITable* lpRecipientTable) mut
+			public HRESULT EncodeRecips(uint32 ulFlags, ref IMAPITable lpRecipientTable) mut
 			{
-				return VT.EncodeRecips(&this, ulFlags, lpRecipientTable);
+				return VT.EncodeRecips(ref this, ulFlags, ref lpRecipientTable);
 			}
-			public HRESULT FinishComponent(uint32 ulFlags, uint32 ulComponentID, SPropTagArray* lpCustomPropList, SPropValue* lpCustomProps, SPropTagArray* lpPropList, STnefProblemArray** lpProblems) mut
+			public HRESULT FinishComponent(uint32 ulFlags, uint32 ulComponentID, out SPropTagArray lpCustomPropList, out SPropValue lpCustomProps, out SPropTagArray lpPropList, out STnefProblemArray* lpProblems) mut
 			{
-				return VT.FinishComponent(&this, ulFlags, ulComponentID, lpCustomPropList, lpCustomProps, lpPropList, lpProblems);
+				return VT.FinishComponent(ref this, ulFlags, ulComponentID, out lpCustomPropList, out lpCustomProps, out lpPropList, out lpProblems);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITnef *self, uint32 ulFlags, uint32 ulElemID, void* lpvData, SPropTagArray* lpPropList) AddProps;
-				public new function HRESULT(ITnef *self, uint32 ulFlags, SPropTagArray* lpPropList, STnefProblemArray** lpProblems) ExtractProps;
-				public new function HRESULT(ITnef *self, uint32 ulFlags, uint16* lpKey, STnefProblemArray** lpProblems) Finish;
-				public new function HRESULT(ITnef *self, IMessage* lpMessage, uint32 ulFlags, IStream** lppStream) OpenTaggedBody;
-				public new function HRESULT(ITnef *self, uint32 ulFlags, uint32 ulElemID, uint32 cValues, SPropValue* lpProps) SetProps;
-				public new function HRESULT(ITnef *self, uint32 ulFlags, IMAPITable* lpRecipientTable) EncodeRecips;
-				public new function HRESULT(ITnef *self, uint32 ulFlags, uint32 ulComponentID, SPropTagArray* lpCustomPropList, SPropValue* lpCustomProps, SPropTagArray* lpPropList, STnefProblemArray** lpProblems) FinishComponent;
+				public new function HRESULT(ref ITnef self, uint32 ulFlags, uint32 ulElemID, void* lpvData, out SPropTagArray lpPropList) AddProps;
+				public new function HRESULT(ref ITnef self, uint32 ulFlags, out SPropTagArray lpPropList, out STnefProblemArray* lpProblems) ExtractProps;
+				public new function HRESULT(ref ITnef self, uint32 ulFlags, out uint16 lpKey, out STnefProblemArray* lpProblems) Finish;
+				public new function HRESULT(ref ITnef self, ref IMessage lpMessage, uint32 ulFlags, out IStream* lppStream) OpenTaggedBody;
+				public new function HRESULT(ref ITnef self, uint32 ulFlags, uint32 ulElemID, uint32 cValues, out SPropValue lpProps) SetProps;
+				public new function HRESULT(ref ITnef self, uint32 ulFlags, ref IMAPITable lpRecipientTable) EncodeRecips;
+				public new function HRESULT(ref ITnef self, uint32 ulFlags, uint32 ulComponentID, out SPropTagArray lpCustomPropList, out SPropValue lpCustomProps, out SPropTagArray lpPropList, out STnefProblemArray* lpProblems) FinishComponent;
 			}
 		}
 		
@@ -7887,11 +7887,11 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineAccept(uint32 hCall, PSTR lpsUserUserInfo, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineAddProvider(PSTR lpszProviderFilename, HWND hwndOwner, uint32* lpdwPermanentProviderID);
+		public static extern int32 lineAddProvider(PSTR lpszProviderFilename, HWND hwndOwner, out uint32 lpdwPermanentProviderID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineAddProviderA(PSTR lpszProviderFilename, HWND hwndOwner, uint32* lpdwPermanentProviderID);
+		public static extern int32 lineAddProviderA(PSTR lpszProviderFilename, HWND hwndOwner, out uint32 lpdwPermanentProviderID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineAddProviderW(PWSTR lpszProviderFilename, HWND hwndOwner, uint32* lpdwPermanentProviderID);
+		public static extern int32 lineAddProviderW(PWSTR lpszProviderFilename, HWND hwndOwner, out uint32 lpdwPermanentProviderID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineAddToConference(uint32 hConfCall, uint32 hConsultCall);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -7907,9 +7907,9 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineClose(uint32 hLine);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineCompleteCall(uint32 hCall, uint32* lpdwCompletionID, uint32 dwCompletionMode, uint32 dwMessageID);
+		public static extern int32 lineCompleteCall(uint32 hCall, out uint32 lpdwCompletionID, uint32 dwCompletionMode, uint32 dwMessageID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineCompleteTransfer(uint32 hCall, uint32 hConsultCall, uint32* lphConfCall, uint32 dwTransferMode);
+		public static extern int32 lineCompleteTransfer(uint32 hCall, uint32 hConsultCall, out uint32 lphConfCall, uint32 dwTransferMode);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineConfigDialog(uint32 dwDeviceID, HWND hwndOwner, PSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -7917,21 +7917,21 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineConfigDialogW(uint32 dwDeviceID, HWND hwndOwner, PWSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineConfigDialogEdit(uint32 dwDeviceID, HWND hwndOwner, PSTR lpszDeviceClass, void* lpDeviceConfigIn, uint32 dwSize, VARSTRING* lpDeviceConfigOut);
+		public static extern int32 lineConfigDialogEdit(uint32 dwDeviceID, HWND hwndOwner, PSTR lpszDeviceClass, void* lpDeviceConfigIn, uint32 dwSize, out VARSTRING lpDeviceConfigOut);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineConfigDialogEditA(uint32 dwDeviceID, HWND hwndOwner, PSTR lpszDeviceClass, void* lpDeviceConfigIn, uint32 dwSize, VARSTRING* lpDeviceConfigOut);
+		public static extern int32 lineConfigDialogEditA(uint32 dwDeviceID, HWND hwndOwner, PSTR lpszDeviceClass, void* lpDeviceConfigIn, uint32 dwSize, out VARSTRING lpDeviceConfigOut);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineConfigDialogEditW(uint32 dwDeviceID, HWND hwndOwner, PWSTR lpszDeviceClass, void* lpDeviceConfigIn, uint32 dwSize, VARSTRING* lpDeviceConfigOut);
+		public static extern int32 lineConfigDialogEditW(uint32 dwDeviceID, HWND hwndOwner, PWSTR lpszDeviceClass, void* lpDeviceConfigIn, uint32 dwSize, out VARSTRING lpDeviceConfigOut);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineConfigProvider(HWND hwndOwner, uint32 dwPermanentProviderID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineCreateAgentW(uint32 hLine, PWSTR lpszAgentID, PWSTR lpszAgentPIN, uint32* lphAgent);
+		public static extern int32 lineCreateAgentW(uint32 hLine, PWSTR lpszAgentID, PWSTR lpszAgentPIN, out uint32 lphAgent);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineCreateAgentA(uint32 hLine, PSTR lpszAgentID, PSTR lpszAgentPIN, uint32* lphAgent);
+		public static extern int32 lineCreateAgentA(uint32 hLine, PSTR lpszAgentID, PSTR lpszAgentPIN, out uint32 lphAgent);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineCreateAgentSessionW(uint32 hLine, uint32 hAgent, PWSTR lpszAgentPIN, uint32 dwWorkingAddressID, Guid* lpGroupID, uint32* lphAgentSession);
+		public static extern int32 lineCreateAgentSessionW(uint32 hLine, uint32 hAgent, PWSTR lpszAgentPIN, uint32 dwWorkingAddressID, out Guid lpGroupID, out uint32 lphAgentSession);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineCreateAgentSessionA(uint32 hLine, uint32 hAgent, PSTR lpszAgentPIN, uint32 dwWorkingAddressID, Guid* lpGroupID, uint32* lphAgentSession);
+		public static extern int32 lineCreateAgentSessionA(uint32 hLine, uint32 hAgent, PSTR lpszAgentPIN, uint32 dwWorkingAddressID, out Guid lpGroupID, out uint32 lphAgentSession);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineDeallocateCall(uint32 hCall);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -7947,11 +7947,11 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineDrop(uint32 hCall, PSTR lpsUserUserInfo, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineForward(uint32 hLine, uint32 bAllAddresses, uint32 dwAddressID, LINEFORWARDLIST* lpForwardList, uint32 dwNumRingsNoAnswer, uint32* lphConsultCall, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineForward(uint32 hLine, uint32 bAllAddresses, uint32 dwAddressID, in LINEFORWARDLIST lpForwardList, uint32 dwNumRingsNoAnswer, out uint32 lphConsultCall, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineForwardA(uint32 hLine, uint32 bAllAddresses, uint32 dwAddressID, LINEFORWARDLIST* lpForwardList, uint32 dwNumRingsNoAnswer, uint32* lphConsultCall, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineForwardA(uint32 hLine, uint32 bAllAddresses, uint32 dwAddressID, in LINEFORWARDLIST lpForwardList, uint32 dwNumRingsNoAnswer, out uint32 lphConsultCall, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineForwardW(uint32 hLine, uint32 bAllAddresses, uint32 dwAddressID, LINEFORWARDLIST* lpForwardList, uint32 dwNumRingsNoAnswer, uint32* lphConsultCall, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineForwardW(uint32 hLine, uint32 bAllAddresses, uint32 dwAddressID, in LINEFORWARDLIST lpForwardList, uint32 dwNumRingsNoAnswer, out uint32 lphConsultCall, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineGatherDigits(uint32 hCall, uint32 dwDigitModes, uint8* lpsDigits, uint32 dwNumDigits, PSTR lpszTerminationDigits, uint32 dwFirstDigitTimeout, uint32 dwInterDigitTimeout);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -7965,123 +7965,123 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineGenerateDigitsW(uint32 hCall, uint32 dwDigitMode, PWSTR lpszDigits, uint32 dwDuration);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGenerateTone(uint32 hCall, uint32 dwToneMode, uint32 dwDuration, uint32 dwNumTones, LINEGENERATETONE* lpTones);
+		public static extern int32 lineGenerateTone(uint32 hCall, uint32 dwToneMode, uint32 dwDuration, uint32 dwNumTones, in LINEGENERATETONE lpTones);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAddressCaps(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAPIVersion, uint32 dwExtVersion, LINEADDRESSCAPS* lpAddressCaps);
+		public static extern int32 lineGetAddressCaps(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAPIVersion, uint32 dwExtVersion, out LINEADDRESSCAPS lpAddressCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAddressCapsA(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAPIVersion, uint32 dwExtVersion, LINEADDRESSCAPS* lpAddressCaps);
+		public static extern int32 lineGetAddressCapsA(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAPIVersion, uint32 dwExtVersion, out LINEADDRESSCAPS lpAddressCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAddressCapsW(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAPIVersion, uint32 dwExtVersion, LINEADDRESSCAPS* lpAddressCaps);
+		public static extern int32 lineGetAddressCapsW(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAPIVersion, uint32 dwExtVersion, out LINEADDRESSCAPS lpAddressCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAddressID(uint32 hLine, uint32* lpdwAddressID, uint32 dwAddressMode, PSTR lpsAddress, uint32 dwSize);
+		public static extern int32 lineGetAddressID(uint32 hLine, out uint32 lpdwAddressID, uint32 dwAddressMode, PSTR lpsAddress, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAddressIDA(uint32 hLine, uint32* lpdwAddressID, uint32 dwAddressMode, PSTR lpsAddress, uint32 dwSize);
+		public static extern int32 lineGetAddressIDA(uint32 hLine, out uint32 lpdwAddressID, uint32 dwAddressMode, PSTR lpsAddress, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAddressIDW(uint32 hLine, uint32* lpdwAddressID, uint32 dwAddressMode, PWSTR lpsAddress, uint32 dwSize);
+		public static extern int32 lineGetAddressIDW(uint32 hLine, out uint32 lpdwAddressID, uint32 dwAddressMode, PWSTR lpsAddress, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAddressStatus(uint32 hLine, uint32 dwAddressID, LINEADDRESSSTATUS* lpAddressStatus);
+		public static extern int32 lineGetAddressStatus(uint32 hLine, uint32 dwAddressID, out LINEADDRESSSTATUS lpAddressStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAddressStatusA(uint32 hLine, uint32 dwAddressID, LINEADDRESSSTATUS* lpAddressStatus);
+		public static extern int32 lineGetAddressStatusA(uint32 hLine, uint32 dwAddressID, out LINEADDRESSSTATUS lpAddressStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAddressStatusW(uint32 hLine, uint32 dwAddressID, LINEADDRESSSTATUS* lpAddressStatus);
+		public static extern int32 lineGetAddressStatusW(uint32 hLine, uint32 dwAddressID, out LINEADDRESSSTATUS lpAddressStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentActivityListA(uint32 hLine, uint32 dwAddressID, LINEAGENTACTIVITYLIST* lpAgentActivityList);
+		public static extern int32 lineGetAgentActivityListA(uint32 hLine, uint32 dwAddressID, out LINEAGENTACTIVITYLIST lpAgentActivityList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentActivityListW(uint32 hLine, uint32 dwAddressID, LINEAGENTACTIVITYLIST* lpAgentActivityList);
+		public static extern int32 lineGetAgentActivityListW(uint32 hLine, uint32 dwAddressID, out LINEAGENTACTIVITYLIST lpAgentActivityList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentCapsA(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAppAPIVersion, LINEAGENTCAPS* lpAgentCaps);
+		public static extern int32 lineGetAgentCapsA(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAppAPIVersion, out LINEAGENTCAPS lpAgentCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentCapsW(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAppAPIVersion, LINEAGENTCAPS* lpAgentCaps);
+		public static extern int32 lineGetAgentCapsW(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAddressID, uint32 dwAppAPIVersion, out LINEAGENTCAPS lpAgentCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentGroupListA(uint32 hLine, uint32 dwAddressID, LINEAGENTGROUPLIST* lpAgentGroupList);
+		public static extern int32 lineGetAgentGroupListA(uint32 hLine, uint32 dwAddressID, out LINEAGENTGROUPLIST lpAgentGroupList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentGroupListW(uint32 hLine, uint32 dwAddressID, LINEAGENTGROUPLIST* lpAgentGroupList);
+		public static extern int32 lineGetAgentGroupListW(uint32 hLine, uint32 dwAddressID, out LINEAGENTGROUPLIST lpAgentGroupList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentInfo(uint32 hLine, uint32 hAgent, LINEAGENTINFO* lpAgentInfo);
+		public static extern int32 lineGetAgentInfo(uint32 hLine, uint32 hAgent, out LINEAGENTINFO lpAgentInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentSessionInfo(uint32 hLine, uint32 hAgentSession, LINEAGENTSESSIONINFO* lpAgentSessionInfo);
+		public static extern int32 lineGetAgentSessionInfo(uint32 hLine, uint32 hAgentSession, out LINEAGENTSESSIONINFO lpAgentSessionInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentSessionList(uint32 hLine, uint32 hAgent, LINEAGENTSESSIONLIST* lpAgentSessionList);
+		public static extern int32 lineGetAgentSessionList(uint32 hLine, uint32 hAgent, out LINEAGENTSESSIONLIST lpAgentSessionList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentStatusA(uint32 hLine, uint32 dwAddressID, LINEAGENTSTATUS* lpAgentStatus);
+		public static extern int32 lineGetAgentStatusA(uint32 hLine, uint32 dwAddressID, out LINEAGENTSTATUS lpAgentStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAgentStatusW(uint32 hLine, uint32 dwAddressID, LINEAGENTSTATUS* lpAgentStatus);
+		public static extern int32 lineGetAgentStatusW(uint32 hLine, uint32 dwAddressID, out LINEAGENTSTATUS lpAgentStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAppPriority(PSTR lpszAppFilename, uint32 dwMediaMode, LINEEXTENSIONID* lpExtensionID, uint32 dwRequestMode, VARSTRING* lpExtensionName, uint32* lpdwPriority);
+		public static extern int32 lineGetAppPriority(PSTR lpszAppFilename, uint32 dwMediaMode, out LINEEXTENSIONID lpExtensionID, uint32 dwRequestMode, out VARSTRING lpExtensionName, out uint32 lpdwPriority);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAppPriorityA(PSTR lpszAppFilename, uint32 dwMediaMode, LINEEXTENSIONID* lpExtensionID, uint32 dwRequestMode, VARSTRING* lpExtensionName, uint32* lpdwPriority);
+		public static extern int32 lineGetAppPriorityA(PSTR lpszAppFilename, uint32 dwMediaMode, out LINEEXTENSIONID lpExtensionID, uint32 dwRequestMode, out VARSTRING lpExtensionName, out uint32 lpdwPriority);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetAppPriorityW(PWSTR lpszAppFilename, uint32 dwMediaMode, LINEEXTENSIONID* lpExtensionID, uint32 dwRequestMode, VARSTRING* lpExtensionName, uint32* lpdwPriority);
+		public static extern int32 lineGetAppPriorityW(PWSTR lpszAppFilename, uint32 dwMediaMode, out LINEEXTENSIONID lpExtensionID, uint32 dwRequestMode, out VARSTRING lpExtensionName, out uint32 lpdwPriority);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetCallInfo(uint32 hCall, LINECALLINFO* lpCallInfo);
+		public static extern int32 lineGetCallInfo(uint32 hCall, out LINECALLINFO lpCallInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetCallInfoA(uint32 hCall, LINECALLINFO* lpCallInfo);
+		public static extern int32 lineGetCallInfoA(uint32 hCall, out LINECALLINFO lpCallInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetCallInfoW(uint32 hCall, LINECALLINFO* lpCallInfo);
+		public static extern int32 lineGetCallInfoW(uint32 hCall, out LINECALLINFO lpCallInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetCallStatus(uint32 hCall, LINECALLSTATUS* lpCallStatus);
+		public static extern int32 lineGetCallStatus(uint32 hCall, out LINECALLSTATUS lpCallStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetConfRelatedCalls(uint32 hCall, LINECALLLIST* lpCallList);
+		public static extern int32 lineGetConfRelatedCalls(uint32 hCall, out LINECALLLIST lpCallList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetCountry(uint32 dwCountryID, uint32 dwAPIVersion, LINECOUNTRYLIST* lpLineCountryList);
+		public static extern int32 lineGetCountry(uint32 dwCountryID, uint32 dwAPIVersion, out LINECOUNTRYLIST lpLineCountryList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetCountryA(uint32 dwCountryID, uint32 dwAPIVersion, LINECOUNTRYLIST* lpLineCountryList);
+		public static extern int32 lineGetCountryA(uint32 dwCountryID, uint32 dwAPIVersion, out LINECOUNTRYLIST lpLineCountryList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetCountryW(uint32 dwCountryID, uint32 dwAPIVersion, LINECOUNTRYLIST* lpLineCountryList);
+		public static extern int32 lineGetCountryW(uint32 dwCountryID, uint32 dwAPIVersion, out LINECOUNTRYLIST lpLineCountryList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetDevCaps(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, LINEDEVCAPS* lpLineDevCaps);
+		public static extern int32 lineGetDevCaps(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, out LINEDEVCAPS lpLineDevCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetDevCapsA(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, LINEDEVCAPS* lpLineDevCaps);
+		public static extern int32 lineGetDevCapsA(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, out LINEDEVCAPS lpLineDevCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetDevCapsW(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, LINEDEVCAPS* lpLineDevCaps);
+		public static extern int32 lineGetDevCapsW(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, out LINEDEVCAPS lpLineDevCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetDevConfig(uint32 dwDeviceID, VARSTRING* lpDeviceConfig, PSTR lpszDeviceClass);
+		public static extern int32 lineGetDevConfig(uint32 dwDeviceID, out VARSTRING lpDeviceConfig, PSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetDevConfigA(uint32 dwDeviceID, VARSTRING* lpDeviceConfig, PSTR lpszDeviceClass);
+		public static extern int32 lineGetDevConfigA(uint32 dwDeviceID, out VARSTRING lpDeviceConfig, PSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetDevConfigW(uint32 dwDeviceID, VARSTRING* lpDeviceConfig, PWSTR lpszDeviceClass);
+		public static extern int32 lineGetDevConfigW(uint32 dwDeviceID, out VARSTRING lpDeviceConfig, PWSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetGroupListA(uint32 hLine, LINEAGENTGROUPLIST* lpGroupList);
+		public static extern int32 lineGetGroupListA(uint32 hLine, out LINEAGENTGROUPLIST lpGroupList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetGroupListW(uint32 hLine, LINEAGENTGROUPLIST* lpGroupList);
+		public static extern int32 lineGetGroupListW(uint32 hLine, out LINEAGENTGROUPLIST lpGroupList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetIcon(uint32 dwDeviceID, PSTR lpszDeviceClass, int* lphIcon);
+		public static extern int32 lineGetIcon(uint32 dwDeviceID, PSTR lpszDeviceClass, out int lphIcon);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetIconA(uint32 dwDeviceID, PSTR lpszDeviceClass, int* lphIcon);
+		public static extern int32 lineGetIconA(uint32 dwDeviceID, PSTR lpszDeviceClass, out int lphIcon);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetIconW(uint32 dwDeviceID, PWSTR lpszDeviceClass, int* lphIcon);
+		public static extern int32 lineGetIconW(uint32 dwDeviceID, PWSTR lpszDeviceClass, out int lphIcon);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetID(uint32 hLine, uint32 dwAddressID, uint32 hCall, uint32 dwSelect, VARSTRING* lpDeviceID, PSTR lpszDeviceClass);
+		public static extern int32 lineGetID(uint32 hLine, uint32 dwAddressID, uint32 hCall, uint32 dwSelect, out VARSTRING lpDeviceID, PSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetIDA(uint32 hLine, uint32 dwAddressID, uint32 hCall, uint32 dwSelect, VARSTRING* lpDeviceID, PSTR lpszDeviceClass);
+		public static extern int32 lineGetIDA(uint32 hLine, uint32 dwAddressID, uint32 hCall, uint32 dwSelect, out VARSTRING lpDeviceID, PSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetIDW(uint32 hLine, uint32 dwAddressID, uint32 hCall, uint32 dwSelect, VARSTRING* lpDeviceID, PWSTR lpszDeviceClass);
+		public static extern int32 lineGetIDW(uint32 hLine, uint32 dwAddressID, uint32 hCall, uint32 dwSelect, out VARSTRING lpDeviceID, PWSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetLineDevStatus(uint32 hLine, LINEDEVSTATUS* lpLineDevStatus);
+		public static extern int32 lineGetLineDevStatus(uint32 hLine, out LINEDEVSTATUS lpLineDevStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetLineDevStatusA(uint32 hLine, LINEDEVSTATUS* lpLineDevStatus);
+		public static extern int32 lineGetLineDevStatusA(uint32 hLine, out LINEDEVSTATUS lpLineDevStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetLineDevStatusW(uint32 hLine, LINEDEVSTATUS* lpLineDevStatus);
+		public static extern int32 lineGetLineDevStatusW(uint32 hLine, out LINEDEVSTATUS lpLineDevStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetMessage(uint32 hLineApp, LINEMESSAGE* lpMessage, uint32 dwTimeout);
+		public static extern int32 lineGetMessage(uint32 hLineApp, out LINEMESSAGE lpMessage, uint32 dwTimeout);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetNewCalls(uint32 hLine, uint32 dwAddressID, uint32 dwSelect, LINECALLLIST* lpCallList);
+		public static extern int32 lineGetNewCalls(uint32 hLine, uint32 dwAddressID, uint32 dwSelect, out LINECALLLIST lpCallList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetNumRings(uint32 hLine, uint32 dwAddressID, uint32* lpdwNumRings);
+		public static extern int32 lineGetNumRings(uint32 hLine, uint32 dwAddressID, out uint32 lpdwNumRings);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetProviderList(uint32 dwAPIVersion, LINEPROVIDERLIST* lpProviderList);
+		public static extern int32 lineGetProviderList(uint32 dwAPIVersion, out LINEPROVIDERLIST lpProviderList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetProviderListA(uint32 dwAPIVersion, LINEPROVIDERLIST* lpProviderList);
+		public static extern int32 lineGetProviderListA(uint32 dwAPIVersion, out LINEPROVIDERLIST lpProviderList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetProviderListW(uint32 dwAPIVersion, LINEPROVIDERLIST* lpProviderList);
+		public static extern int32 lineGetProviderListW(uint32 dwAPIVersion, out LINEPROVIDERLIST lpProviderList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetProxyStatus(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAppAPIVersion, LINEPROXYREQUESTLIST* lpLineProxyReqestList);
+		public static extern int32 lineGetProxyStatus(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAppAPIVersion, out LINEPROXYREQUESTLIST lpLineProxyReqestList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetQueueInfo(uint32 hLine, uint32 dwQueueID, LINEQUEUEINFO* lpLineQueueInfo);
+		public static extern int32 lineGetQueueInfo(uint32 hLine, uint32 dwQueueID, out LINEQUEUEINFO lpLineQueueInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetQueueListA(uint32 hLine, Guid* lpGroupID, LINEQUEUELIST* lpQueueList);
+		public static extern int32 lineGetQueueListA(uint32 hLine, out Guid lpGroupID, out LINEQUEUELIST lpQueueList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetQueueListW(uint32 hLine, Guid* lpGroupID, LINEQUEUELIST* lpQueueList);
+		public static extern int32 lineGetQueueListW(uint32 hLine, out Guid lpGroupID, out LINEQUEUELIST lpQueueList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineGetRequest(uint32 hLineApp, uint32 dwRequestMode, void* lpRequestBuffer);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -8089,13 +8089,13 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineGetRequestW(uint32 hLineApp, uint32 dwRequestMode, void* lpRequestBuffer);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetStatusMessages(uint32 hLine, uint32* lpdwLineStates, uint32* lpdwAddressStates);
+		public static extern int32 lineGetStatusMessages(uint32 hLine, out uint32 lpdwLineStates, out uint32 lpdwAddressStates);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetTranslateCaps(uint32 hLineApp, uint32 dwAPIVersion, LINETRANSLATECAPS* lpTranslateCaps);
+		public static extern int32 lineGetTranslateCaps(uint32 hLineApp, uint32 dwAPIVersion, out LINETRANSLATECAPS lpTranslateCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetTranslateCapsA(uint32 hLineApp, uint32 dwAPIVersion, LINETRANSLATECAPS* lpTranslateCaps);
+		public static extern int32 lineGetTranslateCapsA(uint32 hLineApp, uint32 dwAPIVersion, out LINETRANSLATECAPS lpTranslateCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineGetTranslateCapsW(uint32 hLineApp, uint32 dwAPIVersion, LINETRANSLATECAPS* lpTranslateCaps);
+		public static extern int32 lineGetTranslateCapsW(uint32 hLineApp, uint32 dwAPIVersion, out LINETRANSLATECAPS lpTranslateCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineHandoff(uint32 hCall, PSTR lpszFileName, uint32 dwMediaMode);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -8105,55 +8105,55 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineHold(uint32 hCall);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineInitialize(uint32* lphLineApp, HINSTANCE hInstance, LINECALLBACK lpfnCallback, PSTR lpszAppName, uint32* lpdwNumDevs);
+		public static extern int32 lineInitialize(out uint32 lphLineApp, HINSTANCE hInstance, LINECALLBACK lpfnCallback, PSTR lpszAppName, out uint32 lpdwNumDevs);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineInitializeExA(uint32* lphLineApp, HINSTANCE hInstance, LINECALLBACK lpfnCallback, PSTR lpszFriendlyAppName, uint32* lpdwNumDevs, uint32* lpdwAPIVersion, LINEINITIALIZEEXPARAMS* lpLineInitializeExParams);
+		public static extern int32 lineInitializeExA(out uint32 lphLineApp, HINSTANCE hInstance, LINECALLBACK lpfnCallback, PSTR lpszFriendlyAppName, out uint32 lpdwNumDevs, out uint32 lpdwAPIVersion, out LINEINITIALIZEEXPARAMS lpLineInitializeExParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineInitializeExW(uint32* lphLineApp, HINSTANCE hInstance, LINECALLBACK lpfnCallback, PWSTR lpszFriendlyAppName, uint32* lpdwNumDevs, uint32* lpdwAPIVersion, LINEINITIALIZEEXPARAMS* lpLineInitializeExParams);
+		public static extern int32 lineInitializeExW(out uint32 lphLineApp, HINSTANCE hInstance, LINECALLBACK lpfnCallback, PWSTR lpszFriendlyAppName, out uint32 lpdwNumDevs, out uint32 lpdwAPIVersion, out LINEINITIALIZEEXPARAMS lpLineInitializeExParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineMakeCall(uint32 hLine, uint32* lphCall, PSTR lpszDestAddress, uint32 dwCountryCode, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineMakeCall(uint32 hLine, out uint32 lphCall, PSTR lpszDestAddress, uint32 dwCountryCode, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineMakeCallA(uint32 hLine, uint32* lphCall, PSTR lpszDestAddress, uint32 dwCountryCode, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineMakeCallA(uint32 hLine, out uint32 lphCall, PSTR lpszDestAddress, uint32 dwCountryCode, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineMakeCallW(uint32 hLine, uint32* lphCall, PWSTR lpszDestAddress, uint32 dwCountryCode, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineMakeCallW(uint32 hLine, out uint32 lphCall, PWSTR lpszDestAddress, uint32 dwCountryCode, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineMonitorDigits(uint32 hCall, uint32 dwDigitModes);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineMonitorMedia(uint32 hCall, uint32 dwMediaModes);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineMonitorTones(uint32 hCall, LINEMONITORTONE* lpToneList, uint32 dwNumEntries);
+		public static extern int32 lineMonitorTones(uint32 hCall, in LINEMONITORTONE lpToneList, uint32 dwNumEntries);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineNegotiateAPIVersion(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPILowVersion, uint32 dwAPIHighVersion, uint32* lpdwAPIVersion, LINEEXTENSIONID* lpExtensionID);
+		public static extern int32 lineNegotiateAPIVersion(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPILowVersion, uint32 dwAPIHighVersion, out uint32 lpdwAPIVersion, out LINEEXTENSIONID lpExtensionID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineNegotiateExtVersion(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtLowVersion, uint32 dwExtHighVersion, uint32* lpdwExtVersion);
+		public static extern int32 lineNegotiateExtVersion(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtLowVersion, uint32 dwExtHighVersion, out uint32 lpdwExtVersion);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineOpen(uint32 hLineApp, uint32 dwDeviceID, uint32* lphLine, uint32 dwAPIVersion, uint32 dwExtVersion, uint dwCallbackInstance, uint32 dwPrivileges, uint32 dwMediaModes, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineOpen(uint32 hLineApp, uint32 dwDeviceID, out uint32 lphLine, uint32 dwAPIVersion, uint32 dwExtVersion, uint dwCallbackInstance, uint32 dwPrivileges, uint32 dwMediaModes, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineOpenA(uint32 hLineApp, uint32 dwDeviceID, uint32* lphLine, uint32 dwAPIVersion, uint32 dwExtVersion, uint dwCallbackInstance, uint32 dwPrivileges, uint32 dwMediaModes, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineOpenA(uint32 hLineApp, uint32 dwDeviceID, out uint32 lphLine, uint32 dwAPIVersion, uint32 dwExtVersion, uint dwCallbackInstance, uint32 dwPrivileges, uint32 dwMediaModes, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineOpenW(uint32 hLineApp, uint32 dwDeviceID, uint32* lphLine, uint32 dwAPIVersion, uint32 dwExtVersion, uint dwCallbackInstance, uint32 dwPrivileges, uint32 dwMediaModes, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineOpenW(uint32 hLineApp, uint32 dwDeviceID, out uint32 lphLine, uint32 dwAPIVersion, uint32 dwExtVersion, uint dwCallbackInstance, uint32 dwPrivileges, uint32 dwMediaModes, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 linePark(uint32 hCall, uint32 dwParkMode, PSTR lpszDirAddress, VARSTRING* lpNonDirAddress);
+		public static extern int32 linePark(uint32 hCall, uint32 dwParkMode, PSTR lpszDirAddress, out VARSTRING lpNonDirAddress);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineParkA(uint32 hCall, uint32 dwParkMode, PSTR lpszDirAddress, VARSTRING* lpNonDirAddress);
+		public static extern int32 lineParkA(uint32 hCall, uint32 dwParkMode, PSTR lpszDirAddress, out VARSTRING lpNonDirAddress);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineParkW(uint32 hCall, uint32 dwParkMode, PWSTR lpszDirAddress, VARSTRING* lpNonDirAddress);
+		public static extern int32 lineParkW(uint32 hCall, uint32 dwParkMode, PWSTR lpszDirAddress, out VARSTRING lpNonDirAddress);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 linePickup(uint32 hLine, uint32 dwAddressID, uint32* lphCall, PSTR lpszDestAddress, PSTR lpszGroupID);
+		public static extern int32 linePickup(uint32 hLine, uint32 dwAddressID, out uint32 lphCall, PSTR lpszDestAddress, PSTR lpszGroupID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 linePickupA(uint32 hLine, uint32 dwAddressID, uint32* lphCall, PSTR lpszDestAddress, PSTR lpszGroupID);
+		public static extern int32 linePickupA(uint32 hLine, uint32 dwAddressID, out uint32 lphCall, PSTR lpszDestAddress, PSTR lpszGroupID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 linePickupW(uint32 hLine, uint32 dwAddressID, uint32* lphCall, PWSTR lpszDestAddress, PWSTR lpszGroupID);
+		public static extern int32 linePickupW(uint32 hLine, uint32 dwAddressID, out uint32 lphCall, PWSTR lpszDestAddress, PWSTR lpszGroupID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 linePrepareAddToConference(uint32 hConfCall, uint32* lphConsultCall, LINECALLPARAMS* lpCallParams);
+		public static extern int32 linePrepareAddToConference(uint32 hConfCall, out uint32 lphConsultCall, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 linePrepareAddToConferenceA(uint32 hConfCall, uint32* lphConsultCall, LINECALLPARAMS* lpCallParams);
+		public static extern int32 linePrepareAddToConferenceA(uint32 hConfCall, out uint32 lphConsultCall, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 linePrepareAddToConferenceW(uint32 hConfCall, uint32* lphConsultCall, LINECALLPARAMS* lpCallParams);
+		public static extern int32 linePrepareAddToConferenceW(uint32 hConfCall, out uint32 lphConsultCall, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineProxyMessage(uint32 hLine, uint32 hCall, uint32 dwMsg, uint32 dwParam1, uint32 dwParam2, uint32 dwParam3);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineProxyResponse(uint32 hLine, LINEPROXYREQUEST* lpProxyRequest, uint32 dwResult);
+		public static extern int32 lineProxyResponse(uint32 hLine, out LINEPROXYREQUEST lpProxyRequest, uint32 dwResult);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineRedirect(uint32 hCall, PSTR lpszDestAddress, uint32 dwCountryCode);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -8175,7 +8175,7 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSetAgentActivity(uint32 hLine, uint32 dwAddressID, uint32 dwActivityID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetAgentGroup(uint32 hLine, uint32 dwAddressID, LINEAGENTGROUPLIST* lpAgentGroupList);
+		public static extern int32 lineSetAgentGroup(uint32 hLine, uint32 dwAddressID, out LINEAGENTGROUPLIST lpAgentGroupList);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSetAgentMeasurementPeriod(uint32 hLine, uint32 hAgent, uint32 dwMeasurementPeriod);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -8185,17 +8185,17 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSetAgentState(uint32 hLine, uint32 dwAddressID, uint32 dwAgentState, uint32 dwNextAgentState);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetAppPriority(PSTR lpszAppFilename, uint32 dwMediaMode, LINEEXTENSIONID* lpExtensionID, uint32 dwRequestMode, PSTR lpszExtensionName, uint32 dwPriority);
+		public static extern int32 lineSetAppPriority(PSTR lpszAppFilename, uint32 dwMediaMode, out LINEEXTENSIONID lpExtensionID, uint32 dwRequestMode, PSTR lpszExtensionName, uint32 dwPriority);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetAppPriorityA(PSTR lpszAppFilename, uint32 dwMediaMode, LINEEXTENSIONID* lpExtensionID, uint32 dwRequestMode, PSTR lpszExtensionName, uint32 dwPriority);
+		public static extern int32 lineSetAppPriorityA(PSTR lpszAppFilename, uint32 dwMediaMode, out LINEEXTENSIONID lpExtensionID, uint32 dwRequestMode, PSTR lpszExtensionName, uint32 dwPriority);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetAppPriorityW(PWSTR lpszAppFilename, uint32 dwMediaMode, LINEEXTENSIONID* lpExtensionID, uint32 dwRequestMode, PWSTR lpszExtensionName, uint32 dwPriority);
+		public static extern int32 lineSetAppPriorityW(PWSTR lpszAppFilename, uint32 dwMediaMode, out LINEEXTENSIONID lpExtensionID, uint32 dwRequestMode, PWSTR lpszExtensionName, uint32 dwPriority);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSetAppSpecific(uint32 hCall, uint32 dwAppSpecific);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSetCallData(uint32 hCall, void* lpCallData, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetCallParams(uint32 hCall, uint32 dwBearerMode, uint32 dwMinRate, uint32 dwMaxRate, LINEDIALPARAMS* lpDialParams);
+		public static extern int32 lineSetCallParams(uint32 hCall, uint32 dwBearerMode, uint32 dwMinRate, uint32 dwMaxRate, in LINEDIALPARAMS lpDialParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSetCallPrivilege(uint32 hCall, uint32 dwCallPrivilege);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -8213,7 +8213,7 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSetLineDevStatus(uint32 hLine, uint32 dwStatusToChange, uint32 fStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetMediaControl(uint32 hLine, uint32 dwAddressID, uint32 hCall, uint32 dwSelect, LINEMEDIACONTROLDIGIT* lpDigitList, uint32 dwDigitNumEntries, LINEMEDIACONTROLMEDIA* lpMediaList, uint32 dwMediaNumEntries, LINEMEDIACONTROLTONE* lpToneList, uint32 dwToneNumEntries, LINEMEDIACONTROLCALLSTATE* lpCallStateList, uint32 dwCallStateNumEntries);
+		public static extern int32 lineSetMediaControl(uint32 hLine, uint32 dwAddressID, uint32 hCall, uint32 dwSelect, in LINEMEDIACONTROLDIGIT lpDigitList, uint32 dwDigitNumEntries, in LINEMEDIACONTROLMEDIA lpMediaList, uint32 dwMediaNumEntries, in LINEMEDIACONTROLTONE lpToneList, uint32 dwToneNumEntries, in LINEMEDIACONTROLCALLSTATE lpCallStateList, uint32 dwCallStateNumEntries);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSetMediaMode(uint32 hCall, uint32 dwMediaModes);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -8231,27 +8231,27 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSetTollListW(uint32 hLineApp, uint32 dwDeviceID, PWSTR lpszAddressInW, uint32 dwTollListOption);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetupConference(uint32 hCall, uint32 hLine, uint32* lphConfCall, uint32* lphConsultCall, uint32 dwNumParties, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineSetupConference(uint32 hCall, uint32 hLine, out uint32 lphConfCall, out uint32 lphConsultCall, uint32 dwNumParties, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetupConferenceA(uint32 hCall, uint32 hLine, uint32* lphConfCall, uint32* lphConsultCall, uint32 dwNumParties, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineSetupConferenceA(uint32 hCall, uint32 hLine, out uint32 lphConfCall, out uint32 lphConsultCall, uint32 dwNumParties, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetupConferenceW(uint32 hCall, uint32 hLine, uint32* lphConfCall, uint32* lphConsultCall, uint32 dwNumParties, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineSetupConferenceW(uint32 hCall, uint32 hLine, out uint32 lphConfCall, out uint32 lphConsultCall, uint32 dwNumParties, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetupTransfer(uint32 hCall, uint32* lphConsultCall, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineSetupTransfer(uint32 hCall, out uint32 lphConsultCall, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetupTransferA(uint32 hCall, uint32* lphConsultCall, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineSetupTransferA(uint32 hCall, out uint32 lphConsultCall, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineSetupTransferW(uint32 hCall, uint32* lphConsultCall, LINECALLPARAMS* lpCallParams);
+		public static extern int32 lineSetupTransferW(uint32 hCall, out uint32 lphConsultCall, in LINECALLPARAMS lpCallParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineShutdown(uint32 hLineApp);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineSwapHold(uint32 hActiveCall, uint32 hHeldCall);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineTranslateAddress(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, PSTR lpszAddressIn, uint32 dwCard, uint32 dwTranslateOptions, LINETRANSLATEOUTPUT* lpTranslateOutput);
+		public static extern int32 lineTranslateAddress(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, PSTR lpszAddressIn, uint32 dwCard, uint32 dwTranslateOptions, out LINETRANSLATEOUTPUT lpTranslateOutput);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineTranslateAddressA(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, PSTR lpszAddressIn, uint32 dwCard, uint32 dwTranslateOptions, LINETRANSLATEOUTPUT* lpTranslateOutput);
+		public static extern int32 lineTranslateAddressA(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, PSTR lpszAddressIn, uint32 dwCard, uint32 dwTranslateOptions, out LINETRANSLATEOUTPUT lpTranslateOutput);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineTranslateAddressW(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, PWSTR lpszAddressIn, uint32 dwCard, uint32 dwTranslateOptions, LINETRANSLATEOUTPUT* lpTranslateOutput);
+		public static extern int32 lineTranslateAddressW(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, PWSTR lpszAddressIn, uint32 dwCard, uint32 dwTranslateOptions, out LINETRANSLATEOUTPUT lpTranslateOutput);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineTranslateDialog(uint32 hLineApp, uint32 dwDeviceID, uint32 dwAPIVersion, HWND hwndOwner, PSTR lpszAddressIn);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -8263,11 +8263,11 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 lineUnhold(uint32 hCall);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineUnpark(uint32 hLine, uint32 dwAddressID, uint32* lphCall, PSTR lpszDestAddress);
+		public static extern int32 lineUnpark(uint32 hLine, uint32 dwAddressID, out uint32 lphCall, PSTR lpszDestAddress);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineUnparkA(uint32 hLine, uint32 dwAddressID, uint32* lphCall, PSTR lpszDestAddress);
+		public static extern int32 lineUnparkA(uint32 hLine, uint32 dwAddressID, out uint32 lphCall, PSTR lpszDestAddress);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 lineUnparkW(uint32 hLine, uint32 dwAddressID, uint32* lphCall, PWSTR lpszDestAddress);
+		public static extern int32 lineUnparkW(uint32 hLine, uint32 dwAddressID, out uint32 lphCall, PWSTR lpszDestAddress);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 phoneClose(uint32 hPhone);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -8279,71 +8279,71 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 phoneDevSpecific(uint32 hPhone, void* lpParams, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetButtonInfo(uint32 hPhone, uint32 dwButtonLampID, PHONEBUTTONINFO* lpButtonInfo);
+		public static extern int32 phoneGetButtonInfo(uint32 hPhone, uint32 dwButtonLampID, out PHONEBUTTONINFO lpButtonInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetButtonInfoA(uint32 hPhone, uint32 dwButtonLampID, PHONEBUTTONINFO* lpButtonInfo);
+		public static extern int32 phoneGetButtonInfoA(uint32 hPhone, uint32 dwButtonLampID, out PHONEBUTTONINFO lpButtonInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetButtonInfoW(uint32 hPhone, uint32 dwButtonLampID, PHONEBUTTONINFO* lpButtonInfo);
+		public static extern int32 phoneGetButtonInfoW(uint32 hPhone, uint32 dwButtonLampID, out PHONEBUTTONINFO lpButtonInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 phoneGetData(uint32 hPhone, uint32 dwDataID, void* lpData, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetDevCaps(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, PHONECAPS* lpPhoneCaps);
+		public static extern int32 phoneGetDevCaps(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, out PHONECAPS lpPhoneCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetDevCapsA(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, PHONECAPS* lpPhoneCaps);
+		public static extern int32 phoneGetDevCapsA(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, out PHONECAPS lpPhoneCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetDevCapsW(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, PHONECAPS* lpPhoneCaps);
+		public static extern int32 phoneGetDevCapsW(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtVersion, out PHONECAPS lpPhoneCaps);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetDisplay(uint32 hPhone, VARSTRING* lpDisplay);
+		public static extern int32 phoneGetDisplay(uint32 hPhone, out VARSTRING lpDisplay);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetGain(uint32 hPhone, uint32 dwHookSwitchDev, uint32* lpdwGain);
+		public static extern int32 phoneGetGain(uint32 hPhone, uint32 dwHookSwitchDev, out uint32 lpdwGain);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetHookSwitch(uint32 hPhone, uint32* lpdwHookSwitchDevs);
+		public static extern int32 phoneGetHookSwitch(uint32 hPhone, out uint32 lpdwHookSwitchDevs);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetIcon(uint32 dwDeviceID, PSTR lpszDeviceClass, int* lphIcon);
+		public static extern int32 phoneGetIcon(uint32 dwDeviceID, PSTR lpszDeviceClass, out int lphIcon);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetIconA(uint32 dwDeviceID, PSTR lpszDeviceClass, int* lphIcon);
+		public static extern int32 phoneGetIconA(uint32 dwDeviceID, PSTR lpszDeviceClass, out int lphIcon);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetIconW(uint32 dwDeviceID, PWSTR lpszDeviceClass, int* lphIcon);
+		public static extern int32 phoneGetIconW(uint32 dwDeviceID, PWSTR lpszDeviceClass, out int lphIcon);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetID(uint32 hPhone, VARSTRING* lpDeviceID, PSTR lpszDeviceClass);
+		public static extern int32 phoneGetID(uint32 hPhone, out VARSTRING lpDeviceID, PSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetIDA(uint32 hPhone, VARSTRING* lpDeviceID, PSTR lpszDeviceClass);
+		public static extern int32 phoneGetIDA(uint32 hPhone, out VARSTRING lpDeviceID, PSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetIDW(uint32 hPhone, VARSTRING* lpDeviceID, PWSTR lpszDeviceClass);
+		public static extern int32 phoneGetIDW(uint32 hPhone, out VARSTRING lpDeviceID, PWSTR lpszDeviceClass);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetLamp(uint32 hPhone, uint32 dwButtonLampID, uint32* lpdwLampMode);
+		public static extern int32 phoneGetLamp(uint32 hPhone, uint32 dwButtonLampID, out uint32 lpdwLampMode);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetMessage(uint32 hPhoneApp, PHONEMESSAGE* lpMessage, uint32 dwTimeout);
+		public static extern int32 phoneGetMessage(uint32 hPhoneApp, out PHONEMESSAGE lpMessage, uint32 dwTimeout);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetRing(uint32 hPhone, uint32* lpdwRingMode, uint32* lpdwVolume);
+		public static extern int32 phoneGetRing(uint32 hPhone, out uint32 lpdwRingMode, out uint32 lpdwVolume);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetStatus(uint32 hPhone, PHONESTATUS* lpPhoneStatus);
+		public static extern int32 phoneGetStatus(uint32 hPhone, out PHONESTATUS lpPhoneStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetStatusA(uint32 hPhone, PHONESTATUS* lpPhoneStatus);
+		public static extern int32 phoneGetStatusA(uint32 hPhone, out PHONESTATUS lpPhoneStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetStatusW(uint32 hPhone, PHONESTATUS* lpPhoneStatus);
+		public static extern int32 phoneGetStatusW(uint32 hPhone, out PHONESTATUS lpPhoneStatus);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetStatusMessages(uint32 hPhone, uint32* lpdwPhoneStates, uint32* lpdwButtonModes, uint32* lpdwButtonStates);
+		public static extern int32 phoneGetStatusMessages(uint32 hPhone, out uint32 lpdwPhoneStates, out uint32 lpdwButtonModes, out uint32 lpdwButtonStates);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneGetVolume(uint32 hPhone, uint32 dwHookSwitchDev, uint32* lpdwVolume);
+		public static extern int32 phoneGetVolume(uint32 hPhone, uint32 dwHookSwitchDev, out uint32 lpdwVolume);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneInitialize(uint32* lphPhoneApp, HINSTANCE hInstance, PHONECALLBACK lpfnCallback, PSTR lpszAppName, uint32* lpdwNumDevs);
+		public static extern int32 phoneInitialize(out uint32 lphPhoneApp, HINSTANCE hInstance, PHONECALLBACK lpfnCallback, PSTR lpszAppName, out uint32 lpdwNumDevs);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneInitializeExA(uint32* lphPhoneApp, HINSTANCE hInstance, PHONECALLBACK lpfnCallback, PSTR lpszFriendlyAppName, uint32* lpdwNumDevs, uint32* lpdwAPIVersion, PHONEINITIALIZEEXPARAMS* lpPhoneInitializeExParams);
+		public static extern int32 phoneInitializeExA(out uint32 lphPhoneApp, HINSTANCE hInstance, PHONECALLBACK lpfnCallback, PSTR lpszFriendlyAppName, out uint32 lpdwNumDevs, out uint32 lpdwAPIVersion, out PHONEINITIALIZEEXPARAMS lpPhoneInitializeExParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneInitializeExW(uint32* lphPhoneApp, HINSTANCE hInstance, PHONECALLBACK lpfnCallback, PWSTR lpszFriendlyAppName, uint32* lpdwNumDevs, uint32* lpdwAPIVersion, PHONEINITIALIZEEXPARAMS* lpPhoneInitializeExParams);
+		public static extern int32 phoneInitializeExW(out uint32 lphPhoneApp, HINSTANCE hInstance, PHONECALLBACK lpfnCallback, PWSTR lpszFriendlyAppName, out uint32 lpdwNumDevs, out uint32 lpdwAPIVersion, out PHONEINITIALIZEEXPARAMS lpPhoneInitializeExParams);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneNegotiateAPIVersion(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPILowVersion, uint32 dwAPIHighVersion, uint32* lpdwAPIVersion, PHONEEXTENSIONID* lpExtensionID);
+		public static extern int32 phoneNegotiateAPIVersion(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPILowVersion, uint32 dwAPIHighVersion, out uint32 lpdwAPIVersion, out PHONEEXTENSIONID lpExtensionID);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneNegotiateExtVersion(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtLowVersion, uint32 dwExtHighVersion, uint32* lpdwExtVersion);
+		public static extern int32 phoneNegotiateExtVersion(uint32 hPhoneApp, uint32 dwDeviceID, uint32 dwAPIVersion, uint32 dwExtLowVersion, uint32 dwExtHighVersion, out uint32 lpdwExtVersion);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneOpen(uint32 hPhoneApp, uint32 dwDeviceID, uint32* lphPhone, uint32 dwAPIVersion, uint32 dwExtVersion, uint dwCallbackInstance, uint32 dwPrivilege);
+		public static extern int32 phoneOpen(uint32 hPhoneApp, uint32 dwDeviceID, out uint32 lphPhone, uint32 dwAPIVersion, uint32 dwExtVersion, uint dwCallbackInstance, uint32 dwPrivilege);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneSetButtonInfo(uint32 hPhone, uint32 dwButtonLampID, PHONEBUTTONINFO* lpButtonInfo);
+		public static extern int32 phoneSetButtonInfo(uint32 hPhone, uint32 dwButtonLampID, in PHONEBUTTONINFO lpButtonInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneSetButtonInfoA(uint32 hPhone, uint32 dwButtonLampID, PHONEBUTTONINFO* lpButtonInfo);
+		public static extern int32 phoneSetButtonInfoA(uint32 hPhone, uint32 dwButtonLampID, in PHONEBUTTONINFO lpButtonInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 phoneSetButtonInfoW(uint32 hPhone, uint32 dwButtonLampID, PHONEBUTTONINFO* lpButtonInfo);
+		public static extern int32 phoneSetButtonInfoW(uint32 hPhone, uint32 dwButtonLampID, in PHONEBUTTONINFO lpButtonInfo);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 phoneSetData(uint32 hPhone, uint32 dwDataID, void* lpData, uint32 dwSize);
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -8383,11 +8383,11 @@ namespace Win32
 		[Import("tapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 tapiRequestMediaCallW(HWND hwnd, WPARAM wRequestID, PWSTR lpszDeviceClass, PWSTR lpDeviceID, uint32 dwSize, uint32 dwSecure, PWSTR lpszDestAddress, PWSTR lpszAppName, PWSTR lpszCalledParty, PWSTR lpszComment);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OpenTnefStream(void* lpvSupport, IStream* lpStream, int8* lpszStreamName, uint32 ulFlags, IMessage* lpMessage, uint16 wKeyVal, ITnef** lppTNEF);
+		public static extern HRESULT OpenTnefStream(void* lpvSupport, ref IStream lpStream, ref int8 lpszStreamName, uint32 ulFlags, ref IMessage lpMessage, uint16 wKeyVal, out ITnef* lppTNEF);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OpenTnefStreamEx(void* lpvSupport, IStream* lpStream, int8* lpszStreamName, uint32 ulFlags, IMessage* lpMessage, uint16 wKeyVal, IAddrBook* lpAdressBook, ITnef** lppTNEF);
+		public static extern HRESULT OpenTnefStreamEx(void* lpvSupport, ref IStream lpStream, ref int8 lpszStreamName, uint32 ulFlags, ref IMessage lpMessage, uint16 wKeyVal, ref IAddrBook lpAdressBook, out ITnef* lppTNEF);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetTnefStreamCodepage(IStream* lpStream, uint32* lpulCodepage, uint32* lpulSubCodepage);
+		public static extern HRESULT GetTnefStreamCodepage(ref IStream lpStream, out uint32 lpulCodepage, out uint32 lpulSubCodepage);
 		
 	}
 }

@@ -215,7 +215,7 @@ namespace Win32
 		{
 			public uint32 NumberOfAssignedProcesses;
 			public uint32 NumberOfProcessIdsInList;
-			public uint[] ProcessIdList;
+			public uint[0] ProcessIdList;
 		}
 		[CRepr]
 		public struct JOBOBJECT_BASIC_UI_RESTRICTIONS
@@ -453,7 +453,7 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL IsProcessInJob(HANDLE ProcessHandle, HANDLE JobHandle, BOOL* Result);
+		public static extern BOOL IsProcessInJob(HANDLE ProcessHandle, HANDLE JobHandle, out BOOL Result);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE CreateJobObjectW(SECURITY_ATTRIBUTES* lpJobAttributes, PWSTR lpName);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -467,11 +467,11 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetInformationJobObject(HANDLE hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, void* lpJobObjectInformation, uint32 cbJobObjectInformationLength);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SetIoRateControlInformationJobObject(HANDLE hJob, JOBOBJECT_IO_RATE_CONTROL_INFORMATION* IoRateControlInfo);
+		public static extern uint32 SetIoRateControlInformationJobObject(HANDLE hJob, ref JOBOBJECT_IO_RATE_CONTROL_INFORMATION IoRateControlInfo);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL QueryInformationJobObject(HANDLE hJob, JOBOBJECTINFOCLASS JobObjectInformationClass, void* lpJobObjectInformation, uint32 cbJobObjectInformationLength, uint32* lpReturnLength);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 QueryIoRateControlInformationJobObject(HANDLE hJob, PWSTR VolumeName, JOBOBJECT_IO_RATE_CONTROL_INFORMATION** InfoBlocks, uint32* InfoBlockCount);
+		public static extern uint32 QueryIoRateControlInformationJobObject(HANDLE hJob, PWSTR VolumeName, out JOBOBJECT_IO_RATE_CONTROL_INFORMATION* InfoBlocks, out uint32 InfoBlockCount);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UserHandleGrantAccess(HANDLE hUserHandle, HANDLE hJob, BOOL bGrant);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]

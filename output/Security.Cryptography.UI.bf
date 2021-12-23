@@ -212,10 +212,10 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function BOOL PFNCMFILTERPROC(CERT_CONTEXT* pCertContext, LPARAM param1, uint32 param2, uint32 param3);
+		public function BOOL PFNCMFILTERPROC(in CERT_CONTEXT pCertContext, LPARAM param1, uint32 param2, uint32 param3);
 		public function uint32 PFNCMHOOKPROC(HWND hwndDialog, uint32 message, WPARAM wParam, LPARAM lParam);
-		public function HRESULT PFNTRUSTHELPER(CERT_CONTEXT* pCertContext, LPARAM lCustData, BOOL fLeafCertificate, uint8* pbTrustBlob);
-		public function BOOL PFNCFILTERPROC(CERT_CONTEXT* pCertContext, BOOL* pfInitialSelectedCert, void* pvCallbackData);
+		public function HRESULT PFNTRUSTHELPER(in CERT_CONTEXT pCertContext, LPARAM lCustData, BOOL fLeafCertificate, out uint8 pbTrustBlob);
+		public function BOOL PFNCFILTERPROC(in CERT_CONTEXT pCertContext, out BOOL pfInitialSelectedCert, void* pvCallbackData);
 		
 		// --- Structs ---
 		
@@ -582,19 +582,19 @@ namespace Win32
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CERT_CONTEXT* CryptUIDlgSelectCertificateFromStore(void* hCertStore, HWND hwnd, PWSTR pwszTitle, PWSTR pwszDisplayString, uint32 dwDontUseColumn, uint32 dwFlags, void* pvReserved);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CertSelectionGetSerializedBlob(CERT_SELECTUI_INPUT* pcsi, void** ppOutBuffer, uint32* pulOutBufferSize);
+		public static extern HRESULT CertSelectionGetSerializedBlob(ref CERT_SELECTUI_INPUT pcsi, void** ppOutBuffer, out uint32 pulOutBufferSize);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptUIDlgCertMgr(CRYPTUI_CERT_MGR_STRUCT* pCryptUICertMgr);
+		public static extern BOOL CryptUIDlgCertMgr(ref CRYPTUI_CERT_MGR_STRUCT pCryptUICertMgr);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptUIWizDigitalSign(uint32 dwFlags, HWND hwndParent, PWSTR pwszWizardTitle, CRYPTUI_WIZ_DIGITAL_SIGN_INFO* pDigitalSignInfo, CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT** ppSignContext);
+		public static extern BOOL CryptUIWizDigitalSign(uint32 dwFlags, HWND hwndParent, PWSTR pwszWizardTitle, ref CRYPTUI_WIZ_DIGITAL_SIGN_INFO pDigitalSignInfo, CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT** ppSignContext);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptUIWizFreeDigitalSignContext(CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT* pSignContext);
+		public static extern BOOL CryptUIWizFreeDigitalSignContext(ref CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT pSignContext);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptUIDlgViewCertificateW(CRYPTUI_VIEWCERTIFICATE_STRUCTW* pCertViewInfo, BOOL* pfPropertiesChanged);
+		public static extern BOOL CryptUIDlgViewCertificateW(ref CRYPTUI_VIEWCERTIFICATE_STRUCTW pCertViewInfo, out BOOL pfPropertiesChanged);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptUIDlgViewCertificateA(CRYPTUI_VIEWCERTIFICATE_STRUCTA* pCertViewInfo, BOOL* pfPropertiesChanged);
+		public static extern BOOL CryptUIDlgViewCertificateA(ref CRYPTUI_VIEWCERTIFICATE_STRUCTA pCertViewInfo, out BOOL pfPropertiesChanged);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CryptUIWizExport(CRYPTUI_WIZ_FLAGS dwFlags, HWND hwndParent, PWSTR pwszWizardTitle, CRYPTUI_WIZ_EXPORT_INFO* pExportInfo, void* pvoid);
+		public static extern BOOL CryptUIWizExport(CRYPTUI_WIZ_FLAGS dwFlags, HWND hwndParent, PWSTR pwszWizardTitle, ref CRYPTUI_WIZ_EXPORT_INFO pExportInfo, void* pvoid);
 		[Import("cryptui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CryptUIWizImport(CRYPTUI_WIZ_FLAGS dwFlags, HWND hwndParent, PWSTR pwszWizardTitle, CRYPTUI_WIZ_IMPORT_SRC_INFO* pImportSrc, void* hDestCertStore);
 		

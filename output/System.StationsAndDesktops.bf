@@ -70,13 +70,13 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HDESK CreateDesktopA(PSTR lpszDesktop, PSTR lpszDevice, DEVMODEA* pDevmode, uint32 dwFlags, uint32 dwDesiredAccess, SECURITY_ATTRIBUTES* lpsa);
+		public static extern HDESK CreateDesktopA(PSTR lpszDesktop, PSTR lpszDevice, out DEVMODEA pDevmode, uint32 dwFlags, uint32 dwDesiredAccess, SECURITY_ATTRIBUTES* lpsa);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HDESK CreateDesktopW(PWSTR lpszDesktop, PWSTR lpszDevice, DEVMODEW* pDevmode, uint32 dwFlags, uint32 dwDesiredAccess, SECURITY_ATTRIBUTES* lpsa);
+		public static extern HDESK CreateDesktopW(PWSTR lpszDesktop, PWSTR lpszDevice, out DEVMODEW pDevmode, uint32 dwFlags, uint32 dwDesiredAccess, SECURITY_ATTRIBUTES* lpsa);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HDESK CreateDesktopExA(PSTR lpszDesktop, PSTR lpszDevice, DEVMODEA* pDevmode, uint32 dwFlags, uint32 dwDesiredAccess, SECURITY_ATTRIBUTES* lpsa, uint32 ulHeapSize, void* pvoid);
+		public static extern HDESK CreateDesktopExA(PSTR lpszDesktop, PSTR lpszDevice, out DEVMODEA pDevmode, uint32 dwFlags, uint32 dwDesiredAccess, SECURITY_ATTRIBUTES* lpsa, uint32 ulHeapSize, void* pvoid);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HDESK CreateDesktopExW(PWSTR lpszDesktop, PWSTR lpszDevice, DEVMODEW* pDevmode, uint32 dwFlags, uint32 dwDesiredAccess, SECURITY_ATTRIBUTES* lpsa, uint32 ulHeapSize, void* pvoid);
+		public static extern HDESK CreateDesktopExW(PWSTR lpszDesktop, PWSTR lpszDevice, out DEVMODEW pDevmode, uint32 dwFlags, uint32 dwDesiredAccess, SECURITY_ATTRIBUTES* lpsa, uint32 ulHeapSize, void* pvoid);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HDESK OpenDesktopA(PSTR lpszDesktop, uint32 dwFlags, BOOL fInherit, uint32 dwDesiredAccess);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]

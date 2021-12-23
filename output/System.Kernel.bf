@@ -88,7 +88,7 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function EXCEPTION_DISPOSITION EXCEPTION_ROUTINE(EXCEPTION_RECORD* ExceptionRecord, void* EstablisherFrame, CONTEXT* ContextRecord, void* DispatcherContext);
+		public function EXCEPTION_DISPOSITION EXCEPTION_ROUTINE(out EXCEPTION_RECORD ExceptionRecord, void* EstablisherFrame, out CONTEXT ContextRecord, void* DispatcherContext);
 		
 		// --- Structs ---
 		
@@ -289,19 +289,19 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void RtlInitializeSListHead(SLIST_HEADER* ListHead);
+		public static extern void RtlInitializeSListHead(out SLIST_HEADER ListHead);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern SLIST_ENTRY* RtlFirstEntrySList(SLIST_HEADER* ListHead);
+		public static extern SLIST_ENTRY* RtlFirstEntrySList(in SLIST_HEADER ListHead);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern SLIST_ENTRY* RtlInterlockedPopEntrySList(SLIST_HEADER* ListHead);
+		public static extern SLIST_ENTRY* RtlInterlockedPopEntrySList(out SLIST_HEADER ListHead);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern SLIST_ENTRY* RtlInterlockedPushEntrySList(SLIST_HEADER* ListHead, SLIST_ENTRY* ListEntry);
+		public static extern SLIST_ENTRY* RtlInterlockedPushEntrySList(out SLIST_HEADER ListHead, out SLIST_ENTRY ListEntry);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern SLIST_ENTRY* RtlInterlockedPushListSListEx(SLIST_HEADER* ListHead, SLIST_ENTRY* List, SLIST_ENTRY* ListEnd, uint32 Count);
+		public static extern SLIST_ENTRY* RtlInterlockedPushListSListEx(out SLIST_HEADER ListHead, out SLIST_ENTRY List, out SLIST_ENTRY ListEnd, uint32 Count);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern SLIST_ENTRY* RtlInterlockedFlushSList(SLIST_HEADER* ListHead);
+		public static extern SLIST_ENTRY* RtlInterlockedFlushSList(out SLIST_HEADER ListHead);
 		[Import("ntdll.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint16 RtlQueryDepthSList(SLIST_HEADER* ListHead);
+		public static extern uint16 RtlQueryDepthSList(ref SLIST_HEADER ListHead);
 		
 	}
 }

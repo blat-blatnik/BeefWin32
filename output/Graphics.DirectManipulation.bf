@@ -162,42 +162,42 @@ namespace Win32
 			
 			public HRESULT Activate(HWND window) mut
 			{
-				return VT.Activate(&this, window);
+				return VT.Activate(ref this, window);
 			}
 			public HRESULT Deactivate(HWND window) mut
 			{
-				return VT.Deactivate(&this, window);
+				return VT.Deactivate(ref this, window);
 			}
 			public HRESULT RegisterHitTestTarget(HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type) mut
 			{
-				return VT.RegisterHitTestTarget(&this, window, hitTestWindow, type);
+				return VT.RegisterHitTestTarget(ref this, window, hitTestWindow, type);
 			}
-			public HRESULT ProcessInput(MSG* message, BOOL* handled) mut
+			public HRESULT ProcessInput(in MSG message, out BOOL handled) mut
 			{
-				return VT.ProcessInput(&this, message, handled);
+				return VT.ProcessInput(ref this, message, out handled);
 			}
-			public HRESULT GetUpdateManager(Guid* riid, void** object) mut
+			public HRESULT GetUpdateManager(in Guid riid, void** object) mut
 			{
-				return VT.GetUpdateManager(&this, riid, object);
+				return VT.GetUpdateManager(ref this, riid, object);
 			}
-			public HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, HWND window, Guid* riid, void** object) mut
+			public HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, HWND window, in Guid riid, void** object) mut
 			{
-				return VT.CreateViewport(&this, frameInfo, window, riid, object);
+				return VT.CreateViewport(ref this, frameInfo, window, riid, object);
 			}
-			public HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, Guid* clsid, Guid* riid, void** object) mut
+			public HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, in Guid clsid, in Guid riid, void** object) mut
 			{
-				return VT.CreateContent(&this, frameInfo, clsid, riid, object);
+				return VT.CreateContent(ref this, frameInfo, clsid, riid, object);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationManager *self, HWND window) Activate;
-				public new function HRESULT(IDirectManipulationManager *self, HWND window) Deactivate;
-				public new function HRESULT(IDirectManipulationManager *self, HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type) RegisterHitTestTarget;
-				public new function HRESULT(IDirectManipulationManager *self, MSG* message, BOOL* handled) ProcessInput;
-				public new function HRESULT(IDirectManipulationManager *self, Guid* riid, void** object) GetUpdateManager;
-				public new function HRESULT(IDirectManipulationManager *self, IDirectManipulationFrameInfoProvider* frameInfo, HWND window, Guid* riid, void** object) CreateViewport;
-				public new function HRESULT(IDirectManipulationManager *self, IDirectManipulationFrameInfoProvider* frameInfo, Guid* clsid, Guid* riid, void** object) CreateContent;
+				public new function HRESULT(ref IDirectManipulationManager self, HWND window) Activate;
+				public new function HRESULT(ref IDirectManipulationManager self, HWND window) Deactivate;
+				public new function HRESULT(ref IDirectManipulationManager self, HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type) RegisterHitTestTarget;
+				public new function HRESULT(ref IDirectManipulationManager self, in MSG message, out BOOL handled) ProcessInput;
+				public new function HRESULT(ref IDirectManipulationManager self, in Guid riid, void** object) GetUpdateManager;
+				public new function HRESULT(ref IDirectManipulationManager self, IDirectManipulationFrameInfoProvider* frameInfo, HWND window, in Guid riid, void** object) CreateViewport;
+				public new function HRESULT(ref IDirectManipulationManager self, IDirectManipulationFrameInfoProvider* frameInfo, in Guid clsid, in Guid riid, void** object) CreateContent;
 			}
 		}
 		[CRepr]
@@ -207,14 +207,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateBehavior(Guid* clsid, Guid* riid, void** object) mut
+			public HRESULT CreateBehavior(in Guid clsid, in Guid riid, void** object) mut
 			{
-				return VT.CreateBehavior(&this, clsid, riid, object);
+				return VT.CreateBehavior(ref this, clsid, riid, object);
 			}
 			[CRepr]
 			public struct VTable : IDirectManipulationManager.VTable
 			{
-				public new function HRESULT(IDirectManipulationManager2 *self, Guid* clsid, Guid* riid, void** object) CreateBehavior;
+				public new function HRESULT(ref IDirectManipulationManager2 self, in Guid clsid, in Guid riid, void** object) CreateBehavior;
 			}
 		}
 		[CRepr]
@@ -224,14 +224,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetService(Guid* clsid, Guid* riid, void** object) mut
+			public HRESULT GetService(in Guid clsid, in Guid riid, void** object) mut
 			{
-				return VT.GetService(&this, clsid, riid, object);
+				return VT.GetService(ref this, clsid, riid, object);
 			}
 			[CRepr]
 			public struct VTable : IDirectManipulationManager2.VTable
 			{
-				public new function HRESULT(IDirectManipulationManager3 *self, Guid* clsid, Guid* riid, void** object) GetService;
+				public new function HRESULT(ref IDirectManipulationManager3 self, in Guid clsid, in Guid riid, void** object) GetService;
 			}
 		}
 		[CRepr]
@@ -243,147 +243,147 @@ namespace Win32
 			
 			public HRESULT Enable() mut
 			{
-				return VT.Enable(&this);
+				return VT.Enable(ref this);
 			}
 			public HRESULT Disable() mut
 			{
-				return VT.Disable(&this);
+				return VT.Disable(ref this);
 			}
 			public HRESULT SetContact(uint32 pointerId) mut
 			{
-				return VT.SetContact(&this, pointerId);
+				return VT.SetContact(ref this, pointerId);
 			}
 			public HRESULT ReleaseContact(uint32 pointerId) mut
 			{
-				return VT.ReleaseContact(&this, pointerId);
+				return VT.ReleaseContact(ref this, pointerId);
 			}
 			public HRESULT ReleaseAllContacts() mut
 			{
-				return VT.ReleaseAllContacts(&this);
+				return VT.ReleaseAllContacts(ref this);
 			}
-			public HRESULT GetStatus(DIRECTMANIPULATION_STATUS* status) mut
+			public HRESULT GetStatus(out DIRECTMANIPULATION_STATUS status) mut
 			{
-				return VT.GetStatus(&this, status);
+				return VT.GetStatus(ref this, out status);
 			}
-			public HRESULT GetTag(Guid* riid, void** object, uint32* id) mut
+			public HRESULT GetTag(in Guid riid, void** object, uint32* id) mut
 			{
-				return VT.GetTag(&this, riid, object, id);
+				return VT.GetTag(ref this, riid, object, id);
 			}
 			public HRESULT SetTag(IUnknown* object, uint32 id) mut
 			{
-				return VT.SetTag(&this, object, id);
+				return VT.SetTag(ref this, object, id);
 			}
-			public HRESULT GetViewportRect(RECT* viewport) mut
+			public HRESULT GetViewportRect(out RECT viewport) mut
 			{
-				return VT.GetViewportRect(&this, viewport);
+				return VT.GetViewportRect(ref this, out viewport);
 			}
-			public HRESULT SetViewportRect(RECT* viewport) mut
+			public HRESULT SetViewportRect(in RECT viewport) mut
 			{
-				return VT.SetViewportRect(&this, viewport);
+				return VT.SetViewportRect(ref this, viewport);
 			}
 			public HRESULT ZoomToRect(float left, float top, float right, float bottom, BOOL animate) mut
 			{
-				return VT.ZoomToRect(&this, left, top, right, bottom, animate);
+				return VT.ZoomToRect(ref this, left, top, right, bottom, animate);
 			}
 			public HRESULT SetViewportTransform(float* matrix, uint32 pointCount) mut
 			{
-				return VT.SetViewportTransform(&this, matrix, pointCount);
+				return VT.SetViewportTransform(ref this, matrix, pointCount);
 			}
 			public HRESULT SyncDisplayTransform(float* matrix, uint32 pointCount) mut
 			{
-				return VT.SyncDisplayTransform(&this, matrix, pointCount);
+				return VT.SyncDisplayTransform(ref this, matrix, pointCount);
 			}
-			public HRESULT GetPrimaryContent(Guid* riid, void** object) mut
+			public HRESULT GetPrimaryContent(in Guid riid, void** object) mut
 			{
-				return VT.GetPrimaryContent(&this, riid, object);
+				return VT.GetPrimaryContent(ref this, riid, object);
 			}
-			public HRESULT AddContent(IDirectManipulationContent* content) mut
+			public HRESULT AddContent(ref IDirectManipulationContent content) mut
 			{
-				return VT.AddContent(&this, content);
+				return VT.AddContent(ref this, ref content);
 			}
-			public HRESULT RemoveContent(IDirectManipulationContent* content) mut
+			public HRESULT RemoveContent(ref IDirectManipulationContent content) mut
 			{
-				return VT.RemoveContent(&this, content);
+				return VT.RemoveContent(ref this, ref content);
 			}
 			public HRESULT SetViewportOptions(DIRECTMANIPULATION_VIEWPORT_OPTIONS options) mut
 			{
-				return VT.SetViewportOptions(&this, options);
+				return VT.SetViewportOptions(ref this, options);
 			}
 			public HRESULT AddConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration) mut
 			{
-				return VT.AddConfiguration(&this, configuration);
+				return VT.AddConfiguration(ref this, configuration);
 			}
 			public HRESULT RemoveConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration) mut
 			{
-				return VT.RemoveConfiguration(&this, configuration);
+				return VT.RemoveConfiguration(ref this, configuration);
 			}
 			public HRESULT ActivateConfiguration(DIRECTMANIPULATION_CONFIGURATION configuration) mut
 			{
-				return VT.ActivateConfiguration(&this, configuration);
+				return VT.ActivateConfiguration(ref this, configuration);
 			}
 			public HRESULT SetManualGesture(DIRECTMANIPULATION_GESTURE_CONFIGURATION configuration) mut
 			{
-				return VT.SetManualGesture(&this, configuration);
+				return VT.SetManualGesture(ref this, configuration);
 			}
 			public HRESULT SetChaining(DIRECTMANIPULATION_MOTION_TYPES enabledTypes) mut
 			{
-				return VT.SetChaining(&this, enabledTypes);
+				return VT.SetChaining(ref this, enabledTypes);
 			}
-			public HRESULT AddEventHandler(HWND window, IDirectManipulationViewportEventHandler* eventHandler, uint32* cookie) mut
+			public HRESULT AddEventHandler(HWND window, ref IDirectManipulationViewportEventHandler eventHandler, out uint32 cookie) mut
 			{
-				return VT.AddEventHandler(&this, window, eventHandler, cookie);
+				return VT.AddEventHandler(ref this, window, ref eventHandler, out cookie);
 			}
 			public HRESULT RemoveEventHandler(uint32 cookie) mut
 			{
-				return VT.RemoveEventHandler(&this, cookie);
+				return VT.RemoveEventHandler(ref this, cookie);
 			}
 			public HRESULT SetInputMode(DIRECTMANIPULATION_INPUT_MODE mode) mut
 			{
-				return VT.SetInputMode(&this, mode);
+				return VT.SetInputMode(ref this, mode);
 			}
 			public HRESULT SetUpdateMode(DIRECTMANIPULATION_INPUT_MODE mode) mut
 			{
-				return VT.SetUpdateMode(&this, mode);
+				return VT.SetUpdateMode(ref this, mode);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT Abandon() mut
 			{
-				return VT.Abandon(&this);
+				return VT.Abandon(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationViewport *self) Enable;
-				public new function HRESULT(IDirectManipulationViewport *self) Disable;
-				public new function HRESULT(IDirectManipulationViewport *self, uint32 pointerId) SetContact;
-				public new function HRESULT(IDirectManipulationViewport *self, uint32 pointerId) ReleaseContact;
-				public new function HRESULT(IDirectManipulationViewport *self) ReleaseAllContacts;
-				public new function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_STATUS* status) GetStatus;
-				public new function HRESULT(IDirectManipulationViewport *self, Guid* riid, void** object, uint32* id) GetTag;
-				public new function HRESULT(IDirectManipulationViewport *self, IUnknown* object, uint32 id) SetTag;
-				public new function HRESULT(IDirectManipulationViewport *self, RECT* viewport) GetViewportRect;
-				public new function HRESULT(IDirectManipulationViewport *self, RECT* viewport) SetViewportRect;
-				public new function HRESULT(IDirectManipulationViewport *self, float left, float top, float right, float bottom, BOOL animate) ZoomToRect;
-				public new function HRESULT(IDirectManipulationViewport *self, float* matrix, uint32 pointCount) SetViewportTransform;
-				public new function HRESULT(IDirectManipulationViewport *self, float* matrix, uint32 pointCount) SyncDisplayTransform;
-				public new function HRESULT(IDirectManipulationViewport *self, Guid* riid, void** object) GetPrimaryContent;
-				public new function HRESULT(IDirectManipulationViewport *self, IDirectManipulationContent* content) AddContent;
-				public new function HRESULT(IDirectManipulationViewport *self, IDirectManipulationContent* content) RemoveContent;
-				public new function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_VIEWPORT_OPTIONS options) SetViewportOptions;
-				public new function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_CONFIGURATION configuration) AddConfiguration;
-				public new function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_CONFIGURATION configuration) RemoveConfiguration;
-				public new function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_CONFIGURATION configuration) ActivateConfiguration;
-				public new function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_GESTURE_CONFIGURATION configuration) SetManualGesture;
-				public new function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_MOTION_TYPES enabledTypes) SetChaining;
-				public new function HRESULT(IDirectManipulationViewport *self, HWND window, IDirectManipulationViewportEventHandler* eventHandler, uint32* cookie) AddEventHandler;
-				public new function HRESULT(IDirectManipulationViewport *self, uint32 cookie) RemoveEventHandler;
-				public new function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_INPUT_MODE mode) SetInputMode;
-				public new function HRESULT(IDirectManipulationViewport *self, DIRECTMANIPULATION_INPUT_MODE mode) SetUpdateMode;
-				public new function HRESULT(IDirectManipulationViewport *self) Stop;
-				public new function HRESULT(IDirectManipulationViewport *self) Abandon;
+				public new function HRESULT(ref IDirectManipulationViewport self) Enable;
+				public new function HRESULT(ref IDirectManipulationViewport self) Disable;
+				public new function HRESULT(ref IDirectManipulationViewport self, uint32 pointerId) SetContact;
+				public new function HRESULT(ref IDirectManipulationViewport self, uint32 pointerId) ReleaseContact;
+				public new function HRESULT(ref IDirectManipulationViewport self) ReleaseAllContacts;
+				public new function HRESULT(ref IDirectManipulationViewport self, out DIRECTMANIPULATION_STATUS status) GetStatus;
+				public new function HRESULT(ref IDirectManipulationViewport self, in Guid riid, void** object, uint32* id) GetTag;
+				public new function HRESULT(ref IDirectManipulationViewport self, IUnknown* object, uint32 id) SetTag;
+				public new function HRESULT(ref IDirectManipulationViewport self, out RECT viewport) GetViewportRect;
+				public new function HRESULT(ref IDirectManipulationViewport self, in RECT viewport) SetViewportRect;
+				public new function HRESULT(ref IDirectManipulationViewport self, float left, float top, float right, float bottom, BOOL animate) ZoomToRect;
+				public new function HRESULT(ref IDirectManipulationViewport self, float* matrix, uint32 pointCount) SetViewportTransform;
+				public new function HRESULT(ref IDirectManipulationViewport self, float* matrix, uint32 pointCount) SyncDisplayTransform;
+				public new function HRESULT(ref IDirectManipulationViewport self, in Guid riid, void** object) GetPrimaryContent;
+				public new function HRESULT(ref IDirectManipulationViewport self, ref IDirectManipulationContent content) AddContent;
+				public new function HRESULT(ref IDirectManipulationViewport self, ref IDirectManipulationContent content) RemoveContent;
+				public new function HRESULT(ref IDirectManipulationViewport self, DIRECTMANIPULATION_VIEWPORT_OPTIONS options) SetViewportOptions;
+				public new function HRESULT(ref IDirectManipulationViewport self, DIRECTMANIPULATION_CONFIGURATION configuration) AddConfiguration;
+				public new function HRESULT(ref IDirectManipulationViewport self, DIRECTMANIPULATION_CONFIGURATION configuration) RemoveConfiguration;
+				public new function HRESULT(ref IDirectManipulationViewport self, DIRECTMANIPULATION_CONFIGURATION configuration) ActivateConfiguration;
+				public new function HRESULT(ref IDirectManipulationViewport self, DIRECTMANIPULATION_GESTURE_CONFIGURATION configuration) SetManualGesture;
+				public new function HRESULT(ref IDirectManipulationViewport self, DIRECTMANIPULATION_MOTION_TYPES enabledTypes) SetChaining;
+				public new function HRESULT(ref IDirectManipulationViewport self, HWND window, ref IDirectManipulationViewportEventHandler eventHandler, out uint32 cookie) AddEventHandler;
+				public new function HRESULT(ref IDirectManipulationViewport self, uint32 cookie) RemoveEventHandler;
+				public new function HRESULT(ref IDirectManipulationViewport self, DIRECTMANIPULATION_INPUT_MODE mode) SetInputMode;
+				public new function HRESULT(ref IDirectManipulationViewport self, DIRECTMANIPULATION_INPUT_MODE mode) SetUpdateMode;
+				public new function HRESULT(ref IDirectManipulationViewport self) Stop;
+				public new function HRESULT(ref IDirectManipulationViewport self) Abandon;
 			}
 		}
 		[CRepr]
@@ -393,24 +393,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddBehavior(IUnknown* behavior, uint32* cookie) mut
+			public HRESULT AddBehavior(ref IUnknown behavior, out uint32 cookie) mut
 			{
-				return VT.AddBehavior(&this, behavior, cookie);
+				return VT.AddBehavior(ref this, ref behavior, out cookie);
 			}
 			public HRESULT RemoveBehavior(uint32 cookie) mut
 			{
-				return VT.RemoveBehavior(&this, cookie);
+				return VT.RemoveBehavior(ref this, cookie);
 			}
 			public HRESULT RemoveAllBehaviors() mut
 			{
-				return VT.RemoveAllBehaviors(&this);
+				return VT.RemoveAllBehaviors(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDirectManipulationViewport.VTable
 			{
-				public new function HRESULT(IDirectManipulationViewport2 *self, IUnknown* behavior, uint32* cookie) AddBehavior;
-				public new function HRESULT(IDirectManipulationViewport2 *self, uint32 cookie) RemoveBehavior;
-				public new function HRESULT(IDirectManipulationViewport2 *self) RemoveAllBehaviors;
+				public new function HRESULT(ref IDirectManipulationViewport2 self, ref IUnknown behavior, out uint32 cookie) AddBehavior;
+				public new function HRESULT(ref IDirectManipulationViewport2 self, uint32 cookie) RemoveBehavior;
+				public new function HRESULT(ref IDirectManipulationViewport2 self) RemoveAllBehaviors;
 			}
 		}
 		[CRepr]
@@ -420,24 +420,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnViewportStatusChanged(IDirectManipulationViewport* viewport, DIRECTMANIPULATION_STATUS current, DIRECTMANIPULATION_STATUS previous) mut
+			public HRESULT OnViewportStatusChanged(ref IDirectManipulationViewport viewport, DIRECTMANIPULATION_STATUS current, DIRECTMANIPULATION_STATUS previous) mut
 			{
-				return VT.OnViewportStatusChanged(&this, viewport, current, previous);
+				return VT.OnViewportStatusChanged(ref this, ref viewport, current, previous);
 			}
-			public HRESULT OnViewportUpdated(IDirectManipulationViewport* viewport) mut
+			public HRESULT OnViewportUpdated(ref IDirectManipulationViewport viewport) mut
 			{
-				return VT.OnViewportUpdated(&this, viewport);
+				return VT.OnViewportUpdated(ref this, ref viewport);
 			}
-			public HRESULT OnContentUpdated(IDirectManipulationViewport* viewport, IDirectManipulationContent* content) mut
+			public HRESULT OnContentUpdated(ref IDirectManipulationViewport viewport, ref IDirectManipulationContent content) mut
 			{
-				return VT.OnContentUpdated(&this, viewport, content);
+				return VT.OnContentUpdated(ref this, ref viewport, ref content);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationViewportEventHandler *self, IDirectManipulationViewport* viewport, DIRECTMANIPULATION_STATUS current, DIRECTMANIPULATION_STATUS previous) OnViewportStatusChanged;
-				public new function HRESULT(IDirectManipulationViewportEventHandler *self, IDirectManipulationViewport* viewport) OnViewportUpdated;
-				public new function HRESULT(IDirectManipulationViewportEventHandler *self, IDirectManipulationViewport* viewport, IDirectManipulationContent* content) OnContentUpdated;
+				public new function HRESULT(ref IDirectManipulationViewportEventHandler self, ref IDirectManipulationViewport viewport, DIRECTMANIPULATION_STATUS current, DIRECTMANIPULATION_STATUS previous) OnViewportStatusChanged;
+				public new function HRESULT(ref IDirectManipulationViewportEventHandler self, ref IDirectManipulationViewport viewport) OnViewportUpdated;
+				public new function HRESULT(ref IDirectManipulationViewportEventHandler self, ref IDirectManipulationViewport viewport, ref IDirectManipulationContent content) OnContentUpdated;
 			}
 		}
 		[CRepr]
@@ -447,49 +447,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetContentRect(RECT* contentSize) mut
+			public HRESULT GetContentRect(out RECT contentSize) mut
 			{
-				return VT.GetContentRect(&this, contentSize);
+				return VT.GetContentRect(ref this, out contentSize);
 			}
-			public HRESULT SetContentRect(RECT* contentSize) mut
+			public HRESULT SetContentRect(in RECT contentSize) mut
 			{
-				return VT.SetContentRect(&this, contentSize);
+				return VT.SetContentRect(ref this, contentSize);
 			}
-			public HRESULT GetViewport(Guid* riid, void** object) mut
+			public HRESULT GetViewport(in Guid riid, void** object) mut
 			{
-				return VT.GetViewport(&this, riid, object);
+				return VT.GetViewport(ref this, riid, object);
 			}
-			public HRESULT GetTag(Guid* riid, void** object, uint32* id) mut
+			public HRESULT GetTag(in Guid riid, void** object, uint32* id) mut
 			{
-				return VT.GetTag(&this, riid, object, id);
+				return VT.GetTag(ref this, riid, object, id);
 			}
 			public HRESULT SetTag(IUnknown* object, uint32 id) mut
 			{
-				return VT.SetTag(&this, object, id);
+				return VT.SetTag(ref this, object, id);
 			}
 			public HRESULT GetOutputTransform(float* matrix, uint32 pointCount) mut
 			{
-				return VT.GetOutputTransform(&this, matrix, pointCount);
+				return VT.GetOutputTransform(ref this, matrix, pointCount);
 			}
 			public HRESULT GetContentTransform(float* matrix, uint32 pointCount) mut
 			{
-				return VT.GetContentTransform(&this, matrix, pointCount);
+				return VT.GetContentTransform(ref this, matrix, pointCount);
 			}
 			public HRESULT SyncContentTransform(float* matrix, uint32 pointCount) mut
 			{
-				return VT.SyncContentTransform(&this, matrix, pointCount);
+				return VT.SyncContentTransform(ref this, matrix, pointCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationContent *self, RECT* contentSize) GetContentRect;
-				public new function HRESULT(IDirectManipulationContent *self, RECT* contentSize) SetContentRect;
-				public new function HRESULT(IDirectManipulationContent *self, Guid* riid, void** object) GetViewport;
-				public new function HRESULT(IDirectManipulationContent *self, Guid* riid, void** object, uint32* id) GetTag;
-				public new function HRESULT(IDirectManipulationContent *self, IUnknown* object, uint32 id) SetTag;
-				public new function HRESULT(IDirectManipulationContent *self, float* matrix, uint32 pointCount) GetOutputTransform;
-				public new function HRESULT(IDirectManipulationContent *self, float* matrix, uint32 pointCount) GetContentTransform;
-				public new function HRESULT(IDirectManipulationContent *self, float* matrix, uint32 pointCount) SyncContentTransform;
+				public new function HRESULT(ref IDirectManipulationContent self, out RECT contentSize) GetContentRect;
+				public new function HRESULT(ref IDirectManipulationContent self, in RECT contentSize) SetContentRect;
+				public new function HRESULT(ref IDirectManipulationContent self, in Guid riid, void** object) GetViewport;
+				public new function HRESULT(ref IDirectManipulationContent self, in Guid riid, void** object, uint32* id) GetTag;
+				public new function HRESULT(ref IDirectManipulationContent self, IUnknown* object, uint32 id) SetTag;
+				public new function HRESULT(ref IDirectManipulationContent self, float* matrix, uint32 pointCount) GetOutputTransform;
+				public new function HRESULT(ref IDirectManipulationContent self, float* matrix, uint32 pointCount) GetContentTransform;
+				public new function HRESULT(ref IDirectManipulationContent self, float* matrix, uint32 pointCount) SyncContentTransform;
 			}
 		}
 		[CRepr]
@@ -501,52 +501,52 @@ namespace Win32
 			
 			public HRESULT SetSnapInterval(DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset) mut
 			{
-				return VT.SetSnapInterval(&this, motion, interval, offset);
+				return VT.SetSnapInterval(ref this, motion, interval, offset);
 			}
 			public HRESULT SetSnapPoints(DIRECTMANIPULATION_MOTION_TYPES motion, float* points, uint32 pointCount) mut
 			{
-				return VT.SetSnapPoints(&this, motion, points, pointCount);
+				return VT.SetSnapPoints(ref this, motion, points, pointCount);
 			}
 			public HRESULT SetSnapType(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type) mut
 			{
-				return VT.SetSnapType(&this, motion, type);
+				return VT.SetSnapType(ref this, motion, type);
 			}
 			public HRESULT SetSnapCoordinate(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin) mut
 			{
-				return VT.SetSnapCoordinate(&this, motion, coordinate, origin);
+				return VT.SetSnapCoordinate(ref this, motion, coordinate, origin);
 			}
 			public HRESULT SetZoomBoundaries(float zoomMinimum, float zoomMaximum) mut
 			{
-				return VT.SetZoomBoundaries(&this, zoomMinimum, zoomMaximum);
+				return VT.SetZoomBoundaries(ref this, zoomMinimum, zoomMaximum);
 			}
 			public HRESULT SetHorizontalAlignment(DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment) mut
 			{
-				return VT.SetHorizontalAlignment(&this, alignment);
+				return VT.SetHorizontalAlignment(ref this, alignment);
 			}
 			public HRESULT SetVerticalAlignment(DIRECTMANIPULATION_VERTICALALIGNMENT alignment) mut
 			{
-				return VT.SetVerticalAlignment(&this, alignment);
+				return VT.SetVerticalAlignment(ref this, alignment);
 			}
 			public HRESULT GetInertiaEndTransform(float* matrix, uint32 pointCount) mut
 			{
-				return VT.GetInertiaEndTransform(&this, matrix, pointCount);
+				return VT.GetInertiaEndTransform(ref this, matrix, pointCount);
 			}
-			public HRESULT GetCenterPoint(float* centerX, float* centerY) mut
+			public HRESULT GetCenterPoint(out float centerX, out float centerY) mut
 			{
-				return VT.GetCenterPoint(&this, centerX, centerY);
+				return VT.GetCenterPoint(ref this, out centerX, out centerY);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset) SetSnapInterval;
-				public new function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, float* points, uint32 pointCount) SetSnapPoints;
-				public new function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type) SetSnapType;
-				public new function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin) SetSnapCoordinate;
-				public new function HRESULT(IDirectManipulationPrimaryContent *self, float zoomMinimum, float zoomMaximum) SetZoomBoundaries;
-				public new function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment) SetHorizontalAlignment;
-				public new function HRESULT(IDirectManipulationPrimaryContent *self, DIRECTMANIPULATION_VERTICALALIGNMENT alignment) SetVerticalAlignment;
-				public new function HRESULT(IDirectManipulationPrimaryContent *self, float* matrix, uint32 pointCount) GetInertiaEndTransform;
-				public new function HRESULT(IDirectManipulationPrimaryContent *self, float* centerX, float* centerY) GetCenterPoint;
+				public new function HRESULT(ref IDirectManipulationPrimaryContent self, DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset) SetSnapInterval;
+				public new function HRESULT(ref IDirectManipulationPrimaryContent self, DIRECTMANIPULATION_MOTION_TYPES motion, float* points, uint32 pointCount) SetSnapPoints;
+				public new function HRESULT(ref IDirectManipulationPrimaryContent self, DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type) SetSnapType;
+				public new function HRESULT(ref IDirectManipulationPrimaryContent self, DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin) SetSnapCoordinate;
+				public new function HRESULT(ref IDirectManipulationPrimaryContent self, float zoomMinimum, float zoomMaximum) SetZoomBoundaries;
+				public new function HRESULT(ref IDirectManipulationPrimaryContent self, DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment) SetHorizontalAlignment;
+				public new function HRESULT(ref IDirectManipulationPrimaryContent self, DIRECTMANIPULATION_VERTICALALIGNMENT alignment) SetVerticalAlignment;
+				public new function HRESULT(ref IDirectManipulationPrimaryContent self, float* matrix, uint32 pointCount) GetInertiaEndTransform;
+				public new function HRESULT(ref IDirectManipulationPrimaryContent self, out float centerX, out float centerY) GetCenterPoint;
 			}
 		}
 		[CRepr]
@@ -556,14 +556,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnDragDropStatusChange(IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_DRAG_DROP_STATUS current, DIRECTMANIPULATION_DRAG_DROP_STATUS previous) mut
+			public HRESULT OnDragDropStatusChange(ref IDirectManipulationViewport2 viewport, DIRECTMANIPULATION_DRAG_DROP_STATUS current, DIRECTMANIPULATION_DRAG_DROP_STATUS previous) mut
 			{
-				return VT.OnDragDropStatusChange(&this, viewport, current, previous);
+				return VT.OnDragDropStatusChange(ref this, ref viewport, current, previous);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationDragDropEventHandler *self, IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_DRAG_DROP_STATUS current, DIRECTMANIPULATION_DRAG_DROP_STATUS previous) OnDragDropStatusChange;
+				public new function HRESULT(ref IDirectManipulationDragDropEventHandler self, ref IDirectManipulationViewport2 viewport, DIRECTMANIPULATION_DRAG_DROP_STATUS current, DIRECTMANIPULATION_DRAG_DROP_STATUS previous) OnDragDropStatusChange;
 			}
 		}
 		[CRepr]
@@ -575,17 +575,17 @@ namespace Win32
 			
 			public HRESULT SetConfiguration(DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION configuration) mut
 			{
-				return VT.SetConfiguration(&this, configuration);
+				return VT.SetConfiguration(ref this, configuration);
 			}
-			public HRESULT GetStatus(DIRECTMANIPULATION_DRAG_DROP_STATUS* status) mut
+			public HRESULT GetStatus(out DIRECTMANIPULATION_DRAG_DROP_STATUS status) mut
 			{
-				return VT.GetStatus(&this, status);
+				return VT.GetStatus(ref this, out status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationDragDropBehavior *self, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION configuration) SetConfiguration;
-				public new function HRESULT(IDirectManipulationDragDropBehavior *self, DIRECTMANIPULATION_DRAG_DROP_STATUS* status) GetStatus;
+				public new function HRESULT(ref IDirectManipulationDragDropBehavior self, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION configuration) SetConfiguration;
+				public new function HRESULT(ref IDirectManipulationDragDropBehavior self, out DIRECTMANIPULATION_DRAG_DROP_STATUS status) GetStatus;
 			}
 		}
 		[CRepr]
@@ -595,14 +595,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnInteraction(IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction) mut
+			public HRESULT OnInteraction(ref IDirectManipulationViewport2 viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction) mut
 			{
-				return VT.OnInteraction(&this, viewport, interaction);
+				return VT.OnInteraction(ref this, ref viewport, interaction);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationInteractionEventHandler *self, IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction) OnInteraction;
+				public new function HRESULT(ref IDirectManipulationInteractionEventHandler self, ref IDirectManipulationViewport2 viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction) OnInteraction;
 			}
 		}
 		[CRepr]
@@ -612,14 +612,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNextFrameInfo(uint64* time, uint64* processTime, uint64* compositionTime) mut
+			public HRESULT GetNextFrameInfo(out uint64 time, out uint64 processTime, out uint64 compositionTime) mut
 			{
-				return VT.GetNextFrameInfo(&this, time, processTime, compositionTime);
+				return VT.GetNextFrameInfo(ref this, out time, out processTime, out compositionTime);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationFrameInfoProvider *self, uint64* time, uint64* processTime, uint64* compositionTime) GetNextFrameInfo;
+				public new function HRESULT(ref IDirectManipulationFrameInfoProvider self, out uint64 time, out uint64 processTime, out uint64 compositionTime) GetNextFrameInfo;
 			}
 		}
 		[CRepr]
@@ -629,29 +629,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddContent(IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) mut
+			public HRESULT AddContent(ref IDirectManipulationContent content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) mut
 			{
-				return VT.AddContent(&this, content, device, parentVisual, childVisual);
+				return VT.AddContent(ref this, ref content, device, parentVisual, childVisual);
 			}
-			public HRESULT RemoveContent(IDirectManipulationContent* content) mut
+			public HRESULT RemoveContent(ref IDirectManipulationContent content) mut
 			{
-				return VT.RemoveContent(&this, content);
+				return VT.RemoveContent(ref this, ref content);
 			}
-			public HRESULT SetUpdateManager(IDirectManipulationUpdateManager* updateManager) mut
+			public HRESULT SetUpdateManager(ref IDirectManipulationUpdateManager updateManager) mut
 			{
-				return VT.SetUpdateManager(&this, updateManager);
+				return VT.SetUpdateManager(ref this, ref updateManager);
 			}
 			public HRESULT Flush() mut
 			{
-				return VT.Flush(&this);
+				return VT.Flush(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationCompositor *self, IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) AddContent;
-				public new function HRESULT(IDirectManipulationCompositor *self, IDirectManipulationContent* content) RemoveContent;
-				public new function HRESULT(IDirectManipulationCompositor *self, IDirectManipulationUpdateManager* updateManager) SetUpdateManager;
-				public new function HRESULT(IDirectManipulationCompositor *self) Flush;
+				public new function HRESULT(ref IDirectManipulationCompositor self, ref IDirectManipulationContent content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) AddContent;
+				public new function HRESULT(ref IDirectManipulationCompositor self, ref IDirectManipulationContent content) RemoveContent;
+				public new function HRESULT(ref IDirectManipulationCompositor self, ref IDirectManipulationUpdateManager updateManager) SetUpdateManager;
+				public new function HRESULT(ref IDirectManipulationCompositor self) Flush;
 			}
 		}
 		[CRepr]
@@ -661,14 +661,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddContentWithCrossProcessChaining(IDirectManipulationPrimaryContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) mut
+			public HRESULT AddContentWithCrossProcessChaining(ref IDirectManipulationPrimaryContent content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) mut
 			{
-				return VT.AddContentWithCrossProcessChaining(&this, content, device, parentVisual, childVisual);
+				return VT.AddContentWithCrossProcessChaining(ref this, ref content, device, parentVisual, childVisual);
 			}
 			[CRepr]
 			public struct VTable : IDirectManipulationCompositor.VTable
 			{
-				public new function HRESULT(IDirectManipulationCompositor2 *self, IDirectManipulationPrimaryContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) AddContentWithCrossProcessChaining;
+				public new function HRESULT(ref IDirectManipulationCompositor2 self, ref IDirectManipulationPrimaryContent content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual) AddContentWithCrossProcessChaining;
 			}
 		}
 		[CRepr]
@@ -680,12 +680,12 @@ namespace Win32
 			
 			public HRESULT Update() mut
 			{
-				return VT.Update(&this);
+				return VT.Update(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationUpdateHandler *self) Update;
+				public new function HRESULT(ref IDirectManipulationUpdateHandler self) Update;
 			}
 		}
 		[CRepr]
@@ -695,24 +695,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterWaitHandleCallback(HANDLE handle, IDirectManipulationUpdateHandler* eventHandler, uint32* cookie) mut
+			public HRESULT RegisterWaitHandleCallback(HANDLE handle, ref IDirectManipulationUpdateHandler eventHandler, out uint32 cookie) mut
 			{
-				return VT.RegisterWaitHandleCallback(&this, handle, eventHandler, cookie);
+				return VT.RegisterWaitHandleCallback(ref this, handle, ref eventHandler, out cookie);
 			}
 			public HRESULT UnregisterWaitHandleCallback(uint32 cookie) mut
 			{
-				return VT.UnregisterWaitHandleCallback(&this, cookie);
+				return VT.UnregisterWaitHandleCallback(ref this, cookie);
 			}
 			public HRESULT Update(IDirectManipulationFrameInfoProvider* frameInfo) mut
 			{
-				return VT.Update(&this, frameInfo);
+				return VT.Update(ref this, frameInfo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationUpdateManager *self, HANDLE handle, IDirectManipulationUpdateHandler* eventHandler, uint32* cookie) RegisterWaitHandleCallback;
-				public new function HRESULT(IDirectManipulationUpdateManager *self, uint32 cookie) UnregisterWaitHandleCallback;
-				public new function HRESULT(IDirectManipulationUpdateManager *self, IDirectManipulationFrameInfoProvider* frameInfo) Update;
+				public new function HRESULT(ref IDirectManipulationUpdateManager self, HANDLE handle, ref IDirectManipulationUpdateHandler eventHandler, out uint32 cookie) RegisterWaitHandleCallback;
+				public new function HRESULT(ref IDirectManipulationUpdateManager self, uint32 cookie) UnregisterWaitHandleCallback;
+				public new function HRESULT(ref IDirectManipulationUpdateManager self, IDirectManipulationFrameInfoProvider* frameInfo) Update;
 			}
 		}
 		[CRepr]
@@ -724,12 +724,12 @@ namespace Win32
 			
 			public HRESULT SetConfiguration(DIRECTMANIPULATION_MOTION_TYPES motionTypes, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION scrollMotion) mut
 			{
-				return VT.SetConfiguration(&this, motionTypes, scrollMotion);
+				return VT.SetConfiguration(ref this, motionTypes, scrollMotion);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationAutoScrollBehavior *self, DIRECTMANIPULATION_MOTION_TYPES motionTypes, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION scrollMotion) SetConfiguration;
+				public new function HRESULT(ref IDirectManipulationAutoScrollBehavior self, DIRECTMANIPULATION_MOTION_TYPES motionTypes, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION scrollMotion) SetConfiguration;
 			}
 		}
 		[CRepr]
@@ -741,22 +741,22 @@ namespace Win32
 			
 			public HRESULT DeferContact(uint32 pointerId, uint32 timeout) mut
 			{
-				return VT.DeferContact(&this, pointerId, timeout);
+				return VT.DeferContact(ref this, pointerId, timeout);
 			}
 			public HRESULT CancelContact(uint32 pointerId) mut
 			{
-				return VT.CancelContact(&this, pointerId);
+				return VT.CancelContact(ref this, pointerId);
 			}
 			public HRESULT CancelDeferral(uint32 pointerId) mut
 			{
-				return VT.CancelDeferral(&this, pointerId);
+				return VT.CancelDeferral(ref this, pointerId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectManipulationDeferContactService *self, uint32 pointerId, uint32 timeout) DeferContact;
-				public new function HRESULT(IDirectManipulationDeferContactService *self, uint32 pointerId) CancelContact;
-				public new function HRESULT(IDirectManipulationDeferContactService *self, uint32 pointerId) CancelDeferral;
+				public new function HRESULT(ref IDirectManipulationDeferContactService self, uint32 pointerId, uint32 timeout) DeferContact;
+				public new function HRESULT(ref IDirectManipulationDeferContactService self, uint32 pointerId) CancelContact;
+				public new function HRESULT(ref IDirectManipulationDeferContactService self, uint32 pointerId) CancelDeferral;
 			}
 		}
 		

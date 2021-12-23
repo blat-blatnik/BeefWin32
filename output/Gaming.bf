@@ -104,29 +104,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddGame(BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, Guid* pguidInstanceID) mut
+			public HRESULT AddGame(BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, out Guid pguidInstanceID) mut
 			{
-				return VT.AddGame(&this, bstrGDFBinaryPath, bstrGameInstallDirectory, installScope, pguidInstanceID);
+				return VT.AddGame(ref this, bstrGDFBinaryPath, bstrGameInstallDirectory, installScope, out pguidInstanceID);
 			}
 			public HRESULT RemoveGame(Guid guidInstanceID) mut
 			{
-				return VT.RemoveGame(&this, guidInstanceID);
+				return VT.RemoveGame(ref this, guidInstanceID);
 			}
 			public HRESULT UpdateGame(Guid guidInstanceID) mut
 			{
-				return VT.UpdateGame(&this, guidInstanceID);
+				return VT.UpdateGame(ref this, guidInstanceID);
 			}
-			public HRESULT VerifyAccess(BSTR bstrGDFBinaryPath, BOOL* pfHasAccess) mut
+			public HRESULT VerifyAccess(BSTR bstrGDFBinaryPath, out BOOL pfHasAccess) mut
 			{
-				return VT.VerifyAccess(&this, bstrGDFBinaryPath, pfHasAccess);
+				return VT.VerifyAccess(ref this, bstrGDFBinaryPath, out pfHasAccess);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IGameExplorer *self, BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, Guid* pguidInstanceID) AddGame;
-				public new function HRESULT(IGameExplorer *self, Guid guidInstanceID) RemoveGame;
-				public new function HRESULT(IGameExplorer *self, Guid guidInstanceID) UpdateGame;
-				public new function HRESULT(IGameExplorer *self, BSTR bstrGDFBinaryPath, BOOL* pfHasAccess) VerifyAccess;
+				public new function HRESULT(ref IGameExplorer self, BSTR bstrGDFBinaryPath, BSTR bstrGameInstallDirectory, GAME_INSTALL_SCOPE installScope, out Guid pguidInstanceID) AddGame;
+				public new function HRESULT(ref IGameExplorer self, Guid guidInstanceID) RemoveGame;
+				public new function HRESULT(ref IGameExplorer self, Guid guidInstanceID) UpdateGame;
+				public new function HRESULT(ref IGameExplorer self, BSTR bstrGDFBinaryPath, out BOOL pfHasAccess) VerifyAccess;
 			}
 		}
 		[CRepr]
@@ -136,69 +136,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMaxCategoryLength(uint32* cch) mut
+			public HRESULT GetMaxCategoryLength(out uint32 cch) mut
 			{
-				return VT.GetMaxCategoryLength(&this, cch);
+				return VT.GetMaxCategoryLength(ref this, out cch);
 			}
-			public HRESULT GetMaxNameLength(uint32* cch) mut
+			public HRESULT GetMaxNameLength(out uint32 cch) mut
 			{
-				return VT.GetMaxNameLength(&this, cch);
+				return VT.GetMaxNameLength(ref this, out cch);
 			}
-			public HRESULT GetMaxValueLength(uint32* cch) mut
+			public HRESULT GetMaxValueLength(out uint32 cch) mut
 			{
-				return VT.GetMaxValueLength(&this, cch);
+				return VT.GetMaxValueLength(ref this, out cch);
 			}
-			public HRESULT GetMaxCategories(uint16* pMax) mut
+			public HRESULT GetMaxCategories(out uint16 pMax) mut
 			{
-				return VT.GetMaxCategories(&this, pMax);
+				return VT.GetMaxCategories(ref this, out pMax);
 			}
-			public HRESULT GetMaxStatsPerCategory(uint16* pMax) mut
+			public HRESULT GetMaxStatsPerCategory(out uint16 pMax) mut
 			{
-				return VT.GetMaxStatsPerCategory(&this, pMax);
+				return VT.GetMaxStatsPerCategory(ref this, out pMax);
 			}
 			public HRESULT SetCategoryTitle(uint16 categoryIndex, PWSTR title) mut
 			{
-				return VT.SetCategoryTitle(&this, categoryIndex, title);
+				return VT.SetCategoryTitle(ref this, categoryIndex, title);
 			}
 			public HRESULT GetCategoryTitle(uint16 categoryIndex, PWSTR* pTitle) mut
 			{
-				return VT.GetCategoryTitle(&this, categoryIndex, pTitle);
+				return VT.GetCategoryTitle(ref this, categoryIndex, pTitle);
 			}
 			public HRESULT GetStatistic(uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) mut
 			{
-				return VT.GetStatistic(&this, categoryIndex, statIndex, pName, pValue);
+				return VT.GetStatistic(ref this, categoryIndex, statIndex, pName, pValue);
 			}
 			public HRESULT SetStatistic(uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) mut
 			{
-				return VT.SetStatistic(&this, categoryIndex, statIndex, name, value);
+				return VT.SetStatistic(ref this, categoryIndex, statIndex, name, value);
 			}
 			public HRESULT Save(BOOL trackChanges) mut
 			{
-				return VT.Save(&this, trackChanges);
+				return VT.Save(ref this, trackChanges);
 			}
 			public HRESULT SetLastPlayedCategory(uint32 categoryIndex) mut
 			{
-				return VT.SetLastPlayedCategory(&this, categoryIndex);
+				return VT.SetLastPlayedCategory(ref this, categoryIndex);
 			}
-			public HRESULT GetLastPlayedCategory(uint32* pCategoryIndex) mut
+			public HRESULT GetLastPlayedCategory(out uint32 pCategoryIndex) mut
 			{
-				return VT.GetLastPlayedCategory(&this, pCategoryIndex);
+				return VT.GetLastPlayedCategory(ref this, out pCategoryIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IGameStatistics *self, uint32* cch) GetMaxCategoryLength;
-				public new function HRESULT(IGameStatistics *self, uint32* cch) GetMaxNameLength;
-				public new function HRESULT(IGameStatistics *self, uint32* cch) GetMaxValueLength;
-				public new function HRESULT(IGameStatistics *self, uint16* pMax) GetMaxCategories;
-				public new function HRESULT(IGameStatistics *self, uint16* pMax) GetMaxStatsPerCategory;
-				public new function HRESULT(IGameStatistics *self, uint16 categoryIndex, PWSTR title) SetCategoryTitle;
-				public new function HRESULT(IGameStatistics *self, uint16 categoryIndex, PWSTR* pTitle) GetCategoryTitle;
-				public new function HRESULT(IGameStatistics *self, uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) GetStatistic;
-				public new function HRESULT(IGameStatistics *self, uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) SetStatistic;
-				public new function HRESULT(IGameStatistics *self, BOOL trackChanges) Save;
-				public new function HRESULT(IGameStatistics *self, uint32 categoryIndex) SetLastPlayedCategory;
-				public new function HRESULT(IGameStatistics *self, uint32* pCategoryIndex) GetLastPlayedCategory;
+				public new function HRESULT(ref IGameStatistics self, out uint32 cch) GetMaxCategoryLength;
+				public new function HRESULT(ref IGameStatistics self, out uint32 cch) GetMaxNameLength;
+				public new function HRESULT(ref IGameStatistics self, out uint32 cch) GetMaxValueLength;
+				public new function HRESULT(ref IGameStatistics self, out uint16 pMax) GetMaxCategories;
+				public new function HRESULT(ref IGameStatistics self, out uint16 pMax) GetMaxStatsPerCategory;
+				public new function HRESULT(ref IGameStatistics self, uint16 categoryIndex, PWSTR title) SetCategoryTitle;
+				public new function HRESULT(ref IGameStatistics self, uint16 categoryIndex, PWSTR* pTitle) GetCategoryTitle;
+				public new function HRESULT(ref IGameStatistics self, uint16 categoryIndex, uint16 statIndex, PWSTR* pName, PWSTR* pValue) GetStatistic;
+				public new function HRESULT(ref IGameStatistics self, uint16 categoryIndex, uint16 statIndex, PWSTR name, PWSTR value) SetStatistic;
+				public new function HRESULT(ref IGameStatistics self, BOOL trackChanges) Save;
+				public new function HRESULT(ref IGameStatistics self, uint32 categoryIndex) SetLastPlayedCategory;
+				public new function HRESULT(ref IGameStatistics self, out uint32 pCategoryIndex) GetLastPlayedCategory;
 			}
 		}
 		[CRepr]
@@ -208,19 +208,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGameStatistics(PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, GAMESTATS_OPEN_RESULT* pOpenResult, IGameStatistics** ppiStats) mut
+			public HRESULT GetGameStatistics(PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, IGameStatistics** ppiStats) mut
 			{
-				return VT.GetGameStatistics(&this, GDFBinaryPath, openType, pOpenResult, ppiStats);
+				return VT.GetGameStatistics(ref this, GDFBinaryPath, openType, out pOpenResult, ppiStats);
 			}
 			public HRESULT RemoveGameStatistics(PWSTR GDFBinaryPath) mut
 			{
-				return VT.RemoveGameStatistics(&this, GDFBinaryPath);
+				return VT.RemoveGameStatistics(ref this, GDFBinaryPath);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IGameStatisticsMgr *self, PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, GAMESTATS_OPEN_RESULT* pOpenResult, IGameStatistics** ppiStats) GetGameStatistics;
-				public new function HRESULT(IGameStatisticsMgr *self, PWSTR GDFBinaryPath) RemoveGameStatistics;
+				public new function HRESULT(ref IGameStatisticsMgr self, PWSTR GDFBinaryPath, GAMESTATS_OPEN_TYPE openType, out GAMESTATS_OPEN_RESULT pOpenResult, IGameStatistics** ppiStats) GetGameStatistics;
+				public new function HRESULT(ref IGameStatisticsMgr self, PWSTR GDFBinaryPath) RemoveGameStatistics;
 			}
 		}
 		[CRepr]
@@ -232,22 +232,22 @@ namespace Win32
 			
 			public HRESULT InstallGame(PWSTR binaryGDFPath, PWSTR installDirectory, GAME_INSTALL_SCOPE installScope) mut
 			{
-				return VT.InstallGame(&this, binaryGDFPath, installDirectory, installScope);
+				return VT.InstallGame(ref this, binaryGDFPath, installDirectory, installScope);
 			}
 			public HRESULT UninstallGame(PWSTR binaryGDFPath) mut
 			{
-				return VT.UninstallGame(&this, binaryGDFPath);
+				return VT.UninstallGame(ref this, binaryGDFPath);
 			}
-			public HRESULT CheckAccess(PWSTR binaryGDFPath, BOOL* pHasAccess) mut
+			public HRESULT CheckAccess(PWSTR binaryGDFPath, out BOOL pHasAccess) mut
 			{
-				return VT.CheckAccess(&this, binaryGDFPath, pHasAccess);
+				return VT.CheckAccess(ref this, binaryGDFPath, out pHasAccess);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IGameExplorer2 *self, PWSTR binaryGDFPath, PWSTR installDirectory, GAME_INSTALL_SCOPE installScope) InstallGame;
-				public new function HRESULT(IGameExplorer2 *self, PWSTR binaryGDFPath) UninstallGame;
-				public new function HRESULT(IGameExplorer2 *self, PWSTR binaryGDFPath, BOOL* pHasAccess) CheckAccess;
+				public new function HRESULT(ref IGameExplorer2 self, PWSTR binaryGDFPath, PWSTR installDirectory, GAME_INSTALL_SCOPE installScope) InstallGame;
+				public new function HRESULT(ref IGameExplorer2 self, PWSTR binaryGDFPath) UninstallGame;
+				public new function HRESULT(ref IGameExplorer2 self, PWSTR binaryGDFPath, out BOOL pHasAccess) CheckAccess;
 			}
 		}
 		[CRepr]
@@ -259,37 +259,37 @@ namespace Win32
 			
 			public HRESULT SetGamerAccount(PWSTR msaAccountId, PWSTR xuid) mut
 			{
-				return VT.SetGamerAccount(&this, msaAccountId, xuid);
+				return VT.SetGamerAccount(ref this, msaAccountId, xuid);
 			}
-			public HRESULT GetGamerAccount(PWSTR* msaAccountId, PWSTR* xuid) mut
+			public HRESULT GetGamerAccount(out PWSTR msaAccountId, out PWSTR xuid) mut
 			{
-				return VT.GetGamerAccount(&this, msaAccountId, xuid);
+				return VT.GetGamerAccount(ref this, out msaAccountId, out xuid);
 			}
 			public HRESULT SetAppViewInitialized(PWSTR appSid, PWSTR msaAccountId) mut
 			{
-				return VT.SetAppViewInitialized(&this, appSid, msaAccountId);
+				return VT.SetAppViewInitialized(ref this, appSid, msaAccountId);
 			}
-			public HRESULT GetEnvironment(PWSTR* environment) mut
+			public HRESULT GetEnvironment(out PWSTR environment) mut
 			{
-				return VT.GetEnvironment(&this, environment);
+				return VT.GetEnvironment(ref this, out environment);
 			}
-			public HRESULT GetSandbox(PWSTR* sandbox) mut
+			public HRESULT GetSandbox(out PWSTR sandbox) mut
 			{
-				return VT.GetSandbox(&this, sandbox);
+				return VT.GetSandbox(ref this, out sandbox);
 			}
-			public HRESULT GetTokenAndSignatureWithTokenResult(PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, IXblIdpAuthTokenResult** result) mut
+			public HRESULT GetTokenAndSignatureWithTokenResult(PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, out IXblIdpAuthTokenResult* result) mut
 			{
-				return VT.GetTokenAndSignatureWithTokenResult(&this, msaAccountId, appSid, msaTarget, msaPolicy, httpMethod, uri, headers, body, bodySize, forceRefresh, result);
+				return VT.GetTokenAndSignatureWithTokenResult(ref this, msaAccountId, appSid, msaTarget, msaPolicy, httpMethod, uri, headers, body, bodySize, forceRefresh, out result);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXblIdpAuthManager *self, PWSTR msaAccountId, PWSTR xuid) SetGamerAccount;
-				public new function HRESULT(IXblIdpAuthManager *self, PWSTR* msaAccountId, PWSTR* xuid) GetGamerAccount;
-				public new function HRESULT(IXblIdpAuthManager *self, PWSTR appSid, PWSTR msaAccountId) SetAppViewInitialized;
-				public new function HRESULT(IXblIdpAuthManager *self, PWSTR* environment) GetEnvironment;
-				public new function HRESULT(IXblIdpAuthManager *self, PWSTR* sandbox) GetSandbox;
-				public new function HRESULT(IXblIdpAuthManager *self, PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, IXblIdpAuthTokenResult** result) GetTokenAndSignatureWithTokenResult;
+				public new function HRESULT(ref IXblIdpAuthManager self, PWSTR msaAccountId, PWSTR xuid) SetGamerAccount;
+				public new function HRESULT(ref IXblIdpAuthManager self, out PWSTR msaAccountId, out PWSTR xuid) GetGamerAccount;
+				public new function HRESULT(ref IXblIdpAuthManager self, PWSTR appSid, PWSTR msaAccountId) SetAppViewInitialized;
+				public new function HRESULT(ref IXblIdpAuthManager self, out PWSTR environment) GetEnvironment;
+				public new function HRESULT(ref IXblIdpAuthManager self, out PWSTR sandbox) GetSandbox;
+				public new function HRESULT(ref IXblIdpAuthManager self, PWSTR msaAccountId, PWSTR appSid, PWSTR msaTarget, PWSTR msaPolicy, PWSTR httpMethod, PWSTR uri, PWSTR headers, uint8* body, uint32 bodySize, BOOL forceRefresh, out IXblIdpAuthTokenResult* result) GetTokenAndSignatureWithTokenResult;
 			}
 		}
 		[CRepr]
@@ -299,109 +299,109 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStatus(XBL_IDP_AUTH_TOKEN_STATUS* status) mut
+			public HRESULT GetStatus(out XBL_IDP_AUTH_TOKEN_STATUS status) mut
 			{
-				return VT.GetStatus(&this, status);
+				return VT.GetStatus(ref this, out status);
 			}
-			public HRESULT GetErrorCode(HRESULT* errorCode) mut
+			public HRESULT GetErrorCode(out HRESULT errorCode) mut
 			{
-				return VT.GetErrorCode(&this, errorCode);
+				return VT.GetErrorCode(ref this, out errorCode);
 			}
-			public HRESULT GetToken(PWSTR* token) mut
+			public HRESULT GetToken(out PWSTR token) mut
 			{
-				return VT.GetToken(&this, token);
+				return VT.GetToken(ref this, out token);
 			}
-			public HRESULT GetSignature(PWSTR* signature) mut
+			public HRESULT GetSignature(out PWSTR signature) mut
 			{
-				return VT.GetSignature(&this, signature);
+				return VT.GetSignature(ref this, out signature);
 			}
-			public HRESULT GetSandbox(PWSTR* sandbox) mut
+			public HRESULT GetSandbox(out PWSTR sandbox) mut
 			{
-				return VT.GetSandbox(&this, sandbox);
+				return VT.GetSandbox(ref this, out sandbox);
 			}
-			public HRESULT GetEnvironment(PWSTR* environment) mut
+			public HRESULT GetEnvironment(out PWSTR environment) mut
 			{
-				return VT.GetEnvironment(&this, environment);
+				return VT.GetEnvironment(ref this, out environment);
 			}
-			public HRESULT GetMsaAccountId(PWSTR* msaAccountId) mut
+			public HRESULT GetMsaAccountId(out PWSTR msaAccountId) mut
 			{
-				return VT.GetMsaAccountId(&this, msaAccountId);
+				return VT.GetMsaAccountId(ref this, out msaAccountId);
 			}
-			public HRESULT GetXuid(PWSTR* xuid) mut
+			public HRESULT GetXuid(out PWSTR xuid) mut
 			{
-				return VT.GetXuid(&this, xuid);
+				return VT.GetXuid(ref this, out xuid);
 			}
-			public HRESULT GetGamertag(PWSTR* gamertag) mut
+			public HRESULT GetGamertag(out PWSTR gamertag) mut
 			{
-				return VT.GetGamertag(&this, gamertag);
+				return VT.GetGamertag(ref this, out gamertag);
 			}
-			public HRESULT GetAgeGroup(PWSTR* ageGroup) mut
+			public HRESULT GetAgeGroup(out PWSTR ageGroup) mut
 			{
-				return VT.GetAgeGroup(&this, ageGroup);
+				return VT.GetAgeGroup(ref this, out ageGroup);
 			}
-			public HRESULT GetPrivileges(PWSTR* privileges) mut
+			public HRESULT GetPrivileges(out PWSTR privileges) mut
 			{
-				return VT.GetPrivileges(&this, privileges);
+				return VT.GetPrivileges(ref this, out privileges);
 			}
-			public HRESULT GetMsaTarget(PWSTR* msaTarget) mut
+			public HRESULT GetMsaTarget(out PWSTR msaTarget) mut
 			{
-				return VT.GetMsaTarget(&this, msaTarget);
+				return VT.GetMsaTarget(ref this, out msaTarget);
 			}
-			public HRESULT GetMsaPolicy(PWSTR* msaPolicy) mut
+			public HRESULT GetMsaPolicy(out PWSTR msaPolicy) mut
 			{
-				return VT.GetMsaPolicy(&this, msaPolicy);
+				return VT.GetMsaPolicy(ref this, out msaPolicy);
 			}
-			public HRESULT GetMsaAppId(PWSTR* msaAppId) mut
+			public HRESULT GetMsaAppId(out PWSTR msaAppId) mut
 			{
-				return VT.GetMsaAppId(&this, msaAppId);
+				return VT.GetMsaAppId(ref this, out msaAppId);
 			}
-			public HRESULT GetRedirect(PWSTR* redirect) mut
+			public HRESULT GetRedirect(out PWSTR redirect) mut
 			{
-				return VT.GetRedirect(&this, redirect);
+				return VT.GetRedirect(ref this, out redirect);
 			}
-			public HRESULT GetMessage(PWSTR* message) mut
+			public HRESULT GetMessage(out PWSTR message) mut
 			{
-				return VT.GetMessage(&this, message);
+				return VT.GetMessage(ref this, out message);
 			}
-			public HRESULT GetHelpId(PWSTR* helpId) mut
+			public HRESULT GetHelpId(out PWSTR helpId) mut
 			{
-				return VT.GetHelpId(&this, helpId);
+				return VT.GetHelpId(ref this, out helpId);
 			}
-			public HRESULT GetEnforcementBans(PWSTR* enforcementBans) mut
+			public HRESULT GetEnforcementBans(out PWSTR enforcementBans) mut
 			{
-				return VT.GetEnforcementBans(&this, enforcementBans);
+				return VT.GetEnforcementBans(ref this, out enforcementBans);
 			}
-			public HRESULT GetRestrictions(PWSTR* restrictions) mut
+			public HRESULT GetRestrictions(out PWSTR restrictions) mut
 			{
-				return VT.GetRestrictions(&this, restrictions);
+				return VT.GetRestrictions(ref this, out restrictions);
 			}
-			public HRESULT GetTitleRestrictions(PWSTR* titleRestrictions) mut
+			public HRESULT GetTitleRestrictions(out PWSTR titleRestrictions) mut
 			{
-				return VT.GetTitleRestrictions(&this, titleRestrictions);
+				return VT.GetTitleRestrictions(ref this, out titleRestrictions);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXblIdpAuthTokenResult *self, XBL_IDP_AUTH_TOKEN_STATUS* status) GetStatus;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, HRESULT* errorCode) GetErrorCode;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* token) GetToken;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* signature) GetSignature;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* sandbox) GetSandbox;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* environment) GetEnvironment;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaAccountId) GetMsaAccountId;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* xuid) GetXuid;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* gamertag) GetGamertag;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* ageGroup) GetAgeGroup;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* privileges) GetPrivileges;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaTarget) GetMsaTarget;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaPolicy) GetMsaPolicy;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* msaAppId) GetMsaAppId;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* redirect) GetRedirect;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* message) GetMessage;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* helpId) GetHelpId;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* enforcementBans) GetEnforcementBans;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* restrictions) GetRestrictions;
-				public new function HRESULT(IXblIdpAuthTokenResult *self, PWSTR* titleRestrictions) GetTitleRestrictions;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out XBL_IDP_AUTH_TOKEN_STATUS status) GetStatus;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out HRESULT errorCode) GetErrorCode;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR token) GetToken;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR signature) GetSignature;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR sandbox) GetSandbox;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR environment) GetEnvironment;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaAccountId) GetMsaAccountId;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR xuid) GetXuid;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR gamertag) GetGamertag;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR ageGroup) GetAgeGroup;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR privileges) GetPrivileges;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaTarget) GetMsaTarget;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaPolicy) GetMsaPolicy;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR msaAppId) GetMsaAppId;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR redirect) GetRedirect;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR message) GetMessage;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR helpId) GetHelpId;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR enforcementBans) GetEnforcementBans;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR restrictions) GetRestrictions;
+				public new function HRESULT(ref IXblIdpAuthTokenResult self, out PWSTR titleRestrictions) GetTitleRestrictions;
 			}
 		}
 		[CRepr]
@@ -411,37 +411,37 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetModernGamertag(PWSTR* value) mut
+			public HRESULT GetModernGamertag(out PWSTR value) mut
 			{
-				return VT.GetModernGamertag(&this, value);
+				return VT.GetModernGamertag(ref this, out value);
 			}
-			public HRESULT GetModernGamertagSuffix(PWSTR* value) mut
+			public HRESULT GetModernGamertagSuffix(out PWSTR value) mut
 			{
-				return VT.GetModernGamertagSuffix(&this, value);
+				return VT.GetModernGamertagSuffix(ref this, out value);
 			}
-			public HRESULT GetUniqueModernGamertag(PWSTR* value) mut
+			public HRESULT GetUniqueModernGamertag(out PWSTR value) mut
 			{
-				return VT.GetUniqueModernGamertag(&this, value);
+				return VT.GetUniqueModernGamertag(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXblIdpAuthTokenResult2 *self, PWSTR* value) GetModernGamertag;
-				public new function HRESULT(IXblIdpAuthTokenResult2 *self, PWSTR* value) GetModernGamertagSuffix;
-				public new function HRESULT(IXblIdpAuthTokenResult2 *self, PWSTR* value) GetUniqueModernGamertag;
+				public new function HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetModernGamertag;
+				public new function HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetModernGamertagSuffix;
+				public new function HRESULT(ref IXblIdpAuthTokenResult2 self, out PWSTR value) GetUniqueModernGamertag;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("api-ms-win-gaming-expandedresources-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HasExpandedResources(BOOL* hasExpandedResources);
+		public static extern HRESULT HasExpandedResources(out BOOL hasExpandedResources);
 		[Import("api-ms-win-gaming-expandedresources-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetExpandedResourceExclusiveCpuCount(uint32* exclusiveCpuCount);
+		public static extern HRESULT GetExpandedResourceExclusiveCpuCount(out uint32 exclusiveCpuCount);
 		[Import("api-ms-win-gaming-expandedresources-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ReleaseExclusiveCpuSets();
 		[Import("api-ms-win-gaming-deviceinformation-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetGamingDeviceModelInformation(GAMING_DEVICE_MODEL_INFORMATION* information);
+		public static extern HRESULT GetGamingDeviceModelInformation(out GAMING_DEVICE_MODEL_INFORMATION information);
 		[Import("api-ms-win-gaming-tcui-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ShowGameInviteUI(HSTRING serviceConfigurationId, HSTRING sessionTemplateName, HSTRING sessionId, HSTRING invitationDisplayText, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
@@ -459,41 +459,41 @@ namespace Win32
 		[Import("api-ms-win-gaming-tcui-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CheckGamingPrivilegeWithUI(uint32 privilegeId, HSTRING @scope, HSTRING policy, HSTRING friendlyMessage, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CheckGamingPrivilegeSilently(uint32 privilegeId, HSTRING @scope, HSTRING policy, BOOL* hasPrivilege);
+		public static extern HRESULT CheckGamingPrivilegeSilently(uint32 privilegeId, HSTRING @scope, HSTRING policy, out BOOL hasPrivilege);
 		[Import("api-ms-win-gaming-tcui-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowGameInviteUIForUser(IInspectable* user, HSTRING serviceConfigurationId, HSTRING sessionTemplateName, HSTRING sessionId, HSTRING invitationDisplayText, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowGameInviteUIForUser(ref IInspectable user, HSTRING serviceConfigurationId, HSTRING sessionTemplateName, HSTRING sessionId, HSTRING invitationDisplayText, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowPlayerPickerUIForUser(IInspectable* user, HSTRING promptDisplayText, HSTRING* xuids, uint xuidsCount, HSTRING* preSelectedXuids, uint preSelectedXuidsCount, uint minSelectionCount, uint maxSelectionCount, PlayerPickerUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowPlayerPickerUIForUser(ref IInspectable user, HSTRING promptDisplayText, HSTRING* xuids, uint xuidsCount, HSTRING* preSelectedXuids, uint preSelectedXuidsCount, uint minSelectionCount, uint maxSelectionCount, PlayerPickerUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowProfileCardUIForUser(IInspectable* user, HSTRING targetUserXuid, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowProfileCardUIForUser(ref IInspectable user, HSTRING targetUserXuid, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowChangeFriendRelationshipUIForUser(IInspectable* user, HSTRING targetUserXuid, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowChangeFriendRelationshipUIForUser(ref IInspectable user, HSTRING targetUserXuid, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowTitleAchievementsUIForUser(IInspectable* user, uint32 titleId, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowTitleAchievementsUIForUser(ref IInspectable user, uint32 titleId, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CheckGamingPrivilegeWithUIForUser(IInspectable* user, uint32 privilegeId, HSTRING @scope, HSTRING policy, HSTRING friendlyMessage, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT CheckGamingPrivilegeWithUIForUser(ref IInspectable user, uint32 privilegeId, HSTRING @scope, HSTRING policy, HSTRING friendlyMessage, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CheckGamingPrivilegeSilentlyForUser(IInspectable* user, uint32 privilegeId, HSTRING @scope, HSTRING policy, BOOL* hasPrivilege);
+		public static extern HRESULT CheckGamingPrivilegeSilentlyForUser(ref IInspectable user, uint32 privilegeId, HSTRING @scope, HSTRING policy, out BOOL hasPrivilege);
 		[Import("api-ms-win-gaming-tcui-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ShowGameInviteUIWithContext(HSTRING serviceConfigurationId, HSTRING sessionTemplateName, HSTRING sessionId, HSTRING invitationDisplayText, HSTRING customActivationContext, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowGameInviteUIWithContextForUser(IInspectable* user, HSTRING serviceConfigurationId, HSTRING sessionTemplateName, HSTRING sessionId, HSTRING invitationDisplayText, HSTRING customActivationContext, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowGameInviteUIWithContextForUser(ref IInspectable user, HSTRING serviceConfigurationId, HSTRING sessionTemplateName, HSTRING sessionId, HSTRING invitationDisplayText, HSTRING customActivationContext, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ShowGameInfoUI(uint32 titleId, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowGameInfoUIForUser(IInspectable* user, uint32 titleId, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowGameInfoUIForUser(ref IInspectable user, uint32 titleId, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ShowFindFriendsUI(GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowFindFriendsUIForUser(IInspectable* user, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowFindFriendsUIForUser(ref IInspectable user, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ShowCustomizeUserProfileUI(GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowCustomizeUserProfileUIForUser(IInspectable* user, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowCustomizeUserProfileUIForUser(ref IInspectable user, GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ShowUserSettingsUI(GameUICompletionRoutine completionRoutine, void* context);
 		[Import("api-ms-win-gaming-tcui-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ShowUserSettingsUIForUser(IInspectable* user, GameUICompletionRoutine completionRoutine, void* context);
+		public static extern HRESULT ShowUserSettingsUIForUser(ref IInspectable user, GameUICompletionRoutine completionRoutine, void* context);
 		
 	}
 }

@@ -230,37 +230,37 @@ namespace Win32
 		public function int32 LPALLOCATEBUFFER(uint32 cbSize, void** lppBuffer);
 		public function int32 LPALLOCATEMORE(uint32 cbSize, void* lpObject, void** lppBuffer);
 		public function uint32 LPFREEBUFFER(void* lpBuffer);
-		public function int32 LPNOTIFCALLBACK(void* lpvContext, uint32 cNotification, NOTIFICATION* lpNotifications);
+		public function int32 LPNOTIFCALLBACK(void* lpvContext, uint32 cNotification, out NOTIFICATION lpNotifications);
 		public function BOOL LPFNABSDI(uint ulUIParam, void* lpvmsg);
 		public function void LPFNDISMISS(uint ulUIParam, void* lpvContext);
-		public function int32 LPFNBUTTON(uint ulUIParam, void* lpvContext, uint32 cbEntryID, ENTRYID* lpSelection, uint32 ulFlags);
-		public function void CALLERRELEASE(uint32 ulCallerData, ITableData* lpTblData, IMAPITable* lpVue);
+		public function int32 LPFNBUTTON(uint ulUIParam, void* lpvContext, uint32 cbEntryID, out ENTRYID lpSelection, uint32 ulFlags);
+		public function void CALLERRELEASE(uint32 ulCallerData, ref ITableData lpTblData, ref IMAPITable lpVue);
 		public function BOOL FNIDLE(void* param0);
 		public function BOOL PFNIDLE();
-		public function HRESULT LPOPENSTREAMONFILE(LPALLOCATEBUFFER lpAllocateBuffer, LPFREEBUFFER lpFreeBuffer, uint32 ulFlags, int8* lpszFileName, int8* lpszPrefix, IStream** lppStream);
+		public function HRESULT LPOPENSTREAMONFILE(LPALLOCATEBUFFER lpAllocateBuffer, LPFREEBUFFER lpFreeBuffer, uint32 ulFlags, ref int8 lpszFileName, int8* lpszPrefix, out IStream* lppStream);
 		public function HRESULT LPDISPATCHNOTIFICATIONS(uint32 ulFlags);
-		public function int32 LPCREATECONVERSATIONINDEX(uint32 cbParent, uint8* lpbParent, uint32* lpcbConvIndex, uint8** lppbConvIndex);
-		public function HRESULT IWABOBJECT_QueryInterface_METHOD(Guid* riid, void** ppvObj);
+		public function int32 LPCREATECONVERSATIONINDEX(uint32 cbParent, out uint8 lpbParent, out uint32 lpcbConvIndex, out uint8* lppbConvIndex);
+		public function HRESULT IWABOBJECT_QueryInterface_METHOD(in Guid riid, void** ppvObj);
 		public function uint32 IWABOBJECT_AddRef_METHOD();
 		public function uint32 IWABOBJECT_Release_METHOD();
-		public function HRESULT IWABOBJECT_GetLastError_METHOD(HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError);
+		public function HRESULT IWABOBJECT_GetLastError_METHOD(HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError);
 		public function HRESULT IWABOBJECT_AllocateBuffer_METHOD(uint32 cbSize, void** lppBuffer);
 		public function HRESULT IWABOBJECT_AllocateMore_METHOD(uint32 cbSize, void* lpObject, void** lppBuffer);
 		public function HRESULT IWABOBJECT_FreeBuffer_METHOD(void* lpBuffer);
 		public function HRESULT IWABOBJECT_Backup_METHOD(PSTR lpFileName);
 		public function HRESULT IWABOBJECT_Import_METHOD(PSTR lpWIP);
-		public function HRESULT IWABOBJECT_Find_METHOD(IAddrBook* lpIAB, HWND hWnd);
-		public function HRESULT IWABOBJECT_VCardDisplay_METHOD(IAddrBook* lpIAB, HWND hWnd, PSTR lpszFileName);
-		public function HRESULT IWABOBJECT_LDAPUrl_METHOD(IAddrBook* lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser);
-		public function HRESULT IWABOBJECT_VCardCreate_METHOD(IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser* lpMailUser);
-		public function HRESULT IWABOBJECT_VCardRetrieve_METHOD(IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser** lppMailUser);
-		public function HRESULT IWABOBJECT_GetMe_METHOD(IAddrBook* lpIAB, uint32 ulFlags, uint32* lpdwAction, SBinary* lpsbEID, HWND hwnd);
-		public function HRESULT IWABOBJECT_SetMe_METHOD(IAddrBook* lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd);
-		public function HRESULT LPWABOPEN(IAddrBook** lppAdrBook, IWABObject** lppWABObject, WAB_PARAM* lpWP, uint32 Reserved2);
-		public function HRESULT LPWABOPENEX(IAddrBook** lppAdrBook, IWABObject** lppWABObject, WAB_PARAM* lpWP, uint32 Reserved, LPALLOCATEBUFFER fnAllocateBuffer, LPALLOCATEMORE fnAllocateMore, LPFREEBUFFER fnFreeBuffer);
-		public function int32 LPWABALLOCATEBUFFER(IWABObject* lpWABObject, uint32 cbSize, void** lppBuffer);
-		public function int32 LPWABALLOCATEMORE(IWABObject* lpWABObject, uint32 cbSize, void* lpObject, void** lppBuffer);
-		public function uint32 LPWABFREEBUFFER(IWABObject* lpWABObject, void* lpBuffer);
+		public function HRESULT IWABOBJECT_Find_METHOD(ref IAddrBook lpIAB, HWND hWnd);
+		public function HRESULT IWABOBJECT_VCardDisplay_METHOD(ref IAddrBook lpIAB, HWND hWnd, PSTR lpszFileName);
+		public function HRESULT IWABOBJECT_LDAPUrl_METHOD(ref IAddrBook lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser);
+		public function HRESULT IWABOBJECT_VCardCreate_METHOD(ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, ref IMailUser lpMailUser);
+		public function HRESULT IWABOBJECT_VCardRetrieve_METHOD(ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, out IMailUser* lppMailUser);
+		public function HRESULT IWABOBJECT_GetMe_METHOD(ref IAddrBook lpIAB, uint32 ulFlags, out uint32 lpdwAction, out SBinary lpsbEID, HWND hwnd);
+		public function HRESULT IWABOBJECT_SetMe_METHOD(ref IAddrBook lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd);
+		public function HRESULT LPWABOPEN(out IAddrBook* lppAdrBook, out IWABObject* lppWABObject, out WAB_PARAM lpWP, uint32 Reserved2);
+		public function HRESULT LPWABOPENEX(out IAddrBook* lppAdrBook, out IWABObject* lppWABObject, out WAB_PARAM lpWP, uint32 Reserved, LPALLOCATEBUFFER fnAllocateBuffer, LPALLOCATEMORE fnAllocateMore, LPFREEBUFFER fnFreeBuffer);
+		public function int32 LPWABALLOCATEBUFFER(ref IWABObject lpWABObject, uint32 cbSize, void** lppBuffer);
+		public function int32 LPWABALLOCATEMORE(ref IWABObject lpWABObject, uint32 cbSize, void* lpObject, void** lppBuffer);
+		public function uint32 LPWABFREEBUFFER(ref IWABObject lpWABObject, void* lpBuffer);
 		
 		// --- Structs ---
 		
@@ -268,7 +268,7 @@ namespace Win32
 		public struct ENTRYID
 		{
 			public uint8[4] abFlags;
-			public uint8[] ab;
+			public uint8[0] ab;
 		}
 		[CRepr]
 		public struct MAPIUID
@@ -279,7 +279,7 @@ namespace Win32
 		public struct SPropTagArray
 		{
 			public uint32 cValues;
-			public uint32[] aulPropTag;
+			public uint32[0] aulPropTag;
 		}
 		[CRepr]
 		public struct SBinary
@@ -409,33 +409,33 @@ namespace Win32
 		public struct SPropProblemArray
 		{
 			public uint32 cProblem;
-			public SPropProblem[] aProblem;
+			public SPropProblem[0] aProblem;
 		}
 		[CRepr]
 		public struct FLATENTRY
 		{
 			public uint32 cb;
-			public uint8[] abEntry;
+			public uint8[0] abEntry;
 		}
 		[CRepr]
 		public struct FLATENTRYLIST
 		{
 			public uint32 cEntries;
 			public uint32 cbEntries;
-			public uint8[] abEntries;
+			public uint8[0] abEntries;
 		}
 		[CRepr]
 		public struct MTSID
 		{
 			public uint32 cb;
-			public uint8[] ab;
+			public uint8[0] ab;
 		}
 		[CRepr]
 		public struct FLATMTSIDLIST
 		{
 			public uint32 cMTSIDs;
 			public uint32 cbMTSIDs;
-			public uint8[] abMTSIDs;
+			public uint8[0] abMTSIDs;
 		}
 		[CRepr]
 		public struct ADRENTRY
@@ -448,7 +448,7 @@ namespace Win32
 		public struct ADRLIST
 		{
 			public uint32 cEntries;
-			public ADRENTRY[] aEntries;
+			public ADRENTRY[0] aEntries;
 		}
 		[CRepr]
 		public struct SRow
@@ -461,7 +461,7 @@ namespace Win32
 		public struct SRowSet
 		{
 			public uint32 cRows;
-			public SRow[] aRow;
+			public SRow[0] aRow;
 		}
 		[CRepr]
 		public struct MAPIERROR
@@ -575,7 +575,7 @@ namespace Win32
 			public uint32 cSorts;
 			public uint32 cCategories;
 			public uint32 cExpanded;
-			public SSortOrder[] aSort;
+			public SSortOrder[0] aSort;
 		}
 		[CRepr]
 		public struct SAndRestriction
@@ -676,7 +676,7 @@ namespace Win32
 		public struct _flaglist
 		{
 			public uint32 cFlags;
-			public uint32[] ulFlag;
+			public uint32[0] ulFlag;
 		}
 		[CRepr]
 		public struct ADRPARM
@@ -870,7 +870,7 @@ namespace Win32
 		public struct NOTIFKEY
 		{
 			public uint32 cb;
-			public uint8[] ab;
+			public uint8[0] ab;
 		}
 		
 		// --- COM Interfaces ---
@@ -880,14 +880,14 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint32 OnNotify(uint32 cNotif, NOTIFICATION* lpNotifications) mut
+			public uint32 OnNotify(uint32 cNotif, out NOTIFICATION lpNotifications) mut
 			{
-				return VT.OnNotify(&this, cNotif, lpNotifications);
+				return VT.OnNotify(ref this, cNotif, out lpNotifications);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(IMAPIAdviseSink *self, uint32 cNotif, NOTIFICATION* lpNotifications) OnNotify;
+				public new function uint32(ref IMAPIAdviseSink self, uint32 cNotif, out NOTIFICATION lpNotifications) OnNotify;
 			}
 		}
 		[CRepr]
@@ -897,32 +897,32 @@ namespace Win32
 			
 			public HRESULT Progress(uint32 ulValue, uint32 ulCount, uint32 ulTotal) mut
 			{
-				return VT.Progress(&this, ulValue, ulCount, ulTotal);
+				return VT.Progress(ref this, ulValue, ulCount, ulTotal);
 			}
-			public HRESULT ComGetFlags(uint32* lpulFlags) mut
+			public HRESULT ComGetFlags(out uint32 lpulFlags) mut
 			{
-				return VT.ComGetFlags(&this, lpulFlags);
+				return VT.ComGetFlags(ref this, out lpulFlags);
 			}
-			public HRESULT GetMax(uint32* lpulMax) mut
+			public HRESULT GetMax(out uint32 lpulMax) mut
 			{
-				return VT.GetMax(&this, lpulMax);
+				return VT.GetMax(ref this, out lpulMax);
 			}
-			public HRESULT GetMin(uint32* lpulMin) mut
+			public HRESULT GetMin(out uint32 lpulMin) mut
 			{
-				return VT.GetMin(&this, lpulMin);
+				return VT.GetMin(ref this, out lpulMin);
 			}
-			public HRESULT SetLimits(uint32* lpulMin, uint32* lpulMax, uint32* lpulFlags) mut
+			public HRESULT SetLimits(out uint32 lpulMin, out uint32 lpulMax, out uint32 lpulFlags) mut
 			{
-				return VT.SetLimits(&this, lpulMin, lpulMax, lpulFlags);
+				return VT.SetLimits(ref this, out lpulMin, out lpulMax, out lpulFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMAPIProgress *self, uint32 ulValue, uint32 ulCount, uint32 ulTotal) Progress;
-				public new function HRESULT(IMAPIProgress *self, uint32* lpulFlags) ComGetFlags;
-				public new function HRESULT(IMAPIProgress *self, uint32* lpulMax) GetMax;
-				public new function HRESULT(IMAPIProgress *self, uint32* lpulMin) GetMin;
-				public new function HRESULT(IMAPIProgress *self, uint32* lpulMin, uint32* lpulMax, uint32* lpulFlags) SetLimits;
+				public new function HRESULT(ref IMAPIProgress self, uint32 ulValue, uint32 ulCount, uint32 ulTotal) Progress;
+				public new function HRESULT(ref IMAPIProgress self, out uint32 lpulFlags) ComGetFlags;
+				public new function HRESULT(ref IMAPIProgress self, out uint32 lpulMax) GetMax;
+				public new function HRESULT(ref IMAPIProgress self, out uint32 lpulMin) GetMin;
+				public new function HRESULT(ref IMAPIProgress self, out uint32 lpulMin, out uint32 lpulMax, out uint32 lpulFlags) SetLimits;
 			}
 		}
 		[CRepr]
@@ -930,64 +930,64 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) mut
+			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) mut
 			{
-				return VT.GetLastError(&this, hResult, ulFlags, lppMAPIError);
+				return VT.GetLastError(ref this, hResult, ulFlags, out lppMAPIError);
 			}
 			public HRESULT SaveChanges(uint32 ulFlags) mut
 			{
-				return VT.SaveChanges(&this, ulFlags);
+				return VT.SaveChanges(ref this, ulFlags);
 			}
-			public HRESULT GetProps(SPropTagArray* lpPropTagArray, uint32 ulFlags, uint32* lpcValues, SPropValue** lppPropArray) mut
+			public HRESULT GetProps(out SPropTagArray lpPropTagArray, uint32 ulFlags, out uint32 lpcValues, out SPropValue* lppPropArray) mut
 			{
-				return VT.GetProps(&this, lpPropTagArray, ulFlags, lpcValues, lppPropArray);
+				return VT.GetProps(ref this, out lpPropTagArray, ulFlags, out lpcValues, out lppPropArray);
 			}
-			public HRESULT GetPropList(uint32 ulFlags, SPropTagArray** lppPropTagArray) mut
+			public HRESULT GetPropList(uint32 ulFlags, out SPropTagArray* lppPropTagArray) mut
 			{
-				return VT.GetPropList(&this, ulFlags, lppPropTagArray);
+				return VT.GetPropList(ref this, ulFlags, out lppPropTagArray);
 			}
-			public HRESULT OpenProperty(uint32 ulPropTag, Guid* lpiid, uint32 ulInterfaceOptions, uint32 ulFlags, IUnknown** lppUnk) mut
+			public HRESULT OpenProperty(uint32 ulPropTag, out Guid lpiid, uint32 ulInterfaceOptions, uint32 ulFlags, out IUnknown* lppUnk) mut
 			{
-				return VT.OpenProperty(&this, ulPropTag, lpiid, ulInterfaceOptions, ulFlags, lppUnk);
+				return VT.OpenProperty(ref this, ulPropTag, out lpiid, ulInterfaceOptions, ulFlags, out lppUnk);
 			}
-			public HRESULT SetProps(uint32 cValues, SPropValue* lpPropArray, SPropProblemArray** lppProblems) mut
+			public HRESULT SetProps(uint32 cValues, out SPropValue lpPropArray, out SPropProblemArray* lppProblems) mut
 			{
-				return VT.SetProps(&this, cValues, lpPropArray, lppProblems);
+				return VT.SetProps(ref this, cValues, out lpPropArray, out lppProblems);
 			}
-			public HRESULT DeleteProps(SPropTagArray* lpPropTagArray, SPropProblemArray** lppProblems) mut
+			public HRESULT DeleteProps(out SPropTagArray lpPropTagArray, out SPropProblemArray* lppProblems) mut
 			{
-				return VT.DeleteProps(&this, lpPropTagArray, lppProblems);
+				return VT.DeleteProps(ref this, out lpPropTagArray, out lppProblems);
 			}
-			public HRESULT CopyTo(uint32 ciidExclude, Guid* rgiidExclude, SPropTagArray* lpExcludeProps, uint ulUIParam, IMAPIProgress* lpProgress, Guid* lpInterface, void* lpDestObj, uint32 ulFlags, SPropProblemArray** lppProblems) mut
+			public HRESULT CopyTo(uint32 ciidExclude, out Guid rgiidExclude, out SPropTagArray lpExcludeProps, uint ulUIParam, ref IMAPIProgress lpProgress, out Guid lpInterface, void* lpDestObj, uint32 ulFlags, out SPropProblemArray* lppProblems) mut
 			{
-				return VT.CopyTo(&this, ciidExclude, rgiidExclude, lpExcludeProps, ulUIParam, lpProgress, lpInterface, lpDestObj, ulFlags, lppProblems);
+				return VT.CopyTo(ref this, ciidExclude, out rgiidExclude, out lpExcludeProps, ulUIParam, ref lpProgress, out lpInterface, lpDestObj, ulFlags, out lppProblems);
 			}
-			public HRESULT CopyProps(SPropTagArray* lpIncludeProps, uint ulUIParam, IMAPIProgress* lpProgress, Guid* lpInterface, void* lpDestObj, uint32 ulFlags, SPropProblemArray** lppProblems) mut
+			public HRESULT CopyProps(out SPropTagArray lpIncludeProps, uint ulUIParam, ref IMAPIProgress lpProgress, out Guid lpInterface, void* lpDestObj, uint32 ulFlags, out SPropProblemArray* lppProblems) mut
 			{
-				return VT.CopyProps(&this, lpIncludeProps, ulUIParam, lpProgress, lpInterface, lpDestObj, ulFlags, lppProblems);
+				return VT.CopyProps(ref this, out lpIncludeProps, ulUIParam, ref lpProgress, out lpInterface, lpDestObj, ulFlags, out lppProblems);
 			}
-			public HRESULT GetNamesFromIDs(SPropTagArray** lppPropTags, Guid* lpPropSetGuid, uint32 ulFlags, uint32* lpcPropNames, MAPINAMEID*** lpppPropNames) mut
+			public HRESULT GetNamesFromIDs(out SPropTagArray* lppPropTags, out Guid lpPropSetGuid, uint32 ulFlags, out uint32 lpcPropNames, out MAPINAMEID** lpppPropNames) mut
 			{
-				return VT.GetNamesFromIDs(&this, lppPropTags, lpPropSetGuid, ulFlags, lpcPropNames, lpppPropNames);
+				return VT.GetNamesFromIDs(ref this, out lppPropTags, out lpPropSetGuid, ulFlags, out lpcPropNames, out lpppPropNames);
 			}
-			public HRESULT GetIDsFromNames(uint32 cPropNames, MAPINAMEID** lppPropNames, uint32 ulFlags, SPropTagArray** lppPropTags) mut
+			public HRESULT GetIDsFromNames(uint32 cPropNames, out MAPINAMEID* lppPropNames, uint32 ulFlags, out SPropTagArray* lppPropTags) mut
 			{
-				return VT.GetIDsFromNames(&this, cPropNames, lppPropNames, ulFlags, lppPropTags);
+				return VT.GetIDsFromNames(ref this, cPropNames, out lppPropNames, ulFlags, out lppPropTags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMAPIProp *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-				public new function HRESULT(IMAPIProp *self, uint32 ulFlags) SaveChanges;
-				public new function HRESULT(IMAPIProp *self, SPropTagArray* lpPropTagArray, uint32 ulFlags, uint32* lpcValues, SPropValue** lppPropArray) GetProps;
-				public new function HRESULT(IMAPIProp *self, uint32 ulFlags, SPropTagArray** lppPropTagArray) GetPropList;
-				public new function HRESULT(IMAPIProp *self, uint32 ulPropTag, Guid* lpiid, uint32 ulInterfaceOptions, uint32 ulFlags, IUnknown** lppUnk) OpenProperty;
-				public new function HRESULT(IMAPIProp *self, uint32 cValues, SPropValue* lpPropArray, SPropProblemArray** lppProblems) SetProps;
-				public new function HRESULT(IMAPIProp *self, SPropTagArray* lpPropTagArray, SPropProblemArray** lppProblems) DeleteProps;
-				public new function HRESULT(IMAPIProp *self, uint32 ciidExclude, Guid* rgiidExclude, SPropTagArray* lpExcludeProps, uint ulUIParam, IMAPIProgress* lpProgress, Guid* lpInterface, void* lpDestObj, uint32 ulFlags, SPropProblemArray** lppProblems) CopyTo;
-				public new function HRESULT(IMAPIProp *self, SPropTagArray* lpIncludeProps, uint ulUIParam, IMAPIProgress* lpProgress, Guid* lpInterface, void* lpDestObj, uint32 ulFlags, SPropProblemArray** lppProblems) CopyProps;
-				public new function HRESULT(IMAPIProp *self, SPropTagArray** lppPropTags, Guid* lpPropSetGuid, uint32 ulFlags, uint32* lpcPropNames, MAPINAMEID*** lpppPropNames) GetNamesFromIDs;
-				public new function HRESULT(IMAPIProp *self, uint32 cPropNames, MAPINAMEID** lppPropNames, uint32 ulFlags, SPropTagArray** lppPropTags) GetIDsFromNames;
+				public new function HRESULT(ref IMAPIProp self, HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) GetLastError;
+				public new function HRESULT(ref IMAPIProp self, uint32 ulFlags) SaveChanges;
+				public new function HRESULT(ref IMAPIProp self, out SPropTagArray lpPropTagArray, uint32 ulFlags, out uint32 lpcValues, out SPropValue* lppPropArray) GetProps;
+				public new function HRESULT(ref IMAPIProp self, uint32 ulFlags, out SPropTagArray* lppPropTagArray) GetPropList;
+				public new function HRESULT(ref IMAPIProp self, uint32 ulPropTag, out Guid lpiid, uint32 ulInterfaceOptions, uint32 ulFlags, out IUnknown* lppUnk) OpenProperty;
+				public new function HRESULT(ref IMAPIProp self, uint32 cValues, out SPropValue lpPropArray, out SPropProblemArray* lppProblems) SetProps;
+				public new function HRESULT(ref IMAPIProp self, out SPropTagArray lpPropTagArray, out SPropProblemArray* lppProblems) DeleteProps;
+				public new function HRESULT(ref IMAPIProp self, uint32 ciidExclude, out Guid rgiidExclude, out SPropTagArray lpExcludeProps, uint ulUIParam, ref IMAPIProgress lpProgress, out Guid lpInterface, void* lpDestObj, uint32 ulFlags, out SPropProblemArray* lppProblems) CopyTo;
+				public new function HRESULT(ref IMAPIProp self, out SPropTagArray lpIncludeProps, uint ulUIParam, ref IMAPIProgress lpProgress, out Guid lpInterface, void* lpDestObj, uint32 ulFlags, out SPropProblemArray* lppProblems) CopyProps;
+				public new function HRESULT(ref IMAPIProp self, out SPropTagArray* lppPropTags, out Guid lpPropSetGuid, uint32 ulFlags, out uint32 lpcPropNames, out MAPINAMEID** lpppPropNames) GetNamesFromIDs;
+				public new function HRESULT(ref IMAPIProp self, uint32 cPropNames, out MAPINAMEID* lppPropNames, uint32 ulFlags, out SPropTagArray* lppPropTags) GetIDsFromNames;
 			}
 		}
 		[CRepr]
@@ -995,124 +995,124 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) mut
+			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) mut
 			{
-				return VT.GetLastError(&this, hResult, ulFlags, lppMAPIError);
+				return VT.GetLastError(ref this, hResult, ulFlags, out lppMAPIError);
 			}
-			public HRESULT Advise(uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) mut
+			public HRESULT Advise(uint32 ulEventMask, ref IMAPIAdviseSink lpAdviseSink, out uint32 lpulConnection) mut
 			{
-				return VT.Advise(&this, ulEventMask, lpAdviseSink, lpulConnection);
+				return VT.Advise(ref this, ulEventMask, ref lpAdviseSink, out lpulConnection);
 			}
 			public HRESULT Unadvise(uint32 ulConnection) mut
 			{
-				return VT.Unadvise(&this, ulConnection);
+				return VT.Unadvise(ref this, ulConnection);
 			}
-			public HRESULT GetStatus(uint32* lpulTableStatus, uint32* lpulTableType) mut
+			public HRESULT GetStatus(out uint32 lpulTableStatus, out uint32 lpulTableType) mut
 			{
-				return VT.GetStatus(&this, lpulTableStatus, lpulTableType);
+				return VT.GetStatus(ref this, out lpulTableStatus, out lpulTableType);
 			}
-			public HRESULT SetColumns(SPropTagArray* lpPropTagArray, uint32 ulFlags) mut
+			public HRESULT SetColumns(out SPropTagArray lpPropTagArray, uint32 ulFlags) mut
 			{
-				return VT.SetColumns(&this, lpPropTagArray, ulFlags);
+				return VT.SetColumns(ref this, out lpPropTagArray, ulFlags);
 			}
-			public HRESULT QueryColumns(uint32 ulFlags, SPropTagArray** lpPropTagArray) mut
+			public HRESULT QueryColumns(uint32 ulFlags, out SPropTagArray* lpPropTagArray) mut
 			{
-				return VT.QueryColumns(&this, ulFlags, lpPropTagArray);
+				return VT.QueryColumns(ref this, ulFlags, out lpPropTagArray);
 			}
-			public HRESULT GetRowCount(uint32 ulFlags, uint32* lpulCount) mut
+			public HRESULT GetRowCount(uint32 ulFlags, out uint32 lpulCount) mut
 			{
-				return VT.GetRowCount(&this, ulFlags, lpulCount);
+				return VT.GetRowCount(ref this, ulFlags, out lpulCount);
 			}
-			public HRESULT SeekRow(uint32 bkOrigin, int32 lRowCount, int32* lplRowsSought) mut
+			public HRESULT SeekRow(uint32 bkOrigin, int32 lRowCount, out int32 lplRowsSought) mut
 			{
-				return VT.SeekRow(&this, bkOrigin, lRowCount, lplRowsSought);
+				return VT.SeekRow(ref this, bkOrigin, lRowCount, out lplRowsSought);
 			}
 			public HRESULT SeekRowApprox(uint32 ulNumerator, uint32 ulDenominator) mut
 			{
-				return VT.SeekRowApprox(&this, ulNumerator, ulDenominator);
+				return VT.SeekRowApprox(ref this, ulNumerator, ulDenominator);
 			}
-			public HRESULT QueryPosition(uint32* lpulRow, uint32* lpulNumerator, uint32* lpulDenominator) mut
+			public HRESULT QueryPosition(out uint32 lpulRow, out uint32 lpulNumerator, out uint32 lpulDenominator) mut
 			{
-				return VT.QueryPosition(&this, lpulRow, lpulNumerator, lpulDenominator);
+				return VT.QueryPosition(ref this, out lpulRow, out lpulNumerator, out lpulDenominator);
 			}
-			public HRESULT FindRow(SRestriction* lpRestriction, uint32 bkOrigin, uint32 ulFlags) mut
+			public HRESULT FindRow(out SRestriction lpRestriction, uint32 bkOrigin, uint32 ulFlags) mut
 			{
-				return VT.FindRow(&this, lpRestriction, bkOrigin, ulFlags);
+				return VT.FindRow(ref this, out lpRestriction, bkOrigin, ulFlags);
 			}
-			public HRESULT Restrict(SRestriction* lpRestriction, uint32 ulFlags) mut
+			public HRESULT Restrict(out SRestriction lpRestriction, uint32 ulFlags) mut
 			{
-				return VT.Restrict(&this, lpRestriction, ulFlags);
+				return VT.Restrict(ref this, out lpRestriction, ulFlags);
 			}
-			public HRESULT CreateBookmark(uint32* lpbkPosition) mut
+			public HRESULT CreateBookmark(out uint32 lpbkPosition) mut
 			{
-				return VT.CreateBookmark(&this, lpbkPosition);
+				return VT.CreateBookmark(ref this, out lpbkPosition);
 			}
 			public HRESULT FreeBookmark(uint32 bkPosition) mut
 			{
-				return VT.FreeBookmark(&this, bkPosition);
+				return VT.FreeBookmark(ref this, bkPosition);
 			}
-			public HRESULT SortTable(SSortOrderSet* lpSortCriteria, uint32 ulFlags) mut
+			public HRESULT SortTable(out SSortOrderSet lpSortCriteria, uint32 ulFlags) mut
 			{
-				return VT.SortTable(&this, lpSortCriteria, ulFlags);
+				return VT.SortTable(ref this, out lpSortCriteria, ulFlags);
 			}
-			public HRESULT QuerySortOrder(SSortOrderSet** lppSortCriteria) mut
+			public HRESULT QuerySortOrder(out SSortOrderSet* lppSortCriteria) mut
 			{
-				return VT.QuerySortOrder(&this, lppSortCriteria);
+				return VT.QuerySortOrder(ref this, out lppSortCriteria);
 			}
-			public HRESULT QueryRows(int32 lRowCount, uint32 ulFlags, SRowSet** lppRows) mut
+			public HRESULT QueryRows(int32 lRowCount, uint32 ulFlags, out SRowSet* lppRows) mut
 			{
-				return VT.QueryRows(&this, lRowCount, ulFlags, lppRows);
+				return VT.QueryRows(ref this, lRowCount, ulFlags, out lppRows);
 			}
 			public HRESULT Abort() mut
 			{
-				return VT.Abort(&this);
+				return VT.Abort(ref this);
 			}
-			public HRESULT ExpandRow(uint32 cbInstanceKey, uint8* pbInstanceKey, uint32 ulRowCount, uint32 ulFlags, SRowSet** lppRows, uint32* lpulMoreRows) mut
+			public HRESULT ExpandRow(uint32 cbInstanceKey, out uint8 pbInstanceKey, uint32 ulRowCount, uint32 ulFlags, out SRowSet* lppRows, out uint32 lpulMoreRows) mut
 			{
-				return VT.ExpandRow(&this, cbInstanceKey, pbInstanceKey, ulRowCount, ulFlags, lppRows, lpulMoreRows);
+				return VT.ExpandRow(ref this, cbInstanceKey, out pbInstanceKey, ulRowCount, ulFlags, out lppRows, out lpulMoreRows);
 			}
-			public HRESULT CollapseRow(uint32 cbInstanceKey, uint8* pbInstanceKey, uint32 ulFlags, uint32* lpulRowCount) mut
+			public HRESULT CollapseRow(uint32 cbInstanceKey, out uint8 pbInstanceKey, uint32 ulFlags, out uint32 lpulRowCount) mut
 			{
-				return VT.CollapseRow(&this, cbInstanceKey, pbInstanceKey, ulFlags, lpulRowCount);
+				return VT.CollapseRow(ref this, cbInstanceKey, out pbInstanceKey, ulFlags, out lpulRowCount);
 			}
-			public HRESULT WaitForCompletion(uint32 ulFlags, uint32 ulTimeout, uint32* lpulTableStatus) mut
+			public HRESULT WaitForCompletion(uint32 ulFlags, uint32 ulTimeout, out uint32 lpulTableStatus) mut
 			{
-				return VT.WaitForCompletion(&this, ulFlags, ulTimeout, lpulTableStatus);
+				return VT.WaitForCompletion(ref this, ulFlags, ulTimeout, out lpulTableStatus);
 			}
-			public HRESULT GetCollapseState(uint32 ulFlags, uint32 cbInstanceKey, uint8* lpbInstanceKey, uint32* lpcbCollapseState, uint8** lppbCollapseState) mut
+			public HRESULT GetCollapseState(uint32 ulFlags, uint32 cbInstanceKey, out uint8 lpbInstanceKey, out uint32 lpcbCollapseState, out uint8* lppbCollapseState) mut
 			{
-				return VT.GetCollapseState(&this, ulFlags, cbInstanceKey, lpbInstanceKey, lpcbCollapseState, lppbCollapseState);
+				return VT.GetCollapseState(ref this, ulFlags, cbInstanceKey, out lpbInstanceKey, out lpcbCollapseState, out lppbCollapseState);
 			}
-			public HRESULT SetCollapseState(uint32 ulFlags, uint32 cbCollapseState, uint8* pbCollapseState, uint32* lpbkLocation) mut
+			public HRESULT SetCollapseState(uint32 ulFlags, uint32 cbCollapseState, out uint8 pbCollapseState, out uint32 lpbkLocation) mut
 			{
-				return VT.SetCollapseState(&this, ulFlags, cbCollapseState, pbCollapseState, lpbkLocation);
+				return VT.SetCollapseState(ref this, ulFlags, cbCollapseState, out pbCollapseState, out lpbkLocation);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMAPITable *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-				public new function HRESULT(IMAPITable *self, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) Advise;
-				public new function HRESULT(IMAPITable *self, uint32 ulConnection) Unadvise;
-				public new function HRESULT(IMAPITable *self, uint32* lpulTableStatus, uint32* lpulTableType) GetStatus;
-				public new function HRESULT(IMAPITable *self, SPropTagArray* lpPropTagArray, uint32 ulFlags) SetColumns;
-				public new function HRESULT(IMAPITable *self, uint32 ulFlags, SPropTagArray** lpPropTagArray) QueryColumns;
-				public new function HRESULT(IMAPITable *self, uint32 ulFlags, uint32* lpulCount) GetRowCount;
-				public new function HRESULT(IMAPITable *self, uint32 bkOrigin, int32 lRowCount, int32* lplRowsSought) SeekRow;
-				public new function HRESULT(IMAPITable *self, uint32 ulNumerator, uint32 ulDenominator) SeekRowApprox;
-				public new function HRESULT(IMAPITable *self, uint32* lpulRow, uint32* lpulNumerator, uint32* lpulDenominator) QueryPosition;
-				public new function HRESULT(IMAPITable *self, SRestriction* lpRestriction, uint32 bkOrigin, uint32 ulFlags) FindRow;
-				public new function HRESULT(IMAPITable *self, SRestriction* lpRestriction, uint32 ulFlags) Restrict;
-				public new function HRESULT(IMAPITable *self, uint32* lpbkPosition) CreateBookmark;
-				public new function HRESULT(IMAPITable *self, uint32 bkPosition) FreeBookmark;
-				public new function HRESULT(IMAPITable *self, SSortOrderSet* lpSortCriteria, uint32 ulFlags) SortTable;
-				public new function HRESULT(IMAPITable *self, SSortOrderSet** lppSortCriteria) QuerySortOrder;
-				public new function HRESULT(IMAPITable *self, int32 lRowCount, uint32 ulFlags, SRowSet** lppRows) QueryRows;
-				public new function HRESULT(IMAPITable *self) Abort;
-				public new function HRESULT(IMAPITable *self, uint32 cbInstanceKey, uint8* pbInstanceKey, uint32 ulRowCount, uint32 ulFlags, SRowSet** lppRows, uint32* lpulMoreRows) ExpandRow;
-				public new function HRESULT(IMAPITable *self, uint32 cbInstanceKey, uint8* pbInstanceKey, uint32 ulFlags, uint32* lpulRowCount) CollapseRow;
-				public new function HRESULT(IMAPITable *self, uint32 ulFlags, uint32 ulTimeout, uint32* lpulTableStatus) WaitForCompletion;
-				public new function HRESULT(IMAPITable *self, uint32 ulFlags, uint32 cbInstanceKey, uint8* lpbInstanceKey, uint32* lpcbCollapseState, uint8** lppbCollapseState) GetCollapseState;
-				public new function HRESULT(IMAPITable *self, uint32 ulFlags, uint32 cbCollapseState, uint8* pbCollapseState, uint32* lpbkLocation) SetCollapseState;
+				public new function HRESULT(ref IMAPITable self, HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) GetLastError;
+				public new function HRESULT(ref IMAPITable self, uint32 ulEventMask, ref IMAPIAdviseSink lpAdviseSink, out uint32 lpulConnection) Advise;
+				public new function HRESULT(ref IMAPITable self, uint32 ulConnection) Unadvise;
+				public new function HRESULT(ref IMAPITable self, out uint32 lpulTableStatus, out uint32 lpulTableType) GetStatus;
+				public new function HRESULT(ref IMAPITable self, out SPropTagArray lpPropTagArray, uint32 ulFlags) SetColumns;
+				public new function HRESULT(ref IMAPITable self, uint32 ulFlags, out SPropTagArray* lpPropTagArray) QueryColumns;
+				public new function HRESULT(ref IMAPITable self, uint32 ulFlags, out uint32 lpulCount) GetRowCount;
+				public new function HRESULT(ref IMAPITable self, uint32 bkOrigin, int32 lRowCount, out int32 lplRowsSought) SeekRow;
+				public new function HRESULT(ref IMAPITable self, uint32 ulNumerator, uint32 ulDenominator) SeekRowApprox;
+				public new function HRESULT(ref IMAPITable self, out uint32 lpulRow, out uint32 lpulNumerator, out uint32 lpulDenominator) QueryPosition;
+				public new function HRESULT(ref IMAPITable self, out SRestriction lpRestriction, uint32 bkOrigin, uint32 ulFlags) FindRow;
+				public new function HRESULT(ref IMAPITable self, out SRestriction lpRestriction, uint32 ulFlags) Restrict;
+				public new function HRESULT(ref IMAPITable self, out uint32 lpbkPosition) CreateBookmark;
+				public new function HRESULT(ref IMAPITable self, uint32 bkPosition) FreeBookmark;
+				public new function HRESULT(ref IMAPITable self, out SSortOrderSet lpSortCriteria, uint32 ulFlags) SortTable;
+				public new function HRESULT(ref IMAPITable self, out SSortOrderSet* lppSortCriteria) QuerySortOrder;
+				public new function HRESULT(ref IMAPITable self, int32 lRowCount, uint32 ulFlags, out SRowSet* lppRows) QueryRows;
+				public new function HRESULT(ref IMAPITable self) Abort;
+				public new function HRESULT(ref IMAPITable self, uint32 cbInstanceKey, out uint8 pbInstanceKey, uint32 ulRowCount, uint32 ulFlags, out SRowSet* lppRows, out uint32 lpulMoreRows) ExpandRow;
+				public new function HRESULT(ref IMAPITable self, uint32 cbInstanceKey, out uint8 pbInstanceKey, uint32 ulFlags, out uint32 lpulRowCount) CollapseRow;
+				public new function HRESULT(ref IMAPITable self, uint32 ulFlags, uint32 ulTimeout, out uint32 lpulTableStatus) WaitForCompletion;
+				public new function HRESULT(ref IMAPITable self, uint32 ulFlags, uint32 cbInstanceKey, out uint8 lpbInstanceKey, out uint32 lpcbCollapseState, out uint8* lppbCollapseState) GetCollapseState;
+				public new function HRESULT(ref IMAPITable self, uint32 ulFlags, uint32 cbCollapseState, out uint8 pbCollapseState, out uint32 lpbkLocation) SetCollapseState;
 			}
 		}
 		[CRepr]
@@ -1132,27 +1132,27 @@ namespace Win32
 			
 			public HRESULT ValidateState(uint ulUIParam, uint32 ulFlags) mut
 			{
-				return VT.ValidateState(&this, ulUIParam, ulFlags);
+				return VT.ValidateState(ref this, ulUIParam, ulFlags);
 			}
 			public HRESULT SettingsDialog(uint ulUIParam, uint32 ulFlags) mut
 			{
-				return VT.SettingsDialog(&this, ulUIParam, ulFlags);
+				return VT.SettingsDialog(ref this, ulUIParam, ulFlags);
 			}
-			public HRESULT ChangePassword(int8* lpOldPass, int8* lpNewPass, uint32 ulFlags) mut
+			public HRESULT ChangePassword(ref int8 lpOldPass, ref int8 lpNewPass, uint32 ulFlags) mut
 			{
-				return VT.ChangePassword(&this, lpOldPass, lpNewPass, ulFlags);
+				return VT.ChangePassword(ref this, ref lpOldPass, ref lpNewPass, ulFlags);
 			}
 			public HRESULT FlushQueues(uint ulUIParam, uint32 cbTargetTransport, ENTRYID* lpTargetTransport, uint32 ulFlags) mut
 			{
-				return VT.FlushQueues(&this, ulUIParam, cbTargetTransport, lpTargetTransport, ulFlags);
+				return VT.FlushQueues(ref this, ulUIParam, cbTargetTransport, lpTargetTransport, ulFlags);
 			}
 			[CRepr]
 			public struct VTable : IMAPIProp.VTable
 			{
-				public new function HRESULT(IMAPIStatus *self, uint ulUIParam, uint32 ulFlags) ValidateState;
-				public new function HRESULT(IMAPIStatus *self, uint ulUIParam, uint32 ulFlags) SettingsDialog;
-				public new function HRESULT(IMAPIStatus *self, int8* lpOldPass, int8* lpNewPass, uint32 ulFlags) ChangePassword;
-				public new function HRESULT(IMAPIStatus *self, uint ulUIParam, uint32 cbTargetTransport, ENTRYID* lpTargetTransport, uint32 ulFlags) FlushQueues;
+				public new function HRESULT(ref IMAPIStatus self, uint ulUIParam, uint32 ulFlags) ValidateState;
+				public new function HRESULT(ref IMAPIStatus self, uint ulUIParam, uint32 ulFlags) SettingsDialog;
+				public new function HRESULT(ref IMAPIStatus self, ref int8 lpOldPass, ref int8 lpNewPass, uint32 ulFlags) ChangePassword;
+				public new function HRESULT(ref IMAPIStatus self, uint ulUIParam, uint32 cbTargetTransport, ENTRYID* lpTargetTransport, uint32 ulFlags) FlushQueues;
 			}
 		}
 		[CRepr]
@@ -1160,34 +1160,34 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetContentsTable(uint32 ulFlags, IMAPITable** lppTable) mut
+			public HRESULT GetContentsTable(uint32 ulFlags, out IMAPITable* lppTable) mut
 			{
-				return VT.GetContentsTable(&this, ulFlags, lppTable);
+				return VT.GetContentsTable(ref this, ulFlags, out lppTable);
 			}
-			public HRESULT GetHierarchyTable(uint32 ulFlags, IMAPITable** lppTable) mut
+			public HRESULT GetHierarchyTable(uint32 ulFlags, out IMAPITable* lppTable) mut
 			{
-				return VT.GetHierarchyTable(&this, ulFlags, lppTable);
+				return VT.GetHierarchyTable(ref this, ulFlags, out lppTable);
 			}
-			public HRESULT OpenEntry(uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** lppUnk) mut
+			public HRESULT OpenEntry(uint32 cbEntryID, ref ENTRYID lpEntryID, out Guid lpInterface, uint32 ulFlags, out uint32 lpulObjType, out IUnknown* lppUnk) mut
 			{
-				return VT.OpenEntry(&this, cbEntryID, lpEntryID, lpInterface, ulFlags, lpulObjType, lppUnk);
+				return VT.OpenEntry(ref this, cbEntryID, ref lpEntryID, out lpInterface, ulFlags, out lpulObjType, out lppUnk);
 			}
 			public HRESULT SetSearchCriteria(SRestriction* lpRestriction, SBinaryArray* lpContainerList, uint32 ulSearchFlags) mut
 			{
-				return VT.SetSearchCriteria(&this, lpRestriction, lpContainerList, ulSearchFlags);
+				return VT.SetSearchCriteria(ref this, lpRestriction, lpContainerList, ulSearchFlags);
 			}
 			public HRESULT GetSearchCriteria(uint32 ulFlags, SRestriction** lppRestriction, SBinaryArray** lppContainerList, uint32* lpulSearchState) mut
 			{
-				return VT.GetSearchCriteria(&this, ulFlags, lppRestriction, lppContainerList, lpulSearchState);
+				return VT.GetSearchCriteria(ref this, ulFlags, lppRestriction, lppContainerList, lpulSearchState);
 			}
 			[CRepr]
 			public struct VTable : IMAPIProp.VTable
 			{
-				public new function HRESULT(IMAPIContainer *self, uint32 ulFlags, IMAPITable** lppTable) GetContentsTable;
-				public new function HRESULT(IMAPIContainer *self, uint32 ulFlags, IMAPITable** lppTable) GetHierarchyTable;
-				public new function HRESULT(IMAPIContainer *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** lppUnk) OpenEntry;
-				public new function HRESULT(IMAPIContainer *self, SRestriction* lpRestriction, SBinaryArray* lpContainerList, uint32 ulSearchFlags) SetSearchCriteria;
-				public new function HRESULT(IMAPIContainer *self, uint32 ulFlags, SRestriction** lppRestriction, SBinaryArray** lppContainerList, uint32* lpulSearchState) GetSearchCriteria;
+				public new function HRESULT(ref IMAPIContainer self, uint32 ulFlags, out IMAPITable* lppTable) GetContentsTable;
+				public new function HRESULT(ref IMAPIContainer self, uint32 ulFlags, out IMAPITable* lppTable) GetHierarchyTable;
+				public new function HRESULT(ref IMAPIContainer self, uint32 cbEntryID, ref ENTRYID lpEntryID, out Guid lpInterface, uint32 ulFlags, out uint32 lpulObjType, out IUnknown* lppUnk) OpenEntry;
+				public new function HRESULT(ref IMAPIContainer self, SRestriction* lpRestriction, SBinaryArray* lpContainerList, uint32 ulSearchFlags) SetSearchCriteria;
+				public new function HRESULT(ref IMAPIContainer self, uint32 ulFlags, SRestriction** lppRestriction, SBinaryArray** lppContainerList, uint32* lpulSearchState) GetSearchCriteria;
 			}
 		}
 		[CRepr]
@@ -1195,29 +1195,29 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEntry(uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulCreateFlags, IMAPIProp** lppMAPIPropEntry) mut
+			public HRESULT CreateEntry(uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulCreateFlags, out IMAPIProp* lppMAPIPropEntry) mut
 			{
-				return VT.CreateEntry(&this, cbEntryID, lpEntryID, ulCreateFlags, lppMAPIPropEntry);
+				return VT.CreateEntry(ref this, cbEntryID, ref lpEntryID, ulCreateFlags, out lppMAPIPropEntry);
 			}
-			public HRESULT CopyEntries(SBinaryArray* lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
+			public HRESULT CopyEntries(ref SBinaryArray lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
 			{
-				return VT.CopyEntries(&this, lpEntries, ulUIParam, lpProgress, ulFlags);
+				return VT.CopyEntries(ref this, ref lpEntries, ulUIParam, lpProgress, ulFlags);
 			}
-			public HRESULT DeleteEntries(SBinaryArray* lpEntries, uint32 ulFlags) mut
+			public HRESULT DeleteEntries(ref SBinaryArray lpEntries, uint32 ulFlags) mut
 			{
-				return VT.DeleteEntries(&this, lpEntries, ulFlags);
+				return VT.DeleteEntries(ref this, ref lpEntries, ulFlags);
 			}
-			public HRESULT ResolveNames(SPropTagArray* lpPropTagArray, uint32 ulFlags, ADRLIST* lpAdrList, _flaglist* lpFlagList) mut
+			public HRESULT ResolveNames(SPropTagArray* lpPropTagArray, uint32 ulFlags, ref ADRLIST lpAdrList, out _flaglist lpFlagList) mut
 			{
-				return VT.ResolveNames(&this, lpPropTagArray, ulFlags, lpAdrList, lpFlagList);
+				return VT.ResolveNames(ref this, lpPropTagArray, ulFlags, ref lpAdrList, out lpFlagList);
 			}
 			[CRepr]
 			public struct VTable : IMAPIContainer.VTable
 			{
-				public new function HRESULT(IABContainer *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulCreateFlags, IMAPIProp** lppMAPIPropEntry) CreateEntry;
-				public new function HRESULT(IABContainer *self, SBinaryArray* lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyEntries;
-				public new function HRESULT(IABContainer *self, SBinaryArray* lpEntries, uint32 ulFlags) DeleteEntries;
-				public new function HRESULT(IABContainer *self, SPropTagArray* lpPropTagArray, uint32 ulFlags, ADRLIST* lpAdrList, _flaglist* lpFlagList) ResolveNames;
+				public new function HRESULT(ref IABContainer self, uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulCreateFlags, out IMAPIProp* lppMAPIPropEntry) CreateEntry;
+				public new function HRESULT(ref IABContainer self, ref SBinaryArray lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyEntries;
+				public new function HRESULT(ref IABContainer self, ref SBinaryArray lpEntries, uint32 ulFlags) DeleteEntries;
+				public new function HRESULT(ref IABContainer self, SPropTagArray* lpPropTagArray, uint32 ulFlags, ref ADRLIST lpAdrList, out _flaglist lpFlagList) ResolveNames;
 			}
 		}
 		[CRepr]
@@ -1235,29 +1235,29 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateEntry(uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulCreateFlags, IMAPIProp** lppMAPIPropEntry) mut
+			public HRESULT CreateEntry(uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulCreateFlags, out IMAPIProp* lppMAPIPropEntry) mut
 			{
-				return VT.CreateEntry(&this, cbEntryID, lpEntryID, ulCreateFlags, lppMAPIPropEntry);
+				return VT.CreateEntry(ref this, cbEntryID, ref lpEntryID, ulCreateFlags, out lppMAPIPropEntry);
 			}
-			public HRESULT CopyEntries(SBinaryArray* lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
+			public HRESULT CopyEntries(ref SBinaryArray lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
 			{
-				return VT.CopyEntries(&this, lpEntries, ulUIParam, lpProgress, ulFlags);
+				return VT.CopyEntries(ref this, ref lpEntries, ulUIParam, lpProgress, ulFlags);
 			}
-			public HRESULT DeleteEntries(SBinaryArray* lpEntries, uint32 ulFlags) mut
+			public HRESULT DeleteEntries(ref SBinaryArray lpEntries, uint32 ulFlags) mut
 			{
-				return VT.DeleteEntries(&this, lpEntries, ulFlags);
+				return VT.DeleteEntries(ref this, ref lpEntries, ulFlags);
 			}
-			public HRESULT ResolveNames(SPropTagArray* lpPropTagArray, uint32 ulFlags, ADRLIST* lpAdrList, _flaglist* lpFlagList) mut
+			public HRESULT ResolveNames(SPropTagArray* lpPropTagArray, uint32 ulFlags, ref ADRLIST lpAdrList, out _flaglist lpFlagList) mut
 			{
-				return VT.ResolveNames(&this, lpPropTagArray, ulFlags, lpAdrList, lpFlagList);
+				return VT.ResolveNames(ref this, lpPropTagArray, ulFlags, ref lpAdrList, out lpFlagList);
 			}
 			[CRepr]
 			public struct VTable : IMAPIContainer.VTable
 			{
-				public new function HRESULT(IDistList *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulCreateFlags, IMAPIProp** lppMAPIPropEntry) CreateEntry;
-				public new function HRESULT(IDistList *self, SBinaryArray* lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyEntries;
-				public new function HRESULT(IDistList *self, SBinaryArray* lpEntries, uint32 ulFlags) DeleteEntries;
-				public new function HRESULT(IDistList *self, SPropTagArray* lpPropTagArray, uint32 ulFlags, ADRLIST* lpAdrList, _flaglist* lpFlagList) ResolveNames;
+				public new function HRESULT(ref IDistList self, uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulCreateFlags, out IMAPIProp* lppMAPIPropEntry) CreateEntry;
+				public new function HRESULT(ref IDistList self, ref SBinaryArray lpEntries, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyEntries;
+				public new function HRESULT(ref IDistList self, ref SBinaryArray lpEntries, uint32 ulFlags) DeleteEntries;
+				public new function HRESULT(ref IDistList self, SPropTagArray* lpPropTagArray, uint32 ulFlags, ref ADRLIST lpAdrList, out _flaglist lpFlagList) ResolveNames;
 			}
 		}
 		[CRepr]
@@ -1265,64 +1265,64 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateMessage(Guid* lpInterface, uint32 ulFlags, IMessage** lppMessage) mut
+			public HRESULT CreateMessage(out Guid lpInterface, uint32 ulFlags, out IMessage* lppMessage) mut
 			{
-				return VT.CreateMessage(&this, lpInterface, ulFlags, lppMessage);
+				return VT.CreateMessage(ref this, out lpInterface, ulFlags, out lppMessage);
 			}
-			public HRESULT CopyMessages(SBinaryArray* lpMsgList, Guid* lpInterface, void* lpDestFolder, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
+			public HRESULT CopyMessages(ref SBinaryArray lpMsgList, Guid* lpInterface, void* lpDestFolder, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
 			{
-				return VT.CopyMessages(&this, lpMsgList, lpInterface, lpDestFolder, ulUIParam, lpProgress, ulFlags);
+				return VT.CopyMessages(ref this, ref lpMsgList, lpInterface, lpDestFolder, ulUIParam, lpProgress, ulFlags);
 			}
-			public HRESULT DeleteMessages(SBinaryArray* lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
+			public HRESULT DeleteMessages(ref SBinaryArray lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
 			{
-				return VT.DeleteMessages(&this, lpMsgList, ulUIParam, lpProgress, ulFlags);
+				return VT.DeleteMessages(ref this, ref lpMsgList, ulUIParam, lpProgress, ulFlags);
 			}
-			public HRESULT CreateFolder(uint32 ulFolderType, int8* lpszFolderName, int8* lpszFolderComment, Guid* lpInterface, uint32 ulFlags, IMAPIFolder** lppFolder) mut
+			public HRESULT CreateFolder(uint32 ulFolderType, ref int8 lpszFolderName, int8* lpszFolderComment, Guid* lpInterface, uint32 ulFlags, out IMAPIFolder* lppFolder) mut
 			{
-				return VT.CreateFolder(&this, ulFolderType, lpszFolderName, lpszFolderComment, lpInterface, ulFlags, lppFolder);
+				return VT.CreateFolder(ref this, ulFolderType, ref lpszFolderName, lpszFolderComment, lpInterface, ulFlags, out lppFolder);
 			}
-			public HRESULT CopyFolder(uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, void* lpDestFolder, int8* lpszNewFolderName, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
+			public HRESULT CopyFolder(uint32 cbEntryID, ref ENTRYID lpEntryID, Guid* lpInterface, void* lpDestFolder, ref int8 lpszNewFolderName, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
 			{
-				return VT.CopyFolder(&this, cbEntryID, lpEntryID, lpInterface, lpDestFolder, lpszNewFolderName, ulUIParam, lpProgress, ulFlags);
+				return VT.CopyFolder(ref this, cbEntryID, ref lpEntryID, lpInterface, lpDestFolder, ref lpszNewFolderName, ulUIParam, lpProgress, ulFlags);
 			}
-			public HRESULT DeleteFolder(uint32 cbEntryID, ENTRYID* lpEntryID, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
+			public HRESULT DeleteFolder(uint32 cbEntryID, ref ENTRYID lpEntryID, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
 			{
-				return VT.DeleteFolder(&this, cbEntryID, lpEntryID, ulUIParam, lpProgress, ulFlags);
+				return VT.DeleteFolder(ref this, cbEntryID, ref lpEntryID, ulUIParam, lpProgress, ulFlags);
 			}
-			public HRESULT SetReadFlags(SBinaryArray* lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
+			public HRESULT SetReadFlags(ref SBinaryArray lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
 			{
-				return VT.SetReadFlags(&this, lpMsgList, ulUIParam, lpProgress, ulFlags);
+				return VT.SetReadFlags(ref this, ref lpMsgList, ulUIParam, lpProgress, ulFlags);
 			}
-			public HRESULT GetMessageStatus(uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulFlags, uint32* lpulMessageStatus) mut
+			public HRESULT GetMessageStatus(uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulFlags, out uint32 lpulMessageStatus) mut
 			{
-				return VT.GetMessageStatus(&this, cbEntryID, lpEntryID, ulFlags, lpulMessageStatus);
+				return VT.GetMessageStatus(ref this, cbEntryID, ref lpEntryID, ulFlags, out lpulMessageStatus);
 			}
-			public HRESULT SetMessageStatus(uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulNewStatus, uint32 ulNewStatusMask, uint32* lpulOldStatus) mut
+			public HRESULT SetMessageStatus(uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulNewStatus, uint32 ulNewStatusMask, out uint32 lpulOldStatus) mut
 			{
-				return VT.SetMessageStatus(&this, cbEntryID, lpEntryID, ulNewStatus, ulNewStatusMask, lpulOldStatus);
+				return VT.SetMessageStatus(ref this, cbEntryID, ref lpEntryID, ulNewStatus, ulNewStatusMask, out lpulOldStatus);
 			}
-			public HRESULT SaveContentsSort(SSortOrderSet* lpSortCriteria, uint32 ulFlags) mut
+			public HRESULT SaveContentsSort(ref SSortOrderSet lpSortCriteria, uint32 ulFlags) mut
 			{
-				return VT.SaveContentsSort(&this, lpSortCriteria, ulFlags);
+				return VT.SaveContentsSort(ref this, ref lpSortCriteria, ulFlags);
 			}
 			public HRESULT EmptyFolder(uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
 			{
-				return VT.EmptyFolder(&this, ulUIParam, lpProgress, ulFlags);
+				return VT.EmptyFolder(ref this, ulUIParam, lpProgress, ulFlags);
 			}
 			[CRepr]
 			public struct VTable : IMAPIContainer.VTable
 			{
-				public new function HRESULT(IMAPIFolder *self, Guid* lpInterface, uint32 ulFlags, IMessage** lppMessage) CreateMessage;
-				public new function HRESULT(IMAPIFolder *self, SBinaryArray* lpMsgList, Guid* lpInterface, void* lpDestFolder, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyMessages;
-				public new function HRESULT(IMAPIFolder *self, SBinaryArray* lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteMessages;
-				public new function HRESULT(IMAPIFolder *self, uint32 ulFolderType, int8* lpszFolderName, int8* lpszFolderComment, Guid* lpInterface, uint32 ulFlags, IMAPIFolder** lppFolder) CreateFolder;
-				public new function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, void* lpDestFolder, int8* lpszNewFolderName, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyFolder;
-				public new function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteFolder;
-				public new function HRESULT(IMAPIFolder *self, SBinaryArray* lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) SetReadFlags;
-				public new function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulFlags, uint32* lpulMessageStatus) GetMessageStatus;
-				public new function HRESULT(IMAPIFolder *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulNewStatus, uint32 ulNewStatusMask, uint32* lpulOldStatus) SetMessageStatus;
-				public new function HRESULT(IMAPIFolder *self, SSortOrderSet* lpSortCriteria, uint32 ulFlags) SaveContentsSort;
-				public new function HRESULT(IMAPIFolder *self, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) EmptyFolder;
+				public new function HRESULT(ref IMAPIFolder self, out Guid lpInterface, uint32 ulFlags, out IMessage* lppMessage) CreateMessage;
+				public new function HRESULT(ref IMAPIFolder self, ref SBinaryArray lpMsgList, Guid* lpInterface, void* lpDestFolder, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyMessages;
+				public new function HRESULT(ref IMAPIFolder self, ref SBinaryArray lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteMessages;
+				public new function HRESULT(ref IMAPIFolder self, uint32 ulFolderType, ref int8 lpszFolderName, int8* lpszFolderComment, Guid* lpInterface, uint32 ulFlags, out IMAPIFolder* lppFolder) CreateFolder;
+				public new function HRESULT(ref IMAPIFolder self, uint32 cbEntryID, ref ENTRYID lpEntryID, Guid* lpInterface, void* lpDestFolder, ref int8 lpszNewFolderName, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) CopyFolder;
+				public new function HRESULT(ref IMAPIFolder self, uint32 cbEntryID, ref ENTRYID lpEntryID, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteFolder;
+				public new function HRESULT(ref IMAPIFolder self, ref SBinaryArray lpMsgList, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) SetReadFlags;
+				public new function HRESULT(ref IMAPIFolder self, uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulFlags, out uint32 lpulMessageStatus) GetMessageStatus;
+				public new function HRESULT(ref IMAPIFolder self, uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulNewStatus, uint32 ulNewStatusMask, out uint32 lpulOldStatus) SetMessageStatus;
+				public new function HRESULT(ref IMAPIFolder self, ref SSortOrderSet lpSortCriteria, uint32 ulFlags) SaveContentsSort;
+				public new function HRESULT(ref IMAPIFolder self, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) EmptyFolder;
 			}
 		}
 		[CRepr]
@@ -1330,74 +1330,74 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Advise(uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) mut
+			public HRESULT Advise(uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, ref IMAPIAdviseSink lpAdviseSink, out uint32 lpulConnection) mut
 			{
-				return VT.Advise(&this, cbEntryID, lpEntryID, ulEventMask, lpAdviseSink, lpulConnection);
+				return VT.Advise(ref this, cbEntryID, lpEntryID, ulEventMask, ref lpAdviseSink, out lpulConnection);
 			}
 			public HRESULT Unadvise(uint32 ulConnection) mut
 			{
-				return VT.Unadvise(&this, ulConnection);
+				return VT.Unadvise(ref this, ulConnection);
 			}
-			public HRESULT CompareEntryIDs(uint32 cbEntryID1, ENTRYID* lpEntryID1, uint32 cbEntryID2, ENTRYID* lpEntryID2, uint32 ulFlags, uint32* lpulResult) mut
+			public HRESULT CompareEntryIDs(uint32 cbEntryID1, ref ENTRYID lpEntryID1, uint32 cbEntryID2, ref ENTRYID lpEntryID2, uint32 ulFlags, out uint32 lpulResult) mut
 			{
-				return VT.CompareEntryIDs(&this, cbEntryID1, lpEntryID1, cbEntryID2, lpEntryID2, ulFlags, lpulResult);
+				return VT.CompareEntryIDs(ref this, cbEntryID1, ref lpEntryID1, cbEntryID2, ref lpEntryID2, ulFlags, out lpulResult);
 			}
-			public HRESULT OpenEntry(uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** ppUnk) mut
+			public HRESULT OpenEntry(uint32 cbEntryID, ref ENTRYID lpEntryID, Guid* lpInterface, uint32 ulFlags, out uint32 lpulObjType, out IUnknown* ppUnk) mut
 			{
-				return VT.OpenEntry(&this, cbEntryID, lpEntryID, lpInterface, ulFlags, lpulObjType, ppUnk);
+				return VT.OpenEntry(ref this, cbEntryID, ref lpEntryID, lpInterface, ulFlags, out lpulObjType, out ppUnk);
 			}
-			public HRESULT SetReceiveFolder(int8* lpszMessageClass, uint32 ulFlags, uint32 cbEntryID, ENTRYID* lpEntryID) mut
+			public HRESULT SetReceiveFolder(int8* lpszMessageClass, uint32 ulFlags, uint32 cbEntryID, ref ENTRYID lpEntryID) mut
 			{
-				return VT.SetReceiveFolder(&this, lpszMessageClass, ulFlags, cbEntryID, lpEntryID);
+				return VT.SetReceiveFolder(ref this, lpszMessageClass, ulFlags, cbEntryID, ref lpEntryID);
 			}
-			public HRESULT GetReceiveFolder(int8* lpszMessageClass, uint32 ulFlags, uint32* lpcbEntryID, ENTRYID** lppEntryID, int8** lppszExplicitClass) mut
+			public HRESULT GetReceiveFolder(int8* lpszMessageClass, uint32 ulFlags, out uint32 lpcbEntryID, out ENTRYID* lppEntryID, int8** lppszExplicitClass) mut
 			{
-				return VT.GetReceiveFolder(&this, lpszMessageClass, ulFlags, lpcbEntryID, lppEntryID, lppszExplicitClass);
+				return VT.GetReceiveFolder(ref this, lpszMessageClass, ulFlags, out lpcbEntryID, out lppEntryID, lppszExplicitClass);
 			}
-			public HRESULT GetReceiveFolderTable(uint32 ulFlags, IMAPITable** lppTable) mut
+			public HRESULT GetReceiveFolderTable(uint32 ulFlags, out IMAPITable* lppTable) mut
 			{
-				return VT.GetReceiveFolderTable(&this, ulFlags, lppTable);
+				return VT.GetReceiveFolderTable(ref this, ulFlags, out lppTable);
 			}
-			public HRESULT StoreLogoff(uint32* lpulFlags) mut
+			public HRESULT StoreLogoff(out uint32 lpulFlags) mut
 			{
-				return VT.StoreLogoff(&this, lpulFlags);
+				return VT.StoreLogoff(ref this, out lpulFlags);
 			}
-			public HRESULT AbortSubmit(uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulFlags) mut
+			public HRESULT AbortSubmit(uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulFlags) mut
 			{
-				return VT.AbortSubmit(&this, cbEntryID, lpEntryID, ulFlags);
+				return VT.AbortSubmit(ref this, cbEntryID, ref lpEntryID, ulFlags);
 			}
-			public HRESULT GetOutgoingQueue(uint32 ulFlags, IMAPITable** lppTable) mut
+			public HRESULT GetOutgoingQueue(uint32 ulFlags, out IMAPITable* lppTable) mut
 			{
-				return VT.GetOutgoingQueue(&this, ulFlags, lppTable);
+				return VT.GetOutgoingQueue(ref this, ulFlags, out lppTable);
 			}
-			public HRESULT SetLockState(IMessage* lpMessage, uint32 ulLockState) mut
+			public HRESULT SetLockState(ref IMessage lpMessage, uint32 ulLockState) mut
 			{
-				return VT.SetLockState(&this, lpMessage, ulLockState);
+				return VT.SetLockState(ref this, ref lpMessage, ulLockState);
 			}
-			public HRESULT FinishedMsg(uint32 ulFlags, uint32 cbEntryID, ENTRYID* lpEntryID) mut
+			public HRESULT FinishedMsg(uint32 ulFlags, uint32 cbEntryID, ref ENTRYID lpEntryID) mut
 			{
-				return VT.FinishedMsg(&this, ulFlags, cbEntryID, lpEntryID);
+				return VT.FinishedMsg(ref this, ulFlags, cbEntryID, ref lpEntryID);
 			}
-			public HRESULT NotifyNewMail(NOTIFICATION* lpNotification) mut
+			public HRESULT NotifyNewMail(ref NOTIFICATION lpNotification) mut
 			{
-				return VT.NotifyNewMail(&this, lpNotification);
+				return VT.NotifyNewMail(ref this, ref lpNotification);
 			}
 			[CRepr]
 			public struct VTable : IMAPIProp.VTable
 			{
-				public new function HRESULT(IMsgStore *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) Advise;
-				public new function HRESULT(IMsgStore *self, uint32 ulConnection) Unadvise;
-				public new function HRESULT(IMsgStore *self, uint32 cbEntryID1, ENTRYID* lpEntryID1, uint32 cbEntryID2, ENTRYID* lpEntryID2, uint32 ulFlags, uint32* lpulResult) CompareEntryIDs;
-				public new function HRESULT(IMsgStore *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** ppUnk) OpenEntry;
-				public new function HRESULT(IMsgStore *self, int8* lpszMessageClass, uint32 ulFlags, uint32 cbEntryID, ENTRYID* lpEntryID) SetReceiveFolder;
-				public new function HRESULT(IMsgStore *self, int8* lpszMessageClass, uint32 ulFlags, uint32* lpcbEntryID, ENTRYID** lppEntryID, int8** lppszExplicitClass) GetReceiveFolder;
-				public new function HRESULT(IMsgStore *self, uint32 ulFlags, IMAPITable** lppTable) GetReceiveFolderTable;
-				public new function HRESULT(IMsgStore *self, uint32* lpulFlags) StoreLogoff;
-				public new function HRESULT(IMsgStore *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulFlags) AbortSubmit;
-				public new function HRESULT(IMsgStore *self, uint32 ulFlags, IMAPITable** lppTable) GetOutgoingQueue;
-				public new function HRESULT(IMsgStore *self, IMessage* lpMessage, uint32 ulLockState) SetLockState;
-				public new function HRESULT(IMsgStore *self, uint32 ulFlags, uint32 cbEntryID, ENTRYID* lpEntryID) FinishedMsg;
-				public new function HRESULT(IMsgStore *self, NOTIFICATION* lpNotification) NotifyNewMail;
+				public new function HRESULT(ref IMsgStore self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, ref IMAPIAdviseSink lpAdviseSink, out uint32 lpulConnection) Advise;
+				public new function HRESULT(ref IMsgStore self, uint32 ulConnection) Unadvise;
+				public new function HRESULT(ref IMsgStore self, uint32 cbEntryID1, ref ENTRYID lpEntryID1, uint32 cbEntryID2, ref ENTRYID lpEntryID2, uint32 ulFlags, out uint32 lpulResult) CompareEntryIDs;
+				public new function HRESULT(ref IMsgStore self, uint32 cbEntryID, ref ENTRYID lpEntryID, Guid* lpInterface, uint32 ulFlags, out uint32 lpulObjType, out IUnknown* ppUnk) OpenEntry;
+				public new function HRESULT(ref IMsgStore self, int8* lpszMessageClass, uint32 ulFlags, uint32 cbEntryID, ref ENTRYID lpEntryID) SetReceiveFolder;
+				public new function HRESULT(ref IMsgStore self, int8* lpszMessageClass, uint32 ulFlags, out uint32 lpcbEntryID, out ENTRYID* lppEntryID, int8** lppszExplicitClass) GetReceiveFolder;
+				public new function HRESULT(ref IMsgStore self, uint32 ulFlags, out IMAPITable* lppTable) GetReceiveFolderTable;
+				public new function HRESULT(ref IMsgStore self, out uint32 lpulFlags) StoreLogoff;
+				public new function HRESULT(ref IMsgStore self, uint32 cbEntryID, ref ENTRYID lpEntryID, uint32 ulFlags) AbortSubmit;
+				public new function HRESULT(ref IMsgStore self, uint32 ulFlags, out IMAPITable* lppTable) GetOutgoingQueue;
+				public new function HRESULT(ref IMsgStore self, ref IMessage lpMessage, uint32 ulLockState) SetLockState;
+				public new function HRESULT(ref IMsgStore self, uint32 ulFlags, uint32 cbEntryID, ref ENTRYID lpEntryID) FinishedMsg;
+				public new function HRESULT(ref IMsgStore self, ref NOTIFICATION lpNotification) NotifyNewMail;
 			}
 		}
 		[CRepr]
@@ -1405,49 +1405,49 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAttachmentTable(uint32 ulFlags, IMAPITable** lppTable) mut
+			public HRESULT GetAttachmentTable(uint32 ulFlags, out IMAPITable* lppTable) mut
 			{
-				return VT.GetAttachmentTable(&this, ulFlags, lppTable);
+				return VT.GetAttachmentTable(ref this, ulFlags, out lppTable);
 			}
-			public HRESULT OpenAttach(uint32 ulAttachmentNum, Guid* lpInterface, uint32 ulFlags, IAttach** lppAttach) mut
+			public HRESULT OpenAttach(uint32 ulAttachmentNum, Guid* lpInterface, uint32 ulFlags, out IAttach* lppAttach) mut
 			{
-				return VT.OpenAttach(&this, ulAttachmentNum, lpInterface, ulFlags, lppAttach);
+				return VT.OpenAttach(ref this, ulAttachmentNum, lpInterface, ulFlags, out lppAttach);
 			}
-			public HRESULT CreateAttach(Guid* lpInterface, uint32 ulFlags, uint32* lpulAttachmentNum, IAttach** lppAttach) mut
+			public HRESULT CreateAttach(Guid* lpInterface, uint32 ulFlags, out uint32 lpulAttachmentNum, out IAttach* lppAttach) mut
 			{
-				return VT.CreateAttach(&this, lpInterface, ulFlags, lpulAttachmentNum, lppAttach);
+				return VT.CreateAttach(ref this, lpInterface, ulFlags, out lpulAttachmentNum, out lppAttach);
 			}
 			public HRESULT DeleteAttach(uint32 ulAttachmentNum, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) mut
 			{
-				return VT.DeleteAttach(&this, ulAttachmentNum, ulUIParam, lpProgress, ulFlags);
+				return VT.DeleteAttach(ref this, ulAttachmentNum, ulUIParam, lpProgress, ulFlags);
 			}
-			public HRESULT GetRecipientTable(uint32 ulFlags, IMAPITable** lppTable) mut
+			public HRESULT GetRecipientTable(uint32 ulFlags, out IMAPITable* lppTable) mut
 			{
-				return VT.GetRecipientTable(&this, ulFlags, lppTable);
+				return VT.GetRecipientTable(ref this, ulFlags, out lppTable);
 			}
-			public HRESULT ModifyRecipients(uint32 ulFlags, ADRLIST* lpMods) mut
+			public HRESULT ModifyRecipients(uint32 ulFlags, ref ADRLIST lpMods) mut
 			{
-				return VT.ModifyRecipients(&this, ulFlags, lpMods);
+				return VT.ModifyRecipients(ref this, ulFlags, ref lpMods);
 			}
 			public HRESULT SubmitMessage(uint32 ulFlags) mut
 			{
-				return VT.SubmitMessage(&this, ulFlags);
+				return VT.SubmitMessage(ref this, ulFlags);
 			}
 			public HRESULT SetReadFlag(uint32 ulFlags) mut
 			{
-				return VT.SetReadFlag(&this, ulFlags);
+				return VT.SetReadFlag(ref this, ulFlags);
 			}
 			[CRepr]
 			public struct VTable : IMAPIProp.VTable
 			{
-				public new function HRESULT(IMessage *self, uint32 ulFlags, IMAPITable** lppTable) GetAttachmentTable;
-				public new function HRESULT(IMessage *self, uint32 ulAttachmentNum, Guid* lpInterface, uint32 ulFlags, IAttach** lppAttach) OpenAttach;
-				public new function HRESULT(IMessage *self, Guid* lpInterface, uint32 ulFlags, uint32* lpulAttachmentNum, IAttach** lppAttach) CreateAttach;
-				public new function HRESULT(IMessage *self, uint32 ulAttachmentNum, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteAttach;
-				public new function HRESULT(IMessage *self, uint32 ulFlags, IMAPITable** lppTable) GetRecipientTable;
-				public new function HRESULT(IMessage *self, uint32 ulFlags, ADRLIST* lpMods) ModifyRecipients;
-				public new function HRESULT(IMessage *self, uint32 ulFlags) SubmitMessage;
-				public new function HRESULT(IMessage *self, uint32 ulFlags) SetReadFlag;
+				public new function HRESULT(ref IMessage self, uint32 ulFlags, out IMAPITable* lppTable) GetAttachmentTable;
+				public new function HRESULT(ref IMessage self, uint32 ulAttachmentNum, Guid* lpInterface, uint32 ulFlags, out IAttach* lppAttach) OpenAttach;
+				public new function HRESULT(ref IMessage self, Guid* lpInterface, uint32 ulFlags, out uint32 lpulAttachmentNum, out IAttach* lppAttach) CreateAttach;
+				public new function HRESULT(ref IMessage self, uint32 ulAttachmentNum, uint ulUIParam, IMAPIProgress* lpProgress, uint32 ulFlags) DeleteAttach;
+				public new function HRESULT(ref IMessage self, uint32 ulFlags, out IMAPITable* lppTable) GetRecipientTable;
+				public new function HRESULT(ref IMessage self, uint32 ulFlags, ref ADRLIST lpMods) ModifyRecipients;
+				public new function HRESULT(ref IMessage self, uint32 ulFlags) SubmitMessage;
+				public new function HRESULT(ref IMessage self, uint32 ulFlags) SetReadFlag;
 			}
 		}
 		[CRepr]
@@ -1465,24 +1465,24 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) mut
+			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) mut
 			{
-				return VT.GetLastError(&this, hResult, ulFlags, lppMAPIError);
+				return VT.GetLastError(ref this, hResult, ulFlags, out lppMAPIError);
 			}
 			public HRESULT Activate(uint32 ulFlags, uint ulUIParam) mut
 			{
-				return VT.Activate(&this, ulFlags, ulUIParam);
+				return VT.Activate(ref this, ulFlags, ulUIParam);
 			}
-			public HRESULT GetState(uint32 ulFlags, uint32* lpulState) mut
+			public HRESULT GetState(uint32 ulFlags, out uint32 lpulState) mut
 			{
-				return VT.GetState(&this, ulFlags, lpulState);
+				return VT.GetState(ref this, ulFlags, out lpulState);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMAPIControl *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-				public new function HRESULT(IMAPIControl *self, uint32 ulFlags, uint ulUIParam) Activate;
-				public new function HRESULT(IMAPIControl *self, uint32 ulFlags, uint32* lpulState) GetState;
+				public new function HRESULT(ref IMAPIControl self, HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) GetLastError;
+				public new function HRESULT(ref IMAPIControl self, uint32 ulFlags, uint ulUIParam) Activate;
+				public new function HRESULT(ref IMAPIControl self, uint32 ulFlags, out uint32 lpulState) GetState;
 			}
 		}
 		[CRepr]
@@ -1490,34 +1490,34 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) mut
+			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) mut
 			{
-				return VT.GetLastError(&this, hResult, ulFlags, lppMAPIError);
+				return VT.GetLastError(ref this, hResult, ulFlags, out lppMAPIError);
 			}
-			public HRESULT GetProviderTable(uint32 ulFlags, IMAPITable** lppTable) mut
+			public HRESULT GetProviderTable(uint32 ulFlags, out IMAPITable* lppTable) mut
 			{
-				return VT.GetProviderTable(&this, ulFlags, lppTable);
+				return VT.GetProviderTable(ref this, ulFlags, out lppTable);
 			}
-			public HRESULT CreateProvider(int8* lpszProvider, uint32 cValues, SPropValue* lpProps, uint ulUIParam, uint32 ulFlags, MAPIUID* lpUID) mut
+			public HRESULT CreateProvider(ref int8 lpszProvider, uint32 cValues, SPropValue* lpProps, uint ulUIParam, uint32 ulFlags, out MAPIUID lpUID) mut
 			{
-				return VT.CreateProvider(&this, lpszProvider, cValues, lpProps, ulUIParam, ulFlags, lpUID);
+				return VT.CreateProvider(ref this, ref lpszProvider, cValues, lpProps, ulUIParam, ulFlags, out lpUID);
 			}
-			public HRESULT DeleteProvider(MAPIUID* lpUID) mut
+			public HRESULT DeleteProvider(ref MAPIUID lpUID) mut
 			{
-				return VT.DeleteProvider(&this, lpUID);
+				return VT.DeleteProvider(ref this, ref lpUID);
 			}
-			public HRESULT OpenProfileSection(MAPIUID* lpUID, Guid* lpInterface, uint32 ulFlags, IProfSect** lppProfSect) mut
+			public HRESULT OpenProfileSection(MAPIUID* lpUID, Guid* lpInterface, uint32 ulFlags, out IProfSect* lppProfSect) mut
 			{
-				return VT.OpenProfileSection(&this, lpUID, lpInterface, ulFlags, lppProfSect);
+				return VT.OpenProfileSection(ref this, lpUID, lpInterface, ulFlags, out lppProfSect);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IProviderAdmin *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-				public new function HRESULT(IProviderAdmin *self, uint32 ulFlags, IMAPITable** lppTable) GetProviderTable;
-				public new function HRESULT(IProviderAdmin *self, int8* lpszProvider, uint32 cValues, SPropValue* lpProps, uint ulUIParam, uint32 ulFlags, MAPIUID* lpUID) CreateProvider;
-				public new function HRESULT(IProviderAdmin *self, MAPIUID* lpUID) DeleteProvider;
-				public new function HRESULT(IProviderAdmin *self, MAPIUID* lpUID, Guid* lpInterface, uint32 ulFlags, IProfSect** lppProfSect) OpenProfileSection;
+				public new function HRESULT(ref IProviderAdmin self, HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) GetLastError;
+				public new function HRESULT(ref IProviderAdmin self, uint32 ulFlags, out IMAPITable* lppTable) GetProviderTable;
+				public new function HRESULT(ref IProviderAdmin self, ref int8 lpszProvider, uint32 cValues, SPropValue* lpProps, uint ulUIParam, uint32 ulFlags, out MAPIUID lpUID) CreateProvider;
+				public new function HRESULT(ref IProviderAdmin self, ref MAPIUID lpUID) DeleteProvider;
+				public new function HRESULT(ref IProviderAdmin self, MAPIUID* lpUID, Guid* lpInterface, uint32 ulFlags, out IProfSect* lppProfSect) OpenProfileSection;
 			}
 		}
 		[CRepr]
@@ -1525,54 +1525,54 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT HrGetView(SSortOrderSet* lpSSortOrderSet, CALLERRELEASE* lpfCallerRelease, uint32 ulCallerData, IMAPITable** lppMAPITable) mut
+			public HRESULT HrGetView(out SSortOrderSet lpSSortOrderSet, out CALLERRELEASE lpfCallerRelease, uint32 ulCallerData, out IMAPITable* lppMAPITable) mut
 			{
-				return VT.HrGetView(&this, lpSSortOrderSet, lpfCallerRelease, ulCallerData, lppMAPITable);
+				return VT.HrGetView(ref this, out lpSSortOrderSet, out lpfCallerRelease, ulCallerData, out lppMAPITable);
 			}
-			public HRESULT HrModifyRow(SRow* param0) mut
+			public HRESULT HrModifyRow(out SRow param0) mut
 			{
-				return VT.HrModifyRow(&this, param0);
+				return VT.HrModifyRow(ref this, out param0);
 			}
-			public HRESULT HrDeleteRow(SPropValue* lpSPropValue) mut
+			public HRESULT HrDeleteRow(out SPropValue lpSPropValue) mut
 			{
-				return VT.HrDeleteRow(&this, lpSPropValue);
+				return VT.HrDeleteRow(ref this, out lpSPropValue);
 			}
-			public HRESULT HrQueryRow(SPropValue* lpsPropValue, SRow** lppSRow, uint32* lpuliRow) mut
+			public HRESULT HrQueryRow(out SPropValue lpsPropValue, out SRow* lppSRow, out uint32 lpuliRow) mut
 			{
-				return VT.HrQueryRow(&this, lpsPropValue, lppSRow, lpuliRow);
+				return VT.HrQueryRow(ref this, out lpsPropValue, out lppSRow, out lpuliRow);
 			}
-			public HRESULT HrEnumRow(uint32 ulRowNumber, SRow** lppSRow) mut
+			public HRESULT HrEnumRow(uint32 ulRowNumber, out SRow* lppSRow) mut
 			{
-				return VT.HrEnumRow(&this, ulRowNumber, lppSRow);
+				return VT.HrEnumRow(ref this, ulRowNumber, out lppSRow);
 			}
-			public HRESULT HrNotify(uint32 ulFlags, uint32 cValues, SPropValue* lpSPropValue) mut
+			public HRESULT HrNotify(uint32 ulFlags, uint32 cValues, out SPropValue lpSPropValue) mut
 			{
-				return VT.HrNotify(&this, ulFlags, cValues, lpSPropValue);
+				return VT.HrNotify(ref this, ulFlags, cValues, out lpSPropValue);
 			}
-			public HRESULT HrInsertRow(uint32 uliRow, SRow* lpSRow) mut
+			public HRESULT HrInsertRow(uint32 uliRow, out SRow lpSRow) mut
 			{
-				return VT.HrInsertRow(&this, uliRow, lpSRow);
+				return VT.HrInsertRow(ref this, uliRow, out lpSRow);
 			}
-			public HRESULT HrModifyRows(uint32 ulFlags, SRowSet* lpSRowSet) mut
+			public HRESULT HrModifyRows(uint32 ulFlags, out SRowSet lpSRowSet) mut
 			{
-				return VT.HrModifyRows(&this, ulFlags, lpSRowSet);
+				return VT.HrModifyRows(ref this, ulFlags, out lpSRowSet);
 			}
-			public HRESULT HrDeleteRows(uint32 ulFlags, SRowSet* lprowsetToDelete, uint32* cRowsDeleted) mut
+			public HRESULT HrDeleteRows(uint32 ulFlags, out SRowSet lprowsetToDelete, out uint32 cRowsDeleted) mut
 			{
-				return VT.HrDeleteRows(&this, ulFlags, lprowsetToDelete, cRowsDeleted);
+				return VT.HrDeleteRows(ref this, ulFlags, out lprowsetToDelete, out cRowsDeleted);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITableData *self, SSortOrderSet* lpSSortOrderSet, CALLERRELEASE* lpfCallerRelease, uint32 ulCallerData, IMAPITable** lppMAPITable) HrGetView;
-				public new function HRESULT(ITableData *self, SRow* param0) HrModifyRow;
-				public new function HRESULT(ITableData *self, SPropValue* lpSPropValue) HrDeleteRow;
-				public new function HRESULT(ITableData *self, SPropValue* lpsPropValue, SRow** lppSRow, uint32* lpuliRow) HrQueryRow;
-				public new function HRESULT(ITableData *self, uint32 ulRowNumber, SRow** lppSRow) HrEnumRow;
-				public new function HRESULT(ITableData *self, uint32 ulFlags, uint32 cValues, SPropValue* lpSPropValue) HrNotify;
-				public new function HRESULT(ITableData *self, uint32 uliRow, SRow* lpSRow) HrInsertRow;
-				public new function HRESULT(ITableData *self, uint32 ulFlags, SRowSet* lpSRowSet) HrModifyRows;
-				public new function HRESULT(ITableData *self, uint32 ulFlags, SRowSet* lprowsetToDelete, uint32* cRowsDeleted) HrDeleteRows;
+				public new function HRESULT(ref ITableData self, out SSortOrderSet lpSSortOrderSet, out CALLERRELEASE lpfCallerRelease, uint32 ulCallerData, out IMAPITable* lppMAPITable) HrGetView;
+				public new function HRESULT(ref ITableData self, out SRow param0) HrModifyRow;
+				public new function HRESULT(ref ITableData self, out SPropValue lpSPropValue) HrDeleteRow;
+				public new function HRESULT(ref ITableData self, out SPropValue lpsPropValue, out SRow* lppSRow, out uint32 lpuliRow) HrQueryRow;
+				public new function HRESULT(ref ITableData self, uint32 ulRowNumber, out SRow* lppSRow) HrEnumRow;
+				public new function HRESULT(ref ITableData self, uint32 ulFlags, uint32 cValues, out SPropValue lpSPropValue) HrNotify;
+				public new function HRESULT(ref ITableData self, uint32 uliRow, out SRow lpSRow) HrInsertRow;
+				public new function HRESULT(ref ITableData self, uint32 ulFlags, out SRowSet lpSRowSet) HrModifyRows;
+				public new function HRESULT(ref ITableData self, uint32 ulFlags, out SRowSet lprowsetToDelete, out uint32 cRowsDeleted) HrDeleteRows;
 			}
 		}
 		[CRepr]
@@ -1582,27 +1582,27 @@ namespace Win32
 			
 			public HRESULT HrSetObjAccess(uint32 ulAccess) mut
 			{
-				return VT.HrSetObjAccess(&this, ulAccess);
+				return VT.HrSetObjAccess(ref this, ulAccess);
 			}
-			public HRESULT HrSetPropAccess(SPropTagArray* lpPropTagArray, uint32* rgulAccess) mut
+			public HRESULT HrSetPropAccess(out SPropTagArray lpPropTagArray, out uint32 rgulAccess) mut
 			{
-				return VT.HrSetPropAccess(&this, lpPropTagArray, rgulAccess);
+				return VT.HrSetPropAccess(ref this, out lpPropTagArray, out rgulAccess);
 			}
-			public HRESULT HrGetPropAccess(SPropTagArray** lppPropTagArray, uint32** lprgulAccess) mut
+			public HRESULT HrGetPropAccess(out SPropTagArray* lppPropTagArray, out uint32* lprgulAccess) mut
 			{
-				return VT.HrGetPropAccess(&this, lppPropTagArray, lprgulAccess);
+				return VT.HrGetPropAccess(ref this, out lppPropTagArray, out lprgulAccess);
 			}
-			public HRESULT HrAddObjProps(SPropTagArray* lppPropTagArray, SPropProblemArray** lprgulAccess) mut
+			public HRESULT HrAddObjProps(out SPropTagArray lppPropTagArray, out SPropProblemArray* lprgulAccess) mut
 			{
-				return VT.HrAddObjProps(&this, lppPropTagArray, lprgulAccess);
+				return VT.HrAddObjProps(ref this, out lppPropTagArray, out lprgulAccess);
 			}
 			[CRepr]
 			public struct VTable : IMAPIProp.VTable
 			{
-				public new function HRESULT(IPropData *self, uint32 ulAccess) HrSetObjAccess;
-				public new function HRESULT(IPropData *self, SPropTagArray* lpPropTagArray, uint32* rgulAccess) HrSetPropAccess;
-				public new function HRESULT(IPropData *self, SPropTagArray** lppPropTagArray, uint32** lprgulAccess) HrGetPropAccess;
-				public new function HRESULT(IPropData *self, SPropTagArray* lppPropTagArray, SPropProblemArray** lprgulAccess) HrAddObjProps;
+				public new function HRESULT(ref IPropData self, uint32 ulAccess) HrSetObjAccess;
+				public new function HRESULT(ref IPropData self, out SPropTagArray lpPropTagArray, out uint32 rgulAccess) HrSetPropAccess;
+				public new function HRESULT(ref IPropData self, out SPropTagArray* lppPropTagArray, out uint32* lprgulAccess) HrGetPropAccess;
+				public new function HRESULT(ref IPropData self, out SPropTagArray lppPropTagArray, out SPropProblemArray* lprgulAccess) HrAddObjProps;
 			}
 		}
 		[CRepr]
@@ -1610,99 +1610,99 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenEntry(uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** lppUnk) mut
+			public HRESULT OpenEntry(uint32 cbEntryID, out ENTRYID lpEntryID, out Guid lpInterface, uint32 ulFlags, out uint32 lpulObjType, out IUnknown* lppUnk) mut
 			{
-				return VT.OpenEntry(&this, cbEntryID, lpEntryID, lpInterface, ulFlags, lpulObjType, lppUnk);
+				return VT.OpenEntry(ref this, cbEntryID, out lpEntryID, out lpInterface, ulFlags, out lpulObjType, out lppUnk);
 			}
-			public HRESULT CompareEntryIDs(uint32 cbEntryID1, ENTRYID* lpEntryID1, uint32 cbEntryID2, ENTRYID* lpEntryID2, uint32 ulFlags, uint32* lpulResult) mut
+			public HRESULT CompareEntryIDs(uint32 cbEntryID1, out ENTRYID lpEntryID1, uint32 cbEntryID2, out ENTRYID lpEntryID2, uint32 ulFlags, out uint32 lpulResult) mut
 			{
-				return VT.CompareEntryIDs(&this, cbEntryID1, lpEntryID1, cbEntryID2, lpEntryID2, ulFlags, lpulResult);
+				return VT.CompareEntryIDs(ref this, cbEntryID1, out lpEntryID1, cbEntryID2, out lpEntryID2, ulFlags, out lpulResult);
 			}
-			public HRESULT Advise(uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) mut
+			public HRESULT Advise(uint32 cbEntryID, out ENTRYID lpEntryID, uint32 ulEventMask, ref IMAPIAdviseSink lpAdviseSink, out uint32 lpulConnection) mut
 			{
-				return VT.Advise(&this, cbEntryID, lpEntryID, ulEventMask, lpAdviseSink, lpulConnection);
+				return VT.Advise(ref this, cbEntryID, out lpEntryID, ulEventMask, ref lpAdviseSink, out lpulConnection);
 			}
 			public HRESULT Unadvise(uint32 ulConnection) mut
 			{
-				return VT.Unadvise(&this, ulConnection);
+				return VT.Unadvise(ref this, ulConnection);
 			}
-			public HRESULT CreateOneOff(int8* lpszName, int8* lpszAdrType, int8* lpszAddress, uint32 ulFlags, uint32* lpcbEntryID, ENTRYID** lppEntryID) mut
+			public HRESULT CreateOneOff(out int8 lpszName, out int8 lpszAdrType, out int8 lpszAddress, uint32 ulFlags, out uint32 lpcbEntryID, out ENTRYID* lppEntryID) mut
 			{
-				return VT.CreateOneOff(&this, lpszName, lpszAdrType, lpszAddress, ulFlags, lpcbEntryID, lppEntryID);
+				return VT.CreateOneOff(ref this, out lpszName, out lpszAdrType, out lpszAddress, ulFlags, out lpcbEntryID, out lppEntryID);
 			}
-			public HRESULT NewEntry(uint32 ulUIParam, uint32 ulFlags, uint32 cbEIDContainer, ENTRYID* lpEIDContainer, uint32 cbEIDNewEntryTpl, ENTRYID* lpEIDNewEntryTpl, uint32* lpcbEIDNewEntry, ENTRYID** lppEIDNewEntry) mut
+			public HRESULT NewEntry(uint32 ulUIParam, uint32 ulFlags, uint32 cbEIDContainer, out ENTRYID lpEIDContainer, uint32 cbEIDNewEntryTpl, out ENTRYID lpEIDNewEntryTpl, out uint32 lpcbEIDNewEntry, out ENTRYID* lppEIDNewEntry) mut
 			{
-				return VT.NewEntry(&this, ulUIParam, ulFlags, cbEIDContainer, lpEIDContainer, cbEIDNewEntryTpl, lpEIDNewEntryTpl, lpcbEIDNewEntry, lppEIDNewEntry);
+				return VT.NewEntry(ref this, ulUIParam, ulFlags, cbEIDContainer, out lpEIDContainer, cbEIDNewEntryTpl, out lpEIDNewEntryTpl, out lpcbEIDNewEntry, out lppEIDNewEntry);
 			}
-			public HRESULT ResolveName(uint ulUIParam, uint32 ulFlags, int8* lpszNewEntryTitle, ADRLIST* lpAdrList) mut
+			public HRESULT ResolveName(uint ulUIParam, uint32 ulFlags, out int8 lpszNewEntryTitle, out ADRLIST lpAdrList) mut
 			{
-				return VT.ResolveName(&this, ulUIParam, ulFlags, lpszNewEntryTitle, lpAdrList);
+				return VT.ResolveName(ref this, ulUIParam, ulFlags, out lpszNewEntryTitle, out lpAdrList);
 			}
-			public HRESULT Address(uint32* lpulUIParam, ADRPARM* lpAdrParms, ADRLIST** lppAdrList) mut
+			public HRESULT Address(out uint32 lpulUIParam, out ADRPARM lpAdrParms, out ADRLIST* lppAdrList) mut
 			{
-				return VT.Address(&this, lpulUIParam, lpAdrParms, lppAdrList);
+				return VT.Address(ref this, out lpulUIParam, out lpAdrParms, out lppAdrList);
 			}
-			public HRESULT Details(uint* lpulUIParam, LPFNDISMISS lpfnDismiss, void* lpvDismissContext, uint32 cbEntryID, ENTRYID* lpEntryID, LPFNBUTTON lpfButtonCallback, void* lpvButtonContext, int8* lpszButtonText, uint32 ulFlags) mut
+			public HRESULT Details(out uint lpulUIParam, LPFNDISMISS lpfnDismiss, void* lpvDismissContext, uint32 cbEntryID, out ENTRYID lpEntryID, LPFNBUTTON lpfButtonCallback, void* lpvButtonContext, out int8 lpszButtonText, uint32 ulFlags) mut
 			{
-				return VT.Details(&this, lpulUIParam, lpfnDismiss, lpvDismissContext, cbEntryID, lpEntryID, lpfButtonCallback, lpvButtonContext, lpszButtonText, ulFlags);
+				return VT.Details(ref this, out lpulUIParam, lpfnDismiss, lpvDismissContext, cbEntryID, out lpEntryID, lpfButtonCallback, lpvButtonContext, out lpszButtonText, ulFlags);
 			}
-			public HRESULT RecipOptions(uint32 ulUIParam, uint32 ulFlags, ADRENTRY* lpRecip) mut
+			public HRESULT RecipOptions(uint32 ulUIParam, uint32 ulFlags, out ADRENTRY lpRecip) mut
 			{
-				return VT.RecipOptions(&this, ulUIParam, ulFlags, lpRecip);
+				return VT.RecipOptions(ref this, ulUIParam, ulFlags, out lpRecip);
 			}
-			public HRESULT QueryDefaultRecipOpt(int8* lpszAdrType, uint32 ulFlags, uint32* lpcValues, SPropValue** lppOptions) mut
+			public HRESULT QueryDefaultRecipOpt(out int8 lpszAdrType, uint32 ulFlags, out uint32 lpcValues, out SPropValue* lppOptions) mut
 			{
-				return VT.QueryDefaultRecipOpt(&this, lpszAdrType, ulFlags, lpcValues, lppOptions);
+				return VT.QueryDefaultRecipOpt(ref this, out lpszAdrType, ulFlags, out lpcValues, out lppOptions);
 			}
-			public HRESULT GetPAB(uint32* lpcbEntryID, ENTRYID** lppEntryID) mut
+			public HRESULT GetPAB(out uint32 lpcbEntryID, out ENTRYID* lppEntryID) mut
 			{
-				return VT.GetPAB(&this, lpcbEntryID, lppEntryID);
+				return VT.GetPAB(ref this, out lpcbEntryID, out lppEntryID);
 			}
-			public HRESULT SetPAB(uint32 cbEntryID, ENTRYID* lpEntryID) mut
+			public HRESULT SetPAB(uint32 cbEntryID, out ENTRYID lpEntryID) mut
 			{
-				return VT.SetPAB(&this, cbEntryID, lpEntryID);
+				return VT.SetPAB(ref this, cbEntryID, out lpEntryID);
 			}
-			public HRESULT GetDefaultDir(uint32* lpcbEntryID, ENTRYID** lppEntryID) mut
+			public HRESULT GetDefaultDir(out uint32 lpcbEntryID, out ENTRYID* lppEntryID) mut
 			{
-				return VT.GetDefaultDir(&this, lpcbEntryID, lppEntryID);
+				return VT.GetDefaultDir(ref this, out lpcbEntryID, out lppEntryID);
 			}
-			public HRESULT SetDefaultDir(uint32 cbEntryID, ENTRYID* lpEntryID) mut
+			public HRESULT SetDefaultDir(uint32 cbEntryID, out ENTRYID lpEntryID) mut
 			{
-				return VT.SetDefaultDir(&this, cbEntryID, lpEntryID);
+				return VT.SetDefaultDir(ref this, cbEntryID, out lpEntryID);
 			}
-			public HRESULT GetSearchPath(uint32 ulFlags, SRowSet** lppSearchPath) mut
+			public HRESULT GetSearchPath(uint32 ulFlags, out SRowSet* lppSearchPath) mut
 			{
-				return VT.GetSearchPath(&this, ulFlags, lppSearchPath);
+				return VT.GetSearchPath(ref this, ulFlags, out lppSearchPath);
 			}
-			public HRESULT SetSearchPath(uint32 ulFlags, SRowSet* lpSearchPath) mut
+			public HRESULT SetSearchPath(uint32 ulFlags, out SRowSet lpSearchPath) mut
 			{
-				return VT.SetSearchPath(&this, ulFlags, lpSearchPath);
+				return VT.SetSearchPath(ref this, ulFlags, out lpSearchPath);
 			}
-			public HRESULT PrepareRecips(uint32 ulFlags, SPropTagArray* lpPropTagArray, ADRLIST* lpRecipList) mut
+			public HRESULT PrepareRecips(uint32 ulFlags, out SPropTagArray lpPropTagArray, out ADRLIST lpRecipList) mut
 			{
-				return VT.PrepareRecips(&this, ulFlags, lpPropTagArray, lpRecipList);
+				return VT.PrepareRecips(ref this, ulFlags, out lpPropTagArray, out lpRecipList);
 			}
 			[CRepr]
 			public struct VTable : IMAPIProp.VTable
 			{
-				public new function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID, Guid* lpInterface, uint32 ulFlags, uint32* lpulObjType, IUnknown** lppUnk) OpenEntry;
-				public new function HRESULT(IAddrBook *self, uint32 cbEntryID1, ENTRYID* lpEntryID1, uint32 cbEntryID2, ENTRYID* lpEntryID2, uint32 ulFlags, uint32* lpulResult) CompareEntryIDs;
-				public new function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID, uint32 ulEventMask, IMAPIAdviseSink* lpAdviseSink, uint32* lpulConnection) Advise;
-				public new function HRESULT(IAddrBook *self, uint32 ulConnection) Unadvise;
-				public new function HRESULT(IAddrBook *self, int8* lpszName, int8* lpszAdrType, int8* lpszAddress, uint32 ulFlags, uint32* lpcbEntryID, ENTRYID** lppEntryID) CreateOneOff;
-				public new function HRESULT(IAddrBook *self, uint32 ulUIParam, uint32 ulFlags, uint32 cbEIDContainer, ENTRYID* lpEIDContainer, uint32 cbEIDNewEntryTpl, ENTRYID* lpEIDNewEntryTpl, uint32* lpcbEIDNewEntry, ENTRYID** lppEIDNewEntry) NewEntry;
-				public new function HRESULT(IAddrBook *self, uint ulUIParam, uint32 ulFlags, int8* lpszNewEntryTitle, ADRLIST* lpAdrList) ResolveName;
-				public new function HRESULT(IAddrBook *self, uint32* lpulUIParam, ADRPARM* lpAdrParms, ADRLIST** lppAdrList) Address;
-				public new function HRESULT(IAddrBook *self, uint* lpulUIParam, LPFNDISMISS lpfnDismiss, void* lpvDismissContext, uint32 cbEntryID, ENTRYID* lpEntryID, LPFNBUTTON lpfButtonCallback, void* lpvButtonContext, int8* lpszButtonText, uint32 ulFlags) Details;
-				public new function HRESULT(IAddrBook *self, uint32 ulUIParam, uint32 ulFlags, ADRENTRY* lpRecip) RecipOptions;
-				public new function HRESULT(IAddrBook *self, int8* lpszAdrType, uint32 ulFlags, uint32* lpcValues, SPropValue** lppOptions) QueryDefaultRecipOpt;
-				public new function HRESULT(IAddrBook *self, uint32* lpcbEntryID, ENTRYID** lppEntryID) GetPAB;
-				public new function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID) SetPAB;
-				public new function HRESULT(IAddrBook *self, uint32* lpcbEntryID, ENTRYID** lppEntryID) GetDefaultDir;
-				public new function HRESULT(IAddrBook *self, uint32 cbEntryID, ENTRYID* lpEntryID) SetDefaultDir;
-				public new function HRESULT(IAddrBook *self, uint32 ulFlags, SRowSet** lppSearchPath) GetSearchPath;
-				public new function HRESULT(IAddrBook *self, uint32 ulFlags, SRowSet* lpSearchPath) SetSearchPath;
-				public new function HRESULT(IAddrBook *self, uint32 ulFlags, SPropTagArray* lpPropTagArray, ADRLIST* lpRecipList) PrepareRecips;
+				public new function HRESULT(ref IAddrBook self, uint32 cbEntryID, out ENTRYID lpEntryID, out Guid lpInterface, uint32 ulFlags, out uint32 lpulObjType, out IUnknown* lppUnk) OpenEntry;
+				public new function HRESULT(ref IAddrBook self, uint32 cbEntryID1, out ENTRYID lpEntryID1, uint32 cbEntryID2, out ENTRYID lpEntryID2, uint32 ulFlags, out uint32 lpulResult) CompareEntryIDs;
+				public new function HRESULT(ref IAddrBook self, uint32 cbEntryID, out ENTRYID lpEntryID, uint32 ulEventMask, ref IMAPIAdviseSink lpAdviseSink, out uint32 lpulConnection) Advise;
+				public new function HRESULT(ref IAddrBook self, uint32 ulConnection) Unadvise;
+				public new function HRESULT(ref IAddrBook self, out int8 lpszName, out int8 lpszAdrType, out int8 lpszAddress, uint32 ulFlags, out uint32 lpcbEntryID, out ENTRYID* lppEntryID) CreateOneOff;
+				public new function HRESULT(ref IAddrBook self, uint32 ulUIParam, uint32 ulFlags, uint32 cbEIDContainer, out ENTRYID lpEIDContainer, uint32 cbEIDNewEntryTpl, out ENTRYID lpEIDNewEntryTpl, out uint32 lpcbEIDNewEntry, out ENTRYID* lppEIDNewEntry) NewEntry;
+				public new function HRESULT(ref IAddrBook self, uint ulUIParam, uint32 ulFlags, out int8 lpszNewEntryTitle, out ADRLIST lpAdrList) ResolveName;
+				public new function HRESULT(ref IAddrBook self, out uint32 lpulUIParam, out ADRPARM lpAdrParms, out ADRLIST* lppAdrList) Address;
+				public new function HRESULT(ref IAddrBook self, out uint lpulUIParam, LPFNDISMISS lpfnDismiss, void* lpvDismissContext, uint32 cbEntryID, out ENTRYID lpEntryID, LPFNBUTTON lpfButtonCallback, void* lpvButtonContext, out int8 lpszButtonText, uint32 ulFlags) Details;
+				public new function HRESULT(ref IAddrBook self, uint32 ulUIParam, uint32 ulFlags, out ADRENTRY lpRecip) RecipOptions;
+				public new function HRESULT(ref IAddrBook self, out int8 lpszAdrType, uint32 ulFlags, out uint32 lpcValues, out SPropValue* lppOptions) QueryDefaultRecipOpt;
+				public new function HRESULT(ref IAddrBook self, out uint32 lpcbEntryID, out ENTRYID* lppEntryID) GetPAB;
+				public new function HRESULT(ref IAddrBook self, uint32 cbEntryID, out ENTRYID lpEntryID) SetPAB;
+				public new function HRESULT(ref IAddrBook self, out uint32 lpcbEntryID, out ENTRYID* lppEntryID) GetDefaultDir;
+				public new function HRESULT(ref IAddrBook self, uint32 cbEntryID, out ENTRYID lpEntryID) SetDefaultDir;
+				public new function HRESULT(ref IAddrBook self, uint32 ulFlags, out SRowSet* lppSearchPath) GetSearchPath;
+				public new function HRESULT(ref IAddrBook self, uint32 ulFlags, out SRowSet lpSearchPath) SetSearchPath;
+				public new function HRESULT(ref IAddrBook self, uint32 ulFlags, out SPropTagArray lpPropTagArray, out ADRLIST lpRecipList) PrepareRecips;
 			}
 		}
 		[CRepr]
@@ -1710,74 +1710,74 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) mut
+			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) mut
 			{
-				return VT.GetLastError(&this, hResult, ulFlags, lppMAPIError);
+				return VT.GetLastError(ref this, hResult, ulFlags, out lppMAPIError);
 			}
 			public HRESULT AllocateBuffer(uint32 cbSize, void** lppBuffer) mut
 			{
-				return VT.AllocateBuffer(&this, cbSize, lppBuffer);
+				return VT.AllocateBuffer(ref this, cbSize, lppBuffer);
 			}
 			public HRESULT AllocateMore(uint32 cbSize, void* lpObject, void** lppBuffer) mut
 			{
-				return VT.AllocateMore(&this, cbSize, lpObject, lppBuffer);
+				return VT.AllocateMore(ref this, cbSize, lpObject, lppBuffer);
 			}
 			public HRESULT FreeBuffer(void* lpBuffer) mut
 			{
-				return VT.FreeBuffer(&this, lpBuffer);
+				return VT.FreeBuffer(ref this, lpBuffer);
 			}
 			public HRESULT Backup(PSTR lpFileName) mut
 			{
-				return VT.Backup(&this, lpFileName);
+				return VT.Backup(ref this, lpFileName);
 			}
 			public HRESULT Import(PSTR lpWIP) mut
 			{
-				return VT.Import(&this, lpWIP);
+				return VT.Import(ref this, lpWIP);
 			}
-			public HRESULT Find(IAddrBook* lpIAB, HWND hWnd) mut
+			public HRESULT Find(ref IAddrBook lpIAB, HWND hWnd) mut
 			{
-				return VT.Find(&this, lpIAB, hWnd);
+				return VT.Find(ref this, ref lpIAB, hWnd);
 			}
-			public HRESULT VCardDisplay(IAddrBook* lpIAB, HWND hWnd, PSTR lpszFileName) mut
+			public HRESULT VCardDisplay(ref IAddrBook lpIAB, HWND hWnd, PSTR lpszFileName) mut
 			{
-				return VT.VCardDisplay(&this, lpIAB, hWnd, lpszFileName);
+				return VT.VCardDisplay(ref this, ref lpIAB, hWnd, lpszFileName);
 			}
-			public HRESULT LDAPUrl(IAddrBook* lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) mut
+			public HRESULT LDAPUrl(ref IAddrBook lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) mut
 			{
-				return VT.LDAPUrl(&this, lpIAB, hWnd, ulFlags, lpszURL, lppMailUser);
+				return VT.LDAPUrl(ref this, ref lpIAB, hWnd, ulFlags, lpszURL, lppMailUser);
 			}
-			public HRESULT VCardCreate(IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser* lpMailUser) mut
+			public HRESULT VCardCreate(ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, ref IMailUser lpMailUser) mut
 			{
-				return VT.VCardCreate(&this, lpIAB, ulFlags, lpszVCard, lpMailUser);
+				return VT.VCardCreate(ref this, ref lpIAB, ulFlags, lpszVCard, ref lpMailUser);
 			}
-			public HRESULT VCardRetrieve(IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser** lppMailUser) mut
+			public HRESULT VCardRetrieve(ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, out IMailUser* lppMailUser) mut
 			{
-				return VT.VCardRetrieve(&this, lpIAB, ulFlags, lpszVCard, lppMailUser);
+				return VT.VCardRetrieve(ref this, ref lpIAB, ulFlags, lpszVCard, out lppMailUser);
 			}
-			public HRESULT GetMe(IAddrBook* lpIAB, uint32 ulFlags, uint32* lpdwAction, SBinary* lpsbEID, HWND hwnd) mut
+			public HRESULT GetMe(ref IAddrBook lpIAB, uint32 ulFlags, out uint32 lpdwAction, out SBinary lpsbEID, HWND hwnd) mut
 			{
-				return VT.GetMe(&this, lpIAB, ulFlags, lpdwAction, lpsbEID, hwnd);
+				return VT.GetMe(ref this, ref lpIAB, ulFlags, out lpdwAction, out lpsbEID, hwnd);
 			}
-			public HRESULT SetMe(IAddrBook* lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) mut
+			public HRESULT SetMe(ref IAddrBook lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) mut
 			{
-				return VT.SetMe(&this, lpIAB, ulFlags, sbEID, hwnd);
+				return VT.SetMe(ref this, ref lpIAB, ulFlags, sbEID, hwnd);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWABObject *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-				public new function HRESULT(IWABObject *self, uint32 cbSize, void** lppBuffer) AllocateBuffer;
-				public new function HRESULT(IWABObject *self, uint32 cbSize, void* lpObject, void** lppBuffer) AllocateMore;
-				public new function HRESULT(IWABObject *self, void* lpBuffer) FreeBuffer;
-				public new function HRESULT(IWABObject *self, PSTR lpFileName) Backup;
-				public new function HRESULT(IWABObject *self, PSTR lpWIP) Import;
-				public new function HRESULT(IWABObject *self, IAddrBook* lpIAB, HWND hWnd) Find;
-				public new function HRESULT(IWABObject *self, IAddrBook* lpIAB, HWND hWnd, PSTR lpszFileName) VCardDisplay;
-				public new function HRESULT(IWABObject *self, IAddrBook* lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) LDAPUrl;
-				public new function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser* lpMailUser) VCardCreate;
-				public new function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser** lppMailUser) VCardRetrieve;
-				public new function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, uint32* lpdwAction, SBinary* lpsbEID, HWND hwnd) GetMe;
-				public new function HRESULT(IWABObject *self, IAddrBook* lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) SetMe;
+				public new function HRESULT(ref IWABObject self, HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) GetLastError;
+				public new function HRESULT(ref IWABObject self, uint32 cbSize, void** lppBuffer) AllocateBuffer;
+				public new function HRESULT(ref IWABObject self, uint32 cbSize, void* lpObject, void** lppBuffer) AllocateMore;
+				public new function HRESULT(ref IWABObject self, void* lpBuffer) FreeBuffer;
+				public new function HRESULT(ref IWABObject self, PSTR lpFileName) Backup;
+				public new function HRESULT(ref IWABObject self, PSTR lpWIP) Import;
+				public new function HRESULT(ref IWABObject self, ref IAddrBook lpIAB, HWND hWnd) Find;
+				public new function HRESULT(ref IWABObject self, ref IAddrBook lpIAB, HWND hWnd, PSTR lpszFileName) VCardDisplay;
+				public new function HRESULT(ref IWABObject self, ref IAddrBook lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) LDAPUrl;
+				public new function HRESULT(ref IWABObject self, ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, ref IMailUser lpMailUser) VCardCreate;
+				public new function HRESULT(ref IWABObject self, ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, out IMailUser* lppMailUser) VCardRetrieve;
+				public new function HRESULT(ref IWABObject self, ref IAddrBook lpIAB, uint32 ulFlags, out uint32 lpdwAction, out SBinary lpsbEID, HWND hwnd) GetMe;
+				public new function HRESULT(ref IWABObject self, ref IAddrBook lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) SetMe;
 			}
 		}
 		[CRepr]
@@ -1786,89 +1786,89 @@ namespace Win32
 			protected VTable* vt;
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryInterface(Guid* riid, void** ppvObj) mut
+			public HRESULT QueryInterface(in Guid riid, void** ppvObj) mut
 			{
-				return VT.QueryInterface(&this, riid, ppvObj);
+				return VT.QueryInterface(ref this, riid, ppvObj);
 			}
 			public uint32 AddRef() mut
 			{
-				return VT.AddRef(&this);
+				return VT.AddRef(ref this);
 			}
 			public uint32 Release() mut
 			{
-				return VT.Release(&this);
+				return VT.Release(ref this);
 			}
-			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) mut
+			public HRESULT GetLastError(HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) mut
 			{
-				return VT.GetLastError(&this, hResult, ulFlags, lppMAPIError);
+				return VT.GetLastError(ref this, hResult, ulFlags, out lppMAPIError);
 			}
 			public HRESULT AllocateBuffer(uint32 cbSize, void** lppBuffer) mut
 			{
-				return VT.AllocateBuffer(&this, cbSize, lppBuffer);
+				return VT.AllocateBuffer(ref this, cbSize, lppBuffer);
 			}
 			public HRESULT AllocateMore(uint32 cbSize, void* lpObject, void** lppBuffer) mut
 			{
-				return VT.AllocateMore(&this, cbSize, lpObject, lppBuffer);
+				return VT.AllocateMore(ref this, cbSize, lpObject, lppBuffer);
 			}
 			public HRESULT FreeBuffer(void* lpBuffer) mut
 			{
-				return VT.FreeBuffer(&this, lpBuffer);
+				return VT.FreeBuffer(ref this, lpBuffer);
 			}
 			public HRESULT Backup(PSTR lpFileName) mut
 			{
-				return VT.Backup(&this, lpFileName);
+				return VT.Backup(ref this, lpFileName);
 			}
 			public HRESULT Import(PSTR lpWIP) mut
 			{
-				return VT.Import(&this, lpWIP);
+				return VT.Import(ref this, lpWIP);
 			}
-			public HRESULT Find(IAddrBook* lpIAB, HWND hWnd) mut
+			public HRESULT Find(ref IAddrBook lpIAB, HWND hWnd) mut
 			{
-				return VT.Find(&this, lpIAB, hWnd);
+				return VT.Find(ref this, ref lpIAB, hWnd);
 			}
-			public HRESULT VCardDisplay(IAddrBook* lpIAB, HWND hWnd, PSTR lpszFileName) mut
+			public HRESULT VCardDisplay(ref IAddrBook lpIAB, HWND hWnd, PSTR lpszFileName) mut
 			{
-				return VT.VCardDisplay(&this, lpIAB, hWnd, lpszFileName);
+				return VT.VCardDisplay(ref this, ref lpIAB, hWnd, lpszFileName);
 			}
-			public HRESULT LDAPUrl(IAddrBook* lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) mut
+			public HRESULT LDAPUrl(ref IAddrBook lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) mut
 			{
-				return VT.LDAPUrl(&this, lpIAB, hWnd, ulFlags, lpszURL, lppMailUser);
+				return VT.LDAPUrl(ref this, ref lpIAB, hWnd, ulFlags, lpszURL, lppMailUser);
 			}
-			public HRESULT VCardCreate(IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser* lpMailUser) mut
+			public HRESULT VCardCreate(ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, ref IMailUser lpMailUser) mut
 			{
-				return VT.VCardCreate(&this, lpIAB, ulFlags, lpszVCard, lpMailUser);
+				return VT.VCardCreate(ref this, ref lpIAB, ulFlags, lpszVCard, ref lpMailUser);
 			}
-			public HRESULT VCardRetrieve(IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser** lppMailUser) mut
+			public HRESULT VCardRetrieve(ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, out IMailUser* lppMailUser) mut
 			{
-				return VT.VCardRetrieve(&this, lpIAB, ulFlags, lpszVCard, lppMailUser);
+				return VT.VCardRetrieve(ref this, ref lpIAB, ulFlags, lpszVCard, out lppMailUser);
 			}
-			public HRESULT GetMe(IAddrBook* lpIAB, uint32 ulFlags, uint32* lpdwAction, SBinary* lpsbEID, HWND hwnd) mut
+			public HRESULT GetMe(ref IAddrBook lpIAB, uint32 ulFlags, out uint32 lpdwAction, out SBinary lpsbEID, HWND hwnd) mut
 			{
-				return VT.GetMe(&this, lpIAB, ulFlags, lpdwAction, lpsbEID, hwnd);
+				return VT.GetMe(ref this, ref lpIAB, ulFlags, out lpdwAction, out lpsbEID, hwnd);
 			}
-			public HRESULT SetMe(IAddrBook* lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) mut
+			public HRESULT SetMe(ref IAddrBook lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) mut
 			{
-				return VT.SetMe(&this, lpIAB, ulFlags, sbEID, hwnd);
+				return VT.SetMe(ref this, ref lpIAB, ulFlags, sbEID, hwnd);
 			}
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(IWABOBJECT_ *self, Guid* riid, void** ppvObj) QueryInterface;
-				public new function uint32(IWABOBJECT_ *self) AddRef;
-				public new function uint32(IWABOBJECT_ *self) Release;
-				public new function HRESULT(IWABOBJECT_ *self, HRESULT hResult, uint32 ulFlags, MAPIERROR** lppMAPIError) GetLastError;
-				public new function HRESULT(IWABOBJECT_ *self, uint32 cbSize, void** lppBuffer) AllocateBuffer;
-				public new function HRESULT(IWABOBJECT_ *self, uint32 cbSize, void* lpObject, void** lppBuffer) AllocateMore;
-				public new function HRESULT(IWABOBJECT_ *self, void* lpBuffer) FreeBuffer;
-				public new function HRESULT(IWABOBJECT_ *self, PSTR lpFileName) Backup;
-				public new function HRESULT(IWABOBJECT_ *self, PSTR lpWIP) Import;
-				public new function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, HWND hWnd) Find;
-				public new function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, HWND hWnd, PSTR lpszFileName) VCardDisplay;
-				public new function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) LDAPUrl;
-				public new function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser* lpMailUser) VCardCreate;
-				public new function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, PSTR lpszVCard, IMailUser** lppMailUser) VCardRetrieve;
-				public new function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, uint32* lpdwAction, SBinary* lpsbEID, HWND hwnd) GetMe;
-				public new function HRESULT(IWABOBJECT_ *self, IAddrBook* lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) SetMe;
+				public new function HRESULT(ref IWABOBJECT_ self, in Guid riid, void** ppvObj) QueryInterface;
+				public new function uint32(ref IWABOBJECT_ self) AddRef;
+				public new function uint32(ref IWABOBJECT_ self) Release;
+				public new function HRESULT(ref IWABOBJECT_ self, HRESULT hResult, uint32 ulFlags, out MAPIERROR* lppMAPIError) GetLastError;
+				public new function HRESULT(ref IWABOBJECT_ self, uint32 cbSize, void** lppBuffer) AllocateBuffer;
+				public new function HRESULT(ref IWABOBJECT_ self, uint32 cbSize, void* lpObject, void** lppBuffer) AllocateMore;
+				public new function HRESULT(ref IWABOBJECT_ self, void* lpBuffer) FreeBuffer;
+				public new function HRESULT(ref IWABOBJECT_ self, PSTR lpFileName) Backup;
+				public new function HRESULT(ref IWABOBJECT_ self, PSTR lpWIP) Import;
+				public new function HRESULT(ref IWABOBJECT_ self, ref IAddrBook lpIAB, HWND hWnd) Find;
+				public new function HRESULT(ref IWABOBJECT_ self, ref IAddrBook lpIAB, HWND hWnd, PSTR lpszFileName) VCardDisplay;
+				public new function HRESULT(ref IWABOBJECT_ self, ref IAddrBook lpIAB, HWND hWnd, uint32 ulFlags, PSTR lpszURL, IMailUser** lppMailUser) LDAPUrl;
+				public new function HRESULT(ref IWABOBJECT_ self, ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, ref IMailUser lpMailUser) VCardCreate;
+				public new function HRESULT(ref IWABOBJECT_ self, ref IAddrBook lpIAB, uint32 ulFlags, PSTR lpszVCard, out IMailUser* lppMailUser) VCardRetrieve;
+				public new function HRESULT(ref IWABOBJECT_ self, ref IAddrBook lpIAB, uint32 ulFlags, out uint32 lpdwAction, out SBinary lpsbEID, HWND hwnd) GetMe;
+				public new function HRESULT(ref IWABOBJECT_ self, ref IAddrBook lpIAB, uint32 ulFlags, SBinary sbEID, HWND hwnd) SetMe;
 			}
 		}
 		[CRepr]
@@ -1878,23 +1878,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(WABEXTDISPLAY* lpWABExtDisplay) mut
+			public HRESULT Initialize(out WABEXTDISPLAY lpWABExtDisplay) mut
 			{
-				return VT.Initialize(&this, lpWABExtDisplay);
+				return VT.Initialize(ref this, out lpWABExtDisplay);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWABExtInit *self, WABEXTDISPLAY* lpWABExtDisplay) Initialize;
+				public new function HRESULT(ref IWABExtInit self, out WABEXTDISPLAY lpWABExtDisplay) Initialize;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("rtm.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 CreateTable(Guid* lpInterface, LPALLOCATEBUFFER lpAllocateBuffer, LPALLOCATEMORE lpAllocateMore, LPFREEBUFFER lpFreeBuffer, void* lpvReserved, uint32 ulTableType, uint32 ulPropTagIndexColumn, SPropTagArray* lpSPropTagArrayColumns, ITableData** lppTableData);
+		public static extern int32 CreateTable(out Guid lpInterface, LPALLOCATEBUFFER lpAllocateBuffer, LPALLOCATEMORE lpAllocateMore, LPFREEBUFFER lpFreeBuffer, void* lpvReserved, uint32 ulTableType, uint32 ulPropTagIndexColumn, out SPropTagArray lpSPropTagArrayColumns, out ITableData* lppTableData);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 CreateIProp(Guid* lpInterface, LPALLOCATEBUFFER lpAllocateBuffer, LPALLOCATEMORE lpAllocateMore, LPFREEBUFFER lpFreeBuffer, void* lpvReserved, IPropData** lppPropData);
+		public static extern int32 CreateIProp(out Guid lpInterface, LPALLOCATEBUFFER lpAllocateBuffer, LPALLOCATEMORE lpAllocateMore, LPFREEBUFFER lpFreeBuffer, void* lpvReserved, out IPropData* lppPropData);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 MAPIInitIdle(void* lpvReserved);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1910,73 +1910,73 @@ namespace Win32
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern IMalloc* MAPIGetDefaultMalloc();
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OpenStreamOnFile(LPALLOCATEBUFFER lpAllocateBuffer, LPFREEBUFFER lpFreeBuffer, uint32 ulFlags, int8* lpszFileName, int8* lpszPrefix, IStream** lppStream);
+		public static extern HRESULT OpenStreamOnFile(LPALLOCATEBUFFER lpAllocateBuffer, LPFREEBUFFER lpFreeBuffer, uint32 ulFlags, ref int8 lpszFileName, int8* lpszPrefix, out IStream* lppStream);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PropCopyMore(SPropValue* lpSPropValueDest, SPropValue* lpSPropValueSrc, LPALLOCATEMORE lpfAllocMore, void* lpvObject);
+		public static extern int32 PropCopyMore(out SPropValue lpSPropValueDest, out SPropValue lpSPropValueSrc, LPALLOCATEMORE lpfAllocMore, void* lpvObject);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 UlPropSize(SPropValue* lpSPropValue);
+		public static extern uint32 UlPropSize(out SPropValue lpSPropValue);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL FEqualNames(MAPINAMEID* lpName1, MAPINAMEID* lpName2);
+		public static extern BOOL FEqualNames(out MAPINAMEID lpName1, out MAPINAMEID lpName2);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL FPropContainsProp(SPropValue* lpSPropValueDst, SPropValue* lpSPropValueSrc, uint32 ulFuzzyLevel);
+		public static extern BOOL FPropContainsProp(out SPropValue lpSPropValueDst, out SPropValue lpSPropValueSrc, uint32 ulFuzzyLevel);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL FPropCompareProp(SPropValue* lpSPropValue1, uint32 ulRelOp, SPropValue* lpSPropValue2);
+		public static extern BOOL FPropCompareProp(out SPropValue lpSPropValue1, uint32 ulRelOp, out SPropValue lpSPropValue2);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 LPropCompareProp(SPropValue* lpSPropValueA, SPropValue* lpSPropValueB);
+		public static extern int32 LPropCompareProp(out SPropValue lpSPropValueA, out SPropValue lpSPropValueB);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HrAddColumns(IMAPITable* lptbl, SPropTagArray* lpproptagColumnsNew, LPALLOCATEBUFFER lpAllocateBuffer, LPFREEBUFFER lpFreeBuffer);
+		public static extern HRESULT HrAddColumns(ref IMAPITable lptbl, out SPropTagArray lpproptagColumnsNew, LPALLOCATEBUFFER lpAllocateBuffer, LPFREEBUFFER lpFreeBuffer);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HrAddColumnsEx(IMAPITable* lptbl, SPropTagArray* lpproptagColumnsNew, LPALLOCATEBUFFER lpAllocateBuffer, LPFREEBUFFER lpFreeBuffer, int lpfnFilterColumns);
+		public static extern HRESULT HrAddColumnsEx(ref IMAPITable lptbl, out SPropTagArray lpproptagColumnsNew, LPALLOCATEBUFFER lpAllocateBuffer, LPFREEBUFFER lpFreeBuffer, int lpfnFilterColumns);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HrAllocAdviseSink(LPNOTIFCALLBACK lpfnCallback, void* lpvContext, IMAPIAdviseSink** lppAdviseSink);
+		public static extern HRESULT HrAllocAdviseSink(LPNOTIFCALLBACK lpfnCallback, void* lpvContext, out IMAPIAdviseSink* lppAdviseSink);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HrThisThreadAdviseSink(IMAPIAdviseSink* lpAdviseSink, IMAPIAdviseSink** lppAdviseSink);
+		public static extern HRESULT HrThisThreadAdviseSink(ref IMAPIAdviseSink lpAdviseSink, out IMAPIAdviseSink* lppAdviseSink);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HrDispatchNotifications(uint32 ulFlags);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT BuildDisplayTable(LPALLOCATEBUFFER lpAllocateBuffer, LPALLOCATEMORE lpAllocateMore, LPFREEBUFFER lpFreeBuffer, IMalloc* lpMalloc, HINSTANCE hInstance, uint32 cPages, DTPAGE* lpPage, uint32 ulFlags, IMAPITable** lppTable, ITableData** lppTblData);
+		public static extern HRESULT BuildDisplayTable(LPALLOCATEBUFFER lpAllocateBuffer, LPALLOCATEMORE lpAllocateMore, LPFREEBUFFER lpFreeBuffer, ref IMalloc lpMalloc, HINSTANCE hInstance, uint32 cPages, out DTPAGE lpPage, uint32 ulFlags, out IMAPITable* lppTable, out ITableData* lppTblData);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ScCountNotifications(int32 cNotifications, NOTIFICATION* lpNotifications, uint32* lpcb);
+		public static extern int32 ScCountNotifications(int32 cNotifications, out NOTIFICATION lpNotifications, out uint32 lpcb);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ScCopyNotifications(int32 cNotification, NOTIFICATION* lpNotifications, void* lpvDst, uint32* lpcb);
+		public static extern int32 ScCopyNotifications(int32 cNotification, out NOTIFICATION lpNotifications, void* lpvDst, out uint32 lpcb);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ScRelocNotifications(int32 cNotification, NOTIFICATION* lpNotifications, void* lpvBaseOld, void* lpvBaseNew, uint32* lpcb);
+		public static extern int32 ScRelocNotifications(int32 cNotification, out NOTIFICATION lpNotifications, void* lpvBaseOld, void* lpvBaseNew, out uint32 lpcb);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ScCountProps(int32 cValues, SPropValue* lpPropArray, uint32* lpcb);
+		public static extern int32 ScCountProps(int32 cValues, out SPropValue lpPropArray, out uint32 lpcb);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern SPropValue* LpValFindProp(uint32 ulPropTag, uint32 cValues, SPropValue* lpPropArray);
+		public static extern SPropValue* LpValFindProp(uint32 ulPropTag, uint32 cValues, out SPropValue lpPropArray);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ScCopyProps(int32 cValues, SPropValue* lpPropArray, void* lpvDst, uint32* lpcb);
+		public static extern int32 ScCopyProps(int32 cValues, out SPropValue lpPropArray, void* lpvDst, out uint32 lpcb);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ScRelocProps(int32 cValues, SPropValue* lpPropArray, void* lpvBaseOld, void* lpvBaseNew, uint32* lpcb);
+		public static extern int32 ScRelocProps(int32 cValues, out SPropValue lpPropArray, void* lpvBaseOld, void* lpvBaseNew, out uint32 lpcb);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ScDupPropset(int32 cValues, SPropValue* lpPropArray, LPALLOCATEBUFFER lpAllocateBuffer, SPropValue** lppPropArray);
+		public static extern int32 ScDupPropset(int32 cValues, out SPropValue lpPropArray, LPALLOCATEBUFFER lpAllocateBuffer, out SPropValue* lppPropArray);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 UlAddRef(void* lpunk);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 UlRelease(void* lpunk);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HrGetOneProp(IMAPIProp* lpMapiProp, uint32 ulPropTag, SPropValue** lppProp);
+		public static extern HRESULT HrGetOneProp(ref IMAPIProp lpMapiProp, uint32 ulPropTag, out SPropValue* lppProp);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HrSetOneProp(IMAPIProp* lpMapiProp, SPropValue* lpProp);
+		public static extern HRESULT HrSetOneProp(ref IMAPIProp lpMapiProp, out SPropValue lpProp);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL FPropExists(IMAPIProp* lpMapiProp, uint32 ulPropTag);
+		public static extern BOOL FPropExists(ref IMAPIProp lpMapiProp, uint32 ulPropTag);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern SPropValue* PpropFindProp(SPropValue* lpPropArray, uint32 cValues, uint32 ulPropTag);
+		public static extern SPropValue* PpropFindProp(out SPropValue lpPropArray, uint32 cValues, uint32 ulPropTag);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void FreePadrlist(ADRLIST* lpAdrlist);
+		public static extern void FreePadrlist(out ADRLIST lpAdrlist);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void FreeProws(SRowSet* lpRows);
+		public static extern void FreeProws(out SRowSet lpRows);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HrQueryAllRows(IMAPITable* lpTable, SPropTagArray* lpPropTags, SRestriction* lpRestriction, SSortOrderSet* lpSortOrderSet, int32 crowsMax, SRowSet** lppRows);
+		public static extern HRESULT HrQueryAllRows(ref IMAPITable lpTable, out SPropTagArray lpPropTags, out SRestriction lpRestriction, out SSortOrderSet lpSortOrderSet, int32 crowsMax, out SRowSet* lppRows);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int8* SzFindCh(int8* lpsz, uint16 ch);
+		public static extern int8* SzFindCh(out int8 lpsz, uint16 ch);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int8* SzFindLastCh(int8* lpsz, uint16 ch);
+		public static extern int8* SzFindLastCh(out int8 lpsz, uint16 ch);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int8* SzFindSz(int8* lpsz, int8* lpszKey);
+		public static extern int8* SzFindSz(out int8 lpsz, out int8 lpszKey);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 UFromSz(int8* lpsz);
+		public static extern uint32 UFromSz(out int8 lpsz);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 ScUNCFromLocalPath(PSTR lpszLocal, uint8* lpszUNC, uint32 cchUNC);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -1992,15 +1992,15 @@ namespace Win32
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern FILETIME FtNegFt(FILETIME ft);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ScCreateConversationIndex(uint32 cbParent, uint8* lpbParent, uint32* lpcbConvIndex, uint8** lppbConvIndex);
+		public static extern int32 ScCreateConversationIndex(uint32 cbParent, out uint8 lpbParent, out uint32 lpcbConvIndex, out uint8* lppbConvIndex);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WrapStoreEntryID(uint32 ulFlags, int8* lpszDLLName, uint32 cbOrigEntry, ENTRYID* lpOrigEntry, uint32* lpcbWrappedEntry, ENTRYID** lppWrappedEntry);
+		public static extern HRESULT WrapStoreEntryID(uint32 ulFlags, ref int8 lpszDLLName, uint32 cbOrigEntry, ref ENTRYID lpOrigEntry, out uint32 lpcbWrappedEntry, out ENTRYID* lppWrappedEntry);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RTFSync(IMessage* lpMessage, uint32 ulFlags, BOOL* lpfMessageUpdated);
+		public static extern HRESULT RTFSync(ref IMessage lpMessage, uint32 ulFlags, out BOOL lpfMessageUpdated);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WrapCompressedRTFStream(IStream* lpCompressedRTFStream, uint32 ulFlags, IStream** lpUncompressedRTFStream);
+		public static extern HRESULT WrapCompressedRTFStream(ref IStream lpCompressedRTFStream, uint32 ulFlags, out IStream* lpUncompressedRTFStream);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HrIStorageFromStream(IUnknown* lpUnkIn, Guid* lpInterface, uint32 ulFlags, IStorage** lppStorageOut);
+		public static extern HRESULT HrIStorageFromStream(ref IUnknown lpUnkIn, out Guid lpInterface, uint32 ulFlags, out IStorage* lppStorageOut);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 ScInitMapiUtil(uint32 ulFlags);
 		[Import("mapi32.dll"), CLink, CallingConvention(.Stdcall)]

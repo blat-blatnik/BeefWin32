@@ -170,14 +170,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetValue(PROPERTYKEY* key, PROPVARIANT* value) mut
+			public HRESULT GetValue(in PROPERTYKEY key, out PROPVARIANT value) mut
 			{
-				return VT.GetValue(&this, key, value);
+				return VT.GetValue(ref this, key, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUISimplePropertySet *self, PROPERTYKEY* key, PROPVARIANT* value) GetValue;
+				public new function HRESULT(ref IUISimplePropertySet self, in PROPERTYKEY key, out PROPVARIANT value) GetValue;
 			}
 		}
 		[CRepr]
@@ -187,24 +187,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetHeight(uint32* cy) mut
+			public HRESULT GetHeight(out uint32 cy) mut
 			{
-				return VT.GetHeight(&this, cy);
+				return VT.GetHeight(ref this, out cy);
 			}
-			public HRESULT LoadSettingsFromStream(IStream* pStream) mut
+			public HRESULT LoadSettingsFromStream(ref IStream pStream) mut
 			{
-				return VT.LoadSettingsFromStream(&this, pStream);
+				return VT.LoadSettingsFromStream(ref this, ref pStream);
 			}
-			public HRESULT SaveSettingsToStream(IStream* pStream) mut
+			public HRESULT SaveSettingsToStream(ref IStream pStream) mut
 			{
-				return VT.SaveSettingsToStream(&this, pStream);
+				return VT.SaveSettingsToStream(ref this, ref pStream);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUIRibbon *self, uint32* cy) GetHeight;
-				public new function HRESULT(IUIRibbon *self, IStream* pStream) LoadSettingsFromStream;
-				public new function HRESULT(IUIRibbon *self, IStream* pStream) SaveSettingsToStream;
+				public new function HRESULT(ref IUIRibbon self, out uint32 cy) GetHeight;
+				public new function HRESULT(ref IUIRibbon self, ref IStream pStream) LoadSettingsFromStream;
+				public new function HRESULT(ref IUIRibbon self, ref IStream pStream) SaveSettingsToStream;
 			}
 		}
 		[CRepr]
@@ -214,54 +214,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(HWND frameWnd, IUIApplication* application) mut
+			public HRESULT Initialize(HWND frameWnd, ref IUIApplication application) mut
 			{
-				return VT.Initialize(&this, frameWnd, application);
+				return VT.Initialize(ref this, frameWnd, ref application);
 			}
 			public HRESULT Destroy() mut
 			{
-				return VT.Destroy(&this);
+				return VT.Destroy(ref this);
 			}
 			public HRESULT LoadUI(HINSTANCE instance, PWSTR resourceName) mut
 			{
-				return VT.LoadUI(&this, instance, resourceName);
+				return VT.LoadUI(ref this, instance, resourceName);
 			}
-			public HRESULT GetView(uint32 viewId, Guid* riid, void** ppv) mut
+			public HRESULT GetView(uint32 viewId, in Guid riid, void** ppv) mut
 			{
-				return VT.GetView(&this, viewId, riid, ppv);
+				return VT.GetView(ref this, viewId, riid, ppv);
 			}
-			public HRESULT GetUICommandProperty(uint32 commandId, PROPERTYKEY* key, PROPVARIANT* value) mut
+			public HRESULT GetUICommandProperty(uint32 commandId, in PROPERTYKEY key, out PROPVARIANT value) mut
 			{
-				return VT.GetUICommandProperty(&this, commandId, key, value);
+				return VT.GetUICommandProperty(ref this, commandId, key, out value);
 			}
-			public HRESULT SetUICommandProperty(uint32 commandId, PROPERTYKEY* key, PROPVARIANT* value) mut
+			public HRESULT SetUICommandProperty(uint32 commandId, in PROPERTYKEY key, in PROPVARIANT value) mut
 			{
-				return VT.SetUICommandProperty(&this, commandId, key, value);
+				return VT.SetUICommandProperty(ref this, commandId, key, value);
 			}
 			public HRESULT InvalidateUICommand(uint32 commandId, UI_INVALIDATIONS flags, PROPERTYKEY* key) mut
 			{
-				return VT.InvalidateUICommand(&this, commandId, flags, key);
+				return VT.InvalidateUICommand(ref this, commandId, flags, key);
 			}
 			public HRESULT FlushPendingInvalidations() mut
 			{
-				return VT.FlushPendingInvalidations(&this);
+				return VT.FlushPendingInvalidations(ref this);
 			}
 			public HRESULT SetModes(int32 iModes) mut
 			{
-				return VT.SetModes(&this, iModes);
+				return VT.SetModes(ref this, iModes);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUIFramework *self, HWND frameWnd, IUIApplication* application) Initialize;
-				public new function HRESULT(IUIFramework *self) Destroy;
-				public new function HRESULT(IUIFramework *self, HINSTANCE instance, PWSTR resourceName) LoadUI;
-				public new function HRESULT(IUIFramework *self, uint32 viewId, Guid* riid, void** ppv) GetView;
-				public new function HRESULT(IUIFramework *self, uint32 commandId, PROPERTYKEY* key, PROPVARIANT* value) GetUICommandProperty;
-				public new function HRESULT(IUIFramework *self, uint32 commandId, PROPERTYKEY* key, PROPVARIANT* value) SetUICommandProperty;
-				public new function HRESULT(IUIFramework *self, uint32 commandId, UI_INVALIDATIONS flags, PROPERTYKEY* key) InvalidateUICommand;
-				public new function HRESULT(IUIFramework *self) FlushPendingInvalidations;
-				public new function HRESULT(IUIFramework *self, int32 iModes) SetModes;
+				public new function HRESULT(ref IUIFramework self, HWND frameWnd, ref IUIApplication application) Initialize;
+				public new function HRESULT(ref IUIFramework self) Destroy;
+				public new function HRESULT(ref IUIFramework self, HINSTANCE instance, PWSTR resourceName) LoadUI;
+				public new function HRESULT(ref IUIFramework self, uint32 viewId, in Guid riid, void** ppv) GetView;
+				public new function HRESULT(ref IUIFramework self, uint32 commandId, in PROPERTYKEY key, out PROPVARIANT value) GetUICommandProperty;
+				public new function HRESULT(ref IUIFramework self, uint32 commandId, in PROPERTYKEY key, in PROPVARIANT value) SetUICommandProperty;
+				public new function HRESULT(ref IUIFramework self, uint32 commandId, UI_INVALIDATIONS flags, PROPERTYKEY* key) InvalidateUICommand;
+				public new function HRESULT(ref IUIFramework self) FlushPendingInvalidations;
+				public new function HRESULT(ref IUIFramework self, int32 iModes) SetModes;
 			}
 		}
 		[CRepr]
@@ -271,14 +271,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void OnUIEvent(UI_EVENTPARAMS* pEventParams) mut
+			public void OnUIEvent(ref UI_EVENTPARAMS pEventParams) mut
 			{
-				VT.OnUIEvent(&this, pEventParams);
+				VT.OnUIEvent(ref this, ref pEventParams);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IUIEventLogger *self, UI_EVENTPARAMS* pEventParams) OnUIEvent;
+				public new function void(ref IUIEventLogger self, ref UI_EVENTPARAMS pEventParams) OnUIEvent;
 			}
 		}
 		[CRepr]
@@ -288,14 +288,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetEventLogger(IUIEventLogger* eventLogger) mut
+			public HRESULT SetEventLogger(ref IUIEventLogger eventLogger) mut
 			{
-				return VT.SetEventLogger(&this, eventLogger);
+				return VT.SetEventLogger(ref this, ref eventLogger);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUIEventingManager *self, IUIEventLogger* eventLogger) SetEventLogger;
+				public new function HRESULT(ref IUIEventingManager self, ref IUIEventLogger eventLogger) SetEventLogger;
 			}
 		}
 		[CRepr]
@@ -307,12 +307,12 @@ namespace Win32
 			
 			public HRESULT ShowAtLocation(int32 x, int32 y) mut
 			{
-				return VT.ShowAtLocation(&this, x, y);
+				return VT.ShowAtLocation(ref this, x, y);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUIContextualUI *self, int32 x, int32 y) ShowAtLocation;
+				public new function HRESULT(ref IUIContextualUI self, int32 x, int32 y) ShowAtLocation;
 			}
 		}
 		[CRepr]
@@ -322,44 +322,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* count) mut
+			public HRESULT GetCount(out uint32 count) mut
 			{
-				return VT.GetCount(&this, count);
+				return VT.GetCount(ref this, out count);
 			}
-			public HRESULT GetItem(uint32 index, IUnknown** item) mut
+			public HRESULT GetItem(uint32 index, out IUnknown* item) mut
 			{
-				return VT.GetItem(&this, index, item);
+				return VT.GetItem(ref this, index, out item);
 			}
-			public HRESULT Add(IUnknown* item) mut
+			public HRESULT Add(ref IUnknown item) mut
 			{
-				return VT.Add(&this, item);
+				return VT.Add(ref this, ref item);
 			}
-			public HRESULT Insert(uint32 index, IUnknown* item) mut
+			public HRESULT Insert(uint32 index, ref IUnknown item) mut
 			{
-				return VT.Insert(&this, index, item);
+				return VT.Insert(ref this, index, ref item);
 			}
 			public HRESULT RemoveAt(uint32 index) mut
 			{
-				return VT.RemoveAt(&this, index);
+				return VT.RemoveAt(ref this, index);
 			}
-			public HRESULT Replace(uint32 indexReplaced, IUnknown* itemReplaceWith) mut
+			public HRESULT Replace(uint32 indexReplaced, ref IUnknown itemReplaceWith) mut
 			{
-				return VT.Replace(&this, indexReplaced, itemReplaceWith);
+				return VT.Replace(ref this, indexReplaced, ref itemReplaceWith);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUICollection *self, uint32* count) GetCount;
-				public new function HRESULT(IUICollection *self, uint32 index, IUnknown** item) GetItem;
-				public new function HRESULT(IUICollection *self, IUnknown* item) Add;
-				public new function HRESULT(IUICollection *self, uint32 index, IUnknown* item) Insert;
-				public new function HRESULT(IUICollection *self, uint32 index) RemoveAt;
-				public new function HRESULT(IUICollection *self, uint32 indexReplaced, IUnknown* itemReplaceWith) Replace;
-				public new function HRESULT(IUICollection *self) Clear;
+				public new function HRESULT(ref IUICollection self, out uint32 count) GetCount;
+				public new function HRESULT(ref IUICollection self, uint32 index, out IUnknown* item) GetItem;
+				public new function HRESULT(ref IUICollection self, ref IUnknown item) Add;
+				public new function HRESULT(ref IUICollection self, uint32 index, ref IUnknown item) Insert;
+				public new function HRESULT(ref IUICollection self, uint32 index) RemoveAt;
+				public new function HRESULT(ref IUICollection self, uint32 indexReplaced, ref IUnknown itemReplaceWith) Replace;
+				public new function HRESULT(ref IUICollection self) Clear;
 			}
 		}
 		[CRepr]
@@ -371,12 +371,12 @@ namespace Win32
 			
 			public HRESULT OnChanged(UI_COLLECTIONCHANGE action, uint32 oldIndex, IUnknown* oldItem, uint32 newIndex, IUnknown* newItem) mut
 			{
-				return VT.OnChanged(&this, action, oldIndex, oldItem, newIndex, newItem);
+				return VT.OnChanged(ref this, action, oldIndex, oldItem, newIndex, newItem);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUICollectionChangedEvent *self, UI_COLLECTIONCHANGE action, uint32 oldIndex, IUnknown* oldItem, uint32 newIndex, IUnknown* newItem) OnChanged;
+				public new function HRESULT(ref IUICollectionChangedEvent self, UI_COLLECTIONCHANGE action, uint32 oldIndex, IUnknown* oldItem, uint32 newIndex, IUnknown* newItem) OnChanged;
 			}
 		}
 		[CRepr]
@@ -388,17 +388,17 @@ namespace Win32
 			
 			public HRESULT Execute(uint32 commandId, UI_EXECUTIONVERB verb, PROPERTYKEY* key, PROPVARIANT* currentValue, IUISimplePropertySet* commandExecutionProperties) mut
 			{
-				return VT.Execute(&this, commandId, verb, key, currentValue, commandExecutionProperties);
+				return VT.Execute(ref this, commandId, verb, key, currentValue, commandExecutionProperties);
 			}
-			public HRESULT UpdateProperty(uint32 commandId, PROPERTYKEY* key, PROPVARIANT* currentValue, PROPVARIANT* newValue) mut
+			public HRESULT UpdateProperty(uint32 commandId, in PROPERTYKEY key, PROPVARIANT* currentValue, out PROPVARIANT newValue) mut
 			{
-				return VT.UpdateProperty(&this, commandId, key, currentValue, newValue);
+				return VT.UpdateProperty(ref this, commandId, key, currentValue, out newValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUICommandHandler *self, uint32 commandId, UI_EXECUTIONVERB verb, PROPERTYKEY* key, PROPVARIANT* currentValue, IUISimplePropertySet* commandExecutionProperties) Execute;
-				public new function HRESULT(IUICommandHandler *self, uint32 commandId, PROPERTYKEY* key, PROPVARIANT* currentValue, PROPVARIANT* newValue) UpdateProperty;
+				public new function HRESULT(ref IUICommandHandler self, uint32 commandId, UI_EXECUTIONVERB verb, PROPERTYKEY* key, PROPVARIANT* currentValue, IUISimplePropertySet* commandExecutionProperties) Execute;
+				public new function HRESULT(ref IUICommandHandler self, uint32 commandId, in PROPERTYKEY key, PROPVARIANT* currentValue, out PROPVARIANT newValue) UpdateProperty;
 			}
 		}
 		[CRepr]
@@ -408,24 +408,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnViewChanged(uint32 viewId, UI_VIEWTYPE typeID, IUnknown* view, UI_VIEWVERB verb, int32 uReasonCode) mut
+			public HRESULT OnViewChanged(uint32 viewId, UI_VIEWTYPE typeID, ref IUnknown view, UI_VIEWVERB verb, int32 uReasonCode) mut
 			{
-				return VT.OnViewChanged(&this, viewId, typeID, view, verb, uReasonCode);
+				return VT.OnViewChanged(ref this, viewId, typeID, ref view, verb, uReasonCode);
 			}
-			public HRESULT OnCreateUICommand(uint32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler** commandHandler) mut
+			public HRESULT OnCreateUICommand(uint32 commandId, UI_COMMANDTYPE typeID, out IUICommandHandler* commandHandler) mut
 			{
-				return VT.OnCreateUICommand(&this, commandId, typeID, commandHandler);
+				return VT.OnCreateUICommand(ref this, commandId, typeID, out commandHandler);
 			}
 			public HRESULT OnDestroyUICommand(uint32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler* commandHandler) mut
 			{
-				return VT.OnDestroyUICommand(&this, commandId, typeID, commandHandler);
+				return VT.OnDestroyUICommand(ref this, commandId, typeID, commandHandler);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUIApplication *self, uint32 viewId, UI_VIEWTYPE typeID, IUnknown* view, UI_VIEWVERB verb, int32 uReasonCode) OnViewChanged;
-				public new function HRESULT(IUIApplication *self, uint32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler** commandHandler) OnCreateUICommand;
-				public new function HRESULT(IUIApplication *self, uint32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler* commandHandler) OnDestroyUICommand;
+				public new function HRESULT(ref IUIApplication self, uint32 viewId, UI_VIEWTYPE typeID, ref IUnknown view, UI_VIEWVERB verb, int32 uReasonCode) OnViewChanged;
+				public new function HRESULT(ref IUIApplication self, uint32 commandId, UI_COMMANDTYPE typeID, out IUICommandHandler* commandHandler) OnCreateUICommand;
+				public new function HRESULT(ref IUIApplication self, uint32 commandId, UI_COMMANDTYPE typeID, IUICommandHandler* commandHandler) OnDestroyUICommand;
 			}
 		}
 		[CRepr]
@@ -435,14 +435,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBitmap(HBITMAP* bitmap) mut
+			public HRESULT GetBitmap(out HBITMAP bitmap) mut
 			{
-				return VT.GetBitmap(&this, bitmap);
+				return VT.GetBitmap(ref this, out bitmap);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUIImage *self, HBITMAP* bitmap) GetBitmap;
+				public new function HRESULT(ref IUIImage self, out HBITMAP bitmap) GetBitmap;
 			}
 		}
 		[CRepr]
@@ -452,14 +452,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateImage(HBITMAP bitmap, UI_OWNERSHIP options, IUIImage** image) mut
+			public HRESULT CreateImage(HBITMAP bitmap, UI_OWNERSHIP options, out IUIImage* image) mut
 			{
-				return VT.CreateImage(&this, bitmap, options, image);
+				return VT.CreateImage(ref this, bitmap, options, out image);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUIImageFromBitmap *self, HBITMAP bitmap, UI_OWNERSHIP options, IUIImage** image) CreateImage;
+				public new function HRESULT(ref IUIImageFromBitmap self, HBITMAP bitmap, UI_OWNERSHIP options, out IUIImage* image) CreateImage;
 			}
 		}
 		

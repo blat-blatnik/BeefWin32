@@ -112,109 +112,109 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeTransform(IMFAttributes* pAttributes) mut
+			public HRESULT InitializeTransform(ref IMFAttributes pAttributes) mut
 			{
-				return VT.InitializeTransform(&this, pAttributes);
+				return VT.InitializeTransform(ref this, ref pAttributes);
 			}
-			public HRESULT GetInputAvailableType(uint32 dwInputStreamID, uint32 dwTypeIndex, IMFMediaType** pMediaType) mut
+			public HRESULT GetInputAvailableType(uint32 dwInputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) mut
 			{
-				return VT.GetInputAvailableType(&this, dwInputStreamID, dwTypeIndex, pMediaType);
+				return VT.GetInputAvailableType(ref this, dwInputStreamID, dwTypeIndex, out pMediaType);
 			}
-			public HRESULT GetInputCurrentType(uint32 dwInputStreamID, IMFMediaType** pMediaType) mut
+			public HRESULT GetInputCurrentType(uint32 dwInputStreamID, out IMFMediaType* pMediaType) mut
 			{
-				return VT.GetInputCurrentType(&this, dwInputStreamID, pMediaType);
+				return VT.GetInputCurrentType(ref this, dwInputStreamID, out pMediaType);
 			}
-			public HRESULT GetInputStreamAttributes(uint32 dwInputStreamID, IMFAttributes** ppAttributes) mut
+			public HRESULT GetInputStreamAttributes(uint32 dwInputStreamID, out IMFAttributes* ppAttributes) mut
 			{
-				return VT.GetInputStreamAttributes(&this, dwInputStreamID, ppAttributes);
+				return VT.GetInputStreamAttributes(ref this, dwInputStreamID, out ppAttributes);
 			}
-			public HRESULT GetOutputAvailableType(uint32 dwOutputStreamID, uint32 dwTypeIndex, IMFMediaType** pMediaType) mut
+			public HRESULT GetOutputAvailableType(uint32 dwOutputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) mut
 			{
-				return VT.GetOutputAvailableType(&this, dwOutputStreamID, dwTypeIndex, pMediaType);
+				return VT.GetOutputAvailableType(ref this, dwOutputStreamID, dwTypeIndex, out pMediaType);
 			}
-			public HRESULT GetOutputCurrentType(uint32 dwOutputStreamID, IMFMediaType** pMediaType) mut
+			public HRESULT GetOutputCurrentType(uint32 dwOutputStreamID, out IMFMediaType* pMediaType) mut
 			{
-				return VT.GetOutputCurrentType(&this, dwOutputStreamID, pMediaType);
+				return VT.GetOutputCurrentType(ref this, dwOutputStreamID, out pMediaType);
 			}
-			public HRESULT GetOutputStreamAttributes(uint32 dwOutputStreamID, IMFAttributes** ppAttributes) mut
+			public HRESULT GetOutputStreamAttributes(uint32 dwOutputStreamID, out IMFAttributes* ppAttributes) mut
 			{
-				return VT.GetOutputStreamAttributes(&this, dwOutputStreamID, ppAttributes);
+				return VT.GetOutputStreamAttributes(ref this, dwOutputStreamID, out ppAttributes);
 			}
-			public HRESULT GetStreamCount(uint32* pcInputStreams, uint32* pcOutputStreams) mut
+			public HRESULT GetStreamCount(out uint32 pcInputStreams, out uint32 pcOutputStreams) mut
 			{
-				return VT.GetStreamCount(&this, pcInputStreams, pcOutputStreams);
+				return VT.GetStreamCount(ref this, out pcInputStreams, out pcOutputStreams);
 			}
-			public HRESULT GetStreamIDs(uint32 dwInputIDArraySize, uint32* pdwInputStreamIds, uint32 dwOutputIDArraySize, uint32* pdwOutputStreamIds) mut
+			public HRESULT GetStreamIDs(uint32 dwInputIDArraySize, out uint32 pdwInputStreamIds, uint32 dwOutputIDArraySize, out uint32 pdwOutputStreamIds) mut
 			{
-				return VT.GetStreamIDs(&this, dwInputIDArraySize, pdwInputStreamIds, dwOutputIDArraySize, pdwOutputStreamIds);
+				return VT.GetStreamIDs(ref this, dwInputIDArraySize, out pdwInputStreamIds, dwOutputIDArraySize, out pdwOutputStreamIds);
 			}
-			public HRESULT ProcessEvent(uint32 dwInputStreamID, IMFMediaEvent* pEvent) mut
+			public HRESULT ProcessEvent(uint32 dwInputStreamID, ref IMFMediaEvent pEvent) mut
 			{
-				return VT.ProcessEvent(&this, dwInputStreamID, pEvent);
+				return VT.ProcessEvent(ref this, dwInputStreamID, ref pEvent);
 			}
-			public HRESULT ProcessInput(uint32 dwInputStreamID, IMFSample* pSample, uint32 dwFlags) mut
+			public HRESULT ProcessInput(uint32 dwInputStreamID, ref IMFSample pSample, uint32 dwFlags) mut
 			{
-				return VT.ProcessInput(&this, dwInputStreamID, pSample, dwFlags);
+				return VT.ProcessInput(ref this, dwInputStreamID, ref pSample, dwFlags);
 			}
 			public HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, uint ulParam) mut
 			{
-				return VT.ProcessMessage(&this, eMessage, ulParam);
+				return VT.ProcessMessage(ref this, eMessage, ulParam);
 			}
-			public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSample, uint32* pdwStatus) mut
+			public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, out MFT_OUTPUT_DATA_BUFFER pOutputSample, out uint32 pdwStatus) mut
 			{
-				return VT.ProcessOutput(&this, dwFlags, cOutputBufferCount, pOutputSample, pdwStatus);
+				return VT.ProcessOutput(ref this, dwFlags, cOutputBufferCount, out pOutputSample, out pdwStatus);
 			}
-			public HRESULT SetInputStreamState(uint32 dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, uint32 dwFlags) mut
+			public HRESULT SetInputStreamState(uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) mut
 			{
-				return VT.SetInputStreamState(&this, dwStreamID, pMediaType, value, dwFlags);
+				return VT.SetInputStreamState(ref this, dwStreamID, ref pMediaType, value, dwFlags);
 			}
-			public HRESULT GetInputStreamState(uint32 dwStreamID, DeviceStreamState* value) mut
+			public HRESULT GetInputStreamState(uint32 dwStreamID, out DeviceStreamState value) mut
 			{
-				return VT.GetInputStreamState(&this, dwStreamID, value);
+				return VT.GetInputStreamState(ref this, dwStreamID, out value);
 			}
-			public HRESULT SetOutputStreamState(uint32 dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, uint32 dwFlags) mut
+			public HRESULT SetOutputStreamState(uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) mut
 			{
-				return VT.SetOutputStreamState(&this, dwStreamID, pMediaType, value, dwFlags);
+				return VT.SetOutputStreamState(ref this, dwStreamID, ref pMediaType, value, dwFlags);
 			}
-			public HRESULT GetOutputStreamState(uint32 dwStreamID, DeviceStreamState* value) mut
+			public HRESULT GetOutputStreamState(uint32 dwStreamID, out DeviceStreamState value) mut
 			{
-				return VT.GetOutputStreamState(&this, dwStreamID, value);
+				return VT.GetOutputStreamState(ref this, dwStreamID, out value);
 			}
-			public HRESULT GetInputStreamPreferredState(uint32 dwStreamID, DeviceStreamState* value, IMFMediaType** ppMediaType) mut
+			public HRESULT GetInputStreamPreferredState(uint32 dwStreamID, out DeviceStreamState value, out IMFMediaType* ppMediaType) mut
 			{
-				return VT.GetInputStreamPreferredState(&this, dwStreamID, value, ppMediaType);
+				return VT.GetInputStreamPreferredState(ref this, dwStreamID, out value, out ppMediaType);
 			}
 			public HRESULT FlushInputStream(uint32 dwStreamIndex, uint32 dwFlags) mut
 			{
-				return VT.FlushInputStream(&this, dwStreamIndex, dwFlags);
+				return VT.FlushInputStream(ref this, dwStreamIndex, dwFlags);
 			}
 			public HRESULT FlushOutputStream(uint32 dwStreamIndex, uint32 dwFlags) mut
 			{
-				return VT.FlushOutputStream(&this, dwStreamIndex, dwFlags);
+				return VT.FlushOutputStream(ref this, dwStreamIndex, dwFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFDeviceTransform *self, IMFAttributes* pAttributes) InitializeTransform;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, uint32 dwTypeIndex, IMFMediaType** pMediaType) GetInputAvailableType;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFMediaType** pMediaType) GetInputCurrentType;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFAttributes** ppAttributes) GetInputStreamAttributes;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwOutputStreamID, uint32 dwTypeIndex, IMFMediaType** pMediaType) GetOutputAvailableType;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwOutputStreamID, IMFMediaType** pMediaType) GetOutputCurrentType;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwOutputStreamID, IMFAttributes** ppAttributes) GetOutputStreamAttributes;
-				public new function HRESULT(IMFDeviceTransform *self, uint32* pcInputStreams, uint32* pcOutputStreams) GetStreamCount;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwInputIDArraySize, uint32* pdwInputStreamIds, uint32 dwOutputIDArraySize, uint32* pdwOutputStreamIds) GetStreamIDs;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFMediaEvent* pEvent) ProcessEvent;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwInputStreamID, IMFSample* pSample, uint32 dwFlags) ProcessInput;
-				public new function HRESULT(IMFDeviceTransform *self, MFT_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwFlags, uint32 cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSample, uint32* pdwStatus) ProcessOutput;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, uint32 dwFlags) SetInputStreamState;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, DeviceStreamState* value) GetInputStreamState;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, uint32 dwFlags) SetOutputStreamState;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, DeviceStreamState* value) GetOutputStreamState;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwStreamID, DeviceStreamState* value, IMFMediaType** ppMediaType) GetInputStreamPreferredState;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwStreamIndex, uint32 dwFlags) FlushInputStream;
-				public new function HRESULT(IMFDeviceTransform *self, uint32 dwStreamIndex, uint32 dwFlags) FlushOutputStream;
+				public new function HRESULT(ref IMFDeviceTransform self, ref IMFAttributes pAttributes) InitializeTransform;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) GetInputAvailableType;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, out IMFMediaType* pMediaType) GetInputCurrentType;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, out IMFAttributes* ppAttributes) GetInputStreamAttributes;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwOutputStreamID, uint32 dwTypeIndex, out IMFMediaType* pMediaType) GetOutputAvailableType;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwOutputStreamID, out IMFMediaType* pMediaType) GetOutputCurrentType;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwOutputStreamID, out IMFAttributes* ppAttributes) GetOutputStreamAttributes;
+				public new function HRESULT(ref IMFDeviceTransform self, out uint32 pcInputStreams, out uint32 pcOutputStreams) GetStreamCount;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwInputIDArraySize, out uint32 pdwInputStreamIds, uint32 dwOutputIDArraySize, out uint32 pdwOutputStreamIds) GetStreamIDs;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, ref IMFMediaEvent pEvent) ProcessEvent;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwInputStreamID, ref IMFSample pSample, uint32 dwFlags) ProcessInput;
+				public new function HRESULT(ref IMFDeviceTransform self, MFT_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwFlags, uint32 cOutputBufferCount, out MFT_OUTPUT_DATA_BUFFER pOutputSample, out uint32 pdwStatus) ProcessOutput;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) SetInputStreamState;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, out DeviceStreamState value) GetInputStreamState;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, ref IMFMediaType pMediaType, DeviceStreamState value, uint32 dwFlags) SetOutputStreamState;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, out DeviceStreamState value) GetOutputStreamState;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwStreamID, out DeviceStreamState value, out IMFMediaType* ppMediaType) GetInputStreamPreferredState;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwStreamIndex, uint32 dwFlags) FlushInputStream;
+				public new function HRESULT(ref IMFDeviceTransform self, uint32 dwStreamIndex, uint32 dwFlags) FlushOutputStream;
 			}
 		}
 		[CRepr]
@@ -224,14 +224,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnBufferSent(IMFAttributes* pCallbackAttributes, uint32 pinId) mut
+			public HRESULT OnBufferSent(ref IMFAttributes pCallbackAttributes, uint32 pinId) mut
 			{
-				return VT.OnBufferSent(&this, pCallbackAttributes, pinId);
+				return VT.OnBufferSent(ref this, ref pCallbackAttributes, pinId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFDeviceTransformCallback *self, IMFAttributes* pCallbackAttributes, uint32 pinId) OnBufferSent;
+				public new function HRESULT(ref IMFDeviceTransformCallback self, ref IMFAttributes pCallbackAttributes, uint32 pinId) OnBufferSent;
 			}
 		}
 		

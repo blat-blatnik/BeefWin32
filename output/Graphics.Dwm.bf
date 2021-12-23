@@ -224,39 +224,39 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL DwmDefWindowProc(HWND hWnd, uint32 msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
+		public static extern BOOL DwmDefWindowProc(HWND hWnd, uint32 msg, WPARAM wParam, LPARAM lParam, out LRESULT plResult);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmEnableBlurBehindWindow(HWND hWnd, DWM_BLURBEHIND* pBlurBehind);
+		public static extern HRESULT DwmEnableBlurBehindWindow(HWND hWnd, in DWM_BLURBEHIND pBlurBehind);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmEnableComposition(uint32 uCompositionAction);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmEnableMMCSS(BOOL fEnableMMCSS);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmExtendFrameIntoClientArea(HWND hWnd, MARGINS* pMarInset);
+		public static extern HRESULT DwmExtendFrameIntoClientArea(HWND hWnd, in MARGINS pMarInset);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmGetColorizationColor(uint32* pcrColorization, BOOL* pfOpaqueBlend);
+		public static extern HRESULT DwmGetColorizationColor(out uint32 pcrColorization, out BOOL pfOpaqueBlend);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmGetCompositionTimingInfo(HWND hwnd, DWM_TIMING_INFO* pTimingInfo);
+		public static extern HRESULT DwmGetCompositionTimingInfo(HWND hwnd, out DWM_TIMING_INFO pTimingInfo);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmGetWindowAttribute(HWND hwnd, DWMWINDOWATTRIBUTE dwAttribute, void* pvAttribute, uint32 cbAttribute);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmIsCompositionEnabled(BOOL* pfEnabled);
+		public static extern HRESULT DwmIsCompositionEnabled(out BOOL pfEnabled);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmModifyPreviousDxFrameDuration(HWND hwnd, int32 cRefreshes, BOOL fRelative);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmQueryThumbnailSourceSize(int hThumbnail, SIZE* pSize);
+		public static extern HRESULT DwmQueryThumbnailSourceSize(int hThumbnail, out SIZE pSize);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmRegisterThumbnail(HWND hwndDestination, HWND hwndSource, int* phThumbnailId);
+		public static extern HRESULT DwmRegisterThumbnail(HWND hwndDestination, HWND hwndSource, out int phThumbnailId);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmSetDxFrameDuration(HWND hwnd, int32 cRefreshes);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmSetPresentParameters(HWND hwnd, DWM_PRESENT_PARAMETERS* pPresentParams);
+		public static extern HRESULT DwmSetPresentParameters(HWND hwnd, out DWM_PRESENT_PARAMETERS pPresentParams);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmSetWindowAttribute(HWND hwnd, DWMWINDOWATTRIBUTE dwAttribute, void* pvAttribute, uint32 cbAttribute);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmUnregisterThumbnail(int hThumbnailId);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmUpdateThumbnailProperties(int hThumbnailId, DWM_THUMBNAIL_PROPERTIES* ptnProperties);
+		public static extern HRESULT DwmUpdateThumbnailProperties(int hThumbnailId, in DWM_THUMBNAIL_PROPERTIES ptnProperties);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmSetIconicThumbnail(HWND hwnd, HBITMAP hbmp, uint32 dwSITFlags);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -270,11 +270,11 @@ namespace Win32
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmFlush();
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmGetGraphicsStreamTransformHint(uint32 uIndex, MilMatrix3x2D* pTransform);
+		public static extern HRESULT DwmGetGraphicsStreamTransformHint(uint32 uIndex, out MilMatrix3x2D pTransform);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmGetGraphicsStreamClient(uint32 uIndex, Guid* pClientUuid);
+		public static extern HRESULT DwmGetGraphicsStreamClient(uint32 uIndex, out Guid pClientUuid);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmGetTransportAttributes(BOOL* pfIsRemoting, BOOL* pfIsConnected, uint32* pDwGeneration);
+		public static extern HRESULT DwmGetTransportAttributes(out BOOL pfIsRemoting, out BOOL pfIsConnected, out uint32 pDwGeneration);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmTransitionOwnedWindow(HWND hwnd, DWMTRANSITION_OWNEDWINDOW_TARGET target);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -284,7 +284,7 @@ namespace Win32
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DwmShowContact(uint32 dwPointerID, DWM_SHOWCONTACT eShowContact);
 		[Import("dwmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DwmGetUnmetTabRequirements(HWND appWindow, DWM_TAB_WINDOW_REQUIREMENTS* value);
+		public static extern HRESULT DwmGetUnmetTabRequirements(HWND appWindow, out DWM_TAB_WINDOW_REQUIREMENTS value);
 		
 	}
 }

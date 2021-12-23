@@ -941,9 +941,9 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT LPCQADDFORMSPROC(LPARAM lParam, CQFORM* pForm);
-		public function HRESULT LPCQADDPAGESPROC(LPARAM lParam, Guid* clsidForm, CQPAGE* pPage);
-		public function HRESULT LPCQPAGEPROC(CQPAGE* pPage, HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam);
+		public function HRESULT LPCQADDFORMSPROC(LPARAM lParam, out CQFORM pForm);
+		public function HRESULT LPCQADDPAGESPROC(LPARAM lParam, in Guid clsidForm, out CQPAGE pPage);
+		public function HRESULT LPCQPAGEPROC(out CQPAGE pPage, HWND hwnd, uint32 uMsg, WPARAM wParam, LPARAM lParam);
 		public function HRESULT LPDSENUMATTRIBUTES(LPARAM lParam, PWSTR pszAttributeName, PWSTR pszDisplayName, uint32 dwFlags);
 		
 		// --- Structs ---
@@ -1223,7 +1223,7 @@ namespace Win32
 		{
 			public Guid clsidNamespace;
 			public uint32 cItems;
-			public DSOBJECT[] aObjects;
+			public DSOBJECT[0] aObjects;
 		}
 		[CRepr]
 		public struct DSDISPLAYSPECOPTIONS
@@ -1259,7 +1259,7 @@ namespace Win32
 		{
 			public uint32 dsSize;
 			public uint32 dwCount;
-			public DOMAINDESC[] aDomains;
+			public DOMAINDESC[0] aDomains;
 		}
 		[CRepr]
 		public struct DSCLASSCREATIONINFO
@@ -1268,7 +1268,7 @@ namespace Win32
 			public Guid clsidWizardDialog;
 			public Guid clsidWizardPrimaryPage;
 			public uint32 cWizardExtensions;
-			public Guid[] aWizardExtensions;
+			public Guid[0] aWizardExtensions;
 		}
 		[CRepr]
 		public struct DSBROWSEINFOW
@@ -1384,7 +1384,7 @@ namespace Win32
 		{
 			public uint32 cItems;
 			public uint32 cFetchedAttributes;
-			public DS_SELECTION[] aDsSelection;
+			public DS_SELECTION[0] aDsSelection;
 		}
 		[CRepr]
 		public struct DSQUERYINITPARAMS
@@ -1416,14 +1416,14 @@ namespace Win32
 			public int32 offsetQuery;
 			public int32 iColumns;
 			public uint32 dwReserved;
-			public DSCOLUMN[] aColumns;
+			public DSCOLUMN[0] aColumns;
 		}
 		[CRepr]
 		public struct DSQUERYCLASSLIST
 		{
 			public uint32 cbStruct;
 			public int32 cClasses;
-			public uint32[] offsetClass;
+			public uint32[0] offsetClass;
 		}
 		[CRepr]
 		public struct DSA_NEWOBJ_DISPINFO
@@ -1465,7 +1465,7 @@ namespace Win32
 			public uint32 Size;
 			public uint32 Bandwidth;
 			public uint32 NumberOfSchedules;
-			public SCHEDULE_HEADER[] Schedules;
+			public SCHEDULE_HEADER[0] Schedules;
 		}
 		[CRepr]
 		public struct DS_NAME_RESULT_ITEMA
@@ -1702,7 +1702,7 @@ namespace Win32
 		{
 			public uint32 cNumNeighbors;
 			public uint32 dwReserved;
-			public DS_REPL_NEIGHBORW[] rgNeighbor;
+			public DS_REPL_NEIGHBORW[0] rgNeighbor;
 		}
 		[CRepr]
 		public struct DS_REPL_CURSOR
@@ -1738,21 +1738,21 @@ namespace Win32
 		{
 			public uint32 cNumCursors;
 			public uint32 dwReserved;
-			public DS_REPL_CURSOR[] rgCursor;
+			public DS_REPL_CURSOR[0] rgCursor;
 		}
 		[CRepr]
 		public struct DS_REPL_CURSORS_2
 		{
 			public uint32 cNumCursors;
 			public uint32 dwEnumerationContext;
-			public DS_REPL_CURSOR_2[] rgCursor;
+			public DS_REPL_CURSOR_2[0] rgCursor;
 		}
 		[CRepr]
 		public struct DS_REPL_CURSORS_3W
 		{
 			public uint32 cNumCursors;
 			public uint32 dwEnumerationContext;
-			public DS_REPL_CURSOR_3W[] rgCursor;
+			public DS_REPL_CURSOR_3W[0] rgCursor;
 		}
 		[CRepr]
 		public struct DS_REPL_ATTR_META_DATA
@@ -1791,14 +1791,14 @@ namespace Win32
 		{
 			public uint32 cNumEntries;
 			public uint32 dwReserved;
-			public DS_REPL_ATTR_META_DATA[] rgMetaData;
+			public DS_REPL_ATTR_META_DATA[0] rgMetaData;
 		}
 		[CRepr]
 		public struct DS_REPL_OBJ_META_DATA_2
 		{
 			public uint32 cNumEntries;
 			public uint32 dwReserved;
-			public DS_REPL_ATTR_META_DATA_2[] rgMetaData;
+			public DS_REPL_ATTR_META_DATA_2[0] rgMetaData;
 		}
 		[CRepr]
 		public struct DS_REPL_KCC_DSA_FAILUREW
@@ -1823,7 +1823,7 @@ namespace Win32
 		{
 			public uint32 cNumEntries;
 			public uint32 dwReserved;
-			public DS_REPL_KCC_DSA_FAILUREW[] rgDsaFailure;
+			public DS_REPL_KCC_DSA_FAILUREW[0] rgDsaFailure;
 		}
 		[CRepr]
 		public struct DS_REPL_OPW
@@ -1858,7 +1858,7 @@ namespace Win32
 		{
 			public FILETIME ftimeCurrentOpStarted;
 			public uint32 cNumPendingOps;
-			public DS_REPL_OPW[] rgPendingOp;
+			public DS_REPL_OPW[0] rgPendingOp;
 		}
 		[CRepr]
 		public struct DS_REPL_VALUE_META_DATA
@@ -1950,21 +1950,21 @@ namespace Win32
 		{
 			public uint32 cNumEntries;
 			public uint32 dwEnumerationContext;
-			public DS_REPL_VALUE_META_DATA[] rgMetaData;
+			public DS_REPL_VALUE_META_DATA[0] rgMetaData;
 		}
 		[CRepr]
 		public struct DS_REPL_ATTR_VALUE_META_DATA_2
 		{
 			public uint32 cNumEntries;
 			public uint32 dwEnumerationContext;
-			public DS_REPL_VALUE_META_DATA_2[] rgMetaData;
+			public DS_REPL_VALUE_META_DATA_2[0] rgMetaData;
 		}
 		[CRepr]
 		public struct DS_REPL_ATTR_VALUE_META_DATA_EXT
 		{
 			public uint32 cNumEntries;
 			public uint32 dwEnumerationContext;
-			public DS_REPL_VALUE_META_DATA_EXT[] rgMetaData;
+			public DS_REPL_VALUE_META_DATA_EXT[0] rgMetaData;
 		}
 		[CRepr]
 		public struct DS_REPL_QUEUE_STATISTICSW
@@ -2088,22 +2088,22 @@ namespace Win32
 			
 			public HRESULT Initialize(HKEY hkForm) mut
 			{
-				return VT.Initialize(&this, hkForm);
+				return VT.Initialize(ref this, hkForm);
 			}
 			public HRESULT AddForms(LPCQADDFORMSPROC pAddFormsProc, LPARAM lParam) mut
 			{
-				return VT.AddForms(&this, pAddFormsProc, lParam);
+				return VT.AddForms(ref this, pAddFormsProc, lParam);
 			}
 			public HRESULT AddPages(LPCQADDPAGESPROC pAddPagesProc, LPARAM lParam) mut
 			{
-				return VT.AddPages(&this, pAddPagesProc, lParam);
+				return VT.AddPages(ref this, pAddPagesProc, lParam);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IQueryForm *self, HKEY hkForm) Initialize;
-				public new function HRESULT(IQueryForm *self, LPCQADDFORMSPROC pAddFormsProc, LPARAM lParam) AddForms;
-				public new function HRESULT(IQueryForm *self, LPCQADDPAGESPROC pAddPagesProc, LPARAM lParam) AddPages;
+				public new function HRESULT(ref IQueryForm self, HKEY hkForm) Initialize;
+				public new function HRESULT(ref IQueryForm self, LPCQADDFORMSPROC pAddFormsProc, LPARAM lParam) AddForms;
+				public new function HRESULT(ref IQueryForm self, LPCQADDPAGESPROC pAddPagesProc, LPARAM lParam) AddPages;
 			}
 		}
 		[CRepr]
@@ -2115,42 +2115,42 @@ namespace Win32
 			
 			public HRESULT WriteString(PWSTR pSection, PWSTR pValueName, PWSTR pValue) mut
 			{
-				return VT.WriteString(&this, pSection, pValueName, pValue);
+				return VT.WriteString(ref this, pSection, pValueName, pValue);
 			}
 			public HRESULT ReadString(PWSTR pSection, PWSTR pValueName, PWSTR pBuffer, int32 cchBuffer) mut
 			{
-				return VT.ReadString(&this, pSection, pValueName, pBuffer, cchBuffer);
+				return VT.ReadString(ref this, pSection, pValueName, pBuffer, cchBuffer);
 			}
 			public HRESULT WriteInt(PWSTR pSection, PWSTR pValueName, int32 value) mut
 			{
-				return VT.WriteInt(&this, pSection, pValueName, value);
+				return VT.WriteInt(ref this, pSection, pValueName, value);
 			}
-			public HRESULT ReadInt(PWSTR pSection, PWSTR pValueName, int32* pValue) mut
+			public HRESULT ReadInt(PWSTR pSection, PWSTR pValueName, out int32 pValue) mut
 			{
-				return VT.ReadInt(&this, pSection, pValueName, pValue);
+				return VT.ReadInt(ref this, pSection, pValueName, out pValue);
 			}
 			public HRESULT WriteStruct(PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) mut
 			{
-				return VT.WriteStruct(&this, pSection, pValueName, pStruct, cbStruct);
+				return VT.WriteStruct(ref this, pSection, pValueName, pStruct, cbStruct);
 			}
 			public HRESULT ReadStruct(PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) mut
 			{
-				return VT.ReadStruct(&this, pSection, pValueName, pStruct, cbStruct);
+				return VT.ReadStruct(ref this, pSection, pValueName, pStruct, cbStruct);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IPersist.VTable
 			{
-				public new function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, PWSTR pValue) WriteString;
-				public new function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, PWSTR pBuffer, int32 cchBuffer) ReadString;
-				public new function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, int32 value) WriteInt;
-				public new function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, int32* pValue) ReadInt;
-				public new function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) WriteStruct;
-				public new function HRESULT(IPersistQuery *self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) ReadStruct;
-				public new function HRESULT(IPersistQuery *self) Clear;
+				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, PWSTR pValue) WriteString;
+				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, PWSTR pBuffer, int32 cchBuffer) ReadString;
+				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, int32 value) WriteInt;
+				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, out int32 pValue) ReadInt;
+				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) WriteStruct;
+				public new function HRESULT(ref IPersistQuery self, PWSTR pSection, PWSTR pValueName, void* pStruct, uint32 cbStruct) ReadStruct;
+				public new function HRESULT(ref IPersistQuery self) Clear;
 			}
 		}
 		[CRepr]
@@ -2160,14 +2160,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenQueryWindow(HWND hwndParent, OPENQUERYWINDOW* pQueryWnd, IDataObject** ppDataObject) mut
+			public HRESULT OpenQueryWindow(HWND hwndParent, out OPENQUERYWINDOW pQueryWnd, out IDataObject* ppDataObject) mut
 			{
-				return VT.OpenQueryWindow(&this, hwndParent, pQueryWnd, ppDataObject);
+				return VT.OpenQueryWindow(ref this, hwndParent, out pQueryWnd, out ppDataObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ICommonQuery *self, HWND hwndParent, OPENQUERYWINDOW* pQueryWnd, IDataObject** ppDataObject) OpenQueryWindow;
+				public new function HRESULT(ref ICommonQuery self, HWND hwndParent, out OPENQUERYWINDOW pQueryWnd, out IDataObject* ppDataObject) OpenQueryWindow;
 			}
 		}
 		[CRepr]
@@ -2179,72 +2179,72 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* retval) mut
 			{
-				return VT.get_Name(&this, retval);
+				return VT.get_Name(ref this, retval);
 			}
 			public HRESULT get_Class(BSTR* retval) mut
 			{
-				return VT.get_Class(&this, retval);
+				return VT.get_Class(ref this, retval);
 			}
 			public HRESULT get_GUID(BSTR* retval) mut
 			{
-				return VT.get_GUID(&this, retval);
+				return VT.get_GUID(ref this, retval);
 			}
 			public HRESULT get_ADsPath(BSTR* retval) mut
 			{
-				return VT.get_ADsPath(&this, retval);
+				return VT.get_ADsPath(ref this, retval);
 			}
 			public HRESULT get_Parent(BSTR* retval) mut
 			{
-				return VT.get_Parent(&this, retval);
+				return VT.get_Parent(ref this, retval);
 			}
 			public HRESULT get_Schema(BSTR* retval) mut
 			{
-				return VT.get_Schema(&this, retval);
+				return VT.get_Schema(ref this, retval);
 			}
 			public HRESULT GetInfo() mut
 			{
-				return VT.GetInfo(&this);
+				return VT.GetInfo(ref this);
 			}
 			public HRESULT SetInfo() mut
 			{
-				return VT.SetInfo(&this);
+				return VT.SetInfo(ref this);
 			}
-			public HRESULT Get(BSTR bstrName, VARIANT* pvProp) mut
+			public HRESULT Get(BSTR bstrName, out VARIANT pvProp) mut
 			{
-				return VT.Get(&this, bstrName, pvProp);
+				return VT.Get(ref this, bstrName, out pvProp);
 			}
 			public HRESULT Put(BSTR bstrName, VARIANT vProp) mut
 			{
-				return VT.Put(&this, bstrName, vProp);
+				return VT.Put(ref this, bstrName, vProp);
 			}
-			public HRESULT GetEx(BSTR bstrName, VARIANT* pvProp) mut
+			public HRESULT GetEx(BSTR bstrName, out VARIANT pvProp) mut
 			{
-				return VT.GetEx(&this, bstrName, pvProp);
+				return VT.GetEx(ref this, bstrName, out pvProp);
 			}
 			public HRESULT PutEx(int32 lnControlCode, BSTR bstrName, VARIANT vProp) mut
 			{
-				return VT.PutEx(&this, lnControlCode, bstrName, vProp);
+				return VT.PutEx(ref this, lnControlCode, bstrName, vProp);
 			}
 			public HRESULT GetInfoEx(VARIANT vProperties, int32 lnReserved) mut
 			{
-				return VT.GetInfoEx(&this, vProperties, lnReserved);
+				return VT.GetInfoEx(ref this, vProperties, lnReserved);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADs *self, BSTR* retval) get_Name;
-				public new function HRESULT(IADs *self, BSTR* retval) get_Class;
-				public new function HRESULT(IADs *self, BSTR* retval) get_GUID;
-				public new function HRESULT(IADs *self, BSTR* retval) get_ADsPath;
-				public new function HRESULT(IADs *self, BSTR* retval) get_Parent;
-				public new function HRESULT(IADs *self, BSTR* retval) get_Schema;
-				public new function HRESULT(IADs *self) GetInfo;
-				public new function HRESULT(IADs *self) SetInfo;
-				public new function HRESULT(IADs *self, BSTR bstrName, VARIANT* pvProp) Get;
-				public new function HRESULT(IADs *self, BSTR bstrName, VARIANT vProp) Put;
-				public new function HRESULT(IADs *self, BSTR bstrName, VARIANT* pvProp) GetEx;
-				public new function HRESULT(IADs *self, int32 lnControlCode, BSTR bstrName, VARIANT vProp) PutEx;
-				public new function HRESULT(IADs *self, VARIANT vProperties, int32 lnReserved) GetInfoEx;
+				public new function HRESULT(ref IADs self, BSTR* retval) get_Name;
+				public new function HRESULT(ref IADs self, BSTR* retval) get_Class;
+				public new function HRESULT(ref IADs self, BSTR* retval) get_GUID;
+				public new function HRESULT(ref IADs self, BSTR* retval) get_ADsPath;
+				public new function HRESULT(ref IADs self, BSTR* retval) get_Parent;
+				public new function HRESULT(ref IADs self, BSTR* retval) get_Schema;
+				public new function HRESULT(ref IADs self) GetInfo;
+				public new function HRESULT(ref IADs self) SetInfo;
+				public new function HRESULT(ref IADs self, BSTR bstrName, out VARIANT pvProp) Get;
+				public new function HRESULT(ref IADs self, BSTR bstrName, VARIANT vProp) Put;
+				public new function HRESULT(ref IADs self, BSTR bstrName, out VARIANT pvProp) GetEx;
+				public new function HRESULT(ref IADs self, int32 lnControlCode, BSTR bstrName, VARIANT vProp) PutEx;
+				public new function HRESULT(ref IADs self, VARIANT vProperties, int32 lnReserved) GetInfoEx;
 			}
 		}
 		[CRepr]
@@ -2254,64 +2254,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* retval) mut
+			public HRESULT get_Count(out int32 retval) mut
 			{
-				return VT.get_Count(&this, retval);
+				return VT.get_Count(ref this, out retval);
 			}
 			public HRESULT get__NewEnum(IUnknown** retval) mut
 			{
-				return VT.get__NewEnum(&this, retval);
+				return VT.get__NewEnum(ref this, retval);
 			}
-			public HRESULT get_Filter(VARIANT* pVar) mut
+			public HRESULT get_Filter(out VARIANT pVar) mut
 			{
-				return VT.get_Filter(&this, pVar);
+				return VT.get_Filter(ref this, out pVar);
 			}
 			public HRESULT put_Filter(VARIANT Var) mut
 			{
-				return VT.put_Filter(&this, Var);
+				return VT.put_Filter(ref this, Var);
 			}
-			public HRESULT get_Hints(VARIANT* pvFilter) mut
+			public HRESULT get_Hints(out VARIANT pvFilter) mut
 			{
-				return VT.get_Hints(&this, pvFilter);
+				return VT.get_Hints(ref this, out pvFilter);
 			}
 			public HRESULT put_Hints(VARIANT vHints) mut
 			{
-				return VT.put_Hints(&this, vHints);
+				return VT.put_Hints(ref this, vHints);
 			}
 			public HRESULT GetObject(BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) mut
 			{
-				return VT.GetObject(&this, ClassName, RelativeName, ppObject);
+				return VT.GetObject(ref this, ClassName, RelativeName, ppObject);
 			}
 			public HRESULT Create(BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) mut
 			{
-				return VT.Create(&this, ClassName, RelativeName, ppObject);
+				return VT.Create(ref this, ClassName, RelativeName, ppObject);
 			}
 			public HRESULT Delete(BSTR bstrClassName, BSTR bstrRelativeName) mut
 			{
-				return VT.Delete(&this, bstrClassName, bstrRelativeName);
+				return VT.Delete(ref this, bstrClassName, bstrRelativeName);
 			}
 			public HRESULT CopyHere(BSTR SourceName, BSTR NewName, IDispatch** ppObject) mut
 			{
-				return VT.CopyHere(&this, SourceName, NewName, ppObject);
+				return VT.CopyHere(ref this, SourceName, NewName, ppObject);
 			}
 			public HRESULT MoveHere(BSTR SourceName, BSTR NewName, IDispatch** ppObject) mut
 			{
-				return VT.MoveHere(&this, SourceName, NewName, ppObject);
+				return VT.MoveHere(ref this, SourceName, NewName, ppObject);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsContainer *self, int32* retval) get_Count;
-				public new function HRESULT(IADsContainer *self, IUnknown** retval) get__NewEnum;
-				public new function HRESULT(IADsContainer *self, VARIANT* pVar) get_Filter;
-				public new function HRESULT(IADsContainer *self, VARIANT Var) put_Filter;
-				public new function HRESULT(IADsContainer *self, VARIANT* pvFilter) get_Hints;
-				public new function HRESULT(IADsContainer *self, VARIANT vHints) put_Hints;
-				public new function HRESULT(IADsContainer *self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) GetObject;
-				public new function HRESULT(IADsContainer *self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) Create;
-				public new function HRESULT(IADsContainer *self, BSTR bstrClassName, BSTR bstrRelativeName) Delete;
-				public new function HRESULT(IADsContainer *self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) CopyHere;
-				public new function HRESULT(IADsContainer *self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) MoveHere;
+				public new function HRESULT(ref IADsContainer self, out int32 retval) get_Count;
+				public new function HRESULT(ref IADsContainer self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ref IADsContainer self, out VARIANT pVar) get_Filter;
+				public new function HRESULT(ref IADsContainer self, VARIANT Var) put_Filter;
+				public new function HRESULT(ref IADsContainer self, out VARIANT pvFilter) get_Hints;
+				public new function HRESULT(ref IADsContainer self, VARIANT vHints) put_Hints;
+				public new function HRESULT(ref IADsContainer self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) GetObject;
+				public new function HRESULT(ref IADsContainer self, BSTR ClassName, BSTR RelativeName, IDispatch** ppObject) Create;
+				public new function HRESULT(ref IADsContainer self, BSTR bstrClassName, BSTR bstrRelativeName) Delete;
+				public new function HRESULT(ref IADsContainer self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) CopyHere;
+				public new function HRESULT(ref IADsContainer self, BSTR SourceName, BSTR NewName, IDispatch** ppObject) MoveHere;
 			}
 		}
 		[CRepr]
@@ -2323,27 +2323,27 @@ namespace Win32
 			
 			public HRESULT get__NewEnum(IUnknown** ppEnumerator) mut
 			{
-				return VT.get__NewEnum(&this, ppEnumerator);
+				return VT.get__NewEnum(ref this, ppEnumerator);
 			}
 			public HRESULT Add(BSTR bstrName, VARIANT vItem) mut
 			{
-				return VT.Add(&this, bstrName, vItem);
+				return VT.Add(ref this, bstrName, vItem);
 			}
 			public HRESULT Remove(BSTR bstrItemToBeRemoved) mut
 			{
-				return VT.Remove(&this, bstrItemToBeRemoved);
+				return VT.Remove(ref this, bstrItemToBeRemoved);
 			}
-			public HRESULT GetObject(BSTR bstrName, VARIANT* pvItem) mut
+			public HRESULT GetObject(BSTR bstrName, out VARIANT pvItem) mut
 			{
-				return VT.GetObject(&this, bstrName, pvItem);
+				return VT.GetObject(ref this, bstrName, out pvItem);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsCollection *self, IUnknown** ppEnumerator) get__NewEnum;
-				public new function HRESULT(IADsCollection *self, BSTR bstrName, VARIANT vItem) Add;
-				public new function HRESULT(IADsCollection *self, BSTR bstrItemToBeRemoved) Remove;
-				public new function HRESULT(IADsCollection *self, BSTR bstrName, VARIANT* pvItem) GetObject;
+				public new function HRESULT(ref IADsCollection self, IUnknown** ppEnumerator) get__NewEnum;
+				public new function HRESULT(ref IADsCollection self, BSTR bstrName, VARIANT vItem) Add;
+				public new function HRESULT(ref IADsCollection self, BSTR bstrItemToBeRemoved) Remove;
+				public new function HRESULT(ref IADsCollection self, BSTR bstrName, out VARIANT pvItem) GetObject;
 			}
 		}
 		[CRepr]
@@ -2353,29 +2353,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* plCount) mut
+			public HRESULT get_Count(out int32 plCount) mut
 			{
-				return VT.get_Count(&this, plCount);
+				return VT.get_Count(ref this, out plCount);
 			}
 			public HRESULT get__NewEnum(IUnknown** ppEnumerator) mut
 			{
-				return VT.get__NewEnum(&this, ppEnumerator);
+				return VT.get__NewEnum(ref this, ppEnumerator);
 			}
-			public HRESULT get_Filter(VARIANT* pvFilter) mut
+			public HRESULT get_Filter(out VARIANT pvFilter) mut
 			{
-				return VT.get_Filter(&this, pvFilter);
+				return VT.get_Filter(ref this, out pvFilter);
 			}
 			public HRESULT put_Filter(VARIANT pvFilter) mut
 			{
-				return VT.put_Filter(&this, pvFilter);
+				return VT.put_Filter(ref this, pvFilter);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsMembers *self, int32* plCount) get_Count;
-				public new function HRESULT(IADsMembers *self, IUnknown** ppEnumerator) get__NewEnum;
-				public new function HRESULT(IADsMembers *self, VARIANT* pvFilter) get_Filter;
-				public new function HRESULT(IADsMembers *self, VARIANT pvFilter) put_Filter;
+				public new function HRESULT(ref IADsMembers self, out int32 plCount) get_Count;
+				public new function HRESULT(ref IADsMembers self, IUnknown** ppEnumerator) get__NewEnum;
+				public new function HRESULT(ref IADsMembers self, out VARIANT pvFilter) get_Filter;
+				public new function HRESULT(ref IADsMembers self, VARIANT pvFilter) put_Filter;
 			}
 		}
 		[CRepr]
@@ -2385,54 +2385,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PropertyCount(int32* plCount) mut
+			public HRESULT get_PropertyCount(out int32 plCount) mut
 			{
-				return VT.get_PropertyCount(&this, plCount);
+				return VT.get_PropertyCount(ref this, out plCount);
 			}
-			public HRESULT Next(VARIANT* pVariant) mut
+			public HRESULT Next(out VARIANT pVariant) mut
 			{
-				return VT.Next(&this, pVariant);
+				return VT.Next(ref this, out pVariant);
 			}
 			public HRESULT Skip(int32 cElements) mut
 			{
-				return VT.Skip(&this, cElements);
+				return VT.Skip(ref this, cElements);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT Item(VARIANT varIndex, VARIANT* pVariant) mut
+			public HRESULT Item(VARIANT varIndex, out VARIANT pVariant) mut
 			{
-				return VT.Item(&this, varIndex, pVariant);
+				return VT.Item(ref this, varIndex, out pVariant);
 			}
-			public HRESULT GetPropertyItem(BSTR bstrName, int32 lnADsType, VARIANT* pVariant) mut
+			public HRESULT GetPropertyItem(BSTR bstrName, int32 lnADsType, out VARIANT pVariant) mut
 			{
-				return VT.GetPropertyItem(&this, bstrName, lnADsType, pVariant);
+				return VT.GetPropertyItem(ref this, bstrName, lnADsType, out pVariant);
 			}
 			public HRESULT PutPropertyItem(VARIANT varData) mut
 			{
-				return VT.PutPropertyItem(&this, varData);
+				return VT.PutPropertyItem(ref this, varData);
 			}
 			public HRESULT ResetPropertyItem(VARIANT varEntry) mut
 			{
-				return VT.ResetPropertyItem(&this, varEntry);
+				return VT.ResetPropertyItem(ref this, varEntry);
 			}
 			public HRESULT PurgePropertyList() mut
 			{
-				return VT.PurgePropertyList(&this);
+				return VT.PurgePropertyList(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsPropertyList *self, int32* plCount) get_PropertyCount;
-				public new function HRESULT(IADsPropertyList *self, VARIANT* pVariant) Next;
-				public new function HRESULT(IADsPropertyList *self, int32 cElements) Skip;
-				public new function HRESULT(IADsPropertyList *self) Reset;
-				public new function HRESULT(IADsPropertyList *self, VARIANT varIndex, VARIANT* pVariant) Item;
-				public new function HRESULT(IADsPropertyList *self, BSTR bstrName, int32 lnADsType, VARIANT* pVariant) GetPropertyItem;
-				public new function HRESULT(IADsPropertyList *self, VARIANT varData) PutPropertyItem;
-				public new function HRESULT(IADsPropertyList *self, VARIANT varEntry) ResetPropertyItem;
-				public new function HRESULT(IADsPropertyList *self) PurgePropertyList;
+				public new function HRESULT(ref IADsPropertyList self, out int32 plCount) get_PropertyCount;
+				public new function HRESULT(ref IADsPropertyList self, out VARIANT pVariant) Next;
+				public new function HRESULT(ref IADsPropertyList self, int32 cElements) Skip;
+				public new function HRESULT(ref IADsPropertyList self) Reset;
+				public new function HRESULT(ref IADsPropertyList self, VARIANT varIndex, out VARIANT pVariant) Item;
+				public new function HRESULT(ref IADsPropertyList self, BSTR bstrName, int32 lnADsType, out VARIANT pVariant) GetPropertyItem;
+				public new function HRESULT(ref IADsPropertyList self, VARIANT varData) PutPropertyItem;
+				public new function HRESULT(ref IADsPropertyList self, VARIANT varEntry) ResetPropertyItem;
+				public new function HRESULT(ref IADsPropertyList self) PurgePropertyList;
 			}
 		}
 		[CRepr]
@@ -2444,52 +2444,52 @@ namespace Win32
 			
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT get_Name(BSTR* retval) mut
 			{
-				return VT.get_Name(&this, retval);
+				return VT.get_Name(ref this, retval);
 			}
 			public HRESULT put_Name(BSTR bstrName) mut
 			{
-				return VT.put_Name(&this, bstrName);
+				return VT.put_Name(ref this, bstrName);
 			}
-			public HRESULT get_ADsType(int32* retval) mut
+			public HRESULT get_ADsType(out int32 retval) mut
 			{
-				return VT.get_ADsType(&this, retval);
+				return VT.get_ADsType(ref this, out retval);
 			}
 			public HRESULT put_ADsType(int32 lnADsType) mut
 			{
-				return VT.put_ADsType(&this, lnADsType);
+				return VT.put_ADsType(ref this, lnADsType);
 			}
-			public HRESULT get_ControlCode(int32* retval) mut
+			public HRESULT get_ControlCode(out int32 retval) mut
 			{
-				return VT.get_ControlCode(&this, retval);
+				return VT.get_ControlCode(ref this, out retval);
 			}
 			public HRESULT put_ControlCode(int32 lnControlCode) mut
 			{
-				return VT.put_ControlCode(&this, lnControlCode);
+				return VT.put_ControlCode(ref this, lnControlCode);
 			}
-			public HRESULT get_Values(VARIANT* retval) mut
+			public HRESULT get_Values(out VARIANT retval) mut
 			{
-				return VT.get_Values(&this, retval);
+				return VT.get_Values(ref this, out retval);
 			}
 			public HRESULT put_Values(VARIANT vValues) mut
 			{
-				return VT.put_Values(&this, vValues);
+				return VT.put_Values(ref this, vValues);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsPropertyEntry *self) Clear;
-				public new function HRESULT(IADsPropertyEntry *self, BSTR* retval) get_Name;
-				public new function HRESULT(IADsPropertyEntry *self, BSTR bstrName) put_Name;
-				public new function HRESULT(IADsPropertyEntry *self, int32* retval) get_ADsType;
-				public new function HRESULT(IADsPropertyEntry *self, int32 lnADsType) put_ADsType;
-				public new function HRESULT(IADsPropertyEntry *self, int32* retval) get_ControlCode;
-				public new function HRESULT(IADsPropertyEntry *self, int32 lnControlCode) put_ControlCode;
-				public new function HRESULT(IADsPropertyEntry *self, VARIANT* retval) get_Values;
-				public new function HRESULT(IADsPropertyEntry *self, VARIANT vValues) put_Values;
+				public new function HRESULT(ref IADsPropertyEntry self) Clear;
+				public new function HRESULT(ref IADsPropertyEntry self, BSTR* retval) get_Name;
+				public new function HRESULT(ref IADsPropertyEntry self, BSTR bstrName) put_Name;
+				public new function HRESULT(ref IADsPropertyEntry self, out int32 retval) get_ADsType;
+				public new function HRESULT(ref IADsPropertyEntry self, int32 lnADsType) put_ADsType;
+				public new function HRESULT(ref IADsPropertyEntry self, out int32 retval) get_ControlCode;
+				public new function HRESULT(ref IADsPropertyEntry self, int32 lnControlCode) put_ControlCode;
+				public new function HRESULT(ref IADsPropertyEntry self, out VARIANT retval) get_Values;
+				public new function HRESULT(ref IADsPropertyEntry self, VARIANT vValues) put_Values;
 			}
 		}
 		[CRepr]
@@ -2501,132 +2501,132 @@ namespace Win32
 			
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
-			public HRESULT get_ADsType(int32* retval) mut
+			public HRESULT get_ADsType(out int32 retval) mut
 			{
-				return VT.get_ADsType(&this, retval);
+				return VT.get_ADsType(ref this, out retval);
 			}
 			public HRESULT put_ADsType(int32 lnADsType) mut
 			{
-				return VT.put_ADsType(&this, lnADsType);
+				return VT.put_ADsType(ref this, lnADsType);
 			}
 			public HRESULT get_DNString(BSTR* retval) mut
 			{
-				return VT.get_DNString(&this, retval);
+				return VT.get_DNString(ref this, retval);
 			}
 			public HRESULT put_DNString(BSTR bstrDNString) mut
 			{
-				return VT.put_DNString(&this, bstrDNString);
+				return VT.put_DNString(ref this, bstrDNString);
 			}
 			public HRESULT get_CaseExactString(BSTR* retval) mut
 			{
-				return VT.get_CaseExactString(&this, retval);
+				return VT.get_CaseExactString(ref this, retval);
 			}
 			public HRESULT put_CaseExactString(BSTR bstrCaseExactString) mut
 			{
-				return VT.put_CaseExactString(&this, bstrCaseExactString);
+				return VT.put_CaseExactString(ref this, bstrCaseExactString);
 			}
 			public HRESULT get_CaseIgnoreString(BSTR* retval) mut
 			{
-				return VT.get_CaseIgnoreString(&this, retval);
+				return VT.get_CaseIgnoreString(ref this, retval);
 			}
 			public HRESULT put_CaseIgnoreString(BSTR bstrCaseIgnoreString) mut
 			{
-				return VT.put_CaseIgnoreString(&this, bstrCaseIgnoreString);
+				return VT.put_CaseIgnoreString(ref this, bstrCaseIgnoreString);
 			}
 			public HRESULT get_PrintableString(BSTR* retval) mut
 			{
-				return VT.get_PrintableString(&this, retval);
+				return VT.get_PrintableString(ref this, retval);
 			}
 			public HRESULT put_PrintableString(BSTR bstrPrintableString) mut
 			{
-				return VT.put_PrintableString(&this, bstrPrintableString);
+				return VT.put_PrintableString(ref this, bstrPrintableString);
 			}
 			public HRESULT get_NumericString(BSTR* retval) mut
 			{
-				return VT.get_NumericString(&this, retval);
+				return VT.get_NumericString(ref this, retval);
 			}
 			public HRESULT put_NumericString(BSTR bstrNumericString) mut
 			{
-				return VT.put_NumericString(&this, bstrNumericString);
+				return VT.put_NumericString(ref this, bstrNumericString);
 			}
-			public HRESULT get_Boolean(int32* retval) mut
+			public HRESULT get_Boolean(out int32 retval) mut
 			{
-				return VT.get_Boolean(&this, retval);
+				return VT.get_Boolean(ref this, out retval);
 			}
 			public HRESULT put_Boolean(int32 lnBoolean) mut
 			{
-				return VT.put_Boolean(&this, lnBoolean);
+				return VT.put_Boolean(ref this, lnBoolean);
 			}
-			public HRESULT get_Integer(int32* retval) mut
+			public HRESULT get_Integer(out int32 retval) mut
 			{
-				return VT.get_Integer(&this, retval);
+				return VT.get_Integer(ref this, out retval);
 			}
 			public HRESULT put_Integer(int32 lnInteger) mut
 			{
-				return VT.put_Integer(&this, lnInteger);
+				return VT.put_Integer(ref this, lnInteger);
 			}
-			public HRESULT get_OctetString(VARIANT* retval) mut
+			public HRESULT get_OctetString(out VARIANT retval) mut
 			{
-				return VT.get_OctetString(&this, retval);
+				return VT.get_OctetString(ref this, out retval);
 			}
 			public HRESULT put_OctetString(VARIANT vOctetString) mut
 			{
-				return VT.put_OctetString(&this, vOctetString);
+				return VT.put_OctetString(ref this, vOctetString);
 			}
 			public HRESULT get_SecurityDescriptor(IDispatch** retval) mut
 			{
-				return VT.get_SecurityDescriptor(&this, retval);
+				return VT.get_SecurityDescriptor(ref this, retval);
 			}
 			public HRESULT put_SecurityDescriptor(IDispatch* pSecurityDescriptor) mut
 			{
-				return VT.put_SecurityDescriptor(&this, pSecurityDescriptor);
+				return VT.put_SecurityDescriptor(ref this, pSecurityDescriptor);
 			}
 			public HRESULT get_LargeInteger(IDispatch** retval) mut
 			{
-				return VT.get_LargeInteger(&this, retval);
+				return VT.get_LargeInteger(ref this, retval);
 			}
 			public HRESULT put_LargeInteger(IDispatch* pLargeInteger) mut
 			{
-				return VT.put_LargeInteger(&this, pLargeInteger);
+				return VT.put_LargeInteger(ref this, pLargeInteger);
 			}
-			public HRESULT get_UTCTime(double* retval) mut
+			public HRESULT get_UTCTime(out double retval) mut
 			{
-				return VT.get_UTCTime(&this, retval);
+				return VT.get_UTCTime(ref this, out retval);
 			}
 			public HRESULT put_UTCTime(double daUTCTime) mut
 			{
-				return VT.put_UTCTime(&this, daUTCTime);
+				return VT.put_UTCTime(ref this, daUTCTime);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsPropertyValue *self) Clear;
-				public new function HRESULT(IADsPropertyValue *self, int32* retval) get_ADsType;
-				public new function HRESULT(IADsPropertyValue *self, int32 lnADsType) put_ADsType;
-				public new function HRESULT(IADsPropertyValue *self, BSTR* retval) get_DNString;
-				public new function HRESULT(IADsPropertyValue *self, BSTR bstrDNString) put_DNString;
-				public new function HRESULT(IADsPropertyValue *self, BSTR* retval) get_CaseExactString;
-				public new function HRESULT(IADsPropertyValue *self, BSTR bstrCaseExactString) put_CaseExactString;
-				public new function HRESULT(IADsPropertyValue *self, BSTR* retval) get_CaseIgnoreString;
-				public new function HRESULT(IADsPropertyValue *self, BSTR bstrCaseIgnoreString) put_CaseIgnoreString;
-				public new function HRESULT(IADsPropertyValue *self, BSTR* retval) get_PrintableString;
-				public new function HRESULT(IADsPropertyValue *self, BSTR bstrPrintableString) put_PrintableString;
-				public new function HRESULT(IADsPropertyValue *self, BSTR* retval) get_NumericString;
-				public new function HRESULT(IADsPropertyValue *self, BSTR bstrNumericString) put_NumericString;
-				public new function HRESULT(IADsPropertyValue *self, int32* retval) get_Boolean;
-				public new function HRESULT(IADsPropertyValue *self, int32 lnBoolean) put_Boolean;
-				public new function HRESULT(IADsPropertyValue *self, int32* retval) get_Integer;
-				public new function HRESULT(IADsPropertyValue *self, int32 lnInteger) put_Integer;
-				public new function HRESULT(IADsPropertyValue *self, VARIANT* retval) get_OctetString;
-				public new function HRESULT(IADsPropertyValue *self, VARIANT vOctetString) put_OctetString;
-				public new function HRESULT(IADsPropertyValue *self, IDispatch** retval) get_SecurityDescriptor;
-				public new function HRESULT(IADsPropertyValue *self, IDispatch* pSecurityDescriptor) put_SecurityDescriptor;
-				public new function HRESULT(IADsPropertyValue *self, IDispatch** retval) get_LargeInteger;
-				public new function HRESULT(IADsPropertyValue *self, IDispatch* pLargeInteger) put_LargeInteger;
-				public new function HRESULT(IADsPropertyValue *self, double* retval) get_UTCTime;
-				public new function HRESULT(IADsPropertyValue *self, double daUTCTime) put_UTCTime;
+				public new function HRESULT(ref IADsPropertyValue self) Clear;
+				public new function HRESULT(ref IADsPropertyValue self, out int32 retval) get_ADsType;
+				public new function HRESULT(ref IADsPropertyValue self, int32 lnADsType) put_ADsType;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_DNString;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrDNString) put_DNString;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_CaseExactString;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrCaseExactString) put_CaseExactString;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_CaseIgnoreString;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrCaseIgnoreString) put_CaseIgnoreString;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_PrintableString;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrPrintableString) put_PrintableString;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR* retval) get_NumericString;
+				public new function HRESULT(ref IADsPropertyValue self, BSTR bstrNumericString) put_NumericString;
+				public new function HRESULT(ref IADsPropertyValue self, out int32 retval) get_Boolean;
+				public new function HRESULT(ref IADsPropertyValue self, int32 lnBoolean) put_Boolean;
+				public new function HRESULT(ref IADsPropertyValue self, out int32 retval) get_Integer;
+				public new function HRESULT(ref IADsPropertyValue self, int32 lnInteger) put_Integer;
+				public new function HRESULT(ref IADsPropertyValue self, out VARIANT retval) get_OctetString;
+				public new function HRESULT(ref IADsPropertyValue self, VARIANT vOctetString) put_OctetString;
+				public new function HRESULT(ref IADsPropertyValue self, IDispatch** retval) get_SecurityDescriptor;
+				public new function HRESULT(ref IADsPropertyValue self, IDispatch* pSecurityDescriptor) put_SecurityDescriptor;
+				public new function HRESULT(ref IADsPropertyValue self, IDispatch** retval) get_LargeInteger;
+				public new function HRESULT(ref IADsPropertyValue self, IDispatch* pLargeInteger) put_LargeInteger;
+				public new function HRESULT(ref IADsPropertyValue self, out double retval) get_UTCTime;
+				public new function HRESULT(ref IADsPropertyValue self, double daUTCTime) put_UTCTime;
 			}
 		}
 		[CRepr]
@@ -2636,19 +2636,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObjectProperty(int32* lnADsType, VARIANT* pvProp) mut
+			public HRESULT GetObjectProperty(out int32 lnADsType, out VARIANT pvProp) mut
 			{
-				return VT.GetObjectProperty(&this, lnADsType, pvProp);
+				return VT.GetObjectProperty(ref this, out lnADsType, out pvProp);
 			}
 			public HRESULT PutObjectProperty(int32 lnADsType, VARIANT vProp) mut
 			{
-				return VT.PutObjectProperty(&this, lnADsType, vProp);
+				return VT.PutObjectProperty(ref this, lnADsType, vProp);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsPropertyValue2 *self, int32* lnADsType, VARIANT* pvProp) GetObjectProperty;
-				public new function HRESULT(IADsPropertyValue2 *self, int32 lnADsType, VARIANT vProp) PutObjectProperty;
+				public new function HRESULT(ref IADsPropertyValue2 self, out int32 lnADsType, out VARIANT pvProp) GetObjectProperty;
+				public new function HRESULT(ref IADsPropertyValue2 self, int32 lnADsType, VARIANT vProp) PutObjectProperty;
 			}
 		}
 		[CRepr]
@@ -2660,32 +2660,32 @@ namespace Win32
 			
 			public HRESULT ADSIInitializeDispatchManager(int32 dwExtensionId) mut
 			{
-				return VT.ADSIInitializeDispatchManager(&this, dwExtensionId);
+				return VT.ADSIInitializeDispatchManager(ref this, dwExtensionId);
 			}
-			public HRESULT ADSIGetTypeInfoCount(uint32* pctinfo) mut
+			public HRESULT ADSIGetTypeInfoCount(out uint32 pctinfo) mut
 			{
-				return VT.ADSIGetTypeInfoCount(&this, pctinfo);
+				return VT.ADSIGetTypeInfoCount(ref this, out pctinfo);
 			}
 			public HRESULT ADSIGetTypeInfo(uint32 itinfo, uint32 lcid, ITypeInfo** pptinfo) mut
 			{
-				return VT.ADSIGetTypeInfo(&this, itinfo, lcid, pptinfo);
+				return VT.ADSIGetTypeInfo(ref this, itinfo, lcid, pptinfo);
 			}
-			public HRESULT ADSIGetIDsOfNames(Guid* riid, uint16** rgszNames, uint32 cNames, uint32 lcid, int32* rgdispid) mut
+			public HRESULT ADSIGetIDsOfNames(in Guid riid, uint16** rgszNames, uint32 cNames, uint32 lcid, out int32 rgdispid) mut
 			{
-				return VT.ADSIGetIDsOfNames(&this, riid, rgszNames, cNames, lcid, rgdispid);
+				return VT.ADSIGetIDsOfNames(ref this, riid, rgszNames, cNames, lcid, out rgdispid);
 			}
-			public HRESULT ADSIInvoke(int32 dispidMember, Guid* riid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pvarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) mut
+			public HRESULT ADSIInvoke(int32 dispidMember, in Guid riid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pvarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) mut
 			{
-				return VT.ADSIInvoke(&this, dispidMember, riid, lcid, wFlags, pdispparams, pvarResult, pexcepinfo, puArgErr);
+				return VT.ADSIInvoke(ref this, dispidMember, riid, lcid, wFlags, ref pdispparams, out pvarResult, out pexcepinfo, out puArgErr);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrivateDispatch *self, int32 dwExtensionId) ADSIInitializeDispatchManager;
-				public new function HRESULT(IPrivateDispatch *self, uint32* pctinfo) ADSIGetTypeInfoCount;
-				public new function HRESULT(IPrivateDispatch *self, uint32 itinfo, uint32 lcid, ITypeInfo** pptinfo) ADSIGetTypeInfo;
-				public new function HRESULT(IPrivateDispatch *self, Guid* riid, uint16** rgszNames, uint32 cNames, uint32 lcid, int32* rgdispid) ADSIGetIDsOfNames;
-				public new function HRESULT(IPrivateDispatch *self, int32 dispidMember, Guid* riid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pvarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) ADSIInvoke;
+				public new function HRESULT(ref IPrivateDispatch self, int32 dwExtensionId) ADSIInitializeDispatchManager;
+				public new function HRESULT(ref IPrivateDispatch self, out uint32 pctinfo) ADSIGetTypeInfoCount;
+				public new function HRESULT(ref IPrivateDispatch self, uint32 itinfo, uint32 lcid, ITypeInfo** pptinfo) ADSIGetTypeInfo;
+				public new function HRESULT(ref IPrivateDispatch self, in Guid riid, uint16** rgszNames, uint32 cNames, uint32 lcid, out int32 rgdispid) ADSIGetIDsOfNames;
+				public new function HRESULT(ref IPrivateDispatch self, int32 dispidMember, in Guid riid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pvarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) ADSIInvoke;
 			}
 		}
 		[CRepr]
@@ -2697,17 +2697,17 @@ namespace Win32
 			
 			public HRESULT ADSIInitializeObject(BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved) mut
 			{
-				return VT.ADSIInitializeObject(&this, lpszUserName, lpszPassword, lnReserved);
+				return VT.ADSIInitializeObject(ref this, lpszUserName, lpszPassword, lnReserved);
 			}
 			public HRESULT ADSIReleaseObject() mut
 			{
-				return VT.ADSIReleaseObject(&this);
+				return VT.ADSIReleaseObject(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrivateUnknown *self, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved) ADSIInitializeObject;
-				public new function HRESULT(IPrivateUnknown *self) ADSIReleaseObject;
+				public new function HRESULT(ref IPrivateUnknown self, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved) ADSIInitializeObject;
+				public new function HRESULT(ref IPrivateUnknown self) ADSIReleaseObject;
 			}
 		}
 		[CRepr]
@@ -2719,22 +2719,22 @@ namespace Win32
 			
 			public HRESULT Operate(uint32 dwCode, VARIANT varData1, VARIANT varData2, VARIANT varData3) mut
 			{
-				return VT.Operate(&this, dwCode, varData1, varData2, varData3);
+				return VT.Operate(ref this, dwCode, varData1, varData2, varData3);
 			}
-			public HRESULT PrivateGetIDsOfNames(Guid* riid, uint16** rgszNames, uint32 cNames, uint32 lcid, int32* rgDispid) mut
+			public HRESULT PrivateGetIDsOfNames(in Guid riid, uint16** rgszNames, uint32 cNames, uint32 lcid, out int32 rgDispid) mut
 			{
-				return VT.PrivateGetIDsOfNames(&this, riid, rgszNames, cNames, lcid, rgDispid);
+				return VT.PrivateGetIDsOfNames(ref this, riid, rgszNames, cNames, lcid, out rgDispid);
 			}
-			public HRESULT PrivateInvoke(int32 dispidMember, Guid* riid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pvarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) mut
+			public HRESULT PrivateInvoke(int32 dispidMember, in Guid riid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pvarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) mut
 			{
-				return VT.PrivateInvoke(&this, dispidMember, riid, lcid, wFlags, pdispparams, pvarResult, pexcepinfo, puArgErr);
+				return VT.PrivateInvoke(ref this, dispidMember, riid, lcid, wFlags, ref pdispparams, out pvarResult, out pexcepinfo, out puArgErr);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IADsExtension *self, uint32 dwCode, VARIANT varData1, VARIANT varData2, VARIANT varData3) Operate;
-				public new function HRESULT(IADsExtension *self, Guid* riid, uint16** rgszNames, uint32 cNames, uint32 lcid, int32* rgDispid) PrivateGetIDsOfNames;
-				public new function HRESULT(IADsExtension *self, int32 dispidMember, Guid* riid, uint32 lcid, uint16 wFlags, DISPPARAMS* pdispparams, VARIANT* pvarResult, EXCEPINFO* pexcepinfo, uint32* puArgErr) PrivateInvoke;
+				public new function HRESULT(ref IADsExtension self, uint32 dwCode, VARIANT varData1, VARIANT varData2, VARIANT varData3) Operate;
+				public new function HRESULT(ref IADsExtension self, in Guid riid, uint16** rgszNames, uint32 cNames, uint32 lcid, out int32 rgDispid) PrivateGetIDsOfNames;
+				public new function HRESULT(ref IADsExtension self, int32 dispidMember, in Guid riid, uint32 lcid, uint16 wFlags, ref DISPPARAMS pdispparams, out VARIANT pvarResult, out EXCEPINFO pexcepinfo, out uint32 puArgErr) PrivateInvoke;
 			}
 		}
 		[CRepr]
@@ -2746,12 +2746,12 @@ namespace Win32
 			
 			public HRESULT DeleteObject(int32 lnFlags) mut
 			{
-				return VT.DeleteObject(&this, lnFlags);
+				return VT.DeleteObject(ref this, lnFlags);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsDeleteOps *self, int32 lnFlags) DeleteObject;
+				public new function HRESULT(ref IADsDeleteOps self, int32 lnFlags) DeleteObject;
 			}
 		}
 		[CRepr]
@@ -2763,17 +2763,17 @@ namespace Win32
 			
 			public HRESULT get_DefaultContainer(BSTR* retval) mut
 			{
-				return VT.get_DefaultContainer(&this, retval);
+				return VT.get_DefaultContainer(ref this, retval);
 			}
 			public HRESULT put_DefaultContainer(BSTR bstrDefaultContainer) mut
 			{
-				return VT.put_DefaultContainer(&this, bstrDefaultContainer);
+				return VT.put_DefaultContainer(ref this, bstrDefaultContainer);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsNamespaces *self, BSTR* retval) get_DefaultContainer;
-				public new function HRESULT(IADsNamespaces *self, BSTR bstrDefaultContainer) put_DefaultContainer;
+				public new function HRESULT(ref IADsNamespaces self, BSTR* retval) get_DefaultContainer;
+				public new function HRESULT(ref IADsNamespaces self, BSTR bstrDefaultContainer) put_DefaultContainer;
 			}
 		}
 		[CRepr]
@@ -2785,157 +2785,157 @@ namespace Win32
 			
 			public HRESULT get_PrimaryInterface(BSTR* retval) mut
 			{
-				return VT.get_PrimaryInterface(&this, retval);
+				return VT.get_PrimaryInterface(ref this, retval);
 			}
 			public HRESULT get_CLSID(BSTR* retval) mut
 			{
-				return VT.get_CLSID(&this, retval);
+				return VT.get_CLSID(ref this, retval);
 			}
 			public HRESULT put_CLSID(BSTR bstrCLSID) mut
 			{
-				return VT.put_CLSID(&this, bstrCLSID);
+				return VT.put_CLSID(ref this, bstrCLSID);
 			}
 			public HRESULT get_OID(BSTR* retval) mut
 			{
-				return VT.get_OID(&this, retval);
+				return VT.get_OID(ref this, retval);
 			}
 			public HRESULT put_OID(BSTR bstrOID) mut
 			{
-				return VT.put_OID(&this, bstrOID);
+				return VT.put_OID(ref this, bstrOID);
 			}
-			public HRESULT get_Abstract(int16* retval) mut
+			public HRESULT get_Abstract(out int16 retval) mut
 			{
-				return VT.get_Abstract(&this, retval);
+				return VT.get_Abstract(ref this, out retval);
 			}
 			public HRESULT put_Abstract(int16 fAbstract) mut
 			{
-				return VT.put_Abstract(&this, fAbstract);
+				return VT.put_Abstract(ref this, fAbstract);
 			}
-			public HRESULT get_Auxiliary(int16* retval) mut
+			public HRESULT get_Auxiliary(out int16 retval) mut
 			{
-				return VT.get_Auxiliary(&this, retval);
+				return VT.get_Auxiliary(ref this, out retval);
 			}
 			public HRESULT put_Auxiliary(int16 fAuxiliary) mut
 			{
-				return VT.put_Auxiliary(&this, fAuxiliary);
+				return VT.put_Auxiliary(ref this, fAuxiliary);
 			}
-			public HRESULT get_MandatoryProperties(VARIANT* retval) mut
+			public HRESULT get_MandatoryProperties(out VARIANT retval) mut
 			{
-				return VT.get_MandatoryProperties(&this, retval);
+				return VT.get_MandatoryProperties(ref this, out retval);
 			}
 			public HRESULT put_MandatoryProperties(VARIANT vMandatoryProperties) mut
 			{
-				return VT.put_MandatoryProperties(&this, vMandatoryProperties);
+				return VT.put_MandatoryProperties(ref this, vMandatoryProperties);
 			}
-			public HRESULT get_OptionalProperties(VARIANT* retval) mut
+			public HRESULT get_OptionalProperties(out VARIANT retval) mut
 			{
-				return VT.get_OptionalProperties(&this, retval);
+				return VT.get_OptionalProperties(ref this, out retval);
 			}
 			public HRESULT put_OptionalProperties(VARIANT vOptionalProperties) mut
 			{
-				return VT.put_OptionalProperties(&this, vOptionalProperties);
+				return VT.put_OptionalProperties(ref this, vOptionalProperties);
 			}
-			public HRESULT get_NamingProperties(VARIANT* retval) mut
+			public HRESULT get_NamingProperties(out VARIANT retval) mut
 			{
-				return VT.get_NamingProperties(&this, retval);
+				return VT.get_NamingProperties(ref this, out retval);
 			}
 			public HRESULT put_NamingProperties(VARIANT vNamingProperties) mut
 			{
-				return VT.put_NamingProperties(&this, vNamingProperties);
+				return VT.put_NamingProperties(ref this, vNamingProperties);
 			}
-			public HRESULT get_DerivedFrom(VARIANT* retval) mut
+			public HRESULT get_DerivedFrom(out VARIANT retval) mut
 			{
-				return VT.get_DerivedFrom(&this, retval);
+				return VT.get_DerivedFrom(ref this, out retval);
 			}
 			public HRESULT put_DerivedFrom(VARIANT vDerivedFrom) mut
 			{
-				return VT.put_DerivedFrom(&this, vDerivedFrom);
+				return VT.put_DerivedFrom(ref this, vDerivedFrom);
 			}
-			public HRESULT get_AuxDerivedFrom(VARIANT* retval) mut
+			public HRESULT get_AuxDerivedFrom(out VARIANT retval) mut
 			{
-				return VT.get_AuxDerivedFrom(&this, retval);
+				return VT.get_AuxDerivedFrom(ref this, out retval);
 			}
 			public HRESULT put_AuxDerivedFrom(VARIANT vAuxDerivedFrom) mut
 			{
-				return VT.put_AuxDerivedFrom(&this, vAuxDerivedFrom);
+				return VT.put_AuxDerivedFrom(ref this, vAuxDerivedFrom);
 			}
-			public HRESULT get_PossibleSuperiors(VARIANT* retval) mut
+			public HRESULT get_PossibleSuperiors(out VARIANT retval) mut
 			{
-				return VT.get_PossibleSuperiors(&this, retval);
+				return VT.get_PossibleSuperiors(ref this, out retval);
 			}
 			public HRESULT put_PossibleSuperiors(VARIANT vPossibleSuperiors) mut
 			{
-				return VT.put_PossibleSuperiors(&this, vPossibleSuperiors);
+				return VT.put_PossibleSuperiors(ref this, vPossibleSuperiors);
 			}
-			public HRESULT get_Containment(VARIANT* retval) mut
+			public HRESULT get_Containment(out VARIANT retval) mut
 			{
-				return VT.get_Containment(&this, retval);
+				return VT.get_Containment(ref this, out retval);
 			}
 			public HRESULT put_Containment(VARIANT vContainment) mut
 			{
-				return VT.put_Containment(&this, vContainment);
+				return VT.put_Containment(ref this, vContainment);
 			}
-			public HRESULT get_Container(int16* retval) mut
+			public HRESULT get_Container(out int16 retval) mut
 			{
-				return VT.get_Container(&this, retval);
+				return VT.get_Container(ref this, out retval);
 			}
 			public HRESULT put_Container(int16 fContainer) mut
 			{
-				return VT.put_Container(&this, fContainer);
+				return VT.put_Container(ref this, fContainer);
 			}
 			public HRESULT get_HelpFileName(BSTR* retval) mut
 			{
-				return VT.get_HelpFileName(&this, retval);
+				return VT.get_HelpFileName(ref this, retval);
 			}
 			public HRESULT put_HelpFileName(BSTR bstrHelpFileName) mut
 			{
-				return VT.put_HelpFileName(&this, bstrHelpFileName);
+				return VT.put_HelpFileName(ref this, bstrHelpFileName);
 			}
-			public HRESULT get_HelpFileContext(int32* retval) mut
+			public HRESULT get_HelpFileContext(out int32 retval) mut
 			{
-				return VT.get_HelpFileContext(&this, retval);
+				return VT.get_HelpFileContext(ref this, out retval);
 			}
 			public HRESULT put_HelpFileContext(int32 lnHelpFileContext) mut
 			{
-				return VT.put_HelpFileContext(&this, lnHelpFileContext);
+				return VT.put_HelpFileContext(ref this, lnHelpFileContext);
 			}
 			public HRESULT Qualifiers(IADsCollection** ppQualifiers) mut
 			{
-				return VT.Qualifiers(&this, ppQualifiers);
+				return VT.Qualifiers(ref this, ppQualifiers);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsClass *self, BSTR* retval) get_PrimaryInterface;
-				public new function HRESULT(IADsClass *self, BSTR* retval) get_CLSID;
-				public new function HRESULT(IADsClass *self, BSTR bstrCLSID) put_CLSID;
-				public new function HRESULT(IADsClass *self, BSTR* retval) get_OID;
-				public new function HRESULT(IADsClass *self, BSTR bstrOID) put_OID;
-				public new function HRESULT(IADsClass *self, int16* retval) get_Abstract;
-				public new function HRESULT(IADsClass *self, int16 fAbstract) put_Abstract;
-				public new function HRESULT(IADsClass *self, int16* retval) get_Auxiliary;
-				public new function HRESULT(IADsClass *self, int16 fAuxiliary) put_Auxiliary;
-				public new function HRESULT(IADsClass *self, VARIANT* retval) get_MandatoryProperties;
-				public new function HRESULT(IADsClass *self, VARIANT vMandatoryProperties) put_MandatoryProperties;
-				public new function HRESULT(IADsClass *self, VARIANT* retval) get_OptionalProperties;
-				public new function HRESULT(IADsClass *self, VARIANT vOptionalProperties) put_OptionalProperties;
-				public new function HRESULT(IADsClass *self, VARIANT* retval) get_NamingProperties;
-				public new function HRESULT(IADsClass *self, VARIANT vNamingProperties) put_NamingProperties;
-				public new function HRESULT(IADsClass *self, VARIANT* retval) get_DerivedFrom;
-				public new function HRESULT(IADsClass *self, VARIANT vDerivedFrom) put_DerivedFrom;
-				public new function HRESULT(IADsClass *self, VARIANT* retval) get_AuxDerivedFrom;
-				public new function HRESULT(IADsClass *self, VARIANT vAuxDerivedFrom) put_AuxDerivedFrom;
-				public new function HRESULT(IADsClass *self, VARIANT* retval) get_PossibleSuperiors;
-				public new function HRESULT(IADsClass *self, VARIANT vPossibleSuperiors) put_PossibleSuperiors;
-				public new function HRESULT(IADsClass *self, VARIANT* retval) get_Containment;
-				public new function HRESULT(IADsClass *self, VARIANT vContainment) put_Containment;
-				public new function HRESULT(IADsClass *self, int16* retval) get_Container;
-				public new function HRESULT(IADsClass *self, int16 fContainer) put_Container;
-				public new function HRESULT(IADsClass *self, BSTR* retval) get_HelpFileName;
-				public new function HRESULT(IADsClass *self, BSTR bstrHelpFileName) put_HelpFileName;
-				public new function HRESULT(IADsClass *self, int32* retval) get_HelpFileContext;
-				public new function HRESULT(IADsClass *self, int32 lnHelpFileContext) put_HelpFileContext;
-				public new function HRESULT(IADsClass *self, IADsCollection** ppQualifiers) Qualifiers;
+				public new function HRESULT(ref IADsClass self, BSTR* retval) get_PrimaryInterface;
+				public new function HRESULT(ref IADsClass self, BSTR* retval) get_CLSID;
+				public new function HRESULT(ref IADsClass self, BSTR bstrCLSID) put_CLSID;
+				public new function HRESULT(ref IADsClass self, BSTR* retval) get_OID;
+				public new function HRESULT(ref IADsClass self, BSTR bstrOID) put_OID;
+				public new function HRESULT(ref IADsClass self, out int16 retval) get_Abstract;
+				public new function HRESULT(ref IADsClass self, int16 fAbstract) put_Abstract;
+				public new function HRESULT(ref IADsClass self, out int16 retval) get_Auxiliary;
+				public new function HRESULT(ref IADsClass self, int16 fAuxiliary) put_Auxiliary;
+				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_MandatoryProperties;
+				public new function HRESULT(ref IADsClass self, VARIANT vMandatoryProperties) put_MandatoryProperties;
+				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_OptionalProperties;
+				public new function HRESULT(ref IADsClass self, VARIANT vOptionalProperties) put_OptionalProperties;
+				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_NamingProperties;
+				public new function HRESULT(ref IADsClass self, VARIANT vNamingProperties) put_NamingProperties;
+				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_DerivedFrom;
+				public new function HRESULT(ref IADsClass self, VARIANT vDerivedFrom) put_DerivedFrom;
+				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_AuxDerivedFrom;
+				public new function HRESULT(ref IADsClass self, VARIANT vAuxDerivedFrom) put_AuxDerivedFrom;
+				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_PossibleSuperiors;
+				public new function HRESULT(ref IADsClass self, VARIANT vPossibleSuperiors) put_PossibleSuperiors;
+				public new function HRESULT(ref IADsClass self, out VARIANT retval) get_Containment;
+				public new function HRESULT(ref IADsClass self, VARIANT vContainment) put_Containment;
+				public new function HRESULT(ref IADsClass self, out int16 retval) get_Container;
+				public new function HRESULT(ref IADsClass self, int16 fContainer) put_Container;
+				public new function HRESULT(ref IADsClass self, BSTR* retval) get_HelpFileName;
+				public new function HRESULT(ref IADsClass self, BSTR bstrHelpFileName) put_HelpFileName;
+				public new function HRESULT(ref IADsClass self, out int32 retval) get_HelpFileContext;
+				public new function HRESULT(ref IADsClass self, int32 lnHelpFileContext) put_HelpFileContext;
+				public new function HRESULT(ref IADsClass self, IADsCollection** ppQualifiers) Qualifiers;
 			}
 		}
 		[CRepr]
@@ -2947,62 +2947,62 @@ namespace Win32
 			
 			public HRESULT get_OID(BSTR* retval) mut
 			{
-				return VT.get_OID(&this, retval);
+				return VT.get_OID(ref this, retval);
 			}
 			public HRESULT put_OID(BSTR bstrOID) mut
 			{
-				return VT.put_OID(&this, bstrOID);
+				return VT.put_OID(ref this, bstrOID);
 			}
 			public HRESULT get_Syntax(BSTR* retval) mut
 			{
-				return VT.get_Syntax(&this, retval);
+				return VT.get_Syntax(ref this, retval);
 			}
 			public HRESULT put_Syntax(BSTR bstrSyntax) mut
 			{
-				return VT.put_Syntax(&this, bstrSyntax);
+				return VT.put_Syntax(ref this, bstrSyntax);
 			}
-			public HRESULT get_MaxRange(int32* retval) mut
+			public HRESULT get_MaxRange(out int32 retval) mut
 			{
-				return VT.get_MaxRange(&this, retval);
+				return VT.get_MaxRange(ref this, out retval);
 			}
 			public HRESULT put_MaxRange(int32 lnMaxRange) mut
 			{
-				return VT.put_MaxRange(&this, lnMaxRange);
+				return VT.put_MaxRange(ref this, lnMaxRange);
 			}
-			public HRESULT get_MinRange(int32* retval) mut
+			public HRESULT get_MinRange(out int32 retval) mut
 			{
-				return VT.get_MinRange(&this, retval);
+				return VT.get_MinRange(ref this, out retval);
 			}
 			public HRESULT put_MinRange(int32 lnMinRange) mut
 			{
-				return VT.put_MinRange(&this, lnMinRange);
+				return VT.put_MinRange(ref this, lnMinRange);
 			}
-			public HRESULT get_MultiValued(int16* retval) mut
+			public HRESULT get_MultiValued(out int16 retval) mut
 			{
-				return VT.get_MultiValued(&this, retval);
+				return VT.get_MultiValued(ref this, out retval);
 			}
 			public HRESULT put_MultiValued(int16 fMultiValued) mut
 			{
-				return VT.put_MultiValued(&this, fMultiValued);
+				return VT.put_MultiValued(ref this, fMultiValued);
 			}
 			public HRESULT Qualifiers(IADsCollection** ppQualifiers) mut
 			{
-				return VT.Qualifiers(&this, ppQualifiers);
+				return VT.Qualifiers(ref this, ppQualifiers);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsProperty *self, BSTR* retval) get_OID;
-				public new function HRESULT(IADsProperty *self, BSTR bstrOID) put_OID;
-				public new function HRESULT(IADsProperty *self, BSTR* retval) get_Syntax;
-				public new function HRESULT(IADsProperty *self, BSTR bstrSyntax) put_Syntax;
-				public new function HRESULT(IADsProperty *self, int32* retval) get_MaxRange;
-				public new function HRESULT(IADsProperty *self, int32 lnMaxRange) put_MaxRange;
-				public new function HRESULT(IADsProperty *self, int32* retval) get_MinRange;
-				public new function HRESULT(IADsProperty *self, int32 lnMinRange) put_MinRange;
-				public new function HRESULT(IADsProperty *self, int16* retval) get_MultiValued;
-				public new function HRESULT(IADsProperty *self, int16 fMultiValued) put_MultiValued;
-				public new function HRESULT(IADsProperty *self, IADsCollection** ppQualifiers) Qualifiers;
+				public new function HRESULT(ref IADsProperty self, BSTR* retval) get_OID;
+				public new function HRESULT(ref IADsProperty self, BSTR bstrOID) put_OID;
+				public new function HRESULT(ref IADsProperty self, BSTR* retval) get_Syntax;
+				public new function HRESULT(ref IADsProperty self, BSTR bstrSyntax) put_Syntax;
+				public new function HRESULT(ref IADsProperty self, out int32 retval) get_MaxRange;
+				public new function HRESULT(ref IADsProperty self, int32 lnMaxRange) put_MaxRange;
+				public new function HRESULT(ref IADsProperty self, out int32 retval) get_MinRange;
+				public new function HRESULT(ref IADsProperty self, int32 lnMinRange) put_MinRange;
+				public new function HRESULT(ref IADsProperty self, out int16 retval) get_MultiValued;
+				public new function HRESULT(ref IADsProperty self, int16 fMultiValued) put_MultiValued;
+				public new function HRESULT(ref IADsProperty self, IADsCollection** ppQualifiers) Qualifiers;
 			}
 		}
 		[CRepr]
@@ -3012,19 +3012,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_OleAutoDataType(int32* retval) mut
+			public HRESULT get_OleAutoDataType(out int32 retval) mut
 			{
-				return VT.get_OleAutoDataType(&this, retval);
+				return VT.get_OleAutoDataType(ref this, out retval);
 			}
 			public HRESULT put_OleAutoDataType(int32 lnOleAutoDataType) mut
 			{
-				return VT.put_OleAutoDataType(&this, lnOleAutoDataType);
+				return VT.put_OleAutoDataType(ref this, lnOleAutoDataType);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsSyntax *self, int32* retval) get_OleAutoDataType;
-				public new function HRESULT(IADsSyntax *self, int32 lnOleAutoDataType) put_OleAutoDataType;
+				public new function HRESULT(ref IADsSyntax self, out int32 retval) get_OleAutoDataType;
+				public new function HRESULT(ref IADsSyntax self, int32 lnOleAutoDataType) put_OleAutoDataType;
 			}
 		}
 		[CRepr]
@@ -3036,47 +3036,47 @@ namespace Win32
 			
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
 			public HRESULT get_LocalityName(BSTR* retval) mut
 			{
-				return VT.get_LocalityName(&this, retval);
+				return VT.get_LocalityName(ref this, retval);
 			}
 			public HRESULT put_LocalityName(BSTR bstrLocalityName) mut
 			{
-				return VT.put_LocalityName(&this, bstrLocalityName);
+				return VT.put_LocalityName(ref this, bstrLocalityName);
 			}
 			public HRESULT get_PostalAddress(BSTR* retval) mut
 			{
-				return VT.get_PostalAddress(&this, retval);
+				return VT.get_PostalAddress(ref this, retval);
 			}
 			public HRESULT put_PostalAddress(BSTR bstrPostalAddress) mut
 			{
-				return VT.put_PostalAddress(&this, bstrPostalAddress);
+				return VT.put_PostalAddress(ref this, bstrPostalAddress);
 			}
-			public HRESULT get_SeeAlso(VARIANT* retval) mut
+			public HRESULT get_SeeAlso(out VARIANT retval) mut
 			{
-				return VT.get_SeeAlso(&this, retval);
+				return VT.get_SeeAlso(ref this, out retval);
 			}
 			public HRESULT put_SeeAlso(VARIANT vSeeAlso) mut
 			{
-				return VT.put_SeeAlso(&this, vSeeAlso);
+				return VT.put_SeeAlso(ref this, vSeeAlso);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsLocality *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsLocality *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsLocality *self, BSTR* retval) get_LocalityName;
-				public new function HRESULT(IADsLocality *self, BSTR bstrLocalityName) put_LocalityName;
-				public new function HRESULT(IADsLocality *self, BSTR* retval) get_PostalAddress;
-				public new function HRESULT(IADsLocality *self, BSTR bstrPostalAddress) put_PostalAddress;
-				public new function HRESULT(IADsLocality *self, VARIANT* retval) get_SeeAlso;
-				public new function HRESULT(IADsLocality *self, VARIANT vSeeAlso) put_SeeAlso;
+				public new function HRESULT(ref IADsLocality self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsLocality self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsLocality self, BSTR* retval) get_LocalityName;
+				public new function HRESULT(ref IADsLocality self, BSTR bstrLocalityName) put_LocalityName;
+				public new function HRESULT(ref IADsLocality self, BSTR* retval) get_PostalAddress;
+				public new function HRESULT(ref IADsLocality self, BSTR bstrPostalAddress) put_PostalAddress;
+				public new function HRESULT(ref IADsLocality self, out VARIANT retval) get_SeeAlso;
+				public new function HRESULT(ref IADsLocality self, VARIANT vSeeAlso) put_SeeAlso;
 			}
 		}
 		[CRepr]
@@ -3088,67 +3088,67 @@ namespace Win32
 			
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
 			public HRESULT get_LocalityName(BSTR* retval) mut
 			{
-				return VT.get_LocalityName(&this, retval);
+				return VT.get_LocalityName(ref this, retval);
 			}
 			public HRESULT put_LocalityName(BSTR bstrLocalityName) mut
 			{
-				return VT.put_LocalityName(&this, bstrLocalityName);
+				return VT.put_LocalityName(ref this, bstrLocalityName);
 			}
 			public HRESULT get_PostalAddress(BSTR* retval) mut
 			{
-				return VT.get_PostalAddress(&this, retval);
+				return VT.get_PostalAddress(ref this, retval);
 			}
 			public HRESULT put_PostalAddress(BSTR bstrPostalAddress) mut
 			{
-				return VT.put_PostalAddress(&this, bstrPostalAddress);
+				return VT.put_PostalAddress(ref this, bstrPostalAddress);
 			}
 			public HRESULT get_TelephoneNumber(BSTR* retval) mut
 			{
-				return VT.get_TelephoneNumber(&this, retval);
+				return VT.get_TelephoneNumber(ref this, retval);
 			}
 			public HRESULT put_TelephoneNumber(BSTR bstrTelephoneNumber) mut
 			{
-				return VT.put_TelephoneNumber(&this, bstrTelephoneNumber);
+				return VT.put_TelephoneNumber(ref this, bstrTelephoneNumber);
 			}
 			public HRESULT get_FaxNumber(BSTR* retval) mut
 			{
-				return VT.get_FaxNumber(&this, retval);
+				return VT.get_FaxNumber(ref this, retval);
 			}
 			public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut
 			{
-				return VT.put_FaxNumber(&this, bstrFaxNumber);
+				return VT.put_FaxNumber(ref this, bstrFaxNumber);
 			}
-			public HRESULT get_SeeAlso(VARIANT* retval) mut
+			public HRESULT get_SeeAlso(out VARIANT retval) mut
 			{
-				return VT.get_SeeAlso(&this, retval);
+				return VT.get_SeeAlso(ref this, out retval);
 			}
 			public HRESULT put_SeeAlso(VARIANT vSeeAlso) mut
 			{
-				return VT.put_SeeAlso(&this, vSeeAlso);
+				return VT.put_SeeAlso(ref this, vSeeAlso);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsO *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsO *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsO *self, BSTR* retval) get_LocalityName;
-				public new function HRESULT(IADsO *self, BSTR bstrLocalityName) put_LocalityName;
-				public new function HRESULT(IADsO *self, BSTR* retval) get_PostalAddress;
-				public new function HRESULT(IADsO *self, BSTR bstrPostalAddress) put_PostalAddress;
-				public new function HRESULT(IADsO *self, BSTR* retval) get_TelephoneNumber;
-				public new function HRESULT(IADsO *self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
-				public new function HRESULT(IADsO *self, BSTR* retval) get_FaxNumber;
-				public new function HRESULT(IADsO *self, BSTR bstrFaxNumber) put_FaxNumber;
-				public new function HRESULT(IADsO *self, VARIANT* retval) get_SeeAlso;
-				public new function HRESULT(IADsO *self, VARIANT vSeeAlso) put_SeeAlso;
+				public new function HRESULT(ref IADsO self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsO self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsO self, BSTR* retval) get_LocalityName;
+				public new function HRESULT(ref IADsO self, BSTR bstrLocalityName) put_LocalityName;
+				public new function HRESULT(ref IADsO self, BSTR* retval) get_PostalAddress;
+				public new function HRESULT(ref IADsO self, BSTR bstrPostalAddress) put_PostalAddress;
+				public new function HRESULT(ref IADsO self, BSTR* retval) get_TelephoneNumber;
+				public new function HRESULT(ref IADsO self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
+				public new function HRESULT(ref IADsO self, BSTR* retval) get_FaxNumber;
+				public new function HRESULT(ref IADsO self, BSTR bstrFaxNumber) put_FaxNumber;
+				public new function HRESULT(ref IADsO self, out VARIANT retval) get_SeeAlso;
+				public new function HRESULT(ref IADsO self, VARIANT vSeeAlso) put_SeeAlso;
 			}
 		}
 		[CRepr]
@@ -3160,77 +3160,77 @@ namespace Win32
 			
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
 			public HRESULT get_LocalityName(BSTR* retval) mut
 			{
-				return VT.get_LocalityName(&this, retval);
+				return VT.get_LocalityName(ref this, retval);
 			}
 			public HRESULT put_LocalityName(BSTR bstrLocalityName) mut
 			{
-				return VT.put_LocalityName(&this, bstrLocalityName);
+				return VT.put_LocalityName(ref this, bstrLocalityName);
 			}
 			public HRESULT get_PostalAddress(BSTR* retval) mut
 			{
-				return VT.get_PostalAddress(&this, retval);
+				return VT.get_PostalAddress(ref this, retval);
 			}
 			public HRESULT put_PostalAddress(BSTR bstrPostalAddress) mut
 			{
-				return VT.put_PostalAddress(&this, bstrPostalAddress);
+				return VT.put_PostalAddress(ref this, bstrPostalAddress);
 			}
 			public HRESULT get_TelephoneNumber(BSTR* retval) mut
 			{
-				return VT.get_TelephoneNumber(&this, retval);
+				return VT.get_TelephoneNumber(ref this, retval);
 			}
 			public HRESULT put_TelephoneNumber(BSTR bstrTelephoneNumber) mut
 			{
-				return VT.put_TelephoneNumber(&this, bstrTelephoneNumber);
+				return VT.put_TelephoneNumber(ref this, bstrTelephoneNumber);
 			}
 			public HRESULT get_FaxNumber(BSTR* retval) mut
 			{
-				return VT.get_FaxNumber(&this, retval);
+				return VT.get_FaxNumber(ref this, retval);
 			}
 			public HRESULT put_FaxNumber(BSTR bstrFaxNumber) mut
 			{
-				return VT.put_FaxNumber(&this, bstrFaxNumber);
+				return VT.put_FaxNumber(ref this, bstrFaxNumber);
 			}
-			public HRESULT get_SeeAlso(VARIANT* retval) mut
+			public HRESULT get_SeeAlso(out VARIANT retval) mut
 			{
-				return VT.get_SeeAlso(&this, retval);
+				return VT.get_SeeAlso(ref this, out retval);
 			}
 			public HRESULT put_SeeAlso(VARIANT vSeeAlso) mut
 			{
-				return VT.put_SeeAlso(&this, vSeeAlso);
+				return VT.put_SeeAlso(ref this, vSeeAlso);
 			}
 			public HRESULT get_BusinessCategory(BSTR* retval) mut
 			{
-				return VT.get_BusinessCategory(&this, retval);
+				return VT.get_BusinessCategory(ref this, retval);
 			}
 			public HRESULT put_BusinessCategory(BSTR bstrBusinessCategory) mut
 			{
-				return VT.put_BusinessCategory(&this, bstrBusinessCategory);
+				return VT.put_BusinessCategory(ref this, bstrBusinessCategory);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsOU *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsOU *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsOU *self, BSTR* retval) get_LocalityName;
-				public new function HRESULT(IADsOU *self, BSTR bstrLocalityName) put_LocalityName;
-				public new function HRESULT(IADsOU *self, BSTR* retval) get_PostalAddress;
-				public new function HRESULT(IADsOU *self, BSTR bstrPostalAddress) put_PostalAddress;
-				public new function HRESULT(IADsOU *self, BSTR* retval) get_TelephoneNumber;
-				public new function HRESULT(IADsOU *self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
-				public new function HRESULT(IADsOU *self, BSTR* retval) get_FaxNumber;
-				public new function HRESULT(IADsOU *self, BSTR bstrFaxNumber) put_FaxNumber;
-				public new function HRESULT(IADsOU *self, VARIANT* retval) get_SeeAlso;
-				public new function HRESULT(IADsOU *self, VARIANT vSeeAlso) put_SeeAlso;
-				public new function HRESULT(IADsOU *self, BSTR* retval) get_BusinessCategory;
-				public new function HRESULT(IADsOU *self, BSTR bstrBusinessCategory) put_BusinessCategory;
+				public new function HRESULT(ref IADsOU self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsOU self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsOU self, BSTR* retval) get_LocalityName;
+				public new function HRESULT(ref IADsOU self, BSTR bstrLocalityName) put_LocalityName;
+				public new function HRESULT(ref IADsOU self, BSTR* retval) get_PostalAddress;
+				public new function HRESULT(ref IADsOU self, BSTR bstrPostalAddress) put_PostalAddress;
+				public new function HRESULT(ref IADsOU self, BSTR* retval) get_TelephoneNumber;
+				public new function HRESULT(ref IADsOU self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
+				public new function HRESULT(ref IADsOU self, BSTR* retval) get_FaxNumber;
+				public new function HRESULT(ref IADsOU self, BSTR bstrFaxNumber) put_FaxNumber;
+				public new function HRESULT(ref IADsOU self, out VARIANT retval) get_SeeAlso;
+				public new function HRESULT(ref IADsOU self, VARIANT vSeeAlso) put_SeeAlso;
+				public new function HRESULT(ref IADsOU self, BSTR* retval) get_BusinessCategory;
+				public new function HRESULT(ref IADsOU self, BSTR bstrBusinessCategory) put_BusinessCategory;
 			}
 		}
 		[CRepr]
@@ -3240,94 +3240,94 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IsWorkgroup(int16* retval) mut
+			public HRESULT get_IsWorkgroup(out int16 retval) mut
 			{
-				return VT.get_IsWorkgroup(&this, retval);
+				return VT.get_IsWorkgroup(ref this, out retval);
 			}
-			public HRESULT get_MinPasswordLength(int32* retval) mut
+			public HRESULT get_MinPasswordLength(out int32 retval) mut
 			{
-				return VT.get_MinPasswordLength(&this, retval);
+				return VT.get_MinPasswordLength(ref this, out retval);
 			}
 			public HRESULT put_MinPasswordLength(int32 lnMinPasswordLength) mut
 			{
-				return VT.put_MinPasswordLength(&this, lnMinPasswordLength);
+				return VT.put_MinPasswordLength(ref this, lnMinPasswordLength);
 			}
-			public HRESULT get_MinPasswordAge(int32* retval) mut
+			public HRESULT get_MinPasswordAge(out int32 retval) mut
 			{
-				return VT.get_MinPasswordAge(&this, retval);
+				return VT.get_MinPasswordAge(ref this, out retval);
 			}
 			public HRESULT put_MinPasswordAge(int32 lnMinPasswordAge) mut
 			{
-				return VT.put_MinPasswordAge(&this, lnMinPasswordAge);
+				return VT.put_MinPasswordAge(ref this, lnMinPasswordAge);
 			}
-			public HRESULT get_MaxPasswordAge(int32* retval) mut
+			public HRESULT get_MaxPasswordAge(out int32 retval) mut
 			{
-				return VT.get_MaxPasswordAge(&this, retval);
+				return VT.get_MaxPasswordAge(ref this, out retval);
 			}
 			public HRESULT put_MaxPasswordAge(int32 lnMaxPasswordAge) mut
 			{
-				return VT.put_MaxPasswordAge(&this, lnMaxPasswordAge);
+				return VT.put_MaxPasswordAge(ref this, lnMaxPasswordAge);
 			}
-			public HRESULT get_MaxBadPasswordsAllowed(int32* retval) mut
+			public HRESULT get_MaxBadPasswordsAllowed(out int32 retval) mut
 			{
-				return VT.get_MaxBadPasswordsAllowed(&this, retval);
+				return VT.get_MaxBadPasswordsAllowed(ref this, out retval);
 			}
 			public HRESULT put_MaxBadPasswordsAllowed(int32 lnMaxBadPasswordsAllowed) mut
 			{
-				return VT.put_MaxBadPasswordsAllowed(&this, lnMaxBadPasswordsAllowed);
+				return VT.put_MaxBadPasswordsAllowed(ref this, lnMaxBadPasswordsAllowed);
 			}
-			public HRESULT get_PasswordHistoryLength(int32* retval) mut
+			public HRESULT get_PasswordHistoryLength(out int32 retval) mut
 			{
-				return VT.get_PasswordHistoryLength(&this, retval);
+				return VT.get_PasswordHistoryLength(ref this, out retval);
 			}
 			public HRESULT put_PasswordHistoryLength(int32 lnPasswordHistoryLength) mut
 			{
-				return VT.put_PasswordHistoryLength(&this, lnPasswordHistoryLength);
+				return VT.put_PasswordHistoryLength(ref this, lnPasswordHistoryLength);
 			}
-			public HRESULT get_PasswordAttributes(int32* retval) mut
+			public HRESULT get_PasswordAttributes(out int32 retval) mut
 			{
-				return VT.get_PasswordAttributes(&this, retval);
+				return VT.get_PasswordAttributes(ref this, out retval);
 			}
 			public HRESULT put_PasswordAttributes(int32 lnPasswordAttributes) mut
 			{
-				return VT.put_PasswordAttributes(&this, lnPasswordAttributes);
+				return VT.put_PasswordAttributes(ref this, lnPasswordAttributes);
 			}
-			public HRESULT get_AutoUnlockInterval(int32* retval) mut
+			public HRESULT get_AutoUnlockInterval(out int32 retval) mut
 			{
-				return VT.get_AutoUnlockInterval(&this, retval);
+				return VT.get_AutoUnlockInterval(ref this, out retval);
 			}
 			public HRESULT put_AutoUnlockInterval(int32 lnAutoUnlockInterval) mut
 			{
-				return VT.put_AutoUnlockInterval(&this, lnAutoUnlockInterval);
+				return VT.put_AutoUnlockInterval(ref this, lnAutoUnlockInterval);
 			}
-			public HRESULT get_LockoutObservationInterval(int32* retval) mut
+			public HRESULT get_LockoutObservationInterval(out int32 retval) mut
 			{
-				return VT.get_LockoutObservationInterval(&this, retval);
+				return VT.get_LockoutObservationInterval(ref this, out retval);
 			}
 			public HRESULT put_LockoutObservationInterval(int32 lnLockoutObservationInterval) mut
 			{
-				return VT.put_LockoutObservationInterval(&this, lnLockoutObservationInterval);
+				return VT.put_LockoutObservationInterval(ref this, lnLockoutObservationInterval);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsDomain *self, int16* retval) get_IsWorkgroup;
-				public new function HRESULT(IADsDomain *self, int32* retval) get_MinPasswordLength;
-				public new function HRESULT(IADsDomain *self, int32 lnMinPasswordLength) put_MinPasswordLength;
-				public new function HRESULT(IADsDomain *self, int32* retval) get_MinPasswordAge;
-				public new function HRESULT(IADsDomain *self, int32 lnMinPasswordAge) put_MinPasswordAge;
-				public new function HRESULT(IADsDomain *self, int32* retval) get_MaxPasswordAge;
-				public new function HRESULT(IADsDomain *self, int32 lnMaxPasswordAge) put_MaxPasswordAge;
-				public new function HRESULT(IADsDomain *self, int32* retval) get_MaxBadPasswordsAllowed;
-				public new function HRESULT(IADsDomain *self, int32 lnMaxBadPasswordsAllowed) put_MaxBadPasswordsAllowed;
-				public new function HRESULT(IADsDomain *self, int32* retval) get_PasswordHistoryLength;
-				public new function HRESULT(IADsDomain *self, int32 lnPasswordHistoryLength) put_PasswordHistoryLength;
-				public new function HRESULT(IADsDomain *self, int32* retval) get_PasswordAttributes;
-				public new function HRESULT(IADsDomain *self, int32 lnPasswordAttributes) put_PasswordAttributes;
-				public new function HRESULT(IADsDomain *self, int32* retval) get_AutoUnlockInterval;
-				public new function HRESULT(IADsDomain *self, int32 lnAutoUnlockInterval) put_AutoUnlockInterval;
-				public new function HRESULT(IADsDomain *self, int32* retval) get_LockoutObservationInterval;
-				public new function HRESULT(IADsDomain *self, int32 lnLockoutObservationInterval) put_LockoutObservationInterval;
+				public new function HRESULT(ref IADsDomain self, out int16 retval) get_IsWorkgroup;
+				public new function HRESULT(ref IADsDomain self, out int32 retval) get_MinPasswordLength;
+				public new function HRESULT(ref IADsDomain self, int32 lnMinPasswordLength) put_MinPasswordLength;
+				public new function HRESULT(ref IADsDomain self, out int32 retval) get_MinPasswordAge;
+				public new function HRESULT(ref IADsDomain self, int32 lnMinPasswordAge) put_MinPasswordAge;
+				public new function HRESULT(ref IADsDomain self, out int32 retval) get_MaxPasswordAge;
+				public new function HRESULT(ref IADsDomain self, int32 lnMaxPasswordAge) put_MaxPasswordAge;
+				public new function HRESULT(ref IADsDomain self, out int32 retval) get_MaxBadPasswordsAllowed;
+				public new function HRESULT(ref IADsDomain self, int32 lnMaxBadPasswordsAllowed) put_MaxBadPasswordsAllowed;
+				public new function HRESULT(ref IADsDomain self, out int32 retval) get_PasswordHistoryLength;
+				public new function HRESULT(ref IADsDomain self, int32 lnPasswordHistoryLength) put_PasswordHistoryLength;
+				public new function HRESULT(ref IADsDomain self, out int32 retval) get_PasswordAttributes;
+				public new function HRESULT(ref IADsDomain self, int32 lnPasswordAttributes) put_PasswordAttributes;
+				public new function HRESULT(ref IADsDomain self, out int32 retval) get_AutoUnlockInterval;
+				public new function HRESULT(ref IADsDomain self, int32 lnAutoUnlockInterval) put_AutoUnlockInterval;
+				public new function HRESULT(ref IADsDomain self, out int32 retval) get_LockoutObservationInterval;
+				public new function HRESULT(ref IADsDomain self, int32 lnLockoutObservationInterval) put_LockoutObservationInterval;
 			}
 		}
 		[CRepr]
@@ -3339,167 +3339,167 @@ namespace Win32
 			
 			public HRESULT get_ComputerID(BSTR* retval) mut
 			{
-				return VT.get_ComputerID(&this, retval);
+				return VT.get_ComputerID(ref this, retval);
 			}
 			public HRESULT get_Site(BSTR* retval) mut
 			{
-				return VT.get_Site(&this, retval);
+				return VT.get_Site(ref this, retval);
 			}
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
 			public HRESULT get_Location(BSTR* retval) mut
 			{
-				return VT.get_Location(&this, retval);
+				return VT.get_Location(ref this, retval);
 			}
 			public HRESULT put_Location(BSTR bstrLocation) mut
 			{
-				return VT.put_Location(&this, bstrLocation);
+				return VT.put_Location(ref this, bstrLocation);
 			}
 			public HRESULT get_PrimaryUser(BSTR* retval) mut
 			{
-				return VT.get_PrimaryUser(&this, retval);
+				return VT.get_PrimaryUser(ref this, retval);
 			}
 			public HRESULT put_PrimaryUser(BSTR bstrPrimaryUser) mut
 			{
-				return VT.put_PrimaryUser(&this, bstrPrimaryUser);
+				return VT.put_PrimaryUser(ref this, bstrPrimaryUser);
 			}
 			public HRESULT get_Owner(BSTR* retval) mut
 			{
-				return VT.get_Owner(&this, retval);
+				return VT.get_Owner(ref this, retval);
 			}
 			public HRESULT put_Owner(BSTR bstrOwner) mut
 			{
-				return VT.put_Owner(&this, bstrOwner);
+				return VT.put_Owner(ref this, bstrOwner);
 			}
 			public HRESULT get_Division(BSTR* retval) mut
 			{
-				return VT.get_Division(&this, retval);
+				return VT.get_Division(ref this, retval);
 			}
 			public HRESULT put_Division(BSTR bstrDivision) mut
 			{
-				return VT.put_Division(&this, bstrDivision);
+				return VT.put_Division(ref this, bstrDivision);
 			}
 			public HRESULT get_Department(BSTR* retval) mut
 			{
-				return VT.get_Department(&this, retval);
+				return VT.get_Department(ref this, retval);
 			}
 			public HRESULT put_Department(BSTR bstrDepartment) mut
 			{
-				return VT.put_Department(&this, bstrDepartment);
+				return VT.put_Department(ref this, bstrDepartment);
 			}
 			public HRESULT get_Role(BSTR* retval) mut
 			{
-				return VT.get_Role(&this, retval);
+				return VT.get_Role(ref this, retval);
 			}
 			public HRESULT put_Role(BSTR bstrRole) mut
 			{
-				return VT.put_Role(&this, bstrRole);
+				return VT.put_Role(ref this, bstrRole);
 			}
 			public HRESULT get_OperatingSystem(BSTR* retval) mut
 			{
-				return VT.get_OperatingSystem(&this, retval);
+				return VT.get_OperatingSystem(ref this, retval);
 			}
 			public HRESULT put_OperatingSystem(BSTR bstrOperatingSystem) mut
 			{
-				return VT.put_OperatingSystem(&this, bstrOperatingSystem);
+				return VT.put_OperatingSystem(ref this, bstrOperatingSystem);
 			}
 			public HRESULT get_OperatingSystemVersion(BSTR* retval) mut
 			{
-				return VT.get_OperatingSystemVersion(&this, retval);
+				return VT.get_OperatingSystemVersion(ref this, retval);
 			}
 			public HRESULT put_OperatingSystemVersion(BSTR bstrOperatingSystemVersion) mut
 			{
-				return VT.put_OperatingSystemVersion(&this, bstrOperatingSystemVersion);
+				return VT.put_OperatingSystemVersion(ref this, bstrOperatingSystemVersion);
 			}
 			public HRESULT get_Model(BSTR* retval) mut
 			{
-				return VT.get_Model(&this, retval);
+				return VT.get_Model(ref this, retval);
 			}
 			public HRESULT put_Model(BSTR bstrModel) mut
 			{
-				return VT.put_Model(&this, bstrModel);
+				return VT.put_Model(ref this, bstrModel);
 			}
 			public HRESULT get_Processor(BSTR* retval) mut
 			{
-				return VT.get_Processor(&this, retval);
+				return VT.get_Processor(ref this, retval);
 			}
 			public HRESULT put_Processor(BSTR bstrProcessor) mut
 			{
-				return VT.put_Processor(&this, bstrProcessor);
+				return VT.put_Processor(ref this, bstrProcessor);
 			}
 			public HRESULT get_ProcessorCount(BSTR* retval) mut
 			{
-				return VT.get_ProcessorCount(&this, retval);
+				return VT.get_ProcessorCount(ref this, retval);
 			}
 			public HRESULT put_ProcessorCount(BSTR bstrProcessorCount) mut
 			{
-				return VT.put_ProcessorCount(&this, bstrProcessorCount);
+				return VT.put_ProcessorCount(ref this, bstrProcessorCount);
 			}
 			public HRESULT get_MemorySize(BSTR* retval) mut
 			{
-				return VT.get_MemorySize(&this, retval);
+				return VT.get_MemorySize(ref this, retval);
 			}
 			public HRESULT put_MemorySize(BSTR bstrMemorySize) mut
 			{
-				return VT.put_MemorySize(&this, bstrMemorySize);
+				return VT.put_MemorySize(ref this, bstrMemorySize);
 			}
 			public HRESULT get_StorageCapacity(BSTR* retval) mut
 			{
-				return VT.get_StorageCapacity(&this, retval);
+				return VT.get_StorageCapacity(ref this, retval);
 			}
 			public HRESULT put_StorageCapacity(BSTR bstrStorageCapacity) mut
 			{
-				return VT.put_StorageCapacity(&this, bstrStorageCapacity);
+				return VT.put_StorageCapacity(ref this, bstrStorageCapacity);
 			}
-			public HRESULT get_NetAddresses(VARIANT* retval) mut
+			public HRESULT get_NetAddresses(out VARIANT retval) mut
 			{
-				return VT.get_NetAddresses(&this, retval);
+				return VT.get_NetAddresses(ref this, out retval);
 			}
 			public HRESULT put_NetAddresses(VARIANT vNetAddresses) mut
 			{
-				return VT.put_NetAddresses(&this, vNetAddresses);
+				return VT.put_NetAddresses(ref this, vNetAddresses);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_ComputerID;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_Site;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsComputer *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_Location;
-				public new function HRESULT(IADsComputer *self, BSTR bstrLocation) put_Location;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_PrimaryUser;
-				public new function HRESULT(IADsComputer *self, BSTR bstrPrimaryUser) put_PrimaryUser;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_Owner;
-				public new function HRESULT(IADsComputer *self, BSTR bstrOwner) put_Owner;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_Division;
-				public new function HRESULT(IADsComputer *self, BSTR bstrDivision) put_Division;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_Department;
-				public new function HRESULT(IADsComputer *self, BSTR bstrDepartment) put_Department;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_Role;
-				public new function HRESULT(IADsComputer *self, BSTR bstrRole) put_Role;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_OperatingSystem;
-				public new function HRESULT(IADsComputer *self, BSTR bstrOperatingSystem) put_OperatingSystem;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_OperatingSystemVersion;
-				public new function HRESULT(IADsComputer *self, BSTR bstrOperatingSystemVersion) put_OperatingSystemVersion;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_Model;
-				public new function HRESULT(IADsComputer *self, BSTR bstrModel) put_Model;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_Processor;
-				public new function HRESULT(IADsComputer *self, BSTR bstrProcessor) put_Processor;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_ProcessorCount;
-				public new function HRESULT(IADsComputer *self, BSTR bstrProcessorCount) put_ProcessorCount;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_MemorySize;
-				public new function HRESULT(IADsComputer *self, BSTR bstrMemorySize) put_MemorySize;
-				public new function HRESULT(IADsComputer *self, BSTR* retval) get_StorageCapacity;
-				public new function HRESULT(IADsComputer *self, BSTR bstrStorageCapacity) put_StorageCapacity;
-				public new function HRESULT(IADsComputer *self, VARIANT* retval) get_NetAddresses;
-				public new function HRESULT(IADsComputer *self, VARIANT vNetAddresses) put_NetAddresses;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_ComputerID;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Site;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Location;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrLocation) put_Location;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_PrimaryUser;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrPrimaryUser) put_PrimaryUser;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Owner;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrOwner) put_Owner;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Division;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrDivision) put_Division;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Department;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrDepartment) put_Department;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Role;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrRole) put_Role;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_OperatingSystem;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrOperatingSystem) put_OperatingSystem;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_OperatingSystemVersion;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrOperatingSystemVersion) put_OperatingSystemVersion;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Model;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrModel) put_Model;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_Processor;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrProcessor) put_Processor;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_ProcessorCount;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrProcessorCount) put_ProcessorCount;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_MemorySize;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrMemorySize) put_MemorySize;
+				public new function HRESULT(ref IADsComputer self, BSTR* retval) get_StorageCapacity;
+				public new function HRESULT(ref IADsComputer self, BSTR bstrStorageCapacity) put_StorageCapacity;
+				public new function HRESULT(ref IADsComputer self, out VARIANT retval) get_NetAddresses;
+				public new function HRESULT(ref IADsComputer self, VARIANT vNetAddresses) put_NetAddresses;
 			}
 		}
 		[CRepr]
@@ -3511,17 +3511,17 @@ namespace Win32
 			
 			public HRESULT Status(IDispatch** ppObject) mut
 			{
-				return VT.Status(&this, ppObject);
+				return VT.Status(ref this, ppObject);
 			}
 			public HRESULT Shutdown(int16 bReboot) mut
 			{
-				return VT.Shutdown(&this, bReboot);
+				return VT.Shutdown(ref this, bReboot);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsComputerOperations *self, IDispatch** ppObject) Status;
-				public new function HRESULT(IADsComputerOperations *self, int16 bReboot) Shutdown;
+				public new function HRESULT(ref IADsComputerOperations self, IDispatch** ppObject) Status;
+				public new function HRESULT(ref IADsComputerOperations self, int16 bReboot) Shutdown;
 			}
 		}
 		[CRepr]
@@ -3533,37 +3533,37 @@ namespace Win32
 			
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
 			public HRESULT Members(IADsMembers** ppMembers) mut
 			{
-				return VT.Members(&this, ppMembers);
+				return VT.Members(ref this, ppMembers);
 			}
-			public HRESULT IsMember(BSTR bstrMember, int16* bMember) mut
+			public HRESULT IsMember(BSTR bstrMember, out int16 bMember) mut
 			{
-				return VT.IsMember(&this, bstrMember, bMember);
+				return VT.IsMember(ref this, bstrMember, out bMember);
 			}
 			public HRESULT Add(BSTR bstrNewItem) mut
 			{
-				return VT.Add(&this, bstrNewItem);
+				return VT.Add(ref this, bstrNewItem);
 			}
 			public HRESULT Remove(BSTR bstrItemToBeRemoved) mut
 			{
-				return VT.Remove(&this, bstrItemToBeRemoved);
+				return VT.Remove(ref this, bstrItemToBeRemoved);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsGroup *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsGroup *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsGroup *self, IADsMembers** ppMembers) Members;
-				public new function HRESULT(IADsGroup *self, BSTR bstrMember, int16* bMember) IsMember;
-				public new function HRESULT(IADsGroup *self, BSTR bstrNewItem) Add;
-				public new function HRESULT(IADsGroup *self, BSTR bstrItemToBeRemoved) Remove;
+				public new function HRESULT(ref IADsGroup self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsGroup self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsGroup self, IADsMembers** ppMembers) Members;
+				public new function HRESULT(ref IADsGroup self, BSTR bstrMember, out int16 bMember) IsMember;
+				public new function HRESULT(ref IADsGroup self, BSTR bstrNewItem) Add;
+				public new function HRESULT(ref IADsGroup self, BSTR bstrItemToBeRemoved) Remove;
 			}
 		}
 		[CRepr]
@@ -3575,462 +3575,462 @@ namespace Win32
 			
 			public HRESULT get_BadLoginAddress(BSTR* retval) mut
 			{
-				return VT.get_BadLoginAddress(&this, retval);
+				return VT.get_BadLoginAddress(ref this, retval);
 			}
-			public HRESULT get_BadLoginCount(int32* retval) mut
+			public HRESULT get_BadLoginCount(out int32 retval) mut
 			{
-				return VT.get_BadLoginCount(&this, retval);
+				return VT.get_BadLoginCount(ref this, out retval);
 			}
-			public HRESULT get_LastLogin(double* retval) mut
+			public HRESULT get_LastLogin(out double retval) mut
 			{
-				return VT.get_LastLogin(&this, retval);
+				return VT.get_LastLogin(ref this, out retval);
 			}
-			public HRESULT get_LastLogoff(double* retval) mut
+			public HRESULT get_LastLogoff(out double retval) mut
 			{
-				return VT.get_LastLogoff(&this, retval);
+				return VT.get_LastLogoff(ref this, out retval);
 			}
-			public HRESULT get_LastFailedLogin(double* retval) mut
+			public HRESULT get_LastFailedLogin(out double retval) mut
 			{
-				return VT.get_LastFailedLogin(&this, retval);
+				return VT.get_LastFailedLogin(ref this, out retval);
 			}
-			public HRESULT get_PasswordLastChanged(double* retval) mut
+			public HRESULT get_PasswordLastChanged(out double retval) mut
 			{
-				return VT.get_PasswordLastChanged(&this, retval);
+				return VT.get_PasswordLastChanged(ref this, out retval);
 			}
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
 			public HRESULT get_Division(BSTR* retval) mut
 			{
-				return VT.get_Division(&this, retval);
+				return VT.get_Division(ref this, retval);
 			}
 			public HRESULT put_Division(BSTR bstrDivision) mut
 			{
-				return VT.put_Division(&this, bstrDivision);
+				return VT.put_Division(ref this, bstrDivision);
 			}
 			public HRESULT get_Department(BSTR* retval) mut
 			{
-				return VT.get_Department(&this, retval);
+				return VT.get_Department(ref this, retval);
 			}
 			public HRESULT put_Department(BSTR bstrDepartment) mut
 			{
-				return VT.put_Department(&this, bstrDepartment);
+				return VT.put_Department(ref this, bstrDepartment);
 			}
 			public HRESULT get_EmployeeID(BSTR* retval) mut
 			{
-				return VT.get_EmployeeID(&this, retval);
+				return VT.get_EmployeeID(ref this, retval);
 			}
 			public HRESULT put_EmployeeID(BSTR bstrEmployeeID) mut
 			{
-				return VT.put_EmployeeID(&this, bstrEmployeeID);
+				return VT.put_EmployeeID(ref this, bstrEmployeeID);
 			}
 			public HRESULT get_FullName(BSTR* retval) mut
 			{
-				return VT.get_FullName(&this, retval);
+				return VT.get_FullName(ref this, retval);
 			}
 			public HRESULT put_FullName(BSTR bstrFullName) mut
 			{
-				return VT.put_FullName(&this, bstrFullName);
+				return VT.put_FullName(ref this, bstrFullName);
 			}
 			public HRESULT get_FirstName(BSTR* retval) mut
 			{
-				return VT.get_FirstName(&this, retval);
+				return VT.get_FirstName(ref this, retval);
 			}
 			public HRESULT put_FirstName(BSTR bstrFirstName) mut
 			{
-				return VT.put_FirstName(&this, bstrFirstName);
+				return VT.put_FirstName(ref this, bstrFirstName);
 			}
 			public HRESULT get_LastName(BSTR* retval) mut
 			{
-				return VT.get_LastName(&this, retval);
+				return VT.get_LastName(ref this, retval);
 			}
 			public HRESULT put_LastName(BSTR bstrLastName) mut
 			{
-				return VT.put_LastName(&this, bstrLastName);
+				return VT.put_LastName(ref this, bstrLastName);
 			}
 			public HRESULT get_OtherName(BSTR* retval) mut
 			{
-				return VT.get_OtherName(&this, retval);
+				return VT.get_OtherName(ref this, retval);
 			}
 			public HRESULT put_OtherName(BSTR bstrOtherName) mut
 			{
-				return VT.put_OtherName(&this, bstrOtherName);
+				return VT.put_OtherName(ref this, bstrOtherName);
 			}
 			public HRESULT get_NamePrefix(BSTR* retval) mut
 			{
-				return VT.get_NamePrefix(&this, retval);
+				return VT.get_NamePrefix(ref this, retval);
 			}
 			public HRESULT put_NamePrefix(BSTR bstrNamePrefix) mut
 			{
-				return VT.put_NamePrefix(&this, bstrNamePrefix);
+				return VT.put_NamePrefix(ref this, bstrNamePrefix);
 			}
 			public HRESULT get_NameSuffix(BSTR* retval) mut
 			{
-				return VT.get_NameSuffix(&this, retval);
+				return VT.get_NameSuffix(ref this, retval);
 			}
 			public HRESULT put_NameSuffix(BSTR bstrNameSuffix) mut
 			{
-				return VT.put_NameSuffix(&this, bstrNameSuffix);
+				return VT.put_NameSuffix(ref this, bstrNameSuffix);
 			}
 			public HRESULT get_Title(BSTR* retval) mut
 			{
-				return VT.get_Title(&this, retval);
+				return VT.get_Title(ref this, retval);
 			}
 			public HRESULT put_Title(BSTR bstrTitle) mut
 			{
-				return VT.put_Title(&this, bstrTitle);
+				return VT.put_Title(ref this, bstrTitle);
 			}
 			public HRESULT get_Manager(BSTR* retval) mut
 			{
-				return VT.get_Manager(&this, retval);
+				return VT.get_Manager(ref this, retval);
 			}
 			public HRESULT put_Manager(BSTR bstrManager) mut
 			{
-				return VT.put_Manager(&this, bstrManager);
+				return VT.put_Manager(ref this, bstrManager);
 			}
-			public HRESULT get_TelephoneHome(VARIANT* retval) mut
+			public HRESULT get_TelephoneHome(out VARIANT retval) mut
 			{
-				return VT.get_TelephoneHome(&this, retval);
+				return VT.get_TelephoneHome(ref this, out retval);
 			}
 			public HRESULT put_TelephoneHome(VARIANT vTelephoneHome) mut
 			{
-				return VT.put_TelephoneHome(&this, vTelephoneHome);
+				return VT.put_TelephoneHome(ref this, vTelephoneHome);
 			}
-			public HRESULT get_TelephoneMobile(VARIANT* retval) mut
+			public HRESULT get_TelephoneMobile(out VARIANT retval) mut
 			{
-				return VT.get_TelephoneMobile(&this, retval);
+				return VT.get_TelephoneMobile(ref this, out retval);
 			}
 			public HRESULT put_TelephoneMobile(VARIANT vTelephoneMobile) mut
 			{
-				return VT.put_TelephoneMobile(&this, vTelephoneMobile);
+				return VT.put_TelephoneMobile(ref this, vTelephoneMobile);
 			}
-			public HRESULT get_TelephoneNumber(VARIANT* retval) mut
+			public HRESULT get_TelephoneNumber(out VARIANT retval) mut
 			{
-				return VT.get_TelephoneNumber(&this, retval);
+				return VT.get_TelephoneNumber(ref this, out retval);
 			}
 			public HRESULT put_TelephoneNumber(VARIANT vTelephoneNumber) mut
 			{
-				return VT.put_TelephoneNumber(&this, vTelephoneNumber);
+				return VT.put_TelephoneNumber(ref this, vTelephoneNumber);
 			}
-			public HRESULT get_TelephonePager(VARIANT* retval) mut
+			public HRESULT get_TelephonePager(out VARIANT retval) mut
 			{
-				return VT.get_TelephonePager(&this, retval);
+				return VT.get_TelephonePager(ref this, out retval);
 			}
 			public HRESULT put_TelephonePager(VARIANT vTelephonePager) mut
 			{
-				return VT.put_TelephonePager(&this, vTelephonePager);
+				return VT.put_TelephonePager(ref this, vTelephonePager);
 			}
-			public HRESULT get_FaxNumber(VARIANT* retval) mut
+			public HRESULT get_FaxNumber(out VARIANT retval) mut
 			{
-				return VT.get_FaxNumber(&this, retval);
+				return VT.get_FaxNumber(ref this, out retval);
 			}
 			public HRESULT put_FaxNumber(VARIANT vFaxNumber) mut
 			{
-				return VT.put_FaxNumber(&this, vFaxNumber);
+				return VT.put_FaxNumber(ref this, vFaxNumber);
 			}
-			public HRESULT get_OfficeLocations(VARIANT* retval) mut
+			public HRESULT get_OfficeLocations(out VARIANT retval) mut
 			{
-				return VT.get_OfficeLocations(&this, retval);
+				return VT.get_OfficeLocations(ref this, out retval);
 			}
 			public HRESULT put_OfficeLocations(VARIANT vOfficeLocations) mut
 			{
-				return VT.put_OfficeLocations(&this, vOfficeLocations);
+				return VT.put_OfficeLocations(ref this, vOfficeLocations);
 			}
-			public HRESULT get_PostalAddresses(VARIANT* retval) mut
+			public HRESULT get_PostalAddresses(out VARIANT retval) mut
 			{
-				return VT.get_PostalAddresses(&this, retval);
+				return VT.get_PostalAddresses(ref this, out retval);
 			}
 			public HRESULT put_PostalAddresses(VARIANT vPostalAddresses) mut
 			{
-				return VT.put_PostalAddresses(&this, vPostalAddresses);
+				return VT.put_PostalAddresses(ref this, vPostalAddresses);
 			}
-			public HRESULT get_PostalCodes(VARIANT* retval) mut
+			public HRESULT get_PostalCodes(out VARIANT retval) mut
 			{
-				return VT.get_PostalCodes(&this, retval);
+				return VT.get_PostalCodes(ref this, out retval);
 			}
 			public HRESULT put_PostalCodes(VARIANT vPostalCodes) mut
 			{
-				return VT.put_PostalCodes(&this, vPostalCodes);
+				return VT.put_PostalCodes(ref this, vPostalCodes);
 			}
-			public HRESULT get_SeeAlso(VARIANT* retval) mut
+			public HRESULT get_SeeAlso(out VARIANT retval) mut
 			{
-				return VT.get_SeeAlso(&this, retval);
+				return VT.get_SeeAlso(ref this, out retval);
 			}
 			public HRESULT put_SeeAlso(VARIANT vSeeAlso) mut
 			{
-				return VT.put_SeeAlso(&this, vSeeAlso);
+				return VT.put_SeeAlso(ref this, vSeeAlso);
 			}
-			public HRESULT get_AccountDisabled(int16* retval) mut
+			public HRESULT get_AccountDisabled(out int16 retval) mut
 			{
-				return VT.get_AccountDisabled(&this, retval);
+				return VT.get_AccountDisabled(ref this, out retval);
 			}
 			public HRESULT put_AccountDisabled(int16 fAccountDisabled) mut
 			{
-				return VT.put_AccountDisabled(&this, fAccountDisabled);
+				return VT.put_AccountDisabled(ref this, fAccountDisabled);
 			}
-			public HRESULT get_AccountExpirationDate(double* retval) mut
+			public HRESULT get_AccountExpirationDate(out double retval) mut
 			{
-				return VT.get_AccountExpirationDate(&this, retval);
+				return VT.get_AccountExpirationDate(ref this, out retval);
 			}
 			public HRESULT put_AccountExpirationDate(double daAccountExpirationDate) mut
 			{
-				return VT.put_AccountExpirationDate(&this, daAccountExpirationDate);
+				return VT.put_AccountExpirationDate(ref this, daAccountExpirationDate);
 			}
-			public HRESULT get_GraceLoginsAllowed(int32* retval) mut
+			public HRESULT get_GraceLoginsAllowed(out int32 retval) mut
 			{
-				return VT.get_GraceLoginsAllowed(&this, retval);
+				return VT.get_GraceLoginsAllowed(ref this, out retval);
 			}
 			public HRESULT put_GraceLoginsAllowed(int32 lnGraceLoginsAllowed) mut
 			{
-				return VT.put_GraceLoginsAllowed(&this, lnGraceLoginsAllowed);
+				return VT.put_GraceLoginsAllowed(ref this, lnGraceLoginsAllowed);
 			}
-			public HRESULT get_GraceLoginsRemaining(int32* retval) mut
+			public HRESULT get_GraceLoginsRemaining(out int32 retval) mut
 			{
-				return VT.get_GraceLoginsRemaining(&this, retval);
+				return VT.get_GraceLoginsRemaining(ref this, out retval);
 			}
 			public HRESULT put_GraceLoginsRemaining(int32 lnGraceLoginsRemaining) mut
 			{
-				return VT.put_GraceLoginsRemaining(&this, lnGraceLoginsRemaining);
+				return VT.put_GraceLoginsRemaining(ref this, lnGraceLoginsRemaining);
 			}
-			public HRESULT get_IsAccountLocked(int16* retval) mut
+			public HRESULT get_IsAccountLocked(out int16 retval) mut
 			{
-				return VT.get_IsAccountLocked(&this, retval);
+				return VT.get_IsAccountLocked(ref this, out retval);
 			}
 			public HRESULT put_IsAccountLocked(int16 fIsAccountLocked) mut
 			{
-				return VT.put_IsAccountLocked(&this, fIsAccountLocked);
+				return VT.put_IsAccountLocked(ref this, fIsAccountLocked);
 			}
-			public HRESULT get_LoginHours(VARIANT* retval) mut
+			public HRESULT get_LoginHours(out VARIANT retval) mut
 			{
-				return VT.get_LoginHours(&this, retval);
+				return VT.get_LoginHours(ref this, out retval);
 			}
 			public HRESULT put_LoginHours(VARIANT vLoginHours) mut
 			{
-				return VT.put_LoginHours(&this, vLoginHours);
+				return VT.put_LoginHours(ref this, vLoginHours);
 			}
-			public HRESULT get_LoginWorkstations(VARIANT* retval) mut
+			public HRESULT get_LoginWorkstations(out VARIANT retval) mut
 			{
-				return VT.get_LoginWorkstations(&this, retval);
+				return VT.get_LoginWorkstations(ref this, out retval);
 			}
 			public HRESULT put_LoginWorkstations(VARIANT vLoginWorkstations) mut
 			{
-				return VT.put_LoginWorkstations(&this, vLoginWorkstations);
+				return VT.put_LoginWorkstations(ref this, vLoginWorkstations);
 			}
-			public HRESULT get_MaxLogins(int32* retval) mut
+			public HRESULT get_MaxLogins(out int32 retval) mut
 			{
-				return VT.get_MaxLogins(&this, retval);
+				return VT.get_MaxLogins(ref this, out retval);
 			}
 			public HRESULT put_MaxLogins(int32 lnMaxLogins) mut
 			{
-				return VT.put_MaxLogins(&this, lnMaxLogins);
+				return VT.put_MaxLogins(ref this, lnMaxLogins);
 			}
-			public HRESULT get_MaxStorage(int32* retval) mut
+			public HRESULT get_MaxStorage(out int32 retval) mut
 			{
-				return VT.get_MaxStorage(&this, retval);
+				return VT.get_MaxStorage(ref this, out retval);
 			}
 			public HRESULT put_MaxStorage(int32 lnMaxStorage) mut
 			{
-				return VT.put_MaxStorage(&this, lnMaxStorage);
+				return VT.put_MaxStorage(ref this, lnMaxStorage);
 			}
-			public HRESULT get_PasswordExpirationDate(double* retval) mut
+			public HRESULT get_PasswordExpirationDate(out double retval) mut
 			{
-				return VT.get_PasswordExpirationDate(&this, retval);
+				return VT.get_PasswordExpirationDate(ref this, out retval);
 			}
 			public HRESULT put_PasswordExpirationDate(double daPasswordExpirationDate) mut
 			{
-				return VT.put_PasswordExpirationDate(&this, daPasswordExpirationDate);
+				return VT.put_PasswordExpirationDate(ref this, daPasswordExpirationDate);
 			}
-			public HRESULT get_PasswordMinimumLength(int32* retval) mut
+			public HRESULT get_PasswordMinimumLength(out int32 retval) mut
 			{
-				return VT.get_PasswordMinimumLength(&this, retval);
+				return VT.get_PasswordMinimumLength(ref this, out retval);
 			}
 			public HRESULT put_PasswordMinimumLength(int32 lnPasswordMinimumLength) mut
 			{
-				return VT.put_PasswordMinimumLength(&this, lnPasswordMinimumLength);
+				return VT.put_PasswordMinimumLength(ref this, lnPasswordMinimumLength);
 			}
-			public HRESULT get_PasswordRequired(int16* retval) mut
+			public HRESULT get_PasswordRequired(out int16 retval) mut
 			{
-				return VT.get_PasswordRequired(&this, retval);
+				return VT.get_PasswordRequired(ref this, out retval);
 			}
 			public HRESULT put_PasswordRequired(int16 fPasswordRequired) mut
 			{
-				return VT.put_PasswordRequired(&this, fPasswordRequired);
+				return VT.put_PasswordRequired(ref this, fPasswordRequired);
 			}
-			public HRESULT get_RequireUniquePassword(int16* retval) mut
+			public HRESULT get_RequireUniquePassword(out int16 retval) mut
 			{
-				return VT.get_RequireUniquePassword(&this, retval);
+				return VT.get_RequireUniquePassword(ref this, out retval);
 			}
 			public HRESULT put_RequireUniquePassword(int16 fRequireUniquePassword) mut
 			{
-				return VT.put_RequireUniquePassword(&this, fRequireUniquePassword);
+				return VT.put_RequireUniquePassword(ref this, fRequireUniquePassword);
 			}
 			public HRESULT get_EmailAddress(BSTR* retval) mut
 			{
-				return VT.get_EmailAddress(&this, retval);
+				return VT.get_EmailAddress(ref this, retval);
 			}
 			public HRESULT put_EmailAddress(BSTR bstrEmailAddress) mut
 			{
-				return VT.put_EmailAddress(&this, bstrEmailAddress);
+				return VT.put_EmailAddress(ref this, bstrEmailAddress);
 			}
 			public HRESULT get_HomeDirectory(BSTR* retval) mut
 			{
-				return VT.get_HomeDirectory(&this, retval);
+				return VT.get_HomeDirectory(ref this, retval);
 			}
 			public HRESULT put_HomeDirectory(BSTR bstrHomeDirectory) mut
 			{
-				return VT.put_HomeDirectory(&this, bstrHomeDirectory);
+				return VT.put_HomeDirectory(ref this, bstrHomeDirectory);
 			}
-			public HRESULT get_Languages(VARIANT* retval) mut
+			public HRESULT get_Languages(out VARIANT retval) mut
 			{
-				return VT.get_Languages(&this, retval);
+				return VT.get_Languages(ref this, out retval);
 			}
 			public HRESULT put_Languages(VARIANT vLanguages) mut
 			{
-				return VT.put_Languages(&this, vLanguages);
+				return VT.put_Languages(ref this, vLanguages);
 			}
 			public HRESULT get_Profile(BSTR* retval) mut
 			{
-				return VT.get_Profile(&this, retval);
+				return VT.get_Profile(ref this, retval);
 			}
 			public HRESULT put_Profile(BSTR bstrProfile) mut
 			{
-				return VT.put_Profile(&this, bstrProfile);
+				return VT.put_Profile(ref this, bstrProfile);
 			}
 			public HRESULT get_LoginScript(BSTR* retval) mut
 			{
-				return VT.get_LoginScript(&this, retval);
+				return VT.get_LoginScript(ref this, retval);
 			}
 			public HRESULT put_LoginScript(BSTR bstrLoginScript) mut
 			{
-				return VT.put_LoginScript(&this, bstrLoginScript);
+				return VT.put_LoginScript(ref this, bstrLoginScript);
 			}
-			public HRESULT get_Picture(VARIANT* retval) mut
+			public HRESULT get_Picture(out VARIANT retval) mut
 			{
-				return VT.get_Picture(&this, retval);
+				return VT.get_Picture(ref this, out retval);
 			}
 			public HRESULT put_Picture(VARIANT vPicture) mut
 			{
-				return VT.put_Picture(&this, vPicture);
+				return VT.put_Picture(ref this, vPicture);
 			}
 			public HRESULT get_HomePage(BSTR* retval) mut
 			{
-				return VT.get_HomePage(&this, retval);
+				return VT.get_HomePage(ref this, retval);
 			}
 			public HRESULT put_HomePage(BSTR bstrHomePage) mut
 			{
-				return VT.put_HomePage(&this, bstrHomePage);
+				return VT.put_HomePage(ref this, bstrHomePage);
 			}
 			public HRESULT Groups(IADsMembers** ppGroups) mut
 			{
-				return VT.Groups(&this, ppGroups);
+				return VT.Groups(ref this, ppGroups);
 			}
 			public HRESULT SetPassword(BSTR NewPassword) mut
 			{
-				return VT.SetPassword(&this, NewPassword);
+				return VT.SetPassword(ref this, NewPassword);
 			}
 			public HRESULT ChangePassword(BSTR bstrOldPassword, BSTR bstrNewPassword) mut
 			{
-				return VT.ChangePassword(&this, bstrOldPassword, bstrNewPassword);
+				return VT.ChangePassword(ref this, bstrOldPassword, bstrNewPassword);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_BadLoginAddress;
-				public new function HRESULT(IADsUser *self, int32* retval) get_BadLoginCount;
-				public new function HRESULT(IADsUser *self, double* retval) get_LastLogin;
-				public new function HRESULT(IADsUser *self, double* retval) get_LastLogoff;
-				public new function HRESULT(IADsUser *self, double* retval) get_LastFailedLogin;
-				public new function HRESULT(IADsUser *self, double* retval) get_PasswordLastChanged;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsUser *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_Division;
-				public new function HRESULT(IADsUser *self, BSTR bstrDivision) put_Division;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_Department;
-				public new function HRESULT(IADsUser *self, BSTR bstrDepartment) put_Department;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_EmployeeID;
-				public new function HRESULT(IADsUser *self, BSTR bstrEmployeeID) put_EmployeeID;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_FullName;
-				public new function HRESULT(IADsUser *self, BSTR bstrFullName) put_FullName;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_FirstName;
-				public new function HRESULT(IADsUser *self, BSTR bstrFirstName) put_FirstName;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_LastName;
-				public new function HRESULT(IADsUser *self, BSTR bstrLastName) put_LastName;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_OtherName;
-				public new function HRESULT(IADsUser *self, BSTR bstrOtherName) put_OtherName;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_NamePrefix;
-				public new function HRESULT(IADsUser *self, BSTR bstrNamePrefix) put_NamePrefix;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_NameSuffix;
-				public new function HRESULT(IADsUser *self, BSTR bstrNameSuffix) put_NameSuffix;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_Title;
-				public new function HRESULT(IADsUser *self, BSTR bstrTitle) put_Title;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_Manager;
-				public new function HRESULT(IADsUser *self, BSTR bstrManager) put_Manager;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_TelephoneHome;
-				public new function HRESULT(IADsUser *self, VARIANT vTelephoneHome) put_TelephoneHome;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_TelephoneMobile;
-				public new function HRESULT(IADsUser *self, VARIANT vTelephoneMobile) put_TelephoneMobile;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_TelephoneNumber;
-				public new function HRESULT(IADsUser *self, VARIANT vTelephoneNumber) put_TelephoneNumber;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_TelephonePager;
-				public new function HRESULT(IADsUser *self, VARIANT vTelephonePager) put_TelephonePager;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_FaxNumber;
-				public new function HRESULT(IADsUser *self, VARIANT vFaxNumber) put_FaxNumber;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_OfficeLocations;
-				public new function HRESULT(IADsUser *self, VARIANT vOfficeLocations) put_OfficeLocations;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_PostalAddresses;
-				public new function HRESULT(IADsUser *self, VARIANT vPostalAddresses) put_PostalAddresses;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_PostalCodes;
-				public new function HRESULT(IADsUser *self, VARIANT vPostalCodes) put_PostalCodes;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_SeeAlso;
-				public new function HRESULT(IADsUser *self, VARIANT vSeeAlso) put_SeeAlso;
-				public new function HRESULT(IADsUser *self, int16* retval) get_AccountDisabled;
-				public new function HRESULT(IADsUser *self, int16 fAccountDisabled) put_AccountDisabled;
-				public new function HRESULT(IADsUser *self, double* retval) get_AccountExpirationDate;
-				public new function HRESULT(IADsUser *self, double daAccountExpirationDate) put_AccountExpirationDate;
-				public new function HRESULT(IADsUser *self, int32* retval) get_GraceLoginsAllowed;
-				public new function HRESULT(IADsUser *self, int32 lnGraceLoginsAllowed) put_GraceLoginsAllowed;
-				public new function HRESULT(IADsUser *self, int32* retval) get_GraceLoginsRemaining;
-				public new function HRESULT(IADsUser *self, int32 lnGraceLoginsRemaining) put_GraceLoginsRemaining;
-				public new function HRESULT(IADsUser *self, int16* retval) get_IsAccountLocked;
-				public new function HRESULT(IADsUser *self, int16 fIsAccountLocked) put_IsAccountLocked;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_LoginHours;
-				public new function HRESULT(IADsUser *self, VARIANT vLoginHours) put_LoginHours;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_LoginWorkstations;
-				public new function HRESULT(IADsUser *self, VARIANT vLoginWorkstations) put_LoginWorkstations;
-				public new function HRESULT(IADsUser *self, int32* retval) get_MaxLogins;
-				public new function HRESULT(IADsUser *self, int32 lnMaxLogins) put_MaxLogins;
-				public new function HRESULT(IADsUser *self, int32* retval) get_MaxStorage;
-				public new function HRESULT(IADsUser *self, int32 lnMaxStorage) put_MaxStorage;
-				public new function HRESULT(IADsUser *self, double* retval) get_PasswordExpirationDate;
-				public new function HRESULT(IADsUser *self, double daPasswordExpirationDate) put_PasswordExpirationDate;
-				public new function HRESULT(IADsUser *self, int32* retval) get_PasswordMinimumLength;
-				public new function HRESULT(IADsUser *self, int32 lnPasswordMinimumLength) put_PasswordMinimumLength;
-				public new function HRESULT(IADsUser *self, int16* retval) get_PasswordRequired;
-				public new function HRESULT(IADsUser *self, int16 fPasswordRequired) put_PasswordRequired;
-				public new function HRESULT(IADsUser *self, int16* retval) get_RequireUniquePassword;
-				public new function HRESULT(IADsUser *self, int16 fRequireUniquePassword) put_RequireUniquePassword;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_EmailAddress;
-				public new function HRESULT(IADsUser *self, BSTR bstrEmailAddress) put_EmailAddress;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_HomeDirectory;
-				public new function HRESULT(IADsUser *self, BSTR bstrHomeDirectory) put_HomeDirectory;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_Languages;
-				public new function HRESULT(IADsUser *self, VARIANT vLanguages) put_Languages;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_Profile;
-				public new function HRESULT(IADsUser *self, BSTR bstrProfile) put_Profile;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_LoginScript;
-				public new function HRESULT(IADsUser *self, BSTR bstrLoginScript) put_LoginScript;
-				public new function HRESULT(IADsUser *self, VARIANT* retval) get_Picture;
-				public new function HRESULT(IADsUser *self, VARIANT vPicture) put_Picture;
-				public new function HRESULT(IADsUser *self, BSTR* retval) get_HomePage;
-				public new function HRESULT(IADsUser *self, BSTR bstrHomePage) put_HomePage;
-				public new function HRESULT(IADsUser *self, IADsMembers** ppGroups) Groups;
-				public new function HRESULT(IADsUser *self, BSTR NewPassword) SetPassword;
-				public new function HRESULT(IADsUser *self, BSTR bstrOldPassword, BSTR bstrNewPassword) ChangePassword;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_BadLoginAddress;
+				public new function HRESULT(ref IADsUser self, out int32 retval) get_BadLoginCount;
+				public new function HRESULT(ref IADsUser self, out double retval) get_LastLogin;
+				public new function HRESULT(ref IADsUser self, out double retval) get_LastLogoff;
+				public new function HRESULT(ref IADsUser self, out double retval) get_LastFailedLogin;
+				public new function HRESULT(ref IADsUser self, out double retval) get_PasswordLastChanged;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsUser self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Division;
+				public new function HRESULT(ref IADsUser self, BSTR bstrDivision) put_Division;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Department;
+				public new function HRESULT(ref IADsUser self, BSTR bstrDepartment) put_Department;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_EmployeeID;
+				public new function HRESULT(ref IADsUser self, BSTR bstrEmployeeID) put_EmployeeID;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_FullName;
+				public new function HRESULT(ref IADsUser self, BSTR bstrFullName) put_FullName;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_FirstName;
+				public new function HRESULT(ref IADsUser self, BSTR bstrFirstName) put_FirstName;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_LastName;
+				public new function HRESULT(ref IADsUser self, BSTR bstrLastName) put_LastName;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_OtherName;
+				public new function HRESULT(ref IADsUser self, BSTR bstrOtherName) put_OtherName;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_NamePrefix;
+				public new function HRESULT(ref IADsUser self, BSTR bstrNamePrefix) put_NamePrefix;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_NameSuffix;
+				public new function HRESULT(ref IADsUser self, BSTR bstrNameSuffix) put_NameSuffix;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Title;
+				public new function HRESULT(ref IADsUser self, BSTR bstrTitle) put_Title;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Manager;
+				public new function HRESULT(ref IADsUser self, BSTR bstrManager) put_Manager;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_TelephoneHome;
+				public new function HRESULT(ref IADsUser self, VARIANT vTelephoneHome) put_TelephoneHome;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_TelephoneMobile;
+				public new function HRESULT(ref IADsUser self, VARIANT vTelephoneMobile) put_TelephoneMobile;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_TelephoneNumber;
+				public new function HRESULT(ref IADsUser self, VARIANT vTelephoneNumber) put_TelephoneNumber;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_TelephonePager;
+				public new function HRESULT(ref IADsUser self, VARIANT vTelephonePager) put_TelephonePager;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_FaxNumber;
+				public new function HRESULT(ref IADsUser self, VARIANT vFaxNumber) put_FaxNumber;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_OfficeLocations;
+				public new function HRESULT(ref IADsUser self, VARIANT vOfficeLocations) put_OfficeLocations;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_PostalAddresses;
+				public new function HRESULT(ref IADsUser self, VARIANT vPostalAddresses) put_PostalAddresses;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_PostalCodes;
+				public new function HRESULT(ref IADsUser self, VARIANT vPostalCodes) put_PostalCodes;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_SeeAlso;
+				public new function HRESULT(ref IADsUser self, VARIANT vSeeAlso) put_SeeAlso;
+				public new function HRESULT(ref IADsUser self, out int16 retval) get_AccountDisabled;
+				public new function HRESULT(ref IADsUser self, int16 fAccountDisabled) put_AccountDisabled;
+				public new function HRESULT(ref IADsUser self, out double retval) get_AccountExpirationDate;
+				public new function HRESULT(ref IADsUser self, double daAccountExpirationDate) put_AccountExpirationDate;
+				public new function HRESULT(ref IADsUser self, out int32 retval) get_GraceLoginsAllowed;
+				public new function HRESULT(ref IADsUser self, int32 lnGraceLoginsAllowed) put_GraceLoginsAllowed;
+				public new function HRESULT(ref IADsUser self, out int32 retval) get_GraceLoginsRemaining;
+				public new function HRESULT(ref IADsUser self, int32 lnGraceLoginsRemaining) put_GraceLoginsRemaining;
+				public new function HRESULT(ref IADsUser self, out int16 retval) get_IsAccountLocked;
+				public new function HRESULT(ref IADsUser self, int16 fIsAccountLocked) put_IsAccountLocked;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_LoginHours;
+				public new function HRESULT(ref IADsUser self, VARIANT vLoginHours) put_LoginHours;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_LoginWorkstations;
+				public new function HRESULT(ref IADsUser self, VARIANT vLoginWorkstations) put_LoginWorkstations;
+				public new function HRESULT(ref IADsUser self, out int32 retval) get_MaxLogins;
+				public new function HRESULT(ref IADsUser self, int32 lnMaxLogins) put_MaxLogins;
+				public new function HRESULT(ref IADsUser self, out int32 retval) get_MaxStorage;
+				public new function HRESULT(ref IADsUser self, int32 lnMaxStorage) put_MaxStorage;
+				public new function HRESULT(ref IADsUser self, out double retval) get_PasswordExpirationDate;
+				public new function HRESULT(ref IADsUser self, double daPasswordExpirationDate) put_PasswordExpirationDate;
+				public new function HRESULT(ref IADsUser self, out int32 retval) get_PasswordMinimumLength;
+				public new function HRESULT(ref IADsUser self, int32 lnPasswordMinimumLength) put_PasswordMinimumLength;
+				public new function HRESULT(ref IADsUser self, out int16 retval) get_PasswordRequired;
+				public new function HRESULT(ref IADsUser self, int16 fPasswordRequired) put_PasswordRequired;
+				public new function HRESULT(ref IADsUser self, out int16 retval) get_RequireUniquePassword;
+				public new function HRESULT(ref IADsUser self, int16 fRequireUniquePassword) put_RequireUniquePassword;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_EmailAddress;
+				public new function HRESULT(ref IADsUser self, BSTR bstrEmailAddress) put_EmailAddress;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_HomeDirectory;
+				public new function HRESULT(ref IADsUser self, BSTR bstrHomeDirectory) put_HomeDirectory;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_Languages;
+				public new function HRESULT(ref IADsUser self, VARIANT vLanguages) put_Languages;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_Profile;
+				public new function HRESULT(ref IADsUser self, BSTR bstrProfile) put_Profile;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_LoginScript;
+				public new function HRESULT(ref IADsUser self, BSTR bstrLoginScript) put_LoginScript;
+				public new function HRESULT(ref IADsUser self, out VARIANT retval) get_Picture;
+				public new function HRESULT(ref IADsUser self, VARIANT vPicture) put_Picture;
+				public new function HRESULT(ref IADsUser self, BSTR* retval) get_HomePage;
+				public new function HRESULT(ref IADsUser self, BSTR bstrHomePage) put_HomePage;
+				public new function HRESULT(ref IADsUser self, IADsMembers** ppGroups) Groups;
+				public new function HRESULT(ref IADsUser self, BSTR NewPassword) SetPassword;
+				public new function HRESULT(ref IADsUser self, BSTR bstrOldPassword, BSTR bstrNewPassword) ChangePassword;
 			}
 		}
 		[CRepr]
@@ -4042,137 +4042,137 @@ namespace Win32
 			
 			public HRESULT get_PrinterPath(BSTR* retval) mut
 			{
-				return VT.get_PrinterPath(&this, retval);
+				return VT.get_PrinterPath(ref this, retval);
 			}
 			public HRESULT put_PrinterPath(BSTR bstrPrinterPath) mut
 			{
-				return VT.put_PrinterPath(&this, bstrPrinterPath);
+				return VT.put_PrinterPath(ref this, bstrPrinterPath);
 			}
 			public HRESULT get_Model(BSTR* retval) mut
 			{
-				return VT.get_Model(&this, retval);
+				return VT.get_Model(ref this, retval);
 			}
 			public HRESULT put_Model(BSTR bstrModel) mut
 			{
-				return VT.put_Model(&this, bstrModel);
+				return VT.put_Model(ref this, bstrModel);
 			}
 			public HRESULT get_Datatype(BSTR* retval) mut
 			{
-				return VT.get_Datatype(&this, retval);
+				return VT.get_Datatype(ref this, retval);
 			}
 			public HRESULT put_Datatype(BSTR bstrDatatype) mut
 			{
-				return VT.put_Datatype(&this, bstrDatatype);
+				return VT.put_Datatype(ref this, bstrDatatype);
 			}
 			public HRESULT get_PrintProcessor(BSTR* retval) mut
 			{
-				return VT.get_PrintProcessor(&this, retval);
+				return VT.get_PrintProcessor(ref this, retval);
 			}
 			public HRESULT put_PrintProcessor(BSTR bstrPrintProcessor) mut
 			{
-				return VT.put_PrintProcessor(&this, bstrPrintProcessor);
+				return VT.put_PrintProcessor(ref this, bstrPrintProcessor);
 			}
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
 			public HRESULT get_Location(BSTR* retval) mut
 			{
-				return VT.get_Location(&this, retval);
+				return VT.get_Location(ref this, retval);
 			}
 			public HRESULT put_Location(BSTR bstrLocation) mut
 			{
-				return VT.put_Location(&this, bstrLocation);
+				return VT.put_Location(ref this, bstrLocation);
 			}
-			public HRESULT get_StartTime(double* retval) mut
+			public HRESULT get_StartTime(out double retval) mut
 			{
-				return VT.get_StartTime(&this, retval);
+				return VT.get_StartTime(ref this, out retval);
 			}
 			public HRESULT put_StartTime(double daStartTime) mut
 			{
-				return VT.put_StartTime(&this, daStartTime);
+				return VT.put_StartTime(ref this, daStartTime);
 			}
-			public HRESULT get_UntilTime(double* retval) mut
+			public HRESULT get_UntilTime(out double retval) mut
 			{
-				return VT.get_UntilTime(&this, retval);
+				return VT.get_UntilTime(ref this, out retval);
 			}
 			public HRESULT put_UntilTime(double daUntilTime) mut
 			{
-				return VT.put_UntilTime(&this, daUntilTime);
+				return VT.put_UntilTime(ref this, daUntilTime);
 			}
-			public HRESULT get_DefaultJobPriority(int32* retval) mut
+			public HRESULT get_DefaultJobPriority(out int32 retval) mut
 			{
-				return VT.get_DefaultJobPriority(&this, retval);
+				return VT.get_DefaultJobPriority(ref this, out retval);
 			}
 			public HRESULT put_DefaultJobPriority(int32 lnDefaultJobPriority) mut
 			{
-				return VT.put_DefaultJobPriority(&this, lnDefaultJobPriority);
+				return VT.put_DefaultJobPriority(ref this, lnDefaultJobPriority);
 			}
-			public HRESULT get_Priority(int32* retval) mut
+			public HRESULT get_Priority(out int32 retval) mut
 			{
-				return VT.get_Priority(&this, retval);
+				return VT.get_Priority(ref this, out retval);
 			}
 			public HRESULT put_Priority(int32 lnPriority) mut
 			{
-				return VT.put_Priority(&this, lnPriority);
+				return VT.put_Priority(ref this, lnPriority);
 			}
 			public HRESULT get_BannerPage(BSTR* retval) mut
 			{
-				return VT.get_BannerPage(&this, retval);
+				return VT.get_BannerPage(ref this, retval);
 			}
 			public HRESULT put_BannerPage(BSTR bstrBannerPage) mut
 			{
-				return VT.put_BannerPage(&this, bstrBannerPage);
+				return VT.put_BannerPage(ref this, bstrBannerPage);
 			}
-			public HRESULT get_PrintDevices(VARIANT* retval) mut
+			public HRESULT get_PrintDevices(out VARIANT retval) mut
 			{
-				return VT.get_PrintDevices(&this, retval);
+				return VT.get_PrintDevices(ref this, out retval);
 			}
 			public HRESULT put_PrintDevices(VARIANT vPrintDevices) mut
 			{
-				return VT.put_PrintDevices(&this, vPrintDevices);
+				return VT.put_PrintDevices(ref this, vPrintDevices);
 			}
-			public HRESULT get_NetAddresses(VARIANT* retval) mut
+			public HRESULT get_NetAddresses(out VARIANT retval) mut
 			{
-				return VT.get_NetAddresses(&this, retval);
+				return VT.get_NetAddresses(ref this, out retval);
 			}
 			public HRESULT put_NetAddresses(VARIANT vNetAddresses) mut
 			{
-				return VT.put_NetAddresses(&this, vNetAddresses);
+				return VT.put_NetAddresses(ref this, vNetAddresses);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsPrintQueue *self, BSTR* retval) get_PrinterPath;
-				public new function HRESULT(IADsPrintQueue *self, BSTR bstrPrinterPath) put_PrinterPath;
-				public new function HRESULT(IADsPrintQueue *self, BSTR* retval) get_Model;
-				public new function HRESULT(IADsPrintQueue *self, BSTR bstrModel) put_Model;
-				public new function HRESULT(IADsPrintQueue *self, BSTR* retval) get_Datatype;
-				public new function HRESULT(IADsPrintQueue *self, BSTR bstrDatatype) put_Datatype;
-				public new function HRESULT(IADsPrintQueue *self, BSTR* retval) get_PrintProcessor;
-				public new function HRESULT(IADsPrintQueue *self, BSTR bstrPrintProcessor) put_PrintProcessor;
-				public new function HRESULT(IADsPrintQueue *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsPrintQueue *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsPrintQueue *self, BSTR* retval) get_Location;
-				public new function HRESULT(IADsPrintQueue *self, BSTR bstrLocation) put_Location;
-				public new function HRESULT(IADsPrintQueue *self, double* retval) get_StartTime;
-				public new function HRESULT(IADsPrintQueue *self, double daStartTime) put_StartTime;
-				public new function HRESULT(IADsPrintQueue *self, double* retval) get_UntilTime;
-				public new function HRESULT(IADsPrintQueue *self, double daUntilTime) put_UntilTime;
-				public new function HRESULT(IADsPrintQueue *self, int32* retval) get_DefaultJobPriority;
-				public new function HRESULT(IADsPrintQueue *self, int32 lnDefaultJobPriority) put_DefaultJobPriority;
-				public new function HRESULT(IADsPrintQueue *self, int32* retval) get_Priority;
-				public new function HRESULT(IADsPrintQueue *self, int32 lnPriority) put_Priority;
-				public new function HRESULT(IADsPrintQueue *self, BSTR* retval) get_BannerPage;
-				public new function HRESULT(IADsPrintQueue *self, BSTR bstrBannerPage) put_BannerPage;
-				public new function HRESULT(IADsPrintQueue *self, VARIANT* retval) get_PrintDevices;
-				public new function HRESULT(IADsPrintQueue *self, VARIANT vPrintDevices) put_PrintDevices;
-				public new function HRESULT(IADsPrintQueue *self, VARIANT* retval) get_NetAddresses;
-				public new function HRESULT(IADsPrintQueue *self, VARIANT vNetAddresses) put_NetAddresses;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_PrinterPath;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrPrinterPath) put_PrinterPath;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Model;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrModel) put_Model;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Datatype;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrDatatype) put_Datatype;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_PrintProcessor;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrPrintProcessor) put_PrintProcessor;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_Location;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrLocation) put_Location;
+				public new function HRESULT(ref IADsPrintQueue self, out double retval) get_StartTime;
+				public new function HRESULT(ref IADsPrintQueue self, double daStartTime) put_StartTime;
+				public new function HRESULT(ref IADsPrintQueue self, out double retval) get_UntilTime;
+				public new function HRESULT(ref IADsPrintQueue self, double daUntilTime) put_UntilTime;
+				public new function HRESULT(ref IADsPrintQueue self, out int32 retval) get_DefaultJobPriority;
+				public new function HRESULT(ref IADsPrintQueue self, int32 lnDefaultJobPriority) put_DefaultJobPriority;
+				public new function HRESULT(ref IADsPrintQueue self, out int32 retval) get_Priority;
+				public new function HRESULT(ref IADsPrintQueue self, int32 lnPriority) put_Priority;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR* retval) get_BannerPage;
+				public new function HRESULT(ref IADsPrintQueue self, BSTR bstrBannerPage) put_BannerPage;
+				public new function HRESULT(ref IADsPrintQueue self, out VARIANT retval) get_PrintDevices;
+				public new function HRESULT(ref IADsPrintQueue self, VARIANT vPrintDevices) put_PrintDevices;
+				public new function HRESULT(ref IADsPrintQueue self, out VARIANT retval) get_NetAddresses;
+				public new function HRESULT(ref IADsPrintQueue self, VARIANT vNetAddresses) put_NetAddresses;
 			}
 		}
 		[CRepr]
@@ -4182,34 +4182,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Status(int32* retval) mut
+			public HRESULT get_Status(out int32 retval) mut
 			{
-				return VT.get_Status(&this, retval);
+				return VT.get_Status(ref this, out retval);
 			}
 			public HRESULT PrintJobs(IADsCollection** pObject) mut
 			{
-				return VT.PrintJobs(&this, pObject);
+				return VT.PrintJobs(ref this, pObject);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Resume() mut
 			{
-				return VT.Resume(&this);
+				return VT.Resume(ref this);
 			}
 			public HRESULT Purge() mut
 			{
-				return VT.Purge(&this);
+				return VT.Purge(ref this);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsPrintQueueOperations *self, int32* retval) get_Status;
-				public new function HRESULT(IADsPrintQueueOperations *self, IADsCollection** pObject) PrintJobs;
-				public new function HRESULT(IADsPrintQueueOperations *self) Pause;
-				public new function HRESULT(IADsPrintQueueOperations *self) Resume;
-				public new function HRESULT(IADsPrintQueueOperations *self) Purge;
+				public new function HRESULT(ref IADsPrintQueueOperations self, out int32 retval) get_Status;
+				public new function HRESULT(ref IADsPrintQueueOperations self, IADsCollection** pObject) PrintJobs;
+				public new function HRESULT(ref IADsPrintQueueOperations self) Pause;
+				public new function HRESULT(ref IADsPrintQueueOperations self) Resume;
+				public new function HRESULT(ref IADsPrintQueueOperations self) Purge;
 			}
 		}
 		[CRepr]
@@ -4221,97 +4221,97 @@ namespace Win32
 			
 			public HRESULT get_HostPrintQueue(BSTR* retval) mut
 			{
-				return VT.get_HostPrintQueue(&this, retval);
+				return VT.get_HostPrintQueue(ref this, retval);
 			}
 			public HRESULT get_User(BSTR* retval) mut
 			{
-				return VT.get_User(&this, retval);
+				return VT.get_User(ref this, retval);
 			}
 			public HRESULT get_UserPath(BSTR* retval) mut
 			{
-				return VT.get_UserPath(&this, retval);
+				return VT.get_UserPath(ref this, retval);
 			}
-			public HRESULT get_TimeSubmitted(double* retval) mut
+			public HRESULT get_TimeSubmitted(out double retval) mut
 			{
-				return VT.get_TimeSubmitted(&this, retval);
+				return VT.get_TimeSubmitted(ref this, out retval);
 			}
-			public HRESULT get_TotalPages(int32* retval) mut
+			public HRESULT get_TotalPages(out int32 retval) mut
 			{
-				return VT.get_TotalPages(&this, retval);
+				return VT.get_TotalPages(ref this, out retval);
 			}
-			public HRESULT get_Size(int32* retval) mut
+			public HRESULT get_Size(out int32 retval) mut
 			{
-				return VT.get_Size(&this, retval);
+				return VT.get_Size(ref this, out retval);
 			}
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
-			public HRESULT get_Priority(int32* retval) mut
+			public HRESULT get_Priority(out int32 retval) mut
 			{
-				return VT.get_Priority(&this, retval);
+				return VT.get_Priority(ref this, out retval);
 			}
 			public HRESULT put_Priority(int32 lnPriority) mut
 			{
-				return VT.put_Priority(&this, lnPriority);
+				return VT.put_Priority(ref this, lnPriority);
 			}
-			public HRESULT get_StartTime(double* retval) mut
+			public HRESULT get_StartTime(out double retval) mut
 			{
-				return VT.get_StartTime(&this, retval);
+				return VT.get_StartTime(ref this, out retval);
 			}
 			public HRESULT put_StartTime(double daStartTime) mut
 			{
-				return VT.put_StartTime(&this, daStartTime);
+				return VT.put_StartTime(ref this, daStartTime);
 			}
-			public HRESULT get_UntilTime(double* retval) mut
+			public HRESULT get_UntilTime(out double retval) mut
 			{
-				return VT.get_UntilTime(&this, retval);
+				return VT.get_UntilTime(ref this, out retval);
 			}
 			public HRESULT put_UntilTime(double daUntilTime) mut
 			{
-				return VT.put_UntilTime(&this, daUntilTime);
+				return VT.put_UntilTime(ref this, daUntilTime);
 			}
 			public HRESULT get_Notify(BSTR* retval) mut
 			{
-				return VT.get_Notify(&this, retval);
+				return VT.get_Notify(ref this, retval);
 			}
 			public HRESULT put_Notify(BSTR bstrNotify) mut
 			{
-				return VT.put_Notify(&this, bstrNotify);
+				return VT.put_Notify(ref this, bstrNotify);
 			}
 			public HRESULT get_NotifyPath(BSTR* retval) mut
 			{
-				return VT.get_NotifyPath(&this, retval);
+				return VT.get_NotifyPath(ref this, retval);
 			}
 			public HRESULT put_NotifyPath(BSTR bstrNotifyPath) mut
 			{
-				return VT.put_NotifyPath(&this, bstrNotifyPath);
+				return VT.put_NotifyPath(ref this, bstrNotifyPath);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsPrintJob *self, BSTR* retval) get_HostPrintQueue;
-				public new function HRESULT(IADsPrintJob *self, BSTR* retval) get_User;
-				public new function HRESULT(IADsPrintJob *self, BSTR* retval) get_UserPath;
-				public new function HRESULT(IADsPrintJob *self, double* retval) get_TimeSubmitted;
-				public new function HRESULT(IADsPrintJob *self, int32* retval) get_TotalPages;
-				public new function HRESULT(IADsPrintJob *self, int32* retval) get_Size;
-				public new function HRESULT(IADsPrintJob *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsPrintJob *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsPrintJob *self, int32* retval) get_Priority;
-				public new function HRESULT(IADsPrintJob *self, int32 lnPriority) put_Priority;
-				public new function HRESULT(IADsPrintJob *self, double* retval) get_StartTime;
-				public new function HRESULT(IADsPrintJob *self, double daStartTime) put_StartTime;
-				public new function HRESULT(IADsPrintJob *self, double* retval) get_UntilTime;
-				public new function HRESULT(IADsPrintJob *self, double daUntilTime) put_UntilTime;
-				public new function HRESULT(IADsPrintJob *self, BSTR* retval) get_Notify;
-				public new function HRESULT(IADsPrintJob *self, BSTR bstrNotify) put_Notify;
-				public new function HRESULT(IADsPrintJob *self, BSTR* retval) get_NotifyPath;
-				public new function HRESULT(IADsPrintJob *self, BSTR bstrNotifyPath) put_NotifyPath;
+				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_HostPrintQueue;
+				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_User;
+				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_UserPath;
+				public new function HRESULT(ref IADsPrintJob self, out double retval) get_TimeSubmitted;
+				public new function HRESULT(ref IADsPrintJob self, out int32 retval) get_TotalPages;
+				public new function HRESULT(ref IADsPrintJob self, out int32 retval) get_Size;
+				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsPrintJob self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsPrintJob self, out int32 retval) get_Priority;
+				public new function HRESULT(ref IADsPrintJob self, int32 lnPriority) put_Priority;
+				public new function HRESULT(ref IADsPrintJob self, out double retval) get_StartTime;
+				public new function HRESULT(ref IADsPrintJob self, double daStartTime) put_StartTime;
+				public new function HRESULT(ref IADsPrintJob self, out double retval) get_UntilTime;
+				public new function HRESULT(ref IADsPrintJob self, double daUntilTime) put_UntilTime;
+				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_Notify;
+				public new function HRESULT(ref IADsPrintJob self, BSTR bstrNotify) put_Notify;
+				public new function HRESULT(ref IADsPrintJob self, BSTR* retval) get_NotifyPath;
+				public new function HRESULT(ref IADsPrintJob self, BSTR bstrNotifyPath) put_NotifyPath;
 			}
 		}
 		[CRepr]
@@ -4321,44 +4321,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Status(int32* retval) mut
+			public HRESULT get_Status(out int32 retval) mut
 			{
-				return VT.get_Status(&this, retval);
+				return VT.get_Status(ref this, out retval);
 			}
-			public HRESULT get_TimeElapsed(int32* retval) mut
+			public HRESULT get_TimeElapsed(out int32 retval) mut
 			{
-				return VT.get_TimeElapsed(&this, retval);
+				return VT.get_TimeElapsed(ref this, out retval);
 			}
-			public HRESULT get_PagesPrinted(int32* retval) mut
+			public HRESULT get_PagesPrinted(out int32 retval) mut
 			{
-				return VT.get_PagesPrinted(&this, retval);
+				return VT.get_PagesPrinted(ref this, out retval);
 			}
-			public HRESULT get_Position(int32* retval) mut
+			public HRESULT get_Position(out int32 retval) mut
 			{
-				return VT.get_Position(&this, retval);
+				return VT.get_Position(ref this, out retval);
 			}
 			public HRESULT put_Position(int32 lnPosition) mut
 			{
-				return VT.put_Position(&this, lnPosition);
+				return VT.put_Position(ref this, lnPosition);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Resume() mut
 			{
-				return VT.Resume(&this);
+				return VT.Resume(ref this);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsPrintJobOperations *self, int32* retval) get_Status;
-				public new function HRESULT(IADsPrintJobOperations *self, int32* retval) get_TimeElapsed;
-				public new function HRESULT(IADsPrintJobOperations *self, int32* retval) get_PagesPrinted;
-				public new function HRESULT(IADsPrintJobOperations *self, int32* retval) get_Position;
-				public new function HRESULT(IADsPrintJobOperations *self, int32 lnPosition) put_Position;
-				public new function HRESULT(IADsPrintJobOperations *self) Pause;
-				public new function HRESULT(IADsPrintJobOperations *self) Resume;
+				public new function HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_Status;
+				public new function HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_TimeElapsed;
+				public new function HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_PagesPrinted;
+				public new function HRESULT(ref IADsPrintJobOperations self, out int32 retval) get_Position;
+				public new function HRESULT(ref IADsPrintJobOperations self, int32 lnPosition) put_Position;
+				public new function HRESULT(ref IADsPrintJobOperations self) Pause;
+				public new function HRESULT(ref IADsPrintJobOperations self) Resume;
 			}
 		}
 		[CRepr]
@@ -4370,127 +4370,127 @@ namespace Win32
 			
 			public HRESULT get_HostComputer(BSTR* retval) mut
 			{
-				return VT.get_HostComputer(&this, retval);
+				return VT.get_HostComputer(ref this, retval);
 			}
 			public HRESULT put_HostComputer(BSTR bstrHostComputer) mut
 			{
-				return VT.put_HostComputer(&this, bstrHostComputer);
+				return VT.put_HostComputer(ref this, bstrHostComputer);
 			}
 			public HRESULT get_DisplayName(BSTR* retval) mut
 			{
-				return VT.get_DisplayName(&this, retval);
+				return VT.get_DisplayName(ref this, retval);
 			}
 			public HRESULT put_DisplayName(BSTR bstrDisplayName) mut
 			{
-				return VT.put_DisplayName(&this, bstrDisplayName);
+				return VT.put_DisplayName(ref this, bstrDisplayName);
 			}
 			public HRESULT get_Version(BSTR* retval) mut
 			{
-				return VT.get_Version(&this, retval);
+				return VT.get_Version(ref this, retval);
 			}
 			public HRESULT put_Version(BSTR bstrVersion) mut
 			{
-				return VT.put_Version(&this, bstrVersion);
+				return VT.put_Version(ref this, bstrVersion);
 			}
-			public HRESULT get_ServiceType(int32* retval) mut
+			public HRESULT get_ServiceType(out int32 retval) mut
 			{
-				return VT.get_ServiceType(&this, retval);
+				return VT.get_ServiceType(ref this, out retval);
 			}
 			public HRESULT put_ServiceType(int32 lnServiceType) mut
 			{
-				return VT.put_ServiceType(&this, lnServiceType);
+				return VT.put_ServiceType(ref this, lnServiceType);
 			}
-			public HRESULT get_StartType(int32* retval) mut
+			public HRESULT get_StartType(out int32 retval) mut
 			{
-				return VT.get_StartType(&this, retval);
+				return VT.get_StartType(ref this, out retval);
 			}
 			public HRESULT put_StartType(int32 lnStartType) mut
 			{
-				return VT.put_StartType(&this, lnStartType);
+				return VT.put_StartType(ref this, lnStartType);
 			}
 			public HRESULT get_Path(BSTR* retval) mut
 			{
-				return VT.get_Path(&this, retval);
+				return VT.get_Path(ref this, retval);
 			}
 			public HRESULT put_Path(BSTR bstrPath) mut
 			{
-				return VT.put_Path(&this, bstrPath);
+				return VT.put_Path(ref this, bstrPath);
 			}
 			public HRESULT get_StartupParameters(BSTR* retval) mut
 			{
-				return VT.get_StartupParameters(&this, retval);
+				return VT.get_StartupParameters(ref this, retval);
 			}
 			public HRESULT put_StartupParameters(BSTR bstrStartupParameters) mut
 			{
-				return VT.put_StartupParameters(&this, bstrStartupParameters);
+				return VT.put_StartupParameters(ref this, bstrStartupParameters);
 			}
-			public HRESULT get_ErrorControl(int32* retval) mut
+			public HRESULT get_ErrorControl(out int32 retval) mut
 			{
-				return VT.get_ErrorControl(&this, retval);
+				return VT.get_ErrorControl(ref this, out retval);
 			}
 			public HRESULT put_ErrorControl(int32 lnErrorControl) mut
 			{
-				return VT.put_ErrorControl(&this, lnErrorControl);
+				return VT.put_ErrorControl(ref this, lnErrorControl);
 			}
 			public HRESULT get_LoadOrderGroup(BSTR* retval) mut
 			{
-				return VT.get_LoadOrderGroup(&this, retval);
+				return VT.get_LoadOrderGroup(ref this, retval);
 			}
 			public HRESULT put_LoadOrderGroup(BSTR bstrLoadOrderGroup) mut
 			{
-				return VT.put_LoadOrderGroup(&this, bstrLoadOrderGroup);
+				return VT.put_LoadOrderGroup(ref this, bstrLoadOrderGroup);
 			}
 			public HRESULT get_ServiceAccountName(BSTR* retval) mut
 			{
-				return VT.get_ServiceAccountName(&this, retval);
+				return VT.get_ServiceAccountName(ref this, retval);
 			}
 			public HRESULT put_ServiceAccountName(BSTR bstrServiceAccountName) mut
 			{
-				return VT.put_ServiceAccountName(&this, bstrServiceAccountName);
+				return VT.put_ServiceAccountName(ref this, bstrServiceAccountName);
 			}
 			public HRESULT get_ServiceAccountPath(BSTR* retval) mut
 			{
-				return VT.get_ServiceAccountPath(&this, retval);
+				return VT.get_ServiceAccountPath(ref this, retval);
 			}
 			public HRESULT put_ServiceAccountPath(BSTR bstrServiceAccountPath) mut
 			{
-				return VT.put_ServiceAccountPath(&this, bstrServiceAccountPath);
+				return VT.put_ServiceAccountPath(ref this, bstrServiceAccountPath);
 			}
-			public HRESULT get_Dependencies(VARIANT* retval) mut
+			public HRESULT get_Dependencies(out VARIANT retval) mut
 			{
-				return VT.get_Dependencies(&this, retval);
+				return VT.get_Dependencies(ref this, out retval);
 			}
 			public HRESULT put_Dependencies(VARIANT vDependencies) mut
 			{
-				return VT.put_Dependencies(&this, vDependencies);
+				return VT.put_Dependencies(ref this, vDependencies);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsService *self, BSTR* retval) get_HostComputer;
-				public new function HRESULT(IADsService *self, BSTR bstrHostComputer) put_HostComputer;
-				public new function HRESULT(IADsService *self, BSTR* retval) get_DisplayName;
-				public new function HRESULT(IADsService *self, BSTR bstrDisplayName) put_DisplayName;
-				public new function HRESULT(IADsService *self, BSTR* retval) get_Version;
-				public new function HRESULT(IADsService *self, BSTR bstrVersion) put_Version;
-				public new function HRESULT(IADsService *self, int32* retval) get_ServiceType;
-				public new function HRESULT(IADsService *self, int32 lnServiceType) put_ServiceType;
-				public new function HRESULT(IADsService *self, int32* retval) get_StartType;
-				public new function HRESULT(IADsService *self, int32 lnStartType) put_StartType;
-				public new function HRESULT(IADsService *self, BSTR* retval) get_Path;
-				public new function HRESULT(IADsService *self, BSTR bstrPath) put_Path;
-				public new function HRESULT(IADsService *self, BSTR* retval) get_StartupParameters;
-				public new function HRESULT(IADsService *self, BSTR bstrStartupParameters) put_StartupParameters;
-				public new function HRESULT(IADsService *self, int32* retval) get_ErrorControl;
-				public new function HRESULT(IADsService *self, int32 lnErrorControl) put_ErrorControl;
-				public new function HRESULT(IADsService *self, BSTR* retval) get_LoadOrderGroup;
-				public new function HRESULT(IADsService *self, BSTR bstrLoadOrderGroup) put_LoadOrderGroup;
-				public new function HRESULT(IADsService *self, BSTR* retval) get_ServiceAccountName;
-				public new function HRESULT(IADsService *self, BSTR bstrServiceAccountName) put_ServiceAccountName;
-				public new function HRESULT(IADsService *self, BSTR* retval) get_ServiceAccountPath;
-				public new function HRESULT(IADsService *self, BSTR bstrServiceAccountPath) put_ServiceAccountPath;
-				public new function HRESULT(IADsService *self, VARIANT* retval) get_Dependencies;
-				public new function HRESULT(IADsService *self, VARIANT vDependencies) put_Dependencies;
+				public new function HRESULT(ref IADsService self, BSTR* retval) get_HostComputer;
+				public new function HRESULT(ref IADsService self, BSTR bstrHostComputer) put_HostComputer;
+				public new function HRESULT(ref IADsService self, BSTR* retval) get_DisplayName;
+				public new function HRESULT(ref IADsService self, BSTR bstrDisplayName) put_DisplayName;
+				public new function HRESULT(ref IADsService self, BSTR* retval) get_Version;
+				public new function HRESULT(ref IADsService self, BSTR bstrVersion) put_Version;
+				public new function HRESULT(ref IADsService self, out int32 retval) get_ServiceType;
+				public new function HRESULT(ref IADsService self, int32 lnServiceType) put_ServiceType;
+				public new function HRESULT(ref IADsService self, out int32 retval) get_StartType;
+				public new function HRESULT(ref IADsService self, int32 lnStartType) put_StartType;
+				public new function HRESULT(ref IADsService self, BSTR* retval) get_Path;
+				public new function HRESULT(ref IADsService self, BSTR bstrPath) put_Path;
+				public new function HRESULT(ref IADsService self, BSTR* retval) get_StartupParameters;
+				public new function HRESULT(ref IADsService self, BSTR bstrStartupParameters) put_StartupParameters;
+				public new function HRESULT(ref IADsService self, out int32 retval) get_ErrorControl;
+				public new function HRESULT(ref IADsService self, int32 lnErrorControl) put_ErrorControl;
+				public new function HRESULT(ref IADsService self, BSTR* retval) get_LoadOrderGroup;
+				public new function HRESULT(ref IADsService self, BSTR bstrLoadOrderGroup) put_LoadOrderGroup;
+				public new function HRESULT(ref IADsService self, BSTR* retval) get_ServiceAccountName;
+				public new function HRESULT(ref IADsService self, BSTR bstrServiceAccountName) put_ServiceAccountName;
+				public new function HRESULT(ref IADsService self, BSTR* retval) get_ServiceAccountPath;
+				public new function HRESULT(ref IADsService self, BSTR bstrServiceAccountPath) put_ServiceAccountPath;
+				public new function HRESULT(ref IADsService self, out VARIANT retval) get_Dependencies;
+				public new function HRESULT(ref IADsService self, VARIANT vDependencies) put_Dependencies;
 			}
 		}
 		[CRepr]
@@ -4500,39 +4500,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Status(int32* retval) mut
+			public HRESULT get_Status(out int32 retval) mut
 			{
-				return VT.get_Status(&this, retval);
+				return VT.get_Status(ref this, out retval);
 			}
 			public HRESULT Start() mut
 			{
-				return VT.Start(&this);
+				return VT.Start(ref this);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Continue() mut
 			{
-				return VT.Continue(&this);
+				return VT.Continue(ref this);
 			}
 			public HRESULT SetPassword(BSTR bstrNewPassword) mut
 			{
-				return VT.SetPassword(&this, bstrNewPassword);
+				return VT.SetPassword(ref this, bstrNewPassword);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsServiceOperations *self, int32* retval) get_Status;
-				public new function HRESULT(IADsServiceOperations *self) Start;
-				public new function HRESULT(IADsServiceOperations *self) Stop;
-				public new function HRESULT(IADsServiceOperations *self) Pause;
-				public new function HRESULT(IADsServiceOperations *self) Continue;
-				public new function HRESULT(IADsServiceOperations *self, BSTR bstrNewPassword) SetPassword;
+				public new function HRESULT(ref IADsServiceOperations self, out int32 retval) get_Status;
+				public new function HRESULT(ref IADsServiceOperations self) Start;
+				public new function HRESULT(ref IADsServiceOperations self) Stop;
+				public new function HRESULT(ref IADsServiceOperations self) Pause;
+				public new function HRESULT(ref IADsServiceOperations self) Continue;
+				public new function HRESULT(ref IADsServiceOperations self, BSTR bstrNewPassword) SetPassword;
 			}
 		}
 		[CRepr]
@@ -4544,27 +4544,27 @@ namespace Win32
 			
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
-			public HRESULT get_MaxUserCount(int32* retval) mut
+			public HRESULT get_MaxUserCount(out int32 retval) mut
 			{
-				return VT.get_MaxUserCount(&this, retval);
+				return VT.get_MaxUserCount(ref this, out retval);
 			}
 			public HRESULT put_MaxUserCount(int32 lnMaxUserCount) mut
 			{
-				return VT.put_MaxUserCount(&this, lnMaxUserCount);
+				return VT.put_MaxUserCount(ref this, lnMaxUserCount);
 			}
 			[CRepr]
 			public struct VTable : IADsService.VTable
 			{
-				public new function HRESULT(IADsFileService *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsFileService *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsFileService *self, int32* retval) get_MaxUserCount;
-				public new function HRESULT(IADsFileService *self, int32 lnMaxUserCount) put_MaxUserCount;
+				public new function HRESULT(ref IADsFileService self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsFileService self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsFileService self, out int32 retval) get_MaxUserCount;
+				public new function HRESULT(ref IADsFileService self, int32 lnMaxUserCount) put_MaxUserCount;
 			}
 		}
 		[CRepr]
@@ -4576,17 +4576,17 @@ namespace Win32
 			
 			public HRESULT Sessions(IADsCollection** ppSessions) mut
 			{
-				return VT.Sessions(&this, ppSessions);
+				return VT.Sessions(ref this, ppSessions);
 			}
 			public HRESULT Resources(IADsCollection** ppResources) mut
 			{
-				return VT.Resources(&this, ppResources);
+				return VT.Resources(ref this, ppResources);
 			}
 			[CRepr]
 			public struct VTable : IADsServiceOperations.VTable
 			{
-				public new function HRESULT(IADsFileServiceOperations *self, IADsCollection** ppSessions) Sessions;
-				public new function HRESULT(IADsFileServiceOperations *self, IADsCollection** ppResources) Resources;
+				public new function HRESULT(ref IADsFileServiceOperations self, IADsCollection** ppSessions) Sessions;
+				public new function HRESULT(ref IADsFileServiceOperations self, IADsCollection** ppResources) Resources;
 			}
 		}
 		[CRepr]
@@ -4596,54 +4596,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentUserCount(int32* retval) mut
+			public HRESULT get_CurrentUserCount(out int32 retval) mut
 			{
-				return VT.get_CurrentUserCount(&this, retval);
+				return VT.get_CurrentUserCount(ref this, out retval);
 			}
 			public HRESULT get_Description(BSTR* retval) mut
 			{
-				return VT.get_Description(&this, retval);
+				return VT.get_Description(ref this, retval);
 			}
 			public HRESULT put_Description(BSTR bstrDescription) mut
 			{
-				return VT.put_Description(&this, bstrDescription);
+				return VT.put_Description(ref this, bstrDescription);
 			}
 			public HRESULT get_HostComputer(BSTR* retval) mut
 			{
-				return VT.get_HostComputer(&this, retval);
+				return VT.get_HostComputer(ref this, retval);
 			}
 			public HRESULT put_HostComputer(BSTR bstrHostComputer) mut
 			{
-				return VT.put_HostComputer(&this, bstrHostComputer);
+				return VT.put_HostComputer(ref this, bstrHostComputer);
 			}
 			public HRESULT get_Path(BSTR* retval) mut
 			{
-				return VT.get_Path(&this, retval);
+				return VT.get_Path(ref this, retval);
 			}
 			public HRESULT put_Path(BSTR bstrPath) mut
 			{
-				return VT.put_Path(&this, bstrPath);
+				return VT.put_Path(ref this, bstrPath);
 			}
-			public HRESULT get_MaxUserCount(int32* retval) mut
+			public HRESULT get_MaxUserCount(out int32 retval) mut
 			{
-				return VT.get_MaxUserCount(&this, retval);
+				return VT.get_MaxUserCount(ref this, out retval);
 			}
 			public HRESULT put_MaxUserCount(int32 lnMaxUserCount) mut
 			{
-				return VT.put_MaxUserCount(&this, lnMaxUserCount);
+				return VT.put_MaxUserCount(ref this, lnMaxUserCount);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsFileShare *self, int32* retval) get_CurrentUserCount;
-				public new function HRESULT(IADsFileShare *self, BSTR* retval) get_Description;
-				public new function HRESULT(IADsFileShare *self, BSTR bstrDescription) put_Description;
-				public new function HRESULT(IADsFileShare *self, BSTR* retval) get_HostComputer;
-				public new function HRESULT(IADsFileShare *self, BSTR bstrHostComputer) put_HostComputer;
-				public new function HRESULT(IADsFileShare *self, BSTR* retval) get_Path;
-				public new function HRESULT(IADsFileShare *self, BSTR bstrPath) put_Path;
-				public new function HRESULT(IADsFileShare *self, int32* retval) get_MaxUserCount;
-				public new function HRESULT(IADsFileShare *self, int32 lnMaxUserCount) put_MaxUserCount;
+				public new function HRESULT(ref IADsFileShare self, out int32 retval) get_CurrentUserCount;
+				public new function HRESULT(ref IADsFileShare self, BSTR* retval) get_Description;
+				public new function HRESULT(ref IADsFileShare self, BSTR bstrDescription) put_Description;
+				public new function HRESULT(ref IADsFileShare self, BSTR* retval) get_HostComputer;
+				public new function HRESULT(ref IADsFileShare self, BSTR bstrHostComputer) put_HostComputer;
+				public new function HRESULT(ref IADsFileShare self, BSTR* retval) get_Path;
+				public new function HRESULT(ref IADsFileShare self, BSTR bstrPath) put_Path;
+				public new function HRESULT(ref IADsFileShare self, out int32 retval) get_MaxUserCount;
+				public new function HRESULT(ref IADsFileShare self, int32 lnMaxUserCount) put_MaxUserCount;
 			}
 		}
 		[CRepr]
@@ -4655,37 +4655,37 @@ namespace Win32
 			
 			public HRESULT get_User(BSTR* retval) mut
 			{
-				return VT.get_User(&this, retval);
+				return VT.get_User(ref this, retval);
 			}
 			public HRESULT get_UserPath(BSTR* retval) mut
 			{
-				return VT.get_UserPath(&this, retval);
+				return VT.get_UserPath(ref this, retval);
 			}
 			public HRESULT get_Computer(BSTR* retval) mut
 			{
-				return VT.get_Computer(&this, retval);
+				return VT.get_Computer(ref this, retval);
 			}
 			public HRESULT get_ComputerPath(BSTR* retval) mut
 			{
-				return VT.get_ComputerPath(&this, retval);
+				return VT.get_ComputerPath(ref this, retval);
 			}
-			public HRESULT get_ConnectTime(int32* retval) mut
+			public HRESULT get_ConnectTime(out int32 retval) mut
 			{
-				return VT.get_ConnectTime(&this, retval);
+				return VT.get_ConnectTime(ref this, out retval);
 			}
-			public HRESULT get_IdleTime(int32* retval) mut
+			public HRESULT get_IdleTime(out int32 retval) mut
 			{
-				return VT.get_IdleTime(&this, retval);
+				return VT.get_IdleTime(ref this, out retval);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsSession *self, BSTR* retval) get_User;
-				public new function HRESULT(IADsSession *self, BSTR* retval) get_UserPath;
-				public new function HRESULT(IADsSession *self, BSTR* retval) get_Computer;
-				public new function HRESULT(IADsSession *self, BSTR* retval) get_ComputerPath;
-				public new function HRESULT(IADsSession *self, int32* retval) get_ConnectTime;
-				public new function HRESULT(IADsSession *self, int32* retval) get_IdleTime;
+				public new function HRESULT(ref IADsSession self, BSTR* retval) get_User;
+				public new function HRESULT(ref IADsSession self, BSTR* retval) get_UserPath;
+				public new function HRESULT(ref IADsSession self, BSTR* retval) get_Computer;
+				public new function HRESULT(ref IADsSession self, BSTR* retval) get_ComputerPath;
+				public new function HRESULT(ref IADsSession self, out int32 retval) get_ConnectTime;
+				public new function HRESULT(ref IADsSession self, out int32 retval) get_IdleTime;
 			}
 		}
 		[CRepr]
@@ -4697,27 +4697,27 @@ namespace Win32
 			
 			public HRESULT get_User(BSTR* retval) mut
 			{
-				return VT.get_User(&this, retval);
+				return VT.get_User(ref this, retval);
 			}
 			public HRESULT get_UserPath(BSTR* retval) mut
 			{
-				return VT.get_UserPath(&this, retval);
+				return VT.get_UserPath(ref this, retval);
 			}
 			public HRESULT get_Path(BSTR* retval) mut
 			{
-				return VT.get_Path(&this, retval);
+				return VT.get_Path(ref this, retval);
 			}
-			public HRESULT get_LockCount(int32* retval) mut
+			public HRESULT get_LockCount(out int32 retval) mut
 			{
-				return VT.get_LockCount(&this, retval);
+				return VT.get_LockCount(ref this, out retval);
 			}
 			[CRepr]
 			public struct VTable : IADs.VTable
 			{
-				public new function HRESULT(IADsResource *self, BSTR* retval) get_User;
-				public new function HRESULT(IADsResource *self, BSTR* retval) get_UserPath;
-				public new function HRESULT(IADsResource *self, BSTR* retval) get_Path;
-				public new function HRESULT(IADsResource *self, int32* retval) get_LockCount;
+				public new function HRESULT(ref IADsResource self, BSTR* retval) get_User;
+				public new function HRESULT(ref IADsResource self, BSTR* retval) get_UserPath;
+				public new function HRESULT(ref IADsResource self, BSTR* retval) get_Path;
+				public new function HRESULT(ref IADsResource self, out int32 retval) get_LockCount;
 			}
 		}
 		[CRepr]
@@ -4729,12 +4729,12 @@ namespace Win32
 			
 			public HRESULT OpenDSObject(BSTR lpszDNName, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved, IDispatch** ppOleDsObj) mut
 			{
-				return VT.OpenDSObject(&this, lpszDNName, lpszUserName, lpszPassword, lnReserved, ppOleDsObj);
+				return VT.OpenDSObject(ref this, lpszDNName, lpszUserName, lpszPassword, lnReserved, ppOleDsObj);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsOpenDSObject *self, BSTR lpszDNName, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved, IDispatch** ppOleDsObj) OpenDSObject;
+				public new function HRESULT(ref IADsOpenDSObject self, BSTR lpszDNName, BSTR lpszUserName, BSTR lpszPassword, int32 lnReserved, IDispatch** ppOleDsObj) OpenDSObject;
 			}
 		}
 		[CRepr]
@@ -4746,32 +4746,32 @@ namespace Win32
 			
 			public HRESULT GetObjectInformation(ADS_OBJECT_INFO** ppObjInfo) mut
 			{
-				return VT.GetObjectInformation(&this, ppObjInfo);
+				return VT.GetObjectInformation(ref this, ppObjInfo);
 			}
-			public HRESULT GetObjectAttributes(PWSTR* pAttributeNames, uint32 dwNumberAttributes, ADS_ATTR_INFO** ppAttributeEntries, uint32* pdwNumAttributesReturned) mut
+			public HRESULT GetObjectAttributes(PWSTR* pAttributeNames, uint32 dwNumberAttributes, ADS_ATTR_INFO** ppAttributeEntries, out uint32 pdwNumAttributesReturned) mut
 			{
-				return VT.GetObjectAttributes(&this, pAttributeNames, dwNumberAttributes, ppAttributeEntries, pdwNumAttributesReturned);
+				return VT.GetObjectAttributes(ref this, pAttributeNames, dwNumberAttributes, ppAttributeEntries, out pdwNumAttributesReturned);
 			}
-			public HRESULT SetObjectAttributes(ADS_ATTR_INFO* pAttributeEntries, uint32 dwNumAttributes, uint32* pdwNumAttributesModified) mut
+			public HRESULT SetObjectAttributes(ref ADS_ATTR_INFO pAttributeEntries, uint32 dwNumAttributes, out uint32 pdwNumAttributesModified) mut
 			{
-				return VT.SetObjectAttributes(&this, pAttributeEntries, dwNumAttributes, pdwNumAttributesModified);
+				return VT.SetObjectAttributes(ref this, ref pAttributeEntries, dwNumAttributes, out pdwNumAttributesModified);
 			}
-			public HRESULT CreateDSObject(PWSTR pszRDNName, ADS_ATTR_INFO* pAttributeEntries, uint32 dwNumAttributes, IDispatch** ppObject) mut
+			public HRESULT CreateDSObject(PWSTR pszRDNName, ref ADS_ATTR_INFO pAttributeEntries, uint32 dwNumAttributes, IDispatch** ppObject) mut
 			{
-				return VT.CreateDSObject(&this, pszRDNName, pAttributeEntries, dwNumAttributes, ppObject);
+				return VT.CreateDSObject(ref this, pszRDNName, ref pAttributeEntries, dwNumAttributes, ppObject);
 			}
 			public HRESULT DeleteDSObject(PWSTR pszRDNName) mut
 			{
-				return VT.DeleteDSObject(&this, pszRDNName);
+				return VT.DeleteDSObject(ref this, pszRDNName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectoryObject *self, ADS_OBJECT_INFO** ppObjInfo) GetObjectInformation;
-				public new function HRESULT(IDirectoryObject *self, PWSTR* pAttributeNames, uint32 dwNumberAttributes, ADS_ATTR_INFO** ppAttributeEntries, uint32* pdwNumAttributesReturned) GetObjectAttributes;
-				public new function HRESULT(IDirectoryObject *self, ADS_ATTR_INFO* pAttributeEntries, uint32 dwNumAttributes, uint32* pdwNumAttributesModified) SetObjectAttributes;
-				public new function HRESULT(IDirectoryObject *self, PWSTR pszRDNName, ADS_ATTR_INFO* pAttributeEntries, uint32 dwNumAttributes, IDispatch** ppObject) CreateDSObject;
-				public new function HRESULT(IDirectoryObject *self, PWSTR pszRDNName) DeleteDSObject;
+				public new function HRESULT(ref IDirectoryObject self, ADS_OBJECT_INFO** ppObjInfo) GetObjectInformation;
+				public new function HRESULT(ref IDirectoryObject self, PWSTR* pAttributeNames, uint32 dwNumberAttributes, ADS_ATTR_INFO** ppAttributeEntries, out uint32 pdwNumAttributesReturned) GetObjectAttributes;
+				public new function HRESULT(ref IDirectoryObject self, ref ADS_ATTR_INFO pAttributeEntries, uint32 dwNumAttributes, out uint32 pdwNumAttributesModified) SetObjectAttributes;
+				public new function HRESULT(ref IDirectoryObject self, PWSTR pszRDNName, ref ADS_ATTR_INFO pAttributeEntries, uint32 dwNumAttributes, IDispatch** ppObject) CreateDSObject;
+				public new function HRESULT(ref IDirectoryObject self, PWSTR pszRDNName) DeleteDSObject;
 			}
 		}
 		[CRepr]
@@ -4781,59 +4781,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSearchPreference(ads_searchpref_info* pSearchPrefs, uint32 dwNumPrefs) mut
+			public HRESULT SetSearchPreference(ref ads_searchpref_info pSearchPrefs, uint32 dwNumPrefs) mut
 			{
-				return VT.SetSearchPreference(&this, pSearchPrefs, dwNumPrefs);
+				return VT.SetSearchPreference(ref this, ref pSearchPrefs, dwNumPrefs);
 			}
 			public HRESULT ExecuteSearch(PWSTR pszSearchFilter, PWSTR* pAttributeNames, uint32 dwNumberAttributes, int* phSearchResult) mut
 			{
-				return VT.ExecuteSearch(&this, pszSearchFilter, pAttributeNames, dwNumberAttributes, phSearchResult);
+				return VT.ExecuteSearch(ref this, pszSearchFilter, pAttributeNames, dwNumberAttributes, phSearchResult);
 			}
 			public HRESULT AbandonSearch(int phSearchResult) mut
 			{
-				return VT.AbandonSearch(&this, phSearchResult);
+				return VT.AbandonSearch(ref this, phSearchResult);
 			}
 			public HRESULT GetFirstRow(int hSearchResult) mut
 			{
-				return VT.GetFirstRow(&this, hSearchResult);
+				return VT.GetFirstRow(ref this, hSearchResult);
 			}
 			public HRESULT GetNextRow(int hSearchResult) mut
 			{
-				return VT.GetNextRow(&this, hSearchResult);
+				return VT.GetNextRow(ref this, hSearchResult);
 			}
 			public HRESULT GetPreviousRow(int hSearchResult) mut
 			{
-				return VT.GetPreviousRow(&this, hSearchResult);
+				return VT.GetPreviousRow(ref this, hSearchResult);
 			}
 			public HRESULT GetNextColumnName(int hSearchHandle, PWSTR* ppszColumnName) mut
 			{
-				return VT.GetNextColumnName(&this, hSearchHandle, ppszColumnName);
+				return VT.GetNextColumnName(ref this, hSearchHandle, ppszColumnName);
 			}
-			public HRESULT GetColumn(int hSearchResult, PWSTR szColumnName, ads_search_column* pSearchColumn) mut
+			public HRESULT GetColumn(int hSearchResult, PWSTR szColumnName, out ads_search_column pSearchColumn) mut
 			{
-				return VT.GetColumn(&this, hSearchResult, szColumnName, pSearchColumn);
+				return VT.GetColumn(ref this, hSearchResult, szColumnName, out pSearchColumn);
 			}
-			public HRESULT FreeColumn(ads_search_column* pSearchColumn) mut
+			public HRESULT FreeColumn(ref ads_search_column pSearchColumn) mut
 			{
-				return VT.FreeColumn(&this, pSearchColumn);
+				return VT.FreeColumn(ref this, ref pSearchColumn);
 			}
 			public HRESULT CloseSearchHandle(int hSearchResult) mut
 			{
-				return VT.CloseSearchHandle(&this, hSearchResult);
+				return VT.CloseSearchHandle(ref this, hSearchResult);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectorySearch *self, ads_searchpref_info* pSearchPrefs, uint32 dwNumPrefs) SetSearchPreference;
-				public new function HRESULT(IDirectorySearch *self, PWSTR pszSearchFilter, PWSTR* pAttributeNames, uint32 dwNumberAttributes, int* phSearchResult) ExecuteSearch;
-				public new function HRESULT(IDirectorySearch *self, int phSearchResult) AbandonSearch;
-				public new function HRESULT(IDirectorySearch *self, int hSearchResult) GetFirstRow;
-				public new function HRESULT(IDirectorySearch *self, int hSearchResult) GetNextRow;
-				public new function HRESULT(IDirectorySearch *self, int hSearchResult) GetPreviousRow;
-				public new function HRESULT(IDirectorySearch *self, int hSearchHandle, PWSTR* ppszColumnName) GetNextColumnName;
-				public new function HRESULT(IDirectorySearch *self, int hSearchResult, PWSTR szColumnName, ads_search_column* pSearchColumn) GetColumn;
-				public new function HRESULT(IDirectorySearch *self, ads_search_column* pSearchColumn) FreeColumn;
-				public new function HRESULT(IDirectorySearch *self, int hSearchResult) CloseSearchHandle;
+				public new function HRESULT(ref IDirectorySearch self, ref ads_searchpref_info pSearchPrefs, uint32 dwNumPrefs) SetSearchPreference;
+				public new function HRESULT(ref IDirectorySearch self, PWSTR pszSearchFilter, PWSTR* pAttributeNames, uint32 dwNumberAttributes, int* phSearchResult) ExecuteSearch;
+				public new function HRESULT(ref IDirectorySearch self, int phSearchResult) AbandonSearch;
+				public new function HRESULT(ref IDirectorySearch self, int hSearchResult) GetFirstRow;
+				public new function HRESULT(ref IDirectorySearch self, int hSearchResult) GetNextRow;
+				public new function HRESULT(ref IDirectorySearch self, int hSearchResult) GetPreviousRow;
+				public new function HRESULT(ref IDirectorySearch self, int hSearchHandle, PWSTR* ppszColumnName) GetNextColumnName;
+				public new function HRESULT(ref IDirectorySearch self, int hSearchResult, PWSTR szColumnName, out ads_search_column pSearchColumn) GetColumn;
+				public new function HRESULT(ref IDirectorySearch self, ref ads_search_column pSearchColumn) FreeColumn;
+				public new function HRESULT(ref IDirectorySearch self, int hSearchResult) CloseSearchHandle;
 			}
 		}
 		[CRepr]
@@ -4843,49 +4843,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumAttributes(PWSTR* ppszAttrNames, uint32 dwNumAttributes, ADS_ATTR_DEF** ppAttrDefinition, uint32* pdwNumAttributes) mut
+			public HRESULT EnumAttributes(PWSTR* ppszAttrNames, uint32 dwNumAttributes, ADS_ATTR_DEF** ppAttrDefinition, ref uint32 pdwNumAttributes) mut
 			{
-				return VT.EnumAttributes(&this, ppszAttrNames, dwNumAttributes, ppAttrDefinition, pdwNumAttributes);
+				return VT.EnumAttributes(ref this, ppszAttrNames, dwNumAttributes, ppAttrDefinition, ref pdwNumAttributes);
 			}
-			public HRESULT CreateAttributeDefinition(PWSTR pszAttributeName, ADS_ATTR_DEF* pAttributeDefinition) mut
+			public HRESULT CreateAttributeDefinition(PWSTR pszAttributeName, ref ADS_ATTR_DEF pAttributeDefinition) mut
 			{
-				return VT.CreateAttributeDefinition(&this, pszAttributeName, pAttributeDefinition);
+				return VT.CreateAttributeDefinition(ref this, pszAttributeName, ref pAttributeDefinition);
 			}
-			public HRESULT WriteAttributeDefinition(PWSTR pszAttributeName, ADS_ATTR_DEF* pAttributeDefinition) mut
+			public HRESULT WriteAttributeDefinition(PWSTR pszAttributeName, ref ADS_ATTR_DEF pAttributeDefinition) mut
 			{
-				return VT.WriteAttributeDefinition(&this, pszAttributeName, pAttributeDefinition);
+				return VT.WriteAttributeDefinition(ref this, pszAttributeName, ref pAttributeDefinition);
 			}
 			public HRESULT DeleteAttributeDefinition(PWSTR pszAttributeName) mut
 			{
-				return VT.DeleteAttributeDefinition(&this, pszAttributeName);
+				return VT.DeleteAttributeDefinition(ref this, pszAttributeName);
 			}
-			public HRESULT EnumClasses(PWSTR* ppszClassNames, uint32 dwNumClasses, ADS_CLASS_DEF** ppClassDefinition, uint32* pdwNumClasses) mut
+			public HRESULT EnumClasses(PWSTR* ppszClassNames, uint32 dwNumClasses, ADS_CLASS_DEF** ppClassDefinition, ref uint32 pdwNumClasses) mut
 			{
-				return VT.EnumClasses(&this, ppszClassNames, dwNumClasses, ppClassDefinition, pdwNumClasses);
+				return VT.EnumClasses(ref this, ppszClassNames, dwNumClasses, ppClassDefinition, ref pdwNumClasses);
 			}
-			public HRESULT WriteClassDefinition(PWSTR pszClassName, ADS_CLASS_DEF* pClassDefinition) mut
+			public HRESULT WriteClassDefinition(PWSTR pszClassName, ref ADS_CLASS_DEF pClassDefinition) mut
 			{
-				return VT.WriteClassDefinition(&this, pszClassName, pClassDefinition);
+				return VT.WriteClassDefinition(ref this, pszClassName, ref pClassDefinition);
 			}
-			public HRESULT CreateClassDefinition(PWSTR pszClassName, ADS_CLASS_DEF* pClassDefinition) mut
+			public HRESULT CreateClassDefinition(PWSTR pszClassName, ref ADS_CLASS_DEF pClassDefinition) mut
 			{
-				return VT.CreateClassDefinition(&this, pszClassName, pClassDefinition);
+				return VT.CreateClassDefinition(ref this, pszClassName, ref pClassDefinition);
 			}
 			public HRESULT DeleteClassDefinition(PWSTR pszClassName) mut
 			{
-				return VT.DeleteClassDefinition(&this, pszClassName);
+				return VT.DeleteClassDefinition(ref this, pszClassName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectorySchemaMgmt *self, PWSTR* ppszAttrNames, uint32 dwNumAttributes, ADS_ATTR_DEF** ppAttrDefinition, uint32* pdwNumAttributes) EnumAttributes;
-				public new function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszAttributeName, ADS_ATTR_DEF* pAttributeDefinition) CreateAttributeDefinition;
-				public new function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszAttributeName, ADS_ATTR_DEF* pAttributeDefinition) WriteAttributeDefinition;
-				public new function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszAttributeName) DeleteAttributeDefinition;
-				public new function HRESULT(IDirectorySchemaMgmt *self, PWSTR* ppszClassNames, uint32 dwNumClasses, ADS_CLASS_DEF** ppClassDefinition, uint32* pdwNumClasses) EnumClasses;
-				public new function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszClassName, ADS_CLASS_DEF* pClassDefinition) WriteClassDefinition;
-				public new function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszClassName, ADS_CLASS_DEF* pClassDefinition) CreateClassDefinition;
-				public new function HRESULT(IDirectorySchemaMgmt *self, PWSTR pszClassName) DeleteClassDefinition;
+				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR* ppszAttrNames, uint32 dwNumAttributes, ADS_ATTR_DEF** ppAttrDefinition, ref uint32 pdwNumAttributes) EnumAttributes;
+				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszAttributeName, ref ADS_ATTR_DEF pAttributeDefinition) CreateAttributeDefinition;
+				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszAttributeName, ref ADS_ATTR_DEF pAttributeDefinition) WriteAttributeDefinition;
+				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszAttributeName) DeleteAttributeDefinition;
+				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR* ppszClassNames, uint32 dwNumClasses, ADS_CLASS_DEF** ppClassDefinition, ref uint32 pdwNumClasses) EnumClasses;
+				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszClassName, ref ADS_CLASS_DEF pClassDefinition) WriteClassDefinition;
+				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszClassName, ref ADS_CLASS_DEF pClassDefinition) CreateClassDefinition;
+				public new function HRESULT(ref IDirectorySchemaMgmt self, PWSTR pszClassName) DeleteClassDefinition;
 			}
 		}
 		[CRepr]
@@ -4897,27 +4897,27 @@ namespace Win32
 			
 			public HRESULT ConnectAsAggregatee(IUnknown* pOuterUnknown) mut
 			{
-				return VT.ConnectAsAggregatee(&this, pOuterUnknown);
+				return VT.ConnectAsAggregatee(ref this, pOuterUnknown);
 			}
 			public HRESULT DisconnectAsAggregatee() mut
 			{
-				return VT.DisconnectAsAggregatee(&this);
+				return VT.DisconnectAsAggregatee(ref this);
 			}
-			public HRESULT RelinquishInterface(Guid* riid) mut
+			public HRESULT RelinquishInterface(in Guid riid) mut
 			{
-				return VT.RelinquishInterface(&this, riid);
+				return VT.RelinquishInterface(ref this, riid);
 			}
-			public HRESULT RestoreInterface(Guid* riid) mut
+			public HRESULT RestoreInterface(in Guid riid) mut
 			{
-				return VT.RestoreInterface(&this, riid);
+				return VT.RestoreInterface(ref this, riid);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IADsAggregatee *self, IUnknown* pOuterUnknown) ConnectAsAggregatee;
-				public new function HRESULT(IADsAggregatee *self) DisconnectAsAggregatee;
-				public new function HRESULT(IADsAggregatee *self, Guid* riid) RelinquishInterface;
-				public new function HRESULT(IADsAggregatee *self, Guid* riid) RestoreInterface;
+				public new function HRESULT(ref IADsAggregatee self, IUnknown* pOuterUnknown) ConnectAsAggregatee;
+				public new function HRESULT(ref IADsAggregatee self) DisconnectAsAggregatee;
+				public new function HRESULT(ref IADsAggregatee self, in Guid riid) RelinquishInterface;
+				public new function HRESULT(ref IADsAggregatee self, in Guid riid) RestoreInterface;
 			}
 		}
 		[CRepr]
@@ -4929,17 +4929,17 @@ namespace Win32
 			
 			public HRESULT ConnectAsAggregator(IUnknown* pAggregatee) mut
 			{
-				return VT.ConnectAsAggregator(&this, pAggregatee);
+				return VT.ConnectAsAggregator(ref this, pAggregatee);
 			}
 			public HRESULT DisconnectAsAggregator() mut
 			{
-				return VT.DisconnectAsAggregator(&this);
+				return VT.DisconnectAsAggregator(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IADsAggregator *self, IUnknown* pAggregatee) ConnectAsAggregator;
-				public new function HRESULT(IADsAggregator *self) DisconnectAsAggregator;
+				public new function HRESULT(ref IADsAggregator self, IUnknown* pAggregatee) ConnectAsAggregator;
+				public new function HRESULT(ref IADsAggregator self) DisconnectAsAggregator;
 			}
 		}
 		[CRepr]
@@ -4949,79 +4949,79 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AccessMask(int32* retval) mut
+			public HRESULT get_AccessMask(out int32 retval) mut
 			{
-				return VT.get_AccessMask(&this, retval);
+				return VT.get_AccessMask(ref this, out retval);
 			}
 			public HRESULT put_AccessMask(int32 lnAccessMask) mut
 			{
-				return VT.put_AccessMask(&this, lnAccessMask);
+				return VT.put_AccessMask(ref this, lnAccessMask);
 			}
-			public HRESULT get_AceType(int32* retval) mut
+			public HRESULT get_AceType(out int32 retval) mut
 			{
-				return VT.get_AceType(&this, retval);
+				return VT.get_AceType(ref this, out retval);
 			}
 			public HRESULT put_AceType(int32 lnAceType) mut
 			{
-				return VT.put_AceType(&this, lnAceType);
+				return VT.put_AceType(ref this, lnAceType);
 			}
-			public HRESULT get_AceFlags(int32* retval) mut
+			public HRESULT get_AceFlags(out int32 retval) mut
 			{
-				return VT.get_AceFlags(&this, retval);
+				return VT.get_AceFlags(ref this, out retval);
 			}
 			public HRESULT put_AceFlags(int32 lnAceFlags) mut
 			{
-				return VT.put_AceFlags(&this, lnAceFlags);
+				return VT.put_AceFlags(ref this, lnAceFlags);
 			}
-			public HRESULT get_Flags(int32* retval) mut
+			public HRESULT get_Flags(out int32 retval) mut
 			{
-				return VT.get_Flags(&this, retval);
+				return VT.get_Flags(ref this, out retval);
 			}
 			public HRESULT put_Flags(int32 lnFlags) mut
 			{
-				return VT.put_Flags(&this, lnFlags);
+				return VT.put_Flags(ref this, lnFlags);
 			}
 			public HRESULT get_ObjectType(BSTR* retval) mut
 			{
-				return VT.get_ObjectType(&this, retval);
+				return VT.get_ObjectType(ref this, retval);
 			}
 			public HRESULT put_ObjectType(BSTR bstrObjectType) mut
 			{
-				return VT.put_ObjectType(&this, bstrObjectType);
+				return VT.put_ObjectType(ref this, bstrObjectType);
 			}
 			public HRESULT get_InheritedObjectType(BSTR* retval) mut
 			{
-				return VT.get_InheritedObjectType(&this, retval);
+				return VT.get_InheritedObjectType(ref this, retval);
 			}
 			public HRESULT put_InheritedObjectType(BSTR bstrInheritedObjectType) mut
 			{
-				return VT.put_InheritedObjectType(&this, bstrInheritedObjectType);
+				return VT.put_InheritedObjectType(ref this, bstrInheritedObjectType);
 			}
 			public HRESULT get_Trustee(BSTR* retval) mut
 			{
-				return VT.get_Trustee(&this, retval);
+				return VT.get_Trustee(ref this, retval);
 			}
 			public HRESULT put_Trustee(BSTR bstrTrustee) mut
 			{
-				return VT.put_Trustee(&this, bstrTrustee);
+				return VT.put_Trustee(ref this, bstrTrustee);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsAccessControlEntry *self, int32* retval) get_AccessMask;
-				public new function HRESULT(IADsAccessControlEntry *self, int32 lnAccessMask) put_AccessMask;
-				public new function HRESULT(IADsAccessControlEntry *self, int32* retval) get_AceType;
-				public new function HRESULT(IADsAccessControlEntry *self, int32 lnAceType) put_AceType;
-				public new function HRESULT(IADsAccessControlEntry *self, int32* retval) get_AceFlags;
-				public new function HRESULT(IADsAccessControlEntry *self, int32 lnAceFlags) put_AceFlags;
-				public new function HRESULT(IADsAccessControlEntry *self, int32* retval) get_Flags;
-				public new function HRESULT(IADsAccessControlEntry *self, int32 lnFlags) put_Flags;
-				public new function HRESULT(IADsAccessControlEntry *self, BSTR* retval) get_ObjectType;
-				public new function HRESULT(IADsAccessControlEntry *self, BSTR bstrObjectType) put_ObjectType;
-				public new function HRESULT(IADsAccessControlEntry *self, BSTR* retval) get_InheritedObjectType;
-				public new function HRESULT(IADsAccessControlEntry *self, BSTR bstrInheritedObjectType) put_InheritedObjectType;
-				public new function HRESULT(IADsAccessControlEntry *self, BSTR* retval) get_Trustee;
-				public new function HRESULT(IADsAccessControlEntry *self, BSTR bstrTrustee) put_Trustee;
+				public new function HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_AccessMask;
+				public new function HRESULT(ref IADsAccessControlEntry self, int32 lnAccessMask) put_AccessMask;
+				public new function HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_AceType;
+				public new function HRESULT(ref IADsAccessControlEntry self, int32 lnAceType) put_AceType;
+				public new function HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_AceFlags;
+				public new function HRESULT(ref IADsAccessControlEntry self, int32 lnAceFlags) put_AceFlags;
+				public new function HRESULT(ref IADsAccessControlEntry self, out int32 retval) get_Flags;
+				public new function HRESULT(ref IADsAccessControlEntry self, int32 lnFlags) put_Flags;
+				public new function HRESULT(ref IADsAccessControlEntry self, BSTR* retval) get_ObjectType;
+				public new function HRESULT(ref IADsAccessControlEntry self, BSTR bstrObjectType) put_ObjectType;
+				public new function HRESULT(ref IADsAccessControlEntry self, BSTR* retval) get_InheritedObjectType;
+				public new function HRESULT(ref IADsAccessControlEntry self, BSTR bstrInheritedObjectType) put_InheritedObjectType;
+				public new function HRESULT(ref IADsAccessControlEntry self, BSTR* retval) get_Trustee;
+				public new function HRESULT(ref IADsAccessControlEntry self, BSTR bstrTrustee) put_Trustee;
 			}
 		}
 		[CRepr]
@@ -5031,49 +5031,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AclRevision(int32* retval) mut
+			public HRESULT get_AclRevision(out int32 retval) mut
 			{
-				return VT.get_AclRevision(&this, retval);
+				return VT.get_AclRevision(ref this, out retval);
 			}
 			public HRESULT put_AclRevision(int32 lnAclRevision) mut
 			{
-				return VT.put_AclRevision(&this, lnAclRevision);
+				return VT.put_AclRevision(ref this, lnAclRevision);
 			}
-			public HRESULT get_AceCount(int32* retval) mut
+			public HRESULT get_AceCount(out int32 retval) mut
 			{
-				return VT.get_AceCount(&this, retval);
+				return VT.get_AceCount(ref this, out retval);
 			}
 			public HRESULT put_AceCount(int32 lnAceCount) mut
 			{
-				return VT.put_AceCount(&this, lnAceCount);
+				return VT.put_AceCount(ref this, lnAceCount);
 			}
 			public HRESULT AddAce(IDispatch* pAccessControlEntry) mut
 			{
-				return VT.AddAce(&this, pAccessControlEntry);
+				return VT.AddAce(ref this, pAccessControlEntry);
 			}
 			public HRESULT RemoveAce(IDispatch* pAccessControlEntry) mut
 			{
-				return VT.RemoveAce(&this, pAccessControlEntry);
+				return VT.RemoveAce(ref this, pAccessControlEntry);
 			}
 			public HRESULT CopyAccessList(IDispatch** ppAccessControlList) mut
 			{
-				return VT.CopyAccessList(&this, ppAccessControlList);
+				return VT.CopyAccessList(ref this, ppAccessControlList);
 			}
 			public HRESULT get__NewEnum(IUnknown** retval) mut
 			{
-				return VT.get__NewEnum(&this, retval);
+				return VT.get__NewEnum(ref this, retval);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsAccessControlList *self, int32* retval) get_AclRevision;
-				public new function HRESULT(IADsAccessControlList *self, int32 lnAclRevision) put_AclRevision;
-				public new function HRESULT(IADsAccessControlList *self, int32* retval) get_AceCount;
-				public new function HRESULT(IADsAccessControlList *self, int32 lnAceCount) put_AceCount;
-				public new function HRESULT(IADsAccessControlList *self, IDispatch* pAccessControlEntry) AddAce;
-				public new function HRESULT(IADsAccessControlList *self, IDispatch* pAccessControlEntry) RemoveAce;
-				public new function HRESULT(IADsAccessControlList *self, IDispatch** ppAccessControlList) CopyAccessList;
-				public new function HRESULT(IADsAccessControlList *self, IUnknown** retval) get__NewEnum;
+				public new function HRESULT(ref IADsAccessControlList self, out int32 retval) get_AclRevision;
+				public new function HRESULT(ref IADsAccessControlList self, int32 lnAclRevision) put_AclRevision;
+				public new function HRESULT(ref IADsAccessControlList self, out int32 retval) get_AceCount;
+				public new function HRESULT(ref IADsAccessControlList self, int32 lnAceCount) put_AceCount;
+				public new function HRESULT(ref IADsAccessControlList self, IDispatch* pAccessControlEntry) AddAce;
+				public new function HRESULT(ref IADsAccessControlList self, IDispatch* pAccessControlEntry) RemoveAce;
+				public new function HRESULT(ref IADsAccessControlList self, IDispatch** ppAccessControlList) CopyAccessList;
+				public new function HRESULT(ref IADsAccessControlList self, IUnknown** retval) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5083,114 +5083,114 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Revision(int32* retval) mut
+			public HRESULT get_Revision(out int32 retval) mut
 			{
-				return VT.get_Revision(&this, retval);
+				return VT.get_Revision(ref this, out retval);
 			}
 			public HRESULT put_Revision(int32 lnRevision) mut
 			{
-				return VT.put_Revision(&this, lnRevision);
+				return VT.put_Revision(ref this, lnRevision);
 			}
-			public HRESULT get_Control(int32* retval) mut
+			public HRESULT get_Control(out int32 retval) mut
 			{
-				return VT.get_Control(&this, retval);
+				return VT.get_Control(ref this, out retval);
 			}
 			public HRESULT put_Control(int32 lnControl) mut
 			{
-				return VT.put_Control(&this, lnControl);
+				return VT.put_Control(ref this, lnControl);
 			}
 			public HRESULT get_Owner(BSTR* retval) mut
 			{
-				return VT.get_Owner(&this, retval);
+				return VT.get_Owner(ref this, retval);
 			}
 			public HRESULT put_Owner(BSTR bstrOwner) mut
 			{
-				return VT.put_Owner(&this, bstrOwner);
+				return VT.put_Owner(ref this, bstrOwner);
 			}
-			public HRESULT get_OwnerDefaulted(int16* retval) mut
+			public HRESULT get_OwnerDefaulted(out int16 retval) mut
 			{
-				return VT.get_OwnerDefaulted(&this, retval);
+				return VT.get_OwnerDefaulted(ref this, out retval);
 			}
 			public HRESULT put_OwnerDefaulted(int16 fOwnerDefaulted) mut
 			{
-				return VT.put_OwnerDefaulted(&this, fOwnerDefaulted);
+				return VT.put_OwnerDefaulted(ref this, fOwnerDefaulted);
 			}
 			public HRESULT get_Group(BSTR* retval) mut
 			{
-				return VT.get_Group(&this, retval);
+				return VT.get_Group(ref this, retval);
 			}
 			public HRESULT put_Group(BSTR bstrGroup) mut
 			{
-				return VT.put_Group(&this, bstrGroup);
+				return VT.put_Group(ref this, bstrGroup);
 			}
-			public HRESULT get_GroupDefaulted(int16* retval) mut
+			public HRESULT get_GroupDefaulted(out int16 retval) mut
 			{
-				return VT.get_GroupDefaulted(&this, retval);
+				return VT.get_GroupDefaulted(ref this, out retval);
 			}
 			public HRESULT put_GroupDefaulted(int16 fGroupDefaulted) mut
 			{
-				return VT.put_GroupDefaulted(&this, fGroupDefaulted);
+				return VT.put_GroupDefaulted(ref this, fGroupDefaulted);
 			}
 			public HRESULT get_DiscretionaryAcl(IDispatch** retval) mut
 			{
-				return VT.get_DiscretionaryAcl(&this, retval);
+				return VT.get_DiscretionaryAcl(ref this, retval);
 			}
 			public HRESULT put_DiscretionaryAcl(IDispatch* pDiscretionaryAcl) mut
 			{
-				return VT.put_DiscretionaryAcl(&this, pDiscretionaryAcl);
+				return VT.put_DiscretionaryAcl(ref this, pDiscretionaryAcl);
 			}
-			public HRESULT get_DaclDefaulted(int16* retval) mut
+			public HRESULT get_DaclDefaulted(out int16 retval) mut
 			{
-				return VT.get_DaclDefaulted(&this, retval);
+				return VT.get_DaclDefaulted(ref this, out retval);
 			}
 			public HRESULT put_DaclDefaulted(int16 fDaclDefaulted) mut
 			{
-				return VT.put_DaclDefaulted(&this, fDaclDefaulted);
+				return VT.put_DaclDefaulted(ref this, fDaclDefaulted);
 			}
 			public HRESULT get_SystemAcl(IDispatch** retval) mut
 			{
-				return VT.get_SystemAcl(&this, retval);
+				return VT.get_SystemAcl(ref this, retval);
 			}
 			public HRESULT put_SystemAcl(IDispatch* pSystemAcl) mut
 			{
-				return VT.put_SystemAcl(&this, pSystemAcl);
+				return VT.put_SystemAcl(ref this, pSystemAcl);
 			}
-			public HRESULT get_SaclDefaulted(int16* retval) mut
+			public HRESULT get_SaclDefaulted(out int16 retval) mut
 			{
-				return VT.get_SaclDefaulted(&this, retval);
+				return VT.get_SaclDefaulted(ref this, out retval);
 			}
 			public HRESULT put_SaclDefaulted(int16 fSaclDefaulted) mut
 			{
-				return VT.put_SaclDefaulted(&this, fSaclDefaulted);
+				return VT.put_SaclDefaulted(ref this, fSaclDefaulted);
 			}
 			public HRESULT CopySecurityDescriptor(IDispatch** ppSecurityDescriptor) mut
 			{
-				return VT.CopySecurityDescriptor(&this, ppSecurityDescriptor);
+				return VT.CopySecurityDescriptor(ref this, ppSecurityDescriptor);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsSecurityDescriptor *self, int32* retval) get_Revision;
-				public new function HRESULT(IADsSecurityDescriptor *self, int32 lnRevision) put_Revision;
-				public new function HRESULT(IADsSecurityDescriptor *self, int32* retval) get_Control;
-				public new function HRESULT(IADsSecurityDescriptor *self, int32 lnControl) put_Control;
-				public new function HRESULT(IADsSecurityDescriptor *self, BSTR* retval) get_Owner;
-				public new function HRESULT(IADsSecurityDescriptor *self, BSTR bstrOwner) put_Owner;
-				public new function HRESULT(IADsSecurityDescriptor *self, int16* retval) get_OwnerDefaulted;
-				public new function HRESULT(IADsSecurityDescriptor *self, int16 fOwnerDefaulted) put_OwnerDefaulted;
-				public new function HRESULT(IADsSecurityDescriptor *self, BSTR* retval) get_Group;
-				public new function HRESULT(IADsSecurityDescriptor *self, BSTR bstrGroup) put_Group;
-				public new function HRESULT(IADsSecurityDescriptor *self, int16* retval) get_GroupDefaulted;
-				public new function HRESULT(IADsSecurityDescriptor *self, int16 fGroupDefaulted) put_GroupDefaulted;
-				public new function HRESULT(IADsSecurityDescriptor *self, IDispatch** retval) get_DiscretionaryAcl;
-				public new function HRESULT(IADsSecurityDescriptor *self, IDispatch* pDiscretionaryAcl) put_DiscretionaryAcl;
-				public new function HRESULT(IADsSecurityDescriptor *self, int16* retval) get_DaclDefaulted;
-				public new function HRESULT(IADsSecurityDescriptor *self, int16 fDaclDefaulted) put_DaclDefaulted;
-				public new function HRESULT(IADsSecurityDescriptor *self, IDispatch** retval) get_SystemAcl;
-				public new function HRESULT(IADsSecurityDescriptor *self, IDispatch* pSystemAcl) put_SystemAcl;
-				public new function HRESULT(IADsSecurityDescriptor *self, int16* retval) get_SaclDefaulted;
-				public new function HRESULT(IADsSecurityDescriptor *self, int16 fSaclDefaulted) put_SaclDefaulted;
-				public new function HRESULT(IADsSecurityDescriptor *self, IDispatch** ppSecurityDescriptor) CopySecurityDescriptor;
+				public new function HRESULT(ref IADsSecurityDescriptor self, out int32 retval) get_Revision;
+				public new function HRESULT(ref IADsSecurityDescriptor self, int32 lnRevision) put_Revision;
+				public new function HRESULT(ref IADsSecurityDescriptor self, out int32 retval) get_Control;
+				public new function HRESULT(ref IADsSecurityDescriptor self, int32 lnControl) put_Control;
+				public new function HRESULT(ref IADsSecurityDescriptor self, BSTR* retval) get_Owner;
+				public new function HRESULT(ref IADsSecurityDescriptor self, BSTR bstrOwner) put_Owner;
+				public new function HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_OwnerDefaulted;
+				public new function HRESULT(ref IADsSecurityDescriptor self, int16 fOwnerDefaulted) put_OwnerDefaulted;
+				public new function HRESULT(ref IADsSecurityDescriptor self, BSTR* retval) get_Group;
+				public new function HRESULT(ref IADsSecurityDescriptor self, BSTR bstrGroup) put_Group;
+				public new function HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_GroupDefaulted;
+				public new function HRESULT(ref IADsSecurityDescriptor self, int16 fGroupDefaulted) put_GroupDefaulted;
+				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch** retval) get_DiscretionaryAcl;
+				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch* pDiscretionaryAcl) put_DiscretionaryAcl;
+				public new function HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_DaclDefaulted;
+				public new function HRESULT(ref IADsSecurityDescriptor self, int16 fDaclDefaulted) put_DaclDefaulted;
+				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch** retval) get_SystemAcl;
+				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch* pSystemAcl) put_SystemAcl;
+				public new function HRESULT(ref IADsSecurityDescriptor self, out int16 retval) get_SaclDefaulted;
+				public new function HRESULT(ref IADsSecurityDescriptor self, int16 fSaclDefaulted) put_SaclDefaulted;
+				public new function HRESULT(ref IADsSecurityDescriptor self, IDispatch** ppSecurityDescriptor) CopySecurityDescriptor;
 			}
 		}
 		[CRepr]
@@ -5200,29 +5200,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_HighPart(int32* retval) mut
+			public HRESULT get_HighPart(out int32 retval) mut
 			{
-				return VT.get_HighPart(&this, retval);
+				return VT.get_HighPart(ref this, out retval);
 			}
 			public HRESULT put_HighPart(int32 lnHighPart) mut
 			{
-				return VT.put_HighPart(&this, lnHighPart);
+				return VT.put_HighPart(ref this, lnHighPart);
 			}
-			public HRESULT get_LowPart(int32* retval) mut
+			public HRESULT get_LowPart(out int32 retval) mut
 			{
-				return VT.get_LowPart(&this, retval);
+				return VT.get_LowPart(ref this, out retval);
 			}
 			public HRESULT put_LowPart(int32 lnLowPart) mut
 			{
-				return VT.put_LowPart(&this, lnLowPart);
+				return VT.put_LowPart(ref this, lnLowPart);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsLargeInteger *self, int32* retval) get_HighPart;
-				public new function HRESULT(IADsLargeInteger *self, int32 lnHighPart) put_HighPart;
-				public new function HRESULT(IADsLargeInteger *self, int32* retval) get_LowPart;
-				public new function HRESULT(IADsLargeInteger *self, int32 lnLowPart) put_LowPart;
+				public new function HRESULT(ref IADsLargeInteger self, out int32 retval) get_HighPart;
+				public new function HRESULT(ref IADsLargeInteger self, int32 lnHighPart) put_HighPart;
+				public new function HRESULT(ref IADsLargeInteger self, out int32 retval) get_LowPart;
+				public new function HRESULT(ref IADsLargeInteger self, int32 lnLowPart) put_LowPart;
 			}
 		}
 		[CRepr]
@@ -5234,42 +5234,42 @@ namespace Win32
 			
 			public HRESULT put_ChaseReferral(int32 lnChaseReferral) mut
 			{
-				return VT.put_ChaseReferral(&this, lnChaseReferral);
+				return VT.put_ChaseReferral(ref this, lnChaseReferral);
 			}
 			public HRESULT Init(int32 lnSetType, BSTR bstrADsPath) mut
 			{
-				return VT.Init(&this, lnSetType, bstrADsPath);
+				return VT.Init(ref this, lnSetType, bstrADsPath);
 			}
 			public HRESULT InitEx(int32 lnSetType, BSTR bstrADsPath, BSTR bstrUserID, BSTR bstrDomain, BSTR bstrPassword) mut
 			{
-				return VT.InitEx(&this, lnSetType, bstrADsPath, bstrUserID, bstrDomain, bstrPassword);
+				return VT.InitEx(ref this, lnSetType, bstrADsPath, bstrUserID, bstrDomain, bstrPassword);
 			}
 			public HRESULT Set(int32 lnSetType, BSTR bstrADsPath) mut
 			{
-				return VT.Set(&this, lnSetType, bstrADsPath);
+				return VT.Set(ref this, lnSetType, bstrADsPath);
 			}
 			public HRESULT Get(int32 lnFormatType, BSTR* pbstrADsPath) mut
 			{
-				return VT.Get(&this, lnFormatType, pbstrADsPath);
+				return VT.Get(ref this, lnFormatType, pbstrADsPath);
 			}
 			public HRESULT SetEx(int32 lnFormatType, VARIANT pvar) mut
 			{
-				return VT.SetEx(&this, lnFormatType, pvar);
+				return VT.SetEx(ref this, lnFormatType, pvar);
 			}
-			public HRESULT GetEx(int32 lnFormatType, VARIANT* pvar) mut
+			public HRESULT GetEx(int32 lnFormatType, out VARIANT pvar) mut
 			{
-				return VT.GetEx(&this, lnFormatType, pvar);
+				return VT.GetEx(ref this, lnFormatType, out pvar);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsNameTranslate *self, int32 lnChaseReferral) put_ChaseReferral;
-				public new function HRESULT(IADsNameTranslate *self, int32 lnSetType, BSTR bstrADsPath) Init;
-				public new function HRESULT(IADsNameTranslate *self, int32 lnSetType, BSTR bstrADsPath, BSTR bstrUserID, BSTR bstrDomain, BSTR bstrPassword) InitEx;
-				public new function HRESULT(IADsNameTranslate *self, int32 lnSetType, BSTR bstrADsPath) Set;
-				public new function HRESULT(IADsNameTranslate *self, int32 lnFormatType, BSTR* pbstrADsPath) Get;
-				public new function HRESULT(IADsNameTranslate *self, int32 lnFormatType, VARIANT pvar) SetEx;
-				public new function HRESULT(IADsNameTranslate *self, int32 lnFormatType, VARIANT* pvar) GetEx;
+				public new function HRESULT(ref IADsNameTranslate self, int32 lnChaseReferral) put_ChaseReferral;
+				public new function HRESULT(ref IADsNameTranslate self, int32 lnSetType, BSTR bstrADsPath) Init;
+				public new function HRESULT(ref IADsNameTranslate self, int32 lnSetType, BSTR bstrADsPath, BSTR bstrUserID, BSTR bstrDomain, BSTR bstrPassword) InitEx;
+				public new function HRESULT(ref IADsNameTranslate self, int32 lnSetType, BSTR bstrADsPath) Set;
+				public new function HRESULT(ref IADsNameTranslate self, int32 lnFormatType, BSTR* pbstrADsPath) Get;
+				public new function HRESULT(ref IADsNameTranslate self, int32 lnFormatType, VARIANT pvar) SetEx;
+				public new function HRESULT(ref IADsNameTranslate self, int32 lnFormatType, out VARIANT pvar) GetEx;
 			}
 		}
 		[CRepr]
@@ -5279,19 +5279,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CaseIgnoreList(VARIANT* retval) mut
+			public HRESULT get_CaseIgnoreList(out VARIANT retval) mut
 			{
-				return VT.get_CaseIgnoreList(&this, retval);
+				return VT.get_CaseIgnoreList(ref this, out retval);
 			}
 			public HRESULT put_CaseIgnoreList(VARIANT vCaseIgnoreList) mut
 			{
-				return VT.put_CaseIgnoreList(&this, vCaseIgnoreList);
+				return VT.put_CaseIgnoreList(ref this, vCaseIgnoreList);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsCaseIgnoreList *self, VARIANT* retval) get_CaseIgnoreList;
-				public new function HRESULT(IADsCaseIgnoreList *self, VARIANT vCaseIgnoreList) put_CaseIgnoreList;
+				public new function HRESULT(ref IADsCaseIgnoreList self, out VARIANT retval) get_CaseIgnoreList;
+				public new function HRESULT(ref IADsCaseIgnoreList self, VARIANT vCaseIgnoreList) put_CaseIgnoreList;
 			}
 		}
 		[CRepr]
@@ -5303,27 +5303,27 @@ namespace Win32
 			
 			public HRESULT get_TelephoneNumber(BSTR* retval) mut
 			{
-				return VT.get_TelephoneNumber(&this, retval);
+				return VT.get_TelephoneNumber(ref this, retval);
 			}
 			public HRESULT put_TelephoneNumber(BSTR bstrTelephoneNumber) mut
 			{
-				return VT.put_TelephoneNumber(&this, bstrTelephoneNumber);
+				return VT.put_TelephoneNumber(ref this, bstrTelephoneNumber);
 			}
-			public HRESULT get_Parameters(VARIANT* retval) mut
+			public HRESULT get_Parameters(out VARIANT retval) mut
 			{
-				return VT.get_Parameters(&this, retval);
+				return VT.get_Parameters(ref this, out retval);
 			}
 			public HRESULT put_Parameters(VARIANT vParameters) mut
 			{
-				return VT.put_Parameters(&this, vParameters);
+				return VT.put_Parameters(ref this, vParameters);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsFaxNumber *self, BSTR* retval) get_TelephoneNumber;
-				public new function HRESULT(IADsFaxNumber *self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
-				public new function HRESULT(IADsFaxNumber *self, VARIANT* retval) get_Parameters;
-				public new function HRESULT(IADsFaxNumber *self, VARIANT vParameters) put_Parameters;
+				public new function HRESULT(ref IADsFaxNumber self, BSTR* retval) get_TelephoneNumber;
+				public new function HRESULT(ref IADsFaxNumber self, BSTR bstrTelephoneNumber) put_TelephoneNumber;
+				public new function HRESULT(ref IADsFaxNumber self, out VARIANT retval) get_Parameters;
+				public new function HRESULT(ref IADsFaxNumber self, VARIANT vParameters) put_Parameters;
 			}
 		}
 		[CRepr]
@@ -5333,29 +5333,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AddressType(int32* retval) mut
+			public HRESULT get_AddressType(out int32 retval) mut
 			{
-				return VT.get_AddressType(&this, retval);
+				return VT.get_AddressType(ref this, out retval);
 			}
 			public HRESULT put_AddressType(int32 lnAddressType) mut
 			{
-				return VT.put_AddressType(&this, lnAddressType);
+				return VT.put_AddressType(ref this, lnAddressType);
 			}
-			public HRESULT get_Address(VARIANT* retval) mut
+			public HRESULT get_Address(out VARIANT retval) mut
 			{
-				return VT.get_Address(&this, retval);
+				return VT.get_Address(ref this, out retval);
 			}
 			public HRESULT put_Address(VARIANT vAddress) mut
 			{
-				return VT.put_Address(&this, vAddress);
+				return VT.put_Address(ref this, vAddress);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsNetAddress *self, int32* retval) get_AddressType;
-				public new function HRESULT(IADsNetAddress *self, int32 lnAddressType) put_AddressType;
-				public new function HRESULT(IADsNetAddress *self, VARIANT* retval) get_Address;
-				public new function HRESULT(IADsNetAddress *self, VARIANT vAddress) put_Address;
+				public new function HRESULT(ref IADsNetAddress self, out int32 retval) get_AddressType;
+				public new function HRESULT(ref IADsNetAddress self, int32 lnAddressType) put_AddressType;
+				public new function HRESULT(ref IADsNetAddress self, out VARIANT retval) get_Address;
+				public new function HRESULT(ref IADsNetAddress self, VARIANT vAddress) put_Address;
 			}
 		}
 		[CRepr]
@@ -5365,19 +5365,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_OctetList(VARIANT* retval) mut
+			public HRESULT get_OctetList(out VARIANT retval) mut
 			{
-				return VT.get_OctetList(&this, retval);
+				return VT.get_OctetList(ref this, out retval);
 			}
 			public HRESULT put_OctetList(VARIANT vOctetList) mut
 			{
-				return VT.put_OctetList(&this, vOctetList);
+				return VT.put_OctetList(ref this, vOctetList);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsOctetList *self, VARIANT* retval) get_OctetList;
-				public new function HRESULT(IADsOctetList *self, VARIANT vOctetList) put_OctetList;
+				public new function HRESULT(ref IADsOctetList self, out VARIANT retval) get_OctetList;
+				public new function HRESULT(ref IADsOctetList self, VARIANT vOctetList) put_OctetList;
 			}
 		}
 		[CRepr]
@@ -5387,29 +5387,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Type(int32* retval) mut
+			public HRESULT get_Type(out int32 retval) mut
 			{
-				return VT.get_Type(&this, retval);
+				return VT.get_Type(ref this, out retval);
 			}
 			public HRESULT put_Type(int32 lnType) mut
 			{
-				return VT.put_Type(&this, lnType);
+				return VT.put_Type(ref this, lnType);
 			}
 			public HRESULT get_Address(BSTR* retval) mut
 			{
-				return VT.get_Address(&this, retval);
+				return VT.get_Address(ref this, retval);
 			}
 			public HRESULT put_Address(BSTR bstrAddress) mut
 			{
-				return VT.put_Address(&this, bstrAddress);
+				return VT.put_Address(ref this, bstrAddress);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsEmail *self, int32* retval) get_Type;
-				public new function HRESULT(IADsEmail *self, int32 lnType) put_Type;
-				public new function HRESULT(IADsEmail *self, BSTR* retval) get_Address;
-				public new function HRESULT(IADsEmail *self, BSTR bstrAddress) put_Address;
+				public new function HRESULT(ref IADsEmail self, out int32 retval) get_Type;
+				public new function HRESULT(ref IADsEmail self, int32 lnType) put_Type;
+				public new function HRESULT(ref IADsEmail self, BSTR* retval) get_Address;
+				public new function HRESULT(ref IADsEmail self, BSTR bstrAddress) put_Address;
 			}
 		}
 		[CRepr]
@@ -5419,39 +5419,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Type(int32* retval) mut
+			public HRESULT get_Type(out int32 retval) mut
 			{
-				return VT.get_Type(&this, retval);
+				return VT.get_Type(ref this, out retval);
 			}
 			public HRESULT put_Type(int32 lnType) mut
 			{
-				return VT.put_Type(&this, lnType);
+				return VT.put_Type(ref this, lnType);
 			}
 			public HRESULT get_VolumeName(BSTR* retval) mut
 			{
-				return VT.get_VolumeName(&this, retval);
+				return VT.get_VolumeName(ref this, retval);
 			}
 			public HRESULT put_VolumeName(BSTR bstrVolumeName) mut
 			{
-				return VT.put_VolumeName(&this, bstrVolumeName);
+				return VT.put_VolumeName(ref this, bstrVolumeName);
 			}
 			public HRESULT get_Path(BSTR* retval) mut
 			{
-				return VT.get_Path(&this, retval);
+				return VT.get_Path(ref this, retval);
 			}
 			public HRESULT put_Path(BSTR bstrPath) mut
 			{
-				return VT.put_Path(&this, bstrPath);
+				return VT.put_Path(ref this, bstrPath);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsPath *self, int32* retval) get_Type;
-				public new function HRESULT(IADsPath *self, int32 lnType) put_Type;
-				public new function HRESULT(IADsPath *self, BSTR* retval) get_VolumeName;
-				public new function HRESULT(IADsPath *self, BSTR bstrVolumeName) put_VolumeName;
-				public new function HRESULT(IADsPath *self, BSTR* retval) get_Path;
-				public new function HRESULT(IADsPath *self, BSTR bstrPath) put_Path;
+				public new function HRESULT(ref IADsPath self, out int32 retval) get_Type;
+				public new function HRESULT(ref IADsPath self, int32 lnType) put_Type;
+				public new function HRESULT(ref IADsPath self, BSTR* retval) get_VolumeName;
+				public new function HRESULT(ref IADsPath self, BSTR bstrVolumeName) put_VolumeName;
+				public new function HRESULT(ref IADsPath self, BSTR* retval) get_Path;
+				public new function HRESULT(ref IADsPath self, BSTR bstrPath) put_Path;
 			}
 		}
 		[CRepr]
@@ -5463,57 +5463,57 @@ namespace Win32
 			
 			public HRESULT get_ServerName(BSTR* retval) mut
 			{
-				return VT.get_ServerName(&this, retval);
+				return VT.get_ServerName(ref this, retval);
 			}
 			public HRESULT put_ServerName(BSTR bstrServerName) mut
 			{
-				return VT.put_ServerName(&this, bstrServerName);
+				return VT.put_ServerName(ref this, bstrServerName);
 			}
-			public HRESULT get_ReplicaType(int32* retval) mut
+			public HRESULT get_ReplicaType(out int32 retval) mut
 			{
-				return VT.get_ReplicaType(&this, retval);
+				return VT.get_ReplicaType(ref this, out retval);
 			}
 			public HRESULT put_ReplicaType(int32 lnReplicaType) mut
 			{
-				return VT.put_ReplicaType(&this, lnReplicaType);
+				return VT.put_ReplicaType(ref this, lnReplicaType);
 			}
-			public HRESULT get_ReplicaNumber(int32* retval) mut
+			public HRESULT get_ReplicaNumber(out int32 retval) mut
 			{
-				return VT.get_ReplicaNumber(&this, retval);
+				return VT.get_ReplicaNumber(ref this, out retval);
 			}
 			public HRESULT put_ReplicaNumber(int32 lnReplicaNumber) mut
 			{
-				return VT.put_ReplicaNumber(&this, lnReplicaNumber);
+				return VT.put_ReplicaNumber(ref this, lnReplicaNumber);
 			}
-			public HRESULT get_Count(int32* retval) mut
+			public HRESULT get_Count(out int32 retval) mut
 			{
-				return VT.get_Count(&this, retval);
+				return VT.get_Count(ref this, out retval);
 			}
 			public HRESULT put_Count(int32 lnCount) mut
 			{
-				return VT.put_Count(&this, lnCount);
+				return VT.put_Count(ref this, lnCount);
 			}
-			public HRESULT get_ReplicaAddressHints(VARIANT* retval) mut
+			public HRESULT get_ReplicaAddressHints(out VARIANT retval) mut
 			{
-				return VT.get_ReplicaAddressHints(&this, retval);
+				return VT.get_ReplicaAddressHints(ref this, out retval);
 			}
 			public HRESULT put_ReplicaAddressHints(VARIANT vReplicaAddressHints) mut
 			{
-				return VT.put_ReplicaAddressHints(&this, vReplicaAddressHints);
+				return VT.put_ReplicaAddressHints(ref this, vReplicaAddressHints);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsReplicaPointer *self, BSTR* retval) get_ServerName;
-				public new function HRESULT(IADsReplicaPointer *self, BSTR bstrServerName) put_ServerName;
-				public new function HRESULT(IADsReplicaPointer *self, int32* retval) get_ReplicaType;
-				public new function HRESULT(IADsReplicaPointer *self, int32 lnReplicaType) put_ReplicaType;
-				public new function HRESULT(IADsReplicaPointer *self, int32* retval) get_ReplicaNumber;
-				public new function HRESULT(IADsReplicaPointer *self, int32 lnReplicaNumber) put_ReplicaNumber;
-				public new function HRESULT(IADsReplicaPointer *self, int32* retval) get_Count;
-				public new function HRESULT(IADsReplicaPointer *self, int32 lnCount) put_Count;
-				public new function HRESULT(IADsReplicaPointer *self, VARIANT* retval) get_ReplicaAddressHints;
-				public new function HRESULT(IADsReplicaPointer *self, VARIANT vReplicaAddressHints) put_ReplicaAddressHints;
+				public new function HRESULT(ref IADsReplicaPointer self, BSTR* retval) get_ServerName;
+				public new function HRESULT(ref IADsReplicaPointer self, BSTR bstrServerName) put_ServerName;
+				public new function HRESULT(ref IADsReplicaPointer self, out int32 retval) get_ReplicaType;
+				public new function HRESULT(ref IADsReplicaPointer self, int32 lnReplicaType) put_ReplicaType;
+				public new function HRESULT(ref IADsReplicaPointer self, out int32 retval) get_ReplicaNumber;
+				public new function HRESULT(ref IADsReplicaPointer self, int32 lnReplicaNumber) put_ReplicaNumber;
+				public new function HRESULT(ref IADsReplicaPointer self, out int32 retval) get_Count;
+				public new function HRESULT(ref IADsReplicaPointer self, int32 lnCount) put_Count;
+				public new function HRESULT(ref IADsReplicaPointer self, out VARIANT retval) get_ReplicaAddressHints;
+				public new function HRESULT(ref IADsReplicaPointer self, VARIANT vReplicaAddressHints) put_ReplicaAddressHints;
 			}
 		}
 		[CRepr]
@@ -5525,42 +5525,42 @@ namespace Win32
 			
 			public HRESULT get_ProtectedAttrName(BSTR* retval) mut
 			{
-				return VT.get_ProtectedAttrName(&this, retval);
+				return VT.get_ProtectedAttrName(ref this, retval);
 			}
 			public HRESULT put_ProtectedAttrName(BSTR bstrProtectedAttrName) mut
 			{
-				return VT.put_ProtectedAttrName(&this, bstrProtectedAttrName);
+				return VT.put_ProtectedAttrName(ref this, bstrProtectedAttrName);
 			}
 			public HRESULT get_SubjectName(BSTR* retval) mut
 			{
-				return VT.get_SubjectName(&this, retval);
+				return VT.get_SubjectName(ref this, retval);
 			}
 			public HRESULT put_SubjectName(BSTR bstrSubjectName) mut
 			{
-				return VT.put_SubjectName(&this, bstrSubjectName);
+				return VT.put_SubjectName(ref this, bstrSubjectName);
 			}
-			public HRESULT get_Privileges(int32* retval) mut
+			public HRESULT get_Privileges(out int32 retval) mut
 			{
-				return VT.get_Privileges(&this, retval);
+				return VT.get_Privileges(ref this, out retval);
 			}
 			public HRESULT put_Privileges(int32 lnPrivileges) mut
 			{
-				return VT.put_Privileges(&this, lnPrivileges);
+				return VT.put_Privileges(ref this, lnPrivileges);
 			}
 			public HRESULT CopyAcl(IDispatch** ppAcl) mut
 			{
-				return VT.CopyAcl(&this, ppAcl);
+				return VT.CopyAcl(ref this, ppAcl);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsAcl *self, BSTR* retval) get_ProtectedAttrName;
-				public new function HRESULT(IADsAcl *self, BSTR bstrProtectedAttrName) put_ProtectedAttrName;
-				public new function HRESULT(IADsAcl *self, BSTR* retval) get_SubjectName;
-				public new function HRESULT(IADsAcl *self, BSTR bstrSubjectName) put_SubjectName;
-				public new function HRESULT(IADsAcl *self, int32* retval) get_Privileges;
-				public new function HRESULT(IADsAcl *self, int32 lnPrivileges) put_Privileges;
-				public new function HRESULT(IADsAcl *self, IDispatch** ppAcl) CopyAcl;
+				public new function HRESULT(ref IADsAcl self, BSTR* retval) get_ProtectedAttrName;
+				public new function HRESULT(ref IADsAcl self, BSTR bstrProtectedAttrName) put_ProtectedAttrName;
+				public new function HRESULT(ref IADsAcl self, BSTR* retval) get_SubjectName;
+				public new function HRESULT(ref IADsAcl self, BSTR bstrSubjectName) put_SubjectName;
+				public new function HRESULT(ref IADsAcl self, out int32 retval) get_Privileges;
+				public new function HRESULT(ref IADsAcl self, int32 lnPrivileges) put_Privileges;
+				public new function HRESULT(ref IADsAcl self, IDispatch** ppAcl) CopyAcl;
 			}
 		}
 		[CRepr]
@@ -5570,29 +5570,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_WholeSeconds(int32* retval) mut
+			public HRESULT get_WholeSeconds(out int32 retval) mut
 			{
-				return VT.get_WholeSeconds(&this, retval);
+				return VT.get_WholeSeconds(ref this, out retval);
 			}
 			public HRESULT put_WholeSeconds(int32 lnWholeSeconds) mut
 			{
-				return VT.put_WholeSeconds(&this, lnWholeSeconds);
+				return VT.put_WholeSeconds(ref this, lnWholeSeconds);
 			}
-			public HRESULT get_EventID(int32* retval) mut
+			public HRESULT get_EventID(out int32 retval) mut
 			{
-				return VT.get_EventID(&this, retval);
+				return VT.get_EventID(ref this, out retval);
 			}
 			public HRESULT put_EventID(int32 lnEventID) mut
 			{
-				return VT.put_EventID(&this, lnEventID);
+				return VT.put_EventID(ref this, lnEventID);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsTimestamp *self, int32* retval) get_WholeSeconds;
-				public new function HRESULT(IADsTimestamp *self, int32 lnWholeSeconds) put_WholeSeconds;
-				public new function HRESULT(IADsTimestamp *self, int32* retval) get_EventID;
-				public new function HRESULT(IADsTimestamp *self, int32 lnEventID) put_EventID;
+				public new function HRESULT(ref IADsTimestamp self, out int32 retval) get_WholeSeconds;
+				public new function HRESULT(ref IADsTimestamp self, int32 lnWholeSeconds) put_WholeSeconds;
+				public new function HRESULT(ref IADsTimestamp self, out int32 retval) get_EventID;
+				public new function HRESULT(ref IADsTimestamp self, int32 lnEventID) put_EventID;
 			}
 		}
 		[CRepr]
@@ -5602,19 +5602,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PostalAddress(VARIANT* retval) mut
+			public HRESULT get_PostalAddress(out VARIANT retval) mut
 			{
-				return VT.get_PostalAddress(&this, retval);
+				return VT.get_PostalAddress(ref this, out retval);
 			}
 			public HRESULT put_PostalAddress(VARIANT vPostalAddress) mut
 			{
-				return VT.put_PostalAddress(&this, vPostalAddress);
+				return VT.put_PostalAddress(ref this, vPostalAddress);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsPostalAddress *self, VARIANT* retval) get_PostalAddress;
-				public new function HRESULT(IADsPostalAddress *self, VARIANT vPostalAddress) put_PostalAddress;
+				public new function HRESULT(ref IADsPostalAddress self, out VARIANT retval) get_PostalAddress;
+				public new function HRESULT(ref IADsPostalAddress self, VARIANT vPostalAddress) put_PostalAddress;
 			}
 		}
 		[CRepr]
@@ -5624,29 +5624,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_RemoteID(int32* retval) mut
+			public HRESULT get_RemoteID(out int32 retval) mut
 			{
-				return VT.get_RemoteID(&this, retval);
+				return VT.get_RemoteID(ref this, out retval);
 			}
 			public HRESULT put_RemoteID(int32 lnRemoteID) mut
 			{
-				return VT.put_RemoteID(&this, lnRemoteID);
+				return VT.put_RemoteID(ref this, lnRemoteID);
 			}
 			public HRESULT get_ObjectName(BSTR* retval) mut
 			{
-				return VT.get_ObjectName(&this, retval);
+				return VT.get_ObjectName(ref this, retval);
 			}
 			public HRESULT put_ObjectName(BSTR bstrObjectName) mut
 			{
-				return VT.put_ObjectName(&this, bstrObjectName);
+				return VT.put_ObjectName(ref this, bstrObjectName);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsBackLink *self, int32* retval) get_RemoteID;
-				public new function HRESULT(IADsBackLink *self, int32 lnRemoteID) put_RemoteID;
-				public new function HRESULT(IADsBackLink *self, BSTR* retval) get_ObjectName;
-				public new function HRESULT(IADsBackLink *self, BSTR bstrObjectName) put_ObjectName;
+				public new function HRESULT(ref IADsBackLink self, out int32 retval) get_RemoteID;
+				public new function HRESULT(ref IADsBackLink self, int32 lnRemoteID) put_RemoteID;
+				public new function HRESULT(ref IADsBackLink self, BSTR* retval) get_ObjectName;
+				public new function HRESULT(ref IADsBackLink self, BSTR bstrObjectName) put_ObjectName;
 			}
 		}
 		[CRepr]
@@ -5658,37 +5658,37 @@ namespace Win32
 			
 			public HRESULT get_ObjectName(BSTR* retval) mut
 			{
-				return VT.get_ObjectName(&this, retval);
+				return VT.get_ObjectName(ref this, retval);
 			}
 			public HRESULT put_ObjectName(BSTR bstrObjectName) mut
 			{
-				return VT.put_ObjectName(&this, bstrObjectName);
+				return VT.put_ObjectName(ref this, bstrObjectName);
 			}
-			public HRESULT get_Level(int32* retval) mut
+			public HRESULT get_Level(out int32 retval) mut
 			{
-				return VT.get_Level(&this, retval);
+				return VT.get_Level(ref this, out retval);
 			}
 			public HRESULT put_Level(int32 lnLevel) mut
 			{
-				return VT.put_Level(&this, lnLevel);
+				return VT.put_Level(ref this, lnLevel);
 			}
-			public HRESULT get_Interval(int32* retval) mut
+			public HRESULT get_Interval(out int32 retval) mut
 			{
-				return VT.get_Interval(&this, retval);
+				return VT.get_Interval(ref this, out retval);
 			}
 			public HRESULT put_Interval(int32 lnInterval) mut
 			{
-				return VT.put_Interval(&this, lnInterval);
+				return VT.put_Interval(ref this, lnInterval);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsTypedName *self, BSTR* retval) get_ObjectName;
-				public new function HRESULT(IADsTypedName *self, BSTR bstrObjectName) put_ObjectName;
-				public new function HRESULT(IADsTypedName *self, int32* retval) get_Level;
-				public new function HRESULT(IADsTypedName *self, int32 lnLevel) put_Level;
-				public new function HRESULT(IADsTypedName *self, int32* retval) get_Interval;
-				public new function HRESULT(IADsTypedName *self, int32 lnInterval) put_Interval;
+				public new function HRESULT(ref IADsTypedName self, BSTR* retval) get_ObjectName;
+				public new function HRESULT(ref IADsTypedName self, BSTR bstrObjectName) put_ObjectName;
+				public new function HRESULT(ref IADsTypedName self, out int32 retval) get_Level;
+				public new function HRESULT(ref IADsTypedName self, int32 lnLevel) put_Level;
+				public new function HRESULT(ref IADsTypedName self, out int32 retval) get_Interval;
+				public new function HRESULT(ref IADsTypedName self, int32 lnInterval) put_Interval;
 			}
 		}
 		[CRepr]
@@ -5700,27 +5700,27 @@ namespace Win32
 			
 			public HRESULT get_ObjectName(BSTR* retval) mut
 			{
-				return VT.get_ObjectName(&this, retval);
+				return VT.get_ObjectName(ref this, retval);
 			}
 			public HRESULT put_ObjectName(BSTR bstrObjectName) mut
 			{
-				return VT.put_ObjectName(&this, bstrObjectName);
+				return VT.put_ObjectName(ref this, bstrObjectName);
 			}
-			public HRESULT get_Amount(int32* retval) mut
+			public HRESULT get_Amount(out int32 retval) mut
 			{
-				return VT.get_Amount(&this, retval);
+				return VT.get_Amount(ref this, out retval);
 			}
 			public HRESULT put_Amount(int32 lnAmount) mut
 			{
-				return VT.put_Amount(&this, lnAmount);
+				return VT.put_Amount(ref this, lnAmount);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsHold *self, BSTR* retval) get_ObjectName;
-				public new function HRESULT(IADsHold *self, BSTR bstrObjectName) put_ObjectName;
-				public new function HRESULT(IADsHold *self, int32* retval) get_Amount;
-				public new function HRESULT(IADsHold *self, int32 lnAmount) put_Amount;
+				public new function HRESULT(ref IADsHold self, BSTR* retval) get_ObjectName;
+				public new function HRESULT(ref IADsHold self, BSTR bstrObjectName) put_ObjectName;
+				public new function HRESULT(ref IADsHold self, out int32 retval) get_Amount;
+				public new function HRESULT(ref IADsHold self, int32 lnAmount) put_Amount;
 			}
 		}
 		[CRepr]
@@ -5730,19 +5730,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOption(int32 lnOption, VARIANT* pvValue) mut
+			public HRESULT GetOption(int32 lnOption, out VARIANT pvValue) mut
 			{
-				return VT.GetOption(&this, lnOption, pvValue);
+				return VT.GetOption(ref this, lnOption, out pvValue);
 			}
 			public HRESULT SetOption(int32 lnOption, VARIANT vValue) mut
 			{
-				return VT.SetOption(&this, lnOption, vValue);
+				return VT.SetOption(ref this, lnOption, vValue);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsObjectOptions *self, int32 lnOption, VARIANT* pvValue) GetOption;
-				public new function HRESULT(IADsObjectOptions *self, int32 lnOption, VARIANT vValue) SetOption;
+				public new function HRESULT(ref IADsObjectOptions self, int32 lnOption, out VARIANT pvValue) GetOption;
+				public new function HRESULT(ref IADsObjectOptions self, int32 lnOption, VARIANT vValue) SetOption;
 			}
 		}
 		[CRepr]
@@ -5754,62 +5754,62 @@ namespace Win32
 			
 			public HRESULT Set(BSTR bstrADsPath, int32 lnSetType) mut
 			{
-				return VT.Set(&this, bstrADsPath, lnSetType);
+				return VT.Set(ref this, bstrADsPath, lnSetType);
 			}
 			public HRESULT SetDisplayType(int32 lnDisplayType) mut
 			{
-				return VT.SetDisplayType(&this, lnDisplayType);
+				return VT.SetDisplayType(ref this, lnDisplayType);
 			}
 			public HRESULT Retrieve(int32 lnFormatType, BSTR* pbstrADsPath) mut
 			{
-				return VT.Retrieve(&this, lnFormatType, pbstrADsPath);
+				return VT.Retrieve(ref this, lnFormatType, pbstrADsPath);
 			}
-			public HRESULT GetNumElements(int32* plnNumPathElements) mut
+			public HRESULT GetNumElements(out int32 plnNumPathElements) mut
 			{
-				return VT.GetNumElements(&this, plnNumPathElements);
+				return VT.GetNumElements(ref this, out plnNumPathElements);
 			}
 			public HRESULT GetElement(int32 lnElementIndex, BSTR* pbstrElement) mut
 			{
-				return VT.GetElement(&this, lnElementIndex, pbstrElement);
+				return VT.GetElement(ref this, lnElementIndex, pbstrElement);
 			}
 			public HRESULT AddLeafElement(BSTR bstrLeafElement) mut
 			{
-				return VT.AddLeafElement(&this, bstrLeafElement);
+				return VT.AddLeafElement(ref this, bstrLeafElement);
 			}
 			public HRESULT RemoveLeafElement() mut
 			{
-				return VT.RemoveLeafElement(&this);
+				return VT.RemoveLeafElement(ref this);
 			}
 			public HRESULT CopyPath(IDispatch** ppAdsPath) mut
 			{
-				return VT.CopyPath(&this, ppAdsPath);
+				return VT.CopyPath(ref this, ppAdsPath);
 			}
 			public HRESULT GetEscapedElement(int32 lnReserved, BSTR bstrInStr, BSTR* pbstrOutStr) mut
 			{
-				return VT.GetEscapedElement(&this, lnReserved, bstrInStr, pbstrOutStr);
+				return VT.GetEscapedElement(ref this, lnReserved, bstrInStr, pbstrOutStr);
 			}
-			public HRESULT get_EscapedMode(int32* retval) mut
+			public HRESULT get_EscapedMode(out int32 retval) mut
 			{
-				return VT.get_EscapedMode(&this, retval);
+				return VT.get_EscapedMode(ref this, out retval);
 			}
 			public HRESULT put_EscapedMode(int32 lnEscapedMode) mut
 			{
-				return VT.put_EscapedMode(&this, lnEscapedMode);
+				return VT.put_EscapedMode(ref this, lnEscapedMode);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsPathname *self, BSTR bstrADsPath, int32 lnSetType) Set;
-				public new function HRESULT(IADsPathname *self, int32 lnDisplayType) SetDisplayType;
-				public new function HRESULT(IADsPathname *self, int32 lnFormatType, BSTR* pbstrADsPath) Retrieve;
-				public new function HRESULT(IADsPathname *self, int32* plnNumPathElements) GetNumElements;
-				public new function HRESULT(IADsPathname *self, int32 lnElementIndex, BSTR* pbstrElement) GetElement;
-				public new function HRESULT(IADsPathname *self, BSTR bstrLeafElement) AddLeafElement;
-				public new function HRESULT(IADsPathname *self) RemoveLeafElement;
-				public new function HRESULT(IADsPathname *self, IDispatch** ppAdsPath) CopyPath;
-				public new function HRESULT(IADsPathname *self, int32 lnReserved, BSTR bstrInStr, BSTR* pbstrOutStr) GetEscapedElement;
-				public new function HRESULT(IADsPathname *self, int32* retval) get_EscapedMode;
-				public new function HRESULT(IADsPathname *self, int32 lnEscapedMode) put_EscapedMode;
+				public new function HRESULT(ref IADsPathname self, BSTR bstrADsPath, int32 lnSetType) Set;
+				public new function HRESULT(ref IADsPathname self, int32 lnDisplayType) SetDisplayType;
+				public new function HRESULT(ref IADsPathname self, int32 lnFormatType, BSTR* pbstrADsPath) Retrieve;
+				public new function HRESULT(ref IADsPathname self, out int32 plnNumPathElements) GetNumElements;
+				public new function HRESULT(ref IADsPathname self, int32 lnElementIndex, BSTR* pbstrElement) GetElement;
+				public new function HRESULT(ref IADsPathname self, BSTR bstrLeafElement) AddLeafElement;
+				public new function HRESULT(ref IADsPathname self) RemoveLeafElement;
+				public new function HRESULT(ref IADsPathname self, IDispatch** ppAdsPath) CopyPath;
+				public new function HRESULT(ref IADsPathname self, int32 lnReserved, BSTR bstrInStr, BSTR* pbstrOutStr) GetEscapedElement;
+				public new function HRESULT(ref IADsPathname self, out int32 retval) get_EscapedMode;
+				public new function HRESULT(ref IADsPathname self, int32 lnEscapedMode) put_EscapedMode;
 			}
 		}
 		[CRepr]
@@ -5821,72 +5821,72 @@ namespace Win32
 			
 			public HRESULT get_UserName(BSTR* retval) mut
 			{
-				return VT.get_UserName(&this, retval);
+				return VT.get_UserName(ref this, retval);
 			}
 			public HRESULT get_ComputerName(BSTR* retval) mut
 			{
-				return VT.get_ComputerName(&this, retval);
+				return VT.get_ComputerName(ref this, retval);
 			}
 			public HRESULT get_SiteName(BSTR* retval) mut
 			{
-				return VT.get_SiteName(&this, retval);
+				return VT.get_SiteName(ref this, retval);
 			}
 			public HRESULT get_DomainShortName(BSTR* retval) mut
 			{
-				return VT.get_DomainShortName(&this, retval);
+				return VT.get_DomainShortName(ref this, retval);
 			}
 			public HRESULT get_DomainDNSName(BSTR* retval) mut
 			{
-				return VT.get_DomainDNSName(&this, retval);
+				return VT.get_DomainDNSName(ref this, retval);
 			}
 			public HRESULT get_ForestDNSName(BSTR* retval) mut
 			{
-				return VT.get_ForestDNSName(&this, retval);
+				return VT.get_ForestDNSName(ref this, retval);
 			}
 			public HRESULT get_PDCRoleOwner(BSTR* retval) mut
 			{
-				return VT.get_PDCRoleOwner(&this, retval);
+				return VT.get_PDCRoleOwner(ref this, retval);
 			}
 			public HRESULT get_SchemaRoleOwner(BSTR* retval) mut
 			{
-				return VT.get_SchemaRoleOwner(&this, retval);
+				return VT.get_SchemaRoleOwner(ref this, retval);
 			}
-			public HRESULT get_IsNativeMode(int16* retval) mut
+			public HRESULT get_IsNativeMode(out int16 retval) mut
 			{
-				return VT.get_IsNativeMode(&this, retval);
+				return VT.get_IsNativeMode(ref this, out retval);
 			}
 			public HRESULT GetAnyDCName(BSTR* pszDCName) mut
 			{
-				return VT.GetAnyDCName(&this, pszDCName);
+				return VT.GetAnyDCName(ref this, pszDCName);
 			}
 			public HRESULT GetDCSiteName(BSTR szServer, BSTR* pszSiteName) mut
 			{
-				return VT.GetDCSiteName(&this, szServer, pszSiteName);
+				return VT.GetDCSiteName(ref this, szServer, pszSiteName);
 			}
 			public HRESULT RefreshSchemaCache() mut
 			{
-				return VT.RefreshSchemaCache(&this);
+				return VT.RefreshSchemaCache(ref this);
 			}
-			public HRESULT GetTrees(VARIANT* pvTrees) mut
+			public HRESULT GetTrees(out VARIANT pvTrees) mut
 			{
-				return VT.GetTrees(&this, pvTrees);
+				return VT.GetTrees(ref this, out pvTrees);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_UserName;
-				public new function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_ComputerName;
-				public new function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_SiteName;
-				public new function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_DomainShortName;
-				public new function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_DomainDNSName;
-				public new function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_ForestDNSName;
-				public new function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_PDCRoleOwner;
-				public new function HRESULT(IADsADSystemInfo *self, BSTR* retval) get_SchemaRoleOwner;
-				public new function HRESULT(IADsADSystemInfo *self, int16* retval) get_IsNativeMode;
-				public new function HRESULT(IADsADSystemInfo *self, BSTR* pszDCName) GetAnyDCName;
-				public new function HRESULT(IADsADSystemInfo *self, BSTR szServer, BSTR* pszSiteName) GetDCSiteName;
-				public new function HRESULT(IADsADSystemInfo *self) RefreshSchemaCache;
-				public new function HRESULT(IADsADSystemInfo *self, VARIANT* pvTrees) GetTrees;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_UserName;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_ComputerName;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_SiteName;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_DomainShortName;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_DomainDNSName;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_ForestDNSName;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_PDCRoleOwner;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR* retval) get_SchemaRoleOwner;
+				public new function HRESULT(ref IADsADSystemInfo self, out int16 retval) get_IsNativeMode;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR* pszDCName) GetAnyDCName;
+				public new function HRESULT(ref IADsADSystemInfo self, BSTR szServer, BSTR* pszSiteName) GetDCSiteName;
+				public new function HRESULT(ref IADsADSystemInfo self) RefreshSchemaCache;
+				public new function HRESULT(ref IADsADSystemInfo self, out VARIANT pvTrees) GetTrees;
 			}
 		}
 		[CRepr]
@@ -5898,27 +5898,27 @@ namespace Win32
 			
 			public HRESULT get_UserName(BSTR* retval) mut
 			{
-				return VT.get_UserName(&this, retval);
+				return VT.get_UserName(ref this, retval);
 			}
 			public HRESULT get_ComputerName(BSTR* retval) mut
 			{
-				return VT.get_ComputerName(&this, retval);
+				return VT.get_ComputerName(ref this, retval);
 			}
 			public HRESULT get_DomainName(BSTR* retval) mut
 			{
-				return VT.get_DomainName(&this, retval);
+				return VT.get_DomainName(ref this, retval);
 			}
 			public HRESULT get_PDC(BSTR* retval) mut
 			{
-				return VT.get_PDC(&this, retval);
+				return VT.get_PDC(ref this, retval);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsWinNTSystemInfo *self, BSTR* retval) get_UserName;
-				public new function HRESULT(IADsWinNTSystemInfo *self, BSTR* retval) get_ComputerName;
-				public new function HRESULT(IADsWinNTSystemInfo *self, BSTR* retval) get_DomainName;
-				public new function HRESULT(IADsWinNTSystemInfo *self, BSTR* retval) get_PDC;
+				public new function HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_UserName;
+				public new function HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_ComputerName;
+				public new function HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_DomainName;
+				public new function HRESULT(ref IADsWinNTSystemInfo self, BSTR* retval) get_PDC;
 			}
 		}
 		[CRepr]
@@ -5928,29 +5928,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BinaryValue(VARIANT* retval) mut
+			public HRESULT get_BinaryValue(out VARIANT retval) mut
 			{
-				return VT.get_BinaryValue(&this, retval);
+				return VT.get_BinaryValue(ref this, out retval);
 			}
 			public HRESULT put_BinaryValue(VARIANT vBinaryValue) mut
 			{
-				return VT.put_BinaryValue(&this, vBinaryValue);
+				return VT.put_BinaryValue(ref this, vBinaryValue);
 			}
 			public HRESULT get_DNString(BSTR* retval) mut
 			{
-				return VT.get_DNString(&this, retval);
+				return VT.get_DNString(ref this, retval);
 			}
 			public HRESULT put_DNString(BSTR bstrDNString) mut
 			{
-				return VT.put_DNString(&this, bstrDNString);
+				return VT.put_DNString(ref this, bstrDNString);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsDNWithBinary *self, VARIANT* retval) get_BinaryValue;
-				public new function HRESULT(IADsDNWithBinary *self, VARIANT vBinaryValue) put_BinaryValue;
-				public new function HRESULT(IADsDNWithBinary *self, BSTR* retval) get_DNString;
-				public new function HRESULT(IADsDNWithBinary *self, BSTR bstrDNString) put_DNString;
+				public new function HRESULT(ref IADsDNWithBinary self, out VARIANT retval) get_BinaryValue;
+				public new function HRESULT(ref IADsDNWithBinary self, VARIANT vBinaryValue) put_BinaryValue;
+				public new function HRESULT(ref IADsDNWithBinary self, BSTR* retval) get_DNString;
+				public new function HRESULT(ref IADsDNWithBinary self, BSTR bstrDNString) put_DNString;
 			}
 		}
 		[CRepr]
@@ -5962,27 +5962,27 @@ namespace Win32
 			
 			public HRESULT get_StringValue(BSTR* retval) mut
 			{
-				return VT.get_StringValue(&this, retval);
+				return VT.get_StringValue(ref this, retval);
 			}
 			public HRESULT put_StringValue(BSTR bstrStringValue) mut
 			{
-				return VT.put_StringValue(&this, bstrStringValue);
+				return VT.put_StringValue(ref this, bstrStringValue);
 			}
 			public HRESULT get_DNString(BSTR* retval) mut
 			{
-				return VT.get_DNString(&this, retval);
+				return VT.get_DNString(ref this, retval);
 			}
 			public HRESULT put_DNString(BSTR bstrDNString) mut
 			{
-				return VT.put_DNString(&this, bstrDNString);
+				return VT.put_DNString(ref this, bstrDNString);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsDNWithString *self, BSTR* retval) get_StringValue;
-				public new function HRESULT(IADsDNWithString *self, BSTR bstrStringValue) put_StringValue;
-				public new function HRESULT(IADsDNWithString *self, BSTR* retval) get_DNString;
-				public new function HRESULT(IADsDNWithString *self, BSTR bstrDNString) put_DNString;
+				public new function HRESULT(ref IADsDNWithString self, BSTR* retval) get_StringValue;
+				public new function HRESULT(ref IADsDNWithString self, BSTR bstrStringValue) put_StringValue;
+				public new function HRESULT(ref IADsDNWithString self, BSTR* retval) get_DNString;
+				public new function HRESULT(ref IADsDNWithString self, BSTR bstrDNString) put_DNString;
 			}
 		}
 		[CRepr]
@@ -5992,34 +5992,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSecurityDescriptor(VARIANT varPath, int32 lPathFormat, int32 lFormat, VARIANT* pVariant) mut
+			public HRESULT GetSecurityDescriptor(VARIANT varPath, int32 lPathFormat, int32 lFormat, out VARIANT pVariant) mut
 			{
-				return VT.GetSecurityDescriptor(&this, varPath, lPathFormat, lFormat, pVariant);
+				return VT.GetSecurityDescriptor(ref this, varPath, lPathFormat, lFormat, out pVariant);
 			}
 			public HRESULT SetSecurityDescriptor(VARIANT varPath, int32 lPathFormat, VARIANT varData, int32 lDataFormat) mut
 			{
-				return VT.SetSecurityDescriptor(&this, varPath, lPathFormat, varData, lDataFormat);
+				return VT.SetSecurityDescriptor(ref this, varPath, lPathFormat, varData, lDataFormat);
 			}
-			public HRESULT ConvertSecurityDescriptor(VARIANT varSD, int32 lDataFormat, int32 lOutFormat, VARIANT* pResult) mut
+			public HRESULT ConvertSecurityDescriptor(VARIANT varSD, int32 lDataFormat, int32 lOutFormat, out VARIANT pResult) mut
 			{
-				return VT.ConvertSecurityDescriptor(&this, varSD, lDataFormat, lOutFormat, pResult);
+				return VT.ConvertSecurityDescriptor(ref this, varSD, lDataFormat, lOutFormat, out pResult);
 			}
-			public HRESULT get_SecurityMask(int32* retval) mut
+			public HRESULT get_SecurityMask(out int32 retval) mut
 			{
-				return VT.get_SecurityMask(&this, retval);
+				return VT.get_SecurityMask(ref this, out retval);
 			}
 			public HRESULT put_SecurityMask(int32 lnSecurityMask) mut
 			{
-				return VT.put_SecurityMask(&this, lnSecurityMask);
+				return VT.put_SecurityMask(ref this, lnSecurityMask);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsSecurityUtility *self, VARIANT varPath, int32 lPathFormat, int32 lFormat, VARIANT* pVariant) GetSecurityDescriptor;
-				public new function HRESULT(IADsSecurityUtility *self, VARIANT varPath, int32 lPathFormat, VARIANT varData, int32 lDataFormat) SetSecurityDescriptor;
-				public new function HRESULT(IADsSecurityUtility *self, VARIANT varSD, int32 lDataFormat, int32 lOutFormat, VARIANT* pResult) ConvertSecurityDescriptor;
-				public new function HRESULT(IADsSecurityUtility *self, int32* retval) get_SecurityMask;
-				public new function HRESULT(IADsSecurityUtility *self, int32 lnSecurityMask) put_SecurityMask;
+				public new function HRESULT(ref IADsSecurityUtility self, VARIANT varPath, int32 lPathFormat, int32 lFormat, out VARIANT pVariant) GetSecurityDescriptor;
+				public new function HRESULT(ref IADsSecurityUtility self, VARIANT varPath, int32 lPathFormat, VARIANT varData, int32 lDataFormat) SetSecurityDescriptor;
+				public new function HRESULT(ref IADsSecurityUtility self, VARIANT varSD, int32 lDataFormat, int32 lOutFormat, out VARIANT pResult) ConvertSecurityDescriptor;
+				public new function HRESULT(ref IADsSecurityUtility self, out int32 retval) get_SecurityMask;
+				public new function HRESULT(ref IADsSecurityUtility self, int32 lnSecurityMask) put_SecurityMask;
 			}
 		}
 		[CRepr]
@@ -6029,34 +6029,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BrowseTo(HWND hwndParent, PWSTR* ppszTargetPath, uint32 dwFlags) mut
+			public HRESULT BrowseTo(HWND hwndParent, out PWSTR ppszTargetPath, uint32 dwFlags) mut
 			{
-				return VT.BrowseTo(&this, hwndParent, ppszTargetPath, dwFlags);
+				return VT.BrowseTo(ref this, hwndParent, out ppszTargetPath, dwFlags);
 			}
-			public HRESULT GetDomains(DOMAIN_TREE** ppDomainTree, uint32 dwFlags) mut
+			public HRESULT GetDomains(out DOMAIN_TREE* ppDomainTree, uint32 dwFlags) mut
 			{
-				return VT.GetDomains(&this, ppDomainTree, dwFlags);
+				return VT.GetDomains(ref this, out ppDomainTree, dwFlags);
 			}
-			public HRESULT FreeDomains(DOMAIN_TREE** ppDomainTree) mut
+			public HRESULT FreeDomains(out DOMAIN_TREE* ppDomainTree) mut
 			{
-				return VT.FreeDomains(&this, ppDomainTree);
+				return VT.FreeDomains(ref this, out ppDomainTree);
 			}
 			public HRESULT FlushCachedDomains() mut
 			{
-				return VT.FlushCachedDomains(&this);
+				return VT.FlushCachedDomains(ref this);
 			}
 			public HRESULT SetComputer(PWSTR pszComputerName, PWSTR pszUserName, PWSTR pszPassword) mut
 			{
-				return VT.SetComputer(&this, pszComputerName, pszUserName, pszPassword);
+				return VT.SetComputer(ref this, pszComputerName, pszUserName, pszPassword);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDsBrowseDomainTree *self, HWND hwndParent, PWSTR* ppszTargetPath, uint32 dwFlags) BrowseTo;
-				public new function HRESULT(IDsBrowseDomainTree *self, DOMAIN_TREE** ppDomainTree, uint32 dwFlags) GetDomains;
-				public new function HRESULT(IDsBrowseDomainTree *self, DOMAIN_TREE** ppDomainTree) FreeDomains;
-				public new function HRESULT(IDsBrowseDomainTree *self) FlushCachedDomains;
-				public new function HRESULT(IDsBrowseDomainTree *self, PWSTR pszComputerName, PWSTR pszUserName, PWSTR pszPassword) SetComputer;
+				public new function HRESULT(ref IDsBrowseDomainTree self, HWND hwndParent, out PWSTR ppszTargetPath, uint32 dwFlags) BrowseTo;
+				public new function HRESULT(ref IDsBrowseDomainTree self, out DOMAIN_TREE* ppDomainTree, uint32 dwFlags) GetDomains;
+				public new function HRESULT(ref IDsBrowseDomainTree self, out DOMAIN_TREE* ppDomainTree) FreeDomains;
+				public new function HRESULT(ref IDsBrowseDomainTree self) FlushCachedDomains;
+				public new function HRESULT(ref IDsBrowseDomainTree self, PWSTR pszComputerName, PWSTR pszUserName, PWSTR pszPassword) SetComputer;
 			}
 		}
 		[CRepr]
@@ -6068,62 +6068,62 @@ namespace Win32
 			
 			public HRESULT SetServer(PWSTR pszServer, PWSTR pszUserName, PWSTR pszPassword, uint32 dwFlags) mut
 			{
-				return VT.SetServer(&this, pszServer, pszUserName, pszPassword, dwFlags);
+				return VT.SetServer(ref this, pszServer, pszUserName, pszPassword, dwFlags);
 			}
 			public HRESULT SetLanguageID(uint16 langid) mut
 			{
-				return VT.SetLanguageID(&this, langid);
+				return VT.SetLanguageID(ref this, langid);
 			}
-			public HRESULT GetDisplaySpecifier(PWSTR pszObjectClass, Guid* riid, void** ppv) mut
+			public HRESULT GetDisplaySpecifier(PWSTR pszObjectClass, in Guid riid, void** ppv) mut
 			{
-				return VT.GetDisplaySpecifier(&this, pszObjectClass, riid, ppv);
+				return VT.GetDisplaySpecifier(ref this, pszObjectClass, riid, ppv);
 			}
-			public HRESULT GetIconLocation(PWSTR pszObjectClass, uint32 dwFlags, char16* pszBuffer, int32 cchBuffer, int32* presid) mut
+			public HRESULT GetIconLocation(PWSTR pszObjectClass, uint32 dwFlags, char16* pszBuffer, int32 cchBuffer, out int32 presid) mut
 			{
-				return VT.GetIconLocation(&this, pszObjectClass, dwFlags, pszBuffer, cchBuffer, presid);
+				return VT.GetIconLocation(ref this, pszObjectClass, dwFlags, pszBuffer, cchBuffer, out presid);
 			}
 			public HICON GetIcon(PWSTR pszObjectClass, uint32 dwFlags, int32 cxIcon, int32 cyIcon) mut
 			{
-				return VT.GetIcon(&this, pszObjectClass, dwFlags, cxIcon, cyIcon);
+				return VT.GetIcon(ref this, pszObjectClass, dwFlags, cxIcon, cyIcon);
 			}
 			public HRESULT GetFriendlyClassName(PWSTR pszObjectClass, char16* pszBuffer, int32 cchBuffer) mut
 			{
-				return VT.GetFriendlyClassName(&this, pszObjectClass, pszBuffer, cchBuffer);
+				return VT.GetFriendlyClassName(ref this, pszObjectClass, pszBuffer, cchBuffer);
 			}
 			public HRESULT GetFriendlyAttributeName(PWSTR pszObjectClass, PWSTR pszAttributeName, char16* pszBuffer, uint32 cchBuffer) mut
 			{
-				return VT.GetFriendlyAttributeName(&this, pszObjectClass, pszAttributeName, pszBuffer, cchBuffer);
+				return VT.GetFriendlyAttributeName(ref this, pszObjectClass, pszAttributeName, pszBuffer, cchBuffer);
 			}
 			public BOOL IsClassContainer(PWSTR pszObjectClass, PWSTR pszADsPath, uint32 dwFlags) mut
 			{
-				return VT.IsClassContainer(&this, pszObjectClass, pszADsPath, dwFlags);
+				return VT.IsClassContainer(ref this, pszObjectClass, pszADsPath, dwFlags);
 			}
-			public HRESULT GetClassCreationInfo(PWSTR pszObjectClass, DSCLASSCREATIONINFO** ppdscci) mut
+			public HRESULT GetClassCreationInfo(PWSTR pszObjectClass, out DSCLASSCREATIONINFO* ppdscci) mut
 			{
-				return VT.GetClassCreationInfo(&this, pszObjectClass, ppdscci);
+				return VT.GetClassCreationInfo(ref this, pszObjectClass, out ppdscci);
 			}
 			public HRESULT EnumClassAttributes(PWSTR pszObjectClass, LPDSENUMATTRIBUTES pcbEnum, LPARAM lParam) mut
 			{
-				return VT.EnumClassAttributes(&this, pszObjectClass, pcbEnum, lParam);
+				return VT.EnumClassAttributes(ref this, pszObjectClass, pcbEnum, lParam);
 			}
 			public ADSTYPEENUM GetAttributeADsType(PWSTR pszAttributeName) mut
 			{
-				return VT.GetAttributeADsType(&this, pszAttributeName);
+				return VT.GetAttributeADsType(ref this, pszAttributeName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDsDisplaySpecifier *self, PWSTR pszServer, PWSTR pszUserName, PWSTR pszPassword, uint32 dwFlags) SetServer;
-				public new function HRESULT(IDsDisplaySpecifier *self, uint16 langid) SetLanguageID;
-				public new function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, Guid* riid, void** ppv) GetDisplaySpecifier;
-				public new function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, uint32 dwFlags, char16* pszBuffer, int32 cchBuffer, int32* presid) GetIconLocation;
-				public new function HICON(IDsDisplaySpecifier *self, PWSTR pszObjectClass, uint32 dwFlags, int32 cxIcon, int32 cyIcon) GetIcon;
-				public new function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, char16* pszBuffer, int32 cchBuffer) GetFriendlyClassName;
-				public new function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, PWSTR pszAttributeName, char16* pszBuffer, uint32 cchBuffer) GetFriendlyAttributeName;
-				public new function BOOL(IDsDisplaySpecifier *self, PWSTR pszObjectClass, PWSTR pszADsPath, uint32 dwFlags) IsClassContainer;
-				public new function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, DSCLASSCREATIONINFO** ppdscci) GetClassCreationInfo;
-				public new function HRESULT(IDsDisplaySpecifier *self, PWSTR pszObjectClass, LPDSENUMATTRIBUTES pcbEnum, LPARAM lParam) EnumClassAttributes;
-				public new function ADSTYPEENUM(IDsDisplaySpecifier *self, PWSTR pszAttributeName) GetAttributeADsType;
+				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszServer, PWSTR pszUserName, PWSTR pszPassword, uint32 dwFlags) SetServer;
+				public new function HRESULT(ref IDsDisplaySpecifier self, uint16 langid) SetLanguageID;
+				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, in Guid riid, void** ppv) GetDisplaySpecifier;
+				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, uint32 dwFlags, char16* pszBuffer, int32 cchBuffer, out int32 presid) GetIconLocation;
+				public new function HICON(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, uint32 dwFlags, int32 cxIcon, int32 cyIcon) GetIcon;
+				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, char16* pszBuffer, int32 cchBuffer) GetFriendlyClassName;
+				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, PWSTR pszAttributeName, char16* pszBuffer, uint32 cchBuffer) GetFriendlyAttributeName;
+				public new function BOOL(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, PWSTR pszADsPath, uint32 dwFlags) IsClassContainer;
+				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, out DSCLASSCREATIONINFO* ppdscci) GetClassCreationInfo;
+				public new function HRESULT(ref IDsDisplaySpecifier self, PWSTR pszObjectClass, LPDSENUMATTRIBUTES pcbEnum, LPARAM lParam) EnumClassAttributes;
+				public new function ADSTYPEENUM(ref IDsDisplaySpecifier self, PWSTR pszAttributeName) GetAttributeADsType;
 			}
 		}
 		[CRepr]
@@ -6133,19 +6133,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(DSOP_INIT_INFO* pInitInfo) mut
+			public HRESULT Initialize(out DSOP_INIT_INFO pInitInfo) mut
 			{
-				return VT.Initialize(&this, pInitInfo);
+				return VT.Initialize(ref this, out pInitInfo);
 			}
-			public HRESULT InvokeDialog(HWND hwndParent, IDataObject** ppdoSelections) mut
+			public HRESULT InvokeDialog(HWND hwndParent, out IDataObject* ppdoSelections) mut
 			{
-				return VT.InvokeDialog(&this, hwndParent, ppdoSelections);
+				return VT.InvokeDialog(ref this, hwndParent, out ppdoSelections);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDsObjectPicker *self, DSOP_INIT_INFO* pInitInfo) Initialize;
-				public new function HRESULT(IDsObjectPicker *self, HWND hwndParent, IDataObject** ppdoSelections) InvokeDialog;
+				public new function HRESULT(ref IDsObjectPicker self, out DSOP_INIT_INFO pInitInfo) Initialize;
+				public new function HRESULT(ref IDsObjectPicker self, HWND hwndParent, out IDataObject* ppdoSelections) InvokeDialog;
 			}
 		}
 		[CRepr]
@@ -6157,12 +6157,12 @@ namespace Win32
 			
 			public HRESULT SetCredentials(PWSTR szUserName, PWSTR szPassword) mut
 			{
-				return VT.SetCredentials(&this, szUserName, szPassword);
+				return VT.SetCredentials(ref this, szUserName, szPassword);
 			}
 			[CRepr]
 			public struct VTable : IDsObjectPicker.VTable
 			{
-				public new function HRESULT(IDsObjectPickerCredentials *self, PWSTR szUserName, PWSTR szPassword) SetCredentials;
+				public new function HRESULT(ref IDsObjectPickerCredentials self, PWSTR szUserName, PWSTR szPassword) SetCredentials;
 			}
 		}
 		[CRepr]
@@ -6172,19 +6172,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IADsContainer* pADsContainerObj, IADs* pADsCopySource, PWSTR lpszClassName) mut
+			public HRESULT Initialize(ref IADsContainer pADsContainerObj, ref IADs pADsCopySource, PWSTR lpszClassName) mut
 			{
-				return VT.Initialize(&this, pADsContainerObj, pADsCopySource, lpszClassName);
+				return VT.Initialize(ref this, ref pADsContainerObj, ref pADsCopySource, lpszClassName);
 			}
-			public HRESULT CreateModal(HWND hwndParent, IADs** ppADsObj) mut
+			public HRESULT CreateModal(HWND hwndParent, out IADs* ppADsObj) mut
 			{
-				return VT.CreateModal(&this, hwndParent, ppADsObj);
+				return VT.CreateModal(ref this, hwndParent, out ppADsObj);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDsAdminCreateObj *self, IADsContainer* pADsContainerObj, IADs* pADsCopySource, PWSTR lpszClassName) Initialize;
-				public new function HRESULT(IDsAdminCreateObj *self, HWND hwndParent, IADs** ppADsObj) CreateModal;
+				public new function HRESULT(ref IDsAdminCreateObj self, ref IADsContainer pADsContainerObj, ref IADs pADsCopySource, PWSTR lpszClassName) Initialize;
+				public new function HRESULT(ref IDsAdminCreateObj self, HWND hwndParent, out IADs* ppADsObj) CreateModal;
 			}
 		}
 		[CRepr]
@@ -6196,17 +6196,17 @@ namespace Win32
 			
 			public HRESULT SetButtons(uint32 nCurrIndex, BOOL bValid) mut
 			{
-				return VT.SetButtons(&this, nCurrIndex, bValid);
+				return VT.SetButtons(ref this, nCurrIndex, bValid);
 			}
-			public HRESULT GetPageCounts(int32* pnTotal, int32* pnStartIndex) mut
+			public HRESULT GetPageCounts(out int32 pnTotal, out int32 pnStartIndex) mut
 			{
-				return VT.GetPageCounts(&this, pnTotal, pnStartIndex);
+				return VT.GetPageCounts(ref this, out pnTotal, out pnStartIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDsAdminNewObj *self, uint32 nCurrIndex, BOOL bValid) SetButtons;
-				public new function HRESULT(IDsAdminNewObj *self, int32* pnTotal, int32* pnStartIndex) GetPageCounts;
+				public new function HRESULT(ref IDsAdminNewObj self, uint32 nCurrIndex, BOOL bValid) SetButtons;
+				public new function HRESULT(ref IDsAdminNewObj self, out int32 pnTotal, out int32 pnStartIndex) GetPageCounts;
 			}
 		}
 		[CRepr]
@@ -6218,17 +6218,17 @@ namespace Win32
 			
 			public HRESULT CreateNew(PWSTR pszName) mut
 			{
-				return VT.CreateNew(&this, pszName);
+				return VT.CreateNew(ref this, pszName);
 			}
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDsAdminNewObjPrimarySite *self, PWSTR pszName) CreateNew;
-				public new function HRESULT(IDsAdminNewObjPrimarySite *self) Commit;
+				public new function HRESULT(ref IDsAdminNewObjPrimarySite self, PWSTR pszName) CreateNew;
+				public new function HRESULT(ref IDsAdminNewObjPrimarySite self) Commit;
 			}
 		}
 		[CRepr]
@@ -6238,39 +6238,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IADsContainer* pADsContainerObj, IADs* pADsCopySource, PWSTR lpszClassName, IDsAdminNewObj* pDsAdminNewObj, DSA_NEWOBJ_DISPINFO* pDispInfo) mut
+			public HRESULT Initialize(ref IADsContainer pADsContainerObj, ref IADs pADsCopySource, PWSTR lpszClassName, ref IDsAdminNewObj pDsAdminNewObj, out DSA_NEWOBJ_DISPINFO pDispInfo) mut
 			{
-				return VT.Initialize(&this, pADsContainerObj, pADsCopySource, lpszClassName, pDsAdminNewObj, pDispInfo);
+				return VT.Initialize(ref this, ref pADsContainerObj, ref pADsCopySource, lpszClassName, ref pDsAdminNewObj, out pDispInfo);
 			}
 			public HRESULT AddPages(LPFNSVADDPROPSHEETPAGE lpfnAddPage, LPARAM lParam) mut
 			{
-				return VT.AddPages(&this, lpfnAddPage, lParam);
+				return VT.AddPages(ref this, lpfnAddPage, lParam);
 			}
-			public HRESULT SetObject(IADs* pADsObj) mut
+			public HRESULT SetObject(ref IADs pADsObj) mut
 			{
-				return VT.SetObject(&this, pADsObj);
+				return VT.SetObject(ref this, ref pADsObj);
 			}
 			public HRESULT WriteData(HWND hWnd, uint32 uContext) mut
 			{
-				return VT.WriteData(&this, hWnd, uContext);
+				return VT.WriteData(ref this, hWnd, uContext);
 			}
 			public HRESULT OnError(HWND hWnd, HRESULT hr, uint32 uContext) mut
 			{
-				return VT.OnError(&this, hWnd, hr, uContext);
+				return VT.OnError(ref this, hWnd, hr, uContext);
 			}
-			public HRESULT GetSummaryInfo(BSTR* pBstrText) mut
+			public HRESULT GetSummaryInfo(out BSTR pBstrText) mut
 			{
-				return VT.GetSummaryInfo(&this, pBstrText);
+				return VT.GetSummaryInfo(ref this, out pBstrText);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDsAdminNewObjExt *self, IADsContainer* pADsContainerObj, IADs* pADsCopySource, PWSTR lpszClassName, IDsAdminNewObj* pDsAdminNewObj, DSA_NEWOBJ_DISPINFO* pDispInfo) Initialize;
-				public new function HRESULT(IDsAdminNewObjExt *self, LPFNSVADDPROPSHEETPAGE lpfnAddPage, LPARAM lParam) AddPages;
-				public new function HRESULT(IDsAdminNewObjExt *self, IADs* pADsObj) SetObject;
-				public new function HRESULT(IDsAdminNewObjExt *self, HWND hWnd, uint32 uContext) WriteData;
-				public new function HRESULT(IDsAdminNewObjExt *self, HWND hWnd, HRESULT hr, uint32 uContext) OnError;
-				public new function HRESULT(IDsAdminNewObjExt *self, BSTR* pBstrText) GetSummaryInfo;
+				public new function HRESULT(ref IDsAdminNewObjExt self, ref IADsContainer pADsContainerObj, ref IADs pADsCopySource, PWSTR lpszClassName, ref IDsAdminNewObj pDsAdminNewObj, out DSA_NEWOBJ_DISPINFO pDispInfo) Initialize;
+				public new function HRESULT(ref IDsAdminNewObjExt self, LPFNSVADDPROPSHEETPAGE lpfnAddPage, LPARAM lParam) AddPages;
+				public new function HRESULT(ref IDsAdminNewObjExt self, ref IADs pADsObj) SetObject;
+				public new function HRESULT(ref IDsAdminNewObjExt self, HWND hWnd, uint32 uContext) WriteData;
+				public new function HRESULT(ref IDsAdminNewObjExt self, HWND hWnd, HRESULT hr, uint32 uContext) OnError;
+				public new function HRESULT(ref IDsAdminNewObjExt self, out BSTR pBstrText) GetSummaryInfo;
 			}
 		}
 		[CRepr]
@@ -6280,50 +6280,50 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IDataObject* pExtraInfo, uint32* puEventFlags) mut
+			public HRESULT Initialize(ref IDataObject pExtraInfo, out uint32 puEventFlags) mut
 			{
-				return VT.Initialize(&this, pExtraInfo, puEventFlags);
+				return VT.Initialize(ref this, ref pExtraInfo, out puEventFlags);
 			}
-			public HRESULT Begin(uint32 uEvent, IDataObject* pArg1, IDataObject* pArg2, uint32* puFlags, BSTR* pBstr) mut
+			public HRESULT Begin(uint32 uEvent, ref IDataObject pArg1, ref IDataObject pArg2, out uint32 puFlags, out BSTR pBstr) mut
 			{
-				return VT.Begin(&this, uEvent, pArg1, pArg2, puFlags, pBstr);
+				return VT.Begin(ref this, uEvent, ref pArg1, ref pArg2, out puFlags, out pBstr);
 			}
 			public HRESULT Notify(uint32 nItem, uint32 uFlags) mut
 			{
-				return VT.Notify(&this, nItem, uFlags);
+				return VT.Notify(ref this, nItem, uFlags);
 			}
 			public HRESULT End() mut
 			{
-				return VT.End(&this);
+				return VT.End(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDsAdminNotifyHandler *self, IDataObject* pExtraInfo, uint32* puEventFlags) Initialize;
-				public new function HRESULT(IDsAdminNotifyHandler *self, uint32 uEvent, IDataObject* pArg1, IDataObject* pArg2, uint32* puFlags, BSTR* pBstr) Begin;
-				public new function HRESULT(IDsAdminNotifyHandler *self, uint32 nItem, uint32 uFlags) Notify;
-				public new function HRESULT(IDsAdminNotifyHandler *self) End;
+				public new function HRESULT(ref IDsAdminNotifyHandler self, ref IDataObject pExtraInfo, out uint32 puEventFlags) Initialize;
+				public new function HRESULT(ref IDsAdminNotifyHandler self, uint32 uEvent, ref IDataObject pArg1, ref IDataObject pArg2, out uint32 puFlags, out BSTR pBstr) Begin;
+				public new function HRESULT(ref IDsAdminNotifyHandler self, uint32 nItem, uint32 uFlags) Notify;
+				public new function HRESULT(ref IDsAdminNotifyHandler self) End;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsGetObject(PWSTR lpszPathName, Guid* riid, void** ppObject);
+		public static extern HRESULT ADsGetObject(PWSTR lpszPathName, in Guid riid, void** ppObject);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsBuildEnumerator(IADsContainer* pADsContainer, IEnumVARIANT** ppEnumVariant);
+		public static extern HRESULT ADsBuildEnumerator(ref IADsContainer pADsContainer, out IEnumVARIANT* ppEnumVariant);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsFreeEnumerator(IEnumVARIANT* pEnumVariant);
+		public static extern HRESULT ADsFreeEnumerator(ref IEnumVARIANT pEnumVariant);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsEnumerateNext(IEnumVARIANT* pEnumVariant, uint32 cElements, VARIANT* pvar, uint32* pcElementsFetched);
+		public static extern HRESULT ADsEnumerateNext(ref IEnumVARIANT pEnumVariant, uint32 cElements, out VARIANT pvar, out uint32 pcElementsFetched);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsBuildVarArrayStr(PWSTR* lppPathNames, uint32 dwPathNames, VARIANT* pVar);
+		public static extern HRESULT ADsBuildVarArrayStr(PWSTR* lppPathNames, uint32 dwPathNames, out VARIANT pVar);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsBuildVarArrayInt(uint32* lpdwObjectTypes, uint32 dwObjectTypes, VARIANT* pVar);
+		public static extern HRESULT ADsBuildVarArrayInt(out uint32 lpdwObjectTypes, uint32 dwObjectTypes, out VARIANT pVar);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsOpenObject(PWSTR lpszPathName, PWSTR lpszUserName, PWSTR lpszPassword, ADS_AUTHENTICATION_ENUM dwReserved, Guid* riid, void** ppObject);
+		public static extern HRESULT ADsOpenObject(PWSTR lpszPathName, PWSTR lpszUserName, PWSTR lpszPassword, ADS_AUTHENTICATION_ENUM dwReserved, in Guid riid, void** ppObject);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsGetLastError(uint32* lpError, char16* lpErrorBuf, uint32 dwErrorBufLen, char16* lpNameBuf, uint32 dwNameBufLen);
+		public static extern HRESULT ADsGetLastError(out uint32 lpError, char16* lpErrorBuf, uint32 dwErrorBufLen, char16* lpNameBuf, uint32 dwNameBufLen);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void ADsSetLastError(uint32 dwErr, PWSTR pszError, PWSTR pszProvider);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6337,61 +6337,61 @@ namespace Win32
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FreeADsStr(PWSTR pStr);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ReallocADsStr(PWSTR* ppStr, PWSTR pStr);
+		public static extern BOOL ReallocADsStr(out PWSTR ppStr, PWSTR pStr);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsEncodeBinaryData(uint8* pbSrcData, uint32 dwSrcLen, PWSTR* ppszDestData);
+		public static extern HRESULT ADsEncodeBinaryData(out uint8 pbSrcData, uint32 dwSrcLen, out PWSTR ppszDestData);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsDecodeBinaryData(PWSTR szSrcData, uint8** ppbDestData, uint32* pdwDestLen);
+		public static extern HRESULT ADsDecodeBinaryData(PWSTR szSrcData, out uint8* ppbDestData, out uint32 pdwDestLen);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PropVariantToAdsType(VARIANT* pVariant, uint32 dwNumVariant, ADSVALUE** ppAdsValues, uint32* pdwNumValues);
+		public static extern HRESULT PropVariantToAdsType(out VARIANT pVariant, uint32 dwNumVariant, out ADSVALUE* ppAdsValues, out uint32 pdwNumValues);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AdsTypeToPropVariant(ADSVALUE* pAdsValues, uint32 dwNumValues, VARIANT* pVariant);
+		public static extern HRESULT AdsTypeToPropVariant(out ADSVALUE pAdsValues, uint32 dwNumValues, out VARIANT pVariant);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void AdsFreeAdsValues(ADSVALUE* pAdsValues, uint32 dwNumValues);
+		public static extern void AdsFreeAdsValues(out ADSVALUE pAdsValues, uint32 dwNumValues);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT BinarySDToSecurityDescriptor(SECURITY_DESCRIPTOR* pSecurityDescriptor, VARIANT* pVarsec, PWSTR pszServerName, PWSTR userName, PWSTR passWord, uint32 dwFlags);
+		public static extern HRESULT BinarySDToSecurityDescriptor(out SECURITY_DESCRIPTOR pSecurityDescriptor, out VARIANT pVarsec, PWSTR pszServerName, PWSTR userName, PWSTR passWord, uint32 dwFlags);
 		[Import("activeds.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SecurityDescriptorToBinarySD(VARIANT vVarSecDes, SECURITY_DESCRIPTOR** ppSecurityDescriptor, uint32* pdwSDLength, PWSTR pszServerName, PWSTR userName, PWSTR passWord, uint32 dwFlags);
+		public static extern HRESULT SecurityDescriptorToBinarySD(VARIANT vVarSecDes, out SECURITY_DESCRIPTOR* ppSecurityDescriptor, out uint32 pdwSDLength, PWSTR pszServerName, PWSTR userName, PWSTR passWord, uint32 dwFlags);
 		[Import("dsuiext.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 DsBrowseForContainerW(DSBROWSEINFOW* pInfo);
+		public static extern int32 DsBrowseForContainerW(out DSBROWSEINFOW pInfo);
 		[Import("dsuiext.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 DsBrowseForContainerA(DSBROWSEINFOA* pInfo);
+		public static extern int32 DsBrowseForContainerA(out DSBROWSEINFOA pInfo);
 		[Import("dsuiext.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HICON DsGetIcon(uint32 dwFlags, PWSTR pszObjectClass, int32 cxImage, int32 cyImage);
 		[Import("dsuiext.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DsGetFriendlyClassName(PWSTR pszObjectClass, char16* pszBuffer, uint32 cchBuffer);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT ADsPropCreateNotifyObj(IDataObject* pAppThdDataObj, PWSTR pwzADsObjName, HWND* phNotifyObj);
+		public static extern HRESULT ADsPropCreateNotifyObj(ref IDataObject pAppThdDataObj, PWSTR pwzADsObjName, out HWND phNotifyObj);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ADsPropGetInitInfo(HWND hNotifyObj, ADSPROPINITPARAMS* pInitParams);
+		public static extern BOOL ADsPropGetInitInfo(HWND hNotifyObj, out ADSPROPINITPARAMS pInitParams);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ADsPropSetHwndWithTitle(HWND hNotifyObj, HWND hPage, int8* ptzTitle);
+		public static extern BOOL ADsPropSetHwndWithTitle(HWND hNotifyObj, HWND hPage, ref int8 ptzTitle);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ADsPropSetHwnd(HWND hNotifyObj, HWND hPage);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ADsPropCheckIfWritable(PWSTR pwzAttr, ADS_ATTR_INFO* pWritableAttrs);
+		public static extern BOOL ADsPropCheckIfWritable(PWSTR pwzAttr, in ADS_ATTR_INFO pWritableAttrs);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ADsPropSendErrorMessage(HWND hNotifyObj, ADSPROPERROR* pError);
+		public static extern BOOL ADsPropSendErrorMessage(HWND hNotifyObj, out ADSPROPERROR pError);
 		[Import("dsprop.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ADsPropShowErrorDialog(HWND hNotifyObj, HWND hPage);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsMakeSpnW(PWSTR ServiceClass, PWSTR ServiceName, PWSTR InstanceName, uint16 InstancePort, PWSTR Referrer, uint32* pcSpnLength, char16* pszSpn);
+		public static extern uint32 DsMakeSpnW(PWSTR ServiceClass, PWSTR ServiceName, PWSTR InstanceName, uint16 InstancePort, PWSTR Referrer, out uint32 pcSpnLength, char16* pszSpn);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsMakeSpnA(PSTR ServiceClass, PSTR ServiceName, PSTR InstanceName, uint16 InstancePort, PSTR Referrer, uint32* pcSpnLength, uint8* pszSpn);
+		public static extern uint32 DsMakeSpnA(PSTR ServiceClass, PSTR ServiceName, PSTR InstanceName, uint16 InstancePort, PSTR Referrer, out uint32 pcSpnLength, uint8* pszSpn);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsCrackSpnA(PSTR pszSpn, uint32* pcServiceClass, uint8* ServiceClass, uint32* pcServiceName, uint8* ServiceName, uint32* pcInstanceName, uint8* InstanceName, uint16* pInstancePort);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsCrackSpnW(PWSTR pszSpn, uint32* pcServiceClass, char16* ServiceClass, uint32* pcServiceName, char16* ServiceName, uint32* pcInstanceName, char16* InstanceName, uint16* pInstancePort);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsQuoteRdnValueW(uint32 cUnquotedRdnValueLength, char16* psUnquotedRdnValue, uint32* pcQuotedRdnValueLength, char16* psQuotedRdnValue);
+		public static extern uint32 DsQuoteRdnValueW(uint32 cUnquotedRdnValueLength, char16* psUnquotedRdnValue, out uint32 pcQuotedRdnValueLength, char16* psQuotedRdnValue);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsQuoteRdnValueA(uint32 cUnquotedRdnValueLength, uint8* psUnquotedRdnValue, uint32* pcQuotedRdnValueLength, uint8* psQuotedRdnValue);
+		public static extern uint32 DsQuoteRdnValueA(uint32 cUnquotedRdnValueLength, uint8* psUnquotedRdnValue, out uint32 pcQuotedRdnValueLength, uint8* psQuotedRdnValue);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsUnquoteRdnValueW(uint32 cQuotedRdnValueLength, char16* psQuotedRdnValue, uint32* pcUnquotedRdnValueLength, char16* psUnquotedRdnValue);
+		public static extern uint32 DsUnquoteRdnValueW(uint32 cQuotedRdnValueLength, char16* psQuotedRdnValue, out uint32 pcUnquotedRdnValueLength, char16* psUnquotedRdnValue);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsUnquoteRdnValueA(uint32 cQuotedRdnValueLength, uint8* psQuotedRdnValue, uint32* pcUnquotedRdnValueLength, uint8* psUnquotedRdnValue);
+		public static extern uint32 DsUnquoteRdnValueA(uint32 cQuotedRdnValueLength, uint8* psQuotedRdnValue, out uint32 pcUnquotedRdnValueLength, uint8* psUnquotedRdnValue);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetRdnW(PWSTR* ppDN, uint32* pcDN, PWSTR* ppKey, uint32* pcKey, PWSTR* ppVal, uint32* pcVal);
+		public static extern uint32 DsGetRdnW(PWSTR* ppDN, out uint32 pcDN, out PWSTR ppKey, out uint32 pcKey, out PWSTR ppVal, out uint32 pcVal);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DsCrackUnquotedMangledRdnW(char16* pszRDN, uint32 cchRDN, Guid* pGuid, DS_MANGLE_FOR* peDsMangleFor);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6409,39 +6409,39 @@ namespace Win32
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsCrackSpn2W(char16* pszSpn, uint32 cSpn, uint32* pcServiceClass, char16* ServiceClass, uint32* pcServiceName, char16* ServiceName, uint32* pcInstanceName, char16* InstanceName, uint16* pInstancePort);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsCrackSpn3W(PWSTR pszSpn, uint32 cSpn, uint32* pcHostName, char16* HostName, uint32* pcInstanceName, char16* InstanceName, uint16* pPortNumber, uint32* pcDomainName, char16* DomainName, uint32* pcRealmName, char16* RealmName);
+		public static extern uint32 DsCrackSpn3W(PWSTR pszSpn, uint32 cSpn, out uint32 pcHostName, char16* HostName, out uint32 pcInstanceName, char16* InstanceName, out uint16 pPortNumber, out uint32 pcDomainName, char16* DomainName, out uint32 pcRealmName, char16* RealmName);
 		[Import("dsparse.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsCrackSpn4W(PWSTR pszSpn, uint32 cSpn, uint32* pcHostName, char16* HostName, uint32* pcInstanceName, char16* InstanceName, uint32* pcPortName, char16* PortName, uint32* pcDomainName, char16* DomainName, uint32* pcRealmName, char16* RealmName);
+		public static extern uint32 DsCrackSpn4W(PWSTR pszSpn, uint32 cSpn, out uint32 pcHostName, char16* HostName, out uint32 pcInstanceName, char16* InstanceName, out uint32 pcPortName, char16* PortName, out uint32 pcDomainName, char16* DomainName, out uint32 pcRealmName, char16* RealmName);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindW(PWSTR DomainControllerName, PWSTR DnsDomainName, HANDLE* phDS);
+		public static extern uint32 DsBindW(PWSTR DomainControllerName, PWSTR DnsDomainName, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindA(PSTR DomainControllerName, PSTR DnsDomainName, HANDLE* phDS);
+		public static extern uint32 DsBindA(PSTR DomainControllerName, PSTR DnsDomainName, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindWithCredW(PWSTR DomainControllerName, PWSTR DnsDomainName, void* AuthIdentity, HANDLE* phDS);
+		public static extern uint32 DsBindWithCredW(PWSTR DomainControllerName, PWSTR DnsDomainName, void* AuthIdentity, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindWithCredA(PSTR DomainControllerName, PSTR DnsDomainName, void* AuthIdentity, HANDLE* phDS);
+		public static extern uint32 DsBindWithCredA(PSTR DomainControllerName, PSTR DnsDomainName, void* AuthIdentity, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindWithSpnW(PWSTR DomainControllerName, PWSTR DnsDomainName, void* AuthIdentity, PWSTR ServicePrincipalName, HANDLE* phDS);
+		public static extern uint32 DsBindWithSpnW(PWSTR DomainControllerName, PWSTR DnsDomainName, void* AuthIdentity, PWSTR ServicePrincipalName, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindWithSpnA(PSTR DomainControllerName, PSTR DnsDomainName, void* AuthIdentity, PSTR ServicePrincipalName, HANDLE* phDS);
+		public static extern uint32 DsBindWithSpnA(PSTR DomainControllerName, PSTR DnsDomainName, void* AuthIdentity, PSTR ServicePrincipalName, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindWithSpnExW(PWSTR DomainControllerName, PWSTR DnsDomainName, void* AuthIdentity, PWSTR ServicePrincipalName, uint32 BindFlags, HANDLE* phDS);
+		public static extern uint32 DsBindWithSpnExW(PWSTR DomainControllerName, PWSTR DnsDomainName, void* AuthIdentity, PWSTR ServicePrincipalName, uint32 BindFlags, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindWithSpnExA(PSTR DomainControllerName, PSTR DnsDomainName, void* AuthIdentity, PSTR ServicePrincipalName, uint32 BindFlags, HANDLE* phDS);
+		public static extern uint32 DsBindWithSpnExA(PSTR DomainControllerName, PSTR DnsDomainName, void* AuthIdentity, PSTR ServicePrincipalName, uint32 BindFlags, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindByInstanceW(PWSTR ServerName, PWSTR Annotation, Guid* InstanceGuid, PWSTR DnsDomainName, void* AuthIdentity, PWSTR ServicePrincipalName, uint32 BindFlags, HANDLE* phDS);
+		public static extern uint32 DsBindByInstanceW(PWSTR ServerName, PWSTR Annotation, Guid* InstanceGuid, PWSTR DnsDomainName, void* AuthIdentity, PWSTR ServicePrincipalName, uint32 BindFlags, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindByInstanceA(PSTR ServerName, PSTR Annotation, Guid* InstanceGuid, PSTR DnsDomainName, void* AuthIdentity, PSTR ServicePrincipalName, uint32 BindFlags, HANDLE* phDS);
+		public static extern uint32 DsBindByInstanceA(PSTR ServerName, PSTR Annotation, Guid* InstanceGuid, PSTR DnsDomainName, void* AuthIdentity, PSTR ServicePrincipalName, uint32 BindFlags, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindToISTGW(PWSTR SiteName, HANDLE* phDS);
+		public static extern uint32 DsBindToISTGW(PWSTR SiteName, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsBindToISTGA(PSTR SiteName, HANDLE* phDS);
+		public static extern uint32 DsBindToISTGA(PSTR SiteName, out HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsBindingSetTimeout(HANDLE hDS, uint32 cTimeoutSecs);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsUnBindW(HANDLE* phDS);
+		public static extern uint32 DsUnBindW(ref HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsUnBindA(HANDLE* phDS);
+		public static extern uint32 DsUnBindA(ref HANDLE phDS);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsMakePasswordCredentialsW(PWSTR User, PWSTR Domain, PWSTR Password, void** pAuthIdentity);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6449,17 +6449,17 @@ namespace Win32
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DsFreePasswordCredentials(void* AuthIdentity);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsCrackNamesW(HANDLE hDS, DS_NAME_FLAGS flags, DS_NAME_FORMAT formatOffered, DS_NAME_FORMAT formatDesired, uint32 cNames, PWSTR* rpNames, DS_NAME_RESULTW** ppResult);
+		public static extern uint32 DsCrackNamesW(HANDLE hDS, DS_NAME_FLAGS flags, DS_NAME_FORMAT formatOffered, DS_NAME_FORMAT formatDesired, uint32 cNames, PWSTR* rpNames, out DS_NAME_RESULTW* ppResult);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsCrackNamesA(HANDLE hDS, DS_NAME_FLAGS flags, DS_NAME_FORMAT formatOffered, DS_NAME_FORMAT formatDesired, uint32 cNames, PSTR* rpNames, DS_NAME_RESULTA** ppResult);
+		public static extern uint32 DsCrackNamesA(HANDLE hDS, DS_NAME_FLAGS flags, DS_NAME_FORMAT formatOffered, DS_NAME_FORMAT formatDesired, uint32 cNames, PSTR* rpNames, out DS_NAME_RESULTA* ppResult);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void DsFreeNameResultW(DS_NAME_RESULTW* pResult);
+		public static extern void DsFreeNameResultW(ref DS_NAME_RESULTW pResult);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void DsFreeNameResultA(DS_NAME_RESULTA* pResult);
+		public static extern void DsFreeNameResultA(ref DS_NAME_RESULTA pResult);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetSpnA(DS_SPN_NAME_TYPE ServiceType, PSTR ServiceClass, PSTR ServiceName, uint16 InstancePort, uint16 cInstanceNames, PSTR* pInstanceNames, uint16* pInstancePorts, uint32* pcSpn, PSTR** prpszSpn);
+		public static extern uint32 DsGetSpnA(DS_SPN_NAME_TYPE ServiceType, PSTR ServiceClass, PSTR ServiceName, uint16 InstancePort, uint16 cInstanceNames, PSTR* pInstanceNames, uint16* pInstancePorts, out uint32 pcSpn, out PSTR* prpszSpn);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetSpnW(DS_SPN_NAME_TYPE ServiceType, PWSTR ServiceClass, PWSTR ServiceName, uint16 InstancePort, uint16 cInstanceNames, PWSTR* pInstanceNames, uint16* pInstancePorts, uint32* pcSpn, PWSTR** prpszSpn);
+		public static extern uint32 DsGetSpnW(DS_SPN_NAME_TYPE ServiceType, PWSTR ServiceClass, PWSTR ServiceName, uint16 InstancePort, uint16 cInstanceNames, PWSTR* pInstanceNames, uint16* pInstancePorts, out uint32 pcSpn, out PWSTR* prpszSpn);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DsFreeSpnArrayA(uint32 cSpn, PSTR* rpszSpn);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6469,17 +6469,17 @@ namespace Win32
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsWriteAccountSpnW(HANDLE hDS, DS_SPN_WRITE_OP Operation, PWSTR pszAccount, uint32 cSpn, PWSTR* rpszSpn);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsClientMakeSpnForTargetServerW(PWSTR ServiceClass, PWSTR ServiceName, uint32* pcSpnLength, char16* pszSpn);
+		public static extern uint32 DsClientMakeSpnForTargetServerW(PWSTR ServiceClass, PWSTR ServiceName, out uint32 pcSpnLength, char16* pszSpn);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsClientMakeSpnForTargetServerA(PSTR ServiceClass, PSTR ServiceName, uint32* pcSpnLength, uint8* pszSpn);
+		public static extern uint32 DsClientMakeSpnForTargetServerA(PSTR ServiceClass, PSTR ServiceName, out uint32 pcSpnLength, uint8* pszSpn);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsServerRegisterSpnA(DS_SPN_WRITE_OP Operation, PSTR ServiceClass, PSTR UserObjectDN);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsServerRegisterSpnW(DS_SPN_WRITE_OP Operation, PWSTR ServiceClass, PWSTR UserObjectDN);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsReplicaSyncA(HANDLE hDS, PSTR NameContext, Guid* pUuidDsaSrc, uint32 Options);
+		public static extern uint32 DsReplicaSyncA(HANDLE hDS, PSTR NameContext, in Guid pUuidDsaSrc, uint32 Options);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsReplicaSyncW(HANDLE hDS, PWSTR NameContext, Guid* pUuidDsaSrc, uint32 Options);
+		public static extern uint32 DsReplicaSyncW(HANDLE hDS, PWSTR NameContext, in Guid pUuidDsaSrc, uint32 Options);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsReplicaAddA(HANDLE hDS, PSTR NameContext, PSTR SourceDsaDn, PSTR TransportDn, PSTR SourceDsaAddress, SCHEDULE* pSchedule, uint32 Options);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6493,9 +6493,9 @@ namespace Win32
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsReplicaModifyW(HANDLE hDS, PWSTR NameContext, Guid* pUuidSourceDsa, PWSTR TransportDn, PWSTR SourceDsaAddress, SCHEDULE* pSchedule, uint32 ReplicaFlags, uint32 ModifyFields, uint32 Options);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsReplicaUpdateRefsA(HANDLE hDS, PSTR NameContext, PSTR DsaDest, Guid* pUuidDsaDest, uint32 Options);
+		public static extern uint32 DsReplicaUpdateRefsA(HANDLE hDS, PSTR NameContext, PSTR DsaDest, in Guid pUuidDsaDest, uint32 Options);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsReplicaUpdateRefsW(HANDLE hDS, PWSTR NameContext, PWSTR DsaDest, Guid* pUuidDsaDest, uint32 Options);
+		public static extern uint32 DsReplicaUpdateRefsW(HANDLE hDS, PWSTR NameContext, PWSTR DsaDest, in Guid pUuidDsaDest, uint32 Options);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsReplicaSyncAllA(HANDLE hDS, PSTR pszNameContext, uint32 ulFlags, int pFnCallBack, void* pCallbackData, DS_REPSYNCALL_ERRINFOA*** pErrors);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6509,47 +6509,47 @@ namespace Win32
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsRemoveDsDomainA(HANDLE hDs, PSTR DomainDN);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListSitesA(HANDLE hDs, DS_NAME_RESULTA** ppSites);
+		public static extern uint32 DsListSitesA(HANDLE hDs, out DS_NAME_RESULTA* ppSites);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListSitesW(HANDLE hDs, DS_NAME_RESULTW** ppSites);
+		public static extern uint32 DsListSitesW(HANDLE hDs, out DS_NAME_RESULTW* ppSites);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListServersInSiteA(HANDLE hDs, PSTR site, DS_NAME_RESULTA** ppServers);
+		public static extern uint32 DsListServersInSiteA(HANDLE hDs, PSTR site, out DS_NAME_RESULTA* ppServers);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListServersInSiteW(HANDLE hDs, PWSTR site, DS_NAME_RESULTW** ppServers);
+		public static extern uint32 DsListServersInSiteW(HANDLE hDs, PWSTR site, out DS_NAME_RESULTW* ppServers);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListDomainsInSiteA(HANDLE hDs, PSTR site, DS_NAME_RESULTA** ppDomains);
+		public static extern uint32 DsListDomainsInSiteA(HANDLE hDs, PSTR site, out DS_NAME_RESULTA* ppDomains);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListDomainsInSiteW(HANDLE hDs, PWSTR site, DS_NAME_RESULTW** ppDomains);
+		public static extern uint32 DsListDomainsInSiteW(HANDLE hDs, PWSTR site, out DS_NAME_RESULTW* ppDomains);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListServersForDomainInSiteA(HANDLE hDs, PSTR domain, PSTR site, DS_NAME_RESULTA** ppServers);
+		public static extern uint32 DsListServersForDomainInSiteA(HANDLE hDs, PSTR domain, PSTR site, out DS_NAME_RESULTA* ppServers);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListServersForDomainInSiteW(HANDLE hDs, PWSTR domain, PWSTR site, DS_NAME_RESULTW** ppServers);
+		public static extern uint32 DsListServersForDomainInSiteW(HANDLE hDs, PWSTR domain, PWSTR site, out DS_NAME_RESULTW* ppServers);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListInfoForServerA(HANDLE hDs, PSTR server, DS_NAME_RESULTA** ppInfo);
+		public static extern uint32 DsListInfoForServerA(HANDLE hDs, PSTR server, out DS_NAME_RESULTA* ppInfo);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListInfoForServerW(HANDLE hDs, PWSTR server, DS_NAME_RESULTW** ppInfo);
+		public static extern uint32 DsListInfoForServerW(HANDLE hDs, PWSTR server, out DS_NAME_RESULTW* ppInfo);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListRolesA(HANDLE hDs, DS_NAME_RESULTA** ppRoles);
+		public static extern uint32 DsListRolesA(HANDLE hDs, out DS_NAME_RESULTA* ppRoles);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsListRolesW(HANDLE hDs, DS_NAME_RESULTW** ppRoles);
+		public static extern uint32 DsListRolesW(HANDLE hDs, out DS_NAME_RESULTW* ppRoles);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsQuerySitesByCostW(HANDLE hDS, PWSTR pwszFromSite, PWSTR* rgwszToSites, uint32 cToSites, uint32 dwFlags, DS_SITE_COST_INFO** prgSiteInfo);
+		public static extern uint32 DsQuerySitesByCostW(HANDLE hDS, PWSTR pwszFromSite, PWSTR* rgwszToSites, uint32 cToSites, uint32 dwFlags, out DS_SITE_COST_INFO* prgSiteInfo);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsQuerySitesByCostA(HANDLE hDS, PSTR pszFromSite, PSTR* rgszToSites, uint32 cToSites, uint32 dwFlags, DS_SITE_COST_INFO** prgSiteInfo);
+		public static extern uint32 DsQuerySitesByCostA(HANDLE hDS, PSTR pszFromSite, PSTR* rgszToSites, uint32 cToSites, uint32 dwFlags, out DS_SITE_COST_INFO* prgSiteInfo);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void DsQuerySitesFree(DS_SITE_COST_INFO* rgSiteInfo);
+		public static extern void DsQuerySitesFree(ref DS_SITE_COST_INFO rgSiteInfo);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsMapSchemaGuidsA(HANDLE hDs, uint32 cGuids, Guid* rGuids, DS_SCHEMA_GUID_MAPA** ppGuidMap);
+		public static extern uint32 DsMapSchemaGuidsA(HANDLE hDs, uint32 cGuids, Guid* rGuids, out DS_SCHEMA_GUID_MAPA* ppGuidMap);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void DsFreeSchemaGuidMapA(DS_SCHEMA_GUID_MAPA* pGuidMap);
+		public static extern void DsFreeSchemaGuidMapA(ref DS_SCHEMA_GUID_MAPA pGuidMap);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsMapSchemaGuidsW(HANDLE hDs, uint32 cGuids, Guid* rGuids, DS_SCHEMA_GUID_MAPW** ppGuidMap);
+		public static extern uint32 DsMapSchemaGuidsW(HANDLE hDs, uint32 cGuids, Guid* rGuids, out DS_SCHEMA_GUID_MAPW* ppGuidMap);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void DsFreeSchemaGuidMapW(DS_SCHEMA_GUID_MAPW* pGuidMap);
+		public static extern void DsFreeSchemaGuidMapW(ref DS_SCHEMA_GUID_MAPW pGuidMap);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetDomainControllerInfoA(HANDLE hDs, PSTR DomainName, uint32 InfoLevel, uint32* pcOut, void** ppInfo);
+		public static extern uint32 DsGetDomainControllerInfoA(HANDLE hDs, PSTR DomainName, uint32 InfoLevel, out uint32 pcOut, void** ppInfo);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetDomainControllerInfoW(HANDLE hDs, PWSTR DomainName, uint32 InfoLevel, uint32* pcOut, void** ppInfo);
+		public static extern uint32 DsGetDomainControllerInfoW(HANDLE hDs, PWSTR DomainName, uint32 InfoLevel, out uint32 pcOut, void** ppInfo);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DsFreeDomainControllerInfoA(uint32 InfoLevel, uint32 cInfo, void* pInfo);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6557,9 +6557,9 @@ namespace Win32
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsReplicaConsistencyCheck(HANDLE hDS, DS_KCC_TASKID TaskID, uint32 dwFlags);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsReplicaVerifyObjectsW(HANDLE hDS, PWSTR NameContext, Guid* pUuidDsaSrc, uint32 ulOptions);
+		public static extern uint32 DsReplicaVerifyObjectsW(HANDLE hDS, PWSTR NameContext, in Guid pUuidDsaSrc, uint32 ulOptions);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsReplicaVerifyObjectsA(HANDLE hDS, PSTR NameContext, Guid* pUuidDsaSrc, uint32 ulOptions);
+		public static extern uint32 DsReplicaVerifyObjectsA(HANDLE hDS, PSTR NameContext, in Guid pUuidDsaSrc, uint32 ulOptions);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsReplicaGetInfoW(HANDLE hDS, DS_REPL_INFO_TYPE InfoType, PWSTR pszObject, Guid* puuidForSourceDsaObjGuid, void** ppInfo);
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6575,49 +6575,49 @@ namespace Win32
 		[Import("ntdsapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsInheritSecurityIdentityA(HANDLE hDS, uint32 Flags, PSTR SrcPrincipal, PSTR DstPrincipal);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsRoleGetPrimaryDomainInformation(PWSTR lpServer, DSROLE_PRIMARY_DOMAIN_INFO_LEVEL InfoLevel, uint8** Buffer);
+		public static extern uint32 DsRoleGetPrimaryDomainInformation(PWSTR lpServer, DSROLE_PRIMARY_DOMAIN_INFO_LEVEL InfoLevel, out uint8* Buffer);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void DsRoleFreeMemory(void* Buffer);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetDcNameA(PSTR ComputerName, PSTR DomainName, Guid* DomainGuid, PSTR SiteName, uint32 Flags, DOMAIN_CONTROLLER_INFOA** DomainControllerInfo);
+		public static extern uint32 DsGetDcNameA(PSTR ComputerName, PSTR DomainName, Guid* DomainGuid, PSTR SiteName, uint32 Flags, out DOMAIN_CONTROLLER_INFOA* DomainControllerInfo);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetDcNameW(PWSTR ComputerName, PWSTR DomainName, Guid* DomainGuid, PWSTR SiteName, uint32 Flags, DOMAIN_CONTROLLER_INFOW** DomainControllerInfo);
+		public static extern uint32 DsGetDcNameW(PWSTR ComputerName, PWSTR DomainName, Guid* DomainGuid, PWSTR SiteName, uint32 Flags, out DOMAIN_CONTROLLER_INFOW* DomainControllerInfo);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetSiteNameA(PSTR ComputerName, PSTR* SiteName);
+		public static extern uint32 DsGetSiteNameA(PSTR ComputerName, out PSTR SiteName);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetSiteNameW(PWSTR ComputerName, PWSTR* SiteName);
+		public static extern uint32 DsGetSiteNameW(PWSTR ComputerName, out PWSTR SiteName);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsValidateSubnetNameW(PWSTR SubnetName);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsValidateSubnetNameA(PSTR SubnetName);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsAddressToSiteNamesW(PWSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, PWSTR** SiteNames);
+		public static extern uint32 DsAddressToSiteNamesW(PWSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, out PWSTR* SiteNames);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsAddressToSiteNamesA(PSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, PSTR** SiteNames);
+		public static extern uint32 DsAddressToSiteNamesA(PSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, out PSTR* SiteNames);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsAddressToSiteNamesExW(PWSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, PWSTR** SiteNames, PWSTR** SubnetNames);
+		public static extern uint32 DsAddressToSiteNamesExW(PWSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, out PWSTR* SiteNames, out PWSTR* SubnetNames);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsAddressToSiteNamesExA(PSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, PSTR** SiteNames, PSTR** SubnetNames);
+		public static extern uint32 DsAddressToSiteNamesExA(PSTR ComputerName, uint32 EntryCount, SOCKET_ADDRESS* SocketAddresses, out PSTR* SiteNames, out PSTR* SubnetNames);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsEnumerateDomainTrustsW(PWSTR ServerName, uint32 Flags, DS_DOMAIN_TRUSTSW** Domains, uint32* DomainCount);
+		public static extern uint32 DsEnumerateDomainTrustsW(PWSTR ServerName, uint32 Flags, out DS_DOMAIN_TRUSTSW* Domains, out uint32 DomainCount);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsEnumerateDomainTrustsA(PSTR ServerName, uint32 Flags, DS_DOMAIN_TRUSTSA** Domains, uint32* DomainCount);
+		public static extern uint32 DsEnumerateDomainTrustsA(PSTR ServerName, uint32 Flags, out DS_DOMAIN_TRUSTSA* Domains, out uint32 DomainCount);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetForestTrustInformationW(PWSTR ServerName, PWSTR TrustedDomainName, uint32 Flags, LSA_FOREST_TRUST_INFORMATION** ForestTrustInfo);
+		public static extern uint32 DsGetForestTrustInformationW(PWSTR ServerName, PWSTR TrustedDomainName, uint32 Flags, out LSA_FOREST_TRUST_INFORMATION* ForestTrustInfo);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsMergeForestTrustInformationW(PWSTR DomainName, LSA_FOREST_TRUST_INFORMATION* NewForestTrustInfo, LSA_FOREST_TRUST_INFORMATION* OldForestTrustInfo, LSA_FOREST_TRUST_INFORMATION** MergedForestTrustInfo);
+		public static extern uint32 DsMergeForestTrustInformationW(PWSTR DomainName, ref LSA_FOREST_TRUST_INFORMATION NewForestTrustInfo, LSA_FOREST_TRUST_INFORMATION* OldForestTrustInfo, out LSA_FOREST_TRUST_INFORMATION* MergedForestTrustInfo);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetDcSiteCoverageW(PWSTR ServerName, uint32* EntryCount, PWSTR** SiteNames);
+		public static extern uint32 DsGetDcSiteCoverageW(PWSTR ServerName, out uint32 EntryCount, out PWSTR* SiteNames);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetDcSiteCoverageA(PSTR ServerName, uint32* EntryCount, PSTR** SiteNames);
+		public static extern uint32 DsGetDcSiteCoverageA(PSTR ServerName, out uint32 EntryCount, out PSTR* SiteNames);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsDeregisterDnsHostRecordsW(PWSTR ServerName, PWSTR DnsDomainName, Guid* DomainGuid, Guid* DsaGuid, PWSTR DnsHostName);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsDeregisterDnsHostRecordsA(PSTR ServerName, PSTR DnsDomainName, Guid* DomainGuid, Guid* DsaGuid, PSTR DnsHostName);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetDcOpenW(PWSTR DnsName, uint32 OptionFlags, PWSTR SiteName, Guid* DomainGuid, PWSTR DnsForestName, uint32 DcFlags, GetDcContextHandle* RetGetDcContext);
+		public static extern uint32 DsGetDcOpenW(PWSTR DnsName, uint32 OptionFlags, PWSTR SiteName, Guid* DomainGuid, PWSTR DnsForestName, uint32 DcFlags, out GetDcContextHandle RetGetDcContext);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 DsGetDcOpenA(PSTR DnsName, uint32 OptionFlags, PSTR SiteName, Guid* DomainGuid, PSTR DnsForestName, uint32 DcFlags, GetDcContextHandle* RetGetDcContext);
+		public static extern uint32 DsGetDcOpenA(PSTR DnsName, uint32 OptionFlags, PSTR SiteName, Guid* DomainGuid, PSTR DnsForestName, uint32 DcFlags, out GetDcContextHandle RetGetDcContext);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DsGetDcNextW(HANDLE GetDcContextHandle, uint32* SockAddressCount, SOCKET_ADDRESS** SockAddresses, PWSTR* DnsHostName);
 		[Import("netapi32.dll"), CLink, CallingConvention(.Stdcall)]

@@ -14,14 +14,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetHostHwndInterop(HWND containerHwnd, HWND* hostHwnd) mut
+			public HRESULT GetHostHwndInterop(HWND containerHwnd, out HWND hostHwnd) mut
 			{
-				return VT.GetHostHwndInterop(&this, containerHwnd, hostHwnd);
+				return VT.GetHostHwndInterop(ref this, containerHwnd, out hostHwnd);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IIsolatedEnvironmentInterop *self, HWND containerHwnd, HWND* hostHwnd) GetHostHwndInterop;
+				public new function HRESULT(ref IIsolatedEnvironmentInterop self, HWND containerHwnd, out HWND hostHwnd) GetHostHwndInterop;
 			}
 		}
 		

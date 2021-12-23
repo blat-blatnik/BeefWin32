@@ -127,7 +127,7 @@ namespace Win32
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 InitiateShutdownW(PWSTR lpMachineName, PWSTR lpMessage, uint32 dwGracePeriod, SHUTDOWN_FLAGS dwShutdownFlags, SHUTDOWN_REASON dwReason);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CheckForHiberboot(BOOLEAN* pHiberboot, BOOLEAN bClearFlag);
+		public static extern uint32 CheckForHiberboot(out BOOLEAN pHiberboot, BOOLEAN bClearFlag);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ExitWindowsEx(EXIT_WINDOWS_FLAGS uFlags, uint32 dwReason);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -135,7 +135,7 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ShutdownBlockReasonCreate(HWND hWnd, PWSTR pwszReason);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ShutdownBlockReasonQuery(HWND hWnd, char16* pwszBuff, uint32* pcchBuff);
+		public static extern BOOL ShutdownBlockReasonQuery(HWND hWnd, char16* pwszBuff, out uint32 pcchBuff);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ShutdownBlockReasonDestroy(HWND hWnd);
 		

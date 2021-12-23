@@ -201,29 +201,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTime(int64* pTime) mut
+			public HRESULT GetTime(out int64 pTime) mut
 			{
-				return VT.GetTime(&this, pTime);
+				return VT.GetTime(ref this, out pTime);
 			}
-			public HRESULT AdviseTime(int64 baseTime, int64 streamTime, HANDLE hEvent, uint* pdwAdviseCookie) mut
+			public HRESULT AdviseTime(int64 baseTime, int64 streamTime, HANDLE hEvent, out uint pdwAdviseCookie) mut
 			{
-				return VT.AdviseTime(&this, baseTime, streamTime, hEvent, pdwAdviseCookie);
+				return VT.AdviseTime(ref this, baseTime, streamTime, hEvent, out pdwAdviseCookie);
 			}
-			public HRESULT AdvisePeriodic(int64 startTime, int64 periodTime, HANDLE hSemaphore, uint* pdwAdviseCookie) mut
+			public HRESULT AdvisePeriodic(int64 startTime, int64 periodTime, HANDLE hSemaphore, out uint pdwAdviseCookie) mut
 			{
-				return VT.AdvisePeriodic(&this, startTime, periodTime, hSemaphore, pdwAdviseCookie);
+				return VT.AdvisePeriodic(ref this, startTime, periodTime, hSemaphore, out pdwAdviseCookie);
 			}
 			public HRESULT Unadvise(uint dwAdviseCookie) mut
 			{
-				return VT.Unadvise(&this, dwAdviseCookie);
+				return VT.Unadvise(ref this, dwAdviseCookie);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IReferenceClock *self, int64* pTime) GetTime;
-				public new function HRESULT(IReferenceClock *self, int64 baseTime, int64 streamTime, HANDLE hEvent, uint* pdwAdviseCookie) AdviseTime;
-				public new function HRESULT(IReferenceClock *self, int64 startTime, int64 periodTime, HANDLE hSemaphore, uint* pdwAdviseCookie) AdvisePeriodic;
-				public new function HRESULT(IReferenceClock *self, uint dwAdviseCookie) Unadvise;
+				public new function HRESULT(ref IReferenceClock self, out int64 pTime) GetTime;
+				public new function HRESULT(ref IReferenceClock self, int64 baseTime, int64 streamTime, HANDLE hEvent, out uint pdwAdviseCookie) AdviseTime;
+				public new function HRESULT(ref IReferenceClock self, int64 startTime, int64 periodTime, HANDLE hSemaphore, out uint pdwAdviseCookie) AdvisePeriodic;
+				public new function HRESULT(ref IReferenceClock self, uint dwAdviseCookie) Unadvise;
 			}
 		}
 		[CRepr]
@@ -235,17 +235,17 @@ namespace Win32
 			
 			public HRESULT SetDefaultTimerResolution(int64 timerResolution) mut
 			{
-				return VT.SetDefaultTimerResolution(&this, timerResolution);
+				return VT.SetDefaultTimerResolution(ref this, timerResolution);
 			}
-			public HRESULT GetDefaultTimerResolution(int64* pTimerResolution) mut
+			public HRESULT GetDefaultTimerResolution(out int64 pTimerResolution) mut
 			{
-				return VT.GetDefaultTimerResolution(&this, pTimerResolution);
+				return VT.GetDefaultTimerResolution(ref this, out pTimerResolution);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IReferenceClockTimerControl *self, int64 timerResolution) SetDefaultTimerResolution;
-				public new function HRESULT(IReferenceClockTimerControl *self, int64* pTimerResolution) GetDefaultTimerResolution;
+				public new function HRESULT(ref IReferenceClockTimerControl self, int64 timerResolution) SetDefaultTimerResolution;
+				public new function HRESULT(ref IReferenceClockTimerControl self, out int64 pTimerResolution) GetDefaultTimerResolution;
 			}
 		}
 		[CRepr]
@@ -264,11 +264,11 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 timeGetSystemTime(MMTIME* pmmt, uint32 cbmmt);
+		public static extern uint32 timeGetSystemTime(out MMTIME pmmt, uint32 cbmmt);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 timeGetTime();
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 timeGetDevCaps(TIMECAPS* ptc, uint32 cbtc);
+		public static extern uint32 timeGetDevCaps(out TIMECAPS ptc, uint32 cbtc);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 timeBeginPeriod(uint32 uPeriod);
 		[Import("winmm.dll"), CLink, CallingConvention(.Stdcall)]

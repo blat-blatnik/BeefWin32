@@ -193,22 +193,22 @@ namespace Win32
 			
 			public HRESULT GetRelationshipsPartUri(IOpcPartUri** relationshipPartUri) mut
 			{
-				return VT.GetRelationshipsPartUri(&this, relationshipPartUri);
+				return VT.GetRelationshipsPartUri(ref this, relationshipPartUri);
 			}
 			public HRESULT GetRelativeUri(IOpcPartUri* targetPartUri, IUri** relativeUri) mut
 			{
-				return VT.GetRelativeUri(&this, targetPartUri, relativeUri);
+				return VT.GetRelativeUri(ref this, targetPartUri, relativeUri);
 			}
 			public HRESULT CombinePartUri(IUri* relativeUri, IOpcPartUri** combinedUri) mut
 			{
-				return VT.CombinePartUri(&this, relativeUri, combinedUri);
+				return VT.CombinePartUri(ref this, relativeUri, combinedUri);
 			}
 			[CRepr]
 			public struct VTable : IUri.VTable
 			{
-				public new function HRESULT(IOpcUri *self, IOpcPartUri** relationshipPartUri) GetRelationshipsPartUri;
-				public new function HRESULT(IOpcUri *self, IOpcPartUri* targetPartUri, IUri** relativeUri) GetRelativeUri;
-				public new function HRESULT(IOpcUri *self, IUri* relativeUri, IOpcPartUri** combinedUri) CombinePartUri;
+				public new function HRESULT(ref IOpcUri self, IOpcPartUri** relationshipPartUri) GetRelationshipsPartUri;
+				public new function HRESULT(ref IOpcUri self, IOpcPartUri* targetPartUri, IUri** relativeUri) GetRelativeUri;
+				public new function HRESULT(ref IOpcUri self, IUri* relativeUri, IOpcPartUri** combinedUri) CombinePartUri;
 			}
 		}
 		[CRepr]
@@ -218,24 +218,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComparePartUri(IOpcPartUri* partUri, int32* comparisonResult) mut
+			public HRESULT ComparePartUri(IOpcPartUri* partUri, out int32 comparisonResult) mut
 			{
-				return VT.ComparePartUri(&this, partUri, comparisonResult);
+				return VT.ComparePartUri(ref this, partUri, out comparisonResult);
 			}
 			public HRESULT GetSourceUri(IOpcUri** sourceUri) mut
 			{
-				return VT.GetSourceUri(&this, sourceUri);
+				return VT.GetSourceUri(ref this, sourceUri);
 			}
-			public HRESULT IsRelationshipsPartUri(BOOL* isRelationshipUri) mut
+			public HRESULT IsRelationshipsPartUri(out BOOL isRelationshipUri) mut
 			{
-				return VT.IsRelationshipsPartUri(&this, isRelationshipUri);
+				return VT.IsRelationshipsPartUri(ref this, out isRelationshipUri);
 			}
 			[CRepr]
 			public struct VTable : IOpcUri.VTable
 			{
-				public new function HRESULT(IOpcPartUri *self, IOpcPartUri* partUri, int32* comparisonResult) ComparePartUri;
-				public new function HRESULT(IOpcPartUri *self, IOpcUri** sourceUri) GetSourceUri;
-				public new function HRESULT(IOpcPartUri *self, BOOL* isRelationshipUri) IsRelationshipsPartUri;
+				public new function HRESULT(ref IOpcPartUri self, IOpcPartUri* partUri, out int32 comparisonResult) ComparePartUri;
+				public new function HRESULT(ref IOpcPartUri self, IOpcUri** sourceUri) GetSourceUri;
+				public new function HRESULT(ref IOpcPartUri self, out BOOL isRelationshipUri) IsRelationshipsPartUri;
 			}
 		}
 		[CRepr]
@@ -247,17 +247,17 @@ namespace Win32
 			
 			public HRESULT GetPartSet(IOpcPartSet** partSet) mut
 			{
-				return VT.GetPartSet(&this, partSet);
+				return VT.GetPartSet(ref this, partSet);
 			}
 			public HRESULT GetRelationshipSet(IOpcRelationshipSet** relationshipSet) mut
 			{
-				return VT.GetRelationshipSet(&this, relationshipSet);
+				return VT.GetRelationshipSet(ref this, relationshipSet);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcPackage *self, IOpcPartSet** partSet) GetPartSet;
-				public new function HRESULT(IOpcPackage *self, IOpcRelationshipSet** relationshipSet) GetRelationshipSet;
+				public new function HRESULT(ref IOpcPackage self, IOpcPartSet** partSet) GetPartSet;
+				public new function HRESULT(ref IOpcPackage self, IOpcRelationshipSet** relationshipSet) GetRelationshipSet;
 			}
 		}
 		[CRepr]
@@ -269,32 +269,32 @@ namespace Win32
 			
 			public HRESULT GetRelationshipSet(IOpcRelationshipSet** relationshipSet) mut
 			{
-				return VT.GetRelationshipSet(&this, relationshipSet);
+				return VT.GetRelationshipSet(ref this, relationshipSet);
 			}
 			public HRESULT GetContentStream(IStream** stream) mut
 			{
-				return VT.GetContentStream(&this, stream);
+				return VT.GetContentStream(ref this, stream);
 			}
 			public HRESULT GetName(IOpcPartUri** name) mut
 			{
-				return VT.GetName(&this, name);
+				return VT.GetName(ref this, name);
 			}
 			public HRESULT GetContentType(PWSTR* contentType) mut
 			{
-				return VT.GetContentType(&this, contentType);
+				return VT.GetContentType(ref this, contentType);
 			}
-			public HRESULT GetCompressionOptions(OPC_COMPRESSION_OPTIONS* compressionOptions) mut
+			public HRESULT GetCompressionOptions(out OPC_COMPRESSION_OPTIONS compressionOptions) mut
 			{
-				return VT.GetCompressionOptions(&this, compressionOptions);
+				return VT.GetCompressionOptions(ref this, out compressionOptions);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcPart *self, IOpcRelationshipSet** relationshipSet) GetRelationshipSet;
-				public new function HRESULT(IOpcPart *self, IStream** stream) GetContentStream;
-				public new function HRESULT(IOpcPart *self, IOpcPartUri** name) GetName;
-				public new function HRESULT(IOpcPart *self, PWSTR* contentType) GetContentType;
-				public new function HRESULT(IOpcPart *self, OPC_COMPRESSION_OPTIONS* compressionOptions) GetCompressionOptions;
+				public new function HRESULT(ref IOpcPart self, IOpcRelationshipSet** relationshipSet) GetRelationshipSet;
+				public new function HRESULT(ref IOpcPart self, IStream** stream) GetContentStream;
+				public new function HRESULT(ref IOpcPart self, IOpcPartUri** name) GetName;
+				public new function HRESULT(ref IOpcPart self, PWSTR* contentType) GetContentType;
+				public new function HRESULT(ref IOpcPart self, out OPC_COMPRESSION_OPTIONS compressionOptions) GetCompressionOptions;
 			}
 		}
 		[CRepr]
@@ -306,32 +306,32 @@ namespace Win32
 			
 			public HRESULT GetId(PWSTR* relationshipIdentifier) mut
 			{
-				return VT.GetId(&this, relationshipIdentifier);
+				return VT.GetId(ref this, relationshipIdentifier);
 			}
 			public HRESULT GetRelationshipType(PWSTR* relationshipType) mut
 			{
-				return VT.GetRelationshipType(&this, relationshipType);
+				return VT.GetRelationshipType(ref this, relationshipType);
 			}
 			public HRESULT GetSourceUri(IOpcUri** sourceUri) mut
 			{
-				return VT.GetSourceUri(&this, sourceUri);
+				return VT.GetSourceUri(ref this, sourceUri);
 			}
 			public HRESULT GetTargetUri(IUri** targetUri) mut
 			{
-				return VT.GetTargetUri(&this, targetUri);
+				return VT.GetTargetUri(ref this, targetUri);
 			}
-			public HRESULT GetTargetMode(OPC_URI_TARGET_MODE* targetMode) mut
+			public HRESULT GetTargetMode(out OPC_URI_TARGET_MODE targetMode) mut
 			{
-				return VT.GetTargetMode(&this, targetMode);
+				return VT.GetTargetMode(ref this, out targetMode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcRelationship *self, PWSTR* relationshipIdentifier) GetId;
-				public new function HRESULT(IOpcRelationship *self, PWSTR* relationshipType) GetRelationshipType;
-				public new function HRESULT(IOpcRelationship *self, IOpcUri** sourceUri) GetSourceUri;
-				public new function HRESULT(IOpcRelationship *self, IUri** targetUri) GetTargetUri;
-				public new function HRESULT(IOpcRelationship *self, OPC_URI_TARGET_MODE* targetMode) GetTargetMode;
+				public new function HRESULT(ref IOpcRelationship self, PWSTR* relationshipIdentifier) GetId;
+				public new function HRESULT(ref IOpcRelationship self, PWSTR* relationshipType) GetRelationshipType;
+				public new function HRESULT(ref IOpcRelationship self, IOpcUri** sourceUri) GetSourceUri;
+				public new function HRESULT(ref IOpcRelationship self, IUri** targetUri) GetTargetUri;
+				public new function HRESULT(ref IOpcRelationship self, out OPC_URI_TARGET_MODE targetMode) GetTargetMode;
 			}
 		}
 		[CRepr]
@@ -343,32 +343,32 @@ namespace Win32
 			
 			public HRESULT GetPart(IOpcPartUri* name, IOpcPart** part) mut
 			{
-				return VT.GetPart(&this, name, part);
+				return VT.GetPart(ref this, name, part);
 			}
 			public HRESULT CreatePart(IOpcPartUri* name, PWSTR contentType, OPC_COMPRESSION_OPTIONS compressionOptions, IOpcPart** part) mut
 			{
-				return VT.CreatePart(&this, name, contentType, compressionOptions, part);
+				return VT.CreatePart(ref this, name, contentType, compressionOptions, part);
 			}
 			public HRESULT DeletePart(IOpcPartUri* name) mut
 			{
-				return VT.DeletePart(&this, name);
+				return VT.DeletePart(ref this, name);
 			}
-			public HRESULT PartExists(IOpcPartUri* name, BOOL* partExists) mut
+			public HRESULT PartExists(IOpcPartUri* name, out BOOL partExists) mut
 			{
-				return VT.PartExists(&this, name, partExists);
+				return VT.PartExists(ref this, name, out partExists);
 			}
 			public HRESULT GetEnumerator(IOpcPartEnumerator** partEnumerator) mut
 			{
-				return VT.GetEnumerator(&this, partEnumerator);
+				return VT.GetEnumerator(ref this, partEnumerator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcPartSet *self, IOpcPartUri* name, IOpcPart** part) GetPart;
-				public new function HRESULT(IOpcPartSet *self, IOpcPartUri* name, PWSTR contentType, OPC_COMPRESSION_OPTIONS compressionOptions, IOpcPart** part) CreatePart;
-				public new function HRESULT(IOpcPartSet *self, IOpcPartUri* name) DeletePart;
-				public new function HRESULT(IOpcPartSet *self, IOpcPartUri* name, BOOL* partExists) PartExists;
-				public new function HRESULT(IOpcPartSet *self, IOpcPartEnumerator** partEnumerator) GetEnumerator;
+				public new function HRESULT(ref IOpcPartSet self, IOpcPartUri* name, IOpcPart** part) GetPart;
+				public new function HRESULT(ref IOpcPartSet self, IOpcPartUri* name, PWSTR contentType, OPC_COMPRESSION_OPTIONS compressionOptions, IOpcPart** part) CreatePart;
+				public new function HRESULT(ref IOpcPartSet self, IOpcPartUri* name) DeletePart;
+				public new function HRESULT(ref IOpcPartSet self, IOpcPartUri* name, out BOOL partExists) PartExists;
+				public new function HRESULT(ref IOpcPartSet self, IOpcPartEnumerator** partEnumerator) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -380,42 +380,42 @@ namespace Win32
 			
 			public HRESULT GetRelationship(PWSTR relationshipIdentifier, IOpcRelationship** relationship) mut
 			{
-				return VT.GetRelationship(&this, relationshipIdentifier, relationship);
+				return VT.GetRelationship(ref this, relationshipIdentifier, relationship);
 			}
 			public HRESULT CreateRelationship(PWSTR relationshipIdentifier, PWSTR relationshipType, IUri* targetUri, OPC_URI_TARGET_MODE targetMode, IOpcRelationship** relationship) mut
 			{
-				return VT.CreateRelationship(&this, relationshipIdentifier, relationshipType, targetUri, targetMode, relationship);
+				return VT.CreateRelationship(ref this, relationshipIdentifier, relationshipType, targetUri, targetMode, relationship);
 			}
 			public HRESULT DeleteRelationship(PWSTR relationshipIdentifier) mut
 			{
-				return VT.DeleteRelationship(&this, relationshipIdentifier);
+				return VT.DeleteRelationship(ref this, relationshipIdentifier);
 			}
-			public HRESULT RelationshipExists(PWSTR relationshipIdentifier, BOOL* relationshipExists) mut
+			public HRESULT RelationshipExists(PWSTR relationshipIdentifier, out BOOL relationshipExists) mut
 			{
-				return VT.RelationshipExists(&this, relationshipIdentifier, relationshipExists);
+				return VT.RelationshipExists(ref this, relationshipIdentifier, out relationshipExists);
 			}
 			public HRESULT GetEnumerator(IOpcRelationshipEnumerator** relationshipEnumerator) mut
 			{
-				return VT.GetEnumerator(&this, relationshipEnumerator);
+				return VT.GetEnumerator(ref this, relationshipEnumerator);
 			}
 			public HRESULT GetEnumeratorForType(PWSTR relationshipType, IOpcRelationshipEnumerator** relationshipEnumerator) mut
 			{
-				return VT.GetEnumeratorForType(&this, relationshipType, relationshipEnumerator);
+				return VT.GetEnumeratorForType(ref this, relationshipType, relationshipEnumerator);
 			}
 			public HRESULT GetRelationshipsContentStream(IStream** contents) mut
 			{
-				return VT.GetRelationshipsContentStream(&this, contents);
+				return VT.GetRelationshipsContentStream(ref this, contents);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipIdentifier, IOpcRelationship** relationship) GetRelationship;
-				public new function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipIdentifier, PWSTR relationshipType, IUri* targetUri, OPC_URI_TARGET_MODE targetMode, IOpcRelationship** relationship) CreateRelationship;
-				public new function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipIdentifier) DeleteRelationship;
-				public new function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipIdentifier, BOOL* relationshipExists) RelationshipExists;
-				public new function HRESULT(IOpcRelationshipSet *self, IOpcRelationshipEnumerator** relationshipEnumerator) GetEnumerator;
-				public new function HRESULT(IOpcRelationshipSet *self, PWSTR relationshipType, IOpcRelationshipEnumerator** relationshipEnumerator) GetEnumeratorForType;
-				public new function HRESULT(IOpcRelationshipSet *self, IStream** contents) GetRelationshipsContentStream;
+				public new function HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier, IOpcRelationship** relationship) GetRelationship;
+				public new function HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier, PWSTR relationshipType, IUri* targetUri, OPC_URI_TARGET_MODE targetMode, IOpcRelationship** relationship) CreateRelationship;
+				public new function HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier) DeleteRelationship;
+				public new function HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipIdentifier, out BOOL relationshipExists) RelationshipExists;
+				public new function HRESULT(ref IOpcRelationshipSet self, IOpcRelationshipEnumerator** relationshipEnumerator) GetEnumerator;
+				public new function HRESULT(ref IOpcRelationshipSet self, PWSTR relationshipType, IOpcRelationshipEnumerator** relationshipEnumerator) GetEnumeratorForType;
+				public new function HRESULT(ref IOpcRelationshipSet self, IStream** contents) GetRelationshipsContentStream;
 			}
 		}
 		[CRepr]
@@ -425,29 +425,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveNext(BOOL* hasNext) mut
+			public HRESULT MoveNext(out BOOL hasNext) mut
 			{
-				return VT.MoveNext(&this, hasNext);
+				return VT.MoveNext(ref this, out hasNext);
 			}
-			public HRESULT MovePrevious(BOOL* hasPrevious) mut
+			public HRESULT MovePrevious(out BOOL hasPrevious) mut
 			{
-				return VT.MovePrevious(&this, hasPrevious);
+				return VT.MovePrevious(ref this, out hasPrevious);
 			}
 			public HRESULT GetCurrent(IOpcPart** part) mut
 			{
-				return VT.GetCurrent(&this, part);
+				return VT.GetCurrent(ref this, part);
 			}
 			public HRESULT Clone(IOpcPartEnumerator** copy) mut
 			{
-				return VT.Clone(&this, copy);
+				return VT.Clone(ref this, copy);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcPartEnumerator *self, BOOL* hasNext) MoveNext;
-				public new function HRESULT(IOpcPartEnumerator *self, BOOL* hasPrevious) MovePrevious;
-				public new function HRESULT(IOpcPartEnumerator *self, IOpcPart** part) GetCurrent;
-				public new function HRESULT(IOpcPartEnumerator *self, IOpcPartEnumerator** copy) Clone;
+				public new function HRESULT(ref IOpcPartEnumerator self, out BOOL hasNext) MoveNext;
+				public new function HRESULT(ref IOpcPartEnumerator self, out BOOL hasPrevious) MovePrevious;
+				public new function HRESULT(ref IOpcPartEnumerator self, IOpcPart** part) GetCurrent;
+				public new function HRESULT(ref IOpcPartEnumerator self, IOpcPartEnumerator** copy) Clone;
 			}
 		}
 		[CRepr]
@@ -457,29 +457,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveNext(BOOL* hasNext) mut
+			public HRESULT MoveNext(out BOOL hasNext) mut
 			{
-				return VT.MoveNext(&this, hasNext);
+				return VT.MoveNext(ref this, out hasNext);
 			}
-			public HRESULT MovePrevious(BOOL* hasPrevious) mut
+			public HRESULT MovePrevious(out BOOL hasPrevious) mut
 			{
-				return VT.MovePrevious(&this, hasPrevious);
+				return VT.MovePrevious(ref this, out hasPrevious);
 			}
 			public HRESULT GetCurrent(IOpcRelationship** relationship) mut
 			{
-				return VT.GetCurrent(&this, relationship);
+				return VT.GetCurrent(ref this, relationship);
 			}
 			public HRESULT Clone(IOpcRelationshipEnumerator** copy) mut
 			{
-				return VT.Clone(&this, copy);
+				return VT.Clone(ref this, copy);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcRelationshipEnumerator *self, BOOL* hasNext) MoveNext;
-				public new function HRESULT(IOpcRelationshipEnumerator *self, BOOL* hasPrevious) MovePrevious;
-				public new function HRESULT(IOpcRelationshipEnumerator *self, IOpcRelationship** relationship) GetCurrent;
-				public new function HRESULT(IOpcRelationshipEnumerator *self, IOpcRelationshipEnumerator** copy) Clone;
+				public new function HRESULT(ref IOpcRelationshipEnumerator self, out BOOL hasNext) MoveNext;
+				public new function HRESULT(ref IOpcRelationshipEnumerator self, out BOOL hasPrevious) MovePrevious;
+				public new function HRESULT(ref IOpcRelationshipEnumerator self, IOpcRelationship** relationship) GetCurrent;
+				public new function HRESULT(ref IOpcRelationshipEnumerator self, IOpcRelationshipEnumerator** copy) Clone;
 			}
 		}
 		[CRepr]
@@ -491,32 +491,32 @@ namespace Win32
 			
 			public HRESULT GetPartName(IOpcPartUri** partName) mut
 			{
-				return VT.GetPartName(&this, partName);
+				return VT.GetPartName(ref this, partName);
 			}
 			public HRESULT GetContentType(PWSTR* contentType) mut
 			{
-				return VT.GetContentType(&this, contentType);
+				return VT.GetContentType(ref this, contentType);
 			}
 			public HRESULT GetDigestMethod(PWSTR* digestMethod) mut
 			{
-				return VT.GetDigestMethod(&this, digestMethod);
+				return VT.GetDigestMethod(ref this, digestMethod);
 			}
-			public HRESULT GetDigestValue(uint8** digestValue, uint32* count) mut
+			public HRESULT GetDigestValue(uint8** digestValue, out uint32 count) mut
 			{
-				return VT.GetDigestValue(&this, digestValue, count);
+				return VT.GetDigestValue(ref this, digestValue, out count);
 			}
-			public HRESULT GetTransformMethod(OPC_CANONICALIZATION_METHOD* transformMethod) mut
+			public HRESULT GetTransformMethod(out OPC_CANONICALIZATION_METHOD transformMethod) mut
 			{
-				return VT.GetTransformMethod(&this, transformMethod);
+				return VT.GetTransformMethod(ref this, out transformMethod);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignaturePartReference *self, IOpcPartUri** partName) GetPartName;
-				public new function HRESULT(IOpcSignaturePartReference *self, PWSTR* contentType) GetContentType;
-				public new function HRESULT(IOpcSignaturePartReference *self, PWSTR* digestMethod) GetDigestMethod;
-				public new function HRESULT(IOpcSignaturePartReference *self, uint8** digestValue, uint32* count) GetDigestValue;
-				public new function HRESULT(IOpcSignaturePartReference *self, OPC_CANONICALIZATION_METHOD* transformMethod) GetTransformMethod;
+				public new function HRESULT(ref IOpcSignaturePartReference self, IOpcPartUri** partName) GetPartName;
+				public new function HRESULT(ref IOpcSignaturePartReference self, PWSTR* contentType) GetContentType;
+				public new function HRESULT(ref IOpcSignaturePartReference self, PWSTR* digestMethod) GetDigestMethod;
+				public new function HRESULT(ref IOpcSignaturePartReference self, uint8** digestValue, out uint32 count) GetDigestValue;
+				public new function HRESULT(ref IOpcSignaturePartReference self, out OPC_CANONICALIZATION_METHOD transformMethod) GetTransformMethod;
 			}
 		}
 		[CRepr]
@@ -528,37 +528,37 @@ namespace Win32
 			
 			public HRESULT GetSourceUri(IOpcUri** sourceUri) mut
 			{
-				return VT.GetSourceUri(&this, sourceUri);
+				return VT.GetSourceUri(ref this, sourceUri);
 			}
 			public HRESULT GetDigestMethod(PWSTR* digestMethod) mut
 			{
-				return VT.GetDigestMethod(&this, digestMethod);
+				return VT.GetDigestMethod(ref this, digestMethod);
 			}
-			public HRESULT GetDigestValue(uint8** digestValue, uint32* count) mut
+			public HRESULT GetDigestValue(uint8** digestValue, out uint32 count) mut
 			{
-				return VT.GetDigestValue(&this, digestValue, count);
+				return VT.GetDigestValue(ref this, digestValue, out count);
 			}
-			public HRESULT GetTransformMethod(OPC_CANONICALIZATION_METHOD* transformMethod) mut
+			public HRESULT GetTransformMethod(out OPC_CANONICALIZATION_METHOD transformMethod) mut
 			{
-				return VT.GetTransformMethod(&this, transformMethod);
+				return VT.GetTransformMethod(ref this, out transformMethod);
 			}
-			public HRESULT GetRelationshipSigningOption(OPC_RELATIONSHIPS_SIGNING_OPTION* relationshipSigningOption) mut
+			public HRESULT GetRelationshipSigningOption(out OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption) mut
 			{
-				return VT.GetRelationshipSigningOption(&this, relationshipSigningOption);
+				return VT.GetRelationshipSigningOption(ref this, out relationshipSigningOption);
 			}
 			public HRESULT GetRelationshipSelectorEnumerator(IOpcRelationshipSelectorEnumerator** selectorEnumerator) mut
 			{
-				return VT.GetRelationshipSelectorEnumerator(&this, selectorEnumerator);
+				return VT.GetRelationshipSelectorEnumerator(ref this, selectorEnumerator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignatureRelationshipReference *self, IOpcUri** sourceUri) GetSourceUri;
-				public new function HRESULT(IOpcSignatureRelationshipReference *self, PWSTR* digestMethod) GetDigestMethod;
-				public new function HRESULT(IOpcSignatureRelationshipReference *self, uint8** digestValue, uint32* count) GetDigestValue;
-				public new function HRESULT(IOpcSignatureRelationshipReference *self, OPC_CANONICALIZATION_METHOD* transformMethod) GetTransformMethod;
-				public new function HRESULT(IOpcSignatureRelationshipReference *self, OPC_RELATIONSHIPS_SIGNING_OPTION* relationshipSigningOption) GetRelationshipSigningOption;
-				public new function HRESULT(IOpcSignatureRelationshipReference *self, IOpcRelationshipSelectorEnumerator** selectorEnumerator) GetRelationshipSelectorEnumerator;
+				public new function HRESULT(ref IOpcSignatureRelationshipReference self, IOpcUri** sourceUri) GetSourceUri;
+				public new function HRESULT(ref IOpcSignatureRelationshipReference self, PWSTR* digestMethod) GetDigestMethod;
+				public new function HRESULT(ref IOpcSignatureRelationshipReference self, uint8** digestValue, out uint32 count) GetDigestValue;
+				public new function HRESULT(ref IOpcSignatureRelationshipReference self, out OPC_CANONICALIZATION_METHOD transformMethod) GetTransformMethod;
+				public new function HRESULT(ref IOpcSignatureRelationshipReference self, out OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption) GetRelationshipSigningOption;
+				public new function HRESULT(ref IOpcSignatureRelationshipReference self, IOpcRelationshipSelectorEnumerator** selectorEnumerator) GetRelationshipSelectorEnumerator;
 			}
 		}
 		[CRepr]
@@ -568,19 +568,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSelectorType(OPC_RELATIONSHIP_SELECTOR* selector) mut
+			public HRESULT GetSelectorType(out OPC_RELATIONSHIP_SELECTOR selector) mut
 			{
-				return VT.GetSelectorType(&this, selector);
+				return VT.GetSelectorType(ref this, out selector);
 			}
 			public HRESULT GetSelectionCriterion(PWSTR* selectionCriterion) mut
 			{
-				return VT.GetSelectionCriterion(&this, selectionCriterion);
+				return VT.GetSelectionCriterion(ref this, selectionCriterion);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcRelationshipSelector *self, OPC_RELATIONSHIP_SELECTOR* selector) GetSelectorType;
-				public new function HRESULT(IOpcRelationshipSelector *self, PWSTR* selectionCriterion) GetSelectionCriterion;
+				public new function HRESULT(ref IOpcRelationshipSelector self, out OPC_RELATIONSHIP_SELECTOR selector) GetSelectorType;
+				public new function HRESULT(ref IOpcRelationshipSelector self, PWSTR* selectionCriterion) GetSelectionCriterion;
 			}
 		}
 		[CRepr]
@@ -592,37 +592,37 @@ namespace Win32
 			
 			public HRESULT GetId(PWSTR* referenceId) mut
 			{
-				return VT.GetId(&this, referenceId);
+				return VT.GetId(ref this, referenceId);
 			}
 			public HRESULT GetUri(IUri** referenceUri) mut
 			{
-				return VT.GetUri(&this, referenceUri);
+				return VT.GetUri(ref this, referenceUri);
 			}
 			public HRESULT ComGetType(PWSTR* type) mut
 			{
-				return VT.ComGetType(&this, type);
+				return VT.ComGetType(ref this, type);
 			}
-			public HRESULT GetTransformMethod(OPC_CANONICALIZATION_METHOD* transformMethod) mut
+			public HRESULT GetTransformMethod(out OPC_CANONICALIZATION_METHOD transformMethod) mut
 			{
-				return VT.GetTransformMethod(&this, transformMethod);
+				return VT.GetTransformMethod(ref this, out transformMethod);
 			}
 			public HRESULT GetDigestMethod(PWSTR* digestMethod) mut
 			{
-				return VT.GetDigestMethod(&this, digestMethod);
+				return VT.GetDigestMethod(ref this, digestMethod);
 			}
-			public HRESULT GetDigestValue(uint8** digestValue, uint32* count) mut
+			public HRESULT GetDigestValue(uint8** digestValue, out uint32 count) mut
 			{
-				return VT.GetDigestValue(&this, digestValue, count);
+				return VT.GetDigestValue(ref this, digestValue, out count);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignatureReference *self, PWSTR* referenceId) GetId;
-				public new function HRESULT(IOpcSignatureReference *self, IUri** referenceUri) GetUri;
-				public new function HRESULT(IOpcSignatureReference *self, PWSTR* type) ComGetType;
-				public new function HRESULT(IOpcSignatureReference *self, OPC_CANONICALIZATION_METHOD* transformMethod) GetTransformMethod;
-				public new function HRESULT(IOpcSignatureReference *self, PWSTR* digestMethod) GetDigestMethod;
-				public new function HRESULT(IOpcSignatureReference *self, uint8** digestValue, uint32* count) GetDigestValue;
+				public new function HRESULT(ref IOpcSignatureReference self, PWSTR* referenceId) GetId;
+				public new function HRESULT(ref IOpcSignatureReference self, IUri** referenceUri) GetUri;
+				public new function HRESULT(ref IOpcSignatureReference self, PWSTR* type) ComGetType;
+				public new function HRESULT(ref IOpcSignatureReference self, out OPC_CANONICALIZATION_METHOD transformMethod) GetTransformMethod;
+				public new function HRESULT(ref IOpcSignatureReference self, PWSTR* digestMethod) GetDigestMethod;
+				public new function HRESULT(ref IOpcSignatureReference self, uint8** digestValue, out uint32 count) GetDigestValue;
 			}
 		}
 		[CRepr]
@@ -632,14 +632,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetXml(uint8** xmlMarkup, uint32* count) mut
+			public HRESULT GetXml(uint8** xmlMarkup, out uint32 count) mut
 			{
-				return VT.GetXml(&this, xmlMarkup, count);
+				return VT.GetXml(ref this, xmlMarkup, out count);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignatureCustomObject *self, uint8** xmlMarkup, uint32* count) GetXml;
+				public new function HRESULT(ref IOpcSignatureCustomObject self, uint8** xmlMarkup, out uint32 count) GetXml;
 			}
 		}
 		[CRepr]
@@ -649,84 +649,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNamespaces(PWSTR** prefixes, PWSTR** namespaces, uint32* count) mut
+			public HRESULT GetNamespaces(PWSTR** prefixes, PWSTR** namespaces, out uint32 count) mut
 			{
-				return VT.GetNamespaces(&this, prefixes, namespaces, count);
+				return VT.GetNamespaces(ref this, prefixes, namespaces, out count);
 			}
 			public HRESULT GetSignatureId(PWSTR* signatureId) mut
 			{
-				return VT.GetSignatureId(&this, signatureId);
+				return VT.GetSignatureId(ref this, signatureId);
 			}
-			public HRESULT GetSignaturePartName(IOpcPartUri** signaturePartName) mut
+			public HRESULT GetSignaturePartName(out IOpcPartUri* signaturePartName) mut
 			{
-				return VT.GetSignaturePartName(&this, signaturePartName);
+				return VT.GetSignaturePartName(ref this, out signaturePartName);
 			}
 			public HRESULT GetSignatureMethod(PWSTR* signatureMethod) mut
 			{
-				return VT.GetSignatureMethod(&this, signatureMethod);
+				return VT.GetSignatureMethod(ref this, signatureMethod);
 			}
-			public HRESULT GetCanonicalizationMethod(OPC_CANONICALIZATION_METHOD* canonicalizationMethod) mut
+			public HRESULT GetCanonicalizationMethod(out OPC_CANONICALIZATION_METHOD canonicalizationMethod) mut
 			{
-				return VT.GetCanonicalizationMethod(&this, canonicalizationMethod);
+				return VT.GetCanonicalizationMethod(ref this, out canonicalizationMethod);
 			}
-			public HRESULT GetSignatureValue(uint8** signatureValue, uint32* count) mut
+			public HRESULT GetSignatureValue(uint8** signatureValue, out uint32 count) mut
 			{
-				return VT.GetSignatureValue(&this, signatureValue, count);
+				return VT.GetSignatureValue(ref this, signatureValue, out count);
 			}
-			public HRESULT GetSignaturePartReferenceEnumerator(IOpcSignaturePartReferenceEnumerator** partReferenceEnumerator) mut
+			public HRESULT GetSignaturePartReferenceEnumerator(out IOpcSignaturePartReferenceEnumerator* partReferenceEnumerator) mut
 			{
-				return VT.GetSignaturePartReferenceEnumerator(&this, partReferenceEnumerator);
+				return VT.GetSignaturePartReferenceEnumerator(ref this, out partReferenceEnumerator);
 			}
-			public HRESULT GetSignatureRelationshipReferenceEnumerator(IOpcSignatureRelationshipReferenceEnumerator** relationshipReferenceEnumerator) mut
+			public HRESULT GetSignatureRelationshipReferenceEnumerator(out IOpcSignatureRelationshipReferenceEnumerator* relationshipReferenceEnumerator) mut
 			{
-				return VT.GetSignatureRelationshipReferenceEnumerator(&this, relationshipReferenceEnumerator);
+				return VT.GetSignatureRelationshipReferenceEnumerator(ref this, out relationshipReferenceEnumerator);
 			}
 			public HRESULT GetSigningTime(PWSTR* signingTime) mut
 			{
-				return VT.GetSigningTime(&this, signingTime);
+				return VT.GetSigningTime(ref this, signingTime);
 			}
-			public HRESULT GetTimeFormat(OPC_SIGNATURE_TIME_FORMAT* timeFormat) mut
+			public HRESULT GetTimeFormat(out OPC_SIGNATURE_TIME_FORMAT timeFormat) mut
 			{
-				return VT.GetTimeFormat(&this, timeFormat);
+				return VT.GetTimeFormat(ref this, out timeFormat);
 			}
-			public HRESULT GetPackageObjectReference(IOpcSignatureReference** packageObjectReference) mut
+			public HRESULT GetPackageObjectReference(out IOpcSignatureReference* packageObjectReference) mut
 			{
-				return VT.GetPackageObjectReference(&this, packageObjectReference);
+				return VT.GetPackageObjectReference(ref this, out packageObjectReference);
 			}
-			public HRESULT GetCertificateEnumerator(IOpcCertificateEnumerator** certificateEnumerator) mut
+			public HRESULT GetCertificateEnumerator(out IOpcCertificateEnumerator* certificateEnumerator) mut
 			{
-				return VT.GetCertificateEnumerator(&this, certificateEnumerator);
+				return VT.GetCertificateEnumerator(ref this, out certificateEnumerator);
 			}
-			public HRESULT GetCustomReferenceEnumerator(IOpcSignatureReferenceEnumerator** customReferenceEnumerator) mut
+			public HRESULT GetCustomReferenceEnumerator(out IOpcSignatureReferenceEnumerator* customReferenceEnumerator) mut
 			{
-				return VT.GetCustomReferenceEnumerator(&this, customReferenceEnumerator);
+				return VT.GetCustomReferenceEnumerator(ref this, out customReferenceEnumerator);
 			}
-			public HRESULT GetCustomObjectEnumerator(IOpcSignatureCustomObjectEnumerator** customObjectEnumerator) mut
+			public HRESULT GetCustomObjectEnumerator(out IOpcSignatureCustomObjectEnumerator* customObjectEnumerator) mut
 			{
-				return VT.GetCustomObjectEnumerator(&this, customObjectEnumerator);
+				return VT.GetCustomObjectEnumerator(ref this, out customObjectEnumerator);
 			}
-			public HRESULT GetSignatureXml(uint8** signatureXml, uint32* count) mut
+			public HRESULT GetSignatureXml(out uint8* signatureXml, out uint32 count) mut
 			{
-				return VT.GetSignatureXml(&this, signatureXml, count);
+				return VT.GetSignatureXml(ref this, out signatureXml, out count);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcDigitalSignature *self, PWSTR** prefixes, PWSTR** namespaces, uint32* count) GetNamespaces;
-				public new function HRESULT(IOpcDigitalSignature *self, PWSTR* signatureId) GetSignatureId;
-				public new function HRESULT(IOpcDigitalSignature *self, IOpcPartUri** signaturePartName) GetSignaturePartName;
-				public new function HRESULT(IOpcDigitalSignature *self, PWSTR* signatureMethod) GetSignatureMethod;
-				public new function HRESULT(IOpcDigitalSignature *self, OPC_CANONICALIZATION_METHOD* canonicalizationMethod) GetCanonicalizationMethod;
-				public new function HRESULT(IOpcDigitalSignature *self, uint8** signatureValue, uint32* count) GetSignatureValue;
-				public new function HRESULT(IOpcDigitalSignature *self, IOpcSignaturePartReferenceEnumerator** partReferenceEnumerator) GetSignaturePartReferenceEnumerator;
-				public new function HRESULT(IOpcDigitalSignature *self, IOpcSignatureRelationshipReferenceEnumerator** relationshipReferenceEnumerator) GetSignatureRelationshipReferenceEnumerator;
-				public new function HRESULT(IOpcDigitalSignature *self, PWSTR* signingTime) GetSigningTime;
-				public new function HRESULT(IOpcDigitalSignature *self, OPC_SIGNATURE_TIME_FORMAT* timeFormat) GetTimeFormat;
-				public new function HRESULT(IOpcDigitalSignature *self, IOpcSignatureReference** packageObjectReference) GetPackageObjectReference;
-				public new function HRESULT(IOpcDigitalSignature *self, IOpcCertificateEnumerator** certificateEnumerator) GetCertificateEnumerator;
-				public new function HRESULT(IOpcDigitalSignature *self, IOpcSignatureReferenceEnumerator** customReferenceEnumerator) GetCustomReferenceEnumerator;
-				public new function HRESULT(IOpcDigitalSignature *self, IOpcSignatureCustomObjectEnumerator** customObjectEnumerator) GetCustomObjectEnumerator;
-				public new function HRESULT(IOpcDigitalSignature *self, uint8** signatureXml, uint32* count) GetSignatureXml;
+				public new function HRESULT(ref IOpcDigitalSignature self, PWSTR** prefixes, PWSTR** namespaces, out uint32 count) GetNamespaces;
+				public new function HRESULT(ref IOpcDigitalSignature self, PWSTR* signatureId) GetSignatureId;
+				public new function HRESULT(ref IOpcDigitalSignature self, out IOpcPartUri* signaturePartName) GetSignaturePartName;
+				public new function HRESULT(ref IOpcDigitalSignature self, PWSTR* signatureMethod) GetSignatureMethod;
+				public new function HRESULT(ref IOpcDigitalSignature self, out OPC_CANONICALIZATION_METHOD canonicalizationMethod) GetCanonicalizationMethod;
+				public new function HRESULT(ref IOpcDigitalSignature self, uint8** signatureValue, out uint32 count) GetSignatureValue;
+				public new function HRESULT(ref IOpcDigitalSignature self, out IOpcSignaturePartReferenceEnumerator* partReferenceEnumerator) GetSignaturePartReferenceEnumerator;
+				public new function HRESULT(ref IOpcDigitalSignature self, out IOpcSignatureRelationshipReferenceEnumerator* relationshipReferenceEnumerator) GetSignatureRelationshipReferenceEnumerator;
+				public new function HRESULT(ref IOpcDigitalSignature self, PWSTR* signingTime) GetSigningTime;
+				public new function HRESULT(ref IOpcDigitalSignature self, out OPC_SIGNATURE_TIME_FORMAT timeFormat) GetTimeFormat;
+				public new function HRESULT(ref IOpcDigitalSignature self, out IOpcSignatureReference* packageObjectReference) GetPackageObjectReference;
+				public new function HRESULT(ref IOpcDigitalSignature self, out IOpcCertificateEnumerator* certificateEnumerator) GetCertificateEnumerator;
+				public new function HRESULT(ref IOpcDigitalSignature self, out IOpcSignatureReferenceEnumerator* customReferenceEnumerator) GetCustomReferenceEnumerator;
+				public new function HRESULT(ref IOpcDigitalSignature self, out IOpcSignatureCustomObjectEnumerator* customObjectEnumerator) GetCustomObjectEnumerator;
+				public new function HRESULT(ref IOpcDigitalSignature self, out uint8* signatureXml, out uint32 count) GetSignatureXml;
 			}
 		}
 		[CRepr]
@@ -738,92 +738,92 @@ namespace Win32
 			
 			public HRESULT GetSignatureId(PWSTR* signatureId) mut
 			{
-				return VT.GetSignatureId(&this, signatureId);
+				return VT.GetSignatureId(ref this, signatureId);
 			}
 			public HRESULT SetSignatureId(PWSTR signatureId) mut
 			{
-				return VT.SetSignatureId(&this, signatureId);
+				return VT.SetSignatureId(ref this, signatureId);
 			}
 			public HRESULT GetSignatureMethod(PWSTR* signatureMethod) mut
 			{
-				return VT.GetSignatureMethod(&this, signatureMethod);
+				return VT.GetSignatureMethod(ref this, signatureMethod);
 			}
 			public HRESULT SetSignatureMethod(PWSTR signatureMethod) mut
 			{
-				return VT.SetSignatureMethod(&this, signatureMethod);
+				return VT.SetSignatureMethod(ref this, signatureMethod);
 			}
 			public HRESULT GetDefaultDigestMethod(PWSTR* digestMethod) mut
 			{
-				return VT.GetDefaultDigestMethod(&this, digestMethod);
+				return VT.GetDefaultDigestMethod(ref this, digestMethod);
 			}
 			public HRESULT SetDefaultDigestMethod(PWSTR digestMethod) mut
 			{
-				return VT.SetDefaultDigestMethod(&this, digestMethod);
+				return VT.SetDefaultDigestMethod(ref this, digestMethod);
 			}
-			public HRESULT GetCertificateEmbeddingOption(OPC_CERTIFICATE_EMBEDDING_OPTION* embeddingOption) mut
+			public HRESULT GetCertificateEmbeddingOption(out OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) mut
 			{
-				return VT.GetCertificateEmbeddingOption(&this, embeddingOption);
+				return VT.GetCertificateEmbeddingOption(ref this, out embeddingOption);
 			}
 			public HRESULT SetCertificateEmbeddingOption(OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) mut
 			{
-				return VT.SetCertificateEmbeddingOption(&this, embeddingOption);
+				return VT.SetCertificateEmbeddingOption(ref this, embeddingOption);
 			}
-			public HRESULT GetTimeFormat(OPC_SIGNATURE_TIME_FORMAT* timeFormat) mut
+			public HRESULT GetTimeFormat(out OPC_SIGNATURE_TIME_FORMAT timeFormat) mut
 			{
-				return VT.GetTimeFormat(&this, timeFormat);
+				return VT.GetTimeFormat(ref this, out timeFormat);
 			}
 			public HRESULT SetTimeFormat(OPC_SIGNATURE_TIME_FORMAT timeFormat) mut
 			{
-				return VT.SetTimeFormat(&this, timeFormat);
+				return VT.SetTimeFormat(ref this, timeFormat);
 			}
 			public HRESULT GetSignaturePartReferenceSet(IOpcSignaturePartReferenceSet** partReferenceSet) mut
 			{
-				return VT.GetSignaturePartReferenceSet(&this, partReferenceSet);
+				return VT.GetSignaturePartReferenceSet(ref this, partReferenceSet);
 			}
 			public HRESULT GetSignatureRelationshipReferenceSet(IOpcSignatureRelationshipReferenceSet** relationshipReferenceSet) mut
 			{
-				return VT.GetSignatureRelationshipReferenceSet(&this, relationshipReferenceSet);
+				return VT.GetSignatureRelationshipReferenceSet(ref this, relationshipReferenceSet);
 			}
 			public HRESULT GetCustomObjectSet(IOpcSignatureCustomObjectSet** customObjectSet) mut
 			{
-				return VT.GetCustomObjectSet(&this, customObjectSet);
+				return VT.GetCustomObjectSet(ref this, customObjectSet);
 			}
 			public HRESULT GetCustomReferenceSet(IOpcSignatureReferenceSet** customReferenceSet) mut
 			{
-				return VT.GetCustomReferenceSet(&this, customReferenceSet);
+				return VT.GetCustomReferenceSet(ref this, customReferenceSet);
 			}
 			public HRESULT GetCertificateSet(IOpcCertificateSet** certificateSet) mut
 			{
-				return VT.GetCertificateSet(&this, certificateSet);
+				return VT.GetCertificateSet(ref this, certificateSet);
 			}
 			public HRESULT GetSignaturePartName(IOpcPartUri** signaturePartName) mut
 			{
-				return VT.GetSignaturePartName(&this, signaturePartName);
+				return VT.GetSignaturePartName(ref this, signaturePartName);
 			}
 			public HRESULT SetSignaturePartName(IOpcPartUri* signaturePartName) mut
 			{
-				return VT.SetSignaturePartName(&this, signaturePartName);
+				return VT.SetSignaturePartName(ref this, signaturePartName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSigningOptions *self, PWSTR* signatureId) GetSignatureId;
-				public new function HRESULT(IOpcSigningOptions *self, PWSTR signatureId) SetSignatureId;
-				public new function HRESULT(IOpcSigningOptions *self, PWSTR* signatureMethod) GetSignatureMethod;
-				public new function HRESULT(IOpcSigningOptions *self, PWSTR signatureMethod) SetSignatureMethod;
-				public new function HRESULT(IOpcSigningOptions *self, PWSTR* digestMethod) GetDefaultDigestMethod;
-				public new function HRESULT(IOpcSigningOptions *self, PWSTR digestMethod) SetDefaultDigestMethod;
-				public new function HRESULT(IOpcSigningOptions *self, OPC_CERTIFICATE_EMBEDDING_OPTION* embeddingOption) GetCertificateEmbeddingOption;
-				public new function HRESULT(IOpcSigningOptions *self, OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) SetCertificateEmbeddingOption;
-				public new function HRESULT(IOpcSigningOptions *self, OPC_SIGNATURE_TIME_FORMAT* timeFormat) GetTimeFormat;
-				public new function HRESULT(IOpcSigningOptions *self, OPC_SIGNATURE_TIME_FORMAT timeFormat) SetTimeFormat;
-				public new function HRESULT(IOpcSigningOptions *self, IOpcSignaturePartReferenceSet** partReferenceSet) GetSignaturePartReferenceSet;
-				public new function HRESULT(IOpcSigningOptions *self, IOpcSignatureRelationshipReferenceSet** relationshipReferenceSet) GetSignatureRelationshipReferenceSet;
-				public new function HRESULT(IOpcSigningOptions *self, IOpcSignatureCustomObjectSet** customObjectSet) GetCustomObjectSet;
-				public new function HRESULT(IOpcSigningOptions *self, IOpcSignatureReferenceSet** customReferenceSet) GetCustomReferenceSet;
-				public new function HRESULT(IOpcSigningOptions *self, IOpcCertificateSet** certificateSet) GetCertificateSet;
-				public new function HRESULT(IOpcSigningOptions *self, IOpcPartUri** signaturePartName) GetSignaturePartName;
-				public new function HRESULT(IOpcSigningOptions *self, IOpcPartUri* signaturePartName) SetSignaturePartName;
+				public new function HRESULT(ref IOpcSigningOptions self, PWSTR* signatureId) GetSignatureId;
+				public new function HRESULT(ref IOpcSigningOptions self, PWSTR signatureId) SetSignatureId;
+				public new function HRESULT(ref IOpcSigningOptions self, PWSTR* signatureMethod) GetSignatureMethod;
+				public new function HRESULT(ref IOpcSigningOptions self, PWSTR signatureMethod) SetSignatureMethod;
+				public new function HRESULT(ref IOpcSigningOptions self, PWSTR* digestMethod) GetDefaultDigestMethod;
+				public new function HRESULT(ref IOpcSigningOptions self, PWSTR digestMethod) SetDefaultDigestMethod;
+				public new function HRESULT(ref IOpcSigningOptions self, out OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) GetCertificateEmbeddingOption;
+				public new function HRESULT(ref IOpcSigningOptions self, OPC_CERTIFICATE_EMBEDDING_OPTION embeddingOption) SetCertificateEmbeddingOption;
+				public new function HRESULT(ref IOpcSigningOptions self, out OPC_SIGNATURE_TIME_FORMAT timeFormat) GetTimeFormat;
+				public new function HRESULT(ref IOpcSigningOptions self, OPC_SIGNATURE_TIME_FORMAT timeFormat) SetTimeFormat;
+				public new function HRESULT(ref IOpcSigningOptions self, IOpcSignaturePartReferenceSet** partReferenceSet) GetSignaturePartReferenceSet;
+				public new function HRESULT(ref IOpcSigningOptions self, IOpcSignatureRelationshipReferenceSet** relationshipReferenceSet) GetSignatureRelationshipReferenceSet;
+				public new function HRESULT(ref IOpcSigningOptions self, IOpcSignatureCustomObjectSet** customObjectSet) GetCustomObjectSet;
+				public new function HRESULT(ref IOpcSigningOptions self, IOpcSignatureReferenceSet** customReferenceSet) GetCustomReferenceSet;
+				public new function HRESULT(ref IOpcSigningOptions self, IOpcCertificateSet** certificateSet) GetCertificateSet;
+				public new function HRESULT(ref IOpcSigningOptions self, IOpcPartUri** signaturePartName) GetSignaturePartName;
+				public new function HRESULT(ref IOpcSigningOptions self, IOpcPartUri* signaturePartName) SetSignaturePartName;
 			}
 		}
 		[CRepr]
@@ -833,49 +833,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSignatureOriginPartName(IOpcPartUri** signatureOriginPartName) mut
+			public HRESULT GetSignatureOriginPartName(out IOpcPartUri* signatureOriginPartName) mut
 			{
-				return VT.GetSignatureOriginPartName(&this, signatureOriginPartName);
+				return VT.GetSignatureOriginPartName(ref this, out signatureOriginPartName);
 			}
-			public HRESULT SetSignatureOriginPartName(IOpcPartUri* signatureOriginPartName) mut
+			public HRESULT SetSignatureOriginPartName(ref IOpcPartUri signatureOriginPartName) mut
 			{
-				return VT.SetSignatureOriginPartName(&this, signatureOriginPartName);
+				return VT.SetSignatureOriginPartName(ref this, ref signatureOriginPartName);
 			}
-			public HRESULT GetSignatureEnumerator(IOpcDigitalSignatureEnumerator** signatureEnumerator) mut
+			public HRESULT GetSignatureEnumerator(out IOpcDigitalSignatureEnumerator* signatureEnumerator) mut
 			{
-				return VT.GetSignatureEnumerator(&this, signatureEnumerator);
+				return VT.GetSignatureEnumerator(ref this, out signatureEnumerator);
 			}
-			public HRESULT RemoveSignature(IOpcPartUri* signaturePartName) mut
+			public HRESULT RemoveSignature(ref IOpcPartUri signaturePartName) mut
 			{
-				return VT.RemoveSignature(&this, signaturePartName);
+				return VT.RemoveSignature(ref this, ref signaturePartName);
 			}
-			public HRESULT CreateSigningOptions(IOpcSigningOptions** signingOptions) mut
+			public HRESULT CreateSigningOptions(out IOpcSigningOptions* signingOptions) mut
 			{
-				return VT.CreateSigningOptions(&this, signingOptions);
+				return VT.CreateSigningOptions(ref this, out signingOptions);
 			}
-			public HRESULT Validate(IOpcDigitalSignature* signature, CERT_CONTEXT* certificate, OPC_SIGNATURE_VALIDATION_RESULT* validationResult) mut
+			public HRESULT Validate(ref IOpcDigitalSignature signature, in CERT_CONTEXT certificate, out OPC_SIGNATURE_VALIDATION_RESULT validationResult) mut
 			{
-				return VT.Validate(&this, signature, certificate, validationResult);
+				return VT.Validate(ref this, ref signature, certificate, out validationResult);
 			}
-			public HRESULT Sign(CERT_CONTEXT* certificate, IOpcSigningOptions* signingOptions, IOpcDigitalSignature** digitalSignature) mut
+			public HRESULT Sign(in CERT_CONTEXT certificate, ref IOpcSigningOptions signingOptions, out IOpcDigitalSignature* digitalSignature) mut
 			{
-				return VT.Sign(&this, certificate, signingOptions, digitalSignature);
+				return VT.Sign(ref this, certificate, ref signingOptions, out digitalSignature);
 			}
-			public HRESULT ReplaceSignatureXml(IOpcPartUri* signaturePartName, uint8* newSignatureXml, uint32 count, IOpcDigitalSignature** digitalSignature) mut
+			public HRESULT ReplaceSignatureXml(ref IOpcPartUri signaturePartName, in uint8 newSignatureXml, uint32 count, out IOpcDigitalSignature* digitalSignature) mut
 			{
-				return VT.ReplaceSignatureXml(&this, signaturePartName, newSignatureXml, count, digitalSignature);
+				return VT.ReplaceSignatureXml(ref this, ref signaturePartName, newSignatureXml, count, out digitalSignature);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcDigitalSignatureManager *self, IOpcPartUri** signatureOriginPartName) GetSignatureOriginPartName;
-				public new function HRESULT(IOpcDigitalSignatureManager *self, IOpcPartUri* signatureOriginPartName) SetSignatureOriginPartName;
-				public new function HRESULT(IOpcDigitalSignatureManager *self, IOpcDigitalSignatureEnumerator** signatureEnumerator) GetSignatureEnumerator;
-				public new function HRESULT(IOpcDigitalSignatureManager *self, IOpcPartUri* signaturePartName) RemoveSignature;
-				public new function HRESULT(IOpcDigitalSignatureManager *self, IOpcSigningOptions** signingOptions) CreateSigningOptions;
-				public new function HRESULT(IOpcDigitalSignatureManager *self, IOpcDigitalSignature* signature, CERT_CONTEXT* certificate, OPC_SIGNATURE_VALIDATION_RESULT* validationResult) Validate;
-				public new function HRESULT(IOpcDigitalSignatureManager *self, CERT_CONTEXT* certificate, IOpcSigningOptions* signingOptions, IOpcDigitalSignature** digitalSignature) Sign;
-				public new function HRESULT(IOpcDigitalSignatureManager *self, IOpcPartUri* signaturePartName, uint8* newSignatureXml, uint32 count, IOpcDigitalSignature** digitalSignature) ReplaceSignatureXml;
+				public new function HRESULT(ref IOpcDigitalSignatureManager self, out IOpcPartUri* signatureOriginPartName) GetSignatureOriginPartName;
+				public new function HRESULT(ref IOpcDigitalSignatureManager self, ref IOpcPartUri signatureOriginPartName) SetSignatureOriginPartName;
+				public new function HRESULT(ref IOpcDigitalSignatureManager self, out IOpcDigitalSignatureEnumerator* signatureEnumerator) GetSignatureEnumerator;
+				public new function HRESULT(ref IOpcDigitalSignatureManager self, ref IOpcPartUri signaturePartName) RemoveSignature;
+				public new function HRESULT(ref IOpcDigitalSignatureManager self, out IOpcSigningOptions* signingOptions) CreateSigningOptions;
+				public new function HRESULT(ref IOpcDigitalSignatureManager self, ref IOpcDigitalSignature signature, in CERT_CONTEXT certificate, out OPC_SIGNATURE_VALIDATION_RESULT validationResult) Validate;
+				public new function HRESULT(ref IOpcDigitalSignatureManager self, in CERT_CONTEXT certificate, ref IOpcSigningOptions signingOptions, out IOpcDigitalSignature* digitalSignature) Sign;
+				public new function HRESULT(ref IOpcDigitalSignatureManager self, ref IOpcPartUri signaturePartName, in uint8 newSignatureXml, uint32 count, out IOpcDigitalSignature* digitalSignature) ReplaceSignatureXml;
 			}
 		}
 		[CRepr]
@@ -885,29 +885,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveNext(BOOL* hasNext) mut
+			public HRESULT MoveNext(out BOOL hasNext) mut
 			{
-				return VT.MoveNext(&this, hasNext);
+				return VT.MoveNext(ref this, out hasNext);
 			}
-			public HRESULT MovePrevious(BOOL* hasPrevious) mut
+			public HRESULT MovePrevious(out BOOL hasPrevious) mut
 			{
-				return VT.MovePrevious(&this, hasPrevious);
+				return VT.MovePrevious(ref this, out hasPrevious);
 			}
 			public HRESULT GetCurrent(IOpcSignaturePartReference** partReference) mut
 			{
-				return VT.GetCurrent(&this, partReference);
+				return VT.GetCurrent(ref this, partReference);
 			}
 			public HRESULT Clone(IOpcSignaturePartReferenceEnumerator** copy) mut
 			{
-				return VT.Clone(&this, copy);
+				return VT.Clone(ref this, copy);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignaturePartReferenceEnumerator *self, BOOL* hasNext) MoveNext;
-				public new function HRESULT(IOpcSignaturePartReferenceEnumerator *self, BOOL* hasPrevious) MovePrevious;
-				public new function HRESULT(IOpcSignaturePartReferenceEnumerator *self, IOpcSignaturePartReference** partReference) GetCurrent;
-				public new function HRESULT(IOpcSignaturePartReferenceEnumerator *self, IOpcSignaturePartReferenceEnumerator** copy) Clone;
+				public new function HRESULT(ref IOpcSignaturePartReferenceEnumerator self, out BOOL hasNext) MoveNext;
+				public new function HRESULT(ref IOpcSignaturePartReferenceEnumerator self, out BOOL hasPrevious) MovePrevious;
+				public new function HRESULT(ref IOpcSignaturePartReferenceEnumerator self, IOpcSignaturePartReference** partReference) GetCurrent;
+				public new function HRESULT(ref IOpcSignaturePartReferenceEnumerator self, IOpcSignaturePartReferenceEnumerator** copy) Clone;
 			}
 		}
 		[CRepr]
@@ -917,29 +917,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveNext(BOOL* hasNext) mut
+			public HRESULT MoveNext(out BOOL hasNext) mut
 			{
-				return VT.MoveNext(&this, hasNext);
+				return VT.MoveNext(ref this, out hasNext);
 			}
-			public HRESULT MovePrevious(BOOL* hasPrevious) mut
+			public HRESULT MovePrevious(out BOOL hasPrevious) mut
 			{
-				return VT.MovePrevious(&this, hasPrevious);
+				return VT.MovePrevious(ref this, out hasPrevious);
 			}
 			public HRESULT GetCurrent(IOpcSignatureRelationshipReference** relationshipReference) mut
 			{
-				return VT.GetCurrent(&this, relationshipReference);
+				return VT.GetCurrent(ref this, relationshipReference);
 			}
 			public HRESULT Clone(IOpcSignatureRelationshipReferenceEnumerator** copy) mut
 			{
-				return VT.Clone(&this, copy);
+				return VT.Clone(ref this, copy);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignatureRelationshipReferenceEnumerator *self, BOOL* hasNext) MoveNext;
-				public new function HRESULT(IOpcSignatureRelationshipReferenceEnumerator *self, BOOL* hasPrevious) MovePrevious;
-				public new function HRESULT(IOpcSignatureRelationshipReferenceEnumerator *self, IOpcSignatureRelationshipReference** relationshipReference) GetCurrent;
-				public new function HRESULT(IOpcSignatureRelationshipReferenceEnumerator *self, IOpcSignatureRelationshipReferenceEnumerator** copy) Clone;
+				public new function HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, out BOOL hasNext) MoveNext;
+				public new function HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, out BOOL hasPrevious) MovePrevious;
+				public new function HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, IOpcSignatureRelationshipReference** relationshipReference) GetCurrent;
+				public new function HRESULT(ref IOpcSignatureRelationshipReferenceEnumerator self, IOpcSignatureRelationshipReferenceEnumerator** copy) Clone;
 			}
 		}
 		[CRepr]
@@ -949,29 +949,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveNext(BOOL* hasNext) mut
+			public HRESULT MoveNext(out BOOL hasNext) mut
 			{
-				return VT.MoveNext(&this, hasNext);
+				return VT.MoveNext(ref this, out hasNext);
 			}
-			public HRESULT MovePrevious(BOOL* hasPrevious) mut
+			public HRESULT MovePrevious(out BOOL hasPrevious) mut
 			{
-				return VT.MovePrevious(&this, hasPrevious);
+				return VT.MovePrevious(ref this, out hasPrevious);
 			}
 			public HRESULT GetCurrent(IOpcRelationshipSelector** relationshipSelector) mut
 			{
-				return VT.GetCurrent(&this, relationshipSelector);
+				return VT.GetCurrent(ref this, relationshipSelector);
 			}
 			public HRESULT Clone(IOpcRelationshipSelectorEnumerator** copy) mut
 			{
-				return VT.Clone(&this, copy);
+				return VT.Clone(ref this, copy);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcRelationshipSelectorEnumerator *self, BOOL* hasNext) MoveNext;
-				public new function HRESULT(IOpcRelationshipSelectorEnumerator *self, BOOL* hasPrevious) MovePrevious;
-				public new function HRESULT(IOpcRelationshipSelectorEnumerator *self, IOpcRelationshipSelector** relationshipSelector) GetCurrent;
-				public new function HRESULT(IOpcRelationshipSelectorEnumerator *self, IOpcRelationshipSelectorEnumerator** copy) Clone;
+				public new function HRESULT(ref IOpcRelationshipSelectorEnumerator self, out BOOL hasNext) MoveNext;
+				public new function HRESULT(ref IOpcRelationshipSelectorEnumerator self, out BOOL hasPrevious) MovePrevious;
+				public new function HRESULT(ref IOpcRelationshipSelectorEnumerator self, IOpcRelationshipSelector** relationshipSelector) GetCurrent;
+				public new function HRESULT(ref IOpcRelationshipSelectorEnumerator self, IOpcRelationshipSelectorEnumerator** copy) Clone;
 			}
 		}
 		[CRepr]
@@ -981,29 +981,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveNext(BOOL* hasNext) mut
+			public HRESULT MoveNext(out BOOL hasNext) mut
 			{
-				return VT.MoveNext(&this, hasNext);
+				return VT.MoveNext(ref this, out hasNext);
 			}
-			public HRESULT MovePrevious(BOOL* hasPrevious) mut
+			public HRESULT MovePrevious(out BOOL hasPrevious) mut
 			{
-				return VT.MovePrevious(&this, hasPrevious);
+				return VT.MovePrevious(ref this, out hasPrevious);
 			}
 			public HRESULT GetCurrent(IOpcSignatureReference** reference) mut
 			{
-				return VT.GetCurrent(&this, reference);
+				return VT.GetCurrent(ref this, reference);
 			}
 			public HRESULT Clone(IOpcSignatureReferenceEnumerator** copy) mut
 			{
-				return VT.Clone(&this, copy);
+				return VT.Clone(ref this, copy);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignatureReferenceEnumerator *self, BOOL* hasNext) MoveNext;
-				public new function HRESULT(IOpcSignatureReferenceEnumerator *self, BOOL* hasPrevious) MovePrevious;
-				public new function HRESULT(IOpcSignatureReferenceEnumerator *self, IOpcSignatureReference** reference) GetCurrent;
-				public new function HRESULT(IOpcSignatureReferenceEnumerator *self, IOpcSignatureReferenceEnumerator** copy) Clone;
+				public new function HRESULT(ref IOpcSignatureReferenceEnumerator self, out BOOL hasNext) MoveNext;
+				public new function HRESULT(ref IOpcSignatureReferenceEnumerator self, out BOOL hasPrevious) MovePrevious;
+				public new function HRESULT(ref IOpcSignatureReferenceEnumerator self, IOpcSignatureReference** reference) GetCurrent;
+				public new function HRESULT(ref IOpcSignatureReferenceEnumerator self, IOpcSignatureReferenceEnumerator** copy) Clone;
 			}
 		}
 		[CRepr]
@@ -1013,29 +1013,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveNext(BOOL* hasNext) mut
+			public HRESULT MoveNext(out BOOL hasNext) mut
 			{
-				return VT.MoveNext(&this, hasNext);
+				return VT.MoveNext(ref this, out hasNext);
 			}
-			public HRESULT MovePrevious(BOOL* hasPrevious) mut
+			public HRESULT MovePrevious(out BOOL hasPrevious) mut
 			{
-				return VT.MovePrevious(&this, hasPrevious);
+				return VT.MovePrevious(ref this, out hasPrevious);
 			}
 			public HRESULT GetCurrent(IOpcSignatureCustomObject** customObject) mut
 			{
-				return VT.GetCurrent(&this, customObject);
+				return VT.GetCurrent(ref this, customObject);
 			}
 			public HRESULT Clone(IOpcSignatureCustomObjectEnumerator** copy) mut
 			{
-				return VT.Clone(&this, copy);
+				return VT.Clone(ref this, copy);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignatureCustomObjectEnumerator *self, BOOL* hasNext) MoveNext;
-				public new function HRESULT(IOpcSignatureCustomObjectEnumerator *self, BOOL* hasPrevious) MovePrevious;
-				public new function HRESULT(IOpcSignatureCustomObjectEnumerator *self, IOpcSignatureCustomObject** customObject) GetCurrent;
-				public new function HRESULT(IOpcSignatureCustomObjectEnumerator *self, IOpcSignatureCustomObjectEnumerator** copy) Clone;
+				public new function HRESULT(ref IOpcSignatureCustomObjectEnumerator self, out BOOL hasNext) MoveNext;
+				public new function HRESULT(ref IOpcSignatureCustomObjectEnumerator self, out BOOL hasPrevious) MovePrevious;
+				public new function HRESULT(ref IOpcSignatureCustomObjectEnumerator self, IOpcSignatureCustomObject** customObject) GetCurrent;
+				public new function HRESULT(ref IOpcSignatureCustomObjectEnumerator self, IOpcSignatureCustomObjectEnumerator** copy) Clone;
 			}
 		}
 		[CRepr]
@@ -1045,29 +1045,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveNext(BOOL* hasNext) mut
+			public HRESULT MoveNext(out BOOL hasNext) mut
 			{
-				return VT.MoveNext(&this, hasNext);
+				return VT.MoveNext(ref this, out hasNext);
 			}
-			public HRESULT MovePrevious(BOOL* hasPrevious) mut
+			public HRESULT MovePrevious(out BOOL hasPrevious) mut
 			{
-				return VT.MovePrevious(&this, hasPrevious);
+				return VT.MovePrevious(ref this, out hasPrevious);
 			}
-			public HRESULT GetCurrent(CERT_CONTEXT** certificate) mut
+			public HRESULT GetCurrent(in CERT_CONTEXT* certificate) mut
 			{
-				return VT.GetCurrent(&this, certificate);
+				return VT.GetCurrent(ref this, certificate);
 			}
-			public HRESULT Clone(IOpcCertificateEnumerator** copy) mut
+			public HRESULT Clone(out IOpcCertificateEnumerator* copy) mut
 			{
-				return VT.Clone(&this, copy);
+				return VT.Clone(ref this, out copy);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcCertificateEnumerator *self, BOOL* hasNext) MoveNext;
-				public new function HRESULT(IOpcCertificateEnumerator *self, BOOL* hasPrevious) MovePrevious;
-				public new function HRESULT(IOpcCertificateEnumerator *self, CERT_CONTEXT** certificate) GetCurrent;
-				public new function HRESULT(IOpcCertificateEnumerator *self, IOpcCertificateEnumerator** copy) Clone;
+				public new function HRESULT(ref IOpcCertificateEnumerator self, out BOOL hasNext) MoveNext;
+				public new function HRESULT(ref IOpcCertificateEnumerator self, out BOOL hasPrevious) MovePrevious;
+				public new function HRESULT(ref IOpcCertificateEnumerator self, in CERT_CONTEXT* certificate) GetCurrent;
+				public new function HRESULT(ref IOpcCertificateEnumerator self, out IOpcCertificateEnumerator* copy) Clone;
 			}
 		}
 		[CRepr]
@@ -1077,29 +1077,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MoveNext(BOOL* hasNext) mut
+			public HRESULT MoveNext(out BOOL hasNext) mut
 			{
-				return VT.MoveNext(&this, hasNext);
+				return VT.MoveNext(ref this, out hasNext);
 			}
-			public HRESULT MovePrevious(BOOL* hasPrevious) mut
+			public HRESULT MovePrevious(out BOOL hasPrevious) mut
 			{
-				return VT.MovePrevious(&this, hasPrevious);
+				return VT.MovePrevious(ref this, out hasPrevious);
 			}
 			public HRESULT GetCurrent(IOpcDigitalSignature** digitalSignature) mut
 			{
-				return VT.GetCurrent(&this, digitalSignature);
+				return VT.GetCurrent(ref this, digitalSignature);
 			}
 			public HRESULT Clone(IOpcDigitalSignatureEnumerator** copy) mut
 			{
-				return VT.Clone(&this, copy);
+				return VT.Clone(ref this, copy);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcDigitalSignatureEnumerator *self, BOOL* hasNext) MoveNext;
-				public new function HRESULT(IOpcDigitalSignatureEnumerator *self, BOOL* hasPrevious) MovePrevious;
-				public new function HRESULT(IOpcDigitalSignatureEnumerator *self, IOpcDigitalSignature** digitalSignature) GetCurrent;
-				public new function HRESULT(IOpcDigitalSignatureEnumerator *self, IOpcDigitalSignatureEnumerator** copy) Clone;
+				public new function HRESULT(ref IOpcDigitalSignatureEnumerator self, out BOOL hasNext) MoveNext;
+				public new function HRESULT(ref IOpcDigitalSignatureEnumerator self, out BOOL hasPrevious) MovePrevious;
+				public new function HRESULT(ref IOpcDigitalSignatureEnumerator self, IOpcDigitalSignature** digitalSignature) GetCurrent;
+				public new function HRESULT(ref IOpcDigitalSignatureEnumerator self, IOpcDigitalSignatureEnumerator** copy) Clone;
 			}
 		}
 		[CRepr]
@@ -1111,22 +1111,22 @@ namespace Win32
 			
 			public HRESULT Create(IOpcPartUri* partUri, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignaturePartReference** partReference) mut
 			{
-				return VT.Create(&this, partUri, digestMethod, transformMethod, partReference);
+				return VT.Create(ref this, partUri, digestMethod, transformMethod, partReference);
 			}
 			public HRESULT Delete(IOpcSignaturePartReference* partReference) mut
 			{
-				return VT.Delete(&this, partReference);
+				return VT.Delete(ref this, partReference);
 			}
 			public HRESULT GetEnumerator(IOpcSignaturePartReferenceEnumerator** partReferenceEnumerator) mut
 			{
-				return VT.GetEnumerator(&this, partReferenceEnumerator);
+				return VT.GetEnumerator(ref this, partReferenceEnumerator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignaturePartReferenceSet *self, IOpcPartUri* partUri, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignaturePartReference** partReference) Create;
-				public new function HRESULT(IOpcSignaturePartReferenceSet *self, IOpcSignaturePartReference* partReference) Delete;
-				public new function HRESULT(IOpcSignaturePartReferenceSet *self, IOpcSignaturePartReferenceEnumerator** partReferenceEnumerator) GetEnumerator;
+				public new function HRESULT(ref IOpcSignaturePartReferenceSet self, IOpcPartUri* partUri, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignaturePartReference** partReference) Create;
+				public new function HRESULT(ref IOpcSignaturePartReferenceSet self, IOpcSignaturePartReference* partReference) Delete;
+				public new function HRESULT(ref IOpcSignaturePartReferenceSet self, IOpcSignaturePartReferenceEnumerator** partReferenceEnumerator) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1138,27 +1138,27 @@ namespace Win32
 			
 			public HRESULT Create(IOpcUri* sourceUri, PWSTR digestMethod, OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption, IOpcRelationshipSelectorSet* selectorSet, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureRelationshipReference** relationshipReference) mut
 			{
-				return VT.Create(&this, sourceUri, digestMethod, relationshipSigningOption, selectorSet, transformMethod, relationshipReference);
+				return VT.Create(ref this, sourceUri, digestMethod, relationshipSigningOption, selectorSet, transformMethod, relationshipReference);
 			}
 			public HRESULT CreateRelationshipSelectorSet(IOpcRelationshipSelectorSet** selectorSet) mut
 			{
-				return VT.CreateRelationshipSelectorSet(&this, selectorSet);
+				return VT.CreateRelationshipSelectorSet(ref this, selectorSet);
 			}
 			public HRESULT Delete(IOpcSignatureRelationshipReference* relationshipReference) mut
 			{
-				return VT.Delete(&this, relationshipReference);
+				return VT.Delete(ref this, relationshipReference);
 			}
 			public HRESULT GetEnumerator(IOpcSignatureRelationshipReferenceEnumerator** relationshipReferenceEnumerator) mut
 			{
-				return VT.GetEnumerator(&this, relationshipReferenceEnumerator);
+				return VT.GetEnumerator(ref this, relationshipReferenceEnumerator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignatureRelationshipReferenceSet *self, IOpcUri* sourceUri, PWSTR digestMethod, OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption, IOpcRelationshipSelectorSet* selectorSet, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureRelationshipReference** relationshipReference) Create;
-				public new function HRESULT(IOpcSignatureRelationshipReferenceSet *self, IOpcRelationshipSelectorSet** selectorSet) CreateRelationshipSelectorSet;
-				public new function HRESULT(IOpcSignatureRelationshipReferenceSet *self, IOpcSignatureRelationshipReference* relationshipReference) Delete;
-				public new function HRESULT(IOpcSignatureRelationshipReferenceSet *self, IOpcSignatureRelationshipReferenceEnumerator** relationshipReferenceEnumerator) GetEnumerator;
+				public new function HRESULT(ref IOpcSignatureRelationshipReferenceSet self, IOpcUri* sourceUri, PWSTR digestMethod, OPC_RELATIONSHIPS_SIGNING_OPTION relationshipSigningOption, IOpcRelationshipSelectorSet* selectorSet, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureRelationshipReference** relationshipReference) Create;
+				public new function HRESULT(ref IOpcSignatureRelationshipReferenceSet self, IOpcRelationshipSelectorSet** selectorSet) CreateRelationshipSelectorSet;
+				public new function HRESULT(ref IOpcSignatureRelationshipReferenceSet self, IOpcSignatureRelationshipReference* relationshipReference) Delete;
+				public new function HRESULT(ref IOpcSignatureRelationshipReferenceSet self, IOpcSignatureRelationshipReferenceEnumerator** relationshipReferenceEnumerator) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1170,22 +1170,22 @@ namespace Win32
 			
 			public HRESULT Create(OPC_RELATIONSHIP_SELECTOR selector, PWSTR selectionCriterion, IOpcRelationshipSelector** relationshipSelector) mut
 			{
-				return VT.Create(&this, selector, selectionCriterion, relationshipSelector);
+				return VT.Create(ref this, selector, selectionCriterion, relationshipSelector);
 			}
 			public HRESULT Delete(IOpcRelationshipSelector* relationshipSelector) mut
 			{
-				return VT.Delete(&this, relationshipSelector);
+				return VT.Delete(ref this, relationshipSelector);
 			}
 			public HRESULT GetEnumerator(IOpcRelationshipSelectorEnumerator** relationshipSelectorEnumerator) mut
 			{
-				return VT.GetEnumerator(&this, relationshipSelectorEnumerator);
+				return VT.GetEnumerator(ref this, relationshipSelectorEnumerator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcRelationshipSelectorSet *self, OPC_RELATIONSHIP_SELECTOR selector, PWSTR selectionCriterion, IOpcRelationshipSelector** relationshipSelector) Create;
-				public new function HRESULT(IOpcRelationshipSelectorSet *self, IOpcRelationshipSelector* relationshipSelector) Delete;
-				public new function HRESULT(IOpcRelationshipSelectorSet *self, IOpcRelationshipSelectorEnumerator** relationshipSelectorEnumerator) GetEnumerator;
+				public new function HRESULT(ref IOpcRelationshipSelectorSet self, OPC_RELATIONSHIP_SELECTOR selector, PWSTR selectionCriterion, IOpcRelationshipSelector** relationshipSelector) Create;
+				public new function HRESULT(ref IOpcRelationshipSelectorSet self, IOpcRelationshipSelector* relationshipSelector) Delete;
+				public new function HRESULT(ref IOpcRelationshipSelectorSet self, IOpcRelationshipSelectorEnumerator** relationshipSelectorEnumerator) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1197,22 +1197,22 @@ namespace Win32
 			
 			public HRESULT Create(IUri* referenceUri, PWSTR referenceId, PWSTR type, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureReference** reference) mut
 			{
-				return VT.Create(&this, referenceUri, referenceId, type, digestMethod, transformMethod, reference);
+				return VT.Create(ref this, referenceUri, referenceId, type, digestMethod, transformMethod, reference);
 			}
 			public HRESULT Delete(IOpcSignatureReference* reference) mut
 			{
-				return VT.Delete(&this, reference);
+				return VT.Delete(ref this, reference);
 			}
 			public HRESULT GetEnumerator(IOpcSignatureReferenceEnumerator** referenceEnumerator) mut
 			{
-				return VT.GetEnumerator(&this, referenceEnumerator);
+				return VT.GetEnumerator(ref this, referenceEnumerator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignatureReferenceSet *self, IUri* referenceUri, PWSTR referenceId, PWSTR type, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureReference** reference) Create;
-				public new function HRESULT(IOpcSignatureReferenceSet *self, IOpcSignatureReference* reference) Delete;
-				public new function HRESULT(IOpcSignatureReferenceSet *self, IOpcSignatureReferenceEnumerator** referenceEnumerator) GetEnumerator;
+				public new function HRESULT(ref IOpcSignatureReferenceSet self, IUri* referenceUri, PWSTR referenceId, PWSTR type, PWSTR digestMethod, OPC_CANONICALIZATION_METHOD transformMethod, IOpcSignatureReference** reference) Create;
+				public new function HRESULT(ref IOpcSignatureReferenceSet self, IOpcSignatureReference* reference) Delete;
+				public new function HRESULT(ref IOpcSignatureReferenceSet self, IOpcSignatureReferenceEnumerator** referenceEnumerator) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1224,22 +1224,22 @@ namespace Win32
 			
 			public HRESULT Create(uint8* xmlMarkup, uint32 count, IOpcSignatureCustomObject** customObject) mut
 			{
-				return VT.Create(&this, xmlMarkup, count, customObject);
+				return VT.Create(ref this, xmlMarkup, count, customObject);
 			}
 			public HRESULT Delete(IOpcSignatureCustomObject* customObject) mut
 			{
-				return VT.Delete(&this, customObject);
+				return VT.Delete(ref this, customObject);
 			}
 			public HRESULT GetEnumerator(IOpcSignatureCustomObjectEnumerator** customObjectEnumerator) mut
 			{
-				return VT.GetEnumerator(&this, customObjectEnumerator);
+				return VT.GetEnumerator(ref this, customObjectEnumerator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcSignatureCustomObjectSet *self, uint8* xmlMarkup, uint32 count, IOpcSignatureCustomObject** customObject) Create;
-				public new function HRESULT(IOpcSignatureCustomObjectSet *self, IOpcSignatureCustomObject* customObject) Delete;
-				public new function HRESULT(IOpcSignatureCustomObjectSet *self, IOpcSignatureCustomObjectEnumerator** customObjectEnumerator) GetEnumerator;
+				public new function HRESULT(ref IOpcSignatureCustomObjectSet self, uint8* xmlMarkup, uint32 count, IOpcSignatureCustomObject** customObject) Create;
+				public new function HRESULT(ref IOpcSignatureCustomObjectSet self, IOpcSignatureCustomObject* customObject) Delete;
+				public new function HRESULT(ref IOpcSignatureCustomObjectSet self, IOpcSignatureCustomObjectEnumerator** customObjectEnumerator) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1249,24 +1249,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Add(CERT_CONTEXT* certificate) mut
+			public HRESULT Add(in CERT_CONTEXT certificate) mut
 			{
-				return VT.Add(&this, certificate);
+				return VT.Add(ref this, certificate);
 			}
-			public HRESULT Remove(CERT_CONTEXT* certificate) mut
+			public HRESULT Remove(in CERT_CONTEXT certificate) mut
 			{
-				return VT.Remove(&this, certificate);
+				return VT.Remove(ref this, certificate);
 			}
-			public HRESULT GetEnumerator(IOpcCertificateEnumerator** certificateEnumerator) mut
+			public HRESULT GetEnumerator(out IOpcCertificateEnumerator* certificateEnumerator) mut
 			{
-				return VT.GetEnumerator(&this, certificateEnumerator);
+				return VT.GetEnumerator(ref this, out certificateEnumerator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcCertificateSet *self, CERT_CONTEXT* certificate) Add;
-				public new function HRESULT(IOpcCertificateSet *self, CERT_CONTEXT* certificate) Remove;
-				public new function HRESULT(IOpcCertificateSet *self, IOpcCertificateEnumerator** certificateEnumerator) GetEnumerator;
+				public new function HRESULT(ref IOpcCertificateSet self, in CERT_CONTEXT certificate) Add;
+				public new function HRESULT(ref IOpcCertificateSet self, in CERT_CONTEXT certificate) Remove;
+				public new function HRESULT(ref IOpcCertificateSet self, out IOpcCertificateEnumerator* certificateEnumerator) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1276,44 +1276,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreatePackageRootUri(IOpcUri** rootUri) mut
+			public HRESULT CreatePackageRootUri(out IOpcUri* rootUri) mut
 			{
-				return VT.CreatePackageRootUri(&this, rootUri);
+				return VT.CreatePackageRootUri(ref this, out rootUri);
 			}
-			public HRESULT CreatePartUri(PWSTR pwzUri, IOpcPartUri** partUri) mut
+			public HRESULT CreatePartUri(PWSTR pwzUri, out IOpcPartUri* partUri) mut
 			{
-				return VT.CreatePartUri(&this, pwzUri, partUri);
+				return VT.CreatePartUri(ref this, pwzUri, out partUri);
 			}
-			public HRESULT CreateStreamOnFile(PWSTR filename, OPC_STREAM_IO_MODE ioMode, SECURITY_ATTRIBUTES* securityAttributes, uint32 dwFlagsAndAttributes, IStream** stream) mut
+			public HRESULT CreateStreamOnFile(PWSTR filename, OPC_STREAM_IO_MODE ioMode, ref SECURITY_ATTRIBUTES securityAttributes, uint32 dwFlagsAndAttributes, out IStream* stream) mut
 			{
-				return VT.CreateStreamOnFile(&this, filename, ioMode, securityAttributes, dwFlagsAndAttributes, stream);
+				return VT.CreateStreamOnFile(ref this, filename, ioMode, ref securityAttributes, dwFlagsAndAttributes, out stream);
 			}
-			public HRESULT CreatePackage(IOpcPackage** package) mut
+			public HRESULT CreatePackage(out IOpcPackage* package) mut
 			{
-				return VT.CreatePackage(&this, package);
+				return VT.CreatePackage(ref this, out package);
 			}
-			public HRESULT ReadPackageFromStream(IStream* stream, OPC_READ_FLAGS flags, IOpcPackage** package) mut
+			public HRESULT ReadPackageFromStream(ref IStream stream, OPC_READ_FLAGS flags, out IOpcPackage* package) mut
 			{
-				return VT.ReadPackageFromStream(&this, stream, flags, package);
+				return VT.ReadPackageFromStream(ref this, ref stream, flags, out package);
 			}
-			public HRESULT WritePackageToStream(IOpcPackage* package, OPC_WRITE_FLAGS flags, IStream* stream) mut
+			public HRESULT WritePackageToStream(ref IOpcPackage package, OPC_WRITE_FLAGS flags, ref IStream stream) mut
 			{
-				return VT.WritePackageToStream(&this, package, flags, stream);
+				return VT.WritePackageToStream(ref this, ref package, flags, ref stream);
 			}
-			public HRESULT CreateDigitalSignatureManager(IOpcPackage* package, IOpcDigitalSignatureManager** signatureManager) mut
+			public HRESULT CreateDigitalSignatureManager(ref IOpcPackage package, out IOpcDigitalSignatureManager* signatureManager) mut
 			{
-				return VT.CreateDigitalSignatureManager(&this, package, signatureManager);
+				return VT.CreateDigitalSignatureManager(ref this, ref package, out signatureManager);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOpcFactory *self, IOpcUri** rootUri) CreatePackageRootUri;
-				public new function HRESULT(IOpcFactory *self, PWSTR pwzUri, IOpcPartUri** partUri) CreatePartUri;
-				public new function HRESULT(IOpcFactory *self, PWSTR filename, OPC_STREAM_IO_MODE ioMode, SECURITY_ATTRIBUTES* securityAttributes, uint32 dwFlagsAndAttributes, IStream** stream) CreateStreamOnFile;
-				public new function HRESULT(IOpcFactory *self, IOpcPackage** package) CreatePackage;
-				public new function HRESULT(IOpcFactory *self, IStream* stream, OPC_READ_FLAGS flags, IOpcPackage** package) ReadPackageFromStream;
-				public new function HRESULT(IOpcFactory *self, IOpcPackage* package, OPC_WRITE_FLAGS flags, IStream* stream) WritePackageToStream;
-				public new function HRESULT(IOpcFactory *self, IOpcPackage* package, IOpcDigitalSignatureManager** signatureManager) CreateDigitalSignatureManager;
+				public new function HRESULT(ref IOpcFactory self, out IOpcUri* rootUri) CreatePackageRootUri;
+				public new function HRESULT(ref IOpcFactory self, PWSTR pwzUri, out IOpcPartUri* partUri) CreatePartUri;
+				public new function HRESULT(ref IOpcFactory self, PWSTR filename, OPC_STREAM_IO_MODE ioMode, ref SECURITY_ATTRIBUTES securityAttributes, uint32 dwFlagsAndAttributes, out IStream* stream) CreateStreamOnFile;
+				public new function HRESULT(ref IOpcFactory self, out IOpcPackage* package) CreatePackage;
+				public new function HRESULT(ref IOpcFactory self, ref IStream stream, OPC_READ_FLAGS flags, out IOpcPackage* package) ReadPackageFromStream;
+				public new function HRESULT(ref IOpcFactory self, ref IOpcPackage package, OPC_WRITE_FLAGS flags, ref IStream stream) WritePackageToStream;
+				public new function HRESULT(ref IOpcFactory self, ref IOpcPackage package, out IOpcDigitalSignatureManager* signatureManager) CreateDigitalSignatureManager;
 			}
 		}
 		

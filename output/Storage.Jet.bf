@@ -1000,7 +1000,7 @@ namespace Win32
 		
 		public function int32 JET_PFNSTATUS(JET_SESID sesid, uint32 snp, uint32 snt, void* pv);
 		public function int32 JET_CALLBACK(JET_SESID sesid, uint32 dbid, JET_TABLEID tableid, uint32 cbtyp, void* pvArg1, void* pvArg2, void* pvContext, JET_API_PTR ulUnused);
-		public function int32 JET_PFNDURABLECOMMITCALLBACK(JET_INSTANCE instance, JET_COMMIT_ID* pCommitIdSeen, uint32 grbit);
+		public function int32 JET_PFNDURABLECOMMITCALLBACK(JET_INSTANCE instance, ref JET_COMMIT_ID pCommitIdSeen, uint32 grbit);
 		public function void* JET_PFNREALLOC(void* pvContext, void* pv, uint32 cb);
 		
 		// --- Structs ---
@@ -2199,13 +2199,13 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetInit3W(JET_INSTANCE* pinstance, JET_RSTINFO_W* prstInfo, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateInstanceA(JET_INSTANCE* pinstance, int8* szInstanceName);
+		public static extern int32 JetCreateInstanceA(out JET_INSTANCE pinstance, int8* szInstanceName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateInstanceW(JET_INSTANCE* pinstance, uint16* szInstanceName);
+		public static extern int32 JetCreateInstanceW(out JET_INSTANCE pinstance, uint16* szInstanceName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateInstance2A(JET_INSTANCE* pinstance, int8* szInstanceName, int8* szDisplayName, uint32 grbit);
+		public static extern int32 JetCreateInstance2A(out JET_INSTANCE pinstance, int8* szInstanceName, int8* szDisplayName, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateInstance2W(JET_INSTANCE* pinstance, uint16* szInstanceName, uint16* szDisplayName, uint32 grbit);
+		public static extern int32 JetCreateInstance2W(out JET_INSTANCE pinstance, uint16* szInstanceName, uint16* szDisplayName, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetInstanceMiscInfo(JET_INSTANCE instance, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2237,33 +2237,33 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetThreadStats(void* pvResult, uint32 cbMax);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetBeginSessionA(JET_INSTANCE instance, JET_SESID* psesid, int8* szUserName, int8* szPassword);
+		public static extern int32 JetBeginSessionA(JET_INSTANCE instance, out JET_SESID psesid, int8* szUserName, int8* szPassword);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetBeginSessionW(JET_INSTANCE instance, JET_SESID* psesid, uint16* szUserName, uint16* szPassword);
+		public static extern int32 JetBeginSessionW(JET_INSTANCE instance, out JET_SESID psesid, uint16* szUserName, uint16* szPassword);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDupSession(JET_SESID sesid, JET_SESID* psesid);
+		public static extern int32 JetDupSession(JET_SESID sesid, out JET_SESID psesid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetEndSession(JET_SESID sesid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetVersion(JET_SESID sesid, uint32* pwVersion);
+		public static extern int32 JetGetVersion(JET_SESID sesid, out uint32 pwVersion);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetIdle(JET_SESID sesid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateDatabaseA(JET_SESID sesid, int8* szFilename, int8* szConnect, uint32* pdbid, uint32 grbit);
+		public static extern int32 JetCreateDatabaseA(JET_SESID sesid, ref int8 szFilename, int8* szConnect, out uint32 pdbid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateDatabaseW(JET_SESID sesid, uint16* szFilename, uint16* szConnect, uint32* pdbid, uint32 grbit);
+		public static extern int32 JetCreateDatabaseW(JET_SESID sesid, ref uint16 szFilename, uint16* szConnect, out uint32 pdbid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateDatabase2A(JET_SESID sesid, int8* szFilename, uint32 cpgDatabaseSizeMax, uint32* pdbid, uint32 grbit);
+		public static extern int32 JetCreateDatabase2A(JET_SESID sesid, ref int8 szFilename, uint32 cpgDatabaseSizeMax, out uint32 pdbid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateDatabase2W(JET_SESID sesid, uint16* szFilename, uint32 cpgDatabaseSizeMax, uint32* pdbid, uint32 grbit);
+		public static extern int32 JetCreateDatabase2W(JET_SESID sesid, ref uint16 szFilename, uint32 cpgDatabaseSizeMax, out uint32 pdbid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetAttachDatabaseA(JET_SESID sesid, int8* szFilename, uint32 grbit);
+		public static extern int32 JetAttachDatabaseA(JET_SESID sesid, ref int8 szFilename, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetAttachDatabaseW(JET_SESID sesid, uint16* szFilename, uint32 grbit);
+		public static extern int32 JetAttachDatabaseW(JET_SESID sesid, ref uint16 szFilename, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetAttachDatabase2A(JET_SESID sesid, int8* szFilename, uint32 cpgDatabaseSizeMax, uint32 grbit);
+		public static extern int32 JetAttachDatabase2A(JET_SESID sesid, ref int8 szFilename, uint32 cpgDatabaseSizeMax, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetAttachDatabase2W(JET_SESID sesid, uint16* szFilename, uint32 cpgDatabaseSizeMax, uint32 grbit);
+		public static extern int32 JetAttachDatabase2W(JET_SESID sesid, ref uint16 szFilename, uint32 cpgDatabaseSizeMax, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetDetachDatabaseA(JET_SESID sesid, int8* szFilename);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2281,73 +2281,73 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetTableInfoW(JET_SESID sesid, JET_TABLEID tableid, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableA(JET_SESID sesid, uint32 dbid, int8* szTableName, uint32 lPages, uint32 lDensity, JET_TABLEID* ptableid);
+		public static extern int32 JetCreateTableA(JET_SESID sesid, uint32 dbid, ref int8 szTableName, uint32 lPages, uint32 lDensity, out JET_TABLEID ptableid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableW(JET_SESID sesid, uint32 dbid, uint16* szTableName, uint32 lPages, uint32 lDensity, JET_TABLEID* ptableid);
+		public static extern int32 JetCreateTableW(JET_SESID sesid, uint32 dbid, ref uint16 szTableName, uint32 lPages, uint32 lDensity, out JET_TABLEID ptableid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableColumnIndexA(JET_SESID sesid, uint32 dbid, JET_TABLECREATE_A* ptablecreate);
+		public static extern int32 JetCreateTableColumnIndexA(JET_SESID sesid, uint32 dbid, out JET_TABLECREATE_A ptablecreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableColumnIndexW(JET_SESID sesid, uint32 dbid, JET_TABLECREATE_W* ptablecreate);
+		public static extern int32 JetCreateTableColumnIndexW(JET_SESID sesid, uint32 dbid, out JET_TABLECREATE_W ptablecreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableColumnIndex2A(JET_SESID sesid, uint32 dbid, JET_TABLECREATE2_A* ptablecreate);
+		public static extern int32 JetCreateTableColumnIndex2A(JET_SESID sesid, uint32 dbid, out JET_TABLECREATE2_A ptablecreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableColumnIndex2W(JET_SESID sesid, uint32 dbid, JET_TABLECREATE2_W* ptablecreate);
+		public static extern int32 JetCreateTableColumnIndex2W(JET_SESID sesid, uint32 dbid, out JET_TABLECREATE2_W ptablecreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableColumnIndex3A(JET_SESID sesid, uint32 dbid, JET_TABLECREATE3_A* ptablecreate);
+		public static extern int32 JetCreateTableColumnIndex3A(JET_SESID sesid, uint32 dbid, out JET_TABLECREATE3_A ptablecreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableColumnIndex3W(JET_SESID sesid, uint32 dbid, JET_TABLECREATE3_W* ptablecreate);
+		public static extern int32 JetCreateTableColumnIndex3W(JET_SESID sesid, uint32 dbid, out JET_TABLECREATE3_W ptablecreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableColumnIndex4A(JET_SESID sesid, uint32 dbid, JET_TABLECREATE4_A* ptablecreate);
+		public static extern int32 JetCreateTableColumnIndex4A(JET_SESID sesid, uint32 dbid, out JET_TABLECREATE4_A ptablecreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateTableColumnIndex4W(JET_SESID sesid, uint32 dbid, JET_TABLECREATE4_W* ptablecreate);
+		public static extern int32 JetCreateTableColumnIndex4W(JET_SESID sesid, uint32 dbid, out JET_TABLECREATE4_W ptablecreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDeleteTableA(JET_SESID sesid, uint32 dbid, int8* szTableName);
+		public static extern int32 JetDeleteTableA(JET_SESID sesid, uint32 dbid, ref int8 szTableName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDeleteTableW(JET_SESID sesid, uint32 dbid, uint16* szTableName);
+		public static extern int32 JetDeleteTableW(JET_SESID sesid, uint32 dbid, ref uint16 szTableName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRenameTableA(JET_SESID sesid, uint32 dbid, int8* szName, int8* szNameNew);
+		public static extern int32 JetRenameTableA(JET_SESID sesid, uint32 dbid, ref int8 szName, ref int8 szNameNew);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRenameTableW(JET_SESID sesid, uint32 dbid, uint16* szName, uint16* szNameNew);
+		public static extern int32 JetRenameTableW(JET_SESID sesid, uint32 dbid, ref uint16 szName, ref uint16 szNameNew);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetTableColumnInfoA(JET_SESID sesid, JET_TABLEID tableid, int8* szColumnName, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetTableColumnInfoW(JET_SESID sesid, JET_TABLEID tableid, uint16* szColumnName, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetColumnInfoA(JET_SESID sesid, uint32 dbid, int8* szTableName, int8* pColumnNameOrId, void* pvResult, uint32 cbMax, uint32 InfoLevel);
+		public static extern int32 JetGetColumnInfoA(JET_SESID sesid, uint32 dbid, ref int8 szTableName, int8* pColumnNameOrId, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetColumnInfoW(JET_SESID sesid, uint32 dbid, uint16* szTableName, uint16* pwColumnNameOrId, void* pvResult, uint32 cbMax, uint32 InfoLevel);
+		public static extern int32 JetGetColumnInfoW(JET_SESID sesid, uint32 dbid, ref uint16 szTableName, uint16* pwColumnNameOrId, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetAddColumnA(JET_SESID sesid, JET_TABLEID tableid, int8* szColumnName, JET_COLUMNDEF* pcolumndef, void* pvDefault, uint32 cbDefault, uint32* pcolumnid);
+		public static extern int32 JetAddColumnA(JET_SESID sesid, JET_TABLEID tableid, ref int8 szColumnName, in JET_COLUMNDEF pcolumndef, void* pvDefault, uint32 cbDefault, uint32* pcolumnid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetAddColumnW(JET_SESID sesid, JET_TABLEID tableid, uint16* szColumnName, JET_COLUMNDEF* pcolumndef, void* pvDefault, uint32 cbDefault, uint32* pcolumnid);
+		public static extern int32 JetAddColumnW(JET_SESID sesid, JET_TABLEID tableid, ref uint16 szColumnName, in JET_COLUMNDEF pcolumndef, void* pvDefault, uint32 cbDefault, uint32* pcolumnid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDeleteColumnA(JET_SESID sesid, JET_TABLEID tableid, int8* szColumnName);
+		public static extern int32 JetDeleteColumnA(JET_SESID sesid, JET_TABLEID tableid, ref int8 szColumnName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDeleteColumnW(JET_SESID sesid, JET_TABLEID tableid, uint16* szColumnName);
+		public static extern int32 JetDeleteColumnW(JET_SESID sesid, JET_TABLEID tableid, ref uint16 szColumnName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDeleteColumn2A(JET_SESID sesid, JET_TABLEID tableid, int8* szColumnName, uint32 grbit);
+		public static extern int32 JetDeleteColumn2A(JET_SESID sesid, JET_TABLEID tableid, ref int8 szColumnName, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDeleteColumn2W(JET_SESID sesid, JET_TABLEID tableid, uint16* szColumnName, uint32 grbit);
+		public static extern int32 JetDeleteColumn2W(JET_SESID sesid, JET_TABLEID tableid, ref uint16 szColumnName, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRenameColumnA(JET_SESID sesid, JET_TABLEID tableid, int8* szName, int8* szNameNew, uint32 grbit);
+		public static extern int32 JetRenameColumnA(JET_SESID sesid, JET_TABLEID tableid, ref int8 szName, ref int8 szNameNew, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRenameColumnW(JET_SESID sesid, JET_TABLEID tableid, uint16* szName, uint16* szNameNew, uint32 grbit);
+		public static extern int32 JetRenameColumnW(JET_SESID sesid, JET_TABLEID tableid, ref uint16 szName, ref uint16 szNameNew, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetSetColumnDefaultValueA(JET_SESID sesid, uint32 dbid, int8* szTableName, int8* szColumnName, void* pvData, uint32 cbData, uint32 grbit);
+		public static extern int32 JetSetColumnDefaultValueA(JET_SESID sesid, uint32 dbid, ref int8 szTableName, ref int8 szColumnName, void* pvData, uint32 cbData, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetSetColumnDefaultValueW(JET_SESID sesid, uint32 dbid, uint16* szTableName, uint16* szColumnName, void* pvData, uint32 cbData, uint32 grbit);
+		public static extern int32 JetSetColumnDefaultValueW(JET_SESID sesid, uint32 dbid, ref uint16 szTableName, ref uint16 szColumnName, void* pvData, uint32 cbData, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetTableIndexInfoA(JET_SESID sesid, JET_TABLEID tableid, int8* szIndexName, void* pvResult, uint32 cbResult, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetTableIndexInfoW(JET_SESID sesid, JET_TABLEID tableid, uint16* szIndexName, void* pvResult, uint32 cbResult, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetIndexInfoA(JET_SESID sesid, uint32 dbid, int8* szTableName, int8* szIndexName, void* pvResult, uint32 cbResult, uint32 InfoLevel);
+		public static extern int32 JetGetIndexInfoA(JET_SESID sesid, uint32 dbid, ref int8 szTableName, int8* szIndexName, void* pvResult, uint32 cbResult, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetIndexInfoW(JET_SESID sesid, uint32 dbid, uint16* szTableName, uint16* szIndexName, void* pvResult, uint32 cbResult, uint32 InfoLevel);
+		public static extern int32 JetGetIndexInfoW(JET_SESID sesid, uint32 dbid, ref uint16 szTableName, uint16* szIndexName, void* pvResult, uint32 cbResult, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateIndexA(JET_SESID sesid, JET_TABLEID tableid, int8* szIndexName, uint32 grbit, PSTR szKey, uint32 cbKey, uint32 lDensity);
+		public static extern int32 JetCreateIndexA(JET_SESID sesid, JET_TABLEID tableid, ref int8 szIndexName, uint32 grbit, PSTR szKey, uint32 cbKey, uint32 lDensity);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCreateIndexW(JET_SESID sesid, JET_TABLEID tableid, uint16* szIndexName, uint32 grbit, PWSTR szKey, uint32 cbKey, uint32 lDensity);
+		public static extern int32 JetCreateIndexW(JET_SESID sesid, JET_TABLEID tableid, ref uint16 szIndexName, uint32 grbit, PWSTR szKey, uint32 cbKey, uint32 lDensity);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetCreateIndex2A(JET_SESID sesid, JET_TABLEID tableid, JET_INDEXCREATE_A* pindexcreate, uint32 cIndexCreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2361,9 +2361,9 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetCreateIndex4W(JET_SESID sesid, JET_TABLEID tableid, JET_INDEXCREATE3_W* pindexcreate, uint32 cIndexCreate);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDeleteIndexA(JET_SESID sesid, JET_TABLEID tableid, int8* szIndexName);
+		public static extern int32 JetDeleteIndexA(JET_SESID sesid, JET_TABLEID tableid, ref int8 szIndexName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDeleteIndexW(JET_SESID sesid, JET_TABLEID tableid, uint16* szIndexName);
+		public static extern int32 JetDeleteIndexW(JET_SESID sesid, JET_TABLEID tableid, ref uint16 szIndexName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetBeginTransaction(JET_SESID sesid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2381,19 +2381,19 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetDatabaseInfoW(JET_SESID sesid, uint32 dbid, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetDatabaseFileInfoA(int8* szDatabaseName, void* pvResult, uint32 cbMax, uint32 InfoLevel);
+		public static extern int32 JetGetDatabaseFileInfoA(ref int8 szDatabaseName, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetDatabaseFileInfoW(uint16* szDatabaseName, void* pvResult, uint32 cbMax, uint32 InfoLevel);
+		public static extern int32 JetGetDatabaseFileInfoW(ref uint16 szDatabaseName, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenDatabaseA(JET_SESID sesid, int8* szFilename, int8* szConnect, uint32* pdbid, uint32 grbit);
+		public static extern int32 JetOpenDatabaseA(JET_SESID sesid, ref int8 szFilename, int8* szConnect, out uint32 pdbid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenDatabaseW(JET_SESID sesid, uint16* szFilename, uint16* szConnect, uint32* pdbid, uint32 grbit);
+		public static extern int32 JetOpenDatabaseW(JET_SESID sesid, ref uint16 szFilename, uint16* szConnect, out uint32 pdbid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetCloseDatabase(JET_SESID sesid, uint32 dbid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenTableA(JET_SESID sesid, uint32 dbid, int8* szTableName, void* pvParameters, uint32 cbParameters, uint32 grbit, JET_TABLEID* ptableid);
+		public static extern int32 JetOpenTableA(JET_SESID sesid, uint32 dbid, ref int8 szTableName, void* pvParameters, uint32 cbParameters, uint32 grbit, out JET_TABLEID ptableid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenTableW(JET_SESID sesid, uint32 dbid, uint16* szTableName, void* pvParameters, uint32 cbParameters, uint32 grbit, JET_TABLEID* ptableid);
+		public static extern int32 JetOpenTableW(JET_SESID sesid, uint32 dbid, ref uint16 szTableName, void* pvParameters, uint32 cbParameters, uint32 grbit, out JET_TABLEID ptableid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetSetTableSequential(JET_SESID sesid, JET_TABLEID tableid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2413,11 +2413,11 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetRetrieveColumns(JET_SESID sesid, JET_TABLEID tableid, JET_RETRIEVECOLUMN* pretrievecolumn, uint32 cretrievecolumn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetEnumerateColumns(JET_SESID sesid, JET_TABLEID tableid, uint32 cEnumColumnId, JET_ENUMCOLUMNID* rgEnumColumnId, uint32* pcEnumColumn, JET_ENUMCOLUMN** prgEnumColumn, JET_PFNREALLOC pfnRealloc, void* pvReallocContext, uint32 cbDataMost, uint32 grbit);
+		public static extern int32 JetEnumerateColumns(JET_SESID sesid, JET_TABLEID tableid, uint32 cEnumColumnId, JET_ENUMCOLUMNID* rgEnumColumnId, out uint32 pcEnumColumn, out JET_ENUMCOLUMN* prgEnumColumn, JET_PFNREALLOC pfnRealloc, void* pvReallocContext, uint32 cbDataMost, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetRecordSize(JET_SESID sesid, JET_TABLEID tableid, JET_RECSIZE* precsize, uint32 grbit);
+		public static extern int32 JetGetRecordSize(JET_SESID sesid, JET_TABLEID tableid, out JET_RECSIZE precsize, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetRecordSize2(JET_SESID sesid, JET_TABLEID tableid, JET_RECSIZE2* precsize, uint32 grbit);
+		public static extern int32 JetGetRecordSize2(JET_SESID sesid, JET_TABLEID tableid, out JET_RECSIZE2 precsize, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetSetColumn(JET_SESID sesid, JET_TABLEID tableid, uint32 columnid, void* pvData, uint32 cbData, uint32 grbit, JET_SETINFO* psetinfo);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2425,17 +2425,17 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetPrepareUpdate(JET_SESID sesid, JET_TABLEID tableid, uint32 prep);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetRecordPosition(JET_SESID sesid, JET_TABLEID tableid, JET_RECPOS* precpos, uint32 cbRecpos);
+		public static extern int32 JetGetRecordPosition(JET_SESID sesid, JET_TABLEID tableid, out JET_RECPOS precpos, uint32 cbRecpos);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGotoPosition(JET_SESID sesid, JET_TABLEID tableid, JET_RECPOS* precpos);
+		public static extern int32 JetGotoPosition(JET_SESID sesid, JET_TABLEID tableid, ref JET_RECPOS precpos);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetCursorInfo(JET_SESID sesid, JET_TABLEID tableid, void* pvResult, uint32 cbMax, uint32 InfoLevel);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDupCursor(JET_SESID sesid, JET_TABLEID tableid, JET_TABLEID* ptableid, uint32 grbit);
+		public static extern int32 JetDupCursor(JET_SESID sesid, JET_TABLEID tableid, out JET_TABLEID ptableid, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetCurrentIndexA(JET_SESID sesid, JET_TABLEID tableid, int8* szIndexName, uint32 cbIndexName);
+		public static extern int32 JetGetCurrentIndexA(JET_SESID sesid, JET_TABLEID tableid, out int8 szIndexName, uint32 cbIndexName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetCurrentIndexW(JET_SESID sesid, JET_TABLEID tableid, uint16* szIndexName, uint32 cbIndexName);
+		public static extern int32 JetGetCurrentIndexW(JET_SESID sesid, JET_TABLEID tableid, out uint16 szIndexName, uint32 cbIndexName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetSetCurrentIndexA(JET_SESID sesid, JET_TABLEID tableid, int8* szIndexName);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2471,9 +2471,9 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetSecondaryIndexBookmark(JET_SESID sesid, JET_TABLEID tableid, void* pvSecondaryKey, uint32 cbSecondaryKeyMax, uint32* pcbSecondaryKeyActual, void* pvPrimaryBookmark, uint32 cbPrimaryBookmarkMax, uint32* pcbPrimaryBookmarkActual, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCompactA(JET_SESID sesid, int8* szDatabaseSrc, int8* szDatabaseDest, JET_PFNSTATUS pfnStatus, CONVERT_A* pconvert, uint32 grbit);
+		public static extern int32 JetCompactA(JET_SESID sesid, ref int8 szDatabaseSrc, ref int8 szDatabaseDest, JET_PFNSTATUS pfnStatus, CONVERT_A* pconvert, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetCompactW(JET_SESID sesid, uint16* szDatabaseSrc, uint16* szDatabaseDest, JET_PFNSTATUS pfnStatus, CONVERT_W* pconvert, uint32 grbit);
+		public static extern int32 JetCompactW(JET_SESID sesid, ref uint16 szDatabaseSrc, ref uint16 szDatabaseDest, JET_PFNSTATUS pfnStatus, CONVERT_W* pconvert, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetDefragmentA(JET_SESID sesid, uint32 dbid, int8* szTableName, uint32* pcPasses, uint32* pcSeconds, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2483,17 +2483,17 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetDefragment2W(JET_SESID sesid, uint32 dbid, uint16* szTableName, uint32* pcPasses, uint32* pcSeconds, JET_CALLBACK callback, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDefragment3A(JET_SESID sesid, int8* szDatabaseName, int8* szTableName, uint32* pcPasses, uint32* pcSeconds, JET_CALLBACK callback, void* pvContext, uint32 grbit);
+		public static extern int32 JetDefragment3A(JET_SESID sesid, ref int8 szDatabaseName, int8* szTableName, uint32* pcPasses, uint32* pcSeconds, JET_CALLBACK callback, void* pvContext, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetDefragment3W(JET_SESID sesid, uint16* szDatabaseName, uint16* szTableName, uint32* pcPasses, uint32* pcSeconds, JET_CALLBACK callback, void* pvContext, uint32 grbit);
+		public static extern int32 JetDefragment3W(JET_SESID sesid, ref uint16 szDatabaseName, uint16* szTableName, uint32* pcPasses, uint32* pcSeconds, JET_CALLBACK callback, void* pvContext, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetSetDatabaseSizeA(JET_SESID sesid, int8* szDatabaseName, uint32 cpg, uint32* pcpgReal);
+		public static extern int32 JetSetDatabaseSizeA(JET_SESID sesid, ref int8 szDatabaseName, uint32 cpg, out uint32 pcpgReal);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetSetDatabaseSizeW(JET_SESID sesid, uint16* szDatabaseName, uint32 cpg, uint32* pcpgReal);
+		public static extern int32 JetSetDatabaseSizeW(JET_SESID sesid, ref uint16 szDatabaseName, uint32 cpg, out uint32 pcpgReal);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGrowDatabase(JET_SESID sesid, uint32 dbid, uint32 cpg, uint32* pcpgReal);
+		public static extern int32 JetGrowDatabase(JET_SESID sesid, uint32 dbid, uint32 cpg, ref uint32 pcpgReal);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetResizeDatabase(JET_SESID sesid, uint32 dbid, uint32 cpgTarget, uint32* pcpgActual, uint32 grbit);
+		public static extern int32 JetResizeDatabase(JET_SESID sesid, uint32 dbid, uint32 cpgTarget, out uint32 pcpgActual, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetSetSessionContext(JET_SESID sesid, JET_API_PTR ulContext);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2503,43 +2503,43 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGotoSecondaryIndexBookmark(JET_SESID sesid, JET_TABLEID tableid, void* pvSecondaryKey, uint32 cbSecondaryKey, void* pvPrimaryBookmark, uint32 cbPrimaryBookmark, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetIntersectIndexes(JET_SESID sesid, JET_INDEXRANGE* rgindexrange, uint32 cindexrange, JET_RECORDLIST* precordlist, uint32 grbit);
+		public static extern int32 JetIntersectIndexes(JET_SESID sesid, JET_INDEXRANGE* rgindexrange, uint32 cindexrange, out JET_RECORDLIST precordlist, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetComputeStats(JET_SESID sesid, JET_TABLEID tableid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenTempTable(JET_SESID sesid, JET_COLUMNDEF* prgcolumndef, uint32 ccolumn, uint32 grbit, JET_TABLEID* ptableid, uint32* prgcolumnid);
+		public static extern int32 JetOpenTempTable(JET_SESID sesid, JET_COLUMNDEF* prgcolumndef, uint32 ccolumn, uint32 grbit, out JET_TABLEID ptableid, uint32* prgcolumnid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenTempTable2(JET_SESID sesid, JET_COLUMNDEF* prgcolumndef, uint32 ccolumn, uint32 lcid, uint32 grbit, JET_TABLEID* ptableid, uint32* prgcolumnid);
+		public static extern int32 JetOpenTempTable2(JET_SESID sesid, JET_COLUMNDEF* prgcolumndef, uint32 ccolumn, uint32 lcid, uint32 grbit, out JET_TABLEID ptableid, uint32* prgcolumnid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenTempTable3(JET_SESID sesid, JET_COLUMNDEF* prgcolumndef, uint32 ccolumn, JET_UNICODEINDEX* pidxunicode, uint32 grbit, JET_TABLEID* ptableid, uint32* prgcolumnid);
+		public static extern int32 JetOpenTempTable3(JET_SESID sesid, JET_COLUMNDEF* prgcolumndef, uint32 ccolumn, JET_UNICODEINDEX* pidxunicode, uint32 grbit, out JET_TABLEID ptableid, uint32* prgcolumnid);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenTemporaryTable(JET_SESID sesid, JET_OPENTEMPORARYTABLE* popentemporarytable);
+		public static extern int32 JetOpenTemporaryTable(JET_SESID sesid, ref JET_OPENTEMPORARYTABLE popentemporarytable);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenTemporaryTable2(JET_SESID sesid, JET_OPENTEMPORARYTABLE2* popentemporarytable);
+		public static extern int32 JetOpenTemporaryTable2(JET_SESID sesid, ref JET_OPENTEMPORARYTABLE2 popentemporarytable);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetBackupA(int8* szBackupPath, uint32 grbit, JET_PFNSTATUS pfnStatus);
+		public static extern int32 JetBackupA(ref int8 szBackupPath, uint32 grbit, JET_PFNSTATUS pfnStatus);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetBackupW(uint16* szBackupPath, uint32 grbit, JET_PFNSTATUS pfnStatus);
+		public static extern int32 JetBackupW(ref uint16 szBackupPath, uint32 grbit, JET_PFNSTATUS pfnStatus);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetBackupInstanceA(JET_INSTANCE instance, int8* szBackupPath, uint32 grbit, JET_PFNSTATUS pfnStatus);
+		public static extern int32 JetBackupInstanceA(JET_INSTANCE instance, ref int8 szBackupPath, uint32 grbit, JET_PFNSTATUS pfnStatus);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetBackupInstanceW(JET_INSTANCE instance, uint16* szBackupPath, uint32 grbit, JET_PFNSTATUS pfnStatus);
+		public static extern int32 JetBackupInstanceW(JET_INSTANCE instance, ref uint16 szBackupPath, uint32 grbit, JET_PFNSTATUS pfnStatus);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRestoreA(int8* szSource, JET_PFNSTATUS pfn);
+		public static extern int32 JetRestoreA(ref int8 szSource, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRestoreW(uint16* szSource, JET_PFNSTATUS pfn);
+		public static extern int32 JetRestoreW(ref uint16 szSource, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRestore2A(int8* sz, int8* szDest, JET_PFNSTATUS pfn);
+		public static extern int32 JetRestore2A(ref int8 sz, int8* szDest, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRestore2W(uint16* sz, uint16* szDest, JET_PFNSTATUS pfn);
+		public static extern int32 JetRestore2W(ref uint16 sz, uint16* szDest, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRestoreInstanceA(JET_INSTANCE instance, int8* sz, int8* szDest, JET_PFNSTATUS pfn);
+		public static extern int32 JetRestoreInstanceA(JET_INSTANCE instance, ref int8 sz, int8* szDest, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRestoreInstanceW(JET_INSTANCE instance, uint16* sz, uint16* szDest, JET_PFNSTATUS pfn);
+		public static extern int32 JetRestoreInstanceW(JET_INSTANCE instance, ref uint16 sz, uint16* szDest, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetSetIndexRange(JET_SESID sesid, JET_TABLEID tableidSrc, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetIndexRecordCount(JET_SESID sesid, JET_TABLEID tableid, uint32* pcrec, uint32 crecMax);
+		public static extern int32 JetIndexRecordCount(JET_SESID sesid, JET_TABLEID tableid, out uint32 pcrec, uint32 crecMax);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetRetrieveKey(JET_SESID sesid, JET_TABLEID tableid, void* pvKey, uint32 cbMax, uint32* pcbActual, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2555,13 +2555,13 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetGetAttachInfoInstanceW(JET_INSTANCE instance, uint16* szzDatabases, uint32 cbMax, uint32* pcbActual);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenFileA(int8* szFileName, JET_HANDLE* phfFile, uint32* pulFileSizeLow, uint32* pulFileSizeHigh);
+		public static extern int32 JetOpenFileA(ref int8 szFileName, out JET_HANDLE phfFile, out uint32 pulFileSizeLow, out uint32 pulFileSizeHigh);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenFileW(uint16* szFileName, JET_HANDLE* phfFile, uint32* pulFileSizeLow, uint32* pulFileSizeHigh);
+		public static extern int32 JetOpenFileW(ref uint16 szFileName, out JET_HANDLE phfFile, out uint32 pulFileSizeLow, out uint32 pulFileSizeHigh);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenFileInstanceA(JET_INSTANCE instance, int8* szFileName, JET_HANDLE* phfFile, uint32* pulFileSizeLow, uint32* pulFileSizeHigh);
+		public static extern int32 JetOpenFileInstanceA(JET_INSTANCE instance, ref int8 szFileName, out JET_HANDLE phfFile, out uint32 pulFileSizeLow, out uint32 pulFileSizeHigh);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOpenFileInstanceW(JET_INSTANCE instance, uint16* szFileName, JET_HANDLE* phfFile, uint32* pulFileSizeLow, uint32* pulFileSizeHigh);
+		public static extern int32 JetOpenFileInstanceW(JET_INSTANCE instance, ref uint16 szFileName, out JET_HANDLE phfFile, out uint32 pulFileSizeLow, out uint32 pulFileSizeHigh);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetReadFile(JET_HANDLE hfFile, void* pv, uint32 cb, uint32* pcbActual);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2597,35 +2597,35 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetEndExternalBackupInstance2(JET_INSTANCE instance, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetExternalRestoreA(int8* szCheckpointFilePath, int8* szLogPath, JET_RSTMAP_A* rgrstmap, int32 crstfilemap, int8* szBackupLogPath, int32 genLow, int32 genHigh, JET_PFNSTATUS pfn);
+		public static extern int32 JetExternalRestoreA(ref int8 szCheckpointFilePath, ref int8 szLogPath, JET_RSTMAP_A* rgrstmap, int32 crstfilemap, ref int8 szBackupLogPath, int32 genLow, int32 genHigh, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetExternalRestoreW(uint16* szCheckpointFilePath, uint16* szLogPath, JET_RSTMAP_W* rgrstmap, int32 crstfilemap, uint16* szBackupLogPath, int32 genLow, int32 genHigh, JET_PFNSTATUS pfn);
+		public static extern int32 JetExternalRestoreW(ref uint16 szCheckpointFilePath, ref uint16 szLogPath, JET_RSTMAP_W* rgrstmap, int32 crstfilemap, ref uint16 szBackupLogPath, int32 genLow, int32 genHigh, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetExternalRestore2A(int8* szCheckpointFilePath, int8* szLogPath, JET_RSTMAP_A* rgrstmap, int32 crstfilemap, int8* szBackupLogPath, JET_LOGINFO_A* pLogInfo, int8* szTargetInstanceName, int8* szTargetInstanceLogPath, int8* szTargetInstanceCheckpointPath, JET_PFNSTATUS pfn);
+		public static extern int32 JetExternalRestore2A(ref int8 szCheckpointFilePath, ref int8 szLogPath, JET_RSTMAP_A* rgrstmap, int32 crstfilemap, ref int8 szBackupLogPath, out JET_LOGINFO_A pLogInfo, int8* szTargetInstanceName, int8* szTargetInstanceLogPath, int8* szTargetInstanceCheckpointPath, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetExternalRestore2W(uint16* szCheckpointFilePath, uint16* szLogPath, JET_RSTMAP_W* rgrstmap, int32 crstfilemap, uint16* szBackupLogPath, JET_LOGINFO_W* pLogInfo, uint16* szTargetInstanceName, uint16* szTargetInstanceLogPath, uint16* szTargetInstanceCheckpointPath, JET_PFNSTATUS pfn);
+		public static extern int32 JetExternalRestore2W(ref uint16 szCheckpointFilePath, ref uint16 szLogPath, JET_RSTMAP_W* rgrstmap, int32 crstfilemap, ref uint16 szBackupLogPath, out JET_LOGINFO_W pLogInfo, uint16* szTargetInstanceName, uint16* szTargetInstanceLogPath, uint16* szTargetInstanceCheckpointPath, JET_PFNSTATUS pfn);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetRegisterCallback(JET_SESID sesid, JET_TABLEID tableid, uint32 cbtyp, JET_CALLBACK pCallback, void* pvContext, JET_HANDLE* phCallbackId);
+		public static extern int32 JetRegisterCallback(JET_SESID sesid, JET_TABLEID tableid, uint32 cbtyp, JET_CALLBACK pCallback, void* pvContext, ref JET_HANDLE phCallbackId);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetUnregisterCallback(JET_SESID sesid, JET_TABLEID tableid, uint32 cbtyp, JET_HANDLE hCallbackId);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetInstanceInfoA(uint32* pcInstanceInfo, JET_INSTANCE_INFO_A** paInstanceInfo);
+		public static extern int32 JetGetInstanceInfoA(out uint32 pcInstanceInfo, out JET_INSTANCE_INFO_A* paInstanceInfo);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetInstanceInfoW(uint32* pcInstanceInfo, JET_INSTANCE_INFO_W** paInstanceInfo);
+		public static extern int32 JetGetInstanceInfoW(out uint32 pcInstanceInfo, out JET_INSTANCE_INFO_W* paInstanceInfo);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetFreeBuffer(PSTR pbBuf);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetSetLS(JET_SESID sesid, JET_TABLEID tableid, JET_LS ls, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetGetLS(JET_SESID sesid, JET_TABLEID tableid, JET_LS* pls, uint32 grbit);
+		public static extern int32 JetGetLS(JET_SESID sesid, JET_TABLEID tableid, out JET_LS pls, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOSSnapshotPrepare(JET_OSSNAPID* psnapId, uint32 grbit);
+		public static extern int32 JetOSSnapshotPrepare(out JET_OSSNAPID psnapId, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetOSSnapshotPrepareInstance(JET_OSSNAPID snapId, JET_INSTANCE instance, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOSSnapshotFreezeA(JET_OSSNAPID snapId, uint32* pcInstanceInfo, JET_INSTANCE_INFO_A** paInstanceInfo, uint32 grbit);
+		public static extern int32 JetOSSnapshotFreezeA(JET_OSSNAPID snapId, out uint32 pcInstanceInfo, out JET_INSTANCE_INFO_A* paInstanceInfo, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOSSnapshotFreezeW(JET_OSSNAPID snapId, uint32* pcInstanceInfo, JET_INSTANCE_INFO_W** paInstanceInfo, uint32 grbit);
+		public static extern int32 JetOSSnapshotFreezeW(JET_OSSNAPID snapId, out uint32 pcInstanceInfo, out JET_INSTANCE_INFO_W* paInstanceInfo, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetOSSnapshotThaw(JET_OSSNAPID snapId, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2635,9 +2635,9 @@ namespace Win32
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetOSSnapshotTruncateLogInstance(JET_OSSNAPID snapId, JET_INSTANCE instance, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOSSnapshotGetFreezeInfoA(JET_OSSNAPID snapId, uint32* pcInstanceInfo, JET_INSTANCE_INFO_A** paInstanceInfo, uint32 grbit);
+		public static extern int32 JetOSSnapshotGetFreezeInfoA(JET_OSSNAPID snapId, out uint32 pcInstanceInfo, out JET_INSTANCE_INFO_A* paInstanceInfo, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 JetOSSnapshotGetFreezeInfoW(JET_OSSNAPID snapId, uint32* pcInstanceInfo, JET_INSTANCE_INFO_W** paInstanceInfo, uint32 grbit);
+		public static extern int32 JetOSSnapshotGetFreezeInfoW(JET_OSSNAPID snapId, out uint32 pcInstanceInfo, out JET_INSTANCE_INFO_W* paInstanceInfo, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 JetOSSnapshotEnd(JET_OSSNAPID snapId, uint32 grbit);
 		[Import("esent.dll"), CLink, CallingConvention(.Stdcall)]

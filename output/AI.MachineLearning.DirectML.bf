@@ -1782,29 +1782,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPrivateData(Guid* guid, uint32* dataSize, void* data) mut
+			public HRESULT GetPrivateData(in Guid guid, out uint32 dataSize, void* data) mut
 			{
-				return VT.GetPrivateData(&this, guid, dataSize, data);
+				return VT.GetPrivateData(ref this, guid, out dataSize, data);
 			}
-			public HRESULT SetPrivateData(Guid* guid, uint32 dataSize, void* data) mut
+			public HRESULT SetPrivateData(in Guid guid, uint32 dataSize, void* data) mut
 			{
-				return VT.SetPrivateData(&this, guid, dataSize, data);
+				return VT.SetPrivateData(ref this, guid, dataSize, data);
 			}
-			public HRESULT SetPrivateDataInterface(Guid* guid, IUnknown* data) mut
+			public HRESULT SetPrivateDataInterface(in Guid guid, IUnknown* data) mut
 			{
-				return VT.SetPrivateDataInterface(&this, guid, data);
+				return VT.SetPrivateDataInterface(ref this, guid, data);
 			}
 			public HRESULT SetName(PWSTR name) mut
 			{
-				return VT.SetName(&this, name);
+				return VT.SetName(ref this, name);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDMLObject *self, Guid* guid, uint32* dataSize, void* data) GetPrivateData;
-				public new function HRESULT(IDMLObject *self, Guid* guid, uint32 dataSize, void* data) SetPrivateData;
-				public new function HRESULT(IDMLObject *self, Guid* guid, IUnknown* data) SetPrivateDataInterface;
-				public new function HRESULT(IDMLObject *self, PWSTR name) SetName;
+				public new function HRESULT(ref IDMLObject self, in Guid guid, out uint32 dataSize, void* data) GetPrivateData;
+				public new function HRESULT(ref IDMLObject self, in Guid guid, uint32 dataSize, void* data) SetPrivateData;
+				public new function HRESULT(ref IDMLObject self, in Guid guid, IUnknown* data) SetPrivateDataInterface;
+				public new function HRESULT(ref IDMLObject self, PWSTR name) SetName;
 			}
 		}
 		[CRepr]
@@ -1816,57 +1816,57 @@ namespace Win32
 			
 			public HRESULT CheckFeatureSupport(DML_FEATURE feature, uint32 featureQueryDataSize, void* featureQueryData, uint32 featureSupportDataSize, void* featureSupportData) mut
 			{
-				return VT.CheckFeatureSupport(&this, feature, featureQueryDataSize, featureQueryData, featureSupportDataSize, featureSupportData);
+				return VT.CheckFeatureSupport(ref this, feature, featureQueryDataSize, featureQueryData, featureSupportDataSize, featureSupportData);
 			}
-			public HRESULT CreateOperator(DML_OPERATOR_DESC* desc, Guid* riid, void** ppv) mut
+			public HRESULT CreateOperator(in DML_OPERATOR_DESC desc, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateOperator(&this, desc, riid, ppv);
+				return VT.CreateOperator(ref this, desc, riid, ppv);
 			}
-			public HRESULT CompileOperator(IDMLOperator* op, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) mut
+			public HRESULT CompileOperator(ref IDMLOperator op, DML_EXECUTION_FLAGS flags, in Guid riid, void** ppv) mut
 			{
-				return VT.CompileOperator(&this, op, flags, riid, ppv);
+				return VT.CompileOperator(ref this, ref op, flags, riid, ppv);
 			}
-			public HRESULT CreateOperatorInitializer(uint32 operatorCount, IDMLCompiledOperator** operators, Guid* riid, void** ppv) mut
+			public HRESULT CreateOperatorInitializer(uint32 operatorCount, IDMLCompiledOperator** operators, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateOperatorInitializer(&this, operatorCount, operators, riid, ppv);
+				return VT.CreateOperatorInitializer(ref this, operatorCount, operators, riid, ppv);
 			}
-			public HRESULT CreateCommandRecorder(Guid* riid, void** ppv) mut
+			public HRESULT CreateCommandRecorder(in Guid riid, void** ppv) mut
 			{
-				return VT.CreateCommandRecorder(&this, riid, ppv);
+				return VT.CreateCommandRecorder(ref this, riid, ppv);
 			}
-			public HRESULT CreateBindingTable(DML_BINDING_TABLE_DESC* desc, Guid* riid, void** ppv) mut
+			public HRESULT CreateBindingTable(DML_BINDING_TABLE_DESC* desc, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateBindingTable(&this, desc, riid, ppv);
+				return VT.CreateBindingTable(ref this, desc, riid, ppv);
 			}
 			public HRESULT Evict(uint32 count, IDMLPageable** ppObjects) mut
 			{
-				return VT.Evict(&this, count, ppObjects);
+				return VT.Evict(ref this, count, ppObjects);
 			}
 			public HRESULT MakeResident(uint32 count, IDMLPageable** ppObjects) mut
 			{
-				return VT.MakeResident(&this, count, ppObjects);
+				return VT.MakeResident(ref this, count, ppObjects);
 			}
 			public HRESULT GetDeviceRemovedReason() mut
 			{
-				return VT.GetDeviceRemovedReason(&this);
+				return VT.GetDeviceRemovedReason(ref this);
 			}
-			public HRESULT GetParentDevice(Guid* riid, void** ppv) mut
+			public HRESULT GetParentDevice(in Guid riid, void** ppv) mut
 			{
-				return VT.GetParentDevice(&this, riid, ppv);
+				return VT.GetParentDevice(ref this, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IDMLObject.VTable
 			{
-				public new function HRESULT(IDMLDevice *self, DML_FEATURE feature, uint32 featureQueryDataSize, void* featureQueryData, uint32 featureSupportDataSize, void* featureSupportData) CheckFeatureSupport;
-				public new function HRESULT(IDMLDevice *self, DML_OPERATOR_DESC* desc, Guid* riid, void** ppv) CreateOperator;
-				public new function HRESULT(IDMLDevice *self, IDMLOperator* op, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) CompileOperator;
-				public new function HRESULT(IDMLDevice *self, uint32 operatorCount, IDMLCompiledOperator** operators, Guid* riid, void** ppv) CreateOperatorInitializer;
-				public new function HRESULT(IDMLDevice *self, Guid* riid, void** ppv) CreateCommandRecorder;
-				public new function HRESULT(IDMLDevice *self, DML_BINDING_TABLE_DESC* desc, Guid* riid, void** ppv) CreateBindingTable;
-				public new function HRESULT(IDMLDevice *self, uint32 count, IDMLPageable** ppObjects) Evict;
-				public new function HRESULT(IDMLDevice *self, uint32 count, IDMLPageable** ppObjects) MakeResident;
-				public new function HRESULT(IDMLDevice *self) GetDeviceRemovedReason;
-				public new function HRESULT(IDMLDevice *self, Guid* riid, void** ppv) GetParentDevice;
+				public new function HRESULT(ref IDMLDevice self, DML_FEATURE feature, uint32 featureQueryDataSize, void* featureQueryData, uint32 featureSupportDataSize, void* featureSupportData) CheckFeatureSupport;
+				public new function HRESULT(ref IDMLDevice self, in DML_OPERATOR_DESC desc, in Guid riid, void** ppv) CreateOperator;
+				public new function HRESULT(ref IDMLDevice self, ref IDMLOperator op, DML_EXECUTION_FLAGS flags, in Guid riid, void** ppv) CompileOperator;
+				public new function HRESULT(ref IDMLDevice self, uint32 operatorCount, IDMLCompiledOperator** operators, in Guid riid, void** ppv) CreateOperatorInitializer;
+				public new function HRESULT(ref IDMLDevice self, in Guid riid, void** ppv) CreateCommandRecorder;
+				public new function HRESULT(ref IDMLDevice self, DML_BINDING_TABLE_DESC* desc, in Guid riid, void** ppv) CreateBindingTable;
+				public new function HRESULT(ref IDMLDevice self, uint32 count, IDMLPageable** ppObjects) Evict;
+				public new function HRESULT(ref IDMLDevice self, uint32 count, IDMLPageable** ppObjects) MakeResident;
+				public new function HRESULT(ref IDMLDevice self) GetDeviceRemovedReason;
+				public new function HRESULT(ref IDMLDevice self, in Guid riid, void** ppv) GetParentDevice;
 			}
 		}
 		[CRepr]
@@ -1876,14 +1876,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevice(Guid* riid, void** ppv) mut
+			public HRESULT GetDevice(in Guid riid, void** ppv) mut
 			{
-				return VT.GetDevice(&this, riid, ppv);
+				return VT.GetDevice(ref this, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IDMLObject.VTable
 			{
-				public new function HRESULT(IDMLDeviceChild *self, Guid* riid, void** ppv) GetDevice;
+				public new function HRESULT(ref IDMLDeviceChild self, in Guid riid, void** ppv) GetDevice;
 			}
 		}
 		[CRepr]
@@ -1919,12 +1919,12 @@ namespace Win32
 			
 			public DML_BINDING_PROPERTIES GetBindingProperties() mut
 			{
-				return VT.GetBindingProperties(&this);
+				return VT.GetBindingProperties(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDMLPageable.VTable
 			{
-				public new function DML_BINDING_PROPERTIES(IDMLDispatchable *self) GetBindingProperties;
+				public new function DML_BINDING_PROPERTIES(ref IDMLDispatchable self) GetBindingProperties;
 			}
 		}
 		[CRepr]
@@ -1948,12 +1948,12 @@ namespace Win32
 			
 			public HRESULT Reset(uint32 operatorCount, IDMLCompiledOperator** operators) mut
 			{
-				return VT.Reset(&this, operatorCount, operators);
+				return VT.Reset(ref this, operatorCount, operators);
 			}
 			[CRepr]
 			public struct VTable : IDMLDispatchable.VTable
 			{
-				public new function HRESULT(IDMLOperatorInitializer *self, uint32 operatorCount, IDMLCompiledOperator** operators) Reset;
+				public new function HRESULT(ref IDMLOperatorInitializer self, uint32 operatorCount, IDMLCompiledOperator** operators) Reset;
 			}
 		}
 		[CRepr]
@@ -1965,32 +1965,32 @@ namespace Win32
 			
 			public void BindInputs(uint32 bindingCount, DML_BINDING_DESC* bindings) mut
 			{
-				VT.BindInputs(&this, bindingCount, bindings);
+				VT.BindInputs(ref this, bindingCount, bindings);
 			}
 			public void BindOutputs(uint32 bindingCount, DML_BINDING_DESC* bindings) mut
 			{
-				VT.BindOutputs(&this, bindingCount, bindings);
+				VT.BindOutputs(ref this, bindingCount, bindings);
 			}
 			public void BindTemporaryResource(DML_BINDING_DESC* binding) mut
 			{
-				VT.BindTemporaryResource(&this, binding);
+				VT.BindTemporaryResource(ref this, binding);
 			}
 			public void BindPersistentResource(DML_BINDING_DESC* binding) mut
 			{
-				VT.BindPersistentResource(&this, binding);
+				VT.BindPersistentResource(ref this, binding);
 			}
 			public HRESULT Reset(DML_BINDING_TABLE_DESC* desc) mut
 			{
-				return VT.Reset(&this, desc);
+				return VT.Reset(ref this, desc);
 			}
 			[CRepr]
 			public struct VTable : IDMLDeviceChild.VTable
 			{
-				public new function void(IDMLBindingTable *self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindInputs;
-				public new function void(IDMLBindingTable *self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindOutputs;
-				public new function void(IDMLBindingTable *self, DML_BINDING_DESC* binding) BindTemporaryResource;
-				public new function void(IDMLBindingTable *self, DML_BINDING_DESC* binding) BindPersistentResource;
-				public new function HRESULT(IDMLBindingTable *self, DML_BINDING_TABLE_DESC* desc) Reset;
+				public new function void(ref IDMLBindingTable self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindInputs;
+				public new function void(ref IDMLBindingTable self, uint32 bindingCount, DML_BINDING_DESC* bindings) BindOutputs;
+				public new function void(ref IDMLBindingTable self, DML_BINDING_DESC* binding) BindTemporaryResource;
+				public new function void(ref IDMLBindingTable self, DML_BINDING_DESC* binding) BindPersistentResource;
+				public new function HRESULT(ref IDMLBindingTable self, DML_BINDING_TABLE_DESC* desc) Reset;
 			}
 		}
 		[CRepr]
@@ -2000,14 +2000,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void RecordDispatch(ID3D12CommandList* commandList, IDMLDispatchable* dispatchable, IDMLBindingTable* bindings) mut
+			public void RecordDispatch(ref ID3D12CommandList commandList, ref IDMLDispatchable dispatchable, ref IDMLBindingTable bindings) mut
 			{
-				VT.RecordDispatch(&this, commandList, dispatchable, bindings);
+				VT.RecordDispatch(ref this, ref commandList, ref dispatchable, ref bindings);
 			}
 			[CRepr]
 			public struct VTable : IDMLDeviceChild.VTable
 			{
-				public new function void(IDMLCommandRecorder *self, ID3D12CommandList* commandList, IDMLDispatchable* dispatchable, IDMLBindingTable* bindings) RecordDispatch;
+				public new function void(ref IDMLCommandRecorder self, ref ID3D12CommandList commandList, ref IDMLDispatchable dispatchable, ref IDMLBindingTable bindings) RecordDispatch;
 			}
 		}
 		[CRepr]
@@ -2019,12 +2019,12 @@ namespace Win32
 			
 			public void SetMuteDebugOutput(BOOL mute) mut
 			{
-				VT.SetMuteDebugOutput(&this, mute);
+				VT.SetMuteDebugOutput(ref this, mute);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IDMLDebugDevice *self, BOOL mute) SetMuteDebugOutput;
+				public new function void(ref IDMLDebugDevice self, BOOL mute) SetMuteDebugOutput;
 			}
 		}
 		[CRepr]
@@ -2034,23 +2034,23 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CompileGraph(DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) mut
+			public HRESULT CompileGraph(in DML_GRAPH_DESC desc, DML_EXECUTION_FLAGS flags, in Guid riid, void** ppv) mut
 			{
-				return VT.CompileGraph(&this, desc, flags, riid, ppv);
+				return VT.CompileGraph(ref this, desc, flags, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IDMLDevice.VTable
 			{
-				public new function HRESULT(IDMLDevice1 *self, DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, Guid* riid, void** ppv) CompileGraph;
+				public new function HRESULT(ref IDMLDevice1 self, in DML_GRAPH_DESC desc, DML_EXECUTION_FLAGS flags, in Guid riid, void** ppv) CompileGraph;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("directml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DMLCreateDevice(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, Guid* riid, void** ppv);
+		public static extern HRESULT DMLCreateDevice(ref ID3D12Device d3d12Device, DML_CREATE_DEVICE_FLAGS flags, in Guid riid, void** ppv);
 		[Import("directml.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, Guid* riid, void** ppv);
+		public static extern HRESULT DMLCreateDevice1(ref ID3D12Device d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, in Guid riid, void** ppv);
 		
 	}
 }

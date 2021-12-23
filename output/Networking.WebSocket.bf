@@ -106,15 +106,15 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WebSocketCreateClientHandle(WEB_SOCKET_PROPERTY* pProperties, uint32 ulPropertyCount, WEB_SOCKET_HANDLE* phWebSocket);
+		public static extern HRESULT WebSocketCreateClientHandle(WEB_SOCKET_PROPERTY* pProperties, uint32 ulPropertyCount, out WEB_SOCKET_HANDLE phWebSocket);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WebSocketBeginClientHandshake(WEB_SOCKET_HANDLE hWebSocket, PSTR* pszSubprotocols, uint32 ulSubprotocolCount, PSTR* pszExtensions, uint32 ulExtensionCount, WEB_SOCKET_HTTP_HEADER* pInitialHeaders, uint32 ulInitialHeaderCount, WEB_SOCKET_HTTP_HEADER** pAdditionalHeaders, uint32* pulAdditionalHeaderCount);
+		public static extern HRESULT WebSocketBeginClientHandshake(WEB_SOCKET_HANDLE hWebSocket, PSTR* pszSubprotocols, uint32 ulSubprotocolCount, PSTR* pszExtensions, uint32 ulExtensionCount, WEB_SOCKET_HTTP_HEADER* pInitialHeaders, uint32 ulInitialHeaderCount, WEB_SOCKET_HTTP_HEADER** pAdditionalHeaders, out uint32 pulAdditionalHeaderCount);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WebSocketEndClientHandshake(WEB_SOCKET_HANDLE hWebSocket, WEB_SOCKET_HTTP_HEADER* pResponseHeaders, uint32 ulReponseHeaderCount, uint32* pulSelectedExtensions, uint32* pulSelectedExtensionCount, uint32* pulSelectedSubprotocol);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WebSocketCreateServerHandle(WEB_SOCKET_PROPERTY* pProperties, uint32 ulPropertyCount, WEB_SOCKET_HANDLE* phWebSocket);
+		public static extern HRESULT WebSocketCreateServerHandle(WEB_SOCKET_PROPERTY* pProperties, uint32 ulPropertyCount, out WEB_SOCKET_HANDLE phWebSocket);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WebSocketBeginServerHandshake(WEB_SOCKET_HANDLE hWebSocket, PSTR pszSubprotocolSelected, PSTR* pszExtensionSelected, uint32 ulExtensionSelectedCount, WEB_SOCKET_HTTP_HEADER* pRequestHeaders, uint32 ulRequestHeaderCount, WEB_SOCKET_HTTP_HEADER** pResponseHeaders, uint32* pulResponseHeaderCount);
+		public static extern HRESULT WebSocketBeginServerHandshake(WEB_SOCKET_HANDLE hWebSocket, PSTR pszSubprotocolSelected, PSTR* pszExtensionSelected, uint32 ulExtensionSelectedCount, WEB_SOCKET_HTTP_HEADER* pRequestHeaders, uint32 ulRequestHeaderCount, WEB_SOCKET_HTTP_HEADER** pResponseHeaders, out uint32 pulResponseHeaderCount);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WebSocketEndServerHandshake(WEB_SOCKET_HANDLE hWebSocket);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
@@ -122,7 +122,7 @@ namespace Win32
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT WebSocketReceive(WEB_SOCKET_HANDLE hWebSocket, WEB_SOCKET_BUFFER* pBuffer, void* pvContext);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WebSocketGetAction(WEB_SOCKET_HANDLE hWebSocket, WEB_SOCKET_ACTION_QUEUE eActionQueue, WEB_SOCKET_BUFFER* pDataBuffers, uint32* pulDataBufferCount, WEB_SOCKET_ACTION* pAction, WEB_SOCKET_BUFFER_TYPE* pBufferType, void** pvApplicationContext, void** pvActionContext);
+		public static extern HRESULT WebSocketGetAction(WEB_SOCKET_HANDLE hWebSocket, WEB_SOCKET_ACTION_QUEUE eActionQueue, WEB_SOCKET_BUFFER* pDataBuffers, out uint32 pulDataBufferCount, out WEB_SOCKET_ACTION pAction, out WEB_SOCKET_BUFFER_TYPE pBufferType, void** pvApplicationContext, void** pvActionContext);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void WebSocketCompleteAction(WEB_SOCKET_HANDLE hWebSocket, void* pvActionContext, uint32 ulBytesTransferred);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
@@ -130,7 +130,7 @@ namespace Win32
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void WebSocketDeleteHandle(WEB_SOCKET_HANDLE hWebSocket);
 		[Import("websocket.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WebSocketGetGlobalProperty(WEB_SOCKET_PROPERTY_TYPE eType, void* pvValue, uint32* ulSize);
+		public static extern HRESULT WebSocketGetGlobalProperty(WEB_SOCKET_PROPERTY_TYPE eType, void* pvValue, out uint32 ulSize);
 		
 	}
 }

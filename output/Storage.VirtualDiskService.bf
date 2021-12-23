@@ -1666,29 +1666,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IUnknown** ppObjectArray, uint32* pcFetched) mut
+			public HRESULT Next(uint32 celt, IUnknown** ppObjectArray, out uint32 pcFetched) mut
 			{
-				return VT.Next(&this, celt, ppObjectArray, pcFetched);
+				return VT.Next(ref this, celt, ppObjectArray, out pcFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Clone(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumVdsObject *self, uint32 celt, IUnknown** ppObjectArray, uint32* pcFetched) Next;
-				public new function HRESULT(IEnumVdsObject *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumVdsObject *self) Reset;
-				public new function HRESULT(IEnumVdsObject *self, IEnumVdsObject** ppEnum) Clone;
+				public new function HRESULT(ref IEnumVdsObject self, uint32 celt, IUnknown** ppObjectArray, out uint32 pcFetched) Next;
+				public new function HRESULT(ref IEnumVdsObject self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumVdsObject self) Reset;
+				public new function HRESULT(ref IEnumVdsObject self, IEnumVdsObject** ppEnum) Clone;
 			}
 		}
 		[CRepr]
@@ -1700,22 +1700,22 @@ namespace Win32
 			
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
-			public HRESULT Wait(HRESULT* pHrResult, VDS_ASYNC_OUTPUT* pAsyncOut) mut
+			public HRESULT Wait(out HRESULT pHrResult, out VDS_ASYNC_OUTPUT pAsyncOut) mut
 			{
-				return VT.Wait(&this, pHrResult, pAsyncOut);
+				return VT.Wait(ref this, out pHrResult, out pAsyncOut);
 			}
-			public HRESULT QueryStatus(HRESULT* pHrResult, uint32* pulPercentCompleted) mut
+			public HRESULT QueryStatus(out HRESULT pHrResult, out uint32 pulPercentCompleted) mut
 			{
-				return VT.QueryStatus(&this, pHrResult, pulPercentCompleted);
+				return VT.QueryStatus(ref this, out pHrResult, out pulPercentCompleted);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsAsync *self) Cancel;
-				public new function HRESULT(IVdsAsync *self, HRESULT* pHrResult, VDS_ASYNC_OUTPUT* pAsyncOut) Wait;
-				public new function HRESULT(IVdsAsync *self, HRESULT* pHrResult, uint32* pulPercentCompleted) QueryStatus;
+				public new function HRESULT(ref IVdsAsync self) Cancel;
+				public new function HRESULT(ref IVdsAsync self, out HRESULT pHrResult, out VDS_ASYNC_OUTPUT pAsyncOut) Wait;
+				public new function HRESULT(ref IVdsAsync self, out HRESULT pHrResult, out uint32 pulPercentCompleted) QueryStatus;
 			}
 		}
 		[CRepr]
@@ -1727,12 +1727,12 @@ namespace Win32
 			
 			public HRESULT OnNotify(int32 lNumberOfNotifications, VDS_NOTIFICATION* pNotificationArray) mut
 			{
-				return VT.OnNotify(&this, lNumberOfNotifications, pNotificationArray);
+				return VT.OnNotify(ref this, lNumberOfNotifications, pNotificationArray);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsAdviseSink *self, int32 lNumberOfNotifications, VDS_NOTIFICATION* pNotificationArray) OnNotify;
+				public new function HRESULT(ref IVdsAdviseSink self, int32 lNumberOfNotifications, VDS_NOTIFICATION* pNotificationArray) OnNotify;
 			}
 		}
 		[CRepr]
@@ -1742,14 +1742,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_PROVIDER_PROP* pProviderProp) mut
+			public HRESULT GetProperties(out VDS_PROVIDER_PROP pProviderProp) mut
 			{
-				return VT.GetProperties(&this, pProviderProp);
+				return VT.GetProperties(ref this, out pProviderProp);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsProvider *self, VDS_PROVIDER_PROP* pProviderProp) GetProperties;
+				public new function HRESULT(ref IVdsProvider self, out VDS_PROVIDER_PROP pProviderProp) GetProperties;
 			}
 		}
 		[CRepr]
@@ -1759,14 +1759,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVersionSupport(uint32* ulVersionSupport) mut
+			public HRESULT GetVersionSupport(out uint32 ulVersionSupport) mut
 			{
-				return VT.GetVersionSupport(&this, ulVersionSupport);
+				return VT.GetVersionSupport(ref this, out ulVersionSupport);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsProviderSupport *self, uint32* ulVersionSupport) GetVersionSupport;
+				public new function HRESULT(ref IVdsProviderSupport self, out uint32 ulVersionSupport) GetVersionSupport;
 			}
 		}
 		[CRepr]
@@ -1778,22 +1778,22 @@ namespace Win32
 			
 			public HRESULT GetObject(Guid ObjectId, VDS_OBJECT_TYPE type, IUnknown** ppObjectUnk) mut
 			{
-				return VT.GetObject(&this, ObjectId, type, ppObjectUnk);
+				return VT.GetObject(ref this, ObjectId, type, ppObjectUnk);
 			}
 			public HRESULT OnLoad(PWSTR pwszMachineName, IUnknown* pCallbackObject) mut
 			{
-				return VT.OnLoad(&this, pwszMachineName, pCallbackObject);
+				return VT.OnLoad(ref this, pwszMachineName, pCallbackObject);
 			}
 			public HRESULT OnUnload(BOOL bForceUnload) mut
 			{
-				return VT.OnUnload(&this, bForceUnload);
+				return VT.OnUnload(ref this, bForceUnload);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsProviderPrivate *self, Guid ObjectId, VDS_OBJECT_TYPE type, IUnknown** ppObjectUnk) GetObject;
-				public new function HRESULT(IVdsProviderPrivate *self, PWSTR pwszMachineName, IUnknown* pCallbackObject) OnLoad;
-				public new function HRESULT(IVdsProviderPrivate *self, BOOL bForceUnload) OnUnload;
+				public new function HRESULT(ref IVdsProviderPrivate self, Guid ObjectId, VDS_OBJECT_TYPE type, IUnknown** ppObjectUnk) GetObject;
+				public new function HRESULT(ref IVdsProviderPrivate self, PWSTR pwszMachineName, IUnknown* pCallbackObject) OnLoad;
+				public new function HRESULT(ref IVdsProviderPrivate self, BOOL bForceUnload) OnUnload;
 			}
 		}
 		[CRepr]
@@ -1805,22 +1805,22 @@ namespace Win32
 			
 			public HRESULT QuerySubSystems(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QuerySubSystems(&this, ppEnum);
+				return VT.QuerySubSystems(ref this, ppEnum);
 			}
 			public HRESULT Reenumerate() mut
 			{
-				return VT.Reenumerate(&this);
+				return VT.Reenumerate(ref this);
 			}
 			public HRESULT Refresh() mut
 			{
-				return VT.Refresh(&this);
+				return VT.Refresh(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsHwProvider *self, IEnumVdsObject** ppEnum) QuerySubSystems;
-				public new function HRESULT(IVdsHwProvider *self) Reenumerate;
-				public new function HRESULT(IVdsHwProvider *self) Refresh;
+				public new function HRESULT(ref IVdsHwProvider self, IEnumVdsObject** ppEnum) QuerySubSystems;
+				public new function HRESULT(ref IVdsHwProvider self) Reenumerate;
+				public new function HRESULT(ref IVdsHwProvider self) Refresh;
 			}
 		}
 		[CRepr]
@@ -1830,14 +1830,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProviderType(VDS_HWPROVIDER_TYPE* pType) mut
+			public HRESULT GetProviderType(out VDS_HWPROVIDER_TYPE pType) mut
 			{
-				return VT.GetProviderType(&this, pType);
+				return VT.GetProviderType(ref this, out pType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsHwProviderType *self, VDS_HWPROVIDER_TYPE* pType) GetProviderType;
+				public new function HRESULT(ref IVdsHwProviderType self, out VDS_HWPROVIDER_TYPE pType) GetProviderType;
 			}
 		}
 		[CRepr]
@@ -1847,14 +1847,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProviderType2(VDS_HWPROVIDER_TYPE* pType) mut
+			public HRESULT GetProviderType2(out VDS_HWPROVIDER_TYPE pType) mut
 			{
-				return VT.GetProviderType2(&this, pType);
+				return VT.GetProviderType2(ref this, out pType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsHwProviderType2 *self, VDS_HWPROVIDER_TYPE* pType) GetProviderType2;
+				public new function HRESULT(ref IVdsHwProviderType2 self, out VDS_HWPROVIDER_TYPE pType) GetProviderType2;
 			}
 		}
 		[CRepr]
@@ -1866,22 +1866,22 @@ namespace Win32
 			
 			public HRESULT QueryStoragePools(uint32 ulFlags, uint64 ullRemainingFreeSpace, VDS_POOL_ATTRIBUTES* pPoolAttributes, IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryStoragePools(&this, ulFlags, ullRemainingFreeSpace, pPoolAttributes, ppEnum);
+				return VT.QueryStoragePools(ref this, ulFlags, ullRemainingFreeSpace, pPoolAttributes, ppEnum);
 			}
 			public HRESULT CreateLunInStoragePool(VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid StoragePoolId, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) mut
 			{
-				return VT.CreateLunInStoragePool(&this, type, ullSizeInBytes, StoragePoolId, pwszUnmaskingList, pHints2, ppAsync);
+				return VT.CreateLunInStoragePool(ref this, type, ullSizeInBytes, StoragePoolId, pwszUnmaskingList, pHints2, ppAsync);
 			}
-			public HRESULT QueryMaxLunCreateSizeInStoragePool(VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, uint64* pullMaxLunSize) mut
+			public HRESULT QueryMaxLunCreateSizeInStoragePool(VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) mut
 			{
-				return VT.QueryMaxLunCreateSizeInStoragePool(&this, type, StoragePoolId, pHints2, pullMaxLunSize);
+				return VT.QueryMaxLunCreateSizeInStoragePool(ref this, type, StoragePoolId, pHints2, out pullMaxLunSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsHwProviderStoragePools *self, uint32 ulFlags, uint64 ullRemainingFreeSpace, VDS_POOL_ATTRIBUTES* pPoolAttributes, IEnumVdsObject** ppEnum) QueryStoragePools;
-				public new function HRESULT(IVdsHwProviderStoragePools *self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid StoragePoolId, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLunInStoragePool;
-				public new function HRESULT(IVdsHwProviderStoragePools *self, VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, uint64* pullMaxLunSize) QueryMaxLunCreateSizeInStoragePool;
+				public new function HRESULT(ref IVdsHwProviderStoragePools self, uint32 ulFlags, uint64 ullRemainingFreeSpace, VDS_POOL_ATTRIBUTES* pPoolAttributes, IEnumVdsObject** ppEnum) QueryStoragePools;
+				public new function HRESULT(ref IVdsHwProviderStoragePools self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid StoragePoolId, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLunInStoragePool;
+				public new function HRESULT(ref IVdsHwProviderStoragePools self, VDS_LUN_TYPE type, Guid StoragePoolId, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) QueryMaxLunCreateSizeInStoragePool;
 			}
 		}
 		[CRepr]
@@ -1891,69 +1891,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_SUB_SYSTEM_PROP* pSubSystemProp) mut
+			public HRESULT GetProperties(out VDS_SUB_SYSTEM_PROP pSubSystemProp) mut
 			{
-				return VT.GetProperties(&this, pSubSystemProp);
+				return VT.GetProperties(ref this, out pSubSystemProp);
 			}
 			public HRESULT GetProvider(IVdsProvider** ppProvider) mut
 			{
-				return VT.GetProvider(&this, ppProvider);
+				return VT.GetProvider(ref this, ppProvider);
 			}
 			public HRESULT QueryControllers(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryControllers(&this, ppEnum);
+				return VT.QueryControllers(ref this, ppEnum);
 			}
 			public HRESULT QueryLuns(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryLuns(&this, ppEnum);
+				return VT.QueryLuns(ref this, ppEnum);
 			}
 			public HRESULT QueryDrives(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryDrives(&this, ppEnum);
+				return VT.QueryDrives(ref this, ppEnum);
 			}
 			public HRESULT GetDrive(int16 sBusNumber, int16 sSlotNumber, IVdsDrive** ppDrive) mut
 			{
-				return VT.GetDrive(&this, sBusNumber, sSlotNumber, ppDrive);
+				return VT.GetDrive(ref this, sBusNumber, sSlotNumber, ppDrive);
 			}
 			public HRESULT Reenumerate() mut
 			{
-				return VT.Reenumerate(&this);
+				return VT.Reenumerate(ref this);
 			}
 			public HRESULT SetControllerStatus(Guid* pOnlineControllerIdArray, int32 lNumberOfOnlineControllers, Guid* pOfflineControllerIdArray, int32 lNumberOfOfflineControllers) mut
 			{
-				return VT.SetControllerStatus(&this, pOnlineControllerIdArray, lNumberOfOnlineControllers, pOfflineControllerIdArray, lNumberOfOfflineControllers);
+				return VT.SetControllerStatus(ref this, pOnlineControllerIdArray, lNumberOfOnlineControllers, pOfflineControllerIdArray, lNumberOfOfflineControllers);
 			}
 			public HRESULT CreateLun(VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS* pHints, IVdsAsync** ppAsync) mut
 			{
-				return VT.CreateLun(&this, type, ullSizeInBytes, pDriveIdArray, lNumberOfDrives, pwszUnmaskingList, pHints, ppAsync);
+				return VT.CreateLun(ref this, type, ullSizeInBytes, pDriveIdArray, lNumberOfDrives, pwszUnmaskingList, pHints, ppAsync);
 			}
 			public HRESULT ReplaceDrive(Guid DriveToBeReplaced, Guid ReplacementDrive) mut
 			{
-				return VT.ReplaceDrive(&this, DriveToBeReplaced, ReplacementDrive);
+				return VT.ReplaceDrive(ref this, DriveToBeReplaced, ReplacementDrive);
 			}
 			public HRESULT SetStatus(VDS_SUB_SYSTEM_STATUS status) mut
 			{
-				return VT.SetStatus(&this, status);
+				return VT.SetStatus(ref this, status);
 			}
-			public HRESULT QueryMaxLunCreateSize(VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, uint64* pullMaxLunSize) mut
+			public HRESULT QueryMaxLunCreateSize(VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, out uint64 pullMaxLunSize) mut
 			{
-				return VT.QueryMaxLunCreateSize(&this, type, pDriveIdArray, lNumberOfDrives, pHints, pullMaxLunSize);
+				return VT.QueryMaxLunCreateSize(ref this, type, pDriveIdArray, lNumberOfDrives, pHints, out pullMaxLunSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsSubSystem *self, VDS_SUB_SYSTEM_PROP* pSubSystemProp) GetProperties;
-				public new function HRESULT(IVdsSubSystem *self, IVdsProvider** ppProvider) GetProvider;
-				public new function HRESULT(IVdsSubSystem *self, IEnumVdsObject** ppEnum) QueryControllers;
-				public new function HRESULT(IVdsSubSystem *self, IEnumVdsObject** ppEnum) QueryLuns;
-				public new function HRESULT(IVdsSubSystem *self, IEnumVdsObject** ppEnum) QueryDrives;
-				public new function HRESULT(IVdsSubSystem *self, int16 sBusNumber, int16 sSlotNumber, IVdsDrive** ppDrive) GetDrive;
-				public new function HRESULT(IVdsSubSystem *self) Reenumerate;
-				public new function HRESULT(IVdsSubSystem *self, Guid* pOnlineControllerIdArray, int32 lNumberOfOnlineControllers, Guid* pOfflineControllerIdArray, int32 lNumberOfOfflineControllers) SetControllerStatus;
-				public new function HRESULT(IVdsSubSystem *self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS* pHints, IVdsAsync** ppAsync) CreateLun;
-				public new function HRESULT(IVdsSubSystem *self, Guid DriveToBeReplaced, Guid ReplacementDrive) ReplaceDrive;
-				public new function HRESULT(IVdsSubSystem *self, VDS_SUB_SYSTEM_STATUS status) SetStatus;
-				public new function HRESULT(IVdsSubSystem *self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, uint64* pullMaxLunSize) QueryMaxLunCreateSize;
+				public new function HRESULT(ref IVdsSubSystem self, out VDS_SUB_SYSTEM_PROP pSubSystemProp) GetProperties;
+				public new function HRESULT(ref IVdsSubSystem self, IVdsProvider** ppProvider) GetProvider;
+				public new function HRESULT(ref IVdsSubSystem self, IEnumVdsObject** ppEnum) QueryControllers;
+				public new function HRESULT(ref IVdsSubSystem self, IEnumVdsObject** ppEnum) QueryLuns;
+				public new function HRESULT(ref IVdsSubSystem self, IEnumVdsObject** ppEnum) QueryDrives;
+				public new function HRESULT(ref IVdsSubSystem self, int16 sBusNumber, int16 sSlotNumber, IVdsDrive** ppDrive) GetDrive;
+				public new function HRESULT(ref IVdsSubSystem self) Reenumerate;
+				public new function HRESULT(ref IVdsSubSystem self, Guid* pOnlineControllerIdArray, int32 lNumberOfOnlineControllers, Guid* pOfflineControllerIdArray, int32 lNumberOfOfflineControllers) SetControllerStatus;
+				public new function HRESULT(ref IVdsSubSystem self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS* pHints, IVdsAsync** ppAsync) CreateLun;
+				public new function HRESULT(ref IVdsSubSystem self, Guid DriveToBeReplaced, Guid ReplacementDrive) ReplaceDrive;
+				public new function HRESULT(ref IVdsSubSystem self, VDS_SUB_SYSTEM_STATUS status) SetStatus;
+				public new function HRESULT(ref IVdsSubSystem self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS* pHints, out uint64 pullMaxLunSize) QueryMaxLunCreateSize;
 			}
 		}
 		[CRepr]
@@ -1963,29 +1963,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties2(VDS_SUB_SYSTEM_PROP2* pSubSystemProp2) mut
+			public HRESULT GetProperties2(out VDS_SUB_SYSTEM_PROP2 pSubSystemProp2) mut
 			{
-				return VT.GetProperties2(&this, pSubSystemProp2);
+				return VT.GetProperties2(ref this, out pSubSystemProp2);
 			}
 			public HRESULT GetDrive2(int16 sBusNumber, int16 sSlotNumber, uint32 ulEnclosureNumber, IVdsDrive** ppDrive) mut
 			{
-				return VT.GetDrive2(&this, sBusNumber, sSlotNumber, ulEnclosureNumber, ppDrive);
+				return VT.GetDrive2(ref this, sBusNumber, sSlotNumber, ulEnclosureNumber, ppDrive);
 			}
 			public HRESULT CreateLun2(VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) mut
 			{
-				return VT.CreateLun2(&this, type, ullSizeInBytes, pDriveIdArray, lNumberOfDrives, pwszUnmaskingList, pHints2, ppAsync);
+				return VT.CreateLun2(ref this, type, ullSizeInBytes, pDriveIdArray, lNumberOfDrives, pwszUnmaskingList, pHints2, ppAsync);
 			}
-			public HRESULT QueryMaxLunCreateSize2(VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, uint64* pullMaxLunSize) mut
+			public HRESULT QueryMaxLunCreateSize2(VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) mut
 			{
-				return VT.QueryMaxLunCreateSize2(&this, type, pDriveIdArray, lNumberOfDrives, pHints2, pullMaxLunSize);
+				return VT.QueryMaxLunCreateSize2(ref this, type, pDriveIdArray, lNumberOfDrives, pHints2, out pullMaxLunSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsSubSystem2 *self, VDS_SUB_SYSTEM_PROP2* pSubSystemProp2) GetProperties2;
-				public new function HRESULT(IVdsSubSystem2 *self, int16 sBusNumber, int16 sSlotNumber, uint32 ulEnclosureNumber, IVdsDrive** ppDrive) GetDrive2;
-				public new function HRESULT(IVdsSubSystem2 *self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLun2;
-				public new function HRESULT(IVdsSubSystem2 *self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, uint64* pullMaxLunSize) QueryMaxLunCreateSize2;
+				public new function HRESULT(ref IVdsSubSystem2 self, out VDS_SUB_SYSTEM_PROP2 pSubSystemProp2) GetProperties2;
+				public new function HRESULT(ref IVdsSubSystem2 self, int16 sBusNumber, int16 sSlotNumber, uint32 ulEnclosureNumber, IVdsDrive** ppDrive) GetDrive2;
+				public new function HRESULT(ref IVdsSubSystem2 self, VDS_LUN_TYPE type, uint64 ullSizeInBytes, Guid* pDriveIdArray, int32 lNumberOfDrives, PWSTR pwszUnmaskingList, VDS_HINTS2* pHints2, IVdsAsync** ppAsync) CreateLun2;
+				public new function HRESULT(ref IVdsSubSystem2 self, VDS_LUN_TYPE type, Guid* pDriveIdArray, int32 lNumberOfDrives, VDS_HINTS2* pHints2, out uint64 pullMaxLunSize) QueryMaxLunCreateSize2;
 			}
 		}
 		[CRepr]
@@ -1997,12 +1997,12 @@ namespace Win32
 			
 			public HRESULT SetFriendlyName(PWSTR pwszFriendlyName) mut
 			{
-				return VT.SetFriendlyName(&this, pwszFriendlyName);
+				return VT.SetFriendlyName(ref this, pwszFriendlyName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsSubSystemNaming *self, PWSTR pwszFriendlyName) SetFriendlyName;
+				public new function HRESULT(ref IVdsSubSystemNaming self, PWSTR pwszFriendlyName) SetFriendlyName;
 			}
 		}
 		[CRepr]
@@ -2014,27 +2014,27 @@ namespace Win32
 			
 			public HRESULT QueryTargets(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryTargets(&this, ppEnum);
+				return VT.QueryTargets(ref this, ppEnum);
 			}
 			public HRESULT QueryPortals(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryPortals(&this, ppEnum);
+				return VT.QueryPortals(ref this, ppEnum);
 			}
 			public HRESULT CreateTarget(PWSTR pwszIscsiName, PWSTR pwszFriendlyName, IVdsAsync** ppAsync) mut
 			{
-				return VT.CreateTarget(&this, pwszIscsiName, pwszFriendlyName, ppAsync);
+				return VT.CreateTarget(ref this, pwszIscsiName, pwszFriendlyName, ppAsync);
 			}
 			public HRESULT SetIpsecGroupPresharedKey(VDS_ISCSI_IPSEC_KEY* pIpsecKey) mut
 			{
-				return VT.SetIpsecGroupPresharedKey(&this, pIpsecKey);
+				return VT.SetIpsecGroupPresharedKey(ref this, pIpsecKey);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsSubSystemIscsi *self, IEnumVdsObject** ppEnum) QueryTargets;
-				public new function HRESULT(IVdsSubSystemIscsi *self, IEnumVdsObject** ppEnum) QueryPortals;
-				public new function HRESULT(IVdsSubSystemIscsi *self, PWSTR pwszIscsiName, PWSTR pwszFriendlyName, IVdsAsync** ppAsync) CreateTarget;
-				public new function HRESULT(IVdsSubSystemIscsi *self, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecGroupPresharedKey;
+				public new function HRESULT(ref IVdsSubSystemIscsi self, IEnumVdsObject** ppEnum) QueryTargets;
+				public new function HRESULT(ref IVdsSubSystemIscsi self, IEnumVdsObject** ppEnum) QueryPortals;
+				public new function HRESULT(ref IVdsSubSystemIscsi self, PWSTR pwszIscsiName, PWSTR pwszFriendlyName, IVdsAsync** ppAsync) CreateTarget;
+				public new function HRESULT(ref IVdsSubSystemIscsi self, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecGroupPresharedKey;
 			}
 		}
 		[CRepr]
@@ -2044,14 +2044,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSupportedInterconnects(uint32* pulSupportedInterconnectsFlag) mut
+			public HRESULT GetSupportedInterconnects(out uint32 pulSupportedInterconnectsFlag) mut
 			{
-				return VT.GetSupportedInterconnects(&this, pulSupportedInterconnectsFlag);
+				return VT.GetSupportedInterconnects(ref this, out pulSupportedInterconnectsFlag);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsSubSystemInterconnect *self, uint32* pulSupportedInterconnectsFlag) GetSupportedInterconnects;
+				public new function HRESULT(ref IVdsSubSystemInterconnect self, out uint32 pulSupportedInterconnectsFlag) GetSupportedInterconnects;
 			}
 		}
 		[CRepr]
@@ -2061,34 +2061,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_PORT_PROP* pPortProp) mut
+			public HRESULT GetProperties(out VDS_PORT_PROP pPortProp) mut
 			{
-				return VT.GetProperties(&this, pPortProp);
+				return VT.GetProperties(ref this, out pPortProp);
 			}
 			public HRESULT GetController(IVdsController** ppController) mut
 			{
-				return VT.GetController(&this, ppController);
+				return VT.GetController(ref this, ppController);
 			}
 			public HRESULT QueryAssociatedLuns(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryAssociatedLuns(&this, ppEnum);
+				return VT.QueryAssociatedLuns(ref this, ppEnum);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT SetStatus(VDS_PORT_STATUS status) mut
 			{
-				return VT.SetStatus(&this, status);
+				return VT.SetStatus(ref this, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsControllerPort *self, VDS_PORT_PROP* pPortProp) GetProperties;
-				public new function HRESULT(IVdsControllerPort *self, IVdsController** ppController) GetController;
-				public new function HRESULT(IVdsControllerPort *self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
-				public new function HRESULT(IVdsControllerPort *self) Reset;
-				public new function HRESULT(IVdsControllerPort *self, VDS_PORT_STATUS status) SetStatus;
+				public new function HRESULT(ref IVdsControllerPort self, out VDS_PORT_PROP pPortProp) GetProperties;
+				public new function HRESULT(ref IVdsControllerPort self, IVdsController** ppController) GetController;
+				public new function HRESULT(ref IVdsControllerPort self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
+				public new function HRESULT(ref IVdsControllerPort self) Reset;
+				public new function HRESULT(ref IVdsControllerPort self, VDS_PORT_STATUS status) SetStatus;
 			}
 		}
 		[CRepr]
@@ -2098,49 +2098,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_CONTROLLER_PROP* pControllerProp) mut
+			public HRESULT GetProperties(out VDS_CONTROLLER_PROP pControllerProp) mut
 			{
-				return VT.GetProperties(&this, pControllerProp);
+				return VT.GetProperties(ref this, out pControllerProp);
 			}
 			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
 			{
-				return VT.GetSubSystem(&this, ppSubSystem);
+				return VT.GetSubSystem(ref this, ppSubSystem);
 			}
-			public HRESULT GetPortProperties(int16 sPortNumber, VDS_PORT_PROP* pPortProp) mut
+			public HRESULT GetPortProperties(int16 sPortNumber, out VDS_PORT_PROP pPortProp) mut
 			{
-				return VT.GetPortProperties(&this, sPortNumber, pPortProp);
+				return VT.GetPortProperties(ref this, sPortNumber, out pPortProp);
 			}
 			public HRESULT FlushCache() mut
 			{
-				return VT.FlushCache(&this);
+				return VT.FlushCache(ref this);
 			}
 			public HRESULT InvalidateCache() mut
 			{
-				return VT.InvalidateCache(&this);
+				return VT.InvalidateCache(ref this);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT QueryAssociatedLuns(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryAssociatedLuns(&this, ppEnum);
+				return VT.QueryAssociatedLuns(ref this, ppEnum);
 			}
 			public HRESULT SetStatus(VDS_CONTROLLER_STATUS status) mut
 			{
-				return VT.SetStatus(&this, status);
+				return VT.SetStatus(ref this, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsController *self, VDS_CONTROLLER_PROP* pControllerProp) GetProperties;
-				public new function HRESULT(IVdsController *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(IVdsController *self, int16 sPortNumber, VDS_PORT_PROP* pPortProp) GetPortProperties;
-				public new function HRESULT(IVdsController *self) FlushCache;
-				public new function HRESULT(IVdsController *self) InvalidateCache;
-				public new function HRESULT(IVdsController *self) Reset;
-				public new function HRESULT(IVdsController *self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
-				public new function HRESULT(IVdsController *self, VDS_CONTROLLER_STATUS status) SetStatus;
+				public new function HRESULT(ref IVdsController self, out VDS_CONTROLLER_PROP pControllerProp) GetProperties;
+				public new function HRESULT(ref IVdsController self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function HRESULT(ref IVdsController self, int16 sPortNumber, out VDS_PORT_PROP pPortProp) GetPortProperties;
+				public new function HRESULT(ref IVdsController self) FlushCache;
+				public new function HRESULT(ref IVdsController self) InvalidateCache;
+				public new function HRESULT(ref IVdsController self) Reset;
+				public new function HRESULT(ref IVdsController self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
+				public new function HRESULT(ref IVdsController self, VDS_CONTROLLER_STATUS status) SetStatus;
 			}
 		}
 		[CRepr]
@@ -2152,12 +2152,12 @@ namespace Win32
 			
 			public HRESULT QueryControllerPorts(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryControllerPorts(&this, ppEnum);
+				return VT.QueryControllerPorts(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsControllerControllerPort *self, IEnumVdsObject** ppEnum) QueryControllerPorts;
+				public new function HRESULT(ref IVdsControllerControllerPort self, IEnumVdsObject** ppEnum) QueryControllerPorts;
 			}
 		}
 		[CRepr]
@@ -2167,39 +2167,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_DRIVE_PROP* pDriveProp) mut
+			public HRESULT GetProperties(out VDS_DRIVE_PROP pDriveProp) mut
 			{
-				return VT.GetProperties(&this, pDriveProp);
+				return VT.GetProperties(ref this, out pDriveProp);
 			}
 			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
 			{
-				return VT.GetSubSystem(&this, ppSubSystem);
+				return VT.GetSubSystem(ref this, ppSubSystem);
 			}
-			public HRESULT QueryExtents(VDS_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) mut
+			public HRESULT QueryExtents(VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) mut
 			{
-				return VT.QueryExtents(&this, ppExtentArray, plNumberOfExtents);
+				return VT.QueryExtents(ref this, ppExtentArray, out plNumberOfExtents);
 			}
 			public HRESULT SetFlags(uint32 ulFlags) mut
 			{
-				return VT.SetFlags(&this, ulFlags);
+				return VT.SetFlags(ref this, ulFlags);
 			}
 			public HRESULT ClearFlags(uint32 ulFlags) mut
 			{
-				return VT.ClearFlags(&this, ulFlags);
+				return VT.ClearFlags(ref this, ulFlags);
 			}
 			public HRESULT SetStatus(VDS_DRIVE_STATUS status) mut
 			{
-				return VT.SetStatus(&this, status);
+				return VT.SetStatus(ref this, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsDrive *self, VDS_DRIVE_PROP* pDriveProp) GetProperties;
-				public new function HRESULT(IVdsDrive *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(IVdsDrive *self, VDS_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) QueryExtents;
-				public new function HRESULT(IVdsDrive *self, uint32 ulFlags) SetFlags;
-				public new function HRESULT(IVdsDrive *self, uint32 ulFlags) ClearFlags;
-				public new function HRESULT(IVdsDrive *self, VDS_DRIVE_STATUS status) SetStatus;
+				public new function HRESULT(ref IVdsDrive self, out VDS_DRIVE_PROP pDriveProp) GetProperties;
+				public new function HRESULT(ref IVdsDrive self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function HRESULT(ref IVdsDrive self, VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) QueryExtents;
+				public new function HRESULT(ref IVdsDrive self, uint32 ulFlags) SetFlags;
+				public new function HRESULT(ref IVdsDrive self, uint32 ulFlags) ClearFlags;
+				public new function HRESULT(ref IVdsDrive self, VDS_DRIVE_STATUS status) SetStatus;
 			}
 		}
 		[CRepr]
@@ -2209,14 +2209,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties2(VDS_DRIVE_PROP2* pDriveProp2) mut
+			public HRESULT GetProperties2(out VDS_DRIVE_PROP2 pDriveProp2) mut
 			{
-				return VT.GetProperties2(&this, pDriveProp2);
+				return VT.GetProperties2(ref this, out pDriveProp2);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsDrive2 *self, VDS_DRIVE_PROP2* pDriveProp2) GetProperties2;
+				public new function HRESULT(ref IVdsDrive2 self, out VDS_DRIVE_PROP2 pDriveProp2) GetProperties2;
 			}
 		}
 		[CRepr]
@@ -2226,94 +2226,94 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_LUN_PROP* pLunProp) mut
+			public HRESULT GetProperties(out VDS_LUN_PROP pLunProp) mut
 			{
-				return VT.GetProperties(&this, pLunProp);
+				return VT.GetProperties(ref this, out pLunProp);
 			}
 			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
 			{
-				return VT.GetSubSystem(&this, ppSubSystem);
+				return VT.GetSubSystem(ref this, ppSubSystem);
 			}
-			public HRESULT GetIdentificationData(VDS_LUN_INFORMATION* pLunInfo) mut
+			public HRESULT GetIdentificationData(out VDS_LUN_INFORMATION pLunInfo) mut
 			{
-				return VT.GetIdentificationData(&this, pLunInfo);
+				return VT.GetIdentificationData(ref this, out pLunInfo);
 			}
 			public HRESULT QueryActiveControllers(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryActiveControllers(&this, ppEnum);
+				return VT.QueryActiveControllers(ref this, ppEnum);
 			}
 			public HRESULT Extend(uint64 ullNumberOfBytesToAdd, Guid* pDriveIdArray, int32 lNumberOfDrives, IVdsAsync** ppAsync) mut
 			{
-				return VT.Extend(&this, ullNumberOfBytesToAdd, pDriveIdArray, lNumberOfDrives, ppAsync);
+				return VT.Extend(ref this, ullNumberOfBytesToAdd, pDriveIdArray, lNumberOfDrives, ppAsync);
 			}
 			public HRESULT Shrink(uint64 ullNumberOfBytesToRemove, IVdsAsync** ppAsync) mut
 			{
-				return VT.Shrink(&this, ullNumberOfBytesToRemove, ppAsync);
+				return VT.Shrink(ref this, ullNumberOfBytesToRemove, ppAsync);
 			}
 			public HRESULT QueryPlexes(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryPlexes(&this, ppEnum);
+				return VT.QueryPlexes(ref this, ppEnum);
 			}
 			public HRESULT AddPlex(Guid lunId, IVdsAsync** ppAsync) mut
 			{
-				return VT.AddPlex(&this, lunId, ppAsync);
+				return VT.AddPlex(ref this, lunId, ppAsync);
 			}
 			public HRESULT RemovePlex(Guid plexId, IVdsAsync** ppAsync) mut
 			{
-				return VT.RemovePlex(&this, plexId, ppAsync);
+				return VT.RemovePlex(ref this, plexId, ppAsync);
 			}
 			public HRESULT Recover(IVdsAsync** ppAsync) mut
 			{
-				return VT.Recover(&this, ppAsync);
+				return VT.Recover(ref this, ppAsync);
 			}
 			public HRESULT SetMask(PWSTR pwszUnmaskingList) mut
 			{
-				return VT.SetMask(&this, pwszUnmaskingList);
+				return VT.SetMask(ref this, pwszUnmaskingList);
 			}
 			public HRESULT Delete() mut
 			{
-				return VT.Delete(&this);
+				return VT.Delete(ref this);
 			}
 			public HRESULT AssociateControllers(Guid* pActiveControllerIdArray, int32 lNumberOfActiveControllers, Guid* pInactiveControllerIdArray, int32 lNumberOfInactiveControllers) mut
 			{
-				return VT.AssociateControllers(&this, pActiveControllerIdArray, lNumberOfActiveControllers, pInactiveControllerIdArray, lNumberOfInactiveControllers);
+				return VT.AssociateControllers(ref this, pActiveControllerIdArray, lNumberOfActiveControllers, pInactiveControllerIdArray, lNumberOfInactiveControllers);
 			}
-			public HRESULT QueryHints(VDS_HINTS* pHints) mut
+			public HRESULT QueryHints(out VDS_HINTS pHints) mut
 			{
-				return VT.QueryHints(&this, pHints);
+				return VT.QueryHints(ref this, out pHints);
 			}
-			public HRESULT ApplyHints(VDS_HINTS* pHints) mut
+			public HRESULT ApplyHints(ref VDS_HINTS pHints) mut
 			{
-				return VT.ApplyHints(&this, pHints);
+				return VT.ApplyHints(ref this, ref pHints);
 			}
 			public HRESULT SetStatus(VDS_LUN_STATUS status) mut
 			{
-				return VT.SetStatus(&this, status);
+				return VT.SetStatus(ref this, status);
 			}
-			public HRESULT QueryMaxLunExtendSize(Guid* pDriveIdArray, int32 lNumberOfDrives, uint64* pullMaxBytesToBeAdded) mut
+			public HRESULT QueryMaxLunExtendSize(Guid* pDriveIdArray, int32 lNumberOfDrives, out uint64 pullMaxBytesToBeAdded) mut
 			{
-				return VT.QueryMaxLunExtendSize(&this, pDriveIdArray, lNumberOfDrives, pullMaxBytesToBeAdded);
+				return VT.QueryMaxLunExtendSize(ref this, pDriveIdArray, lNumberOfDrives, out pullMaxBytesToBeAdded);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsLun *self, VDS_LUN_PROP* pLunProp) GetProperties;
-				public new function HRESULT(IVdsLun *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(IVdsLun *self, VDS_LUN_INFORMATION* pLunInfo) GetIdentificationData;
-				public new function HRESULT(IVdsLun *self, IEnumVdsObject** ppEnum) QueryActiveControllers;
-				public new function HRESULT(IVdsLun *self, uint64 ullNumberOfBytesToAdd, Guid* pDriveIdArray, int32 lNumberOfDrives, IVdsAsync** ppAsync) Extend;
-				public new function HRESULT(IVdsLun *self, uint64 ullNumberOfBytesToRemove, IVdsAsync** ppAsync) Shrink;
-				public new function HRESULT(IVdsLun *self, IEnumVdsObject** ppEnum) QueryPlexes;
-				public new function HRESULT(IVdsLun *self, Guid lunId, IVdsAsync** ppAsync) AddPlex;
-				public new function HRESULT(IVdsLun *self, Guid plexId, IVdsAsync** ppAsync) RemovePlex;
-				public new function HRESULT(IVdsLun *self, IVdsAsync** ppAsync) Recover;
-				public new function HRESULT(IVdsLun *self, PWSTR pwszUnmaskingList) SetMask;
-				public new function HRESULT(IVdsLun *self) Delete;
-				public new function HRESULT(IVdsLun *self, Guid* pActiveControllerIdArray, int32 lNumberOfActiveControllers, Guid* pInactiveControllerIdArray, int32 lNumberOfInactiveControllers) AssociateControllers;
-				public new function HRESULT(IVdsLun *self, VDS_HINTS* pHints) QueryHints;
-				public new function HRESULT(IVdsLun *self, VDS_HINTS* pHints) ApplyHints;
-				public new function HRESULT(IVdsLun *self, VDS_LUN_STATUS status) SetStatus;
-				public new function HRESULT(IVdsLun *self, Guid* pDriveIdArray, int32 lNumberOfDrives, uint64* pullMaxBytesToBeAdded) QueryMaxLunExtendSize;
+				public new function HRESULT(ref IVdsLun self, out VDS_LUN_PROP pLunProp) GetProperties;
+				public new function HRESULT(ref IVdsLun self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function HRESULT(ref IVdsLun self, out VDS_LUN_INFORMATION pLunInfo) GetIdentificationData;
+				public new function HRESULT(ref IVdsLun self, IEnumVdsObject** ppEnum) QueryActiveControllers;
+				public new function HRESULT(ref IVdsLun self, uint64 ullNumberOfBytesToAdd, Guid* pDriveIdArray, int32 lNumberOfDrives, IVdsAsync** ppAsync) Extend;
+				public new function HRESULT(ref IVdsLun self, uint64 ullNumberOfBytesToRemove, IVdsAsync** ppAsync) Shrink;
+				public new function HRESULT(ref IVdsLun self, IEnumVdsObject** ppEnum) QueryPlexes;
+				public new function HRESULT(ref IVdsLun self, Guid lunId, IVdsAsync** ppAsync) AddPlex;
+				public new function HRESULT(ref IVdsLun self, Guid plexId, IVdsAsync** ppAsync) RemovePlex;
+				public new function HRESULT(ref IVdsLun self, IVdsAsync** ppAsync) Recover;
+				public new function HRESULT(ref IVdsLun self, PWSTR pwszUnmaskingList) SetMask;
+				public new function HRESULT(ref IVdsLun self) Delete;
+				public new function HRESULT(ref IVdsLun self, Guid* pActiveControllerIdArray, int32 lNumberOfActiveControllers, Guid* pInactiveControllerIdArray, int32 lNumberOfInactiveControllers) AssociateControllers;
+				public new function HRESULT(ref IVdsLun self, out VDS_HINTS pHints) QueryHints;
+				public new function HRESULT(ref IVdsLun self, ref VDS_HINTS pHints) ApplyHints;
+				public new function HRESULT(ref IVdsLun self, VDS_LUN_STATUS status) SetStatus;
+				public new function HRESULT(ref IVdsLun self, Guid* pDriveIdArray, int32 lNumberOfDrives, out uint64 pullMaxBytesToBeAdded) QueryMaxLunExtendSize;
 			}
 		}
 		[CRepr]
@@ -2323,19 +2323,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryHints2(VDS_HINTS2* pHints2) mut
+			public HRESULT QueryHints2(out VDS_HINTS2 pHints2) mut
 			{
-				return VT.QueryHints2(&this, pHints2);
+				return VT.QueryHints2(ref this, out pHints2);
 			}
-			public HRESULT ApplyHints2(VDS_HINTS2* pHints2) mut
+			public HRESULT ApplyHints2(ref VDS_HINTS2 pHints2) mut
 			{
-				return VT.ApplyHints2(&this, pHints2);
+				return VT.ApplyHints2(ref this, ref pHints2);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsLun2 *self, VDS_HINTS2* pHints2) QueryHints2;
-				public new function HRESULT(IVdsLun2 *self, VDS_HINTS2* pHints2) ApplyHints2;
+				public new function HRESULT(ref IVdsLun2 self, out VDS_HINTS2 pHints2) QueryHints2;
+				public new function HRESULT(ref IVdsLun2 self, ref VDS_HINTS2 pHints2) ApplyHints2;
 			}
 		}
 		[CRepr]
@@ -2347,12 +2347,12 @@ namespace Win32
 			
 			public HRESULT SetFriendlyName(PWSTR pwszFriendlyName) mut
 			{
-				return VT.SetFriendlyName(&this, pwszFriendlyName);
+				return VT.SetFriendlyName(ref this, pwszFriendlyName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsLunNaming *self, PWSTR pwszFriendlyName) SetFriendlyName;
+				public new function HRESULT(ref IVdsLunNaming self, PWSTR pwszFriendlyName) SetFriendlyName;
 			}
 		}
 		[CRepr]
@@ -2362,14 +2362,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLunNumber(uint32* pulLunNumber) mut
+			public HRESULT GetLunNumber(out uint32 pulLunNumber) mut
 			{
-				return VT.GetLunNumber(&this, pulLunNumber);
+				return VT.GetLunNumber(ref this, out pulLunNumber);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsLunNumber *self, uint32* pulLunNumber) GetLunNumber;
+				public new function HRESULT(ref IVdsLunNumber self, out uint32 pulLunNumber) GetLunNumber;
 			}
 		}
 		[CRepr]
@@ -2381,17 +2381,17 @@ namespace Win32
 			
 			public HRESULT AssociateControllerPorts(Guid* pActiveControllerPortIdArray, int32 lNumberOfActiveControllerPorts, Guid* pInactiveControllerPortIdArray, int32 lNumberOfInactiveControllerPorts) mut
 			{
-				return VT.AssociateControllerPorts(&this, pActiveControllerPortIdArray, lNumberOfActiveControllerPorts, pInactiveControllerPortIdArray, lNumberOfInactiveControllerPorts);
+				return VT.AssociateControllerPorts(ref this, pActiveControllerPortIdArray, lNumberOfActiveControllerPorts, pInactiveControllerPortIdArray, lNumberOfInactiveControllerPorts);
 			}
 			public HRESULT QueryActiveControllerPorts(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryActiveControllerPorts(&this, ppEnum);
+				return VT.QueryActiveControllerPorts(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsLunControllerPorts *self, Guid* pActiveControllerPortIdArray, int32 lNumberOfActiveControllerPorts, Guid* pInactiveControllerPortIdArray, int32 lNumberOfInactiveControllerPorts) AssociateControllerPorts;
-				public new function HRESULT(IVdsLunControllerPorts *self, IEnumVdsObject** ppEnum) QueryActiveControllerPorts;
+				public new function HRESULT(ref IVdsLunControllerPorts self, Guid* pActiveControllerPortIdArray, int32 lNumberOfActiveControllerPorts, Guid* pInactiveControllerPortIdArray, int32 lNumberOfInactiveControllerPorts) AssociateControllerPorts;
+				public new function HRESULT(ref IVdsLunControllerPorts self, IEnumVdsObject** ppEnum) QueryActiveControllerPorts;
 			}
 		}
 		[CRepr]
@@ -2401,29 +2401,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPathInfo(VDS_PATH_INFO** ppPaths, int32* plNumberOfPaths) mut
+			public HRESULT GetPathInfo(VDS_PATH_INFO** ppPaths, out int32 plNumberOfPaths) mut
 			{
-				return VT.GetPathInfo(&this, ppPaths, plNumberOfPaths);
+				return VT.GetPathInfo(ref this, ppPaths, out plNumberOfPaths);
 			}
-			public HRESULT GetLoadBalancePolicy(VDS_LOADBALANCE_POLICY_ENUM* pPolicy, VDS_PATH_POLICY** ppPaths, int32* plNumberOfPaths) mut
+			public HRESULT GetLoadBalancePolicy(out VDS_LOADBALANCE_POLICY_ENUM pPolicy, VDS_PATH_POLICY** ppPaths, out int32 plNumberOfPaths) mut
 			{
-				return VT.GetLoadBalancePolicy(&this, pPolicy, ppPaths, plNumberOfPaths);
+				return VT.GetLoadBalancePolicy(ref this, out pPolicy, ppPaths, out plNumberOfPaths);
 			}
 			public HRESULT SetLoadBalancePolicy(VDS_LOADBALANCE_POLICY_ENUM policy, VDS_PATH_POLICY* pPaths, int32 lNumberOfPaths) mut
 			{
-				return VT.SetLoadBalancePolicy(&this, policy, pPaths, lNumberOfPaths);
+				return VT.SetLoadBalancePolicy(ref this, policy, pPaths, lNumberOfPaths);
 			}
-			public HRESULT GetSupportedLbPolicies(uint32* pulLbFlags) mut
+			public HRESULT GetSupportedLbPolicies(out uint32 pulLbFlags) mut
 			{
-				return VT.GetSupportedLbPolicies(&this, pulLbFlags);
+				return VT.GetSupportedLbPolicies(ref this, out pulLbFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsLunMpio *self, VDS_PATH_INFO** ppPaths, int32* plNumberOfPaths) GetPathInfo;
-				public new function HRESULT(IVdsLunMpio *self, VDS_LOADBALANCE_POLICY_ENUM* pPolicy, VDS_PATH_POLICY** ppPaths, int32* plNumberOfPaths) GetLoadBalancePolicy;
-				public new function HRESULT(IVdsLunMpio *self, VDS_LOADBALANCE_POLICY_ENUM policy, VDS_PATH_POLICY* pPaths, int32 lNumberOfPaths) SetLoadBalancePolicy;
-				public new function HRESULT(IVdsLunMpio *self, uint32* pulLbFlags) GetSupportedLbPolicies;
+				public new function HRESULT(ref IVdsLunMpio self, VDS_PATH_INFO** ppPaths, out int32 plNumberOfPaths) GetPathInfo;
+				public new function HRESULT(ref IVdsLunMpio self, out VDS_LOADBALANCE_POLICY_ENUM pPolicy, VDS_PATH_POLICY** ppPaths, out int32 plNumberOfPaths) GetLoadBalancePolicy;
+				public new function HRESULT(ref IVdsLunMpio self, VDS_LOADBALANCE_POLICY_ENUM policy, VDS_PATH_POLICY* pPaths, int32 lNumberOfPaths) SetLoadBalancePolicy;
+				public new function HRESULT(ref IVdsLunMpio self, out uint32 pulLbFlags) GetSupportedLbPolicies;
 			}
 		}
 		[CRepr]
@@ -2435,17 +2435,17 @@ namespace Win32
 			
 			public HRESULT AssociateTargets(Guid* pTargetIdArray, int32 lNumberOfTargets) mut
 			{
-				return VT.AssociateTargets(&this, pTargetIdArray, lNumberOfTargets);
+				return VT.AssociateTargets(ref this, pTargetIdArray, lNumberOfTargets);
 			}
 			public HRESULT QueryAssociatedTargets(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryAssociatedTargets(&this, ppEnum);
+				return VT.QueryAssociatedTargets(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsLunIscsi *self, Guid* pTargetIdArray, int32 lNumberOfTargets) AssociateTargets;
-				public new function HRESULT(IVdsLunIscsi *self, IEnumVdsObject** ppEnum) QueryAssociatedTargets;
+				public new function HRESULT(ref IVdsLunIscsi self, Guid* pTargetIdArray, int32 lNumberOfTargets) AssociateTargets;
+				public new function HRESULT(ref IVdsLunIscsi self, IEnumVdsObject** ppEnum) QueryAssociatedTargets;
 			}
 		}
 		[CRepr]
@@ -2455,34 +2455,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_LUN_PLEX_PROP* pPlexProp) mut
+			public HRESULT GetProperties(out VDS_LUN_PLEX_PROP pPlexProp) mut
 			{
-				return VT.GetProperties(&this, pPlexProp);
+				return VT.GetProperties(ref this, out pPlexProp);
 			}
 			public HRESULT GetLun(IVdsLun** ppLun) mut
 			{
-				return VT.GetLun(&this, ppLun);
+				return VT.GetLun(ref this, ppLun);
 			}
-			public HRESULT QueryExtents(VDS_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) mut
+			public HRESULT QueryExtents(VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) mut
 			{
-				return VT.QueryExtents(&this, ppExtentArray, plNumberOfExtents);
+				return VT.QueryExtents(ref this, ppExtentArray, out plNumberOfExtents);
 			}
-			public HRESULT QueryHints(VDS_HINTS* pHints) mut
+			public HRESULT QueryHints(out VDS_HINTS pHints) mut
 			{
-				return VT.QueryHints(&this, pHints);
+				return VT.QueryHints(ref this, out pHints);
 			}
-			public HRESULT ApplyHints(VDS_HINTS* pHints) mut
+			public HRESULT ApplyHints(ref VDS_HINTS pHints) mut
 			{
-				return VT.ApplyHints(&this, pHints);
+				return VT.ApplyHints(ref this, ref pHints);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsLunPlex *self, VDS_LUN_PLEX_PROP* pPlexProp) GetProperties;
-				public new function HRESULT(IVdsLunPlex *self, IVdsLun** ppLun) GetLun;
-				public new function HRESULT(IVdsLunPlex *self, VDS_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) QueryExtents;
-				public new function HRESULT(IVdsLunPlex *self, VDS_HINTS* pHints) QueryHints;
-				public new function HRESULT(IVdsLunPlex *self, VDS_HINTS* pHints) ApplyHints;
+				public new function HRESULT(ref IVdsLunPlex self, out VDS_LUN_PLEX_PROP pPlexProp) GetProperties;
+				public new function HRESULT(ref IVdsLunPlex self, IVdsLun** ppLun) GetLun;
+				public new function HRESULT(ref IVdsLunPlex self, VDS_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) QueryExtents;
+				public new function HRESULT(ref IVdsLunPlex self, out VDS_HINTS pHints) QueryHints;
+				public new function HRESULT(ref IVdsLunPlex self, ref VDS_HINTS pHints) ApplyHints;
 			}
 		}
 		[CRepr]
@@ -2492,44 +2492,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_ISCSI_PORTAL_PROP* pPortalProp) mut
+			public HRESULT GetProperties(out VDS_ISCSI_PORTAL_PROP pPortalProp) mut
 			{
-				return VT.GetProperties(&this, pPortalProp);
+				return VT.GetProperties(ref this, out pPortalProp);
 			}
 			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
 			{
-				return VT.GetSubSystem(&this, ppSubSystem);
+				return VT.GetSubSystem(ref this, ppSubSystem);
 			}
 			public HRESULT QueryAssociatedPortalGroups(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryAssociatedPortalGroups(&this, ppEnum);
+				return VT.QueryAssociatedPortalGroups(ref this, ppEnum);
 			}
 			public HRESULT SetStatus(VDS_ISCSI_PORTAL_STATUS status) mut
 			{
-				return VT.SetStatus(&this, status);
+				return VT.SetStatus(ref this, status);
 			}
-			public HRESULT SetIpsecTunnelAddress(VDS_IPADDRESS* pTunnelAddress, VDS_IPADDRESS* pDestinationAddress) mut
+			public HRESULT SetIpsecTunnelAddress(ref VDS_IPADDRESS pTunnelAddress, ref VDS_IPADDRESS pDestinationAddress) mut
 			{
-				return VT.SetIpsecTunnelAddress(&this, pTunnelAddress, pDestinationAddress);
+				return VT.SetIpsecTunnelAddress(ref this, ref pTunnelAddress, ref pDestinationAddress);
 			}
-			public HRESULT GetIpsecSecurity(VDS_IPADDRESS* pInitiatorPortalAddress, uint64* pullSecurityFlags) mut
+			public HRESULT GetIpsecSecurity(ref VDS_IPADDRESS pInitiatorPortalAddress, out uint64 pullSecurityFlags) mut
 			{
-				return VT.GetIpsecSecurity(&this, pInitiatorPortalAddress, pullSecurityFlags);
+				return VT.GetIpsecSecurity(ref this, ref pInitiatorPortalAddress, out pullSecurityFlags);
 			}
-			public HRESULT SetIpsecSecurity(VDS_IPADDRESS* pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) mut
+			public HRESULT SetIpsecSecurity(ref VDS_IPADDRESS pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) mut
 			{
-				return VT.SetIpsecSecurity(&this, pInitiatorPortalAddress, ullSecurityFlags, pIpsecKey);
+				return VT.SetIpsecSecurity(ref this, ref pInitiatorPortalAddress, ullSecurityFlags, pIpsecKey);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsIscsiPortal *self, VDS_ISCSI_PORTAL_PROP* pPortalProp) GetProperties;
-				public new function HRESULT(IVdsIscsiPortal *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(IVdsIscsiPortal *self, IEnumVdsObject** ppEnum) QueryAssociatedPortalGroups;
-				public new function HRESULT(IVdsIscsiPortal *self, VDS_ISCSI_PORTAL_STATUS status) SetStatus;
-				public new function HRESULT(IVdsIscsiPortal *self, VDS_IPADDRESS* pTunnelAddress, VDS_IPADDRESS* pDestinationAddress) SetIpsecTunnelAddress;
-				public new function HRESULT(IVdsIscsiPortal *self, VDS_IPADDRESS* pInitiatorPortalAddress, uint64* pullSecurityFlags) GetIpsecSecurity;
-				public new function HRESULT(IVdsIscsiPortal *self, VDS_IPADDRESS* pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecSecurity;
+				public new function HRESULT(ref IVdsIscsiPortal self, out VDS_ISCSI_PORTAL_PROP pPortalProp) GetProperties;
+				public new function HRESULT(ref IVdsIscsiPortal self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function HRESULT(ref IVdsIscsiPortal self, IEnumVdsObject** ppEnum) QueryAssociatedPortalGroups;
+				public new function HRESULT(ref IVdsIscsiPortal self, VDS_ISCSI_PORTAL_STATUS status) SetStatus;
+				public new function HRESULT(ref IVdsIscsiPortal self, ref VDS_IPADDRESS pTunnelAddress, ref VDS_IPADDRESS pDestinationAddress) SetIpsecTunnelAddress;
+				public new function HRESULT(ref IVdsIscsiPortal self, ref VDS_IPADDRESS pInitiatorPortalAddress, out uint64 pullSecurityFlags) GetIpsecSecurity;
+				public new function HRESULT(ref IVdsIscsiPortal self, ref VDS_IPADDRESS pInitiatorPortalAddress, uint64 ullSecurityFlags, VDS_ISCSI_IPSEC_KEY* pIpsecKey) SetIpsecSecurity;
 			}
 		}
 		[CRepr]
@@ -2539,59 +2539,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_ISCSI_TARGET_PROP* pTargetProp) mut
+			public HRESULT GetProperties(out VDS_ISCSI_TARGET_PROP pTargetProp) mut
 			{
-				return VT.GetProperties(&this, pTargetProp);
+				return VT.GetProperties(ref this, out pTargetProp);
 			}
 			public HRESULT GetSubSystem(IVdsSubSystem** ppSubSystem) mut
 			{
-				return VT.GetSubSystem(&this, ppSubSystem);
+				return VT.GetSubSystem(ref this, ppSubSystem);
 			}
 			public HRESULT QueryPortalGroups(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryPortalGroups(&this, ppEnum);
+				return VT.QueryPortalGroups(ref this, ppEnum);
 			}
 			public HRESULT QueryAssociatedLuns(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryAssociatedLuns(&this, ppEnum);
+				return VT.QueryAssociatedLuns(ref this, ppEnum);
 			}
 			public HRESULT CreatePortalGroup(IVdsAsync** ppAsync) mut
 			{
-				return VT.CreatePortalGroup(&this, ppAsync);
+				return VT.CreatePortalGroup(ref this, ppAsync);
 			}
 			public HRESULT Delete(IVdsAsync** ppAsync) mut
 			{
-				return VT.Delete(&this, ppAsync);
+				return VT.Delete(ref this, ppAsync);
 			}
 			public HRESULT SetFriendlyName(PWSTR pwszFriendlyName) mut
 			{
-				return VT.SetFriendlyName(&this, pwszFriendlyName);
+				return VT.SetFriendlyName(ref this, pwszFriendlyName);
 			}
 			public HRESULT SetSharedSecret(VDS_ISCSI_SHARED_SECRET* pTargetSharedSecret, PWSTR pwszInitiatorName) mut
 			{
-				return VT.SetSharedSecret(&this, pTargetSharedSecret, pwszInitiatorName);
+				return VT.SetSharedSecret(ref this, pTargetSharedSecret, pwszInitiatorName);
 			}
 			public HRESULT RememberInitiatorSharedSecret(PWSTR pwszInitiatorName, VDS_ISCSI_SHARED_SECRET* pInitiatorSharedSecret) mut
 			{
-				return VT.RememberInitiatorSharedSecret(&this, pwszInitiatorName, pInitiatorSharedSecret);
+				return VT.RememberInitiatorSharedSecret(ref this, pwszInitiatorName, pInitiatorSharedSecret);
 			}
-			public HRESULT GetConnectedInitiators(PWSTR** pppwszInitiatorList, int32* plNumberOfInitiators) mut
+			public HRESULT GetConnectedInitiators(PWSTR** pppwszInitiatorList, out int32 plNumberOfInitiators) mut
 			{
-				return VT.GetConnectedInitiators(&this, pppwszInitiatorList, plNumberOfInitiators);
+				return VT.GetConnectedInitiators(ref this, pppwszInitiatorList, out plNumberOfInitiators);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsIscsiTarget *self, VDS_ISCSI_TARGET_PROP* pTargetProp) GetProperties;
-				public new function HRESULT(IVdsIscsiTarget *self, IVdsSubSystem** ppSubSystem) GetSubSystem;
-				public new function HRESULT(IVdsIscsiTarget *self, IEnumVdsObject** ppEnum) QueryPortalGroups;
-				public new function HRESULT(IVdsIscsiTarget *self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
-				public new function HRESULT(IVdsIscsiTarget *self, IVdsAsync** ppAsync) CreatePortalGroup;
-				public new function HRESULT(IVdsIscsiTarget *self, IVdsAsync** ppAsync) Delete;
-				public new function HRESULT(IVdsIscsiTarget *self, PWSTR pwszFriendlyName) SetFriendlyName;
-				public new function HRESULT(IVdsIscsiTarget *self, VDS_ISCSI_SHARED_SECRET* pTargetSharedSecret, PWSTR pwszInitiatorName) SetSharedSecret;
-				public new function HRESULT(IVdsIscsiTarget *self, PWSTR pwszInitiatorName, VDS_ISCSI_SHARED_SECRET* pInitiatorSharedSecret) RememberInitiatorSharedSecret;
-				public new function HRESULT(IVdsIscsiTarget *self, PWSTR** pppwszInitiatorList, int32* plNumberOfInitiators) GetConnectedInitiators;
+				public new function HRESULT(ref IVdsIscsiTarget self, out VDS_ISCSI_TARGET_PROP pTargetProp) GetProperties;
+				public new function HRESULT(ref IVdsIscsiTarget self, IVdsSubSystem** ppSubSystem) GetSubSystem;
+				public new function HRESULT(ref IVdsIscsiTarget self, IEnumVdsObject** ppEnum) QueryPortalGroups;
+				public new function HRESULT(ref IVdsIscsiTarget self, IEnumVdsObject** ppEnum) QueryAssociatedLuns;
+				public new function HRESULT(ref IVdsIscsiTarget self, IVdsAsync** ppAsync) CreatePortalGroup;
+				public new function HRESULT(ref IVdsIscsiTarget self, IVdsAsync** ppAsync) Delete;
+				public new function HRESULT(ref IVdsIscsiTarget self, PWSTR pwszFriendlyName) SetFriendlyName;
+				public new function HRESULT(ref IVdsIscsiTarget self, VDS_ISCSI_SHARED_SECRET* pTargetSharedSecret, PWSTR pwszInitiatorName) SetSharedSecret;
+				public new function HRESULT(ref IVdsIscsiTarget self, PWSTR pwszInitiatorName, VDS_ISCSI_SHARED_SECRET* pInitiatorSharedSecret) RememberInitiatorSharedSecret;
+				public new function HRESULT(ref IVdsIscsiTarget self, PWSTR** pppwszInitiatorList, out int32 plNumberOfInitiators) GetConnectedInitiators;
 			}
 		}
 		[CRepr]
@@ -2601,39 +2601,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperties(VDS_ISCSI_PORTALGROUP_PROP* pPortalGroupProp) mut
+			public HRESULT GetProperties(out VDS_ISCSI_PORTALGROUP_PROP pPortalGroupProp) mut
 			{
-				return VT.GetProperties(&this, pPortalGroupProp);
+				return VT.GetProperties(ref this, out pPortalGroupProp);
 			}
 			public HRESULT GetTarget(IVdsIscsiTarget** ppTarget) mut
 			{
-				return VT.GetTarget(&this, ppTarget);
+				return VT.GetTarget(ref this, ppTarget);
 			}
 			public HRESULT QueryAssociatedPortals(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryAssociatedPortals(&this, ppEnum);
+				return VT.QueryAssociatedPortals(ref this, ppEnum);
 			}
 			public HRESULT AddPortal(Guid portalId, IVdsAsync** ppAsync) mut
 			{
-				return VT.AddPortal(&this, portalId, ppAsync);
+				return VT.AddPortal(ref this, portalId, ppAsync);
 			}
 			public HRESULT RemovePortal(Guid portalId, IVdsAsync** ppAsync) mut
 			{
-				return VT.RemovePortal(&this, portalId, ppAsync);
+				return VT.RemovePortal(ref this, portalId, ppAsync);
 			}
 			public HRESULT Delete(IVdsAsync** ppAsync) mut
 			{
-				return VT.Delete(&this, ppAsync);
+				return VT.Delete(ref this, ppAsync);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsIscsiPortalGroup *self, VDS_ISCSI_PORTALGROUP_PROP* pPortalGroupProp) GetProperties;
-				public new function HRESULT(IVdsIscsiPortalGroup *self, IVdsIscsiTarget** ppTarget) GetTarget;
-				public new function HRESULT(IVdsIscsiPortalGroup *self, IEnumVdsObject** ppEnum) QueryAssociatedPortals;
-				public new function HRESULT(IVdsIscsiPortalGroup *self, Guid portalId, IVdsAsync** ppAsync) AddPortal;
-				public new function HRESULT(IVdsIscsiPortalGroup *self, Guid portalId, IVdsAsync** ppAsync) RemovePortal;
-				public new function HRESULT(IVdsIscsiPortalGroup *self, IVdsAsync** ppAsync) Delete;
+				public new function HRESULT(ref IVdsIscsiPortalGroup self, out VDS_ISCSI_PORTALGROUP_PROP pPortalGroupProp) GetProperties;
+				public new function HRESULT(ref IVdsIscsiPortalGroup self, IVdsIscsiTarget** ppTarget) GetTarget;
+				public new function HRESULT(ref IVdsIscsiPortalGroup self, IEnumVdsObject** ppEnum) QueryAssociatedPortals;
+				public new function HRESULT(ref IVdsIscsiPortalGroup self, Guid portalId, IVdsAsync** ppAsync) AddPortal;
+				public new function HRESULT(ref IVdsIscsiPortalGroup self, Guid portalId, IVdsAsync** ppAsync) RemovePortal;
+				public new function HRESULT(ref IVdsIscsiPortalGroup self, IVdsAsync** ppAsync) Delete;
 			}
 		}
 		[CRepr]
@@ -2645,37 +2645,37 @@ namespace Win32
 			
 			public HRESULT GetProvider(IVdsProvider** ppProvider) mut
 			{
-				return VT.GetProvider(&this, ppProvider);
+				return VT.GetProvider(ref this, ppProvider);
 			}
-			public HRESULT GetProperties(VDS_STORAGE_POOL_PROP* pStoragePoolProp) mut
+			public HRESULT GetProperties(out VDS_STORAGE_POOL_PROP pStoragePoolProp) mut
 			{
-				return VT.GetProperties(&this, pStoragePoolProp);
+				return VT.GetProperties(ref this, out pStoragePoolProp);
 			}
-			public HRESULT GetAttributes(VDS_POOL_ATTRIBUTES* pStoragePoolAttributes) mut
+			public HRESULT GetAttributes(out VDS_POOL_ATTRIBUTES pStoragePoolAttributes) mut
 			{
-				return VT.GetAttributes(&this, pStoragePoolAttributes);
+				return VT.GetAttributes(ref this, out pStoragePoolAttributes);
 			}
-			public HRESULT QueryDriveExtents(VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) mut
+			public HRESULT QueryDriveExtents(VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) mut
 			{
-				return VT.QueryDriveExtents(&this, ppExtentArray, plNumberOfExtents);
+				return VT.QueryDriveExtents(ref this, ppExtentArray, out plNumberOfExtents);
 			}
 			public HRESULT QueryAllocatedLuns(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryAllocatedLuns(&this, ppEnum);
+				return VT.QueryAllocatedLuns(ref this, ppEnum);
 			}
 			public HRESULT QueryAllocatedStoragePools(IEnumVdsObject** ppEnum) mut
 			{
-				return VT.QueryAllocatedStoragePools(&this, ppEnum);
+				return VT.QueryAllocatedStoragePools(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsStoragePool *self, IVdsProvider** ppProvider) GetProvider;
-				public new function HRESULT(IVdsStoragePool *self, VDS_STORAGE_POOL_PROP* pStoragePoolProp) GetProperties;
-				public new function HRESULT(IVdsStoragePool *self, VDS_POOL_ATTRIBUTES* pStoragePoolAttributes) GetAttributes;
-				public new function HRESULT(IVdsStoragePool *self, VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, int32* plNumberOfExtents) QueryDriveExtents;
-				public new function HRESULT(IVdsStoragePool *self, IEnumVdsObject** ppEnum) QueryAllocatedLuns;
-				public new function HRESULT(IVdsStoragePool *self, IEnumVdsObject** ppEnum) QueryAllocatedStoragePools;
+				public new function HRESULT(ref IVdsStoragePool self, IVdsProvider** ppProvider) GetProvider;
+				public new function HRESULT(ref IVdsStoragePool self, out VDS_STORAGE_POOL_PROP pStoragePoolProp) GetProperties;
+				public new function HRESULT(ref IVdsStoragePool self, out VDS_POOL_ATTRIBUTES pStoragePoolAttributes) GetAttributes;
+				public new function HRESULT(ref IVdsStoragePool self, VDS_STORAGE_POOL_DRIVE_EXTENT** ppExtentArray, out int32 plNumberOfExtents) QueryDriveExtents;
+				public new function HRESULT(ref IVdsStoragePool self, IEnumVdsObject** ppEnum) QueryAllocatedLuns;
+				public new function HRESULT(ref IVdsStoragePool self, IEnumVdsObject** ppEnum) QueryAllocatedStoragePools;
 			}
 		}
 		[CRepr]
@@ -2687,22 +2687,22 @@ namespace Win32
 			
 			public HRESULT StartMaintenance(VDS_MAINTENANCE_OPERATION operation) mut
 			{
-				return VT.StartMaintenance(&this, operation);
+				return VT.StartMaintenance(ref this, operation);
 			}
 			public HRESULT StopMaintenance(VDS_MAINTENANCE_OPERATION operation) mut
 			{
-				return VT.StopMaintenance(&this, operation);
+				return VT.StopMaintenance(ref this, operation);
 			}
 			public HRESULT PulseMaintenance(VDS_MAINTENANCE_OPERATION operation, uint32 ulCount) mut
 			{
-				return VT.PulseMaintenance(&this, operation, ulCount);
+				return VT.PulseMaintenance(ref this, operation, ulCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsMaintenance *self, VDS_MAINTENANCE_OPERATION operation) StartMaintenance;
-				public new function HRESULT(IVdsMaintenance *self, VDS_MAINTENANCE_OPERATION operation) StopMaintenance;
-				public new function HRESULT(IVdsMaintenance *self, VDS_MAINTENANCE_OPERATION operation, uint32 ulCount) PulseMaintenance;
+				public new function HRESULT(ref IVdsMaintenance self, VDS_MAINTENANCE_OPERATION operation) StartMaintenance;
+				public new function HRESULT(ref IVdsMaintenance self, VDS_MAINTENANCE_OPERATION operation) StopMaintenance;
+				public new function HRESULT(ref IVdsMaintenance self, VDS_MAINTENANCE_OPERATION operation, uint32 ulCount) PulseMaintenance;
 			}
 		}
 		[CRepr]
@@ -2712,14 +2712,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryIfCreatedLun(PWSTR pwszDevicePath, VDS_LUN_INFORMATION* pVdsLunInformation, Guid* pLunId) mut
+			public HRESULT QueryIfCreatedLun(PWSTR pwszDevicePath, ref VDS_LUN_INFORMATION pVdsLunInformation, out Guid pLunId) mut
 			{
-				return VT.QueryIfCreatedLun(&this, pwszDevicePath, pVdsLunInformation, pLunId);
+				return VT.QueryIfCreatedLun(ref this, pwszDevicePath, ref pVdsLunInformation, out pLunId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsHwProviderPrivate *self, PWSTR pwszDevicePath, VDS_LUN_INFORMATION* pVdsLunInformation, Guid* pLunId) QueryIfCreatedLun;
+				public new function HRESULT(ref IVdsHwProviderPrivate self, PWSTR pwszDevicePath, ref VDS_LUN_INFORMATION pVdsLunInformation, out Guid pLunId) QueryIfCreatedLun;
 			}
 		}
 		[CRepr]
@@ -2731,12 +2731,12 @@ namespace Win32
 			
 			public HRESULT SetAllPathStatusesFromHbaPort(VDS_HBAPORT_PROP hbaPortProp, VDS_PATH_STATUS status) mut
 			{
-				return VT.SetAllPathStatusesFromHbaPort(&this, hbaPortProp, status);
+				return VT.SetAllPathStatusesFromHbaPort(ref this, hbaPortProp, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsHwProviderPrivateMpio *self, VDS_HBAPORT_PROP hbaPortProp, VDS_PATH_STATUS status) SetAllPathStatusesFromHbaPort;
+				public new function HRESULT(ref IVdsHwProviderPrivateMpio self, VDS_HBAPORT_PROP hbaPortProp, VDS_PATH_STATUS status) SetAllPathStatusesFromHbaPort;
 			}
 		}
 		[CRepr]
@@ -2748,17 +2748,17 @@ namespace Win32
 			
 			public HRESULT RegisterProvider(Guid providerId, Guid providerClsid, PWSTR pwszName, VDS_PROVIDER_TYPE type, PWSTR pwszMachineName, PWSTR pwszVersion, Guid guidVersionId) mut
 			{
-				return VT.RegisterProvider(&this, providerId, providerClsid, pwszName, type, pwszMachineName, pwszVersion, guidVersionId);
+				return VT.RegisterProvider(ref this, providerId, providerClsid, pwszName, type, pwszMachineName, pwszVersion, guidVersionId);
 			}
 			public HRESULT UnregisterProvider(Guid providerId) mut
 			{
-				return VT.UnregisterProvider(&this, providerId);
+				return VT.UnregisterProvider(ref this, providerId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVdsAdmin *self, Guid providerId, Guid providerClsid, PWSTR pwszName, VDS_PROVIDER_TYPE type, PWSTR pwszMachineName, PWSTR pwszVersion, Guid guidVersionId) RegisterProvider;
-				public new function HRESULT(IVdsAdmin *self, Guid providerId) UnregisterProvider;
+				public new function HRESULT(ref IVdsAdmin self, Guid providerId, Guid providerClsid, PWSTR pwszName, VDS_PROVIDER_TYPE type, PWSTR pwszMachineName, PWSTR pwszVersion, Guid guidVersionId) RegisterProvider;
+				public new function HRESULT(ref IVdsAdmin self, Guid providerId) UnregisterProvider;
 			}
 		}
 		

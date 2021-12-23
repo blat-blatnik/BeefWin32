@@ -4,6 +4,9 @@ import json
 INPUT = 'json'
 OUTPUT = 'output'
 
+STRIP_ENUM_PREFIXES = True # Strips enum member name prefixes: .ActionKindA + .ActionKindB -> .A + .B
+ENHANCED_POINTERS = True # Replace raw * with ref, in, out when appropriate.
+
 # If you need to completely replace a type name from the Json data into a native Beef type
 REPLACE_TYPE_NAMES = {
     'Int8':'int8',
@@ -32,6 +35,10 @@ REPLACE_TYPE_NAMES = {
     'CompositionCapabilities':'void',
     'DesktopWindowTarget':'void',
     'DispatcherQueueController':'void',
+
+    # These are just random enums that used to be typedefs. They're usually
+    # used as uints in the metadata because the typedef isn't in there
+    '_FILEOPENDIALOGOPTIONS':'FILEOPENDIALOGOPTIONS',
 }
 
 # All Beef structs/classes have GetType(), GetFlags(), Equals(), and ToString() implicitly defined.
@@ -118,11 +125,15 @@ def replace_type_name(typename: str, namespace: str = '') -> str:
     return replace_name(typename, namespace)
 
 def find_common_enum_prefix(enum_name: str, value_names: list[str]) -> str:
+    if not STRIP_ENUM_PREFIXES:
+        return ''
     if len(value_names) == 0:
         return ''
     elif len(value_names) == 1:
+        # TODO: We can still find a prefix for example if the enum name is AN_ENUM and the member name is AN_ENUM_A -> A.
         return ''
     else:
+        # TODO: Need to be smarter about this! "ENUM_ABC" + "ENUM_AB" -> "BC" + "B"
         first_name = value_names[0]
         index = 1
         while all(index < len(name) and name.startswith(first_name[:index]) for name in value_names):
@@ -154,18 +165,33 @@ def get_type_name(type: dict) -> str:
             count = type['Shape']['Size']
             return f'{get_type_name(child)}[{count}]'
         else:
-            return f'{get_type_name(child)}[]'
+            # This is a "variable length array".
+            # In C: struct { int x[]; }
+            return f'{get_type_name(child)}[0]'
     else:
         raise RuntimeError(f'Unexpected type kind "{kind}"')
 
 def get_param_type(param: dict) -> str:
-    #TODO: Attributes?
-    name = param['Name']
     type = param['Type']
     kind = type['Kind']
     attribs = param['Attrs']
     type_name = get_type_name(type)
-    return type_name
+    if ENHANCED_POINTERS:
+        # The problem with replacing raw pointers is that you lose the ability to
+        # cast the "wrong" pointer type to the correct one.
+        if type_name.endswith('*') and kind != 'LPArray' and 'void' not in type_name:
+            if 'Optional' in attribs:
+                return type_name #TODO: If this is the last parameter we could default it to null.
+            if 'Const' in attribs and 'In' in attribs:
+                return 'in ' + type_name[:-1]
+            if 'Out' in attribs:
+                return 'out ' + type_name[:-1]
+            else:
+                return 'ref ' + type_name[:-1]
+        else:
+            return type_name
+    else:
+        return type_name
 
 def remove_duplicate_names(objects: list[dict]) -> list[dict]:
     existing_names = set()
@@ -461,6 +487,11 @@ for filename in filenames:
                     output.write(f'{indent}public new VTable* VT {{ get => (.)vt; }}\n')
                     output.write(f'{indent}\n')
 
+                    if ENHANCED_POINTERS:
+                        ref = 'ref '
+                    else:
+                        ref = '&'
+
                     methods = com['Methods']
                     # Functions could be overloaded here, so we need to mangle the names somehow.
                     encountered_names = set()
@@ -486,12 +517,18 @@ for filename in filenames:
                         output.write(f'{indent}{{\n')
                         indent += '\t'
                         if return_type == 'void':
-                            output.write(f'{indent}VT.{mangled_name}(&this')
+                            output.write(f'{indent}VT.{mangled_name}({ref}this')
                         else:
-                            output.write(f'{indent}return VT.{mangled_name}(&this')
+                            output.write(f'{indent}return VT.{mangled_name}({ref}this')
                         for param in parameters:
                             param_name = replace_name(param['Name'])
-                            output.write(f', {param_name}')
+                            param_type = get_param_type(param)
+                            if ENHANCED_POINTERS and param_type.startswith('ref'):
+                                output.write(f', ref {param_name}')
+                            elif ENHANCED_POINTERS and param_type.startswith('out'):
+                                output.write(f', out {param_name}')
+                            else:
+                                output.write(f', {param_name}')
                         output.write(f');\n')
                         indent = indent[:-1]
                         output.write(f'{indent}}}\n')
@@ -516,7 +553,10 @@ for filename in filenames:
                         encountered_names.add(method_name)
                         return_type = get_type_name(method['ReturnType'])
                         parameters = method['Params']
-                        output.write(f'{indent}public new function {return_type}({name} *self')
+                        if ENHANCED_POINTERS:
+                            output.write(f'{indent}public new function {return_type}(ref {name} self')
+                        else:
+                            output.write(f'{indent}public new function {return_type}({name}* self')
                         for param in parameters:
                             param_name = replace_name(param['Name'])
                             param_type = get_param_type(param)

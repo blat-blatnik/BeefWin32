@@ -2295,7 +2295,7 @@ namespace Win32
 		{
 			public uint32 Size;
 			public uint32 Pin;
-			public char16[] SymbolicLinkName;
+			public char16[0] SymbolicLinkName;
 		}
 		[CRepr]
 		public struct KSALLOCATOR_FRAMING
@@ -2369,7 +2369,7 @@ namespace Win32
 			public uint32 PinFlags;
 			public KS_COMPRESSION OutputCompression;
 			public uint32 PinWeight;
-			public KS_FRAMING_ITEM[] FramingItem;
+			public KS_FRAMING_ITEM[0] FramingItem;
 		}
 		[CRepr]
 		public struct KSSTREAMALLOCATOR_STATUS
@@ -2572,7 +2572,7 @@ namespace Win32
 			public uint32 PacketSizeFileAlignment;
 			public uint32 Reserved;
 			public uint32 NumProcessingModeConstraints;
-			public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[] ProcessingModeConstraints;
+			public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[0] ProcessingModeConstraints;
 		}
 		[CRepr]
 		public struct KSAUDIO_PACKETSIZE_CONSTRAINTS2
@@ -2581,7 +2581,7 @@ namespace Win32
 			public uint32 PacketSizeFileAlignment;
 			public uint32 MaxPacketSizeInBytes;
 			public uint32 NumProcessingModeConstraints;
-			public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[] ProcessingModeConstraints;
+			public _KSAUDIO_PACKETSIZE_SIGNALPROCESSINGMODE_CONSTRAINT[0] ProcessingModeConstraints;
 		}
 		[CRepr]
 		public struct KSAUDIO_MICROPHONE_COORDINATES
@@ -2605,7 +2605,7 @@ namespace Win32
 			public uint16 usFrequencyBandLo;
 			public uint16 usFrequencyBandHi;
 			public uint16 usNumberOfMicrophones;
-			public KSAUDIO_MICROPHONE_COORDINATES[] KsMicCoord;
+			public KSAUDIO_MICROPHONE_COORDINATES[0] KsMicCoord;
 		}
 		[CRepr]
 		public struct DS3DVECTOR
@@ -2914,7 +2914,7 @@ namespace Win32
 		{
 			public uint32 InputChannels;
 			public uint32 OutputChannels;
-			public KSAUDIO_MIX_CAPS[] Capabilities;
+			public KSAUDIO_MIX_CAPS[0] Capabilities;
 		}
 		[CRepr]
 		public struct KSAUDIO_POSITIONEX
@@ -3166,7 +3166,7 @@ namespace Win32
 		public struct KS_DVDCOPY_BUSKEY
 		{
 			public uint8[5] BusKey;
-			public uint8[] Reserved;
+			public uint8[0] Reserved;
 		}
 		[CRepr]
 		public struct KS_DVDCOPY_DISCKEY
@@ -3317,7 +3317,7 @@ namespace Win32
 			public KS_VIDEOINFOHEADER hdr;
 			public uint32 dwStartTimeCode;
 			public uint32 cbSequenceHeader;
-			public uint8[] bSequenceHeader;
+			public uint8[0] bSequenceHeader;
 		}
 		[CRepr]
 		public struct KS_MPEGVIDEOINFO2
@@ -3328,7 +3328,7 @@ namespace Win32
 			public uint32 dwProfile;
 			public uint32 dwLevel;
 			public uint32 dwFlags;
-			public uint32[] bSequenceHeader;
+			public uint32[0] bSequenceHeader;
 		}
 		[CRepr]
 		public struct KS_H264VIDEOINFO
@@ -4392,7 +4392,7 @@ namespace Win32
 			public RECT MaskCoverageBoundingBox;
 			public SIZE MaskResolution;
 			public RECT ForegroundBoundingBox;
-			public uint8[] MaskData;
+			public uint8[0] MaskData;
 		}
 		[CRepr]
 		public struct KSCAMERA_EXTENDEDPROP_PROFILE
@@ -4513,7 +4513,7 @@ namespace Win32
 		public struct KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO
 		{
 			public KSCAMERA_METADATA_ITEMHEADER Header;
-			public char16[] EventFilter;
+			public char16[0] EventFilter;
 		}
 		[CRepr]
 		public struct DEVCAPS
@@ -4797,7 +4797,7 @@ namespace Win32
 			public uint32 PelsWidth;
 			public uint32 PelsHeight;
 			public uint32 BitsPerPel;
-			public char16[] DeviceID;
+			public char16[0] DeviceID;
 		}
 		[CRepr]
 		public struct KSPROPERTY_VIDEOCONTROL_CAPS_S
@@ -5594,24 +5594,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT KsProperty(KSIDENTIFIER* Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, uint32* BytesReturned) mut
+			public HRESULT KsProperty(ref KSIDENTIFIER Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) mut
 			{
-				return VT.KsProperty(&this, Property, PropertyLength, PropertyData, DataLength, BytesReturned);
+				return VT.KsProperty(ref this, ref Property, PropertyLength, PropertyData, DataLength, out BytesReturned);
 			}
-			public HRESULT KsMethod(KSIDENTIFIER* Method, uint32 MethodLength, void* MethodData, uint32 DataLength, uint32* BytesReturned) mut
+			public HRESULT KsMethod(ref KSIDENTIFIER Method, uint32 MethodLength, void* MethodData, uint32 DataLength, out uint32 BytesReturned) mut
 			{
-				return VT.KsMethod(&this, Method, MethodLength, MethodData, DataLength, BytesReturned);
+				return VT.KsMethod(ref this, ref Method, MethodLength, MethodData, DataLength, out BytesReturned);
 			}
-			public HRESULT KsEvent(KSIDENTIFIER* Event, uint32 EventLength, void* EventData, uint32 DataLength, uint32* BytesReturned) mut
+			public HRESULT KsEvent(ref KSIDENTIFIER Event, uint32 EventLength, void* EventData, uint32 DataLength, out uint32 BytesReturned) mut
 			{
-				return VT.KsEvent(&this, Event, EventLength, EventData, DataLength, BytesReturned);
+				return VT.KsEvent(ref this, ref Event, EventLength, EventData, DataLength, out BytesReturned);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IKsControl *self, KSIDENTIFIER* Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, uint32* BytesReturned) KsProperty;
-				public new function HRESULT(IKsControl *self, KSIDENTIFIER* Method, uint32 MethodLength, void* MethodData, uint32 DataLength, uint32* BytesReturned) KsMethod;
-				public new function HRESULT(IKsControl *self, KSIDENTIFIER* Event, uint32 EventLength, void* EventData, uint32 DataLength, uint32* BytesReturned) KsEvent;
+				public new function HRESULT(ref IKsControl self, ref KSIDENTIFIER Property, uint32 PropertyLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) KsProperty;
+				public new function HRESULT(ref IKsControl self, ref KSIDENTIFIER Method, uint32 MethodLength, void* MethodData, uint32 DataLength, out uint32 BytesReturned) KsMethod;
+				public new function HRESULT(ref IKsControl self, ref KSIDENTIFIER Event, uint32 EventLength, void* EventData, uint32 DataLength, out uint32 BytesReturned) KsEvent;
 			}
 		}
 		[CRepr]
@@ -5621,19 +5621,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsFormatSupported(KSDATAFORMAT* pKsFormat, uint32 cbFormat, BOOL* pbSupported) mut
+			public HRESULT IsFormatSupported(out KSDATAFORMAT pKsFormat, uint32 cbFormat, out BOOL pbSupported) mut
 			{
-				return VT.IsFormatSupported(&this, pKsFormat, cbFormat, pbSupported);
+				return VT.IsFormatSupported(ref this, out pKsFormat, cbFormat, out pbSupported);
 			}
-			public HRESULT GetDevicePreferredFormat(KSDATAFORMAT** ppKsFormat) mut
+			public HRESULT GetDevicePreferredFormat(out KSDATAFORMAT* ppKsFormat) mut
 			{
-				return VT.GetDevicePreferredFormat(&this, ppKsFormat);
+				return VT.GetDevicePreferredFormat(ref this, out ppKsFormat);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IKsFormatSupport *self, KSDATAFORMAT* pKsFormat, uint32 cbFormat, BOOL* pbSupported) IsFormatSupported;
-				public new function HRESULT(IKsFormatSupport *self, KSDATAFORMAT** ppKsFormat) GetDevicePreferredFormat;
+				public new function HRESULT(ref IKsFormatSupport self, out KSDATAFORMAT pKsFormat, uint32 cbFormat, out BOOL pbSupported) IsFormatSupported;
+				public new function HRESULT(ref IKsFormatSupport self, out KSDATAFORMAT* ppKsFormat) GetDevicePreferredFormat;
 			}
 		}
 		[CRepr]
@@ -5643,19 +5643,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJackCount(uint32* pcJacks) mut
+			public HRESULT GetJackCount(out uint32 pcJacks) mut
 			{
-				return VT.GetJackCount(&this, pcJacks);
+				return VT.GetJackCount(ref this, out pcJacks);
 			}
-			public HRESULT GetJackDescription(uint32 nJack, KSJACK_DESCRIPTION* pDescription) mut
+			public HRESULT GetJackDescription(uint32 nJack, out KSJACK_DESCRIPTION pDescription) mut
 			{
-				return VT.GetJackDescription(&this, nJack, pDescription);
+				return VT.GetJackDescription(ref this, nJack, out pDescription);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IKsJackDescription *self, uint32* pcJacks) GetJackCount;
-				public new function HRESULT(IKsJackDescription *self, uint32 nJack, KSJACK_DESCRIPTION* pDescription) GetJackDescription;
+				public new function HRESULT(ref IKsJackDescription self, out uint32 pcJacks) GetJackCount;
+				public new function HRESULT(ref IKsJackDescription self, uint32 nJack, out KSJACK_DESCRIPTION pDescription) GetJackDescription;
 			}
 		}
 		[CRepr]
@@ -5665,19 +5665,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJackCount(uint32* pcJacks) mut
+			public HRESULT GetJackCount(out uint32 pcJacks) mut
 			{
-				return VT.GetJackCount(&this, pcJacks);
+				return VT.GetJackCount(ref this, out pcJacks);
 			}
-			public HRESULT GetJackDescription2(uint32 nJack, KSJACK_DESCRIPTION2* pDescription2) mut
+			public HRESULT GetJackDescription2(uint32 nJack, out KSJACK_DESCRIPTION2 pDescription2) mut
 			{
-				return VT.GetJackDescription2(&this, nJack, pDescription2);
+				return VT.GetJackDescription2(ref this, nJack, out pDescription2);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IKsJackDescription2 *self, uint32* pcJacks) GetJackCount;
-				public new function HRESULT(IKsJackDescription2 *self, uint32 nJack, KSJACK_DESCRIPTION2* pDescription2) GetJackDescription2;
+				public new function HRESULT(ref IKsJackDescription2 self, out uint32 pcJacks) GetJackCount;
+				public new function HRESULT(ref IKsJackDescription2 self, uint32 nJack, out KSJACK_DESCRIPTION2 pDescription2) GetJackDescription2;
 			}
 		}
 		[CRepr]
@@ -5687,14 +5687,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJackSinkInformation(KSJACK_SINK_INFORMATION* pJackSinkInformation) mut
+			public HRESULT GetJackSinkInformation(out KSJACK_SINK_INFORMATION pJackSinkInformation) mut
 			{
-				return VT.GetJackSinkInformation(&this, pJackSinkInformation);
+				return VT.GetJackSinkInformation(ref this, out pJackSinkInformation);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IKsJackSinkInformation *self, KSJACK_SINK_INFORMATION* pJackSinkInformation) GetJackSinkInformation;
+				public new function HRESULT(ref IKsJackSinkInformation self, out KSJACK_SINK_INFORMATION pJackSinkInformation) GetJackSinkInformation;
 			}
 		}
 		[CRepr]
@@ -5704,14 +5704,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetJackContainerId(Guid* pJackContainerId) mut
+			public HRESULT GetJackContainerId(out Guid pJackContainerId) mut
 			{
-				return VT.GetJackContainerId(&this, pJackContainerId);
+				return VT.GetJackContainerId(ref this, out pJackContainerId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IKsJackContainerId *self, Guid* pJackContainerId) GetJackContainerId;
+				public new function HRESULT(ref IKsJackContainerId self, out Guid pJackContainerId) GetJackContainerId;
 			}
 		}
 		[CRepr]
@@ -5721,24 +5721,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Set(Guid* PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) mut
+			public HRESULT Set(in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) mut
 			{
-				return VT.Set(&this, PropSet, Id, InstanceData, InstanceLength, PropertyData, DataLength);
+				return VT.Set(ref this, PropSet, Id, InstanceData, InstanceLength, PropertyData, DataLength);
 			}
-			public HRESULT Get(Guid* PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, uint32* BytesReturned) mut
+			public HRESULT Get(in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) mut
 			{
-				return VT.Get(&this, PropSet, Id, InstanceData, InstanceLength, PropertyData, DataLength, BytesReturned);
+				return VT.Get(ref this, PropSet, Id, InstanceData, InstanceLength, PropertyData, DataLength, out BytesReturned);
 			}
-			public HRESULT QuerySupported(Guid* PropSet, uint32 Id, uint32* TypeSupport) mut
+			public HRESULT QuerySupported(in Guid PropSet, uint32 Id, out uint32 TypeSupport) mut
 			{
-				return VT.QuerySupported(&this, PropSet, Id, TypeSupport);
+				return VT.QuerySupported(ref this, PropSet, Id, out TypeSupport);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IKsPropertySet *self, Guid* PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) Set;
-				public new function HRESULT(IKsPropertySet *self, Guid* PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, uint32* BytesReturned) Get;
-				public new function HRESULT(IKsPropertySet *self, Guid* PropSet, uint32 Id, uint32* TypeSupport) QuerySupported;
+				public new function HRESULT(ref IKsPropertySet self, in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength) Set;
+				public new function HRESULT(ref IKsPropertySet self, in Guid PropSet, uint32 Id, void* InstanceData, uint32 InstanceLength, void* PropertyData, uint32 DataLength, out uint32 BytesReturned) Get;
+				public new function HRESULT(ref IKsPropertySet self, in Guid PropSet, uint32 Id, out uint32 TypeSupport) QuerySupported;
 			}
 		}
 		[CRepr]
@@ -5748,19 +5748,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT KsAddAggregate(Guid* AggregateClass) mut
+			public HRESULT KsAddAggregate(in Guid AggregateClass) mut
 			{
-				return VT.KsAddAggregate(&this, AggregateClass);
+				return VT.KsAddAggregate(ref this, AggregateClass);
 			}
-			public HRESULT KsRemoveAggregate(Guid* AggregateClass) mut
+			public HRESULT KsRemoveAggregate(in Guid AggregateClass) mut
 			{
-				return VT.KsRemoveAggregate(&this, AggregateClass);
+				return VT.KsRemoveAggregate(ref this, AggregateClass);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IKsAggregateControl *self, Guid* AggregateClass) KsAddAggregate;
-				public new function HRESULT(IKsAggregateControl *self, Guid* AggregateClass) KsRemoveAggregate;
+				public new function HRESULT(ref IKsAggregateControl self, in Guid AggregateClass) KsAddAggregate;
+				public new function HRESULT(ref IKsAggregateControl self, in Guid AggregateClass) KsRemoveAggregate;
 			}
 		}
 		[CRepr]
@@ -5770,35 +5770,35 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateNodeInstance(uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, Guid* InterfaceId, void** Interface) mut
+			public HRESULT CreateNodeInstance(uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, in Guid InterfaceId, void** Interface) mut
 			{
-				return VT.CreateNodeInstance(&this, NodeId, Flags, DesiredAccess, UnkOuter, InterfaceId, Interface);
+				return VT.CreateNodeInstance(ref this, NodeId, Flags, DesiredAccess, UnkOuter, InterfaceId, Interface);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IKsTopology *self, uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, Guid* InterfaceId, void** Interface) CreateNodeInstance;
+				public new function HRESULT(ref IKsTopology self, uint32 NodeId, uint32 Flags, uint32 DesiredAccess, IUnknown* UnkOuter, in Guid InterfaceId, void** Interface) CreateNodeInstance;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 KsCreateAllocator(HANDLE ConnectionHandle, KSALLOCATOR_FRAMING* AllocatorFraming, HANDLE* AllocatorHandle);
+		public static extern uint32 KsCreateAllocator(HANDLE ConnectionHandle, ref KSALLOCATOR_FRAMING AllocatorFraming, out HANDLE AllocatorHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 KsCreateClock(HANDLE ConnectionHandle, KSCLOCK_CREATE* ClockCreate, HANDLE* ClockHandle);
+		public static extern uint32 KsCreateClock(HANDLE ConnectionHandle, ref KSCLOCK_CREATE ClockCreate, out HANDLE ClockHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 KsCreatePin(HANDLE FilterHandle, KSPIN_CONNECT* Connect, uint32 DesiredAccess, HANDLE* ConnectionHandle);
+		public static extern uint32 KsCreatePin(HANDLE FilterHandle, ref KSPIN_CONNECT Connect, uint32 DesiredAccess, out HANDLE ConnectionHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 KsCreateTopologyNode(HANDLE ParentHandle, KSNODE_CREATE* NodeCreate, uint32 DesiredAccess, HANDLE* NodeHandle);
+		public static extern uint32 KsCreateTopologyNode(HANDLE ParentHandle, ref KSNODE_CREATE NodeCreate, uint32 DesiredAccess, out HANDLE NodeHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT KsCreateAllocator2(HANDLE ConnectionHandle, KSALLOCATOR_FRAMING* AllocatorFraming, HANDLE* AllocatorHandle);
+		public static extern HRESULT KsCreateAllocator2(HANDLE ConnectionHandle, ref KSALLOCATOR_FRAMING AllocatorFraming, out HANDLE AllocatorHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT KsCreateClock2(HANDLE ConnectionHandle, KSCLOCK_CREATE* ClockCreate, HANDLE* ClockHandle);
+		public static extern HRESULT KsCreateClock2(HANDLE ConnectionHandle, ref KSCLOCK_CREATE ClockCreate, out HANDLE ClockHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT KsCreatePin2(HANDLE FilterHandle, KSPIN_CONNECT* Connect, uint32 DesiredAccess, HANDLE* ConnectionHandle);
+		public static extern HRESULT KsCreatePin2(HANDLE FilterHandle, ref KSPIN_CONNECT Connect, uint32 DesiredAccess, out HANDLE ConnectionHandle);
 		[Import("ksuser.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT KsCreateTopologyNode2(HANDLE ParentHandle, KSNODE_CREATE* NodeCreate, uint32 DesiredAccess, HANDLE* NodeHandle);
+		public static extern HRESULT KsCreateTopologyNode2(HANDLE ParentHandle, ref KSNODE_CREATE NodeCreate, uint32 DesiredAccess, out HANDLE NodeHandle);
 		
 	}
 }

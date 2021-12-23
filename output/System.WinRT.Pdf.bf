@@ -7,7 +7,7 @@ namespace Win32
 	{
 		// --- Function Pointers ---
 		
-		public function HRESULT PFN_PDF_CREATE_RENDERER(IDXGIDevice* param0, IPdfRendererNative** param1);
+		public function HRESULT PFN_PDF_CREATE_RENDERER(ref IDXGIDevice param0, out IPdfRendererNative* param1);
 		
 		// --- Structs ---
 		
@@ -30,26 +30,26 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RenderPageToSurface(IUnknown* pdfPage, IDXGISurface* pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams) mut
+			public HRESULT RenderPageToSurface(ref IUnknown pdfPage, ref IDXGISurface pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams) mut
 			{
-				return VT.RenderPageToSurface(&this, pdfPage, pSurface, offset, pRenderParams);
+				return VT.RenderPageToSurface(ref this, ref pdfPage, ref pSurface, offset, pRenderParams);
 			}
-			public HRESULT RenderPageToDeviceContext(IUnknown* pdfPage, ID2D1DeviceContext* pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) mut
+			public HRESULT RenderPageToDeviceContext(ref IUnknown pdfPage, ref ID2D1DeviceContext pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) mut
 			{
-				return VT.RenderPageToDeviceContext(&this, pdfPage, pD2DDeviceContext, pRenderParams);
+				return VT.RenderPageToDeviceContext(ref this, ref pdfPage, ref pD2DDeviceContext, pRenderParams);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPdfRendererNative *self, IUnknown* pdfPage, IDXGISurface* pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams) RenderPageToSurface;
-				public new function HRESULT(IPdfRendererNative *self, IUnknown* pdfPage, ID2D1DeviceContext* pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) RenderPageToDeviceContext;
+				public new function HRESULT(ref IPdfRendererNative self, ref IUnknown pdfPage, ref IDXGISurface pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams) RenderPageToSurface;
+				public new function HRESULT(ref IPdfRendererNative self, ref IUnknown pdfPage, ref ID2D1DeviceContext pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams) RenderPageToDeviceContext;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("windows.data.pdf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
+		public static extern HRESULT PdfCreateRenderer(ref IDXGIDevice pDevice, out IPdfRendererNative* ppRenderer);
 		
 	}
 }

@@ -1458,7 +1458,7 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT PfnRecoCallback(uint32 param0, uint8* param1, HRECOCONTEXT param2);
+		public function HRESULT PfnRecoCallback(uint32 param0, out uint8 param1, HRECOCONTEXT param2);
 		
 		// --- Structs ---
 		
@@ -1700,69 +1700,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Top(int32* Units) mut
+			public HRESULT get_Top(out int32 Units) mut
 			{
-				return VT.get_Top(&this, Units);
+				return VT.get_Top(ref this, out Units);
 			}
 			public HRESULT put_Top(int32 Units) mut
 			{
-				return VT.put_Top(&this, Units);
+				return VT.put_Top(ref this, Units);
 			}
-			public HRESULT get_Left(int32* Units) mut
+			public HRESULT get_Left(out int32 Units) mut
 			{
-				return VT.get_Left(&this, Units);
+				return VT.get_Left(ref this, out Units);
 			}
 			public HRESULT put_Left(int32 Units) mut
 			{
-				return VT.put_Left(&this, Units);
+				return VT.put_Left(ref this, Units);
 			}
-			public HRESULT get_Bottom(int32* Units) mut
+			public HRESULT get_Bottom(out int32 Units) mut
 			{
-				return VT.get_Bottom(&this, Units);
+				return VT.get_Bottom(ref this, out Units);
 			}
 			public HRESULT put_Bottom(int32 Units) mut
 			{
-				return VT.put_Bottom(&this, Units);
+				return VT.put_Bottom(ref this, Units);
 			}
-			public HRESULT get_Right(int32* Units) mut
+			public HRESULT get_Right(out int32 Units) mut
 			{
-				return VT.get_Right(&this, Units);
+				return VT.get_Right(ref this, out Units);
 			}
 			public HRESULT put_Right(int32 Units) mut
 			{
-				return VT.put_Right(&this, Units);
+				return VT.put_Right(ref this, Units);
 			}
-			public HRESULT get_Data(RECT* Rect) mut
+			public HRESULT get_Data(out RECT Rect) mut
 			{
-				return VT.get_Data(&this, Rect);
+				return VT.get_Data(ref this, out Rect);
 			}
 			public HRESULT put_Data(RECT Rect) mut
 			{
-				return VT.put_Data(&this, Rect);
+				return VT.put_Data(ref this, Rect);
 			}
-			public HRESULT GetRectangle(int32* Top, int32* Left, int32* Bottom, int32* Right) mut
+			public HRESULT GetRectangle(out int32 Top, out int32 Left, out int32 Bottom, out int32 Right) mut
 			{
-				return VT.GetRectangle(&this, Top, Left, Bottom, Right);
+				return VT.GetRectangle(ref this, out Top, out Left, out Bottom, out Right);
 			}
 			public HRESULT SetRectangle(int32 Top, int32 Left, int32 Bottom, int32 Right) mut
 			{
-				return VT.SetRectangle(&this, Top, Left, Bottom, Right);
+				return VT.SetRectangle(ref this, Top, Left, Bottom, Right);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRectangle *self, int32* Units) get_Top;
-				public new function HRESULT(IInkRectangle *self, int32 Units) put_Top;
-				public new function HRESULT(IInkRectangle *self, int32* Units) get_Left;
-				public new function HRESULT(IInkRectangle *self, int32 Units) put_Left;
-				public new function HRESULT(IInkRectangle *self, int32* Units) get_Bottom;
-				public new function HRESULT(IInkRectangle *self, int32 Units) put_Bottom;
-				public new function HRESULT(IInkRectangle *self, int32* Units) get_Right;
-				public new function HRESULT(IInkRectangle *self, int32 Units) put_Right;
-				public new function HRESULT(IInkRectangle *self, RECT* Rect) get_Data;
-				public new function HRESULT(IInkRectangle *self, RECT Rect) put_Data;
-				public new function HRESULT(IInkRectangle *self, int32* Top, int32* Left, int32* Bottom, int32* Right) GetRectangle;
-				public new function HRESULT(IInkRectangle *self, int32 Top, int32 Left, int32 Bottom, int32 Right) SetRectangle;
+				public new function HRESULT(ref IInkRectangle self, out int32 Units) get_Top;
+				public new function HRESULT(ref IInkRectangle self, int32 Units) put_Top;
+				public new function HRESULT(ref IInkRectangle self, out int32 Units) get_Left;
+				public new function HRESULT(ref IInkRectangle self, int32 Units) put_Left;
+				public new function HRESULT(ref IInkRectangle self, out int32 Units) get_Bottom;
+				public new function HRESULT(ref IInkRectangle self, int32 Units) put_Bottom;
+				public new function HRESULT(ref IInkRectangle self, out int32 Units) get_Right;
+				public new function HRESULT(ref IInkRectangle self, int32 Units) put_Right;
+				public new function HRESULT(ref IInkRectangle self, out RECT Rect) get_Data;
+				public new function HRESULT(ref IInkRectangle self, RECT Rect) put_Data;
+				public new function HRESULT(ref IInkRectangle self, out int32 Top, out int32 Left, out int32 Bottom, out int32 Right) GetRectangle;
+				public new function HRESULT(ref IInkRectangle self, int32 Top, int32 Left, int32 Bottom, int32 Right) SetRectangle;
 			}
 		}
 		[CRepr]
@@ -1774,22 +1774,22 @@ namespace Win32
 			
 			public HRESULT get_Guid(BSTR* Guid) mut
 			{
-				return VT.get_Guid(&this, Guid);
+				return VT.get_Guid(ref this, Guid);
 			}
-			public HRESULT get_Data(VARIANT* Data) mut
+			public HRESULT get_Data(out VARIANT Data) mut
 			{
-				return VT.get_Data(&this, Data);
+				return VT.get_Data(ref this, out Data);
 			}
 			public HRESULT put_Data(VARIANT Data) mut
 			{
-				return VT.put_Data(&this, Data);
+				return VT.put_Data(ref this, Data);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkExtendedProperty *self, BSTR* Guid) get_Guid;
-				public new function HRESULT(IInkExtendedProperty *self, VARIANT* Data) get_Data;
-				public new function HRESULT(IInkExtendedProperty *self, VARIANT Data) put_Data;
+				public new function HRESULT(ref IInkExtendedProperty self, BSTR* Guid) get_Guid;
+				public new function HRESULT(ref IInkExtendedProperty self, out VARIANT Data) get_Data;
+				public new function HRESULT(ref IInkExtendedProperty self, VARIANT Data) put_Data;
 			}
 		}
 		[CRepr]
@@ -1799,44 +1799,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get__NewEnum(IUnknown** _NewEnum) mut
 			{
-				return VT.get__NewEnum(&this, _NewEnum);
+				return VT.get__NewEnum(ref this, _NewEnum);
 			}
 			public HRESULT Item(VARIANT Identifier, IInkExtendedProperty** Item) mut
 			{
-				return VT.Item(&this, Identifier, Item);
+				return VT.Item(ref this, Identifier, Item);
 			}
 			public HRESULT Add(BSTR Guid, VARIANT Data, IInkExtendedProperty** InkExtendedProperty) mut
 			{
-				return VT.Add(&this, Guid, Data, InkExtendedProperty);
+				return VT.Add(ref this, Guid, Data, InkExtendedProperty);
 			}
 			public HRESULT Remove(VARIANT Identifier) mut
 			{
-				return VT.Remove(&this, Identifier);
+				return VT.Remove(ref this, Identifier);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
-			public HRESULT DoesPropertyExist(BSTR Guid, int16* DoesPropertyExist) mut
+			public HRESULT DoesPropertyExist(BSTR Guid, out int16 DoesPropertyExist) mut
 			{
-				return VT.DoesPropertyExist(&this, Guid, DoesPropertyExist);
+				return VT.DoesPropertyExist(ref this, Guid, out DoesPropertyExist);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkExtendedProperties *self, int32* Count) get_Count;
-				public new function HRESULT(IInkExtendedProperties *self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(IInkExtendedProperties *self, VARIANT Identifier, IInkExtendedProperty** Item) Item;
-				public new function HRESULT(IInkExtendedProperties *self, BSTR Guid, VARIANT Data, IInkExtendedProperty** InkExtendedProperty) Add;
-				public new function HRESULT(IInkExtendedProperties *self, VARIANT Identifier) Remove;
-				public new function HRESULT(IInkExtendedProperties *self) Clear;
-				public new function HRESULT(IInkExtendedProperties *self, BSTR Guid, int16* DoesPropertyExist) DoesPropertyExist;
+				public new function HRESULT(ref IInkExtendedProperties self, out int32 Count) get_Count;
+				public new function HRESULT(ref IInkExtendedProperties self, IUnknown** _NewEnum) get__NewEnum;
+				public new function HRESULT(ref IInkExtendedProperties self, VARIANT Identifier, IInkExtendedProperty** Item) Item;
+				public new function HRESULT(ref IInkExtendedProperties self, BSTR Guid, VARIANT Data, IInkExtendedProperty** InkExtendedProperty) Add;
+				public new function HRESULT(ref IInkExtendedProperties self, VARIANT Identifier) Remove;
+				public new function HRESULT(ref IInkExtendedProperties self) Clear;
+				public new function HRESULT(ref IInkExtendedProperties self, BSTR Guid, out int16 DoesPropertyExist) DoesPropertyExist;
 			}
 		}
 		[CRepr]
@@ -1846,109 +1846,109 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Color(int32* CurrentColor) mut
+			public HRESULT get_Color(out int32 CurrentColor) mut
 			{
-				return VT.get_Color(&this, CurrentColor);
+				return VT.get_Color(ref this, out CurrentColor);
 			}
 			public HRESULT put_Color(int32 NewColor) mut
 			{
-				return VT.put_Color(&this, NewColor);
+				return VT.put_Color(ref this, NewColor);
 			}
-			public HRESULT get_Width(float* CurrentWidth) mut
+			public HRESULT get_Width(out float CurrentWidth) mut
 			{
-				return VT.get_Width(&this, CurrentWidth);
+				return VT.get_Width(ref this, out CurrentWidth);
 			}
 			public HRESULT put_Width(float NewWidth) mut
 			{
-				return VT.put_Width(&this, NewWidth);
+				return VT.put_Width(ref this, NewWidth);
 			}
-			public HRESULT get_Height(float* CurrentHeight) mut
+			public HRESULT get_Height(out float CurrentHeight) mut
 			{
-				return VT.get_Height(&this, CurrentHeight);
+				return VT.get_Height(ref this, out CurrentHeight);
 			}
 			public HRESULT put_Height(float NewHeight) mut
 			{
-				return VT.put_Height(&this, NewHeight);
+				return VT.put_Height(ref this, NewHeight);
 			}
-			public HRESULT get_FitToCurve(int16* Flag) mut
+			public HRESULT get_FitToCurve(out int16 Flag) mut
 			{
-				return VT.get_FitToCurve(&this, Flag);
+				return VT.get_FitToCurve(ref this, out Flag);
 			}
 			public HRESULT put_FitToCurve(int16 Flag) mut
 			{
-				return VT.put_FitToCurve(&this, Flag);
+				return VT.put_FitToCurve(ref this, Flag);
 			}
-			public HRESULT get_IgnorePressure(int16* Flag) mut
+			public HRESULT get_IgnorePressure(out int16 Flag) mut
 			{
-				return VT.get_IgnorePressure(&this, Flag);
+				return VT.get_IgnorePressure(ref this, out Flag);
 			}
 			public HRESULT put_IgnorePressure(int16 Flag) mut
 			{
-				return VT.put_IgnorePressure(&this, Flag);
+				return VT.put_IgnorePressure(ref this, Flag);
 			}
-			public HRESULT get_AntiAliased(int16* Flag) mut
+			public HRESULT get_AntiAliased(out int16 Flag) mut
 			{
-				return VT.get_AntiAliased(&this, Flag);
+				return VT.get_AntiAliased(ref this, out Flag);
 			}
 			public HRESULT put_AntiAliased(int16 Flag) mut
 			{
-				return VT.put_AntiAliased(&this, Flag);
+				return VT.put_AntiAliased(ref this, Flag);
 			}
-			public HRESULT get_Transparency(int32* CurrentTransparency) mut
+			public HRESULT get_Transparency(out int32 CurrentTransparency) mut
 			{
-				return VT.get_Transparency(&this, CurrentTransparency);
+				return VT.get_Transparency(ref this, out CurrentTransparency);
 			}
 			public HRESULT put_Transparency(int32 NewTransparency) mut
 			{
-				return VT.put_Transparency(&this, NewTransparency);
+				return VT.put_Transparency(ref this, NewTransparency);
 			}
-			public HRESULT get_RasterOperation(InkRasterOperation* CurrentRasterOperation) mut
+			public HRESULT get_RasterOperation(out InkRasterOperation CurrentRasterOperation) mut
 			{
-				return VT.get_RasterOperation(&this, CurrentRasterOperation);
+				return VT.get_RasterOperation(ref this, out CurrentRasterOperation);
 			}
 			public HRESULT put_RasterOperation(InkRasterOperation NewRasterOperation) mut
 			{
-				return VT.put_RasterOperation(&this, NewRasterOperation);
+				return VT.put_RasterOperation(ref this, NewRasterOperation);
 			}
-			public HRESULT get_PenTip(InkPenTip* CurrentPenTip) mut
+			public HRESULT get_PenTip(out InkPenTip CurrentPenTip) mut
 			{
-				return VT.get_PenTip(&this, CurrentPenTip);
+				return VT.get_PenTip(ref this, out CurrentPenTip);
 			}
 			public HRESULT put_PenTip(InkPenTip NewPenTip) mut
 			{
-				return VT.put_PenTip(&this, NewPenTip);
+				return VT.put_PenTip(ref this, NewPenTip);
 			}
 			public HRESULT get_ExtendedProperties(IInkExtendedProperties** Properties) mut
 			{
-				return VT.get_ExtendedProperties(&this, Properties);
+				return VT.get_ExtendedProperties(ref this, Properties);
 			}
 			public HRESULT Clone(IInkDrawingAttributes** DrawingAttributes) mut
 			{
-				return VT.Clone(&this, DrawingAttributes);
+				return VT.Clone(ref this, DrawingAttributes);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkDrawingAttributes *self, int32* CurrentColor) get_Color;
-				public new function HRESULT(IInkDrawingAttributes *self, int32 NewColor) put_Color;
-				public new function HRESULT(IInkDrawingAttributes *self, float* CurrentWidth) get_Width;
-				public new function HRESULT(IInkDrawingAttributes *self, float NewWidth) put_Width;
-				public new function HRESULT(IInkDrawingAttributes *self, float* CurrentHeight) get_Height;
-				public new function HRESULT(IInkDrawingAttributes *self, float NewHeight) put_Height;
-				public new function HRESULT(IInkDrawingAttributes *self, int16* Flag) get_FitToCurve;
-				public new function HRESULT(IInkDrawingAttributes *self, int16 Flag) put_FitToCurve;
-				public new function HRESULT(IInkDrawingAttributes *self, int16* Flag) get_IgnorePressure;
-				public new function HRESULT(IInkDrawingAttributes *self, int16 Flag) put_IgnorePressure;
-				public new function HRESULT(IInkDrawingAttributes *self, int16* Flag) get_AntiAliased;
-				public new function HRESULT(IInkDrawingAttributes *self, int16 Flag) put_AntiAliased;
-				public new function HRESULT(IInkDrawingAttributes *self, int32* CurrentTransparency) get_Transparency;
-				public new function HRESULT(IInkDrawingAttributes *self, int32 NewTransparency) put_Transparency;
-				public new function HRESULT(IInkDrawingAttributes *self, InkRasterOperation* CurrentRasterOperation) get_RasterOperation;
-				public new function HRESULT(IInkDrawingAttributes *self, InkRasterOperation NewRasterOperation) put_RasterOperation;
-				public new function HRESULT(IInkDrawingAttributes *self, InkPenTip* CurrentPenTip) get_PenTip;
-				public new function HRESULT(IInkDrawingAttributes *self, InkPenTip NewPenTip) put_PenTip;
-				public new function HRESULT(IInkDrawingAttributes *self, IInkExtendedProperties** Properties) get_ExtendedProperties;
-				public new function HRESULT(IInkDrawingAttributes *self, IInkDrawingAttributes** DrawingAttributes) Clone;
+				public new function HRESULT(ref IInkDrawingAttributes self, out int32 CurrentColor) get_Color;
+				public new function HRESULT(ref IInkDrawingAttributes self, int32 NewColor) put_Color;
+				public new function HRESULT(ref IInkDrawingAttributes self, out float CurrentWidth) get_Width;
+				public new function HRESULT(ref IInkDrawingAttributes self, float NewWidth) put_Width;
+				public new function HRESULT(ref IInkDrawingAttributes self, out float CurrentHeight) get_Height;
+				public new function HRESULT(ref IInkDrawingAttributes self, float NewHeight) put_Height;
+				public new function HRESULT(ref IInkDrawingAttributes self, out int16 Flag) get_FitToCurve;
+				public new function HRESULT(ref IInkDrawingAttributes self, int16 Flag) put_FitToCurve;
+				public new function HRESULT(ref IInkDrawingAttributes self, out int16 Flag) get_IgnorePressure;
+				public new function HRESULT(ref IInkDrawingAttributes self, int16 Flag) put_IgnorePressure;
+				public new function HRESULT(ref IInkDrawingAttributes self, out int16 Flag) get_AntiAliased;
+				public new function HRESULT(ref IInkDrawingAttributes self, int16 Flag) put_AntiAliased;
+				public new function HRESULT(ref IInkDrawingAttributes self, out int32 CurrentTransparency) get_Transparency;
+				public new function HRESULT(ref IInkDrawingAttributes self, int32 NewTransparency) put_Transparency;
+				public new function HRESULT(ref IInkDrawingAttributes self, out InkRasterOperation CurrentRasterOperation) get_RasterOperation;
+				public new function HRESULT(ref IInkDrawingAttributes self, InkRasterOperation NewRasterOperation) put_RasterOperation;
+				public new function HRESULT(ref IInkDrawingAttributes self, out InkPenTip CurrentPenTip) get_PenTip;
+				public new function HRESULT(ref IInkDrawingAttributes self, InkPenTip NewPenTip) put_PenTip;
+				public new function HRESULT(ref IInkDrawingAttributes self, IInkExtendedProperties** Properties) get_ExtendedProperties;
+				public new function HRESULT(ref IInkDrawingAttributes self, IInkDrawingAttributes** DrawingAttributes) Clone;
 			}
 		}
 		[CRepr]
@@ -1960,117 +1960,117 @@ namespace Win32
 			
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Translate(float HorizontalComponent, float VerticalComponent) mut
 			{
-				return VT.Translate(&this, HorizontalComponent, VerticalComponent);
+				return VT.Translate(ref this, HorizontalComponent, VerticalComponent);
 			}
 			public HRESULT Rotate(float Degrees, float x, float y) mut
 			{
-				return VT.Rotate(&this, Degrees, x, y);
+				return VT.Rotate(ref this, Degrees, x, y);
 			}
 			public HRESULT Reflect(int16 Horizontally, int16 Vertically) mut
 			{
-				return VT.Reflect(&this, Horizontally, Vertically);
+				return VT.Reflect(ref this, Horizontally, Vertically);
 			}
 			public HRESULT Shear(float HorizontalComponent, float VerticalComponent) mut
 			{
-				return VT.Shear(&this, HorizontalComponent, VerticalComponent);
+				return VT.Shear(ref this, HorizontalComponent, VerticalComponent);
 			}
 			public HRESULT ScaleTransform(float HorizontalMultiplier, float VerticalMultiplier) mut
 			{
-				return VT.ScaleTransform(&this, HorizontalMultiplier, VerticalMultiplier);
+				return VT.ScaleTransform(ref this, HorizontalMultiplier, VerticalMultiplier);
 			}
-			public HRESULT GetTransform(float* eM11, float* eM12, float* eM21, float* eM22, float* eDx, float* eDy) mut
+			public HRESULT GetTransform(out float eM11, out float eM12, out float eM21, out float eM22, out float eDx, out float eDy) mut
 			{
-				return VT.GetTransform(&this, eM11, eM12, eM21, eM22, eDx, eDy);
+				return VT.GetTransform(ref this, out eM11, out eM12, out eM21, out eM22, out eDx, out eDy);
 			}
 			public HRESULT SetTransform(float eM11, float eM12, float eM21, float eM22, float eDx, float eDy) mut
 			{
-				return VT.SetTransform(&this, eM11, eM12, eM21, eM22, eDx, eDy);
+				return VT.SetTransform(ref this, eM11, eM12, eM21, eM22, eDx, eDy);
 			}
-			public HRESULT get_eM11(float* Value) mut
+			public HRESULT get_eM11(out float Value) mut
 			{
-				return VT.get_eM11(&this, Value);
+				return VT.get_eM11(ref this, out Value);
 			}
 			public HRESULT put_eM11(float Value) mut
 			{
-				return VT.put_eM11(&this, Value);
+				return VT.put_eM11(ref this, Value);
 			}
-			public HRESULT get_eM12(float* Value) mut
+			public HRESULT get_eM12(out float Value) mut
 			{
-				return VT.get_eM12(&this, Value);
+				return VT.get_eM12(ref this, out Value);
 			}
 			public HRESULT put_eM12(float Value) mut
 			{
-				return VT.put_eM12(&this, Value);
+				return VT.put_eM12(ref this, Value);
 			}
-			public HRESULT get_eM21(float* Value) mut
+			public HRESULT get_eM21(out float Value) mut
 			{
-				return VT.get_eM21(&this, Value);
+				return VT.get_eM21(ref this, out Value);
 			}
 			public HRESULT put_eM21(float Value) mut
 			{
-				return VT.put_eM21(&this, Value);
+				return VT.put_eM21(ref this, Value);
 			}
-			public HRESULT get_eM22(float* Value) mut
+			public HRESULT get_eM22(out float Value) mut
 			{
-				return VT.get_eM22(&this, Value);
+				return VT.get_eM22(ref this, out Value);
 			}
 			public HRESULT put_eM22(float Value) mut
 			{
-				return VT.put_eM22(&this, Value);
+				return VT.put_eM22(ref this, Value);
 			}
-			public HRESULT get_eDx(float* Value) mut
+			public HRESULT get_eDx(out float Value) mut
 			{
-				return VT.get_eDx(&this, Value);
+				return VT.get_eDx(ref this, out Value);
 			}
 			public HRESULT put_eDx(float Value) mut
 			{
-				return VT.put_eDx(&this, Value);
+				return VT.put_eDx(ref this, Value);
 			}
-			public HRESULT get_eDy(float* Value) mut
+			public HRESULT get_eDy(out float Value) mut
 			{
-				return VT.get_eDy(&this, Value);
+				return VT.get_eDy(ref this, out Value);
 			}
 			public HRESULT put_eDy(float Value) mut
 			{
-				return VT.put_eDy(&this, Value);
+				return VT.put_eDy(ref this, Value);
 			}
-			public HRESULT get_Data(XFORM* XForm) mut
+			public HRESULT get_Data(out XFORM XForm) mut
 			{
-				return VT.get_Data(&this, XForm);
+				return VT.get_Data(ref this, out XForm);
 			}
 			public HRESULT put_Data(XFORM XForm) mut
 			{
-				return VT.put_Data(&this, XForm);
+				return VT.put_Data(ref this, XForm);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkTransform *self) Reset;
-				public new function HRESULT(IInkTransform *self, float HorizontalComponent, float VerticalComponent) Translate;
-				public new function HRESULT(IInkTransform *self, float Degrees, float x, float y) Rotate;
-				public new function HRESULT(IInkTransform *self, int16 Horizontally, int16 Vertically) Reflect;
-				public new function HRESULT(IInkTransform *self, float HorizontalComponent, float VerticalComponent) Shear;
-				public new function HRESULT(IInkTransform *self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
-				public new function HRESULT(IInkTransform *self, float* eM11, float* eM12, float* eM21, float* eM22, float* eDx, float* eDy) GetTransform;
-				public new function HRESULT(IInkTransform *self, float eM11, float eM12, float eM21, float eM22, float eDx, float eDy) SetTransform;
-				public new function HRESULT(IInkTransform *self, float* Value) get_eM11;
-				public new function HRESULT(IInkTransform *self, float Value) put_eM11;
-				public new function HRESULT(IInkTransform *self, float* Value) get_eM12;
-				public new function HRESULT(IInkTransform *self, float Value) put_eM12;
-				public new function HRESULT(IInkTransform *self, float* Value) get_eM21;
-				public new function HRESULT(IInkTransform *self, float Value) put_eM21;
-				public new function HRESULT(IInkTransform *self, float* Value) get_eM22;
-				public new function HRESULT(IInkTransform *self, float Value) put_eM22;
-				public new function HRESULT(IInkTransform *self, float* Value) get_eDx;
-				public new function HRESULT(IInkTransform *self, float Value) put_eDx;
-				public new function HRESULT(IInkTransform *self, float* Value) get_eDy;
-				public new function HRESULT(IInkTransform *self, float Value) put_eDy;
-				public new function HRESULT(IInkTransform *self, XFORM* XForm) get_Data;
-				public new function HRESULT(IInkTransform *self, XFORM XForm) put_Data;
+				public new function HRESULT(ref IInkTransform self) Reset;
+				public new function HRESULT(ref IInkTransform self, float HorizontalComponent, float VerticalComponent) Translate;
+				public new function HRESULT(ref IInkTransform self, float Degrees, float x, float y) Rotate;
+				public new function HRESULT(ref IInkTransform self, int16 Horizontally, int16 Vertically) Reflect;
+				public new function HRESULT(ref IInkTransform self, float HorizontalComponent, float VerticalComponent) Shear;
+				public new function HRESULT(ref IInkTransform self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
+				public new function HRESULT(ref IInkTransform self, out float eM11, out float eM12, out float eM21, out float eM22, out float eDx, out float eDy) GetTransform;
+				public new function HRESULT(ref IInkTransform self, float eM11, float eM12, float eM21, float eM22, float eDx, float eDy) SetTransform;
+				public new function HRESULT(ref IInkTransform self, out float Value) get_eM11;
+				public new function HRESULT(ref IInkTransform self, float Value) put_eM11;
+				public new function HRESULT(ref IInkTransform self, out float Value) get_eM12;
+				public new function HRESULT(ref IInkTransform self, float Value) put_eM12;
+				public new function HRESULT(ref IInkTransform self, out float Value) get_eM21;
+				public new function HRESULT(ref IInkTransform self, float Value) put_eM21;
+				public new function HRESULT(ref IInkTransform self, out float Value) get_eM22;
+				public new function HRESULT(ref IInkTransform self, float Value) put_eM22;
+				public new function HRESULT(ref IInkTransform self, out float Value) get_eDx;
+				public new function HRESULT(ref IInkTransform self, float Value) put_eDx;
+				public new function HRESULT(ref IInkTransform self, out float Value) get_eDy;
+				public new function HRESULT(ref IInkTransform self, float Value) put_eDy;
+				public new function HRESULT(ref IInkTransform self, out XFORM XForm) get_Data;
+				public new function HRESULT(ref IInkTransform self, XFORM XForm) put_Data;
 			}
 		}
 		[CRepr]
@@ -2080,24 +2080,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Confidence(InkRecognitionConfidence* Confidence) mut
+			public HRESULT get_Confidence(out InkRecognitionConfidence Confidence) mut
 			{
-				return VT.get_Confidence(&this, Confidence);
+				return VT.get_Confidence(ref this, out Confidence);
 			}
-			public HRESULT get_Id(InkApplicationGesture* Id) mut
+			public HRESULT get_Id(out InkApplicationGesture Id) mut
 			{
-				return VT.get_Id(&this, Id);
+				return VT.get_Id(ref this, out Id);
 			}
-			public HRESULT GetHotPoint(int32* X, int32* Y) mut
+			public HRESULT GetHotPoint(out int32 X, out int32 Y) mut
 			{
-				return VT.GetHotPoint(&this, X, Y);
+				return VT.GetHotPoint(ref this, out X, out Y);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkGesture *self, InkRecognitionConfidence* Confidence) get_Confidence;
-				public new function HRESULT(IInkGesture *self, InkApplicationGesture* Id) get_Id;
-				public new function HRESULT(IInkGesture *self, int32* X, int32* Y) GetHotPoint;
+				public new function HRESULT(ref IInkGesture self, out InkRecognitionConfidence Confidence) get_Confidence;
+				public new function HRESULT(ref IInkGesture self, out InkApplicationGesture Id) get_Id;
+				public new function HRESULT(ref IInkGesture self, out int32 X, out int32 Y) GetHotPoint;
 			}
 		}
 		[CRepr]
@@ -2109,42 +2109,42 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* Name) mut
 			{
-				return VT.get_Name(&this, Name);
+				return VT.get_Name(ref this, Name);
 			}
-			public HRESULT get_Id(int32* Id) mut
+			public HRESULT get_Id(out int32 Id) mut
 			{
-				return VT.get_Id(&this, Id);
+				return VT.get_Id(ref this, out Id);
 			}
-			public HRESULT get_Inverted(int16* Status) mut
+			public HRESULT get_Inverted(out int16 Status) mut
 			{
-				return VT.get_Inverted(&this, Status);
+				return VT.get_Inverted(ref this, out Status);
 			}
 			public HRESULT get_DrawingAttributes(IInkDrawingAttributes** Attributes) mut
 			{
-				return VT.get_DrawingAttributes(&this, Attributes);
+				return VT.get_DrawingAttributes(ref this, Attributes);
 			}
 			public HRESULT putref_DrawingAttributes(IInkDrawingAttributes* Attributes) mut
 			{
-				return VT.putref_DrawingAttributes(&this, Attributes);
+				return VT.putref_DrawingAttributes(ref this, Attributes);
 			}
 			public HRESULT get_Tablet(IInkTablet** Tablet) mut
 			{
-				return VT.get_Tablet(&this, Tablet);
+				return VT.get_Tablet(ref this, Tablet);
 			}
 			public HRESULT get_Buttons(IInkCursorButtons** Buttons) mut
 			{
-				return VT.get_Buttons(&this, Buttons);
+				return VT.get_Buttons(ref this, Buttons);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkCursor *self, BSTR* Name) get_Name;
-				public new function HRESULT(IInkCursor *self, int32* Id) get_Id;
-				public new function HRESULT(IInkCursor *self, int16* Status) get_Inverted;
-				public new function HRESULT(IInkCursor *self, IInkDrawingAttributes** Attributes) get_DrawingAttributes;
-				public new function HRESULT(IInkCursor *self, IInkDrawingAttributes* Attributes) putref_DrawingAttributes;
-				public new function HRESULT(IInkCursor *self, IInkTablet** Tablet) get_Tablet;
-				public new function HRESULT(IInkCursor *self, IInkCursorButtons** Buttons) get_Buttons;
+				public new function HRESULT(ref IInkCursor self, BSTR* Name) get_Name;
+				public new function HRESULT(ref IInkCursor self, out int32 Id) get_Id;
+				public new function HRESULT(ref IInkCursor self, out int16 Status) get_Inverted;
+				public new function HRESULT(ref IInkCursor self, IInkDrawingAttributes** Attributes) get_DrawingAttributes;
+				public new function HRESULT(ref IInkCursor self, IInkDrawingAttributes* Attributes) putref_DrawingAttributes;
+				public new function HRESULT(ref IInkCursor self, IInkTablet** Tablet) get_Tablet;
+				public new function HRESULT(ref IInkCursor self, IInkCursorButtons** Buttons) get_Buttons;
 			}
 		}
 		[CRepr]
@@ -2154,24 +2154,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get__NewEnum(IUnknown** _NewEnum) mut
 			{
-				return VT.get__NewEnum(&this, _NewEnum);
+				return VT.get__NewEnum(ref this, _NewEnum);
 			}
 			public HRESULT Item(int32 Index, IInkCursor** Cursor) mut
 			{
-				return VT.Item(&this, Index, Cursor);
+				return VT.Item(ref this, Index, Cursor);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkCursors *self, int32* Count) get_Count;
-				public new function HRESULT(IInkCursors *self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(IInkCursors *self, int32 Index, IInkCursor** Cursor) Item;
+				public new function HRESULT(ref IInkCursors self, out int32 Count) get_Count;
+				public new function HRESULT(ref IInkCursors self, IUnknown** _NewEnum) get__NewEnum;
+				public new function HRESULT(ref IInkCursors self, int32 Index, IInkCursor** Cursor) Item;
 			}
 		}
 		[CRepr]
@@ -2183,22 +2183,22 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* Name) mut
 			{
-				return VT.get_Name(&this, Name);
+				return VT.get_Name(ref this, Name);
 			}
 			public HRESULT get_Id(BSTR* Id) mut
 			{
-				return VT.get_Id(&this, Id);
+				return VT.get_Id(ref this, Id);
 			}
-			public HRESULT get_State(InkCursorButtonState* CurrentState) mut
+			public HRESULT get_State(out InkCursorButtonState CurrentState) mut
 			{
-				return VT.get_State(&this, CurrentState);
+				return VT.get_State(ref this, out CurrentState);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkCursorButton *self, BSTR* Name) get_Name;
-				public new function HRESULT(IInkCursorButton *self, BSTR* Id) get_Id;
-				public new function HRESULT(IInkCursorButton *self, InkCursorButtonState* CurrentState) get_State;
+				public new function HRESULT(ref IInkCursorButton self, BSTR* Name) get_Name;
+				public new function HRESULT(ref IInkCursorButton self, BSTR* Id) get_Id;
+				public new function HRESULT(ref IInkCursorButton self, out InkCursorButtonState CurrentState) get_State;
 			}
 		}
 		[CRepr]
@@ -2208,24 +2208,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get__NewEnum(IUnknown** _NewEnum) mut
 			{
-				return VT.get__NewEnum(&this, _NewEnum);
+				return VT.get__NewEnum(ref this, _NewEnum);
 			}
 			public HRESULT Item(VARIANT Identifier, IInkCursorButton** Button) mut
 			{
-				return VT.Item(&this, Identifier, Button);
+				return VT.Item(ref this, Identifier, Button);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkCursorButtons *self, int32* Count) get_Count;
-				public new function HRESULT(IInkCursorButtons *self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(IInkCursorButtons *self, VARIANT Identifier, IInkCursorButton** Button) Item;
+				public new function HRESULT(ref IInkCursorButtons self, out int32 Count) get_Count;
+				public new function HRESULT(ref IInkCursorButtons self, IUnknown** _NewEnum) get__NewEnum;
+				public new function HRESULT(ref IInkCursorButtons self, VARIANT Identifier, IInkCursorButton** Button) Item;
 			}
 		}
 		[CRepr]
@@ -2237,37 +2237,37 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* Name) mut
 			{
-				return VT.get_Name(&this, Name);
+				return VT.get_Name(ref this, Name);
 			}
 			public HRESULT get_PlugAndPlayId(BSTR* Id) mut
 			{
-				return VT.get_PlugAndPlayId(&this, Id);
+				return VT.get_PlugAndPlayId(ref this, Id);
 			}
 			public HRESULT get_MaximumInputRectangle(IInkRectangle** Rectangle) mut
 			{
-				return VT.get_MaximumInputRectangle(&this, Rectangle);
+				return VT.get_MaximumInputRectangle(ref this, Rectangle);
 			}
-			public HRESULT get_HardwareCapabilities(TabletHardwareCapabilities* Capabilities) mut
+			public HRESULT get_HardwareCapabilities(out TabletHardwareCapabilities Capabilities) mut
 			{
-				return VT.get_HardwareCapabilities(&this, Capabilities);
+				return VT.get_HardwareCapabilities(ref this, out Capabilities);
 			}
-			public HRESULT IsPacketPropertySupported(BSTR packetPropertyName, int16* Supported) mut
+			public HRESULT IsPacketPropertySupported(BSTR packetPropertyName, out int16 Supported) mut
 			{
-				return VT.IsPacketPropertySupported(&this, packetPropertyName, Supported);
+				return VT.IsPacketPropertySupported(ref this, packetPropertyName, out Supported);
 			}
-			public HRESULT GetPropertyMetrics(BSTR propertyName, int32* Minimum, int32* Maximum, TabletPropertyMetricUnit* Units, float* Resolution) mut
+			public HRESULT GetPropertyMetrics(BSTR propertyName, out int32 Minimum, out int32 Maximum, out TabletPropertyMetricUnit Units, out float Resolution) mut
 			{
-				return VT.GetPropertyMetrics(&this, propertyName, Minimum, Maximum, Units, Resolution);
+				return VT.GetPropertyMetrics(ref this, propertyName, out Minimum, out Maximum, out Units, out Resolution);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkTablet *self, BSTR* Name) get_Name;
-				public new function HRESULT(IInkTablet *self, BSTR* Id) get_PlugAndPlayId;
-				public new function HRESULT(IInkTablet *self, IInkRectangle** Rectangle) get_MaximumInputRectangle;
-				public new function HRESULT(IInkTablet *self, TabletHardwareCapabilities* Capabilities) get_HardwareCapabilities;
-				public new function HRESULT(IInkTablet *self, BSTR packetPropertyName, int16* Supported) IsPacketPropertySupported;
-				public new function HRESULT(IInkTablet *self, BSTR propertyName, int32* Minimum, int32* Maximum, TabletPropertyMetricUnit* Units, float* Resolution) GetPropertyMetrics;
+				public new function HRESULT(ref IInkTablet self, BSTR* Name) get_Name;
+				public new function HRESULT(ref IInkTablet self, BSTR* Id) get_PlugAndPlayId;
+				public new function HRESULT(ref IInkTablet self, IInkRectangle** Rectangle) get_MaximumInputRectangle;
+				public new function HRESULT(ref IInkTablet self, out TabletHardwareCapabilities Capabilities) get_HardwareCapabilities;
+				public new function HRESULT(ref IInkTablet self, BSTR packetPropertyName, out int16 Supported) IsPacketPropertySupported;
+				public new function HRESULT(ref IInkTablet self, BSTR propertyName, out int32 Minimum, out int32 Maximum, out TabletPropertyMetricUnit Units, out float Resolution) GetPropertyMetrics;
 			}
 		}
 		[CRepr]
@@ -2277,14 +2277,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DeviceKind(TabletDeviceKind* Kind) mut
+			public HRESULT get_DeviceKind(out TabletDeviceKind Kind) mut
 			{
-				return VT.get_DeviceKind(&this, Kind);
+				return VT.get_DeviceKind(ref this, out Kind);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkTablet2 *self, TabletDeviceKind* Kind) get_DeviceKind;
+				public new function HRESULT(ref IInkTablet2 self, out TabletDeviceKind Kind) get_DeviceKind;
 			}
 		}
 		[CRepr]
@@ -2294,19 +2294,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IsMultiTouch(int16* pIsMultiTouch) mut
+			public HRESULT get_IsMultiTouch(out int16 pIsMultiTouch) mut
 			{
-				return VT.get_IsMultiTouch(&this, pIsMultiTouch);
+				return VT.get_IsMultiTouch(ref this, out pIsMultiTouch);
 			}
-			public HRESULT get_MaximumCursors(uint32* pMaximumCursors) mut
+			public HRESULT get_MaximumCursors(out uint32 pMaximumCursors) mut
 			{
-				return VT.get_MaximumCursors(&this, pMaximumCursors);
+				return VT.get_MaximumCursors(ref this, out pMaximumCursors);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkTablet3 *self, int16* pIsMultiTouch) get_IsMultiTouch;
-				public new function HRESULT(IInkTablet3 *self, uint32* pMaximumCursors) get_MaximumCursors;
+				public new function HRESULT(ref IInkTablet3 self, out int16 pIsMultiTouch) get_IsMultiTouch;
+				public new function HRESULT(ref IInkTablet3 self, out uint32 pMaximumCursors) get_MaximumCursors;
 			}
 		}
 		[CRepr]
@@ -2316,34 +2316,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get__NewEnum(IUnknown** _NewEnum) mut
 			{
-				return VT.get__NewEnum(&this, _NewEnum);
+				return VT.get__NewEnum(ref this, _NewEnum);
 			}
 			public HRESULT get_DefaultTablet(IInkTablet** DefaultTablet) mut
 			{
-				return VT.get_DefaultTablet(&this, DefaultTablet);
+				return VT.get_DefaultTablet(ref this, DefaultTablet);
 			}
 			public HRESULT Item(int32 Index, IInkTablet** Tablet) mut
 			{
-				return VT.Item(&this, Index, Tablet);
+				return VT.Item(ref this, Index, Tablet);
 			}
-			public HRESULT IsPacketPropertySupported(BSTR packetPropertyName, int16* Supported) mut
+			public HRESULT IsPacketPropertySupported(BSTR packetPropertyName, out int16 Supported) mut
 			{
-				return VT.IsPacketPropertySupported(&this, packetPropertyName, Supported);
+				return VT.IsPacketPropertySupported(ref this, packetPropertyName, out Supported);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkTablets *self, int32* Count) get_Count;
-				public new function HRESULT(IInkTablets *self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(IInkTablets *self, IInkTablet** DefaultTablet) get_DefaultTablet;
-				public new function HRESULT(IInkTablets *self, int32 Index, IInkTablet** Tablet) Item;
-				public new function HRESULT(IInkTablets *self, BSTR packetPropertyName, int16* Supported) IsPacketPropertySupported;
+				public new function HRESULT(ref IInkTablets self, out int32 Count) get_Count;
+				public new function HRESULT(ref IInkTablets self, IUnknown** _NewEnum) get__NewEnum;
+				public new function HRESULT(ref IInkTablets self, IInkTablet** DefaultTablet) get_DefaultTablet;
+				public new function HRESULT(ref IInkTablets self, int32 Index, IInkTablet** Tablet) Item;
+				public new function HRESULT(ref IInkTablets self, BSTR packetPropertyName, out int16 Supported) IsPacketPropertySupported;
 			}
 		}
 		[CRepr]
@@ -2353,174 +2353,174 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ID(int32* ID) mut
+			public HRESULT get_ID(out int32 ID) mut
 			{
-				return VT.get_ID(&this, ID);
+				return VT.get_ID(ref this, out ID);
 			}
-			public HRESULT get_BezierPoints(VARIANT* Points) mut
+			public HRESULT get_BezierPoints(out VARIANT Points) mut
 			{
-				return VT.get_BezierPoints(&this, Points);
+				return VT.get_BezierPoints(ref this, out Points);
 			}
 			public HRESULT get_DrawingAttributes(IInkDrawingAttributes** DrawAttrs) mut
 			{
-				return VT.get_DrawingAttributes(&this, DrawAttrs);
+				return VT.get_DrawingAttributes(ref this, DrawAttrs);
 			}
 			public HRESULT putref_DrawingAttributes(IInkDrawingAttributes* DrawAttrs) mut
 			{
-				return VT.putref_DrawingAttributes(&this, DrawAttrs);
+				return VT.putref_DrawingAttributes(ref this, DrawAttrs);
 			}
 			public HRESULT get_Ink(IInkDisp** Ink) mut
 			{
-				return VT.get_Ink(&this, Ink);
+				return VT.get_Ink(ref this, Ink);
 			}
 			public HRESULT get_ExtendedProperties(IInkExtendedProperties** Properties) mut
 			{
-				return VT.get_ExtendedProperties(&this, Properties);
+				return VT.get_ExtendedProperties(ref this, Properties);
 			}
-			public HRESULT get_PolylineCusps(VARIANT* Cusps) mut
+			public HRESULT get_PolylineCusps(out VARIANT Cusps) mut
 			{
-				return VT.get_PolylineCusps(&this, Cusps);
+				return VT.get_PolylineCusps(ref this, out Cusps);
 			}
-			public HRESULT get_BezierCusps(VARIANT* Cusps) mut
+			public HRESULT get_BezierCusps(out VARIANT Cusps) mut
 			{
-				return VT.get_BezierCusps(&this, Cusps);
+				return VT.get_BezierCusps(ref this, out Cusps);
 			}
-			public HRESULT get_SelfIntersections(VARIANT* Intersections) mut
+			public HRESULT get_SelfIntersections(out VARIANT Intersections) mut
 			{
-				return VT.get_SelfIntersections(&this, Intersections);
+				return VT.get_SelfIntersections(ref this, out Intersections);
 			}
-			public HRESULT get_PacketCount(int32* plCount) mut
+			public HRESULT get_PacketCount(out int32 plCount) mut
 			{
-				return VT.get_PacketCount(&this, plCount);
+				return VT.get_PacketCount(ref this, out plCount);
 			}
-			public HRESULT get_PacketSize(int32* plSize) mut
+			public HRESULT get_PacketSize(out int32 plSize) mut
 			{
-				return VT.get_PacketSize(&this, plSize);
+				return VT.get_PacketSize(ref this, out plSize);
 			}
-			public HRESULT get_PacketDescription(VARIANT* PacketDescription) mut
+			public HRESULT get_PacketDescription(out VARIANT PacketDescription) mut
 			{
-				return VT.get_PacketDescription(&this, PacketDescription);
+				return VT.get_PacketDescription(ref this, out PacketDescription);
 			}
-			public HRESULT get_Deleted(int16* Deleted) mut
+			public HRESULT get_Deleted(out int16 Deleted) mut
 			{
-				return VT.get_Deleted(&this, Deleted);
+				return VT.get_Deleted(ref this, out Deleted);
 			}
 			public HRESULT GetBoundingBox(InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) mut
 			{
-				return VT.GetBoundingBox(&this, BoundingBoxMode, Rectangle);
+				return VT.GetBoundingBox(ref this, BoundingBoxMode, Rectangle);
 			}
-			public HRESULT FindIntersections(IInkStrokes* Strokes, VARIANT* Intersections) mut
+			public HRESULT FindIntersections(IInkStrokes* Strokes, out VARIANT Intersections) mut
 			{
-				return VT.FindIntersections(&this, Strokes, Intersections);
+				return VT.FindIntersections(ref this, Strokes, out Intersections);
 			}
-			public HRESULT GetRectangleIntersections(IInkRectangle* Rectangle, VARIANT* Intersections) mut
+			public HRESULT GetRectangleIntersections(IInkRectangle* Rectangle, out VARIANT Intersections) mut
 			{
-				return VT.GetRectangleIntersections(&this, Rectangle, Intersections);
+				return VT.GetRectangleIntersections(ref this, Rectangle, out Intersections);
 			}
 			public HRESULT Clip(IInkRectangle* Rectangle) mut
 			{
-				return VT.Clip(&this, Rectangle);
+				return VT.Clip(ref this, Rectangle);
 			}
-			public HRESULT HitTestCircle(int32 X, int32 Y, float Radius, int16* Intersects) mut
+			public HRESULT HitTestCircle(int32 X, int32 Y, float Radius, out int16 Intersects) mut
 			{
-				return VT.HitTestCircle(&this, X, Y, Radius, Intersects);
+				return VT.HitTestCircle(ref this, X, Y, Radius, out Intersects);
 			}
-			public HRESULT NearestPoint(int32 X, int32 Y, float* Distance, float* Point) mut
+			public HRESULT NearestPoint(int32 X, int32 Y, out float Distance, out float Point) mut
 			{
-				return VT.NearestPoint(&this, X, Y, Distance, Point);
+				return VT.NearestPoint(ref this, X, Y, out Distance, out Point);
 			}
 			public HRESULT Split(float SplitAt, IInkStrokeDisp** NewStroke) mut
 			{
-				return VT.Split(&this, SplitAt, NewStroke);
+				return VT.Split(ref this, SplitAt, NewStroke);
 			}
-			public HRESULT GetPacketDescriptionPropertyMetrics(BSTR PropertyName, int32* Minimum, int32* Maximum, TabletPropertyMetricUnit* Units, float* Resolution) mut
+			public HRESULT GetPacketDescriptionPropertyMetrics(BSTR PropertyName, out int32 Minimum, out int32 Maximum, out TabletPropertyMetricUnit Units, out float Resolution) mut
 			{
-				return VT.GetPacketDescriptionPropertyMetrics(&this, PropertyName, Minimum, Maximum, Units, Resolution);
+				return VT.GetPacketDescriptionPropertyMetrics(ref this, PropertyName, out Minimum, out Maximum, out Units, out Resolution);
 			}
-			public HRESULT GetPoints(int32 Index, int32 Count, VARIANT* Points) mut
+			public HRESULT GetPoints(int32 Index, int32 Count, out VARIANT Points) mut
 			{
-				return VT.GetPoints(&this, Index, Count, Points);
+				return VT.GetPoints(ref this, Index, Count, out Points);
 			}
-			public HRESULT SetPoints(VARIANT Points, int32 Index, int32 Count, int32* NumberOfPointsSet) mut
+			public HRESULT SetPoints(VARIANT Points, int32 Index, int32 Count, out int32 NumberOfPointsSet) mut
 			{
-				return VT.SetPoints(&this, Points, Index, Count, NumberOfPointsSet);
+				return VT.SetPoints(ref this, Points, Index, Count, out NumberOfPointsSet);
 			}
-			public HRESULT GetPacketData(int32 Index, int32 Count, VARIANT* PacketData) mut
+			public HRESULT GetPacketData(int32 Index, int32 Count, out VARIANT PacketData) mut
 			{
-				return VT.GetPacketData(&this, Index, Count, PacketData);
+				return VT.GetPacketData(ref this, Index, Count, out PacketData);
 			}
-			public HRESULT GetPacketValuesByProperty(BSTR PropertyName, int32 Index, int32 Count, VARIANT* PacketValues) mut
+			public HRESULT GetPacketValuesByProperty(BSTR PropertyName, int32 Index, int32 Count, out VARIANT PacketValues) mut
 			{
-				return VT.GetPacketValuesByProperty(&this, PropertyName, Index, Count, PacketValues);
+				return VT.GetPacketValuesByProperty(ref this, PropertyName, Index, Count, out PacketValues);
 			}
-			public HRESULT SetPacketValuesByProperty(BSTR bstrPropertyName, VARIANT PacketValues, int32 Index, int32 Count, int32* NumberOfPacketsSet) mut
+			public HRESULT SetPacketValuesByProperty(BSTR bstrPropertyName, VARIANT PacketValues, int32 Index, int32 Count, out int32 NumberOfPacketsSet) mut
 			{
-				return VT.SetPacketValuesByProperty(&this, bstrPropertyName, PacketValues, Index, Count, NumberOfPacketsSet);
+				return VT.SetPacketValuesByProperty(ref this, bstrPropertyName, PacketValues, Index, Count, out NumberOfPacketsSet);
 			}
-			public HRESULT GetFlattenedBezierPoints(int32 FittingError, VARIANT* FlattenedBezierPoints) mut
+			public HRESULT GetFlattenedBezierPoints(int32 FittingError, out VARIANT FlattenedBezierPoints) mut
 			{
-				return VT.GetFlattenedBezierPoints(&this, FittingError, FlattenedBezierPoints);
+				return VT.GetFlattenedBezierPoints(ref this, FittingError, out FlattenedBezierPoints);
 			}
 			public HRESULT Transform(IInkTransform* Transform, int16 ApplyOnPenWidth) mut
 			{
-				return VT.Transform(&this, Transform, ApplyOnPenWidth);
+				return VT.Transform(ref this, Transform, ApplyOnPenWidth);
 			}
 			public HRESULT ScaleToRectangle(IInkRectangle* Rectangle) mut
 			{
-				return VT.ScaleToRectangle(&this, Rectangle);
+				return VT.ScaleToRectangle(ref this, Rectangle);
 			}
 			public HRESULT Move(float HorizontalComponent, float VerticalComponent) mut
 			{
-				return VT.Move(&this, HorizontalComponent, VerticalComponent);
+				return VT.Move(ref this, HorizontalComponent, VerticalComponent);
 			}
 			public HRESULT Rotate(float Degrees, float x, float y) mut
 			{
-				return VT.Rotate(&this, Degrees, x, y);
+				return VT.Rotate(ref this, Degrees, x, y);
 			}
 			public HRESULT Shear(float HorizontalMultiplier, float VerticalMultiplier) mut
 			{
-				return VT.Shear(&this, HorizontalMultiplier, VerticalMultiplier);
+				return VT.Shear(ref this, HorizontalMultiplier, VerticalMultiplier);
 			}
 			public HRESULT ScaleTransform(float HorizontalMultiplier, float VerticalMultiplier) mut
 			{
-				return VT.ScaleTransform(&this, HorizontalMultiplier, VerticalMultiplier);
+				return VT.ScaleTransform(ref this, HorizontalMultiplier, VerticalMultiplier);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkStrokeDisp *self, int32* ID) get_ID;
-				public new function HRESULT(IInkStrokeDisp *self, VARIANT* Points) get_BezierPoints;
-				public new function HRESULT(IInkStrokeDisp *self, IInkDrawingAttributes** DrawAttrs) get_DrawingAttributes;
-				public new function HRESULT(IInkStrokeDisp *self, IInkDrawingAttributes* DrawAttrs) putref_DrawingAttributes;
-				public new function HRESULT(IInkStrokeDisp *self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(IInkStrokeDisp *self, IInkExtendedProperties** Properties) get_ExtendedProperties;
-				public new function HRESULT(IInkStrokeDisp *self, VARIANT* Cusps) get_PolylineCusps;
-				public new function HRESULT(IInkStrokeDisp *self, VARIANT* Cusps) get_BezierCusps;
-				public new function HRESULT(IInkStrokeDisp *self, VARIANT* Intersections) get_SelfIntersections;
-				public new function HRESULT(IInkStrokeDisp *self, int32* plCount) get_PacketCount;
-				public new function HRESULT(IInkStrokeDisp *self, int32* plSize) get_PacketSize;
-				public new function HRESULT(IInkStrokeDisp *self, VARIANT* PacketDescription) get_PacketDescription;
-				public new function HRESULT(IInkStrokeDisp *self, int16* Deleted) get_Deleted;
-				public new function HRESULT(IInkStrokeDisp *self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
-				public new function HRESULT(IInkStrokeDisp *self, IInkStrokes* Strokes, VARIANT* Intersections) FindIntersections;
-				public new function HRESULT(IInkStrokeDisp *self, IInkRectangle* Rectangle, VARIANT* Intersections) GetRectangleIntersections;
-				public new function HRESULT(IInkStrokeDisp *self, IInkRectangle* Rectangle) Clip;
-				public new function HRESULT(IInkStrokeDisp *self, int32 X, int32 Y, float Radius, int16* Intersects) HitTestCircle;
-				public new function HRESULT(IInkStrokeDisp *self, int32 X, int32 Y, float* Distance, float* Point) NearestPoint;
-				public new function HRESULT(IInkStrokeDisp *self, float SplitAt, IInkStrokeDisp** NewStroke) Split;
-				public new function HRESULT(IInkStrokeDisp *self, BSTR PropertyName, int32* Minimum, int32* Maximum, TabletPropertyMetricUnit* Units, float* Resolution) GetPacketDescriptionPropertyMetrics;
-				public new function HRESULT(IInkStrokeDisp *self, int32 Index, int32 Count, VARIANT* Points) GetPoints;
-				public new function HRESULT(IInkStrokeDisp *self, VARIANT Points, int32 Index, int32 Count, int32* NumberOfPointsSet) SetPoints;
-				public new function HRESULT(IInkStrokeDisp *self, int32 Index, int32 Count, VARIANT* PacketData) GetPacketData;
-				public new function HRESULT(IInkStrokeDisp *self, BSTR PropertyName, int32 Index, int32 Count, VARIANT* PacketValues) GetPacketValuesByProperty;
-				public new function HRESULT(IInkStrokeDisp *self, BSTR bstrPropertyName, VARIANT PacketValues, int32 Index, int32 Count, int32* NumberOfPacketsSet) SetPacketValuesByProperty;
-				public new function HRESULT(IInkStrokeDisp *self, int32 FittingError, VARIANT* FlattenedBezierPoints) GetFlattenedBezierPoints;
-				public new function HRESULT(IInkStrokeDisp *self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
-				public new function HRESULT(IInkStrokeDisp *self, IInkRectangle* Rectangle) ScaleToRectangle;
-				public new function HRESULT(IInkStrokeDisp *self, float HorizontalComponent, float VerticalComponent) Move;
-				public new function HRESULT(IInkStrokeDisp *self, float Degrees, float x, float y) Rotate;
-				public new function HRESULT(IInkStrokeDisp *self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
-				public new function HRESULT(IInkStrokeDisp *self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
+				public new function HRESULT(ref IInkStrokeDisp self, out int32 ID) get_ID;
+				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT Points) get_BezierPoints;
+				public new function HRESULT(ref IInkStrokeDisp self, IInkDrawingAttributes** DrawAttrs) get_DrawingAttributes;
+				public new function HRESULT(ref IInkStrokeDisp self, IInkDrawingAttributes* DrawAttrs) putref_DrawingAttributes;
+				public new function HRESULT(ref IInkStrokeDisp self, IInkDisp** Ink) get_Ink;
+				public new function HRESULT(ref IInkStrokeDisp self, IInkExtendedProperties** Properties) get_ExtendedProperties;
+				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT Cusps) get_PolylineCusps;
+				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT Cusps) get_BezierCusps;
+				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT Intersections) get_SelfIntersections;
+				public new function HRESULT(ref IInkStrokeDisp self, out int32 plCount) get_PacketCount;
+				public new function HRESULT(ref IInkStrokeDisp self, out int32 plSize) get_PacketSize;
+				public new function HRESULT(ref IInkStrokeDisp self, out VARIANT PacketDescription) get_PacketDescription;
+				public new function HRESULT(ref IInkStrokeDisp self, out int16 Deleted) get_Deleted;
+				public new function HRESULT(ref IInkStrokeDisp self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
+				public new function HRESULT(ref IInkStrokeDisp self, IInkStrokes* Strokes, out VARIANT Intersections) FindIntersections;
+				public new function HRESULT(ref IInkStrokeDisp self, IInkRectangle* Rectangle, out VARIANT Intersections) GetRectangleIntersections;
+				public new function HRESULT(ref IInkStrokeDisp self, IInkRectangle* Rectangle) Clip;
+				public new function HRESULT(ref IInkStrokeDisp self, int32 X, int32 Y, float Radius, out int16 Intersects) HitTestCircle;
+				public new function HRESULT(ref IInkStrokeDisp self, int32 X, int32 Y, out float Distance, out float Point) NearestPoint;
+				public new function HRESULT(ref IInkStrokeDisp self, float SplitAt, IInkStrokeDisp** NewStroke) Split;
+				public new function HRESULT(ref IInkStrokeDisp self, BSTR PropertyName, out int32 Minimum, out int32 Maximum, out TabletPropertyMetricUnit Units, out float Resolution) GetPacketDescriptionPropertyMetrics;
+				public new function HRESULT(ref IInkStrokeDisp self, int32 Index, int32 Count, out VARIANT Points) GetPoints;
+				public new function HRESULT(ref IInkStrokeDisp self, VARIANT Points, int32 Index, int32 Count, out int32 NumberOfPointsSet) SetPoints;
+				public new function HRESULT(ref IInkStrokeDisp self, int32 Index, int32 Count, out VARIANT PacketData) GetPacketData;
+				public new function HRESULT(ref IInkStrokeDisp self, BSTR PropertyName, int32 Index, int32 Count, out VARIANT PacketValues) GetPacketValuesByProperty;
+				public new function HRESULT(ref IInkStrokeDisp self, BSTR bstrPropertyName, VARIANT PacketValues, int32 Index, int32 Count, out int32 NumberOfPacketsSet) SetPacketValuesByProperty;
+				public new function HRESULT(ref IInkStrokeDisp self, int32 FittingError, out VARIANT FlattenedBezierPoints) GetFlattenedBezierPoints;
+				public new function HRESULT(ref IInkStrokeDisp self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
+				public new function HRESULT(ref IInkStrokeDisp self, IInkRectangle* Rectangle) ScaleToRectangle;
+				public new function HRESULT(ref IInkStrokeDisp self, float HorizontalComponent, float VerticalComponent) Move;
+				public new function HRESULT(ref IInkStrokeDisp self, float Degrees, float x, float y) Rotate;
+				public new function HRESULT(ref IInkStrokeDisp self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
+				public new function HRESULT(ref IInkStrokeDisp self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
 			}
 		}
 		[CRepr]
@@ -2530,109 +2530,109 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get__NewEnum(IUnknown** _NewEnum) mut
 			{
-				return VT.get__NewEnum(&this, _NewEnum);
+				return VT.get__NewEnum(ref this, _NewEnum);
 			}
 			public HRESULT get_Ink(IInkDisp** Ink) mut
 			{
-				return VT.get_Ink(&this, Ink);
+				return VT.get_Ink(ref this, Ink);
 			}
 			public HRESULT get_RecognitionResult(IInkRecognitionResult** RecognitionResult) mut
 			{
-				return VT.get_RecognitionResult(&this, RecognitionResult);
+				return VT.get_RecognitionResult(ref this, RecognitionResult);
 			}
 			public HRESULT ComToString(BSTR* ToString) mut
 			{
-				return VT.ComToString(&this, ToString);
+				return VT.ComToString(ref this, ToString);
 			}
 			public HRESULT Item(int32 Index, IInkStrokeDisp** Stroke) mut
 			{
-				return VT.Item(&this, Index, Stroke);
+				return VT.Item(ref this, Index, Stroke);
 			}
 			public HRESULT Add(IInkStrokeDisp* InkStroke) mut
 			{
-				return VT.Add(&this, InkStroke);
+				return VT.Add(ref this, InkStroke);
 			}
 			public HRESULT AddStrokes(IInkStrokes* InkStrokes) mut
 			{
-				return VT.AddStrokes(&this, InkStrokes);
+				return VT.AddStrokes(ref this, InkStrokes);
 			}
 			public HRESULT Remove(IInkStrokeDisp* InkStroke) mut
 			{
-				return VT.Remove(&this, InkStroke);
+				return VT.Remove(ref this, InkStroke);
 			}
 			public HRESULT RemoveStrokes(IInkStrokes* InkStrokes) mut
 			{
-				return VT.RemoveStrokes(&this, InkStrokes);
+				return VT.RemoveStrokes(ref this, InkStrokes);
 			}
 			public HRESULT ModifyDrawingAttributes(IInkDrawingAttributes* DrawAttrs) mut
 			{
-				return VT.ModifyDrawingAttributes(&this, DrawAttrs);
+				return VT.ModifyDrawingAttributes(ref this, DrawAttrs);
 			}
 			public HRESULT GetBoundingBox(InkBoundingBoxMode BoundingBoxMode, IInkRectangle** BoundingBox) mut
 			{
-				return VT.GetBoundingBox(&this, BoundingBoxMode, BoundingBox);
+				return VT.GetBoundingBox(ref this, BoundingBoxMode, BoundingBox);
 			}
 			public HRESULT Transform(IInkTransform* Transform, int16 ApplyOnPenWidth) mut
 			{
-				return VT.Transform(&this, Transform, ApplyOnPenWidth);
+				return VT.Transform(ref this, Transform, ApplyOnPenWidth);
 			}
 			public HRESULT ScaleToRectangle(IInkRectangle* Rectangle) mut
 			{
-				return VT.ScaleToRectangle(&this, Rectangle);
+				return VT.ScaleToRectangle(ref this, Rectangle);
 			}
 			public HRESULT Move(float HorizontalComponent, float VerticalComponent) mut
 			{
-				return VT.Move(&this, HorizontalComponent, VerticalComponent);
+				return VT.Move(ref this, HorizontalComponent, VerticalComponent);
 			}
 			public HRESULT Rotate(float Degrees, float x, float y) mut
 			{
-				return VT.Rotate(&this, Degrees, x, y);
+				return VT.Rotate(ref this, Degrees, x, y);
 			}
 			public HRESULT Shear(float HorizontalMultiplier, float VerticalMultiplier) mut
 			{
-				return VT.Shear(&this, HorizontalMultiplier, VerticalMultiplier);
+				return VT.Shear(ref this, HorizontalMultiplier, VerticalMultiplier);
 			}
 			public HRESULT ScaleTransform(float HorizontalMultiplier, float VerticalMultiplier) mut
 			{
-				return VT.ScaleTransform(&this, HorizontalMultiplier, VerticalMultiplier);
+				return VT.ScaleTransform(ref this, HorizontalMultiplier, VerticalMultiplier);
 			}
 			public HRESULT Clip(IInkRectangle* Rectangle) mut
 			{
-				return VT.Clip(&this, Rectangle);
+				return VT.Clip(ref this, Rectangle);
 			}
 			public HRESULT RemoveRecognitionResult() mut
 			{
-				return VT.RemoveRecognitionResult(&this);
+				return VT.RemoveRecognitionResult(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkStrokes *self, int32* Count) get_Count;
-				public new function HRESULT(IInkStrokes *self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(IInkStrokes *self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(IInkStrokes *self, IInkRecognitionResult** RecognitionResult) get_RecognitionResult;
-				public new function HRESULT(IInkStrokes *self, BSTR* ToString) ComToString;
-				public new function HRESULT(IInkStrokes *self, int32 Index, IInkStrokeDisp** Stroke) Item;
-				public new function HRESULT(IInkStrokes *self, IInkStrokeDisp* InkStroke) Add;
-				public new function HRESULT(IInkStrokes *self, IInkStrokes* InkStrokes) AddStrokes;
-				public new function HRESULT(IInkStrokes *self, IInkStrokeDisp* InkStroke) Remove;
-				public new function HRESULT(IInkStrokes *self, IInkStrokes* InkStrokes) RemoveStrokes;
-				public new function HRESULT(IInkStrokes *self, IInkDrawingAttributes* DrawAttrs) ModifyDrawingAttributes;
-				public new function HRESULT(IInkStrokes *self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** BoundingBox) GetBoundingBox;
-				public new function HRESULT(IInkStrokes *self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
-				public new function HRESULT(IInkStrokes *self, IInkRectangle* Rectangle) ScaleToRectangle;
-				public new function HRESULT(IInkStrokes *self, float HorizontalComponent, float VerticalComponent) Move;
-				public new function HRESULT(IInkStrokes *self, float Degrees, float x, float y) Rotate;
-				public new function HRESULT(IInkStrokes *self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
-				public new function HRESULT(IInkStrokes *self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
-				public new function HRESULT(IInkStrokes *self, IInkRectangle* Rectangle) Clip;
-				public new function HRESULT(IInkStrokes *self) RemoveRecognitionResult;
+				public new function HRESULT(ref IInkStrokes self, out int32 Count) get_Count;
+				public new function HRESULT(ref IInkStrokes self, IUnknown** _NewEnum) get__NewEnum;
+				public new function HRESULT(ref IInkStrokes self, IInkDisp** Ink) get_Ink;
+				public new function HRESULT(ref IInkStrokes self, IInkRecognitionResult** RecognitionResult) get_RecognitionResult;
+				public new function HRESULT(ref IInkStrokes self, BSTR* ToString) ComToString;
+				public new function HRESULT(ref IInkStrokes self, int32 Index, IInkStrokeDisp** Stroke) Item;
+				public new function HRESULT(ref IInkStrokes self, IInkStrokeDisp* InkStroke) Add;
+				public new function HRESULT(ref IInkStrokes self, IInkStrokes* InkStrokes) AddStrokes;
+				public new function HRESULT(ref IInkStrokes self, IInkStrokeDisp* InkStroke) Remove;
+				public new function HRESULT(ref IInkStrokes self, IInkStrokes* InkStrokes) RemoveStrokes;
+				public new function HRESULT(ref IInkStrokes self, IInkDrawingAttributes* DrawAttrs) ModifyDrawingAttributes;
+				public new function HRESULT(ref IInkStrokes self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** BoundingBox) GetBoundingBox;
+				public new function HRESULT(ref IInkStrokes self, IInkTransform* Transform, int16 ApplyOnPenWidth) Transform;
+				public new function HRESULT(ref IInkStrokes self, IInkRectangle* Rectangle) ScaleToRectangle;
+				public new function HRESULT(ref IInkStrokes self, float HorizontalComponent, float VerticalComponent) Move;
+				public new function HRESULT(ref IInkStrokes self, float Degrees, float x, float y) Rotate;
+				public new function HRESULT(ref IInkStrokes self, float HorizontalMultiplier, float VerticalMultiplier) Shear;
+				public new function HRESULT(ref IInkStrokes self, float HorizontalMultiplier, float VerticalMultiplier) ScaleTransform;
+				public new function HRESULT(ref IInkStrokes self, IInkRectangle* Rectangle) Clip;
+				public new function HRESULT(ref IInkStrokes self) RemoveRecognitionResult;
 			}
 		}
 		[CRepr]
@@ -2642,39 +2642,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get__NewEnum(IUnknown** _NewEnum) mut
 			{
-				return VT.get__NewEnum(&this, _NewEnum);
+				return VT.get__NewEnum(ref this, _NewEnum);
 			}
 			public HRESULT Item(VARIANT Identifier, IInkStrokes** Strokes) mut
 			{
-				return VT.Item(&this, Identifier, Strokes);
+				return VT.Item(ref this, Identifier, Strokes);
 			}
 			public HRESULT Add(BSTR Name, IInkStrokes* Strokes) mut
 			{
-				return VT.Add(&this, Name, Strokes);
+				return VT.Add(ref this, Name, Strokes);
 			}
 			public HRESULT Remove(VARIANT Identifier) mut
 			{
-				return VT.Remove(&this, Identifier);
+				return VT.Remove(ref this, Identifier);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkCustomStrokes *self, int32* Count) get_Count;
-				public new function HRESULT(IInkCustomStrokes *self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(IInkCustomStrokes *self, VARIANT Identifier, IInkStrokes** Strokes) Item;
-				public new function HRESULT(IInkCustomStrokes *self, BSTR Name, IInkStrokes* Strokes) Add;
-				public new function HRESULT(IInkCustomStrokes *self, VARIANT Identifier) Remove;
-				public new function HRESULT(IInkCustomStrokes *self) Clear;
+				public new function HRESULT(ref IInkCustomStrokes self, out int32 Count) get_Count;
+				public new function HRESULT(ref IInkCustomStrokes self, IUnknown** _NewEnum) get__NewEnum;
+				public new function HRESULT(ref IInkCustomStrokes self, VARIANT Identifier, IInkStrokes** Strokes) Item;
+				public new function HRESULT(ref IInkCustomStrokes self, BSTR Name, IInkStrokes* Strokes) Add;
+				public new function HRESULT(ref IInkCustomStrokes self, VARIANT Identifier) Remove;
+				public new function HRESULT(ref IInkCustomStrokes self) Clear;
 			}
 		}
 		[CRepr]
@@ -2698,132 +2698,132 @@ namespace Win32
 			
 			public HRESULT get_Strokes(IInkStrokes** Strokes) mut
 			{
-				return VT.get_Strokes(&this, Strokes);
+				return VT.get_Strokes(ref this, Strokes);
 			}
 			public HRESULT get_ExtendedProperties(IInkExtendedProperties** Properties) mut
 			{
-				return VT.get_ExtendedProperties(&this, Properties);
+				return VT.get_ExtendedProperties(ref this, Properties);
 			}
-			public HRESULT get_Dirty(int16* Dirty) mut
+			public HRESULT get_Dirty(out int16 Dirty) mut
 			{
-				return VT.get_Dirty(&this, Dirty);
+				return VT.get_Dirty(ref this, out Dirty);
 			}
 			public HRESULT put_Dirty(int16 Dirty) mut
 			{
-				return VT.put_Dirty(&this, Dirty);
+				return VT.put_Dirty(ref this, Dirty);
 			}
 			public HRESULT get_CustomStrokes(IInkCustomStrokes** ppunkInkCustomStrokes) mut
 			{
-				return VT.get_CustomStrokes(&this, ppunkInkCustomStrokes);
+				return VT.get_CustomStrokes(ref this, ppunkInkCustomStrokes);
 			}
 			public HRESULT GetBoundingBox(InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) mut
 			{
-				return VT.GetBoundingBox(&this, BoundingBoxMode, Rectangle);
+				return VT.GetBoundingBox(ref this, BoundingBoxMode, Rectangle);
 			}
 			public HRESULT DeleteStrokes(IInkStrokes* Strokes) mut
 			{
-				return VT.DeleteStrokes(&this, Strokes);
+				return VT.DeleteStrokes(ref this, Strokes);
 			}
 			public HRESULT DeleteStroke(IInkStrokeDisp* Stroke) mut
 			{
-				return VT.DeleteStroke(&this, Stroke);
+				return VT.DeleteStroke(ref this, Stroke);
 			}
 			public HRESULT ExtractStrokes(IInkStrokes* Strokes, InkExtractFlags ExtractFlags, IInkDisp** ExtractedInk) mut
 			{
-				return VT.ExtractStrokes(&this, Strokes, ExtractFlags, ExtractedInk);
+				return VT.ExtractStrokes(ref this, Strokes, ExtractFlags, ExtractedInk);
 			}
 			public HRESULT ExtractWithRectangle(IInkRectangle* Rectangle, InkExtractFlags extractFlags, IInkDisp** ExtractedInk) mut
 			{
-				return VT.ExtractWithRectangle(&this, Rectangle, extractFlags, ExtractedInk);
+				return VT.ExtractWithRectangle(ref this, Rectangle, extractFlags, ExtractedInk);
 			}
 			public HRESULT Clip(IInkRectangle* Rectangle) mut
 			{
-				return VT.Clip(&this, Rectangle);
+				return VT.Clip(ref this, Rectangle);
 			}
 			public HRESULT Clone(IInkDisp** NewInk) mut
 			{
-				return VT.Clone(&this, NewInk);
+				return VT.Clone(ref this, NewInk);
 			}
 			public HRESULT HitTestCircle(int32 X, int32 Y, float radius, IInkStrokes** Strokes) mut
 			{
-				return VT.HitTestCircle(&this, X, Y, radius, Strokes);
+				return VT.HitTestCircle(ref this, X, Y, radius, Strokes);
 			}
 			public HRESULT HitTestWithRectangle(IInkRectangle* SelectionRectangle, float IntersectPercent, IInkStrokes** Strokes) mut
 			{
-				return VT.HitTestWithRectangle(&this, SelectionRectangle, IntersectPercent, Strokes);
+				return VT.HitTestWithRectangle(ref this, SelectionRectangle, IntersectPercent, Strokes);
 			}
 			public HRESULT HitTestWithLasso(VARIANT Points, float IntersectPercent, VARIANT* LassoPoints, IInkStrokes** Strokes) mut
 			{
-				return VT.HitTestWithLasso(&this, Points, IntersectPercent, LassoPoints, Strokes);
+				return VT.HitTestWithLasso(ref this, Points, IntersectPercent, LassoPoints, Strokes);
 			}
-			public HRESULT NearestPoint(int32 X, int32 Y, float* PointOnStroke, float* DistanceFromPacket, IInkStrokeDisp** Stroke) mut
+			public HRESULT NearestPoint(int32 X, int32 Y, out float PointOnStroke, out float DistanceFromPacket, IInkStrokeDisp** Stroke) mut
 			{
-				return VT.NearestPoint(&this, X, Y, PointOnStroke, DistanceFromPacket, Stroke);
+				return VT.NearestPoint(ref this, X, Y, out PointOnStroke, out DistanceFromPacket, Stroke);
 			}
 			public HRESULT CreateStrokes(VARIANT StrokeIds, IInkStrokes** Strokes) mut
 			{
-				return VT.CreateStrokes(&this, StrokeIds, Strokes);
+				return VT.CreateStrokes(ref this, StrokeIds, Strokes);
 			}
 			public HRESULT AddStrokesAtRectangle(IInkStrokes* SourceStrokes, IInkRectangle* TargetRectangle) mut
 			{
-				return VT.AddStrokesAtRectangle(&this, SourceStrokes, TargetRectangle);
+				return VT.AddStrokesAtRectangle(ref this, SourceStrokes, TargetRectangle);
 			}
-			public HRESULT Save(InkPersistenceFormat PersistenceFormat, InkPersistenceCompressionMode CompressionMode, VARIANT* Data) mut
+			public HRESULT Save(InkPersistenceFormat PersistenceFormat, InkPersistenceCompressionMode CompressionMode, out VARIANT Data) mut
 			{
-				return VT.Save(&this, PersistenceFormat, CompressionMode, Data);
+				return VT.Save(ref this, PersistenceFormat, CompressionMode, out Data);
 			}
 			public HRESULT Load(VARIANT Data) mut
 			{
-				return VT.Load(&this, Data);
+				return VT.Load(ref this, Data);
 			}
 			public HRESULT CreateStroke(VARIANT PacketData, VARIANT PacketDescription, IInkStrokeDisp** Stroke) mut
 			{
-				return VT.CreateStroke(&this, PacketData, PacketDescription, Stroke);
+				return VT.CreateStroke(ref this, PacketData, PacketDescription, Stroke);
 			}
 			public HRESULT ClipboardCopyWithRectangle(IInkRectangle* Rectangle, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) mut
 			{
-				return VT.ClipboardCopyWithRectangle(&this, Rectangle, ClipboardFormats, ClipboardModes, DataObject);
+				return VT.ClipboardCopyWithRectangle(ref this, Rectangle, ClipboardFormats, ClipboardModes, DataObject);
 			}
 			public HRESULT ClipboardCopy(IInkStrokes* strokes, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) mut
 			{
-				return VT.ClipboardCopy(&this, strokes, ClipboardFormats, ClipboardModes, DataObject);
+				return VT.ClipboardCopy(ref this, strokes, ClipboardFormats, ClipboardModes, DataObject);
 			}
-			public HRESULT CanPaste(IDataObject* DataObject, int16* CanPaste) mut
+			public HRESULT CanPaste(IDataObject* DataObject, out int16 CanPaste) mut
 			{
-				return VT.CanPaste(&this, DataObject, CanPaste);
+				return VT.CanPaste(ref this, DataObject, out CanPaste);
 			}
 			public HRESULT ClipboardPaste(int32 x, int32 y, IDataObject* DataObject, IInkStrokes** Strokes) mut
 			{
-				return VT.ClipboardPaste(&this, x, y, DataObject, Strokes);
+				return VT.ClipboardPaste(ref this, x, y, DataObject, Strokes);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkDisp *self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(IInkDisp *self, IInkExtendedProperties** Properties) get_ExtendedProperties;
-				public new function HRESULT(IInkDisp *self, int16* Dirty) get_Dirty;
-				public new function HRESULT(IInkDisp *self, int16 Dirty) put_Dirty;
-				public new function HRESULT(IInkDisp *self, IInkCustomStrokes** ppunkInkCustomStrokes) get_CustomStrokes;
-				public new function HRESULT(IInkDisp *self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
-				public new function HRESULT(IInkDisp *self, IInkStrokes* Strokes) DeleteStrokes;
-				public new function HRESULT(IInkDisp *self, IInkStrokeDisp* Stroke) DeleteStroke;
-				public new function HRESULT(IInkDisp *self, IInkStrokes* Strokes, InkExtractFlags ExtractFlags, IInkDisp** ExtractedInk) ExtractStrokes;
-				public new function HRESULT(IInkDisp *self, IInkRectangle* Rectangle, InkExtractFlags extractFlags, IInkDisp** ExtractedInk) ExtractWithRectangle;
-				public new function HRESULT(IInkDisp *self, IInkRectangle* Rectangle) Clip;
-				public new function HRESULT(IInkDisp *self, IInkDisp** NewInk) Clone;
-				public new function HRESULT(IInkDisp *self, int32 X, int32 Y, float radius, IInkStrokes** Strokes) HitTestCircle;
-				public new function HRESULT(IInkDisp *self, IInkRectangle* SelectionRectangle, float IntersectPercent, IInkStrokes** Strokes) HitTestWithRectangle;
-				public new function HRESULT(IInkDisp *self, VARIANT Points, float IntersectPercent, VARIANT* LassoPoints, IInkStrokes** Strokes) HitTestWithLasso;
-				public new function HRESULT(IInkDisp *self, int32 X, int32 Y, float* PointOnStroke, float* DistanceFromPacket, IInkStrokeDisp** Stroke) NearestPoint;
-				public new function HRESULT(IInkDisp *self, VARIANT StrokeIds, IInkStrokes** Strokes) CreateStrokes;
-				public new function HRESULT(IInkDisp *self, IInkStrokes* SourceStrokes, IInkRectangle* TargetRectangle) AddStrokesAtRectangle;
-				public new function HRESULT(IInkDisp *self, InkPersistenceFormat PersistenceFormat, InkPersistenceCompressionMode CompressionMode, VARIANT* Data) Save;
-				public new function HRESULT(IInkDisp *self, VARIANT Data) Load;
-				public new function HRESULT(IInkDisp *self, VARIANT PacketData, VARIANT PacketDescription, IInkStrokeDisp** Stroke) CreateStroke;
-				public new function HRESULT(IInkDisp *self, IInkRectangle* Rectangle, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopyWithRectangle;
-				public new function HRESULT(IInkDisp *self, IInkStrokes* strokes, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopy;
-				public new function HRESULT(IInkDisp *self, IDataObject* DataObject, int16* CanPaste) CanPaste;
-				public new function HRESULT(IInkDisp *self, int32 x, int32 y, IDataObject* DataObject, IInkStrokes** Strokes) ClipboardPaste;
+				public new function HRESULT(ref IInkDisp self, IInkStrokes** Strokes) get_Strokes;
+				public new function HRESULT(ref IInkDisp self, IInkExtendedProperties** Properties) get_ExtendedProperties;
+				public new function HRESULT(ref IInkDisp self, out int16 Dirty) get_Dirty;
+				public new function HRESULT(ref IInkDisp self, int16 Dirty) put_Dirty;
+				public new function HRESULT(ref IInkDisp self, IInkCustomStrokes** ppunkInkCustomStrokes) get_CustomStrokes;
+				public new function HRESULT(ref IInkDisp self, InkBoundingBoxMode BoundingBoxMode, IInkRectangle** Rectangle) GetBoundingBox;
+				public new function HRESULT(ref IInkDisp self, IInkStrokes* Strokes) DeleteStrokes;
+				public new function HRESULT(ref IInkDisp self, IInkStrokeDisp* Stroke) DeleteStroke;
+				public new function HRESULT(ref IInkDisp self, IInkStrokes* Strokes, InkExtractFlags ExtractFlags, IInkDisp** ExtractedInk) ExtractStrokes;
+				public new function HRESULT(ref IInkDisp self, IInkRectangle* Rectangle, InkExtractFlags extractFlags, IInkDisp** ExtractedInk) ExtractWithRectangle;
+				public new function HRESULT(ref IInkDisp self, IInkRectangle* Rectangle) Clip;
+				public new function HRESULT(ref IInkDisp self, IInkDisp** NewInk) Clone;
+				public new function HRESULT(ref IInkDisp self, int32 X, int32 Y, float radius, IInkStrokes** Strokes) HitTestCircle;
+				public new function HRESULT(ref IInkDisp self, IInkRectangle* SelectionRectangle, float IntersectPercent, IInkStrokes** Strokes) HitTestWithRectangle;
+				public new function HRESULT(ref IInkDisp self, VARIANT Points, float IntersectPercent, VARIANT* LassoPoints, IInkStrokes** Strokes) HitTestWithLasso;
+				public new function HRESULT(ref IInkDisp self, int32 X, int32 Y, out float PointOnStroke, out float DistanceFromPacket, IInkStrokeDisp** Stroke) NearestPoint;
+				public new function HRESULT(ref IInkDisp self, VARIANT StrokeIds, IInkStrokes** Strokes) CreateStrokes;
+				public new function HRESULT(ref IInkDisp self, IInkStrokes* SourceStrokes, IInkRectangle* TargetRectangle) AddStrokesAtRectangle;
+				public new function HRESULT(ref IInkDisp self, InkPersistenceFormat PersistenceFormat, InkPersistenceCompressionMode CompressionMode, out VARIANT Data) Save;
+				public new function HRESULT(ref IInkDisp self, VARIANT Data) Load;
+				public new function HRESULT(ref IInkDisp self, VARIANT PacketData, VARIANT PacketDescription, IInkStrokeDisp** Stroke) CreateStroke;
+				public new function HRESULT(ref IInkDisp self, IInkRectangle* Rectangle, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopyWithRectangle;
+				public new function HRESULT(ref IInkDisp self, IInkStrokes* strokes, InkClipboardFormats ClipboardFormats, InkClipboardModes ClipboardModes, IDataObject** DataObject) ClipboardCopy;
+				public new function HRESULT(ref IInkDisp self, IDataObject* DataObject, out int16 CanPaste) CanPaste;
+				public new function HRESULT(ref IInkDisp self, int32 x, int32 y, IDataObject* DataObject, IInkStrokes** Strokes) ClipboardPaste;
 			}
 		}
 		[CRepr]
@@ -2847,82 +2847,82 @@ namespace Win32
 			
 			public HRESULT GetViewTransform(IInkTransform* ViewTransform) mut
 			{
-				return VT.GetViewTransform(&this, ViewTransform);
+				return VT.GetViewTransform(ref this, ViewTransform);
 			}
 			public HRESULT SetViewTransform(IInkTransform* ViewTransform) mut
 			{
-				return VT.SetViewTransform(&this, ViewTransform);
+				return VT.SetViewTransform(ref this, ViewTransform);
 			}
 			public HRESULT GetObjectTransform(IInkTransform* ObjectTransform) mut
 			{
-				return VT.GetObjectTransform(&this, ObjectTransform);
+				return VT.GetObjectTransform(ref this, ObjectTransform);
 			}
 			public HRESULT SetObjectTransform(IInkTransform* ObjectTransform) mut
 			{
-				return VT.SetObjectTransform(&this, ObjectTransform);
+				return VT.SetObjectTransform(ref this, ObjectTransform);
 			}
 			public HRESULT Draw(int hDC, IInkStrokes* Strokes) mut
 			{
-				return VT.Draw(&this, hDC, Strokes);
+				return VT.Draw(ref this, hDC, Strokes);
 			}
 			public HRESULT DrawStroke(int hDC, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes) mut
 			{
-				return VT.DrawStroke(&this, hDC, Stroke, DrawingAttributes);
+				return VT.DrawStroke(ref this, hDC, Stroke, DrawingAttributes);
 			}
-			public HRESULT PixelToInkSpace(int hDC, int32* x, int32* y) mut
+			public HRESULT PixelToInkSpace(int hDC, out int32 x, out int32 y) mut
 			{
-				return VT.PixelToInkSpace(&this, hDC, x, y);
+				return VT.PixelToInkSpace(ref this, hDC, out x, out y);
 			}
-			public HRESULT InkSpaceToPixel(int hdcDisplay, int32* x, int32* y) mut
+			public HRESULT InkSpaceToPixel(int hdcDisplay, out int32 x, out int32 y) mut
 			{
-				return VT.InkSpaceToPixel(&this, hdcDisplay, x, y);
+				return VT.InkSpaceToPixel(ref this, hdcDisplay, out x, out y);
 			}
-			public HRESULT PixelToInkSpaceFromPoints(int hDC, VARIANT* Points) mut
+			public HRESULT PixelToInkSpaceFromPoints(int hDC, out VARIANT Points) mut
 			{
-				return VT.PixelToInkSpaceFromPoints(&this, hDC, Points);
+				return VT.PixelToInkSpaceFromPoints(ref this, hDC, out Points);
 			}
-			public HRESULT InkSpaceToPixelFromPoints(int hDC, VARIANT* Points) mut
+			public HRESULT InkSpaceToPixelFromPoints(int hDC, out VARIANT Points) mut
 			{
-				return VT.InkSpaceToPixelFromPoints(&this, hDC, Points);
+				return VT.InkSpaceToPixelFromPoints(ref this, hDC, out Points);
 			}
 			public HRESULT Measure(IInkStrokes* Strokes, IInkRectangle** Rectangle) mut
 			{
-				return VT.Measure(&this, Strokes, Rectangle);
+				return VT.Measure(ref this, Strokes, Rectangle);
 			}
 			public HRESULT MeasureStroke(IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes, IInkRectangle** Rectangle) mut
 			{
-				return VT.MeasureStroke(&this, Stroke, DrawingAttributes, Rectangle);
+				return VT.MeasureStroke(ref this, Stroke, DrawingAttributes, Rectangle);
 			}
 			public HRESULT Move(float HorizontalComponent, float VerticalComponent) mut
 			{
-				return VT.Move(&this, HorizontalComponent, VerticalComponent);
+				return VT.Move(ref this, HorizontalComponent, VerticalComponent);
 			}
 			public HRESULT Rotate(float Degrees, float x, float y) mut
 			{
-				return VT.Rotate(&this, Degrees, x, y);
+				return VT.Rotate(ref this, Degrees, x, y);
 			}
 			public HRESULT ScaleTransform(float HorizontalMultiplier, float VerticalMultiplier, int16 ApplyOnPenWidth) mut
 			{
-				return VT.ScaleTransform(&this, HorizontalMultiplier, VerticalMultiplier, ApplyOnPenWidth);
+				return VT.ScaleTransform(ref this, HorizontalMultiplier, VerticalMultiplier, ApplyOnPenWidth);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRenderer *self, IInkTransform* ViewTransform) GetViewTransform;
-				public new function HRESULT(IInkRenderer *self, IInkTransform* ViewTransform) SetViewTransform;
-				public new function HRESULT(IInkRenderer *self, IInkTransform* ObjectTransform) GetObjectTransform;
-				public new function HRESULT(IInkRenderer *self, IInkTransform* ObjectTransform) SetObjectTransform;
-				public new function HRESULT(IInkRenderer *self, int hDC, IInkStrokes* Strokes) Draw;
-				public new function HRESULT(IInkRenderer *self, int hDC, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes) DrawStroke;
-				public new function HRESULT(IInkRenderer *self, int hDC, int32* x, int32* y) PixelToInkSpace;
-				public new function HRESULT(IInkRenderer *self, int hdcDisplay, int32* x, int32* y) InkSpaceToPixel;
-				public new function HRESULT(IInkRenderer *self, int hDC, VARIANT* Points) PixelToInkSpaceFromPoints;
-				public new function HRESULT(IInkRenderer *self, int hDC, VARIANT* Points) InkSpaceToPixelFromPoints;
-				public new function HRESULT(IInkRenderer *self, IInkStrokes* Strokes, IInkRectangle** Rectangle) Measure;
-				public new function HRESULT(IInkRenderer *self, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes, IInkRectangle** Rectangle) MeasureStroke;
-				public new function HRESULT(IInkRenderer *self, float HorizontalComponent, float VerticalComponent) Move;
-				public new function HRESULT(IInkRenderer *self, float Degrees, float x, float y) Rotate;
-				public new function HRESULT(IInkRenderer *self, float HorizontalMultiplier, float VerticalMultiplier, int16 ApplyOnPenWidth) ScaleTransform;
+				public new function HRESULT(ref IInkRenderer self, IInkTransform* ViewTransform) GetViewTransform;
+				public new function HRESULT(ref IInkRenderer self, IInkTransform* ViewTransform) SetViewTransform;
+				public new function HRESULT(ref IInkRenderer self, IInkTransform* ObjectTransform) GetObjectTransform;
+				public new function HRESULT(ref IInkRenderer self, IInkTransform* ObjectTransform) SetObjectTransform;
+				public new function HRESULT(ref IInkRenderer self, int hDC, IInkStrokes* Strokes) Draw;
+				public new function HRESULT(ref IInkRenderer self, int hDC, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes) DrawStroke;
+				public new function HRESULT(ref IInkRenderer self, int hDC, out int32 x, out int32 y) PixelToInkSpace;
+				public new function HRESULT(ref IInkRenderer self, int hdcDisplay, out int32 x, out int32 y) InkSpaceToPixel;
+				public new function HRESULT(ref IInkRenderer self, int hDC, out VARIANT Points) PixelToInkSpaceFromPoints;
+				public new function HRESULT(ref IInkRenderer self, int hDC, out VARIANT Points) InkSpaceToPixelFromPoints;
+				public new function HRESULT(ref IInkRenderer self, IInkStrokes* Strokes, IInkRectangle** Rectangle) Measure;
+				public new function HRESULT(ref IInkRenderer self, IInkStrokeDisp* Stroke, IInkDrawingAttributes* DrawingAttributes, IInkRectangle** Rectangle) MeasureStroke;
+				public new function HRESULT(ref IInkRenderer self, float HorizontalComponent, float VerticalComponent) Move;
+				public new function HRESULT(ref IInkRenderer self, float Degrees, float x, float y) Rotate;
+				public new function HRESULT(ref IInkRenderer self, float HorizontalMultiplier, float VerticalMultiplier, int16 ApplyOnPenWidth) ScaleTransform;
 			}
 		}
 		[CRepr]
@@ -2932,209 +2932,209 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_hWnd(int* CurrentWindow) mut
+			public HRESULT get_hWnd(out int CurrentWindow) mut
 			{
-				return VT.get_hWnd(&this, CurrentWindow);
+				return VT.get_hWnd(ref this, out CurrentWindow);
 			}
 			public HRESULT put_hWnd(int NewWindow) mut
 			{
-				return VT.put_hWnd(&this, NewWindow);
+				return VT.put_hWnd(ref this, NewWindow);
 			}
-			public HRESULT get_Enabled(int16* Collecting) mut
+			public HRESULT get_Enabled(out int16 Collecting) mut
 			{
-				return VT.get_Enabled(&this, Collecting);
+				return VT.get_Enabled(ref this, out Collecting);
 			}
 			public HRESULT put_Enabled(int16 Collecting) mut
 			{
-				return VT.put_Enabled(&this, Collecting);
+				return VT.put_Enabled(ref this, Collecting);
 			}
 			public HRESULT get_DefaultDrawingAttributes(IInkDrawingAttributes** CurrentAttributes) mut
 			{
-				return VT.get_DefaultDrawingAttributes(&this, CurrentAttributes);
+				return VT.get_DefaultDrawingAttributes(ref this, CurrentAttributes);
 			}
 			public HRESULT putref_DefaultDrawingAttributes(IInkDrawingAttributes* NewAttributes) mut
 			{
-				return VT.putref_DefaultDrawingAttributes(&this, NewAttributes);
+				return VT.putref_DefaultDrawingAttributes(ref this, NewAttributes);
 			}
 			public HRESULT get_Renderer(IInkRenderer** CurrentInkRenderer) mut
 			{
-				return VT.get_Renderer(&this, CurrentInkRenderer);
+				return VT.get_Renderer(ref this, CurrentInkRenderer);
 			}
 			public HRESULT putref_Renderer(IInkRenderer* NewInkRenderer) mut
 			{
-				return VT.putref_Renderer(&this, NewInkRenderer);
+				return VT.putref_Renderer(ref this, NewInkRenderer);
 			}
 			public HRESULT get_Ink(IInkDisp** Ink) mut
 			{
-				return VT.get_Ink(&this, Ink);
+				return VT.get_Ink(ref this, Ink);
 			}
 			public HRESULT putref_Ink(IInkDisp* NewInk) mut
 			{
-				return VT.putref_Ink(&this, NewInk);
+				return VT.putref_Ink(ref this, NewInk);
 			}
-			public HRESULT get_AutoRedraw(int16* AutoRedraw) mut
+			public HRESULT get_AutoRedraw(out int16 AutoRedraw) mut
 			{
-				return VT.get_AutoRedraw(&this, AutoRedraw);
+				return VT.get_AutoRedraw(ref this, out AutoRedraw);
 			}
 			public HRESULT put_AutoRedraw(int16 AutoRedraw) mut
 			{
-				return VT.put_AutoRedraw(&this, AutoRedraw);
+				return VT.put_AutoRedraw(ref this, AutoRedraw);
 			}
-			public HRESULT get_CollectingInk(int16* Collecting) mut
+			public HRESULT get_CollectingInk(out int16 Collecting) mut
 			{
-				return VT.get_CollectingInk(&this, Collecting);
+				return VT.get_CollectingInk(ref this, out Collecting);
 			}
-			public HRESULT get_CollectionMode(InkCollectionMode* Mode) mut
+			public HRESULT get_CollectionMode(out InkCollectionMode Mode) mut
 			{
-				return VT.get_CollectionMode(&this, Mode);
+				return VT.get_CollectionMode(ref this, out Mode);
 			}
 			public HRESULT put_CollectionMode(InkCollectionMode Mode) mut
 			{
-				return VT.put_CollectionMode(&this, Mode);
+				return VT.put_CollectionMode(ref this, Mode);
 			}
-			public HRESULT get_DynamicRendering(int16* Enabled) mut
+			public HRESULT get_DynamicRendering(out int16 Enabled) mut
 			{
-				return VT.get_DynamicRendering(&this, Enabled);
+				return VT.get_DynamicRendering(ref this, out Enabled);
 			}
 			public HRESULT put_DynamicRendering(int16 Enabled) mut
 			{
-				return VT.put_DynamicRendering(&this, Enabled);
+				return VT.put_DynamicRendering(ref this, Enabled);
 			}
-			public HRESULT get_DesiredPacketDescription(VARIANT* PacketGuids) mut
+			public HRESULT get_DesiredPacketDescription(out VARIANT PacketGuids) mut
 			{
-				return VT.get_DesiredPacketDescription(&this, PacketGuids);
+				return VT.get_DesiredPacketDescription(ref this, out PacketGuids);
 			}
 			public HRESULT put_DesiredPacketDescription(VARIANT PacketGuids) mut
 			{
-				return VT.put_DesiredPacketDescription(&this, PacketGuids);
+				return VT.put_DesiredPacketDescription(ref this, PacketGuids);
 			}
 			public HRESULT get_MouseIcon(IPictureDisp** MouseIcon) mut
 			{
-				return VT.get_MouseIcon(&this, MouseIcon);
+				return VT.get_MouseIcon(ref this, MouseIcon);
 			}
 			public HRESULT put_MouseIcon(IPictureDisp* MouseIcon) mut
 			{
-				return VT.put_MouseIcon(&this, MouseIcon);
+				return VT.put_MouseIcon(ref this, MouseIcon);
 			}
 			public HRESULT putref_MouseIcon(IPictureDisp* MouseIcon) mut
 			{
-				return VT.putref_MouseIcon(&this, MouseIcon);
+				return VT.putref_MouseIcon(ref this, MouseIcon);
 			}
-			public HRESULT get_MousePointer(InkMousePointer* MousePointer) mut
+			public HRESULT get_MousePointer(out InkMousePointer MousePointer) mut
 			{
-				return VT.get_MousePointer(&this, MousePointer);
+				return VT.get_MousePointer(ref this, out MousePointer);
 			}
 			public HRESULT put_MousePointer(InkMousePointer MousePointer) mut
 			{
-				return VT.put_MousePointer(&this, MousePointer);
+				return VT.put_MousePointer(ref this, MousePointer);
 			}
 			public HRESULT get_Cursors(IInkCursors** Cursors) mut
 			{
-				return VT.get_Cursors(&this, Cursors);
+				return VT.get_Cursors(ref this, Cursors);
 			}
-			public HRESULT get_MarginX(int32* MarginX) mut
+			public HRESULT get_MarginX(out int32 MarginX) mut
 			{
-				return VT.get_MarginX(&this, MarginX);
+				return VT.get_MarginX(ref this, out MarginX);
 			}
 			public HRESULT put_MarginX(int32 MarginX) mut
 			{
-				return VT.put_MarginX(&this, MarginX);
+				return VT.put_MarginX(ref this, MarginX);
 			}
-			public HRESULT get_MarginY(int32* MarginY) mut
+			public HRESULT get_MarginY(out int32 MarginY) mut
 			{
-				return VT.get_MarginY(&this, MarginY);
+				return VT.get_MarginY(ref this, out MarginY);
 			}
 			public HRESULT put_MarginY(int32 MarginY) mut
 			{
-				return VT.put_MarginY(&this, MarginY);
+				return VT.put_MarginY(ref this, MarginY);
 			}
 			public HRESULT get_Tablet(IInkTablet** SingleTablet) mut
 			{
-				return VT.get_Tablet(&this, SingleTablet);
+				return VT.get_Tablet(ref this, SingleTablet);
 			}
-			public HRESULT get_SupportHighContrastInk(int16* Support) mut
+			public HRESULT get_SupportHighContrastInk(out int16 Support) mut
 			{
-				return VT.get_SupportHighContrastInk(&this, Support);
+				return VT.get_SupportHighContrastInk(ref this, out Support);
 			}
 			public HRESULT put_SupportHighContrastInk(int16 Support) mut
 			{
-				return VT.put_SupportHighContrastInk(&this, Support);
+				return VT.put_SupportHighContrastInk(ref this, Support);
 			}
 			public HRESULT SetGestureStatus(InkApplicationGesture Gesture, int16 Listen) mut
 			{
-				return VT.SetGestureStatus(&this, Gesture, Listen);
+				return VT.SetGestureStatus(ref this, Gesture, Listen);
 			}
-			public HRESULT GetGestureStatus(InkApplicationGesture Gesture, int16* Listening) mut
+			public HRESULT GetGestureStatus(InkApplicationGesture Gesture, out int16 Listening) mut
 			{
-				return VT.GetGestureStatus(&this, Gesture, Listening);
+				return VT.GetGestureStatus(ref this, Gesture, out Listening);
 			}
 			public HRESULT GetWindowInputRectangle(IInkRectangle** WindowInputRectangle) mut
 			{
-				return VT.GetWindowInputRectangle(&this, WindowInputRectangle);
+				return VT.GetWindowInputRectangle(ref this, WindowInputRectangle);
 			}
 			public HRESULT SetWindowInputRectangle(IInkRectangle* WindowInputRectangle) mut
 			{
-				return VT.SetWindowInputRectangle(&this, WindowInputRectangle);
+				return VT.SetWindowInputRectangle(ref this, WindowInputRectangle);
 			}
 			public HRESULT SetAllTabletsMode(int16 UseMouseForInput) mut
 			{
-				return VT.SetAllTabletsMode(&this, UseMouseForInput);
+				return VT.SetAllTabletsMode(ref this, UseMouseForInput);
 			}
 			public HRESULT SetSingleTabletIntegratedMode(IInkTablet* Tablet) mut
 			{
-				return VT.SetSingleTabletIntegratedMode(&this, Tablet);
+				return VT.SetSingleTabletIntegratedMode(ref this, Tablet);
 			}
-			public HRESULT GetEventInterest(InkCollectorEventInterest EventId, int16* Listen) mut
+			public HRESULT GetEventInterest(InkCollectorEventInterest EventId, out int16 Listen) mut
 			{
-				return VT.GetEventInterest(&this, EventId, Listen);
+				return VT.GetEventInterest(ref this, EventId, out Listen);
 			}
 			public HRESULT SetEventInterest(InkCollectorEventInterest EventId, int16 Listen) mut
 			{
-				return VT.SetEventInterest(&this, EventId, Listen);
+				return VT.SetEventInterest(ref this, EventId, Listen);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkCollector *self, int* CurrentWindow) get_hWnd;
-				public new function HRESULT(IInkCollector *self, int NewWindow) put_hWnd;
-				public new function HRESULT(IInkCollector *self, int16* Collecting) get_Enabled;
-				public new function HRESULT(IInkCollector *self, int16 Collecting) put_Enabled;
-				public new function HRESULT(IInkCollector *self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
-				public new function HRESULT(IInkCollector *self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
-				public new function HRESULT(IInkCollector *self, IInkRenderer** CurrentInkRenderer) get_Renderer;
-				public new function HRESULT(IInkCollector *self, IInkRenderer* NewInkRenderer) putref_Renderer;
-				public new function HRESULT(IInkCollector *self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(IInkCollector *self, IInkDisp* NewInk) putref_Ink;
-				public new function HRESULT(IInkCollector *self, int16* AutoRedraw) get_AutoRedraw;
-				public new function HRESULT(IInkCollector *self, int16 AutoRedraw) put_AutoRedraw;
-				public new function HRESULT(IInkCollector *self, int16* Collecting) get_CollectingInk;
-				public new function HRESULT(IInkCollector *self, InkCollectionMode* Mode) get_CollectionMode;
-				public new function HRESULT(IInkCollector *self, InkCollectionMode Mode) put_CollectionMode;
-				public new function HRESULT(IInkCollector *self, int16* Enabled) get_DynamicRendering;
-				public new function HRESULT(IInkCollector *self, int16 Enabled) put_DynamicRendering;
-				public new function HRESULT(IInkCollector *self, VARIANT* PacketGuids) get_DesiredPacketDescription;
-				public new function HRESULT(IInkCollector *self, VARIANT PacketGuids) put_DesiredPacketDescription;
-				public new function HRESULT(IInkCollector *self, IPictureDisp** MouseIcon) get_MouseIcon;
-				public new function HRESULT(IInkCollector *self, IPictureDisp* MouseIcon) put_MouseIcon;
-				public new function HRESULT(IInkCollector *self, IPictureDisp* MouseIcon) putref_MouseIcon;
-				public new function HRESULT(IInkCollector *self, InkMousePointer* MousePointer) get_MousePointer;
-				public new function HRESULT(IInkCollector *self, InkMousePointer MousePointer) put_MousePointer;
-				public new function HRESULT(IInkCollector *self, IInkCursors** Cursors) get_Cursors;
-				public new function HRESULT(IInkCollector *self, int32* MarginX) get_MarginX;
-				public new function HRESULT(IInkCollector *self, int32 MarginX) put_MarginX;
-				public new function HRESULT(IInkCollector *self, int32* MarginY) get_MarginY;
-				public new function HRESULT(IInkCollector *self, int32 MarginY) put_MarginY;
-				public new function HRESULT(IInkCollector *self, IInkTablet** SingleTablet) get_Tablet;
-				public new function HRESULT(IInkCollector *self, int16* Support) get_SupportHighContrastInk;
-				public new function HRESULT(IInkCollector *self, int16 Support) put_SupportHighContrastInk;
-				public new function HRESULT(IInkCollector *self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
-				public new function HRESULT(IInkCollector *self, InkApplicationGesture Gesture, int16* Listening) GetGestureStatus;
-				public new function HRESULT(IInkCollector *self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
-				public new function HRESULT(IInkCollector *self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
-				public new function HRESULT(IInkCollector *self, int16 UseMouseForInput) SetAllTabletsMode;
-				public new function HRESULT(IInkCollector *self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
-				public new function HRESULT(IInkCollector *self, InkCollectorEventInterest EventId, int16* Listen) GetEventInterest;
-				public new function HRESULT(IInkCollector *self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
+				public new function HRESULT(ref IInkCollector self, out int CurrentWindow) get_hWnd;
+				public new function HRESULT(ref IInkCollector self, int NewWindow) put_hWnd;
+				public new function HRESULT(ref IInkCollector self, out int16 Collecting) get_Enabled;
+				public new function HRESULT(ref IInkCollector self, int16 Collecting) put_Enabled;
+				public new function HRESULT(ref IInkCollector self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
+				public new function HRESULT(ref IInkCollector self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
+				public new function HRESULT(ref IInkCollector self, IInkRenderer** CurrentInkRenderer) get_Renderer;
+				public new function HRESULT(ref IInkCollector self, IInkRenderer* NewInkRenderer) putref_Renderer;
+				public new function HRESULT(ref IInkCollector self, IInkDisp** Ink) get_Ink;
+				public new function HRESULT(ref IInkCollector self, IInkDisp* NewInk) putref_Ink;
+				public new function HRESULT(ref IInkCollector self, out int16 AutoRedraw) get_AutoRedraw;
+				public new function HRESULT(ref IInkCollector self, int16 AutoRedraw) put_AutoRedraw;
+				public new function HRESULT(ref IInkCollector self, out int16 Collecting) get_CollectingInk;
+				public new function HRESULT(ref IInkCollector self, out InkCollectionMode Mode) get_CollectionMode;
+				public new function HRESULT(ref IInkCollector self, InkCollectionMode Mode) put_CollectionMode;
+				public new function HRESULT(ref IInkCollector self, out int16 Enabled) get_DynamicRendering;
+				public new function HRESULT(ref IInkCollector self, int16 Enabled) put_DynamicRendering;
+				public new function HRESULT(ref IInkCollector self, out VARIANT PacketGuids) get_DesiredPacketDescription;
+				public new function HRESULT(ref IInkCollector self, VARIANT PacketGuids) put_DesiredPacketDescription;
+				public new function HRESULT(ref IInkCollector self, IPictureDisp** MouseIcon) get_MouseIcon;
+				public new function HRESULT(ref IInkCollector self, IPictureDisp* MouseIcon) put_MouseIcon;
+				public new function HRESULT(ref IInkCollector self, IPictureDisp* MouseIcon) putref_MouseIcon;
+				public new function HRESULT(ref IInkCollector self, out InkMousePointer MousePointer) get_MousePointer;
+				public new function HRESULT(ref IInkCollector self, InkMousePointer MousePointer) put_MousePointer;
+				public new function HRESULT(ref IInkCollector self, IInkCursors** Cursors) get_Cursors;
+				public new function HRESULT(ref IInkCollector self, out int32 MarginX) get_MarginX;
+				public new function HRESULT(ref IInkCollector self, int32 MarginX) put_MarginX;
+				public new function HRESULT(ref IInkCollector self, out int32 MarginY) get_MarginY;
+				public new function HRESULT(ref IInkCollector self, int32 MarginY) put_MarginY;
+				public new function HRESULT(ref IInkCollector self, IInkTablet** SingleTablet) get_Tablet;
+				public new function HRESULT(ref IInkCollector self, out int16 Support) get_SupportHighContrastInk;
+				public new function HRESULT(ref IInkCollector self, int16 Support) put_SupportHighContrastInk;
+				public new function HRESULT(ref IInkCollector self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+				public new function HRESULT(ref IInkCollector self, InkApplicationGesture Gesture, out int16 Listening) GetGestureStatus;
+				public new function HRESULT(ref IInkCollector self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
+				public new function HRESULT(ref IInkCollector self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
+				public new function HRESULT(ref IInkCollector self, int16 UseMouseForInput) SetAllTabletsMode;
+				public new function HRESULT(ref IInkCollector self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
+				public new function HRESULT(ref IInkCollector self, InkCollectorEventInterest EventId, out int16 Listen) GetEventInterest;
+				public new function HRESULT(ref IInkCollector self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
 			}
 		}
 		[CRepr]
@@ -3156,279 +3156,279 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_hWnd(int* CurrentWindow) mut
+			public HRESULT get_hWnd(out int CurrentWindow) mut
 			{
-				return VT.get_hWnd(&this, CurrentWindow);
+				return VT.get_hWnd(ref this, out CurrentWindow);
 			}
 			public HRESULT put_hWnd(int NewWindow) mut
 			{
-				return VT.put_hWnd(&this, NewWindow);
+				return VT.put_hWnd(ref this, NewWindow);
 			}
-			public HRESULT get_Enabled(int16* Collecting) mut
+			public HRESULT get_Enabled(out int16 Collecting) mut
 			{
-				return VT.get_Enabled(&this, Collecting);
+				return VT.get_Enabled(ref this, out Collecting);
 			}
 			public HRESULT put_Enabled(int16 Collecting) mut
 			{
-				return VT.put_Enabled(&this, Collecting);
+				return VT.put_Enabled(ref this, Collecting);
 			}
 			public HRESULT get_DefaultDrawingAttributes(IInkDrawingAttributes** CurrentAttributes) mut
 			{
-				return VT.get_DefaultDrawingAttributes(&this, CurrentAttributes);
+				return VT.get_DefaultDrawingAttributes(ref this, CurrentAttributes);
 			}
 			public HRESULT putref_DefaultDrawingAttributes(IInkDrawingAttributes* NewAttributes) mut
 			{
-				return VT.putref_DefaultDrawingAttributes(&this, NewAttributes);
+				return VT.putref_DefaultDrawingAttributes(ref this, NewAttributes);
 			}
 			public HRESULT get_Renderer(IInkRenderer** CurrentInkRenderer) mut
 			{
-				return VT.get_Renderer(&this, CurrentInkRenderer);
+				return VT.get_Renderer(ref this, CurrentInkRenderer);
 			}
 			public HRESULT putref_Renderer(IInkRenderer* NewInkRenderer) mut
 			{
-				return VT.putref_Renderer(&this, NewInkRenderer);
+				return VT.putref_Renderer(ref this, NewInkRenderer);
 			}
 			public HRESULT get_Ink(IInkDisp** Ink) mut
 			{
-				return VT.get_Ink(&this, Ink);
+				return VT.get_Ink(ref this, Ink);
 			}
 			public HRESULT putref_Ink(IInkDisp* NewInk) mut
 			{
-				return VT.putref_Ink(&this, NewInk);
+				return VT.putref_Ink(ref this, NewInk);
 			}
-			public HRESULT get_AutoRedraw(int16* AutoRedraw) mut
+			public HRESULT get_AutoRedraw(out int16 AutoRedraw) mut
 			{
-				return VT.get_AutoRedraw(&this, AutoRedraw);
+				return VT.get_AutoRedraw(ref this, out AutoRedraw);
 			}
 			public HRESULT put_AutoRedraw(int16 AutoRedraw) mut
 			{
-				return VT.put_AutoRedraw(&this, AutoRedraw);
+				return VT.put_AutoRedraw(ref this, AutoRedraw);
 			}
-			public HRESULT get_CollectingInk(int16* Collecting) mut
+			public HRESULT get_CollectingInk(out int16 Collecting) mut
 			{
-				return VT.get_CollectingInk(&this, Collecting);
+				return VT.get_CollectingInk(ref this, out Collecting);
 			}
-			public HRESULT get_CollectionMode(InkCollectionMode* Mode) mut
+			public HRESULT get_CollectionMode(out InkCollectionMode Mode) mut
 			{
-				return VT.get_CollectionMode(&this, Mode);
+				return VT.get_CollectionMode(ref this, out Mode);
 			}
 			public HRESULT put_CollectionMode(InkCollectionMode Mode) mut
 			{
-				return VT.put_CollectionMode(&this, Mode);
+				return VT.put_CollectionMode(ref this, Mode);
 			}
-			public HRESULT get_DynamicRendering(int16* Enabled) mut
+			public HRESULT get_DynamicRendering(out int16 Enabled) mut
 			{
-				return VT.get_DynamicRendering(&this, Enabled);
+				return VT.get_DynamicRendering(ref this, out Enabled);
 			}
 			public HRESULT put_DynamicRendering(int16 Enabled) mut
 			{
-				return VT.put_DynamicRendering(&this, Enabled);
+				return VT.put_DynamicRendering(ref this, Enabled);
 			}
-			public HRESULT get_DesiredPacketDescription(VARIANT* PacketGuids) mut
+			public HRESULT get_DesiredPacketDescription(out VARIANT PacketGuids) mut
 			{
-				return VT.get_DesiredPacketDescription(&this, PacketGuids);
+				return VT.get_DesiredPacketDescription(ref this, out PacketGuids);
 			}
 			public HRESULT put_DesiredPacketDescription(VARIANT PacketGuids) mut
 			{
-				return VT.put_DesiredPacketDescription(&this, PacketGuids);
+				return VT.put_DesiredPacketDescription(ref this, PacketGuids);
 			}
 			public HRESULT get_MouseIcon(IPictureDisp** MouseIcon) mut
 			{
-				return VT.get_MouseIcon(&this, MouseIcon);
+				return VT.get_MouseIcon(ref this, MouseIcon);
 			}
 			public HRESULT put_MouseIcon(IPictureDisp* MouseIcon) mut
 			{
-				return VT.put_MouseIcon(&this, MouseIcon);
+				return VT.put_MouseIcon(ref this, MouseIcon);
 			}
 			public HRESULT putref_MouseIcon(IPictureDisp* MouseIcon) mut
 			{
-				return VT.putref_MouseIcon(&this, MouseIcon);
+				return VT.putref_MouseIcon(ref this, MouseIcon);
 			}
-			public HRESULT get_MousePointer(InkMousePointer* MousePointer) mut
+			public HRESULT get_MousePointer(out InkMousePointer MousePointer) mut
 			{
-				return VT.get_MousePointer(&this, MousePointer);
+				return VT.get_MousePointer(ref this, out MousePointer);
 			}
 			public HRESULT put_MousePointer(InkMousePointer MousePointer) mut
 			{
-				return VT.put_MousePointer(&this, MousePointer);
+				return VT.put_MousePointer(ref this, MousePointer);
 			}
-			public HRESULT get_EditingMode(InkOverlayEditingMode* EditingMode) mut
+			public HRESULT get_EditingMode(out InkOverlayEditingMode EditingMode) mut
 			{
-				return VT.get_EditingMode(&this, EditingMode);
+				return VT.get_EditingMode(ref this, out EditingMode);
 			}
 			public HRESULT put_EditingMode(InkOverlayEditingMode EditingMode) mut
 			{
-				return VT.put_EditingMode(&this, EditingMode);
+				return VT.put_EditingMode(ref this, EditingMode);
 			}
 			public HRESULT get_Selection(IInkStrokes** Selection) mut
 			{
-				return VT.get_Selection(&this, Selection);
+				return VT.get_Selection(ref this, Selection);
 			}
 			public HRESULT put_Selection(IInkStrokes* Selection) mut
 			{
-				return VT.put_Selection(&this, Selection);
+				return VT.put_Selection(ref this, Selection);
 			}
-			public HRESULT get_EraserMode(InkOverlayEraserMode* EraserMode) mut
+			public HRESULT get_EraserMode(out InkOverlayEraserMode EraserMode) mut
 			{
-				return VT.get_EraserMode(&this, EraserMode);
+				return VT.get_EraserMode(ref this, out EraserMode);
 			}
 			public HRESULT put_EraserMode(InkOverlayEraserMode EraserMode) mut
 			{
-				return VT.put_EraserMode(&this, EraserMode);
+				return VT.put_EraserMode(ref this, EraserMode);
 			}
-			public HRESULT get_EraserWidth(int32* EraserWidth) mut
+			public HRESULT get_EraserWidth(out int32 EraserWidth) mut
 			{
-				return VT.get_EraserWidth(&this, EraserWidth);
+				return VT.get_EraserWidth(ref this, out EraserWidth);
 			}
 			public HRESULT put_EraserWidth(int32 newEraserWidth) mut
 			{
-				return VT.put_EraserWidth(&this, newEraserWidth);
+				return VT.put_EraserWidth(ref this, newEraserWidth);
 			}
-			public HRESULT get_AttachMode(InkOverlayAttachMode* AttachMode) mut
+			public HRESULT get_AttachMode(out InkOverlayAttachMode AttachMode) mut
 			{
-				return VT.get_AttachMode(&this, AttachMode);
+				return VT.get_AttachMode(ref this, out AttachMode);
 			}
 			public HRESULT put_AttachMode(InkOverlayAttachMode AttachMode) mut
 			{
-				return VT.put_AttachMode(&this, AttachMode);
+				return VT.put_AttachMode(ref this, AttachMode);
 			}
 			public HRESULT get_Cursors(IInkCursors** Cursors) mut
 			{
-				return VT.get_Cursors(&this, Cursors);
+				return VT.get_Cursors(ref this, Cursors);
 			}
-			public HRESULT get_MarginX(int32* MarginX) mut
+			public HRESULT get_MarginX(out int32 MarginX) mut
 			{
-				return VT.get_MarginX(&this, MarginX);
+				return VT.get_MarginX(ref this, out MarginX);
 			}
 			public HRESULT put_MarginX(int32 MarginX) mut
 			{
-				return VT.put_MarginX(&this, MarginX);
+				return VT.put_MarginX(ref this, MarginX);
 			}
-			public HRESULT get_MarginY(int32* MarginY) mut
+			public HRESULT get_MarginY(out int32 MarginY) mut
 			{
-				return VT.get_MarginY(&this, MarginY);
+				return VT.get_MarginY(ref this, out MarginY);
 			}
 			public HRESULT put_MarginY(int32 MarginY) mut
 			{
-				return VT.put_MarginY(&this, MarginY);
+				return VT.put_MarginY(ref this, MarginY);
 			}
 			public HRESULT get_Tablet(IInkTablet** SingleTablet) mut
 			{
-				return VT.get_Tablet(&this, SingleTablet);
+				return VT.get_Tablet(ref this, SingleTablet);
 			}
-			public HRESULT get_SupportHighContrastInk(int16* Support) mut
+			public HRESULT get_SupportHighContrastInk(out int16 Support) mut
 			{
-				return VT.get_SupportHighContrastInk(&this, Support);
+				return VT.get_SupportHighContrastInk(ref this, out Support);
 			}
 			public HRESULT put_SupportHighContrastInk(int16 Support) mut
 			{
-				return VT.put_SupportHighContrastInk(&this, Support);
+				return VT.put_SupportHighContrastInk(ref this, Support);
 			}
-			public HRESULT get_SupportHighContrastSelectionUI(int16* Support) mut
+			public HRESULT get_SupportHighContrastSelectionUI(out int16 Support) mut
 			{
-				return VT.get_SupportHighContrastSelectionUI(&this, Support);
+				return VT.get_SupportHighContrastSelectionUI(ref this, out Support);
 			}
 			public HRESULT put_SupportHighContrastSelectionUI(int16 Support) mut
 			{
-				return VT.put_SupportHighContrastSelectionUI(&this, Support);
+				return VT.put_SupportHighContrastSelectionUI(ref this, Support);
 			}
-			public HRESULT HitTestSelection(int32 x, int32 y, SelectionHitResult* SelArea) mut
+			public HRESULT HitTestSelection(int32 x, int32 y, out SelectionHitResult SelArea) mut
 			{
-				return VT.HitTestSelection(&this, x, y, SelArea);
+				return VT.HitTestSelection(ref this, x, y, out SelArea);
 			}
 			public HRESULT Draw(IInkRectangle* Rect) mut
 			{
-				return VT.Draw(&this, Rect);
+				return VT.Draw(ref this, Rect);
 			}
 			public HRESULT SetGestureStatus(InkApplicationGesture Gesture, int16 Listen) mut
 			{
-				return VT.SetGestureStatus(&this, Gesture, Listen);
+				return VT.SetGestureStatus(ref this, Gesture, Listen);
 			}
-			public HRESULT GetGestureStatus(InkApplicationGesture Gesture, int16* Listening) mut
+			public HRESULT GetGestureStatus(InkApplicationGesture Gesture, out int16 Listening) mut
 			{
-				return VT.GetGestureStatus(&this, Gesture, Listening);
+				return VT.GetGestureStatus(ref this, Gesture, out Listening);
 			}
 			public HRESULT GetWindowInputRectangle(IInkRectangle** WindowInputRectangle) mut
 			{
-				return VT.GetWindowInputRectangle(&this, WindowInputRectangle);
+				return VT.GetWindowInputRectangle(ref this, WindowInputRectangle);
 			}
 			public HRESULT SetWindowInputRectangle(IInkRectangle* WindowInputRectangle) mut
 			{
-				return VT.SetWindowInputRectangle(&this, WindowInputRectangle);
+				return VT.SetWindowInputRectangle(ref this, WindowInputRectangle);
 			}
 			public HRESULT SetAllTabletsMode(int16 UseMouseForInput) mut
 			{
-				return VT.SetAllTabletsMode(&this, UseMouseForInput);
+				return VT.SetAllTabletsMode(ref this, UseMouseForInput);
 			}
 			public HRESULT SetSingleTabletIntegratedMode(IInkTablet* Tablet) mut
 			{
-				return VT.SetSingleTabletIntegratedMode(&this, Tablet);
+				return VT.SetSingleTabletIntegratedMode(ref this, Tablet);
 			}
-			public HRESULT GetEventInterest(InkCollectorEventInterest EventId, int16* Listen) mut
+			public HRESULT GetEventInterest(InkCollectorEventInterest EventId, out int16 Listen) mut
 			{
-				return VT.GetEventInterest(&this, EventId, Listen);
+				return VT.GetEventInterest(ref this, EventId, out Listen);
 			}
 			public HRESULT SetEventInterest(InkCollectorEventInterest EventId, int16 Listen) mut
 			{
-				return VT.SetEventInterest(&this, EventId, Listen);
+				return VT.SetEventInterest(ref this, EventId, Listen);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkOverlay *self, int* CurrentWindow) get_hWnd;
-				public new function HRESULT(IInkOverlay *self, int NewWindow) put_hWnd;
-				public new function HRESULT(IInkOverlay *self, int16* Collecting) get_Enabled;
-				public new function HRESULT(IInkOverlay *self, int16 Collecting) put_Enabled;
-				public new function HRESULT(IInkOverlay *self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
-				public new function HRESULT(IInkOverlay *self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
-				public new function HRESULT(IInkOverlay *self, IInkRenderer** CurrentInkRenderer) get_Renderer;
-				public new function HRESULT(IInkOverlay *self, IInkRenderer* NewInkRenderer) putref_Renderer;
-				public new function HRESULT(IInkOverlay *self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(IInkOverlay *self, IInkDisp* NewInk) putref_Ink;
-				public new function HRESULT(IInkOverlay *self, int16* AutoRedraw) get_AutoRedraw;
-				public new function HRESULT(IInkOverlay *self, int16 AutoRedraw) put_AutoRedraw;
-				public new function HRESULT(IInkOverlay *self, int16* Collecting) get_CollectingInk;
-				public new function HRESULT(IInkOverlay *self, InkCollectionMode* Mode) get_CollectionMode;
-				public new function HRESULT(IInkOverlay *self, InkCollectionMode Mode) put_CollectionMode;
-				public new function HRESULT(IInkOverlay *self, int16* Enabled) get_DynamicRendering;
-				public new function HRESULT(IInkOverlay *self, int16 Enabled) put_DynamicRendering;
-				public new function HRESULT(IInkOverlay *self, VARIANT* PacketGuids) get_DesiredPacketDescription;
-				public new function HRESULT(IInkOverlay *self, VARIANT PacketGuids) put_DesiredPacketDescription;
-				public new function HRESULT(IInkOverlay *self, IPictureDisp** MouseIcon) get_MouseIcon;
-				public new function HRESULT(IInkOverlay *self, IPictureDisp* MouseIcon) put_MouseIcon;
-				public new function HRESULT(IInkOverlay *self, IPictureDisp* MouseIcon) putref_MouseIcon;
-				public new function HRESULT(IInkOverlay *self, InkMousePointer* MousePointer) get_MousePointer;
-				public new function HRESULT(IInkOverlay *self, InkMousePointer MousePointer) put_MousePointer;
-				public new function HRESULT(IInkOverlay *self, InkOverlayEditingMode* EditingMode) get_EditingMode;
-				public new function HRESULT(IInkOverlay *self, InkOverlayEditingMode EditingMode) put_EditingMode;
-				public new function HRESULT(IInkOverlay *self, IInkStrokes** Selection) get_Selection;
-				public new function HRESULT(IInkOverlay *self, IInkStrokes* Selection) put_Selection;
-				public new function HRESULT(IInkOverlay *self, InkOverlayEraserMode* EraserMode) get_EraserMode;
-				public new function HRESULT(IInkOverlay *self, InkOverlayEraserMode EraserMode) put_EraserMode;
-				public new function HRESULT(IInkOverlay *self, int32* EraserWidth) get_EraserWidth;
-				public new function HRESULT(IInkOverlay *self, int32 newEraserWidth) put_EraserWidth;
-				public new function HRESULT(IInkOverlay *self, InkOverlayAttachMode* AttachMode) get_AttachMode;
-				public new function HRESULT(IInkOverlay *self, InkOverlayAttachMode AttachMode) put_AttachMode;
-				public new function HRESULT(IInkOverlay *self, IInkCursors** Cursors) get_Cursors;
-				public new function HRESULT(IInkOverlay *self, int32* MarginX) get_MarginX;
-				public new function HRESULT(IInkOverlay *self, int32 MarginX) put_MarginX;
-				public new function HRESULT(IInkOverlay *self, int32* MarginY) get_MarginY;
-				public new function HRESULT(IInkOverlay *self, int32 MarginY) put_MarginY;
-				public new function HRESULT(IInkOverlay *self, IInkTablet** SingleTablet) get_Tablet;
-				public new function HRESULT(IInkOverlay *self, int16* Support) get_SupportHighContrastInk;
-				public new function HRESULT(IInkOverlay *self, int16 Support) put_SupportHighContrastInk;
-				public new function HRESULT(IInkOverlay *self, int16* Support) get_SupportHighContrastSelectionUI;
-				public new function HRESULT(IInkOverlay *self, int16 Support) put_SupportHighContrastSelectionUI;
-				public new function HRESULT(IInkOverlay *self, int32 x, int32 y, SelectionHitResult* SelArea) HitTestSelection;
-				public new function HRESULT(IInkOverlay *self, IInkRectangle* Rect) Draw;
-				public new function HRESULT(IInkOverlay *self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
-				public new function HRESULT(IInkOverlay *self, InkApplicationGesture Gesture, int16* Listening) GetGestureStatus;
-				public new function HRESULT(IInkOverlay *self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
-				public new function HRESULT(IInkOverlay *self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
-				public new function HRESULT(IInkOverlay *self, int16 UseMouseForInput) SetAllTabletsMode;
-				public new function HRESULT(IInkOverlay *self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
-				public new function HRESULT(IInkOverlay *self, InkCollectorEventInterest EventId, int16* Listen) GetEventInterest;
-				public new function HRESULT(IInkOverlay *self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
+				public new function HRESULT(ref IInkOverlay self, out int CurrentWindow) get_hWnd;
+				public new function HRESULT(ref IInkOverlay self, int NewWindow) put_hWnd;
+				public new function HRESULT(ref IInkOverlay self, out int16 Collecting) get_Enabled;
+				public new function HRESULT(ref IInkOverlay self, int16 Collecting) put_Enabled;
+				public new function HRESULT(ref IInkOverlay self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
+				public new function HRESULT(ref IInkOverlay self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
+				public new function HRESULT(ref IInkOverlay self, IInkRenderer** CurrentInkRenderer) get_Renderer;
+				public new function HRESULT(ref IInkOverlay self, IInkRenderer* NewInkRenderer) putref_Renderer;
+				public new function HRESULT(ref IInkOverlay self, IInkDisp** Ink) get_Ink;
+				public new function HRESULT(ref IInkOverlay self, IInkDisp* NewInk) putref_Ink;
+				public new function HRESULT(ref IInkOverlay self, out int16 AutoRedraw) get_AutoRedraw;
+				public new function HRESULT(ref IInkOverlay self, int16 AutoRedraw) put_AutoRedraw;
+				public new function HRESULT(ref IInkOverlay self, out int16 Collecting) get_CollectingInk;
+				public new function HRESULT(ref IInkOverlay self, out InkCollectionMode Mode) get_CollectionMode;
+				public new function HRESULT(ref IInkOverlay self, InkCollectionMode Mode) put_CollectionMode;
+				public new function HRESULT(ref IInkOverlay self, out int16 Enabled) get_DynamicRendering;
+				public new function HRESULT(ref IInkOverlay self, int16 Enabled) put_DynamicRendering;
+				public new function HRESULT(ref IInkOverlay self, out VARIANT PacketGuids) get_DesiredPacketDescription;
+				public new function HRESULT(ref IInkOverlay self, VARIANT PacketGuids) put_DesiredPacketDescription;
+				public new function HRESULT(ref IInkOverlay self, IPictureDisp** MouseIcon) get_MouseIcon;
+				public new function HRESULT(ref IInkOverlay self, IPictureDisp* MouseIcon) put_MouseIcon;
+				public new function HRESULT(ref IInkOverlay self, IPictureDisp* MouseIcon) putref_MouseIcon;
+				public new function HRESULT(ref IInkOverlay self, out InkMousePointer MousePointer) get_MousePointer;
+				public new function HRESULT(ref IInkOverlay self, InkMousePointer MousePointer) put_MousePointer;
+				public new function HRESULT(ref IInkOverlay self, out InkOverlayEditingMode EditingMode) get_EditingMode;
+				public new function HRESULT(ref IInkOverlay self, InkOverlayEditingMode EditingMode) put_EditingMode;
+				public new function HRESULT(ref IInkOverlay self, IInkStrokes** Selection) get_Selection;
+				public new function HRESULT(ref IInkOverlay self, IInkStrokes* Selection) put_Selection;
+				public new function HRESULT(ref IInkOverlay self, out InkOverlayEraserMode EraserMode) get_EraserMode;
+				public new function HRESULT(ref IInkOverlay self, InkOverlayEraserMode EraserMode) put_EraserMode;
+				public new function HRESULT(ref IInkOverlay self, out int32 EraserWidth) get_EraserWidth;
+				public new function HRESULT(ref IInkOverlay self, int32 newEraserWidth) put_EraserWidth;
+				public new function HRESULT(ref IInkOverlay self, out InkOverlayAttachMode AttachMode) get_AttachMode;
+				public new function HRESULT(ref IInkOverlay self, InkOverlayAttachMode AttachMode) put_AttachMode;
+				public new function HRESULT(ref IInkOverlay self, IInkCursors** Cursors) get_Cursors;
+				public new function HRESULT(ref IInkOverlay self, out int32 MarginX) get_MarginX;
+				public new function HRESULT(ref IInkOverlay self, int32 MarginX) put_MarginX;
+				public new function HRESULT(ref IInkOverlay self, out int32 MarginY) get_MarginY;
+				public new function HRESULT(ref IInkOverlay self, int32 MarginY) put_MarginY;
+				public new function HRESULT(ref IInkOverlay self, IInkTablet** SingleTablet) get_Tablet;
+				public new function HRESULT(ref IInkOverlay self, out int16 Support) get_SupportHighContrastInk;
+				public new function HRESULT(ref IInkOverlay self, int16 Support) put_SupportHighContrastInk;
+				public new function HRESULT(ref IInkOverlay self, out int16 Support) get_SupportHighContrastSelectionUI;
+				public new function HRESULT(ref IInkOverlay self, int16 Support) put_SupportHighContrastSelectionUI;
+				public new function HRESULT(ref IInkOverlay self, int32 x, int32 y, out SelectionHitResult SelArea) HitTestSelection;
+				public new function HRESULT(ref IInkOverlay self, IInkRectangle* Rect) Draw;
+				public new function HRESULT(ref IInkOverlay self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+				public new function HRESULT(ref IInkOverlay self, InkApplicationGesture Gesture, out int16 Listening) GetGestureStatus;
+				public new function HRESULT(ref IInkOverlay self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
+				public new function HRESULT(ref IInkOverlay self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
+				public new function HRESULT(ref IInkOverlay self, int16 UseMouseForInput) SetAllTabletsMode;
+				public new function HRESULT(ref IInkOverlay self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
+				public new function HRESULT(ref IInkOverlay self, InkCollectorEventInterest EventId, out int16 Listen) GetEventInterest;
+				public new function HRESULT(ref IInkOverlay self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
 			}
 		}
 		[CRepr]
@@ -3450,304 +3450,304 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_hWnd(int* CurrentWindow) mut
+			public HRESULT get_hWnd(out int CurrentWindow) mut
 			{
-				return VT.get_hWnd(&this, CurrentWindow);
+				return VT.get_hWnd(ref this, out CurrentWindow);
 			}
 			public HRESULT get_DefaultDrawingAttributes(IInkDrawingAttributes** CurrentAttributes) mut
 			{
-				return VT.get_DefaultDrawingAttributes(&this, CurrentAttributes);
+				return VT.get_DefaultDrawingAttributes(ref this, CurrentAttributes);
 			}
 			public HRESULT putref_DefaultDrawingAttributes(IInkDrawingAttributes* NewAttributes) mut
 			{
-				return VT.putref_DefaultDrawingAttributes(&this, NewAttributes);
+				return VT.putref_DefaultDrawingAttributes(ref this, NewAttributes);
 			}
 			public HRESULT get_Renderer(IInkRenderer** CurrentInkRenderer) mut
 			{
-				return VT.get_Renderer(&this, CurrentInkRenderer);
+				return VT.get_Renderer(ref this, CurrentInkRenderer);
 			}
 			public HRESULT putref_Renderer(IInkRenderer* NewInkRenderer) mut
 			{
-				return VT.putref_Renderer(&this, NewInkRenderer);
+				return VT.putref_Renderer(ref this, NewInkRenderer);
 			}
 			public HRESULT get_Ink(IInkDisp** Ink) mut
 			{
-				return VT.get_Ink(&this, Ink);
+				return VT.get_Ink(ref this, Ink);
 			}
 			public HRESULT putref_Ink(IInkDisp* NewInk) mut
 			{
-				return VT.putref_Ink(&this, NewInk);
+				return VT.putref_Ink(ref this, NewInk);
 			}
-			public HRESULT get_AutoRedraw(int16* AutoRedraw) mut
+			public HRESULT get_AutoRedraw(out int16 AutoRedraw) mut
 			{
-				return VT.get_AutoRedraw(&this, AutoRedraw);
+				return VT.get_AutoRedraw(ref this, out AutoRedraw);
 			}
 			public HRESULT put_AutoRedraw(int16 AutoRedraw) mut
 			{
-				return VT.put_AutoRedraw(&this, AutoRedraw);
+				return VT.put_AutoRedraw(ref this, AutoRedraw);
 			}
-			public HRESULT get_CollectingInk(int16* Collecting) mut
+			public HRESULT get_CollectingInk(out int16 Collecting) mut
 			{
-				return VT.get_CollectingInk(&this, Collecting);
+				return VT.get_CollectingInk(ref this, out Collecting);
 			}
-			public HRESULT get_CollectionMode(InkCollectionMode* Mode) mut
+			public HRESULT get_CollectionMode(out InkCollectionMode Mode) mut
 			{
-				return VT.get_CollectionMode(&this, Mode);
+				return VT.get_CollectionMode(ref this, out Mode);
 			}
 			public HRESULT put_CollectionMode(InkCollectionMode Mode) mut
 			{
-				return VT.put_CollectionMode(&this, Mode);
+				return VT.put_CollectionMode(ref this, Mode);
 			}
-			public HRESULT get_DynamicRendering(int16* Enabled) mut
+			public HRESULT get_DynamicRendering(out int16 Enabled) mut
 			{
-				return VT.get_DynamicRendering(&this, Enabled);
+				return VT.get_DynamicRendering(ref this, out Enabled);
 			}
 			public HRESULT put_DynamicRendering(int16 Enabled) mut
 			{
-				return VT.put_DynamicRendering(&this, Enabled);
+				return VT.put_DynamicRendering(ref this, Enabled);
 			}
-			public HRESULT get_DesiredPacketDescription(VARIANT* PacketGuids) mut
+			public HRESULT get_DesiredPacketDescription(out VARIANT PacketGuids) mut
 			{
-				return VT.get_DesiredPacketDescription(&this, PacketGuids);
+				return VT.get_DesiredPacketDescription(ref this, out PacketGuids);
 			}
 			public HRESULT put_DesiredPacketDescription(VARIANT PacketGuids) mut
 			{
-				return VT.put_DesiredPacketDescription(&this, PacketGuids);
+				return VT.put_DesiredPacketDescription(ref this, PacketGuids);
 			}
 			public HRESULT get_MouseIcon(IPictureDisp** MouseIcon) mut
 			{
-				return VT.get_MouseIcon(&this, MouseIcon);
+				return VT.get_MouseIcon(ref this, MouseIcon);
 			}
 			public HRESULT put_MouseIcon(IPictureDisp* MouseIcon) mut
 			{
-				return VT.put_MouseIcon(&this, MouseIcon);
+				return VT.put_MouseIcon(ref this, MouseIcon);
 			}
 			public HRESULT putref_MouseIcon(IPictureDisp* MouseIcon) mut
 			{
-				return VT.putref_MouseIcon(&this, MouseIcon);
+				return VT.putref_MouseIcon(ref this, MouseIcon);
 			}
-			public HRESULT get_MousePointer(InkMousePointer* MousePointer) mut
+			public HRESULT get_MousePointer(out InkMousePointer MousePointer) mut
 			{
-				return VT.get_MousePointer(&this, MousePointer);
+				return VT.get_MousePointer(ref this, out MousePointer);
 			}
 			public HRESULT put_MousePointer(InkMousePointer MousePointer) mut
 			{
-				return VT.put_MousePointer(&this, MousePointer);
+				return VT.put_MousePointer(ref this, MousePointer);
 			}
-			public HRESULT get_EditingMode(InkOverlayEditingMode* EditingMode) mut
+			public HRESULT get_EditingMode(out InkOverlayEditingMode EditingMode) mut
 			{
-				return VT.get_EditingMode(&this, EditingMode);
+				return VT.get_EditingMode(ref this, out EditingMode);
 			}
 			public HRESULT put_EditingMode(InkOverlayEditingMode EditingMode) mut
 			{
-				return VT.put_EditingMode(&this, EditingMode);
+				return VT.put_EditingMode(ref this, EditingMode);
 			}
 			public HRESULT get_Selection(IInkStrokes** Selection) mut
 			{
-				return VT.get_Selection(&this, Selection);
+				return VT.get_Selection(ref this, Selection);
 			}
 			public HRESULT put_Selection(IInkStrokes* Selection) mut
 			{
-				return VT.put_Selection(&this, Selection);
+				return VT.put_Selection(ref this, Selection);
 			}
-			public HRESULT get_EraserMode(InkOverlayEraserMode* EraserMode) mut
+			public HRESULT get_EraserMode(out InkOverlayEraserMode EraserMode) mut
 			{
-				return VT.get_EraserMode(&this, EraserMode);
+				return VT.get_EraserMode(ref this, out EraserMode);
 			}
 			public HRESULT put_EraserMode(InkOverlayEraserMode EraserMode) mut
 			{
-				return VT.put_EraserMode(&this, EraserMode);
+				return VT.put_EraserMode(ref this, EraserMode);
 			}
-			public HRESULT get_EraserWidth(int32* EraserWidth) mut
+			public HRESULT get_EraserWidth(out int32 EraserWidth) mut
 			{
-				return VT.get_EraserWidth(&this, EraserWidth);
+				return VT.get_EraserWidth(ref this, out EraserWidth);
 			}
 			public HRESULT put_EraserWidth(int32 newEraserWidth) mut
 			{
-				return VT.put_EraserWidth(&this, newEraserWidth);
+				return VT.put_EraserWidth(ref this, newEraserWidth);
 			}
 			public HRESULT putref_Picture(IPictureDisp* pPicture) mut
 			{
-				return VT.putref_Picture(&this, pPicture);
+				return VT.putref_Picture(ref this, pPicture);
 			}
 			public HRESULT put_Picture(IPictureDisp* pPicture) mut
 			{
-				return VT.put_Picture(&this, pPicture);
+				return VT.put_Picture(ref this, pPicture);
 			}
 			public HRESULT get_Picture(IPictureDisp** ppPicture) mut
 			{
-				return VT.get_Picture(&this, ppPicture);
+				return VT.get_Picture(ref this, ppPicture);
 			}
 			public HRESULT put_SizeMode(InkPictureSizeMode smNewSizeMode) mut
 			{
-				return VT.put_SizeMode(&this, smNewSizeMode);
+				return VT.put_SizeMode(ref this, smNewSizeMode);
 			}
-			public HRESULT get_SizeMode(InkPictureSizeMode* smSizeMode) mut
+			public HRESULT get_SizeMode(out InkPictureSizeMode smSizeMode) mut
 			{
-				return VT.get_SizeMode(&this, smSizeMode);
+				return VT.get_SizeMode(ref this, out smSizeMode);
 			}
 			public HRESULT put_BackColor(uint32 newColor) mut
 			{
-				return VT.put_BackColor(&this, newColor);
+				return VT.put_BackColor(ref this, newColor);
 			}
-			public HRESULT get_BackColor(uint32* pColor) mut
+			public HRESULT get_BackColor(out uint32 pColor) mut
 			{
-				return VT.get_BackColor(&this, pColor);
+				return VT.get_BackColor(ref this, out pColor);
 			}
 			public HRESULT get_Cursors(IInkCursors** Cursors) mut
 			{
-				return VT.get_Cursors(&this, Cursors);
+				return VT.get_Cursors(ref this, Cursors);
 			}
-			public HRESULT get_MarginX(int32* MarginX) mut
+			public HRESULT get_MarginX(out int32 MarginX) mut
 			{
-				return VT.get_MarginX(&this, MarginX);
+				return VT.get_MarginX(ref this, out MarginX);
 			}
 			public HRESULT put_MarginX(int32 MarginX) mut
 			{
-				return VT.put_MarginX(&this, MarginX);
+				return VT.put_MarginX(ref this, MarginX);
 			}
-			public HRESULT get_MarginY(int32* MarginY) mut
+			public HRESULT get_MarginY(out int32 MarginY) mut
 			{
-				return VT.get_MarginY(&this, MarginY);
+				return VT.get_MarginY(ref this, out MarginY);
 			}
 			public HRESULT put_MarginY(int32 MarginY) mut
 			{
-				return VT.put_MarginY(&this, MarginY);
+				return VT.put_MarginY(ref this, MarginY);
 			}
 			public HRESULT get_Tablet(IInkTablet** SingleTablet) mut
 			{
-				return VT.get_Tablet(&this, SingleTablet);
+				return VT.get_Tablet(ref this, SingleTablet);
 			}
-			public HRESULT get_SupportHighContrastInk(int16* Support) mut
+			public HRESULT get_SupportHighContrastInk(out int16 Support) mut
 			{
-				return VT.get_SupportHighContrastInk(&this, Support);
+				return VT.get_SupportHighContrastInk(ref this, out Support);
 			}
 			public HRESULT put_SupportHighContrastInk(int16 Support) mut
 			{
-				return VT.put_SupportHighContrastInk(&this, Support);
+				return VT.put_SupportHighContrastInk(ref this, Support);
 			}
-			public HRESULT get_SupportHighContrastSelectionUI(int16* Support) mut
+			public HRESULT get_SupportHighContrastSelectionUI(out int16 Support) mut
 			{
-				return VT.get_SupportHighContrastSelectionUI(&this, Support);
+				return VT.get_SupportHighContrastSelectionUI(ref this, out Support);
 			}
 			public HRESULT put_SupportHighContrastSelectionUI(int16 Support) mut
 			{
-				return VT.put_SupportHighContrastSelectionUI(&this, Support);
+				return VT.put_SupportHighContrastSelectionUI(ref this, Support);
 			}
-			public HRESULT HitTestSelection(int32 x, int32 y, SelectionHitResult* SelArea) mut
+			public HRESULT HitTestSelection(int32 x, int32 y, out SelectionHitResult SelArea) mut
 			{
-				return VT.HitTestSelection(&this, x, y, SelArea);
+				return VT.HitTestSelection(ref this, x, y, out SelArea);
 			}
 			public HRESULT SetGestureStatus(InkApplicationGesture Gesture, int16 Listen) mut
 			{
-				return VT.SetGestureStatus(&this, Gesture, Listen);
+				return VT.SetGestureStatus(ref this, Gesture, Listen);
 			}
-			public HRESULT GetGestureStatus(InkApplicationGesture Gesture, int16* Listening) mut
+			public HRESULT GetGestureStatus(InkApplicationGesture Gesture, out int16 Listening) mut
 			{
-				return VT.GetGestureStatus(&this, Gesture, Listening);
+				return VT.GetGestureStatus(ref this, Gesture, out Listening);
 			}
 			public HRESULT GetWindowInputRectangle(IInkRectangle** WindowInputRectangle) mut
 			{
-				return VT.GetWindowInputRectangle(&this, WindowInputRectangle);
+				return VT.GetWindowInputRectangle(ref this, WindowInputRectangle);
 			}
 			public HRESULT SetWindowInputRectangle(IInkRectangle* WindowInputRectangle) mut
 			{
-				return VT.SetWindowInputRectangle(&this, WindowInputRectangle);
+				return VT.SetWindowInputRectangle(ref this, WindowInputRectangle);
 			}
 			public HRESULT SetAllTabletsMode(int16 UseMouseForInput) mut
 			{
-				return VT.SetAllTabletsMode(&this, UseMouseForInput);
+				return VT.SetAllTabletsMode(ref this, UseMouseForInput);
 			}
 			public HRESULT SetSingleTabletIntegratedMode(IInkTablet* Tablet) mut
 			{
-				return VT.SetSingleTabletIntegratedMode(&this, Tablet);
+				return VT.SetSingleTabletIntegratedMode(ref this, Tablet);
 			}
-			public HRESULT GetEventInterest(InkCollectorEventInterest EventId, int16* Listen) mut
+			public HRESULT GetEventInterest(InkCollectorEventInterest EventId, out int16 Listen) mut
 			{
-				return VT.GetEventInterest(&this, EventId, Listen);
+				return VT.GetEventInterest(ref this, EventId, out Listen);
 			}
 			public HRESULT SetEventInterest(InkCollectorEventInterest EventId, int16 Listen) mut
 			{
-				return VT.SetEventInterest(&this, EventId, Listen);
+				return VT.SetEventInterest(ref this, EventId, Listen);
 			}
-			public HRESULT get_InkEnabled(int16* Collecting) mut
+			public HRESULT get_InkEnabled(out int16 Collecting) mut
 			{
-				return VT.get_InkEnabled(&this, Collecting);
+				return VT.get_InkEnabled(ref this, out Collecting);
 			}
 			public HRESULT put_InkEnabled(int16 Collecting) mut
 			{
-				return VT.put_InkEnabled(&this, Collecting);
+				return VT.put_InkEnabled(ref this, Collecting);
 			}
-			public HRESULT get_Enabled(int16* pbool) mut
+			public HRESULT get_Enabled(out int16 pbool) mut
 			{
-				return VT.get_Enabled(&this, pbool);
+				return VT.get_Enabled(ref this, out pbool);
 			}
 			public HRESULT put_Enabled(int16 vbool) mut
 			{
-				return VT.put_Enabled(&this, vbool);
+				return VT.put_Enabled(ref this, vbool);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkPicture *self, int* CurrentWindow) get_hWnd;
-				public new function HRESULT(IInkPicture *self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
-				public new function HRESULT(IInkPicture *self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
-				public new function HRESULT(IInkPicture *self, IInkRenderer** CurrentInkRenderer) get_Renderer;
-				public new function HRESULT(IInkPicture *self, IInkRenderer* NewInkRenderer) putref_Renderer;
-				public new function HRESULT(IInkPicture *self, IInkDisp** Ink) get_Ink;
-				public new function HRESULT(IInkPicture *self, IInkDisp* NewInk) putref_Ink;
-				public new function HRESULT(IInkPicture *self, int16* AutoRedraw) get_AutoRedraw;
-				public new function HRESULT(IInkPicture *self, int16 AutoRedraw) put_AutoRedraw;
-				public new function HRESULT(IInkPicture *self, int16* Collecting) get_CollectingInk;
-				public new function HRESULT(IInkPicture *self, InkCollectionMode* Mode) get_CollectionMode;
-				public new function HRESULT(IInkPicture *self, InkCollectionMode Mode) put_CollectionMode;
-				public new function HRESULT(IInkPicture *self, int16* Enabled) get_DynamicRendering;
-				public new function HRESULT(IInkPicture *self, int16 Enabled) put_DynamicRendering;
-				public new function HRESULT(IInkPicture *self, VARIANT* PacketGuids) get_DesiredPacketDescription;
-				public new function HRESULT(IInkPicture *self, VARIANT PacketGuids) put_DesiredPacketDescription;
-				public new function HRESULT(IInkPicture *self, IPictureDisp** MouseIcon) get_MouseIcon;
-				public new function HRESULT(IInkPicture *self, IPictureDisp* MouseIcon) put_MouseIcon;
-				public new function HRESULT(IInkPicture *self, IPictureDisp* MouseIcon) putref_MouseIcon;
-				public new function HRESULT(IInkPicture *self, InkMousePointer* MousePointer) get_MousePointer;
-				public new function HRESULT(IInkPicture *self, InkMousePointer MousePointer) put_MousePointer;
-				public new function HRESULT(IInkPicture *self, InkOverlayEditingMode* EditingMode) get_EditingMode;
-				public new function HRESULT(IInkPicture *self, InkOverlayEditingMode EditingMode) put_EditingMode;
-				public new function HRESULT(IInkPicture *self, IInkStrokes** Selection) get_Selection;
-				public new function HRESULT(IInkPicture *self, IInkStrokes* Selection) put_Selection;
-				public new function HRESULT(IInkPicture *self, InkOverlayEraserMode* EraserMode) get_EraserMode;
-				public new function HRESULT(IInkPicture *self, InkOverlayEraserMode EraserMode) put_EraserMode;
-				public new function HRESULT(IInkPicture *self, int32* EraserWidth) get_EraserWidth;
-				public new function HRESULT(IInkPicture *self, int32 newEraserWidth) put_EraserWidth;
-				public new function HRESULT(IInkPicture *self, IPictureDisp* pPicture) putref_Picture;
-				public new function HRESULT(IInkPicture *self, IPictureDisp* pPicture) put_Picture;
-				public new function HRESULT(IInkPicture *self, IPictureDisp** ppPicture) get_Picture;
-				public new function HRESULT(IInkPicture *self, InkPictureSizeMode smNewSizeMode) put_SizeMode;
-				public new function HRESULT(IInkPicture *self, InkPictureSizeMode* smSizeMode) get_SizeMode;
-				public new function HRESULT(IInkPicture *self, uint32 newColor) put_BackColor;
-				public new function HRESULT(IInkPicture *self, uint32* pColor) get_BackColor;
-				public new function HRESULT(IInkPicture *self, IInkCursors** Cursors) get_Cursors;
-				public new function HRESULT(IInkPicture *self, int32* MarginX) get_MarginX;
-				public new function HRESULT(IInkPicture *self, int32 MarginX) put_MarginX;
-				public new function HRESULT(IInkPicture *self, int32* MarginY) get_MarginY;
-				public new function HRESULT(IInkPicture *self, int32 MarginY) put_MarginY;
-				public new function HRESULT(IInkPicture *self, IInkTablet** SingleTablet) get_Tablet;
-				public new function HRESULT(IInkPicture *self, int16* Support) get_SupportHighContrastInk;
-				public new function HRESULT(IInkPicture *self, int16 Support) put_SupportHighContrastInk;
-				public new function HRESULT(IInkPicture *self, int16* Support) get_SupportHighContrastSelectionUI;
-				public new function HRESULT(IInkPicture *self, int16 Support) put_SupportHighContrastSelectionUI;
-				public new function HRESULT(IInkPicture *self, int32 x, int32 y, SelectionHitResult* SelArea) HitTestSelection;
-				public new function HRESULT(IInkPicture *self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
-				public new function HRESULT(IInkPicture *self, InkApplicationGesture Gesture, int16* Listening) GetGestureStatus;
-				public new function HRESULT(IInkPicture *self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
-				public new function HRESULT(IInkPicture *self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
-				public new function HRESULT(IInkPicture *self, int16 UseMouseForInput) SetAllTabletsMode;
-				public new function HRESULT(IInkPicture *self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
-				public new function HRESULT(IInkPicture *self, InkCollectorEventInterest EventId, int16* Listen) GetEventInterest;
-				public new function HRESULT(IInkPicture *self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
-				public new function HRESULT(IInkPicture *self, int16* Collecting) get_InkEnabled;
-				public new function HRESULT(IInkPicture *self, int16 Collecting) put_InkEnabled;
-				public new function HRESULT(IInkPicture *self, int16* pbool) get_Enabled;
-				public new function HRESULT(IInkPicture *self, int16 vbool) put_Enabled;
+				public new function HRESULT(ref IInkPicture self, out int CurrentWindow) get_hWnd;
+				public new function HRESULT(ref IInkPicture self, IInkDrawingAttributes** CurrentAttributes) get_DefaultDrawingAttributes;
+				public new function HRESULT(ref IInkPicture self, IInkDrawingAttributes* NewAttributes) putref_DefaultDrawingAttributes;
+				public new function HRESULT(ref IInkPicture self, IInkRenderer** CurrentInkRenderer) get_Renderer;
+				public new function HRESULT(ref IInkPicture self, IInkRenderer* NewInkRenderer) putref_Renderer;
+				public new function HRESULT(ref IInkPicture self, IInkDisp** Ink) get_Ink;
+				public new function HRESULT(ref IInkPicture self, IInkDisp* NewInk) putref_Ink;
+				public new function HRESULT(ref IInkPicture self, out int16 AutoRedraw) get_AutoRedraw;
+				public new function HRESULT(ref IInkPicture self, int16 AutoRedraw) put_AutoRedraw;
+				public new function HRESULT(ref IInkPicture self, out int16 Collecting) get_CollectingInk;
+				public new function HRESULT(ref IInkPicture self, out InkCollectionMode Mode) get_CollectionMode;
+				public new function HRESULT(ref IInkPicture self, InkCollectionMode Mode) put_CollectionMode;
+				public new function HRESULT(ref IInkPicture self, out int16 Enabled) get_DynamicRendering;
+				public new function HRESULT(ref IInkPicture self, int16 Enabled) put_DynamicRendering;
+				public new function HRESULT(ref IInkPicture self, out VARIANT PacketGuids) get_DesiredPacketDescription;
+				public new function HRESULT(ref IInkPicture self, VARIANT PacketGuids) put_DesiredPacketDescription;
+				public new function HRESULT(ref IInkPicture self, IPictureDisp** MouseIcon) get_MouseIcon;
+				public new function HRESULT(ref IInkPicture self, IPictureDisp* MouseIcon) put_MouseIcon;
+				public new function HRESULT(ref IInkPicture self, IPictureDisp* MouseIcon) putref_MouseIcon;
+				public new function HRESULT(ref IInkPicture self, out InkMousePointer MousePointer) get_MousePointer;
+				public new function HRESULT(ref IInkPicture self, InkMousePointer MousePointer) put_MousePointer;
+				public new function HRESULT(ref IInkPicture self, out InkOverlayEditingMode EditingMode) get_EditingMode;
+				public new function HRESULT(ref IInkPicture self, InkOverlayEditingMode EditingMode) put_EditingMode;
+				public new function HRESULT(ref IInkPicture self, IInkStrokes** Selection) get_Selection;
+				public new function HRESULT(ref IInkPicture self, IInkStrokes* Selection) put_Selection;
+				public new function HRESULT(ref IInkPicture self, out InkOverlayEraserMode EraserMode) get_EraserMode;
+				public new function HRESULT(ref IInkPicture self, InkOverlayEraserMode EraserMode) put_EraserMode;
+				public new function HRESULT(ref IInkPicture self, out int32 EraserWidth) get_EraserWidth;
+				public new function HRESULT(ref IInkPicture self, int32 newEraserWidth) put_EraserWidth;
+				public new function HRESULT(ref IInkPicture self, IPictureDisp* pPicture) putref_Picture;
+				public new function HRESULT(ref IInkPicture self, IPictureDisp* pPicture) put_Picture;
+				public new function HRESULT(ref IInkPicture self, IPictureDisp** ppPicture) get_Picture;
+				public new function HRESULT(ref IInkPicture self, InkPictureSizeMode smNewSizeMode) put_SizeMode;
+				public new function HRESULT(ref IInkPicture self, out InkPictureSizeMode smSizeMode) get_SizeMode;
+				public new function HRESULT(ref IInkPicture self, uint32 newColor) put_BackColor;
+				public new function HRESULT(ref IInkPicture self, out uint32 pColor) get_BackColor;
+				public new function HRESULT(ref IInkPicture self, IInkCursors** Cursors) get_Cursors;
+				public new function HRESULT(ref IInkPicture self, out int32 MarginX) get_MarginX;
+				public new function HRESULT(ref IInkPicture self, int32 MarginX) put_MarginX;
+				public new function HRESULT(ref IInkPicture self, out int32 MarginY) get_MarginY;
+				public new function HRESULT(ref IInkPicture self, int32 MarginY) put_MarginY;
+				public new function HRESULT(ref IInkPicture self, IInkTablet** SingleTablet) get_Tablet;
+				public new function HRESULT(ref IInkPicture self, out int16 Support) get_SupportHighContrastInk;
+				public new function HRESULT(ref IInkPicture self, int16 Support) put_SupportHighContrastInk;
+				public new function HRESULT(ref IInkPicture self, out int16 Support) get_SupportHighContrastSelectionUI;
+				public new function HRESULT(ref IInkPicture self, int16 Support) put_SupportHighContrastSelectionUI;
+				public new function HRESULT(ref IInkPicture self, int32 x, int32 y, out SelectionHitResult SelArea) HitTestSelection;
+				public new function HRESULT(ref IInkPicture self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+				public new function HRESULT(ref IInkPicture self, InkApplicationGesture Gesture, out int16 Listening) GetGestureStatus;
+				public new function HRESULT(ref IInkPicture self, IInkRectangle** WindowInputRectangle) GetWindowInputRectangle;
+				public new function HRESULT(ref IInkPicture self, IInkRectangle* WindowInputRectangle) SetWindowInputRectangle;
+				public new function HRESULT(ref IInkPicture self, int16 UseMouseForInput) SetAllTabletsMode;
+				public new function HRESULT(ref IInkPicture self, IInkTablet* Tablet) SetSingleTabletIntegratedMode;
+				public new function HRESULT(ref IInkPicture self, InkCollectorEventInterest EventId, out int16 Listen) GetEventInterest;
+				public new function HRESULT(ref IInkPicture self, InkCollectorEventInterest EventId, int16 Listen) SetEventInterest;
+				public new function HRESULT(ref IInkPicture self, out int16 Collecting) get_InkEnabled;
+				public new function HRESULT(ref IInkPicture self, int16 Collecting) put_InkEnabled;
+				public new function HRESULT(ref IInkPicture self, out int16 pbool) get_Enabled;
+				public new function HRESULT(ref IInkPicture self, int16 vbool) put_Enabled;
 			}
 		}
 		[CRepr]
@@ -3771,42 +3771,42 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* Name) mut
 			{
-				return VT.get_Name(&this, Name);
+				return VT.get_Name(ref this, Name);
 			}
 			public HRESULT get_Vendor(BSTR* Vendor) mut
 			{
-				return VT.get_Vendor(&this, Vendor);
+				return VT.get_Vendor(ref this, Vendor);
 			}
-			public HRESULT get_Capabilities(InkRecognizerCapabilities* CapabilitiesFlags) mut
+			public HRESULT get_Capabilities(out InkRecognizerCapabilities CapabilitiesFlags) mut
 			{
-				return VT.get_Capabilities(&this, CapabilitiesFlags);
+				return VT.get_Capabilities(ref this, out CapabilitiesFlags);
 			}
-			public HRESULT get_Languages(VARIANT* Languages) mut
+			public HRESULT get_Languages(out VARIANT Languages) mut
 			{
-				return VT.get_Languages(&this, Languages);
+				return VT.get_Languages(ref this, out Languages);
 			}
-			public HRESULT get_SupportedProperties(VARIANT* SupportedProperties) mut
+			public HRESULT get_SupportedProperties(out VARIANT SupportedProperties) mut
 			{
-				return VT.get_SupportedProperties(&this, SupportedProperties);
+				return VT.get_SupportedProperties(ref this, out SupportedProperties);
 			}
-			public HRESULT get_PreferredPacketDescription(VARIANT* PreferredPacketDescription) mut
+			public HRESULT get_PreferredPacketDescription(out VARIANT PreferredPacketDescription) mut
 			{
-				return VT.get_PreferredPacketDescription(&this, PreferredPacketDescription);
+				return VT.get_PreferredPacketDescription(ref this, out PreferredPacketDescription);
 			}
 			public HRESULT CreateRecognizerContext(IInkRecognizerContext** Context) mut
 			{
-				return VT.CreateRecognizerContext(&this, Context);
+				return VT.CreateRecognizerContext(ref this, Context);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRecognizer *self, BSTR* Name) get_Name;
-				public new function HRESULT(IInkRecognizer *self, BSTR* Vendor) get_Vendor;
-				public new function HRESULT(IInkRecognizer *self, InkRecognizerCapabilities* CapabilitiesFlags) get_Capabilities;
-				public new function HRESULT(IInkRecognizer *self, VARIANT* Languages) get_Languages;
-				public new function HRESULT(IInkRecognizer *self, VARIANT* SupportedProperties) get_SupportedProperties;
-				public new function HRESULT(IInkRecognizer *self, VARIANT* PreferredPacketDescription) get_PreferredPacketDescription;
-				public new function HRESULT(IInkRecognizer *self, IInkRecognizerContext** Context) CreateRecognizerContext;
+				public new function HRESULT(ref IInkRecognizer self, BSTR* Name) get_Name;
+				public new function HRESULT(ref IInkRecognizer self, BSTR* Vendor) get_Vendor;
+				public new function HRESULT(ref IInkRecognizer self, out InkRecognizerCapabilities CapabilitiesFlags) get_Capabilities;
+				public new function HRESULT(ref IInkRecognizer self, out VARIANT Languages) get_Languages;
+				public new function HRESULT(ref IInkRecognizer self, out VARIANT SupportedProperties) get_SupportedProperties;
+				public new function HRESULT(ref IInkRecognizer self, out VARIANT PreferredPacketDescription) get_PreferredPacketDescription;
+				public new function HRESULT(ref IInkRecognizer self, IInkRecognizerContext** Context) CreateRecognizerContext;
 			}
 		}
 		[CRepr]
@@ -3818,17 +3818,17 @@ namespace Win32
 			
 			public HRESULT get_Id(BSTR* pbstrId) mut
 			{
-				return VT.get_Id(&this, pbstrId);
+				return VT.get_Id(ref this, pbstrId);
 			}
-			public HRESULT get_UnicodeRanges(VARIANT* UnicodeRanges) mut
+			public HRESULT get_UnicodeRanges(out VARIANT UnicodeRanges) mut
 			{
-				return VT.get_UnicodeRanges(&this, UnicodeRanges);
+				return VT.get_UnicodeRanges(ref this, out UnicodeRanges);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRecognizer2 *self, BSTR* pbstrId) get_Id;
-				public new function HRESULT(IInkRecognizer2 *self, VARIANT* UnicodeRanges) get_UnicodeRanges;
+				public new function HRESULT(ref IInkRecognizer2 self, BSTR* pbstrId) get_Id;
+				public new function HRESULT(ref IInkRecognizer2 self, out VARIANT UnicodeRanges) get_UnicodeRanges;
 			}
 		}
 		[CRepr]
@@ -3838,29 +3838,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get__NewEnum(IUnknown** _NewEnum) mut
 			{
-				return VT.get__NewEnum(&this, _NewEnum);
+				return VT.get__NewEnum(ref this, _NewEnum);
 			}
 			public HRESULT GetDefaultRecognizer(int32 lcid, IInkRecognizer** DefaultRecognizer) mut
 			{
-				return VT.GetDefaultRecognizer(&this, lcid, DefaultRecognizer);
+				return VT.GetDefaultRecognizer(ref this, lcid, DefaultRecognizer);
 			}
 			public HRESULT Item(int32 Index, IInkRecognizer** InkRecognizer) mut
 			{
-				return VT.Item(&this, Index, InkRecognizer);
+				return VT.Item(ref this, Index, InkRecognizer);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRecognizers *self, int32* Count) get_Count;
-				public new function HRESULT(IInkRecognizers *self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(IInkRecognizers *self, int32 lcid, IInkRecognizer** DefaultRecognizer) GetDefaultRecognizer;
-				public new function HRESULT(IInkRecognizers *self, int32 Index, IInkRecognizer** InkRecognizer) Item;
+				public new function HRESULT(ref IInkRecognizers self, out int32 Count) get_Count;
+				public new function HRESULT(ref IInkRecognizers self, IUnknown** _NewEnum) get__NewEnum;
+				public new function HRESULT(ref IInkRecognizers self, int32 lcid, IInkRecognizer** DefaultRecognizer) GetDefaultRecognizer;
+				public new function HRESULT(ref IInkRecognizers self, int32 Index, IInkRecognizer** InkRecognizer) Item;
 			}
 		}
 		[CRepr]
@@ -3884,127 +3884,127 @@ namespace Win32
 			
 			public HRESULT get_Strokes(IInkStrokes** Strokes) mut
 			{
-				return VT.get_Strokes(&this, Strokes);
+				return VT.get_Strokes(ref this, Strokes);
 			}
 			public HRESULT putref_Strokes(IInkStrokes* Strokes) mut
 			{
-				return VT.putref_Strokes(&this, Strokes);
+				return VT.putref_Strokes(ref this, Strokes);
 			}
-			public HRESULT get_CharacterAutoCompletionMode(InkRecognizerCharacterAutoCompletionMode* Mode) mut
+			public HRESULT get_CharacterAutoCompletionMode(out InkRecognizerCharacterAutoCompletionMode Mode) mut
 			{
-				return VT.get_CharacterAutoCompletionMode(&this, Mode);
+				return VT.get_CharacterAutoCompletionMode(ref this, out Mode);
 			}
 			public HRESULT put_CharacterAutoCompletionMode(InkRecognizerCharacterAutoCompletionMode Mode) mut
 			{
-				return VT.put_CharacterAutoCompletionMode(&this, Mode);
+				return VT.put_CharacterAutoCompletionMode(ref this, Mode);
 			}
 			public HRESULT get_Factoid(BSTR* Factoid) mut
 			{
-				return VT.get_Factoid(&this, Factoid);
+				return VT.get_Factoid(ref this, Factoid);
 			}
 			public HRESULT put_Factoid(BSTR factoid) mut
 			{
-				return VT.put_Factoid(&this, factoid);
+				return VT.put_Factoid(ref this, factoid);
 			}
 			public HRESULT get_Guide(IInkRecognizerGuide** RecognizerGuide) mut
 			{
-				return VT.get_Guide(&this, RecognizerGuide);
+				return VT.get_Guide(ref this, RecognizerGuide);
 			}
 			public HRESULT putref_Guide(IInkRecognizerGuide* RecognizerGuide) mut
 			{
-				return VT.putref_Guide(&this, RecognizerGuide);
+				return VT.putref_Guide(ref this, RecognizerGuide);
 			}
 			public HRESULT get_PrefixText(BSTR* Prefix) mut
 			{
-				return VT.get_PrefixText(&this, Prefix);
+				return VT.get_PrefixText(ref this, Prefix);
 			}
 			public HRESULT put_PrefixText(BSTR Prefix) mut
 			{
-				return VT.put_PrefixText(&this, Prefix);
+				return VT.put_PrefixText(ref this, Prefix);
 			}
 			public HRESULT get_SuffixText(BSTR* Suffix) mut
 			{
-				return VT.get_SuffixText(&this, Suffix);
+				return VT.get_SuffixText(ref this, Suffix);
 			}
 			public HRESULT put_SuffixText(BSTR Suffix) mut
 			{
-				return VT.put_SuffixText(&this, Suffix);
+				return VT.put_SuffixText(ref this, Suffix);
 			}
-			public HRESULT get_RecognitionFlags(InkRecognitionModes* Modes) mut
+			public HRESULT get_RecognitionFlags(out InkRecognitionModes Modes) mut
 			{
-				return VT.get_RecognitionFlags(&this, Modes);
+				return VT.get_RecognitionFlags(ref this, out Modes);
 			}
 			public HRESULT put_RecognitionFlags(InkRecognitionModes Modes) mut
 			{
-				return VT.put_RecognitionFlags(&this, Modes);
+				return VT.put_RecognitionFlags(ref this, Modes);
 			}
 			public HRESULT get_WordList(IInkWordList** WordList) mut
 			{
-				return VT.get_WordList(&this, WordList);
+				return VT.get_WordList(ref this, WordList);
 			}
 			public HRESULT putref_WordList(IInkWordList* WordList) mut
 			{
-				return VT.putref_WordList(&this, WordList);
+				return VT.putref_WordList(ref this, WordList);
 			}
 			public HRESULT get_Recognizer(IInkRecognizer** Recognizer) mut
 			{
-				return VT.get_Recognizer(&this, Recognizer);
+				return VT.get_Recognizer(ref this, Recognizer);
 			}
-			public HRESULT Recognize(InkRecognitionStatus* RecognitionStatus, IInkRecognitionResult** RecognitionResult) mut
+			public HRESULT Recognize(out InkRecognitionStatus RecognitionStatus, IInkRecognitionResult** RecognitionResult) mut
 			{
-				return VT.Recognize(&this, RecognitionStatus, RecognitionResult);
+				return VT.Recognize(ref this, out RecognitionStatus, RecognitionResult);
 			}
 			public HRESULT StopBackgroundRecognition() mut
 			{
-				return VT.StopBackgroundRecognition(&this);
+				return VT.StopBackgroundRecognition(ref this);
 			}
 			public HRESULT EndInkInput() mut
 			{
-				return VT.EndInkInput(&this);
+				return VT.EndInkInput(ref this);
 			}
 			public HRESULT BackgroundRecognize(VARIANT CustomData) mut
 			{
-				return VT.BackgroundRecognize(&this, CustomData);
+				return VT.BackgroundRecognize(ref this, CustomData);
 			}
 			public HRESULT BackgroundRecognizeWithAlternates(VARIANT CustomData) mut
 			{
-				return VT.BackgroundRecognizeWithAlternates(&this, CustomData);
+				return VT.BackgroundRecognizeWithAlternates(ref this, CustomData);
 			}
 			public HRESULT Clone(IInkRecognizerContext** RecoContext) mut
 			{
-				return VT.Clone(&this, RecoContext);
+				return VT.Clone(ref this, RecoContext);
 			}
-			public HRESULT IsStringSupported(BSTR String, int16* Supported) mut
+			public HRESULT IsStringSupported(BSTR String, out int16 Supported) mut
 			{
-				return VT.IsStringSupported(&this, String, Supported);
+				return VT.IsStringSupported(ref this, String, out Supported);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRecognizerContext *self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(IInkRecognizerContext *self, IInkStrokes* Strokes) putref_Strokes;
-				public new function HRESULT(IInkRecognizerContext *self, InkRecognizerCharacterAutoCompletionMode* Mode) get_CharacterAutoCompletionMode;
-				public new function HRESULT(IInkRecognizerContext *self, InkRecognizerCharacterAutoCompletionMode Mode) put_CharacterAutoCompletionMode;
-				public new function HRESULT(IInkRecognizerContext *self, BSTR* Factoid) get_Factoid;
-				public new function HRESULT(IInkRecognizerContext *self, BSTR factoid) put_Factoid;
-				public new function HRESULT(IInkRecognizerContext *self, IInkRecognizerGuide** RecognizerGuide) get_Guide;
-				public new function HRESULT(IInkRecognizerContext *self, IInkRecognizerGuide* RecognizerGuide) putref_Guide;
-				public new function HRESULT(IInkRecognizerContext *self, BSTR* Prefix) get_PrefixText;
-				public new function HRESULT(IInkRecognizerContext *self, BSTR Prefix) put_PrefixText;
-				public new function HRESULT(IInkRecognizerContext *self, BSTR* Suffix) get_SuffixText;
-				public new function HRESULT(IInkRecognizerContext *self, BSTR Suffix) put_SuffixText;
-				public new function HRESULT(IInkRecognizerContext *self, InkRecognitionModes* Modes) get_RecognitionFlags;
-				public new function HRESULT(IInkRecognizerContext *self, InkRecognitionModes Modes) put_RecognitionFlags;
-				public new function HRESULT(IInkRecognizerContext *self, IInkWordList** WordList) get_WordList;
-				public new function HRESULT(IInkRecognizerContext *self, IInkWordList* WordList) putref_WordList;
-				public new function HRESULT(IInkRecognizerContext *self, IInkRecognizer** Recognizer) get_Recognizer;
-				public new function HRESULT(IInkRecognizerContext *self, InkRecognitionStatus* RecognitionStatus, IInkRecognitionResult** RecognitionResult) Recognize;
-				public new function HRESULT(IInkRecognizerContext *self) StopBackgroundRecognition;
-				public new function HRESULT(IInkRecognizerContext *self) EndInkInput;
-				public new function HRESULT(IInkRecognizerContext *self, VARIANT CustomData) BackgroundRecognize;
-				public new function HRESULT(IInkRecognizerContext *self, VARIANT CustomData) BackgroundRecognizeWithAlternates;
-				public new function HRESULT(IInkRecognizerContext *self, IInkRecognizerContext** RecoContext) Clone;
-				public new function HRESULT(IInkRecognizerContext *self, BSTR String, int16* Supported) IsStringSupported;
+				public new function HRESULT(ref IInkRecognizerContext self, IInkStrokes** Strokes) get_Strokes;
+				public new function HRESULT(ref IInkRecognizerContext self, IInkStrokes* Strokes) putref_Strokes;
+				public new function HRESULT(ref IInkRecognizerContext self, out InkRecognizerCharacterAutoCompletionMode Mode) get_CharacterAutoCompletionMode;
+				public new function HRESULT(ref IInkRecognizerContext self, InkRecognizerCharacterAutoCompletionMode Mode) put_CharacterAutoCompletionMode;
+				public new function HRESULT(ref IInkRecognizerContext self, BSTR* Factoid) get_Factoid;
+				public new function HRESULT(ref IInkRecognizerContext self, BSTR factoid) put_Factoid;
+				public new function HRESULT(ref IInkRecognizerContext self, IInkRecognizerGuide** RecognizerGuide) get_Guide;
+				public new function HRESULT(ref IInkRecognizerContext self, IInkRecognizerGuide* RecognizerGuide) putref_Guide;
+				public new function HRESULT(ref IInkRecognizerContext self, BSTR* Prefix) get_PrefixText;
+				public new function HRESULT(ref IInkRecognizerContext self, BSTR Prefix) put_PrefixText;
+				public new function HRESULT(ref IInkRecognizerContext self, BSTR* Suffix) get_SuffixText;
+				public new function HRESULT(ref IInkRecognizerContext self, BSTR Suffix) put_SuffixText;
+				public new function HRESULT(ref IInkRecognizerContext self, out InkRecognitionModes Modes) get_RecognitionFlags;
+				public new function HRESULT(ref IInkRecognizerContext self, InkRecognitionModes Modes) put_RecognitionFlags;
+				public new function HRESULT(ref IInkRecognizerContext self, IInkWordList** WordList) get_WordList;
+				public new function HRESULT(ref IInkRecognizerContext self, IInkWordList* WordList) putref_WordList;
+				public new function HRESULT(ref IInkRecognizerContext self, IInkRecognizer** Recognizer) get_Recognizer;
+				public new function HRESULT(ref IInkRecognizerContext self, out InkRecognitionStatus RecognitionStatus, IInkRecognitionResult** RecognitionResult) Recognize;
+				public new function HRESULT(ref IInkRecognizerContext self) StopBackgroundRecognition;
+				public new function HRESULT(ref IInkRecognizerContext self) EndInkInput;
+				public new function HRESULT(ref IInkRecognizerContext self, VARIANT CustomData) BackgroundRecognize;
+				public new function HRESULT(ref IInkRecognizerContext self, VARIANT CustomData) BackgroundRecognizeWithAlternates;
+				public new function HRESULT(ref IInkRecognizerContext self, IInkRecognizerContext** RecoContext) Clone;
+				public new function HRESULT(ref IInkRecognizerContext self, BSTR String, out int16 Supported) IsStringSupported;
 			}
 		}
 		[CRepr]
@@ -4014,19 +4014,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_EnabledUnicodeRanges(VARIANT* UnicodeRanges) mut
+			public HRESULT get_EnabledUnicodeRanges(out VARIANT UnicodeRanges) mut
 			{
-				return VT.get_EnabledUnicodeRanges(&this, UnicodeRanges);
+				return VT.get_EnabledUnicodeRanges(ref this, out UnicodeRanges);
 			}
 			public HRESULT put_EnabledUnicodeRanges(VARIANT UnicodeRanges) mut
 			{
-				return VT.put_EnabledUnicodeRanges(&this, UnicodeRanges);
+				return VT.put_EnabledUnicodeRanges(ref this, UnicodeRanges);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRecognizerContext2 *self, VARIANT* UnicodeRanges) get_EnabledUnicodeRanges;
-				public new function HRESULT(IInkRecognizerContext2 *self, VARIANT UnicodeRanges) put_EnabledUnicodeRanges;
+				public new function HRESULT(ref IInkRecognizerContext2 self, out VARIANT UnicodeRanges) get_EnabledUnicodeRanges;
+				public new function HRESULT(ref IInkRecognizerContext2 self, VARIANT UnicodeRanges) put_EnabledUnicodeRanges;
 			}
 		}
 		[CRepr]
@@ -4038,42 +4038,42 @@ namespace Win32
 			
 			public HRESULT get_TopString(BSTR* TopString) mut
 			{
-				return VT.get_TopString(&this, TopString);
+				return VT.get_TopString(ref this, TopString);
 			}
 			public HRESULT get_TopAlternate(IInkRecognitionAlternate** TopAlternate) mut
 			{
-				return VT.get_TopAlternate(&this, TopAlternate);
+				return VT.get_TopAlternate(ref this, TopAlternate);
 			}
-			public HRESULT get_TopConfidence(InkRecognitionConfidence* TopConfidence) mut
+			public HRESULT get_TopConfidence(out InkRecognitionConfidence TopConfidence) mut
 			{
-				return VT.get_TopConfidence(&this, TopConfidence);
+				return VT.get_TopConfidence(ref this, out TopConfidence);
 			}
 			public HRESULT get_Strokes(IInkStrokes** Strokes) mut
 			{
-				return VT.get_Strokes(&this, Strokes);
+				return VT.get_Strokes(ref this, Strokes);
 			}
 			public HRESULT AlternatesFromSelection(int32 selectionStart, int32 selectionLength, int32 maximumAlternates, IInkRecognitionAlternates** AlternatesFromSelection) mut
 			{
-				return VT.AlternatesFromSelection(&this, selectionStart, selectionLength, maximumAlternates, AlternatesFromSelection);
+				return VT.AlternatesFromSelection(ref this, selectionStart, selectionLength, maximumAlternates, AlternatesFromSelection);
 			}
 			public HRESULT ModifyTopAlternate(IInkRecognitionAlternate* Alternate) mut
 			{
-				return VT.ModifyTopAlternate(&this, Alternate);
+				return VT.ModifyTopAlternate(ref this, Alternate);
 			}
 			public HRESULT SetResultOnStrokes() mut
 			{
-				return VT.SetResultOnStrokes(&this);
+				return VT.SetResultOnStrokes(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRecognitionResult *self, BSTR* TopString) get_TopString;
-				public new function HRESULT(IInkRecognitionResult *self, IInkRecognitionAlternate** TopAlternate) get_TopAlternate;
-				public new function HRESULT(IInkRecognitionResult *self, InkRecognitionConfidence* TopConfidence) get_TopConfidence;
-				public new function HRESULT(IInkRecognitionResult *self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(IInkRecognitionResult *self, int32 selectionStart, int32 selectionLength, int32 maximumAlternates, IInkRecognitionAlternates** AlternatesFromSelection) AlternatesFromSelection;
-				public new function HRESULT(IInkRecognitionResult *self, IInkRecognitionAlternate* Alternate) ModifyTopAlternate;
-				public new function HRESULT(IInkRecognitionResult *self) SetResultOnStrokes;
+				public new function HRESULT(ref IInkRecognitionResult self, BSTR* TopString) get_TopString;
+				public new function HRESULT(ref IInkRecognitionResult self, IInkRecognitionAlternate** TopAlternate) get_TopAlternate;
+				public new function HRESULT(ref IInkRecognitionResult self, out InkRecognitionConfidence TopConfidence) get_TopConfidence;
+				public new function HRESULT(ref IInkRecognitionResult self, IInkStrokes** Strokes) get_Strokes;
+				public new function HRESULT(ref IInkRecognitionResult self, int32 selectionStart, int32 selectionLength, int32 maximumAlternates, IInkRecognitionAlternates** AlternatesFromSelection) AlternatesFromSelection;
+				public new function HRESULT(ref IInkRecognitionResult self, IInkRecognitionAlternate* Alternate) ModifyTopAlternate;
+				public new function HRESULT(ref IInkRecognitionResult self) SetResultOnStrokes;
 			}
 		}
 		[CRepr]
@@ -4085,82 +4085,82 @@ namespace Win32
 			
 			public HRESULT get_String(BSTR* RecoString) mut
 			{
-				return VT.get_String(&this, RecoString);
+				return VT.get_String(ref this, RecoString);
 			}
-			public HRESULT get_Confidence(InkRecognitionConfidence* Confidence) mut
+			public HRESULT get_Confidence(out InkRecognitionConfidence Confidence) mut
 			{
-				return VT.get_Confidence(&this, Confidence);
+				return VT.get_Confidence(ref this, out Confidence);
 			}
-			public HRESULT get_Baseline(VARIANT* Baseline) mut
+			public HRESULT get_Baseline(out VARIANT Baseline) mut
 			{
-				return VT.get_Baseline(&this, Baseline);
+				return VT.get_Baseline(ref this, out Baseline);
 			}
-			public HRESULT get_Midline(VARIANT* Midline) mut
+			public HRESULT get_Midline(out VARIANT Midline) mut
 			{
-				return VT.get_Midline(&this, Midline);
+				return VT.get_Midline(ref this, out Midline);
 			}
-			public HRESULT get_Ascender(VARIANT* Ascender) mut
+			public HRESULT get_Ascender(out VARIANT Ascender) mut
 			{
-				return VT.get_Ascender(&this, Ascender);
+				return VT.get_Ascender(ref this, out Ascender);
 			}
-			public HRESULT get_Descender(VARIANT* Descender) mut
+			public HRESULT get_Descender(out VARIANT Descender) mut
 			{
-				return VT.get_Descender(&this, Descender);
+				return VT.get_Descender(ref this, out Descender);
 			}
-			public HRESULT get_LineNumber(int32* LineNumber) mut
+			public HRESULT get_LineNumber(out int32 LineNumber) mut
 			{
-				return VT.get_LineNumber(&this, LineNumber);
+				return VT.get_LineNumber(ref this, out LineNumber);
 			}
 			public HRESULT get_Strokes(IInkStrokes** Strokes) mut
 			{
-				return VT.get_Strokes(&this, Strokes);
+				return VT.get_Strokes(ref this, Strokes);
 			}
 			public HRESULT get_LineAlternates(IInkRecognitionAlternates** LineAlternates) mut
 			{
-				return VT.get_LineAlternates(&this, LineAlternates);
+				return VT.get_LineAlternates(ref this, LineAlternates);
 			}
 			public HRESULT get_ConfidenceAlternates(IInkRecognitionAlternates** ConfidenceAlternates) mut
 			{
-				return VT.get_ConfidenceAlternates(&this, ConfidenceAlternates);
+				return VT.get_ConfidenceAlternates(ref this, ConfidenceAlternates);
 			}
 			public HRESULT GetStrokesFromStrokeRanges(IInkStrokes* Strokes, IInkStrokes** GetStrokesFromStrokeRanges) mut
 			{
-				return VT.GetStrokesFromStrokeRanges(&this, Strokes, GetStrokesFromStrokeRanges);
+				return VT.GetStrokesFromStrokeRanges(ref this, Strokes, GetStrokesFromStrokeRanges);
 			}
-			public HRESULT GetStrokesFromTextRange(int32* selectionStart, int32* selectionLength, IInkStrokes** GetStrokesFromTextRange) mut
+			public HRESULT GetStrokesFromTextRange(out int32 selectionStart, out int32 selectionLength, IInkStrokes** GetStrokesFromTextRange) mut
 			{
-				return VT.GetStrokesFromTextRange(&this, selectionStart, selectionLength, GetStrokesFromTextRange);
+				return VT.GetStrokesFromTextRange(ref this, out selectionStart, out selectionLength, GetStrokesFromTextRange);
 			}
-			public HRESULT GetTextRangeFromStrokes(IInkStrokes* Strokes, int32* selectionStart, int32* selectionLength) mut
+			public HRESULT GetTextRangeFromStrokes(IInkStrokes* Strokes, out int32 selectionStart, out int32 selectionLength) mut
 			{
-				return VT.GetTextRangeFromStrokes(&this, Strokes, selectionStart, selectionLength);
+				return VT.GetTextRangeFromStrokes(ref this, Strokes, out selectionStart, out selectionLength);
 			}
 			public HRESULT AlternatesWithConstantPropertyValues(BSTR PropertyType, IInkRecognitionAlternates** AlternatesWithConstantPropertyValues) mut
 			{
-				return VT.AlternatesWithConstantPropertyValues(&this, PropertyType, AlternatesWithConstantPropertyValues);
+				return VT.AlternatesWithConstantPropertyValues(ref this, PropertyType, AlternatesWithConstantPropertyValues);
 			}
-			public HRESULT GetPropertyValue(BSTR PropertyType, VARIANT* PropertyValue) mut
+			public HRESULT GetPropertyValue(BSTR PropertyType, out VARIANT PropertyValue) mut
 			{
-				return VT.GetPropertyValue(&this, PropertyType, PropertyValue);
+				return VT.GetPropertyValue(ref this, PropertyType, out PropertyValue);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRecognitionAlternate *self, BSTR* RecoString) get_String;
-				public new function HRESULT(IInkRecognitionAlternate *self, InkRecognitionConfidence* Confidence) get_Confidence;
-				public new function HRESULT(IInkRecognitionAlternate *self, VARIANT* Baseline) get_Baseline;
-				public new function HRESULT(IInkRecognitionAlternate *self, VARIANT* Midline) get_Midline;
-				public new function HRESULT(IInkRecognitionAlternate *self, VARIANT* Ascender) get_Ascender;
-				public new function HRESULT(IInkRecognitionAlternate *self, VARIANT* Descender) get_Descender;
-				public new function HRESULT(IInkRecognitionAlternate *self, int32* LineNumber) get_LineNumber;
-				public new function HRESULT(IInkRecognitionAlternate *self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(IInkRecognitionAlternate *self, IInkRecognitionAlternates** LineAlternates) get_LineAlternates;
-				public new function HRESULT(IInkRecognitionAlternate *self, IInkRecognitionAlternates** ConfidenceAlternates) get_ConfidenceAlternates;
-				public new function HRESULT(IInkRecognitionAlternate *self, IInkStrokes* Strokes, IInkStrokes** GetStrokesFromStrokeRanges) GetStrokesFromStrokeRanges;
-				public new function HRESULT(IInkRecognitionAlternate *self, int32* selectionStart, int32* selectionLength, IInkStrokes** GetStrokesFromTextRange) GetStrokesFromTextRange;
-				public new function HRESULT(IInkRecognitionAlternate *self, IInkStrokes* Strokes, int32* selectionStart, int32* selectionLength) GetTextRangeFromStrokes;
-				public new function HRESULT(IInkRecognitionAlternate *self, BSTR PropertyType, IInkRecognitionAlternates** AlternatesWithConstantPropertyValues) AlternatesWithConstantPropertyValues;
-				public new function HRESULT(IInkRecognitionAlternate *self, BSTR PropertyType, VARIANT* PropertyValue) GetPropertyValue;
+				public new function HRESULT(ref IInkRecognitionAlternate self, BSTR* RecoString) get_String;
+				public new function HRESULT(ref IInkRecognitionAlternate self, out InkRecognitionConfidence Confidence) get_Confidence;
+				public new function HRESULT(ref IInkRecognitionAlternate self, out VARIANT Baseline) get_Baseline;
+				public new function HRESULT(ref IInkRecognitionAlternate self, out VARIANT Midline) get_Midline;
+				public new function HRESULT(ref IInkRecognitionAlternate self, out VARIANT Ascender) get_Ascender;
+				public new function HRESULT(ref IInkRecognitionAlternate self, out VARIANT Descender) get_Descender;
+				public new function HRESULT(ref IInkRecognitionAlternate self, out int32 LineNumber) get_LineNumber;
+				public new function HRESULT(ref IInkRecognitionAlternate self, IInkStrokes** Strokes) get_Strokes;
+				public new function HRESULT(ref IInkRecognitionAlternate self, IInkRecognitionAlternates** LineAlternates) get_LineAlternates;
+				public new function HRESULT(ref IInkRecognitionAlternate self, IInkRecognitionAlternates** ConfidenceAlternates) get_ConfidenceAlternates;
+				public new function HRESULT(ref IInkRecognitionAlternate self, IInkStrokes* Strokes, IInkStrokes** GetStrokesFromStrokeRanges) GetStrokesFromStrokeRanges;
+				public new function HRESULT(ref IInkRecognitionAlternate self, out int32 selectionStart, out int32 selectionLength, IInkStrokes** GetStrokesFromTextRange) GetStrokesFromTextRange;
+				public new function HRESULT(ref IInkRecognitionAlternate self, IInkStrokes* Strokes, out int32 selectionStart, out int32 selectionLength) GetTextRangeFromStrokes;
+				public new function HRESULT(ref IInkRecognitionAlternate self, BSTR PropertyType, IInkRecognitionAlternates** AlternatesWithConstantPropertyValues) AlternatesWithConstantPropertyValues;
+				public new function HRESULT(ref IInkRecognitionAlternate self, BSTR PropertyType, out VARIANT PropertyValue) GetPropertyValue;
 			}
 		}
 		[CRepr]
@@ -4170,29 +4170,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get__NewEnum(IUnknown** _NewEnum) mut
 			{
-				return VT.get__NewEnum(&this, _NewEnum);
+				return VT.get__NewEnum(ref this, _NewEnum);
 			}
 			public HRESULT get_Strokes(IInkStrokes** Strokes) mut
 			{
-				return VT.get_Strokes(&this, Strokes);
+				return VT.get_Strokes(ref this, Strokes);
 			}
 			public HRESULT Item(int32 Index, IInkRecognitionAlternate** InkRecoAlternate) mut
 			{
-				return VT.Item(&this, Index, InkRecoAlternate);
+				return VT.Item(ref this, Index, InkRecoAlternate);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRecognitionAlternates *self, int32* Count) get_Count;
-				public new function HRESULT(IInkRecognitionAlternates *self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(IInkRecognitionAlternates *self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(IInkRecognitionAlternates *self, int32 Index, IInkRecognitionAlternate** InkRecoAlternate) Item;
+				public new function HRESULT(ref IInkRecognitionAlternates self, out int32 Count) get_Count;
+				public new function HRESULT(ref IInkRecognitionAlternates self, IUnknown** _NewEnum) get__NewEnum;
+				public new function HRESULT(ref IInkRecognitionAlternates self, IInkStrokes** Strokes) get_Strokes;
+				public new function HRESULT(ref IInkRecognitionAlternates self, int32 Index, IInkRecognitionAlternate** InkRecoAlternate) Item;
 			}
 		}
 		[CRepr]
@@ -4204,67 +4204,67 @@ namespace Win32
 			
 			public HRESULT get_WritingBox(IInkRectangle** Rectangle) mut
 			{
-				return VT.get_WritingBox(&this, Rectangle);
+				return VT.get_WritingBox(ref this, Rectangle);
 			}
 			public HRESULT put_WritingBox(IInkRectangle* Rectangle) mut
 			{
-				return VT.put_WritingBox(&this, Rectangle);
+				return VT.put_WritingBox(ref this, Rectangle);
 			}
 			public HRESULT get_DrawnBox(IInkRectangle** Rectangle) mut
 			{
-				return VT.get_DrawnBox(&this, Rectangle);
+				return VT.get_DrawnBox(ref this, Rectangle);
 			}
 			public HRESULT put_DrawnBox(IInkRectangle* Rectangle) mut
 			{
-				return VT.put_DrawnBox(&this, Rectangle);
+				return VT.put_DrawnBox(ref this, Rectangle);
 			}
-			public HRESULT get_Rows(int32* Units) mut
+			public HRESULT get_Rows(out int32 Units) mut
 			{
-				return VT.get_Rows(&this, Units);
+				return VT.get_Rows(ref this, out Units);
 			}
 			public HRESULT put_Rows(int32 Units) mut
 			{
-				return VT.put_Rows(&this, Units);
+				return VT.put_Rows(ref this, Units);
 			}
-			public HRESULT get_Columns(int32* Units) mut
+			public HRESULT get_Columns(out int32 Units) mut
 			{
-				return VT.get_Columns(&this, Units);
+				return VT.get_Columns(ref this, out Units);
 			}
 			public HRESULT put_Columns(int32 Units) mut
 			{
-				return VT.put_Columns(&this, Units);
+				return VT.put_Columns(ref this, Units);
 			}
-			public HRESULT get_Midline(int32* Units) mut
+			public HRESULT get_Midline(out int32 Units) mut
 			{
-				return VT.get_Midline(&this, Units);
+				return VT.get_Midline(ref this, out Units);
 			}
 			public HRESULT put_Midline(int32 Units) mut
 			{
-				return VT.put_Midline(&this, Units);
+				return VT.put_Midline(ref this, Units);
 			}
-			public HRESULT get_GuideData(InkRecoGuide* pRecoGuide) mut
+			public HRESULT get_GuideData(out InkRecoGuide pRecoGuide) mut
 			{
-				return VT.get_GuideData(&this, pRecoGuide);
+				return VT.get_GuideData(ref this, out pRecoGuide);
 			}
 			public HRESULT put_GuideData(InkRecoGuide recoGuide) mut
 			{
-				return VT.put_GuideData(&this, recoGuide);
+				return VT.put_GuideData(ref this, recoGuide);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkRecognizerGuide *self, IInkRectangle** Rectangle) get_WritingBox;
-				public new function HRESULT(IInkRecognizerGuide *self, IInkRectangle* Rectangle) put_WritingBox;
-				public new function HRESULT(IInkRecognizerGuide *self, IInkRectangle** Rectangle) get_DrawnBox;
-				public new function HRESULT(IInkRecognizerGuide *self, IInkRectangle* Rectangle) put_DrawnBox;
-				public new function HRESULT(IInkRecognizerGuide *self, int32* Units) get_Rows;
-				public new function HRESULT(IInkRecognizerGuide *self, int32 Units) put_Rows;
-				public new function HRESULT(IInkRecognizerGuide *self, int32* Units) get_Columns;
-				public new function HRESULT(IInkRecognizerGuide *self, int32 Units) put_Columns;
-				public new function HRESULT(IInkRecognizerGuide *self, int32* Units) get_Midline;
-				public new function HRESULT(IInkRecognizerGuide *self, int32 Units) put_Midline;
-				public new function HRESULT(IInkRecognizerGuide *self, InkRecoGuide* pRecoGuide) get_GuideData;
-				public new function HRESULT(IInkRecognizerGuide *self, InkRecoGuide recoGuide) put_GuideData;
+				public new function HRESULT(ref IInkRecognizerGuide self, IInkRectangle** Rectangle) get_WritingBox;
+				public new function HRESULT(ref IInkRecognizerGuide self, IInkRectangle* Rectangle) put_WritingBox;
+				public new function HRESULT(ref IInkRecognizerGuide self, IInkRectangle** Rectangle) get_DrawnBox;
+				public new function HRESULT(ref IInkRecognizerGuide self, IInkRectangle* Rectangle) put_DrawnBox;
+				public new function HRESULT(ref IInkRecognizerGuide self, out int32 Units) get_Rows;
+				public new function HRESULT(ref IInkRecognizerGuide self, int32 Units) put_Rows;
+				public new function HRESULT(ref IInkRecognizerGuide self, out int32 Units) get_Columns;
+				public new function HRESULT(ref IInkRecognizerGuide self, int32 Units) put_Columns;
+				public new function HRESULT(ref IInkRecognizerGuide self, out int32 Units) get_Midline;
+				public new function HRESULT(ref IInkRecognizerGuide self, int32 Units) put_Midline;
+				public new function HRESULT(ref IInkRecognizerGuide self, out InkRecoGuide pRecoGuide) get_GuideData;
+				public new function HRESULT(ref IInkRecognizerGuide self, InkRecoGuide recoGuide) put_GuideData;
 			}
 		}
 		[CRepr]
@@ -4276,22 +4276,22 @@ namespace Win32
 			
 			public HRESULT AddWord(BSTR NewWord) mut
 			{
-				return VT.AddWord(&this, NewWord);
+				return VT.AddWord(ref this, NewWord);
 			}
 			public HRESULT RemoveWord(BSTR RemoveWord) mut
 			{
-				return VT.RemoveWord(&this, RemoveWord);
+				return VT.RemoveWord(ref this, RemoveWord);
 			}
 			public HRESULT Merge(IInkWordList* MergeWordList) mut
 			{
-				return VT.Merge(&this, MergeWordList);
+				return VT.Merge(ref this, MergeWordList);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkWordList *self, BSTR NewWord) AddWord;
-				public new function HRESULT(IInkWordList *self, BSTR RemoveWord) RemoveWord;
-				public new function HRESULT(IInkWordList *self, IInkWordList* MergeWordList) Merge;
+				public new function HRESULT(ref IInkWordList self, BSTR NewWord) AddWord;
+				public new function HRESULT(ref IInkWordList self, BSTR RemoveWord) RemoveWord;
+				public new function HRESULT(ref IInkWordList self, IInkWordList* MergeWordList) Merge;
 			}
 		}
 		[CRepr]
@@ -4303,12 +4303,12 @@ namespace Win32
 			
 			public HRESULT AddWords(BSTR NewWords) mut
 			{
-				return VT.AddWords(&this, NewWords);
+				return VT.AddWords(ref this, NewWords);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkWordList2 *self, BSTR NewWords) AddWords;
+				public new function HRESULT(ref IInkWordList2 self, BSTR NewWords) AddWords;
 			}
 		}
 		[CRepr]
@@ -4330,39 +4330,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetFormat(INKMETRIC* pim) mut
+			public HRESULT SetFormat(ref INKMETRIC pim) mut
 			{
-				return VT.SetFormat(&this, pim);
+				return VT.SetFormat(ref this, ref pim);
 			}
-			public HRESULT GetFormat(INKMETRIC* pim) mut
+			public HRESULT GetFormat(ref INKMETRIC pim) mut
 			{
-				return VT.GetFormat(&this, pim);
+				return VT.GetFormat(ref this, ref pim);
 			}
-			public HRESULT GetInkExtent(INKMETRIC* pim, uint32* pnWidth) mut
+			public HRESULT GetInkExtent(ref INKMETRIC pim, ref uint32 pnWidth) mut
 			{
-				return VT.GetInkExtent(&this, pim, pnWidth);
+				return VT.GetInkExtent(ref this, ref pim, ref pnWidth);
 			}
-			public HRESULT GetCandidate(uint32 nCandidateNum, PWSTR pwcRecogWord, uint32* pcwcRecogWord, uint32 dwFlags) mut
+			public HRESULT GetCandidate(uint32 nCandidateNum, PWSTR pwcRecogWord, ref uint32 pcwcRecogWord, uint32 dwFlags) mut
 			{
-				return VT.GetCandidate(&this, nCandidateNum, pwcRecogWord, pcwcRecogWord, dwFlags);
+				return VT.GetCandidate(ref this, nCandidateNum, pwcRecogWord, ref pcwcRecogWord, dwFlags);
 			}
 			public HRESULT SetCandidate(uint32 nCandidateNum, PWSTR strRecogWord) mut
 			{
-				return VT.SetCandidate(&this, nCandidateNum, strRecogWord);
+				return VT.SetCandidate(ref this, nCandidateNum, strRecogWord);
 			}
 			public HRESULT Recognize() mut
 			{
-				return VT.Recognize(&this);
+				return VT.Recognize(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInkLineInfo *self, INKMETRIC* pim) SetFormat;
-				public new function HRESULT(IInkLineInfo *self, INKMETRIC* pim) GetFormat;
-				public new function HRESULT(IInkLineInfo *self, INKMETRIC* pim, uint32* pnWidth) GetInkExtent;
-				public new function HRESULT(IInkLineInfo *self, uint32 nCandidateNum, PWSTR pwcRecogWord, uint32* pcwcRecogWord, uint32 dwFlags) GetCandidate;
-				public new function HRESULT(IInkLineInfo *self, uint32 nCandidateNum, PWSTR strRecogWord) SetCandidate;
-				public new function HRESULT(IInkLineInfo *self) Recognize;
+				public new function HRESULT(ref IInkLineInfo self, ref INKMETRIC pim) SetFormat;
+				public new function HRESULT(ref IInkLineInfo self, ref INKMETRIC pim) GetFormat;
+				public new function HRESULT(ref IInkLineInfo self, ref INKMETRIC pim, ref uint32 pnWidth) GetInkExtent;
+				public new function HRESULT(ref IInkLineInfo self, uint32 nCandidateNum, PWSTR pwcRecogWord, ref uint32 pcwcRecogWord, uint32 dwFlags) GetCandidate;
+				public new function HRESULT(ref IInkLineInfo self, uint32 nCandidateNum, PWSTR strRecogWord) SetCandidate;
+				public new function HRESULT(ref IInkLineInfo self) Recognize;
 			}
 		}
 		[CRepr]
@@ -4386,42 +4386,42 @@ namespace Win32
 			
 			public HRESULT get_Strokes(IInkStrokes** Strokes) mut
 			{
-				return VT.get_Strokes(&this, Strokes);
+				return VT.get_Strokes(ref this, Strokes);
 			}
 			public HRESULT putref_Strokes(IInkStrokes* Strokes) mut
 			{
-				return VT.putref_Strokes(&this, Strokes);
+				return VT.putref_Strokes(ref this, Strokes);
 			}
 			public HRESULT get_RecognizerContext(IInkRecognizerContext** RecognizerContext) mut
 			{
-				return VT.get_RecognizerContext(&this, RecognizerContext);
+				return VT.get_RecognizerContext(ref this, RecognizerContext);
 			}
 			public HRESULT putref_RecognizerContext(IInkRecognizerContext* RecognizerContext) mut
 			{
-				return VT.putref_RecognizerContext(&this, RecognizerContext);
+				return VT.putref_RecognizerContext(ref this, RecognizerContext);
 			}
-			public HRESULT get_LineHeight(int32* LineHeight) mut
+			public HRESULT get_LineHeight(out int32 LineHeight) mut
 			{
-				return VT.get_LineHeight(&this, LineHeight);
+				return VT.get_LineHeight(ref this, out LineHeight);
 			}
 			public HRESULT put_LineHeight(int32 LineHeight) mut
 			{
-				return VT.put_LineHeight(&this, LineHeight);
+				return VT.put_LineHeight(ref this, LineHeight);
 			}
 			public HRESULT Divide(IInkDivisionResult** InkDivisionResult) mut
 			{
-				return VT.Divide(&this, InkDivisionResult);
+				return VT.Divide(ref this, InkDivisionResult);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkDivider *self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(IInkDivider *self, IInkStrokes* Strokes) putref_Strokes;
-				public new function HRESULT(IInkDivider *self, IInkRecognizerContext** RecognizerContext) get_RecognizerContext;
-				public new function HRESULT(IInkDivider *self, IInkRecognizerContext* RecognizerContext) putref_RecognizerContext;
-				public new function HRESULT(IInkDivider *self, int32* LineHeight) get_LineHeight;
-				public new function HRESULT(IInkDivider *self, int32 LineHeight) put_LineHeight;
-				public new function HRESULT(IInkDivider *self, IInkDivisionResult** InkDivisionResult) Divide;
+				public new function HRESULT(ref IInkDivider self, IInkStrokes** Strokes) get_Strokes;
+				public new function HRESULT(ref IInkDivider self, IInkStrokes* Strokes) putref_Strokes;
+				public new function HRESULT(ref IInkDivider self, IInkRecognizerContext** RecognizerContext) get_RecognizerContext;
+				public new function HRESULT(ref IInkDivider self, IInkRecognizerContext* RecognizerContext) putref_RecognizerContext;
+				public new function HRESULT(ref IInkDivider self, out int32 LineHeight) get_LineHeight;
+				public new function HRESULT(ref IInkDivider self, int32 LineHeight) put_LineHeight;
+				public new function HRESULT(ref IInkDivider self, IInkDivisionResult** InkDivisionResult) Divide;
 			}
 		}
 		[CRepr]
@@ -4433,17 +4433,17 @@ namespace Win32
 			
 			public HRESULT get_Strokes(IInkStrokes** Strokes) mut
 			{
-				return VT.get_Strokes(&this, Strokes);
+				return VT.get_Strokes(ref this, Strokes);
 			}
 			public HRESULT ResultByType(InkDivisionType divisionType, IInkDivisionUnits** InkDivisionUnits) mut
 			{
-				return VT.ResultByType(&this, divisionType, InkDivisionUnits);
+				return VT.ResultByType(ref this, divisionType, InkDivisionUnits);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkDivisionResult *self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(IInkDivisionResult *self, InkDivisionType divisionType, IInkDivisionUnits** InkDivisionUnits) ResultByType;
+				public new function HRESULT(ref IInkDivisionResult self, IInkStrokes** Strokes) get_Strokes;
+				public new function HRESULT(ref IInkDivisionResult self, InkDivisionType divisionType, IInkDivisionUnits** InkDivisionUnits) ResultByType;
 			}
 		}
 		[CRepr]
@@ -4455,27 +4455,27 @@ namespace Win32
 			
 			public HRESULT get_Strokes(IInkStrokes** Strokes) mut
 			{
-				return VT.get_Strokes(&this, Strokes);
+				return VT.get_Strokes(ref this, Strokes);
 			}
-			public HRESULT get_DivisionType(InkDivisionType* divisionType) mut
+			public HRESULT get_DivisionType(out InkDivisionType divisionType) mut
 			{
-				return VT.get_DivisionType(&this, divisionType);
+				return VT.get_DivisionType(ref this, out divisionType);
 			}
 			public HRESULT get_RecognizedString(BSTR* RecoString) mut
 			{
-				return VT.get_RecognizedString(&this, RecoString);
+				return VT.get_RecognizedString(ref this, RecoString);
 			}
 			public HRESULT get_RotationTransform(IInkTransform** RotationTransform) mut
 			{
-				return VT.get_RotationTransform(&this, RotationTransform);
+				return VT.get_RotationTransform(ref this, RotationTransform);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkDivisionUnit *self, IInkStrokes** Strokes) get_Strokes;
-				public new function HRESULT(IInkDivisionUnit *self, InkDivisionType* divisionType) get_DivisionType;
-				public new function HRESULT(IInkDivisionUnit *self, BSTR* RecoString) get_RecognizedString;
-				public new function HRESULT(IInkDivisionUnit *self, IInkTransform** RotationTransform) get_RotationTransform;
+				public new function HRESULT(ref IInkDivisionUnit self, IInkStrokes** Strokes) get_Strokes;
+				public new function HRESULT(ref IInkDivisionUnit self, out InkDivisionType divisionType) get_DivisionType;
+				public new function HRESULT(ref IInkDivisionUnit self, BSTR* RecoString) get_RecognizedString;
+				public new function HRESULT(ref IInkDivisionUnit self, IInkTransform** RotationTransform) get_RotationTransform;
 			}
 		}
 		[CRepr]
@@ -4485,24 +4485,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get__NewEnum(IUnknown** _NewEnum) mut
 			{
-				return VT.get__NewEnum(&this, _NewEnum);
+				return VT.get__NewEnum(ref this, _NewEnum);
 			}
 			public HRESULT Item(int32 Index, IInkDivisionUnit** InkDivisionUnit) mut
 			{
-				return VT.Item(&this, Index, InkDivisionUnit);
+				return VT.Item(ref this, Index, InkDivisionUnit);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkDivisionUnits *self, int32* Count) get_Count;
-				public new function HRESULT(IInkDivisionUnits *self, IUnknown** _NewEnum) get__NewEnum;
-				public new function HRESULT(IInkDivisionUnits *self, int32 Index, IInkDivisionUnit** InkDivisionUnit) Item;
+				public new function HRESULT(ref IInkDivisionUnits self, out int32 Count) get_Count;
+				public new function HRESULT(ref IInkDivisionUnits self, IUnknown** _NewEnum) get__NewEnum;
+				public new function HRESULT(ref IInkDivisionUnits self, int32 Index, IInkDivisionUnit** InkDivisionUnit) Item;
 			}
 		}
 		[CRepr]
@@ -4512,134 +4512,134 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Busy(int16* Busy) mut
+			public HRESULT get_Busy(out int16 Busy) mut
 			{
-				return VT.get_Busy(&this, Busy);
+				return VT.get_Busy(ref this, out Busy);
 			}
 			public HRESULT get_Factoid(BSTR* Factoid) mut
 			{
-				return VT.get_Factoid(&this, Factoid);
+				return VT.get_Factoid(ref this, Factoid);
 			}
 			public HRESULT put_Factoid(BSTR Factoid) mut
 			{
-				return VT.put_Factoid(&this, Factoid);
+				return VT.put_Factoid(ref this, Factoid);
 			}
-			public HRESULT get_AttachedEditWindow(int32* AttachedEditWindow) mut
+			public HRESULT get_AttachedEditWindow(out int32 AttachedEditWindow) mut
 			{
-				return VT.get_AttachedEditWindow(&this, AttachedEditWindow);
+				return VT.get_AttachedEditWindow(ref this, out AttachedEditWindow);
 			}
 			public HRESULT put_AttachedEditWindow(int32 AttachedEditWindow) mut
 			{
-				return VT.put_AttachedEditWindow(&this, AttachedEditWindow);
+				return VT.put_AttachedEditWindow(ref this, AttachedEditWindow);
 			}
-			public HRESULT get_CurrentPanel(PanelType* CurrentPanel) mut
+			public HRESULT get_CurrentPanel(out PanelType CurrentPanel) mut
 			{
-				return VT.get_CurrentPanel(&this, CurrentPanel);
+				return VT.get_CurrentPanel(ref this, out CurrentPanel);
 			}
 			public HRESULT put_CurrentPanel(PanelType CurrentPanel) mut
 			{
-				return VT.put_CurrentPanel(&this, CurrentPanel);
+				return VT.put_CurrentPanel(ref this, CurrentPanel);
 			}
-			public HRESULT get_DefaultPanel(PanelType* pDefaultPanel) mut
+			public HRESULT get_DefaultPanel(out PanelType pDefaultPanel) mut
 			{
-				return VT.get_DefaultPanel(&this, pDefaultPanel);
+				return VT.get_DefaultPanel(ref this, out pDefaultPanel);
 			}
 			public HRESULT put_DefaultPanel(PanelType DefaultPanel) mut
 			{
-				return VT.put_DefaultPanel(&this, DefaultPanel);
+				return VT.put_DefaultPanel(ref this, DefaultPanel);
 			}
-			public HRESULT get_Visible(int16* Visible) mut
+			public HRESULT get_Visible(out int16 Visible) mut
 			{
-				return VT.get_Visible(&this, Visible);
+				return VT.get_Visible(ref this, out Visible);
 			}
 			public HRESULT put_Visible(int16 Visible) mut
 			{
-				return VT.put_Visible(&this, Visible);
+				return VT.put_Visible(ref this, Visible);
 			}
-			public HRESULT get_Top(int32* Top) mut
+			public HRESULT get_Top(out int32 Top) mut
 			{
-				return VT.get_Top(&this, Top);
+				return VT.get_Top(ref this, out Top);
 			}
-			public HRESULT get_Left(int32* Left) mut
+			public HRESULT get_Left(out int32 Left) mut
 			{
-				return VT.get_Left(&this, Left);
+				return VT.get_Left(ref this, out Left);
 			}
-			public HRESULT get_Width(int32* Width) mut
+			public HRESULT get_Width(out int32 Width) mut
 			{
-				return VT.get_Width(&this, Width);
+				return VT.get_Width(ref this, out Width);
 			}
-			public HRESULT get_Height(int32* Height) mut
+			public HRESULT get_Height(out int32 Height) mut
 			{
-				return VT.get_Height(&this, Height);
+				return VT.get_Height(ref this, out Height);
 			}
-			public HRESULT get_VerticalOffset(int32* VerticalOffset) mut
+			public HRESULT get_VerticalOffset(out int32 VerticalOffset) mut
 			{
-				return VT.get_VerticalOffset(&this, VerticalOffset);
+				return VT.get_VerticalOffset(ref this, out VerticalOffset);
 			}
 			public HRESULT put_VerticalOffset(int32 VerticalOffset) mut
 			{
-				return VT.put_VerticalOffset(&this, VerticalOffset);
+				return VT.put_VerticalOffset(ref this, VerticalOffset);
 			}
-			public HRESULT get_HorizontalOffset(int32* HorizontalOffset) mut
+			public HRESULT get_HorizontalOffset(out int32 HorizontalOffset) mut
 			{
-				return VT.get_HorizontalOffset(&this, HorizontalOffset);
+				return VT.get_HorizontalOffset(ref this, out HorizontalOffset);
 			}
 			public HRESULT put_HorizontalOffset(int32 HorizontalOffset) mut
 			{
-				return VT.put_HorizontalOffset(&this, HorizontalOffset);
+				return VT.put_HorizontalOffset(ref this, HorizontalOffset);
 			}
-			public HRESULT get_AutoShow(int16* pAutoShow) mut
+			public HRESULT get_AutoShow(out int16 pAutoShow) mut
 			{
-				return VT.get_AutoShow(&this, pAutoShow);
+				return VT.get_AutoShow(ref this, out pAutoShow);
 			}
 			public HRESULT put_AutoShow(int16 AutoShow) mut
 			{
-				return VT.put_AutoShow(&this, AutoShow);
+				return VT.put_AutoShow(ref this, AutoShow);
 			}
 			public HRESULT MoveTo(int32 Left, int32 Top) mut
 			{
-				return VT.MoveTo(&this, Left, Top);
+				return VT.MoveTo(ref this, Left, Top);
 			}
 			public HRESULT CommitPendingInput() mut
 			{
-				return VT.CommitPendingInput(&this);
+				return VT.CommitPendingInput(ref this);
 			}
 			public HRESULT Refresh() mut
 			{
-				return VT.Refresh(&this);
+				return VT.Refresh(ref this);
 			}
 			public HRESULT EnableTsf(int16 Enable) mut
 			{
-				return VT.EnableTsf(&this, Enable);
+				return VT.EnableTsf(ref this, Enable);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPenInputPanel *self, int16* Busy) get_Busy;
-				public new function HRESULT(IPenInputPanel *self, BSTR* Factoid) get_Factoid;
-				public new function HRESULT(IPenInputPanel *self, BSTR Factoid) put_Factoid;
-				public new function HRESULT(IPenInputPanel *self, int32* AttachedEditWindow) get_AttachedEditWindow;
-				public new function HRESULT(IPenInputPanel *self, int32 AttachedEditWindow) put_AttachedEditWindow;
-				public new function HRESULT(IPenInputPanel *self, PanelType* CurrentPanel) get_CurrentPanel;
-				public new function HRESULT(IPenInputPanel *self, PanelType CurrentPanel) put_CurrentPanel;
-				public new function HRESULT(IPenInputPanel *self, PanelType* pDefaultPanel) get_DefaultPanel;
-				public new function HRESULT(IPenInputPanel *self, PanelType DefaultPanel) put_DefaultPanel;
-				public new function HRESULT(IPenInputPanel *self, int16* Visible) get_Visible;
-				public new function HRESULT(IPenInputPanel *self, int16 Visible) put_Visible;
-				public new function HRESULT(IPenInputPanel *self, int32* Top) get_Top;
-				public new function HRESULT(IPenInputPanel *self, int32* Left) get_Left;
-				public new function HRESULT(IPenInputPanel *self, int32* Width) get_Width;
-				public new function HRESULT(IPenInputPanel *self, int32* Height) get_Height;
-				public new function HRESULT(IPenInputPanel *self, int32* VerticalOffset) get_VerticalOffset;
-				public new function HRESULT(IPenInputPanel *self, int32 VerticalOffset) put_VerticalOffset;
-				public new function HRESULT(IPenInputPanel *self, int32* HorizontalOffset) get_HorizontalOffset;
-				public new function HRESULT(IPenInputPanel *self, int32 HorizontalOffset) put_HorizontalOffset;
-				public new function HRESULT(IPenInputPanel *self, int16* pAutoShow) get_AutoShow;
-				public new function HRESULT(IPenInputPanel *self, int16 AutoShow) put_AutoShow;
-				public new function HRESULT(IPenInputPanel *self, int32 Left, int32 Top) MoveTo;
-				public new function HRESULT(IPenInputPanel *self) CommitPendingInput;
-				public new function HRESULT(IPenInputPanel *self) Refresh;
-				public new function HRESULT(IPenInputPanel *self, int16 Enable) EnableTsf;
+				public new function HRESULT(ref IPenInputPanel self, out int16 Busy) get_Busy;
+				public new function HRESULT(ref IPenInputPanel self, BSTR* Factoid) get_Factoid;
+				public new function HRESULT(ref IPenInputPanel self, BSTR Factoid) put_Factoid;
+				public new function HRESULT(ref IPenInputPanel self, out int32 AttachedEditWindow) get_AttachedEditWindow;
+				public new function HRESULT(ref IPenInputPanel self, int32 AttachedEditWindow) put_AttachedEditWindow;
+				public new function HRESULT(ref IPenInputPanel self, out PanelType CurrentPanel) get_CurrentPanel;
+				public new function HRESULT(ref IPenInputPanel self, PanelType CurrentPanel) put_CurrentPanel;
+				public new function HRESULT(ref IPenInputPanel self, out PanelType pDefaultPanel) get_DefaultPanel;
+				public new function HRESULT(ref IPenInputPanel self, PanelType DefaultPanel) put_DefaultPanel;
+				public new function HRESULT(ref IPenInputPanel self, out int16 Visible) get_Visible;
+				public new function HRESULT(ref IPenInputPanel self, int16 Visible) put_Visible;
+				public new function HRESULT(ref IPenInputPanel self, out int32 Top) get_Top;
+				public new function HRESULT(ref IPenInputPanel self, out int32 Left) get_Left;
+				public new function HRESULT(ref IPenInputPanel self, out int32 Width) get_Width;
+				public new function HRESULT(ref IPenInputPanel self, out int32 Height) get_Height;
+				public new function HRESULT(ref IPenInputPanel self, out int32 VerticalOffset) get_VerticalOffset;
+				public new function HRESULT(ref IPenInputPanel self, int32 VerticalOffset) put_VerticalOffset;
+				public new function HRESULT(ref IPenInputPanel self, out int32 HorizontalOffset) get_HorizontalOffset;
+				public new function HRESULT(ref IPenInputPanel self, int32 HorizontalOffset) put_HorizontalOffset;
+				public new function HRESULT(ref IPenInputPanel self, out int16 pAutoShow) get_AutoShow;
+				public new function HRESULT(ref IPenInputPanel self, int16 AutoShow) put_AutoShow;
+				public new function HRESULT(ref IPenInputPanel self, int32 Left, int32 Top) MoveTo;
+				public new function HRESULT(ref IPenInputPanel self) CommitPendingInput;
+				public new function HRESULT(ref IPenInputPanel self) Refresh;
+				public new function HRESULT(ref IPenInputPanel self, int16 Enable) EnableTsf;
 			}
 		}
 		[CRepr]
@@ -4661,19 +4661,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InsertRecognitionResultsArray(SAFEARRAY* psaAlternates, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) mut
+			public HRESULT InsertRecognitionResultsArray(ref SAFEARRAY psaAlternates, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) mut
 			{
-				return VT.InsertRecognitionResultsArray(&this, psaAlternates, locale, fAlternateContainsAutoSpacingInformation);
+				return VT.InsertRecognitionResultsArray(ref this, ref psaAlternates, locale, fAlternateContainsAutoSpacingInformation);
 			}
 			public HRESULT InsertInkRecognitionResult(IInkRecognitionResult* pIInkRecoResult, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) mut
 			{
-				return VT.InsertInkRecognitionResult(&this, pIInkRecoResult, locale, fAlternateContainsAutoSpacingInformation);
+				return VT.InsertInkRecognitionResult(ref this, pIInkRecoResult, locale, fAlternateContainsAutoSpacingInformation);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IHandwrittenTextInsertion *self, SAFEARRAY* psaAlternates, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertRecognitionResultsArray;
-				public new function HRESULT(IHandwrittenTextInsertion *self, IInkRecognitionResult* pIInkRecoResult, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertInkRecognitionResult;
+				public new function HRESULT(ref IHandwrittenTextInsertion self, ref SAFEARRAY psaAlternates, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertRecognitionResultsArray;
+				public new function HRESULT(ref IHandwrittenTextInsertion self, IInkRecognitionResult* pIInkRecoResult, uint32 locale, BOOL fAlternateContainsAutoSpacingInformation) InsertInkRecognitionResult;
 			}
 		}
 		[CRepr]
@@ -4685,67 +4685,67 @@ namespace Win32
 			
 			public HRESULT InPlaceStateChanging(InPlaceState oldInPlaceState, InPlaceState newInPlaceState) mut
 			{
-				return VT.InPlaceStateChanging(&this, oldInPlaceState, newInPlaceState);
+				return VT.InPlaceStateChanging(ref this, oldInPlaceState, newInPlaceState);
 			}
 			public HRESULT InPlaceStateChanged(InPlaceState oldInPlaceState, InPlaceState newInPlaceState) mut
 			{
-				return VT.InPlaceStateChanged(&this, oldInPlaceState, newInPlaceState);
+				return VT.InPlaceStateChanged(ref this, oldInPlaceState, newInPlaceState);
 			}
 			public HRESULT InPlaceSizeChanging(RECT oldBoundingRectangle, RECT newBoundingRectangle) mut
 			{
-				return VT.InPlaceSizeChanging(&this, oldBoundingRectangle, newBoundingRectangle);
+				return VT.InPlaceSizeChanging(ref this, oldBoundingRectangle, newBoundingRectangle);
 			}
 			public HRESULT InPlaceSizeChanged(RECT oldBoundingRectangle, RECT newBoundingRectangle) mut
 			{
-				return VT.InPlaceSizeChanged(&this, oldBoundingRectangle, newBoundingRectangle);
+				return VT.InPlaceSizeChanged(ref this, oldBoundingRectangle, newBoundingRectangle);
 			}
 			public HRESULT InputAreaChanging(PanelInputArea oldInputArea, PanelInputArea newInputArea) mut
 			{
-				return VT.InputAreaChanging(&this, oldInputArea, newInputArea);
+				return VT.InputAreaChanging(ref this, oldInputArea, newInputArea);
 			}
 			public HRESULT InputAreaChanged(PanelInputArea oldInputArea, PanelInputArea newInputArea) mut
 			{
-				return VT.InputAreaChanged(&this, oldInputArea, newInputArea);
+				return VT.InputAreaChanged(ref this, oldInputArea, newInputArea);
 			}
 			public HRESULT CorrectionModeChanging(CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) mut
 			{
-				return VT.CorrectionModeChanging(&this, oldCorrectionMode, newCorrectionMode);
+				return VT.CorrectionModeChanging(ref this, oldCorrectionMode, newCorrectionMode);
 			}
 			public HRESULT CorrectionModeChanged(CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) mut
 			{
-				return VT.CorrectionModeChanged(&this, oldCorrectionMode, newCorrectionMode);
+				return VT.CorrectionModeChanged(ref this, oldCorrectionMode, newCorrectionMode);
 			}
 			public HRESULT InPlaceVisibilityChanging(BOOL oldVisible, BOOL newVisible) mut
 			{
-				return VT.InPlaceVisibilityChanging(&this, oldVisible, newVisible);
+				return VT.InPlaceVisibilityChanging(ref this, oldVisible, newVisible);
 			}
 			public HRESULT InPlaceVisibilityChanged(BOOL oldVisible, BOOL newVisible) mut
 			{
-				return VT.InPlaceVisibilityChanged(&this, oldVisible, newVisible);
+				return VT.InPlaceVisibilityChanged(ref this, oldVisible, newVisible);
 			}
-			public HRESULT TextInserting(SAFEARRAY* Ink) mut
+			public HRESULT TextInserting(ref SAFEARRAY Ink) mut
 			{
-				return VT.TextInserting(&this, Ink);
+				return VT.TextInserting(ref this, ref Ink);
 			}
-			public HRESULT TextInserted(SAFEARRAY* Ink) mut
+			public HRESULT TextInserted(ref SAFEARRAY Ink) mut
 			{
-				return VT.TextInserted(&this, Ink);
+				return VT.TextInserted(ref this, ref Ink);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITextInputPanelEventSink *self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanging;
-				public new function HRESULT(ITextInputPanelEventSink *self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanged;
-				public new function HRESULT(ITextInputPanelEventSink *self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanging;
-				public new function HRESULT(ITextInputPanelEventSink *self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanged;
-				public new function HRESULT(ITextInputPanelEventSink *self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanging;
-				public new function HRESULT(ITextInputPanelEventSink *self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanged;
-				public new function HRESULT(ITextInputPanelEventSink *self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanging;
-				public new function HRESULT(ITextInputPanelEventSink *self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanged;
-				public new function HRESULT(ITextInputPanelEventSink *self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanging;
-				public new function HRESULT(ITextInputPanelEventSink *self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanged;
-				public new function HRESULT(ITextInputPanelEventSink *self, SAFEARRAY* Ink) TextInserting;
-				public new function HRESULT(ITextInputPanelEventSink *self, SAFEARRAY* Ink) TextInserted;
+				public new function HRESULT(ref ITextInputPanelEventSink self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanging;
+				public new function HRESULT(ref ITextInputPanelEventSink self, InPlaceState oldInPlaceState, InPlaceState newInPlaceState) InPlaceStateChanged;
+				public new function HRESULT(ref ITextInputPanelEventSink self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanging;
+				public new function HRESULT(ref ITextInputPanelEventSink self, RECT oldBoundingRectangle, RECT newBoundingRectangle) InPlaceSizeChanged;
+				public new function HRESULT(ref ITextInputPanelEventSink self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanging;
+				public new function HRESULT(ref ITextInputPanelEventSink self, PanelInputArea oldInputArea, PanelInputArea newInputArea) InputAreaChanged;
+				public new function HRESULT(ref ITextInputPanelEventSink self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanging;
+				public new function HRESULT(ref ITextInputPanelEventSink self, CorrectionMode oldCorrectionMode, CorrectionMode newCorrectionMode) CorrectionModeChanged;
+				public new function HRESULT(ref ITextInputPanelEventSink self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanging;
+				public new function HRESULT(ref ITextInputPanelEventSink self, BOOL oldVisible, BOOL newVisible) InPlaceVisibilityChanged;
+				public new function HRESULT(ref ITextInputPanelEventSink self, ref SAFEARRAY Ink) TextInserting;
+				public new function HRESULT(ref ITextInputPanelEventSink self, ref SAFEARRAY Ink) TextInserted;
 			}
 		}
 		[CRepr]
@@ -4757,132 +4757,132 @@ namespace Win32
 			
 			public HRESULT get_AttachedEditWindow(HWND* AttachedEditWindow) mut
 			{
-				return VT.get_AttachedEditWindow(&this, AttachedEditWindow);
+				return VT.get_AttachedEditWindow(ref this, AttachedEditWindow);
 			}
 			public HRESULT put_AttachedEditWindow(HWND AttachedEditWindow) mut
 			{
-				return VT.put_AttachedEditWindow(&this, AttachedEditWindow);
+				return VT.put_AttachedEditWindow(ref this, AttachedEditWindow);
 			}
-			public HRESULT get_CurrentInteractionMode(InteractionMode* CurrentInteractionMode) mut
+			public HRESULT get_CurrentInteractionMode(out InteractionMode CurrentInteractionMode) mut
 			{
-				return VT.get_CurrentInteractionMode(&this, CurrentInteractionMode);
+				return VT.get_CurrentInteractionMode(ref this, out CurrentInteractionMode);
 			}
-			public HRESULT get_DefaultInPlaceState(InPlaceState* State) mut
+			public HRESULT get_DefaultInPlaceState(out InPlaceState State) mut
 			{
-				return VT.get_DefaultInPlaceState(&this, State);
+				return VT.get_DefaultInPlaceState(ref this, out State);
 			}
 			public HRESULT put_DefaultInPlaceState(InPlaceState State) mut
 			{
-				return VT.put_DefaultInPlaceState(&this, State);
+				return VT.put_DefaultInPlaceState(ref this, State);
 			}
-			public HRESULT get_CurrentInPlaceState(InPlaceState* State) mut
+			public HRESULT get_CurrentInPlaceState(out InPlaceState State) mut
 			{
-				return VT.get_CurrentInPlaceState(&this, State);
+				return VT.get_CurrentInPlaceState(ref this, out State);
 			}
-			public HRESULT get_DefaultInputArea(PanelInputArea* Area) mut
+			public HRESULT get_DefaultInputArea(out PanelInputArea Area) mut
 			{
-				return VT.get_DefaultInputArea(&this, Area);
+				return VT.get_DefaultInputArea(ref this, out Area);
 			}
 			public HRESULT put_DefaultInputArea(PanelInputArea Area) mut
 			{
-				return VT.put_DefaultInputArea(&this, Area);
+				return VT.put_DefaultInputArea(ref this, Area);
 			}
-			public HRESULT get_CurrentInputArea(PanelInputArea* Area) mut
+			public HRESULT get_CurrentInputArea(out PanelInputArea Area) mut
 			{
-				return VT.get_CurrentInputArea(&this, Area);
+				return VT.get_CurrentInputArea(ref this, out Area);
 			}
-			public HRESULT get_CurrentCorrectionMode(CorrectionMode* Mode) mut
+			public HRESULT get_CurrentCorrectionMode(out CorrectionMode Mode) mut
 			{
-				return VT.get_CurrentCorrectionMode(&this, Mode);
+				return VT.get_CurrentCorrectionMode(ref this, out Mode);
 			}
-			public HRESULT get_PreferredInPlaceDirection(InPlaceDirection* Direction) mut
+			public HRESULT get_PreferredInPlaceDirection(out InPlaceDirection Direction) mut
 			{
-				return VT.get_PreferredInPlaceDirection(&this, Direction);
+				return VT.get_PreferredInPlaceDirection(ref this, out Direction);
 			}
 			public HRESULT put_PreferredInPlaceDirection(InPlaceDirection Direction) mut
 			{
-				return VT.put_PreferredInPlaceDirection(&this, Direction);
+				return VT.put_PreferredInPlaceDirection(ref this, Direction);
 			}
-			public HRESULT get_ExpandPostInsertionCorrection(BOOL* Expand) mut
+			public HRESULT get_ExpandPostInsertionCorrection(out BOOL Expand) mut
 			{
-				return VT.get_ExpandPostInsertionCorrection(&this, Expand);
+				return VT.get_ExpandPostInsertionCorrection(ref this, out Expand);
 			}
 			public HRESULT put_ExpandPostInsertionCorrection(BOOL Expand) mut
 			{
-				return VT.put_ExpandPostInsertionCorrection(&this, Expand);
+				return VT.put_ExpandPostInsertionCorrection(ref this, Expand);
 			}
-			public HRESULT get_InPlaceVisibleOnFocus(BOOL* Visible) mut
+			public HRESULT get_InPlaceVisibleOnFocus(out BOOL Visible) mut
 			{
-				return VT.get_InPlaceVisibleOnFocus(&this, Visible);
+				return VT.get_InPlaceVisibleOnFocus(ref this, out Visible);
 			}
 			public HRESULT put_InPlaceVisibleOnFocus(BOOL Visible) mut
 			{
-				return VT.put_InPlaceVisibleOnFocus(&this, Visible);
+				return VT.put_InPlaceVisibleOnFocus(ref this, Visible);
 			}
-			public HRESULT get_InPlaceBoundingRectangle(RECT* BoundingRectangle) mut
+			public HRESULT get_InPlaceBoundingRectangle(out RECT BoundingRectangle) mut
 			{
-				return VT.get_InPlaceBoundingRectangle(&this, BoundingRectangle);
+				return VT.get_InPlaceBoundingRectangle(ref this, out BoundingRectangle);
 			}
-			public HRESULT get_PopUpCorrectionHeight(int32* Height) mut
+			public HRESULT get_PopUpCorrectionHeight(out int32 Height) mut
 			{
-				return VT.get_PopUpCorrectionHeight(&this, Height);
+				return VT.get_PopUpCorrectionHeight(ref this, out Height);
 			}
-			public HRESULT get_PopDownCorrectionHeight(int32* Height) mut
+			public HRESULT get_PopDownCorrectionHeight(out int32 Height) mut
 			{
-				return VT.get_PopDownCorrectionHeight(&this, Height);
+				return VT.get_PopDownCorrectionHeight(ref this, out Height);
 			}
 			public HRESULT CommitPendingInput() mut
 			{
-				return VT.CommitPendingInput(&this);
+				return VT.CommitPendingInput(ref this);
 			}
 			public HRESULT SetInPlaceVisibility(BOOL Visible) mut
 			{
-				return VT.SetInPlaceVisibility(&this, Visible);
+				return VT.SetInPlaceVisibility(ref this, Visible);
 			}
 			public HRESULT SetInPlacePosition(int32 xPosition, int32 yPosition, CorrectionPosition position) mut
 			{
-				return VT.SetInPlacePosition(&this, xPosition, yPosition, position);
+				return VT.SetInPlacePosition(ref this, xPosition, yPosition, position);
 			}
 			public HRESULT SetInPlaceHoverTargetPosition(int32 xPosition, int32 yPosition) mut
 			{
-				return VT.SetInPlaceHoverTargetPosition(&this, xPosition, yPosition);
+				return VT.SetInPlaceHoverTargetPosition(ref this, xPosition, yPosition);
 			}
 			public HRESULT Advise(ITextInputPanelEventSink* EventSink, uint32 EventMask) mut
 			{
-				return VT.Advise(&this, EventSink, EventMask);
+				return VT.Advise(ref this, EventSink, EventMask);
 			}
 			public HRESULT Unadvise(ITextInputPanelEventSink* EventSink) mut
 			{
-				return VT.Unadvise(&this, EventSink);
+				return VT.Unadvise(ref this, EventSink);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITextInputPanel *self, HWND* AttachedEditWindow) get_AttachedEditWindow;
-				public new function HRESULT(ITextInputPanel *self, HWND AttachedEditWindow) put_AttachedEditWindow;
-				public new function HRESULT(ITextInputPanel *self, InteractionMode* CurrentInteractionMode) get_CurrentInteractionMode;
-				public new function HRESULT(ITextInputPanel *self, InPlaceState* State) get_DefaultInPlaceState;
-				public new function HRESULT(ITextInputPanel *self, InPlaceState State) put_DefaultInPlaceState;
-				public new function HRESULT(ITextInputPanel *self, InPlaceState* State) get_CurrentInPlaceState;
-				public new function HRESULT(ITextInputPanel *self, PanelInputArea* Area) get_DefaultInputArea;
-				public new function HRESULT(ITextInputPanel *self, PanelInputArea Area) put_DefaultInputArea;
-				public new function HRESULT(ITextInputPanel *self, PanelInputArea* Area) get_CurrentInputArea;
-				public new function HRESULT(ITextInputPanel *self, CorrectionMode* Mode) get_CurrentCorrectionMode;
-				public new function HRESULT(ITextInputPanel *self, InPlaceDirection* Direction) get_PreferredInPlaceDirection;
-				public new function HRESULT(ITextInputPanel *self, InPlaceDirection Direction) put_PreferredInPlaceDirection;
-				public new function HRESULT(ITextInputPanel *self, BOOL* Expand) get_ExpandPostInsertionCorrection;
-				public new function HRESULT(ITextInputPanel *self, BOOL Expand) put_ExpandPostInsertionCorrection;
-				public new function HRESULT(ITextInputPanel *self, BOOL* Visible) get_InPlaceVisibleOnFocus;
-				public new function HRESULT(ITextInputPanel *self, BOOL Visible) put_InPlaceVisibleOnFocus;
-				public new function HRESULT(ITextInputPanel *self, RECT* BoundingRectangle) get_InPlaceBoundingRectangle;
-				public new function HRESULT(ITextInputPanel *self, int32* Height) get_PopUpCorrectionHeight;
-				public new function HRESULT(ITextInputPanel *self, int32* Height) get_PopDownCorrectionHeight;
-				public new function HRESULT(ITextInputPanel *self) CommitPendingInput;
-				public new function HRESULT(ITextInputPanel *self, BOOL Visible) SetInPlaceVisibility;
-				public new function HRESULT(ITextInputPanel *self, int32 xPosition, int32 yPosition, CorrectionPosition position) SetInPlacePosition;
-				public new function HRESULT(ITextInputPanel *self, int32 xPosition, int32 yPosition) SetInPlaceHoverTargetPosition;
-				public new function HRESULT(ITextInputPanel *self, ITextInputPanelEventSink* EventSink, uint32 EventMask) Advise;
-				public new function HRESULT(ITextInputPanel *self, ITextInputPanelEventSink* EventSink) Unadvise;
+				public new function HRESULT(ref ITextInputPanel self, HWND* AttachedEditWindow) get_AttachedEditWindow;
+				public new function HRESULT(ref ITextInputPanel self, HWND AttachedEditWindow) put_AttachedEditWindow;
+				public new function HRESULT(ref ITextInputPanel self, out InteractionMode CurrentInteractionMode) get_CurrentInteractionMode;
+				public new function HRESULT(ref ITextInputPanel self, out InPlaceState State) get_DefaultInPlaceState;
+				public new function HRESULT(ref ITextInputPanel self, InPlaceState State) put_DefaultInPlaceState;
+				public new function HRESULT(ref ITextInputPanel self, out InPlaceState State) get_CurrentInPlaceState;
+				public new function HRESULT(ref ITextInputPanel self, out PanelInputArea Area) get_DefaultInputArea;
+				public new function HRESULT(ref ITextInputPanel self, PanelInputArea Area) put_DefaultInputArea;
+				public new function HRESULT(ref ITextInputPanel self, out PanelInputArea Area) get_CurrentInputArea;
+				public new function HRESULT(ref ITextInputPanel self, out CorrectionMode Mode) get_CurrentCorrectionMode;
+				public new function HRESULT(ref ITextInputPanel self, out InPlaceDirection Direction) get_PreferredInPlaceDirection;
+				public new function HRESULT(ref ITextInputPanel self, InPlaceDirection Direction) put_PreferredInPlaceDirection;
+				public new function HRESULT(ref ITextInputPanel self, out BOOL Expand) get_ExpandPostInsertionCorrection;
+				public new function HRESULT(ref ITextInputPanel self, BOOL Expand) put_ExpandPostInsertionCorrection;
+				public new function HRESULT(ref ITextInputPanel self, out BOOL Visible) get_InPlaceVisibleOnFocus;
+				public new function HRESULT(ref ITextInputPanel self, BOOL Visible) put_InPlaceVisibleOnFocus;
+				public new function HRESULT(ref ITextInputPanel self, out RECT BoundingRectangle) get_InPlaceBoundingRectangle;
+				public new function HRESULT(ref ITextInputPanel self, out int32 Height) get_PopUpCorrectionHeight;
+				public new function HRESULT(ref ITextInputPanel self, out int32 Height) get_PopDownCorrectionHeight;
+				public new function HRESULT(ref ITextInputPanel self) CommitPendingInput;
+				public new function HRESULT(ref ITextInputPanel self, BOOL Visible) SetInPlaceVisibility;
+				public new function HRESULT(ref ITextInputPanel self, int32 xPosition, int32 yPosition, CorrectionPosition position) SetInPlacePosition;
+				public new function HRESULT(ref ITextInputPanel self, int32 xPosition, int32 yPosition) SetInPlaceHoverTargetPosition;
+				public new function HRESULT(ref ITextInputPanel self, ITextInputPanelEventSink* EventSink, uint32 EventMask) Advise;
+				public new function HRESULT(ref ITextInputPanel self, ITextInputPanelEventSink* EventSink) Unadvise;
 			}
 		}
 		[CRepr]
@@ -4892,29 +4892,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AttachedEditWindow32(int32* AttachedEditWindow) mut
+			public HRESULT get_AttachedEditWindow32(out int32 AttachedEditWindow) mut
 			{
-				return VT.get_AttachedEditWindow32(&this, AttachedEditWindow);
+				return VT.get_AttachedEditWindow32(ref this, out AttachedEditWindow);
 			}
 			public HRESULT put_AttachedEditWindow32(int32 AttachedEditWindow) mut
 			{
-				return VT.put_AttachedEditWindow32(&this, AttachedEditWindow);
+				return VT.put_AttachedEditWindow32(ref this, AttachedEditWindow);
 			}
-			public HRESULT get_AttachedEditWindow64(int64* AttachedEditWindow) mut
+			public HRESULT get_AttachedEditWindow64(out int64 AttachedEditWindow) mut
 			{
-				return VT.get_AttachedEditWindow64(&this, AttachedEditWindow);
+				return VT.get_AttachedEditWindow64(ref this, out AttachedEditWindow);
 			}
 			public HRESULT put_AttachedEditWindow64(int64 AttachedEditWindow) mut
 			{
-				return VT.put_AttachedEditWindow64(&this, AttachedEditWindow);
+				return VT.put_AttachedEditWindow64(ref this, AttachedEditWindow);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInputPanelWindowHandle *self, int32* AttachedEditWindow) get_AttachedEditWindow32;
-				public new function HRESULT(IInputPanelWindowHandle *self, int32 AttachedEditWindow) put_AttachedEditWindow32;
-				public new function HRESULT(IInputPanelWindowHandle *self, int64* AttachedEditWindow) get_AttachedEditWindow64;
-				public new function HRESULT(IInputPanelWindowHandle *self, int64 AttachedEditWindow) put_AttachedEditWindow64;
+				public new function HRESULT(ref IInputPanelWindowHandle self, out int32 AttachedEditWindow) get_AttachedEditWindow32;
+				public new function HRESULT(ref IInputPanelWindowHandle self, int32 AttachedEditWindow) put_AttachedEditWindow32;
+				public new function HRESULT(ref IInputPanelWindowHandle self, out int64 AttachedEditWindow) get_AttachedEditWindow64;
+				public new function HRESULT(ref IInputPanelWindowHandle self, int64 AttachedEditWindow) put_AttachedEditWindow64;
 			}
 		}
 		[CRepr]
@@ -4924,14 +4924,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsTipRunning(BOOL* pfRunning) mut
+			public HRESULT IsTipRunning(out BOOL pfRunning) mut
 			{
-				return VT.IsTipRunning(&this, pfRunning);
+				return VT.IsTipRunning(ref this, out pfRunning);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITextInputPanelRunInfo *self, BOOL* pfRunning) IsTipRunning;
+				public new function HRESULT(ref ITextInputPanelRunInfo self, out BOOL pfRunning) IsTipRunning;
 			}
 		}
 		[CRepr]
@@ -4941,394 +4941,394 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Status(InkEditStatus* pStatus) mut
+			public HRESULT get_Status(out InkEditStatus pStatus) mut
 			{
-				return VT.get_Status(&this, pStatus);
+				return VT.get_Status(ref this, out pStatus);
 			}
-			public HRESULT get_UseMouseForInput(int16* pVal) mut
+			public HRESULT get_UseMouseForInput(out int16 pVal) mut
 			{
-				return VT.get_UseMouseForInput(&this, pVal);
+				return VT.get_UseMouseForInput(ref this, out pVal);
 			}
 			public HRESULT put_UseMouseForInput(int16 newVal) mut
 			{
-				return VT.put_UseMouseForInput(&this, newVal);
+				return VT.put_UseMouseForInput(ref this, newVal);
 			}
-			public HRESULT get_InkMode(InkMode* pVal) mut
+			public HRESULT get_InkMode(out InkMode pVal) mut
 			{
-				return VT.get_InkMode(&this, pVal);
+				return VT.get_InkMode(ref this, out pVal);
 			}
 			public HRESULT put_InkMode(InkMode newVal) mut
 			{
-				return VT.put_InkMode(&this, newVal);
+				return VT.put_InkMode(ref this, newVal);
 			}
-			public HRESULT get_InkInsertMode(InkInsertMode* pVal) mut
+			public HRESULT get_InkInsertMode(out InkInsertMode pVal) mut
 			{
-				return VT.get_InkInsertMode(&this, pVal);
+				return VT.get_InkInsertMode(ref this, out pVal);
 			}
 			public HRESULT put_InkInsertMode(InkInsertMode newVal) mut
 			{
-				return VT.put_InkInsertMode(&this, newVal);
+				return VT.put_InkInsertMode(ref this, newVal);
 			}
 			public HRESULT get_DrawingAttributes(IInkDrawingAttributes** pVal) mut
 			{
-				return VT.get_DrawingAttributes(&this, pVal);
+				return VT.get_DrawingAttributes(ref this, pVal);
 			}
 			public HRESULT putref_DrawingAttributes(IInkDrawingAttributes* newVal) mut
 			{
-				return VT.putref_DrawingAttributes(&this, newVal);
+				return VT.putref_DrawingAttributes(ref this, newVal);
 			}
-			public HRESULT get_RecognitionTimeout(int32* pVal) mut
+			public HRESULT get_RecognitionTimeout(out int32 pVal) mut
 			{
-				return VT.get_RecognitionTimeout(&this, pVal);
+				return VT.get_RecognitionTimeout(ref this, out pVal);
 			}
 			public HRESULT put_RecognitionTimeout(int32 newVal) mut
 			{
-				return VT.put_RecognitionTimeout(&this, newVal);
+				return VT.put_RecognitionTimeout(ref this, newVal);
 			}
 			public HRESULT get_Recognizer(IInkRecognizer** pVal) mut
 			{
-				return VT.get_Recognizer(&this, pVal);
+				return VT.get_Recognizer(ref this, pVal);
 			}
 			public HRESULT putref_Recognizer(IInkRecognizer* newVal) mut
 			{
-				return VT.putref_Recognizer(&this, newVal);
+				return VT.putref_Recognizer(ref this, newVal);
 			}
 			public HRESULT get_Factoid(BSTR* pVal) mut
 			{
-				return VT.get_Factoid(&this, pVal);
+				return VT.get_Factoid(ref this, pVal);
 			}
 			public HRESULT put_Factoid(BSTR newVal) mut
 			{
-				return VT.put_Factoid(&this, newVal);
+				return VT.put_Factoid(ref this, newVal);
 			}
-			public HRESULT get_SelInks(VARIANT* pSelInk) mut
+			public HRESULT get_SelInks(out VARIANT pSelInk) mut
 			{
-				return VT.get_SelInks(&this, pSelInk);
+				return VT.get_SelInks(ref this, out pSelInk);
 			}
 			public HRESULT put_SelInks(VARIANT SelInk) mut
 			{
-				return VT.put_SelInks(&this, SelInk);
+				return VT.put_SelInks(ref this, SelInk);
 			}
-			public HRESULT get_SelInksDisplayMode(InkDisplayMode* pInkDisplayMode) mut
+			public HRESULT get_SelInksDisplayMode(out InkDisplayMode pInkDisplayMode) mut
 			{
-				return VT.get_SelInksDisplayMode(&this, pInkDisplayMode);
+				return VT.get_SelInksDisplayMode(ref this, out pInkDisplayMode);
 			}
 			public HRESULT put_SelInksDisplayMode(InkDisplayMode InkDisplayMode) mut
 			{
-				return VT.put_SelInksDisplayMode(&this, InkDisplayMode);
+				return VT.put_SelInksDisplayMode(ref this, InkDisplayMode);
 			}
 			public HRESULT Recognize() mut
 			{
-				return VT.Recognize(&this);
+				return VT.Recognize(ref this);
 			}
-			public HRESULT GetGestureStatus(InkApplicationGesture Gesture, int16* pListen) mut
+			public HRESULT GetGestureStatus(InkApplicationGesture Gesture, out int16 pListen) mut
 			{
-				return VT.GetGestureStatus(&this, Gesture, pListen);
+				return VT.GetGestureStatus(ref this, Gesture, out pListen);
 			}
 			public HRESULT SetGestureStatus(InkApplicationGesture Gesture, int16 Listen) mut
 			{
-				return VT.SetGestureStatus(&this, Gesture, Listen);
+				return VT.SetGestureStatus(ref this, Gesture, Listen);
 			}
 			public HRESULT put_BackColor(uint32 clr) mut
 			{
-				return VT.put_BackColor(&this, clr);
+				return VT.put_BackColor(ref this, clr);
 			}
-			public HRESULT get_BackColor(uint32* pclr) mut
+			public HRESULT get_BackColor(out uint32 pclr) mut
 			{
-				return VT.get_BackColor(&this, pclr);
+				return VT.get_BackColor(ref this, out pclr);
 			}
-			public HRESULT get_Appearance(AppearanceConstants* pAppearance) mut
+			public HRESULT get_Appearance(out AppearanceConstants pAppearance) mut
 			{
-				return VT.get_Appearance(&this, pAppearance);
+				return VT.get_Appearance(ref this, out pAppearance);
 			}
 			public HRESULT put_Appearance(AppearanceConstants pAppearance) mut
 			{
-				return VT.put_Appearance(&this, pAppearance);
+				return VT.put_Appearance(ref this, pAppearance);
 			}
-			public HRESULT get_BorderStyle(BorderStyleConstants* pBorderStyle) mut
+			public HRESULT get_BorderStyle(out BorderStyleConstants pBorderStyle) mut
 			{
-				return VT.get_BorderStyle(&this, pBorderStyle);
+				return VT.get_BorderStyle(ref this, out pBorderStyle);
 			}
 			public HRESULT put_BorderStyle(BorderStyleConstants pBorderStyle) mut
 			{
-				return VT.put_BorderStyle(&this, pBorderStyle);
+				return VT.put_BorderStyle(ref this, pBorderStyle);
 			}
-			public HRESULT get_Hwnd(uint32* pohHwnd) mut
+			public HRESULT get_Hwnd(out uint32 pohHwnd) mut
 			{
-				return VT.get_Hwnd(&this, pohHwnd);
+				return VT.get_Hwnd(ref this, out pohHwnd);
 			}
 			public HRESULT get_Font(IFontDisp** ppFont) mut
 			{
-				return VT.get_Font(&this, ppFont);
+				return VT.get_Font(ref this, ppFont);
 			}
 			public HRESULT putref_Font(IFontDisp* ppFont) mut
 			{
-				return VT.putref_Font(&this, ppFont);
+				return VT.putref_Font(ref this, ppFont);
 			}
 			public HRESULT get_Text(BSTR* pbstrText) mut
 			{
-				return VT.get_Text(&this, pbstrText);
+				return VT.get_Text(ref this, pbstrText);
 			}
 			public HRESULT put_Text(BSTR pbstrText) mut
 			{
-				return VT.put_Text(&this, pbstrText);
+				return VT.put_Text(ref this, pbstrText);
 			}
 			public HRESULT get_MouseIcon(IPictureDisp** MouseIcon) mut
 			{
-				return VT.get_MouseIcon(&this, MouseIcon);
+				return VT.get_MouseIcon(ref this, MouseIcon);
 			}
 			public HRESULT put_MouseIcon(IPictureDisp* MouseIcon) mut
 			{
-				return VT.put_MouseIcon(&this, MouseIcon);
+				return VT.put_MouseIcon(ref this, MouseIcon);
 			}
 			public HRESULT putref_MouseIcon(IPictureDisp* MouseIcon) mut
 			{
-				return VT.putref_MouseIcon(&this, MouseIcon);
+				return VT.putref_MouseIcon(ref this, MouseIcon);
 			}
-			public HRESULT get_MousePointer(InkMousePointer* MousePointer) mut
+			public HRESULT get_MousePointer(out InkMousePointer MousePointer) mut
 			{
-				return VT.get_MousePointer(&this, MousePointer);
+				return VT.get_MousePointer(ref this, out MousePointer);
 			}
 			public HRESULT put_MousePointer(InkMousePointer MousePointer) mut
 			{
-				return VT.put_MousePointer(&this, MousePointer);
+				return VT.put_MousePointer(ref this, MousePointer);
 			}
-			public HRESULT get_Locked(int16* pVal) mut
+			public HRESULT get_Locked(out int16 pVal) mut
 			{
-				return VT.get_Locked(&this, pVal);
+				return VT.get_Locked(ref this, out pVal);
 			}
 			public HRESULT put_Locked(int16 newVal) mut
 			{
-				return VT.put_Locked(&this, newVal);
+				return VT.put_Locked(ref this, newVal);
 			}
-			public HRESULT get_Enabled(int16* pVal) mut
+			public HRESULT get_Enabled(out int16 pVal) mut
 			{
-				return VT.get_Enabled(&this, pVal);
+				return VT.get_Enabled(ref this, out pVal);
 			}
 			public HRESULT put_Enabled(int16 newVal) mut
 			{
-				return VT.put_Enabled(&this, newVal);
+				return VT.put_Enabled(ref this, newVal);
 			}
-			public HRESULT get_MaxLength(int32* plMaxLength) mut
+			public HRESULT get_MaxLength(out int32 plMaxLength) mut
 			{
-				return VT.get_MaxLength(&this, plMaxLength);
+				return VT.get_MaxLength(ref this, out plMaxLength);
 			}
 			public HRESULT put_MaxLength(int32 lMaxLength) mut
 			{
-				return VT.put_MaxLength(&this, lMaxLength);
+				return VT.put_MaxLength(ref this, lMaxLength);
 			}
-			public HRESULT get_MultiLine(int16* pVal) mut
+			public HRESULT get_MultiLine(out int16 pVal) mut
 			{
-				return VT.get_MultiLine(&this, pVal);
+				return VT.get_MultiLine(ref this, out pVal);
 			}
 			public HRESULT put_MultiLine(int16 newVal) mut
 			{
-				return VT.put_MultiLine(&this, newVal);
+				return VT.put_MultiLine(ref this, newVal);
 			}
-			public HRESULT get_ScrollBars(ScrollBarsConstants* pVal) mut
+			public HRESULT get_ScrollBars(out ScrollBarsConstants pVal) mut
 			{
-				return VT.get_ScrollBars(&this, pVal);
+				return VT.get_ScrollBars(ref this, out pVal);
 			}
 			public HRESULT put_ScrollBars(ScrollBarsConstants newVal) mut
 			{
-				return VT.put_ScrollBars(&this, newVal);
+				return VT.put_ScrollBars(ref this, newVal);
 			}
-			public HRESULT get_DisableNoScroll(int16* pVal) mut
+			public HRESULT get_DisableNoScroll(out int16 pVal) mut
 			{
-				return VT.get_DisableNoScroll(&this, pVal);
+				return VT.get_DisableNoScroll(ref this, out pVal);
 			}
 			public HRESULT put_DisableNoScroll(int16 newVal) mut
 			{
-				return VT.put_DisableNoScroll(&this, newVal);
+				return VT.put_DisableNoScroll(ref this, newVal);
 			}
-			public HRESULT get_SelAlignment(VARIANT* pvarSelAlignment) mut
+			public HRESULT get_SelAlignment(out VARIANT pvarSelAlignment) mut
 			{
-				return VT.get_SelAlignment(&this, pvarSelAlignment);
+				return VT.get_SelAlignment(ref this, out pvarSelAlignment);
 			}
 			public HRESULT put_SelAlignment(VARIANT pvarSelAlignment) mut
 			{
-				return VT.put_SelAlignment(&this, pvarSelAlignment);
+				return VT.put_SelAlignment(ref this, pvarSelAlignment);
 			}
-			public HRESULT get_SelBold(VARIANT* pvarSelBold) mut
+			public HRESULT get_SelBold(out VARIANT pvarSelBold) mut
 			{
-				return VT.get_SelBold(&this, pvarSelBold);
+				return VT.get_SelBold(ref this, out pvarSelBold);
 			}
 			public HRESULT put_SelBold(VARIANT pvarSelBold) mut
 			{
-				return VT.put_SelBold(&this, pvarSelBold);
+				return VT.put_SelBold(ref this, pvarSelBold);
 			}
-			public HRESULT get_SelItalic(VARIANT* pvarSelItalic) mut
+			public HRESULT get_SelItalic(out VARIANT pvarSelItalic) mut
 			{
-				return VT.get_SelItalic(&this, pvarSelItalic);
+				return VT.get_SelItalic(ref this, out pvarSelItalic);
 			}
 			public HRESULT put_SelItalic(VARIANT pvarSelItalic) mut
 			{
-				return VT.put_SelItalic(&this, pvarSelItalic);
+				return VT.put_SelItalic(ref this, pvarSelItalic);
 			}
-			public HRESULT get_SelUnderline(VARIANT* pvarSelUnderline) mut
+			public HRESULT get_SelUnderline(out VARIANT pvarSelUnderline) mut
 			{
-				return VT.get_SelUnderline(&this, pvarSelUnderline);
+				return VT.get_SelUnderline(ref this, out pvarSelUnderline);
 			}
 			public HRESULT put_SelUnderline(VARIANT pvarSelUnderline) mut
 			{
-				return VT.put_SelUnderline(&this, pvarSelUnderline);
+				return VT.put_SelUnderline(ref this, pvarSelUnderline);
 			}
-			public HRESULT get_SelColor(VARIANT* pvarSelColor) mut
+			public HRESULT get_SelColor(out VARIANT pvarSelColor) mut
 			{
-				return VT.get_SelColor(&this, pvarSelColor);
+				return VT.get_SelColor(ref this, out pvarSelColor);
 			}
 			public HRESULT put_SelColor(VARIANT pvarSelColor) mut
 			{
-				return VT.put_SelColor(&this, pvarSelColor);
+				return VT.put_SelColor(ref this, pvarSelColor);
 			}
-			public HRESULT get_SelFontName(VARIANT* pvarSelFontName) mut
+			public HRESULT get_SelFontName(out VARIANT pvarSelFontName) mut
 			{
-				return VT.get_SelFontName(&this, pvarSelFontName);
+				return VT.get_SelFontName(ref this, out pvarSelFontName);
 			}
 			public HRESULT put_SelFontName(VARIANT pvarSelFontName) mut
 			{
-				return VT.put_SelFontName(&this, pvarSelFontName);
+				return VT.put_SelFontName(ref this, pvarSelFontName);
 			}
-			public HRESULT get_SelFontSize(VARIANT* pvarSelFontSize) mut
+			public HRESULT get_SelFontSize(out VARIANT pvarSelFontSize) mut
 			{
-				return VT.get_SelFontSize(&this, pvarSelFontSize);
+				return VT.get_SelFontSize(ref this, out pvarSelFontSize);
 			}
 			public HRESULT put_SelFontSize(VARIANT pvarSelFontSize) mut
 			{
-				return VT.put_SelFontSize(&this, pvarSelFontSize);
+				return VT.put_SelFontSize(ref this, pvarSelFontSize);
 			}
-			public HRESULT get_SelCharOffset(VARIANT* pvarSelCharOffset) mut
+			public HRESULT get_SelCharOffset(out VARIANT pvarSelCharOffset) mut
 			{
-				return VT.get_SelCharOffset(&this, pvarSelCharOffset);
+				return VT.get_SelCharOffset(ref this, out pvarSelCharOffset);
 			}
 			public HRESULT put_SelCharOffset(VARIANT pvarSelCharOffset) mut
 			{
-				return VT.put_SelCharOffset(&this, pvarSelCharOffset);
+				return VT.put_SelCharOffset(ref this, pvarSelCharOffset);
 			}
 			public HRESULT get_TextRTF(BSTR* pbstrTextRTF) mut
 			{
-				return VT.get_TextRTF(&this, pbstrTextRTF);
+				return VT.get_TextRTF(ref this, pbstrTextRTF);
 			}
 			public HRESULT put_TextRTF(BSTR pbstrTextRTF) mut
 			{
-				return VT.put_TextRTF(&this, pbstrTextRTF);
+				return VT.put_TextRTF(ref this, pbstrTextRTF);
 			}
-			public HRESULT get_SelStart(int32* plSelStart) mut
+			public HRESULT get_SelStart(out int32 plSelStart) mut
 			{
-				return VT.get_SelStart(&this, plSelStart);
+				return VT.get_SelStart(ref this, out plSelStart);
 			}
 			public HRESULT put_SelStart(int32 plSelStart) mut
 			{
-				return VT.put_SelStart(&this, plSelStart);
+				return VT.put_SelStart(ref this, plSelStart);
 			}
-			public HRESULT get_SelLength(int32* plSelLength) mut
+			public HRESULT get_SelLength(out int32 plSelLength) mut
 			{
-				return VT.get_SelLength(&this, plSelLength);
+				return VT.get_SelLength(ref this, out plSelLength);
 			}
 			public HRESULT put_SelLength(int32 plSelLength) mut
 			{
-				return VT.put_SelLength(&this, plSelLength);
+				return VT.put_SelLength(ref this, plSelLength);
 			}
 			public HRESULT get_SelText(BSTR* pbstrSelText) mut
 			{
-				return VT.get_SelText(&this, pbstrSelText);
+				return VT.get_SelText(ref this, pbstrSelText);
 			}
 			public HRESULT put_SelText(BSTR pbstrSelText) mut
 			{
-				return VT.put_SelText(&this, pbstrSelText);
+				return VT.put_SelText(ref this, pbstrSelText);
 			}
 			public HRESULT get_SelRTF(BSTR* pbstrSelRTF) mut
 			{
-				return VT.get_SelRTF(&this, pbstrSelRTF);
+				return VT.get_SelRTF(ref this, pbstrSelRTF);
 			}
 			public HRESULT put_SelRTF(BSTR pbstrSelRTF) mut
 			{
-				return VT.put_SelRTF(&this, pbstrSelRTF);
+				return VT.put_SelRTF(ref this, pbstrSelRTF);
 			}
 			public HRESULT Refresh() mut
 			{
-				return VT.Refresh(&this);
+				return VT.Refresh(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IInkEdit *self, InkEditStatus* pStatus) get_Status;
-				public new function HRESULT(IInkEdit *self, int16* pVal) get_UseMouseForInput;
-				public new function HRESULT(IInkEdit *self, int16 newVal) put_UseMouseForInput;
-				public new function HRESULT(IInkEdit *self, InkMode* pVal) get_InkMode;
-				public new function HRESULT(IInkEdit *self, InkMode newVal) put_InkMode;
-				public new function HRESULT(IInkEdit *self, InkInsertMode* pVal) get_InkInsertMode;
-				public new function HRESULT(IInkEdit *self, InkInsertMode newVal) put_InkInsertMode;
-				public new function HRESULT(IInkEdit *self, IInkDrawingAttributes** pVal) get_DrawingAttributes;
-				public new function HRESULT(IInkEdit *self, IInkDrawingAttributes* newVal) putref_DrawingAttributes;
-				public new function HRESULT(IInkEdit *self, int32* pVal) get_RecognitionTimeout;
-				public new function HRESULT(IInkEdit *self, int32 newVal) put_RecognitionTimeout;
-				public new function HRESULT(IInkEdit *self, IInkRecognizer** pVal) get_Recognizer;
-				public new function HRESULT(IInkEdit *self, IInkRecognizer* newVal) putref_Recognizer;
-				public new function HRESULT(IInkEdit *self, BSTR* pVal) get_Factoid;
-				public new function HRESULT(IInkEdit *self, BSTR newVal) put_Factoid;
-				public new function HRESULT(IInkEdit *self, VARIANT* pSelInk) get_SelInks;
-				public new function HRESULT(IInkEdit *self, VARIANT SelInk) put_SelInks;
-				public new function HRESULT(IInkEdit *self, InkDisplayMode* pInkDisplayMode) get_SelInksDisplayMode;
-				public new function HRESULT(IInkEdit *self, InkDisplayMode InkDisplayMode) put_SelInksDisplayMode;
-				public new function HRESULT(IInkEdit *self) Recognize;
-				public new function HRESULT(IInkEdit *self, InkApplicationGesture Gesture, int16* pListen) GetGestureStatus;
-				public new function HRESULT(IInkEdit *self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
-				public new function HRESULT(IInkEdit *self, uint32 clr) put_BackColor;
-				public new function HRESULT(IInkEdit *self, uint32* pclr) get_BackColor;
-				public new function HRESULT(IInkEdit *self, AppearanceConstants* pAppearance) get_Appearance;
-				public new function HRESULT(IInkEdit *self, AppearanceConstants pAppearance) put_Appearance;
-				public new function HRESULT(IInkEdit *self, BorderStyleConstants* pBorderStyle) get_BorderStyle;
-				public new function HRESULT(IInkEdit *self, BorderStyleConstants pBorderStyle) put_BorderStyle;
-				public new function HRESULT(IInkEdit *self, uint32* pohHwnd) get_Hwnd;
-				public new function HRESULT(IInkEdit *self, IFontDisp** ppFont) get_Font;
-				public new function HRESULT(IInkEdit *self, IFontDisp* ppFont) putref_Font;
-				public new function HRESULT(IInkEdit *self, BSTR* pbstrText) get_Text;
-				public new function HRESULT(IInkEdit *self, BSTR pbstrText) put_Text;
-				public new function HRESULT(IInkEdit *self, IPictureDisp** MouseIcon) get_MouseIcon;
-				public new function HRESULT(IInkEdit *self, IPictureDisp* MouseIcon) put_MouseIcon;
-				public new function HRESULT(IInkEdit *self, IPictureDisp* MouseIcon) putref_MouseIcon;
-				public new function HRESULT(IInkEdit *self, InkMousePointer* MousePointer) get_MousePointer;
-				public new function HRESULT(IInkEdit *self, InkMousePointer MousePointer) put_MousePointer;
-				public new function HRESULT(IInkEdit *self, int16* pVal) get_Locked;
-				public new function HRESULT(IInkEdit *self, int16 newVal) put_Locked;
-				public new function HRESULT(IInkEdit *self, int16* pVal) get_Enabled;
-				public new function HRESULT(IInkEdit *self, int16 newVal) put_Enabled;
-				public new function HRESULT(IInkEdit *self, int32* plMaxLength) get_MaxLength;
-				public new function HRESULT(IInkEdit *self, int32 lMaxLength) put_MaxLength;
-				public new function HRESULT(IInkEdit *self, int16* pVal) get_MultiLine;
-				public new function HRESULT(IInkEdit *self, int16 newVal) put_MultiLine;
-				public new function HRESULT(IInkEdit *self, ScrollBarsConstants* pVal) get_ScrollBars;
-				public new function HRESULT(IInkEdit *self, ScrollBarsConstants newVal) put_ScrollBars;
-				public new function HRESULT(IInkEdit *self, int16* pVal) get_DisableNoScroll;
-				public new function HRESULT(IInkEdit *self, int16 newVal) put_DisableNoScroll;
-				public new function HRESULT(IInkEdit *self, VARIANT* pvarSelAlignment) get_SelAlignment;
-				public new function HRESULT(IInkEdit *self, VARIANT pvarSelAlignment) put_SelAlignment;
-				public new function HRESULT(IInkEdit *self, VARIANT* pvarSelBold) get_SelBold;
-				public new function HRESULT(IInkEdit *self, VARIANT pvarSelBold) put_SelBold;
-				public new function HRESULT(IInkEdit *self, VARIANT* pvarSelItalic) get_SelItalic;
-				public new function HRESULT(IInkEdit *self, VARIANT pvarSelItalic) put_SelItalic;
-				public new function HRESULT(IInkEdit *self, VARIANT* pvarSelUnderline) get_SelUnderline;
-				public new function HRESULT(IInkEdit *self, VARIANT pvarSelUnderline) put_SelUnderline;
-				public new function HRESULT(IInkEdit *self, VARIANT* pvarSelColor) get_SelColor;
-				public new function HRESULT(IInkEdit *self, VARIANT pvarSelColor) put_SelColor;
-				public new function HRESULT(IInkEdit *self, VARIANT* pvarSelFontName) get_SelFontName;
-				public new function HRESULT(IInkEdit *self, VARIANT pvarSelFontName) put_SelFontName;
-				public new function HRESULT(IInkEdit *self, VARIANT* pvarSelFontSize) get_SelFontSize;
-				public new function HRESULT(IInkEdit *self, VARIANT pvarSelFontSize) put_SelFontSize;
-				public new function HRESULT(IInkEdit *self, VARIANT* pvarSelCharOffset) get_SelCharOffset;
-				public new function HRESULT(IInkEdit *self, VARIANT pvarSelCharOffset) put_SelCharOffset;
-				public new function HRESULT(IInkEdit *self, BSTR* pbstrTextRTF) get_TextRTF;
-				public new function HRESULT(IInkEdit *self, BSTR pbstrTextRTF) put_TextRTF;
-				public new function HRESULT(IInkEdit *self, int32* plSelStart) get_SelStart;
-				public new function HRESULT(IInkEdit *self, int32 plSelStart) put_SelStart;
-				public new function HRESULT(IInkEdit *self, int32* plSelLength) get_SelLength;
-				public new function HRESULT(IInkEdit *self, int32 plSelLength) put_SelLength;
-				public new function HRESULT(IInkEdit *self, BSTR* pbstrSelText) get_SelText;
-				public new function HRESULT(IInkEdit *self, BSTR pbstrSelText) put_SelText;
-				public new function HRESULT(IInkEdit *self, BSTR* pbstrSelRTF) get_SelRTF;
-				public new function HRESULT(IInkEdit *self, BSTR pbstrSelRTF) put_SelRTF;
-				public new function HRESULT(IInkEdit *self) Refresh;
+				public new function HRESULT(ref IInkEdit self, out InkEditStatus pStatus) get_Status;
+				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_UseMouseForInput;
+				public new function HRESULT(ref IInkEdit self, int16 newVal) put_UseMouseForInput;
+				public new function HRESULT(ref IInkEdit self, out InkMode pVal) get_InkMode;
+				public new function HRESULT(ref IInkEdit self, InkMode newVal) put_InkMode;
+				public new function HRESULT(ref IInkEdit self, out InkInsertMode pVal) get_InkInsertMode;
+				public new function HRESULT(ref IInkEdit self, InkInsertMode newVal) put_InkInsertMode;
+				public new function HRESULT(ref IInkEdit self, IInkDrawingAttributes** pVal) get_DrawingAttributes;
+				public new function HRESULT(ref IInkEdit self, IInkDrawingAttributes* newVal) putref_DrawingAttributes;
+				public new function HRESULT(ref IInkEdit self, out int32 pVal) get_RecognitionTimeout;
+				public new function HRESULT(ref IInkEdit self, int32 newVal) put_RecognitionTimeout;
+				public new function HRESULT(ref IInkEdit self, IInkRecognizer** pVal) get_Recognizer;
+				public new function HRESULT(ref IInkEdit self, IInkRecognizer* newVal) putref_Recognizer;
+				public new function HRESULT(ref IInkEdit self, BSTR* pVal) get_Factoid;
+				public new function HRESULT(ref IInkEdit self, BSTR newVal) put_Factoid;
+				public new function HRESULT(ref IInkEdit self, out VARIANT pSelInk) get_SelInks;
+				public new function HRESULT(ref IInkEdit self, VARIANT SelInk) put_SelInks;
+				public new function HRESULT(ref IInkEdit self, out InkDisplayMode pInkDisplayMode) get_SelInksDisplayMode;
+				public new function HRESULT(ref IInkEdit self, InkDisplayMode InkDisplayMode) put_SelInksDisplayMode;
+				public new function HRESULT(ref IInkEdit self) Recognize;
+				public new function HRESULT(ref IInkEdit self, InkApplicationGesture Gesture, out int16 pListen) GetGestureStatus;
+				public new function HRESULT(ref IInkEdit self, InkApplicationGesture Gesture, int16 Listen) SetGestureStatus;
+				public new function HRESULT(ref IInkEdit self, uint32 clr) put_BackColor;
+				public new function HRESULT(ref IInkEdit self, out uint32 pclr) get_BackColor;
+				public new function HRESULT(ref IInkEdit self, out AppearanceConstants pAppearance) get_Appearance;
+				public new function HRESULT(ref IInkEdit self, AppearanceConstants pAppearance) put_Appearance;
+				public new function HRESULT(ref IInkEdit self, out BorderStyleConstants pBorderStyle) get_BorderStyle;
+				public new function HRESULT(ref IInkEdit self, BorderStyleConstants pBorderStyle) put_BorderStyle;
+				public new function HRESULT(ref IInkEdit self, out uint32 pohHwnd) get_Hwnd;
+				public new function HRESULT(ref IInkEdit self, IFontDisp** ppFont) get_Font;
+				public new function HRESULT(ref IInkEdit self, IFontDisp* ppFont) putref_Font;
+				public new function HRESULT(ref IInkEdit self, BSTR* pbstrText) get_Text;
+				public new function HRESULT(ref IInkEdit self, BSTR pbstrText) put_Text;
+				public new function HRESULT(ref IInkEdit self, IPictureDisp** MouseIcon) get_MouseIcon;
+				public new function HRESULT(ref IInkEdit self, IPictureDisp* MouseIcon) put_MouseIcon;
+				public new function HRESULT(ref IInkEdit self, IPictureDisp* MouseIcon) putref_MouseIcon;
+				public new function HRESULT(ref IInkEdit self, out InkMousePointer MousePointer) get_MousePointer;
+				public new function HRESULT(ref IInkEdit self, InkMousePointer MousePointer) put_MousePointer;
+				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_Locked;
+				public new function HRESULT(ref IInkEdit self, int16 newVal) put_Locked;
+				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_Enabled;
+				public new function HRESULT(ref IInkEdit self, int16 newVal) put_Enabled;
+				public new function HRESULT(ref IInkEdit self, out int32 plMaxLength) get_MaxLength;
+				public new function HRESULT(ref IInkEdit self, int32 lMaxLength) put_MaxLength;
+				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_MultiLine;
+				public new function HRESULT(ref IInkEdit self, int16 newVal) put_MultiLine;
+				public new function HRESULT(ref IInkEdit self, out ScrollBarsConstants pVal) get_ScrollBars;
+				public new function HRESULT(ref IInkEdit self, ScrollBarsConstants newVal) put_ScrollBars;
+				public new function HRESULT(ref IInkEdit self, out int16 pVal) get_DisableNoScroll;
+				public new function HRESULT(ref IInkEdit self, int16 newVal) put_DisableNoScroll;
+				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelAlignment) get_SelAlignment;
+				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelAlignment) put_SelAlignment;
+				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelBold) get_SelBold;
+				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelBold) put_SelBold;
+				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelItalic) get_SelItalic;
+				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelItalic) put_SelItalic;
+				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelUnderline) get_SelUnderline;
+				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelUnderline) put_SelUnderline;
+				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelColor) get_SelColor;
+				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelColor) put_SelColor;
+				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelFontName) get_SelFontName;
+				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelFontName) put_SelFontName;
+				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelFontSize) get_SelFontSize;
+				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelFontSize) put_SelFontSize;
+				public new function HRESULT(ref IInkEdit self, out VARIANT pvarSelCharOffset) get_SelCharOffset;
+				public new function HRESULT(ref IInkEdit self, VARIANT pvarSelCharOffset) put_SelCharOffset;
+				public new function HRESULT(ref IInkEdit self, BSTR* pbstrTextRTF) get_TextRTF;
+				public new function HRESULT(ref IInkEdit self, BSTR pbstrTextRTF) put_TextRTF;
+				public new function HRESULT(ref IInkEdit self, out int32 plSelStart) get_SelStart;
+				public new function HRESULT(ref IInkEdit self, int32 plSelStart) put_SelStart;
+				public new function HRESULT(ref IInkEdit self, out int32 plSelLength) get_SelLength;
+				public new function HRESULT(ref IInkEdit self, int32 plSelLength) put_SelLength;
+				public new function HRESULT(ref IInkEdit self, BSTR* pbstrSelText) get_SelText;
+				public new function HRESULT(ref IInkEdit self, BSTR pbstrSelText) put_SelText;
+				public new function HRESULT(ref IInkEdit self, BSTR* pbstrSelRTF) get_SelRTF;
+				public new function HRESULT(ref IInkEdit self, BSTR pbstrSelRTF) put_SelRTF;
+				public new function HRESULT(ref IInkEdit self) Refresh;
 			}
 		}
 		[CRepr]
@@ -5352,92 +5352,92 @@ namespace Win32
 			
 			public HRESULT Show() mut
 			{
-				return VT.Show(&this);
+				return VT.Show(ref this);
 			}
 			public HRESULT Hide() mut
 			{
-				return VT.Hide(&this);
+				return VT.Hide(ref this);
 			}
-			public HRESULT IsVisible(int16* pvbShown) mut
+			public HRESULT IsVisible(out int16 pvbShown) mut
 			{
-				return VT.IsVisible(&this, pvbShown);
+				return VT.IsVisible(ref this, out pvbShown);
 			}
-			public HRESULT GetPosition(int32* Left, int32* Top, int32* Right, int32* Bottom) mut
+			public HRESULT GetPosition(out int32 Left, out int32 Top, out int32 Right, out int32 Bottom) mut
 			{
-				return VT.GetPosition(&this, Left, Top, Right, Bottom);
+				return VT.GetPosition(ref this, out Left, out Top, out Right, out Bottom);
 			}
 			public HRESULT SetPosition(int32 Left, int32 Top, int32 Right, int32 Bottom) mut
 			{
-				return VT.SetPosition(&this, Left, Top, Right, Bottom);
+				return VT.SetPosition(ref this, Left, Top, Right, Bottom);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT SetCustomPaint(int32 Element, int16 Paint) mut
 			{
-				return VT.SetCustomPaint(&this, Element, Paint);
+				return VT.SetCustomPaint(ref this, Element, Paint);
 			}
 			public HRESULT SetCaptionText(BSTR CaptionText) mut
 			{
-				return VT.SetCaptionText(&this, CaptionText);
+				return VT.SetCaptionText(ref this, CaptionText);
 			}
 			public HRESULT LoadInk(IInkDisp* Ink) mut
 			{
-				return VT.LoadInk(&this, Ink);
+				return VT.LoadInk(ref this, Ink);
 			}
 			public HRESULT SetOwnerWindow(int OwnerWindow) mut
 			{
-				return VT.SetOwnerWindow(&this, OwnerWindow);
+				return VT.SetOwnerWindow(ref this, OwnerWindow);
 			}
 			public HRESULT EnableExtendedButtons(int16 Extended) mut
 			{
-				return VT.EnableExtendedButtons(&this, Extended);
+				return VT.EnableExtendedButtons(ref this, Extended);
 			}
-			public HRESULT GetPreviewHeight(int32* Height) mut
+			public HRESULT GetPreviewHeight(out int32 Height) mut
 			{
-				return VT.GetPreviewHeight(&this, Height);
+				return VT.GetPreviewHeight(ref this, out Height);
 			}
 			public HRESULT SetPreviewHeight(int32 Height) mut
 			{
-				return VT.SetPreviewHeight(&this, Height);
+				return VT.SetPreviewHeight(ref this, Height);
 			}
 			public HRESULT EnableAutoGrow(int16 AutoGrow) mut
 			{
-				return VT.EnableAutoGrow(&this, AutoGrow);
+				return VT.EnableAutoGrow(ref this, AutoGrow);
 			}
 			public HRESULT AddFunctionName(BSTR FunctionName) mut
 			{
-				return VT.AddFunctionName(&this, FunctionName);
+				return VT.AddFunctionName(ref this, FunctionName);
 			}
 			public HRESULT RemoveFunctionName(BSTR FunctionName) mut
 			{
-				return VT.RemoveFunctionName(&this, FunctionName);
+				return VT.RemoveFunctionName(ref this, FunctionName);
 			}
 			public HRESULT GetHoverIcon(IPictureDisp** HoverImage) mut
 			{
-				return VT.GetHoverIcon(&this, HoverImage);
+				return VT.GetHoverIcon(ref this, HoverImage);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IMathInputControl *self) Show;
-				public new function HRESULT(IMathInputControl *self) Hide;
-				public new function HRESULT(IMathInputControl *self, int16* pvbShown) IsVisible;
-				public new function HRESULT(IMathInputControl *self, int32* Left, int32* Top, int32* Right, int32* Bottom) GetPosition;
-				public new function HRESULT(IMathInputControl *self, int32 Left, int32 Top, int32 Right, int32 Bottom) SetPosition;
-				public new function HRESULT(IMathInputControl *self) Clear;
-				public new function HRESULT(IMathInputControl *self, int32 Element, int16 Paint) SetCustomPaint;
-				public new function HRESULT(IMathInputControl *self, BSTR CaptionText) SetCaptionText;
-				public new function HRESULT(IMathInputControl *self, IInkDisp* Ink) LoadInk;
-				public new function HRESULT(IMathInputControl *self, int OwnerWindow) SetOwnerWindow;
-				public new function HRESULT(IMathInputControl *self, int16 Extended) EnableExtendedButtons;
-				public new function HRESULT(IMathInputControl *self, int32* Height) GetPreviewHeight;
-				public new function HRESULT(IMathInputControl *self, int32 Height) SetPreviewHeight;
-				public new function HRESULT(IMathInputControl *self, int16 AutoGrow) EnableAutoGrow;
-				public new function HRESULT(IMathInputControl *self, BSTR FunctionName) AddFunctionName;
-				public new function HRESULT(IMathInputControl *self, BSTR FunctionName) RemoveFunctionName;
-				public new function HRESULT(IMathInputControl *self, IPictureDisp** HoverImage) GetHoverIcon;
+				public new function HRESULT(ref IMathInputControl self) Show;
+				public new function HRESULT(ref IMathInputControl self) Hide;
+				public new function HRESULT(ref IMathInputControl self, out int16 pvbShown) IsVisible;
+				public new function HRESULT(ref IMathInputControl self, out int32 Left, out int32 Top, out int32 Right, out int32 Bottom) GetPosition;
+				public new function HRESULT(ref IMathInputControl self, int32 Left, int32 Top, int32 Right, int32 Bottom) SetPosition;
+				public new function HRESULT(ref IMathInputControl self) Clear;
+				public new function HRESULT(ref IMathInputControl self, int32 Element, int16 Paint) SetCustomPaint;
+				public new function HRESULT(ref IMathInputControl self, BSTR CaptionText) SetCaptionText;
+				public new function HRESULT(ref IMathInputControl self, IInkDisp* Ink) LoadInk;
+				public new function HRESULT(ref IMathInputControl self, int OwnerWindow) SetOwnerWindow;
+				public new function HRESULT(ref IMathInputControl self, int16 Extended) EnableExtendedButtons;
+				public new function HRESULT(ref IMathInputControl self, out int32 Height) GetPreviewHeight;
+				public new function HRESULT(ref IMathInputControl self, int32 Height) SetPreviewHeight;
+				public new function HRESULT(ref IMathInputControl self, int16 AutoGrow) EnableAutoGrow;
+				public new function HRESULT(ref IMathInputControl self, BSTR FunctionName) AddFunctionName;
+				public new function HRESULT(ref IMathInputControl self, BSTR FunctionName) RemoveFunctionName;
+				public new function HRESULT(ref IMathInputControl self, IPictureDisp** HoverImage) GetHoverIcon;
 			}
 		}
 		[CRepr]
@@ -5459,164 +5459,164 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Enabled(BOOL* pfEnable) mut
+			public HRESULT get_Enabled(out BOOL pfEnable) mut
 			{
-				return VT.get_Enabled(&this, pfEnable);
+				return VT.get_Enabled(ref this, out pfEnable);
 			}
 			public HRESULT put_Enabled(BOOL fEnable) mut
 			{
-				return VT.put_Enabled(&this, fEnable);
+				return VT.put_Enabled(ref this, fEnable);
 			}
-			public HRESULT get_HWND(HANDLE_PTR* phwnd) mut
+			public HRESULT get_HWND(out HANDLE_PTR phwnd) mut
 			{
-				return VT.get_HWND(&this, phwnd);
+				return VT.get_HWND(ref this, out phwnd);
 			}
 			public HRESULT put_HWND(HANDLE_PTR hwnd) mut
 			{
-				return VT.put_HWND(&this, hwnd);
+				return VT.put_HWND(ref this, hwnd);
 			}
-			public HRESULT get_WindowInputRectangle(RECT* prcWndInputRect) mut
+			public HRESULT get_WindowInputRectangle(out RECT prcWndInputRect) mut
 			{
-				return VT.get_WindowInputRectangle(&this, prcWndInputRect);
+				return VT.get_WindowInputRectangle(ref this, out prcWndInputRect);
 			}
-			public HRESULT put_WindowInputRectangle(RECT* prcWndInputRect) mut
+			public HRESULT put_WindowInputRectangle(in RECT prcWndInputRect) mut
 			{
-				return VT.put_WindowInputRectangle(&this, prcWndInputRect);
+				return VT.put_WindowInputRectangle(ref this, prcWndInputRect);
 			}
 			public HRESULT AddStylusSyncPlugin(uint32 iIndex, IStylusSyncPlugin* piPlugin) mut
 			{
-				return VT.AddStylusSyncPlugin(&this, iIndex, piPlugin);
+				return VT.AddStylusSyncPlugin(ref this, iIndex, piPlugin);
 			}
 			public HRESULT RemoveStylusSyncPlugin(uint32 iIndex, IStylusSyncPlugin** ppiPlugin) mut
 			{
-				return VT.RemoveStylusSyncPlugin(&this, iIndex, ppiPlugin);
+				return VT.RemoveStylusSyncPlugin(ref this, iIndex, ppiPlugin);
 			}
 			public HRESULT RemoveAllStylusSyncPlugins() mut
 			{
-				return VT.RemoveAllStylusSyncPlugins(&this);
+				return VT.RemoveAllStylusSyncPlugins(ref this);
 			}
 			public HRESULT GetStylusSyncPlugin(uint32 iIndex, IStylusSyncPlugin** ppiPlugin) mut
 			{
-				return VT.GetStylusSyncPlugin(&this, iIndex, ppiPlugin);
+				return VT.GetStylusSyncPlugin(ref this, iIndex, ppiPlugin);
 			}
-			public HRESULT GetStylusSyncPluginCount(uint32* pcPlugins) mut
+			public HRESULT GetStylusSyncPluginCount(out uint32 pcPlugins) mut
 			{
-				return VT.GetStylusSyncPluginCount(&this, pcPlugins);
+				return VT.GetStylusSyncPluginCount(ref this, out pcPlugins);
 			}
 			public HRESULT AddStylusAsyncPlugin(uint32 iIndex, IStylusAsyncPlugin* piPlugin) mut
 			{
-				return VT.AddStylusAsyncPlugin(&this, iIndex, piPlugin);
+				return VT.AddStylusAsyncPlugin(ref this, iIndex, piPlugin);
 			}
 			public HRESULT RemoveStylusAsyncPlugin(uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) mut
 			{
-				return VT.RemoveStylusAsyncPlugin(&this, iIndex, ppiPlugin);
+				return VT.RemoveStylusAsyncPlugin(ref this, iIndex, ppiPlugin);
 			}
 			public HRESULT RemoveAllStylusAsyncPlugins() mut
 			{
-				return VT.RemoveAllStylusAsyncPlugins(&this);
+				return VT.RemoveAllStylusAsyncPlugins(ref this);
 			}
 			public HRESULT GetStylusAsyncPlugin(uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) mut
 			{
-				return VT.GetStylusAsyncPlugin(&this, iIndex, ppiPlugin);
+				return VT.GetStylusAsyncPlugin(ref this, iIndex, ppiPlugin);
 			}
-			public HRESULT GetStylusAsyncPluginCount(uint32* pcPlugins) mut
+			public HRESULT GetStylusAsyncPluginCount(out uint32 pcPlugins) mut
 			{
-				return VT.GetStylusAsyncPluginCount(&this, pcPlugins);
+				return VT.GetStylusAsyncPluginCount(ref this, out pcPlugins);
 			}
 			public HRESULT get_ChildRealTimeStylusPlugin(IRealTimeStylus** ppiRTS) mut
 			{
-				return VT.get_ChildRealTimeStylusPlugin(&this, ppiRTS);
+				return VT.get_ChildRealTimeStylusPlugin(ref this, ppiRTS);
 			}
 			public HRESULT putref_ChildRealTimeStylusPlugin(IRealTimeStylus* piRTS) mut
 			{
-				return VT.putref_ChildRealTimeStylusPlugin(&this, piRTS);
+				return VT.putref_ChildRealTimeStylusPlugin(ref this, piRTS);
 			}
-			public HRESULT AddCustomStylusDataToQueue(StylusQueue sq, Guid* pGuidId, uint32 cbData, uint8* pbData) mut
+			public HRESULT AddCustomStylusDataToQueue(StylusQueue sq, in Guid pGuidId, uint32 cbData, uint8* pbData) mut
 			{
-				return VT.AddCustomStylusDataToQueue(&this, sq, pGuidId, cbData, pbData);
+				return VT.AddCustomStylusDataToQueue(ref this, sq, pGuidId, cbData, pbData);
 			}
 			public HRESULT ClearStylusQueues() mut
 			{
-				return VT.ClearStylusQueues(&this);
+				return VT.ClearStylusQueues(ref this);
 			}
 			public HRESULT SetAllTabletsMode(BOOL fUseMouseForInput) mut
 			{
-				return VT.SetAllTabletsMode(&this, fUseMouseForInput);
+				return VT.SetAllTabletsMode(ref this, fUseMouseForInput);
 			}
 			public HRESULT SetSingleTabletMode(IInkTablet* piTablet) mut
 			{
-				return VT.SetSingleTabletMode(&this, piTablet);
+				return VT.SetSingleTabletMode(ref this, piTablet);
 			}
 			public HRESULT GetTablet(IInkTablet** ppiSingleTablet) mut
 			{
-				return VT.GetTablet(&this, ppiSingleTablet);
+				return VT.GetTablet(ref this, ppiSingleTablet);
 			}
-			public HRESULT GetTabletContextIdFromTablet(IInkTablet* piTablet, uint32* ptcid) mut
+			public HRESULT GetTabletContextIdFromTablet(IInkTablet* piTablet, out uint32 ptcid) mut
 			{
-				return VT.GetTabletContextIdFromTablet(&this, piTablet, ptcid);
+				return VT.GetTabletContextIdFromTablet(ref this, piTablet, out ptcid);
 			}
 			public HRESULT GetTabletFromTabletContextId(uint32 tcid, IInkTablet** ppiTablet) mut
 			{
-				return VT.GetTabletFromTabletContextId(&this, tcid, ppiTablet);
+				return VT.GetTabletFromTabletContextId(ref this, tcid, ppiTablet);
 			}
-			public HRESULT GetAllTabletContextIds(uint32* pcTcidCount, uint32** ppTcids) mut
+			public HRESULT GetAllTabletContextIds(out uint32 pcTcidCount, uint32** ppTcids) mut
 			{
-				return VT.GetAllTabletContextIds(&this, pcTcidCount, ppTcids);
+				return VT.GetAllTabletContextIds(ref this, out pcTcidCount, ppTcids);
 			}
 			public HRESULT GetStyluses(IInkCursors** ppiInkCursors) mut
 			{
-				return VT.GetStyluses(&this, ppiInkCursors);
+				return VT.GetStyluses(ref this, ppiInkCursors);
 			}
 			public HRESULT GetStylusForId(uint32 sid, IInkCursor** ppiInkCursor) mut
 			{
-				return VT.GetStylusForId(&this, sid, ppiInkCursor);
+				return VT.GetStylusForId(ref this, sid, ppiInkCursor);
 			}
 			public HRESULT SetDesiredPacketDescription(uint32 cProperties, Guid* pPropertyGuids) mut
 			{
-				return VT.SetDesiredPacketDescription(&this, cProperties, pPropertyGuids);
+				return VT.SetDesiredPacketDescription(ref this, cProperties, pPropertyGuids);
 			}
-			public HRESULT GetDesiredPacketDescription(uint32* pcProperties, Guid** ppPropertyGuids) mut
+			public HRESULT GetDesiredPacketDescription(out uint32 pcProperties, Guid** ppPropertyGuids) mut
 			{
-				return VT.GetDesiredPacketDescription(&this, pcProperties, ppPropertyGuids);
+				return VT.GetDesiredPacketDescription(ref this, out pcProperties, ppPropertyGuids);
 			}
-			public HRESULT GetPacketDescriptionData(uint32 tcid, float* pfInkToDeviceScaleX, float* pfInkToDeviceScaleY, uint32* pcPacketProperties, PACKET_PROPERTY** ppPacketProperties) mut
+			public HRESULT GetPacketDescriptionData(uint32 tcid, float* pfInkToDeviceScaleX, float* pfInkToDeviceScaleY, out uint32 pcPacketProperties, PACKET_PROPERTY** ppPacketProperties) mut
 			{
-				return VT.GetPacketDescriptionData(&this, tcid, pfInkToDeviceScaleX, pfInkToDeviceScaleY, pcPacketProperties, ppPacketProperties);
+				return VT.GetPacketDescriptionData(ref this, tcid, pfInkToDeviceScaleX, pfInkToDeviceScaleY, out pcPacketProperties, ppPacketProperties);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRealTimeStylus *self, BOOL* pfEnable) get_Enabled;
-				public new function HRESULT(IRealTimeStylus *self, BOOL fEnable) put_Enabled;
-				public new function HRESULT(IRealTimeStylus *self, HANDLE_PTR* phwnd) get_HWND;
-				public new function HRESULT(IRealTimeStylus *self, HANDLE_PTR hwnd) put_HWND;
-				public new function HRESULT(IRealTimeStylus *self, RECT* prcWndInputRect) get_WindowInputRectangle;
-				public new function HRESULT(IRealTimeStylus *self, RECT* prcWndInputRect) put_WindowInputRectangle;
-				public new function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusSyncPlugin* piPlugin) AddStylusSyncPlugin;
-				public new function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) RemoveStylusSyncPlugin;
-				public new function HRESULT(IRealTimeStylus *self) RemoveAllStylusSyncPlugins;
-				public new function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) GetStylusSyncPlugin;
-				public new function HRESULT(IRealTimeStylus *self, uint32* pcPlugins) GetStylusSyncPluginCount;
-				public new function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusAsyncPlugin* piPlugin) AddStylusAsyncPlugin;
-				public new function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) RemoveStylusAsyncPlugin;
-				public new function HRESULT(IRealTimeStylus *self) RemoveAllStylusAsyncPlugins;
-				public new function HRESULT(IRealTimeStylus *self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) GetStylusAsyncPlugin;
-				public new function HRESULT(IRealTimeStylus *self, uint32* pcPlugins) GetStylusAsyncPluginCount;
-				public new function HRESULT(IRealTimeStylus *self, IRealTimeStylus** ppiRTS) get_ChildRealTimeStylusPlugin;
-				public new function HRESULT(IRealTimeStylus *self, IRealTimeStylus* piRTS) putref_ChildRealTimeStylusPlugin;
-				public new function HRESULT(IRealTimeStylus *self, StylusQueue sq, Guid* pGuidId, uint32 cbData, uint8* pbData) AddCustomStylusDataToQueue;
-				public new function HRESULT(IRealTimeStylus *self) ClearStylusQueues;
-				public new function HRESULT(IRealTimeStylus *self, BOOL fUseMouseForInput) SetAllTabletsMode;
-				public new function HRESULT(IRealTimeStylus *self, IInkTablet* piTablet) SetSingleTabletMode;
-				public new function HRESULT(IRealTimeStylus *self, IInkTablet** ppiSingleTablet) GetTablet;
-				public new function HRESULT(IRealTimeStylus *self, IInkTablet* piTablet, uint32* ptcid) GetTabletContextIdFromTablet;
-				public new function HRESULT(IRealTimeStylus *self, uint32 tcid, IInkTablet** ppiTablet) GetTabletFromTabletContextId;
-				public new function HRESULT(IRealTimeStylus *self, uint32* pcTcidCount, uint32** ppTcids) GetAllTabletContextIds;
-				public new function HRESULT(IRealTimeStylus *self, IInkCursors** ppiInkCursors) GetStyluses;
-				public new function HRESULT(IRealTimeStylus *self, uint32 sid, IInkCursor** ppiInkCursor) GetStylusForId;
-				public new function HRESULT(IRealTimeStylus *self, uint32 cProperties, Guid* pPropertyGuids) SetDesiredPacketDescription;
-				public new function HRESULT(IRealTimeStylus *self, uint32* pcProperties, Guid** ppPropertyGuids) GetDesiredPacketDescription;
-				public new function HRESULT(IRealTimeStylus *self, uint32 tcid, float* pfInkToDeviceScaleX, float* pfInkToDeviceScaleY, uint32* pcPacketProperties, PACKET_PROPERTY** ppPacketProperties) GetPacketDescriptionData;
+				public new function HRESULT(ref IRealTimeStylus self, out BOOL pfEnable) get_Enabled;
+				public new function HRESULT(ref IRealTimeStylus self, BOOL fEnable) put_Enabled;
+				public new function HRESULT(ref IRealTimeStylus self, out HANDLE_PTR phwnd) get_HWND;
+				public new function HRESULT(ref IRealTimeStylus self, HANDLE_PTR hwnd) put_HWND;
+				public new function HRESULT(ref IRealTimeStylus self, out RECT prcWndInputRect) get_WindowInputRectangle;
+				public new function HRESULT(ref IRealTimeStylus self, in RECT prcWndInputRect) put_WindowInputRectangle;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusSyncPlugin* piPlugin) AddStylusSyncPlugin;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) RemoveStylusSyncPlugin;
+				public new function HRESULT(ref IRealTimeStylus self) RemoveAllStylusSyncPlugins;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusSyncPlugin** ppiPlugin) GetStylusSyncPlugin;
+				public new function HRESULT(ref IRealTimeStylus self, out uint32 pcPlugins) GetStylusSyncPluginCount;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusAsyncPlugin* piPlugin) AddStylusAsyncPlugin;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) RemoveStylusAsyncPlugin;
+				public new function HRESULT(ref IRealTimeStylus self) RemoveAllStylusAsyncPlugins;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 iIndex, IStylusAsyncPlugin** ppiPlugin) GetStylusAsyncPlugin;
+				public new function HRESULT(ref IRealTimeStylus self, out uint32 pcPlugins) GetStylusAsyncPluginCount;
+				public new function HRESULT(ref IRealTimeStylus self, IRealTimeStylus** ppiRTS) get_ChildRealTimeStylusPlugin;
+				public new function HRESULT(ref IRealTimeStylus self, IRealTimeStylus* piRTS) putref_ChildRealTimeStylusPlugin;
+				public new function HRESULT(ref IRealTimeStylus self, StylusQueue sq, in Guid pGuidId, uint32 cbData, uint8* pbData) AddCustomStylusDataToQueue;
+				public new function HRESULT(ref IRealTimeStylus self) ClearStylusQueues;
+				public new function HRESULT(ref IRealTimeStylus self, BOOL fUseMouseForInput) SetAllTabletsMode;
+				public new function HRESULT(ref IRealTimeStylus self, IInkTablet* piTablet) SetSingleTabletMode;
+				public new function HRESULT(ref IRealTimeStylus self, IInkTablet** ppiSingleTablet) GetTablet;
+				public new function HRESULT(ref IRealTimeStylus self, IInkTablet* piTablet, out uint32 ptcid) GetTabletContextIdFromTablet;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 tcid, IInkTablet** ppiTablet) GetTabletFromTabletContextId;
+				public new function HRESULT(ref IRealTimeStylus self, out uint32 pcTcidCount, uint32** ppTcids) GetAllTabletContextIds;
+				public new function HRESULT(ref IRealTimeStylus self, IInkCursors** ppiInkCursors) GetStyluses;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 sid, IInkCursor** ppiInkCursor) GetStylusForId;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 cProperties, Guid* pPropertyGuids) SetDesiredPacketDescription;
+				public new function HRESULT(ref IRealTimeStylus self, out uint32 pcProperties, Guid** ppPropertyGuids) GetDesiredPacketDescription;
+				public new function HRESULT(ref IRealTimeStylus self, uint32 tcid, float* pfInkToDeviceScaleX, float* pfInkToDeviceScaleY, out uint32 pcPacketProperties, PACKET_PROPERTY** ppPacketProperties) GetPacketDescriptionData;
 			}
 		}
 		[CRepr]
@@ -5626,19 +5626,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FlicksEnabled(BOOL* pfEnable) mut
+			public HRESULT get_FlicksEnabled(out BOOL pfEnable) mut
 			{
-				return VT.get_FlicksEnabled(&this, pfEnable);
+				return VT.get_FlicksEnabled(ref this, out pfEnable);
 			}
 			public HRESULT put_FlicksEnabled(BOOL fEnable) mut
 			{
-				return VT.put_FlicksEnabled(&this, fEnable);
+				return VT.put_FlicksEnabled(ref this, fEnable);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRealTimeStylus2 *self, BOOL* pfEnable) get_FlicksEnabled;
-				public new function HRESULT(IRealTimeStylus2 *self, BOOL fEnable) put_FlicksEnabled;
+				public new function HRESULT(ref IRealTimeStylus2 self, out BOOL pfEnable) get_FlicksEnabled;
+				public new function HRESULT(ref IRealTimeStylus2 self, BOOL fEnable) put_FlicksEnabled;
 			}
 		}
 		[CRepr]
@@ -5648,19 +5648,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MultiTouchEnabled(BOOL* pfEnable) mut
+			public HRESULT get_MultiTouchEnabled(out BOOL pfEnable) mut
 			{
-				return VT.get_MultiTouchEnabled(&this, pfEnable);
+				return VT.get_MultiTouchEnabled(ref this, out pfEnable);
 			}
 			public HRESULT put_MultiTouchEnabled(BOOL fEnable) mut
 			{
-				return VT.put_MultiTouchEnabled(&this, fEnable);
+				return VT.put_MultiTouchEnabled(ref this, fEnable);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRealTimeStylus3 *self, BOOL* pfEnable) get_MultiTouchEnabled;
-				public new function HRESULT(IRealTimeStylus3 *self, BOOL fEnable) put_MultiTouchEnabled;
+				public new function HRESULT(ref IRealTimeStylus3 self, out BOOL pfEnable) get_MultiTouchEnabled;
+				public new function HRESULT(ref IRealTimeStylus3 self, BOOL fEnable) put_MultiTouchEnabled;
 			}
 		}
 		[CRepr]
@@ -5672,17 +5672,17 @@ namespace Win32
 			
 			public HRESULT AcquireLock(RealTimeStylusLockType lock) mut
 			{
-				return VT.AcquireLock(&this, lock);
+				return VT.AcquireLock(ref this, lock);
 			}
 			public HRESULT ReleaseLock(RealTimeStylusLockType lock) mut
 			{
-				return VT.ReleaseLock(&this, lock);
+				return VT.ReleaseLock(ref this, lock);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRealTimeStylusSynchronization *self, RealTimeStylusLockType lock) AcquireLock;
-				public new function HRESULT(IRealTimeStylusSynchronization *self, RealTimeStylusLockType lock) ReleaseLock;
+				public new function HRESULT(ref IRealTimeStylusSynchronization self, RealTimeStylusLockType lock) AcquireLock;
+				public new function HRESULT(ref IRealTimeStylusSynchronization self, RealTimeStylusLockType lock) ReleaseLock;
 			}
 		}
 		[CRepr]
@@ -5694,37 +5694,37 @@ namespace Win32
 			
 			public HRESULT CreateStroke(uint32 cPktBuffLength, int32* pPackets, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) mut
 			{
-				return VT.CreateStroke(&this, cPktBuffLength, pPackets, cPacketProperties, pPacketProperties, fInkToDeviceScaleX, fInkToDeviceScaleY, ppIInkStroke);
+				return VT.CreateStroke(ref this, cPktBuffLength, pPackets, cPacketProperties, pPacketProperties, fInkToDeviceScaleX, fInkToDeviceScaleY, ppIInkStroke);
 			}
-			public HRESULT BeginStroke(uint32 tcid, uint32 sid, int32* pPacket, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) mut
+			public HRESULT BeginStroke(uint32 tcid, uint32 sid, in int32 pPacket, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) mut
 			{
-				return VT.BeginStroke(&this, tcid, sid, pPacket, cPacketProperties, pPacketProperties, fInkToDeviceScaleX, fInkToDeviceScaleY, ppIInkStroke);
+				return VT.BeginStroke(ref this, tcid, sid, pPacket, cPacketProperties, pPacketProperties, fInkToDeviceScaleX, fInkToDeviceScaleY, ppIInkStroke);
 			}
 			public HRESULT AppendPackets(uint32 tcid, uint32 sid, uint32 cPktBuffLength, int32* pPackets) mut
 			{
-				return VT.AppendPackets(&this, tcid, sid, cPktBuffLength, pPackets);
+				return VT.AppendPackets(ref this, tcid, sid, cPktBuffLength, pPackets);
 			}
-			public HRESULT EndStroke(uint32 tcid, uint32 sid, IInkStrokeDisp** ppIInkStroke, RECT* pDirtyRect) mut
+			public HRESULT EndStroke(uint32 tcid, uint32 sid, IInkStrokeDisp** ppIInkStroke, out RECT pDirtyRect) mut
 			{
-				return VT.EndStroke(&this, tcid, sid, ppIInkStroke, pDirtyRect);
+				return VT.EndStroke(ref this, tcid, sid, ppIInkStroke, out pDirtyRect);
 			}
 			public HRESULT get_Ink(IInkDisp** ppiInkObj) mut
 			{
-				return VT.get_Ink(&this, ppiInkObj);
+				return VT.get_Ink(ref this, ppiInkObj);
 			}
 			public HRESULT putref_Ink(IInkDisp* piInkObj) mut
 			{
-				return VT.putref_Ink(&this, piInkObj);
+				return VT.putref_Ink(ref this, piInkObj);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IStrokeBuilder *self, uint32 cPktBuffLength, int32* pPackets, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) CreateStroke;
-				public new function HRESULT(IStrokeBuilder *self, uint32 tcid, uint32 sid, int32* pPacket, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) BeginStroke;
-				public new function HRESULT(IStrokeBuilder *self, uint32 tcid, uint32 sid, uint32 cPktBuffLength, int32* pPackets) AppendPackets;
-				public new function HRESULT(IStrokeBuilder *self, uint32 tcid, uint32 sid, IInkStrokeDisp** ppIInkStroke, RECT* pDirtyRect) EndStroke;
-				public new function HRESULT(IStrokeBuilder *self, IInkDisp** ppiInkObj) get_Ink;
-				public new function HRESULT(IStrokeBuilder *self, IInkDisp* piInkObj) putref_Ink;
+				public new function HRESULT(ref IStrokeBuilder self, uint32 cPktBuffLength, int32* pPackets, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) CreateStroke;
+				public new function HRESULT(ref IStrokeBuilder self, uint32 tcid, uint32 sid, in int32 pPacket, uint32 cPacketProperties, PACKET_PROPERTY* pPacketProperties, float fInkToDeviceScaleX, float fInkToDeviceScaleY, IInkStrokeDisp** ppIInkStroke) BeginStroke;
+				public new function HRESULT(ref IStrokeBuilder self, uint32 tcid, uint32 sid, uint32 cPktBuffLength, int32* pPackets) AppendPackets;
+				public new function HRESULT(ref IStrokeBuilder self, uint32 tcid, uint32 sid, IInkStrokeDisp** ppIInkStroke, out RECT pDirtyRect) EndStroke;
+				public new function HRESULT(ref IStrokeBuilder self, IInkDisp** ppiInkObj) get_Ink;
+				public new function HRESULT(ref IStrokeBuilder self, IInkDisp* piInkObj) putref_Ink;
 			}
 		}
 		[CRepr]
@@ -5736,92 +5736,92 @@ namespace Win32
 			
 			public HRESULT RealTimeStylusEnabled(IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) mut
 			{
-				return VT.RealTimeStylusEnabled(&this, piRtsSrc, cTcidCount, pTcids);
+				return VT.RealTimeStylusEnabled(ref this, piRtsSrc, cTcidCount, pTcids);
 			}
 			public HRESULT RealTimeStylusDisabled(IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) mut
 			{
-				return VT.RealTimeStylusDisabled(&this, piRtsSrc, cTcidCount, pTcids);
+				return VT.RealTimeStylusDisabled(ref this, piRtsSrc, cTcidCount, pTcids);
 			}
 			public HRESULT StylusInRange(IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) mut
 			{
-				return VT.StylusInRange(&this, piRtsSrc, tcid, sid);
+				return VT.StylusInRange(ref this, piRtsSrc, tcid, sid);
 			}
 			public HRESULT StylusOutOfRange(IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) mut
 			{
-				return VT.StylusOutOfRange(&this, piRtsSrc, tcid, sid);
+				return VT.StylusOutOfRange(ref this, piRtsSrc, tcid, sid);
 			}
-			public HRESULT StylusDown(IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) mut
+			public HRESULT StylusDown(IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) mut
 			{
-				return VT.StylusDown(&this, piRtsSrc, pStylusInfo, cPropCountPerPkt, pPacket, ppInOutPkt);
+				return VT.StylusDown(ref this, piRtsSrc, pStylusInfo, cPropCountPerPkt, pPacket, ppInOutPkt);
 			}
-			public HRESULT StylusUp(IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) mut
+			public HRESULT StylusUp(IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) mut
 			{
-				return VT.StylusUp(&this, piRtsSrc, pStylusInfo, cPropCountPerPkt, pPacket, ppInOutPkt);
+				return VT.StylusUp(ref this, piRtsSrc, pStylusInfo, cPropCountPerPkt, pPacket, ppInOutPkt);
 			}
-			public HRESULT StylusButtonDown(IRealTimeStylus* piRtsSrc, uint32 sid, Guid* pGuidStylusButton, POINT* pStylusPos) mut
+			public HRESULT StylusButtonDown(IRealTimeStylus* piRtsSrc, uint32 sid, in Guid pGuidStylusButton, out POINT pStylusPos) mut
 			{
-				return VT.StylusButtonDown(&this, piRtsSrc, sid, pGuidStylusButton, pStylusPos);
+				return VT.StylusButtonDown(ref this, piRtsSrc, sid, pGuidStylusButton, out pStylusPos);
 			}
-			public HRESULT StylusButtonUp(IRealTimeStylus* piRtsSrc, uint32 sid, Guid* pGuidStylusButton, POINT* pStylusPos) mut
+			public HRESULT StylusButtonUp(IRealTimeStylus* piRtsSrc, uint32 sid, in Guid pGuidStylusButton, out POINT pStylusPos) mut
 			{
-				return VT.StylusButtonUp(&this, piRtsSrc, sid, pGuidStylusButton, pStylusPos);
+				return VT.StylusButtonUp(ref this, piRtsSrc, sid, pGuidStylusButton, out pStylusPos);
 			}
-			public HRESULT InAirPackets(IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, uint32* pcInOutPkts, int32** ppInOutPkts) mut
+			public HRESULT InAirPackets(IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, out uint32 pcInOutPkts, int32** ppInOutPkts) mut
 			{
-				return VT.InAirPackets(&this, piRtsSrc, pStylusInfo, cPktCount, cPktBuffLength, pPackets, pcInOutPkts, ppInOutPkts);
+				return VT.InAirPackets(ref this, piRtsSrc, pStylusInfo, cPktCount, cPktBuffLength, pPackets, out pcInOutPkts, ppInOutPkts);
 			}
-			public HRESULT Packets(IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, uint32* pcInOutPkts, int32** ppInOutPkts) mut
+			public HRESULT Packets(IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, out uint32 pcInOutPkts, int32** ppInOutPkts) mut
 			{
-				return VT.Packets(&this, piRtsSrc, pStylusInfo, cPktCount, cPktBuffLength, pPackets, pcInOutPkts, ppInOutPkts);
+				return VT.Packets(ref this, piRtsSrc, pStylusInfo, cPktCount, cPktBuffLength, pPackets, out pcInOutPkts, ppInOutPkts);
 			}
-			public HRESULT CustomStylusDataAdded(IRealTimeStylus* piRtsSrc, Guid* pGuidId, uint32 cbData, uint8* pbData) mut
+			public HRESULT CustomStylusDataAdded(IRealTimeStylus* piRtsSrc, in Guid pGuidId, uint32 cbData, uint8* pbData) mut
 			{
-				return VT.CustomStylusDataAdded(&this, piRtsSrc, pGuidId, cbData, pbData);
+				return VT.CustomStylusDataAdded(ref this, piRtsSrc, pGuidId, cbData, pbData);
 			}
 			public HRESULT SystemEvent(IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid, uint16 event, SYSTEM_EVENT_DATA eventdata) mut
 			{
-				return VT.SystemEvent(&this, piRtsSrc, tcid, sid, event, eventdata);
+				return VT.SystemEvent(ref this, piRtsSrc, tcid, sid, event, eventdata);
 			}
 			public HRESULT TabletAdded(IRealTimeStylus* piRtsSrc, IInkTablet* piTablet) mut
 			{
-				return VT.TabletAdded(&this, piRtsSrc, piTablet);
+				return VT.TabletAdded(ref this, piRtsSrc, piTablet);
 			}
 			public HRESULT TabletRemoved(IRealTimeStylus* piRtsSrc, int32 iTabletIndex) mut
 			{
-				return VT.TabletRemoved(&this, piRtsSrc, iTabletIndex);
+				return VT.TabletRemoved(ref this, piRtsSrc, iTabletIndex);
 			}
-			public HRESULT Error(IRealTimeStylus* piRtsSrc, IStylusPlugin* piPlugin, RealTimeStylusDataInterest dataInterest, HRESULT hrErrorCode, int* lptrKey) mut
+			public HRESULT Error(IRealTimeStylus* piRtsSrc, IStylusPlugin* piPlugin, RealTimeStylusDataInterest dataInterest, HRESULT hrErrorCode, out int lptrKey) mut
 			{
-				return VT.Error(&this, piRtsSrc, piPlugin, dataInterest, hrErrorCode, lptrKey);
+				return VT.Error(ref this, piRtsSrc, piPlugin, dataInterest, hrErrorCode, out lptrKey);
 			}
 			public HRESULT UpdateMapping(IRealTimeStylus* piRtsSrc) mut
 			{
-				return VT.UpdateMapping(&this, piRtsSrc);
+				return VT.UpdateMapping(ref this, piRtsSrc);
 			}
-			public HRESULT DataInterest(RealTimeStylusDataInterest* pDataInterest) mut
+			public HRESULT DataInterest(out RealTimeStylusDataInterest pDataInterest) mut
 			{
-				return VT.DataInterest(&this, pDataInterest);
+				return VT.DataInterest(ref this, out pDataInterest);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusEnabled;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusDisabled;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusInRange;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusOutOfRange;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusDown;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusUp;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 sid, Guid* pGuidStylusButton, POINT* pStylusPos) StylusButtonDown;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 sid, Guid* pGuidStylusButton, POINT* pStylusPos) StylusButtonUp;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, uint32* pcInOutPkts, int32** ppInOutPkts) InAirPackets;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, StylusInfo* pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, uint32* pcInOutPkts, int32** ppInOutPkts) Packets;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, Guid* pGuidId, uint32 cbData, uint8* pbData) CustomStylusDataAdded;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid, uint16 event, SYSTEM_EVENT_DATA eventdata) SystemEvent;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, IInkTablet* piTablet) TabletAdded;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, int32 iTabletIndex) TabletRemoved;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc, IStylusPlugin* piPlugin, RealTimeStylusDataInterest dataInterest, HRESULT hrErrorCode, int* lptrKey) Error;
-				public new function HRESULT(IStylusPlugin *self, IRealTimeStylus* piRtsSrc) UpdateMapping;
-				public new function HRESULT(IStylusPlugin *self, RealTimeStylusDataInterest* pDataInterest) DataInterest;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusEnabled;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 cTcidCount, uint32* pTcids) RealTimeStylusDisabled;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusInRange;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid) StylusOutOfRange;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusDown;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPropCountPerPkt, int32* pPacket, int32** ppInOutPkt) StylusUp;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 sid, in Guid pGuidStylusButton, out POINT pStylusPos) StylusButtonDown;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 sid, in Guid pGuidStylusButton, out POINT pStylusPos) StylusButtonUp;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, out uint32 pcInOutPkts, int32** ppInOutPkts) InAirPackets;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in StylusInfo pStylusInfo, uint32 cPktCount, uint32 cPktBuffLength, int32* pPackets, out uint32 pcInOutPkts, int32** ppInOutPkts) Packets;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, in Guid pGuidId, uint32 cbData, uint8* pbData) CustomStylusDataAdded;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, uint32 tcid, uint32 sid, uint16 event, SYSTEM_EVENT_DATA eventdata) SystemEvent;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, IInkTablet* piTablet) TabletAdded;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, int32 iTabletIndex) TabletRemoved;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc, IStylusPlugin* piPlugin, RealTimeStylusDataInterest dataInterest, HRESULT hrErrorCode, out int lptrKey) Error;
+				public new function HRESULT(ref IStylusPlugin self, IRealTimeStylus* piRtsSrc) UpdateMapping;
+				public new function HRESULT(ref IStylusPlugin self, out RealTimeStylusDataInterest pDataInterest) DataInterest;
 			}
 		}
 		[CRepr]
@@ -5855,84 +5855,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Enabled(BOOL* bEnabled) mut
+			public HRESULT get_Enabled(out BOOL bEnabled) mut
 			{
-				return VT.get_Enabled(&this, bEnabled);
+				return VT.get_Enabled(ref this, out bEnabled);
 			}
 			public HRESULT put_Enabled(BOOL bEnabled) mut
 			{
-				return VT.put_Enabled(&this, bEnabled);
+				return VT.put_Enabled(ref this, bEnabled);
 			}
-			public HRESULT get_HWND(HANDLE_PTR* hwnd) mut
+			public HRESULT get_HWND(out HANDLE_PTR hwnd) mut
 			{
-				return VT.get_HWND(&this, hwnd);
+				return VT.get_HWND(ref this, out hwnd);
 			}
 			public HRESULT put_HWND(HANDLE_PTR hwnd) mut
 			{
-				return VT.put_HWND(&this, hwnd);
+				return VT.put_HWND(ref this, hwnd);
 			}
-			public HRESULT get_ClipRectangle(RECT* prcClipRect) mut
+			public HRESULT get_ClipRectangle(out RECT prcClipRect) mut
 			{
-				return VT.get_ClipRectangle(&this, prcClipRect);
+				return VT.get_ClipRectangle(ref this, out prcClipRect);
 			}
-			public HRESULT put_ClipRectangle(RECT* prcClipRect) mut
+			public HRESULT put_ClipRectangle(in RECT prcClipRect) mut
 			{
-				return VT.put_ClipRectangle(&this, prcClipRect);
+				return VT.put_ClipRectangle(ref this, prcClipRect);
 			}
-			public HRESULT get_ClipRegion(HANDLE_PTR* phClipRgn) mut
+			public HRESULT get_ClipRegion(out HANDLE_PTR phClipRgn) mut
 			{
-				return VT.get_ClipRegion(&this, phClipRgn);
+				return VT.get_ClipRegion(ref this, out phClipRgn);
 			}
 			public HRESULT put_ClipRegion(HANDLE_PTR hClipRgn) mut
 			{
-				return VT.put_ClipRegion(&this, hClipRgn);
+				return VT.put_ClipRegion(ref this, hClipRgn);
 			}
 			public HRESULT get_DrawingAttributes(IInkDrawingAttributes** ppiDA) mut
 			{
-				return VT.get_DrawingAttributes(&this, ppiDA);
+				return VT.get_DrawingAttributes(ref this, ppiDA);
 			}
 			public HRESULT putref_DrawingAttributes(IInkDrawingAttributes* piDA) mut
 			{
-				return VT.putref_DrawingAttributes(&this, piDA);
+				return VT.putref_DrawingAttributes(ref this, piDA);
 			}
-			public HRESULT get_DataCacheEnabled(BOOL* pfCacheData) mut
+			public HRESULT get_DataCacheEnabled(out BOOL pfCacheData) mut
 			{
-				return VT.get_DataCacheEnabled(&this, pfCacheData);
+				return VT.get_DataCacheEnabled(ref this, out pfCacheData);
 			}
 			public HRESULT put_DataCacheEnabled(BOOL fCacheData) mut
 			{
-				return VT.put_DataCacheEnabled(&this, fCacheData);
+				return VT.put_DataCacheEnabled(ref this, fCacheData);
 			}
 			public HRESULT ReleaseCachedData(uint32 strokeId) mut
 			{
-				return VT.ReleaseCachedData(&this, strokeId);
+				return VT.ReleaseCachedData(ref this, strokeId);
 			}
 			public HRESULT Refresh() mut
 			{
-				return VT.Refresh(&this);
+				return VT.Refresh(ref this);
 			}
 			public HRESULT Draw(HANDLE_PTR hDC) mut
 			{
-				return VT.Draw(&this, hDC);
+				return VT.Draw(ref this, hDC);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDynamicRenderer *self, BOOL* bEnabled) get_Enabled;
-				public new function HRESULT(IDynamicRenderer *self, BOOL bEnabled) put_Enabled;
-				public new function HRESULT(IDynamicRenderer *self, HANDLE_PTR* hwnd) get_HWND;
-				public new function HRESULT(IDynamicRenderer *self, HANDLE_PTR hwnd) put_HWND;
-				public new function HRESULT(IDynamicRenderer *self, RECT* prcClipRect) get_ClipRectangle;
-				public new function HRESULT(IDynamicRenderer *self, RECT* prcClipRect) put_ClipRectangle;
-				public new function HRESULT(IDynamicRenderer *self, HANDLE_PTR* phClipRgn) get_ClipRegion;
-				public new function HRESULT(IDynamicRenderer *self, HANDLE_PTR hClipRgn) put_ClipRegion;
-				public new function HRESULT(IDynamicRenderer *self, IInkDrawingAttributes** ppiDA) get_DrawingAttributes;
-				public new function HRESULT(IDynamicRenderer *self, IInkDrawingAttributes* piDA) putref_DrawingAttributes;
-				public new function HRESULT(IDynamicRenderer *self, BOOL* pfCacheData) get_DataCacheEnabled;
-				public new function HRESULT(IDynamicRenderer *self, BOOL fCacheData) put_DataCacheEnabled;
-				public new function HRESULT(IDynamicRenderer *self, uint32 strokeId) ReleaseCachedData;
-				public new function HRESULT(IDynamicRenderer *self) Refresh;
-				public new function HRESULT(IDynamicRenderer *self, HANDLE_PTR hDC) Draw;
+				public new function HRESULT(ref IDynamicRenderer self, out BOOL bEnabled) get_Enabled;
+				public new function HRESULT(ref IDynamicRenderer self, BOOL bEnabled) put_Enabled;
+				public new function HRESULT(ref IDynamicRenderer self, out HANDLE_PTR hwnd) get_HWND;
+				public new function HRESULT(ref IDynamicRenderer self, HANDLE_PTR hwnd) put_HWND;
+				public new function HRESULT(ref IDynamicRenderer self, out RECT prcClipRect) get_ClipRectangle;
+				public new function HRESULT(ref IDynamicRenderer self, in RECT prcClipRect) put_ClipRectangle;
+				public new function HRESULT(ref IDynamicRenderer self, out HANDLE_PTR phClipRgn) get_ClipRegion;
+				public new function HRESULT(ref IDynamicRenderer self, HANDLE_PTR hClipRgn) put_ClipRegion;
+				public new function HRESULT(ref IDynamicRenderer self, IInkDrawingAttributes** ppiDA) get_DrawingAttributes;
+				public new function HRESULT(ref IDynamicRenderer self, IInkDrawingAttributes* piDA) putref_DrawingAttributes;
+				public new function HRESULT(ref IDynamicRenderer self, out BOOL pfCacheData) get_DataCacheEnabled;
+				public new function HRESULT(ref IDynamicRenderer self, BOOL fCacheData) put_DataCacheEnabled;
+				public new function HRESULT(ref IDynamicRenderer self, uint32 strokeId) ReleaseCachedData;
+				public new function HRESULT(ref IDynamicRenderer self) Refresh;
+				public new function HRESULT(ref IDynamicRenderer self, HANDLE_PTR hDC) Draw;
 			}
 		}
 		[CRepr]
@@ -5942,39 +5942,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Enabled(BOOL* pfEnabled) mut
+			public HRESULT get_Enabled(out BOOL pfEnabled) mut
 			{
-				return VT.get_Enabled(&this, pfEnabled);
+				return VT.get_Enabled(ref this, out pfEnabled);
 			}
 			public HRESULT put_Enabled(BOOL fEnabled) mut
 			{
-				return VT.put_Enabled(&this, fEnabled);
+				return VT.put_Enabled(ref this, fEnabled);
 			}
-			public HRESULT get_MaxStrokeCount(int32* pcStrokes) mut
+			public HRESULT get_MaxStrokeCount(out int32 pcStrokes) mut
 			{
-				return VT.get_MaxStrokeCount(&this, pcStrokes);
+				return VT.get_MaxStrokeCount(ref this, out pcStrokes);
 			}
 			public HRESULT put_MaxStrokeCount(int32 cStrokes) mut
 			{
-				return VT.put_MaxStrokeCount(&this, cStrokes);
+				return VT.put_MaxStrokeCount(ref this, cStrokes);
 			}
 			public HRESULT EnableGestures(uint32 cGestures, int32* pGestures) mut
 			{
-				return VT.EnableGestures(&this, cGestures, pGestures);
+				return VT.EnableGestures(ref this, cGestures, pGestures);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IGestureRecognizer *self, BOOL* pfEnabled) get_Enabled;
-				public new function HRESULT(IGestureRecognizer *self, BOOL fEnabled) put_Enabled;
-				public new function HRESULT(IGestureRecognizer *self, int32* pcStrokes) get_MaxStrokeCount;
-				public new function HRESULT(IGestureRecognizer *self, int32 cStrokes) put_MaxStrokeCount;
-				public new function HRESULT(IGestureRecognizer *self, uint32 cGestures, int32* pGestures) EnableGestures;
-				public new function HRESULT(IGestureRecognizer *self) Reset;
+				public new function HRESULT(ref IGestureRecognizer self, out BOOL pfEnabled) get_Enabled;
+				public new function HRESULT(ref IGestureRecognizer self, BOOL fEnabled) put_Enabled;
+				public new function HRESULT(ref IGestureRecognizer self, out int32 pcStrokes) get_MaxStrokeCount;
+				public new function HRESULT(ref IGestureRecognizer self, int32 cStrokes) put_MaxStrokeCount;
+				public new function HRESULT(ref IGestureRecognizer self, uint32 cGestures, int32* pGestures) EnableGestures;
+				public new function HRESULT(ref IGestureRecognizer self) Reset;
 			}
 		}
 		[CRepr]
@@ -5986,17 +5986,17 @@ namespace Win32
 			
 			public HRESULT UpdatePendingText(BSTR bstrPendingText) mut
 			{
-				return VT.UpdatePendingText(&this, bstrPendingText);
+				return VT.UpdatePendingText(ref this, bstrPendingText);
 			}
 			public HRESULT Show(BOOL fShow) mut
 			{
-				return VT.Show(&this, fShow);
+				return VT.Show(ref this, fShow);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITipAutoCompleteProvider *self, BSTR bstrPendingText) UpdatePendingText;
-				public new function HRESULT(ITipAutoCompleteProvider *self, BOOL fShow) Show;
+				public new function HRESULT(ref ITipAutoCompleteProvider self, BSTR bstrPendingText) UpdatePendingText;
+				public new function HRESULT(ref ITipAutoCompleteProvider self, BOOL fShow) Show;
 			}
 		}
 		[CRepr]
@@ -6008,91 +6008,91 @@ namespace Win32
 			
 			public HRESULT AdviseProvider(HWND hWndField, ITipAutoCompleteProvider* pIProvider) mut
 			{
-				return VT.AdviseProvider(&this, hWndField, pIProvider);
+				return VT.AdviseProvider(ref this, hWndField, pIProvider);
 			}
 			public HRESULT UnadviseProvider(HWND hWndField, ITipAutoCompleteProvider* pIProvider) mut
 			{
-				return VT.UnadviseProvider(&this, hWndField, pIProvider);
+				return VT.UnadviseProvider(ref this, hWndField, pIProvider);
 			}
 			public HRESULT UserSelection() mut
 			{
-				return VT.UserSelection(&this);
+				return VT.UserSelection(ref this);
 			}
-			public HRESULT PreferredRects(RECT* prcACList, RECT* prcField, RECT* prcModifiedACList, BOOL* pfShownAboveTip) mut
+			public HRESULT PreferredRects(ref RECT prcACList, ref RECT prcField, out RECT prcModifiedACList, out BOOL pfShownAboveTip) mut
 			{
-				return VT.PreferredRects(&this, prcACList, prcField, prcModifiedACList, pfShownAboveTip);
+				return VT.PreferredRects(ref this, ref prcACList, ref prcField, out prcModifiedACList, out pfShownAboveTip);
 			}
-			public HRESULT RequestShowUI(HWND hWndList, BOOL* pfAllowShowing) mut
+			public HRESULT RequestShowUI(HWND hWndList, out BOOL pfAllowShowing) mut
 			{
-				return VT.RequestShowUI(&this, hWndList, pfAllowShowing);
+				return VT.RequestShowUI(ref this, hWndList, out pfAllowShowing);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITipAutoCompleteClient *self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) AdviseProvider;
-				public new function HRESULT(ITipAutoCompleteClient *self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) UnadviseProvider;
-				public new function HRESULT(ITipAutoCompleteClient *self) UserSelection;
-				public new function HRESULT(ITipAutoCompleteClient *self, RECT* prcACList, RECT* prcField, RECT* prcModifiedACList, BOOL* pfShownAboveTip) PreferredRects;
-				public new function HRESULT(ITipAutoCompleteClient *self, HWND hWndList, BOOL* pfAllowShowing) RequestShowUI;
+				public new function HRESULT(ref ITipAutoCompleteClient self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) AdviseProvider;
+				public new function HRESULT(ref ITipAutoCompleteClient self, HWND hWndField, ITipAutoCompleteProvider* pIProvider) UnadviseProvider;
+				public new function HRESULT(ref ITipAutoCompleteClient self) UserSelection;
+				public new function HRESULT(ref ITipAutoCompleteClient self, ref RECT prcACList, ref RECT prcField, out RECT prcModifiedACList, out BOOL pfShownAboveTip) PreferredRects;
+				public new function HRESULT(ref ITipAutoCompleteClient self, HWND hWndList, out BOOL pfAllowShowing) RequestShowUI;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateRecognizer(Guid* pCLSID, HRECOGNIZER* phrec);
+		public static extern HRESULT CreateRecognizer(out Guid pCLSID, out HRECOGNIZER phrec);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DestroyRecognizer(HRECOGNIZER hrec);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetRecoAttributes(HRECOGNIZER hrec, RECO_ATTRS* pRecoAttrs);
+		public static extern HRESULT GetRecoAttributes(HRECOGNIZER hrec, out RECO_ATTRS pRecoAttrs);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateContext(HRECOGNIZER hrec, HRECOCONTEXT* phrc);
+		public static extern HRESULT CreateContext(HRECOGNIZER hrec, out HRECOCONTEXT phrc);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DestroyContext(HRECOCONTEXT hrc);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetResultPropertyList(HRECOGNIZER hrec, uint32* pPropertyCount, Guid* pPropertyGuid);
+		public static extern HRESULT GetResultPropertyList(HRECOGNIZER hrec, out uint32 pPropertyCount, out Guid pPropertyGuid);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetUnicodeRanges(HRECOGNIZER hrec, uint32* pcRanges, CHARACTER_RANGE* pcr);
+		public static extern HRESULT GetUnicodeRanges(HRECOGNIZER hrec, out uint32 pcRanges, out CHARACTER_RANGE pcr);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AddStroke(HRECOCONTEXT hrc, PACKET_DESCRIPTION* pPacketDesc, uint32 cbPacket, uint8* pPacket, XFORM* pXForm);
+		public static extern HRESULT AddStroke(HRECOCONTEXT hrc, in PACKET_DESCRIPTION pPacketDesc, uint32 cbPacket, in uint8 pPacket, in XFORM pXForm);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetBestResultString(HRECOCONTEXT hrc, uint32* pcSize, char16* pwcBestResult);
+		public static extern HRESULT GetBestResultString(HRECOCONTEXT hrc, out uint32 pcSize, char16* pwcBestResult);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SetGuide(HRECOCONTEXT hrc, RECO_GUIDE* pGuide, uint32 iIndex);
+		public static extern HRESULT SetGuide(HRECOCONTEXT hrc, in RECO_GUIDE pGuide, uint32 iIndex);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT AdviseInkChange(HRECOCONTEXT hrc, BOOL bNewStroke);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT EndInkInput(HRECOCONTEXT hrc);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT Process(HRECOCONTEXT hrc, BOOL* pbPartialProcessing);
+		public static extern HRESULT Process(HRECOCONTEXT hrc, out BOOL pbPartialProcessing);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SetFactoid(HRECOCONTEXT hrc, uint32 cwcFactoid, PWSTR pwcFactoid);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SetFlags(HRECOCONTEXT hrc, uint32 dwFlags);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetLatticePtr(HRECOCONTEXT hrc, RECO_LATTICE** ppLattice);
+		public static extern HRESULT GetLatticePtr(HRECOCONTEXT hrc, out RECO_LATTICE* ppLattice);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SetTextContext(HRECOCONTEXT hrc, uint32 cwcBefore, char16* pwcBefore, uint32 cwcAfter, char16* pwcAfter);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT SetEnabledUnicodeRanges(HRECOCONTEXT hrc, uint32 cRanges, CHARACTER_RANGE* pcr);
+		public static extern HRESULT SetEnabledUnicodeRanges(HRECOCONTEXT hrc, uint32 cRanges, out CHARACTER_RANGE pcr);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT IsStringSupported(HRECOCONTEXT hrc, uint32 wcString, PWSTR pwcString);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SetWordList(HRECOCONTEXT hrc, HRECOWORDLIST hwl);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetRightSeparator(HRECOCONTEXT hrc, uint32* pcSize, char16* pwcRightSeparator);
+		public static extern HRESULT GetRightSeparator(HRECOCONTEXT hrc, out uint32 pcSize, char16* pwcRightSeparator);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetLeftSeparator(HRECOCONTEXT hrc, uint32* pcSize, char16* pwcLeftSeparator);
+		public static extern HRESULT GetLeftSeparator(HRECOCONTEXT hrc, out uint32 pcSize, char16* pwcLeftSeparator);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DestroyWordList(HRECOWORDLIST hwl);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT AddWordsToWordList(HRECOWORDLIST hwl, PWSTR pwcWords);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MakeWordList(HRECOGNIZER hrec, PWSTR pBuffer, HRECOWORDLIST* phwl);
+		public static extern HRESULT MakeWordList(HRECOGNIZER hrec, PWSTR pBuffer, out HRECOWORDLIST phwl);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetAllRecognizers(Guid** recognizerClsids, uint32* count);
+		public static extern HRESULT GetAllRecognizers(out Guid* recognizerClsids, out uint32 count);
 		[Import("inkobjcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT LoadCachedAttributes(Guid clsid, RECO_ATTRS* pRecoAttributes);
+		public static extern HRESULT LoadCachedAttributes(Guid clsid, out RECO_ATTRS pRecoAttributes);
 		
 	}
 }

@@ -50,8 +50,8 @@ namespace Win32
 		public function BOOL ENUMRESNAMEPROCW(HINSTANCE hModule, PWSTR lpType, PWSTR lpName, int lParam);
 		public function BOOL ENUMRESTYPEPROCA(HINSTANCE hModule, PSTR lpType, int lParam);
 		public function BOOL ENUMRESTYPEPROCW(HINSTANCE hModule, PWSTR lpType, int lParam);
-		public function BOOL PGET_MODULE_HANDLE_EXA(uint32 dwFlags, PSTR lpModuleName, HINSTANCE* phModule);
-		public function BOOL PGET_MODULE_HANDLE_EXW(uint32 dwFlags, PWSTR lpModuleName, HINSTANCE* phModule);
+		public function BOOL PGET_MODULE_HANDLE_EXA(uint32 dwFlags, PSTR lpModuleName, out HINSTANCE phModule);
+		public function BOOL PGET_MODULE_HANDLE_EXW(uint32 dwFlags, PWSTR lpModuleName, out HINSTANCE phModule);
 		
 		// --- Structs ---
 		
@@ -98,9 +98,9 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HINSTANCE GetModuleHandleW(PWSTR lpModuleName);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetModuleHandleExA(uint32 dwFlags, PSTR lpModuleName, HINSTANCE* phModule);
+		public static extern BOOL GetModuleHandleExA(uint32 dwFlags, PSTR lpModuleName, out HINSTANCE phModule);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetModuleHandleExW(uint32 dwFlags, PWSTR lpModuleName, HINSTANCE* phModule);
+		public static extern BOOL GetModuleHandleExW(uint32 dwFlags, PWSTR lpModuleName, out HINSTANCE phModule);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern FARPROC GetProcAddress(HINSTANCE hModule, PSTR lpProcName);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]

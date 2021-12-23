@@ -1369,8 +1369,8 @@ namespace Win32
 		public function uint32 PSP_FILE_CALLBACK_A(void* Context, uint32 Notification, uint Param1, uint Param2);
 		public function uint32 PSP_FILE_CALLBACK_W(void* Context, uint32 Notification, uint Param1, uint Param2);
 		public function BOOL PDETECT_PROGRESS_NOTIFY(void* ProgressNotifyParam, uint32 DetectComplete);
-		public function uint32 PSP_DETSIG_CMPPROC(void* DeviceInfoSet, SP_DEVINFO_DATA* NewDeviceData, SP_DEVINFO_DATA* ExistingDeviceData, void* CompareContext);
-		public function uint32 PCM_NOTIFY_CALLBACK(HCMNOTIFICATION hNotify, void* Context, CM_NOTIFY_ACTION Action, CM_NOTIFY_EVENT_DATA* EventData, uint32 EventDataSize);
+		public function uint32 PSP_DETSIG_CMPPROC(void* DeviceInfoSet, ref SP_DEVINFO_DATA NewDeviceData, ref SP_DEVINFO_DATA ExistingDeviceData, void* CompareContext);
+		public function uint32 PCM_NOTIFY_CALLBACK(HCMNOTIFICATION hNotify, void* Context, CM_NOTIFY_ACTION Action, ref CM_NOTIFY_EVENT_DATA EventData, uint32 EventDataSize);
 		
 		// --- Structs ---
 		
@@ -1387,7 +1387,7 @@ namespace Win32
 		{
 			public SP_INF_STYLE InfStyle;
 			public uint32 InfCount;
-			public uint8[] VersionData;
+			public uint8[0] VersionData;
 		}
 		[CRepr]
 		public struct SP_ALTPLATFORM_INFO_V3
@@ -1620,13 +1620,13 @@ namespace Win32
 		public struct SP_DEVICE_INTERFACE_DETAIL_DATA_A
 		{
 			public uint32 cbSize;
-			public CHAR[] DevicePath;
+			public CHAR[0] DevicePath;
 		}
 		[CRepr]
 		public struct SP_DEVICE_INTERFACE_DETAIL_DATA_W
 		{
 			public uint32 cbSize;
-			public char16[] DevicePath;
+			public char16[0] DevicePath;
 		}
 		[CRepr]
 		public struct SP_DEVINFO_LIST_DETAIL_DATA_A
@@ -1835,7 +1835,7 @@ namespace Win32
 			public CHAR[256] SectionName;
 			public CHAR[260] InfFileName;
 			public CHAR[256] DrvDescription;
-			public CHAR[] HardwareID;
+			public CHAR[0] HardwareID;
 		}
 		[CRepr]
 		public struct SP_DRVINFO_DETAIL_DATA_W
@@ -1848,7 +1848,7 @@ namespace Win32
 			public char16[256] SectionName;
 			public char16[260] InfFileName;
 			public char16[256] DrvDescription;
-			public char16[] HardwareID;
+			public char16[0] HardwareID;
 		}
 		[CRepr]
 		public struct SP_DRVINSTALL_PARAMS
@@ -1989,7 +1989,7 @@ namespace Win32
 		public struct MEM_RESOURCE
 		{
 			public MEM_DES MEM_Header;
-			public MEM_RANGE[] MEM_Data;
+			public MEM_RANGE[0] MEM_Data;
 		}
 		[CRepr]
 		public struct Mem_Large_Range_s
@@ -2015,7 +2015,7 @@ namespace Win32
 		public struct Mem_Large_Resource_s
 		{
 			public Mem_Large_Des_s MEM_LARGE_Header;
-			public Mem_Large_Range_s[] MEM_LARGE_Data;
+			public Mem_Large_Range_s[0] MEM_LARGE_Data;
 		}
 		[CRepr]
 		public struct IO_RANGE
@@ -2040,7 +2040,7 @@ namespace Win32
 		public struct IO_RESOURCE
 		{
 			public IO_DES IO_Header;
-			public IO_RANGE[] IO_Data;
+			public IO_RANGE[0] IO_Data;
 		}
 		[CRepr]
 		public struct DMA_RANGE
@@ -2061,7 +2061,7 @@ namespace Win32
 		public struct DMA_RESOURCE
 		{
 			public DMA_DES DMA_Header;
-			public DMA_RANGE[] DMA_Data;
+			public DMA_RANGE[0] DMA_Data;
 		}
 		[CRepr]
 		public struct IRQ_RANGE
@@ -2092,13 +2092,13 @@ namespace Win32
 		public struct IRQ_RESOURCE_32
 		{
 			public IRQ_DES_32 IRQ_Header;
-			public IRQ_RANGE[] IRQ_Data;
+			public IRQ_RANGE[0] IRQ_Data;
 		}
 		[CRepr]
 		public struct IRQ_RESOURCE_64
 		{
 			public IRQ_DES_64 IRQ_Header;
-			public IRQ_RANGE[] IRQ_Data;
+			public IRQ_RANGE[0] IRQ_Data;
 		}
 		[CRepr]
 		public struct DevPrivate_Range_s
@@ -2121,7 +2121,7 @@ namespace Win32
 		public struct DevPrivate_Resource_s
 		{
 			public DevPrivate_Des_s PRV_Header;
-			public DevPrivate_Range_s[] PRV_Data;
+			public DevPrivate_Range_s[0] PRV_Data;
 		}
 		[CRepr]
 		public struct CS_DES
@@ -2131,7 +2131,7 @@ namespace Win32
 			public uint32 CSD_LegacyDataSize;
 			public uint32 CSD_Flags;
 			public Guid CSD_ClassGuid;
-			public uint8[] CSD_Signature;
+			public uint8[0] CSD_Signature;
 		}
 		[CRepr]
 		public struct CS_RESOURCE
@@ -2194,7 +2194,7 @@ namespace Win32
 		public struct BUSNUMBER_RESOURCE
 		{
 			public BUSNUMBER_DES BusNumber_Header;
-			public BUSNUMBER_RANGE[] BusNumber_Data;
+			public BUSNUMBER_RANGE[0] BusNumber_Data;
 		}
 		[CRepr]
 		public struct Connection_Des_s
@@ -2276,13 +2276,13 @@ namespace Win32
 				[CRepr]
 				public struct _DeviceInstance_e__Struct
 				{
-					public char16[] InstanceId;
+					public char16[0] InstanceId;
 				}
 				[CRepr]
 				public struct _DeviceInterface_e__Struct
 				{
 					public Guid ClassGuid;
-					public char16[] SymbolicLink;
+					public char16[0] SymbolicLink;
 				}
 				[CRepr]
 				public struct _DeviceHandle_e__Struct
@@ -2290,7 +2290,7 @@ namespace Win32
 					public Guid EventGuid;
 					public int32 NameOffset;
 					public uint32 DataSize;
-					public uint8[] Data;
+					public uint8[0] Data;
 				}
 			}
 		}
@@ -2302,17 +2302,17 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupGetInfInformationW(void* InfSpec, uint32 SearchControl, SP_INF_INFORMATION* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQueryInfFileInformationA(SP_INF_INFORMATION* InfInformation, uint32 InfIndex, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupQueryInfFileInformationA(ref SP_INF_INFORMATION InfInformation, uint32 InfIndex, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQueryInfFileInformationW(SP_INF_INFORMATION* InfInformation, uint32 InfIndex, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupQueryInfFileInformationW(ref SP_INF_INFORMATION InfInformation, uint32 InfIndex, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQueryInfOriginalFileInformationA(SP_INF_INFORMATION* InfInformation, uint32 InfIndex, SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, SP_ORIGINAL_FILE_INFO_A* OriginalFileInfo);
+		public static extern BOOL SetupQueryInfOriginalFileInformationA(ref SP_INF_INFORMATION InfInformation, uint32 InfIndex, SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, out SP_ORIGINAL_FILE_INFO_A OriginalFileInfo);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQueryInfOriginalFileInformationW(SP_INF_INFORMATION* InfInformation, uint32 InfIndex, SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, SP_ORIGINAL_FILE_INFO_W* OriginalFileInfo);
+		public static extern BOOL SetupQueryInfOriginalFileInformationW(ref SP_INF_INFORMATION InfInformation, uint32 InfIndex, SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, out SP_ORIGINAL_FILE_INFO_W OriginalFileInfo);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQueryInfVersionInformationA(SP_INF_INFORMATION* InfInformation, uint32 InfIndex, PSTR Key, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupQueryInfVersionInformationA(ref SP_INF_INFORMATION InfInformation, uint32 InfIndex, PSTR Key, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQueryInfVersionInformationW(SP_INF_INFORMATION* InfInformation, uint32 InfIndex, PWSTR Key, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupQueryInfVersionInformationW(ref SP_INF_INFORMATION InfInformation, uint32 InfIndex, PWSTR Key, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupGetInfDriverStoreLocationA(PSTR FileName, SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, PSTR LocaleName, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2338,19 +2338,19 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void SetupCloseInfFile(void* InfHandle);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupFindFirstLineA(void* InfHandle, PSTR Section, PSTR Key, INFCONTEXT* Context);
+		public static extern BOOL SetupFindFirstLineA(void* InfHandle, PSTR Section, PSTR Key, out INFCONTEXT Context);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupFindFirstLineW(void* InfHandle, PWSTR Section, PWSTR Key, INFCONTEXT* Context);
+		public static extern BOOL SetupFindFirstLineW(void* InfHandle, PWSTR Section, PWSTR Key, out INFCONTEXT Context);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupFindNextLine(INFCONTEXT* ContextIn, INFCONTEXT* ContextOut);
+		public static extern BOOL SetupFindNextLine(ref INFCONTEXT ContextIn, out INFCONTEXT ContextOut);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupFindNextMatchLineA(INFCONTEXT* ContextIn, PSTR Key, INFCONTEXT* ContextOut);
+		public static extern BOOL SetupFindNextMatchLineA(ref INFCONTEXT ContextIn, PSTR Key, out INFCONTEXT ContextOut);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupFindNextMatchLineW(INFCONTEXT* ContextIn, PWSTR Key, INFCONTEXT* ContextOut);
+		public static extern BOOL SetupFindNextMatchLineW(ref INFCONTEXT ContextIn, PWSTR Key, out INFCONTEXT ContextOut);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetLineByIndexA(void* InfHandle, PSTR Section, uint32 Index, INFCONTEXT* Context);
+		public static extern BOOL SetupGetLineByIndexA(void* InfHandle, PSTR Section, uint32 Index, out INFCONTEXT Context);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetLineByIndexW(void* InfHandle, PWSTR Section, uint32 Index, INFCONTEXT* Context);
+		public static extern BOOL SetupGetLineByIndexW(void* InfHandle, PWSTR Section, uint32 Index, out INFCONTEXT Context);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SetupGetLineCountA(void* InfHandle, PSTR Section);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2360,39 +2360,39 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupGetLineTextW(INFCONTEXT* Context, void* InfHandle, PWSTR Section, PWSTR Key, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SetupGetFieldCount(INFCONTEXT* Context);
+		public static extern uint32 SetupGetFieldCount(ref INFCONTEXT Context);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetStringFieldA(INFCONTEXT* Context, uint32 FieldIndex, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupGetStringFieldA(ref INFCONTEXT Context, uint32 FieldIndex, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetStringFieldW(INFCONTEXT* Context, uint32 FieldIndex, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupGetStringFieldW(ref INFCONTEXT Context, uint32 FieldIndex, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetIntField(INFCONTEXT* Context, uint32 FieldIndex, int32* IntegerValue);
+		public static extern BOOL SetupGetIntField(ref INFCONTEXT Context, uint32 FieldIndex, out int32 IntegerValue);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetMultiSzFieldA(INFCONTEXT* Context, uint32 FieldIndex, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupGetMultiSzFieldA(ref INFCONTEXT Context, uint32 FieldIndex, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetMultiSzFieldW(INFCONTEXT* Context, uint32 FieldIndex, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupGetMultiSzFieldW(ref INFCONTEXT Context, uint32 FieldIndex, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetBinaryField(INFCONTEXT* Context, uint32 FieldIndex, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupGetBinaryField(ref INFCONTEXT Context, uint32 FieldIndex, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SetupGetFileCompressionInfoA(PSTR SourceFileName, PSTR* ActualSourceFileName, uint32* SourceFileSize, uint32* TargetFileSize, uint32* CompressionType);
+		public static extern uint32 SetupGetFileCompressionInfoA(PSTR SourceFileName, out PSTR ActualSourceFileName, out uint32 SourceFileSize, out uint32 TargetFileSize, out uint32 CompressionType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SetupGetFileCompressionInfoW(PWSTR SourceFileName, PWSTR* ActualSourceFileName, uint32* SourceFileSize, uint32* TargetFileSize, uint32* CompressionType);
+		public static extern uint32 SetupGetFileCompressionInfoW(PWSTR SourceFileName, out PWSTR ActualSourceFileName, out uint32 SourceFileSize, out uint32 TargetFileSize, out uint32 CompressionType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetFileCompressionInfoExA(PSTR SourceFileName, uint8* ActualSourceFileNameBuffer, uint32 ActualSourceFileNameBufferLen, uint32* RequiredBufferLen, uint32* SourceFileSize, uint32* TargetFileSize, uint32* CompressionType);
+		public static extern BOOL SetupGetFileCompressionInfoExA(PSTR SourceFileName, uint8* ActualSourceFileNameBuffer, uint32 ActualSourceFileNameBufferLen, uint32* RequiredBufferLen, out uint32 SourceFileSize, out uint32 TargetFileSize, out uint32 CompressionType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetFileCompressionInfoExW(PWSTR SourceFileName, char16* ActualSourceFileNameBuffer, uint32 ActualSourceFileNameBufferLen, uint32* RequiredBufferLen, uint32* SourceFileSize, uint32* TargetFileSize, uint32* CompressionType);
+		public static extern BOOL SetupGetFileCompressionInfoExW(PWSTR SourceFileName, char16* ActualSourceFileNameBuffer, uint32 ActualSourceFileNameBufferLen, uint32* RequiredBufferLen, out uint32 SourceFileSize, out uint32 TargetFileSize, out uint32 CompressionType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 SetupDecompressOrCopyFileA(PSTR SourceFileName, PSTR TargetFileName, uint32* CompressionType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 SetupDecompressOrCopyFileW(PWSTR SourceFileName, PWSTR TargetFileName, uint32* CompressionType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetSourceFileLocationA(void* InfHandle, INFCONTEXT* InfContext, PSTR FileName, uint32* SourceId, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupGetSourceFileLocationA(void* InfHandle, INFCONTEXT* InfContext, PSTR FileName, out uint32 SourceId, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetSourceFileLocationW(void* InfHandle, INFCONTEXT* InfContext, PWSTR FileName, uint32* SourceId, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupGetSourceFileLocationW(void* InfHandle, INFCONTEXT* InfContext, PWSTR FileName, out uint32 SourceId, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetSourceFileSizeA(void* InfHandle, INFCONTEXT* InfContext, PSTR FileName, PSTR Section, uint32* FileSize, uint32 RoundingFactor);
+		public static extern BOOL SetupGetSourceFileSizeA(void* InfHandle, INFCONTEXT* InfContext, PSTR FileName, PSTR Section, out uint32 FileSize, uint32 RoundingFactor);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetSourceFileSizeW(void* InfHandle, INFCONTEXT* InfContext, PWSTR FileName, PWSTR Section, uint32* FileSize, uint32 RoundingFactor);
+		public static extern BOOL SetupGetSourceFileSizeW(void* InfHandle, INFCONTEXT* InfContext, PWSTR FileName, PWSTR Section, out uint32 FileSize, uint32 RoundingFactor);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupGetTargetPathA(void* InfHandle, INFCONTEXT* InfContext, PSTR Section, uint8* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2412,9 +2412,9 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupRemoveFromSourceListW(uint32 Flags, PWSTR Source);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQuerySourceListA(uint32 Flags, PSTR** List, uint32* Count);
+		public static extern BOOL SetupQuerySourceListA(uint32 Flags, out PSTR* List, out uint32 Count);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQuerySourceListW(uint32 Flags, PWSTR** List, uint32* Count);
+		public static extern BOOL SetupQuerySourceListW(uint32 Flags, out PWSTR* List, out uint32 Count);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupFreeSourceListA(PSTR** List, uint32 Count);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2456,9 +2456,9 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupInstallFileW(void* InfHandle, INFCONTEXT* InfContext, PWSTR SourceFile, PWSTR SourcePathRoot, PWSTR DestinationName, SP_COPY_STYLE CopyStyle, PSP_FILE_CALLBACK_W CopyMsgHandler, void* Context);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupInstallFileExA(void* InfHandle, INFCONTEXT* InfContext, PSTR SourceFile, PSTR SourcePathRoot, PSTR DestinationName, SP_COPY_STYLE CopyStyle, PSP_FILE_CALLBACK_A CopyMsgHandler, void* Context, BOOL* FileWasInUse);
+		public static extern BOOL SetupInstallFileExA(void* InfHandle, INFCONTEXT* InfContext, PSTR SourceFile, PSTR SourcePathRoot, PSTR DestinationName, SP_COPY_STYLE CopyStyle, PSP_FILE_CALLBACK_A CopyMsgHandler, void* Context, out BOOL FileWasInUse);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupInstallFileExW(void* InfHandle, INFCONTEXT* InfContext, PWSTR SourceFile, PWSTR SourcePathRoot, PWSTR DestinationName, SP_COPY_STYLE CopyStyle, PSP_FILE_CALLBACK_W CopyMsgHandler, void* Context, BOOL* FileWasInUse);
+		public static extern BOOL SetupInstallFileExW(void* InfHandle, INFCONTEXT* InfContext, PWSTR SourceFile, PWSTR SourcePathRoot, PWSTR DestinationName, SP_COPY_STYLE CopyStyle, PSP_FILE_CALLBACK_W CopyMsgHandler, void* Context, out BOOL FileWasInUse);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* SetupOpenFileQueue();
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2476,9 +2476,9 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupQueueCopyW(void* QueueHandle, PWSTR SourceRootPath, PWSTR SourcePath, PWSTR SourceFilename, PWSTR SourceDescription, PWSTR SourceTagfile, PWSTR TargetDirectory, PWSTR TargetFilename, uint32 CopyStyle);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQueueCopyIndirectA(SP_FILE_COPY_PARAMS_A* CopyParams);
+		public static extern BOOL SetupQueueCopyIndirectA(ref SP_FILE_COPY_PARAMS_A CopyParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQueueCopyIndirectW(SP_FILE_COPY_PARAMS_W* CopyParams);
+		public static extern BOOL SetupQueueCopyIndirectW(ref SP_FILE_COPY_PARAMS_W CopyParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupQueueDefaultCopyA(void* QueueHandle, void* InfHandle, PSTR SourceRootPath, PSTR SourceFilename, PSTR TargetFilename, uint32 CopyStyle);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2508,13 +2508,13 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupCommitFileQueueW(HWND Owner, void* QueueHandle, PSP_FILE_CALLBACK_W MsgHandler, void* Context);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupScanFileQueueA(void* FileQueue, uint32 Flags, HWND Window, PSP_FILE_CALLBACK_A CallbackRoutine, void* CallbackContext, uint32* Result);
+		public static extern BOOL SetupScanFileQueueA(void* FileQueue, uint32 Flags, HWND Window, PSP_FILE_CALLBACK_A CallbackRoutine, void* CallbackContext, out uint32 Result);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupScanFileQueueW(void* FileQueue, uint32 Flags, HWND Window, PSP_FILE_CALLBACK_W CallbackRoutine, void* CallbackContext, uint32* Result);
+		public static extern BOOL SetupScanFileQueueW(void* FileQueue, uint32 Flags, HWND Window, PSP_FILE_CALLBACK_W CallbackRoutine, void* CallbackContext, out uint32 Result);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetFileQueueCount(void* FileQueue, uint32 SubQueueFileOp, uint32* NumOperations);
+		public static extern BOOL SetupGetFileQueueCount(void* FileQueue, uint32 SubQueueFileOp, out uint32 NumOperations);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetFileQueueFlags(void* FileQueue, uint32* Flags);
+		public static extern BOOL SetupGetFileQueueFlags(void* FileQueue, out uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupSetFileQueueFlags(void* FileQueue, uint32 FlagMask, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2542,9 +2542,9 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupQueryDrivesInDiskSpaceListW(void* DiskSpace, char16* ReturnBuffer, uint32 ReturnBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQuerySpaceRequiredOnDriveA(void* DiskSpace, PSTR DriveSpec, int64* SpaceRequired, void* Reserved1, uint32 Reserved2);
+		public static extern BOOL SetupQuerySpaceRequiredOnDriveA(void* DiskSpace, PSTR DriveSpec, out int64 SpaceRequired, void* Reserved1, uint32 Reserved2);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupQuerySpaceRequiredOnDriveW(void* DiskSpace, PWSTR DriveSpec, int64* SpaceRequired, void* Reserved1, uint32 Reserved2);
+		public static extern BOOL SetupQuerySpaceRequiredOnDriveW(void* DiskSpace, PWSTR DriveSpec, out int64 SpaceRequired, void* Reserved1, uint32 Reserved2);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupAdjustDiskSpaceListA(void* DiskSpace, PSTR DriveRoot, int64 Amount, void* Reserved1, uint32 Reserved2);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2644,11 +2644,11 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void SetupWriteTextLogError(uint64 LogToken, uint32 Category, uint32 LogFlags, uint32 Error, PSTR MessageStr);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void SetupWriteTextLogInfLine(uint64 LogToken, uint32 Flags, void* InfHandle, INFCONTEXT* Context);
+		public static extern void SetupWriteTextLogInfLine(uint64 LogToken, uint32 Flags, void* InfHandle, ref INFCONTEXT Context);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetBackupInformationA(void* QueueHandle, SP_BACKUP_QUEUE_PARAMS_V2_A* BackupParams);
+		public static extern BOOL SetupGetBackupInformationA(void* QueueHandle, out SP_BACKUP_QUEUE_PARAMS_V2_A BackupParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupGetBackupInformationW(void* QueueHandle, SP_BACKUP_QUEUE_PARAMS_V2_W* BackupParams);
+		public static extern BOOL SetupGetBackupInformationW(void* QueueHandle, out SP_BACKUP_QUEUE_PARAMS_V2_W BackupParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupPrepareQueueForRestoreA(void* QueueHandle, PSTR BackupPath, uint32 RestoreFlags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2664,75 +2664,75 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* SetupDiCreateDeviceInfoListExW(Guid* ClassGuid, HWND hwndParent, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInfoListClass(void* DeviceInfoSet, Guid* ClassGuid);
+		public static extern BOOL SetupDiGetDeviceInfoListClass(void* DeviceInfoSet, out Guid ClassGuid);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInfoListDetailA(void* DeviceInfoSet, SP_DEVINFO_LIST_DETAIL_DATA_A* DeviceInfoSetDetailData);
+		public static extern BOOL SetupDiGetDeviceInfoListDetailA(void* DeviceInfoSet, out SP_DEVINFO_LIST_DETAIL_DATA_A DeviceInfoSetDetailData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInfoListDetailW(void* DeviceInfoSet, SP_DEVINFO_LIST_DETAIL_DATA_W* DeviceInfoSetDetailData);
+		public static extern BOOL SetupDiGetDeviceInfoListDetailW(void* DeviceInfoSet, out SP_DEVINFO_LIST_DETAIL_DATA_W DeviceInfoSetDetailData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiCreateDeviceInfoA(void* DeviceInfoSet, PSTR DeviceName, Guid* ClassGuid, PSTR DeviceDescription, HWND hwndParent, uint32 CreationFlags, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiCreateDeviceInfoA(void* DeviceInfoSet, PSTR DeviceName, in Guid ClassGuid, PSTR DeviceDescription, HWND hwndParent, uint32 CreationFlags, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiCreateDeviceInfoW(void* DeviceInfoSet, PWSTR DeviceName, Guid* ClassGuid, PWSTR DeviceDescription, HWND hwndParent, uint32 CreationFlags, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiCreateDeviceInfoW(void* DeviceInfoSet, PWSTR DeviceName, in Guid ClassGuid, PWSTR DeviceDescription, HWND hwndParent, uint32 CreationFlags, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiOpenDeviceInfoA(void* DeviceInfoSet, PSTR DeviceInstanceId, HWND hwndParent, uint32 OpenFlags, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiOpenDeviceInfoW(void* DeviceInfoSet, PWSTR DeviceInstanceId, HWND hwndParent, uint32 OpenFlags, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInstanceIdA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint8* DeviceInstanceId, uint32 DeviceInstanceIdSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetDeviceInstanceIdA(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint8* DeviceInstanceId, uint32 DeviceInstanceIdSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInstanceIdW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, char16* DeviceInstanceId, uint32 DeviceInstanceIdSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetDeviceInstanceIdW(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, char16* DeviceInstanceId, uint32 DeviceInstanceIdSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiDeleteDeviceInfo(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiDeleteDeviceInfo(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiEnumDeviceInfo(void* DeviceInfoSet, uint32 MemberIndex, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiEnumDeviceInfo(void* DeviceInfoSet, uint32 MemberIndex, out SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiDestroyDeviceInfoList(void* DeviceInfoSet);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiEnumDeviceInterfaces(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, Guid* InterfaceClassGuid, uint32 MemberIndex, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
+		public static extern BOOL SetupDiEnumDeviceInterfaces(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, in Guid InterfaceClassGuid, uint32 MemberIndex, out SP_DEVICE_INTERFACE_DATA DeviceInterfaceData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiCreateDeviceInterfaceA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, Guid* InterfaceClassGuid, PSTR ReferenceString, uint32 CreationFlags, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
+		public static extern BOOL SetupDiCreateDeviceInterfaceA(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, in Guid InterfaceClassGuid, PSTR ReferenceString, uint32 CreationFlags, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiCreateDeviceInterfaceW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, Guid* InterfaceClassGuid, PWSTR ReferenceString, uint32 CreationFlags, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
+		public static extern BOOL SetupDiCreateDeviceInterfaceW(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, in Guid InterfaceClassGuid, PWSTR ReferenceString, uint32 CreationFlags, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiOpenDeviceInterfaceA(void* DeviceInfoSet, PSTR DevicePath, uint32 OpenFlags, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiOpenDeviceInterfaceW(void* DeviceInfoSet, PWSTR DevicePath, uint32 OpenFlags, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInterfaceAlias(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, Guid* AliasInterfaceClassGuid, SP_DEVICE_INTERFACE_DATA* AliasDeviceInterfaceData);
+		public static extern BOOL SetupDiGetDeviceInterfaceAlias(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, in Guid AliasInterfaceClassGuid, out SP_DEVICE_INTERFACE_DATA AliasDeviceInterfaceData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiDeleteDeviceInterfaceData(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
+		public static extern BOOL SetupDiDeleteDeviceInterfaceData(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiRemoveDeviceInterface(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
+		public static extern BOOL SetupDiRemoveDeviceInterface(void* DeviceInfoSet, out SP_DEVICE_INTERFACE_DATA DeviceInterfaceData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInterfaceDetailA(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, SP_DEVICE_INTERFACE_DETAIL_DATA_A* DeviceInterfaceDetailData, uint32 DeviceInterfaceDetailDataSize, uint32* RequiredSize, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiGetDeviceInterfaceDetailA(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, SP_DEVICE_INTERFACE_DETAIL_DATA_A* DeviceInterfaceDetailData, uint32 DeviceInterfaceDetailDataSize, uint32* RequiredSize, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInterfaceDetailW(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, SP_DEVICE_INTERFACE_DETAIL_DATA_W* DeviceInterfaceDetailData, uint32 DeviceInterfaceDetailDataSize, uint32* RequiredSize, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiGetDeviceInterfaceDetailW(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, SP_DEVICE_INTERFACE_DETAIL_DATA_W* DeviceInterfaceDetailData, uint32 DeviceInterfaceDetailDataSize, uint32* RequiredSize, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiInstallDeviceInterfaces(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiInstallDeviceInterfaces(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetDeviceInterfaceDefault(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, uint32 Flags, void* Reserved);
+		public static extern BOOL SetupDiSetDeviceInterfaceDefault(void* DeviceInfoSet, out SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, uint32 Flags, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiRegisterDeviceInfo(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Flags, PSP_DETSIG_CMPPROC CompareProc, void* CompareContext, SP_DEVINFO_DATA* DupDeviceInfoData);
+		public static extern BOOL SetupDiRegisterDeviceInfo(void* DeviceInfoSet, out SP_DEVINFO_DATA DeviceInfoData, uint32 Flags, PSP_DETSIG_CMPPROC CompareProc, void* CompareContext, SP_DEVINFO_DATA* DupDeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiBuildDriverInfoList(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SETUP_DI_BUILD_DRIVER_DRIVER_TYPE DriverType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiCancelDriverInfoSearch(void* DeviceInfoSet);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiEnumDriverInfoA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 DriverType, uint32 MemberIndex, SP_DRVINFO_DATA_V2_A* DriverInfoData);
+		public static extern BOOL SetupDiEnumDriverInfoA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 DriverType, uint32 MemberIndex, out SP_DRVINFO_DATA_V2_A DriverInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiEnumDriverInfoW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 DriverType, uint32 MemberIndex, SP_DRVINFO_DATA_V2_W* DriverInfoData);
+		public static extern BOOL SetupDiEnumDriverInfoW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 DriverType, uint32 MemberIndex, out SP_DRVINFO_DATA_V2_W DriverInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetSelectedDriverA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_A* DriverInfoData);
+		public static extern BOOL SetupDiGetSelectedDriverA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, out SP_DRVINFO_DATA_V2_A DriverInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetSelectedDriverW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_W* DriverInfoData);
+		public static extern BOOL SetupDiGetSelectedDriverW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, out SP_DRVINFO_DATA_V2_W DriverInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiSetSelectedDriverA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_A* DriverInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiSetSelectedDriverW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_W* DriverInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDriverInfoDetailA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_A* DriverInfoData, SP_DRVINFO_DETAIL_DATA_A* DriverInfoDetailData, uint32 DriverInfoDetailDataSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetDriverInfoDetailA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref SP_DRVINFO_DATA_V2_A DriverInfoData, SP_DRVINFO_DETAIL_DATA_A* DriverInfoDetailData, uint32 DriverInfoDetailDataSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDriverInfoDetailW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_W* DriverInfoData, SP_DRVINFO_DETAIL_DATA_W* DriverInfoDetailData, uint32 DriverInfoDetailDataSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetDriverInfoDetailW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref SP_DRVINFO_DATA_V2_W DriverInfoData, SP_DRVINFO_DETAIL_DATA_W* DriverInfoDetailData, uint32 DriverInfoDetailDataSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiDestroyDriverInfoList(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 DriverType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2744,23 +2744,23 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* SetupDiGetClassDevsExW(Guid* ClassGuid, PWSTR Enumerator, HWND hwndParent, uint32 Flags, void* DeviceInfoSet, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetINFClassA(PSTR InfName, Guid* ClassGuid, uint8* ClassName, uint32 ClassNameSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetINFClassA(PSTR InfName, out Guid ClassGuid, uint8* ClassName, uint32 ClassNameSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetINFClassW(PWSTR InfName, Guid* ClassGuid, char16* ClassName, uint32 ClassNameSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetINFClassW(PWSTR InfName, out Guid ClassGuid, char16* ClassName, uint32 ClassNameSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiBuildClassInfoList(uint32 Flags, Guid* ClassGuidList, uint32 ClassGuidListSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiBuildClassInfoList(uint32 Flags, Guid* ClassGuidList, uint32 ClassGuidListSize, out uint32 RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiBuildClassInfoListExA(uint32 Flags, Guid* ClassGuidList, uint32 ClassGuidListSize, uint32* RequiredSize, PSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiBuildClassInfoListExA(uint32 Flags, Guid* ClassGuidList, uint32 ClassGuidListSize, out uint32 RequiredSize, PSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiBuildClassInfoListExW(uint32 Flags, Guid* ClassGuidList, uint32 ClassGuidListSize, uint32* RequiredSize, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiBuildClassInfoListExW(uint32 Flags, Guid* ClassGuidList, uint32 ClassGuidListSize, out uint32 RequiredSize, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassDescriptionA(Guid* ClassGuid, uint8* ClassDescription, uint32 ClassDescriptionSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetClassDescriptionA(in Guid ClassGuid, uint8* ClassDescription, uint32 ClassDescriptionSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassDescriptionW(Guid* ClassGuid, char16* ClassDescription, uint32 ClassDescriptionSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetClassDescriptionW(in Guid ClassGuid, char16* ClassDescription, uint32 ClassDescriptionSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassDescriptionExA(Guid* ClassGuid, uint8* ClassDescription, uint32 ClassDescriptionSize, uint32* RequiredSize, PSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetClassDescriptionExA(in Guid ClassGuid, uint8* ClassDescription, uint32 ClassDescriptionSize, uint32* RequiredSize, PSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassDescriptionExW(Guid* ClassGuid, char16* ClassDescription, uint32 ClassDescriptionSize, uint32* RequiredSize, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetClassDescriptionExW(in Guid ClassGuid, char16* ClassDescription, uint32 ClassDescriptionSize, uint32* RequiredSize, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiCallClassInstaller(uint32 InstallFunction, void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2768,19 +2768,19 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiSelectBestCompatDrv(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiInstallDevice(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiInstallDevice(void* DeviceInfoSet, out SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiInstallDriverFiles(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiInstallDriverFiles(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiRegisterCoDeviceInstallers(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiRegisterCoDeviceInstallers(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiRemoveDevice(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiRemoveDevice(void* DeviceInfoSet, out SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiUnremoveDevice(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiUnremoveDevice(void* DeviceInfoSet, out SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiRestartDevices(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiRestartDevices(void* DeviceInfoSet, out SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiChangeState(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiChangeState(void* DeviceInfoSet, out SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiInstallClassA(HWND hwndParent, PSTR InfFileName, uint32 Flags, void* FileQueue);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2796,133 +2796,133 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HKEY SetupDiOpenClassRegKeyExW(Guid* ClassGuid, uint32 samDesired, uint32 Flags, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HKEY SetupDiCreateDeviceInterfaceRegKeyA(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, uint32 Reserved, uint32 samDesired, void* InfHandle, PSTR InfSectionName);
+		public static extern HKEY SetupDiCreateDeviceInterfaceRegKeyA(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, uint32 Reserved, uint32 samDesired, void* InfHandle, PSTR InfSectionName);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HKEY SetupDiCreateDeviceInterfaceRegKeyW(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, uint32 Reserved, uint32 samDesired, void* InfHandle, PWSTR InfSectionName);
+		public static extern HKEY SetupDiCreateDeviceInterfaceRegKeyW(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, uint32 Reserved, uint32 samDesired, void* InfHandle, PWSTR InfSectionName);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HKEY SetupDiOpenDeviceInterfaceRegKey(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, uint32 Reserved, uint32 samDesired);
+		public static extern HKEY SetupDiOpenDeviceInterfaceRegKey(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, uint32 Reserved, uint32 samDesired);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiDeleteDeviceInterfaceRegKey(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, uint32 Reserved);
+		public static extern BOOL SetupDiDeleteDeviceInterfaceRegKey(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, uint32 Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HKEY SetupDiCreateDevRegKeyA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Scope, uint32 HwProfile, uint32 KeyType, void* InfHandle, PSTR InfSectionName);
+		public static extern HKEY SetupDiCreateDevRegKeyA(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint32 Scope, uint32 HwProfile, uint32 KeyType, void* InfHandle, PSTR InfSectionName);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HKEY SetupDiCreateDevRegKeyW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Scope, uint32 HwProfile, uint32 KeyType, void* InfHandle, PWSTR InfSectionName);
+		public static extern HKEY SetupDiCreateDevRegKeyW(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint32 Scope, uint32 HwProfile, uint32 KeyType, void* InfHandle, PWSTR InfSectionName);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HKEY SetupDiOpenDevRegKey(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Scope, uint32 HwProfile, uint32 KeyType, uint32 samDesired);
+		public static extern HKEY SetupDiOpenDevRegKey(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint32 Scope, uint32 HwProfile, uint32 KeyType, uint32 samDesired);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiDeleteDevRegKey(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Scope, uint32 HwProfile, uint32 KeyType);
+		public static extern BOOL SetupDiDeleteDevRegKey(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint32 Scope, uint32 HwProfile, uint32 KeyType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetHwProfileList(uint32* HwProfileList, uint32 HwProfileListSize, uint32* RequiredSize, uint32* CurrentlyActiveIndex);
+		public static extern BOOL SetupDiGetHwProfileList(uint32* HwProfileList, uint32 HwProfileListSize, out uint32 RequiredSize, uint32* CurrentlyActiveIndex);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetHwProfileListExA(uint32* HwProfileList, uint32 HwProfileListSize, uint32* RequiredSize, uint32* CurrentlyActiveIndex, PSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetHwProfileListExA(uint32* HwProfileList, uint32 HwProfileListSize, out uint32 RequiredSize, uint32* CurrentlyActiveIndex, PSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetHwProfileListExW(uint32* HwProfileList, uint32 HwProfileListSize, uint32* RequiredSize, uint32* CurrentlyActiveIndex, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetHwProfileListExW(uint32* HwProfileList, uint32 HwProfileListSize, out uint32 RequiredSize, uint32* CurrentlyActiveIndex, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDevicePropertyKeys(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, DEVPROPKEY* PropertyKeyArray, uint32 PropertyKeyCount, uint32* RequiredPropertyKeyCount, uint32 Flags);
+		public static extern BOOL SetupDiGetDevicePropertyKeys(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, DEVPROPKEY* PropertyKeyArray, uint32 PropertyKeyCount, uint32* RequiredPropertyKeyCount, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDevicePropertyW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, uint32 Flags);
+		public static extern BOOL SetupDiGetDevicePropertyW(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetDevicePropertyW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 Flags);
+		public static extern BOOL SetupDiSetDevicePropertyW(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInterfacePropertyKeys(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, DEVPROPKEY* PropertyKeyArray, uint32 PropertyKeyCount, uint32* RequiredPropertyKeyCount, uint32 Flags);
+		public static extern BOOL SetupDiGetDeviceInterfacePropertyKeys(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, DEVPROPKEY* PropertyKeyArray, uint32 PropertyKeyCount, uint32* RequiredPropertyKeyCount, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInterfacePropertyW(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, uint32 Flags);
+		public static extern BOOL SetupDiGetDeviceInterfacePropertyW(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetDeviceInterfacePropertyW(void* DeviceInfoSet, SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 Flags);
+		public static extern BOOL SetupDiSetDeviceInterfacePropertyW(void* DeviceInfoSet, ref SP_DEVICE_INTERFACE_DATA DeviceInterfaceData, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassPropertyKeys(Guid* ClassGuid, DEVPROPKEY* PropertyKeyArray, uint32 PropertyKeyCount, uint32* RequiredPropertyKeyCount, uint32 Flags);
+		public static extern BOOL SetupDiGetClassPropertyKeys(in Guid ClassGuid, DEVPROPKEY* PropertyKeyArray, uint32 PropertyKeyCount, uint32* RequiredPropertyKeyCount, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassPropertyKeysExW(Guid* ClassGuid, DEVPROPKEY* PropertyKeyArray, uint32 PropertyKeyCount, uint32* RequiredPropertyKeyCount, uint32 Flags, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetClassPropertyKeysExW(in Guid ClassGuid, DEVPROPKEY* PropertyKeyArray, uint32 PropertyKeyCount, uint32* RequiredPropertyKeyCount, uint32 Flags, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassPropertyW(Guid* ClassGuid, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, uint32 Flags);
+		public static extern BOOL SetupDiGetClassPropertyW(in Guid ClassGuid, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassPropertyExW(Guid* ClassGuid, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, uint32 Flags, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetClassPropertyExW(in Guid ClassGuid, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, uint32 Flags, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetClassPropertyW(Guid* ClassGuid, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 Flags);
+		public static extern BOOL SetupDiSetClassPropertyW(in Guid ClassGuid, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetClassPropertyExW(Guid* ClassGuid, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 Flags, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiSetClassPropertyExW(in Guid ClassGuid, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 Flags, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceRegistryPropertyA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Property, uint32* PropertyRegDataType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetDeviceRegistryPropertyA(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint32 Property, uint32* PropertyRegDataType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceRegistryPropertyW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Property, uint32* PropertyRegDataType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetDeviceRegistryPropertyW(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint32 Property, uint32* PropertyRegDataType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassRegistryPropertyA(Guid* ClassGuid, uint32 Property, uint32* PropertyRegDataType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, PSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetClassRegistryPropertyA(in Guid ClassGuid, uint32 Property, uint32* PropertyRegDataType, out uint8 PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, PSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassRegistryPropertyW(Guid* ClassGuid, uint32 Property, uint32* PropertyRegDataType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetClassRegistryPropertyW(in Guid ClassGuid, uint32 Property, uint32* PropertyRegDataType, out uint8 PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetDeviceRegistryPropertyA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Property, uint8* PropertyBuffer, uint32 PropertyBufferSize);
+		public static extern BOOL SetupDiSetDeviceRegistryPropertyA(void* DeviceInfoSet, out SP_DEVINFO_DATA DeviceInfoData, uint32 Property, uint8* PropertyBuffer, uint32 PropertyBufferSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetDeviceRegistryPropertyW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Property, uint8* PropertyBuffer, uint32 PropertyBufferSize);
+		public static extern BOOL SetupDiSetDeviceRegistryPropertyW(void* DeviceInfoSet, out SP_DEVINFO_DATA DeviceInfoData, uint32 Property, uint8* PropertyBuffer, uint32 PropertyBufferSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetClassRegistryPropertyA(Guid* ClassGuid, uint32 Property, uint8* PropertyBuffer, uint32 PropertyBufferSize, PSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiSetClassRegistryPropertyA(in Guid ClassGuid, uint32 Property, uint8* PropertyBuffer, uint32 PropertyBufferSize, PSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetClassRegistryPropertyW(Guid* ClassGuid, uint32 Property, uint8* PropertyBuffer, uint32 PropertyBufferSize, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiSetClassRegistryPropertyW(in Guid ClassGuid, uint32 Property, uint8* PropertyBuffer, uint32 PropertyBufferSize, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DEVINSTALL_PARAMS_A* DeviceInstallParams);
+		public static extern BOOL SetupDiGetDeviceInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, out SP_DEVINSTALL_PARAMS_A DeviceInstallParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDeviceInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DEVINSTALL_PARAMS_W* DeviceInstallParams);
+		public static extern BOOL SetupDiGetDeviceInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, out SP_DEVINSTALL_PARAMS_W DeviceInstallParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiGetClassInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_CLASSINSTALL_HEADER* ClassInstallParams, uint32 ClassInstallParamsSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiGetClassInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_CLASSINSTALL_HEADER* ClassInstallParams, uint32 ClassInstallParamsSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetDeviceInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DEVINSTALL_PARAMS_A* DeviceInstallParams);
+		public static extern BOOL SetupDiSetDeviceInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref SP_DEVINSTALL_PARAMS_A DeviceInstallParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetDeviceInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DEVINSTALL_PARAMS_W* DeviceInstallParams);
+		public static extern BOOL SetupDiSetDeviceInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref SP_DEVINSTALL_PARAMS_W DeviceInstallParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiSetClassInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_CLASSINSTALL_HEADER* ClassInstallParams, uint32 ClassInstallParamsSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiSetClassInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_CLASSINSTALL_HEADER* ClassInstallParams, uint32 ClassInstallParamsSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDriverInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_A* DriverInfoData, SP_DRVINSTALL_PARAMS* DriverInstallParams);
+		public static extern BOOL SetupDiGetDriverInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref SP_DRVINFO_DATA_V2_A DriverInfoData, out SP_DRVINSTALL_PARAMS DriverInstallParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetDriverInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_W* DriverInfoData, SP_DRVINSTALL_PARAMS* DriverInstallParams);
+		public static extern BOOL SetupDiGetDriverInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref SP_DRVINFO_DATA_V2_W DriverInfoData, out SP_DRVINSTALL_PARAMS DriverInstallParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetDriverInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_A* DriverInfoData, SP_DRVINSTALL_PARAMS* DriverInstallParams);
+		public static extern BOOL SetupDiSetDriverInstallParamsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref SP_DRVINFO_DATA_V2_A DriverInfoData, ref SP_DRVINSTALL_PARAMS DriverInstallParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetDriverInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_W* DriverInfoData, SP_DRVINSTALL_PARAMS* DriverInstallParams);
+		public static extern BOOL SetupDiSetDriverInstallParamsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref SP_DRVINFO_DATA_V2_W DriverInfoData, ref SP_DRVINSTALL_PARAMS DriverInstallParams);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiLoadClassIcon(Guid* ClassGuid, HICON* LargeIcon, int32* MiniIconIndex);
+		public static extern BOOL SetupDiLoadClassIcon(in Guid ClassGuid, HICON* LargeIcon, int32* MiniIconIndex);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiLoadDeviceIcon(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 cxIcon, uint32 cyIcon, uint32 Flags, HICON* hIcon);
+		public static extern BOOL SetupDiLoadDeviceIcon(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint32 cxIcon, uint32 cyIcon, uint32 Flags, out HICON hIcon);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SetupDiDrawMiniIcon(HDC hdc, RECT rc, int32 MiniIconIndex, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassBitmapIndex(Guid* ClassGuid, int32* MiniIconIndex);
+		public static extern BOOL SetupDiGetClassBitmapIndex(Guid* ClassGuid, out int32 MiniIconIndex);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassImageList(SP_CLASSIMAGELIST_DATA* ClassImageListData);
+		public static extern BOOL SetupDiGetClassImageList(out SP_CLASSIMAGELIST_DATA ClassImageListData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassImageListExA(SP_CLASSIMAGELIST_DATA* ClassImageListData, PSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetClassImageListExA(out SP_CLASSIMAGELIST_DATA ClassImageListData, PSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassImageListExW(SP_CLASSIMAGELIST_DATA* ClassImageListData, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiGetClassImageListExW(out SP_CLASSIMAGELIST_DATA ClassImageListData, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassImageIndex(SP_CLASSIMAGELIST_DATA* ClassImageListData, Guid* ClassGuid, int32* ImageIndex);
+		public static extern BOOL SetupDiGetClassImageIndex(ref SP_CLASSIMAGELIST_DATA ClassImageListData, in Guid ClassGuid, out int32 ImageIndex);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiDestroyClassImageList(SP_CLASSIMAGELIST_DATA* ClassImageListData);
+		public static extern BOOL SetupDiDestroyClassImageList(ref SP_CLASSIMAGELIST_DATA ClassImageListData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassDevPropertySheetsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, PROPSHEETHEADERA_V2* PropertySheetHeader, uint32 PropertySheetHeaderPageListSize, uint32* RequiredSize, uint32 PropertySheetType);
+		public static extern BOOL SetupDiGetClassDevPropertySheetsA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref PROPSHEETHEADERA_V2 PropertySheetHeader, uint32 PropertySheetHeaderPageListSize, uint32* RequiredSize, uint32 PropertySheetType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetClassDevPropertySheetsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, PROPSHEETHEADERW_V2* PropertySheetHeader, uint32 PropertySheetHeaderPageListSize, uint32* RequiredSize, uint32 PropertySheetType);
+		public static extern BOOL SetupDiGetClassDevPropertySheetsW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref PROPSHEETHEADERW_V2 PropertySheetHeader, uint32 PropertySheetHeaderPageListSize, uint32* RequiredSize, uint32 PropertySheetType);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiAskForOEMDisk(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiSelectOEMDrv(HWND hwndParent, void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiClassNameFromGuidA(Guid* ClassGuid, uint8* ClassName, uint32 ClassNameSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiClassNameFromGuidA(in Guid ClassGuid, uint8* ClassName, uint32 ClassNameSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiClassNameFromGuidW(Guid* ClassGuid, char16* ClassName, uint32 ClassNameSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiClassNameFromGuidW(in Guid ClassGuid, char16* ClassName, uint32 ClassNameSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiClassNameFromGuidExA(Guid* ClassGuid, uint8* ClassName, uint32 ClassNameSize, uint32* RequiredSize, PSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiClassNameFromGuidExA(in Guid ClassGuid, uint8* ClassName, uint32 ClassNameSize, uint32* RequiredSize, PSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiClassNameFromGuidExW(Guid* ClassGuid, char16* ClassName, uint32 ClassNameSize, uint32* RequiredSize, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiClassNameFromGuidExW(in Guid ClassGuid, char16* ClassName, uint32 ClassNameSize, uint32* RequiredSize, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiClassGuidsFromNameA(PSTR ClassName, Guid* ClassGuidList, uint32 ClassGuidListSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiClassGuidsFromNameA(PSTR ClassName, Guid* ClassGuidList, uint32 ClassGuidListSize, out uint32 RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiClassGuidsFromNameW(PWSTR ClassName, Guid* ClassGuidList, uint32 ClassGuidListSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiClassGuidsFromNameW(PWSTR ClassName, Guid* ClassGuidList, uint32 ClassGuidListSize, out uint32 RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiClassGuidsFromNameExA(PSTR ClassName, Guid* ClassGuidList, uint32 ClassGuidListSize, uint32* RequiredSize, PSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiClassGuidsFromNameExA(PSTR ClassName, Guid* ClassGuidList, uint32 ClassGuidListSize, out uint32 RequiredSize, PSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiClassGuidsFromNameExW(PWSTR ClassName, Guid* ClassGuidList, uint32 ClassGuidListSize, uint32* RequiredSize, PWSTR MachineName, void* Reserved);
+		public static extern BOOL SetupDiClassGuidsFromNameExW(PWSTR ClassName, Guid* ClassGuidList, uint32 ClassGuidListSize, out uint32 RequiredSize, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiGetHwProfileFriendlyNameA(uint32 HwProfile, uint8* FriendlyName, uint32 FriendlyNameSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2932,15 +2932,15 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiGetHwProfileFriendlyNameExW(uint32 HwProfile, char16* FriendlyName, uint32 FriendlyNameSize, uint32* RequiredSize, PWSTR MachineName, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HPROPSHEETPAGE SetupDiGetWizardPage(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_INSTALLWIZARD_DATA* InstallWizardData, uint32 PageType, uint32 Flags);
+		public static extern HPROPSHEETPAGE SetupDiGetWizardPage(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, ref SP_INSTALLWIZARD_DATA InstallWizardData, uint32 PageType, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetSelectedDevice(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiGetSelectedDevice(void* DeviceInfoSet, out SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiSetSelectedDevice(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData);
+		public static extern BOOL SetupDiSetSelectedDevice(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetActualModelsSectionA(INFCONTEXT* Context, SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, uint8* InfSectionWithExt, uint32 InfSectionWithExtSize, uint32* RequiredSize, void* Reserved);
+		public static extern BOOL SetupDiGetActualModelsSectionA(ref INFCONTEXT Context, SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, uint8* InfSectionWithExt, uint32 InfSectionWithExtSize, uint32* RequiredSize, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetActualModelsSectionW(INFCONTEXT* Context, SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, char16* InfSectionWithExt, uint32 InfSectionWithExtSize, uint32* RequiredSize, void* Reserved);
+		public static extern BOOL SetupDiGetActualModelsSectionW(ref INFCONTEXT Context, SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, char16* InfSectionWithExt, uint32 InfSectionWithExtSize, uint32* RequiredSize, void* Reserved);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupDiGetActualSectionToInstallA(void* InfHandle, PSTR InfSectionName, uint8* InfSectionWithExt, uint32 InfSectionWithExtSize, uint32* RequiredSize, PSTR* Extension);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2954,21 +2954,21 @@ namespace Win32
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupEnumInfSectionsW(void* InfHandle, uint32 Index, char16* Buffer, uint32 Size, uint32* SizeNeeded);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupVerifyInfFileA(PSTR InfName, SP_ALTPLATFORM_INFO_V2* AltPlatformInfo, SP_INF_SIGNER_INFO_V2_A* InfSignerInfo);
+		public static extern BOOL SetupVerifyInfFileA(PSTR InfName, SP_ALTPLATFORM_INFO_V2* AltPlatformInfo, out SP_INF_SIGNER_INFO_V2_A InfSignerInfo);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupVerifyInfFileW(PWSTR InfName, SP_ALTPLATFORM_INFO_V2* AltPlatformInfo, SP_INF_SIGNER_INFO_V2_W* InfSignerInfo);
+		public static extern BOOL SetupVerifyInfFileW(PWSTR InfName, SP_ALTPLATFORM_INFO_V2* AltPlatformInfo, out SP_INF_SIGNER_INFO_V2_W InfSignerInfo);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetCustomDevicePropertyA(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, PSTR CustomPropertyName, uint32 Flags, uint32* PropertyRegDataType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetCustomDevicePropertyA(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, PSTR CustomPropertyName, uint32 Flags, uint32* PropertyRegDataType, out uint8 PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetupDiGetCustomDevicePropertyW(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, PWSTR CustomPropertyName, uint32 Flags, uint32* PropertyRegDataType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize);
+		public static extern BOOL SetupDiGetCustomDevicePropertyW(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, PWSTR CustomPropertyName, uint32 Flags, uint32* PropertyRegDataType, out uint8 PropertyBuffer, uint32 PropertyBufferSize, uint32* RequiredSize);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupConfigureWmiFromInfSectionA(void* InfHandle, PSTR SectionName, uint32 Flags);
 		[Import("setupapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetupConfigureWmiFromInfSectionW(void* InfHandle, PWSTR SectionName, uint32 Flags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Add_Empty_Log_Conf(uint* plcLogConf, uint32 dnDevInst, PRIORITY Priority, uint32 ulFlags);
+		public static extern CONFIGRET CM_Add_Empty_Log_Conf(out uint plcLogConf, uint32 dnDevInst, PRIORITY Priority, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Add_Empty_Log_Conf_Ex(uint* plcLogConf, uint32 dnDevInst, PRIORITY Priority, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Add_Empty_Log_Conf_Ex(out uint plcLogConf, uint32 dnDevInst, PRIORITY Priority, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Add_IDA(uint32 dnDevInst, PSTR pszID, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -2984,23 +2984,23 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Add_Res_Des_Ex(uint* prdResDes, uint lcLogConf, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Connect_MachineA(PSTR UNCServerName, int* phMachine);
+		public static extern CONFIGRET CM_Connect_MachineA(PSTR UNCServerName, out int phMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Connect_MachineW(PWSTR UNCServerName, int* phMachine);
+		public static extern CONFIGRET CM_Connect_MachineW(PWSTR UNCServerName, out int phMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Create_DevNodeA(uint32* pdnDevInst, int8* pDeviceID, uint32 dnParent, uint32 ulFlags);
+		public static extern CONFIGRET CM_Create_DevNodeA(out uint32 pdnDevInst, ref int8 pDeviceID, uint32 dnParent, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Create_DevNodeW(uint32* pdnDevInst, uint16* pDeviceID, uint32 dnParent, uint32 ulFlags);
+		public static extern CONFIGRET CM_Create_DevNodeW(out uint32 pdnDevInst, ref uint16 pDeviceID, uint32 dnParent, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Create_DevNode_ExA(uint32* pdnDevInst, int8* pDeviceID, uint32 dnParent, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Create_DevNode_ExA(out uint32 pdnDevInst, ref int8 pDeviceID, uint32 dnParent, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Create_DevNode_ExW(uint32* pdnDevInst, uint16* pDeviceID, uint32 dnParent, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Create_DevNode_ExW(out uint32 pdnDevInst, ref uint16 pDeviceID, uint32 dnParent, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Create_Range_List(uint* prlh, uint32 ulFlags);
+		public static extern CONFIGRET CM_Create_Range_List(out uint prlh, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Delete_Class_Key(Guid* ClassGuid, uint32 ulFlags);
+		public static extern CONFIGRET CM_Delete_Class_Key(ref Guid ClassGuid, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Delete_Class_Key_Ex(Guid* ClassGuid, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Delete_Class_Key_Ex(ref Guid ClassGuid, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Delete_DevNode_Key(uint32 dnDevNode, uint32 ulHardwareProfile, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3008,9 +3008,9 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Delete_Range(uint64 ullStartValue, uint64 ullEndValue, uint rlh, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Detect_Resource_Conflict(uint32 dnDevInst, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, BOOL* pbConflictDetected, uint32 ulFlags);
+		public static extern CONFIGRET CM_Detect_Resource_Conflict(uint32 dnDevInst, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, out BOOL pbConflictDetected, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Detect_Resource_Conflict_Ex(uint32 dnDevInst, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, BOOL* pbConflictDetected, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Detect_Resource_Conflict_Ex(uint32 dnDevInst, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, out BOOL pbConflictDetected, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Disable_DevNode(uint32 dnDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3024,21 +3024,21 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Enable_DevNode_Ex(uint32 dnDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Enumerate_Classes(uint32 ulClassIndex, Guid* ClassGuid, uint32 ulFlags);
+		public static extern CONFIGRET CM_Enumerate_Classes(uint32 ulClassIndex, out Guid ClassGuid, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Enumerate_Classes_Ex(uint32 ulClassIndex, Guid* ClassGuid, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Enumerate_Classes_Ex(uint32 ulClassIndex, out Guid ClassGuid, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Enumerate_EnumeratorsA(uint32 ulEnumIndex, uint8* Buffer, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Enumerate_EnumeratorsA(uint32 ulEnumIndex, uint8* Buffer, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Enumerate_EnumeratorsW(uint32 ulEnumIndex, char16* Buffer, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Enumerate_EnumeratorsW(uint32 ulEnumIndex, char16* Buffer, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Enumerate_Enumerators_ExA(uint32 ulEnumIndex, uint8* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Enumerate_Enumerators_ExA(uint32 ulEnumIndex, uint8* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Enumerate_Enumerators_ExW(uint32 ulEnumIndex, char16* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Enumerate_Enumerators_ExW(uint32 ulEnumIndex, char16* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Find_Range(uint64* pullStart, uint64 ullStart, uint32 ulLength, uint64 ullAlignment, uint64 ullEnd, uint rlh, uint32 ulFlags);
+		public static extern CONFIGRET CM_Find_Range(out uint64 pullStart, uint64 ullStart, uint32 ulLength, uint64 ullAlignment, uint64 ullEnd, uint rlh, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_First_Range(uint rlh, uint64* pullStart, uint64* pullEnd, uint* preElement, uint32 ulFlags);
+		public static extern CONFIGRET CM_First_Range(uint rlh, out uint64 pullStart, out uint64 pullEnd, out uint preElement, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Free_Log_Conf(uint lcLogConfToBeFreed, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3054,29 +3054,29 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Free_Res_Des_Handle(uint rdResDes);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Child(uint32* pdnDevInst, uint32 dnDevInst, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Child(out uint32 pdnDevInst, uint32 dnDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Child_Ex(uint32* pdnDevInst, uint32 dnDevInst, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Child_Ex(out uint32 pdnDevInst, uint32 dnDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_NameA(Guid* ClassGuid, uint8* Buffer, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Class_NameA(ref Guid ClassGuid, uint8* Buffer, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_NameW(Guid* ClassGuid, char16* Buffer, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Class_NameW(ref Guid ClassGuid, char16* Buffer, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Name_ExA(Guid* ClassGuid, uint8* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Class_Name_ExA(ref Guid ClassGuid, uint8* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Name_ExW(Guid* ClassGuid, char16* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Class_Name_ExW(ref Guid ClassGuid, char16* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Key_NameA(Guid* ClassGuid, uint8* pszKeyName, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Class_Key_NameA(ref Guid ClassGuid, uint8* pszKeyName, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Key_NameW(Guid* ClassGuid, char16* pszKeyName, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Class_Key_NameW(ref Guid ClassGuid, char16* pszKeyName, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Key_Name_ExA(Guid* ClassGuid, uint8* pszKeyName, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Class_Key_Name_ExA(ref Guid ClassGuid, uint8* pszKeyName, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Key_Name_ExW(Guid* ClassGuid, char16* pszKeyName, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Class_Key_Name_ExW(ref Guid ClassGuid, char16* pszKeyName, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Depth(uint32* pulDepth, uint32 dnDevInst, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Depth(out uint32 pulDepth, uint32 dnDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Depth_Ex(uint32* pulDepth, uint32 dnDevInst, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Depth_Ex(out uint32 pulDepth, uint32 dnDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Get_Device_IDA(uint32 dnDevInst, uint8* Buffer, uint32 BufferLen, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3094,125 +3094,125 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Get_Device_ID_List_ExW(PWSTR pszFilter, char16* Buffer, uint32 BufferLen, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_ID_List_SizeA(uint32* pulLen, PSTR pszFilter, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_ID_List_SizeA(out uint32 pulLen, PSTR pszFilter, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_ID_List_SizeW(uint32* pulLen, PWSTR pszFilter, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_ID_List_SizeW(out uint32 pulLen, PWSTR pszFilter, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_ID_List_Size_ExA(uint32* pulLen, PSTR pszFilter, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_ID_List_Size_ExA(out uint32 pulLen, PSTR pszFilter, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_ID_List_Size_ExW(uint32* pulLen, PWSTR pszFilter, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_ID_List_Size_ExW(out uint32 pulLen, PWSTR pszFilter, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_ID_Size(uint32* pulLen, uint32 dnDevInst, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_ID_Size(out uint32 pulLen, uint32 dnDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_ID_Size_Ex(uint32* pulLen, uint32 dnDevInst, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_ID_Size_Ex(out uint32 pulLen, uint32 dnDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_PropertyW(uint32 dnDevInst, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32* PropertyBufferSize, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_DevNode_PropertyW(uint32 dnDevInst, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, out uint32 PropertyBufferSize, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Property_ExW(uint32 dnDevInst, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32* PropertyBufferSize, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_DevNode_Property_ExW(uint32 dnDevInst, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, out uint32 PropertyBufferSize, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Property_Keys(uint32 dnDevInst, DEVPROPKEY* PropertyKeyArray, uint32* PropertyKeyCount, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_DevNode_Property_Keys(uint32 dnDevInst, DEVPROPKEY* PropertyKeyArray, out uint32 PropertyKeyCount, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Property_Keys_Ex(uint32 dnDevInst, DEVPROPKEY* PropertyKeyArray, uint32* PropertyKeyCount, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_DevNode_Property_Keys_Ex(uint32 dnDevInst, DEVPROPKEY* PropertyKeyArray, out uint32 PropertyKeyCount, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Registry_PropertyA(uint32 dnDevInst, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_DevNode_Registry_PropertyA(uint32 dnDevInst, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Registry_PropertyW(uint32 dnDevInst, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_DevNode_Registry_PropertyW(uint32 dnDevInst, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Registry_Property_ExA(uint32 dnDevInst, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_DevNode_Registry_Property_ExA(uint32 dnDevInst, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Registry_Property_ExW(uint32 dnDevInst, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_DevNode_Registry_Property_ExW(uint32 dnDevInst, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Custom_PropertyA(uint32 dnDevInst, PSTR pszCustomPropertyName, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_DevNode_Custom_PropertyA(uint32 dnDevInst, PSTR pszCustomPropertyName, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Custom_PropertyW(uint32 dnDevInst, PWSTR pszCustomPropertyName, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_DevNode_Custom_PropertyW(uint32 dnDevInst, PWSTR pszCustomPropertyName, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Custom_Property_ExA(uint32 dnDevInst, PSTR pszCustomPropertyName, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_DevNode_Custom_Property_ExA(uint32 dnDevInst, PSTR pszCustomPropertyName, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Custom_Property_ExW(uint32 dnDevInst, PWSTR pszCustomPropertyName, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_DevNode_Custom_Property_ExW(uint32 dnDevInst, PWSTR pszCustomPropertyName, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Status(uint32* pulStatus, uint32* pulProblemNumber, uint32 dnDevInst, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_DevNode_Status(out uint32 pulStatus, out uint32 pulProblemNumber, uint32 dnDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_DevNode_Status_Ex(uint32* pulStatus, uint32* pulProblemNumber, uint32 dnDevInst, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_DevNode_Status_Ex(out uint32 pulStatus, out uint32 pulProblemNumber, uint32 dnDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Get_First_Log_Conf(uint* plcLogConf, uint32 dnDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Get_First_Log_Conf_Ex(uint* plcLogConf, uint32 dnDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Global_State(uint32* pulState, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Global_State(out uint32 pulState, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Global_State_Ex(uint32* pulState, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Global_State_Ex(out uint32 pulState, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Hardware_Profile_InfoA(uint32 ulIndex, HWProfileInfo_sA* pHWProfileInfo, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Hardware_Profile_InfoA(uint32 ulIndex, out HWProfileInfo_sA pHWProfileInfo, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Hardware_Profile_Info_ExA(uint32 ulIndex, HWProfileInfo_sA* pHWProfileInfo, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Hardware_Profile_Info_ExA(uint32 ulIndex, out HWProfileInfo_sA pHWProfileInfo, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Hardware_Profile_InfoW(uint32 ulIndex, HWProfileInfo_sW* pHWProfileInfo, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Hardware_Profile_InfoW(uint32 ulIndex, out HWProfileInfo_sW pHWProfileInfo, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Hardware_Profile_Info_ExW(uint32 ulIndex, HWProfileInfo_sW* pHWProfileInfo, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Hardware_Profile_Info_ExW(uint32 ulIndex, out HWProfileInfo_sW pHWProfileInfo, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_HW_Prof_FlagsA(int8* pDeviceID, uint32 ulHardwareProfile, uint32* pulValue, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_HW_Prof_FlagsA(ref int8 pDeviceID, uint32 ulHardwareProfile, out uint32 pulValue, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_HW_Prof_FlagsW(uint16* pDeviceID, uint32 ulHardwareProfile, uint32* pulValue, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_HW_Prof_FlagsW(ref uint16 pDeviceID, uint32 ulHardwareProfile, out uint32 pulValue, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_HW_Prof_Flags_ExA(int8* pDeviceID, uint32 ulHardwareProfile, uint32* pulValue, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_HW_Prof_Flags_ExA(ref int8 pDeviceID, uint32 ulHardwareProfile, out uint32 pulValue, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_HW_Prof_Flags_ExW(uint16* pDeviceID, uint32 ulHardwareProfile, uint32* pulValue, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_HW_Prof_Flags_ExW(ref uint16 pDeviceID, uint32 ulHardwareProfile, out uint32 pulValue, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_AliasA(PSTR pszDeviceInterface, Guid* AliasInterfaceGuid, uint8* pszAliasDeviceInterface, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_Interface_AliasA(PSTR pszDeviceInterface, ref Guid AliasInterfaceGuid, uint8* pszAliasDeviceInterface, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_AliasW(PWSTR pszDeviceInterface, Guid* AliasInterfaceGuid, char16* pszAliasDeviceInterface, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_Interface_AliasW(PWSTR pszDeviceInterface, ref Guid AliasInterfaceGuid, char16* pszAliasDeviceInterface, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_Alias_ExA(PSTR pszDeviceInterface, Guid* AliasInterfaceGuid, uint8* pszAliasDeviceInterface, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_Interface_Alias_ExA(PSTR pszDeviceInterface, ref Guid AliasInterfaceGuid, uint8* pszAliasDeviceInterface, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_Alias_ExW(PWSTR pszDeviceInterface, Guid* AliasInterfaceGuid, char16* pszAliasDeviceInterface, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_Interface_Alias_ExW(PWSTR pszDeviceInterface, ref Guid AliasInterfaceGuid, char16* pszAliasDeviceInterface, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_ListA(Guid* InterfaceClassGuid, int8* pDeviceID, uint8* Buffer, uint32 BufferLen, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_Interface_ListA(ref Guid InterfaceClassGuid, int8* pDeviceID, uint8* Buffer, uint32 BufferLen, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_ListW(Guid* InterfaceClassGuid, uint16* pDeviceID, char16* Buffer, uint32 BufferLen, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_Interface_ListW(ref Guid InterfaceClassGuid, uint16* pDeviceID, char16* Buffer, uint32 BufferLen, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_List_ExA(Guid* InterfaceClassGuid, int8* pDeviceID, uint8* Buffer, uint32 BufferLen, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_Interface_List_ExA(ref Guid InterfaceClassGuid, int8* pDeviceID, uint8* Buffer, uint32 BufferLen, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_List_ExW(Guid* InterfaceClassGuid, uint16* pDeviceID, char16* Buffer, uint32 BufferLen, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_Interface_List_ExW(ref Guid InterfaceClassGuid, uint16* pDeviceID, char16* Buffer, uint32 BufferLen, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_List_SizeA(uint32* pulLen, Guid* InterfaceClassGuid, int8* pDeviceID, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_Interface_List_SizeA(out uint32 pulLen, ref Guid InterfaceClassGuid, int8* pDeviceID, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_List_SizeW(uint32* pulLen, Guid* InterfaceClassGuid, uint16* pDeviceID, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_Interface_List_SizeW(out uint32 pulLen, ref Guid InterfaceClassGuid, uint16* pDeviceID, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_List_Size_ExA(uint32* pulLen, Guid* InterfaceClassGuid, int8* pDeviceID, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_Interface_List_Size_ExA(out uint32 pulLen, ref Guid InterfaceClassGuid, int8* pDeviceID, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_List_Size_ExW(uint32* pulLen, Guid* InterfaceClassGuid, uint16* pDeviceID, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_Interface_List_Size_ExW(out uint32 pulLen, ref Guid InterfaceClassGuid, uint16* pDeviceID, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_PropertyW(PWSTR pszDeviceInterface, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32* PropertyBufferSize, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_Interface_PropertyW(PWSTR pszDeviceInterface, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, out uint32 PropertyBufferSize, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_Property_ExW(PWSTR pszDeviceInterface, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32* PropertyBufferSize, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_Interface_Property_ExW(PWSTR pszDeviceInterface, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, out uint32 PropertyBufferSize, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_Property_KeysW(PWSTR pszDeviceInterface, DEVPROPKEY* PropertyKeyArray, uint32* PropertyKeyCount, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Device_Interface_Property_KeysW(PWSTR pszDeviceInterface, DEVPROPKEY* PropertyKeyArray, out uint32 PropertyKeyCount, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Device_Interface_Property_Keys_ExW(PWSTR pszDeviceInterface, DEVPROPKEY* PropertyKeyArray, uint32* PropertyKeyCount, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Device_Interface_Property_Keys_ExW(PWSTR pszDeviceInterface, DEVPROPKEY* PropertyKeyArray, out uint32 PropertyKeyCount, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Log_Conf_Priority(uint lcLogConf, uint32* pPriority, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Log_Conf_Priority(uint lcLogConf, out uint32 pPriority, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Log_Conf_Priority_Ex(uint lcLogConf, uint32* pPriority, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Log_Conf_Priority_Ex(uint lcLogConf, out uint32 pPriority, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Get_Next_Log_Conf(uint* plcLogConf, uint lcLogConf, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Get_Next_Log_Conf_Ex(uint* plcLogConf, uint lcLogConf, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Parent(uint32* pdnDevInst, uint32 dnDevInst, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Parent(out uint32 pdnDevInst, uint32 dnDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Parent_Ex(uint32* pdnDevInst, uint32 dnDevInst, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Parent_Ex(out uint32 pdnDevInst, uint32 dnDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Get_Res_Des_Data(uint rdResDes, void* Buffer, uint32 BufferLen, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Get_Res_Des_Data_Ex(uint rdResDes, void* Buffer, uint32 BufferLen, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Res_Des_Data_Size(uint32* pulSize, uint rdResDes, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Res_Des_Data_Size(out uint32 pulSize, uint rdResDes, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Res_Des_Data_Size_Ex(uint32* pulSize, uint rdResDes, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Res_Des_Data_Size_Ex(out uint32 pulSize, uint rdResDes, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Sibling(uint32* pdnDevInst, uint32 dnDevInst, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Sibling(out uint32 pdnDevInst, uint32 dnDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Sibling_Ex(uint32* pdnDevInst, uint32 dnDevInst, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Sibling_Ex(out uint32 pdnDevInst, uint32 dnDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint16 CM_Get_Version();
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3226,49 +3226,49 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Invert_Range_List(uint rlhOld, uint rlhNew, uint64 ullMaxValue, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Locate_DevNodeA(uint32* pdnDevInst, int8* pDeviceID, uint32 ulFlags);
+		public static extern CONFIGRET CM_Locate_DevNodeA(out uint32 pdnDevInst, int8* pDeviceID, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Locate_DevNodeW(uint32* pdnDevInst, uint16* pDeviceID, uint32 ulFlags);
+		public static extern CONFIGRET CM_Locate_DevNodeW(out uint32 pdnDevInst, uint16* pDeviceID, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Locate_DevNode_ExA(uint32* pdnDevInst, int8* pDeviceID, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Locate_DevNode_ExA(out uint32 pdnDevInst, int8* pDeviceID, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Locate_DevNode_ExW(uint32* pdnDevInst, uint16* pDeviceID, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Locate_DevNode_ExW(out uint32 pdnDevInst, uint16* pDeviceID, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Merge_Range_List(uint rlhOld1, uint rlhOld2, uint rlhNew, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Modify_Res_Des(uint* prdResDes, uint rdResDes, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, uint32 ulFlags);
+		public static extern CONFIGRET CM_Modify_Res_Des(out uint prdResDes, uint rdResDes, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Modify_Res_Des_Ex(uint* prdResDes, uint rdResDes, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Modify_Res_Des_Ex(out uint prdResDes, uint rdResDes, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Move_DevNode(uint32 dnFromDevInst, uint32 dnToDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Move_DevNode_Ex(uint32 dnFromDevInst, uint32 dnToDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Next_Range(uint* preElement, uint64* pullStart, uint64* pullEnd, uint32 ulFlags);
+		public static extern CONFIGRET CM_Next_Range(out uint preElement, out uint64 pullStart, out uint64 pullEnd, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Next_Res_Des(uint* prdResDes, uint rdResDes, uint32 ForResource, uint32* pResourceID, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Next_Res_Des(out uint prdResDes, uint rdResDes, uint32 ForResource, uint32* pResourceID, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Next_Res_Des_Ex(uint* prdResDes, uint rdResDes, uint32 ForResource, uint32* pResourceID, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Next_Res_Des_Ex(out uint prdResDes, uint rdResDes, uint32 ForResource, uint32* pResourceID, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_Class_KeyA(Guid* ClassGuid, PSTR pszClassName, uint32 samDesired, uint32 Disposition, HKEY* phkClass, uint32 ulFlags);
+		public static extern CONFIGRET CM_Open_Class_KeyA(Guid* ClassGuid, PSTR pszClassName, uint32 samDesired, uint32 Disposition, out HKEY phkClass, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_Class_KeyW(Guid* ClassGuid, PWSTR pszClassName, uint32 samDesired, uint32 Disposition, HKEY* phkClass, uint32 ulFlags);
+		public static extern CONFIGRET CM_Open_Class_KeyW(Guid* ClassGuid, PWSTR pszClassName, uint32 samDesired, uint32 Disposition, out HKEY phkClass, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_Class_Key_ExA(Guid* ClassGuid, PSTR pszClassName, uint32 samDesired, uint32 Disposition, HKEY* phkClass, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Open_Class_Key_ExA(Guid* ClassGuid, PSTR pszClassName, uint32 samDesired, uint32 Disposition, out HKEY phkClass, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_Class_Key_ExW(Guid* ClassGuid, PWSTR pszClassName, uint32 samDesired, uint32 Disposition, HKEY* phkClass, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Open_Class_Key_ExW(Guid* ClassGuid, PWSTR pszClassName, uint32 samDesired, uint32 Disposition, out HKEY phkClass, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_DevNode_Key(uint32 dnDevNode, uint32 samDesired, uint32 ulHardwareProfile, uint32 Disposition, HKEY* phkDevice, uint32 ulFlags);
+		public static extern CONFIGRET CM_Open_DevNode_Key(uint32 dnDevNode, uint32 samDesired, uint32 ulHardwareProfile, uint32 Disposition, out HKEY phkDevice, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_DevNode_Key_Ex(uint32 dnDevNode, uint32 samDesired, uint32 ulHardwareProfile, uint32 Disposition, HKEY* phkDevice, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Open_DevNode_Key_Ex(uint32 dnDevNode, uint32 samDesired, uint32 ulHardwareProfile, uint32 Disposition, out HKEY phkDevice, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_Device_Interface_KeyA(PSTR pszDeviceInterface, uint32 samDesired, uint32 Disposition, HKEY* phkDeviceInterface, uint32 ulFlags);
+		public static extern CONFIGRET CM_Open_Device_Interface_KeyA(PSTR pszDeviceInterface, uint32 samDesired, uint32 Disposition, out HKEY phkDeviceInterface, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_Device_Interface_KeyW(PWSTR pszDeviceInterface, uint32 samDesired, uint32 Disposition, HKEY* phkDeviceInterface, uint32 ulFlags);
+		public static extern CONFIGRET CM_Open_Device_Interface_KeyW(PWSTR pszDeviceInterface, uint32 samDesired, uint32 Disposition, out HKEY phkDeviceInterface, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_Device_Interface_Key_ExA(PSTR pszDeviceInterface, uint32 samDesired, uint32 Disposition, HKEY* phkDeviceInterface, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Open_Device_Interface_Key_ExA(PSTR pszDeviceInterface, uint32 samDesired, uint32 Disposition, out HKEY phkDeviceInterface, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Open_Device_Interface_Key_ExW(PWSTR pszDeviceInterface, uint32 samDesired, uint32 Disposition, HKEY* phkDeviceInterface, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Open_Device_Interface_Key_ExW(PWSTR pszDeviceInterface, uint32 samDesired, uint32 Disposition, out HKEY phkDeviceInterface, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Delete_Device_Interface_KeyA(PSTR pszDeviceInterface, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3282,9 +3282,9 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Query_Arbitrator_Free_Data_Ex(void* pData, uint32 DataLen, uint32 dnDevInst, uint32 ResourceID, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Query_Arbitrator_Free_Size(uint32* pulSize, uint32 dnDevInst, uint32 ResourceID, uint32 ulFlags);
+		public static extern CONFIGRET CM_Query_Arbitrator_Free_Size(out uint32 pulSize, uint32 dnDevInst, uint32 ResourceID, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Query_Arbitrator_Free_Size_Ex(uint32* pulSize, uint32 dnDevInst, uint32 ResourceID, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Query_Arbitrator_Free_Size_Ex(out uint32 pulSize, uint32 dnDevInst, uint32 ResourceID, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Query_Remove_SubTree(uint32 dnAncestor, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3310,13 +3310,13 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Reenumerate_DevNode_Ex(uint32 dnDevInst, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Register_Device_InterfaceA(uint32 dnDevInst, Guid* InterfaceClassGuid, PSTR pszReference, uint8* pszDeviceInterface, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Register_Device_InterfaceA(uint32 dnDevInst, ref Guid InterfaceClassGuid, PSTR pszReference, uint8* pszDeviceInterface, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Register_Device_InterfaceW(uint32 dnDevInst, Guid* InterfaceClassGuid, PWSTR pszReference, char16* pszDeviceInterface, uint32* pulLength, uint32 ulFlags);
+		public static extern CONFIGRET CM_Register_Device_InterfaceW(uint32 dnDevInst, ref Guid InterfaceClassGuid, PWSTR pszReference, char16* pszDeviceInterface, out uint32 pulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Register_Device_Interface_ExA(uint32 dnDevInst, Guid* InterfaceClassGuid, PSTR pszReference, uint8* pszDeviceInterface, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Register_Device_Interface_ExA(uint32 dnDevInst, ref Guid InterfaceClassGuid, PSTR pszReference, uint8* pszDeviceInterface, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Register_Device_Interface_ExW(uint32 dnDevInst, Guid* InterfaceClassGuid, PWSTR pszReference, char16* pszDeviceInterface, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Register_Device_Interface_ExW(uint32 dnDevInst, ref Guid InterfaceClassGuid, PWSTR pszReference, char16* pszDeviceInterface, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Set_DevNode_Problem_Ex(uint32 dnDevInst, uint32 ulProblem, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3338,9 +3338,9 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Remove_SubTree_Ex(uint32 dnAncestor, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_DevNode_PropertyW(uint32 dnDevInst, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags);
+		public static extern CONFIGRET CM_Set_DevNode_PropertyW(uint32 dnDevInst, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_DevNode_Property_ExW(uint32 dnDevInst, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Set_DevNode_Property_ExW(uint32 dnDevInst, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Set_DevNode_Registry_PropertyA(uint32 dnDevInst, uint32 ulProperty, void* Buffer, uint32 ulLength, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3350,25 +3350,25 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Set_DevNode_Registry_Property_ExW(uint32 dnDevInst, uint32 ulProperty, void* Buffer, uint32 ulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_Device_Interface_PropertyW(PWSTR pszDeviceInterface, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags);
+		public static extern CONFIGRET CM_Set_Device_Interface_PropertyW(PWSTR pszDeviceInterface, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_Device_Interface_Property_ExW(PWSTR pszDeviceInterface, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Set_Device_Interface_Property_ExW(PWSTR pszDeviceInterface, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Is_Dock_Station_Present(BOOL* pbPresent);
+		public static extern CONFIGRET CM_Is_Dock_Station_Present(out BOOL pbPresent);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Is_Dock_Station_Present_Ex(BOOL* pbPresent, int hMachine);
+		public static extern CONFIGRET CM_Is_Dock_Station_Present_Ex(out BOOL pbPresent, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Request_Eject_PC();
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Request_Eject_PC_Ex(int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_HW_Prof_FlagsA(int8* pDeviceID, uint32 ulConfig, uint32 ulValue, uint32 ulFlags);
+		public static extern CONFIGRET CM_Set_HW_Prof_FlagsA(ref int8 pDeviceID, uint32 ulConfig, uint32 ulValue, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_HW_Prof_FlagsW(uint16* pDeviceID, uint32 ulConfig, uint32 ulValue, uint32 ulFlags);
+		public static extern CONFIGRET CM_Set_HW_Prof_FlagsW(ref uint16 pDeviceID, uint32 ulConfig, uint32 ulValue, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_HW_Prof_Flags_ExA(int8* pDeviceID, uint32 ulConfig, uint32 ulValue, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Set_HW_Prof_Flags_ExA(ref int8 pDeviceID, uint32 ulConfig, uint32 ulValue, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_HW_Prof_Flags_ExW(uint16* pDeviceID, uint32 ulConfig, uint32 ulValue, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Set_HW_Prof_Flags_ExW(ref uint16 pDeviceID, uint32 ulConfig, uint32 ulValue, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Setup_DevNode(uint32 dnDevInst, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3388,39 +3388,39 @@ namespace Win32
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Set_HW_Prof_Ex(uint32 ulHardwareProfile, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Query_Resource_Conflict_List(uint* pclConflictList, uint32 dnDevInst, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Query_Resource_Conflict_List(out uint pclConflictList, uint32 dnDevInst, uint32 ResourceID, void* ResourceData, uint32 ResourceLen, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Free_Resource_Conflict_Handle(uint clConflictList);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Resource_Conflict_Count(uint clConflictList, uint32* pulCount);
+		public static extern CONFIGRET CM_Get_Resource_Conflict_Count(uint clConflictList, out uint32 pulCount);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Resource_Conflict_DetailsA(uint clConflictList, uint32 ulIndex, CONFLICT_DETAILS_A* pConflictDetails);
+		public static extern CONFIGRET CM_Get_Resource_Conflict_DetailsA(uint clConflictList, uint32 ulIndex, out CONFLICT_DETAILS_A pConflictDetails);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Resource_Conflict_DetailsW(uint clConflictList, uint32 ulIndex, CONFLICT_DETAILS_W* pConflictDetails);
+		public static extern CONFIGRET CM_Get_Resource_Conflict_DetailsW(uint clConflictList, uint32 ulIndex, out CONFLICT_DETAILS_W pConflictDetails);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_PropertyW(Guid* ClassGUID, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32* PropertyBufferSize, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Class_PropertyW(in Guid ClassGUID, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, out uint32 PropertyBufferSize, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Property_ExW(Guid* ClassGUID, DEVPROPKEY* PropertyKey, uint32* PropertyType, uint8* PropertyBuffer, uint32* PropertyBufferSize, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Class_Property_ExW(in Guid ClassGUID, in DEVPROPKEY PropertyKey, out uint32 PropertyType, uint8* PropertyBuffer, out uint32 PropertyBufferSize, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Property_Keys(Guid* ClassGUID, DEVPROPKEY* PropertyKeyArray, uint32* PropertyKeyCount, uint32 ulFlags);
+		public static extern CONFIGRET CM_Get_Class_Property_Keys(in Guid ClassGUID, DEVPROPKEY* PropertyKeyArray, out uint32 PropertyKeyCount, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Property_Keys_Ex(Guid* ClassGUID, DEVPROPKEY* PropertyKeyArray, uint32* PropertyKeyCount, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Class_Property_Keys_Ex(in Guid ClassGUID, DEVPROPKEY* PropertyKeyArray, out uint32 PropertyKeyCount, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_Class_PropertyW(Guid* ClassGUID, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags);
+		public static extern CONFIGRET CM_Set_Class_PropertyW(in Guid ClassGUID, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_Class_Property_ExW(Guid* ClassGUID, DEVPROPKEY* PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Set_Class_Property_ExW(in Guid ClassGUID, in DEVPROPKEY PropertyKey, uint32 PropertyType, uint8* PropertyBuffer, uint32 PropertyBufferSize, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Registry_PropertyA(Guid* ClassGuid, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Class_Registry_PropertyA(ref Guid ClassGuid, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Get_Class_Registry_PropertyW(Guid* ClassGuid, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, uint32* pulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Get_Class_Registry_PropertyW(ref Guid ClassGuid, uint32 ulProperty, uint32* pulRegDataType, void* Buffer, out uint32 pulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_Class_Registry_PropertyA(Guid* ClassGuid, uint32 ulProperty, void* Buffer, uint32 ulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Set_Class_Registry_PropertyA(ref Guid ClassGuid, uint32 ulProperty, void* Buffer, uint32 ulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Set_Class_Registry_PropertyW(Guid* ClassGuid, uint32 ulProperty, void* Buffer, uint32 ulLength, uint32 ulFlags, int hMachine);
+		public static extern CONFIGRET CM_Set_Class_Registry_PropertyW(ref Guid ClassGuid, uint32 ulProperty, void* Buffer, uint32 ulLength, uint32 ulFlags, int hMachine);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CMP_WaitNoPendingInstallEvents(uint32 dwTimeout);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CONFIGRET CM_Register_Notification(CM_NOTIFY_FILTER* pFilter, void* pContext, PCM_NOTIFY_CALLBACK pCallback, int* pNotifyContext);
+		public static extern CONFIGRET CM_Register_Notification(ref CM_NOTIFY_FILTER pFilter, void* pContext, PCM_NOTIFY_CALLBACK pCallback, out int pNotifyContext);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CONFIGRET CM_Unregister_Notification(HCMNOTIFICATION NotifyContext);
 		[Import("cfgmgr32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3430,21 +3430,21 @@ namespace Win32
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UpdateDriverForPlugAndPlayDevicesW(HWND hwndParent, PWSTR HardwareId, PWSTR FullInfPath, uint32 InstallFlags, BOOL* bRebootRequired);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL DiInstallDevice(HWND hwndParent, void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, SP_DRVINFO_DATA_V2_A* DriverInfoData, uint32 Flags, BOOL* NeedReboot);
+		public static extern BOOL DiInstallDevice(HWND hwndParent, void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, SP_DRVINFO_DATA_V2_A* DriverInfoData, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DiInstallDriverW(HWND hwndParent, PWSTR InfPath, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DiInstallDriverA(HWND hwndParent, PSTR InfPath, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL DiUninstallDevice(HWND hwndParent, void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Flags, BOOL* NeedReboot);
+		public static extern BOOL DiUninstallDevice(HWND hwndParent, void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DiUninstallDriverW(HWND hwndParent, PWSTR InfPath, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DiUninstallDriverA(HWND hwndParent, PSTR InfPath, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL DiShowUpdateDevice(HWND hwndParent, void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, uint32 Flags, BOOL* NeedReboot);
+		public static extern BOOL DiShowUpdateDevice(HWND hwndParent, void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL DiRollbackDriver(void* DeviceInfoSet, SP_DEVINFO_DATA* DeviceInfoData, HWND hwndParent, uint32 Flags, BOOL* NeedReboot);
+		public static extern BOOL DiRollbackDriver(void* DeviceInfoSet, ref SP_DEVINFO_DATA DeviceInfoData, HWND hwndParent, uint32 Flags, BOOL* NeedReboot);
 		[Import("newdev.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DiShowUpdateDriver(HWND hwndParent, PWSTR FilePath, uint32 Flags, BOOL* NeedReboot);
 		

@@ -74,15 +74,15 @@ namespace Win32
 		
 		public function void* PFNFCIALLOC(uint32 cb);
 		public function void PFNFCIFREE(void* memory);
-		public function int PFNFCIOPEN(PSTR pszFile, int32 oflag, int32 pmode, int32* err, void* pv);
-		public function uint32 PFNFCIREAD(int hf, void* memory, uint32 cb, int32* err, void* pv);
-		public function uint32 PFNFCIWRITE(int hf, void* memory, uint32 cb, int32* err, void* pv);
-		public function int32 PFNFCICLOSE(int hf, int32* err, void* pv);
-		public function int32 PFNFCISEEK(int hf, int32 dist, int32 seektype, int32* err, void* pv);
-		public function int32 PFNFCIDELETE(PSTR pszFile, int32* err, void* pv);
-		public function BOOL PFNFCIGETNEXTCABINET(CCAB* pccab, uint32 cbPrevCab, void* pv);
-		public function int32 PFNFCIFILEPLACED(CCAB* pccab, PSTR pszFile, int32 cbFile, BOOL fContinuation, void* pv);
-		public function int PFNFCIGETOPENINFO(PSTR pszName, uint16* pdate, uint16* ptime, uint16* pattribs, int32* err, void* pv);
+		public function int PFNFCIOPEN(PSTR pszFile, int32 oflag, int32 pmode, out int32 err, void* pv);
+		public function uint32 PFNFCIREAD(int hf, void* memory, uint32 cb, out int32 err, void* pv);
+		public function uint32 PFNFCIWRITE(int hf, void* memory, uint32 cb, out int32 err, void* pv);
+		public function int32 PFNFCICLOSE(int hf, out int32 err, void* pv);
+		public function int32 PFNFCISEEK(int hf, int32 dist, int32 seektype, out int32 err, void* pv);
+		public function int32 PFNFCIDELETE(PSTR pszFile, out int32 err, void* pv);
+		public function BOOL PFNFCIGETNEXTCABINET(out CCAB pccab, uint32 cbPrevCab, void* pv);
+		public function int32 PFNFCIFILEPLACED(out CCAB pccab, PSTR pszFile, int32 cbFile, BOOL fContinuation, void* pv);
+		public function int PFNFCIGETOPENINFO(PSTR pszName, out uint16 pdate, out uint16 ptime, out uint16 pattribs, out int32 err, void* pv);
 		public function int32 PFNFCISTATUS(uint32 typeStatus, uint32 cb1, uint32 cb2, void* pv);
 		public function BOOL PFNFCIGETTEMPFILE(PSTR pszTempName, int32 cbTempName, void* pv);
 		public function void* PFNALLOC(uint32 cb);
@@ -92,8 +92,8 @@ namespace Win32
 		public function uint32 PFNWRITE(int hf, void* pv, uint32 cb);
 		public function int32 PFNCLOSE(int hf);
 		public function int32 PFNSEEK(int hf, int32 dist, int32 seektype);
-		public function int32 PFNFDIDECRYPT(FDIDECRYPT* pfdid);
-		public function int PFNFDINOTIFY(FDINOTIFICATIONTYPE fdint, FDINOTIFICATION* pfdin);
+		public function int32 PFNFDIDECRYPT(out FDIDECRYPT pfdid);
+		public function int PFNFDINOTIFY(FDINOTIFICATIONTYPE fdint, out FDINOTIFICATION pfdin);
 		
 		// --- Structs ---
 		
@@ -200,7 +200,7 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* FCICreate(ERF* perf, PFNFCIFILEPLACED pfnfcifp, PFNFCIALLOC pfna, PFNFCIFREE pfnf, PFNFCIOPEN pfnopen, PFNFCIREAD pfnread, PFNFCIWRITE pfnwrite, PFNFCICLOSE pfnclose, PFNFCISEEK pfnseek, PFNFCIDELETE pfndelete, PFNFCIGETTEMPFILE pfnfcigtf, CCAB* pccab, void* pv);
+		public static extern void* FCICreate(ref ERF perf, PFNFCIFILEPLACED pfnfcifp, PFNFCIALLOC pfna, PFNFCIFREE pfnf, PFNFCIOPEN pfnopen, PFNFCIREAD pfnread, PFNFCIWRITE pfnwrite, PFNFCICLOSE pfnclose, PFNFCISEEK pfnseek, PFNFCIDELETE pfndelete, PFNFCIGETTEMPFILE pfnfcigtf, ref CCAB pccab, void* pv);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FCIAddFile(void* hfci, PSTR pszSourceFile, PSTR pszFileName, BOOL fExecute, PFNFCIGETNEXTCABINET pfnfcignc, PFNFCISTATUS pfnfcis, PFNFCIGETOPENINFO pfnfcigoi, uint16 typeCompress);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
@@ -210,7 +210,7 @@ namespace Win32
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FCIDestroy(void* hfci);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* FDICreate(PFNALLOC pfnalloc, PFNFREE pfnfree, PFNOPEN pfnopen, PFNREAD pfnread, PFNWRITE pfnwrite, PFNCLOSE pfnclose, PFNSEEK pfnseek, FDICREATE_CPU_TYPE cpuType, ERF* perf);
+		public static extern void* FDICreate(PFNALLOC pfnalloc, PFNFREE pfnfree, PFNOPEN pfnopen, PFNREAD pfnread, PFNWRITE pfnwrite, PFNCLOSE pfnclose, PFNSEEK pfnseek, FDICREATE_CPU_TYPE cpuType, out ERF perf);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FDIIsCabinet(void* hfdi, int hf, FDICABINETINFO* pfdici);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]

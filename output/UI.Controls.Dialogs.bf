@@ -676,22 +676,22 @@ namespace Win32
 			
 			public HRESULT InitDone() mut
 			{
-				return VT.InitDone(&this);
+				return VT.InitDone(ref this);
 			}
 			public HRESULT SelectionChange() mut
 			{
-				return VT.SelectionChange(&this);
+				return VT.SelectionChange(ref this);
 			}
-			public HRESULT HandleMessage(HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pResult) mut
+			public HRESULT HandleMessage(HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT pResult) mut
 			{
-				return VT.HandleMessage(&this, hDlg, uMsg, wParam, lParam, pResult);
+				return VT.HandleMessage(ref this, hDlg, uMsg, wParam, lParam, out pResult);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintDialogCallback *self) InitDone;
-				public new function HRESULT(IPrintDialogCallback *self) SelectionChange;
-				public new function HRESULT(IPrintDialogCallback *self, HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pResult) HandleMessage;
+				public new function HRESULT(ref IPrintDialogCallback self) InitDone;
+				public new function HRESULT(ref IPrintDialogCallback self) SelectionChange;
+				public new function HRESULT(ref IPrintDialogCallback self, HWND hDlg, uint32 uMsg, WPARAM wParam, LPARAM lParam, out LRESULT pResult) HandleMessage;
 			}
 		}
 		[CRepr]
@@ -701,71 +701,71 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCurrentDevMode(DEVMODEA* pDevMode, uint32* pcbSize) mut
+			public HRESULT GetCurrentDevMode(out DEVMODEA pDevMode, out uint32 pcbSize) mut
 			{
-				return VT.GetCurrentDevMode(&this, pDevMode, pcbSize);
+				return VT.GetCurrentDevMode(ref this, out pDevMode, out pcbSize);
 			}
-			public HRESULT GetCurrentPrinterName(char16* pPrinterName, uint32* pcchSize) mut
+			public HRESULT GetCurrentPrinterName(char16* pPrinterName, out uint32 pcchSize) mut
 			{
-				return VT.GetCurrentPrinterName(&this, pPrinterName, pcchSize);
+				return VT.GetCurrentPrinterName(ref this, pPrinterName, out pcchSize);
 			}
-			public HRESULT GetCurrentPortName(char16* pPortName, uint32* pcchSize) mut
+			public HRESULT GetCurrentPortName(char16* pPortName, out uint32 pcchSize) mut
 			{
-				return VT.GetCurrentPortName(&this, pPortName, pcchSize);
+				return VT.GetCurrentPortName(ref this, pPortName, out pcchSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintDialogServices *self, DEVMODEA* pDevMode, uint32* pcbSize) GetCurrentDevMode;
-				public new function HRESULT(IPrintDialogServices *self, char16* pPrinterName, uint32* pcchSize) GetCurrentPrinterName;
-				public new function HRESULT(IPrintDialogServices *self, char16* pPortName, uint32* pcchSize) GetCurrentPortName;
+				public new function HRESULT(ref IPrintDialogServices self, out DEVMODEA pDevMode, out uint32 pcbSize) GetCurrentDevMode;
+				public new function HRESULT(ref IPrintDialogServices self, char16* pPrinterName, out uint32 pcchSize) GetCurrentPrinterName;
+				public new function HRESULT(ref IPrintDialogServices self, char16* pPortName, out uint32 pcchSize) GetCurrentPortName;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetOpenFileNameA(OPENFILENAMEA* param0);
+		public static extern BOOL GetOpenFileNameA(out OPENFILENAMEA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetOpenFileNameW(OPENFILENAMEW* param0);
+		public static extern BOOL GetOpenFileNameW(out OPENFILENAMEW param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetSaveFileNameA(OPENFILENAMEA* param0);
+		public static extern BOOL GetSaveFileNameA(out OPENFILENAMEA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetSaveFileNameW(OPENFILENAMEW* param0);
+		public static extern BOOL GetSaveFileNameW(out OPENFILENAMEW param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int16 GetFileTitleA(PSTR param0, uint8* Buf, uint16 cchSize);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int16 GetFileTitleW(PWSTR param0, char16* Buf, uint16 cchSize);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ChooseColorA(CHOOSECOLORA* param0);
+		public static extern BOOL ChooseColorA(out CHOOSECOLORA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ChooseColorW(CHOOSECOLORW* param0);
+		public static extern BOOL ChooseColorW(out CHOOSECOLORW param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HWND FindTextA(FINDREPLACEA* param0);
+		public static extern HWND FindTextA(out FINDREPLACEA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HWND FindTextW(FINDREPLACEW* param0);
+		public static extern HWND FindTextW(out FINDREPLACEW param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HWND ReplaceTextA(FINDREPLACEA* param0);
+		public static extern HWND ReplaceTextA(out FINDREPLACEA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HWND ReplaceTextW(FINDREPLACEW* param0);
+		public static extern HWND ReplaceTextW(out FINDREPLACEW param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ChooseFontA(CHOOSEFONTA* param0);
+		public static extern BOOL ChooseFontA(out CHOOSEFONTA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ChooseFontW(CHOOSEFONTW* param0);
+		public static extern BOOL ChooseFontW(out CHOOSEFONTW param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PrintDlgA(PRINTDLGA* pPD);
+		public static extern BOOL PrintDlgA(out PRINTDLGA pPD);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PrintDlgW(PRINTDLGW* pPD);
+		public static extern BOOL PrintDlgW(out PRINTDLGW pPD);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrintDlgExA(PRINTDLGEXA* pPD);
+		public static extern HRESULT PrintDlgExA(out PRINTDLGEXA pPD);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT PrintDlgExW(PRINTDLGEXW* pPD);
+		public static extern HRESULT PrintDlgExW(out PRINTDLGEXW pPD);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern COMMON_DLG_ERRORS CommDlgExtendedError();
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PageSetupDlgA(PAGESETUPDLGA* param0);
+		public static extern BOOL PageSetupDlgA(out PAGESETUPDLGA param0);
 		[Import("comdlg32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PageSetupDlgW(PAGESETUPDLGW* param0);
+		public static extern BOOL PageSetupDlgW(out PAGESETUPDLGW param0);
 		
 	}
 }

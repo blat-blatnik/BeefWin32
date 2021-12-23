@@ -1583,7 +1583,7 @@ namespace Win32
 			public uint16 LangID;
 			public uint16 wPronunciationFlags;
 			public SPPARTOFSPEECH ePartOfSpeech;
-			public uint16[] szPronunciation;
+			public uint16[0] szPronunciation;
 		}
 		[CRepr]
 		public struct SPWORDPRONUNCIATIONLIST
@@ -1780,12 +1780,12 @@ namespace Win32
 			
 			public HRESULT NotifyCallback(WPARAM wParam, LPARAM lParam) mut
 			{
-				return VT.NotifyCallback(&this, wParam, lParam);
+				return VT.NotifyCallback(ref this, wParam, lParam);
 			}
 			[CRepr]
 			public struct VTable
 			{
-				public new function HRESULT(ISpNotifyCallback *self, WPARAM wParam, LPARAM lParam) NotifyCallback;
+				public new function HRESULT(ref ISpNotifyCallback self, WPARAM wParam, LPARAM lParam) NotifyCallback;
 			}
 		}
 		[CRepr]
@@ -1797,42 +1797,42 @@ namespace Win32
 			
 			public HRESULT SetNotifySink(ISpNotifySink* pNotifySink) mut
 			{
-				return VT.SetNotifySink(&this, pNotifySink);
+				return VT.SetNotifySink(ref this, pNotifySink);
 			}
 			public HRESULT SetNotifyWindowMessage(HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) mut
 			{
-				return VT.SetNotifyWindowMessage(&this, hWnd, Msg, wParam, lParam);
+				return VT.SetNotifyWindowMessage(ref this, hWnd, Msg, wParam, lParam);
 			}
-			public HRESULT SetNotifyCallbackFunction(SPNOTIFYCALLBACK* pfnCallback, WPARAM wParam, LPARAM lParam) mut
+			public HRESULT SetNotifyCallbackFunction(out SPNOTIFYCALLBACK pfnCallback, WPARAM wParam, LPARAM lParam) mut
 			{
-				return VT.SetNotifyCallbackFunction(&this, pfnCallback, wParam, lParam);
+				return VT.SetNotifyCallbackFunction(ref this, out pfnCallback, wParam, lParam);
 			}
-			public HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam) mut
+			public HRESULT SetNotifyCallbackInterface(ref ISpNotifyCallback pSpCallback, WPARAM wParam, LPARAM lParam) mut
 			{
-				return VT.SetNotifyCallbackInterface(&this, pSpCallback, wParam, lParam);
+				return VT.SetNotifyCallbackInterface(ref this, ref pSpCallback, wParam, lParam);
 			}
 			public HRESULT SetNotifyWin32Event() mut
 			{
-				return VT.SetNotifyWin32Event(&this);
+				return VT.SetNotifyWin32Event(ref this);
 			}
 			public HRESULT WaitForNotifyEvent(uint32 dwMilliseconds) mut
 			{
-				return VT.WaitForNotifyEvent(&this, dwMilliseconds);
+				return VT.WaitForNotifyEvent(ref this, dwMilliseconds);
 			}
 			public HANDLE GetNotifyEventHandle() mut
 			{
-				return VT.GetNotifyEventHandle(&this);
+				return VT.GetNotifyEventHandle(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpNotifySource *self, ISpNotifySink* pNotifySink) SetNotifySink;
-				public new function HRESULT(ISpNotifySource *self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) SetNotifyWindowMessage;
-				public new function HRESULT(ISpNotifySource *self, SPNOTIFYCALLBACK* pfnCallback, WPARAM wParam, LPARAM lParam) SetNotifyCallbackFunction;
-				public new function HRESULT(ISpNotifySource *self, ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam) SetNotifyCallbackInterface;
-				public new function HRESULT(ISpNotifySource *self) SetNotifyWin32Event;
-				public new function HRESULT(ISpNotifySource *self, uint32 dwMilliseconds) WaitForNotifyEvent;
-				public new function HANDLE(ISpNotifySource *self) GetNotifyEventHandle;
+				public new function HRESULT(ref ISpNotifySource self, ISpNotifySink* pNotifySink) SetNotifySink;
+				public new function HRESULT(ref ISpNotifySource self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) SetNotifyWindowMessage;
+				public new function HRESULT(ref ISpNotifySource self, out SPNOTIFYCALLBACK pfnCallback, WPARAM wParam, LPARAM lParam) SetNotifyCallbackFunction;
+				public new function HRESULT(ref ISpNotifySource self, ref ISpNotifyCallback pSpCallback, WPARAM wParam, LPARAM lParam) SetNotifyCallbackInterface;
+				public new function HRESULT(ref ISpNotifySource self) SetNotifyWin32Event;
+				public new function HRESULT(ref ISpNotifySource self, uint32 dwMilliseconds) WaitForNotifyEvent;
+				public new function HANDLE(ref ISpNotifySource self) GetNotifyEventHandle;
 			}
 		}
 		[CRepr]
@@ -1844,12 +1844,12 @@ namespace Win32
 			
 			public HRESULT Notify() mut
 			{
-				return VT.Notify(&this);
+				return VT.Notify(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpNotifySink *self) Notify;
+				public new function HRESULT(ref ISpNotifySink self) Notify;
 			}
 		}
 		[CRepr]
@@ -1861,37 +1861,37 @@ namespace Win32
 			
 			public HRESULT InitWindowMessage(HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) mut
 			{
-				return VT.InitWindowMessage(&this, hWnd, Msg, wParam, lParam);
+				return VT.InitWindowMessage(ref this, hWnd, Msg, wParam, lParam);
 			}
-			public HRESULT InitCallback(SPNOTIFYCALLBACK* pfnCallback, WPARAM wParam, LPARAM lParam) mut
+			public HRESULT InitCallback(out SPNOTIFYCALLBACK pfnCallback, WPARAM wParam, LPARAM lParam) mut
 			{
-				return VT.InitCallback(&this, pfnCallback, wParam, lParam);
+				return VT.InitCallback(ref this, out pfnCallback, wParam, lParam);
 			}
-			public HRESULT InitSpNotifyCallback(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam) mut
+			public HRESULT InitSpNotifyCallback(ref ISpNotifyCallback pSpCallback, WPARAM wParam, LPARAM lParam) mut
 			{
-				return VT.InitSpNotifyCallback(&this, pSpCallback, wParam, lParam);
+				return VT.InitSpNotifyCallback(ref this, ref pSpCallback, wParam, lParam);
 			}
 			public HRESULT InitWin32Event(HANDLE hEvent, BOOL fCloseHandleOnRelease) mut
 			{
-				return VT.InitWin32Event(&this, hEvent, fCloseHandleOnRelease);
+				return VT.InitWin32Event(ref this, hEvent, fCloseHandleOnRelease);
 			}
 			public HRESULT Wait(uint32 dwMilliseconds) mut
 			{
-				return VT.Wait(&this, dwMilliseconds);
+				return VT.Wait(ref this, dwMilliseconds);
 			}
 			public HANDLE GetEventHandle() mut
 			{
-				return VT.GetEventHandle(&this);
+				return VT.GetEventHandle(ref this);
 			}
 			[CRepr]
 			public struct VTable : ISpNotifySink.VTable
 			{
-				public new function HRESULT(ISpNotifyTranslator *self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) InitWindowMessage;
-				public new function HRESULT(ISpNotifyTranslator *self, SPNOTIFYCALLBACK* pfnCallback, WPARAM wParam, LPARAM lParam) InitCallback;
-				public new function HRESULT(ISpNotifyTranslator *self, ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam) InitSpNotifyCallback;
-				public new function HRESULT(ISpNotifyTranslator *self, HANDLE hEvent, BOOL fCloseHandleOnRelease) InitWin32Event;
-				public new function HRESULT(ISpNotifyTranslator *self, uint32 dwMilliseconds) Wait;
-				public new function HANDLE(ISpNotifyTranslator *self) GetEventHandle;
+				public new function HRESULT(ref ISpNotifyTranslator self, HWND hWnd, uint32 Msg, WPARAM wParam, LPARAM lParam) InitWindowMessage;
+				public new function HRESULT(ref ISpNotifyTranslator self, out SPNOTIFYCALLBACK pfnCallback, WPARAM wParam, LPARAM lParam) InitCallback;
+				public new function HRESULT(ref ISpNotifyTranslator self, ref ISpNotifyCallback pSpCallback, WPARAM wParam, LPARAM lParam) InitSpNotifyCallback;
+				public new function HRESULT(ref ISpNotifyTranslator self, HANDLE hEvent, BOOL fCloseHandleOnRelease) InitWin32Event;
+				public new function HRESULT(ref ISpNotifyTranslator self, uint32 dwMilliseconds) Wait;
+				public new function HANDLE(ref ISpNotifyTranslator self) GetEventHandle;
 			}
 		}
 		[CRepr]
@@ -1901,69 +1901,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetData(PWSTR pszValueName, uint32 cbData, uint8* pData) mut
+			public HRESULT SetData(PWSTR pszValueName, uint32 cbData, in uint8 pData) mut
 			{
-				return VT.SetData(&this, pszValueName, cbData, pData);
+				return VT.SetData(ref this, pszValueName, cbData, pData);
 			}
-			public HRESULT GetData(PWSTR pszValueName, uint32* pcbData, uint8* pData) mut
+			public HRESULT GetData(PWSTR pszValueName, out uint32 pcbData, out uint8 pData) mut
 			{
-				return VT.GetData(&this, pszValueName, pcbData, pData);
+				return VT.GetData(ref this, pszValueName, out pcbData, out pData);
 			}
 			public HRESULT SetStringValue(PWSTR pszValueName, PWSTR pszValue) mut
 			{
-				return VT.SetStringValue(&this, pszValueName, pszValue);
+				return VT.SetStringValue(ref this, pszValueName, pszValue);
 			}
-			public HRESULT GetStringValue(PWSTR pszValueName, PWSTR* ppszValue) mut
+			public HRESULT GetStringValue(PWSTR pszValueName, out PWSTR ppszValue) mut
 			{
-				return VT.GetStringValue(&this, pszValueName, ppszValue);
+				return VT.GetStringValue(ref this, pszValueName, out ppszValue);
 			}
 			public HRESULT SetDWORD(PWSTR pszValueName, uint32 dwValue) mut
 			{
-				return VT.SetDWORD(&this, pszValueName, dwValue);
+				return VT.SetDWORD(ref this, pszValueName, dwValue);
 			}
-			public HRESULT GetDWORD(PWSTR pszValueName, uint32* pdwValue) mut
+			public HRESULT GetDWORD(PWSTR pszValueName, out uint32 pdwValue) mut
 			{
-				return VT.GetDWORD(&this, pszValueName, pdwValue);
+				return VT.GetDWORD(ref this, pszValueName, out pdwValue);
 			}
-			public HRESULT OpenKey(PWSTR pszSubKeyName, ISpDataKey** ppSubKey) mut
+			public HRESULT OpenKey(PWSTR pszSubKeyName, out ISpDataKey* ppSubKey) mut
 			{
-				return VT.OpenKey(&this, pszSubKeyName, ppSubKey);
+				return VT.OpenKey(ref this, pszSubKeyName, out ppSubKey);
 			}
-			public HRESULT CreateKey(PWSTR pszSubKey, ISpDataKey** ppSubKey) mut
+			public HRESULT CreateKey(PWSTR pszSubKey, out ISpDataKey* ppSubKey) mut
 			{
-				return VT.CreateKey(&this, pszSubKey, ppSubKey);
+				return VT.CreateKey(ref this, pszSubKey, out ppSubKey);
 			}
 			public HRESULT DeleteKey(PWSTR pszSubKey) mut
 			{
-				return VT.DeleteKey(&this, pszSubKey);
+				return VT.DeleteKey(ref this, pszSubKey);
 			}
 			public HRESULT DeleteValue(PWSTR pszValueName) mut
 			{
-				return VT.DeleteValue(&this, pszValueName);
+				return VT.DeleteValue(ref this, pszValueName);
 			}
-			public HRESULT EnumKeys(uint32 Index, PWSTR* ppszSubKeyName) mut
+			public HRESULT EnumKeys(uint32 Index, out PWSTR ppszSubKeyName) mut
 			{
-				return VT.EnumKeys(&this, Index, ppszSubKeyName);
+				return VT.EnumKeys(ref this, Index, out ppszSubKeyName);
 			}
-			public HRESULT EnumValues(uint32 Index, PWSTR* ppszValueName) mut
+			public HRESULT EnumValues(uint32 Index, out PWSTR ppszValueName) mut
 			{
-				return VT.EnumValues(&this, Index, ppszValueName);
+				return VT.EnumValues(ref this, Index, out ppszValueName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpDataKey *self, PWSTR pszValueName, uint32 cbData, uint8* pData) SetData;
-				public new function HRESULT(ISpDataKey *self, PWSTR pszValueName, uint32* pcbData, uint8* pData) GetData;
-				public new function HRESULT(ISpDataKey *self, PWSTR pszValueName, PWSTR pszValue) SetStringValue;
-				public new function HRESULT(ISpDataKey *self, PWSTR pszValueName, PWSTR* ppszValue) GetStringValue;
-				public new function HRESULT(ISpDataKey *self, PWSTR pszValueName, uint32 dwValue) SetDWORD;
-				public new function HRESULT(ISpDataKey *self, PWSTR pszValueName, uint32* pdwValue) GetDWORD;
-				public new function HRESULT(ISpDataKey *self, PWSTR pszSubKeyName, ISpDataKey** ppSubKey) OpenKey;
-				public new function HRESULT(ISpDataKey *self, PWSTR pszSubKey, ISpDataKey** ppSubKey) CreateKey;
-				public new function HRESULT(ISpDataKey *self, PWSTR pszSubKey) DeleteKey;
-				public new function HRESULT(ISpDataKey *self, PWSTR pszValueName) DeleteValue;
-				public new function HRESULT(ISpDataKey *self, uint32 Index, PWSTR* ppszSubKeyName) EnumKeys;
-				public new function HRESULT(ISpDataKey *self, uint32 Index, PWSTR* ppszValueName) EnumValues;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, uint32 cbData, in uint8 pData) SetData;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, out uint32 pcbData, out uint8 pData) GetData;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, PWSTR pszValue) SetStringValue;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, out PWSTR ppszValue) GetStringValue;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, uint32 dwValue) SetDWORD;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName, out uint32 pdwValue) GetDWORD;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszSubKeyName, out ISpDataKey* ppSubKey) OpenKey;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszSubKey, out ISpDataKey* ppSubKey) CreateKey;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszSubKey) DeleteKey;
+				public new function HRESULT(ref ISpDataKey self, PWSTR pszValueName) DeleteValue;
+				public new function HRESULT(ref ISpDataKey self, uint32 Index, out PWSTR ppszSubKeyName) EnumKeys;
+				public new function HRESULT(ref ISpDataKey self, uint32 Index, out PWSTR ppszValueName) EnumValues;
 			}
 		}
 		[CRepr]
@@ -1975,12 +1975,12 @@ namespace Win32
 			
 			public HRESULT SetKey(HKEY hkey, BOOL fReadOnly) mut
 			{
-				return VT.SetKey(&this, hkey, fReadOnly);
+				return VT.SetKey(ref this, hkey, fReadOnly);
 			}
 			[CRepr]
 			public struct VTable : ISpDataKey.VTable
 			{
-				public new function HRESULT(ISpRegDataKey *self, HKEY hkey, BOOL fReadOnly) SetKey;
+				public new function HRESULT(ref ISpRegDataKey self, HKEY hkey, BOOL fReadOnly) SetKey;
 			}
 		}
 		[CRepr]
@@ -1992,37 +1992,37 @@ namespace Win32
 			
 			public HRESULT SetId(PWSTR pszCategoryId, BOOL fCreateIfNotExist) mut
 			{
-				return VT.SetId(&this, pszCategoryId, fCreateIfNotExist);
+				return VT.SetId(ref this, pszCategoryId, fCreateIfNotExist);
 			}
-			public HRESULT GetId(PWSTR* ppszCoMemCategoryId) mut
+			public HRESULT GetId(out PWSTR ppszCoMemCategoryId) mut
 			{
-				return VT.GetId(&this, ppszCoMemCategoryId);
+				return VT.GetId(ref this, out ppszCoMemCategoryId);
 			}
-			public HRESULT GetDataKey(SPDATAKEYLOCATION spdkl, ISpDataKey** ppDataKey) mut
+			public HRESULT GetDataKey(SPDATAKEYLOCATION spdkl, out ISpDataKey* ppDataKey) mut
 			{
-				return VT.GetDataKey(&this, spdkl, ppDataKey);
+				return VT.GetDataKey(ref this, spdkl, out ppDataKey);
 			}
-			public HRESULT EnumTokens(PWSTR pzsReqAttribs, PWSTR pszOptAttribs, IEnumSpObjectTokens** ppEnum) mut
+			public HRESULT EnumTokens(PWSTR pzsReqAttribs, PWSTR pszOptAttribs, out IEnumSpObjectTokens* ppEnum) mut
 			{
-				return VT.EnumTokens(&this, pzsReqAttribs, pszOptAttribs, ppEnum);
+				return VT.EnumTokens(ref this, pzsReqAttribs, pszOptAttribs, out ppEnum);
 			}
 			public HRESULT SetDefaultTokenId(PWSTR pszTokenId) mut
 			{
-				return VT.SetDefaultTokenId(&this, pszTokenId);
+				return VT.SetDefaultTokenId(ref this, pszTokenId);
 			}
-			public HRESULT GetDefaultTokenId(PWSTR* ppszCoMemTokenId) mut
+			public HRESULT GetDefaultTokenId(out PWSTR ppszCoMemTokenId) mut
 			{
-				return VT.GetDefaultTokenId(&this, ppszCoMemTokenId);
+				return VT.GetDefaultTokenId(ref this, out ppszCoMemTokenId);
 			}
 			[CRepr]
 			public struct VTable : ISpDataKey.VTable
 			{
-				public new function HRESULT(ISpObjectTokenCategory *self, PWSTR pszCategoryId, BOOL fCreateIfNotExist) SetId;
-				public new function HRESULT(ISpObjectTokenCategory *self, PWSTR* ppszCoMemCategoryId) GetId;
-				public new function HRESULT(ISpObjectTokenCategory *self, SPDATAKEYLOCATION spdkl, ISpDataKey** ppDataKey) GetDataKey;
-				public new function HRESULT(ISpObjectTokenCategory *self, PWSTR pzsReqAttribs, PWSTR pszOptAttribs, IEnumSpObjectTokens** ppEnum) EnumTokens;
-				public new function HRESULT(ISpObjectTokenCategory *self, PWSTR pszTokenId) SetDefaultTokenId;
-				public new function HRESULT(ISpObjectTokenCategory *self, PWSTR* ppszCoMemTokenId) GetDefaultTokenId;
+				public new function HRESULT(ref ISpObjectTokenCategory self, PWSTR pszCategoryId, BOOL fCreateIfNotExist) SetId;
+				public new function HRESULT(ref ISpObjectTokenCategory self, out PWSTR ppszCoMemCategoryId) GetId;
+				public new function HRESULT(ref ISpObjectTokenCategory self, SPDATAKEYLOCATION spdkl, out ISpDataKey* ppDataKey) GetDataKey;
+				public new function HRESULT(ref ISpObjectTokenCategory self, PWSTR pzsReqAttribs, PWSTR pszOptAttribs, out IEnumSpObjectTokens* ppEnum) EnumTokens;
+				public new function HRESULT(ref ISpObjectTokenCategory self, PWSTR pszTokenId) SetDefaultTokenId;
+				public new function HRESULT(ref ISpObjectTokenCategory self, out PWSTR ppszCoMemTokenId) GetDefaultTokenId;
 			}
 		}
 		[CRepr]
@@ -2034,57 +2034,57 @@ namespace Win32
 			
 			public HRESULT SetId(PWSTR pszCategoryId, PWSTR pszTokenId, BOOL fCreateIfNotExist) mut
 			{
-				return VT.SetId(&this, pszCategoryId, pszTokenId, fCreateIfNotExist);
+				return VT.SetId(ref this, pszCategoryId, pszTokenId, fCreateIfNotExist);
 			}
-			public HRESULT GetId(PWSTR* ppszCoMemTokenId) mut
+			public HRESULT GetId(out PWSTR ppszCoMemTokenId) mut
 			{
-				return VT.GetId(&this, ppszCoMemTokenId);
+				return VT.GetId(ref this, out ppszCoMemTokenId);
 			}
-			public HRESULT GetCategory(ISpObjectTokenCategory** ppTokenCategory) mut
+			public HRESULT GetCategory(out ISpObjectTokenCategory* ppTokenCategory) mut
 			{
-				return VT.GetCategory(&this, ppTokenCategory);
+				return VT.GetCategory(ref this, out ppTokenCategory);
 			}
-			public HRESULT CreateInstance(IUnknown* pUnkOuter, uint32 dwClsContext, Guid* riid, void** ppvObject) mut
+			public HRESULT CreateInstance(ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, void** ppvObject) mut
 			{
-				return VT.CreateInstance(&this, pUnkOuter, dwClsContext, riid, ppvObject);
+				return VT.CreateInstance(ref this, ref pUnkOuter, dwClsContext, riid, ppvObject);
 			}
-			public HRESULT GetStorageFileName(Guid* clsidCaller, PWSTR pszValueName, PWSTR pszFileNameSpecifier, uint32 nFolder, PWSTR* ppszFilePath) mut
+			public HRESULT GetStorageFileName(in Guid clsidCaller, PWSTR pszValueName, PWSTR pszFileNameSpecifier, uint32 nFolder, out PWSTR ppszFilePath) mut
 			{
-				return VT.GetStorageFileName(&this, clsidCaller, pszValueName, pszFileNameSpecifier, nFolder, ppszFilePath);
+				return VT.GetStorageFileName(ref this, clsidCaller, pszValueName, pszFileNameSpecifier, nFolder, out ppszFilePath);
 			}
-			public HRESULT RemoveStorageFileName(Guid* clsidCaller, PWSTR pszKeyName, BOOL fDeleteFile) mut
+			public HRESULT RemoveStorageFileName(in Guid clsidCaller, PWSTR pszKeyName, BOOL fDeleteFile) mut
 			{
-				return VT.RemoveStorageFileName(&this, clsidCaller, pszKeyName, fDeleteFile);
+				return VT.RemoveStorageFileName(ref this, clsidCaller, pszKeyName, fDeleteFile);
 			}
 			public HRESULT Remove(Guid* pclsidCaller) mut
 			{
-				return VT.Remove(&this, pclsidCaller);
+				return VT.Remove(ref this, pclsidCaller);
 			}
-			public HRESULT IsUISupported(PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, IUnknown* punkObject, BOOL* pfSupported) mut
+			public HRESULT IsUISupported(PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, ref IUnknown punkObject, out BOOL pfSupported) mut
 			{
-				return VT.IsUISupported(&this, pszTypeOfUI, pvExtraData, cbExtraData, punkObject, pfSupported);
+				return VT.IsUISupported(ref this, pszTypeOfUI, pvExtraData, cbExtraData, ref punkObject, out pfSupported);
 			}
-			public HRESULT DisplayUI(HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, IUnknown* punkObject) mut
+			public HRESULT DisplayUI(HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, ref IUnknown punkObject) mut
 			{
-				return VT.DisplayUI(&this, hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData, punkObject);
+				return VT.DisplayUI(ref this, hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData, ref punkObject);
 			}
-			public HRESULT MatchesAttributes(PWSTR pszAttributes, BOOL* pfMatches) mut
+			public HRESULT MatchesAttributes(PWSTR pszAttributes, out BOOL pfMatches) mut
 			{
-				return VT.MatchesAttributes(&this, pszAttributes, pfMatches);
+				return VT.MatchesAttributes(ref this, pszAttributes, out pfMatches);
 			}
 			[CRepr]
 			public struct VTable : ISpDataKey.VTable
 			{
-				public new function HRESULT(ISpObjectToken *self, PWSTR pszCategoryId, PWSTR pszTokenId, BOOL fCreateIfNotExist) SetId;
-				public new function HRESULT(ISpObjectToken *self, PWSTR* ppszCoMemTokenId) GetId;
-				public new function HRESULT(ISpObjectToken *self, ISpObjectTokenCategory** ppTokenCategory) GetCategory;
-				public new function HRESULT(ISpObjectToken *self, IUnknown* pUnkOuter, uint32 dwClsContext, Guid* riid, void** ppvObject) CreateInstance;
-				public new function HRESULT(ISpObjectToken *self, Guid* clsidCaller, PWSTR pszValueName, PWSTR pszFileNameSpecifier, uint32 nFolder, PWSTR* ppszFilePath) GetStorageFileName;
-				public new function HRESULT(ISpObjectToken *self, Guid* clsidCaller, PWSTR pszKeyName, BOOL fDeleteFile) RemoveStorageFileName;
-				public new function HRESULT(ISpObjectToken *self, Guid* pclsidCaller) Remove;
-				public new function HRESULT(ISpObjectToken *self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, IUnknown* punkObject, BOOL* pfSupported) IsUISupported;
-				public new function HRESULT(ISpObjectToken *self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, IUnknown* punkObject) DisplayUI;
-				public new function HRESULT(ISpObjectToken *self, PWSTR pszAttributes, BOOL* pfMatches) MatchesAttributes;
+				public new function HRESULT(ref ISpObjectToken self, PWSTR pszCategoryId, PWSTR pszTokenId, BOOL fCreateIfNotExist) SetId;
+				public new function HRESULT(ref ISpObjectToken self, out PWSTR ppszCoMemTokenId) GetId;
+				public new function HRESULT(ref ISpObjectToken self, out ISpObjectTokenCategory* ppTokenCategory) GetCategory;
+				public new function HRESULT(ref ISpObjectToken self, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, void** ppvObject) CreateInstance;
+				public new function HRESULT(ref ISpObjectToken self, in Guid clsidCaller, PWSTR pszValueName, PWSTR pszFileNameSpecifier, uint32 nFolder, out PWSTR ppszFilePath) GetStorageFileName;
+				public new function HRESULT(ref ISpObjectToken self, in Guid clsidCaller, PWSTR pszKeyName, BOOL fDeleteFile) RemoveStorageFileName;
+				public new function HRESULT(ref ISpObjectToken self, Guid* pclsidCaller) Remove;
+				public new function HRESULT(ref ISpObjectToken self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, ref IUnknown punkObject, out BOOL pfSupported) IsUISupported;
+				public new function HRESULT(ref ISpObjectToken self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, ref IUnknown punkObject) DisplayUI;
+				public new function HRESULT(ref ISpObjectToken self, PWSTR pszAttributes, out BOOL pfMatches) MatchesAttributes;
 			}
 		}
 		[CRepr]
@@ -2096,12 +2096,12 @@ namespace Win32
 			
 			public HRESULT InitFromDataKey(PWSTR pszCategoryId, PWSTR pszTokenId, ISpDataKey* pDataKey) mut
 			{
-				return VT.InitFromDataKey(&this, pszCategoryId, pszTokenId, pDataKey);
+				return VT.InitFromDataKey(ref this, pszCategoryId, pszTokenId, pDataKey);
 			}
 			[CRepr]
 			public struct VTable : ISpObjectToken.VTable
 			{
-				public new function HRESULT(ISpObjectTokenInit *self, PWSTR pszCategoryId, PWSTR pszTokenId, ISpDataKey* pDataKey) InitFromDataKey;
+				public new function HRESULT(ref ISpObjectTokenInit self, PWSTR pszCategoryId, PWSTR pszTokenId, ISpDataKey* pDataKey) InitFromDataKey;
 			}
 		}
 		[CRepr]
@@ -2111,39 +2111,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, ISpObjectToken** pelt, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out ISpObjectToken* pelt, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, pelt, pceltFetched);
+				return VT.Next(ref this, celt, out pelt, pceltFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT Clone(IEnumSpObjectTokens** ppEnum) mut
+			public HRESULT Clone(out IEnumSpObjectTokens* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
-			public HRESULT Item(uint32 Index, ISpObjectToken** ppToken) mut
+			public HRESULT Item(uint32 Index, out ISpObjectToken* ppToken) mut
 			{
-				return VT.Item(&this, Index, ppToken);
+				return VT.Item(ref this, Index, out ppToken);
 			}
-			public HRESULT GetCount(uint32* pCount) mut
+			public HRESULT GetCount(out uint32 pCount) mut
 			{
-				return VT.GetCount(&this, pCount);
+				return VT.GetCount(ref this, out pCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumSpObjectTokens *self, uint32 celt, ISpObjectToken** pelt, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumSpObjectTokens *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumSpObjectTokens *self) Reset;
-				public new function HRESULT(IEnumSpObjectTokens *self, IEnumSpObjectTokens** ppEnum) Clone;
-				public new function HRESULT(IEnumSpObjectTokens *self, uint32 Index, ISpObjectToken** ppToken) Item;
-				public new function HRESULT(IEnumSpObjectTokens *self, uint32* pCount) GetCount;
+				public new function HRESULT(ref IEnumSpObjectTokens self, uint32 celt, out ISpObjectToken* pelt, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumSpObjectTokens self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumSpObjectTokens self) Reset;
+				public new function HRESULT(ref IEnumSpObjectTokens self, out IEnumSpObjectTokens* ppEnum) Clone;
+				public new function HRESULT(ref IEnumSpObjectTokens self, uint32 Index, out ISpObjectToken* ppToken) Item;
+				public new function HRESULT(ref IEnumSpObjectTokens self, out uint32 pCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -2155,17 +2155,17 @@ namespace Win32
 			
 			public HRESULT SetObjectToken(ISpObjectToken* pToken) mut
 			{
-				return VT.SetObjectToken(&this, pToken);
+				return VT.SetObjectToken(ref this, pToken);
 			}
 			public HRESULT GetObjectToken(ISpObjectToken** ppToken) mut
 			{
-				return VT.GetObjectToken(&this, ppToken);
+				return VT.GetObjectToken(ref this, ppToken);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpObjectWithToken *self, ISpObjectToken* pToken) SetObjectToken;
-				public new function HRESULT(ISpObjectWithToken *self, ISpObjectToken** ppToken) GetObjectToken;
+				public new function HRESULT(ref ISpObjectWithToken self, ISpObjectToken* pToken) SetObjectToken;
+				public new function HRESULT(ref ISpObjectWithToken self, ISpObjectToken** ppToken) GetObjectToken;
 			}
 		}
 		[CRepr]
@@ -2175,19 +2175,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetObject(Guid* guidServiceId, IUnknown* pUnkObject) mut
+			public HRESULT SetObject(in Guid guidServiceId, IUnknown* pUnkObject) mut
 			{
-				return VT.SetObject(&this, guidServiceId, pUnkObject);
+				return VT.SetObject(ref this, guidServiceId, pUnkObject);
 			}
-			public HRESULT GetObject(Guid* guidServiceId, Guid* ObjectCLSID, Guid* ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject) mut
+			public HRESULT GetObject(in Guid guidServiceId, in Guid ObjectCLSID, in Guid ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject) mut
 			{
-				return VT.GetObject(&this, guidServiceId, ObjectCLSID, ObjectIID, fReleaseWhenLastExternalRefReleased, ppObject);
+				return VT.GetObject(ref this, guidServiceId, ObjectCLSID, ObjectIID, fReleaseWhenLastExternalRefReleased, ppObject);
 			}
 			[CRepr]
 			public struct VTable : IServiceProvider.VTable
 			{
-				public new function HRESULT(ISpResourceManager *self, Guid* guidServiceId, IUnknown* pUnkObject) SetObject;
-				public new function HRESULT(ISpResourceManager *self, Guid* guidServiceId, Guid* ObjectCLSID, Guid* ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject) GetObject;
+				public new function HRESULT(ref ISpResourceManager self, in Guid guidServiceId, IUnknown* pUnkObject) SetObject;
+				public new function HRESULT(ref ISpResourceManager self, in Guid guidServiceId, in Guid ObjectCLSID, in Guid ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject) GetObject;
 			}
 		}
 		[CRepr]
@@ -2199,22 +2199,22 @@ namespace Win32
 			
 			public HRESULT SetInterest(uint64 ullEventInterest, uint64 ullQueuedInterest) mut
 			{
-				return VT.SetInterest(&this, ullEventInterest, ullQueuedInterest);
+				return VT.SetInterest(ref this, ullEventInterest, ullQueuedInterest);
 			}
-			public HRESULT GetEvents(uint32 ulCount, SPEVENT* pEventArray, uint32* pulFetched) mut
+			public HRESULT GetEvents(uint32 ulCount, out SPEVENT pEventArray, out uint32 pulFetched) mut
 			{
-				return VT.GetEvents(&this, ulCount, pEventArray, pulFetched);
+				return VT.GetEvents(ref this, ulCount, out pEventArray, out pulFetched);
 			}
-			public HRESULT GetInfo(SPEVENTSOURCEINFO* pInfo) mut
+			public HRESULT GetInfo(out SPEVENTSOURCEINFO pInfo) mut
 			{
-				return VT.GetInfo(&this, pInfo);
+				return VT.GetInfo(ref this, out pInfo);
 			}
 			[CRepr]
 			public struct VTable : ISpNotifySource.VTable
 			{
-				public new function HRESULT(ISpEventSource *self, uint64 ullEventInterest, uint64 ullQueuedInterest) SetInterest;
-				public new function HRESULT(ISpEventSource *self, uint32 ulCount, SPEVENT* pEventArray, uint32* pulFetched) GetEvents;
-				public new function HRESULT(ISpEventSource *self, SPEVENTSOURCEINFO* pInfo) GetInfo;
+				public new function HRESULT(ref ISpEventSource self, uint64 ullEventInterest, uint64 ullQueuedInterest) SetInterest;
+				public new function HRESULT(ref ISpEventSource self, uint32 ulCount, out SPEVENT pEventArray, out uint32 pulFetched) GetEvents;
+				public new function HRESULT(ref ISpEventSource self, out SPEVENTSOURCEINFO pInfo) GetInfo;
 			}
 		}
 		[CRepr]
@@ -2224,14 +2224,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEventsEx(uint32 ulCount, SPEVENTEX* pEventArray, uint32* pulFetched) mut
+			public HRESULT GetEventsEx(uint32 ulCount, out SPEVENTEX pEventArray, out uint32 pulFetched) mut
 			{
-				return VT.GetEventsEx(&this, ulCount, pEventArray, pulFetched);
+				return VT.GetEventsEx(ref this, ulCount, out pEventArray, out pulFetched);
 			}
 			[CRepr]
 			public struct VTable : ISpEventSource.VTable
 			{
-				public new function HRESULT(ISpEventSource2 *self, uint32 ulCount, SPEVENTEX* pEventArray, uint32* pulFetched) GetEventsEx;
+				public new function HRESULT(ref ISpEventSource2 self, uint32 ulCount, out SPEVENTEX pEventArray, out uint32 pulFetched) GetEventsEx;
 			}
 		}
 		[CRepr]
@@ -2241,19 +2241,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddEvents(SPEVENT* pEventArray, uint32 ulCount) mut
+			public HRESULT AddEvents(in SPEVENT pEventArray, uint32 ulCount) mut
 			{
-				return VT.AddEvents(&this, pEventArray, ulCount);
+				return VT.AddEvents(ref this, pEventArray, ulCount);
 			}
-			public HRESULT GetEventInterest(uint64* pullEventInterest) mut
+			public HRESULT GetEventInterest(out uint64 pullEventInterest) mut
 			{
-				return VT.GetEventInterest(&this, pullEventInterest);
+				return VT.GetEventInterest(ref this, out pullEventInterest);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpEventSink *self, SPEVENT* pEventArray, uint32 ulCount) AddEvents;
-				public new function HRESULT(ISpEventSink *self, uint64* pullEventInterest) GetEventInterest;
+				public new function HRESULT(ref ISpEventSink self, in SPEVENT pEventArray, uint32 ulCount) AddEvents;
+				public new function HRESULT(ref ISpEventSink self, out uint64 pullEventInterest) GetEventInterest;
 			}
 		}
 		[CRepr]
@@ -2263,14 +2263,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFormat(Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx) mut
+			public HRESULT GetFormat(ref Guid pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx) mut
 			{
-				return VT.GetFormat(&this, pguidFormatId, ppCoMemWaveFormatEx);
+				return VT.GetFormat(ref this, ref pguidFormatId, ppCoMemWaveFormatEx);
 			}
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public new function HRESULT(ISpStreamFormat *self, Guid* pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx) GetFormat;
+				public new function HRESULT(ref ISpStreamFormat self, ref Guid pguidFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx) GetFormat;
 			}
 		}
 		[CRepr]
@@ -2280,29 +2280,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBaseStream(IStream* pStream, Guid* rguidFormat, WAVEFORMATEX* pWaveFormatEx) mut
+			public HRESULT SetBaseStream(ref IStream pStream, in Guid rguidFormat, in WAVEFORMATEX pWaveFormatEx) mut
 			{
-				return VT.SetBaseStream(&this, pStream, rguidFormat, pWaveFormatEx);
+				return VT.SetBaseStream(ref this, ref pStream, rguidFormat, pWaveFormatEx);
 			}
-			public HRESULT GetBaseStream(IStream** ppStream) mut
+			public HRESULT GetBaseStream(out IStream* ppStream) mut
 			{
-				return VT.GetBaseStream(&this, ppStream);
+				return VT.GetBaseStream(ref this, out ppStream);
 			}
 			public HRESULT BindToFile(PWSTR pszFileName, SPFILEMODE eMode, Guid* pFormatId, WAVEFORMATEX* pWaveFormatEx, uint64 ullEventInterest) mut
 			{
-				return VT.BindToFile(&this, pszFileName, eMode, pFormatId, pWaveFormatEx, ullEventInterest);
+				return VT.BindToFile(ref this, pszFileName, eMode, pFormatId, pWaveFormatEx, ullEventInterest);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : ISpStreamFormat.VTable
 			{
-				public new function HRESULT(ISpStream *self, IStream* pStream, Guid* rguidFormat, WAVEFORMATEX* pWaveFormatEx) SetBaseStream;
-				public new function HRESULT(ISpStream *self, IStream** ppStream) GetBaseStream;
-				public new function HRESULT(ISpStream *self, PWSTR pszFileName, SPFILEMODE eMode, Guid* pFormatId, WAVEFORMATEX* pWaveFormatEx, uint64 ullEventInterest) BindToFile;
-				public new function HRESULT(ISpStream *self) Close;
+				public new function HRESULT(ref ISpStream self, ref IStream pStream, in Guid rguidFormat, in WAVEFORMATEX pWaveFormatEx) SetBaseStream;
+				public new function HRESULT(ref ISpStream self, out IStream* ppStream) GetBaseStream;
+				public new function HRESULT(ref ISpStream self, PWSTR pszFileName, SPFILEMODE eMode, Guid* pFormatId, WAVEFORMATEX* pWaveFormatEx, uint64 ullEventInterest) BindToFile;
+				public new function HRESULT(ref ISpStream self) Close;
 			}
 		}
 		[CRepr]
@@ -2314,37 +2314,37 @@ namespace Win32
 			
 			public HRESULT SetBaseStream(ISpStreamFormat* pStream, BOOL fSetFormatToBaseStreamFormat, BOOL fWriteToBaseStream) mut
 			{
-				return VT.SetBaseStream(&this, pStream, fSetFormatToBaseStreamFormat, fWriteToBaseStream);
+				return VT.SetBaseStream(ref this, pStream, fSetFormatToBaseStreamFormat, fWriteToBaseStream);
 			}
 			public HRESULT GetBaseStream(ISpStreamFormat** ppStream) mut
 			{
-				return VT.GetBaseStream(&this, ppStream);
+				return VT.GetBaseStream(ref this, ppStream);
 			}
-			public HRESULT SetFormat(Guid* rguidFormatIdOfConvertedStream, WAVEFORMATEX* pWaveFormatExOfConvertedStream) mut
+			public HRESULT SetFormat(in Guid rguidFormatIdOfConvertedStream, in WAVEFORMATEX pWaveFormatExOfConvertedStream) mut
 			{
-				return VT.SetFormat(&this, rguidFormatIdOfConvertedStream, pWaveFormatExOfConvertedStream);
+				return VT.SetFormat(ref this, rguidFormatIdOfConvertedStream, pWaveFormatExOfConvertedStream);
 			}
 			public HRESULT ResetSeekPosition() mut
 			{
-				return VT.ResetSeekPosition(&this);
+				return VT.ResetSeekPosition(ref this);
 			}
-			public HRESULT ScaleConvertedToBaseOffset(uint64 ullOffsetConvertedStream, uint64* pullOffsetBaseStream) mut
+			public HRESULT ScaleConvertedToBaseOffset(uint64 ullOffsetConvertedStream, out uint64 pullOffsetBaseStream) mut
 			{
-				return VT.ScaleConvertedToBaseOffset(&this, ullOffsetConvertedStream, pullOffsetBaseStream);
+				return VT.ScaleConvertedToBaseOffset(ref this, ullOffsetConvertedStream, out pullOffsetBaseStream);
 			}
-			public HRESULT ScaleBaseToConvertedOffset(uint64 ullOffsetBaseStream, uint64* pullOffsetConvertedStream) mut
+			public HRESULT ScaleBaseToConvertedOffset(uint64 ullOffsetBaseStream, out uint64 pullOffsetConvertedStream) mut
 			{
-				return VT.ScaleBaseToConvertedOffset(&this, ullOffsetBaseStream, pullOffsetConvertedStream);
+				return VT.ScaleBaseToConvertedOffset(ref this, ullOffsetBaseStream, out pullOffsetConvertedStream);
 			}
 			[CRepr]
 			public struct VTable : ISpStreamFormat.VTable
 			{
-				public new function HRESULT(ISpStreamFormatConverter *self, ISpStreamFormat* pStream, BOOL fSetFormatToBaseStreamFormat, BOOL fWriteToBaseStream) SetBaseStream;
-				public new function HRESULT(ISpStreamFormatConverter *self, ISpStreamFormat** ppStream) GetBaseStream;
-				public new function HRESULT(ISpStreamFormatConverter *self, Guid* rguidFormatIdOfConvertedStream, WAVEFORMATEX* pWaveFormatExOfConvertedStream) SetFormat;
-				public new function HRESULT(ISpStreamFormatConverter *self) ResetSeekPosition;
-				public new function HRESULT(ISpStreamFormatConverter *self, uint64 ullOffsetConvertedStream, uint64* pullOffsetBaseStream) ScaleConvertedToBaseOffset;
-				public new function HRESULT(ISpStreamFormatConverter *self, uint64 ullOffsetBaseStream, uint64* pullOffsetConvertedStream) ScaleBaseToConvertedOffset;
+				public new function HRESULT(ref ISpStreamFormatConverter self, ISpStreamFormat* pStream, BOOL fSetFormatToBaseStreamFormat, BOOL fWriteToBaseStream) SetBaseStream;
+				public new function HRESULT(ref ISpStreamFormatConverter self, ISpStreamFormat** ppStream) GetBaseStream;
+				public new function HRESULT(ref ISpStreamFormatConverter self, in Guid rguidFormatIdOfConvertedStream, in WAVEFORMATEX pWaveFormatExOfConvertedStream) SetFormat;
+				public new function HRESULT(ref ISpStreamFormatConverter self) ResetSeekPosition;
+				public new function HRESULT(ref ISpStreamFormatConverter self, uint64 ullOffsetConvertedStream, out uint64 pullOffsetBaseStream) ScaleConvertedToBaseOffset;
+				public new function HRESULT(ref ISpStreamFormatConverter self, uint64 ullOffsetBaseStream, out uint64 pullOffsetConvertedStream) ScaleBaseToConvertedOffset;
 			}
 		}
 		[CRepr]
@@ -2356,62 +2356,62 @@ namespace Win32
 			
 			public HRESULT SetState(SPAUDIOSTATE NewState, uint64 ullReserved) mut
 			{
-				return VT.SetState(&this, NewState, ullReserved);
+				return VT.SetState(ref this, NewState, ullReserved);
 			}
-			public HRESULT SetFormat(Guid* rguidFmtId, WAVEFORMATEX* pWaveFormatEx) mut
+			public HRESULT SetFormat(in Guid rguidFmtId, in WAVEFORMATEX pWaveFormatEx) mut
 			{
-				return VT.SetFormat(&this, rguidFmtId, pWaveFormatEx);
+				return VT.SetFormat(ref this, rguidFmtId, pWaveFormatEx);
 			}
-			public HRESULT GetStatus(SPAUDIOSTATUS* pStatus) mut
+			public HRESULT GetStatus(out SPAUDIOSTATUS pStatus) mut
 			{
-				return VT.GetStatus(&this, pStatus);
+				return VT.GetStatus(ref this, out pStatus);
 			}
-			public HRESULT SetBufferInfo(SPAUDIOBUFFERINFO* pBuffInfo) mut
+			public HRESULT SetBufferInfo(in SPAUDIOBUFFERINFO pBuffInfo) mut
 			{
-				return VT.SetBufferInfo(&this, pBuffInfo);
+				return VT.SetBufferInfo(ref this, pBuffInfo);
 			}
-			public HRESULT GetBufferInfo(SPAUDIOBUFFERINFO* pBuffInfo) mut
+			public HRESULT GetBufferInfo(out SPAUDIOBUFFERINFO pBuffInfo) mut
 			{
-				return VT.GetBufferInfo(&this, pBuffInfo);
+				return VT.GetBufferInfo(ref this, out pBuffInfo);
 			}
-			public HRESULT GetDefaultFormat(Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx) mut
+			public HRESULT GetDefaultFormat(out Guid pFormatId, out WAVEFORMATEX* ppCoMemWaveFormatEx) mut
 			{
-				return VT.GetDefaultFormat(&this, pFormatId, ppCoMemWaveFormatEx);
+				return VT.GetDefaultFormat(ref this, out pFormatId, out ppCoMemWaveFormatEx);
 			}
 			public HANDLE EventHandle() mut
 			{
-				return VT.EventHandle(&this);
+				return VT.EventHandle(ref this);
 			}
-			public HRESULT GetVolumeLevel(uint32* pLevel) mut
+			public HRESULT GetVolumeLevel(out uint32 pLevel) mut
 			{
-				return VT.GetVolumeLevel(&this, pLevel);
+				return VT.GetVolumeLevel(ref this, out pLevel);
 			}
 			public HRESULT SetVolumeLevel(uint32 Level) mut
 			{
-				return VT.SetVolumeLevel(&this, Level);
+				return VT.SetVolumeLevel(ref this, Level);
 			}
-			public HRESULT GetBufferNotifySize(uint32* pcbSize) mut
+			public HRESULT GetBufferNotifySize(out uint32 pcbSize) mut
 			{
-				return VT.GetBufferNotifySize(&this, pcbSize);
+				return VT.GetBufferNotifySize(ref this, out pcbSize);
 			}
 			public HRESULT SetBufferNotifySize(uint32 cbSize) mut
 			{
-				return VT.SetBufferNotifySize(&this, cbSize);
+				return VT.SetBufferNotifySize(ref this, cbSize);
 			}
 			[CRepr]
 			public struct VTable : ISpStreamFormat.VTable
 			{
-				public new function HRESULT(ISpAudio *self, SPAUDIOSTATE NewState, uint64 ullReserved) SetState;
-				public new function HRESULT(ISpAudio *self, Guid* rguidFmtId, WAVEFORMATEX* pWaveFormatEx) SetFormat;
-				public new function HRESULT(ISpAudio *self, SPAUDIOSTATUS* pStatus) GetStatus;
-				public new function HRESULT(ISpAudio *self, SPAUDIOBUFFERINFO* pBuffInfo) SetBufferInfo;
-				public new function HRESULT(ISpAudio *self, SPAUDIOBUFFERINFO* pBuffInfo) GetBufferInfo;
-				public new function HRESULT(ISpAudio *self, Guid* pFormatId, WAVEFORMATEX** ppCoMemWaveFormatEx) GetDefaultFormat;
-				public new function HANDLE(ISpAudio *self) EventHandle;
-				public new function HRESULT(ISpAudio *self, uint32* pLevel) GetVolumeLevel;
-				public new function HRESULT(ISpAudio *self, uint32 Level) SetVolumeLevel;
-				public new function HRESULT(ISpAudio *self, uint32* pcbSize) GetBufferNotifySize;
-				public new function HRESULT(ISpAudio *self, uint32 cbSize) SetBufferNotifySize;
+				public new function HRESULT(ref ISpAudio self, SPAUDIOSTATE NewState, uint64 ullReserved) SetState;
+				public new function HRESULT(ref ISpAudio self, in Guid rguidFmtId, in WAVEFORMATEX pWaveFormatEx) SetFormat;
+				public new function HRESULT(ref ISpAudio self, out SPAUDIOSTATUS pStatus) GetStatus;
+				public new function HRESULT(ref ISpAudio self, in SPAUDIOBUFFERINFO pBuffInfo) SetBufferInfo;
+				public new function HRESULT(ref ISpAudio self, out SPAUDIOBUFFERINFO pBuffInfo) GetBufferInfo;
+				public new function HRESULT(ref ISpAudio self, out Guid pFormatId, out WAVEFORMATEX* ppCoMemWaveFormatEx) GetDefaultFormat;
+				public new function HANDLE(ref ISpAudio self) EventHandle;
+				public new function HRESULT(ref ISpAudio self, out uint32 pLevel) GetVolumeLevel;
+				public new function HRESULT(ref ISpAudio self, uint32 Level) SetVolumeLevel;
+				public new function HRESULT(ref ISpAudio self, out uint32 pcbSize) GetBufferNotifySize;
+				public new function HRESULT(ref ISpAudio self, uint32 cbSize) SetBufferNotifySize;
 			}
 		}
 		[CRepr]
@@ -2421,34 +2421,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceId(uint32* puDeviceId) mut
+			public HRESULT GetDeviceId(out uint32 puDeviceId) mut
 			{
-				return VT.GetDeviceId(&this, puDeviceId);
+				return VT.GetDeviceId(ref this, out puDeviceId);
 			}
 			public HRESULT SetDeviceId(uint32 uDeviceId) mut
 			{
-				return VT.SetDeviceId(&this, uDeviceId);
+				return VT.SetDeviceId(ref this, uDeviceId);
 			}
 			public HRESULT GetMMHandle(void** pHandle) mut
 			{
-				return VT.GetMMHandle(&this, pHandle);
+				return VT.GetMMHandle(ref this, pHandle);
 			}
-			public HRESULT GetLineId(uint32* puLineId) mut
+			public HRESULT GetLineId(out uint32 puLineId) mut
 			{
-				return VT.GetLineId(&this, puLineId);
+				return VT.GetLineId(ref this, out puLineId);
 			}
 			public HRESULT SetLineId(uint32 uLineId) mut
 			{
-				return VT.SetLineId(&this, uLineId);
+				return VT.SetLineId(ref this, uLineId);
 			}
 			[CRepr]
 			public struct VTable : ISpAudio.VTable
 			{
-				public new function HRESULT(ISpMMSysAudio *self, uint32* puDeviceId) GetDeviceId;
-				public new function HRESULT(ISpMMSysAudio *self, uint32 uDeviceId) SetDeviceId;
-				public new function HRESULT(ISpMMSysAudio *self, void** pHandle) GetMMHandle;
-				public new function HRESULT(ISpMMSysAudio *self, uint32* puLineId) GetLineId;
-				public new function HRESULT(ISpMMSysAudio *self, uint32 uLineId) SetLineId;
+				public new function HRESULT(ref ISpMMSysAudio self, out uint32 puDeviceId) GetDeviceId;
+				public new function HRESULT(ref ISpMMSysAudio self, uint32 uDeviceId) SetDeviceId;
+				public new function HRESULT(ref ISpMMSysAudio self, void** pHandle) GetMMHandle;
+				public new function HRESULT(ref ISpMMSysAudio self, out uint32 puLineId) GetLineId;
+				public new function HRESULT(ref ISpMMSysAudio self, uint32 uLineId) SetLineId;
 			}
 		}
 		[CRepr]
@@ -2460,17 +2460,17 @@ namespace Win32
 			
 			public HRESULT GetTranscript(PWSTR* ppszTranscript) mut
 			{
-				return VT.GetTranscript(&this, ppszTranscript);
+				return VT.GetTranscript(ref this, ppszTranscript);
 			}
 			public HRESULT AppendTranscript(PWSTR pszTranscript) mut
 			{
-				return VT.AppendTranscript(&this, pszTranscript);
+				return VT.AppendTranscript(ref this, pszTranscript);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpTranscript *self, PWSTR* ppszTranscript) GetTranscript;
-				public new function HRESULT(ISpTranscript *self, PWSTR pszTranscript) AppendTranscript;
+				public new function HRESULT(ref ISpTranscript self, PWSTR* ppszTranscript) GetTranscript;
+				public new function HRESULT(ref ISpTranscript self, PWSTR pszTranscript) AppendTranscript;
 			}
 		}
 		[CRepr]
@@ -2480,39 +2480,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPronunciations(PWSTR pszWord, uint16 LangID, uint32 dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList) mut
+			public HRESULT GetPronunciations(PWSTR pszWord, uint16 LangID, uint32 dwFlags, out SPWORDPRONUNCIATIONLIST pWordPronunciationList) mut
 			{
-				return VT.GetPronunciations(&this, pszWord, LangID, dwFlags, pWordPronunciationList);
+				return VT.GetPronunciations(ref this, pszWord, LangID, dwFlags, out pWordPronunciationList);
 			}
 			public HRESULT AddPronunciation(PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) mut
 			{
-				return VT.AddPronunciation(&this, pszWord, LangID, ePartOfSpeech, pszPronunciation);
+				return VT.AddPronunciation(ref this, pszWord, LangID, ePartOfSpeech, pszPronunciation);
 			}
 			public HRESULT RemovePronunciation(PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) mut
 			{
-				return VT.RemovePronunciation(&this, pszWord, LangID, ePartOfSpeech, pszPronunciation);
+				return VT.RemovePronunciation(ref this, pszWord, LangID, ePartOfSpeech, pszPronunciation);
 			}
-			public HRESULT GetGeneration(uint32* pdwGeneration) mut
+			public HRESULT GetGeneration(out uint32 pdwGeneration) mut
 			{
-				return VT.GetGeneration(&this, pdwGeneration);
+				return VT.GetGeneration(ref this, out pdwGeneration);
 			}
-			public HRESULT GetGenerationChange(uint32 dwFlags, uint32* pdwGeneration, SPWORDLIST* pWordList) mut
+			public HRESULT GetGenerationChange(uint32 dwFlags, out uint32 pdwGeneration, out SPWORDLIST pWordList) mut
 			{
-				return VT.GetGenerationChange(&this, dwFlags, pdwGeneration, pWordList);
+				return VT.GetGenerationChange(ref this, dwFlags, out pdwGeneration, out pWordList);
 			}
-			public HRESULT GetWords(uint32 dwFlags, uint32* pdwGeneration, uint32* pdwCookie, SPWORDLIST* pWordList) mut
+			public HRESULT GetWords(uint32 dwFlags, out uint32 pdwGeneration, uint32* pdwCookie, out SPWORDLIST pWordList) mut
 			{
-				return VT.GetWords(&this, dwFlags, pdwGeneration, pdwCookie, pWordList);
+				return VT.GetWords(ref this, dwFlags, out pdwGeneration, pdwCookie, out pWordList);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpLexicon *self, PWSTR pszWord, uint16 LangID, uint32 dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList) GetPronunciations;
-				public new function HRESULT(ISpLexicon *self, PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) AddPronunciation;
-				public new function HRESULT(ISpLexicon *self, PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) RemovePronunciation;
-				public new function HRESULT(ISpLexicon *self, uint32* pdwGeneration) GetGeneration;
-				public new function HRESULT(ISpLexicon *self, uint32 dwFlags, uint32* pdwGeneration, SPWORDLIST* pWordList) GetGenerationChange;
-				public new function HRESULT(ISpLexicon *self, uint32 dwFlags, uint32* pdwGeneration, uint32* pdwCookie, SPWORDLIST* pWordList) GetWords;
+				public new function HRESULT(ref ISpLexicon self, PWSTR pszWord, uint16 LangID, uint32 dwFlags, out SPWORDPRONUNCIATIONLIST pWordPronunciationList) GetPronunciations;
+				public new function HRESULT(ref ISpLexicon self, PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) AddPronunciation;
+				public new function HRESULT(ref ISpLexicon self, PWSTR pszWord, uint16 LangID, SPPARTOFSPEECH ePartOfSpeech, uint16* pszPronunciation) RemovePronunciation;
+				public new function HRESULT(ref ISpLexicon self, out uint32 pdwGeneration) GetGeneration;
+				public new function HRESULT(ref ISpLexicon self, uint32 dwFlags, out uint32 pdwGeneration, out SPWORDLIST pWordList) GetGenerationChange;
+				public new function HRESULT(ref ISpLexicon self, uint32 dwFlags, out uint32 pdwGeneration, uint32* pdwCookie, out SPWORDLIST pWordList) GetWords;
 			}
 		}
 		[CRepr]
@@ -2524,12 +2524,12 @@ namespace Win32
 			
 			public HRESULT AddLexicon(ISpLexicon* pAddLexicon, uint32 dwFlags) mut
 			{
-				return VT.AddLexicon(&this, pAddLexicon, dwFlags);
+				return VT.AddLexicon(ref this, pAddLexicon, dwFlags);
 			}
 			[CRepr]
 			public struct VTable : ISpLexicon.VTable
 			{
-				public new function HRESULT(ISpContainerLexicon *self, ISpLexicon* pAddLexicon, uint32 dwFlags) AddLexicon;
+				public new function HRESULT(ref ISpContainerLexicon self, ISpLexicon* pAddLexicon, uint32 dwFlags) AddLexicon;
 			}
 		}
 		[CRepr]
@@ -2541,47 +2541,47 @@ namespace Win32
 			
 			public HRESULT AddShortcut(PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) mut
 			{
-				return VT.AddShortcut(&this, pszDisplay, LangID, pszSpoken, shType);
+				return VT.AddShortcut(ref this, pszDisplay, LangID, pszSpoken, shType);
 			}
 			public HRESULT RemoveShortcut(PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) mut
 			{
-				return VT.RemoveShortcut(&this, pszDisplay, LangID, pszSpoken, shType);
+				return VT.RemoveShortcut(ref this, pszDisplay, LangID, pszSpoken, shType);
 			}
-			public HRESULT GetShortcuts(uint16 LangID, SPSHORTCUTPAIRLIST* pShortcutpairList) mut
+			public HRESULT GetShortcuts(uint16 LangID, out SPSHORTCUTPAIRLIST pShortcutpairList) mut
 			{
-				return VT.GetShortcuts(&this, LangID, pShortcutpairList);
+				return VT.GetShortcuts(ref this, LangID, out pShortcutpairList);
 			}
-			public HRESULT GetGeneration(uint32* pdwGeneration) mut
+			public HRESULT GetGeneration(out uint32 pdwGeneration) mut
 			{
-				return VT.GetGeneration(&this, pdwGeneration);
+				return VT.GetGeneration(ref this, out pdwGeneration);
 			}
-			public HRESULT GetWordsFromGenerationChange(uint32* pdwGeneration, SPWORDLIST* pWordList) mut
+			public HRESULT GetWordsFromGenerationChange(out uint32 pdwGeneration, out SPWORDLIST pWordList) mut
 			{
-				return VT.GetWordsFromGenerationChange(&this, pdwGeneration, pWordList);
+				return VT.GetWordsFromGenerationChange(ref this, out pdwGeneration, out pWordList);
 			}
-			public HRESULT GetWords(uint32* pdwGeneration, uint32* pdwCookie, SPWORDLIST* pWordList) mut
+			public HRESULT GetWords(out uint32 pdwGeneration, out uint32 pdwCookie, out SPWORDLIST pWordList) mut
 			{
-				return VT.GetWords(&this, pdwGeneration, pdwCookie, pWordList);
+				return VT.GetWords(ref this, out pdwGeneration, out pdwCookie, out pWordList);
 			}
-			public HRESULT GetShortcutsForGeneration(uint32* pdwGeneration, uint32* pdwCookie, SPSHORTCUTPAIRLIST* pShortcutpairList) mut
+			public HRESULT GetShortcutsForGeneration(out uint32 pdwGeneration, out uint32 pdwCookie, out SPSHORTCUTPAIRLIST pShortcutpairList) mut
 			{
-				return VT.GetShortcutsForGeneration(&this, pdwGeneration, pdwCookie, pShortcutpairList);
+				return VT.GetShortcutsForGeneration(ref this, out pdwGeneration, out pdwCookie, out pShortcutpairList);
 			}
-			public HRESULT GetGenerationChange(uint32* pdwGeneration, SPSHORTCUTPAIRLIST* pShortcutpairList) mut
+			public HRESULT GetGenerationChange(out uint32 pdwGeneration, out SPSHORTCUTPAIRLIST pShortcutpairList) mut
 			{
-				return VT.GetGenerationChange(&this, pdwGeneration, pShortcutpairList);
+				return VT.GetGenerationChange(ref this, out pdwGeneration, out pShortcutpairList);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpShortcut *self, PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) AddShortcut;
-				public new function HRESULT(ISpShortcut *self, PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) RemoveShortcut;
-				public new function HRESULT(ISpShortcut *self, uint16 LangID, SPSHORTCUTPAIRLIST* pShortcutpairList) GetShortcuts;
-				public new function HRESULT(ISpShortcut *self, uint32* pdwGeneration) GetGeneration;
-				public new function HRESULT(ISpShortcut *self, uint32* pdwGeneration, SPWORDLIST* pWordList) GetWordsFromGenerationChange;
-				public new function HRESULT(ISpShortcut *self, uint32* pdwGeneration, uint32* pdwCookie, SPWORDLIST* pWordList) GetWords;
-				public new function HRESULT(ISpShortcut *self, uint32* pdwGeneration, uint32* pdwCookie, SPSHORTCUTPAIRLIST* pShortcutpairList) GetShortcutsForGeneration;
-				public new function HRESULT(ISpShortcut *self, uint32* pdwGeneration, SPSHORTCUTPAIRLIST* pShortcutpairList) GetGenerationChange;
+				public new function HRESULT(ref ISpShortcut self, PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) AddShortcut;
+				public new function HRESULT(ref ISpShortcut self, PWSTR pszDisplay, uint16 LangID, PWSTR pszSpoken, SPSHORTCUTTYPE shType) RemoveShortcut;
+				public new function HRESULT(ref ISpShortcut self, uint16 LangID, out SPSHORTCUTPAIRLIST pShortcutpairList) GetShortcuts;
+				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration) GetGeneration;
+				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out SPWORDLIST pWordList) GetWordsFromGenerationChange;
+				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out uint32 pdwCookie, out SPWORDLIST pWordList) GetWords;
+				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out uint32 pdwCookie, out SPSHORTCUTPAIRLIST pShortcutpairList) GetShortcutsForGeneration;
+				public new function HRESULT(ref ISpShortcut self, out uint32 pdwGeneration, out SPSHORTCUTPAIRLIST pShortcutpairList) GetGenerationChange;
 			}
 		}
 		[CRepr]
@@ -2591,19 +2591,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PhoneToId(PWSTR pszPhone, uint16* pId) mut
+			public HRESULT PhoneToId(PWSTR pszPhone, out uint16 pId) mut
 			{
-				return VT.PhoneToId(&this, pszPhone, pId);
+				return VT.PhoneToId(ref this, pszPhone, out pId);
 			}
-			public HRESULT IdToPhone(uint16* pId, PWSTR pszPhone) mut
+			public HRESULT IdToPhone(ref uint16 pId, PWSTR pszPhone) mut
 			{
-				return VT.IdToPhone(&this, pId, pszPhone);
+				return VT.IdToPhone(ref this, ref pId, pszPhone);
 			}
 			[CRepr]
 			public struct VTable : ISpObjectWithToken.VTable
 			{
-				public new function HRESULT(ISpPhoneConverter *self, PWSTR pszPhone, uint16* pId) PhoneToId;
-				public new function HRESULT(ISpPhoneConverter *self, uint16* pId, PWSTR pszPhone) IdToPhone;
+				public new function HRESULT(ref ISpPhoneConverter self, PWSTR pszPhone, out uint16 pId) PhoneToId;
+				public new function HRESULT(ref ISpPhoneConverter self, ref uint16 pId, PWSTR pszPhone) IdToPhone;
 			}
 		}
 		[CRepr]
@@ -2613,34 +2613,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLangId(uint16* pLangID) mut
+			public HRESULT GetLangId(out uint16 pLangID) mut
 			{
-				return VT.GetLangId(&this, pLangID);
+				return VT.GetLangId(ref this, out pLangID);
 			}
 			public HRESULT SetLangId(uint16 LangID) mut
 			{
-				return VT.SetLangId(&this, LangID);
+				return VT.SetLangId(ref this, LangID);
 			}
-			public HRESULT SAPI2UPS(uint16* pszSAPIId, uint16* pszUPSId, uint32 cMaxLength) mut
+			public HRESULT SAPI2UPS(in uint16 pszSAPIId, uint16* pszUPSId, uint32 cMaxLength) mut
 			{
-				return VT.SAPI2UPS(&this, pszSAPIId, pszUPSId, cMaxLength);
+				return VT.SAPI2UPS(ref this, pszSAPIId, pszUPSId, cMaxLength);
 			}
-			public HRESULT UPS2SAPI(uint16* pszUPSId, uint16* pszSAPIId, uint32 cMaxLength) mut
+			public HRESULT UPS2SAPI(in uint16 pszUPSId, uint16* pszSAPIId, uint32 cMaxLength) mut
 			{
-				return VT.UPS2SAPI(&this, pszUPSId, pszSAPIId, cMaxLength);
+				return VT.UPS2SAPI(ref this, pszUPSId, pszSAPIId, cMaxLength);
 			}
-			public HRESULT GetMaxConvertLength(uint32 cSrcLength, BOOL bSAPI2UPS, uint32* pcMaxDestLength) mut
+			public HRESULT GetMaxConvertLength(uint32 cSrcLength, BOOL bSAPI2UPS, out uint32 pcMaxDestLength) mut
 			{
-				return VT.GetMaxConvertLength(&this, cSrcLength, bSAPI2UPS, pcMaxDestLength);
+				return VT.GetMaxConvertLength(ref this, cSrcLength, bSAPI2UPS, out pcMaxDestLength);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpPhoneticAlphabetConverter *self, uint16* pLangID) GetLangId;
-				public new function HRESULT(ISpPhoneticAlphabetConverter *self, uint16 LangID) SetLangId;
-				public new function HRESULT(ISpPhoneticAlphabetConverter *self, uint16* pszSAPIId, uint16* pszUPSId, uint32 cMaxLength) SAPI2UPS;
-				public new function HRESULT(ISpPhoneticAlphabetConverter *self, uint16* pszUPSId, uint16* pszSAPIId, uint32 cMaxLength) UPS2SAPI;
-				public new function HRESULT(ISpPhoneticAlphabetConverter *self, uint32 cSrcLength, BOOL bSAPI2UPS, uint32* pcMaxDestLength) GetMaxConvertLength;
+				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, out uint16 pLangID) GetLangId;
+				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, uint16 LangID) SetLangId;
+				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, in uint16 pszSAPIId, uint16* pszUPSId, uint32 cMaxLength) SAPI2UPS;
+				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, in uint16 pszUPSId, uint16* pszSAPIId, uint32 cMaxLength) UPS2SAPI;
+				public new function HRESULT(ref ISpPhoneticAlphabetConverter self, uint32 cSrcLength, BOOL bSAPI2UPS, out uint32 pcMaxDestLength) GetMaxConvertLength;
 			}
 		}
 		[CRepr]
@@ -2650,19 +2650,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsAlphabetUPS(BOOL* pfIsUPS) mut
+			public HRESULT IsAlphabetUPS(out BOOL pfIsUPS) mut
 			{
-				return VT.IsAlphabetUPS(&this, pfIsUPS);
+				return VT.IsAlphabetUPS(ref this, out pfIsUPS);
 			}
 			public HRESULT SetAlphabetToUPS(BOOL fForceUPS) mut
 			{
-				return VT.SetAlphabetToUPS(&this, fForceUPS);
+				return VT.SetAlphabetToUPS(ref this, fForceUPS);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpPhoneticAlphabetSelection *self, BOOL* pfIsUPS) IsAlphabetUPS;
-				public new function HRESULT(ISpPhoneticAlphabetSelection *self, BOOL fForceUPS) SetAlphabetToUPS;
+				public new function HRESULT(ref ISpPhoneticAlphabetSelection self, out BOOL pfIsUPS) IsAlphabetUPS;
+				public new function HRESULT(ref ISpPhoneticAlphabetSelection self, BOOL fForceUPS) SetAlphabetToUPS;
 			}
 		}
 		[CRepr]
@@ -2672,134 +2672,134 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOutput(IUnknown* pUnkOutput, BOOL fAllowFormatChanges) mut
+			public HRESULT SetOutput(ref IUnknown pUnkOutput, BOOL fAllowFormatChanges) mut
 			{
-				return VT.SetOutput(&this, pUnkOutput, fAllowFormatChanges);
+				return VT.SetOutput(ref this, ref pUnkOutput, fAllowFormatChanges);
 			}
-			public HRESULT GetOutputObjectToken(ISpObjectToken** ppObjectToken) mut
+			public HRESULT GetOutputObjectToken(out ISpObjectToken* ppObjectToken) mut
 			{
-				return VT.GetOutputObjectToken(&this, ppObjectToken);
+				return VT.GetOutputObjectToken(ref this, out ppObjectToken);
 			}
-			public HRESULT GetOutputStream(ISpStreamFormat** ppStream) mut
+			public HRESULT GetOutputStream(out ISpStreamFormat* ppStream) mut
 			{
-				return VT.GetOutputStream(&this, ppStream);
+				return VT.GetOutputStream(ref this, out ppStream);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Resume() mut
 			{
-				return VT.Resume(&this);
+				return VT.Resume(ref this);
 			}
-			public HRESULT SetVoice(ISpObjectToken* pToken) mut
+			public HRESULT SetVoice(ref ISpObjectToken pToken) mut
 			{
-				return VT.SetVoice(&this, pToken);
+				return VT.SetVoice(ref this, ref pToken);
 			}
-			public HRESULT GetVoice(ISpObjectToken** ppToken) mut
+			public HRESULT GetVoice(out ISpObjectToken* ppToken) mut
 			{
-				return VT.GetVoice(&this, ppToken);
+				return VT.GetVoice(ref this, out ppToken);
 			}
 			public HRESULT Speak(PWSTR pwcs, uint32 dwFlags, uint32* pulStreamNumber) mut
 			{
-				return VT.Speak(&this, pwcs, dwFlags, pulStreamNumber);
+				return VT.Speak(ref this, pwcs, dwFlags, pulStreamNumber);
 			}
-			public HRESULT SpeakStream(IStream* pStream, uint32 dwFlags, uint32* pulStreamNumber) mut
+			public HRESULT SpeakStream(ref IStream pStream, uint32 dwFlags, uint32* pulStreamNumber) mut
 			{
-				return VT.SpeakStream(&this, pStream, dwFlags, pulStreamNumber);
+				return VT.SpeakStream(ref this, ref pStream, dwFlags, pulStreamNumber);
 			}
-			public HRESULT GetStatus(SPVOICESTATUS* pStatus, PWSTR* ppszLastBookmark) mut
+			public HRESULT GetStatus(out SPVOICESTATUS pStatus, out PWSTR ppszLastBookmark) mut
 			{
-				return VT.GetStatus(&this, pStatus, ppszLastBookmark);
+				return VT.GetStatus(ref this, out pStatus, out ppszLastBookmark);
 			}
-			public HRESULT Skip(PWSTR pItemType, int32 lNumItems, uint32* pulNumSkipped) mut
+			public HRESULT Skip(PWSTR pItemType, int32 lNumItems, out uint32 pulNumSkipped) mut
 			{
-				return VT.Skip(&this, pItemType, lNumItems, pulNumSkipped);
+				return VT.Skip(ref this, pItemType, lNumItems, out pulNumSkipped);
 			}
 			public HRESULT SetPriority(SPVPRIORITY ePriority) mut
 			{
-				return VT.SetPriority(&this, ePriority);
+				return VT.SetPriority(ref this, ePriority);
 			}
-			public HRESULT GetPriority(SPVPRIORITY* pePriority) mut
+			public HRESULT GetPriority(out SPVPRIORITY pePriority) mut
 			{
-				return VT.GetPriority(&this, pePriority);
+				return VT.GetPriority(ref this, out pePriority);
 			}
 			public HRESULT SetAlertBoundary(SPEVENTENUM eBoundary) mut
 			{
-				return VT.SetAlertBoundary(&this, eBoundary);
+				return VT.SetAlertBoundary(ref this, eBoundary);
 			}
-			public HRESULT GetAlertBoundary(SPEVENTENUM* peBoundary) mut
+			public HRESULT GetAlertBoundary(out SPEVENTENUM peBoundary) mut
 			{
-				return VT.GetAlertBoundary(&this, peBoundary);
+				return VT.GetAlertBoundary(ref this, out peBoundary);
 			}
 			public HRESULT SetRate(int32 RateAdjust) mut
 			{
-				return VT.SetRate(&this, RateAdjust);
+				return VT.SetRate(ref this, RateAdjust);
 			}
-			public HRESULT GetRate(int32* pRateAdjust) mut
+			public HRESULT GetRate(out int32 pRateAdjust) mut
 			{
-				return VT.GetRate(&this, pRateAdjust);
+				return VT.GetRate(ref this, out pRateAdjust);
 			}
 			public HRESULT SetVolume(uint16 usVolume) mut
 			{
-				return VT.SetVolume(&this, usVolume);
+				return VT.SetVolume(ref this, usVolume);
 			}
-			public HRESULT GetVolume(uint16* pusVolume) mut
+			public HRESULT GetVolume(out uint16 pusVolume) mut
 			{
-				return VT.GetVolume(&this, pusVolume);
+				return VT.GetVolume(ref this, out pusVolume);
 			}
 			public HRESULT WaitUntilDone(uint32 msTimeout) mut
 			{
-				return VT.WaitUntilDone(&this, msTimeout);
+				return VT.WaitUntilDone(ref this, msTimeout);
 			}
 			public HRESULT SetSyncSpeakTimeout(uint32 msTimeout) mut
 			{
-				return VT.SetSyncSpeakTimeout(&this, msTimeout);
+				return VT.SetSyncSpeakTimeout(ref this, msTimeout);
 			}
-			public HRESULT GetSyncSpeakTimeout(uint32* pmsTimeout) mut
+			public HRESULT GetSyncSpeakTimeout(out uint32 pmsTimeout) mut
 			{
-				return VT.GetSyncSpeakTimeout(&this, pmsTimeout);
+				return VT.GetSyncSpeakTimeout(ref this, out pmsTimeout);
 			}
 			public HANDLE SpeakCompleteEvent() mut
 			{
-				return VT.SpeakCompleteEvent(&this);
+				return VT.SpeakCompleteEvent(ref this);
 			}
-			public HRESULT IsUISupported(PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, BOOL* pfSupported) mut
+			public HRESULT IsUISupported(PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, out BOOL pfSupported) mut
 			{
-				return VT.IsUISupported(&this, pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
+				return VT.IsUISupported(ref this, pszTypeOfUI, pvExtraData, cbExtraData, out pfSupported);
 			}
 			public HRESULT DisplayUI(HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) mut
 			{
-				return VT.DisplayUI(&this, hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
+				return VT.DisplayUI(ref this, hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
 			}
 			[CRepr]
 			public struct VTable : ISpEventSource.VTable
 			{
-				public new function HRESULT(ISpVoice *self, IUnknown* pUnkOutput, BOOL fAllowFormatChanges) SetOutput;
-				public new function HRESULT(ISpVoice *self, ISpObjectToken** ppObjectToken) GetOutputObjectToken;
-				public new function HRESULT(ISpVoice *self, ISpStreamFormat** ppStream) GetOutputStream;
-				public new function HRESULT(ISpVoice *self) Pause;
-				public new function HRESULT(ISpVoice *self) Resume;
-				public new function HRESULT(ISpVoice *self, ISpObjectToken* pToken) SetVoice;
-				public new function HRESULT(ISpVoice *self, ISpObjectToken** ppToken) GetVoice;
-				public new function HRESULT(ISpVoice *self, PWSTR pwcs, uint32 dwFlags, uint32* pulStreamNumber) Speak;
-				public new function HRESULT(ISpVoice *self, IStream* pStream, uint32 dwFlags, uint32* pulStreamNumber) SpeakStream;
-				public new function HRESULT(ISpVoice *self, SPVOICESTATUS* pStatus, PWSTR* ppszLastBookmark) GetStatus;
-				public new function HRESULT(ISpVoice *self, PWSTR pItemType, int32 lNumItems, uint32* pulNumSkipped) Skip;
-				public new function HRESULT(ISpVoice *self, SPVPRIORITY ePriority) SetPriority;
-				public new function HRESULT(ISpVoice *self, SPVPRIORITY* pePriority) GetPriority;
-				public new function HRESULT(ISpVoice *self, SPEVENTENUM eBoundary) SetAlertBoundary;
-				public new function HRESULT(ISpVoice *self, SPEVENTENUM* peBoundary) GetAlertBoundary;
-				public new function HRESULT(ISpVoice *self, int32 RateAdjust) SetRate;
-				public new function HRESULT(ISpVoice *self, int32* pRateAdjust) GetRate;
-				public new function HRESULT(ISpVoice *self, uint16 usVolume) SetVolume;
-				public new function HRESULT(ISpVoice *self, uint16* pusVolume) GetVolume;
-				public new function HRESULT(ISpVoice *self, uint32 msTimeout) WaitUntilDone;
-				public new function HRESULT(ISpVoice *self, uint32 msTimeout) SetSyncSpeakTimeout;
-				public new function HRESULT(ISpVoice *self, uint32* pmsTimeout) GetSyncSpeakTimeout;
-				public new function HANDLE(ISpVoice *self) SpeakCompleteEvent;
-				public new function HRESULT(ISpVoice *self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, BOOL* pfSupported) IsUISupported;
-				public new function HRESULT(ISpVoice *self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) DisplayUI;
+				public new function HRESULT(ref ISpVoice self, ref IUnknown pUnkOutput, BOOL fAllowFormatChanges) SetOutput;
+				public new function HRESULT(ref ISpVoice self, out ISpObjectToken* ppObjectToken) GetOutputObjectToken;
+				public new function HRESULT(ref ISpVoice self, out ISpStreamFormat* ppStream) GetOutputStream;
+				public new function HRESULT(ref ISpVoice self) Pause;
+				public new function HRESULT(ref ISpVoice self) Resume;
+				public new function HRESULT(ref ISpVoice self, ref ISpObjectToken pToken) SetVoice;
+				public new function HRESULT(ref ISpVoice self, out ISpObjectToken* ppToken) GetVoice;
+				public new function HRESULT(ref ISpVoice self, PWSTR pwcs, uint32 dwFlags, uint32* pulStreamNumber) Speak;
+				public new function HRESULT(ref ISpVoice self, ref IStream pStream, uint32 dwFlags, uint32* pulStreamNumber) SpeakStream;
+				public new function HRESULT(ref ISpVoice self, out SPVOICESTATUS pStatus, out PWSTR ppszLastBookmark) GetStatus;
+				public new function HRESULT(ref ISpVoice self, PWSTR pItemType, int32 lNumItems, out uint32 pulNumSkipped) Skip;
+				public new function HRESULT(ref ISpVoice self, SPVPRIORITY ePriority) SetPriority;
+				public new function HRESULT(ref ISpVoice self, out SPVPRIORITY pePriority) GetPriority;
+				public new function HRESULT(ref ISpVoice self, SPEVENTENUM eBoundary) SetAlertBoundary;
+				public new function HRESULT(ref ISpVoice self, out SPEVENTENUM peBoundary) GetAlertBoundary;
+				public new function HRESULT(ref ISpVoice self, int32 RateAdjust) SetRate;
+				public new function HRESULT(ref ISpVoice self, out int32 pRateAdjust) GetRate;
+				public new function HRESULT(ref ISpVoice self, uint16 usVolume) SetVolume;
+				public new function HRESULT(ref ISpVoice self, out uint16 pusVolume) GetVolume;
+				public new function HRESULT(ref ISpVoice self, uint32 msTimeout) WaitUntilDone;
+				public new function HRESULT(ref ISpVoice self, uint32 msTimeout) SetSyncSpeakTimeout;
+				public new function HRESULT(ref ISpVoice self, out uint32 pmsTimeout) GetSyncSpeakTimeout;
+				public new function HANDLE(ref ISpVoice self) SpeakCompleteEvent;
+				public new function HRESULT(ref ISpVoice self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, out BOOL pfSupported) IsUISupported;
+				public new function HRESULT(ref ISpVoice self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) DisplayUI;
 			}
 		}
 		[CRepr]
@@ -2809,29 +2809,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPhrase(SPPHRASE** ppCoMemPhrase) mut
+			public HRESULT GetPhrase(out SPPHRASE* ppCoMemPhrase) mut
 			{
-				return VT.GetPhrase(&this, ppCoMemPhrase);
+				return VT.GetPhrase(ref this, out ppCoMemPhrase);
 			}
-			public HRESULT GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase) mut
+			public HRESULT GetSerializedPhrase(out SPSERIALIZEDPHRASE* ppCoMemPhrase) mut
 			{
-				return VT.GetSerializedPhrase(&this, ppCoMemPhrase);
+				return VT.GetSerializedPhrase(ref this, out ppCoMemPhrase);
 			}
-			public HRESULT GetText(uint32 ulStart, uint32 ulCount, BOOL fUseTextReplacements, PWSTR* ppszCoMemText, uint8* pbDisplayAttributes) mut
+			public HRESULT GetText(uint32 ulStart, uint32 ulCount, BOOL fUseTextReplacements, out PWSTR ppszCoMemText, uint8* pbDisplayAttributes) mut
 			{
-				return VT.GetText(&this, ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
+				return VT.GetText(ref this, ulStart, ulCount, fUseTextReplacements, out ppszCoMemText, pbDisplayAttributes);
 			}
 			public HRESULT Discard(uint32 dwValueTypes) mut
 			{
-				return VT.Discard(&this, dwValueTypes);
+				return VT.Discard(ref this, dwValueTypes);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpPhrase *self, SPPHRASE** ppCoMemPhrase) GetPhrase;
-				public new function HRESULT(ISpPhrase *self, SPSERIALIZEDPHRASE** ppCoMemPhrase) GetSerializedPhrase;
-				public new function HRESULT(ISpPhrase *self, uint32 ulStart, uint32 ulCount, BOOL fUseTextReplacements, PWSTR* ppszCoMemText, uint8* pbDisplayAttributes) GetText;
-				public new function HRESULT(ISpPhrase *self, uint32 dwValueTypes) Discard;
+				public new function HRESULT(ref ISpPhrase self, out SPPHRASE* ppCoMemPhrase) GetPhrase;
+				public new function HRESULT(ref ISpPhrase self, out SPSERIALIZEDPHRASE* ppCoMemPhrase) GetSerializedPhrase;
+				public new function HRESULT(ref ISpPhrase self, uint32 ulStart, uint32 ulCount, BOOL fUseTextReplacements, out PWSTR ppszCoMemText, uint8* pbDisplayAttributes) GetText;
+				public new function HRESULT(ref ISpPhrase self, uint32 dwValueTypes) Discard;
 			}
 		}
 		[CRepr]
@@ -2841,19 +2841,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAltInfo(ISpPhrase** ppParent, uint32* pulStartElementInParent, uint32* pcElementsInParent, uint32* pcElementsInAlt) mut
+			public HRESULT GetAltInfo(out ISpPhrase* ppParent, out uint32 pulStartElementInParent, out uint32 pcElementsInParent, out uint32 pcElementsInAlt) mut
 			{
-				return VT.GetAltInfo(&this, ppParent, pulStartElementInParent, pcElementsInParent, pcElementsInAlt);
+				return VT.GetAltInfo(ref this, out ppParent, out pulStartElementInParent, out pcElementsInParent, out pcElementsInAlt);
 			}
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
 			[CRepr]
 			public struct VTable : ISpPhrase.VTable
 			{
-				public new function HRESULT(ISpPhraseAlt *self, ISpPhrase** ppParent, uint32* pulStartElementInParent, uint32* pcElementsInParent, uint32* pcElementsInAlt) GetAltInfo;
-				public new function HRESULT(ISpPhraseAlt *self) Commit;
+				public new function HRESULT(ref ISpPhraseAlt self, out ISpPhrase* ppParent, out uint32 pulStartElementInParent, out uint32 pcElementsInParent, out uint32 pcElementsInAlt) GetAltInfo;
+				public new function HRESULT(ref ISpPhraseAlt self) Commit;
 			}
 		}
 		[CRepr]
@@ -2863,24 +2863,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetXMLResult(PWSTR* ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) mut
+			public HRESULT GetXMLResult(out PWSTR ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) mut
 			{
-				return VT.GetXMLResult(&this, ppszCoMemXMLResult, Options);
+				return VT.GetXMLResult(ref this, out ppszCoMemXMLResult, Options);
 			}
-			public HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo) mut
+			public HRESULT GetXMLErrorInfo(out SPSEMANTICERRORINFO pSemanticErrorInfo) mut
 			{
-				return VT.GetXMLErrorInfo(&this, pSemanticErrorInfo);
+				return VT.GetXMLErrorInfo(ref this, out pSemanticErrorInfo);
 			}
-			public HRESULT GetAudio(uint32 ulStartElement, uint32 cElements, ISpStreamFormat** ppStream) mut
+			public HRESULT GetAudio(uint32 ulStartElement, uint32 cElements, out ISpStreamFormat* ppStream) mut
 			{
-				return VT.GetAudio(&this, ulStartElement, cElements, ppStream);
+				return VT.GetAudio(ref this, ulStartElement, cElements, out ppStream);
 			}
 			[CRepr]
 			public struct VTable : ISpPhrase.VTable
 			{
-				public new function HRESULT(ISpPhrase2 *self, PWSTR* ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) GetXMLResult;
-				public new function HRESULT(ISpPhrase2 *self, SPSEMANTICERRORINFO* pSemanticErrorInfo) GetXMLErrorInfo;
-				public new function HRESULT(ISpPhrase2 *self, uint32 ulStartElement, uint32 cElements, ISpStreamFormat** ppStream) GetAudio;
+				public new function HRESULT(ref ISpPhrase2 self, out PWSTR ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) GetXMLResult;
+				public new function HRESULT(ref ISpPhrase2 self, out SPSEMANTICERRORINFO pSemanticErrorInfo) GetXMLErrorInfo;
+				public new function HRESULT(ref ISpPhrase2 self, uint32 ulStartElement, uint32 cElements, out ISpStreamFormat* ppStream) GetAudio;
 			}
 		}
 		[CRepr]
@@ -2890,44 +2890,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetResultTimes(SPRECORESULTTIMES* pTimes) mut
+			public HRESULT GetResultTimes(out SPRECORESULTTIMES pTimes) mut
 			{
-				return VT.GetResultTimes(&this, pTimes);
+				return VT.GetResultTimes(ref this, out pTimes);
 			}
-			public HRESULT GetAlternates(uint32 ulStartElement, uint32 cElements, uint32 ulRequestCount, ISpPhraseAlt** ppPhrases, uint32* pcPhrasesReturned) mut
+			public HRESULT GetAlternates(uint32 ulStartElement, uint32 cElements, uint32 ulRequestCount, ISpPhraseAlt** ppPhrases, out uint32 pcPhrasesReturned) mut
 			{
-				return VT.GetAlternates(&this, ulStartElement, cElements, ulRequestCount, ppPhrases, pcPhrasesReturned);
+				return VT.GetAlternates(ref this, ulStartElement, cElements, ulRequestCount, ppPhrases, out pcPhrasesReturned);
 			}
-			public HRESULT GetAudio(uint32 ulStartElement, uint32 cElements, ISpStreamFormat** ppStream) mut
+			public HRESULT GetAudio(uint32 ulStartElement, uint32 cElements, out ISpStreamFormat* ppStream) mut
 			{
-				return VT.GetAudio(&this, ulStartElement, cElements, ppStream);
+				return VT.GetAudio(ref this, ulStartElement, cElements, out ppStream);
 			}
-			public HRESULT SpeakAudio(uint32 ulStartElement, uint32 cElements, uint32 dwFlags, uint32* pulStreamNumber) mut
+			public HRESULT SpeakAudio(uint32 ulStartElement, uint32 cElements, uint32 dwFlags, out uint32 pulStreamNumber) mut
 			{
-				return VT.SpeakAudio(&this, ulStartElement, cElements, dwFlags, pulStreamNumber);
+				return VT.SpeakAudio(ref this, ulStartElement, cElements, dwFlags, out pulStreamNumber);
 			}
-			public HRESULT Serialize(SPSERIALIZEDRESULT** ppCoMemSerializedResult) mut
+			public HRESULT Serialize(out SPSERIALIZEDRESULT* ppCoMemSerializedResult) mut
 			{
-				return VT.Serialize(&this, ppCoMemSerializedResult);
+				return VT.Serialize(ref this, out ppCoMemSerializedResult);
 			}
-			public HRESULT ScaleAudio(Guid* pAudioFormatId, WAVEFORMATEX* pWaveFormatEx) mut
+			public HRESULT ScaleAudio(in Guid pAudioFormatId, in WAVEFORMATEX pWaveFormatEx) mut
 			{
-				return VT.ScaleAudio(&this, pAudioFormatId, pWaveFormatEx);
+				return VT.ScaleAudio(ref this, pAudioFormatId, pWaveFormatEx);
 			}
-			public HRESULT GetRecoContext(ISpRecoContext** ppRecoContext) mut
+			public HRESULT GetRecoContext(out ISpRecoContext* ppRecoContext) mut
 			{
-				return VT.GetRecoContext(&this, ppRecoContext);
+				return VT.GetRecoContext(ref this, out ppRecoContext);
 			}
 			[CRepr]
 			public struct VTable : ISpPhrase.VTable
 			{
-				public new function HRESULT(ISpRecoResult *self, SPRECORESULTTIMES* pTimes) GetResultTimes;
-				public new function HRESULT(ISpRecoResult *self, uint32 ulStartElement, uint32 cElements, uint32 ulRequestCount, ISpPhraseAlt** ppPhrases, uint32* pcPhrasesReturned) GetAlternates;
-				public new function HRESULT(ISpRecoResult *self, uint32 ulStartElement, uint32 cElements, ISpStreamFormat** ppStream) GetAudio;
-				public new function HRESULT(ISpRecoResult *self, uint32 ulStartElement, uint32 cElements, uint32 dwFlags, uint32* pulStreamNumber) SpeakAudio;
-				public new function HRESULT(ISpRecoResult *self, SPSERIALIZEDRESULT** ppCoMemSerializedResult) Serialize;
-				public new function HRESULT(ISpRecoResult *self, Guid* pAudioFormatId, WAVEFORMATEX* pWaveFormatEx) ScaleAudio;
-				public new function HRESULT(ISpRecoResult *self, ISpRecoContext** ppRecoContext) GetRecoContext;
+				public new function HRESULT(ref ISpRecoResult self, out SPRECORESULTTIMES pTimes) GetResultTimes;
+				public new function HRESULT(ref ISpRecoResult self, uint32 ulStartElement, uint32 cElements, uint32 ulRequestCount, ISpPhraseAlt** ppPhrases, out uint32 pcPhrasesReturned) GetAlternates;
+				public new function HRESULT(ref ISpRecoResult self, uint32 ulStartElement, uint32 cElements, out ISpStreamFormat* ppStream) GetAudio;
+				public new function HRESULT(ref ISpRecoResult self, uint32 ulStartElement, uint32 cElements, uint32 dwFlags, out uint32 pulStreamNumber) SpeakAudio;
+				public new function HRESULT(ref ISpRecoResult self, out SPSERIALIZEDRESULT* ppCoMemSerializedResult) Serialize;
+				public new function HRESULT(ref ISpRecoResult self, in Guid pAudioFormatId, in WAVEFORMATEX pWaveFormatEx) ScaleAudio;
+				public new function HRESULT(ref ISpRecoResult self, out ISpRecoContext* ppRecoContext) GetRecoContext;
 			}
 		}
 		[CRepr]
@@ -2937,24 +2937,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CommitAlternate(ISpPhraseAlt* pPhraseAlt, ISpRecoResult** ppNewResult) mut
+			public HRESULT CommitAlternate(ref ISpPhraseAlt pPhraseAlt, out ISpRecoResult* ppNewResult) mut
 			{
-				return VT.CommitAlternate(&this, pPhraseAlt, ppNewResult);
+				return VT.CommitAlternate(ref this, ref pPhraseAlt, out ppNewResult);
 			}
 			public HRESULT CommitText(uint32 ulStartElement, uint32 cElements, PWSTR pszCorrectedData, uint32 eCommitFlags) mut
 			{
-				return VT.CommitText(&this, ulStartElement, cElements, pszCorrectedData, eCommitFlags);
+				return VT.CommitText(ref this, ulStartElement, cElements, pszCorrectedData, eCommitFlags);
 			}
 			public HRESULT SetTextFeedback(PWSTR pszFeedback, BOOL fSuccessful) mut
 			{
-				return VT.SetTextFeedback(&this, pszFeedback, fSuccessful);
+				return VT.SetTextFeedback(ref this, pszFeedback, fSuccessful);
 			}
 			[CRepr]
 			public struct VTable : ISpRecoResult.VTable
 			{
-				public new function HRESULT(ISpRecoResult2 *self, ISpPhraseAlt* pPhraseAlt, ISpRecoResult** ppNewResult) CommitAlternate;
-				public new function HRESULT(ISpRecoResult2 *self, uint32 ulStartElement, uint32 cElements, PWSTR pszCorrectedData, uint32 eCommitFlags) CommitText;
-				public new function HRESULT(ISpRecoResult2 *self, PWSTR pszFeedback, BOOL fSuccessful) SetTextFeedback;
+				public new function HRESULT(ref ISpRecoResult2 self, ref ISpPhraseAlt pPhraseAlt, out ISpRecoResult* ppNewResult) CommitAlternate;
+				public new function HRESULT(ref ISpRecoResult2 self, uint32 ulStartElement, uint32 cElements, PWSTR pszCorrectedData, uint32 eCommitFlags) CommitText;
+				public new function HRESULT(ref ISpRecoResult2 self, PWSTR pszFeedback, BOOL fSuccessful) SetTextFeedback;
 			}
 		}
 		[CRepr]
@@ -2964,19 +2964,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetXMLResult(PWSTR* ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) mut
+			public HRESULT GetXMLResult(out PWSTR ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) mut
 			{
-				return VT.GetXMLResult(&this, ppszCoMemXMLResult, Options);
+				return VT.GetXMLResult(ref this, out ppszCoMemXMLResult, Options);
 			}
-			public HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo) mut
+			public HRESULT GetXMLErrorInfo(out SPSEMANTICERRORINFO pSemanticErrorInfo) mut
 			{
-				return VT.GetXMLErrorInfo(&this, pSemanticErrorInfo);
+				return VT.GetXMLErrorInfo(ref this, out pSemanticErrorInfo);
 			}
 			[CRepr]
 			public struct VTable : ISpRecoResult.VTable
 			{
-				public new function HRESULT(ISpXMLRecoResult *self, PWSTR* ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) GetXMLResult;
-				public new function HRESULT(ISpXMLRecoResult *self, SPSEMANTICERRORINFO* pSemanticErrorInfo) GetXMLErrorInfo;
+				public new function HRESULT(ref ISpXMLRecoResult self, out PWSTR ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options) GetXMLResult;
+				public new function HRESULT(ref ISpXMLRecoResult self, out SPSEMANTICERRORINFO pSemanticErrorInfo) GetXMLErrorInfo;
 			}
 		}
 		[CRepr]
@@ -2988,47 +2988,47 @@ namespace Win32
 			
 			public HRESULT ResetGrammar(uint16 NewLanguage) mut
 			{
-				return VT.ResetGrammar(&this, NewLanguage);
+				return VT.ResetGrammar(ref this, NewLanguage);
 			}
-			public HRESULT GetRule(PWSTR pszRuleName, uint32 dwRuleId, uint32 dwAttributes, BOOL fCreateIfNotExist, SPSTATEHANDLE__** phInitialState) mut
+			public HRESULT GetRule(PWSTR pszRuleName, uint32 dwRuleId, uint32 dwAttributes, BOOL fCreateIfNotExist, out SPSTATEHANDLE__* phInitialState) mut
 			{
-				return VT.GetRule(&this, pszRuleName, dwRuleId, dwAttributes, fCreateIfNotExist, phInitialState);
+				return VT.GetRule(ref this, pszRuleName, dwRuleId, dwAttributes, fCreateIfNotExist, out phInitialState);
 			}
-			public HRESULT ClearRule(SPSTATEHANDLE__* hState) mut
+			public HRESULT ClearRule(out SPSTATEHANDLE__ hState) mut
 			{
-				return VT.ClearRule(&this, hState);
+				return VT.ClearRule(ref this, out hState);
 			}
-			public HRESULT CreateNewState(SPSTATEHANDLE__* hState, SPSTATEHANDLE__** phState) mut
+			public HRESULT CreateNewState(out SPSTATEHANDLE__ hState, out SPSTATEHANDLE__* phState) mut
 			{
-				return VT.CreateNewState(&this, hState, phState);
+				return VT.CreateNewState(ref this, out hState, out phState);
 			}
-			public HRESULT AddWordTransition(SPSTATEHANDLE__* hFromState, SPSTATEHANDLE__* hToState, PWSTR psz, PWSTR pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, SPPROPERTYINFO* pPropInfo) mut
+			public HRESULT AddWordTransition(out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, PWSTR psz, PWSTR pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, in SPPROPERTYINFO pPropInfo) mut
 			{
-				return VT.AddWordTransition(&this, hFromState, hToState, psz, pszSeparators, eWordType, Weight, pPropInfo);
+				return VT.AddWordTransition(ref this, out hFromState, out hToState, psz, pszSeparators, eWordType, Weight, pPropInfo);
 			}
-			public HRESULT AddRuleTransition(SPSTATEHANDLE__* hFromState, SPSTATEHANDLE__* hToState, SPSTATEHANDLE__* hRule, float Weight, SPPROPERTYINFO* pPropInfo) mut
+			public HRESULT AddRuleTransition(out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, out SPSTATEHANDLE__ hRule, float Weight, in SPPROPERTYINFO pPropInfo) mut
 			{
-				return VT.AddRuleTransition(&this, hFromState, hToState, hRule, Weight, pPropInfo);
+				return VT.AddRuleTransition(ref this, out hFromState, out hToState, out hRule, Weight, pPropInfo);
 			}
-			public HRESULT AddResource(SPSTATEHANDLE__* hRuleState, PWSTR pszResourceName, PWSTR pszResourceValue) mut
+			public HRESULT AddResource(out SPSTATEHANDLE__ hRuleState, PWSTR pszResourceName, PWSTR pszResourceValue) mut
 			{
-				return VT.AddResource(&this, hRuleState, pszResourceName, pszResourceValue);
+				return VT.AddResource(ref this, out hRuleState, pszResourceName, pszResourceValue);
 			}
 			public HRESULT Commit(uint32 dwReserved) mut
 			{
-				return VT.Commit(&this, dwReserved);
+				return VT.Commit(ref this, dwReserved);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpGrammarBuilder *self, uint16 NewLanguage) ResetGrammar;
-				public new function HRESULT(ISpGrammarBuilder *self, PWSTR pszRuleName, uint32 dwRuleId, uint32 dwAttributes, BOOL fCreateIfNotExist, SPSTATEHANDLE__** phInitialState) GetRule;
-				public new function HRESULT(ISpGrammarBuilder *self, SPSTATEHANDLE__* hState) ClearRule;
-				public new function HRESULT(ISpGrammarBuilder *self, SPSTATEHANDLE__* hState, SPSTATEHANDLE__** phState) CreateNewState;
-				public new function HRESULT(ISpGrammarBuilder *self, SPSTATEHANDLE__* hFromState, SPSTATEHANDLE__* hToState, PWSTR psz, PWSTR pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, SPPROPERTYINFO* pPropInfo) AddWordTransition;
-				public new function HRESULT(ISpGrammarBuilder *self, SPSTATEHANDLE__* hFromState, SPSTATEHANDLE__* hToState, SPSTATEHANDLE__* hRule, float Weight, SPPROPERTYINFO* pPropInfo) AddRuleTransition;
-				public new function HRESULT(ISpGrammarBuilder *self, SPSTATEHANDLE__* hRuleState, PWSTR pszResourceName, PWSTR pszResourceValue) AddResource;
-				public new function HRESULT(ISpGrammarBuilder *self, uint32 dwReserved) Commit;
+				public new function HRESULT(ref ISpGrammarBuilder self, uint16 NewLanguage) ResetGrammar;
+				public new function HRESULT(ref ISpGrammarBuilder self, PWSTR pszRuleName, uint32 dwRuleId, uint32 dwAttributes, BOOL fCreateIfNotExist, out SPSTATEHANDLE__* phInitialState) GetRule;
+				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hState) ClearRule;
+				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hState, out SPSTATEHANDLE__* phState) CreateNewState;
+				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, PWSTR psz, PWSTR pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, in SPPROPERTYINFO pPropInfo) AddWordTransition;
+				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, out SPSTATEHANDLE__ hRule, float Weight, in SPPROPERTYINFO pPropInfo) AddRuleTransition;
+				public new function HRESULT(ref ISpGrammarBuilder self, out SPSTATEHANDLE__ hRuleState, PWSTR pszResourceName, PWSTR pszResourceValue) AddResource;
+				public new function HRESULT(ref ISpGrammarBuilder self, uint32 dwReserved) Commit;
 			}
 		}
 		[CRepr]
@@ -3038,99 +3038,99 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGrammarId(uint64* pullGrammarId) mut
+			public HRESULT GetGrammarId(out uint64 pullGrammarId) mut
 			{
-				return VT.GetGrammarId(&this, pullGrammarId);
+				return VT.GetGrammarId(ref this, out pullGrammarId);
 			}
-			public HRESULT GetRecoContext(ISpRecoContext** ppRecoCtxt) mut
+			public HRESULT GetRecoContext(out ISpRecoContext* ppRecoCtxt) mut
 			{
-				return VT.GetRecoContext(&this, ppRecoCtxt);
+				return VT.GetRecoContext(ref this, out ppRecoCtxt);
 			}
 			public HRESULT LoadCmdFromFile(PWSTR pszFileName, SPLOADOPTIONS Options) mut
 			{
-				return VT.LoadCmdFromFile(&this, pszFileName, Options);
+				return VT.LoadCmdFromFile(ref this, pszFileName, Options);
 			}
-			public HRESULT LoadCmdFromObject(Guid* rcid, PWSTR pszGrammarName, SPLOADOPTIONS Options) mut
+			public HRESULT LoadCmdFromObject(in Guid rcid, PWSTR pszGrammarName, SPLOADOPTIONS Options) mut
 			{
-				return VT.LoadCmdFromObject(&this, rcid, pszGrammarName, Options);
+				return VT.LoadCmdFromObject(ref this, rcid, pszGrammarName, Options);
 			}
 			public HRESULT LoadCmdFromResource(HINSTANCE hModule, PWSTR pszResourceName, PWSTR pszResourceType, uint16 wLanguage, SPLOADOPTIONS Options) mut
 			{
-				return VT.LoadCmdFromResource(&this, hModule, pszResourceName, pszResourceType, wLanguage, Options);
+				return VT.LoadCmdFromResource(ref this, hModule, pszResourceName, pszResourceType, wLanguage, Options);
 			}
-			public HRESULT LoadCmdFromMemory(SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options) mut
+			public HRESULT LoadCmdFromMemory(in SPBINARYGRAMMAR pGrammar, SPLOADOPTIONS Options) mut
 			{
-				return VT.LoadCmdFromMemory(&this, pGrammar, Options);
+				return VT.LoadCmdFromMemory(ref this, pGrammar, Options);
 			}
-			public HRESULT LoadCmdFromProprietaryGrammar(Guid* rguidParam, PWSTR pszStringParam, void* pvDataPrarm, uint32 cbDataSize, SPLOADOPTIONS Options) mut
+			public HRESULT LoadCmdFromProprietaryGrammar(in Guid rguidParam, PWSTR pszStringParam, void* pvDataPrarm, uint32 cbDataSize, SPLOADOPTIONS Options) mut
 			{
-				return VT.LoadCmdFromProprietaryGrammar(&this, rguidParam, pszStringParam, pvDataPrarm, cbDataSize, Options);
+				return VT.LoadCmdFromProprietaryGrammar(ref this, rguidParam, pszStringParam, pvDataPrarm, cbDataSize, Options);
 			}
 			public HRESULT SetRuleState(PWSTR pszName, void* pReserved, SPRULESTATE NewState) mut
 			{
-				return VT.SetRuleState(&this, pszName, pReserved, NewState);
+				return VT.SetRuleState(ref this, pszName, pReserved, NewState);
 			}
 			public HRESULT SetRuleIdState(uint32 ulRuleId, SPRULESTATE NewState) mut
 			{
-				return VT.SetRuleIdState(&this, ulRuleId, NewState);
+				return VT.SetRuleIdState(ref this, ulRuleId, NewState);
 			}
 			public HRESULT LoadDictation(PWSTR pszTopicName, SPLOADOPTIONS Options) mut
 			{
-				return VT.LoadDictation(&this, pszTopicName, Options);
+				return VT.LoadDictation(ref this, pszTopicName, Options);
 			}
 			public HRESULT UnloadDictation() mut
 			{
-				return VT.UnloadDictation(&this);
+				return VT.UnloadDictation(ref this);
 			}
 			public HRESULT SetDictationState(SPRULESTATE NewState) mut
 			{
-				return VT.SetDictationState(&this, NewState);
+				return VT.SetDictationState(ref this, NewState);
 			}
-			public HRESULT SetWordSequenceData(char16* pText, uint32 cchText, SPTEXTSELECTIONINFO* pInfo) mut
+			public HRESULT SetWordSequenceData(char16* pText, uint32 cchText, in SPTEXTSELECTIONINFO pInfo) mut
 			{
-				return VT.SetWordSequenceData(&this, pText, cchText, pInfo);
+				return VT.SetWordSequenceData(ref this, pText, cchText, pInfo);
 			}
-			public HRESULT SetTextSelection(SPTEXTSELECTIONINFO* pInfo) mut
+			public HRESULT SetTextSelection(in SPTEXTSELECTIONINFO pInfo) mut
 			{
-				return VT.SetTextSelection(&this, pInfo);
+				return VT.SetTextSelection(ref this, pInfo);
 			}
-			public HRESULT IsPronounceable(PWSTR pszWord, SPWORDPRONOUNCEABLE* pWordPronounceable) mut
+			public HRESULT IsPronounceable(PWSTR pszWord, out SPWORDPRONOUNCEABLE pWordPronounceable) mut
 			{
-				return VT.IsPronounceable(&this, pszWord, pWordPronounceable);
+				return VT.IsPronounceable(ref this, pszWord, out pWordPronounceable);
 			}
 			public HRESULT SetGrammarState(SPGRAMMARSTATE eGrammarState) mut
 			{
-				return VT.SetGrammarState(&this, eGrammarState);
+				return VT.SetGrammarState(ref this, eGrammarState);
 			}
-			public HRESULT SaveCmd(IStream* pStream, PWSTR* ppszCoMemErrorText) mut
+			public HRESULT SaveCmd(ref IStream pStream, PWSTR* ppszCoMemErrorText) mut
 			{
-				return VT.SaveCmd(&this, pStream, ppszCoMemErrorText);
+				return VT.SaveCmd(ref this, ref pStream, ppszCoMemErrorText);
 			}
-			public HRESULT GetGrammarState(SPGRAMMARSTATE* peGrammarState) mut
+			public HRESULT GetGrammarState(out SPGRAMMARSTATE peGrammarState) mut
 			{
-				return VT.GetGrammarState(&this, peGrammarState);
+				return VT.GetGrammarState(ref this, out peGrammarState);
 			}
 			[CRepr]
 			public struct VTable : ISpGrammarBuilder.VTable
 			{
-				public new function HRESULT(ISpRecoGrammar *self, uint64* pullGrammarId) GetGrammarId;
-				public new function HRESULT(ISpRecoGrammar *self, ISpRecoContext** ppRecoCtxt) GetRecoContext;
-				public new function HRESULT(ISpRecoGrammar *self, PWSTR pszFileName, SPLOADOPTIONS Options) LoadCmdFromFile;
-				public new function HRESULT(ISpRecoGrammar *self, Guid* rcid, PWSTR pszGrammarName, SPLOADOPTIONS Options) LoadCmdFromObject;
-				public new function HRESULT(ISpRecoGrammar *self, HINSTANCE hModule, PWSTR pszResourceName, PWSTR pszResourceType, uint16 wLanguage, SPLOADOPTIONS Options) LoadCmdFromResource;
-				public new function HRESULT(ISpRecoGrammar *self, SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options) LoadCmdFromMemory;
-				public new function HRESULT(ISpRecoGrammar *self, Guid* rguidParam, PWSTR pszStringParam, void* pvDataPrarm, uint32 cbDataSize, SPLOADOPTIONS Options) LoadCmdFromProprietaryGrammar;
-				public new function HRESULT(ISpRecoGrammar *self, PWSTR pszName, void* pReserved, SPRULESTATE NewState) SetRuleState;
-				public new function HRESULT(ISpRecoGrammar *self, uint32 ulRuleId, SPRULESTATE NewState) SetRuleIdState;
-				public new function HRESULT(ISpRecoGrammar *self, PWSTR pszTopicName, SPLOADOPTIONS Options) LoadDictation;
-				public new function HRESULT(ISpRecoGrammar *self) UnloadDictation;
-				public new function HRESULT(ISpRecoGrammar *self, SPRULESTATE NewState) SetDictationState;
-				public new function HRESULT(ISpRecoGrammar *self, char16* pText, uint32 cchText, SPTEXTSELECTIONINFO* pInfo) SetWordSequenceData;
-				public new function HRESULT(ISpRecoGrammar *self, SPTEXTSELECTIONINFO* pInfo) SetTextSelection;
-				public new function HRESULT(ISpRecoGrammar *self, PWSTR pszWord, SPWORDPRONOUNCEABLE* pWordPronounceable) IsPronounceable;
-				public new function HRESULT(ISpRecoGrammar *self, SPGRAMMARSTATE eGrammarState) SetGrammarState;
-				public new function HRESULT(ISpRecoGrammar *self, IStream* pStream, PWSTR* ppszCoMemErrorText) SaveCmd;
-				public new function HRESULT(ISpRecoGrammar *self, SPGRAMMARSTATE* peGrammarState) GetGrammarState;
+				public new function HRESULT(ref ISpRecoGrammar self, out uint64 pullGrammarId) GetGrammarId;
+				public new function HRESULT(ref ISpRecoGrammar self, out ISpRecoContext* ppRecoCtxt) GetRecoContext;
+				public new function HRESULT(ref ISpRecoGrammar self, PWSTR pszFileName, SPLOADOPTIONS Options) LoadCmdFromFile;
+				public new function HRESULT(ref ISpRecoGrammar self, in Guid rcid, PWSTR pszGrammarName, SPLOADOPTIONS Options) LoadCmdFromObject;
+				public new function HRESULT(ref ISpRecoGrammar self, HINSTANCE hModule, PWSTR pszResourceName, PWSTR pszResourceType, uint16 wLanguage, SPLOADOPTIONS Options) LoadCmdFromResource;
+				public new function HRESULT(ref ISpRecoGrammar self, in SPBINARYGRAMMAR pGrammar, SPLOADOPTIONS Options) LoadCmdFromMemory;
+				public new function HRESULT(ref ISpRecoGrammar self, in Guid rguidParam, PWSTR pszStringParam, void* pvDataPrarm, uint32 cbDataSize, SPLOADOPTIONS Options) LoadCmdFromProprietaryGrammar;
+				public new function HRESULT(ref ISpRecoGrammar self, PWSTR pszName, void* pReserved, SPRULESTATE NewState) SetRuleState;
+				public new function HRESULT(ref ISpRecoGrammar self, uint32 ulRuleId, SPRULESTATE NewState) SetRuleIdState;
+				public new function HRESULT(ref ISpRecoGrammar self, PWSTR pszTopicName, SPLOADOPTIONS Options) LoadDictation;
+				public new function HRESULT(ref ISpRecoGrammar self) UnloadDictation;
+				public new function HRESULT(ref ISpRecoGrammar self, SPRULESTATE NewState) SetDictationState;
+				public new function HRESULT(ref ISpRecoGrammar self, char16* pText, uint32 cchText, in SPTEXTSELECTIONINFO pInfo) SetWordSequenceData;
+				public new function HRESULT(ref ISpRecoGrammar self, in SPTEXTSELECTIONINFO pInfo) SetTextSelection;
+				public new function HRESULT(ref ISpRecoGrammar self, PWSTR pszWord, out SPWORDPRONOUNCEABLE pWordPronounceable) IsPronounceable;
+				public new function HRESULT(ref ISpRecoGrammar self, SPGRAMMARSTATE eGrammarState) SetGrammarState;
+				public new function HRESULT(ref ISpRecoGrammar self, ref IStream pStream, PWSTR* ppszCoMemErrorText) SaveCmd;
+				public new function HRESULT(ref ISpRecoGrammar self, out SPGRAMMARSTATE peGrammarState) GetGrammarState;
 			}
 		}
 		[CRepr]
@@ -3140,19 +3140,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddTextSubset(SPSTATEHANDLE__* hFromState, SPSTATEHANDLE__* hToState, PWSTR psz, SPMATCHINGMODE eMatchMode) mut
+			public HRESULT AddTextSubset(out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, PWSTR psz, SPMATCHINGMODE eMatchMode) mut
 			{
-				return VT.AddTextSubset(&this, hFromState, hToState, psz, eMatchMode);
+				return VT.AddTextSubset(ref this, out hFromState, out hToState, psz, eMatchMode);
 			}
 			public HRESULT SetPhoneticAlphabet(PHONETICALPHABET phoneticALphabet) mut
 			{
-				return VT.SetPhoneticAlphabet(&this, phoneticALphabet);
+				return VT.SetPhoneticAlphabet(ref this, phoneticALphabet);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpGrammarBuilder2 *self, SPSTATEHANDLE__* hFromState, SPSTATEHANDLE__* hToState, PWSTR psz, SPMATCHINGMODE eMatchMode) AddTextSubset;
-				public new function HRESULT(ISpGrammarBuilder2 *self, PHONETICALPHABET phoneticALphabet) SetPhoneticAlphabet;
+				public new function HRESULT(ref ISpGrammarBuilder2 self, out SPSTATEHANDLE__ hFromState, out SPSTATEHANDLE__ hToState, PWSTR psz, SPMATCHINGMODE eMatchMode) AddTextSubset;
+				public new function HRESULT(ref ISpGrammarBuilder2 self, PHONETICALPHABET phoneticALphabet) SetPhoneticAlphabet;
 			}
 		}
 		[CRepr]
@@ -3162,49 +3162,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRules(SPRULE** ppCoMemRules, uint32* puNumRules) mut
+			public HRESULT GetRules(out SPRULE* ppCoMemRules, out uint32 puNumRules) mut
 			{
-				return VT.GetRules(&this, ppCoMemRules, puNumRules);
+				return VT.GetRules(ref this, out ppCoMemRules, out puNumRules);
 			}
 			public HRESULT LoadCmdFromFile2(PWSTR pszFileName, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) mut
 			{
-				return VT.LoadCmdFromFile2(&this, pszFileName, Options, pszSharingUri, pszBaseUri);
+				return VT.LoadCmdFromFile2(ref this, pszFileName, Options, pszSharingUri, pszBaseUri);
 			}
-			public HRESULT LoadCmdFromMemory2(SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) mut
+			public HRESULT LoadCmdFromMemory2(in SPBINARYGRAMMAR pGrammar, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) mut
 			{
-				return VT.LoadCmdFromMemory2(&this, pGrammar, Options, pszSharingUri, pszBaseUri);
+				return VT.LoadCmdFromMemory2(ref this, pGrammar, Options, pszSharingUri, pszBaseUri);
 			}
 			public HRESULT SetRulePriority(PWSTR pszRuleName, uint32 ulRuleId, int32 nRulePriority) mut
 			{
-				return VT.SetRulePriority(&this, pszRuleName, ulRuleId, nRulePriority);
+				return VT.SetRulePriority(ref this, pszRuleName, ulRuleId, nRulePriority);
 			}
 			public HRESULT SetRuleWeight(PWSTR pszRuleName, uint32 ulRuleId, float flWeight) mut
 			{
-				return VT.SetRuleWeight(&this, pszRuleName, ulRuleId, flWeight);
+				return VT.SetRuleWeight(ref this, pszRuleName, ulRuleId, flWeight);
 			}
 			public HRESULT SetDictationWeight(float flWeight) mut
 			{
-				return VT.SetDictationWeight(&this, flWeight);
+				return VT.SetDictationWeight(ref this, flWeight);
 			}
-			public HRESULT SetGrammarLoader(ISpeechResourceLoader* pLoader) mut
+			public HRESULT SetGrammarLoader(ref ISpeechResourceLoader pLoader) mut
 			{
-				return VT.SetGrammarLoader(&this, pLoader);
+				return VT.SetGrammarLoader(ref this, ref pLoader);
 			}
-			public HRESULT SetSMLSecurityManager(IInternetSecurityManager* pSMLSecurityManager) mut
+			public HRESULT SetSMLSecurityManager(ref IInternetSecurityManager pSMLSecurityManager) mut
 			{
-				return VT.SetSMLSecurityManager(&this, pSMLSecurityManager);
+				return VT.SetSMLSecurityManager(ref this, ref pSMLSecurityManager);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpRecoGrammar2 *self, SPRULE** ppCoMemRules, uint32* puNumRules) GetRules;
-				public new function HRESULT(ISpRecoGrammar2 *self, PWSTR pszFileName, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) LoadCmdFromFile2;
-				public new function HRESULT(ISpRecoGrammar2 *self, SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) LoadCmdFromMemory2;
-				public new function HRESULT(ISpRecoGrammar2 *self, PWSTR pszRuleName, uint32 ulRuleId, int32 nRulePriority) SetRulePriority;
-				public new function HRESULT(ISpRecoGrammar2 *self, PWSTR pszRuleName, uint32 ulRuleId, float flWeight) SetRuleWeight;
-				public new function HRESULT(ISpRecoGrammar2 *self, float flWeight) SetDictationWeight;
-				public new function HRESULT(ISpRecoGrammar2 *self, ISpeechResourceLoader* pLoader) SetGrammarLoader;
-				public new function HRESULT(ISpRecoGrammar2 *self, IInternetSecurityManager* pSMLSecurityManager) SetSMLSecurityManager;
+				public new function HRESULT(ref ISpRecoGrammar2 self, out SPRULE* ppCoMemRules, out uint32 puNumRules) GetRules;
+				public new function HRESULT(ref ISpRecoGrammar2 self, PWSTR pszFileName, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) LoadCmdFromFile2;
+				public new function HRESULT(ref ISpRecoGrammar2 self, in SPBINARYGRAMMAR pGrammar, SPLOADOPTIONS Options, PWSTR pszSharingUri, PWSTR pszBaseUri) LoadCmdFromMemory2;
+				public new function HRESULT(ref ISpRecoGrammar2 self, PWSTR pszRuleName, uint32 ulRuleId, int32 nRulePriority) SetRulePriority;
+				public new function HRESULT(ref ISpRecoGrammar2 self, PWSTR pszRuleName, uint32 ulRuleId, float flWeight) SetRuleWeight;
+				public new function HRESULT(ref ISpRecoGrammar2 self, float flWeight) SetDictationWeight;
+				public new function HRESULT(ref ISpRecoGrammar2 self, ref ISpeechResourceLoader pLoader) SetGrammarLoader;
+				public new function HRESULT(ref ISpRecoGrammar2 self, ref IInternetSecurityManager pSMLSecurityManager) SetSMLSecurityManager;
 			}
 		}
 		[CRepr]
@@ -3214,24 +3214,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LoadResource(BSTR bstrResourceUri, int16 fAlwaysReload, IUnknown** pStream, BSTR* pbstrMIMEType, int16* pfModified, BSTR* pbstrRedirectUrl) mut
+			public HRESULT LoadResource(BSTR bstrResourceUri, int16 fAlwaysReload, out IUnknown* pStream, BSTR* pbstrMIMEType, out int16 pfModified, BSTR* pbstrRedirectUrl) mut
 			{
-				return VT.LoadResource(&this, bstrResourceUri, fAlwaysReload, pStream, pbstrMIMEType, pfModified, pbstrRedirectUrl);
+				return VT.LoadResource(ref this, bstrResourceUri, fAlwaysReload, out pStream, pbstrMIMEType, out pfModified, pbstrRedirectUrl);
 			}
-			public HRESULT GetLocalCopy(BSTR bstrResourceUri, BSTR* pbstrLocalPath, BSTR* pbstrMIMEType, BSTR* pbstrRedirectUrl) mut
+			public HRESULT GetLocalCopy(BSTR bstrResourceUri, out BSTR pbstrLocalPath, BSTR* pbstrMIMEType, BSTR* pbstrRedirectUrl) mut
 			{
-				return VT.GetLocalCopy(&this, bstrResourceUri, pbstrLocalPath, pbstrMIMEType, pbstrRedirectUrl);
+				return VT.GetLocalCopy(ref this, bstrResourceUri, out pbstrLocalPath, pbstrMIMEType, pbstrRedirectUrl);
 			}
 			public HRESULT ReleaseLocalCopy(BSTR pbstrLocalPath) mut
 			{
-				return VT.ReleaseLocalCopy(&this, pbstrLocalPath);
+				return VT.ReleaseLocalCopy(ref this, pbstrLocalPath);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechResourceLoader *self, BSTR bstrResourceUri, int16 fAlwaysReload, IUnknown** pStream, BSTR* pbstrMIMEType, int16* pfModified, BSTR* pbstrRedirectUrl) LoadResource;
-				public new function HRESULT(ISpeechResourceLoader *self, BSTR bstrResourceUri, BSTR* pbstrLocalPath, BSTR* pbstrMIMEType, BSTR* pbstrRedirectUrl) GetLocalCopy;
-				public new function HRESULT(ISpeechResourceLoader *self, BSTR pbstrLocalPath) ReleaseLocalCopy;
+				public new function HRESULT(ref ISpeechResourceLoader self, BSTR bstrResourceUri, int16 fAlwaysReload, out IUnknown* pStream, BSTR* pbstrMIMEType, out int16 pfModified, BSTR* pbstrRedirectUrl) LoadResource;
+				public new function HRESULT(ref ISpeechResourceLoader self, BSTR bstrResourceUri, out BSTR pbstrLocalPath, BSTR* pbstrMIMEType, BSTR* pbstrRedirectUrl) GetLocalCopy;
+				public new function HRESULT(ref ISpeechResourceLoader self, BSTR pbstrLocalPath) ReleaseLocalCopy;
 			}
 		}
 		[CRepr]
@@ -3241,99 +3241,99 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRecognizer(ISpRecognizer** ppRecognizer) mut
+			public HRESULT GetRecognizer(out ISpRecognizer* ppRecognizer) mut
 			{
-				return VT.GetRecognizer(&this, ppRecognizer);
+				return VT.GetRecognizer(ref this, out ppRecognizer);
 			}
-			public HRESULT CreateGrammar(uint64 ullGrammarId, ISpRecoGrammar** ppGrammar) mut
+			public HRESULT CreateGrammar(uint64 ullGrammarId, out ISpRecoGrammar* ppGrammar) mut
 			{
-				return VT.CreateGrammar(&this, ullGrammarId, ppGrammar);
+				return VT.CreateGrammar(ref this, ullGrammarId, out ppGrammar);
 			}
-			public HRESULT GetStatus(SPRECOCONTEXTSTATUS* pStatus) mut
+			public HRESULT GetStatus(out SPRECOCONTEXTSTATUS pStatus) mut
 			{
-				return VT.GetStatus(&this, pStatus);
+				return VT.GetStatus(ref this, out pStatus);
 			}
-			public HRESULT GetMaxAlternates(uint32* pcAlternates) mut
+			public HRESULT GetMaxAlternates(out uint32 pcAlternates) mut
 			{
-				return VT.GetMaxAlternates(&this, pcAlternates);
+				return VT.GetMaxAlternates(ref this, out pcAlternates);
 			}
 			public HRESULT SetMaxAlternates(uint32 cAlternates) mut
 			{
-				return VT.SetMaxAlternates(&this, cAlternates);
+				return VT.SetMaxAlternates(ref this, cAlternates);
 			}
-			public HRESULT SetAudioOptions(SPAUDIOOPTIONS Options, Guid* pAudioFormatId, WAVEFORMATEX* pWaveFormatEx) mut
+			public HRESULT SetAudioOptions(SPAUDIOOPTIONS Options, in Guid pAudioFormatId, in WAVEFORMATEX pWaveFormatEx) mut
 			{
-				return VT.SetAudioOptions(&this, Options, pAudioFormatId, pWaveFormatEx);
+				return VT.SetAudioOptions(ref this, Options, pAudioFormatId, pWaveFormatEx);
 			}
-			public HRESULT GetAudioOptions(SPAUDIOOPTIONS* pOptions, Guid* pAudioFormatId, WAVEFORMATEX** ppCoMemWFEX) mut
+			public HRESULT GetAudioOptions(out SPAUDIOOPTIONS pOptions, out Guid pAudioFormatId, out WAVEFORMATEX* ppCoMemWFEX) mut
 			{
-				return VT.GetAudioOptions(&this, pOptions, pAudioFormatId, ppCoMemWFEX);
+				return VT.GetAudioOptions(ref this, out pOptions, out pAudioFormatId, out ppCoMemWFEX);
 			}
-			public HRESULT DeserializeResult(SPSERIALIZEDRESULT* pSerializedResult, ISpRecoResult** ppResult) mut
+			public HRESULT DeserializeResult(in SPSERIALIZEDRESULT pSerializedResult, out ISpRecoResult* ppResult) mut
 			{
-				return VT.DeserializeResult(&this, pSerializedResult, ppResult);
+				return VT.DeserializeResult(ref this, pSerializedResult, out ppResult);
 			}
 			public HRESULT Bookmark(SPBOOKMARKOPTIONS Options, uint64 ullStreamPosition, LPARAM lparamEvent) mut
 			{
-				return VT.Bookmark(&this, Options, ullStreamPosition, lparamEvent);
+				return VT.Bookmark(ref this, Options, ullStreamPosition, lparamEvent);
 			}
 			public HRESULT SetAdaptationData(PWSTR pAdaptationData, uint32 cch) mut
 			{
-				return VT.SetAdaptationData(&this, pAdaptationData, cch);
+				return VT.SetAdaptationData(ref this, pAdaptationData, cch);
 			}
 			public HRESULT Pause(uint32 dwReserved) mut
 			{
-				return VT.Pause(&this, dwReserved);
+				return VT.Pause(ref this, dwReserved);
 			}
 			public HRESULT Resume(uint32 dwReserved) mut
 			{
-				return VT.Resume(&this, dwReserved);
+				return VT.Resume(ref this, dwReserved);
 			}
-			public HRESULT SetVoice(ISpVoice* pVoice, BOOL fAllowFormatChanges) mut
+			public HRESULT SetVoice(ref ISpVoice pVoice, BOOL fAllowFormatChanges) mut
 			{
-				return VT.SetVoice(&this, pVoice, fAllowFormatChanges);
+				return VT.SetVoice(ref this, ref pVoice, fAllowFormatChanges);
 			}
-			public HRESULT GetVoice(ISpVoice** ppVoice) mut
+			public HRESULT GetVoice(out ISpVoice* ppVoice) mut
 			{
-				return VT.GetVoice(&this, ppVoice);
+				return VT.GetVoice(ref this, out ppVoice);
 			}
 			public HRESULT SetVoicePurgeEvent(uint64 ullEventInterest) mut
 			{
-				return VT.SetVoicePurgeEvent(&this, ullEventInterest);
+				return VT.SetVoicePurgeEvent(ref this, ullEventInterest);
 			}
-			public HRESULT GetVoicePurgeEvent(uint64* pullEventInterest) mut
+			public HRESULT GetVoicePurgeEvent(out uint64 pullEventInterest) mut
 			{
-				return VT.GetVoicePurgeEvent(&this, pullEventInterest);
+				return VT.GetVoicePurgeEvent(ref this, out pullEventInterest);
 			}
 			public HRESULT SetContextState(SPCONTEXTSTATE eContextState) mut
 			{
-				return VT.SetContextState(&this, eContextState);
+				return VT.SetContextState(ref this, eContextState);
 			}
-			public HRESULT GetContextState(SPCONTEXTSTATE* peContextState) mut
+			public HRESULT GetContextState(out SPCONTEXTSTATE peContextState) mut
 			{
-				return VT.GetContextState(&this, peContextState);
+				return VT.GetContextState(ref this, out peContextState);
 			}
 			[CRepr]
 			public struct VTable : ISpEventSource.VTable
 			{
-				public new function HRESULT(ISpRecoContext *self, ISpRecognizer** ppRecognizer) GetRecognizer;
-				public new function HRESULT(ISpRecoContext *self, uint64 ullGrammarId, ISpRecoGrammar** ppGrammar) CreateGrammar;
-				public new function HRESULT(ISpRecoContext *self, SPRECOCONTEXTSTATUS* pStatus) GetStatus;
-				public new function HRESULT(ISpRecoContext *self, uint32* pcAlternates) GetMaxAlternates;
-				public new function HRESULT(ISpRecoContext *self, uint32 cAlternates) SetMaxAlternates;
-				public new function HRESULT(ISpRecoContext *self, SPAUDIOOPTIONS Options, Guid* pAudioFormatId, WAVEFORMATEX* pWaveFormatEx) SetAudioOptions;
-				public new function HRESULT(ISpRecoContext *self, SPAUDIOOPTIONS* pOptions, Guid* pAudioFormatId, WAVEFORMATEX** ppCoMemWFEX) GetAudioOptions;
-				public new function HRESULT(ISpRecoContext *self, SPSERIALIZEDRESULT* pSerializedResult, ISpRecoResult** ppResult) DeserializeResult;
-				public new function HRESULT(ISpRecoContext *self, SPBOOKMARKOPTIONS Options, uint64 ullStreamPosition, LPARAM lparamEvent) Bookmark;
-				public new function HRESULT(ISpRecoContext *self, PWSTR pAdaptationData, uint32 cch) SetAdaptationData;
-				public new function HRESULT(ISpRecoContext *self, uint32 dwReserved) Pause;
-				public new function HRESULT(ISpRecoContext *self, uint32 dwReserved) Resume;
-				public new function HRESULT(ISpRecoContext *self, ISpVoice* pVoice, BOOL fAllowFormatChanges) SetVoice;
-				public new function HRESULT(ISpRecoContext *self, ISpVoice** ppVoice) GetVoice;
-				public new function HRESULT(ISpRecoContext *self, uint64 ullEventInterest) SetVoicePurgeEvent;
-				public new function HRESULT(ISpRecoContext *self, uint64* pullEventInterest) GetVoicePurgeEvent;
-				public new function HRESULT(ISpRecoContext *self, SPCONTEXTSTATE eContextState) SetContextState;
-				public new function HRESULT(ISpRecoContext *self, SPCONTEXTSTATE* peContextState) GetContextState;
+				public new function HRESULT(ref ISpRecoContext self, out ISpRecognizer* ppRecognizer) GetRecognizer;
+				public new function HRESULT(ref ISpRecoContext self, uint64 ullGrammarId, out ISpRecoGrammar* ppGrammar) CreateGrammar;
+				public new function HRESULT(ref ISpRecoContext self, out SPRECOCONTEXTSTATUS pStatus) GetStatus;
+				public new function HRESULT(ref ISpRecoContext self, out uint32 pcAlternates) GetMaxAlternates;
+				public new function HRESULT(ref ISpRecoContext self, uint32 cAlternates) SetMaxAlternates;
+				public new function HRESULT(ref ISpRecoContext self, SPAUDIOOPTIONS Options, in Guid pAudioFormatId, in WAVEFORMATEX pWaveFormatEx) SetAudioOptions;
+				public new function HRESULT(ref ISpRecoContext self, out SPAUDIOOPTIONS pOptions, out Guid pAudioFormatId, out WAVEFORMATEX* ppCoMemWFEX) GetAudioOptions;
+				public new function HRESULT(ref ISpRecoContext self, in SPSERIALIZEDRESULT pSerializedResult, out ISpRecoResult* ppResult) DeserializeResult;
+				public new function HRESULT(ref ISpRecoContext self, SPBOOKMARKOPTIONS Options, uint64 ullStreamPosition, LPARAM lparamEvent) Bookmark;
+				public new function HRESULT(ref ISpRecoContext self, PWSTR pAdaptationData, uint32 cch) SetAdaptationData;
+				public new function HRESULT(ref ISpRecoContext self, uint32 dwReserved) Pause;
+				public new function HRESULT(ref ISpRecoContext self, uint32 dwReserved) Resume;
+				public new function HRESULT(ref ISpRecoContext self, ref ISpVoice pVoice, BOOL fAllowFormatChanges) SetVoice;
+				public new function HRESULT(ref ISpRecoContext self, out ISpVoice* ppVoice) GetVoice;
+				public new function HRESULT(ref ISpRecoContext self, uint64 ullEventInterest) SetVoicePurgeEvent;
+				public new function HRESULT(ref ISpRecoContext self, out uint64 pullEventInterest) GetVoicePurgeEvent;
+				public new function HRESULT(ref ISpRecoContext self, SPCONTEXTSTATE eContextState) SetContextState;
+				public new function HRESULT(ref ISpRecoContext self, out SPCONTEXTSTATE peContextState) GetContextState;
 			}
 		}
 		[CRepr]
@@ -3345,22 +3345,22 @@ namespace Win32
 			
 			public HRESULT SetGrammarOptions(uint32 eGrammarOptions) mut
 			{
-				return VT.SetGrammarOptions(&this, eGrammarOptions);
+				return VT.SetGrammarOptions(ref this, eGrammarOptions);
 			}
-			public HRESULT GetGrammarOptions(uint32* peGrammarOptions) mut
+			public HRESULT GetGrammarOptions(out uint32 peGrammarOptions) mut
 			{
-				return VT.GetGrammarOptions(&this, peGrammarOptions);
+				return VT.GetGrammarOptions(ref this, out peGrammarOptions);
 			}
 			public HRESULT SetAdaptationData2(PWSTR pAdaptationData, uint32 cch, PWSTR pTopicName, uint32 eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance) mut
 			{
-				return VT.SetAdaptationData2(&this, pAdaptationData, cch, pTopicName, eAdaptationSettings, eRelevance);
+				return VT.SetAdaptationData2(ref this, pAdaptationData, cch, pTopicName, eAdaptationSettings, eRelevance);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpRecoContext2 *self, uint32 eGrammarOptions) SetGrammarOptions;
-				public new function HRESULT(ISpRecoContext2 *self, uint32* peGrammarOptions) GetGrammarOptions;
-				public new function HRESULT(ISpRecoContext2 *self, PWSTR pAdaptationData, uint32 cch, PWSTR pTopicName, uint32 eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance) SetAdaptationData2;
+				public new function HRESULT(ref ISpRecoContext2 self, uint32 eGrammarOptions) SetGrammarOptions;
+				public new function HRESULT(ref ISpRecoContext2 self, out uint32 peGrammarOptions) GetGrammarOptions;
+				public new function HRESULT(ref ISpRecoContext2 self, PWSTR pAdaptationData, uint32 cch, PWSTR pTopicName, uint32 eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance) SetAdaptationData2;
 			}
 		}
 		[CRepr]
@@ -3372,27 +3372,27 @@ namespace Win32
 			
 			public HRESULT SetPropertyNum(PWSTR pName, int32 lValue) mut
 			{
-				return VT.SetPropertyNum(&this, pName, lValue);
+				return VT.SetPropertyNum(ref this, pName, lValue);
 			}
-			public HRESULT GetPropertyNum(PWSTR pName, int32* plValue) mut
+			public HRESULT GetPropertyNum(PWSTR pName, out int32 plValue) mut
 			{
-				return VT.GetPropertyNum(&this, pName, plValue);
+				return VT.GetPropertyNum(ref this, pName, out plValue);
 			}
 			public HRESULT SetPropertyString(PWSTR pName, PWSTR pValue) mut
 			{
-				return VT.SetPropertyString(&this, pName, pValue);
+				return VT.SetPropertyString(ref this, pName, pValue);
 			}
-			public HRESULT GetPropertyString(PWSTR pName, PWSTR* ppCoMemValue) mut
+			public HRESULT GetPropertyString(PWSTR pName, out PWSTR ppCoMemValue) mut
 			{
-				return VT.GetPropertyString(&this, pName, ppCoMemValue);
+				return VT.GetPropertyString(ref this, pName, out ppCoMemValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpProperties *self, PWSTR pName, int32 lValue) SetPropertyNum;
-				public new function HRESULT(ISpProperties *self, PWSTR pName, int32* plValue) GetPropertyNum;
-				public new function HRESULT(ISpProperties *self, PWSTR pName, PWSTR pValue) SetPropertyString;
-				public new function HRESULT(ISpProperties *self, PWSTR pName, PWSTR* ppCoMemValue) GetPropertyString;
+				public new function HRESULT(ref ISpProperties self, PWSTR pName, int32 lValue) SetPropertyNum;
+				public new function HRESULT(ref ISpProperties self, PWSTR pName, out int32 plValue) GetPropertyNum;
+				public new function HRESULT(ref ISpProperties self, PWSTR pName, PWSTR pValue) SetPropertyString;
+				public new function HRESULT(ref ISpProperties self, PWSTR pName, out PWSTR ppCoMemValue) GetPropertyString;
 			}
 		}
 		[CRepr]
@@ -3402,89 +3402,89 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRecognizer(ISpObjectToken* pRecognizer) mut
+			public HRESULT SetRecognizer(ref ISpObjectToken pRecognizer) mut
 			{
-				return VT.SetRecognizer(&this, pRecognizer);
+				return VT.SetRecognizer(ref this, ref pRecognizer);
 			}
-			public HRESULT GetRecognizer(ISpObjectToken** ppRecognizer) mut
+			public HRESULT GetRecognizer(out ISpObjectToken* ppRecognizer) mut
 			{
-				return VT.GetRecognizer(&this, ppRecognizer);
+				return VT.GetRecognizer(ref this, out ppRecognizer);
 			}
 			public HRESULT SetInput(IUnknown* pUnkInput, BOOL fAllowFormatChanges) mut
 			{
-				return VT.SetInput(&this, pUnkInput, fAllowFormatChanges);
+				return VT.SetInput(ref this, pUnkInput, fAllowFormatChanges);
 			}
-			public HRESULT GetInputObjectToken(ISpObjectToken** ppToken) mut
+			public HRESULT GetInputObjectToken(out ISpObjectToken* ppToken) mut
 			{
-				return VT.GetInputObjectToken(&this, ppToken);
+				return VT.GetInputObjectToken(ref this, out ppToken);
 			}
-			public HRESULT GetInputStream(ISpStreamFormat** ppStream) mut
+			public HRESULT GetInputStream(out ISpStreamFormat* ppStream) mut
 			{
-				return VT.GetInputStream(&this, ppStream);
+				return VT.GetInputStream(ref this, out ppStream);
 			}
-			public HRESULT CreateRecoContext(ISpRecoContext** ppNewCtxt) mut
+			public HRESULT CreateRecoContext(out ISpRecoContext* ppNewCtxt) mut
 			{
-				return VT.CreateRecoContext(&this, ppNewCtxt);
+				return VT.CreateRecoContext(ref this, out ppNewCtxt);
 			}
-			public HRESULT GetRecoProfile(ISpObjectToken** ppToken) mut
+			public HRESULT GetRecoProfile(out ISpObjectToken* ppToken) mut
 			{
-				return VT.GetRecoProfile(&this, ppToken);
+				return VT.GetRecoProfile(ref this, out ppToken);
 			}
-			public HRESULT SetRecoProfile(ISpObjectToken* pToken) mut
+			public HRESULT SetRecoProfile(ref ISpObjectToken pToken) mut
 			{
-				return VT.SetRecoProfile(&this, pToken);
+				return VT.SetRecoProfile(ref this, ref pToken);
 			}
 			public HRESULT IsSharedInstance() mut
 			{
-				return VT.IsSharedInstance(&this);
+				return VT.IsSharedInstance(ref this);
 			}
-			public HRESULT GetRecoState(SPRECOSTATE* pState) mut
+			public HRESULT GetRecoState(out SPRECOSTATE pState) mut
 			{
-				return VT.GetRecoState(&this, pState);
+				return VT.GetRecoState(ref this, out pState);
 			}
 			public HRESULT SetRecoState(SPRECOSTATE NewState) mut
 			{
-				return VT.SetRecoState(&this, NewState);
+				return VT.SetRecoState(ref this, NewState);
 			}
-			public HRESULT GetStatus(SPRECOGNIZERSTATUS* pStatus) mut
+			public HRESULT GetStatus(out SPRECOGNIZERSTATUS pStatus) mut
 			{
-				return VT.GetStatus(&this, pStatus);
+				return VT.GetStatus(ref this, out pStatus);
 			}
-			public HRESULT GetFormat(SPWAVEFORMATTYPE WaveFormatType, Guid* pFormatId, WAVEFORMATEX** ppCoMemWFEX) mut
+			public HRESULT GetFormat(SPWAVEFORMATTYPE WaveFormatType, out Guid pFormatId, out WAVEFORMATEX* ppCoMemWFEX) mut
 			{
-				return VT.GetFormat(&this, WaveFormatType, pFormatId, ppCoMemWFEX);
+				return VT.GetFormat(ref this, WaveFormatType, out pFormatId, out ppCoMemWFEX);
 			}
-			public HRESULT IsUISupported(PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, BOOL* pfSupported) mut
+			public HRESULT IsUISupported(PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, out BOOL pfSupported) mut
 			{
-				return VT.IsUISupported(&this, pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
+				return VT.IsUISupported(ref this, pszTypeOfUI, pvExtraData, cbExtraData, out pfSupported);
 			}
 			public HRESULT DisplayUI(HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) mut
 			{
-				return VT.DisplayUI(&this, hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
+				return VT.DisplayUI(ref this, hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
 			}
-			public HRESULT EmulateRecognition(ISpPhrase* pPhrase) mut
+			public HRESULT EmulateRecognition(ref ISpPhrase pPhrase) mut
 			{
-				return VT.EmulateRecognition(&this, pPhrase);
+				return VT.EmulateRecognition(ref this, ref pPhrase);
 			}
 			[CRepr]
 			public struct VTable : ISpProperties.VTable
 			{
-				public new function HRESULT(ISpRecognizer *self, ISpObjectToken* pRecognizer) SetRecognizer;
-				public new function HRESULT(ISpRecognizer *self, ISpObjectToken** ppRecognizer) GetRecognizer;
-				public new function HRESULT(ISpRecognizer *self, IUnknown* pUnkInput, BOOL fAllowFormatChanges) SetInput;
-				public new function HRESULT(ISpRecognizer *self, ISpObjectToken** ppToken) GetInputObjectToken;
-				public new function HRESULT(ISpRecognizer *self, ISpStreamFormat** ppStream) GetInputStream;
-				public new function HRESULT(ISpRecognizer *self, ISpRecoContext** ppNewCtxt) CreateRecoContext;
-				public new function HRESULT(ISpRecognizer *self, ISpObjectToken** ppToken) GetRecoProfile;
-				public new function HRESULT(ISpRecognizer *self, ISpObjectToken* pToken) SetRecoProfile;
-				public new function HRESULT(ISpRecognizer *self) IsSharedInstance;
-				public new function HRESULT(ISpRecognizer *self, SPRECOSTATE* pState) GetRecoState;
-				public new function HRESULT(ISpRecognizer *self, SPRECOSTATE NewState) SetRecoState;
-				public new function HRESULT(ISpRecognizer *self, SPRECOGNIZERSTATUS* pStatus) GetStatus;
-				public new function HRESULT(ISpRecognizer *self, SPWAVEFORMATTYPE WaveFormatType, Guid* pFormatId, WAVEFORMATEX** ppCoMemWFEX) GetFormat;
-				public new function HRESULT(ISpRecognizer *self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, BOOL* pfSupported) IsUISupported;
-				public new function HRESULT(ISpRecognizer *self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) DisplayUI;
-				public new function HRESULT(ISpRecognizer *self, ISpPhrase* pPhrase) EmulateRecognition;
+				public new function HRESULT(ref ISpRecognizer self, ref ISpObjectToken pRecognizer) SetRecognizer;
+				public new function HRESULT(ref ISpRecognizer self, out ISpObjectToken* ppRecognizer) GetRecognizer;
+				public new function HRESULT(ref ISpRecognizer self, IUnknown* pUnkInput, BOOL fAllowFormatChanges) SetInput;
+				public new function HRESULT(ref ISpRecognizer self, out ISpObjectToken* ppToken) GetInputObjectToken;
+				public new function HRESULT(ref ISpRecognizer self, out ISpStreamFormat* ppStream) GetInputStream;
+				public new function HRESULT(ref ISpRecognizer self, out ISpRecoContext* ppNewCtxt) CreateRecoContext;
+				public new function HRESULT(ref ISpRecognizer self, out ISpObjectToken* ppToken) GetRecoProfile;
+				public new function HRESULT(ref ISpRecognizer self, ref ISpObjectToken pToken) SetRecoProfile;
+				public new function HRESULT(ref ISpRecognizer self) IsSharedInstance;
+				public new function HRESULT(ref ISpRecognizer self, out SPRECOSTATE pState) GetRecoState;
+				public new function HRESULT(ref ISpRecognizer self, SPRECOSTATE NewState) SetRecoState;
+				public new function HRESULT(ref ISpRecognizer self, out SPRECOGNIZERSTATUS pStatus) GetStatus;
+				public new function HRESULT(ref ISpRecognizer self, SPWAVEFORMATTYPE WaveFormatType, out Guid pFormatId, out WAVEFORMATEX* ppCoMemWFEX) GetFormat;
+				public new function HRESULT(ref ISpRecognizer self, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData, out BOOL pfSupported) IsUISupported;
+				public new function HRESULT(ref ISpRecognizer self, HWND hwndParent, PWSTR pszTitle, PWSTR pszTypeOfUI, void* pvExtraData, uint32 cbExtraData) DisplayUI;
+				public new function HRESULT(ref ISpRecognizer self, ref ISpPhrase pPhrase) EmulateRecognition;
 			}
 		}
 		[CRepr]
@@ -3494,19 +3494,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSerializedState(uint8** ppbData, uint32* pulSize, uint32 dwReserved) mut
+			public HRESULT GetSerializedState(uint8** ppbData, out uint32 pulSize, uint32 dwReserved) mut
 			{
-				return VT.GetSerializedState(&this, ppbData, pulSize, dwReserved);
+				return VT.GetSerializedState(ref this, ppbData, out pulSize, dwReserved);
 			}
-			public HRESULT SetSerializedState(uint8* pbData, uint32 ulSize, uint32 dwReserved) mut
+			public HRESULT SetSerializedState(ref uint8 pbData, uint32 ulSize, uint32 dwReserved) mut
 			{
-				return VT.SetSerializedState(&this, pbData, ulSize, dwReserved);
+				return VT.SetSerializedState(ref this, ref pbData, ulSize, dwReserved);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpSerializeState *self, uint8** ppbData, uint32* pulSize, uint32 dwReserved) GetSerializedState;
-				public new function HRESULT(ISpSerializeState *self, uint8* pbData, uint32 ulSize, uint32 dwReserved) SetSerializedState;
+				public new function HRESULT(ref ISpSerializeState self, uint8** ppbData, out uint32 pulSize, uint32 dwReserved) GetSerializedState;
+				public new function HRESULT(ref ISpSerializeState self, ref uint8 pbData, uint32 ulSize, uint32 dwReserved) SetSerializedState;
 			}
 		}
 		[CRepr]
@@ -3516,24 +3516,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EmulateRecognitionEx(ISpPhrase* pPhrase, uint32 dwCompareFlags) mut
+			public HRESULT EmulateRecognitionEx(ref ISpPhrase pPhrase, uint32 dwCompareFlags) mut
 			{
-				return VT.EmulateRecognitionEx(&this, pPhrase, dwCompareFlags);
+				return VT.EmulateRecognitionEx(ref this, ref pPhrase, dwCompareFlags);
 			}
 			public HRESULT SetTrainingState(BOOL fDoingTraining, BOOL fAdaptFromTrainingData) mut
 			{
-				return VT.SetTrainingState(&this, fDoingTraining, fAdaptFromTrainingData);
+				return VT.SetTrainingState(ref this, fDoingTraining, fAdaptFromTrainingData);
 			}
 			public HRESULT ResetAcousticModelAdaptation() mut
 			{
-				return VT.ResetAcousticModelAdaptation(&this);
+				return VT.ResetAcousticModelAdaptation(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpRecognizer2 *self, ISpPhrase* pPhrase, uint32 dwCompareFlags) EmulateRecognitionEx;
-				public new function HRESULT(ISpRecognizer2 *self, BOOL fDoingTraining, BOOL fAdaptFromTrainingData) SetTrainingState;
-				public new function HRESULT(ISpRecognizer2 *self) ResetAcousticModelAdaptation;
+				public new function HRESULT(ref ISpRecognizer2 self, ref ISpPhrase pPhrase, uint32 dwCompareFlags) EmulateRecognitionEx;
+				public new function HRESULT(ref ISpRecognizer2 self, BOOL fDoingTraining, BOOL fAdaptFromTrainingData) SetTrainingState;
+				public new function HRESULT(ref ISpRecognizer2 self) ResetAcousticModelAdaptation;
 			}
 		}
 		[CRepr]
@@ -3543,19 +3543,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Normalize(PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, SPNORMALIZATIONLIST* pNormalizationList) mut
+			public HRESULT Normalize(PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, out SPNORMALIZATIONLIST pNormalizationList) mut
 			{
-				return VT.Normalize(&this, pszWord, pszLeftContext, pszRightContext, LangID, pNormalizationList);
+				return VT.Normalize(ref this, pszWord, pszLeftContext, pszRightContext, LangID, out pNormalizationList);
 			}
-			public HRESULT GetPronunciations(PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, SPWORDPRONUNCIATIONLIST* pEnginePronunciationList) mut
+			public HRESULT GetPronunciations(PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, out SPWORDPRONUNCIATIONLIST pEnginePronunciationList) mut
 			{
-				return VT.GetPronunciations(&this, pszWord, pszLeftContext, pszRightContext, LangID, pEnginePronunciationList);
+				return VT.GetPronunciations(ref this, pszWord, pszLeftContext, pszRightContext, LangID, out pEnginePronunciationList);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpEnginePronunciation *self, PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, SPNORMALIZATIONLIST* pNormalizationList) Normalize;
-				public new function HRESULT(ISpEnginePronunciation *self, PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, SPWORDPRONUNCIATIONLIST* pEnginePronunciationList) GetPronunciations;
+				public new function HRESULT(ref ISpEnginePronunciation self, PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, out SPNORMALIZATIONLIST pNormalizationList) Normalize;
+				public new function HRESULT(ref ISpEnginePronunciation self, PWSTR pszWord, PWSTR pszLeftContext, PWSTR pszRightContext, uint16 LangID, out SPWORDPRONUNCIATIONLIST pEnginePronunciationList) GetPronunciations;
 			}
 		}
 		[CRepr]
@@ -3565,19 +3565,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDisplayAlternates(SPDISPLAYPHRASE* pPhrase, uint32 cRequestCount, SPDISPLAYPHRASE** ppCoMemPhrases, uint32* pcPhrasesReturned) mut
+			public HRESULT GetDisplayAlternates(in SPDISPLAYPHRASE pPhrase, uint32 cRequestCount, out SPDISPLAYPHRASE* ppCoMemPhrases, out uint32 pcPhrasesReturned) mut
 			{
-				return VT.GetDisplayAlternates(&this, pPhrase, cRequestCount, ppCoMemPhrases, pcPhrasesReturned);
+				return VT.GetDisplayAlternates(ref this, pPhrase, cRequestCount, out ppCoMemPhrases, out pcPhrasesReturned);
 			}
 			public HRESULT SetFullStopTrailSpace(uint32 ulTrailSpace) mut
 			{
-				return VT.SetFullStopTrailSpace(&this, ulTrailSpace);
+				return VT.SetFullStopTrailSpace(ref this, ulTrailSpace);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISpDisplayAlternates *self, SPDISPLAYPHRASE* pPhrase, uint32 cRequestCount, SPDISPLAYPHRASE** ppCoMemPhrases, uint32* pcPhrasesReturned) GetDisplayAlternates;
-				public new function HRESULT(ISpDisplayAlternates *self, uint32 ulTrailSpace) SetFullStopTrailSpace;
+				public new function HRESULT(ref ISpDisplayAlternates self, in SPDISPLAYPHRASE pPhrase, uint32 cRequestCount, out SPDISPLAYPHRASE* ppCoMemPhrases, out uint32 pcPhrasesReturned) GetDisplayAlternates;
+				public new function HRESULT(ref ISpDisplayAlternates self, uint32 ulTrailSpace) SetFullStopTrailSpace;
 			}
 		}
 		[CRepr]
@@ -3589,67 +3589,67 @@ namespace Win32
 			
 			public HRESULT SetBinaryValue(BSTR ValueName, VARIANT Value) mut
 			{
-				return VT.SetBinaryValue(&this, ValueName, Value);
+				return VT.SetBinaryValue(ref this, ValueName, Value);
 			}
-			public HRESULT GetBinaryValue(BSTR ValueName, VARIANT* Value) mut
+			public HRESULT GetBinaryValue(BSTR ValueName, out VARIANT Value) mut
 			{
-				return VT.GetBinaryValue(&this, ValueName, Value);
+				return VT.GetBinaryValue(ref this, ValueName, out Value);
 			}
 			public HRESULT SetStringValue(BSTR ValueName, BSTR Value) mut
 			{
-				return VT.SetStringValue(&this, ValueName, Value);
+				return VT.SetStringValue(ref this, ValueName, Value);
 			}
 			public HRESULT GetStringValue(BSTR ValueName, BSTR* Value) mut
 			{
-				return VT.GetStringValue(&this, ValueName, Value);
+				return VT.GetStringValue(ref this, ValueName, Value);
 			}
 			public HRESULT SetLongValue(BSTR ValueName, int32 Value) mut
 			{
-				return VT.SetLongValue(&this, ValueName, Value);
+				return VT.SetLongValue(ref this, ValueName, Value);
 			}
-			public HRESULT GetLongValue(BSTR ValueName, int32* Value) mut
+			public HRESULT GetLongValue(BSTR ValueName, out int32 Value) mut
 			{
-				return VT.GetLongValue(&this, ValueName, Value);
+				return VT.GetLongValue(ref this, ValueName, out Value);
 			}
 			public HRESULT OpenKey(BSTR SubKeyName, ISpeechDataKey** SubKey) mut
 			{
-				return VT.OpenKey(&this, SubKeyName, SubKey);
+				return VT.OpenKey(ref this, SubKeyName, SubKey);
 			}
 			public HRESULT CreateKey(BSTR SubKeyName, ISpeechDataKey** SubKey) mut
 			{
-				return VT.CreateKey(&this, SubKeyName, SubKey);
+				return VT.CreateKey(ref this, SubKeyName, SubKey);
 			}
 			public HRESULT DeleteKey(BSTR SubKeyName) mut
 			{
-				return VT.DeleteKey(&this, SubKeyName);
+				return VT.DeleteKey(ref this, SubKeyName);
 			}
 			public HRESULT DeleteValue(BSTR ValueName) mut
 			{
-				return VT.DeleteValue(&this, ValueName);
+				return VT.DeleteValue(ref this, ValueName);
 			}
 			public HRESULT EnumKeys(int32 Index, BSTR* SubKeyName) mut
 			{
-				return VT.EnumKeys(&this, Index, SubKeyName);
+				return VT.EnumKeys(ref this, Index, SubKeyName);
 			}
 			public HRESULT EnumValues(int32 Index, BSTR* ValueName) mut
 			{
-				return VT.EnumValues(&this, Index, ValueName);
+				return VT.EnumValues(ref this, Index, ValueName);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechDataKey *self, BSTR ValueName, VARIANT Value) SetBinaryValue;
-				public new function HRESULT(ISpeechDataKey *self, BSTR ValueName, VARIANT* Value) GetBinaryValue;
-				public new function HRESULT(ISpeechDataKey *self, BSTR ValueName, BSTR Value) SetStringValue;
-				public new function HRESULT(ISpeechDataKey *self, BSTR ValueName, BSTR* Value) GetStringValue;
-				public new function HRESULT(ISpeechDataKey *self, BSTR ValueName, int32 Value) SetLongValue;
-				public new function HRESULT(ISpeechDataKey *self, BSTR ValueName, int32* Value) GetLongValue;
-				public new function HRESULT(ISpeechDataKey *self, BSTR SubKeyName, ISpeechDataKey** SubKey) OpenKey;
-				public new function HRESULT(ISpeechDataKey *self, BSTR SubKeyName, ISpeechDataKey** SubKey) CreateKey;
-				public new function HRESULT(ISpeechDataKey *self, BSTR SubKeyName) DeleteKey;
-				public new function HRESULT(ISpeechDataKey *self, BSTR ValueName) DeleteValue;
-				public new function HRESULT(ISpeechDataKey *self, int32 Index, BSTR* SubKeyName) EnumKeys;
-				public new function HRESULT(ISpeechDataKey *self, int32 Index, BSTR* ValueName) EnumValues;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, VARIANT Value) SetBinaryValue;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, out VARIANT Value) GetBinaryValue;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, BSTR Value) SetStringValue;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, BSTR* Value) GetStringValue;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, int32 Value) SetLongValue;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName, out int32 Value) GetLongValue;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR SubKeyName, ISpeechDataKey** SubKey) OpenKey;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR SubKeyName, ISpeechDataKey** SubKey) CreateKey;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR SubKeyName) DeleteKey;
+				public new function HRESULT(ref ISpeechDataKey self, BSTR ValueName) DeleteValue;
+				public new function HRESULT(ref ISpeechDataKey self, int32 Index, BSTR* SubKeyName) EnumKeys;
+				public new function HRESULT(ref ISpeechDataKey self, int32 Index, BSTR* ValueName) EnumValues;
 			}
 		}
 		[CRepr]
@@ -3661,72 +3661,72 @@ namespace Win32
 			
 			public HRESULT get_Id(BSTR* ObjectId) mut
 			{
-				return VT.get_Id(&this, ObjectId);
+				return VT.get_Id(ref this, ObjectId);
 			}
 			public HRESULT get_DataKey(ISpeechDataKey** DataKey) mut
 			{
-				return VT.get_DataKey(&this, DataKey);
+				return VT.get_DataKey(ref this, DataKey);
 			}
 			public HRESULT get_Category(ISpeechObjectTokenCategory** Category) mut
 			{
-				return VT.get_Category(&this, Category);
+				return VT.get_Category(ref this, Category);
 			}
 			public HRESULT GetDescription(int32 Locale, BSTR* Description) mut
 			{
-				return VT.GetDescription(&this, Locale, Description);
+				return VT.GetDescription(ref this, Locale, Description);
 			}
 			public HRESULT SetId(BSTR Id, BSTR CategoryID, int16 CreateIfNotExist) mut
 			{
-				return VT.SetId(&this, Id, CategoryID, CreateIfNotExist);
+				return VT.SetId(ref this, Id, CategoryID, CreateIfNotExist);
 			}
 			public HRESULT GetAttribute(BSTR AttributeName, BSTR* AttributeValue) mut
 			{
-				return VT.GetAttribute(&this, AttributeName, AttributeValue);
+				return VT.GetAttribute(ref this, AttributeName, AttributeValue);
 			}
 			public HRESULT CreateInstance(IUnknown* pUnkOuter, SpeechTokenContext ClsContext, IUnknown** Object) mut
 			{
-				return VT.CreateInstance(&this, pUnkOuter, ClsContext, Object);
+				return VT.CreateInstance(ref this, pUnkOuter, ClsContext, Object);
 			}
 			public HRESULT Remove(BSTR ObjectStorageCLSID) mut
 			{
-				return VT.Remove(&this, ObjectStorageCLSID);
+				return VT.Remove(ref this, ObjectStorageCLSID);
 			}
 			public HRESULT GetStorageFileName(BSTR ObjectStorageCLSID, BSTR KeyName, BSTR FileName, SpeechTokenShellFolder Folder, BSTR* FilePath) mut
 			{
-				return VT.GetStorageFileName(&this, ObjectStorageCLSID, KeyName, FileName, Folder, FilePath);
+				return VT.GetStorageFileName(ref this, ObjectStorageCLSID, KeyName, FileName, Folder, FilePath);
 			}
 			public HRESULT RemoveStorageFileName(BSTR ObjectStorageCLSID, BSTR KeyName, int16 DeleteFileA) mut
 			{
-				return VT.RemoveStorageFileName(&this, ObjectStorageCLSID, KeyName, DeleteFileA);
+				return VT.RemoveStorageFileName(ref this, ObjectStorageCLSID, KeyName, DeleteFileA);
 			}
-			public HRESULT IsUISupported(BSTR TypeOfUI, VARIANT* ExtraData, IUnknown* Object, int16* Supported) mut
+			public HRESULT IsUISupported(BSTR TypeOfUI, in VARIANT ExtraData, IUnknown* Object, out int16 Supported) mut
 			{
-				return VT.IsUISupported(&this, TypeOfUI, ExtraData, Object, Supported);
+				return VT.IsUISupported(ref this, TypeOfUI, ExtraData, Object, out Supported);
 			}
-			public HRESULT DisplayUI(int32 hWnd, BSTR Title, BSTR TypeOfUI, VARIANT* ExtraData, IUnknown* Object) mut
+			public HRESULT DisplayUI(int32 hWnd, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData, IUnknown* Object) mut
 			{
-				return VT.DisplayUI(&this, hWnd, Title, TypeOfUI, ExtraData, Object);
+				return VT.DisplayUI(ref this, hWnd, Title, TypeOfUI, ExtraData, Object);
 			}
-			public HRESULT MatchesAttributes(BSTR Attributes, int16* Matches) mut
+			public HRESULT MatchesAttributes(BSTR Attributes, out int16 Matches) mut
 			{
-				return VT.MatchesAttributes(&this, Attributes, Matches);
+				return VT.MatchesAttributes(ref this, Attributes, out Matches);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechObjectToken *self, BSTR* ObjectId) get_Id;
-				public new function HRESULT(ISpeechObjectToken *self, ISpeechDataKey** DataKey) get_DataKey;
-				public new function HRESULT(ISpeechObjectToken *self, ISpeechObjectTokenCategory** Category) get_Category;
-				public new function HRESULT(ISpeechObjectToken *self, int32 Locale, BSTR* Description) GetDescription;
-				public new function HRESULT(ISpeechObjectToken *self, BSTR Id, BSTR CategoryID, int16 CreateIfNotExist) SetId;
-				public new function HRESULT(ISpeechObjectToken *self, BSTR AttributeName, BSTR* AttributeValue) GetAttribute;
-				public new function HRESULT(ISpeechObjectToken *self, IUnknown* pUnkOuter, SpeechTokenContext ClsContext, IUnknown** Object) CreateInstance;
-				public new function HRESULT(ISpeechObjectToken *self, BSTR ObjectStorageCLSID) Remove;
-				public new function HRESULT(ISpeechObjectToken *self, BSTR ObjectStorageCLSID, BSTR KeyName, BSTR FileName, SpeechTokenShellFolder Folder, BSTR* FilePath) GetStorageFileName;
-				public new function HRESULT(ISpeechObjectToken *self, BSTR ObjectStorageCLSID, BSTR KeyName, int16 DeleteFileA) RemoveStorageFileName;
-				public new function HRESULT(ISpeechObjectToken *self, BSTR TypeOfUI, VARIANT* ExtraData, IUnknown* Object, int16* Supported) IsUISupported;
-				public new function HRESULT(ISpeechObjectToken *self, int32 hWnd, BSTR Title, BSTR TypeOfUI, VARIANT* ExtraData, IUnknown* Object) DisplayUI;
-				public new function HRESULT(ISpeechObjectToken *self, BSTR Attributes, int16* Matches) MatchesAttributes;
+				public new function HRESULT(ref ISpeechObjectToken self, BSTR* ObjectId) get_Id;
+				public new function HRESULT(ref ISpeechObjectToken self, ISpeechDataKey** DataKey) get_DataKey;
+				public new function HRESULT(ref ISpeechObjectToken self, ISpeechObjectTokenCategory** Category) get_Category;
+				public new function HRESULT(ref ISpeechObjectToken self, int32 Locale, BSTR* Description) GetDescription;
+				public new function HRESULT(ref ISpeechObjectToken self, BSTR Id, BSTR CategoryID, int16 CreateIfNotExist) SetId;
+				public new function HRESULT(ref ISpeechObjectToken self, BSTR AttributeName, BSTR* AttributeValue) GetAttribute;
+				public new function HRESULT(ref ISpeechObjectToken self, IUnknown* pUnkOuter, SpeechTokenContext ClsContext, IUnknown** Object) CreateInstance;
+				public new function HRESULT(ref ISpeechObjectToken self, BSTR ObjectStorageCLSID) Remove;
+				public new function HRESULT(ref ISpeechObjectToken self, BSTR ObjectStorageCLSID, BSTR KeyName, BSTR FileName, SpeechTokenShellFolder Folder, BSTR* FilePath) GetStorageFileName;
+				public new function HRESULT(ref ISpeechObjectToken self, BSTR ObjectStorageCLSID, BSTR KeyName, int16 DeleteFileA) RemoveStorageFileName;
+				public new function HRESULT(ref ISpeechObjectToken self, BSTR TypeOfUI, in VARIANT ExtraData, IUnknown* Object, out int16 Supported) IsUISupported;
+				public new function HRESULT(ref ISpeechObjectToken self, int32 hWnd, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData, IUnknown* Object) DisplayUI;
+				public new function HRESULT(ref ISpeechObjectToken self, BSTR Attributes, out int16 Matches) MatchesAttributes;
 			}
 		}
 		[CRepr]
@@ -3736,24 +3736,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT Item(int32 Index, ISpeechObjectToken** Token) mut
 			{
-				return VT.Item(&this, Index, Token);
+				return VT.Item(ref this, Index, Token);
 			}
 			public HRESULT get__NewEnum(IUnknown** ppEnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, ppEnumVARIANT);
+				return VT.get__NewEnum(ref this, ppEnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechObjectTokens *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechObjectTokens *self, int32 Index, ISpeechObjectToken** Token) Item;
-				public new function HRESULT(ISpeechObjectTokens *self, IUnknown** ppEnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechObjectTokens self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechObjectTokens self, int32 Index, ISpeechObjectToken** Token) Item;
+				public new function HRESULT(ref ISpeechObjectTokens self, IUnknown** ppEnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -3765,37 +3765,37 @@ namespace Win32
 			
 			public HRESULT get_Id(BSTR* Id) mut
 			{
-				return VT.get_Id(&this, Id);
+				return VT.get_Id(ref this, Id);
 			}
 			public HRESULT put_Default(BSTR TokenId) mut
 			{
-				return VT.put_Default(&this, TokenId);
+				return VT.put_Default(ref this, TokenId);
 			}
 			public HRESULT get_Default(BSTR* TokenId) mut
 			{
-				return VT.get_Default(&this, TokenId);
+				return VT.get_Default(ref this, TokenId);
 			}
 			public HRESULT SetId(BSTR Id, int16 CreateIfNotExist) mut
 			{
-				return VT.SetId(&this, Id, CreateIfNotExist);
+				return VT.SetId(ref this, Id, CreateIfNotExist);
 			}
 			public HRESULT GetDataKey(SpeechDataKeyLocation Location, ISpeechDataKey** DataKey) mut
 			{
-				return VT.GetDataKey(&this, Location, DataKey);
+				return VT.GetDataKey(ref this, Location, DataKey);
 			}
 			public HRESULT EnumerateTokens(BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** Tokens) mut
 			{
-				return VT.EnumerateTokens(&this, RequiredAttributes, OptionalAttributes, Tokens);
+				return VT.EnumerateTokens(ref this, RequiredAttributes, OptionalAttributes, Tokens);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechObjectTokenCategory *self, BSTR* Id) get_Id;
-				public new function HRESULT(ISpeechObjectTokenCategory *self, BSTR TokenId) put_Default;
-				public new function HRESULT(ISpeechObjectTokenCategory *self, BSTR* TokenId) get_Default;
-				public new function HRESULT(ISpeechObjectTokenCategory *self, BSTR Id, int16 CreateIfNotExist) SetId;
-				public new function HRESULT(ISpeechObjectTokenCategory *self, SpeechDataKeyLocation Location, ISpeechDataKey** DataKey) GetDataKey;
-				public new function HRESULT(ISpeechObjectTokenCategory *self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** Tokens) EnumerateTokens;
+				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR* Id) get_Id;
+				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR TokenId) put_Default;
+				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR* TokenId) get_Default;
+				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR Id, int16 CreateIfNotExist) SetId;
+				public new function HRESULT(ref ISpeechObjectTokenCategory self, SpeechDataKeyLocation Location, ISpeechDataKey** DataKey) GetDataKey;
+				public new function HRESULT(ref ISpeechObjectTokenCategory self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** Tokens) EnumerateTokens;
 			}
 		}
 		[CRepr]
@@ -3805,39 +3805,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_MinNotification(int32* MinNotification) mut
+			public HRESULT get_MinNotification(out int32 MinNotification) mut
 			{
-				return VT.get_MinNotification(&this, MinNotification);
+				return VT.get_MinNotification(ref this, out MinNotification);
 			}
 			public HRESULT put_MinNotification(int32 MinNotification) mut
 			{
-				return VT.put_MinNotification(&this, MinNotification);
+				return VT.put_MinNotification(ref this, MinNotification);
 			}
-			public HRESULT get_BufferSize(int32* BufferSize) mut
+			public HRESULT get_BufferSize(out int32 BufferSize) mut
 			{
-				return VT.get_BufferSize(&this, BufferSize);
+				return VT.get_BufferSize(ref this, out BufferSize);
 			}
 			public HRESULT put_BufferSize(int32 BufferSize) mut
 			{
-				return VT.put_BufferSize(&this, BufferSize);
+				return VT.put_BufferSize(ref this, BufferSize);
 			}
-			public HRESULT get_EventBias(int32* EventBias) mut
+			public HRESULT get_EventBias(out int32 EventBias) mut
 			{
-				return VT.get_EventBias(&this, EventBias);
+				return VT.get_EventBias(ref this, out EventBias);
 			}
 			public HRESULT put_EventBias(int32 EventBias) mut
 			{
-				return VT.put_EventBias(&this, EventBias);
+				return VT.put_EventBias(ref this, EventBias);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechAudioBufferInfo *self, int32* MinNotification) get_MinNotification;
-				public new function HRESULT(ISpeechAudioBufferInfo *self, int32 MinNotification) put_MinNotification;
-				public new function HRESULT(ISpeechAudioBufferInfo *self, int32* BufferSize) get_BufferSize;
-				public new function HRESULT(ISpeechAudioBufferInfo *self, int32 BufferSize) put_BufferSize;
-				public new function HRESULT(ISpeechAudioBufferInfo *self, int32* EventBias) get_EventBias;
-				public new function HRESULT(ISpeechAudioBufferInfo *self, int32 EventBias) put_EventBias;
+				public new function HRESULT(ref ISpeechAudioBufferInfo self, out int32 MinNotification) get_MinNotification;
+				public new function HRESULT(ref ISpeechAudioBufferInfo self, int32 MinNotification) put_MinNotification;
+				public new function HRESULT(ref ISpeechAudioBufferInfo self, out int32 BufferSize) get_BufferSize;
+				public new function HRESULT(ref ISpeechAudioBufferInfo self, int32 BufferSize) put_BufferSize;
+				public new function HRESULT(ref ISpeechAudioBufferInfo self, out int32 EventBias) get_EventBias;
+				public new function HRESULT(ref ISpeechAudioBufferInfo self, int32 EventBias) put_EventBias;
 			}
 		}
 		[CRepr]
@@ -3847,34 +3847,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FreeBufferSpace(int32* FreeBufferSpace) mut
+			public HRESULT get_FreeBufferSpace(out int32 FreeBufferSpace) mut
 			{
-				return VT.get_FreeBufferSpace(&this, FreeBufferSpace);
+				return VT.get_FreeBufferSpace(ref this, out FreeBufferSpace);
 			}
-			public HRESULT get_NonBlockingIO(int32* NonBlockingIO) mut
+			public HRESULT get_NonBlockingIO(out int32 NonBlockingIO) mut
 			{
-				return VT.get_NonBlockingIO(&this, NonBlockingIO);
+				return VT.get_NonBlockingIO(ref this, out NonBlockingIO);
 			}
-			public HRESULT get_State(SpeechAudioState* State) mut
+			public HRESULT get_State(out SpeechAudioState State) mut
 			{
-				return VT.get_State(&this, State);
+				return VT.get_State(ref this, out State);
 			}
-			public HRESULT get_CurrentSeekPosition(VARIANT* CurrentSeekPosition) mut
+			public HRESULT get_CurrentSeekPosition(out VARIANT CurrentSeekPosition) mut
 			{
-				return VT.get_CurrentSeekPosition(&this, CurrentSeekPosition);
+				return VT.get_CurrentSeekPosition(ref this, out CurrentSeekPosition);
 			}
-			public HRESULT get_CurrentDevicePosition(VARIANT* CurrentDevicePosition) mut
+			public HRESULT get_CurrentDevicePosition(out VARIANT CurrentDevicePosition) mut
 			{
-				return VT.get_CurrentDevicePosition(&this, CurrentDevicePosition);
+				return VT.get_CurrentDevicePosition(ref this, out CurrentDevicePosition);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechAudioStatus *self, int32* FreeBufferSpace) get_FreeBufferSpace;
-				public new function HRESULT(ISpeechAudioStatus *self, int32* NonBlockingIO) get_NonBlockingIO;
-				public new function HRESULT(ISpeechAudioStatus *self, SpeechAudioState* State) get_State;
-				public new function HRESULT(ISpeechAudioStatus *self, VARIANT* CurrentSeekPosition) get_CurrentSeekPosition;
-				public new function HRESULT(ISpeechAudioStatus *self, VARIANT* CurrentDevicePosition) get_CurrentDevicePosition;
+				public new function HRESULT(ref ISpeechAudioStatus self, out int32 FreeBufferSpace) get_FreeBufferSpace;
+				public new function HRESULT(ref ISpeechAudioStatus self, out int32 NonBlockingIO) get_NonBlockingIO;
+				public new function HRESULT(ref ISpeechAudioStatus self, out SpeechAudioState State) get_State;
+				public new function HRESULT(ref ISpeechAudioStatus self, out VARIANT CurrentSeekPosition) get_CurrentSeekPosition;
+				public new function HRESULT(ref ISpeechAudioStatus self, out VARIANT CurrentDevicePosition) get_CurrentDevicePosition;
 			}
 		}
 		[CRepr]
@@ -3884,39 +3884,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Type(SpeechAudioFormatType* AudioFormat) mut
+			public HRESULT get_Type(out SpeechAudioFormatType AudioFormat) mut
 			{
-				return VT.get_Type(&this, AudioFormat);
+				return VT.get_Type(ref this, out AudioFormat);
 			}
 			public HRESULT put_Type(SpeechAudioFormatType AudioFormat) mut
 			{
-				return VT.put_Type(&this, AudioFormat);
+				return VT.put_Type(ref this, AudioFormat);
 			}
 			public HRESULT get_Guid(BSTR* Guid) mut
 			{
-				return VT.get_Guid(&this, Guid);
+				return VT.get_Guid(ref this, Guid);
 			}
 			public HRESULT put_Guid(BSTR Guid) mut
 			{
-				return VT.put_Guid(&this, Guid);
+				return VT.put_Guid(ref this, Guid);
 			}
 			public HRESULT GetWaveFormatEx(ISpeechWaveFormatEx** SpeechWaveFormatEx) mut
 			{
-				return VT.GetWaveFormatEx(&this, SpeechWaveFormatEx);
+				return VT.GetWaveFormatEx(ref this, SpeechWaveFormatEx);
 			}
 			public HRESULT SetWaveFormatEx(ISpeechWaveFormatEx* SpeechWaveFormatEx) mut
 			{
-				return VT.SetWaveFormatEx(&this, SpeechWaveFormatEx);
+				return VT.SetWaveFormatEx(ref this, SpeechWaveFormatEx);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechAudioFormat *self, SpeechAudioFormatType* AudioFormat) get_Type;
-				public new function HRESULT(ISpeechAudioFormat *self, SpeechAudioFormatType AudioFormat) put_Type;
-				public new function HRESULT(ISpeechAudioFormat *self, BSTR* Guid) get_Guid;
-				public new function HRESULT(ISpeechAudioFormat *self, BSTR Guid) put_Guid;
-				public new function HRESULT(ISpeechAudioFormat *self, ISpeechWaveFormatEx** SpeechWaveFormatEx) GetWaveFormatEx;
-				public new function HRESULT(ISpeechAudioFormat *self, ISpeechWaveFormatEx* SpeechWaveFormatEx) SetWaveFormatEx;
+				public new function HRESULT(ref ISpeechAudioFormat self, out SpeechAudioFormatType AudioFormat) get_Type;
+				public new function HRESULT(ref ISpeechAudioFormat self, SpeechAudioFormatType AudioFormat) put_Type;
+				public new function HRESULT(ref ISpeechAudioFormat self, BSTR* Guid) get_Guid;
+				public new function HRESULT(ref ISpeechAudioFormat self, BSTR Guid) put_Guid;
+				public new function HRESULT(ref ISpeechAudioFormat self, ISpeechWaveFormatEx** SpeechWaveFormatEx) GetWaveFormatEx;
+				public new function HRESULT(ref ISpeechAudioFormat self, ISpeechWaveFormatEx* SpeechWaveFormatEx) SetWaveFormatEx;
 			}
 		}
 		[CRepr]
@@ -3926,79 +3926,79 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FormatTag(int16* FormatTag) mut
+			public HRESULT get_FormatTag(out int16 FormatTag) mut
 			{
-				return VT.get_FormatTag(&this, FormatTag);
+				return VT.get_FormatTag(ref this, out FormatTag);
 			}
 			public HRESULT put_FormatTag(int16 FormatTag) mut
 			{
-				return VT.put_FormatTag(&this, FormatTag);
+				return VT.put_FormatTag(ref this, FormatTag);
 			}
-			public HRESULT get_Channels(int16* Channels) mut
+			public HRESULT get_Channels(out int16 Channels) mut
 			{
-				return VT.get_Channels(&this, Channels);
+				return VT.get_Channels(ref this, out Channels);
 			}
 			public HRESULT put_Channels(int16 Channels) mut
 			{
-				return VT.put_Channels(&this, Channels);
+				return VT.put_Channels(ref this, Channels);
 			}
-			public HRESULT get_SamplesPerSec(int32* SamplesPerSec) mut
+			public HRESULT get_SamplesPerSec(out int32 SamplesPerSec) mut
 			{
-				return VT.get_SamplesPerSec(&this, SamplesPerSec);
+				return VT.get_SamplesPerSec(ref this, out SamplesPerSec);
 			}
 			public HRESULT put_SamplesPerSec(int32 SamplesPerSec) mut
 			{
-				return VT.put_SamplesPerSec(&this, SamplesPerSec);
+				return VT.put_SamplesPerSec(ref this, SamplesPerSec);
 			}
-			public HRESULT get_AvgBytesPerSec(int32* AvgBytesPerSec) mut
+			public HRESULT get_AvgBytesPerSec(out int32 AvgBytesPerSec) mut
 			{
-				return VT.get_AvgBytesPerSec(&this, AvgBytesPerSec);
+				return VT.get_AvgBytesPerSec(ref this, out AvgBytesPerSec);
 			}
 			public HRESULT put_AvgBytesPerSec(int32 AvgBytesPerSec) mut
 			{
-				return VT.put_AvgBytesPerSec(&this, AvgBytesPerSec);
+				return VT.put_AvgBytesPerSec(ref this, AvgBytesPerSec);
 			}
-			public HRESULT get_BlockAlign(int16* BlockAlign) mut
+			public HRESULT get_BlockAlign(out int16 BlockAlign) mut
 			{
-				return VT.get_BlockAlign(&this, BlockAlign);
+				return VT.get_BlockAlign(ref this, out BlockAlign);
 			}
 			public HRESULT put_BlockAlign(int16 BlockAlign) mut
 			{
-				return VT.put_BlockAlign(&this, BlockAlign);
+				return VT.put_BlockAlign(ref this, BlockAlign);
 			}
-			public HRESULT get_BitsPerSample(int16* BitsPerSample) mut
+			public HRESULT get_BitsPerSample(out int16 BitsPerSample) mut
 			{
-				return VT.get_BitsPerSample(&this, BitsPerSample);
+				return VT.get_BitsPerSample(ref this, out BitsPerSample);
 			}
 			public HRESULT put_BitsPerSample(int16 BitsPerSample) mut
 			{
-				return VT.put_BitsPerSample(&this, BitsPerSample);
+				return VT.put_BitsPerSample(ref this, BitsPerSample);
 			}
-			public HRESULT get_ExtraData(VARIANT* ExtraData) mut
+			public HRESULT get_ExtraData(out VARIANT ExtraData) mut
 			{
-				return VT.get_ExtraData(&this, ExtraData);
+				return VT.get_ExtraData(ref this, out ExtraData);
 			}
 			public HRESULT put_ExtraData(VARIANT ExtraData) mut
 			{
-				return VT.put_ExtraData(&this, ExtraData);
+				return VT.put_ExtraData(ref this, ExtraData);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechWaveFormatEx *self, int16* FormatTag) get_FormatTag;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int16 FormatTag) put_FormatTag;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int16* Channels) get_Channels;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int16 Channels) put_Channels;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int32* SamplesPerSec) get_SamplesPerSec;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int32 SamplesPerSec) put_SamplesPerSec;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int32* AvgBytesPerSec) get_AvgBytesPerSec;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int32 AvgBytesPerSec) put_AvgBytesPerSec;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int16* BlockAlign) get_BlockAlign;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int16 BlockAlign) put_BlockAlign;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int16* BitsPerSample) get_BitsPerSample;
-				public new function HRESULT(ISpeechWaveFormatEx *self, int16 BitsPerSample) put_BitsPerSample;
-				public new function HRESULT(ISpeechWaveFormatEx *self, VARIANT* ExtraData) get_ExtraData;
-				public new function HRESULT(ISpeechWaveFormatEx *self, VARIANT ExtraData) put_ExtraData;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, out int16 FormatTag) get_FormatTag;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, int16 FormatTag) put_FormatTag;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, out int16 Channels) get_Channels;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, int16 Channels) put_Channels;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, out int32 SamplesPerSec) get_SamplesPerSec;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, int32 SamplesPerSec) put_SamplesPerSec;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, out int32 AvgBytesPerSec) get_AvgBytesPerSec;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, int32 AvgBytesPerSec) put_AvgBytesPerSec;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, out int16 BlockAlign) get_BlockAlign;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, int16 BlockAlign) put_BlockAlign;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, out int16 BitsPerSample) get_BitsPerSample;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, int16 BitsPerSample) put_BitsPerSample;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, out VARIANT ExtraData) get_ExtraData;
+				public new function HRESULT(ref ISpeechWaveFormatEx self, VARIANT ExtraData) put_ExtraData;
 			}
 		}
 		[CRepr]
@@ -4010,32 +4010,32 @@ namespace Win32
 			
 			public HRESULT get_Format(ISpeechAudioFormat** AudioFormat) mut
 			{
-				return VT.get_Format(&this, AudioFormat);
+				return VT.get_Format(ref this, AudioFormat);
 			}
 			public HRESULT putref_Format(ISpeechAudioFormat* AudioFormat) mut
 			{
-				return VT.putref_Format(&this, AudioFormat);
+				return VT.putref_Format(ref this, AudioFormat);
 			}
-			public HRESULT Read(VARIANT* Buffer, int32 NumberOfBytes, int32* BytesRead) mut
+			public HRESULT Read(out VARIANT Buffer, int32 NumberOfBytes, out int32 BytesRead) mut
 			{
-				return VT.Read(&this, Buffer, NumberOfBytes, BytesRead);
+				return VT.Read(ref this, out Buffer, NumberOfBytes, out BytesRead);
 			}
-			public HRESULT Write(VARIANT Buffer, int32* BytesWritten) mut
+			public HRESULT Write(VARIANT Buffer, out int32 BytesWritten) mut
 			{
-				return VT.Write(&this, Buffer, BytesWritten);
+				return VT.Write(ref this, Buffer, out BytesWritten);
 			}
-			public HRESULT Seek(VARIANT Position, SpeechStreamSeekPositionType Origin, VARIANT* NewPosition) mut
+			public HRESULT Seek(VARIANT Position, SpeechStreamSeekPositionType Origin, out VARIANT NewPosition) mut
 			{
-				return VT.Seek(&this, Position, Origin, NewPosition);
+				return VT.Seek(ref this, Position, Origin, out NewPosition);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechBaseStream *self, ISpeechAudioFormat** AudioFormat) get_Format;
-				public new function HRESULT(ISpeechBaseStream *self, ISpeechAudioFormat* AudioFormat) putref_Format;
-				public new function HRESULT(ISpeechBaseStream *self, VARIANT* Buffer, int32 NumberOfBytes, int32* BytesRead) Read;
-				public new function HRESULT(ISpeechBaseStream *self, VARIANT Buffer, int32* BytesWritten) Write;
-				public new function HRESULT(ISpeechBaseStream *self, VARIANT Position, SpeechStreamSeekPositionType Origin, VARIANT* NewPosition) Seek;
+				public new function HRESULT(ref ISpeechBaseStream self, ISpeechAudioFormat** AudioFormat) get_Format;
+				public new function HRESULT(ref ISpeechBaseStream self, ISpeechAudioFormat* AudioFormat) putref_Format;
+				public new function HRESULT(ref ISpeechBaseStream self, out VARIANT Buffer, int32 NumberOfBytes, out int32 BytesRead) Read;
+				public new function HRESULT(ref ISpeechBaseStream self, VARIANT Buffer, out int32 BytesWritten) Write;
+				public new function HRESULT(ref ISpeechBaseStream self, VARIANT Position, SpeechStreamSeekPositionType Origin, out VARIANT NewPosition) Seek;
 			}
 		}
 		[CRepr]
@@ -4047,17 +4047,17 @@ namespace Win32
 			
 			public HRESULT Open(BSTR FileName, SpeechStreamFileMode FileMode, int16 DoEvents) mut
 			{
-				return VT.Open(&this, FileName, FileMode, DoEvents);
+				return VT.Open(ref this, FileName, FileMode, DoEvents);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : ISpeechBaseStream.VTable
 			{
-				public new function HRESULT(ISpeechFileStream *self, BSTR FileName, SpeechStreamFileMode FileMode, int16 DoEvents) Open;
-				public new function HRESULT(ISpeechFileStream *self) Close;
+				public new function HRESULT(ref ISpeechFileStream self, BSTR FileName, SpeechStreamFileMode FileMode, int16 DoEvents) Open;
+				public new function HRESULT(ref ISpeechFileStream self) Close;
 			}
 		}
 		[CRepr]
@@ -4069,17 +4069,17 @@ namespace Win32
 			
 			public HRESULT SetData(VARIANT Data) mut
 			{
-				return VT.SetData(&this, Data);
+				return VT.SetData(ref this, Data);
 			}
-			public HRESULT GetData(VARIANT* pData) mut
+			public HRESULT GetData(out VARIANT pData) mut
 			{
-				return VT.GetData(&this, pData);
+				return VT.GetData(ref this, out pData);
 			}
 			[CRepr]
 			public struct VTable : ISpeechBaseStream.VTable
 			{
-				public new function HRESULT(ISpeechMemoryStream *self, VARIANT Data) SetData;
-				public new function HRESULT(ISpeechMemoryStream *self, VARIANT* pData) GetData;
+				public new function HRESULT(ref ISpeechMemoryStream self, VARIANT Data) SetData;
+				public new function HRESULT(ref ISpeechMemoryStream self, out VARIANT pData) GetData;
 			}
 		}
 		[CRepr]
@@ -4091,17 +4091,17 @@ namespace Win32
 			
 			public HRESULT get_BaseStream(IUnknown** ppUnkStream) mut
 			{
-				return VT.get_BaseStream(&this, ppUnkStream);
+				return VT.get_BaseStream(ref this, ppUnkStream);
 			}
 			public HRESULT putref_BaseStream(IUnknown* pUnkStream) mut
 			{
-				return VT.putref_BaseStream(&this, pUnkStream);
+				return VT.putref_BaseStream(ref this, pUnkStream);
 			}
 			[CRepr]
 			public struct VTable : ISpeechBaseStream.VTable
 			{
-				public new function HRESULT(ISpeechCustomStream *self, IUnknown** ppUnkStream) get_BaseStream;
-				public new function HRESULT(ISpeechCustomStream *self, IUnknown* pUnkStream) putref_BaseStream;
+				public new function HRESULT(ref ISpeechCustomStream self, IUnknown** ppUnkStream) get_BaseStream;
+				public new function HRESULT(ref ISpeechCustomStream self, IUnknown* pUnkStream) putref_BaseStream;
 			}
 		}
 		[CRepr]
@@ -4113,52 +4113,52 @@ namespace Win32
 			
 			public HRESULT get_Status(ISpeechAudioStatus** Status) mut
 			{
-				return VT.get_Status(&this, Status);
+				return VT.get_Status(ref this, Status);
 			}
 			public HRESULT get_BufferInfo(ISpeechAudioBufferInfo** BufferInfo) mut
 			{
-				return VT.get_BufferInfo(&this, BufferInfo);
+				return VT.get_BufferInfo(ref this, BufferInfo);
 			}
 			public HRESULT get_DefaultFormat(ISpeechAudioFormat** StreamFormat) mut
 			{
-				return VT.get_DefaultFormat(&this, StreamFormat);
+				return VT.get_DefaultFormat(ref this, StreamFormat);
 			}
-			public HRESULT get_Volume(int32* Volume) mut
+			public HRESULT get_Volume(out int32 Volume) mut
 			{
-				return VT.get_Volume(&this, Volume);
+				return VT.get_Volume(ref this, out Volume);
 			}
 			public HRESULT put_Volume(int32 Volume) mut
 			{
-				return VT.put_Volume(&this, Volume);
+				return VT.put_Volume(ref this, Volume);
 			}
-			public HRESULT get_BufferNotifySize(int32* BufferNotifySize) mut
+			public HRESULT get_BufferNotifySize(out int32 BufferNotifySize) mut
 			{
-				return VT.get_BufferNotifySize(&this, BufferNotifySize);
+				return VT.get_BufferNotifySize(ref this, out BufferNotifySize);
 			}
 			public HRESULT put_BufferNotifySize(int32 BufferNotifySize) mut
 			{
-				return VT.put_BufferNotifySize(&this, BufferNotifySize);
+				return VT.put_BufferNotifySize(ref this, BufferNotifySize);
 			}
-			public HRESULT get_EventHandle(int32* EventHandle) mut
+			public HRESULT get_EventHandle(out int32 EventHandle) mut
 			{
-				return VT.get_EventHandle(&this, EventHandle);
+				return VT.get_EventHandle(ref this, out EventHandle);
 			}
 			public HRESULT SetState(SpeechAudioState State) mut
 			{
-				return VT.SetState(&this, State);
+				return VT.SetState(ref this, State);
 			}
 			[CRepr]
 			public struct VTable : ISpeechBaseStream.VTable
 			{
-				public new function HRESULT(ISpeechAudio *self, ISpeechAudioStatus** Status) get_Status;
-				public new function HRESULT(ISpeechAudio *self, ISpeechAudioBufferInfo** BufferInfo) get_BufferInfo;
-				public new function HRESULT(ISpeechAudio *self, ISpeechAudioFormat** StreamFormat) get_DefaultFormat;
-				public new function HRESULT(ISpeechAudio *self, int32* Volume) get_Volume;
-				public new function HRESULT(ISpeechAudio *self, int32 Volume) put_Volume;
-				public new function HRESULT(ISpeechAudio *self, int32* BufferNotifySize) get_BufferNotifySize;
-				public new function HRESULT(ISpeechAudio *self, int32 BufferNotifySize) put_BufferNotifySize;
-				public new function HRESULT(ISpeechAudio *self, int32* EventHandle) get_EventHandle;
-				public new function HRESULT(ISpeechAudio *self, SpeechAudioState State) SetState;
+				public new function HRESULT(ref ISpeechAudio self, ISpeechAudioStatus** Status) get_Status;
+				public new function HRESULT(ref ISpeechAudio self, ISpeechAudioBufferInfo** BufferInfo) get_BufferInfo;
+				public new function HRESULT(ref ISpeechAudio self, ISpeechAudioFormat** StreamFormat) get_DefaultFormat;
+				public new function HRESULT(ref ISpeechAudio self, out int32 Volume) get_Volume;
+				public new function HRESULT(ref ISpeechAudio self, int32 Volume) put_Volume;
+				public new function HRESULT(ref ISpeechAudio self, out int32 BufferNotifySize) get_BufferNotifySize;
+				public new function HRESULT(ref ISpeechAudio self, int32 BufferNotifySize) put_BufferNotifySize;
+				public new function HRESULT(ref ISpeechAudio self, out int32 EventHandle) get_EventHandle;
+				public new function HRESULT(ref ISpeechAudio self, SpeechAudioState State) SetState;
 			}
 		}
 		[CRepr]
@@ -4168,34 +4168,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DeviceId(int32* DeviceId) mut
+			public HRESULT get_DeviceId(out int32 DeviceId) mut
 			{
-				return VT.get_DeviceId(&this, DeviceId);
+				return VT.get_DeviceId(ref this, out DeviceId);
 			}
 			public HRESULT put_DeviceId(int32 DeviceId) mut
 			{
-				return VT.put_DeviceId(&this, DeviceId);
+				return VT.put_DeviceId(ref this, DeviceId);
 			}
-			public HRESULT get_LineId(int32* LineId) mut
+			public HRESULT get_LineId(out int32 LineId) mut
 			{
-				return VT.get_LineId(&this, LineId);
+				return VT.get_LineId(ref this, out LineId);
 			}
 			public HRESULT put_LineId(int32 LineId) mut
 			{
-				return VT.put_LineId(&this, LineId);
+				return VT.put_LineId(ref this, LineId);
 			}
-			public HRESULT get_MMHandle(int32* Handle) mut
+			public HRESULT get_MMHandle(out int32 Handle) mut
 			{
-				return VT.get_MMHandle(&this, Handle);
+				return VT.get_MMHandle(ref this, out Handle);
 			}
 			[CRepr]
 			public struct VTable : ISpeechAudio.VTable
 			{
-				public new function HRESULT(ISpeechMMSysAudio *self, int32* DeviceId) get_DeviceId;
-				public new function HRESULT(ISpeechMMSysAudio *self, int32 DeviceId) put_DeviceId;
-				public new function HRESULT(ISpeechMMSysAudio *self, int32* LineId) get_LineId;
-				public new function HRESULT(ISpeechMMSysAudio *self, int32 LineId) put_LineId;
-				public new function HRESULT(ISpeechMMSysAudio *self, int32* Handle) get_MMHandle;
+				public new function HRESULT(ref ISpeechMMSysAudio self, out int32 DeviceId) get_DeviceId;
+				public new function HRESULT(ref ISpeechMMSysAudio self, int32 DeviceId) put_DeviceId;
+				public new function HRESULT(ref ISpeechMMSysAudio self, out int32 LineId) get_LineId;
+				public new function HRESULT(ref ISpeechMMSysAudio self, int32 LineId) put_LineId;
+				public new function HRESULT(ref ISpeechMMSysAudio self, out int32 Handle) get_MMHandle;
 			}
 		}
 		[CRepr]
@@ -4207,167 +4207,167 @@ namespace Win32
 			
 			public HRESULT get_Status(ISpeechVoiceStatus** Status) mut
 			{
-				return VT.get_Status(&this, Status);
+				return VT.get_Status(ref this, Status);
 			}
 			public HRESULT get_Voice(ISpeechObjectToken** Voice) mut
 			{
-				return VT.get_Voice(&this, Voice);
+				return VT.get_Voice(ref this, Voice);
 			}
 			public HRESULT putref_Voice(ISpeechObjectToken* Voice) mut
 			{
-				return VT.putref_Voice(&this, Voice);
+				return VT.putref_Voice(ref this, Voice);
 			}
 			public HRESULT get_AudioOutput(ISpeechObjectToken** AudioOutput) mut
 			{
-				return VT.get_AudioOutput(&this, AudioOutput);
+				return VT.get_AudioOutput(ref this, AudioOutput);
 			}
 			public HRESULT putref_AudioOutput(ISpeechObjectToken* AudioOutput) mut
 			{
-				return VT.putref_AudioOutput(&this, AudioOutput);
+				return VT.putref_AudioOutput(ref this, AudioOutput);
 			}
 			public HRESULT get_AudioOutputStream(ISpeechBaseStream** AudioOutputStream) mut
 			{
-				return VT.get_AudioOutputStream(&this, AudioOutputStream);
+				return VT.get_AudioOutputStream(ref this, AudioOutputStream);
 			}
 			public HRESULT putref_AudioOutputStream(ISpeechBaseStream* AudioOutputStream) mut
 			{
-				return VT.putref_AudioOutputStream(&this, AudioOutputStream);
+				return VT.putref_AudioOutputStream(ref this, AudioOutputStream);
 			}
-			public HRESULT get_Rate(int32* Rate) mut
+			public HRESULT get_Rate(out int32 Rate) mut
 			{
-				return VT.get_Rate(&this, Rate);
+				return VT.get_Rate(ref this, out Rate);
 			}
 			public HRESULT put_Rate(int32 Rate) mut
 			{
-				return VT.put_Rate(&this, Rate);
+				return VT.put_Rate(ref this, Rate);
 			}
-			public HRESULT get_Volume(int32* Volume) mut
+			public HRESULT get_Volume(out int32 Volume) mut
 			{
-				return VT.get_Volume(&this, Volume);
+				return VT.get_Volume(ref this, out Volume);
 			}
 			public HRESULT put_Volume(int32 Volume) mut
 			{
-				return VT.put_Volume(&this, Volume);
+				return VT.put_Volume(ref this, Volume);
 			}
 			public HRESULT put_AllowAudioOutputFormatChangesOnNextSet(int16 Allow) mut
 			{
-				return VT.put_AllowAudioOutputFormatChangesOnNextSet(&this, Allow);
+				return VT.put_AllowAudioOutputFormatChangesOnNextSet(ref this, Allow);
 			}
-			public HRESULT get_AllowAudioOutputFormatChangesOnNextSet(int16* Allow) mut
+			public HRESULT get_AllowAudioOutputFormatChangesOnNextSet(out int16 Allow) mut
 			{
-				return VT.get_AllowAudioOutputFormatChangesOnNextSet(&this, Allow);
+				return VT.get_AllowAudioOutputFormatChangesOnNextSet(ref this, out Allow);
 			}
-			public HRESULT get_EventInterests(SpeechVoiceEvents* EventInterestFlags) mut
+			public HRESULT get_EventInterests(out SpeechVoiceEvents EventInterestFlags) mut
 			{
-				return VT.get_EventInterests(&this, EventInterestFlags);
+				return VT.get_EventInterests(ref this, out EventInterestFlags);
 			}
 			public HRESULT put_EventInterests(SpeechVoiceEvents EventInterestFlags) mut
 			{
-				return VT.put_EventInterests(&this, EventInterestFlags);
+				return VT.put_EventInterests(ref this, EventInterestFlags);
 			}
 			public HRESULT put_Priority(SpeechVoicePriority Priority) mut
 			{
-				return VT.put_Priority(&this, Priority);
+				return VT.put_Priority(ref this, Priority);
 			}
-			public HRESULT get_Priority(SpeechVoicePriority* Priority) mut
+			public HRESULT get_Priority(out SpeechVoicePriority Priority) mut
 			{
-				return VT.get_Priority(&this, Priority);
+				return VT.get_Priority(ref this, out Priority);
 			}
 			public HRESULT put_AlertBoundary(SpeechVoiceEvents Boundary) mut
 			{
-				return VT.put_AlertBoundary(&this, Boundary);
+				return VT.put_AlertBoundary(ref this, Boundary);
 			}
-			public HRESULT get_AlertBoundary(SpeechVoiceEvents* Boundary) mut
+			public HRESULT get_AlertBoundary(out SpeechVoiceEvents Boundary) mut
 			{
-				return VT.get_AlertBoundary(&this, Boundary);
+				return VT.get_AlertBoundary(ref this, out Boundary);
 			}
 			public HRESULT put_SynchronousSpeakTimeout(int32 msTimeout) mut
 			{
-				return VT.put_SynchronousSpeakTimeout(&this, msTimeout);
+				return VT.put_SynchronousSpeakTimeout(ref this, msTimeout);
 			}
-			public HRESULT get_SynchronousSpeakTimeout(int32* msTimeout) mut
+			public HRESULT get_SynchronousSpeakTimeout(out int32 msTimeout) mut
 			{
-				return VT.get_SynchronousSpeakTimeout(&this, msTimeout);
+				return VT.get_SynchronousSpeakTimeout(ref this, out msTimeout);
 			}
-			public HRESULT Speak(BSTR Text, SpeechVoiceSpeakFlags Flags, int32* StreamNumber) mut
+			public HRESULT Speak(BSTR Text, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) mut
 			{
-				return VT.Speak(&this, Text, Flags, StreamNumber);
+				return VT.Speak(ref this, Text, Flags, out StreamNumber);
 			}
-			public HRESULT SpeakStream(ISpeechBaseStream* Stream, SpeechVoiceSpeakFlags Flags, int32* StreamNumber) mut
+			public HRESULT SpeakStream(ISpeechBaseStream* Stream, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) mut
 			{
-				return VT.SpeakStream(&this, Stream, Flags, StreamNumber);
+				return VT.SpeakStream(ref this, Stream, Flags, out StreamNumber);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Resume() mut
 			{
-				return VT.Resume(&this);
+				return VT.Resume(ref this);
 			}
-			public HRESULT Skip(BSTR Type, int32 NumItems, int32* NumSkipped) mut
+			public HRESULT Skip(BSTR Type, int32 NumItems, out int32 NumSkipped) mut
 			{
-				return VT.Skip(&this, Type, NumItems, NumSkipped);
+				return VT.Skip(ref this, Type, NumItems, out NumSkipped);
 			}
 			public HRESULT GetVoices(BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) mut
 			{
-				return VT.GetVoices(&this, RequiredAttributes, OptionalAttributes, ObjectTokens);
+				return VT.GetVoices(ref this, RequiredAttributes, OptionalAttributes, ObjectTokens);
 			}
 			public HRESULT GetAudioOutputs(BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) mut
 			{
-				return VT.GetAudioOutputs(&this, RequiredAttributes, OptionalAttributes, ObjectTokens);
+				return VT.GetAudioOutputs(ref this, RequiredAttributes, OptionalAttributes, ObjectTokens);
 			}
-			public HRESULT WaitUntilDone(int32 msTimeout, int16* Done) mut
+			public HRESULT WaitUntilDone(int32 msTimeout, out int16 Done) mut
 			{
-				return VT.WaitUntilDone(&this, msTimeout, Done);
+				return VT.WaitUntilDone(ref this, msTimeout, out Done);
 			}
-			public HRESULT SpeakCompleteEvent(int32* Handle) mut
+			public HRESULT SpeakCompleteEvent(out int32 Handle) mut
 			{
-				return VT.SpeakCompleteEvent(&this, Handle);
+				return VT.SpeakCompleteEvent(ref this, out Handle);
 			}
-			public HRESULT IsUISupported(BSTR TypeOfUI, VARIANT* ExtraData, int16* Supported) mut
+			public HRESULT IsUISupported(BSTR TypeOfUI, in VARIANT ExtraData, out int16 Supported) mut
 			{
-				return VT.IsUISupported(&this, TypeOfUI, ExtraData, Supported);
+				return VT.IsUISupported(ref this, TypeOfUI, ExtraData, out Supported);
 			}
-			public HRESULT DisplayUI(int32 hWndParent, BSTR Title, BSTR TypeOfUI, VARIANT* ExtraData) mut
+			public HRESULT DisplayUI(int32 hWndParent, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData) mut
 			{
-				return VT.DisplayUI(&this, hWndParent, Title, TypeOfUI, ExtraData);
+				return VT.DisplayUI(ref this, hWndParent, Title, TypeOfUI, ExtraData);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechVoice *self, ISpeechVoiceStatus** Status) get_Status;
-				public new function HRESULT(ISpeechVoice *self, ISpeechObjectToken** Voice) get_Voice;
-				public new function HRESULT(ISpeechVoice *self, ISpeechObjectToken* Voice) putref_Voice;
-				public new function HRESULT(ISpeechVoice *self, ISpeechObjectToken** AudioOutput) get_AudioOutput;
-				public new function HRESULT(ISpeechVoice *self, ISpeechObjectToken* AudioOutput) putref_AudioOutput;
-				public new function HRESULT(ISpeechVoice *self, ISpeechBaseStream** AudioOutputStream) get_AudioOutputStream;
-				public new function HRESULT(ISpeechVoice *self, ISpeechBaseStream* AudioOutputStream) putref_AudioOutputStream;
-				public new function HRESULT(ISpeechVoice *self, int32* Rate) get_Rate;
-				public new function HRESULT(ISpeechVoice *self, int32 Rate) put_Rate;
-				public new function HRESULT(ISpeechVoice *self, int32* Volume) get_Volume;
-				public new function HRESULT(ISpeechVoice *self, int32 Volume) put_Volume;
-				public new function HRESULT(ISpeechVoice *self, int16 Allow) put_AllowAudioOutputFormatChangesOnNextSet;
-				public new function HRESULT(ISpeechVoice *self, int16* Allow) get_AllowAudioOutputFormatChangesOnNextSet;
-				public new function HRESULT(ISpeechVoice *self, SpeechVoiceEvents* EventInterestFlags) get_EventInterests;
-				public new function HRESULT(ISpeechVoice *self, SpeechVoiceEvents EventInterestFlags) put_EventInterests;
-				public new function HRESULT(ISpeechVoice *self, SpeechVoicePriority Priority) put_Priority;
-				public new function HRESULT(ISpeechVoice *self, SpeechVoicePriority* Priority) get_Priority;
-				public new function HRESULT(ISpeechVoice *self, SpeechVoiceEvents Boundary) put_AlertBoundary;
-				public new function HRESULT(ISpeechVoice *self, SpeechVoiceEvents* Boundary) get_AlertBoundary;
-				public new function HRESULT(ISpeechVoice *self, int32 msTimeout) put_SynchronousSpeakTimeout;
-				public new function HRESULT(ISpeechVoice *self, int32* msTimeout) get_SynchronousSpeakTimeout;
-				public new function HRESULT(ISpeechVoice *self, BSTR Text, SpeechVoiceSpeakFlags Flags, int32* StreamNumber) Speak;
-				public new function HRESULT(ISpeechVoice *self, ISpeechBaseStream* Stream, SpeechVoiceSpeakFlags Flags, int32* StreamNumber) SpeakStream;
-				public new function HRESULT(ISpeechVoice *self) Pause;
-				public new function HRESULT(ISpeechVoice *self) Resume;
-				public new function HRESULT(ISpeechVoice *self, BSTR Type, int32 NumItems, int32* NumSkipped) Skip;
-				public new function HRESULT(ISpeechVoice *self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetVoices;
-				public new function HRESULT(ISpeechVoice *self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetAudioOutputs;
-				public new function HRESULT(ISpeechVoice *self, int32 msTimeout, int16* Done) WaitUntilDone;
-				public new function HRESULT(ISpeechVoice *self, int32* Handle) SpeakCompleteEvent;
-				public new function HRESULT(ISpeechVoice *self, BSTR TypeOfUI, VARIANT* ExtraData, int16* Supported) IsUISupported;
-				public new function HRESULT(ISpeechVoice *self, int32 hWndParent, BSTR Title, BSTR TypeOfUI, VARIANT* ExtraData) DisplayUI;
+				public new function HRESULT(ref ISpeechVoice self, ISpeechVoiceStatus** Status) get_Status;
+				public new function HRESULT(ref ISpeechVoice self, ISpeechObjectToken** Voice) get_Voice;
+				public new function HRESULT(ref ISpeechVoice self, ISpeechObjectToken* Voice) putref_Voice;
+				public new function HRESULT(ref ISpeechVoice self, ISpeechObjectToken** AudioOutput) get_AudioOutput;
+				public new function HRESULT(ref ISpeechVoice self, ISpeechObjectToken* AudioOutput) putref_AudioOutput;
+				public new function HRESULT(ref ISpeechVoice self, ISpeechBaseStream** AudioOutputStream) get_AudioOutputStream;
+				public new function HRESULT(ref ISpeechVoice self, ISpeechBaseStream* AudioOutputStream) putref_AudioOutputStream;
+				public new function HRESULT(ref ISpeechVoice self, out int32 Rate) get_Rate;
+				public new function HRESULT(ref ISpeechVoice self, int32 Rate) put_Rate;
+				public new function HRESULT(ref ISpeechVoice self, out int32 Volume) get_Volume;
+				public new function HRESULT(ref ISpeechVoice self, int32 Volume) put_Volume;
+				public new function HRESULT(ref ISpeechVoice self, int16 Allow) put_AllowAudioOutputFormatChangesOnNextSet;
+				public new function HRESULT(ref ISpeechVoice self, out int16 Allow) get_AllowAudioOutputFormatChangesOnNextSet;
+				public new function HRESULT(ref ISpeechVoice self, out SpeechVoiceEvents EventInterestFlags) get_EventInterests;
+				public new function HRESULT(ref ISpeechVoice self, SpeechVoiceEvents EventInterestFlags) put_EventInterests;
+				public new function HRESULT(ref ISpeechVoice self, SpeechVoicePriority Priority) put_Priority;
+				public new function HRESULT(ref ISpeechVoice self, out SpeechVoicePriority Priority) get_Priority;
+				public new function HRESULT(ref ISpeechVoice self, SpeechVoiceEvents Boundary) put_AlertBoundary;
+				public new function HRESULT(ref ISpeechVoice self, out SpeechVoiceEvents Boundary) get_AlertBoundary;
+				public new function HRESULT(ref ISpeechVoice self, int32 msTimeout) put_SynchronousSpeakTimeout;
+				public new function HRESULT(ref ISpeechVoice self, out int32 msTimeout) get_SynchronousSpeakTimeout;
+				public new function HRESULT(ref ISpeechVoice self, BSTR Text, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) Speak;
+				public new function HRESULT(ref ISpeechVoice self, ISpeechBaseStream* Stream, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) SpeakStream;
+				public new function HRESULT(ref ISpeechVoice self) Pause;
+				public new function HRESULT(ref ISpeechVoice self) Resume;
+				public new function HRESULT(ref ISpeechVoice self, BSTR Type, int32 NumItems, out int32 NumSkipped) Skip;
+				public new function HRESULT(ref ISpeechVoice self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetVoices;
+				public new function HRESULT(ref ISpeechVoice self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetAudioOutputs;
+				public new function HRESULT(ref ISpeechVoice self, int32 msTimeout, out int16 Done) WaitUntilDone;
+				public new function HRESULT(ref ISpeechVoice self, out int32 Handle) SpeakCompleteEvent;
+				public new function HRESULT(ref ISpeechVoice self, BSTR TypeOfUI, in VARIANT ExtraData, out int16 Supported) IsUISupported;
+				public new function HRESULT(ref ISpeechVoice self, int32 hWndParent, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData) DisplayUI;
 			}
 		}
 		[CRepr]
@@ -4377,69 +4377,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CurrentStreamNumber(int32* StreamNumber) mut
+			public HRESULT get_CurrentStreamNumber(out int32 StreamNumber) mut
 			{
-				return VT.get_CurrentStreamNumber(&this, StreamNumber);
+				return VT.get_CurrentStreamNumber(ref this, out StreamNumber);
 			}
-			public HRESULT get_LastStreamNumberQueued(int32* StreamNumber) mut
+			public HRESULT get_LastStreamNumberQueued(out int32 StreamNumber) mut
 			{
-				return VT.get_LastStreamNumberQueued(&this, StreamNumber);
+				return VT.get_LastStreamNumberQueued(ref this, out StreamNumber);
 			}
-			public HRESULT get_LastHResult(int32* HResult) mut
+			public HRESULT get_LastHResult(out int32 HResult) mut
 			{
-				return VT.get_LastHResult(&this, HResult);
+				return VT.get_LastHResult(ref this, out HResult);
 			}
-			public HRESULT get_RunningState(SpeechRunState* State) mut
+			public HRESULT get_RunningState(out SpeechRunState State) mut
 			{
-				return VT.get_RunningState(&this, State);
+				return VT.get_RunningState(ref this, out State);
 			}
-			public HRESULT get_InputWordPosition(int32* Position) mut
+			public HRESULT get_InputWordPosition(out int32 Position) mut
 			{
-				return VT.get_InputWordPosition(&this, Position);
+				return VT.get_InputWordPosition(ref this, out Position);
 			}
-			public HRESULT get_InputWordLength(int32* Length) mut
+			public HRESULT get_InputWordLength(out int32 Length) mut
 			{
-				return VT.get_InputWordLength(&this, Length);
+				return VT.get_InputWordLength(ref this, out Length);
 			}
-			public HRESULT get_InputSentencePosition(int32* Position) mut
+			public HRESULT get_InputSentencePosition(out int32 Position) mut
 			{
-				return VT.get_InputSentencePosition(&this, Position);
+				return VT.get_InputSentencePosition(ref this, out Position);
 			}
-			public HRESULT get_InputSentenceLength(int32* Length) mut
+			public HRESULT get_InputSentenceLength(out int32 Length) mut
 			{
-				return VT.get_InputSentenceLength(&this, Length);
+				return VT.get_InputSentenceLength(ref this, out Length);
 			}
 			public HRESULT get_LastBookmark(BSTR* Bookmark) mut
 			{
-				return VT.get_LastBookmark(&this, Bookmark);
+				return VT.get_LastBookmark(ref this, Bookmark);
 			}
-			public HRESULT get_LastBookmarkId(int32* BookmarkId) mut
+			public HRESULT get_LastBookmarkId(out int32 BookmarkId) mut
 			{
-				return VT.get_LastBookmarkId(&this, BookmarkId);
+				return VT.get_LastBookmarkId(ref this, out BookmarkId);
 			}
-			public HRESULT get_PhonemeId(int16* PhoneId) mut
+			public HRESULT get_PhonemeId(out int16 PhoneId) mut
 			{
-				return VT.get_PhonemeId(&this, PhoneId);
+				return VT.get_PhonemeId(ref this, out PhoneId);
 			}
-			public HRESULT get_VisemeId(int16* VisemeId) mut
+			public HRESULT get_VisemeId(out int16 VisemeId) mut
 			{
-				return VT.get_VisemeId(&this, VisemeId);
+				return VT.get_VisemeId(ref this, out VisemeId);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechVoiceStatus *self, int32* StreamNumber) get_CurrentStreamNumber;
-				public new function HRESULT(ISpeechVoiceStatus *self, int32* StreamNumber) get_LastStreamNumberQueued;
-				public new function HRESULT(ISpeechVoiceStatus *self, int32* HResult) get_LastHResult;
-				public new function HRESULT(ISpeechVoiceStatus *self, SpeechRunState* State) get_RunningState;
-				public new function HRESULT(ISpeechVoiceStatus *self, int32* Position) get_InputWordPosition;
-				public new function HRESULT(ISpeechVoiceStatus *self, int32* Length) get_InputWordLength;
-				public new function HRESULT(ISpeechVoiceStatus *self, int32* Position) get_InputSentencePosition;
-				public new function HRESULT(ISpeechVoiceStatus *self, int32* Length) get_InputSentenceLength;
-				public new function HRESULT(ISpeechVoiceStatus *self, BSTR* Bookmark) get_LastBookmark;
-				public new function HRESULT(ISpeechVoiceStatus *self, int32* BookmarkId) get_LastBookmarkId;
-				public new function HRESULT(ISpeechVoiceStatus *self, int16* PhoneId) get_PhonemeId;
-				public new function HRESULT(ISpeechVoiceStatus *self, int16* VisemeId) get_VisemeId;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 StreamNumber) get_CurrentStreamNumber;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 StreamNumber) get_LastStreamNumberQueued;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 HResult) get_LastHResult;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out SpeechRunState State) get_RunningState;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 Position) get_InputWordPosition;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 Length) get_InputWordLength;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 Position) get_InputSentencePosition;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 Length) get_InputSentenceLength;
+				public new function HRESULT(ref ISpeechVoiceStatus self, BSTR* Bookmark) get_LastBookmark;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int32 BookmarkId) get_LastBookmarkId;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int16 PhoneId) get_PhonemeId;
+				public new function HRESULT(ref ISpeechVoiceStatus self, out int16 VisemeId) get_VisemeId;
 			}
 		}
 		[CRepr]
@@ -4463,137 +4463,137 @@ namespace Win32
 			
 			public HRESULT putref_Recognizer(ISpeechObjectToken* Recognizer) mut
 			{
-				return VT.putref_Recognizer(&this, Recognizer);
+				return VT.putref_Recognizer(ref this, Recognizer);
 			}
 			public HRESULT get_Recognizer(ISpeechObjectToken** Recognizer) mut
 			{
-				return VT.get_Recognizer(&this, Recognizer);
+				return VT.get_Recognizer(ref this, Recognizer);
 			}
 			public HRESULT put_AllowAudioInputFormatChangesOnNextSet(int16 Allow) mut
 			{
-				return VT.put_AllowAudioInputFormatChangesOnNextSet(&this, Allow);
+				return VT.put_AllowAudioInputFormatChangesOnNextSet(ref this, Allow);
 			}
-			public HRESULT get_AllowAudioInputFormatChangesOnNextSet(int16* Allow) mut
+			public HRESULT get_AllowAudioInputFormatChangesOnNextSet(out int16 Allow) mut
 			{
-				return VT.get_AllowAudioInputFormatChangesOnNextSet(&this, Allow);
+				return VT.get_AllowAudioInputFormatChangesOnNextSet(ref this, out Allow);
 			}
 			public HRESULT putref_AudioInput(ISpeechObjectToken* AudioInput) mut
 			{
-				return VT.putref_AudioInput(&this, AudioInput);
+				return VT.putref_AudioInput(ref this, AudioInput);
 			}
 			public HRESULT get_AudioInput(ISpeechObjectToken** AudioInput) mut
 			{
-				return VT.get_AudioInput(&this, AudioInput);
+				return VT.get_AudioInput(ref this, AudioInput);
 			}
 			public HRESULT putref_AudioInputStream(ISpeechBaseStream* AudioInputStream) mut
 			{
-				return VT.putref_AudioInputStream(&this, AudioInputStream);
+				return VT.putref_AudioInputStream(ref this, AudioInputStream);
 			}
 			public HRESULT get_AudioInputStream(ISpeechBaseStream** AudioInputStream) mut
 			{
-				return VT.get_AudioInputStream(&this, AudioInputStream);
+				return VT.get_AudioInputStream(ref this, AudioInputStream);
 			}
-			public HRESULT get_IsShared(int16* Shared) mut
+			public HRESULT get_IsShared(out int16 Shared) mut
 			{
-				return VT.get_IsShared(&this, Shared);
+				return VT.get_IsShared(ref this, out Shared);
 			}
 			public HRESULT put_State(SpeechRecognizerState State) mut
 			{
-				return VT.put_State(&this, State);
+				return VT.put_State(ref this, State);
 			}
-			public HRESULT get_State(SpeechRecognizerState* State) mut
+			public HRESULT get_State(out SpeechRecognizerState State) mut
 			{
-				return VT.get_State(&this, State);
+				return VT.get_State(ref this, out State);
 			}
 			public HRESULT get_Status(ISpeechRecognizerStatus** Status) mut
 			{
-				return VT.get_Status(&this, Status);
+				return VT.get_Status(ref this, Status);
 			}
 			public HRESULT putref_Profile(ISpeechObjectToken* Profile) mut
 			{
-				return VT.putref_Profile(&this, Profile);
+				return VT.putref_Profile(ref this, Profile);
 			}
 			public HRESULT get_Profile(ISpeechObjectToken** Profile) mut
 			{
-				return VT.get_Profile(&this, Profile);
+				return VT.get_Profile(ref this, Profile);
 			}
-			public HRESULT EmulateRecognition(VARIANT TextElements, VARIANT* ElementDisplayAttributes, int32 LanguageId) mut
+			public HRESULT EmulateRecognition(VARIANT TextElements, ref VARIANT ElementDisplayAttributes, int32 LanguageId) mut
 			{
-				return VT.EmulateRecognition(&this, TextElements, ElementDisplayAttributes, LanguageId);
+				return VT.EmulateRecognition(ref this, TextElements, ref ElementDisplayAttributes, LanguageId);
 			}
 			public HRESULT CreateRecoContext(ISpeechRecoContext** NewContext) mut
 			{
-				return VT.CreateRecoContext(&this, NewContext);
+				return VT.CreateRecoContext(ref this, NewContext);
 			}
 			public HRESULT GetFormat(SpeechFormatType Type, ISpeechAudioFormat** Format) mut
 			{
-				return VT.GetFormat(&this, Type, Format);
+				return VT.GetFormat(ref this, Type, Format);
 			}
-			public HRESULT SetPropertyNumber(BSTR Name, int32 Value, int16* Supported) mut
+			public HRESULT SetPropertyNumber(BSTR Name, int32 Value, out int16 Supported) mut
 			{
-				return VT.SetPropertyNumber(&this, Name, Value, Supported);
+				return VT.SetPropertyNumber(ref this, Name, Value, out Supported);
 			}
-			public HRESULT GetPropertyNumber(BSTR Name, int32* Value, int16* Supported) mut
+			public HRESULT GetPropertyNumber(BSTR Name, out int32 Value, out int16 Supported) mut
 			{
-				return VT.GetPropertyNumber(&this, Name, Value, Supported);
+				return VT.GetPropertyNumber(ref this, Name, out Value, out Supported);
 			}
-			public HRESULT SetPropertyString(BSTR Name, BSTR Value, int16* Supported) mut
+			public HRESULT SetPropertyString(BSTR Name, BSTR Value, out int16 Supported) mut
 			{
-				return VT.SetPropertyString(&this, Name, Value, Supported);
+				return VT.SetPropertyString(ref this, Name, Value, out Supported);
 			}
-			public HRESULT GetPropertyString(BSTR Name, BSTR* Value, int16* Supported) mut
+			public HRESULT GetPropertyString(BSTR Name, BSTR* Value, out int16 Supported) mut
 			{
-				return VT.GetPropertyString(&this, Name, Value, Supported);
+				return VT.GetPropertyString(ref this, Name, Value, out Supported);
 			}
-			public HRESULT IsUISupported(BSTR TypeOfUI, VARIANT* ExtraData, int16* Supported) mut
+			public HRESULT IsUISupported(BSTR TypeOfUI, in VARIANT ExtraData, out int16 Supported) mut
 			{
-				return VT.IsUISupported(&this, TypeOfUI, ExtraData, Supported);
+				return VT.IsUISupported(ref this, TypeOfUI, ExtraData, out Supported);
 			}
-			public HRESULT DisplayUI(int32 hWndParent, BSTR Title, BSTR TypeOfUI, VARIANT* ExtraData) mut
+			public HRESULT DisplayUI(int32 hWndParent, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData) mut
 			{
-				return VT.DisplayUI(&this, hWndParent, Title, TypeOfUI, ExtraData);
+				return VT.DisplayUI(ref this, hWndParent, Title, TypeOfUI, ExtraData);
 			}
 			public HRESULT GetRecognizers(BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) mut
 			{
-				return VT.GetRecognizers(&this, RequiredAttributes, OptionalAttributes, ObjectTokens);
+				return VT.GetRecognizers(ref this, RequiredAttributes, OptionalAttributes, ObjectTokens);
 			}
 			public HRESULT GetAudioInputs(BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) mut
 			{
-				return VT.GetAudioInputs(&this, RequiredAttributes, OptionalAttributes, ObjectTokens);
+				return VT.GetAudioInputs(ref this, RequiredAttributes, OptionalAttributes, ObjectTokens);
 			}
 			public HRESULT GetProfiles(BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) mut
 			{
-				return VT.GetProfiles(&this, RequiredAttributes, OptionalAttributes, ObjectTokens);
+				return VT.GetProfiles(ref this, RequiredAttributes, OptionalAttributes, ObjectTokens);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechObjectToken* Recognizer) putref_Recognizer;
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechObjectToken** Recognizer) get_Recognizer;
-				public new function HRESULT(ISpeechRecognizer *self, int16 Allow) put_AllowAudioInputFormatChangesOnNextSet;
-				public new function HRESULT(ISpeechRecognizer *self, int16* Allow) get_AllowAudioInputFormatChangesOnNextSet;
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechObjectToken* AudioInput) putref_AudioInput;
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechObjectToken** AudioInput) get_AudioInput;
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechBaseStream* AudioInputStream) putref_AudioInputStream;
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechBaseStream** AudioInputStream) get_AudioInputStream;
-				public new function HRESULT(ISpeechRecognizer *self, int16* Shared) get_IsShared;
-				public new function HRESULT(ISpeechRecognizer *self, SpeechRecognizerState State) put_State;
-				public new function HRESULT(ISpeechRecognizer *self, SpeechRecognizerState* State) get_State;
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechRecognizerStatus** Status) get_Status;
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechObjectToken* Profile) putref_Profile;
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechObjectToken** Profile) get_Profile;
-				public new function HRESULT(ISpeechRecognizer *self, VARIANT TextElements, VARIANT* ElementDisplayAttributes, int32 LanguageId) EmulateRecognition;
-				public new function HRESULT(ISpeechRecognizer *self, ISpeechRecoContext** NewContext) CreateRecoContext;
-				public new function HRESULT(ISpeechRecognizer *self, SpeechFormatType Type, ISpeechAudioFormat** Format) GetFormat;
-				public new function HRESULT(ISpeechRecognizer *self, BSTR Name, int32 Value, int16* Supported) SetPropertyNumber;
-				public new function HRESULT(ISpeechRecognizer *self, BSTR Name, int32* Value, int16* Supported) GetPropertyNumber;
-				public new function HRESULT(ISpeechRecognizer *self, BSTR Name, BSTR Value, int16* Supported) SetPropertyString;
-				public new function HRESULT(ISpeechRecognizer *self, BSTR Name, BSTR* Value, int16* Supported) GetPropertyString;
-				public new function HRESULT(ISpeechRecognizer *self, BSTR TypeOfUI, VARIANT* ExtraData, int16* Supported) IsUISupported;
-				public new function HRESULT(ISpeechRecognizer *self, int32 hWndParent, BSTR Title, BSTR TypeOfUI, VARIANT* ExtraData) DisplayUI;
-				public new function HRESULT(ISpeechRecognizer *self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetRecognizers;
-				public new function HRESULT(ISpeechRecognizer *self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetAudioInputs;
-				public new function HRESULT(ISpeechRecognizer *self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetProfiles;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken* Recognizer) putref_Recognizer;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken** Recognizer) get_Recognizer;
+				public new function HRESULT(ref ISpeechRecognizer self, int16 Allow) put_AllowAudioInputFormatChangesOnNextSet;
+				public new function HRESULT(ref ISpeechRecognizer self, out int16 Allow) get_AllowAudioInputFormatChangesOnNextSet;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken* AudioInput) putref_AudioInput;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken** AudioInput) get_AudioInput;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechBaseStream* AudioInputStream) putref_AudioInputStream;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechBaseStream** AudioInputStream) get_AudioInputStream;
+				public new function HRESULT(ref ISpeechRecognizer self, out int16 Shared) get_IsShared;
+				public new function HRESULT(ref ISpeechRecognizer self, SpeechRecognizerState State) put_State;
+				public new function HRESULT(ref ISpeechRecognizer self, out SpeechRecognizerState State) get_State;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechRecognizerStatus** Status) get_Status;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken* Profile) putref_Profile;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechObjectToken** Profile) get_Profile;
+				public new function HRESULT(ref ISpeechRecognizer self, VARIANT TextElements, ref VARIANT ElementDisplayAttributes, int32 LanguageId) EmulateRecognition;
+				public new function HRESULT(ref ISpeechRecognizer self, ISpeechRecoContext** NewContext) CreateRecoContext;
+				public new function HRESULT(ref ISpeechRecognizer self, SpeechFormatType Type, ISpeechAudioFormat** Format) GetFormat;
+				public new function HRESULT(ref ISpeechRecognizer self, BSTR Name, int32 Value, out int16 Supported) SetPropertyNumber;
+				public new function HRESULT(ref ISpeechRecognizer self, BSTR Name, out int32 Value, out int16 Supported) GetPropertyNumber;
+				public new function HRESULT(ref ISpeechRecognizer self, BSTR Name, BSTR Value, out int16 Supported) SetPropertyString;
+				public new function HRESULT(ref ISpeechRecognizer self, BSTR Name, BSTR* Value, out int16 Supported) GetPropertyString;
+				public new function HRESULT(ref ISpeechRecognizer self, BSTR TypeOfUI, in VARIANT ExtraData, out int16 Supported) IsUISupported;
+				public new function HRESULT(ref ISpeechRecognizer self, int32 hWndParent, BSTR Title, BSTR TypeOfUI, in VARIANT ExtraData) DisplayUI;
+				public new function HRESULT(ref ISpeechRecognizer self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetRecognizers;
+				public new function HRESULT(ref ISpeechRecognizer self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetAudioInputs;
+				public new function HRESULT(ref ISpeechRecognizer self, BSTR RequiredAttributes, BSTR OptionalAttributes, ISpeechObjectTokens** ObjectTokens) GetProfiles;
 			}
 		}
 		[CRepr]
@@ -4605,37 +4605,37 @@ namespace Win32
 			
 			public HRESULT get_AudioStatus(ISpeechAudioStatus** AudioStatus) mut
 			{
-				return VT.get_AudioStatus(&this, AudioStatus);
+				return VT.get_AudioStatus(ref this, AudioStatus);
 			}
-			public HRESULT get_CurrentStreamPosition(VARIANT* pCurrentStreamPos) mut
+			public HRESULT get_CurrentStreamPosition(out VARIANT pCurrentStreamPos) mut
 			{
-				return VT.get_CurrentStreamPosition(&this, pCurrentStreamPos);
+				return VT.get_CurrentStreamPosition(ref this, out pCurrentStreamPos);
 			}
-			public HRESULT get_CurrentStreamNumber(int32* StreamNumber) mut
+			public HRESULT get_CurrentStreamNumber(out int32 StreamNumber) mut
 			{
-				return VT.get_CurrentStreamNumber(&this, StreamNumber);
+				return VT.get_CurrentStreamNumber(ref this, out StreamNumber);
 			}
-			public HRESULT get_NumberOfActiveRules(int32* NumberOfActiveRules) mut
+			public HRESULT get_NumberOfActiveRules(out int32 NumberOfActiveRules) mut
 			{
-				return VT.get_NumberOfActiveRules(&this, NumberOfActiveRules);
+				return VT.get_NumberOfActiveRules(ref this, out NumberOfActiveRules);
 			}
 			public HRESULT get_ClsidEngine(BSTR* ClsidEngine) mut
 			{
-				return VT.get_ClsidEngine(&this, ClsidEngine);
+				return VT.get_ClsidEngine(ref this, ClsidEngine);
 			}
-			public HRESULT get_SupportedLanguages(VARIANT* SupportedLanguages) mut
+			public HRESULT get_SupportedLanguages(out VARIANT SupportedLanguages) mut
 			{
-				return VT.get_SupportedLanguages(&this, SupportedLanguages);
+				return VT.get_SupportedLanguages(ref this, out SupportedLanguages);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechRecognizerStatus *self, ISpeechAudioStatus** AudioStatus) get_AudioStatus;
-				public new function HRESULT(ISpeechRecognizerStatus *self, VARIANT* pCurrentStreamPos) get_CurrentStreamPosition;
-				public new function HRESULT(ISpeechRecognizerStatus *self, int32* StreamNumber) get_CurrentStreamNumber;
-				public new function HRESULT(ISpeechRecognizerStatus *self, int32* NumberOfActiveRules) get_NumberOfActiveRules;
-				public new function HRESULT(ISpeechRecognizerStatus *self, BSTR* ClsidEngine) get_ClsidEngine;
-				public new function HRESULT(ISpeechRecognizerStatus *self, VARIANT* SupportedLanguages) get_SupportedLanguages;
+				public new function HRESULT(ref ISpeechRecognizerStatus self, ISpeechAudioStatus** AudioStatus) get_AudioStatus;
+				public new function HRESULT(ref ISpeechRecognizerStatus self, out VARIANT pCurrentStreamPos) get_CurrentStreamPosition;
+				public new function HRESULT(ref ISpeechRecognizerStatus self, out int32 StreamNumber) get_CurrentStreamNumber;
+				public new function HRESULT(ref ISpeechRecognizerStatus self, out int32 NumberOfActiveRules) get_NumberOfActiveRules;
+				public new function HRESULT(ref ISpeechRecognizerStatus self, BSTR* ClsidEngine) get_ClsidEngine;
+				public new function HRESULT(ref ISpeechRecognizerStatus self, out VARIANT SupportedLanguages) get_SupportedLanguages;
 			}
 		}
 		[CRepr]
@@ -4647,132 +4647,132 @@ namespace Win32
 			
 			public HRESULT get_Recognizer(ISpeechRecognizer** Recognizer) mut
 			{
-				return VT.get_Recognizer(&this, Recognizer);
+				return VT.get_Recognizer(ref this, Recognizer);
 			}
-			public HRESULT get_AudioInputInterferenceStatus(SpeechInterference* Interference) mut
+			public HRESULT get_AudioInputInterferenceStatus(out SpeechInterference Interference) mut
 			{
-				return VT.get_AudioInputInterferenceStatus(&this, Interference);
+				return VT.get_AudioInputInterferenceStatus(ref this, out Interference);
 			}
 			public HRESULT get_RequestedUIType(BSTR* UIType) mut
 			{
-				return VT.get_RequestedUIType(&this, UIType);
+				return VT.get_RequestedUIType(ref this, UIType);
 			}
 			public HRESULT putref_Voice(ISpeechVoice* Voice) mut
 			{
-				return VT.putref_Voice(&this, Voice);
+				return VT.putref_Voice(ref this, Voice);
 			}
 			public HRESULT get_Voice(ISpeechVoice** Voice) mut
 			{
-				return VT.get_Voice(&this, Voice);
+				return VT.get_Voice(ref this, Voice);
 			}
 			public HRESULT put_AllowVoiceFormatMatchingOnNextSet(int16 Allow) mut
 			{
-				return VT.put_AllowVoiceFormatMatchingOnNextSet(&this, Allow);
+				return VT.put_AllowVoiceFormatMatchingOnNextSet(ref this, Allow);
 			}
-			public HRESULT get_AllowVoiceFormatMatchingOnNextSet(int16* pAllow) mut
+			public HRESULT get_AllowVoiceFormatMatchingOnNextSet(out int16 pAllow) mut
 			{
-				return VT.get_AllowVoiceFormatMatchingOnNextSet(&this, pAllow);
+				return VT.get_AllowVoiceFormatMatchingOnNextSet(ref this, out pAllow);
 			}
 			public HRESULT put_VoicePurgeEvent(SpeechRecoEvents EventInterest) mut
 			{
-				return VT.put_VoicePurgeEvent(&this, EventInterest);
+				return VT.put_VoicePurgeEvent(ref this, EventInterest);
 			}
-			public HRESULT get_VoicePurgeEvent(SpeechRecoEvents* EventInterest) mut
+			public HRESULT get_VoicePurgeEvent(out SpeechRecoEvents EventInterest) mut
 			{
-				return VT.get_VoicePurgeEvent(&this, EventInterest);
+				return VT.get_VoicePurgeEvent(ref this, out EventInterest);
 			}
 			public HRESULT put_EventInterests(SpeechRecoEvents EventInterest) mut
 			{
-				return VT.put_EventInterests(&this, EventInterest);
+				return VT.put_EventInterests(ref this, EventInterest);
 			}
-			public HRESULT get_EventInterests(SpeechRecoEvents* EventInterest) mut
+			public HRESULT get_EventInterests(out SpeechRecoEvents EventInterest) mut
 			{
-				return VT.get_EventInterests(&this, EventInterest);
+				return VT.get_EventInterests(ref this, out EventInterest);
 			}
 			public HRESULT put_CmdMaxAlternates(int32 MaxAlternates) mut
 			{
-				return VT.put_CmdMaxAlternates(&this, MaxAlternates);
+				return VT.put_CmdMaxAlternates(ref this, MaxAlternates);
 			}
-			public HRESULT get_CmdMaxAlternates(int32* MaxAlternates) mut
+			public HRESULT get_CmdMaxAlternates(out int32 MaxAlternates) mut
 			{
-				return VT.get_CmdMaxAlternates(&this, MaxAlternates);
+				return VT.get_CmdMaxAlternates(ref this, out MaxAlternates);
 			}
 			public HRESULT put_State(SpeechRecoContextState State) mut
 			{
-				return VT.put_State(&this, State);
+				return VT.put_State(ref this, State);
 			}
-			public HRESULT get_State(SpeechRecoContextState* State) mut
+			public HRESULT get_State(out SpeechRecoContextState State) mut
 			{
-				return VT.get_State(&this, State);
+				return VT.get_State(ref this, out State);
 			}
 			public HRESULT put_RetainedAudio(SpeechRetainedAudioOptions Option) mut
 			{
-				return VT.put_RetainedAudio(&this, Option);
+				return VT.put_RetainedAudio(ref this, Option);
 			}
-			public HRESULT get_RetainedAudio(SpeechRetainedAudioOptions* Option) mut
+			public HRESULT get_RetainedAudio(out SpeechRetainedAudioOptions Option) mut
 			{
-				return VT.get_RetainedAudio(&this, Option);
+				return VT.get_RetainedAudio(ref this, out Option);
 			}
 			public HRESULT putref_RetainedAudioFormat(ISpeechAudioFormat* Format) mut
 			{
-				return VT.putref_RetainedAudioFormat(&this, Format);
+				return VT.putref_RetainedAudioFormat(ref this, Format);
 			}
 			public HRESULT get_RetainedAudioFormat(ISpeechAudioFormat** Format) mut
 			{
-				return VT.get_RetainedAudioFormat(&this, Format);
+				return VT.get_RetainedAudioFormat(ref this, Format);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Resume() mut
 			{
-				return VT.Resume(&this);
+				return VT.Resume(ref this);
 			}
 			public HRESULT CreateGrammar(VARIANT GrammarId, ISpeechRecoGrammar** Grammar) mut
 			{
-				return VT.CreateGrammar(&this, GrammarId, Grammar);
+				return VT.CreateGrammar(ref this, GrammarId, Grammar);
 			}
-			public HRESULT CreateResultFromMemory(VARIANT* ResultBlock, ISpeechRecoResult** Result) mut
+			public HRESULT CreateResultFromMemory(ref VARIANT ResultBlock, ISpeechRecoResult** Result) mut
 			{
-				return VT.CreateResultFromMemory(&this, ResultBlock, Result);
+				return VT.CreateResultFromMemory(ref this, ref ResultBlock, Result);
 			}
 			public HRESULT Bookmark(SpeechBookmarkOptions Options, VARIANT StreamPos, VARIANT BookmarkId) mut
 			{
-				return VT.Bookmark(&this, Options, StreamPos, BookmarkId);
+				return VT.Bookmark(ref this, Options, StreamPos, BookmarkId);
 			}
 			public HRESULT SetAdaptationData(BSTR AdaptationString) mut
 			{
-				return VT.SetAdaptationData(&this, AdaptationString);
+				return VT.SetAdaptationData(ref this, AdaptationString);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechRecoContext *self, ISpeechRecognizer** Recognizer) get_Recognizer;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechInterference* Interference) get_AudioInputInterferenceStatus;
-				public new function HRESULT(ISpeechRecoContext *self, BSTR* UIType) get_RequestedUIType;
-				public new function HRESULT(ISpeechRecoContext *self, ISpeechVoice* Voice) putref_Voice;
-				public new function HRESULT(ISpeechRecoContext *self, ISpeechVoice** Voice) get_Voice;
-				public new function HRESULT(ISpeechRecoContext *self, int16 Allow) put_AllowVoiceFormatMatchingOnNextSet;
-				public new function HRESULT(ISpeechRecoContext *self, int16* pAllow) get_AllowVoiceFormatMatchingOnNextSet;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechRecoEvents EventInterest) put_VoicePurgeEvent;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechRecoEvents* EventInterest) get_VoicePurgeEvent;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechRecoEvents EventInterest) put_EventInterests;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechRecoEvents* EventInterest) get_EventInterests;
-				public new function HRESULT(ISpeechRecoContext *self, int32 MaxAlternates) put_CmdMaxAlternates;
-				public new function HRESULT(ISpeechRecoContext *self, int32* MaxAlternates) get_CmdMaxAlternates;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechRecoContextState State) put_State;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechRecoContextState* State) get_State;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechRetainedAudioOptions Option) put_RetainedAudio;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechRetainedAudioOptions* Option) get_RetainedAudio;
-				public new function HRESULT(ISpeechRecoContext *self, ISpeechAudioFormat* Format) putref_RetainedAudioFormat;
-				public new function HRESULT(ISpeechRecoContext *self, ISpeechAudioFormat** Format) get_RetainedAudioFormat;
-				public new function HRESULT(ISpeechRecoContext *self) Pause;
-				public new function HRESULT(ISpeechRecoContext *self) Resume;
-				public new function HRESULT(ISpeechRecoContext *self, VARIANT GrammarId, ISpeechRecoGrammar** Grammar) CreateGrammar;
-				public new function HRESULT(ISpeechRecoContext *self, VARIANT* ResultBlock, ISpeechRecoResult** Result) CreateResultFromMemory;
-				public new function HRESULT(ISpeechRecoContext *self, SpeechBookmarkOptions Options, VARIANT StreamPos, VARIANT BookmarkId) Bookmark;
-				public new function HRESULT(ISpeechRecoContext *self, BSTR AdaptationString) SetAdaptationData;
+				public new function HRESULT(ref ISpeechRecoContext self, ISpeechRecognizer** Recognizer) get_Recognizer;
+				public new function HRESULT(ref ISpeechRecoContext self, out SpeechInterference Interference) get_AudioInputInterferenceStatus;
+				public new function HRESULT(ref ISpeechRecoContext self, BSTR* UIType) get_RequestedUIType;
+				public new function HRESULT(ref ISpeechRecoContext self, ISpeechVoice* Voice) putref_Voice;
+				public new function HRESULT(ref ISpeechRecoContext self, ISpeechVoice** Voice) get_Voice;
+				public new function HRESULT(ref ISpeechRecoContext self, int16 Allow) put_AllowVoiceFormatMatchingOnNextSet;
+				public new function HRESULT(ref ISpeechRecoContext self, out int16 pAllow) get_AllowVoiceFormatMatchingOnNextSet;
+				public new function HRESULT(ref ISpeechRecoContext self, SpeechRecoEvents EventInterest) put_VoicePurgeEvent;
+				public new function HRESULT(ref ISpeechRecoContext self, out SpeechRecoEvents EventInterest) get_VoicePurgeEvent;
+				public new function HRESULT(ref ISpeechRecoContext self, SpeechRecoEvents EventInterest) put_EventInterests;
+				public new function HRESULT(ref ISpeechRecoContext self, out SpeechRecoEvents EventInterest) get_EventInterests;
+				public new function HRESULT(ref ISpeechRecoContext self, int32 MaxAlternates) put_CmdMaxAlternates;
+				public new function HRESULT(ref ISpeechRecoContext self, out int32 MaxAlternates) get_CmdMaxAlternates;
+				public new function HRESULT(ref ISpeechRecoContext self, SpeechRecoContextState State) put_State;
+				public new function HRESULT(ref ISpeechRecoContext self, out SpeechRecoContextState State) get_State;
+				public new function HRESULT(ref ISpeechRecoContext self, SpeechRetainedAudioOptions Option) put_RetainedAudio;
+				public new function HRESULT(ref ISpeechRecoContext self, out SpeechRetainedAudioOptions Option) get_RetainedAudio;
+				public new function HRESULT(ref ISpeechRecoContext self, ISpeechAudioFormat* Format) putref_RetainedAudioFormat;
+				public new function HRESULT(ref ISpeechRecoContext self, ISpeechAudioFormat** Format) get_RetainedAudioFormat;
+				public new function HRESULT(ref ISpeechRecoContext self) Pause;
+				public new function HRESULT(ref ISpeechRecoContext self) Resume;
+				public new function HRESULT(ref ISpeechRecoContext self, VARIANT GrammarId, ISpeechRecoGrammar** Grammar) CreateGrammar;
+				public new function HRESULT(ref ISpeechRecoContext self, ref VARIANT ResultBlock, ISpeechRecoResult** Result) CreateResultFromMemory;
+				public new function HRESULT(ref ISpeechRecoContext self, SpeechBookmarkOptions Options, VARIANT StreamPos, VARIANT BookmarkId) Bookmark;
+				public new function HRESULT(ref ISpeechRecoContext self, BSTR AdaptationString) SetAdaptationData;
 			}
 		}
 		[CRepr]
@@ -4782,104 +4782,104 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Id(VARIANT* Id) mut
+			public HRESULT get_Id(out VARIANT Id) mut
 			{
-				return VT.get_Id(&this, Id);
+				return VT.get_Id(ref this, out Id);
 			}
 			public HRESULT get_RecoContext(ISpeechRecoContext** RecoContext) mut
 			{
-				return VT.get_RecoContext(&this, RecoContext);
+				return VT.get_RecoContext(ref this, RecoContext);
 			}
 			public HRESULT put_State(SpeechGrammarState State) mut
 			{
-				return VT.put_State(&this, State);
+				return VT.put_State(ref this, State);
 			}
-			public HRESULT get_State(SpeechGrammarState* State) mut
+			public HRESULT get_State(out SpeechGrammarState State) mut
 			{
-				return VT.get_State(&this, State);
+				return VT.get_State(ref this, out State);
 			}
 			public HRESULT get_Rules(ISpeechGrammarRules** Rules) mut
 			{
-				return VT.get_Rules(&this, Rules);
+				return VT.get_Rules(ref this, Rules);
 			}
 			public HRESULT Reset(int32 NewLanguage) mut
 			{
-				return VT.Reset(&this, NewLanguage);
+				return VT.Reset(ref this, NewLanguage);
 			}
 			public HRESULT CmdLoadFromFile(BSTR FileName, SpeechLoadOption LoadOption) mut
 			{
-				return VT.CmdLoadFromFile(&this, FileName, LoadOption);
+				return VT.CmdLoadFromFile(ref this, FileName, LoadOption);
 			}
 			public HRESULT CmdLoadFromObject(BSTR ClassId, BSTR GrammarName, SpeechLoadOption LoadOption) mut
 			{
-				return VT.CmdLoadFromObject(&this, ClassId, GrammarName, LoadOption);
+				return VT.CmdLoadFromObject(ref this, ClassId, GrammarName, LoadOption);
 			}
 			public HRESULT CmdLoadFromResource(int32 hModule, VARIANT ResourceName, VARIANT ResourceType, int32 LanguageId, SpeechLoadOption LoadOption) mut
 			{
-				return VT.CmdLoadFromResource(&this, hModule, ResourceName, ResourceType, LanguageId, LoadOption);
+				return VT.CmdLoadFromResource(ref this, hModule, ResourceName, ResourceType, LanguageId, LoadOption);
 			}
 			public HRESULT CmdLoadFromMemory(VARIANT GrammarData, SpeechLoadOption LoadOption) mut
 			{
-				return VT.CmdLoadFromMemory(&this, GrammarData, LoadOption);
+				return VT.CmdLoadFromMemory(ref this, GrammarData, LoadOption);
 			}
 			public HRESULT CmdLoadFromProprietaryGrammar(BSTR ProprietaryGuid, BSTR ProprietaryString, VARIANT ProprietaryData, SpeechLoadOption LoadOption) mut
 			{
-				return VT.CmdLoadFromProprietaryGrammar(&this, ProprietaryGuid, ProprietaryString, ProprietaryData, LoadOption);
+				return VT.CmdLoadFromProprietaryGrammar(ref this, ProprietaryGuid, ProprietaryString, ProprietaryData, LoadOption);
 			}
 			public HRESULT CmdSetRuleState(BSTR Name, SpeechRuleState State) mut
 			{
-				return VT.CmdSetRuleState(&this, Name, State);
+				return VT.CmdSetRuleState(ref this, Name, State);
 			}
 			public HRESULT CmdSetRuleIdState(int32 RuleId, SpeechRuleState State) mut
 			{
-				return VT.CmdSetRuleIdState(&this, RuleId, State);
+				return VT.CmdSetRuleIdState(ref this, RuleId, State);
 			}
 			public HRESULT DictationLoad(BSTR TopicName, SpeechLoadOption LoadOption) mut
 			{
-				return VT.DictationLoad(&this, TopicName, LoadOption);
+				return VT.DictationLoad(ref this, TopicName, LoadOption);
 			}
 			public HRESULT DictationUnload() mut
 			{
-				return VT.DictationUnload(&this);
+				return VT.DictationUnload(ref this);
 			}
 			public HRESULT DictationSetState(SpeechRuleState State) mut
 			{
-				return VT.DictationSetState(&this, State);
+				return VT.DictationSetState(ref this, State);
 			}
 			public HRESULT SetWordSequenceData(BSTR Text, int32 TextLength, ISpeechTextSelectionInformation* Info) mut
 			{
-				return VT.SetWordSequenceData(&this, Text, TextLength, Info);
+				return VT.SetWordSequenceData(ref this, Text, TextLength, Info);
 			}
 			public HRESULT SetTextSelection(ISpeechTextSelectionInformation* Info) mut
 			{
-				return VT.SetTextSelection(&this, Info);
+				return VT.SetTextSelection(ref this, Info);
 			}
-			public HRESULT IsPronounceable(BSTR Word, SpeechWordPronounceable* WordPronounceable) mut
+			public HRESULT IsPronounceable(BSTR Word, out SpeechWordPronounceable WordPronounceable) mut
 			{
-				return VT.IsPronounceable(&this, Word, WordPronounceable);
+				return VT.IsPronounceable(ref this, Word, out WordPronounceable);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechRecoGrammar *self, VARIANT* Id) get_Id;
-				public new function HRESULT(ISpeechRecoGrammar *self, ISpeechRecoContext** RecoContext) get_RecoContext;
-				public new function HRESULT(ISpeechRecoGrammar *self, SpeechGrammarState State) put_State;
-				public new function HRESULT(ISpeechRecoGrammar *self, SpeechGrammarState* State) get_State;
-				public new function HRESULT(ISpeechRecoGrammar *self, ISpeechGrammarRules** Rules) get_Rules;
-				public new function HRESULT(ISpeechRecoGrammar *self, int32 NewLanguage) Reset;
-				public new function HRESULT(ISpeechRecoGrammar *self, BSTR FileName, SpeechLoadOption LoadOption) CmdLoadFromFile;
-				public new function HRESULT(ISpeechRecoGrammar *self, BSTR ClassId, BSTR GrammarName, SpeechLoadOption LoadOption) CmdLoadFromObject;
-				public new function HRESULT(ISpeechRecoGrammar *self, int32 hModule, VARIANT ResourceName, VARIANT ResourceType, int32 LanguageId, SpeechLoadOption LoadOption) CmdLoadFromResource;
-				public new function HRESULT(ISpeechRecoGrammar *self, VARIANT GrammarData, SpeechLoadOption LoadOption) CmdLoadFromMemory;
-				public new function HRESULT(ISpeechRecoGrammar *self, BSTR ProprietaryGuid, BSTR ProprietaryString, VARIANT ProprietaryData, SpeechLoadOption LoadOption) CmdLoadFromProprietaryGrammar;
-				public new function HRESULT(ISpeechRecoGrammar *self, BSTR Name, SpeechRuleState State) CmdSetRuleState;
-				public new function HRESULT(ISpeechRecoGrammar *self, int32 RuleId, SpeechRuleState State) CmdSetRuleIdState;
-				public new function HRESULT(ISpeechRecoGrammar *self, BSTR TopicName, SpeechLoadOption LoadOption) DictationLoad;
-				public new function HRESULT(ISpeechRecoGrammar *self) DictationUnload;
-				public new function HRESULT(ISpeechRecoGrammar *self, SpeechRuleState State) DictationSetState;
-				public new function HRESULT(ISpeechRecoGrammar *self, BSTR Text, int32 TextLength, ISpeechTextSelectionInformation* Info) SetWordSequenceData;
-				public new function HRESULT(ISpeechRecoGrammar *self, ISpeechTextSelectionInformation* Info) SetTextSelection;
-				public new function HRESULT(ISpeechRecoGrammar *self, BSTR Word, SpeechWordPronounceable* WordPronounceable) IsPronounceable;
+				public new function HRESULT(ref ISpeechRecoGrammar self, out VARIANT Id) get_Id;
+				public new function HRESULT(ref ISpeechRecoGrammar self, ISpeechRecoContext** RecoContext) get_RecoContext;
+				public new function HRESULT(ref ISpeechRecoGrammar self, SpeechGrammarState State) put_State;
+				public new function HRESULT(ref ISpeechRecoGrammar self, out SpeechGrammarState State) get_State;
+				public new function HRESULT(ref ISpeechRecoGrammar self, ISpeechGrammarRules** Rules) get_Rules;
+				public new function HRESULT(ref ISpeechRecoGrammar self, int32 NewLanguage) Reset;
+				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR FileName, SpeechLoadOption LoadOption) CmdLoadFromFile;
+				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR ClassId, BSTR GrammarName, SpeechLoadOption LoadOption) CmdLoadFromObject;
+				public new function HRESULT(ref ISpeechRecoGrammar self, int32 hModule, VARIANT ResourceName, VARIANT ResourceType, int32 LanguageId, SpeechLoadOption LoadOption) CmdLoadFromResource;
+				public new function HRESULT(ref ISpeechRecoGrammar self, VARIANT GrammarData, SpeechLoadOption LoadOption) CmdLoadFromMemory;
+				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR ProprietaryGuid, BSTR ProprietaryString, VARIANT ProprietaryData, SpeechLoadOption LoadOption) CmdLoadFromProprietaryGrammar;
+				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR Name, SpeechRuleState State) CmdSetRuleState;
+				public new function HRESULT(ref ISpeechRecoGrammar self, int32 RuleId, SpeechRuleState State) CmdSetRuleIdState;
+				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR TopicName, SpeechLoadOption LoadOption) DictationLoad;
+				public new function HRESULT(ref ISpeechRecoGrammar self) DictationUnload;
+				public new function HRESULT(ref ISpeechRecoGrammar self, SpeechRuleState State) DictationSetState;
+				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR Text, int32 TextLength, ISpeechTextSelectionInformation* Info) SetWordSequenceData;
+				public new function HRESULT(ref ISpeechRecoGrammar self, ISpeechTextSelectionInformation* Info) SetTextSelection;
+				public new function HRESULT(ref ISpeechRecoGrammar self, BSTR Word, out SpeechWordPronounceable WordPronounceable) IsPronounceable;
 			}
 		}
 		[CRepr]
@@ -4901,44 +4901,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Attributes(SpeechRuleAttributes* Attributes) mut
+			public HRESULT get_Attributes(out SpeechRuleAttributes Attributes) mut
 			{
-				return VT.get_Attributes(&this, Attributes);
+				return VT.get_Attributes(ref this, out Attributes);
 			}
 			public HRESULT get_InitialState(ISpeechGrammarRuleState** State) mut
 			{
-				return VT.get_InitialState(&this, State);
+				return VT.get_InitialState(ref this, State);
 			}
 			public HRESULT get_Name(BSTR* Name) mut
 			{
-				return VT.get_Name(&this, Name);
+				return VT.get_Name(ref this, Name);
 			}
-			public HRESULT get_Id(int32* Id) mut
+			public HRESULT get_Id(out int32 Id) mut
 			{
-				return VT.get_Id(&this, Id);
+				return VT.get_Id(ref this, out Id);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT AddResource(BSTR ResourceName, BSTR ResourceValue) mut
 			{
-				return VT.AddResource(&this, ResourceName, ResourceValue);
+				return VT.AddResource(ref this, ResourceName, ResourceValue);
 			}
 			public HRESULT AddState(ISpeechGrammarRuleState** State) mut
 			{
-				return VT.AddState(&this, State);
+				return VT.AddState(ref this, State);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechGrammarRule *self, SpeechRuleAttributes* Attributes) get_Attributes;
-				public new function HRESULT(ISpeechGrammarRule *self, ISpeechGrammarRuleState** State) get_InitialState;
-				public new function HRESULT(ISpeechGrammarRule *self, BSTR* Name) get_Name;
-				public new function HRESULT(ISpeechGrammarRule *self, int32* Id) get_Id;
-				public new function HRESULT(ISpeechGrammarRule *self) Clear;
-				public new function HRESULT(ISpeechGrammarRule *self, BSTR ResourceName, BSTR ResourceValue) AddResource;
-				public new function HRESULT(ISpeechGrammarRule *self, ISpeechGrammarRuleState** State) AddState;
+				public new function HRESULT(ref ISpeechGrammarRule self, out SpeechRuleAttributes Attributes) get_Attributes;
+				public new function HRESULT(ref ISpeechGrammarRule self, ISpeechGrammarRuleState** State) get_InitialState;
+				public new function HRESULT(ref ISpeechGrammarRule self, BSTR* Name) get_Name;
+				public new function HRESULT(ref ISpeechGrammarRule self, out int32 Id) get_Id;
+				public new function HRESULT(ref ISpeechGrammarRule self) Clear;
+				public new function HRESULT(ref ISpeechGrammarRule self, BSTR ResourceName, BSTR ResourceValue) AddResource;
+				public new function HRESULT(ref ISpeechGrammarRule self, ISpeechGrammarRuleState** State) AddState;
 			}
 		}
 		[CRepr]
@@ -4948,49 +4948,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT FindRule(VARIANT RuleNameOrId, ISpeechGrammarRule** Rule) mut
 			{
-				return VT.FindRule(&this, RuleNameOrId, Rule);
+				return VT.FindRule(ref this, RuleNameOrId, Rule);
 			}
 			public HRESULT Item(int32 Index, ISpeechGrammarRule** Rule) mut
 			{
-				return VT.Item(&this, Index, Rule);
+				return VT.Item(ref this, Index, Rule);
 			}
 			public HRESULT get__NewEnum(IUnknown** EnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, EnumVARIANT);
+				return VT.get__NewEnum(ref this, EnumVARIANT);
 			}
-			public HRESULT get_Dynamic(int16* Dynamic) mut
+			public HRESULT get_Dynamic(out int16 Dynamic) mut
 			{
-				return VT.get_Dynamic(&this, Dynamic);
+				return VT.get_Dynamic(ref this, out Dynamic);
 			}
 			public HRESULT Add(BSTR RuleName, SpeechRuleAttributes Attributes, int32 RuleId, ISpeechGrammarRule** Rule) mut
 			{
-				return VT.Add(&this, RuleName, Attributes, RuleId, Rule);
+				return VT.Add(ref this, RuleName, Attributes, RuleId, Rule);
 			}
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
-			public HRESULT CommitAndSave(BSTR* ErrorText, VARIANT* SaveStream) mut
+			public HRESULT CommitAndSave(BSTR* ErrorText, out VARIANT SaveStream) mut
 			{
-				return VT.CommitAndSave(&this, ErrorText, SaveStream);
+				return VT.CommitAndSave(ref this, ErrorText, out SaveStream);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechGrammarRules *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechGrammarRules *self, VARIANT RuleNameOrId, ISpeechGrammarRule** Rule) FindRule;
-				public new function HRESULT(ISpeechGrammarRules *self, int32 Index, ISpeechGrammarRule** Rule) Item;
-				public new function HRESULT(ISpeechGrammarRules *self, IUnknown** EnumVARIANT) get__NewEnum;
-				public new function HRESULT(ISpeechGrammarRules *self, int16* Dynamic) get_Dynamic;
-				public new function HRESULT(ISpeechGrammarRules *self, BSTR RuleName, SpeechRuleAttributes Attributes, int32 RuleId, ISpeechGrammarRule** Rule) Add;
-				public new function HRESULT(ISpeechGrammarRules *self) Commit;
-				public new function HRESULT(ISpeechGrammarRules *self, BSTR* ErrorText, VARIANT* SaveStream) CommitAndSave;
+				public new function HRESULT(ref ISpeechGrammarRules self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechGrammarRules self, VARIANT RuleNameOrId, ISpeechGrammarRule** Rule) FindRule;
+				public new function HRESULT(ref ISpeechGrammarRules self, int32 Index, ISpeechGrammarRule** Rule) Item;
+				public new function HRESULT(ref ISpeechGrammarRules self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechGrammarRules self, out int16 Dynamic) get_Dynamic;
+				public new function HRESULT(ref ISpeechGrammarRules self, BSTR RuleName, SpeechRuleAttributes Attributes, int32 RuleId, ISpeechGrammarRule** Rule) Add;
+				public new function HRESULT(ref ISpeechGrammarRules self) Commit;
+				public new function HRESULT(ref ISpeechGrammarRules self, BSTR* ErrorText, out VARIANT SaveStream) CommitAndSave;
 			}
 		}
 		[CRepr]
@@ -5002,32 +5002,32 @@ namespace Win32
 			
 			public HRESULT get_Rule(ISpeechGrammarRule** Rule) mut
 			{
-				return VT.get_Rule(&this, Rule);
+				return VT.get_Rule(ref this, Rule);
 			}
 			public HRESULT get_Transitions(ISpeechGrammarRuleStateTransitions** Transitions) mut
 			{
-				return VT.get_Transitions(&this, Transitions);
+				return VT.get_Transitions(ref this, Transitions);
 			}
-			public HRESULT AddWordTransition(ISpeechGrammarRuleState* DestState, BSTR Words, BSTR Separators, SpeechGrammarWordType Type, BSTR PropertyName, int32 PropertyId, VARIANT* PropertyValue, float Weight) mut
+			public HRESULT AddWordTransition(ISpeechGrammarRuleState* DestState, BSTR Words, BSTR Separators, SpeechGrammarWordType Type, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) mut
 			{
-				return VT.AddWordTransition(&this, DestState, Words, Separators, Type, PropertyName, PropertyId, PropertyValue, Weight);
+				return VT.AddWordTransition(ref this, DestState, Words, Separators, Type, PropertyName, PropertyId, ref PropertyValue, Weight);
 			}
-			public HRESULT AddRuleTransition(ISpeechGrammarRuleState* DestinationState, ISpeechGrammarRule* Rule, BSTR PropertyName, int32 PropertyId, VARIANT* PropertyValue, float Weight) mut
+			public HRESULT AddRuleTransition(ISpeechGrammarRuleState* DestinationState, ISpeechGrammarRule* Rule, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) mut
 			{
-				return VT.AddRuleTransition(&this, DestinationState, Rule, PropertyName, PropertyId, PropertyValue, Weight);
+				return VT.AddRuleTransition(ref this, DestinationState, Rule, PropertyName, PropertyId, ref PropertyValue, Weight);
 			}
-			public HRESULT AddSpecialTransition(ISpeechGrammarRuleState* DestinationState, SpeechSpecialTransitionType Type, BSTR PropertyName, int32 PropertyId, VARIANT* PropertyValue, float Weight) mut
+			public HRESULT AddSpecialTransition(ISpeechGrammarRuleState* DestinationState, SpeechSpecialTransitionType Type, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) mut
 			{
-				return VT.AddSpecialTransition(&this, DestinationState, Type, PropertyName, PropertyId, PropertyValue, Weight);
+				return VT.AddSpecialTransition(ref this, DestinationState, Type, PropertyName, PropertyId, ref PropertyValue, Weight);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechGrammarRuleState *self, ISpeechGrammarRule** Rule) get_Rule;
-				public new function HRESULT(ISpeechGrammarRuleState *self, ISpeechGrammarRuleStateTransitions** Transitions) get_Transitions;
-				public new function HRESULT(ISpeechGrammarRuleState *self, ISpeechGrammarRuleState* DestState, BSTR Words, BSTR Separators, SpeechGrammarWordType Type, BSTR PropertyName, int32 PropertyId, VARIANT* PropertyValue, float Weight) AddWordTransition;
-				public new function HRESULT(ISpeechGrammarRuleState *self, ISpeechGrammarRuleState* DestinationState, ISpeechGrammarRule* Rule, BSTR PropertyName, int32 PropertyId, VARIANT* PropertyValue, float Weight) AddRuleTransition;
-				public new function HRESULT(ISpeechGrammarRuleState *self, ISpeechGrammarRuleState* DestinationState, SpeechSpecialTransitionType Type, BSTR PropertyName, int32 PropertyId, VARIANT* PropertyValue, float Weight) AddSpecialTransition;
+				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRule** Rule) get_Rule;
+				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleStateTransitions** Transitions) get_Transitions;
+				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleState* DestState, BSTR Words, BSTR Separators, SpeechGrammarWordType Type, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) AddWordTransition;
+				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleState* DestinationState, ISpeechGrammarRule* Rule, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) AddRuleTransition;
+				public new function HRESULT(ref ISpeechGrammarRuleState self, ISpeechGrammarRuleState* DestinationState, SpeechSpecialTransitionType Type, BSTR PropertyName, int32 PropertyId, ref VARIANT PropertyValue, float Weight) AddSpecialTransition;
 			}
 		}
 		[CRepr]
@@ -5037,49 +5037,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Type(SpeechGrammarRuleStateTransitionType* Type) mut
+			public HRESULT get_Type(out SpeechGrammarRuleStateTransitionType Type) mut
 			{
-				return VT.get_Type(&this, Type);
+				return VT.get_Type(ref this, out Type);
 			}
 			public HRESULT get_Text(BSTR* Text) mut
 			{
-				return VT.get_Text(&this, Text);
+				return VT.get_Text(ref this, Text);
 			}
 			public HRESULT get_Rule(ISpeechGrammarRule** Rule) mut
 			{
-				return VT.get_Rule(&this, Rule);
+				return VT.get_Rule(ref this, Rule);
 			}
-			public HRESULT get_Weight(VARIANT* Weight) mut
+			public HRESULT get_Weight(out VARIANT Weight) mut
 			{
-				return VT.get_Weight(&this, Weight);
+				return VT.get_Weight(ref this, out Weight);
 			}
 			public HRESULT get_PropertyName(BSTR* PropertyName) mut
 			{
-				return VT.get_PropertyName(&this, PropertyName);
+				return VT.get_PropertyName(ref this, PropertyName);
 			}
-			public HRESULT get_PropertyId(int32* PropertyId) mut
+			public HRESULT get_PropertyId(out int32 PropertyId) mut
 			{
-				return VT.get_PropertyId(&this, PropertyId);
+				return VT.get_PropertyId(ref this, out PropertyId);
 			}
-			public HRESULT get_PropertyValue(VARIANT* PropertyValue) mut
+			public HRESULT get_PropertyValue(out VARIANT PropertyValue) mut
 			{
-				return VT.get_PropertyValue(&this, PropertyValue);
+				return VT.get_PropertyValue(ref this, out PropertyValue);
 			}
 			public HRESULT get_NextState(ISpeechGrammarRuleState** NextState) mut
 			{
-				return VT.get_NextState(&this, NextState);
+				return VT.get_NextState(ref this, NextState);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechGrammarRuleStateTransition *self, SpeechGrammarRuleStateTransitionType* Type) get_Type;
-				public new function HRESULT(ISpeechGrammarRuleStateTransition *self, BSTR* Text) get_Text;
-				public new function HRESULT(ISpeechGrammarRuleStateTransition *self, ISpeechGrammarRule** Rule) get_Rule;
-				public new function HRESULT(ISpeechGrammarRuleStateTransition *self, VARIANT* Weight) get_Weight;
-				public new function HRESULT(ISpeechGrammarRuleStateTransition *self, BSTR* PropertyName) get_PropertyName;
-				public new function HRESULT(ISpeechGrammarRuleStateTransition *self, int32* PropertyId) get_PropertyId;
-				public new function HRESULT(ISpeechGrammarRuleStateTransition *self, VARIANT* PropertyValue) get_PropertyValue;
-				public new function HRESULT(ISpeechGrammarRuleStateTransition *self, ISpeechGrammarRuleState** NextState) get_NextState;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, out SpeechGrammarRuleStateTransitionType Type) get_Type;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, BSTR* Text) get_Text;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, ISpeechGrammarRule** Rule) get_Rule;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, out VARIANT Weight) get_Weight;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, BSTR* PropertyName) get_PropertyName;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, out int32 PropertyId) get_PropertyId;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, out VARIANT PropertyValue) get_PropertyValue;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransition self, ISpeechGrammarRuleState** NextState) get_NextState;
 			}
 		}
 		[CRepr]
@@ -5089,24 +5089,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT Item(int32 Index, ISpeechGrammarRuleStateTransition** Transition) mut
 			{
-				return VT.Item(&this, Index, Transition);
+				return VT.Item(ref this, Index, Transition);
 			}
 			public HRESULT get__NewEnum(IUnknown** EnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, EnumVARIANT);
+				return VT.get__NewEnum(ref this, EnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechGrammarRuleStateTransitions *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechGrammarRuleStateTransitions *self, int32 Index, ISpeechGrammarRuleStateTransition** Transition) Item;
-				public new function HRESULT(ISpeechGrammarRuleStateTransitions *self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransitions self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransitions self, int32 Index, ISpeechGrammarRuleStateTransition** Transition) Item;
+				public new function HRESULT(ref ISpeechGrammarRuleStateTransitions self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5118,47 +5118,47 @@ namespace Win32
 			
 			public HRESULT put_ActiveOffset(int32 ActiveOffset) mut
 			{
-				return VT.put_ActiveOffset(&this, ActiveOffset);
+				return VT.put_ActiveOffset(ref this, ActiveOffset);
 			}
-			public HRESULT get_ActiveOffset(int32* ActiveOffset) mut
+			public HRESULT get_ActiveOffset(out int32 ActiveOffset) mut
 			{
-				return VT.get_ActiveOffset(&this, ActiveOffset);
+				return VT.get_ActiveOffset(ref this, out ActiveOffset);
 			}
 			public HRESULT put_ActiveLength(int32 ActiveLength) mut
 			{
-				return VT.put_ActiveLength(&this, ActiveLength);
+				return VT.put_ActiveLength(ref this, ActiveLength);
 			}
-			public HRESULT get_ActiveLength(int32* ActiveLength) mut
+			public HRESULT get_ActiveLength(out int32 ActiveLength) mut
 			{
-				return VT.get_ActiveLength(&this, ActiveLength);
+				return VT.get_ActiveLength(ref this, out ActiveLength);
 			}
 			public HRESULT put_SelectionOffset(int32 SelectionOffset) mut
 			{
-				return VT.put_SelectionOffset(&this, SelectionOffset);
+				return VT.put_SelectionOffset(ref this, SelectionOffset);
 			}
-			public HRESULT get_SelectionOffset(int32* SelectionOffset) mut
+			public HRESULT get_SelectionOffset(out int32 SelectionOffset) mut
 			{
-				return VT.get_SelectionOffset(&this, SelectionOffset);
+				return VT.get_SelectionOffset(ref this, out SelectionOffset);
 			}
 			public HRESULT put_SelectionLength(int32 SelectionLength) mut
 			{
-				return VT.put_SelectionLength(&this, SelectionLength);
+				return VT.put_SelectionLength(ref this, SelectionLength);
 			}
-			public HRESULT get_SelectionLength(int32* SelectionLength) mut
+			public HRESULT get_SelectionLength(out int32 SelectionLength) mut
 			{
-				return VT.get_SelectionLength(&this, SelectionLength);
+				return VT.get_SelectionLength(ref this, out SelectionLength);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechTextSelectionInformation *self, int32 ActiveOffset) put_ActiveOffset;
-				public new function HRESULT(ISpeechTextSelectionInformation *self, int32* ActiveOffset) get_ActiveOffset;
-				public new function HRESULT(ISpeechTextSelectionInformation *self, int32 ActiveLength) put_ActiveLength;
-				public new function HRESULT(ISpeechTextSelectionInformation *self, int32* ActiveLength) get_ActiveLength;
-				public new function HRESULT(ISpeechTextSelectionInformation *self, int32 SelectionOffset) put_SelectionOffset;
-				public new function HRESULT(ISpeechTextSelectionInformation *self, int32* SelectionOffset) get_SelectionOffset;
-				public new function HRESULT(ISpeechTextSelectionInformation *self, int32 SelectionLength) put_SelectionLength;
-				public new function HRESULT(ISpeechTextSelectionInformation *self, int32* SelectionLength) get_SelectionLength;
+				public new function HRESULT(ref ISpeechTextSelectionInformation self, int32 ActiveOffset) put_ActiveOffset;
+				public new function HRESULT(ref ISpeechTextSelectionInformation self, out int32 ActiveOffset) get_ActiveOffset;
+				public new function HRESULT(ref ISpeechTextSelectionInformation self, int32 ActiveLength) put_ActiveLength;
+				public new function HRESULT(ref ISpeechTextSelectionInformation self, out int32 ActiveLength) get_ActiveLength;
+				public new function HRESULT(ref ISpeechTextSelectionInformation self, int32 SelectionOffset) put_SelectionOffset;
+				public new function HRESULT(ref ISpeechTextSelectionInformation self, out int32 SelectionOffset) get_SelectionOffset;
+				public new function HRESULT(ref ISpeechTextSelectionInformation self, int32 SelectionLength) put_SelectionLength;
+				public new function HRESULT(ref ISpeechTextSelectionInformation self, out int32 SelectionLength) get_SelectionLength;
 			}
 		}
 		[CRepr]
@@ -5170,57 +5170,57 @@ namespace Win32
 			
 			public HRESULT get_RecoContext(ISpeechRecoContext** RecoContext) mut
 			{
-				return VT.get_RecoContext(&this, RecoContext);
+				return VT.get_RecoContext(ref this, RecoContext);
 			}
 			public HRESULT get_Times(ISpeechRecoResultTimes** Times) mut
 			{
-				return VT.get_Times(&this, Times);
+				return VT.get_Times(ref this, Times);
 			}
 			public HRESULT putref_AudioFormat(ISpeechAudioFormat* Format) mut
 			{
-				return VT.putref_AudioFormat(&this, Format);
+				return VT.putref_AudioFormat(ref this, Format);
 			}
 			public HRESULT get_AudioFormat(ISpeechAudioFormat** Format) mut
 			{
-				return VT.get_AudioFormat(&this, Format);
+				return VT.get_AudioFormat(ref this, Format);
 			}
 			public HRESULT get_PhraseInfo(ISpeechPhraseInfo** PhraseInfo) mut
 			{
-				return VT.get_PhraseInfo(&this, PhraseInfo);
+				return VT.get_PhraseInfo(ref this, PhraseInfo);
 			}
 			public HRESULT Alternates(int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) mut
 			{
-				return VT.Alternates(&this, RequestCount, StartElement, Elements, Alternates);
+				return VT.Alternates(ref this, RequestCount, StartElement, Elements, Alternates);
 			}
 			public HRESULT Audio(int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) mut
 			{
-				return VT.Audio(&this, StartElement, Elements, Stream);
+				return VT.Audio(ref this, StartElement, Elements, Stream);
 			}
-			public HRESULT SpeakAudio(int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, int32* StreamNumber) mut
+			public HRESULT SpeakAudio(int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) mut
 			{
-				return VT.SpeakAudio(&this, StartElement, Elements, Flags, StreamNumber);
+				return VT.SpeakAudio(ref this, StartElement, Elements, Flags, out StreamNumber);
 			}
-			public HRESULT SaveToMemory(VARIANT* ResultBlock) mut
+			public HRESULT SaveToMemory(out VARIANT ResultBlock) mut
 			{
-				return VT.SaveToMemory(&this, ResultBlock);
+				return VT.SaveToMemory(ref this, out ResultBlock);
 			}
 			public HRESULT DiscardResultInfo(SpeechDiscardType ValueTypes) mut
 			{
-				return VT.DiscardResultInfo(&this, ValueTypes);
+				return VT.DiscardResultInfo(ref this, ValueTypes);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechRecoResult *self, ISpeechRecoContext** RecoContext) get_RecoContext;
-				public new function HRESULT(ISpeechRecoResult *self, ISpeechRecoResultTimes** Times) get_Times;
-				public new function HRESULT(ISpeechRecoResult *self, ISpeechAudioFormat* Format) putref_AudioFormat;
-				public new function HRESULT(ISpeechRecoResult *self, ISpeechAudioFormat** Format) get_AudioFormat;
-				public new function HRESULT(ISpeechRecoResult *self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
-				public new function HRESULT(ISpeechRecoResult *self, int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) Alternates;
-				public new function HRESULT(ISpeechRecoResult *self, int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) Audio;
-				public new function HRESULT(ISpeechRecoResult *self, int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, int32* StreamNumber) SpeakAudio;
-				public new function HRESULT(ISpeechRecoResult *self, VARIANT* ResultBlock) SaveToMemory;
-				public new function HRESULT(ISpeechRecoResult *self, SpeechDiscardType ValueTypes) DiscardResultInfo;
+				public new function HRESULT(ref ISpeechRecoResult self, ISpeechRecoContext** RecoContext) get_RecoContext;
+				public new function HRESULT(ref ISpeechRecoResult self, ISpeechRecoResultTimes** Times) get_Times;
+				public new function HRESULT(ref ISpeechRecoResult self, ISpeechAudioFormat* Format) putref_AudioFormat;
+				public new function HRESULT(ref ISpeechRecoResult self, ISpeechAudioFormat** Format) get_AudioFormat;
+				public new function HRESULT(ref ISpeechRecoResult self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
+				public new function HRESULT(ref ISpeechRecoResult self, int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) Alternates;
+				public new function HRESULT(ref ISpeechRecoResult self, int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) Audio;
+				public new function HRESULT(ref ISpeechRecoResult self, int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) SpeakAudio;
+				public new function HRESULT(ref ISpeechRecoResult self, out VARIANT ResultBlock) SaveToMemory;
+				public new function HRESULT(ref ISpeechRecoResult self, SpeechDiscardType ValueTypes) DiscardResultInfo;
 			}
 		}
 		[CRepr]
@@ -5232,12 +5232,12 @@ namespace Win32
 			
 			public HRESULT SetTextFeedback(BSTR Feedback, int16 WasSuccessful) mut
 			{
-				return VT.SetTextFeedback(&this, Feedback, WasSuccessful);
+				return VT.SetTextFeedback(ref this, Feedback, WasSuccessful);
 			}
 			[CRepr]
 			public struct VTable : ISpeechRecoResult.VTable
 			{
-				public new function HRESULT(ISpeechRecoResult2 *self, BSTR Feedback, int16 WasSuccessful) SetTextFeedback;
+				public new function HRESULT(ref ISpeechRecoResult2 self, BSTR Feedback, int16 WasSuccessful) SetTextFeedback;
 			}
 		}
 		[CRepr]
@@ -5247,29 +5247,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StreamTime(VARIANT* Time) mut
+			public HRESULT get_StreamTime(out VARIANT Time) mut
 			{
-				return VT.get_StreamTime(&this, Time);
+				return VT.get_StreamTime(ref this, out Time);
 			}
-			public HRESULT get_Length(VARIANT* Length) mut
+			public HRESULT get_Length(out VARIANT Length) mut
 			{
-				return VT.get_Length(&this, Length);
+				return VT.get_Length(ref this, out Length);
 			}
-			public HRESULT get_TickCount(int32* TickCount) mut
+			public HRESULT get_TickCount(out int32 TickCount) mut
 			{
-				return VT.get_TickCount(&this, TickCount);
+				return VT.get_TickCount(ref this, out TickCount);
 			}
-			public HRESULT get_OffsetFromStart(VARIANT* OffsetFromStart) mut
+			public HRESULT get_OffsetFromStart(out VARIANT OffsetFromStart) mut
 			{
-				return VT.get_OffsetFromStart(&this, OffsetFromStart);
+				return VT.get_OffsetFromStart(ref this, out OffsetFromStart);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechRecoResultTimes *self, VARIANT* Time) get_StreamTime;
-				public new function HRESULT(ISpeechRecoResultTimes *self, VARIANT* Length) get_Length;
-				public new function HRESULT(ISpeechRecoResultTimes *self, int32* TickCount) get_TickCount;
-				public new function HRESULT(ISpeechRecoResultTimes *self, VARIANT* OffsetFromStart) get_OffsetFromStart;
+				public new function HRESULT(ref ISpeechRecoResultTimes self, out VARIANT Time) get_StreamTime;
+				public new function HRESULT(ref ISpeechRecoResultTimes self, out VARIANT Length) get_Length;
+				public new function HRESULT(ref ISpeechRecoResultTimes self, out int32 TickCount) get_TickCount;
+				public new function HRESULT(ref ISpeechRecoResultTimes self, out VARIANT OffsetFromStart) get_OffsetFromStart;
 			}
 		}
 		[CRepr]
@@ -5281,32 +5281,32 @@ namespace Win32
 			
 			public HRESULT get_RecoResult(ISpeechRecoResult** RecoResult) mut
 			{
-				return VT.get_RecoResult(&this, RecoResult);
+				return VT.get_RecoResult(ref this, RecoResult);
 			}
-			public HRESULT get_StartElementInResult(int32* StartElement) mut
+			public HRESULT get_StartElementInResult(out int32 StartElement) mut
 			{
-				return VT.get_StartElementInResult(&this, StartElement);
+				return VT.get_StartElementInResult(ref this, out StartElement);
 			}
-			public HRESULT get_NumberOfElementsInResult(int32* NumberOfElements) mut
+			public HRESULT get_NumberOfElementsInResult(out int32 NumberOfElements) mut
 			{
-				return VT.get_NumberOfElementsInResult(&this, NumberOfElements);
+				return VT.get_NumberOfElementsInResult(ref this, out NumberOfElements);
 			}
 			public HRESULT get_PhraseInfo(ISpeechPhraseInfo** PhraseInfo) mut
 			{
-				return VT.get_PhraseInfo(&this, PhraseInfo);
+				return VT.get_PhraseInfo(ref this, PhraseInfo);
 			}
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseAlternate *self, ISpeechRecoResult** RecoResult) get_RecoResult;
-				public new function HRESULT(ISpeechPhraseAlternate *self, int32* StartElement) get_StartElementInResult;
-				public new function HRESULT(ISpeechPhraseAlternate *self, int32* NumberOfElements) get_NumberOfElementsInResult;
-				public new function HRESULT(ISpeechPhraseAlternate *self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
-				public new function HRESULT(ISpeechPhraseAlternate *self) Commit;
+				public new function HRESULT(ref ISpeechPhraseAlternate self, ISpeechRecoResult** RecoResult) get_RecoResult;
+				public new function HRESULT(ref ISpeechPhraseAlternate self, out int32 StartElement) get_StartElementInResult;
+				public new function HRESULT(ref ISpeechPhraseAlternate self, out int32 NumberOfElements) get_NumberOfElementsInResult;
+				public new function HRESULT(ref ISpeechPhraseAlternate self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
+				public new function HRESULT(ref ISpeechPhraseAlternate self) Commit;
 			}
 		}
 		[CRepr]
@@ -5316,24 +5316,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT Item(int32 Index, ISpeechPhraseAlternate** PhraseAlternate) mut
 			{
-				return VT.Item(&this, Index, PhraseAlternate);
+				return VT.Item(ref this, Index, PhraseAlternate);
 			}
 			public HRESULT get__NewEnum(IUnknown** EnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, EnumVARIANT);
+				return VT.get__NewEnum(ref this, EnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseAlternates *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechPhraseAlternates *self, int32 Index, ISpeechPhraseAlternate** PhraseAlternate) Item;
-				public new function HRESULT(ISpeechPhraseAlternates *self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechPhraseAlternates self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechPhraseAlternates self, int32 Index, ISpeechPhraseAlternate** PhraseAlternate) Item;
+				public new function HRESULT(ref ISpeechPhraseAlternates self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5343,89 +5343,89 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LanguageId(int32* LanguageId) mut
+			public HRESULT get_LanguageId(out int32 LanguageId) mut
 			{
-				return VT.get_LanguageId(&this, LanguageId);
+				return VT.get_LanguageId(ref this, out LanguageId);
 			}
-			public HRESULT get_GrammarId(VARIANT* GrammarId) mut
+			public HRESULT get_GrammarId(out VARIANT GrammarId) mut
 			{
-				return VT.get_GrammarId(&this, GrammarId);
+				return VT.get_GrammarId(ref this, out GrammarId);
 			}
-			public HRESULT get_StartTime(VARIANT* StartTime) mut
+			public HRESULT get_StartTime(out VARIANT StartTime) mut
 			{
-				return VT.get_StartTime(&this, StartTime);
+				return VT.get_StartTime(ref this, out StartTime);
 			}
-			public HRESULT get_AudioStreamPosition(VARIANT* AudioStreamPosition) mut
+			public HRESULT get_AudioStreamPosition(out VARIANT AudioStreamPosition) mut
 			{
-				return VT.get_AudioStreamPosition(&this, AudioStreamPosition);
+				return VT.get_AudioStreamPosition(ref this, out AudioStreamPosition);
 			}
-			public HRESULT get_AudioSizeBytes(int32* pAudioSizeBytes) mut
+			public HRESULT get_AudioSizeBytes(out int32 pAudioSizeBytes) mut
 			{
-				return VT.get_AudioSizeBytes(&this, pAudioSizeBytes);
+				return VT.get_AudioSizeBytes(ref this, out pAudioSizeBytes);
 			}
-			public HRESULT get_RetainedSizeBytes(int32* RetainedSizeBytes) mut
+			public HRESULT get_RetainedSizeBytes(out int32 RetainedSizeBytes) mut
 			{
-				return VT.get_RetainedSizeBytes(&this, RetainedSizeBytes);
+				return VT.get_RetainedSizeBytes(ref this, out RetainedSizeBytes);
 			}
-			public HRESULT get_AudioSizeTime(int32* AudioSizeTime) mut
+			public HRESULT get_AudioSizeTime(out int32 AudioSizeTime) mut
 			{
-				return VT.get_AudioSizeTime(&this, AudioSizeTime);
+				return VT.get_AudioSizeTime(ref this, out AudioSizeTime);
 			}
 			public HRESULT get_Rule(ISpeechPhraseRule** Rule) mut
 			{
-				return VT.get_Rule(&this, Rule);
+				return VT.get_Rule(ref this, Rule);
 			}
 			public HRESULT get_Properties(ISpeechPhraseProperties** Properties) mut
 			{
-				return VT.get_Properties(&this, Properties);
+				return VT.get_Properties(ref this, Properties);
 			}
 			public HRESULT get_Elements(ISpeechPhraseElements** Elements) mut
 			{
-				return VT.get_Elements(&this, Elements);
+				return VT.get_Elements(ref this, Elements);
 			}
 			public HRESULT get_Replacements(ISpeechPhraseReplacements** Replacements) mut
 			{
-				return VT.get_Replacements(&this, Replacements);
+				return VT.get_Replacements(ref this, Replacements);
 			}
 			public HRESULT get_EngineId(BSTR* EngineIdGuid) mut
 			{
-				return VT.get_EngineId(&this, EngineIdGuid);
+				return VT.get_EngineId(ref this, EngineIdGuid);
 			}
-			public HRESULT get_EnginePrivateData(VARIANT* PrivateData) mut
+			public HRESULT get_EnginePrivateData(out VARIANT PrivateData) mut
 			{
-				return VT.get_EnginePrivateData(&this, PrivateData);
+				return VT.get_EnginePrivateData(ref this, out PrivateData);
 			}
-			public HRESULT SaveToMemory(VARIANT* PhraseBlock) mut
+			public HRESULT SaveToMemory(out VARIANT PhraseBlock) mut
 			{
-				return VT.SaveToMemory(&this, PhraseBlock);
+				return VT.SaveToMemory(ref this, out PhraseBlock);
 			}
 			public HRESULT GetText(int32 StartElement, int32 Elements, int16 UseReplacements, BSTR* Text) mut
 			{
-				return VT.GetText(&this, StartElement, Elements, UseReplacements, Text);
+				return VT.GetText(ref this, StartElement, Elements, UseReplacements, Text);
 			}
-			public HRESULT GetDisplayAttributes(int32 StartElement, int32 Elements, int16 UseReplacements, SpeechDisplayAttributes* DisplayAttributes) mut
+			public HRESULT GetDisplayAttributes(int32 StartElement, int32 Elements, int16 UseReplacements, out SpeechDisplayAttributes DisplayAttributes) mut
 			{
-				return VT.GetDisplayAttributes(&this, StartElement, Elements, UseReplacements, DisplayAttributes);
+				return VT.GetDisplayAttributes(ref this, StartElement, Elements, UseReplacements, out DisplayAttributes);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseInfo *self, int32* LanguageId) get_LanguageId;
-				public new function HRESULT(ISpeechPhraseInfo *self, VARIANT* GrammarId) get_GrammarId;
-				public new function HRESULT(ISpeechPhraseInfo *self, VARIANT* StartTime) get_StartTime;
-				public new function HRESULT(ISpeechPhraseInfo *self, VARIANT* AudioStreamPosition) get_AudioStreamPosition;
-				public new function HRESULT(ISpeechPhraseInfo *self, int32* pAudioSizeBytes) get_AudioSizeBytes;
-				public new function HRESULT(ISpeechPhraseInfo *self, int32* RetainedSizeBytes) get_RetainedSizeBytes;
-				public new function HRESULT(ISpeechPhraseInfo *self, int32* AudioSizeTime) get_AudioSizeTime;
-				public new function HRESULT(ISpeechPhraseInfo *self, ISpeechPhraseRule** Rule) get_Rule;
-				public new function HRESULT(ISpeechPhraseInfo *self, ISpeechPhraseProperties** Properties) get_Properties;
-				public new function HRESULT(ISpeechPhraseInfo *self, ISpeechPhraseElements** Elements) get_Elements;
-				public new function HRESULT(ISpeechPhraseInfo *self, ISpeechPhraseReplacements** Replacements) get_Replacements;
-				public new function HRESULT(ISpeechPhraseInfo *self, BSTR* EngineIdGuid) get_EngineId;
-				public new function HRESULT(ISpeechPhraseInfo *self, VARIANT* PrivateData) get_EnginePrivateData;
-				public new function HRESULT(ISpeechPhraseInfo *self, VARIANT* PhraseBlock) SaveToMemory;
-				public new function HRESULT(ISpeechPhraseInfo *self, int32 StartElement, int32 Elements, int16 UseReplacements, BSTR* Text) GetText;
-				public new function HRESULT(ISpeechPhraseInfo *self, int32 StartElement, int32 Elements, int16 UseReplacements, SpeechDisplayAttributes* DisplayAttributes) GetDisplayAttributes;
+				public new function HRESULT(ref ISpeechPhraseInfo self, out int32 LanguageId) get_LanguageId;
+				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT GrammarId) get_GrammarId;
+				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT StartTime) get_StartTime;
+				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT AudioStreamPosition) get_AudioStreamPosition;
+				public new function HRESULT(ref ISpeechPhraseInfo self, out int32 pAudioSizeBytes) get_AudioSizeBytes;
+				public new function HRESULT(ref ISpeechPhraseInfo self, out int32 RetainedSizeBytes) get_RetainedSizeBytes;
+				public new function HRESULT(ref ISpeechPhraseInfo self, out int32 AudioSizeTime) get_AudioSizeTime;
+				public new function HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseRule** Rule) get_Rule;
+				public new function HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseProperties** Properties) get_Properties;
+				public new function HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseElements** Elements) get_Elements;
+				public new function HRESULT(ref ISpeechPhraseInfo self, ISpeechPhraseReplacements** Replacements) get_Replacements;
+				public new function HRESULT(ref ISpeechPhraseInfo self, BSTR* EngineIdGuid) get_EngineId;
+				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT PrivateData) get_EnginePrivateData;
+				public new function HRESULT(ref ISpeechPhraseInfo self, out VARIANT PhraseBlock) SaveToMemory;
+				public new function HRESULT(ref ISpeechPhraseInfo self, int32 StartElement, int32 Elements, int16 UseReplacements, BSTR* Text) GetText;
+				public new function HRESULT(ref ISpeechPhraseInfo self, int32 StartElement, int32 Elements, int16 UseReplacements, out SpeechDisplayAttributes DisplayAttributes) GetDisplayAttributes;
 			}
 		}
 		[CRepr]
@@ -5435,74 +5435,74 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AudioTimeOffset(int32* AudioTimeOffset) mut
+			public HRESULT get_AudioTimeOffset(out int32 AudioTimeOffset) mut
 			{
-				return VT.get_AudioTimeOffset(&this, AudioTimeOffset);
+				return VT.get_AudioTimeOffset(ref this, out AudioTimeOffset);
 			}
-			public HRESULT get_AudioSizeTime(int32* AudioSizeTime) mut
+			public HRESULT get_AudioSizeTime(out int32 AudioSizeTime) mut
 			{
-				return VT.get_AudioSizeTime(&this, AudioSizeTime);
+				return VT.get_AudioSizeTime(ref this, out AudioSizeTime);
 			}
-			public HRESULT get_AudioStreamOffset(int32* AudioStreamOffset) mut
+			public HRESULT get_AudioStreamOffset(out int32 AudioStreamOffset) mut
 			{
-				return VT.get_AudioStreamOffset(&this, AudioStreamOffset);
+				return VT.get_AudioStreamOffset(ref this, out AudioStreamOffset);
 			}
-			public HRESULT get_AudioSizeBytes(int32* AudioSizeBytes) mut
+			public HRESULT get_AudioSizeBytes(out int32 AudioSizeBytes) mut
 			{
-				return VT.get_AudioSizeBytes(&this, AudioSizeBytes);
+				return VT.get_AudioSizeBytes(ref this, out AudioSizeBytes);
 			}
-			public HRESULT get_RetainedStreamOffset(int32* RetainedStreamOffset) mut
+			public HRESULT get_RetainedStreamOffset(out int32 RetainedStreamOffset) mut
 			{
-				return VT.get_RetainedStreamOffset(&this, RetainedStreamOffset);
+				return VT.get_RetainedStreamOffset(ref this, out RetainedStreamOffset);
 			}
-			public HRESULT get_RetainedSizeBytes(int32* RetainedSizeBytes) mut
+			public HRESULT get_RetainedSizeBytes(out int32 RetainedSizeBytes) mut
 			{
-				return VT.get_RetainedSizeBytes(&this, RetainedSizeBytes);
+				return VT.get_RetainedSizeBytes(ref this, out RetainedSizeBytes);
 			}
 			public HRESULT get_DisplayText(BSTR* DisplayText) mut
 			{
-				return VT.get_DisplayText(&this, DisplayText);
+				return VT.get_DisplayText(ref this, DisplayText);
 			}
 			public HRESULT get_LexicalForm(BSTR* LexicalForm) mut
 			{
-				return VT.get_LexicalForm(&this, LexicalForm);
+				return VT.get_LexicalForm(ref this, LexicalForm);
 			}
-			public HRESULT get_Pronunciation(VARIANT* Pronunciation) mut
+			public HRESULT get_Pronunciation(out VARIANT Pronunciation) mut
 			{
-				return VT.get_Pronunciation(&this, Pronunciation);
+				return VT.get_Pronunciation(ref this, out Pronunciation);
 			}
-			public HRESULT get_DisplayAttributes(SpeechDisplayAttributes* DisplayAttributes) mut
+			public HRESULT get_DisplayAttributes(out SpeechDisplayAttributes DisplayAttributes) mut
 			{
-				return VT.get_DisplayAttributes(&this, DisplayAttributes);
+				return VT.get_DisplayAttributes(ref this, out DisplayAttributes);
 			}
-			public HRESULT get_RequiredConfidence(SpeechEngineConfidence* RequiredConfidence) mut
+			public HRESULT get_RequiredConfidence(out SpeechEngineConfidence RequiredConfidence) mut
 			{
-				return VT.get_RequiredConfidence(&this, RequiredConfidence);
+				return VT.get_RequiredConfidence(ref this, out RequiredConfidence);
 			}
-			public HRESULT get_ActualConfidence(SpeechEngineConfidence* ActualConfidence) mut
+			public HRESULT get_ActualConfidence(out SpeechEngineConfidence ActualConfidence) mut
 			{
-				return VT.get_ActualConfidence(&this, ActualConfidence);
+				return VT.get_ActualConfidence(ref this, out ActualConfidence);
 			}
-			public HRESULT get_EngineConfidence(float* EngineConfidence) mut
+			public HRESULT get_EngineConfidence(out float EngineConfidence) mut
 			{
-				return VT.get_EngineConfidence(&this, EngineConfidence);
+				return VT.get_EngineConfidence(ref this, out EngineConfidence);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseElement *self, int32* AudioTimeOffset) get_AudioTimeOffset;
-				public new function HRESULT(ISpeechPhraseElement *self, int32* AudioSizeTime) get_AudioSizeTime;
-				public new function HRESULT(ISpeechPhraseElement *self, int32* AudioStreamOffset) get_AudioStreamOffset;
-				public new function HRESULT(ISpeechPhraseElement *self, int32* AudioSizeBytes) get_AudioSizeBytes;
-				public new function HRESULT(ISpeechPhraseElement *self, int32* RetainedStreamOffset) get_RetainedStreamOffset;
-				public new function HRESULT(ISpeechPhraseElement *self, int32* RetainedSizeBytes) get_RetainedSizeBytes;
-				public new function HRESULT(ISpeechPhraseElement *self, BSTR* DisplayText) get_DisplayText;
-				public new function HRESULT(ISpeechPhraseElement *self, BSTR* LexicalForm) get_LexicalForm;
-				public new function HRESULT(ISpeechPhraseElement *self, VARIANT* Pronunciation) get_Pronunciation;
-				public new function HRESULT(ISpeechPhraseElement *self, SpeechDisplayAttributes* DisplayAttributes) get_DisplayAttributes;
-				public new function HRESULT(ISpeechPhraseElement *self, SpeechEngineConfidence* RequiredConfidence) get_RequiredConfidence;
-				public new function HRESULT(ISpeechPhraseElement *self, SpeechEngineConfidence* ActualConfidence) get_ActualConfidence;
-				public new function HRESULT(ISpeechPhraseElement *self, float* EngineConfidence) get_EngineConfidence;
+				public new function HRESULT(ref ISpeechPhraseElement self, out int32 AudioTimeOffset) get_AudioTimeOffset;
+				public new function HRESULT(ref ISpeechPhraseElement self, out int32 AudioSizeTime) get_AudioSizeTime;
+				public new function HRESULT(ref ISpeechPhraseElement self, out int32 AudioStreamOffset) get_AudioStreamOffset;
+				public new function HRESULT(ref ISpeechPhraseElement self, out int32 AudioSizeBytes) get_AudioSizeBytes;
+				public new function HRESULT(ref ISpeechPhraseElement self, out int32 RetainedStreamOffset) get_RetainedStreamOffset;
+				public new function HRESULT(ref ISpeechPhraseElement self, out int32 RetainedSizeBytes) get_RetainedSizeBytes;
+				public new function HRESULT(ref ISpeechPhraseElement self, BSTR* DisplayText) get_DisplayText;
+				public new function HRESULT(ref ISpeechPhraseElement self, BSTR* LexicalForm) get_LexicalForm;
+				public new function HRESULT(ref ISpeechPhraseElement self, out VARIANT Pronunciation) get_Pronunciation;
+				public new function HRESULT(ref ISpeechPhraseElement self, out SpeechDisplayAttributes DisplayAttributes) get_DisplayAttributes;
+				public new function HRESULT(ref ISpeechPhraseElement self, out SpeechEngineConfidence RequiredConfidence) get_RequiredConfidence;
+				public new function HRESULT(ref ISpeechPhraseElement self, out SpeechEngineConfidence ActualConfidence) get_ActualConfidence;
+				public new function HRESULT(ref ISpeechPhraseElement self, out float EngineConfidence) get_EngineConfidence;
 			}
 		}
 		[CRepr]
@@ -5512,24 +5512,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT Item(int32 Index, ISpeechPhraseElement** Element) mut
 			{
-				return VT.Item(&this, Index, Element);
+				return VT.Item(ref this, Index, Element);
 			}
 			public HRESULT get__NewEnum(IUnknown** EnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, EnumVARIANT);
+				return VT.get__NewEnum(ref this, EnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseElements *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechPhraseElements *self, int32 Index, ISpeechPhraseElement** Element) Item;
-				public new function HRESULT(ISpeechPhraseElements *self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechPhraseElements self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechPhraseElements self, int32 Index, ISpeechPhraseElement** Element) Item;
+				public new function HRESULT(ref ISpeechPhraseElements self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5539,29 +5539,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DisplayAttributes(SpeechDisplayAttributes* DisplayAttributes) mut
+			public HRESULT get_DisplayAttributes(out SpeechDisplayAttributes DisplayAttributes) mut
 			{
-				return VT.get_DisplayAttributes(&this, DisplayAttributes);
+				return VT.get_DisplayAttributes(ref this, out DisplayAttributes);
 			}
 			public HRESULT get_Text(BSTR* Text) mut
 			{
-				return VT.get_Text(&this, Text);
+				return VT.get_Text(ref this, Text);
 			}
-			public HRESULT get_FirstElement(int32* FirstElement) mut
+			public HRESULT get_FirstElement(out int32 FirstElement) mut
 			{
-				return VT.get_FirstElement(&this, FirstElement);
+				return VT.get_FirstElement(ref this, out FirstElement);
 			}
-			public HRESULT get_NumberOfElements(int32* NumberOfElements) mut
+			public HRESULT get_NumberOfElements(out int32 NumberOfElements) mut
 			{
-				return VT.get_NumberOfElements(&this, NumberOfElements);
+				return VT.get_NumberOfElements(ref this, out NumberOfElements);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseReplacement *self, SpeechDisplayAttributes* DisplayAttributes) get_DisplayAttributes;
-				public new function HRESULT(ISpeechPhraseReplacement *self, BSTR* Text) get_Text;
-				public new function HRESULT(ISpeechPhraseReplacement *self, int32* FirstElement) get_FirstElement;
-				public new function HRESULT(ISpeechPhraseReplacement *self, int32* NumberOfElements) get_NumberOfElements;
+				public new function HRESULT(ref ISpeechPhraseReplacement self, out SpeechDisplayAttributes DisplayAttributes) get_DisplayAttributes;
+				public new function HRESULT(ref ISpeechPhraseReplacement self, BSTR* Text) get_Text;
+				public new function HRESULT(ref ISpeechPhraseReplacement self, out int32 FirstElement) get_FirstElement;
+				public new function HRESULT(ref ISpeechPhraseReplacement self, out int32 NumberOfElements) get_NumberOfElements;
 			}
 		}
 		[CRepr]
@@ -5571,24 +5571,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT Item(int32 Index, ISpeechPhraseReplacement** Reps) mut
 			{
-				return VT.Item(&this, Index, Reps);
+				return VT.Item(ref this, Index, Reps);
 			}
 			public HRESULT get__NewEnum(IUnknown** EnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, EnumVARIANT);
+				return VT.get__NewEnum(ref this, EnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseReplacements *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechPhraseReplacements *self, int32 Index, ISpeechPhraseReplacement** Reps) Item;
-				public new function HRESULT(ISpeechPhraseReplacements *self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechPhraseReplacements self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechPhraseReplacements self, int32 Index, ISpeechPhraseReplacement** Reps) Item;
+				public new function HRESULT(ref ISpeechPhraseReplacements self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5600,52 +5600,52 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* Name) mut
 			{
-				return VT.get_Name(&this, Name);
+				return VT.get_Name(ref this, Name);
 			}
-			public HRESULT get_Id(int32* Id) mut
+			public HRESULT get_Id(out int32 Id) mut
 			{
-				return VT.get_Id(&this, Id);
+				return VT.get_Id(ref this, out Id);
 			}
-			public HRESULT get_Value(VARIANT* Value) mut
+			public HRESULT get_Value(out VARIANT Value) mut
 			{
-				return VT.get_Value(&this, Value);
+				return VT.get_Value(ref this, out Value);
 			}
-			public HRESULT get_FirstElement(int32* FirstElement) mut
+			public HRESULT get_FirstElement(out int32 FirstElement) mut
 			{
-				return VT.get_FirstElement(&this, FirstElement);
+				return VT.get_FirstElement(ref this, out FirstElement);
 			}
-			public HRESULT get_NumberOfElements(int32* NumberOfElements) mut
+			public HRESULT get_NumberOfElements(out int32 NumberOfElements) mut
 			{
-				return VT.get_NumberOfElements(&this, NumberOfElements);
+				return VT.get_NumberOfElements(ref this, out NumberOfElements);
 			}
-			public HRESULT get_EngineConfidence(float* Confidence) mut
+			public HRESULT get_EngineConfidence(out float Confidence) mut
 			{
-				return VT.get_EngineConfidence(&this, Confidence);
+				return VT.get_EngineConfidence(ref this, out Confidence);
 			}
-			public HRESULT get_Confidence(SpeechEngineConfidence* Confidence) mut
+			public HRESULT get_Confidence(out SpeechEngineConfidence Confidence) mut
 			{
-				return VT.get_Confidence(&this, Confidence);
+				return VT.get_Confidence(ref this, out Confidence);
 			}
 			public HRESULT get_Parent(ISpeechPhraseProperty** ParentProperty) mut
 			{
-				return VT.get_Parent(&this, ParentProperty);
+				return VT.get_Parent(ref this, ParentProperty);
 			}
 			public HRESULT get_Children(ISpeechPhraseProperties** Children) mut
 			{
-				return VT.get_Children(&this, Children);
+				return VT.get_Children(ref this, Children);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseProperty *self, BSTR* Name) get_Name;
-				public new function HRESULT(ISpeechPhraseProperty *self, int32* Id) get_Id;
-				public new function HRESULT(ISpeechPhraseProperty *self, VARIANT* Value) get_Value;
-				public new function HRESULT(ISpeechPhraseProperty *self, int32* FirstElement) get_FirstElement;
-				public new function HRESULT(ISpeechPhraseProperty *self, int32* NumberOfElements) get_NumberOfElements;
-				public new function HRESULT(ISpeechPhraseProperty *self, float* Confidence) get_EngineConfidence;
-				public new function HRESULT(ISpeechPhraseProperty *self, SpeechEngineConfidence* Confidence) get_Confidence;
-				public new function HRESULT(ISpeechPhraseProperty *self, ISpeechPhraseProperty** ParentProperty) get_Parent;
-				public new function HRESULT(ISpeechPhraseProperty *self, ISpeechPhraseProperties** Children) get_Children;
+				public new function HRESULT(ref ISpeechPhraseProperty self, BSTR* Name) get_Name;
+				public new function HRESULT(ref ISpeechPhraseProperty self, out int32 Id) get_Id;
+				public new function HRESULT(ref ISpeechPhraseProperty self, out VARIANT Value) get_Value;
+				public new function HRESULT(ref ISpeechPhraseProperty self, out int32 FirstElement) get_FirstElement;
+				public new function HRESULT(ref ISpeechPhraseProperty self, out int32 NumberOfElements) get_NumberOfElements;
+				public new function HRESULT(ref ISpeechPhraseProperty self, out float Confidence) get_EngineConfidence;
+				public new function HRESULT(ref ISpeechPhraseProperty self, out SpeechEngineConfidence Confidence) get_Confidence;
+				public new function HRESULT(ref ISpeechPhraseProperty self, ISpeechPhraseProperty** ParentProperty) get_Parent;
+				public new function HRESULT(ref ISpeechPhraseProperty self, ISpeechPhraseProperties** Children) get_Children;
 			}
 		}
 		[CRepr]
@@ -5655,24 +5655,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT Item(int32 Index, ISpeechPhraseProperty** Property) mut
 			{
-				return VT.Item(&this, Index, Property);
+				return VT.Item(ref this, Index, Property);
 			}
 			public HRESULT get__NewEnum(IUnknown** EnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, EnumVARIANT);
+				return VT.get__NewEnum(ref this, EnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseProperties *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechPhraseProperties *self, int32 Index, ISpeechPhraseProperty** Property) Item;
-				public new function HRESULT(ISpeechPhraseProperties *self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechPhraseProperties self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechPhraseProperties self, int32 Index, ISpeechPhraseProperty** Property) Item;
+				public new function HRESULT(ref ISpeechPhraseProperties self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5684,47 +5684,47 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* Name) mut
 			{
-				return VT.get_Name(&this, Name);
+				return VT.get_Name(ref this, Name);
 			}
-			public HRESULT get_Id(int32* Id) mut
+			public HRESULT get_Id(out int32 Id) mut
 			{
-				return VT.get_Id(&this, Id);
+				return VT.get_Id(ref this, out Id);
 			}
-			public HRESULT get_FirstElement(int32* FirstElement) mut
+			public HRESULT get_FirstElement(out int32 FirstElement) mut
 			{
-				return VT.get_FirstElement(&this, FirstElement);
+				return VT.get_FirstElement(ref this, out FirstElement);
 			}
-			public HRESULT get_NumberOfElements(int32* NumberOfElements) mut
+			public HRESULT get_NumberOfElements(out int32 NumberOfElements) mut
 			{
-				return VT.get_NumberOfElements(&this, NumberOfElements);
+				return VT.get_NumberOfElements(ref this, out NumberOfElements);
 			}
 			public HRESULT get_Parent(ISpeechPhraseRule** Parent) mut
 			{
-				return VT.get_Parent(&this, Parent);
+				return VT.get_Parent(ref this, Parent);
 			}
 			public HRESULT get_Children(ISpeechPhraseRules** Children) mut
 			{
-				return VT.get_Children(&this, Children);
+				return VT.get_Children(ref this, Children);
 			}
-			public HRESULT get_Confidence(SpeechEngineConfidence* ActualConfidence) mut
+			public HRESULT get_Confidence(out SpeechEngineConfidence ActualConfidence) mut
 			{
-				return VT.get_Confidence(&this, ActualConfidence);
+				return VT.get_Confidence(ref this, out ActualConfidence);
 			}
-			public HRESULT get_EngineConfidence(float* EngineConfidence) mut
+			public HRESULT get_EngineConfidence(out float EngineConfidence) mut
 			{
-				return VT.get_EngineConfidence(&this, EngineConfidence);
+				return VT.get_EngineConfidence(ref this, out EngineConfidence);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseRule *self, BSTR* Name) get_Name;
-				public new function HRESULT(ISpeechPhraseRule *self, int32* Id) get_Id;
-				public new function HRESULT(ISpeechPhraseRule *self, int32* FirstElement) get_FirstElement;
-				public new function HRESULT(ISpeechPhraseRule *self, int32* NumberOfElements) get_NumberOfElements;
-				public new function HRESULT(ISpeechPhraseRule *self, ISpeechPhraseRule** Parent) get_Parent;
-				public new function HRESULT(ISpeechPhraseRule *self, ISpeechPhraseRules** Children) get_Children;
-				public new function HRESULT(ISpeechPhraseRule *self, SpeechEngineConfidence* ActualConfidence) get_Confidence;
-				public new function HRESULT(ISpeechPhraseRule *self, float* EngineConfidence) get_EngineConfidence;
+				public new function HRESULT(ref ISpeechPhraseRule self, BSTR* Name) get_Name;
+				public new function HRESULT(ref ISpeechPhraseRule self, out int32 Id) get_Id;
+				public new function HRESULT(ref ISpeechPhraseRule self, out int32 FirstElement) get_FirstElement;
+				public new function HRESULT(ref ISpeechPhraseRule self, out int32 NumberOfElements) get_NumberOfElements;
+				public new function HRESULT(ref ISpeechPhraseRule self, ISpeechPhraseRule** Parent) get_Parent;
+				public new function HRESULT(ref ISpeechPhraseRule self, ISpeechPhraseRules** Children) get_Children;
+				public new function HRESULT(ref ISpeechPhraseRule self, out SpeechEngineConfidence ActualConfidence) get_Confidence;
+				public new function HRESULT(ref ISpeechPhraseRule self, out float EngineConfidence) get_EngineConfidence;
 			}
 		}
 		[CRepr]
@@ -5734,24 +5734,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT Item(int32 Index, ISpeechPhraseRule** Rule) mut
 			{
-				return VT.Item(&this, Index, Rule);
+				return VT.Item(ref this, Index, Rule);
 			}
 			public HRESULT get__NewEnum(IUnknown** EnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, EnumVARIANT);
+				return VT.get__NewEnum(ref this, EnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseRules *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechPhraseRules *self, int32 Index, ISpeechPhraseRule** Rule) Item;
-				public new function HRESULT(ISpeechPhraseRules *self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechPhraseRules self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechPhraseRules self, int32 Index, ISpeechPhraseRule** Rule) Item;
+				public new function HRESULT(ref ISpeechPhraseRules self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5761,49 +5761,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_GenerationId(int32* GenerationId) mut
+			public HRESULT get_GenerationId(out int32 GenerationId) mut
 			{
-				return VT.get_GenerationId(&this, GenerationId);
+				return VT.get_GenerationId(ref this, out GenerationId);
 			}
-			public HRESULT GetWords(SpeechLexiconType Flags, int32* GenerationID, ISpeechLexiconWords** Words) mut
+			public HRESULT GetWords(SpeechLexiconType Flags, out int32 GenerationID, ISpeechLexiconWords** Words) mut
 			{
-				return VT.GetWords(&this, Flags, GenerationID, Words);
+				return VT.GetWords(ref this, Flags, out GenerationID, Words);
 			}
 			public HRESULT AddPronunciation(BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) mut
 			{
-				return VT.AddPronunciation(&this, bstrWord, LangId, PartOfSpeech, bstrPronunciation);
+				return VT.AddPronunciation(ref this, bstrWord, LangId, PartOfSpeech, bstrPronunciation);
 			}
-			public HRESULT AddPronunciationByPhoneIds(BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, VARIANT* PhoneIds) mut
+			public HRESULT AddPronunciationByPhoneIds(BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, ref VARIANT PhoneIds) mut
 			{
-				return VT.AddPronunciationByPhoneIds(&this, bstrWord, LangId, PartOfSpeech, PhoneIds);
+				return VT.AddPronunciationByPhoneIds(ref this, bstrWord, LangId, PartOfSpeech, ref PhoneIds);
 			}
 			public HRESULT RemovePronunciation(BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) mut
 			{
-				return VT.RemovePronunciation(&this, bstrWord, LangId, PartOfSpeech, bstrPronunciation);
+				return VT.RemovePronunciation(ref this, bstrWord, LangId, PartOfSpeech, bstrPronunciation);
 			}
-			public HRESULT RemovePronunciationByPhoneIds(BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, VARIANT* PhoneIds) mut
+			public HRESULT RemovePronunciationByPhoneIds(BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, ref VARIANT PhoneIds) mut
 			{
-				return VT.RemovePronunciationByPhoneIds(&this, bstrWord, LangId, PartOfSpeech, PhoneIds);
+				return VT.RemovePronunciationByPhoneIds(ref this, bstrWord, LangId, PartOfSpeech, ref PhoneIds);
 			}
 			public HRESULT GetPronunciations(BSTR bstrWord, int32 LangId, SpeechLexiconType TypeFlags, ISpeechLexiconPronunciations** ppPronunciations) mut
 			{
-				return VT.GetPronunciations(&this, bstrWord, LangId, TypeFlags, ppPronunciations);
+				return VT.GetPronunciations(ref this, bstrWord, LangId, TypeFlags, ppPronunciations);
 			}
-			public HRESULT GetGenerationChange(int32* GenerationID, ISpeechLexiconWords** ppWords) mut
+			public HRESULT GetGenerationChange(out int32 GenerationID, ISpeechLexiconWords** ppWords) mut
 			{
-				return VT.GetGenerationChange(&this, GenerationID, ppWords);
+				return VT.GetGenerationChange(ref this, out GenerationID, ppWords);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechLexicon *self, int32* GenerationId) get_GenerationId;
-				public new function HRESULT(ISpeechLexicon *self, SpeechLexiconType Flags, int32* GenerationID, ISpeechLexiconWords** Words) GetWords;
-				public new function HRESULT(ISpeechLexicon *self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) AddPronunciation;
-				public new function HRESULT(ISpeechLexicon *self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, VARIANT* PhoneIds) AddPronunciationByPhoneIds;
-				public new function HRESULT(ISpeechLexicon *self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) RemovePronunciation;
-				public new function HRESULT(ISpeechLexicon *self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, VARIANT* PhoneIds) RemovePronunciationByPhoneIds;
-				public new function HRESULT(ISpeechLexicon *self, BSTR bstrWord, int32 LangId, SpeechLexiconType TypeFlags, ISpeechLexiconPronunciations** ppPronunciations) GetPronunciations;
-				public new function HRESULT(ISpeechLexicon *self, int32* GenerationID, ISpeechLexiconWords** ppWords) GetGenerationChange;
+				public new function HRESULT(ref ISpeechLexicon self, out int32 GenerationId) get_GenerationId;
+				public new function HRESULT(ref ISpeechLexicon self, SpeechLexiconType Flags, out int32 GenerationID, ISpeechLexiconWords** Words) GetWords;
+				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) AddPronunciation;
+				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, ref VARIANT PhoneIds) AddPronunciationByPhoneIds;
+				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, BSTR bstrPronunciation) RemovePronunciation;
+				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechPartOfSpeech PartOfSpeech, ref VARIANT PhoneIds) RemovePronunciationByPhoneIds;
+				public new function HRESULT(ref ISpeechLexicon self, BSTR bstrWord, int32 LangId, SpeechLexiconType TypeFlags, ISpeechLexiconPronunciations** ppPronunciations) GetPronunciations;
+				public new function HRESULT(ref ISpeechLexicon self, out int32 GenerationID, ISpeechLexiconWords** ppWords) GetGenerationChange;
 			}
 		}
 		[CRepr]
@@ -5813,24 +5813,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT Item(int32 Index, ISpeechLexiconWord** Word) mut
 			{
-				return VT.Item(&this, Index, Word);
+				return VT.Item(ref this, Index, Word);
 			}
 			public HRESULT get__NewEnum(IUnknown** EnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, EnumVARIANT);
+				return VT.get__NewEnum(ref this, EnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechLexiconWords *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechLexiconWords *self, int32 Index, ISpeechLexiconWord** Word) Item;
-				public new function HRESULT(ISpeechLexiconWords *self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechLexiconWords self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechLexiconWords self, int32 Index, ISpeechLexiconWord** Word) Item;
+				public new function HRESULT(ref ISpeechLexiconWords self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5840,29 +5840,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LangId(int32* LangId) mut
+			public HRESULT get_LangId(out int32 LangId) mut
 			{
-				return VT.get_LangId(&this, LangId);
+				return VT.get_LangId(ref this, out LangId);
 			}
-			public HRESULT get_Type(SpeechWordType* WordType) mut
+			public HRESULT get_Type(out SpeechWordType WordType) mut
 			{
-				return VT.get_Type(&this, WordType);
+				return VT.get_Type(ref this, out WordType);
 			}
 			public HRESULT get_Word(BSTR* Word) mut
 			{
-				return VT.get_Word(&this, Word);
+				return VT.get_Word(ref this, Word);
 			}
 			public HRESULT get_Pronunciations(ISpeechLexiconPronunciations** Pronunciations) mut
 			{
-				return VT.get_Pronunciations(&this, Pronunciations);
+				return VT.get_Pronunciations(ref this, Pronunciations);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechLexiconWord *self, int32* LangId) get_LangId;
-				public new function HRESULT(ISpeechLexiconWord *self, SpeechWordType* WordType) get_Type;
-				public new function HRESULT(ISpeechLexiconWord *self, BSTR* Word) get_Word;
-				public new function HRESULT(ISpeechLexiconWord *self, ISpeechLexiconPronunciations** Pronunciations) get_Pronunciations;
+				public new function HRESULT(ref ISpeechLexiconWord self, out int32 LangId) get_LangId;
+				public new function HRESULT(ref ISpeechLexiconWord self, out SpeechWordType WordType) get_Type;
+				public new function HRESULT(ref ISpeechLexiconWord self, BSTR* Word) get_Word;
+				public new function HRESULT(ref ISpeechLexiconWord self, ISpeechLexiconPronunciations** Pronunciations) get_Pronunciations;
 			}
 		}
 		[CRepr]
@@ -5872,24 +5872,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* Count) mut
+			public HRESULT get_Count(out int32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT Item(int32 Index, ISpeechLexiconPronunciation** Pronunciation) mut
 			{
-				return VT.Item(&this, Index, Pronunciation);
+				return VT.Item(ref this, Index, Pronunciation);
 			}
 			public HRESULT get__NewEnum(IUnknown** EnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, EnumVARIANT);
+				return VT.get__NewEnum(ref this, EnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechLexiconPronunciations *self, int32* Count) get_Count;
-				public new function HRESULT(ISpeechLexiconPronunciations *self, int32 Index, ISpeechLexiconPronunciation** Pronunciation) Item;
-				public new function HRESULT(ISpeechLexiconPronunciations *self, IUnknown** EnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISpeechLexiconPronunciations self, out int32 Count) get_Count;
+				public new function HRESULT(ref ISpeechLexiconPronunciations self, int32 Index, ISpeechLexiconPronunciation** Pronunciation) Item;
+				public new function HRESULT(ref ISpeechLexiconPronunciations self, IUnknown** EnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5899,34 +5899,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Type(SpeechLexiconType* LexiconType) mut
+			public HRESULT get_Type(out SpeechLexiconType LexiconType) mut
 			{
-				return VT.get_Type(&this, LexiconType);
+				return VT.get_Type(ref this, out LexiconType);
 			}
-			public HRESULT get_LangId(int32* LangId) mut
+			public HRESULT get_LangId(out int32 LangId) mut
 			{
-				return VT.get_LangId(&this, LangId);
+				return VT.get_LangId(ref this, out LangId);
 			}
-			public HRESULT get_PartOfSpeech(SpeechPartOfSpeech* PartOfSpeech) mut
+			public HRESULT get_PartOfSpeech(out SpeechPartOfSpeech PartOfSpeech) mut
 			{
-				return VT.get_PartOfSpeech(&this, PartOfSpeech);
+				return VT.get_PartOfSpeech(ref this, out PartOfSpeech);
 			}
-			public HRESULT get_PhoneIds(VARIANT* PhoneIds) mut
+			public HRESULT get_PhoneIds(out VARIANT PhoneIds) mut
 			{
-				return VT.get_PhoneIds(&this, PhoneIds);
+				return VT.get_PhoneIds(ref this, out PhoneIds);
 			}
 			public HRESULT get_Symbolic(BSTR* Symbolic) mut
 			{
-				return VT.get_Symbolic(&this, Symbolic);
+				return VT.get_Symbolic(ref this, Symbolic);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechLexiconPronunciation *self, SpeechLexiconType* LexiconType) get_Type;
-				public new function HRESULT(ISpeechLexiconPronunciation *self, int32* LangId) get_LangId;
-				public new function HRESULT(ISpeechLexiconPronunciation *self, SpeechPartOfSpeech* PartOfSpeech) get_PartOfSpeech;
-				public new function HRESULT(ISpeechLexiconPronunciation *self, VARIANT* PhoneIds) get_PhoneIds;
-				public new function HRESULT(ISpeechLexiconPronunciation *self, BSTR* Symbolic) get_Symbolic;
+				public new function HRESULT(ref ISpeechLexiconPronunciation self, out SpeechLexiconType LexiconType) get_Type;
+				public new function HRESULT(ref ISpeechLexiconPronunciation self, out int32 LangId) get_LangId;
+				public new function HRESULT(ref ISpeechLexiconPronunciation self, out SpeechPartOfSpeech PartOfSpeech) get_PartOfSpeech;
+				public new function HRESULT(ref ISpeechLexiconPronunciation self, out VARIANT PhoneIds) get_PhoneIds;
+				public new function HRESULT(ref ISpeechLexiconPronunciation self, BSTR* Symbolic) get_Symbolic;
 			}
 		}
 		[CRepr]
@@ -5938,17 +5938,17 @@ namespace Win32
 			
 			public HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, BSTR* pResult) mut
 			{
-				return VT.GetXMLResult(&this, Options, pResult);
+				return VT.GetXMLResult(ref this, Options, pResult);
 			}
-			public HRESULT GetXMLErrorInfo(int32* LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, int32* ResultCode, int16* IsError) mut
+			public HRESULT GetXMLErrorInfo(out int32 LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, out int32 ResultCode, out int16 IsError) mut
 			{
-				return VT.GetXMLErrorInfo(&this, LineNumber, ScriptLine, Source, Description, ResultCode, IsError);
+				return VT.GetXMLErrorInfo(ref this, out LineNumber, ScriptLine, Source, Description, out ResultCode, out IsError);
 			}
 			[CRepr]
 			public struct VTable : ISpeechRecoResult.VTable
 			{
-				public new function HRESULT(ISpeechXMLRecoResult *self, SPXMLRESULTOPTIONS Options, BSTR* pResult) GetXMLResult;
-				public new function HRESULT(ISpeechXMLRecoResult *self, int32* LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, int32* ResultCode, int16* IsError) GetXMLErrorInfo;
+				public new function HRESULT(ref ISpeechXMLRecoResult self, SPXMLRESULTOPTIONS Options, BSTR* pResult) GetXMLResult;
+				public new function HRESULT(ref ISpeechXMLRecoResult self, out int32 LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, out int32 ResultCode, out int16 IsError) GetXMLErrorInfo;
 			}
 		}
 		[CRepr]
@@ -5960,72 +5960,72 @@ namespace Win32
 			
 			public HRESULT get_RecoContext(ISpeechRecoContext** RecoContext) mut
 			{
-				return VT.get_RecoContext(&this, RecoContext);
+				return VT.get_RecoContext(ref this, RecoContext);
 			}
 			public HRESULT get_Times(ISpeechRecoResultTimes** Times) mut
 			{
-				return VT.get_Times(&this, Times);
+				return VT.get_Times(ref this, Times);
 			}
 			public HRESULT putref_AudioFormat(ISpeechAudioFormat* Format) mut
 			{
-				return VT.putref_AudioFormat(&this, Format);
+				return VT.putref_AudioFormat(ref this, Format);
 			}
 			public HRESULT get_AudioFormat(ISpeechAudioFormat** Format) mut
 			{
-				return VT.get_AudioFormat(&this, Format);
+				return VT.get_AudioFormat(ref this, Format);
 			}
 			public HRESULT get_PhraseInfo(ISpeechPhraseInfo** PhraseInfo) mut
 			{
-				return VT.get_PhraseInfo(&this, PhraseInfo);
+				return VT.get_PhraseInfo(ref this, PhraseInfo);
 			}
 			public HRESULT Alternates(int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) mut
 			{
-				return VT.Alternates(&this, RequestCount, StartElement, Elements, Alternates);
+				return VT.Alternates(ref this, RequestCount, StartElement, Elements, Alternates);
 			}
 			public HRESULT Audio(int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) mut
 			{
-				return VT.Audio(&this, StartElement, Elements, Stream);
+				return VT.Audio(ref this, StartElement, Elements, Stream);
 			}
-			public HRESULT SpeakAudio(int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, int32* StreamNumber) mut
+			public HRESULT SpeakAudio(int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) mut
 			{
-				return VT.SpeakAudio(&this, StartElement, Elements, Flags, StreamNumber);
+				return VT.SpeakAudio(ref this, StartElement, Elements, Flags, out StreamNumber);
 			}
-			public HRESULT SaveToMemory(VARIANT* ResultBlock) mut
+			public HRESULT SaveToMemory(out VARIANT ResultBlock) mut
 			{
-				return VT.SaveToMemory(&this, ResultBlock);
+				return VT.SaveToMemory(ref this, out ResultBlock);
 			}
 			public HRESULT DiscardResultInfo(SpeechDiscardType ValueTypes) mut
 			{
-				return VT.DiscardResultInfo(&this, ValueTypes);
+				return VT.DiscardResultInfo(ref this, ValueTypes);
 			}
 			public HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, BSTR* pResult) mut
 			{
-				return VT.GetXMLResult(&this, Options, pResult);
+				return VT.GetXMLResult(ref this, Options, pResult);
 			}
-			public HRESULT GetXMLErrorInfo(int32* LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, HRESULT* ResultCode, int16* IsError) mut
+			public HRESULT GetXMLErrorInfo(out int32 LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, out HRESULT ResultCode, out int16 IsError) mut
 			{
-				return VT.GetXMLErrorInfo(&this, LineNumber, ScriptLine, Source, Description, ResultCode, IsError);
+				return VT.GetXMLErrorInfo(ref this, out LineNumber, ScriptLine, Source, Description, out ResultCode, out IsError);
 			}
 			public HRESULT SetTextFeedback(BSTR Feedback, int16 WasSuccessful) mut
 			{
-				return VT.SetTextFeedback(&this, Feedback, WasSuccessful);
+				return VT.SetTextFeedback(ref this, Feedback, WasSuccessful);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechRecoResultDispatch *self, ISpeechRecoContext** RecoContext) get_RecoContext;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, ISpeechRecoResultTimes** Times) get_Times;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, ISpeechAudioFormat* Format) putref_AudioFormat;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, ISpeechAudioFormat** Format) get_AudioFormat;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) Alternates;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) Audio;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, int32* StreamNumber) SpeakAudio;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, VARIANT* ResultBlock) SaveToMemory;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, SpeechDiscardType ValueTypes) DiscardResultInfo;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, SPXMLRESULTOPTIONS Options, BSTR* pResult) GetXMLResult;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, int32* LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, HRESULT* ResultCode, int16* IsError) GetXMLErrorInfo;
-				public new function HRESULT(ISpeechRecoResultDispatch *self, BSTR Feedback, int16 WasSuccessful) SetTextFeedback;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechRecoContext** RecoContext) get_RecoContext;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechRecoResultTimes** Times) get_Times;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechAudioFormat* Format) putref_AudioFormat;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechAudioFormat** Format) get_AudioFormat;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, ISpeechPhraseInfo** PhraseInfo) get_PhraseInfo;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, int32 RequestCount, int32 StartElement, int32 Elements, ISpeechPhraseAlternates** Alternates) Alternates;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, int32 StartElement, int32 Elements, ISpeechMemoryStream** Stream) Audio;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, int32 StartElement, int32 Elements, SpeechVoiceSpeakFlags Flags, out int32 StreamNumber) SpeakAudio;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, out VARIANT ResultBlock) SaveToMemory;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, SpeechDiscardType ValueTypes) DiscardResultInfo;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, SPXMLRESULTOPTIONS Options, BSTR* pResult) GetXMLResult;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, out int32 LineNumber, BSTR* ScriptLine, BSTR* Source, BSTR* Description, out HRESULT ResultCode, out int16 IsError) GetXMLErrorInfo;
+				public new function HRESULT(ref ISpeechRecoResultDispatch self, BSTR Feedback, int16 WasSuccessful) SetTextFeedback;
 			}
 		}
 		[CRepr]
@@ -6035,14 +6035,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RestorePhraseFromMemory(VARIANT* PhraseInMemory, ISpeechPhraseInfo** PhraseInfo) mut
+			public HRESULT RestorePhraseFromMemory(ref VARIANT PhraseInMemory, ISpeechPhraseInfo** PhraseInfo) mut
 			{
-				return VT.RestorePhraseFromMemory(&this, PhraseInMemory, PhraseInfo);
+				return VT.RestorePhraseFromMemory(ref this, ref PhraseInMemory, PhraseInfo);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhraseInfoBuilder *self, VARIANT* PhraseInMemory, ISpeechPhraseInfo** PhraseInfo) RestorePhraseFromMemory;
+				public new function HRESULT(ref ISpeechPhraseInfoBuilder self, ref VARIANT PhraseInMemory, ISpeechPhraseInfo** PhraseInfo) RestorePhraseFromMemory;
 			}
 		}
 		[CRepr]
@@ -6052,29 +6052,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LanguageId(int32* LanguageId) mut
+			public HRESULT get_LanguageId(out int32 LanguageId) mut
 			{
-				return VT.get_LanguageId(&this, LanguageId);
+				return VT.get_LanguageId(ref this, out LanguageId);
 			}
 			public HRESULT put_LanguageId(int32 LanguageId) mut
 			{
-				return VT.put_LanguageId(&this, LanguageId);
+				return VT.put_LanguageId(ref this, LanguageId);
 			}
-			public HRESULT PhoneToId(BSTR Phonemes, VARIANT* IdArray) mut
+			public HRESULT PhoneToId(BSTR Phonemes, out VARIANT IdArray) mut
 			{
-				return VT.PhoneToId(&this, Phonemes, IdArray);
+				return VT.PhoneToId(ref this, Phonemes, out IdArray);
 			}
 			public HRESULT IdToPhone(VARIANT IdArray, BSTR* Phonemes) mut
 			{
-				return VT.IdToPhone(&this, IdArray, Phonemes);
+				return VT.IdToPhone(ref this, IdArray, Phonemes);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISpeechPhoneConverter *self, int32* LanguageId) get_LanguageId;
-				public new function HRESULT(ISpeechPhoneConverter *self, int32 LanguageId) put_LanguageId;
-				public new function HRESULT(ISpeechPhoneConverter *self, BSTR Phonemes, VARIANT* IdArray) PhoneToId;
-				public new function HRESULT(ISpeechPhoneConverter *self, VARIANT IdArray, BSTR* Phonemes) IdToPhone;
+				public new function HRESULT(ref ISpeechPhoneConverter self, out int32 LanguageId) get_LanguageId;
+				public new function HRESULT(ref ISpeechPhoneConverter self, int32 LanguageId) put_LanguageId;
+				public new function HRESULT(ref ISpeechPhoneConverter self, BSTR Phonemes, out VARIANT IdArray) PhoneToId;
+				public new function HRESULT(ref ISpeechPhoneConverter self, VARIANT IdArray, BSTR* Phonemes) IdToPhone;
 			}
 		}
 		

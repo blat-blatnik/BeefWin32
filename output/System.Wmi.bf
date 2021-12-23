@@ -1105,34 +1105,34 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function void MI_MethodDecl_Invoke(void* self, MI_Context* context, uint16* nameSpace, uint16* className, uint16* methodName, MI_Instance* instanceName, MI_Instance* parameters);
-		public function void MI_ProviderFT_Load(void** self, MI_Module_Self* selfModule, MI_Context* context);
-		public function void MI_ProviderFT_Unload(void* self, MI_Context* context);
-		public function void MI_ProviderFT_GetInstance(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* instanceName, MI_PropertySet* propertySet);
-		public function void MI_ProviderFT_EnumerateInstances(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_PropertySet* propertySet, uint8 keysOnly, MI_Filter* filter);
-		public function void MI_ProviderFT_CreateInstance(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* newInstance);
-		public function void MI_ProviderFT_ModifyInstance(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* modifiedInstance, MI_PropertySet* propertySet);
-		public function void MI_ProviderFT_DeleteInstance(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* instanceName);
-		public function void MI_ProviderFT_AssociatorInstances(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* instanceName, uint16* resultClass, uint16* role, uint16* resultRole, MI_PropertySet* propertySet, uint8 keysOnly, MI_Filter* filter);
-		public function void MI_ProviderFT_ReferenceInstances(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Instance* instanceName, uint16* role, MI_PropertySet* propertySet, uint8 keysOnly, MI_Filter* filter);
-		public function void MI_ProviderFT_EnableIndications(void* self, MI_Context* indicationsContext, uint16* nameSpace, uint16* className);
-		public function void MI_ProviderFT_DisableIndications(void* self, MI_Context* indicationsContext, uint16* nameSpace, uint16* className);
-		public function void MI_ProviderFT_Subscribe(void* self, MI_Context* context, uint16* nameSpace, uint16* className, MI_Filter* filter, uint16* bookmark, uint64 subscriptionID, void** subscriptionSelf);
-		public function void MI_ProviderFT_Unsubscribe(void* self, MI_Context* context, uint16* nameSpace, uint16* className, uint64 subscriptionID, void* subscriptionSelf);
-		public function void MI_ProviderFT_Invoke(void* self, MI_Context* context, uint16* nameSpace, uint16* className, uint16* methodName, MI_Instance* instanceName, MI_Instance* inputParameters);
-		public function void MI_Module_Load(MI_Module_Self** self, MI_Context* context);
-		public function void MI_Module_Unload(MI_Module_Self* self, MI_Context* context);
+		public function void MI_MethodDecl_Invoke(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, in uint16 methodName, in MI_Instance instanceName, in MI_Instance parameters);
+		public function void MI_ProviderFT_Load(void** self, MI_Module_Self* selfModule, ref MI_Context context);
+		public function void MI_ProviderFT_Unload(void* self, ref MI_Context context);
+		public function void MI_ProviderFT_GetInstance(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, in MI_Instance instanceName, MI_PropertySet* propertySet);
+		public function void MI_ProviderFT_EnumerateInstances(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, MI_PropertySet* propertySet, uint8 keysOnly, MI_Filter* filter);
+		public function void MI_ProviderFT_CreateInstance(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, in MI_Instance newInstance);
+		public function void MI_ProviderFT_ModifyInstance(void* self, out MI_Context context, in uint16 nameSpace, in uint16 className, in MI_Instance modifiedInstance, in MI_PropertySet propertySet);
+		public function void MI_ProviderFT_DeleteInstance(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, in MI_Instance instanceName);
+		public function void MI_ProviderFT_AssociatorInstances(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, in MI_Instance instanceName, uint16* resultClass, uint16* role, uint16* resultRole, MI_PropertySet* propertySet, uint8 keysOnly, MI_Filter* filter);
+		public function void MI_ProviderFT_ReferenceInstances(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, in MI_Instance instanceName, uint16* role, MI_PropertySet* propertySet, uint8 keysOnly, MI_Filter* filter);
+		public function void MI_ProviderFT_EnableIndications(void* self, ref MI_Context indicationsContext, in uint16 nameSpace, in uint16 className);
+		public function void MI_ProviderFT_DisableIndications(void* self, ref MI_Context indicationsContext, in uint16 nameSpace, in uint16 className);
+		public function void MI_ProviderFT_Subscribe(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, MI_Filter* filter, uint16* bookmark, uint64 subscriptionID, void** subscriptionSelf);
+		public function void MI_ProviderFT_Unsubscribe(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, uint64 subscriptionID, void* subscriptionSelf);
+		public function void MI_ProviderFT_Invoke(void* self, ref MI_Context context, in uint16 nameSpace, in uint16 className, in uint16 methodName, in MI_Instance instanceName, in MI_Instance inputParameters);
+		public function void MI_Module_Load(out MI_Module_Self* self, ref MI_Context context);
+		public function void MI_Module_Unload(MI_Module_Self* self, ref MI_Context context);
 		public function void MI_CancelCallback(MI_CancellationReason reason, void* callbackData);
-		public function MI_Module* MI_MainFunction(MI_Server* server);
-		public function void MI_OperationCallback_PromptUser(MI_Operation* operation, void* callbackContext, uint16* message, MI_PromptType promptType, int promptUserResult);
-		public function void MI_OperationCallback_WriteError(MI_Operation* operation, void* callbackContext, MI_Instance* instance, int writeErrorResult);
-		public function void MI_OperationCallback_WriteMessage(MI_Operation* operation, void* callbackContext, uint32 channel, uint16* message);
-		public function void MI_OperationCallback_WriteProgress(MI_Operation* operation, void* callbackContext, uint16* activity, uint16* currentOperation, uint16* statusDescription, uint32 percentageComplete, uint32 secondsRemaining);
+		public function MI_Module* MI_MainFunction(out MI_Server server);
+		public function void MI_OperationCallback_PromptUser(ref MI_Operation operation, void* callbackContext, in uint16 message, MI_PromptType promptType, int promptUserResult);
+		public function void MI_OperationCallback_WriteError(ref MI_Operation operation, void* callbackContext, ref MI_Instance instance, int writeErrorResult);
+		public function void MI_OperationCallback_WriteMessage(ref MI_Operation operation, void* callbackContext, uint32 channel, in uint16 message);
+		public function void MI_OperationCallback_WriteProgress(ref MI_Operation operation, void* callbackContext, in uint16 activity, in uint16 currentOperation, in uint16 statusDescription, uint32 percentageComplete, uint32 secondsRemaining);
 		public function void MI_OperationCallback_Instance(MI_Operation* operation, void* callbackContext, MI_Instance* instance, uint8 moreResults, MI_Result resultCode, uint16* errorString, MI_Instance* errorDetails, int resultAcknowledgement);
-		public function void MI_OperationCallback_StreamedParameter(MI_Operation* operation, void* callbackContext, uint16* parameterName, MI_Type resultType, MI_Value* result, int resultAcknowledgement);
+		public function void MI_OperationCallback_StreamedParameter(ref MI_Operation operation, void* callbackContext, in uint16 parameterName, MI_Type resultType, in MI_Value result, int resultAcknowledgement);
 		public function void MI_OperationCallback_Indication(MI_Operation* operation, void* callbackContext, MI_Instance* instance, uint16* bookmark, uint16* machineID, uint8 moreResults, MI_Result resultCode, uint16* errorString, MI_Instance* errorDetails, int resultAcknowledgement);
 		public function void MI_OperationCallback_Class(MI_Operation* operation, void* callbackContext, MI_Class* classResult, uint8 moreResults, MI_Result resultCode, uint16* errorString, MI_Instance* errorDetails, int resultAcknowledgement);
-		public function MI_Result MI_Deserializer_ClassObjectNeeded(void* context, uint16* serverName, uint16* namespaceName, uint16* className, MI_Class** requestedClassObject);
+		public function MI_Result MI_Deserializer_ClassObjectNeeded(void* context, uint16* serverName, uint16* namespaceName, in uint16 className, out MI_Class* requestedClassObject);
 		
 		// --- Structs ---
 		
@@ -2602,59 +2602,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* puKeyCount) mut
+			public HRESULT GetCount(out uint32 puKeyCount) mut
 			{
-				return VT.GetCount(&this, puKeyCount);
+				return VT.GetCount(ref this, out puKeyCount);
 			}
 			public HRESULT SetKey(PWSTR wszName, uint32 uFlags, uint32 uCimType, void* pKeyVal) mut
 			{
-				return VT.SetKey(&this, wszName, uFlags, uCimType, pKeyVal);
+				return VT.SetKey(ref this, wszName, uFlags, uCimType, pKeyVal);
 			}
-			public HRESULT SetKey2(PWSTR wszName, uint32 uFlags, uint32 uCimType, VARIANT* pKeyVal) mut
+			public HRESULT SetKey2(PWSTR wszName, uint32 uFlags, uint32 uCimType, ref VARIANT pKeyVal) mut
 			{
-				return VT.SetKey2(&this, wszName, uFlags, uCimType, pKeyVal);
+				return VT.SetKey2(ref this, wszName, uFlags, uCimType, ref pKeyVal);
 			}
-			public HRESULT GetKey(uint32 uKeyIx, uint32 uFlags, uint32* puNameBufSize, char16* pszKeyName, uint32* puKeyValBufSize, void* pKeyVal, uint32* puApparentCimType) mut
+			public HRESULT GetKey(uint32 uKeyIx, uint32 uFlags, out uint32 puNameBufSize, char16* pszKeyName, out uint32 puKeyValBufSize, void* pKeyVal, out uint32 puApparentCimType) mut
 			{
-				return VT.GetKey(&this, uKeyIx, uFlags, puNameBufSize, pszKeyName, puKeyValBufSize, pKeyVal, puApparentCimType);
+				return VT.GetKey(ref this, uKeyIx, uFlags, out puNameBufSize, pszKeyName, out puKeyValBufSize, pKeyVal, out puApparentCimType);
 			}
-			public HRESULT GetKey2(uint32 uKeyIx, uint32 uFlags, uint32* puNameBufSize, char16* pszKeyName, VARIANT* pKeyValue, uint32* puApparentCimType) mut
+			public HRESULT GetKey2(uint32 uKeyIx, uint32 uFlags, out uint32 puNameBufSize, char16* pszKeyName, out VARIANT pKeyValue, out uint32 puApparentCimType) mut
 			{
-				return VT.GetKey2(&this, uKeyIx, uFlags, puNameBufSize, pszKeyName, pKeyValue, puApparentCimType);
+				return VT.GetKey2(ref this, uKeyIx, uFlags, out puNameBufSize, pszKeyName, out pKeyValue, out puApparentCimType);
 			}
 			public HRESULT RemoveKey(PWSTR wszName, uint32 uFlags) mut
 			{
-				return VT.RemoveKey(&this, wszName, uFlags);
+				return VT.RemoveKey(ref this, wszName, uFlags);
 			}
 			public HRESULT RemoveAllKeys(uint32 uFlags) mut
 			{
-				return VT.RemoveAllKeys(&this, uFlags);
+				return VT.RemoveAllKeys(ref this, uFlags);
 			}
 			public HRESULT MakeSingleton(uint8 bSet) mut
 			{
-				return VT.MakeSingleton(&this, bSet);
+				return VT.MakeSingleton(ref this, bSet);
 			}
-			public HRESULT GetInfo(uint32 uRequestedInfo, uint64* puResponse) mut
+			public HRESULT GetInfo(uint32 uRequestedInfo, out uint64 puResponse) mut
 			{
-				return VT.GetInfo(&this, uRequestedInfo, puResponse);
+				return VT.GetInfo(ref this, uRequestedInfo, out puResponse);
 			}
-			public HRESULT GetText(int32 lFlags, uint32* puBuffLength, char16* pszText) mut
+			public HRESULT GetText(int32 lFlags, out uint32 puBuffLength, char16* pszText) mut
 			{
-				return VT.GetText(&this, lFlags, puBuffLength, pszText);
+				return VT.GetText(ref this, lFlags, out puBuffLength, pszText);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemPathKeyList *self, uint32* puKeyCount) GetCount;
-				public new function HRESULT(IWbemPathKeyList *self, PWSTR wszName, uint32 uFlags, uint32 uCimType, void* pKeyVal) SetKey;
-				public new function HRESULT(IWbemPathKeyList *self, PWSTR wszName, uint32 uFlags, uint32 uCimType, VARIANT* pKeyVal) SetKey2;
-				public new function HRESULT(IWbemPathKeyList *self, uint32 uKeyIx, uint32 uFlags, uint32* puNameBufSize, char16* pszKeyName, uint32* puKeyValBufSize, void* pKeyVal, uint32* puApparentCimType) GetKey;
-				public new function HRESULT(IWbemPathKeyList *self, uint32 uKeyIx, uint32 uFlags, uint32* puNameBufSize, char16* pszKeyName, VARIANT* pKeyValue, uint32* puApparentCimType) GetKey2;
-				public new function HRESULT(IWbemPathKeyList *self, PWSTR wszName, uint32 uFlags) RemoveKey;
-				public new function HRESULT(IWbemPathKeyList *self, uint32 uFlags) RemoveAllKeys;
-				public new function HRESULT(IWbemPathKeyList *self, uint8 bSet) MakeSingleton;
-				public new function HRESULT(IWbemPathKeyList *self, uint32 uRequestedInfo, uint64* puResponse) GetInfo;
-				public new function HRESULT(IWbemPathKeyList *self, int32 lFlags, uint32* puBuffLength, char16* pszText) GetText;
+				public new function HRESULT(ref IWbemPathKeyList self, out uint32 puKeyCount) GetCount;
+				public new function HRESULT(ref IWbemPathKeyList self, PWSTR wszName, uint32 uFlags, uint32 uCimType, void* pKeyVal) SetKey;
+				public new function HRESULT(ref IWbemPathKeyList self, PWSTR wszName, uint32 uFlags, uint32 uCimType, ref VARIANT pKeyVal) SetKey2;
+				public new function HRESULT(ref IWbemPathKeyList self, uint32 uKeyIx, uint32 uFlags, out uint32 puNameBufSize, char16* pszKeyName, out uint32 puKeyValBufSize, void* pKeyVal, out uint32 puApparentCimType) GetKey;
+				public new function HRESULT(ref IWbemPathKeyList self, uint32 uKeyIx, uint32 uFlags, out uint32 puNameBufSize, char16* pszKeyName, out VARIANT pKeyValue, out uint32 puApparentCimType) GetKey2;
+				public new function HRESULT(ref IWbemPathKeyList self, PWSTR wszName, uint32 uFlags) RemoveKey;
+				public new function HRESULT(ref IWbemPathKeyList self, uint32 uFlags) RemoveAllKeys;
+				public new function HRESULT(ref IWbemPathKeyList self, uint8 bSet) MakeSingleton;
+				public new function HRESULT(ref IWbemPathKeyList self, uint32 uRequestedInfo, out uint64 puResponse) GetInfo;
+				public new function HRESULT(ref IWbemPathKeyList self, int32 lFlags, out uint32 puBuffLength, char16* pszText) GetText;
 			}
 		}
 		[CRepr]
@@ -2666,137 +2666,137 @@ namespace Win32
 			
 			public HRESULT SetText(uint32 uMode, PWSTR pszPath) mut
 			{
-				return VT.SetText(&this, uMode, pszPath);
+				return VT.SetText(ref this, uMode, pszPath);
 			}
-			public HRESULT GetText(int32 lFlags, uint32* puBuffLength, char16* pszText) mut
+			public HRESULT GetText(int32 lFlags, out uint32 puBuffLength, char16* pszText) mut
 			{
-				return VT.GetText(&this, lFlags, puBuffLength, pszText);
+				return VT.GetText(ref this, lFlags, out puBuffLength, pszText);
 			}
-			public HRESULT GetInfo(uint32 uRequestedInfo, uint64* puResponse) mut
+			public HRESULT GetInfo(uint32 uRequestedInfo, out uint64 puResponse) mut
 			{
-				return VT.GetInfo(&this, uRequestedInfo, puResponse);
+				return VT.GetInfo(ref this, uRequestedInfo, out puResponse);
 			}
 			public HRESULT SetServer(PWSTR Name) mut
 			{
-				return VT.SetServer(&this, Name);
+				return VT.SetServer(ref this, Name);
 			}
-			public HRESULT GetServer(uint32* puNameBufLength, char16* pName) mut
+			public HRESULT GetServer(out uint32 puNameBufLength, char16* pName) mut
 			{
-				return VT.GetServer(&this, puNameBufLength, pName);
+				return VT.GetServer(ref this, out puNameBufLength, pName);
 			}
-			public HRESULT GetNamespaceCount(uint32* puCount) mut
+			public HRESULT GetNamespaceCount(out uint32 puCount) mut
 			{
-				return VT.GetNamespaceCount(&this, puCount);
+				return VT.GetNamespaceCount(ref this, out puCount);
 			}
 			public HRESULT SetNamespaceAt(uint32 uIndex, PWSTR pszName) mut
 			{
-				return VT.SetNamespaceAt(&this, uIndex, pszName);
+				return VT.SetNamespaceAt(ref this, uIndex, pszName);
 			}
-			public HRESULT GetNamespaceAt(uint32 uIndex, uint32* puNameBufLength, char16* pName) mut
+			public HRESULT GetNamespaceAt(uint32 uIndex, out uint32 puNameBufLength, char16* pName) mut
 			{
-				return VT.GetNamespaceAt(&this, uIndex, puNameBufLength, pName);
+				return VT.GetNamespaceAt(ref this, uIndex, out puNameBufLength, pName);
 			}
 			public HRESULT RemoveNamespaceAt(uint32 uIndex) mut
 			{
-				return VT.RemoveNamespaceAt(&this, uIndex);
+				return VT.RemoveNamespaceAt(ref this, uIndex);
 			}
 			public HRESULT RemoveAllNamespaces() mut
 			{
-				return VT.RemoveAllNamespaces(&this);
+				return VT.RemoveAllNamespaces(ref this);
 			}
-			public HRESULT GetScopeCount(uint32* puCount) mut
+			public HRESULT GetScopeCount(out uint32 puCount) mut
 			{
-				return VT.GetScopeCount(&this, puCount);
+				return VT.GetScopeCount(ref this, out puCount);
 			}
 			public HRESULT SetScope(uint32 uIndex, PWSTR pszClass) mut
 			{
-				return VT.SetScope(&this, uIndex, pszClass);
+				return VT.SetScope(ref this, uIndex, pszClass);
 			}
 			public HRESULT SetScopeFromText(uint32 uIndex, PWSTR pszText) mut
 			{
-				return VT.SetScopeFromText(&this, uIndex, pszText);
+				return VT.SetScopeFromText(ref this, uIndex, pszText);
 			}
-			public HRESULT GetScope(uint32 uIndex, uint32* puClassNameBufSize, char16* pszClass, IWbemPathKeyList** pKeyList) mut
+			public HRESULT GetScope(uint32 uIndex, out uint32 puClassNameBufSize, char16* pszClass, out IWbemPathKeyList* pKeyList) mut
 			{
-				return VT.GetScope(&this, uIndex, puClassNameBufSize, pszClass, pKeyList);
+				return VT.GetScope(ref this, uIndex, out puClassNameBufSize, pszClass, out pKeyList);
 			}
-			public HRESULT GetScopeAsText(uint32 uIndex, uint32* puTextBufSize, char16* pszText) mut
+			public HRESULT GetScopeAsText(uint32 uIndex, out uint32 puTextBufSize, char16* pszText) mut
 			{
-				return VT.GetScopeAsText(&this, uIndex, puTextBufSize, pszText);
+				return VT.GetScopeAsText(ref this, uIndex, out puTextBufSize, pszText);
 			}
 			public HRESULT RemoveScope(uint32 uIndex) mut
 			{
-				return VT.RemoveScope(&this, uIndex);
+				return VT.RemoveScope(ref this, uIndex);
 			}
 			public HRESULT RemoveAllScopes() mut
 			{
-				return VT.RemoveAllScopes(&this);
+				return VT.RemoveAllScopes(ref this);
 			}
 			public HRESULT SetClassName(PWSTR Name) mut
 			{
-				return VT.SetClassName(&this, Name);
+				return VT.SetClassName(ref this, Name);
 			}
-			public HRESULT GetClassName(uint32* puBuffLength, char16* pszName) mut
+			public HRESULT GetClassName(out uint32 puBuffLength, char16* pszName) mut
 			{
-				return VT.GetClassName(&this, puBuffLength, pszName);
+				return VT.GetClassName(ref this, out puBuffLength, pszName);
 			}
-			public HRESULT GetKeyList(IWbemPathKeyList** pOut) mut
+			public HRESULT GetKeyList(out IWbemPathKeyList* pOut) mut
 			{
-				return VT.GetKeyList(&this, pOut);
+				return VT.GetKeyList(ref this, out pOut);
 			}
 			public HRESULT CreateClassPart(int32 lFlags, PWSTR Name) mut
 			{
-				return VT.CreateClassPart(&this, lFlags, Name);
+				return VT.CreateClassPart(ref this, lFlags, Name);
 			}
 			public HRESULT DeleteClassPart(int32 lFlags) mut
 			{
-				return VT.DeleteClassPart(&this, lFlags);
+				return VT.DeleteClassPart(ref this, lFlags);
 			}
 			public BOOL IsRelative(PWSTR wszMachine, PWSTR wszNamespace) mut
 			{
-				return VT.IsRelative(&this, wszMachine, wszNamespace);
+				return VT.IsRelative(ref this, wszMachine, wszNamespace);
 			}
 			public BOOL IsRelativeOrChild(PWSTR wszMachine, PWSTR wszNamespace, int32 lFlags) mut
 			{
-				return VT.IsRelativeOrChild(&this, wszMachine, wszNamespace, lFlags);
+				return VT.IsRelativeOrChild(ref this, wszMachine, wszNamespace, lFlags);
 			}
 			public BOOL IsLocal(PWSTR wszMachine) mut
 			{
-				return VT.IsLocal(&this, wszMachine);
+				return VT.IsLocal(ref this, wszMachine);
 			}
 			public BOOL IsSameClassName(PWSTR wszClass) mut
 			{
-				return VT.IsSameClassName(&this, wszClass);
+				return VT.IsSameClassName(ref this, wszClass);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemPath *self, uint32 uMode, PWSTR pszPath) SetText;
-				public new function HRESULT(IWbemPath *self, int32 lFlags, uint32* puBuffLength, char16* pszText) GetText;
-				public new function HRESULT(IWbemPath *self, uint32 uRequestedInfo, uint64* puResponse) GetInfo;
-				public new function HRESULT(IWbemPath *self, PWSTR Name) SetServer;
-				public new function HRESULT(IWbemPath *self, uint32* puNameBufLength, char16* pName) GetServer;
-				public new function HRESULT(IWbemPath *self, uint32* puCount) GetNamespaceCount;
-				public new function HRESULT(IWbemPath *self, uint32 uIndex, PWSTR pszName) SetNamespaceAt;
-				public new function HRESULT(IWbemPath *self, uint32 uIndex, uint32* puNameBufLength, char16* pName) GetNamespaceAt;
-				public new function HRESULT(IWbemPath *self, uint32 uIndex) RemoveNamespaceAt;
-				public new function HRESULT(IWbemPath *self) RemoveAllNamespaces;
-				public new function HRESULT(IWbemPath *self, uint32* puCount) GetScopeCount;
-				public new function HRESULT(IWbemPath *self, uint32 uIndex, PWSTR pszClass) SetScope;
-				public new function HRESULT(IWbemPath *self, uint32 uIndex, PWSTR pszText) SetScopeFromText;
-				public new function HRESULT(IWbemPath *self, uint32 uIndex, uint32* puClassNameBufSize, char16* pszClass, IWbemPathKeyList** pKeyList) GetScope;
-				public new function HRESULT(IWbemPath *self, uint32 uIndex, uint32* puTextBufSize, char16* pszText) GetScopeAsText;
-				public new function HRESULT(IWbemPath *self, uint32 uIndex) RemoveScope;
-				public new function HRESULT(IWbemPath *self) RemoveAllScopes;
-				public new function HRESULT(IWbemPath *self, PWSTR Name) SetClassName;
-				public new function HRESULT(IWbemPath *self, uint32* puBuffLength, char16* pszName) GetClassName;
-				public new function HRESULT(IWbemPath *self, IWbemPathKeyList** pOut) GetKeyList;
-				public new function HRESULT(IWbemPath *self, int32 lFlags, PWSTR Name) CreateClassPart;
-				public new function HRESULT(IWbemPath *self, int32 lFlags) DeleteClassPart;
-				public new function BOOL(IWbemPath *self, PWSTR wszMachine, PWSTR wszNamespace) IsRelative;
-				public new function BOOL(IWbemPath *self, PWSTR wszMachine, PWSTR wszNamespace, int32 lFlags) IsRelativeOrChild;
-				public new function BOOL(IWbemPath *self, PWSTR wszMachine) IsLocal;
-				public new function BOOL(IWbemPath *self, PWSTR wszClass) IsSameClassName;
+				public new function HRESULT(ref IWbemPath self, uint32 uMode, PWSTR pszPath) SetText;
+				public new function HRESULT(ref IWbemPath self, int32 lFlags, out uint32 puBuffLength, char16* pszText) GetText;
+				public new function HRESULT(ref IWbemPath self, uint32 uRequestedInfo, out uint64 puResponse) GetInfo;
+				public new function HRESULT(ref IWbemPath self, PWSTR Name) SetServer;
+				public new function HRESULT(ref IWbemPath self, out uint32 puNameBufLength, char16* pName) GetServer;
+				public new function HRESULT(ref IWbemPath self, out uint32 puCount) GetNamespaceCount;
+				public new function HRESULT(ref IWbemPath self, uint32 uIndex, PWSTR pszName) SetNamespaceAt;
+				public new function HRESULT(ref IWbemPath self, uint32 uIndex, out uint32 puNameBufLength, char16* pName) GetNamespaceAt;
+				public new function HRESULT(ref IWbemPath self, uint32 uIndex) RemoveNamespaceAt;
+				public new function HRESULT(ref IWbemPath self) RemoveAllNamespaces;
+				public new function HRESULT(ref IWbemPath self, out uint32 puCount) GetScopeCount;
+				public new function HRESULT(ref IWbemPath self, uint32 uIndex, PWSTR pszClass) SetScope;
+				public new function HRESULT(ref IWbemPath self, uint32 uIndex, PWSTR pszText) SetScopeFromText;
+				public new function HRESULT(ref IWbemPath self, uint32 uIndex, out uint32 puClassNameBufSize, char16* pszClass, out IWbemPathKeyList* pKeyList) GetScope;
+				public new function HRESULT(ref IWbemPath self, uint32 uIndex, out uint32 puTextBufSize, char16* pszText) GetScopeAsText;
+				public new function HRESULT(ref IWbemPath self, uint32 uIndex) RemoveScope;
+				public new function HRESULT(ref IWbemPath self) RemoveAllScopes;
+				public new function HRESULT(ref IWbemPath self, PWSTR Name) SetClassName;
+				public new function HRESULT(ref IWbemPath self, out uint32 puBuffLength, char16* pszName) GetClassName;
+				public new function HRESULT(ref IWbemPath self, out IWbemPathKeyList* pOut) GetKeyList;
+				public new function HRESULT(ref IWbemPath self, int32 lFlags, PWSTR Name) CreateClassPart;
+				public new function HRESULT(ref IWbemPath self, int32 lFlags) DeleteClassPart;
+				public new function BOOL(ref IWbemPath self, PWSTR wszMachine, PWSTR wszNamespace) IsRelative;
+				public new function BOOL(ref IWbemPath self, PWSTR wszMachine, PWSTR wszNamespace, int32 lFlags) IsRelativeOrChild;
+				public new function BOOL(ref IWbemPath self, PWSTR wszMachine) IsLocal;
+				public new function BOOL(ref IWbemPath self, PWSTR wszClass) IsSameClassName;
 			}
 		}
 		[CRepr]
@@ -2808,42 +2808,42 @@ namespace Win32
 			
 			public HRESULT Empty() mut
 			{
-				return VT.Empty(&this);
+				return VT.Empty(ref this);
 			}
-			public HRESULT SetLanguageFeatures(uint32 uFlags, uint32 uArraySize, uint32* puFeatures) mut
+			public HRESULT SetLanguageFeatures(uint32 uFlags, uint32 uArraySize, ref uint32 puFeatures) mut
 			{
-				return VT.SetLanguageFeatures(&this, uFlags, uArraySize, puFeatures);
+				return VT.SetLanguageFeatures(ref this, uFlags, uArraySize, ref puFeatures);
 			}
-			public HRESULT TestLanguageFeatures(uint32 uFlags, uint32* uArraySize, uint32* puFeatures) mut
+			public HRESULT TestLanguageFeatures(uint32 uFlags, out uint32 uArraySize, out uint32 puFeatures) mut
 			{
-				return VT.TestLanguageFeatures(&this, uFlags, uArraySize, puFeatures);
+				return VT.TestLanguageFeatures(ref this, uFlags, out uArraySize, out puFeatures);
 			}
 			public HRESULT Parse(PWSTR pszLang, PWSTR pszQuery, uint32 uFlags) mut
 			{
-				return VT.Parse(&this, pszLang, pszQuery, uFlags);
+				return VT.Parse(ref this, pszLang, pszQuery, uFlags);
 			}
 			public HRESULT GetAnalysis(uint32 uAnalysisType, uint32 uFlags, void** pAnalysis) mut
 			{
-				return VT.GetAnalysis(&this, uAnalysisType, uFlags, pAnalysis);
+				return VT.GetAnalysis(ref this, uAnalysisType, uFlags, pAnalysis);
 			}
 			public HRESULT FreeMemory(void* pMem) mut
 			{
-				return VT.FreeMemory(&this, pMem);
+				return VT.FreeMemory(ref this, pMem);
 			}
 			public HRESULT GetQueryInfo(uint32 uAnalysisType, uint32 uInfoId, uint32 uBufSize, void* pDestBuf) mut
 			{
-				return VT.GetQueryInfo(&this, uAnalysisType, uInfoId, uBufSize, pDestBuf);
+				return VT.GetQueryInfo(ref this, uAnalysisType, uInfoId, uBufSize, pDestBuf);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemQuery *self) Empty;
-				public new function HRESULT(IWbemQuery *self, uint32 uFlags, uint32 uArraySize, uint32* puFeatures) SetLanguageFeatures;
-				public new function HRESULT(IWbemQuery *self, uint32 uFlags, uint32* uArraySize, uint32* puFeatures) TestLanguageFeatures;
-				public new function HRESULT(IWbemQuery *self, PWSTR pszLang, PWSTR pszQuery, uint32 uFlags) Parse;
-				public new function HRESULT(IWbemQuery *self, uint32 uAnalysisType, uint32 uFlags, void** pAnalysis) GetAnalysis;
-				public new function HRESULT(IWbemQuery *self, void* pMem) FreeMemory;
-				public new function HRESULT(IWbemQuery *self, uint32 uAnalysisType, uint32 uInfoId, uint32 uBufSize, void* pDestBuf) GetQueryInfo;
+				public new function HRESULT(ref IWbemQuery self) Empty;
+				public new function HRESULT(ref IWbemQuery self, uint32 uFlags, uint32 uArraySize, ref uint32 puFeatures) SetLanguageFeatures;
+				public new function HRESULT(ref IWbemQuery self, uint32 uFlags, out uint32 uArraySize, out uint32 puFeatures) TestLanguageFeatures;
+				public new function HRESULT(ref IWbemQuery self, PWSTR pszLang, PWSTR pszQuery, uint32 uFlags) Parse;
+				public new function HRESULT(ref IWbemQuery self, uint32 uAnalysisType, uint32 uFlags, void** pAnalysis) GetAnalysis;
+				public new function HRESULT(ref IWbemQuery self, void* pMem) FreeMemory;
+				public new function HRESULT(ref IWbemQuery self, uint32 uAnalysisType, uint32 uInfoId, uint32 uBufSize, void* pDestBuf) GetQueryInfo;
 			}
 		}
 		[CRepr]
@@ -2853,129 +2853,129 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetQualifierSet(IWbemQualifierSet** ppQualSet) mut
+			public HRESULT GetQualifierSet(out IWbemQualifierSet* ppQualSet) mut
 			{
-				return VT.GetQualifierSet(&this, ppQualSet);
+				return VT.GetQualifierSet(ref this, out ppQualSet);
 			}
-			public HRESULT Get(PWSTR wszName, int32 lFlags, VARIANT* pVal, int32* pType, int32* plFlavor) mut
+			public HRESULT Get(PWSTR wszName, int32 lFlags, out VARIANT pVal, out int32 pType, out int32 plFlavor) mut
 			{
-				return VT.Get(&this, wszName, lFlags, pVal, pType, plFlavor);
+				return VT.Get(ref this, wszName, lFlags, out pVal, out pType, out plFlavor);
 			}
-			public HRESULT Put(PWSTR wszName, int32 lFlags, VARIANT* pVal, int32 Type) mut
+			public HRESULT Put(PWSTR wszName, int32 lFlags, ref VARIANT pVal, int32 Type) mut
 			{
-				return VT.Put(&this, wszName, lFlags, pVal, Type);
+				return VT.Put(ref this, wszName, lFlags, ref pVal, Type);
 			}
 			public HRESULT Delete(PWSTR wszName) mut
 			{
-				return VT.Delete(&this, wszName);
+				return VT.Delete(ref this, wszName);
 			}
-			public HRESULT GetNames(PWSTR wszQualifierName, int32 lFlags, VARIANT* pQualifierVal, SAFEARRAY** pNames) mut
+			public HRESULT GetNames(PWSTR wszQualifierName, int32 lFlags, ref VARIANT pQualifierVal, out SAFEARRAY* pNames) mut
 			{
-				return VT.GetNames(&this, wszQualifierName, lFlags, pQualifierVal, pNames);
+				return VT.GetNames(ref this, wszQualifierName, lFlags, ref pQualifierVal, out pNames);
 			}
 			public HRESULT BeginEnumeration(int32 lEnumFlags) mut
 			{
-				return VT.BeginEnumeration(&this, lEnumFlags);
+				return VT.BeginEnumeration(ref this, lEnumFlags);
 			}
-			public HRESULT Next(int32 lFlags, BSTR* strName, VARIANT* pVal, int32* pType, int32* plFlavor) mut
+			public HRESULT Next(int32 lFlags, out BSTR strName, out VARIANT pVal, out int32 pType, out int32 plFlavor) mut
 			{
-				return VT.Next(&this, lFlags, strName, pVal, pType, plFlavor);
+				return VT.Next(ref this, lFlags, out strName, out pVal, out pType, out plFlavor);
 			}
 			public HRESULT EndEnumeration() mut
 			{
-				return VT.EndEnumeration(&this);
+				return VT.EndEnumeration(ref this);
 			}
-			public HRESULT GetPropertyQualifierSet(PWSTR wszProperty, IWbemQualifierSet** ppQualSet) mut
+			public HRESULT GetPropertyQualifierSet(PWSTR wszProperty, out IWbemQualifierSet* ppQualSet) mut
 			{
-				return VT.GetPropertyQualifierSet(&this, wszProperty, ppQualSet);
+				return VT.GetPropertyQualifierSet(ref this, wszProperty, out ppQualSet);
 			}
-			public HRESULT Clone(IWbemClassObject** ppCopy) mut
+			public HRESULT Clone(out IWbemClassObject* ppCopy) mut
 			{
-				return VT.Clone(&this, ppCopy);
+				return VT.Clone(ref this, out ppCopy);
 			}
-			public HRESULT GetObjectText(int32 lFlags, BSTR* pstrObjectText) mut
+			public HRESULT GetObjectText(int32 lFlags, out BSTR pstrObjectText) mut
 			{
-				return VT.GetObjectText(&this, lFlags, pstrObjectText);
+				return VT.GetObjectText(ref this, lFlags, out pstrObjectText);
 			}
-			public HRESULT SpawnDerivedClass(int32 lFlags, IWbemClassObject** ppNewClass) mut
+			public HRESULT SpawnDerivedClass(int32 lFlags, out IWbemClassObject* ppNewClass) mut
 			{
-				return VT.SpawnDerivedClass(&this, lFlags, ppNewClass);
+				return VT.SpawnDerivedClass(ref this, lFlags, out ppNewClass);
 			}
-			public HRESULT SpawnInstance(int32 lFlags, IWbemClassObject** ppNewInstance) mut
+			public HRESULT SpawnInstance(int32 lFlags, out IWbemClassObject* ppNewInstance) mut
 			{
-				return VT.SpawnInstance(&this, lFlags, ppNewInstance);
+				return VT.SpawnInstance(ref this, lFlags, out ppNewInstance);
 			}
-			public HRESULT CompareTo(int32 lFlags, IWbemClassObject* pCompareTo) mut
+			public HRESULT CompareTo(int32 lFlags, ref IWbemClassObject pCompareTo) mut
 			{
-				return VT.CompareTo(&this, lFlags, pCompareTo);
+				return VT.CompareTo(ref this, lFlags, ref pCompareTo);
 			}
-			public HRESULT GetPropertyOrigin(PWSTR wszName, BSTR* pstrClassName) mut
+			public HRESULT GetPropertyOrigin(PWSTR wszName, out BSTR pstrClassName) mut
 			{
-				return VT.GetPropertyOrigin(&this, wszName, pstrClassName);
+				return VT.GetPropertyOrigin(ref this, wszName, out pstrClassName);
 			}
 			public HRESULT InheritsFrom(PWSTR strAncestor) mut
 			{
-				return VT.InheritsFrom(&this, strAncestor);
+				return VT.InheritsFrom(ref this, strAncestor);
 			}
-			public HRESULT GetMethod(PWSTR wszName, int32 lFlags, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature) mut
+			public HRESULT GetMethod(PWSTR wszName, int32 lFlags, out IWbemClassObject* ppInSignature, out IWbemClassObject* ppOutSignature) mut
 			{
-				return VT.GetMethod(&this, wszName, lFlags, ppInSignature, ppOutSignature);
+				return VT.GetMethod(ref this, wszName, lFlags, out ppInSignature, out ppOutSignature);
 			}
-			public HRESULT PutMethod(PWSTR wszName, int32 lFlags, IWbemClassObject* pInSignature, IWbemClassObject* pOutSignature) mut
+			public HRESULT PutMethod(PWSTR wszName, int32 lFlags, ref IWbemClassObject pInSignature, ref IWbemClassObject pOutSignature) mut
 			{
-				return VT.PutMethod(&this, wszName, lFlags, pInSignature, pOutSignature);
+				return VT.PutMethod(ref this, wszName, lFlags, ref pInSignature, ref pOutSignature);
 			}
 			public HRESULT DeleteMethod(PWSTR wszName) mut
 			{
-				return VT.DeleteMethod(&this, wszName);
+				return VT.DeleteMethod(ref this, wszName);
 			}
 			public HRESULT BeginMethodEnumeration(int32 lEnumFlags) mut
 			{
-				return VT.BeginMethodEnumeration(&this, lEnumFlags);
+				return VT.BeginMethodEnumeration(ref this, lEnumFlags);
 			}
-			public HRESULT NextMethod(int32 lFlags, BSTR* pstrName, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature) mut
+			public HRESULT NextMethod(int32 lFlags, out BSTR pstrName, out IWbemClassObject* ppInSignature, out IWbemClassObject* ppOutSignature) mut
 			{
-				return VT.NextMethod(&this, lFlags, pstrName, ppInSignature, ppOutSignature);
+				return VT.NextMethod(ref this, lFlags, out pstrName, out ppInSignature, out ppOutSignature);
 			}
 			public HRESULT EndMethodEnumeration() mut
 			{
-				return VT.EndMethodEnumeration(&this);
+				return VT.EndMethodEnumeration(ref this);
 			}
-			public HRESULT GetMethodQualifierSet(PWSTR wszMethod, IWbemQualifierSet** ppQualSet) mut
+			public HRESULT GetMethodQualifierSet(PWSTR wszMethod, out IWbemQualifierSet* ppQualSet) mut
 			{
-				return VT.GetMethodQualifierSet(&this, wszMethod, ppQualSet);
+				return VT.GetMethodQualifierSet(ref this, wszMethod, out ppQualSet);
 			}
-			public HRESULT GetMethodOrigin(PWSTR wszMethodName, BSTR* pstrClassName) mut
+			public HRESULT GetMethodOrigin(PWSTR wszMethodName, out BSTR pstrClassName) mut
 			{
-				return VT.GetMethodOrigin(&this, wszMethodName, pstrClassName);
+				return VT.GetMethodOrigin(ref this, wszMethodName, out pstrClassName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemClassObject *self, IWbemQualifierSet** ppQualSet) GetQualifierSet;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszName, int32 lFlags, VARIANT* pVal, int32* pType, int32* plFlavor) Get;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszName, int32 lFlags, VARIANT* pVal, int32 Type) Put;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszName) Delete;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszQualifierName, int32 lFlags, VARIANT* pQualifierVal, SAFEARRAY** pNames) GetNames;
-				public new function HRESULT(IWbemClassObject *self, int32 lEnumFlags) BeginEnumeration;
-				public new function HRESULT(IWbemClassObject *self, int32 lFlags, BSTR* strName, VARIANT* pVal, int32* pType, int32* plFlavor) Next;
-				public new function HRESULT(IWbemClassObject *self) EndEnumeration;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszProperty, IWbemQualifierSet** ppQualSet) GetPropertyQualifierSet;
-				public new function HRESULT(IWbemClassObject *self, IWbemClassObject** ppCopy) Clone;
-				public new function HRESULT(IWbemClassObject *self, int32 lFlags, BSTR* pstrObjectText) GetObjectText;
-				public new function HRESULT(IWbemClassObject *self, int32 lFlags, IWbemClassObject** ppNewClass) SpawnDerivedClass;
-				public new function HRESULT(IWbemClassObject *self, int32 lFlags, IWbemClassObject** ppNewInstance) SpawnInstance;
-				public new function HRESULT(IWbemClassObject *self, int32 lFlags, IWbemClassObject* pCompareTo) CompareTo;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszName, BSTR* pstrClassName) GetPropertyOrigin;
-				public new function HRESULT(IWbemClassObject *self, PWSTR strAncestor) InheritsFrom;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszName, int32 lFlags, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature) GetMethod;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszName, int32 lFlags, IWbemClassObject* pInSignature, IWbemClassObject* pOutSignature) PutMethod;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszName) DeleteMethod;
-				public new function HRESULT(IWbemClassObject *self, int32 lEnumFlags) BeginMethodEnumeration;
-				public new function HRESULT(IWbemClassObject *self, int32 lFlags, BSTR* pstrName, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature) NextMethod;
-				public new function HRESULT(IWbemClassObject *self) EndMethodEnumeration;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszMethod, IWbemQualifierSet** ppQualSet) GetMethodQualifierSet;
-				public new function HRESULT(IWbemClassObject *self, PWSTR wszMethodName, BSTR* pstrClassName) GetMethodOrigin;
+				public new function HRESULT(ref IWbemClassObject self, out IWbemQualifierSet* ppQualSet) GetQualifierSet;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, out VARIANT pVal, out int32 pType, out int32 plFlavor) Get;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, ref VARIANT pVal, int32 Type) Put;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName) Delete;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszQualifierName, int32 lFlags, ref VARIANT pQualifierVal, out SAFEARRAY* pNames) GetNames;
+				public new function HRESULT(ref IWbemClassObject self, int32 lEnumFlags) BeginEnumeration;
+				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out BSTR strName, out VARIANT pVal, out int32 pType, out int32 plFlavor) Next;
+				public new function HRESULT(ref IWbemClassObject self) EndEnumeration;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszProperty, out IWbemQualifierSet* ppQualSet) GetPropertyQualifierSet;
+				public new function HRESULT(ref IWbemClassObject self, out IWbemClassObject* ppCopy) Clone;
+				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out BSTR pstrObjectText) GetObjectText;
+				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out IWbemClassObject* ppNewClass) SpawnDerivedClass;
+				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out IWbemClassObject* ppNewInstance) SpawnInstance;
+				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, ref IWbemClassObject pCompareTo) CompareTo;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, out BSTR pstrClassName) GetPropertyOrigin;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR strAncestor) InheritsFrom;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, out IWbemClassObject* ppInSignature, out IWbemClassObject* ppOutSignature) GetMethod;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName, int32 lFlags, ref IWbemClassObject pInSignature, ref IWbemClassObject pOutSignature) PutMethod;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszName) DeleteMethod;
+				public new function HRESULT(ref IWbemClassObject self, int32 lEnumFlags) BeginMethodEnumeration;
+				public new function HRESULT(ref IWbemClassObject self, int32 lFlags, out BSTR pstrName, out IWbemClassObject* ppInSignature, out IWbemClassObject* ppOutSignature) NextMethod;
+				public new function HRESULT(ref IWbemClassObject self) EndMethodEnumeration;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszMethod, out IWbemQualifierSet* ppQualSet) GetMethodQualifierSet;
+				public new function HRESULT(ref IWbemClassObject self, PWSTR wszMethodName, out BSTR pstrClassName) GetMethodOrigin;
 			}
 		}
 		[CRepr]
@@ -2985,59 +2985,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyHandle(PWSTR wszPropertyName, int32* pType, int32* plHandle) mut
+			public HRESULT GetPropertyHandle(PWSTR wszPropertyName, out int32 pType, out int32 plHandle) mut
 			{
-				return VT.GetPropertyHandle(&this, wszPropertyName, pType, plHandle);
+				return VT.GetPropertyHandle(ref this, wszPropertyName, out pType, out plHandle);
 			}
 			public HRESULT WritePropertyValue(int32 lHandle, int32 lNumBytes, uint8* aData) mut
 			{
-				return VT.WritePropertyValue(&this, lHandle, lNumBytes, aData);
+				return VT.WritePropertyValue(ref this, lHandle, lNumBytes, aData);
 			}
-			public HRESULT ReadPropertyValue(int32 lHandle, int32 lBufferSize, int32* plNumBytes, uint8* aData) mut
+			public HRESULT ReadPropertyValue(int32 lHandle, int32 lBufferSize, out int32 plNumBytes, uint8* aData) mut
 			{
-				return VT.ReadPropertyValue(&this, lHandle, lBufferSize, plNumBytes, aData);
+				return VT.ReadPropertyValue(ref this, lHandle, lBufferSize, out plNumBytes, aData);
 			}
-			public HRESULT ReadDWORD(int32 lHandle, uint32* pdw) mut
+			public HRESULT ReadDWORD(int32 lHandle, out uint32 pdw) mut
 			{
-				return VT.ReadDWORD(&this, lHandle, pdw);
+				return VT.ReadDWORD(ref this, lHandle, out pdw);
 			}
 			public HRESULT WriteDWORD(int32 lHandle, uint32 dw) mut
 			{
-				return VT.WriteDWORD(&this, lHandle, dw);
+				return VT.WriteDWORD(ref this, lHandle, dw);
 			}
-			public HRESULT ReadQWORD(int32 lHandle, uint64* pqw) mut
+			public HRESULT ReadQWORD(int32 lHandle, out uint64 pqw) mut
 			{
-				return VT.ReadQWORD(&this, lHandle, pqw);
+				return VT.ReadQWORD(ref this, lHandle, out pqw);
 			}
 			public HRESULT WriteQWORD(int32 lHandle, uint64 pw) mut
 			{
-				return VT.WriteQWORD(&this, lHandle, pw);
+				return VT.WriteQWORD(ref this, lHandle, pw);
 			}
-			public HRESULT GetPropertyInfoByHandle(int32 lHandle, BSTR* pstrName, int32* pType) mut
+			public HRESULT GetPropertyInfoByHandle(int32 lHandle, out BSTR pstrName, out int32 pType) mut
 			{
-				return VT.GetPropertyInfoByHandle(&this, lHandle, pstrName, pType);
+				return VT.GetPropertyInfoByHandle(ref this, lHandle, out pstrName, out pType);
 			}
 			public HRESULT Lock(int32 lFlags) mut
 			{
-				return VT.Lock(&this, lFlags);
+				return VT.Lock(ref this, lFlags);
 			}
 			public HRESULT Unlock(int32 lFlags) mut
 			{
-				return VT.Unlock(&this, lFlags);
+				return VT.Unlock(ref this, lFlags);
 			}
 			[CRepr]
 			public struct VTable : IWbemClassObject.VTable
 			{
-				public new function HRESULT(IWbemObjectAccess *self, PWSTR wszPropertyName, int32* pType, int32* plHandle) GetPropertyHandle;
-				public new function HRESULT(IWbemObjectAccess *self, int32 lHandle, int32 lNumBytes, uint8* aData) WritePropertyValue;
-				public new function HRESULT(IWbemObjectAccess *self, int32 lHandle, int32 lBufferSize, int32* plNumBytes, uint8* aData) ReadPropertyValue;
-				public new function HRESULT(IWbemObjectAccess *self, int32 lHandle, uint32* pdw) ReadDWORD;
-				public new function HRESULT(IWbemObjectAccess *self, int32 lHandle, uint32 dw) WriteDWORD;
-				public new function HRESULT(IWbemObjectAccess *self, int32 lHandle, uint64* pqw) ReadQWORD;
-				public new function HRESULT(IWbemObjectAccess *self, int32 lHandle, uint64 pw) WriteQWORD;
-				public new function HRESULT(IWbemObjectAccess *self, int32 lHandle, BSTR* pstrName, int32* pType) GetPropertyInfoByHandle;
-				public new function HRESULT(IWbemObjectAccess *self, int32 lFlags) Lock;
-				public new function HRESULT(IWbemObjectAccess *self, int32 lFlags) Unlock;
+				public new function HRESULT(ref IWbemObjectAccess self, PWSTR wszPropertyName, out int32 pType, out int32 plHandle) GetPropertyHandle;
+				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, int32 lNumBytes, uint8* aData) WritePropertyValue;
+				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, int32 lBufferSize, out int32 plNumBytes, uint8* aData) ReadPropertyValue;
+				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, out uint32 pdw) ReadDWORD;
+				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, uint32 dw) WriteDWORD;
+				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, out uint64 pqw) ReadQWORD;
+				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, uint64 pw) WriteQWORD;
+				public new function HRESULT(ref IWbemObjectAccess self, int32 lHandle, out BSTR pstrName, out int32 pType) GetPropertyInfoByHandle;
+				public new function HRESULT(ref IWbemObjectAccess self, int32 lFlags) Lock;
+				public new function HRESULT(ref IWbemObjectAccess self, int32 lFlags) Unlock;
 			}
 		}
 		[CRepr]
@@ -3047,44 +3047,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Get(PWSTR wszName, int32 lFlags, VARIANT* pVal, int32* plFlavor) mut
+			public HRESULT Get(PWSTR wszName, int32 lFlags, out VARIANT pVal, out int32 plFlavor) mut
 			{
-				return VT.Get(&this, wszName, lFlags, pVal, plFlavor);
+				return VT.Get(ref this, wszName, lFlags, out pVal, out plFlavor);
 			}
-			public HRESULT Put(PWSTR wszName, VARIANT* pVal, int32 lFlavor) mut
+			public HRESULT Put(PWSTR wszName, ref VARIANT pVal, int32 lFlavor) mut
 			{
-				return VT.Put(&this, wszName, pVal, lFlavor);
+				return VT.Put(ref this, wszName, ref pVal, lFlavor);
 			}
 			public HRESULT Delete(PWSTR wszName) mut
 			{
-				return VT.Delete(&this, wszName);
+				return VT.Delete(ref this, wszName);
 			}
-			public HRESULT GetNames(int32 lFlags, SAFEARRAY** pNames) mut
+			public HRESULT GetNames(int32 lFlags, out SAFEARRAY* pNames) mut
 			{
-				return VT.GetNames(&this, lFlags, pNames);
+				return VT.GetNames(ref this, lFlags, out pNames);
 			}
 			public HRESULT BeginEnumeration(int32 lFlags) mut
 			{
-				return VT.BeginEnumeration(&this, lFlags);
+				return VT.BeginEnumeration(ref this, lFlags);
 			}
-			public HRESULT Next(int32 lFlags, BSTR* pstrName, VARIANT* pVal, int32* plFlavor) mut
+			public HRESULT Next(int32 lFlags, out BSTR pstrName, out VARIANT pVal, out int32 plFlavor) mut
 			{
-				return VT.Next(&this, lFlags, pstrName, pVal, plFlavor);
+				return VT.Next(ref this, lFlags, out pstrName, out pVal, out plFlavor);
 			}
 			public HRESULT EndEnumeration() mut
 			{
-				return VT.EndEnumeration(&this);
+				return VT.EndEnumeration(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemQualifierSet *self, PWSTR wszName, int32 lFlags, VARIANT* pVal, int32* plFlavor) Get;
-				public new function HRESULT(IWbemQualifierSet *self, PWSTR wszName, VARIANT* pVal, int32 lFlavor) Put;
-				public new function HRESULT(IWbemQualifierSet *self, PWSTR wszName) Delete;
-				public new function HRESULT(IWbemQualifierSet *self, int32 lFlags, SAFEARRAY** pNames) GetNames;
-				public new function HRESULT(IWbemQualifierSet *self, int32 lFlags) BeginEnumeration;
-				public new function HRESULT(IWbemQualifierSet *self, int32 lFlags, BSTR* pstrName, VARIANT* pVal, int32* plFlavor) Next;
-				public new function HRESULT(IWbemQualifierSet *self) EndEnumeration;
+				public new function HRESULT(ref IWbemQualifierSet self, PWSTR wszName, int32 lFlags, out VARIANT pVal, out int32 plFlavor) Get;
+				public new function HRESULT(ref IWbemQualifierSet self, PWSTR wszName, ref VARIANT pVal, int32 lFlavor) Put;
+				public new function HRESULT(ref IWbemQualifierSet self, PWSTR wszName) Delete;
+				public new function HRESULT(ref IWbemQualifierSet self, int32 lFlags, out SAFEARRAY* pNames) GetNames;
+				public new function HRESULT(ref IWbemQualifierSet self, int32 lFlags) BeginEnumeration;
+				public new function HRESULT(ref IWbemQualifierSet self, int32 lFlags, out BSTR pstrName, out VARIANT pVal, out int32 plFlavor) Next;
+				public new function HRESULT(ref IWbemQualifierSet self) EndEnumeration;
 			}
 		}
 		[CRepr]
@@ -3094,124 +3094,124 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OpenNamespace(BSTR strNamespace, int32 lFlags, IWbemContext* pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult) mut
+			public HRESULT OpenNamespace(BSTR strNamespace, int32 lFlags, ref IWbemContext pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult) mut
 			{
-				return VT.OpenNamespace(&this, strNamespace, lFlags, pCtx, ppWorkingNamespace, ppResult);
+				return VT.OpenNamespace(ref this, strNamespace, lFlags, ref pCtx, ppWorkingNamespace, ppResult);
 			}
-			public HRESULT CancelAsyncCall(IWbemObjectSink* pSink) mut
+			public HRESULT CancelAsyncCall(ref IWbemObjectSink pSink) mut
 			{
-				return VT.CancelAsyncCall(&this, pSink);
+				return VT.CancelAsyncCall(ref this, ref pSink);
 			}
-			public HRESULT QueryObjectSink(int32 lFlags, IWbemObjectSink** ppResponseHandler) mut
+			public HRESULT QueryObjectSink(int32 lFlags, out IWbemObjectSink* ppResponseHandler) mut
 			{
-				return VT.QueryObjectSink(&this, lFlags, ppResponseHandler);
+				return VT.QueryObjectSink(ref this, lFlags, out ppResponseHandler);
 			}
-			public HRESULT GetObject(BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult) mut
+			public HRESULT GetObject(BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult) mut
 			{
-				return VT.GetObject(&this, strObjectPath, lFlags, pCtx, ppObject, ppCallResult);
+				return VT.GetObject(ref this, strObjectPath, lFlags, ref pCtx, ppObject, ppCallResult);
 			}
-			public HRESULT GetObjectAsync(BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT GetObjectAsync(BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.GetObjectAsync(&this, strObjectPath, lFlags, pCtx, pResponseHandler);
+				return VT.GetObjectAsync(ref this, strObjectPath, lFlags, ref pCtx, ref pResponseHandler);
 			}
-			public HRESULT PutClass(IWbemClassObject* pObject, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) mut
+			public HRESULT PutClass(ref IWbemClassObject pObject, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) mut
 			{
-				return VT.PutClass(&this, pObject, lFlags, pCtx, ppCallResult);
+				return VT.PutClass(ref this, ref pObject, lFlags, ref pCtx, ppCallResult);
 			}
-			public HRESULT PutClassAsync(IWbemClassObject* pObject, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT PutClassAsync(ref IWbemClassObject pObject, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.PutClassAsync(&this, pObject, lFlags, pCtx, pResponseHandler);
+				return VT.PutClassAsync(ref this, ref pObject, lFlags, ref pCtx, ref pResponseHandler);
 			}
-			public HRESULT DeleteClass(BSTR strClass, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) mut
+			public HRESULT DeleteClass(BSTR strClass, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) mut
 			{
-				return VT.DeleteClass(&this, strClass, lFlags, pCtx, ppCallResult);
+				return VT.DeleteClass(ref this, strClass, lFlags, ref pCtx, ppCallResult);
 			}
-			public HRESULT DeleteClassAsync(BSTR strClass, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT DeleteClassAsync(BSTR strClass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.DeleteClassAsync(&this, strClass, lFlags, pCtx, pResponseHandler);
+				return VT.DeleteClassAsync(ref this, strClass, lFlags, ref pCtx, ref pResponseHandler);
 			}
-			public HRESULT CreateClassEnum(BSTR strSuperclass, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) mut
+			public HRESULT CreateClassEnum(BSTR strSuperclass, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) mut
 			{
-				return VT.CreateClassEnum(&this, strSuperclass, lFlags, pCtx, ppEnum);
+				return VT.CreateClassEnum(ref this, strSuperclass, lFlags, ref pCtx, out ppEnum);
 			}
-			public HRESULT CreateClassEnumAsync(BSTR strSuperclass, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT CreateClassEnumAsync(BSTR strSuperclass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.CreateClassEnumAsync(&this, strSuperclass, lFlags, pCtx, pResponseHandler);
+				return VT.CreateClassEnumAsync(ref this, strSuperclass, lFlags, ref pCtx, ref pResponseHandler);
 			}
-			public HRESULT PutInstance(IWbemClassObject* pInst, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) mut
+			public HRESULT PutInstance(ref IWbemClassObject pInst, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) mut
 			{
-				return VT.PutInstance(&this, pInst, lFlags, pCtx, ppCallResult);
+				return VT.PutInstance(ref this, ref pInst, lFlags, ref pCtx, ppCallResult);
 			}
-			public HRESULT PutInstanceAsync(IWbemClassObject* pInst, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT PutInstanceAsync(ref IWbemClassObject pInst, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.PutInstanceAsync(&this, pInst, lFlags, pCtx, pResponseHandler);
+				return VT.PutInstanceAsync(ref this, ref pInst, lFlags, ref pCtx, ref pResponseHandler);
 			}
-			public HRESULT DeleteInstance(BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) mut
+			public HRESULT DeleteInstance(BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) mut
 			{
-				return VT.DeleteInstance(&this, strObjectPath, lFlags, pCtx, ppCallResult);
+				return VT.DeleteInstance(ref this, strObjectPath, lFlags, ref pCtx, ppCallResult);
 			}
-			public HRESULT DeleteInstanceAsync(BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT DeleteInstanceAsync(BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.DeleteInstanceAsync(&this, strObjectPath, lFlags, pCtx, pResponseHandler);
+				return VT.DeleteInstanceAsync(ref this, strObjectPath, lFlags, ref pCtx, ref pResponseHandler);
 			}
-			public HRESULT CreateInstanceEnum(BSTR strFilter, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) mut
+			public HRESULT CreateInstanceEnum(BSTR strFilter, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) mut
 			{
-				return VT.CreateInstanceEnum(&this, strFilter, lFlags, pCtx, ppEnum);
+				return VT.CreateInstanceEnum(ref this, strFilter, lFlags, ref pCtx, out ppEnum);
 			}
-			public HRESULT CreateInstanceEnumAsync(BSTR strFilter, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT CreateInstanceEnumAsync(BSTR strFilter, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.CreateInstanceEnumAsync(&this, strFilter, lFlags, pCtx, pResponseHandler);
+				return VT.CreateInstanceEnumAsync(ref this, strFilter, lFlags, ref pCtx, ref pResponseHandler);
 			}
-			public HRESULT ExecQuery(BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) mut
+			public HRESULT ExecQuery(BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) mut
 			{
-				return VT.ExecQuery(&this, strQueryLanguage, strQuery, lFlags, pCtx, ppEnum);
+				return VT.ExecQuery(ref this, strQueryLanguage, strQuery, lFlags, ref pCtx, out ppEnum);
 			}
-			public HRESULT ExecQueryAsync(BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT ExecQueryAsync(BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.ExecQueryAsync(&this, strQueryLanguage, strQuery, lFlags, pCtx, pResponseHandler);
+				return VT.ExecQueryAsync(ref this, strQueryLanguage, strQuery, lFlags, ref pCtx, ref pResponseHandler);
 			}
-			public HRESULT ExecNotificationQuery(BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) mut
+			public HRESULT ExecNotificationQuery(BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) mut
 			{
-				return VT.ExecNotificationQuery(&this, strQueryLanguage, strQuery, lFlags, pCtx, ppEnum);
+				return VT.ExecNotificationQuery(ref this, strQueryLanguage, strQuery, lFlags, ref pCtx, out ppEnum);
 			}
-			public HRESULT ExecNotificationQueryAsync(BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT ExecNotificationQueryAsync(BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.ExecNotificationQueryAsync(&this, strQueryLanguage, strQuery, lFlags, pCtx, pResponseHandler);
+				return VT.ExecNotificationQueryAsync(ref this, strQueryLanguage, strQuery, lFlags, ref pCtx, ref pResponseHandler);
 			}
-			public HRESULT ExecMethod(BSTR strObjectPath, BSTR strMethodName, int32 lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult) mut
+			public HRESULT ExecMethod(BSTR strObjectPath, BSTR strMethodName, int32 lFlags, ref IWbemContext pCtx, ref IWbemClassObject pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult) mut
 			{
-				return VT.ExecMethod(&this, strObjectPath, strMethodName, lFlags, pCtx, pInParams, ppOutParams, ppCallResult);
+				return VT.ExecMethod(ref this, strObjectPath, strMethodName, lFlags, ref pCtx, ref pInParams, ppOutParams, ppCallResult);
 			}
-			public HRESULT ExecMethodAsync(BSTR strObjectPath, BSTR strMethodName, int32 lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT ExecMethodAsync(BSTR strObjectPath, BSTR strMethodName, int32 lFlags, ref IWbemContext pCtx, ref IWbemClassObject pInParams, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.ExecMethodAsync(&this, strObjectPath, strMethodName, lFlags, pCtx, pInParams, pResponseHandler);
+				return VT.ExecMethodAsync(ref this, strObjectPath, strMethodName, lFlags, ref pCtx, ref pInParams, ref pResponseHandler);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemServices *self, BSTR strNamespace, int32 lFlags, IWbemContext* pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult) OpenNamespace;
-				public new function HRESULT(IWbemServices *self, IWbemObjectSink* pSink) CancelAsyncCall;
-				public new function HRESULT(IWbemServices *self, int32 lFlags, IWbemObjectSink** ppResponseHandler) QueryObjectSink;
-				public new function HRESULT(IWbemServices *self, BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult) GetObject;
-				public new function HRESULT(IWbemServices *self, BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) GetObjectAsync;
-				public new function HRESULT(IWbemServices *self, IWbemClassObject* pObject, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) PutClass;
-				public new function HRESULT(IWbemServices *self, IWbemClassObject* pObject, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) PutClassAsync;
-				public new function HRESULT(IWbemServices *self, BSTR strClass, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) DeleteClass;
-				public new function HRESULT(IWbemServices *self, BSTR strClass, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) DeleteClassAsync;
-				public new function HRESULT(IWbemServices *self, BSTR strSuperclass, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) CreateClassEnum;
-				public new function HRESULT(IWbemServices *self, BSTR strSuperclass, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) CreateClassEnumAsync;
-				public new function HRESULT(IWbemServices *self, IWbemClassObject* pInst, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) PutInstance;
-				public new function HRESULT(IWbemServices *self, IWbemClassObject* pInst, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) PutInstanceAsync;
-				public new function HRESULT(IWbemServices *self, BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult) DeleteInstance;
-				public new function HRESULT(IWbemServices *self, BSTR strObjectPath, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) DeleteInstanceAsync;
-				public new function HRESULT(IWbemServices *self, BSTR strFilter, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) CreateInstanceEnum;
-				public new function HRESULT(IWbemServices *self, BSTR strFilter, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) CreateInstanceEnumAsync;
-				public new function HRESULT(IWbemServices *self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) ExecQuery;
-				public new function HRESULT(IWbemServices *self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) ExecQueryAsync;
-				public new function HRESULT(IWbemServices *self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum) ExecNotificationQuery;
-				public new function HRESULT(IWbemServices *self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler) ExecNotificationQueryAsync;
-				public new function HRESULT(IWbemServices *self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult) ExecMethod;
-				public new function HRESULT(IWbemServices *self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemObjectSink* pResponseHandler) ExecMethodAsync;
+				public new function HRESULT(ref IWbemServices self, BSTR strNamespace, int32 lFlags, ref IWbemContext pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult) OpenNamespace;
+				public new function HRESULT(ref IWbemServices self, ref IWbemObjectSink pSink) CancelAsyncCall;
+				public new function HRESULT(ref IWbemServices self, int32 lFlags, out IWbemObjectSink* ppResponseHandler) QueryObjectSink;
+				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult) GetObject;
+				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) GetObjectAsync;
+				public new function HRESULT(ref IWbemServices self, ref IWbemClassObject pObject, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) PutClass;
+				public new function HRESULT(ref IWbemServices self, ref IWbemClassObject pObject, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) PutClassAsync;
+				public new function HRESULT(ref IWbemServices self, BSTR strClass, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) DeleteClass;
+				public new function HRESULT(ref IWbemServices self, BSTR strClass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) DeleteClassAsync;
+				public new function HRESULT(ref IWbemServices self, BSTR strSuperclass, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) CreateClassEnum;
+				public new function HRESULT(ref IWbemServices self, BSTR strSuperclass, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) CreateClassEnumAsync;
+				public new function HRESULT(ref IWbemServices self, ref IWbemClassObject pInst, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) PutInstance;
+				public new function HRESULT(ref IWbemServices self, ref IWbemClassObject pInst, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) PutInstanceAsync;
+				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, IWbemCallResult** ppCallResult) DeleteInstance;
+				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) DeleteInstanceAsync;
+				public new function HRESULT(ref IWbemServices self, BSTR strFilter, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) CreateInstanceEnum;
+				public new function HRESULT(ref IWbemServices self, BSTR strFilter, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) CreateInstanceEnumAsync;
+				public new function HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) ExecQuery;
+				public new function HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) ExecQueryAsync;
+				public new function HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, out IEnumWbemClassObject* ppEnum) ExecNotificationQuery;
+				public new function HRESULT(ref IWbemServices self, BSTR strQueryLanguage, BSTR strQuery, int32 lFlags, ref IWbemContext pCtx, ref IWbemObjectSink pResponseHandler) ExecNotificationQueryAsync;
+				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, ref IWbemContext pCtx, ref IWbemClassObject pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult) ExecMethod;
+				public new function HRESULT(ref IWbemServices self, BSTR strObjectPath, BSTR strMethodName, int32 lFlags, ref IWbemContext pCtx, ref IWbemClassObject pInParams, ref IWbemObjectSink pResponseHandler) ExecMethodAsync;
 			}
 		}
 		[CRepr]
@@ -3221,14 +3221,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectServer(BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace) mut
+			public HRESULT ConnectServer(BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, ref IWbemContext pCtx, out IWbemServices* ppNamespace) mut
 			{
-				return VT.ConnectServer(&this, strNetworkResource, strUser, strPassword, strLocale, lSecurityFlags, strAuthority, pCtx, ppNamespace);
+				return VT.ConnectServer(ref this, strNetworkResource, strUser, strPassword, strLocale, lSecurityFlags, strAuthority, ref pCtx, out ppNamespace);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemLocator *self, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace) ConnectServer;
+				public new function HRESULT(ref IWbemLocator self, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, ref IWbemContext pCtx, out IWbemServices* ppNamespace) ConnectServer;
 			}
 		}
 		[CRepr]
@@ -3240,17 +3240,17 @@ namespace Win32
 			
 			public HRESULT Indicate(int32 lObjectCount, IWbemClassObject** apObjArray) mut
 			{
-				return VT.Indicate(&this, lObjectCount, apObjArray);
+				return VT.Indicate(ref this, lObjectCount, apObjArray);
 			}
-			public HRESULT SetStatus(int32 lFlags, HRESULT hResult, BSTR strParam, IWbemClassObject* pObjParam) mut
+			public HRESULT SetStatus(int32 lFlags, HRESULT hResult, BSTR strParam, ref IWbemClassObject pObjParam) mut
 			{
-				return VT.SetStatus(&this, lFlags, hResult, strParam, pObjParam);
+				return VT.SetStatus(ref this, lFlags, hResult, strParam, ref pObjParam);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemObjectSink *self, int32 lObjectCount, IWbemClassObject** apObjArray) Indicate;
-				public new function HRESULT(IWbemObjectSink *self, int32 lFlags, HRESULT hResult, BSTR strParam, IWbemClassObject* pObjParam) SetStatus;
+				public new function HRESULT(ref IWbemObjectSink self, int32 lObjectCount, IWbemClassObject** apObjArray) Indicate;
+				public new function HRESULT(ref IWbemObjectSink self, int32 lFlags, HRESULT hResult, BSTR strParam, ref IWbemClassObject pObjParam) SetStatus;
 			}
 		}
 		[CRepr]
@@ -3262,32 +3262,32 @@ namespace Win32
 			
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT Next(int32 lTimeout, uint32 uCount, IWbemClassObject** apObjects, uint32* puReturned) mut
+			public HRESULT Next(int32 lTimeout, uint32 uCount, IWbemClassObject** apObjects, out uint32 puReturned) mut
 			{
-				return VT.Next(&this, lTimeout, uCount, apObjects, puReturned);
+				return VT.Next(ref this, lTimeout, uCount, apObjects, out puReturned);
 			}
-			public HRESULT NextAsync(uint32 uCount, IWbemObjectSink* pSink) mut
+			public HRESULT NextAsync(uint32 uCount, ref IWbemObjectSink pSink) mut
 			{
-				return VT.NextAsync(&this, uCount, pSink);
+				return VT.NextAsync(ref this, uCount, ref pSink);
 			}
-			public HRESULT Clone(IEnumWbemClassObject** ppEnum) mut
+			public HRESULT Clone(out IEnumWbemClassObject* ppEnum) mut
 			{
-				return VT.Clone(&this, ppEnum);
+				return VT.Clone(ref this, out ppEnum);
 			}
 			public HRESULT Skip(int32 lTimeout, uint32 nCount) mut
 			{
-				return VT.Skip(&this, lTimeout, nCount);
+				return VT.Skip(ref this, lTimeout, nCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumWbemClassObject *self) Reset;
-				public new function HRESULT(IEnumWbemClassObject *self, int32 lTimeout, uint32 uCount, IWbemClassObject** apObjects, uint32* puReturned) Next;
-				public new function HRESULT(IEnumWbemClassObject *self, uint32 uCount, IWbemObjectSink* pSink) NextAsync;
-				public new function HRESULT(IEnumWbemClassObject *self, IEnumWbemClassObject** ppEnum) Clone;
-				public new function HRESULT(IEnumWbemClassObject *self, int32 lTimeout, uint32 nCount) Skip;
+				public new function HRESULT(ref IEnumWbemClassObject self) Reset;
+				public new function HRESULT(ref IEnumWbemClassObject self, int32 lTimeout, uint32 uCount, IWbemClassObject** apObjects, out uint32 puReturned) Next;
+				public new function HRESULT(ref IEnumWbemClassObject self, uint32 uCount, ref IWbemObjectSink pSink) NextAsync;
+				public new function HRESULT(ref IEnumWbemClassObject self, out IEnumWbemClassObject* ppEnum) Clone;
+				public new function HRESULT(ref IEnumWbemClassObject self, int32 lTimeout, uint32 nCount) Skip;
 			}
 		}
 		[CRepr]
@@ -3297,29 +3297,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetResultObject(int32 lTimeout, IWbemClassObject** ppResultObject) mut
+			public HRESULT GetResultObject(int32 lTimeout, out IWbemClassObject* ppResultObject) mut
 			{
-				return VT.GetResultObject(&this, lTimeout, ppResultObject);
+				return VT.GetResultObject(ref this, lTimeout, out ppResultObject);
 			}
-			public HRESULT GetResultString(int32 lTimeout, BSTR* pstrResultString) mut
+			public HRESULT GetResultString(int32 lTimeout, out BSTR pstrResultString) mut
 			{
-				return VT.GetResultString(&this, lTimeout, pstrResultString);
+				return VT.GetResultString(ref this, lTimeout, out pstrResultString);
 			}
-			public HRESULT GetResultServices(int32 lTimeout, IWbemServices** ppServices) mut
+			public HRESULT GetResultServices(int32 lTimeout, out IWbemServices* ppServices) mut
 			{
-				return VT.GetResultServices(&this, lTimeout, ppServices);
+				return VT.GetResultServices(ref this, lTimeout, out ppServices);
 			}
-			public HRESULT GetCallStatus(int32 lTimeout, int32* plStatus) mut
+			public HRESULT GetCallStatus(int32 lTimeout, out int32 plStatus) mut
 			{
-				return VT.GetCallStatus(&this, lTimeout, plStatus);
+				return VT.GetCallStatus(ref this, lTimeout, out plStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemCallResult *self, int32 lTimeout, IWbemClassObject** ppResultObject) GetResultObject;
-				public new function HRESULT(IWbemCallResult *self, int32 lTimeout, BSTR* pstrResultString) GetResultString;
-				public new function HRESULT(IWbemCallResult *self, int32 lTimeout, IWbemServices** ppServices) GetResultServices;
-				public new function HRESULT(IWbemCallResult *self, int32 lTimeout, int32* plStatus) GetCallStatus;
+				public new function HRESULT(ref IWbemCallResult self, int32 lTimeout, out IWbemClassObject* ppResultObject) GetResultObject;
+				public new function HRESULT(ref IWbemCallResult self, int32 lTimeout, out BSTR pstrResultString) GetResultString;
+				public new function HRESULT(ref IWbemCallResult self, int32 lTimeout, out IWbemServices* ppServices) GetResultServices;
+				public new function HRESULT(ref IWbemCallResult self, int32 lTimeout, out int32 plStatus) GetCallStatus;
 			}
 		}
 		[CRepr]
@@ -3329,54 +3329,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Clone(IWbemContext** ppNewCopy) mut
+			public HRESULT Clone(out IWbemContext* ppNewCopy) mut
 			{
-				return VT.Clone(&this, ppNewCopy);
+				return VT.Clone(ref this, out ppNewCopy);
 			}
-			public HRESULT GetNames(int32 lFlags, SAFEARRAY** pNames) mut
+			public HRESULT GetNames(int32 lFlags, out SAFEARRAY* pNames) mut
 			{
-				return VT.GetNames(&this, lFlags, pNames);
+				return VT.GetNames(ref this, lFlags, out pNames);
 			}
 			public HRESULT BeginEnumeration(int32 lFlags) mut
 			{
-				return VT.BeginEnumeration(&this, lFlags);
+				return VT.BeginEnumeration(ref this, lFlags);
 			}
-			public HRESULT Next(int32 lFlags, BSTR* pstrName, VARIANT* pValue) mut
+			public HRESULT Next(int32 lFlags, out BSTR pstrName, out VARIANT pValue) mut
 			{
-				return VT.Next(&this, lFlags, pstrName, pValue);
+				return VT.Next(ref this, lFlags, out pstrName, out pValue);
 			}
 			public HRESULT EndEnumeration() mut
 			{
-				return VT.EndEnumeration(&this);
+				return VT.EndEnumeration(ref this);
 			}
-			public HRESULT SetValue(PWSTR wszName, int32 lFlags, VARIANT* pValue) mut
+			public HRESULT SetValue(PWSTR wszName, int32 lFlags, ref VARIANT pValue) mut
 			{
-				return VT.SetValue(&this, wszName, lFlags, pValue);
+				return VT.SetValue(ref this, wszName, lFlags, ref pValue);
 			}
-			public HRESULT GetValue(PWSTR wszName, int32 lFlags, VARIANT* pValue) mut
+			public HRESULT GetValue(PWSTR wszName, int32 lFlags, out VARIANT pValue) mut
 			{
-				return VT.GetValue(&this, wszName, lFlags, pValue);
+				return VT.GetValue(ref this, wszName, lFlags, out pValue);
 			}
 			public HRESULT DeleteValue(PWSTR wszName, int32 lFlags) mut
 			{
-				return VT.DeleteValue(&this, wszName, lFlags);
+				return VT.DeleteValue(ref this, wszName, lFlags);
 			}
 			public HRESULT DeleteAll() mut
 			{
-				return VT.DeleteAll(&this);
+				return VT.DeleteAll(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemContext *self, IWbemContext** ppNewCopy) Clone;
-				public new function HRESULT(IWbemContext *self, int32 lFlags, SAFEARRAY** pNames) GetNames;
-				public new function HRESULT(IWbemContext *self, int32 lFlags) BeginEnumeration;
-				public new function HRESULT(IWbemContext *self, int32 lFlags, BSTR* pstrName, VARIANT* pValue) Next;
-				public new function HRESULT(IWbemContext *self) EndEnumeration;
-				public new function HRESULT(IWbemContext *self, PWSTR wszName, int32 lFlags, VARIANT* pValue) SetValue;
-				public new function HRESULT(IWbemContext *self, PWSTR wszName, int32 lFlags, VARIANT* pValue) GetValue;
-				public new function HRESULT(IWbemContext *self, PWSTR wszName, int32 lFlags) DeleteValue;
-				public new function HRESULT(IWbemContext *self) DeleteAll;
+				public new function HRESULT(ref IWbemContext self, out IWbemContext* ppNewCopy) Clone;
+				public new function HRESULT(ref IWbemContext self, int32 lFlags, out SAFEARRAY* pNames) GetNames;
+				public new function HRESULT(ref IWbemContext self, int32 lFlags) BeginEnumeration;
+				public new function HRESULT(ref IWbemContext self, int32 lFlags, out BSTR pstrName, out VARIANT pValue) Next;
+				public new function HRESULT(ref IWbemContext self) EndEnumeration;
+				public new function HRESULT(ref IWbemContext self, PWSTR wszName, int32 lFlags, ref VARIANT pValue) SetValue;
+				public new function HRESULT(ref IWbemContext self, PWSTR wszName, int32 lFlags, out VARIANT pValue) GetValue;
+				public new function HRESULT(ref IWbemContext self, PWSTR wszName, int32 lFlags) DeleteValue;
+				public new function HRESULT(ref IWbemContext self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -3386,14 +3386,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateObjectStub(IUnknown* pObject, IUnknown** ppStub) mut
+			public HRESULT CreateObjectStub(ref IUnknown pObject, out IUnknown* ppStub) mut
 			{
-				return VT.CreateObjectStub(&this, pObject, ppStub);
+				return VT.CreateObjectStub(ref this, ref pObject, out ppStub);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IUnsecuredApartment *self, IUnknown* pObject, IUnknown** ppStub) CreateObjectStub;
+				public new function HRESULT(ref IUnsecuredApartment self, ref IUnknown pObject, out IUnknown* ppStub) CreateObjectStub;
 			}
 		}
 		[CRepr]
@@ -3403,14 +3403,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSinkStub(IWbemObjectSink* pSink, uint32 dwFlags, PWSTR wszReserved, IWbemObjectSink** ppStub) mut
+			public HRESULT CreateSinkStub(ref IWbemObjectSink pSink, uint32 dwFlags, PWSTR wszReserved, out IWbemObjectSink* ppStub) mut
 			{
-				return VT.CreateSinkStub(&this, pSink, dwFlags, wszReserved, ppStub);
+				return VT.CreateSinkStub(ref this, ref pSink, dwFlags, wszReserved, out ppStub);
 			}
 			[CRepr]
 			public struct VTable : IUnsecuredApartment.VTable
 			{
-				public new function HRESULT(IWbemUnsecuredApartment *self, IWbemObjectSink* pSink, uint32 dwFlags, PWSTR wszReserved, IWbemObjectSink** ppStub) CreateSinkStub;
+				public new function HRESULT(ref IWbemUnsecuredApartment self, ref IWbemObjectSink pSink, uint32 dwFlags, PWSTR wszReserved, out IWbemObjectSink* ppStub) CreateSinkStub;
 			}
 		}
 		[CRepr]
@@ -3420,19 +3420,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetErrorCodeText(HRESULT hRes, uint32 LocaleId, int32 lFlags, BSTR* MessageText) mut
+			public HRESULT GetErrorCodeText(HRESULT hRes, uint32 LocaleId, int32 lFlags, out BSTR MessageText) mut
 			{
-				return VT.GetErrorCodeText(&this, hRes, LocaleId, lFlags, MessageText);
+				return VT.GetErrorCodeText(ref this, hRes, LocaleId, lFlags, out MessageText);
 			}
-			public HRESULT GetFacilityCodeText(HRESULT hRes, uint32 LocaleId, int32 lFlags, BSTR* MessageText) mut
+			public HRESULT GetFacilityCodeText(HRESULT hRes, uint32 LocaleId, int32 lFlags, out BSTR MessageText) mut
 			{
-				return VT.GetFacilityCodeText(&this, hRes, LocaleId, lFlags, MessageText);
+				return VT.GetFacilityCodeText(ref this, hRes, LocaleId, lFlags, out MessageText);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemStatusCodeText *self, HRESULT hRes, uint32 LocaleId, int32 lFlags, BSTR* MessageText) GetErrorCodeText;
-				public new function HRESULT(IWbemStatusCodeText *self, HRESULT hRes, uint32 LocaleId, int32 lFlags, BSTR* MessageText) GetFacilityCodeText;
+				public new function HRESULT(ref IWbemStatusCodeText self, HRESULT hRes, uint32 LocaleId, int32 lFlags, out BSTR MessageText) GetErrorCodeText;
+				public new function HRESULT(ref IWbemStatusCodeText self, HRESULT hRes, uint32 LocaleId, int32 lFlags, out BSTR MessageText) GetFacilityCodeText;
 			}
 		}
 		[CRepr]
@@ -3444,17 +3444,17 @@ namespace Win32
 			
 			public HRESULT Backup(PWSTR strBackupToFile, int32 lFlags) mut
 			{
-				return VT.Backup(&this, strBackupToFile, lFlags);
+				return VT.Backup(ref this, strBackupToFile, lFlags);
 			}
 			public HRESULT Restore(PWSTR strRestoreFromFile, int32 lFlags) mut
 			{
-				return VT.Restore(&this, strRestoreFromFile, lFlags);
+				return VT.Restore(ref this, strRestoreFromFile, lFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemBackupRestore *self, PWSTR strBackupToFile, int32 lFlags) Backup;
-				public new function HRESULT(IWbemBackupRestore *self, PWSTR strRestoreFromFile, int32 lFlags) Restore;
+				public new function HRESULT(ref IWbemBackupRestore self, PWSTR strBackupToFile, int32 lFlags) Backup;
+				public new function HRESULT(ref IWbemBackupRestore self, PWSTR strRestoreFromFile, int32 lFlags) Restore;
 			}
 		}
 		[CRepr]
@@ -3466,17 +3466,17 @@ namespace Win32
 			
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Resume() mut
 			{
-				return VT.Resume(&this);
+				return VT.Resume(ref this);
 			}
 			[CRepr]
 			public struct VTable : IWbemBackupRestore.VTable
 			{
-				public new function HRESULT(IWbemBackupRestoreEx *self) Pause;
-				public new function HRESULT(IWbemBackupRestoreEx *self) Resume;
+				public new function HRESULT(ref IWbemBackupRestoreEx self) Pause;
+				public new function HRESULT(ref IWbemBackupRestoreEx self) Resume;
 			}
 		}
 		[CRepr]
@@ -3488,12 +3488,12 @@ namespace Win32
 			
 			public HRESULT Refresh(int32 lFlags) mut
 			{
-				return VT.Refresh(&this, lFlags);
+				return VT.Refresh(ref this, lFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemRefresher *self, int32 lFlags) Refresh;
+				public new function HRESULT(ref IWbemRefresher self, int32 lFlags) Refresh;
 			}
 		}
 		[CRepr]
@@ -3505,27 +3505,27 @@ namespace Win32
 			
 			public HRESULT AddObjects(int32 lFlags, uint32 uNumObjects, int32* apIds, IWbemObjectAccess** apObj) mut
 			{
-				return VT.AddObjects(&this, lFlags, uNumObjects, apIds, apObj);
+				return VT.AddObjects(ref this, lFlags, uNumObjects, apIds, apObj);
 			}
 			public HRESULT RemoveObjects(int32 lFlags, uint32 uNumObjects, int32* apIds) mut
 			{
-				return VT.RemoveObjects(&this, lFlags, uNumObjects, apIds);
+				return VT.RemoveObjects(ref this, lFlags, uNumObjects, apIds);
 			}
-			public HRESULT GetObjects(int32 lFlags, uint32 uNumObjects, IWbemObjectAccess** apObj, uint32* puReturned) mut
+			public HRESULT GetObjects(int32 lFlags, uint32 uNumObjects, IWbemObjectAccess** apObj, out uint32 puReturned) mut
 			{
-				return VT.GetObjects(&this, lFlags, uNumObjects, apObj, puReturned);
+				return VT.GetObjects(ref this, lFlags, uNumObjects, apObj, out puReturned);
 			}
 			public HRESULT RemoveAll(int32 lFlags) mut
 			{
-				return VT.RemoveAll(&this, lFlags);
+				return VT.RemoveAll(ref this, lFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemHiPerfEnum *self, int32 lFlags, uint32 uNumObjects, int32* apIds, IWbemObjectAccess** apObj) AddObjects;
-				public new function HRESULT(IWbemHiPerfEnum *self, int32 lFlags, uint32 uNumObjects, int32* apIds) RemoveObjects;
-				public new function HRESULT(IWbemHiPerfEnum *self, int32 lFlags, uint32 uNumObjects, IWbemObjectAccess** apObj, uint32* puReturned) GetObjects;
-				public new function HRESULT(IWbemHiPerfEnum *self, int32 lFlags) RemoveAll;
+				public new function HRESULT(ref IWbemHiPerfEnum self, int32 lFlags, uint32 uNumObjects, int32* apIds, IWbemObjectAccess** apObj) AddObjects;
+				public new function HRESULT(ref IWbemHiPerfEnum self, int32 lFlags, uint32 uNumObjects, int32* apIds) RemoveObjects;
+				public new function HRESULT(ref IWbemHiPerfEnum self, int32 lFlags, uint32 uNumObjects, IWbemObjectAccess** apObj, out uint32 puReturned) GetObjects;
+				public new function HRESULT(ref IWbemHiPerfEnum self, int32 lFlags) RemoveAll;
 			}
 		}
 		[CRepr]
@@ -3535,34 +3535,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddObjectByPath(IWbemServices* pNamespace, PWSTR wszPath, int32 lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, int32* plId) mut
+			public HRESULT AddObjectByPath(ref IWbemServices pNamespace, PWSTR wszPath, int32 lFlags, ref IWbemContext pContext, out IWbemClassObject* ppRefreshable, out int32 plId) mut
 			{
-				return VT.AddObjectByPath(&this, pNamespace, wszPath, lFlags, pContext, ppRefreshable, plId);
+				return VT.AddObjectByPath(ref this, ref pNamespace, wszPath, lFlags, ref pContext, out ppRefreshable, out plId);
 			}
-			public HRESULT AddObjectByTemplate(IWbemServices* pNamespace, IWbemClassObject* pTemplate, int32 lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, int32* plId) mut
+			public HRESULT AddObjectByTemplate(ref IWbemServices pNamespace, ref IWbemClassObject pTemplate, int32 lFlags, ref IWbemContext pContext, out IWbemClassObject* ppRefreshable, out int32 plId) mut
 			{
-				return VT.AddObjectByTemplate(&this, pNamespace, pTemplate, lFlags, pContext, ppRefreshable, plId);
+				return VT.AddObjectByTemplate(ref this, ref pNamespace, ref pTemplate, lFlags, ref pContext, out ppRefreshable, out plId);
 			}
-			public HRESULT AddRefresher(IWbemRefresher* pRefresher, int32 lFlags, int32* plId) mut
+			public HRESULT AddRefresher(ref IWbemRefresher pRefresher, int32 lFlags, out int32 plId) mut
 			{
-				return VT.AddRefresher(&this, pRefresher, lFlags, plId);
+				return VT.AddRefresher(ref this, ref pRefresher, lFlags, out plId);
 			}
 			public HRESULT Remove(int32 lId, int32 lFlags) mut
 			{
-				return VT.Remove(&this, lId, lFlags);
+				return VT.Remove(ref this, lId, lFlags);
 			}
-			public HRESULT AddEnum(IWbemServices* pNamespace, PWSTR wszClassName, int32 lFlags, IWbemContext* pContext, IWbemHiPerfEnum** ppEnum, int32* plId) mut
+			public HRESULT AddEnum(ref IWbemServices pNamespace, PWSTR wszClassName, int32 lFlags, ref IWbemContext pContext, out IWbemHiPerfEnum* ppEnum, out int32 plId) mut
 			{
-				return VT.AddEnum(&this, pNamespace, wszClassName, lFlags, pContext, ppEnum, plId);
+				return VT.AddEnum(ref this, ref pNamespace, wszClassName, lFlags, ref pContext, out ppEnum, out plId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemConfigureRefresher *self, IWbemServices* pNamespace, PWSTR wszPath, int32 lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, int32* plId) AddObjectByPath;
-				public new function HRESULT(IWbemConfigureRefresher *self, IWbemServices* pNamespace, IWbemClassObject* pTemplate, int32 lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, int32* plId) AddObjectByTemplate;
-				public new function HRESULT(IWbemConfigureRefresher *self, IWbemRefresher* pRefresher, int32 lFlags, int32* plId) AddRefresher;
-				public new function HRESULT(IWbemConfigureRefresher *self, int32 lId, int32 lFlags) Remove;
-				public new function HRESULT(IWbemConfigureRefresher *self, IWbemServices* pNamespace, PWSTR wszClassName, int32 lFlags, IWbemContext* pContext, IWbemHiPerfEnum** ppEnum, int32* plId) AddEnum;
+				public new function HRESULT(ref IWbemConfigureRefresher self, ref IWbemServices pNamespace, PWSTR wszPath, int32 lFlags, ref IWbemContext pContext, out IWbemClassObject* ppRefreshable, out int32 plId) AddObjectByPath;
+				public new function HRESULT(ref IWbemConfigureRefresher self, ref IWbemServices pNamespace, ref IWbemClassObject pTemplate, int32 lFlags, ref IWbemContext pContext, out IWbemClassObject* ppRefreshable, out int32 plId) AddObjectByTemplate;
+				public new function HRESULT(ref IWbemConfigureRefresher self, ref IWbemRefresher pRefresher, int32 lFlags, out int32 plId) AddRefresher;
+				public new function HRESULT(ref IWbemConfigureRefresher self, int32 lId, int32 lFlags) Remove;
+				public new function HRESULT(ref IWbemConfigureRefresher self, ref IWbemServices pNamespace, PWSTR wszClassName, int32 lFlags, ref IWbemContext pContext, out IWbemHiPerfEnum* ppEnum, out int32 plId) AddEnum;
 			}
 		}
 		[CRepr]
@@ -3574,32 +3574,32 @@ namespace Win32
 			
 			public HRESULT WriteMessage(uint32 uChannel, BSTR strMessage) mut
 			{
-				return VT.WriteMessage(&this, uChannel, strMessage);
+				return VT.WriteMessage(ref this, uChannel, strMessage);
 			}
-			public HRESULT WriteError(IWbemClassObject* pObjError, uint8* puReturned) mut
+			public HRESULT WriteError(ref IWbemClassObject pObjError, out uint8 puReturned) mut
 			{
-				return VT.WriteError(&this, pObjError, puReturned);
+				return VT.WriteError(ref this, ref pObjError, out puReturned);
 			}
-			public HRESULT PromptUser(BSTR strMessage, uint8 uPromptType, uint8* puReturned) mut
+			public HRESULT PromptUser(BSTR strMessage, uint8 uPromptType, out uint8 puReturned) mut
 			{
-				return VT.PromptUser(&this, strMessage, uPromptType, puReturned);
+				return VT.PromptUser(ref this, strMessage, uPromptType, out puReturned);
 			}
 			public HRESULT WriteProgress(BSTR strActivity, BSTR strCurrentOperation, BSTR strStatusDescription, uint32 uPercentComplete, uint32 uSecondsRemaining) mut
 			{
-				return VT.WriteProgress(&this, strActivity, strCurrentOperation, strStatusDescription, uPercentComplete, uSecondsRemaining);
+				return VT.WriteProgress(ref this, strActivity, strCurrentOperation, strStatusDescription, uPercentComplete, uSecondsRemaining);
 			}
-			public HRESULT WriteStreamParameter(BSTR strName, VARIANT* vtValue, uint32 ulType, uint32 ulFlags) mut
+			public HRESULT WriteStreamParameter(BSTR strName, ref VARIANT vtValue, uint32 ulType, uint32 ulFlags) mut
 			{
-				return VT.WriteStreamParameter(&this, strName, vtValue, ulType, ulFlags);
+				return VT.WriteStreamParameter(ref this, strName, ref vtValue, ulType, ulFlags);
 			}
 			[CRepr]
 			public struct VTable : IWbemObjectSink.VTable
 			{
-				public new function HRESULT(IWbemObjectSinkEx *self, uint32 uChannel, BSTR strMessage) WriteMessage;
-				public new function HRESULT(IWbemObjectSinkEx *self, IWbemClassObject* pObjError, uint8* puReturned) WriteError;
-				public new function HRESULT(IWbemObjectSinkEx *self, BSTR strMessage, uint8 uPromptType, uint8* puReturned) PromptUser;
-				public new function HRESULT(IWbemObjectSinkEx *self, BSTR strActivity, BSTR strCurrentOperation, BSTR strStatusDescription, uint32 uPercentComplete, uint32 uSecondsRemaining) WriteProgress;
-				public new function HRESULT(IWbemObjectSinkEx *self, BSTR strName, VARIANT* vtValue, uint32 ulType, uint32 ulFlags) WriteStreamParameter;
+				public new function HRESULT(ref IWbemObjectSinkEx self, uint32 uChannel, BSTR strMessage) WriteMessage;
+				public new function HRESULT(ref IWbemObjectSinkEx self, ref IWbemClassObject pObjError, out uint8 puReturned) WriteError;
+				public new function HRESULT(ref IWbemObjectSinkEx self, BSTR strMessage, uint8 uPromptType, out uint8 puReturned) PromptUser;
+				public new function HRESULT(ref IWbemObjectSinkEx self, BSTR strActivity, BSTR strCurrentOperation, BSTR strStatusDescription, uint32 uPercentComplete, uint32 uSecondsRemaining) WriteProgress;
+				public new function HRESULT(ref IWbemObjectSinkEx self, BSTR strName, ref VARIANT vtValue, uint32 ulType, uint32 ulFlags) WriteStreamParameter;
 			}
 		}
 		[CRepr]
@@ -3609,14 +3609,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Shutdown(int32 uReason, uint32 uMaxMilliseconds, IWbemContext* pCtx) mut
+			public HRESULT Shutdown(int32 uReason, uint32 uMaxMilliseconds, ref IWbemContext pCtx) mut
 			{
-				return VT.Shutdown(&this, uReason, uMaxMilliseconds, pCtx);
+				return VT.Shutdown(ref this, uReason, uMaxMilliseconds, ref pCtx);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemShutdown *self, int32 uReason, uint32 uMaxMilliseconds, IWbemContext* pCtx) Shutdown;
+				public new function HRESULT(ref IWbemShutdown self, int32 uReason, uint32 uMaxMilliseconds, ref IWbemContext pCtx) Shutdown;
 			}
 		}
 		[CRepr]
@@ -3626,19 +3626,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetText(int32 lFlags, IWbemClassObject* pObj, uint32 uObjTextFormat, IWbemContext* pCtx, BSTR* strText) mut
+			public HRESULT GetText(int32 lFlags, ref IWbemClassObject pObj, uint32 uObjTextFormat, ref IWbemContext pCtx, out BSTR strText) mut
 			{
-				return VT.GetText(&this, lFlags, pObj, uObjTextFormat, pCtx, strText);
+				return VT.GetText(ref this, lFlags, ref pObj, uObjTextFormat, ref pCtx, out strText);
 			}
-			public HRESULT CreateFromText(int32 lFlags, BSTR strText, uint32 uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj) mut
+			public HRESULT CreateFromText(int32 lFlags, BSTR strText, uint32 uObjTextFormat, ref IWbemContext pCtx, out IWbemClassObject* pNewObj) mut
 			{
-				return VT.CreateFromText(&this, lFlags, strText, uObjTextFormat, pCtx, pNewObj);
+				return VT.CreateFromText(ref this, lFlags, strText, uObjTextFormat, ref pCtx, out pNewObj);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemObjectTextSrc *self, int32 lFlags, IWbemClassObject* pObj, uint32 uObjTextFormat, IWbemContext* pCtx, BSTR* strText) GetText;
-				public new function HRESULT(IWbemObjectTextSrc *self, int32 lFlags, BSTR strText, uint32 uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj) CreateFromText;
+				public new function HRESULT(ref IWbemObjectTextSrc self, int32 lFlags, ref IWbemClassObject pObj, uint32 uObjTextFormat, ref IWbemContext pCtx, out BSTR strText) GetText;
+				public new function HRESULT(ref IWbemObjectTextSrc self, int32 lFlags, BSTR strText, uint32 uObjTextFormat, ref IWbemContext pCtx, out IWbemClassObject* pNewObj) CreateFromText;
 			}
 		}
 		[CRepr]
@@ -3648,24 +3648,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CompileFile(PWSTR FileName, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo) mut
+			public HRESULT CompileFile(PWSTR FileName, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) mut
 			{
-				return VT.CompileFile(&this, FileName, ServerAndNamespace, User, Authority, Password, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
+				return VT.CompileFile(ref this, FileName, ServerAndNamespace, User, Authority, Password, lOptionFlags, lClassFlags, lInstanceFlags, out pInfo);
 			}
-			public HRESULT CompileBuffer(int32 BuffSize, uint8* pBuffer, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo) mut
+			public HRESULT CompileBuffer(int32 BuffSize, ref uint8 pBuffer, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) mut
 			{
-				return VT.CompileBuffer(&this, BuffSize, pBuffer, ServerAndNamespace, User, Authority, Password, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
+				return VT.CompileBuffer(ref this, BuffSize, ref pBuffer, ServerAndNamespace, User, Authority, Password, lOptionFlags, lClassFlags, lInstanceFlags, out pInfo);
 			}
-			public HRESULT CreateBMOF(PWSTR TextFileName, PWSTR BMOFFileName, PWSTR ServerAndNamespace, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo) mut
+			public HRESULT CreateBMOF(PWSTR TextFileName, PWSTR BMOFFileName, PWSTR ServerAndNamespace, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) mut
 			{
-				return VT.CreateBMOF(&this, TextFileName, BMOFFileName, ServerAndNamespace, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
+				return VT.CreateBMOF(ref this, TextFileName, BMOFFileName, ServerAndNamespace, lOptionFlags, lClassFlags, lInstanceFlags, out pInfo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMofCompiler *self, PWSTR FileName, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo) CompileFile;
-				public new function HRESULT(IMofCompiler *self, int32 BuffSize, uint8* pBuffer, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo) CompileBuffer;
-				public new function HRESULT(IMofCompiler *self, PWSTR TextFileName, PWSTR BMOFFileName, PWSTR ServerAndNamespace, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo) CreateBMOF;
+				public new function HRESULT(ref IMofCompiler self, PWSTR FileName, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) CompileFile;
+				public new function HRESULT(ref IMofCompiler self, int32 BuffSize, ref uint8 pBuffer, PWSTR ServerAndNamespace, PWSTR User, PWSTR Authority, PWSTR Password, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) CompileBuffer;
+				public new function HRESULT(ref IMofCompiler self, PWSTR TextFileName, PWSTR BMOFFileName, PWSTR ServerAndNamespace, int32 lOptionFlags, int32 lClassFlags, int32 lInstanceFlags, out WBEM_COMPILE_STATUS_INFO pInfo) CreateBMOF;
 			}
 		}
 		[CRepr]
@@ -3675,19 +3675,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProperty(int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, VARIANT* pvValue) mut
+			public HRESULT GetProperty(int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, out VARIANT pvValue) mut
 			{
-				return VT.GetProperty(&this, lFlags, strLocale, strClassMapping, strInstMapping, strPropMapping, pvValue);
+				return VT.GetProperty(ref this, lFlags, strLocale, strClassMapping, strInstMapping, strPropMapping, out pvValue);
 			}
-			public HRESULT PutProperty(int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, VARIANT* pvValue) mut
+			public HRESULT PutProperty(int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, in VARIANT pvValue) mut
 			{
-				return VT.PutProperty(&this, lFlags, strLocale, strClassMapping, strInstMapping, strPropMapping, pvValue);
+				return VT.PutProperty(ref this, lFlags, strLocale, strClassMapping, strInstMapping, strPropMapping, pvValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemPropertyProvider *self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, VARIANT* pvValue) GetProperty;
-				public new function HRESULT(IWbemPropertyProvider *self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, VARIANT* pvValue) PutProperty;
+				public new function HRESULT(ref IWbemPropertyProvider self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, out VARIANT pvValue) GetProperty;
+				public new function HRESULT(ref IWbemPropertyProvider self, int32 lFlags, BSTR strLocale, BSTR strClassMapping, BSTR strInstMapping, BSTR strPropMapping, in VARIANT pvValue) PutProperty;
 			}
 		}
 		[CRepr]
@@ -3697,14 +3697,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IndicateToConsumer(IWbemClassObject* pLogicalConsumer, int32 lNumObjects, IWbemClassObject** apObjects) mut
+			public HRESULT IndicateToConsumer(ref IWbemClassObject pLogicalConsumer, int32 lNumObjects, IWbemClassObject** apObjects) mut
 			{
-				return VT.IndicateToConsumer(&this, pLogicalConsumer, lNumObjects, apObjects);
+				return VT.IndicateToConsumer(ref this, ref pLogicalConsumer, lNumObjects, apObjects);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemUnboundObjectSink *self, IWbemClassObject* pLogicalConsumer, int32 lNumObjects, IWbemClassObject** apObjects) IndicateToConsumer;
+				public new function HRESULT(ref IWbemUnboundObjectSink self, ref IWbemClassObject pLogicalConsumer, int32 lNumObjects, IWbemClassObject** apObjects) IndicateToConsumer;
 			}
 		}
 		[CRepr]
@@ -3714,14 +3714,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ProvideEvents(IWbemObjectSink* pSink, int32 lFlags) mut
+			public HRESULT ProvideEvents(ref IWbemObjectSink pSink, int32 lFlags) mut
 			{
-				return VT.ProvideEvents(&this, pSink, lFlags);
+				return VT.ProvideEvents(ref this, ref pSink, lFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemEventProvider *self, IWbemObjectSink* pSink, int32 lFlags) ProvideEvents;
+				public new function HRESULT(ref IWbemEventProvider self, ref IWbemObjectSink pSink, int32 lFlags) ProvideEvents;
 			}
 		}
 		[CRepr]
@@ -3731,19 +3731,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NewQuery(uint32 dwId, uint16* wszQueryLanguage, uint16* wszQuery) mut
+			public HRESULT NewQuery(uint32 dwId, ref uint16 wszQueryLanguage, ref uint16 wszQuery) mut
 			{
-				return VT.NewQuery(&this, dwId, wszQueryLanguage, wszQuery);
+				return VT.NewQuery(ref this, dwId, ref wszQueryLanguage, ref wszQuery);
 			}
 			public HRESULT CancelQuery(uint32 dwId) mut
 			{
-				return VT.CancelQuery(&this, dwId);
+				return VT.CancelQuery(ref this, dwId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemEventProviderQuerySink *self, uint32 dwId, uint16* wszQueryLanguage, uint16* wszQuery) NewQuery;
-				public new function HRESULT(IWbemEventProviderQuerySink *self, uint32 dwId) CancelQuery;
+				public new function HRESULT(ref IWbemEventProviderQuerySink self, uint32 dwId, ref uint16 wszQueryLanguage, ref uint16 wszQuery) NewQuery;
+				public new function HRESULT(ref IWbemEventProviderQuerySink self, uint32 dwId) CancelQuery;
 			}
 		}
 		[CRepr]
@@ -3753,14 +3753,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AccessCheck(uint16* wszQueryLanguage, uint16* wszQuery, int32 lSidLength, uint8* pSid) mut
+			public HRESULT AccessCheck(ref uint16 wszQueryLanguage, ref uint16 wszQuery, int32 lSidLength, uint8* pSid) mut
 			{
-				return VT.AccessCheck(&this, wszQueryLanguage, wszQuery, lSidLength, pSid);
+				return VT.AccessCheck(ref this, ref wszQueryLanguage, ref wszQuery, lSidLength, pSid);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemEventProviderSecurity *self, uint16* wszQueryLanguage, uint16* wszQuery, int32 lSidLength, uint8* pSid) AccessCheck;
+				public new function HRESULT(ref IWbemEventProviderSecurity self, ref uint16 wszQueryLanguage, ref uint16 wszQuery, int32 lSidLength, uint8* pSid) AccessCheck;
 			}
 		}
 		[CRepr]
@@ -3770,14 +3770,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FindConsumer(IWbemClassObject* pLogicalConsumer, IWbemUnboundObjectSink** ppConsumer) mut
+			public HRESULT FindConsumer(ref IWbemClassObject pLogicalConsumer, out IWbemUnboundObjectSink* ppConsumer) mut
 			{
-				return VT.FindConsumer(&this, pLogicalConsumer, ppConsumer);
+				return VT.FindConsumer(ref this, ref pLogicalConsumer, out ppConsumer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemEventConsumerProvider *self, IWbemClassObject* pLogicalConsumer, IWbemUnboundObjectSink** ppConsumer) FindConsumer;
+				public new function HRESULT(ref IWbemEventConsumerProvider self, ref IWbemClassObject pLogicalConsumer, out IWbemUnboundObjectSink* ppConsumer) FindConsumer;
 			}
 		}
 		[CRepr]
@@ -3789,12 +3789,12 @@ namespace Win32
 			
 			public HRESULT SetStatus(int32 lStatus, int32 lFlags) mut
 			{
-				return VT.SetStatus(&this, lStatus, lFlags);
+				return VT.SetStatus(ref this, lStatus, lFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemProviderInitSink *self, int32 lStatus, int32 lFlags) SetStatus;
+				public new function HRESULT(ref IWbemProviderInitSink self, int32 lStatus, int32 lFlags) SetStatus;
 			}
 		}
 		[CRepr]
@@ -3804,14 +3804,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(PWSTR wszUser, int32 lFlags, PWSTR wszNamespace, PWSTR wszLocale, IWbemServices* pNamespace, IWbemContext* pCtx, IWbemProviderInitSink* pInitSink) mut
+			public HRESULT Initialize(PWSTR wszUser, int32 lFlags, PWSTR wszNamespace, PWSTR wszLocale, ref IWbemServices pNamespace, ref IWbemContext pCtx, ref IWbemProviderInitSink pInitSink) mut
 			{
-				return VT.Initialize(&this, wszUser, lFlags, wszNamespace, wszLocale, pNamespace, pCtx, pInitSink);
+				return VT.Initialize(ref this, wszUser, lFlags, wszNamespace, wszLocale, ref pNamespace, ref pCtx, ref pInitSink);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemProviderInit *self, PWSTR wszUser, int32 lFlags, PWSTR wszNamespace, PWSTR wszLocale, IWbemServices* pNamespace, IWbemContext* pCtx, IWbemProviderInitSink* pInitSink) Initialize;
+				public new function HRESULT(ref IWbemProviderInit self, PWSTR wszUser, int32 lFlags, PWSTR wszNamespace, PWSTR wszLocale, ref IWbemServices pNamespace, ref IWbemContext pCtx, ref IWbemProviderInitSink pInitSink) Initialize;
 			}
 		}
 		[CRepr]
@@ -3821,39 +3821,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryInstances(IWbemServices* pNamespace, PWSTR wszClass, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pSink) mut
+			public HRESULT QueryInstances(ref IWbemServices pNamespace, PWSTR wszClass, int32 lFlags, ref IWbemContext pCtx, out IWbemObjectSink pSink) mut
 			{
-				return VT.QueryInstances(&this, pNamespace, wszClass, lFlags, pCtx, pSink);
+				return VT.QueryInstances(ref this, ref pNamespace, wszClass, lFlags, ref pCtx, out pSink);
 			}
-			public HRESULT CreateRefresher(IWbemServices* pNamespace, int32 lFlags, IWbemRefresher** ppRefresher) mut
+			public HRESULT CreateRefresher(ref IWbemServices pNamespace, int32 lFlags, out IWbemRefresher* ppRefresher) mut
 			{
-				return VT.CreateRefresher(&this, pNamespace, lFlags, ppRefresher);
+				return VT.CreateRefresher(ref this, ref pNamespace, lFlags, out ppRefresher);
 			}
-			public HRESULT CreateRefreshableObject(IWbemServices* pNamespace, IWbemObjectAccess* pTemplate, IWbemRefresher* pRefresher, int32 lFlags, IWbemContext* pContext, IWbemObjectAccess** ppRefreshable, int32* plId) mut
+			public HRESULT CreateRefreshableObject(ref IWbemServices pNamespace, ref IWbemObjectAccess pTemplate, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, out IWbemObjectAccess* ppRefreshable, out int32 plId) mut
 			{
-				return VT.CreateRefreshableObject(&this, pNamespace, pTemplate, pRefresher, lFlags, pContext, ppRefreshable, plId);
+				return VT.CreateRefreshableObject(ref this, ref pNamespace, ref pTemplate, ref pRefresher, lFlags, ref pContext, out ppRefreshable, out plId);
 			}
-			public HRESULT StopRefreshing(IWbemRefresher* pRefresher, int32 lId, int32 lFlags) mut
+			public HRESULT StopRefreshing(ref IWbemRefresher pRefresher, int32 lId, int32 lFlags) mut
 			{
-				return VT.StopRefreshing(&this, pRefresher, lId, lFlags);
+				return VT.StopRefreshing(ref this, ref pRefresher, lId, lFlags);
 			}
-			public HRESULT CreateRefreshableEnum(IWbemServices* pNamespace, PWSTR wszClass, IWbemRefresher* pRefresher, int32 lFlags, IWbemContext* pContext, IWbemHiPerfEnum* pHiPerfEnum, int32* plId) mut
+			public HRESULT CreateRefreshableEnum(ref IWbemServices pNamespace, PWSTR wszClass, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, ref IWbemHiPerfEnum pHiPerfEnum, out int32 plId) mut
 			{
-				return VT.CreateRefreshableEnum(&this, pNamespace, wszClass, pRefresher, lFlags, pContext, pHiPerfEnum, plId);
+				return VT.CreateRefreshableEnum(ref this, ref pNamespace, wszClass, ref pRefresher, lFlags, ref pContext, ref pHiPerfEnum, out plId);
 			}
-			public HRESULT GetObjects(IWbemServices* pNamespace, int32 lNumObjects, IWbemObjectAccess** apObj, int32 lFlags, IWbemContext* pContext) mut
+			public HRESULT GetObjects(ref IWbemServices pNamespace, int32 lNumObjects, IWbemObjectAccess** apObj, int32 lFlags, ref IWbemContext pContext) mut
 			{
-				return VT.GetObjects(&this, pNamespace, lNumObjects, apObj, lFlags, pContext);
+				return VT.GetObjects(ref this, ref pNamespace, lNumObjects, apObj, lFlags, ref pContext);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, PWSTR wszClass, int32 lFlags, IWbemContext* pCtx, IWbemObjectSink* pSink) QueryInstances;
-				public new function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, int32 lFlags, IWbemRefresher** ppRefresher) CreateRefresher;
-				public new function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, IWbemObjectAccess* pTemplate, IWbemRefresher* pRefresher, int32 lFlags, IWbemContext* pContext, IWbemObjectAccess** ppRefreshable, int32* plId) CreateRefreshableObject;
-				public new function HRESULT(IWbemHiPerfProvider *self, IWbemRefresher* pRefresher, int32 lId, int32 lFlags) StopRefreshing;
-				public new function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, PWSTR wszClass, IWbemRefresher* pRefresher, int32 lFlags, IWbemContext* pContext, IWbemHiPerfEnum* pHiPerfEnum, int32* plId) CreateRefreshableEnum;
-				public new function HRESULT(IWbemHiPerfProvider *self, IWbemServices* pNamespace, int32 lNumObjects, IWbemObjectAccess** apObj, int32 lFlags, IWbemContext* pContext) GetObjects;
+				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, PWSTR wszClass, int32 lFlags, ref IWbemContext pCtx, out IWbemObjectSink pSink) QueryInstances;
+				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, int32 lFlags, out IWbemRefresher* ppRefresher) CreateRefresher;
+				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, ref IWbemObjectAccess pTemplate, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, out IWbemObjectAccess* ppRefreshable, out int32 plId) CreateRefreshableObject;
+				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemRefresher pRefresher, int32 lId, int32 lFlags) StopRefreshing;
+				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, PWSTR wszClass, ref IWbemRefresher pRefresher, int32 lFlags, ref IWbemContext pContext, ref IWbemHiPerfEnum pHiPerfEnum, out int32 plId) CreateRefreshableEnum;
+				public new function HRESULT(ref IWbemHiPerfProvider self, ref IWbemServices pNamespace, int32 lNumObjects, IWbemObjectAccess** apObj, int32 lFlags, ref IWbemContext pContext) GetObjects;
 			}
 		}
 		[CRepr]
@@ -3863,19 +3863,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Register(int32 a_Flags, IWbemContext* a_Context, PWSTR a_User, PWSTR a_Locale, PWSTR a_Scope, PWSTR a_Registration, IUnknown* pIUnknown) mut
+			public HRESULT Register(int32 a_Flags, ref IWbemContext a_Context, PWSTR a_User, PWSTR a_Locale, PWSTR a_Scope, PWSTR a_Registration, ref IUnknown pIUnknown) mut
 			{
-				return VT.Register(&this, a_Flags, a_Context, a_User, a_Locale, a_Scope, a_Registration, pIUnknown);
+				return VT.Register(ref this, a_Flags, ref a_Context, a_User, a_Locale, a_Scope, a_Registration, ref pIUnknown);
 			}
 			public HRESULT UnRegister() mut
 			{
-				return VT.UnRegister(&this);
+				return VT.UnRegister(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemDecoupledRegistrar *self, int32 a_Flags, IWbemContext* a_Context, PWSTR a_User, PWSTR a_Locale, PWSTR a_Scope, PWSTR a_Registration, IUnknown* pIUnknown) Register;
-				public new function HRESULT(IWbemDecoupledRegistrar *self) UnRegister;
+				public new function HRESULT(ref IWbemDecoupledRegistrar self, int32 a_Flags, ref IWbemContext a_Context, PWSTR a_User, PWSTR a_Locale, PWSTR a_Scope, PWSTR a_Registration, ref IUnknown pIUnknown) Register;
+				public new function HRESULT(ref IWbemDecoupledRegistrar self) UnRegister;
 			}
 		}
 		[CRepr]
@@ -3885,14 +3885,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRegistrationObject(int32 lFlags, IWbemClassObject* pProvReg) mut
+			public HRESULT SetRegistrationObject(int32 lFlags, ref IWbemClassObject pProvReg) mut
 			{
-				return VT.SetRegistrationObject(&this, lFlags, pProvReg);
+				return VT.SetRegistrationObject(ref this, lFlags, ref pProvReg);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemProviderIdentity *self, int32 lFlags, IWbemClassObject* pProvReg) SetRegistrationObject;
+				public new function HRESULT(ref IWbemProviderIdentity self, int32 lFlags, ref IWbemClassObject pProvReg) SetRegistrationObject;
 			}
 		}
 		[CRepr]
@@ -3902,19 +3902,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSink(int32 a_Flags, IWbemContext* a_Context, IWbemObjectSink** a_Sink) mut
+			public HRESULT GetSink(int32 a_Flags, ref IWbemContext a_Context, out IWbemObjectSink* a_Sink) mut
 			{
-				return VT.GetSink(&this, a_Flags, a_Context, a_Sink);
+				return VT.GetSink(ref this, a_Flags, ref a_Context, out a_Sink);
 			}
-			public HRESULT GetService(int32 a_Flags, IWbemContext* a_Context, IWbemServices** a_Service) mut
+			public HRESULT GetService(int32 a_Flags, ref IWbemContext a_Context, out IWbemServices* a_Service) mut
 			{
-				return VT.GetService(&this, a_Flags, a_Context, a_Service);
+				return VT.GetService(ref this, a_Flags, ref a_Context, out a_Service);
 			}
 			[CRepr]
 			public struct VTable : IWbemDecoupledRegistrar.VTable
 			{
-				public new function HRESULT(IWbemDecoupledBasicEventProvider *self, int32 a_Flags, IWbemContext* a_Context, IWbemObjectSink** a_Sink) GetSink;
-				public new function HRESULT(IWbemDecoupledBasicEventProvider *self, int32 a_Flags, IWbemContext* a_Context, IWbemServices** a_Service) GetService;
+				public new function HRESULT(ref IWbemDecoupledBasicEventProvider self, int32 a_Flags, ref IWbemContext a_Context, out IWbemObjectSink* a_Sink) GetSink;
+				public new function HRESULT(ref IWbemDecoupledBasicEventProvider self, int32 a_Flags, ref IWbemContext a_Context, out IWbemServices* a_Service) GetService;
 			}
 		}
 		[CRepr]
@@ -3926,27 +3926,27 @@ namespace Win32
 			
 			public HRESULT SetSinkSecurity(int32 lSDLength, uint8* pSD) mut
 			{
-				return VT.SetSinkSecurity(&this, lSDLength, pSD);
+				return VT.SetSinkSecurity(ref this, lSDLength, pSD);
 			}
 			public HRESULT IsActive() mut
 			{
-				return VT.IsActive(&this);
+				return VT.IsActive(ref this);
 			}
-			public HRESULT GetRestrictedSink(int32 lNumQueries, PWSTR* awszQueries, IUnknown* pCallback, IWbemEventSink** ppSink) mut
+			public HRESULT GetRestrictedSink(int32 lNumQueries, PWSTR* awszQueries, ref IUnknown pCallback, out IWbemEventSink* ppSink) mut
 			{
-				return VT.GetRestrictedSink(&this, lNumQueries, awszQueries, pCallback, ppSink);
+				return VT.GetRestrictedSink(ref this, lNumQueries, awszQueries, ref pCallback, out ppSink);
 			}
 			public HRESULT SetBatchingParameters(int32 lFlags, uint32 dwMaxBufferSize, uint32 dwMaxSendLatency) mut
 			{
-				return VT.SetBatchingParameters(&this, lFlags, dwMaxBufferSize, dwMaxSendLatency);
+				return VT.SetBatchingParameters(ref this, lFlags, dwMaxBufferSize, dwMaxSendLatency);
 			}
 			[CRepr]
 			public struct VTable : IWbemObjectSink.VTable
 			{
-				public new function HRESULT(IWbemEventSink *self, int32 lSDLength, uint8* pSD) SetSinkSecurity;
-				public new function HRESULT(IWbemEventSink *self) IsActive;
-				public new function HRESULT(IWbemEventSink *self, int32 lNumQueries, PWSTR* awszQueries, IUnknown* pCallback, IWbemEventSink** ppSink) GetRestrictedSink;
-				public new function HRESULT(IWbemEventSink *self, int32 lFlags, uint32 dwMaxBufferSize, uint32 dwMaxSendLatency) SetBatchingParameters;
+				public new function HRESULT(ref IWbemEventSink self, int32 lSDLength, uint8* pSD) SetSinkSecurity;
+				public new function HRESULT(ref IWbemEventSink self) IsActive;
+				public new function HRESULT(ref IWbemEventSink self, int32 lNumQueries, PWSTR* awszQueries, ref IUnknown pCallback, out IWbemEventSink* ppSink) GetRestrictedSink;
+				public new function HRESULT(ref IWbemEventSink self, int32 lFlags, uint32 dwMaxBufferSize, uint32 dwMaxSendLatency) SetBatchingParameters;
 			}
 		}
 		[CRepr]
@@ -3956,104 +3956,104 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Get(BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObject** objWbemObject) mut
+			public HRESULT Get(BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemObject) mut
 			{
-				return VT.Get(&this, strObjectPath, iFlags, objWbemNamedValueSet, objWbemObject);
+				return VT.Get(ref this, strObjectPath, iFlags, ref objWbemNamedValueSet, out objWbemObject);
 			}
-			public HRESULT GetAsync(IDispatch* objWbemSink, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT GetAsync(ref IDispatch objWbemSink, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.GetAsync(&this, objWbemSink, strObjectPath, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.GetAsync(ref this, ref objWbemSink, strObjectPath, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT Delete(BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet) mut
+			public HRESULT Delete(BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet) mut
 			{
-				return VT.Delete(&this, strObjectPath, iFlags, objWbemNamedValueSet);
+				return VT.Delete(ref this, strObjectPath, iFlags, ref objWbemNamedValueSet);
 			}
-			public HRESULT DeleteAsync(IDispatch* objWbemSink, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT DeleteAsync(ref IDispatch objWbemSink, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.DeleteAsync(&this, objWbemSink, strObjectPath, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.DeleteAsync(ref this, ref objWbemSink, strObjectPath, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT InstancesOf(BSTR strClass, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT InstancesOf(BSTR strClass, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.InstancesOf(&this, strClass, iFlags, objWbemNamedValueSet, objWbemObjectSet);
+				return VT.InstancesOf(ref this, strClass, iFlags, ref objWbemNamedValueSet, out objWbemObjectSet);
 			}
-			public HRESULT InstancesOfAsync(IDispatch* objWbemSink, BSTR strClass, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT InstancesOfAsync(ref IDispatch objWbemSink, BSTR strClass, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.InstancesOfAsync(&this, objWbemSink, strClass, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.InstancesOfAsync(ref this, ref objWbemSink, strClass, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT SubclassesOf(BSTR strSuperclass, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT SubclassesOf(BSTR strSuperclass, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.SubclassesOf(&this, strSuperclass, iFlags, objWbemNamedValueSet, objWbemObjectSet);
+				return VT.SubclassesOf(ref this, strSuperclass, iFlags, ref objWbemNamedValueSet, out objWbemObjectSet);
 			}
-			public HRESULT SubclassesOfAsync(IDispatch* objWbemSink, BSTR strSuperclass, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT SubclassesOfAsync(ref IDispatch objWbemSink, BSTR strSuperclass, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.SubclassesOfAsync(&this, objWbemSink, strSuperclass, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.SubclassesOfAsync(ref this, ref objWbemSink, strSuperclass, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT ExecQuery(BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT ExecQuery(BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.ExecQuery(&this, strQuery, strQueryLanguage, iFlags, objWbemNamedValueSet, objWbemObjectSet);
+				return VT.ExecQuery(ref this, strQuery, strQueryLanguage, iFlags, ref objWbemNamedValueSet, out objWbemObjectSet);
 			}
-			public HRESULT ExecQueryAsync(IDispatch* objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 lFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT ExecQueryAsync(ref IDispatch objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 lFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.ExecQueryAsync(&this, objWbemSink, strQuery, strQueryLanguage, lFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.ExecQueryAsync(ref this, ref objWbemSink, strQuery, strQueryLanguage, lFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT AssociatorsOf(BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT AssociatorsOf(BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.AssociatorsOf(&this, strObjectPath, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemObjectSet);
+				return VT.AssociatorsOf(ref this, strObjectPath, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, ref objWbemNamedValueSet, out objWbemObjectSet);
 			}
-			public HRESULT AssociatorsOfAsync(IDispatch* objWbemSink, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT AssociatorsOfAsync(ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.AssociatorsOfAsync(&this, objWbemSink, strObjectPath, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.AssociatorsOfAsync(ref this, ref objWbemSink, strObjectPath, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT ReferencesTo(BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT ReferencesTo(BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.ReferencesTo(&this, strObjectPath, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemObjectSet);
+				return VT.ReferencesTo(ref this, strObjectPath, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, ref objWbemNamedValueSet, out objWbemObjectSet);
 			}
-			public HRESULT ReferencesToAsync(IDispatch* objWbemSink, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT ReferencesToAsync(ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.ReferencesToAsync(&this, objWbemSink, strObjectPath, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.ReferencesToAsync(ref this, ref objWbemSink, strObjectPath, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT ExecNotificationQuery(BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemEventSource** objWbemEventSource) mut
+			public HRESULT ExecNotificationQuery(BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemEventSource* objWbemEventSource) mut
 			{
-				return VT.ExecNotificationQuery(&this, strQuery, strQueryLanguage, iFlags, objWbemNamedValueSet, objWbemEventSource);
+				return VT.ExecNotificationQuery(ref this, strQuery, strQueryLanguage, iFlags, ref objWbemNamedValueSet, out objWbemEventSource);
 			}
-			public HRESULT ExecNotificationQueryAsync(IDispatch* objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT ExecNotificationQueryAsync(ref IDispatch objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.ExecNotificationQueryAsync(&this, objWbemSink, strQuery, strQueryLanguage, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.ExecNotificationQueryAsync(ref this, ref objWbemSink, strQuery, strQueryLanguage, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT ExecMethod(BSTR strObjectPath, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObject** objWbemOutParameters) mut
+			public HRESULT ExecMethod(BSTR strObjectPath, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemOutParameters) mut
 			{
-				return VT.ExecMethod(&this, strObjectPath, strMethodName, objWbemInParameters, iFlags, objWbemNamedValueSet, objWbemOutParameters);
+				return VT.ExecMethod(ref this, strObjectPath, strMethodName, ref objWbemInParameters, iFlags, ref objWbemNamedValueSet, out objWbemOutParameters);
 			}
-			public HRESULT ExecMethodAsync(IDispatch* objWbemSink, BSTR strObjectPath, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT ExecMethodAsync(ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.ExecMethodAsync(&this, objWbemSink, strObjectPath, strMethodName, objWbemInParameters, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.ExecMethodAsync(ref this, ref objWbemSink, strObjectPath, strMethodName, ref objWbemInParameters, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT get_Security_(ISWbemSecurity** objWbemSecurity) mut
+			public HRESULT get_Security_(out ISWbemSecurity* objWbemSecurity) mut
 			{
-				return VT.get_Security_(&this, objWbemSecurity);
+				return VT.get_Security_(ref this, out objWbemSecurity);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemServices *self, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObject** objWbemObject) Get;
-				public new function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) GetAsync;
-				public new function HRESULT(ISWbemServices *self, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet) Delete;
-				public new function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) DeleteAsync;
-				public new function HRESULT(ISWbemServices *self, BSTR strClass, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) InstancesOf;
-				public new function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strClass, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) InstancesOfAsync;
-				public new function HRESULT(ISWbemServices *self, BSTR strSuperclass, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) SubclassesOf;
-				public new function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strSuperclass, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) SubclassesOfAsync;
-				public new function HRESULT(ISWbemServices *self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) ExecQuery;
-				public new function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 lFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ExecQueryAsync;
-				public new function HRESULT(ISWbemServices *self, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) AssociatorsOf;
-				public new function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) AssociatorsOfAsync;
-				public new function HRESULT(ISWbemServices *self, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) ReferencesTo;
-				public new function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ReferencesToAsync;
-				public new function HRESULT(ISWbemServices *self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemEventSource** objWbemEventSource) ExecNotificationQuery;
-				public new function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ExecNotificationQueryAsync;
-				public new function HRESULT(ISWbemServices *self, BSTR strObjectPath, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObject** objWbemOutParameters) ExecMethod;
-				public new function HRESULT(ISWbemServices *self, IDispatch* objWbemSink, BSTR strObjectPath, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ExecMethodAsync;
-				public new function HRESULT(ISWbemServices *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemObject) Get;
+				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) GetAsync;
+				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet) Delete;
+				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) DeleteAsync;
+				public new function HRESULT(ref ISWbemServices self, BSTR strClass, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) InstancesOf;
+				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strClass, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) InstancesOfAsync;
+				public new function HRESULT(ref ISWbemServices self, BSTR strSuperclass, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) SubclassesOf;
+				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strSuperclass, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) SubclassesOfAsync;
+				public new function HRESULT(ref ISWbemServices self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) ExecQuery;
+				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 lFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecQueryAsync;
+				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) AssociatorsOf;
+				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) AssociatorsOfAsync;
+				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) ReferencesTo;
+				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ReferencesToAsync;
+				public new function HRESULT(ref ISWbemServices self, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemEventSource* objWbemEventSource) ExecNotificationQuery;
+				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strQuery, BSTR strQueryLanguage, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecNotificationQueryAsync;
+				public new function HRESULT(ref ISWbemServices self, BSTR strObjectPath, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemOutParameters) ExecMethod;
+				public new function HRESULT(ref ISWbemServices self, ref IDispatch objWbemSink, BSTR strObjectPath, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecMethodAsync;
+				public new function HRESULT(ref ISWbemServices self, out ISWbemSecurity* objWbemSecurity) get_Security_;
 			}
 		}
 		[CRepr]
@@ -4063,19 +4063,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectServer(BSTR strServer, BSTR strNamespace, BSTR strUser, BSTR strPassword, BSTR strLocale, BSTR strAuthority, int32 iSecurityFlags, IDispatch* objWbemNamedValueSet, ISWbemServices** objWbemServices) mut
+			public HRESULT ConnectServer(BSTR strServer, BSTR strNamespace, BSTR strUser, BSTR strPassword, BSTR strLocale, BSTR strAuthority, int32 iSecurityFlags, ref IDispatch objWbemNamedValueSet, out ISWbemServices* objWbemServices) mut
 			{
-				return VT.ConnectServer(&this, strServer, strNamespace, strUser, strPassword, strLocale, strAuthority, iSecurityFlags, objWbemNamedValueSet, objWbemServices);
+				return VT.ConnectServer(ref this, strServer, strNamespace, strUser, strPassword, strLocale, strAuthority, iSecurityFlags, ref objWbemNamedValueSet, out objWbemServices);
 			}
-			public HRESULT get_Security_(ISWbemSecurity** objWbemSecurity) mut
+			public HRESULT get_Security_(out ISWbemSecurity* objWbemSecurity) mut
 			{
-				return VT.get_Security_(&this, objWbemSecurity);
+				return VT.get_Security_(ref this, out objWbemSecurity);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemLocator *self, BSTR strServer, BSTR strNamespace, BSTR strUser, BSTR strPassword, BSTR strLocale, BSTR strAuthority, int32 iSecurityFlags, IDispatch* objWbemNamedValueSet, ISWbemServices** objWbemServices) ConnectServer;
-				public new function HRESULT(ISWbemLocator *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+				public new function HRESULT(ref ISWbemLocator self, BSTR strServer, BSTR strNamespace, BSTR strUser, BSTR strPassword, BSTR strLocale, BSTR strAuthority, int32 iSecurityFlags, ref IDispatch objWbemNamedValueSet, out ISWbemServices* objWbemServices) ConnectServer;
+				public new function HRESULT(ref ISWbemLocator self, out ISWbemSecurity* objWbemSecurity) get_Security_;
 			}
 		}
 		[CRepr]
@@ -4085,134 +4085,134 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Put_(int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectPath** objWbemObjectPath) mut
+			public HRESULT Put_(int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectPath* objWbemObjectPath) mut
 			{
-				return VT.Put_(&this, iFlags, objWbemNamedValueSet, objWbemObjectPath);
+				return VT.Put_(ref this, iFlags, ref objWbemNamedValueSet, out objWbemObjectPath);
 			}
-			public HRESULT PutAsync_(IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT PutAsync_(ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.PutAsync_(&this, objWbemSink, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.PutAsync_(ref this, ref objWbemSink, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT Delete_(int32 iFlags, IDispatch* objWbemNamedValueSet) mut
+			public HRESULT Delete_(int32 iFlags, ref IDispatch objWbemNamedValueSet) mut
 			{
-				return VT.Delete_(&this, iFlags, objWbemNamedValueSet);
+				return VT.Delete_(ref this, iFlags, ref objWbemNamedValueSet);
 			}
-			public HRESULT DeleteAsync_(IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT DeleteAsync_(ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.DeleteAsync_(&this, objWbemSink, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.DeleteAsync_(ref this, ref objWbemSink, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT Instances_(int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT Instances_(int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.Instances_(&this, iFlags, objWbemNamedValueSet, objWbemObjectSet);
+				return VT.Instances_(ref this, iFlags, ref objWbemNamedValueSet, out objWbemObjectSet);
 			}
-			public HRESULT InstancesAsync_(IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT InstancesAsync_(ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.InstancesAsync_(&this, objWbemSink, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.InstancesAsync_(ref this, ref objWbemSink, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT Subclasses_(int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT Subclasses_(int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.Subclasses_(&this, iFlags, objWbemNamedValueSet, objWbemObjectSet);
+				return VT.Subclasses_(ref this, iFlags, ref objWbemNamedValueSet, out objWbemObjectSet);
 			}
-			public HRESULT SubclassesAsync_(IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT SubclassesAsync_(ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.SubclassesAsync_(&this, objWbemSink, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.SubclassesAsync_(ref this, ref objWbemSink, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT Associators_(BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT Associators_(BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.Associators_(&this, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemObjectSet);
+				return VT.Associators_(ref this, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, ref objWbemNamedValueSet, out objWbemObjectSet);
 			}
-			public HRESULT AssociatorsAsync_(IDispatch* objWbemSink, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT AssociatorsAsync_(ref IDispatch objWbemSink, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.AssociatorsAsync_(&this, objWbemSink, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.AssociatorsAsync_(ref this, ref objWbemSink, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT References_(BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT References_(BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.References_(&this, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemObjectSet);
+				return VT.References_(ref this, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, ref objWbemNamedValueSet, out objWbemObjectSet);
 			}
-			public HRESULT ReferencesAsync_(IDispatch* objWbemSink, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT ReferencesAsync_(ref IDispatch objWbemSink, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.ReferencesAsync_(&this, objWbemSink, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.ReferencesAsync_(ref this, ref objWbemSink, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT ExecMethod_(BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObject** objWbemOutParameters) mut
+			public HRESULT ExecMethod_(BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemOutParameters) mut
 			{
-				return VT.ExecMethod_(&this, strMethodName, objWbemInParameters, iFlags, objWbemNamedValueSet, objWbemOutParameters);
+				return VT.ExecMethod_(ref this, strMethodName, ref objWbemInParameters, iFlags, ref objWbemNamedValueSet, out objWbemOutParameters);
 			}
-			public HRESULT ExecMethodAsync_(IDispatch* objWbemSink, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT ExecMethodAsync_(ref IDispatch objWbemSink, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.ExecMethodAsync_(&this, objWbemSink, strMethodName, objWbemInParameters, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.ExecMethodAsync_(ref this, ref objWbemSink, strMethodName, ref objWbemInParameters, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
-			public HRESULT Clone_(ISWbemObject** objWbemObject) mut
+			public HRESULT Clone_(out ISWbemObject* objWbemObject) mut
 			{
-				return VT.Clone_(&this, objWbemObject);
+				return VT.Clone_(ref this, out objWbemObject);
 			}
-			public HRESULT GetObjectText_(int32 iFlags, BSTR* strObjectText) mut
+			public HRESULT GetObjectText_(int32 iFlags, out BSTR strObjectText) mut
 			{
-				return VT.GetObjectText_(&this, iFlags, strObjectText);
+				return VT.GetObjectText_(ref this, iFlags, out strObjectText);
 			}
-			public HRESULT SpawnDerivedClass_(int32 iFlags, ISWbemObject** objWbemObject) mut
+			public HRESULT SpawnDerivedClass_(int32 iFlags, out ISWbemObject* objWbemObject) mut
 			{
-				return VT.SpawnDerivedClass_(&this, iFlags, objWbemObject);
+				return VT.SpawnDerivedClass_(ref this, iFlags, out objWbemObject);
 			}
-			public HRESULT SpawnInstance_(int32 iFlags, ISWbemObject** objWbemObject) mut
+			public HRESULT SpawnInstance_(int32 iFlags, out ISWbemObject* objWbemObject) mut
 			{
-				return VT.SpawnInstance_(&this, iFlags, objWbemObject);
+				return VT.SpawnInstance_(ref this, iFlags, out objWbemObject);
 			}
-			public HRESULT CompareTo_(IDispatch* objWbemObject, int32 iFlags, int16* bResult) mut
+			public HRESULT CompareTo_(ref IDispatch objWbemObject, int32 iFlags, out int16 bResult) mut
 			{
-				return VT.CompareTo_(&this, objWbemObject, iFlags, bResult);
+				return VT.CompareTo_(ref this, ref objWbemObject, iFlags, out bResult);
 			}
-			public HRESULT get_Qualifiers_(ISWbemQualifierSet** objWbemQualifierSet) mut
+			public HRESULT get_Qualifiers_(out ISWbemQualifierSet* objWbemQualifierSet) mut
 			{
-				return VT.get_Qualifiers_(&this, objWbemQualifierSet);
+				return VT.get_Qualifiers_(ref this, out objWbemQualifierSet);
 			}
-			public HRESULT get_Properties_(ISWbemPropertySet** objWbemPropertySet) mut
+			public HRESULT get_Properties_(out ISWbemPropertySet* objWbemPropertySet) mut
 			{
-				return VT.get_Properties_(&this, objWbemPropertySet);
+				return VT.get_Properties_(ref this, out objWbemPropertySet);
 			}
-			public HRESULT get_Methods_(ISWbemMethodSet** objWbemMethodSet) mut
+			public HRESULT get_Methods_(out ISWbemMethodSet* objWbemMethodSet) mut
 			{
-				return VT.get_Methods_(&this, objWbemMethodSet);
+				return VT.get_Methods_(ref this, out objWbemMethodSet);
 			}
-			public HRESULT get_Derivation_(VARIANT* strClassNameArray) mut
+			public HRESULT get_Derivation_(out VARIANT strClassNameArray) mut
 			{
-				return VT.get_Derivation_(&this, strClassNameArray);
+				return VT.get_Derivation_(ref this, out strClassNameArray);
 			}
-			public HRESULT get_Path_(ISWbemObjectPath** objWbemObjectPath) mut
+			public HRESULT get_Path_(out ISWbemObjectPath* objWbemObjectPath) mut
 			{
-				return VT.get_Path_(&this, objWbemObjectPath);
+				return VT.get_Path_(ref this, out objWbemObjectPath);
 			}
-			public HRESULT get_Security_(ISWbemSecurity** objWbemSecurity) mut
+			public HRESULT get_Security_(out ISWbemSecurity* objWbemSecurity) mut
 			{
-				return VT.get_Security_(&this, objWbemSecurity);
+				return VT.get_Security_(ref this, out objWbemSecurity);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemObject *self, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectPath** objWbemObjectPath) Put_;
-				public new function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) PutAsync_;
-				public new function HRESULT(ISWbemObject *self, int32 iFlags, IDispatch* objWbemNamedValueSet) Delete_;
-				public new function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) DeleteAsync_;
-				public new function HRESULT(ISWbemObject *self, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) Instances_;
-				public new function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) InstancesAsync_;
-				public new function HRESULT(ISWbemObject *self, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) Subclasses_;
-				public new function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) SubclassesAsync_;
-				public new function HRESULT(ISWbemObject *self, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) Associators_;
-				public new function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) AssociatorsAsync_;
-				public new function HRESULT(ISWbemObject *self, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectSet** objWbemObjectSet) References_;
-				public new function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ReferencesAsync_;
-				public new function HRESULT(ISWbemObject *self, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObject** objWbemOutParameters) ExecMethod_;
-				public new function HRESULT(ISWbemObject *self, IDispatch* objWbemSink, BSTR strMethodName, IDispatch* objWbemInParameters, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) ExecMethodAsync_;
-				public new function HRESULT(ISWbemObject *self, ISWbemObject** objWbemObject) Clone_;
-				public new function HRESULT(ISWbemObject *self, int32 iFlags, BSTR* strObjectText) GetObjectText_;
-				public new function HRESULT(ISWbemObject *self, int32 iFlags, ISWbemObject** objWbemObject) SpawnDerivedClass_;
-				public new function HRESULT(ISWbemObject *self, int32 iFlags, ISWbemObject** objWbemObject) SpawnInstance_;
-				public new function HRESULT(ISWbemObject *self, IDispatch* objWbemObject, int32 iFlags, int16* bResult) CompareTo_;
-				public new function HRESULT(ISWbemObject *self, ISWbemQualifierSet** objWbemQualifierSet) get_Qualifiers_;
-				public new function HRESULT(ISWbemObject *self, ISWbemPropertySet** objWbemPropertySet) get_Properties_;
-				public new function HRESULT(ISWbemObject *self, ISWbemMethodSet** objWbemMethodSet) get_Methods_;
-				public new function HRESULT(ISWbemObject *self, VARIANT* strClassNameArray) get_Derivation_;
-				public new function HRESULT(ISWbemObject *self, ISWbemObjectPath** objWbemObjectPath) get_Path_;
-				public new function HRESULT(ISWbemObject *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+				public new function HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectPath* objWbemObjectPath) Put_;
+				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) PutAsync_;
+				public new function HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet) Delete_;
+				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) DeleteAsync_;
+				public new function HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) Instances_;
+				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) InstancesAsync_;
+				public new function HRESULT(ref ISWbemObject self, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) Subclasses_;
+				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) SubclassesAsync_;
+				public new function HRESULT(ref ISWbemObject self, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) Associators_;
+				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, BSTR strAssocClass, BSTR strResultClass, BSTR strResultRole, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredAssocQualifier, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) AssociatorsAsync_;
+				public new function HRESULT(ref ISWbemObject self, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectSet* objWbemObjectSet) References_;
+				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, BSTR strResultClass, BSTR strRole, int16 bClassesOnly, int16 bSchemaOnly, BSTR strRequiredQualifier, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ReferencesAsync_;
+				public new function HRESULT(ref ISWbemObject self, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObject* objWbemOutParameters) ExecMethod_;
+				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemSink, BSTR strMethodName, ref IDispatch objWbemInParameters, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) ExecMethodAsync_;
+				public new function HRESULT(ref ISWbemObject self, out ISWbemObject* objWbemObject) Clone_;
+				public new function HRESULT(ref ISWbemObject self, int32 iFlags, out BSTR strObjectText) GetObjectText_;
+				public new function HRESULT(ref ISWbemObject self, int32 iFlags, out ISWbemObject* objWbemObject) SpawnDerivedClass_;
+				public new function HRESULT(ref ISWbemObject self, int32 iFlags, out ISWbemObject* objWbemObject) SpawnInstance_;
+				public new function HRESULT(ref ISWbemObject self, ref IDispatch objWbemObject, int32 iFlags, out int16 bResult) CompareTo_;
+				public new function HRESULT(ref ISWbemObject self, out ISWbemQualifierSet* objWbemQualifierSet) get_Qualifiers_;
+				public new function HRESULT(ref ISWbemObject self, out ISWbemPropertySet* objWbemPropertySet) get_Properties_;
+				public new function HRESULT(ref ISWbemObject self, out ISWbemMethodSet* objWbemMethodSet) get_Methods_;
+				public new function HRESULT(ref ISWbemObject self, out VARIANT strClassNameArray) get_Derivation_;
+				public new function HRESULT(ref ISWbemObject self, out ISWbemObjectPath* objWbemObjectPath) get_Path_;
+				public new function HRESULT(ref ISWbemObject self, out ISWbemSecurity* objWbemSecurity) get_Security_;
 			}
 		}
 		[CRepr]
@@ -4222,34 +4222,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** pUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* pUnk) mut
 			{
-				return VT.get__NewEnum(&this, pUnk);
+				return VT.get__NewEnum(ref this, out pUnk);
 			}
-			public HRESULT Item(BSTR strObjectPath, int32 iFlags, ISWbemObject** objWbemObject) mut
+			public HRESULT Item(BSTR strObjectPath, int32 iFlags, out ISWbemObject* objWbemObject) mut
 			{
-				return VT.Item(&this, strObjectPath, iFlags, objWbemObject);
+				return VT.Item(ref this, strObjectPath, iFlags, out objWbemObject);
 			}
-			public HRESULT get_Count(int32* iCount) mut
+			public HRESULT get_Count(out int32 iCount) mut
 			{
-				return VT.get_Count(&this, iCount);
+				return VT.get_Count(ref this, out iCount);
 			}
-			public HRESULT get_Security_(ISWbemSecurity** objWbemSecurity) mut
+			public HRESULT get_Security_(out ISWbemSecurity* objWbemSecurity) mut
 			{
-				return VT.get_Security_(&this, objWbemSecurity);
+				return VT.get_Security_(ref this, out objWbemSecurity);
 			}
-			public HRESULT ItemIndex(int32 lIndex, ISWbemObject** objWbemObject) mut
+			public HRESULT ItemIndex(int32 lIndex, out ISWbemObject* objWbemObject) mut
 			{
-				return VT.ItemIndex(&this, lIndex, objWbemObject);
+				return VT.ItemIndex(ref this, lIndex, out objWbemObject);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemObjectSet *self, IUnknown** pUnk) get__NewEnum;
-				public new function HRESULT(ISWbemObjectSet *self, BSTR strObjectPath, int32 iFlags, ISWbemObject** objWbemObject) Item;
-				public new function HRESULT(ISWbemObjectSet *self, int32* iCount) get_Count;
-				public new function HRESULT(ISWbemObjectSet *self, ISWbemSecurity** objWbemSecurity) get_Security_;
-				public new function HRESULT(ISWbemObjectSet *self, int32 lIndex, ISWbemObject** objWbemObject) ItemIndex;
+				public new function HRESULT(ref ISWbemObjectSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function HRESULT(ref ISWbemObjectSet self, BSTR strObjectPath, int32 iFlags, out ISWbemObject* objWbemObject) Item;
+				public new function HRESULT(ref ISWbemObjectSet self, out int32 iCount) get_Count;
+				public new function HRESULT(ref ISWbemObjectSet self, out ISWbemSecurity* objWbemSecurity) get_Security_;
+				public new function HRESULT(ref ISWbemObjectSet self, int32 lIndex, out ISWbemObject* objWbemObject) ItemIndex;
 			}
 		}
 		[CRepr]
@@ -4259,24 +4259,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Value(VARIANT* varValue) mut
+			public HRESULT get_Value(out VARIANT varValue) mut
 			{
-				return VT.get_Value(&this, varValue);
+				return VT.get_Value(ref this, out varValue);
 			}
-			public HRESULT put_Value(VARIANT* varValue) mut
+			public HRESULT put_Value(ref VARIANT varValue) mut
 			{
-				return VT.put_Value(&this, varValue);
+				return VT.put_Value(ref this, ref varValue);
 			}
-			public HRESULT get_Name(BSTR* strName) mut
+			public HRESULT get_Name(out BSTR strName) mut
 			{
-				return VT.get_Name(&this, strName);
+				return VT.get_Name(ref this, out strName);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemNamedValue *self, VARIANT* varValue) get_Value;
-				public new function HRESULT(ISWbemNamedValue *self, VARIANT* varValue) put_Value;
-				public new function HRESULT(ISWbemNamedValue *self, BSTR* strName) get_Name;
+				public new function HRESULT(ref ISWbemNamedValue self, out VARIANT varValue) get_Value;
+				public new function HRESULT(ref ISWbemNamedValue self, ref VARIANT varValue) put_Value;
+				public new function HRESULT(ref ISWbemNamedValue self, out BSTR strName) get_Name;
 			}
 		}
 		[CRepr]
@@ -4286,44 +4286,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** pUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* pUnk) mut
 			{
-				return VT.get__NewEnum(&this, pUnk);
+				return VT.get__NewEnum(ref this, out pUnk);
 			}
-			public HRESULT Item(BSTR strName, int32 iFlags, ISWbemNamedValue** objWbemNamedValue) mut
+			public HRESULT Item(BSTR strName, int32 iFlags, out ISWbemNamedValue* objWbemNamedValue) mut
 			{
-				return VT.Item(&this, strName, iFlags, objWbemNamedValue);
+				return VT.Item(ref this, strName, iFlags, out objWbemNamedValue);
 			}
-			public HRESULT get_Count(int32* iCount) mut
+			public HRESULT get_Count(out int32 iCount) mut
 			{
-				return VT.get_Count(&this, iCount);
+				return VT.get_Count(ref this, out iCount);
 			}
-			public HRESULT Add(BSTR strName, VARIANT* varValue, int32 iFlags, ISWbemNamedValue** objWbemNamedValue) mut
+			public HRESULT Add(BSTR strName, ref VARIANT varValue, int32 iFlags, out ISWbemNamedValue* objWbemNamedValue) mut
 			{
-				return VT.Add(&this, strName, varValue, iFlags, objWbemNamedValue);
+				return VT.Add(ref this, strName, ref varValue, iFlags, out objWbemNamedValue);
 			}
 			public HRESULT Remove(BSTR strName, int32 iFlags) mut
 			{
-				return VT.Remove(&this, strName, iFlags);
+				return VT.Remove(ref this, strName, iFlags);
 			}
-			public HRESULT Clone(ISWbemNamedValueSet** objWbemNamedValueSet) mut
+			public HRESULT Clone(out ISWbemNamedValueSet* objWbemNamedValueSet) mut
 			{
-				return VT.Clone(&this, objWbemNamedValueSet);
+				return VT.Clone(ref this, out objWbemNamedValueSet);
 			}
 			public HRESULT DeleteAll() mut
 			{
-				return VT.DeleteAll(&this);
+				return VT.DeleteAll(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemNamedValueSet *self, IUnknown** pUnk) get__NewEnum;
-				public new function HRESULT(ISWbemNamedValueSet *self, BSTR strName, int32 iFlags, ISWbemNamedValue** objWbemNamedValue) Item;
-				public new function HRESULT(ISWbemNamedValueSet *self, int32* iCount) get_Count;
-				public new function HRESULT(ISWbemNamedValueSet *self, BSTR strName, VARIANT* varValue, int32 iFlags, ISWbemNamedValue** objWbemNamedValue) Add;
-				public new function HRESULT(ISWbemNamedValueSet *self, BSTR strName, int32 iFlags) Remove;
-				public new function HRESULT(ISWbemNamedValueSet *self, ISWbemNamedValueSet** objWbemNamedValueSet) Clone;
-				public new function HRESULT(ISWbemNamedValueSet *self) DeleteAll;
+				public new function HRESULT(ref ISWbemNamedValueSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function HRESULT(ref ISWbemNamedValueSet self, BSTR strName, int32 iFlags, out ISWbemNamedValue* objWbemNamedValue) Item;
+				public new function HRESULT(ref ISWbemNamedValueSet self, out int32 iCount) get_Count;
+				public new function HRESULT(ref ISWbemNamedValueSet self, BSTR strName, ref VARIANT varValue, int32 iFlags, out ISWbemNamedValue* objWbemNamedValue) Add;
+				public new function HRESULT(ref ISWbemNamedValueSet self, BSTR strName, int32 iFlags) Remove;
+				public new function HRESULT(ref ISWbemNamedValueSet self, out ISWbemNamedValueSet* objWbemNamedValueSet) Clone;
+				public new function HRESULT(ref ISWbemNamedValueSet self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -4333,64 +4333,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Value(VARIANT* varValue) mut
+			public HRESULT get_Value(out VARIANT varValue) mut
 			{
-				return VT.get_Value(&this, varValue);
+				return VT.get_Value(ref this, out varValue);
 			}
-			public HRESULT put_Value(VARIANT* varValue) mut
+			public HRESULT put_Value(ref VARIANT varValue) mut
 			{
-				return VT.put_Value(&this, varValue);
+				return VT.put_Value(ref this, ref varValue);
 			}
-			public HRESULT get_Name(BSTR* strName) mut
+			public HRESULT get_Name(out BSTR strName) mut
 			{
-				return VT.get_Name(&this, strName);
+				return VT.get_Name(ref this, out strName);
 			}
-			public HRESULT get_IsLocal(int16* bIsLocal) mut
+			public HRESULT get_IsLocal(out int16 bIsLocal) mut
 			{
-				return VT.get_IsLocal(&this, bIsLocal);
+				return VT.get_IsLocal(ref this, out bIsLocal);
 			}
-			public HRESULT get_PropagatesToSubclass(int16* bPropagatesToSubclass) mut
+			public HRESULT get_PropagatesToSubclass(out int16 bPropagatesToSubclass) mut
 			{
-				return VT.get_PropagatesToSubclass(&this, bPropagatesToSubclass);
+				return VT.get_PropagatesToSubclass(ref this, out bPropagatesToSubclass);
 			}
 			public HRESULT put_PropagatesToSubclass(int16 bPropagatesToSubclass) mut
 			{
-				return VT.put_PropagatesToSubclass(&this, bPropagatesToSubclass);
+				return VT.put_PropagatesToSubclass(ref this, bPropagatesToSubclass);
 			}
-			public HRESULT get_PropagatesToInstance(int16* bPropagatesToInstance) mut
+			public HRESULT get_PropagatesToInstance(out int16 bPropagatesToInstance) mut
 			{
-				return VT.get_PropagatesToInstance(&this, bPropagatesToInstance);
+				return VT.get_PropagatesToInstance(ref this, out bPropagatesToInstance);
 			}
 			public HRESULT put_PropagatesToInstance(int16 bPropagatesToInstance) mut
 			{
-				return VT.put_PropagatesToInstance(&this, bPropagatesToInstance);
+				return VT.put_PropagatesToInstance(ref this, bPropagatesToInstance);
 			}
-			public HRESULT get_IsOverridable(int16* bIsOverridable) mut
+			public HRESULT get_IsOverridable(out int16 bIsOverridable) mut
 			{
-				return VT.get_IsOverridable(&this, bIsOverridable);
+				return VT.get_IsOverridable(ref this, out bIsOverridable);
 			}
 			public HRESULT put_IsOverridable(int16 bIsOverridable) mut
 			{
-				return VT.put_IsOverridable(&this, bIsOverridable);
+				return VT.put_IsOverridable(ref this, bIsOverridable);
 			}
-			public HRESULT get_IsAmended(int16* bIsAmended) mut
+			public HRESULT get_IsAmended(out int16 bIsAmended) mut
 			{
-				return VT.get_IsAmended(&this, bIsAmended);
+				return VT.get_IsAmended(ref this, out bIsAmended);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemQualifier *self, VARIANT* varValue) get_Value;
-				public new function HRESULT(ISWbemQualifier *self, VARIANT* varValue) put_Value;
-				public new function HRESULT(ISWbemQualifier *self, BSTR* strName) get_Name;
-				public new function HRESULT(ISWbemQualifier *self, int16* bIsLocal) get_IsLocal;
-				public new function HRESULT(ISWbemQualifier *self, int16* bPropagatesToSubclass) get_PropagatesToSubclass;
-				public new function HRESULT(ISWbemQualifier *self, int16 bPropagatesToSubclass) put_PropagatesToSubclass;
-				public new function HRESULT(ISWbemQualifier *self, int16* bPropagatesToInstance) get_PropagatesToInstance;
-				public new function HRESULT(ISWbemQualifier *self, int16 bPropagatesToInstance) put_PropagatesToInstance;
-				public new function HRESULT(ISWbemQualifier *self, int16* bIsOverridable) get_IsOverridable;
-				public new function HRESULT(ISWbemQualifier *self, int16 bIsOverridable) put_IsOverridable;
-				public new function HRESULT(ISWbemQualifier *self, int16* bIsAmended) get_IsAmended;
+				public new function HRESULT(ref ISWbemQualifier self, out VARIANT varValue) get_Value;
+				public new function HRESULT(ref ISWbemQualifier self, ref VARIANT varValue) put_Value;
+				public new function HRESULT(ref ISWbemQualifier self, out BSTR strName) get_Name;
+				public new function HRESULT(ref ISWbemQualifier self, out int16 bIsLocal) get_IsLocal;
+				public new function HRESULT(ref ISWbemQualifier self, out int16 bPropagatesToSubclass) get_PropagatesToSubclass;
+				public new function HRESULT(ref ISWbemQualifier self, int16 bPropagatesToSubclass) put_PropagatesToSubclass;
+				public new function HRESULT(ref ISWbemQualifier self, out int16 bPropagatesToInstance) get_PropagatesToInstance;
+				public new function HRESULT(ref ISWbemQualifier self, int16 bPropagatesToInstance) put_PropagatesToInstance;
+				public new function HRESULT(ref ISWbemQualifier self, out int16 bIsOverridable) get_IsOverridable;
+				public new function HRESULT(ref ISWbemQualifier self, int16 bIsOverridable) put_IsOverridable;
+				public new function HRESULT(ref ISWbemQualifier self, out int16 bIsAmended) get_IsAmended;
 			}
 		}
 		[CRepr]
@@ -4400,34 +4400,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** pUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* pUnk) mut
 			{
-				return VT.get__NewEnum(&this, pUnk);
+				return VT.get__NewEnum(ref this, out pUnk);
 			}
-			public HRESULT Item(BSTR name, int32 iFlags, ISWbemQualifier** objWbemQualifier) mut
+			public HRESULT Item(BSTR name, int32 iFlags, out ISWbemQualifier* objWbemQualifier) mut
 			{
-				return VT.Item(&this, name, iFlags, objWbemQualifier);
+				return VT.Item(ref this, name, iFlags, out objWbemQualifier);
 			}
-			public HRESULT get_Count(int32* iCount) mut
+			public HRESULT get_Count(out int32 iCount) mut
 			{
-				return VT.get_Count(&this, iCount);
+				return VT.get_Count(ref this, out iCount);
 			}
-			public HRESULT Add(BSTR strName, VARIANT* varVal, int16 bPropagatesToSubclass, int16 bPropagatesToInstance, int16 bIsOverridable, int32 iFlags, ISWbemQualifier** objWbemQualifier) mut
+			public HRESULT Add(BSTR strName, ref VARIANT varVal, int16 bPropagatesToSubclass, int16 bPropagatesToInstance, int16 bIsOverridable, int32 iFlags, out ISWbemQualifier* objWbemQualifier) mut
 			{
-				return VT.Add(&this, strName, varVal, bPropagatesToSubclass, bPropagatesToInstance, bIsOverridable, iFlags, objWbemQualifier);
+				return VT.Add(ref this, strName, ref varVal, bPropagatesToSubclass, bPropagatesToInstance, bIsOverridable, iFlags, out objWbemQualifier);
 			}
 			public HRESULT Remove(BSTR strName, int32 iFlags) mut
 			{
-				return VT.Remove(&this, strName, iFlags);
+				return VT.Remove(ref this, strName, iFlags);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemQualifierSet *self, IUnknown** pUnk) get__NewEnum;
-				public new function HRESULT(ISWbemQualifierSet *self, BSTR name, int32 iFlags, ISWbemQualifier** objWbemQualifier) Item;
-				public new function HRESULT(ISWbemQualifierSet *self, int32* iCount) get_Count;
-				public new function HRESULT(ISWbemQualifierSet *self, BSTR strName, VARIANT* varVal, int16 bPropagatesToSubclass, int16 bPropagatesToInstance, int16 bIsOverridable, int32 iFlags, ISWbemQualifier** objWbemQualifier) Add;
-				public new function HRESULT(ISWbemQualifierSet *self, BSTR strName, int32 iFlags) Remove;
+				public new function HRESULT(ref ISWbemQualifierSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function HRESULT(ref ISWbemQualifierSet self, BSTR name, int32 iFlags, out ISWbemQualifier* objWbemQualifier) Item;
+				public new function HRESULT(ref ISWbemQualifierSet self, out int32 iCount) get_Count;
+				public new function HRESULT(ref ISWbemQualifierSet self, BSTR strName, ref VARIANT varVal, int16 bPropagatesToSubclass, int16 bPropagatesToInstance, int16 bIsOverridable, int32 iFlags, out ISWbemQualifier* objWbemQualifier) Add;
+				public new function HRESULT(ref ISWbemQualifierSet self, BSTR strName, int32 iFlags) Remove;
 			}
 		}
 		[CRepr]
@@ -4437,49 +4437,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Value(VARIANT* varValue) mut
+			public HRESULT get_Value(out VARIANT varValue) mut
 			{
-				return VT.get_Value(&this, varValue);
+				return VT.get_Value(ref this, out varValue);
 			}
-			public HRESULT put_Value(VARIANT* varValue) mut
+			public HRESULT put_Value(ref VARIANT varValue) mut
 			{
-				return VT.put_Value(&this, varValue);
+				return VT.put_Value(ref this, ref varValue);
 			}
-			public HRESULT get_Name(BSTR* strName) mut
+			public HRESULT get_Name(out BSTR strName) mut
 			{
-				return VT.get_Name(&this, strName);
+				return VT.get_Name(ref this, out strName);
 			}
-			public HRESULT get_IsLocal(int16* bIsLocal) mut
+			public HRESULT get_IsLocal(out int16 bIsLocal) mut
 			{
-				return VT.get_IsLocal(&this, bIsLocal);
+				return VT.get_IsLocal(ref this, out bIsLocal);
 			}
-			public HRESULT get_Origin(BSTR* strOrigin) mut
+			public HRESULT get_Origin(out BSTR strOrigin) mut
 			{
-				return VT.get_Origin(&this, strOrigin);
+				return VT.get_Origin(ref this, out strOrigin);
 			}
-			public HRESULT get_CIMType(WbemCimtypeEnum* iCimType) mut
+			public HRESULT get_CIMType(out WbemCimtypeEnum iCimType) mut
 			{
-				return VT.get_CIMType(&this, iCimType);
+				return VT.get_CIMType(ref this, out iCimType);
 			}
-			public HRESULT get_Qualifiers_(ISWbemQualifierSet** objWbemQualifierSet) mut
+			public HRESULT get_Qualifiers_(out ISWbemQualifierSet* objWbemQualifierSet) mut
 			{
-				return VT.get_Qualifiers_(&this, objWbemQualifierSet);
+				return VT.get_Qualifiers_(ref this, out objWbemQualifierSet);
 			}
-			public HRESULT get_IsArray(int16* bIsArray) mut
+			public HRESULT get_IsArray(out int16 bIsArray) mut
 			{
-				return VT.get_IsArray(&this, bIsArray);
+				return VT.get_IsArray(ref this, out bIsArray);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemProperty *self, VARIANT* varValue) get_Value;
-				public new function HRESULT(ISWbemProperty *self, VARIANT* varValue) put_Value;
-				public new function HRESULT(ISWbemProperty *self, BSTR* strName) get_Name;
-				public new function HRESULT(ISWbemProperty *self, int16* bIsLocal) get_IsLocal;
-				public new function HRESULT(ISWbemProperty *self, BSTR* strOrigin) get_Origin;
-				public new function HRESULT(ISWbemProperty *self, WbemCimtypeEnum* iCimType) get_CIMType;
-				public new function HRESULT(ISWbemProperty *self, ISWbemQualifierSet** objWbemQualifierSet) get_Qualifiers_;
-				public new function HRESULT(ISWbemProperty *self, int16* bIsArray) get_IsArray;
+				public new function HRESULT(ref ISWbemProperty self, out VARIANT varValue) get_Value;
+				public new function HRESULT(ref ISWbemProperty self, ref VARIANT varValue) put_Value;
+				public new function HRESULT(ref ISWbemProperty self, out BSTR strName) get_Name;
+				public new function HRESULT(ref ISWbemProperty self, out int16 bIsLocal) get_IsLocal;
+				public new function HRESULT(ref ISWbemProperty self, out BSTR strOrigin) get_Origin;
+				public new function HRESULT(ref ISWbemProperty self, out WbemCimtypeEnum iCimType) get_CIMType;
+				public new function HRESULT(ref ISWbemProperty self, out ISWbemQualifierSet* objWbemQualifierSet) get_Qualifiers_;
+				public new function HRESULT(ref ISWbemProperty self, out int16 bIsArray) get_IsArray;
 			}
 		}
 		[CRepr]
@@ -4489,34 +4489,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** pUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* pUnk) mut
 			{
-				return VT.get__NewEnum(&this, pUnk);
+				return VT.get__NewEnum(ref this, out pUnk);
 			}
-			public HRESULT Item(BSTR strName, int32 iFlags, ISWbemProperty** objWbemProperty) mut
+			public HRESULT Item(BSTR strName, int32 iFlags, out ISWbemProperty* objWbemProperty) mut
 			{
-				return VT.Item(&this, strName, iFlags, objWbemProperty);
+				return VT.Item(ref this, strName, iFlags, out objWbemProperty);
 			}
-			public HRESULT get_Count(int32* iCount) mut
+			public HRESULT get_Count(out int32 iCount) mut
 			{
-				return VT.get_Count(&this, iCount);
+				return VT.get_Count(ref this, out iCount);
 			}
-			public HRESULT Add(BSTR strName, WbemCimtypeEnum iCIMType, int16 bIsArray, int32 iFlags, ISWbemProperty** objWbemProperty) mut
+			public HRESULT Add(BSTR strName, WbemCimtypeEnum iCIMType, int16 bIsArray, int32 iFlags, out ISWbemProperty* objWbemProperty) mut
 			{
-				return VT.Add(&this, strName, iCIMType, bIsArray, iFlags, objWbemProperty);
+				return VT.Add(ref this, strName, iCIMType, bIsArray, iFlags, out objWbemProperty);
 			}
 			public HRESULT Remove(BSTR strName, int32 iFlags) mut
 			{
-				return VT.Remove(&this, strName, iFlags);
+				return VT.Remove(ref this, strName, iFlags);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemPropertySet *self, IUnknown** pUnk) get__NewEnum;
-				public new function HRESULT(ISWbemPropertySet *self, BSTR strName, int32 iFlags, ISWbemProperty** objWbemProperty) Item;
-				public new function HRESULT(ISWbemPropertySet *self, int32* iCount) get_Count;
-				public new function HRESULT(ISWbemPropertySet *self, BSTR strName, WbemCimtypeEnum iCIMType, int16 bIsArray, int32 iFlags, ISWbemProperty** objWbemProperty) Add;
-				public new function HRESULT(ISWbemPropertySet *self, BSTR strName, int32 iFlags) Remove;
+				public new function HRESULT(ref ISWbemPropertySet self, out IUnknown* pUnk) get__NewEnum;
+				public new function HRESULT(ref ISWbemPropertySet self, BSTR strName, int32 iFlags, out ISWbemProperty* objWbemProperty) Item;
+				public new function HRESULT(ref ISWbemPropertySet self, out int32 iCount) get_Count;
+				public new function HRESULT(ref ISWbemPropertySet self, BSTR strName, WbemCimtypeEnum iCIMType, int16 bIsArray, int32 iFlags, out ISWbemProperty* objWbemProperty) Add;
+				public new function HRESULT(ref ISWbemPropertySet self, BSTR strName, int32 iFlags) Remove;
 			}
 		}
 		[CRepr]
@@ -4526,34 +4526,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* strName) mut
+			public HRESULT get_Name(out BSTR strName) mut
 			{
-				return VT.get_Name(&this, strName);
+				return VT.get_Name(ref this, out strName);
 			}
-			public HRESULT get_Origin(BSTR* strOrigin) mut
+			public HRESULT get_Origin(out BSTR strOrigin) mut
 			{
-				return VT.get_Origin(&this, strOrigin);
+				return VT.get_Origin(ref this, out strOrigin);
 			}
-			public HRESULT get_InParameters(ISWbemObject** objWbemInParameters) mut
+			public HRESULT get_InParameters(out ISWbemObject* objWbemInParameters) mut
 			{
-				return VT.get_InParameters(&this, objWbemInParameters);
+				return VT.get_InParameters(ref this, out objWbemInParameters);
 			}
-			public HRESULT get_OutParameters(ISWbemObject** objWbemOutParameters) mut
+			public HRESULT get_OutParameters(out ISWbemObject* objWbemOutParameters) mut
 			{
-				return VT.get_OutParameters(&this, objWbemOutParameters);
+				return VT.get_OutParameters(ref this, out objWbemOutParameters);
 			}
-			public HRESULT get_Qualifiers_(ISWbemQualifierSet** objWbemQualifierSet) mut
+			public HRESULT get_Qualifiers_(out ISWbemQualifierSet* objWbemQualifierSet) mut
 			{
-				return VT.get_Qualifiers_(&this, objWbemQualifierSet);
+				return VT.get_Qualifiers_(ref this, out objWbemQualifierSet);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemMethod *self, BSTR* strName) get_Name;
-				public new function HRESULT(ISWbemMethod *self, BSTR* strOrigin) get_Origin;
-				public new function HRESULT(ISWbemMethod *self, ISWbemObject** objWbemInParameters) get_InParameters;
-				public new function HRESULT(ISWbemMethod *self, ISWbemObject** objWbemOutParameters) get_OutParameters;
-				public new function HRESULT(ISWbemMethod *self, ISWbemQualifierSet** objWbemQualifierSet) get_Qualifiers_;
+				public new function HRESULT(ref ISWbemMethod self, out BSTR strName) get_Name;
+				public new function HRESULT(ref ISWbemMethod self, out BSTR strOrigin) get_Origin;
+				public new function HRESULT(ref ISWbemMethod self, out ISWbemObject* objWbemInParameters) get_InParameters;
+				public new function HRESULT(ref ISWbemMethod self, out ISWbemObject* objWbemOutParameters) get_OutParameters;
+				public new function HRESULT(ref ISWbemMethod self, out ISWbemQualifierSet* objWbemQualifierSet) get_Qualifiers_;
 			}
 		}
 		[CRepr]
@@ -4563,24 +4563,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** pUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* pUnk) mut
 			{
-				return VT.get__NewEnum(&this, pUnk);
+				return VT.get__NewEnum(ref this, out pUnk);
 			}
-			public HRESULT Item(BSTR strName, int32 iFlags, ISWbemMethod** objWbemMethod) mut
+			public HRESULT Item(BSTR strName, int32 iFlags, out ISWbemMethod* objWbemMethod) mut
 			{
-				return VT.Item(&this, strName, iFlags, objWbemMethod);
+				return VT.Item(ref this, strName, iFlags, out objWbemMethod);
 			}
-			public HRESULT get_Count(int32* iCount) mut
+			public HRESULT get_Count(out int32 iCount) mut
 			{
-				return VT.get_Count(&this, iCount);
+				return VT.get_Count(ref this, out iCount);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemMethodSet *self, IUnknown** pUnk) get__NewEnum;
-				public new function HRESULT(ISWbemMethodSet *self, BSTR strName, int32 iFlags, ISWbemMethod** objWbemMethod) Item;
-				public new function HRESULT(ISWbemMethodSet *self, int32* iCount) get_Count;
+				public new function HRESULT(ref ISWbemMethodSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function HRESULT(ref ISWbemMethodSet self, BSTR strName, int32 iFlags, out ISWbemMethod* objWbemMethod) Item;
+				public new function HRESULT(ref ISWbemMethodSet self, out int32 iCount) get_Count;
 			}
 		}
 		[CRepr]
@@ -4590,19 +4590,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NextEvent(int32 iTimeoutMs, ISWbemObject** objWbemObject) mut
+			public HRESULT NextEvent(int32 iTimeoutMs, out ISWbemObject* objWbemObject) mut
 			{
-				return VT.NextEvent(&this, iTimeoutMs, objWbemObject);
+				return VT.NextEvent(ref this, iTimeoutMs, out objWbemObject);
 			}
-			public HRESULT get_Security_(ISWbemSecurity** objWbemSecurity) mut
+			public HRESULT get_Security_(out ISWbemSecurity* objWbemSecurity) mut
 			{
-				return VT.get_Security_(&this, objWbemSecurity);
+				return VT.get_Security_(ref this, out objWbemSecurity);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemEventSource *self, int32 iTimeoutMs, ISWbemObject** objWbemObject) NextEvent;
-				public new function HRESULT(ISWbemEventSource *self, ISWbemSecurity** objWbemSecurity) get_Security_;
+				public new function HRESULT(ref ISWbemEventSource self, int32 iTimeoutMs, out ISWbemObject* objWbemObject) NextEvent;
+				public new function HRESULT(ref ISWbemEventSource self, out ISWbemSecurity* objWbemSecurity) get_Security_;
 			}
 		}
 		[CRepr]
@@ -4612,124 +4612,124 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Path(BSTR* strPath) mut
+			public HRESULT get_Path(out BSTR strPath) mut
 			{
-				return VT.get_Path(&this, strPath);
+				return VT.get_Path(ref this, out strPath);
 			}
 			public HRESULT put_Path(BSTR strPath) mut
 			{
-				return VT.put_Path(&this, strPath);
+				return VT.put_Path(ref this, strPath);
 			}
-			public HRESULT get_RelPath(BSTR* strRelPath) mut
+			public HRESULT get_RelPath(out BSTR strRelPath) mut
 			{
-				return VT.get_RelPath(&this, strRelPath);
+				return VT.get_RelPath(ref this, out strRelPath);
 			}
 			public HRESULT put_RelPath(BSTR strRelPath) mut
 			{
-				return VT.put_RelPath(&this, strRelPath);
+				return VT.put_RelPath(ref this, strRelPath);
 			}
-			public HRESULT get_Server(BSTR* strServer) mut
+			public HRESULT get_Server(out BSTR strServer) mut
 			{
-				return VT.get_Server(&this, strServer);
+				return VT.get_Server(ref this, out strServer);
 			}
 			public HRESULT put_Server(BSTR strServer) mut
 			{
-				return VT.put_Server(&this, strServer);
+				return VT.put_Server(ref this, strServer);
 			}
-			public HRESULT get_Namespace(BSTR* strNamespace) mut
+			public HRESULT get_Namespace(out BSTR strNamespace) mut
 			{
-				return VT.get_Namespace(&this, strNamespace);
+				return VT.get_Namespace(ref this, out strNamespace);
 			}
 			public HRESULT put_Namespace(BSTR strNamespace) mut
 			{
-				return VT.put_Namespace(&this, strNamespace);
+				return VT.put_Namespace(ref this, strNamespace);
 			}
-			public HRESULT get_ParentNamespace(BSTR* strParentNamespace) mut
+			public HRESULT get_ParentNamespace(out BSTR strParentNamespace) mut
 			{
-				return VT.get_ParentNamespace(&this, strParentNamespace);
+				return VT.get_ParentNamespace(ref this, out strParentNamespace);
 			}
-			public HRESULT get_DisplayName(BSTR* strDisplayName) mut
+			public HRESULT get_DisplayName(out BSTR strDisplayName) mut
 			{
-				return VT.get_DisplayName(&this, strDisplayName);
+				return VT.get_DisplayName(ref this, out strDisplayName);
 			}
 			public HRESULT put_DisplayName(BSTR strDisplayName) mut
 			{
-				return VT.put_DisplayName(&this, strDisplayName);
+				return VT.put_DisplayName(ref this, strDisplayName);
 			}
-			public HRESULT get_Class(BSTR* strClass) mut
+			public HRESULT get_Class(out BSTR strClass) mut
 			{
-				return VT.get_Class(&this, strClass);
+				return VT.get_Class(ref this, out strClass);
 			}
 			public HRESULT put_Class(BSTR strClass) mut
 			{
-				return VT.put_Class(&this, strClass);
+				return VT.put_Class(ref this, strClass);
 			}
-			public HRESULT get_IsClass(int16* bIsClass) mut
+			public HRESULT get_IsClass(out int16 bIsClass) mut
 			{
-				return VT.get_IsClass(&this, bIsClass);
+				return VT.get_IsClass(ref this, out bIsClass);
 			}
 			public HRESULT SetAsClass() mut
 			{
-				return VT.SetAsClass(&this);
+				return VT.SetAsClass(ref this);
 			}
-			public HRESULT get_IsSingleton(int16* bIsSingleton) mut
+			public HRESULT get_IsSingleton(out int16 bIsSingleton) mut
 			{
-				return VT.get_IsSingleton(&this, bIsSingleton);
+				return VT.get_IsSingleton(ref this, out bIsSingleton);
 			}
 			public HRESULT SetAsSingleton() mut
 			{
-				return VT.SetAsSingleton(&this);
+				return VT.SetAsSingleton(ref this);
 			}
-			public HRESULT get_Keys(ISWbemNamedValueSet** objWbemNamedValueSet) mut
+			public HRESULT get_Keys(out ISWbemNamedValueSet* objWbemNamedValueSet) mut
 			{
-				return VT.get_Keys(&this, objWbemNamedValueSet);
+				return VT.get_Keys(ref this, out objWbemNamedValueSet);
 			}
-			public HRESULT get_Security_(ISWbemSecurity** objWbemSecurity) mut
+			public HRESULT get_Security_(out ISWbemSecurity* objWbemSecurity) mut
 			{
-				return VT.get_Security_(&this, objWbemSecurity);
+				return VT.get_Security_(ref this, out objWbemSecurity);
 			}
-			public HRESULT get_Locale(BSTR* strLocale) mut
+			public HRESULT get_Locale(out BSTR strLocale) mut
 			{
-				return VT.get_Locale(&this, strLocale);
+				return VT.get_Locale(ref this, out strLocale);
 			}
 			public HRESULT put_Locale(BSTR strLocale) mut
 			{
-				return VT.put_Locale(&this, strLocale);
+				return VT.put_Locale(ref this, strLocale);
 			}
-			public HRESULT get_Authority(BSTR* strAuthority) mut
+			public HRESULT get_Authority(out BSTR strAuthority) mut
 			{
-				return VT.get_Authority(&this, strAuthority);
+				return VT.get_Authority(ref this, out strAuthority);
 			}
 			public HRESULT put_Authority(BSTR strAuthority) mut
 			{
-				return VT.put_Authority(&this, strAuthority);
+				return VT.put_Authority(ref this, strAuthority);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemObjectPath *self, BSTR* strPath) get_Path;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR strPath) put_Path;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR* strRelPath) get_RelPath;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR strRelPath) put_RelPath;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR* strServer) get_Server;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR strServer) put_Server;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR* strNamespace) get_Namespace;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR strNamespace) put_Namespace;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR* strParentNamespace) get_ParentNamespace;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR* strDisplayName) get_DisplayName;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR strDisplayName) put_DisplayName;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR* strClass) get_Class;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR strClass) put_Class;
-				public new function HRESULT(ISWbemObjectPath *self, int16* bIsClass) get_IsClass;
-				public new function HRESULT(ISWbemObjectPath *self) SetAsClass;
-				public new function HRESULT(ISWbemObjectPath *self, int16* bIsSingleton) get_IsSingleton;
-				public new function HRESULT(ISWbemObjectPath *self) SetAsSingleton;
-				public new function HRESULT(ISWbemObjectPath *self, ISWbemNamedValueSet** objWbemNamedValueSet) get_Keys;
-				public new function HRESULT(ISWbemObjectPath *self, ISWbemSecurity** objWbemSecurity) get_Security_;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR* strLocale) get_Locale;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR strLocale) put_Locale;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR* strAuthority) get_Authority;
-				public new function HRESULT(ISWbemObjectPath *self, BSTR strAuthority) put_Authority;
+				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strPath) get_Path;
+				public new function HRESULT(ref ISWbemObjectPath self, BSTR strPath) put_Path;
+				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strRelPath) get_RelPath;
+				public new function HRESULT(ref ISWbemObjectPath self, BSTR strRelPath) put_RelPath;
+				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strServer) get_Server;
+				public new function HRESULT(ref ISWbemObjectPath self, BSTR strServer) put_Server;
+				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strNamespace) get_Namespace;
+				public new function HRESULT(ref ISWbemObjectPath self, BSTR strNamespace) put_Namespace;
+				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strParentNamespace) get_ParentNamespace;
+				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strDisplayName) get_DisplayName;
+				public new function HRESULT(ref ISWbemObjectPath self, BSTR strDisplayName) put_DisplayName;
+				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strClass) get_Class;
+				public new function HRESULT(ref ISWbemObjectPath self, BSTR strClass) put_Class;
+				public new function HRESULT(ref ISWbemObjectPath self, out int16 bIsClass) get_IsClass;
+				public new function HRESULT(ref ISWbemObjectPath self) SetAsClass;
+				public new function HRESULT(ref ISWbemObjectPath self, out int16 bIsSingleton) get_IsSingleton;
+				public new function HRESULT(ref ISWbemObjectPath self) SetAsSingleton;
+				public new function HRESULT(ref ISWbemObjectPath self, out ISWbemNamedValueSet* objWbemNamedValueSet) get_Keys;
+				public new function HRESULT(ref ISWbemObjectPath self, out ISWbemSecurity* objWbemSecurity) get_Security_;
+				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strLocale) get_Locale;
+				public new function HRESULT(ref ISWbemObjectPath self, BSTR strLocale) put_Locale;
+				public new function HRESULT(ref ISWbemObjectPath self, out BSTR strAuthority) get_Authority;
+				public new function HRESULT(ref ISWbemObjectPath self, BSTR strAuthority) put_Authority;
 			}
 		}
 		[CRepr]
@@ -4765,12 +4765,12 @@ namespace Win32
 			
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemSink *self) Cancel;
+				public new function HRESULT(ref ISWbemSink self) Cancel;
 			}
 		}
 		[CRepr]
@@ -4780,34 +4780,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ImpersonationLevel(WbemImpersonationLevelEnum* iImpersonationLevel) mut
+			public HRESULT get_ImpersonationLevel(out WbemImpersonationLevelEnum iImpersonationLevel) mut
 			{
-				return VT.get_ImpersonationLevel(&this, iImpersonationLevel);
+				return VT.get_ImpersonationLevel(ref this, out iImpersonationLevel);
 			}
 			public HRESULT put_ImpersonationLevel(WbemImpersonationLevelEnum iImpersonationLevel) mut
 			{
-				return VT.put_ImpersonationLevel(&this, iImpersonationLevel);
+				return VT.put_ImpersonationLevel(ref this, iImpersonationLevel);
 			}
-			public HRESULT get_AuthenticationLevel(WbemAuthenticationLevelEnum* iAuthenticationLevel) mut
+			public HRESULT get_AuthenticationLevel(out WbemAuthenticationLevelEnum iAuthenticationLevel) mut
 			{
-				return VT.get_AuthenticationLevel(&this, iAuthenticationLevel);
+				return VT.get_AuthenticationLevel(ref this, out iAuthenticationLevel);
 			}
 			public HRESULT put_AuthenticationLevel(WbemAuthenticationLevelEnum iAuthenticationLevel) mut
 			{
-				return VT.put_AuthenticationLevel(&this, iAuthenticationLevel);
+				return VT.put_AuthenticationLevel(ref this, iAuthenticationLevel);
 			}
-			public HRESULT get_Privileges(ISWbemPrivilegeSet** objWbemPrivilegeSet) mut
+			public HRESULT get_Privileges(out ISWbemPrivilegeSet* objWbemPrivilegeSet) mut
 			{
-				return VT.get_Privileges(&this, objWbemPrivilegeSet);
+				return VT.get_Privileges(ref this, out objWbemPrivilegeSet);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemSecurity *self, WbemImpersonationLevelEnum* iImpersonationLevel) get_ImpersonationLevel;
-				public new function HRESULT(ISWbemSecurity *self, WbemImpersonationLevelEnum iImpersonationLevel) put_ImpersonationLevel;
-				public new function HRESULT(ISWbemSecurity *self, WbemAuthenticationLevelEnum* iAuthenticationLevel) get_AuthenticationLevel;
-				public new function HRESULT(ISWbemSecurity *self, WbemAuthenticationLevelEnum iAuthenticationLevel) put_AuthenticationLevel;
-				public new function HRESULT(ISWbemSecurity *self, ISWbemPrivilegeSet** objWbemPrivilegeSet) get_Privileges;
+				public new function HRESULT(ref ISWbemSecurity self, out WbemImpersonationLevelEnum iImpersonationLevel) get_ImpersonationLevel;
+				public new function HRESULT(ref ISWbemSecurity self, WbemImpersonationLevelEnum iImpersonationLevel) put_ImpersonationLevel;
+				public new function HRESULT(ref ISWbemSecurity self, out WbemAuthenticationLevelEnum iAuthenticationLevel) get_AuthenticationLevel;
+				public new function HRESULT(ref ISWbemSecurity self, WbemAuthenticationLevelEnum iAuthenticationLevel) put_AuthenticationLevel;
+				public new function HRESULT(ref ISWbemSecurity self, out ISWbemPrivilegeSet* objWbemPrivilegeSet) get_Privileges;
 			}
 		}
 		[CRepr]
@@ -4817,34 +4817,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IsEnabled(int16* bIsEnabled) mut
+			public HRESULT get_IsEnabled(out int16 bIsEnabled) mut
 			{
-				return VT.get_IsEnabled(&this, bIsEnabled);
+				return VT.get_IsEnabled(ref this, out bIsEnabled);
 			}
 			public HRESULT put_IsEnabled(int16 bIsEnabled) mut
 			{
-				return VT.put_IsEnabled(&this, bIsEnabled);
+				return VT.put_IsEnabled(ref this, bIsEnabled);
 			}
-			public HRESULT get_Name(BSTR* strDisplayName) mut
+			public HRESULT get_Name(out BSTR strDisplayName) mut
 			{
-				return VT.get_Name(&this, strDisplayName);
+				return VT.get_Name(ref this, out strDisplayName);
 			}
-			public HRESULT get_DisplayName(BSTR* strDisplayName) mut
+			public HRESULT get_DisplayName(out BSTR strDisplayName) mut
 			{
-				return VT.get_DisplayName(&this, strDisplayName);
+				return VT.get_DisplayName(ref this, out strDisplayName);
 			}
-			public HRESULT get_Identifier(WbemPrivilegeEnum* iPrivilege) mut
+			public HRESULT get_Identifier(out WbemPrivilegeEnum iPrivilege) mut
 			{
-				return VT.get_Identifier(&this, iPrivilege);
+				return VT.get_Identifier(ref this, out iPrivilege);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemPrivilege *self, int16* bIsEnabled) get_IsEnabled;
-				public new function HRESULT(ISWbemPrivilege *self, int16 bIsEnabled) put_IsEnabled;
-				public new function HRESULT(ISWbemPrivilege *self, BSTR* strDisplayName) get_Name;
-				public new function HRESULT(ISWbemPrivilege *self, BSTR* strDisplayName) get_DisplayName;
-				public new function HRESULT(ISWbemPrivilege *self, WbemPrivilegeEnum* iPrivilege) get_Identifier;
+				public new function HRESULT(ref ISWbemPrivilege self, out int16 bIsEnabled) get_IsEnabled;
+				public new function HRESULT(ref ISWbemPrivilege self, int16 bIsEnabled) put_IsEnabled;
+				public new function HRESULT(ref ISWbemPrivilege self, out BSTR strDisplayName) get_Name;
+				public new function HRESULT(ref ISWbemPrivilege self, out BSTR strDisplayName) get_DisplayName;
+				public new function HRESULT(ref ISWbemPrivilege self, out WbemPrivilegeEnum iPrivilege) get_Identifier;
 			}
 		}
 		[CRepr]
@@ -4854,44 +4854,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** pUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* pUnk) mut
 			{
-				return VT.get__NewEnum(&this, pUnk);
+				return VT.get__NewEnum(ref this, out pUnk);
 			}
-			public HRESULT Item(WbemPrivilegeEnum iPrivilege, ISWbemPrivilege** objWbemPrivilege) mut
+			public HRESULT Item(WbemPrivilegeEnum iPrivilege, out ISWbemPrivilege* objWbemPrivilege) mut
 			{
-				return VT.Item(&this, iPrivilege, objWbemPrivilege);
+				return VT.Item(ref this, iPrivilege, out objWbemPrivilege);
 			}
-			public HRESULT get_Count(int32* iCount) mut
+			public HRESULT get_Count(out int32 iCount) mut
 			{
-				return VT.get_Count(&this, iCount);
+				return VT.get_Count(ref this, out iCount);
 			}
-			public HRESULT Add(WbemPrivilegeEnum iPrivilege, int16 bIsEnabled, ISWbemPrivilege** objWbemPrivilege) mut
+			public HRESULT Add(WbemPrivilegeEnum iPrivilege, int16 bIsEnabled, out ISWbemPrivilege* objWbemPrivilege) mut
 			{
-				return VT.Add(&this, iPrivilege, bIsEnabled, objWbemPrivilege);
+				return VT.Add(ref this, iPrivilege, bIsEnabled, out objWbemPrivilege);
 			}
 			public HRESULT Remove(WbemPrivilegeEnum iPrivilege) mut
 			{
-				return VT.Remove(&this, iPrivilege);
+				return VT.Remove(ref this, iPrivilege);
 			}
 			public HRESULT DeleteAll() mut
 			{
-				return VT.DeleteAll(&this);
+				return VT.DeleteAll(ref this);
 			}
-			public HRESULT AddAsString(BSTR strPrivilege, int16 bIsEnabled, ISWbemPrivilege** objWbemPrivilege) mut
+			public HRESULT AddAsString(BSTR strPrivilege, int16 bIsEnabled, out ISWbemPrivilege* objWbemPrivilege) mut
 			{
-				return VT.AddAsString(&this, strPrivilege, bIsEnabled, objWbemPrivilege);
+				return VT.AddAsString(ref this, strPrivilege, bIsEnabled, out objWbemPrivilege);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemPrivilegeSet *self, IUnknown** pUnk) get__NewEnum;
-				public new function HRESULT(ISWbemPrivilegeSet *self, WbemPrivilegeEnum iPrivilege, ISWbemPrivilege** objWbemPrivilege) Item;
-				public new function HRESULT(ISWbemPrivilegeSet *self, int32* iCount) get_Count;
-				public new function HRESULT(ISWbemPrivilegeSet *self, WbemPrivilegeEnum iPrivilege, int16 bIsEnabled, ISWbemPrivilege** objWbemPrivilege) Add;
-				public new function HRESULT(ISWbemPrivilegeSet *self, WbemPrivilegeEnum iPrivilege) Remove;
-				public new function HRESULT(ISWbemPrivilegeSet *self) DeleteAll;
-				public new function HRESULT(ISWbemPrivilegeSet *self, BSTR strPrivilege, int16 bIsEnabled, ISWbemPrivilege** objWbemPrivilege) AddAsString;
+				public new function HRESULT(ref ISWbemPrivilegeSet self, out IUnknown* pUnk) get__NewEnum;
+				public new function HRESULT(ref ISWbemPrivilegeSet self, WbemPrivilegeEnum iPrivilege, out ISWbemPrivilege* objWbemPrivilege) Item;
+				public new function HRESULT(ref ISWbemPrivilegeSet self, out int32 iCount) get_Count;
+				public new function HRESULT(ref ISWbemPrivilegeSet self, WbemPrivilegeEnum iPrivilege, int16 bIsEnabled, out ISWbemPrivilege* objWbemPrivilege) Add;
+				public new function HRESULT(ref ISWbemPrivilegeSet self, WbemPrivilegeEnum iPrivilege) Remove;
+				public new function HRESULT(ref ISWbemPrivilegeSet self) DeleteAll;
+				public new function HRESULT(ref ISWbemPrivilegeSet self, BSTR strPrivilege, int16 bIsEnabled, out ISWbemPrivilege* objWbemPrivilege) AddAsString;
 			}
 		}
 		[CRepr]
@@ -4901,19 +4901,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Put(ISWbemObjectEx* objWbemObject, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectPath** objWbemObjectPath) mut
+			public HRESULT Put(ref ISWbemObjectEx objWbemObject, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectPath* objWbemObjectPath) mut
 			{
-				return VT.Put(&this, objWbemObject, iFlags, objWbemNamedValueSet, objWbemObjectPath);
+				return VT.Put(ref this, ref objWbemObject, iFlags, ref objWbemNamedValueSet, out objWbemObjectPath);
 			}
-			public HRESULT PutAsync(ISWbemSink* objWbemSink, ISWbemObjectEx* objWbemObject, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) mut
+			public HRESULT PutAsync(ref ISWbemSink objWbemSink, ref ISWbemObjectEx objWbemObject, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) mut
 			{
-				return VT.PutAsync(&this, objWbemSink, objWbemObject, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+				return VT.PutAsync(ref this, ref objWbemSink, ref objWbemObject, iFlags, ref objWbemNamedValueSet, ref objWbemAsyncContext);
 			}
 			[CRepr]
 			public struct VTable : ISWbemServices.VTable
 			{
-				public new function HRESULT(ISWbemServicesEx *self, ISWbemObjectEx* objWbemObject, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemObjectPath** objWbemObjectPath) Put;
-				public new function HRESULT(ISWbemServicesEx *self, ISWbemSink* objWbemSink, ISWbemObjectEx* objWbemObject, int32 iFlags, IDispatch* objWbemNamedValueSet, IDispatch* objWbemAsyncContext) PutAsync;
+				public new function HRESULT(ref ISWbemServicesEx self, ref ISWbemObjectEx objWbemObject, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemObjectPath* objWbemObjectPath) Put;
+				public new function HRESULT(ref ISWbemServicesEx self, ref ISWbemSink objWbemSink, ref ISWbemObjectEx objWbemObject, int32 iFlags, ref IDispatch objWbemNamedValueSet, ref IDispatch objWbemAsyncContext) PutAsync;
 			}
 		}
 		[CRepr]
@@ -4923,29 +4923,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Refresh_(int32 iFlags, IDispatch* objWbemNamedValueSet) mut
+			public HRESULT Refresh_(int32 iFlags, ref IDispatch objWbemNamedValueSet) mut
 			{
-				return VT.Refresh_(&this, iFlags, objWbemNamedValueSet);
+				return VT.Refresh_(ref this, iFlags, ref objWbemNamedValueSet);
 			}
-			public HRESULT get_SystemProperties_(ISWbemPropertySet** objWbemPropertySet) mut
+			public HRESULT get_SystemProperties_(out ISWbemPropertySet* objWbemPropertySet) mut
 			{
-				return VT.get_SystemProperties_(&this, objWbemPropertySet);
+				return VT.get_SystemProperties_(ref this, out objWbemPropertySet);
 			}
-			public HRESULT GetText_(WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, IDispatch* objWbemNamedValueSet, BSTR* bsText) mut
+			public HRESULT GetText_(WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, ref IDispatch objWbemNamedValueSet, out BSTR bsText) mut
 			{
-				return VT.GetText_(&this, iObjectTextFormat, iFlags, objWbemNamedValueSet, bsText);
+				return VT.GetText_(ref this, iObjectTextFormat, iFlags, ref objWbemNamedValueSet, out bsText);
 			}
-			public HRESULT SetFromText_(BSTR bsText, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, IDispatch* objWbemNamedValueSet) mut
+			public HRESULT SetFromText_(BSTR bsText, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, ref IDispatch objWbemNamedValueSet) mut
 			{
-				return VT.SetFromText_(&this, bsText, iObjectTextFormat, iFlags, objWbemNamedValueSet);
+				return VT.SetFromText_(ref this, bsText, iObjectTextFormat, iFlags, ref objWbemNamedValueSet);
 			}
 			[CRepr]
 			public struct VTable : ISWbemObject.VTable
 			{
-				public new function HRESULT(ISWbemObjectEx *self, int32 iFlags, IDispatch* objWbemNamedValueSet) Refresh_;
-				public new function HRESULT(ISWbemObjectEx *self, ISWbemPropertySet** objWbemPropertySet) get_SystemProperties_;
-				public new function HRESULT(ISWbemObjectEx *self, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, IDispatch* objWbemNamedValueSet, BSTR* bsText) GetText_;
-				public new function HRESULT(ISWbemObjectEx *self, BSTR bsText, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, IDispatch* objWbemNamedValueSet) SetFromText_;
+				public new function HRESULT(ref ISWbemObjectEx self, int32 iFlags, ref IDispatch objWbemNamedValueSet) Refresh_;
+				public new function HRESULT(ref ISWbemObjectEx self, out ISWbemPropertySet* objWbemPropertySet) get_SystemProperties_;
+				public new function HRESULT(ref ISWbemObjectEx self, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, ref IDispatch objWbemNamedValueSet, out BSTR bsText) GetText_;
+				public new function HRESULT(ref ISWbemObjectEx self, BSTR bsText, WbemObjectTextFormatEnum iObjectTextFormat, int32 iFlags, ref IDispatch objWbemNamedValueSet) SetFromText_;
 			}
 		}
 		[CRepr]
@@ -4955,209 +4955,209 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Value(BSTR* strValue) mut
+			public HRESULT get_Value(out BSTR strValue) mut
 			{
-				return VT.get_Value(&this, strValue);
+				return VT.get_Value(ref this, out strValue);
 			}
 			public HRESULT put_Value(BSTR strValue) mut
 			{
-				return VT.put_Value(&this, strValue);
+				return VT.put_Value(ref this, strValue);
 			}
-			public HRESULT get_Year(int32* iYear) mut
+			public HRESULT get_Year(out int32 iYear) mut
 			{
-				return VT.get_Year(&this, iYear);
+				return VT.get_Year(ref this, out iYear);
 			}
 			public HRESULT put_Year(int32 iYear) mut
 			{
-				return VT.put_Year(&this, iYear);
+				return VT.put_Year(ref this, iYear);
 			}
-			public HRESULT get_YearSpecified(int16* bYearSpecified) mut
+			public HRESULT get_YearSpecified(out int16 bYearSpecified) mut
 			{
-				return VT.get_YearSpecified(&this, bYearSpecified);
+				return VT.get_YearSpecified(ref this, out bYearSpecified);
 			}
 			public HRESULT put_YearSpecified(int16 bYearSpecified) mut
 			{
-				return VT.put_YearSpecified(&this, bYearSpecified);
+				return VT.put_YearSpecified(ref this, bYearSpecified);
 			}
-			public HRESULT get_Month(int32* iMonth) mut
+			public HRESULT get_Month(out int32 iMonth) mut
 			{
-				return VT.get_Month(&this, iMonth);
+				return VT.get_Month(ref this, out iMonth);
 			}
 			public HRESULT put_Month(int32 iMonth) mut
 			{
-				return VT.put_Month(&this, iMonth);
+				return VT.put_Month(ref this, iMonth);
 			}
-			public HRESULT get_MonthSpecified(int16* bMonthSpecified) mut
+			public HRESULT get_MonthSpecified(out int16 bMonthSpecified) mut
 			{
-				return VT.get_MonthSpecified(&this, bMonthSpecified);
+				return VT.get_MonthSpecified(ref this, out bMonthSpecified);
 			}
 			public HRESULT put_MonthSpecified(int16 bMonthSpecified) mut
 			{
-				return VT.put_MonthSpecified(&this, bMonthSpecified);
+				return VT.put_MonthSpecified(ref this, bMonthSpecified);
 			}
-			public HRESULT get_Day(int32* iDay) mut
+			public HRESULT get_Day(out int32 iDay) mut
 			{
-				return VT.get_Day(&this, iDay);
+				return VT.get_Day(ref this, out iDay);
 			}
 			public HRESULT put_Day(int32 iDay) mut
 			{
-				return VT.put_Day(&this, iDay);
+				return VT.put_Day(ref this, iDay);
 			}
-			public HRESULT get_DaySpecified(int16* bDaySpecified) mut
+			public HRESULT get_DaySpecified(out int16 bDaySpecified) mut
 			{
-				return VT.get_DaySpecified(&this, bDaySpecified);
+				return VT.get_DaySpecified(ref this, out bDaySpecified);
 			}
 			public HRESULT put_DaySpecified(int16 bDaySpecified) mut
 			{
-				return VT.put_DaySpecified(&this, bDaySpecified);
+				return VT.put_DaySpecified(ref this, bDaySpecified);
 			}
-			public HRESULT get_Hours(int32* iHours) mut
+			public HRESULT get_Hours(out int32 iHours) mut
 			{
-				return VT.get_Hours(&this, iHours);
+				return VT.get_Hours(ref this, out iHours);
 			}
 			public HRESULT put_Hours(int32 iHours) mut
 			{
-				return VT.put_Hours(&this, iHours);
+				return VT.put_Hours(ref this, iHours);
 			}
-			public HRESULT get_HoursSpecified(int16* bHoursSpecified) mut
+			public HRESULT get_HoursSpecified(out int16 bHoursSpecified) mut
 			{
-				return VT.get_HoursSpecified(&this, bHoursSpecified);
+				return VT.get_HoursSpecified(ref this, out bHoursSpecified);
 			}
 			public HRESULT put_HoursSpecified(int16 bHoursSpecified) mut
 			{
-				return VT.put_HoursSpecified(&this, bHoursSpecified);
+				return VT.put_HoursSpecified(ref this, bHoursSpecified);
 			}
-			public HRESULT get_Minutes(int32* iMinutes) mut
+			public HRESULT get_Minutes(out int32 iMinutes) mut
 			{
-				return VT.get_Minutes(&this, iMinutes);
+				return VT.get_Minutes(ref this, out iMinutes);
 			}
 			public HRESULT put_Minutes(int32 iMinutes) mut
 			{
-				return VT.put_Minutes(&this, iMinutes);
+				return VT.put_Minutes(ref this, iMinutes);
 			}
-			public HRESULT get_MinutesSpecified(int16* bMinutesSpecified) mut
+			public HRESULT get_MinutesSpecified(out int16 bMinutesSpecified) mut
 			{
-				return VT.get_MinutesSpecified(&this, bMinutesSpecified);
+				return VT.get_MinutesSpecified(ref this, out bMinutesSpecified);
 			}
 			public HRESULT put_MinutesSpecified(int16 bMinutesSpecified) mut
 			{
-				return VT.put_MinutesSpecified(&this, bMinutesSpecified);
+				return VT.put_MinutesSpecified(ref this, bMinutesSpecified);
 			}
-			public HRESULT get_Seconds(int32* iSeconds) mut
+			public HRESULT get_Seconds(out int32 iSeconds) mut
 			{
-				return VT.get_Seconds(&this, iSeconds);
+				return VT.get_Seconds(ref this, out iSeconds);
 			}
 			public HRESULT put_Seconds(int32 iSeconds) mut
 			{
-				return VT.put_Seconds(&this, iSeconds);
+				return VT.put_Seconds(ref this, iSeconds);
 			}
-			public HRESULT get_SecondsSpecified(int16* bSecondsSpecified) mut
+			public HRESULT get_SecondsSpecified(out int16 bSecondsSpecified) mut
 			{
-				return VT.get_SecondsSpecified(&this, bSecondsSpecified);
+				return VT.get_SecondsSpecified(ref this, out bSecondsSpecified);
 			}
 			public HRESULT put_SecondsSpecified(int16 bSecondsSpecified) mut
 			{
-				return VT.put_SecondsSpecified(&this, bSecondsSpecified);
+				return VT.put_SecondsSpecified(ref this, bSecondsSpecified);
 			}
-			public HRESULT get_Microseconds(int32* iMicroseconds) mut
+			public HRESULT get_Microseconds(out int32 iMicroseconds) mut
 			{
-				return VT.get_Microseconds(&this, iMicroseconds);
+				return VT.get_Microseconds(ref this, out iMicroseconds);
 			}
 			public HRESULT put_Microseconds(int32 iMicroseconds) mut
 			{
-				return VT.put_Microseconds(&this, iMicroseconds);
+				return VT.put_Microseconds(ref this, iMicroseconds);
 			}
-			public HRESULT get_MicrosecondsSpecified(int16* bMicrosecondsSpecified) mut
+			public HRESULT get_MicrosecondsSpecified(out int16 bMicrosecondsSpecified) mut
 			{
-				return VT.get_MicrosecondsSpecified(&this, bMicrosecondsSpecified);
+				return VT.get_MicrosecondsSpecified(ref this, out bMicrosecondsSpecified);
 			}
 			public HRESULT put_MicrosecondsSpecified(int16 bMicrosecondsSpecified) mut
 			{
-				return VT.put_MicrosecondsSpecified(&this, bMicrosecondsSpecified);
+				return VT.put_MicrosecondsSpecified(ref this, bMicrosecondsSpecified);
 			}
-			public HRESULT get_UTC(int32* iUTC) mut
+			public HRESULT get_UTC(out int32 iUTC) mut
 			{
-				return VT.get_UTC(&this, iUTC);
+				return VT.get_UTC(ref this, out iUTC);
 			}
 			public HRESULT put_UTC(int32 iUTC) mut
 			{
-				return VT.put_UTC(&this, iUTC);
+				return VT.put_UTC(ref this, iUTC);
 			}
-			public HRESULT get_UTCSpecified(int16* bUTCSpecified) mut
+			public HRESULT get_UTCSpecified(out int16 bUTCSpecified) mut
 			{
-				return VT.get_UTCSpecified(&this, bUTCSpecified);
+				return VT.get_UTCSpecified(ref this, out bUTCSpecified);
 			}
 			public HRESULT put_UTCSpecified(int16 bUTCSpecified) mut
 			{
-				return VT.put_UTCSpecified(&this, bUTCSpecified);
+				return VT.put_UTCSpecified(ref this, bUTCSpecified);
 			}
-			public HRESULT get_IsInterval(int16* bIsInterval) mut
+			public HRESULT get_IsInterval(out int16 bIsInterval) mut
 			{
-				return VT.get_IsInterval(&this, bIsInterval);
+				return VT.get_IsInterval(ref this, out bIsInterval);
 			}
 			public HRESULT put_IsInterval(int16 bIsInterval) mut
 			{
-				return VT.put_IsInterval(&this, bIsInterval);
+				return VT.put_IsInterval(ref this, bIsInterval);
 			}
-			public HRESULT GetVarDate(int16 bIsLocal, double* dVarDate) mut
+			public HRESULT GetVarDate(int16 bIsLocal, out double dVarDate) mut
 			{
-				return VT.GetVarDate(&this, bIsLocal, dVarDate);
+				return VT.GetVarDate(ref this, bIsLocal, out dVarDate);
 			}
 			public HRESULT SetVarDate(double dVarDate, int16 bIsLocal) mut
 			{
-				return VT.SetVarDate(&this, dVarDate, bIsLocal);
+				return VT.SetVarDate(ref this, dVarDate, bIsLocal);
 			}
-			public HRESULT GetFileTime(int16 bIsLocal, BSTR* strFileTime) mut
+			public HRESULT GetFileTime(int16 bIsLocal, out BSTR strFileTime) mut
 			{
-				return VT.GetFileTime(&this, bIsLocal, strFileTime);
+				return VT.GetFileTime(ref this, bIsLocal, out strFileTime);
 			}
 			public HRESULT SetFileTime(BSTR strFileTime, int16 bIsLocal) mut
 			{
-				return VT.SetFileTime(&this, strFileTime, bIsLocal);
+				return VT.SetFileTime(ref this, strFileTime, bIsLocal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemDateTime *self, BSTR* strValue) get_Value;
-				public new function HRESULT(ISWbemDateTime *self, BSTR strValue) put_Value;
-				public new function HRESULT(ISWbemDateTime *self, int32* iYear) get_Year;
-				public new function HRESULT(ISWbemDateTime *self, int32 iYear) put_Year;
-				public new function HRESULT(ISWbemDateTime *self, int16* bYearSpecified) get_YearSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int16 bYearSpecified) put_YearSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int32* iMonth) get_Month;
-				public new function HRESULT(ISWbemDateTime *self, int32 iMonth) put_Month;
-				public new function HRESULT(ISWbemDateTime *self, int16* bMonthSpecified) get_MonthSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int16 bMonthSpecified) put_MonthSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int32* iDay) get_Day;
-				public new function HRESULT(ISWbemDateTime *self, int32 iDay) put_Day;
-				public new function HRESULT(ISWbemDateTime *self, int16* bDaySpecified) get_DaySpecified;
-				public new function HRESULT(ISWbemDateTime *self, int16 bDaySpecified) put_DaySpecified;
-				public new function HRESULT(ISWbemDateTime *self, int32* iHours) get_Hours;
-				public new function HRESULT(ISWbemDateTime *self, int32 iHours) put_Hours;
-				public new function HRESULT(ISWbemDateTime *self, int16* bHoursSpecified) get_HoursSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int16 bHoursSpecified) put_HoursSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int32* iMinutes) get_Minutes;
-				public new function HRESULT(ISWbemDateTime *self, int32 iMinutes) put_Minutes;
-				public new function HRESULT(ISWbemDateTime *self, int16* bMinutesSpecified) get_MinutesSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int16 bMinutesSpecified) put_MinutesSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int32* iSeconds) get_Seconds;
-				public new function HRESULT(ISWbemDateTime *self, int32 iSeconds) put_Seconds;
-				public new function HRESULT(ISWbemDateTime *self, int16* bSecondsSpecified) get_SecondsSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int16 bSecondsSpecified) put_SecondsSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int32* iMicroseconds) get_Microseconds;
-				public new function HRESULT(ISWbemDateTime *self, int32 iMicroseconds) put_Microseconds;
-				public new function HRESULT(ISWbemDateTime *self, int16* bMicrosecondsSpecified) get_MicrosecondsSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int16 bMicrosecondsSpecified) put_MicrosecondsSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int32* iUTC) get_UTC;
-				public new function HRESULT(ISWbemDateTime *self, int32 iUTC) put_UTC;
-				public new function HRESULT(ISWbemDateTime *self, int16* bUTCSpecified) get_UTCSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int16 bUTCSpecified) put_UTCSpecified;
-				public new function HRESULT(ISWbemDateTime *self, int16* bIsInterval) get_IsInterval;
-				public new function HRESULT(ISWbemDateTime *self, int16 bIsInterval) put_IsInterval;
-				public new function HRESULT(ISWbemDateTime *self, int16 bIsLocal, double* dVarDate) GetVarDate;
-				public new function HRESULT(ISWbemDateTime *self, double dVarDate, int16 bIsLocal) SetVarDate;
-				public new function HRESULT(ISWbemDateTime *self, int16 bIsLocal, BSTR* strFileTime) GetFileTime;
-				public new function HRESULT(ISWbemDateTime *self, BSTR strFileTime, int16 bIsLocal) SetFileTime;
+				public new function HRESULT(ref ISWbemDateTime self, out BSTR strValue) get_Value;
+				public new function HRESULT(ref ISWbemDateTime self, BSTR strValue) put_Value;
+				public new function HRESULT(ref ISWbemDateTime self, out int32 iYear) get_Year;
+				public new function HRESULT(ref ISWbemDateTime self, int32 iYear) put_Year;
+				public new function HRESULT(ref ISWbemDateTime self, out int16 bYearSpecified) get_YearSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bYearSpecified) put_YearSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, out int32 iMonth) get_Month;
+				public new function HRESULT(ref ISWbemDateTime self, int32 iMonth) put_Month;
+				public new function HRESULT(ref ISWbemDateTime self, out int16 bMonthSpecified) get_MonthSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bMonthSpecified) put_MonthSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, out int32 iDay) get_Day;
+				public new function HRESULT(ref ISWbemDateTime self, int32 iDay) put_Day;
+				public new function HRESULT(ref ISWbemDateTime self, out int16 bDaySpecified) get_DaySpecified;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bDaySpecified) put_DaySpecified;
+				public new function HRESULT(ref ISWbemDateTime self, out int32 iHours) get_Hours;
+				public new function HRESULT(ref ISWbemDateTime self, int32 iHours) put_Hours;
+				public new function HRESULT(ref ISWbemDateTime self, out int16 bHoursSpecified) get_HoursSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bHoursSpecified) put_HoursSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, out int32 iMinutes) get_Minutes;
+				public new function HRESULT(ref ISWbemDateTime self, int32 iMinutes) put_Minutes;
+				public new function HRESULT(ref ISWbemDateTime self, out int16 bMinutesSpecified) get_MinutesSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bMinutesSpecified) put_MinutesSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, out int32 iSeconds) get_Seconds;
+				public new function HRESULT(ref ISWbemDateTime self, int32 iSeconds) put_Seconds;
+				public new function HRESULT(ref ISWbemDateTime self, out int16 bSecondsSpecified) get_SecondsSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bSecondsSpecified) put_SecondsSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, out int32 iMicroseconds) get_Microseconds;
+				public new function HRESULT(ref ISWbemDateTime self, int32 iMicroseconds) put_Microseconds;
+				public new function HRESULT(ref ISWbemDateTime self, out int16 bMicrosecondsSpecified) get_MicrosecondsSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bMicrosecondsSpecified) put_MicrosecondsSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, out int32 iUTC) get_UTC;
+				public new function HRESULT(ref ISWbemDateTime self, int32 iUTC) put_UTC;
+				public new function HRESULT(ref ISWbemDateTime self, out int16 bUTCSpecified) get_UTCSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bUTCSpecified) put_UTCSpecified;
+				public new function HRESULT(ref ISWbemDateTime self, out int16 bIsInterval) get_IsInterval;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bIsInterval) put_IsInterval;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bIsLocal, out double dVarDate) GetVarDate;
+				public new function HRESULT(ref ISWbemDateTime self, double dVarDate, int16 bIsLocal) SetVarDate;
+				public new function HRESULT(ref ISWbemDateTime self, int16 bIsLocal, out BSTR strFileTime) GetFileTime;
+				public new function HRESULT(ref ISWbemDateTime self, BSTR strFileTime, int16 bIsLocal) SetFileTime;
 			}
 		}
 		[CRepr]
@@ -5167,59 +5167,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** pUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* pUnk) mut
 			{
-				return VT.get__NewEnum(&this, pUnk);
+				return VT.get__NewEnum(ref this, out pUnk);
 			}
-			public HRESULT Item(int32 iIndex, ISWbemRefreshableItem** objWbemRefreshableItem) mut
+			public HRESULT Item(int32 iIndex, out ISWbemRefreshableItem* objWbemRefreshableItem) mut
 			{
-				return VT.Item(&this, iIndex, objWbemRefreshableItem);
+				return VT.Item(ref this, iIndex, out objWbemRefreshableItem);
 			}
-			public HRESULT get_Count(int32* iCount) mut
+			public HRESULT get_Count(out int32 iCount) mut
 			{
-				return VT.get_Count(&this, iCount);
+				return VT.get_Count(ref this, out iCount);
 			}
-			public HRESULT Add(ISWbemServicesEx* objWbemServices, BSTR bsInstancePath, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemRefreshableItem** objWbemRefreshableItem) mut
+			public HRESULT Add(ref ISWbemServicesEx objWbemServices, BSTR bsInstancePath, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemRefreshableItem* objWbemRefreshableItem) mut
 			{
-				return VT.Add(&this, objWbemServices, bsInstancePath, iFlags, objWbemNamedValueSet, objWbemRefreshableItem);
+				return VT.Add(ref this, ref objWbemServices, bsInstancePath, iFlags, ref objWbemNamedValueSet, out objWbemRefreshableItem);
 			}
-			public HRESULT AddEnum(ISWbemServicesEx* objWbemServices, BSTR bsClassName, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemRefreshableItem** objWbemRefreshableItem) mut
+			public HRESULT AddEnum(ref ISWbemServicesEx objWbemServices, BSTR bsClassName, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemRefreshableItem* objWbemRefreshableItem) mut
 			{
-				return VT.AddEnum(&this, objWbemServices, bsClassName, iFlags, objWbemNamedValueSet, objWbemRefreshableItem);
+				return VT.AddEnum(ref this, ref objWbemServices, bsClassName, iFlags, ref objWbemNamedValueSet, out objWbemRefreshableItem);
 			}
 			public HRESULT Remove(int32 iIndex, int32 iFlags) mut
 			{
-				return VT.Remove(&this, iIndex, iFlags);
+				return VT.Remove(ref this, iIndex, iFlags);
 			}
 			public HRESULT Refresh(int32 iFlags) mut
 			{
-				return VT.Refresh(&this, iFlags);
+				return VT.Refresh(ref this, iFlags);
 			}
-			public HRESULT get_AutoReconnect(int16* bCount) mut
+			public HRESULT get_AutoReconnect(out int16 bCount) mut
 			{
-				return VT.get_AutoReconnect(&this, bCount);
+				return VT.get_AutoReconnect(ref this, out bCount);
 			}
 			public HRESULT put_AutoReconnect(int16 bCount) mut
 			{
-				return VT.put_AutoReconnect(&this, bCount);
+				return VT.put_AutoReconnect(ref this, bCount);
 			}
 			public HRESULT DeleteAll() mut
 			{
-				return VT.DeleteAll(&this);
+				return VT.DeleteAll(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemRefresher *self, IUnknown** pUnk) get__NewEnum;
-				public new function HRESULT(ISWbemRefresher *self, int32 iIndex, ISWbemRefreshableItem** objWbemRefreshableItem) Item;
-				public new function HRESULT(ISWbemRefresher *self, int32* iCount) get_Count;
-				public new function HRESULT(ISWbemRefresher *self, ISWbemServicesEx* objWbemServices, BSTR bsInstancePath, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemRefreshableItem** objWbemRefreshableItem) Add;
-				public new function HRESULT(ISWbemRefresher *self, ISWbemServicesEx* objWbemServices, BSTR bsClassName, int32 iFlags, IDispatch* objWbemNamedValueSet, ISWbemRefreshableItem** objWbemRefreshableItem) AddEnum;
-				public new function HRESULT(ISWbemRefresher *self, int32 iIndex, int32 iFlags) Remove;
-				public new function HRESULT(ISWbemRefresher *self, int32 iFlags) Refresh;
-				public new function HRESULT(ISWbemRefresher *self, int16* bCount) get_AutoReconnect;
-				public new function HRESULT(ISWbemRefresher *self, int16 bCount) put_AutoReconnect;
-				public new function HRESULT(ISWbemRefresher *self) DeleteAll;
+				public new function HRESULT(ref ISWbemRefresher self, out IUnknown* pUnk) get__NewEnum;
+				public new function HRESULT(ref ISWbemRefresher self, int32 iIndex, out ISWbemRefreshableItem* objWbemRefreshableItem) Item;
+				public new function HRESULT(ref ISWbemRefresher self, out int32 iCount) get_Count;
+				public new function HRESULT(ref ISWbemRefresher self, ref ISWbemServicesEx objWbemServices, BSTR bsInstancePath, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemRefreshableItem* objWbemRefreshableItem) Add;
+				public new function HRESULT(ref ISWbemRefresher self, ref ISWbemServicesEx objWbemServices, BSTR bsClassName, int32 iFlags, ref IDispatch objWbemNamedValueSet, out ISWbemRefreshableItem* objWbemRefreshableItem) AddEnum;
+				public new function HRESULT(ref ISWbemRefresher self, int32 iIndex, int32 iFlags) Remove;
+				public new function HRESULT(ref ISWbemRefresher self, int32 iFlags) Refresh;
+				public new function HRESULT(ref ISWbemRefresher self, out int16 bCount) get_AutoReconnect;
+				public new function HRESULT(ref ISWbemRefresher self, int16 bCount) put_AutoReconnect;
+				public new function HRESULT(ref ISWbemRefresher self) DeleteAll;
 			}
 		}
 		[CRepr]
@@ -5229,39 +5229,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Index(int32* iIndex) mut
+			public HRESULT get_Index(out int32 iIndex) mut
 			{
-				return VT.get_Index(&this, iIndex);
+				return VT.get_Index(ref this, out iIndex);
 			}
-			public HRESULT get_Refresher(ISWbemRefresher** objWbemRefresher) mut
+			public HRESULT get_Refresher(out ISWbemRefresher* objWbemRefresher) mut
 			{
-				return VT.get_Refresher(&this, objWbemRefresher);
+				return VT.get_Refresher(ref this, out objWbemRefresher);
 			}
-			public HRESULT get_IsSet(int16* bIsSet) mut
+			public HRESULT get_IsSet(out int16 bIsSet) mut
 			{
-				return VT.get_IsSet(&this, bIsSet);
+				return VT.get_IsSet(ref this, out bIsSet);
 			}
-			public HRESULT get_Object(ISWbemObjectEx** objWbemObject) mut
+			public HRESULT get_Object(out ISWbemObjectEx* objWbemObject) mut
 			{
-				return VT.get_Object(&this, objWbemObject);
+				return VT.get_Object(ref this, out objWbemObject);
 			}
-			public HRESULT get_ObjectSet(ISWbemObjectSet** objWbemObjectSet) mut
+			public HRESULT get_ObjectSet(out ISWbemObjectSet* objWbemObjectSet) mut
 			{
-				return VT.get_ObjectSet(&this, objWbemObjectSet);
+				return VT.get_ObjectSet(ref this, out objWbemObjectSet);
 			}
 			public HRESULT Remove(int32 iFlags) mut
 			{
-				return VT.Remove(&this, iFlags);
+				return VT.Remove(ref this, iFlags);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISWbemRefreshableItem *self, int32* iIndex) get_Index;
-				public new function HRESULT(ISWbemRefreshableItem *self, ISWbemRefresher** objWbemRefresher) get_Refresher;
-				public new function HRESULT(ISWbemRefreshableItem *self, int16* bIsSet) get_IsSet;
-				public new function HRESULT(ISWbemRefreshableItem *self, ISWbemObjectEx** objWbemObject) get_Object;
-				public new function HRESULT(ISWbemRefreshableItem *self, ISWbemObjectSet** objWbemObjectSet) get_ObjectSet;
-				public new function HRESULT(ISWbemRefreshableItem *self, int32 iFlags) Remove;
+				public new function HRESULT(ref ISWbemRefreshableItem self, out int32 iIndex) get_Index;
+				public new function HRESULT(ref ISWbemRefreshableItem self, out ISWbemRefresher* objWbemRefresher) get_Refresher;
+				public new function HRESULT(ref ISWbemRefreshableItem self, out int16 bIsSet) get_IsSet;
+				public new function HRESULT(ref ISWbemRefreshableItem self, out ISWbemObjectEx* objWbemObject) get_Object;
+				public new function HRESULT(ref ISWbemRefreshableItem self, out ISWbemObjectSet* objWbemObjectSet) get_ObjectSet;
+				public new function HRESULT(ref ISWbemRefreshableItem self, int32 iFlags) Remove;
 			}
 		}
 		[CRepr]
@@ -5271,24 +5271,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_WMIObjectPath(BSTR* strWMIObjectPath) mut
+			public HRESULT get_WMIObjectPath(out BSTR strWMIObjectPath) mut
 			{
-				return VT.get_WMIObjectPath(&this, strWMIObjectPath);
+				return VT.get_WMIObjectPath(ref this, out strWMIObjectPath);
 			}
-			public HRESULT GetWMIObject(ISWbemObject** objWMIObject) mut
+			public HRESULT GetWMIObject(out ISWbemObject* objWMIObject) mut
 			{
-				return VT.GetWMIObject(&this, objWMIObject);
+				return VT.GetWMIObject(ref this, out objWMIObject);
 			}
-			public HRESULT GetWMIServices(ISWbemServices** objWMIServices) mut
+			public HRESULT GetWMIServices(out ISWbemServices* objWMIServices) mut
 			{
-				return VT.GetWMIServices(&this, objWMIServices);
+				return VT.GetWMIServices(ref this, out objWMIServices);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IWMIExtension *self, BSTR* strWMIObjectPath) get_WMIObjectPath;
-				public new function HRESULT(IWMIExtension *self, ISWbemObject** objWMIObject) GetWMIObject;
-				public new function HRESULT(IWMIExtension *self, ISWbemServices** objWMIServices) GetWMIServices;
+				public new function HRESULT(ref IWMIExtension self, out BSTR strWMIObjectPath) get_WMIObjectPath;
+				public new function HRESULT(ref IWMIExtension self, out ISWbemObject* objWMIObject) GetWMIObject;
+				public new function HRESULT(ref IWMIExtension self, out ISWbemServices* objWMIServices) GetWMIServices;
 			}
 		}
 		[CRepr]
@@ -5300,12 +5300,12 @@ namespace Win32
 			
 			public HRESULT Initialize() mut
 			{
-				return VT.Initialize(&this);
+				return VT.Initialize(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemTransport *self) Initialize;
+				public new function HRESULT(ref IWbemTransport self) Initialize;
 			}
 		}
 		[CRepr]
@@ -5315,29 +5315,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EstablishPosition(PWSTR wszLocaleList, uint32 dwNumLocales, uint32* reserved) mut
+			public HRESULT EstablishPosition(PWSTR wszLocaleList, uint32 dwNumLocales, out uint32 reserved) mut
 			{
-				return VT.EstablishPosition(&this, wszLocaleList, dwNumLocales, reserved);
+				return VT.EstablishPosition(ref this, wszLocaleList, dwNumLocales, out reserved);
 			}
-			public HRESULT RequestChallenge(PWSTR wszNetworkResource, PWSTR wszUser, uint8* Nonce) mut
+			public HRESULT RequestChallenge(PWSTR wszNetworkResource, PWSTR wszUser, out uint8 Nonce) mut
 			{
-				return VT.RequestChallenge(&this, wszNetworkResource, wszUser, Nonce);
+				return VT.RequestChallenge(ref this, wszNetworkResource, wszUser, out Nonce);
 			}
-			public HRESULT WBEMLogin(PWSTR wszPreferredLocale, uint8* AccessToken, int32 lFlags, IWbemContext* pCtx, IWbemServices** ppNamespace) mut
+			public HRESULT WBEMLogin(PWSTR wszPreferredLocale, ref uint8 AccessToken, int32 lFlags, ref IWbemContext pCtx, out IWbemServices* ppNamespace) mut
 			{
-				return VT.WBEMLogin(&this, wszPreferredLocale, AccessToken, lFlags, pCtx, ppNamespace);
+				return VT.WBEMLogin(ref this, wszPreferredLocale, ref AccessToken, lFlags, ref pCtx, out ppNamespace);
 			}
-			public HRESULT NTLMLogin(PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, IWbemContext* pCtx, IWbemServices** ppNamespace) mut
+			public HRESULT NTLMLogin(PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, ref IWbemContext pCtx, out IWbemServices* ppNamespace) mut
 			{
-				return VT.NTLMLogin(&this, wszNetworkResource, wszPreferredLocale, lFlags, pCtx, ppNamespace);
+				return VT.NTLMLogin(ref this, wszNetworkResource, wszPreferredLocale, lFlags, ref pCtx, out ppNamespace);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemLevel1Login *self, PWSTR wszLocaleList, uint32 dwNumLocales, uint32* reserved) EstablishPosition;
-				public new function HRESULT(IWbemLevel1Login *self, PWSTR wszNetworkResource, PWSTR wszUser, uint8* Nonce) RequestChallenge;
-				public new function HRESULT(IWbemLevel1Login *self, PWSTR wszPreferredLocale, uint8* AccessToken, int32 lFlags, IWbemContext* pCtx, IWbemServices** ppNamespace) WBEMLogin;
-				public new function HRESULT(IWbemLevel1Login *self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, IWbemContext* pCtx, IWbemServices** ppNamespace) NTLMLogin;
+				public new function HRESULT(ref IWbemLevel1Login self, PWSTR wszLocaleList, uint32 dwNumLocales, out uint32 reserved) EstablishPosition;
+				public new function HRESULT(ref IWbemLevel1Login self, PWSTR wszNetworkResource, PWSTR wszUser, out uint8 Nonce) RequestChallenge;
+				public new function HRESULT(ref IWbemLevel1Login self, PWSTR wszPreferredLocale, ref uint8 AccessToken, int32 lFlags, ref IWbemContext pCtx, out IWbemServices* ppNamespace) WBEMLogin;
+				public new function HRESULT(ref IWbemLevel1Login self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, ref IWbemContext pCtx, out IWbemServices* ppNamespace) NTLMLogin;
 			}
 		}
 		[CRepr]
@@ -5347,14 +5347,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectorLogin(PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, IWbemContext* pCtx, Guid* riid, void** pInterface) mut
+			public HRESULT ConnectorLogin(PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, void** pInterface) mut
 			{
-				return VT.ConnectorLogin(&this, wszNetworkResource, wszPreferredLocale, lFlags, pCtx, riid, pInterface);
+				return VT.ConnectorLogin(ref this, wszNetworkResource, wszPreferredLocale, lFlags, ref pCtx, riid, pInterface);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemConnectorLogin *self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, IWbemContext* pCtx, Guid* riid, void** pInterface) ConnectorLogin;
+				public new function HRESULT(ref IWbemConnectorLogin self, PWSTR wszNetworkResource, PWSTR wszPreferredLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, void** pInterface) ConnectorLogin;
 			}
 		}
 		[CRepr]
@@ -5364,14 +5364,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Resolve(PWSTR wszNamespacePath, PWSTR wszAddressType, uint32* pdwAddressLength, uint8** pabBinaryAddress) mut
+			public HRESULT Resolve(PWSTR wszNamespacePath, PWSTR wszAddressType, out uint32 pdwAddressLength, out uint8* pabBinaryAddress) mut
 			{
-				return VT.Resolve(&this, wszNamespacePath, wszAddressType, pdwAddressLength, pabBinaryAddress);
+				return VT.Resolve(ref this, wszNamespacePath, wszAddressType, out pdwAddressLength, out pabBinaryAddress);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemAddressResolution *self, PWSTR wszNamespacePath, PWSTR wszAddressType, uint32* pdwAddressLength, uint8** pabBinaryAddress) Resolve;
+				public new function HRESULT(ref IWbemAddressResolution self, PWSTR wszNamespacePath, PWSTR wszAddressType, out uint32 pdwAddressLength, out uint8* pabBinaryAddress) Resolve;
 			}
 		}
 		[CRepr]
@@ -5381,14 +5381,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectServer(BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace) mut
+			public HRESULT ConnectServer(BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, ref IWbemContext pCtx, out IWbemServices* ppNamespace) mut
 			{
-				return VT.ConnectServer(&this, strAddressType, dwBinaryAddressLength, abBinaryAddress, strNetworkResource, strUser, strPassword, strLocale, lSecurityFlags, strAuthority, pCtx, ppNamespace);
+				return VT.ConnectServer(ref this, strAddressType, dwBinaryAddressLength, abBinaryAddress, strNetworkResource, strUser, strPassword, strLocale, lSecurityFlags, strAuthority, ref pCtx, out ppNamespace);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemClientTransport *self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace) ConnectServer;
+				public new function HRESULT(ref IWbemClientTransport self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strNetworkResource, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lSecurityFlags, BSTR strAuthority, ref IWbemContext pCtx, out IWbemServices* ppNamespace) ConnectServer;
 			}
 		}
 		[CRepr]
@@ -5398,24 +5398,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Open(BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, IWbemContext* pCtx, Guid* riid, void** pInterface, IWbemCallResult** pCallRes) mut
+			public HRESULT Open(BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, void** pInterface, out IWbemCallResult* pCallRes) mut
 			{
-				return VT.Open(&this, strAddressType, dwBinaryAddressLength, abBinaryAddress, strObject, strUser, strPassword, strLocale, lFlags, pCtx, riid, pInterface, pCallRes);
+				return VT.Open(ref this, strAddressType, dwBinaryAddressLength, abBinaryAddress, strObject, strUser, strPassword, strLocale, lFlags, ref pCtx, riid, pInterface, out pCallRes);
 			}
-			public HRESULT OpenAsync(BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, IWbemContext* pCtx, Guid* riid, IWbemObjectSink* pResponseHandler) mut
+			public HRESULT OpenAsync(BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, ref IWbemObjectSink pResponseHandler) mut
 			{
-				return VT.OpenAsync(&this, strAddressType, dwBinaryAddressLength, abBinaryAddress, strObject, strUser, strPassword, strLocale, lFlags, pCtx, riid, pResponseHandler);
+				return VT.OpenAsync(ref this, strAddressType, dwBinaryAddressLength, abBinaryAddress, strObject, strUser, strPassword, strLocale, lFlags, ref pCtx, riid, ref pResponseHandler);
 			}
-			public HRESULT Cancel(int32 lFlags, IWbemObjectSink* pHandler) mut
+			public HRESULT Cancel(int32 lFlags, ref IWbemObjectSink pHandler) mut
 			{
-				return VT.Cancel(&this, lFlags, pHandler);
+				return VT.Cancel(ref this, lFlags, ref pHandler);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemClientConnectionTransport *self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, IWbemContext* pCtx, Guid* riid, void** pInterface, IWbemCallResult** pCallRes) Open;
-				public new function HRESULT(IWbemClientConnectionTransport *self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, IWbemContext* pCtx, Guid* riid, IWbemObjectSink* pResponseHandler) OpenAsync;
-				public new function HRESULT(IWbemClientConnectionTransport *self, int32 lFlags, IWbemObjectSink* pHandler) Cancel;
+				public new function HRESULT(ref IWbemClientConnectionTransport self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, void** pInterface, out IWbemCallResult* pCallRes) Open;
+				public new function HRESULT(ref IWbemClientConnectionTransport self, BSTR strAddressType, uint32 dwBinaryAddressLength, uint8* abBinaryAddress, BSTR strObject, BSTR strUser, BSTR strPassword, BSTR strLocale, int32 lFlags, ref IWbemContext pCtx, in Guid riid, ref IWbemObjectSink pResponseHandler) OpenAsync;
+				public new function HRESULT(ref IWbemClientConnectionTransport self, int32 lFlags, ref IWbemObjectSink pHandler) Cancel;
 			}
 		}
 		[CRepr]
@@ -5425,36 +5425,36 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetInheritanceChain(int32 lNumAntecedents, PWSTR* awszAntecedents) mut
+			public HRESULT SetInheritanceChain(int32 lNumAntecedents, ref PWSTR awszAntecedents) mut
 			{
-				return VT.SetInheritanceChain(&this, lNumAntecedents, awszAntecedents);
+				return VT.SetInheritanceChain(ref this, lNumAntecedents, ref awszAntecedents);
 			}
 			public HRESULT SetPropertyOrigin(PWSTR wszPropertyName, int32 lOriginIndex) mut
 			{
-				return VT.SetPropertyOrigin(&this, wszPropertyName, lOriginIndex);
+				return VT.SetPropertyOrigin(ref this, wszPropertyName, lOriginIndex);
 			}
 			public HRESULT SetMethodOrigin(PWSTR wszMethodName, int32 lOriginIndex) mut
 			{
-				return VT.SetMethodOrigin(&this, wszMethodName, lOriginIndex);
+				return VT.SetMethodOrigin(ref this, wszMethodName, lOriginIndex);
 			}
 			public HRESULT SetServerNamespace(PWSTR wszServer, PWSTR wszNamespace) mut
 			{
-				return VT.SetServerNamespace(&this, wszServer, wszNamespace);
+				return VT.SetServerNamespace(ref this, wszServer, wszNamespace);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWbemConstructClassObject *self, int32 lNumAntecedents, PWSTR* awszAntecedents) SetInheritanceChain;
-				public new function HRESULT(IWbemConstructClassObject *self, PWSTR wszPropertyName, int32 lOriginIndex) SetPropertyOrigin;
-				public new function HRESULT(IWbemConstructClassObject *self, PWSTR wszMethodName, int32 lOriginIndex) SetMethodOrigin;
-				public new function HRESULT(IWbemConstructClassObject *self, PWSTR wszServer, PWSTR wszNamespace) SetServerNamespace;
+				public new function HRESULT(ref IWbemConstructClassObject self, int32 lNumAntecedents, ref PWSTR awszAntecedents) SetInheritanceChain;
+				public new function HRESULT(ref IWbemConstructClassObject self, PWSTR wszPropertyName, int32 lOriginIndex) SetPropertyOrigin;
+				public new function HRESULT(ref IWbemConstructClassObject self, PWSTR wszMethodName, int32 lOriginIndex) SetMethodOrigin;
+				public new function HRESULT(ref IWbemConstructClassObject self, PWSTR wszServer, PWSTR wszNamespace) SetServerNamespace;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("mi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern MI_Result MI_Application_InitializeV1(uint32 flags, uint16* applicationID, MI_Instance** extendedError, MI_Application* application);
+		public static extern MI_Result MI_Application_InitializeV1(uint32 flags, uint16* applicationID, MI_Instance** extendedError, out MI_Application application);
 		
 	}
 }

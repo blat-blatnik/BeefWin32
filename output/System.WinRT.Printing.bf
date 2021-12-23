@@ -14,19 +14,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, Guid* riid, void** printManager) mut
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** printManager) mut
 			{
-				return VT.GetForWindow(&this, appWindow, riid, printManager);
+				return VT.GetForWindow(ref this, appWindow, riid, printManager);
 			}
-			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, Guid* riid, void** asyncOperation) mut
+			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, in Guid riid, void** asyncOperation) mut
 			{
-				return VT.ShowPrintUIForWindowAsync(&this, appWindow, riid, asyncOperation);
+				return VT.ShowPrintUIForWindowAsync(ref this, appWindow, riid, asyncOperation);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IPrinting3DManagerInterop *self, HWND appWindow, Guid* riid, void** printManager) GetForWindow;
-				public new function HRESULT(IPrinting3DManagerInterop *self, HWND appWindow, Guid* riid, void** asyncOperation) ShowPrintUIForWindowAsync;
+				public new function HRESULT(ref IPrinting3DManagerInterop self, HWND appWindow, in Guid riid, void** printManager) GetForWindow;
+				public new function HRESULT(ref IPrinting3DManagerInterop self, HWND appWindow, in Guid riid, void** asyncOperation) ShowPrintUIForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -36,19 +36,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetForWindow(HWND appWindow, Guid* riid, void** printManager) mut
+			public HRESULT GetForWindow(HWND appWindow, in Guid riid, void** printManager) mut
 			{
-				return VT.GetForWindow(&this, appWindow, riid, printManager);
+				return VT.GetForWindow(ref this, appWindow, riid, printManager);
 			}
-			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, Guid* riid, void** asyncOperation) mut
+			public HRESULT ShowPrintUIForWindowAsync(HWND appWindow, in Guid riid, void** asyncOperation) mut
 			{
-				return VT.ShowPrintUIForWindowAsync(&this, appWindow, riid, asyncOperation);
+				return VT.ShowPrintUIForWindowAsync(ref this, appWindow, riid, asyncOperation);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IPrintManagerInterop *self, HWND appWindow, Guid* riid, void** printManager) GetForWindow;
-				public new function HRESULT(IPrintManagerInterop *self, HWND appWindow, Guid* riid, void** asyncOperation) ShowPrintUIForWindowAsync;
+				public new function HRESULT(ref IPrintManagerInterop self, HWND appWindow, in Guid riid, void** printManager) GetForWindow;
+				public new function HRESULT(ref IPrintManagerInterop self, HWND appWindow, in Guid riid, void** asyncOperation) ShowPrintUIForWindowAsync;
 			}
 		}
 		[CRepr]
@@ -58,34 +58,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDocumentSequencePrintTicket(IStream* documentSequencePrintTicket) mut
+			public HRESULT SetDocumentSequencePrintTicket(ref IStream documentSequencePrintTicket) mut
 			{
-				return VT.SetDocumentSequencePrintTicket(&this, documentSequencePrintTicket);
+				return VT.SetDocumentSequencePrintTicket(ref this, ref documentSequencePrintTicket);
 			}
 			public HRESULT SetDocumentSequenceUri(PWSTR documentSequenceUri) mut
 			{
-				return VT.SetDocumentSequenceUri(&this, documentSequenceUri);
+				return VT.SetDocumentSequenceUri(ref this, documentSequenceUri);
 			}
-			public HRESULT AddDocumentData(uint32 documentId, IStream* documentPrintTicket, PWSTR documentUri) mut
+			public HRESULT AddDocumentData(uint32 documentId, ref IStream documentPrintTicket, PWSTR documentUri) mut
 			{
-				return VT.AddDocumentData(&this, documentId, documentPrintTicket, documentUri);
+				return VT.AddDocumentData(ref this, documentId, ref documentPrintTicket, documentUri);
 			}
-			public HRESULT AddPage(uint32 documentId, uint32 pageId, IXpsOMPageReference* pageReference, PWSTR pageUri) mut
+			public HRESULT AddPage(uint32 documentId, uint32 pageId, ref IXpsOMPageReference pageReference, PWSTR pageUri) mut
 			{
-				return VT.AddPage(&this, documentId, pageId, pageReference, pageUri);
+				return VT.AddPage(ref this, documentId, pageId, ref pageReference, pageUri);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintWorkflowXpsReceiver *self, IStream* documentSequencePrintTicket) SetDocumentSequencePrintTicket;
-				public new function HRESULT(IPrintWorkflowXpsReceiver *self, PWSTR documentSequenceUri) SetDocumentSequenceUri;
-				public new function HRESULT(IPrintWorkflowXpsReceiver *self, uint32 documentId, IStream* documentPrintTicket, PWSTR documentUri) AddDocumentData;
-				public new function HRESULT(IPrintWorkflowXpsReceiver *self, uint32 documentId, uint32 pageId, IXpsOMPageReference* pageReference, PWSTR pageUri) AddPage;
-				public new function HRESULT(IPrintWorkflowXpsReceiver *self) Close;
+				public new function HRESULT(ref IPrintWorkflowXpsReceiver self, ref IStream documentSequencePrintTicket) SetDocumentSequencePrintTicket;
+				public new function HRESULT(ref IPrintWorkflowXpsReceiver self, PWSTR documentSequenceUri) SetDocumentSequenceUri;
+				public new function HRESULT(ref IPrintWorkflowXpsReceiver self, uint32 documentId, ref IStream documentPrintTicket, PWSTR documentUri) AddDocumentData;
+				public new function HRESULT(ref IPrintWorkflowXpsReceiver self, uint32 documentId, uint32 pageId, ref IXpsOMPageReference pageReference, PWSTR pageUri) AddPage;
+				public new function HRESULT(ref IPrintWorkflowXpsReceiver self) Close;
 			}
 		}
 		[CRepr]
@@ -97,12 +97,12 @@ namespace Win32
 			
 			public HRESULT Failed(HRESULT XpsError) mut
 			{
-				return VT.Failed(&this, XpsError);
+				return VT.Failed(ref this, XpsError);
 			}
 			[CRepr]
 			public struct VTable : IPrintWorkflowXpsReceiver.VTable
 			{
-				public new function HRESULT(IPrintWorkflowXpsReceiver2 *self, HRESULT XpsError) Failed;
+				public new function HRESULT(ref IPrintWorkflowXpsReceiver2 self, HRESULT XpsError) Failed;
 			}
 		}
 		[CRepr]
@@ -112,19 +112,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartXpsOMGeneration(IPrintWorkflowXpsReceiver* receiver) mut
+			public HRESULT StartXpsOMGeneration(ref IPrintWorkflowXpsReceiver receiver) mut
 			{
-				return VT.StartXpsOMGeneration(&this, receiver);
+				return VT.StartXpsOMGeneration(ref this, ref receiver);
 			}
-			public HRESULT get_ObjectFactory(IXpsOMObjectFactory1** value) mut
+			public HRESULT get_ObjectFactory(out IXpsOMObjectFactory1* value) mut
 			{
-				return VT.get_ObjectFactory(&this, value);
+				return VT.get_ObjectFactory(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintWorkflowObjectModelSourceFileContentNative *self, IPrintWorkflowXpsReceiver* receiver) StartXpsOMGeneration;
-				public new function HRESULT(IPrintWorkflowObjectModelSourceFileContentNative *self, IXpsOMObjectFactory1** value) get_ObjectFactory;
+				public new function HRESULT(ref IPrintWorkflowObjectModelSourceFileContentNative self, ref IPrintWorkflowXpsReceiver receiver) StartXpsOMGeneration;
+				public new function HRESULT(ref IPrintWorkflowObjectModelSourceFileContentNative self, out IXpsOMObjectFactory1* value) get_ObjectFactory;
 			}
 		}
 		[CRepr]
@@ -134,14 +134,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DocumentPackageTarget(IXpsDocumentPackageTarget** value) mut
+			public HRESULT get_DocumentPackageTarget(out IXpsDocumentPackageTarget* value) mut
 			{
-				return VT.get_DocumentPackageTarget(&this, value);
+				return VT.get_DocumentPackageTarget(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintWorkflowXpsObjectModelTargetPackageNative *self, IXpsDocumentPackageTarget** value) get_DocumentPackageTarget;
+				public new function HRESULT(ref IPrintWorkflowXpsObjectModelTargetPackageNative self, out IXpsDocumentPackageTarget* value) get_DocumentPackageTarget;
 			}
 		}
 		[CRepr]
@@ -151,24 +151,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PrinterQueue(IPrinterQueue** value) mut
+			public HRESULT get_PrinterQueue(out IPrinterQueue* value) mut
 			{
-				return VT.get_PrinterQueue(&this, value);
+				return VT.get_PrinterQueue(ref this, out value);
 			}
-			public HRESULT get_DriverProperties(IPrinterPropertyBag** value) mut
+			public HRESULT get_DriverProperties(out IPrinterPropertyBag* value) mut
 			{
-				return VT.get_DriverProperties(&this, value);
+				return VT.get_DriverProperties(ref this, out value);
 			}
-			public HRESULT get_UserProperties(IPrinterPropertyBag** value) mut
+			public HRESULT get_UserProperties(out IPrinterPropertyBag* value) mut
 			{
-				return VT.get_UserProperties(&this, value);
+				return VT.get_UserProperties(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintWorkflowConfigurationNative *self, IPrinterQueue** value) get_PrinterQueue;
-				public new function HRESULT(IPrintWorkflowConfigurationNative *self, IPrinterPropertyBag** value) get_DriverProperties;
-				public new function HRESULT(IPrintWorkflowConfigurationNative *self, IPrinterPropertyBag** value) get_UserProperties;
+				public new function HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterQueue* value) get_PrinterQueue;
+				public new function HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterPropertyBag* value) get_DriverProperties;
+				public new function HRESULT(ref IPrintWorkflowConfigurationNative self, out IPrinterPropertyBag* value) get_UserProperties;
 			}
 		}
 		

@@ -123,22 +123,22 @@ namespace Win32
 		
 		public function void* PFN_CPD_MEM_ALLOC(uint32 cbSize);
 		public function void PFN_CPD_MEM_FREE(void* pvMem2Free);
-		public function BOOL PFN_CPD_ADD_STORE(CRYPT_PROVIDER_DATA* pProvData, void* hStore2Add);
-		public function BOOL PFN_CPD_ADD_SGNR(CRYPT_PROVIDER_DATA* pProvData, BOOL fCounterSigner, uint32 idxSigner, CRYPT_PROVIDER_SGNR* pSgnr2Add);
-		public function BOOL PFN_CPD_ADD_CERT(CRYPT_PROVIDER_DATA* pProvData, uint32 idxSigner, BOOL fCounterSigner, uint32 idxCounterSigner, CERT_CONTEXT* pCert2Add);
-		public function BOOL PFN_CPD_ADD_PRIVDATA(CRYPT_PROVIDER_DATA* pProvData, CRYPT_PROVIDER_PRIVDATA* pPrivData2Add);
-		public function HRESULT PFN_PROVIDER_INIT_CALL(CRYPT_PROVIDER_DATA* pProvData);
-		public function HRESULT PFN_PROVIDER_OBJTRUST_CALL(CRYPT_PROVIDER_DATA* pProvData);
-		public function HRESULT PFN_PROVIDER_SIGTRUST_CALL(CRYPT_PROVIDER_DATA* pProvData);
-		public function HRESULT PFN_PROVIDER_CERTTRUST_CALL(CRYPT_PROVIDER_DATA* pProvData);
-		public function HRESULT PFN_PROVIDER_FINALPOLICY_CALL(CRYPT_PROVIDER_DATA* pProvData);
-		public function HRESULT PFN_PROVIDER_TESTFINALPOLICY_CALL(CRYPT_PROVIDER_DATA* pProvData);
-		public function HRESULT PFN_PROVIDER_CLEANUP_CALL(CRYPT_PROVIDER_DATA* pProvData);
-		public function BOOL PFN_PROVIDER_CERTCHKPOLICY_CALL(CRYPT_PROVIDER_DATA* pProvData, uint32 idxSigner, BOOL fCounterSignerChain, uint32 idxCounterSigner);
-		public function BOOL PFN_PROVUI_CALL(HWND hWndSecurityDialog, CRYPT_PROVIDER_DATA* pProvData);
-		public function BOOL PFN_ALLOCANDFILLDEFUSAGE(PSTR pszUsageOID, CRYPT_PROVIDER_DEFUSAGE* psDefUsage);
-		public function BOOL PFN_FREEDEFUSAGE(PSTR pszUsageOID, CRYPT_PROVIDER_DEFUSAGE* psDefUsage);
-		public function HRESULT PFN_WTD_GENERIC_CHAIN_POLICY_CALLBACK(CRYPT_PROVIDER_DATA* pProvData, uint32 dwStepError, uint32 dwRegPolicySettings, uint32 cSigner, WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO** rgpSigner, void* pvPolicyArg);
+		public function BOOL PFN_CPD_ADD_STORE(ref CRYPT_PROVIDER_DATA pProvData, void* hStore2Add);
+		public function BOOL PFN_CPD_ADD_SGNR(ref CRYPT_PROVIDER_DATA pProvData, BOOL fCounterSigner, uint32 idxSigner, ref CRYPT_PROVIDER_SGNR pSgnr2Add);
+		public function BOOL PFN_CPD_ADD_CERT(ref CRYPT_PROVIDER_DATA pProvData, uint32 idxSigner, BOOL fCounterSigner, uint32 idxCounterSigner, in CERT_CONTEXT pCert2Add);
+		public function BOOL PFN_CPD_ADD_PRIVDATA(ref CRYPT_PROVIDER_DATA pProvData, ref CRYPT_PROVIDER_PRIVDATA pPrivData2Add);
+		public function HRESULT PFN_PROVIDER_INIT_CALL(out CRYPT_PROVIDER_DATA pProvData);
+		public function HRESULT PFN_PROVIDER_OBJTRUST_CALL(out CRYPT_PROVIDER_DATA pProvData);
+		public function HRESULT PFN_PROVIDER_SIGTRUST_CALL(out CRYPT_PROVIDER_DATA pProvData);
+		public function HRESULT PFN_PROVIDER_CERTTRUST_CALL(out CRYPT_PROVIDER_DATA pProvData);
+		public function HRESULT PFN_PROVIDER_FINALPOLICY_CALL(out CRYPT_PROVIDER_DATA pProvData);
+		public function HRESULT PFN_PROVIDER_TESTFINALPOLICY_CALL(out CRYPT_PROVIDER_DATA pProvData);
+		public function HRESULT PFN_PROVIDER_CLEANUP_CALL(out CRYPT_PROVIDER_DATA pProvData);
+		public function BOOL PFN_PROVIDER_CERTCHKPOLICY_CALL(ref CRYPT_PROVIDER_DATA pProvData, uint32 idxSigner, BOOL fCounterSignerChain, uint32 idxCounterSigner);
+		public function BOOL PFN_PROVUI_CALL(HWND hWndSecurityDialog, ref CRYPT_PROVIDER_DATA pProvData);
+		public function BOOL PFN_ALLOCANDFILLDEFUSAGE(PSTR pszUsageOID, ref CRYPT_PROVIDER_DEFUSAGE psDefUsage);
+		public function BOOL PFN_FREEDEFUSAGE(PSTR pszUsageOID, ref CRYPT_PROVIDER_DEFUSAGE psDefUsage);
+		public function HRESULT PFN_WTD_GENERIC_CHAIN_POLICY_CALLBACK(out CRYPT_PROVIDER_DATA pProvData, uint32 dwStepError, uint32 dwRegPolicySettings, uint32 cSigner, out WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO* rgpSigner, void* pvPolicyArg);
 		
 		// --- Structs ---
 		
@@ -549,7 +549,7 @@ namespace Win32
 			public uint32 dwLength;
 			public uint16 wRevision;
 			public uint16 wCertificateType;
-			public uint8[] bCertificate;
+			public uint8[0] bCertificate;
 		}
 		[CRepr]
 		public struct WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT
@@ -676,35 +676,35 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WinVerifyTrust(HWND hwnd, Guid* pgActionID, void* pWVTData);
+		public static extern int32 WinVerifyTrust(HWND hwnd, out Guid pgActionID, void* pWVTData);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 WinVerifyTrustEx(HWND hwnd, Guid* pgActionID, WINTRUST_DATA* pWinTrustData);
+		public static extern int32 WinVerifyTrustEx(HWND hwnd, out Guid pgActionID, out WINTRUST_DATA pWinTrustData);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WintrustGetRegPolicyFlags(WINTRUST_POLICY_FLAGS* pdwPolicyFlags);
+		public static extern void WintrustGetRegPolicyFlags(out WINTRUST_POLICY_FLAGS pdwPolicyFlags);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WintrustSetRegPolicyFlags(WINTRUST_POLICY_FLAGS dwPolicyFlags);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WintrustAddActionID(Guid* pgActionID, uint32 fdwFlags, CRYPT_REGISTER_ACTIONID* psProvInfo);
+		public static extern BOOL WintrustAddActionID(ref Guid pgActionID, uint32 fdwFlags, ref CRYPT_REGISTER_ACTIONID psProvInfo);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WintrustRemoveActionID(Guid* pgActionID);
+		public static extern BOOL WintrustRemoveActionID(ref Guid pgActionID);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WintrustLoadFunctionPointers(Guid* pgActionID, CRYPT_PROVIDER_FUNCTIONS* pPfns);
+		public static extern BOOL WintrustLoadFunctionPointers(out Guid pgActionID, out CRYPT_PROVIDER_FUNCTIONS pPfns);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WintrustAddDefaultForUsage(PSTR pszUsageOID, CRYPT_PROVIDER_REGDEFUSAGE* psDefUsage);
+		public static extern BOOL WintrustAddDefaultForUsage(PSTR pszUsageOID, ref CRYPT_PROVIDER_REGDEFUSAGE psDefUsage);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WintrustGetDefaultForUsage(WINTRUST_GET_DEFAULT_FOR_USAGE_ACTION dwAction, PSTR pszUsageOID, CRYPT_PROVIDER_DEFUSAGE* psUsage);
+		public static extern BOOL WintrustGetDefaultForUsage(WINTRUST_GET_DEFAULT_FOR_USAGE_ACTION dwAction, PSTR pszUsageOID, out CRYPT_PROVIDER_DEFUSAGE psUsage);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CRYPT_PROVIDER_SGNR* WTHelperGetProvSignerFromChain(CRYPT_PROVIDER_DATA* pProvData, uint32 idxSigner, BOOL fCounterSigner, uint32 idxCounterSigner);
+		public static extern CRYPT_PROVIDER_SGNR* WTHelperGetProvSignerFromChain(out CRYPT_PROVIDER_DATA pProvData, uint32 idxSigner, BOOL fCounterSigner, uint32 idxCounterSigner);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CRYPT_PROVIDER_CERT* WTHelperGetProvCertFromChain(CRYPT_PROVIDER_SGNR* pSgnr, uint32 idxCert);
+		public static extern CRYPT_PROVIDER_CERT* WTHelperGetProvCertFromChain(out CRYPT_PROVIDER_SGNR pSgnr, uint32 idxCert);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CRYPT_PROVIDER_DATA* WTHelperProvDataFromStateData(HANDLE hStateData);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CRYPT_PROVIDER_PRIVDATA* WTHelperGetProvPrivateDataFromChain(CRYPT_PROVIDER_DATA* pProvData, Guid* pgProviderID);
+		public static extern CRYPT_PROVIDER_PRIVDATA* WTHelperGetProvPrivateDataFromChain(out CRYPT_PROVIDER_DATA pProvData, out Guid pgProviderID);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTHelperCertIsSelfSigned(uint32 dwEncoding, CERT_INFO* pCert);
+		public static extern BOOL WTHelperCertIsSelfSigned(uint32 dwEncoding, out CERT_INFO pCert);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WTHelperCertCheckValidSignature(CRYPT_PROVIDER_DATA* pProvData);
+		public static extern HRESULT WTHelperCertCheckValidSignature(out CRYPT_PROVIDER_DATA pProvData);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL OpenPersonalTrustDBDialogEx(HWND hwndParent, uint32 dwFlags, void** pvReserved);
 		[Import("wintrust.dll"), CLink, CallingConvention(.Stdcall)]

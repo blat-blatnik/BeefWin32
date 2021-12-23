@@ -263,17 +263,17 @@ namespace Win32
 			
 			public HRESULT put_CLXCmdLine(BSTR CLXCmdLine) mut
 			{
-				return VT.put_CLXCmdLine(&this, CLXCmdLine);
+				return VT.put_CLXCmdLine(ref this, CLXCmdLine);
 			}
-			public HRESULT get_CLXCmdLine(BSTR* pCLXCmdLine) mut
+			public HRESULT get_CLXCmdLine(out BSTR pCLXCmdLine) mut
 			{
-				return VT.get_CLXCmdLine(&this, pCLXCmdLine);
+				return VT.get_CLXCmdLine(ref this, out pCLXCmdLine);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRDPSRAPIDebug *self, BSTR CLXCmdLine) put_CLXCmdLine;
-				public new function HRESULT(IRDPSRAPIDebug *self, BSTR* pCLXCmdLine) get_CLXCmdLine;
+				public new function HRESULT(ref IRDPSRAPIDebug self, BSTR CLXCmdLine) put_CLXCmdLine;
+				public new function HRESULT(ref IRDPSRAPIDebug self, out BSTR pCLXCmdLine) get_CLXCmdLine;
 			}
 		}
 		[CRepr]
@@ -285,12 +285,12 @@ namespace Win32
 			
 			public HRESULT LogValue(int64 lValue) mut
 			{
-				return VT.LogValue(&this, lValue);
+				return VT.LogValue(ref this, lValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRDPSRAPIPerfCounterLogger *self, int64 lValue) LogValue;
+				public new function HRESULT(ref IRDPSRAPIPerfCounterLogger self, int64 lValue) LogValue;
 			}
 		}
 		[CRepr]
@@ -300,14 +300,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateLogger(BSTR bstrCounterName, IRDPSRAPIPerfCounterLogger** ppLogger) mut
+			public HRESULT CreateLogger(BSTR bstrCounterName, out IRDPSRAPIPerfCounterLogger* ppLogger) mut
 			{
-				return VT.CreateLogger(&this, bstrCounterName, ppLogger);
+				return VT.CreateLogger(ref this, bstrCounterName, out ppLogger);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRDPSRAPIPerfCounterLoggingManager *self, BSTR bstrCounterName, IRDPSRAPIPerfCounterLogger** ppLogger) CreateLogger;
+				public new function HRESULT(ref IRDPSRAPIPerfCounterLoggingManager self, BSTR bstrCounterName, out IRDPSRAPIPerfCounterLogger* ppLogger) CreateLogger;
 			}
 		}
 		[CRepr]
@@ -317,34 +317,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(int64* pnPeriodInHundredNsIntervals) mut
+			public HRESULT Initialize(out int64 pnPeriodInHundredNsIntervals) mut
 			{
-				return VT.Initialize(&this, pnPeriodInHundredNsIntervals);
+				return VT.Initialize(ref this, out pnPeriodInHundredNsIntervals);
 			}
 			public HRESULT Start() mut
 			{
-				return VT.Start(&this);
+				return VT.Start(ref this);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
-			public HRESULT GetBuffer(uint8** ppbData, uint32* pcbData, uint64* pTimestamp) mut
+			public HRESULT GetBuffer(uint8** ppbData, out uint32 pcbData, out uint64 pTimestamp) mut
 			{
-				return VT.GetBuffer(&this, ppbData, pcbData, pTimestamp);
+				return VT.GetBuffer(ref this, ppbData, out pcbData, out pTimestamp);
 			}
 			public HRESULT FreeBuffer() mut
 			{
-				return VT.FreeBuffer(&this);
+				return VT.FreeBuffer(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRDPSRAPIAudioStream *self, int64* pnPeriodInHundredNsIntervals) Initialize;
-				public new function HRESULT(IRDPSRAPIAudioStream *self) Start;
-				public new function HRESULT(IRDPSRAPIAudioStream *self) Stop;
-				public new function HRESULT(IRDPSRAPIAudioStream *self, uint8** ppbData, uint32* pcbData, uint64* pTimestamp) GetBuffer;
-				public new function HRESULT(IRDPSRAPIAudioStream *self) FreeBuffer;
+				public new function HRESULT(ref IRDPSRAPIAudioStream self, out int64 pnPeriodInHundredNsIntervals) Initialize;
+				public new function HRESULT(ref IRDPSRAPIAudioStream self) Start;
+				public new function HRESULT(ref IRDPSRAPIAudioStream self) Stop;
+				public new function HRESULT(ref IRDPSRAPIAudioStream self, uint8** ppbData, out uint32 pcbData, out uint64 pTimestamp) GetBuffer;
+				public new function HRESULT(ref IRDPSRAPIAudioStream self) FreeBuffer;
 			}
 		}
 		[CRepr]
@@ -354,14 +354,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnPasteFromClipboard(uint32 clipboardFormat, IDispatch* pAttendee, int16* pRetVal) mut
+			public HRESULT OnPasteFromClipboard(uint32 clipboardFormat, ref IDispatch pAttendee, out int16 pRetVal) mut
 			{
-				return VT.OnPasteFromClipboard(&this, clipboardFormat, pAttendee, pRetVal);
+				return VT.OnPasteFromClipboard(ref this, clipboardFormat, ref pAttendee, out pRetVal);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRDPSRAPIClipboardUseEvents *self, uint32 clipboardFormat, IDispatch* pAttendee, int16* pRetVal) OnPasteFromClipboard;
+				public new function HRESULT(ref IRDPSRAPIClipboardUseEvents self, uint32 clipboardFormat, ref IDispatch pAttendee, out int16 pRetVal) OnPasteFromClipboard;
 			}
 		}
 		[CRepr]
@@ -371,44 +371,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Id(int32* pRetVal) mut
+			public HRESULT get_Id(out int32 pRetVal) mut
 			{
-				return VT.get_Id(&this, pRetVal);
+				return VT.get_Id(ref this, out pRetVal);
 			}
-			public HRESULT get_Application(IRDPSRAPIApplication** pApplication) mut
+			public HRESULT get_Application(out IRDPSRAPIApplication* pApplication) mut
 			{
-				return VT.get_Application(&this, pApplication);
+				return VT.get_Application(ref this, out pApplication);
 			}
-			public HRESULT get_Shared(int16* pRetVal) mut
+			public HRESULT get_Shared(out int16 pRetVal) mut
 			{
-				return VT.get_Shared(&this, pRetVal);
+				return VT.get_Shared(ref this, out pRetVal);
 			}
 			public HRESULT put_Shared(int16 NewVal) mut
 			{
-				return VT.put_Shared(&this, NewVal);
+				return VT.put_Shared(ref this, NewVal);
 			}
-			public HRESULT get_Name(BSTR* pRetVal) mut
+			public HRESULT get_Name(out BSTR pRetVal) mut
 			{
-				return VT.get_Name(&this, pRetVal);
+				return VT.get_Name(ref this, out pRetVal);
 			}
 			public HRESULT Show() mut
 			{
-				return VT.Show(&this);
+				return VT.Show(ref this);
 			}
-			public HRESULT get_Flags(uint32* pdwFlags) mut
+			public HRESULT get_Flags(out uint32 pdwFlags) mut
 			{
-				return VT.get_Flags(&this, pdwFlags);
+				return VT.get_Flags(ref this, out pdwFlags);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIWindow *self, int32* pRetVal) get_Id;
-				public new function HRESULT(IRDPSRAPIWindow *self, IRDPSRAPIApplication** pApplication) get_Application;
-				public new function HRESULT(IRDPSRAPIWindow *self, int16* pRetVal) get_Shared;
-				public new function HRESULT(IRDPSRAPIWindow *self, int16 NewVal) put_Shared;
-				public new function HRESULT(IRDPSRAPIWindow *self, BSTR* pRetVal) get_Name;
-				public new function HRESULT(IRDPSRAPIWindow *self) Show;
-				public new function HRESULT(IRDPSRAPIWindow *self, uint32* pdwFlags) get_Flags;
+				public new function HRESULT(ref IRDPSRAPIWindow self, out int32 pRetVal) get_Id;
+				public new function HRESULT(ref IRDPSRAPIWindow self, out IRDPSRAPIApplication* pApplication) get_Application;
+				public new function HRESULT(ref IRDPSRAPIWindow self, out int16 pRetVal) get_Shared;
+				public new function HRESULT(ref IRDPSRAPIWindow self, int16 NewVal) put_Shared;
+				public new function HRESULT(ref IRDPSRAPIWindow self, out BSTR pRetVal) get_Name;
+				public new function HRESULT(ref IRDPSRAPIWindow self) Show;
+				public new function HRESULT(ref IRDPSRAPIWindow self, out uint32 pdwFlags) get_Flags;
 			}
 		}
 		[CRepr]
@@ -418,19 +418,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** retval) mut
+			public HRESULT get__NewEnum(out IUnknown* retval) mut
 			{
-				return VT.get__NewEnum(&this, retval);
+				return VT.get__NewEnum(ref this, out retval);
 			}
-			public HRESULT get_Item(int32 item, IRDPSRAPIWindow** pWindow) mut
+			public HRESULT get_Item(int32 item, out IRDPSRAPIWindow* pWindow) mut
 			{
-				return VT.get_Item(&this, item, pWindow);
+				return VT.get_Item(ref this, item, out pWindow);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIWindowList *self, IUnknown** retval) get__NewEnum;
-				public new function HRESULT(IRDPSRAPIWindowList *self, int32 item, IRDPSRAPIWindow** pWindow) get_Item;
+				public new function HRESULT(ref IRDPSRAPIWindowList self, out IUnknown* retval) get__NewEnum;
+				public new function HRESULT(ref IRDPSRAPIWindowList self, int32 item, out IRDPSRAPIWindow* pWindow) get_Item;
 			}
 		}
 		[CRepr]
@@ -440,39 +440,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Windows(IRDPSRAPIWindowList** pWindowList) mut
+			public HRESULT get_Windows(out IRDPSRAPIWindowList* pWindowList) mut
 			{
-				return VT.get_Windows(&this, pWindowList);
+				return VT.get_Windows(ref this, out pWindowList);
 			}
-			public HRESULT get_Id(int32* pRetVal) mut
+			public HRESULT get_Id(out int32 pRetVal) mut
 			{
-				return VT.get_Id(&this, pRetVal);
+				return VT.get_Id(ref this, out pRetVal);
 			}
-			public HRESULT get_Shared(int16* pRetVal) mut
+			public HRESULT get_Shared(out int16 pRetVal) mut
 			{
-				return VT.get_Shared(&this, pRetVal);
+				return VT.get_Shared(ref this, out pRetVal);
 			}
 			public HRESULT put_Shared(int16 NewVal) mut
 			{
-				return VT.put_Shared(&this, NewVal);
+				return VT.put_Shared(ref this, NewVal);
 			}
-			public HRESULT get_Name(BSTR* pRetVal) mut
+			public HRESULT get_Name(out BSTR pRetVal) mut
 			{
-				return VT.get_Name(&this, pRetVal);
+				return VT.get_Name(ref this, out pRetVal);
 			}
-			public HRESULT get_Flags(uint32* pdwFlags) mut
+			public HRESULT get_Flags(out uint32 pdwFlags) mut
 			{
-				return VT.get_Flags(&this, pdwFlags);
+				return VT.get_Flags(ref this, out pdwFlags);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIApplication *self, IRDPSRAPIWindowList** pWindowList) get_Windows;
-				public new function HRESULT(IRDPSRAPIApplication *self, int32* pRetVal) get_Id;
-				public new function HRESULT(IRDPSRAPIApplication *self, int16* pRetVal) get_Shared;
-				public new function HRESULT(IRDPSRAPIApplication *self, int16 NewVal) put_Shared;
-				public new function HRESULT(IRDPSRAPIApplication *self, BSTR* pRetVal) get_Name;
-				public new function HRESULT(IRDPSRAPIApplication *self, uint32* pdwFlags) get_Flags;
+				public new function HRESULT(ref IRDPSRAPIApplication self, out IRDPSRAPIWindowList* pWindowList) get_Windows;
+				public new function HRESULT(ref IRDPSRAPIApplication self, out int32 pRetVal) get_Id;
+				public new function HRESULT(ref IRDPSRAPIApplication self, out int16 pRetVal) get_Shared;
+				public new function HRESULT(ref IRDPSRAPIApplication self, int16 NewVal) put_Shared;
+				public new function HRESULT(ref IRDPSRAPIApplication self, out BSTR pRetVal) get_Name;
+				public new function HRESULT(ref IRDPSRAPIApplication self, out uint32 pdwFlags) get_Flags;
 			}
 		}
 		[CRepr]
@@ -482,19 +482,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** retval) mut
+			public HRESULT get__NewEnum(out IUnknown* retval) mut
 			{
-				return VT.get__NewEnum(&this, retval);
+				return VT.get__NewEnum(ref this, out retval);
 			}
-			public HRESULT get_Item(int32 item, IRDPSRAPIApplication** pApplication) mut
+			public HRESULT get_Item(int32 item, out IRDPSRAPIApplication* pApplication) mut
 			{
-				return VT.get_Item(&this, item, pApplication);
+				return VT.get_Item(ref this, item, out pApplication);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIApplicationList *self, IUnknown** retval) get__NewEnum;
-				public new function HRESULT(IRDPSRAPIApplicationList *self, int32 item, IRDPSRAPIApplication** pApplication) get_Item;
+				public new function HRESULT(ref IRDPSRAPIApplicationList self, out IUnknown* retval) get__NewEnum;
+				public new function HRESULT(ref IRDPSRAPIApplicationList self, int32 item, out IRDPSRAPIApplication* pApplication) get_Item;
 			}
 		}
 		[CRepr]
@@ -504,29 +504,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Applications(IRDPSRAPIApplicationList** pApplications) mut
+			public HRESULT get_Applications(out IRDPSRAPIApplicationList* pApplications) mut
 			{
-				return VT.get_Applications(&this, pApplications);
+				return VT.get_Applications(ref this, out pApplications);
 			}
-			public HRESULT get_Windows(IRDPSRAPIWindowList** pWindows) mut
+			public HRESULT get_Windows(out IRDPSRAPIWindowList* pWindows) mut
 			{
-				return VT.get_Windows(&this, pWindows);
+				return VT.get_Windows(ref this, out pWindows);
 			}
-			public HRESULT get_Enabled(int16* pRetVal) mut
+			public HRESULT get_Enabled(out int16 pRetVal) mut
 			{
-				return VT.get_Enabled(&this, pRetVal);
+				return VT.get_Enabled(ref this, out pRetVal);
 			}
 			public HRESULT put_Enabled(int16 NewVal) mut
 			{
-				return VT.put_Enabled(&this, NewVal);
+				return VT.put_Enabled(ref this, NewVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIApplicationFilter *self, IRDPSRAPIApplicationList** pApplications) get_Applications;
-				public new function HRESULT(IRDPSRAPIApplicationFilter *self, IRDPSRAPIWindowList** pWindows) get_Windows;
-				public new function HRESULT(IRDPSRAPIApplicationFilter *self, int16* pRetVal) get_Enabled;
-				public new function HRESULT(IRDPSRAPIApplicationFilter *self, int16 NewVal) put_Enabled;
+				public new function HRESULT(ref IRDPSRAPIApplicationFilter self, out IRDPSRAPIApplicationList* pApplications) get_Applications;
+				public new function HRESULT(ref IRDPSRAPIApplicationFilter self, out IRDPSRAPIWindowList* pWindows) get_Windows;
+				public new function HRESULT(ref IRDPSRAPIApplicationFilter self, out int16 pRetVal) get_Enabled;
+				public new function HRESULT(ref IRDPSRAPIApplicationFilter self, int16 NewVal) put_Enabled;
 			}
 		}
 		[CRepr]
@@ -536,19 +536,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Property(BSTR PropertyName, VARIANT* pVal) mut
+			public HRESULT get_Property(BSTR PropertyName, out VARIANT pVal) mut
 			{
-				return VT.get_Property(&this, PropertyName, pVal);
+				return VT.get_Property(ref this, PropertyName, out pVal);
 			}
 			public HRESULT put_Property(BSTR PropertyName, VARIANT newVal) mut
 			{
-				return VT.put_Property(&this, PropertyName, newVal);
+				return VT.put_Property(ref this, PropertyName, newVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPISessionProperties *self, BSTR PropertyName, VARIANT* pVal) get_Property;
-				public new function HRESULT(IRDPSRAPISessionProperties *self, BSTR PropertyName, VARIANT newVal) put_Property;
+				public new function HRESULT(ref IRDPSRAPISessionProperties self, BSTR PropertyName, out VARIANT pVal) get_Property;
+				public new function HRESULT(ref IRDPSRAPISessionProperties self, BSTR PropertyName, VARIANT newVal) put_Property;
 			}
 		}
 		[CRepr]
@@ -558,44 +558,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ConnectionString(BSTR* pbstrVal) mut
+			public HRESULT get_ConnectionString(out BSTR pbstrVal) mut
 			{
-				return VT.get_ConnectionString(&this, pbstrVal);
+				return VT.get_ConnectionString(ref this, out pbstrVal);
 			}
-			public HRESULT get_GroupName(BSTR* pbstrVal) mut
+			public HRESULT get_GroupName(out BSTR pbstrVal) mut
 			{
-				return VT.get_GroupName(&this, pbstrVal);
+				return VT.get_GroupName(ref this, out pbstrVal);
 			}
-			public HRESULT get_Password(BSTR* pbstrVal) mut
+			public HRESULT get_Password(out BSTR pbstrVal) mut
 			{
-				return VT.get_Password(&this, pbstrVal);
+				return VT.get_Password(ref this, out pbstrVal);
 			}
-			public HRESULT get_AttendeeLimit(int32* pRetVal) mut
+			public HRESULT get_AttendeeLimit(out int32 pRetVal) mut
 			{
-				return VT.get_AttendeeLimit(&this, pRetVal);
+				return VT.get_AttendeeLimit(ref this, out pRetVal);
 			}
 			public HRESULT put_AttendeeLimit(int32 NewVal) mut
 			{
-				return VT.put_AttendeeLimit(&this, NewVal);
+				return VT.put_AttendeeLimit(ref this, NewVal);
 			}
-			public HRESULT get_Revoked(int16* pRetVal) mut
+			public HRESULT get_Revoked(out int16 pRetVal) mut
 			{
-				return VT.get_Revoked(&this, pRetVal);
+				return VT.get_Revoked(ref this, out pRetVal);
 			}
 			public HRESULT put_Revoked(int16 NewVal) mut
 			{
-				return VT.put_Revoked(&this, NewVal);
+				return VT.put_Revoked(ref this, NewVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIInvitation *self, BSTR* pbstrVal) get_ConnectionString;
-				public new function HRESULT(IRDPSRAPIInvitation *self, BSTR* pbstrVal) get_GroupName;
-				public new function HRESULT(IRDPSRAPIInvitation *self, BSTR* pbstrVal) get_Password;
-				public new function HRESULT(IRDPSRAPIInvitation *self, int32* pRetVal) get_AttendeeLimit;
-				public new function HRESULT(IRDPSRAPIInvitation *self, int32 NewVal) put_AttendeeLimit;
-				public new function HRESULT(IRDPSRAPIInvitation *self, int16* pRetVal) get_Revoked;
-				public new function HRESULT(IRDPSRAPIInvitation *self, int16 NewVal) put_Revoked;
+				public new function HRESULT(ref IRDPSRAPIInvitation self, out BSTR pbstrVal) get_ConnectionString;
+				public new function HRESULT(ref IRDPSRAPIInvitation self, out BSTR pbstrVal) get_GroupName;
+				public new function HRESULT(ref IRDPSRAPIInvitation self, out BSTR pbstrVal) get_Password;
+				public new function HRESULT(ref IRDPSRAPIInvitation self, out int32 pRetVal) get_AttendeeLimit;
+				public new function HRESULT(ref IRDPSRAPIInvitation self, int32 NewVal) put_AttendeeLimit;
+				public new function HRESULT(ref IRDPSRAPIInvitation self, out int16 pRetVal) get_Revoked;
+				public new function HRESULT(ref IRDPSRAPIInvitation self, int16 NewVal) put_Revoked;
 			}
 		}
 		[CRepr]
@@ -605,29 +605,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** retval) mut
+			public HRESULT get__NewEnum(out IUnknown* retval) mut
 			{
-				return VT.get__NewEnum(&this, retval);
+				return VT.get__NewEnum(ref this, out retval);
 			}
-			public HRESULT get_Item(VARIANT item, IRDPSRAPIInvitation** ppInvitation) mut
+			public HRESULT get_Item(VARIANT item, out IRDPSRAPIInvitation* ppInvitation) mut
 			{
-				return VT.get_Item(&this, item, ppInvitation);
+				return VT.get_Item(ref this, item, out ppInvitation);
 			}
-			public HRESULT get_Count(int32* pRetVal) mut
+			public HRESULT get_Count(out int32 pRetVal) mut
 			{
-				return VT.get_Count(&this, pRetVal);
+				return VT.get_Count(ref this, out pRetVal);
 			}
-			public HRESULT CreateInvitation(BSTR bstrAuthString, BSTR bstrGroupName, BSTR bstrPassword, int32 AttendeeLimit, IRDPSRAPIInvitation** ppInvitation) mut
+			public HRESULT CreateInvitation(BSTR bstrAuthString, BSTR bstrGroupName, BSTR bstrPassword, int32 AttendeeLimit, out IRDPSRAPIInvitation* ppInvitation) mut
 			{
-				return VT.CreateInvitation(&this, bstrAuthString, bstrGroupName, bstrPassword, AttendeeLimit, ppInvitation);
+				return VT.CreateInvitation(ref this, bstrAuthString, bstrGroupName, bstrPassword, AttendeeLimit, out ppInvitation);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIInvitationManager *self, IUnknown** retval) get__NewEnum;
-				public new function HRESULT(IRDPSRAPIInvitationManager *self, VARIANT item, IRDPSRAPIInvitation** ppInvitation) get_Item;
-				public new function HRESULT(IRDPSRAPIInvitationManager *self, int32* pRetVal) get_Count;
-				public new function HRESULT(IRDPSRAPIInvitationManager *self, BSTR bstrAuthString, BSTR bstrGroupName, BSTR bstrPassword, int32 AttendeeLimit, IRDPSRAPIInvitation** ppInvitation) CreateInvitation;
+				public new function HRESULT(ref IRDPSRAPIInvitationManager self, out IUnknown* retval) get__NewEnum;
+				public new function HRESULT(ref IRDPSRAPIInvitationManager self, VARIANT item, out IRDPSRAPIInvitation* ppInvitation) get_Item;
+				public new function HRESULT(ref IRDPSRAPIInvitationManager self, out int32 pRetVal) get_Count;
+				public new function HRESULT(ref IRDPSRAPIInvitationManager self, BSTR bstrAuthString, BSTR bstrGroupName, BSTR bstrPassword, int32 AttendeeLimit, out IRDPSRAPIInvitation* ppInvitation) CreateInvitation;
 			}
 		}
 		[CRepr]
@@ -637,34 +637,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Protocol(int32* plProtocol) mut
+			public HRESULT get_Protocol(out int32 plProtocol) mut
 			{
-				return VT.get_Protocol(&this, plProtocol);
+				return VT.get_Protocol(ref this, out plProtocol);
 			}
-			public HRESULT get_LocalPort(int32* plPort) mut
+			public HRESULT get_LocalPort(out int32 plPort) mut
 			{
-				return VT.get_LocalPort(&this, plPort);
+				return VT.get_LocalPort(ref this, out plPort);
 			}
-			public HRESULT get_LocalIP(BSTR* pbsrLocalIP) mut
+			public HRESULT get_LocalIP(out BSTR pbsrLocalIP) mut
 			{
-				return VT.get_LocalIP(&this, pbsrLocalIP);
+				return VT.get_LocalIP(ref this, out pbsrLocalIP);
 			}
-			public HRESULT get_PeerPort(int32* plPort) mut
+			public HRESULT get_PeerPort(out int32 plPort) mut
 			{
-				return VT.get_PeerPort(&this, plPort);
+				return VT.get_PeerPort(ref this, out plPort);
 			}
-			public HRESULT get_PeerIP(BSTR* pbstrIP) mut
+			public HRESULT get_PeerIP(out BSTR pbstrIP) mut
 			{
-				return VT.get_PeerIP(&this, pbstrIP);
+				return VT.get_PeerIP(ref this, out pbstrIP);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPITcpConnectionInfo *self, int32* plProtocol) get_Protocol;
-				public new function HRESULT(IRDPSRAPITcpConnectionInfo *self, int32* plPort) get_LocalPort;
-				public new function HRESULT(IRDPSRAPITcpConnectionInfo *self, BSTR* pbsrLocalIP) get_LocalIP;
-				public new function HRESULT(IRDPSRAPITcpConnectionInfo *self, int32* plPort) get_PeerPort;
-				public new function HRESULT(IRDPSRAPITcpConnectionInfo *self, BSTR* pbstrIP) get_PeerIP;
+				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out int32 plProtocol) get_Protocol;
+				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out int32 plPort) get_LocalPort;
+				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out BSTR pbsrLocalIP) get_LocalIP;
+				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out int32 plPort) get_PeerPort;
+				public new function HRESULT(ref IRDPSRAPITcpConnectionInfo self, out BSTR pbstrIP) get_PeerIP;
 			}
 		}
 		[CRepr]
@@ -674,49 +674,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Id(int32* pId) mut
+			public HRESULT get_Id(out int32 pId) mut
 			{
-				return VT.get_Id(&this, pId);
+				return VT.get_Id(ref this, out pId);
 			}
-			public HRESULT get_RemoteName(BSTR* pVal) mut
+			public HRESULT get_RemoteName(out BSTR pVal) mut
 			{
-				return VT.get_RemoteName(&this, pVal);
+				return VT.get_RemoteName(ref this, out pVal);
 			}
-			public HRESULT get_ControlLevel(CTRL_LEVEL* pVal) mut
+			public HRESULT get_ControlLevel(out CTRL_LEVEL pVal) mut
 			{
-				return VT.get_ControlLevel(&this, pVal);
+				return VT.get_ControlLevel(ref this, out pVal);
 			}
 			public HRESULT put_ControlLevel(CTRL_LEVEL pNewVal) mut
 			{
-				return VT.put_ControlLevel(&this, pNewVal);
+				return VT.put_ControlLevel(ref this, pNewVal);
 			}
-			public HRESULT get_Invitation(IRDPSRAPIInvitation** ppVal) mut
+			public HRESULT get_Invitation(out IRDPSRAPIInvitation* ppVal) mut
 			{
-				return VT.get_Invitation(&this, ppVal);
+				return VT.get_Invitation(ref this, out ppVal);
 			}
 			public HRESULT TerminateConnection() mut
 			{
-				return VT.TerminateConnection(&this);
+				return VT.TerminateConnection(ref this);
 			}
-			public HRESULT get_Flags(int32* plFlags) mut
+			public HRESULT get_Flags(out int32 plFlags) mut
 			{
-				return VT.get_Flags(&this, plFlags);
+				return VT.get_Flags(ref this, out plFlags);
 			}
-			public HRESULT get_ConnectivityInfo(IUnknown** ppVal) mut
+			public HRESULT get_ConnectivityInfo(out IUnknown* ppVal) mut
 			{
-				return VT.get_ConnectivityInfo(&this, ppVal);
+				return VT.get_ConnectivityInfo(ref this, out ppVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIAttendee *self, int32* pId) get_Id;
-				public new function HRESULT(IRDPSRAPIAttendee *self, BSTR* pVal) get_RemoteName;
-				public new function HRESULT(IRDPSRAPIAttendee *self, CTRL_LEVEL* pVal) get_ControlLevel;
-				public new function HRESULT(IRDPSRAPIAttendee *self, CTRL_LEVEL pNewVal) put_ControlLevel;
-				public new function HRESULT(IRDPSRAPIAttendee *self, IRDPSRAPIInvitation** ppVal) get_Invitation;
-				public new function HRESULT(IRDPSRAPIAttendee *self) TerminateConnection;
-				public new function HRESULT(IRDPSRAPIAttendee *self, int32* plFlags) get_Flags;
-				public new function HRESULT(IRDPSRAPIAttendee *self, IUnknown** ppVal) get_ConnectivityInfo;
+				public new function HRESULT(ref IRDPSRAPIAttendee self, out int32 pId) get_Id;
+				public new function HRESULT(ref IRDPSRAPIAttendee self, out BSTR pVal) get_RemoteName;
+				public new function HRESULT(ref IRDPSRAPIAttendee self, out CTRL_LEVEL pVal) get_ControlLevel;
+				public new function HRESULT(ref IRDPSRAPIAttendee self, CTRL_LEVEL pNewVal) put_ControlLevel;
+				public new function HRESULT(ref IRDPSRAPIAttendee self, out IRDPSRAPIInvitation* ppVal) get_Invitation;
+				public new function HRESULT(ref IRDPSRAPIAttendee self) TerminateConnection;
+				public new function HRESULT(ref IRDPSRAPIAttendee self, out int32 plFlags) get_Flags;
+				public new function HRESULT(ref IRDPSRAPIAttendee self, out IUnknown* ppVal) get_ConnectivityInfo;
 			}
 		}
 		[CRepr]
@@ -726,19 +726,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** retval) mut
+			public HRESULT get__NewEnum(out IUnknown* retval) mut
 			{
-				return VT.get__NewEnum(&this, retval);
+				return VT.get__NewEnum(ref this, out retval);
 			}
-			public HRESULT get_Item(int32 id, IRDPSRAPIAttendee** ppItem) mut
+			public HRESULT get_Item(int32 id, out IRDPSRAPIAttendee* ppItem) mut
 			{
-				return VT.get_Item(&this, id, ppItem);
+				return VT.get_Item(ref this, id, out ppItem);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIAttendeeManager *self, IUnknown** retval) get__NewEnum;
-				public new function HRESULT(IRDPSRAPIAttendeeManager *self, int32 id, IRDPSRAPIAttendee** ppItem) get_Item;
+				public new function HRESULT(ref IRDPSRAPIAttendeeManager self, out IUnknown* retval) get__NewEnum;
+				public new function HRESULT(ref IRDPSRAPIAttendeeManager self, int32 id, out IRDPSRAPIAttendee* ppItem) get_Item;
 			}
 		}
 		[CRepr]
@@ -748,24 +748,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Attendee(IRDPSRAPIAttendee** retval) mut
+			public HRESULT get_Attendee(out IRDPSRAPIAttendee* retval) mut
 			{
-				return VT.get_Attendee(&this, retval);
+				return VT.get_Attendee(ref this, out retval);
 			}
-			public HRESULT get_Reason(ATTENDEE_DISCONNECT_REASON* pReason) mut
+			public HRESULT get_Reason(out ATTENDEE_DISCONNECT_REASON pReason) mut
 			{
-				return VT.get_Reason(&this, pReason);
+				return VT.get_Reason(ref this, out pReason);
 			}
-			public HRESULT get_Code(int32* pVal) mut
+			public HRESULT get_Code(out int32 pVal) mut
 			{
-				return VT.get_Code(&this, pVal);
+				return VT.get_Code(ref this, out pVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIAttendeeDisconnectInfo *self, IRDPSRAPIAttendee** retval) get_Attendee;
-				public new function HRESULT(IRDPSRAPIAttendeeDisconnectInfo *self, ATTENDEE_DISCONNECT_REASON* pReason) get_Reason;
-				public new function HRESULT(IRDPSRAPIAttendeeDisconnectInfo *self, int32* pVal) get_Code;
+				public new function HRESULT(ref IRDPSRAPIAttendeeDisconnectInfo self, out IRDPSRAPIAttendee* retval) get_Attendee;
+				public new function HRESULT(ref IRDPSRAPIAttendeeDisconnectInfo self, out ATTENDEE_DISCONNECT_REASON pReason) get_Reason;
+				public new function HRESULT(ref IRDPSRAPIAttendeeDisconnectInfo self, out int32 pVal) get_Code;
 			}
 		}
 		[CRepr]
@@ -777,32 +777,32 @@ namespace Win32
 			
 			public HRESULT SendData(BSTR bstrData, int32 lAttendeeId, uint32 ChannelSendFlags) mut
 			{
-				return VT.SendData(&this, bstrData, lAttendeeId, ChannelSendFlags);
+				return VT.SendData(ref this, bstrData, lAttendeeId, ChannelSendFlags);
 			}
 			public HRESULT SetAccess(int32 lAttendeeId, CHANNEL_ACCESS_ENUM AccessType) mut
 			{
-				return VT.SetAccess(&this, lAttendeeId, AccessType);
+				return VT.SetAccess(ref this, lAttendeeId, AccessType);
 			}
-			public HRESULT get_Name(BSTR* pbstrName) mut
+			public HRESULT get_Name(out BSTR pbstrName) mut
 			{
-				return VT.get_Name(&this, pbstrName);
+				return VT.get_Name(ref this, out pbstrName);
 			}
-			public HRESULT get_Flags(int32* plFlags) mut
+			public HRESULT get_Flags(out int32 plFlags) mut
 			{
-				return VT.get_Flags(&this, plFlags);
+				return VT.get_Flags(ref this, out plFlags);
 			}
-			public HRESULT get_Priority(CHANNEL_PRIORITY* pPriority) mut
+			public HRESULT get_Priority(out CHANNEL_PRIORITY pPriority) mut
 			{
-				return VT.get_Priority(&this, pPriority);
+				return VT.get_Priority(ref this, out pPriority);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIVirtualChannel *self, BSTR bstrData, int32 lAttendeeId, uint32 ChannelSendFlags) SendData;
-				public new function HRESULT(IRDPSRAPIVirtualChannel *self, int32 lAttendeeId, CHANNEL_ACCESS_ENUM AccessType) SetAccess;
-				public new function HRESULT(IRDPSRAPIVirtualChannel *self, BSTR* pbstrName) get_Name;
-				public new function HRESULT(IRDPSRAPIVirtualChannel *self, int32* plFlags) get_Flags;
-				public new function HRESULT(IRDPSRAPIVirtualChannel *self, CHANNEL_PRIORITY* pPriority) get_Priority;
+				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, BSTR bstrData, int32 lAttendeeId, uint32 ChannelSendFlags) SendData;
+				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, int32 lAttendeeId, CHANNEL_ACCESS_ENUM AccessType) SetAccess;
+				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, out BSTR pbstrName) get_Name;
+				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, out int32 plFlags) get_Flags;
+				public new function HRESULT(ref IRDPSRAPIVirtualChannel self, out CHANNEL_PRIORITY pPriority) get_Priority;
 			}
 		}
 		[CRepr]
@@ -812,24 +812,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IUnknown** retval) mut
+			public HRESULT get__NewEnum(out IUnknown* retval) mut
 			{
-				return VT.get__NewEnum(&this, retval);
+				return VT.get__NewEnum(ref this, out retval);
 			}
-			public HRESULT get_Item(VARIANT item, IRDPSRAPIVirtualChannel** pChannel) mut
+			public HRESULT get_Item(VARIANT item, out IRDPSRAPIVirtualChannel* pChannel) mut
 			{
-				return VT.get_Item(&this, item, pChannel);
+				return VT.get_Item(ref this, item, out pChannel);
 			}
-			public HRESULT CreateVirtualChannel(BSTR bstrChannelName, CHANNEL_PRIORITY Priority, uint32 ChannelFlags, IRDPSRAPIVirtualChannel** ppChannel) mut
+			public HRESULT CreateVirtualChannel(BSTR bstrChannelName, CHANNEL_PRIORITY Priority, uint32 ChannelFlags, out IRDPSRAPIVirtualChannel* ppChannel) mut
 			{
-				return VT.CreateVirtualChannel(&this, bstrChannelName, Priority, ChannelFlags, ppChannel);
+				return VT.CreateVirtualChannel(ref this, bstrChannelName, Priority, ChannelFlags, out ppChannel);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIVirtualChannelManager *self, IUnknown** retval) get__NewEnum;
-				public new function HRESULT(IRDPSRAPIVirtualChannelManager *self, VARIANT item, IRDPSRAPIVirtualChannel** pChannel) get_Item;
-				public new function HRESULT(IRDPSRAPIVirtualChannelManager *self, BSTR bstrChannelName, CHANNEL_PRIORITY Priority, uint32 ChannelFlags, IRDPSRAPIVirtualChannel** ppChannel) CreateVirtualChannel;
+				public new function HRESULT(ref IRDPSRAPIVirtualChannelManager self, out IUnknown* retval) get__NewEnum;
+				public new function HRESULT(ref IRDPSRAPIVirtualChannelManager self, VARIANT item, out IRDPSRAPIVirtualChannel* pChannel) get_Item;
+				public new function HRESULT(ref IRDPSRAPIVirtualChannelManager self, BSTR bstrChannelName, CHANNEL_PRIORITY Priority, uint32 ChannelFlags, out IRDPSRAPIVirtualChannel* ppChannel) CreateVirtualChannel;
 			}
 		}
 		[CRepr]
@@ -841,77 +841,77 @@ namespace Win32
 			
 			public HRESULT Connect(BSTR bstrConnectionString, BSTR bstrName, BSTR bstrPassword) mut
 			{
-				return VT.Connect(&this, bstrConnectionString, bstrName, bstrPassword);
+				return VT.Connect(ref this, bstrConnectionString, bstrName, bstrPassword);
 			}
 			public HRESULT Disconnect() mut
 			{
-				return VT.Disconnect(&this);
+				return VT.Disconnect(ref this);
 			}
-			public HRESULT get_Attendees(IRDPSRAPIAttendeeManager** ppVal) mut
+			public HRESULT get_Attendees(out IRDPSRAPIAttendeeManager* ppVal) mut
 			{
-				return VT.get_Attendees(&this, ppVal);
+				return VT.get_Attendees(ref this, out ppVal);
 			}
-			public HRESULT get_Invitations(IRDPSRAPIInvitationManager** ppVal) mut
+			public HRESULT get_Invitations(out IRDPSRAPIInvitationManager* ppVal) mut
 			{
-				return VT.get_Invitations(&this, ppVal);
+				return VT.get_Invitations(ref this, out ppVal);
 			}
-			public HRESULT get_ApplicationFilter(IRDPSRAPIApplicationFilter** ppVal) mut
+			public HRESULT get_ApplicationFilter(out IRDPSRAPIApplicationFilter* ppVal) mut
 			{
-				return VT.get_ApplicationFilter(&this, ppVal);
+				return VT.get_ApplicationFilter(ref this, out ppVal);
 			}
-			public HRESULT get_VirtualChannelManager(IRDPSRAPIVirtualChannelManager** ppVal) mut
+			public HRESULT get_VirtualChannelManager(out IRDPSRAPIVirtualChannelManager* ppVal) mut
 			{
-				return VT.get_VirtualChannelManager(&this, ppVal);
+				return VT.get_VirtualChannelManager(ref this, out ppVal);
 			}
 			public HRESULT put_SmartSizing(int16 vbSmartSizing) mut
 			{
-				return VT.put_SmartSizing(&this, vbSmartSizing);
+				return VT.put_SmartSizing(ref this, vbSmartSizing);
 			}
-			public HRESULT get_SmartSizing(int16* pvbSmartSizing) mut
+			public HRESULT get_SmartSizing(out int16 pvbSmartSizing) mut
 			{
-				return VT.get_SmartSizing(&this, pvbSmartSizing);
+				return VT.get_SmartSizing(ref this, out pvbSmartSizing);
 			}
 			public HRESULT RequestControl(CTRL_LEVEL CtrlLevel) mut
 			{
-				return VT.RequestControl(&this, CtrlLevel);
+				return VT.RequestControl(ref this, CtrlLevel);
 			}
 			public HRESULT put_DisconnectedText(BSTR bstrDisconnectedText) mut
 			{
-				return VT.put_DisconnectedText(&this, bstrDisconnectedText);
+				return VT.put_DisconnectedText(ref this, bstrDisconnectedText);
 			}
-			public HRESULT get_DisconnectedText(BSTR* pbstrDisconnectedText) mut
+			public HRESULT get_DisconnectedText(out BSTR pbstrDisconnectedText) mut
 			{
-				return VT.get_DisconnectedText(&this, pbstrDisconnectedText);
+				return VT.get_DisconnectedText(ref this, out pbstrDisconnectedText);
 			}
 			public HRESULT RequestColorDepthChange(int32 Bpp) mut
 			{
-				return VT.RequestColorDepthChange(&this, Bpp);
+				return VT.RequestColorDepthChange(ref this, Bpp);
 			}
-			public HRESULT get_Properties(IRDPSRAPISessionProperties** ppVal) mut
+			public HRESULT get_Properties(out IRDPSRAPISessionProperties* ppVal) mut
 			{
-				return VT.get_Properties(&this, ppVal);
+				return VT.get_Properties(ref this, out ppVal);
 			}
-			public HRESULT StartReverseConnectListener(BSTR bstrConnectionString, BSTR bstrUserName, BSTR bstrPassword, BSTR* pbstrReverseConnectString) mut
+			public HRESULT StartReverseConnectListener(BSTR bstrConnectionString, BSTR bstrUserName, BSTR bstrPassword, out BSTR pbstrReverseConnectString) mut
 			{
-				return VT.StartReverseConnectListener(&this, bstrConnectionString, bstrUserName, bstrPassword, pbstrReverseConnectString);
+				return VT.StartReverseConnectListener(ref this, bstrConnectionString, bstrUserName, bstrPassword, out pbstrReverseConnectString);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIViewer *self, BSTR bstrConnectionString, BSTR bstrName, BSTR bstrPassword) Connect;
-				public new function HRESULT(IRDPSRAPIViewer *self) Disconnect;
-				public new function HRESULT(IRDPSRAPIViewer *self, IRDPSRAPIAttendeeManager** ppVal) get_Attendees;
-				public new function HRESULT(IRDPSRAPIViewer *self, IRDPSRAPIInvitationManager** ppVal) get_Invitations;
-				public new function HRESULT(IRDPSRAPIViewer *self, IRDPSRAPIApplicationFilter** ppVal) get_ApplicationFilter;
-				public new function HRESULT(IRDPSRAPIViewer *self, IRDPSRAPIVirtualChannelManager** ppVal) get_VirtualChannelManager;
-				public new function HRESULT(IRDPSRAPIViewer *self, int16 vbSmartSizing) put_SmartSizing;
-				public new function HRESULT(IRDPSRAPIViewer *self, int16* pvbSmartSizing) get_SmartSizing;
-				public new function HRESULT(IRDPSRAPIViewer *self, CTRL_LEVEL CtrlLevel) RequestControl;
-				public new function HRESULT(IRDPSRAPIViewer *self, BSTR bstrDisconnectedText) put_DisconnectedText;
-				public new function HRESULT(IRDPSRAPIViewer *self, BSTR* pbstrDisconnectedText) get_DisconnectedText;
-				public new function HRESULT(IRDPSRAPIViewer *self, int32 Bpp) RequestColorDepthChange;
-				public new function HRESULT(IRDPSRAPIViewer *self, IRDPSRAPISessionProperties** ppVal) get_Properties;
-				public new function HRESULT(IRDPSRAPIViewer *self, BSTR bstrConnectionString, BSTR bstrUserName, BSTR bstrPassword, BSTR* pbstrReverseConnectString) StartReverseConnectListener;
+				public new function HRESULT(ref IRDPSRAPIViewer self, BSTR bstrConnectionString, BSTR bstrName, BSTR bstrPassword) Connect;
+				public new function HRESULT(ref IRDPSRAPIViewer self) Disconnect;
+				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIAttendeeManager* ppVal) get_Attendees;
+				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIInvitationManager* ppVal) get_Invitations;
+				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIApplicationFilter* ppVal) get_ApplicationFilter;
+				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPIVirtualChannelManager* ppVal) get_VirtualChannelManager;
+				public new function HRESULT(ref IRDPSRAPIViewer self, int16 vbSmartSizing) put_SmartSizing;
+				public new function HRESULT(ref IRDPSRAPIViewer self, out int16 pvbSmartSizing) get_SmartSizing;
+				public new function HRESULT(ref IRDPSRAPIViewer self, CTRL_LEVEL CtrlLevel) RequestControl;
+				public new function HRESULT(ref IRDPSRAPIViewer self, BSTR bstrDisconnectedText) put_DisconnectedText;
+				public new function HRESULT(ref IRDPSRAPIViewer self, out BSTR pbstrDisconnectedText) get_DisconnectedText;
+				public new function HRESULT(ref IRDPSRAPIViewer self, int32 Bpp) RequestColorDepthChange;
+				public new function HRESULT(ref IRDPSRAPIViewer self, out IRDPSRAPISessionProperties* ppVal) get_Properties;
+				public new function HRESULT(ref IRDPSRAPIViewer self, BSTR bstrConnectionString, BSTR bstrUserName, BSTR bstrPassword, out BSTR pbstrReverseConnectString) StartReverseConnectListener;
 			}
 		}
 		[CRepr]
@@ -923,47 +923,47 @@ namespace Win32
 			
 			public HRESULT SendMouseButtonEvent(RDPSRAPI_MOUSE_BUTTON_TYPE buttonType, int16 vbButtonDown, uint32 xPos, uint32 yPos) mut
 			{
-				return VT.SendMouseButtonEvent(&this, buttonType, vbButtonDown, xPos, yPos);
+				return VT.SendMouseButtonEvent(ref this, buttonType, vbButtonDown, xPos, yPos);
 			}
 			public HRESULT SendMouseMoveEvent(uint32 xPos, uint32 yPos) mut
 			{
-				return VT.SendMouseMoveEvent(&this, xPos, yPos);
+				return VT.SendMouseMoveEvent(ref this, xPos, yPos);
 			}
 			public HRESULT SendMouseWheelEvent(uint16 wheelRotation) mut
 			{
-				return VT.SendMouseWheelEvent(&this, wheelRotation);
+				return VT.SendMouseWheelEvent(ref this, wheelRotation);
 			}
 			public HRESULT SendKeyboardEvent(RDPSRAPI_KBD_CODE_TYPE codeType, uint16 keycode, int16 vbKeyUp, int16 vbRepeat, int16 vbExtended) mut
 			{
-				return VT.SendKeyboardEvent(&this, codeType, keycode, vbKeyUp, vbRepeat, vbExtended);
+				return VT.SendKeyboardEvent(ref this, codeType, keycode, vbKeyUp, vbRepeat, vbExtended);
 			}
 			public HRESULT SendSyncEvent(uint32 syncFlags) mut
 			{
-				return VT.SendSyncEvent(&this, syncFlags);
+				return VT.SendSyncEvent(ref this, syncFlags);
 			}
 			public HRESULT BeginTouchFrame() mut
 			{
-				return VT.BeginTouchFrame(&this);
+				return VT.BeginTouchFrame(ref this);
 			}
 			public HRESULT AddTouchInput(uint32 contactId, uint32 event, int32 x, int32 y) mut
 			{
-				return VT.AddTouchInput(&this, contactId, event, x, y);
+				return VT.AddTouchInput(ref this, contactId, event, x, y);
 			}
 			public HRESULT EndTouchFrame() mut
 			{
-				return VT.EndTouchFrame(&this);
+				return VT.EndTouchFrame(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRDPViewerInputSink *self, RDPSRAPI_MOUSE_BUTTON_TYPE buttonType, int16 vbButtonDown, uint32 xPos, uint32 yPos) SendMouseButtonEvent;
-				public new function HRESULT(IRDPViewerInputSink *self, uint32 xPos, uint32 yPos) SendMouseMoveEvent;
-				public new function HRESULT(IRDPViewerInputSink *self, uint16 wheelRotation) SendMouseWheelEvent;
-				public new function HRESULT(IRDPViewerInputSink *self, RDPSRAPI_KBD_CODE_TYPE codeType, uint16 keycode, int16 vbKeyUp, int16 vbRepeat, int16 vbExtended) SendKeyboardEvent;
-				public new function HRESULT(IRDPViewerInputSink *self, uint32 syncFlags) SendSyncEvent;
-				public new function HRESULT(IRDPViewerInputSink *self) BeginTouchFrame;
-				public new function HRESULT(IRDPViewerInputSink *self, uint32 contactId, uint32 event, int32 x, int32 y) AddTouchInput;
-				public new function HRESULT(IRDPViewerInputSink *self) EndTouchFrame;
+				public new function HRESULT(ref IRDPViewerInputSink self, RDPSRAPI_MOUSE_BUTTON_TYPE buttonType, int16 vbButtonDown, uint32 xPos, uint32 yPos) SendMouseButtonEvent;
+				public new function HRESULT(ref IRDPViewerInputSink self, uint32 xPos, uint32 yPos) SendMouseMoveEvent;
+				public new function HRESULT(ref IRDPViewerInputSink self, uint16 wheelRotation) SendMouseWheelEvent;
+				public new function HRESULT(ref IRDPViewerInputSink self, RDPSRAPI_KBD_CODE_TYPE codeType, uint16 keycode, int16 vbKeyUp, int16 vbRepeat, int16 vbExtended) SendKeyboardEvent;
+				public new function HRESULT(ref IRDPViewerInputSink self, uint32 syncFlags) SendSyncEvent;
+				public new function HRESULT(ref IRDPViewerInputSink self) BeginTouchFrame;
+				public new function HRESULT(ref IRDPViewerInputSink self, uint32 contactId, uint32 event, int32 x, int32 y) AddTouchInput;
+				public new function HRESULT(ref IRDPViewerInputSink self) EndTouchFrame;
 			}
 		}
 		[CRepr]
@@ -973,29 +973,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Width(int32* plWidth) mut
+			public HRESULT get_Width(out int32 plWidth) mut
 			{
-				return VT.get_Width(&this, plWidth);
+				return VT.get_Width(ref this, out plWidth);
 			}
-			public HRESULT get_Height(int32* plHeight) mut
+			public HRESULT get_Height(out int32 plHeight) mut
 			{
-				return VT.get_Height(&this, plHeight);
+				return VT.get_Height(ref this, out plHeight);
 			}
-			public HRESULT get_Bpp(int32* plBpp) mut
+			public HRESULT get_Bpp(out int32 plBpp) mut
 			{
-				return VT.get_Bpp(&this, plBpp);
+				return VT.get_Bpp(ref this, out plBpp);
 			}
-			public HRESULT GetFrameBufferBits(int32 x, int32 y, int32 Width, int32 Heigth, SAFEARRAY** ppBits) mut
+			public HRESULT GetFrameBufferBits(int32 x, int32 y, int32 Width, int32 Heigth, out SAFEARRAY* ppBits) mut
 			{
-				return VT.GetFrameBufferBits(&this, x, y, Width, Heigth, ppBits);
+				return VT.GetFrameBufferBits(ref this, x, y, Width, Heigth, out ppBits);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPIFrameBuffer *self, int32* plWidth) get_Width;
-				public new function HRESULT(IRDPSRAPIFrameBuffer *self, int32* plHeight) get_Height;
-				public new function HRESULT(IRDPSRAPIFrameBuffer *self, int32* plBpp) get_Bpp;
-				public new function HRESULT(IRDPSRAPIFrameBuffer *self, int32 x, int32 y, int32 Width, int32 Heigth, SAFEARRAY** ppBits) GetFrameBufferBits;
+				public new function HRESULT(ref IRDPSRAPIFrameBuffer self, out int32 plWidth) get_Width;
+				public new function HRESULT(ref IRDPSRAPIFrameBuffer self, out int32 plHeight) get_Height;
+				public new function HRESULT(ref IRDPSRAPIFrameBuffer self, out int32 plBpp) get_Bpp;
+				public new function HRESULT(ref IRDPSRAPIFrameBuffer self, int32 x, int32 y, int32 Width, int32 Heigth, out SAFEARRAY* ppBits) GetFrameBufferBits;
 			}
 		}
 		[CRepr]
@@ -1005,59 +1005,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Storage(uint8** ppbStorage) mut
+			public HRESULT get_Storage(out uint8* ppbStorage) mut
 			{
-				return VT.get_Storage(&this, ppbStorage);
+				return VT.get_Storage(ref this, out ppbStorage);
 			}
-			public HRESULT get_StorageSize(int32* plMaxStore) mut
+			public HRESULT get_StorageSize(out int32 plMaxStore) mut
 			{
-				return VT.get_StorageSize(&this, plMaxStore);
+				return VT.get_StorageSize(ref this, out plMaxStore);
 			}
-			public HRESULT get_PayloadSize(int32* plRetVal) mut
+			public HRESULT get_PayloadSize(out int32 plRetVal) mut
 			{
-				return VT.get_PayloadSize(&this, plRetVal);
+				return VT.get_PayloadSize(ref this, out plRetVal);
 			}
 			public HRESULT put_PayloadSize(int32 lVal) mut
 			{
-				return VT.put_PayloadSize(&this, lVal);
+				return VT.put_PayloadSize(ref this, lVal);
 			}
-			public HRESULT get_PayloadOffset(int32* plRetVal) mut
+			public HRESULT get_PayloadOffset(out int32 plRetVal) mut
 			{
-				return VT.get_PayloadOffset(&this, plRetVal);
+				return VT.get_PayloadOffset(ref this, out plRetVal);
 			}
 			public HRESULT put_PayloadOffset(int32 lRetVal) mut
 			{
-				return VT.put_PayloadOffset(&this, lRetVal);
+				return VT.put_PayloadOffset(ref this, lRetVal);
 			}
-			public HRESULT get_Flags(int32* plFlags) mut
+			public HRESULT get_Flags(out int32 plFlags) mut
 			{
-				return VT.get_Flags(&this, plFlags);
+				return VT.get_Flags(ref this, out plFlags);
 			}
 			public HRESULT put_Flags(int32 lFlags) mut
 			{
-				return VT.put_Flags(&this, lFlags);
+				return VT.put_Flags(ref this, lFlags);
 			}
-			public HRESULT get_Context(IUnknown** ppContext) mut
+			public HRESULT get_Context(out IUnknown* ppContext) mut
 			{
-				return VT.get_Context(&this, ppContext);
+				return VT.get_Context(ref this, out ppContext);
 			}
-			public HRESULT put_Context(IUnknown* pContext) mut
+			public HRESULT put_Context(ref IUnknown pContext) mut
 			{
-				return VT.put_Context(&this, pContext);
+				return VT.put_Context(ref this, ref pContext);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, uint8** ppbStorage) get_Storage;
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, int32* plMaxStore) get_StorageSize;
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, int32* plRetVal) get_PayloadSize;
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, int32 lVal) put_PayloadSize;
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, int32* plRetVal) get_PayloadOffset;
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, int32 lRetVal) put_PayloadOffset;
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, int32* plFlags) get_Flags;
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, int32 lFlags) put_Flags;
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, IUnknown** ppContext) get_Context;
-				public new function HRESULT(IRDPSRAPITransportStreamBuffer *self, IUnknown* pContext) put_Context;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out uint8* ppbStorage) get_Storage;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plMaxStore) get_StorageSize;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plRetVal) get_PayloadSize;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, int32 lVal) put_PayloadSize;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plRetVal) get_PayloadOffset;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, int32 lRetVal) put_PayloadOffset;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out int32 plFlags) get_Flags;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, int32 lFlags) put_Flags;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, out IUnknown* ppContext) get_Context;
+				public new function HRESULT(ref IRDPSRAPITransportStreamBuffer self, ref IUnknown pContext) put_Context;
 			}
 		}
 		[CRepr]
@@ -1067,24 +1067,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void OnWriteCompleted(IRDPSRAPITransportStreamBuffer* pBuffer) mut
+			public void OnWriteCompleted(ref IRDPSRAPITransportStreamBuffer pBuffer) mut
 			{
-				VT.OnWriteCompleted(&this, pBuffer);
+				VT.OnWriteCompleted(ref this, ref pBuffer);
 			}
-			public void OnReadCompleted(IRDPSRAPITransportStreamBuffer* pBuffer) mut
+			public void OnReadCompleted(ref IRDPSRAPITransportStreamBuffer pBuffer) mut
 			{
-				VT.OnReadCompleted(&this, pBuffer);
+				VT.OnReadCompleted(ref this, ref pBuffer);
 			}
 			public void OnStreamClosed(HRESULT hrReason) mut
 			{
-				VT.OnStreamClosed(&this, hrReason);
+				VT.OnStreamClosed(ref this, hrReason);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IRDPSRAPITransportStreamEvents *self, IRDPSRAPITransportStreamBuffer* pBuffer) OnWriteCompleted;
-				public new function void(IRDPSRAPITransportStreamEvents *self, IRDPSRAPITransportStreamBuffer* pBuffer) OnReadCompleted;
-				public new function void(IRDPSRAPITransportStreamEvents *self, HRESULT hrReason) OnStreamClosed;
+				public new function void(ref IRDPSRAPITransportStreamEvents self, ref IRDPSRAPITransportStreamBuffer pBuffer) OnWriteCompleted;
+				public new function void(ref IRDPSRAPITransportStreamEvents self, ref IRDPSRAPITransportStreamBuffer pBuffer) OnReadCompleted;
+				public new function void(ref IRDPSRAPITransportStreamEvents self, HRESULT hrReason) OnStreamClosed;
 			}
 		}
 		[CRepr]
@@ -1094,39 +1094,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AllocBuffer(int32 maxPayload, IRDPSRAPITransportStreamBuffer** ppBuffer) mut
+			public HRESULT AllocBuffer(int32 maxPayload, out IRDPSRAPITransportStreamBuffer* ppBuffer) mut
 			{
-				return VT.AllocBuffer(&this, maxPayload, ppBuffer);
+				return VT.AllocBuffer(ref this, maxPayload, out ppBuffer);
 			}
-			public HRESULT FreeBuffer(IRDPSRAPITransportStreamBuffer* pBuffer) mut
+			public HRESULT FreeBuffer(ref IRDPSRAPITransportStreamBuffer pBuffer) mut
 			{
-				return VT.FreeBuffer(&this, pBuffer);
+				return VT.FreeBuffer(ref this, ref pBuffer);
 			}
-			public HRESULT WriteBuffer(IRDPSRAPITransportStreamBuffer* pBuffer) mut
+			public HRESULT WriteBuffer(ref IRDPSRAPITransportStreamBuffer pBuffer) mut
 			{
-				return VT.WriteBuffer(&this, pBuffer);
+				return VT.WriteBuffer(ref this, ref pBuffer);
 			}
-			public HRESULT ReadBuffer(IRDPSRAPITransportStreamBuffer* pBuffer) mut
+			public HRESULT ReadBuffer(ref IRDPSRAPITransportStreamBuffer pBuffer) mut
 			{
-				return VT.ReadBuffer(&this, pBuffer);
+				return VT.ReadBuffer(ref this, ref pBuffer);
 			}
-			public HRESULT Open(IRDPSRAPITransportStreamEvents* pCallbacks) mut
+			public HRESULT Open(ref IRDPSRAPITransportStreamEvents pCallbacks) mut
 			{
-				return VT.Open(&this, pCallbacks);
+				return VT.Open(ref this, ref pCallbacks);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRDPSRAPITransportStream *self, int32 maxPayload, IRDPSRAPITransportStreamBuffer** ppBuffer) AllocBuffer;
-				public new function HRESULT(IRDPSRAPITransportStream *self, IRDPSRAPITransportStreamBuffer* pBuffer) FreeBuffer;
-				public new function HRESULT(IRDPSRAPITransportStream *self, IRDPSRAPITransportStreamBuffer* pBuffer) WriteBuffer;
-				public new function HRESULT(IRDPSRAPITransportStream *self, IRDPSRAPITransportStreamBuffer* pBuffer) ReadBuffer;
-				public new function HRESULT(IRDPSRAPITransportStream *self, IRDPSRAPITransportStreamEvents* pCallbacks) Open;
-				public new function HRESULT(IRDPSRAPITransportStream *self) Close;
+				public new function HRESULT(ref IRDPSRAPITransportStream self, int32 maxPayload, out IRDPSRAPITransportStreamBuffer* ppBuffer) AllocBuffer;
+				public new function HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamBuffer pBuffer) FreeBuffer;
+				public new function HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamBuffer pBuffer) WriteBuffer;
+				public new function HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamBuffer pBuffer) ReadBuffer;
+				public new function HRESULT(ref IRDPSRAPITransportStream self, ref IRDPSRAPITransportStreamEvents pCallbacks) Open;
+				public new function HRESULT(ref IRDPSRAPITransportStream self) Close;
 			}
 		}
 		[CRepr]
@@ -1138,77 +1138,77 @@ namespace Win32
 			
 			public HRESULT Open() mut
 			{
-				return VT.Open(&this);
+				return VT.Open(ref this);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			public HRESULT put_ColorDepth(int32 colorDepth) mut
 			{
-				return VT.put_ColorDepth(&this, colorDepth);
+				return VT.put_ColorDepth(ref this, colorDepth);
 			}
-			public HRESULT get_ColorDepth(int32* pColorDepth) mut
+			public HRESULT get_ColorDepth(out int32 pColorDepth) mut
 			{
-				return VT.get_ColorDepth(&this, pColorDepth);
+				return VT.get_ColorDepth(ref this, out pColorDepth);
 			}
-			public HRESULT get_Properties(IRDPSRAPISessionProperties** ppVal) mut
+			public HRESULT get_Properties(out IRDPSRAPISessionProperties* ppVal) mut
 			{
-				return VT.get_Properties(&this, ppVal);
+				return VT.get_Properties(ref this, out ppVal);
 			}
-			public HRESULT get_Attendees(IRDPSRAPIAttendeeManager** ppVal) mut
+			public HRESULT get_Attendees(out IRDPSRAPIAttendeeManager* ppVal) mut
 			{
-				return VT.get_Attendees(&this, ppVal);
+				return VT.get_Attendees(ref this, out ppVal);
 			}
-			public HRESULT get_Invitations(IRDPSRAPIInvitationManager** ppVal) mut
+			public HRESULT get_Invitations(out IRDPSRAPIInvitationManager* ppVal) mut
 			{
-				return VT.get_Invitations(&this, ppVal);
+				return VT.get_Invitations(ref this, out ppVal);
 			}
-			public HRESULT get_ApplicationFilter(IRDPSRAPIApplicationFilter** ppVal) mut
+			public HRESULT get_ApplicationFilter(out IRDPSRAPIApplicationFilter* ppVal) mut
 			{
-				return VT.get_ApplicationFilter(&this, ppVal);
+				return VT.get_ApplicationFilter(ref this, out ppVal);
 			}
-			public HRESULT get_VirtualChannelManager(IRDPSRAPIVirtualChannelManager** ppVal) mut
+			public HRESULT get_VirtualChannelManager(out IRDPSRAPIVirtualChannelManager* ppVal) mut
 			{
-				return VT.get_VirtualChannelManager(&this, ppVal);
+				return VT.get_VirtualChannelManager(ref this, out ppVal);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Resume() mut
 			{
-				return VT.Resume(&this);
+				return VT.Resume(ref this);
 			}
 			public HRESULT ConnectToClient(BSTR bstrConnectionString) mut
 			{
-				return VT.ConnectToClient(&this, bstrConnectionString);
+				return VT.ConnectToClient(ref this, bstrConnectionString);
 			}
 			public HRESULT SetDesktopSharedRect(int32 left, int32 top, int32 right, int32 bottom) mut
 			{
-				return VT.SetDesktopSharedRect(&this, left, top, right, bottom);
+				return VT.SetDesktopSharedRect(ref this, left, top, right, bottom);
 			}
-			public HRESULT GetDesktopSharedRect(int32* pleft, int32* ptop, int32* pright, int32* pbottom) mut
+			public HRESULT GetDesktopSharedRect(out int32 pleft, out int32 ptop, out int32 pright, out int32 pbottom) mut
 			{
-				return VT.GetDesktopSharedRect(&this, pleft, ptop, pright, pbottom);
+				return VT.GetDesktopSharedRect(ref this, out pleft, out ptop, out pright, out pbottom);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRDPSRAPISharingSession *self) Open;
-				public new function HRESULT(IRDPSRAPISharingSession *self) Close;
-				public new function HRESULT(IRDPSRAPISharingSession *self, int32 colorDepth) put_ColorDepth;
-				public new function HRESULT(IRDPSRAPISharingSession *self, int32* pColorDepth) get_ColorDepth;
-				public new function HRESULT(IRDPSRAPISharingSession *self, IRDPSRAPISessionProperties** ppVal) get_Properties;
-				public new function HRESULT(IRDPSRAPISharingSession *self, IRDPSRAPIAttendeeManager** ppVal) get_Attendees;
-				public new function HRESULT(IRDPSRAPISharingSession *self, IRDPSRAPIInvitationManager** ppVal) get_Invitations;
-				public new function HRESULT(IRDPSRAPISharingSession *self, IRDPSRAPIApplicationFilter** ppVal) get_ApplicationFilter;
-				public new function HRESULT(IRDPSRAPISharingSession *self, IRDPSRAPIVirtualChannelManager** ppVal) get_VirtualChannelManager;
-				public new function HRESULT(IRDPSRAPISharingSession *self) Pause;
-				public new function HRESULT(IRDPSRAPISharingSession *self) Resume;
-				public new function HRESULT(IRDPSRAPISharingSession *self, BSTR bstrConnectionString) ConnectToClient;
-				public new function HRESULT(IRDPSRAPISharingSession *self, int32 left, int32 top, int32 right, int32 bottom) SetDesktopSharedRect;
-				public new function HRESULT(IRDPSRAPISharingSession *self, int32* pleft, int32* ptop, int32* pright, int32* pbottom) GetDesktopSharedRect;
+				public new function HRESULT(ref IRDPSRAPISharingSession self) Open;
+				public new function HRESULT(ref IRDPSRAPISharingSession self) Close;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, int32 colorDepth) put_ColorDepth;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, out int32 pColorDepth) get_ColorDepth;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPISessionProperties* ppVal) get_Properties;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIAttendeeManager* ppVal) get_Attendees;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIInvitationManager* ppVal) get_Invitations;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIApplicationFilter* ppVal) get_ApplicationFilter;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, out IRDPSRAPIVirtualChannelManager* ppVal) get_VirtualChannelManager;
+				public new function HRESULT(ref IRDPSRAPISharingSession self) Pause;
+				public new function HRESULT(ref IRDPSRAPISharingSession self) Resume;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, BSTR bstrConnectionString) ConnectToClient;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, int32 left, int32 top, int32 right, int32 bottom) SetDesktopSharedRect;
+				public new function HRESULT(ref IRDPSRAPISharingSession self, out int32 pleft, out int32 ptop, out int32 pright, out int32 pbottom) GetDesktopSharedRect;
 			}
 		}
 		[CRepr]
@@ -1218,24 +1218,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConnectUsingTransportStream(IRDPSRAPITransportStream* pStream, BSTR bstrGroup, BSTR bstrAuthenticatedAttendeeName) mut
+			public HRESULT ConnectUsingTransportStream(ref IRDPSRAPITransportStream pStream, BSTR bstrGroup, BSTR bstrAuthenticatedAttendeeName) mut
 			{
-				return VT.ConnectUsingTransportStream(&this, pStream, bstrGroup, bstrAuthenticatedAttendeeName);
+				return VT.ConnectUsingTransportStream(ref this, ref pStream, bstrGroup, bstrAuthenticatedAttendeeName);
 			}
-			public HRESULT get_FrameBuffer(IRDPSRAPIFrameBuffer** ppVal) mut
+			public HRESULT get_FrameBuffer(out IRDPSRAPIFrameBuffer* ppVal) mut
 			{
-				return VT.get_FrameBuffer(&this, ppVal);
+				return VT.get_FrameBuffer(ref this, out ppVal);
 			}
-			public HRESULT SendControlLevelChangeResponse(IRDPSRAPIAttendee* pAttendee, CTRL_LEVEL RequestedLevel, int32 ReasonCode) mut
+			public HRESULT SendControlLevelChangeResponse(ref IRDPSRAPIAttendee pAttendee, CTRL_LEVEL RequestedLevel, int32 ReasonCode) mut
 			{
-				return VT.SendControlLevelChangeResponse(&this, pAttendee, RequestedLevel, ReasonCode);
+				return VT.SendControlLevelChangeResponse(ref this, ref pAttendee, RequestedLevel, ReasonCode);
 			}
 			[CRepr]
 			public struct VTable : IRDPSRAPISharingSession.VTable
 			{
-				public new function HRESULT(IRDPSRAPISharingSession2 *self, IRDPSRAPITransportStream* pStream, BSTR bstrGroup, BSTR bstrAuthenticatedAttendeeName) ConnectUsingTransportStream;
-				public new function HRESULT(IRDPSRAPISharingSession2 *self, IRDPSRAPIFrameBuffer** ppVal) get_FrameBuffer;
-				public new function HRESULT(IRDPSRAPISharingSession2 *self, IRDPSRAPIAttendee* pAttendee, CTRL_LEVEL RequestedLevel, int32 ReasonCode) SendControlLevelChangeResponse;
+				public new function HRESULT(ref IRDPSRAPISharingSession2 self, ref IRDPSRAPITransportStream pStream, BSTR bstrGroup, BSTR bstrAuthenticatedAttendeeName) ConnectUsingTransportStream;
+				public new function HRESULT(ref IRDPSRAPISharingSession2 self, out IRDPSRAPIFrameBuffer* ppVal) get_FrameBuffer;
+				public new function HRESULT(ref IRDPSRAPISharingSession2 self, ref IRDPSRAPIAttendee pAttendee, CTRL_LEVEL RequestedLevel, int32 ReasonCode) SendControlLevelChangeResponse;
 			}
 		}
 		[CRepr]

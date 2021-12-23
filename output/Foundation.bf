@@ -9993,11 +9993,11 @@ namespace Win32
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BSTR SysAllocString(PWSTR psz);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SysReAllocString(BSTR* pbstr, PWSTR psz);
+		public static extern int32 SysReAllocString(out BSTR pbstr, PWSTR psz);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BSTR SysAllocStringLen(char16* strIn, uint32 ui);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 SysReAllocStringLen(BSTR* pbstr, PWSTR psz, uint32 len);
+		public static extern int32 SysReAllocStringLen(out BSTR pbstr, PWSTR psz, uint32 len);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT SysAddRefString(BSTR bstrString);
 		[Import("oleaut32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -10013,11 +10013,11 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CloseHandle(HANDLE hObject);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL DuplicateHandle(HANDLE hSourceProcessHandle, HANDLE hSourceHandle, HANDLE hTargetProcessHandle, HANDLE* lpTargetHandle, uint32 dwDesiredAccess, BOOL bInheritHandle, DUPLICATE_HANDLE_OPTIONS dwOptions);
+		public static extern BOOL DuplicateHandle(HANDLE hSourceProcessHandle, HANDLE hSourceHandle, HANDLE hTargetProcessHandle, out HANDLE lpTargetHandle, uint32 dwDesiredAccess, BOOL bInheritHandle, DUPLICATE_HANDLE_OPTIONS dwOptions);
 		[Import("api-ms-win-core-handle-l1-1-0.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CompareObjectHandles(HANDLE hFirstObjectHandle, HANDLE hSecondObjectHandle);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetHandleInformation(HANDLE hObject, uint32* lpdwFlags);
+		public static extern BOOL GetHandleInformation(HANDLE hObject, out uint32 lpdwFlags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetHandleInformation(HANDLE hObject, uint32 dwMask, HANDLE_FLAGS dwFlags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]

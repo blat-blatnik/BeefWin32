@@ -67,12 +67,12 @@ namespace Win32
 			
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : ISequentialStream.VTable
 			{
-				public new function HRESULT(IXpsPrintJobStream *self) Close;
+				public new function HRESULT(ref IXpsPrintJobStream self) Close;
 			}
 		}
 		[CRepr]
@@ -84,17 +84,17 @@ namespace Win32
 			
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
-			public HRESULT GetJobStatus(XPS_JOB_STATUS* jobStatus) mut
+			public HRESULT GetJobStatus(out XPS_JOB_STATUS jobStatus) mut
 			{
-				return VT.GetJobStatus(&this, jobStatus);
+				return VT.GetJobStatus(ref this, out jobStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXpsPrintJob *self) Cancel;
-				public new function HRESULT(IXpsPrintJob *self, XPS_JOB_STATUS* jobStatus) GetJobStatus;
+				public new function HRESULT(ref IXpsPrintJob self) Cancel;
+				public new function HRESULT(ref IXpsPrintJob self, out XPS_JOB_STATUS jobStatus) GetJobStatus;
 			}
 		}
 		[CRepr]
@@ -104,24 +104,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPackageTargetTypes(uint32* targetCount, Guid** targetTypes) mut
+			public HRESULT GetPackageTargetTypes(out uint32 targetCount, Guid** targetTypes) mut
 			{
-				return VT.GetPackageTargetTypes(&this, targetCount, targetTypes);
+				return VT.GetPackageTargetTypes(ref this, out targetCount, targetTypes);
 			}
-			public HRESULT GetPackageTarget(Guid* guidTargetType, Guid* riid, void** ppvTarget) mut
+			public HRESULT GetPackageTarget(in Guid guidTargetType, in Guid riid, void** ppvTarget) mut
 			{
-				return VT.GetPackageTarget(&this, guidTargetType, riid, ppvTarget);
+				return VT.GetPackageTarget(ref this, guidTargetType, riid, ppvTarget);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintDocumentPackageTarget *self, uint32* targetCount, Guid** targetTypes) GetPackageTargetTypes;
-				public new function HRESULT(IPrintDocumentPackageTarget *self, Guid* guidTargetType, Guid* riid, void** ppvTarget) GetPackageTarget;
-				public new function HRESULT(IPrintDocumentPackageTarget *self) Cancel;
+				public new function HRESULT(ref IPrintDocumentPackageTarget self, out uint32 targetCount, Guid** targetTypes) GetPackageTargetTypes;
+				public new function HRESULT(ref IPrintDocumentPackageTarget self, in Guid guidTargetType, in Guid riid, void** ppvTarget) GetPackageTarget;
+				public new function HRESULT(ref IPrintDocumentPackageTarget self) Cancel;
 			}
 		}
 		[CRepr]
@@ -131,14 +131,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PackageStatusUpdated(PrintDocumentPackageStatus* packageStatus) mut
+			public HRESULT PackageStatusUpdated(ref PrintDocumentPackageStatus packageStatus) mut
 			{
-				return VT.PackageStatusUpdated(&this, packageStatus);
+				return VT.PackageStatusUpdated(ref this, ref packageStatus);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrintDocumentPackageStatusEvent *self, PrintDocumentPackageStatus* packageStatus) PackageStatusUpdated;
+				public new function HRESULT(ref IPrintDocumentPackageStatusEvent self, ref PrintDocumentPackageStatus packageStatus) PackageStatusUpdated;
 			}
 		}
 		[CRepr]
@@ -148,14 +148,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDocumentPackageTargetForPrintJob(PWSTR printerName, PWSTR jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget) mut
+			public HRESULT CreateDocumentPackageTargetForPrintJob(PWSTR printerName, PWSTR jobName, ref IStream jobOutputStream, ref IStream jobPrintTicketStream, out IPrintDocumentPackageTarget* docPackageTarget) mut
 			{
-				return VT.CreateDocumentPackageTargetForPrintJob(&this, printerName, jobName, jobOutputStream, jobPrintTicketStream, docPackageTarget);
+				return VT.CreateDocumentPackageTargetForPrintJob(ref this, printerName, jobName, ref jobOutputStream, ref jobPrintTicketStream, out docPackageTarget);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintDocumentPackageTargetFactory *self, PWSTR printerName, PWSTR jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget) CreateDocumentPackageTargetForPrintJob;
+				public new function HRESULT(ref IPrintDocumentPackageTargetFactory self, PWSTR printerName, PWSTR jobName, ref IStream jobOutputStream, ref IStream jobPrintTicketStream, out IPrintDocumentPackageTarget* docPackageTarget) CreateDocumentPackageTargetForPrintJob;
 			}
 		}
 		

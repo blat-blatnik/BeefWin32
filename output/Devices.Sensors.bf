@@ -283,14 +283,14 @@ namespace Win32
 		{
 			public uint32 AllocatedSizeInBytes;
 			public uint32 Count;
-			public SENSOR_VALUE_PAIR[] List;
+			public SENSOR_VALUE_PAIR[0] List;
 		}
 		[CRepr]
 		public struct SENSOR_PROPERTY_LIST
 		{
 			public uint32 AllocatedSizeInBytes;
 			public uint32 Count;
-			public PROPERTYKEY[] List;
+			public PROPERTYKEY[0] List;
 		}
 		[CRepr]
 		public struct VEC3D
@@ -358,34 +358,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSensorsByCategory(Guid* sensorCategory, ISensorCollection** ppSensorsFound) mut
+			public HRESULT GetSensorsByCategory(ref Guid sensorCategory, ISensorCollection** ppSensorsFound) mut
 			{
-				return VT.GetSensorsByCategory(&this, sensorCategory, ppSensorsFound);
+				return VT.GetSensorsByCategory(ref this, ref sensorCategory, ppSensorsFound);
 			}
-			public HRESULT GetSensorsByType(Guid* sensorType, ISensorCollection** ppSensorsFound) mut
+			public HRESULT GetSensorsByType(ref Guid sensorType, ISensorCollection** ppSensorsFound) mut
 			{
-				return VT.GetSensorsByType(&this, sensorType, ppSensorsFound);
+				return VT.GetSensorsByType(ref this, ref sensorType, ppSensorsFound);
 			}
-			public HRESULT GetSensorByID(Guid* sensorID, ISensor** ppSensor) mut
+			public HRESULT GetSensorByID(ref Guid sensorID, ISensor** ppSensor) mut
 			{
-				return VT.GetSensorByID(&this, sensorID, ppSensor);
+				return VT.GetSensorByID(ref this, ref sensorID, ppSensor);
 			}
 			public HRESULT SetEventSink(ISensorManagerEvents* pEvents) mut
 			{
-				return VT.SetEventSink(&this, pEvents);
+				return VT.SetEventSink(ref this, pEvents);
 			}
 			public HRESULT RequestPermissions(HWND hParent, ISensorCollection* pSensors, BOOL fModal) mut
 			{
-				return VT.RequestPermissions(&this, hParent, pSensors, fModal);
+				return VT.RequestPermissions(ref this, hParent, pSensors, fModal);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISensorManager *self, Guid* sensorCategory, ISensorCollection** ppSensorsFound) GetSensorsByCategory;
-				public new function HRESULT(ISensorManager *self, Guid* sensorType, ISensorCollection** ppSensorsFound) GetSensorsByType;
-				public new function HRESULT(ISensorManager *self, Guid* sensorID, ISensor** ppSensor) GetSensorByID;
-				public new function HRESULT(ISensorManager *self, ISensorManagerEvents* pEvents) SetEventSink;
-				public new function HRESULT(ISensorManager *self, HWND hParent, ISensorCollection* pSensors, BOOL fModal) RequestPermissions;
+				public new function HRESULT(ref ISensorManager self, ref Guid sensorCategory, ISensorCollection** ppSensorsFound) GetSensorsByCategory;
+				public new function HRESULT(ref ISensorManager self, ref Guid sensorType, ISensorCollection** ppSensorsFound) GetSensorsByType;
+				public new function HRESULT(ref ISensorManager self, ref Guid sensorID, ISensor** ppSensor) GetSensorByID;
+				public new function HRESULT(ref ISensorManager self, ISensorManagerEvents* pEvents) SetEventSink;
+				public new function HRESULT(ref ISensorManager self, HWND hParent, ISensorCollection* pSensors, BOOL fModal) RequestPermissions;
 			}
 		}
 		[CRepr]
@@ -395,19 +395,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGlobalLocationPermission(BOOL* pfEnabled) mut
+			public HRESULT GetGlobalLocationPermission(out BOOL pfEnabled) mut
 			{
-				return VT.GetGlobalLocationPermission(&this, pfEnabled);
+				return VT.GetGlobalLocationPermission(ref this, out pfEnabled);
 			}
 			public HRESULT CheckLocationCapability(uint32 dwClientThreadId) mut
 			{
-				return VT.CheckLocationCapability(&this, dwClientThreadId);
+				return VT.CheckLocationCapability(ref this, dwClientThreadId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILocationPermissions *self, BOOL* pfEnabled) GetGlobalLocationPermission;
-				public new function HRESULT(ILocationPermissions *self, uint32 dwClientThreadId) CheckLocationCapability;
+				public new function HRESULT(ref ILocationPermissions self, out BOOL pfEnabled) GetGlobalLocationPermission;
+				public new function HRESULT(ref ILocationPermissions self, uint32 dwClientThreadId) CheckLocationCapability;
 			}
 		}
 		[CRepr]
@@ -419,37 +419,37 @@ namespace Win32
 			
 			public HRESULT GetAt(uint32 ulIndex, ISensor** ppSensor) mut
 			{
-				return VT.GetAt(&this, ulIndex, ppSensor);
+				return VT.GetAt(ref this, ulIndex, ppSensor);
 			}
-			public HRESULT GetCount(uint32* pCount) mut
+			public HRESULT GetCount(out uint32 pCount) mut
 			{
-				return VT.GetCount(&this, pCount);
+				return VT.GetCount(ref this, out pCount);
 			}
 			public HRESULT Add(ISensor* pSensor) mut
 			{
-				return VT.Add(&this, pSensor);
+				return VT.Add(ref this, pSensor);
 			}
 			public HRESULT Remove(ISensor* pSensor) mut
 			{
-				return VT.Remove(&this, pSensor);
+				return VT.Remove(ref this, pSensor);
 			}
-			public HRESULT RemoveByID(Guid* sensorID) mut
+			public HRESULT RemoveByID(ref Guid sensorID) mut
 			{
-				return VT.RemoveByID(&this, sensorID);
+				return VT.RemoveByID(ref this, ref sensorID);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISensorCollection *self, uint32 ulIndex, ISensor** ppSensor) GetAt;
-				public new function HRESULT(ISensorCollection *self, uint32* pCount) GetCount;
-				public new function HRESULT(ISensorCollection *self, ISensor* pSensor) Add;
-				public new function HRESULT(ISensorCollection *self, ISensor* pSensor) Remove;
-				public new function HRESULT(ISensorCollection *self, Guid* sensorID) RemoveByID;
-				public new function HRESULT(ISensorCollection *self) Clear;
+				public new function HRESULT(ref ISensorCollection self, uint32 ulIndex, ISensor** ppSensor) GetAt;
+				public new function HRESULT(ref ISensorCollection self, out uint32 pCount) GetCount;
+				public new function HRESULT(ref ISensorCollection self, ISensor* pSensor) Add;
+				public new function HRESULT(ref ISensorCollection self, ISensor* pSensor) Remove;
+				public new function HRESULT(ref ISensorCollection self, ref Guid sensorID) RemoveByID;
+				public new function HRESULT(ref ISensorCollection self) Clear;
 			}
 		}
 		[CRepr]
@@ -459,84 +459,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetID(Guid* pID) mut
+			public HRESULT GetID(out Guid pID) mut
 			{
-				return VT.GetID(&this, pID);
+				return VT.GetID(ref this, out pID);
 			}
-			public HRESULT GetCategory(Guid* pSensorCategory) mut
+			public HRESULT GetCategory(out Guid pSensorCategory) mut
 			{
-				return VT.GetCategory(&this, pSensorCategory);
+				return VT.GetCategory(ref this, out pSensorCategory);
 			}
-			public HRESULT ComGetType(Guid* pSensorType) mut
+			public HRESULT ComGetType(out Guid pSensorType) mut
 			{
-				return VT.ComGetType(&this, pSensorType);
+				return VT.ComGetType(ref this, out pSensorType);
 			}
 			public HRESULT GetFriendlyName(BSTR* pFriendlyName) mut
 			{
-				return VT.GetFriendlyName(&this, pFriendlyName);
+				return VT.GetFriendlyName(ref this, pFriendlyName);
 			}
-			public HRESULT GetProperty(PROPERTYKEY* key, PROPVARIANT* pProperty) mut
+			public HRESULT GetProperty(in PROPERTYKEY key, out PROPVARIANT pProperty) mut
 			{
-				return VT.GetProperty(&this, key, pProperty);
+				return VT.GetProperty(ref this, key, out pProperty);
 			}
 			public HRESULT GetProperties(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) mut
 			{
-				return VT.GetProperties(&this, pKeys, ppProperties);
+				return VT.GetProperties(ref this, pKeys, ppProperties);
 			}
 			public HRESULT GetSupportedDataFields(IPortableDeviceKeyCollection** ppDataFields) mut
 			{
-				return VT.GetSupportedDataFields(&this, ppDataFields);
+				return VT.GetSupportedDataFields(ref this, ppDataFields);
 			}
 			public HRESULT SetProperties(IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) mut
 			{
-				return VT.SetProperties(&this, pProperties, ppResults);
+				return VT.SetProperties(ref this, pProperties, ppResults);
 			}
-			public HRESULT SupportsDataField(PROPERTYKEY* key, int16* pIsSupported) mut
+			public HRESULT SupportsDataField(in PROPERTYKEY key, out int16 pIsSupported) mut
 			{
-				return VT.SupportsDataField(&this, key, pIsSupported);
+				return VT.SupportsDataField(ref this, key, out pIsSupported);
 			}
-			public HRESULT GetState(SensorState* pState) mut
+			public HRESULT GetState(out SensorState pState) mut
 			{
-				return VT.GetState(&this, pState);
+				return VT.GetState(ref this, out pState);
 			}
 			public HRESULT GetData(ISensorDataReport** ppDataReport) mut
 			{
-				return VT.GetData(&this, ppDataReport);
+				return VT.GetData(ref this, ppDataReport);
 			}
-			public HRESULT SupportsEvent(Guid* eventGuid, int16* pIsSupported) mut
+			public HRESULT SupportsEvent(in Guid eventGuid, out int16 pIsSupported) mut
 			{
-				return VT.SupportsEvent(&this, eventGuid, pIsSupported);
+				return VT.SupportsEvent(ref this, eventGuid, out pIsSupported);
 			}
-			public HRESULT GetEventInterest(Guid** ppValues, uint32* pCount) mut
+			public HRESULT GetEventInterest(Guid** ppValues, out uint32 pCount) mut
 			{
-				return VT.GetEventInterest(&this, ppValues, pCount);
+				return VT.GetEventInterest(ref this, ppValues, out pCount);
 			}
 			public HRESULT SetEventInterest(Guid* pValues, uint32 count) mut
 			{
-				return VT.SetEventInterest(&this, pValues, count);
+				return VT.SetEventInterest(ref this, pValues, count);
 			}
 			public HRESULT SetEventSink(ISensorEvents* pEvents) mut
 			{
-				return VT.SetEventSink(&this, pEvents);
+				return VT.SetEventSink(ref this, pEvents);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISensor *self, Guid* pID) GetID;
-				public new function HRESULT(ISensor *self, Guid* pSensorCategory) GetCategory;
-				public new function HRESULT(ISensor *self, Guid* pSensorType) ComGetType;
-				public new function HRESULT(ISensor *self, BSTR* pFriendlyName) GetFriendlyName;
-				public new function HRESULT(ISensor *self, PROPERTYKEY* key, PROPVARIANT* pProperty) GetProperty;
-				public new function HRESULT(ISensor *self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) GetProperties;
-				public new function HRESULT(ISensor *self, IPortableDeviceKeyCollection** ppDataFields) GetSupportedDataFields;
-				public new function HRESULT(ISensor *self, IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) SetProperties;
-				public new function HRESULT(ISensor *self, PROPERTYKEY* key, int16* pIsSupported) SupportsDataField;
-				public new function HRESULT(ISensor *self, SensorState* pState) GetState;
-				public new function HRESULT(ISensor *self, ISensorDataReport** ppDataReport) GetData;
-				public new function HRESULT(ISensor *self, Guid* eventGuid, int16* pIsSupported) SupportsEvent;
-				public new function HRESULT(ISensor *self, Guid** ppValues, uint32* pCount) GetEventInterest;
-				public new function HRESULT(ISensor *self, Guid* pValues, uint32 count) SetEventInterest;
-				public new function HRESULT(ISensor *self, ISensorEvents* pEvents) SetEventSink;
+				public new function HRESULT(ref ISensor self, out Guid pID) GetID;
+				public new function HRESULT(ref ISensor self, out Guid pSensorCategory) GetCategory;
+				public new function HRESULT(ref ISensor self, out Guid pSensorType) ComGetType;
+				public new function HRESULT(ref ISensor self, BSTR* pFriendlyName) GetFriendlyName;
+				public new function HRESULT(ref ISensor self, in PROPERTYKEY key, out PROPVARIANT pProperty) GetProperty;
+				public new function HRESULT(ref ISensor self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppProperties) GetProperties;
+				public new function HRESULT(ref ISensor self, IPortableDeviceKeyCollection** ppDataFields) GetSupportedDataFields;
+				public new function HRESULT(ref ISensor self, IPortableDeviceValues* pProperties, IPortableDeviceValues** ppResults) SetProperties;
+				public new function HRESULT(ref ISensor self, in PROPERTYKEY key, out int16 pIsSupported) SupportsDataField;
+				public new function HRESULT(ref ISensor self, out SensorState pState) GetState;
+				public new function HRESULT(ref ISensor self, ISensorDataReport** ppDataReport) GetData;
+				public new function HRESULT(ref ISensor self, in Guid eventGuid, out int16 pIsSupported) SupportsEvent;
+				public new function HRESULT(ref ISensor self, Guid** ppValues, out uint32 pCount) GetEventInterest;
+				public new function HRESULT(ref ISensor self, Guid* pValues, uint32 count) SetEventInterest;
+				public new function HRESULT(ref ISensor self, ISensorEvents* pEvents) SetEventSink;
 			}
 		}
 		[CRepr]
@@ -546,24 +546,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTimestamp(SYSTEMTIME* pTimeStamp) mut
+			public HRESULT GetTimestamp(out SYSTEMTIME pTimeStamp) mut
 			{
-				return VT.GetTimestamp(&this, pTimeStamp);
+				return VT.GetTimestamp(ref this, out pTimeStamp);
 			}
-			public HRESULT GetSensorValue(PROPERTYKEY* pKey, PROPVARIANT* pValue) mut
+			public HRESULT GetSensorValue(in PROPERTYKEY pKey, out PROPVARIANT pValue) mut
 			{
-				return VT.GetSensorValue(&this, pKey, pValue);
+				return VT.GetSensorValue(ref this, pKey, out pValue);
 			}
 			public HRESULT GetSensorValues(IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) mut
 			{
-				return VT.GetSensorValues(&this, pKeys, ppValues);
+				return VT.GetSensorValues(ref this, pKeys, ppValues);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISensorDataReport *self, SYSTEMTIME* pTimeStamp) GetTimestamp;
-				public new function HRESULT(ISensorDataReport *self, PROPERTYKEY* pKey, PROPVARIANT* pValue) GetSensorValue;
-				public new function HRESULT(ISensorDataReport *self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) GetSensorValues;
+				public new function HRESULT(ref ISensorDataReport self, out SYSTEMTIME pTimeStamp) GetTimestamp;
+				public new function HRESULT(ref ISensorDataReport self, in PROPERTYKEY pKey, out PROPVARIANT pValue) GetSensorValue;
+				public new function HRESULT(ref ISensorDataReport self, IPortableDeviceKeyCollection* pKeys, IPortableDeviceValues** ppValues) GetSensorValues;
 			}
 		}
 		[CRepr]
@@ -575,12 +575,12 @@ namespace Win32
 			
 			public HRESULT OnSensorEnter(ISensor* pSensor, SensorState state) mut
 			{
-				return VT.OnSensorEnter(&this, pSensor, state);
+				return VT.OnSensorEnter(ref this, pSensor, state);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISensorManagerEvents *self, ISensor* pSensor, SensorState state) OnSensorEnter;
+				public new function HRESULT(ref ISensorManagerEvents self, ISensor* pSensor, SensorState state) OnSensorEnter;
 			}
 		}
 		[CRepr]
@@ -592,112 +592,112 @@ namespace Win32
 			
 			public HRESULT OnStateChanged(ISensor* pSensor, SensorState state) mut
 			{
-				return VT.OnStateChanged(&this, pSensor, state);
+				return VT.OnStateChanged(ref this, pSensor, state);
 			}
 			public HRESULT OnDataUpdated(ISensor* pSensor, ISensorDataReport* pNewData) mut
 			{
-				return VT.OnDataUpdated(&this, pSensor, pNewData);
+				return VT.OnDataUpdated(ref this, pSensor, pNewData);
 			}
-			public HRESULT OnEvent(ISensor* pSensor, Guid* eventID, IPortableDeviceValues* pEventData) mut
+			public HRESULT OnEvent(ISensor* pSensor, in Guid eventID, IPortableDeviceValues* pEventData) mut
 			{
-				return VT.OnEvent(&this, pSensor, eventID, pEventData);
+				return VT.OnEvent(ref this, pSensor, eventID, pEventData);
 			}
-			public HRESULT OnLeave(Guid* ID) mut
+			public HRESULT OnLeave(ref Guid ID) mut
 			{
-				return VT.OnLeave(&this, ID);
+				return VT.OnLeave(ref this, ref ID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISensorEvents *self, ISensor* pSensor, SensorState state) OnStateChanged;
-				public new function HRESULT(ISensorEvents *self, ISensor* pSensor, ISensorDataReport* pNewData) OnDataUpdated;
-				public new function HRESULT(ISensorEvents *self, ISensor* pSensor, Guid* eventID, IPortableDeviceValues* pEventData) OnEvent;
-				public new function HRESULT(ISensorEvents *self, Guid* ID) OnLeave;
+				public new function HRESULT(ref ISensorEvents self, ISensor* pSensor, SensorState state) OnStateChanged;
+				public new function HRESULT(ref ISensorEvents self, ISensor* pSensor, ISensorDataReport* pNewData) OnDataUpdated;
+				public new function HRESULT(ref ISensorEvents self, ISensor* pSensor, in Guid eventID, IPortableDeviceValues* pEventData) OnEvent;
+				public new function HRESULT(ref ISensorEvents self, ref Guid ID) OnLeave;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS GetPerformanceTime(uint32* TimeMs);
+		public static extern NTSTATUS GetPerformanceTime(out uint32 TimeMs);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT InitPropVariantFromFloat(float fltVal, PROPVARIANT* ppropvar);
+		public static extern HRESULT InitPropVariantFromFloat(float fltVal, out PROPVARIANT ppropvar);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetPropVariant(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, BOOLEAN TypeCheck, PROPVARIANT* pValue);
+		public static extern NTSTATUS PropKeyFindKeyGetPropVariant(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, BOOLEAN TypeCheck, out PROPVARIANT pValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeySetPropVariant(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, BOOLEAN TypeCheck, PROPVARIANT* pValue);
+		public static extern NTSTATUS PropKeyFindKeySetPropVariant(out SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, BOOLEAN TypeCheck, ref PROPVARIANT pValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetFileTime(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, FILETIME* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetFileTime(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, out FILETIME pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetGuid(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, Guid* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetGuid(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, out Guid pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetBool(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, BOOL* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetBool(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, out BOOL pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetUlong(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, uint32* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetUlong(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, out uint32 pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetUshort(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, uint16* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetUshort(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, out uint16 pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetFloat(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, float* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetFloat(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, out float pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetDouble(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, double* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetDouble(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, out double pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetInt32(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, int32* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetInt32(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, out int32 pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetInt64(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, int64* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetInt64(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, out int64 pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetNthUlong(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, uint32 Occurrence, uint32* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetNthUlong(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, uint32 Occurrence, out uint32 pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetNthUshort(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, uint32 Occurrence, uint16* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetNthUshort(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, uint32 Occurrence, out uint16 pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropKeyFindKeyGetNthInt64(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey, uint32 Occurrence, int64* pRetValue);
+		public static extern NTSTATUS PropKeyFindKeyGetNthInt64(in SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey, uint32 Occurrence, out int64 pRetValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOLEAN IsKeyPresentInPropertyList(SENSOR_PROPERTY_LIST* pList, PROPERTYKEY* pKey);
+		public static extern BOOLEAN IsKeyPresentInPropertyList(ref SENSOR_PROPERTY_LIST pList, in PROPERTYKEY pKey);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOLEAN IsKeyPresentInCollectionList(SENSOR_COLLECTION_LIST* pList, PROPERTYKEY* pKey);
+		public static extern BOOLEAN IsKeyPresentInCollectionList(ref SENSOR_COLLECTION_LIST pList, in PROPERTYKEY pKey);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOLEAN IsCollectionListSame(SENSOR_COLLECTION_LIST* ListA, SENSOR_COLLECTION_LIST* ListB);
+		public static extern BOOLEAN IsCollectionListSame(in SENSOR_COLLECTION_LIST ListA, in SENSOR_COLLECTION_LIST ListB);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropVariantGetInformation(PROPVARIANT* PropVariantValue, uint32* PropVariantOffset, uint32* PropVariantSize, void** PropVariantPointer, uint32* RemappedType);
+		public static extern NTSTATUS PropVariantGetInformation(in PROPVARIANT PropVariantValue, uint32* PropVariantOffset, uint32* PropVariantSize, void** PropVariantPointer, uint32* RemappedType);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS PropertiesListCopy(SENSOR_PROPERTY_LIST* Target, SENSOR_PROPERTY_LIST* Source);
+		public static extern NTSTATUS PropertiesListCopy(out SENSOR_PROPERTY_LIST Target, in SENSOR_PROPERTY_LIST Source);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PropertiesListGetFillableCount(uint32 BufferSizeBytes);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CollectionsListGetMarshalledSize(SENSOR_COLLECTION_LIST* Collection);
+		public static extern uint32 CollectionsListGetMarshalledSize(in SENSOR_COLLECTION_LIST Collection);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS CollectionsListCopyAndMarshall(SENSOR_COLLECTION_LIST* Target, SENSOR_COLLECTION_LIST* Source);
+		public static extern NTSTATUS CollectionsListCopyAndMarshall(out SENSOR_COLLECTION_LIST Target, in SENSOR_COLLECTION_LIST Source);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS CollectionsListMarshall(SENSOR_COLLECTION_LIST* Target);
+		public static extern NTSTATUS CollectionsListMarshall(out SENSOR_COLLECTION_LIST Target);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CollectionsListGetMarshalledSizeWithoutSerialization(SENSOR_COLLECTION_LIST* Collection);
+		public static extern uint32 CollectionsListGetMarshalledSizeWithoutSerialization(in SENSOR_COLLECTION_LIST Collection);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS CollectionsListUpdateMarshalledPointer(SENSOR_COLLECTION_LIST* Collection);
+		public static extern NTSTATUS CollectionsListUpdateMarshalledPointer(out SENSOR_COLLECTION_LIST Collection);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS SerializationBufferAllocate(uint32 SizeInBytes, uint8** pBuffer);
+		public static extern NTSTATUS SerializationBufferAllocate(uint32 SizeInBytes, out uint8* pBuffer);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void SerializationBufferFree(uint8* Buffer);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CollectionsListGetSerializedSize(SENSOR_COLLECTION_LIST* Collection);
+		public static extern uint32 CollectionsListGetSerializedSize(in SENSOR_COLLECTION_LIST Collection);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS CollectionsListSerializeToBuffer(SENSOR_COLLECTION_LIST* SourceCollection, uint32 TargetBufferSizeInBytes, uint8* TargetBuffer);
+		public static extern NTSTATUS CollectionsListSerializeToBuffer(in SENSOR_COLLECTION_LIST SourceCollection, uint32 TargetBufferSizeInBytes, out uint8 TargetBuffer);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS CollectionsListAllocateBufferAndSerialize(SENSOR_COLLECTION_LIST* SourceCollection, uint32* pTargetBufferSizeInBytes, uint8** pTargetBuffer);
+		public static extern NTSTATUS CollectionsListAllocateBufferAndSerialize(in SENSOR_COLLECTION_LIST SourceCollection, out uint32 pTargetBufferSizeInBytes, out uint8* pTargetBuffer);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS CollectionsListDeserializeFromBuffer(uint32 SourceBufferSizeInBytes, uint8* SourceBuffer, SENSOR_COLLECTION_LIST* TargetCollection);
+		public static extern NTSTATUS CollectionsListDeserializeFromBuffer(uint32 SourceBufferSizeInBytes, in uint8 SourceBuffer, out SENSOR_COLLECTION_LIST TargetCollection);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS SensorCollectionGetAt(uint32 Index, SENSOR_COLLECTION_LIST* pSensorsList, PROPERTYKEY* pKey, PROPVARIANT* pValue);
+		public static extern NTSTATUS SensorCollectionGetAt(uint32 Index, ref SENSOR_COLLECTION_LIST pSensorsList, PROPERTYKEY* pKey, PROPVARIANT* pValue);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 CollectionsListGetFillableCount(uint32 BufferSizeBytes);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOLEAN EvaluateActivityThresholds(SENSOR_COLLECTION_LIST* newSample, SENSOR_COLLECTION_LIST* oldSample, SENSOR_COLLECTION_LIST* thresholds);
+		public static extern BOOLEAN EvaluateActivityThresholds(ref SENSOR_COLLECTION_LIST newSample, ref SENSOR_COLLECTION_LIST oldSample, ref SENSOR_COLLECTION_LIST thresholds);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern NTSTATUS CollectionsListSortSubscribedActivitiesByConfidence(SENSOR_COLLECTION_LIST* thresholds, SENSOR_COLLECTION_LIST* pCollection);
+		public static extern NTSTATUS CollectionsListSortSubscribedActivitiesByConfidence(ref SENSOR_COLLECTION_LIST thresholds, out SENSOR_COLLECTION_LIST pCollection);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT InitPropVariantFromCLSIDArray(Guid* members, uint32 size, PROPVARIANT* ppropvar);
+		public static extern HRESULT InitPropVariantFromCLSIDArray(Guid* members, uint32 size, out PROPVARIANT ppropvar);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOLEAN IsSensorSubscribed(SENSOR_COLLECTION_LIST* subscriptionList, Guid currentType);
+		public static extern BOOLEAN IsSensorSubscribed(ref SENSOR_COLLECTION_LIST subscriptionList, Guid currentType);
 		[Import("sensorsutilsv2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOLEAN IsGUIDPresentInList(Guid* guidArray, uint32 arrayLength, Guid* guidElem);
+		public static extern BOOLEAN IsGUIDPresentInList(Guid* guidArray, uint32 arrayLength, in Guid guidElem);
 		
 	}
 }

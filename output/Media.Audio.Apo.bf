@@ -92,7 +92,7 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT FNAPONOTIFICATIONCALLBACK(APO_REG_PROPERTIES* pProperties, void* pvRefData);
+		public function HRESULT FNAPONOTIFICATIONCALLBACK(out APO_REG_PROPERTIES pProperties, void* pvRefData);
 		
 		// --- Structs ---
 		
@@ -144,7 +144,7 @@ namespace Win32
 			public uint32 u32MaxOutputConnections;
 			public uint32 u32MaxInstances;
 			public uint32 u32NumAPOInterfaces;
-			public Guid[] iidAPOInterfaceList;
+			public Guid[0] iidAPOInterfaceList;
 		}
 		[CRepr]
 		public struct APOInitBaseStruct
@@ -276,29 +276,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsCompressedFormat(BOOL* pfCompressed) mut
+			public HRESULT IsCompressedFormat(out BOOL pfCompressed) mut
 			{
-				return VT.IsCompressedFormat(&this, pfCompressed);
+				return VT.IsCompressedFormat(ref this, out pfCompressed);
 			}
-			public HRESULT IsEqual(IAudioMediaType* pIAudioType, uint32* pdwFlags) mut
+			public HRESULT IsEqual(ref IAudioMediaType pIAudioType, out uint32 pdwFlags) mut
 			{
-				return VT.IsEqual(&this, pIAudioType, pdwFlags);
+				return VT.IsEqual(ref this, ref pIAudioType, out pdwFlags);
 			}
 			public WAVEFORMATEX* GetAudioFormat() mut
 			{
-				return VT.GetAudioFormat(&this);
+				return VT.GetAudioFormat(ref this);
 			}
-			public HRESULT GetUncompressedAudioFormat(UNCOMPRESSEDAUDIOFORMAT* pUncompressedAudioFormat) mut
+			public HRESULT GetUncompressedAudioFormat(out UNCOMPRESSEDAUDIOFORMAT pUncompressedAudioFormat) mut
 			{
-				return VT.GetUncompressedAudioFormat(&this, pUncompressedAudioFormat);
+				return VT.GetUncompressedAudioFormat(ref this, out pUncompressedAudioFormat);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioMediaType *self, BOOL* pfCompressed) IsCompressedFormat;
-				public new function HRESULT(IAudioMediaType *self, IAudioMediaType* pIAudioType, uint32* pdwFlags) IsEqual;
-				public new function WAVEFORMATEX*(IAudioMediaType *self) GetAudioFormat;
-				public new function HRESULT(IAudioMediaType *self, UNCOMPRESSEDAUDIOFORMAT* pUncompressedAudioFormat) GetUncompressedAudioFormat;
+				public new function HRESULT(ref IAudioMediaType self, out BOOL pfCompressed) IsCompressedFormat;
+				public new function HRESULT(ref IAudioMediaType self, ref IAudioMediaType pIAudioType, out uint32 pdwFlags) IsEqual;
+				public new function WAVEFORMATEX*(ref IAudioMediaType self) GetAudioFormat;
+				public new function HRESULT(ref IAudioMediaType self, out UNCOMPRESSEDAUDIOFORMAT pUncompressedAudioFormat) GetUncompressedAudioFormat;
 			}
 		}
 		[CRepr]
@@ -308,24 +308,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void APOProcess(uint32 u32NumInputConnections, APO_CONNECTION_PROPERTY** ppInputConnections, uint32 u32NumOutputConnections, APO_CONNECTION_PROPERTY** ppOutputConnections) mut
+			public void APOProcess(uint32 u32NumInputConnections, ref APO_CONNECTION_PROPERTY* ppInputConnections, uint32 u32NumOutputConnections, out APO_CONNECTION_PROPERTY* ppOutputConnections) mut
 			{
-				VT.APOProcess(&this, u32NumInputConnections, ppInputConnections, u32NumOutputConnections, ppOutputConnections);
+				VT.APOProcess(ref this, u32NumInputConnections, ref ppInputConnections, u32NumOutputConnections, out ppOutputConnections);
 			}
 			public uint32 CalcInputFrames(uint32 u32OutputFrameCount) mut
 			{
-				return VT.CalcInputFrames(&this, u32OutputFrameCount);
+				return VT.CalcInputFrames(ref this, u32OutputFrameCount);
 			}
 			public uint32 CalcOutputFrames(uint32 u32InputFrameCount) mut
 			{
-				return VT.CalcOutputFrames(&this, u32InputFrameCount);
+				return VT.CalcOutputFrames(ref this, u32InputFrameCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IAudioProcessingObjectRT *self, uint32 u32NumInputConnections, APO_CONNECTION_PROPERTY** ppInputConnections, uint32 u32NumOutputConnections, APO_CONNECTION_PROPERTY** ppOutputConnections) APOProcess;
-				public new function uint32(IAudioProcessingObjectRT *self, uint32 u32OutputFrameCount) CalcInputFrames;
-				public new function uint32(IAudioProcessingObjectRT *self, uint32 u32InputFrameCount) CalcOutputFrames;
+				public new function void(ref IAudioProcessingObjectRT self, uint32 u32NumInputConnections, ref APO_CONNECTION_PROPERTY* ppInputConnections, uint32 u32NumOutputConnections, out APO_CONNECTION_PROPERTY* ppOutputConnections) APOProcess;
+				public new function uint32(ref IAudioProcessingObjectRT self, uint32 u32OutputFrameCount) CalcInputFrames;
+				public new function uint32(ref IAudioProcessingObjectRT self, uint32 u32InputFrameCount) CalcOutputFrames;
 			}
 		}
 		[CRepr]
@@ -335,19 +335,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CalcMaxInputFrames(uint32 u32MaxOutputFrameCount, uint32* pu32InputFrameCount) mut
+			public HRESULT CalcMaxInputFrames(uint32 u32MaxOutputFrameCount, out uint32 pu32InputFrameCount) mut
 			{
-				return VT.CalcMaxInputFrames(&this, u32MaxOutputFrameCount, pu32InputFrameCount);
+				return VT.CalcMaxInputFrames(ref this, u32MaxOutputFrameCount, out pu32InputFrameCount);
 			}
-			public HRESULT CalcMaxOutputFrames(uint32 u32MaxInputFrameCount, uint32* pu32OutputFrameCount) mut
+			public HRESULT CalcMaxOutputFrames(uint32 u32MaxInputFrameCount, out uint32 pu32OutputFrameCount) mut
 			{
-				return VT.CalcMaxOutputFrames(&this, u32MaxInputFrameCount, pu32OutputFrameCount);
+				return VT.CalcMaxOutputFrames(ref this, u32MaxInputFrameCount, out pu32OutputFrameCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioProcessingObjectVBR *self, uint32 u32MaxOutputFrameCount, uint32* pu32InputFrameCount) CalcMaxInputFrames;
-				public new function HRESULT(IAudioProcessingObjectVBR *self, uint32 u32MaxInputFrameCount, uint32* pu32OutputFrameCount) CalcMaxOutputFrames;
+				public new function HRESULT(ref IAudioProcessingObjectVBR self, uint32 u32MaxOutputFrameCount, out uint32 pu32InputFrameCount) CalcMaxInputFrames;
+				public new function HRESULT(ref IAudioProcessingObjectVBR self, uint32 u32MaxInputFrameCount, out uint32 pu32OutputFrameCount) CalcMaxOutputFrames;
 			}
 		}
 		[CRepr]
@@ -357,19 +357,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LockForProcess(uint32 u32NumInputConnections, APO_CONNECTION_DESCRIPTOR** ppInputConnections, uint32 u32NumOutputConnections, APO_CONNECTION_DESCRIPTOR** ppOutputConnections) mut
+			public HRESULT LockForProcess(uint32 u32NumInputConnections, ref APO_CONNECTION_DESCRIPTOR* ppInputConnections, uint32 u32NumOutputConnections, ref APO_CONNECTION_DESCRIPTOR* ppOutputConnections) mut
 			{
-				return VT.LockForProcess(&this, u32NumInputConnections, ppInputConnections, u32NumOutputConnections, ppOutputConnections);
+				return VT.LockForProcess(ref this, u32NumInputConnections, ref ppInputConnections, u32NumOutputConnections, ref ppOutputConnections);
 			}
 			public HRESULT UnlockForProcess() mut
 			{
-				return VT.UnlockForProcess(&this);
+				return VT.UnlockForProcess(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioProcessingObjectConfiguration *self, uint32 u32NumInputConnections, APO_CONNECTION_DESCRIPTOR** ppInputConnections, uint32 u32NumOutputConnections, APO_CONNECTION_DESCRIPTOR** ppOutputConnections) LockForProcess;
-				public new function HRESULT(IAudioProcessingObjectConfiguration *self) UnlockForProcess;
+				public new function HRESULT(ref IAudioProcessingObjectConfiguration self, uint32 u32NumInputConnections, ref APO_CONNECTION_DESCRIPTOR* ppInputConnections, uint32 u32NumOutputConnections, ref APO_CONNECTION_DESCRIPTOR* ppOutputConnections) LockForProcess;
+				public new function HRESULT(ref IAudioProcessingObjectConfiguration self) UnlockForProcess;
 			}
 		}
 		[CRepr]
@@ -381,42 +381,42 @@ namespace Win32
 			
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT GetLatency(int64* pTime) mut
+			public HRESULT GetLatency(out int64 pTime) mut
 			{
-				return VT.GetLatency(&this, pTime);
+				return VT.GetLatency(ref this, out pTime);
 			}
-			public HRESULT GetRegistrationProperties(APO_REG_PROPERTIES** ppRegProps) mut
+			public HRESULT GetRegistrationProperties(out APO_REG_PROPERTIES* ppRegProps) mut
 			{
-				return VT.GetRegistrationProperties(&this, ppRegProps);
+				return VT.GetRegistrationProperties(ref this, out ppRegProps);
 			}
 			public HRESULT Initialize(uint32 cbDataSize, uint8* pbyData) mut
 			{
-				return VT.Initialize(&this, cbDataSize, pbyData);
+				return VT.Initialize(ref this, cbDataSize, pbyData);
 			}
-			public HRESULT IsInputFormatSupported(IAudioMediaType* pOppositeFormat, IAudioMediaType* pRequestedInputFormat, IAudioMediaType** ppSupportedInputFormat) mut
+			public HRESULT IsInputFormatSupported(ref IAudioMediaType pOppositeFormat, ref IAudioMediaType pRequestedInputFormat, out IAudioMediaType* ppSupportedInputFormat) mut
 			{
-				return VT.IsInputFormatSupported(&this, pOppositeFormat, pRequestedInputFormat, ppSupportedInputFormat);
+				return VT.IsInputFormatSupported(ref this, ref pOppositeFormat, ref pRequestedInputFormat, out ppSupportedInputFormat);
 			}
-			public HRESULT IsOutputFormatSupported(IAudioMediaType* pOppositeFormat, IAudioMediaType* pRequestedOutputFormat, IAudioMediaType** ppSupportedOutputFormat) mut
+			public HRESULT IsOutputFormatSupported(ref IAudioMediaType pOppositeFormat, ref IAudioMediaType pRequestedOutputFormat, out IAudioMediaType* ppSupportedOutputFormat) mut
 			{
-				return VT.IsOutputFormatSupported(&this, pOppositeFormat, pRequestedOutputFormat, ppSupportedOutputFormat);
+				return VT.IsOutputFormatSupported(ref this, ref pOppositeFormat, ref pRequestedOutputFormat, out ppSupportedOutputFormat);
 			}
-			public HRESULT GetInputChannelCount(uint32* pu32ChannelCount) mut
+			public HRESULT GetInputChannelCount(out uint32 pu32ChannelCount) mut
 			{
-				return VT.GetInputChannelCount(&this, pu32ChannelCount);
+				return VT.GetInputChannelCount(ref this, out pu32ChannelCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioProcessingObject *self) Reset;
-				public new function HRESULT(IAudioProcessingObject *self, int64* pTime) GetLatency;
-				public new function HRESULT(IAudioProcessingObject *self, APO_REG_PROPERTIES** ppRegProps) GetRegistrationProperties;
-				public new function HRESULT(IAudioProcessingObject *self, uint32 cbDataSize, uint8* pbyData) Initialize;
-				public new function HRESULT(IAudioProcessingObject *self, IAudioMediaType* pOppositeFormat, IAudioMediaType* pRequestedInputFormat, IAudioMediaType** ppSupportedInputFormat) IsInputFormatSupported;
-				public new function HRESULT(IAudioProcessingObject *self, IAudioMediaType* pOppositeFormat, IAudioMediaType* pRequestedOutputFormat, IAudioMediaType** ppSupportedOutputFormat) IsOutputFormatSupported;
-				public new function HRESULT(IAudioProcessingObject *self, uint32* pu32ChannelCount) GetInputChannelCount;
+				public new function HRESULT(ref IAudioProcessingObject self) Reset;
+				public new function HRESULT(ref IAudioProcessingObject self, out int64 pTime) GetLatency;
+				public new function HRESULT(ref IAudioProcessingObject self, out APO_REG_PROPERTIES* ppRegProps) GetRegistrationProperties;
+				public new function HRESULT(ref IAudioProcessingObject self, uint32 cbDataSize, uint8* pbyData) Initialize;
+				public new function HRESULT(ref IAudioProcessingObject self, ref IAudioMediaType pOppositeFormat, ref IAudioMediaType pRequestedInputFormat, out IAudioMediaType* ppSupportedInputFormat) IsInputFormatSupported;
+				public new function HRESULT(ref IAudioProcessingObject self, ref IAudioMediaType pOppositeFormat, ref IAudioMediaType pRequestedOutputFormat, out IAudioMediaType* ppSupportedOutputFormat) IsOutputFormatSupported;
+				public new function HRESULT(ref IAudioProcessingObject self, out uint32 pu32ChannelCount) GetInputChannelCount;
 			}
 		}
 		[CRepr]
@@ -426,14 +426,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAudioDeviceModulesManager(IUnknown* pAudioDeviceModulesManager) mut
+			public HRESULT SetAudioDeviceModulesManager(ref IUnknown pAudioDeviceModulesManager) mut
 			{
-				return VT.SetAudioDeviceModulesManager(&this, pAudioDeviceModulesManager);
+				return VT.SetAudioDeviceModulesManager(ref this, ref pAudioDeviceModulesManager);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioDeviceModulesClient *self, IUnknown* pAudioDeviceModulesManager) SetAudioDeviceModulesManager;
+				public new function HRESULT(ref IAudioDeviceModulesClient self, ref IUnknown pAudioDeviceModulesManager) SetAudioDeviceModulesManager;
 			}
 		}
 		[CRepr]
@@ -455,14 +455,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEffectsList(Guid** ppEffectsIds, uint32* pcEffects, HANDLE Event) mut
+			public HRESULT GetEffectsList(Guid** ppEffectsIds, out uint32 pcEffects, HANDLE Event) mut
 			{
-				return VT.GetEffectsList(&this, ppEffectsIds, pcEffects, Event);
+				return VT.GetEffectsList(ref this, ppEffectsIds, out pcEffects, Event);
 			}
 			[CRepr]
 			public struct VTable : IAudioSystemEffects.VTable
 			{
-				public new function HRESULT(IAudioSystemEffects2 *self, Guid** ppEffectsIds, uint32* pcEffects, HANDLE Event) GetEffectsList;
+				public new function HRESULT(ref IAudioSystemEffects2 self, Guid** ppEffectsIds, out uint32 pcEffects, HANDLE Event) GetEffectsList;
 			}
 		}
 		[CRepr]
@@ -472,24 +472,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFormatCount(uint32* pcFormats) mut
+			public HRESULT GetFormatCount(out uint32 pcFormats) mut
 			{
-				return VT.GetFormatCount(&this, pcFormats);
+				return VT.GetFormatCount(ref this, out pcFormats);
 			}
-			public HRESULT GetFormat(uint32 nFormat, IAudioMediaType** ppFormat) mut
+			public HRESULT GetFormat(uint32 nFormat, out IAudioMediaType* ppFormat) mut
 			{
-				return VT.GetFormat(&this, nFormat, ppFormat);
+				return VT.GetFormat(ref this, nFormat, out ppFormat);
 			}
-			public HRESULT GetFormatRepresentation(uint32 nFormat, PWSTR* ppwstrFormatRep) mut
+			public HRESULT GetFormatRepresentation(uint32 nFormat, out PWSTR ppwstrFormatRep) mut
 			{
-				return VT.GetFormatRepresentation(&this, nFormat, ppwstrFormatRep);
+				return VT.GetFormatRepresentation(ref this, nFormat, out ppwstrFormatRep);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioSystemEffectsCustomFormats *self, uint32* pcFormats) GetFormatCount;
-				public new function HRESULT(IAudioSystemEffectsCustomFormats *self, uint32 nFormat, IAudioMediaType** ppFormat) GetFormat;
-				public new function HRESULT(IAudioSystemEffectsCustomFormats *self, uint32 nFormat, PWSTR* ppwstrFormatRep) GetFormatRepresentation;
+				public new function HRESULT(ref IAudioSystemEffectsCustomFormats self, out uint32 pcFormats) GetFormatCount;
+				public new function HRESULT(ref IAudioSystemEffectsCustomFormats self, uint32 nFormat, out IAudioMediaType* ppFormat) GetFormat;
+				public new function HRESULT(ref IAudioSystemEffectsCustomFormats self, uint32 nFormat, out PWSTR ppwstrFormatRep) GetFormatRepresentation;
 			}
 		}
 		[CRepr]
@@ -499,24 +499,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddAuxiliaryInput(uint32 dwInputId, uint32 cbDataSize, uint8* pbyData, APO_CONNECTION_DESCRIPTOR* pInputConnection) mut
+			public HRESULT AddAuxiliaryInput(uint32 dwInputId, uint32 cbDataSize, uint8* pbyData, ref APO_CONNECTION_DESCRIPTOR pInputConnection) mut
 			{
-				return VT.AddAuxiliaryInput(&this, dwInputId, cbDataSize, pbyData, pInputConnection);
+				return VT.AddAuxiliaryInput(ref this, dwInputId, cbDataSize, pbyData, ref pInputConnection);
 			}
 			public HRESULT RemoveAuxiliaryInput(uint32 dwInputId) mut
 			{
-				return VT.RemoveAuxiliaryInput(&this, dwInputId);
+				return VT.RemoveAuxiliaryInput(ref this, dwInputId);
 			}
-			public HRESULT IsInputFormatSupported(IAudioMediaType* pRequestedInputFormat, IAudioMediaType** ppSupportedInputFormat) mut
+			public HRESULT IsInputFormatSupported(ref IAudioMediaType pRequestedInputFormat, out IAudioMediaType* ppSupportedInputFormat) mut
 			{
-				return VT.IsInputFormatSupported(&this, pRequestedInputFormat, ppSupportedInputFormat);
+				return VT.IsInputFormatSupported(ref this, ref pRequestedInputFormat, out ppSupportedInputFormat);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IApoAuxiliaryInputConfiguration *self, uint32 dwInputId, uint32 cbDataSize, uint8* pbyData, APO_CONNECTION_DESCRIPTOR* pInputConnection) AddAuxiliaryInput;
-				public new function HRESULT(IApoAuxiliaryInputConfiguration *self, uint32 dwInputId) RemoveAuxiliaryInput;
-				public new function HRESULT(IApoAuxiliaryInputConfiguration *self, IAudioMediaType* pRequestedInputFormat, IAudioMediaType** ppSupportedInputFormat) IsInputFormatSupported;
+				public new function HRESULT(ref IApoAuxiliaryInputConfiguration self, uint32 dwInputId, uint32 cbDataSize, uint8* pbyData, ref APO_CONNECTION_DESCRIPTOR pInputConnection) AddAuxiliaryInput;
+				public new function HRESULT(ref IApoAuxiliaryInputConfiguration self, uint32 dwInputId) RemoveAuxiliaryInput;
+				public new function HRESULT(ref IApoAuxiliaryInputConfiguration self, ref IAudioMediaType pRequestedInputFormat, out IAudioMediaType* ppSupportedInputFormat) IsInputFormatSupported;
 			}
 		}
 		[CRepr]
@@ -526,14 +526,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void AcceptInput(uint32 dwInputId, APO_CONNECTION_PROPERTY* pInputConnection) mut
+			public void AcceptInput(uint32 dwInputId, in APO_CONNECTION_PROPERTY pInputConnection) mut
 			{
-				VT.AcceptInput(&this, dwInputId, pInputConnection);
+				VT.AcceptInput(ref this, dwInputId, pInputConnection);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IApoAuxiliaryInputRT *self, uint32 dwInputId, APO_CONNECTION_PROPERTY* pInputConnection) AcceptInput;
+				public new function void(ref IApoAuxiliaryInputRT self, uint32 dwInputId, in APO_CONNECTION_PROPERTY pInputConnection) AcceptInput;
 			}
 		}
 		[CRepr]
@@ -555,19 +555,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetControllableSystemEffectsList(AUDIO_SYSTEMEFFECT** effects, uint32* numEffects, HANDLE event) mut
+			public HRESULT GetControllableSystemEffectsList(AUDIO_SYSTEMEFFECT** effects, out uint32 numEffects, HANDLE event) mut
 			{
-				return VT.GetControllableSystemEffectsList(&this, effects, numEffects, event);
+				return VT.GetControllableSystemEffectsList(ref this, effects, out numEffects, event);
 			}
 			public HRESULT SetAudioSystemEffectState(Guid effectId, AUDIO_SYSTEMEFFECT_STATE state) mut
 			{
-				return VT.SetAudioSystemEffectState(&this, effectId, state);
+				return VT.SetAudioSystemEffectState(ref this, effectId, state);
 			}
 			[CRepr]
 			public struct VTable : IAudioSystemEffects2.VTable
 			{
-				public new function HRESULT(IAudioSystemEffects3 *self, AUDIO_SYSTEMEFFECT** effects, uint32* numEffects, HANDLE event) GetControllableSystemEffectsList;
-				public new function HRESULT(IAudioSystemEffects3 *self, Guid effectId, AUDIO_SYSTEMEFFECT_STATE state) SetAudioSystemEffectState;
+				public new function HRESULT(ref IAudioSystemEffects3 self, AUDIO_SYSTEMEFFECT** effects, out uint32 numEffects, HANDLE event) GetControllableSystemEffectsList;
+				public new function HRESULT(ref IAudioSystemEffects3 self, Guid effectId, AUDIO_SYSTEMEFFECT_STATE state) SetAudioSystemEffectState;
 			}
 		}
 		[CRepr]
@@ -577,14 +577,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRealTimeWorkQueue(uint32* workQueueId) mut
+			public HRESULT GetRealTimeWorkQueue(out uint32 workQueueId) mut
 			{
-				return VT.GetRealTimeWorkQueue(&this, workQueueId);
+				return VT.GetRealTimeWorkQueue(ref this, out workQueueId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioProcessingObjectRTQueueService *self, uint32* workQueueId) GetRealTimeWorkQueue;
+				public new function HRESULT(ref IAudioProcessingObjectRTQueueService self, out uint32 workQueueId) GetRealTimeWorkQueue;
 			}
 		}
 		[CRepr]
@@ -596,12 +596,12 @@ namespace Win32
 			
 			public void ApoLog(APO_LOG_LEVEL level, PWSTR format) mut
 			{
-				VT.ApoLog(&this, level, format);
+				VT.ApoLog(ref this, level, format);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IAudioProcessingObjectLoggingService *self, APO_LOG_LEVEL level, PWSTR format) ApoLog;
+				public new function void(ref IAudioProcessingObjectLoggingService self, APO_LOG_LEVEL level, PWSTR format) ApoLog;
 			}
 		}
 		[CRepr]
@@ -611,19 +611,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetApoNotificationRegistrationInfo(APO_NOTIFICATION_DESCRIPTOR** apoNotifications, uint32* count) mut
+			public HRESULT GetApoNotificationRegistrationInfo(APO_NOTIFICATION_DESCRIPTOR** apoNotifications, out uint32 count) mut
 			{
-				return VT.GetApoNotificationRegistrationInfo(&this, apoNotifications, count);
+				return VT.GetApoNotificationRegistrationInfo(ref this, apoNotifications, out count);
 			}
-			public void HandleNotification(APO_NOTIFICATION* apoNotification) mut
+			public void HandleNotification(ref APO_NOTIFICATION apoNotification) mut
 			{
-				VT.HandleNotification(&this, apoNotification);
+				VT.HandleNotification(ref this, ref apoNotification);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioProcessingObjectNotifications *self, APO_NOTIFICATION_DESCRIPTOR** apoNotifications, uint32* count) GetApoNotificationRegistrationInfo;
-				public new function void(IAudioProcessingObjectNotifications *self, APO_NOTIFICATION* apoNotification) HandleNotification;
+				public new function HRESULT(ref IAudioProcessingObjectNotifications self, APO_NOTIFICATION_DESCRIPTOR** apoNotifications, out uint32 count) GetApoNotificationRegistrationInfo;
+				public new function void(ref IAudioProcessingObjectNotifications self, ref APO_NOTIFICATION apoNotification) HandleNotification;
 			}
 		}
 		

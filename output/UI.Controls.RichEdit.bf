@@ -1371,11 +1371,11 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function int32 AutoCorrectProc(uint16 langid, PWSTR pszBefore, PWSTR pszAfter, int32 cchAfter, int32* pcchReplaced);
+		public function int32 AutoCorrectProc(uint16 langid, PWSTR pszBefore, PWSTR pszAfter, int32 cchAfter, out int32 pcchReplaced);
 		public function int32 EDITWORDBREAKPROCEX(PSTR pchText, int32 cchText, uint8 bCharSet, int32 action);
-		public function uint32 EDITSTREAMCALLBACK(uint dwCookie, uint8* pbBuff, int32 cb, int32* pcb);
-		public function HRESULT PCreateTextServices(IUnknown* punkOuter, ITextHost* pITextHost, IUnknown** ppUnk);
-		public function HRESULT PShutdownTextServices(IUnknown* pTextServices);
+		public function uint32 EDITSTREAMCALLBACK(uint dwCookie, out uint8 pbBuff, int32 cb, out int32 pcb);
+		public function HRESULT PCreateTextServices(ref IUnknown punkOuter, ref ITextHost pITextHost, out IUnknown* ppUnk);
+		public function HRESULT PShutdownTextServices(ref IUnknown pTextServices);
 		
 		// --- Structs ---
 		
@@ -1802,99 +1802,99 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TxSendMessage(uint32 msg, WPARAM wparam, LPARAM lparam, LRESULT* plresult) mut
+			public HRESULT TxSendMessage(uint32 msg, WPARAM wparam, LPARAM lparam, out LRESULT plresult) mut
 			{
-				return VT.TxSendMessage(&this, msg, wparam, lparam, plresult);
+				return VT.TxSendMessage(ref this, msg, wparam, lparam, out plresult);
 			}
-			public HRESULT TxDraw(DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcDraw, HDC hicTargetDev, RECTL* lprcBounds, RECTL* lprcWBounds, RECT* lprcUpdate, int pfnContinue, uint32 dwContinue, int32 lViewId) mut
+			public HRESULT TxDraw(DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, out DVTARGETDEVICE ptd, HDC hdcDraw, HDC hicTargetDev, out RECTL lprcBounds, out RECTL lprcWBounds, out RECT lprcUpdate, int pfnContinue, uint32 dwContinue, int32 lViewId) mut
 			{
-				return VT.TxDraw(&this, dwDrawAspect, lindex, pvAspect, ptd, hdcDraw, hicTargetDev, lprcBounds, lprcWBounds, lprcUpdate, pfnContinue, dwContinue, lViewId);
+				return VT.TxDraw(ref this, dwDrawAspect, lindex, pvAspect, out ptd, hdcDraw, hicTargetDev, out lprcBounds, out lprcWBounds, out lprcUpdate, pfnContinue, dwContinue, lViewId);
 			}
-			public HRESULT TxGetHScroll(int32* plMin, int32* plMax, int32* plPos, int32* plPage, BOOL* pfEnabled) mut
+			public HRESULT TxGetHScroll(out int32 plMin, out int32 plMax, out int32 plPos, out int32 plPage, out BOOL pfEnabled) mut
 			{
-				return VT.TxGetHScroll(&this, plMin, plMax, plPos, plPage, pfEnabled);
+				return VT.TxGetHScroll(ref this, out plMin, out plMax, out plPos, out plPage, out pfEnabled);
 			}
-			public HRESULT TxGetVScroll(int32* plMin, int32* plMax, int32* plPos, int32* plPage, BOOL* pfEnabled) mut
+			public HRESULT TxGetVScroll(out int32 plMin, out int32 plMax, out int32 plPos, out int32 plPage, out BOOL pfEnabled) mut
 			{
-				return VT.TxGetVScroll(&this, plMin, plMax, plPos, plPage, pfEnabled);
+				return VT.TxGetVScroll(ref this, out plMin, out plMax, out plPos, out plPage, out pfEnabled);
 			}
-			public HRESULT OnTxSetCursor(DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcDraw, HDC hicTargetDev, RECT* lprcClient, int32 x, int32 y) mut
+			public HRESULT OnTxSetCursor(DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, out DVTARGETDEVICE ptd, HDC hdcDraw, HDC hicTargetDev, out RECT lprcClient, int32 x, int32 y) mut
 			{
-				return VT.OnTxSetCursor(&this, dwDrawAspect, lindex, pvAspect, ptd, hdcDraw, hicTargetDev, lprcClient, x, y);
+				return VT.OnTxSetCursor(ref this, dwDrawAspect, lindex, pvAspect, out ptd, hdcDraw, hicTargetDev, out lprcClient, x, y);
 			}
-			public HRESULT TxQueryHitPoint(DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcDraw, HDC hicTargetDev, RECT* lprcClient, int32 x, int32 y, uint32* pHitResult) mut
+			public HRESULT TxQueryHitPoint(DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, out DVTARGETDEVICE ptd, HDC hdcDraw, HDC hicTargetDev, out RECT lprcClient, int32 x, int32 y, out uint32 pHitResult) mut
 			{
-				return VT.TxQueryHitPoint(&this, dwDrawAspect, lindex, pvAspect, ptd, hdcDraw, hicTargetDev, lprcClient, x, y, pHitResult);
+				return VT.TxQueryHitPoint(ref this, dwDrawAspect, lindex, pvAspect, out ptd, hdcDraw, hicTargetDev, out lprcClient, x, y, out pHitResult);
 			}
-			public HRESULT OnTxInPlaceActivate(RECT* prcClient) mut
+			public HRESULT OnTxInPlaceActivate(out RECT prcClient) mut
 			{
-				return VT.OnTxInPlaceActivate(&this, prcClient);
+				return VT.OnTxInPlaceActivate(ref this, out prcClient);
 			}
 			public HRESULT OnTxInPlaceDeactivate() mut
 			{
-				return VT.OnTxInPlaceDeactivate(&this);
+				return VT.OnTxInPlaceDeactivate(ref this);
 			}
 			public HRESULT OnTxUIActivate() mut
 			{
-				return VT.OnTxUIActivate(&this);
+				return VT.OnTxUIActivate(ref this);
 			}
 			public HRESULT OnTxUIDeactivate() mut
 			{
-				return VT.OnTxUIDeactivate(&this);
+				return VT.OnTxUIDeactivate(ref this);
 			}
-			public HRESULT TxGetText(BSTR* pbstrText) mut
+			public HRESULT TxGetText(out BSTR pbstrText) mut
 			{
-				return VT.TxGetText(&this, pbstrText);
+				return VT.TxGetText(ref this, out pbstrText);
 			}
 			public HRESULT TxSetText(PWSTR pszText) mut
 			{
-				return VT.TxSetText(&this, pszText);
+				return VT.TxSetText(ref this, pszText);
 			}
-			public HRESULT TxGetCurTargetX(int32* param0) mut
+			public HRESULT TxGetCurTargetX(out int32 param0) mut
 			{
-				return VT.TxGetCurTargetX(&this, param0);
+				return VT.TxGetCurTargetX(ref this, out param0);
 			}
-			public HRESULT TxGetBaseLinePos(int32* param0) mut
+			public HRESULT TxGetBaseLinePos(out int32 param0) mut
 			{
-				return VT.TxGetBaseLinePos(&this, param0);
+				return VT.TxGetBaseLinePos(ref this, out param0);
 			}
-			public HRESULT TxGetNaturalSize(uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, DVTARGETDEVICE* ptd, uint32 dwMode, SIZE* psizelExtent, int32* pwidth, int32* pheight) mut
+			public HRESULT TxGetNaturalSize(uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, out DVTARGETDEVICE ptd, uint32 dwMode, in SIZE psizelExtent, out int32 pwidth, out int32 pheight) mut
 			{
-				return VT.TxGetNaturalSize(&this, dwAspect, hdcDraw, hicTargetDev, ptd, dwMode, psizelExtent, pwidth, pheight);
+				return VT.TxGetNaturalSize(ref this, dwAspect, hdcDraw, hicTargetDev, out ptd, dwMode, psizelExtent, out pwidth, out pheight);
 			}
-			public HRESULT TxGetDropTarget(IDropTarget** ppDropTarget) mut
+			public HRESULT TxGetDropTarget(out IDropTarget* ppDropTarget) mut
 			{
-				return VT.TxGetDropTarget(&this, ppDropTarget);
+				return VT.TxGetDropTarget(ref this, out ppDropTarget);
 			}
 			public HRESULT OnTxPropertyBitsChange(uint32 dwMask, uint32 dwBits) mut
 			{
-				return VT.OnTxPropertyBitsChange(&this, dwMask, dwBits);
+				return VT.OnTxPropertyBitsChange(ref this, dwMask, dwBits);
 			}
-			public HRESULT TxGetCachedSize(uint32* pdwWidth, uint32* pdwHeight) mut
+			public HRESULT TxGetCachedSize(out uint32 pdwWidth, out uint32 pdwHeight) mut
 			{
-				return VT.TxGetCachedSize(&this, pdwWidth, pdwHeight);
+				return VT.TxGetCachedSize(ref this, out pdwWidth, out pdwHeight);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITextServices *self, uint32 msg, WPARAM wparam, LPARAM lparam, LRESULT* plresult) TxSendMessage;
-				public new function HRESULT(ITextServices *self, DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcDraw, HDC hicTargetDev, RECTL* lprcBounds, RECTL* lprcWBounds, RECT* lprcUpdate, int pfnContinue, uint32 dwContinue, int32 lViewId) TxDraw;
-				public new function HRESULT(ITextServices *self, int32* plMin, int32* plMax, int32* plPos, int32* plPage, BOOL* pfEnabled) TxGetHScroll;
-				public new function HRESULT(ITextServices *self, int32* plMin, int32* plMax, int32* plPos, int32* plPage, BOOL* pfEnabled) TxGetVScroll;
-				public new function HRESULT(ITextServices *self, DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcDraw, HDC hicTargetDev, RECT* lprcClient, int32 x, int32 y) OnTxSetCursor;
-				public new function HRESULT(ITextServices *self, DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcDraw, HDC hicTargetDev, RECT* lprcClient, int32 x, int32 y, uint32* pHitResult) TxQueryHitPoint;
-				public new function HRESULT(ITextServices *self, RECT* prcClient) OnTxInPlaceActivate;
-				public new function HRESULT(ITextServices *self) OnTxInPlaceDeactivate;
-				public new function HRESULT(ITextServices *self) OnTxUIActivate;
-				public new function HRESULT(ITextServices *self) OnTxUIDeactivate;
-				public new function HRESULT(ITextServices *self, BSTR* pbstrText) TxGetText;
-				public new function HRESULT(ITextServices *self, PWSTR pszText) TxSetText;
-				public new function HRESULT(ITextServices *self, int32* param0) TxGetCurTargetX;
-				public new function HRESULT(ITextServices *self, int32* param0) TxGetBaseLinePos;
-				public new function HRESULT(ITextServices *self, uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, DVTARGETDEVICE* ptd, uint32 dwMode, SIZE* psizelExtent, int32* pwidth, int32* pheight) TxGetNaturalSize;
-				public new function HRESULT(ITextServices *self, IDropTarget** ppDropTarget) TxGetDropTarget;
-				public new function HRESULT(ITextServices *self, uint32 dwMask, uint32 dwBits) OnTxPropertyBitsChange;
-				public new function HRESULT(ITextServices *self, uint32* pdwWidth, uint32* pdwHeight) TxGetCachedSize;
+				public new function HRESULT(ref ITextServices self, uint32 msg, WPARAM wparam, LPARAM lparam, out LRESULT plresult) TxSendMessage;
+				public new function HRESULT(ref ITextServices self, DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, out DVTARGETDEVICE ptd, HDC hdcDraw, HDC hicTargetDev, out RECTL lprcBounds, out RECTL lprcWBounds, out RECT lprcUpdate, int pfnContinue, uint32 dwContinue, int32 lViewId) TxDraw;
+				public new function HRESULT(ref ITextServices self, out int32 plMin, out int32 plMax, out int32 plPos, out int32 plPage, out BOOL pfEnabled) TxGetHScroll;
+				public new function HRESULT(ref ITextServices self, out int32 plMin, out int32 plMax, out int32 plPos, out int32 plPage, out BOOL pfEnabled) TxGetVScroll;
+				public new function HRESULT(ref ITextServices self, DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, out DVTARGETDEVICE ptd, HDC hdcDraw, HDC hicTargetDev, out RECT lprcClient, int32 x, int32 y) OnTxSetCursor;
+				public new function HRESULT(ref ITextServices self, DVASPECT dwDrawAspect, int32 lindex, void* pvAspect, out DVTARGETDEVICE ptd, HDC hdcDraw, HDC hicTargetDev, out RECT lprcClient, int32 x, int32 y, out uint32 pHitResult) TxQueryHitPoint;
+				public new function HRESULT(ref ITextServices self, out RECT prcClient) OnTxInPlaceActivate;
+				public new function HRESULT(ref ITextServices self) OnTxInPlaceDeactivate;
+				public new function HRESULT(ref ITextServices self) OnTxUIActivate;
+				public new function HRESULT(ref ITextServices self) OnTxUIDeactivate;
+				public new function HRESULT(ref ITextServices self, out BSTR pbstrText) TxGetText;
+				public new function HRESULT(ref ITextServices self, PWSTR pszText) TxSetText;
+				public new function HRESULT(ref ITextServices self, out int32 param0) TxGetCurTargetX;
+				public new function HRESULT(ref ITextServices self, out int32 param0) TxGetBaseLinePos;
+				public new function HRESULT(ref ITextServices self, uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, out DVTARGETDEVICE ptd, uint32 dwMode, in SIZE psizelExtent, out int32 pwidth, out int32 pheight) TxGetNaturalSize;
+				public new function HRESULT(ref ITextServices self, out IDropTarget* ppDropTarget) TxGetDropTarget;
+				public new function HRESULT(ref ITextServices self, uint32 dwMask, uint32 dwBits) OnTxPropertyBitsChange;
+				public new function HRESULT(ref ITextServices self, out uint32 pdwWidth, out uint32 pdwHeight) TxGetCachedSize;
 			}
 		}
 		[CRepr]
@@ -1904,202 +1904,202 @@ namespace Win32
 			
 			public HDC TxGetDC() mut
 			{
-				return VT.TxGetDC(&this);
+				return VT.TxGetDC(ref this);
 			}
 			public int32 TxReleaseDC(HDC hdc) mut
 			{
-				return VT.TxReleaseDC(&this, hdc);
+				return VT.TxReleaseDC(ref this, hdc);
 			}
 			public BOOL TxShowScrollBar(int32 fnBar, BOOL fShow) mut
 			{
-				return VT.TxShowScrollBar(&this, fnBar, fShow);
+				return VT.TxShowScrollBar(ref this, fnBar, fShow);
 			}
 			public BOOL TxEnableScrollBar(SCROLLBAR_CONSTANTS fuSBFlags, ENABLE_SCROLL_BAR_ARROWS fuArrowflags) mut
 			{
-				return VT.TxEnableScrollBar(&this, fuSBFlags, fuArrowflags);
+				return VT.TxEnableScrollBar(ref this, fuSBFlags, fuArrowflags);
 			}
 			public BOOL TxSetScrollRange(int32 fnBar, int32 nMinPos, int32 nMaxPos, BOOL fRedraw) mut
 			{
-				return VT.TxSetScrollRange(&this, fnBar, nMinPos, nMaxPos, fRedraw);
+				return VT.TxSetScrollRange(ref this, fnBar, nMinPos, nMaxPos, fRedraw);
 			}
 			public BOOL TxSetScrollPos(int32 fnBar, int32 nPos, BOOL fRedraw) mut
 			{
-				return VT.TxSetScrollPos(&this, fnBar, nPos, fRedraw);
+				return VT.TxSetScrollPos(ref this, fnBar, nPos, fRedraw);
 			}
-			public void TxInvalidateRect(RECT* prc, BOOL fMode) mut
+			public void TxInvalidateRect(out RECT prc, BOOL fMode) mut
 			{
-				VT.TxInvalidateRect(&this, prc, fMode);
+				VT.TxInvalidateRect(ref this, out prc, fMode);
 			}
 			public void TxViewChange(BOOL fUpdate) mut
 			{
-				VT.TxViewChange(&this, fUpdate);
+				VT.TxViewChange(ref this, fUpdate);
 			}
 			public BOOL TxCreateCaret(HBITMAP hbmp, int32 xWidth, int32 yHeight) mut
 			{
-				return VT.TxCreateCaret(&this, hbmp, xWidth, yHeight);
+				return VT.TxCreateCaret(ref this, hbmp, xWidth, yHeight);
 			}
 			public BOOL TxShowCaret(BOOL fShow) mut
 			{
-				return VT.TxShowCaret(&this, fShow);
+				return VT.TxShowCaret(ref this, fShow);
 			}
 			public BOOL TxSetCaretPos(int32 x, int32 y) mut
 			{
-				return VT.TxSetCaretPos(&this, x, y);
+				return VT.TxSetCaretPos(ref this, x, y);
 			}
 			public BOOL TxSetTimer(uint32 idTimer, uint32 uTimeout) mut
 			{
-				return VT.TxSetTimer(&this, idTimer, uTimeout);
+				return VT.TxSetTimer(ref this, idTimer, uTimeout);
 			}
 			public void TxKillTimer(uint32 idTimer) mut
 			{
-				VT.TxKillTimer(&this, idTimer);
+				VT.TxKillTimer(ref this, idTimer);
 			}
-			public void TxScrollWindowEx(int32 dx, int32 dy, RECT* lprcScroll, RECT* lprcClip, HRGN hrgnUpdate, RECT* lprcUpdate, SHOW_WINDOW_CMD fuScroll) mut
+			public void TxScrollWindowEx(int32 dx, int32 dy, out RECT lprcScroll, out RECT lprcClip, HRGN hrgnUpdate, out RECT lprcUpdate, SHOW_WINDOW_CMD fuScroll) mut
 			{
-				VT.TxScrollWindowEx(&this, dx, dy, lprcScroll, lprcClip, hrgnUpdate, lprcUpdate, fuScroll);
+				VT.TxScrollWindowEx(ref this, dx, dy, out lprcScroll, out lprcClip, hrgnUpdate, out lprcUpdate, fuScroll);
 			}
 			public void TxSetCapture(BOOL fCapture) mut
 			{
-				VT.TxSetCapture(&this, fCapture);
+				VT.TxSetCapture(ref this, fCapture);
 			}
 			public void TxSetFocus() mut
 			{
-				VT.TxSetFocus(&this);
+				VT.TxSetFocus(ref this);
 			}
 			public void TxSetCursor(HCURSOR hcur, BOOL fText) mut
 			{
-				VT.TxSetCursor(&this, hcur, fText);
+				VT.TxSetCursor(ref this, hcur, fText);
 			}
-			public BOOL TxScreenToClient(POINT* lppt) mut
+			public BOOL TxScreenToClient(out POINT lppt) mut
 			{
-				return VT.TxScreenToClient(&this, lppt);
+				return VT.TxScreenToClient(ref this, out lppt);
 			}
-			public BOOL TxClientToScreen(POINT* lppt) mut
+			public BOOL TxClientToScreen(out POINT lppt) mut
 			{
-				return VT.TxClientToScreen(&this, lppt);
+				return VT.TxClientToScreen(ref this, out lppt);
 			}
-			public HRESULT TxActivate(int32* plOldState) mut
+			public HRESULT TxActivate(out int32 plOldState) mut
 			{
-				return VT.TxActivate(&this, plOldState);
+				return VT.TxActivate(ref this, out plOldState);
 			}
 			public HRESULT TxDeactivate(int32 lNewState) mut
 			{
-				return VT.TxDeactivate(&this, lNewState);
+				return VT.TxDeactivate(ref this, lNewState);
 			}
-			public HRESULT TxGetClientRect(RECT* prc) mut
+			public HRESULT TxGetClientRect(out RECT prc) mut
 			{
-				return VT.TxGetClientRect(&this, prc);
+				return VT.TxGetClientRect(ref this, out prc);
 			}
-			public HRESULT TxGetViewInset(RECT* prc) mut
+			public HRESULT TxGetViewInset(out RECT prc) mut
 			{
-				return VT.TxGetViewInset(&this, prc);
+				return VT.TxGetViewInset(ref this, out prc);
 			}
-			public HRESULT TxGetCharFormat(CHARFORMATW** ppCF) mut
+			public HRESULT TxGetCharFormat(in CHARFORMATW* ppCF) mut
 			{
-				return VT.TxGetCharFormat(&this, ppCF);
+				return VT.TxGetCharFormat(ref this, ppCF);
 			}
-			public HRESULT TxGetParaFormat(PARAFORMAT** ppPF) mut
+			public HRESULT TxGetParaFormat(in PARAFORMAT* ppPF) mut
 			{
-				return VT.TxGetParaFormat(&this, ppPF);
+				return VT.TxGetParaFormat(ref this, ppPF);
 			}
 			public uint32 TxGetSysColor(int32 nIndex) mut
 			{
-				return VT.TxGetSysColor(&this, nIndex);
+				return VT.TxGetSysColor(ref this, nIndex);
 			}
-			public HRESULT TxGetBackStyle(TXTBACKSTYLE* pstyle) mut
+			public HRESULT TxGetBackStyle(out TXTBACKSTYLE pstyle) mut
 			{
-				return VT.TxGetBackStyle(&this, pstyle);
+				return VT.TxGetBackStyle(ref this, out pstyle);
 			}
-			public HRESULT TxGetMaxLength(uint32* plength) mut
+			public HRESULT TxGetMaxLength(out uint32 plength) mut
 			{
-				return VT.TxGetMaxLength(&this, plength);
+				return VT.TxGetMaxLength(ref this, out plength);
 			}
-			public HRESULT TxGetScrollBars(uint32* pdwScrollBar) mut
+			public HRESULT TxGetScrollBars(out uint32 pdwScrollBar) mut
 			{
-				return VT.TxGetScrollBars(&this, pdwScrollBar);
+				return VT.TxGetScrollBars(ref this, out pdwScrollBar);
 			}
-			public HRESULT TxGetPasswordChar(int8* pch) mut
+			public HRESULT TxGetPasswordChar(out int8 pch) mut
 			{
-				return VT.TxGetPasswordChar(&this, pch);
+				return VT.TxGetPasswordChar(ref this, out pch);
 			}
-			public HRESULT TxGetAcceleratorPos(int32* pcp) mut
+			public HRESULT TxGetAcceleratorPos(out int32 pcp) mut
 			{
-				return VT.TxGetAcceleratorPos(&this, pcp);
+				return VT.TxGetAcceleratorPos(ref this, out pcp);
 			}
-			public HRESULT TxGetExtent(SIZE* lpExtent) mut
+			public HRESULT TxGetExtent(out SIZE lpExtent) mut
 			{
-				return VT.TxGetExtent(&this, lpExtent);
+				return VT.TxGetExtent(ref this, out lpExtent);
 			}
-			public HRESULT OnTxCharFormatChange(CHARFORMATW* pCF) mut
+			public HRESULT OnTxCharFormatChange(in CHARFORMATW pCF) mut
 			{
-				return VT.OnTxCharFormatChange(&this, pCF);
+				return VT.OnTxCharFormatChange(ref this, pCF);
 			}
-			public HRESULT OnTxParaFormatChange(PARAFORMAT* pPF) mut
+			public HRESULT OnTxParaFormatChange(in PARAFORMAT pPF) mut
 			{
-				return VT.OnTxParaFormatChange(&this, pPF);
+				return VT.OnTxParaFormatChange(ref this, pPF);
 			}
-			public HRESULT TxGetPropertyBits(uint32 dwMask, uint32* pdwBits) mut
+			public HRESULT TxGetPropertyBits(uint32 dwMask, out uint32 pdwBits) mut
 			{
-				return VT.TxGetPropertyBits(&this, dwMask, pdwBits);
+				return VT.TxGetPropertyBits(ref this, dwMask, out pdwBits);
 			}
 			public HRESULT TxNotify(uint32 iNotify, void* pv) mut
 			{
-				return VT.TxNotify(&this, iNotify, pv);
+				return VT.TxNotify(ref this, iNotify, pv);
 			}
 			public HIMC TxImmGetContext() mut
 			{
-				return VT.TxImmGetContext(&this);
+				return VT.TxImmGetContext(ref this);
 			}
 			public void TxImmReleaseContext(HIMC himc) mut
 			{
-				VT.TxImmReleaseContext(&this, himc);
+				VT.TxImmReleaseContext(ref this, himc);
 			}
-			public HRESULT TxGetSelectionBarWidth(int32* lSelBarWidth) mut
+			public HRESULT TxGetSelectionBarWidth(out int32 lSelBarWidth) mut
 			{
-				return VT.TxGetSelectionBarWidth(&this, lSelBarWidth);
+				return VT.TxGetSelectionBarWidth(ref this, out lSelBarWidth);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HDC(ITextHost *self) TxGetDC;
-				public new function int32(ITextHost *self, HDC hdc) TxReleaseDC;
-				public new function BOOL(ITextHost *self, int32 fnBar, BOOL fShow) TxShowScrollBar;
-				public new function BOOL(ITextHost *self, SCROLLBAR_CONSTANTS fuSBFlags, ENABLE_SCROLL_BAR_ARROWS fuArrowflags) TxEnableScrollBar;
-				public new function BOOL(ITextHost *self, int32 fnBar, int32 nMinPos, int32 nMaxPos, BOOL fRedraw) TxSetScrollRange;
-				public new function BOOL(ITextHost *self, int32 fnBar, int32 nPos, BOOL fRedraw) TxSetScrollPos;
-				public new function void(ITextHost *self, RECT* prc, BOOL fMode) TxInvalidateRect;
-				public new function void(ITextHost *self, BOOL fUpdate) TxViewChange;
-				public new function BOOL(ITextHost *self, HBITMAP hbmp, int32 xWidth, int32 yHeight) TxCreateCaret;
-				public new function BOOL(ITextHost *self, BOOL fShow) TxShowCaret;
-				public new function BOOL(ITextHost *self, int32 x, int32 y) TxSetCaretPos;
-				public new function BOOL(ITextHost *self, uint32 idTimer, uint32 uTimeout) TxSetTimer;
-				public new function void(ITextHost *self, uint32 idTimer) TxKillTimer;
-				public new function void(ITextHost *self, int32 dx, int32 dy, RECT* lprcScroll, RECT* lprcClip, HRGN hrgnUpdate, RECT* lprcUpdate, SHOW_WINDOW_CMD fuScroll) TxScrollWindowEx;
-				public new function void(ITextHost *self, BOOL fCapture) TxSetCapture;
-				public new function void(ITextHost *self) TxSetFocus;
-				public new function void(ITextHost *self, HCURSOR hcur, BOOL fText) TxSetCursor;
-				public new function BOOL(ITextHost *self, POINT* lppt) TxScreenToClient;
-				public new function BOOL(ITextHost *self, POINT* lppt) TxClientToScreen;
-				public new function HRESULT(ITextHost *self, int32* plOldState) TxActivate;
-				public new function HRESULT(ITextHost *self, int32 lNewState) TxDeactivate;
-				public new function HRESULT(ITextHost *self, RECT* prc) TxGetClientRect;
-				public new function HRESULT(ITextHost *self, RECT* prc) TxGetViewInset;
-				public new function HRESULT(ITextHost *self, CHARFORMATW** ppCF) TxGetCharFormat;
-				public new function HRESULT(ITextHost *self, PARAFORMAT** ppPF) TxGetParaFormat;
-				public new function uint32(ITextHost *self, int32 nIndex) TxGetSysColor;
-				public new function HRESULT(ITextHost *self, TXTBACKSTYLE* pstyle) TxGetBackStyle;
-				public new function HRESULT(ITextHost *self, uint32* plength) TxGetMaxLength;
-				public new function HRESULT(ITextHost *self, uint32* pdwScrollBar) TxGetScrollBars;
-				public new function HRESULT(ITextHost *self, int8* pch) TxGetPasswordChar;
-				public new function HRESULT(ITextHost *self, int32* pcp) TxGetAcceleratorPos;
-				public new function HRESULT(ITextHost *self, SIZE* lpExtent) TxGetExtent;
-				public new function HRESULT(ITextHost *self, CHARFORMATW* pCF) OnTxCharFormatChange;
-				public new function HRESULT(ITextHost *self, PARAFORMAT* pPF) OnTxParaFormatChange;
-				public new function HRESULT(ITextHost *self, uint32 dwMask, uint32* pdwBits) TxGetPropertyBits;
-				public new function HRESULT(ITextHost *self, uint32 iNotify, void* pv) TxNotify;
-				public new function HIMC(ITextHost *self) TxImmGetContext;
-				public new function void(ITextHost *self, HIMC himc) TxImmReleaseContext;
-				public new function HRESULT(ITextHost *self, int32* lSelBarWidth) TxGetSelectionBarWidth;
+				public new function HDC(ref ITextHost self) TxGetDC;
+				public new function int32(ref ITextHost self, HDC hdc) TxReleaseDC;
+				public new function BOOL(ref ITextHost self, int32 fnBar, BOOL fShow) TxShowScrollBar;
+				public new function BOOL(ref ITextHost self, SCROLLBAR_CONSTANTS fuSBFlags, ENABLE_SCROLL_BAR_ARROWS fuArrowflags) TxEnableScrollBar;
+				public new function BOOL(ref ITextHost self, int32 fnBar, int32 nMinPos, int32 nMaxPos, BOOL fRedraw) TxSetScrollRange;
+				public new function BOOL(ref ITextHost self, int32 fnBar, int32 nPos, BOOL fRedraw) TxSetScrollPos;
+				public new function void(ref ITextHost self, out RECT prc, BOOL fMode) TxInvalidateRect;
+				public new function void(ref ITextHost self, BOOL fUpdate) TxViewChange;
+				public new function BOOL(ref ITextHost self, HBITMAP hbmp, int32 xWidth, int32 yHeight) TxCreateCaret;
+				public new function BOOL(ref ITextHost self, BOOL fShow) TxShowCaret;
+				public new function BOOL(ref ITextHost self, int32 x, int32 y) TxSetCaretPos;
+				public new function BOOL(ref ITextHost self, uint32 idTimer, uint32 uTimeout) TxSetTimer;
+				public new function void(ref ITextHost self, uint32 idTimer) TxKillTimer;
+				public new function void(ref ITextHost self, int32 dx, int32 dy, out RECT lprcScroll, out RECT lprcClip, HRGN hrgnUpdate, out RECT lprcUpdate, SHOW_WINDOW_CMD fuScroll) TxScrollWindowEx;
+				public new function void(ref ITextHost self, BOOL fCapture) TxSetCapture;
+				public new function void(ref ITextHost self) TxSetFocus;
+				public new function void(ref ITextHost self, HCURSOR hcur, BOOL fText) TxSetCursor;
+				public new function BOOL(ref ITextHost self, out POINT lppt) TxScreenToClient;
+				public new function BOOL(ref ITextHost self, out POINT lppt) TxClientToScreen;
+				public new function HRESULT(ref ITextHost self, out int32 plOldState) TxActivate;
+				public new function HRESULT(ref ITextHost self, int32 lNewState) TxDeactivate;
+				public new function HRESULT(ref ITextHost self, out RECT prc) TxGetClientRect;
+				public new function HRESULT(ref ITextHost self, out RECT prc) TxGetViewInset;
+				public new function HRESULT(ref ITextHost self, in CHARFORMATW* ppCF) TxGetCharFormat;
+				public new function HRESULT(ref ITextHost self, in PARAFORMAT* ppPF) TxGetParaFormat;
+				public new function uint32(ref ITextHost self, int32 nIndex) TxGetSysColor;
+				public new function HRESULT(ref ITextHost self, out TXTBACKSTYLE pstyle) TxGetBackStyle;
+				public new function HRESULT(ref ITextHost self, out uint32 plength) TxGetMaxLength;
+				public new function HRESULT(ref ITextHost self, out uint32 pdwScrollBar) TxGetScrollBars;
+				public new function HRESULT(ref ITextHost self, out int8 pch) TxGetPasswordChar;
+				public new function HRESULT(ref ITextHost self, out int32 pcp) TxGetAcceleratorPos;
+				public new function HRESULT(ref ITextHost self, out SIZE lpExtent) TxGetExtent;
+				public new function HRESULT(ref ITextHost self, in CHARFORMATW pCF) OnTxCharFormatChange;
+				public new function HRESULT(ref ITextHost self, in PARAFORMAT pPF) OnTxParaFormatChange;
+				public new function HRESULT(ref ITextHost self, uint32 dwMask, out uint32 pdwBits) TxGetPropertyBits;
+				public new function HRESULT(ref ITextHost self, uint32 iNotify, void* pv) TxNotify;
+				public new function HIMC(ref ITextHost self) TxImmGetContext;
+				public new function void(ref ITextHost self, HIMC himc) TxImmReleaseContext;
+				public new function HRESULT(ref ITextHost self, out int32 lSelBarWidth) TxGetSelectionBarWidth;
 			}
 		}
 		[CRepr]
@@ -2107,14 +2107,14 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyOverrideValue(int32 propertyId, VARIANT* pRetValue) mut
+			public HRESULT GetPropertyOverrideValue(int32 propertyId, out VARIANT pRetValue) mut
 			{
-				return VT.GetPropertyOverrideValue(&this, propertyId, pRetValue);
+				return VT.GetPropertyOverrideValue(ref this, propertyId, out pRetValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRicheditUiaOverrides *self, int32 propertyId, VARIANT* pRetValue) GetPropertyOverrideValue;
+				public new function HRESULT(ref IRicheditUiaOverrides self, int32 propertyId, out VARIANT pRetValue) GetPropertyOverrideValue;
 			}
 		}
 		[CRepr]
@@ -2124,67 +2124,67 @@ namespace Win32
 			
 			public BOOL TxIsDoubleClickPending() mut
 			{
-				return VT.TxIsDoubleClickPending(&this);
+				return VT.TxIsDoubleClickPending(ref this);
 			}
-			public HRESULT TxGetWindow(HWND* phwnd) mut
+			public HRESULT TxGetWindow(out HWND phwnd) mut
 			{
-				return VT.TxGetWindow(&this, phwnd);
+				return VT.TxGetWindow(ref this, out phwnd);
 			}
 			public HRESULT TxSetForegroundWindow() mut
 			{
-				return VT.TxSetForegroundWindow(&this);
+				return VT.TxSetForegroundWindow(ref this);
 			}
 			public HPALETTE TxGetPalette() mut
 			{
-				return VT.TxGetPalette(&this);
+				return VT.TxGetPalette(ref this);
 			}
-			public HRESULT TxGetEastAsianFlags(int32* pFlags) mut
+			public HRESULT TxGetEastAsianFlags(out int32 pFlags) mut
 			{
-				return VT.TxGetEastAsianFlags(&this, pFlags);
+				return VT.TxGetEastAsianFlags(ref this, out pFlags);
 			}
 			public HCURSOR TxSetCursor2(HCURSOR hcur, BOOL bText) mut
 			{
-				return VT.TxSetCursor2(&this, hcur, bText);
+				return VT.TxSetCursor2(ref this, hcur, bText);
 			}
 			public void TxFreeTextServicesNotification() mut
 			{
-				VT.TxFreeTextServicesNotification(&this);
+				VT.TxFreeTextServicesNotification(ref this);
 			}
-			public HRESULT TxGetEditStyle(uint32 dwItem, uint32* pdwData) mut
+			public HRESULT TxGetEditStyle(uint32 dwItem, out uint32 pdwData) mut
 			{
-				return VT.TxGetEditStyle(&this, dwItem, pdwData);
+				return VT.TxGetEditStyle(ref this, dwItem, out pdwData);
 			}
-			public HRESULT TxGetWindowStyles(uint32* pdwStyle, uint32* pdwExStyle) mut
+			public HRESULT TxGetWindowStyles(out uint32 pdwStyle, out uint32 pdwExStyle) mut
 			{
-				return VT.TxGetWindowStyles(&this, pdwStyle, pdwExStyle);
+				return VT.TxGetWindowStyles(ref this, out pdwStyle, out pdwExStyle);
 			}
-			public HRESULT TxShowDropCaret(BOOL fShow, HDC hdc, RECT* prc) mut
+			public HRESULT TxShowDropCaret(BOOL fShow, HDC hdc, out RECT prc) mut
 			{
-				return VT.TxShowDropCaret(&this, fShow, hdc, prc);
+				return VT.TxShowDropCaret(ref this, fShow, hdc, out prc);
 			}
 			public HRESULT TxDestroyCaret() mut
 			{
-				return VT.TxDestroyCaret(&this);
+				return VT.TxDestroyCaret(ref this);
 			}
-			public HRESULT TxGetHorzExtent(int32* plHorzExtent) mut
+			public HRESULT TxGetHorzExtent(out int32 plHorzExtent) mut
 			{
-				return VT.TxGetHorzExtent(&this, plHorzExtent);
+				return VT.TxGetHorzExtent(ref this, out plHorzExtent);
 			}
 			[CRepr]
 			public struct VTable : ITextHost.VTable
 			{
-				public new function BOOL(ITextHost2 *self) TxIsDoubleClickPending;
-				public new function HRESULT(ITextHost2 *self, HWND* phwnd) TxGetWindow;
-				public new function HRESULT(ITextHost2 *self) TxSetForegroundWindow;
-				public new function HPALETTE(ITextHost2 *self) TxGetPalette;
-				public new function HRESULT(ITextHost2 *self, int32* pFlags) TxGetEastAsianFlags;
-				public new function HCURSOR(ITextHost2 *self, HCURSOR hcur, BOOL bText) TxSetCursor2;
-				public new function void(ITextHost2 *self) TxFreeTextServicesNotification;
-				public new function HRESULT(ITextHost2 *self, uint32 dwItem, uint32* pdwData) TxGetEditStyle;
-				public new function HRESULT(ITextHost2 *self, uint32* pdwStyle, uint32* pdwExStyle) TxGetWindowStyles;
-				public new function HRESULT(ITextHost2 *self, BOOL fShow, HDC hdc, RECT* prc) TxShowDropCaret;
-				public new function HRESULT(ITextHost2 *self) TxDestroyCaret;
-				public new function HRESULT(ITextHost2 *self, int32* plHorzExtent) TxGetHorzExtent;
+				public new function BOOL(ref ITextHost2 self) TxIsDoubleClickPending;
+				public new function HRESULT(ref ITextHost2 self, out HWND phwnd) TxGetWindow;
+				public new function HRESULT(ref ITextHost2 self) TxSetForegroundWindow;
+				public new function HPALETTE(ref ITextHost2 self) TxGetPalette;
+				public new function HRESULT(ref ITextHost2 self, out int32 pFlags) TxGetEastAsianFlags;
+				public new function HCURSOR(ref ITextHost2 self, HCURSOR hcur, BOOL bText) TxSetCursor2;
+				public new function void(ref ITextHost2 self) TxFreeTextServicesNotification;
+				public new function HRESULT(ref ITextHost2 self, uint32 dwItem, out uint32 pdwData) TxGetEditStyle;
+				public new function HRESULT(ref ITextHost2 self, out uint32 pdwStyle, out uint32 pdwExStyle) TxGetWindowStyles;
+				public new function HRESULT(ref ITextHost2 self, BOOL fShow, HDC hdc, out RECT prc) TxShowDropCaret;
+				public new function HRESULT(ref ITextHost2 self) TxDestroyCaret;
+				public new function HRESULT(ref ITextHost2 self, out int32 plHorzExtent) TxGetHorzExtent;
 			}
 		}
 		[CRepr]
@@ -2192,19 +2192,19 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TxGetNaturalSize2(uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, DVTARGETDEVICE* ptd, uint32 dwMode, SIZE* psizelExtent, int32* pwidth, int32* pheight, int32* pascent) mut
+			public HRESULT TxGetNaturalSize2(uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, out DVTARGETDEVICE ptd, uint32 dwMode, in SIZE psizelExtent, out int32 pwidth, out int32 pheight, out int32 pascent) mut
 			{
-				return VT.TxGetNaturalSize2(&this, dwAspect, hdcDraw, hicTargetDev, ptd, dwMode, psizelExtent, pwidth, pheight, pascent);
+				return VT.TxGetNaturalSize2(ref this, dwAspect, hdcDraw, hicTargetDev, out ptd, dwMode, psizelExtent, out pwidth, out pheight, out pascent);
 			}
-			public HRESULT TxDrawD2D(ID2D1RenderTarget* pRenderTarget, RECTL* lprcBounds, RECT* lprcUpdate, int32 lViewId) mut
+			public HRESULT TxDrawD2D(ref ID2D1RenderTarget pRenderTarget, out RECTL lprcBounds, out RECT lprcUpdate, int32 lViewId) mut
 			{
-				return VT.TxDrawD2D(&this, pRenderTarget, lprcBounds, lprcUpdate, lViewId);
+				return VT.TxDrawD2D(ref this, ref pRenderTarget, out lprcBounds, out lprcUpdate, lViewId);
 			}
 			[CRepr]
 			public struct VTable : ITextServices.VTable
 			{
-				public new function HRESULT(ITextServices2 *self, uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, DVTARGETDEVICE* ptd, uint32 dwMode, SIZE* psizelExtent, int32* pwidth, int32* pheight, int32* pascent) TxGetNaturalSize2;
-				public new function HRESULT(ITextServices2 *self, ID2D1RenderTarget* pRenderTarget, RECTL* lprcBounds, RECT* lprcUpdate, int32 lViewId) TxDrawD2D;
+				public new function HRESULT(ref ITextServices2 self, uint32 dwAspect, HDC hdcDraw, HDC hicTargetDev, out DVTARGETDEVICE ptd, uint32 dwMode, in SIZE psizelExtent, out int32 pwidth, out int32 pheight, out int32 pascent) TxGetNaturalSize2;
+				public new function HRESULT(ref ITextServices2 self, ref ID2D1RenderTarget pRenderTarget, out RECTL lprcBounds, out RECT lprcUpdate, int32 lViewId) TxDrawD2D;
 			}
 		}
 		[CRepr]
@@ -2214,89 +2214,89 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClientSite(IOleClientSite** lplpolesite) mut
+			public HRESULT GetClientSite(out IOleClientSite* lplpolesite) mut
 			{
-				return VT.GetClientSite(&this, lplpolesite);
+				return VT.GetClientSite(ref this, out lplpolesite);
 			}
 			public int32 GetObjectCount() mut
 			{
-				return VT.GetObjectCount(&this);
+				return VT.GetObjectCount(ref this);
 			}
 			public int32 GetLinkCount() mut
 			{
-				return VT.GetLinkCount(&this);
+				return VT.GetLinkCount(ref this);
 			}
-			public HRESULT GetObject(int32 iob, REOBJECT* lpreobject, RICH_EDIT_GET_OBJECT_FLAGS dwFlags) mut
+			public HRESULT GetObject(int32 iob, out REOBJECT lpreobject, RICH_EDIT_GET_OBJECT_FLAGS dwFlags) mut
 			{
-				return VT.GetObject(&this, iob, lpreobject, dwFlags);
+				return VT.GetObject(ref this, iob, out lpreobject, dwFlags);
 			}
-			public HRESULT InsertObject(REOBJECT* lpreobject) mut
+			public HRESULT InsertObject(out REOBJECT lpreobject) mut
 			{
-				return VT.InsertObject(&this, lpreobject);
+				return VT.InsertObject(ref this, out lpreobject);
 			}
-			public HRESULT ConvertObject(int32 iob, Guid* rclsidNew, PSTR lpstrUserTypeNew) mut
+			public HRESULT ConvertObject(int32 iob, in Guid rclsidNew, PSTR lpstrUserTypeNew) mut
 			{
-				return VT.ConvertObject(&this, iob, rclsidNew, lpstrUserTypeNew);
+				return VT.ConvertObject(ref this, iob, rclsidNew, lpstrUserTypeNew);
 			}
-			public HRESULT ActivateAs(Guid* rclsid, Guid* rclsidAs) mut
+			public HRESULT ActivateAs(in Guid rclsid, in Guid rclsidAs) mut
 			{
-				return VT.ActivateAs(&this, rclsid, rclsidAs);
+				return VT.ActivateAs(ref this, rclsid, rclsidAs);
 			}
 			public HRESULT SetHostNames(PSTR lpstrContainerApp, PSTR lpstrContainerObj) mut
 			{
-				return VT.SetHostNames(&this, lpstrContainerApp, lpstrContainerObj);
+				return VT.SetHostNames(ref this, lpstrContainerApp, lpstrContainerObj);
 			}
 			public HRESULT SetLinkAvailable(int32 iob, BOOL fAvailable) mut
 			{
-				return VT.SetLinkAvailable(&this, iob, fAvailable);
+				return VT.SetLinkAvailable(ref this, iob, fAvailable);
 			}
 			public HRESULT SetDvaspect(int32 iob, uint32 dvaspect) mut
 			{
-				return VT.SetDvaspect(&this, iob, dvaspect);
+				return VT.SetDvaspect(ref this, iob, dvaspect);
 			}
 			public HRESULT HandsOffStorage(int32 iob) mut
 			{
-				return VT.HandsOffStorage(&this, iob);
+				return VT.HandsOffStorage(ref this, iob);
 			}
-			public HRESULT SaveCompleted(int32 iob, IStorage* lpstg) mut
+			public HRESULT SaveCompleted(int32 iob, ref IStorage lpstg) mut
 			{
-				return VT.SaveCompleted(&this, iob, lpstg);
+				return VT.SaveCompleted(ref this, iob, ref lpstg);
 			}
 			public HRESULT InPlaceDeactivate() mut
 			{
-				return VT.InPlaceDeactivate(&this);
+				return VT.InPlaceDeactivate(ref this);
 			}
 			public HRESULT ContextSensitiveHelp(BOOL fEnterMode) mut
 			{
-				return VT.ContextSensitiveHelp(&this, fEnterMode);
+				return VT.ContextSensitiveHelp(ref this, fEnterMode);
 			}
-			public HRESULT GetClipboardData(CHARRANGE* lpchrg, uint32 reco, IDataObject** lplpdataobj) mut
+			public HRESULT GetClipboardData(out CHARRANGE lpchrg, uint32 reco, out IDataObject* lplpdataobj) mut
 			{
-				return VT.GetClipboardData(&this, lpchrg, reco, lplpdataobj);
+				return VT.GetClipboardData(ref this, out lpchrg, reco, out lplpdataobj);
 			}
-			public HRESULT ImportDataObject(IDataObject* lpdataobj, uint16 cf, int hMetaPict) mut
+			public HRESULT ImportDataObject(ref IDataObject lpdataobj, uint16 cf, int hMetaPict) mut
 			{
-				return VT.ImportDataObject(&this, lpdataobj, cf, hMetaPict);
+				return VT.ImportDataObject(ref this, ref lpdataobj, cf, hMetaPict);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRichEditOle *self, IOleClientSite** lplpolesite) GetClientSite;
-				public new function int32(IRichEditOle *self) GetObjectCount;
-				public new function int32(IRichEditOle *self) GetLinkCount;
-				public new function HRESULT(IRichEditOle *self, int32 iob, REOBJECT* lpreobject, RICH_EDIT_GET_OBJECT_FLAGS dwFlags) GetObject;
-				public new function HRESULT(IRichEditOle *self, REOBJECT* lpreobject) InsertObject;
-				public new function HRESULT(IRichEditOle *self, int32 iob, Guid* rclsidNew, PSTR lpstrUserTypeNew) ConvertObject;
-				public new function HRESULT(IRichEditOle *self, Guid* rclsid, Guid* rclsidAs) ActivateAs;
-				public new function HRESULT(IRichEditOle *self, PSTR lpstrContainerApp, PSTR lpstrContainerObj) SetHostNames;
-				public new function HRESULT(IRichEditOle *self, int32 iob, BOOL fAvailable) SetLinkAvailable;
-				public new function HRESULT(IRichEditOle *self, int32 iob, uint32 dvaspect) SetDvaspect;
-				public new function HRESULT(IRichEditOle *self, int32 iob) HandsOffStorage;
-				public new function HRESULT(IRichEditOle *self, int32 iob, IStorage* lpstg) SaveCompleted;
-				public new function HRESULT(IRichEditOle *self) InPlaceDeactivate;
-				public new function HRESULT(IRichEditOle *self, BOOL fEnterMode) ContextSensitiveHelp;
-				public new function HRESULT(IRichEditOle *self, CHARRANGE* lpchrg, uint32 reco, IDataObject** lplpdataobj) GetClipboardData;
-				public new function HRESULT(IRichEditOle *self, IDataObject* lpdataobj, uint16 cf, int hMetaPict) ImportDataObject;
+				public new function HRESULT(ref IRichEditOle self, out IOleClientSite* lplpolesite) GetClientSite;
+				public new function int32(ref IRichEditOle self) GetObjectCount;
+				public new function int32(ref IRichEditOle self) GetLinkCount;
+				public new function HRESULT(ref IRichEditOle self, int32 iob, out REOBJECT lpreobject, RICH_EDIT_GET_OBJECT_FLAGS dwFlags) GetObject;
+				public new function HRESULT(ref IRichEditOle self, out REOBJECT lpreobject) InsertObject;
+				public new function HRESULT(ref IRichEditOle self, int32 iob, in Guid rclsidNew, PSTR lpstrUserTypeNew) ConvertObject;
+				public new function HRESULT(ref IRichEditOle self, in Guid rclsid, in Guid rclsidAs) ActivateAs;
+				public new function HRESULT(ref IRichEditOle self, PSTR lpstrContainerApp, PSTR lpstrContainerObj) SetHostNames;
+				public new function HRESULT(ref IRichEditOle self, int32 iob, BOOL fAvailable) SetLinkAvailable;
+				public new function HRESULT(ref IRichEditOle self, int32 iob, uint32 dvaspect) SetDvaspect;
+				public new function HRESULT(ref IRichEditOle self, int32 iob) HandsOffStorage;
+				public new function HRESULT(ref IRichEditOle self, int32 iob, ref IStorage lpstg) SaveCompleted;
+				public new function HRESULT(ref IRichEditOle self) InPlaceDeactivate;
+				public new function HRESULT(ref IRichEditOle self, BOOL fEnterMode) ContextSensitiveHelp;
+				public new function HRESULT(ref IRichEditOle self, out CHARRANGE lpchrg, uint32 reco, out IDataObject* lplpdataobj) GetClipboardData;
+				public new function HRESULT(ref IRichEditOle self, ref IDataObject lpdataobj, uint16 cf, int hMetaPict) ImportDataObject;
 			}
 		}
 		[CRepr]
@@ -2306,59 +2306,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNewStorage(IStorage** lplpstg) mut
+			public HRESULT GetNewStorage(out IStorage* lplpstg) mut
 			{
-				return VT.GetNewStorage(&this, lplpstg);
+				return VT.GetNewStorage(ref this, out lplpstg);
 			}
-			public HRESULT GetInPlaceContext(IOleInPlaceFrame** lplpFrame, IOleInPlaceUIWindow** lplpDoc, OIFI* lpFrameInfo) mut
+			public HRESULT GetInPlaceContext(out IOleInPlaceFrame* lplpFrame, out IOleInPlaceUIWindow* lplpDoc, out OIFI lpFrameInfo) mut
 			{
-				return VT.GetInPlaceContext(&this, lplpFrame, lplpDoc, lpFrameInfo);
+				return VT.GetInPlaceContext(ref this, out lplpFrame, out lplpDoc, out lpFrameInfo);
 			}
 			public HRESULT ShowContainerUI(BOOL fShow) mut
 			{
-				return VT.ShowContainerUI(&this, fShow);
+				return VT.ShowContainerUI(ref this, fShow);
 			}
-			public HRESULT QueryInsertObject(Guid* lpclsid, IStorage* lpstg, int32 cp) mut
+			public HRESULT QueryInsertObject(out Guid lpclsid, ref IStorage lpstg, int32 cp) mut
 			{
-				return VT.QueryInsertObject(&this, lpclsid, lpstg, cp);
+				return VT.QueryInsertObject(ref this, out lpclsid, ref lpstg, cp);
 			}
-			public HRESULT DeleteObject(IOleObject* lpoleobj) mut
+			public HRESULT DeleteObject(ref IOleObject lpoleobj) mut
 			{
-				return VT.DeleteObject(&this, lpoleobj);
+				return VT.DeleteObject(ref this, ref lpoleobj);
 			}
-			public HRESULT QueryAcceptData(IDataObject* lpdataobj, uint16* lpcfFormat, uint32 reco, BOOL fReally, int hMetaPict) mut
+			public HRESULT QueryAcceptData(ref IDataObject lpdataobj, out uint16 lpcfFormat, uint32 reco, BOOL fReally, int hMetaPict) mut
 			{
-				return VT.QueryAcceptData(&this, lpdataobj, lpcfFormat, reco, fReally, hMetaPict);
+				return VT.QueryAcceptData(ref this, ref lpdataobj, out lpcfFormat, reco, fReally, hMetaPict);
 			}
 			public HRESULT ContextSensitiveHelp(BOOL fEnterMode) mut
 			{
-				return VT.ContextSensitiveHelp(&this, fEnterMode);
+				return VT.ContextSensitiveHelp(ref this, fEnterMode);
 			}
-			public HRESULT GetClipboardData(CHARRANGE* lpchrg, uint32 reco, IDataObject** lplpdataobj) mut
+			public HRESULT GetClipboardData(out CHARRANGE lpchrg, uint32 reco, out IDataObject* lplpdataobj) mut
 			{
-				return VT.GetClipboardData(&this, lpchrg, reco, lplpdataobj);
+				return VT.GetClipboardData(ref this, out lpchrg, reco, out lplpdataobj);
 			}
-			public HRESULT GetDragDropEffect(BOOL fDrag, uint32 grfKeyState, uint32* pdwEffect) mut
+			public HRESULT GetDragDropEffect(BOOL fDrag, uint32 grfKeyState, out uint32 pdwEffect) mut
 			{
-				return VT.GetDragDropEffect(&this, fDrag, grfKeyState, pdwEffect);
+				return VT.GetDragDropEffect(ref this, fDrag, grfKeyState, out pdwEffect);
 			}
-			public HRESULT GetContextMenu(RICH_EDIT_GET_CONTEXT_MENU_SEL_TYPE seltype, IOleObject* lpoleobj, CHARRANGE* lpchrg, HMENU* lphmenu) mut
+			public HRESULT GetContextMenu(RICH_EDIT_GET_CONTEXT_MENU_SEL_TYPE seltype, ref IOleObject lpoleobj, out CHARRANGE lpchrg, out HMENU lphmenu) mut
 			{
-				return VT.GetContextMenu(&this, seltype, lpoleobj, lpchrg, lphmenu);
+				return VT.GetContextMenu(ref this, seltype, ref lpoleobj, out lpchrg, out lphmenu);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRichEditOleCallback *self, IStorage** lplpstg) GetNewStorage;
-				public new function HRESULT(IRichEditOleCallback *self, IOleInPlaceFrame** lplpFrame, IOleInPlaceUIWindow** lplpDoc, OIFI* lpFrameInfo) GetInPlaceContext;
-				public new function HRESULT(IRichEditOleCallback *self, BOOL fShow) ShowContainerUI;
-				public new function HRESULT(IRichEditOleCallback *self, Guid* lpclsid, IStorage* lpstg, int32 cp) QueryInsertObject;
-				public new function HRESULT(IRichEditOleCallback *self, IOleObject* lpoleobj) DeleteObject;
-				public new function HRESULT(IRichEditOleCallback *self, IDataObject* lpdataobj, uint16* lpcfFormat, uint32 reco, BOOL fReally, int hMetaPict) QueryAcceptData;
-				public new function HRESULT(IRichEditOleCallback *self, BOOL fEnterMode) ContextSensitiveHelp;
-				public new function HRESULT(IRichEditOleCallback *self, CHARRANGE* lpchrg, uint32 reco, IDataObject** lplpdataobj) GetClipboardData;
-				public new function HRESULT(IRichEditOleCallback *self, BOOL fDrag, uint32 grfKeyState, uint32* pdwEffect) GetDragDropEffect;
-				public new function HRESULT(IRichEditOleCallback *self, RICH_EDIT_GET_CONTEXT_MENU_SEL_TYPE seltype, IOleObject* lpoleobj, CHARRANGE* lpchrg, HMENU* lphmenu) GetContextMenu;
+				public new function HRESULT(ref IRichEditOleCallback self, out IStorage* lplpstg) GetNewStorage;
+				public new function HRESULT(ref IRichEditOleCallback self, out IOleInPlaceFrame* lplpFrame, out IOleInPlaceUIWindow* lplpDoc, out OIFI lpFrameInfo) GetInPlaceContext;
+				public new function HRESULT(ref IRichEditOleCallback self, BOOL fShow) ShowContainerUI;
+				public new function HRESULT(ref IRichEditOleCallback self, out Guid lpclsid, ref IStorage lpstg, int32 cp) QueryInsertObject;
+				public new function HRESULT(ref IRichEditOleCallback self, ref IOleObject lpoleobj) DeleteObject;
+				public new function HRESULT(ref IRichEditOleCallback self, ref IDataObject lpdataobj, out uint16 lpcfFormat, uint32 reco, BOOL fReally, int hMetaPict) QueryAcceptData;
+				public new function HRESULT(ref IRichEditOleCallback self, BOOL fEnterMode) ContextSensitiveHelp;
+				public new function HRESULT(ref IRichEditOleCallback self, out CHARRANGE lpchrg, uint32 reco, out IDataObject* lplpdataobj) GetClipboardData;
+				public new function HRESULT(ref IRichEditOleCallback self, BOOL fDrag, uint32 grfKeyState, out uint32 pdwEffect) GetDragDropEffect;
+				public new function HRESULT(ref IRichEditOleCallback self, RICH_EDIT_GET_CONTEXT_MENU_SEL_TYPE seltype, ref IOleObject lpoleobj, out CHARRANGE lpchrg, out HMENU lphmenu) GetContextMenu;
 			}
 		}
 		[CRepr]
@@ -2370,102 +2370,102 @@ namespace Win32
 			
 			public HRESULT GetName(BSTR* pName) mut
 			{
-				return VT.GetName(&this, pName);
+				return VT.GetName(ref this, pName);
 			}
 			public HRESULT GetSelection(ITextSelection** ppSel) mut
 			{
-				return VT.GetSelection(&this, ppSel);
+				return VT.GetSelection(ref this, ppSel);
 			}
-			public HRESULT GetStoryCount(int32* pCount) mut
+			public HRESULT GetStoryCount(out int32 pCount) mut
 			{
-				return VT.GetStoryCount(&this, pCount);
+				return VT.GetStoryCount(ref this, out pCount);
 			}
 			public HRESULT GetStoryRanges(ITextStoryRanges** ppStories) mut
 			{
-				return VT.GetStoryRanges(&this, ppStories);
+				return VT.GetStoryRanges(ref this, ppStories);
 			}
-			public HRESULT GetSaved(int32* pValue) mut
+			public HRESULT GetSaved(out int32 pValue) mut
 			{
-				return VT.GetSaved(&this, pValue);
+				return VT.GetSaved(ref this, out pValue);
 			}
 			public HRESULT SetSaved(tomConstants Value) mut
 			{
-				return VT.SetSaved(&this, Value);
+				return VT.SetSaved(ref this, Value);
 			}
-			public HRESULT GetDefaultTabStop(float* pValue) mut
+			public HRESULT GetDefaultTabStop(out float pValue) mut
 			{
-				return VT.GetDefaultTabStop(&this, pValue);
+				return VT.GetDefaultTabStop(ref this, out pValue);
 			}
 			public HRESULT SetDefaultTabStop(float Value) mut
 			{
-				return VT.SetDefaultTabStop(&this, Value);
+				return VT.SetDefaultTabStop(ref this, Value);
 			}
 			public HRESULT New() mut
 			{
-				return VT.New(&this);
+				return VT.New(ref this);
 			}
-			public HRESULT Open(VARIANT* pVar, int32 Flags, int32 CodePage) mut
+			public HRESULT Open(ref VARIANT pVar, int32 Flags, int32 CodePage) mut
 			{
-				return VT.Open(&this, pVar, Flags, CodePage);
+				return VT.Open(ref this, ref pVar, Flags, CodePage);
 			}
-			public HRESULT Save(VARIANT* pVar, int32 Flags, int32 CodePage) mut
+			public HRESULT Save(ref VARIANT pVar, int32 Flags, int32 CodePage) mut
 			{
-				return VT.Save(&this, pVar, Flags, CodePage);
+				return VT.Save(ref this, ref pVar, Flags, CodePage);
 			}
-			public HRESULT Freeze(int32* pCount) mut
+			public HRESULT Freeze(out int32 pCount) mut
 			{
-				return VT.Freeze(&this, pCount);
+				return VT.Freeze(ref this, out pCount);
 			}
-			public HRESULT Unfreeze(int32* pCount) mut
+			public HRESULT Unfreeze(out int32 pCount) mut
 			{
-				return VT.Unfreeze(&this, pCount);
+				return VT.Unfreeze(ref this, out pCount);
 			}
 			public HRESULT BeginEditCollection() mut
 			{
-				return VT.BeginEditCollection(&this);
+				return VT.BeginEditCollection(ref this);
 			}
 			public HRESULT EndEditCollection() mut
 			{
-				return VT.EndEditCollection(&this);
+				return VT.EndEditCollection(ref this);
 			}
-			public HRESULT Undo(int32 Count, int32* pCount) mut
+			public HRESULT Undo(int32 Count, out int32 pCount) mut
 			{
-				return VT.Undo(&this, Count, pCount);
+				return VT.Undo(ref this, Count, out pCount);
 			}
-			public HRESULT Redo(int32 Count, int32* pCount) mut
+			public HRESULT Redo(int32 Count, out int32 pCount) mut
 			{
-				return VT.Redo(&this, Count, pCount);
+				return VT.Redo(ref this, Count, out pCount);
 			}
 			public HRESULT Range(int32 cpActive, int32 cpAnchor, ITextRange** ppRange) mut
 			{
-				return VT.Range(&this, cpActive, cpAnchor, ppRange);
+				return VT.Range(ref this, cpActive, cpAnchor, ppRange);
 			}
 			public HRESULT RangeFromPoint(int32 x, int32 y, ITextRange** ppRange) mut
 			{
-				return VT.RangeFromPoint(&this, x, y, ppRange);
+				return VT.RangeFromPoint(ref this, x, y, ppRange);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITextDocument *self, BSTR* pName) GetName;
-				public new function HRESULT(ITextDocument *self, ITextSelection** ppSel) GetSelection;
-				public new function HRESULT(ITextDocument *self, int32* pCount) GetStoryCount;
-				public new function HRESULT(ITextDocument *self, ITextStoryRanges** ppStories) GetStoryRanges;
-				public new function HRESULT(ITextDocument *self, int32* pValue) GetSaved;
-				public new function HRESULT(ITextDocument *self, tomConstants Value) SetSaved;
-				public new function HRESULT(ITextDocument *self, float* pValue) GetDefaultTabStop;
-				public new function HRESULT(ITextDocument *self, float Value) SetDefaultTabStop;
-				public new function HRESULT(ITextDocument *self) New;
-				public new function HRESULT(ITextDocument *self, VARIANT* pVar, int32 Flags, int32 CodePage) Open;
-				public new function HRESULT(ITextDocument *self, VARIANT* pVar, int32 Flags, int32 CodePage) Save;
-				public new function HRESULT(ITextDocument *self, int32* pCount) Freeze;
-				public new function HRESULT(ITextDocument *self, int32* pCount) Unfreeze;
-				public new function HRESULT(ITextDocument *self) BeginEditCollection;
-				public new function HRESULT(ITextDocument *self) EndEditCollection;
-				public new function HRESULT(ITextDocument *self, int32 Count, int32* pCount) Undo;
-				public new function HRESULT(ITextDocument *self, int32 Count, int32* pCount) Redo;
-				public new function HRESULT(ITextDocument *self, int32 cpActive, int32 cpAnchor, ITextRange** ppRange) Range;
-				public new function HRESULT(ITextDocument *self, int32 x, int32 y, ITextRange** ppRange) RangeFromPoint;
+				public new function HRESULT(ref ITextDocument self, BSTR* pName) GetName;
+				public new function HRESULT(ref ITextDocument self, ITextSelection** ppSel) GetSelection;
+				public new function HRESULT(ref ITextDocument self, out int32 pCount) GetStoryCount;
+				public new function HRESULT(ref ITextDocument self, ITextStoryRanges** ppStories) GetStoryRanges;
+				public new function HRESULT(ref ITextDocument self, out int32 pValue) GetSaved;
+				public new function HRESULT(ref ITextDocument self, tomConstants Value) SetSaved;
+				public new function HRESULT(ref ITextDocument self, out float pValue) GetDefaultTabStop;
+				public new function HRESULT(ref ITextDocument self, float Value) SetDefaultTabStop;
+				public new function HRESULT(ref ITextDocument self) New;
+				public new function HRESULT(ref ITextDocument self, ref VARIANT pVar, int32 Flags, int32 CodePage) Open;
+				public new function HRESULT(ref ITextDocument self, ref VARIANT pVar, int32 Flags, int32 CodePage) Save;
+				public new function HRESULT(ref ITextDocument self, out int32 pCount) Freeze;
+				public new function HRESULT(ref ITextDocument self, out int32 pCount) Unfreeze;
+				public new function HRESULT(ref ITextDocument self) BeginEditCollection;
+				public new function HRESULT(ref ITextDocument self) EndEditCollection;
+				public new function HRESULT(ref ITextDocument self, int32 Count, out int32 pCount) Undo;
+				public new function HRESULT(ref ITextDocument self, int32 Count, out int32 pCount) Redo;
+				public new function HRESULT(ref ITextDocument self, int32 cpActive, int32 cpAnchor, ITextRange** ppRange) Range;
+				public new function HRESULT(ref ITextDocument self, int32 x, int32 y, ITextRange** ppRange) RangeFromPoint;
 			}
 		}
 		[CRepr]
@@ -2477,262 +2477,262 @@ namespace Win32
 			
 			public HRESULT GetText(BSTR* pbstr) mut
 			{
-				return VT.GetText(&this, pbstr);
+				return VT.GetText(ref this, pbstr);
 			}
 			public HRESULT SetText(BSTR bstr) mut
 			{
-				return VT.SetText(&this, bstr);
+				return VT.SetText(ref this, bstr);
 			}
-			public HRESULT GetChar(int32* pChar) mut
+			public HRESULT GetChar(out int32 pChar) mut
 			{
-				return VT.GetChar(&this, pChar);
+				return VT.GetChar(ref this, out pChar);
 			}
 			public HRESULT SetChar(int32 Char) mut
 			{
-				return VT.SetChar(&this, Char);
+				return VT.SetChar(ref this, Char);
 			}
 			public HRESULT GetDuplicate(ITextRange** ppRange) mut
 			{
-				return VT.GetDuplicate(&this, ppRange);
+				return VT.GetDuplicate(ref this, ppRange);
 			}
 			public HRESULT GetFormattedText(ITextRange** ppRange) mut
 			{
-				return VT.GetFormattedText(&this, ppRange);
+				return VT.GetFormattedText(ref this, ppRange);
 			}
 			public HRESULT SetFormattedText(ITextRange* pRange) mut
 			{
-				return VT.SetFormattedText(&this, pRange);
+				return VT.SetFormattedText(ref this, pRange);
 			}
-			public HRESULT GetStart(int32* pcpFirst) mut
+			public HRESULT GetStart(out int32 pcpFirst) mut
 			{
-				return VT.GetStart(&this, pcpFirst);
+				return VT.GetStart(ref this, out pcpFirst);
 			}
 			public HRESULT SetStart(int32 cpFirst) mut
 			{
-				return VT.SetStart(&this, cpFirst);
+				return VT.SetStart(ref this, cpFirst);
 			}
-			public HRESULT GetEnd(int32* pcpLim) mut
+			public HRESULT GetEnd(out int32 pcpLim) mut
 			{
-				return VT.GetEnd(&this, pcpLim);
+				return VT.GetEnd(ref this, out pcpLim);
 			}
 			public HRESULT SetEnd(int32 cpLim) mut
 			{
-				return VT.SetEnd(&this, cpLim);
+				return VT.SetEnd(ref this, cpLim);
 			}
 			public HRESULT GetFont(ITextFont** ppFont) mut
 			{
-				return VT.GetFont(&this, ppFont);
+				return VT.GetFont(ref this, ppFont);
 			}
 			public HRESULT SetFont(ITextFont* pFont) mut
 			{
-				return VT.SetFont(&this, pFont);
+				return VT.SetFont(ref this, pFont);
 			}
 			public HRESULT GetPara(ITextPara** ppPara) mut
 			{
-				return VT.GetPara(&this, ppPara);
+				return VT.GetPara(ref this, ppPara);
 			}
 			public HRESULT SetPara(ITextPara* pPara) mut
 			{
-				return VT.SetPara(&this, pPara);
+				return VT.SetPara(ref this, pPara);
 			}
-			public HRESULT GetStoryLength(int32* pCount) mut
+			public HRESULT GetStoryLength(out int32 pCount) mut
 			{
-				return VT.GetStoryLength(&this, pCount);
+				return VT.GetStoryLength(ref this, out pCount);
 			}
-			public HRESULT GetStoryType(int32* pValue) mut
+			public HRESULT GetStoryType(out int32 pValue) mut
 			{
-				return VT.GetStoryType(&this, pValue);
+				return VT.GetStoryType(ref this, out pValue);
 			}
 			public HRESULT Collapse(int32 bStart) mut
 			{
-				return VT.Collapse(&this, bStart);
+				return VT.Collapse(ref this, bStart);
 			}
-			public HRESULT Expand(int32 Unit, int32* pDelta) mut
+			public HRESULT Expand(int32 Unit, out int32 pDelta) mut
 			{
-				return VT.Expand(&this, Unit, pDelta);
+				return VT.Expand(ref this, Unit, out pDelta);
 			}
-			public HRESULT GetIndex(int32 Unit, int32* pIndex) mut
+			public HRESULT GetIndex(int32 Unit, out int32 pIndex) mut
 			{
-				return VT.GetIndex(&this, Unit, pIndex);
+				return VT.GetIndex(ref this, Unit, out pIndex);
 			}
 			public HRESULT SetIndex(int32 Unit, int32 Index, int32 Extend) mut
 			{
-				return VT.SetIndex(&this, Unit, Index, Extend);
+				return VT.SetIndex(ref this, Unit, Index, Extend);
 			}
 			public HRESULT SetRange(int32 cpAnchor, int32 cpActive) mut
 			{
-				return VT.SetRange(&this, cpAnchor, cpActive);
+				return VT.SetRange(ref this, cpAnchor, cpActive);
 			}
-			public HRESULT InRange(ITextRange* pRange, int32* pValue) mut
+			public HRESULT InRange(ITextRange* pRange, out int32 pValue) mut
 			{
-				return VT.InRange(&this, pRange, pValue);
+				return VT.InRange(ref this, pRange, out pValue);
 			}
-			public HRESULT InStory(ITextRange* pRange, int32* pValue) mut
+			public HRESULT InStory(ITextRange* pRange, out int32 pValue) mut
 			{
-				return VT.InStory(&this, pRange, pValue);
+				return VT.InStory(ref this, pRange, out pValue);
 			}
-			public HRESULT IsEqual(ITextRange* pRange, int32* pValue) mut
+			public HRESULT IsEqual(ITextRange* pRange, out int32 pValue) mut
 			{
-				return VT.IsEqual(&this, pRange, pValue);
+				return VT.IsEqual(ref this, pRange, out pValue);
 			}
 			public HRESULT Select() mut
 			{
-				return VT.Select(&this);
+				return VT.Select(ref this);
 			}
-			public HRESULT StartOf(int32 Unit, int32 Extend, int32* pDelta) mut
+			public HRESULT StartOf(int32 Unit, int32 Extend, out int32 pDelta) mut
 			{
-				return VT.StartOf(&this, Unit, Extend, pDelta);
+				return VT.StartOf(ref this, Unit, Extend, out pDelta);
 			}
-			public HRESULT EndOf(int32 Unit, int32 Extend, int32* pDelta) mut
+			public HRESULT EndOf(int32 Unit, int32 Extend, out int32 pDelta) mut
 			{
-				return VT.EndOf(&this, Unit, Extend, pDelta);
+				return VT.EndOf(ref this, Unit, Extend, out pDelta);
 			}
-			public HRESULT Move(int32 Unit, int32 Count, int32* pDelta) mut
+			public HRESULT Move(int32 Unit, int32 Count, out int32 pDelta) mut
 			{
-				return VT.Move(&this, Unit, Count, pDelta);
+				return VT.Move(ref this, Unit, Count, out pDelta);
 			}
-			public HRESULT MoveStart(int32 Unit, int32 Count, int32* pDelta) mut
+			public HRESULT MoveStart(int32 Unit, int32 Count, out int32 pDelta) mut
 			{
-				return VT.MoveStart(&this, Unit, Count, pDelta);
+				return VT.MoveStart(ref this, Unit, Count, out pDelta);
 			}
-			public HRESULT MoveEnd(int32 Unit, int32 Count, int32* pDelta) mut
+			public HRESULT MoveEnd(int32 Unit, int32 Count, out int32 pDelta) mut
 			{
-				return VT.MoveEnd(&this, Unit, Count, pDelta);
+				return VT.MoveEnd(ref this, Unit, Count, out pDelta);
 			}
-			public HRESULT MoveWhile(VARIANT* Cset, int32 Count, int32* pDelta) mut
+			public HRESULT MoveWhile(ref VARIANT Cset, int32 Count, out int32 pDelta) mut
 			{
-				return VT.MoveWhile(&this, Cset, Count, pDelta);
+				return VT.MoveWhile(ref this, ref Cset, Count, out pDelta);
 			}
-			public HRESULT MoveStartWhile(VARIANT* Cset, int32 Count, int32* pDelta) mut
+			public HRESULT MoveStartWhile(ref VARIANT Cset, int32 Count, out int32 pDelta) mut
 			{
-				return VT.MoveStartWhile(&this, Cset, Count, pDelta);
+				return VT.MoveStartWhile(ref this, ref Cset, Count, out pDelta);
 			}
-			public HRESULT MoveEndWhile(VARIANT* Cset, int32 Count, int32* pDelta) mut
+			public HRESULT MoveEndWhile(ref VARIANT Cset, int32 Count, out int32 pDelta) mut
 			{
-				return VT.MoveEndWhile(&this, Cset, Count, pDelta);
+				return VT.MoveEndWhile(ref this, ref Cset, Count, out pDelta);
 			}
-			public HRESULT MoveUntil(VARIANT* Cset, int32 Count, int32* pDelta) mut
+			public HRESULT MoveUntil(ref VARIANT Cset, int32 Count, out int32 pDelta) mut
 			{
-				return VT.MoveUntil(&this, Cset, Count, pDelta);
+				return VT.MoveUntil(ref this, ref Cset, Count, out pDelta);
 			}
-			public HRESULT MoveStartUntil(VARIANT* Cset, int32 Count, int32* pDelta) mut
+			public HRESULT MoveStartUntil(ref VARIANT Cset, int32 Count, out int32 pDelta) mut
 			{
-				return VT.MoveStartUntil(&this, Cset, Count, pDelta);
+				return VT.MoveStartUntil(ref this, ref Cset, Count, out pDelta);
 			}
-			public HRESULT MoveEndUntil(VARIANT* Cset, int32 Count, int32* pDelta) mut
+			public HRESULT MoveEndUntil(ref VARIANT Cset, int32 Count, out int32 pDelta) mut
 			{
-				return VT.MoveEndUntil(&this, Cset, Count, pDelta);
+				return VT.MoveEndUntil(ref this, ref Cset, Count, out pDelta);
 			}
-			public HRESULT FindText(BSTR bstr, int32 Count, int32 Flags, int32* pLength) mut
+			public HRESULT FindText(BSTR bstr, int32 Count, int32 Flags, out int32 pLength) mut
 			{
-				return VT.FindText(&this, bstr, Count, Flags, pLength);
+				return VT.FindText(ref this, bstr, Count, Flags, out pLength);
 			}
-			public HRESULT FindTextStart(BSTR bstr, int32 Count, int32 Flags, int32* pLength) mut
+			public HRESULT FindTextStart(BSTR bstr, int32 Count, int32 Flags, out int32 pLength) mut
 			{
-				return VT.FindTextStart(&this, bstr, Count, Flags, pLength);
+				return VT.FindTextStart(ref this, bstr, Count, Flags, out pLength);
 			}
-			public HRESULT FindTextEnd(BSTR bstr, int32 Count, int32 Flags, int32* pLength) mut
+			public HRESULT FindTextEnd(BSTR bstr, int32 Count, int32 Flags, out int32 pLength) mut
 			{
-				return VT.FindTextEnd(&this, bstr, Count, Flags, pLength);
+				return VT.FindTextEnd(ref this, bstr, Count, Flags, out pLength);
 			}
-			public HRESULT Delete(int32 Unit, int32 Count, int32* pDelta) mut
+			public HRESULT Delete(int32 Unit, int32 Count, out int32 pDelta) mut
 			{
-				return VT.Delete(&this, Unit, Count, pDelta);
+				return VT.Delete(ref this, Unit, Count, out pDelta);
 			}
-			public HRESULT Cut(VARIANT* pVar) mut
+			public HRESULT Cut(out VARIANT pVar) mut
 			{
-				return VT.Cut(&this, pVar);
+				return VT.Cut(ref this, out pVar);
 			}
-			public HRESULT Copy(VARIANT* pVar) mut
+			public HRESULT Copy(out VARIANT pVar) mut
 			{
-				return VT.Copy(&this, pVar);
+				return VT.Copy(ref this, out pVar);
 			}
-			public HRESULT Paste(VARIANT* pVar, int32 Format) mut
+			public HRESULT Paste(ref VARIANT pVar, int32 Format) mut
 			{
-				return VT.Paste(&this, pVar, Format);
+				return VT.Paste(ref this, ref pVar, Format);
 			}
-			public HRESULT CanPaste(VARIANT* pVar, int32 Format, int32* pValue) mut
+			public HRESULT CanPaste(ref VARIANT pVar, int32 Format, out int32 pValue) mut
 			{
-				return VT.CanPaste(&this, pVar, Format, pValue);
+				return VT.CanPaste(ref this, ref pVar, Format, out pValue);
 			}
-			public HRESULT CanEdit(int32* pValue) mut
+			public HRESULT CanEdit(out int32 pValue) mut
 			{
-				return VT.CanEdit(&this, pValue);
+				return VT.CanEdit(ref this, out pValue);
 			}
 			public HRESULT ChangeCase(int32 Type) mut
 			{
-				return VT.ChangeCase(&this, Type);
+				return VT.ChangeCase(ref this, Type);
 			}
-			public HRESULT GetPoint(int32 Type, int32* px, int32* py) mut
+			public HRESULT GetPoint(int32 Type, out int32 px, out int32 py) mut
 			{
-				return VT.GetPoint(&this, Type, px, py);
+				return VT.GetPoint(ref this, Type, out px, out py);
 			}
 			public HRESULT SetPoint(int32 x, int32 y, int32 Type, int32 Extend) mut
 			{
-				return VT.SetPoint(&this, x, y, Type, Extend);
+				return VT.SetPoint(ref this, x, y, Type, Extend);
 			}
 			public HRESULT ScrollIntoView(int32 Value) mut
 			{
-				return VT.ScrollIntoView(&this, Value);
+				return VT.ScrollIntoView(ref this, Value);
 			}
 			public HRESULT GetEmbeddedObject(IUnknown** ppObject) mut
 			{
-				return VT.GetEmbeddedObject(&this, ppObject);
+				return VT.GetEmbeddedObject(ref this, ppObject);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITextRange *self, BSTR* pbstr) GetText;
-				public new function HRESULT(ITextRange *self, BSTR bstr) SetText;
-				public new function HRESULT(ITextRange *self, int32* pChar) GetChar;
-				public new function HRESULT(ITextRange *self, int32 Char) SetChar;
-				public new function HRESULT(ITextRange *self, ITextRange** ppRange) GetDuplicate;
-				public new function HRESULT(ITextRange *self, ITextRange** ppRange) GetFormattedText;
-				public new function HRESULT(ITextRange *self, ITextRange* pRange) SetFormattedText;
-				public new function HRESULT(ITextRange *self, int32* pcpFirst) GetStart;
-				public new function HRESULT(ITextRange *self, int32 cpFirst) SetStart;
-				public new function HRESULT(ITextRange *self, int32* pcpLim) GetEnd;
-				public new function HRESULT(ITextRange *self, int32 cpLim) SetEnd;
-				public new function HRESULT(ITextRange *self, ITextFont** ppFont) GetFont;
-				public new function HRESULT(ITextRange *self, ITextFont* pFont) SetFont;
-				public new function HRESULT(ITextRange *self, ITextPara** ppPara) GetPara;
-				public new function HRESULT(ITextRange *self, ITextPara* pPara) SetPara;
-				public new function HRESULT(ITextRange *self, int32* pCount) GetStoryLength;
-				public new function HRESULT(ITextRange *self, int32* pValue) GetStoryType;
-				public new function HRESULT(ITextRange *self, int32 bStart) Collapse;
-				public new function HRESULT(ITextRange *self, int32 Unit, int32* pDelta) Expand;
-				public new function HRESULT(ITextRange *self, int32 Unit, int32* pIndex) GetIndex;
-				public new function HRESULT(ITextRange *self, int32 Unit, int32 Index, int32 Extend) SetIndex;
-				public new function HRESULT(ITextRange *self, int32 cpAnchor, int32 cpActive) SetRange;
-				public new function HRESULT(ITextRange *self, ITextRange* pRange, int32* pValue) InRange;
-				public new function HRESULT(ITextRange *self, ITextRange* pRange, int32* pValue) InStory;
-				public new function HRESULT(ITextRange *self, ITextRange* pRange, int32* pValue) IsEqual;
-				public new function HRESULT(ITextRange *self) Select;
-				public new function HRESULT(ITextRange *self, int32 Unit, int32 Extend, int32* pDelta) StartOf;
-				public new function HRESULT(ITextRange *self, int32 Unit, int32 Extend, int32* pDelta) EndOf;
-				public new function HRESULT(ITextRange *self, int32 Unit, int32 Count, int32* pDelta) Move;
-				public new function HRESULT(ITextRange *self, int32 Unit, int32 Count, int32* pDelta) MoveStart;
-				public new function HRESULT(ITextRange *self, int32 Unit, int32 Count, int32* pDelta) MoveEnd;
-				public new function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveWhile;
-				public new function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveStartWhile;
-				public new function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveEndWhile;
-				public new function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveUntil;
-				public new function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveStartUntil;
-				public new function HRESULT(ITextRange *self, VARIANT* Cset, int32 Count, int32* pDelta) MoveEndUntil;
-				public new function HRESULT(ITextRange *self, BSTR bstr, int32 Count, int32 Flags, int32* pLength) FindText;
-				public new function HRESULT(ITextRange *self, BSTR bstr, int32 Count, int32 Flags, int32* pLength) FindTextStart;
-				public new function HRESULT(ITextRange *self, BSTR bstr, int32 Count, int32 Flags, int32* pLength) FindTextEnd;
-				public new function HRESULT(ITextRange *self, int32 Unit, int32 Count, int32* pDelta) Delete;
-				public new function HRESULT(ITextRange *self, VARIANT* pVar) Cut;
-				public new function HRESULT(ITextRange *self, VARIANT* pVar) Copy;
-				public new function HRESULT(ITextRange *self, VARIANT* pVar, int32 Format) Paste;
-				public new function HRESULT(ITextRange *self, VARIANT* pVar, int32 Format, int32* pValue) CanPaste;
-				public new function HRESULT(ITextRange *self, int32* pValue) CanEdit;
-				public new function HRESULT(ITextRange *self, int32 Type) ChangeCase;
-				public new function HRESULT(ITextRange *self, int32 Type, int32* px, int32* py) GetPoint;
-				public new function HRESULT(ITextRange *self, int32 x, int32 y, int32 Type, int32 Extend) SetPoint;
-				public new function HRESULT(ITextRange *self, int32 Value) ScrollIntoView;
-				public new function HRESULT(ITextRange *self, IUnknown** ppObject) GetEmbeddedObject;
+				public new function HRESULT(ref ITextRange self, BSTR* pbstr) GetText;
+				public new function HRESULT(ref ITextRange self, BSTR bstr) SetText;
+				public new function HRESULT(ref ITextRange self, out int32 pChar) GetChar;
+				public new function HRESULT(ref ITextRange self, int32 Char) SetChar;
+				public new function HRESULT(ref ITextRange self, ITextRange** ppRange) GetDuplicate;
+				public new function HRESULT(ref ITextRange self, ITextRange** ppRange) GetFormattedText;
+				public new function HRESULT(ref ITextRange self, ITextRange* pRange) SetFormattedText;
+				public new function HRESULT(ref ITextRange self, out int32 pcpFirst) GetStart;
+				public new function HRESULT(ref ITextRange self, int32 cpFirst) SetStart;
+				public new function HRESULT(ref ITextRange self, out int32 pcpLim) GetEnd;
+				public new function HRESULT(ref ITextRange self, int32 cpLim) SetEnd;
+				public new function HRESULT(ref ITextRange self, ITextFont** ppFont) GetFont;
+				public new function HRESULT(ref ITextRange self, ITextFont* pFont) SetFont;
+				public new function HRESULT(ref ITextRange self, ITextPara** ppPara) GetPara;
+				public new function HRESULT(ref ITextRange self, ITextPara* pPara) SetPara;
+				public new function HRESULT(ref ITextRange self, out int32 pCount) GetStoryLength;
+				public new function HRESULT(ref ITextRange self, out int32 pValue) GetStoryType;
+				public new function HRESULT(ref ITextRange self, int32 bStart) Collapse;
+				public new function HRESULT(ref ITextRange self, int32 Unit, out int32 pDelta) Expand;
+				public new function HRESULT(ref ITextRange self, int32 Unit, out int32 pIndex) GetIndex;
+				public new function HRESULT(ref ITextRange self, int32 Unit, int32 Index, int32 Extend) SetIndex;
+				public new function HRESULT(ref ITextRange self, int32 cpAnchor, int32 cpActive) SetRange;
+				public new function HRESULT(ref ITextRange self, ITextRange* pRange, out int32 pValue) InRange;
+				public new function HRESULT(ref ITextRange self, ITextRange* pRange, out int32 pValue) InStory;
+				public new function HRESULT(ref ITextRange self, ITextRange* pRange, out int32 pValue) IsEqual;
+				public new function HRESULT(ref ITextRange self) Select;
+				public new function HRESULT(ref ITextRange self, int32 Unit, int32 Extend, out int32 pDelta) StartOf;
+				public new function HRESULT(ref ITextRange self, int32 Unit, int32 Extend, out int32 pDelta) EndOf;
+				public new function HRESULT(ref ITextRange self, int32 Unit, int32 Count, out int32 pDelta) Move;
+				public new function HRESULT(ref ITextRange self, int32 Unit, int32 Count, out int32 pDelta) MoveStart;
+				public new function HRESULT(ref ITextRange self, int32 Unit, int32 Count, out int32 pDelta) MoveEnd;
+				public new function HRESULT(ref ITextRange self, ref VARIANT Cset, int32 Count, out int32 pDelta) MoveWhile;
+				public new function HRESULT(ref ITextRange self, ref VARIANT Cset, int32 Count, out int32 pDelta) MoveStartWhile;
+				public new function HRESULT(ref ITextRange self, ref VARIANT Cset, int32 Count, out int32 pDelta) MoveEndWhile;
+				public new function HRESULT(ref ITextRange self, ref VARIANT Cset, int32 Count, out int32 pDelta) MoveUntil;
+				public new function HRESULT(ref ITextRange self, ref VARIANT Cset, int32 Count, out int32 pDelta) MoveStartUntil;
+				public new function HRESULT(ref ITextRange self, ref VARIANT Cset, int32 Count, out int32 pDelta) MoveEndUntil;
+				public new function HRESULT(ref ITextRange self, BSTR bstr, int32 Count, int32 Flags, out int32 pLength) FindText;
+				public new function HRESULT(ref ITextRange self, BSTR bstr, int32 Count, int32 Flags, out int32 pLength) FindTextStart;
+				public new function HRESULT(ref ITextRange self, BSTR bstr, int32 Count, int32 Flags, out int32 pLength) FindTextEnd;
+				public new function HRESULT(ref ITextRange self, int32 Unit, int32 Count, out int32 pDelta) Delete;
+				public new function HRESULT(ref ITextRange self, out VARIANT pVar) Cut;
+				public new function HRESULT(ref ITextRange self, out VARIANT pVar) Copy;
+				public new function HRESULT(ref ITextRange self, ref VARIANT pVar, int32 Format) Paste;
+				public new function HRESULT(ref ITextRange self, ref VARIANT pVar, int32 Format, out int32 pValue) CanPaste;
+				public new function HRESULT(ref ITextRange self, out int32 pValue) CanEdit;
+				public new function HRESULT(ref ITextRange self, int32 Type) ChangeCase;
+				public new function HRESULT(ref ITextRange self, int32 Type, out int32 px, out int32 py) GetPoint;
+				public new function HRESULT(ref ITextRange self, int32 x, int32 y, int32 Type, int32 Extend) SetPoint;
+				public new function HRESULT(ref ITextRange self, int32 Value) ScrollIntoView;
+				public new function HRESULT(ref ITextRange self, IUnknown** ppObject) GetEmbeddedObject;
 			}
 		}
 		[CRepr]
@@ -2742,59 +2742,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetFlags(int32* pFlags) mut
+			public HRESULT ComGetFlags(out int32 pFlags) mut
 			{
-				return VT.ComGetFlags(&this, pFlags);
+				return VT.ComGetFlags(ref this, out pFlags);
 			}
 			public HRESULT SetFlags(int32 Flags) mut
 			{
-				return VT.SetFlags(&this, Flags);
+				return VT.SetFlags(ref this, Flags);
 			}
-			public HRESULT ComGetType(int32* pType) mut
+			public HRESULT ComGetType(out int32 pType) mut
 			{
-				return VT.ComGetType(&this, pType);
+				return VT.ComGetType(ref this, out pType);
 			}
-			public HRESULT MoveLeft(int32 Unit, int32 Count, int32 Extend, int32* pDelta) mut
+			public HRESULT MoveLeft(int32 Unit, int32 Count, int32 Extend, out int32 pDelta) mut
 			{
-				return VT.MoveLeft(&this, Unit, Count, Extend, pDelta);
+				return VT.MoveLeft(ref this, Unit, Count, Extend, out pDelta);
 			}
-			public HRESULT MoveRight(int32 Unit, int32 Count, int32 Extend, int32* pDelta) mut
+			public HRESULT MoveRight(int32 Unit, int32 Count, int32 Extend, out int32 pDelta) mut
 			{
-				return VT.MoveRight(&this, Unit, Count, Extend, pDelta);
+				return VT.MoveRight(ref this, Unit, Count, Extend, out pDelta);
 			}
-			public HRESULT MoveUp(int32 Unit, int32 Count, int32 Extend, int32* pDelta) mut
+			public HRESULT MoveUp(int32 Unit, int32 Count, int32 Extend, out int32 pDelta) mut
 			{
-				return VT.MoveUp(&this, Unit, Count, Extend, pDelta);
+				return VT.MoveUp(ref this, Unit, Count, Extend, out pDelta);
 			}
-			public HRESULT MoveDown(int32 Unit, int32 Count, int32 Extend, int32* pDelta) mut
+			public HRESULT MoveDown(int32 Unit, int32 Count, int32 Extend, out int32 pDelta) mut
 			{
-				return VT.MoveDown(&this, Unit, Count, Extend, pDelta);
+				return VT.MoveDown(ref this, Unit, Count, Extend, out pDelta);
 			}
-			public HRESULT HomeKey(tomConstants Unit, int32 Extend, int32* pDelta) mut
+			public HRESULT HomeKey(tomConstants Unit, int32 Extend, out int32 pDelta) mut
 			{
-				return VT.HomeKey(&this, Unit, Extend, pDelta);
+				return VT.HomeKey(ref this, Unit, Extend, out pDelta);
 			}
-			public HRESULT EndKey(int32 Unit, int32 Extend, int32* pDelta) mut
+			public HRESULT EndKey(int32 Unit, int32 Extend, out int32 pDelta) mut
 			{
-				return VT.EndKey(&this, Unit, Extend, pDelta);
+				return VT.EndKey(ref this, Unit, Extend, out pDelta);
 			}
 			public HRESULT TypeText(BSTR bstr) mut
 			{
-				return VT.TypeText(&this, bstr);
+				return VT.TypeText(ref this, bstr);
 			}
 			[CRepr]
 			public struct VTable : ITextRange.VTable
 			{
-				public new function HRESULT(ITextSelection *self, int32* pFlags) ComGetFlags;
-				public new function HRESULT(ITextSelection *self, int32 Flags) SetFlags;
-				public new function HRESULT(ITextSelection *self, int32* pType) ComGetType;
-				public new function HRESULT(ITextSelection *self, int32 Unit, int32 Count, int32 Extend, int32* pDelta) MoveLeft;
-				public new function HRESULT(ITextSelection *self, int32 Unit, int32 Count, int32 Extend, int32* pDelta) MoveRight;
-				public new function HRESULT(ITextSelection *self, int32 Unit, int32 Count, int32 Extend, int32* pDelta) MoveUp;
-				public new function HRESULT(ITextSelection *self, int32 Unit, int32 Count, int32 Extend, int32* pDelta) MoveDown;
-				public new function HRESULT(ITextSelection *self, tomConstants Unit, int32 Extend, int32* pDelta) HomeKey;
-				public new function HRESULT(ITextSelection *self, int32 Unit, int32 Extend, int32* pDelta) EndKey;
-				public new function HRESULT(ITextSelection *self, BSTR bstr) TypeText;
+				public new function HRESULT(ref ITextSelection self, out int32 pFlags) ComGetFlags;
+				public new function HRESULT(ref ITextSelection self, int32 Flags) SetFlags;
+				public new function HRESULT(ref ITextSelection self, out int32 pType) ComGetType;
+				public new function HRESULT(ref ITextSelection self, int32 Unit, int32 Count, int32 Extend, out int32 pDelta) MoveLeft;
+				public new function HRESULT(ref ITextSelection self, int32 Unit, int32 Count, int32 Extend, out int32 pDelta) MoveRight;
+				public new function HRESULT(ref ITextSelection self, int32 Unit, int32 Count, int32 Extend, out int32 pDelta) MoveUp;
+				public new function HRESULT(ref ITextSelection self, int32 Unit, int32 Count, int32 Extend, out int32 pDelta) MoveDown;
+				public new function HRESULT(ref ITextSelection self, tomConstants Unit, int32 Extend, out int32 pDelta) HomeKey;
+				public new function HRESULT(ref ITextSelection self, int32 Unit, int32 Extend, out int32 pDelta) EndKey;
+				public new function HRESULT(ref ITextSelection self, BSTR bstr) TypeText;
 			}
 		}
 		[CRepr]
@@ -2806,282 +2806,282 @@ namespace Win32
 			
 			public HRESULT GetDuplicate(ITextFont** ppFont) mut
 			{
-				return VT.GetDuplicate(&this, ppFont);
+				return VT.GetDuplicate(ref this, ppFont);
 			}
 			public HRESULT SetDuplicate(ITextFont* pFont) mut
 			{
-				return VT.SetDuplicate(&this, pFont);
+				return VT.SetDuplicate(ref this, pFont);
 			}
-			public HRESULT CanChange(int32* pValue) mut
+			public HRESULT CanChange(out int32 pValue) mut
 			{
-				return VT.CanChange(&this, pValue);
+				return VT.CanChange(ref this, out pValue);
 			}
-			public HRESULT IsEqual(ITextFont* pFont, int32* pValue) mut
+			public HRESULT IsEqual(ITextFont* pFont, out int32 pValue) mut
 			{
-				return VT.IsEqual(&this, pFont, pValue);
+				return VT.IsEqual(ref this, pFont, out pValue);
 			}
 			public HRESULT Reset(tomConstants Value) mut
 			{
-				return VT.Reset(&this, Value);
+				return VT.Reset(ref this, Value);
 			}
-			public HRESULT GetStyle(int32* pValue) mut
+			public HRESULT GetStyle(out int32 pValue) mut
 			{
-				return VT.GetStyle(&this, pValue);
+				return VT.GetStyle(ref this, out pValue);
 			}
 			public HRESULT SetStyle(int32 Value) mut
 			{
-				return VT.SetStyle(&this, Value);
+				return VT.SetStyle(ref this, Value);
 			}
-			public HRESULT GetAllCaps(int32* pValue) mut
+			public HRESULT GetAllCaps(out int32 pValue) mut
 			{
-				return VT.GetAllCaps(&this, pValue);
+				return VT.GetAllCaps(ref this, out pValue);
 			}
 			public HRESULT SetAllCaps(int32 Value) mut
 			{
-				return VT.SetAllCaps(&this, Value);
+				return VT.SetAllCaps(ref this, Value);
 			}
-			public HRESULT GetAnimation(int32* pValue) mut
+			public HRESULT GetAnimation(out int32 pValue) mut
 			{
-				return VT.GetAnimation(&this, pValue);
+				return VT.GetAnimation(ref this, out pValue);
 			}
 			public HRESULT SetAnimation(int32 Value) mut
 			{
-				return VT.SetAnimation(&this, Value);
+				return VT.SetAnimation(ref this, Value);
 			}
-			public HRESULT GetBackColor(int32* pValue) mut
+			public HRESULT GetBackColor(out int32 pValue) mut
 			{
-				return VT.GetBackColor(&this, pValue);
+				return VT.GetBackColor(ref this, out pValue);
 			}
 			public HRESULT SetBackColor(int32 Value) mut
 			{
-				return VT.SetBackColor(&this, Value);
+				return VT.SetBackColor(ref this, Value);
 			}
-			public HRESULT GetBold(int32* pValue) mut
+			public HRESULT GetBold(out int32 pValue) mut
 			{
-				return VT.GetBold(&this, pValue);
+				return VT.GetBold(ref this, out pValue);
 			}
 			public HRESULT SetBold(int32 Value) mut
 			{
-				return VT.SetBold(&this, Value);
+				return VT.SetBold(ref this, Value);
 			}
-			public HRESULT GetEmboss(int32* pValue) mut
+			public HRESULT GetEmboss(out int32 pValue) mut
 			{
-				return VT.GetEmboss(&this, pValue);
+				return VT.GetEmboss(ref this, out pValue);
 			}
 			public HRESULT SetEmboss(int32 Value) mut
 			{
-				return VT.SetEmboss(&this, Value);
+				return VT.SetEmboss(ref this, Value);
 			}
-			public HRESULT GetForeColor(int32* pValue) mut
+			public HRESULT GetForeColor(out int32 pValue) mut
 			{
-				return VT.GetForeColor(&this, pValue);
+				return VT.GetForeColor(ref this, out pValue);
 			}
 			public HRESULT SetForeColor(int32 Value) mut
 			{
-				return VT.SetForeColor(&this, Value);
+				return VT.SetForeColor(ref this, Value);
 			}
-			public HRESULT GetHidden(int32* pValue) mut
+			public HRESULT GetHidden(out int32 pValue) mut
 			{
-				return VT.GetHidden(&this, pValue);
+				return VT.GetHidden(ref this, out pValue);
 			}
 			public HRESULT SetHidden(int32 Value) mut
 			{
-				return VT.SetHidden(&this, Value);
+				return VT.SetHidden(ref this, Value);
 			}
-			public HRESULT GetEngrave(int32* pValue) mut
+			public HRESULT GetEngrave(out int32 pValue) mut
 			{
-				return VT.GetEngrave(&this, pValue);
+				return VT.GetEngrave(ref this, out pValue);
 			}
 			public HRESULT SetEngrave(int32 Value) mut
 			{
-				return VT.SetEngrave(&this, Value);
+				return VT.SetEngrave(ref this, Value);
 			}
-			public HRESULT GetItalic(int32* pValue) mut
+			public HRESULT GetItalic(out int32 pValue) mut
 			{
-				return VT.GetItalic(&this, pValue);
+				return VT.GetItalic(ref this, out pValue);
 			}
 			public HRESULT SetItalic(int32 Value) mut
 			{
-				return VT.SetItalic(&this, Value);
+				return VT.SetItalic(ref this, Value);
 			}
-			public HRESULT GetKerning(float* pValue) mut
+			public HRESULT GetKerning(out float pValue) mut
 			{
-				return VT.GetKerning(&this, pValue);
+				return VT.GetKerning(ref this, out pValue);
 			}
 			public HRESULT SetKerning(float Value) mut
 			{
-				return VT.SetKerning(&this, Value);
+				return VT.SetKerning(ref this, Value);
 			}
-			public HRESULT GetLanguageID(int32* pValue) mut
+			public HRESULT GetLanguageID(out int32 pValue) mut
 			{
-				return VT.GetLanguageID(&this, pValue);
+				return VT.GetLanguageID(ref this, out pValue);
 			}
 			public HRESULT SetLanguageID(int32 Value) mut
 			{
-				return VT.SetLanguageID(&this, Value);
+				return VT.SetLanguageID(ref this, Value);
 			}
 			public HRESULT GetName(BSTR* pbstr) mut
 			{
-				return VT.GetName(&this, pbstr);
+				return VT.GetName(ref this, pbstr);
 			}
 			public HRESULT SetName(BSTR bstr) mut
 			{
-				return VT.SetName(&this, bstr);
+				return VT.SetName(ref this, bstr);
 			}
-			public HRESULT GetOutline(int32* pValue) mut
+			public HRESULT GetOutline(out int32 pValue) mut
 			{
-				return VT.GetOutline(&this, pValue);
+				return VT.GetOutline(ref this, out pValue);
 			}
 			public HRESULT SetOutline(int32 Value) mut
 			{
-				return VT.SetOutline(&this, Value);
+				return VT.SetOutline(ref this, Value);
 			}
-			public HRESULT GetPosition(float* pValue) mut
+			public HRESULT GetPosition(out float pValue) mut
 			{
-				return VT.GetPosition(&this, pValue);
+				return VT.GetPosition(ref this, out pValue);
 			}
 			public HRESULT SetPosition(float Value) mut
 			{
-				return VT.SetPosition(&this, Value);
+				return VT.SetPosition(ref this, Value);
 			}
-			public HRESULT GetProtected(int32* pValue) mut
+			public HRESULT GetProtected(out int32 pValue) mut
 			{
-				return VT.GetProtected(&this, pValue);
+				return VT.GetProtected(ref this, out pValue);
 			}
 			public HRESULT SetProtected(int32 Value) mut
 			{
-				return VT.SetProtected(&this, Value);
+				return VT.SetProtected(ref this, Value);
 			}
-			public HRESULT GetShadow(int32* pValue) mut
+			public HRESULT GetShadow(out int32 pValue) mut
 			{
-				return VT.GetShadow(&this, pValue);
+				return VT.GetShadow(ref this, out pValue);
 			}
 			public HRESULT SetShadow(int32 Value) mut
 			{
-				return VT.SetShadow(&this, Value);
+				return VT.SetShadow(ref this, Value);
 			}
-			public HRESULT GetSize(float* pValue) mut
+			public HRESULT GetSize(out float pValue) mut
 			{
-				return VT.GetSize(&this, pValue);
+				return VT.GetSize(ref this, out pValue);
 			}
 			public HRESULT SetSize(float Value) mut
 			{
-				return VT.SetSize(&this, Value);
+				return VT.SetSize(ref this, Value);
 			}
-			public HRESULT GetSmallCaps(int32* pValue) mut
+			public HRESULT GetSmallCaps(out int32 pValue) mut
 			{
-				return VT.GetSmallCaps(&this, pValue);
+				return VT.GetSmallCaps(ref this, out pValue);
 			}
 			public HRESULT SetSmallCaps(int32 Value) mut
 			{
-				return VT.SetSmallCaps(&this, Value);
+				return VT.SetSmallCaps(ref this, Value);
 			}
-			public HRESULT GetSpacing(float* pValue) mut
+			public HRESULT GetSpacing(out float pValue) mut
 			{
-				return VT.GetSpacing(&this, pValue);
+				return VT.GetSpacing(ref this, out pValue);
 			}
 			public HRESULT SetSpacing(float Value) mut
 			{
-				return VT.SetSpacing(&this, Value);
+				return VT.SetSpacing(ref this, Value);
 			}
-			public HRESULT GetStrikeThrough(int32* pValue) mut
+			public HRESULT GetStrikeThrough(out int32 pValue) mut
 			{
-				return VT.GetStrikeThrough(&this, pValue);
+				return VT.GetStrikeThrough(ref this, out pValue);
 			}
 			public HRESULT SetStrikeThrough(int32 Value) mut
 			{
-				return VT.SetStrikeThrough(&this, Value);
+				return VT.SetStrikeThrough(ref this, Value);
 			}
-			public HRESULT GetSubscript(int32* pValue) mut
+			public HRESULT GetSubscript(out int32 pValue) mut
 			{
-				return VT.GetSubscript(&this, pValue);
+				return VT.GetSubscript(ref this, out pValue);
 			}
 			public HRESULT SetSubscript(int32 Value) mut
 			{
-				return VT.SetSubscript(&this, Value);
+				return VT.SetSubscript(ref this, Value);
 			}
-			public HRESULT GetSuperscript(int32* pValue) mut
+			public HRESULT GetSuperscript(out int32 pValue) mut
 			{
-				return VT.GetSuperscript(&this, pValue);
+				return VT.GetSuperscript(ref this, out pValue);
 			}
 			public HRESULT SetSuperscript(int32 Value) mut
 			{
-				return VT.SetSuperscript(&this, Value);
+				return VT.SetSuperscript(ref this, Value);
 			}
-			public HRESULT GetUnderline(int32* pValue) mut
+			public HRESULT GetUnderline(out int32 pValue) mut
 			{
-				return VT.GetUnderline(&this, pValue);
+				return VT.GetUnderline(ref this, out pValue);
 			}
 			public HRESULT SetUnderline(int32 Value) mut
 			{
-				return VT.SetUnderline(&this, Value);
+				return VT.SetUnderline(ref this, Value);
 			}
-			public HRESULT GetWeight(int32* pValue) mut
+			public HRESULT GetWeight(out int32 pValue) mut
 			{
-				return VT.GetWeight(&this, pValue);
+				return VT.GetWeight(ref this, out pValue);
 			}
 			public HRESULT SetWeight(int32 Value) mut
 			{
-				return VT.SetWeight(&this, Value);
+				return VT.SetWeight(ref this, Value);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITextFont *self, ITextFont** ppFont) GetDuplicate;
-				public new function HRESULT(ITextFont *self, ITextFont* pFont) SetDuplicate;
-				public new function HRESULT(ITextFont *self, int32* pValue) CanChange;
-				public new function HRESULT(ITextFont *self, ITextFont* pFont, int32* pValue) IsEqual;
-				public new function HRESULT(ITextFont *self, tomConstants Value) Reset;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetStyle;
-				public new function HRESULT(ITextFont *self, int32 Value) SetStyle;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetAllCaps;
-				public new function HRESULT(ITextFont *self, int32 Value) SetAllCaps;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetAnimation;
-				public new function HRESULT(ITextFont *self, int32 Value) SetAnimation;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetBackColor;
-				public new function HRESULT(ITextFont *self, int32 Value) SetBackColor;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetBold;
-				public new function HRESULT(ITextFont *self, int32 Value) SetBold;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetEmboss;
-				public new function HRESULT(ITextFont *self, int32 Value) SetEmboss;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetForeColor;
-				public new function HRESULT(ITextFont *self, int32 Value) SetForeColor;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetHidden;
-				public new function HRESULT(ITextFont *self, int32 Value) SetHidden;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetEngrave;
-				public new function HRESULT(ITextFont *self, int32 Value) SetEngrave;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetItalic;
-				public new function HRESULT(ITextFont *self, int32 Value) SetItalic;
-				public new function HRESULT(ITextFont *self, float* pValue) GetKerning;
-				public new function HRESULT(ITextFont *self, float Value) SetKerning;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetLanguageID;
-				public new function HRESULT(ITextFont *self, int32 Value) SetLanguageID;
-				public new function HRESULT(ITextFont *self, BSTR* pbstr) GetName;
-				public new function HRESULT(ITextFont *self, BSTR bstr) SetName;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetOutline;
-				public new function HRESULT(ITextFont *self, int32 Value) SetOutline;
-				public new function HRESULT(ITextFont *self, float* pValue) GetPosition;
-				public new function HRESULT(ITextFont *self, float Value) SetPosition;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetProtected;
-				public new function HRESULT(ITextFont *self, int32 Value) SetProtected;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetShadow;
-				public new function HRESULT(ITextFont *self, int32 Value) SetShadow;
-				public new function HRESULT(ITextFont *self, float* pValue) GetSize;
-				public new function HRESULT(ITextFont *self, float Value) SetSize;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetSmallCaps;
-				public new function HRESULT(ITextFont *self, int32 Value) SetSmallCaps;
-				public new function HRESULT(ITextFont *self, float* pValue) GetSpacing;
-				public new function HRESULT(ITextFont *self, float Value) SetSpacing;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetStrikeThrough;
-				public new function HRESULT(ITextFont *self, int32 Value) SetStrikeThrough;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetSubscript;
-				public new function HRESULT(ITextFont *self, int32 Value) SetSubscript;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetSuperscript;
-				public new function HRESULT(ITextFont *self, int32 Value) SetSuperscript;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetUnderline;
-				public new function HRESULT(ITextFont *self, int32 Value) SetUnderline;
-				public new function HRESULT(ITextFont *self, int32* pValue) GetWeight;
-				public new function HRESULT(ITextFont *self, int32 Value) SetWeight;
+				public new function HRESULT(ref ITextFont self, ITextFont** ppFont) GetDuplicate;
+				public new function HRESULT(ref ITextFont self, ITextFont* pFont) SetDuplicate;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) CanChange;
+				public new function HRESULT(ref ITextFont self, ITextFont* pFont, out int32 pValue) IsEqual;
+				public new function HRESULT(ref ITextFont self, tomConstants Value) Reset;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetStyle;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetStyle;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetAllCaps;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetAllCaps;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetAnimation;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetAnimation;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetBackColor;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetBackColor;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetBold;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetBold;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetEmboss;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetEmboss;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetForeColor;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetForeColor;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetHidden;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetHidden;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetEngrave;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetEngrave;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetItalic;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetItalic;
+				public new function HRESULT(ref ITextFont self, out float pValue) GetKerning;
+				public new function HRESULT(ref ITextFont self, float Value) SetKerning;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetLanguageID;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetLanguageID;
+				public new function HRESULT(ref ITextFont self, BSTR* pbstr) GetName;
+				public new function HRESULT(ref ITextFont self, BSTR bstr) SetName;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetOutline;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetOutline;
+				public new function HRESULT(ref ITextFont self, out float pValue) GetPosition;
+				public new function HRESULT(ref ITextFont self, float Value) SetPosition;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetProtected;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetProtected;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetShadow;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetShadow;
+				public new function HRESULT(ref ITextFont self, out float pValue) GetSize;
+				public new function HRESULT(ref ITextFont self, float Value) SetSize;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetSmallCaps;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetSmallCaps;
+				public new function HRESULT(ref ITextFont self, out float pValue) GetSpacing;
+				public new function HRESULT(ref ITextFont self, float Value) SetSpacing;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetStrikeThrough;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetStrikeThrough;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetSubscript;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetSubscript;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetSuperscript;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetSuperscript;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetUnderline;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetUnderline;
+				public new function HRESULT(ref ITextFont self, out int32 pValue) GetWeight;
+				public new function HRESULT(ref ITextFont self, int32 Value) SetWeight;
 			}
 		}
 		[CRepr]
@@ -3093,247 +3093,247 @@ namespace Win32
 			
 			public HRESULT GetDuplicate(ITextPara** ppPara) mut
 			{
-				return VT.GetDuplicate(&this, ppPara);
+				return VT.GetDuplicate(ref this, ppPara);
 			}
 			public HRESULT SetDuplicate(ITextPara* pPara) mut
 			{
-				return VT.SetDuplicate(&this, pPara);
+				return VT.SetDuplicate(ref this, pPara);
 			}
-			public HRESULT CanChange(int32* pValue) mut
+			public HRESULT CanChange(out int32 pValue) mut
 			{
-				return VT.CanChange(&this, pValue);
+				return VT.CanChange(ref this, out pValue);
 			}
-			public HRESULT IsEqual(ITextPara* pPara, int32* pValue) mut
+			public HRESULT IsEqual(ITextPara* pPara, out int32 pValue) mut
 			{
-				return VT.IsEqual(&this, pPara, pValue);
+				return VT.IsEqual(ref this, pPara, out pValue);
 			}
 			public HRESULT Reset(int32 Value) mut
 			{
-				return VT.Reset(&this, Value);
+				return VT.Reset(ref this, Value);
 			}
-			public HRESULT GetStyle(int32* pValue) mut
+			public HRESULT GetStyle(out int32 pValue) mut
 			{
-				return VT.GetStyle(&this, pValue);
+				return VT.GetStyle(ref this, out pValue);
 			}
 			public HRESULT SetStyle(int32 Value) mut
 			{
-				return VT.SetStyle(&this, Value);
+				return VT.SetStyle(ref this, Value);
 			}
-			public HRESULT GetAlignment(int32* pValue) mut
+			public HRESULT GetAlignment(out int32 pValue) mut
 			{
-				return VT.GetAlignment(&this, pValue);
+				return VT.GetAlignment(ref this, out pValue);
 			}
 			public HRESULT SetAlignment(int32 Value) mut
 			{
-				return VT.SetAlignment(&this, Value);
+				return VT.SetAlignment(ref this, Value);
 			}
-			public HRESULT GetHyphenation(tomConstants* pValue) mut
+			public HRESULT GetHyphenation(out tomConstants pValue) mut
 			{
-				return VT.GetHyphenation(&this, pValue);
+				return VT.GetHyphenation(ref this, out pValue);
 			}
 			public HRESULT SetHyphenation(int32 Value) mut
 			{
-				return VT.SetHyphenation(&this, Value);
+				return VT.SetHyphenation(ref this, Value);
 			}
-			public HRESULT GetFirstLineIndent(float* pValue) mut
+			public HRESULT GetFirstLineIndent(out float pValue) mut
 			{
-				return VT.GetFirstLineIndent(&this, pValue);
+				return VT.GetFirstLineIndent(ref this, out pValue);
 			}
-			public HRESULT GetKeepTogether(tomConstants* pValue) mut
+			public HRESULT GetKeepTogether(out tomConstants pValue) mut
 			{
-				return VT.GetKeepTogether(&this, pValue);
+				return VT.GetKeepTogether(ref this, out pValue);
 			}
 			public HRESULT SetKeepTogether(int32 Value) mut
 			{
-				return VT.SetKeepTogether(&this, Value);
+				return VT.SetKeepTogether(ref this, Value);
 			}
-			public HRESULT GetKeepWithNext(tomConstants* pValue) mut
+			public HRESULT GetKeepWithNext(out tomConstants pValue) mut
 			{
-				return VT.GetKeepWithNext(&this, pValue);
+				return VT.GetKeepWithNext(ref this, out pValue);
 			}
 			public HRESULT SetKeepWithNext(int32 Value) mut
 			{
-				return VT.SetKeepWithNext(&this, Value);
+				return VT.SetKeepWithNext(ref this, Value);
 			}
-			public HRESULT GetLeftIndent(float* pValue) mut
+			public HRESULT GetLeftIndent(out float pValue) mut
 			{
-				return VT.GetLeftIndent(&this, pValue);
+				return VT.GetLeftIndent(ref this, out pValue);
 			}
-			public HRESULT GetLineSpacing(float* pValue) mut
+			public HRESULT GetLineSpacing(out float pValue) mut
 			{
-				return VT.GetLineSpacing(&this, pValue);
+				return VT.GetLineSpacing(ref this, out pValue);
 			}
-			public HRESULT GetLineSpacingRule(int32* pValue) mut
+			public HRESULT GetLineSpacingRule(out int32 pValue) mut
 			{
-				return VT.GetLineSpacingRule(&this, pValue);
+				return VT.GetLineSpacingRule(ref this, out pValue);
 			}
-			public HRESULT GetListAlignment(int32* pValue) mut
+			public HRESULT GetListAlignment(out int32 pValue) mut
 			{
-				return VT.GetListAlignment(&this, pValue);
+				return VT.GetListAlignment(ref this, out pValue);
 			}
 			public HRESULT SetListAlignment(int32 Value) mut
 			{
-				return VT.SetListAlignment(&this, Value);
+				return VT.SetListAlignment(ref this, Value);
 			}
-			public HRESULT GetListLevelIndex(int32* pValue) mut
+			public HRESULT GetListLevelIndex(out int32 pValue) mut
 			{
-				return VT.GetListLevelIndex(&this, pValue);
+				return VT.GetListLevelIndex(ref this, out pValue);
 			}
 			public HRESULT SetListLevelIndex(int32 Value) mut
 			{
-				return VT.SetListLevelIndex(&this, Value);
+				return VT.SetListLevelIndex(ref this, Value);
 			}
-			public HRESULT GetListStart(int32* pValue) mut
+			public HRESULT GetListStart(out int32 pValue) mut
 			{
-				return VT.GetListStart(&this, pValue);
+				return VT.GetListStart(ref this, out pValue);
 			}
 			public HRESULT SetListStart(int32 Value) mut
 			{
-				return VT.SetListStart(&this, Value);
+				return VT.SetListStart(ref this, Value);
 			}
-			public HRESULT GetListTab(float* pValue) mut
+			public HRESULT GetListTab(out float pValue) mut
 			{
-				return VT.GetListTab(&this, pValue);
+				return VT.GetListTab(ref this, out pValue);
 			}
 			public HRESULT SetListTab(float Value) mut
 			{
-				return VT.SetListTab(&this, Value);
+				return VT.SetListTab(ref this, Value);
 			}
-			public HRESULT GetListType(int32* pValue) mut
+			public HRESULT GetListType(out int32 pValue) mut
 			{
-				return VT.GetListType(&this, pValue);
+				return VT.GetListType(ref this, out pValue);
 			}
 			public HRESULT SetListType(int32 Value) mut
 			{
-				return VT.SetListType(&this, Value);
+				return VT.SetListType(ref this, Value);
 			}
-			public HRESULT GetNoLineNumber(int32* pValue) mut
+			public HRESULT GetNoLineNumber(out int32 pValue) mut
 			{
-				return VT.GetNoLineNumber(&this, pValue);
+				return VT.GetNoLineNumber(ref this, out pValue);
 			}
 			public HRESULT SetNoLineNumber(int32 Value) mut
 			{
-				return VT.SetNoLineNumber(&this, Value);
+				return VT.SetNoLineNumber(ref this, Value);
 			}
-			public HRESULT GetPageBreakBefore(int32* pValue) mut
+			public HRESULT GetPageBreakBefore(out int32 pValue) mut
 			{
-				return VT.GetPageBreakBefore(&this, pValue);
+				return VT.GetPageBreakBefore(ref this, out pValue);
 			}
 			public HRESULT SetPageBreakBefore(int32 Value) mut
 			{
-				return VT.SetPageBreakBefore(&this, Value);
+				return VT.SetPageBreakBefore(ref this, Value);
 			}
-			public HRESULT GetRightIndent(float* pValue) mut
+			public HRESULT GetRightIndent(out float pValue) mut
 			{
-				return VT.GetRightIndent(&this, pValue);
+				return VT.GetRightIndent(ref this, out pValue);
 			}
 			public HRESULT SetRightIndent(float Value) mut
 			{
-				return VT.SetRightIndent(&this, Value);
+				return VT.SetRightIndent(ref this, Value);
 			}
 			public HRESULT SetIndents(float First, float Left, float Right) mut
 			{
-				return VT.SetIndents(&this, First, Left, Right);
+				return VT.SetIndents(ref this, First, Left, Right);
 			}
 			public HRESULT SetLineSpacing(int32 Rule, float Spacing) mut
 			{
-				return VT.SetLineSpacing(&this, Rule, Spacing);
+				return VT.SetLineSpacing(ref this, Rule, Spacing);
 			}
-			public HRESULT GetSpaceAfter(float* pValue) mut
+			public HRESULT GetSpaceAfter(out float pValue) mut
 			{
-				return VT.GetSpaceAfter(&this, pValue);
+				return VT.GetSpaceAfter(ref this, out pValue);
 			}
 			public HRESULT SetSpaceAfter(float Value) mut
 			{
-				return VT.SetSpaceAfter(&this, Value);
+				return VT.SetSpaceAfter(ref this, Value);
 			}
-			public HRESULT GetSpaceBefore(float* pValue) mut
+			public HRESULT GetSpaceBefore(out float pValue) mut
 			{
-				return VT.GetSpaceBefore(&this, pValue);
+				return VT.GetSpaceBefore(ref this, out pValue);
 			}
 			public HRESULT SetSpaceBefore(float Value) mut
 			{
-				return VT.SetSpaceBefore(&this, Value);
+				return VT.SetSpaceBefore(ref this, Value);
 			}
-			public HRESULT GetWidowControl(int32* pValue) mut
+			public HRESULT GetWidowControl(out int32 pValue) mut
 			{
-				return VT.GetWidowControl(&this, pValue);
+				return VT.GetWidowControl(ref this, out pValue);
 			}
 			public HRESULT SetWidowControl(int32 Value) mut
 			{
-				return VT.SetWidowControl(&this, Value);
+				return VT.SetWidowControl(ref this, Value);
 			}
-			public HRESULT GetTabCount(int32* pCount) mut
+			public HRESULT GetTabCount(out int32 pCount) mut
 			{
-				return VT.GetTabCount(&this, pCount);
+				return VT.GetTabCount(ref this, out pCount);
 			}
 			public HRESULT AddTab(float tbPos, int32 tbAlign, int32 tbLeader) mut
 			{
-				return VT.AddTab(&this, tbPos, tbAlign, tbLeader);
+				return VT.AddTab(ref this, tbPos, tbAlign, tbLeader);
 			}
 			public HRESULT ClearAllTabs() mut
 			{
-				return VT.ClearAllTabs(&this);
+				return VT.ClearAllTabs(ref this);
 			}
 			public HRESULT DeleteTab(float tbPos) mut
 			{
-				return VT.DeleteTab(&this, tbPos);
+				return VT.DeleteTab(ref this, tbPos);
 			}
-			public HRESULT GetTab(int32 iTab, float* ptbPos, int32* ptbAlign, int32* ptbLeader) mut
+			public HRESULT GetTab(int32 iTab, out float ptbPos, out int32 ptbAlign, out int32 ptbLeader) mut
 			{
-				return VT.GetTab(&this, iTab, ptbPos, ptbAlign, ptbLeader);
+				return VT.GetTab(ref this, iTab, out ptbPos, out ptbAlign, out ptbLeader);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITextPara *self, ITextPara** ppPara) GetDuplicate;
-				public new function HRESULT(ITextPara *self, ITextPara* pPara) SetDuplicate;
-				public new function HRESULT(ITextPara *self, int32* pValue) CanChange;
-				public new function HRESULT(ITextPara *self, ITextPara* pPara, int32* pValue) IsEqual;
-				public new function HRESULT(ITextPara *self, int32 Value) Reset;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetStyle;
-				public new function HRESULT(ITextPara *self, int32 Value) SetStyle;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetAlignment;
-				public new function HRESULT(ITextPara *self, int32 Value) SetAlignment;
-				public new function HRESULT(ITextPara *self, tomConstants* pValue) GetHyphenation;
-				public new function HRESULT(ITextPara *self, int32 Value) SetHyphenation;
-				public new function HRESULT(ITextPara *self, float* pValue) GetFirstLineIndent;
-				public new function HRESULT(ITextPara *self, tomConstants* pValue) GetKeepTogether;
-				public new function HRESULT(ITextPara *self, int32 Value) SetKeepTogether;
-				public new function HRESULT(ITextPara *self, tomConstants* pValue) GetKeepWithNext;
-				public new function HRESULT(ITextPara *self, int32 Value) SetKeepWithNext;
-				public new function HRESULT(ITextPara *self, float* pValue) GetLeftIndent;
-				public new function HRESULT(ITextPara *self, float* pValue) GetLineSpacing;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetLineSpacingRule;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetListAlignment;
-				public new function HRESULT(ITextPara *self, int32 Value) SetListAlignment;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetListLevelIndex;
-				public new function HRESULT(ITextPara *self, int32 Value) SetListLevelIndex;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetListStart;
-				public new function HRESULT(ITextPara *self, int32 Value) SetListStart;
-				public new function HRESULT(ITextPara *self, float* pValue) GetListTab;
-				public new function HRESULT(ITextPara *self, float Value) SetListTab;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetListType;
-				public new function HRESULT(ITextPara *self, int32 Value) SetListType;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetNoLineNumber;
-				public new function HRESULT(ITextPara *self, int32 Value) SetNoLineNumber;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetPageBreakBefore;
-				public new function HRESULT(ITextPara *self, int32 Value) SetPageBreakBefore;
-				public new function HRESULT(ITextPara *self, float* pValue) GetRightIndent;
-				public new function HRESULT(ITextPara *self, float Value) SetRightIndent;
-				public new function HRESULT(ITextPara *self, float First, float Left, float Right) SetIndents;
-				public new function HRESULT(ITextPara *self, int32 Rule, float Spacing) SetLineSpacing;
-				public new function HRESULT(ITextPara *self, float* pValue) GetSpaceAfter;
-				public new function HRESULT(ITextPara *self, float Value) SetSpaceAfter;
-				public new function HRESULT(ITextPara *self, float* pValue) GetSpaceBefore;
-				public new function HRESULT(ITextPara *self, float Value) SetSpaceBefore;
-				public new function HRESULT(ITextPara *self, int32* pValue) GetWidowControl;
-				public new function HRESULT(ITextPara *self, int32 Value) SetWidowControl;
-				public new function HRESULT(ITextPara *self, int32* pCount) GetTabCount;
-				public new function HRESULT(ITextPara *self, float tbPos, int32 tbAlign, int32 tbLeader) AddTab;
-				public new function HRESULT(ITextPara *self) ClearAllTabs;
-				public new function HRESULT(ITextPara *self, float tbPos) DeleteTab;
-				public new function HRESULT(ITextPara *self, int32 iTab, float* ptbPos, int32* ptbAlign, int32* ptbLeader) GetTab;
+				public new function HRESULT(ref ITextPara self, ITextPara** ppPara) GetDuplicate;
+				public new function HRESULT(ref ITextPara self, ITextPara* pPara) SetDuplicate;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) CanChange;
+				public new function HRESULT(ref ITextPara self, ITextPara* pPara, out int32 pValue) IsEqual;
+				public new function HRESULT(ref ITextPara self, int32 Value) Reset;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetStyle;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetStyle;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetAlignment;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetAlignment;
+				public new function HRESULT(ref ITextPara self, out tomConstants pValue) GetHyphenation;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetHyphenation;
+				public new function HRESULT(ref ITextPara self, out float pValue) GetFirstLineIndent;
+				public new function HRESULT(ref ITextPara self, out tomConstants pValue) GetKeepTogether;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetKeepTogether;
+				public new function HRESULT(ref ITextPara self, out tomConstants pValue) GetKeepWithNext;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetKeepWithNext;
+				public new function HRESULT(ref ITextPara self, out float pValue) GetLeftIndent;
+				public new function HRESULT(ref ITextPara self, out float pValue) GetLineSpacing;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetLineSpacingRule;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetListAlignment;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetListAlignment;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetListLevelIndex;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetListLevelIndex;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetListStart;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetListStart;
+				public new function HRESULT(ref ITextPara self, out float pValue) GetListTab;
+				public new function HRESULT(ref ITextPara self, float Value) SetListTab;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetListType;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetListType;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetNoLineNumber;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetNoLineNumber;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetPageBreakBefore;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetPageBreakBefore;
+				public new function HRESULT(ref ITextPara self, out float pValue) GetRightIndent;
+				public new function HRESULT(ref ITextPara self, float Value) SetRightIndent;
+				public new function HRESULT(ref ITextPara self, float First, float Left, float Right) SetIndents;
+				public new function HRESULT(ref ITextPara self, int32 Rule, float Spacing) SetLineSpacing;
+				public new function HRESULT(ref ITextPara self, out float pValue) GetSpaceAfter;
+				public new function HRESULT(ref ITextPara self, float Value) SetSpaceAfter;
+				public new function HRESULT(ref ITextPara self, out float pValue) GetSpaceBefore;
+				public new function HRESULT(ref ITextPara self, float Value) SetSpaceBefore;
+				public new function HRESULT(ref ITextPara self, out int32 pValue) GetWidowControl;
+				public new function HRESULT(ref ITextPara self, int32 Value) SetWidowControl;
+				public new function HRESULT(ref ITextPara self, out int32 pCount) GetTabCount;
+				public new function HRESULT(ref ITextPara self, float tbPos, int32 tbAlign, int32 tbLeader) AddTab;
+				public new function HRESULT(ref ITextPara self) ClearAllTabs;
+				public new function HRESULT(ref ITextPara self, float tbPos) DeleteTab;
+				public new function HRESULT(ref ITextPara self, int32 iTab, out float ptbPos, out int32 ptbAlign, out int32 ptbLeader) GetTab;
 			}
 		}
 		[CRepr]
@@ -3345,22 +3345,22 @@ namespace Win32
 			
 			public HRESULT _NewEnum(IUnknown** ppunkEnum) mut
 			{
-				return VT._NewEnum(&this, ppunkEnum);
+				return VT._NewEnum(ref this, ppunkEnum);
 			}
 			public HRESULT Item(int32 Index, ITextRange** ppRange) mut
 			{
-				return VT.Item(&this, Index, ppRange);
+				return VT.Item(ref this, Index, ppRange);
 			}
-			public HRESULT GetCount(int32* pCount) mut
+			public HRESULT GetCount(out int32 pCount) mut
 			{
-				return VT.GetCount(&this, pCount);
+				return VT.GetCount(ref this, out pCount);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITextStoryRanges *self, IUnknown** ppunkEnum) _NewEnum;
-				public new function HRESULT(ITextStoryRanges *self, int32 Index, ITextRange** ppRange) Item;
-				public new function HRESULT(ITextStoryRanges *self, int32* pCount) GetCount;
+				public new function HRESULT(ref ITextStoryRanges self, IUnknown** ppunkEnum) _NewEnum;
+				public new function HRESULT(ref ITextStoryRanges self, int32 Index, ITextRange** ppRange) Item;
+				public new function HRESULT(ref ITextStoryRanges self, out int32 pCount) GetCount;
 			}
 		}
 		[CRepr]
@@ -3370,229 +3370,229 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCaretType(int32* pValue) mut
+			public HRESULT GetCaretType(out int32 pValue) mut
 			{
-				return VT.GetCaretType(&this, pValue);
+				return VT.GetCaretType(ref this, out pValue);
 			}
 			public HRESULT SetCaretType(int32 Value) mut
 			{
-				return VT.SetCaretType(&this, Value);
+				return VT.SetCaretType(ref this, Value);
 			}
 			public HRESULT GetDisplays(ITextDisplays** ppDisplays) mut
 			{
-				return VT.GetDisplays(&this, ppDisplays);
+				return VT.GetDisplays(ref this, ppDisplays);
 			}
 			public HRESULT GetDocumentFont(ITextFont2** ppFont) mut
 			{
-				return VT.GetDocumentFont(&this, ppFont);
+				return VT.GetDocumentFont(ref this, ppFont);
 			}
 			public HRESULT SetDocumentFont(ITextFont2* pFont) mut
 			{
-				return VT.SetDocumentFont(&this, pFont);
+				return VT.SetDocumentFont(ref this, pFont);
 			}
 			public HRESULT GetDocumentPara(ITextPara2** ppPara) mut
 			{
-				return VT.GetDocumentPara(&this, ppPara);
+				return VT.GetDocumentPara(ref this, ppPara);
 			}
 			public HRESULT SetDocumentPara(ITextPara2* pPara) mut
 			{
-				return VT.SetDocumentPara(&this, pPara);
+				return VT.SetDocumentPara(ref this, pPara);
 			}
-			public HRESULT GetEastAsianFlags(tomConstants* pFlags) mut
+			public HRESULT GetEastAsianFlags(out tomConstants pFlags) mut
 			{
-				return VT.GetEastAsianFlags(&this, pFlags);
+				return VT.GetEastAsianFlags(ref this, out pFlags);
 			}
 			public HRESULT GetGenerator(BSTR* pbstr) mut
 			{
-				return VT.GetGenerator(&this, pbstr);
+				return VT.GetGenerator(ref this, pbstr);
 			}
 			public HRESULT SetIMEInProgress(int32 Value) mut
 			{
-				return VT.SetIMEInProgress(&this, Value);
+				return VT.SetIMEInProgress(ref this, Value);
 			}
-			public HRESULT GetNotificationMode(int32* pValue) mut
+			public HRESULT GetNotificationMode(out int32 pValue) mut
 			{
-				return VT.GetNotificationMode(&this, pValue);
+				return VT.GetNotificationMode(ref this, out pValue);
 			}
 			public HRESULT SetNotificationMode(int32 Value) mut
 			{
-				return VT.SetNotificationMode(&this, Value);
+				return VT.SetNotificationMode(ref this, Value);
 			}
 			public HRESULT GetSelection2(ITextSelection2** ppSel) mut
 			{
-				return VT.GetSelection2(&this, ppSel);
+				return VT.GetSelection2(ref this, ppSel);
 			}
 			public HRESULT GetStoryRanges2(ITextStoryRanges2** ppStories) mut
 			{
-				return VT.GetStoryRanges2(&this, ppStories);
+				return VT.GetStoryRanges2(ref this, ppStories);
 			}
-			public HRESULT GetTypographyOptions(int32* pOptions) mut
+			public HRESULT GetTypographyOptions(out int32 pOptions) mut
 			{
-				return VT.GetTypographyOptions(&this, pOptions);
+				return VT.GetTypographyOptions(ref this, out pOptions);
 			}
-			public HRESULT GetVersion(int32* pValue) mut
+			public HRESULT GetVersion(out int32 pValue) mut
 			{
-				return VT.GetVersion(&this, pValue);
+				return VT.GetVersion(ref this, out pValue);
 			}
-			public HRESULT GetWindow(int64* pHwnd) mut
+			public HRESULT GetWindow(out int64 pHwnd) mut
 			{
-				return VT.GetWindow(&this, pHwnd);
+				return VT.GetWindow(ref this, out pHwnd);
 			}
 			public HRESULT AttachMsgFilter(IUnknown* pFilter) mut
 			{
-				return VT.AttachMsgFilter(&this, pFilter);
+				return VT.AttachMsgFilter(ref this, pFilter);
 			}
-			public HRESULT CheckTextLimit(int32 cch, int32* pcch) mut
+			public HRESULT CheckTextLimit(int32 cch, ref int32 pcch) mut
 			{
-				return VT.CheckTextLimit(&this, cch, pcch);
+				return VT.CheckTextLimit(ref this, cch, ref pcch);
 			}
 			public HRESULT GetCallManager(IUnknown** ppVoid) mut
 			{
-				return VT.GetCallManager(&this, ppVoid);
+				return VT.GetCallManager(ref this, ppVoid);
 			}
-			public HRESULT GetClientRect(tomConstants Type, int32* pLeft, int32* pTop, int32* pRight, int32* pBottom) mut
+			public HRESULT GetClientRect(tomConstants Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom) mut
 			{
-				return VT.GetClientRect(&this, Type, pLeft, pTop, pRight, pBottom);
+				return VT.GetClientRect(ref this, Type, out pLeft, out pTop, out pRight, out pBottom);
 			}
-			public HRESULT GetEffectColor(int32 Index, int32* pValue) mut
+			public HRESULT GetEffectColor(int32 Index, out int32 pValue) mut
 			{
-				return VT.GetEffectColor(&this, Index, pValue);
+				return VT.GetEffectColor(ref this, Index, out pValue);
 			}
-			public HRESULT GetImmContext(int64* pContext) mut
+			public HRESULT GetImmContext(out int64 pContext) mut
 			{
-				return VT.GetImmContext(&this, pContext);
+				return VT.GetImmContext(ref this, out pContext);
 			}
-			public HRESULT GetPreferredFont(int32 cp, int32 CharRep, int32 Options, int32 curCharRep, int32 curFontSize, BSTR* pbstr, int32* pPitchAndFamily, int32* pNewFontSize) mut
+			public HRESULT GetPreferredFont(int32 cp, int32 CharRep, int32 Options, int32 curCharRep, int32 curFontSize, BSTR* pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) mut
 			{
-				return VT.GetPreferredFont(&this, cp, CharRep, Options, curCharRep, curFontSize, pbstr, pPitchAndFamily, pNewFontSize);
+				return VT.GetPreferredFont(ref this, cp, CharRep, Options, curCharRep, curFontSize, pbstr, out pPitchAndFamily, out pNewFontSize);
 			}
-			public HRESULT GetProperty(int32 Type, int32* pValue) mut
+			public HRESULT GetProperty(int32 Type, out int32 pValue) mut
 			{
-				return VT.GetProperty(&this, Type, pValue);
+				return VT.GetProperty(ref this, Type, out pValue);
 			}
 			public HRESULT GetStrings(ITextStrings** ppStrs) mut
 			{
-				return VT.GetStrings(&this, ppStrs);
+				return VT.GetStrings(ref this, ppStrs);
 			}
 			public HRESULT Notify(int32 Notify) mut
 			{
-				return VT.Notify(&this, Notify);
+				return VT.Notify(ref this, Notify);
 			}
 			public HRESULT Range2(int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) mut
 			{
-				return VT.Range2(&this, cpActive, cpAnchor, ppRange);
+				return VT.Range2(ref this, cpActive, cpAnchor, ppRange);
 			}
 			public HRESULT RangeFromPoint2(int32 x, int32 y, int32 Type, ITextRange2** ppRange) mut
 			{
-				return VT.RangeFromPoint2(&this, x, y, Type, ppRange);
+				return VT.RangeFromPoint2(ref this, x, y, Type, ppRange);
 			}
 			public HRESULT ReleaseCallManager(IUnknown* pVoid) mut
 			{
-				return VT.ReleaseCallManager(&this, pVoid);
+				return VT.ReleaseCallManager(ref this, pVoid);
 			}
 			public HRESULT ReleaseImmContext(int64 Context) mut
 			{
-				return VT.ReleaseImmContext(&this, Context);
+				return VT.ReleaseImmContext(ref this, Context);
 			}
 			public HRESULT SetEffectColor(int32 Index, int32 Value) mut
 			{
-				return VT.SetEffectColor(&this, Index, Value);
+				return VT.SetEffectColor(ref this, Index, Value);
 			}
 			public HRESULT SetProperty(int32 Type, int32 Value) mut
 			{
-				return VT.SetProperty(&this, Type, Value);
+				return VT.SetProperty(ref this, Type, Value);
 			}
 			public HRESULT SetTypographyOptions(int32 Options, int32 Mask) mut
 			{
-				return VT.SetTypographyOptions(&this, Options, Mask);
+				return VT.SetTypographyOptions(ref this, Options, Mask);
 			}
 			public HRESULT SysBeep() mut
 			{
-				return VT.SysBeep(&this);
+				return VT.SysBeep(ref this);
 			}
 			public HRESULT Update(int32 Value) mut
 			{
-				return VT.Update(&this, Value);
+				return VT.Update(ref this, Value);
 			}
 			public HRESULT UpdateWindow() mut
 			{
-				return VT.UpdateWindow(&this);
+				return VT.UpdateWindow(ref this);
 			}
-			public HRESULT GetMathProperties(int32* pOptions) mut
+			public HRESULT GetMathProperties(out int32 pOptions) mut
 			{
-				return VT.GetMathProperties(&this, pOptions);
+				return VT.GetMathProperties(ref this, out pOptions);
 			}
 			public HRESULT SetMathProperties(int32 Options, int32 Mask) mut
 			{
-				return VT.SetMathProperties(&this, Options, Mask);
+				return VT.SetMathProperties(ref this, Options, Mask);
 			}
 			public HRESULT GetActiveStory(ITextStory** ppStory) mut
 			{
-				return VT.GetActiveStory(&this, ppStory);
+				return VT.GetActiveStory(ref this, ppStory);
 			}
 			public HRESULT SetActiveStory(ITextStory* pStory) mut
 			{
-				return VT.SetActiveStory(&this, pStory);
+				return VT.SetActiveStory(ref this, pStory);
 			}
 			public HRESULT GetMainStory(ITextStory** ppStory) mut
 			{
-				return VT.GetMainStory(&this, ppStory);
+				return VT.GetMainStory(ref this, ppStory);
 			}
 			public HRESULT GetNewStory(ITextStory** ppStory) mut
 			{
-				return VT.GetNewStory(&this, ppStory);
+				return VT.GetNewStory(ref this, ppStory);
 			}
 			public HRESULT GetStory(int32 Index, ITextStory** ppStory) mut
 			{
-				return VT.GetStory(&this, Index, ppStory);
+				return VT.GetStory(ref this, Index, ppStory);
 			}
 			[CRepr]
 			public struct VTable : ITextDocument.VTable
 			{
-				public new function HRESULT(ITextDocument2 *self, int32* pValue) GetCaretType;
-				public new function HRESULT(ITextDocument2 *self, int32 Value) SetCaretType;
-				public new function HRESULT(ITextDocument2 *self, ITextDisplays** ppDisplays) GetDisplays;
-				public new function HRESULT(ITextDocument2 *self, ITextFont2** ppFont) GetDocumentFont;
-				public new function HRESULT(ITextDocument2 *self, ITextFont2* pFont) SetDocumentFont;
-				public new function HRESULT(ITextDocument2 *self, ITextPara2** ppPara) GetDocumentPara;
-				public new function HRESULT(ITextDocument2 *self, ITextPara2* pPara) SetDocumentPara;
-				public new function HRESULT(ITextDocument2 *self, tomConstants* pFlags) GetEastAsianFlags;
-				public new function HRESULT(ITextDocument2 *self, BSTR* pbstr) GetGenerator;
-				public new function HRESULT(ITextDocument2 *self, int32 Value) SetIMEInProgress;
-				public new function HRESULT(ITextDocument2 *self, int32* pValue) GetNotificationMode;
-				public new function HRESULT(ITextDocument2 *self, int32 Value) SetNotificationMode;
-				public new function HRESULT(ITextDocument2 *self, ITextSelection2** ppSel) GetSelection2;
-				public new function HRESULT(ITextDocument2 *self, ITextStoryRanges2** ppStories) GetStoryRanges2;
-				public new function HRESULT(ITextDocument2 *self, int32* pOptions) GetTypographyOptions;
-				public new function HRESULT(ITextDocument2 *self, int32* pValue) GetVersion;
-				public new function HRESULT(ITextDocument2 *self, int64* pHwnd) GetWindow;
-				public new function HRESULT(ITextDocument2 *self, IUnknown* pFilter) AttachMsgFilter;
-				public new function HRESULT(ITextDocument2 *self, int32 cch, int32* pcch) CheckTextLimit;
-				public new function HRESULT(ITextDocument2 *self, IUnknown** ppVoid) GetCallManager;
-				public new function HRESULT(ITextDocument2 *self, tomConstants Type, int32* pLeft, int32* pTop, int32* pRight, int32* pBottom) GetClientRect;
-				public new function HRESULT(ITextDocument2 *self, int32 Index, int32* pValue) GetEffectColor;
-				public new function HRESULT(ITextDocument2 *self, int64* pContext) GetImmContext;
-				public new function HRESULT(ITextDocument2 *self, int32 cp, int32 CharRep, int32 Options, int32 curCharRep, int32 curFontSize, BSTR* pbstr, int32* pPitchAndFamily, int32* pNewFontSize) GetPreferredFont;
-				public new function HRESULT(ITextDocument2 *self, int32 Type, int32* pValue) GetProperty;
-				public new function HRESULT(ITextDocument2 *self, ITextStrings** ppStrs) GetStrings;
-				public new function HRESULT(ITextDocument2 *self, int32 Notify) Notify;
-				public new function HRESULT(ITextDocument2 *self, int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) Range2;
-				public new function HRESULT(ITextDocument2 *self, int32 x, int32 y, int32 Type, ITextRange2** ppRange) RangeFromPoint2;
-				public new function HRESULT(ITextDocument2 *self, IUnknown* pVoid) ReleaseCallManager;
-				public new function HRESULT(ITextDocument2 *self, int64 Context) ReleaseImmContext;
-				public new function HRESULT(ITextDocument2 *self, int32 Index, int32 Value) SetEffectColor;
-				public new function HRESULT(ITextDocument2 *self, int32 Type, int32 Value) SetProperty;
-				public new function HRESULT(ITextDocument2 *self, int32 Options, int32 Mask) SetTypographyOptions;
-				public new function HRESULT(ITextDocument2 *self) SysBeep;
-				public new function HRESULT(ITextDocument2 *self, int32 Value) Update;
-				public new function HRESULT(ITextDocument2 *self) UpdateWindow;
-				public new function HRESULT(ITextDocument2 *self, int32* pOptions) GetMathProperties;
-				public new function HRESULT(ITextDocument2 *self, int32 Options, int32 Mask) SetMathProperties;
-				public new function HRESULT(ITextDocument2 *self, ITextStory** ppStory) GetActiveStory;
-				public new function HRESULT(ITextDocument2 *self, ITextStory* pStory) SetActiveStory;
-				public new function HRESULT(ITextDocument2 *self, ITextStory** ppStory) GetMainStory;
-				public new function HRESULT(ITextDocument2 *self, ITextStory** ppStory) GetNewStory;
-				public new function HRESULT(ITextDocument2 *self, int32 Index, ITextStory** ppStory) GetStory;
+				public new function HRESULT(ref ITextDocument2 self, out int32 pValue) GetCaretType;
+				public new function HRESULT(ref ITextDocument2 self, int32 Value) SetCaretType;
+				public new function HRESULT(ref ITextDocument2 self, ITextDisplays** ppDisplays) GetDisplays;
+				public new function HRESULT(ref ITextDocument2 self, ITextFont2** ppFont) GetDocumentFont;
+				public new function HRESULT(ref ITextDocument2 self, ITextFont2* pFont) SetDocumentFont;
+				public new function HRESULT(ref ITextDocument2 self, ITextPara2** ppPara) GetDocumentPara;
+				public new function HRESULT(ref ITextDocument2 self, ITextPara2* pPara) SetDocumentPara;
+				public new function HRESULT(ref ITextDocument2 self, out tomConstants pFlags) GetEastAsianFlags;
+				public new function HRESULT(ref ITextDocument2 self, BSTR* pbstr) GetGenerator;
+				public new function HRESULT(ref ITextDocument2 self, int32 Value) SetIMEInProgress;
+				public new function HRESULT(ref ITextDocument2 self, out int32 pValue) GetNotificationMode;
+				public new function HRESULT(ref ITextDocument2 self, int32 Value) SetNotificationMode;
+				public new function HRESULT(ref ITextDocument2 self, ITextSelection2** ppSel) GetSelection2;
+				public new function HRESULT(ref ITextDocument2 self, ITextStoryRanges2** ppStories) GetStoryRanges2;
+				public new function HRESULT(ref ITextDocument2 self, out int32 pOptions) GetTypographyOptions;
+				public new function HRESULT(ref ITextDocument2 self, out int32 pValue) GetVersion;
+				public new function HRESULT(ref ITextDocument2 self, out int64 pHwnd) GetWindow;
+				public new function HRESULT(ref ITextDocument2 self, IUnknown* pFilter) AttachMsgFilter;
+				public new function HRESULT(ref ITextDocument2 self, int32 cch, ref int32 pcch) CheckTextLimit;
+				public new function HRESULT(ref ITextDocument2 self, IUnknown** ppVoid) GetCallManager;
+				public new function HRESULT(ref ITextDocument2 self, tomConstants Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom) GetClientRect;
+				public new function HRESULT(ref ITextDocument2 self, int32 Index, out int32 pValue) GetEffectColor;
+				public new function HRESULT(ref ITextDocument2 self, out int64 pContext) GetImmContext;
+				public new function HRESULT(ref ITextDocument2 self, int32 cp, int32 CharRep, int32 Options, int32 curCharRep, int32 curFontSize, BSTR* pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) GetPreferredFont;
+				public new function HRESULT(ref ITextDocument2 self, int32 Type, out int32 pValue) GetProperty;
+				public new function HRESULT(ref ITextDocument2 self, ITextStrings** ppStrs) GetStrings;
+				public new function HRESULT(ref ITextDocument2 self, int32 Notify) Notify;
+				public new function HRESULT(ref ITextDocument2 self, int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) Range2;
+				public new function HRESULT(ref ITextDocument2 self, int32 x, int32 y, int32 Type, ITextRange2** ppRange) RangeFromPoint2;
+				public new function HRESULT(ref ITextDocument2 self, IUnknown* pVoid) ReleaseCallManager;
+				public new function HRESULT(ref ITextDocument2 self, int64 Context) ReleaseImmContext;
+				public new function HRESULT(ref ITextDocument2 self, int32 Index, int32 Value) SetEffectColor;
+				public new function HRESULT(ref ITextDocument2 self, int32 Type, int32 Value) SetProperty;
+				public new function HRESULT(ref ITextDocument2 self, int32 Options, int32 Mask) SetTypographyOptions;
+				public new function HRESULT(ref ITextDocument2 self) SysBeep;
+				public new function HRESULT(ref ITextDocument2 self, int32 Value) Update;
+				public new function HRESULT(ref ITextDocument2 self) UpdateWindow;
+				public new function HRESULT(ref ITextDocument2 self, out int32 pOptions) GetMathProperties;
+				public new function HRESULT(ref ITextDocument2 self, int32 Options, int32 Mask) SetMathProperties;
+				public new function HRESULT(ref ITextDocument2 self, ITextStory** ppStory) GetActiveStory;
+				public new function HRESULT(ref ITextDocument2 self, ITextStory* pStory) SetActiveStory;
+				public new function HRESULT(ref ITextDocument2 self, ITextStory** ppStory) GetMainStory;
+				public new function HRESULT(ref ITextDocument2 self, ITextStory** ppStory) GetNewStory;
+				public new function HRESULT(ref ITextDocument2 self, int32 Index, ITextStory** ppStory) GetStory;
 			}
 		}
 		[CRepr]
@@ -3602,209 +3602,209 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCch(int32* pcch) mut
+			public HRESULT GetCch(out int32 pcch) mut
 			{
-				return VT.GetCch(&this, pcch);
+				return VT.GetCch(ref this, out pcch);
 			}
 			public HRESULT GetCells(IUnknown** ppCells) mut
 			{
-				return VT.GetCells(&this, ppCells);
+				return VT.GetCells(ref this, ppCells);
 			}
 			public HRESULT GetColumn(IUnknown** ppColumn) mut
 			{
-				return VT.GetColumn(&this, ppColumn);
+				return VT.GetColumn(ref this, ppColumn);
 			}
-			public HRESULT GetCount(int32* pCount) mut
+			public HRESULT GetCount(out int32 pCount) mut
 			{
-				return VT.GetCount(&this, pCount);
+				return VT.GetCount(ref this, out pCount);
 			}
 			public HRESULT GetDuplicate2(ITextRange2** ppRange) mut
 			{
-				return VT.GetDuplicate2(&this, ppRange);
+				return VT.GetDuplicate2(ref this, ppRange);
 			}
 			public HRESULT GetFont2(ITextFont2** ppFont) mut
 			{
-				return VT.GetFont2(&this, ppFont);
+				return VT.GetFont2(ref this, ppFont);
 			}
 			public HRESULT SetFont2(ITextFont2* pFont) mut
 			{
-				return VT.SetFont2(&this, pFont);
+				return VT.SetFont2(ref this, pFont);
 			}
 			public HRESULT GetFormattedText2(ITextRange2** ppRange) mut
 			{
-				return VT.GetFormattedText2(&this, ppRange);
+				return VT.GetFormattedText2(ref this, ppRange);
 			}
 			public HRESULT SetFormattedText2(ITextRange2* pRange) mut
 			{
-				return VT.SetFormattedText2(&this, pRange);
+				return VT.SetFormattedText2(ref this, pRange);
 			}
-			public HRESULT GetGravity(int32* pValue) mut
+			public HRESULT GetGravity(out int32 pValue) mut
 			{
-				return VT.GetGravity(&this, pValue);
+				return VT.GetGravity(ref this, out pValue);
 			}
 			public HRESULT SetGravity(int32 Value) mut
 			{
-				return VT.SetGravity(&this, Value);
+				return VT.SetGravity(ref this, Value);
 			}
 			public HRESULT GetPara2(ITextPara2** ppPara) mut
 			{
-				return VT.GetPara2(&this, ppPara);
+				return VT.GetPara2(ref this, ppPara);
 			}
 			public HRESULT SetPara2(ITextPara2* pPara) mut
 			{
-				return VT.SetPara2(&this, pPara);
+				return VT.SetPara2(ref this, pPara);
 			}
 			public HRESULT GetRow(ITextRow** ppRow) mut
 			{
-				return VT.GetRow(&this, ppRow);
+				return VT.GetRow(ref this, ppRow);
 			}
-			public HRESULT GetStartPara(int32* pValue) mut
+			public HRESULT GetStartPara(out int32 pValue) mut
 			{
-				return VT.GetStartPara(&this, pValue);
+				return VT.GetStartPara(ref this, out pValue);
 			}
 			public HRESULT GetTable(IUnknown** ppTable) mut
 			{
-				return VT.GetTable(&this, ppTable);
+				return VT.GetTable(ref this, ppTable);
 			}
 			public HRESULT GetURL(BSTR* pbstr) mut
 			{
-				return VT.GetURL(&this, pbstr);
+				return VT.GetURL(ref this, pbstr);
 			}
 			public HRESULT SetURL(BSTR bstr) mut
 			{
-				return VT.SetURL(&this, bstr);
+				return VT.SetURL(ref this, bstr);
 			}
 			public HRESULT AddSubrange(int32 cp1, int32 cp2, int32 Activate) mut
 			{
-				return VT.AddSubrange(&this, cp1, cp2, Activate);
+				return VT.AddSubrange(ref this, cp1, cp2, Activate);
 			}
 			public HRESULT BuildUpMath(int32 Flags) mut
 			{
-				return VT.BuildUpMath(&this, Flags);
+				return VT.BuildUpMath(ref this, Flags);
 			}
 			public HRESULT DeleteSubrange(int32 cpFirst, int32 cpLim) mut
 			{
-				return VT.DeleteSubrange(&this, cpFirst, cpLim);
+				return VT.DeleteSubrange(ref this, cpFirst, cpLim);
 			}
-			public HRESULT Find(ITextRange2* pRange, int32 Count, int32 Flags, int32* pDelta) mut
+			public HRESULT Find(ITextRange2* pRange, int32 Count, int32 Flags, out int32 pDelta) mut
 			{
-				return VT.Find(&this, pRange, Count, Flags, pDelta);
+				return VT.Find(ref this, pRange, Count, Flags, out pDelta);
 			}
-			public HRESULT GetChar2(int32* pChar, int32 Offset) mut
+			public HRESULT GetChar2(out int32 pChar, int32 Offset) mut
 			{
-				return VT.GetChar2(&this, pChar, Offset);
+				return VT.GetChar2(ref this, out pChar, Offset);
 			}
-			public HRESULT GetDropCap(int32* pcLine, int32* pPosition) mut
+			public HRESULT GetDropCap(out int32 pcLine, out int32 pPosition) mut
 			{
-				return VT.GetDropCap(&this, pcLine, pPosition);
+				return VT.GetDropCap(ref this, out pcLine, out pPosition);
 			}
-			public HRESULT GetInlineObject(int32* pType, int32* pAlign, int32* pChar, int32* pChar1, int32* pChar2, int32* pCount, int32* pTeXStyle, int32* pcCol, int32* pLevel) mut
+			public HRESULT GetInlineObject(out int32 pType, out int32 pAlign, out int32 pChar, out int32 pChar1, out int32 pChar2, out int32 pCount, out int32 pTeXStyle, out int32 pcCol, out int32 pLevel) mut
 			{
-				return VT.GetInlineObject(&this, pType, pAlign, pChar, pChar1, pChar2, pCount, pTeXStyle, pcCol, pLevel);
+				return VT.GetInlineObject(ref this, out pType, out pAlign, out pChar, out pChar1, out pChar2, out pCount, out pTeXStyle, out pcCol, out pLevel);
 			}
-			public HRESULT GetProperty(int32 Type, int32* pValue) mut
+			public HRESULT GetProperty(int32 Type, out int32 pValue) mut
 			{
-				return VT.GetProperty(&this, Type, pValue);
+				return VT.GetProperty(ref this, Type, out pValue);
 			}
-			public HRESULT GetRect(int32 Type, int32* pLeft, int32* pTop, int32* pRight, int32* pBottom, int32* pHit) mut
+			public HRESULT GetRect(int32 Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom, out int32 pHit) mut
 			{
-				return VT.GetRect(&this, Type, pLeft, pTop, pRight, pBottom, pHit);
+				return VT.GetRect(ref this, Type, out pLeft, out pTop, out pRight, out pBottom, out pHit);
 			}
-			public HRESULT GetSubrange(int32 iSubrange, int32* pcpFirst, int32* pcpLim) mut
+			public HRESULT GetSubrange(int32 iSubrange, out int32 pcpFirst, out int32 pcpLim) mut
 			{
-				return VT.GetSubrange(&this, iSubrange, pcpFirst, pcpLim);
+				return VT.GetSubrange(ref this, iSubrange, out pcpFirst, out pcpLim);
 			}
 			public HRESULT GetText2(int32 Flags, BSTR* pbstr) mut
 			{
-				return VT.GetText2(&this, Flags, pbstr);
+				return VT.GetText2(ref this, Flags, pbstr);
 			}
 			public HRESULT HexToUnicode() mut
 			{
-				return VT.HexToUnicode(&this);
+				return VT.HexToUnicode(ref this);
 			}
 			public HRESULT InsertTable(int32 cCol, int32 cRow, int32 AutoFit) mut
 			{
-				return VT.InsertTable(&this, cCol, cRow, AutoFit);
+				return VT.InsertTable(ref this, cCol, cRow, AutoFit);
 			}
 			public HRESULT Linearize(int32 Flags) mut
 			{
-				return VT.Linearize(&this, Flags);
+				return VT.Linearize(ref this, Flags);
 			}
 			public HRESULT SetActiveSubrange(int32 cpAnchor, int32 cpActive) mut
 			{
-				return VT.SetActiveSubrange(&this, cpAnchor, cpActive);
+				return VT.SetActiveSubrange(ref this, cpAnchor, cpActive);
 			}
 			public HRESULT SetDropCap(int32 cLine, int32 Position) mut
 			{
-				return VT.SetDropCap(&this, cLine, Position);
+				return VT.SetDropCap(ref this, cLine, Position);
 			}
 			public HRESULT SetProperty(int32 Type, int32 Value) mut
 			{
-				return VT.SetProperty(&this, Type, Value);
+				return VT.SetProperty(ref this, Type, Value);
 			}
 			public HRESULT SetText2(int32 Flags, BSTR bstr) mut
 			{
-				return VT.SetText2(&this, Flags, bstr);
+				return VT.SetText2(ref this, Flags, bstr);
 			}
 			public HRESULT UnicodeToHex() mut
 			{
-				return VT.UnicodeToHex(&this);
+				return VT.UnicodeToHex(ref this);
 			}
 			public HRESULT SetInlineObject(int32 Type, int32 Align, int32 Char, int32 Char1, int32 Char2, int32 Count, int32 TeXStyle, int32 cCol) mut
 			{
-				return VT.SetInlineObject(&this, Type, Align, Char, Char1, Char2, Count, TeXStyle, cCol);
+				return VT.SetInlineObject(ref this, Type, Align, Char, Char1, Char2, Count, TeXStyle, cCol);
 			}
-			public HRESULT GetMathFunctionType(BSTR bstr, int32* pValue) mut
+			public HRESULT GetMathFunctionType(BSTR bstr, out int32 pValue) mut
 			{
-				return VT.GetMathFunctionType(&this, bstr, pValue);
+				return VT.GetMathFunctionType(ref this, bstr, out pValue);
 			}
 			public HRESULT InsertImage(int32 width, int32 height, int32 ascent, TEXT_ALIGN_OPTIONS Type, BSTR bstrAltText, IStream* pStream) mut
 			{
-				return VT.InsertImage(&this, width, height, ascent, Type, bstrAltText, pStream);
+				return VT.InsertImage(ref this, width, height, ascent, Type, bstrAltText, pStream);
 			}
 			[CRepr]
 			public struct VTable : ITextSelection.VTable
 			{
-				public new function HRESULT(ITextRange2 *self, int32* pcch) GetCch;
-				public new function HRESULT(ITextRange2 *self, IUnknown** ppCells) GetCells;
-				public new function HRESULT(ITextRange2 *self, IUnknown** ppColumn) GetColumn;
-				public new function HRESULT(ITextRange2 *self, int32* pCount) GetCount;
-				public new function HRESULT(ITextRange2 *self, ITextRange2** ppRange) GetDuplicate2;
-				public new function HRESULT(ITextRange2 *self, ITextFont2** ppFont) GetFont2;
-				public new function HRESULT(ITextRange2 *self, ITextFont2* pFont) SetFont2;
-				public new function HRESULT(ITextRange2 *self, ITextRange2** ppRange) GetFormattedText2;
-				public new function HRESULT(ITextRange2 *self, ITextRange2* pRange) SetFormattedText2;
-				public new function HRESULT(ITextRange2 *self, int32* pValue) GetGravity;
-				public new function HRESULT(ITextRange2 *self, int32 Value) SetGravity;
-				public new function HRESULT(ITextRange2 *self, ITextPara2** ppPara) GetPara2;
-				public new function HRESULT(ITextRange2 *self, ITextPara2* pPara) SetPara2;
-				public new function HRESULT(ITextRange2 *self, ITextRow** ppRow) GetRow;
-				public new function HRESULT(ITextRange2 *self, int32* pValue) GetStartPara;
-				public new function HRESULT(ITextRange2 *self, IUnknown** ppTable) GetTable;
-				public new function HRESULT(ITextRange2 *self, BSTR* pbstr) GetURL;
-				public new function HRESULT(ITextRange2 *self, BSTR bstr) SetURL;
-				public new function HRESULT(ITextRange2 *self, int32 cp1, int32 cp2, int32 Activate) AddSubrange;
-				public new function HRESULT(ITextRange2 *self, int32 Flags) BuildUpMath;
-				public new function HRESULT(ITextRange2 *self, int32 cpFirst, int32 cpLim) DeleteSubrange;
-				public new function HRESULT(ITextRange2 *self, ITextRange2* pRange, int32 Count, int32 Flags, int32* pDelta) Find;
-				public new function HRESULT(ITextRange2 *self, int32* pChar, int32 Offset) GetChar2;
-				public new function HRESULT(ITextRange2 *self, int32* pcLine, int32* pPosition) GetDropCap;
-				public new function HRESULT(ITextRange2 *self, int32* pType, int32* pAlign, int32* pChar, int32* pChar1, int32* pChar2, int32* pCount, int32* pTeXStyle, int32* pcCol, int32* pLevel) GetInlineObject;
-				public new function HRESULT(ITextRange2 *self, int32 Type, int32* pValue) GetProperty;
-				public new function HRESULT(ITextRange2 *self, int32 Type, int32* pLeft, int32* pTop, int32* pRight, int32* pBottom, int32* pHit) GetRect;
-				public new function HRESULT(ITextRange2 *self, int32 iSubrange, int32* pcpFirst, int32* pcpLim) GetSubrange;
-				public new function HRESULT(ITextRange2 *self, int32 Flags, BSTR* pbstr) GetText2;
-				public new function HRESULT(ITextRange2 *self) HexToUnicode;
-				public new function HRESULT(ITextRange2 *self, int32 cCol, int32 cRow, int32 AutoFit) InsertTable;
-				public new function HRESULT(ITextRange2 *self, int32 Flags) Linearize;
-				public new function HRESULT(ITextRange2 *self, int32 cpAnchor, int32 cpActive) SetActiveSubrange;
-				public new function HRESULT(ITextRange2 *self, int32 cLine, int32 Position) SetDropCap;
-				public new function HRESULT(ITextRange2 *self, int32 Type, int32 Value) SetProperty;
-				public new function HRESULT(ITextRange2 *self, int32 Flags, BSTR bstr) SetText2;
-				public new function HRESULT(ITextRange2 *self) UnicodeToHex;
-				public new function HRESULT(ITextRange2 *self, int32 Type, int32 Align, int32 Char, int32 Char1, int32 Char2, int32 Count, int32 TeXStyle, int32 cCol) SetInlineObject;
-				public new function HRESULT(ITextRange2 *self, BSTR bstr, int32* pValue) GetMathFunctionType;
-				public new function HRESULT(ITextRange2 *self, int32 width, int32 height, int32 ascent, TEXT_ALIGN_OPTIONS Type, BSTR bstrAltText, IStream* pStream) InsertImage;
+				public new function HRESULT(ref ITextRange2 self, out int32 pcch) GetCch;
+				public new function HRESULT(ref ITextRange2 self, IUnknown** ppCells) GetCells;
+				public new function HRESULT(ref ITextRange2 self, IUnknown** ppColumn) GetColumn;
+				public new function HRESULT(ref ITextRange2 self, out int32 pCount) GetCount;
+				public new function HRESULT(ref ITextRange2 self, ITextRange2** ppRange) GetDuplicate2;
+				public new function HRESULT(ref ITextRange2 self, ITextFont2** ppFont) GetFont2;
+				public new function HRESULT(ref ITextRange2 self, ITextFont2* pFont) SetFont2;
+				public new function HRESULT(ref ITextRange2 self, ITextRange2** ppRange) GetFormattedText2;
+				public new function HRESULT(ref ITextRange2 self, ITextRange2* pRange) SetFormattedText2;
+				public new function HRESULT(ref ITextRange2 self, out int32 pValue) GetGravity;
+				public new function HRESULT(ref ITextRange2 self, int32 Value) SetGravity;
+				public new function HRESULT(ref ITextRange2 self, ITextPara2** ppPara) GetPara2;
+				public new function HRESULT(ref ITextRange2 self, ITextPara2* pPara) SetPara2;
+				public new function HRESULT(ref ITextRange2 self, ITextRow** ppRow) GetRow;
+				public new function HRESULT(ref ITextRange2 self, out int32 pValue) GetStartPara;
+				public new function HRESULT(ref ITextRange2 self, IUnknown** ppTable) GetTable;
+				public new function HRESULT(ref ITextRange2 self, BSTR* pbstr) GetURL;
+				public new function HRESULT(ref ITextRange2 self, BSTR bstr) SetURL;
+				public new function HRESULT(ref ITextRange2 self, int32 cp1, int32 cp2, int32 Activate) AddSubrange;
+				public new function HRESULT(ref ITextRange2 self, int32 Flags) BuildUpMath;
+				public new function HRESULT(ref ITextRange2 self, int32 cpFirst, int32 cpLim) DeleteSubrange;
+				public new function HRESULT(ref ITextRange2 self, ITextRange2* pRange, int32 Count, int32 Flags, out int32 pDelta) Find;
+				public new function HRESULT(ref ITextRange2 self, out int32 pChar, int32 Offset) GetChar2;
+				public new function HRESULT(ref ITextRange2 self, out int32 pcLine, out int32 pPosition) GetDropCap;
+				public new function HRESULT(ref ITextRange2 self, out int32 pType, out int32 pAlign, out int32 pChar, out int32 pChar1, out int32 pChar2, out int32 pCount, out int32 pTeXStyle, out int32 pcCol, out int32 pLevel) GetInlineObject;
+				public new function HRESULT(ref ITextRange2 self, int32 Type, out int32 pValue) GetProperty;
+				public new function HRESULT(ref ITextRange2 self, int32 Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom, out int32 pHit) GetRect;
+				public new function HRESULT(ref ITextRange2 self, int32 iSubrange, out int32 pcpFirst, out int32 pcpLim) GetSubrange;
+				public new function HRESULT(ref ITextRange2 self, int32 Flags, BSTR* pbstr) GetText2;
+				public new function HRESULT(ref ITextRange2 self) HexToUnicode;
+				public new function HRESULT(ref ITextRange2 self, int32 cCol, int32 cRow, int32 AutoFit) InsertTable;
+				public new function HRESULT(ref ITextRange2 self, int32 Flags) Linearize;
+				public new function HRESULT(ref ITextRange2 self, int32 cpAnchor, int32 cpActive) SetActiveSubrange;
+				public new function HRESULT(ref ITextRange2 self, int32 cLine, int32 Position) SetDropCap;
+				public new function HRESULT(ref ITextRange2 self, int32 Type, int32 Value) SetProperty;
+				public new function HRESULT(ref ITextRange2 self, int32 Flags, BSTR bstr) SetText2;
+				public new function HRESULT(ref ITextRange2 self) UnicodeToHex;
+				public new function HRESULT(ref ITextRange2 self, int32 Type, int32 Align, int32 Char, int32 Char1, int32 Char2, int32 Count, int32 TeXStyle, int32 cCol) SetInlineObject;
+				public new function HRESULT(ref ITextRange2 self, BSTR bstr, out int32 pValue) GetMathFunctionType;
+				public new function HRESULT(ref ITextRange2 self, int32 width, int32 height, int32 ascent, TEXT_ALIGN_OPTIONS Type, BSTR bstrAltText, IStream* pStream) InsertImage;
 			}
 		}
 		[CRepr]
@@ -3826,239 +3826,239 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(int32* pCount) mut
+			public HRESULT GetCount(out int32 pCount) mut
 			{
-				return VT.GetCount(&this, pCount);
+				return VT.GetCount(ref this, out pCount);
 			}
-			public HRESULT GetAutoLigatures(int32* pValue) mut
+			public HRESULT GetAutoLigatures(out int32 pValue) mut
 			{
-				return VT.GetAutoLigatures(&this, pValue);
+				return VT.GetAutoLigatures(ref this, out pValue);
 			}
 			public HRESULT SetAutoLigatures(int32 Value) mut
 			{
-				return VT.SetAutoLigatures(&this, Value);
+				return VT.SetAutoLigatures(ref this, Value);
 			}
-			public HRESULT GetAutospaceAlpha(int32* pValue) mut
+			public HRESULT GetAutospaceAlpha(out int32 pValue) mut
 			{
-				return VT.GetAutospaceAlpha(&this, pValue);
+				return VT.GetAutospaceAlpha(ref this, out pValue);
 			}
 			public HRESULT SetAutospaceAlpha(int32 Value) mut
 			{
-				return VT.SetAutospaceAlpha(&this, Value);
+				return VT.SetAutospaceAlpha(ref this, Value);
 			}
-			public HRESULT GetAutospaceNumeric(int32* pValue) mut
+			public HRESULT GetAutospaceNumeric(out int32 pValue) mut
 			{
-				return VT.GetAutospaceNumeric(&this, pValue);
+				return VT.GetAutospaceNumeric(ref this, out pValue);
 			}
 			public HRESULT SetAutospaceNumeric(int32 Value) mut
 			{
-				return VT.SetAutospaceNumeric(&this, Value);
+				return VT.SetAutospaceNumeric(ref this, Value);
 			}
-			public HRESULT GetAutospaceParens(int32* pValue) mut
+			public HRESULT GetAutospaceParens(out int32 pValue) mut
 			{
-				return VT.GetAutospaceParens(&this, pValue);
+				return VT.GetAutospaceParens(ref this, out pValue);
 			}
 			public HRESULT SetAutospaceParens(int32 Value) mut
 			{
-				return VT.SetAutospaceParens(&this, Value);
+				return VT.SetAutospaceParens(ref this, Value);
 			}
-			public HRESULT GetCharRep(int32* pValue) mut
+			public HRESULT GetCharRep(out int32 pValue) mut
 			{
-				return VT.GetCharRep(&this, pValue);
+				return VT.GetCharRep(ref this, out pValue);
 			}
 			public HRESULT SetCharRep(int32 Value) mut
 			{
-				return VT.SetCharRep(&this, Value);
+				return VT.SetCharRep(ref this, Value);
 			}
-			public HRESULT GetCompressionMode(int32* pValue) mut
+			public HRESULT GetCompressionMode(out int32 pValue) mut
 			{
-				return VT.GetCompressionMode(&this, pValue);
+				return VT.GetCompressionMode(ref this, out pValue);
 			}
 			public HRESULT SetCompressionMode(int32 Value) mut
 			{
-				return VT.SetCompressionMode(&this, Value);
+				return VT.SetCompressionMode(ref this, Value);
 			}
-			public HRESULT GetCookie(int32* pValue) mut
+			public HRESULT GetCookie(out int32 pValue) mut
 			{
-				return VT.GetCookie(&this, pValue);
+				return VT.GetCookie(ref this, out pValue);
 			}
 			public HRESULT SetCookie(int32 Value) mut
 			{
-				return VT.SetCookie(&this, Value);
+				return VT.SetCookie(ref this, Value);
 			}
-			public HRESULT GetDoubleStrike(int32* pValue) mut
+			public HRESULT GetDoubleStrike(out int32 pValue) mut
 			{
-				return VT.GetDoubleStrike(&this, pValue);
+				return VT.GetDoubleStrike(ref this, out pValue);
 			}
 			public HRESULT SetDoubleStrike(int32 Value) mut
 			{
-				return VT.SetDoubleStrike(&this, Value);
+				return VT.SetDoubleStrike(ref this, Value);
 			}
 			public HRESULT GetDuplicate2(ITextFont2** ppFont) mut
 			{
-				return VT.GetDuplicate2(&this, ppFont);
+				return VT.GetDuplicate2(ref this, ppFont);
 			}
 			public HRESULT SetDuplicate2(ITextFont2* pFont) mut
 			{
-				return VT.SetDuplicate2(&this, pFont);
+				return VT.SetDuplicate2(ref this, pFont);
 			}
-			public HRESULT GetLinkType(int32* pValue) mut
+			public HRESULT GetLinkType(out int32 pValue) mut
 			{
-				return VT.GetLinkType(&this, pValue);
+				return VT.GetLinkType(ref this, out pValue);
 			}
-			public HRESULT GetMathZone(int32* pValue) mut
+			public HRESULT GetMathZone(out int32 pValue) mut
 			{
-				return VT.GetMathZone(&this, pValue);
+				return VT.GetMathZone(ref this, out pValue);
 			}
 			public HRESULT SetMathZone(int32 Value) mut
 			{
-				return VT.SetMathZone(&this, Value);
+				return VT.SetMathZone(ref this, Value);
 			}
-			public HRESULT GetModWidthPairs(int32* pValue) mut
+			public HRESULT GetModWidthPairs(out int32 pValue) mut
 			{
-				return VT.GetModWidthPairs(&this, pValue);
+				return VT.GetModWidthPairs(ref this, out pValue);
 			}
 			public HRESULT SetModWidthPairs(int32 Value) mut
 			{
-				return VT.SetModWidthPairs(&this, Value);
+				return VT.SetModWidthPairs(ref this, Value);
 			}
-			public HRESULT GetModWidthSpace(int32* pValue) mut
+			public HRESULT GetModWidthSpace(out int32 pValue) mut
 			{
-				return VT.GetModWidthSpace(&this, pValue);
+				return VT.GetModWidthSpace(ref this, out pValue);
 			}
 			public HRESULT SetModWidthSpace(int32 Value) mut
 			{
-				return VT.SetModWidthSpace(&this, Value);
+				return VT.SetModWidthSpace(ref this, Value);
 			}
-			public HRESULT GetOldNumbers(int32* pValue) mut
+			public HRESULT GetOldNumbers(out int32 pValue) mut
 			{
-				return VT.GetOldNumbers(&this, pValue);
+				return VT.GetOldNumbers(ref this, out pValue);
 			}
 			public HRESULT SetOldNumbers(int32 Value) mut
 			{
-				return VT.SetOldNumbers(&this, Value);
+				return VT.SetOldNumbers(ref this, Value);
 			}
-			public HRESULT GetOverlapping(int32* pValue) mut
+			public HRESULT GetOverlapping(out int32 pValue) mut
 			{
-				return VT.GetOverlapping(&this, pValue);
+				return VT.GetOverlapping(ref this, out pValue);
 			}
 			public HRESULT SetOverlapping(int32 Value) mut
 			{
-				return VT.SetOverlapping(&this, Value);
+				return VT.SetOverlapping(ref this, Value);
 			}
-			public HRESULT GetPositionSubSuper(int32* pValue) mut
+			public HRESULT GetPositionSubSuper(out int32 pValue) mut
 			{
-				return VT.GetPositionSubSuper(&this, pValue);
+				return VT.GetPositionSubSuper(ref this, out pValue);
 			}
 			public HRESULT SetPositionSubSuper(int32 Value) mut
 			{
-				return VT.SetPositionSubSuper(&this, Value);
+				return VT.SetPositionSubSuper(ref this, Value);
 			}
-			public HRESULT GetScaling(int32* pValue) mut
+			public HRESULT GetScaling(out int32 pValue) mut
 			{
-				return VT.GetScaling(&this, pValue);
+				return VT.GetScaling(ref this, out pValue);
 			}
 			public HRESULT SetScaling(int32 Value) mut
 			{
-				return VT.SetScaling(&this, Value);
+				return VT.SetScaling(ref this, Value);
 			}
-			public HRESULT GetSpaceExtension(float* pValue) mut
+			public HRESULT GetSpaceExtension(out float pValue) mut
 			{
-				return VT.GetSpaceExtension(&this, pValue);
+				return VT.GetSpaceExtension(ref this, out pValue);
 			}
 			public HRESULT SetSpaceExtension(float Value) mut
 			{
-				return VT.SetSpaceExtension(&this, Value);
+				return VT.SetSpaceExtension(ref this, Value);
 			}
-			public HRESULT GetUnderlinePositionMode(int32* pValue) mut
+			public HRESULT GetUnderlinePositionMode(out int32 pValue) mut
 			{
-				return VT.GetUnderlinePositionMode(&this, pValue);
+				return VT.GetUnderlinePositionMode(ref this, out pValue);
 			}
 			public HRESULT SetUnderlinePositionMode(int32 Value) mut
 			{
-				return VT.SetUnderlinePositionMode(&this, Value);
+				return VT.SetUnderlinePositionMode(ref this, Value);
 			}
-			public HRESULT GetEffects(int32* pValue, int32* pMask) mut
+			public HRESULT GetEffects(out int32 pValue, out int32 pMask) mut
 			{
-				return VT.GetEffects(&this, pValue, pMask);
+				return VT.GetEffects(ref this, out pValue, out pMask);
 			}
-			public HRESULT GetEffects2(int32* pValue, int32* pMask) mut
+			public HRESULT GetEffects2(out int32 pValue, out int32 pMask) mut
 			{
-				return VT.GetEffects2(&this, pValue, pMask);
+				return VT.GetEffects2(ref this, out pValue, out pMask);
 			}
-			public HRESULT GetProperty(int32 Type, int32* pValue) mut
+			public HRESULT GetProperty(int32 Type, out int32 pValue) mut
 			{
-				return VT.GetProperty(&this, Type, pValue);
+				return VT.GetProperty(ref this, Type, out pValue);
 			}
-			public HRESULT GetPropertyInfo(int32 Index, int32* pType, int32* pValue) mut
+			public HRESULT GetPropertyInfo(int32 Index, out int32 pType, out int32 pValue) mut
 			{
-				return VT.GetPropertyInfo(&this, Index, pType, pValue);
+				return VT.GetPropertyInfo(ref this, Index, out pType, out pValue);
 			}
-			public HRESULT IsEqual2(ITextFont2* pFont, int32* pB) mut
+			public HRESULT IsEqual2(ITextFont2* pFont, out int32 pB) mut
 			{
-				return VT.IsEqual2(&this, pFont, pB);
+				return VT.IsEqual2(ref this, pFont, out pB);
 			}
 			public HRESULT SetEffects(int32 Value, int32 Mask) mut
 			{
-				return VT.SetEffects(&this, Value, Mask);
+				return VT.SetEffects(ref this, Value, Mask);
 			}
 			public HRESULT SetEffects2(int32 Value, int32 Mask) mut
 			{
-				return VT.SetEffects2(&this, Value, Mask);
+				return VT.SetEffects2(ref this, Value, Mask);
 			}
 			public HRESULT SetProperty(int32 Type, int32 Value) mut
 			{
-				return VT.SetProperty(&this, Type, Value);
+				return VT.SetProperty(ref this, Type, Value);
 			}
 			[CRepr]
 			public struct VTable : ITextFont.VTable
 			{
-				public new function HRESULT(ITextFont2 *self, int32* pCount) GetCount;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetAutoLigatures;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetAutoLigatures;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetAutospaceAlpha;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetAutospaceAlpha;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetAutospaceNumeric;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetAutospaceNumeric;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetAutospaceParens;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetAutospaceParens;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetCharRep;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetCharRep;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetCompressionMode;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetCompressionMode;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetCookie;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetCookie;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetDoubleStrike;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetDoubleStrike;
-				public new function HRESULT(ITextFont2 *self, ITextFont2** ppFont) GetDuplicate2;
-				public new function HRESULT(ITextFont2 *self, ITextFont2* pFont) SetDuplicate2;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetLinkType;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetMathZone;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetMathZone;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetModWidthPairs;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetModWidthPairs;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetModWidthSpace;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetModWidthSpace;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetOldNumbers;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetOldNumbers;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetOverlapping;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetOverlapping;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetPositionSubSuper;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetPositionSubSuper;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetScaling;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetScaling;
-				public new function HRESULT(ITextFont2 *self, float* pValue) GetSpaceExtension;
-				public new function HRESULT(ITextFont2 *self, float Value) SetSpaceExtension;
-				public new function HRESULT(ITextFont2 *self, int32* pValue) GetUnderlinePositionMode;
-				public new function HRESULT(ITextFont2 *self, int32 Value) SetUnderlinePositionMode;
-				public new function HRESULT(ITextFont2 *self, int32* pValue, int32* pMask) GetEffects;
-				public new function HRESULT(ITextFont2 *self, int32* pValue, int32* pMask) GetEffects2;
-				public new function HRESULT(ITextFont2 *self, int32 Type, int32* pValue) GetProperty;
-				public new function HRESULT(ITextFont2 *self, int32 Index, int32* pType, int32* pValue) GetPropertyInfo;
-				public new function HRESULT(ITextFont2 *self, ITextFont2* pFont, int32* pB) IsEqual2;
-				public new function HRESULT(ITextFont2 *self, int32 Value, int32 Mask) SetEffects;
-				public new function HRESULT(ITextFont2 *self, int32 Value, int32 Mask) SetEffects2;
-				public new function HRESULT(ITextFont2 *self, int32 Type, int32 Value) SetProperty;
+				public new function HRESULT(ref ITextFont2 self, out int32 pCount) GetCount;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetAutoLigatures;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetAutoLigatures;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetAutospaceAlpha;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetAutospaceAlpha;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetAutospaceNumeric;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetAutospaceNumeric;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetAutospaceParens;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetAutospaceParens;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetCharRep;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetCharRep;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetCompressionMode;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetCompressionMode;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetCookie;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetCookie;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetDoubleStrike;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetDoubleStrike;
+				public new function HRESULT(ref ITextFont2 self, ITextFont2** ppFont) GetDuplicate2;
+				public new function HRESULT(ref ITextFont2 self, ITextFont2* pFont) SetDuplicate2;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetLinkType;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetMathZone;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetMathZone;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetModWidthPairs;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetModWidthPairs;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetModWidthSpace;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetModWidthSpace;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetOldNumbers;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetOldNumbers;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetOverlapping;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetOverlapping;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetPositionSubSuper;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetPositionSubSuper;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetScaling;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetScaling;
+				public new function HRESULT(ref ITextFont2 self, out float pValue) GetSpaceExtension;
+				public new function HRESULT(ref ITextFont2 self, float Value) SetSpaceExtension;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue) GetUnderlinePositionMode;
+				public new function HRESULT(ref ITextFont2 self, int32 Value) SetUnderlinePositionMode;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue, out int32 pMask) GetEffects;
+				public new function HRESULT(ref ITextFont2 self, out int32 pValue, out int32 pMask) GetEffects2;
+				public new function HRESULT(ref ITextFont2 self, int32 Type, out int32 pValue) GetProperty;
+				public new function HRESULT(ref ITextFont2 self, int32 Index, out int32 pType, out int32 pValue) GetPropertyInfo;
+				public new function HRESULT(ref ITextFont2 self, ITextFont2* pFont, out int32 pB) IsEqual2;
+				public new function HRESULT(ref ITextFont2 self, int32 Value, int32 Mask) SetEffects;
+				public new function HRESULT(ref ITextFont2 self, int32 Value, int32 Mask) SetEffects2;
+				public new function HRESULT(ref ITextFont2 self, int32 Type, int32 Value) SetProperty;
 			}
 		}
 		[CRepr]
@@ -4070,87 +4070,87 @@ namespace Win32
 			
 			public HRESULT GetBorders(IUnknown** ppBorders) mut
 			{
-				return VT.GetBorders(&this, ppBorders);
+				return VT.GetBorders(ref this, ppBorders);
 			}
 			public HRESULT GetDuplicate2(ITextPara2** ppPara) mut
 			{
-				return VT.GetDuplicate2(&this, ppPara);
+				return VT.GetDuplicate2(ref this, ppPara);
 			}
 			public HRESULT SetDuplicate2(ITextPara2* pPara) mut
 			{
-				return VT.SetDuplicate2(&this, pPara);
+				return VT.SetDuplicate2(ref this, pPara);
 			}
-			public HRESULT GetFontAlignment(int32* pValue) mut
+			public HRESULT GetFontAlignment(out int32 pValue) mut
 			{
-				return VT.GetFontAlignment(&this, pValue);
+				return VT.GetFontAlignment(ref this, out pValue);
 			}
 			public HRESULT SetFontAlignment(int32 Value) mut
 			{
-				return VT.SetFontAlignment(&this, Value);
+				return VT.SetFontAlignment(ref this, Value);
 			}
-			public HRESULT GetHangingPunctuation(int32* pValue) mut
+			public HRESULT GetHangingPunctuation(out int32 pValue) mut
 			{
-				return VT.GetHangingPunctuation(&this, pValue);
+				return VT.GetHangingPunctuation(ref this, out pValue);
 			}
 			public HRESULT SetHangingPunctuation(int32 Value) mut
 			{
-				return VT.SetHangingPunctuation(&this, Value);
+				return VT.SetHangingPunctuation(ref this, Value);
 			}
-			public HRESULT GetSnapToGrid(int32* pValue) mut
+			public HRESULT GetSnapToGrid(out int32 pValue) mut
 			{
-				return VT.GetSnapToGrid(&this, pValue);
+				return VT.GetSnapToGrid(ref this, out pValue);
 			}
 			public HRESULT SetSnapToGrid(int32 Value) mut
 			{
-				return VT.SetSnapToGrid(&this, Value);
+				return VT.SetSnapToGrid(ref this, Value);
 			}
-			public HRESULT GetTrimPunctuationAtStart(int32* pValue) mut
+			public HRESULT GetTrimPunctuationAtStart(out int32 pValue) mut
 			{
-				return VT.GetTrimPunctuationAtStart(&this, pValue);
+				return VT.GetTrimPunctuationAtStart(ref this, out pValue);
 			}
 			public HRESULT SetTrimPunctuationAtStart(int32 Value) mut
 			{
-				return VT.SetTrimPunctuationAtStart(&this, Value);
+				return VT.SetTrimPunctuationAtStart(ref this, Value);
 			}
-			public HRESULT GetEffects(int32* pValue, int32* pMask) mut
+			public HRESULT GetEffects(out int32 pValue, out int32 pMask) mut
 			{
-				return VT.GetEffects(&this, pValue, pMask);
+				return VT.GetEffects(ref this, out pValue, out pMask);
 			}
-			public HRESULT GetProperty(int32 Type, int32* pValue) mut
+			public HRESULT GetProperty(int32 Type, out int32 pValue) mut
 			{
-				return VT.GetProperty(&this, Type, pValue);
+				return VT.GetProperty(ref this, Type, out pValue);
 			}
-			public HRESULT IsEqual2(ITextPara2* pPara, int32* pB) mut
+			public HRESULT IsEqual2(ITextPara2* pPara, out int32 pB) mut
 			{
-				return VT.IsEqual2(&this, pPara, pB);
+				return VT.IsEqual2(ref this, pPara, out pB);
 			}
 			public HRESULT SetEffects(int32 Value, int32 Mask) mut
 			{
-				return VT.SetEffects(&this, Value, Mask);
+				return VT.SetEffects(ref this, Value, Mask);
 			}
 			public HRESULT SetProperty(int32 Type, int32 Value) mut
 			{
-				return VT.SetProperty(&this, Type, Value);
+				return VT.SetProperty(ref this, Type, Value);
 			}
 			[CRepr]
 			public struct VTable : ITextPara.VTable
 			{
-				public new function HRESULT(ITextPara2 *self, IUnknown** ppBorders) GetBorders;
-				public new function HRESULT(ITextPara2 *self, ITextPara2** ppPara) GetDuplicate2;
-				public new function HRESULT(ITextPara2 *self, ITextPara2* pPara) SetDuplicate2;
-				public new function HRESULT(ITextPara2 *self, int32* pValue) GetFontAlignment;
-				public new function HRESULT(ITextPara2 *self, int32 Value) SetFontAlignment;
-				public new function HRESULT(ITextPara2 *self, int32* pValue) GetHangingPunctuation;
-				public new function HRESULT(ITextPara2 *self, int32 Value) SetHangingPunctuation;
-				public new function HRESULT(ITextPara2 *self, int32* pValue) GetSnapToGrid;
-				public new function HRESULT(ITextPara2 *self, int32 Value) SetSnapToGrid;
-				public new function HRESULT(ITextPara2 *self, int32* pValue) GetTrimPunctuationAtStart;
-				public new function HRESULT(ITextPara2 *self, int32 Value) SetTrimPunctuationAtStart;
-				public new function HRESULT(ITextPara2 *self, int32* pValue, int32* pMask) GetEffects;
-				public new function HRESULT(ITextPara2 *self, int32 Type, int32* pValue) GetProperty;
-				public new function HRESULT(ITextPara2 *self, ITextPara2* pPara, int32* pB) IsEqual2;
-				public new function HRESULT(ITextPara2 *self, int32 Value, int32 Mask) SetEffects;
-				public new function HRESULT(ITextPara2 *self, int32 Type, int32 Value) SetProperty;
+				public new function HRESULT(ref ITextPara2 self, IUnknown** ppBorders) GetBorders;
+				public new function HRESULT(ref ITextPara2 self, ITextPara2** ppPara) GetDuplicate2;
+				public new function HRESULT(ref ITextPara2 self, ITextPara2* pPara) SetDuplicate2;
+				public new function HRESULT(ref ITextPara2 self, out int32 pValue) GetFontAlignment;
+				public new function HRESULT(ref ITextPara2 self, int32 Value) SetFontAlignment;
+				public new function HRESULT(ref ITextPara2 self, out int32 pValue) GetHangingPunctuation;
+				public new function HRESULT(ref ITextPara2 self, int32 Value) SetHangingPunctuation;
+				public new function HRESULT(ref ITextPara2 self, out int32 pValue) GetSnapToGrid;
+				public new function HRESULT(ref ITextPara2 self, int32 Value) SetSnapToGrid;
+				public new function HRESULT(ref ITextPara2 self, out int32 pValue) GetTrimPunctuationAtStart;
+				public new function HRESULT(ref ITextPara2 self, int32 Value) SetTrimPunctuationAtStart;
+				public new function HRESULT(ref ITextPara2 self, out int32 pValue, out int32 pMask) GetEffects;
+				public new function HRESULT(ref ITextPara2 self, int32 Type, out int32 pValue) GetProperty;
+				public new function HRESULT(ref ITextPara2 self, ITextPara2* pPara, out int32 pB) IsEqual2;
+				public new function HRESULT(ref ITextPara2 self, int32 Value, int32 Mask) SetEffects;
+				public new function HRESULT(ref ITextPara2 self, int32 Type, int32 Value) SetProperty;
 			}
 		}
 		[CRepr]
@@ -4162,12 +4162,12 @@ namespace Win32
 			
 			public HRESULT Item2(int32 Index, ITextRange2** ppRange) mut
 			{
-				return VT.Item2(&this, Index, ppRange);
+				return VT.Item2(ref this, Index, ppRange);
 			}
 			[CRepr]
 			public struct VTable : ITextStoryRanges.VTable
 			{
-				public new function HRESULT(ITextStoryRanges2 *self, int32 Index, ITextRange2** ppRange) Item2;
+				public new function HRESULT(ref ITextStoryRanges2 self, int32 Index, ITextRange2** ppRange) Item2;
 			}
 		}
 		[CRepr]
@@ -4177,69 +4177,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetActive(int32* pValue) mut
+			public HRESULT GetActive(out int32 pValue) mut
 			{
-				return VT.GetActive(&this, pValue);
+				return VT.GetActive(ref this, out pValue);
 			}
 			public HRESULT SetActive(int32 Value) mut
 			{
-				return VT.SetActive(&this, Value);
+				return VT.SetActive(ref this, Value);
 			}
 			public HRESULT GetDisplay(IUnknown** ppDisplay) mut
 			{
-				return VT.GetDisplay(&this, ppDisplay);
+				return VT.GetDisplay(ref this, ppDisplay);
 			}
-			public HRESULT GetIndex(int32* pValue) mut
+			public HRESULT GetIndex(out int32 pValue) mut
 			{
-				return VT.GetIndex(&this, pValue);
+				return VT.GetIndex(ref this, out pValue);
 			}
-			public HRESULT ComGetType(int32* pValue) mut
+			public HRESULT ComGetType(out int32 pValue) mut
 			{
-				return VT.ComGetType(&this, pValue);
+				return VT.ComGetType(ref this, out pValue);
 			}
 			public HRESULT SetType(int32 Value) mut
 			{
-				return VT.SetType(&this, Value);
+				return VT.SetType(ref this, Value);
 			}
-			public HRESULT GetProperty(int32 Type, int32* pValue) mut
+			public HRESULT GetProperty(int32 Type, out int32 pValue) mut
 			{
-				return VT.GetProperty(&this, Type, pValue);
+				return VT.GetProperty(ref this, Type, out pValue);
 			}
 			public HRESULT GetRange(int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) mut
 			{
-				return VT.GetRange(&this, cpActive, cpAnchor, ppRange);
+				return VT.GetRange(ref this, cpActive, cpAnchor, ppRange);
 			}
 			public HRESULT GetText(int32 Flags, BSTR* pbstr) mut
 			{
-				return VT.GetText(&this, Flags, pbstr);
+				return VT.GetText(ref this, Flags, pbstr);
 			}
 			public HRESULT SetFormattedText(IUnknown* pUnk) mut
 			{
-				return VT.SetFormattedText(&this, pUnk);
+				return VT.SetFormattedText(ref this, pUnk);
 			}
 			public HRESULT SetProperty(int32 Type, int32 Value) mut
 			{
-				return VT.SetProperty(&this, Type, Value);
+				return VT.SetProperty(ref this, Type, Value);
 			}
 			public HRESULT SetText(int32 Flags, BSTR bstr) mut
 			{
-				return VT.SetText(&this, Flags, bstr);
+				return VT.SetText(ref this, Flags, bstr);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITextStory *self, int32* pValue) GetActive;
-				public new function HRESULT(ITextStory *self, int32 Value) SetActive;
-				public new function HRESULT(ITextStory *self, IUnknown** ppDisplay) GetDisplay;
-				public new function HRESULT(ITextStory *self, int32* pValue) GetIndex;
-				public new function HRESULT(ITextStory *self, int32* pValue) ComGetType;
-				public new function HRESULT(ITextStory *self, int32 Value) SetType;
-				public new function HRESULT(ITextStory *self, int32 Type, int32* pValue) GetProperty;
-				public new function HRESULT(ITextStory *self, int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) GetRange;
-				public new function HRESULT(ITextStory *self, int32 Flags, BSTR* pbstr) GetText;
-				public new function HRESULT(ITextStory *self, IUnknown* pUnk) SetFormattedText;
-				public new function HRESULT(ITextStory *self, int32 Type, int32 Value) SetProperty;
-				public new function HRESULT(ITextStory *self, int32 Flags, BSTR bstr) SetText;
+				public new function HRESULT(ref ITextStory self, out int32 pValue) GetActive;
+				public new function HRESULT(ref ITextStory self, int32 Value) SetActive;
+				public new function HRESULT(ref ITextStory self, IUnknown** ppDisplay) GetDisplay;
+				public new function HRESULT(ref ITextStory self, out int32 pValue) GetIndex;
+				public new function HRESULT(ref ITextStory self, out int32 pValue) ComGetType;
+				public new function HRESULT(ref ITextStory self, int32 Value) SetType;
+				public new function HRESULT(ref ITextStory self, int32 Type, out int32 pValue) GetProperty;
+				public new function HRESULT(ref ITextStory self, int32 cpActive, int32 cpAnchor, ITextRange2** ppRange) GetRange;
+				public new function HRESULT(ref ITextStory self, int32 Flags, BSTR* pbstr) GetText;
+				public new function HRESULT(ref ITextStory self, IUnknown* pUnk) SetFormattedText;
+				public new function HRESULT(ref ITextStory self, int32 Type, int32 Value) SetProperty;
+				public new function HRESULT(ref ITextStory self, int32 Flags, BSTR bstr) SetText;
 			}
 		}
 		[CRepr]
@@ -4251,92 +4251,92 @@ namespace Win32
 			
 			public HRESULT Item(int32 Index, ITextRange2** ppRange) mut
 			{
-				return VT.Item(&this, Index, ppRange);
+				return VT.Item(ref this, Index, ppRange);
 			}
-			public HRESULT GetCount(int32* pCount) mut
+			public HRESULT GetCount(out int32 pCount) mut
 			{
-				return VT.GetCount(&this, pCount);
+				return VT.GetCount(ref this, out pCount);
 			}
 			public HRESULT Add(BSTR bstr) mut
 			{
-				return VT.Add(&this, bstr);
+				return VT.Add(ref this, bstr);
 			}
 			public HRESULT Append(ITextRange2* pRange, int32 iString) mut
 			{
-				return VT.Append(&this, pRange, iString);
+				return VT.Append(ref this, pRange, iString);
 			}
 			public HRESULT Cat2(int32 iString) mut
 			{
-				return VT.Cat2(&this, iString);
+				return VT.Cat2(ref this, iString);
 			}
 			public HRESULT CatTop2(BSTR bstr) mut
 			{
-				return VT.CatTop2(&this, bstr);
+				return VT.CatTop2(ref this, bstr);
 			}
 			public HRESULT DeleteRange(ITextRange2* pRange) mut
 			{
-				return VT.DeleteRange(&this, pRange);
+				return VT.DeleteRange(ref this, pRange);
 			}
 			public HRESULT EncodeFunction(int32 Type, int32 Align, int32 Char, int32 Char1, int32 Char2, int32 Count, int32 TeXStyle, int32 cCol, ITextRange2* pRange) mut
 			{
-				return VT.EncodeFunction(&this, Type, Align, Char, Char1, Char2, Count, TeXStyle, cCol, pRange);
+				return VT.EncodeFunction(ref this, Type, Align, Char, Char1, Char2, Count, TeXStyle, cCol, pRange);
 			}
-			public HRESULT GetCch(int32 iString, int32* pcch) mut
+			public HRESULT GetCch(int32 iString, out int32 pcch) mut
 			{
-				return VT.GetCch(&this, iString, pcch);
+				return VT.GetCch(ref this, iString, out pcch);
 			}
 			public HRESULT InsertNullStr(int32 iString) mut
 			{
-				return VT.InsertNullStr(&this, iString);
+				return VT.InsertNullStr(ref this, iString);
 			}
 			public HRESULT MoveBoundary(int32 iString, int32 cch) mut
 			{
-				return VT.MoveBoundary(&this, iString, cch);
+				return VT.MoveBoundary(ref this, iString, cch);
 			}
 			public HRESULT PrefixTop(BSTR bstr) mut
 			{
-				return VT.PrefixTop(&this, bstr);
+				return VT.PrefixTop(ref this, bstr);
 			}
 			public HRESULT Remove(int32 iString, int32 cString) mut
 			{
-				return VT.Remove(&this, iString, cString);
+				return VT.Remove(ref this, iString, cString);
 			}
 			public HRESULT SetFormattedText(ITextRange2* pRangeD, ITextRange2* pRangeS) mut
 			{
-				return VT.SetFormattedText(&this, pRangeD, pRangeS);
+				return VT.SetFormattedText(ref this, pRangeD, pRangeS);
 			}
 			public HRESULT SetOpCp(int32 iString, int32 cp) mut
 			{
-				return VT.SetOpCp(&this, iString, cp);
+				return VT.SetOpCp(ref this, iString, cp);
 			}
 			public HRESULT SuffixTop(BSTR bstr, ITextRange2* pRange) mut
 			{
-				return VT.SuffixTop(&this, bstr, pRange);
+				return VT.SuffixTop(ref this, bstr, pRange);
 			}
 			public HRESULT Swap() mut
 			{
-				return VT.Swap(&this);
+				return VT.Swap(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITextStrings *self, int32 Index, ITextRange2** ppRange) Item;
-				public new function HRESULT(ITextStrings *self, int32* pCount) GetCount;
-				public new function HRESULT(ITextStrings *self, BSTR bstr) Add;
-				public new function HRESULT(ITextStrings *self, ITextRange2* pRange, int32 iString) Append;
-				public new function HRESULT(ITextStrings *self, int32 iString) Cat2;
-				public new function HRESULT(ITextStrings *self, BSTR bstr) CatTop2;
-				public new function HRESULT(ITextStrings *self, ITextRange2* pRange) DeleteRange;
-				public new function HRESULT(ITextStrings *self, int32 Type, int32 Align, int32 Char, int32 Char1, int32 Char2, int32 Count, int32 TeXStyle, int32 cCol, ITextRange2* pRange) EncodeFunction;
-				public new function HRESULT(ITextStrings *self, int32 iString, int32* pcch) GetCch;
-				public new function HRESULT(ITextStrings *self, int32 iString) InsertNullStr;
-				public new function HRESULT(ITextStrings *self, int32 iString, int32 cch) MoveBoundary;
-				public new function HRESULT(ITextStrings *self, BSTR bstr) PrefixTop;
-				public new function HRESULT(ITextStrings *self, int32 iString, int32 cString) Remove;
-				public new function HRESULT(ITextStrings *self, ITextRange2* pRangeD, ITextRange2* pRangeS) SetFormattedText;
-				public new function HRESULT(ITextStrings *self, int32 iString, int32 cp) SetOpCp;
-				public new function HRESULT(ITextStrings *self, BSTR bstr, ITextRange2* pRange) SuffixTop;
-				public new function HRESULT(ITextStrings *self) Swap;
+				public new function HRESULT(ref ITextStrings self, int32 Index, ITextRange2** ppRange) Item;
+				public new function HRESULT(ref ITextStrings self, out int32 pCount) GetCount;
+				public new function HRESULT(ref ITextStrings self, BSTR bstr) Add;
+				public new function HRESULT(ref ITextStrings self, ITextRange2* pRange, int32 iString) Append;
+				public new function HRESULT(ref ITextStrings self, int32 iString) Cat2;
+				public new function HRESULT(ref ITextStrings self, BSTR bstr) CatTop2;
+				public new function HRESULT(ref ITextStrings self, ITextRange2* pRange) DeleteRange;
+				public new function HRESULT(ref ITextStrings self, int32 Type, int32 Align, int32 Char, int32 Char1, int32 Char2, int32 Count, int32 TeXStyle, int32 cCol, ITextRange2* pRange) EncodeFunction;
+				public new function HRESULT(ref ITextStrings self, int32 iString, out int32 pcch) GetCch;
+				public new function HRESULT(ref ITextStrings self, int32 iString) InsertNullStr;
+				public new function HRESULT(ref ITextStrings self, int32 iString, int32 cch) MoveBoundary;
+				public new function HRESULT(ref ITextStrings self, BSTR bstr) PrefixTop;
+				public new function HRESULT(ref ITextStrings self, int32 iString, int32 cString) Remove;
+				public new function HRESULT(ref ITextStrings self, ITextRange2* pRangeD, ITextRange2* pRangeS) SetFormattedText;
+				public new function HRESULT(ref ITextStrings self, int32 iString, int32 cp) SetOpCp;
+				public new function HRESULT(ref ITextStrings self, BSTR bstr, ITextRange2* pRange) SuffixTop;
+				public new function HRESULT(ref ITextStrings self) Swap;
 			}
 		}
 		[CRepr]
@@ -4346,239 +4346,239 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAlignment(int32* pValue) mut
+			public HRESULT GetAlignment(out int32 pValue) mut
 			{
-				return VT.GetAlignment(&this, pValue);
+				return VT.GetAlignment(ref this, out pValue);
 			}
 			public HRESULT SetAlignment(int32 Value) mut
 			{
-				return VT.SetAlignment(&this, Value);
+				return VT.SetAlignment(ref this, Value);
 			}
-			public HRESULT GetCellCount(int32* pValue) mut
+			public HRESULT GetCellCount(out int32 pValue) mut
 			{
-				return VT.GetCellCount(&this, pValue);
+				return VT.GetCellCount(ref this, out pValue);
 			}
 			public HRESULT SetCellCount(int32 Value) mut
 			{
-				return VT.SetCellCount(&this, Value);
+				return VT.SetCellCount(ref this, Value);
 			}
-			public HRESULT GetCellCountCache(int32* pValue) mut
+			public HRESULT GetCellCountCache(out int32 pValue) mut
 			{
-				return VT.GetCellCountCache(&this, pValue);
+				return VT.GetCellCountCache(ref this, out pValue);
 			}
 			public HRESULT SetCellCountCache(int32 Value) mut
 			{
-				return VT.SetCellCountCache(&this, Value);
+				return VT.SetCellCountCache(ref this, Value);
 			}
-			public HRESULT GetCellIndex(int32* pValue) mut
+			public HRESULT GetCellIndex(out int32 pValue) mut
 			{
-				return VT.GetCellIndex(&this, pValue);
+				return VT.GetCellIndex(ref this, out pValue);
 			}
 			public HRESULT SetCellIndex(int32 Value) mut
 			{
-				return VT.SetCellIndex(&this, Value);
+				return VT.SetCellIndex(ref this, Value);
 			}
-			public HRESULT GetCellMargin(int32* pValue) mut
+			public HRESULT GetCellMargin(out int32 pValue) mut
 			{
-				return VT.GetCellMargin(&this, pValue);
+				return VT.GetCellMargin(ref this, out pValue);
 			}
 			public HRESULT SetCellMargin(int32 Value) mut
 			{
-				return VT.SetCellMargin(&this, Value);
+				return VT.SetCellMargin(ref this, Value);
 			}
-			public HRESULT GetHeight(int32* pValue) mut
+			public HRESULT GetHeight(out int32 pValue) mut
 			{
-				return VT.GetHeight(&this, pValue);
+				return VT.GetHeight(ref this, out pValue);
 			}
 			public HRESULT SetHeight(int32 Value) mut
 			{
-				return VT.SetHeight(&this, Value);
+				return VT.SetHeight(ref this, Value);
 			}
-			public HRESULT GetIndent(int32* pValue) mut
+			public HRESULT GetIndent(out int32 pValue) mut
 			{
-				return VT.GetIndent(&this, pValue);
+				return VT.GetIndent(ref this, out pValue);
 			}
 			public HRESULT SetIndent(int32 Value) mut
 			{
-				return VT.SetIndent(&this, Value);
+				return VT.SetIndent(ref this, Value);
 			}
-			public HRESULT GetKeepTogether(int32* pValue) mut
+			public HRESULT GetKeepTogether(out int32 pValue) mut
 			{
-				return VT.GetKeepTogether(&this, pValue);
+				return VT.GetKeepTogether(ref this, out pValue);
 			}
 			public HRESULT SetKeepTogether(int32 Value) mut
 			{
-				return VT.SetKeepTogether(&this, Value);
+				return VT.SetKeepTogether(ref this, Value);
 			}
-			public HRESULT GetKeepWithNext(int32* pValue) mut
+			public HRESULT GetKeepWithNext(out int32 pValue) mut
 			{
-				return VT.GetKeepWithNext(&this, pValue);
+				return VT.GetKeepWithNext(ref this, out pValue);
 			}
 			public HRESULT SetKeepWithNext(int32 Value) mut
 			{
-				return VT.SetKeepWithNext(&this, Value);
+				return VT.SetKeepWithNext(ref this, Value);
 			}
-			public HRESULT GetNestLevel(int32* pValue) mut
+			public HRESULT GetNestLevel(out int32 pValue) mut
 			{
-				return VT.GetNestLevel(&this, pValue);
+				return VT.GetNestLevel(ref this, out pValue);
 			}
-			public HRESULT GetRTL(int32* pValue) mut
+			public HRESULT GetRTL(out int32 pValue) mut
 			{
-				return VT.GetRTL(&this, pValue);
+				return VT.GetRTL(ref this, out pValue);
 			}
 			public HRESULT SetRTL(int32 Value) mut
 			{
-				return VT.SetRTL(&this, Value);
+				return VT.SetRTL(ref this, Value);
 			}
-			public HRESULT GetCellAlignment(int32* pValue) mut
+			public HRESULT GetCellAlignment(out int32 pValue) mut
 			{
-				return VT.GetCellAlignment(&this, pValue);
+				return VT.GetCellAlignment(ref this, out pValue);
 			}
 			public HRESULT SetCellAlignment(int32 Value) mut
 			{
-				return VT.SetCellAlignment(&this, Value);
+				return VT.SetCellAlignment(ref this, Value);
 			}
-			public HRESULT GetCellColorBack(int32* pValue) mut
+			public HRESULT GetCellColorBack(out int32 pValue) mut
 			{
-				return VT.GetCellColorBack(&this, pValue);
+				return VT.GetCellColorBack(ref this, out pValue);
 			}
 			public HRESULT SetCellColorBack(int32 Value) mut
 			{
-				return VT.SetCellColorBack(&this, Value);
+				return VT.SetCellColorBack(ref this, Value);
 			}
-			public HRESULT GetCellColorFore(int32* pValue) mut
+			public HRESULT GetCellColorFore(out int32 pValue) mut
 			{
-				return VT.GetCellColorFore(&this, pValue);
+				return VT.GetCellColorFore(ref this, out pValue);
 			}
 			public HRESULT SetCellColorFore(int32 Value) mut
 			{
-				return VT.SetCellColorFore(&this, Value);
+				return VT.SetCellColorFore(ref this, Value);
 			}
-			public HRESULT GetCellMergeFlags(int32* pValue) mut
+			public HRESULT GetCellMergeFlags(out int32 pValue) mut
 			{
-				return VT.GetCellMergeFlags(&this, pValue);
+				return VT.GetCellMergeFlags(ref this, out pValue);
 			}
 			public HRESULT SetCellMergeFlags(int32 Value) mut
 			{
-				return VT.SetCellMergeFlags(&this, Value);
+				return VT.SetCellMergeFlags(ref this, Value);
 			}
-			public HRESULT GetCellShading(int32* pValue) mut
+			public HRESULT GetCellShading(out int32 pValue) mut
 			{
-				return VT.GetCellShading(&this, pValue);
+				return VT.GetCellShading(ref this, out pValue);
 			}
 			public HRESULT SetCellShading(int32 Value) mut
 			{
-				return VT.SetCellShading(&this, Value);
+				return VT.SetCellShading(ref this, Value);
 			}
-			public HRESULT GetCellVerticalText(int32* pValue) mut
+			public HRESULT GetCellVerticalText(out int32 pValue) mut
 			{
-				return VT.GetCellVerticalText(&this, pValue);
+				return VT.GetCellVerticalText(ref this, out pValue);
 			}
 			public HRESULT SetCellVerticalText(int32 Value) mut
 			{
-				return VT.SetCellVerticalText(&this, Value);
+				return VT.SetCellVerticalText(ref this, Value);
 			}
-			public HRESULT GetCellWidth(int32* pValue) mut
+			public HRESULT GetCellWidth(out int32 pValue) mut
 			{
-				return VT.GetCellWidth(&this, pValue);
+				return VT.GetCellWidth(ref this, out pValue);
 			}
 			public HRESULT SetCellWidth(int32 Value) mut
 			{
-				return VT.SetCellWidth(&this, Value);
+				return VT.SetCellWidth(ref this, Value);
 			}
-			public HRESULT GetCellBorderColors(int32* pcrLeft, int32* pcrTop, int32* pcrRight, int32* pcrBottom) mut
+			public HRESULT GetCellBorderColors(out int32 pcrLeft, out int32 pcrTop, out int32 pcrRight, out int32 pcrBottom) mut
 			{
-				return VT.GetCellBorderColors(&this, pcrLeft, pcrTop, pcrRight, pcrBottom);
+				return VT.GetCellBorderColors(ref this, out pcrLeft, out pcrTop, out pcrRight, out pcrBottom);
 			}
-			public HRESULT GetCellBorderWidths(int32* pduLeft, int32* pduTop, int32* pduRight, int32* pduBottom) mut
+			public HRESULT GetCellBorderWidths(out int32 pduLeft, out int32 pduTop, out int32 pduRight, out int32 pduBottom) mut
 			{
-				return VT.GetCellBorderWidths(&this, pduLeft, pduTop, pduRight, pduBottom);
+				return VT.GetCellBorderWidths(ref this, out pduLeft, out pduTop, out pduRight, out pduBottom);
 			}
 			public HRESULT SetCellBorderColors(int32 crLeft, int32 crTop, int32 crRight, int32 crBottom) mut
 			{
-				return VT.SetCellBorderColors(&this, crLeft, crTop, crRight, crBottom);
+				return VT.SetCellBorderColors(ref this, crLeft, crTop, crRight, crBottom);
 			}
 			public HRESULT SetCellBorderWidths(int32 duLeft, int32 duTop, int32 duRight, int32 duBottom) mut
 			{
-				return VT.SetCellBorderWidths(&this, duLeft, duTop, duRight, duBottom);
+				return VT.SetCellBorderWidths(ref this, duLeft, duTop, duRight, duBottom);
 			}
 			public HRESULT Apply(int32 cRow, tomConstants Flags) mut
 			{
-				return VT.Apply(&this, cRow, Flags);
+				return VT.Apply(ref this, cRow, Flags);
 			}
-			public HRESULT CanChange(int32* pValue) mut
+			public HRESULT CanChange(out int32 pValue) mut
 			{
-				return VT.CanChange(&this, pValue);
+				return VT.CanChange(ref this, out pValue);
 			}
-			public HRESULT GetProperty(int32 Type, int32* pValue) mut
+			public HRESULT GetProperty(int32 Type, out int32 pValue) mut
 			{
-				return VT.GetProperty(&this, Type, pValue);
+				return VT.GetProperty(ref this, Type, out pValue);
 			}
 			public HRESULT Insert(int32 cRow) mut
 			{
-				return VT.Insert(&this, cRow);
+				return VT.Insert(ref this, cRow);
 			}
-			public HRESULT IsEqual(ITextRow* pRow, int32* pB) mut
+			public HRESULT IsEqual(ITextRow* pRow, out int32 pB) mut
 			{
-				return VT.IsEqual(&this, pRow, pB);
+				return VT.IsEqual(ref this, pRow, out pB);
 			}
 			public HRESULT Reset(int32 Value) mut
 			{
-				return VT.Reset(&this, Value);
+				return VT.Reset(ref this, Value);
 			}
 			public HRESULT SetProperty(int32 Type, int32 Value) mut
 			{
-				return VT.SetProperty(&this, Type, Value);
+				return VT.SetProperty(ref this, Type, Value);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITextRow *self, int32* pValue) GetAlignment;
-				public new function HRESULT(ITextRow *self, int32 Value) SetAlignment;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellCount;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellCount;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellCountCache;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellCountCache;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellIndex;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellIndex;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellMargin;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellMargin;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetHeight;
-				public new function HRESULT(ITextRow *self, int32 Value) SetHeight;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetIndent;
-				public new function HRESULT(ITextRow *self, int32 Value) SetIndent;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetKeepTogether;
-				public new function HRESULT(ITextRow *self, int32 Value) SetKeepTogether;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetKeepWithNext;
-				public new function HRESULT(ITextRow *self, int32 Value) SetKeepWithNext;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetNestLevel;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetRTL;
-				public new function HRESULT(ITextRow *self, int32 Value) SetRTL;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellAlignment;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellAlignment;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellColorBack;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellColorBack;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellColorFore;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellColorFore;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellMergeFlags;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellMergeFlags;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellShading;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellShading;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellVerticalText;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellVerticalText;
-				public new function HRESULT(ITextRow *self, int32* pValue) GetCellWidth;
-				public new function HRESULT(ITextRow *self, int32 Value) SetCellWidth;
-				public new function HRESULT(ITextRow *self, int32* pcrLeft, int32* pcrTop, int32* pcrRight, int32* pcrBottom) GetCellBorderColors;
-				public new function HRESULT(ITextRow *self, int32* pduLeft, int32* pduTop, int32* pduRight, int32* pduBottom) GetCellBorderWidths;
-				public new function HRESULT(ITextRow *self, int32 crLeft, int32 crTop, int32 crRight, int32 crBottom) SetCellBorderColors;
-				public new function HRESULT(ITextRow *self, int32 duLeft, int32 duTop, int32 duRight, int32 duBottom) SetCellBorderWidths;
-				public new function HRESULT(ITextRow *self, int32 cRow, tomConstants Flags) Apply;
-				public new function HRESULT(ITextRow *self, int32* pValue) CanChange;
-				public new function HRESULT(ITextRow *self, int32 Type, int32* pValue) GetProperty;
-				public new function HRESULT(ITextRow *self, int32 cRow) Insert;
-				public new function HRESULT(ITextRow *self, ITextRow* pRow, int32* pB) IsEqual;
-				public new function HRESULT(ITextRow *self, int32 Value) Reset;
-				public new function HRESULT(ITextRow *self, int32 Type, int32 Value) SetProperty;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetAlignment;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetAlignment;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellCount;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellCount;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellCountCache;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellCountCache;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellIndex;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellIndex;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellMargin;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellMargin;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetHeight;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetHeight;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetIndent;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetIndent;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetKeepTogether;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetKeepTogether;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetKeepWithNext;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetKeepWithNext;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetNestLevel;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetRTL;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetRTL;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellAlignment;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellAlignment;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellColorBack;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellColorBack;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellColorFore;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellColorFore;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellMergeFlags;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellMergeFlags;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellShading;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellShading;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellVerticalText;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellVerticalText;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) GetCellWidth;
+				public new function HRESULT(ref ITextRow self, int32 Value) SetCellWidth;
+				public new function HRESULT(ref ITextRow self, out int32 pcrLeft, out int32 pcrTop, out int32 pcrRight, out int32 pcrBottom) GetCellBorderColors;
+				public new function HRESULT(ref ITextRow self, out int32 pduLeft, out int32 pduTop, out int32 pduRight, out int32 pduBottom) GetCellBorderWidths;
+				public new function HRESULT(ref ITextRow self, int32 crLeft, int32 crTop, int32 crRight, int32 crBottom) SetCellBorderColors;
+				public new function HRESULT(ref ITextRow self, int32 duLeft, int32 duTop, int32 duRight, int32 duBottom) SetCellBorderWidths;
+				public new function HRESULT(ref ITextRow self, int32 cRow, tomConstants Flags) Apply;
+				public new function HRESULT(ref ITextRow self, out int32 pValue) CanChange;
+				public new function HRESULT(ref ITextRow self, int32 Type, out int32 pValue) GetProperty;
+				public new function HRESULT(ref ITextRow self, int32 cRow) Insert;
+				public new function HRESULT(ref ITextRow self, ITextRow* pRow, out int32 pB) IsEqual;
+				public new function HRESULT(ref ITextRow self, int32 Value) Reset;
+				public new function HRESULT(ref ITextRow self, int32 Type, int32 Value) SetProperty;
 			}
 		}
 		[CRepr]
@@ -4602,127 +4602,127 @@ namespace Win32
 			
 			public HRESULT AttachMsgFilter(IUnknown* pFilter) mut
 			{
-				return VT.AttachMsgFilter(&this, pFilter);
+				return VT.AttachMsgFilter(ref this, pFilter);
 			}
 			public HRESULT SetEffectColor(int32 Index, uint32 cr) mut
 			{
-				return VT.SetEffectColor(&this, Index, cr);
+				return VT.SetEffectColor(ref this, Index, cr);
 			}
-			public HRESULT GetEffectColor(int32 Index, uint32* pcr) mut
+			public HRESULT GetEffectColor(int32 Index, out uint32 pcr) mut
 			{
-				return VT.GetEffectColor(&this, Index, pcr);
+				return VT.GetEffectColor(ref this, Index, out pcr);
 			}
-			public HRESULT GetCaretType(int32* pCaretType) mut
+			public HRESULT GetCaretType(out int32 pCaretType) mut
 			{
-				return VT.GetCaretType(&this, pCaretType);
+				return VT.GetCaretType(ref this, out pCaretType);
 			}
 			public HRESULT SetCaretType(int32 CaretType) mut
 			{
-				return VT.SetCaretType(&this, CaretType);
+				return VT.SetCaretType(ref this, CaretType);
 			}
-			public HRESULT GetImmContext(int64* pContext) mut
+			public HRESULT GetImmContext(out int64 pContext) mut
 			{
-				return VT.GetImmContext(&this, pContext);
+				return VT.GetImmContext(ref this, out pContext);
 			}
 			public HRESULT ReleaseImmContext(int64 Context) mut
 			{
-				return VT.ReleaseImmContext(&this, Context);
+				return VT.ReleaseImmContext(ref this, Context);
 			}
-			public HRESULT GetPreferredFont(int32 cp, int32 CharRep, int32 Option, int32 CharRepCur, int32 curFontSize, BSTR* pbstr, int32* pPitchAndFamily, int32* pNewFontSize) mut
+			public HRESULT GetPreferredFont(int32 cp, int32 CharRep, int32 Option, int32 CharRepCur, int32 curFontSize, BSTR* pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) mut
 			{
-				return VT.GetPreferredFont(&this, cp, CharRep, Option, CharRepCur, curFontSize, pbstr, pPitchAndFamily, pNewFontSize);
+				return VT.GetPreferredFont(ref this, cp, CharRep, Option, CharRepCur, curFontSize, pbstr, out pPitchAndFamily, out pNewFontSize);
 			}
-			public HRESULT GetNotificationMode(int32* pMode) mut
+			public HRESULT GetNotificationMode(out int32 pMode) mut
 			{
-				return VT.GetNotificationMode(&this, pMode);
+				return VT.GetNotificationMode(ref this, out pMode);
 			}
 			public HRESULT SetNotificationMode(int32 Mode) mut
 			{
-				return VT.SetNotificationMode(&this, Mode);
+				return VT.SetNotificationMode(ref this, Mode);
 			}
-			public HRESULT GetClientRect(int32 Type, int32* pLeft, int32* pTop, int32* pRight, int32* pBottom) mut
+			public HRESULT GetClientRect(int32 Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom) mut
 			{
-				return VT.GetClientRect(&this, Type, pLeft, pTop, pRight, pBottom);
+				return VT.GetClientRect(ref this, Type, out pLeft, out pTop, out pRight, out pBottom);
 			}
 			public HRESULT GetSelection2(ITextSelection** ppSel) mut
 			{
-				return VT.GetSelection2(&this, ppSel);
+				return VT.GetSelection2(ref this, ppSel);
 			}
-			public HRESULT GetWindow(int32* phWnd) mut
+			public HRESULT GetWindow(out int32 phWnd) mut
 			{
-				return VT.GetWindow(&this, phWnd);
+				return VT.GetWindow(ref this, out phWnd);
 			}
-			public HRESULT GetFEFlags(int32* pFlags) mut
+			public HRESULT GetFEFlags(out int32 pFlags) mut
 			{
-				return VT.GetFEFlags(&this, pFlags);
+				return VT.GetFEFlags(ref this, out pFlags);
 			}
 			public HRESULT UpdateWindow() mut
 			{
-				return VT.UpdateWindow(&this);
+				return VT.UpdateWindow(ref this);
 			}
-			public HRESULT CheckTextLimit(int32 cch, int32* pcch) mut
+			public HRESULT CheckTextLimit(int32 cch, ref int32 pcch) mut
 			{
-				return VT.CheckTextLimit(&this, cch, pcch);
+				return VT.CheckTextLimit(ref this, cch, ref pcch);
 			}
 			public HRESULT IMEInProgress(int32 Value) mut
 			{
-				return VT.IMEInProgress(&this, Value);
+				return VT.IMEInProgress(ref this, Value);
 			}
 			public HRESULT SysBeep() mut
 			{
-				return VT.SysBeep(&this);
+				return VT.SysBeep(ref this);
 			}
 			public HRESULT Update(int32 Mode) mut
 			{
-				return VT.Update(&this, Mode);
+				return VT.Update(ref this, Mode);
 			}
 			public HRESULT Notify(int32 Notify) mut
 			{
-				return VT.Notify(&this, Notify);
+				return VT.Notify(ref this, Notify);
 			}
 			public HRESULT GetDocumentFont(ITextFont** ppITextFont) mut
 			{
-				return VT.GetDocumentFont(&this, ppITextFont);
+				return VT.GetDocumentFont(ref this, ppITextFont);
 			}
 			public HRESULT GetDocumentPara(ITextPara** ppITextPara) mut
 			{
-				return VT.GetDocumentPara(&this, ppITextPara);
+				return VT.GetDocumentPara(ref this, ppITextPara);
 			}
 			public HRESULT GetCallManager(IUnknown** ppVoid) mut
 			{
-				return VT.GetCallManager(&this, ppVoid);
+				return VT.GetCallManager(ref this, ppVoid);
 			}
 			public HRESULT ReleaseCallManager(IUnknown* pVoid) mut
 			{
-				return VT.ReleaseCallManager(&this, pVoid);
+				return VT.ReleaseCallManager(ref this, pVoid);
 			}
 			[CRepr]
 			public struct VTable : ITextDocument.VTable
 			{
-				public new function HRESULT(ITextDocument2Old *self, IUnknown* pFilter) AttachMsgFilter;
-				public new function HRESULT(ITextDocument2Old *self, int32 Index, uint32 cr) SetEffectColor;
-				public new function HRESULT(ITextDocument2Old *self, int32 Index, uint32* pcr) GetEffectColor;
-				public new function HRESULT(ITextDocument2Old *self, int32* pCaretType) GetCaretType;
-				public new function HRESULT(ITextDocument2Old *self, int32 CaretType) SetCaretType;
-				public new function HRESULT(ITextDocument2Old *self, int64* pContext) GetImmContext;
-				public new function HRESULT(ITextDocument2Old *self, int64 Context) ReleaseImmContext;
-				public new function HRESULT(ITextDocument2Old *self, int32 cp, int32 CharRep, int32 Option, int32 CharRepCur, int32 curFontSize, BSTR* pbstr, int32* pPitchAndFamily, int32* pNewFontSize) GetPreferredFont;
-				public new function HRESULT(ITextDocument2Old *self, int32* pMode) GetNotificationMode;
-				public new function HRESULT(ITextDocument2Old *self, int32 Mode) SetNotificationMode;
-				public new function HRESULT(ITextDocument2Old *self, int32 Type, int32* pLeft, int32* pTop, int32* pRight, int32* pBottom) GetClientRect;
-				public new function HRESULT(ITextDocument2Old *self, ITextSelection** ppSel) GetSelection2;
-				public new function HRESULT(ITextDocument2Old *self, int32* phWnd) GetWindow;
-				public new function HRESULT(ITextDocument2Old *self, int32* pFlags) GetFEFlags;
-				public new function HRESULT(ITextDocument2Old *self) UpdateWindow;
-				public new function HRESULT(ITextDocument2Old *self, int32 cch, int32* pcch) CheckTextLimit;
-				public new function HRESULT(ITextDocument2Old *self, int32 Value) IMEInProgress;
-				public new function HRESULT(ITextDocument2Old *self) SysBeep;
-				public new function HRESULT(ITextDocument2Old *self, int32 Mode) Update;
-				public new function HRESULT(ITextDocument2Old *self, int32 Notify) Notify;
-				public new function HRESULT(ITextDocument2Old *self, ITextFont** ppITextFont) GetDocumentFont;
-				public new function HRESULT(ITextDocument2Old *self, ITextPara** ppITextPara) GetDocumentPara;
-				public new function HRESULT(ITextDocument2Old *self, IUnknown** ppVoid) GetCallManager;
-				public new function HRESULT(ITextDocument2Old *self, IUnknown* pVoid) ReleaseCallManager;
+				public new function HRESULT(ref ITextDocument2Old self, IUnknown* pFilter) AttachMsgFilter;
+				public new function HRESULT(ref ITextDocument2Old self, int32 Index, uint32 cr) SetEffectColor;
+				public new function HRESULT(ref ITextDocument2Old self, int32 Index, out uint32 pcr) GetEffectColor;
+				public new function HRESULT(ref ITextDocument2Old self, out int32 pCaretType) GetCaretType;
+				public new function HRESULT(ref ITextDocument2Old self, int32 CaretType) SetCaretType;
+				public new function HRESULT(ref ITextDocument2Old self, out int64 pContext) GetImmContext;
+				public new function HRESULT(ref ITextDocument2Old self, int64 Context) ReleaseImmContext;
+				public new function HRESULT(ref ITextDocument2Old self, int32 cp, int32 CharRep, int32 Option, int32 CharRepCur, int32 curFontSize, BSTR* pbstr, out int32 pPitchAndFamily, out int32 pNewFontSize) GetPreferredFont;
+				public new function HRESULT(ref ITextDocument2Old self, out int32 pMode) GetNotificationMode;
+				public new function HRESULT(ref ITextDocument2Old self, int32 Mode) SetNotificationMode;
+				public new function HRESULT(ref ITextDocument2Old self, int32 Type, out int32 pLeft, out int32 pTop, out int32 pRight, out int32 pBottom) GetClientRect;
+				public new function HRESULT(ref ITextDocument2Old self, ITextSelection** ppSel) GetSelection2;
+				public new function HRESULT(ref ITextDocument2Old self, out int32 phWnd) GetWindow;
+				public new function HRESULT(ref ITextDocument2Old self, out int32 pFlags) GetFEFlags;
+				public new function HRESULT(ref ITextDocument2Old self) UpdateWindow;
+				public new function HRESULT(ref ITextDocument2Old self, int32 cch, ref int32 pcch) CheckTextLimit;
+				public new function HRESULT(ref ITextDocument2Old self, int32 Value) IMEInProgress;
+				public new function HRESULT(ref ITextDocument2Old self) SysBeep;
+				public new function HRESULT(ref ITextDocument2Old self, int32 Mode) Update;
+				public new function HRESULT(ref ITextDocument2Old self, int32 Notify) Notify;
+				public new function HRESULT(ref ITextDocument2Old self, ITextFont** ppITextFont) GetDocumentFont;
+				public new function HRESULT(ref ITextDocument2Old self, ITextPara** ppITextPara) GetDocumentPara;
+				public new function HRESULT(ref ITextDocument2Old self, IUnknown** ppVoid) GetCallManager;
+				public new function HRESULT(ref ITextDocument2Old self, IUnknown* pVoid) ReleaseCallManager;
 			}
 		}
 		

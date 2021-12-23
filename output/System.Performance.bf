@@ -430,7 +430,7 @@ namespace Win32
 		public function void* PERF_MEM_ALLOC(uint AllocSize, void* pContext);
 		public function void PERF_MEM_FREE(void* pBuffer, void* pContext);
 		public function uint32 PM_OPEN_PROC(PWSTR pContext);
-		public function uint32 PM_COLLECT_PROC(PWSTR pValueName, void** ppData, uint32* pcbTotalBytes, uint32* pNumObjectTypes);
+		public function uint32 PM_COLLECT_PROC(PWSTR pValueName, void** ppData, out uint32 pcbTotalBytes, out uint32 pNumObjectTypes);
 		public function uint32 PM_CLOSE_PROC();
 		public function int32 CounterPathCallBack(uint param0);
 		
@@ -747,7 +747,7 @@ namespace Win32
 			public PSTR szFullPath;
 			public _Anonymous_e__Union Anonymous;
 			public PSTR szExplainText;
-			public uint32[] DataBuffer;
+			public uint32[0] DataBuffer;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -782,7 +782,7 @@ namespace Win32
 			public PWSTR szFullPath;
 			public _Anonymous_e__Union Anonymous;
 			public PWSTR szExplainText;
-			public uint32[] DataBuffer;
+			public uint32[0] DataBuffer;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -816,7 +816,7 @@ namespace Win32
 			public uint32 dwStructureSize;
 			public PDH_LOG_TYPE dwRecordType;
 			public uint32 dwItems;
-			public uint8[] RawBytes;
+			public uint8[0] RawBytes;
 		}
 		[CRepr]
 		public struct PDH_LOG_SERVICE_QUERY_INFO_A
@@ -1011,307 +1011,307 @@ namespace Win32
 			
 			public HRESULT get_DataCollectors(IDataCollectorCollection** collectors) mut
 			{
-				return VT.get_DataCollectors(&this, collectors);
+				return VT.get_DataCollectors(ref this, collectors);
 			}
-			public HRESULT get_Duration(uint32* seconds) mut
+			public HRESULT get_Duration(out uint32 seconds) mut
 			{
-				return VT.get_Duration(&this, seconds);
+				return VT.get_Duration(ref this, out seconds);
 			}
 			public HRESULT put_Duration(uint32 seconds) mut
 			{
-				return VT.put_Duration(&this, seconds);
+				return VT.put_Duration(ref this, seconds);
 			}
 			public HRESULT get_Description(BSTR* description) mut
 			{
-				return VT.get_Description(&this, description);
+				return VT.get_Description(ref this, description);
 			}
 			public HRESULT put_Description(BSTR description) mut
 			{
-				return VT.put_Description(&this, description);
+				return VT.put_Description(ref this, description);
 			}
 			public HRESULT get_DescriptionUnresolved(BSTR* Descr) mut
 			{
-				return VT.get_DescriptionUnresolved(&this, Descr);
+				return VT.get_DescriptionUnresolved(ref this, Descr);
 			}
 			public HRESULT get_DisplayName(BSTR* DisplayName) mut
 			{
-				return VT.get_DisplayName(&this, DisplayName);
+				return VT.get_DisplayName(ref this, DisplayName);
 			}
 			public HRESULT put_DisplayName(BSTR DisplayName) mut
 			{
-				return VT.put_DisplayName(&this, DisplayName);
+				return VT.put_DisplayName(ref this, DisplayName);
 			}
 			public HRESULT get_DisplayNameUnresolved(BSTR* name) mut
 			{
-				return VT.get_DisplayNameUnresolved(&this, name);
+				return VT.get_DisplayNameUnresolved(ref this, name);
 			}
 			public HRESULT get_Keywords(SAFEARRAY** keywords) mut
 			{
-				return VT.get_Keywords(&this, keywords);
+				return VT.get_Keywords(ref this, keywords);
 			}
-			public HRESULT put_Keywords(SAFEARRAY* keywords) mut
+			public HRESULT put_Keywords(ref SAFEARRAY keywords) mut
 			{
-				return VT.put_Keywords(&this, keywords);
+				return VT.put_Keywords(ref this, ref keywords);
 			}
 			public HRESULT get_LatestOutputLocation(BSTR* path) mut
 			{
-				return VT.get_LatestOutputLocation(&this, path);
+				return VT.get_LatestOutputLocation(ref this, path);
 			}
 			public HRESULT put_LatestOutputLocation(BSTR path) mut
 			{
-				return VT.put_LatestOutputLocation(&this, path);
+				return VT.put_LatestOutputLocation(ref this, path);
 			}
 			public HRESULT get_Name(BSTR* name) mut
 			{
-				return VT.get_Name(&this, name);
+				return VT.get_Name(ref this, name);
 			}
 			public HRESULT get_OutputLocation(BSTR* path) mut
 			{
-				return VT.get_OutputLocation(&this, path);
+				return VT.get_OutputLocation(ref this, path);
 			}
 			public HRESULT get_RootPath(BSTR* folder) mut
 			{
-				return VT.get_RootPath(&this, folder);
+				return VT.get_RootPath(ref this, folder);
 			}
 			public HRESULT put_RootPath(BSTR folder) mut
 			{
-				return VT.put_RootPath(&this, folder);
+				return VT.put_RootPath(ref this, folder);
 			}
-			public HRESULT get_Segment(int16* segment) mut
+			public HRESULT get_Segment(out int16 segment) mut
 			{
-				return VT.get_Segment(&this, segment);
+				return VT.get_Segment(ref this, out segment);
 			}
 			public HRESULT put_Segment(int16 segment) mut
 			{
-				return VT.put_Segment(&this, segment);
+				return VT.put_Segment(ref this, segment);
 			}
-			public HRESULT get_SegmentMaxDuration(uint32* seconds) mut
+			public HRESULT get_SegmentMaxDuration(out uint32 seconds) mut
 			{
-				return VT.get_SegmentMaxDuration(&this, seconds);
+				return VT.get_SegmentMaxDuration(ref this, out seconds);
 			}
 			public HRESULT put_SegmentMaxDuration(uint32 seconds) mut
 			{
-				return VT.put_SegmentMaxDuration(&this, seconds);
+				return VT.put_SegmentMaxDuration(ref this, seconds);
 			}
-			public HRESULT get_SegmentMaxSize(uint32* size) mut
+			public HRESULT get_SegmentMaxSize(out uint32 size) mut
 			{
-				return VT.get_SegmentMaxSize(&this, size);
+				return VT.get_SegmentMaxSize(ref this, out size);
 			}
 			public HRESULT put_SegmentMaxSize(uint32 size) mut
 			{
-				return VT.put_SegmentMaxSize(&this, size);
+				return VT.put_SegmentMaxSize(ref this, size);
 			}
-			public HRESULT get_SerialNumber(uint32* index) mut
+			public HRESULT get_SerialNumber(out uint32 index) mut
 			{
-				return VT.get_SerialNumber(&this, index);
+				return VT.get_SerialNumber(ref this, out index);
 			}
 			public HRESULT put_SerialNumber(uint32 index) mut
 			{
-				return VT.put_SerialNumber(&this, index);
+				return VT.put_SerialNumber(ref this, index);
 			}
 			public HRESULT get_Server(BSTR* server) mut
 			{
-				return VT.get_Server(&this, server);
+				return VT.get_Server(ref this, server);
 			}
-			public HRESULT get_Status(DataCollectorSetStatus* status) mut
+			public HRESULT get_Status(out DataCollectorSetStatus status) mut
 			{
-				return VT.get_Status(&this, status);
+				return VT.get_Status(ref this, out status);
 			}
 			public HRESULT get_Subdirectory(BSTR* folder) mut
 			{
-				return VT.get_Subdirectory(&this, folder);
+				return VT.get_Subdirectory(ref this, folder);
 			}
 			public HRESULT put_Subdirectory(BSTR folder) mut
 			{
-				return VT.put_Subdirectory(&this, folder);
+				return VT.put_Subdirectory(ref this, folder);
 			}
-			public HRESULT get_SubdirectoryFormat(AutoPathFormat* format) mut
+			public HRESULT get_SubdirectoryFormat(out AutoPathFormat format) mut
 			{
-				return VT.get_SubdirectoryFormat(&this, format);
+				return VT.get_SubdirectoryFormat(ref this, out format);
 			}
 			public HRESULT put_SubdirectoryFormat(AutoPathFormat format) mut
 			{
-				return VT.put_SubdirectoryFormat(&this, format);
+				return VT.put_SubdirectoryFormat(ref this, format);
 			}
 			public HRESULT get_SubdirectoryFormatPattern(BSTR* pattern) mut
 			{
-				return VT.get_SubdirectoryFormatPattern(&this, pattern);
+				return VT.get_SubdirectoryFormatPattern(ref this, pattern);
 			}
 			public HRESULT put_SubdirectoryFormatPattern(BSTR pattern) mut
 			{
-				return VT.put_SubdirectoryFormatPattern(&this, pattern);
+				return VT.put_SubdirectoryFormatPattern(ref this, pattern);
 			}
 			public HRESULT get_Task(BSTR* task) mut
 			{
-				return VT.get_Task(&this, task);
+				return VT.get_Task(ref this, task);
 			}
 			public HRESULT put_Task(BSTR task) mut
 			{
-				return VT.put_Task(&this, task);
+				return VT.put_Task(ref this, task);
 			}
-			public HRESULT get_TaskRunAsSelf(int16* RunAsSelf) mut
+			public HRESULT get_TaskRunAsSelf(out int16 RunAsSelf) mut
 			{
-				return VT.get_TaskRunAsSelf(&this, RunAsSelf);
+				return VT.get_TaskRunAsSelf(ref this, out RunAsSelf);
 			}
 			public HRESULT put_TaskRunAsSelf(int16 RunAsSelf) mut
 			{
-				return VT.put_TaskRunAsSelf(&this, RunAsSelf);
+				return VT.put_TaskRunAsSelf(ref this, RunAsSelf);
 			}
 			public HRESULT get_TaskArguments(BSTR* task) mut
 			{
-				return VT.get_TaskArguments(&this, task);
+				return VT.get_TaskArguments(ref this, task);
 			}
 			public HRESULT put_TaskArguments(BSTR task) mut
 			{
-				return VT.put_TaskArguments(&this, task);
+				return VT.put_TaskArguments(ref this, task);
 			}
 			public HRESULT get_TaskUserTextArguments(BSTR* UserText) mut
 			{
-				return VT.get_TaskUserTextArguments(&this, UserText);
+				return VT.get_TaskUserTextArguments(ref this, UserText);
 			}
 			public HRESULT put_TaskUserTextArguments(BSTR UserText) mut
 			{
-				return VT.put_TaskUserTextArguments(&this, UserText);
+				return VT.put_TaskUserTextArguments(ref this, UserText);
 			}
 			public HRESULT get_Schedules(IScheduleCollection** ppSchedules) mut
 			{
-				return VT.get_Schedules(&this, ppSchedules);
+				return VT.get_Schedules(ref this, ppSchedules);
 			}
-			public HRESULT get_SchedulesEnabled(int16* enabled) mut
+			public HRESULT get_SchedulesEnabled(out int16 enabled) mut
 			{
-				return VT.get_SchedulesEnabled(&this, enabled);
+				return VT.get_SchedulesEnabled(ref this, out enabled);
 			}
 			public HRESULT put_SchedulesEnabled(int16 enabled) mut
 			{
-				return VT.put_SchedulesEnabled(&this, enabled);
+				return VT.put_SchedulesEnabled(ref this, enabled);
 			}
 			public HRESULT get_UserAccount(BSTR* user) mut
 			{
-				return VT.get_UserAccount(&this, user);
+				return VT.get_UserAccount(ref this, user);
 			}
 			public HRESULT get_Xml(BSTR* xml) mut
 			{
-				return VT.get_Xml(&this, xml);
+				return VT.get_Xml(ref this, xml);
 			}
 			public HRESULT get_Security(BSTR* pbstrSecurity) mut
 			{
-				return VT.get_Security(&this, pbstrSecurity);
+				return VT.get_Security(ref this, pbstrSecurity);
 			}
 			public HRESULT put_Security(BSTR bstrSecurity) mut
 			{
-				return VT.put_Security(&this, bstrSecurity);
+				return VT.put_Security(ref this, bstrSecurity);
 			}
-			public HRESULT get_StopOnCompletion(int16* Stop) mut
+			public HRESULT get_StopOnCompletion(out int16 Stop) mut
 			{
-				return VT.get_StopOnCompletion(&this, Stop);
+				return VT.get_StopOnCompletion(ref this, out Stop);
 			}
 			public HRESULT put_StopOnCompletion(int16 Stop) mut
 			{
-				return VT.put_StopOnCompletion(&this, Stop);
+				return VT.put_StopOnCompletion(ref this, Stop);
 			}
 			public HRESULT get_DataManager(IDataManager** DataManager) mut
 			{
-				return VT.get_DataManager(&this, DataManager);
+				return VT.get_DataManager(ref this, DataManager);
 			}
 			public HRESULT SetCredentials(BSTR user, BSTR password) mut
 			{
-				return VT.SetCredentials(&this, user, password);
+				return VT.SetCredentials(ref this, user, password);
 			}
 			public HRESULT Query(BSTR name, BSTR server) mut
 			{
-				return VT.Query(&this, name, server);
+				return VT.Query(ref this, name, server);
 			}
 			public HRESULT Commit(BSTR name, BSTR server, CommitMode mode, IValueMap** validation) mut
 			{
-				return VT.Commit(&this, name, server, mode, validation);
+				return VT.Commit(ref this, name, server, mode, validation);
 			}
 			public HRESULT Delete() mut
 			{
-				return VT.Delete(&this);
+				return VT.Delete(ref this);
 			}
 			public HRESULT Start(int16 Synchronous) mut
 			{
-				return VT.Start(&this, Synchronous);
+				return VT.Start(ref this, Synchronous);
 			}
 			public HRESULT Stop(int16 Synchronous) mut
 			{
-				return VT.Stop(&this, Synchronous);
+				return VT.Stop(ref this, Synchronous);
 			}
 			public HRESULT SetXml(BSTR xml, IValueMap** validation) mut
 			{
-				return VT.SetXml(&this, xml, validation);
+				return VT.SetXml(ref this, xml, validation);
 			}
 			public HRESULT SetValue(BSTR key, BSTR value) mut
 			{
-				return VT.SetValue(&this, key, value);
+				return VT.SetValue(ref this, key, value);
 			}
 			public HRESULT GetValue(BSTR key, BSTR* value) mut
 			{
-				return VT.GetValue(&this, key, value);
+				return VT.GetValue(ref this, key, value);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IDataCollectorSet *self, IDataCollectorCollection** collectors) get_DataCollectors;
-				public new function HRESULT(IDataCollectorSet *self, uint32* seconds) get_Duration;
-				public new function HRESULT(IDataCollectorSet *self, uint32 seconds) put_Duration;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* description) get_Description;
-				public new function HRESULT(IDataCollectorSet *self, BSTR description) put_Description;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* Descr) get_DescriptionUnresolved;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* DisplayName) get_DisplayName;
-				public new function HRESULT(IDataCollectorSet *self, BSTR DisplayName) put_DisplayName;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* name) get_DisplayNameUnresolved;
-				public new function HRESULT(IDataCollectorSet *self, SAFEARRAY** keywords) get_Keywords;
-				public new function HRESULT(IDataCollectorSet *self, SAFEARRAY* keywords) put_Keywords;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* path) get_LatestOutputLocation;
-				public new function HRESULT(IDataCollectorSet *self, BSTR path) put_LatestOutputLocation;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* name) get_Name;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* path) get_OutputLocation;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* folder) get_RootPath;
-				public new function HRESULT(IDataCollectorSet *self, BSTR folder) put_RootPath;
-				public new function HRESULT(IDataCollectorSet *self, int16* segment) get_Segment;
-				public new function HRESULT(IDataCollectorSet *self, int16 segment) put_Segment;
-				public new function HRESULT(IDataCollectorSet *self, uint32* seconds) get_SegmentMaxDuration;
-				public new function HRESULT(IDataCollectorSet *self, uint32 seconds) put_SegmentMaxDuration;
-				public new function HRESULT(IDataCollectorSet *self, uint32* size) get_SegmentMaxSize;
-				public new function HRESULT(IDataCollectorSet *self, uint32 size) put_SegmentMaxSize;
-				public new function HRESULT(IDataCollectorSet *self, uint32* index) get_SerialNumber;
-				public new function HRESULT(IDataCollectorSet *self, uint32 index) put_SerialNumber;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* server) get_Server;
-				public new function HRESULT(IDataCollectorSet *self, DataCollectorSetStatus* status) get_Status;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* folder) get_Subdirectory;
-				public new function HRESULT(IDataCollectorSet *self, BSTR folder) put_Subdirectory;
-				public new function HRESULT(IDataCollectorSet *self, AutoPathFormat* format) get_SubdirectoryFormat;
-				public new function HRESULT(IDataCollectorSet *self, AutoPathFormat format) put_SubdirectoryFormat;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* pattern) get_SubdirectoryFormatPattern;
-				public new function HRESULT(IDataCollectorSet *self, BSTR pattern) put_SubdirectoryFormatPattern;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* task) get_Task;
-				public new function HRESULT(IDataCollectorSet *self, BSTR task) put_Task;
-				public new function HRESULT(IDataCollectorSet *self, int16* RunAsSelf) get_TaskRunAsSelf;
-				public new function HRESULT(IDataCollectorSet *self, int16 RunAsSelf) put_TaskRunAsSelf;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* task) get_TaskArguments;
-				public new function HRESULT(IDataCollectorSet *self, BSTR task) put_TaskArguments;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* UserText) get_TaskUserTextArguments;
-				public new function HRESULT(IDataCollectorSet *self, BSTR UserText) put_TaskUserTextArguments;
-				public new function HRESULT(IDataCollectorSet *self, IScheduleCollection** ppSchedules) get_Schedules;
-				public new function HRESULT(IDataCollectorSet *self, int16* enabled) get_SchedulesEnabled;
-				public new function HRESULT(IDataCollectorSet *self, int16 enabled) put_SchedulesEnabled;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* user) get_UserAccount;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* xml) get_Xml;
-				public new function HRESULT(IDataCollectorSet *self, BSTR* pbstrSecurity) get_Security;
-				public new function HRESULT(IDataCollectorSet *self, BSTR bstrSecurity) put_Security;
-				public new function HRESULT(IDataCollectorSet *self, int16* Stop) get_StopOnCompletion;
-				public new function HRESULT(IDataCollectorSet *self, int16 Stop) put_StopOnCompletion;
-				public new function HRESULT(IDataCollectorSet *self, IDataManager** DataManager) get_DataManager;
-				public new function HRESULT(IDataCollectorSet *self, BSTR user, BSTR password) SetCredentials;
-				public new function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server) Query;
-				public new function HRESULT(IDataCollectorSet *self, BSTR name, BSTR server, CommitMode mode, IValueMap** validation) Commit;
-				public new function HRESULT(IDataCollectorSet *self) Delete;
-				public new function HRESULT(IDataCollectorSet *self, int16 Synchronous) Start;
-				public new function HRESULT(IDataCollectorSet *self, int16 Synchronous) Stop;
-				public new function HRESULT(IDataCollectorSet *self, BSTR xml, IValueMap** validation) SetXml;
-				public new function HRESULT(IDataCollectorSet *self, BSTR key, BSTR value) SetValue;
-				public new function HRESULT(IDataCollectorSet *self, BSTR key, BSTR* value) GetValue;
+				public new function HRESULT(ref IDataCollectorSet self, IDataCollectorCollection** collectors) get_DataCollectors;
+				public new function HRESULT(ref IDataCollectorSet self, out uint32 seconds) get_Duration;
+				public new function HRESULT(ref IDataCollectorSet self, uint32 seconds) put_Duration;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* description) get_Description;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR description) put_Description;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* Descr) get_DescriptionUnresolved;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* DisplayName) get_DisplayName;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR DisplayName) put_DisplayName;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* name) get_DisplayNameUnresolved;
+				public new function HRESULT(ref IDataCollectorSet self, SAFEARRAY** keywords) get_Keywords;
+				public new function HRESULT(ref IDataCollectorSet self, ref SAFEARRAY keywords) put_Keywords;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* path) get_LatestOutputLocation;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR path) put_LatestOutputLocation;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* name) get_Name;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* path) get_OutputLocation;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* folder) get_RootPath;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR folder) put_RootPath;
+				public new function HRESULT(ref IDataCollectorSet self, out int16 segment) get_Segment;
+				public new function HRESULT(ref IDataCollectorSet self, int16 segment) put_Segment;
+				public new function HRESULT(ref IDataCollectorSet self, out uint32 seconds) get_SegmentMaxDuration;
+				public new function HRESULT(ref IDataCollectorSet self, uint32 seconds) put_SegmentMaxDuration;
+				public new function HRESULT(ref IDataCollectorSet self, out uint32 size) get_SegmentMaxSize;
+				public new function HRESULT(ref IDataCollectorSet self, uint32 size) put_SegmentMaxSize;
+				public new function HRESULT(ref IDataCollectorSet self, out uint32 index) get_SerialNumber;
+				public new function HRESULT(ref IDataCollectorSet self, uint32 index) put_SerialNumber;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* server) get_Server;
+				public new function HRESULT(ref IDataCollectorSet self, out DataCollectorSetStatus status) get_Status;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* folder) get_Subdirectory;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR folder) put_Subdirectory;
+				public new function HRESULT(ref IDataCollectorSet self, out AutoPathFormat format) get_SubdirectoryFormat;
+				public new function HRESULT(ref IDataCollectorSet self, AutoPathFormat format) put_SubdirectoryFormat;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* pattern) get_SubdirectoryFormatPattern;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR pattern) put_SubdirectoryFormatPattern;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* task) get_Task;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR task) put_Task;
+				public new function HRESULT(ref IDataCollectorSet self, out int16 RunAsSelf) get_TaskRunAsSelf;
+				public new function HRESULT(ref IDataCollectorSet self, int16 RunAsSelf) put_TaskRunAsSelf;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* task) get_TaskArguments;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR task) put_TaskArguments;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* UserText) get_TaskUserTextArguments;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR UserText) put_TaskUserTextArguments;
+				public new function HRESULT(ref IDataCollectorSet self, IScheduleCollection** ppSchedules) get_Schedules;
+				public new function HRESULT(ref IDataCollectorSet self, out int16 enabled) get_SchedulesEnabled;
+				public new function HRESULT(ref IDataCollectorSet self, int16 enabled) put_SchedulesEnabled;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* user) get_UserAccount;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* xml) get_Xml;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR* pbstrSecurity) get_Security;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR bstrSecurity) put_Security;
+				public new function HRESULT(ref IDataCollectorSet self, out int16 Stop) get_StopOnCompletion;
+				public new function HRESULT(ref IDataCollectorSet self, int16 Stop) put_StopOnCompletion;
+				public new function HRESULT(ref IDataCollectorSet self, IDataManager** DataManager) get_DataManager;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR user, BSTR password) SetCredentials;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR name, BSTR server) Query;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR name, BSTR server, CommitMode mode, IValueMap** validation) Commit;
+				public new function HRESULT(ref IDataCollectorSet self) Delete;
+				public new function HRESULT(ref IDataCollectorSet self, int16 Synchronous) Start;
+				public new function HRESULT(ref IDataCollectorSet self, int16 Synchronous) Stop;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR xml, IValueMap** validation) SetXml;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR key, BSTR value) SetValue;
+				public new function HRESULT(ref IDataCollectorSet self, BSTR key, BSTR* value) GetValue;
 			}
 		}
 		[CRepr]
@@ -1321,134 +1321,134 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Enabled(int16* pfEnabled) mut
+			public HRESULT get_Enabled(out int16 pfEnabled) mut
 			{
-				return VT.get_Enabled(&this, pfEnabled);
+				return VT.get_Enabled(ref this, out pfEnabled);
 			}
 			public HRESULT put_Enabled(int16 fEnabled) mut
 			{
-				return VT.put_Enabled(&this, fEnabled);
+				return VT.put_Enabled(ref this, fEnabled);
 			}
-			public HRESULT get_CheckBeforeRunning(int16* pfCheck) mut
+			public HRESULT get_CheckBeforeRunning(out int16 pfCheck) mut
 			{
-				return VT.get_CheckBeforeRunning(&this, pfCheck);
+				return VT.get_CheckBeforeRunning(ref this, out pfCheck);
 			}
 			public HRESULT put_CheckBeforeRunning(int16 fCheck) mut
 			{
-				return VT.put_CheckBeforeRunning(&this, fCheck);
+				return VT.put_CheckBeforeRunning(ref this, fCheck);
 			}
-			public HRESULT get_MinFreeDisk(uint32* MinFreeDisk) mut
+			public HRESULT get_MinFreeDisk(out uint32 MinFreeDisk) mut
 			{
-				return VT.get_MinFreeDisk(&this, MinFreeDisk);
+				return VT.get_MinFreeDisk(ref this, out MinFreeDisk);
 			}
 			public HRESULT put_MinFreeDisk(uint32 MinFreeDisk) mut
 			{
-				return VT.put_MinFreeDisk(&this, MinFreeDisk);
+				return VT.put_MinFreeDisk(ref this, MinFreeDisk);
 			}
-			public HRESULT get_MaxSize(uint32* pulMaxSize) mut
+			public HRESULT get_MaxSize(out uint32 pulMaxSize) mut
 			{
-				return VT.get_MaxSize(&this, pulMaxSize);
+				return VT.get_MaxSize(ref this, out pulMaxSize);
 			}
 			public HRESULT put_MaxSize(uint32 ulMaxSize) mut
 			{
-				return VT.put_MaxSize(&this, ulMaxSize);
+				return VT.put_MaxSize(ref this, ulMaxSize);
 			}
-			public HRESULT get_MaxFolderCount(uint32* pulMaxFolderCount) mut
+			public HRESULT get_MaxFolderCount(out uint32 pulMaxFolderCount) mut
 			{
-				return VT.get_MaxFolderCount(&this, pulMaxFolderCount);
+				return VT.get_MaxFolderCount(ref this, out pulMaxFolderCount);
 			}
 			public HRESULT put_MaxFolderCount(uint32 ulMaxFolderCount) mut
 			{
-				return VT.put_MaxFolderCount(&this, ulMaxFolderCount);
+				return VT.put_MaxFolderCount(ref this, ulMaxFolderCount);
 			}
-			public HRESULT get_ResourcePolicy(ResourcePolicy* pPolicy) mut
+			public HRESULT get_ResourcePolicy(out ResourcePolicy pPolicy) mut
 			{
-				return VT.get_ResourcePolicy(&this, pPolicy);
+				return VT.get_ResourcePolicy(ref this, out pPolicy);
 			}
 			public HRESULT put_ResourcePolicy(ResourcePolicy Policy) mut
 			{
-				return VT.put_ResourcePolicy(&this, Policy);
+				return VT.put_ResourcePolicy(ref this, Policy);
 			}
 			public HRESULT get_FolderActions(IFolderActionCollection** Actions) mut
 			{
-				return VT.get_FolderActions(&this, Actions);
+				return VT.get_FolderActions(ref this, Actions);
 			}
 			public HRESULT get_ReportSchema(BSTR* ReportSchema) mut
 			{
-				return VT.get_ReportSchema(&this, ReportSchema);
+				return VT.get_ReportSchema(ref this, ReportSchema);
 			}
 			public HRESULT put_ReportSchema(BSTR ReportSchema) mut
 			{
-				return VT.put_ReportSchema(&this, ReportSchema);
+				return VT.put_ReportSchema(ref this, ReportSchema);
 			}
 			public HRESULT get_ReportFileName(BSTR* pbstrFilename) mut
 			{
-				return VT.get_ReportFileName(&this, pbstrFilename);
+				return VT.get_ReportFileName(ref this, pbstrFilename);
 			}
 			public HRESULT put_ReportFileName(BSTR pbstrFilename) mut
 			{
-				return VT.put_ReportFileName(&this, pbstrFilename);
+				return VT.put_ReportFileName(ref this, pbstrFilename);
 			}
 			public HRESULT get_RuleTargetFileName(BSTR* Filename) mut
 			{
-				return VT.get_RuleTargetFileName(&this, Filename);
+				return VT.get_RuleTargetFileName(ref this, Filename);
 			}
 			public HRESULT put_RuleTargetFileName(BSTR Filename) mut
 			{
-				return VT.put_RuleTargetFileName(&this, Filename);
+				return VT.put_RuleTargetFileName(ref this, Filename);
 			}
 			public HRESULT get_EventsFileName(BSTR* pbstrFilename) mut
 			{
-				return VT.get_EventsFileName(&this, pbstrFilename);
+				return VT.get_EventsFileName(ref this, pbstrFilename);
 			}
 			public HRESULT put_EventsFileName(BSTR pbstrFilename) mut
 			{
-				return VT.put_EventsFileName(&this, pbstrFilename);
+				return VT.put_EventsFileName(ref this, pbstrFilename);
 			}
 			public HRESULT get_Rules(BSTR* pbstrXml) mut
 			{
-				return VT.get_Rules(&this, pbstrXml);
+				return VT.get_Rules(ref this, pbstrXml);
 			}
 			public HRESULT put_Rules(BSTR bstrXml) mut
 			{
-				return VT.put_Rules(&this, bstrXml);
+				return VT.put_Rules(ref this, bstrXml);
 			}
 			public HRESULT Run(DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) mut
 			{
-				return VT.Run(&this, Steps, bstrFolder, Errors);
+				return VT.Run(ref this, Steps, bstrFolder, Errors);
 			}
 			public HRESULT Extract(BSTR CabFilename, BSTR DestinationPath) mut
 			{
-				return VT.Extract(&this, CabFilename, DestinationPath);
+				return VT.Extract(ref this, CabFilename, DestinationPath);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IDataManager *self, int16* pfEnabled) get_Enabled;
-				public new function HRESULT(IDataManager *self, int16 fEnabled) put_Enabled;
-				public new function HRESULT(IDataManager *self, int16* pfCheck) get_CheckBeforeRunning;
-				public new function HRESULT(IDataManager *self, int16 fCheck) put_CheckBeforeRunning;
-				public new function HRESULT(IDataManager *self, uint32* MinFreeDisk) get_MinFreeDisk;
-				public new function HRESULT(IDataManager *self, uint32 MinFreeDisk) put_MinFreeDisk;
-				public new function HRESULT(IDataManager *self, uint32* pulMaxSize) get_MaxSize;
-				public new function HRESULT(IDataManager *self, uint32 ulMaxSize) put_MaxSize;
-				public new function HRESULT(IDataManager *self, uint32* pulMaxFolderCount) get_MaxFolderCount;
-				public new function HRESULT(IDataManager *self, uint32 ulMaxFolderCount) put_MaxFolderCount;
-				public new function HRESULT(IDataManager *self, ResourcePolicy* pPolicy) get_ResourcePolicy;
-				public new function HRESULT(IDataManager *self, ResourcePolicy Policy) put_ResourcePolicy;
-				public new function HRESULT(IDataManager *self, IFolderActionCollection** Actions) get_FolderActions;
-				public new function HRESULT(IDataManager *self, BSTR* ReportSchema) get_ReportSchema;
-				public new function HRESULT(IDataManager *self, BSTR ReportSchema) put_ReportSchema;
-				public new function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_ReportFileName;
-				public new function HRESULT(IDataManager *self, BSTR pbstrFilename) put_ReportFileName;
-				public new function HRESULT(IDataManager *self, BSTR* Filename) get_RuleTargetFileName;
-				public new function HRESULT(IDataManager *self, BSTR Filename) put_RuleTargetFileName;
-				public new function HRESULT(IDataManager *self, BSTR* pbstrFilename) get_EventsFileName;
-				public new function HRESULT(IDataManager *self, BSTR pbstrFilename) put_EventsFileName;
-				public new function HRESULT(IDataManager *self, BSTR* pbstrXml) get_Rules;
-				public new function HRESULT(IDataManager *self, BSTR bstrXml) put_Rules;
-				public new function HRESULT(IDataManager *self, DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) Run;
-				public new function HRESULT(IDataManager *self, BSTR CabFilename, BSTR DestinationPath) Extract;
+				public new function HRESULT(ref IDataManager self, out int16 pfEnabled) get_Enabled;
+				public new function HRESULT(ref IDataManager self, int16 fEnabled) put_Enabled;
+				public new function HRESULT(ref IDataManager self, out int16 pfCheck) get_CheckBeforeRunning;
+				public new function HRESULT(ref IDataManager self, int16 fCheck) put_CheckBeforeRunning;
+				public new function HRESULT(ref IDataManager self, out uint32 MinFreeDisk) get_MinFreeDisk;
+				public new function HRESULT(ref IDataManager self, uint32 MinFreeDisk) put_MinFreeDisk;
+				public new function HRESULT(ref IDataManager self, out uint32 pulMaxSize) get_MaxSize;
+				public new function HRESULT(ref IDataManager self, uint32 ulMaxSize) put_MaxSize;
+				public new function HRESULT(ref IDataManager self, out uint32 pulMaxFolderCount) get_MaxFolderCount;
+				public new function HRESULT(ref IDataManager self, uint32 ulMaxFolderCount) put_MaxFolderCount;
+				public new function HRESULT(ref IDataManager self, out ResourcePolicy pPolicy) get_ResourcePolicy;
+				public new function HRESULT(ref IDataManager self, ResourcePolicy Policy) put_ResourcePolicy;
+				public new function HRESULT(ref IDataManager self, IFolderActionCollection** Actions) get_FolderActions;
+				public new function HRESULT(ref IDataManager self, BSTR* ReportSchema) get_ReportSchema;
+				public new function HRESULT(ref IDataManager self, BSTR ReportSchema) put_ReportSchema;
+				public new function HRESULT(ref IDataManager self, BSTR* pbstrFilename) get_ReportFileName;
+				public new function HRESULT(ref IDataManager self, BSTR pbstrFilename) put_ReportFileName;
+				public new function HRESULT(ref IDataManager self, BSTR* Filename) get_RuleTargetFileName;
+				public new function HRESULT(ref IDataManager self, BSTR Filename) put_RuleTargetFileName;
+				public new function HRESULT(ref IDataManager self, BSTR* pbstrFilename) get_EventsFileName;
+				public new function HRESULT(ref IDataManager self, BSTR pbstrFilename) put_EventsFileName;
+				public new function HRESULT(ref IDataManager self, BSTR* pbstrXml) get_Rules;
+				public new function HRESULT(ref IDataManager self, BSTR bstrXml) put_Rules;
+				public new function HRESULT(ref IDataManager self, DataManagerSteps Steps, BSTR bstrFolder, IValueMap** Errors) Run;
+				public new function HRESULT(ref IDataManager self, BSTR CabFilename, BSTR DestinationPath) Extract;
 			}
 		}
 		[CRepr]
@@ -1458,49 +1458,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Age(uint32* pulAge) mut
+			public HRESULT get_Age(out uint32 pulAge) mut
 			{
-				return VT.get_Age(&this, pulAge);
+				return VT.get_Age(ref this, out pulAge);
 			}
 			public HRESULT put_Age(uint32 ulAge) mut
 			{
-				return VT.put_Age(&this, ulAge);
+				return VT.put_Age(ref this, ulAge);
 			}
-			public HRESULT get_Size(uint32* pulAge) mut
+			public HRESULT get_Size(out uint32 pulAge) mut
 			{
-				return VT.get_Size(&this, pulAge);
+				return VT.get_Size(ref this, out pulAge);
 			}
 			public HRESULT put_Size(uint32 ulAge) mut
 			{
-				return VT.put_Size(&this, ulAge);
+				return VT.put_Size(ref this, ulAge);
 			}
-			public HRESULT get_Actions(FolderActionSteps* Steps) mut
+			public HRESULT get_Actions(out FolderActionSteps Steps) mut
 			{
-				return VT.get_Actions(&this, Steps);
+				return VT.get_Actions(ref this, out Steps);
 			}
 			public HRESULT put_Actions(FolderActionSteps Steps) mut
 			{
-				return VT.put_Actions(&this, Steps);
+				return VT.put_Actions(ref this, Steps);
 			}
 			public HRESULT get_SendCabTo(BSTR* pbstrDestination) mut
 			{
-				return VT.get_SendCabTo(&this, pbstrDestination);
+				return VT.get_SendCabTo(ref this, pbstrDestination);
 			}
 			public HRESULT put_SendCabTo(BSTR bstrDestination) mut
 			{
-				return VT.put_SendCabTo(&this, bstrDestination);
+				return VT.put_SendCabTo(ref this, bstrDestination);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IFolderAction *self, uint32* pulAge) get_Age;
-				public new function HRESULT(IFolderAction *self, uint32 ulAge) put_Age;
-				public new function HRESULT(IFolderAction *self, uint32* pulAge) get_Size;
-				public new function HRESULT(IFolderAction *self, uint32 ulAge) put_Size;
-				public new function HRESULT(IFolderAction *self, FolderActionSteps* Steps) get_Actions;
-				public new function HRESULT(IFolderAction *self, FolderActionSteps Steps) put_Actions;
-				public new function HRESULT(IFolderAction *self, BSTR* pbstrDestination) get_SendCabTo;
-				public new function HRESULT(IFolderAction *self, BSTR bstrDestination) put_SendCabTo;
+				public new function HRESULT(ref IFolderAction self, out uint32 pulAge) get_Age;
+				public new function HRESULT(ref IFolderAction self, uint32 ulAge) put_Age;
+				public new function HRESULT(ref IFolderAction self, out uint32 pulAge) get_Size;
+				public new function HRESULT(ref IFolderAction self, uint32 ulAge) put_Size;
+				public new function HRESULT(ref IFolderAction self, out FolderActionSteps Steps) get_Actions;
+				public new function HRESULT(ref IFolderAction self, FolderActionSteps Steps) put_Actions;
+				public new function HRESULT(ref IFolderAction self, BSTR* pbstrDestination) get_SendCabTo;
+				public new function HRESULT(ref IFolderAction self, BSTR bstrDestination) put_SendCabTo;
 			}
 		}
 		[CRepr]
@@ -1510,49 +1510,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(uint32* Count) mut
+			public HRESULT get_Count(out uint32 Count) mut
 			{
-				return VT.get_Count(&this, Count);
+				return VT.get_Count(ref this, out Count);
 			}
 			public HRESULT get_Item(VARIANT Index, IFolderAction** Action) mut
 			{
-				return VT.get_Item(&this, Index, Action);
+				return VT.get_Item(ref this, Index, Action);
 			}
 			public HRESULT get__NewEnum(IUnknown** Enum) mut
 			{
-				return VT.get__NewEnum(&this, Enum);
+				return VT.get__NewEnum(ref this, Enum);
 			}
 			public HRESULT Add(IFolderAction* Action) mut
 			{
-				return VT.Add(&this, Action);
+				return VT.Add(ref this, Action);
 			}
 			public HRESULT Remove(VARIANT Index) mut
 			{
-				return VT.Remove(&this, Index);
+				return VT.Remove(ref this, Index);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT AddRange(IFolderActionCollection* Actions) mut
 			{
-				return VT.AddRange(&this, Actions);
+				return VT.AddRange(ref this, Actions);
 			}
 			public HRESULT CreateFolderAction(IFolderAction** FolderAction) mut
 			{
-				return VT.CreateFolderAction(&this, FolderAction);
+				return VT.CreateFolderAction(ref this, FolderAction);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IFolderActionCollection *self, uint32* Count) get_Count;
-				public new function HRESULT(IFolderActionCollection *self, VARIANT Index, IFolderAction** Action) get_Item;
-				public new function HRESULT(IFolderActionCollection *self, IUnknown** Enum) get__NewEnum;
-				public new function HRESULT(IFolderActionCollection *self, IFolderAction* Action) Add;
-				public new function HRESULT(IFolderActionCollection *self, VARIANT Index) Remove;
-				public new function HRESULT(IFolderActionCollection *self) Clear;
-				public new function HRESULT(IFolderActionCollection *self, IFolderActionCollection* Actions) AddRange;
-				public new function HRESULT(IFolderActionCollection *self, IFolderAction** FolderAction) CreateFolderAction;
+				public new function HRESULT(ref IFolderActionCollection self, out uint32 Count) get_Count;
+				public new function HRESULT(ref IFolderActionCollection self, VARIANT Index, IFolderAction** Action) get_Item;
+				public new function HRESULT(ref IFolderActionCollection self, IUnknown** Enum) get__NewEnum;
+				public new function HRESULT(ref IFolderActionCollection self, IFolderAction* Action) Add;
+				public new function HRESULT(ref IFolderActionCollection self, VARIANT Index) Remove;
+				public new function HRESULT(ref IFolderActionCollection self) Clear;
+				public new function HRESULT(ref IFolderActionCollection self, IFolderActionCollection* Actions) AddRange;
+				public new function HRESULT(ref IFolderActionCollection self, IFolderAction** FolderAction) CreateFolderAction;
 			}
 		}
 		[CRepr]
@@ -1564,132 +1564,132 @@ namespace Win32
 			
 			public HRESULT get_DataCollectorSet(IDataCollectorSet** group) mut
 			{
-				return VT.get_DataCollectorSet(&this, group);
+				return VT.get_DataCollectorSet(ref this, group);
 			}
 			public HRESULT put_DataCollectorSet(IDataCollectorSet* group) mut
 			{
-				return VT.put_DataCollectorSet(&this, group);
+				return VT.put_DataCollectorSet(ref this, group);
 			}
-			public HRESULT get_DataCollectorType(DataCollectorType* type) mut
+			public HRESULT get_DataCollectorType(out DataCollectorType type) mut
 			{
-				return VT.get_DataCollectorType(&this, type);
+				return VT.get_DataCollectorType(ref this, out type);
 			}
 			public HRESULT get_FileName(BSTR* name) mut
 			{
-				return VT.get_FileName(&this, name);
+				return VT.get_FileName(ref this, name);
 			}
 			public HRESULT put_FileName(BSTR name) mut
 			{
-				return VT.put_FileName(&this, name);
+				return VT.put_FileName(ref this, name);
 			}
-			public HRESULT get_FileNameFormat(AutoPathFormat* format) mut
+			public HRESULT get_FileNameFormat(out AutoPathFormat format) mut
 			{
-				return VT.get_FileNameFormat(&this, format);
+				return VT.get_FileNameFormat(ref this, out format);
 			}
 			public HRESULT put_FileNameFormat(AutoPathFormat format) mut
 			{
-				return VT.put_FileNameFormat(&this, format);
+				return VT.put_FileNameFormat(ref this, format);
 			}
 			public HRESULT get_FileNameFormatPattern(BSTR* pattern) mut
 			{
-				return VT.get_FileNameFormatPattern(&this, pattern);
+				return VT.get_FileNameFormatPattern(ref this, pattern);
 			}
 			public HRESULT put_FileNameFormatPattern(BSTR pattern) mut
 			{
-				return VT.put_FileNameFormatPattern(&this, pattern);
+				return VT.put_FileNameFormatPattern(ref this, pattern);
 			}
 			public HRESULT get_LatestOutputLocation(BSTR* path) mut
 			{
-				return VT.get_LatestOutputLocation(&this, path);
+				return VT.get_LatestOutputLocation(ref this, path);
 			}
 			public HRESULT put_LatestOutputLocation(BSTR path) mut
 			{
-				return VT.put_LatestOutputLocation(&this, path);
+				return VT.put_LatestOutputLocation(ref this, path);
 			}
-			public HRESULT get_LogAppend(int16* @append) mut
+			public HRESULT get_LogAppend(out int16 @append) mut
 			{
-				return VT.get_LogAppend(&this, @append);
+				return VT.get_LogAppend(ref this, out @append);
 			}
 			public HRESULT put_LogAppend(int16 @append) mut
 			{
-				return VT.put_LogAppend(&this, @append);
+				return VT.put_LogAppend(ref this, @append);
 			}
-			public HRESULT get_LogCircular(int16* circular) mut
+			public HRESULT get_LogCircular(out int16 circular) mut
 			{
-				return VT.get_LogCircular(&this, circular);
+				return VT.get_LogCircular(ref this, out circular);
 			}
 			public HRESULT put_LogCircular(int16 circular) mut
 			{
-				return VT.put_LogCircular(&this, circular);
+				return VT.put_LogCircular(ref this, circular);
 			}
-			public HRESULT get_LogOverwrite(int16* overwrite) mut
+			public HRESULT get_LogOverwrite(out int16 overwrite) mut
 			{
-				return VT.get_LogOverwrite(&this, overwrite);
+				return VT.get_LogOverwrite(ref this, out overwrite);
 			}
 			public HRESULT put_LogOverwrite(int16 overwrite) mut
 			{
-				return VT.put_LogOverwrite(&this, overwrite);
+				return VT.put_LogOverwrite(ref this, overwrite);
 			}
 			public HRESULT get_Name(BSTR* name) mut
 			{
-				return VT.get_Name(&this, name);
+				return VT.get_Name(ref this, name);
 			}
 			public HRESULT put_Name(BSTR name) mut
 			{
-				return VT.put_Name(&this, name);
+				return VT.put_Name(ref this, name);
 			}
 			public HRESULT get_OutputLocation(BSTR* path) mut
 			{
-				return VT.get_OutputLocation(&this, path);
+				return VT.get_OutputLocation(ref this, path);
 			}
-			public HRESULT get_Index(int32* index) mut
+			public HRESULT get_Index(out int32 index) mut
 			{
-				return VT.get_Index(&this, index);
+				return VT.get_Index(ref this, out index);
 			}
 			public HRESULT put_Index(int32 index) mut
 			{
-				return VT.put_Index(&this, index);
+				return VT.put_Index(ref this, index);
 			}
 			public HRESULT get_Xml(BSTR* Xml) mut
 			{
-				return VT.get_Xml(&this, Xml);
+				return VT.get_Xml(ref this, Xml);
 			}
 			public HRESULT SetXml(BSTR Xml, IValueMap** Validation) mut
 			{
-				return VT.SetXml(&this, Xml, Validation);
+				return VT.SetXml(ref this, Xml, Validation);
 			}
 			public HRESULT CreateOutputLocation(int16 Latest, BSTR* Location) mut
 			{
-				return VT.CreateOutputLocation(&this, Latest, Location);
+				return VT.CreateOutputLocation(ref this, Latest, Location);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IDataCollector *self, IDataCollectorSet** group) get_DataCollectorSet;
-				public new function HRESULT(IDataCollector *self, IDataCollectorSet* group) put_DataCollectorSet;
-				public new function HRESULT(IDataCollector *self, DataCollectorType* type) get_DataCollectorType;
-				public new function HRESULT(IDataCollector *self, BSTR* name) get_FileName;
-				public new function HRESULT(IDataCollector *self, BSTR name) put_FileName;
-				public new function HRESULT(IDataCollector *self, AutoPathFormat* format) get_FileNameFormat;
-				public new function HRESULT(IDataCollector *self, AutoPathFormat format) put_FileNameFormat;
-				public new function HRESULT(IDataCollector *self, BSTR* pattern) get_FileNameFormatPattern;
-				public new function HRESULT(IDataCollector *self, BSTR pattern) put_FileNameFormatPattern;
-				public new function HRESULT(IDataCollector *self, BSTR* path) get_LatestOutputLocation;
-				public new function HRESULT(IDataCollector *self, BSTR path) put_LatestOutputLocation;
-				public new function HRESULT(IDataCollector *self, int16* @append) get_LogAppend;
-				public new function HRESULT(IDataCollector *self, int16 @append) put_LogAppend;
-				public new function HRESULT(IDataCollector *self, int16* circular) get_LogCircular;
-				public new function HRESULT(IDataCollector *self, int16 circular) put_LogCircular;
-				public new function HRESULT(IDataCollector *self, int16* overwrite) get_LogOverwrite;
-				public new function HRESULT(IDataCollector *self, int16 overwrite) put_LogOverwrite;
-				public new function HRESULT(IDataCollector *self, BSTR* name) get_Name;
-				public new function HRESULT(IDataCollector *self, BSTR name) put_Name;
-				public new function HRESULT(IDataCollector *self, BSTR* path) get_OutputLocation;
-				public new function HRESULT(IDataCollector *self, int32* index) get_Index;
-				public new function HRESULT(IDataCollector *self, int32 index) put_Index;
-				public new function HRESULT(IDataCollector *self, BSTR* Xml) get_Xml;
-				public new function HRESULT(IDataCollector *self, BSTR Xml, IValueMap** Validation) SetXml;
-				public new function HRESULT(IDataCollector *self, int16 Latest, BSTR* Location) CreateOutputLocation;
+				public new function HRESULT(ref IDataCollector self, IDataCollectorSet** group) get_DataCollectorSet;
+				public new function HRESULT(ref IDataCollector self, IDataCollectorSet* group) put_DataCollectorSet;
+				public new function HRESULT(ref IDataCollector self, out DataCollectorType type) get_DataCollectorType;
+				public new function HRESULT(ref IDataCollector self, BSTR* name) get_FileName;
+				public new function HRESULT(ref IDataCollector self, BSTR name) put_FileName;
+				public new function HRESULT(ref IDataCollector self, out AutoPathFormat format) get_FileNameFormat;
+				public new function HRESULT(ref IDataCollector self, AutoPathFormat format) put_FileNameFormat;
+				public new function HRESULT(ref IDataCollector self, BSTR* pattern) get_FileNameFormatPattern;
+				public new function HRESULT(ref IDataCollector self, BSTR pattern) put_FileNameFormatPattern;
+				public new function HRESULT(ref IDataCollector self, BSTR* path) get_LatestOutputLocation;
+				public new function HRESULT(ref IDataCollector self, BSTR path) put_LatestOutputLocation;
+				public new function HRESULT(ref IDataCollector self, out int16 @append) get_LogAppend;
+				public new function HRESULT(ref IDataCollector self, int16 @append) put_LogAppend;
+				public new function HRESULT(ref IDataCollector self, out int16 circular) get_LogCircular;
+				public new function HRESULT(ref IDataCollector self, int16 circular) put_LogCircular;
+				public new function HRESULT(ref IDataCollector self, out int16 overwrite) get_LogOverwrite;
+				public new function HRESULT(ref IDataCollector self, int16 overwrite) put_LogOverwrite;
+				public new function HRESULT(ref IDataCollector self, BSTR* name) get_Name;
+				public new function HRESULT(ref IDataCollector self, BSTR name) put_Name;
+				public new function HRESULT(ref IDataCollector self, BSTR* path) get_OutputLocation;
+				public new function HRESULT(ref IDataCollector self, out int32 index) get_Index;
+				public new function HRESULT(ref IDataCollector self, int32 index) put_Index;
+				public new function HRESULT(ref IDataCollector self, BSTR* Xml) get_Xml;
+				public new function HRESULT(ref IDataCollector self, BSTR Xml, IValueMap** Validation) SetXml;
+				public new function HRESULT(ref IDataCollector self, int16 Latest, BSTR* Location) CreateOutputLocation;
 			}
 		}
 		[CRepr]
@@ -1701,57 +1701,57 @@ namespace Win32
 			
 			public HRESULT get_DataSourceName(BSTR* dsn) mut
 			{
-				return VT.get_DataSourceName(&this, dsn);
+				return VT.get_DataSourceName(ref this, dsn);
 			}
 			public HRESULT put_DataSourceName(BSTR dsn) mut
 			{
-				return VT.put_DataSourceName(&this, dsn);
+				return VT.put_DataSourceName(ref this, dsn);
 			}
 			public HRESULT get_PerformanceCounters(SAFEARRAY** counters) mut
 			{
-				return VT.get_PerformanceCounters(&this, counters);
+				return VT.get_PerformanceCounters(ref this, counters);
 			}
-			public HRESULT put_PerformanceCounters(SAFEARRAY* counters) mut
+			public HRESULT put_PerformanceCounters(ref SAFEARRAY counters) mut
 			{
-				return VT.put_PerformanceCounters(&this, counters);
+				return VT.put_PerformanceCounters(ref this, ref counters);
 			}
-			public HRESULT get_LogFileFormat(FileFormat* format) mut
+			public HRESULT get_LogFileFormat(out FileFormat format) mut
 			{
-				return VT.get_LogFileFormat(&this, format);
+				return VT.get_LogFileFormat(ref this, out format);
 			}
 			public HRESULT put_LogFileFormat(FileFormat format) mut
 			{
-				return VT.put_LogFileFormat(&this, format);
+				return VT.put_LogFileFormat(ref this, format);
 			}
-			public HRESULT get_SampleInterval(uint32* interval) mut
+			public HRESULT get_SampleInterval(out uint32 interval) mut
 			{
-				return VT.get_SampleInterval(&this, interval);
+				return VT.get_SampleInterval(ref this, out interval);
 			}
 			public HRESULT put_SampleInterval(uint32 interval) mut
 			{
-				return VT.put_SampleInterval(&this, interval);
+				return VT.put_SampleInterval(ref this, interval);
 			}
-			public HRESULT get_SegmentMaxRecords(uint32* records) mut
+			public HRESULT get_SegmentMaxRecords(out uint32 records) mut
 			{
-				return VT.get_SegmentMaxRecords(&this, records);
+				return VT.get_SegmentMaxRecords(ref this, out records);
 			}
 			public HRESULT put_SegmentMaxRecords(uint32 records) mut
 			{
-				return VT.put_SegmentMaxRecords(&this, records);
+				return VT.put_SegmentMaxRecords(ref this, records);
 			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(IPerformanceCounterDataCollector *self, BSTR* dsn) get_DataSourceName;
-				public new function HRESULT(IPerformanceCounterDataCollector *self, BSTR dsn) put_DataSourceName;
-				public new function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY** counters) get_PerformanceCounters;
-				public new function HRESULT(IPerformanceCounterDataCollector *self, SAFEARRAY* counters) put_PerformanceCounters;
-				public new function HRESULT(IPerformanceCounterDataCollector *self, FileFormat* format) get_LogFileFormat;
-				public new function HRESULT(IPerformanceCounterDataCollector *self, FileFormat format) put_LogFileFormat;
-				public new function HRESULT(IPerformanceCounterDataCollector *self, uint32* interval) get_SampleInterval;
-				public new function HRESULT(IPerformanceCounterDataCollector *self, uint32 interval) put_SampleInterval;
-				public new function HRESULT(IPerformanceCounterDataCollector *self, uint32* records) get_SegmentMaxRecords;
-				public new function HRESULT(IPerformanceCounterDataCollector *self, uint32 records) put_SegmentMaxRecords;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, BSTR* dsn) get_DataSourceName;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, BSTR dsn) put_DataSourceName;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, SAFEARRAY** counters) get_PerformanceCounters;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, ref SAFEARRAY counters) put_PerformanceCounters;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, out FileFormat format) get_LogFileFormat;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, FileFormat format) put_LogFileFormat;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, out uint32 interval) get_SampleInterval;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, uint32 interval) put_SampleInterval;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, out uint32 records) get_SegmentMaxRecords;
+				public new function HRESULT(ref IPerformanceCounterDataCollector self, uint32 records) put_SegmentMaxRecords;
 			}
 		}
 		[CRepr]
@@ -1761,209 +1761,209 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BufferSize(uint32* size) mut
+			public HRESULT get_BufferSize(out uint32 size) mut
 			{
-				return VT.get_BufferSize(&this, size);
+				return VT.get_BufferSize(ref this, out size);
 			}
 			public HRESULT put_BufferSize(uint32 size) mut
 			{
-				return VT.put_BufferSize(&this, size);
+				return VT.put_BufferSize(ref this, size);
 			}
-			public HRESULT get_BuffersLost(uint32* buffers) mut
+			public HRESULT get_BuffersLost(out uint32 buffers) mut
 			{
-				return VT.get_BuffersLost(&this, buffers);
+				return VT.get_BuffersLost(ref this, out buffers);
 			}
 			public HRESULT put_BuffersLost(uint32 buffers) mut
 			{
-				return VT.put_BuffersLost(&this, buffers);
+				return VT.put_BuffersLost(ref this, buffers);
 			}
-			public HRESULT get_BuffersWritten(uint32* buffers) mut
+			public HRESULT get_BuffersWritten(out uint32 buffers) mut
 			{
-				return VT.get_BuffersWritten(&this, buffers);
+				return VT.get_BuffersWritten(ref this, out buffers);
 			}
 			public HRESULT put_BuffersWritten(uint32 buffers) mut
 			{
-				return VT.put_BuffersWritten(&this, buffers);
+				return VT.put_BuffersWritten(ref this, buffers);
 			}
-			public HRESULT get_ClockType(ClockType* clock) mut
+			public HRESULT get_ClockType(out ClockType clock) mut
 			{
-				return VT.get_ClockType(&this, clock);
+				return VT.get_ClockType(ref this, out clock);
 			}
 			public HRESULT put_ClockType(ClockType clock) mut
 			{
-				return VT.put_ClockType(&this, clock);
+				return VT.put_ClockType(ref this, clock);
 			}
-			public HRESULT get_EventsLost(uint32* events) mut
+			public HRESULT get_EventsLost(out uint32 events) mut
 			{
-				return VT.get_EventsLost(&this, events);
+				return VT.get_EventsLost(ref this, out events);
 			}
 			public HRESULT put_EventsLost(uint32 events) mut
 			{
-				return VT.put_EventsLost(&this, events);
+				return VT.put_EventsLost(ref this, events);
 			}
-			public HRESULT get_ExtendedModes(uint32* mode) mut
+			public HRESULT get_ExtendedModes(out uint32 mode) mut
 			{
-				return VT.get_ExtendedModes(&this, mode);
+				return VT.get_ExtendedModes(ref this, out mode);
 			}
 			public HRESULT put_ExtendedModes(uint32 mode) mut
 			{
-				return VT.put_ExtendedModes(&this, mode);
+				return VT.put_ExtendedModes(ref this, mode);
 			}
-			public HRESULT get_FlushTimer(uint32* seconds) mut
+			public HRESULT get_FlushTimer(out uint32 seconds) mut
 			{
-				return VT.get_FlushTimer(&this, seconds);
+				return VT.get_FlushTimer(ref this, out seconds);
 			}
 			public HRESULT put_FlushTimer(uint32 seconds) mut
 			{
-				return VT.put_FlushTimer(&this, seconds);
+				return VT.put_FlushTimer(ref this, seconds);
 			}
-			public HRESULT get_FreeBuffers(uint32* buffers) mut
+			public HRESULT get_FreeBuffers(out uint32 buffers) mut
 			{
-				return VT.get_FreeBuffers(&this, buffers);
+				return VT.get_FreeBuffers(ref this, out buffers);
 			}
 			public HRESULT put_FreeBuffers(uint32 buffers) mut
 			{
-				return VT.put_FreeBuffers(&this, buffers);
+				return VT.put_FreeBuffers(ref this, buffers);
 			}
-			public HRESULT get_Guid(Guid* guid) mut
+			public HRESULT get_Guid(out Guid guid) mut
 			{
-				return VT.get_Guid(&this, guid);
+				return VT.get_Guid(ref this, out guid);
 			}
 			public HRESULT put_Guid(Guid guid) mut
 			{
-				return VT.put_Guid(&this, guid);
+				return VT.put_Guid(ref this, guid);
 			}
-			public HRESULT get_IsKernelTrace(int16* kernel) mut
+			public HRESULT get_IsKernelTrace(out int16 kernel) mut
 			{
-				return VT.get_IsKernelTrace(&this, kernel);
+				return VT.get_IsKernelTrace(ref this, out kernel);
 			}
-			public HRESULT get_MaximumBuffers(uint32* buffers) mut
+			public HRESULT get_MaximumBuffers(out uint32 buffers) mut
 			{
-				return VT.get_MaximumBuffers(&this, buffers);
+				return VT.get_MaximumBuffers(ref this, out buffers);
 			}
 			public HRESULT put_MaximumBuffers(uint32 buffers) mut
 			{
-				return VT.put_MaximumBuffers(&this, buffers);
+				return VT.put_MaximumBuffers(ref this, buffers);
 			}
-			public HRESULT get_MinimumBuffers(uint32* buffers) mut
+			public HRESULT get_MinimumBuffers(out uint32 buffers) mut
 			{
-				return VT.get_MinimumBuffers(&this, buffers);
+				return VT.get_MinimumBuffers(ref this, out buffers);
 			}
 			public HRESULT put_MinimumBuffers(uint32 buffers) mut
 			{
-				return VT.put_MinimumBuffers(&this, buffers);
+				return VT.put_MinimumBuffers(ref this, buffers);
 			}
-			public HRESULT get_NumberOfBuffers(uint32* buffers) mut
+			public HRESULT get_NumberOfBuffers(out uint32 buffers) mut
 			{
-				return VT.get_NumberOfBuffers(&this, buffers);
+				return VT.get_NumberOfBuffers(ref this, out buffers);
 			}
 			public HRESULT put_NumberOfBuffers(uint32 buffers) mut
 			{
-				return VT.put_NumberOfBuffers(&this, buffers);
+				return VT.put_NumberOfBuffers(ref this, buffers);
 			}
-			public HRESULT get_PreallocateFile(int16* allocate) mut
+			public HRESULT get_PreallocateFile(out int16 allocate) mut
 			{
-				return VT.get_PreallocateFile(&this, allocate);
+				return VT.get_PreallocateFile(ref this, out allocate);
 			}
 			public HRESULT put_PreallocateFile(int16 allocate) mut
 			{
-				return VT.put_PreallocateFile(&this, allocate);
+				return VT.put_PreallocateFile(ref this, allocate);
 			}
-			public HRESULT get_ProcessMode(int16* process) mut
+			public HRESULT get_ProcessMode(out int16 process) mut
 			{
-				return VT.get_ProcessMode(&this, process);
+				return VT.get_ProcessMode(ref this, out process);
 			}
 			public HRESULT put_ProcessMode(int16 process) mut
 			{
-				return VT.put_ProcessMode(&this, process);
+				return VT.put_ProcessMode(ref this, process);
 			}
-			public HRESULT get_RealTimeBuffersLost(uint32* buffers) mut
+			public HRESULT get_RealTimeBuffersLost(out uint32 buffers) mut
 			{
-				return VT.get_RealTimeBuffersLost(&this, buffers);
+				return VT.get_RealTimeBuffersLost(ref this, out buffers);
 			}
 			public HRESULT put_RealTimeBuffersLost(uint32 buffers) mut
 			{
-				return VT.put_RealTimeBuffersLost(&this, buffers);
+				return VT.put_RealTimeBuffersLost(ref this, buffers);
 			}
-			public HRESULT get_SessionId(uint64* id) mut
+			public HRESULT get_SessionId(out uint64 id) mut
 			{
-				return VT.get_SessionId(&this, id);
+				return VT.get_SessionId(ref this, out id);
 			}
 			public HRESULT put_SessionId(uint64 id) mut
 			{
-				return VT.put_SessionId(&this, id);
+				return VT.put_SessionId(ref this, id);
 			}
 			public HRESULT get_SessionName(BSTR* name) mut
 			{
-				return VT.get_SessionName(&this, name);
+				return VT.get_SessionName(ref this, name);
 			}
 			public HRESULT put_SessionName(BSTR name) mut
 			{
-				return VT.put_SessionName(&this, name);
+				return VT.put_SessionName(ref this, name);
 			}
-			public HRESULT get_SessionThreadId(uint32* tid) mut
+			public HRESULT get_SessionThreadId(out uint32 tid) mut
 			{
-				return VT.get_SessionThreadId(&this, tid);
+				return VT.get_SessionThreadId(ref this, out tid);
 			}
 			public HRESULT put_SessionThreadId(uint32 tid) mut
 			{
-				return VT.put_SessionThreadId(&this, tid);
+				return VT.put_SessionThreadId(ref this, tid);
 			}
-			public HRESULT get_StreamMode(StreamMode* mode) mut
+			public HRESULT get_StreamMode(out StreamMode mode) mut
 			{
-				return VT.get_StreamMode(&this, mode);
+				return VT.get_StreamMode(ref this, out mode);
 			}
 			public HRESULT put_StreamMode(StreamMode mode) mut
 			{
-				return VT.put_StreamMode(&this, mode);
+				return VT.put_StreamMode(ref this, mode);
 			}
 			public HRESULT get_TraceDataProviders(ITraceDataProviderCollection** providers) mut
 			{
-				return VT.get_TraceDataProviders(&this, providers);
+				return VT.get_TraceDataProviders(ref this, providers);
 			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(ITraceDataCollector *self, uint32* size) get_BufferSize;
-				public new function HRESULT(ITraceDataCollector *self, uint32 size) put_BufferSize;
-				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersLost;
-				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersLost;
-				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_BuffersWritten;
-				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_BuffersWritten;
-				public new function HRESULT(ITraceDataCollector *self, ClockType* clock) get_ClockType;
-				public new function HRESULT(ITraceDataCollector *self, ClockType clock) put_ClockType;
-				public new function HRESULT(ITraceDataCollector *self, uint32* events) get_EventsLost;
-				public new function HRESULT(ITraceDataCollector *self, uint32 events) put_EventsLost;
-				public new function HRESULT(ITraceDataCollector *self, uint32* mode) get_ExtendedModes;
-				public new function HRESULT(ITraceDataCollector *self, uint32 mode) put_ExtendedModes;
-				public new function HRESULT(ITraceDataCollector *self, uint32* seconds) get_FlushTimer;
-				public new function HRESULT(ITraceDataCollector *self, uint32 seconds) put_FlushTimer;
-				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_FreeBuffers;
-				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_FreeBuffers;
-				public new function HRESULT(ITraceDataCollector *self, Guid* guid) get_Guid;
-				public new function HRESULT(ITraceDataCollector *self, Guid guid) put_Guid;
-				public new function HRESULT(ITraceDataCollector *self, int16* kernel) get_IsKernelTrace;
-				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MaximumBuffers;
-				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MaximumBuffers;
-				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_MinimumBuffers;
-				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_MinimumBuffers;
-				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_NumberOfBuffers;
-				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_NumberOfBuffers;
-				public new function HRESULT(ITraceDataCollector *self, int16* allocate) get_PreallocateFile;
-				public new function HRESULT(ITraceDataCollector *self, int16 allocate) put_PreallocateFile;
-				public new function HRESULT(ITraceDataCollector *self, int16* process) get_ProcessMode;
-				public new function HRESULT(ITraceDataCollector *self, int16 process) put_ProcessMode;
-				public new function HRESULT(ITraceDataCollector *self, uint32* buffers) get_RealTimeBuffersLost;
-				public new function HRESULT(ITraceDataCollector *self, uint32 buffers) put_RealTimeBuffersLost;
-				public new function HRESULT(ITraceDataCollector *self, uint64* id) get_SessionId;
-				public new function HRESULT(ITraceDataCollector *self, uint64 id) put_SessionId;
-				public new function HRESULT(ITraceDataCollector *self, BSTR* name) get_SessionName;
-				public new function HRESULT(ITraceDataCollector *self, BSTR name) put_SessionName;
-				public new function HRESULT(ITraceDataCollector *self, uint32* tid) get_SessionThreadId;
-				public new function HRESULT(ITraceDataCollector *self, uint32 tid) put_SessionThreadId;
-				public new function HRESULT(ITraceDataCollector *self, StreamMode* mode) get_StreamMode;
-				public new function HRESULT(ITraceDataCollector *self, StreamMode mode) put_StreamMode;
-				public new function HRESULT(ITraceDataCollector *self, ITraceDataProviderCollection** providers) get_TraceDataProviders;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 size) get_BufferSize;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 size) put_BufferSize;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_BuffersLost;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_BuffersLost;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_BuffersWritten;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_BuffersWritten;
+				public new function HRESULT(ref ITraceDataCollector self, out ClockType clock) get_ClockType;
+				public new function HRESULT(ref ITraceDataCollector self, ClockType clock) put_ClockType;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 events) get_EventsLost;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 events) put_EventsLost;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 mode) get_ExtendedModes;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 mode) put_ExtendedModes;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 seconds) get_FlushTimer;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 seconds) put_FlushTimer;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_FreeBuffers;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_FreeBuffers;
+				public new function HRESULT(ref ITraceDataCollector self, out Guid guid) get_Guid;
+				public new function HRESULT(ref ITraceDataCollector self, Guid guid) put_Guid;
+				public new function HRESULT(ref ITraceDataCollector self, out int16 kernel) get_IsKernelTrace;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_MaximumBuffers;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_MaximumBuffers;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_MinimumBuffers;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_MinimumBuffers;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_NumberOfBuffers;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_NumberOfBuffers;
+				public new function HRESULT(ref ITraceDataCollector self, out int16 allocate) get_PreallocateFile;
+				public new function HRESULT(ref ITraceDataCollector self, int16 allocate) put_PreallocateFile;
+				public new function HRESULT(ref ITraceDataCollector self, out int16 process) get_ProcessMode;
+				public new function HRESULT(ref ITraceDataCollector self, int16 process) put_ProcessMode;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 buffers) get_RealTimeBuffersLost;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 buffers) put_RealTimeBuffersLost;
+				public new function HRESULT(ref ITraceDataCollector self, out uint64 id) get_SessionId;
+				public new function HRESULT(ref ITraceDataCollector self, uint64 id) put_SessionId;
+				public new function HRESULT(ref ITraceDataCollector self, BSTR* name) get_SessionName;
+				public new function HRESULT(ref ITraceDataCollector self, BSTR name) put_SessionName;
+				public new function HRESULT(ref ITraceDataCollector self, out uint32 tid) get_SessionThreadId;
+				public new function HRESULT(ref ITraceDataCollector self, uint32 tid) put_SessionThreadId;
+				public new function HRESULT(ref ITraceDataCollector self, out StreamMode mode) get_StreamMode;
+				public new function HRESULT(ref ITraceDataCollector self, StreamMode mode) put_StreamMode;
+				public new function HRESULT(ref ITraceDataCollector self, ITraceDataProviderCollection** providers) get_TraceDataProviders;
 			}
 		}
 		[CRepr]
@@ -1973,99 +1973,99 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_FileMaxCount(uint32* count) mut
+			public HRESULT get_FileMaxCount(out uint32 count) mut
 			{
-				return VT.get_FileMaxCount(&this, count);
+				return VT.get_FileMaxCount(ref this, out count);
 			}
 			public HRESULT put_FileMaxCount(uint32 count) mut
 			{
-				return VT.put_FileMaxCount(&this, count);
+				return VT.put_FileMaxCount(ref this, count);
 			}
-			public HRESULT get_FileMaxRecursiveDepth(uint32* depth) mut
+			public HRESULT get_FileMaxRecursiveDepth(out uint32 depth) mut
 			{
-				return VT.get_FileMaxRecursiveDepth(&this, depth);
+				return VT.get_FileMaxRecursiveDepth(ref this, out depth);
 			}
 			public HRESULT put_FileMaxRecursiveDepth(uint32 depth) mut
 			{
-				return VT.put_FileMaxRecursiveDepth(&this, depth);
+				return VT.put_FileMaxRecursiveDepth(ref this, depth);
 			}
-			public HRESULT get_FileMaxTotalSize(uint32* size) mut
+			public HRESULT get_FileMaxTotalSize(out uint32 size) mut
 			{
-				return VT.get_FileMaxTotalSize(&this, size);
+				return VT.get_FileMaxTotalSize(ref this, out size);
 			}
 			public HRESULT put_FileMaxTotalSize(uint32 size) mut
 			{
-				return VT.put_FileMaxTotalSize(&this, size);
+				return VT.put_FileMaxTotalSize(ref this, size);
 			}
 			public HRESULT get_Files(SAFEARRAY** Files) mut
 			{
-				return VT.get_Files(&this, Files);
+				return VT.get_Files(ref this, Files);
 			}
-			public HRESULT put_Files(SAFEARRAY* Files) mut
+			public HRESULT put_Files(ref SAFEARRAY Files) mut
 			{
-				return VT.put_Files(&this, Files);
+				return VT.put_Files(ref this, ref Files);
 			}
 			public HRESULT get_ManagementQueries(SAFEARRAY** Queries) mut
 			{
-				return VT.get_ManagementQueries(&this, Queries);
+				return VT.get_ManagementQueries(ref this, Queries);
 			}
-			public HRESULT put_ManagementQueries(SAFEARRAY* Queries) mut
+			public HRESULT put_ManagementQueries(ref SAFEARRAY Queries) mut
 			{
-				return VT.put_ManagementQueries(&this, Queries);
+				return VT.put_ManagementQueries(ref this, ref Queries);
 			}
-			public HRESULT get_QueryNetworkAdapters(int16* network) mut
+			public HRESULT get_QueryNetworkAdapters(out int16 network) mut
 			{
-				return VT.get_QueryNetworkAdapters(&this, network);
+				return VT.get_QueryNetworkAdapters(ref this, out network);
 			}
 			public HRESULT put_QueryNetworkAdapters(int16 network) mut
 			{
-				return VT.put_QueryNetworkAdapters(&this, network);
+				return VT.put_QueryNetworkAdapters(ref this, network);
 			}
 			public HRESULT get_RegistryKeys(SAFEARRAY** query) mut
 			{
-				return VT.get_RegistryKeys(&this, query);
+				return VT.get_RegistryKeys(ref this, query);
 			}
-			public HRESULT put_RegistryKeys(SAFEARRAY* query) mut
+			public HRESULT put_RegistryKeys(ref SAFEARRAY query) mut
 			{
-				return VT.put_RegistryKeys(&this, query);
+				return VT.put_RegistryKeys(ref this, ref query);
 			}
-			public HRESULT get_RegistryMaxRecursiveDepth(uint32* depth) mut
+			public HRESULT get_RegistryMaxRecursiveDepth(out uint32 depth) mut
 			{
-				return VT.get_RegistryMaxRecursiveDepth(&this, depth);
+				return VT.get_RegistryMaxRecursiveDepth(ref this, out depth);
 			}
 			public HRESULT put_RegistryMaxRecursiveDepth(uint32 depth) mut
 			{
-				return VT.put_RegistryMaxRecursiveDepth(&this, depth);
+				return VT.put_RegistryMaxRecursiveDepth(ref this, depth);
 			}
 			public HRESULT get_SystemStateFile(BSTR* FileName) mut
 			{
-				return VT.get_SystemStateFile(&this, FileName);
+				return VT.get_SystemStateFile(ref this, FileName);
 			}
 			public HRESULT put_SystemStateFile(BSTR FileName) mut
 			{
-				return VT.put_SystemStateFile(&this, FileName);
+				return VT.put_SystemStateFile(ref this, FileName);
 			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(IConfigurationDataCollector *self, uint32* count) get_FileMaxCount;
-				public new function HRESULT(IConfigurationDataCollector *self, uint32 count) put_FileMaxCount;
-				public new function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_FileMaxRecursiveDepth;
-				public new function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_FileMaxRecursiveDepth;
-				public new function HRESULT(IConfigurationDataCollector *self, uint32* size) get_FileMaxTotalSize;
-				public new function HRESULT(IConfigurationDataCollector *self, uint32 size) put_FileMaxTotalSize;
-				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Files) get_Files;
-				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Files) put_Files;
-				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** Queries) get_ManagementQueries;
-				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* Queries) put_ManagementQueries;
-				public new function HRESULT(IConfigurationDataCollector *self, int16* network) get_QueryNetworkAdapters;
-				public new function HRESULT(IConfigurationDataCollector *self, int16 network) put_QueryNetworkAdapters;
-				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY** query) get_RegistryKeys;
-				public new function HRESULT(IConfigurationDataCollector *self, SAFEARRAY* query) put_RegistryKeys;
-				public new function HRESULT(IConfigurationDataCollector *self, uint32* depth) get_RegistryMaxRecursiveDepth;
-				public new function HRESULT(IConfigurationDataCollector *self, uint32 depth) put_RegistryMaxRecursiveDepth;
-				public new function HRESULT(IConfigurationDataCollector *self, BSTR* FileName) get_SystemStateFile;
-				public new function HRESULT(IConfigurationDataCollector *self, BSTR FileName) put_SystemStateFile;
+				public new function HRESULT(ref IConfigurationDataCollector self, out uint32 count) get_FileMaxCount;
+				public new function HRESULT(ref IConfigurationDataCollector self, uint32 count) put_FileMaxCount;
+				public new function HRESULT(ref IConfigurationDataCollector self, out uint32 depth) get_FileMaxRecursiveDepth;
+				public new function HRESULT(ref IConfigurationDataCollector self, uint32 depth) put_FileMaxRecursiveDepth;
+				public new function HRESULT(ref IConfigurationDataCollector self, out uint32 size) get_FileMaxTotalSize;
+				public new function HRESULT(ref IConfigurationDataCollector self, uint32 size) put_FileMaxTotalSize;
+				public new function HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** Files) get_Files;
+				public new function HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY Files) put_Files;
+				public new function HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** Queries) get_ManagementQueries;
+				public new function HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY Queries) put_ManagementQueries;
+				public new function HRESULT(ref IConfigurationDataCollector self, out int16 network) get_QueryNetworkAdapters;
+				public new function HRESULT(ref IConfigurationDataCollector self, int16 network) put_QueryNetworkAdapters;
+				public new function HRESULT(ref IConfigurationDataCollector self, SAFEARRAY** query) get_RegistryKeys;
+				public new function HRESULT(ref IConfigurationDataCollector self, ref SAFEARRAY query) put_RegistryKeys;
+				public new function HRESULT(ref IConfigurationDataCollector self, out uint32 depth) get_RegistryMaxRecursiveDepth;
+				public new function HRESULT(ref IConfigurationDataCollector self, uint32 depth) put_RegistryMaxRecursiveDepth;
+				public new function HRESULT(ref IConfigurationDataCollector self, BSTR* FileName) get_SystemStateFile;
+				public new function HRESULT(ref IConfigurationDataCollector self, BSTR FileName) put_SystemStateFile;
 			}
 		}
 		[CRepr]
@@ -2077,87 +2077,87 @@ namespace Win32
 			
 			public HRESULT get_AlertThresholds(SAFEARRAY** alerts) mut
 			{
-				return VT.get_AlertThresholds(&this, alerts);
+				return VT.get_AlertThresholds(ref this, alerts);
 			}
-			public HRESULT put_AlertThresholds(SAFEARRAY* alerts) mut
+			public HRESULT put_AlertThresholds(ref SAFEARRAY alerts) mut
 			{
-				return VT.put_AlertThresholds(&this, alerts);
+				return VT.put_AlertThresholds(ref this, ref alerts);
 			}
-			public HRESULT get_EventLog(int16* log) mut
+			public HRESULT get_EventLog(out int16 log) mut
 			{
-				return VT.get_EventLog(&this, log);
+				return VT.get_EventLog(ref this, out log);
 			}
 			public HRESULT put_EventLog(int16 log) mut
 			{
-				return VT.put_EventLog(&this, log);
+				return VT.put_EventLog(ref this, log);
 			}
-			public HRESULT get_SampleInterval(uint32* interval) mut
+			public HRESULT get_SampleInterval(out uint32 interval) mut
 			{
-				return VT.get_SampleInterval(&this, interval);
+				return VT.get_SampleInterval(ref this, out interval);
 			}
 			public HRESULT put_SampleInterval(uint32 interval) mut
 			{
-				return VT.put_SampleInterval(&this, interval);
+				return VT.put_SampleInterval(ref this, interval);
 			}
 			public HRESULT get_Task(BSTR* task) mut
 			{
-				return VT.get_Task(&this, task);
+				return VT.get_Task(ref this, task);
 			}
 			public HRESULT put_Task(BSTR task) mut
 			{
-				return VT.put_Task(&this, task);
+				return VT.put_Task(ref this, task);
 			}
-			public HRESULT get_TaskRunAsSelf(int16* RunAsSelf) mut
+			public HRESULT get_TaskRunAsSelf(out int16 RunAsSelf) mut
 			{
-				return VT.get_TaskRunAsSelf(&this, RunAsSelf);
+				return VT.get_TaskRunAsSelf(ref this, out RunAsSelf);
 			}
 			public HRESULT put_TaskRunAsSelf(int16 RunAsSelf) mut
 			{
-				return VT.put_TaskRunAsSelf(&this, RunAsSelf);
+				return VT.put_TaskRunAsSelf(ref this, RunAsSelf);
 			}
 			public HRESULT get_TaskArguments(BSTR* task) mut
 			{
-				return VT.get_TaskArguments(&this, task);
+				return VT.get_TaskArguments(ref this, task);
 			}
 			public HRESULT put_TaskArguments(BSTR task) mut
 			{
-				return VT.put_TaskArguments(&this, task);
+				return VT.put_TaskArguments(ref this, task);
 			}
 			public HRESULT get_TaskUserTextArguments(BSTR* task) mut
 			{
-				return VT.get_TaskUserTextArguments(&this, task);
+				return VT.get_TaskUserTextArguments(ref this, task);
 			}
 			public HRESULT put_TaskUserTextArguments(BSTR task) mut
 			{
-				return VT.put_TaskUserTextArguments(&this, task);
+				return VT.put_TaskUserTextArguments(ref this, task);
 			}
 			public HRESULT get_TriggerDataCollectorSet(BSTR* name) mut
 			{
-				return VT.get_TriggerDataCollectorSet(&this, name);
+				return VT.get_TriggerDataCollectorSet(ref this, name);
 			}
 			public HRESULT put_TriggerDataCollectorSet(BSTR name) mut
 			{
-				return VT.put_TriggerDataCollectorSet(&this, name);
+				return VT.put_TriggerDataCollectorSet(ref this, name);
 			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(IAlertDataCollector *self, SAFEARRAY** alerts) get_AlertThresholds;
-				public new function HRESULT(IAlertDataCollector *self, SAFEARRAY* alerts) put_AlertThresholds;
-				public new function HRESULT(IAlertDataCollector *self, int16* log) get_EventLog;
-				public new function HRESULT(IAlertDataCollector *self, int16 log) put_EventLog;
-				public new function HRESULT(IAlertDataCollector *self, uint32* interval) get_SampleInterval;
-				public new function HRESULT(IAlertDataCollector *self, uint32 interval) put_SampleInterval;
-				public new function HRESULT(IAlertDataCollector *self, BSTR* task) get_Task;
-				public new function HRESULT(IAlertDataCollector *self, BSTR task) put_Task;
-				public new function HRESULT(IAlertDataCollector *self, int16* RunAsSelf) get_TaskRunAsSelf;
-				public new function HRESULT(IAlertDataCollector *self, int16 RunAsSelf) put_TaskRunAsSelf;
-				public new function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskArguments;
-				public new function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskArguments;
-				public new function HRESULT(IAlertDataCollector *self, BSTR* task) get_TaskUserTextArguments;
-				public new function HRESULT(IAlertDataCollector *self, BSTR task) put_TaskUserTextArguments;
-				public new function HRESULT(IAlertDataCollector *self, BSTR* name) get_TriggerDataCollectorSet;
-				public new function HRESULT(IAlertDataCollector *self, BSTR name) put_TriggerDataCollectorSet;
+				public new function HRESULT(ref IAlertDataCollector self, SAFEARRAY** alerts) get_AlertThresholds;
+				public new function HRESULT(ref IAlertDataCollector self, ref SAFEARRAY alerts) put_AlertThresholds;
+				public new function HRESULT(ref IAlertDataCollector self, out int16 log) get_EventLog;
+				public new function HRESULT(ref IAlertDataCollector self, int16 log) put_EventLog;
+				public new function HRESULT(ref IAlertDataCollector self, out uint32 interval) get_SampleInterval;
+				public new function HRESULT(ref IAlertDataCollector self, uint32 interval) put_SampleInterval;
+				public new function HRESULT(ref IAlertDataCollector self, BSTR* task) get_Task;
+				public new function HRESULT(ref IAlertDataCollector self, BSTR task) put_Task;
+				public new function HRESULT(ref IAlertDataCollector self, out int16 RunAsSelf) get_TaskRunAsSelf;
+				public new function HRESULT(ref IAlertDataCollector self, int16 RunAsSelf) put_TaskRunAsSelf;
+				public new function HRESULT(ref IAlertDataCollector self, BSTR* task) get_TaskArguments;
+				public new function HRESULT(ref IAlertDataCollector self, BSTR task) put_TaskArguments;
+				public new function HRESULT(ref IAlertDataCollector self, BSTR* task) get_TaskUserTextArguments;
+				public new function HRESULT(ref IAlertDataCollector self, BSTR task) put_TaskUserTextArguments;
+				public new function HRESULT(ref IAlertDataCollector self, BSTR* name) get_TriggerDataCollectorSet;
+				public new function HRESULT(ref IAlertDataCollector self, BSTR name) put_TriggerDataCollectorSet;
 			}
 		}
 		[CRepr]
@@ -2167,79 +2167,79 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_LogApiNamesOnly(int16* logapinames) mut
+			public HRESULT get_LogApiNamesOnly(out int16 logapinames) mut
 			{
-				return VT.get_LogApiNamesOnly(&this, logapinames);
+				return VT.get_LogApiNamesOnly(ref this, out logapinames);
 			}
 			public HRESULT put_LogApiNamesOnly(int16 logapinames) mut
 			{
-				return VT.put_LogApiNamesOnly(&this, logapinames);
+				return VT.put_LogApiNamesOnly(ref this, logapinames);
 			}
-			public HRESULT get_LogApisRecursively(int16* logrecursively) mut
+			public HRESULT get_LogApisRecursively(out int16 logrecursively) mut
 			{
-				return VT.get_LogApisRecursively(&this, logrecursively);
+				return VT.get_LogApisRecursively(ref this, out logrecursively);
 			}
 			public HRESULT put_LogApisRecursively(int16 logrecursively) mut
 			{
-				return VT.put_LogApisRecursively(&this, logrecursively);
+				return VT.put_LogApisRecursively(ref this, logrecursively);
 			}
 			public HRESULT get_ExePath(BSTR* exepath) mut
 			{
-				return VT.get_ExePath(&this, exepath);
+				return VT.get_ExePath(ref this, exepath);
 			}
 			public HRESULT put_ExePath(BSTR exepath) mut
 			{
-				return VT.put_ExePath(&this, exepath);
+				return VT.put_ExePath(ref this, exepath);
 			}
 			public HRESULT get_LogFilePath(BSTR* logfilepath) mut
 			{
-				return VT.get_LogFilePath(&this, logfilepath);
+				return VT.get_LogFilePath(ref this, logfilepath);
 			}
 			public HRESULT put_LogFilePath(BSTR logfilepath) mut
 			{
-				return VT.put_LogFilePath(&this, logfilepath);
+				return VT.put_LogFilePath(ref this, logfilepath);
 			}
 			public HRESULT get_IncludeModules(SAFEARRAY** includemodules) mut
 			{
-				return VT.get_IncludeModules(&this, includemodules);
+				return VT.get_IncludeModules(ref this, includemodules);
 			}
-			public HRESULT put_IncludeModules(SAFEARRAY* includemodules) mut
+			public HRESULT put_IncludeModules(ref SAFEARRAY includemodules) mut
 			{
-				return VT.put_IncludeModules(&this, includemodules);
+				return VT.put_IncludeModules(ref this, ref includemodules);
 			}
 			public HRESULT get_IncludeApis(SAFEARRAY** includeapis) mut
 			{
-				return VT.get_IncludeApis(&this, includeapis);
+				return VT.get_IncludeApis(ref this, includeapis);
 			}
-			public HRESULT put_IncludeApis(SAFEARRAY* includeapis) mut
+			public HRESULT put_IncludeApis(ref SAFEARRAY includeapis) mut
 			{
-				return VT.put_IncludeApis(&this, includeapis);
+				return VT.put_IncludeApis(ref this, ref includeapis);
 			}
 			public HRESULT get_ExcludeApis(SAFEARRAY** excludeapis) mut
 			{
-				return VT.get_ExcludeApis(&this, excludeapis);
+				return VT.get_ExcludeApis(ref this, excludeapis);
 			}
-			public HRESULT put_ExcludeApis(SAFEARRAY* excludeapis) mut
+			public HRESULT put_ExcludeApis(ref SAFEARRAY excludeapis) mut
 			{
-				return VT.put_ExcludeApis(&this, excludeapis);
+				return VT.put_ExcludeApis(ref this, ref excludeapis);
 			}
 			[CRepr]
 			public struct VTable : IDataCollector.VTable
 			{
-				public new function HRESULT(IApiTracingDataCollector *self, int16* logapinames) get_LogApiNamesOnly;
-				public new function HRESULT(IApiTracingDataCollector *self, int16 logapinames) put_LogApiNamesOnly;
-				public new function HRESULT(IApiTracingDataCollector *self, int16* logrecursively) get_LogApisRecursively;
-				public new function HRESULT(IApiTracingDataCollector *self, int16 logrecursively) put_LogApisRecursively;
-				public new function HRESULT(IApiTracingDataCollector *self, BSTR* exepath) get_ExePath;
-				public new function HRESULT(IApiTracingDataCollector *self, BSTR exepath) put_ExePath;
-				public new function HRESULT(IApiTracingDataCollector *self, BSTR* logfilepath) get_LogFilePath;
-				public new function HRESULT(IApiTracingDataCollector *self, BSTR logfilepath) put_LogFilePath;
-				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includemodules) get_IncludeModules;
-				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includemodules) put_IncludeModules;
-				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** includeapis) get_IncludeApis;
-				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* includeapis) put_IncludeApis;
-				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY** excludeapis) get_ExcludeApis;
-				public new function HRESULT(IApiTracingDataCollector *self, SAFEARRAY* excludeapis) put_ExcludeApis;
+				public new function HRESULT(ref IApiTracingDataCollector self, out int16 logapinames) get_LogApiNamesOnly;
+				public new function HRESULT(ref IApiTracingDataCollector self, int16 logapinames) put_LogApiNamesOnly;
+				public new function HRESULT(ref IApiTracingDataCollector self, out int16 logrecursively) get_LogApisRecursively;
+				public new function HRESULT(ref IApiTracingDataCollector self, int16 logrecursively) put_LogApisRecursively;
+				public new function HRESULT(ref IApiTracingDataCollector self, BSTR* exepath) get_ExePath;
+				public new function HRESULT(ref IApiTracingDataCollector self, BSTR exepath) put_ExePath;
+				public new function HRESULT(ref IApiTracingDataCollector self, BSTR* logfilepath) get_LogFilePath;
+				public new function HRESULT(ref IApiTracingDataCollector self, BSTR logfilepath) put_LogFilePath;
+				public new function HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** includemodules) get_IncludeModules;
+				public new function HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY includemodules) put_IncludeModules;
+				public new function HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** includeapis) get_IncludeApis;
+				public new function HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY includeapis) put_IncludeApis;
+				public new function HRESULT(ref IApiTracingDataCollector self, SAFEARRAY** excludeapis) get_ExcludeApis;
+				public new function HRESULT(ref IApiTracingDataCollector self, ref SAFEARRAY excludeapis) put_ExcludeApis;
 			}
 		}
 		[CRepr]
@@ -2249,54 +2249,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* retVal) mut
+			public HRESULT get_Count(out int32 retVal) mut
 			{
-				return VT.get_Count(&this, retVal);
+				return VT.get_Count(ref this, out retVal);
 			}
 			public HRESULT get_Item(VARIANT index, IDataCollector** collector) mut
 			{
-				return VT.get_Item(&this, index, collector);
+				return VT.get_Item(ref this, index, collector);
 			}
 			public HRESULT get__NewEnum(IUnknown** retVal) mut
 			{
-				return VT.get__NewEnum(&this, retVal);
+				return VT.get__NewEnum(ref this, retVal);
 			}
 			public HRESULT Add(IDataCollector* collector) mut
 			{
-				return VT.Add(&this, collector);
+				return VT.Add(ref this, collector);
 			}
 			public HRESULT Remove(VARIANT collector) mut
 			{
-				return VT.Remove(&this, collector);
+				return VT.Remove(ref this, collector);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT AddRange(IDataCollectorCollection* collectors) mut
 			{
-				return VT.AddRange(&this, collectors);
+				return VT.AddRange(ref this, collectors);
 			}
 			public HRESULT CreateDataCollectorFromXml(BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) mut
 			{
-				return VT.CreateDataCollectorFromXml(&this, bstrXml, pValidation, pCollector);
+				return VT.CreateDataCollectorFromXml(ref this, bstrXml, pValidation, pCollector);
 			}
 			public HRESULT CreateDataCollector(DataCollectorType Type, IDataCollector** Collector) mut
 			{
-				return VT.CreateDataCollector(&this, Type, Collector);
+				return VT.CreateDataCollector(ref this, Type, Collector);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IDataCollectorCollection *self, int32* retVal) get_Count;
-				public new function HRESULT(IDataCollectorCollection *self, VARIANT index, IDataCollector** collector) get_Item;
-				public new function HRESULT(IDataCollectorCollection *self, IUnknown** retVal) get__NewEnum;
-				public new function HRESULT(IDataCollectorCollection *self, IDataCollector* collector) Add;
-				public new function HRESULT(IDataCollectorCollection *self, VARIANT collector) Remove;
-				public new function HRESULT(IDataCollectorCollection *self) Clear;
-				public new function HRESULT(IDataCollectorCollection *self, IDataCollectorCollection* collectors) AddRange;
-				public new function HRESULT(IDataCollectorCollection *self, BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) CreateDataCollectorFromXml;
-				public new function HRESULT(IDataCollectorCollection *self, DataCollectorType Type, IDataCollector** Collector) CreateDataCollector;
+				public new function HRESULT(ref IDataCollectorCollection self, out int32 retVal) get_Count;
+				public new function HRESULT(ref IDataCollectorCollection self, VARIANT index, IDataCollector** collector) get_Item;
+				public new function HRESULT(ref IDataCollectorCollection self, IUnknown** retVal) get__NewEnum;
+				public new function HRESULT(ref IDataCollectorCollection self, IDataCollector* collector) Add;
+				public new function HRESULT(ref IDataCollectorCollection self, VARIANT collector) Remove;
+				public new function HRESULT(ref IDataCollectorCollection self) Clear;
+				public new function HRESULT(ref IDataCollectorCollection self, IDataCollectorCollection* collectors) AddRange;
+				public new function HRESULT(ref IDataCollectorCollection self, BSTR bstrXml, IValueMap** pValidation, IDataCollector** pCollector) CreateDataCollectorFromXml;
+				public new function HRESULT(ref IDataCollectorCollection self, DataCollectorType Type, IDataCollector** Collector) CreateDataCollector;
 			}
 		}
 		[CRepr]
@@ -2306,49 +2306,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* retVal) mut
+			public HRESULT get_Count(out int32 retVal) mut
 			{
-				return VT.get_Count(&this, retVal);
+				return VT.get_Count(ref this, out retVal);
 			}
 			public HRESULT get_Item(VARIANT index, IDataCollectorSet** set) mut
 			{
-				return VT.get_Item(&this, index, set);
+				return VT.get_Item(ref this, index, set);
 			}
 			public HRESULT get__NewEnum(IUnknown** retVal) mut
 			{
-				return VT.get__NewEnum(&this, retVal);
+				return VT.get__NewEnum(ref this, retVal);
 			}
 			public HRESULT Add(IDataCollectorSet* set) mut
 			{
-				return VT.Add(&this, set);
+				return VT.Add(ref this, set);
 			}
 			public HRESULT Remove(VARIANT set) mut
 			{
-				return VT.Remove(&this, set);
+				return VT.Remove(ref this, set);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT AddRange(IDataCollectorSetCollection* sets) mut
 			{
-				return VT.AddRange(&this, sets);
+				return VT.AddRange(ref this, sets);
 			}
 			public HRESULT GetDataCollectorSets(BSTR server, BSTR filter) mut
 			{
-				return VT.GetDataCollectorSets(&this, server, filter);
+				return VT.GetDataCollectorSets(ref this, server, filter);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IDataCollectorSetCollection *self, int32* retVal) get_Count;
-				public new function HRESULT(IDataCollectorSetCollection *self, VARIANT index, IDataCollectorSet** set) get_Item;
-				public new function HRESULT(IDataCollectorSetCollection *self, IUnknown** retVal) get__NewEnum;
-				public new function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSet* set) Add;
-				public new function HRESULT(IDataCollectorSetCollection *self, VARIANT set) Remove;
-				public new function HRESULT(IDataCollectorSetCollection *self) Clear;
-				public new function HRESULT(IDataCollectorSetCollection *self, IDataCollectorSetCollection* sets) AddRange;
-				public new function HRESULT(IDataCollectorSetCollection *self, BSTR server, BSTR filter) GetDataCollectorSets;
+				public new function HRESULT(ref IDataCollectorSetCollection self, out int32 retVal) get_Count;
+				public new function HRESULT(ref IDataCollectorSetCollection self, VARIANT index, IDataCollectorSet** set) get_Item;
+				public new function HRESULT(ref IDataCollectorSetCollection self, IUnknown** retVal) get__NewEnum;
+				public new function HRESULT(ref IDataCollectorSetCollection self, IDataCollectorSet* set) Add;
+				public new function HRESULT(ref IDataCollectorSetCollection self, VARIANT set) Remove;
+				public new function HRESULT(ref IDataCollectorSetCollection self) Clear;
+				public new function HRESULT(ref IDataCollectorSetCollection self, IDataCollectorSetCollection* sets) AddRange;
+				public new function HRESULT(ref IDataCollectorSetCollection self, BSTR server, BSTR filter) GetDataCollectorSets;
 			}
 		}
 		[CRepr]
@@ -2360,102 +2360,102 @@ namespace Win32
 			
 			public HRESULT get_DisplayName(BSTR* name) mut
 			{
-				return VT.get_DisplayName(&this, name);
+				return VT.get_DisplayName(ref this, name);
 			}
 			public HRESULT put_DisplayName(BSTR name) mut
 			{
-				return VT.put_DisplayName(&this, name);
+				return VT.put_DisplayName(ref this, name);
 			}
-			public HRESULT get_Guid(Guid* guid) mut
+			public HRESULT get_Guid(out Guid guid) mut
 			{
-				return VT.get_Guid(&this, guid);
+				return VT.get_Guid(ref this, out guid);
 			}
 			public HRESULT put_Guid(Guid guid) mut
 			{
-				return VT.put_Guid(&this, guid);
+				return VT.put_Guid(ref this, guid);
 			}
 			public HRESULT get_Level(IValueMap** ppLevel) mut
 			{
-				return VT.get_Level(&this, ppLevel);
+				return VT.get_Level(ref this, ppLevel);
 			}
 			public HRESULT get_KeywordsAny(IValueMap** ppKeywords) mut
 			{
-				return VT.get_KeywordsAny(&this, ppKeywords);
+				return VT.get_KeywordsAny(ref this, ppKeywords);
 			}
 			public HRESULT get_KeywordsAll(IValueMap** ppKeywords) mut
 			{
-				return VT.get_KeywordsAll(&this, ppKeywords);
+				return VT.get_KeywordsAll(ref this, ppKeywords);
 			}
 			public HRESULT get_Properties(IValueMap** ppProperties) mut
 			{
-				return VT.get_Properties(&this, ppProperties);
+				return VT.get_Properties(ref this, ppProperties);
 			}
-			public HRESULT get_FilterEnabled(int16* FilterEnabled) mut
+			public HRESULT get_FilterEnabled(out int16 FilterEnabled) mut
 			{
-				return VT.get_FilterEnabled(&this, FilterEnabled);
+				return VT.get_FilterEnabled(ref this, out FilterEnabled);
 			}
 			public HRESULT put_FilterEnabled(int16 FilterEnabled) mut
 			{
-				return VT.put_FilterEnabled(&this, FilterEnabled);
+				return VT.put_FilterEnabled(ref this, FilterEnabled);
 			}
-			public HRESULT get_FilterType(uint32* pulType) mut
+			public HRESULT get_FilterType(out uint32 pulType) mut
 			{
-				return VT.get_FilterType(&this, pulType);
+				return VT.get_FilterType(ref this, out pulType);
 			}
 			public HRESULT put_FilterType(uint32 ulType) mut
 			{
-				return VT.put_FilterType(&this, ulType);
+				return VT.put_FilterType(ref this, ulType);
 			}
 			public HRESULT get_FilterData(SAFEARRAY** ppData) mut
 			{
-				return VT.get_FilterData(&this, ppData);
+				return VT.get_FilterData(ref this, ppData);
 			}
-			public HRESULT put_FilterData(SAFEARRAY* pData) mut
+			public HRESULT put_FilterData(ref SAFEARRAY pData) mut
 			{
-				return VT.put_FilterData(&this, pData);
+				return VT.put_FilterData(ref this, ref pData);
 			}
 			public HRESULT Query(BSTR bstrName, BSTR bstrServer) mut
 			{
-				return VT.Query(&this, bstrName, bstrServer);
+				return VT.Query(ref this, bstrName, bstrServer);
 			}
 			public HRESULT Resolve(IDispatch* pFrom) mut
 			{
-				return VT.Resolve(&this, pFrom);
+				return VT.Resolve(ref this, pFrom);
 			}
 			public HRESULT SetSecurity(BSTR Sddl) mut
 			{
-				return VT.SetSecurity(&this, Sddl);
+				return VT.SetSecurity(ref this, Sddl);
 			}
 			public HRESULT GetSecurity(uint32 SecurityInfo, BSTR* Sddl) mut
 			{
-				return VT.GetSecurity(&this, SecurityInfo, Sddl);
+				return VT.GetSecurity(ref this, SecurityInfo, Sddl);
 			}
 			public HRESULT GetRegisteredProcesses(IValueMap** Processes) mut
 			{
-				return VT.GetRegisteredProcesses(&this, Processes);
+				return VT.GetRegisteredProcesses(ref this, Processes);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITraceDataProvider *self, BSTR* name) get_DisplayName;
-				public new function HRESULT(ITraceDataProvider *self, BSTR name) put_DisplayName;
-				public new function HRESULT(ITraceDataProvider *self, Guid* guid) get_Guid;
-				public new function HRESULT(ITraceDataProvider *self, Guid guid) put_Guid;
-				public new function HRESULT(ITraceDataProvider *self, IValueMap** ppLevel) get_Level;
-				public new function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAny;
-				public new function HRESULT(ITraceDataProvider *self, IValueMap** ppKeywords) get_KeywordsAll;
-				public new function HRESULT(ITraceDataProvider *self, IValueMap** ppProperties) get_Properties;
-				public new function HRESULT(ITraceDataProvider *self, int16* FilterEnabled) get_FilterEnabled;
-				public new function HRESULT(ITraceDataProvider *self, int16 FilterEnabled) put_FilterEnabled;
-				public new function HRESULT(ITraceDataProvider *self, uint32* pulType) get_FilterType;
-				public new function HRESULT(ITraceDataProvider *self, uint32 ulType) put_FilterType;
-				public new function HRESULT(ITraceDataProvider *self, SAFEARRAY** ppData) get_FilterData;
-				public new function HRESULT(ITraceDataProvider *self, SAFEARRAY* pData) put_FilterData;
-				public new function HRESULT(ITraceDataProvider *self, BSTR bstrName, BSTR bstrServer) Query;
-				public new function HRESULT(ITraceDataProvider *self, IDispatch* pFrom) Resolve;
-				public new function HRESULT(ITraceDataProvider *self, BSTR Sddl) SetSecurity;
-				public new function HRESULT(ITraceDataProvider *self, uint32 SecurityInfo, BSTR* Sddl) GetSecurity;
-				public new function HRESULT(ITraceDataProvider *self, IValueMap** Processes) GetRegisteredProcesses;
+				public new function HRESULT(ref ITraceDataProvider self, BSTR* name) get_DisplayName;
+				public new function HRESULT(ref ITraceDataProvider self, BSTR name) put_DisplayName;
+				public new function HRESULT(ref ITraceDataProvider self, out Guid guid) get_Guid;
+				public new function HRESULT(ref ITraceDataProvider self, Guid guid) put_Guid;
+				public new function HRESULT(ref ITraceDataProvider self, IValueMap** ppLevel) get_Level;
+				public new function HRESULT(ref ITraceDataProvider self, IValueMap** ppKeywords) get_KeywordsAny;
+				public new function HRESULT(ref ITraceDataProvider self, IValueMap** ppKeywords) get_KeywordsAll;
+				public new function HRESULT(ref ITraceDataProvider self, IValueMap** ppProperties) get_Properties;
+				public new function HRESULT(ref ITraceDataProvider self, out int16 FilterEnabled) get_FilterEnabled;
+				public new function HRESULT(ref ITraceDataProvider self, int16 FilterEnabled) put_FilterEnabled;
+				public new function HRESULT(ref ITraceDataProvider self, out uint32 pulType) get_FilterType;
+				public new function HRESULT(ref ITraceDataProvider self, uint32 ulType) put_FilterType;
+				public new function HRESULT(ref ITraceDataProvider self, SAFEARRAY** ppData) get_FilterData;
+				public new function HRESULT(ref ITraceDataProvider self, ref SAFEARRAY pData) put_FilterData;
+				public new function HRESULT(ref ITraceDataProvider self, BSTR bstrName, BSTR bstrServer) Query;
+				public new function HRESULT(ref ITraceDataProvider self, IDispatch* pFrom) Resolve;
+				public new function HRESULT(ref ITraceDataProvider self, BSTR Sddl) SetSecurity;
+				public new function HRESULT(ref ITraceDataProvider self, uint32 SecurityInfo, BSTR* Sddl) GetSecurity;
+				public new function HRESULT(ref ITraceDataProvider self, IValueMap** Processes) GetRegisteredProcesses;
 			}
 		}
 		[CRepr]
@@ -2465,59 +2465,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* retVal) mut
+			public HRESULT get_Count(out int32 retVal) mut
 			{
-				return VT.get_Count(&this, retVal);
+				return VT.get_Count(ref this, out retVal);
 			}
 			public HRESULT get_Item(VARIANT index, ITraceDataProvider** ppProvider) mut
 			{
-				return VT.get_Item(&this, index, ppProvider);
+				return VT.get_Item(ref this, index, ppProvider);
 			}
 			public HRESULT get__NewEnum(IUnknown** retVal) mut
 			{
-				return VT.get__NewEnum(&this, retVal);
+				return VT.get__NewEnum(ref this, retVal);
 			}
 			public HRESULT Add(ITraceDataProvider* pProvider) mut
 			{
-				return VT.Add(&this, pProvider);
+				return VT.Add(ref this, pProvider);
 			}
 			public HRESULT Remove(VARIANT vProvider) mut
 			{
-				return VT.Remove(&this, vProvider);
+				return VT.Remove(ref this, vProvider);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT AddRange(ITraceDataProviderCollection* providers) mut
 			{
-				return VT.AddRange(&this, providers);
+				return VT.AddRange(ref this, providers);
 			}
 			public HRESULT CreateTraceDataProvider(ITraceDataProvider** Provider) mut
 			{
-				return VT.CreateTraceDataProvider(&this, Provider);
+				return VT.CreateTraceDataProvider(ref this, Provider);
 			}
 			public HRESULT GetTraceDataProviders(BSTR server) mut
 			{
-				return VT.GetTraceDataProviders(&this, server);
+				return VT.GetTraceDataProviders(ref this, server);
 			}
 			public HRESULT GetTraceDataProvidersByProcess(BSTR Server, uint32 Pid) mut
 			{
-				return VT.GetTraceDataProvidersByProcess(&this, Server, Pid);
+				return VT.GetTraceDataProvidersByProcess(ref this, Server, Pid);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITraceDataProviderCollection *self, int32* retVal) get_Count;
-				public new function HRESULT(ITraceDataProviderCollection *self, VARIANT index, ITraceDataProvider** ppProvider) get_Item;
-				public new function HRESULT(ITraceDataProviderCollection *self, IUnknown** retVal) get__NewEnum;
-				public new function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider* pProvider) Add;
-				public new function HRESULT(ITraceDataProviderCollection *self, VARIANT vProvider) Remove;
-				public new function HRESULT(ITraceDataProviderCollection *self) Clear;
-				public new function HRESULT(ITraceDataProviderCollection *self, ITraceDataProviderCollection* providers) AddRange;
-				public new function HRESULT(ITraceDataProviderCollection *self, ITraceDataProvider** Provider) CreateTraceDataProvider;
-				public new function HRESULT(ITraceDataProviderCollection *self, BSTR server) GetTraceDataProviders;
-				public new function HRESULT(ITraceDataProviderCollection *self, BSTR Server, uint32 Pid) GetTraceDataProvidersByProcess;
+				public new function HRESULT(ref ITraceDataProviderCollection self, out int32 retVal) get_Count;
+				public new function HRESULT(ref ITraceDataProviderCollection self, VARIANT index, ITraceDataProvider** ppProvider) get_Item;
+				public new function HRESULT(ref ITraceDataProviderCollection self, IUnknown** retVal) get__NewEnum;
+				public new function HRESULT(ref ITraceDataProviderCollection self, ITraceDataProvider* pProvider) Add;
+				public new function HRESULT(ref ITraceDataProviderCollection self, VARIANT vProvider) Remove;
+				public new function HRESULT(ref ITraceDataProviderCollection self) Clear;
+				public new function HRESULT(ref ITraceDataProviderCollection self, ITraceDataProviderCollection* providers) AddRange;
+				public new function HRESULT(ref ITraceDataProviderCollection self, ITraceDataProvider** Provider) CreateTraceDataProvider;
+				public new function HRESULT(ref ITraceDataProviderCollection self, BSTR server) GetTraceDataProviders;
+				public new function HRESULT(ref ITraceDataProviderCollection self, BSTR Server, uint32 Pid) GetTraceDataProvidersByProcess;
 			}
 		}
 		[CRepr]
@@ -2527,49 +2527,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_StartDate(VARIANT* start) mut
+			public HRESULT get_StartDate(out VARIANT start) mut
 			{
-				return VT.get_StartDate(&this, start);
+				return VT.get_StartDate(ref this, out start);
 			}
 			public HRESULT put_StartDate(VARIANT start) mut
 			{
-				return VT.put_StartDate(&this, start);
+				return VT.put_StartDate(ref this, start);
 			}
-			public HRESULT get_EndDate(VARIANT* end) mut
+			public HRESULT get_EndDate(out VARIANT end) mut
 			{
-				return VT.get_EndDate(&this, end);
+				return VT.get_EndDate(ref this, out end);
 			}
 			public HRESULT put_EndDate(VARIANT end) mut
 			{
-				return VT.put_EndDate(&this, end);
+				return VT.put_EndDate(ref this, end);
 			}
-			public HRESULT get_StartTime(VARIANT* start) mut
+			public HRESULT get_StartTime(out VARIANT start) mut
 			{
-				return VT.get_StartTime(&this, start);
+				return VT.get_StartTime(ref this, out start);
 			}
 			public HRESULT put_StartTime(VARIANT start) mut
 			{
-				return VT.put_StartTime(&this, start);
+				return VT.put_StartTime(ref this, start);
 			}
-			public HRESULT get_Days(WeekDays* days) mut
+			public HRESULT get_Days(out WeekDays days) mut
 			{
-				return VT.get_Days(&this, days);
+				return VT.get_Days(ref this, out days);
 			}
 			public HRESULT put_Days(WeekDays days) mut
 			{
-				return VT.put_Days(&this, days);
+				return VT.put_Days(ref this, days);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISchedule *self, VARIANT* start) get_StartDate;
-				public new function HRESULT(ISchedule *self, VARIANT start) put_StartDate;
-				public new function HRESULT(ISchedule *self, VARIANT* end) get_EndDate;
-				public new function HRESULT(ISchedule *self, VARIANT end) put_EndDate;
-				public new function HRESULT(ISchedule *self, VARIANT* start) get_StartTime;
-				public new function HRESULT(ISchedule *self, VARIANT start) put_StartTime;
-				public new function HRESULT(ISchedule *self, WeekDays* days) get_Days;
-				public new function HRESULT(ISchedule *self, WeekDays days) put_Days;
+				public new function HRESULT(ref ISchedule self, out VARIANT start) get_StartDate;
+				public new function HRESULT(ref ISchedule self, VARIANT start) put_StartDate;
+				public new function HRESULT(ref ISchedule self, out VARIANT end) get_EndDate;
+				public new function HRESULT(ref ISchedule self, VARIANT end) put_EndDate;
+				public new function HRESULT(ref ISchedule self, out VARIANT start) get_StartTime;
+				public new function HRESULT(ref ISchedule self, VARIANT start) put_StartTime;
+				public new function HRESULT(ref ISchedule self, out WeekDays days) get_Days;
+				public new function HRESULT(ref ISchedule self, WeekDays days) put_Days;
 			}
 		}
 		[CRepr]
@@ -2579,49 +2579,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* retVal) mut
+			public HRESULT get_Count(out int32 retVal) mut
 			{
-				return VT.get_Count(&this, retVal);
+				return VT.get_Count(ref this, out retVal);
 			}
 			public HRESULT get_Item(VARIANT index, ISchedule** ppSchedule) mut
 			{
-				return VT.get_Item(&this, index, ppSchedule);
+				return VT.get_Item(ref this, index, ppSchedule);
 			}
 			public HRESULT get__NewEnum(IUnknown** ienum) mut
 			{
-				return VT.get__NewEnum(&this, ienum);
+				return VT.get__NewEnum(ref this, ienum);
 			}
 			public HRESULT Add(ISchedule* pSchedule) mut
 			{
-				return VT.Add(&this, pSchedule);
+				return VT.Add(ref this, pSchedule);
 			}
 			public HRESULT Remove(VARIANT vSchedule) mut
 			{
-				return VT.Remove(&this, vSchedule);
+				return VT.Remove(ref this, vSchedule);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT AddRange(IScheduleCollection* pSchedules) mut
 			{
-				return VT.AddRange(&this, pSchedules);
+				return VT.AddRange(ref this, pSchedules);
 			}
 			public HRESULT CreateSchedule(ISchedule** Schedule) mut
 			{
-				return VT.CreateSchedule(&this, Schedule);
+				return VT.CreateSchedule(ref this, Schedule);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IScheduleCollection *self, int32* retVal) get_Count;
-				public new function HRESULT(IScheduleCollection *self, VARIANT index, ISchedule** ppSchedule) get_Item;
-				public new function HRESULT(IScheduleCollection *self, IUnknown** ienum) get__NewEnum;
-				public new function HRESULT(IScheduleCollection *self, ISchedule* pSchedule) Add;
-				public new function HRESULT(IScheduleCollection *self, VARIANT vSchedule) Remove;
-				public new function HRESULT(IScheduleCollection *self) Clear;
-				public new function HRESULT(IScheduleCollection *self, IScheduleCollection* pSchedules) AddRange;
-				public new function HRESULT(IScheduleCollection *self, ISchedule** Schedule) CreateSchedule;
+				public new function HRESULT(ref IScheduleCollection self, out int32 retVal) get_Count;
+				public new function HRESULT(ref IScheduleCollection self, VARIANT index, ISchedule** ppSchedule) get_Item;
+				public new function HRESULT(ref IScheduleCollection self, IUnknown** ienum) get__NewEnum;
+				public new function HRESULT(ref IScheduleCollection self, ISchedule* pSchedule) Add;
+				public new function HRESULT(ref IScheduleCollection self, VARIANT vSchedule) Remove;
+				public new function HRESULT(ref IScheduleCollection self) Clear;
+				public new function HRESULT(ref IScheduleCollection self, IScheduleCollection* pSchedules) AddRange;
+				public new function HRESULT(ref IScheduleCollection self, ISchedule** Schedule) CreateSchedule;
 			}
 		}
 		[CRepr]
@@ -2633,57 +2633,57 @@ namespace Win32
 			
 			public HRESULT get_Description(BSTR* description) mut
 			{
-				return VT.get_Description(&this, description);
+				return VT.get_Description(ref this, description);
 			}
 			public HRESULT put_Description(BSTR description) mut
 			{
-				return VT.put_Description(&this, description);
+				return VT.put_Description(ref this, description);
 			}
-			public HRESULT get_Enabled(int16* enabled) mut
+			public HRESULT get_Enabled(out int16 enabled) mut
 			{
-				return VT.get_Enabled(&this, enabled);
+				return VT.get_Enabled(ref this, out enabled);
 			}
 			public HRESULT put_Enabled(int16 enabled) mut
 			{
-				return VT.put_Enabled(&this, enabled);
+				return VT.put_Enabled(ref this, enabled);
 			}
 			public HRESULT get_Key(BSTR* key) mut
 			{
-				return VT.get_Key(&this, key);
+				return VT.get_Key(ref this, key);
 			}
 			public HRESULT put_Key(BSTR key) mut
 			{
-				return VT.put_Key(&this, key);
+				return VT.put_Key(ref this, key);
 			}
-			public HRESULT get_Value(VARIANT* Value) mut
+			public HRESULT get_Value(out VARIANT Value) mut
 			{
-				return VT.get_Value(&this, Value);
+				return VT.get_Value(ref this, out Value);
 			}
 			public HRESULT put_Value(VARIANT Value) mut
 			{
-				return VT.put_Value(&this, Value);
+				return VT.put_Value(ref this, Value);
 			}
-			public HRESULT get_ValueMapType(ValueMapType* type) mut
+			public HRESULT get_ValueMapType(out ValueMapType type) mut
 			{
-				return VT.get_ValueMapType(&this, type);
+				return VT.get_ValueMapType(ref this, out type);
 			}
 			public HRESULT put_ValueMapType(ValueMapType type) mut
 			{
-				return VT.put_ValueMapType(&this, type);
+				return VT.put_ValueMapType(ref this, type);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IValueMapItem *self, BSTR* description) get_Description;
-				public new function HRESULT(IValueMapItem *self, BSTR description) put_Description;
-				public new function HRESULT(IValueMapItem *self, int16* enabled) get_Enabled;
-				public new function HRESULT(IValueMapItem *self, int16 enabled) put_Enabled;
-				public new function HRESULT(IValueMapItem *self, BSTR* key) get_Key;
-				public new function HRESULT(IValueMapItem *self, BSTR key) put_Key;
-				public new function HRESULT(IValueMapItem *self, VARIANT* Value) get_Value;
-				public new function HRESULT(IValueMapItem *self, VARIANT Value) put_Value;
-				public new function HRESULT(IValueMapItem *self, ValueMapType* type) get_ValueMapType;
-				public new function HRESULT(IValueMapItem *self, ValueMapType type) put_ValueMapType;
+				public new function HRESULT(ref IValueMapItem self, BSTR* description) get_Description;
+				public new function HRESULT(ref IValueMapItem self, BSTR description) put_Description;
+				public new function HRESULT(ref IValueMapItem self, out int16 enabled) get_Enabled;
+				public new function HRESULT(ref IValueMapItem self, int16 enabled) put_Enabled;
+				public new function HRESULT(ref IValueMapItem self, BSTR* key) get_Key;
+				public new function HRESULT(ref IValueMapItem self, BSTR key) put_Key;
+				public new function HRESULT(ref IValueMapItem self, out VARIANT Value) get_Value;
+				public new function HRESULT(ref IValueMapItem self, VARIANT Value) put_Value;
+				public new function HRESULT(ref IValueMapItem self, out ValueMapType type) get_ValueMapType;
+				public new function HRESULT(ref IValueMapItem self, ValueMapType type) put_ValueMapType;
 			}
 		}
 		[CRepr]
@@ -2693,79 +2693,79 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* retVal) mut
+			public HRESULT get_Count(out int32 retVal) mut
 			{
-				return VT.get_Count(&this, retVal);
+				return VT.get_Count(ref this, out retVal);
 			}
 			public HRESULT get_Item(VARIANT index, IValueMapItem** value) mut
 			{
-				return VT.get_Item(&this, index, value);
+				return VT.get_Item(ref this, index, value);
 			}
 			public HRESULT get__NewEnum(IUnknown** retVal) mut
 			{
-				return VT.get__NewEnum(&this, retVal);
+				return VT.get__NewEnum(ref this, retVal);
 			}
 			public HRESULT get_Description(BSTR* description) mut
 			{
-				return VT.get_Description(&this, description);
+				return VT.get_Description(ref this, description);
 			}
 			public HRESULT put_Description(BSTR description) mut
 			{
-				return VT.put_Description(&this, description);
+				return VT.put_Description(ref this, description);
 			}
-			public HRESULT get_Value(VARIANT* Value) mut
+			public HRESULT get_Value(out VARIANT Value) mut
 			{
-				return VT.get_Value(&this, Value);
+				return VT.get_Value(ref this, out Value);
 			}
 			public HRESULT put_Value(VARIANT Value) mut
 			{
-				return VT.put_Value(&this, Value);
+				return VT.put_Value(ref this, Value);
 			}
-			public HRESULT get_ValueMapType(ValueMapType* type) mut
+			public HRESULT get_ValueMapType(out ValueMapType type) mut
 			{
-				return VT.get_ValueMapType(&this, type);
+				return VT.get_ValueMapType(ref this, out type);
 			}
 			public HRESULT put_ValueMapType(ValueMapType type) mut
 			{
-				return VT.put_ValueMapType(&this, type);
+				return VT.put_ValueMapType(ref this, type);
 			}
 			public HRESULT Add(VARIANT value) mut
 			{
-				return VT.Add(&this, value);
+				return VT.Add(ref this, value);
 			}
 			public HRESULT Remove(VARIANT value) mut
 			{
-				return VT.Remove(&this, value);
+				return VT.Remove(ref this, value);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			public HRESULT AddRange(IValueMap* map) mut
 			{
-				return VT.AddRange(&this, map);
+				return VT.AddRange(ref this, map);
 			}
 			public HRESULT CreateValueMapItem(IValueMapItem** Item) mut
 			{
-				return VT.CreateValueMapItem(&this, Item);
+				return VT.CreateValueMapItem(ref this, Item);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IValueMap *self, int32* retVal) get_Count;
-				public new function HRESULT(IValueMap *self, VARIANT index, IValueMapItem** value) get_Item;
-				public new function HRESULT(IValueMap *self, IUnknown** retVal) get__NewEnum;
-				public new function HRESULT(IValueMap *self, BSTR* description) get_Description;
-				public new function HRESULT(IValueMap *self, BSTR description) put_Description;
-				public new function HRESULT(IValueMap *self, VARIANT* Value) get_Value;
-				public new function HRESULT(IValueMap *self, VARIANT Value) put_Value;
-				public new function HRESULT(IValueMap *self, ValueMapType* type) get_ValueMapType;
-				public new function HRESULT(IValueMap *self, ValueMapType type) put_ValueMapType;
-				public new function HRESULT(IValueMap *self, VARIANT value) Add;
-				public new function HRESULT(IValueMap *self, VARIANT value) Remove;
-				public new function HRESULT(IValueMap *self) Clear;
-				public new function HRESULT(IValueMap *self, IValueMap* map) AddRange;
-				public new function HRESULT(IValueMap *self, IValueMapItem** Item) CreateValueMapItem;
+				public new function HRESULT(ref IValueMap self, out int32 retVal) get_Count;
+				public new function HRESULT(ref IValueMap self, VARIANT index, IValueMapItem** value) get_Item;
+				public new function HRESULT(ref IValueMap self, IUnknown** retVal) get__NewEnum;
+				public new function HRESULT(ref IValueMap self, BSTR* description) get_Description;
+				public new function HRESULT(ref IValueMap self, BSTR description) put_Description;
+				public new function HRESULT(ref IValueMap self, out VARIANT Value) get_Value;
+				public new function HRESULT(ref IValueMap self, VARIANT Value) put_Value;
+				public new function HRESULT(ref IValueMap self, out ValueMapType type) get_ValueMapType;
+				public new function HRESULT(ref IValueMap self, ValueMapType type) put_ValueMapType;
+				public new function HRESULT(ref IValueMap self, VARIANT value) Add;
+				public new function HRESULT(ref IValueMap self, VARIANT value) Remove;
+				public new function HRESULT(ref IValueMap self) Clear;
+				public new function HRESULT(ref IValueMap self, IValueMap* map) AddRange;
+				public new function HRESULT(ref IValueMap self, IValueMapItem** Item) CreateValueMapItem;
 			}
 		}
 		[CRepr]
@@ -2775,69 +2775,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Value(double* pdblValue) mut
+			public HRESULT get_Value(out double pdblValue) mut
 			{
-				return VT.get_Value(&this, pdblValue);
+				return VT.get_Value(ref this, out pdblValue);
 			}
 			public HRESULT put_Color(uint32 Color) mut
 			{
-				return VT.put_Color(&this, Color);
+				return VT.put_Color(ref this, Color);
 			}
-			public HRESULT get_Color(uint32* pColor) mut
+			public HRESULT get_Color(out uint32 pColor) mut
 			{
-				return VT.get_Color(&this, pColor);
+				return VT.get_Color(ref this, out pColor);
 			}
 			public HRESULT put_Width(int32 iWidth) mut
 			{
-				return VT.put_Width(&this, iWidth);
+				return VT.put_Width(ref this, iWidth);
 			}
-			public HRESULT get_Width(int32* piValue) mut
+			public HRESULT get_Width(out int32 piValue) mut
 			{
-				return VT.get_Width(&this, piValue);
+				return VT.get_Width(ref this, out piValue);
 			}
 			public HRESULT put_LineStyle(int32 iLineStyle) mut
 			{
-				return VT.put_LineStyle(&this, iLineStyle);
+				return VT.put_LineStyle(ref this, iLineStyle);
 			}
-			public HRESULT get_LineStyle(int32* piValue) mut
+			public HRESULT get_LineStyle(out int32 piValue) mut
 			{
-				return VT.get_LineStyle(&this, piValue);
+				return VT.get_LineStyle(ref this, out piValue);
 			}
 			public HRESULT put_ScaleFactor(int32 iScale) mut
 			{
-				return VT.put_ScaleFactor(&this, iScale);
+				return VT.put_ScaleFactor(ref this, iScale);
 			}
-			public HRESULT get_ScaleFactor(int32* piValue) mut
+			public HRESULT get_ScaleFactor(out int32 piValue) mut
 			{
-				return VT.get_ScaleFactor(&this, piValue);
+				return VT.get_ScaleFactor(ref this, out piValue);
 			}
 			public HRESULT get_Path(BSTR* pstrValue) mut
 			{
-				return VT.get_Path(&this, pstrValue);
+				return VT.get_Path(ref this, pstrValue);
 			}
-			public HRESULT GetValue(double* Value, int32* Status) mut
+			public HRESULT GetValue(out double Value, out int32 Status) mut
 			{
-				return VT.GetValue(&this, Value, Status);
+				return VT.GetValue(ref this, out Value, out Status);
 			}
-			public HRESULT GetStatistics(double* Max, double* Min, double* Avg, int32* Status) mut
+			public HRESULT GetStatistics(out double Max, out double Min, out double Avg, out int32 Status) mut
 			{
-				return VT.GetStatistics(&this, Max, Min, Avg, Status);
+				return VT.GetStatistics(ref this, out Max, out Min, out Avg, out Status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ICounterItem *self, double* pdblValue) get_Value;
-				public new function HRESULT(ICounterItem *self, uint32 Color) put_Color;
-				public new function HRESULT(ICounterItem *self, uint32* pColor) get_Color;
-				public new function HRESULT(ICounterItem *self, int32 iWidth) put_Width;
-				public new function HRESULT(ICounterItem *self, int32* piValue) get_Width;
-				public new function HRESULT(ICounterItem *self, int32 iLineStyle) put_LineStyle;
-				public new function HRESULT(ICounterItem *self, int32* piValue) get_LineStyle;
-				public new function HRESULT(ICounterItem *self, int32 iScale) put_ScaleFactor;
-				public new function HRESULT(ICounterItem *self, int32* piValue) get_ScaleFactor;
-				public new function HRESULT(ICounterItem *self, BSTR* pstrValue) get_Path;
-				public new function HRESULT(ICounterItem *self, double* Value, int32* Status) GetValue;
-				public new function HRESULT(ICounterItem *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
+				public new function HRESULT(ref ICounterItem self, out double pdblValue) get_Value;
+				public new function HRESULT(ref ICounterItem self, uint32 Color) put_Color;
+				public new function HRESULT(ref ICounterItem self, out uint32 pColor) get_Color;
+				public new function HRESULT(ref ICounterItem self, int32 iWidth) put_Width;
+				public new function HRESULT(ref ICounterItem self, out int32 piValue) get_Width;
+				public new function HRESULT(ref ICounterItem self, int32 iLineStyle) put_LineStyle;
+				public new function HRESULT(ref ICounterItem self, out int32 piValue) get_LineStyle;
+				public new function HRESULT(ref ICounterItem self, int32 iScale) put_ScaleFactor;
+				public new function HRESULT(ref ICounterItem self, out int32 piValue) get_ScaleFactor;
+				public new function HRESULT(ref ICounterItem self, BSTR* pstrValue) get_Path;
+				public new function HRESULT(ref ICounterItem self, out double Value, out int32 Status) GetValue;
+				public new function HRESULT(ref ICounterItem self, out double Max, out double Min, out double Avg, out int32 Status) GetStatistics;
 			}
 		}
 		[CRepr]
@@ -2849,32 +2849,32 @@ namespace Win32
 			
 			public HRESULT put_Selected(int16 bState) mut
 			{
-				return VT.put_Selected(&this, bState);
+				return VT.put_Selected(ref this, bState);
 			}
-			public HRESULT get_Selected(int16* pbState) mut
+			public HRESULT get_Selected(out int16 pbState) mut
 			{
-				return VT.get_Selected(&this, pbState);
+				return VT.get_Selected(ref this, out pbState);
 			}
 			public HRESULT put_Visible(int16 bState) mut
 			{
-				return VT.put_Visible(&this, bState);
+				return VT.put_Visible(ref this, bState);
 			}
-			public HRESULT get_Visible(int16* pbState) mut
+			public HRESULT get_Visible(out int16 pbState) mut
 			{
-				return VT.get_Visible(&this, pbState);
+				return VT.get_Visible(ref this, out pbState);
 			}
-			public HRESULT GetDataAt(int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) mut
+			public HRESULT GetDataAt(int32 iIndex, SysmonDataType iWhich, out VARIANT pVariant) mut
 			{
-				return VT.GetDataAt(&this, iIndex, iWhich, pVariant);
+				return VT.GetDataAt(ref this, iIndex, iWhich, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : ICounterItem.VTable
 			{
-				public new function HRESULT(ICounterItem2 *self, int16 bState) put_Selected;
-				public new function HRESULT(ICounterItem2 *self, int16* pbState) get_Selected;
-				public new function HRESULT(ICounterItem2 *self, int16 bState) put_Visible;
-				public new function HRESULT(ICounterItem2 *self, int16* pbState) get_Visible;
-				public new function HRESULT(ICounterItem2 *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
+				public new function HRESULT(ref ICounterItem2 self, int16 bState) put_Selected;
+				public new function HRESULT(ref ICounterItem2 self, out int16 pbState) get_Selected;
+				public new function HRESULT(ref ICounterItem2 self, int16 bState) put_Visible;
+				public new function HRESULT(ref ICounterItem2 self, out int16 pbState) get_Visible;
+				public new function HRESULT(ref ICounterItem2 self, int32 iIndex, SysmonDataType iWhich, out VARIANT pVariant) GetDataAt;
 			}
 		}
 		[CRepr]
@@ -2884,94 +2884,94 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Value(double* pdblValue) mut
+			public HRESULT get_Value(out double pdblValue) mut
 			{
-				return VT.get_Value(&this, pdblValue);
+				return VT.get_Value(ref this, out pdblValue);
 			}
 			public HRESULT put_Color(uint32 Color) mut
 			{
-				return VT.put_Color(&this, Color);
+				return VT.put_Color(ref this, Color);
 			}
-			public HRESULT get_Color(uint32* pColor) mut
+			public HRESULT get_Color(out uint32 pColor) mut
 			{
-				return VT.get_Color(&this, pColor);
+				return VT.get_Color(ref this, out pColor);
 			}
 			public HRESULT put_Width(int32 iWidth) mut
 			{
-				return VT.put_Width(&this, iWidth);
+				return VT.put_Width(ref this, iWidth);
 			}
-			public HRESULT get_Width(int32* piValue) mut
+			public HRESULT get_Width(out int32 piValue) mut
 			{
-				return VT.get_Width(&this, piValue);
+				return VT.get_Width(ref this, out piValue);
 			}
 			public HRESULT put_LineStyle(int32 iLineStyle) mut
 			{
-				return VT.put_LineStyle(&this, iLineStyle);
+				return VT.put_LineStyle(ref this, iLineStyle);
 			}
-			public HRESULT get_LineStyle(int32* piValue) mut
+			public HRESULT get_LineStyle(out int32 piValue) mut
 			{
-				return VT.get_LineStyle(&this, piValue);
+				return VT.get_LineStyle(ref this, out piValue);
 			}
 			public HRESULT put_ScaleFactor(int32 iScale) mut
 			{
-				return VT.put_ScaleFactor(&this, iScale);
+				return VT.put_ScaleFactor(ref this, iScale);
 			}
-			public HRESULT get_ScaleFactor(int32* piValue) mut
+			public HRESULT get_ScaleFactor(out int32 piValue) mut
 			{
-				return VT.get_ScaleFactor(&this, piValue);
+				return VT.get_ScaleFactor(ref this, out piValue);
 			}
 			public HRESULT get_Path(BSTR* pstrValue) mut
 			{
-				return VT.get_Path(&this, pstrValue);
+				return VT.get_Path(ref this, pstrValue);
 			}
-			public HRESULT GetValue(double* Value, int32* Status) mut
+			public HRESULT GetValue(out double Value, out int32 Status) mut
 			{
-				return VT.GetValue(&this, Value, Status);
+				return VT.GetValue(ref this, out Value, out Status);
 			}
-			public HRESULT GetStatistics(double* Max, double* Min, double* Avg, int32* Status) mut
+			public HRESULT GetStatistics(out double Max, out double Min, out double Avg, out int32 Status) mut
 			{
-				return VT.GetStatistics(&this, Max, Min, Avg, Status);
+				return VT.GetStatistics(ref this, out Max, out Min, out Avg, out Status);
 			}
 			public HRESULT put_Selected(int16 bState) mut
 			{
-				return VT.put_Selected(&this, bState);
+				return VT.put_Selected(ref this, bState);
 			}
-			public HRESULT get_Selected(int16* pbState) mut
+			public HRESULT get_Selected(out int16 pbState) mut
 			{
-				return VT.get_Selected(&this, pbState);
+				return VT.get_Selected(ref this, out pbState);
 			}
 			public HRESULT put_Visible(int16 bState) mut
 			{
-				return VT.put_Visible(&this, bState);
+				return VT.put_Visible(ref this, bState);
 			}
-			public HRESULT get_Visible(int16* pbState) mut
+			public HRESULT get_Visible(out int16 pbState) mut
 			{
-				return VT.get_Visible(&this, pbState);
+				return VT.get_Visible(ref this, out pbState);
 			}
-			public HRESULT GetDataAt(int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) mut
+			public HRESULT GetDataAt(int32 iIndex, SysmonDataType iWhich, out VARIANT pVariant) mut
 			{
-				return VT.GetDataAt(&this, iIndex, iWhich, pVariant);
+				return VT.GetDataAt(ref this, iIndex, iWhich, out pVariant);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(_ICounterItemUnion *self, double* pdblValue) get_Value;
-				public new function HRESULT(_ICounterItemUnion *self, uint32 Color) put_Color;
-				public new function HRESULT(_ICounterItemUnion *self, uint32* pColor) get_Color;
-				public new function HRESULT(_ICounterItemUnion *self, int32 iWidth) put_Width;
-				public new function HRESULT(_ICounterItemUnion *self, int32* piValue) get_Width;
-				public new function HRESULT(_ICounterItemUnion *self, int32 iLineStyle) put_LineStyle;
-				public new function HRESULT(_ICounterItemUnion *self, int32* piValue) get_LineStyle;
-				public new function HRESULT(_ICounterItemUnion *self, int32 iScale) put_ScaleFactor;
-				public new function HRESULT(_ICounterItemUnion *self, int32* piValue) get_ScaleFactor;
-				public new function HRESULT(_ICounterItemUnion *self, BSTR* pstrValue) get_Path;
-				public new function HRESULT(_ICounterItemUnion *self, double* Value, int32* Status) GetValue;
-				public new function HRESULT(_ICounterItemUnion *self, double* Max, double* Min, double* Avg, int32* Status) GetStatistics;
-				public new function HRESULT(_ICounterItemUnion *self, int16 bState) put_Selected;
-				public new function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Selected;
-				public new function HRESULT(_ICounterItemUnion *self, int16 bState) put_Visible;
-				public new function HRESULT(_ICounterItemUnion *self, int16* pbState) get_Visible;
-				public new function HRESULT(_ICounterItemUnion *self, int32 iIndex, SysmonDataType iWhich, VARIANT* pVariant) GetDataAt;
+				public new function HRESULT(ref _ICounterItemUnion self, out double pdblValue) get_Value;
+				public new function HRESULT(ref _ICounterItemUnion self, uint32 Color) put_Color;
+				public new function HRESULT(ref _ICounterItemUnion self, out uint32 pColor) get_Color;
+				public new function HRESULT(ref _ICounterItemUnion self, int32 iWidth) put_Width;
+				public new function HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_Width;
+				public new function HRESULT(ref _ICounterItemUnion self, int32 iLineStyle) put_LineStyle;
+				public new function HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_LineStyle;
+				public new function HRESULT(ref _ICounterItemUnion self, int32 iScale) put_ScaleFactor;
+				public new function HRESULT(ref _ICounterItemUnion self, out int32 piValue) get_ScaleFactor;
+				public new function HRESULT(ref _ICounterItemUnion self, BSTR* pstrValue) get_Path;
+				public new function HRESULT(ref _ICounterItemUnion self, out double Value, out int32 Status) GetValue;
+				public new function HRESULT(ref _ICounterItemUnion self, out double Max, out double Min, out double Avg, out int32 Status) GetStatistics;
+				public new function HRESULT(ref _ICounterItemUnion self, int16 bState) put_Selected;
+				public new function HRESULT(ref _ICounterItemUnion self, out int16 pbState) get_Selected;
+				public new function HRESULT(ref _ICounterItemUnion self, int16 bState) put_Visible;
+				public new function HRESULT(ref _ICounterItemUnion self, out int16 pbState) get_Visible;
+				public new function HRESULT(ref _ICounterItemUnion self, int32 iIndex, SysmonDataType iWhich, out VARIANT pVariant) GetDataAt;
 			}
 		}
 		[CRepr]
@@ -2993,34 +2993,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* pLong) mut
+			public HRESULT get_Count(out int32 pLong) mut
 			{
-				return VT.get_Count(&this, pLong);
+				return VT.get_Count(ref this, out pLong);
 			}
 			public HRESULT get__NewEnum(IUnknown** ppIunk) mut
 			{
-				return VT.get__NewEnum(&this, ppIunk);
+				return VT.get__NewEnum(ref this, ppIunk);
 			}
 			public HRESULT get_Item(VARIANT index, DICounterItem** ppI) mut
 			{
-				return VT.get_Item(&this, index, ppI);
+				return VT.get_Item(ref this, index, ppI);
 			}
 			public HRESULT Add(BSTR pathname, DICounterItem** ppI) mut
 			{
-				return VT.Add(&this, pathname, ppI);
+				return VT.Add(ref this, pathname, ppI);
 			}
 			public HRESULT Remove(VARIANT index) mut
 			{
-				return VT.Remove(&this, index);
+				return VT.Remove(ref this, index);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ICounters *self, int32* pLong) get_Count;
-				public new function HRESULT(ICounters *self, IUnknown** ppIunk) get__NewEnum;
-				public new function HRESULT(ICounters *self, VARIANT index, DICounterItem** ppI) get_Item;
-				public new function HRESULT(ICounters *self, BSTR pathname, DICounterItem** ppI) Add;
-				public new function HRESULT(ICounters *self, VARIANT index) Remove;
+				public new function HRESULT(ref ICounters self, out int32 pLong) get_Count;
+				public new function HRESULT(ref ICounters self, IUnknown** ppIunk) get__NewEnum;
+				public new function HRESULT(ref ICounters self, VARIANT index, DICounterItem** ppI) get_Item;
+				public new function HRESULT(ref ICounters self, BSTR pathname, DICounterItem** ppI) Add;
+				public new function HRESULT(ref ICounters self, VARIANT index) Remove;
 			}
 		}
 		[CRepr]
@@ -3032,12 +3032,12 @@ namespace Win32
 			
 			public HRESULT get_Path(BSTR* pstrValue) mut
 			{
-				return VT.get_Path(&this, pstrValue);
+				return VT.get_Path(ref this, pstrValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILogFileItem *self, BSTR* pstrValue) get_Path;
+				public new function HRESULT(ref ILogFileItem self, BSTR* pstrValue) get_Path;
 			}
 		}
 		[CRepr]
@@ -3059,34 +3059,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* pLong) mut
+			public HRESULT get_Count(out int32 pLong) mut
 			{
-				return VT.get_Count(&this, pLong);
+				return VT.get_Count(ref this, out pLong);
 			}
 			public HRESULT get__NewEnum(IUnknown** ppIunk) mut
 			{
-				return VT.get__NewEnum(&this, ppIunk);
+				return VT.get__NewEnum(ref this, ppIunk);
 			}
 			public HRESULT get_Item(VARIANT index, DILogFileItem** ppI) mut
 			{
-				return VT.get_Item(&this, index, ppI);
+				return VT.get_Item(ref this, index, ppI);
 			}
 			public HRESULT Add(BSTR pathname, DILogFileItem** ppI) mut
 			{
-				return VT.Add(&this, pathname, ppI);
+				return VT.Add(ref this, pathname, ppI);
 			}
 			public HRESULT Remove(VARIANT index) mut
 			{
-				return VT.Remove(&this, index);
+				return VT.Remove(ref this, index);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ILogFiles *self, int32* pLong) get_Count;
-				public new function HRESULT(ILogFiles *self, IUnknown** ppIunk) get__NewEnum;
-				public new function HRESULT(ILogFiles *self, VARIANT index, DILogFileItem** ppI) get_Item;
-				public new function HRESULT(ILogFiles *self, BSTR pathname, DILogFileItem** ppI) Add;
-				public new function HRESULT(ILogFiles *self, VARIANT index) Remove;
+				public new function HRESULT(ref ILogFiles self, out int32 pLong) get_Count;
+				public new function HRESULT(ref ILogFiles self, IUnknown** ppIunk) get__NewEnum;
+				public new function HRESULT(ref ILogFiles self, VARIANT index, DILogFileItem** ppI) get_Item;
+				public new function HRESULT(ref ILogFiles self, BSTR pathname, DILogFileItem** ppI) Add;
+				public new function HRESULT(ref ILogFiles self, VARIANT index) Remove;
 			}
 		}
 		[CRepr]
@@ -3096,389 +3096,389 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Appearance(int32* iAppearance) mut
+			public HRESULT get_Appearance(out int32 iAppearance) mut
 			{
-				return VT.get_Appearance(&this, iAppearance);
+				return VT.get_Appearance(ref this, out iAppearance);
 			}
 			public HRESULT put_Appearance(int32 iAppearance) mut
 			{
-				return VT.put_Appearance(&this, iAppearance);
+				return VT.put_Appearance(ref this, iAppearance);
 			}
-			public HRESULT get_BackColor(uint32* pColor) mut
+			public HRESULT get_BackColor(out uint32 pColor) mut
 			{
-				return VT.get_BackColor(&this, pColor);
+				return VT.get_BackColor(ref this, out pColor);
 			}
 			public HRESULT put_BackColor(uint32 Color) mut
 			{
-				return VT.put_BackColor(&this, Color);
+				return VT.put_BackColor(ref this, Color);
 			}
-			public HRESULT get_BorderStyle(int32* iBorderStyle) mut
+			public HRESULT get_BorderStyle(out int32 iBorderStyle) mut
 			{
-				return VT.get_BorderStyle(&this, iBorderStyle);
+				return VT.get_BorderStyle(ref this, out iBorderStyle);
 			}
 			public HRESULT put_BorderStyle(int32 iBorderStyle) mut
 			{
-				return VT.put_BorderStyle(&this, iBorderStyle);
+				return VT.put_BorderStyle(ref this, iBorderStyle);
 			}
-			public HRESULT get_ForeColor(uint32* pColor) mut
+			public HRESULT get_ForeColor(out uint32 pColor) mut
 			{
-				return VT.get_ForeColor(&this, pColor);
+				return VT.get_ForeColor(ref this, out pColor);
 			}
 			public HRESULT put_ForeColor(uint32 Color) mut
 			{
-				return VT.put_ForeColor(&this, Color);
+				return VT.put_ForeColor(ref this, Color);
 			}
 			public HRESULT get_Font(IFontDisp** ppFont) mut
 			{
-				return VT.get_Font(&this, ppFont);
+				return VT.get_Font(ref this, ppFont);
 			}
 			public HRESULT putref_Font(IFontDisp* pFont) mut
 			{
-				return VT.putref_Font(&this, pFont);
+				return VT.putref_Font(ref this, pFont);
 			}
 			public HRESULT get_Counters(ICounters** ppICounters) mut
 			{
-				return VT.get_Counters(&this, ppICounters);
+				return VT.get_Counters(ref this, ppICounters);
 			}
 			public HRESULT put_ShowVerticalGrid(int16 bState) mut
 			{
-				return VT.put_ShowVerticalGrid(&this, bState);
+				return VT.put_ShowVerticalGrid(ref this, bState);
 			}
-			public HRESULT get_ShowVerticalGrid(int16* pbState) mut
+			public HRESULT get_ShowVerticalGrid(out int16 pbState) mut
 			{
-				return VT.get_ShowVerticalGrid(&this, pbState);
+				return VT.get_ShowVerticalGrid(ref this, out pbState);
 			}
 			public HRESULT put_ShowHorizontalGrid(int16 bState) mut
 			{
-				return VT.put_ShowHorizontalGrid(&this, bState);
+				return VT.put_ShowHorizontalGrid(ref this, bState);
 			}
-			public HRESULT get_ShowHorizontalGrid(int16* pbState) mut
+			public HRESULT get_ShowHorizontalGrid(out int16 pbState) mut
 			{
-				return VT.get_ShowHorizontalGrid(&this, pbState);
+				return VT.get_ShowHorizontalGrid(ref this, out pbState);
 			}
 			public HRESULT put_ShowLegend(int16 bState) mut
 			{
-				return VT.put_ShowLegend(&this, bState);
+				return VT.put_ShowLegend(ref this, bState);
 			}
-			public HRESULT get_ShowLegend(int16* pbState) mut
+			public HRESULT get_ShowLegend(out int16 pbState) mut
 			{
-				return VT.get_ShowLegend(&this, pbState);
+				return VT.get_ShowLegend(ref this, out pbState);
 			}
 			public HRESULT put_ShowScaleLabels(int16 bState) mut
 			{
-				return VT.put_ShowScaleLabels(&this, bState);
+				return VT.put_ShowScaleLabels(ref this, bState);
 			}
-			public HRESULT get_ShowScaleLabels(int16* pbState) mut
+			public HRESULT get_ShowScaleLabels(out int16 pbState) mut
 			{
-				return VT.get_ShowScaleLabels(&this, pbState);
+				return VT.get_ShowScaleLabels(ref this, out pbState);
 			}
 			public HRESULT put_ShowValueBar(int16 bState) mut
 			{
-				return VT.put_ShowValueBar(&this, bState);
+				return VT.put_ShowValueBar(ref this, bState);
 			}
-			public HRESULT get_ShowValueBar(int16* pbState) mut
+			public HRESULT get_ShowValueBar(out int16 pbState) mut
 			{
-				return VT.get_ShowValueBar(&this, pbState);
+				return VT.get_ShowValueBar(ref this, out pbState);
 			}
 			public HRESULT put_MaximumScale(int32 iValue) mut
 			{
-				return VT.put_MaximumScale(&this, iValue);
+				return VT.put_MaximumScale(ref this, iValue);
 			}
-			public HRESULT get_MaximumScale(int32* piValue) mut
+			public HRESULT get_MaximumScale(out int32 piValue) mut
 			{
-				return VT.get_MaximumScale(&this, piValue);
+				return VT.get_MaximumScale(ref this, out piValue);
 			}
 			public HRESULT put_MinimumScale(int32 iValue) mut
 			{
-				return VT.put_MinimumScale(&this, iValue);
+				return VT.put_MinimumScale(ref this, iValue);
 			}
-			public HRESULT get_MinimumScale(int32* piValue) mut
+			public HRESULT get_MinimumScale(out int32 piValue) mut
 			{
-				return VT.get_MinimumScale(&this, piValue);
+				return VT.get_MinimumScale(ref this, out piValue);
 			}
 			public HRESULT put_UpdateInterval(float fValue) mut
 			{
-				return VT.put_UpdateInterval(&this, fValue);
+				return VT.put_UpdateInterval(ref this, fValue);
 			}
-			public HRESULT get_UpdateInterval(float* pfValue) mut
+			public HRESULT get_UpdateInterval(out float pfValue) mut
 			{
-				return VT.get_UpdateInterval(&this, pfValue);
+				return VT.get_UpdateInterval(ref this, out pfValue);
 			}
 			public HRESULT put_DisplayType(DisplayTypeConstants eDisplayType) mut
 			{
-				return VT.put_DisplayType(&this, eDisplayType);
+				return VT.put_DisplayType(ref this, eDisplayType);
 			}
-			public HRESULT get_DisplayType(DisplayTypeConstants* peDisplayType) mut
+			public HRESULT get_DisplayType(out DisplayTypeConstants peDisplayType) mut
 			{
-				return VT.get_DisplayType(&this, peDisplayType);
+				return VT.get_DisplayType(ref this, out peDisplayType);
 			}
 			public HRESULT put_ManualUpdate(int16 bState) mut
 			{
-				return VT.put_ManualUpdate(&this, bState);
+				return VT.put_ManualUpdate(ref this, bState);
 			}
-			public HRESULT get_ManualUpdate(int16* pbState) mut
+			public HRESULT get_ManualUpdate(out int16 pbState) mut
 			{
-				return VT.get_ManualUpdate(&this, pbState);
+				return VT.get_ManualUpdate(ref this, out pbState);
 			}
 			public HRESULT put_GraphTitle(BSTR bsTitle) mut
 			{
-				return VT.put_GraphTitle(&this, bsTitle);
+				return VT.put_GraphTitle(ref this, bsTitle);
 			}
 			public HRESULT get_GraphTitle(BSTR* pbsTitle) mut
 			{
-				return VT.get_GraphTitle(&this, pbsTitle);
+				return VT.get_GraphTitle(ref this, pbsTitle);
 			}
 			public HRESULT put_YAxisLabel(BSTR bsTitle) mut
 			{
-				return VT.put_YAxisLabel(&this, bsTitle);
+				return VT.put_YAxisLabel(ref this, bsTitle);
 			}
 			public HRESULT get_YAxisLabel(BSTR* pbsTitle) mut
 			{
-				return VT.get_YAxisLabel(&this, pbsTitle);
+				return VT.get_YAxisLabel(ref this, pbsTitle);
 			}
 			public HRESULT CollectSample() mut
 			{
-				return VT.CollectSample(&this);
+				return VT.CollectSample(ref this);
 			}
 			public HRESULT UpdateGraph() mut
 			{
-				return VT.UpdateGraph(&this);
+				return VT.UpdateGraph(ref this);
 			}
 			public HRESULT BrowseCounters() mut
 			{
-				return VT.BrowseCounters(&this);
+				return VT.BrowseCounters(ref this);
 			}
 			public HRESULT DisplayProperties() mut
 			{
-				return VT.DisplayProperties(&this);
+				return VT.DisplayProperties(ref this);
 			}
 			public HRESULT Counter(int32 iIndex, ICounterItem** ppICounter) mut
 			{
-				return VT.Counter(&this, iIndex, ppICounter);
+				return VT.Counter(ref this, iIndex, ppICounter);
 			}
 			public HRESULT AddCounter(BSTR bsPath, ICounterItem** ppICounter) mut
 			{
-				return VT.AddCounter(&this, bsPath, ppICounter);
+				return VT.AddCounter(ref this, bsPath, ppICounter);
 			}
 			public HRESULT DeleteCounter(ICounterItem* pCtr) mut
 			{
-				return VT.DeleteCounter(&this, pCtr);
+				return VT.DeleteCounter(ref this, pCtr);
 			}
-			public HRESULT get_BackColorCtl(uint32* pColor) mut
+			public HRESULT get_BackColorCtl(out uint32 pColor) mut
 			{
-				return VT.get_BackColorCtl(&this, pColor);
+				return VT.get_BackColorCtl(ref this, out pColor);
 			}
 			public HRESULT put_BackColorCtl(uint32 Color) mut
 			{
-				return VT.put_BackColorCtl(&this, Color);
+				return VT.put_BackColorCtl(ref this, Color);
 			}
 			public HRESULT put_LogFileName(BSTR bsFileName) mut
 			{
-				return VT.put_LogFileName(&this, bsFileName);
+				return VT.put_LogFileName(ref this, bsFileName);
 			}
 			public HRESULT get_LogFileName(BSTR* bsFileName) mut
 			{
-				return VT.get_LogFileName(&this, bsFileName);
+				return VT.get_LogFileName(ref this, bsFileName);
 			}
 			public HRESULT put_LogViewStart(double StartTime) mut
 			{
-				return VT.put_LogViewStart(&this, StartTime);
+				return VT.put_LogViewStart(ref this, StartTime);
 			}
-			public HRESULT get_LogViewStart(double* StartTime) mut
+			public HRESULT get_LogViewStart(out double StartTime) mut
 			{
-				return VT.get_LogViewStart(&this, StartTime);
+				return VT.get_LogViewStart(ref this, out StartTime);
 			}
 			public HRESULT put_LogViewStop(double StopTime) mut
 			{
-				return VT.put_LogViewStop(&this, StopTime);
+				return VT.put_LogViewStop(ref this, StopTime);
 			}
-			public HRESULT get_LogViewStop(double* StopTime) mut
+			public HRESULT get_LogViewStop(out double StopTime) mut
 			{
-				return VT.get_LogViewStop(&this, StopTime);
+				return VT.get_LogViewStop(ref this, out StopTime);
 			}
-			public HRESULT get_GridColor(uint32* pColor) mut
+			public HRESULT get_GridColor(out uint32 pColor) mut
 			{
-				return VT.get_GridColor(&this, pColor);
+				return VT.get_GridColor(ref this, out pColor);
 			}
 			public HRESULT put_GridColor(uint32 Color) mut
 			{
-				return VT.put_GridColor(&this, Color);
+				return VT.put_GridColor(ref this, Color);
 			}
-			public HRESULT get_TimeBarColor(uint32* pColor) mut
+			public HRESULT get_TimeBarColor(out uint32 pColor) mut
 			{
-				return VT.get_TimeBarColor(&this, pColor);
+				return VT.get_TimeBarColor(ref this, out pColor);
 			}
 			public HRESULT put_TimeBarColor(uint32 Color) mut
 			{
-				return VT.put_TimeBarColor(&this, Color);
+				return VT.put_TimeBarColor(ref this, Color);
 			}
-			public HRESULT get_Highlight(int16* pbState) mut
+			public HRESULT get_Highlight(out int16 pbState) mut
 			{
-				return VT.get_Highlight(&this, pbState);
+				return VT.get_Highlight(ref this, out pbState);
 			}
 			public HRESULT put_Highlight(int16 bState) mut
 			{
-				return VT.put_Highlight(&this, bState);
+				return VT.put_Highlight(ref this, bState);
 			}
-			public HRESULT get_ShowToolbar(int16* pbState) mut
+			public HRESULT get_ShowToolbar(out int16 pbState) mut
 			{
-				return VT.get_ShowToolbar(&this, pbState);
+				return VT.get_ShowToolbar(ref this, out pbState);
 			}
 			public HRESULT put_ShowToolbar(int16 bState) mut
 			{
-				return VT.put_ShowToolbar(&this, bState);
+				return VT.put_ShowToolbar(ref this, bState);
 			}
 			public HRESULT Paste() mut
 			{
-				return VT.Paste(&this);
+				return VT.Paste(ref this);
 			}
 			public HRESULT Copy() mut
 			{
-				return VT.Copy(&this);
+				return VT.Copy(ref this);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT put_ReadOnly(int16 bState) mut
 			{
-				return VT.put_ReadOnly(&this, bState);
+				return VT.put_ReadOnly(ref this, bState);
 			}
-			public HRESULT get_ReadOnly(int16* pbState) mut
+			public HRESULT get_ReadOnly(out int16 pbState) mut
 			{
-				return VT.get_ReadOnly(&this, pbState);
+				return VT.get_ReadOnly(ref this, out pbState);
 			}
 			public HRESULT put_ReportValueType(ReportValueTypeConstants eReportValueType) mut
 			{
-				return VT.put_ReportValueType(&this, eReportValueType);
+				return VT.put_ReportValueType(ref this, eReportValueType);
 			}
-			public HRESULT get_ReportValueType(ReportValueTypeConstants* peReportValueType) mut
+			public HRESULT get_ReportValueType(out ReportValueTypeConstants peReportValueType) mut
 			{
-				return VT.get_ReportValueType(&this, peReportValueType);
+				return VT.get_ReportValueType(ref this, out peReportValueType);
 			}
 			public HRESULT put_MonitorDuplicateInstances(int16 bState) mut
 			{
-				return VT.put_MonitorDuplicateInstances(&this, bState);
+				return VT.put_MonitorDuplicateInstances(ref this, bState);
 			}
-			public HRESULT get_MonitorDuplicateInstances(int16* pbState) mut
+			public HRESULT get_MonitorDuplicateInstances(out int16 pbState) mut
 			{
-				return VT.get_MonitorDuplicateInstances(&this, pbState);
+				return VT.get_MonitorDuplicateInstances(ref this, out pbState);
 			}
 			public HRESULT put_DisplayFilter(int32 iValue) mut
 			{
-				return VT.put_DisplayFilter(&this, iValue);
+				return VT.put_DisplayFilter(ref this, iValue);
 			}
-			public HRESULT get_DisplayFilter(int32* piValue) mut
+			public HRESULT get_DisplayFilter(out int32 piValue) mut
 			{
-				return VT.get_DisplayFilter(&this, piValue);
+				return VT.get_DisplayFilter(ref this, out piValue);
 			}
 			public HRESULT get_LogFiles(ILogFiles** ppILogFiles) mut
 			{
-				return VT.get_LogFiles(&this, ppILogFiles);
+				return VT.get_LogFiles(ref this, ppILogFiles);
 			}
 			public HRESULT put_DataSourceType(DataSourceTypeConstants eDataSourceType) mut
 			{
-				return VT.put_DataSourceType(&this, eDataSourceType);
+				return VT.put_DataSourceType(ref this, eDataSourceType);
 			}
-			public HRESULT get_DataSourceType(DataSourceTypeConstants* peDataSourceType) mut
+			public HRESULT get_DataSourceType(out DataSourceTypeConstants peDataSourceType) mut
 			{
-				return VT.get_DataSourceType(&this, peDataSourceType);
+				return VT.get_DataSourceType(ref this, out peDataSourceType);
 			}
 			public HRESULT put_SqlDsnName(BSTR bsSqlDsnName) mut
 			{
-				return VT.put_SqlDsnName(&this, bsSqlDsnName);
+				return VT.put_SqlDsnName(ref this, bsSqlDsnName);
 			}
 			public HRESULT get_SqlDsnName(BSTR* bsSqlDsnName) mut
 			{
-				return VT.get_SqlDsnName(&this, bsSqlDsnName);
+				return VT.get_SqlDsnName(ref this, bsSqlDsnName);
 			}
 			public HRESULT put_SqlLogSetName(BSTR bsSqlLogSetName) mut
 			{
-				return VT.put_SqlLogSetName(&this, bsSqlLogSetName);
+				return VT.put_SqlLogSetName(ref this, bsSqlLogSetName);
 			}
 			public HRESULT get_SqlLogSetName(BSTR* bsSqlLogSetName) mut
 			{
-				return VT.get_SqlLogSetName(&this, bsSqlLogSetName);
+				return VT.get_SqlLogSetName(ref this, bsSqlLogSetName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ISystemMonitor *self, int32* iAppearance) get_Appearance;
-				public new function HRESULT(ISystemMonitor *self, int32 iAppearance) put_Appearance;
-				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColor;
-				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColor;
-				public new function HRESULT(ISystemMonitor *self, int32* iBorderStyle) get_BorderStyle;
-				public new function HRESULT(ISystemMonitor *self, int32 iBorderStyle) put_BorderStyle;
-				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_ForeColor;
-				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_ForeColor;
-				public new function HRESULT(ISystemMonitor *self, IFontDisp** ppFont) get_Font;
-				public new function HRESULT(ISystemMonitor *self, IFontDisp* pFont) putref_Font;
-				public new function HRESULT(ISystemMonitor *self, ICounters** ppICounters) get_Counters;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowVerticalGrid;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowVerticalGrid;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowHorizontalGrid;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowHorizontalGrid;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowLegend;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowLegend;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowScaleLabels;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowScaleLabels;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowValueBar;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowValueBar;
-				public new function HRESULT(ISystemMonitor *self, int32 iValue) put_MaximumScale;
-				public new function HRESULT(ISystemMonitor *self, int32* piValue) get_MaximumScale;
-				public new function HRESULT(ISystemMonitor *self, int32 iValue) put_MinimumScale;
-				public new function HRESULT(ISystemMonitor *self, int32* piValue) get_MinimumScale;
-				public new function HRESULT(ISystemMonitor *self, float fValue) put_UpdateInterval;
-				public new function HRESULT(ISystemMonitor *self, float* pfValue) get_UpdateInterval;
-				public new function HRESULT(ISystemMonitor *self, DisplayTypeConstants eDisplayType) put_DisplayType;
-				public new function HRESULT(ISystemMonitor *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ManualUpdate;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ManualUpdate;
-				public new function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_GraphTitle;
-				public new function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_GraphTitle;
-				public new function HRESULT(ISystemMonitor *self, BSTR bsTitle) put_YAxisLabel;
-				public new function HRESULT(ISystemMonitor *self, BSTR* pbsTitle) get_YAxisLabel;
-				public new function HRESULT(ISystemMonitor *self) CollectSample;
-				public new function HRESULT(ISystemMonitor *self) UpdateGraph;
-				public new function HRESULT(ISystemMonitor *self) BrowseCounters;
-				public new function HRESULT(ISystemMonitor *self) DisplayProperties;
-				public new function HRESULT(ISystemMonitor *self, int32 iIndex, ICounterItem** ppICounter) Counter;
-				public new function HRESULT(ISystemMonitor *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
-				public new function HRESULT(ISystemMonitor *self, ICounterItem* pCtr) DeleteCounter;
-				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_BackColorCtl;
-				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_BackColorCtl;
-				public new function HRESULT(ISystemMonitor *self, BSTR bsFileName) put_LogFileName;
-				public new function HRESULT(ISystemMonitor *self, BSTR* bsFileName) get_LogFileName;
-				public new function HRESULT(ISystemMonitor *self, double StartTime) put_LogViewStart;
-				public new function HRESULT(ISystemMonitor *self, double* StartTime) get_LogViewStart;
-				public new function HRESULT(ISystemMonitor *self, double StopTime) put_LogViewStop;
-				public new function HRESULT(ISystemMonitor *self, double* StopTime) get_LogViewStop;
-				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_GridColor;
-				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_GridColor;
-				public new function HRESULT(ISystemMonitor *self, uint32* pColor) get_TimeBarColor;
-				public new function HRESULT(ISystemMonitor *self, uint32 Color) put_TimeBarColor;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_Highlight;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_Highlight;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ShowToolbar;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ShowToolbar;
-				public new function HRESULT(ISystemMonitor *self) Paste;
-				public new function HRESULT(ISystemMonitor *self) Copy;
-				public new function HRESULT(ISystemMonitor *self) Reset;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_ReadOnly;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_ReadOnly;
-				public new function HRESULT(ISystemMonitor *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
-				public new function HRESULT(ISystemMonitor *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
-				public new function HRESULT(ISystemMonitor *self, int16 bState) put_MonitorDuplicateInstances;
-				public new function HRESULT(ISystemMonitor *self, int16* pbState) get_MonitorDuplicateInstances;
-				public new function HRESULT(ISystemMonitor *self, int32 iValue) put_DisplayFilter;
-				public new function HRESULT(ISystemMonitor *self, int32* piValue) get_DisplayFilter;
-				public new function HRESULT(ISystemMonitor *self, ILogFiles** ppILogFiles) get_LogFiles;
-				public new function HRESULT(ISystemMonitor *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
-				public new function HRESULT(ISystemMonitor *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
-				public new function HRESULT(ISystemMonitor *self, BSTR bsSqlDsnName) put_SqlDsnName;
-				public new function HRESULT(ISystemMonitor *self, BSTR* bsSqlDsnName) get_SqlDsnName;
-				public new function HRESULT(ISystemMonitor *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-				public new function HRESULT(ISystemMonitor *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+				public new function HRESULT(ref ISystemMonitor self, out int32 iAppearance) get_Appearance;
+				public new function HRESULT(ref ISystemMonitor self, int32 iAppearance) put_Appearance;
+				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_BackColor;
+				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_BackColor;
+				public new function HRESULT(ref ISystemMonitor self, out int32 iBorderStyle) get_BorderStyle;
+				public new function HRESULT(ref ISystemMonitor self, int32 iBorderStyle) put_BorderStyle;
+				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_ForeColor;
+				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_ForeColor;
+				public new function HRESULT(ref ISystemMonitor self, IFontDisp** ppFont) get_Font;
+				public new function HRESULT(ref ISystemMonitor self, IFontDisp* pFont) putref_Font;
+				public new function HRESULT(ref ISystemMonitor self, ICounters** ppICounters) get_Counters;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowVerticalGrid;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowVerticalGrid;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowHorizontalGrid;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowHorizontalGrid;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowLegend;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowLegend;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowScaleLabels;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowScaleLabels;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowValueBar;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowValueBar;
+				public new function HRESULT(ref ISystemMonitor self, int32 iValue) put_MaximumScale;
+				public new function HRESULT(ref ISystemMonitor self, out int32 piValue) get_MaximumScale;
+				public new function HRESULT(ref ISystemMonitor self, int32 iValue) put_MinimumScale;
+				public new function HRESULT(ref ISystemMonitor self, out int32 piValue) get_MinimumScale;
+				public new function HRESULT(ref ISystemMonitor self, float fValue) put_UpdateInterval;
+				public new function HRESULT(ref ISystemMonitor self, out float pfValue) get_UpdateInterval;
+				public new function HRESULT(ref ISystemMonitor self, DisplayTypeConstants eDisplayType) put_DisplayType;
+				public new function HRESULT(ref ISystemMonitor self, out DisplayTypeConstants peDisplayType) get_DisplayType;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ManualUpdate;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ManualUpdate;
+				public new function HRESULT(ref ISystemMonitor self, BSTR bsTitle) put_GraphTitle;
+				public new function HRESULT(ref ISystemMonitor self, BSTR* pbsTitle) get_GraphTitle;
+				public new function HRESULT(ref ISystemMonitor self, BSTR bsTitle) put_YAxisLabel;
+				public new function HRESULT(ref ISystemMonitor self, BSTR* pbsTitle) get_YAxisLabel;
+				public new function HRESULT(ref ISystemMonitor self) CollectSample;
+				public new function HRESULT(ref ISystemMonitor self) UpdateGraph;
+				public new function HRESULT(ref ISystemMonitor self) BrowseCounters;
+				public new function HRESULT(ref ISystemMonitor self) DisplayProperties;
+				public new function HRESULT(ref ISystemMonitor self, int32 iIndex, ICounterItem** ppICounter) Counter;
+				public new function HRESULT(ref ISystemMonitor self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+				public new function HRESULT(ref ISystemMonitor self, ICounterItem* pCtr) DeleteCounter;
+				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_BackColorCtl;
+				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_BackColorCtl;
+				public new function HRESULT(ref ISystemMonitor self, BSTR bsFileName) put_LogFileName;
+				public new function HRESULT(ref ISystemMonitor self, BSTR* bsFileName) get_LogFileName;
+				public new function HRESULT(ref ISystemMonitor self, double StartTime) put_LogViewStart;
+				public new function HRESULT(ref ISystemMonitor self, out double StartTime) get_LogViewStart;
+				public new function HRESULT(ref ISystemMonitor self, double StopTime) put_LogViewStop;
+				public new function HRESULT(ref ISystemMonitor self, out double StopTime) get_LogViewStop;
+				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_GridColor;
+				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_GridColor;
+				public new function HRESULT(ref ISystemMonitor self, out uint32 pColor) get_TimeBarColor;
+				public new function HRESULT(ref ISystemMonitor self, uint32 Color) put_TimeBarColor;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_Highlight;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_Highlight;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ShowToolbar;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ShowToolbar;
+				public new function HRESULT(ref ISystemMonitor self) Paste;
+				public new function HRESULT(ref ISystemMonitor self) Copy;
+				public new function HRESULT(ref ISystemMonitor self) Reset;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_ReadOnly;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_ReadOnly;
+				public new function HRESULT(ref ISystemMonitor self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
+				public new function HRESULT(ref ISystemMonitor self, out ReportValueTypeConstants peReportValueType) get_ReportValueType;
+				public new function HRESULT(ref ISystemMonitor self, int16 bState) put_MonitorDuplicateInstances;
+				public new function HRESULT(ref ISystemMonitor self, out int16 pbState) get_MonitorDuplicateInstances;
+				public new function HRESULT(ref ISystemMonitor self, int32 iValue) put_DisplayFilter;
+				public new function HRESULT(ref ISystemMonitor self, out int32 piValue) get_DisplayFilter;
+				public new function HRESULT(ref ISystemMonitor self, ILogFiles** ppILogFiles) get_LogFiles;
+				public new function HRESULT(ref ISystemMonitor self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
+				public new function HRESULT(ref ISystemMonitor self, out DataSourceTypeConstants peDataSourceType) get_DataSourceType;
+				public new function HRESULT(ref ISystemMonitor self, BSTR bsSqlDsnName) put_SqlDsnName;
+				public new function HRESULT(ref ISystemMonitor self, BSTR* bsSqlDsnName) get_SqlDsnName;
+				public new function HRESULT(ref ISystemMonitor self, BSTR bsSqlLogSetName) put_SqlLogSetName;
+				public new function HRESULT(ref ISystemMonitor self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
 			}
 		}
 		[CRepr]
@@ -3490,107 +3490,107 @@ namespace Win32
 			
 			public HRESULT put_EnableDigitGrouping(int16 bState) mut
 			{
-				return VT.put_EnableDigitGrouping(&this, bState);
+				return VT.put_EnableDigitGrouping(ref this, bState);
 			}
-			public HRESULT get_EnableDigitGrouping(int16* pbState) mut
+			public HRESULT get_EnableDigitGrouping(out int16 pbState) mut
 			{
-				return VT.get_EnableDigitGrouping(&this, pbState);
+				return VT.get_EnableDigitGrouping(ref this, out pbState);
 			}
 			public HRESULT put_EnableToolTips(int16 bState) mut
 			{
-				return VT.put_EnableToolTips(&this, bState);
+				return VT.put_EnableToolTips(ref this, bState);
 			}
-			public HRESULT get_EnableToolTips(int16* pbState) mut
+			public HRESULT get_EnableToolTips(out int16 pbState) mut
 			{
-				return VT.get_EnableToolTips(&this, pbState);
+				return VT.get_EnableToolTips(ref this, out pbState);
 			}
 			public HRESULT put_ShowTimeAxisLabels(int16 bState) mut
 			{
-				return VT.put_ShowTimeAxisLabels(&this, bState);
+				return VT.put_ShowTimeAxisLabels(ref this, bState);
 			}
-			public HRESULT get_ShowTimeAxisLabels(int16* pbState) mut
+			public HRESULT get_ShowTimeAxisLabels(out int16 pbState) mut
 			{
-				return VT.get_ShowTimeAxisLabels(&this, pbState);
+				return VT.get_ShowTimeAxisLabels(ref this, out pbState);
 			}
 			public HRESULT put_ChartScroll(int16 bScroll) mut
 			{
-				return VT.put_ChartScroll(&this, bScroll);
+				return VT.put_ChartScroll(ref this, bScroll);
 			}
-			public HRESULT get_ChartScroll(int16* pbScroll) mut
+			public HRESULT get_ChartScroll(out int16 pbScroll) mut
 			{
-				return VT.get_ChartScroll(&this, pbScroll);
+				return VT.get_ChartScroll(ref this, out pbScroll);
 			}
 			public HRESULT put_DataPointCount(int32 iNewCount) mut
 			{
-				return VT.put_DataPointCount(&this, iNewCount);
+				return VT.put_DataPointCount(ref this, iNewCount);
 			}
-			public HRESULT get_DataPointCount(int32* piDataPointCount) mut
+			public HRESULT get_DataPointCount(out int32 piDataPointCount) mut
 			{
-				return VT.get_DataPointCount(&this, piDataPointCount);
+				return VT.get_DataPointCount(ref this, out piDataPointCount);
 			}
 			public HRESULT ScaleToFit(int16 bSelectedCountersOnly) mut
 			{
-				return VT.ScaleToFit(&this, bSelectedCountersOnly);
+				return VT.ScaleToFit(ref this, bSelectedCountersOnly);
 			}
 			public HRESULT SaveAs(BSTR bstrFileName, SysmonFileType eSysmonFileType) mut
 			{
-				return VT.SaveAs(&this, bstrFileName, eSysmonFileType);
+				return VT.SaveAs(ref this, bstrFileName, eSysmonFileType);
 			}
 			public HRESULT Relog(BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) mut
 			{
-				return VT.Relog(&this, bstrFileName, eSysmonFileType, iFilter);
+				return VT.Relog(ref this, bstrFileName, eSysmonFileType, iFilter);
 			}
 			public HRESULT ClearData() mut
 			{
-				return VT.ClearData(&this);
+				return VT.ClearData(ref this);
 			}
-			public HRESULT get_LogSourceStartTime(double* pDate) mut
+			public HRESULT get_LogSourceStartTime(out double pDate) mut
 			{
-				return VT.get_LogSourceStartTime(&this, pDate);
+				return VT.get_LogSourceStartTime(ref this, out pDate);
 			}
-			public HRESULT get_LogSourceStopTime(double* pDate) mut
+			public HRESULT get_LogSourceStopTime(out double pDate) mut
 			{
-				return VT.get_LogSourceStopTime(&this, pDate);
+				return VT.get_LogSourceStopTime(ref this, out pDate);
 			}
 			public HRESULT SetLogViewRange(double StartTime, double StopTime) mut
 			{
-				return VT.SetLogViewRange(&this, StartTime, StopTime);
+				return VT.SetLogViewRange(ref this, StartTime, StopTime);
 			}
-			public HRESULT GetLogViewRange(double* StartTime, double* StopTime) mut
+			public HRESULT GetLogViewRange(out double StartTime, out double StopTime) mut
 			{
-				return VT.GetLogViewRange(&this, StartTime, StopTime);
+				return VT.GetLogViewRange(ref this, out StartTime, out StopTime);
 			}
 			public HRESULT BatchingLock(int16 fLock, SysmonBatchReason eBatchReason) mut
 			{
-				return VT.BatchingLock(&this, fLock, eBatchReason);
+				return VT.BatchingLock(ref this, fLock, eBatchReason);
 			}
 			public HRESULT LoadSettings(BSTR bstrSettingFileName) mut
 			{
-				return VT.LoadSettings(&this, bstrSettingFileName);
+				return VT.LoadSettings(ref this, bstrSettingFileName);
 			}
 			[CRepr]
 			public struct VTable : ISystemMonitor.VTable
 			{
-				public new function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableDigitGrouping;
-				public new function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableDigitGrouping;
-				public new function HRESULT(ISystemMonitor2 *self, int16 bState) put_EnableToolTips;
-				public new function HRESULT(ISystemMonitor2 *self, int16* pbState) get_EnableToolTips;
-				public new function HRESULT(ISystemMonitor2 *self, int16 bState) put_ShowTimeAxisLabels;
-				public new function HRESULT(ISystemMonitor2 *self, int16* pbState) get_ShowTimeAxisLabels;
-				public new function HRESULT(ISystemMonitor2 *self, int16 bScroll) put_ChartScroll;
-				public new function HRESULT(ISystemMonitor2 *self, int16* pbScroll) get_ChartScroll;
-				public new function HRESULT(ISystemMonitor2 *self, int32 iNewCount) put_DataPointCount;
-				public new function HRESULT(ISystemMonitor2 *self, int32* piDataPointCount) get_DataPointCount;
-				public new function HRESULT(ISystemMonitor2 *self, int16 bSelectedCountersOnly) ScaleToFit;
-				public new function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
-				public new function HRESULT(ISystemMonitor2 *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
-				public new function HRESULT(ISystemMonitor2 *self) ClearData;
-				public new function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStartTime;
-				public new function HRESULT(ISystemMonitor2 *self, double* pDate) get_LogSourceStopTime;
-				public new function HRESULT(ISystemMonitor2 *self, double StartTime, double StopTime) SetLogViewRange;
-				public new function HRESULT(ISystemMonitor2 *self, double* StartTime, double* StopTime) GetLogViewRange;
-				public new function HRESULT(ISystemMonitor2 *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
-				public new function HRESULT(ISystemMonitor2 *self, BSTR bstrSettingFileName) LoadSettings;
+				public new function HRESULT(ref ISystemMonitor2 self, int16 bState) put_EnableDigitGrouping;
+				public new function HRESULT(ref ISystemMonitor2 self, out int16 pbState) get_EnableDigitGrouping;
+				public new function HRESULT(ref ISystemMonitor2 self, int16 bState) put_EnableToolTips;
+				public new function HRESULT(ref ISystemMonitor2 self, out int16 pbState) get_EnableToolTips;
+				public new function HRESULT(ref ISystemMonitor2 self, int16 bState) put_ShowTimeAxisLabels;
+				public new function HRESULT(ref ISystemMonitor2 self, out int16 pbState) get_ShowTimeAxisLabels;
+				public new function HRESULT(ref ISystemMonitor2 self, int16 bScroll) put_ChartScroll;
+				public new function HRESULT(ref ISystemMonitor2 self, out int16 pbScroll) get_ChartScroll;
+				public new function HRESULT(ref ISystemMonitor2 self, int32 iNewCount) put_DataPointCount;
+				public new function HRESULT(ref ISystemMonitor2 self, out int32 piDataPointCount) get_DataPointCount;
+				public new function HRESULT(ref ISystemMonitor2 self, int16 bSelectedCountersOnly) ScaleToFit;
+				public new function HRESULT(ref ISystemMonitor2 self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
+				public new function HRESULT(ref ISystemMonitor2 self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
+				public new function HRESULT(ref ISystemMonitor2 self) ClearData;
+				public new function HRESULT(ref ISystemMonitor2 self, out double pDate) get_LogSourceStartTime;
+				public new function HRESULT(ref ISystemMonitor2 self, out double pDate) get_LogSourceStopTime;
+				public new function HRESULT(ref ISystemMonitor2 self, double StartTime, double StopTime) SetLogViewRange;
+				public new function HRESULT(ref ISystemMonitor2 self, out double StartTime, out double StopTime) GetLogViewRange;
+				public new function HRESULT(ref ISystemMonitor2 self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
+				public new function HRESULT(ref ISystemMonitor2 self, BSTR bstrSettingFileName) LoadSettings;
 			}
 		}
 		[CRepr]
@@ -3600,489 +3600,489 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Appearance(int32* iAppearance) mut
+			public HRESULT get_Appearance(out int32 iAppearance) mut
 			{
-				return VT.get_Appearance(&this, iAppearance);
+				return VT.get_Appearance(ref this, out iAppearance);
 			}
 			public HRESULT put_Appearance(int32 iAppearance) mut
 			{
-				return VT.put_Appearance(&this, iAppearance);
+				return VT.put_Appearance(ref this, iAppearance);
 			}
-			public HRESULT get_BackColor(uint32* pColor) mut
+			public HRESULT get_BackColor(out uint32 pColor) mut
 			{
-				return VT.get_BackColor(&this, pColor);
+				return VT.get_BackColor(ref this, out pColor);
 			}
 			public HRESULT put_BackColor(uint32 Color) mut
 			{
-				return VT.put_BackColor(&this, Color);
+				return VT.put_BackColor(ref this, Color);
 			}
-			public HRESULT get_BorderStyle(int32* iBorderStyle) mut
+			public HRESULT get_BorderStyle(out int32 iBorderStyle) mut
 			{
-				return VT.get_BorderStyle(&this, iBorderStyle);
+				return VT.get_BorderStyle(ref this, out iBorderStyle);
 			}
 			public HRESULT put_BorderStyle(int32 iBorderStyle) mut
 			{
-				return VT.put_BorderStyle(&this, iBorderStyle);
+				return VT.put_BorderStyle(ref this, iBorderStyle);
 			}
-			public HRESULT get_ForeColor(uint32* pColor) mut
+			public HRESULT get_ForeColor(out uint32 pColor) mut
 			{
-				return VT.get_ForeColor(&this, pColor);
+				return VT.get_ForeColor(ref this, out pColor);
 			}
 			public HRESULT put_ForeColor(uint32 Color) mut
 			{
-				return VT.put_ForeColor(&this, Color);
+				return VT.put_ForeColor(ref this, Color);
 			}
 			public HRESULT get_Font(IFontDisp** ppFont) mut
 			{
-				return VT.get_Font(&this, ppFont);
+				return VT.get_Font(ref this, ppFont);
 			}
 			public HRESULT putref_Font(IFontDisp* pFont) mut
 			{
-				return VT.putref_Font(&this, pFont);
+				return VT.putref_Font(ref this, pFont);
 			}
 			public HRESULT get_Counters(ICounters** ppICounters) mut
 			{
-				return VT.get_Counters(&this, ppICounters);
+				return VT.get_Counters(ref this, ppICounters);
 			}
 			public HRESULT put_ShowVerticalGrid(int16 bState) mut
 			{
-				return VT.put_ShowVerticalGrid(&this, bState);
+				return VT.put_ShowVerticalGrid(ref this, bState);
 			}
-			public HRESULT get_ShowVerticalGrid(int16* pbState) mut
+			public HRESULT get_ShowVerticalGrid(out int16 pbState) mut
 			{
-				return VT.get_ShowVerticalGrid(&this, pbState);
+				return VT.get_ShowVerticalGrid(ref this, out pbState);
 			}
 			public HRESULT put_ShowHorizontalGrid(int16 bState) mut
 			{
-				return VT.put_ShowHorizontalGrid(&this, bState);
+				return VT.put_ShowHorizontalGrid(ref this, bState);
 			}
-			public HRESULT get_ShowHorizontalGrid(int16* pbState) mut
+			public HRESULT get_ShowHorizontalGrid(out int16 pbState) mut
 			{
-				return VT.get_ShowHorizontalGrid(&this, pbState);
+				return VT.get_ShowHorizontalGrid(ref this, out pbState);
 			}
 			public HRESULT put_ShowLegend(int16 bState) mut
 			{
-				return VT.put_ShowLegend(&this, bState);
+				return VT.put_ShowLegend(ref this, bState);
 			}
-			public HRESULT get_ShowLegend(int16* pbState) mut
+			public HRESULT get_ShowLegend(out int16 pbState) mut
 			{
-				return VT.get_ShowLegend(&this, pbState);
+				return VT.get_ShowLegend(ref this, out pbState);
 			}
 			public HRESULT put_ShowScaleLabels(int16 bState) mut
 			{
-				return VT.put_ShowScaleLabels(&this, bState);
+				return VT.put_ShowScaleLabels(ref this, bState);
 			}
-			public HRESULT get_ShowScaleLabels(int16* pbState) mut
+			public HRESULT get_ShowScaleLabels(out int16 pbState) mut
 			{
-				return VT.get_ShowScaleLabels(&this, pbState);
+				return VT.get_ShowScaleLabels(ref this, out pbState);
 			}
 			public HRESULT put_ShowValueBar(int16 bState) mut
 			{
-				return VT.put_ShowValueBar(&this, bState);
+				return VT.put_ShowValueBar(ref this, bState);
 			}
-			public HRESULT get_ShowValueBar(int16* pbState) mut
+			public HRESULT get_ShowValueBar(out int16 pbState) mut
 			{
-				return VT.get_ShowValueBar(&this, pbState);
+				return VT.get_ShowValueBar(ref this, out pbState);
 			}
 			public HRESULT put_MaximumScale(int32 iValue) mut
 			{
-				return VT.put_MaximumScale(&this, iValue);
+				return VT.put_MaximumScale(ref this, iValue);
 			}
-			public HRESULT get_MaximumScale(int32* piValue) mut
+			public HRESULT get_MaximumScale(out int32 piValue) mut
 			{
-				return VT.get_MaximumScale(&this, piValue);
+				return VT.get_MaximumScale(ref this, out piValue);
 			}
 			public HRESULT put_MinimumScale(int32 iValue) mut
 			{
-				return VT.put_MinimumScale(&this, iValue);
+				return VT.put_MinimumScale(ref this, iValue);
 			}
-			public HRESULT get_MinimumScale(int32* piValue) mut
+			public HRESULT get_MinimumScale(out int32 piValue) mut
 			{
-				return VT.get_MinimumScale(&this, piValue);
+				return VT.get_MinimumScale(ref this, out piValue);
 			}
 			public HRESULT put_UpdateInterval(float fValue) mut
 			{
-				return VT.put_UpdateInterval(&this, fValue);
+				return VT.put_UpdateInterval(ref this, fValue);
 			}
-			public HRESULT get_UpdateInterval(float* pfValue) mut
+			public HRESULT get_UpdateInterval(out float pfValue) mut
 			{
-				return VT.get_UpdateInterval(&this, pfValue);
+				return VT.get_UpdateInterval(ref this, out pfValue);
 			}
 			public HRESULT put_DisplayType(DisplayTypeConstants eDisplayType) mut
 			{
-				return VT.put_DisplayType(&this, eDisplayType);
+				return VT.put_DisplayType(ref this, eDisplayType);
 			}
-			public HRESULT get_DisplayType(DisplayTypeConstants* peDisplayType) mut
+			public HRESULT get_DisplayType(out DisplayTypeConstants peDisplayType) mut
 			{
-				return VT.get_DisplayType(&this, peDisplayType);
+				return VT.get_DisplayType(ref this, out peDisplayType);
 			}
 			public HRESULT put_ManualUpdate(int16 bState) mut
 			{
-				return VT.put_ManualUpdate(&this, bState);
+				return VT.put_ManualUpdate(ref this, bState);
 			}
-			public HRESULT get_ManualUpdate(int16* pbState) mut
+			public HRESULT get_ManualUpdate(out int16 pbState) mut
 			{
-				return VT.get_ManualUpdate(&this, pbState);
+				return VT.get_ManualUpdate(ref this, out pbState);
 			}
 			public HRESULT put_GraphTitle(BSTR bsTitle) mut
 			{
-				return VT.put_GraphTitle(&this, bsTitle);
+				return VT.put_GraphTitle(ref this, bsTitle);
 			}
 			public HRESULT get_GraphTitle(BSTR* pbsTitle) mut
 			{
-				return VT.get_GraphTitle(&this, pbsTitle);
+				return VT.get_GraphTitle(ref this, pbsTitle);
 			}
 			public HRESULT put_YAxisLabel(BSTR bsTitle) mut
 			{
-				return VT.put_YAxisLabel(&this, bsTitle);
+				return VT.put_YAxisLabel(ref this, bsTitle);
 			}
 			public HRESULT get_YAxisLabel(BSTR* pbsTitle) mut
 			{
-				return VT.get_YAxisLabel(&this, pbsTitle);
+				return VT.get_YAxisLabel(ref this, pbsTitle);
 			}
 			public HRESULT CollectSample() mut
 			{
-				return VT.CollectSample(&this);
+				return VT.CollectSample(ref this);
 			}
 			public HRESULT UpdateGraph() mut
 			{
-				return VT.UpdateGraph(&this);
+				return VT.UpdateGraph(ref this);
 			}
 			public HRESULT BrowseCounters() mut
 			{
-				return VT.BrowseCounters(&this);
+				return VT.BrowseCounters(ref this);
 			}
 			public HRESULT DisplayProperties() mut
 			{
-				return VT.DisplayProperties(&this);
+				return VT.DisplayProperties(ref this);
 			}
 			public HRESULT Counter(int32 iIndex, ICounterItem** ppICounter) mut
 			{
-				return VT.Counter(&this, iIndex, ppICounter);
+				return VT.Counter(ref this, iIndex, ppICounter);
 			}
 			public HRESULT AddCounter(BSTR bsPath, ICounterItem** ppICounter) mut
 			{
-				return VT.AddCounter(&this, bsPath, ppICounter);
+				return VT.AddCounter(ref this, bsPath, ppICounter);
 			}
 			public HRESULT DeleteCounter(ICounterItem* pCtr) mut
 			{
-				return VT.DeleteCounter(&this, pCtr);
+				return VT.DeleteCounter(ref this, pCtr);
 			}
-			public HRESULT get_BackColorCtl(uint32* pColor) mut
+			public HRESULT get_BackColorCtl(out uint32 pColor) mut
 			{
-				return VT.get_BackColorCtl(&this, pColor);
+				return VT.get_BackColorCtl(ref this, out pColor);
 			}
 			public HRESULT put_BackColorCtl(uint32 Color) mut
 			{
-				return VT.put_BackColorCtl(&this, Color);
+				return VT.put_BackColorCtl(ref this, Color);
 			}
 			public HRESULT put_LogFileName(BSTR bsFileName) mut
 			{
-				return VT.put_LogFileName(&this, bsFileName);
+				return VT.put_LogFileName(ref this, bsFileName);
 			}
 			public HRESULT get_LogFileName(BSTR* bsFileName) mut
 			{
-				return VT.get_LogFileName(&this, bsFileName);
+				return VT.get_LogFileName(ref this, bsFileName);
 			}
 			public HRESULT put_LogViewStart(double StartTime) mut
 			{
-				return VT.put_LogViewStart(&this, StartTime);
+				return VT.put_LogViewStart(ref this, StartTime);
 			}
-			public HRESULT get_LogViewStart(double* StartTime) mut
+			public HRESULT get_LogViewStart(out double StartTime) mut
 			{
-				return VT.get_LogViewStart(&this, StartTime);
+				return VT.get_LogViewStart(ref this, out StartTime);
 			}
 			public HRESULT put_LogViewStop(double StopTime) mut
 			{
-				return VT.put_LogViewStop(&this, StopTime);
+				return VT.put_LogViewStop(ref this, StopTime);
 			}
-			public HRESULT get_LogViewStop(double* StopTime) mut
+			public HRESULT get_LogViewStop(out double StopTime) mut
 			{
-				return VT.get_LogViewStop(&this, StopTime);
+				return VT.get_LogViewStop(ref this, out StopTime);
 			}
-			public HRESULT get_GridColor(uint32* pColor) mut
+			public HRESULT get_GridColor(out uint32 pColor) mut
 			{
-				return VT.get_GridColor(&this, pColor);
+				return VT.get_GridColor(ref this, out pColor);
 			}
 			public HRESULT put_GridColor(uint32 Color) mut
 			{
-				return VT.put_GridColor(&this, Color);
+				return VT.put_GridColor(ref this, Color);
 			}
-			public HRESULT get_TimeBarColor(uint32* pColor) mut
+			public HRESULT get_TimeBarColor(out uint32 pColor) mut
 			{
-				return VT.get_TimeBarColor(&this, pColor);
+				return VT.get_TimeBarColor(ref this, out pColor);
 			}
 			public HRESULT put_TimeBarColor(uint32 Color) mut
 			{
-				return VT.put_TimeBarColor(&this, Color);
+				return VT.put_TimeBarColor(ref this, Color);
 			}
-			public HRESULT get_Highlight(int16* pbState) mut
+			public HRESULT get_Highlight(out int16 pbState) mut
 			{
-				return VT.get_Highlight(&this, pbState);
+				return VT.get_Highlight(ref this, out pbState);
 			}
 			public HRESULT put_Highlight(int16 bState) mut
 			{
-				return VT.put_Highlight(&this, bState);
+				return VT.put_Highlight(ref this, bState);
 			}
-			public HRESULT get_ShowToolbar(int16* pbState) mut
+			public HRESULT get_ShowToolbar(out int16 pbState) mut
 			{
-				return VT.get_ShowToolbar(&this, pbState);
+				return VT.get_ShowToolbar(ref this, out pbState);
 			}
 			public HRESULT put_ShowToolbar(int16 bState) mut
 			{
-				return VT.put_ShowToolbar(&this, bState);
+				return VT.put_ShowToolbar(ref this, bState);
 			}
 			public HRESULT Paste() mut
 			{
-				return VT.Paste(&this);
+				return VT.Paste(ref this);
 			}
 			public HRESULT Copy() mut
 			{
-				return VT.Copy(&this);
+				return VT.Copy(ref this);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT put_ReadOnly(int16 bState) mut
 			{
-				return VT.put_ReadOnly(&this, bState);
+				return VT.put_ReadOnly(ref this, bState);
 			}
-			public HRESULT get_ReadOnly(int16* pbState) mut
+			public HRESULT get_ReadOnly(out int16 pbState) mut
 			{
-				return VT.get_ReadOnly(&this, pbState);
+				return VT.get_ReadOnly(ref this, out pbState);
 			}
 			public HRESULT put_ReportValueType(ReportValueTypeConstants eReportValueType) mut
 			{
-				return VT.put_ReportValueType(&this, eReportValueType);
+				return VT.put_ReportValueType(ref this, eReportValueType);
 			}
-			public HRESULT get_ReportValueType(ReportValueTypeConstants* peReportValueType) mut
+			public HRESULT get_ReportValueType(out ReportValueTypeConstants peReportValueType) mut
 			{
-				return VT.get_ReportValueType(&this, peReportValueType);
+				return VT.get_ReportValueType(ref this, out peReportValueType);
 			}
 			public HRESULT put_MonitorDuplicateInstances(int16 bState) mut
 			{
-				return VT.put_MonitorDuplicateInstances(&this, bState);
+				return VT.put_MonitorDuplicateInstances(ref this, bState);
 			}
-			public HRESULT get_MonitorDuplicateInstances(int16* pbState) mut
+			public HRESULT get_MonitorDuplicateInstances(out int16 pbState) mut
 			{
-				return VT.get_MonitorDuplicateInstances(&this, pbState);
+				return VT.get_MonitorDuplicateInstances(ref this, out pbState);
 			}
 			public HRESULT put_DisplayFilter(int32 iValue) mut
 			{
-				return VT.put_DisplayFilter(&this, iValue);
+				return VT.put_DisplayFilter(ref this, iValue);
 			}
-			public HRESULT get_DisplayFilter(int32* piValue) mut
+			public HRESULT get_DisplayFilter(out int32 piValue) mut
 			{
-				return VT.get_DisplayFilter(&this, piValue);
+				return VT.get_DisplayFilter(ref this, out piValue);
 			}
 			public HRESULT get_LogFiles(ILogFiles** ppILogFiles) mut
 			{
-				return VT.get_LogFiles(&this, ppILogFiles);
+				return VT.get_LogFiles(ref this, ppILogFiles);
 			}
 			public HRESULT put_DataSourceType(DataSourceTypeConstants eDataSourceType) mut
 			{
-				return VT.put_DataSourceType(&this, eDataSourceType);
+				return VT.put_DataSourceType(ref this, eDataSourceType);
 			}
-			public HRESULT get_DataSourceType(DataSourceTypeConstants* peDataSourceType) mut
+			public HRESULT get_DataSourceType(out DataSourceTypeConstants peDataSourceType) mut
 			{
-				return VT.get_DataSourceType(&this, peDataSourceType);
+				return VT.get_DataSourceType(ref this, out peDataSourceType);
 			}
 			public HRESULT put_SqlDsnName(BSTR bsSqlDsnName) mut
 			{
-				return VT.put_SqlDsnName(&this, bsSqlDsnName);
+				return VT.put_SqlDsnName(ref this, bsSqlDsnName);
 			}
 			public HRESULT get_SqlDsnName(BSTR* bsSqlDsnName) mut
 			{
-				return VT.get_SqlDsnName(&this, bsSqlDsnName);
+				return VT.get_SqlDsnName(ref this, bsSqlDsnName);
 			}
 			public HRESULT put_SqlLogSetName(BSTR bsSqlLogSetName) mut
 			{
-				return VT.put_SqlLogSetName(&this, bsSqlLogSetName);
+				return VT.put_SqlLogSetName(ref this, bsSqlLogSetName);
 			}
 			public HRESULT get_SqlLogSetName(BSTR* bsSqlLogSetName) mut
 			{
-				return VT.get_SqlLogSetName(&this, bsSqlLogSetName);
+				return VT.get_SqlLogSetName(ref this, bsSqlLogSetName);
 			}
 			public HRESULT put_EnableDigitGrouping(int16 bState) mut
 			{
-				return VT.put_EnableDigitGrouping(&this, bState);
+				return VT.put_EnableDigitGrouping(ref this, bState);
 			}
-			public HRESULT get_EnableDigitGrouping(int16* pbState) mut
+			public HRESULT get_EnableDigitGrouping(out int16 pbState) mut
 			{
-				return VT.get_EnableDigitGrouping(&this, pbState);
+				return VT.get_EnableDigitGrouping(ref this, out pbState);
 			}
 			public HRESULT put_EnableToolTips(int16 bState) mut
 			{
-				return VT.put_EnableToolTips(&this, bState);
+				return VT.put_EnableToolTips(ref this, bState);
 			}
-			public HRESULT get_EnableToolTips(int16* pbState) mut
+			public HRESULT get_EnableToolTips(out int16 pbState) mut
 			{
-				return VT.get_EnableToolTips(&this, pbState);
+				return VT.get_EnableToolTips(ref this, out pbState);
 			}
 			public HRESULT put_ShowTimeAxisLabels(int16 bState) mut
 			{
-				return VT.put_ShowTimeAxisLabels(&this, bState);
+				return VT.put_ShowTimeAxisLabels(ref this, bState);
 			}
-			public HRESULT get_ShowTimeAxisLabels(int16* pbState) mut
+			public HRESULT get_ShowTimeAxisLabels(out int16 pbState) mut
 			{
-				return VT.get_ShowTimeAxisLabels(&this, pbState);
+				return VT.get_ShowTimeAxisLabels(ref this, out pbState);
 			}
 			public HRESULT put_ChartScroll(int16 bScroll) mut
 			{
-				return VT.put_ChartScroll(&this, bScroll);
+				return VT.put_ChartScroll(ref this, bScroll);
 			}
-			public HRESULT get_ChartScroll(int16* pbScroll) mut
+			public HRESULT get_ChartScroll(out int16 pbScroll) mut
 			{
-				return VT.get_ChartScroll(&this, pbScroll);
+				return VT.get_ChartScroll(ref this, out pbScroll);
 			}
 			public HRESULT put_DataPointCount(int32 iNewCount) mut
 			{
-				return VT.put_DataPointCount(&this, iNewCount);
+				return VT.put_DataPointCount(ref this, iNewCount);
 			}
-			public HRESULT get_DataPointCount(int32* piDataPointCount) mut
+			public HRESULT get_DataPointCount(out int32 piDataPointCount) mut
 			{
-				return VT.get_DataPointCount(&this, piDataPointCount);
+				return VT.get_DataPointCount(ref this, out piDataPointCount);
 			}
 			public HRESULT ScaleToFit(int16 bSelectedCountersOnly) mut
 			{
-				return VT.ScaleToFit(&this, bSelectedCountersOnly);
+				return VT.ScaleToFit(ref this, bSelectedCountersOnly);
 			}
 			public HRESULT SaveAs(BSTR bstrFileName, SysmonFileType eSysmonFileType) mut
 			{
-				return VT.SaveAs(&this, bstrFileName, eSysmonFileType);
+				return VT.SaveAs(ref this, bstrFileName, eSysmonFileType);
 			}
 			public HRESULT Relog(BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) mut
 			{
-				return VT.Relog(&this, bstrFileName, eSysmonFileType, iFilter);
+				return VT.Relog(ref this, bstrFileName, eSysmonFileType, iFilter);
 			}
 			public HRESULT ClearData() mut
 			{
-				return VT.ClearData(&this);
+				return VT.ClearData(ref this);
 			}
-			public HRESULT get_LogSourceStartTime(double* pDate) mut
+			public HRESULT get_LogSourceStartTime(out double pDate) mut
 			{
-				return VT.get_LogSourceStartTime(&this, pDate);
+				return VT.get_LogSourceStartTime(ref this, out pDate);
 			}
-			public HRESULT get_LogSourceStopTime(double* pDate) mut
+			public HRESULT get_LogSourceStopTime(out double pDate) mut
 			{
-				return VT.get_LogSourceStopTime(&this, pDate);
+				return VT.get_LogSourceStopTime(ref this, out pDate);
 			}
 			public HRESULT SetLogViewRange(double StartTime, double StopTime) mut
 			{
-				return VT.SetLogViewRange(&this, StartTime, StopTime);
+				return VT.SetLogViewRange(ref this, StartTime, StopTime);
 			}
-			public HRESULT GetLogViewRange(double* StartTime, double* StopTime) mut
+			public HRESULT GetLogViewRange(out double StartTime, out double StopTime) mut
 			{
-				return VT.GetLogViewRange(&this, StartTime, StopTime);
+				return VT.GetLogViewRange(ref this, out StartTime, out StopTime);
 			}
 			public HRESULT BatchingLock(int16 fLock, SysmonBatchReason eBatchReason) mut
 			{
-				return VT.BatchingLock(&this, fLock, eBatchReason);
+				return VT.BatchingLock(ref this, fLock, eBatchReason);
 			}
 			public HRESULT LoadSettings(BSTR bstrSettingFileName) mut
 			{
-				return VT.LoadSettings(&this, bstrSettingFileName);
+				return VT.LoadSettings(ref this, bstrSettingFileName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(_ISystemMonitorUnion *self, int32* iAppearance) get_Appearance;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32 iAppearance) put_Appearance;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColor;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColor;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32* iBorderStyle) get_BorderStyle;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32 iBorderStyle) put_BorderStyle;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_ForeColor;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_ForeColor;
-				public new function HRESULT(_ISystemMonitorUnion *self, IFontDisp** ppFont) get_Font;
-				public new function HRESULT(_ISystemMonitorUnion *self, IFontDisp* pFont) putref_Font;
-				public new function HRESULT(_ISystemMonitorUnion *self, ICounters** ppICounters) get_Counters;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowVerticalGrid;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowVerticalGrid;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowHorizontalGrid;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowHorizontalGrid;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowLegend;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowLegend;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowScaleLabels;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowScaleLabels;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowValueBar;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowValueBar;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MaximumScale;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MaximumScale;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_MinimumScale;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_MinimumScale;
-				public new function HRESULT(_ISystemMonitorUnion *self, float fValue) put_UpdateInterval;
-				public new function HRESULT(_ISystemMonitorUnion *self, float* pfValue) get_UpdateInterval;
-				public new function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants eDisplayType) put_DisplayType;
-				public new function HRESULT(_ISystemMonitorUnion *self, DisplayTypeConstants* peDisplayType) get_DisplayType;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ManualUpdate;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ManualUpdate;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_GraphTitle;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_GraphTitle;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsTitle) put_YAxisLabel;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* pbsTitle) get_YAxisLabel;
-				public new function HRESULT(_ISystemMonitorUnion *self) CollectSample;
-				public new function HRESULT(_ISystemMonitorUnion *self) UpdateGraph;
-				public new function HRESULT(_ISystemMonitorUnion *self) BrowseCounters;
-				public new function HRESULT(_ISystemMonitorUnion *self) DisplayProperties;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32 iIndex, ICounterItem** ppICounter) Counter;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
-				public new function HRESULT(_ISystemMonitorUnion *self, ICounterItem* pCtr) DeleteCounter;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_BackColorCtl;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_BackColorCtl;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsFileName) put_LogFileName;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* bsFileName) get_LogFileName;
-				public new function HRESULT(_ISystemMonitorUnion *self, double StartTime) put_LogViewStart;
-				public new function HRESULT(_ISystemMonitorUnion *self, double* StartTime) get_LogViewStart;
-				public new function HRESULT(_ISystemMonitorUnion *self, double StopTime) put_LogViewStop;
-				public new function HRESULT(_ISystemMonitorUnion *self, double* StopTime) get_LogViewStop;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_GridColor;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_GridColor;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32* pColor) get_TimeBarColor;
-				public new function HRESULT(_ISystemMonitorUnion *self, uint32 Color) put_TimeBarColor;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_Highlight;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_Highlight;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowToolbar;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowToolbar;
-				public new function HRESULT(_ISystemMonitorUnion *self) Paste;
-				public new function HRESULT(_ISystemMonitorUnion *self) Copy;
-				public new function HRESULT(_ISystemMonitorUnion *self) Reset;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ReadOnly;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ReadOnly;
-				public new function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
-				public new function HRESULT(_ISystemMonitorUnion *self, ReportValueTypeConstants* peReportValueType) get_ReportValueType;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_MonitorDuplicateInstances;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_MonitorDuplicateInstances;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32 iValue) put_DisplayFilter;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32* piValue) get_DisplayFilter;
-				public new function HRESULT(_ISystemMonitorUnion *self, ILogFiles** ppILogFiles) get_LogFiles;
-				public new function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
-				public new function HRESULT(_ISystemMonitorUnion *self, DataSourceTypeConstants* peDataSourceType) get_DataSourceType;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlDsnName) put_SqlDsnName;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlDsnName) get_SqlDsnName;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bsSqlLogSetName) put_SqlLogSetName;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableDigitGrouping;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableDigitGrouping;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_EnableToolTips;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_EnableToolTips;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bState) put_ShowTimeAxisLabels;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbState) get_ShowTimeAxisLabels;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bScroll) put_ChartScroll;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16* pbScroll) get_ChartScroll;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32 iNewCount) put_DataPointCount;
-				public new function HRESULT(_ISystemMonitorUnion *self, int32* piDataPointCount) get_DataPointCount;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 bSelectedCountersOnly) ScaleToFit;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
-				public new function HRESULT(_ISystemMonitorUnion *self) ClearData;
-				public new function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStartTime;
-				public new function HRESULT(_ISystemMonitorUnion *self, double* pDate) get_LogSourceStopTime;
-				public new function HRESULT(_ISystemMonitorUnion *self, double StartTime, double StopTime) SetLogViewRange;
-				public new function HRESULT(_ISystemMonitorUnion *self, double* StartTime, double* StopTime) GetLogViewRange;
-				public new function HRESULT(_ISystemMonitorUnion *self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
-				public new function HRESULT(_ISystemMonitorUnion *self, BSTR bstrSettingFileName) LoadSettings;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 iAppearance) get_Appearance;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iAppearance) put_Appearance;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_BackColor;
+				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_BackColor;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 iBorderStyle) get_BorderStyle;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iBorderStyle) put_BorderStyle;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_ForeColor;
+				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_ForeColor;
+				public new function HRESULT(ref _ISystemMonitorUnion self, IFontDisp** ppFont) get_Font;
+				public new function HRESULT(ref _ISystemMonitorUnion self, IFontDisp* pFont) putref_Font;
+				public new function HRESULT(ref _ISystemMonitorUnion self, ICounters** ppICounters) get_Counters;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowVerticalGrid;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowVerticalGrid;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowHorizontalGrid;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowHorizontalGrid;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowLegend;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowLegend;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowScaleLabels;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowScaleLabels;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowValueBar;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowValueBar;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_MaximumScale;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_MaximumScale;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_MinimumScale;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_MinimumScale;
+				public new function HRESULT(ref _ISystemMonitorUnion self, float fValue) put_UpdateInterval;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out float pfValue) get_UpdateInterval;
+				public new function HRESULT(ref _ISystemMonitorUnion self, DisplayTypeConstants eDisplayType) put_DisplayType;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out DisplayTypeConstants peDisplayType) get_DisplayType;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ManualUpdate;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ManualUpdate;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsTitle) put_GraphTitle;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* pbsTitle) get_GraphTitle;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsTitle) put_YAxisLabel;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* pbsTitle) get_YAxisLabel;
+				public new function HRESULT(ref _ISystemMonitorUnion self) CollectSample;
+				public new function HRESULT(ref _ISystemMonitorUnion self) UpdateGraph;
+				public new function HRESULT(ref _ISystemMonitorUnion self) BrowseCounters;
+				public new function HRESULT(ref _ISystemMonitorUnion self) DisplayProperties;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iIndex, ICounterItem** ppICounter) Counter;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsPath, ICounterItem** ppICounter) AddCounter;
+				public new function HRESULT(ref _ISystemMonitorUnion self, ICounterItem* pCtr) DeleteCounter;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_BackColorCtl;
+				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_BackColorCtl;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsFileName) put_LogFileName;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* bsFileName) get_LogFileName;
+				public new function HRESULT(ref _ISystemMonitorUnion self, double StartTime) put_LogViewStart;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out double StartTime) get_LogViewStart;
+				public new function HRESULT(ref _ISystemMonitorUnion self, double StopTime) put_LogViewStop;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out double StopTime) get_LogViewStop;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_GridColor;
+				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_GridColor;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out uint32 pColor) get_TimeBarColor;
+				public new function HRESULT(ref _ISystemMonitorUnion self, uint32 Color) put_TimeBarColor;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_Highlight;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_Highlight;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowToolbar;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowToolbar;
+				public new function HRESULT(ref _ISystemMonitorUnion self) Paste;
+				public new function HRESULT(ref _ISystemMonitorUnion self) Copy;
+				public new function HRESULT(ref _ISystemMonitorUnion self) Reset;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ReadOnly;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ReadOnly;
+				public new function HRESULT(ref _ISystemMonitorUnion self, ReportValueTypeConstants eReportValueType) put_ReportValueType;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out ReportValueTypeConstants peReportValueType) get_ReportValueType;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_MonitorDuplicateInstances;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_MonitorDuplicateInstances;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iValue) put_DisplayFilter;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 piValue) get_DisplayFilter;
+				public new function HRESULT(ref _ISystemMonitorUnion self, ILogFiles** ppILogFiles) get_LogFiles;
+				public new function HRESULT(ref _ISystemMonitorUnion self, DataSourceTypeConstants eDataSourceType) put_DataSourceType;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out DataSourceTypeConstants peDataSourceType) get_DataSourceType;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsSqlDsnName) put_SqlDsnName;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* bsSqlDsnName) get_SqlDsnName;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bsSqlLogSetName) put_SqlLogSetName;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR* bsSqlLogSetName) get_SqlLogSetName;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_EnableDigitGrouping;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_EnableDigitGrouping;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_EnableToolTips;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_EnableToolTips;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bState) put_ShowTimeAxisLabels;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbState) get_ShowTimeAxisLabels;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bScroll) put_ChartScroll;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int16 pbScroll) get_ChartScroll;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int32 iNewCount) put_DataPointCount;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out int32 piDataPointCount) get_DataPointCount;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 bSelectedCountersOnly) ScaleToFit;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bstrFileName, SysmonFileType eSysmonFileType) SaveAs;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bstrFileName, SysmonFileType eSysmonFileType, int32 iFilter) Relog;
+				public new function HRESULT(ref _ISystemMonitorUnion self) ClearData;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out double pDate) get_LogSourceStartTime;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out double pDate) get_LogSourceStopTime;
+				public new function HRESULT(ref _ISystemMonitorUnion self, double StartTime, double StopTime) SetLogViewRange;
+				public new function HRESULT(ref _ISystemMonitorUnion self, out double StartTime, out double StopTime) GetLogViewRange;
+				public new function HRESULT(ref _ISystemMonitorUnion self, int16 fLock, SysmonBatchReason eBatchReason) BatchingLock;
+				public new function HRESULT(ref _ISystemMonitorUnion self, BSTR bstrSettingFileName) LoadSettings;
 			}
 		}
 		[CRepr]
@@ -4118,32 +4118,32 @@ namespace Win32
 			
 			public void OnCounterSelected(int32 Index) mut
 			{
-				VT.OnCounterSelected(&this, Index);
+				VT.OnCounterSelected(ref this, Index);
 			}
 			public void OnCounterAdded(int32 Index) mut
 			{
-				VT.OnCounterAdded(&this, Index);
+				VT.OnCounterAdded(ref this, Index);
 			}
 			public void OnCounterDeleted(int32 Index) mut
 			{
-				VT.OnCounterDeleted(&this, Index);
+				VT.OnCounterDeleted(ref this, Index);
 			}
 			public void OnSampleCollected() mut
 			{
-				VT.OnSampleCollected(&this);
+				VT.OnSampleCollected(ref this);
 			}
 			public void OnDblClick(int32 Index) mut
 			{
-				VT.OnDblClick(&this, Index);
+				VT.OnDblClick(ref this, Index);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(ISystemMonitorEvents *self, int32 Index) OnCounterSelected;
-				public new function void(ISystemMonitorEvents *self, int32 Index) OnCounterAdded;
-				public new function void(ISystemMonitorEvents *self, int32 Index) OnCounterDeleted;
-				public new function void(ISystemMonitorEvents *self) OnSampleCollected;
-				public new function void(ISystemMonitorEvents *self, int32 Index) OnDblClick;
+				public new function void(ref ISystemMonitorEvents self, int32 Index) OnCounterSelected;
+				public new function void(ref ISystemMonitorEvents self, int32 Index) OnCounterAdded;
+				public new function void(ref ISystemMonitorEvents self, int32 Index) OnCounterDeleted;
+				public new function void(ref ISystemMonitorEvents self) OnSampleCollected;
+				public new function void(ref ISystemMonitorEvents self, int32 Index) OnDblClick;
 			}
 		}
 		[CRepr]
@@ -4162,9 +4162,9 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL QueryPerformanceCounter(LARGE_INTEGER* lpPerformanceCount);
+		public static extern BOOL QueryPerformanceCounter(out LARGE_INTEGER lpPerformanceCount);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL QueryPerformanceFrequency(LARGE_INTEGER* lpFrequency);
+		public static extern BOOL QueryPerformanceFrequency(out LARGE_INTEGER lpFrequency);
 		[Import("loadperf.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 InstallPerfDllW(PWSTR szComputerName, PWSTR lpIniFile, uint dwFlags);
 		[Import("loadperf.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4190,67 +4190,67 @@ namespace Win32
 		[Import("loadperf.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 RestorePerfRegistryFromFileW(PWSTR szFileName, PWSTR szLangId);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfStartProvider(Guid* ProviderGuid, PERFLIBREQUEST ControlCallback, PerfProviderHandle* phProvider);
+		public static extern uint32 PerfStartProvider(ref Guid ProviderGuid, PERFLIBREQUEST ControlCallback, out PerfProviderHandle phProvider);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfStartProviderEx(Guid* ProviderGuid, PERF_PROVIDER_CONTEXT* ProviderContext, PerfProviderHandle* Provider);
+		public static extern uint32 PerfStartProviderEx(ref Guid ProviderGuid, PERF_PROVIDER_CONTEXT* ProviderContext, out PerfProviderHandle Provider);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PerfStopProvider(PerfProviderHandle ProviderHandle);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfSetCounterSetInfo(HANDLE ProviderHandle, PERF_COUNTERSET_INFO* Template, uint32 TemplateSize);
+		public static extern uint32 PerfSetCounterSetInfo(HANDLE ProviderHandle, out PERF_COUNTERSET_INFO Template, uint32 TemplateSize);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern PERF_COUNTERSET_INSTANCE* PerfCreateInstance(PerfProviderHandle ProviderHandle, Guid* CounterSetGuid, PWSTR Name, uint32 Id);
+		public static extern PERF_COUNTERSET_INSTANCE* PerfCreateInstance(PerfProviderHandle ProviderHandle, in Guid CounterSetGuid, PWSTR Name, uint32 Id);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfDeleteInstance(PerfProviderHandle Provider, PERF_COUNTERSET_INSTANCE* InstanceBlock);
+		public static extern uint32 PerfDeleteInstance(PerfProviderHandle Provider, ref PERF_COUNTERSET_INSTANCE InstanceBlock);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern PERF_COUNTERSET_INSTANCE* PerfQueryInstance(HANDLE ProviderHandle, Guid* CounterSetGuid, PWSTR Name, uint32 Id);
+		public static extern PERF_COUNTERSET_INSTANCE* PerfQueryInstance(HANDLE ProviderHandle, in Guid CounterSetGuid, PWSTR Name, uint32 Id);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfSetCounterRefValue(HANDLE Provider, PERF_COUNTERSET_INSTANCE* Instance, uint32 CounterId, void* Address);
+		public static extern uint32 PerfSetCounterRefValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, void* Address);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfSetULongCounterValue(HANDLE Provider, PERF_COUNTERSET_INSTANCE* Instance, uint32 CounterId, uint32 Value);
+		public static extern uint32 PerfSetULongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint32 Value);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfSetULongLongCounterValue(HANDLE Provider, PERF_COUNTERSET_INSTANCE* Instance, uint32 CounterId, uint64 Value);
+		public static extern uint32 PerfSetULongLongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint64 Value);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfIncrementULongCounterValue(HANDLE Provider, PERF_COUNTERSET_INSTANCE* Instance, uint32 CounterId, uint32 Value);
+		public static extern uint32 PerfIncrementULongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint32 Value);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfIncrementULongLongCounterValue(HANDLE Provider, PERF_COUNTERSET_INSTANCE* Instance, uint32 CounterId, uint64 Value);
+		public static extern uint32 PerfIncrementULongLongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint64 Value);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfDecrementULongCounterValue(HANDLE Provider, PERF_COUNTERSET_INSTANCE* Instance, uint32 CounterId, uint32 Value);
+		public static extern uint32 PerfDecrementULongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint32 Value);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfDecrementULongLongCounterValue(HANDLE Provider, PERF_COUNTERSET_INSTANCE* Instance, uint32 CounterId, uint64 Value);
+		public static extern uint32 PerfDecrementULongLongCounterValue(HANDLE Provider, out PERF_COUNTERSET_INSTANCE Instance, uint32 CounterId, uint64 Value);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfEnumerateCounterSet(PWSTR szMachine, Guid* pCounterSetIds, uint32 cCounterSetIds, uint32* pcCounterSetIdsActual);
+		public static extern uint32 PerfEnumerateCounterSet(PWSTR szMachine, Guid* pCounterSetIds, uint32 cCounterSetIds, out uint32 pcCounterSetIdsActual);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfEnumerateCounterSetInstances(PWSTR szMachine, Guid* pCounterSetId, PERF_INSTANCE_HEADER* pInstances, uint32 cbInstances, uint32* pcbInstancesActual);
+		public static extern uint32 PerfEnumerateCounterSetInstances(PWSTR szMachine, in Guid pCounterSetId, PERF_INSTANCE_HEADER* pInstances, uint32 cbInstances, out uint32 pcbInstancesActual);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfQueryCounterSetRegistrationInfo(PWSTR szMachine, Guid* pCounterSetId, PerfRegInfoType requestCode, uint32 requestLangId, uint8* pbRegInfo, uint32 cbRegInfo, uint32* pcbRegInfoActual);
+		public static extern uint32 PerfQueryCounterSetRegistrationInfo(PWSTR szMachine, in Guid pCounterSetId, PerfRegInfoType requestCode, uint32 requestLangId, uint8* pbRegInfo, uint32 cbRegInfo, out uint32 pcbRegInfoActual);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfOpenQueryHandle(PWSTR szMachine, PerfQueryHandle* phQuery);
+		public static extern uint32 PerfOpenQueryHandle(PWSTR szMachine, out PerfQueryHandle phQuery);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PerfCloseQueryHandle(HANDLE hQuery);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfQueryCounterInfo(PerfQueryHandle hQuery, PERF_COUNTER_IDENTIFIER* pCounters, uint32 cbCounters, uint32* pcbCountersActual);
+		public static extern uint32 PerfQueryCounterInfo(PerfQueryHandle hQuery, PERF_COUNTER_IDENTIFIER* pCounters, uint32 cbCounters, out uint32 pcbCountersActual);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfQueryCounterData(PerfQueryHandle hQuery, PERF_DATA_HEADER* pCounterBlock, uint32 cbCounterBlock, uint32* pcbCounterBlockActual);
+		public static extern uint32 PerfQueryCounterData(PerfQueryHandle hQuery, PERF_DATA_HEADER* pCounterBlock, uint32 cbCounterBlock, out uint32 pcbCounterBlockActual);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfAddCounters(PerfQueryHandle hQuery, PERF_COUNTER_IDENTIFIER* pCounters, uint32 cbCounters);
+		public static extern uint32 PerfAddCounters(PerfQueryHandle hQuery, ref PERF_COUNTER_IDENTIFIER pCounters, uint32 cbCounters);
 		[Import("advapi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 PerfDeleteCounters(PerfQueryHandle hQuery, PERF_COUNTER_IDENTIFIER* pCounters, uint32 cbCounters);
+		public static extern uint32 PerfDeleteCounters(PerfQueryHandle hQuery, ref PERF_COUNTER_IDENTIFIER pCounters, uint32 cbCounters);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhGetDllVersion(PDH_DLL_VERSION* lpdwVersion);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhOpenQueryW(PWSTR szDataSource, uint dwUserData, int* phQuery);
+		public static extern int32 PdhOpenQueryW(PWSTR szDataSource, uint dwUserData, out int phQuery);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhOpenQueryA(PSTR szDataSource, uint dwUserData, int* phQuery);
+		public static extern int32 PdhOpenQueryA(PSTR szDataSource, uint dwUserData, out int phQuery);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhAddCounterW(int hQuery, PWSTR szFullCounterPath, uint dwUserData, int* phCounter);
+		public static extern int32 PdhAddCounterW(int hQuery, PWSTR szFullCounterPath, uint dwUserData, out int phCounter);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhAddCounterA(int hQuery, PSTR szFullCounterPath, uint dwUserData, int* phCounter);
+		public static extern int32 PdhAddCounterA(int hQuery, PSTR szFullCounterPath, uint dwUserData, out int phCounter);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhAddEnglishCounterW(int hQuery, PWSTR szFullCounterPath, uint dwUserData, int* phCounter);
+		public static extern int32 PdhAddEnglishCounterW(int hQuery, PWSTR szFullCounterPath, uint dwUserData, out int phCounter);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhAddEnglishCounterA(int hQuery, PSTR szFullCounterPath, uint dwUserData, int* phCounter);
+		public static extern int32 PdhAddEnglishCounterA(int hQuery, PSTR szFullCounterPath, uint dwUserData, out int phCounter);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhCollectQueryDataWithTime(int hQuery, int64* pllTimeStamp);
+		public static extern int32 PdhCollectQueryDataWithTime(int hQuery, out int64 pllTimeStamp);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhValidatePathExW(int hDataSource, PWSTR szFullPathBuffer);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4262,25 +4262,25 @@ namespace Win32
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhCloseQuery(int hQuery);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetFormattedCounterValue(int hCounter, PDH_FMT dwFormat, uint32* lpdwType, PDH_FMT_COUNTERVALUE* pValue);
+		public static extern int32 PdhGetFormattedCounterValue(int hCounter, PDH_FMT dwFormat, uint32* lpdwType, out PDH_FMT_COUNTERVALUE pValue);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetFormattedCounterArrayA(int hCounter, PDH_FMT dwFormat, uint32* lpdwBufferSize, uint32* lpdwItemCount, PDH_FMT_COUNTERVALUE_ITEM_A* ItemBuffer);
+		public static extern int32 PdhGetFormattedCounterArrayA(int hCounter, PDH_FMT dwFormat, out uint32 lpdwBufferSize, out uint32 lpdwItemCount, PDH_FMT_COUNTERVALUE_ITEM_A* ItemBuffer);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetFormattedCounterArrayW(int hCounter, PDH_FMT dwFormat, uint32* lpdwBufferSize, uint32* lpdwItemCount, PDH_FMT_COUNTERVALUE_ITEM_W* ItemBuffer);
+		public static extern int32 PdhGetFormattedCounterArrayW(int hCounter, PDH_FMT dwFormat, out uint32 lpdwBufferSize, out uint32 lpdwItemCount, PDH_FMT_COUNTERVALUE_ITEM_W* ItemBuffer);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetRawCounterValue(int hCounter, uint32* lpdwType, PDH_RAW_COUNTER* pValue);
+		public static extern int32 PdhGetRawCounterValue(int hCounter, uint32* lpdwType, out PDH_RAW_COUNTER pValue);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetRawCounterArrayA(int hCounter, uint32* lpdwBufferSize, uint32* lpdwItemCount, PDH_RAW_COUNTER_ITEM_A* ItemBuffer);
+		public static extern int32 PdhGetRawCounterArrayA(int hCounter, out uint32 lpdwBufferSize, out uint32 lpdwItemCount, PDH_RAW_COUNTER_ITEM_A* ItemBuffer);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetRawCounterArrayW(int hCounter, uint32* lpdwBufferSize, uint32* lpdwItemCount, PDH_RAW_COUNTER_ITEM_W* ItemBuffer);
+		public static extern int32 PdhGetRawCounterArrayW(int hCounter, out uint32 lpdwBufferSize, out uint32 lpdwItemCount, PDH_RAW_COUNTER_ITEM_W* ItemBuffer);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhCalculateCounterFromRawValue(int hCounter, PDH_FMT dwFormat, PDH_RAW_COUNTER* rawValue1, PDH_RAW_COUNTER* rawValue2, PDH_FMT_COUNTERVALUE* fmtValue);
+		public static extern int32 PdhCalculateCounterFromRawValue(int hCounter, PDH_FMT dwFormat, ref PDH_RAW_COUNTER rawValue1, ref PDH_RAW_COUNTER rawValue2, out PDH_FMT_COUNTERVALUE fmtValue);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhComputeCounterStatistics(int hCounter, PDH_FMT dwFormat, uint32 dwFirstEntry, uint32 dwNumEntries, PDH_RAW_COUNTER* lpRawValueArray, PDH_STATISTICS* data);
+		public static extern int32 PdhComputeCounterStatistics(int hCounter, PDH_FMT dwFormat, uint32 dwFirstEntry, uint32 dwNumEntries, ref PDH_RAW_COUNTER lpRawValueArray, out PDH_STATISTICS data);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetCounterInfoW(int hCounter, BOOLEAN bRetrieveExplainText, uint32* pdwBufferSize, PDH_COUNTER_INFO_W* lpBuffer);
+		public static extern int32 PdhGetCounterInfoW(int hCounter, BOOLEAN bRetrieveExplainText, out uint32 pdwBufferSize, PDH_COUNTER_INFO_W* lpBuffer);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetCounterInfoA(int hCounter, BOOLEAN bRetrieveExplainText, uint32* pdwBufferSize, PDH_COUNTER_INFO_A* lpBuffer);
+		public static extern int32 PdhGetCounterInfoA(int hCounter, BOOLEAN bRetrieveExplainText, out uint32 pdwBufferSize, PDH_COUNTER_INFO_A* lpBuffer);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhSetCounterScaleFactor(int hCounter, int32 lFactor);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4288,65 +4288,65 @@ namespace Win32
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhConnectMachineA(PSTR szMachineName);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumMachinesW(PWSTR szDataSource, PWSTR mszMachineList, uint32* pcchBufferSize);
+		public static extern int32 PdhEnumMachinesW(PWSTR szDataSource, PWSTR mszMachineList, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumMachinesA(PSTR szDataSource, PSTR mszMachineList, uint32* pcchBufferSize);
+		public static extern int32 PdhEnumMachinesA(PSTR szDataSource, PSTR mszMachineList, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumObjectsW(PWSTR szDataSource, PWSTR szMachineName, PWSTR mszObjectList, uint32* pcchBufferSize, PERF_DETAIL dwDetailLevel, BOOL bRefresh);
+		public static extern int32 PdhEnumObjectsW(PWSTR szDataSource, PWSTR szMachineName, PWSTR mszObjectList, out uint32 pcchBufferSize, PERF_DETAIL dwDetailLevel, BOOL bRefresh);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumObjectsA(PSTR szDataSource, PSTR szMachineName, PSTR mszObjectList, uint32* pcchBufferSize, PERF_DETAIL dwDetailLevel, BOOL bRefresh);
+		public static extern int32 PdhEnumObjectsA(PSTR szDataSource, PSTR szMachineName, PSTR mszObjectList, out uint32 pcchBufferSize, PERF_DETAIL dwDetailLevel, BOOL bRefresh);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumObjectItemsW(PWSTR szDataSource, PWSTR szMachineName, PWSTR szObjectName, PWSTR mszCounterList, uint32* pcchCounterListLength, PWSTR mszInstanceList, uint32* pcchInstanceListLength, PERF_DETAIL dwDetailLevel, uint32 dwFlags);
+		public static extern int32 PdhEnumObjectItemsW(PWSTR szDataSource, PWSTR szMachineName, PWSTR szObjectName, PWSTR mszCounterList, out uint32 pcchCounterListLength, PWSTR mszInstanceList, out uint32 pcchInstanceListLength, PERF_DETAIL dwDetailLevel, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumObjectItemsA(PSTR szDataSource, PSTR szMachineName, PSTR szObjectName, PSTR mszCounterList, uint32* pcchCounterListLength, PSTR mszInstanceList, uint32* pcchInstanceListLength, PERF_DETAIL dwDetailLevel, uint32 dwFlags);
+		public static extern int32 PdhEnumObjectItemsA(PSTR szDataSource, PSTR szMachineName, PSTR szObjectName, PSTR mszCounterList, out uint32 pcchCounterListLength, PSTR mszInstanceList, out uint32 pcchInstanceListLength, PERF_DETAIL dwDetailLevel, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhMakeCounterPathW(PDH_COUNTER_PATH_ELEMENTS_W* pCounterPathElements, PWSTR szFullPathBuffer, uint32* pcchBufferSize, PDH_PATH_FLAGS dwFlags);
+		public static extern int32 PdhMakeCounterPathW(ref PDH_COUNTER_PATH_ELEMENTS_W pCounterPathElements, PWSTR szFullPathBuffer, out uint32 pcchBufferSize, PDH_PATH_FLAGS dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhMakeCounterPathA(PDH_COUNTER_PATH_ELEMENTS_A* pCounterPathElements, PSTR szFullPathBuffer, uint32* pcchBufferSize, PDH_PATH_FLAGS dwFlags);
+		public static extern int32 PdhMakeCounterPathA(ref PDH_COUNTER_PATH_ELEMENTS_A pCounterPathElements, PSTR szFullPathBuffer, out uint32 pcchBufferSize, PDH_PATH_FLAGS dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhParseCounterPathW(PWSTR szFullPathBuffer, PDH_COUNTER_PATH_ELEMENTS_W* pCounterPathElements, uint32* pdwBufferSize, uint32 dwFlags);
+		public static extern int32 PdhParseCounterPathW(PWSTR szFullPathBuffer, PDH_COUNTER_PATH_ELEMENTS_W* pCounterPathElements, out uint32 pdwBufferSize, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhParseCounterPathA(PSTR szFullPathBuffer, PDH_COUNTER_PATH_ELEMENTS_A* pCounterPathElements, uint32* pdwBufferSize, uint32 dwFlags);
+		public static extern int32 PdhParseCounterPathA(PSTR szFullPathBuffer, PDH_COUNTER_PATH_ELEMENTS_A* pCounterPathElements, out uint32 pdwBufferSize, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhParseInstanceNameW(PWSTR szInstanceString, PWSTR szInstanceName, uint32* pcchInstanceNameLength, PWSTR szParentName, uint32* pcchParentNameLength, uint32* lpIndex);
+		public static extern int32 PdhParseInstanceNameW(PWSTR szInstanceString, PWSTR szInstanceName, out uint32 pcchInstanceNameLength, PWSTR szParentName, out uint32 pcchParentNameLength, out uint32 lpIndex);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhParseInstanceNameA(PSTR szInstanceString, PSTR szInstanceName, uint32* pcchInstanceNameLength, PSTR szParentName, uint32* pcchParentNameLength, uint32* lpIndex);
+		public static extern int32 PdhParseInstanceNameA(PSTR szInstanceString, PSTR szInstanceName, out uint32 pcchInstanceNameLength, PSTR szParentName, out uint32 pcchParentNameLength, out uint32 lpIndex);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhValidatePathW(PWSTR szFullPathBuffer);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhValidatePathA(PSTR szFullPathBuffer);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDefaultPerfObjectW(PWSTR szDataSource, PWSTR szMachineName, PWSTR szDefaultObjectName, uint32* pcchBufferSize);
+		public static extern int32 PdhGetDefaultPerfObjectW(PWSTR szDataSource, PWSTR szMachineName, PWSTR szDefaultObjectName, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDefaultPerfObjectA(PSTR szDataSource, PSTR szMachineName, PSTR szDefaultObjectName, uint32* pcchBufferSize);
+		public static extern int32 PdhGetDefaultPerfObjectA(PSTR szDataSource, PSTR szMachineName, PSTR szDefaultObjectName, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDefaultPerfCounterW(PWSTR szDataSource, PWSTR szMachineName, PWSTR szObjectName, PWSTR szDefaultCounterName, uint32* pcchBufferSize);
+		public static extern int32 PdhGetDefaultPerfCounterW(PWSTR szDataSource, PWSTR szMachineName, PWSTR szObjectName, PWSTR szDefaultCounterName, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDefaultPerfCounterA(PSTR szDataSource, PSTR szMachineName, PSTR szObjectName, PSTR szDefaultCounterName, uint32* pcchBufferSize);
+		public static extern int32 PdhGetDefaultPerfCounterA(PSTR szDataSource, PSTR szMachineName, PSTR szObjectName, PSTR szDefaultCounterName, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhBrowseCountersW(PDH_BROWSE_DLG_CONFIG_W* pBrowseDlgData);
+		public static extern int32 PdhBrowseCountersW(ref PDH_BROWSE_DLG_CONFIG_W pBrowseDlgData);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhBrowseCountersA(PDH_BROWSE_DLG_CONFIG_A* pBrowseDlgData);
+		public static extern int32 PdhBrowseCountersA(ref PDH_BROWSE_DLG_CONFIG_A pBrowseDlgData);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhExpandCounterPathW(PWSTR szWildCardPath, PWSTR mszExpandedPathList, uint32* pcchPathListLength);
+		public static extern int32 PdhExpandCounterPathW(PWSTR szWildCardPath, PWSTR mszExpandedPathList, out uint32 pcchPathListLength);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhExpandCounterPathA(PSTR szWildCardPath, PSTR mszExpandedPathList, uint32* pcchPathListLength);
+		public static extern int32 PdhExpandCounterPathA(PSTR szWildCardPath, PSTR mszExpandedPathList, out uint32 pcchPathListLength);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhLookupPerfNameByIndexW(PWSTR szMachineName, uint32 dwNameIndex, PWSTR szNameBuffer, uint32* pcchNameBufferSize);
+		public static extern int32 PdhLookupPerfNameByIndexW(PWSTR szMachineName, uint32 dwNameIndex, PWSTR szNameBuffer, out uint32 pcchNameBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhLookupPerfNameByIndexA(PSTR szMachineName, uint32 dwNameIndex, PSTR szNameBuffer, uint32* pcchNameBufferSize);
+		public static extern int32 PdhLookupPerfNameByIndexA(PSTR szMachineName, uint32 dwNameIndex, PSTR szNameBuffer, out uint32 pcchNameBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhLookupPerfIndexByNameW(PWSTR szMachineName, PWSTR szNameBuffer, uint32* pdwIndex);
+		public static extern int32 PdhLookupPerfIndexByNameW(PWSTR szMachineName, PWSTR szNameBuffer, out uint32 pdwIndex);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhLookupPerfIndexByNameA(PSTR szMachineName, PSTR szNameBuffer, uint32* pdwIndex);
+		public static extern int32 PdhLookupPerfIndexByNameA(PSTR szMachineName, PSTR szNameBuffer, out uint32 pdwIndex);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhExpandWildCardPathA(PSTR szDataSource, PSTR szWildCardPath, PSTR mszExpandedPathList, uint32* pcchPathListLength, uint32 dwFlags);
+		public static extern int32 PdhExpandWildCardPathA(PSTR szDataSource, PSTR szWildCardPath, PSTR mszExpandedPathList, out uint32 pcchPathListLength, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhExpandWildCardPathW(PWSTR szDataSource, PWSTR szWildCardPath, PWSTR mszExpandedPathList, uint32* pcchPathListLength, uint32 dwFlags);
+		public static extern int32 PdhExpandWildCardPathW(PWSTR szDataSource, PWSTR szWildCardPath, PWSTR mszExpandedPathList, out uint32 pcchPathListLength, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhOpenLogW(PWSTR szLogFileName, PDH_LOG dwAccessFlags, PDH_LOG_TYPE* lpdwLogType, int hQuery, uint32 dwMaxSize, PWSTR szUserCaption, int* phLog);
+		public static extern int32 PdhOpenLogW(PWSTR szLogFileName, PDH_LOG dwAccessFlags, out PDH_LOG_TYPE lpdwLogType, int hQuery, uint32 dwMaxSize, PWSTR szUserCaption, out int phLog);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhOpenLogA(PSTR szLogFileName, PDH_LOG dwAccessFlags, PDH_LOG_TYPE* lpdwLogType, int hQuery, uint32 dwMaxSize, PSTR szUserCaption, int* phLog);
+		public static extern int32 PdhOpenLogA(PSTR szLogFileName, PDH_LOG dwAccessFlags, out PDH_LOG_TYPE lpdwLogType, int hQuery, uint32 dwMaxSize, PSTR szUserCaption, out int phLog);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhUpdateLogW(int hLog, PWSTR szUserString);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4354,67 +4354,67 @@ namespace Win32
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhUpdateLogFileCatalog(int hLog);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetLogFileSize(int hLog, int64* llSize);
+		public static extern int32 PdhGetLogFileSize(int hLog, out int64 llSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhCloseLog(int hLog, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhSelectDataSourceW(HWND hWndOwner, PDH_SELECT_DATA_SOURCE_FLAGS dwFlags, PWSTR szDataSource, uint32* pcchBufferLength);
+		public static extern int32 PdhSelectDataSourceW(HWND hWndOwner, PDH_SELECT_DATA_SOURCE_FLAGS dwFlags, PWSTR szDataSource, out uint32 pcchBufferLength);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhSelectDataSourceA(HWND hWndOwner, PDH_SELECT_DATA_SOURCE_FLAGS dwFlags, PSTR szDataSource, uint32* pcchBufferLength);
+		public static extern int32 PdhSelectDataSourceA(HWND hWndOwner, PDH_SELECT_DATA_SOURCE_FLAGS dwFlags, PSTR szDataSource, out uint32 pcchBufferLength);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL PdhIsRealTimeQuery(int hQuery);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhSetQueryTimeRange(int hQuery, PDH_TIME_INFO* pInfo);
+		public static extern int32 PdhSetQueryTimeRange(int hQuery, ref PDH_TIME_INFO pInfo);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDataSourceTimeRangeW(PWSTR szDataSource, uint32* pdwNumEntries, PDH_TIME_INFO* pInfo, uint32* pdwBufferSize);
+		public static extern int32 PdhGetDataSourceTimeRangeW(PWSTR szDataSource, out uint32 pdwNumEntries, out PDH_TIME_INFO pInfo, out uint32 pdwBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDataSourceTimeRangeA(PSTR szDataSource, uint32* pdwNumEntries, PDH_TIME_INFO* pInfo, uint32* pdwBufferSize);
+		public static extern int32 PdhGetDataSourceTimeRangeA(PSTR szDataSource, out uint32 pdwNumEntries, out PDH_TIME_INFO pInfo, out uint32 pdwBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhCollectQueryDataEx(int hQuery, uint32 dwIntervalTime, HANDLE hNewDataEvent);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhFormatFromRawValue(uint32 dwCounterType, PDH_FMT dwFormat, int64* pTimeBase, PDH_RAW_COUNTER* pRawValue1, PDH_RAW_COUNTER* pRawValue2, PDH_FMT_COUNTERVALUE* pFmtValue);
+		public static extern int32 PdhFormatFromRawValue(uint32 dwCounterType, PDH_FMT dwFormat, int64* pTimeBase, ref PDH_RAW_COUNTER pRawValue1, ref PDH_RAW_COUNTER pRawValue2, out PDH_FMT_COUNTERVALUE pFmtValue);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetCounterTimeBase(int hCounter, int64* pTimeBase);
+		public static extern int32 PdhGetCounterTimeBase(int hCounter, out int64 pTimeBase);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhReadRawLogRecord(int hLog, FILETIME ftRecord, PDH_RAW_LOG_RECORD* pRawLogRecord, uint32* pdwBufferLength);
+		public static extern int32 PdhReadRawLogRecord(int hLog, FILETIME ftRecord, PDH_RAW_LOG_RECORD* pRawLogRecord, out uint32 pdwBufferLength);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhSetDefaultRealTimeDataSource(REAL_TIME_DATA_SOURCE_ID_FLAGS dwDataSourceId);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhBindInputDataSourceW(int* phDataSource, PWSTR LogFileNameList);
+		public static extern int32 PdhBindInputDataSourceW(out int phDataSource, PWSTR LogFileNameList);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhBindInputDataSourceA(int* phDataSource, PSTR LogFileNameList);
+		public static extern int32 PdhBindInputDataSourceA(out int phDataSource, PSTR LogFileNameList);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhOpenQueryH(int hDataSource, uint dwUserData, int* phQuery);
+		public static extern int32 PdhOpenQueryH(int hDataSource, uint dwUserData, out int phQuery);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumMachinesHW(int hDataSource, PWSTR mszMachineList, uint32* pcchBufferSize);
+		public static extern int32 PdhEnumMachinesHW(int hDataSource, PWSTR mszMachineList, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumMachinesHA(int hDataSource, PSTR mszMachineList, uint32* pcchBufferSize);
+		public static extern int32 PdhEnumMachinesHA(int hDataSource, PSTR mszMachineList, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumObjectsHW(int hDataSource, PWSTR szMachineName, PWSTR mszObjectList, uint32* pcchBufferSize, PERF_DETAIL dwDetailLevel, BOOL bRefresh);
+		public static extern int32 PdhEnumObjectsHW(int hDataSource, PWSTR szMachineName, PWSTR mszObjectList, out uint32 pcchBufferSize, PERF_DETAIL dwDetailLevel, BOOL bRefresh);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumObjectsHA(int hDataSource, PSTR szMachineName, PSTR mszObjectList, uint32* pcchBufferSize, PERF_DETAIL dwDetailLevel, BOOL bRefresh);
+		public static extern int32 PdhEnumObjectsHA(int hDataSource, PSTR szMachineName, PSTR mszObjectList, out uint32 pcchBufferSize, PERF_DETAIL dwDetailLevel, BOOL bRefresh);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumObjectItemsHW(int hDataSource, PWSTR szMachineName, PWSTR szObjectName, PWSTR mszCounterList, uint32* pcchCounterListLength, PWSTR mszInstanceList, uint32* pcchInstanceListLength, PERF_DETAIL dwDetailLevel, uint32 dwFlags);
+		public static extern int32 PdhEnumObjectItemsHW(int hDataSource, PWSTR szMachineName, PWSTR szObjectName, PWSTR mszCounterList, out uint32 pcchCounterListLength, PWSTR mszInstanceList, out uint32 pcchInstanceListLength, PERF_DETAIL dwDetailLevel, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumObjectItemsHA(int hDataSource, PSTR szMachineName, PSTR szObjectName, PSTR mszCounterList, uint32* pcchCounterListLength, PSTR mszInstanceList, uint32* pcchInstanceListLength, PERF_DETAIL dwDetailLevel, uint32 dwFlags);
+		public static extern int32 PdhEnumObjectItemsHA(int hDataSource, PSTR szMachineName, PSTR szObjectName, PSTR mszCounterList, out uint32 pcchCounterListLength, PSTR mszInstanceList, out uint32 pcchInstanceListLength, PERF_DETAIL dwDetailLevel, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhExpandWildCardPathHW(int hDataSource, PWSTR szWildCardPath, PWSTR mszExpandedPathList, uint32* pcchPathListLength, uint32 dwFlags);
+		public static extern int32 PdhExpandWildCardPathHW(int hDataSource, PWSTR szWildCardPath, PWSTR mszExpandedPathList, out uint32 pcchPathListLength, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhExpandWildCardPathHA(int hDataSource, PSTR szWildCardPath, PSTR mszExpandedPathList, uint32* pcchPathListLength, uint32 dwFlags);
+		public static extern int32 PdhExpandWildCardPathHA(int hDataSource, PSTR szWildCardPath, PSTR mszExpandedPathList, out uint32 pcchPathListLength, uint32 dwFlags);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDataSourceTimeRangeH(int hDataSource, uint32* pdwNumEntries, PDH_TIME_INFO* pInfo, uint32* pdwBufferSize);
+		public static extern int32 PdhGetDataSourceTimeRangeH(int hDataSource, out uint32 pdwNumEntries, out PDH_TIME_INFO pInfo, out uint32 pdwBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDefaultPerfObjectHW(int hDataSource, PWSTR szMachineName, PWSTR szDefaultObjectName, uint32* pcchBufferSize);
+		public static extern int32 PdhGetDefaultPerfObjectHW(int hDataSource, PWSTR szMachineName, PWSTR szDefaultObjectName, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDefaultPerfObjectHA(int hDataSource, PSTR szMachineName, PSTR szDefaultObjectName, uint32* pcchBufferSize);
+		public static extern int32 PdhGetDefaultPerfObjectHA(int hDataSource, PSTR szMachineName, PSTR szDefaultObjectName, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDefaultPerfCounterHW(int hDataSource, PWSTR szMachineName, PWSTR szObjectName, PWSTR szDefaultCounterName, uint32* pcchBufferSize);
+		public static extern int32 PdhGetDefaultPerfCounterHW(int hDataSource, PWSTR szMachineName, PWSTR szObjectName, PWSTR szDefaultCounterName, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhGetDefaultPerfCounterHA(int hDataSource, PSTR szMachineName, PSTR szObjectName, PSTR szDefaultCounterName, uint32* pcchBufferSize);
+		public static extern int32 PdhGetDefaultPerfCounterHA(int hDataSource, PSTR szMachineName, PSTR szObjectName, PSTR szDefaultCounterName, out uint32 pcchBufferSize);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhBrowseCountersHW(PDH_BROWSE_DLG_CONFIG_HW* pBrowseDlgData);
+		public static extern int32 PdhBrowseCountersHW(ref PDH_BROWSE_DLG_CONFIG_HW pBrowseDlgData);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhBrowseCountersHA(PDH_BROWSE_DLG_CONFIG_HA* pBrowseDlgData);
+		public static extern int32 PdhBrowseCountersHA(ref PDH_BROWSE_DLG_CONFIG_HA pBrowseDlgData);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhVerifySQLDBW(PWSTR szDataSource);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
@@ -4424,9 +4424,9 @@ namespace Win32
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhCreateSQLTablesA(PSTR szDataSource);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumLogSetNamesW(PWSTR szDataSource, PWSTR mszDataSetNameList, uint32* pcchBufferLength);
+		public static extern int32 PdhEnumLogSetNamesW(PWSTR szDataSource, PWSTR mszDataSetNameList, out uint32 pcchBufferLength);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 PdhEnumLogSetNamesA(PSTR szDataSource, PSTR mszDataSetNameList, uint32* pcchBufferLength);
+		public static extern int32 PdhEnumLogSetNamesA(PSTR szDataSource, PSTR mszDataSetNameList, out uint32 pcchBufferLength);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 PdhGetLogSetGUID(int hLog, Guid* pGuid, int32* pRunId);
 		[Import("pdh.dll"), CLink, CallingConvention(.Stdcall)]

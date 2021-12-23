@@ -879,7 +879,7 @@ namespace Win32
 		public struct WICRawToneCurve
 		{
 			public uint32 cPoints;
-			public WICRawToneCurvePoint[] aPoints;
+			public WICRawToneCurvePoint[0] aPoints;
 		}
 		[CRepr]
 		public struct WICDdsParameters
@@ -930,57 +930,57 @@ namespace Win32
 			
 			public HRESULT InitializePredefined(WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor) mut
 			{
-				return VT.InitializePredefined(&this, ePaletteType, fAddTransparentColor);
+				return VT.InitializePredefined(ref this, ePaletteType, fAddTransparentColor);
 			}
 			public HRESULT InitializeCustom(uint32* pColors, uint32 cCount) mut
 			{
-				return VT.InitializeCustom(&this, pColors, cCount);
+				return VT.InitializeCustom(ref this, pColors, cCount);
 			}
-			public HRESULT InitializeFromBitmap(IWICBitmapSource* pISurface, uint32 cCount, BOOL fAddTransparentColor) mut
+			public HRESULT InitializeFromBitmap(ref IWICBitmapSource pISurface, uint32 cCount, BOOL fAddTransparentColor) mut
 			{
-				return VT.InitializeFromBitmap(&this, pISurface, cCount, fAddTransparentColor);
+				return VT.InitializeFromBitmap(ref this, ref pISurface, cCount, fAddTransparentColor);
 			}
-			public HRESULT InitializeFromPalette(IWICPalette* pIPalette) mut
+			public HRESULT InitializeFromPalette(ref IWICPalette pIPalette) mut
 			{
-				return VT.InitializeFromPalette(&this, pIPalette);
+				return VT.InitializeFromPalette(ref this, ref pIPalette);
 			}
-			public HRESULT ComGetType(WICBitmapPaletteType* pePaletteType) mut
+			public HRESULT ComGetType(out WICBitmapPaletteType pePaletteType) mut
 			{
-				return VT.ComGetType(&this, pePaletteType);
+				return VT.ComGetType(ref this, out pePaletteType);
 			}
-			public HRESULT GetColorCount(uint32* pcCount) mut
+			public HRESULT GetColorCount(out uint32 pcCount) mut
 			{
-				return VT.GetColorCount(&this, pcCount);
+				return VT.GetColorCount(ref this, out pcCount);
 			}
-			public HRESULT GetColors(uint32 cCount, uint32* pColors, uint32* pcActualColors) mut
+			public HRESULT GetColors(uint32 cCount, uint32* pColors, out uint32 pcActualColors) mut
 			{
-				return VT.GetColors(&this, cCount, pColors, pcActualColors);
+				return VT.GetColors(ref this, cCount, pColors, out pcActualColors);
 			}
-			public HRESULT IsBlackWhite(BOOL* pfIsBlackWhite) mut
+			public HRESULT IsBlackWhite(out BOOL pfIsBlackWhite) mut
 			{
-				return VT.IsBlackWhite(&this, pfIsBlackWhite);
+				return VT.IsBlackWhite(ref this, out pfIsBlackWhite);
 			}
-			public HRESULT IsGrayscale(BOOL* pfIsGrayscale) mut
+			public HRESULT IsGrayscale(out BOOL pfIsGrayscale) mut
 			{
-				return VT.IsGrayscale(&this, pfIsGrayscale);
+				return VT.IsGrayscale(ref this, out pfIsGrayscale);
 			}
-			public HRESULT HasAlpha(BOOL* pfHasAlpha) mut
+			public HRESULT HasAlpha(out BOOL pfHasAlpha) mut
 			{
-				return VT.HasAlpha(&this, pfHasAlpha);
+				return VT.HasAlpha(ref this, out pfHasAlpha);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICPalette *self, WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor) InitializePredefined;
-				public new function HRESULT(IWICPalette *self, uint32* pColors, uint32 cCount) InitializeCustom;
-				public new function HRESULT(IWICPalette *self, IWICBitmapSource* pISurface, uint32 cCount, BOOL fAddTransparentColor) InitializeFromBitmap;
-				public new function HRESULT(IWICPalette *self, IWICPalette* pIPalette) InitializeFromPalette;
-				public new function HRESULT(IWICPalette *self, WICBitmapPaletteType* pePaletteType) ComGetType;
-				public new function HRESULT(IWICPalette *self, uint32* pcCount) GetColorCount;
-				public new function HRESULT(IWICPalette *self, uint32 cCount, uint32* pColors, uint32* pcActualColors) GetColors;
-				public new function HRESULT(IWICPalette *self, BOOL* pfIsBlackWhite) IsBlackWhite;
-				public new function HRESULT(IWICPalette *self, BOOL* pfIsGrayscale) IsGrayscale;
-				public new function HRESULT(IWICPalette *self, BOOL* pfHasAlpha) HasAlpha;
+				public new function HRESULT(ref IWICPalette self, WICBitmapPaletteType ePaletteType, BOOL fAddTransparentColor) InitializePredefined;
+				public new function HRESULT(ref IWICPalette self, uint32* pColors, uint32 cCount) InitializeCustom;
+				public new function HRESULT(ref IWICPalette self, ref IWICBitmapSource pISurface, uint32 cCount, BOOL fAddTransparentColor) InitializeFromBitmap;
+				public new function HRESULT(ref IWICPalette self, ref IWICPalette pIPalette) InitializeFromPalette;
+				public new function HRESULT(ref IWICPalette self, out WICBitmapPaletteType pePaletteType) ComGetType;
+				public new function HRESULT(ref IWICPalette self, out uint32 pcCount) GetColorCount;
+				public new function HRESULT(ref IWICPalette self, uint32 cCount, uint32* pColors, out uint32 pcActualColors) GetColors;
+				public new function HRESULT(ref IWICPalette self, out BOOL pfIsBlackWhite) IsBlackWhite;
+				public new function HRESULT(ref IWICPalette self, out BOOL pfIsGrayscale) IsGrayscale;
+				public new function HRESULT(ref IWICPalette self, out BOOL pfHasAlpha) HasAlpha;
 			}
 		}
 		[CRepr]
@@ -990,34 +990,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSize(uint32* puiWidth, uint32* puiHeight) mut
+			public HRESULT GetSize(out uint32 puiWidth, out uint32 puiHeight) mut
 			{
-				return VT.GetSize(&this, puiWidth, puiHeight);
+				return VT.GetSize(ref this, out puiWidth, out puiHeight);
 			}
-			public HRESULT GetPixelFormat(Guid* pPixelFormat) mut
+			public HRESULT GetPixelFormat(out Guid pPixelFormat) mut
 			{
-				return VT.GetPixelFormat(&this, pPixelFormat);
+				return VT.GetPixelFormat(ref this, out pPixelFormat);
 			}
-			public HRESULT GetResolution(double* pDpiX, double* pDpiY) mut
+			public HRESULT GetResolution(out double pDpiX, out double pDpiY) mut
 			{
-				return VT.GetResolution(&this, pDpiX, pDpiY);
+				return VT.GetResolution(ref this, out pDpiX, out pDpiY);
 			}
-			public HRESULT CopyPalette(IWICPalette* pIPalette) mut
+			public HRESULT CopyPalette(ref IWICPalette pIPalette) mut
 			{
-				return VT.CopyPalette(&this, pIPalette);
+				return VT.CopyPalette(ref this, ref pIPalette);
 			}
-			public HRESULT CopyPixels(WICRect* prc, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) mut
+			public HRESULT CopyPixels(in WICRect prc, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) mut
 			{
-				return VT.CopyPixels(&this, prc, cbStride, cbBufferSize, pbBuffer);
+				return VT.CopyPixels(ref this, prc, cbStride, cbBufferSize, pbBuffer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICBitmapSource *self, uint32* puiWidth, uint32* puiHeight) GetSize;
-				public new function HRESULT(IWICBitmapSource *self, Guid* pPixelFormat) GetPixelFormat;
-				public new function HRESULT(IWICBitmapSource *self, double* pDpiX, double* pDpiY) GetResolution;
-				public new function HRESULT(IWICBitmapSource *self, IWICPalette* pIPalette) CopyPalette;
-				public new function HRESULT(IWICBitmapSource *self, WICRect* prc, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
+				public new function HRESULT(ref IWICBitmapSource self, out uint32 puiWidth, out uint32 puiHeight) GetSize;
+				public new function HRESULT(ref IWICBitmapSource self, out Guid pPixelFormat) GetPixelFormat;
+				public new function HRESULT(ref IWICBitmapSource self, out double pDpiX, out double pDpiY) GetResolution;
+				public new function HRESULT(ref IWICBitmapSource self, ref IWICPalette pIPalette) CopyPalette;
+				public new function HRESULT(ref IWICBitmapSource self, in WICRect prc, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
 			}
 		}
 		[CRepr]
@@ -1027,19 +1027,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IWICBitmapSource* pISource, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) mut
+			public HRESULT Initialize(ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) mut
 			{
-				return VT.Initialize(&this, pISource, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+				return VT.Initialize(ref this, ref pISource, ref dstFormat, dither, ref pIPalette, alphaThresholdPercent, paletteTranslate);
 			}
-			public HRESULT CanConvert(Guid* srcPixelFormat, Guid* dstPixelFormat, BOOL* pfCanConvert) mut
+			public HRESULT CanConvert(ref Guid srcPixelFormat, ref Guid dstPixelFormat, out BOOL pfCanConvert) mut
 			{
-				return VT.CanConvert(&this, srcPixelFormat, dstPixelFormat, pfCanConvert);
+				return VT.CanConvert(ref this, ref srcPixelFormat, ref dstPixelFormat, out pfCanConvert);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(IWICFormatConverter *self, IWICBitmapSource* pISource, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
-				public new function HRESULT(IWICFormatConverter *self, Guid* srcPixelFormat, Guid* dstPixelFormat, BOOL* pfCanConvert) CanConvert;
+				public new function HRESULT(ref IWICFormatConverter self, ref IWICBitmapSource pISource, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
+				public new function HRESULT(ref IWICFormatConverter self, ref Guid srcPixelFormat, ref Guid dstPixelFormat, out BOOL pfCanConvert) CanConvert;
 			}
 		}
 		[CRepr]
@@ -1049,19 +1049,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IWICBitmapSource** ppPlanes, uint32 cPlanes, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) mut
+			public HRESULT Initialize(IWICBitmapSource** ppPlanes, uint32 cPlanes, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) mut
 			{
-				return VT.Initialize(&this, ppPlanes, cPlanes, dstFormat, dither, pIPalette, alphaThresholdPercent, paletteTranslate);
+				return VT.Initialize(ref this, ppPlanes, cPlanes, ref dstFormat, dither, ref pIPalette, alphaThresholdPercent, paletteTranslate);
 			}
-			public HRESULT CanConvert(Guid* pSrcPixelFormats, uint32 cSrcPlanes, Guid* dstPixelFormat, BOOL* pfCanConvert) mut
+			public HRESULT CanConvert(Guid* pSrcPixelFormats, uint32 cSrcPlanes, ref Guid dstPixelFormat, out BOOL pfCanConvert) mut
 			{
-				return VT.CanConvert(&this, pSrcPixelFormats, cSrcPlanes, dstPixelFormat, pfCanConvert);
+				return VT.CanConvert(ref this, pSrcPixelFormats, cSrcPlanes, ref dstPixelFormat, out pfCanConvert);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(IWICPlanarFormatConverter *self, IWICBitmapSource** ppPlanes, uint32 cPlanes, Guid* dstFormat, WICBitmapDitherType dither, IWICPalette* pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
-				public new function HRESULT(IWICPlanarFormatConverter *self, Guid* pSrcPixelFormats, uint32 cSrcPlanes, Guid* dstPixelFormat, BOOL* pfCanConvert) CanConvert;
+				public new function HRESULT(ref IWICPlanarFormatConverter self, IWICBitmapSource** ppPlanes, uint32 cPlanes, ref Guid dstFormat, WICBitmapDitherType dither, ref IWICPalette pIPalette, double alphaThresholdPercent, WICBitmapPaletteType paletteTranslate) Initialize;
+				public new function HRESULT(ref IWICPlanarFormatConverter self, Guid* pSrcPixelFormats, uint32 cSrcPlanes, ref Guid dstPixelFormat, out BOOL pfCanConvert) CanConvert;
 			}
 		}
 		[CRepr]
@@ -1071,14 +1071,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IWICBitmapSource* pISource, uint32 uiWidth, uint32 uiHeight, WICBitmapInterpolationMode mode) mut
+			public HRESULT Initialize(ref IWICBitmapSource pISource, uint32 uiWidth, uint32 uiHeight, WICBitmapInterpolationMode mode) mut
 			{
-				return VT.Initialize(&this, pISource, uiWidth, uiHeight, mode);
+				return VT.Initialize(ref this, ref pISource, uiWidth, uiHeight, mode);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(IWICBitmapScaler *self, IWICBitmapSource* pISource, uint32 uiWidth, uint32 uiHeight, WICBitmapInterpolationMode mode) Initialize;
+				public new function HRESULT(ref IWICBitmapScaler self, ref IWICBitmapSource pISource, uint32 uiWidth, uint32 uiHeight, WICBitmapInterpolationMode mode) Initialize;
 			}
 		}
 		[CRepr]
@@ -1088,14 +1088,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IWICBitmapSource* pISource, WICRect* prc) mut
+			public HRESULT Initialize(ref IWICBitmapSource pISource, in WICRect prc) mut
 			{
-				return VT.Initialize(&this, pISource, prc);
+				return VT.Initialize(ref this, ref pISource, prc);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(IWICBitmapClipper *self, IWICBitmapSource* pISource, WICRect* prc) Initialize;
+				public new function HRESULT(ref IWICBitmapClipper self, ref IWICBitmapSource pISource, in WICRect prc) Initialize;
 			}
 		}
 		[CRepr]
@@ -1105,14 +1105,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IWICBitmapSource* pISource, WICBitmapTransformOptions options) mut
+			public HRESULT Initialize(ref IWICBitmapSource pISource, WICBitmapTransformOptions options) mut
 			{
-				return VT.Initialize(&this, pISource, options);
+				return VT.Initialize(ref this, ref pISource, options);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(IWICBitmapFlipRotator *self, IWICBitmapSource* pISource, WICBitmapTransformOptions options) Initialize;
+				public new function HRESULT(ref IWICBitmapFlipRotator self, ref IWICBitmapSource pISource, WICBitmapTransformOptions options) Initialize;
 			}
 		}
 		[CRepr]
@@ -1122,29 +1122,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSize(uint32* puiWidth, uint32* puiHeight) mut
+			public HRESULT GetSize(out uint32 puiWidth, out uint32 puiHeight) mut
 			{
-				return VT.GetSize(&this, puiWidth, puiHeight);
+				return VT.GetSize(ref this, out puiWidth, out puiHeight);
 			}
-			public HRESULT GetStride(uint32* pcbStride) mut
+			public HRESULT GetStride(out uint32 pcbStride) mut
 			{
-				return VT.GetStride(&this, pcbStride);
+				return VT.GetStride(ref this, out pcbStride);
 			}
-			public HRESULT GetDataPointer(uint32* pcbBufferSize, uint8** ppbData) mut
+			public HRESULT GetDataPointer(out uint32 pcbBufferSize, uint8** ppbData) mut
 			{
-				return VT.GetDataPointer(&this, pcbBufferSize, ppbData);
+				return VT.GetDataPointer(ref this, out pcbBufferSize, ppbData);
 			}
-			public HRESULT GetPixelFormat(Guid* pPixelFormat) mut
+			public HRESULT GetPixelFormat(out Guid pPixelFormat) mut
 			{
-				return VT.GetPixelFormat(&this, pPixelFormat);
+				return VT.GetPixelFormat(ref this, out pPixelFormat);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICBitmapLock *self, uint32* puiWidth, uint32* puiHeight) GetSize;
-				public new function HRESULT(IWICBitmapLock *self, uint32* pcbStride) GetStride;
-				public new function HRESULT(IWICBitmapLock *self, uint32* pcbBufferSize, uint8** ppbData) GetDataPointer;
-				public new function HRESULT(IWICBitmapLock *self, Guid* pPixelFormat) GetPixelFormat;
+				public new function HRESULT(ref IWICBitmapLock self, out uint32 puiWidth, out uint32 puiHeight) GetSize;
+				public new function HRESULT(ref IWICBitmapLock self, out uint32 pcbStride) GetStride;
+				public new function HRESULT(ref IWICBitmapLock self, out uint32 pcbBufferSize, uint8** ppbData) GetDataPointer;
+				public new function HRESULT(ref IWICBitmapLock self, out Guid pPixelFormat) GetPixelFormat;
 			}
 		}
 		[CRepr]
@@ -1154,24 +1154,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Lock(WICRect* prcLock, uint32 flags, IWICBitmapLock** ppILock) mut
+			public HRESULT Lock(in WICRect prcLock, uint32 flags, out IWICBitmapLock* ppILock) mut
 			{
-				return VT.Lock(&this, prcLock, flags, ppILock);
+				return VT.Lock(ref this, prcLock, flags, out ppILock);
 			}
-			public HRESULT SetPalette(IWICPalette* pIPalette) mut
+			public HRESULT SetPalette(ref IWICPalette pIPalette) mut
 			{
-				return VT.SetPalette(&this, pIPalette);
+				return VT.SetPalette(ref this, ref pIPalette);
 			}
 			public HRESULT SetResolution(double dpiX, double dpiY) mut
 			{
-				return VT.SetResolution(&this, dpiX, dpiY);
+				return VT.SetResolution(ref this, dpiX, dpiY);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(IWICBitmap *self, WICRect* prcLock, uint32 flags, IWICBitmapLock** ppILock) Lock;
-				public new function HRESULT(IWICBitmap *self, IWICPalette* pIPalette) SetPalette;
-				public new function HRESULT(IWICBitmap *self, double dpiX, double dpiY) SetResolution;
+				public new function HRESULT(ref IWICBitmap self, in WICRect prcLock, uint32 flags, out IWICBitmapLock* ppILock) Lock;
+				public new function HRESULT(ref IWICBitmap self, ref IWICPalette pIPalette) SetPalette;
+				public new function HRESULT(ref IWICBitmap self, double dpiX, double dpiY) SetResolution;
 			}
 		}
 		[CRepr]
@@ -1183,37 +1183,37 @@ namespace Win32
 			
 			public HRESULT InitializeFromFilename(PWSTR wzFilename) mut
 			{
-				return VT.InitializeFromFilename(&this, wzFilename);
+				return VT.InitializeFromFilename(ref this, wzFilename);
 			}
 			public HRESULT InitializeFromMemory(uint8* pbBuffer, uint32 cbBufferSize) mut
 			{
-				return VT.InitializeFromMemory(&this, pbBuffer, cbBufferSize);
+				return VT.InitializeFromMemory(ref this, pbBuffer, cbBufferSize);
 			}
 			public HRESULT InitializeFromExifColorSpace(uint32 value) mut
 			{
-				return VT.InitializeFromExifColorSpace(&this, value);
+				return VT.InitializeFromExifColorSpace(ref this, value);
 			}
-			public HRESULT ComGetType(WICColorContextType* pType) mut
+			public HRESULT ComGetType(out WICColorContextType pType) mut
 			{
-				return VT.ComGetType(&this, pType);
+				return VT.ComGetType(ref this, out pType);
 			}
-			public HRESULT GetProfileBytes(uint32 cbBuffer, uint8* pbBuffer, uint32* pcbActual) mut
+			public HRESULT GetProfileBytes(uint32 cbBuffer, uint8* pbBuffer, out uint32 pcbActual) mut
 			{
-				return VT.GetProfileBytes(&this, cbBuffer, pbBuffer, pcbActual);
+				return VT.GetProfileBytes(ref this, cbBuffer, pbBuffer, out pcbActual);
 			}
-			public HRESULT GetExifColorSpace(uint32* pValue) mut
+			public HRESULT GetExifColorSpace(out uint32 pValue) mut
 			{
-				return VT.GetExifColorSpace(&this, pValue);
+				return VT.GetExifColorSpace(ref this, out pValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICColorContext *self, PWSTR wzFilename) InitializeFromFilename;
-				public new function HRESULT(IWICColorContext *self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
-				public new function HRESULT(IWICColorContext *self, uint32 value) InitializeFromExifColorSpace;
-				public new function HRESULT(IWICColorContext *self, WICColorContextType* pType) ComGetType;
-				public new function HRESULT(IWICColorContext *self, uint32 cbBuffer, uint8* pbBuffer, uint32* pcbActual) GetProfileBytes;
-				public new function HRESULT(IWICColorContext *self, uint32* pValue) GetExifColorSpace;
+				public new function HRESULT(ref IWICColorContext self, PWSTR wzFilename) InitializeFromFilename;
+				public new function HRESULT(ref IWICColorContext self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
+				public new function HRESULT(ref IWICColorContext self, uint32 value) InitializeFromExifColorSpace;
+				public new function HRESULT(ref IWICColorContext self, out WICColorContextType pType) ComGetType;
+				public new function HRESULT(ref IWICColorContext self, uint32 cbBuffer, uint8* pbBuffer, out uint32 pcbActual) GetProfileBytes;
+				public new function HRESULT(ref IWICColorContext self, out uint32 pValue) GetExifColorSpace;
 			}
 		}
 		[CRepr]
@@ -1223,14 +1223,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IWICBitmapSource* pIBitmapSource, IWICColorContext* pIContextSource, IWICColorContext* pIContextDest, Guid* pixelFmtDest) mut
+			public HRESULT Initialize(ref IWICBitmapSource pIBitmapSource, ref IWICColorContext pIContextSource, ref IWICColorContext pIContextDest, ref Guid pixelFmtDest) mut
 			{
-				return VT.Initialize(&this, pIBitmapSource, pIContextSource, pIContextDest, pixelFmtDest);
+				return VT.Initialize(ref this, ref pIBitmapSource, ref pIContextSource, ref pIContextDest, ref pixelFmtDest);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(IWICColorTransform *self, IWICBitmapSource* pIBitmapSource, IWICColorContext* pIContextSource, IWICColorContext* pIContextDest, Guid* pixelFmtDest) Initialize;
+				public new function HRESULT(ref IWICColorTransform self, ref IWICBitmapSource pIBitmapSource, ref IWICColorContext pIContextSource, ref IWICColorContext pIContextDest, ref Guid pixelFmtDest) Initialize;
 			}
 		}
 		[CRepr]
@@ -1242,17 +1242,17 @@ namespace Win32
 			
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
-			public HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter) mut
+			public HRESULT GetMetadataQueryWriter(out IWICMetadataQueryWriter* ppIMetadataQueryWriter) mut
 			{
-				return VT.GetMetadataQueryWriter(&this, ppIMetadataQueryWriter);
+				return VT.GetMetadataQueryWriter(ref this, out ppIMetadataQueryWriter);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICFastMetadataEncoder *self) Commit;
-				public new function HRESULT(IWICFastMetadataEncoder *self, IWICMetadataQueryWriter** ppIMetadataQueryWriter) GetMetadataQueryWriter;
+				public new function HRESULT(ref IWICFastMetadataEncoder self) Commit;
+				public new function HRESULT(ref IWICFastMetadataEncoder self, out IWICMetadataQueryWriter* ppIMetadataQueryWriter) GetMetadataQueryWriter;
 			}
 		}
 		[CRepr]
@@ -1262,29 +1262,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeFromIStream(IStream* pIStream) mut
+			public HRESULT InitializeFromIStream(ref IStream pIStream) mut
 			{
-				return VT.InitializeFromIStream(&this, pIStream);
+				return VT.InitializeFromIStream(ref this, ref pIStream);
 			}
 			public HRESULT InitializeFromFilename(PWSTR wzFileName, uint32 dwDesiredAccess) mut
 			{
-				return VT.InitializeFromFilename(&this, wzFileName, dwDesiredAccess);
+				return VT.InitializeFromFilename(ref this, wzFileName, dwDesiredAccess);
 			}
 			public HRESULT InitializeFromMemory(uint8* pbBuffer, uint32 cbBufferSize) mut
 			{
-				return VT.InitializeFromMemory(&this, pbBuffer, cbBufferSize);
+				return VT.InitializeFromMemory(ref this, pbBuffer, cbBufferSize);
 			}
-			public HRESULT InitializeFromIStreamRegion(IStream* pIStream, ULARGE_INTEGER ulOffset, ULARGE_INTEGER ulMaxSize) mut
+			public HRESULT InitializeFromIStreamRegion(ref IStream pIStream, ULARGE_INTEGER ulOffset, ULARGE_INTEGER ulMaxSize) mut
 			{
-				return VT.InitializeFromIStreamRegion(&this, pIStream, ulOffset, ulMaxSize);
+				return VT.InitializeFromIStreamRegion(ref this, ref pIStream, ulOffset, ulMaxSize);
 			}
 			[CRepr]
 			public struct VTable : IStream.VTable
 			{
-				public new function HRESULT(IWICStream *self, IStream* pIStream) InitializeFromIStream;
-				public new function HRESULT(IWICStream *self, PWSTR wzFileName, uint32 dwDesiredAccess) InitializeFromFilename;
-				public new function HRESULT(IWICStream *self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
-				public new function HRESULT(IWICStream *self, IStream* pIStream, ULARGE_INTEGER ulOffset, ULARGE_INTEGER ulMaxSize) InitializeFromIStreamRegion;
+				public new function HRESULT(ref IWICStream self, ref IStream pIStream) InitializeFromIStream;
+				public new function HRESULT(ref IWICStream self, PWSTR wzFileName, uint32 dwDesiredAccess) InitializeFromFilename;
+				public new function HRESULT(ref IWICStream self, uint8* pbBuffer, uint32 cbBufferSize) InitializeFromMemory;
+				public new function HRESULT(ref IWICStream self, ref IStream pIStream, ULARGE_INTEGER ulOffset, ULARGE_INTEGER ulMaxSize) InitializeFromIStreamRegion;
 			}
 		}
 		[CRepr]
@@ -1294,29 +1294,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, PROPVARIANT* rgeltSchema, PROPVARIANT* rgeltId, PROPVARIANT* rgeltValue, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, PROPVARIANT* rgeltSchema, PROPVARIANT* rgeltId, PROPVARIANT* rgeltValue, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, rgeltSchema, rgeltId, rgeltValue, pceltFetched);
+				return VT.Next(ref this, celt, rgeltSchema, rgeltId, rgeltValue, out pceltFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT Clone(IWICEnumMetadataItem** ppIEnumMetadataItem) mut
+			public HRESULT Clone(out IWICEnumMetadataItem* ppIEnumMetadataItem) mut
 			{
-				return VT.Clone(&this, ppIEnumMetadataItem);
+				return VT.Clone(ref this, out ppIEnumMetadataItem);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICEnumMetadataItem *self, uint32 celt, PROPVARIANT* rgeltSchema, PROPVARIANT* rgeltId, PROPVARIANT* rgeltValue, uint32* pceltFetched) Next;
-				public new function HRESULT(IWICEnumMetadataItem *self, uint32 celt) Skip;
-				public new function HRESULT(IWICEnumMetadataItem *self) Reset;
-				public new function HRESULT(IWICEnumMetadataItem *self, IWICEnumMetadataItem** ppIEnumMetadataItem) Clone;
+				public new function HRESULT(ref IWICEnumMetadataItem self, uint32 celt, PROPVARIANT* rgeltSchema, PROPVARIANT* rgeltId, PROPVARIANT* rgeltValue, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IWICEnumMetadataItem self, uint32 celt) Skip;
+				public new function HRESULT(ref IWICEnumMetadataItem self) Reset;
+				public new function HRESULT(ref IWICEnumMetadataItem self, out IWICEnumMetadataItem* ppIEnumMetadataItem) Clone;
 			}
 		}
 		[CRepr]
@@ -1326,29 +1326,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetContainerFormat(Guid* pguidContainerFormat) mut
+			public HRESULT GetContainerFormat(out Guid pguidContainerFormat) mut
 			{
-				return VT.GetContainerFormat(&this, pguidContainerFormat);
+				return VT.GetContainerFormat(ref this, out pguidContainerFormat);
 			}
-			public HRESULT GetLocation(uint32 cchMaxLength, char16* wzNamespace, uint32* pcchActualLength) mut
+			public HRESULT GetLocation(uint32 cchMaxLength, char16* wzNamespace, out uint32 pcchActualLength) mut
 			{
-				return VT.GetLocation(&this, cchMaxLength, wzNamespace, pcchActualLength);
+				return VT.GetLocation(ref this, cchMaxLength, wzNamespace, out pcchActualLength);
 			}
-			public HRESULT GetMetadataByName(PWSTR wzName, PROPVARIANT* pvarValue) mut
+			public HRESULT GetMetadataByName(PWSTR wzName, out PROPVARIANT pvarValue) mut
 			{
-				return VT.GetMetadataByName(&this, wzName, pvarValue);
+				return VT.GetMetadataByName(ref this, wzName, out pvarValue);
 			}
-			public HRESULT GetEnumerator(IEnumString** ppIEnumString) mut
+			public HRESULT GetEnumerator(out IEnumString* ppIEnumString) mut
 			{
-				return VT.GetEnumerator(&this, ppIEnumString);
+				return VT.GetEnumerator(ref this, out ppIEnumString);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICMetadataQueryReader *self, Guid* pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(IWICMetadataQueryReader *self, uint32 cchMaxLength, char16* wzNamespace, uint32* pcchActualLength) GetLocation;
-				public new function HRESULT(IWICMetadataQueryReader *self, PWSTR wzName, PROPVARIANT* pvarValue) GetMetadataByName;
-				public new function HRESULT(IWICMetadataQueryReader *self, IEnumString** ppIEnumString) GetEnumerator;
+				public new function HRESULT(ref IWICMetadataQueryReader self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function HRESULT(ref IWICMetadataQueryReader self, uint32 cchMaxLength, char16* wzNamespace, out uint32 pcchActualLength) GetLocation;
+				public new function HRESULT(ref IWICMetadataQueryReader self, PWSTR wzName, out PROPVARIANT pvarValue) GetMetadataByName;
+				public new function HRESULT(ref IWICMetadataQueryReader self, out IEnumString* ppIEnumString) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -1358,19 +1358,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMetadataByName(PWSTR wzName, PROPVARIANT* pvarValue) mut
+			public HRESULT SetMetadataByName(PWSTR wzName, in PROPVARIANT pvarValue) mut
 			{
-				return VT.SetMetadataByName(&this, wzName, pvarValue);
+				return VT.SetMetadataByName(ref this, wzName, pvarValue);
 			}
 			public HRESULT RemoveMetadataByName(PWSTR wzName) mut
 			{
-				return VT.RemoveMetadataByName(&this, wzName);
+				return VT.RemoveMetadataByName(ref this, wzName);
 			}
 			[CRepr]
 			public struct VTable : IWICMetadataQueryReader.VTable
 			{
-				public new function HRESULT(IWICMetadataQueryWriter *self, PWSTR wzName, PROPVARIANT* pvarValue) SetMetadataByName;
-				public new function HRESULT(IWICMetadataQueryWriter *self, PWSTR wzName) RemoveMetadataByName;
+				public new function HRESULT(ref IWICMetadataQueryWriter self, PWSTR wzName, in PROPVARIANT pvarValue) SetMetadataByName;
+				public new function HRESULT(ref IWICMetadataQueryWriter self, PWSTR wzName) RemoveMetadataByName;
 			}
 		}
 		[CRepr]
@@ -1380,59 +1380,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IStream* pIStream, WICBitmapEncoderCacheOption cacheOption) mut
+			public HRESULT Initialize(ref IStream pIStream, WICBitmapEncoderCacheOption cacheOption) mut
 			{
-				return VT.Initialize(&this, pIStream, cacheOption);
+				return VT.Initialize(ref this, ref pIStream, cacheOption);
 			}
-			public HRESULT GetContainerFormat(Guid* pguidContainerFormat) mut
+			public HRESULT GetContainerFormat(out Guid pguidContainerFormat) mut
 			{
-				return VT.GetContainerFormat(&this, pguidContainerFormat);
+				return VT.GetContainerFormat(ref this, out pguidContainerFormat);
 			}
-			public HRESULT GetEncoderInfo(IWICBitmapEncoderInfo** ppIEncoderInfo) mut
+			public HRESULT GetEncoderInfo(out IWICBitmapEncoderInfo* ppIEncoderInfo) mut
 			{
-				return VT.GetEncoderInfo(&this, ppIEncoderInfo);
+				return VT.GetEncoderInfo(ref this, out ppIEncoderInfo);
 			}
 			public HRESULT SetColorContexts(uint32 cCount, IWICColorContext** ppIColorContext) mut
 			{
-				return VT.SetColorContexts(&this, cCount, ppIColorContext);
+				return VT.SetColorContexts(ref this, cCount, ppIColorContext);
 			}
-			public HRESULT SetPalette(IWICPalette* pIPalette) mut
+			public HRESULT SetPalette(ref IWICPalette pIPalette) mut
 			{
-				return VT.SetPalette(&this, pIPalette);
+				return VT.SetPalette(ref this, ref pIPalette);
 			}
-			public HRESULT SetThumbnail(IWICBitmapSource* pIThumbnail) mut
+			public HRESULT SetThumbnail(ref IWICBitmapSource pIThumbnail) mut
 			{
-				return VT.SetThumbnail(&this, pIThumbnail);
+				return VT.SetThumbnail(ref this, ref pIThumbnail);
 			}
-			public HRESULT SetPreview(IWICBitmapSource* pIPreview) mut
+			public HRESULT SetPreview(ref IWICBitmapSource pIPreview) mut
 			{
-				return VT.SetPreview(&this, pIPreview);
+				return VT.SetPreview(ref this, ref pIPreview);
 			}
-			public HRESULT CreateNewFrame(IWICBitmapFrameEncode** ppIFrameEncode, IPropertyBag2** ppIEncoderOptions) mut
+			public HRESULT CreateNewFrame(out IWICBitmapFrameEncode* ppIFrameEncode, out IPropertyBag2* ppIEncoderOptions) mut
 			{
-				return VT.CreateNewFrame(&this, ppIFrameEncode, ppIEncoderOptions);
+				return VT.CreateNewFrame(ref this, out ppIFrameEncode, out ppIEncoderOptions);
 			}
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
-			public HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter) mut
+			public HRESULT GetMetadataQueryWriter(out IWICMetadataQueryWriter* ppIMetadataQueryWriter) mut
 			{
-				return VT.GetMetadataQueryWriter(&this, ppIMetadataQueryWriter);
+				return VT.GetMetadataQueryWriter(ref this, out ppIMetadataQueryWriter);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICBitmapEncoder *self, IStream* pIStream, WICBitmapEncoderCacheOption cacheOption) Initialize;
-				public new function HRESULT(IWICBitmapEncoder *self, Guid* pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(IWICBitmapEncoder *self, IWICBitmapEncoderInfo** ppIEncoderInfo) GetEncoderInfo;
-				public new function HRESULT(IWICBitmapEncoder *self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
-				public new function HRESULT(IWICBitmapEncoder *self, IWICPalette* pIPalette) SetPalette;
-				public new function HRESULT(IWICBitmapEncoder *self, IWICBitmapSource* pIThumbnail) SetThumbnail;
-				public new function HRESULT(IWICBitmapEncoder *self, IWICBitmapSource* pIPreview) SetPreview;
-				public new function HRESULT(IWICBitmapEncoder *self, IWICBitmapFrameEncode** ppIFrameEncode, IPropertyBag2** ppIEncoderOptions) CreateNewFrame;
-				public new function HRESULT(IWICBitmapEncoder *self) Commit;
-				public new function HRESULT(IWICBitmapEncoder *self, IWICMetadataQueryWriter** ppIMetadataQueryWriter) GetMetadataQueryWriter;
+				public new function HRESULT(ref IWICBitmapEncoder self, ref IStream pIStream, WICBitmapEncoderCacheOption cacheOption) Initialize;
+				public new function HRESULT(ref IWICBitmapEncoder self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function HRESULT(ref IWICBitmapEncoder self, out IWICBitmapEncoderInfo* ppIEncoderInfo) GetEncoderInfo;
+				public new function HRESULT(ref IWICBitmapEncoder self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
+				public new function HRESULT(ref IWICBitmapEncoder self, ref IWICPalette pIPalette) SetPalette;
+				public new function HRESULT(ref IWICBitmapEncoder self, ref IWICBitmapSource pIThumbnail) SetThumbnail;
+				public new function HRESULT(ref IWICBitmapEncoder self, ref IWICBitmapSource pIPreview) SetPreview;
+				public new function HRESULT(ref IWICBitmapEncoder self, out IWICBitmapFrameEncode* ppIFrameEncode, out IPropertyBag2* ppIEncoderOptions) CreateNewFrame;
+				public new function HRESULT(ref IWICBitmapEncoder self) Commit;
+				public new function HRESULT(ref IWICBitmapEncoder self, out IWICMetadataQueryWriter* ppIMetadataQueryWriter) GetMetadataQueryWriter;
 			}
 		}
 		[CRepr]
@@ -1442,64 +1442,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IPropertyBag2* pIEncoderOptions) mut
+			public HRESULT Initialize(ref IPropertyBag2 pIEncoderOptions) mut
 			{
-				return VT.Initialize(&this, pIEncoderOptions);
+				return VT.Initialize(ref this, ref pIEncoderOptions);
 			}
 			public HRESULT SetSize(uint32 uiWidth, uint32 uiHeight) mut
 			{
-				return VT.SetSize(&this, uiWidth, uiHeight);
+				return VT.SetSize(ref this, uiWidth, uiHeight);
 			}
 			public HRESULT SetResolution(double dpiX, double dpiY) mut
 			{
-				return VT.SetResolution(&this, dpiX, dpiY);
+				return VT.SetResolution(ref this, dpiX, dpiY);
 			}
-			public HRESULT SetPixelFormat(Guid* pPixelFormat) mut
+			public HRESULT SetPixelFormat(out Guid pPixelFormat) mut
 			{
-				return VT.SetPixelFormat(&this, pPixelFormat);
+				return VT.SetPixelFormat(ref this, out pPixelFormat);
 			}
 			public HRESULT SetColorContexts(uint32 cCount, IWICColorContext** ppIColorContext) mut
 			{
-				return VT.SetColorContexts(&this, cCount, ppIColorContext);
+				return VT.SetColorContexts(ref this, cCount, ppIColorContext);
 			}
-			public HRESULT SetPalette(IWICPalette* pIPalette) mut
+			public HRESULT SetPalette(ref IWICPalette pIPalette) mut
 			{
-				return VT.SetPalette(&this, pIPalette);
+				return VT.SetPalette(ref this, ref pIPalette);
 			}
-			public HRESULT SetThumbnail(IWICBitmapSource* pIThumbnail) mut
+			public HRESULT SetThumbnail(ref IWICBitmapSource pIThumbnail) mut
 			{
-				return VT.SetThumbnail(&this, pIThumbnail);
+				return VT.SetThumbnail(ref this, ref pIThumbnail);
 			}
 			public HRESULT WritePixels(uint32 lineCount, uint32 cbStride, uint32 cbBufferSize, uint8* pbPixels) mut
 			{
-				return VT.WritePixels(&this, lineCount, cbStride, cbBufferSize, pbPixels);
+				return VT.WritePixels(ref this, lineCount, cbStride, cbBufferSize, pbPixels);
 			}
-			public HRESULT WriteSource(IWICBitmapSource* pIBitmapSource, WICRect* prc) mut
+			public HRESULT WriteSource(ref IWICBitmapSource pIBitmapSource, ref WICRect prc) mut
 			{
-				return VT.WriteSource(&this, pIBitmapSource, prc);
+				return VT.WriteSource(ref this, ref pIBitmapSource, ref prc);
 			}
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
-			public HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter) mut
+			public HRESULT GetMetadataQueryWriter(out IWICMetadataQueryWriter* ppIMetadataQueryWriter) mut
 			{
-				return VT.GetMetadataQueryWriter(&this, ppIMetadataQueryWriter);
+				return VT.GetMetadataQueryWriter(ref this, out ppIMetadataQueryWriter);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICBitmapFrameEncode *self, IPropertyBag2* pIEncoderOptions) Initialize;
-				public new function HRESULT(IWICBitmapFrameEncode *self, uint32 uiWidth, uint32 uiHeight) SetSize;
-				public new function HRESULT(IWICBitmapFrameEncode *self, double dpiX, double dpiY) SetResolution;
-				public new function HRESULT(IWICBitmapFrameEncode *self, Guid* pPixelFormat) SetPixelFormat;
-				public new function HRESULT(IWICBitmapFrameEncode *self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
-				public new function HRESULT(IWICBitmapFrameEncode *self, IWICPalette* pIPalette) SetPalette;
-				public new function HRESULT(IWICBitmapFrameEncode *self, IWICBitmapSource* pIThumbnail) SetThumbnail;
-				public new function HRESULT(IWICBitmapFrameEncode *self, uint32 lineCount, uint32 cbStride, uint32 cbBufferSize, uint8* pbPixels) WritePixels;
-				public new function HRESULT(IWICBitmapFrameEncode *self, IWICBitmapSource* pIBitmapSource, WICRect* prc) WriteSource;
-				public new function HRESULT(IWICBitmapFrameEncode *self) Commit;
-				public new function HRESULT(IWICBitmapFrameEncode *self, IWICMetadataQueryWriter** ppIMetadataQueryWriter) GetMetadataQueryWriter;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, ref IPropertyBag2 pIEncoderOptions) Initialize;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, uint32 uiWidth, uint32 uiHeight) SetSize;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, double dpiX, double dpiY) SetResolution;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, out Guid pPixelFormat) SetPixelFormat;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, uint32 cCount, IWICColorContext** ppIColorContext) SetColorContexts;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, ref IWICPalette pIPalette) SetPalette;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, ref IWICBitmapSource pIThumbnail) SetThumbnail;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, uint32 lineCount, uint32 cbStride, uint32 cbBufferSize, uint8* pbPixels) WritePixels;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, ref IWICBitmapSource pIBitmapSource, ref WICRect prc) WriteSource;
+				public new function HRESULT(ref IWICBitmapFrameEncode self) Commit;
+				public new function HRESULT(ref IWICBitmapFrameEncode self, out IWICMetadataQueryWriter* ppIMetadataQueryWriter) GetMetadataQueryWriter;
 			}
 		}
 		[CRepr]
@@ -1511,17 +1511,17 @@ namespace Win32
 			
 			public HRESULT WritePixels(uint32 lineCount, WICBitmapPlane* pPlanes, uint32 cPlanes) mut
 			{
-				return VT.WritePixels(&this, lineCount, pPlanes, cPlanes);
+				return VT.WritePixels(ref this, lineCount, pPlanes, cPlanes);
 			}
-			public HRESULT WriteSource(IWICBitmapSource** ppPlanes, uint32 cPlanes, WICRect* prcSource) mut
+			public HRESULT WriteSource(IWICBitmapSource** ppPlanes, uint32 cPlanes, ref WICRect prcSource) mut
 			{
-				return VT.WriteSource(&this, ppPlanes, cPlanes, prcSource);
+				return VT.WriteSource(ref this, ppPlanes, cPlanes, ref prcSource);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICPlanarBitmapFrameEncode *self, uint32 lineCount, WICBitmapPlane* pPlanes, uint32 cPlanes) WritePixels;
-				public new function HRESULT(IWICPlanarBitmapFrameEncode *self, IWICBitmapSource** ppPlanes, uint32 cPlanes, WICRect* prcSource) WriteSource;
+				public new function HRESULT(ref IWICPlanarBitmapFrameEncode self, uint32 lineCount, WICBitmapPlane* pPlanes, uint32 cPlanes) WritePixels;
+				public new function HRESULT(ref IWICPlanarBitmapFrameEncode self, IWICBitmapSource** ppPlanes, uint32 cPlanes, ref WICRect prcSource) WriteSource;
 			}
 		}
 		[CRepr]
@@ -1531,64 +1531,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryCapability(IStream* pIStream, uint32* pdwCapability) mut
+			public HRESULT QueryCapability(ref IStream pIStream, out uint32 pdwCapability) mut
 			{
-				return VT.QueryCapability(&this, pIStream, pdwCapability);
+				return VT.QueryCapability(ref this, ref pIStream, out pdwCapability);
 			}
-			public HRESULT Initialize(IStream* pIStream, WICDecodeOptions cacheOptions) mut
+			public HRESULT Initialize(ref IStream pIStream, WICDecodeOptions cacheOptions) mut
 			{
-				return VT.Initialize(&this, pIStream, cacheOptions);
+				return VT.Initialize(ref this, ref pIStream, cacheOptions);
 			}
-			public HRESULT GetContainerFormat(Guid* pguidContainerFormat) mut
+			public HRESULT GetContainerFormat(out Guid pguidContainerFormat) mut
 			{
-				return VT.GetContainerFormat(&this, pguidContainerFormat);
+				return VT.GetContainerFormat(ref this, out pguidContainerFormat);
 			}
-			public HRESULT GetDecoderInfo(IWICBitmapDecoderInfo** ppIDecoderInfo) mut
+			public HRESULT GetDecoderInfo(out IWICBitmapDecoderInfo* ppIDecoderInfo) mut
 			{
-				return VT.GetDecoderInfo(&this, ppIDecoderInfo);
+				return VT.GetDecoderInfo(ref this, out ppIDecoderInfo);
 			}
-			public HRESULT CopyPalette(IWICPalette* pIPalette) mut
+			public HRESULT CopyPalette(ref IWICPalette pIPalette) mut
 			{
-				return VT.CopyPalette(&this, pIPalette);
+				return VT.CopyPalette(ref this, ref pIPalette);
 			}
-			public HRESULT GetMetadataQueryReader(IWICMetadataQueryReader** ppIMetadataQueryReader) mut
+			public HRESULT GetMetadataQueryReader(out IWICMetadataQueryReader* ppIMetadataQueryReader) mut
 			{
-				return VT.GetMetadataQueryReader(&this, ppIMetadataQueryReader);
+				return VT.GetMetadataQueryReader(ref this, out ppIMetadataQueryReader);
 			}
-			public HRESULT GetPreview(IWICBitmapSource** ppIBitmapSource) mut
+			public HRESULT GetPreview(out IWICBitmapSource* ppIBitmapSource) mut
 			{
-				return VT.GetPreview(&this, ppIBitmapSource);
+				return VT.GetPreview(ref this, out ppIBitmapSource);
 			}
-			public HRESULT GetColorContexts(uint32 cCount, IWICColorContext** ppIColorContexts, uint32* pcActualCount) mut
+			public HRESULT GetColorContexts(uint32 cCount, IWICColorContext** ppIColorContexts, out uint32 pcActualCount) mut
 			{
-				return VT.GetColorContexts(&this, cCount, ppIColorContexts, pcActualCount);
+				return VT.GetColorContexts(ref this, cCount, ppIColorContexts, out pcActualCount);
 			}
-			public HRESULT GetThumbnail(IWICBitmapSource** ppIThumbnail) mut
+			public HRESULT GetThumbnail(out IWICBitmapSource* ppIThumbnail) mut
 			{
-				return VT.GetThumbnail(&this, ppIThumbnail);
+				return VT.GetThumbnail(ref this, out ppIThumbnail);
 			}
-			public HRESULT GetFrameCount(uint32* pCount) mut
+			public HRESULT GetFrameCount(out uint32 pCount) mut
 			{
-				return VT.GetFrameCount(&this, pCount);
+				return VT.GetFrameCount(ref this, out pCount);
 			}
-			public HRESULT GetFrame(uint32 index, IWICBitmapFrameDecode** ppIBitmapFrame) mut
+			public HRESULT GetFrame(uint32 index, out IWICBitmapFrameDecode* ppIBitmapFrame) mut
 			{
-				return VT.GetFrame(&this, index, ppIBitmapFrame);
+				return VT.GetFrame(ref this, index, out ppIBitmapFrame);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICBitmapDecoder *self, IStream* pIStream, uint32* pdwCapability) QueryCapability;
-				public new function HRESULT(IWICBitmapDecoder *self, IStream* pIStream, WICDecodeOptions cacheOptions) Initialize;
-				public new function HRESULT(IWICBitmapDecoder *self, Guid* pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(IWICBitmapDecoder *self, IWICBitmapDecoderInfo** ppIDecoderInfo) GetDecoderInfo;
-				public new function HRESULT(IWICBitmapDecoder *self, IWICPalette* pIPalette) CopyPalette;
-				public new function HRESULT(IWICBitmapDecoder *self, IWICMetadataQueryReader** ppIMetadataQueryReader) GetMetadataQueryReader;
-				public new function HRESULT(IWICBitmapDecoder *self, IWICBitmapSource** ppIBitmapSource) GetPreview;
-				public new function HRESULT(IWICBitmapDecoder *self, uint32 cCount, IWICColorContext** ppIColorContexts, uint32* pcActualCount) GetColorContexts;
-				public new function HRESULT(IWICBitmapDecoder *self, IWICBitmapSource** ppIThumbnail) GetThumbnail;
-				public new function HRESULT(IWICBitmapDecoder *self, uint32* pCount) GetFrameCount;
-				public new function HRESULT(IWICBitmapDecoder *self, uint32 index, IWICBitmapFrameDecode** ppIBitmapFrame) GetFrame;
+				public new function HRESULT(ref IWICBitmapDecoder self, ref IStream pIStream, out uint32 pdwCapability) QueryCapability;
+				public new function HRESULT(ref IWICBitmapDecoder self, ref IStream pIStream, WICDecodeOptions cacheOptions) Initialize;
+				public new function HRESULT(ref IWICBitmapDecoder self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function HRESULT(ref IWICBitmapDecoder self, out IWICBitmapDecoderInfo* ppIDecoderInfo) GetDecoderInfo;
+				public new function HRESULT(ref IWICBitmapDecoder self, ref IWICPalette pIPalette) CopyPalette;
+				public new function HRESULT(ref IWICBitmapDecoder self, out IWICMetadataQueryReader* ppIMetadataQueryReader) GetMetadataQueryReader;
+				public new function HRESULT(ref IWICBitmapDecoder self, out IWICBitmapSource* ppIBitmapSource) GetPreview;
+				public new function HRESULT(ref IWICBitmapDecoder self, uint32 cCount, IWICColorContext** ppIColorContexts, out uint32 pcActualCount) GetColorContexts;
+				public new function HRESULT(ref IWICBitmapDecoder self, out IWICBitmapSource* ppIThumbnail) GetThumbnail;
+				public new function HRESULT(ref IWICBitmapDecoder self, out uint32 pCount) GetFrameCount;
+				public new function HRESULT(ref IWICBitmapDecoder self, uint32 index, out IWICBitmapFrameDecode* ppIBitmapFrame) GetFrame;
 			}
 		}
 		[CRepr]
@@ -1598,29 +1598,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CopyPixels(WICRect* prc, uint32 uiWidth, uint32 uiHeight, Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint32 nStride, uint32 cbBufferSize, uint8* pbBuffer) mut
+			public HRESULT CopyPixels(in WICRect prc, uint32 uiWidth, uint32 uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint32 nStride, uint32 cbBufferSize, uint8* pbBuffer) mut
 			{
-				return VT.CopyPixels(&this, prc, uiWidth, uiHeight, pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBuffer);
+				return VT.CopyPixels(ref this, prc, uiWidth, uiHeight, ref pguidDstFormat, dstTransform, nStride, cbBufferSize, pbBuffer);
 			}
-			public HRESULT GetClosestSize(uint32* puiWidth, uint32* puiHeight) mut
+			public HRESULT GetClosestSize(out uint32 puiWidth, out uint32 puiHeight) mut
 			{
-				return VT.GetClosestSize(&this, puiWidth, puiHeight);
+				return VT.GetClosestSize(ref this, out puiWidth, out puiHeight);
 			}
-			public HRESULT GetClosestPixelFormat(Guid* pguidDstFormat) mut
+			public HRESULT GetClosestPixelFormat(out Guid pguidDstFormat) mut
 			{
-				return VT.GetClosestPixelFormat(&this, pguidDstFormat);
+				return VT.GetClosestPixelFormat(ref this, out pguidDstFormat);
 			}
-			public HRESULT DoesSupportTransform(WICBitmapTransformOptions dstTransform, BOOL* pfIsSupported) mut
+			public HRESULT DoesSupportTransform(WICBitmapTransformOptions dstTransform, out BOOL pfIsSupported) mut
 			{
-				return VT.DoesSupportTransform(&this, dstTransform, pfIsSupported);
+				return VT.DoesSupportTransform(ref this, dstTransform, out pfIsSupported);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICBitmapSourceTransform *self, WICRect* prc, uint32 uiWidth, uint32 uiHeight, Guid* pguidDstFormat, WICBitmapTransformOptions dstTransform, uint32 nStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
-				public new function HRESULT(IWICBitmapSourceTransform *self, uint32* puiWidth, uint32* puiHeight) GetClosestSize;
-				public new function HRESULT(IWICBitmapSourceTransform *self, Guid* pguidDstFormat) GetClosestPixelFormat;
-				public new function HRESULT(IWICBitmapSourceTransform *self, WICBitmapTransformOptions dstTransform, BOOL* pfIsSupported) DoesSupportTransform;
+				public new function HRESULT(ref IWICBitmapSourceTransform self, in WICRect prc, uint32 uiWidth, uint32 uiHeight, ref Guid pguidDstFormat, WICBitmapTransformOptions dstTransform, uint32 nStride, uint32 cbBufferSize, uint8* pbBuffer) CopyPixels;
+				public new function HRESULT(ref IWICBitmapSourceTransform self, out uint32 puiWidth, out uint32 puiHeight) GetClosestSize;
+				public new function HRESULT(ref IWICBitmapSourceTransform self, out Guid pguidDstFormat) GetClosestPixelFormat;
+				public new function HRESULT(ref IWICBitmapSourceTransform self, WICBitmapTransformOptions dstTransform, out BOOL pfIsSupported) DoesSupportTransform;
 			}
 		}
 		[CRepr]
@@ -1630,19 +1630,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DoesSupportTransform(uint32* puiWidth, uint32* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint32 cPlanes, BOOL* pfIsSupported) mut
+			public HRESULT DoesSupportTransform(out uint32 puiWidth, out uint32 puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint32 cPlanes, out BOOL pfIsSupported) mut
 			{
-				return VT.DoesSupportTransform(&this, puiWidth, puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, pfIsSupported);
+				return VT.DoesSupportTransform(ref this, out puiWidth, out puiHeight, dstTransform, dstPlanarOptions, pguidDstFormats, pPlaneDescriptions, cPlanes, out pfIsSupported);
 			}
-			public HRESULT CopyPixels(WICRect* prcSource, uint32 uiWidth, uint32 uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, WICBitmapPlane* pDstPlanes, uint32 cPlanes) mut
+			public HRESULT CopyPixels(in WICRect prcSource, uint32 uiWidth, uint32 uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, WICBitmapPlane* pDstPlanes, uint32 cPlanes) mut
 			{
-				return VT.CopyPixels(&this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
+				return VT.CopyPixels(ref this, prcSource, uiWidth, uiHeight, dstTransform, dstPlanarOptions, pDstPlanes, cPlanes);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICPlanarBitmapSourceTransform *self, uint32* puiWidth, uint32* puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint32 cPlanes, BOOL* pfIsSupported) DoesSupportTransform;
-				public new function HRESULT(IWICPlanarBitmapSourceTransform *self, WICRect* prcSource, uint32 uiWidth, uint32 uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, WICBitmapPlane* pDstPlanes, uint32 cPlanes) CopyPixels;
+				public new function HRESULT(ref IWICPlanarBitmapSourceTransform self, out uint32 puiWidth, out uint32 puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, Guid* pguidDstFormats, WICBitmapPlaneDescription* pPlaneDescriptions, uint32 cPlanes, out BOOL pfIsSupported) DoesSupportTransform;
+				public new function HRESULT(ref IWICPlanarBitmapSourceTransform self, in WICRect prcSource, uint32 uiWidth, uint32 uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, WICBitmapPlane* pDstPlanes, uint32 cPlanes) CopyPixels;
 			}
 		}
 		[CRepr]
@@ -1652,24 +1652,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMetadataQueryReader(IWICMetadataQueryReader** ppIMetadataQueryReader) mut
+			public HRESULT GetMetadataQueryReader(out IWICMetadataQueryReader* ppIMetadataQueryReader) mut
 			{
-				return VT.GetMetadataQueryReader(&this, ppIMetadataQueryReader);
+				return VT.GetMetadataQueryReader(ref this, out ppIMetadataQueryReader);
 			}
-			public HRESULT GetColorContexts(uint32 cCount, IWICColorContext** ppIColorContexts, uint32* pcActualCount) mut
+			public HRESULT GetColorContexts(uint32 cCount, IWICColorContext** ppIColorContexts, out uint32 pcActualCount) mut
 			{
-				return VT.GetColorContexts(&this, cCount, ppIColorContexts, pcActualCount);
+				return VT.GetColorContexts(ref this, cCount, ppIColorContexts, out pcActualCount);
 			}
-			public HRESULT GetThumbnail(IWICBitmapSource** ppIThumbnail) mut
+			public HRESULT GetThumbnail(out IWICBitmapSource* ppIThumbnail) mut
 			{
-				return VT.GetThumbnail(&this, ppIThumbnail);
+				return VT.GetThumbnail(ref this, out ppIThumbnail);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapSource.VTable
 			{
-				public new function HRESULT(IWICBitmapFrameDecode *self, IWICMetadataQueryReader** ppIMetadataQueryReader) GetMetadataQueryReader;
-				public new function HRESULT(IWICBitmapFrameDecode *self, uint32 cCount, IWICColorContext** ppIColorContexts, uint32* pcActualCount) GetColorContexts;
-				public new function HRESULT(IWICBitmapFrameDecode *self, IWICBitmapSource** ppIThumbnail) GetThumbnail;
+				public new function HRESULT(ref IWICBitmapFrameDecode self, out IWICMetadataQueryReader* ppIMetadataQueryReader) GetMetadataQueryReader;
+				public new function HRESULT(ref IWICBitmapFrameDecode self, uint32 cCount, IWICColorContext** ppIColorContexts, out uint32 pcActualCount) GetColorContexts;
+				public new function HRESULT(ref IWICBitmapFrameDecode self, out IWICBitmapSource* ppIThumbnail) GetThumbnail;
 			}
 		}
 		[CRepr]
@@ -1679,24 +1679,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLevelCount(uint32* pcLevels) mut
+			public HRESULT GetLevelCount(out uint32 pcLevels) mut
 			{
-				return VT.GetLevelCount(&this, pcLevels);
+				return VT.GetLevelCount(ref this, out pcLevels);
 			}
-			public HRESULT GetCurrentLevel(uint32* pnLevel) mut
+			public HRESULT GetCurrentLevel(out uint32 pnLevel) mut
 			{
-				return VT.GetCurrentLevel(&this, pnLevel);
+				return VT.GetCurrentLevel(ref this, out pnLevel);
 			}
 			public HRESULT SetCurrentLevel(uint32 nLevel) mut
 			{
-				return VT.SetCurrentLevel(&this, nLevel);
+				return VT.SetCurrentLevel(ref this, nLevel);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICProgressiveLevelControl *self, uint32* pcLevels) GetLevelCount;
-				public new function HRESULT(IWICProgressiveLevelControl *self, uint32* pnLevel) GetCurrentLevel;
-				public new function HRESULT(IWICProgressiveLevelControl *self, uint32 nLevel) SetCurrentLevel;
+				public new function HRESULT(ref IWICProgressiveLevelControl self, out uint32 pcLevels) GetLevelCount;
+				public new function HRESULT(ref IWICProgressiveLevelControl self, out uint32 pnLevel) GetCurrentLevel;
+				public new function HRESULT(ref IWICProgressiveLevelControl self, uint32 nLevel) SetCurrentLevel;
 			}
 		}
 		[CRepr]
@@ -1708,12 +1708,12 @@ namespace Win32
 			
 			public HRESULT Notify(uint32 uFrameNum, WICProgressOperation operation, double dblProgress) mut
 			{
-				return VT.Notify(&this, uFrameNum, operation, dblProgress);
+				return VT.Notify(ref this, uFrameNum, operation, dblProgress);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICProgressCallback *self, uint32 uFrameNum, WICProgressOperation operation, double dblProgress) Notify;
+				public new function HRESULT(ref IWICProgressCallback self, uint32 uFrameNum, WICProgressOperation operation, double dblProgress) Notify;
 			}
 		}
 		[CRepr]
@@ -1725,12 +1725,12 @@ namespace Win32
 			
 			public HRESULT RegisterProgressNotification(PFNProgressNotification pfnProgressNotification, void* pvData, uint32 dwProgressFlags) mut
 			{
-				return VT.RegisterProgressNotification(&this, pfnProgressNotification, pvData, dwProgressFlags);
+				return VT.RegisterProgressNotification(ref this, pfnProgressNotification, pvData, dwProgressFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICBitmapCodecProgressNotification *self, PFNProgressNotification pfnProgressNotification, void* pvData, uint32 dwProgressFlags) RegisterProgressNotification;
+				public new function HRESULT(ref IWICBitmapCodecProgressNotification self, PFNProgressNotification pfnProgressNotification, void* pvData, uint32 dwProgressFlags) RegisterProgressNotification;
 			}
 		}
 		[CRepr]
@@ -1740,49 +1740,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetComponentType(WICComponentType* pType) mut
+			public HRESULT GetComponentType(out WICComponentType pType) mut
 			{
-				return VT.GetComponentType(&this, pType);
+				return VT.GetComponentType(ref this, out pType);
 			}
-			public HRESULT GetCLSID(Guid* pclsid) mut
+			public HRESULT GetCLSID(out Guid pclsid) mut
 			{
-				return VT.GetCLSID(&this, pclsid);
+				return VT.GetCLSID(ref this, out pclsid);
 			}
-			public HRESULT GetSigningStatus(uint32* pStatus) mut
+			public HRESULT GetSigningStatus(out uint32 pStatus) mut
 			{
-				return VT.GetSigningStatus(&this, pStatus);
+				return VT.GetSigningStatus(ref this, out pStatus);
 			}
-			public HRESULT GetAuthor(uint32 cchAuthor, char16* wzAuthor, uint32* pcchActual) mut
+			public HRESULT GetAuthor(uint32 cchAuthor, char16* wzAuthor, out uint32 pcchActual) mut
 			{
-				return VT.GetAuthor(&this, cchAuthor, wzAuthor, pcchActual);
+				return VT.GetAuthor(ref this, cchAuthor, wzAuthor, out pcchActual);
 			}
-			public HRESULT GetVendorGUID(Guid* pguidVendor) mut
+			public HRESULT GetVendorGUID(out Guid pguidVendor) mut
 			{
-				return VT.GetVendorGUID(&this, pguidVendor);
+				return VT.GetVendorGUID(ref this, out pguidVendor);
 			}
-			public HRESULT GetVersion(uint32 cchVersion, char16* wzVersion, uint32* pcchActual) mut
+			public HRESULT GetVersion(uint32 cchVersion, char16* wzVersion, out uint32 pcchActual) mut
 			{
-				return VT.GetVersion(&this, cchVersion, wzVersion, pcchActual);
+				return VT.GetVersion(ref this, cchVersion, wzVersion, out pcchActual);
 			}
-			public HRESULT GetSpecVersion(uint32 cchSpecVersion, char16* wzSpecVersion, uint32* pcchActual) mut
+			public HRESULT GetSpecVersion(uint32 cchSpecVersion, char16* wzSpecVersion, out uint32 pcchActual) mut
 			{
-				return VT.GetSpecVersion(&this, cchSpecVersion, wzSpecVersion, pcchActual);
+				return VT.GetSpecVersion(ref this, cchSpecVersion, wzSpecVersion, out pcchActual);
 			}
-			public HRESULT GetFriendlyName(uint32 cchFriendlyName, char16* wzFriendlyName, uint32* pcchActual) mut
+			public HRESULT GetFriendlyName(uint32 cchFriendlyName, char16* wzFriendlyName, out uint32 pcchActual) mut
 			{
-				return VT.GetFriendlyName(&this, cchFriendlyName, wzFriendlyName, pcchActual);
+				return VT.GetFriendlyName(ref this, cchFriendlyName, wzFriendlyName, out pcchActual);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICComponentInfo *self, WICComponentType* pType) GetComponentType;
-				public new function HRESULT(IWICComponentInfo *self, Guid* pclsid) GetCLSID;
-				public new function HRESULT(IWICComponentInfo *self, uint32* pStatus) GetSigningStatus;
-				public new function HRESULT(IWICComponentInfo *self, uint32 cchAuthor, char16* wzAuthor, uint32* pcchActual) GetAuthor;
-				public new function HRESULT(IWICComponentInfo *self, Guid* pguidVendor) GetVendorGUID;
-				public new function HRESULT(IWICComponentInfo *self, uint32 cchVersion, char16* wzVersion, uint32* pcchActual) GetVersion;
-				public new function HRESULT(IWICComponentInfo *self, uint32 cchSpecVersion, char16* wzSpecVersion, uint32* pcchActual) GetSpecVersion;
-				public new function HRESULT(IWICComponentInfo *self, uint32 cchFriendlyName, char16* wzFriendlyName, uint32* pcchActual) GetFriendlyName;
+				public new function HRESULT(ref IWICComponentInfo self, out WICComponentType pType) GetComponentType;
+				public new function HRESULT(ref IWICComponentInfo self, out Guid pclsid) GetCLSID;
+				public new function HRESULT(ref IWICComponentInfo self, out uint32 pStatus) GetSigningStatus;
+				public new function HRESULT(ref IWICComponentInfo self, uint32 cchAuthor, char16* wzAuthor, out uint32 pcchActual) GetAuthor;
+				public new function HRESULT(ref IWICComponentInfo self, out Guid pguidVendor) GetVendorGUID;
+				public new function HRESULT(ref IWICComponentInfo self, uint32 cchVersion, char16* wzVersion, out uint32 pcchActual) GetVersion;
+				public new function HRESULT(ref IWICComponentInfo self, uint32 cchSpecVersion, char16* wzSpecVersion, out uint32 pcchActual) GetSpecVersion;
+				public new function HRESULT(ref IWICComponentInfo self, uint32 cchFriendlyName, char16* wzFriendlyName, out uint32 pcchActual) GetFriendlyName;
 			}
 		}
 		[CRepr]
@@ -1792,19 +1792,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPixelFormats(uint32 cFormats, Guid* pPixelFormatGUIDs, uint32* pcActual) mut
+			public HRESULT GetPixelFormats(uint32 cFormats, Guid* pPixelFormatGUIDs, out uint32 pcActual) mut
 			{
-				return VT.GetPixelFormats(&this, cFormats, pPixelFormatGUIDs, pcActual);
+				return VT.GetPixelFormats(ref this, cFormats, pPixelFormatGUIDs, out pcActual);
 			}
-			public HRESULT CreateInstance(IWICFormatConverter** ppIConverter) mut
+			public HRESULT CreateInstance(out IWICFormatConverter* ppIConverter) mut
 			{
-				return VT.CreateInstance(&this, ppIConverter);
+				return VT.CreateInstance(ref this, out ppIConverter);
 			}
 			[CRepr]
 			public struct VTable : IWICComponentInfo.VTable
 			{
-				public new function HRESULT(IWICFormatConverterInfo *self, uint32 cFormats, Guid* pPixelFormatGUIDs, uint32* pcActual) GetPixelFormats;
-				public new function HRESULT(IWICFormatConverterInfo *self, IWICFormatConverter** ppIConverter) CreateInstance;
+				public new function HRESULT(ref IWICFormatConverterInfo self, uint32 cFormats, Guid* pPixelFormatGUIDs, out uint32 pcActual) GetPixelFormats;
+				public new function HRESULT(ref IWICFormatConverterInfo self, out IWICFormatConverter* ppIConverter) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -1814,69 +1814,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetContainerFormat(Guid* pguidContainerFormat) mut
+			public HRESULT GetContainerFormat(out Guid pguidContainerFormat) mut
 			{
-				return VT.GetContainerFormat(&this, pguidContainerFormat);
+				return VT.GetContainerFormat(ref this, out pguidContainerFormat);
 			}
-			public HRESULT GetPixelFormats(uint32 cFormats, Guid* pguidPixelFormats, uint32* pcActual) mut
+			public HRESULT GetPixelFormats(uint32 cFormats, Guid* pguidPixelFormats, out uint32 pcActual) mut
 			{
-				return VT.GetPixelFormats(&this, cFormats, pguidPixelFormats, pcActual);
+				return VT.GetPixelFormats(ref this, cFormats, pguidPixelFormats, out pcActual);
 			}
-			public HRESULT GetColorManagementVersion(uint32 cchColorManagementVersion, char16* wzColorManagementVersion, uint32* pcchActual) mut
+			public HRESULT GetColorManagementVersion(uint32 cchColorManagementVersion, char16* wzColorManagementVersion, out uint32 pcchActual) mut
 			{
-				return VT.GetColorManagementVersion(&this, cchColorManagementVersion, wzColorManagementVersion, pcchActual);
+				return VT.GetColorManagementVersion(ref this, cchColorManagementVersion, wzColorManagementVersion, out pcchActual);
 			}
-			public HRESULT GetDeviceManufacturer(uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, uint32* pcchActual) mut
+			public HRESULT GetDeviceManufacturer(uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, out uint32 pcchActual) mut
 			{
-				return VT.GetDeviceManufacturer(&this, cchDeviceManufacturer, wzDeviceManufacturer, pcchActual);
+				return VT.GetDeviceManufacturer(ref this, cchDeviceManufacturer, wzDeviceManufacturer, out pcchActual);
 			}
-			public HRESULT GetDeviceModels(uint32 cchDeviceModels, char16* wzDeviceModels, uint32* pcchActual) mut
+			public HRESULT GetDeviceModels(uint32 cchDeviceModels, char16* wzDeviceModels, out uint32 pcchActual) mut
 			{
-				return VT.GetDeviceModels(&this, cchDeviceModels, wzDeviceModels, pcchActual);
+				return VT.GetDeviceModels(ref this, cchDeviceModels, wzDeviceModels, out pcchActual);
 			}
-			public HRESULT GetMimeTypes(uint32 cchMimeTypes, char16* wzMimeTypes, uint32* pcchActual) mut
+			public HRESULT GetMimeTypes(uint32 cchMimeTypes, char16* wzMimeTypes, out uint32 pcchActual) mut
 			{
-				return VT.GetMimeTypes(&this, cchMimeTypes, wzMimeTypes, pcchActual);
+				return VT.GetMimeTypes(ref this, cchMimeTypes, wzMimeTypes, out pcchActual);
 			}
-			public HRESULT GetFileExtensions(uint32 cchFileExtensions, char16* wzFileExtensions, uint32* pcchActual) mut
+			public HRESULT GetFileExtensions(uint32 cchFileExtensions, char16* wzFileExtensions, out uint32 pcchActual) mut
 			{
-				return VT.GetFileExtensions(&this, cchFileExtensions, wzFileExtensions, pcchActual);
+				return VT.GetFileExtensions(ref this, cchFileExtensions, wzFileExtensions, out pcchActual);
 			}
-			public HRESULT DoesSupportAnimation(BOOL* pfSupportAnimation) mut
+			public HRESULT DoesSupportAnimation(out BOOL pfSupportAnimation) mut
 			{
-				return VT.DoesSupportAnimation(&this, pfSupportAnimation);
+				return VT.DoesSupportAnimation(ref this, out pfSupportAnimation);
 			}
-			public HRESULT DoesSupportChromakey(BOOL* pfSupportChromakey) mut
+			public HRESULT DoesSupportChromakey(out BOOL pfSupportChromakey) mut
 			{
-				return VT.DoesSupportChromakey(&this, pfSupportChromakey);
+				return VT.DoesSupportChromakey(ref this, out pfSupportChromakey);
 			}
-			public HRESULT DoesSupportLossless(BOOL* pfSupportLossless) mut
+			public HRESULT DoesSupportLossless(out BOOL pfSupportLossless) mut
 			{
-				return VT.DoesSupportLossless(&this, pfSupportLossless);
+				return VT.DoesSupportLossless(ref this, out pfSupportLossless);
 			}
-			public HRESULT DoesSupportMultiframe(BOOL* pfSupportMultiframe) mut
+			public HRESULT DoesSupportMultiframe(out BOOL pfSupportMultiframe) mut
 			{
-				return VT.DoesSupportMultiframe(&this, pfSupportMultiframe);
+				return VT.DoesSupportMultiframe(ref this, out pfSupportMultiframe);
 			}
-			public HRESULT MatchesMimeType(PWSTR wzMimeType, BOOL* pfMatches) mut
+			public HRESULT MatchesMimeType(PWSTR wzMimeType, out BOOL pfMatches) mut
 			{
-				return VT.MatchesMimeType(&this, wzMimeType, pfMatches);
+				return VT.MatchesMimeType(ref this, wzMimeType, out pfMatches);
 			}
 			[CRepr]
 			public struct VTable : IWICComponentInfo.VTable
 			{
-				public new function HRESULT(IWICBitmapCodecInfo *self, Guid* pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(IWICBitmapCodecInfo *self, uint32 cFormats, Guid* pguidPixelFormats, uint32* pcActual) GetPixelFormats;
-				public new function HRESULT(IWICBitmapCodecInfo *self, uint32 cchColorManagementVersion, char16* wzColorManagementVersion, uint32* pcchActual) GetColorManagementVersion;
-				public new function HRESULT(IWICBitmapCodecInfo *self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, uint32* pcchActual) GetDeviceManufacturer;
-				public new function HRESULT(IWICBitmapCodecInfo *self, uint32 cchDeviceModels, char16* wzDeviceModels, uint32* pcchActual) GetDeviceModels;
-				public new function HRESULT(IWICBitmapCodecInfo *self, uint32 cchMimeTypes, char16* wzMimeTypes, uint32* pcchActual) GetMimeTypes;
-				public new function HRESULT(IWICBitmapCodecInfo *self, uint32 cchFileExtensions, char16* wzFileExtensions, uint32* pcchActual) GetFileExtensions;
-				public new function HRESULT(IWICBitmapCodecInfo *self, BOOL* pfSupportAnimation) DoesSupportAnimation;
-				public new function HRESULT(IWICBitmapCodecInfo *self, BOOL* pfSupportChromakey) DoesSupportChromakey;
-				public new function HRESULT(IWICBitmapCodecInfo *self, BOOL* pfSupportLossless) DoesSupportLossless;
-				public new function HRESULT(IWICBitmapCodecInfo *self, BOOL* pfSupportMultiframe) DoesSupportMultiframe;
-				public new function HRESULT(IWICBitmapCodecInfo *self, PWSTR wzMimeType, BOOL* pfMatches) MatchesMimeType;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cFormats, Guid* pguidPixelFormats, out uint32 pcActual) GetPixelFormats;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchColorManagementVersion, char16* wzColorManagementVersion, out uint32 pcchActual) GetColorManagementVersion;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, out uint32 pcchActual) GetDeviceManufacturer;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchDeviceModels, char16* wzDeviceModels, out uint32 pcchActual) GetDeviceModels;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchMimeTypes, char16* wzMimeTypes, out uint32 pcchActual) GetMimeTypes;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, uint32 cchFileExtensions, char16* wzFileExtensions, out uint32 pcchActual) GetFileExtensions;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportAnimation) DoesSupportAnimation;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportChromakey) DoesSupportChromakey;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportLossless) DoesSupportLossless;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, out BOOL pfSupportMultiframe) DoesSupportMultiframe;
+				public new function HRESULT(ref IWICBitmapCodecInfo self, PWSTR wzMimeType, out BOOL pfMatches) MatchesMimeType;
 			}
 		}
 		[CRepr]
@@ -1886,14 +1886,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstance(IWICBitmapEncoder** ppIBitmapEncoder) mut
+			public HRESULT CreateInstance(out IWICBitmapEncoder* ppIBitmapEncoder) mut
 			{
-				return VT.CreateInstance(&this, ppIBitmapEncoder);
+				return VT.CreateInstance(ref this, out ppIBitmapEncoder);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapCodecInfo.VTable
 			{
-				public new function HRESULT(IWICBitmapEncoderInfo *self, IWICBitmapEncoder** ppIBitmapEncoder) CreateInstance;
+				public new function HRESULT(ref IWICBitmapEncoderInfo self, out IWICBitmapEncoder* ppIBitmapEncoder) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -1903,24 +1903,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPatterns(uint32 cbSizePatterns, WICBitmapPattern* pPatterns, uint32* pcPatterns, uint32* pcbPatternsActual) mut
+			public HRESULT GetPatterns(uint32 cbSizePatterns, WICBitmapPattern* pPatterns, uint32* pcPatterns, out uint32 pcbPatternsActual) mut
 			{
-				return VT.GetPatterns(&this, cbSizePatterns, pPatterns, pcPatterns, pcbPatternsActual);
+				return VT.GetPatterns(ref this, cbSizePatterns, pPatterns, pcPatterns, out pcbPatternsActual);
 			}
-			public HRESULT MatchesPattern(IStream* pIStream, BOOL* pfMatches) mut
+			public HRESULT MatchesPattern(ref IStream pIStream, out BOOL pfMatches) mut
 			{
-				return VT.MatchesPattern(&this, pIStream, pfMatches);
+				return VT.MatchesPattern(ref this, ref pIStream, out pfMatches);
 			}
-			public HRESULT CreateInstance(IWICBitmapDecoder** ppIBitmapDecoder) mut
+			public HRESULT CreateInstance(out IWICBitmapDecoder* ppIBitmapDecoder) mut
 			{
-				return VT.CreateInstance(&this, ppIBitmapDecoder);
+				return VT.CreateInstance(ref this, out ppIBitmapDecoder);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapCodecInfo.VTable
 			{
-				public new function HRESULT(IWICBitmapDecoderInfo *self, uint32 cbSizePatterns, WICBitmapPattern* pPatterns, uint32* pcPatterns, uint32* pcbPatternsActual) GetPatterns;
-				public new function HRESULT(IWICBitmapDecoderInfo *self, IStream* pIStream, BOOL* pfMatches) MatchesPattern;
-				public new function HRESULT(IWICBitmapDecoderInfo *self, IWICBitmapDecoder** ppIBitmapDecoder) CreateInstance;
+				public new function HRESULT(ref IWICBitmapDecoderInfo self, uint32 cbSizePatterns, WICBitmapPattern* pPatterns, uint32* pcPatterns, out uint32 pcbPatternsActual) GetPatterns;
+				public new function HRESULT(ref IWICBitmapDecoderInfo self, ref IStream pIStream, out BOOL pfMatches) MatchesPattern;
+				public new function HRESULT(ref IWICBitmapDecoderInfo self, out IWICBitmapDecoder* ppIBitmapDecoder) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -1930,34 +1930,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFormatGUID(Guid* pFormat) mut
+			public HRESULT GetFormatGUID(out Guid pFormat) mut
 			{
-				return VT.GetFormatGUID(&this, pFormat);
+				return VT.GetFormatGUID(ref this, out pFormat);
 			}
-			public HRESULT GetColorContext(IWICColorContext** ppIColorContext) mut
+			public HRESULT GetColorContext(out IWICColorContext* ppIColorContext) mut
 			{
-				return VT.GetColorContext(&this, ppIColorContext);
+				return VT.GetColorContext(ref this, out ppIColorContext);
 			}
-			public HRESULT GetBitsPerPixel(uint32* puiBitsPerPixel) mut
+			public HRESULT GetBitsPerPixel(out uint32 puiBitsPerPixel) mut
 			{
-				return VT.GetBitsPerPixel(&this, puiBitsPerPixel);
+				return VT.GetBitsPerPixel(ref this, out puiBitsPerPixel);
 			}
-			public HRESULT GetChannelCount(uint32* puiChannelCount) mut
+			public HRESULT GetChannelCount(out uint32 puiChannelCount) mut
 			{
-				return VT.GetChannelCount(&this, puiChannelCount);
+				return VT.GetChannelCount(ref this, out puiChannelCount);
 			}
-			public HRESULT GetChannelMask(uint32 uiChannelIndex, uint32 cbMaskBuffer, uint8* pbMaskBuffer, uint32* pcbActual) mut
+			public HRESULT GetChannelMask(uint32 uiChannelIndex, uint32 cbMaskBuffer, uint8* pbMaskBuffer, out uint32 pcbActual) mut
 			{
-				return VT.GetChannelMask(&this, uiChannelIndex, cbMaskBuffer, pbMaskBuffer, pcbActual);
+				return VT.GetChannelMask(ref this, uiChannelIndex, cbMaskBuffer, pbMaskBuffer, out pcbActual);
 			}
 			[CRepr]
 			public struct VTable : IWICComponentInfo.VTable
 			{
-				public new function HRESULT(IWICPixelFormatInfo *self, Guid* pFormat) GetFormatGUID;
-				public new function HRESULT(IWICPixelFormatInfo *self, IWICColorContext** ppIColorContext) GetColorContext;
-				public new function HRESULT(IWICPixelFormatInfo *self, uint32* puiBitsPerPixel) GetBitsPerPixel;
-				public new function HRESULT(IWICPixelFormatInfo *self, uint32* puiChannelCount) GetChannelCount;
-				public new function HRESULT(IWICPixelFormatInfo *self, uint32 uiChannelIndex, uint32 cbMaskBuffer, uint8* pbMaskBuffer, uint32* pcbActual) GetChannelMask;
+				public new function HRESULT(ref IWICPixelFormatInfo self, out Guid pFormat) GetFormatGUID;
+				public new function HRESULT(ref IWICPixelFormatInfo self, out IWICColorContext* ppIColorContext) GetColorContext;
+				public new function HRESULT(ref IWICPixelFormatInfo self, out uint32 puiBitsPerPixel) GetBitsPerPixel;
+				public new function HRESULT(ref IWICPixelFormatInfo self, out uint32 puiChannelCount) GetChannelCount;
+				public new function HRESULT(ref IWICPixelFormatInfo self, uint32 uiChannelIndex, uint32 cbMaskBuffer, uint8* pbMaskBuffer, out uint32 pcbActual) GetChannelMask;
 			}
 		}
 		[CRepr]
@@ -1967,19 +1967,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SupportsTransparency(BOOL* pfSupportsTransparency) mut
+			public HRESULT SupportsTransparency(out BOOL pfSupportsTransparency) mut
 			{
-				return VT.SupportsTransparency(&this, pfSupportsTransparency);
+				return VT.SupportsTransparency(ref this, out pfSupportsTransparency);
 			}
-			public HRESULT GetNumericRepresentation(WICPixelFormatNumericRepresentation* pNumericRepresentation) mut
+			public HRESULT GetNumericRepresentation(out WICPixelFormatNumericRepresentation pNumericRepresentation) mut
 			{
-				return VT.GetNumericRepresentation(&this, pNumericRepresentation);
+				return VT.GetNumericRepresentation(ref this, out pNumericRepresentation);
 			}
 			[CRepr]
 			public struct VTable : IWICPixelFormatInfo.VTable
 			{
-				public new function HRESULT(IWICPixelFormatInfo2 *self, BOOL* pfSupportsTransparency) SupportsTransparency;
-				public new function HRESULT(IWICPixelFormatInfo2 *self, WICPixelFormatNumericRepresentation* pNumericRepresentation) GetNumericRepresentation;
+				public new function HRESULT(ref IWICPixelFormatInfo2 self, out BOOL pfSupportsTransparency) SupportsTransparency;
+				public new function HRESULT(ref IWICPixelFormatInfo2 self, out WICPixelFormatNumericRepresentation pNumericRepresentation) GetNumericRepresentation;
 			}
 		}
 		[CRepr]
@@ -1989,134 +1989,134 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateDecoderFromFilename(PWSTR wzFilename, Guid* pguidVendor, uint32 dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder) mut
+			public HRESULT CreateDecoderFromFilename(PWSTR wzFilename, in Guid pguidVendor, uint32 dwDesiredAccess, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) mut
 			{
-				return VT.CreateDecoderFromFilename(&this, wzFilename, pguidVendor, dwDesiredAccess, metadataOptions, ppIDecoder);
+				return VT.CreateDecoderFromFilename(ref this, wzFilename, pguidVendor, dwDesiredAccess, metadataOptions, out ppIDecoder);
 			}
-			public HRESULT CreateDecoderFromStream(IStream* pIStream, Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder) mut
+			public HRESULT CreateDecoderFromStream(ref IStream pIStream, in Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) mut
 			{
-				return VT.CreateDecoderFromStream(&this, pIStream, pguidVendor, metadataOptions, ppIDecoder);
+				return VT.CreateDecoderFromStream(ref this, ref pIStream, pguidVendor, metadataOptions, out ppIDecoder);
 			}
-			public HRESULT CreateDecoderFromFileHandle(uint hFile, Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder) mut
+			public HRESULT CreateDecoderFromFileHandle(uint hFile, in Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) mut
 			{
-				return VT.CreateDecoderFromFileHandle(&this, hFile, pguidVendor, metadataOptions, ppIDecoder);
+				return VT.CreateDecoderFromFileHandle(ref this, hFile, pguidVendor, metadataOptions, out ppIDecoder);
 			}
-			public HRESULT CreateComponentInfo(Guid* clsidComponent, IWICComponentInfo** ppIInfo) mut
+			public HRESULT CreateComponentInfo(in Guid clsidComponent, out IWICComponentInfo* ppIInfo) mut
 			{
-				return VT.CreateComponentInfo(&this, clsidComponent, ppIInfo);
+				return VT.CreateComponentInfo(ref this, clsidComponent, out ppIInfo);
 			}
-			public HRESULT CreateDecoder(Guid* guidContainerFormat, Guid* pguidVendor, IWICBitmapDecoder** ppIDecoder) mut
+			public HRESULT CreateDecoder(in Guid guidContainerFormat, in Guid pguidVendor, out IWICBitmapDecoder* ppIDecoder) mut
 			{
-				return VT.CreateDecoder(&this, guidContainerFormat, pguidVendor, ppIDecoder);
+				return VT.CreateDecoder(ref this, guidContainerFormat, pguidVendor, out ppIDecoder);
 			}
-			public HRESULT CreateEncoder(Guid* guidContainerFormat, Guid* pguidVendor, IWICBitmapEncoder** ppIEncoder) mut
+			public HRESULT CreateEncoder(in Guid guidContainerFormat, in Guid pguidVendor, out IWICBitmapEncoder* ppIEncoder) mut
 			{
-				return VT.CreateEncoder(&this, guidContainerFormat, pguidVendor, ppIEncoder);
+				return VT.CreateEncoder(ref this, guidContainerFormat, pguidVendor, out ppIEncoder);
 			}
-			public HRESULT CreatePalette(IWICPalette** ppIPalette) mut
+			public HRESULT CreatePalette(out IWICPalette* ppIPalette) mut
 			{
-				return VT.CreatePalette(&this, ppIPalette);
+				return VT.CreatePalette(ref this, out ppIPalette);
 			}
-			public HRESULT CreateFormatConverter(IWICFormatConverter** ppIFormatConverter) mut
+			public HRESULT CreateFormatConverter(out IWICFormatConverter* ppIFormatConverter) mut
 			{
-				return VT.CreateFormatConverter(&this, ppIFormatConverter);
+				return VT.CreateFormatConverter(ref this, out ppIFormatConverter);
 			}
-			public HRESULT CreateBitmapScaler(IWICBitmapScaler** ppIBitmapScaler) mut
+			public HRESULT CreateBitmapScaler(out IWICBitmapScaler* ppIBitmapScaler) mut
 			{
-				return VT.CreateBitmapScaler(&this, ppIBitmapScaler);
+				return VT.CreateBitmapScaler(ref this, out ppIBitmapScaler);
 			}
-			public HRESULT CreateBitmapClipper(IWICBitmapClipper** ppIBitmapClipper) mut
+			public HRESULT CreateBitmapClipper(out IWICBitmapClipper* ppIBitmapClipper) mut
 			{
-				return VT.CreateBitmapClipper(&this, ppIBitmapClipper);
+				return VT.CreateBitmapClipper(ref this, out ppIBitmapClipper);
 			}
-			public HRESULT CreateBitmapFlipRotator(IWICBitmapFlipRotator** ppIBitmapFlipRotator) mut
+			public HRESULT CreateBitmapFlipRotator(out IWICBitmapFlipRotator* ppIBitmapFlipRotator) mut
 			{
-				return VT.CreateBitmapFlipRotator(&this, ppIBitmapFlipRotator);
+				return VT.CreateBitmapFlipRotator(ref this, out ppIBitmapFlipRotator);
 			}
-			public HRESULT CreateStream(IWICStream** ppIWICStream) mut
+			public HRESULT CreateStream(out IWICStream* ppIWICStream) mut
 			{
-				return VT.CreateStream(&this, ppIWICStream);
+				return VT.CreateStream(ref this, out ppIWICStream);
 			}
-			public HRESULT CreateColorContext(IWICColorContext** ppIWICColorContext) mut
+			public HRESULT CreateColorContext(out IWICColorContext* ppIWICColorContext) mut
 			{
-				return VT.CreateColorContext(&this, ppIWICColorContext);
+				return VT.CreateColorContext(ref this, out ppIWICColorContext);
 			}
-			public HRESULT CreateColorTransformer(IWICColorTransform** ppIWICColorTransform) mut
+			public HRESULT CreateColorTransformer(out IWICColorTransform* ppIWICColorTransform) mut
 			{
-				return VT.CreateColorTransformer(&this, ppIWICColorTransform);
+				return VT.CreateColorTransformer(ref this, out ppIWICColorTransform);
 			}
-			public HRESULT CreateBitmap(uint32 uiWidth, uint32 uiHeight, Guid* pixelFormat, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap) mut
+			public HRESULT CreateBitmap(uint32 uiWidth, uint32 uiHeight, ref Guid pixelFormat, WICBitmapCreateCacheOption option, out IWICBitmap* ppIBitmap) mut
 			{
-				return VT.CreateBitmap(&this, uiWidth, uiHeight, pixelFormat, option, ppIBitmap);
+				return VT.CreateBitmap(ref this, uiWidth, uiHeight, ref pixelFormat, option, out ppIBitmap);
 			}
-			public HRESULT CreateBitmapFromSource(IWICBitmapSource* pIBitmapSource, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap) mut
+			public HRESULT CreateBitmapFromSource(ref IWICBitmapSource pIBitmapSource, WICBitmapCreateCacheOption option, out IWICBitmap* ppIBitmap) mut
 			{
-				return VT.CreateBitmapFromSource(&this, pIBitmapSource, option, ppIBitmap);
+				return VT.CreateBitmapFromSource(ref this, ref pIBitmapSource, option, out ppIBitmap);
 			}
-			public HRESULT CreateBitmapFromSourceRect(IWICBitmapSource* pIBitmapSource, uint32 x, uint32 y, uint32 width, uint32 height, IWICBitmap** ppIBitmap) mut
+			public HRESULT CreateBitmapFromSourceRect(ref IWICBitmapSource pIBitmapSource, uint32 x, uint32 y, uint32 width, uint32 height, out IWICBitmap* ppIBitmap) mut
 			{
-				return VT.CreateBitmapFromSourceRect(&this, pIBitmapSource, x, y, width, height, ppIBitmap);
+				return VT.CreateBitmapFromSourceRect(ref this, ref pIBitmapSource, x, y, width, height, out ppIBitmap);
 			}
-			public HRESULT CreateBitmapFromMemory(uint32 uiWidth, uint32 uiHeight, Guid* pixelFormat, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer, IWICBitmap** ppIBitmap) mut
+			public HRESULT CreateBitmapFromMemory(uint32 uiWidth, uint32 uiHeight, ref Guid pixelFormat, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer, out IWICBitmap* ppIBitmap) mut
 			{
-				return VT.CreateBitmapFromMemory(&this, uiWidth, uiHeight, pixelFormat, cbStride, cbBufferSize, pbBuffer, ppIBitmap);
+				return VT.CreateBitmapFromMemory(ref this, uiWidth, uiHeight, ref pixelFormat, cbStride, cbBufferSize, pbBuffer, out ppIBitmap);
 			}
-			public HRESULT CreateBitmapFromHBITMAP(HBITMAP hBitmap, HPALETTE hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) mut
+			public HRESULT CreateBitmapFromHBITMAP(HBITMAP hBitmap, HPALETTE hPalette, WICBitmapAlphaChannelOption options, out IWICBitmap* ppIBitmap) mut
 			{
-				return VT.CreateBitmapFromHBITMAP(&this, hBitmap, hPalette, options, ppIBitmap);
+				return VT.CreateBitmapFromHBITMAP(ref this, hBitmap, hPalette, options, out ppIBitmap);
 			}
-			public HRESULT CreateBitmapFromHICON(HICON hIcon, IWICBitmap** ppIBitmap) mut
+			public HRESULT CreateBitmapFromHICON(HICON hIcon, out IWICBitmap* ppIBitmap) mut
 			{
-				return VT.CreateBitmapFromHICON(&this, hIcon, ppIBitmap);
+				return VT.CreateBitmapFromHICON(ref this, hIcon, out ppIBitmap);
 			}
-			public HRESULT CreateComponentEnumerator(uint32 componentTypes, uint32 options, IEnumUnknown** ppIEnumUnknown) mut
+			public HRESULT CreateComponentEnumerator(uint32 componentTypes, uint32 options, out IEnumUnknown* ppIEnumUnknown) mut
 			{
-				return VT.CreateComponentEnumerator(&this, componentTypes, options, ppIEnumUnknown);
+				return VT.CreateComponentEnumerator(ref this, componentTypes, options, out ppIEnumUnknown);
 			}
-			public HRESULT CreateFastMetadataEncoderFromDecoder(IWICBitmapDecoder* pIDecoder, IWICFastMetadataEncoder** ppIFastEncoder) mut
+			public HRESULT CreateFastMetadataEncoderFromDecoder(ref IWICBitmapDecoder pIDecoder, out IWICFastMetadataEncoder* ppIFastEncoder) mut
 			{
-				return VT.CreateFastMetadataEncoderFromDecoder(&this, pIDecoder, ppIFastEncoder);
+				return VT.CreateFastMetadataEncoderFromDecoder(ref this, ref pIDecoder, out ppIFastEncoder);
 			}
-			public HRESULT CreateFastMetadataEncoderFromFrameDecode(IWICBitmapFrameDecode* pIFrameDecoder, IWICFastMetadataEncoder** ppIFastEncoder) mut
+			public HRESULT CreateFastMetadataEncoderFromFrameDecode(ref IWICBitmapFrameDecode pIFrameDecoder, out IWICFastMetadataEncoder* ppIFastEncoder) mut
 			{
-				return VT.CreateFastMetadataEncoderFromFrameDecode(&this, pIFrameDecoder, ppIFastEncoder);
+				return VT.CreateFastMetadataEncoderFromFrameDecode(ref this, ref pIFrameDecoder, out ppIFastEncoder);
 			}
-			public HRESULT CreateQueryWriter(Guid* guidMetadataFormat, Guid* pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter) mut
+			public HRESULT CreateQueryWriter(in Guid guidMetadataFormat, in Guid pguidVendor, out IWICMetadataQueryWriter* ppIQueryWriter) mut
 			{
-				return VT.CreateQueryWriter(&this, guidMetadataFormat, pguidVendor, ppIQueryWriter);
+				return VT.CreateQueryWriter(ref this, guidMetadataFormat, pguidVendor, out ppIQueryWriter);
 			}
-			public HRESULT CreateQueryWriterFromReader(IWICMetadataQueryReader* pIQueryReader, Guid* pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter) mut
+			public HRESULT CreateQueryWriterFromReader(ref IWICMetadataQueryReader pIQueryReader, in Guid pguidVendor, out IWICMetadataQueryWriter* ppIQueryWriter) mut
 			{
-				return VT.CreateQueryWriterFromReader(&this, pIQueryReader, pguidVendor, ppIQueryWriter);
+				return VT.CreateQueryWriterFromReader(ref this, ref pIQueryReader, pguidVendor, out ppIQueryWriter);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICImagingFactory *self, PWSTR wzFilename, Guid* pguidVendor, uint32 dwDesiredAccess, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder) CreateDecoderFromFilename;
-				public new function HRESULT(IWICImagingFactory *self, IStream* pIStream, Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder) CreateDecoderFromStream;
-				public new function HRESULT(IWICImagingFactory *self, uint hFile, Guid* pguidVendor, WICDecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder) CreateDecoderFromFileHandle;
-				public new function HRESULT(IWICImagingFactory *self, Guid* clsidComponent, IWICComponentInfo** ppIInfo) CreateComponentInfo;
-				public new function HRESULT(IWICImagingFactory *self, Guid* guidContainerFormat, Guid* pguidVendor, IWICBitmapDecoder** ppIDecoder) CreateDecoder;
-				public new function HRESULT(IWICImagingFactory *self, Guid* guidContainerFormat, Guid* pguidVendor, IWICBitmapEncoder** ppIEncoder) CreateEncoder;
-				public new function HRESULT(IWICImagingFactory *self, IWICPalette** ppIPalette) CreatePalette;
-				public new function HRESULT(IWICImagingFactory *self, IWICFormatConverter** ppIFormatConverter) CreateFormatConverter;
-				public new function HRESULT(IWICImagingFactory *self, IWICBitmapScaler** ppIBitmapScaler) CreateBitmapScaler;
-				public new function HRESULT(IWICImagingFactory *self, IWICBitmapClipper** ppIBitmapClipper) CreateBitmapClipper;
-				public new function HRESULT(IWICImagingFactory *self, IWICBitmapFlipRotator** ppIBitmapFlipRotator) CreateBitmapFlipRotator;
-				public new function HRESULT(IWICImagingFactory *self, IWICStream** ppIWICStream) CreateStream;
-				public new function HRESULT(IWICImagingFactory *self, IWICColorContext** ppIWICColorContext) CreateColorContext;
-				public new function HRESULT(IWICImagingFactory *self, IWICColorTransform** ppIWICColorTransform) CreateColorTransformer;
-				public new function HRESULT(IWICImagingFactory *self, uint32 uiWidth, uint32 uiHeight, Guid* pixelFormat, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap) CreateBitmap;
-				public new function HRESULT(IWICImagingFactory *self, IWICBitmapSource* pIBitmapSource, WICBitmapCreateCacheOption option, IWICBitmap** ppIBitmap) CreateBitmapFromSource;
-				public new function HRESULT(IWICImagingFactory *self, IWICBitmapSource* pIBitmapSource, uint32 x, uint32 y, uint32 width, uint32 height, IWICBitmap** ppIBitmap) CreateBitmapFromSourceRect;
-				public new function HRESULT(IWICImagingFactory *self, uint32 uiWidth, uint32 uiHeight, Guid* pixelFormat, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer, IWICBitmap** ppIBitmap) CreateBitmapFromMemory;
-				public new function HRESULT(IWICImagingFactory *self, HBITMAP hBitmap, HPALETTE hPalette, WICBitmapAlphaChannelOption options, IWICBitmap** ppIBitmap) CreateBitmapFromHBITMAP;
-				public new function HRESULT(IWICImagingFactory *self, HICON hIcon, IWICBitmap** ppIBitmap) CreateBitmapFromHICON;
-				public new function HRESULT(IWICImagingFactory *self, uint32 componentTypes, uint32 options, IEnumUnknown** ppIEnumUnknown) CreateComponentEnumerator;
-				public new function HRESULT(IWICImagingFactory *self, IWICBitmapDecoder* pIDecoder, IWICFastMetadataEncoder** ppIFastEncoder) CreateFastMetadataEncoderFromDecoder;
-				public new function HRESULT(IWICImagingFactory *self, IWICBitmapFrameDecode* pIFrameDecoder, IWICFastMetadataEncoder** ppIFastEncoder) CreateFastMetadataEncoderFromFrameDecode;
-				public new function HRESULT(IWICImagingFactory *self, Guid* guidMetadataFormat, Guid* pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter) CreateQueryWriter;
-				public new function HRESULT(IWICImagingFactory *self, IWICMetadataQueryReader* pIQueryReader, Guid* pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter) CreateQueryWriterFromReader;
+				public new function HRESULT(ref IWICImagingFactory self, PWSTR wzFilename, in Guid pguidVendor, uint32 dwDesiredAccess, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) CreateDecoderFromFilename;
+				public new function HRESULT(ref IWICImagingFactory self, ref IStream pIStream, in Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) CreateDecoderFromStream;
+				public new function HRESULT(ref IWICImagingFactory self, uint hFile, in Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder* ppIDecoder) CreateDecoderFromFileHandle;
+				public new function HRESULT(ref IWICImagingFactory self, in Guid clsidComponent, out IWICComponentInfo* ppIInfo) CreateComponentInfo;
+				public new function HRESULT(ref IWICImagingFactory self, in Guid guidContainerFormat, in Guid pguidVendor, out IWICBitmapDecoder* ppIDecoder) CreateDecoder;
+				public new function HRESULT(ref IWICImagingFactory self, in Guid guidContainerFormat, in Guid pguidVendor, out IWICBitmapEncoder* ppIEncoder) CreateEncoder;
+				public new function HRESULT(ref IWICImagingFactory self, out IWICPalette* ppIPalette) CreatePalette;
+				public new function HRESULT(ref IWICImagingFactory self, out IWICFormatConverter* ppIFormatConverter) CreateFormatConverter;
+				public new function HRESULT(ref IWICImagingFactory self, out IWICBitmapScaler* ppIBitmapScaler) CreateBitmapScaler;
+				public new function HRESULT(ref IWICImagingFactory self, out IWICBitmapClipper* ppIBitmapClipper) CreateBitmapClipper;
+				public new function HRESULT(ref IWICImagingFactory self, out IWICBitmapFlipRotator* ppIBitmapFlipRotator) CreateBitmapFlipRotator;
+				public new function HRESULT(ref IWICImagingFactory self, out IWICStream* ppIWICStream) CreateStream;
+				public new function HRESULT(ref IWICImagingFactory self, out IWICColorContext* ppIWICColorContext) CreateColorContext;
+				public new function HRESULT(ref IWICImagingFactory self, out IWICColorTransform* ppIWICColorTransform) CreateColorTransformer;
+				public new function HRESULT(ref IWICImagingFactory self, uint32 uiWidth, uint32 uiHeight, ref Guid pixelFormat, WICBitmapCreateCacheOption option, out IWICBitmap* ppIBitmap) CreateBitmap;
+				public new function HRESULT(ref IWICImagingFactory self, ref IWICBitmapSource pIBitmapSource, WICBitmapCreateCacheOption option, out IWICBitmap* ppIBitmap) CreateBitmapFromSource;
+				public new function HRESULT(ref IWICImagingFactory self, ref IWICBitmapSource pIBitmapSource, uint32 x, uint32 y, uint32 width, uint32 height, out IWICBitmap* ppIBitmap) CreateBitmapFromSourceRect;
+				public new function HRESULT(ref IWICImagingFactory self, uint32 uiWidth, uint32 uiHeight, ref Guid pixelFormat, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer, out IWICBitmap* ppIBitmap) CreateBitmapFromMemory;
+				public new function HRESULT(ref IWICImagingFactory self, HBITMAP hBitmap, HPALETTE hPalette, WICBitmapAlphaChannelOption options, out IWICBitmap* ppIBitmap) CreateBitmapFromHBITMAP;
+				public new function HRESULT(ref IWICImagingFactory self, HICON hIcon, out IWICBitmap* ppIBitmap) CreateBitmapFromHICON;
+				public new function HRESULT(ref IWICImagingFactory self, uint32 componentTypes, uint32 options, out IEnumUnknown* ppIEnumUnknown) CreateComponentEnumerator;
+				public new function HRESULT(ref IWICImagingFactory self, ref IWICBitmapDecoder pIDecoder, out IWICFastMetadataEncoder* ppIFastEncoder) CreateFastMetadataEncoderFromDecoder;
+				public new function HRESULT(ref IWICImagingFactory self, ref IWICBitmapFrameDecode pIFrameDecoder, out IWICFastMetadataEncoder* ppIFastEncoder) CreateFastMetadataEncoderFromFrameDecode;
+				public new function HRESULT(ref IWICImagingFactory self, in Guid guidMetadataFormat, in Guid pguidVendor, out IWICMetadataQueryWriter* ppIQueryWriter) CreateQueryWriter;
+				public new function HRESULT(ref IWICImagingFactory self, ref IWICMetadataQueryReader pIQueryReader, in Guid pguidVendor, out IWICMetadataQueryWriter* ppIQueryWriter) CreateQueryWriterFromReader;
 			}
 		}
 		[CRepr]
@@ -2128,12 +2128,12 @@ namespace Win32
 			
 			public HRESULT Notify(uint32 NotificationMask) mut
 			{
-				return VT.Notify(&this, NotificationMask);
+				return VT.Notify(ref this, NotificationMask);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICDevelopRawNotificationCallback *self, uint32 NotificationMask) Notify;
+				public new function HRESULT(ref IWICDevelopRawNotificationCallback self, uint32 NotificationMask) Notify;
 			}
 		}
 		[CRepr]
@@ -2143,169 +2143,169 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryRawCapabilitiesInfo(WICRawCapabilitiesInfo* pInfo) mut
+			public HRESULT QueryRawCapabilitiesInfo(out WICRawCapabilitiesInfo pInfo) mut
 			{
-				return VT.QueryRawCapabilitiesInfo(&this, pInfo);
+				return VT.QueryRawCapabilitiesInfo(ref this, out pInfo);
 			}
 			public HRESULT LoadParameterSet(WICRawParameterSet ParameterSet) mut
 			{
-				return VT.LoadParameterSet(&this, ParameterSet);
+				return VT.LoadParameterSet(ref this, ParameterSet);
 			}
-			public HRESULT GetCurrentParameterSet(IPropertyBag2** ppCurrentParameterSet) mut
+			public HRESULT GetCurrentParameterSet(out IPropertyBag2* ppCurrentParameterSet) mut
 			{
-				return VT.GetCurrentParameterSet(&this, ppCurrentParameterSet);
+				return VT.GetCurrentParameterSet(ref this, out ppCurrentParameterSet);
 			}
 			public HRESULT SetExposureCompensation(double ev) mut
 			{
-				return VT.SetExposureCompensation(&this, ev);
+				return VT.SetExposureCompensation(ref this, ev);
 			}
-			public HRESULT GetExposureCompensation(double* pEV) mut
+			public HRESULT GetExposureCompensation(out double pEV) mut
 			{
-				return VT.GetExposureCompensation(&this, pEV);
+				return VT.GetExposureCompensation(ref this, out pEV);
 			}
 			public HRESULT SetWhitePointRGB(uint32 Red, uint32 Green, uint32 Blue) mut
 			{
-				return VT.SetWhitePointRGB(&this, Red, Green, Blue);
+				return VT.SetWhitePointRGB(ref this, Red, Green, Blue);
 			}
-			public HRESULT GetWhitePointRGB(uint32* pRed, uint32* pGreen, uint32* pBlue) mut
+			public HRESULT GetWhitePointRGB(out uint32 pRed, out uint32 pGreen, out uint32 pBlue) mut
 			{
-				return VT.GetWhitePointRGB(&this, pRed, pGreen, pBlue);
+				return VT.GetWhitePointRGB(ref this, out pRed, out pGreen, out pBlue);
 			}
 			public HRESULT SetNamedWhitePoint(WICNamedWhitePoint WhitePoint) mut
 			{
-				return VT.SetNamedWhitePoint(&this, WhitePoint);
+				return VT.SetNamedWhitePoint(ref this, WhitePoint);
 			}
-			public HRESULT GetNamedWhitePoint(WICNamedWhitePoint* pWhitePoint) mut
+			public HRESULT GetNamedWhitePoint(out WICNamedWhitePoint pWhitePoint) mut
 			{
-				return VT.GetNamedWhitePoint(&this, pWhitePoint);
+				return VT.GetNamedWhitePoint(ref this, out pWhitePoint);
 			}
 			public HRESULT SetWhitePointKelvin(uint32 WhitePointKelvin) mut
 			{
-				return VT.SetWhitePointKelvin(&this, WhitePointKelvin);
+				return VT.SetWhitePointKelvin(ref this, WhitePointKelvin);
 			}
-			public HRESULT GetWhitePointKelvin(uint32* pWhitePointKelvin) mut
+			public HRESULT GetWhitePointKelvin(out uint32 pWhitePointKelvin) mut
 			{
-				return VT.GetWhitePointKelvin(&this, pWhitePointKelvin);
+				return VT.GetWhitePointKelvin(ref this, out pWhitePointKelvin);
 			}
-			public HRESULT GetKelvinRangeInfo(uint32* pMinKelvinTemp, uint32* pMaxKelvinTemp, uint32* pKelvinTempStepValue) mut
+			public HRESULT GetKelvinRangeInfo(out uint32 pMinKelvinTemp, out uint32 pMaxKelvinTemp, out uint32 pKelvinTempStepValue) mut
 			{
-				return VT.GetKelvinRangeInfo(&this, pMinKelvinTemp, pMaxKelvinTemp, pKelvinTempStepValue);
+				return VT.GetKelvinRangeInfo(ref this, out pMinKelvinTemp, out pMaxKelvinTemp, out pKelvinTempStepValue);
 			}
 			public HRESULT SetContrast(double Contrast) mut
 			{
-				return VT.SetContrast(&this, Contrast);
+				return VT.SetContrast(ref this, Contrast);
 			}
-			public HRESULT GetContrast(double* pContrast) mut
+			public HRESULT GetContrast(out double pContrast) mut
 			{
-				return VT.GetContrast(&this, pContrast);
+				return VT.GetContrast(ref this, out pContrast);
 			}
 			public HRESULT SetGamma(double Gamma) mut
 			{
-				return VT.SetGamma(&this, Gamma);
+				return VT.SetGamma(ref this, Gamma);
 			}
-			public HRESULT GetGamma(double* pGamma) mut
+			public HRESULT GetGamma(out double pGamma) mut
 			{
-				return VT.GetGamma(&this, pGamma);
+				return VT.GetGamma(ref this, out pGamma);
 			}
 			public HRESULT SetSharpness(double Sharpness) mut
 			{
-				return VT.SetSharpness(&this, Sharpness);
+				return VT.SetSharpness(ref this, Sharpness);
 			}
-			public HRESULT GetSharpness(double* pSharpness) mut
+			public HRESULT GetSharpness(out double pSharpness) mut
 			{
-				return VT.GetSharpness(&this, pSharpness);
+				return VT.GetSharpness(ref this, out pSharpness);
 			}
 			public HRESULT SetSaturation(double Saturation) mut
 			{
-				return VT.SetSaturation(&this, Saturation);
+				return VT.SetSaturation(ref this, Saturation);
 			}
-			public HRESULT GetSaturation(double* pSaturation) mut
+			public HRESULT GetSaturation(out double pSaturation) mut
 			{
-				return VT.GetSaturation(&this, pSaturation);
+				return VT.GetSaturation(ref this, out pSaturation);
 			}
 			public HRESULT SetTint(double Tint) mut
 			{
-				return VT.SetTint(&this, Tint);
+				return VT.SetTint(ref this, Tint);
 			}
-			public HRESULT GetTint(double* pTint) mut
+			public HRESULT GetTint(out double pTint) mut
 			{
-				return VT.GetTint(&this, pTint);
+				return VT.GetTint(ref this, out pTint);
 			}
 			public HRESULT SetNoiseReduction(double NoiseReduction) mut
 			{
-				return VT.SetNoiseReduction(&this, NoiseReduction);
+				return VT.SetNoiseReduction(ref this, NoiseReduction);
 			}
-			public HRESULT GetNoiseReduction(double* pNoiseReduction) mut
+			public HRESULT GetNoiseReduction(out double pNoiseReduction) mut
 			{
-				return VT.GetNoiseReduction(&this, pNoiseReduction);
+				return VT.GetNoiseReduction(ref this, out pNoiseReduction);
 			}
-			public HRESULT SetDestinationColorContext(IWICColorContext* pColorContext) mut
+			public HRESULT SetDestinationColorContext(ref IWICColorContext pColorContext) mut
 			{
-				return VT.SetDestinationColorContext(&this, pColorContext);
+				return VT.SetDestinationColorContext(ref this, ref pColorContext);
 			}
-			public HRESULT SetToneCurve(uint32 cbToneCurveSize, WICRawToneCurve* pToneCurve) mut
+			public HRESULT SetToneCurve(uint32 cbToneCurveSize, in WICRawToneCurve pToneCurve) mut
 			{
-				return VT.SetToneCurve(&this, cbToneCurveSize, pToneCurve);
+				return VT.SetToneCurve(ref this, cbToneCurveSize, pToneCurve);
 			}
 			public HRESULT GetToneCurve(uint32 cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint32* pcbActualToneCurveBufferSize) mut
 			{
-				return VT.GetToneCurve(&this, cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSize);
+				return VT.GetToneCurve(ref this, cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSize);
 			}
 			public HRESULT SetRotation(double Rotation) mut
 			{
-				return VT.SetRotation(&this, Rotation);
+				return VT.SetRotation(ref this, Rotation);
 			}
-			public HRESULT GetRotation(double* pRotation) mut
+			public HRESULT GetRotation(out double pRotation) mut
 			{
-				return VT.GetRotation(&this, pRotation);
+				return VT.GetRotation(ref this, out pRotation);
 			}
 			public HRESULT SetRenderMode(WICRawRenderMode RenderMode) mut
 			{
-				return VT.SetRenderMode(&this, RenderMode);
+				return VT.SetRenderMode(ref this, RenderMode);
 			}
-			public HRESULT GetRenderMode(WICRawRenderMode* pRenderMode) mut
+			public HRESULT GetRenderMode(out WICRawRenderMode pRenderMode) mut
 			{
-				return VT.GetRenderMode(&this, pRenderMode);
+				return VT.GetRenderMode(ref this, out pRenderMode);
 			}
-			public HRESULT SetNotificationCallback(IWICDevelopRawNotificationCallback* pCallback) mut
+			public HRESULT SetNotificationCallback(ref IWICDevelopRawNotificationCallback pCallback) mut
 			{
-				return VT.SetNotificationCallback(&this, pCallback);
+				return VT.SetNotificationCallback(ref this, ref pCallback);
 			}
 			[CRepr]
 			public struct VTable : IWICBitmapFrameDecode.VTable
 			{
-				public new function HRESULT(IWICDevelopRaw *self, WICRawCapabilitiesInfo* pInfo) QueryRawCapabilitiesInfo;
-				public new function HRESULT(IWICDevelopRaw *self, WICRawParameterSet ParameterSet) LoadParameterSet;
-				public new function HRESULT(IWICDevelopRaw *self, IPropertyBag2** ppCurrentParameterSet) GetCurrentParameterSet;
-				public new function HRESULT(IWICDevelopRaw *self, double ev) SetExposureCompensation;
-				public new function HRESULT(IWICDevelopRaw *self, double* pEV) GetExposureCompensation;
-				public new function HRESULT(IWICDevelopRaw *self, uint32 Red, uint32 Green, uint32 Blue) SetWhitePointRGB;
-				public new function HRESULT(IWICDevelopRaw *self, uint32* pRed, uint32* pGreen, uint32* pBlue) GetWhitePointRGB;
-				public new function HRESULT(IWICDevelopRaw *self, WICNamedWhitePoint WhitePoint) SetNamedWhitePoint;
-				public new function HRESULT(IWICDevelopRaw *self, WICNamedWhitePoint* pWhitePoint) GetNamedWhitePoint;
-				public new function HRESULT(IWICDevelopRaw *self, uint32 WhitePointKelvin) SetWhitePointKelvin;
-				public new function HRESULT(IWICDevelopRaw *self, uint32* pWhitePointKelvin) GetWhitePointKelvin;
-				public new function HRESULT(IWICDevelopRaw *self, uint32* pMinKelvinTemp, uint32* pMaxKelvinTemp, uint32* pKelvinTempStepValue) GetKelvinRangeInfo;
-				public new function HRESULT(IWICDevelopRaw *self, double Contrast) SetContrast;
-				public new function HRESULT(IWICDevelopRaw *self, double* pContrast) GetContrast;
-				public new function HRESULT(IWICDevelopRaw *self, double Gamma) SetGamma;
-				public new function HRESULT(IWICDevelopRaw *self, double* pGamma) GetGamma;
-				public new function HRESULT(IWICDevelopRaw *self, double Sharpness) SetSharpness;
-				public new function HRESULT(IWICDevelopRaw *self, double* pSharpness) GetSharpness;
-				public new function HRESULT(IWICDevelopRaw *self, double Saturation) SetSaturation;
-				public new function HRESULT(IWICDevelopRaw *self, double* pSaturation) GetSaturation;
-				public new function HRESULT(IWICDevelopRaw *self, double Tint) SetTint;
-				public new function HRESULT(IWICDevelopRaw *self, double* pTint) GetTint;
-				public new function HRESULT(IWICDevelopRaw *self, double NoiseReduction) SetNoiseReduction;
-				public new function HRESULT(IWICDevelopRaw *self, double* pNoiseReduction) GetNoiseReduction;
-				public new function HRESULT(IWICDevelopRaw *self, IWICColorContext* pColorContext) SetDestinationColorContext;
-				public new function HRESULT(IWICDevelopRaw *self, uint32 cbToneCurveSize, WICRawToneCurve* pToneCurve) SetToneCurve;
-				public new function HRESULT(IWICDevelopRaw *self, uint32 cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint32* pcbActualToneCurveBufferSize) GetToneCurve;
-				public new function HRESULT(IWICDevelopRaw *self, double Rotation) SetRotation;
-				public new function HRESULT(IWICDevelopRaw *self, double* pRotation) GetRotation;
-				public new function HRESULT(IWICDevelopRaw *self, WICRawRenderMode RenderMode) SetRenderMode;
-				public new function HRESULT(IWICDevelopRaw *self, WICRawRenderMode* pRenderMode) GetRenderMode;
-				public new function HRESULT(IWICDevelopRaw *self, IWICDevelopRawNotificationCallback* pCallback) SetNotificationCallback;
+				public new function HRESULT(ref IWICDevelopRaw self, out WICRawCapabilitiesInfo pInfo) QueryRawCapabilitiesInfo;
+				public new function HRESULT(ref IWICDevelopRaw self, WICRawParameterSet ParameterSet) LoadParameterSet;
+				public new function HRESULT(ref IWICDevelopRaw self, out IPropertyBag2* ppCurrentParameterSet) GetCurrentParameterSet;
+				public new function HRESULT(ref IWICDevelopRaw self, double ev) SetExposureCompensation;
+				public new function HRESULT(ref IWICDevelopRaw self, out double pEV) GetExposureCompensation;
+				public new function HRESULT(ref IWICDevelopRaw self, uint32 Red, uint32 Green, uint32 Blue) SetWhitePointRGB;
+				public new function HRESULT(ref IWICDevelopRaw self, out uint32 pRed, out uint32 pGreen, out uint32 pBlue) GetWhitePointRGB;
+				public new function HRESULT(ref IWICDevelopRaw self, WICNamedWhitePoint WhitePoint) SetNamedWhitePoint;
+				public new function HRESULT(ref IWICDevelopRaw self, out WICNamedWhitePoint pWhitePoint) GetNamedWhitePoint;
+				public new function HRESULT(ref IWICDevelopRaw self, uint32 WhitePointKelvin) SetWhitePointKelvin;
+				public new function HRESULT(ref IWICDevelopRaw self, out uint32 pWhitePointKelvin) GetWhitePointKelvin;
+				public new function HRESULT(ref IWICDevelopRaw self, out uint32 pMinKelvinTemp, out uint32 pMaxKelvinTemp, out uint32 pKelvinTempStepValue) GetKelvinRangeInfo;
+				public new function HRESULT(ref IWICDevelopRaw self, double Contrast) SetContrast;
+				public new function HRESULT(ref IWICDevelopRaw self, out double pContrast) GetContrast;
+				public new function HRESULT(ref IWICDevelopRaw self, double Gamma) SetGamma;
+				public new function HRESULT(ref IWICDevelopRaw self, out double pGamma) GetGamma;
+				public new function HRESULT(ref IWICDevelopRaw self, double Sharpness) SetSharpness;
+				public new function HRESULT(ref IWICDevelopRaw self, out double pSharpness) GetSharpness;
+				public new function HRESULT(ref IWICDevelopRaw self, double Saturation) SetSaturation;
+				public new function HRESULT(ref IWICDevelopRaw self, out double pSaturation) GetSaturation;
+				public new function HRESULT(ref IWICDevelopRaw self, double Tint) SetTint;
+				public new function HRESULT(ref IWICDevelopRaw self, out double pTint) GetTint;
+				public new function HRESULT(ref IWICDevelopRaw self, double NoiseReduction) SetNoiseReduction;
+				public new function HRESULT(ref IWICDevelopRaw self, out double pNoiseReduction) GetNoiseReduction;
+				public new function HRESULT(ref IWICDevelopRaw self, ref IWICColorContext pColorContext) SetDestinationColorContext;
+				public new function HRESULT(ref IWICDevelopRaw self, uint32 cbToneCurveSize, in WICRawToneCurve pToneCurve) SetToneCurve;
+				public new function HRESULT(ref IWICDevelopRaw self, uint32 cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint32* pcbActualToneCurveBufferSize) GetToneCurve;
+				public new function HRESULT(ref IWICDevelopRaw self, double Rotation) SetRotation;
+				public new function HRESULT(ref IWICDevelopRaw self, out double pRotation) GetRotation;
+				public new function HRESULT(ref IWICDevelopRaw self, WICRawRenderMode RenderMode) SetRenderMode;
+				public new function HRESULT(ref IWICDevelopRaw self, out WICRawRenderMode pRenderMode) GetRenderMode;
+				public new function HRESULT(ref IWICDevelopRaw self, ref IWICDevelopRawNotificationCallback pCallback) SetNotificationCallback;
 			}
 		}
 		[CRepr]
@@ -2315,19 +2315,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetParameters(WICDdsParameters* pParameters) mut
+			public HRESULT GetParameters(out WICDdsParameters pParameters) mut
 			{
-				return VT.GetParameters(&this, pParameters);
+				return VT.GetParameters(ref this, out pParameters);
 			}
-			public HRESULT GetFrame(uint32 arrayIndex, uint32 mipLevel, uint32 sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame) mut
+			public HRESULT GetFrame(uint32 arrayIndex, uint32 mipLevel, uint32 sliceIndex, out IWICBitmapFrameDecode* ppIBitmapFrame) mut
 			{
-				return VT.GetFrame(&this, arrayIndex, mipLevel, sliceIndex, ppIBitmapFrame);
+				return VT.GetFrame(ref this, arrayIndex, mipLevel, sliceIndex, out ppIBitmapFrame);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICDdsDecoder *self, WICDdsParameters* pParameters) GetParameters;
-				public new function HRESULT(IWICDdsDecoder *self, uint32 arrayIndex, uint32 mipLevel, uint32 sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame) GetFrame;
+				public new function HRESULT(ref IWICDdsDecoder self, out WICDdsParameters pParameters) GetParameters;
+				public new function HRESULT(ref IWICDdsDecoder self, uint32 arrayIndex, uint32 mipLevel, uint32 sliceIndex, out IWICBitmapFrameDecode* ppIBitmapFrame) GetFrame;
 			}
 		}
 		[CRepr]
@@ -2337,24 +2337,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetParameters(WICDdsParameters* pParameters) mut
+			public HRESULT SetParameters(ref WICDdsParameters pParameters) mut
 			{
-				return VT.SetParameters(&this, pParameters);
+				return VT.SetParameters(ref this, ref pParameters);
 			}
-			public HRESULT GetParameters(WICDdsParameters* pParameters) mut
+			public HRESULT GetParameters(out WICDdsParameters pParameters) mut
 			{
-				return VT.GetParameters(&this, pParameters);
+				return VT.GetParameters(ref this, out pParameters);
 			}
-			public HRESULT CreateNewFrame(IWICBitmapFrameEncode** ppIFrameEncode, uint32* pArrayIndex, uint32* pMipLevel, uint32* pSliceIndex) mut
+			public HRESULT CreateNewFrame(out IWICBitmapFrameEncode* ppIFrameEncode, out uint32 pArrayIndex, out uint32 pMipLevel, out uint32 pSliceIndex) mut
 			{
-				return VT.CreateNewFrame(&this, ppIFrameEncode, pArrayIndex, pMipLevel, pSliceIndex);
+				return VT.CreateNewFrame(ref this, out ppIFrameEncode, out pArrayIndex, out pMipLevel, out pSliceIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICDdsEncoder *self, WICDdsParameters* pParameters) SetParameters;
-				public new function HRESULT(IWICDdsEncoder *self, WICDdsParameters* pParameters) GetParameters;
-				public new function HRESULT(IWICDdsEncoder *self, IWICBitmapFrameEncode** ppIFrameEncode, uint32* pArrayIndex, uint32* pMipLevel, uint32* pSliceIndex) CreateNewFrame;
+				public new function HRESULT(ref IWICDdsEncoder self, ref WICDdsParameters pParameters) SetParameters;
+				public new function HRESULT(ref IWICDdsEncoder self, out WICDdsParameters pParameters) GetParameters;
+				public new function HRESULT(ref IWICDdsEncoder self, out IWICBitmapFrameEncode* ppIFrameEncode, out uint32 pArrayIndex, out uint32 pMipLevel, out uint32 pSliceIndex) CreateNewFrame;
 			}
 		}
 		[CRepr]
@@ -2364,24 +2364,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSizeInBlocks(uint32* pWidthInBlocks, uint32* pHeightInBlocks) mut
+			public HRESULT GetSizeInBlocks(out uint32 pWidthInBlocks, out uint32 pHeightInBlocks) mut
 			{
-				return VT.GetSizeInBlocks(&this, pWidthInBlocks, pHeightInBlocks);
+				return VT.GetSizeInBlocks(ref this, out pWidthInBlocks, out pHeightInBlocks);
 			}
-			public HRESULT GetFormatInfo(WICDdsFormatInfo* pFormatInfo) mut
+			public HRESULT GetFormatInfo(out WICDdsFormatInfo pFormatInfo) mut
 			{
-				return VT.GetFormatInfo(&this, pFormatInfo);
+				return VT.GetFormatInfo(ref this, out pFormatInfo);
 			}
-			public HRESULT CopyBlocks(WICRect* prcBoundsInBlocks, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) mut
+			public HRESULT CopyBlocks(in WICRect prcBoundsInBlocks, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) mut
 			{
-				return VT.CopyBlocks(&this, prcBoundsInBlocks, cbStride, cbBufferSize, pbBuffer);
+				return VT.CopyBlocks(ref this, prcBoundsInBlocks, cbStride, cbBufferSize, pbBuffer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICDdsFrameDecode *self, uint32* pWidthInBlocks, uint32* pHeightInBlocks) GetSizeInBlocks;
-				public new function HRESULT(IWICDdsFrameDecode *self, WICDdsFormatInfo* pFormatInfo) GetFormatInfo;
-				public new function HRESULT(IWICDdsFrameDecode *self, WICRect* prcBoundsInBlocks, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyBlocks;
+				public new function HRESULT(ref IWICDdsFrameDecode self, out uint32 pWidthInBlocks, out uint32 pHeightInBlocks) GetSizeInBlocks;
+				public new function HRESULT(ref IWICDdsFrameDecode self, out WICDdsFormatInfo pFormatInfo) GetFormatInfo;
+				public new function HRESULT(ref IWICDdsFrameDecode self, in WICRect prcBoundsInBlocks, uint32 cbStride, uint32 cbBufferSize, uint8* pbBuffer) CopyBlocks;
 			}
 		}
 		[CRepr]
@@ -2391,59 +2391,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DoesSupportIndexing(BOOL* pfIndexingSupported) mut
+			public HRESULT DoesSupportIndexing(out BOOL pfIndexingSupported) mut
 			{
-				return VT.DoesSupportIndexing(&this, pfIndexingSupported);
+				return VT.DoesSupportIndexing(ref this, out pfIndexingSupported);
 			}
 			public HRESULT SetIndexing(WICJpegIndexingOptions options, uint32 horizontalIntervalSize) mut
 			{
-				return VT.SetIndexing(&this, options, horizontalIntervalSize);
+				return VT.SetIndexing(ref this, options, horizontalIntervalSize);
 			}
 			public HRESULT ClearIndexing() mut
 			{
-				return VT.ClearIndexing(&this);
+				return VT.ClearIndexing(ref this);
 			}
-			public HRESULT GetAcHuffmanTable(uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable) mut
+			public HRESULT GetAcHuffmanTable(uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable) mut
 			{
-				return VT.GetAcHuffmanTable(&this, scanIndex, tableIndex, pAcHuffmanTable);
+				return VT.GetAcHuffmanTable(ref this, scanIndex, tableIndex, out pAcHuffmanTable);
 			}
-			public HRESULT GetDcHuffmanTable(uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable) mut
+			public HRESULT GetDcHuffmanTable(uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable) mut
 			{
-				return VT.GetDcHuffmanTable(&this, scanIndex, tableIndex, pDcHuffmanTable);
+				return VT.GetDcHuffmanTable(ref this, scanIndex, tableIndex, out pDcHuffmanTable);
 			}
-			public HRESULT GetQuantizationTable(uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable) mut
+			public HRESULT GetQuantizationTable(uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable) mut
 			{
-				return VT.GetQuantizationTable(&this, scanIndex, tableIndex, pQuantizationTable);
+				return VT.GetQuantizationTable(ref this, scanIndex, tableIndex, out pQuantizationTable);
 			}
-			public HRESULT GetFrameHeader(WICJpegFrameHeader* pFrameHeader) mut
+			public HRESULT GetFrameHeader(out WICJpegFrameHeader pFrameHeader) mut
 			{
-				return VT.GetFrameHeader(&this, pFrameHeader);
+				return VT.GetFrameHeader(ref this, out pFrameHeader);
 			}
-			public HRESULT GetScanHeader(uint32 scanIndex, WICJpegScanHeader* pScanHeader) mut
+			public HRESULT GetScanHeader(uint32 scanIndex, out WICJpegScanHeader pScanHeader) mut
 			{
-				return VT.GetScanHeader(&this, scanIndex, pScanHeader);
+				return VT.GetScanHeader(ref this, scanIndex, out pScanHeader);
 			}
-			public HRESULT CopyScan(uint32 scanIndex, uint32 scanOffset, uint32 cbScanData, uint8* pbScanData, uint32* pcbScanDataActual) mut
+			public HRESULT CopyScan(uint32 scanIndex, uint32 scanOffset, uint32 cbScanData, uint8* pbScanData, out uint32 pcbScanDataActual) mut
 			{
-				return VT.CopyScan(&this, scanIndex, scanOffset, cbScanData, pbScanData, pcbScanDataActual);
+				return VT.CopyScan(ref this, scanIndex, scanOffset, cbScanData, pbScanData, out pcbScanDataActual);
 			}
-			public HRESULT CopyMinimalStream(uint32 streamOffset, uint32 cbStreamData, uint8* pbStreamData, uint32* pcbStreamDataActual) mut
+			public HRESULT CopyMinimalStream(uint32 streamOffset, uint32 cbStreamData, uint8* pbStreamData, out uint32 pcbStreamDataActual) mut
 			{
-				return VT.CopyMinimalStream(&this, streamOffset, cbStreamData, pbStreamData, pcbStreamDataActual);
+				return VT.CopyMinimalStream(ref this, streamOffset, cbStreamData, pbStreamData, out pcbStreamDataActual);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICJpegFrameDecode *self, BOOL* pfIndexingSupported) DoesSupportIndexing;
-				public new function HRESULT(IWICJpegFrameDecode *self, WICJpegIndexingOptions options, uint32 horizontalIntervalSize) SetIndexing;
-				public new function HRESULT(IWICJpegFrameDecode *self) ClearIndexing;
-				public new function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable) GetAcHuffmanTable;
-				public new function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable) GetDcHuffmanTable;
-				public new function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable) GetQuantizationTable;
-				public new function HRESULT(IWICJpegFrameDecode *self, WICJpegFrameHeader* pFrameHeader) GetFrameHeader;
-				public new function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, WICJpegScanHeader* pScanHeader) GetScanHeader;
-				public new function HRESULT(IWICJpegFrameDecode *self, uint32 scanIndex, uint32 scanOffset, uint32 cbScanData, uint8* pbScanData, uint32* pcbScanDataActual) CopyScan;
-				public new function HRESULT(IWICJpegFrameDecode *self, uint32 streamOffset, uint32 cbStreamData, uint8* pbStreamData, uint32* pcbStreamDataActual) CopyMinimalStream;
+				public new function HRESULT(ref IWICJpegFrameDecode self, out BOOL pfIndexingSupported) DoesSupportIndexing;
+				public new function HRESULT(ref IWICJpegFrameDecode self, WICJpegIndexingOptions options, uint32 horizontalIntervalSize) SetIndexing;
+				public new function HRESULT(ref IWICJpegFrameDecode self) ClearIndexing;
+				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable) GetAcHuffmanTable;
+				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable) GetDcHuffmanTable;
+				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable) GetQuantizationTable;
+				public new function HRESULT(ref IWICJpegFrameDecode self, out WICJpegFrameHeader pFrameHeader) GetFrameHeader;
+				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, out WICJpegScanHeader pScanHeader) GetScanHeader;
+				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 scanIndex, uint32 scanOffset, uint32 cbScanData, uint8* pbScanData, out uint32 pcbScanDataActual) CopyScan;
+				public new function HRESULT(ref IWICJpegFrameDecode self, uint32 streamOffset, uint32 cbStreamData, uint8* pbStreamData, out uint32 pcbStreamDataActual) CopyMinimalStream;
 			}
 		}
 		[CRepr]
@@ -2453,29 +2453,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAcHuffmanTable(uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable) mut
+			public HRESULT GetAcHuffmanTable(uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable) mut
 			{
-				return VT.GetAcHuffmanTable(&this, scanIndex, tableIndex, pAcHuffmanTable);
+				return VT.GetAcHuffmanTable(ref this, scanIndex, tableIndex, out pAcHuffmanTable);
 			}
-			public HRESULT GetDcHuffmanTable(uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable) mut
+			public HRESULT GetDcHuffmanTable(uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable) mut
 			{
-				return VT.GetDcHuffmanTable(&this, scanIndex, tableIndex, pDcHuffmanTable);
+				return VT.GetDcHuffmanTable(ref this, scanIndex, tableIndex, out pDcHuffmanTable);
 			}
-			public HRESULT GetQuantizationTable(uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable) mut
+			public HRESULT GetQuantizationTable(uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable) mut
 			{
-				return VT.GetQuantizationTable(&this, scanIndex, tableIndex, pQuantizationTable);
+				return VT.GetQuantizationTable(ref this, scanIndex, tableIndex, out pQuantizationTable);
 			}
 			public HRESULT WriteScan(uint32 cbScanData, uint8* pbScanData) mut
 			{
-				return VT.WriteScan(&this, cbScanData, pbScanData);
+				return VT.WriteScan(ref this, cbScanData, pbScanData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICJpegFrameEncode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable) GetAcHuffmanTable;
-				public new function HRESULT(IWICJpegFrameEncode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable) GetDcHuffmanTable;
-				public new function HRESULT(IWICJpegFrameEncode *self, uint32 scanIndex, uint32 tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable) GetQuantizationTable;
-				public new function HRESULT(IWICJpegFrameEncode *self, uint32 cbScanData, uint8* pbScanData) WriteScan;
+				public new function HRESULT(ref IWICJpegFrameEncode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable) GetAcHuffmanTable;
+				public new function HRESULT(ref IWICJpegFrameEncode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable) GetDcHuffmanTable;
+				public new function HRESULT(ref IWICJpegFrameEncode self, uint32 scanIndex, uint32 tableIndex, out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable) GetQuantizationTable;
+				public new function HRESULT(ref IWICJpegFrameEncode self, uint32 cbScanData, uint8* pbScanData) WriteScan;
 			}
 		}
 		[CRepr]
@@ -2485,29 +2485,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetContainerFormat(Guid* pguidContainerFormat) mut
+			public HRESULT GetContainerFormat(out Guid pguidContainerFormat) mut
 			{
-				return VT.GetContainerFormat(&this, pguidContainerFormat);
+				return VT.GetContainerFormat(ref this, out pguidContainerFormat);
 			}
-			public HRESULT GetCount(uint32* pcCount) mut
+			public HRESULT GetCount(out uint32 pcCount) mut
 			{
-				return VT.GetCount(&this, pcCount);
+				return VT.GetCount(ref this, out pcCount);
 			}
-			public HRESULT GetReaderByIndex(uint32 nIndex, IWICMetadataReader** ppIMetadataReader) mut
+			public HRESULT GetReaderByIndex(uint32 nIndex, out IWICMetadataReader* ppIMetadataReader) mut
 			{
-				return VT.GetReaderByIndex(&this, nIndex, ppIMetadataReader);
+				return VT.GetReaderByIndex(ref this, nIndex, out ppIMetadataReader);
 			}
-			public HRESULT GetEnumerator(IEnumUnknown** ppIEnumMetadata) mut
+			public HRESULT GetEnumerator(out IEnumUnknown* ppIEnumMetadata) mut
 			{
-				return VT.GetEnumerator(&this, ppIEnumMetadata);
+				return VT.GetEnumerator(ref this, out ppIEnumMetadata);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICMetadataBlockReader *self, Guid* pguidContainerFormat) GetContainerFormat;
-				public new function HRESULT(IWICMetadataBlockReader *self, uint32* pcCount) GetCount;
-				public new function HRESULT(IWICMetadataBlockReader *self, uint32 nIndex, IWICMetadataReader** ppIMetadataReader) GetReaderByIndex;
-				public new function HRESULT(IWICMetadataBlockReader *self, IEnumUnknown** ppIEnumMetadata) GetEnumerator;
+				public new function HRESULT(ref IWICMetadataBlockReader self, out Guid pguidContainerFormat) GetContainerFormat;
+				public new function HRESULT(ref IWICMetadataBlockReader self, out uint32 pcCount) GetCount;
+				public new function HRESULT(ref IWICMetadataBlockReader self, uint32 nIndex, out IWICMetadataReader* ppIMetadataReader) GetReaderByIndex;
+				public new function HRESULT(ref IWICMetadataBlockReader self, out IEnumUnknown* ppIEnumMetadata) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -2517,34 +2517,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeFromBlockReader(IWICMetadataBlockReader* pIMDBlockReader) mut
+			public HRESULT InitializeFromBlockReader(ref IWICMetadataBlockReader pIMDBlockReader) mut
 			{
-				return VT.InitializeFromBlockReader(&this, pIMDBlockReader);
+				return VT.InitializeFromBlockReader(ref this, ref pIMDBlockReader);
 			}
-			public HRESULT GetWriterByIndex(uint32 nIndex, IWICMetadataWriter** ppIMetadataWriter) mut
+			public HRESULT GetWriterByIndex(uint32 nIndex, out IWICMetadataWriter* ppIMetadataWriter) mut
 			{
-				return VT.GetWriterByIndex(&this, nIndex, ppIMetadataWriter);
+				return VT.GetWriterByIndex(ref this, nIndex, out ppIMetadataWriter);
 			}
-			public HRESULT AddWriter(IWICMetadataWriter* pIMetadataWriter) mut
+			public HRESULT AddWriter(ref IWICMetadataWriter pIMetadataWriter) mut
 			{
-				return VT.AddWriter(&this, pIMetadataWriter);
+				return VT.AddWriter(ref this, ref pIMetadataWriter);
 			}
-			public HRESULT SetWriterByIndex(uint32 nIndex, IWICMetadataWriter* pIMetadataWriter) mut
+			public HRESULT SetWriterByIndex(uint32 nIndex, ref IWICMetadataWriter pIMetadataWriter) mut
 			{
-				return VT.SetWriterByIndex(&this, nIndex, pIMetadataWriter);
+				return VT.SetWriterByIndex(ref this, nIndex, ref pIMetadataWriter);
 			}
 			public HRESULT RemoveWriterByIndex(uint32 nIndex) mut
 			{
-				return VT.RemoveWriterByIndex(&this, nIndex);
+				return VT.RemoveWriterByIndex(ref this, nIndex);
 			}
 			[CRepr]
 			public struct VTable : IWICMetadataBlockReader.VTable
 			{
-				public new function HRESULT(IWICMetadataBlockWriter *self, IWICMetadataBlockReader* pIMDBlockReader) InitializeFromBlockReader;
-				public new function HRESULT(IWICMetadataBlockWriter *self, uint32 nIndex, IWICMetadataWriter** ppIMetadataWriter) GetWriterByIndex;
-				public new function HRESULT(IWICMetadataBlockWriter *self, IWICMetadataWriter* pIMetadataWriter) AddWriter;
-				public new function HRESULT(IWICMetadataBlockWriter *self, uint32 nIndex, IWICMetadataWriter* pIMetadataWriter) SetWriterByIndex;
-				public new function HRESULT(IWICMetadataBlockWriter *self, uint32 nIndex) RemoveWriterByIndex;
+				public new function HRESULT(ref IWICMetadataBlockWriter self, ref IWICMetadataBlockReader pIMDBlockReader) InitializeFromBlockReader;
+				public new function HRESULT(ref IWICMetadataBlockWriter self, uint32 nIndex, out IWICMetadataWriter* ppIMetadataWriter) GetWriterByIndex;
+				public new function HRESULT(ref IWICMetadataBlockWriter self, ref IWICMetadataWriter pIMetadataWriter) AddWriter;
+				public new function HRESULT(ref IWICMetadataBlockWriter self, uint32 nIndex, ref IWICMetadataWriter pIMetadataWriter) SetWriterByIndex;
+				public new function HRESULT(ref IWICMetadataBlockWriter self, uint32 nIndex) RemoveWriterByIndex;
 			}
 		}
 		[CRepr]
@@ -2554,39 +2554,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMetadataFormat(Guid* pguidMetadataFormat) mut
+			public HRESULT GetMetadataFormat(out Guid pguidMetadataFormat) mut
 			{
-				return VT.GetMetadataFormat(&this, pguidMetadataFormat);
+				return VT.GetMetadataFormat(ref this, out pguidMetadataFormat);
 			}
-			public HRESULT GetMetadataHandlerInfo(IWICMetadataHandlerInfo** ppIHandler) mut
+			public HRESULT GetMetadataHandlerInfo(out IWICMetadataHandlerInfo* ppIHandler) mut
 			{
-				return VT.GetMetadataHandlerInfo(&this, ppIHandler);
+				return VT.GetMetadataHandlerInfo(ref this, out ppIHandler);
 			}
-			public HRESULT GetCount(uint32* pcCount) mut
+			public HRESULT GetCount(out uint32 pcCount) mut
 			{
-				return VT.GetCount(&this, pcCount);
+				return VT.GetCount(ref this, out pcCount);
 			}
-			public HRESULT GetValueByIndex(uint32 nIndex, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) mut
+			public HRESULT GetValueByIndex(uint32 nIndex, out PROPVARIANT pvarSchema, out PROPVARIANT pvarId, out PROPVARIANT pvarValue) mut
 			{
-				return VT.GetValueByIndex(&this, nIndex, pvarSchema, pvarId, pvarValue);
+				return VT.GetValueByIndex(ref this, nIndex, out pvarSchema, out pvarId, out pvarValue);
 			}
-			public HRESULT GetValue(PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) mut
+			public HRESULT GetValue(in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, out PROPVARIANT pvarValue) mut
 			{
-				return VT.GetValue(&this, pvarSchema, pvarId, pvarValue);
+				return VT.GetValue(ref this, pvarSchema, pvarId, out pvarValue);
 			}
-			public HRESULT GetEnumerator(IWICEnumMetadataItem** ppIEnumMetadata) mut
+			public HRESULT GetEnumerator(out IWICEnumMetadataItem* ppIEnumMetadata) mut
 			{
-				return VT.GetEnumerator(&this, ppIEnumMetadata);
+				return VT.GetEnumerator(ref this, out ppIEnumMetadata);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICMetadataReader *self, Guid* pguidMetadataFormat) GetMetadataFormat;
-				public new function HRESULT(IWICMetadataReader *self, IWICMetadataHandlerInfo** ppIHandler) GetMetadataHandlerInfo;
-				public new function HRESULT(IWICMetadataReader *self, uint32* pcCount) GetCount;
-				public new function HRESULT(IWICMetadataReader *self, uint32 nIndex, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) GetValueByIndex;
-				public new function HRESULT(IWICMetadataReader *self, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) GetValue;
-				public new function HRESULT(IWICMetadataReader *self, IWICEnumMetadataItem** ppIEnumMetadata) GetEnumerator;
+				public new function HRESULT(ref IWICMetadataReader self, out Guid pguidMetadataFormat) GetMetadataFormat;
+				public new function HRESULT(ref IWICMetadataReader self, out IWICMetadataHandlerInfo* ppIHandler) GetMetadataHandlerInfo;
+				public new function HRESULT(ref IWICMetadataReader self, out uint32 pcCount) GetCount;
+				public new function HRESULT(ref IWICMetadataReader self, uint32 nIndex, out PROPVARIANT pvarSchema, out PROPVARIANT pvarId, out PROPVARIANT pvarValue) GetValueByIndex;
+				public new function HRESULT(ref IWICMetadataReader self, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, out PROPVARIANT pvarValue) GetValue;
+				public new function HRESULT(ref IWICMetadataReader self, out IWICEnumMetadataItem* ppIEnumMetadata) GetEnumerator;
 			}
 		}
 		[CRepr]
@@ -2596,29 +2596,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetValue(PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) mut
+			public HRESULT SetValue(in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, in PROPVARIANT pvarValue) mut
 			{
-				return VT.SetValue(&this, pvarSchema, pvarId, pvarValue);
+				return VT.SetValue(ref this, pvarSchema, pvarId, pvarValue);
 			}
-			public HRESULT SetValueByIndex(uint32 nIndex, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) mut
+			public HRESULT SetValueByIndex(uint32 nIndex, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, in PROPVARIANT pvarValue) mut
 			{
-				return VT.SetValueByIndex(&this, nIndex, pvarSchema, pvarId, pvarValue);
+				return VT.SetValueByIndex(ref this, nIndex, pvarSchema, pvarId, pvarValue);
 			}
-			public HRESULT RemoveValue(PROPVARIANT* pvarSchema, PROPVARIANT* pvarId) mut
+			public HRESULT RemoveValue(in PROPVARIANT pvarSchema, in PROPVARIANT pvarId) mut
 			{
-				return VT.RemoveValue(&this, pvarSchema, pvarId);
+				return VT.RemoveValue(ref this, pvarSchema, pvarId);
 			}
 			public HRESULT RemoveValueByIndex(uint32 nIndex) mut
 			{
-				return VT.RemoveValueByIndex(&this, nIndex);
+				return VT.RemoveValueByIndex(ref this, nIndex);
 			}
 			[CRepr]
 			public struct VTable : IWICMetadataReader.VTable
 			{
-				public new function HRESULT(IWICMetadataWriter *self, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) SetValue;
-				public new function HRESULT(IWICMetadataWriter *self, uint32 nIndex, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue) SetValueByIndex;
-				public new function HRESULT(IWICMetadataWriter *self, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId) RemoveValue;
-				public new function HRESULT(IWICMetadataWriter *self, uint32 nIndex) RemoveValueByIndex;
+				public new function HRESULT(ref IWICMetadataWriter self, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, in PROPVARIANT pvarValue) SetValue;
+				public new function HRESULT(ref IWICMetadataWriter self, uint32 nIndex, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId, in PROPVARIANT pvarValue) SetValueByIndex;
+				public new function HRESULT(ref IWICMetadataWriter self, in PROPVARIANT pvarSchema, in PROPVARIANT pvarId) RemoveValue;
+				public new function HRESULT(ref IWICMetadataWriter self, uint32 nIndex) RemoveValueByIndex;
 			}
 		}
 		[CRepr]
@@ -2628,29 +2628,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStream(IStream** ppIStream) mut
+			public HRESULT GetStream(out IStream* ppIStream) mut
 			{
-				return VT.GetStream(&this, ppIStream);
+				return VT.GetStream(ref this, out ppIStream);
 			}
-			public HRESULT GetPersistOptions(uint32* pdwPersistOptions) mut
+			public HRESULT GetPersistOptions(out uint32 pdwPersistOptions) mut
 			{
-				return VT.GetPersistOptions(&this, pdwPersistOptions);
+				return VT.GetPersistOptions(ref this, out pdwPersistOptions);
 			}
-			public HRESULT GetPreferredVendorGUID(Guid* pguidPreferredVendor) mut
+			public HRESULT GetPreferredVendorGUID(out Guid pguidPreferredVendor) mut
 			{
-				return VT.GetPreferredVendorGUID(&this, pguidPreferredVendor);
+				return VT.GetPreferredVendorGUID(ref this, out pguidPreferredVendor);
 			}
 			public HRESULT RefreshStream() mut
 			{
-				return VT.RefreshStream(&this);
+				return VT.RefreshStream(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICStreamProvider *self, IStream** ppIStream) GetStream;
-				public new function HRESULT(IWICStreamProvider *self, uint32* pdwPersistOptions) GetPersistOptions;
-				public new function HRESULT(IWICStreamProvider *self, Guid* pguidPreferredVendor) GetPreferredVendorGUID;
-				public new function HRESULT(IWICStreamProvider *self) RefreshStream;
+				public new function HRESULT(ref IWICStreamProvider self, out IStream* ppIStream) GetStream;
+				public new function HRESULT(ref IWICStreamProvider self, out uint32 pdwPersistOptions) GetPersistOptions;
+				public new function HRESULT(ref IWICStreamProvider self, out Guid pguidPreferredVendor) GetPreferredVendorGUID;
+				public new function HRESULT(ref IWICStreamProvider self) RefreshStream;
 			}
 		}
 		[CRepr]
@@ -2660,19 +2660,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LoadEx(IStream* pIStream, Guid* pguidPreferredVendor, uint32 dwPersistOptions) mut
+			public HRESULT LoadEx(ref IStream pIStream, in Guid pguidPreferredVendor, uint32 dwPersistOptions) mut
 			{
-				return VT.LoadEx(&this, pIStream, pguidPreferredVendor, dwPersistOptions);
+				return VT.LoadEx(ref this, ref pIStream, pguidPreferredVendor, dwPersistOptions);
 			}
-			public HRESULT SaveEx(IStream* pIStream, uint32 dwPersistOptions, BOOL fClearDirty) mut
+			public HRESULT SaveEx(ref IStream pIStream, uint32 dwPersistOptions, BOOL fClearDirty) mut
 			{
-				return VT.SaveEx(&this, pIStream, dwPersistOptions, fClearDirty);
+				return VT.SaveEx(ref this, ref pIStream, dwPersistOptions, fClearDirty);
 			}
 			[CRepr]
 			public struct VTable : IPersistStream.VTable
 			{
-				public new function HRESULT(IWICPersistStream *self, IStream* pIStream, Guid* pguidPreferredVendor, uint32 dwPersistOptions) LoadEx;
-				public new function HRESULT(IWICPersistStream *self, IStream* pIStream, uint32 dwPersistOptions, BOOL fClearDirty) SaveEx;
+				public new function HRESULT(ref IWICPersistStream self, ref IStream pIStream, in Guid pguidPreferredVendor, uint32 dwPersistOptions) LoadEx;
+				public new function HRESULT(ref IWICPersistStream self, ref IStream pIStream, uint32 dwPersistOptions, BOOL fClearDirty) SaveEx;
 			}
 		}
 		[CRepr]
@@ -2682,44 +2682,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMetadataFormat(Guid* pguidMetadataFormat) mut
+			public HRESULT GetMetadataFormat(out Guid pguidMetadataFormat) mut
 			{
-				return VT.GetMetadataFormat(&this, pguidMetadataFormat);
+				return VT.GetMetadataFormat(ref this, out pguidMetadataFormat);
 			}
-			public HRESULT GetContainerFormats(uint32 cContainerFormats, Guid* pguidContainerFormats, uint32* pcchActual) mut
+			public HRESULT GetContainerFormats(uint32 cContainerFormats, Guid* pguidContainerFormats, out uint32 pcchActual) mut
 			{
-				return VT.GetContainerFormats(&this, cContainerFormats, pguidContainerFormats, pcchActual);
+				return VT.GetContainerFormats(ref this, cContainerFormats, pguidContainerFormats, out pcchActual);
 			}
-			public HRESULT GetDeviceManufacturer(uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, uint32* pcchActual) mut
+			public HRESULT GetDeviceManufacturer(uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, out uint32 pcchActual) mut
 			{
-				return VT.GetDeviceManufacturer(&this, cchDeviceManufacturer, wzDeviceManufacturer, pcchActual);
+				return VT.GetDeviceManufacturer(ref this, cchDeviceManufacturer, wzDeviceManufacturer, out pcchActual);
 			}
-			public HRESULT GetDeviceModels(uint32 cchDeviceModels, char16* wzDeviceModels, uint32* pcchActual) mut
+			public HRESULT GetDeviceModels(uint32 cchDeviceModels, char16* wzDeviceModels, out uint32 pcchActual) mut
 			{
-				return VT.GetDeviceModels(&this, cchDeviceModels, wzDeviceModels, pcchActual);
+				return VT.GetDeviceModels(ref this, cchDeviceModels, wzDeviceModels, out pcchActual);
 			}
-			public HRESULT DoesRequireFullStream(BOOL* pfRequiresFullStream) mut
+			public HRESULT DoesRequireFullStream(out BOOL pfRequiresFullStream) mut
 			{
-				return VT.DoesRequireFullStream(&this, pfRequiresFullStream);
+				return VT.DoesRequireFullStream(ref this, out pfRequiresFullStream);
 			}
-			public HRESULT DoesSupportPadding(BOOL* pfSupportsPadding) mut
+			public HRESULT DoesSupportPadding(out BOOL pfSupportsPadding) mut
 			{
-				return VT.DoesSupportPadding(&this, pfSupportsPadding);
+				return VT.DoesSupportPadding(ref this, out pfSupportsPadding);
 			}
-			public HRESULT DoesRequireFixedSize(BOOL* pfFixedSize) mut
+			public HRESULT DoesRequireFixedSize(out BOOL pfFixedSize) mut
 			{
-				return VT.DoesRequireFixedSize(&this, pfFixedSize);
+				return VT.DoesRequireFixedSize(ref this, out pfFixedSize);
 			}
 			[CRepr]
 			public struct VTable : IWICComponentInfo.VTable
 			{
-				public new function HRESULT(IWICMetadataHandlerInfo *self, Guid* pguidMetadataFormat) GetMetadataFormat;
-				public new function HRESULT(IWICMetadataHandlerInfo *self, uint32 cContainerFormats, Guid* pguidContainerFormats, uint32* pcchActual) GetContainerFormats;
-				public new function HRESULT(IWICMetadataHandlerInfo *self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, uint32* pcchActual) GetDeviceManufacturer;
-				public new function HRESULT(IWICMetadataHandlerInfo *self, uint32 cchDeviceModels, char16* wzDeviceModels, uint32* pcchActual) GetDeviceModels;
-				public new function HRESULT(IWICMetadataHandlerInfo *self, BOOL* pfRequiresFullStream) DoesRequireFullStream;
-				public new function HRESULT(IWICMetadataHandlerInfo *self, BOOL* pfSupportsPadding) DoesSupportPadding;
-				public new function HRESULT(IWICMetadataHandlerInfo *self, BOOL* pfFixedSize) DoesRequireFixedSize;
+				public new function HRESULT(ref IWICMetadataHandlerInfo self, out Guid pguidMetadataFormat) GetMetadataFormat;
+				public new function HRESULT(ref IWICMetadataHandlerInfo self, uint32 cContainerFormats, Guid* pguidContainerFormats, out uint32 pcchActual) GetContainerFormats;
+				public new function HRESULT(ref IWICMetadataHandlerInfo self, uint32 cchDeviceManufacturer, char16* wzDeviceManufacturer, out uint32 pcchActual) GetDeviceManufacturer;
+				public new function HRESULT(ref IWICMetadataHandlerInfo self, uint32 cchDeviceModels, char16* wzDeviceModels, out uint32 pcchActual) GetDeviceModels;
+				public new function HRESULT(ref IWICMetadataHandlerInfo self, out BOOL pfRequiresFullStream) DoesRequireFullStream;
+				public new function HRESULT(ref IWICMetadataHandlerInfo self, out BOOL pfSupportsPadding) DoesSupportPadding;
+				public new function HRESULT(ref IWICMetadataHandlerInfo self, out BOOL pfFixedSize) DoesRequireFixedSize;
 			}
 		}
 		[CRepr]
@@ -2729,24 +2729,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPatterns(Guid* guidContainerFormat, uint32 cbSize, WICMetadataPattern* pPattern, uint32* pcCount, uint32* pcbActual) mut
+			public HRESULT GetPatterns(in Guid guidContainerFormat, uint32 cbSize, WICMetadataPattern* pPattern, uint32* pcCount, uint32* pcbActual) mut
 			{
-				return VT.GetPatterns(&this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
+				return VT.GetPatterns(ref this, guidContainerFormat, cbSize, pPattern, pcCount, pcbActual);
 			}
-			public HRESULT MatchesPattern(Guid* guidContainerFormat, IStream* pIStream, BOOL* pfMatches) mut
+			public HRESULT MatchesPattern(in Guid guidContainerFormat, ref IStream pIStream, out BOOL pfMatches) mut
 			{
-				return VT.MatchesPattern(&this, guidContainerFormat, pIStream, pfMatches);
+				return VT.MatchesPattern(ref this, guidContainerFormat, ref pIStream, out pfMatches);
 			}
-			public HRESULT CreateInstance(IWICMetadataReader** ppIReader) mut
+			public HRESULT CreateInstance(out IWICMetadataReader* ppIReader) mut
 			{
-				return VT.CreateInstance(&this, ppIReader);
+				return VT.CreateInstance(ref this, out ppIReader);
 			}
 			[CRepr]
 			public struct VTable : IWICMetadataHandlerInfo.VTable
 			{
-				public new function HRESULT(IWICMetadataReaderInfo *self, Guid* guidContainerFormat, uint32 cbSize, WICMetadataPattern* pPattern, uint32* pcCount, uint32* pcbActual) GetPatterns;
-				public new function HRESULT(IWICMetadataReaderInfo *self, Guid* guidContainerFormat, IStream* pIStream, BOOL* pfMatches) MatchesPattern;
-				public new function HRESULT(IWICMetadataReaderInfo *self, IWICMetadataReader** ppIReader) CreateInstance;
+				public new function HRESULT(ref IWICMetadataReaderInfo self, in Guid guidContainerFormat, uint32 cbSize, WICMetadataPattern* pPattern, uint32* pcCount, uint32* pcbActual) GetPatterns;
+				public new function HRESULT(ref IWICMetadataReaderInfo self, in Guid guidContainerFormat, ref IStream pIStream, out BOOL pfMatches) MatchesPattern;
+				public new function HRESULT(ref IWICMetadataReaderInfo self, out IWICMetadataReader* ppIReader) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -2756,19 +2756,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetHeader(Guid* guidContainerFormat, uint32 cbSize, WICMetadataHeader* pHeader, uint32* pcbActual) mut
+			public HRESULT GetHeader(in Guid guidContainerFormat, uint32 cbSize, WICMetadataHeader* pHeader, uint32* pcbActual) mut
 			{
-				return VT.GetHeader(&this, guidContainerFormat, cbSize, pHeader, pcbActual);
+				return VT.GetHeader(ref this, guidContainerFormat, cbSize, pHeader, pcbActual);
 			}
-			public HRESULT CreateInstance(IWICMetadataWriter** ppIWriter) mut
+			public HRESULT CreateInstance(out IWICMetadataWriter* ppIWriter) mut
 			{
-				return VT.CreateInstance(&this, ppIWriter);
+				return VT.CreateInstance(ref this, out ppIWriter);
 			}
 			[CRepr]
 			public struct VTable : IWICMetadataHandlerInfo.VTable
 			{
-				public new function HRESULT(IWICMetadataWriterInfo *self, Guid* guidContainerFormat, uint32 cbSize, WICMetadataHeader* pHeader, uint32* pcbActual) GetHeader;
-				public new function HRESULT(IWICMetadataWriterInfo *self, IWICMetadataWriter** ppIWriter) CreateInstance;
+				public new function HRESULT(ref IWICMetadataWriterInfo self, in Guid guidContainerFormat, uint32 cbSize, WICMetadataHeader* pHeader, uint32* pcbActual) GetHeader;
+				public new function HRESULT(ref IWICMetadataWriterInfo self, out IWICMetadataWriter* ppIWriter) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -2778,67 +2778,67 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateMetadataReader(Guid* guidMetadataFormat, Guid* pguidVendor, uint32 dwOptions, IStream* pIStream, IWICMetadataReader** ppIReader) mut
+			public HRESULT CreateMetadataReader(in Guid guidMetadataFormat, in Guid pguidVendor, uint32 dwOptions, ref IStream pIStream, out IWICMetadataReader* ppIReader) mut
 			{
-				return VT.CreateMetadataReader(&this, guidMetadataFormat, pguidVendor, dwOptions, pIStream, ppIReader);
+				return VT.CreateMetadataReader(ref this, guidMetadataFormat, pguidVendor, dwOptions, ref pIStream, out ppIReader);
 			}
-			public HRESULT CreateMetadataReaderFromContainer(Guid* guidContainerFormat, Guid* pguidVendor, uint32 dwOptions, IStream* pIStream, IWICMetadataReader** ppIReader) mut
+			public HRESULT CreateMetadataReaderFromContainer(in Guid guidContainerFormat, in Guid pguidVendor, uint32 dwOptions, ref IStream pIStream, out IWICMetadataReader* ppIReader) mut
 			{
-				return VT.CreateMetadataReaderFromContainer(&this, guidContainerFormat, pguidVendor, dwOptions, pIStream, ppIReader);
+				return VT.CreateMetadataReaderFromContainer(ref this, guidContainerFormat, pguidVendor, dwOptions, ref pIStream, out ppIReader);
 			}
-			public HRESULT CreateMetadataWriter(Guid* guidMetadataFormat, Guid* pguidVendor, uint32 dwMetadataOptions, IWICMetadataWriter** ppIWriter) mut
+			public HRESULT CreateMetadataWriter(in Guid guidMetadataFormat, in Guid pguidVendor, uint32 dwMetadataOptions, out IWICMetadataWriter* ppIWriter) mut
 			{
-				return VT.CreateMetadataWriter(&this, guidMetadataFormat, pguidVendor, dwMetadataOptions, ppIWriter);
+				return VT.CreateMetadataWriter(ref this, guidMetadataFormat, pguidVendor, dwMetadataOptions, out ppIWriter);
 			}
-			public HRESULT CreateMetadataWriterFromReader(IWICMetadataReader* pIReader, Guid* pguidVendor, IWICMetadataWriter** ppIWriter) mut
+			public HRESULT CreateMetadataWriterFromReader(ref IWICMetadataReader pIReader, in Guid pguidVendor, out IWICMetadataWriter* ppIWriter) mut
 			{
-				return VT.CreateMetadataWriterFromReader(&this, pIReader, pguidVendor, ppIWriter);
+				return VT.CreateMetadataWriterFromReader(ref this, ref pIReader, pguidVendor, out ppIWriter);
 			}
-			public HRESULT CreateQueryReaderFromBlockReader(IWICMetadataBlockReader* pIBlockReader, IWICMetadataQueryReader** ppIQueryReader) mut
+			public HRESULT CreateQueryReaderFromBlockReader(ref IWICMetadataBlockReader pIBlockReader, out IWICMetadataQueryReader* ppIQueryReader) mut
 			{
-				return VT.CreateQueryReaderFromBlockReader(&this, pIBlockReader, ppIQueryReader);
+				return VT.CreateQueryReaderFromBlockReader(ref this, ref pIBlockReader, out ppIQueryReader);
 			}
-			public HRESULT CreateQueryWriterFromBlockWriter(IWICMetadataBlockWriter* pIBlockWriter, IWICMetadataQueryWriter** ppIQueryWriter) mut
+			public HRESULT CreateQueryWriterFromBlockWriter(ref IWICMetadataBlockWriter pIBlockWriter, out IWICMetadataQueryWriter* ppIQueryWriter) mut
 			{
-				return VT.CreateQueryWriterFromBlockWriter(&this, pIBlockWriter, ppIQueryWriter);
+				return VT.CreateQueryWriterFromBlockWriter(ref this, ref pIBlockWriter, out ppIQueryWriter);
 			}
-			public HRESULT CreateEncoderPropertyBag(PROPBAG2* ppropOptions, uint32 cCount, IPropertyBag2** ppIPropertyBag) mut
+			public HRESULT CreateEncoderPropertyBag(PROPBAG2* ppropOptions, uint32 cCount, out IPropertyBag2* ppIPropertyBag) mut
 			{
-				return VT.CreateEncoderPropertyBag(&this, ppropOptions, cCount, ppIPropertyBag);
+				return VT.CreateEncoderPropertyBag(ref this, ppropOptions, cCount, out ppIPropertyBag);
 			}
 			[CRepr]
 			public struct VTable : IWICImagingFactory.VTable
 			{
-				public new function HRESULT(IWICComponentFactory *self, Guid* guidMetadataFormat, Guid* pguidVendor, uint32 dwOptions, IStream* pIStream, IWICMetadataReader** ppIReader) CreateMetadataReader;
-				public new function HRESULT(IWICComponentFactory *self, Guid* guidContainerFormat, Guid* pguidVendor, uint32 dwOptions, IStream* pIStream, IWICMetadataReader** ppIReader) CreateMetadataReaderFromContainer;
-				public new function HRESULT(IWICComponentFactory *self, Guid* guidMetadataFormat, Guid* pguidVendor, uint32 dwMetadataOptions, IWICMetadataWriter** ppIWriter) CreateMetadataWriter;
-				public new function HRESULT(IWICComponentFactory *self, IWICMetadataReader* pIReader, Guid* pguidVendor, IWICMetadataWriter** ppIWriter) CreateMetadataWriterFromReader;
-				public new function HRESULT(IWICComponentFactory *self, IWICMetadataBlockReader* pIBlockReader, IWICMetadataQueryReader** ppIQueryReader) CreateQueryReaderFromBlockReader;
-				public new function HRESULT(IWICComponentFactory *self, IWICMetadataBlockWriter* pIBlockWriter, IWICMetadataQueryWriter** ppIQueryWriter) CreateQueryWriterFromBlockWriter;
-				public new function HRESULT(IWICComponentFactory *self, PROPBAG2* ppropOptions, uint32 cCount, IPropertyBag2** ppIPropertyBag) CreateEncoderPropertyBag;
+				public new function HRESULT(ref IWICComponentFactory self, in Guid guidMetadataFormat, in Guid pguidVendor, uint32 dwOptions, ref IStream pIStream, out IWICMetadataReader* ppIReader) CreateMetadataReader;
+				public new function HRESULT(ref IWICComponentFactory self, in Guid guidContainerFormat, in Guid pguidVendor, uint32 dwOptions, ref IStream pIStream, out IWICMetadataReader* ppIReader) CreateMetadataReaderFromContainer;
+				public new function HRESULT(ref IWICComponentFactory self, in Guid guidMetadataFormat, in Guid pguidVendor, uint32 dwMetadataOptions, out IWICMetadataWriter* ppIWriter) CreateMetadataWriter;
+				public new function HRESULT(ref IWICComponentFactory self, ref IWICMetadataReader pIReader, in Guid pguidVendor, out IWICMetadataWriter* ppIWriter) CreateMetadataWriterFromReader;
+				public new function HRESULT(ref IWICComponentFactory self, ref IWICMetadataBlockReader pIBlockReader, out IWICMetadataQueryReader* ppIQueryReader) CreateQueryReaderFromBlockReader;
+				public new function HRESULT(ref IWICComponentFactory self, ref IWICMetadataBlockWriter pIBlockWriter, out IWICMetadataQueryWriter* ppIQueryWriter) CreateQueryWriterFromBlockWriter;
+				public new function HRESULT(ref IWICComponentFactory self, PROPBAG2* ppropOptions, uint32 cCount, out IPropertyBag2* ppIPropertyBag) CreateEncoderPropertyBag;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICConvertBitmapSource(Guid* dstFormat, IWICBitmapSource* pISrc, IWICBitmapSource** ppIDst);
+		public static extern HRESULT WICConvertBitmapSource(ref Guid dstFormat, ref IWICBitmapSource pISrc, out IWICBitmapSource* ppIDst);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICCreateBitmapFromSection(uint32 width, uint32 height, Guid* pixelFormat, HANDLE hSection, uint32 stride, uint32 offset, IWICBitmap** ppIBitmap);
+		public static extern HRESULT WICCreateBitmapFromSection(uint32 width, uint32 height, ref Guid pixelFormat, HANDLE hSection, uint32 stride, uint32 offset, out IWICBitmap* ppIBitmap);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICCreateBitmapFromSectionEx(uint32 width, uint32 height, Guid* pixelFormat, HANDLE hSection, uint32 stride, uint32 offset, WICSectionAccessLevel desiredAccessLevel, IWICBitmap** ppIBitmap);
+		public static extern HRESULT WICCreateBitmapFromSectionEx(uint32 width, uint32 height, ref Guid pixelFormat, HANDLE hSection, uint32 stride, uint32 offset, WICSectionAccessLevel desiredAccessLevel, out IWICBitmap* ppIBitmap);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICMapGuidToShortName(Guid* guid, uint32 cchName, char16* wzName, uint32* pcchActual);
+		public static extern HRESULT WICMapGuidToShortName(in Guid guid, uint32 cchName, char16* wzName, out uint32 pcchActual);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICMapShortNameToGuid(PWSTR wzName, Guid* pguid);
+		public static extern HRESULT WICMapShortNameToGuid(PWSTR wzName, out Guid pguid);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICMapSchemaToName(Guid* guidMetadataFormat, PWSTR pwzSchema, uint32 cchName, char16* wzName, uint32* pcchActual);
+		public static extern HRESULT WICMapSchemaToName(in Guid guidMetadataFormat, PWSTR pwzSchema, uint32 cchName, char16* wzName, out uint32 pcchActual);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICMatchMetadataContent(Guid* guidContainerFormat, Guid* pguidVendor, IStream* pIStream, Guid* pguidMetadataFormat);
+		public static extern HRESULT WICMatchMetadataContent(in Guid guidContainerFormat, Guid* pguidVendor, ref IStream pIStream, out Guid pguidMetadataFormat);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICSerializeMetadataContent(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, uint32 dwPersistOptions, IStream* pIStream);
+		public static extern HRESULT WICSerializeMetadataContent(in Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, uint32 dwPersistOptions, ref IStream pIStream);
 		[Import("windowscodecs.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WICGetMetadataContentSize(Guid* guidContainerFormat, IWICMetadataWriter* pIWriter, ULARGE_INTEGER* pcbSize);
+		public static extern HRESULT WICGetMetadataContentSize(in Guid guidContainerFormat, ref IWICMetadataWriter pIWriter, out ULARGE_INTEGER pcbSize);
 		
 	}
 }

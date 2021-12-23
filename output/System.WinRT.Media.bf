@@ -19,14 +19,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetData(Guid* riid, void** ppv) mut
+			public HRESULT GetData(in Guid riid, void** ppv) mut
 			{
-				return VT.GetData(&this, riid, ppv);
+				return VT.GetData(ref this, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IAudioFrameNative *self, Guid* riid, void** ppv) GetData;
+				public new function HRESULT(ref IAudioFrameNative self, in Guid riid, void** ppv) GetData;
 			}
 		}
 		[CRepr]
@@ -36,19 +36,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetData(Guid* riid, void** ppv) mut
+			public HRESULT GetData(in Guid riid, void** ppv) mut
 			{
-				return VT.GetData(&this, riid, ppv);
+				return VT.GetData(ref this, riid, ppv);
 			}
-			public HRESULT GetDevice(Guid* riid, void** ppv) mut
+			public HRESULT GetDevice(in Guid riid, void** ppv) mut
 			{
-				return VT.GetDevice(&this, riid, ppv);
+				return VT.GetDevice(ref this, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IVideoFrameNative *self, Guid* riid, void** ppv) GetData;
-				public new function HRESULT(IVideoFrameNative *self, Guid* riid, void** ppv) GetDevice;
+				public new function HRESULT(ref IVideoFrameNative self, in Guid riid, void** ppv) GetData;
+				public new function HRESULT(ref IVideoFrameNative self, in Guid riid, void** ppv) GetDevice;
 			}
 		}
 		[CRepr]
@@ -58,14 +58,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromMFSample(IMFSample* data, BOOL forceReadOnly, Guid* riid, void** ppv) mut
+			public HRESULT CreateFromMFSample(ref IMFSample data, BOOL forceReadOnly, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateFromMFSample(&this, data, forceReadOnly, riid, ppv);
+				return VT.CreateFromMFSample(ref this, ref data, forceReadOnly, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IAudioFrameNativeFactory *self, IMFSample* data, BOOL forceReadOnly, Guid* riid, void** ppv) CreateFromMFSample;
+				public new function HRESULT(ref IAudioFrameNativeFactory self, ref IMFSample data, BOOL forceReadOnly, in Guid riid, void** ppv) CreateFromMFSample;
 			}
 		}
 		[CRepr]
@@ -75,14 +75,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromMFSample(IMFSample* data, Guid* subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, Guid* riid, void** ppv) mut
+			public HRESULT CreateFromMFSample(ref IMFSample data, in Guid subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateFromMFSample(&this, data, subtype, width, height, forceReadOnly, minDisplayAperture, device, riid, ppv);
+				return VT.CreateFromMFSample(ref this, ref data, subtype, width, height, forceReadOnly, minDisplayAperture, device, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IVideoFrameNativeFactory *self, IMFSample* data, Guid* subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, Guid* riid, void** ppv) CreateFromMFSample;
+				public new function HRESULT(ref IVideoFrameNativeFactory self, ref IMFSample data, in Guid subtype, uint32 width, uint32 height, BOOL forceReadOnly, MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, in Guid riid, void** ppv) CreateFromMFSample;
 			}
 		}
 		

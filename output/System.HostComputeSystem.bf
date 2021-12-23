@@ -89,7 +89,7 @@ namespace Win32
 		// --- Function Pointers ---
 		
 		public function void HCS_OPERATION_COMPLETION(HCS_OPERATION operation, void* context);
-		public function void HCS_EVENT_CALLBACK(HCS_EVENT* event, void* context);
+		public function void HCS_EVENT_CALLBACK(ref HCS_EVENT event, void* context);
 		public function void HCS_NOTIFICATION_CALLBACK(uint32 notificationType, void* context, HRESULT notificationStatus, PWSTR notificationData);
 		
 		// --- Structs ---
@@ -158,13 +158,13 @@ namespace Win32
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcsCancelOperation(HCS_OPERATION operation);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HcsCreateComputeSystem(PWSTR id, PWSTR configuration, HCS_OPERATION operation, SECURITY_DESCRIPTOR* securityDescriptor, HCS_SYSTEM* computeSystem);
+		public static extern HRESULT HcsCreateComputeSystem(PWSTR id, PWSTR configuration, HCS_OPERATION operation, SECURITY_DESCRIPTOR* securityDescriptor, out HCS_SYSTEM computeSystem);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HcsCreateComputeSystemInNamespace(PWSTR idNamespace, PWSTR id, PWSTR configuration, HCS_OPERATION operation, HCS_CREATE_OPTIONS* options, HCS_SYSTEM* computeSystem);
+		public static extern HRESULT HcsCreateComputeSystemInNamespace(PWSTR idNamespace, PWSTR id, PWSTR configuration, HCS_OPERATION operation, HCS_CREATE_OPTIONS* options, out HCS_SYSTEM computeSystem);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HcsOpenComputeSystem(PWSTR id, uint32 requestedAccess, HCS_SYSTEM* computeSystem);
+		public static extern HRESULT HcsOpenComputeSystem(PWSTR id, uint32 requestedAccess, out HCS_SYSTEM computeSystem);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HcsOpenComputeSystemInNamespace(PWSTR idNamespace, PWSTR id, uint32 requestedAccess, HCS_SYSTEM* computeSystem);
+		public static extern HRESULT HcsOpenComputeSystemInNamespace(PWSTR idNamespace, PWSTR id, uint32 requestedAccess, out HCS_SYSTEM computeSystem);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void HcsCloseComputeSystem(HCS_SYSTEM computeSystem);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
@@ -190,9 +190,9 @@ namespace Win32
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcsSetComputeSystemCallback(HCS_SYSTEM computeSystem, HCS_EVENT_OPTIONS callbackOptions, void* context, HCS_EVENT_CALLBACK callback);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HcsCreateProcess(HCS_SYSTEM computeSystem, PWSTR processParameters, HCS_OPERATION operation, SECURITY_DESCRIPTOR* securityDescriptor, HCS_PROCESS* process);
+		public static extern HRESULT HcsCreateProcess(HCS_SYSTEM computeSystem, PWSTR processParameters, HCS_OPERATION operation, SECURITY_DESCRIPTOR* securityDescriptor, out HCS_PROCESS process);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HcsOpenProcess(HCS_SYSTEM computeSystem, uint32 processId, uint32 requestedAccess, HCS_PROCESS* process);
+		public static extern HRESULT HcsOpenProcess(HCS_SYSTEM computeSystem, uint32 processId, uint32 requestedAccess, out HCS_PROCESS process);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void HcsCloseProcess(HCS_PROCESS process);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
@@ -210,7 +210,7 @@ namespace Win32
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcsWaitForProcessExit(HCS_PROCESS computeSystem, uint32 timeoutMs, PWSTR* result);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HcsGetServiceProperties(PWSTR propertyQuery, PWSTR* result);
+		public static extern HRESULT HcsGetServiceProperties(PWSTR propertyQuery, out PWSTR result);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcsModifyServiceSettings(PWSTR settings, PWSTR* result);
 		[Import("computecore.dll"), CLink, CallingConvention(.Stdcall)]
@@ -248,7 +248,7 @@ namespace Win32
 		[Import("computestorage.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcsFormatWritableLayerVhd(HANDLE vhdHandle);
 		[Import("computestorage.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT HcsGetLayerVhdMountPath(HANDLE vhdHandle, PWSTR* mountPath);
+		public static extern HRESULT HcsGetLayerVhdMountPath(HANDLE vhdHandle, out PWSTR mountPath);
 		[Import("computestorage.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT HcsSetupBaseOSVolume(PWSTR layerPath, PWSTR volumePath, PWSTR options);
 		

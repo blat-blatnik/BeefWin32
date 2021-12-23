@@ -14,14 +14,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Win32Handle(uint64* value) mut
+			public HRESULT get_Win32Handle(out uint64 value) mut
 			{
-				return VT.get_Win32Handle(&this, value);
+				return VT.get_Win32Handle(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IWindowsDevicesAllJoynBusAttachmentInterop *self, uint64* value) get_Win32Handle;
+				public new function HRESULT(ref IWindowsDevicesAllJoynBusAttachmentInterop self, out uint64 value) get_Win32Handle;
 			}
 		}
 		[CRepr]
@@ -31,14 +31,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromWin32Handle(uint64 win32handle, uint8 enableAboutData, Guid* riid, void** ppv) mut
+			public HRESULT CreateFromWin32Handle(uint64 win32handle, uint8 enableAboutData, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateFromWin32Handle(&this, win32handle, enableAboutData, riid, ppv);
+				return VT.CreateFromWin32Handle(ref this, win32handle, enableAboutData, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IWindowsDevicesAllJoynBusAttachmentFactoryInterop *self, uint64 win32handle, uint8 enableAboutData, Guid* riid, void** ppv) CreateFromWin32Handle;
+				public new function HRESULT(ref IWindowsDevicesAllJoynBusAttachmentFactoryInterop self, uint64 win32handle, uint8 enableAboutData, in Guid riid, void** ppv) CreateFromWin32Handle;
 			}
 		}
 		[CRepr]
@@ -50,22 +50,22 @@ namespace Win32
 			
 			public HRESULT AddPropertyGetHandler(void* context, HSTRING interfaceName, int callback) mut
 			{
-				return VT.AddPropertyGetHandler(&this, context, interfaceName, callback);
+				return VT.AddPropertyGetHandler(ref this, context, interfaceName, callback);
 			}
 			public HRESULT AddPropertySetHandler(void* context, HSTRING interfaceName, int callback) mut
 			{
-				return VT.AddPropertySetHandler(&this, context, interfaceName, callback);
+				return VT.AddPropertySetHandler(ref this, context, interfaceName, callback);
 			}
-			public HRESULT get_Win32Handle(uint64* value) mut
+			public HRESULT get_Win32Handle(out uint64 value) mut
 			{
-				return VT.get_Win32Handle(&this, value);
+				return VT.get_Win32Handle(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IWindowsDevicesAllJoynBusObjectInterop *self, void* context, HSTRING interfaceName, int callback) AddPropertyGetHandler;
-				public new function HRESULT(IWindowsDevicesAllJoynBusObjectInterop *self, void* context, HSTRING interfaceName, int callback) AddPropertySetHandler;
-				public new function HRESULT(IWindowsDevicesAllJoynBusObjectInterop *self, uint64* value) get_Win32Handle;
+				public new function HRESULT(ref IWindowsDevicesAllJoynBusObjectInterop self, void* context, HSTRING interfaceName, int callback) AddPropertyGetHandler;
+				public new function HRESULT(ref IWindowsDevicesAllJoynBusObjectInterop self, void* context, HSTRING interfaceName, int callback) AddPropertySetHandler;
+				public new function HRESULT(ref IWindowsDevicesAllJoynBusObjectInterop self, out uint64 value) get_Win32Handle;
 			}
 		}
 		[CRepr]
@@ -75,14 +75,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromWin32Handle(uint64 win32handle, Guid* riid, void** ppv) mut
+			public HRESULT CreateFromWin32Handle(uint64 win32handle, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateFromWin32Handle(&this, win32handle, riid, ppv);
+				return VT.CreateFromWin32Handle(ref this, win32handle, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IInspectable.VTable
 			{
-				public new function HRESULT(IWindowsDevicesAllJoynBusObjectFactoryInterop *self, uint64 win32handle, Guid* riid, void** ppv) CreateFromWin32Handle;
+				public new function HRESULT(ref IWindowsDevicesAllJoynBusObjectFactoryInterop self, uint64 win32handle, in Guid riid, void** ppv) CreateFromWin32Handle;
 			}
 		}
 		

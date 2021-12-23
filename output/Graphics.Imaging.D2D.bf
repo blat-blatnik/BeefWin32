@@ -14,24 +14,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT WriteFrame(ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, WICImageParameters* pImageParameters) mut
+			public HRESULT WriteFrame(ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) mut
 			{
-				return VT.WriteFrame(&this, pImage, pFrameEncode, pImageParameters);
+				return VT.WriteFrame(ref this, ref pImage, ref pFrameEncode, pImageParameters);
 			}
-			public HRESULT WriteFrameThumbnail(ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, WICImageParameters* pImageParameters) mut
+			public HRESULT WriteFrameThumbnail(ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) mut
 			{
-				return VT.WriteFrameThumbnail(&this, pImage, pFrameEncode, pImageParameters);
+				return VT.WriteFrameThumbnail(ref this, ref pImage, ref pFrameEncode, pImageParameters);
 			}
-			public HRESULT WriteThumbnail(ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, WICImageParameters* pImageParameters) mut
+			public HRESULT WriteThumbnail(ref ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, in WICImageParameters pImageParameters) mut
 			{
-				return VT.WriteThumbnail(&this, pImage, pEncoder, pImageParameters);
+				return VT.WriteThumbnail(ref this, ref pImage, ref pEncoder, pImageParameters);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWICImageEncoder *self, ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, WICImageParameters* pImageParameters) WriteFrame;
-				public new function HRESULT(IWICImageEncoder *self, ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, WICImageParameters* pImageParameters) WriteFrameThumbnail;
-				public new function HRESULT(IWICImageEncoder *self, ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, WICImageParameters* pImageParameters) WriteThumbnail;
+				public new function HRESULT(ref IWICImageEncoder self, ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) WriteFrame;
+				public new function HRESULT(ref IWICImageEncoder self, ref ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, in WICImageParameters pImageParameters) WriteFrameThumbnail;
+				public new function HRESULT(ref IWICImageEncoder self, ref ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, in WICImageParameters pImageParameters) WriteThumbnail;
 			}
 		}
 		[CRepr]
@@ -41,14 +41,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateImageEncoder(ID2D1Device* pD2DDevice, IWICImageEncoder** ppWICImageEncoder) mut
+			public HRESULT CreateImageEncoder(ref ID2D1Device pD2DDevice, out IWICImageEncoder* ppWICImageEncoder) mut
 			{
-				return VT.CreateImageEncoder(&this, pD2DDevice, ppWICImageEncoder);
+				return VT.CreateImageEncoder(ref this, ref pD2DDevice, out ppWICImageEncoder);
 			}
 			[CRepr]
 			public struct VTable : IWICImagingFactory.VTable
 			{
-				public new function HRESULT(IWICImagingFactory2 *self, ID2D1Device* pD2DDevice, IWICImageEncoder** ppWICImageEncoder) CreateImageEncoder;
+				public new function HRESULT(ref IWICImagingFactory2 self, ref ID2D1Device pD2DDevice, out IWICImageEncoder* ppWICImageEncoder) CreateImageEncoder;
 			}
 		}
 		

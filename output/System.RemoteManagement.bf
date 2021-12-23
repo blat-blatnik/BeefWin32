@@ -669,20 +669,20 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function void WSMAN_SHELL_COMPLETION_FUNCTION(void* operationContext, uint32 flags, WSMAN_ERROR* error, WSMAN_SHELL* shell, WSMAN_COMMAND* command, WSMAN_OPERATION* operationHandle, WSMAN_RESPONSE_DATA* data);
+		public function void WSMAN_SHELL_COMPLETION_FUNCTION(void* operationContext, uint32 flags, ref WSMAN_ERROR error, ref WSMAN_SHELL shell, WSMAN_COMMAND* command, WSMAN_OPERATION* operationHandle, WSMAN_RESPONSE_DATA* data);
 		public function void WSMAN_PLUGIN_RELEASE_SHELL_CONTEXT(void* shellContext);
 		public function void WSMAN_PLUGIN_RELEASE_COMMAND_CONTEXT(void* shellContext, void* commandContext);
 		public function uint32 WSMAN_PLUGIN_STARTUP(uint32 flags, PWSTR applicationIdentification, PWSTR extraInfo, void** pluginContext);
 		public function uint32 WSMAN_PLUGIN_SHUTDOWN(void* pluginContext, uint32 flags, uint32 reason);
-		public function void WSMAN_PLUGIN_SHELL(void* pluginContext, WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, WSMAN_SHELL_STARTUP_INFO_V11* startupInfo, WSMAN_DATA* inboundShellInformation);
-		public function void WSMAN_PLUGIN_COMMAND(WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, void* shellContext, PWSTR commandLine, WSMAN_COMMAND_ARG_SET* arguments);
-		public function void WSMAN_PLUGIN_SEND(WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, void* shellContext, void* commandContext, PWSTR stream, WSMAN_DATA* inboundData);
-		public function void WSMAN_PLUGIN_RECEIVE(WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, void* shellContext, void* commandContext, WSMAN_STREAM_ID_SET* streamSet);
-		public function void WSMAN_PLUGIN_SIGNAL(WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, void* shellContext, void* commandContext, PWSTR code);
-		public function void WSMAN_PLUGIN_CONNECT(WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, void* shellContext, void* commandContext, WSMAN_DATA* inboundConnectInformation);
-		public function void WSMAN_PLUGIN_AUTHORIZE_USER(void* pluginContext, WSMAN_SENDER_DETAILS* senderDetails, uint32 flags);
-		public function void WSMAN_PLUGIN_AUTHORIZE_OPERATION(void* pluginContext, WSMAN_SENDER_DETAILS* senderDetails, uint32 flags, uint32 operation, PWSTR action, PWSTR resourceUri);
-		public function void WSMAN_PLUGIN_AUTHORIZE_QUERY_QUOTA(void* pluginContext, WSMAN_SENDER_DETAILS* senderDetails, uint32 flags);
+		public function void WSMAN_PLUGIN_SHELL(void* pluginContext, ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, WSMAN_SHELL_STARTUP_INFO_V11* startupInfo, WSMAN_DATA* inboundShellInformation);
+		public function void WSMAN_PLUGIN_COMMAND(ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, void* shellContext, PWSTR commandLine, WSMAN_COMMAND_ARG_SET* arguments);
+		public function void WSMAN_PLUGIN_SEND(ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, void* shellContext, void* commandContext, PWSTR stream, ref WSMAN_DATA inboundData);
+		public function void WSMAN_PLUGIN_RECEIVE(ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, void* shellContext, void* commandContext, WSMAN_STREAM_ID_SET* streamSet);
+		public function void WSMAN_PLUGIN_SIGNAL(ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, void* shellContext, void* commandContext, PWSTR code);
+		public function void WSMAN_PLUGIN_CONNECT(ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, void* shellContext, void* commandContext, WSMAN_DATA* inboundConnectInformation);
+		public function void WSMAN_PLUGIN_AUTHORIZE_USER(void* pluginContext, ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags);
+		public function void WSMAN_PLUGIN_AUTHORIZE_OPERATION(void* pluginContext, ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags, uint32 operation, PWSTR action, PWSTR resourceUri);
+		public function void WSMAN_PLUGIN_AUTHORIZE_QUERY_QUOTA(void* pluginContext, ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags);
 		public function void WSMAN_PLUGIN_AUTHORIZE_RELEASE_CONTEXT(void* userAuthorizationContext);
 		
 		// --- Structs ---
@@ -960,29 +960,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSession(BSTR connection, int32 flags, IDispatch* connectionOptions, IDispatch** session) mut
+			public HRESULT CreateSession(BSTR connection, int32 flags, ref IDispatch connectionOptions, out IDispatch* session) mut
 			{
-				return VT.CreateSession(&this, connection, flags, connectionOptions, session);
+				return VT.CreateSession(ref this, connection, flags, ref connectionOptions, out session);
 			}
-			public HRESULT CreateConnectionOptions(IDispatch** connectionOptions) mut
+			public HRESULT CreateConnectionOptions(out IDispatch* connectionOptions) mut
 			{
-				return VT.CreateConnectionOptions(&this, connectionOptions);
+				return VT.CreateConnectionOptions(ref this, out connectionOptions);
 			}
-			public HRESULT get_CommandLine(BSTR* value) mut
+			public HRESULT get_CommandLine(out BSTR value) mut
 			{
-				return VT.get_CommandLine(&this, value);
+				return VT.get_CommandLine(ref this, out value);
 			}
-			public HRESULT get_Error(BSTR* value) mut
+			public HRESULT get_Error(out BSTR value) mut
 			{
-				return VT.get_Error(&this, value);
+				return VT.get_Error(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IWSMan *self, BSTR connection, int32 flags, IDispatch* connectionOptions, IDispatch** session) CreateSession;
-				public new function HRESULT(IWSMan *self, IDispatch** connectionOptions) CreateConnectionOptions;
-				public new function HRESULT(IWSMan *self, BSTR* value) get_CommandLine;
-				public new function HRESULT(IWSMan *self, BSTR* value) get_Error;
+				public new function HRESULT(ref IWSMan self, BSTR connection, int32 flags, ref IDispatch connectionOptions, out IDispatch* session) CreateSession;
+				public new function HRESULT(ref IWSMan self, out IDispatch* connectionOptions) CreateConnectionOptions;
+				public new function HRESULT(ref IWSMan self, out BSTR value) get_CommandLine;
+				public new function HRESULT(ref IWSMan self, out BSTR value) get_Error;
 			}
 		}
 		[CRepr]
@@ -992,109 +992,109 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateResourceLocator(BSTR strResourceLocator, IDispatch** newResourceLocator) mut
+			public HRESULT CreateResourceLocator(BSTR strResourceLocator, out IDispatch* newResourceLocator) mut
 			{
-				return VT.CreateResourceLocator(&this, strResourceLocator, newResourceLocator);
+				return VT.CreateResourceLocator(ref this, strResourceLocator, out newResourceLocator);
 			}
-			public HRESULT SessionFlagUTF8(int32* flags) mut
+			public HRESULT SessionFlagUTF8(out int32 flags) mut
 			{
-				return VT.SessionFlagUTF8(&this, flags);
+				return VT.SessionFlagUTF8(ref this, out flags);
 			}
-			public HRESULT SessionFlagCredUsernamePassword(int32* flags) mut
+			public HRESULT SessionFlagCredUsernamePassword(out int32 flags) mut
 			{
-				return VT.SessionFlagCredUsernamePassword(&this, flags);
+				return VT.SessionFlagCredUsernamePassword(ref this, out flags);
 			}
-			public HRESULT SessionFlagSkipCACheck(int32* flags) mut
+			public HRESULT SessionFlagSkipCACheck(out int32 flags) mut
 			{
-				return VT.SessionFlagSkipCACheck(&this, flags);
+				return VT.SessionFlagSkipCACheck(ref this, out flags);
 			}
-			public HRESULT SessionFlagSkipCNCheck(int32* flags) mut
+			public HRESULT SessionFlagSkipCNCheck(out int32 flags) mut
 			{
-				return VT.SessionFlagSkipCNCheck(&this, flags);
+				return VT.SessionFlagSkipCNCheck(ref this, out flags);
 			}
-			public HRESULT SessionFlagUseDigest(int32* flags) mut
+			public HRESULT SessionFlagUseDigest(out int32 flags) mut
 			{
-				return VT.SessionFlagUseDigest(&this, flags);
+				return VT.SessionFlagUseDigest(ref this, out flags);
 			}
-			public HRESULT SessionFlagUseNegotiate(int32* flags) mut
+			public HRESULT SessionFlagUseNegotiate(out int32 flags) mut
 			{
-				return VT.SessionFlagUseNegotiate(&this, flags);
+				return VT.SessionFlagUseNegotiate(ref this, out flags);
 			}
-			public HRESULT SessionFlagUseBasic(int32* flags) mut
+			public HRESULT SessionFlagUseBasic(out int32 flags) mut
 			{
-				return VT.SessionFlagUseBasic(&this, flags);
+				return VT.SessionFlagUseBasic(ref this, out flags);
 			}
-			public HRESULT SessionFlagUseKerberos(int32* flags) mut
+			public HRESULT SessionFlagUseKerberos(out int32 flags) mut
 			{
-				return VT.SessionFlagUseKerberos(&this, flags);
+				return VT.SessionFlagUseKerberos(ref this, out flags);
 			}
-			public HRESULT SessionFlagNoEncryption(int32* flags) mut
+			public HRESULT SessionFlagNoEncryption(out int32 flags) mut
 			{
-				return VT.SessionFlagNoEncryption(&this, flags);
+				return VT.SessionFlagNoEncryption(ref this, out flags);
 			}
-			public HRESULT SessionFlagEnableSPNServerPort(int32* flags) mut
+			public HRESULT SessionFlagEnableSPNServerPort(out int32 flags) mut
 			{
-				return VT.SessionFlagEnableSPNServerPort(&this, flags);
+				return VT.SessionFlagEnableSPNServerPort(ref this, out flags);
 			}
-			public HRESULT SessionFlagUseNoAuthentication(int32* flags) mut
+			public HRESULT SessionFlagUseNoAuthentication(out int32 flags) mut
 			{
-				return VT.SessionFlagUseNoAuthentication(&this, flags);
+				return VT.SessionFlagUseNoAuthentication(ref this, out flags);
 			}
-			public HRESULT EnumerationFlagNonXmlText(int32* flags) mut
+			public HRESULT EnumerationFlagNonXmlText(out int32 flags) mut
 			{
-				return VT.EnumerationFlagNonXmlText(&this, flags);
+				return VT.EnumerationFlagNonXmlText(ref this, out flags);
 			}
-			public HRESULT EnumerationFlagReturnEPR(int32* flags) mut
+			public HRESULT EnumerationFlagReturnEPR(out int32 flags) mut
 			{
-				return VT.EnumerationFlagReturnEPR(&this, flags);
+				return VT.EnumerationFlagReturnEPR(ref this, out flags);
 			}
-			public HRESULT EnumerationFlagReturnObjectAndEPR(int32* flags) mut
+			public HRESULT EnumerationFlagReturnObjectAndEPR(out int32 flags) mut
 			{
-				return VT.EnumerationFlagReturnObjectAndEPR(&this, flags);
+				return VT.EnumerationFlagReturnObjectAndEPR(ref this, out flags);
 			}
-			public HRESULT GetErrorMessage(uint32 errorNumber, BSTR* errorMessage) mut
+			public HRESULT GetErrorMessage(uint32 errorNumber, out BSTR errorMessage) mut
 			{
-				return VT.GetErrorMessage(&this, errorNumber, errorMessage);
+				return VT.GetErrorMessage(ref this, errorNumber, out errorMessage);
 			}
-			public HRESULT EnumerationFlagHierarchyDeep(int32* flags) mut
+			public HRESULT EnumerationFlagHierarchyDeep(out int32 flags) mut
 			{
-				return VT.EnumerationFlagHierarchyDeep(&this, flags);
+				return VT.EnumerationFlagHierarchyDeep(ref this, out flags);
 			}
-			public HRESULT EnumerationFlagHierarchyShallow(int32* flags) mut
+			public HRESULT EnumerationFlagHierarchyShallow(out int32 flags) mut
 			{
-				return VT.EnumerationFlagHierarchyShallow(&this, flags);
+				return VT.EnumerationFlagHierarchyShallow(ref this, out flags);
 			}
-			public HRESULT EnumerationFlagHierarchyDeepBasePropsOnly(int32* flags) mut
+			public HRESULT EnumerationFlagHierarchyDeepBasePropsOnly(out int32 flags) mut
 			{
-				return VT.EnumerationFlagHierarchyDeepBasePropsOnly(&this, flags);
+				return VT.EnumerationFlagHierarchyDeepBasePropsOnly(ref this, out flags);
 			}
-			public HRESULT EnumerationFlagReturnObject(int32* flags) mut
+			public HRESULT EnumerationFlagReturnObject(out int32 flags) mut
 			{
-				return VT.EnumerationFlagReturnObject(&this, flags);
+				return VT.EnumerationFlagReturnObject(ref this, out flags);
 			}
 			[CRepr]
 			public struct VTable : IWSMan.VTable
 			{
-				public new function HRESULT(IWSManEx *self, BSTR strResourceLocator, IDispatch** newResourceLocator) CreateResourceLocator;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagUTF8;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagCredUsernamePassword;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagSkipCACheck;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagSkipCNCheck;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseDigest;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseNegotiate;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseBasic;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseKerberos;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagNoEncryption;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagEnableSPNServerPort;
-				public new function HRESULT(IWSManEx *self, int32* flags) SessionFlagUseNoAuthentication;
-				public new function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagNonXmlText;
-				public new function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagReturnEPR;
-				public new function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagReturnObjectAndEPR;
-				public new function HRESULT(IWSManEx *self, uint32 errorNumber, BSTR* errorMessage) GetErrorMessage;
-				public new function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagHierarchyDeep;
-				public new function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagHierarchyShallow;
-				public new function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagHierarchyDeepBasePropsOnly;
-				public new function HRESULT(IWSManEx *self, int32* flags) EnumerationFlagReturnObject;
+				public new function HRESULT(ref IWSManEx self, BSTR strResourceLocator, out IDispatch* newResourceLocator) CreateResourceLocator;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagUTF8;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagCredUsernamePassword;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagSkipCACheck;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagSkipCNCheck;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagUseDigest;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagUseNegotiate;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagUseBasic;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagUseKerberos;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagNoEncryption;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagEnableSPNServerPort;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) SessionFlagUseNoAuthentication;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) EnumerationFlagNonXmlText;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) EnumerationFlagReturnEPR;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) EnumerationFlagReturnObjectAndEPR;
+				public new function HRESULT(ref IWSManEx self, uint32 errorNumber, out BSTR errorMessage) GetErrorMessage;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) EnumerationFlagHierarchyDeep;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) EnumerationFlagHierarchyShallow;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) EnumerationFlagHierarchyDeepBasePropsOnly;
+				public new function HRESULT(ref IWSManEx self, out int32 flags) EnumerationFlagReturnObject;
 			}
 		}
 		[CRepr]
@@ -1104,14 +1104,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SessionFlagUseClientCertificate(int32* flags) mut
+			public HRESULT SessionFlagUseClientCertificate(out int32 flags) mut
 			{
-				return VT.SessionFlagUseClientCertificate(&this, flags);
+				return VT.SessionFlagUseClientCertificate(ref this, out flags);
 			}
 			[CRepr]
 			public struct VTable : IWSManEx.VTable
 			{
-				public new function HRESULT(IWSManEx2 *self, int32* flags) SessionFlagUseClientCertificate;
+				public new function HRESULT(ref IWSManEx2 self, out int32 flags) SessionFlagUseClientCertificate;
 			}
 		}
 		[CRepr]
@@ -1121,44 +1121,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SessionFlagUTF16(int32* flags) mut
+			public HRESULT SessionFlagUTF16(out int32 flags) mut
 			{
-				return VT.SessionFlagUTF16(&this, flags);
+				return VT.SessionFlagUTF16(ref this, out flags);
 			}
-			public HRESULT SessionFlagUseCredSsp(int32* flags) mut
+			public HRESULT SessionFlagUseCredSsp(out int32 flags) mut
 			{
-				return VT.SessionFlagUseCredSsp(&this, flags);
+				return VT.SessionFlagUseCredSsp(ref this, out flags);
 			}
-			public HRESULT EnumerationFlagAssociationInstance(int32* flags) mut
+			public HRESULT EnumerationFlagAssociationInstance(out int32 flags) mut
 			{
-				return VT.EnumerationFlagAssociationInstance(&this, flags);
+				return VT.EnumerationFlagAssociationInstance(ref this, out flags);
 			}
-			public HRESULT EnumerationFlagAssociatedInstance(int32* flags) mut
+			public HRESULT EnumerationFlagAssociatedInstance(out int32 flags) mut
 			{
-				return VT.EnumerationFlagAssociatedInstance(&this, flags);
+				return VT.EnumerationFlagAssociatedInstance(ref this, out flags);
 			}
-			public HRESULT SessionFlagSkipRevocationCheck(int32* flags) mut
+			public HRESULT SessionFlagSkipRevocationCheck(out int32 flags) mut
 			{
-				return VT.SessionFlagSkipRevocationCheck(&this, flags);
+				return VT.SessionFlagSkipRevocationCheck(ref this, out flags);
 			}
-			public HRESULT SessionFlagAllowNegotiateImplicitCredentials(int32* flags) mut
+			public HRESULT SessionFlagAllowNegotiateImplicitCredentials(out int32 flags) mut
 			{
-				return VT.SessionFlagAllowNegotiateImplicitCredentials(&this, flags);
+				return VT.SessionFlagAllowNegotiateImplicitCredentials(ref this, out flags);
 			}
-			public HRESULT SessionFlagUseSsl(int32* flags) mut
+			public HRESULT SessionFlagUseSsl(out int32 flags) mut
 			{
-				return VT.SessionFlagUseSsl(&this, flags);
+				return VT.SessionFlagUseSsl(ref this, out flags);
 			}
 			[CRepr]
 			public struct VTable : IWSManEx2.VTable
 			{
-				public new function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagUTF16;
-				public new function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagUseCredSsp;
-				public new function HRESULT(IWSManEx3 *self, int32* flags) EnumerationFlagAssociationInstance;
-				public new function HRESULT(IWSManEx3 *self, int32* flags) EnumerationFlagAssociatedInstance;
-				public new function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagSkipRevocationCheck;
-				public new function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagAllowNegotiateImplicitCredentials;
-				public new function HRESULT(IWSManEx3 *self, int32* flags) SessionFlagUseSsl;
+				public new function HRESULT(ref IWSManEx3 self, out int32 flags) SessionFlagUTF16;
+				public new function HRESULT(ref IWSManEx3 self, out int32 flags) SessionFlagUseCredSsp;
+				public new function HRESULT(ref IWSManEx3 self, out int32 flags) EnumerationFlagAssociationInstance;
+				public new function HRESULT(ref IWSManEx3 self, out int32 flags) EnumerationFlagAssociatedInstance;
+				public new function HRESULT(ref IWSManEx3 self, out int32 flags) SessionFlagSkipRevocationCheck;
+				public new function HRESULT(ref IWSManEx3 self, out int32 flags) SessionFlagAllowNegotiateImplicitCredentials;
+				public new function HRESULT(ref IWSManEx3 self, out int32 flags) SessionFlagUseSsl;
 			}
 		}
 		[CRepr]
@@ -1168,24 +1168,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_UserName(BSTR* name) mut
+			public HRESULT get_UserName(out BSTR name) mut
 			{
-				return VT.get_UserName(&this, name);
+				return VT.get_UserName(ref this, out name);
 			}
 			public HRESULT put_UserName(BSTR name) mut
 			{
-				return VT.put_UserName(&this, name);
+				return VT.put_UserName(ref this, name);
 			}
 			public HRESULT put_Password(BSTR password) mut
 			{
-				return VT.put_Password(&this, password);
+				return VT.put_Password(ref this, password);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IWSManConnectionOptions *self, BSTR* name) get_UserName;
-				public new function HRESULT(IWSManConnectionOptions *self, BSTR name) put_UserName;
-				public new function HRESULT(IWSManConnectionOptions *self, BSTR password) put_Password;
+				public new function HRESULT(ref IWSManConnectionOptions self, out BSTR name) get_UserName;
+				public new function HRESULT(ref IWSManConnectionOptions self, BSTR name) put_UserName;
+				public new function HRESULT(ref IWSManConnectionOptions self, BSTR password) put_Password;
 			}
 		}
 		[CRepr]
@@ -1195,19 +1195,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_CertificateThumbprint(BSTR* thumbprint) mut
+			public HRESULT get_CertificateThumbprint(out BSTR thumbprint) mut
 			{
-				return VT.get_CertificateThumbprint(&this, thumbprint);
+				return VT.get_CertificateThumbprint(ref this, out thumbprint);
 			}
 			public HRESULT put_CertificateThumbprint(BSTR thumbprint) mut
 			{
-				return VT.put_CertificateThumbprint(&this, thumbprint);
+				return VT.put_CertificateThumbprint(ref this, thumbprint);
 			}
 			[CRepr]
 			public struct VTable : IWSManConnectionOptions.VTable
 			{
-				public new function HRESULT(IWSManConnectionOptionsEx *self, BSTR* thumbprint) get_CertificateThumbprint;
-				public new function HRESULT(IWSManConnectionOptionsEx *self, BSTR thumbprint) put_CertificateThumbprint;
+				public new function HRESULT(ref IWSManConnectionOptionsEx self, out BSTR thumbprint) get_CertificateThumbprint;
+				public new function HRESULT(ref IWSManConnectionOptionsEx self, BSTR thumbprint) put_CertificateThumbprint;
 			}
 		}
 		[CRepr]
@@ -1219,47 +1219,47 @@ namespace Win32
 			
 			public HRESULT SetProxy(int32 accessType, int32 authenticationMechanism, BSTR userName, BSTR password) mut
 			{
-				return VT.SetProxy(&this, accessType, authenticationMechanism, userName, password);
+				return VT.SetProxy(ref this, accessType, authenticationMechanism, userName, password);
 			}
-			public HRESULT ProxyIEConfig(int32* value) mut
+			public HRESULT ProxyIEConfig(out int32 value) mut
 			{
-				return VT.ProxyIEConfig(&this, value);
+				return VT.ProxyIEConfig(ref this, out value);
 			}
-			public HRESULT ProxyWinHttpConfig(int32* value) mut
+			public HRESULT ProxyWinHttpConfig(out int32 value) mut
 			{
-				return VT.ProxyWinHttpConfig(&this, value);
+				return VT.ProxyWinHttpConfig(ref this, out value);
 			}
-			public HRESULT ProxyAutoDetect(int32* value) mut
+			public HRESULT ProxyAutoDetect(out int32 value) mut
 			{
-				return VT.ProxyAutoDetect(&this, value);
+				return VT.ProxyAutoDetect(ref this, out value);
 			}
-			public HRESULT ProxyNoProxyServer(int32* value) mut
+			public HRESULT ProxyNoProxyServer(out int32 value) mut
 			{
-				return VT.ProxyNoProxyServer(&this, value);
+				return VT.ProxyNoProxyServer(ref this, out value);
 			}
-			public HRESULT ProxyAuthenticationUseNegotiate(int32* value) mut
+			public HRESULT ProxyAuthenticationUseNegotiate(out int32 value) mut
 			{
-				return VT.ProxyAuthenticationUseNegotiate(&this, value);
+				return VT.ProxyAuthenticationUseNegotiate(ref this, out value);
 			}
-			public HRESULT ProxyAuthenticationUseBasic(int32* value) mut
+			public HRESULT ProxyAuthenticationUseBasic(out int32 value) mut
 			{
-				return VT.ProxyAuthenticationUseBasic(&this, value);
+				return VT.ProxyAuthenticationUseBasic(ref this, out value);
 			}
-			public HRESULT ProxyAuthenticationUseDigest(int32* value) mut
+			public HRESULT ProxyAuthenticationUseDigest(out int32 value) mut
 			{
-				return VT.ProxyAuthenticationUseDigest(&this, value);
+				return VT.ProxyAuthenticationUseDigest(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IWSManConnectionOptionsEx.VTable
 			{
-				public new function HRESULT(IWSManConnectionOptionsEx2 *self, int32 accessType, int32 authenticationMechanism, BSTR userName, BSTR password) SetProxy;
-				public new function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyIEConfig;
-				public new function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyWinHttpConfig;
-				public new function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAutoDetect;
-				public new function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyNoProxyServer;
-				public new function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAuthenticationUseNegotiate;
-				public new function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAuthenticationUseBasic;
-				public new function HRESULT(IWSManConnectionOptionsEx2 *self, int32* value) ProxyAuthenticationUseDigest;
+				public new function HRESULT(ref IWSManConnectionOptionsEx2 self, int32 accessType, int32 authenticationMechanism, BSTR userName, BSTR password) SetProxy;
+				public new function HRESULT(ref IWSManConnectionOptionsEx2 self, out int32 value) ProxyIEConfig;
+				public new function HRESULT(ref IWSManConnectionOptionsEx2 self, out int32 value) ProxyWinHttpConfig;
+				public new function HRESULT(ref IWSManConnectionOptionsEx2 self, out int32 value) ProxyAutoDetect;
+				public new function HRESULT(ref IWSManConnectionOptionsEx2 self, out int32 value) ProxyNoProxyServer;
+				public new function HRESULT(ref IWSManConnectionOptionsEx2 self, out int32 value) ProxyAuthenticationUseNegotiate;
+				public new function HRESULT(ref IWSManConnectionOptionsEx2 self, out int32 value) ProxyAuthenticationUseBasic;
+				public new function HRESULT(ref IWSManConnectionOptionsEx2 self, out int32 value) ProxyAuthenticationUseDigest;
 			}
 		}
 		[CRepr]
@@ -1269,69 +1269,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Get(VARIANT resourceUri, int32 flags, BSTR* resource) mut
+			public HRESULT Get(VARIANT resourceUri, int32 flags, out BSTR resource) mut
 			{
-				return VT.Get(&this, resourceUri, flags, resource);
+				return VT.Get(ref this, resourceUri, flags, out resource);
 			}
-			public HRESULT Put(VARIANT resourceUri, BSTR resource, int32 flags, BSTR* resultResource) mut
+			public HRESULT Put(VARIANT resourceUri, BSTR resource, int32 flags, out BSTR resultResource) mut
 			{
-				return VT.Put(&this, resourceUri, resource, flags, resultResource);
+				return VT.Put(ref this, resourceUri, resource, flags, out resultResource);
 			}
-			public HRESULT Create(VARIANT resourceUri, BSTR resource, int32 flags, BSTR* newUri) mut
+			public HRESULT Create(VARIANT resourceUri, BSTR resource, int32 flags, out BSTR newUri) mut
 			{
-				return VT.Create(&this, resourceUri, resource, flags, newUri);
+				return VT.Create(ref this, resourceUri, resource, flags, out newUri);
 			}
 			public HRESULT Delete(VARIANT resourceUri, int32 flags) mut
 			{
-				return VT.Delete(&this, resourceUri, flags);
+				return VT.Delete(ref this, resourceUri, flags);
 			}
-			public HRESULT Invoke(BSTR actionUri, VARIANT resourceUri, BSTR parameters, int32 flags, BSTR* result) mut
+			public HRESULT Invoke(BSTR actionUri, VARIANT resourceUri, BSTR parameters, int32 flags, out BSTR result) mut
 			{
-				return VT.Invoke(&this, actionUri, resourceUri, parameters, flags, result);
+				return VT.Invoke(ref this, actionUri, resourceUri, parameters, flags, out result);
 			}
-			public HRESULT Enumerate(VARIANT resourceUri, BSTR filter, BSTR dialect, int32 flags, IDispatch** resultSet) mut
+			public HRESULT Enumerate(VARIANT resourceUri, BSTR filter, BSTR dialect, int32 flags, out IDispatch* resultSet) mut
 			{
-				return VT.Enumerate(&this, resourceUri, filter, dialect, flags, resultSet);
+				return VT.Enumerate(ref this, resourceUri, filter, dialect, flags, out resultSet);
 			}
-			public HRESULT Identify(int32 flags, BSTR* result) mut
+			public HRESULT Identify(int32 flags, out BSTR result) mut
 			{
-				return VT.Identify(&this, flags, result);
+				return VT.Identify(ref this, flags, out result);
 			}
-			public HRESULT get_Error(BSTR* value) mut
+			public HRESULT get_Error(out BSTR value) mut
 			{
-				return VT.get_Error(&this, value);
+				return VT.get_Error(ref this, out value);
 			}
-			public HRESULT get_BatchItems(int32* value) mut
+			public HRESULT get_BatchItems(out int32 value) mut
 			{
-				return VT.get_BatchItems(&this, value);
+				return VT.get_BatchItems(ref this, out value);
 			}
 			public HRESULT put_BatchItems(int32 value) mut
 			{
-				return VT.put_BatchItems(&this, value);
+				return VT.put_BatchItems(ref this, value);
 			}
-			public HRESULT get_Timeout(int32* value) mut
+			public HRESULT get_Timeout(out int32 value) mut
 			{
-				return VT.get_Timeout(&this, value);
+				return VT.get_Timeout(ref this, out value);
 			}
 			public HRESULT put_Timeout(int32 value) mut
 			{
-				return VT.put_Timeout(&this, value);
+				return VT.put_Timeout(ref this, value);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IWSManSession *self, VARIANT resourceUri, int32 flags, BSTR* resource) Get;
-				public new function HRESULT(IWSManSession *self, VARIANT resourceUri, BSTR resource, int32 flags, BSTR* resultResource) Put;
-				public new function HRESULT(IWSManSession *self, VARIANT resourceUri, BSTR resource, int32 flags, BSTR* newUri) Create;
-				public new function HRESULT(IWSManSession *self, VARIANT resourceUri, int32 flags) Delete;
-				public new function HRESULT(IWSManSession *self, BSTR actionUri, VARIANT resourceUri, BSTR parameters, int32 flags, BSTR* result) Invoke;
-				public new function HRESULT(IWSManSession *self, VARIANT resourceUri, BSTR filter, BSTR dialect, int32 flags, IDispatch** resultSet) Enumerate;
-				public new function HRESULT(IWSManSession *self, int32 flags, BSTR* result) Identify;
-				public new function HRESULT(IWSManSession *self, BSTR* value) get_Error;
-				public new function HRESULT(IWSManSession *self, int32* value) get_BatchItems;
-				public new function HRESULT(IWSManSession *self, int32 value) put_BatchItems;
-				public new function HRESULT(IWSManSession *self, int32* value) get_Timeout;
-				public new function HRESULT(IWSManSession *self, int32 value) put_Timeout;
+				public new function HRESULT(ref IWSManSession self, VARIANT resourceUri, int32 flags, out BSTR resource) Get;
+				public new function HRESULT(ref IWSManSession self, VARIANT resourceUri, BSTR resource, int32 flags, out BSTR resultResource) Put;
+				public new function HRESULT(ref IWSManSession self, VARIANT resourceUri, BSTR resource, int32 flags, out BSTR newUri) Create;
+				public new function HRESULT(ref IWSManSession self, VARIANT resourceUri, int32 flags) Delete;
+				public new function HRESULT(ref IWSManSession self, BSTR actionUri, VARIANT resourceUri, BSTR parameters, int32 flags, out BSTR result) Invoke;
+				public new function HRESULT(ref IWSManSession self, VARIANT resourceUri, BSTR filter, BSTR dialect, int32 flags, out IDispatch* resultSet) Enumerate;
+				public new function HRESULT(ref IWSManSession self, int32 flags, out BSTR result) Identify;
+				public new function HRESULT(ref IWSManSession self, out BSTR value) get_Error;
+				public new function HRESULT(ref IWSManSession self, out int32 value) get_BatchItems;
+				public new function HRESULT(ref IWSManSession self, int32 value) put_BatchItems;
+				public new function HRESULT(ref IWSManSession self, out int32 value) get_Timeout;
+				public new function HRESULT(ref IWSManSession self, int32 value) put_Timeout;
 			}
 		}
 		[CRepr]
@@ -1341,24 +1341,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ReadItem(BSTR* resource) mut
+			public HRESULT ReadItem(out BSTR resource) mut
 			{
-				return VT.ReadItem(&this, resource);
+				return VT.ReadItem(ref this, out resource);
 			}
-			public HRESULT get_AtEndOfStream(int16* eos) mut
+			public HRESULT get_AtEndOfStream(out int16 eos) mut
 			{
-				return VT.get_AtEndOfStream(&this, eos);
+				return VT.get_AtEndOfStream(ref this, out eos);
 			}
-			public HRESULT get_Error(BSTR* value) mut
+			public HRESULT get_Error(out BSTR value) mut
 			{
-				return VT.get_Error(&this, value);
+				return VT.get_Error(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IWSManEnumerator *self, BSTR* resource) ReadItem;
-				public new function HRESULT(IWSManEnumerator *self, int16* eos) get_AtEndOfStream;
-				public new function HRESULT(IWSManEnumerator *self, BSTR* value) get_Error;
+				public new function HRESULT(ref IWSManEnumerator self, out BSTR resource) ReadItem;
+				public new function HRESULT(ref IWSManEnumerator self, out int16 eos) get_AtEndOfStream;
+				public new function HRESULT(ref IWSManEnumerator self, out BSTR value) get_Error;
 			}
 		}
 		[CRepr]
@@ -1370,72 +1370,72 @@ namespace Win32
 			
 			public HRESULT put_ResourceURI(BSTR uri) mut
 			{
-				return VT.put_ResourceURI(&this, uri);
+				return VT.put_ResourceURI(ref this, uri);
 			}
-			public HRESULT get_ResourceURI(BSTR* uri) mut
+			public HRESULT get_ResourceURI(out BSTR uri) mut
 			{
-				return VT.get_ResourceURI(&this, uri);
+				return VT.get_ResourceURI(ref this, out uri);
 			}
 			public HRESULT AddSelector(BSTR resourceSelName, VARIANT selValue) mut
 			{
-				return VT.AddSelector(&this, resourceSelName, selValue);
+				return VT.AddSelector(ref this, resourceSelName, selValue);
 			}
 			public HRESULT ClearSelectors() mut
 			{
-				return VT.ClearSelectors(&this);
+				return VT.ClearSelectors(ref this);
 			}
-			public HRESULT get_FragmentPath(BSTR* text) mut
+			public HRESULT get_FragmentPath(out BSTR text) mut
 			{
-				return VT.get_FragmentPath(&this, text);
+				return VT.get_FragmentPath(ref this, out text);
 			}
 			public HRESULT put_FragmentPath(BSTR text) mut
 			{
-				return VT.put_FragmentPath(&this, text);
+				return VT.put_FragmentPath(ref this, text);
 			}
-			public HRESULT get_FragmentDialect(BSTR* text) mut
+			public HRESULT get_FragmentDialect(out BSTR text) mut
 			{
-				return VT.get_FragmentDialect(&this, text);
+				return VT.get_FragmentDialect(ref this, out text);
 			}
 			public HRESULT put_FragmentDialect(BSTR text) mut
 			{
-				return VT.put_FragmentDialect(&this, text);
+				return VT.put_FragmentDialect(ref this, text);
 			}
 			public HRESULT AddOption(BSTR OptionName, VARIANT OptionValue, BOOL mustComply) mut
 			{
-				return VT.AddOption(&this, OptionName, OptionValue, mustComply);
+				return VT.AddOption(ref this, OptionName, OptionValue, mustComply);
 			}
 			public HRESULT put_MustUnderstandOptions(BOOL mustUnderstand) mut
 			{
-				return VT.put_MustUnderstandOptions(&this, mustUnderstand);
+				return VT.put_MustUnderstandOptions(ref this, mustUnderstand);
 			}
-			public HRESULT get_MustUnderstandOptions(BOOL* mustUnderstand) mut
+			public HRESULT get_MustUnderstandOptions(out BOOL mustUnderstand) mut
 			{
-				return VT.get_MustUnderstandOptions(&this, mustUnderstand);
+				return VT.get_MustUnderstandOptions(ref this, out mustUnderstand);
 			}
 			public HRESULT ClearOptions() mut
 			{
-				return VT.ClearOptions(&this);
+				return VT.ClearOptions(ref this);
 			}
-			public HRESULT get_Error(BSTR* value) mut
+			public HRESULT get_Error(out BSTR value) mut
 			{
-				return VT.get_Error(&this, value);
+				return VT.get_Error(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IWSManResourceLocator *self, BSTR uri) put_ResourceURI;
-				public new function HRESULT(IWSManResourceLocator *self, BSTR* uri) get_ResourceURI;
-				public new function HRESULT(IWSManResourceLocator *self, BSTR resourceSelName, VARIANT selValue) AddSelector;
-				public new function HRESULT(IWSManResourceLocator *self) ClearSelectors;
-				public new function HRESULT(IWSManResourceLocator *self, BSTR* text) get_FragmentPath;
-				public new function HRESULT(IWSManResourceLocator *self, BSTR text) put_FragmentPath;
-				public new function HRESULT(IWSManResourceLocator *self, BSTR* text) get_FragmentDialect;
-				public new function HRESULT(IWSManResourceLocator *self, BSTR text) put_FragmentDialect;
-				public new function HRESULT(IWSManResourceLocator *self, BSTR OptionName, VARIANT OptionValue, BOOL mustComply) AddOption;
-				public new function HRESULT(IWSManResourceLocator *self, BOOL mustUnderstand) put_MustUnderstandOptions;
-				public new function HRESULT(IWSManResourceLocator *self, BOOL* mustUnderstand) get_MustUnderstandOptions;
-				public new function HRESULT(IWSManResourceLocator *self) ClearOptions;
-				public new function HRESULT(IWSManResourceLocator *self, BSTR* value) get_Error;
+				public new function HRESULT(ref IWSManResourceLocator self, BSTR uri) put_ResourceURI;
+				public new function HRESULT(ref IWSManResourceLocator self, out BSTR uri) get_ResourceURI;
+				public new function HRESULT(ref IWSManResourceLocator self, BSTR resourceSelName, VARIANT selValue) AddSelector;
+				public new function HRESULT(ref IWSManResourceLocator self) ClearSelectors;
+				public new function HRESULT(ref IWSManResourceLocator self, out BSTR text) get_FragmentPath;
+				public new function HRESULT(ref IWSManResourceLocator self, BSTR text) put_FragmentPath;
+				public new function HRESULT(ref IWSManResourceLocator self, out BSTR text) get_FragmentDialect;
+				public new function HRESULT(ref IWSManResourceLocator self, BSTR text) put_FragmentDialect;
+				public new function HRESULT(ref IWSManResourceLocator self, BSTR OptionName, VARIANT OptionValue, BOOL mustComply) AddOption;
+				public new function HRESULT(ref IWSManResourceLocator self, BOOL mustUnderstand) put_MustUnderstandOptions;
+				public new function HRESULT(ref IWSManResourceLocator self, out BOOL mustUnderstand) get_MustUnderstandOptions;
+				public new function HRESULT(ref IWSManResourceLocator self) ClearOptions;
+				public new function HRESULT(ref IWSManResourceLocator self, out BSTR value) get_Error;
 			}
 		}
 		[CRepr]
@@ -1457,85 +1457,85 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ConfigSDDL(IDispatch* session, VARIANT resourceUri, int32 flags, BSTR* resource) mut
+			public HRESULT ConfigSDDL(ref IDispatch session, VARIANT resourceUri, int32 flags, out BSTR resource) mut
 			{
-				return VT.ConfigSDDL(&this, session, resourceUri, flags, resource);
+				return VT.ConfigSDDL(ref this, ref session, resourceUri, flags, out resource);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IWSManInternal *self, IDispatch* session, VARIANT resourceUri, int32 flags, BSTR* resource) ConfigSDDL;
+				public new function HRESULT(ref IWSManInternal self, ref IDispatch session, VARIANT resourceUri, int32 flags, out BSTR resource) ConfigSDDL;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManInitialize(uint32 flags, WSMAN_API** apiHandle);
+		public static extern uint32 WSManInitialize(uint32 flags, out WSMAN_API* apiHandle);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WSManDeinitialize(WSMAN_API* apiHandle, uint32 flags);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManGetErrorMessage(WSMAN_API* apiHandle, uint32 flags, PWSTR languageCode, uint32 errorCode, uint32 messageLength, char16* message, uint32* messageLengthUsed);
+		public static extern uint32 WSManGetErrorMessage(ref WSMAN_API apiHandle, uint32 flags, PWSTR languageCode, uint32 errorCode, uint32 messageLength, char16* message, out uint32 messageLengthUsed);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManCreateSession(WSMAN_API* apiHandle, PWSTR connection, uint32 flags, WSMAN_AUTHENTICATION_CREDENTIALS* serverAuthenticationCredentials, WSMAN_PROXY_INFO* proxyInfo, WSMAN_SESSION** session);
+		public static extern uint32 WSManCreateSession(ref WSMAN_API apiHandle, PWSTR connection, uint32 flags, WSMAN_AUTHENTICATION_CREDENTIALS* serverAuthenticationCredentials, WSMAN_PROXY_INFO* proxyInfo, out WSMAN_SESSION* session);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WSManCloseSession(WSMAN_SESSION* session, uint32 flags);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManSetSessionOption(WSMAN_SESSION* session, WSManSessionOption option, WSMAN_DATA* data);
+		public static extern uint32 WSManSetSessionOption(ref WSMAN_SESSION session, WSManSessionOption option, ref WSMAN_DATA data);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManGetSessionOptionAsDword(WSMAN_SESSION* session, WSManSessionOption option, uint32* value);
+		public static extern uint32 WSManGetSessionOptionAsDword(ref WSMAN_SESSION session, WSManSessionOption option, out uint32 value);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManGetSessionOptionAsString(WSMAN_SESSION* session, WSManSessionOption option, uint32 stringLength, char16* string, uint32* stringLengthUsed);
+		public static extern uint32 WSManGetSessionOptionAsString(ref WSMAN_SESSION session, WSManSessionOption option, uint32 stringLength, char16* string, out uint32 stringLengthUsed);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WSManCloseOperation(WSMAN_OPERATION* operationHandle, uint32 flags);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManCreateShell(WSMAN_SESSION* session, uint32 flags, PWSTR resourceUri, WSMAN_SHELL_STARTUP_INFO_V11* startupInfo, WSMAN_OPTION_SET* options, WSMAN_DATA* createXml, WSMAN_SHELL_ASYNC* async, WSMAN_SHELL** shell);
+		public static extern void WSManCreateShell(out WSMAN_SESSION session, uint32 flags, PWSTR resourceUri, WSMAN_SHELL_STARTUP_INFO_V11* startupInfo, WSMAN_OPTION_SET* options, WSMAN_DATA* createXml, ref WSMAN_SHELL_ASYNC async, out WSMAN_SHELL* shell);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManRunShellCommand(WSMAN_SHELL* shell, uint32 flags, PWSTR commandLine, WSMAN_COMMAND_ARG_SET* args, WSMAN_OPTION_SET* options, WSMAN_SHELL_ASYNC* async, WSMAN_COMMAND** command);
+		public static extern void WSManRunShellCommand(out WSMAN_SHELL shell, uint32 flags, PWSTR commandLine, WSMAN_COMMAND_ARG_SET* args, WSMAN_OPTION_SET* options, ref WSMAN_SHELL_ASYNC async, out WSMAN_COMMAND* command);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManSignalShell(WSMAN_SHELL* shell, WSMAN_COMMAND* command, uint32 flags, PWSTR code, WSMAN_SHELL_ASYNC* async, WSMAN_OPERATION** signalOperation);
+		public static extern void WSManSignalShell(ref WSMAN_SHELL shell, WSMAN_COMMAND* command, uint32 flags, PWSTR code, ref WSMAN_SHELL_ASYNC async, out WSMAN_OPERATION* signalOperation);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManReceiveShellOutput(WSMAN_SHELL* shell, WSMAN_COMMAND* command, uint32 flags, WSMAN_STREAM_ID_SET* desiredStreamSet, WSMAN_SHELL_ASYNC* async, WSMAN_OPERATION** receiveOperation);
+		public static extern void WSManReceiveShellOutput(out WSMAN_SHELL shell, WSMAN_COMMAND* command, uint32 flags, WSMAN_STREAM_ID_SET* desiredStreamSet, ref WSMAN_SHELL_ASYNC async, out WSMAN_OPERATION* receiveOperation);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManSendShellInput(WSMAN_SHELL* shell, WSMAN_COMMAND* command, uint32 flags, PWSTR streamId, WSMAN_DATA* streamData, BOOL endOfStream, WSMAN_SHELL_ASYNC* async, WSMAN_OPERATION** sendOperation);
+		public static extern void WSManSendShellInput(ref WSMAN_SHELL shell, WSMAN_COMMAND* command, uint32 flags, PWSTR streamId, ref WSMAN_DATA streamData, BOOL endOfStream, ref WSMAN_SHELL_ASYNC async, out WSMAN_OPERATION* sendOperation);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManCloseCommand(WSMAN_COMMAND* commandHandle, uint32 flags, WSMAN_SHELL_ASYNC* async);
+		public static extern void WSManCloseCommand(WSMAN_COMMAND* commandHandle, uint32 flags, ref WSMAN_SHELL_ASYNC async);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManCloseShell(WSMAN_SHELL* shellHandle, uint32 flags, WSMAN_SHELL_ASYNC* async);
+		public static extern void WSManCloseShell(WSMAN_SHELL* shellHandle, uint32 flags, ref WSMAN_SHELL_ASYNC async);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManCreateShellEx(WSMAN_SESSION* session, uint32 flags, PWSTR resourceUri, PWSTR shellId, WSMAN_SHELL_STARTUP_INFO_V11* startupInfo, WSMAN_OPTION_SET* options, WSMAN_DATA* createXml, WSMAN_SHELL_ASYNC* async, WSMAN_SHELL** shell);
+		public static extern void WSManCreateShellEx(out WSMAN_SESSION session, uint32 flags, PWSTR resourceUri, PWSTR shellId, WSMAN_SHELL_STARTUP_INFO_V11* startupInfo, WSMAN_OPTION_SET* options, WSMAN_DATA* createXml, ref WSMAN_SHELL_ASYNC async, out WSMAN_SHELL* shell);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManRunShellCommandEx(WSMAN_SHELL* shell, uint32 flags, PWSTR commandId, PWSTR commandLine, WSMAN_COMMAND_ARG_SET* args, WSMAN_OPTION_SET* options, WSMAN_SHELL_ASYNC* async, WSMAN_COMMAND** command);
+		public static extern void WSManRunShellCommandEx(out WSMAN_SHELL shell, uint32 flags, PWSTR commandId, PWSTR commandLine, WSMAN_COMMAND_ARG_SET* args, WSMAN_OPTION_SET* options, ref WSMAN_SHELL_ASYNC async, out WSMAN_COMMAND* command);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManDisconnectShell(WSMAN_SHELL* shell, uint32 flags, WSMAN_SHELL_DISCONNECT_INFO* disconnectInfo, WSMAN_SHELL_ASYNC* async);
+		public static extern void WSManDisconnectShell(out WSMAN_SHELL shell, uint32 flags, ref WSMAN_SHELL_DISCONNECT_INFO disconnectInfo, ref WSMAN_SHELL_ASYNC async);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManReconnectShell(WSMAN_SHELL* shell, uint32 flags, WSMAN_SHELL_ASYNC* async);
+		public static extern void WSManReconnectShell(out WSMAN_SHELL shell, uint32 flags, ref WSMAN_SHELL_ASYNC async);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManReconnectShellCommand(WSMAN_COMMAND* commandHandle, uint32 flags, WSMAN_SHELL_ASYNC* async);
+		public static extern void WSManReconnectShellCommand(out WSMAN_COMMAND commandHandle, uint32 flags, ref WSMAN_SHELL_ASYNC async);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManConnectShell(WSMAN_SESSION* session, uint32 flags, PWSTR resourceUri, PWSTR shellID, WSMAN_OPTION_SET* options, WSMAN_DATA* connectXml, WSMAN_SHELL_ASYNC* async, WSMAN_SHELL** shell);
+		public static extern void WSManConnectShell(out WSMAN_SESSION session, uint32 flags, PWSTR resourceUri, PWSTR shellID, WSMAN_OPTION_SET* options, WSMAN_DATA* connectXml, ref WSMAN_SHELL_ASYNC async, out WSMAN_SHELL* shell);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void WSManConnectShellCommand(WSMAN_SHELL* shell, uint32 flags, PWSTR commandID, WSMAN_OPTION_SET* options, WSMAN_DATA* connectXml, WSMAN_SHELL_ASYNC* async, WSMAN_COMMAND** command);
+		public static extern void WSManConnectShellCommand(out WSMAN_SHELL shell, uint32 flags, PWSTR commandID, WSMAN_OPTION_SET* options, WSMAN_DATA* connectXml, ref WSMAN_SHELL_ASYNC async, out WSMAN_COMMAND* command);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManPluginReportContext(WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, void* context);
+		public static extern uint32 WSManPluginReportContext(ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, void* context);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManPluginReceiveResult(WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, PWSTR stream, WSMAN_DATA* streamResult, PWSTR commandState, uint32 exitCode);
+		public static extern uint32 WSManPluginReceiveResult(ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, PWSTR stream, WSMAN_DATA* streamResult, PWSTR commandState, uint32 exitCode);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManPluginOperationComplete(WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, uint32 errorCode, PWSTR extendedInformation);
+		public static extern uint32 WSManPluginOperationComplete(ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, uint32 errorCode, PWSTR extendedInformation);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManPluginGetOperationParameters(WSMAN_PLUGIN_REQUEST* requestDetails, uint32 flags, WSMAN_DATA* data);
+		public static extern uint32 WSManPluginGetOperationParameters(ref WSMAN_PLUGIN_REQUEST requestDetails, uint32 flags, out WSMAN_DATA data);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManPluginGetConfiguration(void* pluginContext, uint32 flags, WSMAN_DATA* data);
+		public static extern uint32 WSManPluginGetConfiguration(void* pluginContext, uint32 flags, out WSMAN_DATA data);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WSManPluginReportCompletion(void* pluginContext, uint32 flags);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManPluginFreeRequestDetails(WSMAN_PLUGIN_REQUEST* requestDetails);
+		public static extern uint32 WSManPluginFreeRequestDetails(ref WSMAN_PLUGIN_REQUEST requestDetails);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManPluginAuthzUserComplete(WSMAN_SENDER_DETAILS* senderDetails, uint32 flags, void* userAuthorizationContext, HANDLE impersonationToken, BOOL userIsAdministrator, uint32 errorCode, PWSTR extendedErrorInformation);
+		public static extern uint32 WSManPluginAuthzUserComplete(ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags, void* userAuthorizationContext, HANDLE impersonationToken, BOOL userIsAdministrator, uint32 errorCode, PWSTR extendedErrorInformation);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManPluginAuthzOperationComplete(WSMAN_SENDER_DETAILS* senderDetails, uint32 flags, void* userAuthorizationContext, uint32 errorCode, PWSTR extendedErrorInformation);
+		public static extern uint32 WSManPluginAuthzOperationComplete(ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags, void* userAuthorizationContext, uint32 errorCode, PWSTR extendedErrorInformation);
 		[Import("wsmsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WSManPluginAuthzQueryQuotaComplete(WSMAN_SENDER_DETAILS* senderDetails, uint32 flags, WSMAN_AUTHZ_QUOTA* quota, uint32 errorCode, PWSTR extendedErrorInformation);
+		public static extern uint32 WSManPluginAuthzQueryQuotaComplete(ref WSMAN_SENDER_DETAILS senderDetails, uint32 flags, WSMAN_AUTHZ_QUOTA* quota, uint32 errorCode, PWSTR extendedErrorInformation);
 		
 	}
 }

@@ -147,12 +147,12 @@ namespace Win32
 			
 			public HRESULT OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType) mut
 			{
-				return VT.OnVisualTreeChange(&this, relation, element, mutationType);
+				return VT.OnVisualTreeChange(ref this, relation, element, mutationType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVisualTreeServiceCallback *self, ParentChildRelation relation, VisualElement element, VisualMutationType mutationType) OnVisualTreeChange;
+				public new function HRESULT(ref IVisualTreeServiceCallback self, ParentChildRelation relation, VisualElement element, VisualMutationType mutationType) OnVisualTreeChange;
 			}
 		}
 		[CRepr]
@@ -164,12 +164,12 @@ namespace Win32
 			
 			public HRESULT OnElementStateChanged(uint64 element, VisualElementState elementState, PWSTR context) mut
 			{
-				return VT.OnElementStateChanged(&this, element, elementState, context);
+				return VT.OnElementStateChanged(ref this, element, elementState, context);
 			}
 			[CRepr]
 			public struct VTable : IVisualTreeServiceCallback.VTable
 			{
-				public new function HRESULT(IVisualTreeServiceCallback2 *self, uint64 element, VisualElementState elementState, PWSTR context) OnElementStateChanged;
+				public new function HRESULT(ref IVisualTreeServiceCallback2 self, uint64 element, VisualElementState elementState, PWSTR context) OnElementStateChanged;
 			}
 		}
 		[CRepr]
@@ -179,69 +179,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AdviseVisualTreeChange(IVisualTreeServiceCallback* pCallback) mut
+			public HRESULT AdviseVisualTreeChange(ref IVisualTreeServiceCallback pCallback) mut
 			{
-				return VT.AdviseVisualTreeChange(&this, pCallback);
+				return VT.AdviseVisualTreeChange(ref this, ref pCallback);
 			}
-			public HRESULT UnadviseVisualTreeChange(IVisualTreeServiceCallback* pCallback) mut
+			public HRESULT UnadviseVisualTreeChange(ref IVisualTreeServiceCallback pCallback) mut
 			{
-				return VT.UnadviseVisualTreeChange(&this, pCallback);
+				return VT.UnadviseVisualTreeChange(ref this, ref pCallback);
 			}
-			public HRESULT GetEnums(uint32* pCount, EnumType** ppEnums) mut
+			public HRESULT GetEnums(out uint32 pCount, EnumType** ppEnums) mut
 			{
-				return VT.GetEnums(&this, pCount, ppEnums);
+				return VT.GetEnums(ref this, out pCount, ppEnums);
 			}
-			public HRESULT CreateInstance(BSTR typeName, BSTR value, uint64* pInstanceHandle) mut
+			public HRESULT CreateInstance(BSTR typeName, BSTR value, out uint64 pInstanceHandle) mut
 			{
-				return VT.CreateInstance(&this, typeName, value, pInstanceHandle);
+				return VT.CreateInstance(ref this, typeName, value, out pInstanceHandle);
 			}
-			public HRESULT GetPropertyValuesChain(uint64 instanceHandle, uint32* pSourceCount, PropertyChainSource** ppPropertySources, uint32* pPropertyCount, PropertyChainValue** ppPropertyValues) mut
+			public HRESULT GetPropertyValuesChain(uint64 instanceHandle, out uint32 pSourceCount, PropertyChainSource** ppPropertySources, out uint32 pPropertyCount, PropertyChainValue** ppPropertyValues) mut
 			{
-				return VT.GetPropertyValuesChain(&this, instanceHandle, pSourceCount, ppPropertySources, pPropertyCount, ppPropertyValues);
+				return VT.GetPropertyValuesChain(ref this, instanceHandle, out pSourceCount, ppPropertySources, out pPropertyCount, ppPropertyValues);
 			}
 			public HRESULT SetProperty(uint64 instanceHandle, uint64 value, uint32 propertyIndex) mut
 			{
-				return VT.SetProperty(&this, instanceHandle, value, propertyIndex);
+				return VT.SetProperty(ref this, instanceHandle, value, propertyIndex);
 			}
 			public HRESULT ClearProperty(uint64 instanceHandle, uint32 propertyIndex) mut
 			{
-				return VT.ClearProperty(&this, instanceHandle, propertyIndex);
+				return VT.ClearProperty(ref this, instanceHandle, propertyIndex);
 			}
-			public HRESULT GetCollectionCount(uint64 instanceHandle, uint32* pCollectionSize) mut
+			public HRESULT GetCollectionCount(uint64 instanceHandle, out uint32 pCollectionSize) mut
 			{
-				return VT.GetCollectionCount(&this, instanceHandle, pCollectionSize);
+				return VT.GetCollectionCount(ref this, instanceHandle, out pCollectionSize);
 			}
-			public HRESULT GetCollectionElements(uint64 instanceHandle, uint32 startIndex, uint32* pElementCount, CollectionElementValue** ppElementValues) mut
+			public HRESULT GetCollectionElements(uint64 instanceHandle, uint32 startIndex, out uint32 pElementCount, CollectionElementValue** ppElementValues) mut
 			{
-				return VT.GetCollectionElements(&this, instanceHandle, startIndex, pElementCount, ppElementValues);
+				return VT.GetCollectionElements(ref this, instanceHandle, startIndex, out pElementCount, ppElementValues);
 			}
 			public HRESULT AddChild(uint64 parent, uint64 child, uint32 index) mut
 			{
-				return VT.AddChild(&this, parent, child, index);
+				return VT.AddChild(ref this, parent, child, index);
 			}
 			public HRESULT RemoveChild(uint64 parent, uint32 index) mut
 			{
-				return VT.RemoveChild(&this, parent, index);
+				return VT.RemoveChild(ref this, parent, index);
 			}
 			public HRESULT ClearChildren(uint64 parent) mut
 			{
-				return VT.ClearChildren(&this, parent);
+				return VT.ClearChildren(ref this, parent);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IVisualTreeService *self, IVisualTreeServiceCallback* pCallback) AdviseVisualTreeChange;
-				public new function HRESULT(IVisualTreeService *self, IVisualTreeServiceCallback* pCallback) UnadviseVisualTreeChange;
-				public new function HRESULT(IVisualTreeService *self, uint32* pCount, EnumType** ppEnums) GetEnums;
-				public new function HRESULT(IVisualTreeService *self, BSTR typeName, BSTR value, uint64* pInstanceHandle) CreateInstance;
-				public new function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint32* pSourceCount, PropertyChainSource** ppPropertySources, uint32* pPropertyCount, PropertyChainValue** ppPropertyValues) GetPropertyValuesChain;
-				public new function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint64 value, uint32 propertyIndex) SetProperty;
-				public new function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint32 propertyIndex) ClearProperty;
-				public new function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint32* pCollectionSize) GetCollectionCount;
-				public new function HRESULT(IVisualTreeService *self, uint64 instanceHandle, uint32 startIndex, uint32* pElementCount, CollectionElementValue** ppElementValues) GetCollectionElements;
-				public new function HRESULT(IVisualTreeService *self, uint64 parent, uint64 child, uint32 index) AddChild;
-				public new function HRESULT(IVisualTreeService *self, uint64 parent, uint32 index) RemoveChild;
-				public new function HRESULT(IVisualTreeService *self, uint64 parent) ClearChildren;
+				public new function HRESULT(ref IVisualTreeService self, ref IVisualTreeServiceCallback pCallback) AdviseVisualTreeChange;
+				public new function HRESULT(ref IVisualTreeService self, ref IVisualTreeServiceCallback pCallback) UnadviseVisualTreeChange;
+				public new function HRESULT(ref IVisualTreeService self, out uint32 pCount, EnumType** ppEnums) GetEnums;
+				public new function HRESULT(ref IVisualTreeService self, BSTR typeName, BSTR value, out uint64 pInstanceHandle) CreateInstance;
+				public new function HRESULT(ref IVisualTreeService self, uint64 instanceHandle, out uint32 pSourceCount, PropertyChainSource** ppPropertySources, out uint32 pPropertyCount, PropertyChainValue** ppPropertyValues) GetPropertyValuesChain;
+				public new function HRESULT(ref IVisualTreeService self, uint64 instanceHandle, uint64 value, uint32 propertyIndex) SetProperty;
+				public new function HRESULT(ref IVisualTreeService self, uint64 instanceHandle, uint32 propertyIndex) ClearProperty;
+				public new function HRESULT(ref IVisualTreeService self, uint64 instanceHandle, out uint32 pCollectionSize) GetCollectionCount;
+				public new function HRESULT(ref IVisualTreeService self, uint64 instanceHandle, uint32 startIndex, out uint32 pElementCount, CollectionElementValue** ppElementValues) GetCollectionElements;
+				public new function HRESULT(ref IVisualTreeService self, uint64 parent, uint64 child, uint32 index) AddChild;
+				public new function HRESULT(ref IVisualTreeService self, uint64 parent, uint32 index) RemoveChild;
+				public new function HRESULT(ref IVisualTreeService self, uint64 parent) ClearChildren;
 			}
 		}
 		[CRepr]
@@ -251,49 +251,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDispatcher(IInspectable** ppDispatcher) mut
+			public HRESULT GetDispatcher(out IInspectable* ppDispatcher) mut
 			{
-				return VT.GetDispatcher(&this, ppDispatcher);
+				return VT.GetDispatcher(ref this, out ppDispatcher);
 			}
-			public HRESULT GetUiLayer(IInspectable** ppLayer) mut
+			public HRESULT GetUiLayer(out IInspectable* ppLayer) mut
 			{
-				return VT.GetUiLayer(&this, ppLayer);
+				return VT.GetUiLayer(ref this, out ppLayer);
 			}
-			public HRESULT GetApplication(IInspectable** ppApplication) mut
+			public HRESULT GetApplication(out IInspectable* ppApplication) mut
 			{
-				return VT.GetApplication(&this, ppApplication);
+				return VT.GetApplication(ref this, out ppApplication);
 			}
-			public HRESULT GetIInspectableFromHandle(uint64 instanceHandle, IInspectable** ppInstance) mut
+			public HRESULT GetIInspectableFromHandle(uint64 instanceHandle, out IInspectable* ppInstance) mut
 			{
-				return VT.GetIInspectableFromHandle(&this, instanceHandle, ppInstance);
+				return VT.GetIInspectableFromHandle(ref this, instanceHandle, out ppInstance);
 			}
-			public HRESULT GetHandleFromIInspectable(IInspectable* pInstance, uint64* pHandle) mut
+			public HRESULT GetHandleFromIInspectable(ref IInspectable pInstance, out uint64 pHandle) mut
 			{
-				return VT.GetHandleFromIInspectable(&this, pInstance, pHandle);
+				return VT.GetHandleFromIInspectable(ref this, ref pInstance, out pHandle);
 			}
-			public HRESULT HitTest(RECT rect, uint32* pCount, uint64** ppInstanceHandles) mut
+			public HRESULT HitTest(RECT rect, out uint32 pCount, uint64** ppInstanceHandles) mut
 			{
-				return VT.HitTest(&this, rect, pCount, ppInstanceHandles);
+				return VT.HitTest(ref this, rect, out pCount, ppInstanceHandles);
 			}
-			public HRESULT RegisterInstance(IInspectable* pInstance, uint64* pInstanceHandle) mut
+			public HRESULT RegisterInstance(ref IInspectable pInstance, out uint64 pInstanceHandle) mut
 			{
-				return VT.RegisterInstance(&this, pInstance, pInstanceHandle);
+				return VT.RegisterInstance(ref this, ref pInstance, out pInstanceHandle);
 			}
-			public HRESULT GetInitializationData(BSTR* pInitializationData) mut
+			public HRESULT GetInitializationData(out BSTR pInitializationData) mut
 			{
-				return VT.GetInitializationData(&this, pInitializationData);
+				return VT.GetInitializationData(ref this, out pInitializationData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXamlDiagnostics *self, IInspectable** ppDispatcher) GetDispatcher;
-				public new function HRESULT(IXamlDiagnostics *self, IInspectable** ppLayer) GetUiLayer;
-				public new function HRESULT(IXamlDiagnostics *self, IInspectable** ppApplication) GetApplication;
-				public new function HRESULT(IXamlDiagnostics *self, uint64 instanceHandle, IInspectable** ppInstance) GetIInspectableFromHandle;
-				public new function HRESULT(IXamlDiagnostics *self, IInspectable* pInstance, uint64* pHandle) GetHandleFromIInspectable;
-				public new function HRESULT(IXamlDiagnostics *self, RECT rect, uint32* pCount, uint64** ppInstanceHandles) HitTest;
-				public new function HRESULT(IXamlDiagnostics *self, IInspectable* pInstance, uint64* pInstanceHandle) RegisterInstance;
-				public new function HRESULT(IXamlDiagnostics *self, BSTR* pInitializationData) GetInitializationData;
+				public new function HRESULT(ref IXamlDiagnostics self, out IInspectable* ppDispatcher) GetDispatcher;
+				public new function HRESULT(ref IXamlDiagnostics self, out IInspectable* ppLayer) GetUiLayer;
+				public new function HRESULT(ref IXamlDiagnostics self, out IInspectable* ppApplication) GetApplication;
+				public new function HRESULT(ref IXamlDiagnostics self, uint64 instanceHandle, out IInspectable* ppInstance) GetIInspectableFromHandle;
+				public new function HRESULT(ref IXamlDiagnostics self, ref IInspectable pInstance, out uint64 pHandle) GetHandleFromIInspectable;
+				public new function HRESULT(ref IXamlDiagnostics self, RECT rect, out uint32 pCount, uint64** ppInstanceHandles) HitTest;
+				public new function HRESULT(ref IXamlDiagnostics self, ref IInspectable pInstance, out uint64 pInstanceHandle) RegisterInstance;
+				public new function HRESULT(ref IXamlDiagnostics self, out BSTR pInitializationData) GetInitializationData;
 			}
 		}
 		[CRepr]
@@ -303,29 +303,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CopyBytesTo(uint32 sourceOffsetInBytes, uint32 maxBytesToCopy, uint8* pvBytes, uint32* numberOfBytesCopied) mut
+			public HRESULT CopyBytesTo(uint32 sourceOffsetInBytes, uint32 maxBytesToCopy, uint8* pvBytes, out uint32 numberOfBytesCopied) mut
 			{
-				return VT.CopyBytesTo(&this, sourceOffsetInBytes, maxBytesToCopy, pvBytes, numberOfBytesCopied);
+				return VT.CopyBytesTo(ref this, sourceOffsetInBytes, maxBytesToCopy, pvBytes, out numberOfBytesCopied);
 			}
-			public HRESULT GetStride(uint32* pStride) mut
+			public HRESULT GetStride(out uint32 pStride) mut
 			{
-				return VT.GetStride(&this, pStride);
+				return VT.GetStride(ref this, out pStride);
 			}
-			public HRESULT GetBitmapDescription(BitmapDescription* pBitmapDescription) mut
+			public HRESULT GetBitmapDescription(out BitmapDescription pBitmapDescription) mut
 			{
-				return VT.GetBitmapDescription(&this, pBitmapDescription);
+				return VT.GetBitmapDescription(ref this, out pBitmapDescription);
 			}
-			public HRESULT GetSourceBitmapDescription(BitmapDescription* pBitmapDescription) mut
+			public HRESULT GetSourceBitmapDescription(out BitmapDescription pBitmapDescription) mut
 			{
-				return VT.GetSourceBitmapDescription(&this, pBitmapDescription);
+				return VT.GetSourceBitmapDescription(ref this, out pBitmapDescription);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IBitmapData *self, uint32 sourceOffsetInBytes, uint32 maxBytesToCopy, uint8* pvBytes, uint32* numberOfBytesCopied) CopyBytesTo;
-				public new function HRESULT(IBitmapData *self, uint32* pStride) GetStride;
-				public new function HRESULT(IBitmapData *self, BitmapDescription* pBitmapDescription) GetBitmapDescription;
-				public new function HRESULT(IBitmapData *self, BitmapDescription* pBitmapDescription) GetSourceBitmapDescription;
+				public new function HRESULT(ref IBitmapData self, uint32 sourceOffsetInBytes, uint32 maxBytesToCopy, uint8* pvBytes, out uint32 numberOfBytesCopied) CopyBytesTo;
+				public new function HRESULT(ref IBitmapData self, out uint32 pStride) GetStride;
+				public new function HRESULT(ref IBitmapData self, out BitmapDescription pBitmapDescription) GetBitmapDescription;
+				public new function HRESULT(ref IBitmapData self, out BitmapDescription pBitmapDescription) GetSourceBitmapDescription;
 			}
 		}
 		[CRepr]
@@ -335,29 +335,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyIndex(uint64 object, PWSTR propertyName, uint32* pPropertyIndex) mut
+			public HRESULT GetPropertyIndex(uint64 object, PWSTR propertyName, out uint32 pPropertyIndex) mut
 			{
-				return VT.GetPropertyIndex(&this, object, propertyName, pPropertyIndex);
+				return VT.GetPropertyIndex(ref this, object, propertyName, out pPropertyIndex);
 			}
-			public HRESULT GetProperty(uint64 object, uint32 propertyIndex, uint64* pValue) mut
+			public HRESULT GetProperty(uint64 object, uint32 propertyIndex, out uint64 pValue) mut
 			{
-				return VT.GetProperty(&this, object, propertyIndex, pValue);
+				return VT.GetProperty(ref this, object, propertyIndex, out pValue);
 			}
 			public HRESULT ReplaceResource(uint64 resourceDictionary, uint64 key, uint64 newValue) mut
 			{
-				return VT.ReplaceResource(&this, resourceDictionary, key, newValue);
+				return VT.ReplaceResource(ref this, resourceDictionary, key, newValue);
 			}
-			public HRESULT RenderTargetBitmap(uint64 handle, RenderTargetBitmapOptions options, uint32 maxPixelWidth, uint32 maxPixelHeight, IBitmapData** ppBitmapData) mut
+			public HRESULT RenderTargetBitmap(uint64 handle, RenderTargetBitmapOptions options, uint32 maxPixelWidth, uint32 maxPixelHeight, out IBitmapData* ppBitmapData) mut
 			{
-				return VT.RenderTargetBitmap(&this, handle, options, maxPixelWidth, maxPixelHeight, ppBitmapData);
+				return VT.RenderTargetBitmap(ref this, handle, options, maxPixelWidth, maxPixelHeight, out ppBitmapData);
 			}
 			[CRepr]
 			public struct VTable : IVisualTreeService.VTable
 			{
-				public new function HRESULT(IVisualTreeService2 *self, uint64 object, PWSTR propertyName, uint32* pPropertyIndex) GetPropertyIndex;
-				public new function HRESULT(IVisualTreeService2 *self, uint64 object, uint32 propertyIndex, uint64* pValue) GetProperty;
-				public new function HRESULT(IVisualTreeService2 *self, uint64 resourceDictionary, uint64 key, uint64 newValue) ReplaceResource;
-				public new function HRESULT(IVisualTreeService2 *self, uint64 handle, RenderTargetBitmapOptions options, uint32 maxPixelWidth, uint32 maxPixelHeight, IBitmapData** ppBitmapData) RenderTargetBitmap;
+				public new function HRESULT(ref IVisualTreeService2 self, uint64 object, PWSTR propertyName, out uint32 pPropertyIndex) GetPropertyIndex;
+				public new function HRESULT(ref IVisualTreeService2 self, uint64 object, uint32 propertyIndex, out uint64 pValue) GetProperty;
+				public new function HRESULT(ref IVisualTreeService2 self, uint64 resourceDictionary, uint64 key, uint64 newValue) ReplaceResource;
+				public new function HRESULT(ref IVisualTreeService2 self, uint64 handle, RenderTargetBitmapOptions options, uint32 maxPixelWidth, uint32 maxPixelHeight, out IBitmapData* ppBitmapData) RenderTargetBitmap;
 			}
 		}
 		[CRepr]
@@ -369,27 +369,27 @@ namespace Win32
 			
 			public HRESULT ResolveResource(uint64 resourceContext, PWSTR resourceName, ResourceType resourceType, uint32 propertyIndex) mut
 			{
-				return VT.ResolveResource(&this, resourceContext, resourceName, resourceType, propertyIndex);
+				return VT.ResolveResource(ref this, resourceContext, resourceName, resourceType, propertyIndex);
 			}
-			public HRESULT GetDictionaryItem(uint64 dictionaryHandle, PWSTR resourceName, BOOL resourceIsImplicitStyle, uint64* resourceHandle) mut
+			public HRESULT GetDictionaryItem(uint64 dictionaryHandle, PWSTR resourceName, BOOL resourceIsImplicitStyle, out uint64 resourceHandle) mut
 			{
-				return VT.GetDictionaryItem(&this, dictionaryHandle, resourceName, resourceIsImplicitStyle, resourceHandle);
+				return VT.GetDictionaryItem(ref this, dictionaryHandle, resourceName, resourceIsImplicitStyle, out resourceHandle);
 			}
 			public HRESULT AddDictionaryItem(uint64 dictionaryHandle, uint64 resourceKey, uint64 resourceHandle) mut
 			{
-				return VT.AddDictionaryItem(&this, dictionaryHandle, resourceKey, resourceHandle);
+				return VT.AddDictionaryItem(ref this, dictionaryHandle, resourceKey, resourceHandle);
 			}
 			public HRESULT RemoveDictionaryItem(uint64 dictionaryHandle, uint64 resourceKey) mut
 			{
-				return VT.RemoveDictionaryItem(&this, dictionaryHandle, resourceKey);
+				return VT.RemoveDictionaryItem(ref this, dictionaryHandle, resourceKey);
 			}
 			[CRepr]
 			public struct VTable : IVisualTreeService2.VTable
 			{
-				public new function HRESULT(IVisualTreeService3 *self, uint64 resourceContext, PWSTR resourceName, ResourceType resourceType, uint32 propertyIndex) ResolveResource;
-				public new function HRESULT(IVisualTreeService3 *self, uint64 dictionaryHandle, PWSTR resourceName, BOOL resourceIsImplicitStyle, uint64* resourceHandle) GetDictionaryItem;
-				public new function HRESULT(IVisualTreeService3 *self, uint64 dictionaryHandle, uint64 resourceKey, uint64 resourceHandle) AddDictionaryItem;
-				public new function HRESULT(IVisualTreeService3 *self, uint64 dictionaryHandle, uint64 resourceKey) RemoveDictionaryItem;
+				public new function HRESULT(ref IVisualTreeService3 self, uint64 resourceContext, PWSTR resourceName, ResourceType resourceType, uint32 propertyIndex) ResolveResource;
+				public new function HRESULT(ref IVisualTreeService3 self, uint64 dictionaryHandle, PWSTR resourceName, BOOL resourceIsImplicitStyle, out uint64 resourceHandle) GetDictionaryItem;
+				public new function HRESULT(ref IVisualTreeService3 self, uint64 dictionaryHandle, uint64 resourceKey, uint64 resourceHandle) AddDictionaryItem;
+				public new function HRESULT(ref IVisualTreeService3 self, uint64 dictionaryHandle, uint64 resourceKey) RemoveDictionaryItem;
 			}
 		}
 		

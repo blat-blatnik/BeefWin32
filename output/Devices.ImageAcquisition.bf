@@ -991,7 +991,7 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT DeviceDialogFunction(DEVICEDIALOGDATA* param0);
+		public function HRESULT DeviceDialogFunction(out DEVICEDIALOGDATA param0);
 		
 		// --- Structs ---
 		
@@ -1051,7 +1051,7 @@ namespace Win32
 			public uint32 YOffset;
 			public uint32 Rotation;
 			public uint32 Length;
-			public char16[] Text;
+			public char16[0] Text;
 		}
 		[CRepr]
 		public struct WIA_BARCODES
@@ -1060,7 +1060,7 @@ namespace Win32
 			public uint32 Version;
 			public uint32 Size;
 			public uint32 Count;
-			public WIA_BARCODE_INFO[] Barcodes;
+			public WIA_BARCODE_INFO[0] Barcodes;
 		}
 		[CRepr]
 		public struct WIA_PATCH_CODE_INFO
@@ -1074,7 +1074,7 @@ namespace Win32
 			public uint32 Version;
 			public uint32 Size;
 			public uint32 Count;
-			public WIA_PATCH_CODE_INFO[] PatchCodes;
+			public WIA_PATCH_CODE_INFO[0] PatchCodes;
 		}
 		[CRepr]
 		public struct WIA_MICR_INFO
@@ -1082,7 +1082,7 @@ namespace Win32
 			public uint32 Size;
 			public uint32 Page;
 			public uint32 Length;
-			public char16[] Text;
+			public char16[0] Text;
 		}
 		[CRepr]
 		public struct WIA_MICR
@@ -1093,7 +1093,7 @@ namespace Win32
 			public char16 Placeholder;
 			public uint16 Reserved;
 			public uint32 Count;
-			public WIA_MICR_INFO[] Micr;
+			public WIA_MICR_INFO[0] Micr;
 		}
 		[CRepr]
 		public struct WIA_DATA_CALLBACK_HEADER
@@ -1420,7 +1420,7 @@ namespace Win32
 			public int32 lRC;
 			public int32 lCC;
 			public int32 lDataSize;
-			public uint8[] Data;
+			public uint8[0] Data;
 		}
 		
 		// --- COM Class IDs ---
@@ -1441,52 +1441,52 @@ namespace Win32
 			
 			public HRESULT EnumDeviceInfo(int32 lFlag, IEnumWIA_DEV_INFO** ppIEnum) mut
 			{
-				return VT.EnumDeviceInfo(&this, lFlag, ppIEnum);
+				return VT.EnumDeviceInfo(ref this, lFlag, ppIEnum);
 			}
-			public HRESULT CreateDevice(BSTR bstrDeviceID, IWiaItem** ppWiaItemRoot) mut
+			public HRESULT CreateDevice(BSTR bstrDeviceID, out IWiaItem* ppWiaItemRoot) mut
 			{
-				return VT.CreateDevice(&this, bstrDeviceID, ppWiaItemRoot);
+				return VT.CreateDevice(ref this, bstrDeviceID, out ppWiaItemRoot);
 			}
-			public HRESULT SelectDeviceDlg(HWND hwndParent, int32 lDeviceType, int32 lFlags, BSTR* pbstrDeviceID, IWiaItem** ppItemRoot) mut
+			public HRESULT SelectDeviceDlg(HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem* ppItemRoot) mut
 			{
-				return VT.SelectDeviceDlg(&this, hwndParent, lDeviceType, lFlags, pbstrDeviceID, ppItemRoot);
+				return VT.SelectDeviceDlg(ref this, hwndParent, lDeviceType, lFlags, out pbstrDeviceID, out ppItemRoot);
 			}
-			public HRESULT SelectDeviceDlgID(HWND hwndParent, int32 lDeviceType, int32 lFlags, BSTR* pbstrDeviceID) mut
+			public HRESULT SelectDeviceDlgID(HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) mut
 			{
-				return VT.SelectDeviceDlgID(&this, hwndParent, lDeviceType, lFlags, pbstrDeviceID);
+				return VT.SelectDeviceDlgID(ref this, hwndParent, lDeviceType, lFlags, out pbstrDeviceID);
 			}
-			public HRESULT GetImageDlg(HWND hwndParent, int32 lDeviceType, int32 lFlags, int32 lIntent, IWiaItem* pItemRoot, BSTR bstrFilename, Guid* pguidFormat) mut
+			public HRESULT GetImageDlg(HWND hwndParent, int32 lDeviceType, int32 lFlags, int32 lIntent, ref IWiaItem pItemRoot, BSTR bstrFilename, out Guid pguidFormat) mut
 			{
-				return VT.GetImageDlg(&this, hwndParent, lDeviceType, lFlags, lIntent, pItemRoot, bstrFilename, pguidFormat);
+				return VT.GetImageDlg(ref this, hwndParent, lDeviceType, lFlags, lIntent, ref pItemRoot, bstrFilename, out pguidFormat);
 			}
-			public HRESULT RegisterEventCallbackProgram(int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, BSTR bstrCommandline, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) mut
+			public HRESULT RegisterEventCallbackProgram(int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, BSTR bstrCommandline, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) mut
 			{
-				return VT.RegisterEventCallbackProgram(&this, lFlags, bstrDeviceID, pEventGUID, bstrCommandline, bstrName, bstrDescription, bstrIcon);
+				return VT.RegisterEventCallbackProgram(ref this, lFlags, bstrDeviceID, pEventGUID, bstrCommandline, bstrName, bstrDescription, bstrIcon);
 			}
-			public HRESULT RegisterEventCallbackInterface(int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, IWiaEventCallback* pIWiaEventCallback, IUnknown** pEventObject) mut
+			public HRESULT RegisterEventCallbackInterface(int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, ref IWiaEventCallback pIWiaEventCallback, out IUnknown* pEventObject) mut
 			{
-				return VT.RegisterEventCallbackInterface(&this, lFlags, bstrDeviceID, pEventGUID, pIWiaEventCallback, pEventObject);
+				return VT.RegisterEventCallbackInterface(ref this, lFlags, bstrDeviceID, pEventGUID, ref pIWiaEventCallback, out pEventObject);
 			}
-			public HRESULT RegisterEventCallbackCLSID(int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, Guid* pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) mut
+			public HRESULT RegisterEventCallbackCLSID(int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, in Guid pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) mut
 			{
-				return VT.RegisterEventCallbackCLSID(&this, lFlags, bstrDeviceID, pEventGUID, pClsID, bstrName, bstrDescription, bstrIcon);
+				return VT.RegisterEventCallbackCLSID(ref this, lFlags, bstrDeviceID, pEventGUID, pClsID, bstrName, bstrDescription, bstrIcon);
 			}
 			public HRESULT AddDeviceDlg(HWND hwndParent, int32 lFlags) mut
 			{
-				return VT.AddDeviceDlg(&this, hwndParent, lFlags);
+				return VT.AddDeviceDlg(ref this, hwndParent, lFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaDevMgr *self, int32 lFlag, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
-				public new function HRESULT(IWiaDevMgr *self, BSTR bstrDeviceID, IWiaItem** ppWiaItemRoot) CreateDevice;
-				public new function HRESULT(IWiaDevMgr *self, HWND hwndParent, int32 lDeviceType, int32 lFlags, BSTR* pbstrDeviceID, IWiaItem** ppItemRoot) SelectDeviceDlg;
-				public new function HRESULT(IWiaDevMgr *self, HWND hwndParent, int32 lDeviceType, int32 lFlags, BSTR* pbstrDeviceID) SelectDeviceDlgID;
-				public new function HRESULT(IWiaDevMgr *self, HWND hwndParent, int32 lDeviceType, int32 lFlags, int32 lIntent, IWiaItem* pItemRoot, BSTR bstrFilename, Guid* pguidFormat) GetImageDlg;
-				public new function HRESULT(IWiaDevMgr *self, int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, BSTR bstrCommandline, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackProgram;
-				public new function HRESULT(IWiaDevMgr *self, int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, IWiaEventCallback* pIWiaEventCallback, IUnknown** pEventObject) RegisterEventCallbackInterface;
-				public new function HRESULT(IWiaDevMgr *self, int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, Guid* pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackCLSID;
-				public new function HRESULT(IWiaDevMgr *self, HWND hwndParent, int32 lFlags) AddDeviceDlg;
+				public new function HRESULT(ref IWiaDevMgr self, int32 lFlag, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
+				public new function HRESULT(ref IWiaDevMgr self, BSTR bstrDeviceID, out IWiaItem* ppWiaItemRoot) CreateDevice;
+				public new function HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem* ppItemRoot) SelectDeviceDlg;
+				public new function HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) SelectDeviceDlgID;
+				public new function HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lDeviceType, int32 lFlags, int32 lIntent, ref IWiaItem pItemRoot, BSTR bstrFilename, out Guid pguidFormat) GetImageDlg;
+				public new function HRESULT(ref IWiaDevMgr self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, BSTR bstrCommandline, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackProgram;
+				public new function HRESULT(ref IWiaDevMgr self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, ref IWiaEventCallback pIWiaEventCallback, out IUnknown* pEventObject) RegisterEventCallbackInterface;
+				public new function HRESULT(ref IWiaDevMgr self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, in Guid pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackCLSID;
+				public new function HRESULT(ref IWiaDevMgr self, HWND hwndParent, int32 lFlags) AddDeviceDlg;
 			}
 		}
 		[CRepr]
@@ -1496,34 +1496,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IWiaPropertyStorage** rgelt, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out IWiaPropertyStorage* rgelt, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, rgelt, pceltFetched);
+				return VT.Next(ref this, celt, out rgelt, out pceltFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Clone(IEnumWIA_DEV_INFO** ppIEnum) mut
 			{
-				return VT.Clone(&this, ppIEnum);
+				return VT.Clone(ref this, ppIEnum);
 			}
-			public HRESULT GetCount(uint32* celt) mut
+			public HRESULT GetCount(out uint32 celt) mut
 			{
-				return VT.GetCount(&this, celt);
+				return VT.GetCount(ref this, out celt);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumWIA_DEV_INFO *self, uint32 celt, IWiaPropertyStorage** rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumWIA_DEV_INFO *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumWIA_DEV_INFO *self) Reset;
-				public new function HRESULT(IEnumWIA_DEV_INFO *self, IEnumWIA_DEV_INFO** ppIEnum) Clone;
-				public new function HRESULT(IEnumWIA_DEV_INFO *self, uint32* celt) GetCount;
+				public new function HRESULT(ref IEnumWIA_DEV_INFO self, uint32 celt, out IWiaPropertyStorage* rgelt, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumWIA_DEV_INFO self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumWIA_DEV_INFO self) Reset;
+				public new function HRESULT(ref IEnumWIA_DEV_INFO self, IEnumWIA_DEV_INFO** ppIEnum) Clone;
+				public new function HRESULT(ref IEnumWIA_DEV_INFO self, out uint32 celt) GetCount;
 			}
 		}
 		[CRepr]
@@ -1533,14 +1533,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ImageEventCallback(Guid* pEventGUID, BSTR bstrEventDescription, BSTR bstrDeviceID, BSTR bstrDeviceDescription, uint32 dwDeviceType, BSTR bstrFullItemName, uint32* pulEventType, uint32 ulReserved) mut
+			public HRESULT ImageEventCallback(in Guid pEventGUID, BSTR bstrEventDescription, BSTR bstrDeviceID, BSTR bstrDeviceDescription, uint32 dwDeviceType, BSTR bstrFullItemName, out uint32 pulEventType, uint32 ulReserved) mut
 			{
-				return VT.ImageEventCallback(&this, pEventGUID, bstrEventDescription, bstrDeviceID, bstrDeviceDescription, dwDeviceType, bstrFullItemName, pulEventType, ulReserved);
+				return VT.ImageEventCallback(ref this, pEventGUID, bstrEventDescription, bstrDeviceID, bstrDeviceDescription, dwDeviceType, bstrFullItemName, out pulEventType, ulReserved);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaEventCallback *self, Guid* pEventGUID, BSTR bstrEventDescription, BSTR bstrDeviceID, BSTR bstrDeviceDescription, uint32 dwDeviceType, BSTR bstrFullItemName, uint32* pulEventType, uint32 ulReserved) ImageEventCallback;
+				public new function HRESULT(ref IWiaEventCallback self, in Guid pEventGUID, BSTR bstrEventDescription, BSTR bstrDeviceID, BSTR bstrDeviceDescription, uint32 dwDeviceType, BSTR bstrFullItemName, out uint32 pulEventType, uint32 ulReserved) ImageEventCallback;
 			}
 		}
 		[CRepr]
@@ -1550,14 +1550,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BandedDataCallback(int32 lMessage, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, int32 lReserved, int32 lResLength, uint8* pbBuffer) mut
+			public HRESULT BandedDataCallback(int32 lMessage, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, int32 lReserved, int32 lResLength, out uint8 pbBuffer) mut
 			{
-				return VT.BandedDataCallback(&this, lMessage, lStatus, lPercentComplete, lOffset, lLength, lReserved, lResLength, pbBuffer);
+				return VT.BandedDataCallback(ref this, lMessage, lStatus, lPercentComplete, lOffset, lLength, lReserved, lResLength, out pbBuffer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaDataCallback *self, int32 lMessage, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, int32 lReserved, int32 lResLength, uint8* pbBuffer) BandedDataCallback;
+				public new function HRESULT(ref IWiaDataCallback self, int32 lMessage, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, int32 lReserved, int32 lResLength, out uint8 pbBuffer) BandedDataCallback;
 			}
 		}
 		[CRepr]
@@ -1567,34 +1567,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT idtGetData(STGMEDIUM* pMedium, IWiaDataCallback* pIWiaDataCallback) mut
+			public HRESULT idtGetData(out STGMEDIUM pMedium, ref IWiaDataCallback pIWiaDataCallback) mut
 			{
-				return VT.idtGetData(&this, pMedium, pIWiaDataCallback);
+				return VT.idtGetData(ref this, out pMedium, ref pIWiaDataCallback);
 			}
-			public HRESULT idtGetBandedData(WIA_DATA_TRANSFER_INFO* pWiaDataTransInfo, IWiaDataCallback* pIWiaDataCallback) mut
+			public HRESULT idtGetBandedData(out WIA_DATA_TRANSFER_INFO pWiaDataTransInfo, ref IWiaDataCallback pIWiaDataCallback) mut
 			{
-				return VT.idtGetBandedData(&this, pWiaDataTransInfo, pIWiaDataCallback);
+				return VT.idtGetBandedData(ref this, out pWiaDataTransInfo, ref pIWiaDataCallback);
 			}
 			public HRESULT idtQueryGetData(WIA_FORMAT_INFO* pfe) mut
 			{
-				return VT.idtQueryGetData(&this, pfe);
+				return VT.idtQueryGetData(ref this, pfe);
 			}
 			public HRESULT idtEnumWIA_FORMAT_INFO(IEnumWIA_FORMAT_INFO** ppEnum) mut
 			{
-				return VT.idtEnumWIA_FORMAT_INFO(&this, ppEnum);
+				return VT.idtEnumWIA_FORMAT_INFO(ref this, ppEnum);
 			}
-			public HRESULT idtGetExtendedTransferInfo(WIA_EXTENDED_TRANSFER_INFO* pExtendedTransferInfo) mut
+			public HRESULT idtGetExtendedTransferInfo(out WIA_EXTENDED_TRANSFER_INFO pExtendedTransferInfo) mut
 			{
-				return VT.idtGetExtendedTransferInfo(&this, pExtendedTransferInfo);
+				return VT.idtGetExtendedTransferInfo(ref this, out pExtendedTransferInfo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaDataTransfer *self, STGMEDIUM* pMedium, IWiaDataCallback* pIWiaDataCallback) idtGetData;
-				public new function HRESULT(IWiaDataTransfer *self, WIA_DATA_TRANSFER_INFO* pWiaDataTransInfo, IWiaDataCallback* pIWiaDataCallback) idtGetBandedData;
-				public new function HRESULT(IWiaDataTransfer *self, WIA_FORMAT_INFO* pfe) idtQueryGetData;
-				public new function HRESULT(IWiaDataTransfer *self, IEnumWIA_FORMAT_INFO** ppEnum) idtEnumWIA_FORMAT_INFO;
-				public new function HRESULT(IWiaDataTransfer *self, WIA_EXTENDED_TRANSFER_INFO* pExtendedTransferInfo) idtGetExtendedTransferInfo;
+				public new function HRESULT(ref IWiaDataTransfer self, out STGMEDIUM pMedium, ref IWiaDataCallback pIWiaDataCallback) idtGetData;
+				public new function HRESULT(ref IWiaDataTransfer self, out WIA_DATA_TRANSFER_INFO pWiaDataTransInfo, ref IWiaDataCallback pIWiaDataCallback) idtGetBandedData;
+				public new function HRESULT(ref IWiaDataTransfer self, WIA_FORMAT_INFO* pfe) idtQueryGetData;
+				public new function HRESULT(ref IWiaDataTransfer self, IEnumWIA_FORMAT_INFO** ppEnum) idtEnumWIA_FORMAT_INFO;
+				public new function HRESULT(ref IWiaDataTransfer self, out WIA_EXTENDED_TRANSFER_INFO pExtendedTransferInfo) idtGetExtendedTransferInfo;
 			}
 		}
 		[CRepr]
@@ -1604,84 +1604,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemType(int32* pItemType) mut
+			public HRESULT GetItemType(out int32 pItemType) mut
 			{
-				return VT.GetItemType(&this, pItemType);
+				return VT.GetItemType(ref this, out pItemType);
 			}
 			public HRESULT AnalyzeItem(int32 lFlags) mut
 			{
-				return VT.AnalyzeItem(&this, lFlags);
+				return VT.AnalyzeItem(ref this, lFlags);
 			}
 			public HRESULT EnumChildItems(IEnumWiaItem** ppIEnumWiaItem) mut
 			{
-				return VT.EnumChildItems(&this, ppIEnumWiaItem);
+				return VT.EnumChildItems(ref this, ppIEnumWiaItem);
 			}
 			public HRESULT DeleteItem(int32 lFlags) mut
 			{
-				return VT.DeleteItem(&this, lFlags);
+				return VT.DeleteItem(ref this, lFlags);
 			}
 			public HRESULT CreateChildItem(int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) mut
 			{
-				return VT.CreateChildItem(&this, lFlags, bstrItemName, bstrFullItemName, ppIWiaItem);
+				return VT.CreateChildItem(ref this, lFlags, bstrItemName, bstrFullItemName, ppIWiaItem);
 			}
-			public HRESULT EnumRegisterEventInfo(int32 lFlags, Guid* pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) mut
+			public HRESULT EnumRegisterEventInfo(int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) mut
 			{
-				return VT.EnumRegisterEventInfo(&this, lFlags, pEventGUID, ppIEnum);
+				return VT.EnumRegisterEventInfo(ref this, lFlags, pEventGUID, ppIEnum);
 			}
 			public HRESULT FindItemByName(int32 lFlags, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) mut
 			{
-				return VT.FindItemByName(&this, lFlags, bstrFullItemName, ppIWiaItem);
+				return VT.FindItemByName(ref this, lFlags, bstrFullItemName, ppIWiaItem);
 			}
-			public HRESULT DeviceDlg(HWND hwndParent, int32 lFlags, int32 lIntent, int32* plItemCount, IWiaItem*** ppIWiaItem) mut
+			public HRESULT DeviceDlg(HWND hwndParent, int32 lFlags, int32 lIntent, out int32 plItemCount, out IWiaItem** ppIWiaItem) mut
 			{
-				return VT.DeviceDlg(&this, hwndParent, lFlags, lIntent, plItemCount, ppIWiaItem);
+				return VT.DeviceDlg(ref this, hwndParent, lFlags, lIntent, out plItemCount, out ppIWiaItem);
 			}
-			public HRESULT DeviceCommand(int32 lFlags, Guid* pCmdGUID, IWiaItem** pIWiaItem) mut
+			public HRESULT DeviceCommand(int32 lFlags, in Guid pCmdGUID, IWiaItem** pIWiaItem) mut
 			{
-				return VT.DeviceCommand(&this, lFlags, pCmdGUID, pIWiaItem);
+				return VT.DeviceCommand(ref this, lFlags, pCmdGUID, pIWiaItem);
 			}
 			public HRESULT GetRootItem(IWiaItem** ppIWiaItem) mut
 			{
-				return VT.GetRootItem(&this, ppIWiaItem);
+				return VT.GetRootItem(ref this, ppIWiaItem);
 			}
 			public HRESULT EnumDeviceCapabilities(int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) mut
 			{
-				return VT.EnumDeviceCapabilities(&this, lFlags, ppIEnumWIA_DEV_CAPS);
+				return VT.EnumDeviceCapabilities(ref this, lFlags, ppIEnumWIA_DEV_CAPS);
 			}
 			public HRESULT DumpItemData(BSTR* bstrData) mut
 			{
-				return VT.DumpItemData(&this, bstrData);
+				return VT.DumpItemData(ref this, bstrData);
 			}
 			public HRESULT DumpDrvItemData(BSTR* bstrData) mut
 			{
-				return VT.DumpDrvItemData(&this, bstrData);
+				return VT.DumpDrvItemData(ref this, bstrData);
 			}
 			public HRESULT DumpTreeItemData(BSTR* bstrData) mut
 			{
-				return VT.DumpTreeItemData(&this, bstrData);
+				return VT.DumpTreeItemData(ref this, bstrData);
 			}
 			public HRESULT Diagnostic(uint32 ulSize, uint8* pBuffer) mut
 			{
-				return VT.Diagnostic(&this, ulSize, pBuffer);
+				return VT.Diagnostic(ref this, ulSize, pBuffer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaItem *self, int32* pItemType) GetItemType;
-				public new function HRESULT(IWiaItem *self, int32 lFlags) AnalyzeItem;
-				public new function HRESULT(IWiaItem *self, IEnumWiaItem** ppIEnumWiaItem) EnumChildItems;
-				public new function HRESULT(IWiaItem *self, int32 lFlags) DeleteItem;
-				public new function HRESULT(IWiaItem *self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) CreateChildItem;
-				public new function HRESULT(IWiaItem *self, int32 lFlags, Guid* pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
-				public new function HRESULT(IWiaItem *self, int32 lFlags, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) FindItemByName;
-				public new function HRESULT(IWiaItem *self, HWND hwndParent, int32 lFlags, int32 lIntent, int32* plItemCount, IWiaItem*** ppIWiaItem) DeviceDlg;
-				public new function HRESULT(IWiaItem *self, int32 lFlags, Guid* pCmdGUID, IWiaItem** pIWiaItem) DeviceCommand;
-				public new function HRESULT(IWiaItem *self, IWiaItem** ppIWiaItem) GetRootItem;
-				public new function HRESULT(IWiaItem *self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
-				public new function HRESULT(IWiaItem *self, BSTR* bstrData) DumpItemData;
-				public new function HRESULT(IWiaItem *self, BSTR* bstrData) DumpDrvItemData;
-				public new function HRESULT(IWiaItem *self, BSTR* bstrData) DumpTreeItemData;
-				public new function HRESULT(IWiaItem *self, uint32 ulSize, uint8* pBuffer) Diagnostic;
+				public new function HRESULT(ref IWiaItem self, out int32 pItemType) GetItemType;
+				public new function HRESULT(ref IWiaItem self, int32 lFlags) AnalyzeItem;
+				public new function HRESULT(ref IWiaItem self, IEnumWiaItem** ppIEnumWiaItem) EnumChildItems;
+				public new function HRESULT(ref IWiaItem self, int32 lFlags) DeleteItem;
+				public new function HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) CreateChildItem;
+				public new function HRESULT(ref IWiaItem self, int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
+				public new function HRESULT(ref IWiaItem self, int32 lFlags, BSTR bstrFullItemName, IWiaItem** ppIWiaItem) FindItemByName;
+				public new function HRESULT(ref IWiaItem self, HWND hwndParent, int32 lFlags, int32 lIntent, out int32 plItemCount, out IWiaItem** ppIWiaItem) DeviceDlg;
+				public new function HRESULT(ref IWiaItem self, int32 lFlags, in Guid pCmdGUID, IWiaItem** pIWiaItem) DeviceCommand;
+				public new function HRESULT(ref IWiaItem self, IWiaItem** ppIWiaItem) GetRootItem;
+				public new function HRESULT(ref IWiaItem self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
+				public new function HRESULT(ref IWiaItem self, BSTR* bstrData) DumpItemData;
+				public new function HRESULT(ref IWiaItem self, BSTR* bstrData) DumpDrvItemData;
+				public new function HRESULT(ref IWiaItem self, BSTR* bstrData) DumpTreeItemData;
+				public new function HRESULT(ref IWiaItem self, uint32 ulSize, uint8* pBuffer) Diagnostic;
 			}
 		}
 		[CRepr]
@@ -1693,87 +1693,87 @@ namespace Win32
 			
 			public HRESULT ReadMultiple(uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) mut
 			{
-				return VT.ReadMultiple(&this, cpspec, rgpspec, rgpropvar);
+				return VT.ReadMultiple(ref this, cpspec, rgpspec, rgpropvar);
 			}
-			public HRESULT WriteMultiple(uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar, uint32 propidNameFirst) mut
+			public HRESULT WriteMultiple(uint32 cpspec, in PROPSPEC rgpspec, in PROPVARIANT rgpropvar, uint32 propidNameFirst) mut
 			{
-				return VT.WriteMultiple(&this, cpspec, rgpspec, rgpropvar, propidNameFirst);
+				return VT.WriteMultiple(ref this, cpspec, rgpspec, rgpropvar, propidNameFirst);
 			}
 			public HRESULT DeleteMultiple(uint32 cpspec, PROPSPEC* rgpspec) mut
 			{
-				return VT.DeleteMultiple(&this, cpspec, rgpspec);
+				return VT.DeleteMultiple(ref this, cpspec, rgpspec);
 			}
 			public HRESULT ReadPropertyNames(uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) mut
 			{
-				return VT.ReadPropertyNames(&this, cpropid, rgpropid, rglpwstrName);
+				return VT.ReadPropertyNames(ref this, cpropid, rgpropid, rglpwstrName);
 			}
 			public HRESULT WritePropertyNames(uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) mut
 			{
-				return VT.WritePropertyNames(&this, cpropid, rgpropid, rglpwstrName);
+				return VT.WritePropertyNames(ref this, cpropid, rgpropid, rglpwstrName);
 			}
 			public HRESULT DeletePropertyNames(uint32 cpropid, uint32* rgpropid) mut
 			{
-				return VT.DeletePropertyNames(&this, cpropid, rgpropid);
+				return VT.DeletePropertyNames(ref this, cpropid, rgpropid);
 			}
 			public HRESULT Commit(uint32 grfCommitFlags) mut
 			{
-				return VT.Commit(&this, grfCommitFlags);
+				return VT.Commit(ref this, grfCommitFlags);
 			}
 			public HRESULT Revert() mut
 			{
-				return VT.Revert(&this);
+				return VT.Revert(ref this);
 			}
 			public HRESULT Enum(IEnumSTATPROPSTG** ppenum) mut
 			{
-				return VT.Enum(&this, ppenum);
+				return VT.Enum(ref this, ppenum);
 			}
-			public HRESULT SetTimes(FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) mut
+			public HRESULT SetTimes(in FILETIME pctime, in FILETIME patime, in FILETIME pmtime) mut
 			{
-				return VT.SetTimes(&this, pctime, patime, pmtime);
+				return VT.SetTimes(ref this, pctime, patime, pmtime);
 			}
-			public HRESULT SetClass(Guid* clsid) mut
+			public HRESULT SetClass(in Guid clsid) mut
 			{
-				return VT.SetClass(&this, clsid);
+				return VT.SetClass(ref this, clsid);
 			}
-			public HRESULT Stat(STATPROPSETSTG* pstatpsstg) mut
+			public HRESULT Stat(out STATPROPSETSTG pstatpsstg) mut
 			{
-				return VT.Stat(&this, pstatpsstg);
+				return VT.Stat(ref this, out pstatpsstg);
 			}
 			public HRESULT GetPropertyAttributes(uint32 cpspec, PROPSPEC* rgpspec, uint32* rgflags, PROPVARIANT* rgpropvar) mut
 			{
-				return VT.GetPropertyAttributes(&this, cpspec, rgpspec, rgflags, rgpropvar);
+				return VT.GetPropertyAttributes(ref this, cpspec, rgpspec, rgflags, rgpropvar);
 			}
-			public HRESULT GetCount(uint32* pulNumProps) mut
+			public HRESULT GetCount(out uint32 pulNumProps) mut
 			{
-				return VT.GetCount(&this, pulNumProps);
+				return VT.GetCount(ref this, out pulNumProps);
 			}
-			public HRESULT GetPropertyStream(Guid* pCompatibilityId, IStream** ppIStream) mut
+			public HRESULT GetPropertyStream(out Guid pCompatibilityId, IStream** ppIStream) mut
 			{
-				return VT.GetPropertyStream(&this, pCompatibilityId, ppIStream);
+				return VT.GetPropertyStream(ref this, out pCompatibilityId, ppIStream);
 			}
-			public HRESULT SetPropertyStream(Guid* pCompatibilityId, IStream* pIStream) mut
+			public HRESULT SetPropertyStream(out Guid pCompatibilityId, ref IStream pIStream) mut
 			{
-				return VT.SetPropertyStream(&this, pCompatibilityId, pIStream);
+				return VT.SetPropertyStream(ref this, out pCompatibilityId, ref pIStream);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) ReadMultiple;
-				public new function HRESULT(IWiaPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar, uint32 propidNameFirst) WriteMultiple;
-				public new function HRESULT(IWiaPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec) DeleteMultiple;
-				public new function HRESULT(IWiaPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) ReadPropertyNames;
-				public new function HRESULT(IWiaPropertyStorage *self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) WritePropertyNames;
-				public new function HRESULT(IWiaPropertyStorage *self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
-				public new function HRESULT(IWiaPropertyStorage *self, uint32 grfCommitFlags) Commit;
-				public new function HRESULT(IWiaPropertyStorage *self) Revert;
-				public new function HRESULT(IWiaPropertyStorage *self, IEnumSTATPROPSTG** ppenum) Enum;
-				public new function HRESULT(IWiaPropertyStorage *self, FILETIME* pctime, FILETIME* patime, FILETIME* pmtime) SetTimes;
-				public new function HRESULT(IWiaPropertyStorage *self, Guid* clsid) SetClass;
-				public new function HRESULT(IWiaPropertyStorage *self, STATPROPSETSTG* pstatpsstg) Stat;
-				public new function HRESULT(IWiaPropertyStorage *self, uint32 cpspec, PROPSPEC* rgpspec, uint32* rgflags, PROPVARIANT* rgpropvar) GetPropertyAttributes;
-				public new function HRESULT(IWiaPropertyStorage *self, uint32* pulNumProps) GetCount;
-				public new function HRESULT(IWiaPropertyStorage *self, Guid* pCompatibilityId, IStream** ppIStream) GetPropertyStream;
-				public new function HRESULT(IWiaPropertyStorage *self, Guid* pCompatibilityId, IStream* pIStream) SetPropertyStream;
+				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec, PROPVARIANT* rgpropvar) ReadMultiple;
+				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, in PROPSPEC rgpspec, in PROPVARIANT rgpropvar, uint32 propidNameFirst) WriteMultiple;
+				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec) DeleteMultiple;
+				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) ReadPropertyNames;
+				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid, PWSTR* rglpwstrName) WritePropertyNames;
+				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpropid, uint32* rgpropid) DeletePropertyNames;
+				public new function HRESULT(ref IWiaPropertyStorage self, uint32 grfCommitFlags) Commit;
+				public new function HRESULT(ref IWiaPropertyStorage self) Revert;
+				public new function HRESULT(ref IWiaPropertyStorage self, IEnumSTATPROPSTG** ppenum) Enum;
+				public new function HRESULT(ref IWiaPropertyStorage self, in FILETIME pctime, in FILETIME patime, in FILETIME pmtime) SetTimes;
+				public new function HRESULT(ref IWiaPropertyStorage self, in Guid clsid) SetClass;
+				public new function HRESULT(ref IWiaPropertyStorage self, out STATPROPSETSTG pstatpsstg) Stat;
+				public new function HRESULT(ref IWiaPropertyStorage self, uint32 cpspec, PROPSPEC* rgpspec, uint32* rgflags, PROPVARIANT* rgpropvar) GetPropertyAttributes;
+				public new function HRESULT(ref IWiaPropertyStorage self, out uint32 pulNumProps) GetCount;
+				public new function HRESULT(ref IWiaPropertyStorage self, out Guid pCompatibilityId, IStream** ppIStream) GetPropertyStream;
+				public new function HRESULT(ref IWiaPropertyStorage self, out Guid pCompatibilityId, ref IStream pIStream) SetPropertyStream;
 			}
 		}
 		[CRepr]
@@ -1783,34 +1783,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, IWiaItem** ppIWiaItem, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out IWiaItem* ppIWiaItem, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, ppIWiaItem, pceltFetched);
+				return VT.Next(ref this, celt, out ppIWiaItem, out pceltFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Clone(IEnumWiaItem** ppIEnum) mut
 			{
-				return VT.Clone(&this, ppIEnum);
+				return VT.Clone(ref this, ppIEnum);
 			}
-			public HRESULT GetCount(uint32* celt) mut
+			public HRESULT GetCount(out uint32 celt) mut
 			{
-				return VT.GetCount(&this, celt);
+				return VT.GetCount(ref this, out celt);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumWiaItem *self, uint32 celt, IWiaItem** ppIWiaItem, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumWiaItem *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumWiaItem *self) Reset;
-				public new function HRESULT(IEnumWiaItem *self, IEnumWiaItem** ppIEnum) Clone;
-				public new function HRESULT(IEnumWiaItem *self, uint32* celt) GetCount;
+				public new function HRESULT(ref IEnumWiaItem self, uint32 celt, out IWiaItem* ppIWiaItem, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumWiaItem self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumWiaItem self) Reset;
+				public new function HRESULT(ref IEnumWiaItem self, IEnumWiaItem** ppIEnum) Clone;
+				public new function HRESULT(ref IEnumWiaItem self, out uint32 celt) GetCount;
 			}
 		}
 		[CRepr]
@@ -1820,34 +1820,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, WIA_DEV_CAP* rgelt, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out WIA_DEV_CAP rgelt, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, rgelt, pceltFetched);
+				return VT.Next(ref this, celt, out rgelt, out pceltFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Clone(IEnumWIA_DEV_CAPS** ppIEnum) mut
 			{
-				return VT.Clone(&this, ppIEnum);
+				return VT.Clone(ref this, ppIEnum);
 			}
-			public HRESULT GetCount(uint32* pcelt) mut
+			public HRESULT GetCount(out uint32 pcelt) mut
 			{
-				return VT.GetCount(&this, pcelt);
+				return VT.GetCount(ref this, out pcelt);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumWIA_DEV_CAPS *self, uint32 celt, WIA_DEV_CAP* rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumWIA_DEV_CAPS *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumWIA_DEV_CAPS *self) Reset;
-				public new function HRESULT(IEnumWIA_DEV_CAPS *self, IEnumWIA_DEV_CAPS** ppIEnum) Clone;
-				public new function HRESULT(IEnumWIA_DEV_CAPS *self, uint32* pcelt) GetCount;
+				public new function HRESULT(ref IEnumWIA_DEV_CAPS self, uint32 celt, out WIA_DEV_CAP rgelt, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumWIA_DEV_CAPS self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumWIA_DEV_CAPS self) Reset;
+				public new function HRESULT(ref IEnumWIA_DEV_CAPS self, IEnumWIA_DEV_CAPS** ppIEnum) Clone;
+				public new function HRESULT(ref IEnumWIA_DEV_CAPS self, out uint32 pcelt) GetCount;
 			}
 		}
 		[CRepr]
@@ -1857,34 +1857,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, WIA_FORMAT_INFO* rgelt, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out WIA_FORMAT_INFO rgelt, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, rgelt, pceltFetched);
+				return VT.Next(ref this, celt, out rgelt, out pceltFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Clone(IEnumWIA_FORMAT_INFO** ppIEnum) mut
 			{
-				return VT.Clone(&this, ppIEnum);
+				return VT.Clone(ref this, ppIEnum);
 			}
-			public HRESULT GetCount(uint32* pcelt) mut
+			public HRESULT GetCount(out uint32 pcelt) mut
 			{
-				return VT.GetCount(&this, pcelt);
+				return VT.GetCount(ref this, out pcelt);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumWIA_FORMAT_INFO *self, uint32 celt, WIA_FORMAT_INFO* rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumWIA_FORMAT_INFO *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumWIA_FORMAT_INFO *self) Reset;
-				public new function HRESULT(IEnumWIA_FORMAT_INFO *self, IEnumWIA_FORMAT_INFO** ppIEnum) Clone;
-				public new function HRESULT(IEnumWIA_FORMAT_INFO *self, uint32* pcelt) GetCount;
+				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self, uint32 celt, out WIA_FORMAT_INFO rgelt, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self) Reset;
+				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self, IEnumWIA_FORMAT_INFO** ppIEnum) Clone;
+				public new function HRESULT(ref IEnumWIA_FORMAT_INFO self, out uint32 pcelt) GetCount;
 			}
 		}
 		[CRepr]
@@ -1896,22 +1896,22 @@ namespace Win32
 			
 			public HRESULT InitializeLog(int32 hInstance) mut
 			{
-				return VT.InitializeLog(&this, hInstance);
+				return VT.InitializeLog(ref this, hInstance);
 			}
 			public HRESULT hResult(HRESULT hResult) mut
 			{
-				return VT.hResult(&this, hResult);
+				return VT.hResult(ref this, hResult);
 			}
 			public HRESULT Log(int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) mut
 			{
-				return VT.Log(&this, lFlags, lResID, lDetail, bstrText);
+				return VT.Log(ref this, lFlags, lResID, lDetail, bstrText);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaLog *self, int32 hInstance) InitializeLog;
-				public new function HRESULT(IWiaLog *self, HRESULT hResult) hResult;
-				public new function HRESULT(IWiaLog *self, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) Log;
+				public new function HRESULT(ref IWiaLog self, int32 hInstance) InitializeLog;
+				public new function HRESULT(ref IWiaLog self, HRESULT hResult) hResult;
+				public new function HRESULT(ref IWiaLog self, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) Log;
 			}
 		}
 		[CRepr]
@@ -1921,34 +1921,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeLogEx(uint8* hInstance) mut
+			public HRESULT InitializeLogEx(ref uint8 hInstance) mut
 			{
-				return VT.InitializeLogEx(&this, hInstance);
+				return VT.InitializeLogEx(ref this, ref hInstance);
 			}
 			public HRESULT hResult(HRESULT hResult) mut
 			{
-				return VT.hResult(&this, hResult);
+				return VT.hResult(ref this, hResult);
 			}
 			public HRESULT Log(int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) mut
 			{
-				return VT.Log(&this, lFlags, lResID, lDetail, bstrText);
+				return VT.Log(ref this, lFlags, lResID, lDetail, bstrText);
 			}
 			public HRESULT hResultEx(int32 lMethodId, HRESULT hResult) mut
 			{
-				return VT.hResultEx(&this, lMethodId, hResult);
+				return VT.hResultEx(ref this, lMethodId, hResult);
 			}
 			public HRESULT LogEx(int32 lMethodId, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) mut
 			{
-				return VT.LogEx(&this, lMethodId, lFlags, lResID, lDetail, bstrText);
+				return VT.LogEx(ref this, lMethodId, lFlags, lResID, lDetail, bstrText);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaLogEx *self, uint8* hInstance) InitializeLogEx;
-				public new function HRESULT(IWiaLogEx *self, HRESULT hResult) hResult;
-				public new function HRESULT(IWiaLogEx *self, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) Log;
-				public new function HRESULT(IWiaLogEx *self, int32 lMethodId, HRESULT hResult) hResultEx;
-				public new function HRESULT(IWiaLogEx *self, int32 lMethodId, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) LogEx;
+				public new function HRESULT(ref IWiaLogEx self, ref uint8 hInstance) InitializeLogEx;
+				public new function HRESULT(ref IWiaLogEx self, HRESULT hResult) hResult;
+				public new function HRESULT(ref IWiaLogEx self, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) Log;
+				public new function HRESULT(ref IWiaLogEx self, int32 lMethodId, HRESULT hResult) hResultEx;
+				public new function HRESULT(ref IWiaLogEx self, int32 lMethodId, int32 lFlags, int32 lResID, int32 lDetail, BSTR bstrText) LogEx;
 			}
 		}
 		[CRepr]
@@ -1960,12 +1960,12 @@ namespace Win32
 			
 			public HRESULT NewDeviceArrival() mut
 			{
-				return VT.NewDeviceArrival(&this);
+				return VT.NewDeviceArrival(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaNotifyDevMgr *self) NewDeviceArrival;
+				public new function HRESULT(ref IWiaNotifyDevMgr self) NewDeviceArrival;
 			}
 		}
 		[CRepr]
@@ -1977,22 +1977,22 @@ namespace Win32
 			
 			public HRESULT GetExtendedErrorInfo(BSTR* bstrErrorText) mut
 			{
-				return VT.GetExtendedErrorInfo(&this, bstrErrorText);
+				return VT.GetExtendedErrorInfo(ref this, bstrErrorText);
 			}
-			public HRESULT Escape(uint32 dwEscapeCode, uint8* lpInData, uint32 cbInDataSize, uint8* pOutData, uint32 dwOutDataSize, uint32* pdwActualDataSize) mut
+			public HRESULT Escape(uint32 dwEscapeCode, uint8* lpInData, uint32 cbInDataSize, out uint8 pOutData, uint32 dwOutDataSize, out uint32 pdwActualDataSize) mut
 			{
-				return VT.Escape(&this, dwEscapeCode, lpInData, cbInDataSize, pOutData, dwOutDataSize, pdwActualDataSize);
+				return VT.Escape(ref this, dwEscapeCode, lpInData, cbInDataSize, out pOutData, dwOutDataSize, out pdwActualDataSize);
 			}
 			public HRESULT CancelPendingIO() mut
 			{
-				return VT.CancelPendingIO(&this);
+				return VT.CancelPendingIO(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaItemExtras *self, BSTR* bstrErrorText) GetExtendedErrorInfo;
-				public new function HRESULT(IWiaItemExtras *self, uint32 dwEscapeCode, uint8* lpInData, uint32 cbInDataSize, uint8* pOutData, uint32 dwOutDataSize, uint32* pdwActualDataSize) Escape;
-				public new function HRESULT(IWiaItemExtras *self) CancelPendingIO;
+				public new function HRESULT(ref IWiaItemExtras self, BSTR* bstrErrorText) GetExtendedErrorInfo;
+				public new function HRESULT(ref IWiaItemExtras self, uint32 dwEscapeCode, uint8* lpInData, uint32 cbInDataSize, out uint8 pOutData, uint32 dwOutDataSize, out uint32 pdwActualDataSize) Escape;
+				public new function HRESULT(ref IWiaItemExtras self) CancelPendingIO;
 			}
 		}
 		[CRepr]
@@ -2004,17 +2004,17 @@ namespace Win32
 			
 			public HRESULT GetWindow(HWND* phwnd) mut
 			{
-				return VT.GetWindow(&this, phwnd);
+				return VT.GetWindow(ref this, phwnd);
 			}
 			public HRESULT ReportStatus(int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) mut
 			{
-				return VT.ReportStatus(&this, lFlags, pWiaItem2, hrStatus, lPercentComplete);
+				return VT.ReportStatus(ref this, lFlags, pWiaItem2, hrStatus, lPercentComplete);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaAppErrorHandler *self, HWND* phwnd) GetWindow;
-				public new function HRESULT(IWiaAppErrorHandler *self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
+				public new function HRESULT(ref IWiaAppErrorHandler self, HWND* phwnd) GetWindow;
+				public new function HRESULT(ref IWiaAppErrorHandler self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
 			}
 		}
 		[CRepr]
@@ -2026,17 +2026,17 @@ namespace Win32
 			
 			public HRESULT ReportStatus(int32 lFlags, HWND hwndParent, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) mut
 			{
-				return VT.ReportStatus(&this, lFlags, hwndParent, pWiaItem2, hrStatus, lPercentComplete);
+				return VT.ReportStatus(ref this, lFlags, hwndParent, pWiaItem2, hrStatus, lPercentComplete);
 			}
 			public HRESULT GetStatusDescription(int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, BSTR* pbstrDescription) mut
 			{
-				return VT.GetStatusDescription(&this, lFlags, pWiaItem2, hrStatus, pbstrDescription);
+				return VT.GetStatusDescription(ref this, lFlags, pWiaItem2, hrStatus, pbstrDescription);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaErrorHandler *self, int32 lFlags, HWND hwndParent, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
-				public new function HRESULT(IWiaErrorHandler *self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, BSTR* pbstrDescription) GetStatusDescription;
+				public new function HRESULT(ref IWiaErrorHandler self, int32 lFlags, HWND hwndParent, IWiaItem2* pWiaItem2, HRESULT hrStatus, int32 lPercentComplete) ReportStatus;
+				public new function HRESULT(ref IWiaErrorHandler self, int32 lFlags, IWiaItem2* pWiaItem2, HRESULT hrStatus, BSTR* pbstrDescription) GetStatusDescription;
 			}
 		}
 		[CRepr]
@@ -2046,29 +2046,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Download(int32 lFlags, IWiaTransferCallback* pIWiaTransferCallback) mut
+			public HRESULT Download(int32 lFlags, ref IWiaTransferCallback pIWiaTransferCallback) mut
 			{
-				return VT.Download(&this, lFlags, pIWiaTransferCallback);
+				return VT.Download(ref this, lFlags, ref pIWiaTransferCallback);
 			}
-			public HRESULT Upload(int32 lFlags, IStream* pSource, IWiaTransferCallback* pIWiaTransferCallback) mut
+			public HRESULT Upload(int32 lFlags, ref IStream pSource, ref IWiaTransferCallback pIWiaTransferCallback) mut
 			{
-				return VT.Upload(&this, lFlags, pSource, pIWiaTransferCallback);
+				return VT.Upload(ref this, lFlags, ref pSource, ref pIWiaTransferCallback);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			public HRESULT EnumWIA_FORMAT_INFO(IEnumWIA_FORMAT_INFO** ppEnum) mut
 			{
-				return VT.EnumWIA_FORMAT_INFO(&this, ppEnum);
+				return VT.EnumWIA_FORMAT_INFO(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaTransfer *self, int32 lFlags, IWiaTransferCallback* pIWiaTransferCallback) Download;
-				public new function HRESULT(IWiaTransfer *self, int32 lFlags, IStream* pSource, IWiaTransferCallback* pIWiaTransferCallback) Upload;
-				public new function HRESULT(IWiaTransfer *self) Cancel;
-				public new function HRESULT(IWiaTransfer *self, IEnumWIA_FORMAT_INFO** ppEnum) EnumWIA_FORMAT_INFO;
+				public new function HRESULT(ref IWiaTransfer self, int32 lFlags, ref IWiaTransferCallback pIWiaTransferCallback) Download;
+				public new function HRESULT(ref IWiaTransfer self, int32 lFlags, ref IStream pSource, ref IWiaTransferCallback pIWiaTransferCallback) Upload;
+				public new function HRESULT(ref IWiaTransfer self) Cancel;
+				public new function HRESULT(ref IWiaTransfer self, IEnumWIA_FORMAT_INFO** ppEnum) EnumWIA_FORMAT_INFO;
 			}
 		}
 		[CRepr]
@@ -2078,19 +2078,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TransferCallback(int32 lFlags, WiaTransferParams* pWiaTransferParams) mut
+			public HRESULT TransferCallback(int32 lFlags, ref WiaTransferParams pWiaTransferParams) mut
 			{
-				return VT.TransferCallback(&this, lFlags, pWiaTransferParams);
+				return VT.TransferCallback(ref this, lFlags, ref pWiaTransferParams);
 			}
 			public HRESULT GetNextStream(int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppDestination) mut
 			{
-				return VT.GetNextStream(&this, lFlags, bstrItemName, bstrFullItemName, ppDestination);
+				return VT.GetNextStream(ref this, lFlags, bstrItemName, bstrFullItemName, ppDestination);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaTransferCallback *self, int32 lFlags, WiaTransferParams* pWiaTransferParams) TransferCallback;
-				public new function HRESULT(IWiaTransferCallback *self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppDestination) GetNextStream;
+				public new function HRESULT(ref IWiaTransferCallback self, int32 lFlags, ref WiaTransferParams pWiaTransferParams) TransferCallback;
+				public new function HRESULT(ref IWiaTransferCallback self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppDestination) GetNextStream;
 			}
 		}
 		[CRepr]
@@ -2102,12 +2102,12 @@ namespace Win32
 			
 			public HRESULT DetectRegions(int32 lFlags, IStream* pInputStream, IWiaItem2* pWiaItem2) mut
 			{
-				return VT.DetectRegions(&this, lFlags, pInputStream, pWiaItem2);
+				return VT.DetectRegions(ref this, lFlags, pInputStream, pWiaItem2);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaSegmentationFilter *self, int32 lFlags, IStream* pInputStream, IWiaItem2* pWiaItem2) DetectRegions;
+				public new function HRESULT(ref IWiaSegmentationFilter self, int32 lFlags, IStream* pInputStream, IWiaItem2* pWiaItem2) DetectRegions;
 			}
 		}
 		[CRepr]
@@ -2119,27 +2119,27 @@ namespace Win32
 			
 			public HRESULT InitializeFilter(IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) mut
 			{
-				return VT.InitializeFilter(&this, pWiaItem2, pWiaTransferCallback);
+				return VT.InitializeFilter(ref this, pWiaItem2, pWiaTransferCallback);
 			}
 			public HRESULT SetNewCallback(IWiaTransferCallback* pWiaTransferCallback) mut
 			{
-				return VT.SetNewCallback(&this, pWiaTransferCallback);
+				return VT.SetNewCallback(ref this, pWiaTransferCallback);
 			}
 			public HRESULT FilterPreviewImage(int32 lFlags, IWiaItem2* pWiaChildItem2, RECT InputImageExtents, IStream* pInputStream) mut
 			{
-				return VT.FilterPreviewImage(&this, lFlags, pWiaChildItem2, InputImageExtents, pInputStream);
+				return VT.FilterPreviewImage(ref this, lFlags, pWiaChildItem2, InputImageExtents, pInputStream);
 			}
 			public HRESULT ApplyProperties(IWiaPropertyStorage* pWiaPropertyStorage) mut
 			{
-				return VT.ApplyProperties(&this, pWiaPropertyStorage);
+				return VT.ApplyProperties(ref this, pWiaPropertyStorage);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaImageFilter *self, IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) InitializeFilter;
-				public new function HRESULT(IWiaImageFilter *self, IWiaTransferCallback* pWiaTransferCallback) SetNewCallback;
-				public new function HRESULT(IWiaImageFilter *self, int32 lFlags, IWiaItem2* pWiaChildItem2, RECT InputImageExtents, IStream* pInputStream) FilterPreviewImage;
-				public new function HRESULT(IWiaImageFilter *self, IWiaPropertyStorage* pWiaPropertyStorage) ApplyProperties;
+				public new function HRESULT(ref IWiaImageFilter self, IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) InitializeFilter;
+				public new function HRESULT(ref IWiaImageFilter self, IWiaTransferCallback* pWiaTransferCallback) SetNewCallback;
+				public new function HRESULT(ref IWiaImageFilter self, int32 lFlags, IWiaItem2* pWiaChildItem2, RECT InputImageExtents, IStream* pInputStream) FilterPreviewImage;
+				public new function HRESULT(ref IWiaImageFilter self, IWiaPropertyStorage* pWiaPropertyStorage) ApplyProperties;
 			}
 		}
 		[CRepr]
@@ -2151,27 +2151,27 @@ namespace Win32
 			
 			public HRESULT GetNewPreview(int32 lFlags, IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) mut
 			{
-				return VT.GetNewPreview(&this, lFlags, pWiaItem2, pWiaTransferCallback);
+				return VT.GetNewPreview(ref this, lFlags, pWiaItem2, pWiaTransferCallback);
 			}
 			public HRESULT UpdatePreview(int32 lFlags, IWiaItem2* pChildWiaItem2, IWiaTransferCallback* pWiaTransferCallback) mut
 			{
-				return VT.UpdatePreview(&this, lFlags, pChildWiaItem2, pWiaTransferCallback);
+				return VT.UpdatePreview(ref this, lFlags, pChildWiaItem2, pWiaTransferCallback);
 			}
 			public HRESULT DetectRegions(int32 lFlags) mut
 			{
-				return VT.DetectRegions(&this, lFlags);
+				return VT.DetectRegions(ref this, lFlags);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaPreview *self, int32 lFlags, IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) GetNewPreview;
-				public new function HRESULT(IWiaPreview *self, int32 lFlags, IWiaItem2* pChildWiaItem2, IWiaTransferCallback* pWiaTransferCallback) UpdatePreview;
-				public new function HRESULT(IWiaPreview *self, int32 lFlags) DetectRegions;
-				public new function HRESULT(IWiaPreview *self) Clear;
+				public new function HRESULT(ref IWiaPreview self, int32 lFlags, IWiaItem2* pWiaItem2, IWiaTransferCallback* pWiaTransferCallback) GetNewPreview;
+				public new function HRESULT(ref IWiaPreview self, int32 lFlags, IWiaItem2* pChildWiaItem2, IWiaTransferCallback* pWiaTransferCallback) UpdatePreview;
+				public new function HRESULT(ref IWiaPreview self, int32 lFlags) DetectRegions;
+				public new function HRESULT(ref IWiaPreview self) Clear;
 			}
 		}
 		[CRepr]
@@ -2181,34 +2181,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 cElt, IWiaItem2** ppIWiaItem2, uint32* pcEltFetched) mut
+			public HRESULT Next(uint32 cElt, out IWiaItem2* ppIWiaItem2, out uint32 pcEltFetched) mut
 			{
-				return VT.Next(&this, cElt, ppIWiaItem2, pcEltFetched);
+				return VT.Next(ref this, cElt, out ppIWiaItem2, out pcEltFetched);
 			}
 			public HRESULT Skip(uint32 cElt) mut
 			{
-				return VT.Skip(&this, cElt);
+				return VT.Skip(ref this, cElt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Clone(IEnumWiaItem2** ppIEnum) mut
 			{
-				return VT.Clone(&this, ppIEnum);
+				return VT.Clone(ref this, ppIEnum);
 			}
-			public HRESULT GetCount(uint32* cElt) mut
+			public HRESULT GetCount(out uint32 cElt) mut
 			{
-				return VT.GetCount(&this, cElt);
+				return VT.GetCount(ref this, out cElt);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumWiaItem2 *self, uint32 cElt, IWiaItem2** ppIWiaItem2, uint32* pcEltFetched) Next;
-				public new function HRESULT(IEnumWiaItem2 *self, uint32 cElt) Skip;
-				public new function HRESULT(IEnumWiaItem2 *self) Reset;
-				public new function HRESULT(IEnumWiaItem2 *self, IEnumWiaItem2** ppIEnum) Clone;
-				public new function HRESULT(IEnumWiaItem2 *self, uint32* cElt) GetCount;
+				public new function HRESULT(ref IEnumWiaItem2 self, uint32 cElt, out IWiaItem2* ppIWiaItem2, out uint32 pcEltFetched) Next;
+				public new function HRESULT(ref IEnumWiaItem2 self, uint32 cElt) Skip;
+				public new function HRESULT(ref IEnumWiaItem2 self) Reset;
+				public new function HRESULT(ref IEnumWiaItem2 self, IEnumWiaItem2** ppIEnum) Clone;
+				public new function HRESULT(ref IEnumWiaItem2 self, out uint32 cElt) GetCount;
 			}
 		}
 		[CRepr]
@@ -2220,87 +2220,87 @@ namespace Win32
 			
 			public HRESULT CreateChildItem(int32 lItemFlags, int32 lCreationFlags, BSTR bstrItemName, IWiaItem2** ppIWiaItem2) mut
 			{
-				return VT.CreateChildItem(&this, lItemFlags, lCreationFlags, bstrItemName, ppIWiaItem2);
+				return VT.CreateChildItem(ref this, lItemFlags, lCreationFlags, bstrItemName, ppIWiaItem2);
 			}
 			public HRESULT DeleteItem(int32 lFlags) mut
 			{
-				return VT.DeleteItem(&this, lFlags);
+				return VT.DeleteItem(ref this, lFlags);
 			}
 			public HRESULT EnumChildItems(Guid* pCategoryGUID, IEnumWiaItem2** ppIEnumWiaItem2) mut
 			{
-				return VT.EnumChildItems(&this, pCategoryGUID, ppIEnumWiaItem2);
+				return VT.EnumChildItems(ref this, pCategoryGUID, ppIEnumWiaItem2);
 			}
 			public HRESULT FindItemByName(int32 lFlags, BSTR bstrFullItemName, IWiaItem2** ppIWiaItem2) mut
 			{
-				return VT.FindItemByName(&this, lFlags, bstrFullItemName, ppIWiaItem2);
+				return VT.FindItemByName(ref this, lFlags, bstrFullItemName, ppIWiaItem2);
 			}
-			public HRESULT GetItemCategory(Guid* pItemCategoryGUID) mut
+			public HRESULT GetItemCategory(out Guid pItemCategoryGUID) mut
 			{
-				return VT.GetItemCategory(&this, pItemCategoryGUID);
+				return VT.GetItemCategory(ref this, out pItemCategoryGUID);
 			}
-			public HRESULT GetItemType(int32* pItemType) mut
+			public HRESULT GetItemType(out int32 pItemType) mut
 			{
-				return VT.GetItemType(&this, pItemType);
+				return VT.GetItemType(ref this, out pItemType);
 			}
-			public HRESULT DeviceDlg(int32 lFlags, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, int32* plNumFiles, BSTR** ppbstrFilePaths, IWiaItem2** ppItem) mut
+			public HRESULT DeviceDlg(int32 lFlags, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, IWiaItem2** ppItem) mut
 			{
-				return VT.DeviceDlg(&this, lFlags, hwndParent, bstrFolderName, bstrFilename, plNumFiles, ppbstrFilePaths, ppItem);
+				return VT.DeviceDlg(ref this, lFlags, hwndParent, bstrFolderName, bstrFilename, out plNumFiles, out ppbstrFilePaths, ppItem);
 			}
-			public HRESULT DeviceCommand(int32 lFlags, Guid* pCmdGUID, IWiaItem2** ppIWiaItem2) mut
+			public HRESULT DeviceCommand(int32 lFlags, in Guid pCmdGUID, IWiaItem2** ppIWiaItem2) mut
 			{
-				return VT.DeviceCommand(&this, lFlags, pCmdGUID, ppIWiaItem2);
+				return VT.DeviceCommand(ref this, lFlags, pCmdGUID, ppIWiaItem2);
 			}
 			public HRESULT EnumDeviceCapabilities(int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) mut
 			{
-				return VT.EnumDeviceCapabilities(&this, lFlags, ppIEnumWIA_DEV_CAPS);
+				return VT.EnumDeviceCapabilities(ref this, lFlags, ppIEnumWIA_DEV_CAPS);
 			}
-			public HRESULT CheckExtension(int32 lFlags, BSTR bstrName, Guid* riidExtensionInterface, BOOL* pbExtensionExists) mut
+			public HRESULT CheckExtension(int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, out BOOL pbExtensionExists) mut
 			{
-				return VT.CheckExtension(&this, lFlags, bstrName, riidExtensionInterface, pbExtensionExists);
+				return VT.CheckExtension(ref this, lFlags, bstrName, riidExtensionInterface, out pbExtensionExists);
 			}
-			public HRESULT GetExtension(int32 lFlags, BSTR bstrName, Guid* riidExtensionInterface, void** ppOut) mut
+			public HRESULT GetExtension(int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, void** ppOut) mut
 			{
-				return VT.GetExtension(&this, lFlags, bstrName, riidExtensionInterface, ppOut);
+				return VT.GetExtension(ref this, lFlags, bstrName, riidExtensionInterface, ppOut);
 			}
 			public HRESULT GetParentItem(IWiaItem2** ppIWiaItem2) mut
 			{
-				return VT.GetParentItem(&this, ppIWiaItem2);
+				return VT.GetParentItem(ref this, ppIWiaItem2);
 			}
 			public HRESULT GetRootItem(IWiaItem2** ppIWiaItem2) mut
 			{
-				return VT.GetRootItem(&this, ppIWiaItem2);
+				return VT.GetRootItem(ref this, ppIWiaItem2);
 			}
-			public HRESULT GetPreviewComponent(int32 lFlags, IWiaPreview** ppWiaPreview) mut
+			public HRESULT GetPreviewComponent(int32 lFlags, out IWiaPreview* ppWiaPreview) mut
 			{
-				return VT.GetPreviewComponent(&this, lFlags, ppWiaPreview);
+				return VT.GetPreviewComponent(ref this, lFlags, out ppWiaPreview);
 			}
-			public HRESULT EnumRegisterEventInfo(int32 lFlags, Guid* pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) mut
+			public HRESULT EnumRegisterEventInfo(int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) mut
 			{
-				return VT.EnumRegisterEventInfo(&this, lFlags, pEventGUID, ppIEnum);
+				return VT.EnumRegisterEventInfo(ref this, lFlags, pEventGUID, ppIEnum);
 			}
 			public HRESULT Diagnostic(uint32 ulSize, uint8* pBuffer) mut
 			{
-				return VT.Diagnostic(&this, ulSize, pBuffer);
+				return VT.Diagnostic(ref this, ulSize, pBuffer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaItem2 *self, int32 lItemFlags, int32 lCreationFlags, BSTR bstrItemName, IWiaItem2** ppIWiaItem2) CreateChildItem;
-				public new function HRESULT(IWiaItem2 *self, int32 lFlags) DeleteItem;
-				public new function HRESULT(IWiaItem2 *self, Guid* pCategoryGUID, IEnumWiaItem2** ppIEnumWiaItem2) EnumChildItems;
-				public new function HRESULT(IWiaItem2 *self, int32 lFlags, BSTR bstrFullItemName, IWiaItem2** ppIWiaItem2) FindItemByName;
-				public new function HRESULT(IWiaItem2 *self, Guid* pItemCategoryGUID) GetItemCategory;
-				public new function HRESULT(IWiaItem2 *self, int32* pItemType) GetItemType;
-				public new function HRESULT(IWiaItem2 *self, int32 lFlags, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, int32* plNumFiles, BSTR** ppbstrFilePaths, IWiaItem2** ppItem) DeviceDlg;
-				public new function HRESULT(IWiaItem2 *self, int32 lFlags, Guid* pCmdGUID, IWiaItem2** ppIWiaItem2) DeviceCommand;
-				public new function HRESULT(IWiaItem2 *self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
-				public new function HRESULT(IWiaItem2 *self, int32 lFlags, BSTR bstrName, Guid* riidExtensionInterface, BOOL* pbExtensionExists) CheckExtension;
-				public new function HRESULT(IWiaItem2 *self, int32 lFlags, BSTR bstrName, Guid* riidExtensionInterface, void** ppOut) GetExtension;
-				public new function HRESULT(IWiaItem2 *self, IWiaItem2** ppIWiaItem2) GetParentItem;
-				public new function HRESULT(IWiaItem2 *self, IWiaItem2** ppIWiaItem2) GetRootItem;
-				public new function HRESULT(IWiaItem2 *self, int32 lFlags, IWiaPreview** ppWiaPreview) GetPreviewComponent;
-				public new function HRESULT(IWiaItem2 *self, int32 lFlags, Guid* pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
-				public new function HRESULT(IWiaItem2 *self, uint32 ulSize, uint8* pBuffer) Diagnostic;
+				public new function HRESULT(ref IWiaItem2 self, int32 lItemFlags, int32 lCreationFlags, BSTR bstrItemName, IWiaItem2** ppIWiaItem2) CreateChildItem;
+				public new function HRESULT(ref IWiaItem2 self, int32 lFlags) DeleteItem;
+				public new function HRESULT(ref IWiaItem2 self, Guid* pCategoryGUID, IEnumWiaItem2** ppIEnumWiaItem2) EnumChildItems;
+				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrFullItemName, IWiaItem2** ppIWiaItem2) FindItemByName;
+				public new function HRESULT(ref IWiaItem2 self, out Guid pItemCategoryGUID) GetItemCategory;
+				public new function HRESULT(ref IWiaItem2 self, out int32 pItemType) GetItemType;
+				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, IWiaItem2** ppItem) DeviceDlg;
+				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pCmdGUID, IWiaItem2** ppIWiaItem2) DeviceCommand;
+				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, IEnumWIA_DEV_CAPS** ppIEnumWIA_DEV_CAPS) EnumDeviceCapabilities;
+				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, out BOOL pbExtensionExists) CheckExtension;
+				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, BSTR bstrName, in Guid riidExtensionInterface, void** ppOut) GetExtension;
+				public new function HRESULT(ref IWiaItem2 self, IWiaItem2** ppIWiaItem2) GetParentItem;
+				public new function HRESULT(ref IWiaItem2 self, IWiaItem2** ppIWiaItem2) GetRootItem;
+				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, out IWiaPreview* ppWiaPreview) GetPreviewComponent;
+				public new function HRESULT(ref IWiaItem2 self, int32 lFlags, in Guid pEventGUID, IEnumWIA_DEV_CAPS** ppIEnum) EnumRegisterEventInfo;
+				public new function HRESULT(ref IWiaItem2 self, uint32 ulSize, uint8* pBuffer) Diagnostic;
 			}
 		}
 		[CRepr]
@@ -2312,47 +2312,47 @@ namespace Win32
 			
 			public HRESULT EnumDeviceInfo(int32 lFlags, IEnumWIA_DEV_INFO** ppIEnum) mut
 			{
-				return VT.EnumDeviceInfo(&this, lFlags, ppIEnum);
+				return VT.EnumDeviceInfo(ref this, lFlags, ppIEnum);
 			}
-			public HRESULT CreateDevice(int32 lFlags, BSTR bstrDeviceID, IWiaItem2** ppWiaItem2Root) mut
+			public HRESULT CreateDevice(int32 lFlags, BSTR bstrDeviceID, out IWiaItem2* ppWiaItem2Root) mut
 			{
-				return VT.CreateDevice(&this, lFlags, bstrDeviceID, ppWiaItem2Root);
+				return VT.CreateDevice(ref this, lFlags, bstrDeviceID, out ppWiaItem2Root);
 			}
-			public HRESULT SelectDeviceDlg(HWND hwndParent, int32 lDeviceType, int32 lFlags, BSTR* pbstrDeviceID, IWiaItem2** ppItemRoot) mut
+			public HRESULT SelectDeviceDlg(HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem2* ppItemRoot) mut
 			{
-				return VT.SelectDeviceDlg(&this, hwndParent, lDeviceType, lFlags, pbstrDeviceID, ppItemRoot);
+				return VT.SelectDeviceDlg(ref this, hwndParent, lDeviceType, lFlags, out pbstrDeviceID, out ppItemRoot);
 			}
-			public HRESULT SelectDeviceDlgID(HWND hwndParent, int32 lDeviceType, int32 lFlags, BSTR* pbstrDeviceID) mut
+			public HRESULT SelectDeviceDlgID(HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) mut
 			{
-				return VT.SelectDeviceDlgID(&this, hwndParent, lDeviceType, lFlags, pbstrDeviceID);
+				return VT.SelectDeviceDlgID(ref this, hwndParent, lDeviceType, lFlags, out pbstrDeviceID);
 			}
-			public HRESULT RegisterEventCallbackInterface(int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, IWiaEventCallback* pIWiaEventCallback, IUnknown** pEventObject) mut
+			public HRESULT RegisterEventCallbackInterface(int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, ref IWiaEventCallback pIWiaEventCallback, out IUnknown* pEventObject) mut
 			{
-				return VT.RegisterEventCallbackInterface(&this, lFlags, bstrDeviceID, pEventGUID, pIWiaEventCallback, pEventObject);
+				return VT.RegisterEventCallbackInterface(ref this, lFlags, bstrDeviceID, pEventGUID, ref pIWiaEventCallback, out pEventObject);
 			}
-			public HRESULT RegisterEventCallbackProgram(int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, BSTR bstrFullAppName, BSTR bstrCommandLineArg, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) mut
+			public HRESULT RegisterEventCallbackProgram(int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, BSTR bstrFullAppName, BSTR bstrCommandLineArg, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) mut
 			{
-				return VT.RegisterEventCallbackProgram(&this, lFlags, bstrDeviceID, pEventGUID, bstrFullAppName, bstrCommandLineArg, bstrName, bstrDescription, bstrIcon);
+				return VT.RegisterEventCallbackProgram(ref this, lFlags, bstrDeviceID, pEventGUID, bstrFullAppName, bstrCommandLineArg, bstrName, bstrDescription, bstrIcon);
 			}
-			public HRESULT RegisterEventCallbackCLSID(int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, Guid* pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) mut
+			public HRESULT RegisterEventCallbackCLSID(int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, in Guid pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) mut
 			{
-				return VT.RegisterEventCallbackCLSID(&this, lFlags, bstrDeviceID, pEventGUID, pClsID, bstrName, bstrDescription, bstrIcon);
+				return VT.RegisterEventCallbackCLSID(ref this, lFlags, bstrDeviceID, pEventGUID, pClsID, bstrName, bstrDescription, bstrIcon);
 			}
-			public HRESULT GetImageDlg(int32 lFlags, BSTR bstrDeviceID, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, int32* plNumFiles, BSTR** ppbstrFilePaths, IWiaItem2** ppItem) mut
+			public HRESULT GetImageDlg(int32 lFlags, BSTR bstrDeviceID, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, out IWiaItem2* ppItem) mut
 			{
-				return VT.GetImageDlg(&this, lFlags, bstrDeviceID, hwndParent, bstrFolderName, bstrFilename, plNumFiles, ppbstrFilePaths, ppItem);
+				return VT.GetImageDlg(ref this, lFlags, bstrDeviceID, hwndParent, bstrFolderName, bstrFilename, out plNumFiles, out ppbstrFilePaths, out ppItem);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaDevMgr2 *self, int32 lFlags, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
-				public new function HRESULT(IWiaDevMgr2 *self, int32 lFlags, BSTR bstrDeviceID, IWiaItem2** ppWiaItem2Root) CreateDevice;
-				public new function HRESULT(IWiaDevMgr2 *self, HWND hwndParent, int32 lDeviceType, int32 lFlags, BSTR* pbstrDeviceID, IWiaItem2** ppItemRoot) SelectDeviceDlg;
-				public new function HRESULT(IWiaDevMgr2 *self, HWND hwndParent, int32 lDeviceType, int32 lFlags, BSTR* pbstrDeviceID) SelectDeviceDlgID;
-				public new function HRESULT(IWiaDevMgr2 *self, int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, IWiaEventCallback* pIWiaEventCallback, IUnknown** pEventObject) RegisterEventCallbackInterface;
-				public new function HRESULT(IWiaDevMgr2 *self, int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, BSTR bstrFullAppName, BSTR bstrCommandLineArg, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackProgram;
-				public new function HRESULT(IWiaDevMgr2 *self, int32 lFlags, BSTR bstrDeviceID, Guid* pEventGUID, Guid* pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackCLSID;
-				public new function HRESULT(IWiaDevMgr2 *self, int32 lFlags, BSTR bstrDeviceID, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, int32* plNumFiles, BSTR** ppbstrFilePaths, IWiaItem2** ppItem) GetImageDlg;
+				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, IEnumWIA_DEV_INFO** ppIEnum) EnumDeviceInfo;
+				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, out IWiaItem2* ppWiaItem2Root) CreateDevice;
+				public new function HRESULT(ref IWiaDevMgr2 self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID, out IWiaItem2* ppItemRoot) SelectDeviceDlg;
+				public new function HRESULT(ref IWiaDevMgr2 self, HWND hwndParent, int32 lDeviceType, int32 lFlags, out BSTR pbstrDeviceID) SelectDeviceDlgID;
+				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, ref IWiaEventCallback pIWiaEventCallback, out IUnknown* pEventObject) RegisterEventCallbackInterface;
+				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, BSTR bstrFullAppName, BSTR bstrCommandLineArg, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackProgram;
+				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, in Guid pEventGUID, in Guid pClsID, BSTR bstrName, BSTR bstrDescription, BSTR bstrIcon) RegisterEventCallbackCLSID;
+				public new function HRESULT(ref IWiaDevMgr2 self, int32 lFlags, BSTR bstrDeviceID, HWND hwndParent, BSTR bstrFolderName, BSTR bstrFilename, out int32 plNumFiles, out BSTR* ppbstrFilePaths, out IWiaItem2* ppItem) GetImageDlg;
 			}
 		}
 		[CRepr]
@@ -2362,94 +2362,94 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT drvInitializeWia(uint8* __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, IWiaDrvItem** __MIDL__IWiaMiniDrv0006, IUnknown** __MIDL__IWiaMiniDrv0007, int32* __MIDL__IWiaMiniDrv0008) mut
+			public HRESULT drvInitializeWia(ref uint8 __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, IWiaDrvItem** __MIDL__IWiaMiniDrv0006, IUnknown** __MIDL__IWiaMiniDrv0007, out int32 __MIDL__IWiaMiniDrv0008) mut
 			{
-				return VT.drvInitializeWia(&this, __MIDL__IWiaMiniDrv0000, __MIDL__IWiaMiniDrv0001, __MIDL__IWiaMiniDrv0002, __MIDL__IWiaMiniDrv0003, __MIDL__IWiaMiniDrv0004, __MIDL__IWiaMiniDrv0005, __MIDL__IWiaMiniDrv0006, __MIDL__IWiaMiniDrv0007, __MIDL__IWiaMiniDrv0008);
+				return VT.drvInitializeWia(ref this, ref __MIDL__IWiaMiniDrv0000, __MIDL__IWiaMiniDrv0001, __MIDL__IWiaMiniDrv0002, __MIDL__IWiaMiniDrv0003, __MIDL__IWiaMiniDrv0004, __MIDL__IWiaMiniDrv0005, __MIDL__IWiaMiniDrv0006, __MIDL__IWiaMiniDrv0007, out __MIDL__IWiaMiniDrv0008);
 			}
-			public HRESULT drvAcquireItemData(uint8* __MIDL__IWiaMiniDrv0009, int32 __MIDL__IWiaMiniDrv0010, MINIDRV_TRANSFER_CONTEXT* __MIDL__IWiaMiniDrv0011, int32* __MIDL__IWiaMiniDrv0012) mut
+			public HRESULT drvAcquireItemData(ref uint8 __MIDL__IWiaMiniDrv0009, int32 __MIDL__IWiaMiniDrv0010, out MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0011, out int32 __MIDL__IWiaMiniDrv0012) mut
 			{
-				return VT.drvAcquireItemData(&this, __MIDL__IWiaMiniDrv0009, __MIDL__IWiaMiniDrv0010, __MIDL__IWiaMiniDrv0011, __MIDL__IWiaMiniDrv0012);
+				return VT.drvAcquireItemData(ref this, ref __MIDL__IWiaMiniDrv0009, __MIDL__IWiaMiniDrv0010, out __MIDL__IWiaMiniDrv0011, out __MIDL__IWiaMiniDrv0012);
 			}
-			public HRESULT drvInitItemProperties(uint8* __MIDL__IWiaMiniDrv0013, int32 __MIDL__IWiaMiniDrv0014, int32* __MIDL__IWiaMiniDrv0015) mut
+			public HRESULT drvInitItemProperties(ref uint8 __MIDL__IWiaMiniDrv0013, int32 __MIDL__IWiaMiniDrv0014, out int32 __MIDL__IWiaMiniDrv0015) mut
 			{
-				return VT.drvInitItemProperties(&this, __MIDL__IWiaMiniDrv0013, __MIDL__IWiaMiniDrv0014, __MIDL__IWiaMiniDrv0015);
+				return VT.drvInitItemProperties(ref this, ref __MIDL__IWiaMiniDrv0013, __MIDL__IWiaMiniDrv0014, out __MIDL__IWiaMiniDrv0015);
 			}
-			public HRESULT drvValidateItemProperties(uint8* __MIDL__IWiaMiniDrv0016, int32 __MIDL__IWiaMiniDrv0017, uint32 __MIDL__IWiaMiniDrv0018, PROPSPEC* __MIDL__IWiaMiniDrv0019, int32* __MIDL__IWiaMiniDrv0020) mut
+			public HRESULT drvValidateItemProperties(ref uint8 __MIDL__IWiaMiniDrv0016, int32 __MIDL__IWiaMiniDrv0017, uint32 __MIDL__IWiaMiniDrv0018, in PROPSPEC __MIDL__IWiaMiniDrv0019, out int32 __MIDL__IWiaMiniDrv0020) mut
 			{
-				return VT.drvValidateItemProperties(&this, __MIDL__IWiaMiniDrv0016, __MIDL__IWiaMiniDrv0017, __MIDL__IWiaMiniDrv0018, __MIDL__IWiaMiniDrv0019, __MIDL__IWiaMiniDrv0020);
+				return VT.drvValidateItemProperties(ref this, ref __MIDL__IWiaMiniDrv0016, __MIDL__IWiaMiniDrv0017, __MIDL__IWiaMiniDrv0018, __MIDL__IWiaMiniDrv0019, out __MIDL__IWiaMiniDrv0020);
 			}
-			public HRESULT drvWriteItemProperties(uint8* __MIDL__IWiaMiniDrv0021, int32 __MIDL__IWiaMiniDrv0022, MINIDRV_TRANSFER_CONTEXT* __MIDL__IWiaMiniDrv0023, int32* __MIDL__IWiaMiniDrv0024) mut
+			public HRESULT drvWriteItemProperties(ref uint8 __MIDL__IWiaMiniDrv0021, int32 __MIDL__IWiaMiniDrv0022, ref MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0023, out int32 __MIDL__IWiaMiniDrv0024) mut
 			{
-				return VT.drvWriteItemProperties(&this, __MIDL__IWiaMiniDrv0021, __MIDL__IWiaMiniDrv0022, __MIDL__IWiaMiniDrv0023, __MIDL__IWiaMiniDrv0024);
+				return VT.drvWriteItemProperties(ref this, ref __MIDL__IWiaMiniDrv0021, __MIDL__IWiaMiniDrv0022, ref __MIDL__IWiaMiniDrv0023, out __MIDL__IWiaMiniDrv0024);
 			}
-			public HRESULT drvReadItemProperties(uint8* __MIDL__IWiaMiniDrv0025, int32 __MIDL__IWiaMiniDrv0026, uint32 __MIDL__IWiaMiniDrv0027, PROPSPEC* __MIDL__IWiaMiniDrv0028, int32* __MIDL__IWiaMiniDrv0029) mut
+			public HRESULT drvReadItemProperties(ref uint8 __MIDL__IWiaMiniDrv0025, int32 __MIDL__IWiaMiniDrv0026, uint32 __MIDL__IWiaMiniDrv0027, in PROPSPEC __MIDL__IWiaMiniDrv0028, out int32 __MIDL__IWiaMiniDrv0029) mut
 			{
-				return VT.drvReadItemProperties(&this, __MIDL__IWiaMiniDrv0025, __MIDL__IWiaMiniDrv0026, __MIDL__IWiaMiniDrv0027, __MIDL__IWiaMiniDrv0028, __MIDL__IWiaMiniDrv0029);
+				return VT.drvReadItemProperties(ref this, ref __MIDL__IWiaMiniDrv0025, __MIDL__IWiaMiniDrv0026, __MIDL__IWiaMiniDrv0027, __MIDL__IWiaMiniDrv0028, out __MIDL__IWiaMiniDrv0029);
 			}
-			public HRESULT drvLockWiaDevice(uint8* __MIDL__IWiaMiniDrv0030, int32 __MIDL__IWiaMiniDrv0031, int32* __MIDL__IWiaMiniDrv0032) mut
+			public HRESULT drvLockWiaDevice(ref uint8 __MIDL__IWiaMiniDrv0030, int32 __MIDL__IWiaMiniDrv0031, out int32 __MIDL__IWiaMiniDrv0032) mut
 			{
-				return VT.drvLockWiaDevice(&this, __MIDL__IWiaMiniDrv0030, __MIDL__IWiaMiniDrv0031, __MIDL__IWiaMiniDrv0032);
+				return VT.drvLockWiaDevice(ref this, ref __MIDL__IWiaMiniDrv0030, __MIDL__IWiaMiniDrv0031, out __MIDL__IWiaMiniDrv0032);
 			}
-			public HRESULT drvUnLockWiaDevice(uint8* __MIDL__IWiaMiniDrv0033, int32 __MIDL__IWiaMiniDrv0034, int32* __MIDL__IWiaMiniDrv0035) mut
+			public HRESULT drvUnLockWiaDevice(ref uint8 __MIDL__IWiaMiniDrv0033, int32 __MIDL__IWiaMiniDrv0034, out int32 __MIDL__IWiaMiniDrv0035) mut
 			{
-				return VT.drvUnLockWiaDevice(&this, __MIDL__IWiaMiniDrv0033, __MIDL__IWiaMiniDrv0034, __MIDL__IWiaMiniDrv0035);
+				return VT.drvUnLockWiaDevice(ref this, ref __MIDL__IWiaMiniDrv0033, __MIDL__IWiaMiniDrv0034, out __MIDL__IWiaMiniDrv0035);
 			}
-			public HRESULT drvAnalyzeItem(uint8* __MIDL__IWiaMiniDrv0036, int32 __MIDL__IWiaMiniDrv0037, int32* __MIDL__IWiaMiniDrv0038) mut
+			public HRESULT drvAnalyzeItem(ref uint8 __MIDL__IWiaMiniDrv0036, int32 __MIDL__IWiaMiniDrv0037, ref int32 __MIDL__IWiaMiniDrv0038) mut
 			{
-				return VT.drvAnalyzeItem(&this, __MIDL__IWiaMiniDrv0036, __MIDL__IWiaMiniDrv0037, __MIDL__IWiaMiniDrv0038);
+				return VT.drvAnalyzeItem(ref this, ref __MIDL__IWiaMiniDrv0036, __MIDL__IWiaMiniDrv0037, ref __MIDL__IWiaMiniDrv0038);
 			}
-			public HRESULT drvGetDeviceErrorStr(int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, PWSTR* __MIDL__IWiaMiniDrv0041, int32* __MIDL__IWiaMiniDrv0042) mut
+			public HRESULT drvGetDeviceErrorStr(int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, PWSTR* __MIDL__IWiaMiniDrv0041, out int32 __MIDL__IWiaMiniDrv0042) mut
 			{
-				return VT.drvGetDeviceErrorStr(&this, __MIDL__IWiaMiniDrv0039, __MIDL__IWiaMiniDrv0040, __MIDL__IWiaMiniDrv0041, __MIDL__IWiaMiniDrv0042);
+				return VT.drvGetDeviceErrorStr(ref this, __MIDL__IWiaMiniDrv0039, __MIDL__IWiaMiniDrv0040, __MIDL__IWiaMiniDrv0041, out __MIDL__IWiaMiniDrv0042);
 			}
-			public HRESULT drvDeviceCommand(uint8* __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, Guid* __MIDL__IWiaMiniDrv0045, IWiaDrvItem** __MIDL__IWiaMiniDrv0046, int32* __MIDL__IWiaMiniDrv0047) mut
+			public HRESULT drvDeviceCommand(ref uint8 __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, in Guid __MIDL__IWiaMiniDrv0045, IWiaDrvItem** __MIDL__IWiaMiniDrv0046, out int32 __MIDL__IWiaMiniDrv0047) mut
 			{
-				return VT.drvDeviceCommand(&this, __MIDL__IWiaMiniDrv0043, __MIDL__IWiaMiniDrv0044, __MIDL__IWiaMiniDrv0045, __MIDL__IWiaMiniDrv0046, __MIDL__IWiaMiniDrv0047);
+				return VT.drvDeviceCommand(ref this, ref __MIDL__IWiaMiniDrv0043, __MIDL__IWiaMiniDrv0044, __MIDL__IWiaMiniDrv0045, __MIDL__IWiaMiniDrv0046, out __MIDL__IWiaMiniDrv0047);
 			}
-			public HRESULT drvGetCapabilities(uint8* __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, int32* __MIDL__IWiaMiniDrv0050, WIA_DEV_CAP_DRV** __MIDL__IWiaMiniDrv0051, int32* __MIDL__IWiaMiniDrv0052) mut
+			public HRESULT drvGetCapabilities(ref uint8 __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, out int32 __MIDL__IWiaMiniDrv0050, WIA_DEV_CAP_DRV** __MIDL__IWiaMiniDrv0051, out int32 __MIDL__IWiaMiniDrv0052) mut
 			{
-				return VT.drvGetCapabilities(&this, __MIDL__IWiaMiniDrv0048, __MIDL__IWiaMiniDrv0049, __MIDL__IWiaMiniDrv0050, __MIDL__IWiaMiniDrv0051, __MIDL__IWiaMiniDrv0052);
+				return VT.drvGetCapabilities(ref this, ref __MIDL__IWiaMiniDrv0048, __MIDL__IWiaMiniDrv0049, out __MIDL__IWiaMiniDrv0050, __MIDL__IWiaMiniDrv0051, out __MIDL__IWiaMiniDrv0052);
 			}
-			public HRESULT drvDeleteItem(uint8* __MIDL__IWiaMiniDrv0053, int32 __MIDL__IWiaMiniDrv0054, int32* __MIDL__IWiaMiniDrv0055) mut
+			public HRESULT drvDeleteItem(ref uint8 __MIDL__IWiaMiniDrv0053, int32 __MIDL__IWiaMiniDrv0054, out int32 __MIDL__IWiaMiniDrv0055) mut
 			{
-				return VT.drvDeleteItem(&this, __MIDL__IWiaMiniDrv0053, __MIDL__IWiaMiniDrv0054, __MIDL__IWiaMiniDrv0055);
+				return VT.drvDeleteItem(ref this, ref __MIDL__IWiaMiniDrv0053, __MIDL__IWiaMiniDrv0054, out __MIDL__IWiaMiniDrv0055);
 			}
-			public HRESULT drvFreeDrvItemContext(int32 __MIDL__IWiaMiniDrv0056, uint8* __MIDL__IWiaMiniDrv0057, int32* __MIDL__IWiaMiniDrv0058) mut
+			public HRESULT drvFreeDrvItemContext(int32 __MIDL__IWiaMiniDrv0056, ref uint8 __MIDL__IWiaMiniDrv0057, out int32 __MIDL__IWiaMiniDrv0058) mut
 			{
-				return VT.drvFreeDrvItemContext(&this, __MIDL__IWiaMiniDrv0056, __MIDL__IWiaMiniDrv0057, __MIDL__IWiaMiniDrv0058);
+				return VT.drvFreeDrvItemContext(ref this, __MIDL__IWiaMiniDrv0056, ref __MIDL__IWiaMiniDrv0057, out __MIDL__IWiaMiniDrv0058);
 			}
-			public HRESULT drvGetWiaFormatInfo(uint8* __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, int32* __MIDL__IWiaMiniDrv0061, WIA_FORMAT_INFO** __MIDL__IWiaMiniDrv0062, int32* __MIDL__IWiaMiniDrv0063) mut
+			public HRESULT drvGetWiaFormatInfo(ref uint8 __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, out int32 __MIDL__IWiaMiniDrv0061, WIA_FORMAT_INFO** __MIDL__IWiaMiniDrv0062, out int32 __MIDL__IWiaMiniDrv0063) mut
 			{
-				return VT.drvGetWiaFormatInfo(&this, __MIDL__IWiaMiniDrv0059, __MIDL__IWiaMiniDrv0060, __MIDL__IWiaMiniDrv0061, __MIDL__IWiaMiniDrv0062, __MIDL__IWiaMiniDrv0063);
+				return VT.drvGetWiaFormatInfo(ref this, ref __MIDL__IWiaMiniDrv0059, __MIDL__IWiaMiniDrv0060, out __MIDL__IWiaMiniDrv0061, __MIDL__IWiaMiniDrv0062, out __MIDL__IWiaMiniDrv0063);
 			}
-			public HRESULT drvNotifyPnpEvent(Guid* pEventGUID, BSTR bstrDeviceID, uint32 ulReserved) mut
+			public HRESULT drvNotifyPnpEvent(in Guid pEventGUID, BSTR bstrDeviceID, uint32 ulReserved) mut
 			{
-				return VT.drvNotifyPnpEvent(&this, pEventGUID, bstrDeviceID, ulReserved);
+				return VT.drvNotifyPnpEvent(ref this, pEventGUID, bstrDeviceID, ulReserved);
 			}
-			public HRESULT drvUnInitializeWia(uint8* __MIDL__IWiaMiniDrv0064) mut
+			public HRESULT drvUnInitializeWia(ref uint8 __MIDL__IWiaMiniDrv0064) mut
 			{
-				return VT.drvUnInitializeWia(&this, __MIDL__IWiaMiniDrv0064);
+				return VT.drvUnInitializeWia(ref this, ref __MIDL__IWiaMiniDrv0064);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, IWiaDrvItem** __MIDL__IWiaMiniDrv0006, IUnknown** __MIDL__IWiaMiniDrv0007, int32* __MIDL__IWiaMiniDrv0008) drvInitializeWia;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0009, int32 __MIDL__IWiaMiniDrv0010, MINIDRV_TRANSFER_CONTEXT* __MIDL__IWiaMiniDrv0011, int32* __MIDL__IWiaMiniDrv0012) drvAcquireItemData;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0013, int32 __MIDL__IWiaMiniDrv0014, int32* __MIDL__IWiaMiniDrv0015) drvInitItemProperties;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0016, int32 __MIDL__IWiaMiniDrv0017, uint32 __MIDL__IWiaMiniDrv0018, PROPSPEC* __MIDL__IWiaMiniDrv0019, int32* __MIDL__IWiaMiniDrv0020) drvValidateItemProperties;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0021, int32 __MIDL__IWiaMiniDrv0022, MINIDRV_TRANSFER_CONTEXT* __MIDL__IWiaMiniDrv0023, int32* __MIDL__IWiaMiniDrv0024) drvWriteItemProperties;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0025, int32 __MIDL__IWiaMiniDrv0026, uint32 __MIDL__IWiaMiniDrv0027, PROPSPEC* __MIDL__IWiaMiniDrv0028, int32* __MIDL__IWiaMiniDrv0029) drvReadItemProperties;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0030, int32 __MIDL__IWiaMiniDrv0031, int32* __MIDL__IWiaMiniDrv0032) drvLockWiaDevice;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0033, int32 __MIDL__IWiaMiniDrv0034, int32* __MIDL__IWiaMiniDrv0035) drvUnLockWiaDevice;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0036, int32 __MIDL__IWiaMiniDrv0037, int32* __MIDL__IWiaMiniDrv0038) drvAnalyzeItem;
-				public new function HRESULT(IWiaMiniDrv *self, int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, PWSTR* __MIDL__IWiaMiniDrv0041, int32* __MIDL__IWiaMiniDrv0042) drvGetDeviceErrorStr;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, Guid* __MIDL__IWiaMiniDrv0045, IWiaDrvItem** __MIDL__IWiaMiniDrv0046, int32* __MIDL__IWiaMiniDrv0047) drvDeviceCommand;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, int32* __MIDL__IWiaMiniDrv0050, WIA_DEV_CAP_DRV** __MIDL__IWiaMiniDrv0051, int32* __MIDL__IWiaMiniDrv0052) drvGetCapabilities;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0053, int32 __MIDL__IWiaMiniDrv0054, int32* __MIDL__IWiaMiniDrv0055) drvDeleteItem;
-				public new function HRESULT(IWiaMiniDrv *self, int32 __MIDL__IWiaMiniDrv0056, uint8* __MIDL__IWiaMiniDrv0057, int32* __MIDL__IWiaMiniDrv0058) drvFreeDrvItemContext;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, int32* __MIDL__IWiaMiniDrv0061, WIA_FORMAT_INFO** __MIDL__IWiaMiniDrv0062, int32* __MIDL__IWiaMiniDrv0063) drvGetWiaFormatInfo;
-				public new function HRESULT(IWiaMiniDrv *self, Guid* pEventGUID, BSTR bstrDeviceID, uint32 ulReserved) drvNotifyPnpEvent;
-				public new function HRESULT(IWiaMiniDrv *self, uint8* __MIDL__IWiaMiniDrv0064) drvUnInitializeWia;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0000, int32 __MIDL__IWiaMiniDrv0001, BSTR __MIDL__IWiaMiniDrv0002, BSTR __MIDL__IWiaMiniDrv0003, IUnknown* __MIDL__IWiaMiniDrv0004, IUnknown* __MIDL__IWiaMiniDrv0005, IWiaDrvItem** __MIDL__IWiaMiniDrv0006, IUnknown** __MIDL__IWiaMiniDrv0007, out int32 __MIDL__IWiaMiniDrv0008) drvInitializeWia;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0009, int32 __MIDL__IWiaMiniDrv0010, out MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0011, out int32 __MIDL__IWiaMiniDrv0012) drvAcquireItemData;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0013, int32 __MIDL__IWiaMiniDrv0014, out int32 __MIDL__IWiaMiniDrv0015) drvInitItemProperties;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0016, int32 __MIDL__IWiaMiniDrv0017, uint32 __MIDL__IWiaMiniDrv0018, in PROPSPEC __MIDL__IWiaMiniDrv0019, out int32 __MIDL__IWiaMiniDrv0020) drvValidateItemProperties;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0021, int32 __MIDL__IWiaMiniDrv0022, ref MINIDRV_TRANSFER_CONTEXT __MIDL__IWiaMiniDrv0023, out int32 __MIDL__IWiaMiniDrv0024) drvWriteItemProperties;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0025, int32 __MIDL__IWiaMiniDrv0026, uint32 __MIDL__IWiaMiniDrv0027, in PROPSPEC __MIDL__IWiaMiniDrv0028, out int32 __MIDL__IWiaMiniDrv0029) drvReadItemProperties;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0030, int32 __MIDL__IWiaMiniDrv0031, out int32 __MIDL__IWiaMiniDrv0032) drvLockWiaDevice;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0033, int32 __MIDL__IWiaMiniDrv0034, out int32 __MIDL__IWiaMiniDrv0035) drvUnLockWiaDevice;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0036, int32 __MIDL__IWiaMiniDrv0037, ref int32 __MIDL__IWiaMiniDrv0038) drvAnalyzeItem;
+				public new function HRESULT(ref IWiaMiniDrv self, int32 __MIDL__IWiaMiniDrv0039, int32 __MIDL__IWiaMiniDrv0040, PWSTR* __MIDL__IWiaMiniDrv0041, out int32 __MIDL__IWiaMiniDrv0042) drvGetDeviceErrorStr;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0043, int32 __MIDL__IWiaMiniDrv0044, in Guid __MIDL__IWiaMiniDrv0045, IWiaDrvItem** __MIDL__IWiaMiniDrv0046, out int32 __MIDL__IWiaMiniDrv0047) drvDeviceCommand;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0048, int32 __MIDL__IWiaMiniDrv0049, out int32 __MIDL__IWiaMiniDrv0050, WIA_DEV_CAP_DRV** __MIDL__IWiaMiniDrv0051, out int32 __MIDL__IWiaMiniDrv0052) drvGetCapabilities;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0053, int32 __MIDL__IWiaMiniDrv0054, out int32 __MIDL__IWiaMiniDrv0055) drvDeleteItem;
+				public new function HRESULT(ref IWiaMiniDrv self, int32 __MIDL__IWiaMiniDrv0056, ref uint8 __MIDL__IWiaMiniDrv0057, out int32 __MIDL__IWiaMiniDrv0058) drvFreeDrvItemContext;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0059, int32 __MIDL__IWiaMiniDrv0060, out int32 __MIDL__IWiaMiniDrv0061, WIA_FORMAT_INFO** __MIDL__IWiaMiniDrv0062, out int32 __MIDL__IWiaMiniDrv0063) drvGetWiaFormatInfo;
+				public new function HRESULT(ref IWiaMiniDrv self, in Guid pEventGUID, BSTR bstrDeviceID, uint32 ulReserved) drvNotifyPnpEvent;
+				public new function HRESULT(ref IWiaMiniDrv self, ref uint8 __MIDL__IWiaMiniDrv0064) drvUnInitializeWia;
 			}
 		}
 		[CRepr]
@@ -2459,14 +2459,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MiniDrvCallback(int32 lReason, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, MINIDRV_TRANSFER_CONTEXT* pTranCtx, int32 lReserved) mut
+			public HRESULT MiniDrvCallback(int32 lReason, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, ref MINIDRV_TRANSFER_CONTEXT pTranCtx, int32 lReserved) mut
 			{
-				return VT.MiniDrvCallback(&this, lReason, lStatus, lPercentComplete, lOffset, lLength, pTranCtx, lReserved);
+				return VT.MiniDrvCallback(ref this, lReason, lStatus, lPercentComplete, lOffset, lLength, ref pTranCtx, lReserved);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaMiniDrvCallBack *self, int32 lReason, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, MINIDRV_TRANSFER_CONTEXT* pTranCtx, int32 lReserved) MiniDrvCallback;
+				public new function HRESULT(ref IWiaMiniDrvCallBack self, int32 lReason, int32 lStatus, int32 lPercentComplete, int32 lOffset, int32 lLength, ref MINIDRV_TRANSFER_CONTEXT pTranCtx, int32 lReserved) MiniDrvCallback;
 			}
 		}
 		[CRepr]
@@ -2478,17 +2478,17 @@ namespace Win32
 			
 			public HRESULT GetNextStream(int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppIStream) mut
 			{
-				return VT.GetNextStream(&this, lFlags, bstrItemName, bstrFullItemName, ppIStream);
+				return VT.GetNextStream(ref this, lFlags, bstrItemName, bstrFullItemName, ppIStream);
 			}
-			public HRESULT SendMessage(int32 lFlags, WiaTransferParams* pWiaTransferParams) mut
+			public HRESULT SendMessage(int32 lFlags, ref WiaTransferParams pWiaTransferParams) mut
 			{
-				return VT.SendMessage(&this, lFlags, pWiaTransferParams);
+				return VT.SendMessage(ref this, lFlags, ref pWiaTransferParams);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaMiniDrvTransferCallback *self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppIStream) GetNextStream;
-				public new function HRESULT(IWiaMiniDrvTransferCallback *self, int32 lFlags, WiaTransferParams* pWiaTransferParams) SendMessage;
+				public new function HRESULT(ref IWiaMiniDrvTransferCallback self, int32 lFlags, BSTR bstrItemName, BSTR bstrFullItemName, IStream** ppIStream) GetNextStream;
+				public new function HRESULT(ref IWiaMiniDrvTransferCallback self, int32 lFlags, ref WiaTransferParams pWiaTransferParams) SendMessage;
 			}
 		}
 		[CRepr]
@@ -2498,74 +2498,74 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItemFlags(int32* __MIDL__IWiaDrvItem0000) mut
+			public HRESULT GetItemFlags(out int32 __MIDL__IWiaDrvItem0000) mut
 			{
-				return VT.GetItemFlags(&this, __MIDL__IWiaDrvItem0000);
+				return VT.GetItemFlags(ref this, out __MIDL__IWiaDrvItem0000);
 			}
 			public HRESULT GetDeviceSpecContext(uint8** __MIDL__IWiaDrvItem0001) mut
 			{
-				return VT.GetDeviceSpecContext(&this, __MIDL__IWiaDrvItem0001);
+				return VT.GetDeviceSpecContext(ref this, __MIDL__IWiaDrvItem0001);
 			}
 			public HRESULT GetFullItemName(BSTR* __MIDL__IWiaDrvItem0002) mut
 			{
-				return VT.GetFullItemName(&this, __MIDL__IWiaDrvItem0002);
+				return VT.GetFullItemName(ref this, __MIDL__IWiaDrvItem0002);
 			}
 			public HRESULT GetItemName(BSTR* __MIDL__IWiaDrvItem0003) mut
 			{
-				return VT.GetItemName(&this, __MIDL__IWiaDrvItem0003);
+				return VT.GetItemName(ref this, __MIDL__IWiaDrvItem0003);
 			}
 			public HRESULT AddItemToFolder(IWiaDrvItem* __MIDL__IWiaDrvItem0004) mut
 			{
-				return VT.AddItemToFolder(&this, __MIDL__IWiaDrvItem0004);
+				return VT.AddItemToFolder(ref this, __MIDL__IWiaDrvItem0004);
 			}
 			public HRESULT UnlinkItemTree(int32 __MIDL__IWiaDrvItem0005) mut
 			{
-				return VT.UnlinkItemTree(&this, __MIDL__IWiaDrvItem0005);
+				return VT.UnlinkItemTree(ref this, __MIDL__IWiaDrvItem0005);
 			}
 			public HRESULT RemoveItemFromFolder(int32 __MIDL__IWiaDrvItem0006) mut
 			{
-				return VT.RemoveItemFromFolder(&this, __MIDL__IWiaDrvItem0006);
+				return VT.RemoveItemFromFolder(ref this, __MIDL__IWiaDrvItem0006);
 			}
 			public HRESULT FindItemByName(int32 __MIDL__IWiaDrvItem0007, BSTR __MIDL__IWiaDrvItem0008, IWiaDrvItem** __MIDL__IWiaDrvItem0009) mut
 			{
-				return VT.FindItemByName(&this, __MIDL__IWiaDrvItem0007, __MIDL__IWiaDrvItem0008, __MIDL__IWiaDrvItem0009);
+				return VT.FindItemByName(ref this, __MIDL__IWiaDrvItem0007, __MIDL__IWiaDrvItem0008, __MIDL__IWiaDrvItem0009);
 			}
 			public HRESULT FindChildItemByName(BSTR __MIDL__IWiaDrvItem0010, IWiaDrvItem** __MIDL__IWiaDrvItem0011) mut
 			{
-				return VT.FindChildItemByName(&this, __MIDL__IWiaDrvItem0010, __MIDL__IWiaDrvItem0011);
+				return VT.FindChildItemByName(ref this, __MIDL__IWiaDrvItem0010, __MIDL__IWiaDrvItem0011);
 			}
 			public HRESULT GetParentItem(IWiaDrvItem** __MIDL__IWiaDrvItem0012) mut
 			{
-				return VT.GetParentItem(&this, __MIDL__IWiaDrvItem0012);
+				return VT.GetParentItem(ref this, __MIDL__IWiaDrvItem0012);
 			}
 			public HRESULT GetFirstChildItem(IWiaDrvItem** __MIDL__IWiaDrvItem0013) mut
 			{
-				return VT.GetFirstChildItem(&this, __MIDL__IWiaDrvItem0013);
+				return VT.GetFirstChildItem(ref this, __MIDL__IWiaDrvItem0013);
 			}
 			public HRESULT GetNextSiblingItem(IWiaDrvItem** __MIDL__IWiaDrvItem0014) mut
 			{
-				return VT.GetNextSiblingItem(&this, __MIDL__IWiaDrvItem0014);
+				return VT.GetNextSiblingItem(ref this, __MIDL__IWiaDrvItem0014);
 			}
 			public HRESULT DumpItemData(BSTR* __MIDL__IWiaDrvItem0015) mut
 			{
-				return VT.DumpItemData(&this, __MIDL__IWiaDrvItem0015);
+				return VT.DumpItemData(ref this, __MIDL__IWiaDrvItem0015);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaDrvItem *self, int32* __MIDL__IWiaDrvItem0000) GetItemFlags;
-				public new function HRESULT(IWiaDrvItem *self, uint8** __MIDL__IWiaDrvItem0001) GetDeviceSpecContext;
-				public new function HRESULT(IWiaDrvItem *self, BSTR* __MIDL__IWiaDrvItem0002) GetFullItemName;
-				public new function HRESULT(IWiaDrvItem *self, BSTR* __MIDL__IWiaDrvItem0003) GetItemName;
-				public new function HRESULT(IWiaDrvItem *self, IWiaDrvItem* __MIDL__IWiaDrvItem0004) AddItemToFolder;
-				public new function HRESULT(IWiaDrvItem *self, int32 __MIDL__IWiaDrvItem0005) UnlinkItemTree;
-				public new function HRESULT(IWiaDrvItem *self, int32 __MIDL__IWiaDrvItem0006) RemoveItemFromFolder;
-				public new function HRESULT(IWiaDrvItem *self, int32 __MIDL__IWiaDrvItem0007, BSTR __MIDL__IWiaDrvItem0008, IWiaDrvItem** __MIDL__IWiaDrvItem0009) FindItemByName;
-				public new function HRESULT(IWiaDrvItem *self, BSTR __MIDL__IWiaDrvItem0010, IWiaDrvItem** __MIDL__IWiaDrvItem0011) FindChildItemByName;
-				public new function HRESULT(IWiaDrvItem *self, IWiaDrvItem** __MIDL__IWiaDrvItem0012) GetParentItem;
-				public new function HRESULT(IWiaDrvItem *self, IWiaDrvItem** __MIDL__IWiaDrvItem0013) GetFirstChildItem;
-				public new function HRESULT(IWiaDrvItem *self, IWiaDrvItem** __MIDL__IWiaDrvItem0014) GetNextSiblingItem;
-				public new function HRESULT(IWiaDrvItem *self, BSTR* __MIDL__IWiaDrvItem0015) DumpItemData;
+				public new function HRESULT(ref IWiaDrvItem self, out int32 __MIDL__IWiaDrvItem0000) GetItemFlags;
+				public new function HRESULT(ref IWiaDrvItem self, uint8** __MIDL__IWiaDrvItem0001) GetDeviceSpecContext;
+				public new function HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0002) GetFullItemName;
+				public new function HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0003) GetItemName;
+				public new function HRESULT(ref IWiaDrvItem self, IWiaDrvItem* __MIDL__IWiaDrvItem0004) AddItemToFolder;
+				public new function HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0005) UnlinkItemTree;
+				public new function HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0006) RemoveItemFromFolder;
+				public new function HRESULT(ref IWiaDrvItem self, int32 __MIDL__IWiaDrvItem0007, BSTR __MIDL__IWiaDrvItem0008, IWiaDrvItem** __MIDL__IWiaDrvItem0009) FindItemByName;
+				public new function HRESULT(ref IWiaDrvItem self, BSTR __MIDL__IWiaDrvItem0010, IWiaDrvItem** __MIDL__IWiaDrvItem0011) FindChildItemByName;
+				public new function HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0012) GetParentItem;
+				public new function HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0013) GetFirstChildItem;
+				public new function HRESULT(ref IWiaDrvItem self, IWiaDrvItem** __MIDL__IWiaDrvItem0014) GetNextSiblingItem;
+				public new function HRESULT(ref IWiaDrvItem self, BSTR* __MIDL__IWiaDrvItem0015) DumpItemData;
 			}
 		}
 		[CRepr]
@@ -2575,74 +2575,74 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PreviewVisible(BOOL* pbPreviewVisible) mut
+			public HRESULT get_PreviewVisible(out BOOL pbPreviewVisible) mut
 			{
-				return VT.get_PreviewVisible(&this, pbPreviewVisible);
+				return VT.get_PreviewVisible(ref this, out pbPreviewVisible);
 			}
 			public HRESULT put_PreviewVisible(BOOL bPreviewVisible) mut
 			{
-				return VT.put_PreviewVisible(&this, bPreviewVisible);
+				return VT.put_PreviewVisible(ref this, bPreviewVisible);
 			}
 			public HRESULT get_ImagesDirectory(BSTR* pbstrImageDirectory) mut
 			{
-				return VT.get_ImagesDirectory(&this, pbstrImageDirectory);
+				return VT.get_ImagesDirectory(ref this, pbstrImageDirectory);
 			}
 			public HRESULT put_ImagesDirectory(BSTR bstrImageDirectory) mut
 			{
-				return VT.put_ImagesDirectory(&this, bstrImageDirectory);
+				return VT.put_ImagesDirectory(ref this, bstrImageDirectory);
 			}
 			public HRESULT CreateVideoByWiaDevID(BSTR bstrWiaDeviceID, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) mut
 			{
-				return VT.CreateVideoByWiaDevID(&this, bstrWiaDeviceID, hwndParent, bStretchToFitParent, bAutoBeginPlayback);
+				return VT.CreateVideoByWiaDevID(ref this, bstrWiaDeviceID, hwndParent, bStretchToFitParent, bAutoBeginPlayback);
 			}
 			public HRESULT CreateVideoByDevNum(uint32 uiDeviceNumber, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) mut
 			{
-				return VT.CreateVideoByDevNum(&this, uiDeviceNumber, hwndParent, bStretchToFitParent, bAutoBeginPlayback);
+				return VT.CreateVideoByDevNum(ref this, uiDeviceNumber, hwndParent, bStretchToFitParent, bAutoBeginPlayback);
 			}
 			public HRESULT CreateVideoByName(BSTR bstrFriendlyName, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) mut
 			{
-				return VT.CreateVideoByName(&this, bstrFriendlyName, hwndParent, bStretchToFitParent, bAutoBeginPlayback);
+				return VT.CreateVideoByName(ref this, bstrFriendlyName, hwndParent, bStretchToFitParent, bAutoBeginPlayback);
 			}
 			public HRESULT DestroyVideo() mut
 			{
-				return VT.DestroyVideo(&this);
+				return VT.DestroyVideo(ref this);
 			}
 			public HRESULT Play() mut
 			{
-				return VT.Play(&this);
+				return VT.Play(ref this);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT TakePicture(BSTR* pbstrNewImageFilename) mut
 			{
-				return VT.TakePicture(&this, pbstrNewImageFilename);
+				return VT.TakePicture(ref this, pbstrNewImageFilename);
 			}
 			public HRESULT ResizeVideo(BOOL bStretchToFitParent) mut
 			{
-				return VT.ResizeVideo(&this, bStretchToFitParent);
+				return VT.ResizeVideo(ref this, bStretchToFitParent);
 			}
-			public HRESULT GetCurrentState(WIAVIDEO_STATE* pState) mut
+			public HRESULT GetCurrentState(out WIAVIDEO_STATE pState) mut
 			{
-				return VT.GetCurrentState(&this, pState);
+				return VT.GetCurrentState(ref this, out pState);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaVideo *self, BOOL* pbPreviewVisible) get_PreviewVisible;
-				public new function HRESULT(IWiaVideo *self, BOOL bPreviewVisible) put_PreviewVisible;
-				public new function HRESULT(IWiaVideo *self, BSTR* pbstrImageDirectory) get_ImagesDirectory;
-				public new function HRESULT(IWiaVideo *self, BSTR bstrImageDirectory) put_ImagesDirectory;
-				public new function HRESULT(IWiaVideo *self, BSTR bstrWiaDeviceID, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByWiaDevID;
-				public new function HRESULT(IWiaVideo *self, uint32 uiDeviceNumber, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByDevNum;
-				public new function HRESULT(IWiaVideo *self, BSTR bstrFriendlyName, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByName;
-				public new function HRESULT(IWiaVideo *self) DestroyVideo;
-				public new function HRESULT(IWiaVideo *self) Play;
-				public new function HRESULT(IWiaVideo *self) Pause;
-				public new function HRESULT(IWiaVideo *self, BSTR* pbstrNewImageFilename) TakePicture;
-				public new function HRESULT(IWiaVideo *self, BOOL bStretchToFitParent) ResizeVideo;
-				public new function HRESULT(IWiaVideo *self, WIAVIDEO_STATE* pState) GetCurrentState;
+				public new function HRESULT(ref IWiaVideo self, out BOOL pbPreviewVisible) get_PreviewVisible;
+				public new function HRESULT(ref IWiaVideo self, BOOL bPreviewVisible) put_PreviewVisible;
+				public new function HRESULT(ref IWiaVideo self, BSTR* pbstrImageDirectory) get_ImagesDirectory;
+				public new function HRESULT(ref IWiaVideo self, BSTR bstrImageDirectory) put_ImagesDirectory;
+				public new function HRESULT(ref IWiaVideo self, BSTR bstrWiaDeviceID, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByWiaDevID;
+				public new function HRESULT(ref IWiaVideo self, uint32 uiDeviceNumber, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByDevNum;
+				public new function HRESULT(ref IWiaVideo self, BSTR bstrFriendlyName, HWND hwndParent, BOOL bStretchToFitParent, BOOL bAutoBeginPlayback) CreateVideoByName;
+				public new function HRESULT(ref IWiaVideo self) DestroyVideo;
+				public new function HRESULT(ref IWiaVideo self) Play;
+				public new function HRESULT(ref IWiaVideo self) Pause;
+				public new function HRESULT(ref IWiaVideo self, BSTR* pbstrNewImageFilename) TakePicture;
+				public new function HRESULT(ref IWiaVideo self, BOOL bStretchToFitParent) ResizeVideo;
+				public new function HRESULT(ref IWiaVideo self, out WIAVIDEO_STATE pState) GetCurrentState;
 			}
 		}
 		[CRepr]
@@ -2652,19 +2652,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DeviceDialog(DEVICEDIALOGDATA2* pDeviceDialogData) mut
+			public HRESULT DeviceDialog(ref DEVICEDIALOGDATA2 pDeviceDialogData) mut
 			{
-				return VT.DeviceDialog(&this, pDeviceDialogData);
+				return VT.DeviceDialog(ref this, ref pDeviceDialogData);
 			}
-			public HRESULT GetDeviceIcon(BSTR bstrDeviceId, HICON* phIcon, uint32 nSize) mut
+			public HRESULT GetDeviceIcon(BSTR bstrDeviceId, out HICON phIcon, uint32 nSize) mut
 			{
-				return VT.GetDeviceIcon(&this, bstrDeviceId, phIcon, nSize);
+				return VT.GetDeviceIcon(ref this, bstrDeviceId, out phIcon, nSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaUIExtension2 *self, DEVICEDIALOGDATA2* pDeviceDialogData) DeviceDialog;
-				public new function HRESULT(IWiaUIExtension2 *self, BSTR bstrDeviceId, HICON* phIcon, uint32 nSize) GetDeviceIcon;
+				public new function HRESULT(ref IWiaUIExtension2 self, ref DEVICEDIALOGDATA2 pDeviceDialogData) DeviceDialog;
+				public new function HRESULT(ref IWiaUIExtension2 self, BSTR bstrDeviceId, out HICON phIcon, uint32 nSize) GetDeviceIcon;
 			}
 		}
 		[CRepr]
@@ -2674,24 +2674,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DeviceDialog(DEVICEDIALOGDATA* pDeviceDialogData) mut
+			public HRESULT DeviceDialog(ref DEVICEDIALOGDATA pDeviceDialogData) mut
 			{
-				return VT.DeviceDialog(&this, pDeviceDialogData);
+				return VT.DeviceDialog(ref this, ref pDeviceDialogData);
 			}
-			public HRESULT GetDeviceIcon(BSTR bstrDeviceId, HICON* phIcon, uint32 nSize) mut
+			public HRESULT GetDeviceIcon(BSTR bstrDeviceId, out HICON phIcon, uint32 nSize) mut
 			{
-				return VT.GetDeviceIcon(&this, bstrDeviceId, phIcon, nSize);
+				return VT.GetDeviceIcon(ref this, bstrDeviceId, out phIcon, nSize);
 			}
-			public HRESULT GetDeviceBitmapLogo(BSTR bstrDeviceId, HBITMAP* phBitmap, uint32 nMaxWidth, uint32 nMaxHeight) mut
+			public HRESULT GetDeviceBitmapLogo(BSTR bstrDeviceId, out HBITMAP phBitmap, uint32 nMaxWidth, uint32 nMaxHeight) mut
 			{
-				return VT.GetDeviceBitmapLogo(&this, bstrDeviceId, phBitmap, nMaxWidth, nMaxHeight);
+				return VT.GetDeviceBitmapLogo(ref this, bstrDeviceId, out phBitmap, nMaxWidth, nMaxHeight);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWiaUIExtension *self, DEVICEDIALOGDATA* pDeviceDialogData) DeviceDialog;
-				public new function HRESULT(IWiaUIExtension *self, BSTR bstrDeviceId, HICON* phIcon, uint32 nSize) GetDeviceIcon;
-				public new function HRESULT(IWiaUIExtension *self, BSTR bstrDeviceId, HBITMAP* phBitmap, uint32 nMaxWidth, uint32 nMaxHeight) GetDeviceBitmapLogo;
+				public new function HRESULT(ref IWiaUIExtension self, ref DEVICEDIALOGDATA pDeviceDialogData) DeviceDialog;
+				public new function HRESULT(ref IWiaUIExtension self, BSTR bstrDeviceId, out HICON phIcon, uint32 nSize) GetDeviceIcon;
+				public new function HRESULT(ref IWiaUIExtension self, BSTR bstrDeviceId, out HBITMAP phBitmap, uint32 nMaxWidth, uint32 nMaxHeight) GetDeviceBitmapLogo;
 			}
 		}
 		

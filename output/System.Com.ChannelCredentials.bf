@@ -16,57 +16,57 @@ namespace Win32
 			
 			public HRESULT SetWindowsCredential(BSTR domain, BSTR username, BSTR password, int32 impersonationLevel, BOOL allowNtlm) mut
 			{
-				return VT.SetWindowsCredential(&this, domain, username, password, impersonationLevel, allowNtlm);
+				return VT.SetWindowsCredential(ref this, domain, username, password, impersonationLevel, allowNtlm);
 			}
 			public HRESULT SetUserNameCredential(BSTR username, BSTR password) mut
 			{
-				return VT.SetUserNameCredential(&this, username, password);
+				return VT.SetUserNameCredential(ref this, username, password);
 			}
 			public HRESULT SetClientCertificateFromStore(BSTR storeLocation, BSTR storeName, BSTR findYype, VARIANT findValue) mut
 			{
-				return VT.SetClientCertificateFromStore(&this, storeLocation, storeName, findYype, findValue);
+				return VT.SetClientCertificateFromStore(ref this, storeLocation, storeName, findYype, findValue);
 			}
 			public HRESULT SetClientCertificateFromStoreByName(BSTR subjectName, BSTR storeLocation, BSTR storeName) mut
 			{
-				return VT.SetClientCertificateFromStoreByName(&this, subjectName, storeLocation, storeName);
+				return VT.SetClientCertificateFromStoreByName(ref this, subjectName, storeLocation, storeName);
 			}
 			public HRESULT SetClientCertificateFromFile(BSTR filename, BSTR password, BSTR keystorageFlags) mut
 			{
-				return VT.SetClientCertificateFromFile(&this, filename, password, keystorageFlags);
+				return VT.SetClientCertificateFromFile(ref this, filename, password, keystorageFlags);
 			}
 			public HRESULT SetDefaultServiceCertificateFromStore(BSTR storeLocation, BSTR storeName, BSTR findType, VARIANT findValue) mut
 			{
-				return VT.SetDefaultServiceCertificateFromStore(&this, storeLocation, storeName, findType, findValue);
+				return VT.SetDefaultServiceCertificateFromStore(ref this, storeLocation, storeName, findType, findValue);
 			}
 			public HRESULT SetDefaultServiceCertificateFromStoreByName(BSTR subjectName, BSTR storeLocation, BSTR storeName) mut
 			{
-				return VT.SetDefaultServiceCertificateFromStoreByName(&this, subjectName, storeLocation, storeName);
+				return VT.SetDefaultServiceCertificateFromStoreByName(ref this, subjectName, storeLocation, storeName);
 			}
 			public HRESULT SetDefaultServiceCertificateFromFile(BSTR filename, BSTR password, BSTR keystorageFlags) mut
 			{
-				return VT.SetDefaultServiceCertificateFromFile(&this, filename, password, keystorageFlags);
+				return VT.SetDefaultServiceCertificateFromFile(ref this, filename, password, keystorageFlags);
 			}
 			public HRESULT SetServiceCertificateAuthentication(BSTR storeLocation, BSTR revocationMode, BSTR certificateValidationMode) mut
 			{
-				return VT.SetServiceCertificateAuthentication(&this, storeLocation, revocationMode, certificateValidationMode);
+				return VT.SetServiceCertificateAuthentication(ref this, storeLocation, revocationMode, certificateValidationMode);
 			}
 			public HRESULT SetIssuedToken(BSTR localIssuerAddres, BSTR localIssuerBindingType, BSTR localIssuerBinding) mut
 			{
-				return VT.SetIssuedToken(&this, localIssuerAddres, localIssuerBindingType, localIssuerBinding);
+				return VT.SetIssuedToken(ref this, localIssuerAddres, localIssuerBindingType, localIssuerBinding);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IChannelCredentials *self, BSTR domain, BSTR username, BSTR password, int32 impersonationLevel, BOOL allowNtlm) SetWindowsCredential;
-				public new function HRESULT(IChannelCredentials *self, BSTR username, BSTR password) SetUserNameCredential;
-				public new function HRESULT(IChannelCredentials *self, BSTR storeLocation, BSTR storeName, BSTR findYype, VARIANT findValue) SetClientCertificateFromStore;
-				public new function HRESULT(IChannelCredentials *self, BSTR subjectName, BSTR storeLocation, BSTR storeName) SetClientCertificateFromStoreByName;
-				public new function HRESULT(IChannelCredentials *self, BSTR filename, BSTR password, BSTR keystorageFlags) SetClientCertificateFromFile;
-				public new function HRESULT(IChannelCredentials *self, BSTR storeLocation, BSTR storeName, BSTR findType, VARIANT findValue) SetDefaultServiceCertificateFromStore;
-				public new function HRESULT(IChannelCredentials *self, BSTR subjectName, BSTR storeLocation, BSTR storeName) SetDefaultServiceCertificateFromStoreByName;
-				public new function HRESULT(IChannelCredentials *self, BSTR filename, BSTR password, BSTR keystorageFlags) SetDefaultServiceCertificateFromFile;
-				public new function HRESULT(IChannelCredentials *self, BSTR storeLocation, BSTR revocationMode, BSTR certificateValidationMode) SetServiceCertificateAuthentication;
-				public new function HRESULT(IChannelCredentials *self, BSTR localIssuerAddres, BSTR localIssuerBindingType, BSTR localIssuerBinding) SetIssuedToken;
+				public new function HRESULT(ref IChannelCredentials self, BSTR domain, BSTR username, BSTR password, int32 impersonationLevel, BOOL allowNtlm) SetWindowsCredential;
+				public new function HRESULT(ref IChannelCredentials self, BSTR username, BSTR password) SetUserNameCredential;
+				public new function HRESULT(ref IChannelCredentials self, BSTR storeLocation, BSTR storeName, BSTR findYype, VARIANT findValue) SetClientCertificateFromStore;
+				public new function HRESULT(ref IChannelCredentials self, BSTR subjectName, BSTR storeLocation, BSTR storeName) SetClientCertificateFromStoreByName;
+				public new function HRESULT(ref IChannelCredentials self, BSTR filename, BSTR password, BSTR keystorageFlags) SetClientCertificateFromFile;
+				public new function HRESULT(ref IChannelCredentials self, BSTR storeLocation, BSTR storeName, BSTR findType, VARIANT findValue) SetDefaultServiceCertificateFromStore;
+				public new function HRESULT(ref IChannelCredentials self, BSTR subjectName, BSTR storeLocation, BSTR storeName) SetDefaultServiceCertificateFromStoreByName;
+				public new function HRESULT(ref IChannelCredentials self, BSTR filename, BSTR password, BSTR keystorageFlags) SetDefaultServiceCertificateFromFile;
+				public new function HRESULT(ref IChannelCredentials self, BSTR storeLocation, BSTR revocationMode, BSTR certificateValidationMode) SetServiceCertificateAuthentication;
+				public new function HRESULT(ref IChannelCredentials self, BSTR localIssuerAddres, BSTR localIssuerBindingType, BSTR localIssuerBinding) SetIssuedToken;
 			}
 		}
 		

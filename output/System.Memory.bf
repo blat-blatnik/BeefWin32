@@ -365,7 +365,7 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL HeapValidate(HeapHandle hHeap, HEAP_FLAGS dwFlags, void* lpMem);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL HeapSummary(HANDLE hHeap, uint32 dwFlags, HEAP_SUMMARY* lpSummary);
+		public static extern BOOL HeapSummary(HANDLE hHeap, uint32 dwFlags, out HEAP_SUMMARY lpSummary);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 GetProcessHeaps(uint32 NumberOfHeaps, HeapHandle* ProcessHeaps);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -373,23 +373,23 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL HeapUnlock(HeapHandle hHeap);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL HeapWalk(HeapHandle hHeap, PROCESS_HEAP_ENTRY* lpEntry);
+		public static extern BOOL HeapWalk(HeapHandle hHeap, out PROCESS_HEAP_ENTRY lpEntry);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL HeapQueryInformation(HeapHandle HeapHandle, HEAP_INFORMATION_CLASS HeapInformationClass, void* HeapInformation, uint HeapInformationLength, uint* ReturnLength);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* VirtualAlloc(void* lpAddress, uint dwSize, VIRTUAL_ALLOCATION_TYPE flAllocationType, PAGE_PROTECTION_FLAGS flProtect);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL VirtualProtect(void* lpAddress, uint dwSize, PAGE_PROTECTION_FLAGS flNewProtect, PAGE_PROTECTION_FLAGS* lpflOldProtect);
+		public static extern BOOL VirtualProtect(void* lpAddress, uint dwSize, PAGE_PROTECTION_FLAGS flNewProtect, out PAGE_PROTECTION_FLAGS lpflOldProtect);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL VirtualFree(void* lpAddress, uint dwSize, VIRTUAL_FREE_TYPE dwFreeType);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint VirtualQuery(void* lpAddress, MEMORY_BASIC_INFORMATION* lpBuffer, uint dwLength);
+		public static extern uint VirtualQuery(void* lpAddress, out MEMORY_BASIC_INFORMATION lpBuffer, uint dwLength);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* VirtualAllocEx(HANDLE hProcess, void* lpAddress, uint dwSize, VIRTUAL_ALLOCATION_TYPE flAllocationType, PAGE_PROTECTION_FLAGS flProtect);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL VirtualProtectEx(HANDLE hProcess, void* lpAddress, uint dwSize, PAGE_PROTECTION_FLAGS flNewProtect, PAGE_PROTECTION_FLAGS* lpflOldProtect);
+		public static extern BOOL VirtualProtectEx(HANDLE hProcess, void* lpAddress, uint dwSize, PAGE_PROTECTION_FLAGS flNewProtect, out PAGE_PROTECTION_FLAGS lpflOldProtect);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint VirtualQueryEx(HANDLE hProcess, void* lpAddress, MEMORY_BASIC_INFORMATION* lpBuffer, uint dwLength);
+		public static extern uint VirtualQueryEx(HANDLE hProcess, void* lpAddress, out MEMORY_BASIC_INFORMATION lpBuffer, uint dwLength);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE CreateFileMappingW(HANDLE hFile, SECURITY_ATTRIBUTES* lpFileMappingAttributes, PAGE_PROTECTION_FLAGS flProtect, uint32 dwMaximumSizeHigh, uint32 dwMaximumSizeLow, PWSTR lpName);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -407,7 +407,7 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint GetLargePageMinimum();
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetProcessWorkingSetSizeEx(HANDLE hProcess, uint* lpMinimumWorkingSetSize, uint* lpMaximumWorkingSetSize, uint32* Flags);
+		public static extern BOOL GetProcessWorkingSetSizeEx(HANDLE hProcess, out uint lpMinimumWorkingSetSize, out uint lpMaximumWorkingSetSize, out uint32 Flags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetProcessWorkingSetSizeEx(HANDLE hProcess, uint dwMinimumWorkingSetSize, uint dwMaximumWorkingSetSize, uint32 Flags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -421,9 +421,9 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE CreateMemoryResourceNotification(MEMORY_RESOURCE_NOTIFICATION_TYPE NotificationType);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL QueryMemoryResourceNotification(HANDLE ResourceNotificationHandle, BOOL* ResourceState);
+		public static extern BOOL QueryMemoryResourceNotification(HANDLE ResourceNotificationHandle, out BOOL ResourceState);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetSystemFileCacheSize(uint* lpMinimumFileCacheSize, uint* lpMaximumFileCacheSize, uint32* lpFlags);
+		public static extern BOOL GetSystemFileCacheSize(out uint lpMinimumFileCacheSize, out uint lpMaximumFileCacheSize, out uint32 lpFlags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetSystemFileCacheSize(uint MinimumFileCacheSize, uint MaximumFileCacheSize, uint32 Flags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -437,17 +437,17 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL UnmapViewOfFileEx(void* BaseAddress, UNMAP_VIEW_OF_FILE_FLAGS UnmapFlags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AllocateUserPhysicalPages(HANDLE hProcess, uint* NumberOfPages, uint* PageArray);
+		public static extern BOOL AllocateUserPhysicalPages(HANDLE hProcess, out uint NumberOfPages, uint* PageArray);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL FreeUserPhysicalPages(HANDLE hProcess, uint* NumberOfPages, uint* PageArray);
+		public static extern BOOL FreeUserPhysicalPages(HANDLE hProcess, out uint NumberOfPages, uint* PageArray);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MapUserPhysicalPages(void* VirtualAddress, uint NumberOfPages, uint* PageArray);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AllocateUserPhysicalPagesNuma(HANDLE hProcess, uint* NumberOfPages, uint* PageArray, uint32 nndPreferred);
+		public static extern BOOL AllocateUserPhysicalPagesNuma(HANDLE hProcess, out uint NumberOfPages, uint* PageArray, uint32 nndPreferred);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* VirtualAllocExNuma(HANDLE hProcess, void* lpAddress, uint dwSize, VIRTUAL_ALLOCATION_TYPE flAllocationType, uint32 flProtect, uint32 nndPreferred);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetMemoryErrorHandlingCapabilities(uint32* Capabilities);
+		public static extern BOOL GetMemoryErrorHandlingCapabilities(out uint32 Capabilities);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* RegisterBadMemoryNotification(PBAD_MEMORY_CALLBACK_ROUTINE Callback);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -465,7 +465,7 @@ namespace Win32
 		[Import("api-ms-win-core-memory-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* VirtualAllocFromApp(void* BaseAddress, uint Size, VIRTUAL_ALLOCATION_TYPE AllocationType, uint32 Protection);
 		[Import("api-ms-win-core-memory-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL VirtualProtectFromApp(void* Address, uint Size, uint32 NewProtection, uint32* OldProtection);
+		public static extern BOOL VirtualProtectFromApp(void* Address, uint Size, uint32 NewProtection, out uint32 OldProtection);
 		[Import("api-ms-win-core-memory-l1-1-3.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE OpenFileMappingFromApp(uint32 DesiredAccess, BOOL InheritHandle, PWSTR Name);
 		[Import("api-ms-win-core-memory-l1-1-4.dll"), CLink, CallingConvention(.Stdcall)]
@@ -487,7 +487,7 @@ namespace Win32
 		[Import("api-ms-win-core-memory-l1-1-7.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE CreateFileMapping2(HANDLE File, SECURITY_ATTRIBUTES* SecurityAttributes, uint32 DesiredAccess, PAGE_PROTECTION_FLAGS PageProtection, uint32 AllocationAttributes, uint64 MaximumSize, PWSTR Name, MEM_EXTENDED_PARAMETER* ExtendedParameters, uint32 ParameterCount);
 		[Import("api-ms-win-core-memory-l1-1-8.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AllocateUserPhysicalPages2(HANDLE ObjectHandle, uint* NumberOfPages, uint* PageArray, MEM_EXTENDED_PARAMETER* ExtendedParameters, uint32 ExtendedParameterCount);
+		public static extern BOOL AllocateUserPhysicalPages2(HANDLE ObjectHandle, out uint NumberOfPages, uint* PageArray, MEM_EXTENDED_PARAMETER* ExtendedParameters, uint32 ExtendedParameterCount);
 		[Import("api-ms-win-core-memory-l1-1-8.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE OpenDedicatedMemoryPartition(HANDLE Partition, uint64 DedicatedMemoryTypeId, uint32 DesiredAccess, BOOL InheritHandle);
 		[Import("api-ms-win-core-memory-l1-1-8.dll"), CLink, CallingConvention(.Stdcall)]

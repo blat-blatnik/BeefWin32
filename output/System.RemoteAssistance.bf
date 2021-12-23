@@ -48,34 +48,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_State(RENDEZVOUS_SESSION_STATE* pSessionState) mut
+			public HRESULT get_State(out RENDEZVOUS_SESSION_STATE pSessionState) mut
 			{
-				return VT.get_State(&this, pSessionState);
+				return VT.get_State(ref this, out pSessionState);
 			}
 			public HRESULT get_RemoteUser(BSTR* bstrUserName) mut
 			{
-				return VT.get_RemoteUser(&this, bstrUserName);
+				return VT.get_RemoteUser(ref this, bstrUserName);
 			}
-			public HRESULT get_Flags(int32* pFlags) mut
+			public HRESULT get_Flags(out int32 pFlags) mut
 			{
-				return VT.get_Flags(&this, pFlags);
+				return VT.get_Flags(ref this, out pFlags);
 			}
 			public HRESULT SendContextData(BSTR bstrData) mut
 			{
-				return VT.SendContextData(&this, bstrData);
+				return VT.SendContextData(ref this, bstrData);
 			}
 			public HRESULT Terminate(HRESULT hr, BSTR bstrAppData) mut
 			{
-				return VT.Terminate(&this, hr, bstrAppData);
+				return VT.Terminate(ref this, hr, bstrAppData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRendezvousSession *self, RENDEZVOUS_SESSION_STATE* pSessionState) get_State;
-				public new function HRESULT(IRendezvousSession *self, BSTR* bstrUserName) get_RemoteUser;
-				public new function HRESULT(IRendezvousSession *self, int32* pFlags) get_Flags;
-				public new function HRESULT(IRendezvousSession *self, BSTR bstrData) SendContextData;
-				public new function HRESULT(IRendezvousSession *self, HRESULT hr, BSTR bstrAppData) Terminate;
+				public new function HRESULT(ref IRendezvousSession self, out RENDEZVOUS_SESSION_STATE pSessionState) get_State;
+				public new function HRESULT(ref IRendezvousSession self, BSTR* bstrUserName) get_RemoteUser;
+				public new function HRESULT(ref IRendezvousSession self, out int32 pFlags) get_Flags;
+				public new function HRESULT(ref IRendezvousSession self, BSTR bstrData) SendContextData;
+				public new function HRESULT(ref IRendezvousSession self, HRESULT hr, BSTR bstrAppData) Terminate;
 			}
 		}
 		[CRepr]
@@ -99,12 +99,12 @@ namespace Win32
 			
 			public HRESULT SetRendezvousSession(IUnknown* pRendezvousSession) mut
 			{
-				return VT.SetRendezvousSession(&this, pRendezvousSession);
+				return VT.SetRendezvousSession(ref this, pRendezvousSession);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRendezvousApplication *self, IUnknown* pRendezvousSession) SetRendezvousSession;
+				public new function HRESULT(ref IRendezvousApplication self, IUnknown* pRendezvousSession) SetRendezvousSession;
 			}
 		}
 		

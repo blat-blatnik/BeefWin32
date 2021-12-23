@@ -1551,15 +1551,15 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function int32 _CPSUICALLBACK(CPSUICBPARAM* pCPSUICBParam);
+		public function int32 _CPSUICALLBACK(out CPSUICBPARAM pCPSUICBParam);
 		public function int PFNCOMPROPSHEET(HANDLE hComPropSheet, uint32 Function, LPARAM lParam1, LPARAM lParam2);
-		public function int32 PFNPROPSHEETUI(PROPSHEETUI_INFO* pPSUIInfo, LPARAM lParam);
+		public function int32 PFNPROPSHEETUI(out PROPSHEETUI_INFO pPSUIInfo, LPARAM lParam);
 		public function BOOL PFN_DrvGetDriverSetting(void* pdriverobj, PSTR Feature, void* pOutput, uint32 cbSize, uint32* pcbNeeded, uint32* pdwOptionsReturned);
 		public function BOOL PFN_DrvUpgradeRegistrySetting(HANDLE hPrinter, PSTR pFeature, PSTR pOption);
 		public function BOOL PFN_DrvUpdateUISetting(void* pdriverobj, void* pOptItem, uint32 dwPreviousSelection, uint32 dwMode);
-		public function int32 OEMCUIPCALLBACK(CPSUICBPARAM* param0, OEMCUIPPARAM* param1);
+		public function int32 OEMCUIPCALLBACK(out CPSUICBPARAM param0, out OEMCUIPPARAM param1);
 		public function int32 EMFPLAYPROC(HDC param0, int32 param1, HANDLE param2);
-		public function BOOL ROUTER_NOTIFY_CALLBACK(uint32 dwCommand, void* pContext, uint32 dwColor, PRINTER_NOTIFY_INFO* pNofityInfo, uint32 fdwFlags, uint32* pdwResult);
+		public function BOOL ROUTER_NOTIFY_CALLBACK(uint32 dwCommand, void* pContext, uint32 dwColor, ref PRINTER_NOTIFY_INFO pNofityInfo, uint32 fdwFlags, out uint32 pdwResult);
 		
 		// --- Structs ---
 		
@@ -3125,7 +3125,7 @@ namespace Win32
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 Count;
-			public PRINTER_NOTIFY_INFO_DATA[] aData;
+			public PRINTER_NOTIFY_INFO_DATA[0] aData;
 		}
 		[CRepr]
 		public struct BINARY_CONTAINER
@@ -3162,7 +3162,7 @@ namespace Win32
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 Count;
-			public BIDI_REQUEST_DATA[] aData;
+			public BIDI_REQUEST_DATA[0] aData;
 		}
 		[CRepr]
 		public struct BIDI_RESPONSE_DATA
@@ -3178,7 +3178,7 @@ namespace Win32
 			public uint32 Version;
 			public uint32 Flags;
 			public uint32 Count;
-			public BIDI_RESPONSE_DATA[] aData;
+			public BIDI_RESPONSE_DATA[0] aData;
 		}
 		[CRepr]
 		public struct PROVIDOR_INFO_1A
@@ -3296,13 +3296,13 @@ namespace Win32
 		public struct MxdcGetFileNameData
 		{
 			public uint32 cbOutput;
-			public char16[] wszData;
+			public char16[0] wszData;
 		}
 		[CRepr]
 		public struct MxdcS0PageData
 		{
 			public uint32 dwSize;
-			public uint8[] bData;
+			public uint8[0] bData;
 		}
 		[CRepr]
 		public struct MxdcXpsS0PageResource
@@ -3311,13 +3311,13 @@ namespace Win32
 			public uint32 dwResourceType;
 			public uint8[260] szUri;
 			public uint32 dwDataSize;
-			public uint8[] bData;
+			public uint8[0] bData;
 		}
 		[CRepr]
 		public struct MxdcPrintTicketPassthrough
 		{
 			public uint32 dwDataSize;
-			public uint8[] bData;
+			public uint8[0] bData;
 		}
 		[CRepr]
 		public struct MxdcPrintTicketEscape
@@ -3398,7 +3398,7 @@ namespace Win32
 			public uint32 cElementsAllocated;
 			public uint32 cElementsNeeded;
 			public uint32 cElementsReturned;
-			public uint32[] aDocEventCall;
+			public uint32[0] aDocEventCall;
 		}
 		[CRepr]
 		public struct DOCEVENT_CREATEDCPRE
@@ -3735,14 +3735,14 @@ namespace Win32
 		{
 			public uint32 dwSize;
 			public uint32 dwRunNum;
-			public WIDTHRUN[] WidthRun;
+			public WIDTHRUN[0] WidthRun;
 		}
 		[CRepr]
 		public struct KERNDATA
 		{
 			public uint32 dwSize;
 			public uint32 dwKernPairNum;
-			public FD_KERNINGPAIR[] KernPair;
+			public FD_KERNINGPAIR[0] KernPair;
 		}
 		[CRepr]
 		public struct UNI_GLYPHSETDATA
@@ -3792,7 +3792,7 @@ namespace Win32
 		{
 			public uint32 dwSize;
 			public uint32 dwGlyphNum;
-			public TRANSDATA[] Trans;
+			public TRANSDATA[0] Trans;
 		}
 		[CRepr]
 		public struct UFF_FILEHEADER
@@ -3882,7 +3882,7 @@ namespace Win32
 		{
 			public uint32 dwVersion;
 			public uint32 cPortData;
-			public PORT_DATA_2[] pPortData;
+			public PORT_DATA_2[0] pPortData;
 		}
 		[CRepr]
 		public struct DELETE_PORT_DATA_1
@@ -3970,7 +3970,7 @@ namespace Win32
 		public struct BranchOfficeJobDataContainer
 		{
 			public uint32 cJobDataEntries;
-			public BranchOfficeJobData[] JobData;
+			public BranchOfficeJobData[0] JobData;
 		}
 		[CRepr]
 		public struct PRINTER_NOTIFY_INIT
@@ -4271,54 +4271,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOption(DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureRequested, PSTR* ppszOption) mut
+			public HRESULT GetOption(DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureRequested, out PSTR ppszOption) mut
 			{
-				return VT.GetOption(&this, pDevmode, cbSize, pszFeatureRequested, ppszOption);
+				return VT.GetOption(ref this, pDevmode, cbSize, pszFeatureRequested, out ppszOption);
 			}
-			public HRESULT SetOptions(DEVMODEA* pDevmode, uint32 cbSize, BOOL bResolveConflicts, PRINT_FEATURE_OPTION* pFOPairs, uint32 cPairs, uint32* pcPairsWritten, uint32* pdwResult) mut
+			public HRESULT SetOptions(out DEVMODEA pDevmode, uint32 cbSize, BOOL bResolveConflicts, in PRINT_FEATURE_OPTION pFOPairs, uint32 cPairs, out uint32 pcPairsWritten, out uint32 pdwResult) mut
 			{
-				return VT.SetOptions(&this, pDevmode, cbSize, bResolveConflicts, pFOPairs, cPairs, pcPairsWritten, pdwResult);
+				return VT.SetOptions(ref this, out pDevmode, cbSize, bResolveConflicts, pFOPairs, cPairs, out pcPairsWritten, out pdwResult);
 			}
-			public HRESULT EnumConstrainedOptions(DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureKeyword, PSTR*** pConstrainedOptionList, uint32* pdwNumOptions) mut
+			public HRESULT EnumConstrainedOptions(in DEVMODEA pDevmode, uint32 cbSize, PSTR pszFeatureKeyword, out PSTR** pConstrainedOptionList, out uint32 pdwNumOptions) mut
 			{
-				return VT.EnumConstrainedOptions(&this, pDevmode, cbSize, pszFeatureKeyword, pConstrainedOptionList, pdwNumOptions);
+				return VT.EnumConstrainedOptions(ref this, pDevmode, cbSize, pszFeatureKeyword, out pConstrainedOptionList, out pdwNumOptions);
 			}
-			public HRESULT WhyConstrained(DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PRINT_FEATURE_OPTION** ppFOConstraints, uint32* pdwNumOptions) mut
+			public HRESULT WhyConstrained(DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, out PRINT_FEATURE_OPTION* ppFOConstraints, out uint32 pdwNumOptions) mut
 			{
-				return VT.WhyConstrained(&this, pDevmode, cbSize, pszFeatureKeyword, pszOptionKeyword, ppFOConstraints, pdwNumOptions);
+				return VT.WhyConstrained(ref this, pDevmode, cbSize, pszFeatureKeyword, pszOptionKeyword, out ppFOConstraints, out pdwNumOptions);
 			}
-			public HRESULT EnumFeatures(PSTR*** pFeatureList, uint32* pdwNumFeatures) mut
+			public HRESULT EnumFeatures(out PSTR** pFeatureList, out uint32 pdwNumFeatures) mut
 			{
-				return VT.EnumFeatures(&this, pFeatureList, pdwNumFeatures);
+				return VT.EnumFeatures(ref this, out pFeatureList, out pdwNumFeatures);
 			}
-			public HRESULT EnumOptions(PSTR pszFeatureKeyword, PSTR*** pOptionList, uint32* pdwNumOptions) mut
+			public HRESULT EnumOptions(PSTR pszFeatureKeyword, out PSTR** pOptionList, out uint32 pdwNumOptions) mut
 			{
-				return VT.EnumOptions(&this, pszFeatureKeyword, pOptionList, pdwNumOptions);
+				return VT.EnumOptions(ref this, pszFeatureKeyword, out pOptionList, out pdwNumOptions);
 			}
-			public HRESULT GetFontSubstitution(PWSTR pszTrueTypeFontName, PWSTR* ppszDevFontName) mut
+			public HRESULT GetFontSubstitution(PWSTR pszTrueTypeFontName, out PWSTR ppszDevFontName) mut
 			{
-				return VT.GetFontSubstitution(&this, pszTrueTypeFontName, ppszDevFontName);
+				return VT.GetFontSubstitution(ref this, pszTrueTypeFontName, out ppszDevFontName);
 			}
 			public HRESULT SetFontSubstitution(PWSTR pszTrueTypeFontName, PWSTR pszDevFontName) mut
 			{
-				return VT.SetFontSubstitution(&this, pszTrueTypeFontName, pszDevFontName);
+				return VT.SetFontSubstitution(ref this, pszTrueTypeFontName, pszDevFontName);
 			}
-			public HRESULT CreateInstanceOfMSXMLObject(Guid* rclsid, IUnknown* pUnkOuter, uint32 dwClsContext, Guid* riid, void** ppv) mut
+			public HRESULT CreateInstanceOfMSXMLObject(in Guid rclsid, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateInstanceOfMSXMLObject(&this, rclsid, pUnkOuter, dwClsContext, riid, ppv);
+				return VT.CreateInstanceOfMSXMLObject(ref this, rclsid, ref pUnkOuter, dwClsContext, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintCoreHelper *self, DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureRequested, PSTR* ppszOption) GetOption;
-				public new function HRESULT(IPrintCoreHelper *self, DEVMODEA* pDevmode, uint32 cbSize, BOOL bResolveConflicts, PRINT_FEATURE_OPTION* pFOPairs, uint32 cPairs, uint32* pcPairsWritten, uint32* pdwResult) SetOptions;
-				public new function HRESULT(IPrintCoreHelper *self, DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureKeyword, PSTR*** pConstrainedOptionList, uint32* pdwNumOptions) EnumConstrainedOptions;
-				public new function HRESULT(IPrintCoreHelper *self, DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PRINT_FEATURE_OPTION** ppFOConstraints, uint32* pdwNumOptions) WhyConstrained;
-				public new function HRESULT(IPrintCoreHelper *self, PSTR*** pFeatureList, uint32* pdwNumFeatures) EnumFeatures;
-				public new function HRESULT(IPrintCoreHelper *self, PSTR pszFeatureKeyword, PSTR*** pOptionList, uint32* pdwNumOptions) EnumOptions;
-				public new function HRESULT(IPrintCoreHelper *self, PWSTR pszTrueTypeFontName, PWSTR* ppszDevFontName) GetFontSubstitution;
-				public new function HRESULT(IPrintCoreHelper *self, PWSTR pszTrueTypeFontName, PWSTR pszDevFontName) SetFontSubstitution;
-				public new function HRESULT(IPrintCoreHelper *self, Guid* rclsid, IUnknown* pUnkOuter, uint32 dwClsContext, Guid* riid, void** ppv) CreateInstanceOfMSXMLObject;
+				public new function HRESULT(ref IPrintCoreHelper self, DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureRequested, out PSTR ppszOption) GetOption;
+				public new function HRESULT(ref IPrintCoreHelper self, out DEVMODEA pDevmode, uint32 cbSize, BOOL bResolveConflicts, in PRINT_FEATURE_OPTION pFOPairs, uint32 cPairs, out uint32 pcPairsWritten, out uint32 pdwResult) SetOptions;
+				public new function HRESULT(ref IPrintCoreHelper self, in DEVMODEA pDevmode, uint32 cbSize, PSTR pszFeatureKeyword, out PSTR** pConstrainedOptionList, out uint32 pdwNumOptions) EnumConstrainedOptions;
+				public new function HRESULT(ref IPrintCoreHelper self, DEVMODEA* pDevmode, uint32 cbSize, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, out PRINT_FEATURE_OPTION* ppFOConstraints, out uint32 pdwNumOptions) WhyConstrained;
+				public new function HRESULT(ref IPrintCoreHelper self, out PSTR** pFeatureList, out uint32 pdwNumFeatures) EnumFeatures;
+				public new function HRESULT(ref IPrintCoreHelper self, PSTR pszFeatureKeyword, out PSTR** pOptionList, out uint32 pdwNumOptions) EnumOptions;
+				public new function HRESULT(ref IPrintCoreHelper self, PWSTR pszTrueTypeFontName, out PWSTR ppszDevFontName) GetFontSubstitution;
+				public new function HRESULT(ref IPrintCoreHelper self, PWSTR pszTrueTypeFontName, PWSTR pszDevFontName) SetFontSubstitution;
+				public new function HRESULT(ref IPrintCoreHelper self, in Guid rclsid, ref IUnknown pUnkOuter, uint32 dwClsContext, in Guid riid, void** ppv) CreateInstanceOfMSXMLObject;
 			}
 		}
 		[CRepr]
@@ -4328,19 +4328,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateGDLSnapshot(DEVMODEA* pDevmode, uint32 cbSize, uint32 dwFlags, IStream** ppSnapshotStream) mut
+			public HRESULT CreateGDLSnapshot(out DEVMODEA pDevmode, uint32 cbSize, uint32 dwFlags, out IStream* ppSnapshotStream) mut
 			{
-				return VT.CreateGDLSnapshot(&this, pDevmode, cbSize, dwFlags, ppSnapshotStream);
+				return VT.CreateGDLSnapshot(ref this, out pDevmode, cbSize, dwFlags, out ppSnapshotStream);
 			}
-			public HRESULT CreateDefaultGDLSnapshot(uint32 dwFlags, IStream** ppSnapshotStream) mut
+			public HRESULT CreateDefaultGDLSnapshot(uint32 dwFlags, out IStream* ppSnapshotStream) mut
 			{
-				return VT.CreateDefaultGDLSnapshot(&this, dwFlags, ppSnapshotStream);
+				return VT.CreateDefaultGDLSnapshot(ref this, dwFlags, out ppSnapshotStream);
 			}
 			[CRepr]
 			public struct VTable : IPrintCoreHelper.VTable
 			{
-				public new function HRESULT(IPrintCoreHelperUni *self, DEVMODEA* pDevmode, uint32 cbSize, uint32 dwFlags, IStream** ppSnapshotStream) CreateGDLSnapshot;
-				public new function HRESULT(IPrintCoreHelperUni *self, uint32 dwFlags, IStream** ppSnapshotStream) CreateDefaultGDLSnapshot;
+				public new function HRESULT(ref IPrintCoreHelperUni self, out DEVMODEA pDevmode, uint32 cbSize, uint32 dwFlags, out IStream* ppSnapshotStream) CreateGDLSnapshot;
+				public new function HRESULT(ref IPrintCoreHelperUni self, uint32 dwFlags, out IStream* ppSnapshotStream) CreateDefaultGDLSnapshot;
 			}
 		}
 		[CRepr]
@@ -4350,14 +4350,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNamedCommand(DEVMODEA* pDevmode, uint32 cbSize, PWSTR pszCommandName, uint8** ppCommandBytes, uint32* pcbCommandSize) mut
+			public HRESULT GetNamedCommand(DEVMODEA* pDevmode, uint32 cbSize, PWSTR pszCommandName, out uint8* ppCommandBytes, out uint32 pcbCommandSize) mut
 			{
-				return VT.GetNamedCommand(&this, pDevmode, cbSize, pszCommandName, ppCommandBytes, pcbCommandSize);
+				return VT.GetNamedCommand(ref this, pDevmode, cbSize, pszCommandName, out ppCommandBytes, out pcbCommandSize);
 			}
 			[CRepr]
 			public struct VTable : IPrintCoreHelperUni.VTable
 			{
-				public new function HRESULT(IPrintCoreHelperUni2 *self, DEVMODEA* pDevmode, uint32 cbSize, PWSTR pszCommandName, uint8** ppCommandBytes, uint32* pcbCommandSize) GetNamedCommand;
+				public new function HRESULT(ref IPrintCoreHelperUni2 self, DEVMODEA* pDevmode, uint32 cbSize, PWSTR pszCommandName, out uint8* ppCommandBytes, out uint32 pcbCommandSize) GetNamedCommand;
 			}
 		}
 		[CRepr]
@@ -4367,24 +4367,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetGlobalAttribute(PSTR pszAttribute, uint32* pdwDataType, uint8** ppbData, uint32* pcbSize) mut
+			public HRESULT GetGlobalAttribute(PSTR pszAttribute, out uint32 pdwDataType, out uint8* ppbData, out uint32 pcbSize) mut
 			{
-				return VT.GetGlobalAttribute(&this, pszAttribute, pdwDataType, ppbData, pcbSize);
+				return VT.GetGlobalAttribute(ref this, pszAttribute, out pdwDataType, out ppbData, out pcbSize);
 			}
-			public HRESULT GetFeatureAttribute(PSTR pszFeatureKeyword, PSTR pszAttribute, uint32* pdwDataType, uint8** ppbData, uint32* pcbSize) mut
+			public HRESULT GetFeatureAttribute(PSTR pszFeatureKeyword, PSTR pszAttribute, out uint32 pdwDataType, out uint8* ppbData, out uint32 pcbSize) mut
 			{
-				return VT.GetFeatureAttribute(&this, pszFeatureKeyword, pszAttribute, pdwDataType, ppbData, pcbSize);
+				return VT.GetFeatureAttribute(ref this, pszFeatureKeyword, pszAttribute, out pdwDataType, out ppbData, out pcbSize);
 			}
-			public HRESULT GetOptionAttribute(PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pszAttribute, uint32* pdwDataType, uint8** ppbData, uint32* pcbSize) mut
+			public HRESULT GetOptionAttribute(PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pszAttribute, out uint32 pdwDataType, out uint8* ppbData, out uint32 pcbSize) mut
 			{
-				return VT.GetOptionAttribute(&this, pszFeatureKeyword, pszOptionKeyword, pszAttribute, pdwDataType, ppbData, pcbSize);
+				return VT.GetOptionAttribute(ref this, pszFeatureKeyword, pszOptionKeyword, pszAttribute, out pdwDataType, out ppbData, out pcbSize);
 			}
 			[CRepr]
 			public struct VTable : IPrintCoreHelper.VTable
 			{
-				public new function HRESULT(IPrintCoreHelperPS *self, PSTR pszAttribute, uint32* pdwDataType, uint8** ppbData, uint32* pcbSize) GetGlobalAttribute;
-				public new function HRESULT(IPrintCoreHelperPS *self, PSTR pszFeatureKeyword, PSTR pszAttribute, uint32* pdwDataType, uint8** ppbData, uint32* pcbSize) GetFeatureAttribute;
-				public new function HRESULT(IPrintCoreHelperPS *self, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pszAttribute, uint32* pdwDataType, uint8** ppbData, uint32* pcbSize) GetOptionAttribute;
+				public new function HRESULT(ref IPrintCoreHelperPS self, PSTR pszAttribute, out uint32 pdwDataType, out uint8* ppbData, out uint32 pcbSize) GetGlobalAttribute;
+				public new function HRESULT(ref IPrintCoreHelperPS self, PSTR pszFeatureKeyword, PSTR pszAttribute, out uint32 pdwDataType, out uint8* ppbData, out uint32 pcbSize) GetFeatureAttribute;
+				public new function HRESULT(ref IPrintCoreHelperPS self, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pszAttribute, out uint32 pdwDataType, out uint8* ppbData, out uint32 pcbSize) GetOptionAttribute;
 			}
 		}
 		[CRepr]
@@ -4394,19 +4394,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInfo(uint32 dwMode, void* pBuffer, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT GetInfo(uint32 dwMode, void* pBuffer, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.GetInfo(&this, dwMode, pBuffer, cbSize, pcbNeeded);
+				return VT.GetInfo(ref this, dwMode, pBuffer, cbSize, out pcbNeeded);
 			}
-			public HRESULT DevMode(uint32 dwMode, OEMDMPARAM* pOemDMParam) mut
+			public HRESULT DevMode(uint32 dwMode, out OEMDMPARAM pOemDMParam) mut
 			{
-				return VT.DevMode(&this, dwMode, pOemDMParam);
+				return VT.DevMode(ref this, dwMode, out pOemDMParam);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintOemCommon *self, uint32 dwMode, void* pBuffer, uint32 cbSize, uint32* pcbNeeded) GetInfo;
-				public new function HRESULT(IPrintOemCommon *self, uint32 dwMode, OEMDMPARAM* pOemDMParam) DevMode;
+				public new function HRESULT(ref IPrintOemCommon self, uint32 dwMode, void* pBuffer, uint32 cbSize, out uint32 pcbNeeded) GetInfo;
+				public new function HRESULT(ref IPrintOemCommon self, uint32 dwMode, out OEMDMPARAM pOemDMParam) DevMode;
 			}
 		}
 		[CRepr]
@@ -4416,69 +4416,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PublishDriverInterface(IUnknown* pIUnknown) mut
+			public HRESULT PublishDriverInterface(ref IUnknown pIUnknown) mut
 			{
-				return VT.PublishDriverInterface(&this, pIUnknown);
+				return VT.PublishDriverInterface(ref this, ref pIUnknown);
 			}
-			public HRESULT CommonUIProp(uint32 dwMode, OEMCUIPPARAM* pOemCUIPParam) mut
+			public HRESULT CommonUIProp(uint32 dwMode, ref OEMCUIPPARAM pOemCUIPParam) mut
 			{
-				return VT.CommonUIProp(&this, dwMode, pOemCUIPParam);
+				return VT.CommonUIProp(ref this, dwMode, ref pOemCUIPParam);
 			}
-			public HRESULT DocumentPropertySheets(PROPSHEETUI_INFO* pPSUIInfo, LPARAM lParam) mut
+			public HRESULT DocumentPropertySheets(out PROPSHEETUI_INFO pPSUIInfo, LPARAM lParam) mut
 			{
-				return VT.DocumentPropertySheets(&this, pPSUIInfo, lParam);
+				return VT.DocumentPropertySheets(ref this, out pPSUIInfo, lParam);
 			}
-			public HRESULT DevicePropertySheets(PROPSHEETUI_INFO* pPSUIInfo, LPARAM lParam) mut
+			public HRESULT DevicePropertySheets(ref PROPSHEETUI_INFO pPSUIInfo, LPARAM lParam) mut
 			{
-				return VT.DevicePropertySheets(&this, pPSUIInfo, lParam);
+				return VT.DevicePropertySheets(ref this, ref pPSUIInfo, lParam);
 			}
-			public HRESULT DevQueryPrintEx(OEMUIOBJ* poemuiobj, DEVQUERYPRINT_INFO* pDQPInfo, DEVMODEA* pPublicDM, void* pOEMDM) mut
+			public HRESULT DevQueryPrintEx(ref OEMUIOBJ poemuiobj, ref DEVQUERYPRINT_INFO pDQPInfo, ref DEVMODEA pPublicDM, void* pOEMDM) mut
 			{
-				return VT.DevQueryPrintEx(&this, poemuiobj, pDQPInfo, pPublicDM, pOEMDM);
+				return VT.DevQueryPrintEx(ref this, ref poemuiobj, ref pDQPInfo, ref pPublicDM, pOEMDM);
 			}
-			public HRESULT DeviceCapabilitiesA(OEMUIOBJ* poemuiobj, HANDLE hPrinter, PWSTR pDeviceName, uint16 wCapability, void* pOutput, DEVMODEA* pPublicDM, void* pOEMDM, uint32 dwOld, uint32* dwResult) mut
+			public HRESULT DeviceCapabilitiesA(out OEMUIOBJ poemuiobj, HANDLE hPrinter, PWSTR pDeviceName, uint16 wCapability, void* pOutput, ref DEVMODEA pPublicDM, void* pOEMDM, uint32 dwOld, out uint32 dwResult) mut
 			{
-				return VT.DeviceCapabilitiesA(&this, poemuiobj, hPrinter, pDeviceName, wCapability, pOutput, pPublicDM, pOEMDM, dwOld, dwResult);
+				return VT.DeviceCapabilitiesA(ref this, out poemuiobj, hPrinter, pDeviceName, wCapability, pOutput, ref pPublicDM, pOEMDM, dwOld, out dwResult);
 			}
-			public HRESULT UpgradePrinter(uint32 dwLevel, uint8* pDriverUpgradeInfo) mut
+			public HRESULT UpgradePrinter(uint32 dwLevel, ref uint8 pDriverUpgradeInfo) mut
 			{
-				return VT.UpgradePrinter(&this, dwLevel, pDriverUpgradeInfo);
+				return VT.UpgradePrinter(ref this, dwLevel, ref pDriverUpgradeInfo);
 			}
 			public HRESULT PrinterEvent(PWSTR pPrinterName, int32 iDriverEvent, uint32 dwFlags, LPARAM lParam) mut
 			{
-				return VT.PrinterEvent(&this, pPrinterName, iDriverEvent, dwFlags, lParam);
+				return VT.PrinterEvent(ref this, pPrinterName, iDriverEvent, dwFlags, lParam);
 			}
-			public HRESULT DriverEvent(uint32 dwDriverEvent, uint32 dwLevel, uint8* pDriverInfo, LPARAM lParam) mut
+			public HRESULT DriverEvent(uint32 dwDriverEvent, uint32 dwLevel, ref uint8 pDriverInfo, LPARAM lParam) mut
 			{
-				return VT.DriverEvent(&this, dwDriverEvent, dwLevel, pDriverInfo, lParam);
+				return VT.DriverEvent(ref this, dwDriverEvent, dwLevel, ref pDriverInfo, lParam);
 			}
-			public HRESULT QueryColorProfile(HANDLE hPrinter, OEMUIOBJ* poemuiobj, DEVMODEA* pPublicDM, void* pOEMDM, uint32 ulQueryMode, void* pvProfileData, uint32* pcbProfileData, uint32* pflProfileData) mut
+			public HRESULT QueryColorProfile(HANDLE hPrinter, ref OEMUIOBJ poemuiobj, ref DEVMODEA pPublicDM, void* pOEMDM, uint32 ulQueryMode, void* pvProfileData, out uint32 pcbProfileData, out uint32 pflProfileData) mut
 			{
-				return VT.QueryColorProfile(&this, hPrinter, poemuiobj, pPublicDM, pOEMDM, ulQueryMode, pvProfileData, pcbProfileData, pflProfileData);
+				return VT.QueryColorProfile(ref this, hPrinter, ref poemuiobj, ref pPublicDM, pOEMDM, ulQueryMode, pvProfileData, out pcbProfileData, out pflProfileData);
 			}
 			public HRESULT FontInstallerDlgProc(HWND hWnd, uint32 usMsg, WPARAM wParam, LPARAM lParam) mut
 			{
-				return VT.FontInstallerDlgProc(&this, hWnd, usMsg, wParam, lParam);
+				return VT.FontInstallerDlgProc(ref this, hWnd, usMsg, wParam, lParam);
 			}
 			public HRESULT UpdateExternalFonts(HANDLE hPrinter, HANDLE hHeap, PWSTR pwstrCartridges) mut
 			{
-				return VT.UpdateExternalFonts(&this, hPrinter, hHeap, pwstrCartridges);
+				return VT.UpdateExternalFonts(ref this, hPrinter, hHeap, pwstrCartridges);
 			}
 			[CRepr]
 			public struct VTable : IPrintOemCommon.VTable
 			{
-				public new function HRESULT(IPrintOemUI *self, IUnknown* pIUnknown) PublishDriverInterface;
-				public new function HRESULT(IPrintOemUI *self, uint32 dwMode, OEMCUIPPARAM* pOemCUIPParam) CommonUIProp;
-				public new function HRESULT(IPrintOemUI *self, PROPSHEETUI_INFO* pPSUIInfo, LPARAM lParam) DocumentPropertySheets;
-				public new function HRESULT(IPrintOemUI *self, PROPSHEETUI_INFO* pPSUIInfo, LPARAM lParam) DevicePropertySheets;
-				public new function HRESULT(IPrintOemUI *self, OEMUIOBJ* poemuiobj, DEVQUERYPRINT_INFO* pDQPInfo, DEVMODEA* pPublicDM, void* pOEMDM) DevQueryPrintEx;
-				public new function HRESULT(IPrintOemUI *self, OEMUIOBJ* poemuiobj, HANDLE hPrinter, PWSTR pDeviceName, uint16 wCapability, void* pOutput, DEVMODEA* pPublicDM, void* pOEMDM, uint32 dwOld, uint32* dwResult) DeviceCapabilitiesA;
-				public new function HRESULT(IPrintOemUI *self, uint32 dwLevel, uint8* pDriverUpgradeInfo) UpgradePrinter;
-				public new function HRESULT(IPrintOemUI *self, PWSTR pPrinterName, int32 iDriverEvent, uint32 dwFlags, LPARAM lParam) PrinterEvent;
-				public new function HRESULT(IPrintOemUI *self, uint32 dwDriverEvent, uint32 dwLevel, uint8* pDriverInfo, LPARAM lParam) DriverEvent;
-				public new function HRESULT(IPrintOemUI *self, HANDLE hPrinter, OEMUIOBJ* poemuiobj, DEVMODEA* pPublicDM, void* pOEMDM, uint32 ulQueryMode, void* pvProfileData, uint32* pcbProfileData, uint32* pflProfileData) QueryColorProfile;
-				public new function HRESULT(IPrintOemUI *self, HWND hWnd, uint32 usMsg, WPARAM wParam, LPARAM lParam) FontInstallerDlgProc;
-				public new function HRESULT(IPrintOemUI *self, HANDLE hPrinter, HANDLE hHeap, PWSTR pwstrCartridges) UpdateExternalFonts;
+				public new function HRESULT(ref IPrintOemUI self, ref IUnknown pIUnknown) PublishDriverInterface;
+				public new function HRESULT(ref IPrintOemUI self, uint32 dwMode, ref OEMCUIPPARAM pOemCUIPParam) CommonUIProp;
+				public new function HRESULT(ref IPrintOemUI self, out PROPSHEETUI_INFO pPSUIInfo, LPARAM lParam) DocumentPropertySheets;
+				public new function HRESULT(ref IPrintOemUI self, ref PROPSHEETUI_INFO pPSUIInfo, LPARAM lParam) DevicePropertySheets;
+				public new function HRESULT(ref IPrintOemUI self, ref OEMUIOBJ poemuiobj, ref DEVQUERYPRINT_INFO pDQPInfo, ref DEVMODEA pPublicDM, void* pOEMDM) DevQueryPrintEx;
+				public new function HRESULT(ref IPrintOemUI self, out OEMUIOBJ poemuiobj, HANDLE hPrinter, PWSTR pDeviceName, uint16 wCapability, void* pOutput, ref DEVMODEA pPublicDM, void* pOEMDM, uint32 dwOld, out uint32 dwResult) DeviceCapabilitiesA;
+				public new function HRESULT(ref IPrintOemUI self, uint32 dwLevel, ref uint8 pDriverUpgradeInfo) UpgradePrinter;
+				public new function HRESULT(ref IPrintOemUI self, PWSTR pPrinterName, int32 iDriverEvent, uint32 dwFlags, LPARAM lParam) PrinterEvent;
+				public new function HRESULT(ref IPrintOemUI self, uint32 dwDriverEvent, uint32 dwLevel, ref uint8 pDriverInfo, LPARAM lParam) DriverEvent;
+				public new function HRESULT(ref IPrintOemUI self, HANDLE hPrinter, ref OEMUIOBJ poemuiobj, ref DEVMODEA pPublicDM, void* pOEMDM, uint32 ulQueryMode, void* pvProfileData, out uint32 pcbProfileData, out uint32 pflProfileData) QueryColorProfile;
+				public new function HRESULT(ref IPrintOemUI self, HWND hWnd, uint32 usMsg, WPARAM wParam, LPARAM lParam) FontInstallerDlgProc;
+				public new function HRESULT(ref IPrintOemUI self, HANDLE hPrinter, HANDLE hHeap, PWSTR pwstrCartridges) UpdateExternalFonts;
 			}
 		}
 		[CRepr]
@@ -4488,24 +4488,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryJobAttributes(HANDLE hPrinter, DEVMODEA* pDevmode, uint32 dwLevel, uint8* lpAttributeInfo) mut
+			public HRESULT QueryJobAttributes(HANDLE hPrinter, ref DEVMODEA pDevmode, uint32 dwLevel, ref uint8 lpAttributeInfo) mut
 			{
-				return VT.QueryJobAttributes(&this, hPrinter, pDevmode, dwLevel, lpAttributeInfo);
+				return VT.QueryJobAttributes(ref this, hPrinter, ref pDevmode, dwLevel, ref lpAttributeInfo);
 			}
 			public HRESULT HideStandardUI(uint32 dwMode) mut
 			{
-				return VT.HideStandardUI(&this, dwMode);
+				return VT.HideStandardUI(ref this, dwMode);
 			}
-			public HRESULT DocumentEvent(HANDLE hPrinter, HDC hdc, int32 iEsc, uint32 cbIn, void* pvIn, uint32 cbOut, void* pvOut, int32* piResult) mut
+			public HRESULT DocumentEvent(HANDLE hPrinter, HDC hdc, int32 iEsc, uint32 cbIn, void* pvIn, uint32 cbOut, void* pvOut, out int32 piResult) mut
 			{
-				return VT.DocumentEvent(&this, hPrinter, hdc, iEsc, cbIn, pvIn, cbOut, pvOut, piResult);
+				return VT.DocumentEvent(ref this, hPrinter, hdc, iEsc, cbIn, pvIn, cbOut, pvOut, out piResult);
 			}
 			[CRepr]
 			public struct VTable : IPrintOemUI.VTable
 			{
-				public new function HRESULT(IPrintOemUI2 *self, HANDLE hPrinter, DEVMODEA* pDevmode, uint32 dwLevel, uint8* lpAttributeInfo) QueryJobAttributes;
-				public new function HRESULT(IPrintOemUI2 *self, uint32 dwMode) HideStandardUI;
-				public new function HRESULT(IPrintOemUI2 *self, HANDLE hPrinter, HDC hdc, int32 iEsc, uint32 cbIn, void* pvIn, uint32 cbOut, void* pvOut, int32* piResult) DocumentEvent;
+				public new function HRESULT(ref IPrintOemUI2 self, HANDLE hPrinter, ref DEVMODEA pDevmode, uint32 dwLevel, ref uint8 lpAttributeInfo) QueryJobAttributes;
+				public new function HRESULT(ref IPrintOemUI2 self, uint32 dwMode) HideStandardUI;
+				public new function HRESULT(ref IPrintOemUI2 self, HANDLE hPrinter, HDC hdc, int32 iEsc, uint32 cbIn, void* pvIn, uint32 cbOut, void* pvOut, out int32 piResult) DocumentEvent;
 			}
 		}
 		[CRepr]
@@ -4515,24 +4515,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AdjustImageableArea(HANDLE hPrinter, uint32 cbDevMode, DEVMODEA* pDevMode, uint32 cbOEMDM, void* pOEMDM, RECTL* prclImageableArea) mut
+			public HRESULT AdjustImageableArea(HANDLE hPrinter, uint32 cbDevMode, in DEVMODEA pDevMode, uint32 cbOEMDM, void* pOEMDM, out RECTL prclImageableArea) mut
 			{
-				return VT.AdjustImageableArea(&this, hPrinter, cbDevMode, pDevMode, cbOEMDM, pOEMDM, prclImageableArea);
+				return VT.AdjustImageableArea(ref this, hPrinter, cbDevMode, pDevMode, cbOEMDM, pOEMDM, out prclImageableArea);
 			}
-			public HRESULT AdjustImageCompression(HANDLE hPrinter, uint32 cbDevMode, DEVMODEA* pDevMode, uint32 cbOEMDM, void* pOEMDM, int32* pCompressionMode) mut
+			public HRESULT AdjustImageCompression(HANDLE hPrinter, uint32 cbDevMode, in DEVMODEA pDevMode, uint32 cbOEMDM, void* pOEMDM, out int32 pCompressionMode) mut
 			{
-				return VT.AdjustImageCompression(&this, hPrinter, cbDevMode, pDevMode, cbOEMDM, pOEMDM, pCompressionMode);
+				return VT.AdjustImageCompression(ref this, hPrinter, cbDevMode, pDevMode, cbOEMDM, pOEMDM, out pCompressionMode);
 			}
-			public HRESULT AdjustDPI(HANDLE hPrinter, uint32 cbDevMode, DEVMODEA* pDevMode, uint32 cbOEMDM, void* pOEMDM, int32* pDPI) mut
+			public HRESULT AdjustDPI(HANDLE hPrinter, uint32 cbDevMode, in DEVMODEA pDevMode, uint32 cbOEMDM, void* pOEMDM, out int32 pDPI) mut
 			{
-				return VT.AdjustDPI(&this, hPrinter, cbDevMode, pDevMode, cbOEMDM, pOEMDM, pDPI);
+				return VT.AdjustDPI(ref this, hPrinter, cbDevMode, pDevMode, cbOEMDM, pOEMDM, out pDPI);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintOemUIMXDC *self, HANDLE hPrinter, uint32 cbDevMode, DEVMODEA* pDevMode, uint32 cbOEMDM, void* pOEMDM, RECTL* prclImageableArea) AdjustImageableArea;
-				public new function HRESULT(IPrintOemUIMXDC *self, HANDLE hPrinter, uint32 cbDevMode, DEVMODEA* pDevMode, uint32 cbOEMDM, void* pOEMDM, int32* pCompressionMode) AdjustImageCompression;
-				public new function HRESULT(IPrintOemUIMXDC *self, HANDLE hPrinter, uint32 cbDevMode, DEVMODEA* pDevMode, uint32 cbOEMDM, void* pOEMDM, int32* pDPI) AdjustDPI;
+				public new function HRESULT(ref IPrintOemUIMXDC self, HANDLE hPrinter, uint32 cbDevMode, in DEVMODEA pDevMode, uint32 cbOEMDM, void* pOEMDM, out RECTL prclImageableArea) AdjustImageableArea;
+				public new function HRESULT(ref IPrintOemUIMXDC self, HANDLE hPrinter, uint32 cbDevMode, in DEVMODEA pDevMode, uint32 cbOEMDM, void* pOEMDM, out int32 pCompressionMode) AdjustImageCompression;
+				public new function HRESULT(ref IPrintOemUIMXDC self, HANDLE hPrinter, uint32 cbDevMode, in DEVMODEA pDevMode, uint32 cbOEMDM, void* pOEMDM, out int32 pDPI) AdjustDPI;
 			}
 		}
 		[CRepr]
@@ -4542,24 +4542,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT DrvGetDriverSetting(void* pci, PSTR Feature, void* pOutput, uint32 cbSize, uint32* pcbNeeded, uint32* pdwOptionsReturned) mut
+			public HRESULT DrvGetDriverSetting(void* pci, PSTR Feature, void* pOutput, uint32 cbSize, out uint32 pcbNeeded, out uint32 pdwOptionsReturned) mut
 			{
-				return VT.DrvGetDriverSetting(&this, pci, Feature, pOutput, cbSize, pcbNeeded, pdwOptionsReturned);
+				return VT.DrvGetDriverSetting(ref this, pci, Feature, pOutput, cbSize, out pcbNeeded, out pdwOptionsReturned);
 			}
 			public HRESULT DrvUpgradeRegistrySetting(HANDLE hPrinter, PSTR pFeature, PSTR pOption) mut
 			{
-				return VT.DrvUpgradeRegistrySetting(&this, hPrinter, pFeature, pOption);
+				return VT.DrvUpgradeRegistrySetting(ref this, hPrinter, pFeature, pOption);
 			}
 			public HRESULT DrvUpdateUISetting(void* pci, void* pOptItem, uint32 dwPreviousSelection, uint32 dwMode) mut
 			{
-				return VT.DrvUpdateUISetting(&this, pci, pOptItem, dwPreviousSelection, dwMode);
+				return VT.DrvUpdateUISetting(ref this, pci, pOptItem, dwPreviousSelection, dwMode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintOemDriverUI *self, void* pci, PSTR Feature, void* pOutput, uint32 cbSize, uint32* pcbNeeded, uint32* pdwOptionsReturned) DrvGetDriverSetting;
-				public new function HRESULT(IPrintOemDriverUI *self, HANDLE hPrinter, PSTR pFeature, PSTR pOption) DrvUpgradeRegistrySetting;
-				public new function HRESULT(IPrintOemDriverUI *self, void* pci, void* pOptItem, uint32 dwPreviousSelection, uint32 dwMode) DrvUpdateUISetting;
+				public new function HRESULT(ref IPrintOemDriverUI self, void* pci, PSTR Feature, void* pOutput, uint32 cbSize, out uint32 pcbNeeded, out uint32 pdwOptionsReturned) DrvGetDriverSetting;
+				public new function HRESULT(ref IPrintOemDriverUI self, HANDLE hPrinter, PSTR pFeature, PSTR pOption) DrvUpgradeRegistrySetting;
+				public new function HRESULT(ref IPrintOemDriverUI self, void* pci, void* pOptItem, uint32 dwPreviousSelection, uint32 dwMode) DrvUpdateUISetting;
 			}
 		}
 		[CRepr]
@@ -4569,59 +4569,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOptions(OEMUIOBJ* poemuiobj, uint32 dwFlags, int8* pmszFeaturesRequested, uint32 cbIn, PSTR pmszFeatureOptionBuf, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT GetOptions(ref OEMUIOBJ poemuiobj, uint32 dwFlags, int8* pmszFeaturesRequested, uint32 cbIn, PSTR pmszFeatureOptionBuf, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.GetOptions(&this, poemuiobj, dwFlags, pmszFeaturesRequested, cbIn, pmszFeatureOptionBuf, cbSize, pcbNeeded);
+				return VT.GetOptions(ref this, ref poemuiobj, dwFlags, pmszFeaturesRequested, cbIn, pmszFeatureOptionBuf, cbSize, out pcbNeeded);
 			}
-			public HRESULT SetOptions(OEMUIOBJ* poemuiobj, uint32 dwFlags, int8* pmszFeatureOptionBuf, uint32 cbIn, uint32* pdwResult) mut
+			public HRESULT SetOptions(ref OEMUIOBJ poemuiobj, uint32 dwFlags, ref int8 pmszFeatureOptionBuf, uint32 cbIn, out uint32 pdwResult) mut
 			{
-				return VT.SetOptions(&this, poemuiobj, dwFlags, pmszFeatureOptionBuf, cbIn, pdwResult);
+				return VT.SetOptions(ref this, ref poemuiobj, dwFlags, ref pmszFeatureOptionBuf, cbIn, out pdwResult);
 			}
-			public HRESULT EnumConstrainedOptions(OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pmszConstrainedOptionList, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT EnumConstrainedOptions(ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pmszConstrainedOptionList, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.EnumConstrainedOptions(&this, poemuiobj, dwFlags, pszFeatureKeyword, pmszConstrainedOptionList, cbSize, pcbNeeded);
+				return VT.EnumConstrainedOptions(ref this, ref poemuiobj, dwFlags, pszFeatureKeyword, pmszConstrainedOptionList, cbSize, out pcbNeeded);
 			}
-			public HRESULT WhyConstrained(OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pmszReasonList, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT WhyConstrained(ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pmszReasonList, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.WhyConstrained(&this, poemuiobj, dwFlags, pszFeatureKeyword, pszOptionKeyword, pmszReasonList, cbSize, pcbNeeded);
+				return VT.WhyConstrained(ref this, ref poemuiobj, dwFlags, pszFeatureKeyword, pszOptionKeyword, pmszReasonList, cbSize, out pcbNeeded);
 			}
-			public HRESULT GetGlobalAttribute(OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszAttribute, uint32* pdwDataType, uint8* pbData, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT GetGlobalAttribute(ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszAttribute, out uint32 pdwDataType, uint8* pbData, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.GetGlobalAttribute(&this, poemuiobj, dwFlags, pszAttribute, pdwDataType, pbData, cbSize, pcbNeeded);
+				return VT.GetGlobalAttribute(ref this, ref poemuiobj, dwFlags, pszAttribute, out pdwDataType, pbData, cbSize, out pcbNeeded);
 			}
-			public HRESULT GetFeatureAttribute(OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszAttribute, uint32* pdwDataType, uint8* pbData, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT GetFeatureAttribute(ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszAttribute, out uint32 pdwDataType, uint8* pbData, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.GetFeatureAttribute(&this, poemuiobj, dwFlags, pszFeatureKeyword, pszAttribute, pdwDataType, pbData, cbSize, pcbNeeded);
+				return VT.GetFeatureAttribute(ref this, ref poemuiobj, dwFlags, pszFeatureKeyword, pszAttribute, out pdwDataType, pbData, cbSize, out pcbNeeded);
 			}
-			public HRESULT GetOptionAttribute(OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pszAttribute, uint32* pdwDataType, uint8* pbData, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT GetOptionAttribute(ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pszAttribute, out uint32 pdwDataType, uint8* pbData, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.GetOptionAttribute(&this, poemuiobj, dwFlags, pszFeatureKeyword, pszOptionKeyword, pszAttribute, pdwDataType, pbData, cbSize, pcbNeeded);
+				return VT.GetOptionAttribute(ref this, ref poemuiobj, dwFlags, pszFeatureKeyword, pszOptionKeyword, pszAttribute, out pdwDataType, pbData, cbSize, out pcbNeeded);
 			}
-			public HRESULT EnumFeatures(OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pmszFeatureList, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT EnumFeatures(ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pmszFeatureList, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.EnumFeatures(&this, poemuiobj, dwFlags, pmszFeatureList, cbSize, pcbNeeded);
+				return VT.EnumFeatures(ref this, ref poemuiobj, dwFlags, pmszFeatureList, cbSize, out pcbNeeded);
 			}
-			public HRESULT EnumOptions(OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pmszOptionList, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT EnumOptions(ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pmszOptionList, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.EnumOptions(&this, poemuiobj, dwFlags, pszFeatureKeyword, pmszOptionList, cbSize, pcbNeeded);
+				return VT.EnumOptions(ref this, ref poemuiobj, dwFlags, pszFeatureKeyword, pmszOptionList, cbSize, out pcbNeeded);
 			}
-			public HRESULT QuerySimulationSupport(HANDLE hPrinter, uint32 dwLevel, uint8* pCaps, uint32 cbSize, uint32* pcbNeeded) mut
+			public HRESULT QuerySimulationSupport(HANDLE hPrinter, uint32 dwLevel, uint8* pCaps, uint32 cbSize, out uint32 pcbNeeded) mut
 			{
-				return VT.QuerySimulationSupport(&this, hPrinter, dwLevel, pCaps, cbSize, pcbNeeded);
+				return VT.QuerySimulationSupport(ref this, hPrinter, dwLevel, pCaps, cbSize, out pcbNeeded);
 			}
 			[CRepr]
 			public struct VTable : IPrintOemDriverUI.VTable
 			{
-				public new function HRESULT(IPrintCoreUI2 *self, OEMUIOBJ* poemuiobj, uint32 dwFlags, int8* pmszFeaturesRequested, uint32 cbIn, PSTR pmszFeatureOptionBuf, uint32 cbSize, uint32* pcbNeeded) GetOptions;
-				public new function HRESULT(IPrintCoreUI2 *self, OEMUIOBJ* poemuiobj, uint32 dwFlags, int8* pmszFeatureOptionBuf, uint32 cbIn, uint32* pdwResult) SetOptions;
-				public new function HRESULT(IPrintCoreUI2 *self, OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pmszConstrainedOptionList, uint32 cbSize, uint32* pcbNeeded) EnumConstrainedOptions;
-				public new function HRESULT(IPrintCoreUI2 *self, OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pmszReasonList, uint32 cbSize, uint32* pcbNeeded) WhyConstrained;
-				public new function HRESULT(IPrintCoreUI2 *self, OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszAttribute, uint32* pdwDataType, uint8* pbData, uint32 cbSize, uint32* pcbNeeded) GetGlobalAttribute;
-				public new function HRESULT(IPrintCoreUI2 *self, OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszAttribute, uint32* pdwDataType, uint8* pbData, uint32 cbSize, uint32* pcbNeeded) GetFeatureAttribute;
-				public new function HRESULT(IPrintCoreUI2 *self, OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pszAttribute, uint32* pdwDataType, uint8* pbData, uint32 cbSize, uint32* pcbNeeded) GetOptionAttribute;
-				public new function HRESULT(IPrintCoreUI2 *self, OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pmszFeatureList, uint32 cbSize, uint32* pcbNeeded) EnumFeatures;
-				public new function HRESULT(IPrintCoreUI2 *self, OEMUIOBJ* poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pmszOptionList, uint32 cbSize, uint32* pcbNeeded) EnumOptions;
-				public new function HRESULT(IPrintCoreUI2 *self, HANDLE hPrinter, uint32 dwLevel, uint8* pCaps, uint32 cbSize, uint32* pcbNeeded) QuerySimulationSupport;
+				public new function HRESULT(ref IPrintCoreUI2 self, ref OEMUIOBJ poemuiobj, uint32 dwFlags, int8* pmszFeaturesRequested, uint32 cbIn, PSTR pmszFeatureOptionBuf, uint32 cbSize, out uint32 pcbNeeded) GetOptions;
+				public new function HRESULT(ref IPrintCoreUI2 self, ref OEMUIOBJ poemuiobj, uint32 dwFlags, ref int8 pmszFeatureOptionBuf, uint32 cbIn, out uint32 pdwResult) SetOptions;
+				public new function HRESULT(ref IPrintCoreUI2 self, ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pmszConstrainedOptionList, uint32 cbSize, out uint32 pcbNeeded) EnumConstrainedOptions;
+				public new function HRESULT(ref IPrintCoreUI2 self, ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pmszReasonList, uint32 cbSize, out uint32 pcbNeeded) WhyConstrained;
+				public new function HRESULT(ref IPrintCoreUI2 self, ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszAttribute, out uint32 pdwDataType, uint8* pbData, uint32 cbSize, out uint32 pcbNeeded) GetGlobalAttribute;
+				public new function HRESULT(ref IPrintCoreUI2 self, ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszAttribute, out uint32 pdwDataType, uint8* pbData, uint32 cbSize, out uint32 pcbNeeded) GetFeatureAttribute;
+				public new function HRESULT(ref IPrintCoreUI2 self, ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pszOptionKeyword, PSTR pszAttribute, out uint32 pdwDataType, uint8* pbData, uint32 cbSize, out uint32 pcbNeeded) GetOptionAttribute;
+				public new function HRESULT(ref IPrintCoreUI2 self, ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pmszFeatureList, uint32 cbSize, out uint32 pcbNeeded) EnumFeatures;
+				public new function HRESULT(ref IPrintCoreUI2 self, ref OEMUIOBJ poemuiobj, uint32 dwFlags, PSTR pszFeatureKeyword, PSTR pmszOptionList, uint32 cbSize, out uint32 pcbNeeded) EnumOptions;
+				public new function HRESULT(ref IPrintCoreUI2 self, HANDLE hPrinter, uint32 dwLevel, uint8* pCaps, uint32 cbSize, out uint32 pcbNeeded) QuerySimulationSupport;
 			}
 		}
 		[CRepr]
@@ -4631,44 +4631,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSupportedVersions(HANDLE hPrinter, int32** ppVersions, int32* cVersions) mut
+			public HRESULT GetSupportedVersions(HANDLE hPrinter, out int32* ppVersions, out int32 cVersions) mut
 			{
-				return VT.GetSupportedVersions(&this, hPrinter, ppVersions, cVersions);
+				return VT.GetSupportedVersions(ref this, hPrinter, out ppVersions, out cVersions);
 			}
-			public HRESULT BindPrinter(HANDLE hPrinter, int32 version, SHIMOPTS* pOptions, uint32* pDevModeFlags, int32* cNamespaces, BSTR** ppNamespaces) mut
+			public HRESULT BindPrinter(HANDLE hPrinter, int32 version, out SHIMOPTS pOptions, out uint32 pDevModeFlags, out int32 cNamespaces, out BSTR* ppNamespaces) mut
 			{
-				return VT.BindPrinter(&this, hPrinter, version, pOptions, pDevModeFlags, cNamespaces, ppNamespaces);
+				return VT.BindPrinter(ref this, hPrinter, version, out pOptions, out pDevModeFlags, out cNamespaces, out ppNamespaces);
 			}
-			public HRESULT QueryDeviceNamespace(BSTR* pDefaultNamespace) mut
+			public HRESULT QueryDeviceNamespace(out BSTR pDefaultNamespace) mut
 			{
-				return VT.QueryDeviceNamespace(&this, pDefaultNamespace);
+				return VT.QueryDeviceNamespace(ref this, out pDefaultNamespace);
 			}
-			public HRESULT ConvertPrintTicketToDevMode(IXMLDOMDocument2* pPrintTicket, uint32 cbDevmodeIn, DEVMODEA* pDevmodeIn, uint32* pcbDevmodeOut, DEVMODEA** ppDevmodeOut) mut
+			public HRESULT ConvertPrintTicketToDevMode(ref IXMLDOMDocument2 pPrintTicket, uint32 cbDevmodeIn, out DEVMODEA pDevmodeIn, out uint32 pcbDevmodeOut, out DEVMODEA* ppDevmodeOut) mut
 			{
-				return VT.ConvertPrintTicketToDevMode(&this, pPrintTicket, cbDevmodeIn, pDevmodeIn, pcbDevmodeOut, ppDevmodeOut);
+				return VT.ConvertPrintTicketToDevMode(ref this, ref pPrintTicket, cbDevmodeIn, out pDevmodeIn, out pcbDevmodeOut, out ppDevmodeOut);
 			}
-			public HRESULT ConvertDevModeToPrintTicket(uint32 cbDevmode, DEVMODEA* pDevmode, IXMLDOMDocument2* pPrintTicket) mut
+			public HRESULT ConvertDevModeToPrintTicket(uint32 cbDevmode, out DEVMODEA pDevmode, ref IXMLDOMDocument2 pPrintTicket) mut
 			{
-				return VT.ConvertDevModeToPrintTicket(&this, cbDevmode, pDevmode, pPrintTicket);
+				return VT.ConvertDevModeToPrintTicket(ref this, cbDevmode, out pDevmode, ref pPrintTicket);
 			}
-			public HRESULT GetPrintCapabilities(IXMLDOMDocument2* pPrintTicket, IXMLDOMDocument2** ppCapabilities) mut
+			public HRESULT GetPrintCapabilities(ref IXMLDOMDocument2 pPrintTicket, out IXMLDOMDocument2* ppCapabilities) mut
 			{
-				return VT.GetPrintCapabilities(&this, pPrintTicket, ppCapabilities);
+				return VT.GetPrintCapabilities(ref this, ref pPrintTicket, out ppCapabilities);
 			}
-			public HRESULT ValidatePrintTicket(IXMLDOMDocument2* pBaseTicket) mut
+			public HRESULT ValidatePrintTicket(ref IXMLDOMDocument2 pBaseTicket) mut
 			{
-				return VT.ValidatePrintTicket(&this, pBaseTicket);
+				return VT.ValidatePrintTicket(ref this, ref pBaseTicket);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintTicketProvider *self, HANDLE hPrinter, int32** ppVersions, int32* cVersions) GetSupportedVersions;
-				public new function HRESULT(IPrintTicketProvider *self, HANDLE hPrinter, int32 version, SHIMOPTS* pOptions, uint32* pDevModeFlags, int32* cNamespaces, BSTR** ppNamespaces) BindPrinter;
-				public new function HRESULT(IPrintTicketProvider *self, BSTR* pDefaultNamespace) QueryDeviceNamespace;
-				public new function HRESULT(IPrintTicketProvider *self, IXMLDOMDocument2* pPrintTicket, uint32 cbDevmodeIn, DEVMODEA* pDevmodeIn, uint32* pcbDevmodeOut, DEVMODEA** ppDevmodeOut) ConvertPrintTicketToDevMode;
-				public new function HRESULT(IPrintTicketProvider *self, uint32 cbDevmode, DEVMODEA* pDevmode, IXMLDOMDocument2* pPrintTicket) ConvertDevModeToPrintTicket;
-				public new function HRESULT(IPrintTicketProvider *self, IXMLDOMDocument2* pPrintTicket, IXMLDOMDocument2** ppCapabilities) GetPrintCapabilities;
-				public new function HRESULT(IPrintTicketProvider *self, IXMLDOMDocument2* pBaseTicket) ValidatePrintTicket;
+				public new function HRESULT(ref IPrintTicketProvider self, HANDLE hPrinter, out int32* ppVersions, out int32 cVersions) GetSupportedVersions;
+				public new function HRESULT(ref IPrintTicketProvider self, HANDLE hPrinter, int32 version, out SHIMOPTS pOptions, out uint32 pDevModeFlags, out int32 cNamespaces, out BSTR* ppNamespaces) BindPrinter;
+				public new function HRESULT(ref IPrintTicketProvider self, out BSTR pDefaultNamespace) QueryDeviceNamespace;
+				public new function HRESULT(ref IPrintTicketProvider self, ref IXMLDOMDocument2 pPrintTicket, uint32 cbDevmodeIn, out DEVMODEA pDevmodeIn, out uint32 pcbDevmodeOut, out DEVMODEA* ppDevmodeOut) ConvertPrintTicketToDevMode;
+				public new function HRESULT(ref IPrintTicketProvider self, uint32 cbDevmode, out DEVMODEA pDevmode, ref IXMLDOMDocument2 pPrintTicket) ConvertDevModeToPrintTicket;
+				public new function HRESULT(ref IPrintTicketProvider self, ref IXMLDOMDocument2 pPrintTicket, out IXMLDOMDocument2* ppCapabilities) GetPrintCapabilities;
+				public new function HRESULT(ref IPrintTicketProvider self, ref IXMLDOMDocument2 pBaseTicket) ValidatePrintTicket;
 			}
 		}
 		[CRepr]
@@ -4678,19 +4678,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPrintDeviceCapabilities(IXMLDOMDocument2* pPrintTicket, IXMLDOMDocument2** ppDeviceCapabilities) mut
+			public HRESULT GetPrintDeviceCapabilities(ref IXMLDOMDocument2 pPrintTicket, out IXMLDOMDocument2* ppDeviceCapabilities) mut
 			{
-				return VT.GetPrintDeviceCapabilities(&this, pPrintTicket, ppDeviceCapabilities);
+				return VT.GetPrintDeviceCapabilities(ref this, ref pPrintTicket, out ppDeviceCapabilities);
 			}
-			public HRESULT GetPrintDeviceResources(PWSTR pszLocaleName, IXMLDOMDocument2* pPrintTicket, IXMLDOMDocument2** ppDeviceResources) mut
+			public HRESULT GetPrintDeviceResources(PWSTR pszLocaleName, ref IXMLDOMDocument2 pPrintTicket, out IXMLDOMDocument2* ppDeviceResources) mut
 			{
-				return VT.GetPrintDeviceResources(&this, pszLocaleName, pPrintTicket, ppDeviceResources);
+				return VT.GetPrintDeviceResources(ref this, pszLocaleName, ref pPrintTicket, out ppDeviceResources);
 			}
 			[CRepr]
 			public struct VTable : IPrintTicketProvider.VTable
 			{
-				public new function HRESULT(IPrintTicketProvider2 *self, IXMLDOMDocument2* pPrintTicket, IXMLDOMDocument2** ppDeviceCapabilities) GetPrintDeviceCapabilities;
-				public new function HRESULT(IPrintTicketProvider2 *self, PWSTR pszLocaleName, IXMLDOMDocument2* pPrintTicket, IXMLDOMDocument2** ppDeviceResources) GetPrintDeviceResources;
+				public new function HRESULT(ref IPrintTicketProvider2 self, ref IXMLDOMDocument2 pPrintTicket, out IXMLDOMDocument2* ppDeviceCapabilities) GetPrintDeviceCapabilities;
+				public new function HRESULT(ref IPrintTicketProvider2 self, PWSTR pszLocaleName, ref IXMLDOMDocument2 pPrintTicket, out IXMLDOMDocument2* ppDeviceResources) GetPrintDeviceResources;
 			}
 		}
 		[CRepr]
@@ -4700,24 +4700,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_XmlNode(IUnknown** ppXmlNode) mut
+			public HRESULT get_XmlNode(out IUnknown* ppXmlNode) mut
 			{
-				return VT.get_XmlNode(&this, ppXmlNode);
+				return VT.get_XmlNode(ref this, out ppXmlNode);
 			}
-			public HRESULT get_Name(BSTR* pbstrName) mut
+			public HRESULT get_Name(out BSTR pbstrName) mut
 			{
-				return VT.get_Name(&this, pbstrName);
+				return VT.get_Name(ref this, out pbstrName);
 			}
-			public HRESULT get_NamespaceUri(BSTR* pbstrNamespaceUri) mut
+			public HRESULT get_NamespaceUri(out BSTR pbstrNamespaceUri) mut
 			{
-				return VT.get_NamespaceUri(&this, pbstrNamespaceUri);
+				return VT.get_NamespaceUri(ref this, out pbstrNamespaceUri);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrintSchemaElement *self, IUnknown** ppXmlNode) get_XmlNode;
-				public new function HRESULT(IPrintSchemaElement *self, BSTR* pbstrName) get_Name;
-				public new function HRESULT(IPrintSchemaElement *self, BSTR* pbstrNamespaceUri) get_NamespaceUri;
+				public new function HRESULT(ref IPrintSchemaElement self, out IUnknown* ppXmlNode) get_XmlNode;
+				public new function HRESULT(ref IPrintSchemaElement self, out BSTR pbstrName) get_Name;
+				public new function HRESULT(ref IPrintSchemaElement self, out BSTR pbstrNamespaceUri) get_NamespaceUri;
 			}
 		}
 		[CRepr]
@@ -4727,14 +4727,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DisplayName(BSTR* pbstrDisplayName) mut
+			public HRESULT get_DisplayName(out BSTR pbstrDisplayName) mut
 			{
-				return VT.get_DisplayName(&this, pbstrDisplayName);
+				return VT.get_DisplayName(ref this, out pbstrDisplayName);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaElement.VTable
 			{
-				public new function HRESULT(IPrintSchemaDisplayableElement *self, BSTR* pbstrDisplayName) get_DisplayName;
+				public new function HRESULT(ref IPrintSchemaDisplayableElement self, out BSTR pbstrDisplayName) get_DisplayName;
 			}
 		}
 		[CRepr]
@@ -4744,24 +4744,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Selected(BOOL* pbIsSelected) mut
+			public HRESULT get_Selected(out BOOL pbIsSelected) mut
 			{
-				return VT.get_Selected(&this, pbIsSelected);
+				return VT.get_Selected(ref this, out pbIsSelected);
 			}
-			public HRESULT get_Constrained(PrintSchemaConstrainedSetting* pSetting) mut
+			public HRESULT get_Constrained(out PrintSchemaConstrainedSetting pSetting) mut
 			{
-				return VT.get_Constrained(&this, pSetting);
+				return VT.get_Constrained(ref this, out pSetting);
 			}
-			public HRESULT GetPropertyValue(BSTR bstrName, BSTR bstrNamespaceUri, IUnknown** ppXmlValueNode) mut
+			public HRESULT GetPropertyValue(BSTR bstrName, BSTR bstrNamespaceUri, out IUnknown* ppXmlValueNode) mut
 			{
-				return VT.GetPropertyValue(&this, bstrName, bstrNamespaceUri, ppXmlValueNode);
+				return VT.GetPropertyValue(ref this, bstrName, bstrNamespaceUri, out ppXmlValueNode);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaDisplayableElement.VTable
 			{
-				public new function HRESULT(IPrintSchemaOption *self, BOOL* pbIsSelected) get_Selected;
-				public new function HRESULT(IPrintSchemaOption *self, PrintSchemaConstrainedSetting* pSetting) get_Constrained;
-				public new function HRESULT(IPrintSchemaOption *self, BSTR bstrName, BSTR bstrNamespaceUri, IUnknown** ppXmlValueNode) GetPropertyValue;
+				public new function HRESULT(ref IPrintSchemaOption self, out BOOL pbIsSelected) get_Selected;
+				public new function HRESULT(ref IPrintSchemaOption self, out PrintSchemaConstrainedSetting pSetting) get_Constrained;
+				public new function HRESULT(ref IPrintSchemaOption self, BSTR bstrName, BSTR bstrNamespaceUri, out IUnknown* ppXmlValueNode) GetPropertyValue;
 			}
 		}
 		[CRepr]
@@ -4771,19 +4771,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_WidthInMicrons(uint32* pulWidth) mut
+			public HRESULT get_WidthInMicrons(out uint32 pulWidth) mut
 			{
-				return VT.get_WidthInMicrons(&this, pulWidth);
+				return VT.get_WidthInMicrons(ref this, out pulWidth);
 			}
-			public HRESULT get_HeightInMicrons(uint32* pulHeight) mut
+			public HRESULT get_HeightInMicrons(out uint32 pulHeight) mut
 			{
-				return VT.get_HeightInMicrons(&this, pulHeight);
+				return VT.get_HeightInMicrons(ref this, out pulHeight);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaOption.VTable
 			{
-				public new function HRESULT(IPrintSchemaPageMediaSizeOption *self, uint32* pulWidth) get_WidthInMicrons;
-				public new function HRESULT(IPrintSchemaPageMediaSizeOption *self, uint32* pulHeight) get_HeightInMicrons;
+				public new function HRESULT(ref IPrintSchemaPageMediaSizeOption self, out uint32 pulWidth) get_WidthInMicrons;
+				public new function HRESULT(ref IPrintSchemaPageMediaSizeOption self, out uint32 pulHeight) get_HeightInMicrons;
 			}
 		}
 		[CRepr]
@@ -4793,14 +4793,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PagesPerSheet(uint32* pulPagesPerSheet) mut
+			public HRESULT get_PagesPerSheet(out uint32 pulPagesPerSheet) mut
 			{
-				return VT.get_PagesPerSheet(&this, pulPagesPerSheet);
+				return VT.get_PagesPerSheet(ref this, out pulPagesPerSheet);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaOption.VTable
 			{
-				public new function HRESULT(IPrintSchemaNUpOption *self, uint32* pulPagesPerSheet) get_PagesPerSheet;
+				public new function HRESULT(ref IPrintSchemaNUpOption self, out uint32 pulPagesPerSheet) get_PagesPerSheet;
 			}
 		}
 		[CRepr]
@@ -4810,24 +4810,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(uint32* pulCount) mut
+			public HRESULT get_Count(out uint32 pulCount) mut
 			{
-				return VT.get_Count(&this, pulCount);
+				return VT.get_Count(ref this, out pulCount);
 			}
-			public HRESULT GetAt(uint32 ulIndex, IPrintSchemaOption** ppOption) mut
+			public HRESULT GetAt(uint32 ulIndex, out IPrintSchemaOption* ppOption) mut
 			{
-				return VT.GetAt(&this, ulIndex, ppOption);
+				return VT.GetAt(ref this, ulIndex, out ppOption);
 			}
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* ppUnk) mut
 			{
-				return VT.get__NewEnum(&this, ppUnk);
+				return VT.get__NewEnum(ref this, out ppUnk);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrintSchemaOptionCollection *self, uint32* pulCount) get_Count;
-				public new function HRESULT(IPrintSchemaOptionCollection *self, uint32 ulIndex, IPrintSchemaOption** ppOption) GetAt;
-				public new function HRESULT(IPrintSchemaOptionCollection *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(ref IPrintSchemaOptionCollection self, out uint32 pulCount) get_Count;
+				public new function HRESULT(ref IPrintSchemaOptionCollection self, uint32 ulIndex, out IPrintSchemaOption* ppOption) GetAt;
+				public new function HRESULT(ref IPrintSchemaOptionCollection self, out IUnknown* ppUnk) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -4837,34 +4837,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SelectedOption(IPrintSchemaOption** ppOption) mut
+			public HRESULT get_SelectedOption(out IPrintSchemaOption* ppOption) mut
 			{
-				return VT.get_SelectedOption(&this, ppOption);
+				return VT.get_SelectedOption(ref this, out ppOption);
 			}
-			public HRESULT put_SelectedOption(IPrintSchemaOption* pOption) mut
+			public HRESULT put_SelectedOption(ref IPrintSchemaOption pOption) mut
 			{
-				return VT.put_SelectedOption(&this, pOption);
+				return VT.put_SelectedOption(ref this, ref pOption);
 			}
-			public HRESULT get_SelectionType(PrintSchemaSelectionType* pSelectionType) mut
+			public HRESULT get_SelectionType(out PrintSchemaSelectionType pSelectionType) mut
 			{
-				return VT.get_SelectionType(&this, pSelectionType);
+				return VT.get_SelectionType(ref this, out pSelectionType);
 			}
-			public HRESULT GetOption(BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaOption** ppOption) mut
+			public HRESULT GetOption(BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaOption* ppOption) mut
 			{
-				return VT.GetOption(&this, bstrName, bstrNamespaceUri, ppOption);
+				return VT.GetOption(ref this, bstrName, bstrNamespaceUri, out ppOption);
 			}
-			public HRESULT get_DisplayUI(BOOL* pbShow) mut
+			public HRESULT get_DisplayUI(out BOOL pbShow) mut
 			{
-				return VT.get_DisplayUI(&this, pbShow);
+				return VT.get_DisplayUI(ref this, out pbShow);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaDisplayableElement.VTable
 			{
-				public new function HRESULT(IPrintSchemaFeature *self, IPrintSchemaOption** ppOption) get_SelectedOption;
-				public new function HRESULT(IPrintSchemaFeature *self, IPrintSchemaOption* pOption) put_SelectedOption;
-				public new function HRESULT(IPrintSchemaFeature *self, PrintSchemaSelectionType* pSelectionType) get_SelectionType;
-				public new function HRESULT(IPrintSchemaFeature *self, BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaOption** ppOption) GetOption;
-				public new function HRESULT(IPrintSchemaFeature *self, BOOL* pbShow) get_DisplayUI;
+				public new function HRESULT(ref IPrintSchemaFeature self, out IPrintSchemaOption* ppOption) get_SelectedOption;
+				public new function HRESULT(ref IPrintSchemaFeature self, ref IPrintSchemaOption pOption) put_SelectedOption;
+				public new function HRESULT(ref IPrintSchemaFeature self, out PrintSchemaSelectionType pSelectionType) get_SelectionType;
+				public new function HRESULT(ref IPrintSchemaFeature self, BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaOption* ppOption) GetOption;
+				public new function HRESULT(ref IPrintSchemaFeature self, out BOOL pbShow) get_DisplayUI;
 			}
 		}
 		[CRepr]
@@ -4874,39 +4874,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ImageableSizeWidthInMicrons(uint32* pulImageableSizeWidth) mut
+			public HRESULT get_ImageableSizeWidthInMicrons(out uint32 pulImageableSizeWidth) mut
 			{
-				return VT.get_ImageableSizeWidthInMicrons(&this, pulImageableSizeWidth);
+				return VT.get_ImageableSizeWidthInMicrons(ref this, out pulImageableSizeWidth);
 			}
-			public HRESULT get_ImageableSizeHeightInMicrons(uint32* pulImageableSizeHeight) mut
+			public HRESULT get_ImageableSizeHeightInMicrons(out uint32 pulImageableSizeHeight) mut
 			{
-				return VT.get_ImageableSizeHeightInMicrons(&this, pulImageableSizeHeight);
+				return VT.get_ImageableSizeHeightInMicrons(ref this, out pulImageableSizeHeight);
 			}
-			public HRESULT get_OriginWidthInMicrons(uint32* pulOriginWidth) mut
+			public HRESULT get_OriginWidthInMicrons(out uint32 pulOriginWidth) mut
 			{
-				return VT.get_OriginWidthInMicrons(&this, pulOriginWidth);
+				return VT.get_OriginWidthInMicrons(ref this, out pulOriginWidth);
 			}
-			public HRESULT get_OriginHeightInMicrons(uint32* pulOriginHeight) mut
+			public HRESULT get_OriginHeightInMicrons(out uint32 pulOriginHeight) mut
 			{
-				return VT.get_OriginHeightInMicrons(&this, pulOriginHeight);
+				return VT.get_OriginHeightInMicrons(ref this, out pulOriginHeight);
 			}
-			public HRESULT get_ExtentWidthInMicrons(uint32* pulExtentWidth) mut
+			public HRESULT get_ExtentWidthInMicrons(out uint32 pulExtentWidth) mut
 			{
-				return VT.get_ExtentWidthInMicrons(&this, pulExtentWidth);
+				return VT.get_ExtentWidthInMicrons(ref this, out pulExtentWidth);
 			}
-			public HRESULT get_ExtentHeightInMicrons(uint32* pulExtentHeight) mut
+			public HRESULT get_ExtentHeightInMicrons(out uint32 pulExtentHeight) mut
 			{
-				return VT.get_ExtentHeightInMicrons(&this, pulExtentHeight);
+				return VT.get_ExtentHeightInMicrons(ref this, out pulExtentHeight);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaElement.VTable
 			{
-				public new function HRESULT(IPrintSchemaPageImageableSize *self, uint32* pulImageableSizeWidth) get_ImageableSizeWidthInMicrons;
-				public new function HRESULT(IPrintSchemaPageImageableSize *self, uint32* pulImageableSizeHeight) get_ImageableSizeHeightInMicrons;
-				public new function HRESULT(IPrintSchemaPageImageableSize *self, uint32* pulOriginWidth) get_OriginWidthInMicrons;
-				public new function HRESULT(IPrintSchemaPageImageableSize *self, uint32* pulOriginHeight) get_OriginHeightInMicrons;
-				public new function HRESULT(IPrintSchemaPageImageableSize *self, uint32* pulExtentWidth) get_ExtentWidthInMicrons;
-				public new function HRESULT(IPrintSchemaPageImageableSize *self, uint32* pulExtentHeight) get_ExtentHeightInMicrons;
+				public new function HRESULT(ref IPrintSchemaPageImageableSize self, out uint32 pulImageableSizeWidth) get_ImageableSizeWidthInMicrons;
+				public new function HRESULT(ref IPrintSchemaPageImageableSize self, out uint32 pulImageableSizeHeight) get_ImageableSizeHeightInMicrons;
+				public new function HRESULT(ref IPrintSchemaPageImageableSize self, out uint32 pulOriginWidth) get_OriginWidthInMicrons;
+				public new function HRESULT(ref IPrintSchemaPageImageableSize self, out uint32 pulOriginHeight) get_OriginHeightInMicrons;
+				public new function HRESULT(ref IPrintSchemaPageImageableSize self, out uint32 pulExtentWidth) get_ExtentWidthInMicrons;
+				public new function HRESULT(ref IPrintSchemaPageImageableSize self, out uint32 pulExtentHeight) get_ExtentHeightInMicrons;
 			}
 		}
 		[CRepr]
@@ -4916,34 +4916,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_UserInputRequired(BOOL* pbIsRequired) mut
+			public HRESULT get_UserInputRequired(out BOOL pbIsRequired) mut
 			{
-				return VT.get_UserInputRequired(&this, pbIsRequired);
+				return VT.get_UserInputRequired(ref this, out pbIsRequired);
 			}
-			public HRESULT get_UnitType(BSTR* pbstrUnitType) mut
+			public HRESULT get_UnitType(out BSTR pbstrUnitType) mut
 			{
-				return VT.get_UnitType(&this, pbstrUnitType);
+				return VT.get_UnitType(ref this, out pbstrUnitType);
 			}
-			public HRESULT get_DataType(PrintSchemaParameterDataType* pDataType) mut
+			public HRESULT get_DataType(out PrintSchemaParameterDataType pDataType) mut
 			{
-				return VT.get_DataType(&this, pDataType);
+				return VT.get_DataType(ref this, out pDataType);
 			}
-			public HRESULT get_RangeMin(int32* pRangeMin) mut
+			public HRESULT get_RangeMin(out int32 pRangeMin) mut
 			{
-				return VT.get_RangeMin(&this, pRangeMin);
+				return VT.get_RangeMin(ref this, out pRangeMin);
 			}
-			public HRESULT get_RangeMax(int32* pRangeMax) mut
+			public HRESULT get_RangeMax(out int32 pRangeMax) mut
 			{
-				return VT.get_RangeMax(&this, pRangeMax);
+				return VT.get_RangeMax(ref this, out pRangeMax);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaDisplayableElement.VTable
 			{
-				public new function HRESULT(IPrintSchemaParameterDefinition *self, BOOL* pbIsRequired) get_UserInputRequired;
-				public new function HRESULT(IPrintSchemaParameterDefinition *self, BSTR* pbstrUnitType) get_UnitType;
-				public new function HRESULT(IPrintSchemaParameterDefinition *self, PrintSchemaParameterDataType* pDataType) get_DataType;
-				public new function HRESULT(IPrintSchemaParameterDefinition *self, int32* pRangeMin) get_RangeMin;
-				public new function HRESULT(IPrintSchemaParameterDefinition *self, int32* pRangeMax) get_RangeMax;
+				public new function HRESULT(ref IPrintSchemaParameterDefinition self, out BOOL pbIsRequired) get_UserInputRequired;
+				public new function HRESULT(ref IPrintSchemaParameterDefinition self, out BSTR pbstrUnitType) get_UnitType;
+				public new function HRESULT(ref IPrintSchemaParameterDefinition self, out PrintSchemaParameterDataType pDataType) get_DataType;
+				public new function HRESULT(ref IPrintSchemaParameterDefinition self, out int32 pRangeMin) get_RangeMin;
+				public new function HRESULT(ref IPrintSchemaParameterDefinition self, out int32 pRangeMax) get_RangeMax;
 			}
 		}
 		[CRepr]
@@ -4953,19 +4953,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Value(VARIANT* pVar) mut
+			public HRESULT get_Value(out VARIANT pVar) mut
 			{
-				return VT.get_Value(&this, pVar);
+				return VT.get_Value(ref this, out pVar);
 			}
-			public HRESULT put_Value(VARIANT* pVar) mut
+			public HRESULT put_Value(ref VARIANT pVar) mut
 			{
-				return VT.put_Value(&this, pVar);
+				return VT.put_Value(ref this, ref pVar);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaElement.VTable
 			{
-				public new function HRESULT(IPrintSchemaParameterInitializer *self, VARIANT* pVar) get_Value;
-				public new function HRESULT(IPrintSchemaParameterInitializer *self, VARIANT* pVar) put_Value;
+				public new function HRESULT(ref IPrintSchemaParameterInitializer self, out VARIANT pVar) get_Value;
+				public new function HRESULT(ref IPrintSchemaParameterInitializer self, ref VARIANT pVar) put_Value;
 			}
 		}
 		[CRepr]
@@ -4975,44 +4975,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFeatureByKeyName(BSTR bstrKeyName, IPrintSchemaFeature** ppFeature) mut
+			public HRESULT GetFeatureByKeyName(BSTR bstrKeyName, out IPrintSchemaFeature* ppFeature) mut
 			{
-				return VT.GetFeatureByKeyName(&this, bstrKeyName, ppFeature);
+				return VT.GetFeatureByKeyName(ref this, bstrKeyName, out ppFeature);
 			}
-			public HRESULT GetFeature(BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaFeature** ppFeature) mut
+			public HRESULT GetFeature(BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaFeature* ppFeature) mut
 			{
-				return VT.GetFeature(&this, bstrName, bstrNamespaceUri, ppFeature);
+				return VT.GetFeature(ref this, bstrName, bstrNamespaceUri, out ppFeature);
 			}
-			public HRESULT get_PageImageableSize(IPrintSchemaPageImageableSize** ppPageImageableSize) mut
+			public HRESULT get_PageImageableSize(out IPrintSchemaPageImageableSize* ppPageImageableSize) mut
 			{
-				return VT.get_PageImageableSize(&this, ppPageImageableSize);
+				return VT.get_PageImageableSize(ref this, out ppPageImageableSize);
 			}
-			public HRESULT get_JobCopiesAllDocumentsMinValue(uint32* pulJobCopiesAllDocumentsMinValue) mut
+			public HRESULT get_JobCopiesAllDocumentsMinValue(out uint32 pulJobCopiesAllDocumentsMinValue) mut
 			{
-				return VT.get_JobCopiesAllDocumentsMinValue(&this, pulJobCopiesAllDocumentsMinValue);
+				return VT.get_JobCopiesAllDocumentsMinValue(ref this, out pulJobCopiesAllDocumentsMinValue);
 			}
-			public HRESULT get_JobCopiesAllDocumentsMaxValue(uint32* pulJobCopiesAllDocumentsMaxValue) mut
+			public HRESULT get_JobCopiesAllDocumentsMaxValue(out uint32 pulJobCopiesAllDocumentsMaxValue) mut
 			{
-				return VT.get_JobCopiesAllDocumentsMaxValue(&this, pulJobCopiesAllDocumentsMaxValue);
+				return VT.get_JobCopiesAllDocumentsMaxValue(ref this, out pulJobCopiesAllDocumentsMaxValue);
 			}
-			public HRESULT GetSelectedOptionInPrintTicket(IPrintSchemaFeature* pFeature, IPrintSchemaOption** ppOption) mut
+			public HRESULT GetSelectedOptionInPrintTicket(ref IPrintSchemaFeature pFeature, out IPrintSchemaOption* ppOption) mut
 			{
-				return VT.GetSelectedOptionInPrintTicket(&this, pFeature, ppOption);
+				return VT.GetSelectedOptionInPrintTicket(ref this, ref pFeature, out ppOption);
 			}
-			public HRESULT GetOptions(IPrintSchemaFeature* pFeature, IPrintSchemaOptionCollection** ppOptionCollection) mut
+			public HRESULT GetOptions(ref IPrintSchemaFeature pFeature, out IPrintSchemaOptionCollection* ppOptionCollection) mut
 			{
-				return VT.GetOptions(&this, pFeature, ppOptionCollection);
+				return VT.GetOptions(ref this, ref pFeature, out ppOptionCollection);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaElement.VTable
 			{
-				public new function HRESULT(IPrintSchemaCapabilities *self, BSTR bstrKeyName, IPrintSchemaFeature** ppFeature) GetFeatureByKeyName;
-				public new function HRESULT(IPrintSchemaCapabilities *self, BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaFeature** ppFeature) GetFeature;
-				public new function HRESULT(IPrintSchemaCapabilities *self, IPrintSchemaPageImageableSize** ppPageImageableSize) get_PageImageableSize;
-				public new function HRESULT(IPrintSchemaCapabilities *self, uint32* pulJobCopiesAllDocumentsMinValue) get_JobCopiesAllDocumentsMinValue;
-				public new function HRESULT(IPrintSchemaCapabilities *self, uint32* pulJobCopiesAllDocumentsMaxValue) get_JobCopiesAllDocumentsMaxValue;
-				public new function HRESULT(IPrintSchemaCapabilities *self, IPrintSchemaFeature* pFeature, IPrintSchemaOption** ppOption) GetSelectedOptionInPrintTicket;
-				public new function HRESULT(IPrintSchemaCapabilities *self, IPrintSchemaFeature* pFeature, IPrintSchemaOptionCollection** ppOptionCollection) GetOptions;
+				public new function HRESULT(ref IPrintSchemaCapabilities self, BSTR bstrKeyName, out IPrintSchemaFeature* ppFeature) GetFeatureByKeyName;
+				public new function HRESULT(ref IPrintSchemaCapabilities self, BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaFeature* ppFeature) GetFeature;
+				public new function HRESULT(ref IPrintSchemaCapabilities self, out IPrintSchemaPageImageableSize* ppPageImageableSize) get_PageImageableSize;
+				public new function HRESULT(ref IPrintSchemaCapabilities self, out uint32 pulJobCopiesAllDocumentsMinValue) get_JobCopiesAllDocumentsMinValue;
+				public new function HRESULT(ref IPrintSchemaCapabilities self, out uint32 pulJobCopiesAllDocumentsMaxValue) get_JobCopiesAllDocumentsMaxValue;
+				public new function HRESULT(ref IPrintSchemaCapabilities self, ref IPrintSchemaFeature pFeature, out IPrintSchemaOption* ppOption) GetSelectedOptionInPrintTicket;
+				public new function HRESULT(ref IPrintSchemaCapabilities self, ref IPrintSchemaFeature pFeature, out IPrintSchemaOptionCollection* ppOptionCollection) GetOptions;
 			}
 		}
 		[CRepr]
@@ -5022,14 +5022,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetParameterDefinition(BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaParameterDefinition** ppParameterDefinition) mut
+			public HRESULT GetParameterDefinition(BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaParameterDefinition* ppParameterDefinition) mut
 			{
-				return VT.GetParameterDefinition(&this, bstrName, bstrNamespaceUri, ppParameterDefinition);
+				return VT.GetParameterDefinition(ref this, bstrName, bstrNamespaceUri, out ppParameterDefinition);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaCapabilities.VTable
 			{
-				public new function HRESULT(IPrintSchemaCapabilities2 *self, BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaParameterDefinition** ppParameterDefinition) GetParameterDefinition;
+				public new function HRESULT(ref IPrintSchemaCapabilities2 self, BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaParameterDefinition* ppParameterDefinition) GetParameterDefinition;
 			}
 		}
 		[CRepr]
@@ -5041,17 +5041,17 @@ namespace Win32
 			
 			public HRESULT Start() mut
 			{
-				return VT.Start(&this);
+				return VT.Start(ref this);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrintSchemaAsyncOperation *self) Start;
-				public new function HRESULT(IPrintSchemaAsyncOperation *self) Cancel;
+				public new function HRESULT(ref IPrintSchemaAsyncOperation self) Start;
+				public new function HRESULT(ref IPrintSchemaAsyncOperation self) Cancel;
 			}
 		}
 		[CRepr]
@@ -5061,49 +5061,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFeatureByKeyName(BSTR bstrKeyName, IPrintSchemaFeature** ppFeature) mut
+			public HRESULT GetFeatureByKeyName(BSTR bstrKeyName, out IPrintSchemaFeature* ppFeature) mut
 			{
-				return VT.GetFeatureByKeyName(&this, bstrKeyName, ppFeature);
+				return VT.GetFeatureByKeyName(ref this, bstrKeyName, out ppFeature);
 			}
-			public HRESULT GetFeature(BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaFeature** ppFeature) mut
+			public HRESULT GetFeature(BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaFeature* ppFeature) mut
 			{
-				return VT.GetFeature(&this, bstrName, bstrNamespaceUri, ppFeature);
+				return VT.GetFeature(ref this, bstrName, bstrNamespaceUri, out ppFeature);
 			}
-			public HRESULT ValidateAsync(IPrintSchemaAsyncOperation** ppAsyncOperation) mut
+			public HRESULT ValidateAsync(out IPrintSchemaAsyncOperation* ppAsyncOperation) mut
 			{
-				return VT.ValidateAsync(&this, ppAsyncOperation);
+				return VT.ValidateAsync(ref this, out ppAsyncOperation);
 			}
-			public HRESULT CommitAsync(IPrintSchemaTicket* pPrintTicketCommit, IPrintSchemaAsyncOperation** ppAsyncOperation) mut
+			public HRESULT CommitAsync(ref IPrintSchemaTicket pPrintTicketCommit, out IPrintSchemaAsyncOperation* ppAsyncOperation) mut
 			{
-				return VT.CommitAsync(&this, pPrintTicketCommit, ppAsyncOperation);
+				return VT.CommitAsync(ref this, ref pPrintTicketCommit, out ppAsyncOperation);
 			}
 			public HRESULT NotifyXmlChanged() mut
 			{
-				return VT.NotifyXmlChanged(&this);
+				return VT.NotifyXmlChanged(ref this);
 			}
-			public HRESULT GetCapabilities(IPrintSchemaCapabilities** ppCapabilities) mut
+			public HRESULT GetCapabilities(out IPrintSchemaCapabilities* ppCapabilities) mut
 			{
-				return VT.GetCapabilities(&this, ppCapabilities);
+				return VT.GetCapabilities(ref this, out ppCapabilities);
 			}
-			public HRESULT get_JobCopiesAllDocuments(uint32* pulJobCopiesAllDocuments) mut
+			public HRESULT get_JobCopiesAllDocuments(out uint32 pulJobCopiesAllDocuments) mut
 			{
-				return VT.get_JobCopiesAllDocuments(&this, pulJobCopiesAllDocuments);
+				return VT.get_JobCopiesAllDocuments(ref this, out pulJobCopiesAllDocuments);
 			}
 			public HRESULT put_JobCopiesAllDocuments(uint32 ulJobCopiesAllDocuments) mut
 			{
-				return VT.put_JobCopiesAllDocuments(&this, ulJobCopiesAllDocuments);
+				return VT.put_JobCopiesAllDocuments(ref this, ulJobCopiesAllDocuments);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaElement.VTable
 			{
-				public new function HRESULT(IPrintSchemaTicket *self, BSTR bstrKeyName, IPrintSchemaFeature** ppFeature) GetFeatureByKeyName;
-				public new function HRESULT(IPrintSchemaTicket *self, BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaFeature** ppFeature) GetFeature;
-				public new function HRESULT(IPrintSchemaTicket *self, IPrintSchemaAsyncOperation** ppAsyncOperation) ValidateAsync;
-				public new function HRESULT(IPrintSchemaTicket *self, IPrintSchemaTicket* pPrintTicketCommit, IPrintSchemaAsyncOperation** ppAsyncOperation) CommitAsync;
-				public new function HRESULT(IPrintSchemaTicket *self) NotifyXmlChanged;
-				public new function HRESULT(IPrintSchemaTicket *self, IPrintSchemaCapabilities** ppCapabilities) GetCapabilities;
-				public new function HRESULT(IPrintSchemaTicket *self, uint32* pulJobCopiesAllDocuments) get_JobCopiesAllDocuments;
-				public new function HRESULT(IPrintSchemaTicket *self, uint32 ulJobCopiesAllDocuments) put_JobCopiesAllDocuments;
+				public new function HRESULT(ref IPrintSchemaTicket self, BSTR bstrKeyName, out IPrintSchemaFeature* ppFeature) GetFeatureByKeyName;
+				public new function HRESULT(ref IPrintSchemaTicket self, BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaFeature* ppFeature) GetFeature;
+				public new function HRESULT(ref IPrintSchemaTicket self, out IPrintSchemaAsyncOperation* ppAsyncOperation) ValidateAsync;
+				public new function HRESULT(ref IPrintSchemaTicket self, ref IPrintSchemaTicket pPrintTicketCommit, out IPrintSchemaAsyncOperation* ppAsyncOperation) CommitAsync;
+				public new function HRESULT(ref IPrintSchemaTicket self) NotifyXmlChanged;
+				public new function HRESULT(ref IPrintSchemaTicket self, out IPrintSchemaCapabilities* ppCapabilities) GetCapabilities;
+				public new function HRESULT(ref IPrintSchemaTicket self, out uint32 pulJobCopiesAllDocuments) get_JobCopiesAllDocuments;
+				public new function HRESULT(ref IPrintSchemaTicket self, uint32 ulJobCopiesAllDocuments) put_JobCopiesAllDocuments;
 			}
 		}
 		[CRepr]
@@ -5113,14 +5113,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetParameterInitializer(BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaParameterInitializer** ppParameterInitializer) mut
+			public HRESULT GetParameterInitializer(BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaParameterInitializer* ppParameterInitializer) mut
 			{
-				return VT.GetParameterInitializer(&this, bstrName, bstrNamespaceUri, ppParameterInitializer);
+				return VT.GetParameterInitializer(ref this, bstrName, bstrNamespaceUri, out ppParameterInitializer);
 			}
 			[CRepr]
 			public struct VTable : IPrintSchemaTicket.VTable
 			{
-				public new function HRESULT(IPrintSchemaTicket2 *self, BSTR bstrName, BSTR bstrNamespaceUri, IPrintSchemaParameterInitializer** ppParameterInitializer) GetParameterInitializer;
+				public new function HRESULT(ref IPrintSchemaTicket2 self, BSTR bstrName, BSTR bstrNamespaceUri, out IPrintSchemaParameterInitializer* ppParameterInitializer) GetParameterInitializer;
 			}
 		}
 		[CRepr]
@@ -5130,14 +5130,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Completed(IPrintSchemaTicket* pTicket, HRESULT hrOperation) mut
+			public HRESULT Completed(ref IPrintSchemaTicket pTicket, HRESULT hrOperation) mut
 			{
-				return VT.Completed(&this, pTicket, hrOperation);
+				return VT.Completed(ref this, ref pTicket, hrOperation);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrintSchemaAsyncOperationEvent *self, IPrintSchemaTicket* pTicket, HRESULT hrOperation) Completed;
+				public new function HRESULT(ref IPrintSchemaAsyncOperationEvent self, ref IPrintSchemaTicket pTicket, HRESULT hrOperation) Completed;
 			}
 		}
 		[CRepr]
@@ -5147,19 +5147,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Read(int32 cbRead, IDispatch** ppArray) mut
+			public HRESULT Read(int32 cbRead, out IDispatch* ppArray) mut
 			{
-				return VT.Read(&this, cbRead, ppArray);
+				return VT.Read(ref this, cbRead, out ppArray);
 			}
-			public HRESULT Write(IDispatch* pArray, int32* pcbWritten) mut
+			public HRESULT Write(ref IDispatch pArray, out int32 pcbWritten) mut
 			{
-				return VT.Write(&this, pArray, pcbWritten);
+				return VT.Write(ref this, ref pArray, out pcbWritten);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterScriptableSequentialStream *self, int32 cbRead, IDispatch** ppArray) Read;
-				public new function HRESULT(IPrinterScriptableSequentialStream *self, IDispatch* pArray, int32* pcbWritten) Write;
+				public new function HRESULT(ref IPrinterScriptableSequentialStream self, int32 cbRead, out IDispatch* ppArray) Read;
+				public new function HRESULT(ref IPrinterScriptableSequentialStream self, ref IDispatch pArray, out int32 pcbWritten) Write;
 			}
 		}
 		[CRepr]
@@ -5171,22 +5171,22 @@ namespace Win32
 			
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
-			public HRESULT Seek(int32 lOffset, STREAM_SEEK streamSeek, int32* plPosition) mut
+			public HRESULT Seek(int32 lOffset, STREAM_SEEK streamSeek, out int32 plPosition) mut
 			{
-				return VT.Seek(&this, lOffset, streamSeek, plPosition);
+				return VT.Seek(ref this, lOffset, streamSeek, out plPosition);
 			}
 			public HRESULT SetSize(int32 lSize) mut
 			{
-				return VT.SetSize(&this, lSize);
+				return VT.SetSize(ref this, lSize);
 			}
 			[CRepr]
 			public struct VTable : IPrinterScriptableSequentialStream.VTable
 			{
-				public new function HRESULT(IPrinterScriptableStream *self) Commit;
-				public new function HRESULT(IPrinterScriptableStream *self, int32 lOffset, STREAM_SEEK streamSeek, int32* plPosition) Seek;
-				public new function HRESULT(IPrinterScriptableStream *self, int32 lSize) SetSize;
+				public new function HRESULT(ref IPrinterScriptableStream self) Commit;
+				public new function HRESULT(ref IPrinterScriptableStream self, int32 lOffset, STREAM_SEEK streamSeek, out int32 plPosition) Seek;
+				public new function HRESULT(ref IPrinterScriptableStream self, int32 lSize) SetSize;
 			}
 		}
 		[CRepr]
@@ -5196,59 +5196,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBool(BSTR bstrName, BOOL* pbValue) mut
+			public HRESULT GetBool(BSTR bstrName, out BOOL pbValue) mut
 			{
-				return VT.GetBool(&this, bstrName, pbValue);
+				return VT.GetBool(ref this, bstrName, out pbValue);
 			}
 			public HRESULT SetBool(BSTR bstrName, BOOL bValue) mut
 			{
-				return VT.SetBool(&this, bstrName, bValue);
+				return VT.SetBool(ref this, bstrName, bValue);
 			}
-			public HRESULT GetInt32(BSTR bstrName, int32* pnValue) mut
+			public HRESULT GetInt32(BSTR bstrName, out int32 pnValue) mut
 			{
-				return VT.GetInt32(&this, bstrName, pnValue);
+				return VT.GetInt32(ref this, bstrName, out pnValue);
 			}
 			public HRESULT SetInt32(BSTR bstrName, int32 nValue) mut
 			{
-				return VT.SetInt32(&this, bstrName, nValue);
+				return VT.SetInt32(ref this, bstrName, nValue);
 			}
-			public HRESULT GetString(BSTR bstrName, BSTR* pbstrValue) mut
+			public HRESULT GetString(BSTR bstrName, out BSTR pbstrValue) mut
 			{
-				return VT.GetString(&this, bstrName, pbstrValue);
+				return VT.GetString(ref this, bstrName, out pbstrValue);
 			}
 			public HRESULT SetString(BSTR bstrName, BSTR bstrValue) mut
 			{
-				return VT.SetString(&this, bstrName, bstrValue);
+				return VT.SetString(ref this, bstrName, bstrValue);
 			}
-			public HRESULT GetBytes(BSTR bstrName, uint32* pcbValue, uint8** ppValue) mut
+			public HRESULT GetBytes(BSTR bstrName, out uint32 pcbValue, uint8** ppValue) mut
 			{
-				return VT.GetBytes(&this, bstrName, pcbValue, ppValue);
+				return VT.GetBytes(ref this, bstrName, out pcbValue, ppValue);
 			}
 			public HRESULT SetBytes(BSTR bstrName, uint32 cbValue, uint8* pValue) mut
 			{
-				return VT.SetBytes(&this, bstrName, cbValue, pValue);
+				return VT.SetBytes(ref this, bstrName, cbValue, pValue);
 			}
-			public HRESULT GetReadStream(BSTR bstrName, IStream** ppValue) mut
+			public HRESULT GetReadStream(BSTR bstrName, out IStream* ppValue) mut
 			{
-				return VT.GetReadStream(&this, bstrName, ppValue);
+				return VT.GetReadStream(ref this, bstrName, out ppValue);
 			}
-			public HRESULT GetWriteStream(BSTR bstrName, IStream** ppValue) mut
+			public HRESULT GetWriteStream(BSTR bstrName, out IStream* ppValue) mut
 			{
-				return VT.GetWriteStream(&this, bstrName, ppValue);
+				return VT.GetWriteStream(ref this, bstrName, out ppValue);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, BOOL* pbValue) GetBool;
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, BOOL bValue) SetBool;
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, int32* pnValue) GetInt32;
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, int32 nValue) SetInt32;
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, BSTR* pbstrValue) GetString;
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, BSTR bstrValue) SetString;
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, uint32* pcbValue, uint8** ppValue) GetBytes;
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, uint32 cbValue, uint8* pValue) SetBytes;
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, IStream** ppValue) GetReadStream;
-				public new function HRESULT(IPrinterPropertyBag *self, BSTR bstrName, IStream** ppValue) GetWriteStream;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, out BOOL pbValue) GetBool;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, BOOL bValue) SetBool;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, out int32 pnValue) GetInt32;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, int32 nValue) SetInt32;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, out BSTR pbstrValue) GetString;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, BSTR bstrValue) SetString;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, out uint32 pcbValue, uint8** ppValue) GetBytes;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, uint32 cbValue, uint8* pValue) SetBytes;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, out IStream* ppValue) GetReadStream;
+				public new function HRESULT(ref IPrinterPropertyBag self, BSTR bstrName, out IStream* ppValue) GetWriteStream;
 			}
 		}
 		[CRepr]
@@ -5258,59 +5258,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBool(BSTR bstrName, BOOL* pbValue) mut
+			public HRESULT GetBool(BSTR bstrName, out BOOL pbValue) mut
 			{
-				return VT.GetBool(&this, bstrName, pbValue);
+				return VT.GetBool(ref this, bstrName, out pbValue);
 			}
 			public HRESULT SetBool(BSTR bstrName, BOOL bValue) mut
 			{
-				return VT.SetBool(&this, bstrName, bValue);
+				return VT.SetBool(ref this, bstrName, bValue);
 			}
-			public HRESULT GetInt32(BSTR bstrName, int32* pnValue) mut
+			public HRESULT GetInt32(BSTR bstrName, out int32 pnValue) mut
 			{
-				return VT.GetInt32(&this, bstrName, pnValue);
+				return VT.GetInt32(ref this, bstrName, out pnValue);
 			}
 			public HRESULT SetInt32(BSTR bstrName, int32 nValue) mut
 			{
-				return VT.SetInt32(&this, bstrName, nValue);
+				return VT.SetInt32(ref this, bstrName, nValue);
 			}
-			public HRESULT GetString(BSTR bstrName, BSTR* pbstrValue) mut
+			public HRESULT GetString(BSTR bstrName, out BSTR pbstrValue) mut
 			{
-				return VT.GetString(&this, bstrName, pbstrValue);
+				return VT.GetString(ref this, bstrName, out pbstrValue);
 			}
 			public HRESULT SetString(BSTR bstrName, BSTR bstrValue) mut
 			{
-				return VT.SetString(&this, bstrName, bstrValue);
+				return VT.SetString(ref this, bstrName, bstrValue);
 			}
-			public HRESULT GetBytes(BSTR bstrName, IDispatch** ppArray) mut
+			public HRESULT GetBytes(BSTR bstrName, out IDispatch* ppArray) mut
 			{
-				return VT.GetBytes(&this, bstrName, ppArray);
+				return VT.GetBytes(ref this, bstrName, out ppArray);
 			}
-			public HRESULT SetBytes(BSTR bstrName, IDispatch* pArray) mut
+			public HRESULT SetBytes(BSTR bstrName, ref IDispatch pArray) mut
 			{
-				return VT.SetBytes(&this, bstrName, pArray);
+				return VT.SetBytes(ref this, bstrName, ref pArray);
 			}
-			public HRESULT GetReadStream(BSTR bstrName, IPrinterScriptableStream** ppStream) mut
+			public HRESULT GetReadStream(BSTR bstrName, out IPrinterScriptableStream* ppStream) mut
 			{
-				return VT.GetReadStream(&this, bstrName, ppStream);
+				return VT.GetReadStream(ref this, bstrName, out ppStream);
 			}
-			public HRESULT GetWriteStream(BSTR bstrName, IPrinterScriptableStream** ppStream) mut
+			public HRESULT GetWriteStream(BSTR bstrName, out IPrinterScriptableStream* ppStream) mut
 			{
-				return VT.GetWriteStream(&this, bstrName, ppStream);
+				return VT.GetWriteStream(ref this, bstrName, out ppStream);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, BOOL* pbValue) GetBool;
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, BOOL bValue) SetBool;
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, int32* pnValue) GetInt32;
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, int32 nValue) SetInt32;
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, BSTR* pbstrValue) GetString;
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, BSTR bstrValue) SetString;
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, IDispatch** ppArray) GetBytes;
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, IDispatch* pArray) SetBytes;
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, IPrinterScriptableStream** ppStream) GetReadStream;
-				public new function HRESULT(IPrinterScriptablePropertyBag *self, BSTR bstrName, IPrinterScriptableStream** ppStream) GetWriteStream;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, out BOOL pbValue) GetBool;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, BOOL bValue) SetBool;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, out int32 pnValue) GetInt32;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, int32 nValue) SetInt32;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, out BSTR pbstrValue) GetString;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, BSTR bstrValue) SetString;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, out IDispatch* ppArray) GetBytes;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, ref IDispatch pArray) SetBytes;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, out IPrinterScriptableStream* ppStream) GetReadStream;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag self, BSTR bstrName, out IPrinterScriptableStream* ppStream) GetWriteStream;
 			}
 		}
 		[CRepr]
@@ -5320,14 +5320,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetReadStreamAsXML(BSTR bstrName, IUnknown** ppXmlNode) mut
+			public HRESULT GetReadStreamAsXML(BSTR bstrName, out IUnknown* ppXmlNode) mut
 			{
-				return VT.GetReadStreamAsXML(&this, bstrName, ppXmlNode);
+				return VT.GetReadStreamAsXML(ref this, bstrName, out ppXmlNode);
 			}
 			[CRepr]
 			public struct VTable : IPrinterScriptablePropertyBag.VTable
 			{
-				public new function HRESULT(IPrinterScriptablePropertyBag2 *self, BSTR bstrName, IUnknown** ppXmlNode) GetReadStreamAsXML;
+				public new function HRESULT(ref IPrinterScriptablePropertyBag2 self, BSTR bstrName, out IUnknown* ppXmlNode) GetReadStreamAsXML;
 			}
 		}
 		[CRepr]
@@ -5337,29 +5337,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Handle(HANDLE* phPrinter) mut
+			public HRESULT get_Handle(out HANDLE phPrinter) mut
 			{
-				return VT.get_Handle(&this, phPrinter);
+				return VT.get_Handle(ref this, out phPrinter);
 			}
-			public HRESULT get_Name(BSTR* pbstrName) mut
+			public HRESULT get_Name(out BSTR pbstrName) mut
 			{
-				return VT.get_Name(&this, pbstrName);
+				return VT.get_Name(ref this, out pbstrName);
 			}
 			public HRESULT SendBidiQuery(BSTR bstrBidiQuery) mut
 			{
-				return VT.SendBidiQuery(&this, bstrBidiQuery);
+				return VT.SendBidiQuery(ref this, bstrBidiQuery);
 			}
-			public HRESULT GetProperties(IPrinterPropertyBag** ppPropertyBag) mut
+			public HRESULT GetProperties(out IPrinterPropertyBag* ppPropertyBag) mut
 			{
-				return VT.GetProperties(&this, ppPropertyBag);
+				return VT.GetProperties(ref this, out ppPropertyBag);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterQueue *self, HANDLE* phPrinter) get_Handle;
-				public new function HRESULT(IPrinterQueue *self, BSTR* pbstrName) get_Name;
-				public new function HRESULT(IPrinterQueue *self, BSTR bstrBidiQuery) SendBidiQuery;
-				public new function HRESULT(IPrinterQueue *self, IPrinterPropertyBag** ppPropertyBag) GetProperties;
+				public new function HRESULT(ref IPrinterQueue self, out HANDLE phPrinter) get_Handle;
+				public new function HRESULT(ref IPrinterQueue self, out BSTR pbstrName) get_Name;
+				public new function HRESULT(ref IPrinterQueue self, BSTR bstrBidiQuery) SendBidiQuery;
+				public new function HRESULT(ref IPrinterQueue self, out IPrinterPropertyBag* ppPropertyBag) GetProperties;
 			}
 		}
 		[CRepr]
@@ -5369,44 +5369,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* pbstrName) mut
+			public HRESULT get_Name(out BSTR pbstrName) mut
 			{
-				return VT.get_Name(&this, pbstrName);
+				return VT.get_Name(ref this, out pbstrName);
 			}
-			public HRESULT get_Id(uint32* pulID) mut
+			public HRESULT get_Id(out uint32 pulID) mut
 			{
-				return VT.get_Id(&this, pulID);
+				return VT.get_Id(ref this, out pulID);
 			}
-			public HRESULT get_PrintedPages(uint32* pulPages) mut
+			public HRESULT get_PrintedPages(out uint32 pulPages) mut
 			{
-				return VT.get_PrintedPages(&this, pulPages);
+				return VT.get_PrintedPages(ref this, out pulPages);
 			}
-			public HRESULT get_TotalPages(uint32* pulPages) mut
+			public HRESULT get_TotalPages(out uint32 pulPages) mut
 			{
-				return VT.get_TotalPages(&this, pulPages);
+				return VT.get_TotalPages(ref this, out pulPages);
 			}
-			public HRESULT get_Status(PrintJobStatus* pStatus) mut
+			public HRESULT get_Status(out PrintJobStatus pStatus) mut
 			{
-				return VT.get_Status(&this, pStatus);
+				return VT.get_Status(ref this, out pStatus);
 			}
-			public HRESULT get_SubmissionTime(double* pSubmissionTime) mut
+			public HRESULT get_SubmissionTime(out double pSubmissionTime) mut
 			{
-				return VT.get_SubmissionTime(&this, pSubmissionTime);
+				return VT.get_SubmissionTime(ref this, out pSubmissionTime);
 			}
 			public HRESULT RequestCancel() mut
 			{
-				return VT.RequestCancel(&this);
+				return VT.RequestCancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintJob *self, BSTR* pbstrName) get_Name;
-				public new function HRESULT(IPrintJob *self, uint32* pulID) get_Id;
-				public new function HRESULT(IPrintJob *self, uint32* pulPages) get_PrintedPages;
-				public new function HRESULT(IPrintJob *self, uint32* pulPages) get_TotalPages;
-				public new function HRESULT(IPrintJob *self, PrintJobStatus* pStatus) get_Status;
-				public new function HRESULT(IPrintJob *self, double* pSubmissionTime) get_SubmissionTime;
-				public new function HRESULT(IPrintJob *self) RequestCancel;
+				public new function HRESULT(ref IPrintJob self, out BSTR pbstrName) get_Name;
+				public new function HRESULT(ref IPrintJob self, out uint32 pulID) get_Id;
+				public new function HRESULT(ref IPrintJob self, out uint32 pulPages) get_PrintedPages;
+				public new function HRESULT(ref IPrintJob self, out uint32 pulPages) get_TotalPages;
+				public new function HRESULT(ref IPrintJob self, out PrintJobStatus pStatus) get_Status;
+				public new function HRESULT(ref IPrintJob self, out double pSubmissionTime) get_SubmissionTime;
+				public new function HRESULT(ref IPrintJob self) RequestCancel;
 			}
 		}
 		[CRepr]
@@ -5416,24 +5416,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(uint32* pulCount) mut
+			public HRESULT get_Count(out uint32 pulCount) mut
 			{
-				return VT.get_Count(&this, pulCount);
+				return VT.get_Count(ref this, out pulCount);
 			}
-			public HRESULT GetAt(uint32 ulIndex, IPrintJob** ppJob) mut
+			public HRESULT GetAt(uint32 ulIndex, out IPrintJob* ppJob) mut
 			{
-				return VT.GetAt(&this, ulIndex, ppJob);
+				return VT.GetAt(ref this, ulIndex, out ppJob);
 			}
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* ppUnk) mut
 			{
-				return VT.get__NewEnum(&this, ppUnk);
+				return VT.get__NewEnum(ref this, out ppUnk);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrintJobCollection *self, uint32* pulCount) get_Count;
-				public new function HRESULT(IPrintJobCollection *self, uint32 ulIndex, IPrintJob** ppJob) GetAt;
-				public new function HRESULT(IPrintJobCollection *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(ref IPrintJobCollection self, out uint32 pulCount) get_Count;
+				public new function HRESULT(ref IPrintJobCollection self, uint32 ulIndex, out IPrintJob* ppJob) GetAt;
+				public new function HRESULT(ref IPrintJobCollection self, out IUnknown* ppUnk) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5443,14 +5443,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnChanged(IPrintJobCollection* pCollection, uint32 ulViewOffset, uint32 ulViewSize, uint32 ulCountJobsInPrintQueue) mut
+			public HRESULT OnChanged(ref IPrintJobCollection pCollection, uint32 ulViewOffset, uint32 ulViewSize, uint32 ulCountJobsInPrintQueue) mut
 			{
-				return VT.OnChanged(&this, pCollection, ulViewOffset, ulViewSize, ulCountJobsInPrintQueue);
+				return VT.OnChanged(ref this, ref pCollection, ulViewOffset, ulViewSize, ulCountJobsInPrintQueue);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterQueueViewEvent *self, IPrintJobCollection* pCollection, uint32 ulViewOffset, uint32 ulViewSize, uint32 ulCountJobsInPrintQueue) OnChanged;
+				public new function HRESULT(ref IPrinterQueueViewEvent self, ref IPrintJobCollection pCollection, uint32 ulViewOffset, uint32 ulViewSize, uint32 ulCountJobsInPrintQueue) OnChanged;
 			}
 		}
 		[CRepr]
@@ -5462,12 +5462,12 @@ namespace Win32
 			
 			public HRESULT SetViewRange(uint32 ulViewOffset, uint32 ulViewSize) mut
 			{
-				return VT.SetViewRange(&this, ulViewOffset, ulViewSize);
+				return VT.SetViewRange(ref this, ulViewOffset, ulViewSize);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterQueueView *self, uint32 ulViewOffset, uint32 ulViewSize) SetViewRange;
+				public new function HRESULT(ref IPrinterQueueView self, uint32 ulViewOffset, uint32 ulViewSize) SetViewRange;
 			}
 		}
 		[CRepr]
@@ -5479,12 +5479,12 @@ namespace Win32
 			
 			public HRESULT OnBidiResponseReceived(BSTR bstrResponse, HRESULT hrStatus) mut
 			{
-				return VT.OnBidiResponseReceived(&this, bstrResponse, hrStatus);
+				return VT.OnBidiResponseReceived(ref this, bstrResponse, hrStatus);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterQueueEvent *self, BSTR bstrResponse, HRESULT hrStatus) OnBidiResponseReceived;
+				public new function HRESULT(ref IPrinterQueueEvent self, BSTR bstrResponse, HRESULT hrStatus) OnBidiResponseReceived;
 			}
 		}
 		[CRepr]
@@ -5496,12 +5496,12 @@ namespace Win32
 			
 			public HRESULT Completed(BSTR bstrResponse, HRESULT hrStatus) mut
 			{
-				return VT.Completed(&this, bstrResponse, hrStatus);
+				return VT.Completed(ref this, bstrResponse, hrStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrinterBidiSetRequestCallback *self, BSTR bstrResponse, HRESULT hrStatus) Completed;
+				public new function HRESULT(ref IPrinterBidiSetRequestCallback self, BSTR bstrResponse, HRESULT hrStatus) Completed;
 			}
 		}
 		[CRepr]
@@ -5513,12 +5513,12 @@ namespace Win32
 			
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrinterExtensionAsyncOperation *self) Cancel;
+				public new function HRESULT(ref IPrinterExtensionAsyncOperation self) Cancel;
 			}
 		}
 		[CRepr]
@@ -5528,19 +5528,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SendBidiSetRequestAsync(BSTR bstrBidiRequest, IPrinterBidiSetRequestCallback* pCallback, IPrinterExtensionAsyncOperation** ppAsyncOperation) mut
+			public HRESULT SendBidiSetRequestAsync(BSTR bstrBidiRequest, ref IPrinterBidiSetRequestCallback pCallback, out IPrinterExtensionAsyncOperation* ppAsyncOperation) mut
 			{
-				return VT.SendBidiSetRequestAsync(&this, bstrBidiRequest, pCallback, ppAsyncOperation);
+				return VT.SendBidiSetRequestAsync(ref this, bstrBidiRequest, ref pCallback, out ppAsyncOperation);
 			}
-			public HRESULT GetPrinterQueueView(uint32 ulViewOffset, uint32 ulViewSize, IPrinterQueueView** ppJobView) mut
+			public HRESULT GetPrinterQueueView(uint32 ulViewOffset, uint32 ulViewSize, out IPrinterQueueView* ppJobView) mut
 			{
-				return VT.GetPrinterQueueView(&this, ulViewOffset, ulViewSize, ppJobView);
+				return VT.GetPrinterQueueView(ref this, ulViewOffset, ulViewSize, out ppJobView);
 			}
 			[CRepr]
 			public struct VTable : IPrinterQueue.VTable
 			{
-				public new function HRESULT(IPrinterQueue2 *self, BSTR bstrBidiRequest, IPrinterBidiSetRequestCallback* pCallback, IPrinterExtensionAsyncOperation** ppAsyncOperation) SendBidiSetRequestAsync;
-				public new function HRESULT(IPrinterQueue2 *self, uint32 ulViewOffset, uint32 ulViewSize, IPrinterQueueView** ppJobView) GetPrinterQueueView;
+				public new function HRESULT(ref IPrinterQueue2 self, BSTR bstrBidiRequest, ref IPrinterBidiSetRequestCallback pCallback, out IPrinterExtensionAsyncOperation* ppAsyncOperation) SendBidiSetRequestAsync;
+				public new function HRESULT(ref IPrinterQueue2 self, uint32 ulViewOffset, uint32 ulViewSize, out IPrinterQueueView* ppJobView) GetPrinterQueueView;
 			}
 		}
 		[CRepr]
@@ -5550,29 +5550,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PrinterQueue(IPrinterQueue** ppQueue) mut
+			public HRESULT get_PrinterQueue(out IPrinterQueue* ppQueue) mut
 			{
-				return VT.get_PrinterQueue(&this, ppQueue);
+				return VT.get_PrinterQueue(ref this, out ppQueue);
 			}
-			public HRESULT get_PrintSchemaTicket(IPrintSchemaTicket** ppTicket) mut
+			public HRESULT get_PrintSchemaTicket(out IPrintSchemaTicket* ppTicket) mut
 			{
-				return VT.get_PrintSchemaTicket(&this, ppTicket);
+				return VT.get_PrintSchemaTicket(ref this, out ppTicket);
 			}
-			public HRESULT get_DriverProperties(IPrinterPropertyBag** ppPropertyBag) mut
+			public HRESULT get_DriverProperties(out IPrinterPropertyBag* ppPropertyBag) mut
 			{
-				return VT.get_DriverProperties(&this, ppPropertyBag);
+				return VT.get_DriverProperties(ref this, out ppPropertyBag);
 			}
-			public HRESULT get_UserProperties(IPrinterPropertyBag** ppPropertyBag) mut
+			public HRESULT get_UserProperties(out IPrinterPropertyBag* ppPropertyBag) mut
 			{
-				return VT.get_UserProperties(&this, ppPropertyBag);
+				return VT.get_UserProperties(ref this, out ppPropertyBag);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterExtensionContext *self, IPrinterQueue** ppQueue) get_PrinterQueue;
-				public new function HRESULT(IPrinterExtensionContext *self, IPrintSchemaTicket** ppTicket) get_PrintSchemaTicket;
-				public new function HRESULT(IPrinterExtensionContext *self, IPrinterPropertyBag** ppPropertyBag) get_DriverProperties;
-				public new function HRESULT(IPrinterExtensionContext *self, IPrinterPropertyBag** ppPropertyBag) get_UserProperties;
+				public new function HRESULT(ref IPrinterExtensionContext self, out IPrinterQueue* ppQueue) get_PrinterQueue;
+				public new function HRESULT(ref IPrinterExtensionContext self, out IPrintSchemaTicket* ppTicket) get_PrintSchemaTicket;
+				public new function HRESULT(ref IPrinterExtensionContext self, out IPrinterPropertyBag* ppPropertyBag) get_DriverProperties;
+				public new function HRESULT(ref IPrinterExtensionContext self, out IPrinterPropertyBag* ppPropertyBag) get_UserProperties;
 			}
 		}
 		[CRepr]
@@ -5584,17 +5584,17 @@ namespace Win32
 			
 			public HRESULT Cancel(HRESULT hrStatus, BSTR bstrLogMessage) mut
 			{
-				return VT.Cancel(&this, hrStatus, bstrLogMessage);
+				return VT.Cancel(ref this, hrStatus, bstrLogMessage);
 			}
 			public HRESULT Complete() mut
 			{
-				return VT.Complete(&this);
+				return VT.Complete(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterExtensionRequest *self, HRESULT hrStatus, BSTR bstrLogMessage) Cancel;
-				public new function HRESULT(IPrinterExtensionRequest *self) Complete;
+				public new function HRESULT(ref IPrinterExtensionRequest self, HRESULT hrStatus, BSTR bstrLogMessage) Cancel;
+				public new function HRESULT(ref IPrinterExtensionRequest self) Complete;
 			}
 		}
 		[CRepr]
@@ -5604,44 +5604,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_BidiNotification(BSTR* pbstrBidiNotification) mut
+			public HRESULT get_BidiNotification(out BSTR pbstrBidiNotification) mut
 			{
-				return VT.get_BidiNotification(&this, pbstrBidiNotification);
+				return VT.get_BidiNotification(ref this, out pbstrBidiNotification);
 			}
-			public HRESULT get_ReasonId(Guid* pReasonId) mut
+			public HRESULT get_ReasonId(out Guid pReasonId) mut
 			{
-				return VT.get_ReasonId(&this, pReasonId);
+				return VT.get_ReasonId(ref this, out pReasonId);
 			}
-			public HRESULT get_Request(IPrinterExtensionRequest** ppRequest) mut
+			public HRESULT get_Request(out IPrinterExtensionRequest* ppRequest) mut
 			{
-				return VT.get_Request(&this, ppRequest);
+				return VT.get_Request(ref this, out ppRequest);
 			}
-			public HRESULT get_SourceApplication(BSTR* pbstrApplication) mut
+			public HRESULT get_SourceApplication(out BSTR pbstrApplication) mut
 			{
-				return VT.get_SourceApplication(&this, pbstrApplication);
+				return VT.get_SourceApplication(ref this, out pbstrApplication);
 			}
-			public HRESULT get_DetailedReasonId(Guid* pDetailedReasonId) mut
+			public HRESULT get_DetailedReasonId(out Guid pDetailedReasonId) mut
 			{
-				return VT.get_DetailedReasonId(&this, pDetailedReasonId);
+				return VT.get_DetailedReasonId(ref this, out pDetailedReasonId);
 			}
-			public HRESULT get_WindowModal(BOOL* pbModal) mut
+			public HRESULT get_WindowModal(out BOOL pbModal) mut
 			{
-				return VT.get_WindowModal(&this, pbModal);
+				return VT.get_WindowModal(ref this, out pbModal);
 			}
-			public HRESULT get_WindowParent(HANDLE* phwndParent) mut
+			public HRESULT get_WindowParent(out HANDLE phwndParent) mut
 			{
-				return VT.get_WindowParent(&this, phwndParent);
+				return VT.get_WindowParent(ref this, out phwndParent);
 			}
 			[CRepr]
 			public struct VTable : IPrinterExtensionContext.VTable
 			{
-				public new function HRESULT(IPrinterExtensionEventArgs *self, BSTR* pbstrBidiNotification) get_BidiNotification;
-				public new function HRESULT(IPrinterExtensionEventArgs *self, Guid* pReasonId) get_ReasonId;
-				public new function HRESULT(IPrinterExtensionEventArgs *self, IPrinterExtensionRequest** ppRequest) get_Request;
-				public new function HRESULT(IPrinterExtensionEventArgs *self, BSTR* pbstrApplication) get_SourceApplication;
-				public new function HRESULT(IPrinterExtensionEventArgs *self, Guid* pDetailedReasonId) get_DetailedReasonId;
-				public new function HRESULT(IPrinterExtensionEventArgs *self, BOOL* pbModal) get_WindowModal;
-				public new function HRESULT(IPrinterExtensionEventArgs *self, HANDLE* phwndParent) get_WindowParent;
+				public new function HRESULT(ref IPrinterExtensionEventArgs self, out BSTR pbstrBidiNotification) get_BidiNotification;
+				public new function HRESULT(ref IPrinterExtensionEventArgs self, out Guid pReasonId) get_ReasonId;
+				public new function HRESULT(ref IPrinterExtensionEventArgs self, out IPrinterExtensionRequest* ppRequest) get_Request;
+				public new function HRESULT(ref IPrinterExtensionEventArgs self, out BSTR pbstrApplication) get_SourceApplication;
+				public new function HRESULT(ref IPrinterExtensionEventArgs self, out Guid pDetailedReasonId) get_DetailedReasonId;
+				public new function HRESULT(ref IPrinterExtensionEventArgs self, out BOOL pbModal) get_WindowModal;
+				public new function HRESULT(ref IPrinterExtensionEventArgs self, out HANDLE phwndParent) get_WindowParent;
 			}
 		}
 		[CRepr]
@@ -5651,24 +5651,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(uint32* pulCount) mut
+			public HRESULT get_Count(out uint32 pulCount) mut
 			{
-				return VT.get_Count(&this, pulCount);
+				return VT.get_Count(ref this, out pulCount);
 			}
-			public HRESULT GetAt(uint32 ulIndex, IPrinterExtensionContext** ppContext) mut
+			public HRESULT GetAt(uint32 ulIndex, out IPrinterExtensionContext* ppContext) mut
 			{
-				return VT.GetAt(&this, ulIndex, ppContext);
+				return VT.GetAt(ref this, ulIndex, out ppContext);
 			}
-			public HRESULT get__NewEnum(IUnknown** ppUnk) mut
+			public HRESULT get__NewEnum(out IUnknown* ppUnk) mut
 			{
-				return VT.get__NewEnum(&this, ppUnk);
+				return VT.get__NewEnum(ref this, out ppUnk);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterExtensionContextCollection *self, uint32* pulCount) get_Count;
-				public new function HRESULT(IPrinterExtensionContextCollection *self, uint32 ulIndex, IPrinterExtensionContext** ppContext) GetAt;
-				public new function HRESULT(IPrinterExtensionContextCollection *self, IUnknown** ppUnk) get__NewEnum;
+				public new function HRESULT(ref IPrinterExtensionContextCollection self, out uint32 pulCount) get_Count;
+				public new function HRESULT(ref IPrinterExtensionContextCollection self, uint32 ulIndex, out IPrinterExtensionContext* ppContext) GetAt;
+				public new function HRESULT(ref IPrinterExtensionContextCollection self, out IUnknown* ppUnk) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -5678,19 +5678,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnDriverEvent(IPrinterExtensionEventArgs* pEventArgs) mut
+			public HRESULT OnDriverEvent(ref IPrinterExtensionEventArgs pEventArgs) mut
 			{
-				return VT.OnDriverEvent(&this, pEventArgs);
+				return VT.OnDriverEvent(ref this, ref pEventArgs);
 			}
-			public HRESULT OnPrinterQueuesEnumerated(IPrinterExtensionContextCollection* pContextCollection) mut
+			public HRESULT OnPrinterQueuesEnumerated(ref IPrinterExtensionContextCollection pContextCollection) mut
 			{
-				return VT.OnPrinterQueuesEnumerated(&this, pContextCollection);
+				return VT.OnPrinterQueuesEnumerated(ref this, ref pContextCollection);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterExtensionEvent *self, IPrinterExtensionEventArgs* pEventArgs) OnDriverEvent;
-				public new function HRESULT(IPrinterExtensionEvent *self, IPrinterExtensionContextCollection* pContextCollection) OnPrinterQueuesEnumerated;
+				public new function HRESULT(ref IPrinterExtensionEvent self, ref IPrinterExtensionEventArgs pEventArgs) OnDriverEvent;
+				public new function HRESULT(ref IPrinterExtensionEvent self, ref IPrinterExtensionContextCollection pContextCollection) OnPrinterQueuesEnumerated;
 			}
 		}
 		[CRepr]
@@ -5702,17 +5702,17 @@ namespace Win32
 			
 			public HRESULT EnableEvents(Guid printerDriverId) mut
 			{
-				return VT.EnableEvents(&this, printerDriverId);
+				return VT.EnableEvents(ref this, printerDriverId);
 			}
 			public HRESULT DisableEvents() mut
 			{
-				return VT.DisableEvents(&this);
+				return VT.DisableEvents(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrinterExtensionManager *self, Guid printerDriverId) EnableEvents;
-				public new function HRESULT(IPrinterExtensionManager *self) DisableEvents;
+				public new function HRESULT(ref IPrinterExtensionManager self, Guid printerDriverId) EnableEvents;
+				public new function HRESULT(ref IPrinterExtensionManager self) DisableEvents;
 			}
 		}
 		[CRepr]
@@ -5722,24 +5722,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DriverProperties(IPrinterScriptablePropertyBag** ppPropertyBag) mut
+			public HRESULT get_DriverProperties(out IPrinterScriptablePropertyBag* ppPropertyBag) mut
 			{
-				return VT.get_DriverProperties(&this, ppPropertyBag);
+				return VT.get_DriverProperties(ref this, out ppPropertyBag);
 			}
-			public HRESULT get_QueueProperties(IPrinterScriptablePropertyBag** ppPropertyBag) mut
+			public HRESULT get_QueueProperties(out IPrinterScriptablePropertyBag* ppPropertyBag) mut
 			{
-				return VT.get_QueueProperties(&this, ppPropertyBag);
+				return VT.get_QueueProperties(ref this, out ppPropertyBag);
 			}
-			public HRESULT get_UserProperties(IPrinterScriptablePropertyBag** ppPropertyBag) mut
+			public HRESULT get_UserProperties(out IPrinterScriptablePropertyBag* ppPropertyBag) mut
 			{
-				return VT.get_UserProperties(&this, ppPropertyBag);
+				return VT.get_UserProperties(ref this, out ppPropertyBag);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrinterScriptContext *self, IPrinterScriptablePropertyBag** ppPropertyBag) get_DriverProperties;
-				public new function HRESULT(IPrinterScriptContext *self, IPrinterScriptablePropertyBag** ppPropertyBag) get_QueueProperties;
-				public new function HRESULT(IPrinterScriptContext *self, IPrinterScriptablePropertyBag** ppPropertyBag) get_UserProperties;
+				public new function HRESULT(ref IPrinterScriptContext self, out IPrinterScriptablePropertyBag* ppPropertyBag) get_DriverProperties;
+				public new function HRESULT(ref IPrinterScriptContext self, out IPrinterScriptablePropertyBag* ppPropertyBag) get_QueueProperties;
+				public new function HRESULT(ref IPrinterScriptContext self, out IPrinterScriptablePropertyBag* ppPropertyBag) get_UserProperties;
 			}
 		}
 		[CRepr]
@@ -5751,17 +5751,17 @@ namespace Win32
 			
 			public HRESULT AcquireData(uint8** ppNotificationData, uint32* pSize, Guid** ppSchema) mut
 			{
-				return VT.AcquireData(&this, ppNotificationData, pSize, ppSchema);
+				return VT.AcquireData(ref this, ppNotificationData, pSize, ppSchema);
 			}
 			public HRESULT ReleaseData() mut
 			{
-				return VT.ReleaseData(&this);
+				return VT.ReleaseData(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintAsyncNotifyDataObject *self, uint8** ppNotificationData, uint32* pSize, Guid** ppSchema) AcquireData;
-				public new function HRESULT(IPrintAsyncNotifyDataObject *self) ReleaseData;
+				public new function HRESULT(ref IPrintAsyncNotifyDataObject self, uint8** ppNotificationData, uint32* pSize, Guid** ppSchema) AcquireData;
+				public new function HRESULT(ref IPrintAsyncNotifyDataObject self) ReleaseData;
 			}
 		}
 		[CRepr]
@@ -5771,19 +5771,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SendNotification(IPrintAsyncNotifyDataObject* pData) mut
+			public HRESULT SendNotification(ref IPrintAsyncNotifyDataObject pData) mut
 			{
-				return VT.SendNotification(&this, pData);
+				return VT.SendNotification(ref this, ref pData);
 			}
-			public HRESULT CloseChannel(IPrintAsyncNotifyDataObject* pData) mut
+			public HRESULT CloseChannel(ref IPrintAsyncNotifyDataObject pData) mut
 			{
-				return VT.CloseChannel(&this, pData);
+				return VT.CloseChannel(ref this, ref pData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintAsyncNotifyChannel *self, IPrintAsyncNotifyDataObject* pData) SendNotification;
-				public new function HRESULT(IPrintAsyncNotifyChannel *self, IPrintAsyncNotifyDataObject* pData) CloseChannel;
+				public new function HRESULT(ref IPrintAsyncNotifyChannel self, ref IPrintAsyncNotifyDataObject pData) SendNotification;
+				public new function HRESULT(ref IPrintAsyncNotifyChannel self, ref IPrintAsyncNotifyDataObject pData) CloseChannel;
 			}
 		}
 		[CRepr]
@@ -5793,19 +5793,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnEventNotify(IPrintAsyncNotifyChannel* pChannel, IPrintAsyncNotifyDataObject* pData) mut
+			public HRESULT OnEventNotify(ref IPrintAsyncNotifyChannel pChannel, ref IPrintAsyncNotifyDataObject pData) mut
 			{
-				return VT.OnEventNotify(&this, pChannel, pData);
+				return VT.OnEventNotify(ref this, ref pChannel, ref pData);
 			}
-			public HRESULT ChannelClosed(IPrintAsyncNotifyChannel* pChannel, IPrintAsyncNotifyDataObject* pData) mut
+			public HRESULT ChannelClosed(ref IPrintAsyncNotifyChannel pChannel, ref IPrintAsyncNotifyDataObject pData) mut
 			{
-				return VT.ChannelClosed(&this, pChannel, pData);
+				return VT.ChannelClosed(ref this, ref pChannel, ref pData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintAsyncNotifyCallback *self, IPrintAsyncNotifyChannel* pChannel, IPrintAsyncNotifyDataObject* pData) OnEventNotify;
-				public new function HRESULT(IPrintAsyncNotifyCallback *self, IPrintAsyncNotifyChannel* pChannel, IPrintAsyncNotifyDataObject* pData) ChannelClosed;
+				public new function HRESULT(ref IPrintAsyncNotifyCallback self, ref IPrintAsyncNotifyChannel pChannel, ref IPrintAsyncNotifyDataObject pData) OnEventNotify;
+				public new function HRESULT(ref IPrintAsyncNotifyCallback self, ref IPrintAsyncNotifyChannel pChannel, ref IPrintAsyncNotifyDataObject pData) ChannelClosed;
 			}
 		}
 		[CRepr]
@@ -5817,17 +5817,17 @@ namespace Win32
 			
 			public HRESULT RegisterForNotifications() mut
 			{
-				return VT.RegisterForNotifications(&this);
+				return VT.RegisterForNotifications(ref this);
 			}
 			public HRESULT UnregisterForNotifications() mut
 			{
-				return VT.UnregisterForNotifications(&this);
+				return VT.UnregisterForNotifications(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintAsyncNotifyRegistration *self) RegisterForNotifications;
-				public new function HRESULT(IPrintAsyncNotifyRegistration *self) UnregisterForNotifications;
+				public new function HRESULT(ref IPrintAsyncNotifyRegistration self) RegisterForNotifications;
+				public new function HRESULT(ref IPrintAsyncNotifyRegistration self) UnregisterForNotifications;
 			}
 		}
 		[CRepr]
@@ -5837,19 +5837,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreatePrintAsyncNotifyChannel(uint32 param0, Guid* param1, PrintAsyncNotifyUserFilter param2, PrintAsyncNotifyConversationStyle param3, IPrintAsyncNotifyCallback* param4, IPrintAsyncNotifyChannel** param5) mut
+			public HRESULT CreatePrintAsyncNotifyChannel(uint32 param0, ref Guid param1, PrintAsyncNotifyUserFilter param2, PrintAsyncNotifyConversationStyle param3, ref IPrintAsyncNotifyCallback param4, out IPrintAsyncNotifyChannel* param5) mut
 			{
-				return VT.CreatePrintAsyncNotifyChannel(&this, param0, param1, param2, param3, param4, param5);
+				return VT.CreatePrintAsyncNotifyChannel(ref this, param0, ref param1, param2, param3, ref param4, out param5);
 			}
-			public HRESULT CreatePrintAsyncNotifyRegistration(Guid* param0, PrintAsyncNotifyUserFilter param1, PrintAsyncNotifyConversationStyle param2, IPrintAsyncNotifyCallback* param3, IPrintAsyncNotifyRegistration** param4) mut
+			public HRESULT CreatePrintAsyncNotifyRegistration(ref Guid param0, PrintAsyncNotifyUserFilter param1, PrintAsyncNotifyConversationStyle param2, ref IPrintAsyncNotifyCallback param3, out IPrintAsyncNotifyRegistration* param4) mut
 			{
-				return VT.CreatePrintAsyncNotifyRegistration(&this, param0, param1, param2, param3, param4);
+				return VT.CreatePrintAsyncNotifyRegistration(ref this, ref param0, param1, param2, ref param3, out param4);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintAsyncNotify *self, uint32 param0, Guid* param1, PrintAsyncNotifyUserFilter param2, PrintAsyncNotifyConversationStyle param3, IPrintAsyncNotifyCallback* param4, IPrintAsyncNotifyChannel** param5) CreatePrintAsyncNotifyChannel;
-				public new function HRESULT(IPrintAsyncNotify *self, Guid* param0, PrintAsyncNotifyUserFilter param1, PrintAsyncNotifyConversationStyle param2, IPrintAsyncNotifyCallback* param3, IPrintAsyncNotifyRegistration** param4) CreatePrintAsyncNotifyRegistration;
+				public new function HRESULT(ref IPrintAsyncNotify self, uint32 param0, ref Guid param1, PrintAsyncNotifyUserFilter param2, PrintAsyncNotifyConversationStyle param3, ref IPrintAsyncNotifyCallback param4, out IPrintAsyncNotifyChannel* param5) CreatePrintAsyncNotifyChannel;
+				public new function HRESULT(ref IPrintAsyncNotify self, ref Guid param0, PrintAsyncNotifyUserFilter param1, PrintAsyncNotifyConversationStyle param2, ref IPrintAsyncNotifyCallback param3, out IPrintAsyncNotifyRegistration* param4) CreatePrintAsyncNotifyRegistration;
 			}
 		}
 		[CRepr]
@@ -5859,17 +5859,17 @@ namespace Win32
 			
 			public HRESULT FinishAsyncCall(HRESULT param0) mut
 			{
-				return VT.FinishAsyncCall(&this, param0);
+				return VT.FinishAsyncCall(ref this, param0);
 			}
 			public HRESULT CancelAsyncCall(HRESULT param0) mut
 			{
-				return VT.CancelAsyncCall(&this, param0);
+				return VT.CancelAsyncCall(ref this, param0);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintAsyncCookie *self, HRESULT param0) FinishAsyncCall;
-				public new function HRESULT(IPrintAsyncCookie *self, HRESULT param0) CancelAsyncCall;
+				public new function HRESULT(ref IPrintAsyncCookie self, HRESULT param0) FinishAsyncCall;
+				public new function HRESULT(ref IPrintAsyncCookie self, HRESULT param0) CancelAsyncCall;
 			}
 		}
 		[CRepr]
@@ -5877,14 +5877,14 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FinishAsyncCallWithData(IPrintAsyncNotifyChannel** param0, uint32 param1) mut
+			public HRESULT FinishAsyncCallWithData(ref IPrintAsyncNotifyChannel* param0, uint32 param1) mut
 			{
-				return VT.FinishAsyncCallWithData(&this, param0, param1);
+				return VT.FinishAsyncCallWithData(ref this, ref param0, param1);
 			}
 			[CRepr]
 			public struct VTable : IPrintAsyncCookie.VTable
 			{
-				public new function HRESULT(IPrintAsyncNewChannelCookie *self, IPrintAsyncNotifyChannel** param0, uint32 param1) FinishAsyncCallWithData;
+				public new function HRESULT(ref IPrintAsyncNewChannelCookie self, ref IPrintAsyncNotifyChannel* param0, uint32 param1) FinishAsyncCallWithData;
 			}
 		}
 		[CRepr]
@@ -5892,14 +5892,14 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT FinishAsyncCallWithData(IPrintAsyncNotifyDataObject* param0, BOOL param1) mut
+			public HRESULT FinishAsyncCallWithData(ref IPrintAsyncNotifyDataObject param0, BOOL param1) mut
 			{
-				return VT.FinishAsyncCallWithData(&this, param0, param1);
+				return VT.FinishAsyncCallWithData(ref this, ref param0, param1);
 			}
 			[CRepr]
 			public struct VTable : IPrintAsyncCookie.VTable
 			{
-				public new function HRESULT(IAsyncGetSendNotificationCookie *self, IPrintAsyncNotifyDataObject* param0, BOOL param1) FinishAsyncCallWithData;
+				public new function HRESULT(ref IAsyncGetSendNotificationCookie self, ref IPrintAsyncNotifyDataObject param0, BOOL param1) FinishAsyncCallWithData;
 			}
 		}
 		[CRepr]
@@ -5909,22 +5909,22 @@ namespace Win32
 			
 			public HRESULT FinishAsyncCall(HRESULT param0) mut
 			{
-				return VT.FinishAsyncCall(&this, param0);
+				return VT.FinishAsyncCall(ref this, param0);
 			}
 			public HRESULT CancelAsyncCall(HRESULT param0) mut
 			{
-				return VT.CancelAsyncCall(&this, param0);
+				return VT.CancelAsyncCall(ref this, param0);
 			}
 			public HRESULT FinishAsyncCallWithData(PWSTR param0) mut
 			{
-				return VT.FinishAsyncCallWithData(&this, param0);
+				return VT.FinishAsyncCallWithData(ref this, param0);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAsyncGetSrvReferralCookie *self, HRESULT param0) FinishAsyncCall;
-				public new function HRESULT(IAsyncGetSrvReferralCookie *self, HRESULT param0) CancelAsyncCall;
-				public new function HRESULT(IAsyncGetSrvReferralCookie *self, PWSTR param0) FinishAsyncCallWithData;
+				public new function HRESULT(ref IAsyncGetSrvReferralCookie self, HRESULT param0) FinishAsyncCall;
+				public new function HRESULT(ref IAsyncGetSrvReferralCookie self, HRESULT param0) CancelAsyncCall;
+				public new function HRESULT(ref IAsyncGetSrvReferralCookie self, PWSTR param0) FinishAsyncCallWithData;
 			}
 		}
 		[CRepr]
@@ -5932,14 +5932,14 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AsyncGetNewChannel(IPrintAsyncNewChannelCookie* param0) mut
+			public HRESULT AsyncGetNewChannel(ref IPrintAsyncNewChannelCookie param0) mut
 			{
-				return VT.AsyncGetNewChannel(&this, param0);
+				return VT.AsyncGetNewChannel(ref this, ref param0);
 			}
 			[CRepr]
 			public struct VTable : IPrintAsyncNotifyRegistration.VTable
 			{
-				public new function HRESULT(IPrintBidiAsyncNotifyRegistration *self, IPrintAsyncNewChannelCookie* param0) AsyncGetNewChannel;
+				public new function HRESULT(ref IPrintBidiAsyncNotifyRegistration self, ref IPrintAsyncNewChannelCookie param0) AsyncGetNewChannel;
 			}
 		}
 		[CRepr]
@@ -5947,14 +5947,14 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AsyncGetNotification(IAsyncGetSendNotificationCookie* param0) mut
+			public HRESULT AsyncGetNotification(ref IAsyncGetSendNotificationCookie param0) mut
 			{
-				return VT.AsyncGetNotification(&this, param0);
+				return VT.AsyncGetNotification(ref this, ref param0);
 			}
 			[CRepr]
 			public struct VTable : IPrintAsyncNotifyRegistration.VTable
 			{
-				public new function HRESULT(IPrintUnidiAsyncNotifyRegistration *self, IAsyncGetSendNotificationCookie* param0) AsyncGetNotification;
+				public new function HRESULT(ref IPrintUnidiAsyncNotifyRegistration self, ref IAsyncGetSendNotificationCookie param0) AsyncGetNotification;
 			}
 		}
 		[CRepr]
@@ -5962,24 +5962,24 @@ namespace Win32
 		{
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetServerReferral(PWSTR* param0) mut
+			public HRESULT GetServerReferral(out PWSTR param0) mut
 			{
-				return VT.GetServerReferral(&this, param0);
+				return VT.GetServerReferral(ref this, out param0);
 			}
-			public HRESULT AsyncGetServerReferral(IAsyncGetSrvReferralCookie* param0) mut
+			public HRESULT AsyncGetServerReferral(ref IAsyncGetSrvReferralCookie param0) mut
 			{
-				return VT.AsyncGetServerReferral(&this, param0);
+				return VT.AsyncGetServerReferral(ref this, ref param0);
 			}
 			public HRESULT SetServerReferral(PWSTR pRmtServerReferral) mut
 			{
-				return VT.SetServerReferral(&this, pRmtServerReferral);
+				return VT.SetServerReferral(ref this, pRmtServerReferral);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintAsyncNotifyServerReferral *self, PWSTR* param0) GetServerReferral;
-				public new function HRESULT(IPrintAsyncNotifyServerReferral *self, IAsyncGetSrvReferralCookie* param0) AsyncGetServerReferral;
-				public new function HRESULT(IPrintAsyncNotifyServerReferral *self, PWSTR pRmtServerReferral) SetServerReferral;
+				public new function HRESULT(ref IPrintAsyncNotifyServerReferral self, out PWSTR param0) GetServerReferral;
+				public new function HRESULT(ref IPrintAsyncNotifyServerReferral self, ref IAsyncGetSrvReferralCookie param0) AsyncGetServerReferral;
+				public new function HRESULT(ref IPrintAsyncNotifyServerReferral self, PWSTR pRmtServerReferral) SetServerReferral;
 			}
 		}
 		[CRepr]
@@ -5991,32 +5991,32 @@ namespace Win32
 			
 			public HRESULT CreateNotificationChannel() mut
 			{
-				return VT.CreateNotificationChannel(&this);
+				return VT.CreateNotificationChannel(ref this);
 			}
-			public HRESULT GetPrintName(IPrintAsyncNotifyDataObject** param0) mut
+			public HRESULT GetPrintName(ref IPrintAsyncNotifyDataObject* param0) mut
 			{
-				return VT.GetPrintName(&this, param0);
+				return VT.GetPrintName(ref this, ref param0);
 			}
-			public HRESULT GetChannelNotificationType(IPrintAsyncNotifyDataObject** param0) mut
+			public HRESULT GetChannelNotificationType(ref IPrintAsyncNotifyDataObject* param0) mut
 			{
-				return VT.GetChannelNotificationType(&this, param0);
+				return VT.GetChannelNotificationType(ref this, ref param0);
 			}
-			public HRESULT AsyncGetNotificationSendResponse(IPrintAsyncNotifyDataObject* param0, IAsyncGetSendNotificationCookie* param1) mut
+			public HRESULT AsyncGetNotificationSendResponse(ref IPrintAsyncNotifyDataObject param0, ref IAsyncGetSendNotificationCookie param1) mut
 			{
-				return VT.AsyncGetNotificationSendResponse(&this, param0, param1);
+				return VT.AsyncGetNotificationSendResponse(ref this, ref param0, ref param1);
 			}
-			public HRESULT AsyncCloseChannel(IPrintAsyncNotifyDataObject* param0, IPrintAsyncCookie* param1) mut
+			public HRESULT AsyncCloseChannel(ref IPrintAsyncNotifyDataObject param0, ref IPrintAsyncCookie param1) mut
 			{
-				return VT.AsyncCloseChannel(&this, param0, param1);
+				return VT.AsyncCloseChannel(ref this, ref param0, ref param1);
 			}
 			[CRepr]
 			public struct VTable : IPrintAsyncNotifyChannel.VTable
 			{
-				public new function HRESULT(IBidiAsyncNotifyChannel *self) CreateNotificationChannel;
-				public new function HRESULT(IBidiAsyncNotifyChannel *self, IPrintAsyncNotifyDataObject** param0) GetPrintName;
-				public new function HRESULT(IBidiAsyncNotifyChannel *self, IPrintAsyncNotifyDataObject** param0) GetChannelNotificationType;
-				public new function HRESULT(IBidiAsyncNotifyChannel *self, IPrintAsyncNotifyDataObject* param0, IAsyncGetSendNotificationCookie* param1) AsyncGetNotificationSendResponse;
-				public new function HRESULT(IBidiAsyncNotifyChannel *self, IPrintAsyncNotifyDataObject* param0, IPrintAsyncCookie* param1) AsyncCloseChannel;
+				public new function HRESULT(ref IBidiAsyncNotifyChannel self) CreateNotificationChannel;
+				public new function HRESULT(ref IBidiAsyncNotifyChannel self, ref IPrintAsyncNotifyDataObject* param0) GetPrintName;
+				public new function HRESULT(ref IBidiAsyncNotifyChannel self, ref IPrintAsyncNotifyDataObject* param0) GetChannelNotificationType;
+				public new function HRESULT(ref IBidiAsyncNotifyChannel self, ref IPrintAsyncNotifyDataObject param0, ref IAsyncGetSendNotificationCookie param1) AsyncGetNotificationSendResponse;
+				public new function HRESULT(ref IBidiAsyncNotifyChannel self, ref IPrintAsyncNotifyDataObject param0, ref IPrintAsyncCookie param1) AsyncCloseChannel;
 			}
 		}
 		[CRepr]
@@ -6028,12 +6028,12 @@ namespace Win32
 			
 			public HRESULT Continue() mut
 			{
-				return VT.Continue(&this);
+				return VT.Continue(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXpsRasterizerNotificationCallback *self) Continue;
+				public new function HRESULT(ref IXpsRasterizerNotificationCallback self) Continue;
 			}
 		}
 		[CRepr]
@@ -6045,17 +6045,17 @@ namespace Win32
 			
 			public HRESULT RasterizeRect(int32 x, int32 y, int32 width, int32 height, IXpsRasterizerNotificationCallback* notificationCallback, IWICBitmap** bitmap) mut
 			{
-				return VT.RasterizeRect(&this, x, y, width, height, notificationCallback, bitmap);
+				return VT.RasterizeRect(ref this, x, y, width, height, notificationCallback, bitmap);
 			}
 			public HRESULT SetMinimalLineWidth(int32 width) mut
 			{
-				return VT.SetMinimalLineWidth(&this, width);
+				return VT.SetMinimalLineWidth(ref this, width);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXpsRasterizer *self, int32 x, int32 y, int32 width, int32 height, IXpsRasterizerNotificationCallback* notificationCallback, IWICBitmap** bitmap) RasterizeRect;
-				public new function HRESULT(IXpsRasterizer *self, int32 width) SetMinimalLineWidth;
+				public new function HRESULT(ref IXpsRasterizer self, int32 x, int32 y, int32 width, int32 height, IXpsRasterizerNotificationCallback* notificationCallback, IWICBitmap** bitmap) RasterizeRect;
+				public new function HRESULT(ref IXpsRasterizer self, int32 width) SetMinimalLineWidth;
 			}
 		}
 		[CRepr]
@@ -6067,12 +6067,12 @@ namespace Win32
 			
 			public HRESULT CreateRasterizer(IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, IXpsRasterizer** ppIXPSRasterizer) mut
 			{
-				return VT.CreateRasterizer(&this, xpsPage, DPI, nonTextRenderingMode, textRenderingMode, ppIXPSRasterizer);
+				return VT.CreateRasterizer(ref this, xpsPage, DPI, nonTextRenderingMode, textRenderingMode, ppIXPSRasterizer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXpsRasterizationFactory *self, IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, IXpsRasterizer** ppIXPSRasterizer) CreateRasterizer;
+				public new function HRESULT(ref IXpsRasterizationFactory self, IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, IXpsRasterizer** ppIXPSRasterizer) CreateRasterizer;
 			}
 		}
 		[CRepr]
@@ -6084,12 +6084,12 @@ namespace Win32
 			
 			public HRESULT CreateRasterizer(IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, IXpsRasterizer** ppIXPSRasterizer) mut
 			{
-				return VT.CreateRasterizer(&this, xpsPage, DPI, nonTextRenderingMode, textRenderingMode, pixelFormat, ppIXPSRasterizer);
+				return VT.CreateRasterizer(ref this, xpsPage, DPI, nonTextRenderingMode, textRenderingMode, pixelFormat, ppIXPSRasterizer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXpsRasterizationFactory1 *self, IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, IXpsRasterizer** ppIXPSRasterizer) CreateRasterizer;
+				public new function HRESULT(ref IXpsRasterizationFactory1 self, IXpsOMPage* xpsPage, float DPI, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, IXpsRasterizer** ppIXPSRasterizer) CreateRasterizer;
 			}
 		}
 		[CRepr]
@@ -6101,12 +6101,12 @@ namespace Win32
 			
 			public HRESULT CreateRasterizer(IXpsOMPage* xpsPage, float DPIX, float DPIY, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, XPSRAS_BACKGROUND_COLOR backgroundColor, IXpsRasterizer** ppIXpsRasterizer) mut
 			{
-				return VT.CreateRasterizer(&this, xpsPage, DPIX, DPIY, nonTextRenderingMode, textRenderingMode, pixelFormat, backgroundColor, ppIXpsRasterizer);
+				return VT.CreateRasterizer(ref this, xpsPage, DPIX, DPIY, nonTextRenderingMode, textRenderingMode, pixelFormat, backgroundColor, ppIXpsRasterizer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IXpsRasterizationFactory2 *self, IXpsOMPage* xpsPage, float DPIX, float DPIY, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, XPSRAS_BACKGROUND_COLOR backgroundColor, IXpsRasterizer** ppIXpsRasterizer) CreateRasterizer;
+				public new function HRESULT(ref IXpsRasterizationFactory2 self, IXpsOMPage* xpsPage, float DPIX, float DPIY, XPSRAS_RENDERING_MODE nonTextRenderingMode, XPSRAS_RENDERING_MODE textRenderingMode, XPSRAS_PIXEL_FORMAT pixelFormat, XPSRAS_BACKGROUND_COLOR backgroundColor, IXpsRasterizer** ppIXpsRasterizer) CreateRasterizer;
 			}
 		}
 		[CRepr]
@@ -6118,22 +6118,22 @@ namespace Win32
 			
 			public HRESULT SetJobPageCount(PageCountType countType, uint32 count) mut
 			{
-				return VT.SetJobPageCount(&this, countType, count);
+				return VT.SetJobPageCount(ref this, countType, count);
 			}
-			public HRESULT DrawPage(uint32 jobPageNumber, IDXGISurface* pageImage, float dpiX, float dpiY) mut
+			public HRESULT DrawPage(uint32 jobPageNumber, ref IDXGISurface pageImage, float dpiX, float dpiY) mut
 			{
-				return VT.DrawPage(&this, jobPageNumber, pageImage, dpiX, dpiY);
+				return VT.DrawPage(ref this, jobPageNumber, ref pageImage, dpiX, dpiY);
 			}
 			public HRESULT InvalidatePreview() mut
 			{
-				return VT.InvalidatePreview(&this);
+				return VT.InvalidatePreview(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPrintPreviewDxgiPackageTarget *self, PageCountType countType, uint32 count) SetJobPageCount;
-				public new function HRESULT(IPrintPreviewDxgiPackageTarget *self, uint32 jobPageNumber, IDXGISurface* pageImage, float dpiX, float dpiY) DrawPage;
-				public new function HRESULT(IPrintPreviewDxgiPackageTarget *self) InvalidatePreview;
+				public new function HRESULT(ref IPrintPreviewDxgiPackageTarget self, PageCountType countType, uint32 count) SetJobPageCount;
+				public new function HRESULT(ref IPrintPreviewDxgiPackageTarget self, uint32 jobPageNumber, ref IDXGISurface pageImage, float dpiX, float dpiY) DrawPage;
+				public new function HRESULT(ref IPrintPreviewDxgiPackageTarget self) InvalidatePreview;
 			}
 		}
 		
@@ -6148,9 +6148,9 @@ namespace Win32
 		[Import("compstui.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetCPSUIUserData(HWND hDlg, uint CPSUIUserData);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPrintersA(uint32 Flags, PSTR Name, uint32 Level, uint8* pPrinterEnum, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPrintersA(uint32 Flags, PSTR Name, uint32 Level, uint8* pPrinterEnum, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPrintersW(uint32 Flags, PWSTR Name, uint32 Level, uint8* pPrinterEnum, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPrintersW(uint32 Flags, PWSTR Name, uint32 Level, uint8* pPrinterEnum, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE GetSpoolFileHandle(HANDLE hPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6158,9 +6158,9 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CloseSpoolFileHandle(HANDLE hPrinter, HANDLE hSpoolFile);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL OpenPrinterA(PSTR pPrinterName, HANDLE* phPrinter, PRINTER_DEFAULTSA* pDefault);
+		public static extern BOOL OpenPrinterA(PSTR pPrinterName, out HANDLE phPrinter, PRINTER_DEFAULTSA* pDefault);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL OpenPrinterW(PWSTR pPrinterName, HANDLE* phPrinter, PRINTER_DEFAULTSW* pDefault);
+		public static extern BOOL OpenPrinterW(PWSTR pPrinterName, out HANDLE phPrinter, PRINTER_DEFAULTSW* pDefault);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ResetPrinterA(HANDLE hPrinter, PRINTER_DEFAULTSA* pDefault);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6170,17 +6170,17 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetJobW(HANDLE hPrinter, uint32 JobId, uint32 Level, uint8* pJob, uint32 Command);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetJobA(HANDLE hPrinter, uint32 JobId, uint32 Level, uint8* pJob, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetJobA(HANDLE hPrinter, uint32 JobId, uint32 Level, uint8* pJob, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetJobW(HANDLE hPrinter, uint32 JobId, uint32 Level, uint8* pJob, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetJobW(HANDLE hPrinter, uint32 JobId, uint32 Level, uint8* pJob, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumJobsA(HANDLE hPrinter, uint32 FirstJob, uint32 NoJobs, uint32 Level, uint8* pJob, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumJobsA(HANDLE hPrinter, uint32 FirstJob, uint32 NoJobs, uint32 Level, uint8* pJob, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumJobsW(HANDLE hPrinter, uint32 FirstJob, uint32 NoJobs, uint32 Level, uint8* pJob, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumJobsW(HANDLE hPrinter, uint32 FirstJob, uint32 NoJobs, uint32 Level, uint8* pJob, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HANDLE AddPrinterA(PSTR pName, uint32 Level, uint8* pPrinter);
+		public static extern HANDLE AddPrinterA(PSTR pName, uint32 Level, ref uint8 pPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HANDLE AddPrinterW(PWSTR pName, uint32 Level, uint8* pPrinter);
+		public static extern HANDLE AddPrinterW(PWSTR pName, uint32 Level, ref uint8 pPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeletePrinter(HANDLE hPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6188,29 +6188,29 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetPrinterW(HANDLE hPrinter, uint32 Level, uint8* pPrinter, uint32 Command);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrinterA(HANDLE hPrinter, uint32 Level, uint8* pPrinter, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrinterA(HANDLE hPrinter, uint32 Level, uint8* pPrinter, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrinterW(HANDLE hPrinter, uint32 Level, uint8* pPrinter, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrinterW(HANDLE hPrinter, uint32 Level, uint8* pPrinter, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddPrinterDriverA(PSTR pName, uint32 Level, uint8* pDriverInfo);
+		public static extern BOOL AddPrinterDriverA(PSTR pName, uint32 Level, ref uint8 pDriverInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddPrinterDriverW(PWSTR pName, uint32 Level, uint8* pDriverInfo);
+		public static extern BOOL AddPrinterDriverW(PWSTR pName, uint32 Level, ref uint8 pDriverInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddPrinterDriverExA(PSTR pName, uint32 Level, uint8* lpbDriverInfo, uint32 dwFileCopyFlags);
+		public static extern BOOL AddPrinterDriverExA(PSTR pName, uint32 Level, ref uint8 lpbDriverInfo, uint32 dwFileCopyFlags);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddPrinterDriverExW(PWSTR pName, uint32 Level, uint8* lpbDriverInfo, uint32 dwFileCopyFlags);
+		public static extern BOOL AddPrinterDriverExW(PWSTR pName, uint32 Level, ref uint8 lpbDriverInfo, uint32 dwFileCopyFlags);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPrinterDriversA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPrinterDriversA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPrinterDriversW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPrinterDriversW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrinterDriverA(HANDLE hPrinter, PSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrinterDriverA(HANDLE hPrinter, PSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrinterDriverW(HANDLE hPrinter, PWSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrinterDriverW(HANDLE hPrinter, PWSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrinterDriverDirectoryA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pDriverDirectory, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrinterDriverDirectoryA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pDriverDirectory, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrinterDriverDirectoryW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pDriverDirectory, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrinterDriverDirectoryW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pDriverDirectory, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeletePrinterDriverA(PSTR pName, PSTR pEnvironment, PSTR pDriverName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6224,43 +6224,43 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL AddPrintProcessorW(PWSTR pName, PWSTR pEnvironment, PWSTR pPathName, PWSTR pPrintProcessorName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPrintProcessorsA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPrintProcessorsA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPrintProcessorsW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPrintProcessorsW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrintProcessorDirectoryA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrintProcessorDirectoryA(PSTR pName, PSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrintProcessorDirectoryW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrintProcessorDirectoryW(PWSTR pName, PWSTR pEnvironment, uint32 Level, uint8* pPrintProcessorInfo, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPrintProcessorDatatypesA(PSTR pName, PSTR pPrintProcessorName, uint32 Level, uint8* pDatatypes, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPrintProcessorDatatypesA(PSTR pName, PSTR pPrintProcessorName, uint32 Level, uint8* pDatatypes, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPrintProcessorDatatypesW(PWSTR pName, PWSTR pPrintProcessorName, uint32 Level, uint8* pDatatypes, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPrintProcessorDatatypesW(PWSTR pName, PWSTR pPrintProcessorName, uint32 Level, uint8* pDatatypes, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeletePrintProcessorA(PSTR pName, PSTR pEnvironment, PSTR pPrintProcessorName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeletePrintProcessorW(PWSTR pName, PWSTR pEnvironment, PWSTR pPrintProcessorName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 StartDocPrinterA(HANDLE hPrinter, uint32 Level, DOC_INFO_1A* pDocInfo);
+		public static extern uint32 StartDocPrinterA(HANDLE hPrinter, uint32 Level, ref DOC_INFO_1A pDocInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 StartDocPrinterW(HANDLE hPrinter, uint32 Level, DOC_INFO_1W* pDocInfo);
+		public static extern uint32 StartDocPrinterW(HANDLE hPrinter, uint32 Level, ref DOC_INFO_1W pDocInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL StartPagePrinter(HANDLE hPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WritePrinter(HANDLE hPrinter, void* pBuf, uint32 cbBuf, uint32* pcWritten);
+		public static extern BOOL WritePrinter(HANDLE hPrinter, void* pBuf, uint32 cbBuf, out uint32 pcWritten);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL FlushPrinter(HANDLE hPrinter, void* pBuf, uint32 cbBuf, uint32* pcWritten, uint32 cSleep);
+		public static extern BOOL FlushPrinter(HANDLE hPrinter, void* pBuf, uint32 cbBuf, out uint32 pcWritten, uint32 cSleep);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EndPagePrinter(HANDLE hPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL AbortPrinter(HANDLE hPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ReadPrinter(HANDLE hPrinter, void* pBuf, uint32 cbBuf, uint32* pNoBytesRead);
+		public static extern BOOL ReadPrinter(HANDLE hPrinter, void* pBuf, uint32 cbBuf, out uint32 pNoBytesRead);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EndDocPrinter(HANDLE hPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddJobA(HANDLE hPrinter, uint32 Level, uint8* pData, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL AddJobA(HANDLE hPrinter, uint32 Level, uint8* pData, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddJobW(HANDLE hPrinter, uint32 Level, uint8* pData, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL AddJobW(HANDLE hPrinter, uint32 Level, uint8* pData, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ScheduleJob(HANDLE hPrinter, uint32 JobId);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6276,33 +6276,33 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 ExtDeviceMode(HWND hWnd, HANDLE hInst, DEVMODEA* pDevModeOutput, PSTR pDeviceName, PSTR pPort, DEVMODEA* pDevModeInput, PSTR pProfile, uint32 fMode);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 GetPrinterDataA(HANDLE hPrinter, PSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, uint32* pcbNeeded);
+		public static extern uint32 GetPrinterDataA(HANDLE hPrinter, PSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 GetPrinterDataW(HANDLE hPrinter, PWSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, uint32* pcbNeeded);
+		public static extern uint32 GetPrinterDataW(HANDLE hPrinter, PWSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 GetPrinterDataExA(HANDLE hPrinter, PSTR pKeyName, PSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, uint32* pcbNeeded);
+		public static extern uint32 GetPrinterDataExA(HANDLE hPrinter, PSTR pKeyName, PSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 GetPrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, uint32* pcbNeeded);
+		public static extern uint32 GetPrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pValueName, uint32* pType, uint8* pData, uint32 nSize, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EnumPrinterDataA(HANDLE hPrinter, uint32 dwIndex, PSTR pValueName, uint32 cbValueName, uint32* pcbValueName, uint32* pType, uint8* pData, uint32 cbData, uint32* pcbData);
+		public static extern uint32 EnumPrinterDataA(HANDLE hPrinter, uint32 dwIndex, PSTR pValueName, uint32 cbValueName, out uint32 pcbValueName, uint32* pType, uint8* pData, uint32 cbData, uint32* pcbData);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EnumPrinterDataW(HANDLE hPrinter, uint32 dwIndex, PWSTR pValueName, uint32 cbValueName, uint32* pcbValueName, uint32* pType, uint8* pData, uint32 cbData, uint32* pcbData);
+		public static extern uint32 EnumPrinterDataW(HANDLE hPrinter, uint32 dwIndex, PWSTR pValueName, uint32 cbValueName, out uint32 pcbValueName, uint32* pType, uint8* pData, uint32 cbData, uint32* pcbData);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EnumPrinterDataExA(HANDLE hPrinter, PSTR pKeyName, uint8* pEnumValues, uint32 cbEnumValues, uint32* pcbEnumValues, uint32* pnEnumValues);
+		public static extern uint32 EnumPrinterDataExA(HANDLE hPrinter, PSTR pKeyName, uint8* pEnumValues, uint32 cbEnumValues, out uint32 pcbEnumValues, out uint32 pnEnumValues);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EnumPrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, uint8* pEnumValues, uint32 cbEnumValues, uint32* pcbEnumValues, uint32* pnEnumValues);
+		public static extern uint32 EnumPrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, uint8* pEnumValues, uint32 cbEnumValues, out uint32 pcbEnumValues, out uint32 pnEnumValues);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EnumPrinterKeyA(HANDLE hPrinter, PSTR pKeyName, PSTR pSubkey, uint32 cbSubkey, uint32* pcbSubkey);
+		public static extern uint32 EnumPrinterKeyA(HANDLE hPrinter, PSTR pKeyName, PSTR pSubkey, uint32 cbSubkey, out uint32 pcbSubkey);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EnumPrinterKeyW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pSubkey, uint32 cbSubkey, uint32* pcbSubkey);
+		public static extern uint32 EnumPrinterKeyW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pSubkey, uint32 cbSubkey, out uint32 pcbSubkey);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SetPrinterDataA(HANDLE hPrinter, PSTR pValueName, uint32 Type, uint8* pData, uint32 cbData);
+		public static extern uint32 SetPrinterDataA(HANDLE hPrinter, PSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SetPrinterDataW(HANDLE hPrinter, PWSTR pValueName, uint32 Type, uint8* pData, uint32 cbData);
+		public static extern uint32 SetPrinterDataW(HANDLE hPrinter, PWSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SetPrinterDataExA(HANDLE hPrinter, PSTR pKeyName, PSTR pValueName, uint32 Type, uint8* pData, uint32 cbData);
+		public static extern uint32 SetPrinterDataExA(HANDLE hPrinter, PSTR pKeyName, PSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SetPrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pValueName, uint32 Type, uint8* pData, uint32 cbData);
+		public static extern uint32 SetPrinterDataExW(HANDLE hPrinter, PWSTR pKeyName, PWSTR pValueName, uint32 Type, ref uint8 pData, uint32 cbData);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DeletePrinterDataA(HANDLE hPrinter, PSTR pValueName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6322,7 +6322,7 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FindNextPrinterChangeNotification(HANDLE hChange, uint32* pdwChange, void* pvReserved, void** ppPrinterNotifyInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL FreePrinterNotifyInfo(PRINTER_NOTIFY_INFO* pPrinterNotifyInfo);
+		public static extern BOOL FreePrinterNotifyInfo(ref PRINTER_NOTIFY_INFO pPrinterNotifyInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL FindClosePrinterChangeNotification(HANDLE hChange);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6332,29 +6332,29 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ClosePrinter(HANDLE hPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddFormA(HANDLE hPrinter, uint32 Level, uint8* pForm);
+		public static extern BOOL AddFormA(HANDLE hPrinter, uint32 Level, ref uint8 pForm);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddFormW(HANDLE hPrinter, uint32 Level, uint8* pForm);
+		public static extern BOOL AddFormW(HANDLE hPrinter, uint32 Level, ref uint8 pForm);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeleteFormA(HANDLE hPrinter, PSTR pFormName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeleteFormW(HANDLE hPrinter, PWSTR pFormName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetFormA(HANDLE hPrinter, PSTR pFormName, uint32 Level, uint8* pForm, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetFormA(HANDLE hPrinter, PSTR pFormName, uint32 Level, uint8* pForm, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetFormW(HANDLE hPrinter, PWSTR pFormName, uint32 Level, uint8* pForm, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetFormW(HANDLE hPrinter, PWSTR pFormName, uint32 Level, uint8* pForm, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetFormA(HANDLE hPrinter, PSTR pFormName, uint32 Level, uint8* pForm);
+		public static extern BOOL SetFormA(HANDLE hPrinter, PSTR pFormName, uint32 Level, ref uint8 pForm);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetFormW(HANDLE hPrinter, PWSTR pFormName, uint32 Level, uint8* pForm);
+		public static extern BOOL SetFormW(HANDLE hPrinter, PWSTR pFormName, uint32 Level, ref uint8 pForm);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumFormsA(HANDLE hPrinter, uint32 Level, uint8* pForm, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumFormsA(HANDLE hPrinter, uint32 Level, uint8* pForm, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumFormsW(HANDLE hPrinter, uint32 Level, uint8* pForm, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumFormsW(HANDLE hPrinter, uint32 Level, uint8* pForm, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumMonitorsA(PSTR pName, uint32 Level, uint8* pMonitor, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumMonitorsA(PSTR pName, uint32 Level, uint8* pMonitor, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumMonitorsW(PWSTR pName, uint32 Level, uint8* pMonitor, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumMonitorsW(PWSTR pName, uint32 Level, uint8* pMonitor, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL AddMonitorA(PSTR pName, uint32 Level, uint8* pMonitors);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6364,9 +6364,9 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeleteMonitorW(PWSTR pName, PWSTR pEnvironment, PWSTR pMonitorName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPortsA(PSTR pName, uint32 Level, uint8* pPort, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPortsA(PSTR pName, uint32 Level, uint8* pPort, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EnumPortsW(PWSTR pName, uint32 Level, uint8* pPort, uint32 cbBuf, uint32* pcbNeeded, uint32* pcReturned);
+		public static extern BOOL EnumPortsW(PWSTR pName, uint32 Level, uint8* pPort, uint32 cbBuf, out uint32 pcbNeeded, out uint32 pcReturned);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL AddPortA(PSTR pName, HWND hWnd, PSTR pMonitorName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6380,19 +6380,19 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeletePortW(PWSTR pName, HWND hWnd, PWSTR pPortName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL XcvDataW(HANDLE hXcv, PWSTR pszDataName, uint8* pInputData, uint32 cbInputData, uint8* pOutputData, uint32 cbOutputData, uint32* pcbOutputNeeded, uint32* pdwStatus);
+		public static extern BOOL XcvDataW(HANDLE hXcv, PWSTR pszDataName, uint8* pInputData, uint32 cbInputData, uint8* pOutputData, uint32 cbOutputData, out uint32 pcbOutputNeeded, uint32* pdwStatus);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetDefaultPrinterA(uint8* pszBuffer, uint32* pcchBuffer);
+		public static extern BOOL GetDefaultPrinterA(uint8* pszBuffer, out uint32 pcchBuffer);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetDefaultPrinterW(char16* pszBuffer, uint32* pcchBuffer);
+		public static extern BOOL GetDefaultPrinterW(char16* pszBuffer, out uint32 pcchBuffer);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetDefaultPrinterA(PSTR pszPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetDefaultPrinterW(PWSTR pszPrinter);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetPortA(PSTR pName, PSTR pPortName, uint32 dwLevel, uint8* pPortInfo);
+		public static extern BOOL SetPortA(PSTR pName, PSTR pPortName, uint32 dwLevel, ref uint8 pPortInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetPortW(PWSTR pName, PWSTR pPortName, uint32 dwLevel, uint8* pPortInfo);
+		public static extern BOOL SetPortW(PWSTR pName, PWSTR pPortName, uint32 dwLevel, ref uint8 pPortInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL AddPrinterConnectionA(PSTR pName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6404,9 +6404,9 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE ConnectToPrinterDlg(HWND hwnd, uint32 Flags);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddPrintProvidorA(PSTR pName, uint32 Level, uint8* pProvidorInfo);
+		public static extern BOOL AddPrintProvidorA(PSTR pName, uint32 Level, ref uint8 pProvidorInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AddPrintProvidorW(PWSTR pName, uint32 Level, uint8* pProvidorInfo);
+		public static extern BOOL AddPrintProvidorW(PWSTR pName, uint32 Level, ref uint8 pProvidorInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeletePrintProvidorA(PSTR pName, PSTR pEnvironment, PSTR pPrintProvidorName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6416,9 +6416,9 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL IsValidDevmodeW(DEVMODEW* pDevmode, uint DevmodeSize);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL OpenPrinter2A(PSTR pPrinterName, HANDLE* phPrinter, PRINTER_DEFAULTSA* pDefault, PRINTER_OPTIONSA* pOptions);
+		public static extern BOOL OpenPrinter2A(PSTR pPrinterName, out HANDLE phPrinter, PRINTER_DEFAULTSA* pDefault, PRINTER_OPTIONSA* pOptions);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL OpenPrinter2W(PWSTR pPrinterName, HANDLE* phPrinter, PRINTER_DEFAULTSW* pDefault, PRINTER_OPTIONSW* pOptions);
+		public static extern BOOL OpenPrinter2W(PWSTR pPrinterName, out HANDLE phPrinter, PRINTER_DEFAULTSW* pDefault, PRINTER_OPTIONSW* pOptions);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL AddPrinterConnection2A(HWND hWnd, PSTR pszName, uint32 dwLevel, void* pConnectionInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6428,21 +6428,21 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT InstallPrinterDriverFromPackageW(PWSTR pszServer, PWSTR pszInfPath, PWSTR pszDriverName, PWSTR pszEnvironment, uint32 dwFlags);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT UploadPrinterDriverPackageA(PSTR pszServer, PSTR pszInfPath, PSTR pszEnvironment, uint32 dwFlags, HWND hwnd, uint8* pszDestInfPath, uint32* pcchDestInfPath);
+		public static extern HRESULT UploadPrinterDriverPackageA(PSTR pszServer, PSTR pszInfPath, PSTR pszEnvironment, uint32 dwFlags, HWND hwnd, uint8* pszDestInfPath, out uint32 pcchDestInfPath);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT UploadPrinterDriverPackageW(PWSTR pszServer, PWSTR pszInfPath, PWSTR pszEnvironment, uint32 dwFlags, HWND hwnd, char16* pszDestInfPath, uint32* pcchDestInfPath);
+		public static extern HRESULT UploadPrinterDriverPackageW(PWSTR pszServer, PWSTR pszInfPath, PWSTR pszEnvironment, uint32 dwFlags, HWND hwnd, char16* pszDestInfPath, out uint32 pcchDestInfPath);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetCorePrinterDriversA(PSTR pszServer, PSTR pszEnvironment, PSTR pszzCoreDriverDependencies, uint32 cCorePrinterDrivers, CORE_PRINTER_DRIVERA* pCorePrinterDrivers);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT GetCorePrinterDriversW(PWSTR pszServer, PWSTR pszEnvironment, PWSTR pszzCoreDriverDependencies, uint32 cCorePrinterDrivers, CORE_PRINTER_DRIVERW* pCorePrinterDrivers);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CorePrinterDriverInstalledA(PSTR pszServer, PSTR pszEnvironment, Guid CoreDriverGUID, FILETIME ftDriverDate, uint64 dwlDriverVersion, BOOL* pbDriverInstalled);
+		public static extern HRESULT CorePrinterDriverInstalledA(PSTR pszServer, PSTR pszEnvironment, Guid CoreDriverGUID, FILETIME ftDriverDate, uint64 dwlDriverVersion, out BOOL pbDriverInstalled);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CorePrinterDriverInstalledW(PWSTR pszServer, PWSTR pszEnvironment, Guid CoreDriverGUID, FILETIME ftDriverDate, uint64 dwlDriverVersion, BOOL* pbDriverInstalled);
+		public static extern HRESULT CorePrinterDriverInstalledW(PWSTR pszServer, PWSTR pszEnvironment, Guid CoreDriverGUID, FILETIME ftDriverDate, uint64 dwlDriverVersion, out BOOL pbDriverInstalled);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetPrinterDriverPackagePathA(PSTR pszServer, PSTR pszEnvironment, PSTR pszLanguage, PSTR pszPackageID, uint8* pszDriverPackageCab, uint32 cchDriverPackageCab, uint32* pcchRequiredSize);
+		public static extern HRESULT GetPrinterDriverPackagePathA(PSTR pszServer, PSTR pszEnvironment, PSTR pszLanguage, PSTR pszPackageID, uint8* pszDriverPackageCab, uint32 cchDriverPackageCab, out uint32 pcchRequiredSize);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetPrinterDriverPackagePathW(PWSTR pszServer, PWSTR pszEnvironment, PWSTR pszLanguage, PWSTR pszPackageID, char16* pszDriverPackageCab, uint32 cchDriverPackageCab, uint32* pcchRequiredSize);
+		public static extern HRESULT GetPrinterDriverPackagePathW(PWSTR pszServer, PWSTR pszEnvironment, PWSTR pszLanguage, PWSTR pszPackageID, char16* pszDriverPackageCab, uint32 cchDriverPackageCab, out uint32 pcchRequiredSize);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT DeletePrinterDriverPackageA(PSTR pszServer, PSTR pszInfPath, PSTR pszEnvironment);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6450,35 +6450,35 @@ namespace Win32
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT ReportJobProcessingProgress(HANDLE printerHandle, uint32 jobId, EPrintXPSJobOperation jobOperation, EPrintXPSJobProgress jobProgress);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrinterDriver2A(HWND hWnd, HANDLE hPrinter, PSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrinterDriver2A(HWND hWnd, HANDLE hPrinter, PSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrinterDriver2W(HWND hWnd, HANDLE hPrinter, PWSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, uint32* pcbNeeded);
+		public static extern BOOL GetPrinterDriver2W(HWND hWnd, HANDLE hPrinter, PWSTR pEnvironment, uint32 Level, uint8* pDriverInfo, uint32 cbBuf, out uint32 pcbNeeded);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetPrintExecutionData(PRINT_EXECUTION_DATA* pData);
+		public static extern BOOL GetPrintExecutionData(out PRINT_EXECUTION_DATA pData);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 GetJobNamedPropertyValue(HANDLE hPrinter, uint32 JobId, PWSTR pszName, PrintPropertyValue* pValue);
+		public static extern uint32 GetJobNamedPropertyValue(HANDLE hPrinter, uint32 JobId, PWSTR pszName, out PrintPropertyValue pValue);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void FreePrintPropertyValue(PrintPropertyValue* pValue);
+		public static extern void FreePrintPropertyValue(out PrintPropertyValue pValue);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void FreePrintNamedPropertyArray(uint32 cProperties, PrintNamedProperty** ppProperties);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SetJobNamedProperty(HANDLE hPrinter, uint32 JobId, PrintNamedProperty* pProperty);
+		public static extern uint32 SetJobNamedProperty(HANDLE hPrinter, uint32 JobId, in PrintNamedProperty pProperty);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 DeleteJobNamedProperty(HANDLE hPrinter, uint32 JobId, PWSTR pszName);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 EnumJobNamedProperties(HANDLE hPrinter, uint32 JobId, uint32* pcProperties, PrintNamedProperty** ppProperties);
+		public static extern uint32 EnumJobNamedProperties(HANDLE hPrinter, uint32 JobId, out uint32 pcProperties, out PrintNamedProperty* ppProperties);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetPrintOutputInfo(HWND hWnd, PWSTR pszPrinter, HANDLE* phFile, PWSTR* ppszOutputFile);
+		public static extern HRESULT GetPrintOutputInfo(HWND hWnd, PWSTR pszPrinter, out HANDLE phFile, out PWSTR ppszOutputFile);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL DevQueryPrintEx(DEVQUERYPRINT_INFO* pDQPInfo);
+		public static extern BOOL DevQueryPrintEx(out DEVQUERYPRINT_INFO pDQPInfo);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT RegisterForPrintAsyncNotifications(PWSTR pszName, Guid* pNotificationType, PrintAsyncNotifyUserFilter eUserFilter, PrintAsyncNotifyConversationStyle eConversationStyle, IPrintAsyncNotifyCallback* pCallback, HANDLE* phNotify);
+		public static extern HRESULT RegisterForPrintAsyncNotifications(PWSTR pszName, ref Guid pNotificationType, PrintAsyncNotifyUserFilter eUserFilter, PrintAsyncNotifyConversationStyle eConversationStyle, ref IPrintAsyncNotifyCallback pCallback, out HANDLE phNotify);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UnRegisterForPrintAsyncNotifications(HANDLE param0);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreatePrintAsyncNotifyChannel(PWSTR pszName, Guid* pNotificationType, PrintAsyncNotifyUserFilter eUserFilter, PrintAsyncNotifyConversationStyle eConversationStyle, IPrintAsyncNotifyCallback* pCallback, IPrintAsyncNotifyChannel** ppIAsynchNotification);
+		public static extern HRESULT CreatePrintAsyncNotifyChannel(PWSTR pszName, ref Guid pNotificationType, PrintAsyncNotifyUserFilter eUserFilter, PrintAsyncNotifyConversationStyle eConversationStyle, IPrintAsyncNotifyCallback* pCallback, out IPrintAsyncNotifyChannel* ppIAsynchNotification);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HANDLE GdiGetSpoolFileHandle(PWSTR pwszPrinterName, DEVMODEW* pDevmode, PWSTR pwszDocName);
+		public static extern HANDLE GdiGetSpoolFileHandle(PWSTR pwszPrinterName, out DEVMODEW pDevmode, PWSTR pwszDocName);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GdiDeleteSpoolFileHandle(HANDLE SpoolFileHandle);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -6486,33 +6486,33 @@ namespace Win32
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HDC GdiGetDC(HANDLE SpoolFileHandle);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HANDLE GdiGetPageHandle(HANDLE SpoolFileHandle, uint32 Page, uint32* pdwPageType);
+		public static extern HANDLE GdiGetPageHandle(HANDLE SpoolFileHandle, uint32 Page, out uint32 pdwPageType);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GdiStartDocEMF(HANDLE SpoolFileHandle, DOCINFOW* pDocInfo);
+		public static extern BOOL GdiStartDocEMF(HANDLE SpoolFileHandle, out DOCINFOW pDocInfo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GdiStartPageEMF(HANDLE SpoolFileHandle);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GdiPlayPageEMF(HANDLE SpoolFileHandle, HANDLE hemf, RECT* prectDocument, RECT* prectBorder, RECT* prectClip);
+		public static extern BOOL GdiPlayPageEMF(HANDLE SpoolFileHandle, HANDLE hemf, out RECT prectDocument, out RECT prectBorder, out RECT prectClip);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GdiEndPageEMF(HANDLE SpoolFileHandle, uint32 dwOptimization);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL GdiEndDocEMF(HANDLE SpoolFileHandle);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GdiGetDevmodeForPage(HANDLE SpoolFileHandle, uint32 dwPageNumber, DEVMODEW** pCurrDM, DEVMODEW** pLastDM);
+		public static extern BOOL GdiGetDevmodeForPage(HANDLE SpoolFileHandle, uint32 dwPageNumber, out DEVMODEW* pCurrDM, out DEVMODEW* pLastDM);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GdiResetDCEMF(HANDLE SpoolFileHandle, DEVMODEW* pCurrDM);
+		public static extern BOOL GdiResetDCEMF(HANDLE SpoolFileHandle, out DEVMODEW pCurrDM);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetJobAttributes(PWSTR pPrinterName, DEVMODEW* pDevmode, ATTRIBUTE_INFO_3* pAttributeInfo);
+		public static extern BOOL GetJobAttributes(PWSTR pPrinterName, ref DEVMODEW pDevmode, out ATTRIBUTE_INFO_3 pAttributeInfo);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetJobAttributesEx(PWSTR pPrinterName, DEVMODEW* pDevmode, uint32 dwLevel, uint8* pAttributeInfo, uint32 nSize, uint32 dwFlags);
+		public static extern BOOL GetJobAttributesEx(PWSTR pPrinterName, ref DEVMODEW pDevmode, uint32 dwLevel, out uint8 pAttributeInfo, uint32 nSize, uint32 dwFlags);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE CreatePrinterIC(HANDLE hPrinter, DEVMODEW* pDevMode);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PlayGdiScriptOnPrinterIC(HANDLE hPrinterIC, uint8* pIn, uint32 cIn, uint8* pOut, uint32 cOut, uint32 ul);
+		public static extern BOOL PlayGdiScriptOnPrinterIC(HANDLE hPrinterIC, ref uint8 pIn, uint32 cIn, out uint8 pOut, uint32 cOut, uint32 ul);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL DeletePrinterIC(HANDLE hPrinterIC);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL DevQueryPrint(HANDLE hPrinter, DEVMODEA* pDevMode, uint32* pResID);
+		public static extern BOOL DevQueryPrint(HANDLE hPrinter, ref DEVMODEA pDevMode, out uint32 pResID);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE RevertToPrinterSelf();
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6520,7 +6520,7 @@ namespace Win32
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ReplyPrinterChangeNotification(HANDLE hPrinter, uint32 fdwChangeFlags, uint32* pdwResult, void* pPrinterNotifyInfo);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ReplyPrinterChangeNotificationEx(HANDLE hNotify, uint32 dwColor, uint32 fdwFlags, uint32* pdwResult, void* pPrinterNotifyInfo);
+		public static extern BOOL ReplyPrinterChangeNotificationEx(HANDLE hNotify, uint32 dwColor, uint32 fdwFlags, out uint32 pdwResult, void* pPrinterNotifyInfo);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL PartialReplyPrinterChangeNotification(HANDLE hPrinter, PRINTER_NOTIFY_INFO_DATA* pDataSrc);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6532,13 +6532,13 @@ namespace Win32
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* RouterAllocBidiMem(uint NumBytes);
 		[Import("winspool.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RouterFreeBidiResponseContainer(BIDI_RESPONSE_CONTAINER* pData);
+		public static extern uint32 RouterFreeBidiResponseContainer(ref BIDI_RESPONSE_CONTAINER pData);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void RouterFreeBidiMem(void* pMemPointer);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL AppendPrinterNotifyInfoData(PRINTER_NOTIFY_INFO* pInfoDest, PRINTER_NOTIFY_INFO_DATA* pDataSrc, uint32 fdwFlags);
+		public static extern BOOL AppendPrinterNotifyInfoData(ref PRINTER_NOTIFY_INFO pInfoDest, PRINTER_NOTIFY_INFO_DATA* pDataSrc, uint32 fdwFlags);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CallRouterFindFirstPrinterChangeNotification(HANDLE hPrinterRPC, uint32 fdwFilterFlags, uint32 fdwOptions, HANDLE hNotify, PRINTER_NOTIFY_OPTIONS* pPrinterNotifyOptions);
+		public static extern uint32 CallRouterFindFirstPrinterChangeNotification(HANDLE hPrinterRPC, uint32 fdwFilterFlags, uint32 fdwOptions, HANDLE hNotify, ref PRINTER_NOTIFY_OPTIONS pPrinterNotifyOptions);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ProvidorFindFirstPrinterChangeNotification(HANDLE hPrinter, uint32 fdwFlags, uint32 fdwOptions, HANDLE hNotify, void* pPrinterNotifyOptions, void* pvReserved1);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
@@ -6546,23 +6546,23 @@ namespace Win32
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SpoolerFindFirstPrinterChangeNotification(HANDLE hPrinter, uint32 fdwFilterFlags, uint32 fdwOptions, void* pPrinterNotifyOptions, void* pvReserved, void* pNotificationConfig, HANDLE* phNotify, HANDLE* phEvent);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SpoolerFindNextPrinterChangeNotification(HANDLE hPrinter, uint32* pfdwChange, void* pPrinterNotifyOptions, void** ppPrinterNotifyInfo);
+		public static extern BOOL SpoolerFindNextPrinterChangeNotification(HANDLE hPrinter, out uint32 pfdwChange, void* pPrinterNotifyOptions, void** ppPrinterNotifyInfo);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SpoolerRefreshPrinterChangeNotification(HANDLE hPrinter, uint32 dwColor, PRINTER_NOTIFY_OPTIONS* pOptions, PRINTER_NOTIFY_INFO** ppInfo);
+		public static extern BOOL SpoolerRefreshPrinterChangeNotification(HANDLE hPrinter, uint32 dwColor, ref PRINTER_NOTIFY_OPTIONS pOptions, PRINTER_NOTIFY_INFO** ppInfo);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void SpoolerFreePrinterNotifyInfo(PRINTER_NOTIFY_INFO* pInfo);
+		public static extern void SpoolerFreePrinterNotifyInfo(ref PRINTER_NOTIFY_INFO pInfo);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SpoolerFindClosePrinterChangeNotification(HANDLE hPrinter);
 		[Import("mscms.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SpoolerCopyFileEvent(PWSTR pszPrinterName, PWSTR pszKey, uint32 dwCopyFileEvent);
 		[Import("mscms.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 GenerateCopyFilePaths(PWSTR pszPrinterName, PWSTR pszDirectory, uint8* pSplClientInfo, uint32 dwLevel, char16* pszSourceDir, uint32* pcchSourceDirSize, char16* pszTargetDir, uint32* pcchTargetDirSize, uint32 dwFlags);
+		public static extern uint32 GenerateCopyFilePaths(PWSTR pszPrinterName, PWSTR pszDirectory, ref uint8 pSplClientInfo, uint32 dwLevel, char16* pszSourceDir, out uint32 pcchSourceDirSize, char16* pszTargetDir, out uint32 pcchTargetDirSize, uint32 dwFlags);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SplPromptUIInUsersSession(HANDLE hPrinter, uint32 JobId, SHOWUIPARAMS* pUIParams, uint32* pResponse);
+		public static extern BOOL SplPromptUIInUsersSession(HANDLE hPrinter, uint32 JobId, ref SHOWUIPARAMS pUIParams, out uint32 pResponse);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 SplIsSessionZero(HANDLE hPrinter, uint32 JobId, BOOL* pIsSessionZero);
+		public static extern uint32 SplIsSessionZero(HANDLE hPrinter, uint32 JobId, out BOOL pIsSessionZero);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT AddPrintDeviceObject(HANDLE hPrinter, HANDLE* phDeviceObject);
+		public static extern HRESULT AddPrintDeviceObject(HANDLE hPrinter, out HANDLE phDeviceObject);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT UpdatePrintDeviceObject(HANDLE hPrinter, HANDLE hDeviceObject);
 		[Import("spoolss.dll"), CLink, CallingConvention(.Stdcall)]

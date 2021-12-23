@@ -79,9 +79,9 @@ namespace Win32
 		public function uint32 PNS_CONTEXT_CONNECT_FN(PWSTR pwszMachine);
 		public function uint32 PNS_CONTEXT_DUMP_FN(PWSTR pwszRouter, PWSTR* ppwcArguments, uint32 dwArgCount, void* pvData);
 		public function uint32 PNS_DLL_STOP_FN(uint32 dwReserved);
-		public function uint32 PNS_HELPER_START_FN(Guid* pguidParent, uint32 dwVersion);
+		public function uint32 PNS_HELPER_START_FN(in Guid pguidParent, uint32 dwVersion);
 		public function uint32 PNS_HELPER_STOP_FN(uint32 dwReserved);
-		public function uint32 PFN_HANDLE_CMD(PWSTR pwszMachine, PWSTR* ppwcArguments, uint32 dwCurrentIndex, uint32 dwArgCount, uint32 dwFlags, void* pvData, BOOL* pbDone);
+		public function uint32 PFN_HANDLE_CMD(PWSTR pwszMachine, PWSTR* ppwcArguments, uint32 dwCurrentIndex, uint32 dwArgCount, uint32 dwFlags, void* pvData, out BOOL pbDone);
 		public function BOOL PNS_OSVERSIONCHECK(uint32 CIMOSType, uint32 CIMOSProductSuite, PWSTR CIMOSVersion, PWSTR CIMOSBuildNumber, PWSTR CIMServicePackMajorVersion, PWSTR CIMServicePackMinorVersion, uint32 uiReserved, uint32 dwReserved);
 		public function uint32 PNS_DLL_INIT_FN(uint32 dwNetshVersion, void* pReserved);
 		
@@ -178,7 +178,7 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 MatchEnumTag(HANDLE hModule, PWSTR pwcArg, uint32 dwNumArg, TOKEN_VALUE* pEnumTable, uint32* pdwValue);
+		public static extern uint32 MatchEnumTag(HANDLE hModule, PWSTR pwcArg, uint32 dwNumArg, in TOKEN_VALUE pEnumTable, out uint32 pdwValue);
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MatchToken(PWSTR pwszUserToken, PWSTR pwszCmdToken);
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
@@ -190,9 +190,9 @@ namespace Win32
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 PrintMessage(PWSTR pwszFormat);
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RegisterContext(NS_CONTEXT_ATTRIBUTES* pChildContext);
+		public static extern uint32 RegisterContext(in NS_CONTEXT_ATTRIBUTES pChildContext);
 		[Import("netsh.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 RegisterHelper(Guid* pguidParentContext, NS_HELPER_ATTRIBUTES* pfnRegisterSubContext);
+		public static extern uint32 RegisterHelper(in Guid pguidParentContext, in NS_HELPER_ATTRIBUTES pfnRegisterSubContext);
 		
 	}
 }

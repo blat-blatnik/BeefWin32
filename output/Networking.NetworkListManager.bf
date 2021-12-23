@@ -125,54 +125,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNetworks(NLM_ENUM_NETWORK Flags, IEnumNetworks** ppEnumNetwork) mut
+			public HRESULT GetNetworks(NLM_ENUM_NETWORK Flags, out IEnumNetworks* ppEnumNetwork) mut
 			{
-				return VT.GetNetworks(&this, Flags, ppEnumNetwork);
+				return VT.GetNetworks(ref this, Flags, out ppEnumNetwork);
 			}
-			public HRESULT GetNetwork(Guid gdNetworkId, INetwork** ppNetwork) mut
+			public HRESULT GetNetwork(Guid gdNetworkId, out INetwork* ppNetwork) mut
 			{
-				return VT.GetNetwork(&this, gdNetworkId, ppNetwork);
+				return VT.GetNetwork(ref this, gdNetworkId, out ppNetwork);
 			}
-			public HRESULT GetNetworkConnections(IEnumNetworkConnections** ppEnum) mut
+			public HRESULT GetNetworkConnections(out IEnumNetworkConnections* ppEnum) mut
 			{
-				return VT.GetNetworkConnections(&this, ppEnum);
+				return VT.GetNetworkConnections(ref this, out ppEnum);
 			}
-			public HRESULT GetNetworkConnection(Guid gdNetworkConnectionId, INetworkConnection** ppNetworkConnection) mut
+			public HRESULT GetNetworkConnection(Guid gdNetworkConnectionId, out INetworkConnection* ppNetworkConnection) mut
 			{
-				return VT.GetNetworkConnection(&this, gdNetworkConnectionId, ppNetworkConnection);
+				return VT.GetNetworkConnection(ref this, gdNetworkConnectionId, out ppNetworkConnection);
 			}
-			public HRESULT get_IsConnectedToInternet(int16* pbIsConnected) mut
+			public HRESULT get_IsConnectedToInternet(out int16 pbIsConnected) mut
 			{
-				return VT.get_IsConnectedToInternet(&this, pbIsConnected);
+				return VT.get_IsConnectedToInternet(ref this, out pbIsConnected);
 			}
-			public HRESULT get_IsConnected(int16* pbIsConnected) mut
+			public HRESULT get_IsConnected(out int16 pbIsConnected) mut
 			{
-				return VT.get_IsConnected(&this, pbIsConnected);
+				return VT.get_IsConnected(ref this, out pbIsConnected);
 			}
-			public HRESULT GetConnectivity(NLM_CONNECTIVITY* pConnectivity) mut
+			public HRESULT GetConnectivity(out NLM_CONNECTIVITY pConnectivity) mut
 			{
-				return VT.GetConnectivity(&this, pConnectivity);
+				return VT.GetConnectivity(ref this, out pConnectivity);
 			}
-			public HRESULT SetSimulatedProfileInfo(NLM_SIMULATED_PROFILE_INFO* pSimulatedInfo) mut
+			public HRESULT SetSimulatedProfileInfo(ref NLM_SIMULATED_PROFILE_INFO pSimulatedInfo) mut
 			{
-				return VT.SetSimulatedProfileInfo(&this, pSimulatedInfo);
+				return VT.SetSimulatedProfileInfo(ref this, ref pSimulatedInfo);
 			}
 			public HRESULT ClearSimulatedProfileInfo() mut
 			{
-				return VT.ClearSimulatedProfileInfo(&this);
+				return VT.ClearSimulatedProfileInfo(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(INetworkListManager *self, NLM_ENUM_NETWORK Flags, IEnumNetworks** ppEnumNetwork) GetNetworks;
-				public new function HRESULT(INetworkListManager *self, Guid gdNetworkId, INetwork** ppNetwork) GetNetwork;
-				public new function HRESULT(INetworkListManager *self, IEnumNetworkConnections** ppEnum) GetNetworkConnections;
-				public new function HRESULT(INetworkListManager *self, Guid gdNetworkConnectionId, INetworkConnection** ppNetworkConnection) GetNetworkConnection;
-				public new function HRESULT(INetworkListManager *self, int16* pbIsConnected) get_IsConnectedToInternet;
-				public new function HRESULT(INetworkListManager *self, int16* pbIsConnected) get_IsConnected;
-				public new function HRESULT(INetworkListManager *self, NLM_CONNECTIVITY* pConnectivity) GetConnectivity;
-				public new function HRESULT(INetworkListManager *self, NLM_SIMULATED_PROFILE_INFO* pSimulatedInfo) SetSimulatedProfileInfo;
-				public new function HRESULT(INetworkListManager *self) ClearSimulatedProfileInfo;
+				public new function HRESULT(ref INetworkListManager self, NLM_ENUM_NETWORK Flags, out IEnumNetworks* ppEnumNetwork) GetNetworks;
+				public new function HRESULT(ref INetworkListManager self, Guid gdNetworkId, out INetwork* ppNetwork) GetNetwork;
+				public new function HRESULT(ref INetworkListManager self, out IEnumNetworkConnections* ppEnum) GetNetworkConnections;
+				public new function HRESULT(ref INetworkListManager self, Guid gdNetworkConnectionId, out INetworkConnection* ppNetworkConnection) GetNetworkConnection;
+				public new function HRESULT(ref INetworkListManager self, out int16 pbIsConnected) get_IsConnectedToInternet;
+				public new function HRESULT(ref INetworkListManager self, out int16 pbIsConnected) get_IsConnected;
+				public new function HRESULT(ref INetworkListManager self, out NLM_CONNECTIVITY pConnectivity) GetConnectivity;
+				public new function HRESULT(ref INetworkListManager self, ref NLM_SIMULATED_PROFILE_INFO pSimulatedInfo) SetSimulatedProfileInfo;
+				public new function HRESULT(ref INetworkListManager self) ClearSimulatedProfileInfo;
 			}
 		}
 		[CRepr]
@@ -184,12 +184,12 @@ namespace Win32
 			
 			public HRESULT ConnectivityChanged(NLM_CONNECTIVITY newConnectivity) mut
 			{
-				return VT.ConnectivityChanged(&this, newConnectivity);
+				return VT.ConnectivityChanged(ref this, newConnectivity);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(INetworkListManagerEvents *self, NLM_CONNECTIVITY newConnectivity) ConnectivityChanged;
+				public new function HRESULT(ref INetworkListManagerEvents self, NLM_CONNECTIVITY newConnectivity) ConnectivityChanged;
 			}
 		}
 		[CRepr]
@@ -199,74 +199,74 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(BSTR* pszNetworkName) mut
+			public HRESULT GetName(out BSTR pszNetworkName) mut
 			{
-				return VT.GetName(&this, pszNetworkName);
+				return VT.GetName(ref this, out pszNetworkName);
 			}
 			public HRESULT SetName(BSTR szNetworkNewName) mut
 			{
-				return VT.SetName(&this, szNetworkNewName);
+				return VT.SetName(ref this, szNetworkNewName);
 			}
-			public HRESULT GetDescription(BSTR* pszDescription) mut
+			public HRESULT GetDescription(out BSTR pszDescription) mut
 			{
-				return VT.GetDescription(&this, pszDescription);
+				return VT.GetDescription(ref this, out pszDescription);
 			}
 			public HRESULT SetDescription(BSTR szDescription) mut
 			{
-				return VT.SetDescription(&this, szDescription);
+				return VT.SetDescription(ref this, szDescription);
 			}
-			public HRESULT GetNetworkId(Guid* pgdGuidNetworkId) mut
+			public HRESULT GetNetworkId(out Guid pgdGuidNetworkId) mut
 			{
-				return VT.GetNetworkId(&this, pgdGuidNetworkId);
+				return VT.GetNetworkId(ref this, out pgdGuidNetworkId);
 			}
-			public HRESULT GetDomainType(NLM_DOMAIN_TYPE* pNetworkType) mut
+			public HRESULT GetDomainType(out NLM_DOMAIN_TYPE pNetworkType) mut
 			{
-				return VT.GetDomainType(&this, pNetworkType);
+				return VT.GetDomainType(ref this, out pNetworkType);
 			}
-			public HRESULT GetNetworkConnections(IEnumNetworkConnections** ppEnumNetworkConnection) mut
+			public HRESULT GetNetworkConnections(out IEnumNetworkConnections* ppEnumNetworkConnection) mut
 			{
-				return VT.GetNetworkConnections(&this, ppEnumNetworkConnection);
+				return VT.GetNetworkConnections(ref this, out ppEnumNetworkConnection);
 			}
-			public HRESULT GetTimeCreatedAndConnected(uint32* pdwLowDateTimeCreated, uint32* pdwHighDateTimeCreated, uint32* pdwLowDateTimeConnected, uint32* pdwHighDateTimeConnected) mut
+			public HRESULT GetTimeCreatedAndConnected(out uint32 pdwLowDateTimeCreated, out uint32 pdwHighDateTimeCreated, out uint32 pdwLowDateTimeConnected, out uint32 pdwHighDateTimeConnected) mut
 			{
-				return VT.GetTimeCreatedAndConnected(&this, pdwLowDateTimeCreated, pdwHighDateTimeCreated, pdwLowDateTimeConnected, pdwHighDateTimeConnected);
+				return VT.GetTimeCreatedAndConnected(ref this, out pdwLowDateTimeCreated, out pdwHighDateTimeCreated, out pdwLowDateTimeConnected, out pdwHighDateTimeConnected);
 			}
-			public HRESULT get_IsConnectedToInternet(int16* pbIsConnected) mut
+			public HRESULT get_IsConnectedToInternet(out int16 pbIsConnected) mut
 			{
-				return VT.get_IsConnectedToInternet(&this, pbIsConnected);
+				return VT.get_IsConnectedToInternet(ref this, out pbIsConnected);
 			}
-			public HRESULT get_IsConnected(int16* pbIsConnected) mut
+			public HRESULT get_IsConnected(out int16 pbIsConnected) mut
 			{
-				return VT.get_IsConnected(&this, pbIsConnected);
+				return VT.get_IsConnected(ref this, out pbIsConnected);
 			}
-			public HRESULT GetConnectivity(NLM_CONNECTIVITY* pConnectivity) mut
+			public HRESULT GetConnectivity(out NLM_CONNECTIVITY pConnectivity) mut
 			{
-				return VT.GetConnectivity(&this, pConnectivity);
+				return VT.GetConnectivity(ref this, out pConnectivity);
 			}
-			public HRESULT GetCategory(NLM_NETWORK_CATEGORY* pCategory) mut
+			public HRESULT GetCategory(out NLM_NETWORK_CATEGORY pCategory) mut
 			{
-				return VT.GetCategory(&this, pCategory);
+				return VT.GetCategory(ref this, out pCategory);
 			}
 			public HRESULT SetCategory(NLM_NETWORK_CATEGORY NewCategory) mut
 			{
-				return VT.SetCategory(&this, NewCategory);
+				return VT.SetCategory(ref this, NewCategory);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(INetwork *self, BSTR* pszNetworkName) GetName;
-				public new function HRESULT(INetwork *self, BSTR szNetworkNewName) SetName;
-				public new function HRESULT(INetwork *self, BSTR* pszDescription) GetDescription;
-				public new function HRESULT(INetwork *self, BSTR szDescription) SetDescription;
-				public new function HRESULT(INetwork *self, Guid* pgdGuidNetworkId) GetNetworkId;
-				public new function HRESULT(INetwork *self, NLM_DOMAIN_TYPE* pNetworkType) GetDomainType;
-				public new function HRESULT(INetwork *self, IEnumNetworkConnections** ppEnumNetworkConnection) GetNetworkConnections;
-				public new function HRESULT(INetwork *self, uint32* pdwLowDateTimeCreated, uint32* pdwHighDateTimeCreated, uint32* pdwLowDateTimeConnected, uint32* pdwHighDateTimeConnected) GetTimeCreatedAndConnected;
-				public new function HRESULT(INetwork *self, int16* pbIsConnected) get_IsConnectedToInternet;
-				public new function HRESULT(INetwork *self, int16* pbIsConnected) get_IsConnected;
-				public new function HRESULT(INetwork *self, NLM_CONNECTIVITY* pConnectivity) GetConnectivity;
-				public new function HRESULT(INetwork *self, NLM_NETWORK_CATEGORY* pCategory) GetCategory;
-				public new function HRESULT(INetwork *self, NLM_NETWORK_CATEGORY NewCategory) SetCategory;
+				public new function HRESULT(ref INetwork self, out BSTR pszNetworkName) GetName;
+				public new function HRESULT(ref INetwork self, BSTR szNetworkNewName) SetName;
+				public new function HRESULT(ref INetwork self, out BSTR pszDescription) GetDescription;
+				public new function HRESULT(ref INetwork self, BSTR szDescription) SetDescription;
+				public new function HRESULT(ref INetwork self, out Guid pgdGuidNetworkId) GetNetworkId;
+				public new function HRESULT(ref INetwork self, out NLM_DOMAIN_TYPE pNetworkType) GetDomainType;
+				public new function HRESULT(ref INetwork self, out IEnumNetworkConnections* ppEnumNetworkConnection) GetNetworkConnections;
+				public new function HRESULT(ref INetwork self, out uint32 pdwLowDateTimeCreated, out uint32 pdwHighDateTimeCreated, out uint32 pdwLowDateTimeConnected, out uint32 pdwHighDateTimeConnected) GetTimeCreatedAndConnected;
+				public new function HRESULT(ref INetwork self, out int16 pbIsConnected) get_IsConnectedToInternet;
+				public new function HRESULT(ref INetwork self, out int16 pbIsConnected) get_IsConnected;
+				public new function HRESULT(ref INetwork self, out NLM_CONNECTIVITY pConnectivity) GetConnectivity;
+				public new function HRESULT(ref INetwork self, out NLM_NETWORK_CATEGORY pCategory) GetCategory;
+				public new function HRESULT(ref INetwork self, NLM_NETWORK_CATEGORY NewCategory) SetCategory;
 			}
 		}
 		[CRepr]
@@ -276,34 +276,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IEnumVARIANT** ppEnumVar) mut
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppEnumVar) mut
 			{
-				return VT.get__NewEnum(&this, ppEnumVar);
+				return VT.get__NewEnum(ref this, out ppEnumVar);
 			}
 			public HRESULT Next(uint32 celt, INetwork** rgelt, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, rgelt, pceltFetched);
+				return VT.Next(ref this, celt, rgelt, pceltFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT Clone(IEnumNetworks** ppEnumNetwork) mut
+			public HRESULT Clone(out IEnumNetworks* ppEnumNetwork) mut
 			{
-				return VT.Clone(&this, ppEnumNetwork);
+				return VT.Clone(ref this, out ppEnumNetwork);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IEnumNetworks *self, IEnumVARIANT** ppEnumVar) get__NewEnum;
-				public new function HRESULT(IEnumNetworks *self, uint32 celt, INetwork** rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumNetworks *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumNetworks *self) Reset;
-				public new function HRESULT(IEnumNetworks *self, IEnumNetworks** ppEnumNetwork) Clone;
+				public new function HRESULT(ref IEnumNetworks self, out IEnumVARIANT* ppEnumVar) get__NewEnum;
+				public new function HRESULT(ref IEnumNetworks self, uint32 celt, INetwork** rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumNetworks self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumNetworks self) Reset;
+				public new function HRESULT(ref IEnumNetworks self, out IEnumNetworks* ppEnumNetwork) Clone;
 			}
 		}
 		[CRepr]
@@ -315,27 +315,27 @@ namespace Win32
 			
 			public HRESULT NetworkAdded(Guid networkId) mut
 			{
-				return VT.NetworkAdded(&this, networkId);
+				return VT.NetworkAdded(ref this, networkId);
 			}
 			public HRESULT NetworkDeleted(Guid networkId) mut
 			{
-				return VT.NetworkDeleted(&this, networkId);
+				return VT.NetworkDeleted(ref this, networkId);
 			}
 			public HRESULT NetworkConnectivityChanged(Guid networkId, NLM_CONNECTIVITY newConnectivity) mut
 			{
-				return VT.NetworkConnectivityChanged(&this, networkId, newConnectivity);
+				return VT.NetworkConnectivityChanged(ref this, networkId, newConnectivity);
 			}
 			public HRESULT NetworkPropertyChanged(Guid networkId, NLM_NETWORK_PROPERTY_CHANGE flags) mut
 			{
-				return VT.NetworkPropertyChanged(&this, networkId, flags);
+				return VT.NetworkPropertyChanged(ref this, networkId, flags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(INetworkEvents *self, Guid networkId) NetworkAdded;
-				public new function HRESULT(INetworkEvents *self, Guid networkId) NetworkDeleted;
-				public new function HRESULT(INetworkEvents *self, Guid networkId, NLM_CONNECTIVITY newConnectivity) NetworkConnectivityChanged;
-				public new function HRESULT(INetworkEvents *self, Guid networkId, NLM_NETWORK_PROPERTY_CHANGE flags) NetworkPropertyChanged;
+				public new function HRESULT(ref INetworkEvents self, Guid networkId) NetworkAdded;
+				public new function HRESULT(ref INetworkEvents self, Guid networkId) NetworkDeleted;
+				public new function HRESULT(ref INetworkEvents self, Guid networkId, NLM_CONNECTIVITY newConnectivity) NetworkConnectivityChanged;
+				public new function HRESULT(ref INetworkEvents self, Guid networkId, NLM_NETWORK_PROPERTY_CHANGE flags) NetworkPropertyChanged;
 			}
 		}
 		[CRepr]
@@ -345,44 +345,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNetwork(INetwork** ppNetwork) mut
+			public HRESULT GetNetwork(out INetwork* ppNetwork) mut
 			{
-				return VT.GetNetwork(&this, ppNetwork);
+				return VT.GetNetwork(ref this, out ppNetwork);
 			}
-			public HRESULT get_IsConnectedToInternet(int16* pbIsConnected) mut
+			public HRESULT get_IsConnectedToInternet(out int16 pbIsConnected) mut
 			{
-				return VT.get_IsConnectedToInternet(&this, pbIsConnected);
+				return VT.get_IsConnectedToInternet(ref this, out pbIsConnected);
 			}
-			public HRESULT get_IsConnected(int16* pbIsConnected) mut
+			public HRESULT get_IsConnected(out int16 pbIsConnected) mut
 			{
-				return VT.get_IsConnected(&this, pbIsConnected);
+				return VT.get_IsConnected(ref this, out pbIsConnected);
 			}
-			public HRESULT GetConnectivity(NLM_CONNECTIVITY* pConnectivity) mut
+			public HRESULT GetConnectivity(out NLM_CONNECTIVITY pConnectivity) mut
 			{
-				return VT.GetConnectivity(&this, pConnectivity);
+				return VT.GetConnectivity(ref this, out pConnectivity);
 			}
-			public HRESULT GetConnectionId(Guid* pgdConnectionId) mut
+			public HRESULT GetConnectionId(out Guid pgdConnectionId) mut
 			{
-				return VT.GetConnectionId(&this, pgdConnectionId);
+				return VT.GetConnectionId(ref this, out pgdConnectionId);
 			}
-			public HRESULT GetAdapterId(Guid* pgdAdapterId) mut
+			public HRESULT GetAdapterId(out Guid pgdAdapterId) mut
 			{
-				return VT.GetAdapterId(&this, pgdAdapterId);
+				return VT.GetAdapterId(ref this, out pgdAdapterId);
 			}
-			public HRESULT GetDomainType(NLM_DOMAIN_TYPE* pDomainType) mut
+			public HRESULT GetDomainType(out NLM_DOMAIN_TYPE pDomainType) mut
 			{
-				return VT.GetDomainType(&this, pDomainType);
+				return VT.GetDomainType(ref this, out pDomainType);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(INetworkConnection *self, INetwork** ppNetwork) GetNetwork;
-				public new function HRESULT(INetworkConnection *self, int16* pbIsConnected) get_IsConnectedToInternet;
-				public new function HRESULT(INetworkConnection *self, int16* pbIsConnected) get_IsConnected;
-				public new function HRESULT(INetworkConnection *self, NLM_CONNECTIVITY* pConnectivity) GetConnectivity;
-				public new function HRESULT(INetworkConnection *self, Guid* pgdConnectionId) GetConnectionId;
-				public new function HRESULT(INetworkConnection *self, Guid* pgdAdapterId) GetAdapterId;
-				public new function HRESULT(INetworkConnection *self, NLM_DOMAIN_TYPE* pDomainType) GetDomainType;
+				public new function HRESULT(ref INetworkConnection self, out INetwork* ppNetwork) GetNetwork;
+				public new function HRESULT(ref INetworkConnection self, out int16 pbIsConnected) get_IsConnectedToInternet;
+				public new function HRESULT(ref INetworkConnection self, out int16 pbIsConnected) get_IsConnected;
+				public new function HRESULT(ref INetworkConnection self, out NLM_CONNECTIVITY pConnectivity) GetConnectivity;
+				public new function HRESULT(ref INetworkConnection self, out Guid pgdConnectionId) GetConnectionId;
+				public new function HRESULT(ref INetworkConnection self, out Guid pgdAdapterId) GetAdapterId;
+				public new function HRESULT(ref INetworkConnection self, out NLM_DOMAIN_TYPE pDomainType) GetDomainType;
 			}
 		}
 		[CRepr]
@@ -392,34 +392,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get__NewEnum(IEnumVARIANT** ppEnumVar) mut
+			public HRESULT get__NewEnum(out IEnumVARIANT* ppEnumVar) mut
 			{
-				return VT.get__NewEnum(&this, ppEnumVar);
+				return VT.get__NewEnum(ref this, out ppEnumVar);
 			}
 			public HRESULT Next(uint32 celt, INetworkConnection** rgelt, uint32* pceltFetched) mut
 			{
-				return VT.Next(&this, celt, rgelt, pceltFetched);
+				return VT.Next(ref this, celt, rgelt, pceltFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT Clone(IEnumNetworkConnections** ppEnumNetwork) mut
+			public HRESULT Clone(out IEnumNetworkConnections* ppEnumNetwork) mut
 			{
-				return VT.Clone(&this, ppEnumNetwork);
+				return VT.Clone(ref this, out ppEnumNetwork);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IEnumNetworkConnections *self, IEnumVARIANT** ppEnumVar) get__NewEnum;
-				public new function HRESULT(IEnumNetworkConnections *self, uint32 celt, INetworkConnection** rgelt, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumNetworkConnections *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumNetworkConnections *self) Reset;
-				public new function HRESULT(IEnumNetworkConnections *self, IEnumNetworkConnections** ppEnumNetwork) Clone;
+				public new function HRESULT(ref IEnumNetworkConnections self, out IEnumVARIANT* ppEnumVar) get__NewEnum;
+				public new function HRESULT(ref IEnumNetworkConnections self, uint32 celt, INetworkConnection** rgelt, uint32* pceltFetched) Next;
+				public new function HRESULT(ref IEnumNetworkConnections self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumNetworkConnections self) Reset;
+				public new function HRESULT(ref IEnumNetworkConnections self, out IEnumNetworkConnections* ppEnumNetwork) Clone;
 			}
 		}
 		[CRepr]
@@ -431,17 +431,17 @@ namespace Win32
 			
 			public HRESULT NetworkConnectionConnectivityChanged(Guid connectionId, NLM_CONNECTIVITY newConnectivity) mut
 			{
-				return VT.NetworkConnectionConnectivityChanged(&this, connectionId, newConnectivity);
+				return VT.NetworkConnectionConnectivityChanged(ref this, connectionId, newConnectivity);
 			}
 			public HRESULT NetworkConnectionPropertyChanged(Guid connectionId, NLM_CONNECTION_PROPERTY_CHANGE flags) mut
 			{
-				return VT.NetworkConnectionPropertyChanged(&this, connectionId, flags);
+				return VT.NetworkConnectionPropertyChanged(ref this, connectionId, flags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(INetworkConnectionEvents *self, Guid connectionId, NLM_CONNECTIVITY newConnectivity) NetworkConnectionConnectivityChanged;
-				public new function HRESULT(INetworkConnectionEvents *self, Guid connectionId, NLM_CONNECTION_PROPERTY_CHANGE flags) NetworkConnectionPropertyChanged;
+				public new function HRESULT(ref INetworkConnectionEvents self, Guid connectionId, NLM_CONNECTIVITY newConnectivity) NetworkConnectionConnectivityChanged;
+				public new function HRESULT(ref INetworkConnectionEvents self, Guid connectionId, NLM_CONNECTION_PROPERTY_CHANGE flags) NetworkConnectionPropertyChanged;
 			}
 		}
 		[CRepr]
@@ -451,24 +451,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCost(uint32* pCost, NLM_SOCKADDR* pDestIPAddr) mut
+			public HRESULT GetCost(out uint32 pCost, ref NLM_SOCKADDR pDestIPAddr) mut
 			{
-				return VT.GetCost(&this, pCost, pDestIPAddr);
+				return VT.GetCost(ref this, out pCost, ref pDestIPAddr);
 			}
-			public HRESULT GetDataPlanStatus(NLM_DATAPLAN_STATUS* pDataPlanStatus, NLM_SOCKADDR* pDestIPAddr) mut
+			public HRESULT GetDataPlanStatus(out NLM_DATAPLAN_STATUS pDataPlanStatus, ref NLM_SOCKADDR pDestIPAddr) mut
 			{
-				return VT.GetDataPlanStatus(&this, pDataPlanStatus, pDestIPAddr);
+				return VT.GetDataPlanStatus(ref this, out pDataPlanStatus, ref pDestIPAddr);
 			}
 			public HRESULT SetDestinationAddresses(uint32 length, NLM_SOCKADDR* pDestIPAddrList, int16 bAppend) mut
 			{
-				return VT.SetDestinationAddresses(&this, length, pDestIPAddrList, bAppend);
+				return VT.SetDestinationAddresses(ref this, length, pDestIPAddrList, bAppend);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(INetworkCostManager *self, uint32* pCost, NLM_SOCKADDR* pDestIPAddr) GetCost;
-				public new function HRESULT(INetworkCostManager *self, NLM_DATAPLAN_STATUS* pDataPlanStatus, NLM_SOCKADDR* pDestIPAddr) GetDataPlanStatus;
-				public new function HRESULT(INetworkCostManager *self, uint32 length, NLM_SOCKADDR* pDestIPAddrList, int16 bAppend) SetDestinationAddresses;
+				public new function HRESULT(ref INetworkCostManager self, out uint32 pCost, ref NLM_SOCKADDR pDestIPAddr) GetCost;
+				public new function HRESULT(ref INetworkCostManager self, out NLM_DATAPLAN_STATUS pDataPlanStatus, ref NLM_SOCKADDR pDestIPAddr) GetDataPlanStatus;
+				public new function HRESULT(ref INetworkCostManager self, uint32 length, NLM_SOCKADDR* pDestIPAddrList, int16 bAppend) SetDestinationAddresses;
 			}
 		}
 		[CRepr]
@@ -478,19 +478,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CostChanged(uint32 newCost, NLM_SOCKADDR* pDestAddr) mut
+			public HRESULT CostChanged(uint32 newCost, ref NLM_SOCKADDR pDestAddr) mut
 			{
-				return VT.CostChanged(&this, newCost, pDestAddr);
+				return VT.CostChanged(ref this, newCost, ref pDestAddr);
 			}
-			public HRESULT DataPlanStatusChanged(NLM_SOCKADDR* pDestAddr) mut
+			public HRESULT DataPlanStatusChanged(ref NLM_SOCKADDR pDestAddr) mut
 			{
-				return VT.DataPlanStatusChanged(&this, pDestAddr);
+				return VT.DataPlanStatusChanged(ref this, ref pDestAddr);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(INetworkCostManagerEvents *self, uint32 newCost, NLM_SOCKADDR* pDestAddr) CostChanged;
-				public new function HRESULT(INetworkCostManagerEvents *self, NLM_SOCKADDR* pDestAddr) DataPlanStatusChanged;
+				public new function HRESULT(ref INetworkCostManagerEvents self, uint32 newCost, ref NLM_SOCKADDR pDestAddr) CostChanged;
+				public new function HRESULT(ref INetworkCostManagerEvents self, ref NLM_SOCKADDR pDestAddr) DataPlanStatusChanged;
 			}
 		}
 		[CRepr]
@@ -500,19 +500,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCost(uint32* pCost) mut
+			public HRESULT GetCost(out uint32 pCost) mut
 			{
-				return VT.GetCost(&this, pCost);
+				return VT.GetCost(ref this, out pCost);
 			}
-			public HRESULT GetDataPlanStatus(NLM_DATAPLAN_STATUS* pDataPlanStatus) mut
+			public HRESULT GetDataPlanStatus(out NLM_DATAPLAN_STATUS pDataPlanStatus) mut
 			{
-				return VT.GetDataPlanStatus(&this, pDataPlanStatus);
+				return VT.GetDataPlanStatus(ref this, out pDataPlanStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(INetworkConnectionCost *self, uint32* pCost) GetCost;
-				public new function HRESULT(INetworkConnectionCost *self, NLM_DATAPLAN_STATUS* pDataPlanStatus) GetDataPlanStatus;
+				public new function HRESULT(ref INetworkConnectionCost self, out uint32 pCost) GetCost;
+				public new function HRESULT(ref INetworkConnectionCost self, out NLM_DATAPLAN_STATUS pDataPlanStatus) GetDataPlanStatus;
 			}
 		}
 		[CRepr]
@@ -524,17 +524,17 @@ namespace Win32
 			
 			public HRESULT ConnectionCostChanged(Guid connectionId, uint32 newCost) mut
 			{
-				return VT.ConnectionCostChanged(&this, connectionId, newCost);
+				return VT.ConnectionCostChanged(ref this, connectionId, newCost);
 			}
 			public HRESULT ConnectionDataPlanStatusChanged(Guid connectionId) mut
 			{
-				return VT.ConnectionDataPlanStatusChanged(&this, connectionId);
+				return VT.ConnectionDataPlanStatusChanged(ref this, connectionId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(INetworkConnectionCostEvents *self, Guid connectionId, uint32 newCost) ConnectionCostChanged;
-				public new function HRESULT(INetworkConnectionCostEvents *self, Guid connectionId) ConnectionDataPlanStatusChanged;
+				public new function HRESULT(ref INetworkConnectionCostEvents self, Guid connectionId, uint32 newCost) ConnectionCostChanged;
+				public new function HRESULT(ref INetworkConnectionCostEvents self, Guid connectionId) ConnectionDataPlanStatusChanged;
 			}
 		}
 		

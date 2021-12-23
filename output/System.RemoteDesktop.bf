@@ -704,11 +704,11 @@ namespace Win32
 		
 		public function void PCHANNEL_INIT_EVENT_FN(void* pInitHandle, uint32 event, void* pData, uint32 dataLength);
 		public function void PCHANNEL_OPEN_EVENT_FN(uint32 openHandle, uint32 event, void* pData, uint32 dataLength, uint32 totalLength, uint32 dataFlags);
-		public function uint32 PVIRTUALCHANNELINIT(void** ppInitHandle, CHANNEL_DEF* pChannel, int32 channelCount, uint32 versionRequested, PCHANNEL_INIT_EVENT_FN pChannelInitEventProc);
-		public function uint32 PVIRTUALCHANNELOPEN(void* pInitHandle, uint32* pOpenHandle, PSTR pChannelName, PCHANNEL_OPEN_EVENT_FN pChannelOpenEventProc);
+		public function uint32 PVIRTUALCHANNELINIT(void** ppInitHandle, out CHANNEL_DEF pChannel, int32 channelCount, uint32 versionRequested, PCHANNEL_INIT_EVENT_FN pChannelInitEventProc);
+		public function uint32 PVIRTUALCHANNELOPEN(void* pInitHandle, out uint32 pOpenHandle, PSTR pChannelName, PCHANNEL_OPEN_EVENT_FN pChannelOpenEventProc);
 		public function uint32 PVIRTUALCHANNELCLOSE(uint32 openHandle);
 		public function uint32 PVIRTUALCHANNELWRITE(uint32 openHandle, void* pData, uint32 dataLength, void* pUserData);
-		public function BOOL PVIRTUALCHANNELENTRY(CHANNEL_ENTRY_POINTS* pEntryPoints);
+		public function BOOL PVIRTUALCHANNELENTRY(out CHANNEL_ENTRY_POINTS pEntryPoints);
 		
 		// --- Structs ---
 		
@@ -1386,7 +1386,7 @@ namespace Win32
 		public struct RFX_GFX_MSG_RDP_DATA
 		{
 			public RFX_GFX_MSG_HEADER channelHdr;
-			public uint8[] rdpData;
+			public uint8[0] rdpData;
 		}
 		[CRepr]
 		public struct WTS_SOCKADDR
@@ -1824,34 +1824,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFrameFormat(WAVEFORMATEX** ppFormat) mut
+			public HRESULT GetFrameFormat(out WAVEFORMATEX* ppFormat) mut
 			{
-				return VT.GetFrameFormat(&this, ppFormat);
+				return VT.GetFrameFormat(ref this, out ppFormat);
 			}
-			public HRESULT GetFramesPerPacket(uint32* pFramesPerPacket) mut
+			public HRESULT GetFramesPerPacket(out uint32 pFramesPerPacket) mut
 			{
-				return VT.GetFramesPerPacket(&this, pFramesPerPacket);
+				return VT.GetFramesPerPacket(ref this, out pFramesPerPacket);
 			}
-			public HRESULT GetLatency(int64* pLatency) mut
+			public HRESULT GetLatency(out int64 pLatency) mut
 			{
-				return VT.GetLatency(&this, pLatency);
+				return VT.GetLatency(ref this, out pLatency);
 			}
 			public HRESULT SetStreamFlags(uint32 streamFlags) mut
 			{
-				return VT.SetStreamFlags(&this, streamFlags);
+				return VT.SetStreamFlags(ref this, streamFlags);
 			}
 			public HRESULT SetEventHandle(HANDLE eventHandle) mut
 			{
-				return VT.SetEventHandle(&this, eventHandle);
+				return VT.SetEventHandle(ref this, eventHandle);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioEndpoint *self, WAVEFORMATEX** ppFormat) GetFrameFormat;
-				public new function HRESULT(IAudioEndpoint *self, uint32* pFramesPerPacket) GetFramesPerPacket;
-				public new function HRESULT(IAudioEndpoint *self, int64* pLatency) GetLatency;
-				public new function HRESULT(IAudioEndpoint *self, uint32 streamFlags) SetStreamFlags;
-				public new function HRESULT(IAudioEndpoint *self, HANDLE eventHandle) SetEventHandle;
+				public new function HRESULT(ref IAudioEndpoint self, out WAVEFORMATEX* ppFormat) GetFrameFormat;
+				public new function HRESULT(ref IAudioEndpoint self, out uint32 pFramesPerPacket) GetFramesPerPacket;
+				public new function HRESULT(ref IAudioEndpoint self, out int64 pLatency) GetLatency;
+				public new function HRESULT(ref IAudioEndpoint self, uint32 streamFlags) SetStreamFlags;
+				public new function HRESULT(ref IAudioEndpoint self, HANDLE eventHandle) SetEventHandle;
 			}
 		}
 		[CRepr]
@@ -1861,29 +1861,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetCurrentPadding(int64* pPadding, AE_CURRENT_POSITION* pAeCurrentPosition) mut
+			public void GetCurrentPadding(out int64 pPadding, out AE_CURRENT_POSITION pAeCurrentPosition) mut
 			{
-				VT.GetCurrentPadding(&this, pPadding, pAeCurrentPosition);
+				VT.GetCurrentPadding(ref this, out pPadding, out pAeCurrentPosition);
 			}
 			public void ProcessingComplete() mut
 			{
-				VT.ProcessingComplete(&this);
+				VT.ProcessingComplete(ref this);
 			}
 			public HRESULT SetPinInactive() mut
 			{
-				return VT.SetPinInactive(&this);
+				return VT.SetPinInactive(ref this);
 			}
 			public HRESULT SetPinActive() mut
 			{
-				return VT.SetPinActive(&this);
+				return VT.SetPinActive(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IAudioEndpointRT *self, int64* pPadding, AE_CURRENT_POSITION* pAeCurrentPosition) GetCurrentPadding;
-				public new function void(IAudioEndpointRT *self) ProcessingComplete;
-				public new function HRESULT(IAudioEndpointRT *self) SetPinInactive;
-				public new function HRESULT(IAudioEndpointRT *self) SetPinActive;
+				public new function void(ref IAudioEndpointRT self, out int64 pPadding, out AE_CURRENT_POSITION pAeCurrentPosition) GetCurrentPadding;
+				public new function void(ref IAudioEndpointRT self) ProcessingComplete;
+				public new function HRESULT(ref IAudioEndpointRT self) SetPinInactive;
+				public new function HRESULT(ref IAudioEndpointRT self) SetPinActive;
 			}
 		}
 		[CRepr]
@@ -1893,24 +1893,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void GetInputDataPointer(APO_CONNECTION_PROPERTY* pConnectionProperty, AE_CURRENT_POSITION* pAeTimeStamp) mut
+			public void GetInputDataPointer(out APO_CONNECTION_PROPERTY pConnectionProperty, out AE_CURRENT_POSITION pAeTimeStamp) mut
 			{
-				VT.GetInputDataPointer(&this, pConnectionProperty, pAeTimeStamp);
+				VT.GetInputDataPointer(ref this, out pConnectionProperty, out pAeTimeStamp);
 			}
 			public void ReleaseInputDataPointer(uint32 u32FrameCount, uint pDataPointer) mut
 			{
-				VT.ReleaseInputDataPointer(&this, u32FrameCount, pDataPointer);
+				VT.ReleaseInputDataPointer(ref this, u32FrameCount, pDataPointer);
 			}
 			public void PulseEndpoint() mut
 			{
-				VT.PulseEndpoint(&this);
+				VT.PulseEndpoint(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IAudioInputEndpointRT *self, APO_CONNECTION_PROPERTY* pConnectionProperty, AE_CURRENT_POSITION* pAeTimeStamp) GetInputDataPointer;
-				public new function void(IAudioInputEndpointRT *self, uint32 u32FrameCount, uint pDataPointer) ReleaseInputDataPointer;
-				public new function void(IAudioInputEndpointRT *self) PulseEndpoint;
+				public new function void(ref IAudioInputEndpointRT self, out APO_CONNECTION_PROPERTY pConnectionProperty, out AE_CURRENT_POSITION pAeTimeStamp) GetInputDataPointer;
+				public new function void(ref IAudioInputEndpointRT self, uint32 u32FrameCount, uint pDataPointer) ReleaseInputDataPointer;
+				public new function void(ref IAudioInputEndpointRT self) PulseEndpoint;
 			}
 		}
 		[CRepr]
@@ -1920,24 +1920,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public uint GetOutputDataPointer(uint32 u32FrameCount, AE_CURRENT_POSITION* pAeTimeStamp) mut
+			public uint GetOutputDataPointer(uint32 u32FrameCount, ref AE_CURRENT_POSITION pAeTimeStamp) mut
 			{
-				return VT.GetOutputDataPointer(&this, u32FrameCount, pAeTimeStamp);
+				return VT.GetOutputDataPointer(ref this, u32FrameCount, ref pAeTimeStamp);
 			}
-			public void ReleaseOutputDataPointer(APO_CONNECTION_PROPERTY* pConnectionProperty) mut
+			public void ReleaseOutputDataPointer(in APO_CONNECTION_PROPERTY pConnectionProperty) mut
 			{
-				VT.ReleaseOutputDataPointer(&this, pConnectionProperty);
+				VT.ReleaseOutputDataPointer(ref this, pConnectionProperty);
 			}
 			public void PulseEndpoint() mut
 			{
-				VT.PulseEndpoint(&this);
+				VT.PulseEndpoint(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint(IAudioOutputEndpointRT *self, uint32 u32FrameCount, AE_CURRENT_POSITION* pAeTimeStamp) GetOutputDataPointer;
-				public new function void(IAudioOutputEndpointRT *self, APO_CONNECTION_PROPERTY* pConnectionProperty) ReleaseOutputDataPointer;
-				public new function void(IAudioOutputEndpointRT *self) PulseEndpoint;
+				public new function uint(ref IAudioOutputEndpointRT self, uint32 u32FrameCount, ref AE_CURRENT_POSITION pAeTimeStamp) GetOutputDataPointer;
+				public new function void(ref IAudioOutputEndpointRT self, in APO_CONNECTION_PROPERTY pConnectionProperty) ReleaseOutputDataPointer;
+				public new function void(ref IAudioOutputEndpointRT self) PulseEndpoint;
 			}
 		}
 		[CRepr]
@@ -1949,27 +1949,27 @@ namespace Win32
 			
 			public HRESULT SetBuffer(int64 MaxPeriod, uint32 u32LatencyCoefficient) mut
 			{
-				return VT.SetBuffer(&this, MaxPeriod, u32LatencyCoefficient);
+				return VT.SetBuffer(ref this, MaxPeriod, u32LatencyCoefficient);
 			}
-			public HRESULT GetRTCaps(BOOL* pbIsRTCapable) mut
+			public HRESULT GetRTCaps(out BOOL pbIsRTCapable) mut
 			{
-				return VT.GetRTCaps(&this, pbIsRTCapable);
+				return VT.GetRTCaps(ref this, out pbIsRTCapable);
 			}
-			public HRESULT GetEventDrivenCapable(BOOL* pbisEventCapable) mut
+			public HRESULT GetEventDrivenCapable(out BOOL pbisEventCapable) mut
 			{
-				return VT.GetEventDrivenCapable(&this, pbisEventCapable);
+				return VT.GetEventDrivenCapable(ref this, out pbisEventCapable);
 			}
-			public HRESULT WriteExclusiveModeParametersToSharedMemory(uint hTargetProcess, int64 hnsPeriod, int64 hnsBufferDuration, uint32 u32LatencyCoefficient, uint32* pu32SharedMemorySize, uint* phSharedMemory) mut
+			public HRESULT WriteExclusiveModeParametersToSharedMemory(uint hTargetProcess, int64 hnsPeriod, int64 hnsBufferDuration, uint32 u32LatencyCoefficient, out uint32 pu32SharedMemorySize, out uint phSharedMemory) mut
 			{
-				return VT.WriteExclusiveModeParametersToSharedMemory(&this, hTargetProcess, hnsPeriod, hnsBufferDuration, u32LatencyCoefficient, pu32SharedMemorySize, phSharedMemory);
+				return VT.WriteExclusiveModeParametersToSharedMemory(ref this, hTargetProcess, hnsPeriod, hnsBufferDuration, u32LatencyCoefficient, out pu32SharedMemorySize, out phSharedMemory);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioDeviceEndpoint *self, int64 MaxPeriod, uint32 u32LatencyCoefficient) SetBuffer;
-				public new function HRESULT(IAudioDeviceEndpoint *self, BOOL* pbIsRTCapable) GetRTCaps;
-				public new function HRESULT(IAudioDeviceEndpoint *self, BOOL* pbisEventCapable) GetEventDrivenCapable;
-				public new function HRESULT(IAudioDeviceEndpoint *self, uint hTargetProcess, int64 hnsPeriod, int64 hnsBufferDuration, uint32 u32LatencyCoefficient, uint32* pu32SharedMemorySize, uint* phSharedMemory) WriteExclusiveModeParametersToSharedMemory;
+				public new function HRESULT(ref IAudioDeviceEndpoint self, int64 MaxPeriod, uint32 u32LatencyCoefficient) SetBuffer;
+				public new function HRESULT(ref IAudioDeviceEndpoint self, out BOOL pbIsRTCapable) GetRTCaps;
+				public new function HRESULT(ref IAudioDeviceEndpoint self, out BOOL pbisEventCapable) GetEventDrivenCapable;
+				public new function HRESULT(ref IAudioDeviceEndpoint self, uint hTargetProcess, int64 hnsPeriod, int64 hnsBufferDuration, uint32 u32LatencyCoefficient, out uint32 pu32SharedMemorySize, out uint phSharedMemory) WriteExclusiveModeParametersToSharedMemory;
 			}
 		}
 		[CRepr]
@@ -1981,22 +1981,22 @@ namespace Win32
 			
 			public HRESULT Start() mut
 			{
-				return VT.Start(&this);
+				return VT.Start(ref this);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioEndpointControl *self) Start;
-				public new function HRESULT(IAudioEndpointControl *self) Reset;
-				public new function HRESULT(IAudioEndpointControl *self) Stop;
+				public new function HRESULT(ref IAudioEndpointControl self) Start;
+				public new function HRESULT(ref IAudioEndpointControl self) Reset;
+				public new function HRESULT(ref IAudioEndpointControl self) Stop;
 			}
 		}
 		[CRepr]
@@ -2008,157 +2008,157 @@ namespace Win32
 			
 			public HRESULT get_TerminalServicesProfilePath(BSTR* pVal) mut
 			{
-				return VT.get_TerminalServicesProfilePath(&this, pVal);
+				return VT.get_TerminalServicesProfilePath(ref this, pVal);
 			}
 			public HRESULT put_TerminalServicesProfilePath(BSTR pNewVal) mut
 			{
-				return VT.put_TerminalServicesProfilePath(&this, pNewVal);
+				return VT.put_TerminalServicesProfilePath(ref this, pNewVal);
 			}
 			public HRESULT get_TerminalServicesHomeDirectory(BSTR* pVal) mut
 			{
-				return VT.get_TerminalServicesHomeDirectory(&this, pVal);
+				return VT.get_TerminalServicesHomeDirectory(ref this, pVal);
 			}
 			public HRESULT put_TerminalServicesHomeDirectory(BSTR pNewVal) mut
 			{
-				return VT.put_TerminalServicesHomeDirectory(&this, pNewVal);
+				return VT.put_TerminalServicesHomeDirectory(ref this, pNewVal);
 			}
 			public HRESULT get_TerminalServicesHomeDrive(BSTR* pVal) mut
 			{
-				return VT.get_TerminalServicesHomeDrive(&this, pVal);
+				return VT.get_TerminalServicesHomeDrive(ref this, pVal);
 			}
 			public HRESULT put_TerminalServicesHomeDrive(BSTR pNewVal) mut
 			{
-				return VT.put_TerminalServicesHomeDrive(&this, pNewVal);
+				return VT.put_TerminalServicesHomeDrive(ref this, pNewVal);
 			}
-			public HRESULT get_AllowLogon(int32* pVal) mut
+			public HRESULT get_AllowLogon(out int32 pVal) mut
 			{
-				return VT.get_AllowLogon(&this, pVal);
+				return VT.get_AllowLogon(ref this, out pVal);
 			}
 			public HRESULT put_AllowLogon(int32 NewVal) mut
 			{
-				return VT.put_AllowLogon(&this, NewVal);
+				return VT.put_AllowLogon(ref this, NewVal);
 			}
-			public HRESULT get_EnableRemoteControl(int32* pVal) mut
+			public HRESULT get_EnableRemoteControl(out int32 pVal) mut
 			{
-				return VT.get_EnableRemoteControl(&this, pVal);
+				return VT.get_EnableRemoteControl(ref this, out pVal);
 			}
 			public HRESULT put_EnableRemoteControl(int32 NewVal) mut
 			{
-				return VT.put_EnableRemoteControl(&this, NewVal);
+				return VT.put_EnableRemoteControl(ref this, NewVal);
 			}
-			public HRESULT get_MaxDisconnectionTime(int32* pVal) mut
+			public HRESULT get_MaxDisconnectionTime(out int32 pVal) mut
 			{
-				return VT.get_MaxDisconnectionTime(&this, pVal);
+				return VT.get_MaxDisconnectionTime(ref this, out pVal);
 			}
 			public HRESULT put_MaxDisconnectionTime(int32 NewVal) mut
 			{
-				return VT.put_MaxDisconnectionTime(&this, NewVal);
+				return VT.put_MaxDisconnectionTime(ref this, NewVal);
 			}
-			public HRESULT get_MaxConnectionTime(int32* pVal) mut
+			public HRESULT get_MaxConnectionTime(out int32 pVal) mut
 			{
-				return VT.get_MaxConnectionTime(&this, pVal);
+				return VT.get_MaxConnectionTime(ref this, out pVal);
 			}
 			public HRESULT put_MaxConnectionTime(int32 NewVal) mut
 			{
-				return VT.put_MaxConnectionTime(&this, NewVal);
+				return VT.put_MaxConnectionTime(ref this, NewVal);
 			}
-			public HRESULT get_MaxIdleTime(int32* pVal) mut
+			public HRESULT get_MaxIdleTime(out int32 pVal) mut
 			{
-				return VT.get_MaxIdleTime(&this, pVal);
+				return VT.get_MaxIdleTime(ref this, out pVal);
 			}
 			public HRESULT put_MaxIdleTime(int32 NewVal) mut
 			{
-				return VT.put_MaxIdleTime(&this, NewVal);
+				return VT.put_MaxIdleTime(ref this, NewVal);
 			}
-			public HRESULT get_ReconnectionAction(int32* pNewVal) mut
+			public HRESULT get_ReconnectionAction(out int32 pNewVal) mut
 			{
-				return VT.get_ReconnectionAction(&this, pNewVal);
+				return VT.get_ReconnectionAction(ref this, out pNewVal);
 			}
 			public HRESULT put_ReconnectionAction(int32 NewVal) mut
 			{
-				return VT.put_ReconnectionAction(&this, NewVal);
+				return VT.put_ReconnectionAction(ref this, NewVal);
 			}
-			public HRESULT get_BrokenConnectionAction(int32* pNewVal) mut
+			public HRESULT get_BrokenConnectionAction(out int32 pNewVal) mut
 			{
-				return VT.get_BrokenConnectionAction(&this, pNewVal);
+				return VT.get_BrokenConnectionAction(ref this, out pNewVal);
 			}
 			public HRESULT put_BrokenConnectionAction(int32 NewVal) mut
 			{
-				return VT.put_BrokenConnectionAction(&this, NewVal);
+				return VT.put_BrokenConnectionAction(ref this, NewVal);
 			}
-			public HRESULT get_ConnectClientDrivesAtLogon(int32* pNewVal) mut
+			public HRESULT get_ConnectClientDrivesAtLogon(out int32 pNewVal) mut
 			{
-				return VT.get_ConnectClientDrivesAtLogon(&this, pNewVal);
+				return VT.get_ConnectClientDrivesAtLogon(ref this, out pNewVal);
 			}
 			public HRESULT put_ConnectClientDrivesAtLogon(int32 NewVal) mut
 			{
-				return VT.put_ConnectClientDrivesAtLogon(&this, NewVal);
+				return VT.put_ConnectClientDrivesAtLogon(ref this, NewVal);
 			}
-			public HRESULT get_ConnectClientPrintersAtLogon(int32* pVal) mut
+			public HRESULT get_ConnectClientPrintersAtLogon(out int32 pVal) mut
 			{
-				return VT.get_ConnectClientPrintersAtLogon(&this, pVal);
+				return VT.get_ConnectClientPrintersAtLogon(ref this, out pVal);
 			}
 			public HRESULT put_ConnectClientPrintersAtLogon(int32 NewVal) mut
 			{
-				return VT.put_ConnectClientPrintersAtLogon(&this, NewVal);
+				return VT.put_ConnectClientPrintersAtLogon(ref this, NewVal);
 			}
-			public HRESULT get_DefaultToMainPrinter(int32* pVal) mut
+			public HRESULT get_DefaultToMainPrinter(out int32 pVal) mut
 			{
-				return VT.get_DefaultToMainPrinter(&this, pVal);
+				return VT.get_DefaultToMainPrinter(ref this, out pVal);
 			}
 			public HRESULT put_DefaultToMainPrinter(int32 NewVal) mut
 			{
-				return VT.put_DefaultToMainPrinter(&this, NewVal);
+				return VT.put_DefaultToMainPrinter(ref this, NewVal);
 			}
 			public HRESULT get_TerminalServicesWorkDirectory(BSTR* pVal) mut
 			{
-				return VT.get_TerminalServicesWorkDirectory(&this, pVal);
+				return VT.get_TerminalServicesWorkDirectory(ref this, pVal);
 			}
 			public HRESULT put_TerminalServicesWorkDirectory(BSTR pNewVal) mut
 			{
-				return VT.put_TerminalServicesWorkDirectory(&this, pNewVal);
+				return VT.put_TerminalServicesWorkDirectory(ref this, pNewVal);
 			}
 			public HRESULT get_TerminalServicesInitialProgram(BSTR* pVal) mut
 			{
-				return VT.get_TerminalServicesInitialProgram(&this, pVal);
+				return VT.get_TerminalServicesInitialProgram(ref this, pVal);
 			}
 			public HRESULT put_TerminalServicesInitialProgram(BSTR pNewVal) mut
 			{
-				return VT.put_TerminalServicesInitialProgram(&this, pNewVal);
+				return VT.put_TerminalServicesInitialProgram(ref this, pNewVal);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesProfilePath;
-				public new function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesProfilePath;
-				public new function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesHomeDirectory;
-				public new function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesHomeDirectory;
-				public new function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesHomeDrive;
-				public new function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesHomeDrive;
-				public new function HRESULT(IADsTSUserEx *self, int32* pVal) get_AllowLogon;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_AllowLogon;
-				public new function HRESULT(IADsTSUserEx *self, int32* pVal) get_EnableRemoteControl;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_EnableRemoteControl;
-				public new function HRESULT(IADsTSUserEx *self, int32* pVal) get_MaxDisconnectionTime;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_MaxDisconnectionTime;
-				public new function HRESULT(IADsTSUserEx *self, int32* pVal) get_MaxConnectionTime;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_MaxConnectionTime;
-				public new function HRESULT(IADsTSUserEx *self, int32* pVal) get_MaxIdleTime;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_MaxIdleTime;
-				public new function HRESULT(IADsTSUserEx *self, int32* pNewVal) get_ReconnectionAction;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_ReconnectionAction;
-				public new function HRESULT(IADsTSUserEx *self, int32* pNewVal) get_BrokenConnectionAction;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_BrokenConnectionAction;
-				public new function HRESULT(IADsTSUserEx *self, int32* pNewVal) get_ConnectClientDrivesAtLogon;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_ConnectClientDrivesAtLogon;
-				public new function HRESULT(IADsTSUserEx *self, int32* pVal) get_ConnectClientPrintersAtLogon;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_ConnectClientPrintersAtLogon;
-				public new function HRESULT(IADsTSUserEx *self, int32* pVal) get_DefaultToMainPrinter;
-				public new function HRESULT(IADsTSUserEx *self, int32 NewVal) put_DefaultToMainPrinter;
-				public new function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesWorkDirectory;
-				public new function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesWorkDirectory;
-				public new function HRESULT(IADsTSUserEx *self, BSTR* pVal) get_TerminalServicesInitialProgram;
-				public new function HRESULT(IADsTSUserEx *self, BSTR pNewVal) put_TerminalServicesInitialProgram;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesProfilePath;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesProfilePath;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesHomeDirectory;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesHomeDirectory;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesHomeDrive;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesHomeDrive;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pVal) get_AllowLogon;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_AllowLogon;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pVal) get_EnableRemoteControl;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_EnableRemoteControl;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pVal) get_MaxDisconnectionTime;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_MaxDisconnectionTime;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pVal) get_MaxConnectionTime;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_MaxConnectionTime;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pVal) get_MaxIdleTime;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_MaxIdleTime;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pNewVal) get_ReconnectionAction;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_ReconnectionAction;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pNewVal) get_BrokenConnectionAction;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_BrokenConnectionAction;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pNewVal) get_ConnectClientDrivesAtLogon;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_ConnectClientDrivesAtLogon;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pVal) get_ConnectClientPrintersAtLogon;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_ConnectClientPrintersAtLogon;
+				public new function HRESULT(ref IADsTSUserEx self, out int32 pVal) get_DefaultToMainPrinter;
+				public new function HRESULT(ref IADsTSUserEx self, int32 NewVal) put_DefaultToMainPrinter;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesWorkDirectory;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesWorkDirectory;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR* pVal) get_TerminalServicesInitialProgram;
+				public new function HRESULT(ref IADsTSUserEx self, BSTR pNewVal) put_TerminalServicesInitialProgram;
 			}
 		}
 		[CRepr]
@@ -2168,14 +2168,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnConnectionAuthorized(HRESULT hrIn, Guid mainSessionId, uint32 cbSoHResponse, uint8* pbSoHResponse, uint32 idleTimeout, uint32 sessionTimeout, SESSION_TIMEOUT_ACTION_TYPE sessionTimeoutAction, AATrustClassID trustClass, uint32* policyAttributes) mut
+			public HRESULT OnConnectionAuthorized(HRESULT hrIn, Guid mainSessionId, uint32 cbSoHResponse, uint8* pbSoHResponse, uint32 idleTimeout, uint32 sessionTimeout, SESSION_TIMEOUT_ACTION_TYPE sessionTimeoutAction, AATrustClassID trustClass, ref uint32 policyAttributes) mut
 			{
-				return VT.OnConnectionAuthorized(&this, hrIn, mainSessionId, cbSoHResponse, pbSoHResponse, idleTimeout, sessionTimeout, sessionTimeoutAction, trustClass, policyAttributes);
+				return VT.OnConnectionAuthorized(ref this, hrIn, mainSessionId, cbSoHResponse, pbSoHResponse, idleTimeout, sessionTimeout, sessionTimeoutAction, trustClass, ref policyAttributes);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITSGAuthorizeConnectionSink *self, HRESULT hrIn, Guid mainSessionId, uint32 cbSoHResponse, uint8* pbSoHResponse, uint32 idleTimeout, uint32 sessionTimeout, SESSION_TIMEOUT_ACTION_TYPE sessionTimeoutAction, AATrustClassID trustClass, uint32* policyAttributes) OnConnectionAuthorized;
+				public new function HRESULT(ref ITSGAuthorizeConnectionSink self, HRESULT hrIn, Guid mainSessionId, uint32 cbSoHResponse, uint8* pbSoHResponse, uint32 idleTimeout, uint32 sessionTimeout, SESSION_TIMEOUT_ACTION_TYPE sessionTimeoutAction, AATrustClassID trustClass, ref uint32 policyAttributes) OnConnectionAuthorized;
 			}
 		}
 		[CRepr]
@@ -2187,12 +2187,12 @@ namespace Win32
 			
 			public HRESULT OnChannelAuthorized(HRESULT hrIn, Guid mainSessionId, int32 subSessionId, BSTR* allowedResourceNames, uint32 numAllowedResourceNames, BSTR* failedResourceNames, uint32 numFailedResourceNames) mut
 			{
-				return VT.OnChannelAuthorized(&this, hrIn, mainSessionId, subSessionId, allowedResourceNames, numAllowedResourceNames, failedResourceNames, numFailedResourceNames);
+				return VT.OnChannelAuthorized(ref this, hrIn, mainSessionId, subSessionId, allowedResourceNames, numAllowedResourceNames, failedResourceNames, numFailedResourceNames);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITSGAuthorizeResourceSink *self, HRESULT hrIn, Guid mainSessionId, int32 subSessionId, BSTR* allowedResourceNames, uint32 numAllowedResourceNames, BSTR* failedResourceNames, uint32 numFailedResourceNames) OnChannelAuthorized;
+				public new function HRESULT(ref ITSGAuthorizeResourceSink self, HRESULT hrIn, Guid mainSessionId, int32 subSessionId, BSTR* allowedResourceNames, uint32 numAllowedResourceNames, BSTR* failedResourceNames, uint32 numFailedResourceNames) OnChannelAuthorized;
 			}
 		}
 		[CRepr]
@@ -2202,29 +2202,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AuthorizeConnection(Guid mainSessionId, BSTR username, AAAuthSchemes authType, BSTR clientMachineIP, BSTR clientMachineName, uint8* sohData, uint32 numSOHBytes, uint8* cookieData, uint32 numCookieBytes, HANDLE_PTR userToken, ITSGAuthorizeConnectionSink* pSink) mut
+			public HRESULT AuthorizeConnection(Guid mainSessionId, BSTR username, AAAuthSchemes authType, BSTR clientMachineIP, BSTR clientMachineName, uint8* sohData, uint32 numSOHBytes, uint8* cookieData, uint32 numCookieBytes, HANDLE_PTR userToken, ref ITSGAuthorizeConnectionSink pSink) mut
 			{
-				return VT.AuthorizeConnection(&this, mainSessionId, username, authType, clientMachineIP, clientMachineName, sohData, numSOHBytes, cookieData, numCookieBytes, userToken, pSink);
+				return VT.AuthorizeConnection(ref this, mainSessionId, username, authType, clientMachineIP, clientMachineName, sohData, numSOHBytes, cookieData, numCookieBytes, userToken, ref pSink);
 			}
-			public HRESULT AuthorizeResource(Guid mainSessionId, int32 subSessionId, BSTR username, BSTR* resourceNames, uint32 numResources, BSTR* alternateResourceNames, uint32 numAlternateResourceName, uint32 portNumber, BSTR operation, uint8* cookie, uint32 numBytesInCookie, ITSGAuthorizeResourceSink* pSink) mut
+			public HRESULT AuthorizeResource(Guid mainSessionId, int32 subSessionId, BSTR username, BSTR* resourceNames, uint32 numResources, BSTR* alternateResourceNames, uint32 numAlternateResourceName, uint32 portNumber, BSTR operation, uint8* cookie, uint32 numBytesInCookie, ref ITSGAuthorizeResourceSink pSink) mut
 			{
-				return VT.AuthorizeResource(&this, mainSessionId, subSessionId, username, resourceNames, numResources, alternateResourceNames, numAlternateResourceName, portNumber, operation, cookie, numBytesInCookie, pSink);
+				return VT.AuthorizeResource(ref this, mainSessionId, subSessionId, username, resourceNames, numResources, alternateResourceNames, numAlternateResourceName, portNumber, operation, cookie, numBytesInCookie, ref pSink);
 			}
 			public HRESULT Refresh() mut
 			{
-				return VT.Refresh(&this);
+				return VT.Refresh(ref this);
 			}
-			public HRESULT IsQuarantineEnabled(BOOL* quarantineEnabled) mut
+			public HRESULT IsQuarantineEnabled(out BOOL quarantineEnabled) mut
 			{
-				return VT.IsQuarantineEnabled(&this, quarantineEnabled);
+				return VT.IsQuarantineEnabled(ref this, out quarantineEnabled);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITSGPolicyEngine *self, Guid mainSessionId, BSTR username, AAAuthSchemes authType, BSTR clientMachineIP, BSTR clientMachineName, uint8* sohData, uint32 numSOHBytes, uint8* cookieData, uint32 numCookieBytes, HANDLE_PTR userToken, ITSGAuthorizeConnectionSink* pSink) AuthorizeConnection;
-				public new function HRESULT(ITSGPolicyEngine *self, Guid mainSessionId, int32 subSessionId, BSTR username, BSTR* resourceNames, uint32 numResources, BSTR* alternateResourceNames, uint32 numAlternateResourceName, uint32 portNumber, BSTR operation, uint8* cookie, uint32 numBytesInCookie, ITSGAuthorizeResourceSink* pSink) AuthorizeResource;
-				public new function HRESULT(ITSGPolicyEngine *self) Refresh;
-				public new function HRESULT(ITSGPolicyEngine *self, BOOL* quarantineEnabled) IsQuarantineEnabled;
+				public new function HRESULT(ref ITSGPolicyEngine self, Guid mainSessionId, BSTR username, AAAuthSchemes authType, BSTR clientMachineIP, BSTR clientMachineName, uint8* sohData, uint32 numSOHBytes, uint8* cookieData, uint32 numCookieBytes, HANDLE_PTR userToken, ref ITSGAuthorizeConnectionSink pSink) AuthorizeConnection;
+				public new function HRESULT(ref ITSGPolicyEngine self, Guid mainSessionId, int32 subSessionId, BSTR username, BSTR* resourceNames, uint32 numResources, BSTR* alternateResourceNames, uint32 numAlternateResourceName, uint32 portNumber, BSTR operation, uint8* cookie, uint32 numBytesInCookie, ref ITSGAuthorizeResourceSink pSink) AuthorizeResource;
+				public new function HRESULT(ref ITSGPolicyEngine self) Refresh;
+				public new function HRESULT(ref ITSGPolicyEngine self, out BOOL quarantineEnabled) IsQuarantineEnabled;
 			}
 		}
 		[CRepr]
@@ -2236,12 +2236,12 @@ namespace Win32
 			
 			public HRESULT DoAccounting(AAAccountingDataType accountingDataType, AAAccountingData accountingData) mut
 			{
-				return VT.DoAccounting(&this, accountingDataType, accountingData);
+				return VT.DoAccounting(ref this, accountingDataType, accountingData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITSGAccountingEngine *self, AAAccountingDataType accountingDataType, AAAccountingData accountingData) DoAccounting;
+				public new function HRESULT(ref ITSGAccountingEngine self, AAAccountingDataType accountingDataType, AAAccountingData accountingData) DoAccounting;
 			}
 		}
 		[CRepr]
@@ -2253,27 +2253,27 @@ namespace Win32
 			
 			public HRESULT OnUserAuthenticated(BSTR userName, BSTR userDomain, uint context, HANDLE_PTR userToken) mut
 			{
-				return VT.OnUserAuthenticated(&this, userName, userDomain, context, userToken);
+				return VT.OnUserAuthenticated(ref this, userName, userDomain, context, userToken);
 			}
 			public HRESULT OnUserAuthenticationFailed(uint context, HRESULT genericErrorCode, HRESULT specificErrorCode) mut
 			{
-				return VT.OnUserAuthenticationFailed(&this, context, genericErrorCode, specificErrorCode);
+				return VT.OnUserAuthenticationFailed(ref this, context, genericErrorCode, specificErrorCode);
 			}
 			public HRESULT ReauthenticateUser(uint context) mut
 			{
-				return VT.ReauthenticateUser(&this, context);
+				return VT.ReauthenticateUser(ref this, context);
 			}
 			public HRESULT DisconnectUser(uint context) mut
 			{
-				return VT.DisconnectUser(&this, context);
+				return VT.DisconnectUser(ref this, context);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITSGAuthenticateUserSink *self, BSTR userName, BSTR userDomain, uint context, HANDLE_PTR userToken) OnUserAuthenticated;
-				public new function HRESULT(ITSGAuthenticateUserSink *self, uint context, HRESULT genericErrorCode, HRESULT specificErrorCode) OnUserAuthenticationFailed;
-				public new function HRESULT(ITSGAuthenticateUserSink *self, uint context) ReauthenticateUser;
-				public new function HRESULT(ITSGAuthenticateUserSink *self, uint context) DisconnectUser;
+				public new function HRESULT(ref ITSGAuthenticateUserSink self, BSTR userName, BSTR userDomain, uint context, HANDLE_PTR userToken) OnUserAuthenticated;
+				public new function HRESULT(ref ITSGAuthenticateUserSink self, uint context, HRESULT genericErrorCode, HRESULT specificErrorCode) OnUserAuthenticationFailed;
+				public new function HRESULT(ref ITSGAuthenticateUserSink self, uint context) ReauthenticateUser;
+				public new function HRESULT(ref ITSGAuthenticateUserSink self, uint context) DisconnectUser;
 			}
 		}
 		[CRepr]
@@ -2283,19 +2283,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AuthenticateUser(Guid mainSessionId, uint8* cookieData, uint32 numCookieBytes, uint context, ITSGAuthenticateUserSink* pSink) mut
+			public HRESULT AuthenticateUser(Guid mainSessionId, ref uint8 cookieData, uint32 numCookieBytes, uint context, ref ITSGAuthenticateUserSink pSink) mut
 			{
-				return VT.AuthenticateUser(&this, mainSessionId, cookieData, numCookieBytes, context, pSink);
+				return VT.AuthenticateUser(ref this, mainSessionId, ref cookieData, numCookieBytes, context, ref pSink);
 			}
 			public HRESULT CancelAuthentication(Guid mainSessionId, uint context) mut
 			{
-				return VT.CancelAuthentication(&this, mainSessionId, context);
+				return VT.CancelAuthentication(ref this, mainSessionId, context);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITSGAuthenticationEngine *self, Guid mainSessionId, uint8* cookieData, uint32 numCookieBytes, uint context, ITSGAuthenticateUserSink* pSink) AuthenticateUser;
-				public new function HRESULT(ITSGAuthenticationEngine *self, Guid mainSessionId, uint context) CancelAuthentication;
+				public new function HRESULT(ref ITSGAuthenticationEngine self, Guid mainSessionId, ref uint8 cookieData, uint32 numCookieBytes, uint context, ref ITSGAuthenticateUserSink pSink) AuthenticateUser;
+				public new function HRESULT(ref ITSGAuthenticationEngine self, Guid mainSessionId, uint context) CancelAuthentication;
 			}
 		}
 		[CRepr]
@@ -2305,39 +2305,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(uint32* PluginCapabilities) mut
+			public HRESULT Initialize(out uint32 PluginCapabilities) mut
 			{
-				return VT.Initialize(&this, PluginCapabilities);
+				return VT.Initialize(ref this, out PluginCapabilities);
 			}
-			public HRESULT WTSSBX_MachineChangeNotification(WTSSBX_NOTIFICATION_TYPE NotificationType, int32 MachineId, WTSSBX_MACHINE_INFO* pMachineInfo) mut
+			public HRESULT WTSSBX_MachineChangeNotification(WTSSBX_NOTIFICATION_TYPE NotificationType, int32 MachineId, ref WTSSBX_MACHINE_INFO pMachineInfo) mut
 			{
-				return VT.WTSSBX_MachineChangeNotification(&this, NotificationType, MachineId, pMachineInfo);
+				return VT.WTSSBX_MachineChangeNotification(ref this, NotificationType, MachineId, ref pMachineInfo);
 			}
 			public HRESULT WTSSBX_SessionChangeNotification(WTSSBX_NOTIFICATION_TYPE NotificationType, int32 MachineId, uint32 NumOfSessions, WTSSBX_SESSION_INFO* SessionInfo) mut
 			{
-				return VT.WTSSBX_SessionChangeNotification(&this, NotificationType, MachineId, NumOfSessions, SessionInfo);
+				return VT.WTSSBX_SessionChangeNotification(ref this, NotificationType, MachineId, NumOfSessions, SessionInfo);
 			}
-			public HRESULT WTSSBX_GetMostSuitableServer(PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, PWSTR FarmName, int32* pMachineId) mut
+			public HRESULT WTSSBX_GetMostSuitableServer(PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, PWSTR FarmName, out int32 pMachineId) mut
 			{
-				return VT.WTSSBX_GetMostSuitableServer(&this, UserName, DomainName, ApplicationType, FarmName, pMachineId);
+				return VT.WTSSBX_GetMostSuitableServer(ref this, UserName, DomainName, ApplicationType, FarmName, out pMachineId);
 			}
 			public HRESULT Terminated() mut
 			{
-				return VT.Terminated(&this);
+				return VT.Terminated(ref this);
 			}
-			public HRESULT WTSSBX_GetUserExternalSession(PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, WTSSBX_IP_ADDRESS* RedirectorInternalIP, uint32* pSessionId, WTSSBX_MACHINE_CONNECT_INFO* pMachineConnectInfo) mut
+			public HRESULT WTSSBX_GetUserExternalSession(PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, ref WTSSBX_IP_ADDRESS RedirectorInternalIP, out uint32 pSessionId, out WTSSBX_MACHINE_CONNECT_INFO pMachineConnectInfo) mut
 			{
-				return VT.WTSSBX_GetUserExternalSession(&this, UserName, DomainName, ApplicationType, RedirectorInternalIP, pSessionId, pMachineConnectInfo);
+				return VT.WTSSBX_GetUserExternalSession(ref this, UserName, DomainName, ApplicationType, ref RedirectorInternalIP, out pSessionId, out pMachineConnectInfo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSSBPlugin *self, uint32* PluginCapabilities) Initialize;
-				public new function HRESULT(IWTSSBPlugin *self, WTSSBX_NOTIFICATION_TYPE NotificationType, int32 MachineId, WTSSBX_MACHINE_INFO* pMachineInfo) WTSSBX_MachineChangeNotification;
-				public new function HRESULT(IWTSSBPlugin *self, WTSSBX_NOTIFICATION_TYPE NotificationType, int32 MachineId, uint32 NumOfSessions, WTSSBX_SESSION_INFO* SessionInfo) WTSSBX_SessionChangeNotification;
-				public new function HRESULT(IWTSSBPlugin *self, PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, PWSTR FarmName, int32* pMachineId) WTSSBX_GetMostSuitableServer;
-				public new function HRESULT(IWTSSBPlugin *self) Terminated;
-				public new function HRESULT(IWTSSBPlugin *self, PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, WTSSBX_IP_ADDRESS* RedirectorInternalIP, uint32* pSessionId, WTSSBX_MACHINE_CONNECT_INFO* pMachineConnectInfo) WTSSBX_GetUserExternalSession;
+				public new function HRESULT(ref IWTSSBPlugin self, out uint32 PluginCapabilities) Initialize;
+				public new function HRESULT(ref IWTSSBPlugin self, WTSSBX_NOTIFICATION_TYPE NotificationType, int32 MachineId, ref WTSSBX_MACHINE_INFO pMachineInfo) WTSSBX_MachineChangeNotification;
+				public new function HRESULT(ref IWTSSBPlugin self, WTSSBX_NOTIFICATION_TYPE NotificationType, int32 MachineId, uint32 NumOfSessions, WTSSBX_SESSION_INFO* SessionInfo) WTSSBX_SessionChangeNotification;
+				public new function HRESULT(ref IWTSSBPlugin self, PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, PWSTR FarmName, out int32 pMachineId) WTSSBX_GetMostSuitableServer;
+				public new function HRESULT(ref IWTSSBPlugin self) Terminated;
+				public new function HRESULT(ref IWTSSBPlugin self, PWSTR UserName, PWSTR DomainName, PWSTR ApplicationType, ref WTSSBX_IP_ADDRESS RedirectorInternalIP, out uint32 pSessionId, out WTSSBX_MACHINE_CONNECT_INFO pMachineConnectInfo) WTSSBX_GetUserExternalSession;
 			}
 		}
 		[CRepr]
@@ -2347,24 +2347,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetResourceId(BSTR* bstrWorkspaceId) mut
+			public HRESULT GetResourceId(out BSTR bstrWorkspaceId) mut
 			{
-				return VT.GetResourceId(&this, bstrWorkspaceId);
+				return VT.GetResourceId(ref this, out bstrWorkspaceId);
 			}
-			public HRESULT GetResourceDisplayName(BSTR* bstrWorkspaceDisplayName) mut
+			public HRESULT GetResourceDisplayName(out BSTR bstrWorkspaceDisplayName) mut
 			{
-				return VT.GetResourceDisplayName(&this, bstrWorkspaceDisplayName);
+				return VT.GetResourceDisplayName(ref this, out bstrWorkspaceDisplayName);
 			}
 			public HRESULT IssueDisconnect() mut
 			{
-				return VT.IssueDisconnect(&this);
+				return VT.IssueDisconnect(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWorkspaceClientExt *self, BSTR* bstrWorkspaceId) GetResourceId;
-				public new function HRESULT(IWorkspaceClientExt *self, BSTR* bstrWorkspaceDisplayName) GetResourceDisplayName;
-				public new function HRESULT(IWorkspaceClientExt *self) IssueDisconnect;
+				public new function HRESULT(ref IWorkspaceClientExt self, out BSTR bstrWorkspaceId) GetResourceId;
+				public new function HRESULT(ref IWorkspaceClientExt self, out BSTR bstrWorkspaceDisplayName) GetResourceDisplayName;
+				public new function HRESULT(ref IWorkspaceClientExt self) IssueDisconnect;
 			}
 		}
 		[CRepr]
@@ -2374,24 +2374,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetWorkspaceNames(SAFEARRAY** psaWkspNames) mut
+			public HRESULT GetWorkspaceNames(out SAFEARRAY* psaWkspNames) mut
 			{
-				return VT.GetWorkspaceNames(&this, psaWkspNames);
+				return VT.GetWorkspaceNames(ref this, out psaWkspNames);
 			}
-			public HRESULT StartRemoteApplication(BSTR bstrWorkspaceId, SAFEARRAY* psaParams) mut
+			public HRESULT StartRemoteApplication(BSTR bstrWorkspaceId, ref SAFEARRAY psaParams) mut
 			{
-				return VT.StartRemoteApplication(&this, bstrWorkspaceId, psaParams);
+				return VT.StartRemoteApplication(ref this, bstrWorkspaceId, ref psaParams);
 			}
-			public HRESULT GetProcessId(uint32* pulProcessId) mut
+			public HRESULT GetProcessId(out uint32 pulProcessId) mut
 			{
-				return VT.GetProcessId(&this, pulProcessId);
+				return VT.GetProcessId(ref this, out pulProcessId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWorkspace *self, SAFEARRAY** psaWkspNames) GetWorkspaceNames;
-				public new function HRESULT(IWorkspace *self, BSTR bstrWorkspaceId, SAFEARRAY* psaParams) StartRemoteApplication;
-				public new function HRESULT(IWorkspace *self, uint32* pulProcessId) GetProcessId;
+				public new function HRESULT(ref IWorkspace self, out SAFEARRAY* psaWkspNames) GetWorkspaceNames;
+				public new function HRESULT(ref IWorkspace self, BSTR bstrWorkspaceId, ref SAFEARRAY psaParams) StartRemoteApplication;
+				public new function HRESULT(ref IWorkspace self, out uint32 pulProcessId) GetProcessId;
 			}
 		}
 		[CRepr]
@@ -2401,14 +2401,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartRemoteApplicationEx(BSTR bstrWorkspaceId, BSTR bstrRequestingAppId, BSTR bstrRequestingAppFamilyName, int16 bLaunchIntoImmersiveClient, BSTR bstrImmersiveClientActivationContext, SAFEARRAY* psaParams) mut
+			public HRESULT StartRemoteApplicationEx(BSTR bstrWorkspaceId, BSTR bstrRequestingAppId, BSTR bstrRequestingAppFamilyName, int16 bLaunchIntoImmersiveClient, BSTR bstrImmersiveClientActivationContext, ref SAFEARRAY psaParams) mut
 			{
-				return VT.StartRemoteApplicationEx(&this, bstrWorkspaceId, bstrRequestingAppId, bstrRequestingAppFamilyName, bLaunchIntoImmersiveClient, bstrImmersiveClientActivationContext, psaParams);
+				return VT.StartRemoteApplicationEx(ref this, bstrWorkspaceId, bstrRequestingAppId, bstrRequestingAppFamilyName, bLaunchIntoImmersiveClient, bstrImmersiveClientActivationContext, ref psaParams);
 			}
 			[CRepr]
 			public struct VTable : IWorkspace.VTable
 			{
-				public new function HRESULT(IWorkspace2 *self, BSTR bstrWorkspaceId, BSTR bstrRequestingAppId, BSTR bstrRequestingAppFamilyName, int16 bLaunchIntoImmersiveClient, BSTR bstrImmersiveClientActivationContext, SAFEARRAY* psaParams) StartRemoteApplicationEx;
+				public new function HRESULT(ref IWorkspace2 self, BSTR bstrWorkspaceId, BSTR bstrRequestingAppId, BSTR bstrRequestingAppFamilyName, int16 bLaunchIntoImmersiveClient, BSTR bstrImmersiveClientActivationContext, ref SAFEARRAY psaParams) StartRemoteApplicationEx;
 			}
 		}
 		[CRepr]
@@ -2418,19 +2418,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClaimsToken2(BSTR bstrClaimsHint, BSTR bstrUserHint, uint32 claimCookie, uint32 hwndCredUiParent, RECT rectCredUiParent, BSTR* pbstrAccessToken) mut
+			public HRESULT GetClaimsToken2(BSTR bstrClaimsHint, BSTR bstrUserHint, uint32 claimCookie, uint32 hwndCredUiParent, RECT rectCredUiParent, out BSTR pbstrAccessToken) mut
 			{
-				return VT.GetClaimsToken2(&this, bstrClaimsHint, bstrUserHint, claimCookie, hwndCredUiParent, rectCredUiParent, pbstrAccessToken);
+				return VT.GetClaimsToken2(ref this, bstrClaimsHint, bstrUserHint, claimCookie, hwndCredUiParent, rectCredUiParent, out pbstrAccessToken);
 			}
 			public HRESULT SetClaimsToken(BSTR bstrAccessToken, uint64 ullAccessTokenExpiration, BSTR bstrRefreshToken) mut
 			{
-				return VT.SetClaimsToken(&this, bstrAccessToken, ullAccessTokenExpiration, bstrRefreshToken);
+				return VT.SetClaimsToken(ref this, bstrAccessToken, ullAccessTokenExpiration, bstrRefreshToken);
 			}
 			[CRepr]
 			public struct VTable : IWorkspace2.VTable
 			{
-				public new function HRESULT(IWorkspace3 *self, BSTR bstrClaimsHint, BSTR bstrUserHint, uint32 claimCookie, uint32 hwndCredUiParent, RECT rectCredUiParent, BSTR* pbstrAccessToken) GetClaimsToken2;
-				public new function HRESULT(IWorkspace3 *self, BSTR bstrAccessToken, uint64 ullAccessTokenExpiration, BSTR bstrRefreshToken) SetClaimsToken;
+				public new function HRESULT(ref IWorkspace3 self, BSTR bstrClaimsHint, BSTR bstrUserHint, uint32 claimCookie, uint32 hwndCredUiParent, RECT rectCredUiParent, out BSTR pbstrAccessToken) GetClaimsToken2;
+				public new function HRESULT(ref IWorkspace3 self, BSTR bstrAccessToken, uint64 ullAccessTokenExpiration, BSTR bstrRefreshToken) SetClaimsToken;
 			}
 		}
 		[CRepr]
@@ -2440,19 +2440,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddResource(IWorkspaceClientExt* pUnk, uint32* pdwCookie) mut
+			public HRESULT AddResource(ref IWorkspaceClientExt pUnk, out uint32 pdwCookie) mut
 			{
-				return VT.AddResource(&this, pUnk, pdwCookie);
+				return VT.AddResource(ref this, ref pUnk, out pdwCookie);
 			}
 			public HRESULT RemoveResource(uint32 dwCookieConnection) mut
 			{
-				return VT.RemoveResource(&this, dwCookieConnection);
+				return VT.RemoveResource(ref this, dwCookieConnection);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWorkspaceRegistration *self, IWorkspaceClientExt* pUnk, uint32* pdwCookie) AddResource;
-				public new function HRESULT(IWorkspaceRegistration *self, uint32 dwCookieConnection) RemoveResource;
+				public new function HRESULT(ref IWorkspaceRegistration self, ref IWorkspaceClientExt pUnk, out uint32 pdwCookie) AddResource;
+				public new function HRESULT(ref IWorkspaceRegistration self, uint32 dwCookieConnection) RemoveResource;
 			}
 		}
 		[CRepr]
@@ -2462,19 +2462,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddResourceEx(IWorkspaceClientExt* pUnk, BSTR bstrEventLogUploadAddress, uint32* pdwCookie, Guid correlationId) mut
+			public HRESULT AddResourceEx(ref IWorkspaceClientExt pUnk, BSTR bstrEventLogUploadAddress, out uint32 pdwCookie, Guid correlationId) mut
 			{
-				return VT.AddResourceEx(&this, pUnk, bstrEventLogUploadAddress, pdwCookie, correlationId);
+				return VT.AddResourceEx(ref this, ref pUnk, bstrEventLogUploadAddress, out pdwCookie, correlationId);
 			}
 			public HRESULT RemoveResourceEx(uint32 dwCookieConnection, Guid correlationId) mut
 			{
-				return VT.RemoveResourceEx(&this, dwCookieConnection, correlationId);
+				return VT.RemoveResourceEx(ref this, dwCookieConnection, correlationId);
 			}
 			[CRepr]
 			public struct VTable : IWorkspaceRegistration.VTable
 			{
-				public new function HRESULT(IWorkspaceRegistration2 *self, IWorkspaceClientExt* pUnk, BSTR bstrEventLogUploadAddress, uint32* pdwCookie, Guid correlationId) AddResourceEx;
-				public new function HRESULT(IWorkspaceRegistration2 *self, uint32 dwCookieConnection, Guid correlationId) RemoveResourceEx;
+				public new function HRESULT(ref IWorkspaceRegistration2 self, ref IWorkspaceClientExt pUnk, BSTR bstrEventLogUploadAddress, out uint32 pdwCookie, Guid correlationId) AddResourceEx;
+				public new function HRESULT(ref IWorkspaceRegistration2 self, uint32 dwCookieConnection, Guid correlationId) RemoveResourceEx;
 			}
 		}
 		[CRepr]
@@ -2486,42 +2486,42 @@ namespace Win32
 			
 			public HRESULT DisconnectWorkspace(BSTR bstrWorkspaceId) mut
 			{
-				return VT.DisconnectWorkspace(&this, bstrWorkspaceId);
+				return VT.DisconnectWorkspace(ref this, bstrWorkspaceId);
 			}
 			public HRESULT StartWorkspace(BSTR bstrWorkspaceId, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags) mut
 			{
-				return VT.StartWorkspace(&this, bstrWorkspaceId, bstrUserName, bstrPassword, bstrWorkspaceParams, lTimeout, lFlags);
+				return VT.StartWorkspace(ref this, bstrWorkspaceId, bstrUserName, bstrPassword, bstrWorkspaceParams, lTimeout, lFlags);
 			}
-			public HRESULT IsWorkspaceCredentialSpecified(BSTR bstrWorkspaceId, int16 bCountUnauthenticatedCredentials, int16* pbCredExist) mut
+			public HRESULT IsWorkspaceCredentialSpecified(BSTR bstrWorkspaceId, int16 bCountUnauthenticatedCredentials, out int16 pbCredExist) mut
 			{
-				return VT.IsWorkspaceCredentialSpecified(&this, bstrWorkspaceId, bCountUnauthenticatedCredentials, pbCredExist);
+				return VT.IsWorkspaceCredentialSpecified(ref this, bstrWorkspaceId, bCountUnauthenticatedCredentials, out pbCredExist);
 			}
-			public HRESULT IsWorkspaceSSOEnabled(int16* pbSSOEnabled) mut
+			public HRESULT IsWorkspaceSSOEnabled(out int16 pbSSOEnabled) mut
 			{
-				return VT.IsWorkspaceSSOEnabled(&this, pbSSOEnabled);
+				return VT.IsWorkspaceSSOEnabled(ref this, out pbSSOEnabled);
 			}
 			public HRESULT ClearWorkspaceCredential(BSTR bstrWorkspaceId) mut
 			{
-				return VT.ClearWorkspaceCredential(&this, bstrWorkspaceId);
+				return VT.ClearWorkspaceCredential(ref this, bstrWorkspaceId);
 			}
 			public HRESULT OnAuthenticated(BSTR bstrWorkspaceId, BSTR bstrUserName) mut
 			{
-				return VT.OnAuthenticated(&this, bstrWorkspaceId, bstrUserName);
+				return VT.OnAuthenticated(ref this, bstrWorkspaceId, bstrUserName);
 			}
 			public HRESULT DisconnectWorkspaceByFriendlyName(BSTR bstrWorkspaceFriendlyName) mut
 			{
-				return VT.DisconnectWorkspaceByFriendlyName(&this, bstrWorkspaceFriendlyName);
+				return VT.DisconnectWorkspaceByFriendlyName(ref this, bstrWorkspaceFriendlyName);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId) DisconnectWorkspace;
-				public new function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags) StartWorkspace;
-				public new function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId, int16 bCountUnauthenticatedCredentials, int16* pbCredExist) IsWorkspaceCredentialSpecified;
-				public new function HRESULT(IWorkspaceScriptable *self, int16* pbSSOEnabled) IsWorkspaceSSOEnabled;
-				public new function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId) ClearWorkspaceCredential;
-				public new function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceId, BSTR bstrUserName) OnAuthenticated;
-				public new function HRESULT(IWorkspaceScriptable *self, BSTR bstrWorkspaceFriendlyName) DisconnectWorkspaceByFriendlyName;
+				public new function HRESULT(ref IWorkspaceScriptable self, BSTR bstrWorkspaceId) DisconnectWorkspace;
+				public new function HRESULT(ref IWorkspaceScriptable self, BSTR bstrWorkspaceId, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags) StartWorkspace;
+				public new function HRESULT(ref IWorkspaceScriptable self, BSTR bstrWorkspaceId, int16 bCountUnauthenticatedCredentials, out int16 pbCredExist) IsWorkspaceCredentialSpecified;
+				public new function HRESULT(ref IWorkspaceScriptable self, out int16 pbSSOEnabled) IsWorkspaceSSOEnabled;
+				public new function HRESULT(ref IWorkspaceScriptable self, BSTR bstrWorkspaceId) ClearWorkspaceCredential;
+				public new function HRESULT(ref IWorkspaceScriptable self, BSTR bstrWorkspaceId, BSTR bstrUserName) OnAuthenticated;
+				public new function HRESULT(ref IWorkspaceScriptable self, BSTR bstrWorkspaceFriendlyName) DisconnectWorkspaceByFriendlyName;
 			}
 		}
 		[CRepr]
@@ -2533,17 +2533,17 @@ namespace Win32
 			
 			public HRESULT StartWorkspaceEx(BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName, BSTR bstrRedirectorName, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrAppContainer, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags) mut
 			{
-				return VT.StartWorkspaceEx(&this, bstrWorkspaceId, bstrWorkspaceFriendlyName, bstrRedirectorName, bstrUserName, bstrPassword, bstrAppContainer, bstrWorkspaceParams, lTimeout, lFlags);
+				return VT.StartWorkspaceEx(ref this, bstrWorkspaceId, bstrWorkspaceFriendlyName, bstrRedirectorName, bstrUserName, bstrPassword, bstrAppContainer, bstrWorkspaceParams, lTimeout, lFlags);
 			}
 			public HRESULT ResourceDismissed(BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName) mut
 			{
-				return VT.ResourceDismissed(&this, bstrWorkspaceId, bstrWorkspaceFriendlyName);
+				return VT.ResourceDismissed(ref this, bstrWorkspaceId, bstrWorkspaceFriendlyName);
 			}
 			[CRepr]
 			public struct VTable : IWorkspaceScriptable.VTable
 			{
-				public new function HRESULT(IWorkspaceScriptable2 *self, BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName, BSTR bstrRedirectorName, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrAppContainer, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags) StartWorkspaceEx;
-				public new function HRESULT(IWorkspaceScriptable2 *self, BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName) ResourceDismissed;
+				public new function HRESULT(ref IWorkspaceScriptable2 self, BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName, BSTR bstrRedirectorName, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrAppContainer, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags) StartWorkspaceEx;
+				public new function HRESULT(ref IWorkspaceScriptable2 self, BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName) ResourceDismissed;
 			}
 		}
 		[CRepr]
@@ -2555,12 +2555,12 @@ namespace Win32
 			
 			public HRESULT StartWorkspaceEx2(BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName, BSTR bstrRedirectorName, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrAppContainer, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags, BSTR bstrEventLogUploadAddress, Guid correlationId) mut
 			{
-				return VT.StartWorkspaceEx2(&this, bstrWorkspaceId, bstrWorkspaceFriendlyName, bstrRedirectorName, bstrUserName, bstrPassword, bstrAppContainer, bstrWorkspaceParams, lTimeout, lFlags, bstrEventLogUploadAddress, correlationId);
+				return VT.StartWorkspaceEx2(ref this, bstrWorkspaceId, bstrWorkspaceFriendlyName, bstrRedirectorName, bstrUserName, bstrPassword, bstrAppContainer, bstrWorkspaceParams, lTimeout, lFlags, bstrEventLogUploadAddress, correlationId);
 			}
 			[CRepr]
 			public struct VTable : IWorkspaceScriptable2.VTable
 			{
-				public new function HRESULT(IWorkspaceScriptable3 *self, BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName, BSTR bstrRedirectorName, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrAppContainer, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags, BSTR bstrEventLogUploadAddress, Guid correlationId) StartWorkspaceEx2;
+				public new function HRESULT(ref IWorkspaceScriptable3 self, BSTR bstrWorkspaceId, BSTR bstrWorkspaceFriendlyName, BSTR bstrRedirectorName, BSTR bstrUserName, BSTR bstrPassword, BSTR bstrAppContainer, BSTR bstrWorkspaceParams, int32 lTimeout, int32 lFlags, BSTR bstrEventLogUploadAddress, Guid correlationId) StartWorkspaceEx2;
 			}
 		}
 		[CRepr]
@@ -2572,22 +2572,22 @@ namespace Win32
 			
 			public HRESULT RegisterErrorLogMessage(BSTR bstrMessage) mut
 			{
-				return VT.RegisterErrorLogMessage(&this, bstrMessage);
+				return VT.RegisterErrorLogMessage(ref this, bstrMessage);
 			}
-			public HRESULT IsErrorMessageRegistered(BSTR bstrWkspId, uint32 dwErrorType, BSTR bstrErrorMessageType, uint32 dwErrorCode, int16* pfErrorExist) mut
+			public HRESULT IsErrorMessageRegistered(BSTR bstrWkspId, uint32 dwErrorType, BSTR bstrErrorMessageType, uint32 dwErrorCode, out int16 pfErrorExist) mut
 			{
-				return VT.IsErrorMessageRegistered(&this, bstrWkspId, dwErrorType, bstrErrorMessageType, dwErrorCode, pfErrorExist);
+				return VT.IsErrorMessageRegistered(ref this, bstrWkspId, dwErrorType, bstrErrorMessageType, dwErrorCode, out pfErrorExist);
 			}
 			public HRESULT RegisterErrorEvent(BSTR bstrWkspId, uint32 dwErrorType, BSTR bstrErrorMessageType, uint32 dwErrorCode) mut
 			{
-				return VT.RegisterErrorEvent(&this, bstrWkspId, dwErrorType, bstrErrorMessageType, dwErrorCode);
+				return VT.RegisterErrorEvent(ref this, bstrWkspId, dwErrorType, bstrErrorMessageType, dwErrorCode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWorkspaceReportMessage *self, BSTR bstrMessage) RegisterErrorLogMessage;
-				public new function HRESULT(IWorkspaceReportMessage *self, BSTR bstrWkspId, uint32 dwErrorType, BSTR bstrErrorMessageType, uint32 dwErrorCode, int16* pfErrorExist) IsErrorMessageRegistered;
-				public new function HRESULT(IWorkspaceReportMessage *self, BSTR bstrWkspId, uint32 dwErrorType, BSTR bstrErrorMessageType, uint32 dwErrorCode) RegisterErrorEvent;
+				public new function HRESULT(ref IWorkspaceReportMessage self, BSTR bstrMessage) RegisterErrorLogMessage;
+				public new function HRESULT(ref IWorkspaceReportMessage self, BSTR bstrWkspId, uint32 dwErrorType, BSTR bstrErrorMessageType, uint32 dwErrorCode, out int16 pfErrorExist) IsErrorMessageRegistered;
+				public new function HRESULT(ref IWorkspaceReportMessage self, BSTR bstrWkspId, uint32 dwErrorType, BSTR bstrErrorMessageType, uint32 dwErrorCode) RegisterErrorEvent;
 			}
 		}
 		[CRepr]
@@ -2609,19 +2609,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(ITsSbProvider* pProvider, ITsSbPluginNotifySink* pNotifySink, ITsSbPluginPropertySet* pPropertySet) mut
+			public HRESULT Initialize(ref ITsSbProvider pProvider, ref ITsSbPluginNotifySink pNotifySink, ref ITsSbPluginPropertySet pPropertySet) mut
 			{
-				return VT.Initialize(&this, pProvider, pNotifySink, pPropertySet);
+				return VT.Initialize(ref this, ref pProvider, ref pNotifySink, ref pPropertySet);
 			}
 			public HRESULT Terminate(HRESULT hr) mut
 			{
-				return VT.Terminate(&this, hr);
+				return VT.Terminate(ref this, hr);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbPlugin *self, ITsSbProvider* pProvider, ITsSbPluginNotifySink* pNotifySink, ITsSbPluginPropertySet* pPropertySet) Initialize;
-				public new function HRESULT(ITsSbPlugin *self, HRESULT hr) Terminate;
+				public new function HRESULT(ref ITsSbPlugin self, ref ITsSbProvider pProvider, ref ITsSbPluginNotifySink pNotifySink, ref ITsSbPluginPropertySet pPropertySet) Initialize;
+				public new function HRESULT(ref ITsSbPlugin self, HRESULT hr) Terminate;
 			}
 		}
 		[CRepr]
@@ -2645,17 +2645,17 @@ namespace Win32
 			
 			public HRESULT NotifyServiceFailure() mut
 			{
-				return VT.NotifyServiceFailure(&this);
+				return VT.NotifyServiceFailure(ref this);
 			}
 			public HRESULT NotifyServiceSuccess() mut
 			{
-				return VT.NotifyServiceSuccess(&this);
+				return VT.NotifyServiceSuccess(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbServiceNotification *self) NotifyServiceFailure;
-				public new function HRESULT(ITsSbServiceNotification *self) NotifyServiceSuccess;
+				public new function HRESULT(ref ITsSbServiceNotification self) NotifyServiceFailure;
+				public new function HRESULT(ref ITsSbServiceNotification self) NotifyServiceSuccess;
 			}
 		}
 		[CRepr]
@@ -2665,14 +2665,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMostSuitableTarget(ITsSbClientConnection* pConnection, ITsSbLoadBalancingNotifySink* pLBSink) mut
+			public HRESULT GetMostSuitableTarget(ref ITsSbClientConnection pConnection, ref ITsSbLoadBalancingNotifySink pLBSink) mut
 			{
-				return VT.GetMostSuitableTarget(&this, pConnection, pLBSink);
+				return VT.GetMostSuitableTarget(ref this, ref pConnection, ref pLBSink);
 			}
 			[CRepr]
 			public struct VTable : ITsSbPlugin.VTable
 			{
-				public new function HRESULT(ITsSbLoadBalancing *self, ITsSbClientConnection* pConnection, ITsSbLoadBalancingNotifySink* pLBSink) GetMostSuitableTarget;
+				public new function HRESULT(ref ITsSbLoadBalancing self, ref ITsSbClientConnection pConnection, ref ITsSbLoadBalancingNotifySink pLBSink) GetMostSuitableTarget;
 			}
 		}
 		[CRepr]
@@ -2682,14 +2682,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryEnvironmentForTarget(ITsSbClientConnection* pConnection, ITsSbPlacementNotifySink* pPlacementSink) mut
+			public HRESULT QueryEnvironmentForTarget(ref ITsSbClientConnection pConnection, ref ITsSbPlacementNotifySink pPlacementSink) mut
 			{
-				return VT.QueryEnvironmentForTarget(&this, pConnection, pPlacementSink);
+				return VT.QueryEnvironmentForTarget(ref this, ref pConnection, ref pPlacementSink);
 			}
 			[CRepr]
 			public struct VTable : ITsSbPlugin.VTable
 			{
-				public new function HRESULT(ITsSbPlacement *self, ITsSbClientConnection* pConnection, ITsSbPlacementNotifySink* pPlacementSink) QueryEnvironmentForTarget;
+				public new function HRESULT(ref ITsSbPlacement self, ref ITsSbClientConnection pConnection, ref ITsSbPlacementNotifySink pPlacementSink) QueryEnvironmentForTarget;
 			}
 		}
 		[CRepr]
@@ -2699,14 +2699,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT PrepareTargetForConnect(ITsSbClientConnection* pConnection, ITsSbOrchestrationNotifySink* pOrchestrationNotifySink) mut
+			public HRESULT PrepareTargetForConnect(ref ITsSbClientConnection pConnection, ref ITsSbOrchestrationNotifySink pOrchestrationNotifySink) mut
 			{
-				return VT.PrepareTargetForConnect(&this, pConnection, pOrchestrationNotifySink);
+				return VT.PrepareTargetForConnect(ref this, ref pConnection, ref pOrchestrationNotifySink);
 			}
 			[CRepr]
 			public struct VTable : ITsSbPlugin.VTable
 			{
-				public new function HRESULT(ITsSbOrchestration *self, ITsSbClientConnection* pConnection, ITsSbOrchestrationNotifySink* pOrchestrationNotifySink) PrepareTargetForConnect;
+				public new function HRESULT(ref ITsSbOrchestration self, ref ITsSbClientConnection pConnection, ref ITsSbOrchestrationNotifySink pOrchestrationNotifySink) PrepareTargetForConnect;
 			}
 		}
 		[CRepr]
@@ -2716,29 +2716,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* pVal) mut
+			public HRESULT get_Name(out BSTR pVal) mut
 			{
-				return VT.get_Name(&this, pVal);
+				return VT.get_Name(ref this, out pVal);
 			}
-			public HRESULT get_ServerWeight(uint32* pVal) mut
+			public HRESULT get_ServerWeight(out uint32 pVal) mut
 			{
-				return VT.get_ServerWeight(&this, pVal);
+				return VT.get_ServerWeight(ref this, out pVal);
 			}
-			public HRESULT get_EnvironmentPropertySet(ITsSbEnvironmentPropertySet** ppPropertySet) mut
+			public HRESULT get_EnvironmentPropertySet(out ITsSbEnvironmentPropertySet* ppPropertySet) mut
 			{
-				return VT.get_EnvironmentPropertySet(&this, ppPropertySet);
+				return VT.get_EnvironmentPropertySet(ref this, out ppPropertySet);
 			}
-			public HRESULT put_EnvironmentPropertySet(ITsSbEnvironmentPropertySet* pVal) mut
+			public HRESULT put_EnvironmentPropertySet(ref ITsSbEnvironmentPropertySet pVal) mut
 			{
-				return VT.put_EnvironmentPropertySet(&this, pVal);
+				return VT.put_EnvironmentPropertySet(ref this, ref pVal);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbEnvironment *self, BSTR* pVal) get_Name;
-				public new function HRESULT(ITsSbEnvironment *self, uint32* pVal) get_ServerWeight;
-				public new function HRESULT(ITsSbEnvironment *self, ITsSbEnvironmentPropertySet** ppPropertySet) get_EnvironmentPropertySet;
-				public new function HRESULT(ITsSbEnvironment *self, ITsSbEnvironmentPropertySet* pVal) put_EnvironmentPropertySet;
+				public new function HRESULT(ref ITsSbEnvironment self, out BSTR pVal) get_Name;
+				public new function HRESULT(ref ITsSbEnvironment self, out uint32 pVal) get_ServerWeight;
+				public new function HRESULT(ref ITsSbEnvironment self, out ITsSbEnvironmentPropertySet* ppPropertySet) get_EnvironmentPropertySet;
+				public new function HRESULT(ref ITsSbEnvironment self, ref ITsSbEnvironmentPropertySet pVal) put_EnvironmentPropertySet;
 			}
 		}
 		[CRepr]
@@ -2748,14 +2748,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TargetName(BSTR* pVal) mut
+			public HRESULT get_TargetName(out BSTR pVal) mut
 			{
-				return VT.get_TargetName(&this, pVal);
+				return VT.get_TargetName(ref this, out pVal);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbLoadBalanceResult *self, BSTR* pVal) get_TargetName;
+				public new function HRESULT(ref ITsSbLoadBalanceResult self, out BSTR pVal) get_TargetName;
 			}
 		}
 		[CRepr]
@@ -2765,104 +2765,104 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TargetName(BSTR* pVal) mut
+			public HRESULT get_TargetName(out BSTR pVal) mut
 			{
-				return VT.get_TargetName(&this, pVal);
+				return VT.get_TargetName(ref this, out pVal);
 			}
 			public HRESULT put_TargetName(BSTR Val) mut
 			{
-				return VT.put_TargetName(&this, Val);
+				return VT.put_TargetName(ref this, Val);
 			}
-			public HRESULT get_FarmName(BSTR* pVal) mut
+			public HRESULT get_FarmName(out BSTR pVal) mut
 			{
-				return VT.get_FarmName(&this, pVal);
+				return VT.get_FarmName(ref this, out pVal);
 			}
 			public HRESULT put_FarmName(BSTR Val) mut
 			{
-				return VT.put_FarmName(&this, Val);
+				return VT.put_FarmName(ref this, Val);
 			}
-			public HRESULT get_TargetFQDN(BSTR* TargetFqdnName) mut
+			public HRESULT get_TargetFQDN(out BSTR TargetFqdnName) mut
 			{
-				return VT.get_TargetFQDN(&this, TargetFqdnName);
+				return VT.get_TargetFQDN(ref this, out TargetFqdnName);
 			}
 			public HRESULT put_TargetFQDN(BSTR Val) mut
 			{
-				return VT.put_TargetFQDN(&this, Val);
+				return VT.put_TargetFQDN(ref this, Val);
 			}
-			public HRESULT get_TargetNetbios(BSTR* TargetNetbiosName) mut
+			public HRESULT get_TargetNetbios(out BSTR TargetNetbiosName) mut
 			{
-				return VT.get_TargetNetbios(&this, TargetNetbiosName);
+				return VT.get_TargetNetbios(ref this, out TargetNetbiosName);
 			}
 			public HRESULT put_TargetNetbios(BSTR Val) mut
 			{
-				return VT.put_TargetNetbios(&this, Val);
+				return VT.put_TargetNetbios(ref this, Val);
 			}
-			public HRESULT get_IpAddresses(TSSD_ConnectionPoint* SOCKADDR, uint32* numAddresses) mut
+			public HRESULT get_IpAddresses(TSSD_ConnectionPoint* SOCKADDR, out uint32 numAddresses) mut
 			{
-				return VT.get_IpAddresses(&this, SOCKADDR, numAddresses);
+				return VT.get_IpAddresses(ref this, SOCKADDR, out numAddresses);
 			}
 			public HRESULT put_IpAddresses(TSSD_ConnectionPoint* SOCKADDR, uint32 numAddresses) mut
 			{
-				return VT.put_IpAddresses(&this, SOCKADDR, numAddresses);
+				return VT.put_IpAddresses(ref this, SOCKADDR, numAddresses);
 			}
-			public HRESULT get_TargetState(TARGET_STATE* pState) mut
+			public HRESULT get_TargetState(out TARGET_STATE pState) mut
 			{
-				return VT.get_TargetState(&this, pState);
+				return VT.get_TargetState(ref this, out pState);
 			}
 			public HRESULT put_TargetState(TARGET_STATE State) mut
 			{
-				return VT.put_TargetState(&this, State);
+				return VT.put_TargetState(ref this, State);
 			}
-			public HRESULT get_TargetPropertySet(ITsSbTargetPropertySet** ppPropertySet) mut
+			public HRESULT get_TargetPropertySet(out ITsSbTargetPropertySet* ppPropertySet) mut
 			{
-				return VT.get_TargetPropertySet(&this, ppPropertySet);
+				return VT.get_TargetPropertySet(ref this, out ppPropertySet);
 			}
-			public HRESULT put_TargetPropertySet(ITsSbTargetPropertySet* pVal) mut
+			public HRESULT put_TargetPropertySet(ref ITsSbTargetPropertySet pVal) mut
 			{
-				return VT.put_TargetPropertySet(&this, pVal);
+				return VT.put_TargetPropertySet(ref this, ref pVal);
 			}
-			public HRESULT get_EnvironmentName(BSTR* pVal) mut
+			public HRESULT get_EnvironmentName(out BSTR pVal) mut
 			{
-				return VT.get_EnvironmentName(&this, pVal);
+				return VT.get_EnvironmentName(ref this, out pVal);
 			}
 			public HRESULT put_EnvironmentName(BSTR Val) mut
 			{
-				return VT.put_EnvironmentName(&this, Val);
+				return VT.put_EnvironmentName(ref this, Val);
 			}
-			public HRESULT get_NumSessions(uint32* pNumSessions) mut
+			public HRESULT get_NumSessions(out uint32 pNumSessions) mut
 			{
-				return VT.get_NumSessions(&this, pNumSessions);
+				return VT.get_NumSessions(ref this, out pNumSessions);
 			}
-			public HRESULT get_NumPendingConnections(uint32* pNumPendingConnections) mut
+			public HRESULT get_NumPendingConnections(out uint32 pNumPendingConnections) mut
 			{
-				return VT.get_NumPendingConnections(&this, pNumPendingConnections);
+				return VT.get_NumPendingConnections(ref this, out pNumPendingConnections);
 			}
-			public HRESULT get_TargetLoad(uint32* pTargetLoad) mut
+			public HRESULT get_TargetLoad(out uint32 pTargetLoad) mut
 			{
-				return VT.get_TargetLoad(&this, pTargetLoad);
+				return VT.get_TargetLoad(ref this, out pTargetLoad);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbTarget *self, BSTR* pVal) get_TargetName;
-				public new function HRESULT(ITsSbTarget *self, BSTR Val) put_TargetName;
-				public new function HRESULT(ITsSbTarget *self, BSTR* pVal) get_FarmName;
-				public new function HRESULT(ITsSbTarget *self, BSTR Val) put_FarmName;
-				public new function HRESULT(ITsSbTarget *self, BSTR* TargetFqdnName) get_TargetFQDN;
-				public new function HRESULT(ITsSbTarget *self, BSTR Val) put_TargetFQDN;
-				public new function HRESULT(ITsSbTarget *self, BSTR* TargetNetbiosName) get_TargetNetbios;
-				public new function HRESULT(ITsSbTarget *self, BSTR Val) put_TargetNetbios;
-				public new function HRESULT(ITsSbTarget *self, TSSD_ConnectionPoint* SOCKADDR, uint32* numAddresses) get_IpAddresses;
-				public new function HRESULT(ITsSbTarget *self, TSSD_ConnectionPoint* SOCKADDR, uint32 numAddresses) put_IpAddresses;
-				public new function HRESULT(ITsSbTarget *self, TARGET_STATE* pState) get_TargetState;
-				public new function HRESULT(ITsSbTarget *self, TARGET_STATE State) put_TargetState;
-				public new function HRESULT(ITsSbTarget *self, ITsSbTargetPropertySet** ppPropertySet) get_TargetPropertySet;
-				public new function HRESULT(ITsSbTarget *self, ITsSbTargetPropertySet* pVal) put_TargetPropertySet;
-				public new function HRESULT(ITsSbTarget *self, BSTR* pVal) get_EnvironmentName;
-				public new function HRESULT(ITsSbTarget *self, BSTR Val) put_EnvironmentName;
-				public new function HRESULT(ITsSbTarget *self, uint32* pNumSessions) get_NumSessions;
-				public new function HRESULT(ITsSbTarget *self, uint32* pNumPendingConnections) get_NumPendingConnections;
-				public new function HRESULT(ITsSbTarget *self, uint32* pTargetLoad) get_TargetLoad;
+				public new function HRESULT(ref ITsSbTarget self, out BSTR pVal) get_TargetName;
+				public new function HRESULT(ref ITsSbTarget self, BSTR Val) put_TargetName;
+				public new function HRESULT(ref ITsSbTarget self, out BSTR pVal) get_FarmName;
+				public new function HRESULT(ref ITsSbTarget self, BSTR Val) put_FarmName;
+				public new function HRESULT(ref ITsSbTarget self, out BSTR TargetFqdnName) get_TargetFQDN;
+				public new function HRESULT(ref ITsSbTarget self, BSTR Val) put_TargetFQDN;
+				public new function HRESULT(ref ITsSbTarget self, out BSTR TargetNetbiosName) get_TargetNetbios;
+				public new function HRESULT(ref ITsSbTarget self, BSTR Val) put_TargetNetbios;
+				public new function HRESULT(ref ITsSbTarget self, TSSD_ConnectionPoint* SOCKADDR, out uint32 numAddresses) get_IpAddresses;
+				public new function HRESULT(ref ITsSbTarget self, TSSD_ConnectionPoint* SOCKADDR, uint32 numAddresses) put_IpAddresses;
+				public new function HRESULT(ref ITsSbTarget self, out TARGET_STATE pState) get_TargetState;
+				public new function HRESULT(ref ITsSbTarget self, TARGET_STATE State) put_TargetState;
+				public new function HRESULT(ref ITsSbTarget self, out ITsSbTargetPropertySet* ppPropertySet) get_TargetPropertySet;
+				public new function HRESULT(ref ITsSbTarget self, ref ITsSbTargetPropertySet pVal) put_TargetPropertySet;
+				public new function HRESULT(ref ITsSbTarget self, out BSTR pVal) get_EnvironmentName;
+				public new function HRESULT(ref ITsSbTarget self, BSTR Val) put_EnvironmentName;
+				public new function HRESULT(ref ITsSbTarget self, out uint32 pNumSessions) get_NumSessions;
+				public new function HRESULT(ref ITsSbTarget self, out uint32 pNumPendingConnections) get_NumPendingConnections;
+				public new function HRESULT(ref ITsSbTarget self, out uint32 pTargetLoad) get_TargetLoad;
 			}
 		}
 		[CRepr]
@@ -2872,94 +2872,94 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SessionId(uint32* pVal) mut
+			public HRESULT get_SessionId(out uint32 pVal) mut
 			{
-				return VT.get_SessionId(&this, pVal);
+				return VT.get_SessionId(ref this, out pVal);
 			}
-			public HRESULT get_TargetName(BSTR* targetName) mut
+			public HRESULT get_TargetName(out BSTR targetName) mut
 			{
-				return VT.get_TargetName(&this, targetName);
+				return VT.get_TargetName(ref this, out targetName);
 			}
 			public HRESULT put_TargetName(BSTR targetName) mut
 			{
-				return VT.put_TargetName(&this, targetName);
+				return VT.put_TargetName(ref this, targetName);
 			}
-			public HRESULT get_Username(BSTR* userName) mut
+			public HRESULT get_Username(out BSTR userName) mut
 			{
-				return VT.get_Username(&this, userName);
+				return VT.get_Username(ref this, out userName);
 			}
-			public HRESULT get_Domain(BSTR* domain) mut
+			public HRESULT get_Domain(out BSTR domain) mut
 			{
-				return VT.get_Domain(&this, domain);
+				return VT.get_Domain(ref this, out domain);
 			}
-			public HRESULT get_State(TSSESSION_STATE* pState) mut
+			public HRESULT get_State(out TSSESSION_STATE pState) mut
 			{
-				return VT.get_State(&this, pState);
+				return VT.get_State(ref this, out pState);
 			}
 			public HRESULT put_State(TSSESSION_STATE State) mut
 			{
-				return VT.put_State(&this, State);
+				return VT.put_State(ref this, State);
 			}
-			public HRESULT get_CreateTime(FILETIME* pTime) mut
+			public HRESULT get_CreateTime(out FILETIME pTime) mut
 			{
-				return VT.get_CreateTime(&this, pTime);
+				return VT.get_CreateTime(ref this, out pTime);
 			}
 			public HRESULT put_CreateTime(FILETIME Time) mut
 			{
-				return VT.put_CreateTime(&this, Time);
+				return VT.put_CreateTime(ref this, Time);
 			}
-			public HRESULT get_DisconnectTime(FILETIME* pTime) mut
+			public HRESULT get_DisconnectTime(out FILETIME pTime) mut
 			{
-				return VT.get_DisconnectTime(&this, pTime);
+				return VT.get_DisconnectTime(ref this, out pTime);
 			}
 			public HRESULT put_DisconnectTime(FILETIME Time) mut
 			{
-				return VT.put_DisconnectTime(&this, Time);
+				return VT.put_DisconnectTime(ref this, Time);
 			}
-			public HRESULT get_InitialProgram(BSTR* app) mut
+			public HRESULT get_InitialProgram(out BSTR app) mut
 			{
-				return VT.get_InitialProgram(&this, app);
+				return VT.get_InitialProgram(ref this, out app);
 			}
 			public HRESULT put_InitialProgram(BSTR Application) mut
 			{
-				return VT.put_InitialProgram(&this, Application);
+				return VT.put_InitialProgram(ref this, Application);
 			}
-			public HRESULT get_ClientDisplay(CLIENT_DISPLAY* pClientDisplay) mut
+			public HRESULT get_ClientDisplay(out CLIENT_DISPLAY pClientDisplay) mut
 			{
-				return VT.get_ClientDisplay(&this, pClientDisplay);
+				return VT.get_ClientDisplay(ref this, out pClientDisplay);
 			}
 			public HRESULT put_ClientDisplay(CLIENT_DISPLAY pClientDisplay) mut
 			{
-				return VT.put_ClientDisplay(&this, pClientDisplay);
+				return VT.put_ClientDisplay(ref this, pClientDisplay);
 			}
-			public HRESULT get_ProtocolType(uint32* pVal) mut
+			public HRESULT get_ProtocolType(out uint32 pVal) mut
 			{
-				return VT.get_ProtocolType(&this, pVal);
+				return VT.get_ProtocolType(ref this, out pVal);
 			}
 			public HRESULT put_ProtocolType(uint32 Val) mut
 			{
-				return VT.put_ProtocolType(&this, Val);
+				return VT.put_ProtocolType(ref this, Val);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbSession *self, uint32* pVal) get_SessionId;
-				public new function HRESULT(ITsSbSession *self, BSTR* targetName) get_TargetName;
-				public new function HRESULT(ITsSbSession *self, BSTR targetName) put_TargetName;
-				public new function HRESULT(ITsSbSession *self, BSTR* userName) get_Username;
-				public new function HRESULT(ITsSbSession *self, BSTR* domain) get_Domain;
-				public new function HRESULT(ITsSbSession *self, TSSESSION_STATE* pState) get_State;
-				public new function HRESULT(ITsSbSession *self, TSSESSION_STATE State) put_State;
-				public new function HRESULT(ITsSbSession *self, FILETIME* pTime) get_CreateTime;
-				public new function HRESULT(ITsSbSession *self, FILETIME Time) put_CreateTime;
-				public new function HRESULT(ITsSbSession *self, FILETIME* pTime) get_DisconnectTime;
-				public new function HRESULT(ITsSbSession *self, FILETIME Time) put_DisconnectTime;
-				public new function HRESULT(ITsSbSession *self, BSTR* app) get_InitialProgram;
-				public new function HRESULT(ITsSbSession *self, BSTR Application) put_InitialProgram;
-				public new function HRESULT(ITsSbSession *self, CLIENT_DISPLAY* pClientDisplay) get_ClientDisplay;
-				public new function HRESULT(ITsSbSession *self, CLIENT_DISPLAY pClientDisplay) put_ClientDisplay;
-				public new function HRESULT(ITsSbSession *self, uint32* pVal) get_ProtocolType;
-				public new function HRESULT(ITsSbSession *self, uint32 Val) put_ProtocolType;
+				public new function HRESULT(ref ITsSbSession self, out uint32 pVal) get_SessionId;
+				public new function HRESULT(ref ITsSbSession self, out BSTR targetName) get_TargetName;
+				public new function HRESULT(ref ITsSbSession self, BSTR targetName) put_TargetName;
+				public new function HRESULT(ref ITsSbSession self, out BSTR userName) get_Username;
+				public new function HRESULT(ref ITsSbSession self, out BSTR domain) get_Domain;
+				public new function HRESULT(ref ITsSbSession self, out TSSESSION_STATE pState) get_State;
+				public new function HRESULT(ref ITsSbSession self, TSSESSION_STATE State) put_State;
+				public new function HRESULT(ref ITsSbSession self, out FILETIME pTime) get_CreateTime;
+				public new function HRESULT(ref ITsSbSession self, FILETIME Time) put_CreateTime;
+				public new function HRESULT(ref ITsSbSession self, out FILETIME pTime) get_DisconnectTime;
+				public new function HRESULT(ref ITsSbSession self, FILETIME Time) put_DisconnectTime;
+				public new function HRESULT(ref ITsSbSession self, out BSTR app) get_InitialProgram;
+				public new function HRESULT(ref ITsSbSession self, BSTR Application) put_InitialProgram;
+				public new function HRESULT(ref ITsSbSession self, out CLIENT_DISPLAY pClientDisplay) get_ClientDisplay;
+				public new function HRESULT(ref ITsSbSession self, CLIENT_DISPLAY pClientDisplay) put_ClientDisplay;
+				public new function HRESULT(ref ITsSbSession self, out uint32 pVal) get_ProtocolType;
+				public new function HRESULT(ref ITsSbSession self, uint32 Val) put_ProtocolType;
 			}
 		}
 		[CRepr]
@@ -2969,24 +2969,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NotifySessionChange(TSSESSION_STATE changeType, ITsSbSession* pSession) mut
+			public HRESULT NotifySessionChange(TSSESSION_STATE changeType, ref ITsSbSession pSession) mut
 			{
-				return VT.NotifySessionChange(&this, changeType, pSession);
+				return VT.NotifySessionChange(ref this, changeType, ref pSession);
 			}
-			public HRESULT NotifyTargetChange(uint32 TargetChangeType, ITsSbTarget* pTarget) mut
+			public HRESULT NotifyTargetChange(uint32 TargetChangeType, ref ITsSbTarget pTarget) mut
 			{
-				return VT.NotifyTargetChange(&this, TargetChangeType, pTarget);
+				return VT.NotifyTargetChange(ref this, TargetChangeType, ref pTarget);
 			}
-			public HRESULT NotifyClientConnectionStateChange(CONNECTION_CHANGE_NOTIFICATION ChangeType, ITsSbClientConnection* pConnection) mut
+			public HRESULT NotifyClientConnectionStateChange(CONNECTION_CHANGE_NOTIFICATION ChangeType, ref ITsSbClientConnection pConnection) mut
 			{
-				return VT.NotifyClientConnectionStateChange(&this, ChangeType, pConnection);
+				return VT.NotifyClientConnectionStateChange(ref this, ChangeType, ref pConnection);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbResourceNotification *self, TSSESSION_STATE changeType, ITsSbSession* pSession) NotifySessionChange;
-				public new function HRESULT(ITsSbResourceNotification *self, uint32 TargetChangeType, ITsSbTarget* pTarget) NotifyTargetChange;
-				public new function HRESULT(ITsSbResourceNotification *self, CONNECTION_CHANGE_NOTIFICATION ChangeType, ITsSbClientConnection* pConnection) NotifyClientConnectionStateChange;
+				public new function HRESULT(ref ITsSbResourceNotification self, TSSESSION_STATE changeType, ref ITsSbSession pSession) NotifySessionChange;
+				public new function HRESULT(ref ITsSbResourceNotification self, uint32 TargetChangeType, ref ITsSbTarget pTarget) NotifyTargetChange;
+				public new function HRESULT(ref ITsSbResourceNotification self, CONNECTION_CHANGE_NOTIFICATION ChangeType, ref ITsSbClientConnection pConnection) NotifyClientConnectionStateChange;
 			}
 		}
 		[CRepr]
@@ -2998,22 +2998,22 @@ namespace Win32
 			
 			public HRESULT NotifySessionChangeEx(BSTR targetName, BSTR userName, BSTR domain, uint32 sessionId, TSSESSION_STATE sessionState) mut
 			{
-				return VT.NotifySessionChangeEx(&this, targetName, userName, domain, sessionId, sessionState);
+				return VT.NotifySessionChangeEx(ref this, targetName, userName, domain, sessionId, sessionState);
 			}
 			public HRESULT NotifyTargetChangeEx(BSTR targetName, uint32 targetChangeType) mut
 			{
-				return VT.NotifyTargetChangeEx(&this, targetName, targetChangeType);
+				return VT.NotifyTargetChangeEx(ref this, targetName, targetChangeType);
 			}
 			public HRESULT NotifyClientConnectionStateChangeEx(BSTR userName, BSTR domain, BSTR initialProgram, BSTR poolName, BSTR targetName, CONNECTION_CHANGE_NOTIFICATION connectionChangeType) mut
 			{
-				return VT.NotifyClientConnectionStateChangeEx(&this, userName, domain, initialProgram, poolName, targetName, connectionChangeType);
+				return VT.NotifyClientConnectionStateChangeEx(ref this, userName, domain, initialProgram, poolName, targetName, connectionChangeType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbResourceNotificationEx *self, BSTR targetName, BSTR userName, BSTR domain, uint32 sessionId, TSSESSION_STATE sessionState) NotifySessionChangeEx;
-				public new function HRESULT(ITsSbResourceNotificationEx *self, BSTR targetName, uint32 targetChangeType) NotifyTargetChangeEx;
-				public new function HRESULT(ITsSbResourceNotificationEx *self, BSTR userName, BSTR domain, BSTR initialProgram, BSTR poolName, BSTR targetName, CONNECTION_CHANGE_NOTIFICATION connectionChangeType) NotifyClientConnectionStateChangeEx;
+				public new function HRESULT(ref ITsSbResourceNotificationEx self, BSTR targetName, BSTR userName, BSTR domain, uint32 sessionId, TSSESSION_STATE sessionState) NotifySessionChangeEx;
+				public new function HRESULT(ref ITsSbResourceNotificationEx self, BSTR targetName, uint32 targetChangeType) NotifyTargetChangeEx;
+				public new function HRESULT(ref ITsSbResourceNotificationEx self, BSTR userName, BSTR domain, BSTR initialProgram, BSTR poolName, BSTR targetName, CONNECTION_CHANGE_NOTIFICATION connectionChangeType) NotifyClientConnectionStateChangeEx;
 			}
 		}
 		[CRepr]
@@ -3023,54 +3023,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_TargetId(BSTR* pName) mut
+			public HRESULT get_TargetId(out BSTR pName) mut
 			{
-				return VT.get_TargetId(&this, pName);
+				return VT.get_TargetId(ref this, out pName);
 			}
-			public HRESULT get_StartTime(FILETIME* pStartTime) mut
+			public HRESULT get_StartTime(out FILETIME pStartTime) mut
 			{
-				return VT.get_StartTime(&this, pStartTime);
+				return VT.get_StartTime(ref this, out pStartTime);
 			}
-			public HRESULT get_EndTime(FILETIME* pEndTime) mut
+			public HRESULT get_EndTime(out FILETIME pEndTime) mut
 			{
-				return VT.get_EndTime(&this, pEndTime);
+				return VT.get_EndTime(ref this, out pEndTime);
 			}
-			public HRESULT get_Deadline(FILETIME* pDeadline) mut
+			public HRESULT get_Deadline(out FILETIME pDeadline) mut
 			{
-				return VT.get_Deadline(&this, pDeadline);
+				return VT.get_Deadline(ref this, out pDeadline);
 			}
-			public HRESULT get_Identifier(BSTR* pIdentifier) mut
+			public HRESULT get_Identifier(out BSTR pIdentifier) mut
 			{
-				return VT.get_Identifier(&this, pIdentifier);
+				return VT.get_Identifier(ref this, out pIdentifier);
 			}
-			public HRESULT get_Label(BSTR* pLabel) mut
+			public HRESULT get_Label(out BSTR pLabel) mut
 			{
-				return VT.get_Label(&this, pLabel);
+				return VT.get_Label(ref this, out pLabel);
 			}
-			public HRESULT get_Context(SAFEARRAY** pContext) mut
+			public HRESULT get_Context(out SAFEARRAY* pContext) mut
 			{
-				return VT.get_Context(&this, pContext);
+				return VT.get_Context(ref this, out pContext);
 			}
-			public HRESULT get_Plugin(BSTR* pPlugin) mut
+			public HRESULT get_Plugin(out BSTR pPlugin) mut
 			{
-				return VT.get_Plugin(&this, pPlugin);
+				return VT.get_Plugin(ref this, out pPlugin);
 			}
-			public HRESULT get_Status(RDV_TASK_STATUS* pStatus) mut
+			public HRESULT get_Status(out RDV_TASK_STATUS pStatus) mut
 			{
-				return VT.get_Status(&this, pStatus);
+				return VT.get_Status(ref this, out pStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbTaskInfo *self, BSTR* pName) get_TargetId;
-				public new function HRESULT(ITsSbTaskInfo *self, FILETIME* pStartTime) get_StartTime;
-				public new function HRESULT(ITsSbTaskInfo *self, FILETIME* pEndTime) get_EndTime;
-				public new function HRESULT(ITsSbTaskInfo *self, FILETIME* pDeadline) get_Deadline;
-				public new function HRESULT(ITsSbTaskInfo *self, BSTR* pIdentifier) get_Identifier;
-				public new function HRESULT(ITsSbTaskInfo *self, BSTR* pLabel) get_Label;
-				public new function HRESULT(ITsSbTaskInfo *self, SAFEARRAY** pContext) get_Context;
-				public new function HRESULT(ITsSbTaskInfo *self, BSTR* pPlugin) get_Plugin;
-				public new function HRESULT(ITsSbTaskInfo *self, RDV_TASK_STATUS* pStatus) get_Status;
+				public new function HRESULT(ref ITsSbTaskInfo self, out BSTR pName) get_TargetId;
+				public new function HRESULT(ref ITsSbTaskInfo self, out FILETIME pStartTime) get_StartTime;
+				public new function HRESULT(ref ITsSbTaskInfo self, out FILETIME pEndTime) get_EndTime;
+				public new function HRESULT(ref ITsSbTaskInfo self, out FILETIME pDeadline) get_Deadline;
+				public new function HRESULT(ref ITsSbTaskInfo self, out BSTR pIdentifier) get_Identifier;
+				public new function HRESULT(ref ITsSbTaskInfo self, out BSTR pLabel) get_Label;
+				public new function HRESULT(ref ITsSbTaskInfo self, out SAFEARRAY* pContext) get_Context;
+				public new function HRESULT(ref ITsSbTaskInfo self, out BSTR pPlugin) get_Plugin;
+				public new function HRESULT(ref ITsSbTaskInfo self, out RDV_TASK_STATUS pStatus) get_Status;
 			}
 		}
 		[CRepr]
@@ -3080,19 +3080,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeTaskPlugin(ITsSbTaskPluginNotifySink* pITsSbTaskPluginNotifySink) mut
+			public HRESULT InitializeTaskPlugin(ref ITsSbTaskPluginNotifySink pITsSbTaskPluginNotifySink) mut
 			{
-				return VT.InitializeTaskPlugin(&this, pITsSbTaskPluginNotifySink);
+				return VT.InitializeTaskPlugin(ref this, ref pITsSbTaskPluginNotifySink);
 			}
 			public HRESULT SetTaskQueue(BSTR pszHostName, uint32 SbTaskInfoSize, ITsSbTaskInfo** pITsSbTaskInfo) mut
 			{
-				return VT.SetTaskQueue(&this, pszHostName, SbTaskInfoSize, pITsSbTaskInfo);
+				return VT.SetTaskQueue(ref this, pszHostName, SbTaskInfoSize, pITsSbTaskInfo);
 			}
 			[CRepr]
 			public struct VTable : ITsSbPlugin.VTable
 			{
-				public new function HRESULT(ITsSbTaskPlugin *self, ITsSbTaskPluginNotifySink* pITsSbTaskPluginNotifySink) InitializeTaskPlugin;
-				public new function HRESULT(ITsSbTaskPlugin *self, BSTR pszHostName, uint32 SbTaskInfoSize, ITsSbTaskInfo** pITsSbTaskInfo) SetTaskQueue;
+				public new function HRESULT(ref ITsSbTaskPlugin self, ref ITsSbTaskPluginNotifySink pITsSbTaskPluginNotifySink) InitializeTaskPlugin;
+				public new function HRESULT(ref ITsSbTaskPlugin self, BSTR pszHostName, uint32 SbTaskInfoSize, ITsSbTaskInfo** pITsSbTaskInfo) SetTaskQueue;
 			}
 		}
 		[CRepr]
@@ -3164,17 +3164,17 @@ namespace Win32
 			
 			public HRESULT OnError(HRESULT hrError) mut
 			{
-				return VT.OnError(&this, hrError);
+				return VT.OnError(ref this, hrError);
 			}
 			public HRESULT OnReportStatus(CLIENT_MESSAGE_TYPE messageType, uint32 messageID) mut
 			{
-				return VT.OnReportStatus(&this, messageType, messageID);
+				return VT.OnReportStatus(ref this, messageType, messageID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbBaseNotifySink *self, HRESULT hrError) OnError;
-				public new function HRESULT(ITsSbBaseNotifySink *self, CLIENT_MESSAGE_TYPE messageType, uint32 messageID) OnReportStatus;
+				public new function HRESULT(ref ITsSbBaseNotifySink self, HRESULT hrError) OnError;
+				public new function HRESULT(ref ITsSbBaseNotifySink self, CLIENT_MESSAGE_TYPE messageType, uint32 messageID) OnReportStatus;
 			}
 		}
 		[CRepr]
@@ -3186,17 +3186,17 @@ namespace Win32
 			
 			public HRESULT OnInitialized(HRESULT hr) mut
 			{
-				return VT.OnInitialized(&this, hr);
+				return VT.OnInitialized(ref this, hr);
 			}
 			public HRESULT OnTerminated() mut
 			{
-				return VT.OnTerminated(&this);
+				return VT.OnTerminated(ref this);
 			}
 			[CRepr]
 			public struct VTable : ITsSbBaseNotifySink.VTable
 			{
-				public new function HRESULT(ITsSbPluginNotifySink *self, HRESULT hr) OnInitialized;
-				public new function HRESULT(ITsSbPluginNotifySink *self) OnTerminated;
+				public new function HRESULT(ref ITsSbPluginNotifySink self, HRESULT hr) OnInitialized;
+				public new function HRESULT(ref ITsSbPluginNotifySink self) OnTerminated;
 			}
 		}
 		[CRepr]
@@ -3206,14 +3206,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnGetMostSuitableTarget(ITsSbLoadBalanceResult* pLBResult, BOOL fIsNewConnection) mut
+			public HRESULT OnGetMostSuitableTarget(ref ITsSbLoadBalanceResult pLBResult, BOOL fIsNewConnection) mut
 			{
-				return VT.OnGetMostSuitableTarget(&this, pLBResult, fIsNewConnection);
+				return VT.OnGetMostSuitableTarget(ref this, ref pLBResult, fIsNewConnection);
 			}
 			[CRepr]
 			public struct VTable : ITsSbBaseNotifySink.VTable
 			{
-				public new function HRESULT(ITsSbLoadBalancingNotifySink *self, ITsSbLoadBalanceResult* pLBResult, BOOL fIsNewConnection) OnGetMostSuitableTarget;
+				public new function HRESULT(ref ITsSbLoadBalancingNotifySink self, ref ITsSbLoadBalanceResult pLBResult, BOOL fIsNewConnection) OnGetMostSuitableTarget;
 			}
 		}
 		[CRepr]
@@ -3223,14 +3223,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnQueryEnvironmentCompleted(ITsSbEnvironment* pEnvironment) mut
+			public HRESULT OnQueryEnvironmentCompleted(ref ITsSbEnvironment pEnvironment) mut
 			{
-				return VT.OnQueryEnvironmentCompleted(&this, pEnvironment);
+				return VT.OnQueryEnvironmentCompleted(ref this, ref pEnvironment);
 			}
 			[CRepr]
 			public struct VTable : ITsSbBaseNotifySink.VTable
 			{
-				public new function HRESULT(ITsSbPlacementNotifySink *self, ITsSbEnvironment* pEnvironment) OnQueryEnvironmentCompleted;
+				public new function HRESULT(ref ITsSbPlacementNotifySink self, ref ITsSbEnvironment pEnvironment) OnQueryEnvironmentCompleted;
 			}
 		}
 		[CRepr]
@@ -3240,14 +3240,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnReadyToConnect(ITsSbTarget* pTarget) mut
+			public HRESULT OnReadyToConnect(ref ITsSbTarget pTarget) mut
 			{
-				return VT.OnReadyToConnect(&this, pTarget);
+				return VT.OnReadyToConnect(ref this, ref pTarget);
 			}
 			[CRepr]
 			public struct VTable : ITsSbBaseNotifySink.VTable
 			{
-				public new function HRESULT(ITsSbOrchestrationNotifySink *self, ITsSbTarget* pTarget) OnReadyToConnect;
+				public new function HRESULT(ref ITsSbOrchestrationNotifySink self, ref ITsSbTarget pTarget) OnReadyToConnect;
 			}
 		}
 		[CRepr]
@@ -3257,29 +3257,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSetTaskTime(BSTR szTargetName, FILETIME TaskStartTime, FILETIME TaskEndTime, FILETIME TaskDeadline, BSTR szTaskLabel, BSTR szTaskIdentifier, BSTR szTaskPlugin, uint32 dwTaskStatus, SAFEARRAY* saContext) mut
+			public HRESULT OnSetTaskTime(BSTR szTargetName, FILETIME TaskStartTime, FILETIME TaskEndTime, FILETIME TaskDeadline, BSTR szTaskLabel, BSTR szTaskIdentifier, BSTR szTaskPlugin, uint32 dwTaskStatus, ref SAFEARRAY saContext) mut
 			{
-				return VT.OnSetTaskTime(&this, szTargetName, TaskStartTime, TaskEndTime, TaskDeadline, szTaskLabel, szTaskIdentifier, szTaskPlugin, dwTaskStatus, saContext);
+				return VT.OnSetTaskTime(ref this, szTargetName, TaskStartTime, TaskEndTime, TaskDeadline, szTaskLabel, szTaskIdentifier, szTaskPlugin, dwTaskStatus, ref saContext);
 			}
 			public HRESULT OnDeleteTaskTime(BSTR szTargetName, BSTR szTaskIdentifier) mut
 			{
-				return VT.OnDeleteTaskTime(&this, szTargetName, szTaskIdentifier);
+				return VT.OnDeleteTaskTime(ref this, szTargetName, szTaskIdentifier);
 			}
 			public HRESULT OnUpdateTaskStatus(BSTR szTargetName, BSTR TaskIdentifier, RDV_TASK_STATUS TaskStatus) mut
 			{
-				return VT.OnUpdateTaskStatus(&this, szTargetName, TaskIdentifier, TaskStatus);
+				return VT.OnUpdateTaskStatus(ref this, szTargetName, TaskIdentifier, TaskStatus);
 			}
 			public HRESULT OnReportTasks(BSTR szHostName) mut
 			{
-				return VT.OnReportTasks(&this, szHostName);
+				return VT.OnReportTasks(ref this, szHostName);
 			}
 			[CRepr]
 			public struct VTable : ITsSbBaseNotifySink.VTable
 			{
-				public new function HRESULT(ITsSbTaskPluginNotifySink *self, BSTR szTargetName, FILETIME TaskStartTime, FILETIME TaskEndTime, FILETIME TaskDeadline, BSTR szTaskLabel, BSTR szTaskIdentifier, BSTR szTaskPlugin, uint32 dwTaskStatus, SAFEARRAY* saContext) OnSetTaskTime;
-				public new function HRESULT(ITsSbTaskPluginNotifySink *self, BSTR szTargetName, BSTR szTaskIdentifier) OnDeleteTaskTime;
-				public new function HRESULT(ITsSbTaskPluginNotifySink *self, BSTR szTargetName, BSTR TaskIdentifier, RDV_TASK_STATUS TaskStatus) OnUpdateTaskStatus;
-				public new function HRESULT(ITsSbTaskPluginNotifySink *self, BSTR szHostName) OnReportTasks;
+				public new function HRESULT(ref ITsSbTaskPluginNotifySink self, BSTR szTargetName, FILETIME TaskStartTime, FILETIME TaskEndTime, FILETIME TaskDeadline, BSTR szTaskLabel, BSTR szTaskIdentifier, BSTR szTaskPlugin, uint32 dwTaskStatus, ref SAFEARRAY saContext) OnSetTaskTime;
+				public new function HRESULT(ref ITsSbTaskPluginNotifySink self, BSTR szTargetName, BSTR szTaskIdentifier) OnDeleteTaskTime;
+				public new function HRESULT(ref ITsSbTaskPluginNotifySink self, BSTR szTargetName, BSTR TaskIdentifier, RDV_TASK_STATUS TaskStatus) OnUpdateTaskStatus;
+				public new function HRESULT(ref ITsSbTaskPluginNotifySink self, BSTR szHostName) OnReportTasks;
 			}
 		}
 		[CRepr]
@@ -3289,84 +3289,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_UserName(BSTR* pVal) mut
+			public HRESULT get_UserName(out BSTR pVal) mut
 			{
-				return VT.get_UserName(&this, pVal);
+				return VT.get_UserName(ref this, out pVal);
 			}
-			public HRESULT get_Domain(BSTR* pVal) mut
+			public HRESULT get_Domain(out BSTR pVal) mut
 			{
-				return VT.get_Domain(&this, pVal);
+				return VT.get_Domain(ref this, out pVal);
 			}
-			public HRESULT get_InitialProgram(BSTR* pVal) mut
+			public HRESULT get_InitialProgram(out BSTR pVal) mut
 			{
-				return VT.get_InitialProgram(&this, pVal);
+				return VT.get_InitialProgram(ref this, out pVal);
 			}
-			public HRESULT get_LoadBalanceResult(ITsSbLoadBalanceResult** ppVal) mut
+			public HRESULT get_LoadBalanceResult(out ITsSbLoadBalanceResult* ppVal) mut
 			{
-				return VT.get_LoadBalanceResult(&this, ppVal);
+				return VT.get_LoadBalanceResult(ref this, out ppVal);
 			}
-			public HRESULT get_FarmName(BSTR* pVal) mut
+			public HRESULT get_FarmName(out BSTR pVal) mut
 			{
-				return VT.get_FarmName(&this, pVal);
+				return VT.get_FarmName(ref this, out pVal);
 			}
 			public HRESULT PutContext(BSTR contextId, VARIANT context, VARIANT* existingContext) mut
 			{
-				return VT.PutContext(&this, contextId, context, existingContext);
+				return VT.PutContext(ref this, contextId, context, existingContext);
 			}
-			public HRESULT GetContext(BSTR contextId, VARIANT* context) mut
+			public HRESULT GetContext(BSTR contextId, out VARIANT context) mut
 			{
-				return VT.GetContext(&this, contextId, context);
+				return VT.GetContext(ref this, contextId, out context);
 			}
-			public HRESULT get_Environment(ITsSbEnvironment** ppEnvironment) mut
+			public HRESULT get_Environment(out ITsSbEnvironment* ppEnvironment) mut
 			{
-				return VT.get_Environment(&this, ppEnvironment);
+				return VT.get_Environment(ref this, out ppEnvironment);
 			}
 			public HRESULT get_ConnectionError() mut
 			{
-				return VT.get_ConnectionError(&this);
+				return VT.get_ConnectionError(ref this);
 			}
-			public HRESULT get_SamUserAccount(BSTR* pVal) mut
+			public HRESULT get_SamUserAccount(out BSTR pVal) mut
 			{
-				return VT.get_SamUserAccount(&this, pVal);
+				return VT.get_SamUserAccount(ref this, out pVal);
 			}
-			public HRESULT get_ClientConnectionPropertySet(ITsSbClientConnectionPropertySet** ppPropertySet) mut
+			public HRESULT get_ClientConnectionPropertySet(out ITsSbClientConnectionPropertySet* ppPropertySet) mut
 			{
-				return VT.get_ClientConnectionPropertySet(&this, ppPropertySet);
+				return VT.get_ClientConnectionPropertySet(ref this, out ppPropertySet);
 			}
-			public HRESULT get_IsFirstAssignment(BOOL* ppVal) mut
+			public HRESULT get_IsFirstAssignment(out BOOL ppVal) mut
 			{
-				return VT.get_IsFirstAssignment(&this, ppVal);
+				return VT.get_IsFirstAssignment(ref this, out ppVal);
 			}
-			public HRESULT get_RdFarmType(RD_FARM_TYPE* pRdFarmType) mut
+			public HRESULT get_RdFarmType(out RD_FARM_TYPE pRdFarmType) mut
 			{
-				return VT.get_RdFarmType(&this, pRdFarmType);
+				return VT.get_RdFarmType(ref this, out pRdFarmType);
 			}
-			public HRESULT get_UserSidString(int8** pszUserSidString) mut
+			public HRESULT get_UserSidString(out int8* pszUserSidString) mut
 			{
-				return VT.get_UserSidString(&this, pszUserSidString);
+				return VT.get_UserSidString(ref this, out pszUserSidString);
 			}
-			public HRESULT GetDisconnectedSession(ITsSbSession** ppSession) mut
+			public HRESULT GetDisconnectedSession(out ITsSbSession* ppSession) mut
 			{
-				return VT.GetDisconnectedSession(&this, ppSession);
+				return VT.GetDisconnectedSession(ref this, out ppSession);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_UserName;
-				public new function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_Domain;
-				public new function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_InitialProgram;
-				public new function HRESULT(ITsSbClientConnection *self, ITsSbLoadBalanceResult** ppVal) get_LoadBalanceResult;
-				public new function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_FarmName;
-				public new function HRESULT(ITsSbClientConnection *self, BSTR contextId, VARIANT context, VARIANT* existingContext) PutContext;
-				public new function HRESULT(ITsSbClientConnection *self, BSTR contextId, VARIANT* context) GetContext;
-				public new function HRESULT(ITsSbClientConnection *self, ITsSbEnvironment** ppEnvironment) get_Environment;
-				public new function HRESULT(ITsSbClientConnection *self) get_ConnectionError;
-				public new function HRESULT(ITsSbClientConnection *self, BSTR* pVal) get_SamUserAccount;
-				public new function HRESULT(ITsSbClientConnection *self, ITsSbClientConnectionPropertySet** ppPropertySet) get_ClientConnectionPropertySet;
-				public new function HRESULT(ITsSbClientConnection *self, BOOL* ppVal) get_IsFirstAssignment;
-				public new function HRESULT(ITsSbClientConnection *self, RD_FARM_TYPE* pRdFarmType) get_RdFarmType;
-				public new function HRESULT(ITsSbClientConnection *self, int8** pszUserSidString) get_UserSidString;
-				public new function HRESULT(ITsSbClientConnection *self, ITsSbSession** ppSession) GetDisconnectedSession;
+				public new function HRESULT(ref ITsSbClientConnection self, out BSTR pVal) get_UserName;
+				public new function HRESULT(ref ITsSbClientConnection self, out BSTR pVal) get_Domain;
+				public new function HRESULT(ref ITsSbClientConnection self, out BSTR pVal) get_InitialProgram;
+				public new function HRESULT(ref ITsSbClientConnection self, out ITsSbLoadBalanceResult* ppVal) get_LoadBalanceResult;
+				public new function HRESULT(ref ITsSbClientConnection self, out BSTR pVal) get_FarmName;
+				public new function HRESULT(ref ITsSbClientConnection self, BSTR contextId, VARIANT context, VARIANT* existingContext) PutContext;
+				public new function HRESULT(ref ITsSbClientConnection self, BSTR contextId, out VARIANT context) GetContext;
+				public new function HRESULT(ref ITsSbClientConnection self, out ITsSbEnvironment* ppEnvironment) get_Environment;
+				public new function HRESULT(ref ITsSbClientConnection self) get_ConnectionError;
+				public new function HRESULT(ref ITsSbClientConnection self, out BSTR pVal) get_SamUserAccount;
+				public new function HRESULT(ref ITsSbClientConnection self, out ITsSbClientConnectionPropertySet* ppPropertySet) get_ClientConnectionPropertySet;
+				public new function HRESULT(ref ITsSbClientConnection self, out BOOL ppVal) get_IsFirstAssignment;
+				public new function HRESULT(ref ITsSbClientConnection self, out RD_FARM_TYPE pRdFarmType) get_RdFarmType;
+				public new function HRESULT(ref ITsSbClientConnection self, out int8* pszUserSidString) get_UserSidString;
+				public new function HRESULT(ref ITsSbClientConnection self, out ITsSbSession* ppSession) GetDisconnectedSession;
 			}
 		}
 		[CRepr]
@@ -3376,69 +3376,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateTargetObject(BSTR TargetName, BSTR EnvironmentName, ITsSbTarget** ppTarget) mut
+			public HRESULT CreateTargetObject(BSTR TargetName, BSTR EnvironmentName, out ITsSbTarget* ppTarget) mut
 			{
-				return VT.CreateTargetObject(&this, TargetName, EnvironmentName, ppTarget);
+				return VT.CreateTargetObject(ref this, TargetName, EnvironmentName, out ppTarget);
 			}
-			public HRESULT CreateLoadBalanceResultObject(BSTR TargetName, ITsSbLoadBalanceResult** ppLBResult) mut
+			public HRESULT CreateLoadBalanceResultObject(BSTR TargetName, out ITsSbLoadBalanceResult* ppLBResult) mut
 			{
-				return VT.CreateLoadBalanceResultObject(&this, TargetName, ppLBResult);
+				return VT.CreateLoadBalanceResultObject(ref this, TargetName, out ppLBResult);
 			}
-			public HRESULT CreateSessionObject(BSTR TargetName, BSTR UserName, BSTR Domain, uint32 SessionId, ITsSbSession** ppSession) mut
+			public HRESULT CreateSessionObject(BSTR TargetName, BSTR UserName, BSTR Domain, uint32 SessionId, out ITsSbSession* ppSession) mut
 			{
-				return VT.CreateSessionObject(&this, TargetName, UserName, Domain, SessionId, ppSession);
+				return VT.CreateSessionObject(ref this, TargetName, UserName, Domain, SessionId, out ppSession);
 			}
-			public HRESULT CreatePluginPropertySet(ITsSbPluginPropertySet** ppPropertySet) mut
+			public HRESULT CreatePluginPropertySet(out ITsSbPluginPropertySet* ppPropertySet) mut
 			{
-				return VT.CreatePluginPropertySet(&this, ppPropertySet);
+				return VT.CreatePluginPropertySet(ref this, out ppPropertySet);
 			}
-			public HRESULT CreateTargetPropertySetObject(ITsSbTargetPropertySet** ppPropertySet) mut
+			public HRESULT CreateTargetPropertySetObject(out ITsSbTargetPropertySet* ppPropertySet) mut
 			{
-				return VT.CreateTargetPropertySetObject(&this, ppPropertySet);
+				return VT.CreateTargetPropertySetObject(ref this, out ppPropertySet);
 			}
-			public HRESULT CreateEnvironmentObject(BSTR Name, uint32 ServerWeight, ITsSbEnvironment** ppEnvironment) mut
+			public HRESULT CreateEnvironmentObject(BSTR Name, uint32 ServerWeight, out ITsSbEnvironment* ppEnvironment) mut
 			{
-				return VT.CreateEnvironmentObject(&this, Name, ServerWeight, ppEnvironment);
+				return VT.CreateEnvironmentObject(ref this, Name, ServerWeight, out ppEnvironment);
 			}
-			public HRESULT GetResourcePluginStore(ITsSbResourcePluginStore** ppStore) mut
+			public HRESULT GetResourcePluginStore(out ITsSbResourcePluginStore* ppStore) mut
 			{
-				return VT.GetResourcePluginStore(&this, ppStore);
+				return VT.GetResourcePluginStore(ref this, out ppStore);
 			}
-			public HRESULT GetFilterPluginStore(ITsSbFilterPluginStore** ppStore) mut
+			public HRESULT GetFilterPluginStore(out ITsSbFilterPluginStore* ppStore) mut
 			{
-				return VT.GetFilterPluginStore(&this, ppStore);
+				return VT.GetFilterPluginStore(ref this, out ppStore);
 			}
-			public HRESULT RegisterForNotification(uint32 notificationType, BSTR ResourceToMonitor, ITsSbResourceNotification* pPluginNotification) mut
+			public HRESULT RegisterForNotification(uint32 notificationType, BSTR ResourceToMonitor, ref ITsSbResourceNotification pPluginNotification) mut
 			{
-				return VT.RegisterForNotification(&this, notificationType, ResourceToMonitor, pPluginNotification);
+				return VT.RegisterForNotification(ref this, notificationType, ResourceToMonitor, ref pPluginNotification);
 			}
 			public HRESULT UnRegisterForNotification(uint32 notificationType, BSTR ResourceToMonitor) mut
 			{
-				return VT.UnRegisterForNotification(&this, notificationType, ResourceToMonitor);
+				return VT.UnRegisterForNotification(ref this, notificationType, ResourceToMonitor);
 			}
-			public HRESULT GetInstanceOfGlobalStore(ITsSbGlobalStore** ppGlobalStore) mut
+			public HRESULT GetInstanceOfGlobalStore(out ITsSbGlobalStore* ppGlobalStore) mut
 			{
-				return VT.GetInstanceOfGlobalStore(&this, ppGlobalStore);
+				return VT.GetInstanceOfGlobalStore(ref this, out ppGlobalStore);
 			}
-			public HRESULT CreateEnvironmentPropertySetObject(ITsSbEnvironmentPropertySet** ppPropertySet) mut
+			public HRESULT CreateEnvironmentPropertySetObject(out ITsSbEnvironmentPropertySet* ppPropertySet) mut
 			{
-				return VT.CreateEnvironmentPropertySetObject(&this, ppPropertySet);
+				return VT.CreateEnvironmentPropertySetObject(ref this, out ppPropertySet);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbProvider *self, BSTR TargetName, BSTR EnvironmentName, ITsSbTarget** ppTarget) CreateTargetObject;
-				public new function HRESULT(ITsSbProvider *self, BSTR TargetName, ITsSbLoadBalanceResult** ppLBResult) CreateLoadBalanceResultObject;
-				public new function HRESULT(ITsSbProvider *self, BSTR TargetName, BSTR UserName, BSTR Domain, uint32 SessionId, ITsSbSession** ppSession) CreateSessionObject;
-				public new function HRESULT(ITsSbProvider *self, ITsSbPluginPropertySet** ppPropertySet) CreatePluginPropertySet;
-				public new function HRESULT(ITsSbProvider *self, ITsSbTargetPropertySet** ppPropertySet) CreateTargetPropertySetObject;
-				public new function HRESULT(ITsSbProvider *self, BSTR Name, uint32 ServerWeight, ITsSbEnvironment** ppEnvironment) CreateEnvironmentObject;
-				public new function HRESULT(ITsSbProvider *self, ITsSbResourcePluginStore** ppStore) GetResourcePluginStore;
-				public new function HRESULT(ITsSbProvider *self, ITsSbFilterPluginStore** ppStore) GetFilterPluginStore;
-				public new function HRESULT(ITsSbProvider *self, uint32 notificationType, BSTR ResourceToMonitor, ITsSbResourceNotification* pPluginNotification) RegisterForNotification;
-				public new function HRESULT(ITsSbProvider *self, uint32 notificationType, BSTR ResourceToMonitor) UnRegisterForNotification;
-				public new function HRESULT(ITsSbProvider *self, ITsSbGlobalStore** ppGlobalStore) GetInstanceOfGlobalStore;
-				public new function HRESULT(ITsSbProvider *self, ITsSbEnvironmentPropertySet** ppPropertySet) CreateEnvironmentPropertySetObject;
+				public new function HRESULT(ref ITsSbProvider self, BSTR TargetName, BSTR EnvironmentName, out ITsSbTarget* ppTarget) CreateTargetObject;
+				public new function HRESULT(ref ITsSbProvider self, BSTR TargetName, out ITsSbLoadBalanceResult* ppLBResult) CreateLoadBalanceResultObject;
+				public new function HRESULT(ref ITsSbProvider self, BSTR TargetName, BSTR UserName, BSTR Domain, uint32 SessionId, out ITsSbSession* ppSession) CreateSessionObject;
+				public new function HRESULT(ref ITsSbProvider self, out ITsSbPluginPropertySet* ppPropertySet) CreatePluginPropertySet;
+				public new function HRESULT(ref ITsSbProvider self, out ITsSbTargetPropertySet* ppPropertySet) CreateTargetPropertySetObject;
+				public new function HRESULT(ref ITsSbProvider self, BSTR Name, uint32 ServerWeight, out ITsSbEnvironment* ppEnvironment) CreateEnvironmentObject;
+				public new function HRESULT(ref ITsSbProvider self, out ITsSbResourcePluginStore* ppStore) GetResourcePluginStore;
+				public new function HRESULT(ref ITsSbProvider self, out ITsSbFilterPluginStore* ppStore) GetFilterPluginStore;
+				public new function HRESULT(ref ITsSbProvider self, uint32 notificationType, BSTR ResourceToMonitor, ref ITsSbResourceNotification pPluginNotification) RegisterForNotification;
+				public new function HRESULT(ref ITsSbProvider self, uint32 notificationType, BSTR ResourceToMonitor) UnRegisterForNotification;
+				public new function HRESULT(ref ITsSbProvider self, out ITsSbGlobalStore* ppGlobalStore) GetInstanceOfGlobalStore;
+				public new function HRESULT(ref ITsSbProvider self, out ITsSbEnvironmentPropertySet* ppPropertySet) CreateEnvironmentPropertySetObject;
 			}
 		}
 		[CRepr]
@@ -3448,149 +3448,149 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryTarget(BSTR TargetName, BSTR FarmName, ITsSbTarget** ppTarget) mut
+			public HRESULT QueryTarget(BSTR TargetName, BSTR FarmName, out ITsSbTarget* ppTarget) mut
 			{
-				return VT.QueryTarget(&this, TargetName, FarmName, ppTarget);
+				return VT.QueryTarget(ref this, TargetName, FarmName, out ppTarget);
 			}
-			public HRESULT QuerySessionBySessionId(uint32 dwSessionId, BSTR TargetName, ITsSbSession** ppSession) mut
+			public HRESULT QuerySessionBySessionId(uint32 dwSessionId, BSTR TargetName, out ITsSbSession* ppSession) mut
 			{
-				return VT.QuerySessionBySessionId(&this, dwSessionId, TargetName, ppSession);
+				return VT.QuerySessionBySessionId(ref this, dwSessionId, TargetName, out ppSession);
 			}
-			public HRESULT AddTargetToStore(ITsSbTarget* pTarget) mut
+			public HRESULT AddTargetToStore(ref ITsSbTarget pTarget) mut
 			{
-				return VT.AddTargetToStore(&this, pTarget);
+				return VT.AddTargetToStore(ref this, ref pTarget);
 			}
-			public HRESULT AddSessionToStore(ITsSbSession* pSession) mut
+			public HRESULT AddSessionToStore(ref ITsSbSession pSession) mut
 			{
-				return VT.AddSessionToStore(&this, pSession);
+				return VT.AddSessionToStore(ref this, ref pSession);
 			}
-			public HRESULT AddEnvironmentToStore(ITsSbEnvironment* pEnvironment) mut
+			public HRESULT AddEnvironmentToStore(ref ITsSbEnvironment pEnvironment) mut
 			{
-				return VT.AddEnvironmentToStore(&this, pEnvironment);
+				return VT.AddEnvironmentToStore(ref this, ref pEnvironment);
 			}
 			public HRESULT RemoveEnvironmentFromStore(BSTR EnvironmentName, BOOL bIgnoreOwner) mut
 			{
-				return VT.RemoveEnvironmentFromStore(&this, EnvironmentName, bIgnoreOwner);
+				return VT.RemoveEnvironmentFromStore(ref this, EnvironmentName, bIgnoreOwner);
 			}
-			public HRESULT EnumerateFarms(uint32* pdwCount, SAFEARRAY** pVal) mut
+			public HRESULT EnumerateFarms(out uint32 pdwCount, out SAFEARRAY* pVal) mut
 			{
-				return VT.EnumerateFarms(&this, pdwCount, pVal);
+				return VT.EnumerateFarms(ref this, out pdwCount, out pVal);
 			}
-			public HRESULT QueryEnvironment(BSTR EnvironmentName, ITsSbEnvironment** ppEnvironment) mut
+			public HRESULT QueryEnvironment(BSTR EnvironmentName, out ITsSbEnvironment* ppEnvironment) mut
 			{
-				return VT.QueryEnvironment(&this, EnvironmentName, ppEnvironment);
+				return VT.QueryEnvironment(ref this, EnvironmentName, out ppEnvironment);
 			}
-			public HRESULT EnumerateEnvironments(uint32* pdwCount, ITsSbEnvironment*** pVal) mut
+			public HRESULT EnumerateEnvironments(out uint32 pdwCount, ITsSbEnvironment*** pVal) mut
 			{
-				return VT.EnumerateEnvironments(&this, pdwCount, pVal);
+				return VT.EnumerateEnvironments(ref this, out pdwCount, pVal);
 			}
-			public HRESULT SaveTarget(ITsSbTarget* pTarget, BOOL bForceWrite) mut
+			public HRESULT SaveTarget(ref ITsSbTarget pTarget, BOOL bForceWrite) mut
 			{
-				return VT.SaveTarget(&this, pTarget, bForceWrite);
+				return VT.SaveTarget(ref this, ref pTarget, bForceWrite);
 			}
-			public HRESULT SaveEnvironment(ITsSbEnvironment* pEnvironment, BOOL bForceWrite) mut
+			public HRESULT SaveEnvironment(ref ITsSbEnvironment pEnvironment, BOOL bForceWrite) mut
 			{
-				return VT.SaveEnvironment(&this, pEnvironment, bForceWrite);
+				return VT.SaveEnvironment(ref this, ref pEnvironment, bForceWrite);
 			}
-			public HRESULT SaveSession(ITsSbSession* pSession) mut
+			public HRESULT SaveSession(ref ITsSbSession pSession) mut
 			{
-				return VT.SaveSession(&this, pSession);
+				return VT.SaveSession(ref this, ref pSession);
 			}
-			public HRESULT SetTargetProperty(BSTR TargetName, BSTR PropertyName, VARIANT* pProperty) mut
+			public HRESULT SetTargetProperty(BSTR TargetName, BSTR PropertyName, ref VARIANT pProperty) mut
 			{
-				return VT.SetTargetProperty(&this, TargetName, PropertyName, pProperty);
+				return VT.SetTargetProperty(ref this, TargetName, PropertyName, ref pProperty);
 			}
-			public HRESULT SetEnvironmentProperty(BSTR EnvironmentName, BSTR PropertyName, VARIANT* pProperty) mut
+			public HRESULT SetEnvironmentProperty(BSTR EnvironmentName, BSTR PropertyName, ref VARIANT pProperty) mut
 			{
-				return VT.SetEnvironmentProperty(&this, EnvironmentName, PropertyName, pProperty);
+				return VT.SetEnvironmentProperty(ref this, EnvironmentName, PropertyName, ref pProperty);
 			}
-			public HRESULT SetTargetState(BSTR targetName, TARGET_STATE newState, TARGET_STATE* pOldState) mut
+			public HRESULT SetTargetState(BSTR targetName, TARGET_STATE newState, out TARGET_STATE pOldState) mut
 			{
-				return VT.SetTargetState(&this, targetName, newState, pOldState);
+				return VT.SetTargetState(ref this, targetName, newState, out pOldState);
 			}
-			public HRESULT SetSessionState(ITsSbSession* sbSession) mut
+			public HRESULT SetSessionState(ref ITsSbSession sbSession) mut
 			{
-				return VT.SetSessionState(&this, sbSession);
+				return VT.SetSessionState(ref this, ref sbSession);
 			}
-			public HRESULT EnumerateTargets(BSTR FarmName, BSTR EnvName, TS_SB_SORT_BY sortByFieldId, BSTR sortyByPropName, uint32* pdwCount, ITsSbTarget*** pVal) mut
+			public HRESULT EnumerateTargets(BSTR FarmName, BSTR EnvName, TS_SB_SORT_BY sortByFieldId, BSTR sortyByPropName, out uint32 pdwCount, ITsSbTarget*** pVal) mut
 			{
-				return VT.EnumerateTargets(&this, FarmName, EnvName, sortByFieldId, sortyByPropName, pdwCount, pVal);
+				return VT.EnumerateTargets(ref this, FarmName, EnvName, sortByFieldId, sortyByPropName, out pdwCount, pVal);
 			}
-			public HRESULT EnumerateSessions(BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, TSSESSION_STATE* pSessionState, uint32* pdwCount, ITsSbSession*** ppVal) mut
+			public HRESULT EnumerateSessions(BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, ref TSSESSION_STATE pSessionState, out uint32 pdwCount, ITsSbSession*** ppVal) mut
 			{
-				return VT.EnumerateSessions(&this, targetName, userName, userDomain, poolName, initialProgram, pSessionState, pdwCount, ppVal);
+				return VT.EnumerateSessions(ref this, targetName, userName, userDomain, poolName, initialProgram, ref pSessionState, out pdwCount, ppVal);
 			}
-			public HRESULT GetFarmProperty(BSTR farmName, BSTR propertyName, VARIANT* pVarValue) mut
+			public HRESULT GetFarmProperty(BSTR farmName, BSTR propertyName, ref VARIANT pVarValue) mut
 			{
-				return VT.GetFarmProperty(&this, farmName, propertyName, pVarValue);
+				return VT.GetFarmProperty(ref this, farmName, propertyName, ref pVarValue);
 			}
 			public HRESULT DeleteTarget(BSTR targetName, BSTR hostName) mut
 			{
-				return VT.DeleteTarget(&this, targetName, hostName);
+				return VT.DeleteTarget(ref this, targetName, hostName);
 			}
-			public HRESULT SetTargetPropertyWithVersionCheck(ITsSbTarget* pTarget, BSTR PropertyName, VARIANT* pProperty) mut
+			public HRESULT SetTargetPropertyWithVersionCheck(ref ITsSbTarget pTarget, BSTR PropertyName, ref VARIANT pProperty) mut
 			{
-				return VT.SetTargetPropertyWithVersionCheck(&this, pTarget, PropertyName, pProperty);
+				return VT.SetTargetPropertyWithVersionCheck(ref this, ref pTarget, PropertyName, ref pProperty);
 			}
-			public HRESULT SetEnvironmentPropertyWithVersionCheck(ITsSbEnvironment* pEnvironment, BSTR PropertyName, VARIANT* pProperty) mut
+			public HRESULT SetEnvironmentPropertyWithVersionCheck(ref ITsSbEnvironment pEnvironment, BSTR PropertyName, ref VARIANT pProperty) mut
 			{
-				return VT.SetEnvironmentPropertyWithVersionCheck(&this, pEnvironment, PropertyName, pProperty);
+				return VT.SetEnvironmentPropertyWithVersionCheck(ref this, ref pEnvironment, PropertyName, ref pProperty);
 			}
-			public HRESULT AcquireTargetLock(BSTR targetName, uint32 dwTimeout, IUnknown** ppContext) mut
+			public HRESULT AcquireTargetLock(BSTR targetName, uint32 dwTimeout, out IUnknown* ppContext) mut
 			{
-				return VT.AcquireTargetLock(&this, targetName, dwTimeout, ppContext);
+				return VT.AcquireTargetLock(ref this, targetName, dwTimeout, out ppContext);
 			}
-			public HRESULT ReleaseTargetLock(IUnknown* pContext) mut
+			public HRESULT ReleaseTargetLock(ref IUnknown pContext) mut
 			{
-				return VT.ReleaseTargetLock(&this, pContext);
+				return VT.ReleaseTargetLock(ref this, ref pContext);
 			}
-			public HRESULT TestAndSetServerState(BSTR PoolName, BSTR ServerFQDN, TARGET_STATE NewState, TARGET_STATE TestState, TARGET_STATE* pInitState) mut
+			public HRESULT TestAndSetServerState(BSTR PoolName, BSTR ServerFQDN, TARGET_STATE NewState, TARGET_STATE TestState, out TARGET_STATE pInitState) mut
 			{
-				return VT.TestAndSetServerState(&this, PoolName, ServerFQDN, NewState, TestState, pInitState);
+				return VT.TestAndSetServerState(ref this, PoolName, ServerFQDN, NewState, TestState, out pInitState);
 			}
 			public HRESULT SetServerWaitingToStart(BSTR PoolName, BSTR serverName) mut
 			{
-				return VT.SetServerWaitingToStart(&this, PoolName, serverName);
+				return VT.SetServerWaitingToStart(ref this, PoolName, serverName);
 			}
-			public HRESULT GetServerState(BSTR PoolName, BSTR ServerFQDN, TARGET_STATE* pState) mut
+			public HRESULT GetServerState(BSTR PoolName, BSTR ServerFQDN, out TARGET_STATE pState) mut
 			{
-				return VT.GetServerState(&this, PoolName, ServerFQDN, pState);
+				return VT.GetServerState(ref this, PoolName, ServerFQDN, out pState);
 			}
 			public HRESULT SetServerDrainMode(BSTR ServerFQDN, uint32 DrainMode) mut
 			{
-				return VT.SetServerDrainMode(&this, ServerFQDN, DrainMode);
+				return VT.SetServerDrainMode(ref this, ServerFQDN, DrainMode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR TargetName, BSTR FarmName, ITsSbTarget** ppTarget) QueryTarget;
-				public new function HRESULT(ITsSbResourcePluginStore *self, uint32 dwSessionId, BSTR TargetName, ITsSbSession** ppSession) QuerySessionBySessionId;
-				public new function HRESULT(ITsSbResourcePluginStore *self, ITsSbTarget* pTarget) AddTargetToStore;
-				public new function HRESULT(ITsSbResourcePluginStore *self, ITsSbSession* pSession) AddSessionToStore;
-				public new function HRESULT(ITsSbResourcePluginStore *self, ITsSbEnvironment* pEnvironment) AddEnvironmentToStore;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR EnvironmentName, BOOL bIgnoreOwner) RemoveEnvironmentFromStore;
-				public new function HRESULT(ITsSbResourcePluginStore *self, uint32* pdwCount, SAFEARRAY** pVal) EnumerateFarms;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR EnvironmentName, ITsSbEnvironment** ppEnvironment) QueryEnvironment;
-				public new function HRESULT(ITsSbResourcePluginStore *self, uint32* pdwCount, ITsSbEnvironment*** pVal) EnumerateEnvironments;
-				public new function HRESULT(ITsSbResourcePluginStore *self, ITsSbTarget* pTarget, BOOL bForceWrite) SaveTarget;
-				public new function HRESULT(ITsSbResourcePluginStore *self, ITsSbEnvironment* pEnvironment, BOOL bForceWrite) SaveEnvironment;
-				public new function HRESULT(ITsSbResourcePluginStore *self, ITsSbSession* pSession) SaveSession;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR TargetName, BSTR PropertyName, VARIANT* pProperty) SetTargetProperty;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR EnvironmentName, BSTR PropertyName, VARIANT* pProperty) SetEnvironmentProperty;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR targetName, TARGET_STATE newState, TARGET_STATE* pOldState) SetTargetState;
-				public new function HRESULT(ITsSbResourcePluginStore *self, ITsSbSession* sbSession) SetSessionState;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR FarmName, BSTR EnvName, TS_SB_SORT_BY sortByFieldId, BSTR sortyByPropName, uint32* pdwCount, ITsSbTarget*** pVal) EnumerateTargets;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, TSSESSION_STATE* pSessionState, uint32* pdwCount, ITsSbSession*** ppVal) EnumerateSessions;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR farmName, BSTR propertyName, VARIANT* pVarValue) GetFarmProperty;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR targetName, BSTR hostName) DeleteTarget;
-				public new function HRESULT(ITsSbResourcePluginStore *self, ITsSbTarget* pTarget, BSTR PropertyName, VARIANT* pProperty) SetTargetPropertyWithVersionCheck;
-				public new function HRESULT(ITsSbResourcePluginStore *self, ITsSbEnvironment* pEnvironment, BSTR PropertyName, VARIANT* pProperty) SetEnvironmentPropertyWithVersionCheck;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR targetName, uint32 dwTimeout, IUnknown** ppContext) AcquireTargetLock;
-				public new function HRESULT(ITsSbResourcePluginStore *self, IUnknown* pContext) ReleaseTargetLock;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR PoolName, BSTR ServerFQDN, TARGET_STATE NewState, TARGET_STATE TestState, TARGET_STATE* pInitState) TestAndSetServerState;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR PoolName, BSTR serverName) SetServerWaitingToStart;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR PoolName, BSTR ServerFQDN, TARGET_STATE* pState) GetServerState;
-				public new function HRESULT(ITsSbResourcePluginStore *self, BSTR ServerFQDN, uint32 DrainMode) SetServerDrainMode;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR TargetName, BSTR FarmName, out ITsSbTarget* ppTarget) QueryTarget;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, uint32 dwSessionId, BSTR TargetName, out ITsSbSession* ppSession) QuerySessionBySessionId;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref ITsSbTarget pTarget) AddTargetToStore;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref ITsSbSession pSession) AddSessionToStore;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref ITsSbEnvironment pEnvironment) AddEnvironmentToStore;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR EnvironmentName, BOOL bIgnoreOwner) RemoveEnvironmentFromStore;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, out uint32 pdwCount, out SAFEARRAY* pVal) EnumerateFarms;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR EnvironmentName, out ITsSbEnvironment* ppEnvironment) QueryEnvironment;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, out uint32 pdwCount, ITsSbEnvironment*** pVal) EnumerateEnvironments;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref ITsSbTarget pTarget, BOOL bForceWrite) SaveTarget;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref ITsSbEnvironment pEnvironment, BOOL bForceWrite) SaveEnvironment;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref ITsSbSession pSession) SaveSession;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR TargetName, BSTR PropertyName, ref VARIANT pProperty) SetTargetProperty;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR EnvironmentName, BSTR PropertyName, ref VARIANT pProperty) SetEnvironmentProperty;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR targetName, TARGET_STATE newState, out TARGET_STATE pOldState) SetTargetState;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref ITsSbSession sbSession) SetSessionState;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR FarmName, BSTR EnvName, TS_SB_SORT_BY sortByFieldId, BSTR sortyByPropName, out uint32 pdwCount, ITsSbTarget*** pVal) EnumerateTargets;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, ref TSSESSION_STATE pSessionState, out uint32 pdwCount, ITsSbSession*** ppVal) EnumerateSessions;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR farmName, BSTR propertyName, ref VARIANT pVarValue) GetFarmProperty;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR targetName, BSTR hostName) DeleteTarget;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref ITsSbTarget pTarget, BSTR PropertyName, ref VARIANT pProperty) SetTargetPropertyWithVersionCheck;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref ITsSbEnvironment pEnvironment, BSTR PropertyName, ref VARIANT pProperty) SetEnvironmentPropertyWithVersionCheck;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR targetName, uint32 dwTimeout, out IUnknown* ppContext) AcquireTargetLock;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, ref IUnknown pContext) ReleaseTargetLock;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR PoolName, BSTR ServerFQDN, TARGET_STATE NewState, TARGET_STATE TestState, out TARGET_STATE pInitState) TestAndSetServerState;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR PoolName, BSTR serverName) SetServerWaitingToStart;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR PoolName, BSTR ServerFQDN, out TARGET_STATE pState) GetServerState;
+				public new function HRESULT(ref ITsSbResourcePluginStore self, BSTR ServerFQDN, uint32 DrainMode) SetServerDrainMode;
 			}
 		}
 		[CRepr]
@@ -3600,24 +3600,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SaveProperties(ITsSbPropertySet* pPropertySet) mut
+			public HRESULT SaveProperties(ref ITsSbPropertySet pPropertySet) mut
 			{
-				return VT.SaveProperties(&this, pPropertySet);
+				return VT.SaveProperties(ref this, ref pPropertySet);
 			}
-			public HRESULT EnumerateProperties(ITsSbPropertySet** ppPropertySet) mut
+			public HRESULT EnumerateProperties(out ITsSbPropertySet* ppPropertySet) mut
 			{
-				return VT.EnumerateProperties(&this, ppPropertySet);
+				return VT.EnumerateProperties(ref this, out ppPropertySet);
 			}
 			public HRESULT DeleteProperties(BSTR propertyName) mut
 			{
-				return VT.DeleteProperties(&this, propertyName);
+				return VT.DeleteProperties(ref this, propertyName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbFilterPluginStore *self, ITsSbPropertySet* pPropertySet) SaveProperties;
-				public new function HRESULT(ITsSbFilterPluginStore *self, ITsSbPropertySet** ppPropertySet) EnumerateProperties;
-				public new function HRESULT(ITsSbFilterPluginStore *self, BSTR propertyName) DeleteProperties;
+				public new function HRESULT(ref ITsSbFilterPluginStore self, ref ITsSbPropertySet pPropertySet) SaveProperties;
+				public new function HRESULT(ref ITsSbFilterPluginStore self, out ITsSbPropertySet* ppPropertySet) EnumerateProperties;
+				public new function HRESULT(ref ITsSbFilterPluginStore self, BSTR propertyName) DeleteProperties;
 			}
 		}
 		[CRepr]
@@ -3627,44 +3627,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueryTarget(BSTR ProviderName, BSTR TargetName, BSTR FarmName, ITsSbTarget** ppTarget) mut
+			public HRESULT QueryTarget(BSTR ProviderName, BSTR TargetName, BSTR FarmName, out ITsSbTarget* ppTarget) mut
 			{
-				return VT.QueryTarget(&this, ProviderName, TargetName, FarmName, ppTarget);
+				return VT.QueryTarget(ref this, ProviderName, TargetName, FarmName, out ppTarget);
 			}
-			public HRESULT QuerySessionBySessionId(BSTR ProviderName, uint32 dwSessionId, BSTR TargetName, ITsSbSession** ppSession) mut
+			public HRESULT QuerySessionBySessionId(BSTR ProviderName, uint32 dwSessionId, BSTR TargetName, out ITsSbSession* ppSession) mut
 			{
-				return VT.QuerySessionBySessionId(&this, ProviderName, dwSessionId, TargetName, ppSession);
+				return VT.QuerySessionBySessionId(ref this, ProviderName, dwSessionId, TargetName, out ppSession);
 			}
-			public HRESULT EnumerateFarms(BSTR ProviderName, uint32* pdwCount, SAFEARRAY** pVal) mut
+			public HRESULT EnumerateFarms(BSTR ProviderName, out uint32 pdwCount, out SAFEARRAY* pVal) mut
 			{
-				return VT.EnumerateFarms(&this, ProviderName, pdwCount, pVal);
+				return VT.EnumerateFarms(ref this, ProviderName, out pdwCount, out pVal);
 			}
-			public HRESULT EnumerateTargets(BSTR ProviderName, BSTR FarmName, BSTR EnvName, uint32* pdwCount, ITsSbTarget*** pVal) mut
+			public HRESULT EnumerateTargets(BSTR ProviderName, BSTR FarmName, BSTR EnvName, out uint32 pdwCount, ITsSbTarget*** pVal) mut
 			{
-				return VT.EnumerateTargets(&this, ProviderName, FarmName, EnvName, pdwCount, pVal);
+				return VT.EnumerateTargets(ref this, ProviderName, FarmName, EnvName, out pdwCount, pVal);
 			}
-			public HRESULT EnumerateEnvironmentsByProvider(BSTR ProviderName, uint32* pdwCount, ITsSbEnvironment*** ppVal) mut
+			public HRESULT EnumerateEnvironmentsByProvider(BSTR ProviderName, out uint32 pdwCount, ITsSbEnvironment*** ppVal) mut
 			{
-				return VT.EnumerateEnvironmentsByProvider(&this, ProviderName, pdwCount, ppVal);
+				return VT.EnumerateEnvironmentsByProvider(ref this, ProviderName, out pdwCount, ppVal);
 			}
-			public HRESULT EnumerateSessions(BSTR ProviderName, BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, TSSESSION_STATE* pSessionState, uint32* pdwCount, ITsSbSession*** ppVal) mut
+			public HRESULT EnumerateSessions(BSTR ProviderName, BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, ref TSSESSION_STATE pSessionState, out uint32 pdwCount, ITsSbSession*** ppVal) mut
 			{
-				return VT.EnumerateSessions(&this, ProviderName, targetName, userName, userDomain, poolName, initialProgram, pSessionState, pdwCount, ppVal);
+				return VT.EnumerateSessions(ref this, ProviderName, targetName, userName, userDomain, poolName, initialProgram, ref pSessionState, out pdwCount, ppVal);
 			}
-			public HRESULT GetFarmProperty(BSTR farmName, BSTR propertyName, VARIANT* pVarValue) mut
+			public HRESULT GetFarmProperty(BSTR farmName, BSTR propertyName, ref VARIANT pVarValue) mut
 			{
-				return VT.GetFarmProperty(&this, farmName, propertyName, pVarValue);
+				return VT.GetFarmProperty(ref this, farmName, propertyName, ref pVarValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, BSTR TargetName, BSTR FarmName, ITsSbTarget** ppTarget) QueryTarget;
-				public new function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, uint32 dwSessionId, BSTR TargetName, ITsSbSession** ppSession) QuerySessionBySessionId;
-				public new function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, uint32* pdwCount, SAFEARRAY** pVal) EnumerateFarms;
-				public new function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, BSTR FarmName, BSTR EnvName, uint32* pdwCount, ITsSbTarget*** pVal) EnumerateTargets;
-				public new function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, uint32* pdwCount, ITsSbEnvironment*** ppVal) EnumerateEnvironmentsByProvider;
-				public new function HRESULT(ITsSbGlobalStore *self, BSTR ProviderName, BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, TSSESSION_STATE* pSessionState, uint32* pdwCount, ITsSbSession*** ppVal) EnumerateSessions;
-				public new function HRESULT(ITsSbGlobalStore *self, BSTR farmName, BSTR propertyName, VARIANT* pVarValue) GetFarmProperty;
+				public new function HRESULT(ref ITsSbGlobalStore self, BSTR ProviderName, BSTR TargetName, BSTR FarmName, out ITsSbTarget* ppTarget) QueryTarget;
+				public new function HRESULT(ref ITsSbGlobalStore self, BSTR ProviderName, uint32 dwSessionId, BSTR TargetName, out ITsSbSession* ppSession) QuerySessionBySessionId;
+				public new function HRESULT(ref ITsSbGlobalStore self, BSTR ProviderName, out uint32 pdwCount, out SAFEARRAY* pVal) EnumerateFarms;
+				public new function HRESULT(ref ITsSbGlobalStore self, BSTR ProviderName, BSTR FarmName, BSTR EnvName, out uint32 pdwCount, ITsSbTarget*** pVal) EnumerateTargets;
+				public new function HRESULT(ref ITsSbGlobalStore self, BSTR ProviderName, out uint32 pdwCount, ITsSbEnvironment*** ppVal) EnumerateEnvironmentsByProvider;
+				public new function HRESULT(ref ITsSbGlobalStore self, BSTR ProviderName, BSTR targetName, BSTR userName, BSTR userDomain, BSTR poolName, BSTR initialProgram, ref TSSESSION_STATE pSessionState, out uint32 pdwCount, ITsSbSession*** ppVal) EnumerateSessions;
+				public new function HRESULT(ref ITsSbGlobalStore self, BSTR farmName, BSTR propertyName, ref VARIANT pVarValue) GetFarmProperty;
 			}
 		}
 		[CRepr]
@@ -3674,39 +3674,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnJobCreated(VM_NOTIFY_INFO* pVmNotifyInfo) mut
+			public HRESULT OnJobCreated(ref VM_NOTIFY_INFO pVmNotifyInfo) mut
 			{
-				return VT.OnJobCreated(&this, pVmNotifyInfo);
+				return VT.OnJobCreated(ref this, ref pVmNotifyInfo);
 			}
-			public HRESULT OnVirtualMachineStatusChanged(VM_NOTIFY_ENTRY* pVmNotifyEntry, VM_NOTIFY_STATUS VmNotifyStatus, HRESULT ErrorCode, BSTR ErrorDescr) mut
+			public HRESULT OnVirtualMachineStatusChanged(ref VM_NOTIFY_ENTRY pVmNotifyEntry, VM_NOTIFY_STATUS VmNotifyStatus, HRESULT ErrorCode, BSTR ErrorDescr) mut
 			{
-				return VT.OnVirtualMachineStatusChanged(&this, pVmNotifyEntry, VmNotifyStatus, ErrorCode, ErrorDescr);
+				return VT.OnVirtualMachineStatusChanged(ref this, ref pVmNotifyEntry, VmNotifyStatus, ErrorCode, ErrorDescr);
 			}
 			public HRESULT OnJobCompleted(HRESULT ResultCode, BSTR ResultDescription) mut
 			{
-				return VT.OnJobCompleted(&this, ResultCode, ResultDescription);
+				return VT.OnJobCompleted(ref this, ResultCode, ResultDescription);
 			}
 			public HRESULT OnJobCancelled() mut
 			{
-				return VT.OnJobCancelled(&this);
+				return VT.OnJobCancelled(ref this);
 			}
-			public HRESULT LockVirtualMachine(VM_NOTIFY_ENTRY* pVmNotifyEntry) mut
+			public HRESULT LockVirtualMachine(ref VM_NOTIFY_ENTRY pVmNotifyEntry) mut
 			{
-				return VT.LockVirtualMachine(&this, pVmNotifyEntry);
+				return VT.LockVirtualMachine(ref this, ref pVmNotifyEntry);
 			}
 			public HRESULT OnVirtualMachineHostStatusChanged(BSTR VmHost, VM_HOST_NOTIFY_STATUS VmHostNotifyStatus, HRESULT ErrorCode, BSTR ErrorDescr) mut
 			{
-				return VT.OnVirtualMachineHostStatusChanged(&this, VmHost, VmHostNotifyStatus, ErrorCode, ErrorDescr);
+				return VT.OnVirtualMachineHostStatusChanged(ref this, VmHost, VmHostNotifyStatus, ErrorCode, ErrorDescr);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbProvisioningPluginNotifySink *self, VM_NOTIFY_INFO* pVmNotifyInfo) OnJobCreated;
-				public new function HRESULT(ITsSbProvisioningPluginNotifySink *self, VM_NOTIFY_ENTRY* pVmNotifyEntry, VM_NOTIFY_STATUS VmNotifyStatus, HRESULT ErrorCode, BSTR ErrorDescr) OnVirtualMachineStatusChanged;
-				public new function HRESULT(ITsSbProvisioningPluginNotifySink *self, HRESULT ResultCode, BSTR ResultDescription) OnJobCompleted;
-				public new function HRESULT(ITsSbProvisioningPluginNotifySink *self) OnJobCancelled;
-				public new function HRESULT(ITsSbProvisioningPluginNotifySink *self, VM_NOTIFY_ENTRY* pVmNotifyEntry) LockVirtualMachine;
-				public new function HRESULT(ITsSbProvisioningPluginNotifySink *self, BSTR VmHost, VM_HOST_NOTIFY_STATUS VmHostNotifyStatus, HRESULT ErrorCode, BSTR ErrorDescr) OnVirtualMachineHostStatusChanged;
+				public new function HRESULT(ref ITsSbProvisioningPluginNotifySink self, ref VM_NOTIFY_INFO pVmNotifyInfo) OnJobCreated;
+				public new function HRESULT(ref ITsSbProvisioningPluginNotifySink self, ref VM_NOTIFY_ENTRY pVmNotifyEntry, VM_NOTIFY_STATUS VmNotifyStatus, HRESULT ErrorCode, BSTR ErrorDescr) OnVirtualMachineStatusChanged;
+				public new function HRESULT(ref ITsSbProvisioningPluginNotifySink self, HRESULT ResultCode, BSTR ResultDescription) OnJobCompleted;
+				public new function HRESULT(ref ITsSbProvisioningPluginNotifySink self) OnJobCancelled;
+				public new function HRESULT(ref ITsSbProvisioningPluginNotifySink self, ref VM_NOTIFY_ENTRY pVmNotifyEntry) LockVirtualMachine;
+				public new function HRESULT(ref ITsSbProvisioningPluginNotifySink self, BSTR VmHost, VM_HOST_NOTIFY_STATUS VmHostNotifyStatus, HRESULT ErrorCode, BSTR ErrorDescr) OnVirtualMachineHostStatusChanged;
 			}
 		}
 		[CRepr]
@@ -3716,29 +3716,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateVirtualMachines(BSTR JobXmlString, BSTR JobGuid, ITsSbProvisioningPluginNotifySink* pSink) mut
+			public HRESULT CreateVirtualMachines(BSTR JobXmlString, BSTR JobGuid, ref ITsSbProvisioningPluginNotifySink pSink) mut
 			{
-				return VT.CreateVirtualMachines(&this, JobXmlString, JobGuid, pSink);
+				return VT.CreateVirtualMachines(ref this, JobXmlString, JobGuid, ref pSink);
 			}
-			public HRESULT PatchVirtualMachines(BSTR JobXmlString, BSTR JobGuid, ITsSbProvisioningPluginNotifySink* pSink, VM_PATCH_INFO* pVMPatchInfo) mut
+			public HRESULT PatchVirtualMachines(BSTR JobXmlString, BSTR JobGuid, ref ITsSbProvisioningPluginNotifySink pSink, ref VM_PATCH_INFO pVMPatchInfo) mut
 			{
-				return VT.PatchVirtualMachines(&this, JobXmlString, JobGuid, pSink, pVMPatchInfo);
+				return VT.PatchVirtualMachines(ref this, JobXmlString, JobGuid, ref pSink, ref pVMPatchInfo);
 			}
-			public HRESULT DeleteVirtualMachines(BSTR JobXmlString, BSTR JobGuid, ITsSbProvisioningPluginNotifySink* pSink) mut
+			public HRESULT DeleteVirtualMachines(BSTR JobXmlString, BSTR JobGuid, ref ITsSbProvisioningPluginNotifySink pSink) mut
 			{
-				return VT.DeleteVirtualMachines(&this, JobXmlString, JobGuid, pSink);
+				return VT.DeleteVirtualMachines(ref this, JobXmlString, JobGuid, ref pSink);
 			}
 			public HRESULT CancelJob(BSTR JobGuid) mut
 			{
-				return VT.CancelJob(&this, JobGuid);
+				return VT.CancelJob(ref this, JobGuid);
 			}
 			[CRepr]
 			public struct VTable : ITsSbPlugin.VTable
 			{
-				public new function HRESULT(ITsSbProvisioning *self, BSTR JobXmlString, BSTR JobGuid, ITsSbProvisioningPluginNotifySink* pSink) CreateVirtualMachines;
-				public new function HRESULT(ITsSbProvisioning *self, BSTR JobXmlString, BSTR JobGuid, ITsSbProvisioningPluginNotifySink* pSink, VM_PATCH_INFO* pVMPatchInfo) PatchVirtualMachines;
-				public new function HRESULT(ITsSbProvisioning *self, BSTR JobXmlString, BSTR JobGuid, ITsSbProvisioningPluginNotifySink* pSink) DeleteVirtualMachines;
-				public new function HRESULT(ITsSbProvisioning *self, BSTR JobGuid) CancelJob;
+				public new function HRESULT(ref ITsSbProvisioning self, BSTR JobXmlString, BSTR JobGuid, ref ITsSbProvisioningPluginNotifySink pSink) CreateVirtualMachines;
+				public new function HRESULT(ref ITsSbProvisioning self, BSTR JobXmlString, BSTR JobGuid, ref ITsSbProvisioningPluginNotifySink pSink, ref VM_PATCH_INFO pVMPatchInfo) PatchVirtualMachines;
+				public new function HRESULT(ref ITsSbProvisioning self, BSTR JobXmlString, BSTR JobGuid, ref ITsSbProvisioningPluginNotifySink pSink) DeleteVirtualMachines;
+				public new function HRESULT(ref ITsSbProvisioning self, BSTR JobGuid) CancelJob;
 			}
 		}
 		[CRepr]
@@ -3750,17 +3750,17 @@ namespace Win32
 			
 			public HRESULT OnCompleted(HRESULT Status) mut
 			{
-				return VT.OnCompleted(&this, Status);
+				return VT.OnCompleted(ref this, Status);
 			}
-			public HRESULT GetWaitTimeout(FILETIME* pftTimeout) mut
+			public HRESULT GetWaitTimeout(out FILETIME pftTimeout) mut
 			{
-				return VT.GetWaitTimeout(&this, pftTimeout);
+				return VT.GetWaitTimeout(ref this, out pftTimeout);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITsSbGenericNotifySink *self, HRESULT Status) OnCompleted;
-				public new function HRESULT(ITsSbGenericNotifySink *self, FILETIME* pftTimeout) GetWaitTimeout;
+				public new function HRESULT(ref ITsSbGenericNotifySink self, HRESULT Status) OnCompleted;
+				public new function HRESULT(ref ITsSbGenericNotifySink self, out FILETIME pftTimeout) GetWaitTimeout;
 			}
 		}
 		[CRepr]
@@ -3770,39 +3770,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetResourceList(PWSTR userID, int32* pceAppListSize, pluginResource** resourceList) mut
+			public HRESULT GetResourceList(PWSTR userID, out int32 pceAppListSize, out pluginResource* resourceList) mut
 			{
-				return VT.GetResourceList(&this, userID, pceAppListSize, resourceList);
+				return VT.GetResourceList(ref this, userID, out pceAppListSize, out resourceList);
 			}
-			public HRESULT GetResource(PWSTR alias, int32 flags, pluginResource* resource) mut
+			public HRESULT GetResource(PWSTR alias, int32 flags, out pluginResource resource) mut
 			{
-				return VT.GetResource(&this, alias, flags, resource);
+				return VT.GetResource(ref this, alias, flags, out resource);
 			}
-			public HRESULT GetCacheLastUpdateTime(uint64* lastUpdateTime) mut
+			public HRESULT GetCacheLastUpdateTime(out uint64 lastUpdateTime) mut
 			{
-				return VT.GetCacheLastUpdateTime(&this, lastUpdateTime);
+				return VT.GetCacheLastUpdateTime(ref this, out lastUpdateTime);
 			}
-			public HRESULT get_pluginName(BSTR* pVal) mut
+			public HRESULT get_pluginName(out BSTR pVal) mut
 			{
-				return VT.get_pluginName(&this, pVal);
+				return VT.get_pluginName(ref this, out pVal);
 			}
-			public HRESULT get_pluginVersion(BSTR* pVal) mut
+			public HRESULT get_pluginVersion(out BSTR pVal) mut
 			{
-				return VT.get_pluginVersion(&this, pVal);
+				return VT.get_pluginVersion(ref this, out pVal);
 			}
-			public HRESULT ResolveResource(uint32* resourceType, PWSTR resourceLocation, PWSTR endPointName, PWSTR userID, PWSTR alias) mut
+			public HRESULT ResolveResource(out uint32 resourceType, PWSTR resourceLocation, PWSTR endPointName, PWSTR userID, PWSTR alias) mut
 			{
-				return VT.ResolveResource(&this, resourceType, resourceLocation, endPointName, userID, alias);
+				return VT.ResolveResource(ref this, out resourceType, resourceLocation, endPointName, userID, alias);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ItsPubPlugin *self, PWSTR userID, int32* pceAppListSize, pluginResource** resourceList) GetResourceList;
-				public new function HRESULT(ItsPubPlugin *self, PWSTR alias, int32 flags, pluginResource* resource) GetResource;
-				public new function HRESULT(ItsPubPlugin *self, uint64* lastUpdateTime) GetCacheLastUpdateTime;
-				public new function HRESULT(ItsPubPlugin *self, BSTR* pVal) get_pluginName;
-				public new function HRESULT(ItsPubPlugin *self, BSTR* pVal) get_pluginVersion;
-				public new function HRESULT(ItsPubPlugin *self, uint32* resourceType, PWSTR resourceLocation, PWSTR endPointName, PWSTR userID, PWSTR alias) ResolveResource;
+				public new function HRESULT(ref ItsPubPlugin self, PWSTR userID, out int32 pceAppListSize, out pluginResource* resourceList) GetResourceList;
+				public new function HRESULT(ref ItsPubPlugin self, PWSTR alias, int32 flags, out pluginResource resource) GetResource;
+				public new function HRESULT(ref ItsPubPlugin self, out uint64 lastUpdateTime) GetCacheLastUpdateTime;
+				public new function HRESULT(ref ItsPubPlugin self, out BSTR pVal) get_pluginName;
+				public new function HRESULT(ref ItsPubPlugin self, out BSTR pVal) get_pluginVersion;
+				public new function HRESULT(ref ItsPubPlugin self, out uint32 resourceType, PWSTR resourceLocation, PWSTR endPointName, PWSTR userID, PWSTR alias) ResolveResource;
 			}
 		}
 		[CRepr]
@@ -3812,29 +3812,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetResource2List(PWSTR userID, int32* pceAppListSize, pluginResource2** resourceList) mut
+			public HRESULT GetResource2List(PWSTR userID, out int32 pceAppListSize, out pluginResource2* resourceList) mut
 			{
-				return VT.GetResource2List(&this, userID, pceAppListSize, resourceList);
+				return VT.GetResource2List(ref this, userID, out pceAppListSize, out resourceList);
 			}
-			public HRESULT GetResource2(PWSTR alias, int32 flags, pluginResource2* resource) mut
+			public HRESULT GetResource2(PWSTR alias, int32 flags, out pluginResource2 resource) mut
 			{
-				return VT.GetResource2(&this, alias, flags, resource);
+				return VT.GetResource2(ref this, alias, flags, out resource);
 			}
-			public HRESULT ResolvePersonalDesktop(PWSTR userId, PWSTR poolId, TSPUB_PLUGIN_PD_RESOLUTION_TYPE ePdResolutionType, TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE* pPdAssignmentType, PWSTR endPointName) mut
+			public HRESULT ResolvePersonalDesktop(PWSTR userId, PWSTR poolId, TSPUB_PLUGIN_PD_RESOLUTION_TYPE ePdResolutionType, out TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE pPdAssignmentType, PWSTR endPointName) mut
 			{
-				return VT.ResolvePersonalDesktop(&this, userId, poolId, ePdResolutionType, pPdAssignmentType, endPointName);
+				return VT.ResolvePersonalDesktop(ref this, userId, poolId, ePdResolutionType, out pPdAssignmentType, endPointName);
 			}
 			public HRESULT DeletePersonalDesktopAssignment(PWSTR userId, PWSTR poolId, PWSTR endpointName) mut
 			{
-				return VT.DeletePersonalDesktopAssignment(&this, userId, poolId, endpointName);
+				return VT.DeletePersonalDesktopAssignment(ref this, userId, poolId, endpointName);
 			}
 			[CRepr]
 			public struct VTable : ItsPubPlugin.VTable
 			{
-				public new function HRESULT(ItsPubPlugin2 *self, PWSTR userID, int32* pceAppListSize, pluginResource2** resourceList) GetResource2List;
-				public new function HRESULT(ItsPubPlugin2 *self, PWSTR alias, int32 flags, pluginResource2* resource) GetResource2;
-				public new function HRESULT(ItsPubPlugin2 *self, PWSTR userId, PWSTR poolId, TSPUB_PLUGIN_PD_RESOLUTION_TYPE ePdResolutionType, TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE* pPdAssignmentType, PWSTR endPointName) ResolvePersonalDesktop;
-				public new function HRESULT(ItsPubPlugin2 *self, PWSTR userId, PWSTR poolId, PWSTR endpointName) DeletePersonalDesktopAssignment;
+				public new function HRESULT(ref ItsPubPlugin2 self, PWSTR userID, out int32 pceAppListSize, out pluginResource2* resourceList) GetResource2List;
+				public new function HRESULT(ref ItsPubPlugin2 self, PWSTR alias, int32 flags, out pluginResource2 resource) GetResource2;
+				public new function HRESULT(ref ItsPubPlugin2 self, PWSTR userId, PWSTR poolId, TSPUB_PLUGIN_PD_RESOLUTION_TYPE ePdResolutionType, out TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE pPdAssignmentType, PWSTR endPointName) ResolvePersonalDesktop;
+				public new function HRESULT(ref ItsPubPlugin2 self, PWSTR userId, PWSTR poolId, PWSTR endpointName) DeletePersonalDesktopAssignment;
 			}
 		}
 		[CRepr]
@@ -3846,32 +3846,32 @@ namespace Win32
 			
 			public HRESULT AddResourceType(int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) mut
 			{
-				return VT.AddResourceType(&this, fMachineWide, bstrFileExtension, bstrLauncher);
+				return VT.AddResourceType(ref this, fMachineWide, bstrFileExtension, bstrLauncher);
 			}
 			public HRESULT DeleteResourceType(int16 fMachineWide, BSTR bstrFileExtension) mut
 			{
-				return VT.DeleteResourceType(&this, fMachineWide, bstrFileExtension);
+				return VT.DeleteResourceType(ref this, fMachineWide, bstrFileExtension);
 			}
 			public HRESULT GetRegisteredFileExtensions(int16 fMachineWide, SAFEARRAY** psaFileExtensions) mut
 			{
-				return VT.GetRegisteredFileExtensions(&this, fMachineWide, psaFileExtensions);
+				return VT.GetRegisteredFileExtensions(ref this, fMachineWide, psaFileExtensions);
 			}
 			public HRESULT GetResourceTypeInfo(int16 fMachineWide, BSTR bstrFileExtension, BSTR* pbstrLauncher) mut
 			{
-				return VT.GetResourceTypeInfo(&this, fMachineWide, bstrFileExtension, pbstrLauncher);
+				return VT.GetResourceTypeInfo(ref this, fMachineWide, bstrFileExtension, pbstrLauncher);
 			}
 			public HRESULT ModifyResourceType(int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) mut
 			{
-				return VT.ModifyResourceType(&this, fMachineWide, bstrFileExtension, bstrLauncher);
+				return VT.ModifyResourceType(ref this, fMachineWide, bstrFileExtension, bstrLauncher);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) AddResourceType;
-				public new function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, BSTR bstrFileExtension) DeleteResourceType;
-				public new function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, SAFEARRAY** psaFileExtensions) GetRegisteredFileExtensions;
-				public new function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, BSTR bstrFileExtension, BSTR* pbstrLauncher) GetResourceTypeInfo;
-				public new function HRESULT(IWorkspaceResTypeRegistry *self, int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) ModifyResourceType;
+				public new function HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) AddResourceType;
+				public new function HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, BSTR bstrFileExtension) DeleteResourceType;
+				public new function HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, SAFEARRAY** psaFileExtensions) GetRegisteredFileExtensions;
+				public new function HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, BSTR bstrFileExtension, BSTR* pbstrLauncher) GetResourceTypeInfo;
+				public new function HRESULT(ref IWorkspaceResTypeRegistry self, int16 fMachineWide, BSTR bstrFileExtension, BSTR bstrLauncher) ModifyResourceType;
 			}
 		}
 		[CRepr]
@@ -3881,29 +3881,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IWTSVirtualChannelManager* pChannelMgr) mut
+			public HRESULT Initialize(ref IWTSVirtualChannelManager pChannelMgr) mut
 			{
-				return VT.Initialize(&this, pChannelMgr);
+				return VT.Initialize(ref this, ref pChannelMgr);
 			}
 			public HRESULT Connected() mut
 			{
-				return VT.Connected(&this);
+				return VT.Connected(ref this);
 			}
 			public HRESULT Disconnected(uint32 dwDisconnectCode) mut
 			{
-				return VT.Disconnected(&this, dwDisconnectCode);
+				return VT.Disconnected(ref this, dwDisconnectCode);
 			}
 			public HRESULT Terminated() mut
 			{
-				return VT.Terminated(&this);
+				return VT.Terminated(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSPlugin *self, IWTSVirtualChannelManager* pChannelMgr) Initialize;
-				public new function HRESULT(IWTSPlugin *self) Connected;
-				public new function HRESULT(IWTSPlugin *self, uint32 dwDisconnectCode) Disconnected;
-				public new function HRESULT(IWTSPlugin *self) Terminated;
+				public new function HRESULT(ref IWTSPlugin self, ref IWTSVirtualChannelManager pChannelMgr) Initialize;
+				public new function HRESULT(ref IWTSPlugin self) Connected;
+				public new function HRESULT(ref IWTSPlugin self, uint32 dwDisconnectCode) Disconnected;
+				public new function HRESULT(ref IWTSPlugin self) Terminated;
 			}
 		}
 		[CRepr]
@@ -3913,14 +3913,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConfiguration(IPropertyBag** ppPropertyBag) mut
+			public HRESULT GetConfiguration(out IPropertyBag* ppPropertyBag) mut
 			{
-				return VT.GetConfiguration(&this, ppPropertyBag);
+				return VT.GetConfiguration(ref this, out ppPropertyBag);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSListener *self, IPropertyBag** ppPropertyBag) GetConfiguration;
+				public new function HRESULT(ref IWTSListener self, out IPropertyBag* ppPropertyBag) GetConfiguration;
 			}
 		}
 		[CRepr]
@@ -3930,14 +3930,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnNewChannelConnection(IWTSVirtualChannel* pChannel, BSTR data, BOOL* pbAccept, IWTSVirtualChannelCallback** ppCallback) mut
+			public HRESULT OnNewChannelConnection(ref IWTSVirtualChannel pChannel, BSTR data, out BOOL pbAccept, out IWTSVirtualChannelCallback* ppCallback) mut
 			{
-				return VT.OnNewChannelConnection(&this, pChannel, data, pbAccept, ppCallback);
+				return VT.OnNewChannelConnection(ref this, ref pChannel, data, out pbAccept, out ppCallback);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSListenerCallback *self, IWTSVirtualChannel* pChannel, BSTR data, BOOL* pbAccept, IWTSVirtualChannelCallback** ppCallback) OnNewChannelConnection;
+				public new function HRESULT(ref IWTSListenerCallback self, ref IWTSVirtualChannel pChannel, BSTR data, out BOOL pbAccept, out IWTSVirtualChannelCallback* ppCallback) OnNewChannelConnection;
 			}
 		}
 		[CRepr]
@@ -3949,17 +3949,17 @@ namespace Win32
 			
 			public HRESULT OnDataReceived(uint32 cbSize, uint8* pBuffer) mut
 			{
-				return VT.OnDataReceived(&this, cbSize, pBuffer);
+				return VT.OnDataReceived(ref this, cbSize, pBuffer);
 			}
 			public HRESULT OnClose() mut
 			{
-				return VT.OnClose(&this);
+				return VT.OnClose(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSVirtualChannelCallback *self, uint32 cbSize, uint8* pBuffer) OnDataReceived;
-				public new function HRESULT(IWTSVirtualChannelCallback *self) OnClose;
+				public new function HRESULT(ref IWTSVirtualChannelCallback self, uint32 cbSize, uint8* pBuffer) OnDataReceived;
+				public new function HRESULT(ref IWTSVirtualChannelCallback self) OnClose;
 			}
 		}
 		[CRepr]
@@ -3969,14 +3969,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateListener(uint8* pszChannelName, uint32 uFlags, IWTSListenerCallback* pListenerCallback, IWTSListener** ppListener) mut
+			public HRESULT CreateListener(in uint8 pszChannelName, uint32 uFlags, ref IWTSListenerCallback pListenerCallback, out IWTSListener* ppListener) mut
 			{
-				return VT.CreateListener(&this, pszChannelName, uFlags, pListenerCallback, ppListener);
+				return VT.CreateListener(ref this, pszChannelName, uFlags, ref pListenerCallback, out ppListener);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSVirtualChannelManager *self, uint8* pszChannelName, uint32 uFlags, IWTSListenerCallback* pListenerCallback, IWTSListener** ppListener) CreateListener;
+				public new function HRESULT(ref IWTSVirtualChannelManager self, in uint8 pszChannelName, uint32 uFlags, ref IWTSListenerCallback pListenerCallback, out IWTSListener* ppListener) CreateListener;
 			}
 		}
 		[CRepr]
@@ -3986,19 +3986,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Write(uint32 cbSize, uint8* pBuffer, IUnknown* pReserved) mut
+			public HRESULT Write(uint32 cbSize, uint8* pBuffer, ref IUnknown pReserved) mut
 			{
-				return VT.Write(&this, cbSize, pBuffer, pReserved);
+				return VT.Write(ref this, cbSize, pBuffer, ref pReserved);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSVirtualChannel *self, uint32 cbSize, uint8* pBuffer, IUnknown* pReserved) Write;
-				public new function HRESULT(IWTSVirtualChannel *self) Close;
+				public new function HRESULT(ref IWTSVirtualChannel self, uint32 cbSize, uint8* pBuffer, ref IUnknown pReserved) Write;
+				public new function HRESULT(ref IWTSVirtualChannel self) Close;
 			}
 		}
 		[CRepr]
@@ -4008,14 +4008,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetService(Guid ServiceId, IUnknown** ppunkObject) mut
+			public HRESULT GetService(Guid ServiceId, out IUnknown* ppunkObject) mut
 			{
-				return VT.GetService(&this, ServiceId, ppunkObject);
+				return VT.GetService(ref this, ServiceId, out ppunkObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSPluginServiceProvider *self, Guid ServiceId, IUnknown** ppunkObject) GetService;
+				public new function HRESULT(ref IWTSPluginServiceProvider self, Guid ServiceId, out IUnknown* ppunkObject) GetService;
 			}
 		}
 		[CRepr]
@@ -4027,22 +4027,22 @@ namespace Win32
 			
 			public HRESULT Render(Guid imageFormat, uint32 dwWidth, uint32 dwHeight, int32 cbStride, uint32 cbImageBuffer, uint8* pImageBuffer) mut
 			{
-				return VT.Render(&this, imageFormat, dwWidth, dwHeight, cbStride, cbImageBuffer, pImageBuffer);
+				return VT.Render(ref this, imageFormat, dwWidth, dwHeight, cbStride, cbImageBuffer, pImageBuffer);
 			}
-			public HRESULT GetRendererStatistics(BITMAP_RENDERER_STATISTICS* pStatistics) mut
+			public HRESULT GetRendererStatistics(out BITMAP_RENDERER_STATISTICS pStatistics) mut
 			{
-				return VT.GetRendererStatistics(&this, pStatistics);
+				return VT.GetRendererStatistics(ref this, out pStatistics);
 			}
 			public HRESULT RemoveMapping() mut
 			{
-				return VT.RemoveMapping(&this);
+				return VT.RemoveMapping(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSBitmapRenderer *self, Guid imageFormat, uint32 dwWidth, uint32 dwHeight, int32 cbStride, uint32 cbImageBuffer, uint8* pImageBuffer) Render;
-				public new function HRESULT(IWTSBitmapRenderer *self, BITMAP_RENDERER_STATISTICS* pStatistics) GetRendererStatistics;
-				public new function HRESULT(IWTSBitmapRenderer *self) RemoveMapping;
+				public new function HRESULT(ref IWTSBitmapRenderer self, Guid imageFormat, uint32 dwWidth, uint32 dwHeight, int32 cbStride, uint32 cbImageBuffer, uint8* pImageBuffer) Render;
+				public new function HRESULT(ref IWTSBitmapRenderer self, out BITMAP_RENDERER_STATISTICS pStatistics) GetRendererStatistics;
+				public new function HRESULT(ref IWTSBitmapRenderer self) RemoveMapping;
 			}
 		}
 		[CRepr]
@@ -4054,12 +4054,12 @@ namespace Win32
 			
 			public HRESULT OnTargetSizeChanged(RECT rcNewSize) mut
 			{
-				return VT.OnTargetSizeChanged(&this, rcNewSize);
+				return VT.OnTargetSizeChanged(ref this, rcNewSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSBitmapRendererCallback *self, RECT rcNewSize) OnTargetSizeChanged;
+				public new function HRESULT(ref IWTSBitmapRendererCallback self, RECT rcNewSize) OnTargetSizeChanged;
 			}
 		}
 		[CRepr]
@@ -4069,14 +4069,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMappedRenderer(uint64 mappingId, IWTSBitmapRendererCallback* pMappedRendererCallback, IWTSBitmapRenderer** ppMappedRenderer) mut
+			public HRESULT GetMappedRenderer(uint64 mappingId, ref IWTSBitmapRendererCallback pMappedRendererCallback, out IWTSBitmapRenderer* ppMappedRenderer) mut
 			{
-				return VT.GetMappedRenderer(&this, mappingId, pMappedRendererCallback, ppMappedRenderer);
+				return VT.GetMappedRenderer(ref this, mappingId, ref pMappedRendererCallback, out ppMappedRenderer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSBitmapRenderService *self, uint64 mappingId, IWTSBitmapRendererCallback* pMappedRendererCallback, IWTSBitmapRenderer** ppMappedRenderer) GetMappedRenderer;
+				public new function HRESULT(ref IWTSBitmapRenderService self, uint64 mappingId, ref IWTSBitmapRendererCallback pMappedRendererCallback, out IWTSBitmapRenderer* ppMappedRenderer) GetMappedRenderer;
 			}
 		}
 		[CRepr]
@@ -4086,34 +4086,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnDataReceived(uint32 cbSize, uint8* pBuffer) mut
+			public HRESULT OnDataReceived(uint32 cbSize, ref uint8 pBuffer) mut
 			{
-				return VT.OnDataReceived(&this, cbSize, pBuffer);
+				return VT.OnDataReceived(ref this, cbSize, ref pBuffer);
 			}
 			public HRESULT OnClose() mut
 			{
-				return VT.OnClose(&this);
+				return VT.OnClose(ref this);
 			}
-			public HRESULT OnChannelOpened(HRESULT OpenResult, IUnknown* pOpenContext) mut
+			public HRESULT OnChannelOpened(HRESULT OpenResult, ref IUnknown pOpenContext) mut
 			{
-				return VT.OnChannelOpened(&this, OpenResult, pOpenContext);
+				return VT.OnChannelOpened(ref this, OpenResult, ref pOpenContext);
 			}
-			public HRESULT OnDataSent(IUnknown* pWriteContext, BOOL bCancelled, uint8* pBuffer, uint32 cbBuffer) mut
+			public HRESULT OnDataSent(ref IUnknown pWriteContext, BOOL bCancelled, ref uint8 pBuffer, uint32 cbBuffer) mut
 			{
-				return VT.OnDataSent(&this, pWriteContext, bCancelled, pBuffer, cbBuffer);
+				return VT.OnDataSent(ref this, ref pWriteContext, bCancelled, ref pBuffer, cbBuffer);
 			}
 			public HRESULT OnMetricsUpdate(uint32 bandwidth, uint32 RTT, uint64 lastSentByteIndex) mut
 			{
-				return VT.OnMetricsUpdate(&this, bandwidth, RTT, lastSentByteIndex);
+				return VT.OnMetricsUpdate(ref this, bandwidth, RTT, lastSentByteIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsGraphicsChannelEvents *self, uint32 cbSize, uint8* pBuffer) OnDataReceived;
-				public new function HRESULT(IWRdsGraphicsChannelEvents *self) OnClose;
-				public new function HRESULT(IWRdsGraphicsChannelEvents *self, HRESULT OpenResult, IUnknown* pOpenContext) OnChannelOpened;
-				public new function HRESULT(IWRdsGraphicsChannelEvents *self, IUnknown* pWriteContext, BOOL bCancelled, uint8* pBuffer, uint32 cbBuffer) OnDataSent;
-				public new function HRESULT(IWRdsGraphicsChannelEvents *self, uint32 bandwidth, uint32 RTT, uint64 lastSentByteIndex) OnMetricsUpdate;
+				public new function HRESULT(ref IWRdsGraphicsChannelEvents self, uint32 cbSize, ref uint8 pBuffer) OnDataReceived;
+				public new function HRESULT(ref IWRdsGraphicsChannelEvents self) OnClose;
+				public new function HRESULT(ref IWRdsGraphicsChannelEvents self, HRESULT OpenResult, ref IUnknown pOpenContext) OnChannelOpened;
+				public new function HRESULT(ref IWRdsGraphicsChannelEvents self, ref IUnknown pWriteContext, BOOL bCancelled, ref uint8 pBuffer, uint32 cbBuffer) OnDataSent;
+				public new function HRESULT(ref IWRdsGraphicsChannelEvents self, uint32 bandwidth, uint32 RTT, uint64 lastSentByteIndex) OnMetricsUpdate;
 			}
 		}
 		[CRepr]
@@ -4123,24 +4123,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Write(uint32 cbSize, uint8* pBuffer, IUnknown* pContext) mut
+			public HRESULT Write(uint32 cbSize, ref uint8 pBuffer, ref IUnknown pContext) mut
 			{
-				return VT.Write(&this, cbSize, pBuffer, pContext);
+				return VT.Write(ref this, cbSize, ref pBuffer, ref pContext);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
-			public HRESULT Open(IWRdsGraphicsChannelEvents* pChannelEvents, IUnknown* pOpenContext) mut
+			public HRESULT Open(ref IWRdsGraphicsChannelEvents pChannelEvents, ref IUnknown pOpenContext) mut
 			{
-				return VT.Open(&this, pChannelEvents, pOpenContext);
+				return VT.Open(ref this, ref pChannelEvents, ref pOpenContext);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsGraphicsChannel *self, uint32 cbSize, uint8* pBuffer, IUnknown* pContext) Write;
-				public new function HRESULT(IWRdsGraphicsChannel *self) Close;
-				public new function HRESULT(IWRdsGraphicsChannel *self, IWRdsGraphicsChannelEvents* pChannelEvents, IUnknown* pOpenContext) Open;
+				public new function HRESULT(ref IWRdsGraphicsChannel self, uint32 cbSize, ref uint8 pBuffer, ref IUnknown pContext) Write;
+				public new function HRESULT(ref IWRdsGraphicsChannel self) Close;
+				public new function HRESULT(ref IWRdsGraphicsChannel self, ref IWRdsGraphicsChannelEvents pChannelEvents, ref IUnknown pOpenContext) Open;
 			}
 		}
 		[CRepr]
@@ -4150,14 +4150,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateChannel(uint8* pszChannelName, WRdsGraphicsChannelType channelType, IWRdsGraphicsChannel** ppVirtualChannel) mut
+			public HRESULT CreateChannel(in uint8 pszChannelName, WRdsGraphicsChannelType channelType, out IWRdsGraphicsChannel* ppVirtualChannel) mut
 			{
-				return VT.CreateChannel(&this, pszChannelName, channelType, ppVirtualChannel);
+				return VT.CreateChannel(ref this, pszChannelName, channelType, out ppVirtualChannel);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsGraphicsChannelManager *self, uint8* pszChannelName, WRdsGraphicsChannelType channelType, IWRdsGraphicsChannel** ppVirtualChannel) CreateChannel;
+				public new function HRESULT(ref IWRdsGraphicsChannelManager self, in uint8 pszChannelName, WRdsGraphicsChannelType channelType, out IWRdsGraphicsChannel* ppVirtualChannel) CreateChannel;
 			}
 		}
 		[CRepr]
@@ -4167,34 +4167,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateListener(PWSTR wszListenerName, IWTSProtocolListener** pProtocolListener) mut
+			public HRESULT CreateListener(PWSTR wszListenerName, out IWTSProtocolListener* pProtocolListener) mut
 			{
-				return VT.CreateListener(&this, wszListenerName, pProtocolListener);
+				return VT.CreateListener(ref this, wszListenerName, out pProtocolListener);
 			}
-			public HRESULT NotifyServiceStateChange(WTS_SERVICE_STATE* pTSServiceStateChange) mut
+			public HRESULT NotifyServiceStateChange(ref WTS_SERVICE_STATE pTSServiceStateChange) mut
 			{
-				return VT.NotifyServiceStateChange(&this, pTSServiceStateChange);
+				return VT.NotifyServiceStateChange(ref this, ref pTSServiceStateChange);
 			}
-			public HRESULT NotifySessionOfServiceStart(WTS_SESSION_ID* SessionId) mut
+			public HRESULT NotifySessionOfServiceStart(ref WTS_SESSION_ID SessionId) mut
 			{
-				return VT.NotifySessionOfServiceStart(&this, SessionId);
+				return VT.NotifySessionOfServiceStart(ref this, ref SessionId);
 			}
-			public HRESULT NotifySessionOfServiceStop(WTS_SESSION_ID* SessionId) mut
+			public HRESULT NotifySessionOfServiceStop(ref WTS_SESSION_ID SessionId) mut
 			{
-				return VT.NotifySessionOfServiceStop(&this, SessionId);
+				return VT.NotifySessionOfServiceStop(ref this, ref SessionId);
 			}
-			public HRESULT NotifySessionStateChange(WTS_SESSION_ID* SessionId, uint32 EventId) mut
+			public HRESULT NotifySessionStateChange(ref WTS_SESSION_ID SessionId, uint32 EventId) mut
 			{
-				return VT.NotifySessionStateChange(&this, SessionId, EventId);
+				return VT.NotifySessionStateChange(ref this, ref SessionId, EventId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSProtocolManager *self, PWSTR wszListenerName, IWTSProtocolListener** pProtocolListener) CreateListener;
-				public new function HRESULT(IWTSProtocolManager *self, WTS_SERVICE_STATE* pTSServiceStateChange) NotifyServiceStateChange;
-				public new function HRESULT(IWTSProtocolManager *self, WTS_SESSION_ID* SessionId) NotifySessionOfServiceStart;
-				public new function HRESULT(IWTSProtocolManager *self, WTS_SESSION_ID* SessionId) NotifySessionOfServiceStop;
-				public new function HRESULT(IWTSProtocolManager *self, WTS_SESSION_ID* SessionId, uint32 EventId) NotifySessionStateChange;
+				public new function HRESULT(ref IWTSProtocolManager self, PWSTR wszListenerName, out IWTSProtocolListener* pProtocolListener) CreateListener;
+				public new function HRESULT(ref IWTSProtocolManager self, ref WTS_SERVICE_STATE pTSServiceStateChange) NotifyServiceStateChange;
+				public new function HRESULT(ref IWTSProtocolManager self, ref WTS_SESSION_ID SessionId) NotifySessionOfServiceStart;
+				public new function HRESULT(ref IWTSProtocolManager self, ref WTS_SESSION_ID SessionId) NotifySessionOfServiceStop;
+				public new function HRESULT(ref IWTSProtocolManager self, ref WTS_SESSION_ID SessionId, uint32 EventId) NotifySessionStateChange;
 			}
 		}
 		[CRepr]
@@ -4204,19 +4204,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartListen(IWTSProtocolListenerCallback* pCallback) mut
+			public HRESULT StartListen(ref IWTSProtocolListenerCallback pCallback) mut
 			{
-				return VT.StartListen(&this, pCallback);
+				return VT.StartListen(ref this, ref pCallback);
 			}
 			public HRESULT StopListen() mut
 			{
-				return VT.StopListen(&this);
+				return VT.StopListen(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSProtocolListener *self, IWTSProtocolListenerCallback* pCallback) StartListen;
-				public new function HRESULT(IWTSProtocolListener *self) StopListen;
+				public new function HRESULT(ref IWTSProtocolListener self, ref IWTSProtocolListenerCallback pCallback) StartListen;
+				public new function HRESULT(ref IWTSProtocolListener self) StopListen;
 			}
 		}
 		[CRepr]
@@ -4226,14 +4226,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnConnected(IWTSProtocolConnection* pConnection, IWTSProtocolConnectionCallback** pCallback) mut
+			public HRESULT OnConnected(ref IWTSProtocolConnection pConnection, out IWTSProtocolConnectionCallback* pCallback) mut
 			{
-				return VT.OnConnected(&this, pConnection, pCallback);
+				return VT.OnConnected(ref this, ref pConnection, out pCallback);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSProtocolListenerCallback *self, IWTSProtocolConnection* pConnection, IWTSProtocolConnectionCallback** pCallback) OnConnected;
+				public new function HRESULT(ref IWTSProtocolListenerCallback self, ref IWTSProtocolConnection pConnection, out IWTSProtocolConnectionCallback* pCallback) OnConnected;
 			}
 		}
 		[CRepr]
@@ -4243,124 +4243,124 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLogonErrorRedirector(IWTSProtocolLogonErrorRedirector** ppLogonErrorRedir) mut
+			public HRESULT GetLogonErrorRedirector(out IWTSProtocolLogonErrorRedirector* ppLogonErrorRedir) mut
 			{
-				return VT.GetLogonErrorRedirector(&this, ppLogonErrorRedir);
+				return VT.GetLogonErrorRedirector(ref this, out ppLogonErrorRedir);
 			}
-			public HRESULT SendPolicyData(WTS_POLICY_DATA* pPolicyData) mut
+			public HRESULT SendPolicyData(ref WTS_POLICY_DATA pPolicyData) mut
 			{
-				return VT.SendPolicyData(&this, pPolicyData);
+				return VT.SendPolicyData(ref this, ref pPolicyData);
 			}
 			public HRESULT AcceptConnection() mut
 			{
-				return VT.AcceptConnection(&this);
+				return VT.AcceptConnection(ref this);
 			}
-			public HRESULT GetClientData(WTS_CLIENT_DATA* pClientData) mut
+			public HRESULT GetClientData(out WTS_CLIENT_DATA pClientData) mut
 			{
-				return VT.GetClientData(&this, pClientData);
+				return VT.GetClientData(ref this, out pClientData);
 			}
-			public HRESULT GetUserCredentials(WTS_USER_CREDENTIAL* pUserCreds) mut
+			public HRESULT GetUserCredentials(out WTS_USER_CREDENTIAL pUserCreds) mut
 			{
-				return VT.GetUserCredentials(&this, pUserCreds);
+				return VT.GetUserCredentials(ref this, out pUserCreds);
 			}
-			public HRESULT GetLicenseConnection(IWTSProtocolLicenseConnection** ppLicenseConnection) mut
+			public HRESULT GetLicenseConnection(out IWTSProtocolLicenseConnection* ppLicenseConnection) mut
 			{
-				return VT.GetLicenseConnection(&this, ppLicenseConnection);
+				return VT.GetLicenseConnection(ref this, out ppLicenseConnection);
 			}
-			public HRESULT AuthenticateClientToSession(WTS_SESSION_ID* SessionId) mut
+			public HRESULT AuthenticateClientToSession(out WTS_SESSION_ID SessionId) mut
 			{
-				return VT.AuthenticateClientToSession(&this, SessionId);
+				return VT.AuthenticateClientToSession(ref this, out SessionId);
 			}
-			public HRESULT NotifySessionId(WTS_SESSION_ID* SessionId) mut
+			public HRESULT NotifySessionId(ref WTS_SESSION_ID SessionId) mut
 			{
-				return VT.NotifySessionId(&this, SessionId);
+				return VT.NotifySessionId(ref this, ref SessionId);
 			}
-			public HRESULT GetProtocolHandles(HANDLE_PTR* pKeyboardHandle, HANDLE_PTR* pMouseHandle, HANDLE_PTR* pBeepHandle, HANDLE_PTR* pVideoHandle) mut
+			public HRESULT GetProtocolHandles(out HANDLE_PTR pKeyboardHandle, out HANDLE_PTR pMouseHandle, out HANDLE_PTR pBeepHandle, out HANDLE_PTR pVideoHandle) mut
 			{
-				return VT.GetProtocolHandles(&this, pKeyboardHandle, pMouseHandle, pBeepHandle, pVideoHandle);
+				return VT.GetProtocolHandles(ref this, out pKeyboardHandle, out pMouseHandle, out pBeepHandle, out pVideoHandle);
 			}
 			public HRESULT ConnectNotify(uint32 SessionId) mut
 			{
-				return VT.ConnectNotify(&this, SessionId);
+				return VT.ConnectNotify(ref this, SessionId);
 			}
 			public HRESULT IsUserAllowedToLogon(uint32 SessionId, HANDLE_PTR UserToken, PWSTR pDomainName, PWSTR pUserName) mut
 			{
-				return VT.IsUserAllowedToLogon(&this, SessionId, UserToken, pDomainName, pUserName);
+				return VT.IsUserAllowedToLogon(ref this, SessionId, UserToken, pDomainName, pUserName);
 			}
-			public HRESULT SessionArbitrationEnumeration(HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, uint32* pdwSessionIdentifierCount) mut
+			public HRESULT SessionArbitrationEnumeration(HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, out uint32 pdwSessionIdentifierCount) mut
 			{
-				return VT.SessionArbitrationEnumeration(&this, hUserToken, bSingleSessionPerUserEnabled, pSessionIdArray, pdwSessionIdentifierCount);
+				return VT.SessionArbitrationEnumeration(ref this, hUserToken, bSingleSessionPerUserEnabled, pSessionIdArray, out pdwSessionIdentifierCount);
 			}
-			public HRESULT LogonNotify(HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, WTS_SESSION_ID* SessionId) mut
+			public HRESULT LogonNotify(HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, ref WTS_SESSION_ID SessionId) mut
 			{
-				return VT.LogonNotify(&this, hClientToken, wszUserName, wszDomainName, SessionId);
+				return VT.LogonNotify(ref this, hClientToken, wszUserName, wszDomainName, ref SessionId);
 			}
-			public HRESULT GetUserData(WTS_POLICY_DATA* pPolicyData, WTS_USER_DATA* pClientData) mut
+			public HRESULT GetUserData(ref WTS_POLICY_DATA pPolicyData, out WTS_USER_DATA pClientData) mut
 			{
-				return VT.GetUserData(&this, pPolicyData, pClientData);
+				return VT.GetUserData(ref this, ref pPolicyData, out pClientData);
 			}
 			public HRESULT DisconnectNotify() mut
 			{
-				return VT.DisconnectNotify(&this);
+				return VT.DisconnectNotify(ref this);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
-			public HRESULT GetProtocolStatus(WTS_PROTOCOL_STATUS* pProtocolStatus) mut
+			public HRESULT GetProtocolStatus(out WTS_PROTOCOL_STATUS pProtocolStatus) mut
 			{
-				return VT.GetProtocolStatus(&this, pProtocolStatus);
+				return VT.GetProtocolStatus(ref this, out pProtocolStatus);
 			}
-			public HRESULT GetLastInputTime(uint64* pLastInputTime) mut
+			public HRESULT GetLastInputTime(out uint64 pLastInputTime) mut
 			{
-				return VT.GetLastInputTime(&this, pLastInputTime);
+				return VT.GetLastInputTime(ref this, out pLastInputTime);
 			}
 			public HRESULT SetErrorInfo(uint32 ulError) mut
 			{
-				return VT.SetErrorInfo(&this, ulError);
+				return VT.SetErrorInfo(ref this, ulError);
 			}
 			public HRESULT SendBeep(uint32 Frequency, uint32 Duration) mut
 			{
-				return VT.SendBeep(&this, Frequency, Duration);
+				return VT.SendBeep(ref this, Frequency, Duration);
 			}
-			public HRESULT CreateVirtualChannel(PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, uint* phChannel) mut
+			public HRESULT CreateVirtualChannel(PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, out uint phChannel) mut
 			{
-				return VT.CreateVirtualChannel(&this, szEndpointName, bStatic, RequestedPriority, phChannel);
+				return VT.CreateVirtualChannel(ref this, szEndpointName, bStatic, RequestedPriority, out phChannel);
 			}
 			public HRESULT QueryProperty(Guid QueryType, uint32 ulNumEntriesIn, uint32 ulNumEntriesOut, WTS_PROPERTY_VALUE* pPropertyEntriesIn, WTS_PROPERTY_VALUE* pPropertyEntriesOut) mut
 			{
-				return VT.QueryProperty(&this, QueryType, ulNumEntriesIn, ulNumEntriesOut, pPropertyEntriesIn, pPropertyEntriesOut);
+				return VT.QueryProperty(ref this, QueryType, ulNumEntriesIn, ulNumEntriesOut, pPropertyEntriesIn, pPropertyEntriesOut);
 			}
-			public HRESULT GetShadowConnection(IWTSProtocolShadowConnection** ppShadowConnection) mut
+			public HRESULT GetShadowConnection(out IWTSProtocolShadowConnection* ppShadowConnection) mut
 			{
-				return VT.GetShadowConnection(&this, ppShadowConnection);
+				return VT.GetShadowConnection(ref this, out ppShadowConnection);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSProtocolConnection *self, IWTSProtocolLogonErrorRedirector** ppLogonErrorRedir) GetLogonErrorRedirector;
-				public new function HRESULT(IWTSProtocolConnection *self, WTS_POLICY_DATA* pPolicyData) SendPolicyData;
-				public new function HRESULT(IWTSProtocolConnection *self) AcceptConnection;
-				public new function HRESULT(IWTSProtocolConnection *self, WTS_CLIENT_DATA* pClientData) GetClientData;
-				public new function HRESULT(IWTSProtocolConnection *self, WTS_USER_CREDENTIAL* pUserCreds) GetUserCredentials;
-				public new function HRESULT(IWTSProtocolConnection *self, IWTSProtocolLicenseConnection** ppLicenseConnection) GetLicenseConnection;
-				public new function HRESULT(IWTSProtocolConnection *self, WTS_SESSION_ID* SessionId) AuthenticateClientToSession;
-				public new function HRESULT(IWTSProtocolConnection *self, WTS_SESSION_ID* SessionId) NotifySessionId;
-				public new function HRESULT(IWTSProtocolConnection *self, HANDLE_PTR* pKeyboardHandle, HANDLE_PTR* pMouseHandle, HANDLE_PTR* pBeepHandle, HANDLE_PTR* pVideoHandle) GetProtocolHandles;
-				public new function HRESULT(IWTSProtocolConnection *self, uint32 SessionId) ConnectNotify;
-				public new function HRESULT(IWTSProtocolConnection *self, uint32 SessionId, HANDLE_PTR UserToken, PWSTR pDomainName, PWSTR pUserName) IsUserAllowedToLogon;
-				public new function HRESULT(IWTSProtocolConnection *self, HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, uint32* pdwSessionIdentifierCount) SessionArbitrationEnumeration;
-				public new function HRESULT(IWTSProtocolConnection *self, HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, WTS_SESSION_ID* SessionId) LogonNotify;
-				public new function HRESULT(IWTSProtocolConnection *self, WTS_POLICY_DATA* pPolicyData, WTS_USER_DATA* pClientData) GetUserData;
-				public new function HRESULT(IWTSProtocolConnection *self) DisconnectNotify;
-				public new function HRESULT(IWTSProtocolConnection *self) Close;
-				public new function HRESULT(IWTSProtocolConnection *self, WTS_PROTOCOL_STATUS* pProtocolStatus) GetProtocolStatus;
-				public new function HRESULT(IWTSProtocolConnection *self, uint64* pLastInputTime) GetLastInputTime;
-				public new function HRESULT(IWTSProtocolConnection *self, uint32 ulError) SetErrorInfo;
-				public new function HRESULT(IWTSProtocolConnection *self, uint32 Frequency, uint32 Duration) SendBeep;
-				public new function HRESULT(IWTSProtocolConnection *self, PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, uint* phChannel) CreateVirtualChannel;
-				public new function HRESULT(IWTSProtocolConnection *self, Guid QueryType, uint32 ulNumEntriesIn, uint32 ulNumEntriesOut, WTS_PROPERTY_VALUE* pPropertyEntriesIn, WTS_PROPERTY_VALUE* pPropertyEntriesOut) QueryProperty;
-				public new function HRESULT(IWTSProtocolConnection *self, IWTSProtocolShadowConnection** ppShadowConnection) GetShadowConnection;
+				public new function HRESULT(ref IWTSProtocolConnection self, out IWTSProtocolLogonErrorRedirector* ppLogonErrorRedir) GetLogonErrorRedirector;
+				public new function HRESULT(ref IWTSProtocolConnection self, ref WTS_POLICY_DATA pPolicyData) SendPolicyData;
+				public new function HRESULT(ref IWTSProtocolConnection self) AcceptConnection;
+				public new function HRESULT(ref IWTSProtocolConnection self, out WTS_CLIENT_DATA pClientData) GetClientData;
+				public new function HRESULT(ref IWTSProtocolConnection self, out WTS_USER_CREDENTIAL pUserCreds) GetUserCredentials;
+				public new function HRESULT(ref IWTSProtocolConnection self, out IWTSProtocolLicenseConnection* ppLicenseConnection) GetLicenseConnection;
+				public new function HRESULT(ref IWTSProtocolConnection self, out WTS_SESSION_ID SessionId) AuthenticateClientToSession;
+				public new function HRESULT(ref IWTSProtocolConnection self, ref WTS_SESSION_ID SessionId) NotifySessionId;
+				public new function HRESULT(ref IWTSProtocolConnection self, out HANDLE_PTR pKeyboardHandle, out HANDLE_PTR pMouseHandle, out HANDLE_PTR pBeepHandle, out HANDLE_PTR pVideoHandle) GetProtocolHandles;
+				public new function HRESULT(ref IWTSProtocolConnection self, uint32 SessionId) ConnectNotify;
+				public new function HRESULT(ref IWTSProtocolConnection self, uint32 SessionId, HANDLE_PTR UserToken, PWSTR pDomainName, PWSTR pUserName) IsUserAllowedToLogon;
+				public new function HRESULT(ref IWTSProtocolConnection self, HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, out uint32 pdwSessionIdentifierCount) SessionArbitrationEnumeration;
+				public new function HRESULT(ref IWTSProtocolConnection self, HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, ref WTS_SESSION_ID SessionId) LogonNotify;
+				public new function HRESULT(ref IWTSProtocolConnection self, ref WTS_POLICY_DATA pPolicyData, out WTS_USER_DATA pClientData) GetUserData;
+				public new function HRESULT(ref IWTSProtocolConnection self) DisconnectNotify;
+				public new function HRESULT(ref IWTSProtocolConnection self) Close;
+				public new function HRESULT(ref IWTSProtocolConnection self, out WTS_PROTOCOL_STATUS pProtocolStatus) GetProtocolStatus;
+				public new function HRESULT(ref IWTSProtocolConnection self, out uint64 pLastInputTime) GetLastInputTime;
+				public new function HRESULT(ref IWTSProtocolConnection self, uint32 ulError) SetErrorInfo;
+				public new function HRESULT(ref IWTSProtocolConnection self, uint32 Frequency, uint32 Duration) SendBeep;
+				public new function HRESULT(ref IWTSProtocolConnection self, PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, out uint phChannel) CreateVirtualChannel;
+				public new function HRESULT(ref IWTSProtocolConnection self, Guid QueryType, uint32 ulNumEntriesIn, uint32 ulNumEntriesOut, WTS_PROPERTY_VALUE* pPropertyEntriesIn, WTS_PROPERTY_VALUE* pPropertyEntriesOut) QueryProperty;
+				public new function HRESULT(ref IWTSProtocolConnection self, out IWTSProtocolShadowConnection* ppShadowConnection) GetShadowConnection;
 			}
 		}
 		[CRepr]
@@ -4372,32 +4372,32 @@ namespace Win32
 			
 			public HRESULT OnReady() mut
 			{
-				return VT.OnReady(&this);
+				return VT.OnReady(ref this);
 			}
 			public HRESULT BrokenConnection(uint32 Reason, uint32 Source) mut
 			{
-				return VT.BrokenConnection(&this, Reason, Source);
+				return VT.BrokenConnection(ref this, Reason, Source);
 			}
 			public HRESULT StopScreenUpdates() mut
 			{
-				return VT.StopScreenUpdates(&this);
+				return VT.StopScreenUpdates(ref this);
 			}
-			public HRESULT RedrawWindow(WTS_SMALL_RECT* rect) mut
+			public HRESULT RedrawWindow(ref WTS_SMALL_RECT rect) mut
 			{
-				return VT.RedrawWindow(&this, rect);
+				return VT.RedrawWindow(ref this, ref rect);
 			}
-			public HRESULT DisplayIOCtl(WTS_DISPLAY_IOCTL* DisplayIOCtl) mut
+			public HRESULT DisplayIOCtl(ref WTS_DISPLAY_IOCTL DisplayIOCtl) mut
 			{
-				return VT.DisplayIOCtl(&this, DisplayIOCtl);
+				return VT.DisplayIOCtl(ref this, ref DisplayIOCtl);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSProtocolConnectionCallback *self) OnReady;
-				public new function HRESULT(IWTSProtocolConnectionCallback *self, uint32 Reason, uint32 Source) BrokenConnection;
-				public new function HRESULT(IWTSProtocolConnectionCallback *self) StopScreenUpdates;
-				public new function HRESULT(IWTSProtocolConnectionCallback *self, WTS_SMALL_RECT* rect) RedrawWindow;
-				public new function HRESULT(IWTSProtocolConnectionCallback *self, WTS_DISPLAY_IOCTL* DisplayIOCtl) DisplayIOCtl;
+				public new function HRESULT(ref IWTSProtocolConnectionCallback self) OnReady;
+				public new function HRESULT(ref IWTSProtocolConnectionCallback self, uint32 Reason, uint32 Source) BrokenConnection;
+				public new function HRESULT(ref IWTSProtocolConnectionCallback self) StopScreenUpdates;
+				public new function HRESULT(ref IWTSProtocolConnectionCallback self, ref WTS_SMALL_RECT rect) RedrawWindow;
+				public new function HRESULT(ref IWTSProtocolConnectionCallback self, ref WTS_DISPLAY_IOCTL DisplayIOCtl) DisplayIOCtl;
 			}
 		}
 		[CRepr]
@@ -4407,24 +4407,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Start(PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, IWTSProtocolShadowCallback* pShadowCallback) mut
+			public HRESULT Start(PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, ref IWTSProtocolShadowCallback pShadowCallback) mut
 			{
-				return VT.Start(&this, pTargetServerName, TargetSessionId, HotKeyVk, HotkeyModifiers, pShadowCallback);
+				return VT.Start(ref this, pTargetServerName, TargetSessionId, HotKeyVk, HotkeyModifiers, ref pShadowCallback);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT DoTarget(uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) mut
 			{
-				return VT.DoTarget(&this, pParam1, Param1Size, pParam2, Param2Size, pParam3, Param3Size, pParam4, Param4Size, pClientName);
+				return VT.DoTarget(ref this, pParam1, Param1Size, pParam2, Param2Size, pParam3, Param3Size, pParam4, Param4Size, pClientName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSProtocolShadowConnection *self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, IWTSProtocolShadowCallback* pShadowCallback) Start;
-				public new function HRESULT(IWTSProtocolShadowConnection *self) Stop;
-				public new function HRESULT(IWTSProtocolShadowConnection *self, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) DoTarget;
+				public new function HRESULT(ref IWTSProtocolShadowConnection self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, ref IWTSProtocolShadowCallback pShadowCallback) Start;
+				public new function HRESULT(ref IWTSProtocolShadowConnection self) Stop;
+				public new function HRESULT(ref IWTSProtocolShadowConnection self, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) DoTarget;
 			}
 		}
 		[CRepr]
@@ -4436,17 +4436,17 @@ namespace Win32
 			
 			public HRESULT StopShadow() mut
 			{
-				return VT.StopShadow(&this);
+				return VT.StopShadow(ref this);
 			}
 			public HRESULT InvokeTargetShadow(PWSTR pTargetServerName, uint32 TargetSessionId, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) mut
 			{
-				return VT.InvokeTargetShadow(&this, pTargetServerName, TargetSessionId, pParam1, Param1Size, pParam2, Param2Size, pParam3, Param3Size, pParam4, Param4Size, pClientName);
+				return VT.InvokeTargetShadow(ref this, pTargetServerName, TargetSessionId, pParam1, Param1Size, pParam2, Param2Size, pParam3, Param3Size, pParam4, Param4Size, pClientName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSProtocolShadowCallback *self) StopShadow;
-				public new function HRESULT(IWTSProtocolShadowCallback *self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) InvokeTargetShadow;
+				public new function HRESULT(ref IWTSProtocolShadowCallback self) StopShadow;
+				public new function HRESULT(ref IWTSProtocolShadowCallback self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) InvokeTargetShadow;
 			}
 		}
 		[CRepr]
@@ -4456,29 +4456,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestLicensingCapabilities(WTS_LICENSE_CAPABILITIES* ppLicenseCapabilities, uint32* pcbLicenseCapabilities) mut
+			public HRESULT RequestLicensingCapabilities(out WTS_LICENSE_CAPABILITIES ppLicenseCapabilities, out uint32 pcbLicenseCapabilities) mut
 			{
-				return VT.RequestLicensingCapabilities(&this, ppLicenseCapabilities, pcbLicenseCapabilities);
+				return VT.RequestLicensingCapabilities(ref this, out ppLicenseCapabilities, out pcbLicenseCapabilities);
 			}
 			public HRESULT SendClientLicense(uint8* pClientLicense, uint32 cbClientLicense) mut
 			{
-				return VT.SendClientLicense(&this, pClientLicense, cbClientLicense);
+				return VT.SendClientLicense(ref this, pClientLicense, cbClientLicense);
 			}
-			public HRESULT RequestClientLicense(uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, uint32* pcbClientLicense) mut
+			public HRESULT RequestClientLicense(uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, out uint32 pcbClientLicense) mut
 			{
-				return VT.RequestClientLicense(&this, Reserve1, Reserve2, ppClientLicense, pcbClientLicense);
+				return VT.RequestClientLicense(ref this, Reserve1, Reserve2, ppClientLicense, out pcbClientLicense);
 			}
 			public HRESULT ProtocolComplete(uint32 ulComplete) mut
 			{
-				return VT.ProtocolComplete(&this, ulComplete);
+				return VT.ProtocolComplete(ref this, ulComplete);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSProtocolLicenseConnection *self, WTS_LICENSE_CAPABILITIES* ppLicenseCapabilities, uint32* pcbLicenseCapabilities) RequestLicensingCapabilities;
-				public new function HRESULT(IWTSProtocolLicenseConnection *self, uint8* pClientLicense, uint32 cbClientLicense) SendClientLicense;
-				public new function HRESULT(IWTSProtocolLicenseConnection *self, uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, uint32* pcbClientLicense) RequestClientLicense;
-				public new function HRESULT(IWTSProtocolLicenseConnection *self, uint32 ulComplete) ProtocolComplete;
+				public new function HRESULT(ref IWTSProtocolLicenseConnection self, out WTS_LICENSE_CAPABILITIES ppLicenseCapabilities, out uint32 pcbLicenseCapabilities) RequestLicensingCapabilities;
+				public new function HRESULT(ref IWTSProtocolLicenseConnection self, uint8* pClientLicense, uint32 cbClientLicense) SendClientLicense;
+				public new function HRESULT(ref IWTSProtocolLicenseConnection self, uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, out uint32 pcbClientLicense) RequestClientLicense;
+				public new function HRESULT(ref IWTSProtocolLicenseConnection self, uint32 ulComplete) ProtocolComplete;
 			}
 		}
 		[CRepr]
@@ -4490,27 +4490,27 @@ namespace Win32
 			
 			public HRESULT OnBeginPainting() mut
 			{
-				return VT.OnBeginPainting(&this);
+				return VT.OnBeginPainting(ref this);
 			}
-			public HRESULT RedirectStatus(PWSTR pszMessage, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) mut
+			public HRESULT RedirectStatus(PWSTR pszMessage, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) mut
 			{
-				return VT.RedirectStatus(&this, pszMessage, pResponse);
+				return VT.RedirectStatus(ref this, pszMessage, out pResponse);
 			}
-			public HRESULT RedirectMessage(PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) mut
+			public HRESULT RedirectMessage(PWSTR pszCaption, PWSTR pszMessage, uint32 uType, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) mut
 			{
-				return VT.RedirectMessage(&this, pszCaption, pszMessage, uType, pResponse);
+				return VT.RedirectMessage(ref this, pszCaption, pszMessage, uType, out pResponse);
 			}
-			public HRESULT RedirectLogonError(int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) mut
+			public HRESULT RedirectLogonError(int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) mut
 			{
-				return VT.RedirectLogonError(&this, ntsStatus, ntsSubstatus, pszCaption, pszMessage, uType, pResponse);
+				return VT.RedirectLogonError(ref this, ntsStatus, ntsSubstatus, pszCaption, pszMessage, uType, out pResponse);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWTSProtocolLogonErrorRedirector *self) OnBeginPainting;
-				public new function HRESULT(IWTSProtocolLogonErrorRedirector *self, PWSTR pszMessage, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectStatus;
-				public new function HRESULT(IWTSProtocolLogonErrorRedirector *self, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectMessage;
-				public new function HRESULT(IWTSProtocolLogonErrorRedirector *self, int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectLogonError;
+				public new function HRESULT(ref IWTSProtocolLogonErrorRedirector self) OnBeginPainting;
+				public new function HRESULT(ref IWTSProtocolLogonErrorRedirector self, PWSTR pszMessage, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) RedirectStatus;
+				public new function HRESULT(ref IWTSProtocolLogonErrorRedirector self, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) RedirectMessage;
+				public new function HRESULT(ref IWTSProtocolLogonErrorRedirector self, int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) RedirectLogonError;
 			}
 		}
 		[CRepr]
@@ -4520,19 +4520,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSettings(WRDS_SETTING_TYPE WRdsSettingType, WRDS_SETTING_LEVEL WRdsSettingLevel, WRDS_SETTINGS* pWRdsSettings) mut
+			public HRESULT GetSettings(WRDS_SETTING_TYPE WRdsSettingType, WRDS_SETTING_LEVEL WRdsSettingLevel, out WRDS_SETTINGS pWRdsSettings) mut
 			{
-				return VT.GetSettings(&this, WRdsSettingType, WRdsSettingLevel, pWRdsSettings);
+				return VT.GetSettings(ref this, WRdsSettingType, WRdsSettingLevel, out pWRdsSettings);
 			}
-			public HRESULT MergeSettings(WRDS_SETTINGS* pWRdsSettings, WRDS_CONNECTION_SETTING_LEVEL WRdsConnectionSettingLevel, WRDS_CONNECTION_SETTINGS* pWRdsConnectionSettings) mut
+			public HRESULT MergeSettings(ref WRDS_SETTINGS pWRdsSettings, WRDS_CONNECTION_SETTING_LEVEL WRdsConnectionSettingLevel, out WRDS_CONNECTION_SETTINGS pWRdsConnectionSettings) mut
 			{
-				return VT.MergeSettings(&this, pWRdsSettings, WRdsConnectionSettingLevel, pWRdsConnectionSettings);
+				return VT.MergeSettings(ref this, ref pWRdsSettings, WRdsConnectionSettingLevel, out pWRdsConnectionSettings);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolSettings *self, WRDS_SETTING_TYPE WRdsSettingType, WRDS_SETTING_LEVEL WRdsSettingLevel, WRDS_SETTINGS* pWRdsSettings) GetSettings;
-				public new function HRESULT(IWRdsProtocolSettings *self, WRDS_SETTINGS* pWRdsSettings, WRDS_CONNECTION_SETTING_LEVEL WRdsConnectionSettingLevel, WRDS_CONNECTION_SETTINGS* pWRdsConnectionSettings) MergeSettings;
+				public new function HRESULT(ref IWRdsProtocolSettings self, WRDS_SETTING_TYPE WRdsSettingType, WRDS_SETTING_LEVEL WRdsSettingLevel, out WRDS_SETTINGS pWRdsSettings) GetSettings;
+				public new function HRESULT(ref IWRdsProtocolSettings self, ref WRDS_SETTINGS pWRdsSettings, WRDS_CONNECTION_SETTING_LEVEL WRdsConnectionSettingLevel, out WRDS_CONNECTION_SETTINGS pWRdsConnectionSettings) MergeSettings;
 			}
 		}
 		[CRepr]
@@ -4542,49 +4542,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IWRdsProtocolSettings* pIWRdsSettings, WRDS_SETTINGS* pWRdsSettings) mut
+			public HRESULT Initialize(ref IWRdsProtocolSettings pIWRdsSettings, ref WRDS_SETTINGS pWRdsSettings) mut
 			{
-				return VT.Initialize(&this, pIWRdsSettings, pWRdsSettings);
+				return VT.Initialize(ref this, ref pIWRdsSettings, ref pWRdsSettings);
 			}
-			public HRESULT CreateListener(PWSTR wszListenerName, IWRdsProtocolListener** pProtocolListener) mut
+			public HRESULT CreateListener(PWSTR wszListenerName, out IWRdsProtocolListener* pProtocolListener) mut
 			{
-				return VT.CreateListener(&this, wszListenerName, pProtocolListener);
+				return VT.CreateListener(ref this, wszListenerName, out pProtocolListener);
 			}
-			public HRESULT NotifyServiceStateChange(WTS_SERVICE_STATE* pTSServiceStateChange) mut
+			public HRESULT NotifyServiceStateChange(ref WTS_SERVICE_STATE pTSServiceStateChange) mut
 			{
-				return VT.NotifyServiceStateChange(&this, pTSServiceStateChange);
+				return VT.NotifyServiceStateChange(ref this, ref pTSServiceStateChange);
 			}
-			public HRESULT NotifySessionOfServiceStart(WTS_SESSION_ID* SessionId) mut
+			public HRESULT NotifySessionOfServiceStart(ref WTS_SESSION_ID SessionId) mut
 			{
-				return VT.NotifySessionOfServiceStart(&this, SessionId);
+				return VT.NotifySessionOfServiceStart(ref this, ref SessionId);
 			}
-			public HRESULT NotifySessionOfServiceStop(WTS_SESSION_ID* SessionId) mut
+			public HRESULT NotifySessionOfServiceStop(ref WTS_SESSION_ID SessionId) mut
 			{
-				return VT.NotifySessionOfServiceStop(&this, SessionId);
+				return VT.NotifySessionOfServiceStop(ref this, ref SessionId);
 			}
-			public HRESULT NotifySessionStateChange(WTS_SESSION_ID* SessionId, uint32 EventId) mut
+			public HRESULT NotifySessionStateChange(ref WTS_SESSION_ID SessionId, uint32 EventId) mut
 			{
-				return VT.NotifySessionStateChange(&this, SessionId, EventId);
+				return VT.NotifySessionStateChange(ref this, ref SessionId, EventId);
 			}
-			public HRESULT NotifySettingsChange(WRDS_SETTINGS* pWRdsSettings) mut
+			public HRESULT NotifySettingsChange(ref WRDS_SETTINGS pWRdsSettings) mut
 			{
-				return VT.NotifySettingsChange(&this, pWRdsSettings);
+				return VT.NotifySettingsChange(ref this, ref pWRdsSettings);
 			}
 			public HRESULT Uninitialize() mut
 			{
-				return VT.Uninitialize(&this);
+				return VT.Uninitialize(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolManager *self, IWRdsProtocolSettings* pIWRdsSettings, WRDS_SETTINGS* pWRdsSettings) Initialize;
-				public new function HRESULT(IWRdsProtocolManager *self, PWSTR wszListenerName, IWRdsProtocolListener** pProtocolListener) CreateListener;
-				public new function HRESULT(IWRdsProtocolManager *self, WTS_SERVICE_STATE* pTSServiceStateChange) NotifyServiceStateChange;
-				public new function HRESULT(IWRdsProtocolManager *self, WTS_SESSION_ID* SessionId) NotifySessionOfServiceStart;
-				public new function HRESULT(IWRdsProtocolManager *self, WTS_SESSION_ID* SessionId) NotifySessionOfServiceStop;
-				public new function HRESULT(IWRdsProtocolManager *self, WTS_SESSION_ID* SessionId, uint32 EventId) NotifySessionStateChange;
-				public new function HRESULT(IWRdsProtocolManager *self, WRDS_SETTINGS* pWRdsSettings) NotifySettingsChange;
-				public new function HRESULT(IWRdsProtocolManager *self) Uninitialize;
+				public new function HRESULT(ref IWRdsProtocolManager self, ref IWRdsProtocolSettings pIWRdsSettings, ref WRDS_SETTINGS pWRdsSettings) Initialize;
+				public new function HRESULT(ref IWRdsProtocolManager self, PWSTR wszListenerName, out IWRdsProtocolListener* pProtocolListener) CreateListener;
+				public new function HRESULT(ref IWRdsProtocolManager self, ref WTS_SERVICE_STATE pTSServiceStateChange) NotifyServiceStateChange;
+				public new function HRESULT(ref IWRdsProtocolManager self, ref WTS_SESSION_ID SessionId) NotifySessionOfServiceStart;
+				public new function HRESULT(ref IWRdsProtocolManager self, ref WTS_SESSION_ID SessionId) NotifySessionOfServiceStop;
+				public new function HRESULT(ref IWRdsProtocolManager self, ref WTS_SESSION_ID SessionId, uint32 EventId) NotifySessionStateChange;
+				public new function HRESULT(ref IWRdsProtocolManager self, ref WRDS_SETTINGS pWRdsSettings) NotifySettingsChange;
+				public new function HRESULT(ref IWRdsProtocolManager self) Uninitialize;
 			}
 		}
 		[CRepr]
@@ -4594,24 +4594,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSettings(WRDS_LISTENER_SETTING_LEVEL WRdsListenerSettingLevel, WRDS_LISTENER_SETTINGS* pWRdsListenerSettings) mut
+			public HRESULT GetSettings(WRDS_LISTENER_SETTING_LEVEL WRdsListenerSettingLevel, out WRDS_LISTENER_SETTINGS pWRdsListenerSettings) mut
 			{
-				return VT.GetSettings(&this, WRdsListenerSettingLevel, pWRdsListenerSettings);
+				return VT.GetSettings(ref this, WRdsListenerSettingLevel, out pWRdsListenerSettings);
 			}
-			public HRESULT StartListen(IWRdsProtocolListenerCallback* pCallback) mut
+			public HRESULT StartListen(ref IWRdsProtocolListenerCallback pCallback) mut
 			{
-				return VT.StartListen(&this, pCallback);
+				return VT.StartListen(ref this, ref pCallback);
 			}
 			public HRESULT StopListen() mut
 			{
-				return VT.StopListen(&this);
+				return VT.StopListen(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolListener *self, WRDS_LISTENER_SETTING_LEVEL WRdsListenerSettingLevel, WRDS_LISTENER_SETTINGS* pWRdsListenerSettings) GetSettings;
-				public new function HRESULT(IWRdsProtocolListener *self, IWRdsProtocolListenerCallback* pCallback) StartListen;
-				public new function HRESULT(IWRdsProtocolListener *self) StopListen;
+				public new function HRESULT(ref IWRdsProtocolListener self, WRDS_LISTENER_SETTING_LEVEL WRdsListenerSettingLevel, out WRDS_LISTENER_SETTINGS pWRdsListenerSettings) GetSettings;
+				public new function HRESULT(ref IWRdsProtocolListener self, ref IWRdsProtocolListenerCallback pCallback) StartListen;
+				public new function HRESULT(ref IWRdsProtocolListener self) StopListen;
 			}
 		}
 		[CRepr]
@@ -4621,14 +4621,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnConnected(IWRdsProtocolConnection* pConnection, WRDS_CONNECTION_SETTINGS* pWRdsConnectionSettings, IWRdsProtocolConnectionCallback** pCallback) mut
+			public HRESULT OnConnected(ref IWRdsProtocolConnection pConnection, ref WRDS_CONNECTION_SETTINGS pWRdsConnectionSettings, out IWRdsProtocolConnectionCallback* pCallback) mut
 			{
-				return VT.OnConnected(&this, pConnection, pWRdsConnectionSettings, pCallback);
+				return VT.OnConnected(ref this, ref pConnection, ref pWRdsConnectionSettings, out pCallback);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolListenerCallback *self, IWRdsProtocolConnection* pConnection, WRDS_CONNECTION_SETTINGS* pWRdsConnectionSettings, IWRdsProtocolConnectionCallback** pCallback) OnConnected;
+				public new function HRESULT(ref IWRdsProtocolListenerCallback self, ref IWRdsProtocolConnection pConnection, ref WRDS_CONNECTION_SETTINGS pWRdsConnectionSettings, out IWRdsProtocolConnectionCallback* pCallback) OnConnected;
 			}
 		}
 		[CRepr]
@@ -4638,129 +4638,129 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetLogonErrorRedirector(IWRdsProtocolLogonErrorRedirector** ppLogonErrorRedir) mut
+			public HRESULT GetLogonErrorRedirector(out IWRdsProtocolLogonErrorRedirector* ppLogonErrorRedir) mut
 			{
-				return VT.GetLogonErrorRedirector(&this, ppLogonErrorRedir);
+				return VT.GetLogonErrorRedirector(ref this, out ppLogonErrorRedir);
 			}
 			public HRESULT AcceptConnection() mut
 			{
-				return VT.AcceptConnection(&this);
+				return VT.AcceptConnection(ref this);
 			}
-			public HRESULT GetClientData(WTS_CLIENT_DATA* pClientData) mut
+			public HRESULT GetClientData(out WTS_CLIENT_DATA pClientData) mut
 			{
-				return VT.GetClientData(&this, pClientData);
+				return VT.GetClientData(ref this, out pClientData);
 			}
-			public HRESULT GetClientMonitorData(uint32* pNumMonitors, uint32* pPrimaryMonitor) mut
+			public HRESULT GetClientMonitorData(out uint32 pNumMonitors, out uint32 pPrimaryMonitor) mut
 			{
-				return VT.GetClientMonitorData(&this, pNumMonitors, pPrimaryMonitor);
+				return VT.GetClientMonitorData(ref this, out pNumMonitors, out pPrimaryMonitor);
 			}
-			public HRESULT GetUserCredentials(WTS_USER_CREDENTIAL* pUserCreds) mut
+			public HRESULT GetUserCredentials(out WTS_USER_CREDENTIAL pUserCreds) mut
 			{
-				return VT.GetUserCredentials(&this, pUserCreds);
+				return VT.GetUserCredentials(ref this, out pUserCreds);
 			}
-			public HRESULT GetLicenseConnection(IWRdsProtocolLicenseConnection** ppLicenseConnection) mut
+			public HRESULT GetLicenseConnection(out IWRdsProtocolLicenseConnection* ppLicenseConnection) mut
 			{
-				return VT.GetLicenseConnection(&this, ppLicenseConnection);
+				return VT.GetLicenseConnection(ref this, out ppLicenseConnection);
 			}
-			public HRESULT AuthenticateClientToSession(WTS_SESSION_ID* SessionId) mut
+			public HRESULT AuthenticateClientToSession(out WTS_SESSION_ID SessionId) mut
 			{
-				return VT.AuthenticateClientToSession(&this, SessionId);
+				return VT.AuthenticateClientToSession(ref this, out SessionId);
 			}
-			public HRESULT NotifySessionId(WTS_SESSION_ID* SessionId, HANDLE_PTR SessionHandle) mut
+			public HRESULT NotifySessionId(ref WTS_SESSION_ID SessionId, HANDLE_PTR SessionHandle) mut
 			{
-				return VT.NotifySessionId(&this, SessionId, SessionHandle);
+				return VT.NotifySessionId(ref this, ref SessionId, SessionHandle);
 			}
-			public HRESULT GetInputHandles(HANDLE_PTR* pKeyboardHandle, HANDLE_PTR* pMouseHandle, HANDLE_PTR* pBeepHandle) mut
+			public HRESULT GetInputHandles(out HANDLE_PTR pKeyboardHandle, out HANDLE_PTR pMouseHandle, out HANDLE_PTR pBeepHandle) mut
 			{
-				return VT.GetInputHandles(&this, pKeyboardHandle, pMouseHandle, pBeepHandle);
+				return VT.GetInputHandles(ref this, out pKeyboardHandle, out pMouseHandle, out pBeepHandle);
 			}
-			public HRESULT GetVideoHandle(HANDLE_PTR* pVideoHandle) mut
+			public HRESULT GetVideoHandle(out HANDLE_PTR pVideoHandle) mut
 			{
-				return VT.GetVideoHandle(&this, pVideoHandle);
+				return VT.GetVideoHandle(ref this, out pVideoHandle);
 			}
 			public HRESULT ConnectNotify(uint32 SessionId) mut
 			{
-				return VT.ConnectNotify(&this, SessionId);
+				return VT.ConnectNotify(ref this, SessionId);
 			}
 			public HRESULT IsUserAllowedToLogon(uint32 SessionId, HANDLE_PTR UserToken, PWSTR pDomainName, PWSTR pUserName) mut
 			{
-				return VT.IsUserAllowedToLogon(&this, SessionId, UserToken, pDomainName, pUserName);
+				return VT.IsUserAllowedToLogon(ref this, SessionId, UserToken, pDomainName, pUserName);
 			}
-			public HRESULT SessionArbitrationEnumeration(HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, uint32* pdwSessionIdentifierCount) mut
+			public HRESULT SessionArbitrationEnumeration(HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, out uint32 pdwSessionIdentifierCount) mut
 			{
-				return VT.SessionArbitrationEnumeration(&this, hUserToken, bSingleSessionPerUserEnabled, pSessionIdArray, pdwSessionIdentifierCount);
+				return VT.SessionArbitrationEnumeration(ref this, hUserToken, bSingleSessionPerUserEnabled, pSessionIdArray, out pdwSessionIdentifierCount);
 			}
-			public HRESULT LogonNotify(HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, WTS_SESSION_ID* SessionId, WRDS_CONNECTION_SETTINGS* pWRdsConnectionSettings) mut
+			public HRESULT LogonNotify(HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, ref WTS_SESSION_ID SessionId, out WRDS_CONNECTION_SETTINGS pWRdsConnectionSettings) mut
 			{
-				return VT.LogonNotify(&this, hClientToken, wszUserName, wszDomainName, SessionId, pWRdsConnectionSettings);
+				return VT.LogonNotify(ref this, hClientToken, wszUserName, wszDomainName, ref SessionId, out pWRdsConnectionSettings);
 			}
 			public HRESULT PreDisconnect(uint32 DisconnectReason) mut
 			{
-				return VT.PreDisconnect(&this, DisconnectReason);
+				return VT.PreDisconnect(ref this, DisconnectReason);
 			}
 			public HRESULT DisconnectNotify() mut
 			{
-				return VT.DisconnectNotify(&this);
+				return VT.DisconnectNotify(ref this);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
-			public HRESULT GetProtocolStatus(WTS_PROTOCOL_STATUS* pProtocolStatus) mut
+			public HRESULT GetProtocolStatus(out WTS_PROTOCOL_STATUS pProtocolStatus) mut
 			{
-				return VT.GetProtocolStatus(&this, pProtocolStatus);
+				return VT.GetProtocolStatus(ref this, out pProtocolStatus);
 			}
-			public HRESULT GetLastInputTime(uint64* pLastInputTime) mut
+			public HRESULT GetLastInputTime(out uint64 pLastInputTime) mut
 			{
-				return VT.GetLastInputTime(&this, pLastInputTime);
+				return VT.GetLastInputTime(ref this, out pLastInputTime);
 			}
 			public HRESULT SetErrorInfo(uint32 ulError) mut
 			{
-				return VT.SetErrorInfo(&this, ulError);
+				return VT.SetErrorInfo(ref this, ulError);
 			}
-			public HRESULT CreateVirtualChannel(PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, uint* phChannel) mut
+			public HRESULT CreateVirtualChannel(PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, out uint phChannel) mut
 			{
-				return VT.CreateVirtualChannel(&this, szEndpointName, bStatic, RequestedPriority, phChannel);
+				return VT.CreateVirtualChannel(ref this, szEndpointName, bStatic, RequestedPriority, out phChannel);
 			}
 			public HRESULT QueryProperty(Guid QueryType, uint32 ulNumEntriesIn, uint32 ulNumEntriesOut, WTS_PROPERTY_VALUE* pPropertyEntriesIn, WTS_PROPERTY_VALUE* pPropertyEntriesOut) mut
 			{
-				return VT.QueryProperty(&this, QueryType, ulNumEntriesIn, ulNumEntriesOut, pPropertyEntriesIn, pPropertyEntriesOut);
+				return VT.QueryProperty(ref this, QueryType, ulNumEntriesIn, ulNumEntriesOut, pPropertyEntriesIn, pPropertyEntriesOut);
 			}
-			public HRESULT GetShadowConnection(IWRdsProtocolShadowConnection** ppShadowConnection) mut
+			public HRESULT GetShadowConnection(out IWRdsProtocolShadowConnection* ppShadowConnection) mut
 			{
-				return VT.GetShadowConnection(&this, ppShadowConnection);
+				return VT.GetShadowConnection(ref this, out ppShadowConnection);
 			}
 			public HRESULT NotifyCommandProcessCreated(uint32 SessionId) mut
 			{
-				return VT.NotifyCommandProcessCreated(&this, SessionId);
+				return VT.NotifyCommandProcessCreated(ref this, SessionId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolConnection *self, IWRdsProtocolLogonErrorRedirector** ppLogonErrorRedir) GetLogonErrorRedirector;
-				public new function HRESULT(IWRdsProtocolConnection *self) AcceptConnection;
-				public new function HRESULT(IWRdsProtocolConnection *self, WTS_CLIENT_DATA* pClientData) GetClientData;
-				public new function HRESULT(IWRdsProtocolConnection *self, uint32* pNumMonitors, uint32* pPrimaryMonitor) GetClientMonitorData;
-				public new function HRESULT(IWRdsProtocolConnection *self, WTS_USER_CREDENTIAL* pUserCreds) GetUserCredentials;
-				public new function HRESULT(IWRdsProtocolConnection *self, IWRdsProtocolLicenseConnection** ppLicenseConnection) GetLicenseConnection;
-				public new function HRESULT(IWRdsProtocolConnection *self, WTS_SESSION_ID* SessionId) AuthenticateClientToSession;
-				public new function HRESULT(IWRdsProtocolConnection *self, WTS_SESSION_ID* SessionId, HANDLE_PTR SessionHandle) NotifySessionId;
-				public new function HRESULT(IWRdsProtocolConnection *self, HANDLE_PTR* pKeyboardHandle, HANDLE_PTR* pMouseHandle, HANDLE_PTR* pBeepHandle) GetInputHandles;
-				public new function HRESULT(IWRdsProtocolConnection *self, HANDLE_PTR* pVideoHandle) GetVideoHandle;
-				public new function HRESULT(IWRdsProtocolConnection *self, uint32 SessionId) ConnectNotify;
-				public new function HRESULT(IWRdsProtocolConnection *self, uint32 SessionId, HANDLE_PTR UserToken, PWSTR pDomainName, PWSTR pUserName) IsUserAllowedToLogon;
-				public new function HRESULT(IWRdsProtocolConnection *self, HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, uint32* pdwSessionIdentifierCount) SessionArbitrationEnumeration;
-				public new function HRESULT(IWRdsProtocolConnection *self, HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, WTS_SESSION_ID* SessionId, WRDS_CONNECTION_SETTINGS* pWRdsConnectionSettings) LogonNotify;
-				public new function HRESULT(IWRdsProtocolConnection *self, uint32 DisconnectReason) PreDisconnect;
-				public new function HRESULT(IWRdsProtocolConnection *self) DisconnectNotify;
-				public new function HRESULT(IWRdsProtocolConnection *self) Close;
-				public new function HRESULT(IWRdsProtocolConnection *self, WTS_PROTOCOL_STATUS* pProtocolStatus) GetProtocolStatus;
-				public new function HRESULT(IWRdsProtocolConnection *self, uint64* pLastInputTime) GetLastInputTime;
-				public new function HRESULT(IWRdsProtocolConnection *self, uint32 ulError) SetErrorInfo;
-				public new function HRESULT(IWRdsProtocolConnection *self, PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, uint* phChannel) CreateVirtualChannel;
-				public new function HRESULT(IWRdsProtocolConnection *self, Guid QueryType, uint32 ulNumEntriesIn, uint32 ulNumEntriesOut, WTS_PROPERTY_VALUE* pPropertyEntriesIn, WTS_PROPERTY_VALUE* pPropertyEntriesOut) QueryProperty;
-				public new function HRESULT(IWRdsProtocolConnection *self, IWRdsProtocolShadowConnection** ppShadowConnection) GetShadowConnection;
-				public new function HRESULT(IWRdsProtocolConnection *self, uint32 SessionId) NotifyCommandProcessCreated;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out IWRdsProtocolLogonErrorRedirector* ppLogonErrorRedir) GetLogonErrorRedirector;
+				public new function HRESULT(ref IWRdsProtocolConnection self) AcceptConnection;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out WTS_CLIENT_DATA pClientData) GetClientData;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out uint32 pNumMonitors, out uint32 pPrimaryMonitor) GetClientMonitorData;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out WTS_USER_CREDENTIAL pUserCreds) GetUserCredentials;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out IWRdsProtocolLicenseConnection* ppLicenseConnection) GetLicenseConnection;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out WTS_SESSION_ID SessionId) AuthenticateClientToSession;
+				public new function HRESULT(ref IWRdsProtocolConnection self, ref WTS_SESSION_ID SessionId, HANDLE_PTR SessionHandle) NotifySessionId;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out HANDLE_PTR pKeyboardHandle, out HANDLE_PTR pMouseHandle, out HANDLE_PTR pBeepHandle) GetInputHandles;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out HANDLE_PTR pVideoHandle) GetVideoHandle;
+				public new function HRESULT(ref IWRdsProtocolConnection self, uint32 SessionId) ConnectNotify;
+				public new function HRESULT(ref IWRdsProtocolConnection self, uint32 SessionId, HANDLE_PTR UserToken, PWSTR pDomainName, PWSTR pUserName) IsUserAllowedToLogon;
+				public new function HRESULT(ref IWRdsProtocolConnection self, HANDLE_PTR hUserToken, BOOL bSingleSessionPerUserEnabled, uint32* pSessionIdArray, out uint32 pdwSessionIdentifierCount) SessionArbitrationEnumeration;
+				public new function HRESULT(ref IWRdsProtocolConnection self, HANDLE_PTR hClientToken, PWSTR wszUserName, PWSTR wszDomainName, ref WTS_SESSION_ID SessionId, out WRDS_CONNECTION_SETTINGS pWRdsConnectionSettings) LogonNotify;
+				public new function HRESULT(ref IWRdsProtocolConnection self, uint32 DisconnectReason) PreDisconnect;
+				public new function HRESULT(ref IWRdsProtocolConnection self) DisconnectNotify;
+				public new function HRESULT(ref IWRdsProtocolConnection self) Close;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out WTS_PROTOCOL_STATUS pProtocolStatus) GetProtocolStatus;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out uint64 pLastInputTime) GetLastInputTime;
+				public new function HRESULT(ref IWRdsProtocolConnection self, uint32 ulError) SetErrorInfo;
+				public new function HRESULT(ref IWRdsProtocolConnection self, PSTR szEndpointName, BOOL bStatic, uint32 RequestedPriority, out uint phChannel) CreateVirtualChannel;
+				public new function HRESULT(ref IWRdsProtocolConnection self, Guid QueryType, uint32 ulNumEntriesIn, uint32 ulNumEntriesOut, WTS_PROPERTY_VALUE* pPropertyEntriesIn, WTS_PROPERTY_VALUE* pPropertyEntriesOut) QueryProperty;
+				public new function HRESULT(ref IWRdsProtocolConnection self, out IWRdsProtocolShadowConnection* ppShadowConnection) GetShadowConnection;
+				public new function HRESULT(ref IWRdsProtocolConnection self, uint32 SessionId) NotifyCommandProcessCreated;
 			}
 		}
 		[CRepr]
@@ -4772,32 +4772,32 @@ namespace Win32
 			
 			public HRESULT OnReady() mut
 			{
-				return VT.OnReady(&this);
+				return VT.OnReady(ref this);
 			}
 			public HRESULT BrokenConnection(uint32 Reason, uint32 Source) mut
 			{
-				return VT.BrokenConnection(&this, Reason, Source);
+				return VT.BrokenConnection(ref this, Reason, Source);
 			}
 			public HRESULT StopScreenUpdates() mut
 			{
-				return VT.StopScreenUpdates(&this);
+				return VT.StopScreenUpdates(ref this);
 			}
-			public HRESULT RedrawWindow(WTS_SMALL_RECT* rect) mut
+			public HRESULT RedrawWindow(ref WTS_SMALL_RECT rect) mut
 			{
-				return VT.RedrawWindow(&this, rect);
+				return VT.RedrawWindow(ref this, ref rect);
 			}
-			public HRESULT GetConnectionId(uint32* pConnectionId) mut
+			public HRESULT GetConnectionId(out uint32 pConnectionId) mut
 			{
-				return VT.GetConnectionId(&this, pConnectionId);
+				return VT.GetConnectionId(ref this, out pConnectionId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolConnectionCallback *self) OnReady;
-				public new function HRESULT(IWRdsProtocolConnectionCallback *self, uint32 Reason, uint32 Source) BrokenConnection;
-				public new function HRESULT(IWRdsProtocolConnectionCallback *self) StopScreenUpdates;
-				public new function HRESULT(IWRdsProtocolConnectionCallback *self, WTS_SMALL_RECT* rect) RedrawWindow;
-				public new function HRESULT(IWRdsProtocolConnectionCallback *self, uint32* pConnectionId) GetConnectionId;
+				public new function HRESULT(ref IWRdsProtocolConnectionCallback self) OnReady;
+				public new function HRESULT(ref IWRdsProtocolConnectionCallback self, uint32 Reason, uint32 Source) BrokenConnection;
+				public new function HRESULT(ref IWRdsProtocolConnectionCallback self) StopScreenUpdates;
+				public new function HRESULT(ref IWRdsProtocolConnectionCallback self, ref WTS_SMALL_RECT rect) RedrawWindow;
+				public new function HRESULT(ref IWRdsProtocolConnectionCallback self, out uint32 pConnectionId) GetConnectionId;
 			}
 		}
 		[CRepr]
@@ -4807,24 +4807,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Start(PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, IWRdsProtocolShadowCallback* pShadowCallback) mut
+			public HRESULT Start(PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, ref IWRdsProtocolShadowCallback pShadowCallback) mut
 			{
-				return VT.Start(&this, pTargetServerName, TargetSessionId, HotKeyVk, HotkeyModifiers, pShadowCallback);
+				return VT.Start(ref this, pTargetServerName, TargetSessionId, HotKeyVk, HotkeyModifiers, ref pShadowCallback);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT DoTarget(uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) mut
 			{
-				return VT.DoTarget(&this, pParam1, Param1Size, pParam2, Param2Size, pParam3, Param3Size, pParam4, Param4Size, pClientName);
+				return VT.DoTarget(ref this, pParam1, Param1Size, pParam2, Param2Size, pParam3, Param3Size, pParam4, Param4Size, pClientName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolShadowConnection *self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, IWRdsProtocolShadowCallback* pShadowCallback) Start;
-				public new function HRESULT(IWRdsProtocolShadowConnection *self) Stop;
-				public new function HRESULT(IWRdsProtocolShadowConnection *self, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) DoTarget;
+				public new function HRESULT(ref IWRdsProtocolShadowConnection self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8 HotKeyVk, uint16 HotkeyModifiers, ref IWRdsProtocolShadowCallback pShadowCallback) Start;
+				public new function HRESULT(ref IWRdsProtocolShadowConnection self) Stop;
+				public new function HRESULT(ref IWRdsProtocolShadowConnection self, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) DoTarget;
 			}
 		}
 		[CRepr]
@@ -4836,17 +4836,17 @@ namespace Win32
 			
 			public HRESULT StopShadow() mut
 			{
-				return VT.StopShadow(&this);
+				return VT.StopShadow(ref this);
 			}
 			public HRESULT InvokeTargetShadow(PWSTR pTargetServerName, uint32 TargetSessionId, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) mut
 			{
-				return VT.InvokeTargetShadow(&this, pTargetServerName, TargetSessionId, pParam1, Param1Size, pParam2, Param2Size, pParam3, Param3Size, pParam4, Param4Size, pClientName);
+				return VT.InvokeTargetShadow(ref this, pTargetServerName, TargetSessionId, pParam1, Param1Size, pParam2, Param2Size, pParam3, Param3Size, pParam4, Param4Size, pClientName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolShadowCallback *self) StopShadow;
-				public new function HRESULT(IWRdsProtocolShadowCallback *self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) InvokeTargetShadow;
+				public new function HRESULT(ref IWRdsProtocolShadowCallback self) StopShadow;
+				public new function HRESULT(ref IWRdsProtocolShadowCallback self, PWSTR pTargetServerName, uint32 TargetSessionId, uint8* pParam1, uint32 Param1Size, uint8* pParam2, uint32 Param2Size, uint8* pParam3, uint32 Param3Size, uint8* pParam4, uint32 Param4Size, PWSTR pClientName) InvokeTargetShadow;
 			}
 		}
 		[CRepr]
@@ -4856,29 +4856,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RequestLicensingCapabilities(WTS_LICENSE_CAPABILITIES* ppLicenseCapabilities, uint32* pcbLicenseCapabilities) mut
+			public HRESULT RequestLicensingCapabilities(out WTS_LICENSE_CAPABILITIES ppLicenseCapabilities, out uint32 pcbLicenseCapabilities) mut
 			{
-				return VT.RequestLicensingCapabilities(&this, ppLicenseCapabilities, pcbLicenseCapabilities);
+				return VT.RequestLicensingCapabilities(ref this, out ppLicenseCapabilities, out pcbLicenseCapabilities);
 			}
 			public HRESULT SendClientLicense(uint8* pClientLicense, uint32 cbClientLicense) mut
 			{
-				return VT.SendClientLicense(&this, pClientLicense, cbClientLicense);
+				return VT.SendClientLicense(ref this, pClientLicense, cbClientLicense);
 			}
-			public HRESULT RequestClientLicense(uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, uint32* pcbClientLicense) mut
+			public HRESULT RequestClientLicense(uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, out uint32 pcbClientLicense) mut
 			{
-				return VT.RequestClientLicense(&this, Reserve1, Reserve2, ppClientLicense, pcbClientLicense);
+				return VT.RequestClientLicense(ref this, Reserve1, Reserve2, ppClientLicense, out pcbClientLicense);
 			}
 			public HRESULT ProtocolComplete(uint32 ulComplete) mut
 			{
-				return VT.ProtocolComplete(&this, ulComplete);
+				return VT.ProtocolComplete(ref this, ulComplete);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolLicenseConnection *self, WTS_LICENSE_CAPABILITIES* ppLicenseCapabilities, uint32* pcbLicenseCapabilities) RequestLicensingCapabilities;
-				public new function HRESULT(IWRdsProtocolLicenseConnection *self, uint8* pClientLicense, uint32 cbClientLicense) SendClientLicense;
-				public new function HRESULT(IWRdsProtocolLicenseConnection *self, uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, uint32* pcbClientLicense) RequestClientLicense;
-				public new function HRESULT(IWRdsProtocolLicenseConnection *self, uint32 ulComplete) ProtocolComplete;
+				public new function HRESULT(ref IWRdsProtocolLicenseConnection self, out WTS_LICENSE_CAPABILITIES ppLicenseCapabilities, out uint32 pcbLicenseCapabilities) RequestLicensingCapabilities;
+				public new function HRESULT(ref IWRdsProtocolLicenseConnection self, uint8* pClientLicense, uint32 cbClientLicense) SendClientLicense;
+				public new function HRESULT(ref IWRdsProtocolLicenseConnection self, uint8* Reserve1, uint32 Reserve2, uint8* ppClientLicense, out uint32 pcbClientLicense) RequestClientLicense;
+				public new function HRESULT(ref IWRdsProtocolLicenseConnection self, uint32 ulComplete) ProtocolComplete;
 			}
 		}
 		[CRepr]
@@ -4890,27 +4890,27 @@ namespace Win32
 			
 			public HRESULT OnBeginPainting() mut
 			{
-				return VT.OnBeginPainting(&this);
+				return VT.OnBeginPainting(ref this);
 			}
-			public HRESULT RedirectStatus(PWSTR pszMessage, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) mut
+			public HRESULT RedirectStatus(PWSTR pszMessage, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) mut
 			{
-				return VT.RedirectStatus(&this, pszMessage, pResponse);
+				return VT.RedirectStatus(ref this, pszMessage, out pResponse);
 			}
-			public HRESULT RedirectMessage(PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) mut
+			public HRESULT RedirectMessage(PWSTR pszCaption, PWSTR pszMessage, uint32 uType, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) mut
 			{
-				return VT.RedirectMessage(&this, pszCaption, pszMessage, uType, pResponse);
+				return VT.RedirectMessage(ref this, pszCaption, pszMessage, uType, out pResponse);
 			}
-			public HRESULT RedirectLogonError(int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) mut
+			public HRESULT RedirectLogonError(int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) mut
 			{
-				return VT.RedirectLogonError(&this, ntsStatus, ntsSubstatus, pszCaption, pszMessage, uType, pResponse);
+				return VT.RedirectLogonError(ref this, ntsStatus, ntsSubstatus, pszCaption, pszMessage, uType, out pResponse);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolLogonErrorRedirector *self) OnBeginPainting;
-				public new function HRESULT(IWRdsProtocolLogonErrorRedirector *self, PWSTR pszMessage, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectStatus;
-				public new function HRESULT(IWRdsProtocolLogonErrorRedirector *self, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectMessage;
-				public new function HRESULT(IWRdsProtocolLogonErrorRedirector *self, int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, WTS_LOGON_ERROR_REDIRECTOR_RESPONSE* pResponse) RedirectLogonError;
+				public new function HRESULT(ref IWRdsProtocolLogonErrorRedirector self) OnBeginPainting;
+				public new function HRESULT(ref IWRdsProtocolLogonErrorRedirector self, PWSTR pszMessage, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) RedirectStatus;
+				public new function HRESULT(ref IWRdsProtocolLogonErrorRedirector self, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) RedirectMessage;
+				public new function HRESULT(ref IWRdsProtocolLogonErrorRedirector self, int32 ntsStatus, int32 ntsSubstatus, PWSTR pszCaption, PWSTR pszMessage, uint32 uType, out WTS_LOGON_ERROR_REDIRECTOR_RESPONSE pResponse) RedirectLogonError;
 			}
 		}
 		[CRepr]
@@ -4922,27 +4922,27 @@ namespace Win32
 			
 			public HRESULT GetHardwareId(char16* pDisplayDriverHardwareId, uint32 Count) mut
 			{
-				return VT.GetHardwareId(&this, pDisplayDriverHardwareId, Count);
+				return VT.GetHardwareId(ref this, pDisplayDriverHardwareId, Count);
 			}
 			public HRESULT OnDriverLoad(uint32 SessionId, HANDLE_PTR DriverHandle) mut
 			{
-				return VT.OnDriverLoad(&this, SessionId, DriverHandle);
+				return VT.OnDriverLoad(ref this, SessionId, DriverHandle);
 			}
 			public HRESULT OnDriverUnload(uint32 SessionId) mut
 			{
-				return VT.OnDriverUnload(&this, SessionId);
+				return VT.OnDriverUnload(ref this, SessionId);
 			}
 			public HRESULT EnableWddmIdd(BOOL Enabled) mut
 			{
-				return VT.EnableWddmIdd(&this, Enabled);
+				return VT.EnableWddmIdd(ref this, Enabled);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsWddmIddProps *self, char16* pDisplayDriverHardwareId, uint32 Count) GetHardwareId;
-				public new function HRESULT(IWRdsWddmIddProps *self, uint32 SessionId, HANDLE_PTR DriverHandle) OnDriverLoad;
-				public new function HRESULT(IWRdsWddmIddProps *self, uint32 SessionId) OnDriverUnload;
-				public new function HRESULT(IWRdsWddmIddProps *self, BOOL Enabled) EnableWddmIdd;
+				public new function HRESULT(ref IWRdsWddmIddProps self, char16* pDisplayDriverHardwareId, uint32 Count) GetHardwareId;
+				public new function HRESULT(ref IWRdsWddmIddProps self, uint32 SessionId, HANDLE_PTR DriverHandle) OnDriverLoad;
+				public new function HRESULT(ref IWRdsWddmIddProps self, uint32 SessionId) OnDriverUnload;
+				public new function HRESULT(ref IWRdsWddmIddProps self, BOOL Enabled) EnableWddmIdd;
 			}
 		}
 		[CRepr]
@@ -4952,19 +4952,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetConnectionSetting(Guid PropertyID, WTS_PROPERTY_VALUE* pPropertyEntriesIn) mut
+			public HRESULT SetConnectionSetting(Guid PropertyID, ref WTS_PROPERTY_VALUE pPropertyEntriesIn) mut
 			{
-				return VT.SetConnectionSetting(&this, PropertyID, pPropertyEntriesIn);
+				return VT.SetConnectionSetting(ref this, PropertyID, ref pPropertyEntriesIn);
 			}
-			public HRESULT GetConnectionSetting(Guid PropertyID, WTS_PROPERTY_VALUE* pPropertyEntriesOut) mut
+			public HRESULT GetConnectionSetting(Guid PropertyID, out WTS_PROPERTY_VALUE pPropertyEntriesOut) mut
 			{
-				return VT.GetConnectionSetting(&this, PropertyID, pPropertyEntriesOut);
+				return VT.GetConnectionSetting(ref this, PropertyID, out pPropertyEntriesOut);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsProtocolConnectionSettings *self, Guid PropertyID, WTS_PROPERTY_VALUE* pPropertyEntriesIn) SetConnectionSetting;
-				public new function HRESULT(IWRdsProtocolConnectionSettings *self, Guid PropertyID, WTS_PROPERTY_VALUE* pPropertyEntriesOut) GetConnectionSetting;
+				public new function HRESULT(ref IWRdsProtocolConnectionSettings self, Guid PropertyID, ref WTS_PROPERTY_VALUE pPropertyEntriesIn) SetConnectionSetting;
+				public new function HRESULT(ref IWRdsProtocolConnectionSettings self, Guid PropertyID, out WTS_PROPERTY_VALUE pPropertyEntriesOut) GetConnectionSetting;
 			}
 		}
 		[CRepr]
@@ -4974,14 +4974,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSessionForEnhancedFastReconnect(int32* pSessionIdArray, uint32 dwSessionCount, int32* pResultSessionId) mut
+			public HRESULT GetSessionForEnhancedFastReconnect(ref int32 pSessionIdArray, uint32 dwSessionCount, out int32 pResultSessionId) mut
 			{
-				return VT.GetSessionForEnhancedFastReconnect(&this, pSessionIdArray, dwSessionCount, pResultSessionId);
+				return VT.GetSessionForEnhancedFastReconnect(ref this, ref pSessionIdArray, dwSessionCount, out pResultSessionId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWRdsEnhancedFastReconnectArbitrator *self, int32* pSessionIdArray, uint32 dwSessionCount, int32* pResultSessionId) GetSessionForEnhancedFastReconnect;
+				public new function HRESULT(ref IWRdsEnhancedFastReconnectArbitrator self, ref int32 pSessionIdArray, uint32 dwSessionCount, out int32 pResultSessionId) GetSessionForEnhancedFastReconnect;
 			}
 		}
 		[CRepr]
@@ -4993,27 +4993,27 @@ namespace Win32
 			
 			public HRESULT ApplySettings(BSTR rdpFileContents) mut
 			{
-				return VT.ApplySettings(&this, rdpFileContents);
+				return VT.ApplySettings(ref this, rdpFileContents);
 			}
 			public HRESULT RetrieveSettings(BSTR* rdpFileContents) mut
 			{
-				return VT.RetrieveSettings(&this, rdpFileContents);
+				return VT.RetrieveSettings(ref this, rdpFileContents);
 			}
-			public HRESULT GetRdpProperty(BSTR propertyName, VARIANT* value) mut
+			public HRESULT GetRdpProperty(BSTR propertyName, out VARIANT value) mut
 			{
-				return VT.GetRdpProperty(&this, propertyName, value);
+				return VT.GetRdpProperty(ref this, propertyName, out value);
 			}
 			public HRESULT SetRdpProperty(BSTR propertyName, VARIANT value) mut
 			{
-				return VT.SetRdpProperty(&this, propertyName, value);
+				return VT.SetRdpProperty(ref this, propertyName, value);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRemoteDesktopClientSettings *self, BSTR rdpFileContents) ApplySettings;
-				public new function HRESULT(IRemoteDesktopClientSettings *self, BSTR* rdpFileContents) RetrieveSettings;
-				public new function HRESULT(IRemoteDesktopClientSettings *self, BSTR propertyName, VARIANT* value) GetRdpProperty;
-				public new function HRESULT(IRemoteDesktopClientSettings *self, BSTR propertyName, VARIANT value) SetRdpProperty;
+				public new function HRESULT(ref IRemoteDesktopClientSettings self, BSTR rdpFileContents) ApplySettings;
+				public new function HRESULT(ref IRemoteDesktopClientSettings self, BSTR* rdpFileContents) RetrieveSettings;
+				public new function HRESULT(ref IRemoteDesktopClientSettings self, BSTR propertyName, out VARIANT value) GetRdpProperty;
+				public new function HRESULT(ref IRemoteDesktopClientSettings self, BSTR propertyName, VARIANT value) SetRdpProperty;
 			}
 		}
 		[CRepr]
@@ -5025,27 +5025,27 @@ namespace Win32
 			
 			public HRESULT SuspendScreenUpdates() mut
 			{
-				return VT.SuspendScreenUpdates(&this);
+				return VT.SuspendScreenUpdates(ref this);
 			}
 			public HRESULT ResumeScreenUpdates() mut
 			{
-				return VT.ResumeScreenUpdates(&this);
+				return VT.ResumeScreenUpdates(ref this);
 			}
 			public HRESULT ExecuteRemoteAction(RemoteActionType remoteAction) mut
 			{
-				return VT.ExecuteRemoteAction(&this, remoteAction);
+				return VT.ExecuteRemoteAction(ref this, remoteAction);
 			}
 			public HRESULT GetSnapshot(SnapshotEncodingType snapshotEncoding, SnapshotFormatType snapshotFormat, uint32 snapshotWidth, uint32 snapshotHeight, BSTR* snapshotData) mut
 			{
-				return VT.GetSnapshot(&this, snapshotEncoding, snapshotFormat, snapshotWidth, snapshotHeight, snapshotData);
+				return VT.GetSnapshot(ref this, snapshotEncoding, snapshotFormat, snapshotWidth, snapshotHeight, snapshotData);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRemoteDesktopClientActions *self) SuspendScreenUpdates;
-				public new function HRESULT(IRemoteDesktopClientActions *self) ResumeScreenUpdates;
-				public new function HRESULT(IRemoteDesktopClientActions *self, RemoteActionType remoteAction) ExecuteRemoteAction;
-				public new function HRESULT(IRemoteDesktopClientActions *self, SnapshotEncodingType snapshotEncoding, SnapshotFormatType snapshotFormat, uint32 snapshotWidth, uint32 snapshotHeight, BSTR* snapshotData) GetSnapshot;
+				public new function HRESULT(ref IRemoteDesktopClientActions self) SuspendScreenUpdates;
+				public new function HRESULT(ref IRemoteDesktopClientActions self) ResumeScreenUpdates;
+				public new function HRESULT(ref IRemoteDesktopClientActions self, RemoteActionType remoteAction) ExecuteRemoteAction;
+				public new function HRESULT(ref IRemoteDesktopClientActions self, SnapshotEncodingType snapshotEncoding, SnapshotFormatType snapshotFormat, uint32 snapshotWidth, uint32 snapshotHeight, BSTR* snapshotData) GetSnapshot;
 			}
 		}
 		[CRepr]
@@ -5057,37 +5057,37 @@ namespace Win32
 			
 			public HRESULT put_Enabled(int16 enabled) mut
 			{
-				return VT.put_Enabled(&this, enabled);
+				return VT.put_Enabled(ref this, enabled);
 			}
-			public HRESULT get_Enabled(int16* enabled) mut
+			public HRESULT get_Enabled(out int16 enabled) mut
 			{
-				return VT.get_Enabled(&this, enabled);
+				return VT.get_Enabled(ref this, out enabled);
 			}
 			public HRESULT put_EventsEnabled(int16 eventsEnabled) mut
 			{
-				return VT.put_EventsEnabled(&this, eventsEnabled);
+				return VT.put_EventsEnabled(ref this, eventsEnabled);
 			}
-			public HRESULT get_EventsEnabled(int16* eventsEnabled) mut
+			public HRESULT get_EventsEnabled(out int16 eventsEnabled) mut
 			{
-				return VT.get_EventsEnabled(&this, eventsEnabled);
+				return VT.get_EventsEnabled(ref this, out eventsEnabled);
 			}
 			public HRESULT put_PointerSpeed(uint32 pointerSpeed) mut
 			{
-				return VT.put_PointerSpeed(&this, pointerSpeed);
+				return VT.put_PointerSpeed(ref this, pointerSpeed);
 			}
-			public HRESULT get_PointerSpeed(uint32* pointerSpeed) mut
+			public HRESULT get_PointerSpeed(out uint32 pointerSpeed) mut
 			{
-				return VT.get_PointerSpeed(&this, pointerSpeed);
+				return VT.get_PointerSpeed(ref this, out pointerSpeed);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRemoteDesktopClientTouchPointer *self, int16 enabled) put_Enabled;
-				public new function HRESULT(IRemoteDesktopClientTouchPointer *self, int16* enabled) get_Enabled;
-				public new function HRESULT(IRemoteDesktopClientTouchPointer *self, int16 eventsEnabled) put_EventsEnabled;
-				public new function HRESULT(IRemoteDesktopClientTouchPointer *self, int16* eventsEnabled) get_EventsEnabled;
-				public new function HRESULT(IRemoteDesktopClientTouchPointer *self, uint32 pointerSpeed) put_PointerSpeed;
-				public new function HRESULT(IRemoteDesktopClientTouchPointer *self, uint32* pointerSpeed) get_PointerSpeed;
+				public new function HRESULT(ref IRemoteDesktopClientTouchPointer self, int16 enabled) put_Enabled;
+				public new function HRESULT(ref IRemoteDesktopClientTouchPointer self, out int16 enabled) get_Enabled;
+				public new function HRESULT(ref IRemoteDesktopClientTouchPointer self, int16 eventsEnabled) put_EventsEnabled;
+				public new function HRESULT(ref IRemoteDesktopClientTouchPointer self, out int16 eventsEnabled) get_EventsEnabled;
+				public new function HRESULT(ref IRemoteDesktopClientTouchPointer self, uint32 pointerSpeed) put_PointerSpeed;
+				public new function HRESULT(ref IRemoteDesktopClientTouchPointer self, out uint32 pointerSpeed) get_PointerSpeed;
 			}
 		}
 		[CRepr]
@@ -5099,57 +5099,57 @@ namespace Win32
 			
 			public HRESULT Connect() mut
 			{
-				return VT.Connect(&this);
+				return VT.Connect(ref this);
 			}
 			public HRESULT Disconnect() mut
 			{
-				return VT.Disconnect(&this);
+				return VT.Disconnect(ref this);
 			}
 			public HRESULT Reconnect(uint32 width, uint32 height) mut
 			{
-				return VT.Reconnect(&this, width, height);
+				return VT.Reconnect(ref this, width, height);
 			}
 			public HRESULT get_Settings(IRemoteDesktopClientSettings** settings) mut
 			{
-				return VT.get_Settings(&this, settings);
+				return VT.get_Settings(ref this, settings);
 			}
 			public HRESULT get_Actions(IRemoteDesktopClientActions** actions) mut
 			{
-				return VT.get_Actions(&this, actions);
+				return VT.get_Actions(ref this, actions);
 			}
 			public HRESULT get_TouchPointer(IRemoteDesktopClientTouchPointer** touchPointer) mut
 			{
-				return VT.get_TouchPointer(&this, touchPointer);
+				return VT.get_TouchPointer(ref this, touchPointer);
 			}
 			public HRESULT DeleteSavedCredentials(BSTR serverName) mut
 			{
-				return VT.DeleteSavedCredentials(&this, serverName);
+				return VT.DeleteSavedCredentials(ref this, serverName);
 			}
 			public HRESULT UpdateSessionDisplaySettings(uint32 width, uint32 height) mut
 			{
-				return VT.UpdateSessionDisplaySettings(&this, width, height);
+				return VT.UpdateSessionDisplaySettings(ref this, width, height);
 			}
 			public HRESULT attachEvent(BSTR eventName, IDispatch* callback) mut
 			{
-				return VT.attachEvent(&this, eventName, callback);
+				return VT.attachEvent(ref this, eventName, callback);
 			}
 			public HRESULT detachEvent(BSTR eventName, IDispatch* callback) mut
 			{
-				return VT.detachEvent(&this, eventName, callback);
+				return VT.detachEvent(ref this, eventName, callback);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRemoteDesktopClient *self) Connect;
-				public new function HRESULT(IRemoteDesktopClient *self) Disconnect;
-				public new function HRESULT(IRemoteDesktopClient *self, uint32 width, uint32 height) Reconnect;
-				public new function HRESULT(IRemoteDesktopClient *self, IRemoteDesktopClientSettings** settings) get_Settings;
-				public new function HRESULT(IRemoteDesktopClient *self, IRemoteDesktopClientActions** actions) get_Actions;
-				public new function HRESULT(IRemoteDesktopClient *self, IRemoteDesktopClientTouchPointer** touchPointer) get_TouchPointer;
-				public new function HRESULT(IRemoteDesktopClient *self, BSTR serverName) DeleteSavedCredentials;
-				public new function HRESULT(IRemoteDesktopClient *self, uint32 width, uint32 height) UpdateSessionDisplaySettings;
-				public new function HRESULT(IRemoteDesktopClient *self, BSTR eventName, IDispatch* callback) attachEvent;
-				public new function HRESULT(IRemoteDesktopClient *self, BSTR eventName, IDispatch* callback) detachEvent;
+				public new function HRESULT(ref IRemoteDesktopClient self) Connect;
+				public new function HRESULT(ref IRemoteDesktopClient self) Disconnect;
+				public new function HRESULT(ref IRemoteDesktopClient self, uint32 width, uint32 height) Reconnect;
+				public new function HRESULT(ref IRemoteDesktopClient self, IRemoteDesktopClientSettings** settings) get_Settings;
+				public new function HRESULT(ref IRemoteDesktopClient self, IRemoteDesktopClientActions** actions) get_Actions;
+				public new function HRESULT(ref IRemoteDesktopClient self, IRemoteDesktopClientTouchPointer** touchPointer) get_TouchPointer;
+				public new function HRESULT(ref IRemoteDesktopClient self, BSTR serverName) DeleteSavedCredentials;
+				public new function HRESULT(ref IRemoteDesktopClient self, uint32 width, uint32 height) UpdateSessionDisplaySettings;
+				public new function HRESULT(ref IRemoteDesktopClient self, BSTR eventName, IDispatch* callback) attachEvent;
+				public new function HRESULT(ref IRemoteDesktopClient self, BSTR eventName, IDispatch* callback) detachEvent;
 			}
 		}
 		[CRepr]
@@ -5159,14 +5159,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAdditionalInfo(HSTRING* deduplicationId, Guid* riid, void** mapView) mut
+			public HRESULT GetAdditionalInfo(out HSTRING deduplicationId, in Guid riid, void** mapView) mut
 			{
-				return VT.GetAdditionalInfo(&this, deduplicationId, riid, mapView);
+				return VT.GetAdditionalInfo(ref this, out deduplicationId, riid, mapView);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IRemoteSystemAdditionalInfoProvider *self, HSTRING* deduplicationId, Guid* riid, void** mapView) GetAdditionalInfo;
+				public new function HRESULT(ref IRemoteSystemAdditionalInfoProvider self, out HSTRING deduplicationId, in Guid riid, void** mapView) GetAdditionalInfo;
 			}
 		}
 		
@@ -5183,9 +5183,9 @@ namespace Win32
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSConnectSessionW(uint32 LogonId, uint32 TargetLogonId, PWSTR pPassword, BOOL bWait);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateServersW(PWSTR pDomainName, uint32 Reserved, uint32 Version, WTS_SERVER_INFOW** ppServerInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateServersW(PWSTR pDomainName, uint32 Reserved, uint32 Version, out WTS_SERVER_INFOW* ppServerInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateServersA(PSTR pDomainName, uint32 Reserved, uint32 Version, WTS_SERVER_INFOA** ppServerInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateServersA(PSTR pDomainName, uint32 Reserved, uint32 Version, out WTS_SERVER_INFOA* ppServerInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE WTSOpenServerW(PWSTR pServerName);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5197,35 +5197,35 @@ namespace Win32
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void WTSCloseServer(HANDLE hServer);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateSessionsW(HANDLE hServer, uint32 Reserved, uint32 Version, WTS_SESSION_INFOW** ppSessionInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateSessionsW(HANDLE hServer, uint32 Reserved, uint32 Version, out WTS_SESSION_INFOW* ppSessionInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateSessionsA(HANDLE hServer, uint32 Reserved, uint32 Version, WTS_SESSION_INFOA** ppSessionInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateSessionsA(HANDLE hServer, uint32 Reserved, uint32 Version, out WTS_SESSION_INFOA* ppSessionInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateSessionsExW(HANDLE hServer, uint32* pLevel, uint32 Filter, WTS_SESSION_INFO_1W** ppSessionInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateSessionsExW(HANDLE hServer, out uint32 pLevel, uint32 Filter, out WTS_SESSION_INFO_1W* ppSessionInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateSessionsExA(HANDLE hServer, uint32* pLevel, uint32 Filter, WTS_SESSION_INFO_1A** ppSessionInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateSessionsExA(HANDLE hServer, out uint32 pLevel, uint32 Filter, out WTS_SESSION_INFO_1A* ppSessionInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateProcessesW(HANDLE hServer, uint32 Reserved, uint32 Version, WTS_PROCESS_INFOW** ppProcessInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateProcessesW(HANDLE hServer, uint32 Reserved, uint32 Version, out WTS_PROCESS_INFOW* ppProcessInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateProcessesA(HANDLE hServer, uint32 Reserved, uint32 Version, WTS_PROCESS_INFOA** ppProcessInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateProcessesA(HANDLE hServer, uint32 Reserved, uint32 Version, out WTS_PROCESS_INFOA* ppProcessInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSTerminateProcess(HANDLE hServer, uint32 ProcessId, uint32 ExitCode);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSQuerySessionInformationW(HANDLE hServer, uint32 SessionId, WTS_INFO_CLASS WTSInfoClass, PWSTR* ppBuffer, uint32* pBytesReturned);
+		public static extern BOOL WTSQuerySessionInformationW(HANDLE hServer, uint32 SessionId, WTS_INFO_CLASS WTSInfoClass, out PWSTR ppBuffer, out uint32 pBytesReturned);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSQuerySessionInformationA(HANDLE hServer, uint32 SessionId, WTS_INFO_CLASS WTSInfoClass, PSTR* ppBuffer, uint32* pBytesReturned);
+		public static extern BOOL WTSQuerySessionInformationA(HANDLE hServer, uint32 SessionId, WTS_INFO_CLASS WTSInfoClass, out PSTR ppBuffer, out uint32 pBytesReturned);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSQueryUserConfigW(PWSTR pServerName, PWSTR pUserName, WTS_CONFIG_CLASS WTSConfigClass, PWSTR* ppBuffer, uint32* pBytesReturned);
+		public static extern BOOL WTSQueryUserConfigW(PWSTR pServerName, PWSTR pUserName, WTS_CONFIG_CLASS WTSConfigClass, out PWSTR ppBuffer, out uint32 pBytesReturned);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSQueryUserConfigA(PSTR pServerName, PSTR pUserName, WTS_CONFIG_CLASS WTSConfigClass, PSTR* ppBuffer, uint32* pBytesReturned);
+		public static extern BOOL WTSQueryUserConfigA(PSTR pServerName, PSTR pUserName, WTS_CONFIG_CLASS WTSConfigClass, out PSTR ppBuffer, out uint32 pBytesReturned);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSSetUserConfigW(PWSTR pServerName, PWSTR pUserName, WTS_CONFIG_CLASS WTSConfigClass, PWSTR pBuffer, uint32 DataLength);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSSetUserConfigA(PSTR pServerName, PSTR pUserName, WTS_CONFIG_CLASS WTSConfigClass, PSTR pBuffer, uint32 DataLength);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSSendMessageW(HANDLE hServer, uint32 SessionId, PWSTR pTitle, uint32 TitleLength, PWSTR pMessage, uint32 MessageLength, MESSAGEBOX_STYLE Style, uint32 Timeout, MESSAGEBOX_RESULT* pResponse, BOOL bWait);
+		public static extern BOOL WTSSendMessageW(HANDLE hServer, uint32 SessionId, PWSTR pTitle, uint32 TitleLength, PWSTR pMessage, uint32 MessageLength, MESSAGEBOX_STYLE Style, uint32 Timeout, out MESSAGEBOX_RESULT pResponse, BOOL bWait);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSSendMessageA(HANDLE hServer, uint32 SessionId, PSTR pTitle, uint32 TitleLength, PSTR pMessage, uint32 MessageLength, MESSAGEBOX_STYLE Style, uint32 Timeout, MESSAGEBOX_RESULT* pResponse, BOOL bWait);
+		public static extern BOOL WTSSendMessageA(HANDLE hServer, uint32 SessionId, PSTR pTitle, uint32 TitleLength, PSTR pMessage, uint32 MessageLength, MESSAGEBOX_STYLE Style, uint32 Timeout, out MESSAGEBOX_RESULT pResponse, BOOL bWait);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSDisconnectSession(HANDLE hServer, uint32 SessionId, BOOL bWait);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5233,7 +5233,7 @@ namespace Win32
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSShutdownSystem(HANDLE hServer, uint32 ShutdownFlag);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSWaitSystemEvent(HANDLE hServer, uint32 EventMask, uint32* pEventFlags);
+		public static extern BOOL WTSWaitSystemEvent(HANDLE hServer, uint32 EventMask, out uint32 pEventFlags);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HwtsVirtualChannelHandle WTSVirtualChannelOpen(HANDLE hServer, uint32 SessionId, PSTR pVirtualName);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5241,15 +5241,15 @@ namespace Win32
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSVirtualChannelClose(HANDLE hChannelHandle);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSVirtualChannelRead(HANDLE hChannelHandle, uint32 TimeOut, PSTR Buffer, uint32 BufferSize, uint32* pBytesRead);
+		public static extern BOOL WTSVirtualChannelRead(HANDLE hChannelHandle, uint32 TimeOut, PSTR Buffer, uint32 BufferSize, out uint32 pBytesRead);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSVirtualChannelWrite(HANDLE hChannelHandle, PSTR Buffer, uint32 Length, uint32* pBytesWritten);
+		public static extern BOOL WTSVirtualChannelWrite(HANDLE hChannelHandle, PSTR Buffer, uint32 Length, out uint32 pBytesWritten);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSVirtualChannelPurgeInput(HANDLE hChannelHandle);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSVirtualChannelPurgeOutput(HANDLE hChannelHandle);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSVirtualChannelQuery(HANDLE hChannelHandle, WTS_VIRTUAL_CLASS param1, void** ppBuffer, uint32* pBytesReturned);
+		public static extern BOOL WTSVirtualChannelQuery(HANDLE hChannelHandle, WTS_VIRTUAL_CLASS param1, void** ppBuffer, out uint32 pBytesReturned);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void WTSFreeMemory(void* pMemory);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
@@ -5261,45 +5261,45 @@ namespace Win32
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSUnRegisterSessionNotificationEx(HANDLE hServer, HWND hWnd);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSQueryUserToken(uint32 SessionId, HANDLE* phToken);
+		public static extern BOOL WTSQueryUserToken(uint32 SessionId, out HANDLE phToken);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSFreeMemoryExW(WTS_TYPE_CLASS WTSTypeClass, void* pMemory, uint32 NumberOfEntries);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSFreeMemoryExA(WTS_TYPE_CLASS WTSTypeClass, void* pMemory, uint32 NumberOfEntries);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateProcessesExW(HANDLE hServer, uint32* pLevel, uint32 SessionId, PWSTR* ppProcessInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateProcessesExW(HANDLE hServer, out uint32 pLevel, uint32 SessionId, out PWSTR ppProcessInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateProcessesExA(HANDLE hServer, uint32* pLevel, uint32 SessionId, PSTR* ppProcessInfo, uint32* pCount);
+		public static extern BOOL WTSEnumerateProcessesExA(HANDLE hServer, out uint32 pLevel, uint32 SessionId, out PSTR ppProcessInfo, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateListenersW(HANDLE hServer, void* pReserved, uint32 Reserved, uint16** pListeners, uint32* pCount);
+		public static extern BOOL WTSEnumerateListenersW(HANDLE hServer, void* pReserved, uint32 Reserved, uint16** pListeners, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSEnumerateListenersA(HANDLE hServer, void* pReserved, uint32 Reserved, int8** pListeners, uint32* pCount);
+		public static extern BOOL WTSEnumerateListenersA(HANDLE hServer, void* pReserved, uint32 Reserved, int8** pListeners, out uint32 pCount);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSQueryListenerConfigW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, WTSLISTENERCONFIGW* pBuffer);
+		public static extern BOOL WTSQueryListenerConfigW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, out WTSLISTENERCONFIGW pBuffer);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSQueryListenerConfigA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, WTSLISTENERCONFIGA* pBuffer);
+		public static extern BOOL WTSQueryListenerConfigA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, out WTSLISTENERCONFIGA pBuffer);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSCreateListenerW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, WTSLISTENERCONFIGW* pBuffer, uint32 flag);
+		public static extern BOOL WTSCreateListenerW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, ref WTSLISTENERCONFIGW pBuffer, uint32 flag);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSCreateListenerA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, WTSLISTENERCONFIGA* pBuffer, uint32 flag);
+		public static extern BOOL WTSCreateListenerA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, ref WTSLISTENERCONFIGA pBuffer, uint32 flag);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSSetListenerSecurityW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, uint32 SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor);
+		public static extern BOOL WTSSetListenerSecurityW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSSetListenerSecurityA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, uint32 SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor);
+		public static extern BOOL WTSSetListenerSecurityA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, uint32 SecurityInformation, ref SECURITY_DESCRIPTOR pSecurityDescriptor);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSGetListenerSecurityW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, uint32 SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor, uint32 nLength, uint32* lpnLengthNeeded);
+		public static extern BOOL WTSGetListenerSecurityW(HANDLE hServer, void* pReserved, uint32 Reserved, PWSTR pListenerName, uint32 SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor, uint32 nLength, out uint32 lpnLengthNeeded);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSGetListenerSecurityA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, uint32 SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor, uint32 nLength, uint32* lpnLengthNeeded);
+		public static extern BOOL WTSGetListenerSecurityA(HANDLE hServer, void* pReserved, uint32 Reserved, PSTR pListenerName, uint32 SecurityInformation, SECURITY_DESCRIPTOR* pSecurityDescriptor, uint32 nLength, out uint32 lpnLengthNeeded);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL WTSEnableChildSessions(BOOL bEnable);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSIsChildSessionsEnabled(BOOL* pbEnabled);
+		public static extern BOOL WTSIsChildSessionsEnabled(out BOOL pbEnabled);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WTSGetChildSessionId(uint32* pSessionId);
+		public static extern BOOL WTSGetChildSessionId(out uint32 pSessionId);
 		[Import("wtsapi32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT WTSSetRenderHint(uint64* pRenderHintID, HWND hwndOwner, uint32 renderHintType, uint32 cbHintDataLength, uint8* pHintData);
+		public static extern HRESULT WTSSetRenderHint(out uint64 pRenderHintID, HWND hwndOwner, uint32 renderHintType, uint32 cbHintDataLength, uint8* pHintData);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL ProcessIdToSessionId(uint32 dwProcessId, uint32* pSessionId);
+		public static extern BOOL ProcessIdToSessionId(uint32 dwProcessId, out uint32 pSessionId);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WTSGetActiveConsoleSessionId();
 		

@@ -57,24 +57,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Score(float* score) mut
+			public HRESULT get_Score(out float score) mut
 			{
-				return VT.get_Score(&this, score);
+				return VT.get_Score(ref this, out score);
 			}
 			public HRESULT get_Title(BSTR* title) mut
 			{
-				return VT.get_Title(&this, title);
+				return VT.get_Title(ref this, title);
 			}
 			public HRESULT get_Description(BSTR* description) mut
 			{
-				return VT.get_Description(&this, description);
+				return VT.get_Description(ref this, description);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IProvideWinSATAssessmentInfo *self, float* score) get_Score;
-				public new function HRESULT(IProvideWinSATAssessmentInfo *self, BSTR* title) get_Title;
-				public new function HRESULT(IProvideWinSATAssessmentInfo *self, BSTR* description) get_Description;
+				public new function HRESULT(ref IProvideWinSATAssessmentInfo self, out float score) get_Score;
+				public new function HRESULT(ref IProvideWinSATAssessmentInfo self, BSTR* title) get_Title;
+				public new function HRESULT(ref IProvideWinSATAssessmentInfo self, BSTR* description) get_Description;
 			}
 		}
 		[CRepr]
@@ -86,32 +86,32 @@ namespace Win32
 			
 			public HRESULT GetAssessmentInfo(WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) mut
 			{
-				return VT.GetAssessmentInfo(&this, assessment, ppinfo);
+				return VT.GetAssessmentInfo(ref this, assessment, ppinfo);
 			}
-			public HRESULT get_AssessmentState(WINSAT_ASSESSMENT_STATE* state) mut
+			public HRESULT get_AssessmentState(out WINSAT_ASSESSMENT_STATE state) mut
 			{
-				return VT.get_AssessmentState(&this, state);
+				return VT.get_AssessmentState(ref this, out state);
 			}
-			public HRESULT get_AssessmentDateTime(VARIANT* fileTime) mut
+			public HRESULT get_AssessmentDateTime(out VARIANT fileTime) mut
 			{
-				return VT.get_AssessmentDateTime(&this, fileTime);
+				return VT.get_AssessmentDateTime(ref this, out fileTime);
 			}
-			public HRESULT get_SystemRating(float* level) mut
+			public HRESULT get_SystemRating(out float level) mut
 			{
-				return VT.get_SystemRating(&this, level);
+				return VT.get_SystemRating(ref this, out level);
 			}
 			public HRESULT get_RatingStateDesc(BSTR* description) mut
 			{
-				return VT.get_RatingStateDesc(&this, description);
+				return VT.get_RatingStateDesc(ref this, description);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IProvideWinSATResultsInfo *self, WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) GetAssessmentInfo;
-				public new function HRESULT(IProvideWinSATResultsInfo *self, WINSAT_ASSESSMENT_STATE* state) get_AssessmentState;
-				public new function HRESULT(IProvideWinSATResultsInfo *self, VARIANT* fileTime) get_AssessmentDateTime;
-				public new function HRESULT(IProvideWinSATResultsInfo *self, float* level) get_SystemRating;
-				public new function HRESULT(IProvideWinSATResultsInfo *self, BSTR* description) get_RatingStateDesc;
+				public new function HRESULT(ref IProvideWinSATResultsInfo self, WINSAT_ASSESSMENT_TYPE assessment, IProvideWinSATAssessmentInfo** ppinfo) GetAssessmentInfo;
+				public new function HRESULT(ref IProvideWinSATResultsInfo self, out WINSAT_ASSESSMENT_STATE state) get_AssessmentState;
+				public new function HRESULT(ref IProvideWinSATResultsInfo self, out VARIANT fileTime) get_AssessmentDateTime;
+				public new function HRESULT(ref IProvideWinSATResultsInfo self, out float level) get_SystemRating;
+				public new function HRESULT(ref IProvideWinSATResultsInfo self, BSTR* description) get_RatingStateDesc;
 			}
 		}
 		[CRepr]
@@ -123,17 +123,17 @@ namespace Win32
 			
 			public HRESULT get_XML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut
 			{
-				return VT.get_XML(&this, xPath, namespaces, ppDomNodeList);
+				return VT.get_XML(ref this, xPath, namespaces, ppDomNodeList);
 			}
 			public HRESULT get_Info(IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) mut
 			{
-				return VT.get_Info(&this, ppWinSATAssessmentInfo);
+				return VT.get_Info(ref this, ppWinSATAssessmentInfo);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IQueryRecentWinSATAssessment *self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_XML;
-				public new function HRESULT(IQueryRecentWinSATAssessment *self, IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) get_Info;
+				public new function HRESULT(ref IQueryRecentWinSATAssessment self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_XML;
+				public new function HRESULT(ref IQueryRecentWinSATAssessment self, IProvideWinSATResultsInfo** ppWinSATAssessmentInfo) get_Info;
 			}
 		}
 		[CRepr]
@@ -145,12 +145,12 @@ namespace Win32
 			
 			public HRESULT get_Bitmap(WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) mut
 			{
-				return VT.get_Bitmap(&this, bitmapSize, state, rating, pBitmap);
+				return VT.get_Bitmap(ref this, bitmapSize, state, rating, pBitmap);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IProvideWinSATVisuals *self, WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) get_Bitmap;
+				public new function HRESULT(ref IProvideWinSATVisuals self, WINSAT_BITMAP_SIZE bitmapSize, WINSAT_ASSESSMENT_STATE state, float rating, HBITMAP* pBitmap) get_Bitmap;
 			}
 		}
 		[CRepr]
@@ -162,12 +162,12 @@ namespace Win32
 			
 			public HRESULT get_AllXML(BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) mut
 			{
-				return VT.get_AllXML(&this, xPath, namespaces, ppDomNodeList);
+				return VT.get_AllXML(ref this, xPath, namespaces, ppDomNodeList);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IQueryAllWinSATAssessments *self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_AllXML;
+				public new function HRESULT(ref IQueryAllWinSATAssessments self, BSTR xPath, BSTR namespaces, IXMLDOMNodeList** ppDomNodeList) get_AllXML;
 			}
 		}
 		[CRepr]
@@ -179,17 +179,17 @@ namespace Win32
 			
 			public HRESULT WinSATComplete(HRESULT hresult, PWSTR strDescription) mut
 			{
-				return VT.WinSATComplete(&this, hresult, strDescription);
+				return VT.WinSATComplete(ref this, hresult, strDescription);
 			}
 			public HRESULT WinSATUpdate(uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) mut
 			{
-				return VT.WinSATUpdate(&this, uCurrentTick, uTickTotal, strCurrentState);
+				return VT.WinSATUpdate(ref this, uCurrentTick, uTickTotal, strCurrentState);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWinSATInitiateEvents *self, HRESULT hresult, PWSTR strDescription) WinSATComplete;
-				public new function HRESULT(IWinSATInitiateEvents *self, uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) WinSATUpdate;
+				public new function HRESULT(ref IWinSATInitiateEvents self, HRESULT hresult, PWSTR strDescription) WinSATComplete;
+				public new function HRESULT(ref IWinSATInitiateEvents self, uint32 uCurrentTick, uint32 uTickTotal, PWSTR strCurrentState) WinSATUpdate;
 			}
 		}
 		[CRepr]
@@ -201,22 +201,22 @@ namespace Win32
 			
 			public HRESULT InitiateAssessment(PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) mut
 			{
-				return VT.InitiateAssessment(&this, cmdLine, pCallbacks, callerHwnd);
+				return VT.InitiateAssessment(ref this, cmdLine, pCallbacks, callerHwnd);
 			}
 			public HRESULT InitiateFormalAssessment(IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) mut
 			{
-				return VT.InitiateFormalAssessment(&this, pCallbacks, callerHwnd);
+				return VT.InitiateFormalAssessment(ref this, pCallbacks, callerHwnd);
 			}
 			public HRESULT CancelAssessment() mut
 			{
-				return VT.CancelAssessment(&this);
+				return VT.CancelAssessment(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInitiateWinSATAssessment *self, PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateAssessment;
-				public new function HRESULT(IInitiateWinSATAssessment *self, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateFormalAssessment;
-				public new function HRESULT(IInitiateWinSATAssessment *self) CancelAssessment;
+				public new function HRESULT(ref IInitiateWinSATAssessment self, PWSTR cmdLine, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateAssessment;
+				public new function HRESULT(ref IInitiateWinSATAssessment self, IWinSATInitiateEvents* pCallbacks, HWND callerHwnd) InitiateFormalAssessment;
+				public new function HRESULT(ref IInitiateWinSATAssessment self) CancelAssessment;
 			}
 		}
 		[CRepr]
@@ -228,12 +228,12 @@ namespace Win32
 			
 			public HRESULT SetAccessiblityData(PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) mut
 			{
-				return VT.SetAccessiblityData(&this, wsName, wsValue, wsDesc);
+				return VT.SetAccessiblityData(ref this, wsName, wsValue, wsDesc);
 			}
 			[CRepr]
 			public struct VTable : IAccessible.VTable
 			{
-				public new function HRESULT(IAccessibleWinSAT *self, PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) SetAccessiblityData;
+				public new function HRESULT(ref IAccessibleWinSAT self, PWSTR wsName, PWSTR wsValue, PWSTR wsDesc) SetAccessiblityData;
 			}
 		}
 		[CRepr]
@@ -243,14 +243,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOEMPrePopulationInfo(WINSAT_OEM_DATA_TYPE* state) mut
+			public HRESULT GetOEMPrePopulationInfo(out WINSAT_OEM_DATA_TYPE state) mut
 			{
-				return VT.GetOEMPrePopulationInfo(&this, state);
+				return VT.GetOEMPrePopulationInfo(ref this, out state);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IQueryOEMWinSATCustomization *self, WINSAT_OEM_DATA_TYPE* state) GetOEMPrePopulationInfo;
+				public new function HRESULT(ref IQueryOEMWinSATCustomization self, out WINSAT_OEM_DATA_TYPE state) GetOEMPrePopulationInfo;
 			}
 		}
 		

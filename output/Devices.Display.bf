@@ -1044,84 +1044,84 @@ namespace Win32
 		// --- Function Pointers ---
 		
 		public function int PFN();
-		public function BOOL FREEOBJPROC(DRIVEROBJ* pDriverObj);
-		public function void WNDOBJCHANGEPROC(WNDOBJ* pwo, uint32 fl);
+		public function BOOL FREEOBJPROC(out DRIVEROBJ pDriverObj);
+		public function void WNDOBJCHANGEPROC(out WNDOBJ pwo, uint32 fl);
 		public function int32 SORTCOMP(void* pv1, void* pv2);
-		public function BOOL PFN_DrvEnableDriver(uint32 param0, uint32 param1, DRVENABLEDATA* param2);
-		public function DHPDEV PFN_DrvEnablePDEV(DEVMODEW* param0, PWSTR param1, uint32 param2, HSURF* param3, uint32 param4, GDIINFO* param5, uint32 param6, DEVINFO* param7, HDEV param8, PWSTR param9, HANDLE param10);
+		public function BOOL PFN_DrvEnableDriver(uint32 param0, uint32 param1, out DRVENABLEDATA param2);
+		public function DHPDEV PFN_DrvEnablePDEV(out DEVMODEW param0, PWSTR param1, uint32 param2, out HSURF param3, uint32 param4, out GDIINFO param5, uint32 param6, out DEVINFO param7, HDEV param8, PWSTR param9, HANDLE param10);
 		public function void PFN_DrvCompletePDEV(DHPDEV param0, HDEV param1);
 		public function uint32 PFN_DrvResetDevice(DHPDEV param0, void* param1);
 		public function void PFN_DrvDisablePDEV(DHPDEV param0);
-		public function void PFN_DrvSynchronize(DHPDEV param0, RECTL* param1);
+		public function void PFN_DrvSynchronize(DHPDEV param0, out RECTL param1);
 		public function HSURF PFN_DrvEnableSurface(DHPDEV param0);
 		public function void PFN_DrvDisableDriver();
 		public function void PFN_DrvDisableSurface(DHPDEV param0);
 		public function BOOL PFN_DrvAssertMode(DHPDEV param0, BOOL param1);
-		public function BOOL PFN_DrvTextOut(SURFOBJ* param0, STROBJ* param1, FONTOBJ* param2, CLIPOBJ* param3, RECTL* param4, RECTL* param5, BRUSHOBJ* param6, BRUSHOBJ* param7, POINTL* param8, uint32 param9);
-		public function BOOL PFN_DrvStretchBlt(SURFOBJ* param0, SURFOBJ* param1, SURFOBJ* param2, CLIPOBJ* param3, XLATEOBJ* param4, COLORADJUSTMENT* param5, POINTL* param6, RECTL* param7, RECTL* param8, POINTL* param9, uint32 param10);
-		public function BOOL PFN_DrvStretchBltROP(SURFOBJ* param0, SURFOBJ* param1, SURFOBJ* param2, CLIPOBJ* param3, XLATEOBJ* param4, COLORADJUSTMENT* param5, POINTL* param6, RECTL* param7, RECTL* param8, POINTL* param9, uint32 param10, BRUSHOBJ* param11, uint32 param12);
-		public function BOOL PFN_DrvTransparentBlt(SURFOBJ* param0, SURFOBJ* param1, CLIPOBJ* param2, XLATEOBJ* param3, RECTL* param4, RECTL* param5, uint32 param6, uint32 param7);
-		public function BOOL PFN_DrvPlgBlt(SURFOBJ* param0, SURFOBJ* param1, SURFOBJ* param2, CLIPOBJ* param3, XLATEOBJ* param4, COLORADJUSTMENT* param5, POINTL* param6, POINTFIX* param7, RECTL* param8, POINTL* param9, uint32 param10);
-		public function BOOL PFN_DrvBitBlt(SURFOBJ* param0, SURFOBJ* param1, SURFOBJ* param2, CLIPOBJ* param3, XLATEOBJ* param4, RECTL* param5, POINTL* param6, POINTL* param7, BRUSHOBJ* param8, POINTL* param9, uint32 param10);
-		public function BOOL PFN_DrvRealizeBrush(BRUSHOBJ* param0, SURFOBJ* param1, SURFOBJ* param2, SURFOBJ* param3, XLATEOBJ* param4, uint32 param5);
-		public function BOOL PFN_DrvCopyBits(SURFOBJ* param0, SURFOBJ* param1, CLIPOBJ* param2, XLATEOBJ* param3, RECTL* param4, POINTL* param5);
-		public function uint32 PFN_DrvDitherColor(DHPDEV param0, uint32 param1, uint32 param2, uint32* param3);
+		public function BOOL PFN_DrvTextOut(out SURFOBJ param0, out STROBJ param1, out FONTOBJ param2, out CLIPOBJ param3, out RECTL param4, out RECTL param5, out BRUSHOBJ param6, out BRUSHOBJ param7, out POINTL param8, uint32 param9);
+		public function BOOL PFN_DrvStretchBlt(out SURFOBJ param0, out SURFOBJ param1, out SURFOBJ param2, out CLIPOBJ param3, out XLATEOBJ param4, out COLORADJUSTMENT param5, out POINTL param6, out RECTL param7, out RECTL param8, out POINTL param9, uint32 param10);
+		public function BOOL PFN_DrvStretchBltROP(out SURFOBJ param0, out SURFOBJ param1, out SURFOBJ param2, out CLIPOBJ param3, out XLATEOBJ param4, out COLORADJUSTMENT param5, out POINTL param6, out RECTL param7, out RECTL param8, out POINTL param9, uint32 param10, out BRUSHOBJ param11, uint32 param12);
+		public function BOOL PFN_DrvTransparentBlt(out SURFOBJ param0, out SURFOBJ param1, out CLIPOBJ param2, out XLATEOBJ param3, out RECTL param4, out RECTL param5, uint32 param6, uint32 param7);
+		public function BOOL PFN_DrvPlgBlt(out SURFOBJ param0, out SURFOBJ param1, out SURFOBJ param2, out CLIPOBJ param3, out XLATEOBJ param4, out COLORADJUSTMENT param5, out POINTL param6, out POINTFIX param7, out RECTL param8, out POINTL param9, uint32 param10);
+		public function BOOL PFN_DrvBitBlt(out SURFOBJ param0, out SURFOBJ param1, out SURFOBJ param2, out CLIPOBJ param3, out XLATEOBJ param4, out RECTL param5, out POINTL param6, out POINTL param7, out BRUSHOBJ param8, out POINTL param9, uint32 param10);
+		public function BOOL PFN_DrvRealizeBrush(out BRUSHOBJ param0, out SURFOBJ param1, out SURFOBJ param2, out SURFOBJ param3, out XLATEOBJ param4, uint32 param5);
+		public function BOOL PFN_DrvCopyBits(out SURFOBJ param0, out SURFOBJ param1, out CLIPOBJ param2, out XLATEOBJ param3, out RECTL param4, out POINTL param5);
+		public function uint32 PFN_DrvDitherColor(DHPDEV param0, uint32 param1, uint32 param2, out uint32 param3);
 		public function HBITMAP PFN_DrvCreateDeviceBitmap(DHPDEV param0, SIZE param1, uint32 param2);
 		public function void PFN_DrvDeleteDeviceBitmap(DHSURF param0);
-		public function BOOL PFN_DrvSetPalette(DHPDEV param0, PALOBJ* param1, uint32 param2, uint32 param3, uint32 param4);
-		public function uint32 PFN_DrvEscape(SURFOBJ* param0, uint32 param1, uint32 param2, void* param3, uint32 param4, void* param5);
-		public function uint32 PFN_DrvDrawEscape(SURFOBJ* param0, uint32 param1, CLIPOBJ* param2, RECTL* param3, uint32 param4, void* param5);
-		public function IFIMETRICS* PFN_DrvQueryFont(DHPDEV param0, uint param1, uint32 param2, uint* param3);
-		public function void* PFN_DrvQueryFontTree(DHPDEV param0, uint param1, uint32 param2, uint32 param3, uint* param4);
-		public function int32 PFN_DrvQueryFontData(DHPDEV param0, FONTOBJ* param1, uint32 param2, uint32 param3, GLYPHDATA* param4, void* param5, uint32 param6);
+		public function BOOL PFN_DrvSetPalette(DHPDEV param0, out PALOBJ param1, uint32 param2, uint32 param3, uint32 param4);
+		public function uint32 PFN_DrvEscape(out SURFOBJ param0, uint32 param1, uint32 param2, void* param3, uint32 param4, void* param5);
+		public function uint32 PFN_DrvDrawEscape(out SURFOBJ param0, uint32 param1, out CLIPOBJ param2, out RECTL param3, uint32 param4, void* param5);
+		public function IFIMETRICS* PFN_DrvQueryFont(DHPDEV param0, uint param1, uint32 param2, out uint param3);
+		public function void* PFN_DrvQueryFontTree(DHPDEV param0, uint param1, uint32 param2, uint32 param3, out uint param4);
+		public function int32 PFN_DrvQueryFontData(DHPDEV param0, out FONTOBJ param1, uint32 param2, uint32 param3, out GLYPHDATA param4, void* param5, uint32 param6);
 		public function void PFN_DrvFree(void* param0, uint param1);
-		public function void PFN_DrvDestroyFont(FONTOBJ* param0);
-		public function int32 PFN_DrvQueryFontCaps(uint32 param0, uint32* param1);
-		public function uint PFN_DrvLoadFontFile(uint32 param0, uint* param1, void** param2, uint32* param3, DESIGNVECTOR* param4, uint32 param5, uint32 param6);
+		public function void PFN_DrvDestroyFont(out FONTOBJ param0);
+		public function int32 PFN_DrvQueryFontCaps(uint32 param0, out uint32 param1);
+		public function uint PFN_DrvLoadFontFile(uint32 param0, out uint param1, void** param2, out uint32 param3, out DESIGNVECTOR param4, uint32 param5, uint32 param6);
 		public function BOOL PFN_DrvUnloadFontFile(uint param0);
-		public function uint32 PFN_DrvSetPointerShape(SURFOBJ* param0, SURFOBJ* param1, SURFOBJ* param2, XLATEOBJ* param3, int32 param4, int32 param5, int32 param6, int32 param7, RECTL* param8, uint32 param9);
-		public function void PFN_DrvMovePointer(SURFOBJ* pso, int32 x, int32 y, RECTL* prcl);
-		public function BOOL PFN_DrvSendPage(SURFOBJ* param0);
-		public function BOOL PFN_DrvStartPage(SURFOBJ* pso);
-		public function BOOL PFN_DrvStartDoc(SURFOBJ* pso, PWSTR pwszDocName, uint32 dwJobId);
-		public function BOOL PFN_DrvEndDoc(SURFOBJ* pso, uint32 fl);
+		public function uint32 PFN_DrvSetPointerShape(out SURFOBJ param0, out SURFOBJ param1, out SURFOBJ param2, out XLATEOBJ param3, int32 param4, int32 param5, int32 param6, int32 param7, out RECTL param8, uint32 param9);
+		public function void PFN_DrvMovePointer(out SURFOBJ pso, int32 x, int32 y, out RECTL prcl);
+		public function BOOL PFN_DrvSendPage(out SURFOBJ param0);
+		public function BOOL PFN_DrvStartPage(out SURFOBJ pso);
+		public function BOOL PFN_DrvStartDoc(out SURFOBJ pso, PWSTR pwszDocName, uint32 dwJobId);
+		public function BOOL PFN_DrvEndDoc(out SURFOBJ pso, uint32 fl);
 		public function BOOL PFN_DrvQuerySpoolType(DHPDEV dhpdev, PWSTR pwchType);
-		public function BOOL PFN_DrvLineTo(SURFOBJ* param0, CLIPOBJ* param1, BRUSHOBJ* param2, int32 param3, int32 param4, int32 param5, int32 param6, RECTL* param7, uint32 param8);
-		public function BOOL PFN_DrvStrokePath(SURFOBJ* param0, PATHOBJ* param1, CLIPOBJ* param2, XFORMOBJ* param3, BRUSHOBJ* param4, POINTL* param5, LINEATTRS* param6, uint32 param7);
-		public function BOOL PFN_DrvFillPath(SURFOBJ* param0, PATHOBJ* param1, CLIPOBJ* param2, BRUSHOBJ* param3, POINTL* param4, uint32 param5, uint32 param6);
-		public function BOOL PFN_DrvStrokeAndFillPath(SURFOBJ* param0, PATHOBJ* param1, CLIPOBJ* param2, XFORMOBJ* param3, BRUSHOBJ* param4, LINEATTRS* param5, BRUSHOBJ* param6, POINTL* param7, uint32 param8, uint32 param9);
-		public function BOOL PFN_DrvPaint(SURFOBJ* param0, CLIPOBJ* param1, BRUSHOBJ* param2, POINTL* param3, uint32 param4);
-		public function uint32 PFN_DrvGetGlyphMode(DHPDEV dhpdev, FONTOBJ* pfo);
+		public function BOOL PFN_DrvLineTo(out SURFOBJ param0, out CLIPOBJ param1, out BRUSHOBJ param2, int32 param3, int32 param4, int32 param5, int32 param6, out RECTL param7, uint32 param8);
+		public function BOOL PFN_DrvStrokePath(out SURFOBJ param0, out PATHOBJ param1, out CLIPOBJ param2, out XFORMOBJ param3, out BRUSHOBJ param4, out POINTL param5, out LINEATTRS param6, uint32 param7);
+		public function BOOL PFN_DrvFillPath(out SURFOBJ param0, out PATHOBJ param1, out CLIPOBJ param2, out BRUSHOBJ param3, out POINTL param4, uint32 param5, uint32 param6);
+		public function BOOL PFN_DrvStrokeAndFillPath(out SURFOBJ param0, out PATHOBJ param1, out CLIPOBJ param2, out XFORMOBJ param3, out BRUSHOBJ param4, out LINEATTRS param5, out BRUSHOBJ param6, out POINTL param7, uint32 param8, uint32 param9);
+		public function BOOL PFN_DrvPaint(out SURFOBJ param0, out CLIPOBJ param1, out BRUSHOBJ param2, out POINTL param3, uint32 param4);
+		public function uint32 PFN_DrvGetGlyphMode(DHPDEV dhpdev, out FONTOBJ pfo);
 		public function BOOL PFN_DrvResetPDEV(DHPDEV dhpdevOld, DHPDEV dhpdevNew);
-		public function uint PFN_DrvSaveScreenBits(SURFOBJ* param0, uint32 param1, uint param2, RECTL* param3);
-		public function uint32 PFN_DrvGetModes(HANDLE param0, uint32 param1, DEVMODEW* param2);
-		public function int32 PFN_DrvQueryTrueTypeTable(uint param0, uint32 param1, uint32 param2, int32 param3, uint32 param4, uint8* param5, uint8** param6, uint32* param7);
-		public function int32 PFN_DrvQueryTrueTypeSection(uint32 param0, uint32 param1, uint32 param2, HANDLE* param3, int32* param4);
-		public function int32 PFN_DrvQueryTrueTypeOutline(DHPDEV param0, FONTOBJ* param1, uint32 param2, BOOL param3, GLYPHDATA* param4, uint32 param5, TTPOLYGONHEADER* param6);
-		public function void* PFN_DrvGetTrueTypeFile(uint param0, uint32* param1);
-		public function int32 PFN_DrvQueryFontFile(uint param0, uint32 param1, uint32 param2, uint32* param3);
-		public function FD_GLYPHATTR* PFN_DrvQueryGlyphAttrs(FONTOBJ* param0, uint32 param1);
-		public function BOOL PFN_DrvQueryAdvanceWidths(DHPDEV param0, FONTOBJ* param1, uint32 param2, uint32* param3, void* param4, uint32 param5);
-		public function uint32 PFN_DrvFontManagement(SURFOBJ* param0, FONTOBJ* param1, uint32 param2, uint32 param3, void* param4, uint32 param5, void* param6);
-		public function BOOL PFN_DrvSetPixelFormat(SURFOBJ* param0, int32 param1, HWND param2);
-		public function int32 PFN_DrvDescribePixelFormat(DHPDEV param0, int32 param1, uint32 param2, PIXELFORMATDESCRIPTOR* param3);
-		public function BOOL PFN_DrvSwapBuffers(SURFOBJ* param0, WNDOBJ* param1);
-		public function BOOL PFN_DrvStartBanding(SURFOBJ* param0, POINTL* ppointl);
-		public function BOOL PFN_DrvNextBand(SURFOBJ* param0, POINTL* ppointl);
-		public function BOOL PFN_DrvQueryPerBandInfo(SURFOBJ* param0, PERBANDINFO* param1);
-		public function BOOL PFN_DrvEnableDirectDraw(DHPDEV param0, DD_CALLBACKS* param1, DD_SURFACECALLBACKS* param2, DD_PALETTECALLBACKS* param3);
+		public function uint PFN_DrvSaveScreenBits(out SURFOBJ param0, uint32 param1, uint param2, out RECTL param3);
+		public function uint32 PFN_DrvGetModes(HANDLE param0, uint32 param1, out DEVMODEW param2);
+		public function int32 PFN_DrvQueryTrueTypeTable(uint param0, uint32 param1, uint32 param2, int32 param3, uint32 param4, out uint8 param5, out uint8* param6, out uint32 param7);
+		public function int32 PFN_DrvQueryTrueTypeSection(uint32 param0, uint32 param1, uint32 param2, out HANDLE param3, out int32 param4);
+		public function int32 PFN_DrvQueryTrueTypeOutline(DHPDEV param0, out FONTOBJ param1, uint32 param2, BOOL param3, out GLYPHDATA param4, uint32 param5, out TTPOLYGONHEADER param6);
+		public function void* PFN_DrvGetTrueTypeFile(uint param0, out uint32 param1);
+		public function int32 PFN_DrvQueryFontFile(uint param0, uint32 param1, uint32 param2, out uint32 param3);
+		public function FD_GLYPHATTR* PFN_DrvQueryGlyphAttrs(out FONTOBJ param0, uint32 param1);
+		public function BOOL PFN_DrvQueryAdvanceWidths(DHPDEV param0, out FONTOBJ param1, uint32 param2, out uint32 param3, void* param4, uint32 param5);
+		public function uint32 PFN_DrvFontManagement(out SURFOBJ param0, out FONTOBJ param1, uint32 param2, uint32 param3, void* param4, uint32 param5, void* param6);
+		public function BOOL PFN_DrvSetPixelFormat(out SURFOBJ param0, int32 param1, HWND param2);
+		public function int32 PFN_DrvDescribePixelFormat(DHPDEV param0, int32 param1, uint32 param2, out PIXELFORMATDESCRIPTOR param3);
+		public function BOOL PFN_DrvSwapBuffers(out SURFOBJ param0, out WNDOBJ param1);
+		public function BOOL PFN_DrvStartBanding(out SURFOBJ param0, out POINTL ppointl);
+		public function BOOL PFN_DrvNextBand(out SURFOBJ param0, out POINTL ppointl);
+		public function BOOL PFN_DrvQueryPerBandInfo(out SURFOBJ param0, out PERBANDINFO param1);
+		public function BOOL PFN_DrvEnableDirectDraw(DHPDEV param0, out DD_CALLBACKS param1, out DD_SURFACECALLBACKS param2, out DD_PALETTECALLBACKS param3);
 		public function void PFN_DrvDisableDirectDraw(DHPDEV param0);
-		public function BOOL PFN_DrvGetDirectDrawInfo(DHPDEV param0, DD_HALINFO* param1, uint32* param2, VIDEOMEMORY* param3, uint32* param4, uint32* param5);
-		public function HANDLE PFN_DrvIcmCreateColorTransform(DHPDEV param0, LOGCOLORSPACEW* param1, void* param2, uint32 param3, void* param4, uint32 param5, void* param6, uint32 param7, uint32 param8);
+		public function BOOL PFN_DrvGetDirectDrawInfo(DHPDEV param0, out DD_HALINFO param1, out uint32 param2, out VIDEOMEMORY param3, out uint32 param4, out uint32 param5);
+		public function HANDLE PFN_DrvIcmCreateColorTransform(DHPDEV param0, out LOGCOLORSPACEW param1, void* param2, uint32 param3, void* param4, uint32 param5, void* param6, uint32 param7, uint32 param8);
 		public function BOOL PFN_DrvIcmDeleteColorTransform(DHPDEV param0, HANDLE param1);
-		public function BOOL PFN_DrvIcmCheckBitmapBits(DHPDEV param0, HANDLE param1, SURFOBJ* param2, uint8* param3);
+		public function BOOL PFN_DrvIcmCheckBitmapBits(DHPDEV param0, HANDLE param1, out SURFOBJ param2, out uint8 param3);
 		public function BOOL PFN_DrvIcmSetDeviceGammaRamp(DHPDEV param0, uint32 param1, void* param2);
-		public function BOOL PFN_DrvAlphaBlend(SURFOBJ* param0, SURFOBJ* param1, CLIPOBJ* param2, XLATEOBJ* param3, RECTL* param4, RECTL* param5, BLENDOBJ* param6);
-		public function BOOL PFN_DrvGradientFill(SURFOBJ* param0, CLIPOBJ* param1, XLATEOBJ* param2, TRIVERTEX* param3, uint32 param4, void* param5, uint32 param6, RECTL* param7, POINTL* param8, uint32 param9);
-		public function BOOL PFN_DrvQueryDeviceSupport(SURFOBJ* param0, XLATEOBJ* param1, XFORMOBJ* param2, uint32 param3, uint32 param4, void* param5, uint32 param6, void* param7);
-		public function HBITMAP PFN_DrvDeriveSurface(DD_DIRECTDRAW_GLOBAL* param0, DD_SURFACE_LOCAL* param1);
-		public function void PFN_DrvSynchronizeSurface(SURFOBJ* param0, RECTL* param1, uint32 param2);
-		public function void PFN_DrvNotify(SURFOBJ* param0, uint32 param1, void* param2);
+		public function BOOL PFN_DrvAlphaBlend(out SURFOBJ param0, out SURFOBJ param1, out CLIPOBJ param2, out XLATEOBJ param3, out RECTL param4, out RECTL param5, out BLENDOBJ param6);
+		public function BOOL PFN_DrvGradientFill(out SURFOBJ param0, out CLIPOBJ param1, out XLATEOBJ param2, out TRIVERTEX param3, uint32 param4, void* param5, uint32 param6, out RECTL param7, out POINTL param8, uint32 param9);
+		public function BOOL PFN_DrvQueryDeviceSupport(out SURFOBJ param0, out XLATEOBJ param1, out XFORMOBJ param2, uint32 param3, uint32 param4, void* param5, uint32 param6, void* param7);
+		public function HBITMAP PFN_DrvDeriveSurface(out DD_DIRECTDRAW_GLOBAL param0, out DD_SURFACE_LOCAL param1);
+		public function void PFN_DrvSynchronizeSurface(out SURFOBJ param0, out RECTL param1, uint32 param2);
+		public function void PFN_DrvNotify(out SURFOBJ param0, uint32 param1, void* param2);
 		public function int32 PFN_DrvRenderHint(DHPDEV dhpdev, uint32 NotifyCode, uint Length, void* Data);
 		public function HANDLE PFN_EngCreateRectRgn(int32 left, int32 top, int32 right, int32 bottom);
 		public function void PFN_EngDeleteRgn(HANDLE hrgn);
@@ -1131,15 +1131,15 @@ namespace Win32
 		public function int32 PFN_EngSubtractRgn(HANDLE hrgnResult, HANDLE hRgnA, HANDLE hRgnB);
 		public function int32 PFN_EngUnionRgn(HANDLE hrgnResult, HANDLE hRgnA, HANDLE hRgnB);
 		public function int32 PFN_EngXorRgn(HANDLE hrgnResult, HANDLE hRgnA, HANDLE hRgnB);
-		public function HBITMAP PFN_DrvCreateDeviceBitmapEx(DHPDEV param0, SIZE param1, uint32 param2, uint32 param3, DHSURF param4, uint32 param5, uint32 param6, HANDLE* param7);
+		public function HBITMAP PFN_DrvCreateDeviceBitmapEx(DHPDEV param0, SIZE param1, uint32 param2, uint32 param3, DHSURF param4, uint32 param5, uint32 param6, out HANDLE param7);
 		public function void PFN_DrvDeleteDeviceBitmapEx(DHSURF param0);
-		public function BOOL PFN_DrvAssociateSharedSurface(SURFOBJ* param0, HANDLE param1, HANDLE param2, SIZE param3);
-		public function NTSTATUS PFN_DrvSynchronizeRedirectionBitmaps(DHPDEV param0, uint64* param1);
-		public function BOOL PFN_DrvAccumulateD3DDirtyRect(SURFOBJ* param0, CDDDXGK_REDIRBITMAPPRESENTINFO* param1);
-		public function BOOL PFN_DrvStartDxInterop(SURFOBJ* param0, BOOL param1, void* KernelModeDeviceHandle);
-		public function BOOL PFN_DrvEndDxInterop(SURFOBJ* param0, BOOL param1, BOOL* param2, void* KernelModeDeviceHandle);
-		public function void PFN_DrvLockDisplayArea(DHPDEV param0, RECTL* param1);
-		public function void PFN_DrvUnlockDisplayArea(DHPDEV param0, RECTL* param1);
+		public function BOOL PFN_DrvAssociateSharedSurface(out SURFOBJ param0, HANDLE param1, HANDLE param2, SIZE param3);
+		public function NTSTATUS PFN_DrvSynchronizeRedirectionBitmaps(DHPDEV param0, out uint64 param1);
+		public function BOOL PFN_DrvAccumulateD3DDirtyRect(out SURFOBJ param0, out CDDDXGK_REDIRBITMAPPRESENTINFO param1);
+		public function BOOL PFN_DrvStartDxInterop(out SURFOBJ param0, BOOL param1, void* KernelModeDeviceHandle);
+		public function BOOL PFN_DrvEndDxInterop(out SURFOBJ param0, BOOL param1, out BOOL param2, void* KernelModeDeviceHandle);
+		public function void PFN_DrvLockDisplayArea(DHPDEV param0, out RECTL param1);
+		public function void PFN_DrvUnlockDisplayArea(DHPDEV param0, out RECTL param1);
 		public function BOOL PFN_DrvSurfaceComplete(DHPDEV param0, HANDLE param1);
 		public function void PVIDEO_WIN32K_CALLOUT(void* Params);
 		
@@ -1479,20 +1479,20 @@ namespace Win32
 		{
 			public uint32 sourceId;
 			public int32 numTargets;
-			public uint32[] aTargets;
+			public uint32[0] aTargets;
 		}
 		[CRepr]
 		public struct Adapter
 		{
 			public char16[128] AdapterName;
 			public int32 numSources;
-			public Sources[] sources;
+			public Sources[0] sources;
 		}
 		[CRepr]
 		public struct Adapters
 		{
 			public int32 numAdapters;
-			public Adapter[] adapter;
+			public Adapter[0] adapter;
 		}
 		[CRepr]
 		public struct DisplayMode
@@ -1504,7 +1504,7 @@ namespace Win32
 		public struct DisplayModes
 		{
 			public int32 numDisplayModes;
-			public DisplayMode[] displayMode;
+			public DisplayMode[0] displayMode;
 		}
 		[CRepr]
 		public struct VIDEOPARAMETERS
@@ -1591,7 +1591,7 @@ namespace Win32
 			public int32 lMinA;
 			public int32 lMinC;
 			public int32 lMinD;
-			public int32[] alReserved;
+			public int32[0] alReserved;
 		}
 		[CRepr]
 		public struct LIGATURE
@@ -1599,7 +1599,7 @@ namespace Win32
 			public uint32 culSize;
 			public PWSTR pwsz;
 			public uint32 chglyph;
-			public uint32[] ahglyph;
+			public uint32[0] ahglyph;
 		}
 		[CRepr]
 		public struct FD_LIGATURE
@@ -1607,7 +1607,7 @@ namespace Win32
 			public uint32 culThis;
 			public uint32 ulType;
 			public uint32 cLigatures;
-			public LIGATURE[] alig;
+			public LIGATURE[0] alig;
 		}
 		[CRepr]
 		public struct POINTQF
@@ -1629,7 +1629,7 @@ namespace Win32
 			public uint32 flAccel;
 			public uint32 cGlyphsSupported;
 			public uint32 cRuns;
-			public WCRUN[] awcrun;
+			public WCRUN[0] awcrun;
 		}
 		[CRepr]
 		public struct FD_GLYPHATTR
@@ -1637,7 +1637,7 @@ namespace Win32
 			public uint32 cjThis;
 			public uint32 cGlyphs;
 			public uint32 iMode;
-			public uint8[] aGlyphAttr;
+			public uint8[0] aGlyphAttr;
 		}
 		[CRepr]
 		public struct FD_KERNINGPAIR
@@ -1738,7 +1738,7 @@ namespace Win32
 			public uint32 cig;
 			public int32 dpDesignVector;
 			public int32 dpAxesInfoW;
-			public uint32[] aulReserved;
+			public uint32[0] aulReserved;
 		}
 		[CRepr]
 		public struct DRVFN
@@ -1973,14 +1973,14 @@ namespace Win32
 		public struct ENUMRECTS
 		{
 			public uint32 c;
-			public RECTL[] arcl;
+			public RECTL[0] arcl;
 		}
 		[CRepr]
 		public struct GLYPHBITS
 		{
 			public POINTL ptlOrigin;
 			public SIZE sizlBitmap;
-			public uint8[] aj;
+			public uint8[0] aj;
 		}
 		[CRepr, Union]
 		public struct GLYPHDEF
@@ -2049,7 +2049,7 @@ namespace Win32
 			public POINTFIX ptfxB;
 			public int32 lStyleState;
 			public uint32 c;
-			public RUN[] arun;
+			public RUN[0] arun;
 		}
 		[CRepr]
 		public struct PERBANDINFO
@@ -2154,7 +2154,7 @@ namespace Win32
 		public struct VIDEO_MONITOR_DESCRIPTOR
 		{
 			public uint32 DescriptorSize;
-			public uint8[] Descriptor;
+			public uint8[0] Descriptor;
 		}
 		[CRepr]
 		public struct DXGK_WIN32K_PARAM_DATA
@@ -2273,14 +2273,14 @@ namespace Win32
 			public uint16 WidthInPixels;
 			public uint16 HeightInPixels;
 			public uint32 FontSize;
-			public uint8[] Font;
+			public uint8[0] Font;
 		}
 		[CRepr]
 		public struct VIDEO_PALETTE_DATA
 		{
 			public uint16 NumEntries;
 			public uint16 FirstEntry;
-			public uint16[] Colors;
+			public uint16[0] Colors;
 		}
 		[CRepr]
 		public struct VIDEO_CLUTDATA
@@ -2295,7 +2295,7 @@ namespace Win32
 		{
 			public uint16 NumEntries;
 			public uint16 FirstEntry;
-			public _Anonymous_e__Union[] LookupTable;
+			public _Anonymous_e__Union[0] LookupTable;
 			
 			[CRepr, Union]
 			public struct _Anonymous_e__Union
@@ -2336,7 +2336,7 @@ namespace Win32
 			public uint32 Enable;
 			public int16 Column;
 			public int16 Row;
-			public uint8[] Pixels;
+			public uint8[0] Pixels;
 		}
 		[CRepr]
 		public struct VIDEO_POINTER_CAPABILITIES
@@ -2433,7 +2433,7 @@ namespace Win32
 		{
 			public uint32 Length;
 			public uint32 LutDataFormat;
-			public uint8[] LutData;
+			public uint8[0] LutData;
 		}
 		[CRepr]
 		public struct VIDEO_LUT_RGB256WORDS
@@ -2460,7 +2460,7 @@ namespace Win32
 		{
 			public BOOLEAN DefaultToBiosPolicy;
 			public uint8 LevelCount;
-			public _Anonymous_e__Struct[] Level;
+			public _Anonymous_e__Struct[0] Level;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -2854,7 +2854,7 @@ namespace Win32
 		[CRepr]
 		public struct SET_ACTIVE_COLOR_PROFILE_NAME
 		{
-			public char16[] ColorProfileName;
+			public char16[0] ColorProfileName;
 		}
 		[CRepr]
 		public struct MIPI_DSI_CAPS
@@ -2923,7 +2923,7 @@ namespace Win32
 			public uint16 FinalCommandExtraPayload;
 			public uint16 MipiErrors;
 			public uint16 HostErrors;
-			public MIPI_DSI_PACKET[] Packets;
+			public MIPI_DSI_PACKET[0] Packets;
 			
 			[CRepr]
 			public struct _Anonymous_e__Struct
@@ -2966,29 +2966,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) mut
+			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) mut
 			{
-				return VT.GetConnectedIDs(&this, wszAdaptorName, pulCount, pulID, ulFlags);
+				return VT.GetConnectedIDs(ref this, wszAdaptorName, out pulCount, out pulID, ulFlags);
 			}
-			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) mut
+			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) mut
 			{
-				return VT.GetActiveTopology(&this, wszAdaptorName, ulSourceID, pulCount, pulTargetID);
+				return VT.GetActiveTopology(ref this, wszAdaptorName, ulSourceID, out pulCount, out pulTargetID);
 			}
-			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) mut
+			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) mut
 			{
-				return VT.SetActiveTopology(&this, wszAdaptorName, ulSourceID, ulCount, pulTargetID);
+				return VT.SetActiveTopology(ref this, wszAdaptorName, ulSourceID, ulCount, ref pulTargetID);
 			}
 			public HRESULT Commit(BOOL fFinalCall) mut
 			{
-				return VT.Commit(&this, fFinalCall);
+				return VT.Commit(ref this, fFinalCall);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) GetConnectedIDs;
-				public new function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) GetActiveTopology;
-				public new function HRESULT(ICloneViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) SetActiveTopology;
-				public new function HRESULT(ICloneViewHelper *self, BOOL fFinalCall) Commit;
+				public new function HRESULT(ref ICloneViewHelper self, PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) GetConnectedIDs;
+				public new function HRESULT(ref ICloneViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) GetActiveTopology;
+				public new function HRESULT(ref ICloneViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) SetActiveTopology;
+				public new function HRESULT(ref ICloneViewHelper self, BOOL fFinalCall) Commit;
 			}
 		}
 		[CRepr]
@@ -2998,84 +2998,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) mut
+			public HRESULT GetConnectedIDs(PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) mut
 			{
-				return VT.GetConnectedIDs(&this, wszAdaptorName, pulCount, pulID, ulFlags);
+				return VT.GetConnectedIDs(ref this, wszAdaptorName, out pulCount, out pulID, ulFlags);
 			}
-			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) mut
+			public HRESULT GetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) mut
 			{
-				return VT.GetActiveTopology(&this, wszAdaptorName, ulSourceID, pulCount, pulTargetID);
+				return VT.GetActiveTopology(ref this, wszAdaptorName, ulSourceID, out pulCount, out pulTargetID);
 			}
-			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) mut
+			public HRESULT SetActiveTopology(PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) mut
 			{
-				return VT.SetActiveTopology(&this, wszAdaptorName, ulSourceID, ulCount, pulTargetID);
+				return VT.SetActiveTopology(ref this, wszAdaptorName, ulSourceID, ulCount, ref pulTargetID);
 			}
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
-			public HRESULT SetConfiguration(IStream* pIStream, uint32* pulStatus) mut
+			public HRESULT SetConfiguration(ref IStream pIStream, out uint32 pulStatus) mut
 			{
-				return VT.SetConfiguration(&this, pIStream, pulStatus);
+				return VT.SetConfiguration(ref this, ref pIStream, out pulStatus);
 			}
 			public HRESULT GetProceedOnNewConfiguration() mut
 			{
-				return VT.GetProceedOnNewConfiguration(&this);
+				return VT.GetProceedOnNewConfiguration(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32* pulCount, uint32* pulID, uint32 ulFlags) GetConnectedIDs;
-				public new function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32* pulCount, uint32* pulTargetID) GetActiveTopology;
-				public new function HRESULT(IViewHelper *self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, uint32* pulTargetID) SetActiveTopology;
-				public new function HRESULT(IViewHelper *self) Commit;
-				public new function HRESULT(IViewHelper *self, IStream* pIStream, uint32* pulStatus) SetConfiguration;
-				public new function HRESULT(IViewHelper *self) GetProceedOnNewConfiguration;
+				public new function HRESULT(ref IViewHelper self, PWSTR wszAdaptorName, out uint32 pulCount, out uint32 pulID, uint32 ulFlags) GetConnectedIDs;
+				public new function HRESULT(ref IViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, out uint32 pulCount, out uint32 pulTargetID) GetActiveTopology;
+				public new function HRESULT(ref IViewHelper self, PWSTR wszAdaptorName, uint32 ulSourceID, uint32 ulCount, ref uint32 pulTargetID) SetActiveTopology;
+				public new function HRESULT(ref IViewHelper self) Commit;
+				public new function HRESULT(ref IViewHelper self, ref IStream pIStream, out uint32 pulStatus) SetConfiguration;
+				public new function HRESULT(ref IViewHelper self) GetProceedOnNewConfiguration;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetNumberOfPhysicalMonitorsFromHMONITOR(HMONITOR hMonitor, uint32* pdwNumberOfPhysicalMonitors);
+		public static extern int32 GetNumberOfPhysicalMonitorsFromHMONITOR(HMONITOR hMonitor, out uint32 pdwNumberOfPhysicalMonitors);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(IDirect3DDevice9* pDirect3DDevice9, uint32* pdwNumberOfPhysicalMonitors);
+		public static extern HRESULT GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(ref IDirect3DDevice9 pDirect3DDevice9, out uint32 pdwNumberOfPhysicalMonitors);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetPhysicalMonitorsFromHMONITOR(HMONITOR hMonitor, uint32 dwPhysicalMonitorArraySize, PHYSICAL_MONITOR* pPhysicalMonitorArray);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetPhysicalMonitorsFromIDirect3DDevice9(IDirect3DDevice9* pDirect3DDevice9, uint32 dwPhysicalMonitorArraySize, PHYSICAL_MONITOR* pPhysicalMonitorArray);
+		public static extern HRESULT GetPhysicalMonitorsFromIDirect3DDevice9(ref IDirect3DDevice9 pDirect3DDevice9, uint32 dwPhysicalMonitorArraySize, PHYSICAL_MONITOR* pPhysicalMonitorArray);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DestroyPhysicalMonitor(HANDLE hMonitor);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DestroyPhysicalMonitors(uint32 dwPhysicalMonitorArraySize, PHYSICAL_MONITOR* pPhysicalMonitorArray);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetVCPFeatureAndVCPFeatureReply(HANDLE hMonitor, uint8 bVCPCode, MC_VCP_CODE_TYPE* pvct, uint32* pdwCurrentValue, uint32* pdwMaximumValue);
+		public static extern int32 GetVCPFeatureAndVCPFeatureReply(HANDLE hMonitor, uint8 bVCPCode, MC_VCP_CODE_TYPE* pvct, out uint32 pdwCurrentValue, uint32* pdwMaximumValue);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SetVCPFeature(HANDLE hMonitor, uint8 bVCPCode, uint32 dwNewValue);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SaveCurrentSettings(HANDLE hMonitor);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetCapabilitiesStringLength(HANDLE hMonitor, uint32* pdwCapabilitiesStringLengthInCharacters);
+		public static extern int32 GetCapabilitiesStringLength(HANDLE hMonitor, out uint32 pdwCapabilitiesStringLengthInCharacters);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 CapabilitiesRequestAndCapabilitiesReply(HANDLE hMonitor, uint8* pszASCIICapabilitiesString, uint32 dwCapabilitiesStringLengthInCharacters);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetTimingReport(HANDLE hMonitor, MC_TIMING_REPORT* pmtrMonitorTimingReport);
+		public static extern int32 GetTimingReport(HANDLE hMonitor, out MC_TIMING_REPORT pmtrMonitorTimingReport);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMonitorCapabilities(HANDLE hMonitor, uint32* pdwMonitorCapabilities, uint32* pdwSupportedColorTemperatures);
+		public static extern int32 GetMonitorCapabilities(HANDLE hMonitor, out uint32 pdwMonitorCapabilities, out uint32 pdwSupportedColorTemperatures);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SaveCurrentMonitorSettings(HANDLE hMonitor);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMonitorTechnologyType(HANDLE hMonitor, MC_DISPLAY_TECHNOLOGY_TYPE* pdtyDisplayTechnologyType);
+		public static extern int32 GetMonitorTechnologyType(HANDLE hMonitor, out MC_DISPLAY_TECHNOLOGY_TYPE pdtyDisplayTechnologyType);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMonitorBrightness(HANDLE hMonitor, uint32* pdwMinimumBrightness, uint32* pdwCurrentBrightness, uint32* pdwMaximumBrightness);
+		public static extern int32 GetMonitorBrightness(HANDLE hMonitor, out uint32 pdwMinimumBrightness, out uint32 pdwCurrentBrightness, out uint32 pdwMaximumBrightness);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMonitorContrast(HANDLE hMonitor, uint32* pdwMinimumContrast, uint32* pdwCurrentContrast, uint32* pdwMaximumContrast);
+		public static extern int32 GetMonitorContrast(HANDLE hMonitor, out uint32 pdwMinimumContrast, out uint32 pdwCurrentContrast, out uint32 pdwMaximumContrast);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMonitorColorTemperature(HANDLE hMonitor, MC_COLOR_TEMPERATURE* pctCurrentColorTemperature);
+		public static extern int32 GetMonitorColorTemperature(HANDLE hMonitor, out MC_COLOR_TEMPERATURE pctCurrentColorTemperature);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMonitorRedGreenOrBlueDrive(HANDLE hMonitor, MC_DRIVE_TYPE dtDriveType, uint32* pdwMinimumDrive, uint32* pdwCurrentDrive, uint32* pdwMaximumDrive);
+		public static extern int32 GetMonitorRedGreenOrBlueDrive(HANDLE hMonitor, MC_DRIVE_TYPE dtDriveType, out uint32 pdwMinimumDrive, out uint32 pdwCurrentDrive, out uint32 pdwMaximumDrive);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMonitorRedGreenOrBlueGain(HANDLE hMonitor, MC_GAIN_TYPE gtGainType, uint32* pdwMinimumGain, uint32* pdwCurrentGain, uint32* pdwMaximumGain);
+		public static extern int32 GetMonitorRedGreenOrBlueGain(HANDLE hMonitor, MC_GAIN_TYPE gtGainType, out uint32 pdwMinimumGain, out uint32 pdwCurrentGain, out uint32 pdwMaximumGain);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SetMonitorBrightness(HANDLE hMonitor, uint32 dwNewBrightness);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3089,9 +3089,9 @@ namespace Win32
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 DegaussMonitor(HANDLE hMonitor);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMonitorDisplayAreaSize(HANDLE hMonitor, MC_SIZE_TYPE stSizeType, uint32* pdwMinimumWidthOrHeight, uint32* pdwCurrentWidthOrHeight, uint32* pdwMaximumWidthOrHeight);
+		public static extern int32 GetMonitorDisplayAreaSize(HANDLE hMonitor, MC_SIZE_TYPE stSizeType, out uint32 pdwMinimumWidthOrHeight, out uint32 pdwCurrentWidthOrHeight, out uint32 pdwMaximumWidthOrHeight);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMonitorDisplayAreaPosition(HANDLE hMonitor, MC_POSITION_TYPE ptPositionType, uint32* pdwMinimumPosition, uint32* pdwCurrentPosition, uint32* pdwMaximumPosition);
+		public static extern int32 GetMonitorDisplayAreaPosition(HANDLE hMonitor, MC_POSITION_TYPE ptPositionType, out uint32 pdwMinimumPosition, out uint32 pdwCurrentPosition, out uint32 pdwMaximumPosition);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SetMonitorDisplayAreaSize(HANDLE hMonitor, MC_SIZE_TYPE stSizeType, uint32 dwNewDisplayAreaWidthOrHeight);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
@@ -3101,67 +3101,67 @@ namespace Win32
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 RestoreMonitorFactoryDefaults(HANDLE hMonitor);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* BRUSHOBJ_pvAllocRbrush(BRUSHOBJ* pbo, uint32 cj);
+		public static extern void* BRUSHOBJ_pvAllocRbrush(out BRUSHOBJ pbo, uint32 cj);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* BRUSHOBJ_pvGetRbrush(BRUSHOBJ* pbo);
+		public static extern void* BRUSHOBJ_pvGetRbrush(out BRUSHOBJ pbo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 BRUSHOBJ_ulGetBrushColor(BRUSHOBJ* pbo);
+		public static extern uint32 BRUSHOBJ_ulGetBrushColor(out BRUSHOBJ pbo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HANDLE BRUSHOBJ_hGetColorTransform(BRUSHOBJ* pbo);
+		public static extern HANDLE BRUSHOBJ_hGetColorTransform(out BRUSHOBJ pbo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 CLIPOBJ_cEnumStart(CLIPOBJ* pco, BOOL bAll, uint32 iType, uint32 iDirection, uint32 cLimit);
+		public static extern uint32 CLIPOBJ_cEnumStart(out CLIPOBJ pco, BOOL bAll, uint32 iType, uint32 iDirection, uint32 cLimit);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CLIPOBJ_bEnum(CLIPOBJ* pco, uint32 cj, uint32* pul);
+		public static extern BOOL CLIPOBJ_bEnum(out CLIPOBJ pco, uint32 cj, out uint32 pul);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern PATHOBJ* CLIPOBJ_ppoGetPath(CLIPOBJ* pco);
+		public static extern PATHOBJ* CLIPOBJ_ppoGetPath(out CLIPOBJ pco);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 FONTOBJ_cGetAllGlyphHandles(FONTOBJ* pfo, uint32* phg);
+		public static extern uint32 FONTOBJ_cGetAllGlyphHandles(out FONTOBJ pfo, out uint32 phg);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void FONTOBJ_vGetInfo(FONTOBJ* pfo, uint32 cjSize, FONTINFO* pfi);
+		public static extern void FONTOBJ_vGetInfo(out FONTOBJ pfo, uint32 cjSize, out FONTINFO pfi);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 FONTOBJ_cGetGlyphs(FONTOBJ* pfo, uint32 iMode, uint32 cGlyph, uint32* phg, void** ppvGlyph);
+		public static extern uint32 FONTOBJ_cGetGlyphs(out FONTOBJ pfo, uint32 iMode, uint32 cGlyph, out uint32 phg, void** ppvGlyph);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern XFORMOBJ* FONTOBJ_pxoGetXform(FONTOBJ* pfo);
+		public static extern XFORMOBJ* FONTOBJ_pxoGetXform(ref FONTOBJ pfo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern IFIMETRICS* FONTOBJ_pifi(FONTOBJ* pfo);
+		public static extern IFIMETRICS* FONTOBJ_pifi(ref FONTOBJ pfo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern FD_GLYPHSET* FONTOBJ_pfdg(FONTOBJ* pfo);
+		public static extern FD_GLYPHSET* FONTOBJ_pfdg(out FONTOBJ pfo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* FONTOBJ_pvTrueTypeFontFile(FONTOBJ* pfo, uint32* pcjFile);
+		public static extern void* FONTOBJ_pvTrueTypeFontFile(out FONTOBJ pfo, out uint32 pcjFile);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern FD_GLYPHATTR* FONTOBJ_pQueryGlyphAttrs(FONTOBJ* pfo, uint32 iMode);
+		public static extern FD_GLYPHATTR* FONTOBJ_pQueryGlyphAttrs(out FONTOBJ pfo, uint32 iMode);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void PATHOBJ_vEnumStart(PATHOBJ* ppo);
+		public static extern void PATHOBJ_vEnumStart(out PATHOBJ ppo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PATHOBJ_bEnum(PATHOBJ* ppo, PATHDATA* ppd);
+		public static extern BOOL PATHOBJ_bEnum(out PATHOBJ ppo, out PATHDATA ppd);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void PATHOBJ_vEnumStartClipLines(PATHOBJ* ppo, CLIPOBJ* pco, SURFOBJ* pso, LINEATTRS* pla);
+		public static extern void PATHOBJ_vEnumStartClipLines(out PATHOBJ ppo, out CLIPOBJ pco, out SURFOBJ pso, out LINEATTRS pla);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL PATHOBJ_bEnumClipLines(PATHOBJ* ppo, uint32 cb, CLIPLINE* pcl);
+		public static extern BOOL PATHOBJ_bEnumClipLines(out PATHOBJ ppo, uint32 cb, out CLIPLINE pcl);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void PATHOBJ_vGetBounds(PATHOBJ* ppo, RECTFX* prectfx);
+		public static extern void PATHOBJ_vGetBounds(out PATHOBJ ppo, out RECTFX prectfx);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void STROBJ_vEnumStart(STROBJ* pstro);
+		public static extern void STROBJ_vEnumStart(out STROBJ pstro);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL STROBJ_bEnum(STROBJ* pstro, uint32* pc, GLYPHPOS** ppgpos);
+		public static extern BOOL STROBJ_bEnum(out STROBJ pstro, out uint32 pc, out GLYPHPOS* ppgpos);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL STROBJ_bEnumPositionsOnly(STROBJ* pstro, uint32* pc, GLYPHPOS** ppgpos);
+		public static extern BOOL STROBJ_bEnumPositionsOnly(out STROBJ pstro, out uint32 pc, out GLYPHPOS* ppgpos);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 STROBJ_dwGetCodePage(STROBJ* pstro);
+		public static extern uint32 STROBJ_dwGetCodePage(out STROBJ pstro);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL STROBJ_bGetAdvanceWidths(STROBJ* pso, uint32 iFirst, uint32 c, POINTQF* pptqD);
+		public static extern BOOL STROBJ_bGetAdvanceWidths(out STROBJ pso, uint32 iFirst, uint32 c, out POINTQF pptqD);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 XFORMOBJ_iGetXform(XFORMOBJ* pxo, XFORML* pxform);
+		public static extern uint32 XFORMOBJ_iGetXform(ref XFORMOBJ pxo, XFORML* pxform);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL XFORMOBJ_bApplyXform(XFORMOBJ* pxo, uint32 iMode, uint32 cPoints, void* pvIn, void* pvOut);
+		public static extern BOOL XFORMOBJ_bApplyXform(out XFORMOBJ pxo, uint32 iMode, uint32 cPoints, void* pvIn, void* pvOut);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 XLATEOBJ_iXlate(XLATEOBJ* pxlo, uint32 iColor);
+		public static extern uint32 XLATEOBJ_iXlate(out XLATEOBJ pxlo, uint32 iColor);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32* XLATEOBJ_piVector(XLATEOBJ* pxlo);
+		public static extern uint32* XLATEOBJ_piVector(out XLATEOBJ pxlo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 XLATEOBJ_cGetPalette(XLATEOBJ* pxlo, uint32 iPal, uint32 cPal, uint32* pPal);
+		public static extern uint32 XLATEOBJ_cGetPalette(out XLATEOBJ pxlo, uint32 iPal, uint32 cPal, out uint32 pPal);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HANDLE XLATEOBJ_hGetColorTransform(XLATEOBJ* pxlo);
+		public static extern HANDLE XLATEOBJ_hGetColorTransform(out XLATEOBJ pxlo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HBITMAP EngCreateBitmap(SIZE sizl, int32 lWidth, uint32 iFormat, uint32 fl, void* pvBits);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3173,19 +3173,19 @@ namespace Win32
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern SURFOBJ* EngLockSurface(HSURF hsurf);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void EngUnlockSurface(SURFOBJ* pso);
+		public static extern void EngUnlockSurface(out SURFOBJ pso);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngEraseSurface(SURFOBJ* pso, RECTL* prcl, uint32 iColor);
+		public static extern BOOL EngEraseSurface(out SURFOBJ pso, out RECTL prcl, uint32 iColor);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EngAssociateSurface(HSURF hsurf, HDEV hdev, uint32 flHooks);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EngMarkBandingSurface(HSURF hsurf);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngCheckAbort(SURFOBJ* pso);
+		public static extern BOOL EngCheckAbort(out SURFOBJ pso);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void EngDeletePath(PATHOBJ* ppo);
+		public static extern void EngDeletePath(out PATHOBJ ppo);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern HPALETTE EngCreatePalette(uint32 iMode, uint32 cColors, uint32* pulColors, uint32 flRed, uint32 flGreen, uint32 flBlue);
+		public static extern HPALETTE EngCreatePalette(uint32 iMode, uint32 cColors, out uint32 pulColors, uint32 flRed, uint32 flGreen, uint32 flBlue);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EngDeletePalette(HPALETTE hpal);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3193,33 +3193,33 @@ namespace Win32
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void EngDeleteClip(CLIPOBJ* pco);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngBitBlt(SURFOBJ* psoTrg, SURFOBJ* psoSrc, SURFOBJ* psoMask, CLIPOBJ* pco, XLATEOBJ* pxlo, RECTL* prclTrg, POINTL* pptlSrc, POINTL* pptlMask, BRUSHOBJ* pbo, POINTL* pptlBrush, uint32 rop4);
+		public static extern BOOL EngBitBlt(ref SURFOBJ psoTrg, ref SURFOBJ psoSrc, ref SURFOBJ psoMask, ref CLIPOBJ pco, ref XLATEOBJ pxlo, ref RECTL prclTrg, ref POINTL pptlSrc, ref POINTL pptlMask, ref BRUSHOBJ pbo, ref POINTL pptlBrush, uint32 rop4);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngLineTo(SURFOBJ* pso, CLIPOBJ* pco, BRUSHOBJ* pbo, int32 x1, int32 y1, int32 x2, int32 y2, RECTL* prclBounds, uint32 mix);
+		public static extern BOOL EngLineTo(out SURFOBJ pso, out CLIPOBJ pco, out BRUSHOBJ pbo, int32 x1, int32 y1, int32 x2, int32 y2, out RECTL prclBounds, uint32 mix);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngStretchBlt(SURFOBJ* psoDest, SURFOBJ* psoSrc, SURFOBJ* psoMask, CLIPOBJ* pco, XLATEOBJ* pxlo, COLORADJUSTMENT* pca, POINTL* pptlHTOrg, RECTL* prclDest, RECTL* prclSrc, POINTL* pptlMask, uint32 iMode);
+		public static extern BOOL EngStretchBlt(out SURFOBJ psoDest, out SURFOBJ psoSrc, out SURFOBJ psoMask, out CLIPOBJ pco, out XLATEOBJ pxlo, out COLORADJUSTMENT pca, out POINTL pptlHTOrg, out RECTL prclDest, out RECTL prclSrc, out POINTL pptlMask, uint32 iMode);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngStretchBltROP(SURFOBJ* psoDest, SURFOBJ* psoSrc, SURFOBJ* psoMask, CLIPOBJ* pco, XLATEOBJ* pxlo, COLORADJUSTMENT* pca, POINTL* pptlHTOrg, RECTL* prclDest, RECTL* prclSrc, POINTL* pptlMask, uint32 iMode, BRUSHOBJ* pbo, uint32 rop4);
+		public static extern BOOL EngStretchBltROP(out SURFOBJ psoDest, out SURFOBJ psoSrc, out SURFOBJ psoMask, out CLIPOBJ pco, out XLATEOBJ pxlo, out COLORADJUSTMENT pca, out POINTL pptlHTOrg, out RECTL prclDest, out RECTL prclSrc, out POINTL pptlMask, uint32 iMode, out BRUSHOBJ pbo, uint32 rop4);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngAlphaBlend(SURFOBJ* psoDest, SURFOBJ* psoSrc, CLIPOBJ* pco, XLATEOBJ* pxlo, RECTL* prclDest, RECTL* prclSrc, BLENDOBJ* pBlendObj);
+		public static extern BOOL EngAlphaBlend(out SURFOBJ psoDest, out SURFOBJ psoSrc, out CLIPOBJ pco, out XLATEOBJ pxlo, out RECTL prclDest, out RECTL prclSrc, out BLENDOBJ pBlendObj);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngGradientFill(SURFOBJ* psoDest, CLIPOBJ* pco, XLATEOBJ* pxlo, TRIVERTEX* pVertex, uint32 nVertex, void* pMesh, uint32 nMesh, RECTL* prclExtents, POINTL* pptlDitherOrg, uint32 ulMode);
+		public static extern BOOL EngGradientFill(out SURFOBJ psoDest, out CLIPOBJ pco, out XLATEOBJ pxlo, out TRIVERTEX pVertex, uint32 nVertex, void* pMesh, uint32 nMesh, out RECTL prclExtents, out POINTL pptlDitherOrg, uint32 ulMode);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngTransparentBlt(SURFOBJ* psoDst, SURFOBJ* psoSrc, CLIPOBJ* pco, XLATEOBJ* pxlo, RECTL* prclDst, RECTL* prclSrc, uint32 TransColor, uint32 bCalledFromBitBlt);
+		public static extern BOOL EngTransparentBlt(ref SURFOBJ psoDst, ref SURFOBJ psoSrc, CLIPOBJ* pco, XLATEOBJ* pxlo, ref RECTL prclDst, ref RECTL prclSrc, uint32 TransColor, uint32 bCalledFromBitBlt);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngTextOut(SURFOBJ* pso, STROBJ* pstro, FONTOBJ* pfo, CLIPOBJ* pco, RECTL* prclExtra, RECTL* prclOpaque, BRUSHOBJ* pboFore, BRUSHOBJ* pboOpaque, POINTL* pptlOrg, uint32 mix);
+		public static extern BOOL EngTextOut(out SURFOBJ pso, out STROBJ pstro, out FONTOBJ pfo, out CLIPOBJ pco, out RECTL prclExtra, out RECTL prclOpaque, out BRUSHOBJ pboFore, out BRUSHOBJ pboOpaque, out POINTL pptlOrg, uint32 mix);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngStrokePath(SURFOBJ* pso, PATHOBJ* ppo, CLIPOBJ* pco, XFORMOBJ* pxo, BRUSHOBJ* pbo, POINTL* pptlBrushOrg, LINEATTRS* plineattrs, uint32 mix);
+		public static extern BOOL EngStrokePath(out SURFOBJ pso, out PATHOBJ ppo, out CLIPOBJ pco, out XFORMOBJ pxo, out BRUSHOBJ pbo, out POINTL pptlBrushOrg, out LINEATTRS plineattrs, uint32 mix);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngFillPath(SURFOBJ* pso, PATHOBJ* ppo, CLIPOBJ* pco, BRUSHOBJ* pbo, POINTL* pptlBrushOrg, uint32 mix, uint32 flOptions);
+		public static extern BOOL EngFillPath(out SURFOBJ pso, out PATHOBJ ppo, out CLIPOBJ pco, out BRUSHOBJ pbo, out POINTL pptlBrushOrg, uint32 mix, uint32 flOptions);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngStrokeAndFillPath(SURFOBJ* pso, PATHOBJ* ppo, CLIPOBJ* pco, XFORMOBJ* pxo, BRUSHOBJ* pboStroke, LINEATTRS* plineattrs, BRUSHOBJ* pboFill, POINTL* pptlBrushOrg, uint32 mixFill, uint32 flOptions);
+		public static extern BOOL EngStrokeAndFillPath(out SURFOBJ pso, out PATHOBJ ppo, out CLIPOBJ pco, out XFORMOBJ pxo, out BRUSHOBJ pboStroke, out LINEATTRS plineattrs, out BRUSHOBJ pboFill, out POINTL pptlBrushOrg, uint32 mixFill, uint32 flOptions);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngPaint(SURFOBJ* pso, CLIPOBJ* pco, BRUSHOBJ* pbo, POINTL* pptlBrushOrg, uint32 mix);
+		public static extern BOOL EngPaint(out SURFOBJ pso, out CLIPOBJ pco, out BRUSHOBJ pbo, out POINTL pptlBrushOrg, uint32 mix);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngCopyBits(SURFOBJ* psoDest, SURFOBJ* psoSrc, CLIPOBJ* pco, XLATEOBJ* pxlo, RECTL* prclDest, POINTL* pptlSrc);
+		public static extern BOOL EngCopyBits(out SURFOBJ psoDest, out SURFOBJ psoSrc, out CLIPOBJ pco, out XLATEOBJ pxlo, out RECTL prclDest, out POINTL pptlSrc);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngPlgBlt(SURFOBJ* psoTrg, SURFOBJ* psoSrc, SURFOBJ* psoMsk, CLIPOBJ* pco, XLATEOBJ* pxlo, COLORADJUSTMENT* pca, POINTL* pptlBrushOrg, POINTFIX* pptfx, RECTL* prcl, POINTL* pptl, uint32 iMode);
+		public static extern BOOL EngPlgBlt(out SURFOBJ psoTrg, out SURFOBJ psoSrc, out SURFOBJ psoMsk, out CLIPOBJ pco, out XLATEOBJ pxlo, out COLORADJUSTMENT pca, out POINTL pptlBrushOrg, out POINTFIX pptfx, out RECTL prcl, out POINTL pptl, uint32 iMode);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 HT_Get8BPPFormatPalette(PALETTEENTRY* pPaletteEntry, uint16 RedGamma, uint16 GreenGamma, uint16 BlueGamma);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3231,7 +3231,7 @@ namespace Win32
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE EngLoadModule(PWSTR pwsz);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void* EngFindResource(HANDLE h, int32 iName, int32 iType, uint32* pulSize);
+		public static extern void* EngFindResource(HANDLE h, int32 iName, int32 iType, out uint32 pulSize);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void EngFreeModule(HANDLE h);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3247,7 +3247,7 @@ namespace Win32
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern void EngUnicodeToMultiByteN(PSTR MultiByteString, uint32 MaxBytesInMultiByteString, uint32* BytesInMultiByteString, PWSTR UnicodeString, uint32 BytesInUnicodeString);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void EngQueryLocalTime(ENG_TIME_FIELDS* param0);
+		public static extern void EngQueryLocalTime(out ENG_TIME_FIELDS param0);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern FD_GLYPHSET* EngComputeGlyphSet(int32 nCodePage, int32 nFirstChar, int32 cChars);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -3255,23 +3255,23 @@ namespace Win32
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 EngWideCharToMultiByte(uint32 CodePage, PWSTR WideCharString, int32 BytesInWideCharString, PSTR MultiByteString, int32 BytesInMultiByteString);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern void EngGetCurrentCodePage(uint16* OemCodePage, uint16* AnsiCodePage);
+		public static extern void EngGetCurrentCodePage(out uint16 OemCodePage, out uint16 AnsiCodePage);
 		[Import("gdi32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL EngQueryEMFInfo(HDEV hdev, EMFINFO* pEMFInfo);
+		public static extern BOOL EngQueryEMFInfo(HDEV hdev, out EMFINFO pEMFInfo);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetDisplayConfigBufferSizes(uint32 flags, uint32* numPathArrayElements, uint32* numModeInfoArrayElements);
+		public static extern int32 GetDisplayConfigBufferSizes(uint32 flags, out uint32 numPathArrayElements, out uint32 numModeInfoArrayElements);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 SetDisplayConfig(uint32 numPathArrayElements, DISPLAYCONFIG_PATH_INFO* pathArray, uint32 numModeInfoArrayElements, DISPLAYCONFIG_MODE_INFO* modeInfoArray, uint32 flags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 QueryDisplayConfig(uint32 flags, uint32* numPathArrayElements, DISPLAYCONFIG_PATH_INFO* pathArray, uint32* numModeInfoArrayElements, DISPLAYCONFIG_MODE_INFO* modeInfoArray, DISPLAYCONFIG_TOPOLOGY_ID* currentTopologyId);
+		public static extern int32 QueryDisplayConfig(uint32 flags, out uint32 numPathArrayElements, DISPLAYCONFIG_PATH_INFO* pathArray, out uint32 numModeInfoArrayElements, DISPLAYCONFIG_MODE_INFO* modeInfoArray, out DISPLAYCONFIG_TOPOLOGY_ID currentTopologyId);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 DisplayConfigGetDeviceInfo(DISPLAYCONFIG_DEVICE_INFO_HEADER* requestPacket);
+		public static extern int32 DisplayConfigGetDeviceInfo(out DISPLAYCONFIG_DEVICE_INFO_HEADER requestPacket);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 DisplayConfigSetDeviceInfo(DISPLAYCONFIG_DEVICE_INFO_HEADER* setPacket);
+		public static extern int32 DisplayConfigSetDeviceInfo(ref DISPLAYCONFIG_DEVICE_INFO_HEADER setPacket);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetAutoRotationState(AR_STATE* pState);
+		public static extern BOOL GetAutoRotationState(out AR_STATE pState);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE* pOrientation);
+		public static extern BOOL GetDisplayAutoRotationPreferences(out ORIENTATION_PREFERENCE pOrientation);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE orientation);
 		

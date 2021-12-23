@@ -14,14 +14,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRegistry(IMLOperatorRegistry** ppOperatorRegistry) mut
+			public HRESULT GetRegistry(out IMLOperatorRegistry* ppOperatorRegistry) mut
 			{
-				return VT.GetRegistry(&this, ppOperatorRegistry);
+				return VT.GetRegistry(ref this, out ppOperatorRegistry);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILearningModelOperatorProviderNative *self, IMLOperatorRegistry** ppOperatorRegistry) GetRegistry;
+				public new function HRESULT(ref ILearningModelOperatorProviderNative self, out IMLOperatorRegistry* ppOperatorRegistry) GetRegistry;
 			}
 		}
 		[CRepr]
@@ -31,19 +31,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBuffer(uint8** value, uint32* capacity) mut
+			public HRESULT GetBuffer(uint8** value, out uint32 capacity) mut
 			{
-				return VT.GetBuffer(&this, value, capacity);
+				return VT.GetBuffer(ref this, value, out capacity);
 			}
-			public HRESULT GetD3D12Resource(ID3D12Resource** result) mut
+			public HRESULT GetD3D12Resource(out ID3D12Resource* result) mut
 			{
-				return VT.GetD3D12Resource(&this, result);
+				return VT.GetD3D12Resource(ref this, out result);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITensorNative *self, uint8** value, uint32* capacity) GetBuffer;
-				public new function HRESULT(ITensorNative *self, ID3D12Resource** result) GetD3D12Resource;
+				public new function HRESULT(ref ITensorNative self, uint8** value, out uint32 capacity) GetBuffer;
+				public new function HRESULT(ref ITensorNative self, out ID3D12Resource* result) GetD3D12Resource;
 			}
 		}
 		[CRepr]
@@ -53,14 +53,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromD3D12Resource(ID3D12Resource* value, int64* shape, int32 shapeCount, IUnknown** result) mut
+			public HRESULT CreateFromD3D12Resource(ref ID3D12Resource value, out int64 shape, int32 shapeCount, out IUnknown* result) mut
 			{
-				return VT.CreateFromD3D12Resource(&this, value, shape, shapeCount, result);
+				return VT.CreateFromD3D12Resource(ref this, ref value, out shape, shapeCount, out result);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITensorStaticsNative *self, ID3D12Resource* value, int64* shape, int32 shapeCount, IUnknown** result) CreateFromD3D12Resource;
+				public new function HRESULT(ref ITensorStaticsNative self, ref ID3D12Resource value, out int64 shape, int32 shapeCount, out IUnknown* result) CreateFromD3D12Resource;
 			}
 		}
 		[CRepr]
@@ -70,14 +70,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateFromD3D12CommandQueue(ID3D12CommandQueue* value, IUnknown** result) mut
+			public HRESULT CreateFromD3D12CommandQueue(ref ID3D12CommandQueue value, out IUnknown* result) mut
 			{
-				return VT.CreateFromD3D12CommandQueue(&this, value, result);
+				return VT.CreateFromD3D12CommandQueue(ref this, ref value, out result);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILearningModelDeviceFactoryNative *self, ID3D12CommandQueue* value, IUnknown** result) CreateFromD3D12CommandQueue;
+				public new function HRESULT(ref ILearningModelDeviceFactoryNative self, ref ID3D12CommandQueue value, out IUnknown* result) CreateFromD3D12CommandQueue;
 			}
 		}
 		[CRepr]
@@ -89,12 +89,12 @@ namespace Win32
 			
 			public HRESULT SetIntraOpNumThreadsOverride(uint32 intraOpNumThreads) mut
 			{
-				return VT.SetIntraOpNumThreadsOverride(&this, intraOpNumThreads);
+				return VT.SetIntraOpNumThreadsOverride(ref this, intraOpNumThreads);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ILearningModelSessionOptionsNative *self, uint32 intraOpNumThreads) SetIntraOpNumThreadsOverride;
+				public new function HRESULT(ref ILearningModelSessionOptionsNative self, uint32 intraOpNumThreads) SetIntraOpNumThreadsOverride;
 			}
 		}
 		

@@ -350,7 +350,7 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function void CF_CALLBACK(CF_CALLBACK_INFO* CallbackInfo, CF_CALLBACK_PARAMETERS* CallbackParameters);
+		public function void CF_CALLBACK(in CF_CALLBACK_INFO CallbackInfo, in CF_CALLBACK_PARAMETERS CallbackParameters);
 		
 		// --- Structs ---
 		
@@ -702,7 +702,7 @@ namespace Win32
 			public LARGE_INTEGER FileId;
 			public LARGE_INTEGER SyncRootFileId;
 			public uint32 FileIdentityLength;
-			public uint8[] FileIdentity;
+			public uint8[0] FileIdentity;
 		}
 		[CRepr]
 		public struct CF_PLACEHOLDER_STANDARD_INFO
@@ -716,7 +716,7 @@ namespace Win32
 			public LARGE_INTEGER FileId;
 			public LARGE_INTEGER SyncRootFileId;
 			public uint32 FileIdentityLength;
-			public uint8[] FileIdentity;
+			public uint8[0] FileIdentity;
 		}
 		[CRepr]
 		public struct CF_SYNC_ROOT_BASIC_INFO
@@ -742,37 +742,37 @@ namespace Win32
 			public char16[256] ProviderName;
 			public char16[256] ProviderVersion;
 			public uint32 SyncRootIdentityLength;
-			public uint8[] SyncRootIdentity;
+			public uint8[0] SyncRootIdentity;
 		}
 		
 		// --- Functions ---
 		
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CfGetPlatformInfo(CF_PLATFORM_INFO* PlatformVersion);
+		public static extern HRESULT CfGetPlatformInfo(out CF_PLATFORM_INFO PlatformVersion);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CfRegisterSyncRoot(PWSTR SyncRootPath, CF_SYNC_REGISTRATION* Registration, CF_SYNC_POLICIES* Policies, CF_REGISTER_FLAGS RegisterFlags);
+		public static extern HRESULT CfRegisterSyncRoot(PWSTR SyncRootPath, in CF_SYNC_REGISTRATION Registration, in CF_SYNC_POLICIES Policies, CF_REGISTER_FLAGS RegisterFlags);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfUnregisterSyncRoot(PWSTR SyncRootPath);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CfConnectSyncRoot(PWSTR SyncRootPath, CF_CALLBACK_REGISTRATION* CallbackTable, void* CallbackContext, CF_CONNECT_FLAGS ConnectFlags, CF_CONNECTION_KEY* ConnectionKey);
+		public static extern HRESULT CfConnectSyncRoot(PWSTR SyncRootPath, in CF_CALLBACK_REGISTRATION CallbackTable, void* CallbackContext, CF_CONNECT_FLAGS ConnectFlags, out CF_CONNECTION_KEY ConnectionKey);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfDisconnectSyncRoot(CF_CONNECTION_KEY ConnectionKey);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CfGetTransferKey(HANDLE FileHandle, LARGE_INTEGER* TransferKey);
+		public static extern HRESULT CfGetTransferKey(HANDLE FileHandle, out LARGE_INTEGER TransferKey);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void CfReleaseTransferKey(HANDLE FileHandle, LARGE_INTEGER* TransferKey);
+		public static extern void CfReleaseTransferKey(HANDLE FileHandle, out LARGE_INTEGER TransferKey);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CfExecute(CF_OPERATION_INFO* OpInfo, CF_OPERATION_PARAMETERS* OpParams);
+		public static extern HRESULT CfExecute(in CF_OPERATION_INFO OpInfo, out CF_OPERATION_PARAMETERS OpParams);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfUpdateSyncProviderStatus(CF_CONNECTION_KEY ConnectionKey, CF_SYNC_PROVIDER_STATUS ProviderStatus);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CfQuerySyncProviderStatus(CF_CONNECTION_KEY ConnectionKey, CF_SYNC_PROVIDER_STATUS* ProviderStatus);
+		public static extern HRESULT CfQuerySyncProviderStatus(CF_CONNECTION_KEY ConnectionKey, out CF_SYNC_PROVIDER_STATUS ProviderStatus);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfReportSyncStatus(PWSTR SyncRootPath, CF_SYNC_STATUS* SyncStatus);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfCreatePlaceholders(PWSTR BaseDirectoryPath, CF_PLACEHOLDER_CREATE_INFO* PlaceholderArray, uint32 PlaceholderCount, CF_CREATE_FLAGS CreateFlags, uint32* EntriesProcessed);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CfOpenFileWithOplock(PWSTR FilePath, CF_OPEN_FILE_FLAGS Flags, HANDLE* ProtectedHandle);
+		public static extern HRESULT CfOpenFileWithOplock(PWSTR FilePath, CF_OPEN_FILE_FLAGS Flags, out HANDLE ProtectedHandle);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOLEAN CfReferenceProtectedHandle(HANDLE ProtectedHandle);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
@@ -796,15 +796,15 @@ namespace Win32
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfSetInSyncState(HANDLE FileHandle, CF_IN_SYNC_STATE InSyncState, CF_SET_IN_SYNC_FLAGS InSyncFlags, int64* InSyncUsn);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CfSetCorrelationVector(HANDLE FileHandle, CORRELATION_VECTOR* CorrelationVector);
+		public static extern HRESULT CfSetCorrelationVector(HANDLE FileHandle, in CORRELATION_VECTOR CorrelationVector);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CfGetCorrelationVector(HANDLE FileHandle, CORRELATION_VECTOR* CorrelationVector);
+		public static extern HRESULT CfGetCorrelationVector(HANDLE FileHandle, out CORRELATION_VECTOR CorrelationVector);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CF_PLACEHOLDER_STATE CfGetPlaceholderStateFromAttributeTag(uint32 FileAttributes, uint32 ReparseTag);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern CF_PLACEHOLDER_STATE CfGetPlaceholderStateFromFileInfo(void* InfoBuffer, FILE_INFO_BY_HANDLE_CLASS InfoClass);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern CF_PLACEHOLDER_STATE CfGetPlaceholderStateFromFindData(WIN32_FIND_DATAA* FindData);
+		public static extern CF_PLACEHOLDER_STATE CfGetPlaceholderStateFromFindData(in WIN32_FIND_DATAA FindData);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT CfGetPlaceholderInfo(HANDLE FileHandle, CF_PLACEHOLDER_INFO_CLASS InfoClass, void* InfoBuffer, uint32 InfoBufferLength, uint32* ReturnedLength);
 		[Import("cldapi.dll"), CLink, CallingConvention(.Stdcall)]

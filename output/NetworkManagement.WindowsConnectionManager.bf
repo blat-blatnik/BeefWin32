@@ -77,7 +77,7 @@ namespace Win32
 		public struct WCM_PROFILE_INFO_LIST
 		{
 			public uint32 dwNumberOfItems;
-			public WCM_PROFILE_INFO[] ProfileInfo;
+			public WCM_PROFILE_INFO[0] ProfileInfo;
 		}
 		[CRepr]
 		public struct WCM_CONNECTION_COST_DATA
@@ -137,25 +137,25 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("wcmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WcmQueryProperty(Guid* pInterface, PWSTR strProfileName, WCM_PROPERTY Property, void* pReserved, uint32* pdwDataSize, uint8** ppData);
+		public static extern uint32 WcmQueryProperty(Guid* pInterface, PWSTR strProfileName, WCM_PROPERTY Property, void* pReserved, out uint32 pdwDataSize, uint8** ppData);
 		[Import("wcmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 WcmSetProperty(Guid* pInterface, PWSTR strProfileName, WCM_PROPERTY Property, void* pReserved, uint32 dwDataSize, uint8* pbData);
 		[Import("wcmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WcmGetProfileList(void* pReserved, WCM_PROFILE_INFO_LIST** ppProfileList);
+		public static extern uint32 WcmGetProfileList(void* pReserved, out WCM_PROFILE_INFO_LIST* ppProfileList);
 		[Import("wcmapi.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 WcmSetProfileList(WCM_PROFILE_INFO_LIST* pProfileList, uint32 dwPosition, BOOL fIgnoreUnknownProfiles, void* pReserved);
+		public static extern uint32 WcmSetProfileList(ref WCM_PROFILE_INFO_LIST pProfileList, uint32 dwPosition, BOOL fIgnoreUnknownProfiles, void* pReserved);
 		[Import("wcmapi.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void WcmFreeMemory(void* pMemory);
 		[Import("ondemandconnroutehelper.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OnDemandGetRoutingHint(PWSTR destinationHostName, uint32* interfaceIndex);
+		public static extern HRESULT OnDemandGetRoutingHint(PWSTR destinationHostName, out uint32 interfaceIndex);
 		[Import("ondemandconnroutehelper.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OnDemandRegisterNotification(ONDEMAND_NOTIFICATION_CALLBACK callback, void* callbackContext, HANDLE* registrationHandle);
+		public static extern HRESULT OnDemandRegisterNotification(ONDEMAND_NOTIFICATION_CALLBACK callback, void* callbackContext, out HANDLE registrationHandle);
 		[Import("ondemandconnroutehelper.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OnDemandUnRegisterNotification(HANDLE registrationHandle);
 		[Import("ondemandconnroutehelper.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT GetInterfaceContextTableForHostName(PWSTR HostName, PWSTR ProxyName, uint32 Flags, uint8* ConnectionProfileFilterRawData, uint32 ConnectionProfileFilterRawDataSize, NET_INTERFACE_CONTEXT_TABLE** InterfaceContextTable);
+		public static extern HRESULT GetInterfaceContextTableForHostName(PWSTR HostName, PWSTR ProxyName, uint32 Flags, uint8* ConnectionProfileFilterRawData, uint32 ConnectionProfileFilterRawDataSize, out NET_INTERFACE_CONTEXT_TABLE* InterfaceContextTable);
 		[Import("ondemandconnroutehelper.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern void FreeInterfaceContextTable(NET_INTERFACE_CONTEXT_TABLE* InterfaceContextTable);
+		public static extern void FreeInterfaceContextTable(ref NET_INTERFACE_CONTEXT_TABLE InterfaceContextTable);
 		
 	}
 }

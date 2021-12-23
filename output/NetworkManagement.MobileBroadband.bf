@@ -433,42 +433,42 @@ namespace Win32
 			
 			public HRESULT get_ConnectionID(BSTR* ConnectionID) mut
 			{
-				return VT.get_ConnectionID(&this, ConnectionID);
+				return VT.get_ConnectionID(ref this, ConnectionID);
 			}
 			public HRESULT get_InterfaceID(BSTR* InterfaceID) mut
 			{
-				return VT.get_InterfaceID(&this, InterfaceID);
+				return VT.get_InterfaceID(ref this, InterfaceID);
 			}
-			public HRESULT Connect(MBN_CONNECTION_MODE connectionMode, PWSTR strProfile, uint32* requestID) mut
+			public HRESULT Connect(MBN_CONNECTION_MODE connectionMode, PWSTR strProfile, out uint32 requestID) mut
 			{
-				return VT.Connect(&this, connectionMode, strProfile, requestID);
+				return VT.Connect(ref this, connectionMode, strProfile, out requestID);
 			}
-			public HRESULT Disconnect(uint32* requestID) mut
+			public HRESULT Disconnect(out uint32 requestID) mut
 			{
-				return VT.Disconnect(&this, requestID);
+				return VT.Disconnect(ref this, out requestID);
 			}
-			public HRESULT GetConnectionState(MBN_ACTIVATION_STATE* ConnectionState, BSTR* ProfileName) mut
+			public HRESULT GetConnectionState(out MBN_ACTIVATION_STATE ConnectionState, BSTR* ProfileName) mut
 			{
-				return VT.GetConnectionState(&this, ConnectionState, ProfileName);
+				return VT.GetConnectionState(ref this, out ConnectionState, ProfileName);
 			}
-			public HRESULT GetVoiceCallState(MBN_VOICE_CALL_STATE* voiceCallState) mut
+			public HRESULT GetVoiceCallState(out MBN_VOICE_CALL_STATE voiceCallState) mut
 			{
-				return VT.GetVoiceCallState(&this, voiceCallState);
+				return VT.GetVoiceCallState(ref this, out voiceCallState);
 			}
-			public HRESULT GetActivationNetworkError(uint32* networkError) mut
+			public HRESULT GetActivationNetworkError(out uint32 networkError) mut
 			{
-				return VT.GetActivationNetworkError(&this, networkError);
+				return VT.GetActivationNetworkError(ref this, out networkError);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnection *self, BSTR* ConnectionID) get_ConnectionID;
-				public new function HRESULT(IMbnConnection *self, BSTR* InterfaceID) get_InterfaceID;
-				public new function HRESULT(IMbnConnection *self, MBN_CONNECTION_MODE connectionMode, PWSTR strProfile, uint32* requestID) Connect;
-				public new function HRESULT(IMbnConnection *self, uint32* requestID) Disconnect;
-				public new function HRESULT(IMbnConnection *self, MBN_ACTIVATION_STATE* ConnectionState, BSTR* ProfileName) GetConnectionState;
-				public new function HRESULT(IMbnConnection *self, MBN_VOICE_CALL_STATE* voiceCallState) GetVoiceCallState;
-				public new function HRESULT(IMbnConnection *self, uint32* networkError) GetActivationNetworkError;
+				public new function HRESULT(ref IMbnConnection self, BSTR* ConnectionID) get_ConnectionID;
+				public new function HRESULT(ref IMbnConnection self, BSTR* InterfaceID) get_InterfaceID;
+				public new function HRESULT(ref IMbnConnection self, MBN_CONNECTION_MODE connectionMode, PWSTR strProfile, out uint32 requestID) Connect;
+				public new function HRESULT(ref IMbnConnection self, out uint32 requestID) Disconnect;
+				public new function HRESULT(ref IMbnConnection self, out MBN_ACTIVATION_STATE ConnectionState, BSTR* ProfileName) GetConnectionState;
+				public new function HRESULT(ref IMbnConnection self, out MBN_VOICE_CALL_STATE voiceCallState) GetVoiceCallState;
+				public new function HRESULT(ref IMbnConnection self, out uint32 networkError) GetActivationNetworkError;
 			}
 		}
 		[CRepr]
@@ -478,29 +478,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnConnectComplete(IMbnConnection* newConnection, uint32 requestID, HRESULT status) mut
+			public HRESULT OnConnectComplete(ref IMbnConnection newConnection, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnConnectComplete(&this, newConnection, requestID, status);
+				return VT.OnConnectComplete(ref this, ref newConnection, requestID, status);
 			}
-			public HRESULT OnDisconnectComplete(IMbnConnection* newConnection, uint32 requestID, HRESULT status) mut
+			public HRESULT OnDisconnectComplete(ref IMbnConnection newConnection, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnDisconnectComplete(&this, newConnection, requestID, status);
+				return VT.OnDisconnectComplete(ref this, ref newConnection, requestID, status);
 			}
-			public HRESULT OnConnectStateChange(IMbnConnection* newConnection) mut
+			public HRESULT OnConnectStateChange(ref IMbnConnection newConnection) mut
 			{
-				return VT.OnConnectStateChange(&this, newConnection);
+				return VT.OnConnectStateChange(ref this, ref newConnection);
 			}
-			public HRESULT OnVoiceCallStateChange(IMbnConnection* newConnection) mut
+			public HRESULT OnVoiceCallStateChange(ref IMbnConnection newConnection) mut
 			{
-				return VT.OnVoiceCallStateChange(&this, newConnection);
+				return VT.OnVoiceCallStateChange(ref this, ref newConnection);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnectionEvents *self, IMbnConnection* newConnection, uint32 requestID, HRESULT status) OnConnectComplete;
-				public new function HRESULT(IMbnConnectionEvents *self, IMbnConnection* newConnection, uint32 requestID, HRESULT status) OnDisconnectComplete;
-				public new function HRESULT(IMbnConnectionEvents *self, IMbnConnection* newConnection) OnConnectStateChange;
-				public new function HRESULT(IMbnConnectionEvents *self, IMbnConnection* newConnection) OnVoiceCallStateChange;
+				public new function HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection, uint32 requestID, HRESULT status) OnConnectComplete;
+				public new function HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection, uint32 requestID, HRESULT status) OnDisconnectComplete;
+				public new function HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection) OnConnectStateChange;
+				public new function HRESULT(ref IMbnConnectionEvents self, ref IMbnConnection newConnection) OnVoiceCallStateChange;
 			}
 		}
 		[CRepr]
@@ -512,62 +512,62 @@ namespace Win32
 			
 			public HRESULT get_InterfaceID(BSTR* InterfaceID) mut
 			{
-				return VT.get_InterfaceID(&this, InterfaceID);
+				return VT.get_InterfaceID(ref this, InterfaceID);
 			}
-			public HRESULT GetInterfaceCapability(MBN_INTERFACE_CAPS* interfaceCaps) mut
+			public HRESULT GetInterfaceCapability(out MBN_INTERFACE_CAPS interfaceCaps) mut
 			{
-				return VT.GetInterfaceCapability(&this, interfaceCaps);
+				return VT.GetInterfaceCapability(ref this, out interfaceCaps);
 			}
-			public HRESULT GetSubscriberInformation(IMbnSubscriberInformation** subscriberInformation) mut
+			public HRESULT GetSubscriberInformation(out IMbnSubscriberInformation* subscriberInformation) mut
 			{
-				return VT.GetSubscriberInformation(&this, subscriberInformation);
+				return VT.GetSubscriberInformation(ref this, out subscriberInformation);
 			}
-			public HRESULT GetReadyState(MBN_READY_STATE* readyState) mut
+			public HRESULT GetReadyState(out MBN_READY_STATE readyState) mut
 			{
-				return VT.GetReadyState(&this, readyState);
+				return VT.GetReadyState(ref this, out readyState);
 			}
-			public HRESULT InEmergencyMode(int16* emergencyMode) mut
+			public HRESULT InEmergencyMode(out int16 emergencyMode) mut
 			{
-				return VT.InEmergencyMode(&this, emergencyMode);
+				return VT.InEmergencyMode(ref this, out emergencyMode);
 			}
-			public HRESULT GetHomeProvider(MBN_PROVIDER* homeProvider) mut
+			public HRESULT GetHomeProvider(out MBN_PROVIDER homeProvider) mut
 			{
-				return VT.GetHomeProvider(&this, homeProvider);
+				return VT.GetHomeProvider(ref this, out homeProvider);
 			}
 			public HRESULT GetPreferredProviders(SAFEARRAY** preferredProviders) mut
 			{
-				return VT.GetPreferredProviders(&this, preferredProviders);
+				return VT.GetPreferredProviders(ref this, preferredProviders);
 			}
-			public HRESULT SetPreferredProviders(SAFEARRAY* preferredProviders, uint32* requestID) mut
+			public HRESULT SetPreferredProviders(ref SAFEARRAY preferredProviders, out uint32 requestID) mut
 			{
-				return VT.SetPreferredProviders(&this, preferredProviders, requestID);
+				return VT.SetPreferredProviders(ref this, ref preferredProviders, out requestID);
 			}
-			public HRESULT GetVisibleProviders(uint32* age, SAFEARRAY** visibleProviders) mut
+			public HRESULT GetVisibleProviders(out uint32 age, out SAFEARRAY* visibleProviders) mut
 			{
-				return VT.GetVisibleProviders(&this, age, visibleProviders);
+				return VT.GetVisibleProviders(ref this, out age, out visibleProviders);
 			}
-			public HRESULT ScanNetwork(uint32* requestID) mut
+			public HRESULT ScanNetwork(out uint32 requestID) mut
 			{
-				return VT.ScanNetwork(&this, requestID);
+				return VT.ScanNetwork(ref this, out requestID);
 			}
-			public HRESULT GetConnection(IMbnConnection** mbnConnection) mut
+			public HRESULT GetConnection(out IMbnConnection* mbnConnection) mut
 			{
-				return VT.GetConnection(&this, mbnConnection);
+				return VT.GetConnection(ref this, out mbnConnection);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnInterface *self, BSTR* InterfaceID) get_InterfaceID;
-				public new function HRESULT(IMbnInterface *self, MBN_INTERFACE_CAPS* interfaceCaps) GetInterfaceCapability;
-				public new function HRESULT(IMbnInterface *self, IMbnSubscriberInformation** subscriberInformation) GetSubscriberInformation;
-				public new function HRESULT(IMbnInterface *self, MBN_READY_STATE* readyState) GetReadyState;
-				public new function HRESULT(IMbnInterface *self, int16* emergencyMode) InEmergencyMode;
-				public new function HRESULT(IMbnInterface *self, MBN_PROVIDER* homeProvider) GetHomeProvider;
-				public new function HRESULT(IMbnInterface *self, SAFEARRAY** preferredProviders) GetPreferredProviders;
-				public new function HRESULT(IMbnInterface *self, SAFEARRAY* preferredProviders, uint32* requestID) SetPreferredProviders;
-				public new function HRESULT(IMbnInterface *self, uint32* age, SAFEARRAY** visibleProviders) GetVisibleProviders;
-				public new function HRESULT(IMbnInterface *self, uint32* requestID) ScanNetwork;
-				public new function HRESULT(IMbnInterface *self, IMbnConnection** mbnConnection) GetConnection;
+				public new function HRESULT(ref IMbnInterface self, BSTR* InterfaceID) get_InterfaceID;
+				public new function HRESULT(ref IMbnInterface self, out MBN_INTERFACE_CAPS interfaceCaps) GetInterfaceCapability;
+				public new function HRESULT(ref IMbnInterface self, out IMbnSubscriberInformation* subscriberInformation) GetSubscriberInformation;
+				public new function HRESULT(ref IMbnInterface self, out MBN_READY_STATE readyState) GetReadyState;
+				public new function HRESULT(ref IMbnInterface self, out int16 emergencyMode) InEmergencyMode;
+				public new function HRESULT(ref IMbnInterface self, out MBN_PROVIDER homeProvider) GetHomeProvider;
+				public new function HRESULT(ref IMbnInterface self, SAFEARRAY** preferredProviders) GetPreferredProviders;
+				public new function HRESULT(ref IMbnInterface self, ref SAFEARRAY preferredProviders, out uint32 requestID) SetPreferredProviders;
+				public new function HRESULT(ref IMbnInterface self, out uint32 age, out SAFEARRAY* visibleProviders) GetVisibleProviders;
+				public new function HRESULT(ref IMbnInterface self, out uint32 requestID) ScanNetwork;
+				public new function HRESULT(ref IMbnInterface self, out IMbnConnection* mbnConnection) GetConnection;
 			}
 		}
 		[CRepr]
@@ -577,49 +577,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnInterfaceCapabilityAvailable(IMbnInterface* newInterface) mut
+			public HRESULT OnInterfaceCapabilityAvailable(ref IMbnInterface newInterface) mut
 			{
-				return VT.OnInterfaceCapabilityAvailable(&this, newInterface);
+				return VT.OnInterfaceCapabilityAvailable(ref this, ref newInterface);
 			}
-			public HRESULT OnSubscriberInformationChange(IMbnInterface* newInterface) mut
+			public HRESULT OnSubscriberInformationChange(ref IMbnInterface newInterface) mut
 			{
-				return VT.OnSubscriberInformationChange(&this, newInterface);
+				return VT.OnSubscriberInformationChange(ref this, ref newInterface);
 			}
-			public HRESULT OnReadyStateChange(IMbnInterface* newInterface) mut
+			public HRESULT OnReadyStateChange(ref IMbnInterface newInterface) mut
 			{
-				return VT.OnReadyStateChange(&this, newInterface);
+				return VT.OnReadyStateChange(ref this, ref newInterface);
 			}
-			public HRESULT OnEmergencyModeChange(IMbnInterface* newInterface) mut
+			public HRESULT OnEmergencyModeChange(ref IMbnInterface newInterface) mut
 			{
-				return VT.OnEmergencyModeChange(&this, newInterface);
+				return VT.OnEmergencyModeChange(ref this, ref newInterface);
 			}
-			public HRESULT OnHomeProviderAvailable(IMbnInterface* newInterface) mut
+			public HRESULT OnHomeProviderAvailable(ref IMbnInterface newInterface) mut
 			{
-				return VT.OnHomeProviderAvailable(&this, newInterface);
+				return VT.OnHomeProviderAvailable(ref this, ref newInterface);
 			}
-			public HRESULT OnPreferredProvidersChange(IMbnInterface* newInterface) mut
+			public HRESULT OnPreferredProvidersChange(ref IMbnInterface newInterface) mut
 			{
-				return VT.OnPreferredProvidersChange(&this, newInterface);
+				return VT.OnPreferredProvidersChange(ref this, ref newInterface);
 			}
-			public HRESULT OnSetPreferredProvidersComplete(IMbnInterface* newInterface, uint32 requestID, HRESULT status) mut
+			public HRESULT OnSetPreferredProvidersComplete(ref IMbnInterface newInterface, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnSetPreferredProvidersComplete(&this, newInterface, requestID, status);
+				return VT.OnSetPreferredProvidersComplete(ref this, ref newInterface, requestID, status);
 			}
-			public HRESULT OnScanNetworkComplete(IMbnInterface* newInterface, uint32 requestID, HRESULT status) mut
+			public HRESULT OnScanNetworkComplete(ref IMbnInterface newInterface, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnScanNetworkComplete(&this, newInterface, requestID, status);
+				return VT.OnScanNetworkComplete(ref this, ref newInterface, requestID, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnInterfaceCapabilityAvailable;
-				public new function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnSubscriberInformationChange;
-				public new function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnReadyStateChange;
-				public new function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnEmergencyModeChange;
-				public new function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnHomeProviderAvailable;
-				public new function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface) OnPreferredProvidersChange;
-				public new function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface, uint32 requestID, HRESULT status) OnSetPreferredProvidersComplete;
-				public new function HRESULT(IMbnInterfaceEvents *self, IMbnInterface* newInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
+				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnInterfaceCapabilityAvailable;
+				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnSubscriberInformationChange;
+				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnReadyStateChange;
+				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnEmergencyModeChange;
+				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnHomeProviderAvailable;
+				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface) OnPreferredProvidersChange;
+				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface, uint32 requestID, HRESULT status) OnSetPreferredProvidersComplete;
+				public new function HRESULT(ref IMbnInterfaceEvents self, ref IMbnInterface newInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
 			}
 		}
 		[CRepr]
@@ -631,17 +631,17 @@ namespace Win32
 			
 			public HRESULT GetInterface(PWSTR interfaceID, IMbnInterface** mbnInterface) mut
 			{
-				return VT.GetInterface(&this, interfaceID, mbnInterface);
+				return VT.GetInterface(ref this, interfaceID, mbnInterface);
 			}
 			public HRESULT GetInterfaces(SAFEARRAY** mbnInterfaces) mut
 			{
-				return VT.GetInterfaces(&this, mbnInterfaces);
+				return VT.GetInterfaces(ref this, mbnInterfaces);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnInterfaceManager *self, PWSTR interfaceID, IMbnInterface** mbnInterface) GetInterface;
-				public new function HRESULT(IMbnInterfaceManager *self, SAFEARRAY** mbnInterfaces) GetInterfaces;
+				public new function HRESULT(ref IMbnInterfaceManager self, PWSTR interfaceID, IMbnInterface** mbnInterface) GetInterface;
+				public new function HRESULT(ref IMbnInterfaceManager self, SAFEARRAY** mbnInterfaces) GetInterfaces;
 			}
 		}
 		[CRepr]
@@ -651,19 +651,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnInterfaceArrival(IMbnInterface* newInterface) mut
+			public HRESULT OnInterfaceArrival(ref IMbnInterface newInterface) mut
 			{
-				return VT.OnInterfaceArrival(&this, newInterface);
+				return VT.OnInterfaceArrival(ref this, ref newInterface);
 			}
-			public HRESULT OnInterfaceRemoval(IMbnInterface* oldInterface) mut
+			public HRESULT OnInterfaceRemoval(ref IMbnInterface oldInterface) mut
 			{
-				return VT.OnInterfaceRemoval(&this, oldInterface);
+				return VT.OnInterfaceRemoval(ref this, ref oldInterface);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnInterfaceManagerEvents *self, IMbnInterface* newInterface) OnInterfaceArrival;
-				public new function HRESULT(IMbnInterfaceManagerEvents *self, IMbnInterface* oldInterface) OnInterfaceRemoval;
+				public new function HRESULT(ref IMbnInterfaceManagerEvents self, ref IMbnInterface newInterface) OnInterfaceArrival;
+				public new function HRESULT(ref IMbnInterfaceManagerEvents self, ref IMbnInterface oldInterface) OnInterfaceRemoval;
 			}
 		}
 		[CRepr]
@@ -673,59 +673,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRegisterState(MBN_REGISTER_STATE* registerState) mut
+			public HRESULT GetRegisterState(out MBN_REGISTER_STATE registerState) mut
 			{
-				return VT.GetRegisterState(&this, registerState);
+				return VT.GetRegisterState(ref this, out registerState);
 			}
-			public HRESULT GetRegisterMode(MBN_REGISTER_MODE* registerMode) mut
+			public HRESULT GetRegisterMode(out MBN_REGISTER_MODE registerMode) mut
 			{
-				return VT.GetRegisterMode(&this, registerMode);
+				return VT.GetRegisterMode(ref this, out registerMode);
 			}
 			public HRESULT GetProviderID(BSTR* providerID) mut
 			{
-				return VT.GetProviderID(&this, providerID);
+				return VT.GetProviderID(ref this, providerID);
 			}
 			public HRESULT GetProviderName(BSTR* providerName) mut
 			{
-				return VT.GetProviderName(&this, providerName);
+				return VT.GetProviderName(ref this, providerName);
 			}
 			public HRESULT GetRoamingText(BSTR* roamingText) mut
 			{
-				return VT.GetRoamingText(&this, roamingText);
+				return VT.GetRoamingText(ref this, roamingText);
 			}
-			public HRESULT GetAvailableDataClasses(uint32* availableDataClasses) mut
+			public HRESULT GetAvailableDataClasses(out uint32 availableDataClasses) mut
 			{
-				return VT.GetAvailableDataClasses(&this, availableDataClasses);
+				return VT.GetAvailableDataClasses(ref this, out availableDataClasses);
 			}
-			public HRESULT GetCurrentDataClass(uint32* currentDataClass) mut
+			public HRESULT GetCurrentDataClass(out uint32 currentDataClass) mut
 			{
-				return VT.GetCurrentDataClass(&this, currentDataClass);
+				return VT.GetCurrentDataClass(ref this, out currentDataClass);
 			}
-			public HRESULT GetRegistrationNetworkError(uint32* registrationNetworkError) mut
+			public HRESULT GetRegistrationNetworkError(out uint32 registrationNetworkError) mut
 			{
-				return VT.GetRegistrationNetworkError(&this, registrationNetworkError);
+				return VT.GetRegistrationNetworkError(ref this, out registrationNetworkError);
 			}
-			public HRESULT GetPacketAttachNetworkError(uint32* packetAttachNetworkError) mut
+			public HRESULT GetPacketAttachNetworkError(out uint32 packetAttachNetworkError) mut
 			{
-				return VT.GetPacketAttachNetworkError(&this, packetAttachNetworkError);
+				return VT.GetPacketAttachNetworkError(ref this, out packetAttachNetworkError);
 			}
-			public HRESULT SetRegisterMode(MBN_REGISTER_MODE registerMode, PWSTR providerID, uint32 dataClass, uint32* requestID) mut
+			public HRESULT SetRegisterMode(MBN_REGISTER_MODE registerMode, PWSTR providerID, uint32 dataClass, out uint32 requestID) mut
 			{
-				return VT.SetRegisterMode(&this, registerMode, providerID, dataClass, requestID);
+				return VT.SetRegisterMode(ref this, registerMode, providerID, dataClass, out requestID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnRegistration *self, MBN_REGISTER_STATE* registerState) GetRegisterState;
-				public new function HRESULT(IMbnRegistration *self, MBN_REGISTER_MODE* registerMode) GetRegisterMode;
-				public new function HRESULT(IMbnRegistration *self, BSTR* providerID) GetProviderID;
-				public new function HRESULT(IMbnRegistration *self, BSTR* providerName) GetProviderName;
-				public new function HRESULT(IMbnRegistration *self, BSTR* roamingText) GetRoamingText;
-				public new function HRESULT(IMbnRegistration *self, uint32* availableDataClasses) GetAvailableDataClasses;
-				public new function HRESULT(IMbnRegistration *self, uint32* currentDataClass) GetCurrentDataClass;
-				public new function HRESULT(IMbnRegistration *self, uint32* registrationNetworkError) GetRegistrationNetworkError;
-				public new function HRESULT(IMbnRegistration *self, uint32* packetAttachNetworkError) GetPacketAttachNetworkError;
-				public new function HRESULT(IMbnRegistration *self, MBN_REGISTER_MODE registerMode, PWSTR providerID, uint32 dataClass, uint32* requestID) SetRegisterMode;
+				public new function HRESULT(ref IMbnRegistration self, out MBN_REGISTER_STATE registerState) GetRegisterState;
+				public new function HRESULT(ref IMbnRegistration self, out MBN_REGISTER_MODE registerMode) GetRegisterMode;
+				public new function HRESULT(ref IMbnRegistration self, BSTR* providerID) GetProviderID;
+				public new function HRESULT(ref IMbnRegistration self, BSTR* providerName) GetProviderName;
+				public new function HRESULT(ref IMbnRegistration self, BSTR* roamingText) GetRoamingText;
+				public new function HRESULT(ref IMbnRegistration self, out uint32 availableDataClasses) GetAvailableDataClasses;
+				public new function HRESULT(ref IMbnRegistration self, out uint32 currentDataClass) GetCurrentDataClass;
+				public new function HRESULT(ref IMbnRegistration self, out uint32 registrationNetworkError) GetRegistrationNetworkError;
+				public new function HRESULT(ref IMbnRegistration self, out uint32 packetAttachNetworkError) GetPacketAttachNetworkError;
+				public new function HRESULT(ref IMbnRegistration self, MBN_REGISTER_MODE registerMode, PWSTR providerID, uint32 dataClass, out uint32 requestID) SetRegisterMode;
 			}
 		}
 		[CRepr]
@@ -735,29 +735,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnRegisterModeAvailable(IMbnRegistration* newInterface) mut
+			public HRESULT OnRegisterModeAvailable(ref IMbnRegistration newInterface) mut
 			{
-				return VT.OnRegisterModeAvailable(&this, newInterface);
+				return VT.OnRegisterModeAvailable(ref this, ref newInterface);
 			}
-			public HRESULT OnRegisterStateChange(IMbnRegistration* newInterface) mut
+			public HRESULT OnRegisterStateChange(ref IMbnRegistration newInterface) mut
 			{
-				return VT.OnRegisterStateChange(&this, newInterface);
+				return VT.OnRegisterStateChange(ref this, ref newInterface);
 			}
-			public HRESULT OnPacketServiceStateChange(IMbnRegistration* newInterface) mut
+			public HRESULT OnPacketServiceStateChange(ref IMbnRegistration newInterface) mut
 			{
-				return VT.OnPacketServiceStateChange(&this, newInterface);
+				return VT.OnPacketServiceStateChange(ref this, ref newInterface);
 			}
-			public HRESULT OnSetRegisterModeComplete(IMbnRegistration* newInterface, uint32 requestID, HRESULT status) mut
+			public HRESULT OnSetRegisterModeComplete(ref IMbnRegistration newInterface, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnSetRegisterModeComplete(&this, newInterface, requestID, status);
+				return VT.OnSetRegisterModeComplete(ref this, ref newInterface, requestID, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnRegistrationEvents *self, IMbnRegistration* newInterface) OnRegisterModeAvailable;
-				public new function HRESULT(IMbnRegistrationEvents *self, IMbnRegistration* newInterface) OnRegisterStateChange;
-				public new function HRESULT(IMbnRegistrationEvents *self, IMbnRegistration* newInterface) OnPacketServiceStateChange;
-				public new function HRESULT(IMbnRegistrationEvents *self, IMbnRegistration* newInterface, uint32 requestID, HRESULT status) OnSetRegisterModeComplete;
+				public new function HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface) OnRegisterModeAvailable;
+				public new function HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface) OnRegisterStateChange;
+				public new function HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface) OnPacketServiceStateChange;
+				public new function HRESULT(ref IMbnRegistrationEvents self, ref IMbnRegistration newInterface, uint32 requestID, HRESULT status) OnSetRegisterModeComplete;
 			}
 		}
 		[CRepr]
@@ -769,17 +769,17 @@ namespace Win32
 			
 			public HRESULT GetConnection(PWSTR connectionID, IMbnConnection** mbnConnection) mut
 			{
-				return VT.GetConnection(&this, connectionID, mbnConnection);
+				return VT.GetConnection(ref this, connectionID, mbnConnection);
 			}
 			public HRESULT GetConnections(SAFEARRAY** mbnConnections) mut
 			{
-				return VT.GetConnections(&this, mbnConnections);
+				return VT.GetConnections(ref this, mbnConnections);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnectionManager *self, PWSTR connectionID, IMbnConnection** mbnConnection) GetConnection;
-				public new function HRESULT(IMbnConnectionManager *self, SAFEARRAY** mbnConnections) GetConnections;
+				public new function HRESULT(ref IMbnConnectionManager self, PWSTR connectionID, IMbnConnection** mbnConnection) GetConnection;
+				public new function HRESULT(ref IMbnConnectionManager self, SAFEARRAY** mbnConnections) GetConnections;
 			}
 		}
 		[CRepr]
@@ -789,19 +789,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnConnectionArrival(IMbnConnection* newConnection) mut
+			public HRESULT OnConnectionArrival(ref IMbnConnection newConnection) mut
 			{
-				return VT.OnConnectionArrival(&this, newConnection);
+				return VT.OnConnectionArrival(ref this, ref newConnection);
 			}
-			public HRESULT OnConnectionRemoval(IMbnConnection* oldConnection) mut
+			public HRESULT OnConnectionRemoval(ref IMbnConnection oldConnection) mut
 			{
-				return VT.OnConnectionRemoval(&this, oldConnection);
+				return VT.OnConnectionRemoval(ref this, ref oldConnection);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnectionManagerEvents *self, IMbnConnection* newConnection) OnConnectionArrival;
-				public new function HRESULT(IMbnConnectionManagerEvents *self, IMbnConnection* oldConnection) OnConnectionRemoval;
+				public new function HRESULT(ref IMbnConnectionManagerEvents self, ref IMbnConnection newConnection) OnConnectionArrival;
+				public new function HRESULT(ref IMbnConnectionManagerEvents self, ref IMbnConnection oldConnection) OnConnectionRemoval;
 			}
 		}
 		[CRepr]
@@ -813,22 +813,22 @@ namespace Win32
 			
 			public HRESULT GetPinList(SAFEARRAY** pinList) mut
 			{
-				return VT.GetPinList(&this, pinList);
+				return VT.GetPinList(ref this, pinList);
 			}
 			public HRESULT GetPin(MBN_PIN_TYPE pinType, IMbnPin** pin) mut
 			{
-				return VT.GetPin(&this, pinType, pin);
+				return VT.GetPin(ref this, pinType, pin);
 			}
-			public HRESULT GetPinState(uint32* requestID) mut
+			public HRESULT GetPinState(out uint32 requestID) mut
 			{
-				return VT.GetPinState(&this, requestID);
+				return VT.GetPinState(ref this, out requestID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnPinManager *self, SAFEARRAY** pinList) GetPinList;
-				public new function HRESULT(IMbnPinManager *self, MBN_PIN_TYPE pinType, IMbnPin** pin) GetPin;
-				public new function HRESULT(IMbnPinManager *self, uint32* requestID) GetPinState;
+				public new function HRESULT(ref IMbnPinManager self, SAFEARRAY** pinList) GetPinList;
+				public new function HRESULT(ref IMbnPinManager self, MBN_PIN_TYPE pinType, IMbnPin** pin) GetPin;
+				public new function HRESULT(ref IMbnPinManager self, out uint32 requestID) GetPinState;
 			}
 		}
 		[CRepr]
@@ -838,19 +838,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnPinListAvailable(IMbnPinManager* pinManager) mut
+			public HRESULT OnPinListAvailable(ref IMbnPinManager pinManager) mut
 			{
-				return VT.OnPinListAvailable(&this, pinManager);
+				return VT.OnPinListAvailable(ref this, ref pinManager);
 			}
-			public HRESULT OnGetPinStateComplete(IMbnPinManager* pinManager, MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) mut
+			public HRESULT OnGetPinStateComplete(ref IMbnPinManager pinManager, MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnGetPinStateComplete(&this, pinManager, pinInfo, requestID, status);
+				return VT.OnGetPinStateComplete(ref this, ref pinManager, pinInfo, requestID, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnPinManagerEvents *self, IMbnPinManager* pinManager) OnPinListAvailable;
-				public new function HRESULT(IMbnPinManagerEvents *self, IMbnPinManager* pinManager, MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnGetPinStateComplete;
+				public new function HRESULT(ref IMbnPinManagerEvents self, ref IMbnPinManager pinManager) OnPinListAvailable;
+				public new function HRESULT(ref IMbnPinManagerEvents self, ref IMbnPinManager pinManager, MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnGetPinStateComplete;
 			}
 		}
 		[CRepr]
@@ -860,34 +860,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnEnableComplete(IMbnPin* pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) mut
+			public HRESULT OnEnableComplete(ref IMbnPin pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnEnableComplete(&this, pin, pinInfo, requestID, status);
+				return VT.OnEnableComplete(ref this, ref pin, ref pinInfo, requestID, status);
 			}
-			public HRESULT OnDisableComplete(IMbnPin* pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) mut
+			public HRESULT OnDisableComplete(ref IMbnPin pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnDisableComplete(&this, pin, pinInfo, requestID, status);
+				return VT.OnDisableComplete(ref this, ref pin, ref pinInfo, requestID, status);
 			}
-			public HRESULT OnEnterComplete(IMbnPin* Pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) mut
+			public HRESULT OnEnterComplete(ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnEnterComplete(&this, Pin, pinInfo, requestID, status);
+				return VT.OnEnterComplete(ref this, ref Pin, ref pinInfo, requestID, status);
 			}
-			public HRESULT OnChangeComplete(IMbnPin* Pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) mut
+			public HRESULT OnChangeComplete(ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnChangeComplete(&this, Pin, pinInfo, requestID, status);
+				return VT.OnChangeComplete(ref this, ref Pin, ref pinInfo, requestID, status);
 			}
-			public HRESULT OnUnblockComplete(IMbnPin* Pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) mut
+			public HRESULT OnUnblockComplete(ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnUnblockComplete(&this, Pin, pinInfo, requestID, status);
+				return VT.OnUnblockComplete(ref this, ref Pin, ref pinInfo, requestID, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnPinEvents *self, IMbnPin* pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnEnableComplete;
-				public new function HRESULT(IMbnPinEvents *self, IMbnPin* pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnDisableComplete;
-				public new function HRESULT(IMbnPinEvents *self, IMbnPin* Pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnEnterComplete;
-				public new function HRESULT(IMbnPinEvents *self, IMbnPin* Pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnChangeComplete;
-				public new function HRESULT(IMbnPinEvents *self, IMbnPin* Pin, MBN_PIN_INFO* pinInfo, uint32 requestID, HRESULT status) OnUnblockComplete;
+				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnEnableComplete;
+				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnDisableComplete;
+				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnEnterComplete;
+				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnChangeComplete;
+				public new function HRESULT(ref IMbnPinEvents self, ref IMbnPin Pin, ref MBN_PIN_INFO pinInfo, uint32 requestID, HRESULT status) OnUnblockComplete;
 			}
 		}
 		[CRepr]
@@ -899,22 +899,22 @@ namespace Win32
 			
 			public HRESULT get_SubscriberID(BSTR* SubscriberID) mut
 			{
-				return VT.get_SubscriberID(&this, SubscriberID);
+				return VT.get_SubscriberID(ref this, SubscriberID);
 			}
 			public HRESULT get_SimIccID(BSTR* SimIccID) mut
 			{
-				return VT.get_SimIccID(&this, SimIccID);
+				return VT.get_SimIccID(ref this, SimIccID);
 			}
 			public HRESULT get_TelephoneNumbers(SAFEARRAY** TelephoneNumbers) mut
 			{
-				return VT.get_TelephoneNumbers(&this, TelephoneNumbers);
+				return VT.get_TelephoneNumbers(ref this, TelephoneNumbers);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnSubscriberInformation *self, BSTR* SubscriberID) get_SubscriberID;
-				public new function HRESULT(IMbnSubscriberInformation *self, BSTR* SimIccID) get_SimIccID;
-				public new function HRESULT(IMbnSubscriberInformation *self, SAFEARRAY** TelephoneNumbers) get_TelephoneNumbers;
+				public new function HRESULT(ref IMbnSubscriberInformation self, BSTR* SubscriberID) get_SubscriberID;
+				public new function HRESULT(ref IMbnSubscriberInformation self, BSTR* SimIccID) get_SimIccID;
+				public new function HRESULT(ref IMbnSubscriberInformation self, SAFEARRAY** TelephoneNumbers) get_TelephoneNumbers;
 			}
 		}
 		[CRepr]
@@ -924,19 +924,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSignalStrength(uint32* signalStrength) mut
+			public HRESULT GetSignalStrength(out uint32 signalStrength) mut
 			{
-				return VT.GetSignalStrength(&this, signalStrength);
+				return VT.GetSignalStrength(ref this, out signalStrength);
 			}
-			public HRESULT GetSignalError(uint32* signalError) mut
+			public HRESULT GetSignalError(out uint32 signalError) mut
 			{
-				return VT.GetSignalError(&this, signalError);
+				return VT.GetSignalError(ref this, out signalError);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnSignal *self, uint32* signalStrength) GetSignalStrength;
-				public new function HRESULT(IMbnSignal *self, uint32* signalError) GetSignalError;
+				public new function HRESULT(ref IMbnSignal self, out uint32 signalStrength) GetSignalStrength;
+				public new function HRESULT(ref IMbnSignal self, out uint32 signalError) GetSignalError;
 			}
 		}
 		[CRepr]
@@ -946,14 +946,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSignalStateChange(IMbnSignal* newInterface) mut
+			public HRESULT OnSignalStateChange(ref IMbnSignal newInterface) mut
 			{
-				return VT.OnSignalStateChange(&this, newInterface);
+				return VT.OnSignalStateChange(ref this, ref newInterface);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnSignalEvents *self, IMbnSignal* newInterface) OnSignalStateChange;
+				public new function HRESULT(ref IMbnSignalEvents self, ref IMbnSignal newInterface) OnSignalStateChange;
 			}
 		}
 		[CRepr]
@@ -965,17 +965,17 @@ namespace Win32
 			
 			public HRESULT GetProvisionedContexts(SAFEARRAY** provisionedContexts) mut
 			{
-				return VT.GetProvisionedContexts(&this, provisionedContexts);
+				return VT.GetProvisionedContexts(ref this, provisionedContexts);
 			}
-			public HRESULT SetProvisionedContext(MBN_CONTEXT provisionedContexts, PWSTR providerID, uint32* requestID) mut
+			public HRESULT SetProvisionedContext(MBN_CONTEXT provisionedContexts, PWSTR providerID, out uint32 requestID) mut
 			{
-				return VT.SetProvisionedContext(&this, provisionedContexts, providerID, requestID);
+				return VT.SetProvisionedContext(ref this, provisionedContexts, providerID, out requestID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnectionContext *self, SAFEARRAY** provisionedContexts) GetProvisionedContexts;
-				public new function HRESULT(IMbnConnectionContext *self, MBN_CONTEXT provisionedContexts, PWSTR providerID, uint32* requestID) SetProvisionedContext;
+				public new function HRESULT(ref IMbnConnectionContext self, SAFEARRAY** provisionedContexts) GetProvisionedContexts;
+				public new function HRESULT(ref IMbnConnectionContext self, MBN_CONTEXT provisionedContexts, PWSTR providerID, out uint32 requestID) SetProvisionedContext;
 			}
 		}
 		[CRepr]
@@ -985,19 +985,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnProvisionedContextListChange(IMbnConnectionContext* newInterface) mut
+			public HRESULT OnProvisionedContextListChange(ref IMbnConnectionContext newInterface) mut
 			{
-				return VT.OnProvisionedContextListChange(&this, newInterface);
+				return VT.OnProvisionedContextListChange(ref this, ref newInterface);
 			}
-			public HRESULT OnSetProvisionedContextComplete(IMbnConnectionContext* newInterface, uint32 requestID, HRESULT status) mut
+			public HRESULT OnSetProvisionedContextComplete(ref IMbnConnectionContext newInterface, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnSetProvisionedContextComplete(&this, newInterface, requestID, status);
+				return VT.OnSetProvisionedContextComplete(ref this, ref newInterface, requestID, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnectionContextEvents *self, IMbnConnectionContext* newInterface) OnProvisionedContextListChange;
-				public new function HRESULT(IMbnConnectionContextEvents *self, IMbnConnectionContext* newInterface, uint32 requestID, HRESULT status) OnSetProvisionedContextComplete;
+				public new function HRESULT(ref IMbnConnectionContextEvents self, ref IMbnConnectionContext newInterface) OnProvisionedContextListChange;
+				public new function HRESULT(ref IMbnConnectionContextEvents self, ref IMbnConnectionContext newInterface, uint32 requestID, HRESULT status) OnSetProvisionedContextComplete;
 			}
 		}
 		[CRepr]
@@ -1007,24 +1007,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetConnectionProfiles(IMbnInterface* mbnInterface, SAFEARRAY** connectionProfiles) mut
+			public HRESULT GetConnectionProfiles(ref IMbnInterface mbnInterface, SAFEARRAY** connectionProfiles) mut
 			{
-				return VT.GetConnectionProfiles(&this, mbnInterface, connectionProfiles);
+				return VT.GetConnectionProfiles(ref this, ref mbnInterface, connectionProfiles);
 			}
-			public HRESULT GetConnectionProfile(IMbnInterface* mbnInterface, PWSTR profileName, IMbnConnectionProfile** connectionProfile) mut
+			public HRESULT GetConnectionProfile(ref IMbnInterface mbnInterface, PWSTR profileName, IMbnConnectionProfile** connectionProfile) mut
 			{
-				return VT.GetConnectionProfile(&this, mbnInterface, profileName, connectionProfile);
+				return VT.GetConnectionProfile(ref this, ref mbnInterface, profileName, connectionProfile);
 			}
 			public HRESULT CreateConnectionProfile(PWSTR xmlProfile) mut
 			{
-				return VT.CreateConnectionProfile(&this, xmlProfile);
+				return VT.CreateConnectionProfile(ref this, xmlProfile);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnectionProfileManager *self, IMbnInterface* mbnInterface, SAFEARRAY** connectionProfiles) GetConnectionProfiles;
-				public new function HRESULT(IMbnConnectionProfileManager *self, IMbnInterface* mbnInterface, PWSTR profileName, IMbnConnectionProfile** connectionProfile) GetConnectionProfile;
-				public new function HRESULT(IMbnConnectionProfileManager *self, PWSTR xmlProfile) CreateConnectionProfile;
+				public new function HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, SAFEARRAY** connectionProfiles) GetConnectionProfiles;
+				public new function HRESULT(ref IMbnConnectionProfileManager self, ref IMbnInterface mbnInterface, PWSTR profileName, IMbnConnectionProfile** connectionProfile) GetConnectionProfile;
+				public new function HRESULT(ref IMbnConnectionProfileManager self, PWSTR xmlProfile) CreateConnectionProfile;
 			}
 		}
 		[CRepr]
@@ -1036,22 +1036,22 @@ namespace Win32
 			
 			public HRESULT GetProfileXmlData(BSTR* profileData) mut
 			{
-				return VT.GetProfileXmlData(&this, profileData);
+				return VT.GetProfileXmlData(ref this, profileData);
 			}
 			public HRESULT UpdateProfile(PWSTR strProfile) mut
 			{
-				return VT.UpdateProfile(&this, strProfile);
+				return VT.UpdateProfile(ref this, strProfile);
 			}
 			public HRESULT Delete() mut
 			{
-				return VT.Delete(&this);
+				return VT.Delete(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnectionProfile *self, BSTR* profileData) GetProfileXmlData;
-				public new function HRESULT(IMbnConnectionProfile *self, PWSTR strProfile) UpdateProfile;
-				public new function HRESULT(IMbnConnectionProfile *self) Delete;
+				public new function HRESULT(ref IMbnConnectionProfile self, BSTR* profileData) GetProfileXmlData;
+				public new function HRESULT(ref IMbnConnectionProfile self, PWSTR strProfile) UpdateProfile;
+				public new function HRESULT(ref IMbnConnectionProfile self) Delete;
 			}
 		}
 		[CRepr]
@@ -1061,14 +1061,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnProfileUpdate(IMbnConnectionProfile* newProfile) mut
+			public HRESULT OnProfileUpdate(ref IMbnConnectionProfile newProfile) mut
 			{
-				return VT.OnProfileUpdate(&this, newProfile);
+				return VT.OnProfileUpdate(ref this, ref newProfile);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnectionProfileEvents *self, IMbnConnectionProfile* newProfile) OnProfileUpdate;
+				public new function HRESULT(ref IMbnConnectionProfileEvents self, ref IMbnConnectionProfile newProfile) OnProfileUpdate;
 			}
 		}
 		[CRepr]
@@ -1080,37 +1080,37 @@ namespace Win32
 			
 			public HRESULT get_ServiceCenterAddress(BSTR* scAddress) mut
 			{
-				return VT.get_ServiceCenterAddress(&this, scAddress);
+				return VT.get_ServiceCenterAddress(ref this, scAddress);
 			}
 			public HRESULT put_ServiceCenterAddress(PWSTR scAddress) mut
 			{
-				return VT.put_ServiceCenterAddress(&this, scAddress);
+				return VT.put_ServiceCenterAddress(ref this, scAddress);
 			}
-			public HRESULT get_MaxMessageIndex(uint32* index) mut
+			public HRESULT get_MaxMessageIndex(out uint32 index) mut
 			{
-				return VT.get_MaxMessageIndex(&this, index);
+				return VT.get_MaxMessageIndex(ref this, out index);
 			}
-			public HRESULT get_CdmaShortMsgSize(uint32* shortMsgSize) mut
+			public HRESULT get_CdmaShortMsgSize(out uint32 shortMsgSize) mut
 			{
-				return VT.get_CdmaShortMsgSize(&this, shortMsgSize);
+				return VT.get_CdmaShortMsgSize(ref this, out shortMsgSize);
 			}
-			public HRESULT get_SmsFormat(MBN_SMS_FORMAT* smsFormat) mut
+			public HRESULT get_SmsFormat(out MBN_SMS_FORMAT smsFormat) mut
 			{
-				return VT.get_SmsFormat(&this, smsFormat);
+				return VT.get_SmsFormat(ref this, out smsFormat);
 			}
 			public HRESULT put_SmsFormat(MBN_SMS_FORMAT smsFormat) mut
 			{
-				return VT.put_SmsFormat(&this, smsFormat);
+				return VT.put_SmsFormat(ref this, smsFormat);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnSmsConfiguration *self, BSTR* scAddress) get_ServiceCenterAddress;
-				public new function HRESULT(IMbnSmsConfiguration *self, PWSTR scAddress) put_ServiceCenterAddress;
-				public new function HRESULT(IMbnSmsConfiguration *self, uint32* index) get_MaxMessageIndex;
-				public new function HRESULT(IMbnSmsConfiguration *self, uint32* shortMsgSize) get_CdmaShortMsgSize;
-				public new function HRESULT(IMbnSmsConfiguration *self, MBN_SMS_FORMAT* smsFormat) get_SmsFormat;
-				public new function HRESULT(IMbnSmsConfiguration *self, MBN_SMS_FORMAT smsFormat) put_SmsFormat;
+				public new function HRESULT(ref IMbnSmsConfiguration self, BSTR* scAddress) get_ServiceCenterAddress;
+				public new function HRESULT(ref IMbnSmsConfiguration self, PWSTR scAddress) put_ServiceCenterAddress;
+				public new function HRESULT(ref IMbnSmsConfiguration self, out uint32 index) get_MaxMessageIndex;
+				public new function HRESULT(ref IMbnSmsConfiguration self, out uint32 shortMsgSize) get_CdmaShortMsgSize;
+				public new function HRESULT(ref IMbnSmsConfiguration self, out MBN_SMS_FORMAT smsFormat) get_SmsFormat;
+				public new function HRESULT(ref IMbnSmsConfiguration self, MBN_SMS_FORMAT smsFormat) put_SmsFormat;
 			}
 		}
 		[CRepr]
@@ -1120,29 +1120,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Index(uint32* Index) mut
+			public HRESULT get_Index(out uint32 Index) mut
 			{
-				return VT.get_Index(&this, Index);
+				return VT.get_Index(ref this, out Index);
 			}
-			public HRESULT get_Status(MBN_MSG_STATUS* Status) mut
+			public HRESULT get_Status(out MBN_MSG_STATUS Status) mut
 			{
-				return VT.get_Status(&this, Status);
+				return VT.get_Status(ref this, out Status);
 			}
 			public HRESULT get_PduData(BSTR* PduData) mut
 			{
-				return VT.get_PduData(&this, PduData);
+				return VT.get_PduData(ref this, PduData);
 			}
 			public HRESULT get_Message(SAFEARRAY** Message) mut
 			{
-				return VT.get_Message(&this, Message);
+				return VT.get_Message(ref this, Message);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnSmsReadMsgPdu *self, uint32* Index) get_Index;
-				public new function HRESULT(IMbnSmsReadMsgPdu *self, MBN_MSG_STATUS* Status) get_Status;
-				public new function HRESULT(IMbnSmsReadMsgPdu *self, BSTR* PduData) get_PduData;
-				public new function HRESULT(IMbnSmsReadMsgPdu *self, SAFEARRAY** Message) get_Message;
+				public new function HRESULT(ref IMbnSmsReadMsgPdu self, out uint32 Index) get_Index;
+				public new function HRESULT(ref IMbnSmsReadMsgPdu self, out MBN_MSG_STATUS Status) get_Status;
+				public new function HRESULT(ref IMbnSmsReadMsgPdu self, BSTR* PduData) get_PduData;
+				public new function HRESULT(ref IMbnSmsReadMsgPdu self, SAFEARRAY** Message) get_Message;
 			}
 		}
 		[CRepr]
@@ -1152,49 +1152,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Index(uint32* Index) mut
+			public HRESULT get_Index(out uint32 Index) mut
 			{
-				return VT.get_Index(&this, Index);
+				return VT.get_Index(ref this, out Index);
 			}
-			public HRESULT get_Status(MBN_MSG_STATUS* Status) mut
+			public HRESULT get_Status(out MBN_MSG_STATUS Status) mut
 			{
-				return VT.get_Status(&this, Status);
+				return VT.get_Status(ref this, out Status);
 			}
 			public HRESULT get_Address(BSTR* Address) mut
 			{
-				return VT.get_Address(&this, Address);
+				return VT.get_Address(ref this, Address);
 			}
 			public HRESULT get_Timestamp(BSTR* Timestamp) mut
 			{
-				return VT.get_Timestamp(&this, Timestamp);
+				return VT.get_Timestamp(ref this, Timestamp);
 			}
-			public HRESULT get_EncodingID(MBN_SMS_CDMA_ENCODING* EncodingID) mut
+			public HRESULT get_EncodingID(out MBN_SMS_CDMA_ENCODING EncodingID) mut
 			{
-				return VT.get_EncodingID(&this, EncodingID);
+				return VT.get_EncodingID(ref this, out EncodingID);
 			}
-			public HRESULT get_LanguageID(MBN_SMS_CDMA_LANG* LanguageID) mut
+			public HRESULT get_LanguageID(out MBN_SMS_CDMA_LANG LanguageID) mut
 			{
-				return VT.get_LanguageID(&this, LanguageID);
+				return VT.get_LanguageID(ref this, out LanguageID);
 			}
-			public HRESULT get_SizeInCharacters(uint32* SizeInCharacters) mut
+			public HRESULT get_SizeInCharacters(out uint32 SizeInCharacters) mut
 			{
-				return VT.get_SizeInCharacters(&this, SizeInCharacters);
+				return VT.get_SizeInCharacters(ref this, out SizeInCharacters);
 			}
 			public HRESULT get_Message(SAFEARRAY** Message) mut
 			{
-				return VT.get_Message(&this, Message);
+				return VT.get_Message(ref this, Message);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnSmsReadMsgTextCdma *self, uint32* Index) get_Index;
-				public new function HRESULT(IMbnSmsReadMsgTextCdma *self, MBN_MSG_STATUS* Status) get_Status;
-				public new function HRESULT(IMbnSmsReadMsgTextCdma *self, BSTR* Address) get_Address;
-				public new function HRESULT(IMbnSmsReadMsgTextCdma *self, BSTR* Timestamp) get_Timestamp;
-				public new function HRESULT(IMbnSmsReadMsgTextCdma *self, MBN_SMS_CDMA_ENCODING* EncodingID) get_EncodingID;
-				public new function HRESULT(IMbnSmsReadMsgTextCdma *self, MBN_SMS_CDMA_LANG* LanguageID) get_LanguageID;
-				public new function HRESULT(IMbnSmsReadMsgTextCdma *self, uint32* SizeInCharacters) get_SizeInCharacters;
-				public new function HRESULT(IMbnSmsReadMsgTextCdma *self, SAFEARRAY** Message) get_Message;
+				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out uint32 Index) get_Index;
+				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_MSG_STATUS Status) get_Status;
+				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, BSTR* Address) get_Address;
+				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, BSTR* Timestamp) get_Timestamp;
+				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_SMS_CDMA_ENCODING EncodingID) get_EncodingID;
+				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out MBN_SMS_CDMA_LANG LanguageID) get_LanguageID;
+				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, out uint32 SizeInCharacters) get_SizeInCharacters;
+				public new function HRESULT(ref IMbnSmsReadMsgTextCdma self, SAFEARRAY** Message) get_Message;
 			}
 		}
 		[CRepr]
@@ -1206,47 +1206,47 @@ namespace Win32
 			
 			public HRESULT GetSmsConfiguration(IMbnSmsConfiguration** smsConfiguration) mut
 			{
-				return VT.GetSmsConfiguration(&this, smsConfiguration);
+				return VT.GetSmsConfiguration(ref this, smsConfiguration);
 			}
-			public HRESULT SetSmsConfiguration(IMbnSmsConfiguration* smsConfiguration, uint32* requestID) mut
+			public HRESULT SetSmsConfiguration(ref IMbnSmsConfiguration smsConfiguration, out uint32 requestID) mut
 			{
-				return VT.SetSmsConfiguration(&this, smsConfiguration, requestID);
+				return VT.SetSmsConfiguration(ref this, ref smsConfiguration, out requestID);
 			}
-			public HRESULT SmsSendPdu(PWSTR pduData, uint8 size, uint32* requestID) mut
+			public HRESULT SmsSendPdu(PWSTR pduData, uint8 size, out uint32 requestID) mut
 			{
-				return VT.SmsSendPdu(&this, pduData, size, requestID);
+				return VT.SmsSendPdu(ref this, pduData, size, out requestID);
 			}
-			public HRESULT SmsSendCdma(PWSTR address, MBN_SMS_CDMA_ENCODING encoding, MBN_SMS_CDMA_LANG language, uint32 sizeInCharacters, SAFEARRAY* message, uint32* requestID) mut
+			public HRESULT SmsSendCdma(PWSTR address, MBN_SMS_CDMA_ENCODING encoding, MBN_SMS_CDMA_LANG language, uint32 sizeInCharacters, ref SAFEARRAY message, out uint32 requestID) mut
 			{
-				return VT.SmsSendCdma(&this, address, encoding, language, sizeInCharacters, message, requestID);
+				return VT.SmsSendCdma(ref this, address, encoding, language, sizeInCharacters, ref message, out requestID);
 			}
-			public HRESULT SmsSendCdmaPdu(SAFEARRAY* message, uint32* requestID) mut
+			public HRESULT SmsSendCdmaPdu(ref SAFEARRAY message, out uint32 requestID) mut
 			{
-				return VT.SmsSendCdmaPdu(&this, message, requestID);
+				return VT.SmsSendCdmaPdu(ref this, ref message, out requestID);
 			}
-			public HRESULT SmsRead(MBN_SMS_FILTER* smsFilter, MBN_SMS_FORMAT smsFormat, uint32* requestID) mut
+			public HRESULT SmsRead(ref MBN_SMS_FILTER smsFilter, MBN_SMS_FORMAT smsFormat, out uint32 requestID) mut
 			{
-				return VT.SmsRead(&this, smsFilter, smsFormat, requestID);
+				return VT.SmsRead(ref this, ref smsFilter, smsFormat, out requestID);
 			}
-			public HRESULT SmsDelete(MBN_SMS_FILTER* smsFilter, uint32* requestID) mut
+			public HRESULT SmsDelete(ref MBN_SMS_FILTER smsFilter, out uint32 requestID) mut
 			{
-				return VT.SmsDelete(&this, smsFilter, requestID);
+				return VT.SmsDelete(ref this, ref smsFilter, out requestID);
 			}
-			public HRESULT GetSmsStatus(MBN_SMS_STATUS_INFO* smsStatusInfo) mut
+			public HRESULT GetSmsStatus(out MBN_SMS_STATUS_INFO smsStatusInfo) mut
 			{
-				return VT.GetSmsStatus(&this, smsStatusInfo);
+				return VT.GetSmsStatus(ref this, out smsStatusInfo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnSms *self, IMbnSmsConfiguration** smsConfiguration) GetSmsConfiguration;
-				public new function HRESULT(IMbnSms *self, IMbnSmsConfiguration* smsConfiguration, uint32* requestID) SetSmsConfiguration;
-				public new function HRESULT(IMbnSms *self, PWSTR pduData, uint8 size, uint32* requestID) SmsSendPdu;
-				public new function HRESULT(IMbnSms *self, PWSTR address, MBN_SMS_CDMA_ENCODING encoding, MBN_SMS_CDMA_LANG language, uint32 sizeInCharacters, SAFEARRAY* message, uint32* requestID) SmsSendCdma;
-				public new function HRESULT(IMbnSms *self, SAFEARRAY* message, uint32* requestID) SmsSendCdmaPdu;
-				public new function HRESULT(IMbnSms *self, MBN_SMS_FILTER* smsFilter, MBN_SMS_FORMAT smsFormat, uint32* requestID) SmsRead;
-				public new function HRESULT(IMbnSms *self, MBN_SMS_FILTER* smsFilter, uint32* requestID) SmsDelete;
-				public new function HRESULT(IMbnSms *self, MBN_SMS_STATUS_INFO* smsStatusInfo) GetSmsStatus;
+				public new function HRESULT(ref IMbnSms self, IMbnSmsConfiguration** smsConfiguration) GetSmsConfiguration;
+				public new function HRESULT(ref IMbnSms self, ref IMbnSmsConfiguration smsConfiguration, out uint32 requestID) SetSmsConfiguration;
+				public new function HRESULT(ref IMbnSms self, PWSTR pduData, uint8 size, out uint32 requestID) SmsSendPdu;
+				public new function HRESULT(ref IMbnSms self, PWSTR address, MBN_SMS_CDMA_ENCODING encoding, MBN_SMS_CDMA_LANG language, uint32 sizeInCharacters, ref SAFEARRAY message, out uint32 requestID) SmsSendCdma;
+				public new function HRESULT(ref IMbnSms self, ref SAFEARRAY message, out uint32 requestID) SmsSendCdmaPdu;
+				public new function HRESULT(ref IMbnSms self, ref MBN_SMS_FILTER smsFilter, MBN_SMS_FORMAT smsFormat, out uint32 requestID) SmsRead;
+				public new function HRESULT(ref IMbnSms self, ref MBN_SMS_FILTER smsFilter, out uint32 requestID) SmsDelete;
+				public new function HRESULT(ref IMbnSms self, out MBN_SMS_STATUS_INFO smsStatusInfo) GetSmsStatus;
 			}
 		}
 		[CRepr]
@@ -1256,44 +1256,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSmsConfigurationChange(IMbnSms* sms) mut
+			public HRESULT OnSmsConfigurationChange(ref IMbnSms sms) mut
 			{
-				return VT.OnSmsConfigurationChange(&this, sms);
+				return VT.OnSmsConfigurationChange(ref this, ref sms);
 			}
-			public HRESULT OnSetSmsConfigurationComplete(IMbnSms* sms, uint32 requestID, HRESULT status) mut
+			public HRESULT OnSetSmsConfigurationComplete(ref IMbnSms sms, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnSetSmsConfigurationComplete(&this, sms, requestID, status);
+				return VT.OnSetSmsConfigurationComplete(ref this, ref sms, requestID, status);
 			}
-			public HRESULT OnSmsSendComplete(IMbnSms* sms, uint32 requestID, HRESULT status) mut
+			public HRESULT OnSmsSendComplete(ref IMbnSms sms, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnSmsSendComplete(&this, sms, requestID, status);
+				return VT.OnSmsSendComplete(ref this, ref sms, requestID, status);
 			}
-			public HRESULT OnSmsReadComplete(IMbnSms* sms, MBN_SMS_FORMAT smsFormat, SAFEARRAY* readMsgs, int16 moreMsgs, uint32 requestID, HRESULT status) mut
+			public HRESULT OnSmsReadComplete(ref IMbnSms sms, MBN_SMS_FORMAT smsFormat, ref SAFEARRAY readMsgs, int16 moreMsgs, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnSmsReadComplete(&this, sms, smsFormat, readMsgs, moreMsgs, requestID, status);
+				return VT.OnSmsReadComplete(ref this, ref sms, smsFormat, ref readMsgs, moreMsgs, requestID, status);
 			}
-			public HRESULT OnSmsNewClass0Message(IMbnSms* sms, MBN_SMS_FORMAT smsFormat, SAFEARRAY* readMsgs) mut
+			public HRESULT OnSmsNewClass0Message(ref IMbnSms sms, MBN_SMS_FORMAT smsFormat, ref SAFEARRAY readMsgs) mut
 			{
-				return VT.OnSmsNewClass0Message(&this, sms, smsFormat, readMsgs);
+				return VT.OnSmsNewClass0Message(ref this, ref sms, smsFormat, ref readMsgs);
 			}
-			public HRESULT OnSmsDeleteComplete(IMbnSms* sms, uint32 requestID, HRESULT status) mut
+			public HRESULT OnSmsDeleteComplete(ref IMbnSms sms, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnSmsDeleteComplete(&this, sms, requestID, status);
+				return VT.OnSmsDeleteComplete(ref this, ref sms, requestID, status);
 			}
-			public HRESULT OnSmsStatusChange(IMbnSms* sms) mut
+			public HRESULT OnSmsStatusChange(ref IMbnSms sms) mut
 			{
-				return VT.OnSmsStatusChange(&this, sms);
+				return VT.OnSmsStatusChange(ref this, ref sms);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnSmsEvents *self, IMbnSms* sms) OnSmsConfigurationChange;
-				public new function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, uint32 requestID, HRESULT status) OnSetSmsConfigurationComplete;
-				public new function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, uint32 requestID, HRESULT status) OnSmsSendComplete;
-				public new function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, MBN_SMS_FORMAT smsFormat, SAFEARRAY* readMsgs, int16 moreMsgs, uint32 requestID, HRESULT status) OnSmsReadComplete;
-				public new function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, MBN_SMS_FORMAT smsFormat, SAFEARRAY* readMsgs) OnSmsNewClass0Message;
-				public new function HRESULT(IMbnSmsEvents *self, IMbnSms* sms, uint32 requestID, HRESULT status) OnSmsDeleteComplete;
-				public new function HRESULT(IMbnSmsEvents *self, IMbnSms* sms) OnSmsStatusChange;
+				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms) OnSmsConfigurationChange;
+				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, uint32 requestID, HRESULT status) OnSetSmsConfigurationComplete;
+				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, uint32 requestID, HRESULT status) OnSmsSendComplete;
+				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, MBN_SMS_FORMAT smsFormat, ref SAFEARRAY readMsgs, int16 moreMsgs, uint32 requestID, HRESULT status) OnSmsReadComplete;
+				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, MBN_SMS_FORMAT smsFormat, ref SAFEARRAY readMsgs) OnSmsNewClass0Message;
+				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms, uint32 requestID, HRESULT status) OnSmsDeleteComplete;
+				public new function HRESULT(ref IMbnSmsEvents self, ref IMbnSms sms) OnSmsStatusChange;
 			}
 		}
 		[CRepr]
@@ -1303,14 +1303,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Activate(SAFEARRAY* vendorSpecificData, uint32* requestID) mut
+			public HRESULT Activate(ref SAFEARRAY vendorSpecificData, out uint32 requestID) mut
 			{
-				return VT.Activate(&this, vendorSpecificData, requestID);
+				return VT.Activate(ref this, ref vendorSpecificData, out requestID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnServiceActivation *self, SAFEARRAY* vendorSpecificData, uint32* requestID) Activate;
+				public new function HRESULT(ref IMbnServiceActivation self, ref SAFEARRAY vendorSpecificData, out uint32 requestID) Activate;
 			}
 		}
 		[CRepr]
@@ -1320,14 +1320,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnActivationComplete(IMbnServiceActivation* serviceActivation, SAFEARRAY* vendorSpecificData, uint32 requestID, HRESULT status, uint32 networkError) mut
+			public HRESULT OnActivationComplete(ref IMbnServiceActivation serviceActivation, ref SAFEARRAY vendorSpecificData, uint32 requestID, HRESULT status, uint32 networkError) mut
 			{
-				return VT.OnActivationComplete(&this, serviceActivation, vendorSpecificData, requestID, status, networkError);
+				return VT.OnActivationComplete(ref this, ref serviceActivation, ref vendorSpecificData, requestID, status, networkError);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnServiceActivationEvents *self, IMbnServiceActivation* serviceActivation, SAFEARRAY* vendorSpecificData, uint32 requestID, HRESULT status, uint32 networkError) OnActivationComplete;
+				public new function HRESULT(ref IMbnServiceActivationEvents self, ref IMbnServiceActivation serviceActivation, ref SAFEARRAY vendorSpecificData, uint32 requestID, HRESULT status, uint32 networkError) OnActivationComplete;
 			}
 		}
 		[CRepr]
@@ -1337,14 +1337,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetVendorSpecific(SAFEARRAY* vendorSpecificData, uint32* requestID) mut
+			public HRESULT SetVendorSpecific(ref SAFEARRAY vendorSpecificData, out uint32 requestID) mut
 			{
-				return VT.SetVendorSpecific(&this, vendorSpecificData, requestID);
+				return VT.SetVendorSpecific(ref this, ref vendorSpecificData, out requestID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnVendorSpecificOperation *self, SAFEARRAY* vendorSpecificData, uint32* requestID) SetVendorSpecific;
+				public new function HRESULT(ref IMbnVendorSpecificOperation self, ref SAFEARRAY vendorSpecificData, out uint32 requestID) SetVendorSpecific;
 			}
 		}
 		[CRepr]
@@ -1354,19 +1354,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnEventNotification(IMbnVendorSpecificOperation* vendorOperation, SAFEARRAY* vendorSpecificData) mut
+			public HRESULT OnEventNotification(ref IMbnVendorSpecificOperation vendorOperation, ref SAFEARRAY vendorSpecificData) mut
 			{
-				return VT.OnEventNotification(&this, vendorOperation, vendorSpecificData);
+				return VT.OnEventNotification(ref this, ref vendorOperation, ref vendorSpecificData);
 			}
-			public HRESULT OnSetVendorSpecificComplete(IMbnVendorSpecificOperation* vendorOperation, SAFEARRAY* vendorSpecificData, uint32 requestID) mut
+			public HRESULT OnSetVendorSpecificComplete(ref IMbnVendorSpecificOperation vendorOperation, ref SAFEARRAY vendorSpecificData, uint32 requestID) mut
 			{
-				return VT.OnSetVendorSpecificComplete(&this, vendorOperation, vendorSpecificData, requestID);
+				return VT.OnSetVendorSpecificComplete(ref this, ref vendorOperation, ref vendorSpecificData, requestID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnVendorSpecificEvents *self, IMbnVendorSpecificOperation* vendorOperation, SAFEARRAY* vendorSpecificData) OnEventNotification;
-				public new function HRESULT(IMbnVendorSpecificEvents *self, IMbnVendorSpecificOperation* vendorOperation, SAFEARRAY* vendorSpecificData, uint32 requestID) OnSetVendorSpecificComplete;
+				public new function HRESULT(ref IMbnVendorSpecificEvents self, ref IMbnVendorSpecificOperation vendorOperation, ref SAFEARRAY vendorSpecificData) OnEventNotification;
+				public new function HRESULT(ref IMbnVendorSpecificEvents self, ref IMbnVendorSpecificOperation vendorOperation, ref SAFEARRAY vendorSpecificData, uint32 requestID) OnSetVendorSpecificComplete;
 			}
 		}
 		[CRepr]
@@ -1376,19 +1376,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnConnectionProfileArrival(IMbnConnectionProfile* newConnectionProfile) mut
+			public HRESULT OnConnectionProfileArrival(ref IMbnConnectionProfile newConnectionProfile) mut
 			{
-				return VT.OnConnectionProfileArrival(&this, newConnectionProfile);
+				return VT.OnConnectionProfileArrival(ref this, ref newConnectionProfile);
 			}
-			public HRESULT OnConnectionProfileRemoval(IMbnConnectionProfile* oldConnectionProfile) mut
+			public HRESULT OnConnectionProfileRemoval(ref IMbnConnectionProfile oldConnectionProfile) mut
 			{
-				return VT.OnConnectionProfileRemoval(&this, oldConnectionProfile);
+				return VT.OnConnectionProfileRemoval(ref this, ref oldConnectionProfile);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnConnectionProfileManagerEvents *self, IMbnConnectionProfile* newConnectionProfile) OnConnectionProfileArrival;
-				public new function HRESULT(IMbnConnectionProfileManagerEvents *self, IMbnConnectionProfile* oldConnectionProfile) OnConnectionProfileRemoval;
+				public new function HRESULT(ref IMbnConnectionProfileManagerEvents self, ref IMbnConnectionProfile newConnectionProfile) OnConnectionProfileArrival;
+				public new function HRESULT(ref IMbnConnectionProfileManagerEvents self, ref IMbnConnectionProfile oldConnectionProfile) OnConnectionProfileRemoval;
 			}
 		}
 		[CRepr]
@@ -1398,24 +1398,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_SoftwareRadioState(MBN_RADIO* SoftwareRadioState) mut
+			public HRESULT get_SoftwareRadioState(out MBN_RADIO SoftwareRadioState) mut
 			{
-				return VT.get_SoftwareRadioState(&this, SoftwareRadioState);
+				return VT.get_SoftwareRadioState(ref this, out SoftwareRadioState);
 			}
-			public HRESULT get_HardwareRadioState(MBN_RADIO* HardwareRadioState) mut
+			public HRESULT get_HardwareRadioState(out MBN_RADIO HardwareRadioState) mut
 			{
-				return VT.get_HardwareRadioState(&this, HardwareRadioState);
+				return VT.get_HardwareRadioState(ref this, out HardwareRadioState);
 			}
-			public HRESULT SetSoftwareRadioState(MBN_RADIO radioState, uint32* requestID) mut
+			public HRESULT SetSoftwareRadioState(MBN_RADIO radioState, out uint32 requestID) mut
 			{
-				return VT.SetSoftwareRadioState(&this, radioState, requestID);
+				return VT.SetSoftwareRadioState(ref this, radioState, out requestID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnRadio *self, MBN_RADIO* SoftwareRadioState) get_SoftwareRadioState;
-				public new function HRESULT(IMbnRadio *self, MBN_RADIO* HardwareRadioState) get_HardwareRadioState;
-				public new function HRESULT(IMbnRadio *self, MBN_RADIO radioState, uint32* requestID) SetSoftwareRadioState;
+				public new function HRESULT(ref IMbnRadio self, out MBN_RADIO SoftwareRadioState) get_SoftwareRadioState;
+				public new function HRESULT(ref IMbnRadio self, out MBN_RADIO HardwareRadioState) get_HardwareRadioState;
+				public new function HRESULT(ref IMbnRadio self, MBN_RADIO radioState, out uint32 requestID) SetSoftwareRadioState;
 			}
 		}
 		[CRepr]
@@ -1425,19 +1425,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnRadioStateChange(IMbnRadio* newInterface) mut
+			public HRESULT OnRadioStateChange(ref IMbnRadio newInterface) mut
 			{
-				return VT.OnRadioStateChange(&this, newInterface);
+				return VT.OnRadioStateChange(ref this, ref newInterface);
 			}
-			public HRESULT OnSetSoftwareRadioStateComplete(IMbnRadio* newInterface, uint32 requestID, HRESULT status) mut
+			public HRESULT OnSetSoftwareRadioStateComplete(ref IMbnRadio newInterface, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnSetSoftwareRadioStateComplete(&this, newInterface, requestID, status);
+				return VT.OnSetSoftwareRadioStateComplete(ref this, ref newInterface, requestID, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnRadioEvents *self, IMbnRadio* newInterface) OnRadioStateChange;
-				public new function HRESULT(IMbnRadioEvents *self, IMbnRadio* newInterface, uint32 requestID, HRESULT status) OnSetSoftwareRadioStateComplete;
+				public new function HRESULT(ref IMbnRadioEvents self, ref IMbnRadio newInterface) OnRadioStateChange;
+				public new function HRESULT(ref IMbnRadioEvents self, ref IMbnRadio newInterface, uint32 requestID, HRESULT status) OnSetSoftwareRadioStateComplete;
 			}
 		}
 		[CRepr]
@@ -1447,39 +1447,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetHomeProvider(MBN_PROVIDER2* homeProvider, uint32* requestID) mut
+			public HRESULT SetHomeProvider(ref MBN_PROVIDER2 homeProvider, out uint32 requestID) mut
 			{
-				return VT.SetHomeProvider(&this, homeProvider, requestID);
+				return VT.SetHomeProvider(ref this, ref homeProvider, out requestID);
 			}
 			public HRESULT GetPreferredProviders(SAFEARRAY** preferredMulticarrierProviders) mut
 			{
-				return VT.GetPreferredProviders(&this, preferredMulticarrierProviders);
+				return VT.GetPreferredProviders(ref this, preferredMulticarrierProviders);
 			}
-			public HRESULT GetVisibleProviders(uint32* age, SAFEARRAY** visibleProviders) mut
+			public HRESULT GetVisibleProviders(out uint32 age, out SAFEARRAY* visibleProviders) mut
 			{
-				return VT.GetVisibleProviders(&this, age, visibleProviders);
+				return VT.GetVisibleProviders(ref this, out age, out visibleProviders);
 			}
 			public HRESULT GetSupportedCellularClasses(SAFEARRAY** cellularClasses) mut
 			{
-				return VT.GetSupportedCellularClasses(&this, cellularClasses);
+				return VT.GetSupportedCellularClasses(ref this, cellularClasses);
 			}
-			public HRESULT GetCurrentCellularClass(MBN_CELLULAR_CLASS* currentCellularClass) mut
+			public HRESULT GetCurrentCellularClass(out MBN_CELLULAR_CLASS currentCellularClass) mut
 			{
-				return VT.GetCurrentCellularClass(&this, currentCellularClass);
+				return VT.GetCurrentCellularClass(ref this, out currentCellularClass);
 			}
-			public HRESULT ScanNetwork(uint32* requestID) mut
+			public HRESULT ScanNetwork(out uint32 requestID) mut
 			{
-				return VT.ScanNetwork(&this, requestID);
+				return VT.ScanNetwork(ref this, out requestID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnMultiCarrier *self, MBN_PROVIDER2* homeProvider, uint32* requestID) SetHomeProvider;
-				public new function HRESULT(IMbnMultiCarrier *self, SAFEARRAY** preferredMulticarrierProviders) GetPreferredProviders;
-				public new function HRESULT(IMbnMultiCarrier *self, uint32* age, SAFEARRAY** visibleProviders) GetVisibleProviders;
-				public new function HRESULT(IMbnMultiCarrier *self, SAFEARRAY** cellularClasses) GetSupportedCellularClasses;
-				public new function HRESULT(IMbnMultiCarrier *self, MBN_CELLULAR_CLASS* currentCellularClass) GetCurrentCellularClass;
-				public new function HRESULT(IMbnMultiCarrier *self, uint32* requestID) ScanNetwork;
+				public new function HRESULT(ref IMbnMultiCarrier self, ref MBN_PROVIDER2 homeProvider, out uint32 requestID) SetHomeProvider;
+				public new function HRESULT(ref IMbnMultiCarrier self, SAFEARRAY** preferredMulticarrierProviders) GetPreferredProviders;
+				public new function HRESULT(ref IMbnMultiCarrier self, out uint32 age, out SAFEARRAY* visibleProviders) GetVisibleProviders;
+				public new function HRESULT(ref IMbnMultiCarrier self, SAFEARRAY** cellularClasses) GetSupportedCellularClasses;
+				public new function HRESULT(ref IMbnMultiCarrier self, out MBN_CELLULAR_CLASS currentCellularClass) GetCurrentCellularClass;
+				public new function HRESULT(ref IMbnMultiCarrier self, out uint32 requestID) ScanNetwork;
 			}
 		}
 		[CRepr]
@@ -1489,34 +1489,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSetHomeProviderComplete(IMbnMultiCarrier* mbnInterface, uint32 requestID, HRESULT status) mut
+			public HRESULT OnSetHomeProviderComplete(ref IMbnMultiCarrier mbnInterface, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnSetHomeProviderComplete(&this, mbnInterface, requestID, status);
+				return VT.OnSetHomeProviderComplete(ref this, ref mbnInterface, requestID, status);
 			}
-			public HRESULT OnCurrentCellularClassChange(IMbnMultiCarrier* mbnInterface) mut
+			public HRESULT OnCurrentCellularClassChange(ref IMbnMultiCarrier mbnInterface) mut
 			{
-				return VT.OnCurrentCellularClassChange(&this, mbnInterface);
+				return VT.OnCurrentCellularClassChange(ref this, ref mbnInterface);
 			}
-			public HRESULT OnPreferredProvidersChange(IMbnMultiCarrier* mbnInterface) mut
+			public HRESULT OnPreferredProvidersChange(ref IMbnMultiCarrier mbnInterface) mut
 			{
-				return VT.OnPreferredProvidersChange(&this, mbnInterface);
+				return VT.OnPreferredProvidersChange(ref this, ref mbnInterface);
 			}
-			public HRESULT OnScanNetworkComplete(IMbnMultiCarrier* mbnInterface, uint32 requestID, HRESULT status) mut
+			public HRESULT OnScanNetworkComplete(ref IMbnMultiCarrier mbnInterface, uint32 requestID, HRESULT status) mut
 			{
-				return VT.OnScanNetworkComplete(&this, mbnInterface, requestID, status);
+				return VT.OnScanNetworkComplete(ref this, ref mbnInterface, requestID, status);
 			}
-			public HRESULT OnInterfaceCapabilityChange(IMbnMultiCarrier* mbnInterface) mut
+			public HRESULT OnInterfaceCapabilityChange(ref IMbnMultiCarrier mbnInterface) mut
 			{
-				return VT.OnInterfaceCapabilityChange(&this, mbnInterface);
+				return VT.OnInterfaceCapabilityChange(ref this, ref mbnInterface);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface, uint32 requestID, HRESULT status) OnSetHomeProviderComplete;
-				public new function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface) OnCurrentCellularClassChange;
-				public new function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface) OnPreferredProvidersChange;
-				public new function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
-				public new function HRESULT(IMbnMultiCarrierEvents *self, IMbnMultiCarrier* mbnInterface) OnInterfaceCapabilityChange;
+				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface, uint32 requestID, HRESULT status) OnSetHomeProviderComplete;
+				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface) OnCurrentCellularClassChange;
+				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface) OnPreferredProvidersChange;
+				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface, uint32 requestID, HRESULT status) OnScanNetworkComplete;
+				public new function HRESULT(ref IMbnMultiCarrierEvents self, ref IMbnMultiCarrier mbnInterface) OnInterfaceCapabilityChange;
 			}
 		}
 		[CRepr]
@@ -1528,12 +1528,12 @@ namespace Win32
 			
 			public HRESULT OnSessionsStateChange(BSTR interfaceID, MBN_DEVICE_SERVICE_SESSIONS_STATE stateChange) mut
 			{
-				return VT.OnSessionsStateChange(&this, interfaceID, stateChange);
+				return VT.OnSessionsStateChange(ref this, interfaceID, stateChange);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnDeviceServiceStateEvents *self, BSTR interfaceID, MBN_DEVICE_SERVICE_SESSIONS_STATE stateChange) OnSessionsStateChange;
+				public new function HRESULT(ref IMbnDeviceServiceStateEvents self, BSTR interfaceID, MBN_DEVICE_SERVICE_SESSIONS_STATE stateChange) OnSessionsStateChange;
 			}
 		}
 		[CRepr]
@@ -1545,12 +1545,12 @@ namespace Win32
 			
 			public HRESULT GetDeviceServicesContext(BSTR networkInterfaceID, IMbnDeviceServicesContext** mbnDevicesContext) mut
 			{
-				return VT.GetDeviceServicesContext(&this, networkInterfaceID, mbnDevicesContext);
+				return VT.GetDeviceServicesContext(ref this, networkInterfaceID, mbnDevicesContext);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnDeviceServicesManager *self, BSTR networkInterfaceID, IMbnDeviceServicesContext** mbnDevicesContext) GetDeviceServicesContext;
+				public new function HRESULT(ref IMbnDeviceServicesManager self, BSTR networkInterfaceID, IMbnDeviceServicesContext** mbnDevicesContext) GetDeviceServicesContext;
 			}
 		}
 		[CRepr]
@@ -1560,29 +1560,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumerateDeviceServices(SAFEARRAY** deviceServices) mut
+			public HRESULT EnumerateDeviceServices(out SAFEARRAY* deviceServices) mut
 			{
-				return VT.EnumerateDeviceServices(&this, deviceServices);
+				return VT.EnumerateDeviceServices(ref this, out deviceServices);
 			}
 			public HRESULT GetDeviceService(BSTR deviceServiceID, IMbnDeviceService** mbnDeviceService) mut
 			{
-				return VT.GetDeviceService(&this, deviceServiceID, mbnDeviceService);
+				return VT.GetDeviceService(ref this, deviceServiceID, mbnDeviceService);
 			}
-			public HRESULT get_MaxCommandSize(uint32* maxCommandSize) mut
+			public HRESULT get_MaxCommandSize(out uint32 maxCommandSize) mut
 			{
-				return VT.get_MaxCommandSize(&this, maxCommandSize);
+				return VT.get_MaxCommandSize(ref this, out maxCommandSize);
 			}
-			public HRESULT get_MaxDataSize(uint32* maxDataSize) mut
+			public HRESULT get_MaxDataSize(out uint32 maxDataSize) mut
 			{
-				return VT.get_MaxDataSize(&this, maxDataSize);
+				return VT.get_MaxDataSize(ref this, out maxDataSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnDeviceServicesContext *self, SAFEARRAY** deviceServices) EnumerateDeviceServices;
-				public new function HRESULT(IMbnDeviceServicesContext *self, BSTR deviceServiceID, IMbnDeviceService** mbnDeviceService) GetDeviceService;
-				public new function HRESULT(IMbnDeviceServicesContext *self, uint32* maxCommandSize) get_MaxCommandSize;
-				public new function HRESULT(IMbnDeviceServicesContext *self, uint32* maxDataSize) get_MaxDataSize;
+				public new function HRESULT(ref IMbnDeviceServicesContext self, out SAFEARRAY* deviceServices) EnumerateDeviceServices;
+				public new function HRESULT(ref IMbnDeviceServicesContext self, BSTR deviceServiceID, IMbnDeviceService** mbnDeviceService) GetDeviceService;
+				public new function HRESULT(ref IMbnDeviceServicesContext self, out uint32 maxCommandSize) get_MaxCommandSize;
+				public new function HRESULT(ref IMbnDeviceServicesContext self, out uint32 maxDataSize) get_MaxDataSize;
 			}
 		}
 		[CRepr]
@@ -1592,64 +1592,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnQuerySupportedCommandsComplete(IMbnDeviceService* deviceService, SAFEARRAY* commandIDList, HRESULT status, uint32 requestID) mut
+			public HRESULT OnQuerySupportedCommandsComplete(ref IMbnDeviceService deviceService, ref SAFEARRAY commandIDList, HRESULT status, uint32 requestID) mut
 			{
-				return VT.OnQuerySupportedCommandsComplete(&this, deviceService, commandIDList, status, requestID);
+				return VT.OnQuerySupportedCommandsComplete(ref this, ref deviceService, ref commandIDList, status, requestID);
 			}
-			public HRESULT OnOpenCommandSessionComplete(IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) mut
+			public HRESULT OnOpenCommandSessionComplete(ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) mut
 			{
-				return VT.OnOpenCommandSessionComplete(&this, deviceService, status, requestID);
+				return VT.OnOpenCommandSessionComplete(ref this, ref deviceService, status, requestID);
 			}
-			public HRESULT OnCloseCommandSessionComplete(IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) mut
+			public HRESULT OnCloseCommandSessionComplete(ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) mut
 			{
-				return VT.OnCloseCommandSessionComplete(&this, deviceService, status, requestID);
+				return VT.OnCloseCommandSessionComplete(ref this, ref deviceService, status, requestID);
 			}
-			public HRESULT OnSetCommandComplete(IMbnDeviceService* deviceService, uint32 responseID, SAFEARRAY* deviceServiceData, HRESULT status, uint32 requestID) mut
+			public HRESULT OnSetCommandComplete(ref IMbnDeviceService deviceService, uint32 responseID, ref SAFEARRAY deviceServiceData, HRESULT status, uint32 requestID) mut
 			{
-				return VT.OnSetCommandComplete(&this, deviceService, responseID, deviceServiceData, status, requestID);
+				return VT.OnSetCommandComplete(ref this, ref deviceService, responseID, ref deviceServiceData, status, requestID);
 			}
-			public HRESULT OnQueryCommandComplete(IMbnDeviceService* deviceService, uint32 responseID, SAFEARRAY* deviceServiceData, HRESULT status, uint32 requestID) mut
+			public HRESULT OnQueryCommandComplete(ref IMbnDeviceService deviceService, uint32 responseID, ref SAFEARRAY deviceServiceData, HRESULT status, uint32 requestID) mut
 			{
-				return VT.OnQueryCommandComplete(&this, deviceService, responseID, deviceServiceData, status, requestID);
+				return VT.OnQueryCommandComplete(ref this, ref deviceService, responseID, ref deviceServiceData, status, requestID);
 			}
-			public HRESULT OnEventNotification(IMbnDeviceService* deviceService, uint32 eventID, SAFEARRAY* deviceServiceData) mut
+			public HRESULT OnEventNotification(ref IMbnDeviceService deviceService, uint32 eventID, ref SAFEARRAY deviceServiceData) mut
 			{
-				return VT.OnEventNotification(&this, deviceService, eventID, deviceServiceData);
+				return VT.OnEventNotification(ref this, ref deviceService, eventID, ref deviceServiceData);
 			}
-			public HRESULT OnOpenDataSessionComplete(IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) mut
+			public HRESULT OnOpenDataSessionComplete(ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) mut
 			{
-				return VT.OnOpenDataSessionComplete(&this, deviceService, status, requestID);
+				return VT.OnOpenDataSessionComplete(ref this, ref deviceService, status, requestID);
 			}
-			public HRESULT OnCloseDataSessionComplete(IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) mut
+			public HRESULT OnCloseDataSessionComplete(ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) mut
 			{
-				return VT.OnCloseDataSessionComplete(&this, deviceService, status, requestID);
+				return VT.OnCloseDataSessionComplete(ref this, ref deviceService, status, requestID);
 			}
-			public HRESULT OnWriteDataComplete(IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) mut
+			public HRESULT OnWriteDataComplete(ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) mut
 			{
-				return VT.OnWriteDataComplete(&this, deviceService, status, requestID);
+				return VT.OnWriteDataComplete(ref this, ref deviceService, status, requestID);
 			}
-			public HRESULT OnReadData(IMbnDeviceService* deviceService, SAFEARRAY* deviceServiceData) mut
+			public HRESULT OnReadData(ref IMbnDeviceService deviceService, ref SAFEARRAY deviceServiceData) mut
 			{
-				return VT.OnReadData(&this, deviceService, deviceServiceData);
+				return VT.OnReadData(ref this, ref deviceService, ref deviceServiceData);
 			}
 			public HRESULT OnInterfaceStateChange(BSTR interfaceID, MBN_DEVICE_SERVICES_INTERFACE_STATE stateChange) mut
 			{
-				return VT.OnInterfaceStateChange(&this, interfaceID, stateChange);
+				return VT.OnInterfaceStateChange(ref this, interfaceID, stateChange);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, SAFEARRAY* commandIDList, HRESULT status, uint32 requestID) OnQuerySupportedCommandsComplete;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnOpenCommandSessionComplete;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnCloseCommandSessionComplete;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, uint32 responseID, SAFEARRAY* deviceServiceData, HRESULT status, uint32 requestID) OnSetCommandComplete;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, uint32 responseID, SAFEARRAY* deviceServiceData, HRESULT status, uint32 requestID) OnQueryCommandComplete;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, uint32 eventID, SAFEARRAY* deviceServiceData) OnEventNotification;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnOpenDataSessionComplete;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnCloseDataSessionComplete;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, HRESULT status, uint32 requestID) OnWriteDataComplete;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, IMbnDeviceService* deviceService, SAFEARRAY* deviceServiceData) OnReadData;
-				public new function HRESULT(IMbnDeviceServicesEvents *self, BSTR interfaceID, MBN_DEVICE_SERVICES_INTERFACE_STATE stateChange) OnInterfaceStateChange;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, ref SAFEARRAY commandIDList, HRESULT status, uint32 requestID) OnQuerySupportedCommandsComplete;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnOpenCommandSessionComplete;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnCloseCommandSessionComplete;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, uint32 responseID, ref SAFEARRAY deviceServiceData, HRESULT status, uint32 requestID) OnSetCommandComplete;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, uint32 responseID, ref SAFEARRAY deviceServiceData, HRESULT status, uint32 requestID) OnQueryCommandComplete;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, uint32 eventID, ref SAFEARRAY deviceServiceData) OnEventNotification;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnOpenDataSessionComplete;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnCloseDataSessionComplete;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, HRESULT status, uint32 requestID) OnWriteDataComplete;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, ref IMbnDeviceService deviceService, ref SAFEARRAY deviceServiceData) OnReadData;
+				public new function HRESULT(ref IMbnDeviceServicesEvents self, BSTR interfaceID, MBN_DEVICE_SERVICES_INTERFACE_STATE stateChange) OnInterfaceStateChange;
 			}
 		}
 		[CRepr]
@@ -1659,69 +1659,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QuerySupportedCommands(uint32* requestID) mut
+			public HRESULT QuerySupportedCommands(out uint32 requestID) mut
 			{
-				return VT.QuerySupportedCommands(&this, requestID);
+				return VT.QuerySupportedCommands(ref this, out requestID);
 			}
-			public HRESULT OpenCommandSession(uint32* requestID) mut
+			public HRESULT OpenCommandSession(out uint32 requestID) mut
 			{
-				return VT.OpenCommandSession(&this, requestID);
+				return VT.OpenCommandSession(ref this, out requestID);
 			}
-			public HRESULT CloseCommandSession(uint32* requestID) mut
+			public HRESULT CloseCommandSession(out uint32 requestID) mut
 			{
-				return VT.CloseCommandSession(&this, requestID);
+				return VT.CloseCommandSession(ref this, out requestID);
 			}
-			public HRESULT SetCommand(uint32 commandID, SAFEARRAY* deviceServiceData, uint32* requestID) mut
+			public HRESULT SetCommand(uint32 commandID, ref SAFEARRAY deviceServiceData, out uint32 requestID) mut
 			{
-				return VT.SetCommand(&this, commandID, deviceServiceData, requestID);
+				return VT.SetCommand(ref this, commandID, ref deviceServiceData, out requestID);
 			}
-			public HRESULT QueryCommand(uint32 commandID, SAFEARRAY* deviceServiceData, uint32* requestID) mut
+			public HRESULT QueryCommand(uint32 commandID, ref SAFEARRAY deviceServiceData, out uint32 requestID) mut
 			{
-				return VT.QueryCommand(&this, commandID, deviceServiceData, requestID);
+				return VT.QueryCommand(ref this, commandID, ref deviceServiceData, out requestID);
 			}
-			public HRESULT OpenDataSession(uint32* requestID) mut
+			public HRESULT OpenDataSession(out uint32 requestID) mut
 			{
-				return VT.OpenDataSession(&this, requestID);
+				return VT.OpenDataSession(ref this, out requestID);
 			}
-			public HRESULT CloseDataSession(uint32* requestID) mut
+			public HRESULT CloseDataSession(out uint32 requestID) mut
 			{
-				return VT.CloseDataSession(&this, requestID);
+				return VT.CloseDataSession(ref this, out requestID);
 			}
-			public HRESULT WriteData(SAFEARRAY* deviceServiceData, uint32* requestID) mut
+			public HRESULT WriteData(ref SAFEARRAY deviceServiceData, out uint32 requestID) mut
 			{
-				return VT.WriteData(&this, deviceServiceData, requestID);
+				return VT.WriteData(ref this, ref deviceServiceData, out requestID);
 			}
 			public HRESULT get_InterfaceID(BSTR* InterfaceID) mut
 			{
-				return VT.get_InterfaceID(&this, InterfaceID);
+				return VT.get_InterfaceID(ref this, InterfaceID);
 			}
 			public HRESULT get_DeviceServiceID(BSTR* DeviceServiceID) mut
 			{
-				return VT.get_DeviceServiceID(&this, DeviceServiceID);
+				return VT.get_DeviceServiceID(ref this, DeviceServiceID);
 			}
-			public HRESULT get_IsCommandSessionOpen(BOOL* value) mut
+			public HRESULT get_IsCommandSessionOpen(out BOOL value) mut
 			{
-				return VT.get_IsCommandSessionOpen(&this, value);
+				return VT.get_IsCommandSessionOpen(ref this, out value);
 			}
-			public HRESULT get_IsDataSessionOpen(BOOL* value) mut
+			public HRESULT get_IsDataSessionOpen(out BOOL value) mut
 			{
-				return VT.get_IsDataSessionOpen(&this, value);
+				return VT.get_IsDataSessionOpen(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnDeviceService *self, uint32* requestID) QuerySupportedCommands;
-				public new function HRESULT(IMbnDeviceService *self, uint32* requestID) OpenCommandSession;
-				public new function HRESULT(IMbnDeviceService *self, uint32* requestID) CloseCommandSession;
-				public new function HRESULT(IMbnDeviceService *self, uint32 commandID, SAFEARRAY* deviceServiceData, uint32* requestID) SetCommand;
-				public new function HRESULT(IMbnDeviceService *self, uint32 commandID, SAFEARRAY* deviceServiceData, uint32* requestID) QueryCommand;
-				public new function HRESULT(IMbnDeviceService *self, uint32* requestID) OpenDataSession;
-				public new function HRESULT(IMbnDeviceService *self, uint32* requestID) CloseDataSession;
-				public new function HRESULT(IMbnDeviceService *self, SAFEARRAY* deviceServiceData, uint32* requestID) WriteData;
-				public new function HRESULT(IMbnDeviceService *self, BSTR* InterfaceID) get_InterfaceID;
-				public new function HRESULT(IMbnDeviceService *self, BSTR* DeviceServiceID) get_DeviceServiceID;
-				public new function HRESULT(IMbnDeviceService *self, BOOL* value) get_IsCommandSessionOpen;
-				public new function HRESULT(IMbnDeviceService *self, BOOL* value) get_IsDataSessionOpen;
+				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) QuerySupportedCommands;
+				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) OpenCommandSession;
+				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) CloseCommandSession;
+				public new function HRESULT(ref IMbnDeviceService self, uint32 commandID, ref SAFEARRAY deviceServiceData, out uint32 requestID) SetCommand;
+				public new function HRESULT(ref IMbnDeviceService self, uint32 commandID, ref SAFEARRAY deviceServiceData, out uint32 requestID) QueryCommand;
+				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) OpenDataSession;
+				public new function HRESULT(ref IMbnDeviceService self, out uint32 requestID) CloseDataSession;
+				public new function HRESULT(ref IMbnDeviceService self, ref SAFEARRAY deviceServiceData, out uint32 requestID) WriteData;
+				public new function HRESULT(ref IMbnDeviceService self, BSTR* InterfaceID) get_InterfaceID;
+				public new function HRESULT(ref IMbnDeviceService self, BSTR* DeviceServiceID) get_DeviceServiceID;
+				public new function HRESULT(ref IMbnDeviceService self, out BOOL value) get_IsCommandSessionOpen;
+				public new function HRESULT(ref IMbnDeviceService self, out BOOL value) get_IsDataSessionOpen;
 			}
 		}
 		[CRepr]
@@ -1731,64 +1731,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_PinType(MBN_PIN_TYPE* PinType) mut
+			public HRESULT get_PinType(out MBN_PIN_TYPE PinType) mut
 			{
-				return VT.get_PinType(&this, PinType);
+				return VT.get_PinType(ref this, out PinType);
 			}
-			public HRESULT get_PinFormat(MBN_PIN_FORMAT* PinFormat) mut
+			public HRESULT get_PinFormat(out MBN_PIN_FORMAT PinFormat) mut
 			{
-				return VT.get_PinFormat(&this, PinFormat);
+				return VT.get_PinFormat(ref this, out PinFormat);
 			}
-			public HRESULT get_PinLengthMin(uint32* PinLengthMin) mut
+			public HRESULT get_PinLengthMin(out uint32 PinLengthMin) mut
 			{
-				return VT.get_PinLengthMin(&this, PinLengthMin);
+				return VT.get_PinLengthMin(ref this, out PinLengthMin);
 			}
-			public HRESULT get_PinLengthMax(uint32* PinLengthMax) mut
+			public HRESULT get_PinLengthMax(out uint32 PinLengthMax) mut
 			{
-				return VT.get_PinLengthMax(&this, PinLengthMax);
+				return VT.get_PinLengthMax(ref this, out PinLengthMax);
 			}
-			public HRESULT get_PinMode(MBN_PIN_MODE* PinMode) mut
+			public HRESULT get_PinMode(out MBN_PIN_MODE PinMode) mut
 			{
-				return VT.get_PinMode(&this, PinMode);
+				return VT.get_PinMode(ref this, out PinMode);
 			}
-			public HRESULT Enable(PWSTR pin, uint32* requestID) mut
+			public HRESULT Enable(PWSTR pin, out uint32 requestID) mut
 			{
-				return VT.Enable(&this, pin, requestID);
+				return VT.Enable(ref this, pin, out requestID);
 			}
-			public HRESULT Disable(PWSTR pin, uint32* requestID) mut
+			public HRESULT Disable(PWSTR pin, out uint32 requestID) mut
 			{
-				return VT.Disable(&this, pin, requestID);
+				return VT.Disable(ref this, pin, out requestID);
 			}
-			public HRESULT Enter(PWSTR pin, uint32* requestID) mut
+			public HRESULT Enter(PWSTR pin, out uint32 requestID) mut
 			{
-				return VT.Enter(&this, pin, requestID);
+				return VT.Enter(ref this, pin, out requestID);
 			}
-			public HRESULT Change(PWSTR pin, PWSTR newPin, uint32* requestID) mut
+			public HRESULT Change(PWSTR pin, PWSTR newPin, out uint32 requestID) mut
 			{
-				return VT.Change(&this, pin, newPin, requestID);
+				return VT.Change(ref this, pin, newPin, out requestID);
 			}
-			public HRESULT Unblock(PWSTR puk, PWSTR newPin, uint32* requestID) mut
+			public HRESULT Unblock(PWSTR puk, PWSTR newPin, out uint32 requestID) mut
 			{
-				return VT.Unblock(&this, puk, newPin, requestID);
+				return VT.Unblock(ref this, puk, newPin, out requestID);
 			}
 			public HRESULT GetPinManager(IMbnPinManager** pinManager) mut
 			{
-				return VT.GetPinManager(&this, pinManager);
+				return VT.GetPinManager(ref this, pinManager);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMbnPin *self, MBN_PIN_TYPE* PinType) get_PinType;
-				public new function HRESULT(IMbnPin *self, MBN_PIN_FORMAT* PinFormat) get_PinFormat;
-				public new function HRESULT(IMbnPin *self, uint32* PinLengthMin) get_PinLengthMin;
-				public new function HRESULT(IMbnPin *self, uint32* PinLengthMax) get_PinLengthMax;
-				public new function HRESULT(IMbnPin *self, MBN_PIN_MODE* PinMode) get_PinMode;
-				public new function HRESULT(IMbnPin *self, PWSTR pin, uint32* requestID) Enable;
-				public new function HRESULT(IMbnPin *self, PWSTR pin, uint32* requestID) Disable;
-				public new function HRESULT(IMbnPin *self, PWSTR pin, uint32* requestID) Enter;
-				public new function HRESULT(IMbnPin *self, PWSTR pin, PWSTR newPin, uint32* requestID) Change;
-				public new function HRESULT(IMbnPin *self, PWSTR puk, PWSTR newPin, uint32* requestID) Unblock;
-				public new function HRESULT(IMbnPin *self, IMbnPinManager** pinManager) GetPinManager;
+				public new function HRESULT(ref IMbnPin self, out MBN_PIN_TYPE PinType) get_PinType;
+				public new function HRESULT(ref IMbnPin self, out MBN_PIN_FORMAT PinFormat) get_PinFormat;
+				public new function HRESULT(ref IMbnPin self, out uint32 PinLengthMin) get_PinLengthMin;
+				public new function HRESULT(ref IMbnPin self, out uint32 PinLengthMax) get_PinLengthMax;
+				public new function HRESULT(ref IMbnPin self, out MBN_PIN_MODE PinMode) get_PinMode;
+				public new function HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Enable;
+				public new function HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Disable;
+				public new function HRESULT(ref IMbnPin self, PWSTR pin, out uint32 requestID) Enter;
+				public new function HRESULT(ref IMbnPin self, PWSTR pin, PWSTR newPin, out uint32 requestID) Change;
+				public new function HRESULT(ref IMbnPin self, PWSTR puk, PWSTR newPin, out uint32 requestID) Unblock;
+				public new function HRESULT(ref IMbnPin self, IMbnPinManager** pinManager) GetPinManager;
 			}
 		}
 		

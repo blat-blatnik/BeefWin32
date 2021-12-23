@@ -14,19 +14,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateForWindow(HWND window, Guid* riid, void** result) mut
+			public HRESULT CreateForWindow(HWND window, in Guid riid, void** result) mut
 			{
-				return VT.CreateForWindow(&this, window, riid, result);
+				return VT.CreateForWindow(ref this, window, riid, result);
 			}
-			public HRESULT CreateForMonitor(HMONITOR monitor, Guid* riid, void** result) mut
+			public HRESULT CreateForMonitor(HMONITOR monitor, in Guid riid, void** result) mut
 			{
-				return VT.CreateForMonitor(&this, monitor, riid, result);
+				return VT.CreateForMonitor(ref this, monitor, riid, result);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IGraphicsCaptureItemInterop *self, HWND window, Guid* riid, void** result) CreateForWindow;
-				public new function HRESULT(IGraphicsCaptureItemInterop *self, HMONITOR monitor, Guid* riid, void** result) CreateForMonitor;
+				public new function HRESULT(ref IGraphicsCaptureItemInterop self, HWND window, in Guid riid, void** result) CreateForWindow;
+				public new function HRESULT(ref IGraphicsCaptureItemInterop self, HMONITOR monitor, in Guid riid, void** result) CreateForMonitor;
 			}
 		}
 		

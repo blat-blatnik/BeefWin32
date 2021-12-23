@@ -50,19 +50,19 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CreateCompressor(COMPRESS_ALGORITHM Algorithm, COMPRESS_ALLOCATION_ROUTINES* AllocationRoutines, int* CompressorHandle);
+		public static extern BOOL CreateCompressor(COMPRESS_ALGORITHM Algorithm, COMPRESS_ALLOCATION_ROUTINES* AllocationRoutines, out int CompressorHandle);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetCompressorInformation(COMPRESSOR_HANDLE CompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, void* CompressInformation, uint CompressInformationSize);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL QueryCompressorInformation(COMPRESSOR_HANDLE CompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, void* CompressInformation, uint CompressInformationSize);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL Compress(COMPRESSOR_HANDLE CompressorHandle, void* UncompressedData, uint UncompressedDataSize, void* CompressedBuffer, uint CompressedBufferSize, uint* CompressedDataSize);
+		public static extern BOOL Compress(COMPRESSOR_HANDLE CompressorHandle, void* UncompressedData, uint UncompressedDataSize, void* CompressedBuffer, uint CompressedBufferSize, out uint CompressedDataSize);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL ResetCompressor(COMPRESSOR_HANDLE CompressorHandle);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL CloseCompressor(COMPRESSOR_HANDLE CompressorHandle);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CreateDecompressor(COMPRESS_ALGORITHM Algorithm, COMPRESS_ALLOCATION_ROUTINES* AllocationRoutines, int* DecompressorHandle);
+		public static extern BOOL CreateDecompressor(COMPRESS_ALGORITHM Algorithm, COMPRESS_ALLOCATION_ROUTINES* AllocationRoutines, out int DecompressorHandle);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetDecompressorInformation(int DecompressorHandle, COMPRESS_INFORMATION_CLASS CompressInformationClass, void* CompressInformation, uint CompressInformationSize);
 		[Import("cabinet.dll"), CLink, CallingConvention(.Stdcall)]

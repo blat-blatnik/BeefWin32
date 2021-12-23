@@ -84,9 +84,9 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("sfc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SRSetRestorePointA(RESTOREPOINTINFOA* pRestorePtSpec, STATEMGRSTATUS* pSMgrStatus);
+		public static extern BOOL SRSetRestorePointA(ref RESTOREPOINTINFOA pRestorePtSpec, out STATEMGRSTATUS pSMgrStatus);
 		[Import("sfc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SRSetRestorePointW(RESTOREPOINTINFOW* pRestorePtSpec, STATEMGRSTATUS* pSMgrStatus);
+		public static extern BOOL SRSetRestorePointW(ref RESTOREPOINTINFOW pRestorePtSpec, out STATEMGRSTATUS pSMgrStatus);
 		
 	}
 }

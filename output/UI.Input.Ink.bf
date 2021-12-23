@@ -30,12 +30,12 @@ namespace Win32
 			
 			public HRESULT OnCommitRequested() mut
 			{
-				return VT.OnCommitRequested(&this);
+				return VT.OnCommitRequested(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInkCommitRequestHandler *self) OnCommitRequested;
+				public new function HRESULT(ref IInkCommitRequestHandler self) OnCommitRequested;
 			}
 		}
 		[CRepr]
@@ -45,34 +45,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetRootVisual(IUnknown* rootVisual, IUnknown* device) mut
+			public HRESULT SetRootVisual(ref IUnknown rootVisual, ref IUnknown device) mut
 			{
-				return VT.SetRootVisual(&this, rootVisual, device);
+				return VT.SetRootVisual(ref this, ref rootVisual, ref device);
 			}
-			public HRESULT SetCommitRequestHandler(IInkCommitRequestHandler* handler) mut
+			public HRESULT SetCommitRequestHandler(ref IInkCommitRequestHandler handler) mut
 			{
-				return VT.SetCommitRequestHandler(&this, handler);
+				return VT.SetCommitRequestHandler(ref this, ref handler);
 			}
-			public HRESULT GetSize(float* width, float* height) mut
+			public HRESULT GetSize(out float width, out float height) mut
 			{
-				return VT.GetSize(&this, width, height);
+				return VT.GetSize(ref this, out width, out height);
 			}
 			public HRESULT SetSize(float width, float height) mut
 			{
-				return VT.SetSize(&this, width, height);
+				return VT.SetSize(ref this, width, height);
 			}
 			public HRESULT OnHighContrastChanged() mut
 			{
-				return VT.OnHighContrastChanged(&this);
+				return VT.OnHighContrastChanged(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInkPresenterDesktop *self, IUnknown* rootVisual, IUnknown* device) SetRootVisual;
-				public new function HRESULT(IInkPresenterDesktop *self, IInkCommitRequestHandler* handler) SetCommitRequestHandler;
-				public new function HRESULT(IInkPresenterDesktop *self, float* width, float* height) GetSize;
-				public new function HRESULT(IInkPresenterDesktop *self, float width, float height) SetSize;
-				public new function HRESULT(IInkPresenterDesktop *self) OnHighContrastChanged;
+				public new function HRESULT(ref IInkPresenterDesktop self, ref IUnknown rootVisual, ref IUnknown device) SetRootVisual;
+				public new function HRESULT(ref IInkPresenterDesktop self, ref IInkCommitRequestHandler handler) SetCommitRequestHandler;
+				public new function HRESULT(ref IInkPresenterDesktop self, out float width, out float height) GetSize;
+				public new function HRESULT(ref IInkPresenterDesktop self, float width, float height) SetSize;
+				public new function HRESULT(ref IInkPresenterDesktop self) OnHighContrastChanged;
 			}
 		}
 		[CRepr]
@@ -84,12 +84,12 @@ namespace Win32
 			
 			public HRESULT Invoke() mut
 			{
-				return VT.Invoke(&this);
+				return VT.Invoke(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInkHostWorkItem *self) Invoke;
+				public new function HRESULT(ref IInkHostWorkItem self) Invoke;
 			}
 		}
 		[CRepr]
@@ -99,24 +99,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT QueueWorkItem(IInkHostWorkItem* workItem) mut
+			public HRESULT QueueWorkItem(ref IInkHostWorkItem workItem) mut
 			{
-				return VT.QueueWorkItem(&this, workItem);
+				return VT.QueueWorkItem(ref this, ref workItem);
 			}
-			public HRESULT CreateInkPresenter(Guid* riid, void** ppv) mut
+			public HRESULT CreateInkPresenter(in Guid riid, void** ppv) mut
 			{
-				return VT.CreateInkPresenter(&this, riid, ppv);
+				return VT.CreateInkPresenter(ref this, riid, ppv);
 			}
-			public HRESULT CreateAndInitializeInkPresenter(IUnknown* rootVisual, float width, float height, Guid* riid, void** ppv) mut
+			public HRESULT CreateAndInitializeInkPresenter(ref IUnknown rootVisual, float width, float height, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateAndInitializeInkPresenter(&this, rootVisual, width, height, riid, ppv);
+				return VT.CreateAndInitializeInkPresenter(ref this, ref rootVisual, width, height, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInkDesktopHost *self, IInkHostWorkItem* workItem) QueueWorkItem;
-				public new function HRESULT(IInkDesktopHost *self, Guid* riid, void** ppv) CreateInkPresenter;
-				public new function HRESULT(IInkDesktopHost *self, IUnknown* rootVisual, float width, float height, Guid* riid, void** ppv) CreateAndInitializeInkPresenter;
+				public new function HRESULT(ref IInkDesktopHost self, ref IInkHostWorkItem workItem) QueueWorkItem;
+				public new function HRESULT(ref IInkDesktopHost self, in Guid riid, void** ppv) CreateInkPresenter;
+				public new function HRESULT(ref IInkDesktopHost self, ref IUnknown rootVisual, float width, float height, in Guid riid, void** ppv) CreateAndInitializeInkPresenter;
 			}
 		}
 		[CRepr]
@@ -126,14 +126,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, BOOL fHighContrast) mut
+			public HRESULT Draw(ref IUnknown pD2D1DeviceContext, ref IUnknown pInkStrokeIterable, BOOL fHighContrast) mut
 			{
-				return VT.Draw(&this, pD2D1DeviceContext, pInkStrokeIterable, fHighContrast);
+				return VT.Draw(ref this, ref pD2D1DeviceContext, ref pInkStrokeIterable, fHighContrast);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInkD2DRenderer *self, IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, BOOL fHighContrast) Draw;
+				public new function HRESULT(ref IInkD2DRenderer self, ref IUnknown pD2D1DeviceContext, ref IUnknown pInkStrokeIterable, BOOL fHighContrast) Draw;
 			}
 		}
 		[CRepr]
@@ -143,14 +143,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) mut
+			public HRESULT Draw(ref IUnknown pD2D1DeviceContext, ref IUnknown pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) mut
 			{
-				return VT.Draw(&this, pD2D1DeviceContext, pInkStrokeIterable, highContrastAdjustment);
+				return VT.Draw(ref this, ref pD2D1DeviceContext, ref pInkStrokeIterable, highContrastAdjustment);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IInkD2DRenderer2 *self, IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) Draw;
+				public new function HRESULT(ref IInkD2DRenderer2 self, ref IUnknown pD2D1DeviceContext, ref IUnknown pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment) Draw;
 			}
 		}
 		

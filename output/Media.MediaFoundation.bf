@@ -5045,25 +5045,25 @@ namespace Win32
 		
 		// --- Function Pointers ---
 		
-		public function HRESULT PDXVAHDSW_CreateDevice(IDirect3DDevice9Ex* pD3DDevice, HANDLE* phDevice);
-		public function HRESULT PDXVAHDSW_ProposeVideoPrivateFormat(HANDLE hDevice, D3DFORMAT* pFormat);
-		public function HRESULT PDXVAHDSW_GetVideoProcessorDeviceCaps(HANDLE hDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, DXVAHD_VPDEVCAPS* pCaps);
-		public function HRESULT PDXVAHDSW_GetVideoProcessorOutputFormats(HANDLE hDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, uint32 Count, D3DFORMAT* pFormats);
-		public function HRESULT PDXVAHDSW_GetVideoProcessorInputFormats(HANDLE hDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, uint32 Count, D3DFORMAT* pFormats);
-		public function HRESULT PDXVAHDSW_GetVideoProcessorCaps(HANDLE hDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, uint32 Count, DXVAHD_VPCAPS* pCaps);
-		public function HRESULT PDXVAHDSW_GetVideoProcessorCustomRates(HANDLE hDevice, Guid* pVPGuid, uint32 Count, DXVAHD_CUSTOM_RATE_DATA* pRates);
-		public function HRESULT PDXVAHDSW_GetVideoProcessorFilterRange(HANDLE hDevice, DXVAHD_FILTER Filter, DXVAHD_FILTER_RANGE_DATA* pRange);
+		public function HRESULT PDXVAHDSW_CreateDevice(ref IDirect3DDevice9Ex pD3DDevice, out HANDLE phDevice);
+		public function HRESULT PDXVAHDSW_ProposeVideoPrivateFormat(HANDLE hDevice, out D3DFORMAT pFormat);
+		public function HRESULT PDXVAHDSW_GetVideoProcessorDeviceCaps(HANDLE hDevice, in DXVAHD_CONTENT_DESC pContentDesc, DXVAHD_DEVICE_USAGE Usage, out DXVAHD_VPDEVCAPS pCaps);
+		public function HRESULT PDXVAHDSW_GetVideoProcessorOutputFormats(HANDLE hDevice, in DXVAHD_CONTENT_DESC pContentDesc, DXVAHD_DEVICE_USAGE Usage, uint32 Count, D3DFORMAT* pFormats);
+		public function HRESULT PDXVAHDSW_GetVideoProcessorInputFormats(HANDLE hDevice, in DXVAHD_CONTENT_DESC pContentDesc, DXVAHD_DEVICE_USAGE Usage, uint32 Count, D3DFORMAT* pFormats);
+		public function HRESULT PDXVAHDSW_GetVideoProcessorCaps(HANDLE hDevice, in DXVAHD_CONTENT_DESC pContentDesc, DXVAHD_DEVICE_USAGE Usage, uint32 Count, DXVAHD_VPCAPS* pCaps);
+		public function HRESULT PDXVAHDSW_GetVideoProcessorCustomRates(HANDLE hDevice, in Guid pVPGuid, uint32 Count, DXVAHD_CUSTOM_RATE_DATA* pRates);
+		public function HRESULT PDXVAHDSW_GetVideoProcessorFilterRange(HANDLE hDevice, DXVAHD_FILTER Filter, out DXVAHD_FILTER_RANGE_DATA pRange);
 		public function HRESULT PDXVAHDSW_DestroyDevice(HANDLE hDevice);
-		public function HRESULT PDXVAHDSW_CreateVideoProcessor(HANDLE hDevice, Guid* pVPGuid, HANDLE* phVideoProcessor);
+		public function HRESULT PDXVAHDSW_CreateVideoProcessor(HANDLE hDevice, in Guid pVPGuid, out HANDLE phVideoProcessor);
 		public function HRESULT PDXVAHDSW_SetVideoProcessBltState(HANDLE hVideoProcessor, DXVAHD_BLT_STATE State, uint32 DataSize, void* pData);
-		public function HRESULT PDXVAHDSW_GetVideoProcessBltStatePrivate(HANDLE hVideoProcessor, DXVAHD_BLT_STATE_PRIVATE_DATA* pData);
+		public function HRESULT PDXVAHDSW_GetVideoProcessBltStatePrivate(HANDLE hVideoProcessor, out DXVAHD_BLT_STATE_PRIVATE_DATA pData);
 		public function HRESULT PDXVAHDSW_SetVideoProcessStreamState(HANDLE hVideoProcessor, uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData);
-		public function HRESULT PDXVAHDSW_GetVideoProcessStreamStatePrivate(HANDLE hVideoProcessor, uint32 StreamNumber, DXVAHD_STREAM_STATE_PRIVATE_DATA* pData);
-		public function HRESULT PDXVAHDSW_VideoProcessBltHD(HANDLE hVideoProcessor, IDirect3DSurface9* pOutputSurface, uint32 OutputFrame, uint32 StreamCount, DXVAHD_STREAM_DATA* pStreams);
+		public function HRESULT PDXVAHDSW_GetVideoProcessStreamStatePrivate(HANDLE hVideoProcessor, uint32 StreamNumber, out DXVAHD_STREAM_STATE_PRIVATE_DATA pData);
+		public function HRESULT PDXVAHDSW_VideoProcessBltHD(HANDLE hVideoProcessor, ref IDirect3DSurface9 pOutputSurface, uint32 OutputFrame, uint32 StreamCount, DXVAHD_STREAM_DATA* pStreams);
 		public function HRESULT PDXVAHDSW_DestroyVideoProcessor(HANDLE hVideoProcessor);
 		public function HRESULT PDXVAHDSW_Plugin(uint32 Size, void* pCallbacks);
-		public function HRESULT PDXVAHD_CreateDevice(IDirect3DDevice9Ex* pD3DDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, IDXVAHD_Device** ppDevice);
-		public function void MFPERIODICCALLBACK(IUnknown* pContext);
+		public function HRESULT PDXVAHD_CreateDevice(ref IDirect3DDevice9Ex pD3DDevice, in DXVAHD_CONTENT_DESC pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, out IDXVAHD_Device* ppDevice);
+		public function void MFPERIODICCALLBACK(ref IUnknown pContext);
 		
 		// --- Structs ---
 		
@@ -7337,7 +7337,7 @@ namespace Win32
 		{
 			public uint32 Format;
 			public uint32 PaletteEntries;
-			public MFPaletteEntry[] Palette;
+			public MFPaletteEntry[0] Palette;
 		}
 		[CRepr]
 		public struct MFVideoCompressedInfo
@@ -7504,7 +7504,7 @@ namespace Win32
 			public uint32 cbExtensionOffset;
 			public uint32 cbExtensionSize;
 			public uint32 cActions;
-			public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION[] rgOutputActions;
+			public MFINPUTTRUSTAUTHORITY_ACCESS_ACTION[0] rgOutputActions;
 		}
 		[CRepr]
 		public struct MF_TRANSCODE_SINK_INFO
@@ -7650,14 +7650,14 @@ namespace Win32
 		{
 			public uint32 FrameNumber;
 			public uint32 NumDirtyRects;
-			public RECT[] DirtyRects;
+			public RECT[0] DirtyRects;
 		}
 		[CRepr]
 		public struct MOVEREGION_INFO
 		{
 			public uint32 FrameNumber;
 			public uint32 NumMoveRegions;
-			public MOVE_RECT[] MoveRegions;
+			public MOVE_RECT[0] MoveRegions;
 		}
 		[CRepr]
 		public struct ROI_AREA
@@ -7743,7 +7743,7 @@ namespace Win32
 		public struct MFCameraExtrinsics
 		{
 			public uint32 TransformCount;
-			public MFCameraExtrinsic_CalibratedTransform[] CalibratedTransforms;
+			public MFCameraExtrinsic_CalibratedTransform[0] CalibratedTransforms;
 		}
 		[CRepr]
 		public struct MFCameraIntrinsic_PinholeCameraModel
@@ -7772,7 +7772,7 @@ namespace Win32
 		public struct MFPinholeCameraIntrinsics
 		{
 			public uint32 IntrinsicModelCount;
-			public MFPinholeCameraIntrinsic_IntrinsicModel[] IntrinsicModels;
+			public MFPinholeCameraIntrinsic_IntrinsicModel[0] IntrinsicModels;
 		}
 		[CRepr]
 		public struct MFMPEG2DLNASINKSTATS
@@ -8366,84 +8366,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsSupported(Guid* Api) mut
+			public HRESULT IsSupported(in Guid Api) mut
 			{
-				return VT.IsSupported(&this, Api);
+				return VT.IsSupported(ref this, Api);
 			}
-			public HRESULT IsModifiable(Guid* Api) mut
+			public HRESULT IsModifiable(in Guid Api) mut
 			{
-				return VT.IsModifiable(&this, Api);
+				return VT.IsModifiable(ref this, Api);
 			}
-			public HRESULT GetParameterRange(Guid* Api, VARIANT* ValueMin, VARIANT* ValueMax, VARIANT* SteppingDelta) mut
+			public HRESULT GetParameterRange(in Guid Api, out VARIANT ValueMin, out VARIANT ValueMax, out VARIANT SteppingDelta) mut
 			{
-				return VT.GetParameterRange(&this, Api, ValueMin, ValueMax, SteppingDelta);
+				return VT.GetParameterRange(ref this, Api, out ValueMin, out ValueMax, out SteppingDelta);
 			}
-			public HRESULT GetParameterValues(Guid* Api, VARIANT** Values, uint32* ValuesCount) mut
+			public HRESULT GetParameterValues(in Guid Api, VARIANT** Values, out uint32 ValuesCount) mut
 			{
-				return VT.GetParameterValues(&this, Api, Values, ValuesCount);
+				return VT.GetParameterValues(ref this, Api, Values, out ValuesCount);
 			}
-			public HRESULT GetDefaultValue(Guid* Api, VARIANT* Value) mut
+			public HRESULT GetDefaultValue(in Guid Api, out VARIANT Value) mut
 			{
-				return VT.GetDefaultValue(&this, Api, Value);
+				return VT.GetDefaultValue(ref this, Api, out Value);
 			}
-			public HRESULT GetValue(Guid* Api, VARIANT* Value) mut
+			public HRESULT GetValue(in Guid Api, out VARIANT Value) mut
 			{
-				return VT.GetValue(&this, Api, Value);
+				return VT.GetValue(ref this, Api, out Value);
 			}
-			public HRESULT SetValue(Guid* Api, VARIANT* Value) mut
+			public HRESULT SetValue(in Guid Api, ref VARIANT Value) mut
 			{
-				return VT.SetValue(&this, Api, Value);
+				return VT.SetValue(ref this, Api, ref Value);
 			}
-			public HRESULT RegisterForEvent(Guid* Api, int userData) mut
+			public HRESULT RegisterForEvent(in Guid Api, int userData) mut
 			{
-				return VT.RegisterForEvent(&this, Api, userData);
+				return VT.RegisterForEvent(ref this, Api, userData);
 			}
-			public HRESULT UnregisterForEvent(Guid* Api) mut
+			public HRESULT UnregisterForEvent(in Guid Api) mut
 			{
-				return VT.UnregisterForEvent(&this, Api);
+				return VT.UnregisterForEvent(ref this, Api);
 			}
 			public HRESULT SetAllDefaults() mut
 			{
-				return VT.SetAllDefaults(&this);
+				return VT.SetAllDefaults(ref this);
 			}
-			public HRESULT SetValueWithNotify(Guid* Api, VARIANT* Value, Guid** ChangedParam, uint32* ChangedParamCount) mut
+			public HRESULT SetValueWithNotify(in Guid Api, out VARIANT Value, Guid** ChangedParam, out uint32 ChangedParamCount) mut
 			{
-				return VT.SetValueWithNotify(&this, Api, Value, ChangedParam, ChangedParamCount);
+				return VT.SetValueWithNotify(ref this, Api, out Value, ChangedParam, out ChangedParamCount);
 			}
-			public HRESULT SetAllDefaultsWithNotify(Guid** ChangedParam, uint32* ChangedParamCount) mut
+			public HRESULT SetAllDefaultsWithNotify(Guid** ChangedParam, out uint32 ChangedParamCount) mut
 			{
-				return VT.SetAllDefaultsWithNotify(&this, ChangedParam, ChangedParamCount);
+				return VT.SetAllDefaultsWithNotify(ref this, ChangedParam, out ChangedParamCount);
 			}
-			public HRESULT GetAllSettings(IStream* __MIDL__ICodecAPI0000) mut
+			public HRESULT GetAllSettings(ref IStream __MIDL__ICodecAPI0000) mut
 			{
-				return VT.GetAllSettings(&this, __MIDL__ICodecAPI0000);
+				return VT.GetAllSettings(ref this, ref __MIDL__ICodecAPI0000);
 			}
-			public HRESULT SetAllSettings(IStream* __MIDL__ICodecAPI0001) mut
+			public HRESULT SetAllSettings(ref IStream __MIDL__ICodecAPI0001) mut
 			{
-				return VT.SetAllSettings(&this, __MIDL__ICodecAPI0001);
+				return VT.SetAllSettings(ref this, ref __MIDL__ICodecAPI0001);
 			}
-			public HRESULT SetAllSettingsWithNotify(IStream* __MIDL__ICodecAPI0002, Guid** ChangedParam, uint32* ChangedParamCount) mut
+			public HRESULT SetAllSettingsWithNotify(ref IStream __MIDL__ICodecAPI0002, Guid** ChangedParam, out uint32 ChangedParamCount) mut
 			{
-				return VT.SetAllSettingsWithNotify(&this, __MIDL__ICodecAPI0002, ChangedParam, ChangedParamCount);
+				return VT.SetAllSettingsWithNotify(ref this, ref __MIDL__ICodecAPI0002, ChangedParam, out ChangedParamCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ICodecAPI *self, Guid* Api) IsSupported;
-				public new function HRESULT(ICodecAPI *self, Guid* Api) IsModifiable;
-				public new function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* ValueMin, VARIANT* ValueMax, VARIANT* SteppingDelta) GetParameterRange;
-				public new function HRESULT(ICodecAPI *self, Guid* Api, VARIANT** Values, uint32* ValuesCount) GetParameterValues;
-				public new function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* Value) GetDefaultValue;
-				public new function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* Value) GetValue;
-				public new function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* Value) SetValue;
-				public new function HRESULT(ICodecAPI *self, Guid* Api, int userData) RegisterForEvent;
-				public new function HRESULT(ICodecAPI *self, Guid* Api) UnregisterForEvent;
-				public new function HRESULT(ICodecAPI *self) SetAllDefaults;
-				public new function HRESULT(ICodecAPI *self, Guid* Api, VARIANT* Value, Guid** ChangedParam, uint32* ChangedParamCount) SetValueWithNotify;
-				public new function HRESULT(ICodecAPI *self, Guid** ChangedParam, uint32* ChangedParamCount) SetAllDefaultsWithNotify;
-				public new function HRESULT(ICodecAPI *self, IStream* __MIDL__ICodecAPI0000) GetAllSettings;
-				public new function HRESULT(ICodecAPI *self, IStream* __MIDL__ICodecAPI0001) SetAllSettings;
-				public new function HRESULT(ICodecAPI *self, IStream* __MIDL__ICodecAPI0002, Guid** ChangedParam, uint32* ChangedParamCount) SetAllSettingsWithNotify;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api) IsSupported;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api) IsModifiable;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api, out VARIANT ValueMin, out VARIANT ValueMax, out VARIANT SteppingDelta) GetParameterRange;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api, VARIANT** Values, out uint32 ValuesCount) GetParameterValues;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api, out VARIANT Value) GetDefaultValue;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api, out VARIANT Value) GetValue;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api, ref VARIANT Value) SetValue;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api, int userData) RegisterForEvent;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api) UnregisterForEvent;
+				public new function HRESULT(ref ICodecAPI self) SetAllDefaults;
+				public new function HRESULT(ref ICodecAPI self, in Guid Api, out VARIANT Value, Guid** ChangedParam, out uint32 ChangedParamCount) SetValueWithNotify;
+				public new function HRESULT(ref ICodecAPI self, Guid** ChangedParam, out uint32 ChangedParamCount) SetAllDefaultsWithNotify;
+				public new function HRESULT(ref ICodecAPI self, ref IStream __MIDL__ICodecAPI0000) GetAllSettings;
+				public new function HRESULT(ref ICodecAPI self, ref IStream __MIDL__ICodecAPI0001) SetAllSettings;
+				public new function HRESULT(ref ICodecAPI self, ref IStream __MIDL__ICodecAPI0002, Guid** ChangedParam, out uint32 ChangedParamCount) SetAllSettingsWithNotify;
 			}
 		}
 		[CRepr]
@@ -8453,14 +8453,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CheckDeviceOverlayType(uint32 Adapter, D3DDEVTYPE DevType, uint32 OverlayWidth, uint32 OverlayHeight, D3DFORMAT OverlayFormat, D3DDISPLAYMODEEX* pDisplayMode, D3DDISPLAYROTATION DisplayRotation, D3DOVERLAYCAPS* pOverlayCaps) mut
+			public HRESULT CheckDeviceOverlayType(uint32 Adapter, D3DDEVTYPE DevType, uint32 OverlayWidth, uint32 OverlayHeight, D3DFORMAT OverlayFormat, out D3DDISPLAYMODEEX pDisplayMode, D3DDISPLAYROTATION DisplayRotation, out D3DOVERLAYCAPS pOverlayCaps) mut
 			{
-				return VT.CheckDeviceOverlayType(&this, Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, pDisplayMode, DisplayRotation, pOverlayCaps);
+				return VT.CheckDeviceOverlayType(ref this, Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, out pDisplayMode, DisplayRotation, out pOverlayCaps);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirect3D9ExOverlayExtension *self, uint32 Adapter, D3DDEVTYPE DevType, uint32 OverlayWidth, uint32 OverlayHeight, D3DFORMAT OverlayFormat, D3DDISPLAYMODEEX* pDisplayMode, D3DDISPLAYROTATION DisplayRotation, D3DOVERLAYCAPS* pOverlayCaps) CheckDeviceOverlayType;
+				public new function HRESULT(ref IDirect3D9ExOverlayExtension self, uint32 Adapter, D3DDEVTYPE DevType, uint32 OverlayWidth, uint32 OverlayHeight, D3DFORMAT OverlayFormat, out D3DDISPLAYMODEEX pDisplayMode, D3DDISPLAYROTATION DisplayRotation, out D3DOVERLAYCAPS pOverlayCaps) CheckDeviceOverlayType;
 			}
 		}
 		[CRepr]
@@ -8470,24 +8470,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetContentProtectionCaps(Guid* pCryptoType, Guid* pDecodeProfile, D3DCONTENTPROTECTIONCAPS* pCaps) mut
+			public HRESULT GetContentProtectionCaps(in Guid pCryptoType, in Guid pDecodeProfile, out D3DCONTENTPROTECTIONCAPS pCaps) mut
 			{
-				return VT.GetContentProtectionCaps(&this, pCryptoType, pDecodeProfile, pCaps);
+				return VT.GetContentProtectionCaps(ref this, pCryptoType, pDecodeProfile, out pCaps);
 			}
-			public HRESULT CreateAuthenticatedChannel(D3DAUTHENTICATEDCHANNELTYPE ChannelType, IDirect3DAuthenticatedChannel9** ppAuthenticatedChannel, HANDLE* pChannelHandle) mut
+			public HRESULT CreateAuthenticatedChannel(D3DAUTHENTICATEDCHANNELTYPE ChannelType, out IDirect3DAuthenticatedChannel9* ppAuthenticatedChannel, out HANDLE pChannelHandle) mut
 			{
-				return VT.CreateAuthenticatedChannel(&this, ChannelType, ppAuthenticatedChannel, pChannelHandle);
+				return VT.CreateAuthenticatedChannel(ref this, ChannelType, out ppAuthenticatedChannel, out pChannelHandle);
 			}
-			public HRESULT CreateCryptoSession(Guid* pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, HANDLE* pCryptoHandle) mut
+			public HRESULT CreateCryptoSession(in Guid pCryptoType, in Guid pDecodeProfile, out IDirect3DCryptoSession9* ppCryptoSession, out HANDLE pCryptoHandle) mut
 			{
-				return VT.CreateCryptoSession(&this, pCryptoType, pDecodeProfile, ppCryptoSession, pCryptoHandle);
+				return VT.CreateCryptoSession(ref this, pCryptoType, pDecodeProfile, out ppCryptoSession, out pCryptoHandle);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirect3DDevice9Video *self, Guid* pCryptoType, Guid* pDecodeProfile, D3DCONTENTPROTECTIONCAPS* pCaps) GetContentProtectionCaps;
-				public new function HRESULT(IDirect3DDevice9Video *self, D3DAUTHENTICATEDCHANNELTYPE ChannelType, IDirect3DAuthenticatedChannel9** ppAuthenticatedChannel, HANDLE* pChannelHandle) CreateAuthenticatedChannel;
-				public new function HRESULT(IDirect3DDevice9Video *self, Guid* pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, HANDLE* pCryptoHandle) CreateCryptoSession;
+				public new function HRESULT(ref IDirect3DDevice9Video self, in Guid pCryptoType, in Guid pDecodeProfile, out D3DCONTENTPROTECTIONCAPS pCaps) GetContentProtectionCaps;
+				public new function HRESULT(ref IDirect3DDevice9Video self, D3DAUTHENTICATEDCHANNELTYPE ChannelType, out IDirect3DAuthenticatedChannel9* ppAuthenticatedChannel, out HANDLE pChannelHandle) CreateAuthenticatedChannel;
+				public new function HRESULT(ref IDirect3DDevice9Video self, in Guid pCryptoType, in Guid pDecodeProfile, out IDirect3DCryptoSession9* ppCryptoSession, out HANDLE pCryptoHandle) CreateCryptoSession;
 			}
 		}
 		[CRepr]
@@ -8497,34 +8497,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCertificateSize(uint32* pCertificateSize) mut
+			public HRESULT GetCertificateSize(out uint32 pCertificateSize) mut
 			{
-				return VT.GetCertificateSize(&this, pCertificateSize);
+				return VT.GetCertificateSize(ref this, out pCertificateSize);
 			}
-			public HRESULT GetCertificate(uint32 CertifacteSize, uint8* ppCertificate) mut
+			public HRESULT GetCertificate(uint32 CertifacteSize, out uint8 ppCertificate) mut
 			{
-				return VT.GetCertificate(&this, CertifacteSize, ppCertificate);
+				return VT.GetCertificate(ref this, CertifacteSize, out ppCertificate);
 			}
 			public HRESULT NegotiateKeyExchange(uint32 DataSize, void* pData) mut
 			{
-				return VT.NegotiateKeyExchange(&this, DataSize, pData);
+				return VT.NegotiateKeyExchange(ref this, DataSize, pData);
 			}
 			public HRESULT Query(uint32 InputSize, void* pInput, uint32 OutputSize, void* pOutput) mut
 			{
-				return VT.Query(&this, InputSize, pInput, OutputSize, pOutput);
+				return VT.Query(ref this, InputSize, pInput, OutputSize, pOutput);
 			}
-			public HRESULT Configure(uint32 InputSize, void* pInput, D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT* pOutput) mut
+			public HRESULT Configure(uint32 InputSize, void* pInput, out D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT pOutput) mut
 			{
-				return VT.Configure(&this, InputSize, pInput, pOutput);
+				return VT.Configure(ref this, InputSize, pInput, out pOutput);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32* pCertificateSize) GetCertificateSize;
-				public new function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32 CertifacteSize, uint8* ppCertificate) GetCertificate;
-				public new function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32 DataSize, void* pData) NegotiateKeyExchange;
-				public new function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32 InputSize, void* pInput, uint32 OutputSize, void* pOutput) Query;
-				public new function HRESULT(IDirect3DAuthenticatedChannel9 *self, uint32 InputSize, void* pInput, D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT* pOutput) Configure;
+				public new function HRESULT(ref IDirect3DAuthenticatedChannel9 self, out uint32 pCertificateSize) GetCertificateSize;
+				public new function HRESULT(ref IDirect3DAuthenticatedChannel9 self, uint32 CertifacteSize, out uint8 ppCertificate) GetCertificate;
+				public new function HRESULT(ref IDirect3DAuthenticatedChannel9 self, uint32 DataSize, void* pData) NegotiateKeyExchange;
+				public new function HRESULT(ref IDirect3DAuthenticatedChannel9 self, uint32 InputSize, void* pInput, uint32 OutputSize, void* pOutput) Query;
+				public new function HRESULT(ref IDirect3DAuthenticatedChannel9 self, uint32 InputSize, void* pInput, out D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT pOutput) Configure;
 			}
 		}
 		[CRepr]
@@ -8534,54 +8534,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCertificateSize(uint32* pCertificateSize) mut
+			public HRESULT GetCertificateSize(out uint32 pCertificateSize) mut
 			{
-				return VT.GetCertificateSize(&this, pCertificateSize);
+				return VT.GetCertificateSize(ref this, out pCertificateSize);
 			}
-			public HRESULT GetCertificate(uint32 CertifacteSize, uint8* ppCertificate) mut
+			public HRESULT GetCertificate(uint32 CertifacteSize, out uint8 ppCertificate) mut
 			{
-				return VT.GetCertificate(&this, CertifacteSize, ppCertificate);
+				return VT.GetCertificate(ref this, CertifacteSize, out ppCertificate);
 			}
 			public HRESULT NegotiateKeyExchange(uint32 DataSize, void* pData) mut
 			{
-				return VT.NegotiateKeyExchange(&this, DataSize, pData);
+				return VT.NegotiateKeyExchange(ref this, DataSize, pData);
 			}
-			public HRESULT EncryptionBlt(IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint32 DstSurfaceSize, void* pIV) mut
+			public HRESULT EncryptionBlt(ref IDirect3DSurface9 pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint32 DstSurfaceSize, void* pIV) mut
 			{
-				return VT.EncryptionBlt(&this, pSrcSurface, pDstSurface, DstSurfaceSize, pIV);
+				return VT.EncryptionBlt(ref this, ref pSrcSurface, ref pDstSurface, DstSurfaceSize, pIV);
 			}
-			public HRESULT DecryptionBlt(IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint32 SrcSurfaceSize, D3DENCRYPTED_BLOCK_INFO* pEncryptedBlockInfo, void* pContentKey, void* pIV) mut
+			public HRESULT DecryptionBlt(ref IDirect3DSurface9 pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint32 SrcSurfaceSize, out D3DENCRYPTED_BLOCK_INFO pEncryptedBlockInfo, void* pContentKey, void* pIV) mut
 			{
-				return VT.DecryptionBlt(&this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+				return VT.DecryptionBlt(ref this, ref pSrcSurface, ref pDstSurface, SrcSurfaceSize, out pEncryptedBlockInfo, pContentKey, pIV);
 			}
-			public HRESULT GetSurfacePitch(IDirect3DSurface9* pSrcSurface, uint32* pSurfacePitch) mut
+			public HRESULT GetSurfacePitch(ref IDirect3DSurface9 pSrcSurface, out uint32 pSurfacePitch) mut
 			{
-				return VT.GetSurfacePitch(&this, pSrcSurface, pSurfacePitch);
+				return VT.GetSurfacePitch(ref this, ref pSrcSurface, out pSurfacePitch);
 			}
 			public HRESULT StartSessionKeyRefresh(void* pRandomNumber, uint32 RandomNumberSize) mut
 			{
-				return VT.StartSessionKeyRefresh(&this, pRandomNumber, RandomNumberSize);
+				return VT.StartSessionKeyRefresh(ref this, pRandomNumber, RandomNumberSize);
 			}
 			public HRESULT FinishSessionKeyRefresh() mut
 			{
-				return VT.FinishSessionKeyRefresh(&this);
+				return VT.FinishSessionKeyRefresh(ref this);
 			}
 			public HRESULT GetEncryptionBltKey(void* pReadbackKey, uint32 KeySize) mut
 			{
-				return VT.GetEncryptionBltKey(&this, pReadbackKey, KeySize);
+				return VT.GetEncryptionBltKey(ref this, pReadbackKey, KeySize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirect3DCryptoSession9 *self, uint32* pCertificateSize) GetCertificateSize;
-				public new function HRESULT(IDirect3DCryptoSession9 *self, uint32 CertifacteSize, uint8* ppCertificate) GetCertificate;
-				public new function HRESULT(IDirect3DCryptoSession9 *self, uint32 DataSize, void* pData) NegotiateKeyExchange;
-				public new function HRESULT(IDirect3DCryptoSession9 *self, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint32 DstSurfaceSize, void* pIV) EncryptionBlt;
-				public new function HRESULT(IDirect3DCryptoSession9 *self, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint32 SrcSurfaceSize, D3DENCRYPTED_BLOCK_INFO* pEncryptedBlockInfo, void* pContentKey, void* pIV) DecryptionBlt;
-				public new function HRESULT(IDirect3DCryptoSession9 *self, IDirect3DSurface9* pSrcSurface, uint32* pSurfacePitch) GetSurfacePitch;
-				public new function HRESULT(IDirect3DCryptoSession9 *self, void* pRandomNumber, uint32 RandomNumberSize) StartSessionKeyRefresh;
-				public new function HRESULT(IDirect3DCryptoSession9 *self) FinishSessionKeyRefresh;
-				public new function HRESULT(IDirect3DCryptoSession9 *self, void* pReadbackKey, uint32 KeySize) GetEncryptionBltKey;
+				public new function HRESULT(ref IDirect3DCryptoSession9 self, out uint32 pCertificateSize) GetCertificateSize;
+				public new function HRESULT(ref IDirect3DCryptoSession9 self, uint32 CertifacteSize, out uint8 ppCertificate) GetCertificate;
+				public new function HRESULT(ref IDirect3DCryptoSession9 self, uint32 DataSize, void* pData) NegotiateKeyExchange;
+				public new function HRESULT(ref IDirect3DCryptoSession9 self, ref IDirect3DSurface9 pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint32 DstSurfaceSize, void* pIV) EncryptionBlt;
+				public new function HRESULT(ref IDirect3DCryptoSession9 self, ref IDirect3DSurface9 pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint32 SrcSurfaceSize, out D3DENCRYPTED_BLOCK_INFO pEncryptedBlockInfo, void* pContentKey, void* pIV) DecryptionBlt;
+				public new function HRESULT(ref IDirect3DCryptoSession9 self, ref IDirect3DSurface9 pSrcSurface, out uint32 pSurfacePitch) GetSurfacePitch;
+				public new function HRESULT(ref IDirect3DCryptoSession9 self, void* pRandomNumber, uint32 RandomNumberSize) StartSessionKeyRefresh;
+				public new function HRESULT(ref IDirect3DCryptoSession9 self) FinishSessionKeyRefresh;
+				public new function HRESULT(ref IDirect3DCryptoSession9 self, void* pReadbackKey, uint32 KeySize) GetEncryptionBltKey;
 			}
 		}
 		[CRepr]
@@ -8593,12 +8593,12 @@ namespace Win32
 			
 			public D3D12_VIDEO_DECODER_HEAP_DESC GetDesc() mut
 			{
-				return VT.GetDesc(&this);
+				return VT.GetDesc(ref this);
 			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function D3D12_VIDEO_DECODER_HEAP_DESC(ID3D12VideoDecoderHeap *self) GetDesc;
+				public new function D3D12_VIDEO_DECODER_HEAP_DESC(ref ID3D12VideoDecoderHeap self) GetDesc;
 			}
 		}
 		[CRepr]
@@ -8610,27 +8610,27 @@ namespace Win32
 			
 			public HRESULT CheckFeatureSupport(D3D12_FEATURE_VIDEO FeatureVideo, void* pFeatureSupportData, uint32 FeatureSupportDataSize) mut
 			{
-				return VT.CheckFeatureSupport(&this, FeatureVideo, pFeatureSupportData, FeatureSupportDataSize);
+				return VT.CheckFeatureSupport(ref this, FeatureVideo, pFeatureSupportData, FeatureSupportDataSize);
 			}
-			public HRESULT CreateVideoDecoder(D3D12_VIDEO_DECODER_DESC* pDesc, Guid* riid, void** ppVideoDecoder) mut
+			public HRESULT CreateVideoDecoder(in D3D12_VIDEO_DECODER_DESC pDesc, in Guid riid, void** ppVideoDecoder) mut
 			{
-				return VT.CreateVideoDecoder(&this, pDesc, riid, ppVideoDecoder);
+				return VT.CreateVideoDecoder(ref this, pDesc, riid, ppVideoDecoder);
 			}
-			public HRESULT CreateVideoDecoderHeap(D3D12_VIDEO_DECODER_HEAP_DESC* pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap) mut
+			public HRESULT CreateVideoDecoderHeap(in D3D12_VIDEO_DECODER_HEAP_DESC pVideoDecoderHeapDesc, in Guid riid, void** ppVideoDecoderHeap) mut
 			{
-				return VT.CreateVideoDecoderHeap(&this, pVideoDecoderHeapDesc, riid, ppVideoDecoderHeap);
+				return VT.CreateVideoDecoderHeap(ref this, pVideoDecoderHeapDesc, riid, ppVideoDecoderHeap);
 			}
-			public HRESULT CreateVideoProcessor(uint32 NodeMask, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, Guid* riid, void** ppVideoProcessor) mut
+			public HRESULT CreateVideoProcessor(uint32 NodeMask, in D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, in Guid riid, void** ppVideoProcessor) mut
 			{
-				return VT.CreateVideoProcessor(&this, NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, riid, ppVideoProcessor);
+				return VT.CreateVideoProcessor(ref this, NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, riid, ppVideoProcessor);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ID3D12VideoDevice *self, D3D12_FEATURE_VIDEO FeatureVideo, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
-				public new function HRESULT(ID3D12VideoDevice *self, D3D12_VIDEO_DECODER_DESC* pDesc, Guid* riid, void** ppVideoDecoder) CreateVideoDecoder;
-				public new function HRESULT(ID3D12VideoDevice *self, D3D12_VIDEO_DECODER_HEAP_DESC* pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap) CreateVideoDecoderHeap;
-				public new function HRESULT(ID3D12VideoDevice *self, uint32 NodeMask, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, Guid* riid, void** ppVideoProcessor) CreateVideoProcessor;
+				public new function HRESULT(ref ID3D12VideoDevice self, D3D12_FEATURE_VIDEO FeatureVideo, void* pFeatureSupportData, uint32 FeatureSupportDataSize) CheckFeatureSupport;
+				public new function HRESULT(ref ID3D12VideoDevice self, in D3D12_VIDEO_DECODER_DESC pDesc, in Guid riid, void** ppVideoDecoder) CreateVideoDecoder;
+				public new function HRESULT(ref ID3D12VideoDevice self, in D3D12_VIDEO_DECODER_HEAP_DESC pVideoDecoderHeapDesc, in Guid riid, void** ppVideoDecoderHeap) CreateVideoDecoderHeap;
+				public new function HRESULT(ref ID3D12VideoDevice self, uint32 NodeMask, in D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, in Guid riid, void** ppVideoProcessor) CreateVideoProcessor;
 			}
 		}
 		[CRepr]
@@ -8642,12 +8642,12 @@ namespace Win32
 			
 			public D3D12_VIDEO_DECODER_DESC GetDesc() mut
 			{
-				return VT.GetDesc(&this);
+				return VT.GetDesc(ref this);
 			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function D3D12_VIDEO_DECODER_DESC(ID3D12VideoDecoder *self) GetDesc;
+				public new function D3D12_VIDEO_DECODER_DESC(ref ID3D12VideoDecoder self) GetDesc;
 			}
 		}
 		[CRepr]
@@ -8659,27 +8659,27 @@ namespace Win32
 			
 			public uint32 GetNodeMask() mut
 			{
-				return VT.GetNodeMask(&this);
+				return VT.GetNodeMask(ref this);
 			}
 			public uint32 GetNumInputStreamDescs() mut
 			{
-				return VT.GetNumInputStreamDescs(&this);
+				return VT.GetNumInputStreamDescs(ref this);
 			}
 			public HRESULT GetInputStreamDescs(uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs) mut
 			{
-				return VT.GetInputStreamDescs(&this, NumInputStreamDescs, pInputStreamDescs);
+				return VT.GetInputStreamDescs(ref this, NumInputStreamDescs, pInputStreamDescs);
 			}
 			public D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC GetOutputStreamDesc() mut
 			{
-				return VT.GetOutputStreamDesc(&this);
+				return VT.GetOutputStreamDesc(ref this);
 			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function uint32(ID3D12VideoProcessor *self) GetNodeMask;
-				public new function uint32(ID3D12VideoProcessor *self) GetNumInputStreamDescs;
-				public new function HRESULT(ID3D12VideoProcessor *self, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs) GetInputStreamDescs;
-				public new function D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC(ID3D12VideoProcessor *self) GetOutputStreamDesc;
+				public new function uint32(ref ID3D12VideoProcessor self) GetNodeMask;
+				public new function uint32(ref ID3D12VideoProcessor self) GetNumInputStreamDescs;
+				public new function HRESULT(ref ID3D12VideoProcessor self, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs) GetInputStreamDescs;
+				public new function D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC(ref ID3D12VideoProcessor self) GetOutputStreamDesc;
 			}
 		}
 		[CRepr]
@@ -8691,77 +8691,77 @@ namespace Win32
 			
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
-			public HRESULT Reset(ID3D12CommandAllocator* pAllocator) mut
+			public HRESULT Reset(ref ID3D12CommandAllocator pAllocator) mut
 			{
-				return VT.Reset(&this, pAllocator);
+				return VT.Reset(ref this, ref pAllocator);
 			}
 			public void ClearState() mut
 			{
-				VT.ClearState(&this);
+				VT.ClearState(ref this);
 			}
 			public void ResourceBarrier(uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) mut
 			{
-				VT.ResourceBarrier(&this, NumBarriers, pBarriers);
+				VT.ResourceBarrier(ref this, NumBarriers, pBarriers);
 			}
-			public void DiscardResource(ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) mut
+			public void DiscardResource(ref ID3D12Resource pResource, D3D12_DISCARD_REGION* pRegion) mut
 			{
-				VT.DiscardResource(&this, pResource, pRegion);
+				VT.DiscardResource(ref this, ref pResource, pRegion);
 			}
-			public void BeginQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
+			public void BeginQuery(ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
 			{
-				VT.BeginQuery(&this, pQueryHeap, Type, Index);
+				VT.BeginQuery(ref this, ref pQueryHeap, Type, Index);
 			}
-			public void EndQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
+			public void EndQuery(ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
 			{
-				VT.EndQuery(&this, pQueryHeap, Type, Index);
+				VT.EndQuery(ref this, ref pQueryHeap, Type, Index);
 			}
-			public void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) mut
+			public void ResolveQueryData(ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ref ID3D12Resource pDestinationBuffer, uint64 AlignedDestinationBufferOffset) mut
 			{
-				VT.ResolveQueryData(&this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+				VT.ResolveQueryData(ref this, ref pQueryHeap, Type, StartIndex, NumQueries, ref pDestinationBuffer, AlignedDestinationBufferOffset);
 			}
 			public void SetPredication(ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) mut
 			{
-				VT.SetPredication(&this, pBuffer, AlignedBufferOffset, Operation);
+				VT.SetPredication(ref this, pBuffer, AlignedBufferOffset, Operation);
 			}
 			public void SetMarker(uint32 Metadata, void* pData, uint32 Size) mut
 			{
-				VT.SetMarker(&this, Metadata, pData, Size);
+				VT.SetMarker(ref this, Metadata, pData, Size);
 			}
 			public void BeginEvent(uint32 Metadata, void* pData, uint32 Size) mut
 			{
-				VT.BeginEvent(&this, Metadata, pData, Size);
+				VT.BeginEvent(ref this, Metadata, pData, Size);
 			}
 			public void EndEvent() mut
 			{
-				VT.EndEvent(&this);
+				VT.EndEvent(ref this);
 			}
-			public void DecodeFrame(ID3D12VideoDecoder* pDecoder, D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS* pInputArguments) mut
+			public void DecodeFrame(ref ID3D12VideoDecoder pDecoder, in D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS pOutputArguments, in D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS pInputArguments) mut
 			{
-				VT.DecodeFrame(&this, pDecoder, pOutputArguments, pInputArguments);
+				VT.DecodeFrame(ref this, ref pDecoder, pOutputArguments, pInputArguments);
 			}
 			public void WriteBufferImmediate(uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) mut
 			{
-				VT.WriteBufferImmediate(&this, Count, pParams, pModes);
+				VT.WriteBufferImmediate(ref this, Count, pParams, pModes);
 			}
 			[CRepr]
 			public struct VTable : ID3D12CommandList.VTable
 			{
-				public new function HRESULT(ID3D12VideoDecodeCommandList *self) Close;
-				public new function HRESULT(ID3D12VideoDecodeCommandList *self, ID3D12CommandAllocator* pAllocator) Reset;
-				public new function void(ID3D12VideoDecodeCommandList *self) ClearState;
-				public new function void(ID3D12VideoDecodeCommandList *self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
-				public new function void(ID3D12VideoDecodeCommandList *self, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
-				public new function void(ID3D12VideoDecodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
-				public new function void(ID3D12VideoDecodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
-				public new function void(ID3D12VideoDecodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
-				public new function void(ID3D12VideoDecodeCommandList *self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
-				public new function void(ID3D12VideoDecodeCommandList *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
-				public new function void(ID3D12VideoDecodeCommandList *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
-				public new function void(ID3D12VideoDecodeCommandList *self) EndEvent;
-				public new function void(ID3D12VideoDecodeCommandList *self, ID3D12VideoDecoder* pDecoder, D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS* pInputArguments) DecodeFrame;
-				public new function void(ID3D12VideoDecodeCommandList *self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
+				public new function HRESULT(ref ID3D12VideoDecodeCommandList self) Close;
+				public new function HRESULT(ref ID3D12VideoDecodeCommandList self, ref ID3D12CommandAllocator pAllocator) Reset;
+				public new function void(ref ID3D12VideoDecodeCommandList self) ClearState;
+				public new function void(ref ID3D12VideoDecodeCommandList self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
+				public new function void(ref ID3D12VideoDecodeCommandList self, ref ID3D12Resource pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
+				public new function void(ref ID3D12VideoDecodeCommandList self, ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
+				public new function void(ref ID3D12VideoDecodeCommandList self, ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
+				public new function void(ref ID3D12VideoDecodeCommandList self, ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ref ID3D12Resource pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
+				public new function void(ref ID3D12VideoDecodeCommandList self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
+				public new function void(ref ID3D12VideoDecodeCommandList self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+				public new function void(ref ID3D12VideoDecodeCommandList self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+				public new function void(ref ID3D12VideoDecodeCommandList self) EndEvent;
+				public new function void(ref ID3D12VideoDecodeCommandList self, ref ID3D12VideoDecoder pDecoder, in D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS pOutputArguments, in D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS pInputArguments) DecodeFrame;
+				public new function void(ref ID3D12VideoDecodeCommandList self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
 			}
 		}
 		[CRepr]
@@ -8773,77 +8773,77 @@ namespace Win32
 			
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
-			public HRESULT Reset(ID3D12CommandAllocator* pAllocator) mut
+			public HRESULT Reset(ref ID3D12CommandAllocator pAllocator) mut
 			{
-				return VT.Reset(&this, pAllocator);
+				return VT.Reset(ref this, ref pAllocator);
 			}
 			public void ClearState() mut
 			{
-				VT.ClearState(&this);
+				VT.ClearState(ref this);
 			}
 			public void ResourceBarrier(uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) mut
 			{
-				VT.ResourceBarrier(&this, NumBarriers, pBarriers);
+				VT.ResourceBarrier(ref this, NumBarriers, pBarriers);
 			}
-			public void DiscardResource(ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) mut
+			public void DiscardResource(ref ID3D12Resource pResource, D3D12_DISCARD_REGION* pRegion) mut
 			{
-				VT.DiscardResource(&this, pResource, pRegion);
+				VT.DiscardResource(ref this, ref pResource, pRegion);
 			}
-			public void BeginQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
+			public void BeginQuery(ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
 			{
-				VT.BeginQuery(&this, pQueryHeap, Type, Index);
+				VT.BeginQuery(ref this, ref pQueryHeap, Type, Index);
 			}
-			public void EndQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
+			public void EndQuery(ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
 			{
-				VT.EndQuery(&this, pQueryHeap, Type, Index);
+				VT.EndQuery(ref this, ref pQueryHeap, Type, Index);
 			}
-			public void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) mut
+			public void ResolveQueryData(ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ref ID3D12Resource pDestinationBuffer, uint64 AlignedDestinationBufferOffset) mut
 			{
-				VT.ResolveQueryData(&this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+				VT.ResolveQueryData(ref this, ref pQueryHeap, Type, StartIndex, NumQueries, ref pDestinationBuffer, AlignedDestinationBufferOffset);
 			}
 			public void SetPredication(ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) mut
 			{
-				VT.SetPredication(&this, pBuffer, AlignedBufferOffset, Operation);
+				VT.SetPredication(ref this, pBuffer, AlignedBufferOffset, Operation);
 			}
 			public void SetMarker(uint32 Metadata, void* pData, uint32 Size) mut
 			{
-				VT.SetMarker(&this, Metadata, pData, Size);
+				VT.SetMarker(ref this, Metadata, pData, Size);
 			}
 			public void BeginEvent(uint32 Metadata, void* pData, uint32 Size) mut
 			{
-				VT.BeginEvent(&this, Metadata, pData, Size);
+				VT.BeginEvent(ref this, Metadata, pData, Size);
 			}
 			public void EndEvent() mut
 			{
-				VT.EndEvent(&this);
+				VT.EndEvent(ref this);
 			}
-			public void ProcessFrames(ID3D12VideoProcessor* pVideoProcessor, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS* pInputArguments) mut
+			public void ProcessFrames(ref ID3D12VideoProcessor pVideoProcessor, in D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS* pInputArguments) mut
 			{
-				VT.ProcessFrames(&this, pVideoProcessor, pOutputArguments, NumInputStreams, pInputArguments);
+				VT.ProcessFrames(ref this, ref pVideoProcessor, pOutputArguments, NumInputStreams, pInputArguments);
 			}
 			public void WriteBufferImmediate(uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) mut
 			{
-				VT.WriteBufferImmediate(&this, Count, pParams, pModes);
+				VT.WriteBufferImmediate(ref this, Count, pParams, pModes);
 			}
 			[CRepr]
 			public struct VTable : ID3D12CommandList.VTable
 			{
-				public new function HRESULT(ID3D12VideoProcessCommandList *self) Close;
-				public new function HRESULT(ID3D12VideoProcessCommandList *self, ID3D12CommandAllocator* pAllocator) Reset;
-				public new function void(ID3D12VideoProcessCommandList *self) ClearState;
-				public new function void(ID3D12VideoProcessCommandList *self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
-				public new function void(ID3D12VideoProcessCommandList *self, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
-				public new function void(ID3D12VideoProcessCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
-				public new function void(ID3D12VideoProcessCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
-				public new function void(ID3D12VideoProcessCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
-				public new function void(ID3D12VideoProcessCommandList *self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
-				public new function void(ID3D12VideoProcessCommandList *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
-				public new function void(ID3D12VideoProcessCommandList *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
-				public new function void(ID3D12VideoProcessCommandList *self) EndEvent;
-				public new function void(ID3D12VideoProcessCommandList *self, ID3D12VideoProcessor* pVideoProcessor, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS* pInputArguments) ProcessFrames;
-				public new function void(ID3D12VideoProcessCommandList *self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
+				public new function HRESULT(ref ID3D12VideoProcessCommandList self) Close;
+				public new function HRESULT(ref ID3D12VideoProcessCommandList self, ref ID3D12CommandAllocator pAllocator) Reset;
+				public new function void(ref ID3D12VideoProcessCommandList self) ClearState;
+				public new function void(ref ID3D12VideoProcessCommandList self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
+				public new function void(ref ID3D12VideoProcessCommandList self, ref ID3D12Resource pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
+				public new function void(ref ID3D12VideoProcessCommandList self, ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
+				public new function void(ref ID3D12VideoProcessCommandList self, ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
+				public new function void(ref ID3D12VideoProcessCommandList self, ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ref ID3D12Resource pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
+				public new function void(ref ID3D12VideoProcessCommandList self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
+				public new function void(ref ID3D12VideoProcessCommandList self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+				public new function void(ref ID3D12VideoProcessCommandList self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+				public new function void(ref ID3D12VideoProcessCommandList self) EndEvent;
+				public new function void(ref ID3D12VideoProcessCommandList self, ref ID3D12VideoProcessor pVideoProcessor, in D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS* pInputArguments) ProcessFrames;
+				public new function void(ref ID3D12VideoProcessCommandList self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
 			}
 		}
 		[CRepr]
@@ -8853,14 +8853,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void DecodeFrame1(ID3D12VideoDecoder* pDecoder, D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1* pOutputArguments, D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS* pInputArguments) mut
+			public void DecodeFrame1(ref ID3D12VideoDecoder pDecoder, in D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1 pOutputArguments, in D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS pInputArguments) mut
 			{
-				VT.DecodeFrame1(&this, pDecoder, pOutputArguments, pInputArguments);
+				VT.DecodeFrame1(ref this, ref pDecoder, pOutputArguments, pInputArguments);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoDecodeCommandList.VTable
 			{
-				public new function void(ID3D12VideoDecodeCommandList1 *self, ID3D12VideoDecoder* pDecoder, D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1* pOutputArguments, D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS* pInputArguments) DecodeFrame1;
+				public new function void(ref ID3D12VideoDecodeCommandList1 self, ref ID3D12VideoDecoder pDecoder, in D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1 pOutputArguments, in D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS pInputArguments) DecodeFrame1;
 			}
 		}
 		[CRepr]
@@ -8870,14 +8870,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1* pInputArguments) mut
+			public void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, in D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1* pInputArguments) mut
 			{
-				VT.ProcessFrames1(&this, pVideoProcessor, pOutputArguments, NumInputStreams, pInputArguments);
+				VT.ProcessFrames1(ref this, ref pVideoProcessor, pOutputArguments, NumInputStreams, pInputArguments);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoProcessCommandList.VTable
 			{
-				public new function void(ID3D12VideoProcessCommandList1 *self, ID3D12VideoProcessor* pVideoProcessor, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS* pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1* pInputArguments) ProcessFrames1;
+				public new function void(ref ID3D12VideoProcessCommandList1 self, ref ID3D12VideoProcessor pVideoProcessor, in D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS pOutputArguments, uint32 NumInputStreams, D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS1* pInputArguments) ProcessFrames1;
 			}
 		}
 		[CRepr]
@@ -8889,17 +8889,17 @@ namespace Win32
 			
 			public D3D12_VIDEO_MOTION_ESTIMATOR_DESC GetDesc() mut
 			{
-				return VT.GetDesc(&this);
+				return VT.GetDesc(ref this);
 			}
-			public HRESULT GetProtectedResourceSession(Guid* riid, void** ppProtectedSession) mut
+			public HRESULT GetProtectedResourceSession(in Guid riid, void** ppProtectedSession) mut
 			{
-				return VT.GetProtectedResourceSession(&this, riid, ppProtectedSession);
+				return VT.GetProtectedResourceSession(ref this, riid, ppProtectedSession);
 			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function D3D12_VIDEO_MOTION_ESTIMATOR_DESC(ID3D12VideoMotionEstimator *self) GetDesc;
-				public new function HRESULT(ID3D12VideoMotionEstimator *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+				public new function D3D12_VIDEO_MOTION_ESTIMATOR_DESC(ref ID3D12VideoMotionEstimator self) GetDesc;
+				public new function HRESULT(ref ID3D12VideoMotionEstimator self, in Guid riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -8911,17 +8911,17 @@ namespace Win32
 			
 			public D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC GetDesc() mut
 			{
-				return VT.GetDesc(&this);
+				return VT.GetDesc(ref this);
 			}
-			public HRESULT GetProtectedResourceSession(Guid* riid, void** ppProtectedSession) mut
+			public HRESULT GetProtectedResourceSession(in Guid riid, void** ppProtectedSession) mut
 			{
-				return VT.GetProtectedResourceSession(&this, riid, ppProtectedSession);
+				return VT.GetProtectedResourceSession(ref this, riid, ppProtectedSession);
 			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC(ID3D12VideoMotionVectorHeap *self) GetDesc;
-				public new function HRESULT(ID3D12VideoMotionVectorHeap *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+				public new function D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC(ref ID3D12VideoMotionVectorHeap self) GetDesc;
+				public new function HRESULT(ref ID3D12VideoMotionVectorHeap self, in Guid riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -8931,19 +8931,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateVideoMotionEstimator(D3D12_VIDEO_MOTION_ESTIMATOR_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) mut
+			public HRESULT CreateVideoMotionEstimator(in D3D12_VIDEO_MOTION_ESTIMATOR_DESC pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoMotionEstimator) mut
 			{
-				return VT.CreateVideoMotionEstimator(&this, pDesc, pProtectedResourceSession, riid, ppVideoMotionEstimator);
+				return VT.CreateVideoMotionEstimator(ref this, pDesc, pProtectedResourceSession, riid, ppVideoMotionEstimator);
 			}
-			public HRESULT CreateVideoMotionVectorHeap(D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) mut
+			public HRESULT CreateVideoMotionVectorHeap(in D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoMotionVectorHeap) mut
 			{
-				return VT.CreateVideoMotionVectorHeap(&this, pDesc, pProtectedResourceSession, riid, ppVideoMotionVectorHeap);
+				return VT.CreateVideoMotionVectorHeap(ref this, pDesc, pProtectedResourceSession, riid, ppVideoMotionVectorHeap);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoDevice.VTable
 			{
-				public new function HRESULT(ID3D12VideoDevice1 *self, D3D12_VIDEO_MOTION_ESTIMATOR_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionEstimator) CreateVideoMotionEstimator;
-				public new function HRESULT(ID3D12VideoDevice1 *self, D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoMotionVectorHeap) CreateVideoMotionVectorHeap;
+				public new function HRESULT(ref ID3D12VideoDevice1 self, in D3D12_VIDEO_MOTION_ESTIMATOR_DESC pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoMotionEstimator) CreateVideoMotionEstimator;
+				public new function HRESULT(ref ID3D12VideoDevice1 self, in D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoMotionVectorHeap) CreateVideoMotionVectorHeap;
 			}
 		}
 		[CRepr]
@@ -8955,87 +8955,87 @@ namespace Win32
 			
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
-			public HRESULT Reset(ID3D12CommandAllocator* pAllocator) mut
+			public HRESULT Reset(ref ID3D12CommandAllocator pAllocator) mut
 			{
-				return VT.Reset(&this, pAllocator);
+				return VT.Reset(ref this, ref pAllocator);
 			}
 			public void ClearState() mut
 			{
-				VT.ClearState(&this);
+				VT.ClearState(ref this);
 			}
 			public void ResourceBarrier(uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) mut
 			{
-				VT.ResourceBarrier(&this, NumBarriers, pBarriers);
+				VT.ResourceBarrier(ref this, NumBarriers, pBarriers);
 			}
-			public void DiscardResource(ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) mut
+			public void DiscardResource(ref ID3D12Resource pResource, D3D12_DISCARD_REGION* pRegion) mut
 			{
-				VT.DiscardResource(&this, pResource, pRegion);
+				VT.DiscardResource(ref this, ref pResource, pRegion);
 			}
-			public void BeginQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
+			public void BeginQuery(ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
 			{
-				VT.BeginQuery(&this, pQueryHeap, Type, Index);
+				VT.BeginQuery(ref this, ref pQueryHeap, Type, Index);
 			}
-			public void EndQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
+			public void EndQuery(ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) mut
 			{
-				VT.EndQuery(&this, pQueryHeap, Type, Index);
+				VT.EndQuery(ref this, ref pQueryHeap, Type, Index);
 			}
-			public void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) mut
+			public void ResolveQueryData(ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ref ID3D12Resource pDestinationBuffer, uint64 AlignedDestinationBufferOffset) mut
 			{
-				VT.ResolveQueryData(&this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+				VT.ResolveQueryData(ref this, ref pQueryHeap, Type, StartIndex, NumQueries, ref pDestinationBuffer, AlignedDestinationBufferOffset);
 			}
 			public void SetPredication(ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) mut
 			{
-				VT.SetPredication(&this, pBuffer, AlignedBufferOffset, Operation);
+				VT.SetPredication(ref this, pBuffer, AlignedBufferOffset, Operation);
 			}
 			public void SetMarker(uint32 Metadata, void* pData, uint32 Size) mut
 			{
-				VT.SetMarker(&this, Metadata, pData, Size);
+				VT.SetMarker(ref this, Metadata, pData, Size);
 			}
 			public void BeginEvent(uint32 Metadata, void* pData, uint32 Size) mut
 			{
-				VT.BeginEvent(&this, Metadata, pData, Size);
+				VT.BeginEvent(ref this, Metadata, pData, Size);
 			}
 			public void EndEvent() mut
 			{
-				VT.EndEvent(&this);
+				VT.EndEvent(ref this);
 			}
-			public void EstimateMotion(ID3D12VideoMotionEstimator* pMotionEstimator, D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT* pOutputArguments, D3D12_VIDEO_MOTION_ESTIMATOR_INPUT* pInputArguments) mut
+			public void EstimateMotion(ref ID3D12VideoMotionEstimator pMotionEstimator, in D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT pOutputArguments, in D3D12_VIDEO_MOTION_ESTIMATOR_INPUT pInputArguments) mut
 			{
-				VT.EstimateMotion(&this, pMotionEstimator, pOutputArguments, pInputArguments);
+				VT.EstimateMotion(ref this, ref pMotionEstimator, pOutputArguments, pInputArguments);
 			}
-			public void ResolveMotionVectorHeap(D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT* pOutputArguments, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT* pInputArguments) mut
+			public void ResolveMotionVectorHeap(in D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT pOutputArguments, in D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT pInputArguments) mut
 			{
-				VT.ResolveMotionVectorHeap(&this, pOutputArguments, pInputArguments);
+				VT.ResolveMotionVectorHeap(ref this, pOutputArguments, pInputArguments);
 			}
 			public void WriteBufferImmediate(uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) mut
 			{
-				VT.WriteBufferImmediate(&this, Count, pParams, pModes);
+				VT.WriteBufferImmediate(ref this, Count, pParams, pModes);
 			}
 			public void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession) mut
 			{
-				VT.SetProtectedResourceSession(&this, pProtectedResourceSession);
+				VT.SetProtectedResourceSession(ref this, pProtectedResourceSession);
 			}
 			[CRepr]
 			public struct VTable : ID3D12CommandList.VTable
 			{
-				public new function HRESULT(ID3D12VideoEncodeCommandList *self) Close;
-				public new function HRESULT(ID3D12VideoEncodeCommandList *self, ID3D12CommandAllocator* pAllocator) Reset;
-				public new function void(ID3D12VideoEncodeCommandList *self) ClearState;
-				public new function void(ID3D12VideoEncodeCommandList *self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
-				public new function void(ID3D12VideoEncodeCommandList *self, ID3D12Resource* pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
-				public new function void(ID3D12VideoEncodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
-				public new function void(ID3D12VideoEncodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
-				public new function void(ID3D12VideoEncodeCommandList *self, ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ID3D12Resource* pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
-				public new function void(ID3D12VideoEncodeCommandList *self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
-				public new function void(ID3D12VideoEncodeCommandList *self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
-				public new function void(ID3D12VideoEncodeCommandList *self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
-				public new function void(ID3D12VideoEncodeCommandList *self) EndEvent;
-				public new function void(ID3D12VideoEncodeCommandList *self, ID3D12VideoMotionEstimator* pMotionEstimator, D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT* pOutputArguments, D3D12_VIDEO_MOTION_ESTIMATOR_INPUT* pInputArguments) EstimateMotion;
-				public new function void(ID3D12VideoEncodeCommandList *self, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT* pOutputArguments, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT* pInputArguments) ResolveMotionVectorHeap;
-				public new function void(ID3D12VideoEncodeCommandList *self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
-				public new function void(ID3D12VideoEncodeCommandList *self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
+				public new function HRESULT(ref ID3D12VideoEncodeCommandList self) Close;
+				public new function HRESULT(ref ID3D12VideoEncodeCommandList self, ref ID3D12CommandAllocator pAllocator) Reset;
+				public new function void(ref ID3D12VideoEncodeCommandList self) ClearState;
+				public new function void(ref ID3D12VideoEncodeCommandList self, uint32 NumBarriers, D3D12_RESOURCE_BARRIER* pBarriers) ResourceBarrier;
+				public new function void(ref ID3D12VideoEncodeCommandList self, ref ID3D12Resource pResource, D3D12_DISCARD_REGION* pRegion) DiscardResource;
+				public new function void(ref ID3D12VideoEncodeCommandList self, ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) BeginQuery;
+				public new function void(ref ID3D12VideoEncodeCommandList self, ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 Index) EndQuery;
+				public new function void(ref ID3D12VideoEncodeCommandList self, ref ID3D12QueryHeap pQueryHeap, D3D12_QUERY_TYPE Type, uint32 StartIndex, uint32 NumQueries, ref ID3D12Resource pDestinationBuffer, uint64 AlignedDestinationBufferOffset) ResolveQueryData;
+				public new function void(ref ID3D12VideoEncodeCommandList self, ID3D12Resource* pBuffer, uint64 AlignedBufferOffset, D3D12_PREDICATION_OP Operation) SetPredication;
+				public new function void(ref ID3D12VideoEncodeCommandList self, uint32 Metadata, void* pData, uint32 Size) SetMarker;
+				public new function void(ref ID3D12VideoEncodeCommandList self, uint32 Metadata, void* pData, uint32 Size) BeginEvent;
+				public new function void(ref ID3D12VideoEncodeCommandList self) EndEvent;
+				public new function void(ref ID3D12VideoEncodeCommandList self, ref ID3D12VideoMotionEstimator pMotionEstimator, in D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT pOutputArguments, in D3D12_VIDEO_MOTION_ESTIMATOR_INPUT pInputArguments) EstimateMotion;
+				public new function void(ref ID3D12VideoEncodeCommandList self, in D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT pOutputArguments, in D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT pInputArguments) ResolveMotionVectorHeap;
+				public new function void(ref ID3D12VideoEncodeCommandList self, uint32 Count, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes) WriteBufferImmediate;
+				public new function void(ref ID3D12VideoEncodeCommandList self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -9045,14 +9045,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProtectedResourceSession(Guid* riid, void** ppProtectedSession) mut
+			public HRESULT GetProtectedResourceSession(in Guid riid, void** ppProtectedSession) mut
 			{
-				return VT.GetProtectedResourceSession(&this, riid, ppProtectedSession);
+				return VT.GetProtectedResourceSession(ref this, riid, ppProtectedSession);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoDecoder.VTable
 			{
-				public new function HRESULT(ID3D12VideoDecoder1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+				public new function HRESULT(ref ID3D12VideoDecoder1 self, in Guid riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -9062,14 +9062,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProtectedResourceSession(Guid* riid, void** ppProtectedSession) mut
+			public HRESULT GetProtectedResourceSession(in Guid riid, void** ppProtectedSession) mut
 			{
-				return VT.GetProtectedResourceSession(&this, riid, ppProtectedSession);
+				return VT.GetProtectedResourceSession(ref this, riid, ppProtectedSession);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoDecoderHeap.VTable
 			{
-				public new function HRESULT(ID3D12VideoDecoderHeap1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+				public new function HRESULT(ref ID3D12VideoDecoderHeap1 self, in Guid riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -9079,14 +9079,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProtectedResourceSession(Guid* riid, void** ppProtectedSession) mut
+			public HRESULT GetProtectedResourceSession(in Guid riid, void** ppProtectedSession) mut
 			{
-				return VT.GetProtectedResourceSession(&this, riid, ppProtectedSession);
+				return VT.GetProtectedResourceSession(ref this, riid, ppProtectedSession);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoProcessor.VTable
 			{
-				public new function HRESULT(ID3D12VideoProcessor1 *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+				public new function HRESULT(ref ID3D12VideoProcessor1 self, in Guid riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -9098,17 +9098,17 @@ namespace Win32
 			
 			public D3D12_VIDEO_EXTENSION_COMMAND_DESC GetDesc() mut
 			{
-				return VT.GetDesc(&this);
+				return VT.GetDesc(ref this);
 			}
-			public HRESULT GetProtectedResourceSession(Guid* riid, void** ppProtectedSession) mut
+			public HRESULT GetProtectedResourceSession(in Guid riid, void** ppProtectedSession) mut
 			{
-				return VT.GetProtectedResourceSession(&this, riid, ppProtectedSession);
+				return VT.GetProtectedResourceSession(ref this, riid, ppProtectedSession);
 			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function D3D12_VIDEO_EXTENSION_COMMAND_DESC(ID3D12VideoExtensionCommand *self) GetDesc;
-				public new function HRESULT(ID3D12VideoExtensionCommand *self, Guid* riid, void** ppProtectedSession) GetProtectedResourceSession;
+				public new function D3D12_VIDEO_EXTENSION_COMMAND_DESC(ref ID3D12VideoExtensionCommand self) GetDesc;
+				public new function HRESULT(ref ID3D12VideoExtensionCommand self, in Guid riid, void** ppProtectedSession) GetProtectedResourceSession;
 			}
 		}
 		[CRepr]
@@ -9118,34 +9118,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateVideoDecoder1(D3D12_VIDEO_DECODER_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) mut
+			public HRESULT CreateVideoDecoder1(in D3D12_VIDEO_DECODER_DESC pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoDecoder) mut
 			{
-				return VT.CreateVideoDecoder1(&this, pDesc, pProtectedResourceSession, riid, ppVideoDecoder);
+				return VT.CreateVideoDecoder1(ref this, pDesc, pProtectedResourceSession, riid, ppVideoDecoder);
 			}
-			public HRESULT CreateVideoDecoderHeap1(D3D12_VIDEO_DECODER_HEAP_DESC* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) mut
+			public HRESULT CreateVideoDecoderHeap1(in D3D12_VIDEO_DECODER_HEAP_DESC pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoDecoderHeap) mut
 			{
-				return VT.CreateVideoDecoderHeap1(&this, pVideoDecoderHeapDesc, pProtectedResourceSession, riid, ppVideoDecoderHeap);
+				return VT.CreateVideoDecoderHeap1(ref this, pVideoDecoderHeapDesc, pProtectedResourceSession, riid, ppVideoDecoderHeap);
 			}
-			public HRESULT CreateVideoProcessor1(uint32 NodeMask, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) mut
+			public HRESULT CreateVideoProcessor1(uint32 NodeMask, in D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoProcessor) mut
 			{
-				return VT.CreateVideoProcessor1(&this, NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, riid, ppVideoProcessor);
+				return VT.CreateVideoProcessor1(ref this, NodeMask, pOutputStreamDesc, NumInputStreamDescs, pInputStreamDescs, pProtectedResourceSession, riid, ppVideoProcessor);
 			}
-			public HRESULT CreateVideoExtensionCommand(D3D12_VIDEO_EXTENSION_COMMAND_DESC* pDesc, void* pCreationParameters, uint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) mut
+			public HRESULT CreateVideoExtensionCommand(in D3D12_VIDEO_EXTENSION_COMMAND_DESC pDesc, void* pCreationParameters, uint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoExtensionCommand) mut
 			{
-				return VT.CreateVideoExtensionCommand(&this, pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+				return VT.CreateVideoExtensionCommand(ref this, pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
 			}
-			public HRESULT ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes, void* pOutputData, uint OutputDataSizeInBytes) mut
+			public HRESULT ExecuteExtensionCommand(ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes, void* pOutputData, uint OutputDataSizeInBytes) mut
 			{
-				return VT.ExecuteExtensionCommand(&this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+				return VT.ExecuteExtensionCommand(ref this, ref pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoDevice1.VTable
 			{
-				public new function HRESULT(ID3D12VideoDevice2 *self, D3D12_VIDEO_DECODER_DESC* pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoder) CreateVideoDecoder1;
-				public new function HRESULT(ID3D12VideoDevice2 *self, D3D12_VIDEO_DECODER_HEAP_DESC* pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoDecoderHeap) CreateVideoDecoderHeap1;
-				public new function HRESULT(ID3D12VideoDevice2 *self, uint32 NodeMask, D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC* pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoProcessor) CreateVideoProcessor1;
-				public new function HRESULT(ID3D12VideoDevice2 *self, D3D12_VIDEO_EXTENSION_COMMAND_DESC* pDesc, void* pCreationParameters, uint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) CreateVideoExtensionCommand;
-				public new function HRESULT(ID3D12VideoDevice2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes, void* pOutputData, uint OutputDataSizeInBytes) ExecuteExtensionCommand;
+				public new function HRESULT(ref ID3D12VideoDevice2 self, in D3D12_VIDEO_DECODER_DESC pDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoDecoder) CreateVideoDecoder1;
+				public new function HRESULT(ref ID3D12VideoDevice2 self, in D3D12_VIDEO_DECODER_HEAP_DESC pVideoDecoderHeapDesc, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoDecoderHeap) CreateVideoDecoderHeap1;
+				public new function HRESULT(ref ID3D12VideoDevice2 self, uint32 NodeMask, in D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC pOutputStreamDesc, uint32 NumInputStreamDescs, D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC* pInputStreamDescs, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoProcessor) CreateVideoProcessor1;
+				public new function HRESULT(ref ID3D12VideoDevice2 self, in D3D12_VIDEO_EXTENSION_COMMAND_DESC pDesc, void* pCreationParameters, uint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, in Guid riid, void** ppVideoExtensionCommand) CreateVideoExtensionCommand;
+				public new function HRESULT(ref ID3D12VideoDevice2 self, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes, void* pOutputData, uint OutputDataSizeInBytes) ExecuteExtensionCommand;
 			}
 		}
 		[CRepr]
@@ -9157,22 +9157,22 @@ namespace Win32
 			
 			public void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession) mut
 			{
-				VT.SetProtectedResourceSession(&this, pProtectedResourceSession);
+				VT.SetProtectedResourceSession(ref this, pProtectedResourceSession);
 			}
-			public void InitializeExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) mut
+			public void InitializeExtensionCommand(ref ID3D12VideoExtensionCommand pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) mut
 			{
-				VT.InitializeExtensionCommand(&this, pExtensionCommand, pInitializationParameters, InitializationParametersSizeInBytes);
+				VT.InitializeExtensionCommand(ref this, ref pExtensionCommand, pInitializationParameters, InitializationParametersSizeInBytes);
 			}
-			public void ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) mut
+			public void ExecuteExtensionCommand(ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) mut
 			{
-				VT.ExecuteExtensionCommand(&this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
+				VT.ExecuteExtensionCommand(ref this, ref pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoDecodeCommandList1.VTable
 			{
-				public new function void(ID3D12VideoDecodeCommandList2 *self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
-				public new function void(ID3D12VideoDecodeCommandList2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) InitializeExtensionCommand;
-				public new function void(ID3D12VideoDecodeCommandList2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) ExecuteExtensionCommand;
+				public new function void(ref ID3D12VideoDecodeCommandList2 self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
+				public new function void(ref ID3D12VideoDecodeCommandList2 self, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) InitializeExtensionCommand;
+				public new function void(ref ID3D12VideoDecodeCommandList2 self, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) ExecuteExtensionCommand;
 			}
 		}
 		[CRepr]
@@ -9184,22 +9184,22 @@ namespace Win32
 			
 			public void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession) mut
 			{
-				VT.SetProtectedResourceSession(&this, pProtectedResourceSession);
+				VT.SetProtectedResourceSession(ref this, pProtectedResourceSession);
 			}
-			public void InitializeExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) mut
+			public void InitializeExtensionCommand(ref ID3D12VideoExtensionCommand pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) mut
 			{
-				VT.InitializeExtensionCommand(&this, pExtensionCommand, pInitializationParameters, InitializationParametersSizeInBytes);
+				VT.InitializeExtensionCommand(ref this, ref pExtensionCommand, pInitializationParameters, InitializationParametersSizeInBytes);
 			}
-			public void ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) mut
+			public void ExecuteExtensionCommand(ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) mut
 			{
-				VT.ExecuteExtensionCommand(&this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
+				VT.ExecuteExtensionCommand(ref this, ref pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoProcessCommandList1.VTable
 			{
-				public new function void(ID3D12VideoProcessCommandList2 *self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
-				public new function void(ID3D12VideoProcessCommandList2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) InitializeExtensionCommand;
-				public new function void(ID3D12VideoProcessCommandList2 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) ExecuteExtensionCommand;
+				public new function void(ref ID3D12VideoProcessCommandList2 self, ID3D12ProtectedResourceSession* pProtectedResourceSession) SetProtectedResourceSession;
+				public new function void(ref ID3D12VideoProcessCommandList2 self, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) InitializeExtensionCommand;
+				public new function void(ref ID3D12VideoProcessCommandList2 self, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) ExecuteExtensionCommand;
 			}
 		}
 		[CRepr]
@@ -9209,19 +9209,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void InitializeExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) mut
+			public void InitializeExtensionCommand(ref ID3D12VideoExtensionCommand pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) mut
 			{
-				VT.InitializeExtensionCommand(&this, pExtensionCommand, pInitializationParameters, InitializationParametersSizeInBytes);
+				VT.InitializeExtensionCommand(ref this, ref pExtensionCommand, pInitializationParameters, InitializationParametersSizeInBytes);
 			}
-			public void ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) mut
+			public void ExecuteExtensionCommand(ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) mut
 			{
-				VT.ExecuteExtensionCommand(&this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
+				VT.ExecuteExtensionCommand(ref this, ref pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoEncodeCommandList.VTable
 			{
-				public new function void(ID3D12VideoEncodeCommandList1 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) InitializeExtensionCommand;
-				public new function void(ID3D12VideoEncodeCommandList1 *self, ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) ExecuteExtensionCommand;
+				public new function void(ref ID3D12VideoEncodeCommandList1 self, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pInitializationParameters, uint InitializationParametersSizeInBytes) InitializeExtensionCommand;
+				public new function void(ref ID3D12VideoEncodeCommandList1 self, ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, uint ExecutionParametersSizeInBytes) ExecuteExtensionCommand;
 			}
 		}
 		[CRepr]
@@ -9233,42 +9233,42 @@ namespace Win32
 			
 			public uint32 GetNodeMask() mut
 			{
-				return VT.GetNodeMask(&this);
+				return VT.GetNodeMask(ref this);
 			}
 			public D3D12_VIDEO_ENCODER_FLAGS GetEncoderFlags() mut
 			{
-				return VT.GetEncoderFlags(&this);
+				return VT.GetEncoderFlags(ref this);
 			}
 			public D3D12_VIDEO_ENCODER_CODEC GetCodec() mut
 			{
-				return VT.GetCodec(&this);
+				return VT.GetCodec(ref this);
 			}
 			public HRESULT GetCodecProfile(D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) mut
 			{
-				return VT.GetCodecProfile(&this, dstProfile);
+				return VT.GetCodecProfile(ref this, dstProfile);
 			}
 			public HRESULT GetCodecConfiguration(D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION dstCodecConfig) mut
 			{
-				return VT.GetCodecConfiguration(&this, dstCodecConfig);
+				return VT.GetCodecConfiguration(ref this, dstCodecConfig);
 			}
 			public DXGI_FORMAT GetInputFormat() mut
 			{
-				return VT.GetInputFormat(&this);
+				return VT.GetInputFormat(ref this);
 			}
 			public D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE GetMaxMotionEstimationPrecision() mut
 			{
-				return VT.GetMaxMotionEstimationPrecision(&this);
+				return VT.GetMaxMotionEstimationPrecision(ref this);
 			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function uint32(ID3D12VideoEncoder *self) GetNodeMask;
-				public new function D3D12_VIDEO_ENCODER_FLAGS(ID3D12VideoEncoder *self) GetEncoderFlags;
-				public new function D3D12_VIDEO_ENCODER_CODEC(ID3D12VideoEncoder *self) GetCodec;
-				public new function HRESULT(ID3D12VideoEncoder *self, D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) GetCodecProfile;
-				public new function HRESULT(ID3D12VideoEncoder *self, D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION dstCodecConfig) GetCodecConfiguration;
-				public new function DXGI_FORMAT(ID3D12VideoEncoder *self) GetInputFormat;
-				public new function D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE(ID3D12VideoEncoder *self) GetMaxMotionEstimationPrecision;
+				public new function uint32(ref ID3D12VideoEncoder self) GetNodeMask;
+				public new function D3D12_VIDEO_ENCODER_FLAGS(ref ID3D12VideoEncoder self) GetEncoderFlags;
+				public new function D3D12_VIDEO_ENCODER_CODEC(ref ID3D12VideoEncoder self) GetCodec;
+				public new function HRESULT(ref ID3D12VideoEncoder self, D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) GetCodecProfile;
+				public new function HRESULT(ref ID3D12VideoEncoder self, D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION dstCodecConfig) GetCodecConfiguration;
+				public new function DXGI_FORMAT(ref ID3D12VideoEncoder self) GetInputFormat;
+				public new function D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE(ref ID3D12VideoEncoder self) GetMaxMotionEstimationPrecision;
 			}
 		}
 		[CRepr]
@@ -9280,42 +9280,42 @@ namespace Win32
 			
 			public uint32 GetNodeMask() mut
 			{
-				return VT.GetNodeMask(&this);
+				return VT.GetNodeMask(ref this);
 			}
 			public D3D12_VIDEO_ENCODER_HEAP_FLAGS GetEncoderHeapFlags() mut
 			{
-				return VT.GetEncoderHeapFlags(&this);
+				return VT.GetEncoderHeapFlags(ref this);
 			}
 			public D3D12_VIDEO_ENCODER_CODEC GetCodec() mut
 			{
-				return VT.GetCodec(&this);
+				return VT.GetCodec(ref this);
 			}
 			public HRESULT GetCodecProfile(D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) mut
 			{
-				return VT.GetCodecProfile(&this, dstProfile);
+				return VT.GetCodecProfile(ref this, dstProfile);
 			}
 			public HRESULT GetCodecLevel(D3D12_VIDEO_ENCODER_LEVEL_SETTING dstLevel) mut
 			{
-				return VT.GetCodecLevel(&this, dstLevel);
+				return VT.GetCodecLevel(ref this, dstLevel);
 			}
 			public uint32 GetResolutionListCount() mut
 			{
-				return VT.GetResolutionListCount(&this);
+				return VT.GetResolutionListCount(ref this);
 			}
 			public HRESULT GetResolutionList(uint32 ResolutionsListCount, D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC* pResolutionList) mut
 			{
-				return VT.GetResolutionList(&this, ResolutionsListCount, pResolutionList);
+				return VT.GetResolutionList(ref this, ResolutionsListCount, pResolutionList);
 			}
 			[CRepr]
 			public struct VTable : ID3D12Pageable.VTable
 			{
-				public new function uint32(ID3D12VideoEncoderHeap *self) GetNodeMask;
-				public new function D3D12_VIDEO_ENCODER_HEAP_FLAGS(ID3D12VideoEncoderHeap *self) GetEncoderHeapFlags;
-				public new function D3D12_VIDEO_ENCODER_CODEC(ID3D12VideoEncoderHeap *self) GetCodec;
-				public new function HRESULT(ID3D12VideoEncoderHeap *self, D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) GetCodecProfile;
-				public new function HRESULT(ID3D12VideoEncoderHeap *self, D3D12_VIDEO_ENCODER_LEVEL_SETTING dstLevel) GetCodecLevel;
-				public new function uint32(ID3D12VideoEncoderHeap *self) GetResolutionListCount;
-				public new function HRESULT(ID3D12VideoEncoderHeap *self, uint32 ResolutionsListCount, D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC* pResolutionList) GetResolutionList;
+				public new function uint32(ref ID3D12VideoEncoderHeap self) GetNodeMask;
+				public new function D3D12_VIDEO_ENCODER_HEAP_FLAGS(ref ID3D12VideoEncoderHeap self) GetEncoderHeapFlags;
+				public new function D3D12_VIDEO_ENCODER_CODEC(ref ID3D12VideoEncoderHeap self) GetCodec;
+				public new function HRESULT(ref ID3D12VideoEncoderHeap self, D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile) GetCodecProfile;
+				public new function HRESULT(ref ID3D12VideoEncoderHeap self, D3D12_VIDEO_ENCODER_LEVEL_SETTING dstLevel) GetCodecLevel;
+				public new function uint32(ref ID3D12VideoEncoderHeap self) GetResolutionListCount;
+				public new function HRESULT(ref ID3D12VideoEncoderHeap self, uint32 ResolutionsListCount, D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC* pResolutionList) GetResolutionList;
 			}
 		}
 		[CRepr]
@@ -9325,19 +9325,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateVideoEncoder(D3D12_VIDEO_ENCODER_DESC* pDesc, Guid* riid, void** ppVideoEncoder) mut
+			public HRESULT CreateVideoEncoder(in D3D12_VIDEO_ENCODER_DESC pDesc, in Guid riid, void** ppVideoEncoder) mut
 			{
-				return VT.CreateVideoEncoder(&this, pDesc, riid, ppVideoEncoder);
+				return VT.CreateVideoEncoder(ref this, pDesc, riid, ppVideoEncoder);
 			}
-			public HRESULT CreateVideoEncoderHeap(D3D12_VIDEO_ENCODER_HEAP_DESC* pDesc, Guid* riid, void** ppVideoEncoderHeap) mut
+			public HRESULT CreateVideoEncoderHeap(in D3D12_VIDEO_ENCODER_HEAP_DESC pDesc, in Guid riid, void** ppVideoEncoderHeap) mut
 			{
-				return VT.CreateVideoEncoderHeap(&this, pDesc, riid, ppVideoEncoderHeap);
+				return VT.CreateVideoEncoderHeap(ref this, pDesc, riid, ppVideoEncoderHeap);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoDevice2.VTable
 			{
-				public new function HRESULT(ID3D12VideoDevice3 *self, D3D12_VIDEO_ENCODER_DESC* pDesc, Guid* riid, void** ppVideoEncoder) CreateVideoEncoder;
-				public new function HRESULT(ID3D12VideoDevice3 *self, D3D12_VIDEO_ENCODER_HEAP_DESC* pDesc, Guid* riid, void** ppVideoEncoderHeap) CreateVideoEncoderHeap;
+				public new function HRESULT(ref ID3D12VideoDevice3 self, in D3D12_VIDEO_ENCODER_DESC pDesc, in Guid riid, void** ppVideoEncoder) CreateVideoEncoder;
+				public new function HRESULT(ref ID3D12VideoDevice3 self, in D3D12_VIDEO_ENCODER_HEAP_DESC pDesc, in Guid riid, void** ppVideoEncoderHeap) CreateVideoEncoderHeap;
 			}
 		}
 		[CRepr]
@@ -9347,19 +9347,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void EncodeFrame(ID3D12VideoEncoder* pEncoder, ID3D12VideoEncoderHeap* pHeap, D3D12_VIDEO_ENCODER_ENCODEFRAME_INPUT_ARGUMENTS* pInputArguments, D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS* pOutputArguments) mut
+			public void EncodeFrame(ref ID3D12VideoEncoder pEncoder, ref ID3D12VideoEncoderHeap pHeap, in D3D12_VIDEO_ENCODER_ENCODEFRAME_INPUT_ARGUMENTS pInputArguments, in D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS pOutputArguments) mut
 			{
-				VT.EncodeFrame(&this, pEncoder, pHeap, pInputArguments, pOutputArguments);
+				VT.EncodeFrame(ref this, ref pEncoder, ref pHeap, pInputArguments, pOutputArguments);
 			}
-			public void ResolveEncoderOutputMetadata(D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS* pInputArguments, D3D12_VIDEO_ENCODER_RESOLVE_METADATA_OUTPUT_ARGUMENTS* pOutputArguments) mut
+			public void ResolveEncoderOutputMetadata(in D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS pInputArguments, in D3D12_VIDEO_ENCODER_RESOLVE_METADATA_OUTPUT_ARGUMENTS pOutputArguments) mut
 			{
-				VT.ResolveEncoderOutputMetadata(&this, pInputArguments, pOutputArguments);
+				VT.ResolveEncoderOutputMetadata(ref this, pInputArguments, pOutputArguments);
 			}
 			[CRepr]
 			public struct VTable : ID3D12VideoEncodeCommandList1.VTable
 			{
-				public new function void(ID3D12VideoEncodeCommandList2 *self, ID3D12VideoEncoder* pEncoder, ID3D12VideoEncoderHeap* pHeap, D3D12_VIDEO_ENCODER_ENCODEFRAME_INPUT_ARGUMENTS* pInputArguments, D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS* pOutputArguments) EncodeFrame;
-				public new function void(ID3D12VideoEncodeCommandList2 *self, D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS* pInputArguments, D3D12_VIDEO_ENCODER_RESOLVE_METADATA_OUTPUT_ARGUMENTS* pOutputArguments) ResolveEncoderOutputMetadata;
+				public new function void(ref ID3D12VideoEncodeCommandList2 self, ref ID3D12VideoEncoder pEncoder, ref ID3D12VideoEncoderHeap pHeap, in D3D12_VIDEO_ENCODER_ENCODEFRAME_INPUT_ARGUMENTS pInputArguments, in D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS pOutputArguments) EncodeFrame;
+				public new function void(ref ID3D12VideoEncodeCommandList2 self, in D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS pInputArguments, in D3D12_VIDEO_ENCODER_RESOLVE_METADATA_OUTPUT_ARGUMENTS pOutputArguments) ResolveEncoderOutputMetadata;
 			}
 		}
 		[CRepr]
@@ -9371,12 +9371,12 @@ namespace Win32
 			
 			public HRESULT SetIdentifier(Guid guidValidationID) mut
 			{
-				return VT.SetIdentifier(&this, guidValidationID);
+				return VT.SetIdentifier(ref this, guidValidationID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMValidate *self, Guid guidValidationID) SetIdentifier;
+				public new function HRESULT(ref IWMValidate self, Guid guidValidationID) SetIdentifier;
 			}
 		}
 		[CRepr]
@@ -9386,14 +9386,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIdentifier(Guid guidLicensorID, uint8* pbEphemeron, uint32 cbEphemeron, uint8** ppbBlobValidationID, uint32* pcbBlobSize) mut
+			public HRESULT GetIdentifier(Guid guidLicensorID, uint8* pbEphemeron, uint32 cbEphemeron, uint8** ppbBlobValidationID, out uint32 pcbBlobSize) mut
 			{
-				return VT.GetIdentifier(&this, guidLicensorID, pbEphemeron, cbEphemeron, ppbBlobValidationID, pcbBlobSize);
+				return VT.GetIdentifier(ref this, guidLicensorID, pbEphemeron, cbEphemeron, ppbBlobValidationID, out pcbBlobSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IValidateBinding *self, Guid guidLicensorID, uint8* pbEphemeron, uint32 cbEphemeron, uint8** ppbBlobValidationID, uint32* pcbBlobSize) GetIdentifier;
+				public new function HRESULT(ref IValidateBinding self, Guid guidLicensorID, uint8* pbEphemeron, uint32 cbEphemeron, uint8** ppbBlobValidationID, out uint32 pcbBlobSize) GetIdentifier;
 			}
 		}
 		[CRepr]
@@ -9405,17 +9405,17 @@ namespace Win32
 			
 			public HRESULT SetHurryup(int32 lHurryup) mut
 			{
-				return VT.SetHurryup(&this, lHurryup);
+				return VT.SetHurryup(ref this, lHurryup);
 			}
-			public HRESULT GetHurryup(int32* plHurryup) mut
+			public HRESULT GetHurryup(out int32 plHurryup) mut
 			{
-				return VT.GetHurryup(&this, plHurryup);
+				return VT.GetHurryup(ref this, out plHurryup);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMVideoDecoderHurryup *self, int32 lHurryup) SetHurryup;
-				public new function HRESULT(IWMVideoDecoderHurryup *self, int32* plHurryup) GetHurryup;
+				public new function HRESULT(ref IWMVideoDecoderHurryup self, int32 lHurryup) SetHurryup;
+				public new function HRESULT(ref IWMVideoDecoderHurryup self, out int32 plHurryup) GetHurryup;
 			}
 		}
 		[CRepr]
@@ -9427,12 +9427,12 @@ namespace Win32
 			
 			public HRESULT SetKeyFrame() mut
 			{
-				return VT.SetKeyFrame(&this);
+				return VT.SetKeyFrame(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMVideoForceKeyFrame *self) SetKeyFrame;
+				public new function HRESULT(ref IWMVideoForceKeyFrame self) SetKeyFrame;
 			}
 		}
 		[CRepr]
@@ -9442,19 +9442,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(DMO_MEDIA_TYPE* pmt, uint32 cchLength, char16* szName, uint32* pcchLength) mut
+			public HRESULT GetName(out DMO_MEDIA_TYPE pmt, uint32 cchLength, char16* szName, out uint32 pcchLength) mut
 			{
-				return VT.GetName(&this, pmt, cchLength, szName, pcchLength);
+				return VT.GetName(ref this, out pmt, cchLength, szName, out pcchLength);
 			}
-			public HRESULT GetDescription(DMO_MEDIA_TYPE* pmt, uint32 cchLength, char16* szDescription, uint32* pcchLength) mut
+			public HRESULT GetDescription(out DMO_MEDIA_TYPE pmt, uint32 cchLength, char16* szDescription, out uint32 pcchLength) mut
 			{
-				return VT.GetDescription(&this, pmt, cchLength, szDescription, pcchLength);
+				return VT.GetDescription(ref this, out pmt, cchLength, szDescription, out pcchLength);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMCodecStrings *self, DMO_MEDIA_TYPE* pmt, uint32 cchLength, char16* szName, uint32* pcchLength) GetName;
-				public new function HRESULT(IWMCodecStrings *self, DMO_MEDIA_TYPE* pmt, uint32 cchLength, char16* szDescription, uint32* pcchLength) GetDescription;
+				public new function HRESULT(ref IWMCodecStrings self, out DMO_MEDIA_TYPE pmt, uint32 cchLength, char16* szName, out uint32 pcchLength) GetName;
+				public new function HRESULT(ref IWMCodecStrings self, out DMO_MEDIA_TYPE pmt, uint32 cchLength, char16* szDescription, out uint32 pcchLength) GetDescription;
 			}
 		}
 		[CRepr]
@@ -9464,19 +9464,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFormatProp(DMO_MEDIA_TYPE* pmt, PWSTR pszName, WMT_PROP_DATATYPE* pType, uint8* pValue, uint32* pdwSize) mut
+			public HRESULT GetFormatProp(out DMO_MEDIA_TYPE pmt, PWSTR pszName, out WMT_PROP_DATATYPE pType, out uint8 pValue, out uint32 pdwSize) mut
 			{
-				return VT.GetFormatProp(&this, pmt, pszName, pType, pValue, pdwSize);
+				return VT.GetFormatProp(ref this, out pmt, pszName, out pType, out pValue, out pdwSize);
 			}
-			public HRESULT GetCodecProp(uint32 dwFormat, PWSTR pszName, WMT_PROP_DATATYPE* pType, uint8* pValue, uint32* pdwSize) mut
+			public HRESULT GetCodecProp(uint32 dwFormat, PWSTR pszName, out WMT_PROP_DATATYPE pType, out uint8 pValue, out uint32 pdwSize) mut
 			{
-				return VT.GetCodecProp(&this, dwFormat, pszName, pType, pValue, pdwSize);
+				return VT.GetCodecProp(ref this, dwFormat, pszName, out pType, out pValue, out pdwSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMCodecProps *self, DMO_MEDIA_TYPE* pmt, PWSTR pszName, WMT_PROP_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetFormatProp;
-				public new function HRESULT(IWMCodecProps *self, uint32 dwFormat, PWSTR pszName, WMT_PROP_DATATYPE* pType, uint8* pValue, uint32* pdwSize) GetCodecProp;
+				public new function HRESULT(ref IWMCodecProps self, out DMO_MEDIA_TYPE pmt, PWSTR pszName, out WMT_PROP_DATATYPE pType, out uint8 pValue, out uint32 pdwSize) GetFormatProp;
+				public new function HRESULT(ref IWMCodecProps self, uint32 dwFormat, PWSTR pszName, out WMT_PROP_DATATYPE pType, out uint8 pValue, out uint32 pdwSize) GetCodecProp;
 			}
 		}
 		[CRepr]
@@ -9488,27 +9488,27 @@ namespace Win32
 			
 			public HRESULT SetBufferSizeBits(uint32 ulBufferSize) mut
 			{
-				return VT.SetBufferSizeBits(&this, ulBufferSize);
+				return VT.SetBufferSizeBits(ref this, ulBufferSize);
 			}
-			public HRESULT GetBufferSizeBits(uint32* pulBufferSize) mut
+			public HRESULT GetBufferSizeBits(out uint32 pulBufferSize) mut
 			{
-				return VT.GetBufferSizeBits(&this, pulBufferSize);
+				return VT.GetBufferSizeBits(ref this, out pulBufferSize);
 			}
 			public HRESULT SetBufferFullnessBits(uint32 ulBufferFullness) mut
 			{
-				return VT.SetBufferFullnessBits(&this, ulBufferFullness);
+				return VT.SetBufferFullnessBits(ref this, ulBufferFullness);
 			}
-			public HRESULT GetBufferFullnessBits(uint32* pulBufferFullness) mut
+			public HRESULT GetBufferFullnessBits(out uint32 pulBufferFullness) mut
 			{
-				return VT.GetBufferFullnessBits(&this, pulBufferFullness);
+				return VT.GetBufferFullnessBits(ref this, out pulBufferFullness);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMCodecLeakyBucket *self, uint32 ulBufferSize) SetBufferSizeBits;
-				public new function HRESULT(IWMCodecLeakyBucket *self, uint32* pulBufferSize) GetBufferSizeBits;
-				public new function HRESULT(IWMCodecLeakyBucket *self, uint32 ulBufferFullness) SetBufferFullnessBits;
-				public new function HRESULT(IWMCodecLeakyBucket *self, uint32* pulBufferFullness) GetBufferFullnessBits;
+				public new function HRESULT(ref IWMCodecLeakyBucket self, uint32 ulBufferSize) SetBufferSizeBits;
+				public new function HRESULT(ref IWMCodecLeakyBucket self, out uint32 pulBufferSize) GetBufferSizeBits;
+				public new function HRESULT(ref IWMCodecLeakyBucket self, uint32 ulBufferFullness) SetBufferFullnessBits;
+				public new function HRESULT(ref IWMCodecLeakyBucket self, out uint32 pulBufferFullness) GetBufferFullnessBits;
 			}
 		}
 		[CRepr]
@@ -9518,14 +9518,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNextOutputTime(int64* prtTime) mut
+			public HRESULT GetNextOutputTime(out int64 prtTime) mut
 			{
-				return VT.GetNextOutputTime(&this, prtTime);
+				return VT.GetNextOutputTime(ref this, out prtTime);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMCodecOutputTimestamp *self, int64* prtTime) GetNextOutputTime;
+				public new function HRESULT(ref IWMCodecOutputTimestamp self, out int64 prtTime) GetNextOutputTime;
 			}
 		}
 		[CRepr]
@@ -9535,24 +9535,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetReconstructedVideoFrameSize(uint32* pdwSize) mut
+			public HRESULT GetReconstructedVideoFrameSize(out uint32 pdwSize) mut
 			{
-				return VT.GetReconstructedVideoFrameSize(&this, pdwSize);
+				return VT.GetReconstructedVideoFrameSize(ref this, out pdwSize);
 			}
-			public HRESULT GetReconstructedVideoFrame(IMediaBuffer* pBuf) mut
+			public HRESULT GetReconstructedVideoFrame(ref IMediaBuffer pBuf) mut
 			{
-				return VT.GetReconstructedVideoFrame(&this, pBuf);
+				return VT.GetReconstructedVideoFrame(ref this, ref pBuf);
 			}
-			public HRESULT SetReconstructedVideoFrame(IMediaBuffer* pBuf) mut
+			public HRESULT SetReconstructedVideoFrame(ref IMediaBuffer pBuf) mut
 			{
-				return VT.SetReconstructedVideoFrame(&this, pBuf);
+				return VT.SetReconstructedVideoFrame(ref this, ref pBuf);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMVideoDecoderReconBuffer *self, uint32* pdwSize) GetReconstructedVideoFrameSize;
-				public new function HRESULT(IWMVideoDecoderReconBuffer *self, IMediaBuffer* pBuf) GetReconstructedVideoFrame;
-				public new function HRESULT(IWMVideoDecoderReconBuffer *self, IMediaBuffer* pBuf) SetReconstructedVideoFrame;
+				public new function HRESULT(ref IWMVideoDecoderReconBuffer self, out uint32 pdwSize) GetReconstructedVideoFrameSize;
+				public new function HRESULT(ref IWMVideoDecoderReconBuffer self, ref IMediaBuffer pBuf) GetReconstructedVideoFrame;
+				public new function HRESULT(ref IWMVideoDecoderReconBuffer self, ref IMediaBuffer pBuf) SetReconstructedVideoFrame;
 			}
 		}
 		[CRepr]
@@ -9562,19 +9562,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPartialOutputType(DMO_MEDIA_TYPE* pmt) mut
+			public HRESULT SetPartialOutputType(out DMO_MEDIA_TYPE pmt) mut
 			{
-				return VT.SetPartialOutputType(&this, pmt);
+				return VT.SetPartialOutputType(ref this, out pmt);
 			}
-			public HRESULT GetPrivateData(uint8* pbData, uint32* pcbData) mut
+			public HRESULT GetPrivateData(out uint8 pbData, out uint32 pcbData) mut
 			{
-				return VT.GetPrivateData(&this, pbData, pcbData);
+				return VT.GetPrivateData(ref this, out pbData, out pcbData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMCodecPrivateData *self, DMO_MEDIA_TYPE* pmt) SetPartialOutputType;
-				public new function HRESULT(IWMCodecPrivateData *self, uint8* pbData, uint32* pcbData) GetPrivateData;
+				public new function HRESULT(ref IWMCodecPrivateData self, out DMO_MEDIA_TYPE pmt) SetPartialOutputType;
+				public new function HRESULT(ref IWMCodecPrivateData self, out uint8 pbData, out uint32 pcbData) GetPrivateData;
 			}
 		}
 		[CRepr]
@@ -9586,12 +9586,12 @@ namespace Win32
 			
 			public HRESULT SetUseSampleExtensions(BOOL fUseExtensions) mut
 			{
-				return VT.SetUseSampleExtensions(&this, fUseExtensions);
+				return VT.SetUseSampleExtensions(ref this, fUseExtensions);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMSampleExtensionSupport *self, BOOL fUseExtensions) SetUseSampleExtensions;
+				public new function HRESULT(ref IWMSampleExtensionSupport self, BOOL fUseExtensions) SetUseSampleExtensions;
 			}
 		}
 		[CRepr]
@@ -9603,17 +9603,17 @@ namespace Win32
 			
 			public HRESULT SetHalfFilterLength(int32 lhalfFilterLen) mut
 			{
-				return VT.SetHalfFilterLength(&this, lhalfFilterLen);
+				return VT.SetHalfFilterLength(ref this, lhalfFilterLen);
 			}
-			public HRESULT SetUserChannelMtx(float* userChannelMtx) mut
+			public HRESULT SetUserChannelMtx(out float userChannelMtx) mut
 			{
-				return VT.SetUserChannelMtx(&this, userChannelMtx);
+				return VT.SetUserChannelMtx(ref this, out userChannelMtx);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMResamplerProps *self, int32 lhalfFilterLen) SetHalfFilterLength;
-				public new function HRESULT(IWMResamplerProps *self, float* userChannelMtx) SetUserChannelMtx;
+				public new function HRESULT(ref IWMResamplerProps self, int32 lhalfFilterLen) SetHalfFilterLength;
+				public new function HRESULT(ref IWMResamplerProps self, out float userChannelMtx) SetUserChannelMtx;
 			}
 		}
 		[CRepr]
@@ -9625,32 +9625,32 @@ namespace Win32
 			
 			public HRESULT SetResizerQuality(int32 lquality) mut
 			{
-				return VT.SetResizerQuality(&this, lquality);
+				return VT.SetResizerQuality(ref this, lquality);
 			}
 			public HRESULT SetInterlaceMode(int32 lmode) mut
 			{
-				return VT.SetInterlaceMode(&this, lmode);
+				return VT.SetInterlaceMode(ref this, lmode);
 			}
 			public HRESULT SetClipRegion(int32 lClipOriXSrc, int32 lClipOriYSrc, int32 lClipWidthSrc, int32 lClipHeightSrc) mut
 			{
-				return VT.SetClipRegion(&this, lClipOriXSrc, lClipOriYSrc, lClipWidthSrc, lClipHeightSrc);
+				return VT.SetClipRegion(ref this, lClipOriXSrc, lClipOriYSrc, lClipWidthSrc, lClipHeightSrc);
 			}
 			public HRESULT SetFullCropRegion(int32 lClipOriXSrc, int32 lClipOriYSrc, int32 lClipWidthSrc, int32 lClipHeightSrc, int32 lClipOriXDst, int32 lClipOriYDst, int32 lClipWidthDst, int32 lClipHeightDst) mut
 			{
-				return VT.SetFullCropRegion(&this, lClipOriXSrc, lClipOriYSrc, lClipWidthSrc, lClipHeightSrc, lClipOriXDst, lClipOriYDst, lClipWidthDst, lClipHeightDst);
+				return VT.SetFullCropRegion(ref this, lClipOriXSrc, lClipOriYSrc, lClipWidthSrc, lClipHeightSrc, lClipOriXDst, lClipOriYDst, lClipWidthDst, lClipHeightDst);
 			}
-			public HRESULT GetFullCropRegion(int32* lClipOriXSrc, int32* lClipOriYSrc, int32* lClipWidthSrc, int32* lClipHeightSrc, int32* lClipOriXDst, int32* lClipOriYDst, int32* lClipWidthDst, int32* lClipHeightDst) mut
+			public HRESULT GetFullCropRegion(out int32 lClipOriXSrc, out int32 lClipOriYSrc, out int32 lClipWidthSrc, out int32 lClipHeightSrc, out int32 lClipOriXDst, out int32 lClipOriYDst, out int32 lClipWidthDst, out int32 lClipHeightDst) mut
 			{
-				return VT.GetFullCropRegion(&this, lClipOriXSrc, lClipOriYSrc, lClipWidthSrc, lClipHeightSrc, lClipOriXDst, lClipOriYDst, lClipWidthDst, lClipHeightDst);
+				return VT.GetFullCropRegion(ref this, out lClipOriXSrc, out lClipOriYSrc, out lClipWidthSrc, out lClipHeightSrc, out lClipOriXDst, out lClipOriYDst, out lClipWidthDst, out lClipHeightDst);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMResizerProps *self, int32 lquality) SetResizerQuality;
-				public new function HRESULT(IWMResizerProps *self, int32 lmode) SetInterlaceMode;
-				public new function HRESULT(IWMResizerProps *self, int32 lClipOriXSrc, int32 lClipOriYSrc, int32 lClipWidthSrc, int32 lClipHeightSrc) SetClipRegion;
-				public new function HRESULT(IWMResizerProps *self, int32 lClipOriXSrc, int32 lClipOriYSrc, int32 lClipWidthSrc, int32 lClipHeightSrc, int32 lClipOriXDst, int32 lClipOriYDst, int32 lClipWidthDst, int32 lClipHeightDst) SetFullCropRegion;
-				public new function HRESULT(IWMResizerProps *self, int32* lClipOriXSrc, int32* lClipOriYSrc, int32* lClipWidthSrc, int32* lClipHeightSrc, int32* lClipOriXDst, int32* lClipOriYDst, int32* lClipWidthDst, int32* lClipHeightDst) GetFullCropRegion;
+				public new function HRESULT(ref IWMResizerProps self, int32 lquality) SetResizerQuality;
+				public new function HRESULT(ref IWMResizerProps self, int32 lmode) SetInterlaceMode;
+				public new function HRESULT(ref IWMResizerProps self, int32 lClipOriXSrc, int32 lClipOriYSrc, int32 lClipWidthSrc, int32 lClipHeightSrc) SetClipRegion;
+				public new function HRESULT(ref IWMResizerProps self, int32 lClipOriXSrc, int32 lClipOriYSrc, int32 lClipWidthSrc, int32 lClipHeightSrc, int32 lClipOriXDst, int32 lClipOriYDst, int32 lClipWidthDst, int32 lClipHeightDst) SetFullCropRegion;
+				public new function HRESULT(ref IWMResizerProps self, out int32 lClipOriXSrc, out int32 lClipOriYSrc, out int32 lClipWidthSrc, out int32 lClipHeightSrc, out int32 lClipOriXDst, out int32 lClipOriYDst, out int32 lClipWidthDst, out int32 lClipHeightDst) GetFullCropRegion;
 			}
 		}
 		[CRepr]
@@ -9662,12 +9662,12 @@ namespace Win32
 			
 			public HRESULT SetColorLegalizerQuality(int32 lquality) mut
 			{
-				return VT.SetColorLegalizerQuality(&this, lquality);
+				return VT.SetColorLegalizerQuality(ref this, lquality);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMColorLegalizerProps *self, int32 lquality) SetColorLegalizerQuality;
+				public new function HRESULT(ref IWMColorLegalizerProps self, int32 lquality) SetColorLegalizerQuality;
 			}
 		}
 		[CRepr]
@@ -9679,22 +9679,22 @@ namespace Win32
 			
 			public HRESULT SetProcessType(int32 iProcessType) mut
 			{
-				return VT.SetProcessType(&this, iProcessType);
+				return VT.SetProcessType(ref this, iProcessType);
 			}
 			public HRESULT SetInitInverseTeleCinePattern(int32 iInitPattern) mut
 			{
-				return VT.SetInitInverseTeleCinePattern(&this, iInitPattern);
+				return VT.SetInitInverseTeleCinePattern(ref this, iInitPattern);
 			}
 			public HRESULT SetLastFrame() mut
 			{
-				return VT.SetLastFrame(&this);
+				return VT.SetLastFrame(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMInterlaceProps *self, int32 iProcessType) SetProcessType;
-				public new function HRESULT(IWMInterlaceProps *self, int32 iInitPattern) SetInitInverseTeleCinePattern;
-				public new function HRESULT(IWMInterlaceProps *self) SetLastFrame;
+				public new function HRESULT(ref IWMInterlaceProps self, int32 iProcessType) SetProcessType;
+				public new function HRESULT(ref IWMInterlaceProps self, int32 iInitPattern) SetInitInverseTeleCinePattern;
+				public new function HRESULT(ref IWMInterlaceProps self) SetLastFrame;
 			}
 		}
 		[CRepr]
@@ -9706,27 +9706,27 @@ namespace Win32
 			
 			public HRESULT SetFrameRateIn(int32 lFrameRate, int32 lScale) mut
 			{
-				return VT.SetFrameRateIn(&this, lFrameRate, lScale);
+				return VT.SetFrameRateIn(ref this, lFrameRate, lScale);
 			}
 			public HRESULT SetFrameRateOut(int32 lFrameRate, int32 lScale) mut
 			{
-				return VT.SetFrameRateOut(&this, lFrameRate, lScale);
+				return VT.SetFrameRateOut(ref this, lFrameRate, lScale);
 			}
 			public HRESULT SetFrameInterpEnabled(BOOL bFIEnabled) mut
 			{
-				return VT.SetFrameInterpEnabled(&this, bFIEnabled);
+				return VT.SetFrameInterpEnabled(ref this, bFIEnabled);
 			}
 			public HRESULT SetComplexityLevel(int32 iComplexity) mut
 			{
-				return VT.SetComplexityLevel(&this, iComplexity);
+				return VT.SetComplexityLevel(ref this, iComplexity);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMFrameInterpProps *self, int32 lFrameRate, int32 lScale) SetFrameRateIn;
-				public new function HRESULT(IWMFrameInterpProps *self, int32 lFrameRate, int32 lScale) SetFrameRateOut;
-				public new function HRESULT(IWMFrameInterpProps *self, BOOL bFIEnabled) SetFrameInterpEnabled;
-				public new function HRESULT(IWMFrameInterpProps *self, int32 iComplexity) SetComplexityLevel;
+				public new function HRESULT(ref IWMFrameInterpProps self, int32 lFrameRate, int32 lScale) SetFrameRateIn;
+				public new function HRESULT(ref IWMFrameInterpProps self, int32 lFrameRate, int32 lScale) SetFrameRateOut;
+				public new function HRESULT(ref IWMFrameInterpProps self, BOOL bFIEnabled) SetFrameInterpEnabled;
+				public new function HRESULT(ref IWMFrameInterpProps self, int32 iComplexity) SetComplexityLevel;
 			}
 		}
 		[CRepr]
@@ -9738,17 +9738,17 @@ namespace Win32
 			
 			public HRESULT SetMode(int32 lMode) mut
 			{
-				return VT.SetMode(&this, lMode);
+				return VT.SetMode(ref this, lMode);
 			}
 			public HRESULT SetFullCroppingParam(int32 lSrcCropLeft, int32 lSrcCropTop, int32 lDstCropLeft, int32 lDstCropTop, int32 lCropWidth, int32 lCropHeight) mut
 			{
-				return VT.SetFullCroppingParam(&this, lSrcCropLeft, lSrcCropTop, lDstCropLeft, lDstCropTop, lCropWidth, lCropHeight);
+				return VT.SetFullCroppingParam(ref this, lSrcCropLeft, lSrcCropTop, lDstCropLeft, lDstCropTop, lCropWidth, lCropHeight);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IWMColorConvProps *self, int32 lMode) SetMode;
-				public new function HRESULT(IWMColorConvProps *self, int32 lSrcCropLeft, int32 lSrcCropTop, int32 lDstCropLeft, int32 lDstCropTop, int32 lCropWidth, int32 lCropHeight) SetFullCroppingParam;
+				public new function HRESULT(ref IWMColorConvProps self, int32 lMode) SetMode;
+				public new function HRESULT(ref IWMColorConvProps self, int32 lSrcCropLeft, int32 lSrcCropTop, int32 lDstCropLeft, int32 lDstCropTop, int32 lCropWidth, int32 lCropHeight) SetFullCroppingParam;
 			}
 		}
 		[CRepr]
@@ -9760,47 +9760,47 @@ namespace Win32
 			
 			public HRESULT SetTitle(PWSTR pwszTitle) mut
 			{
-				return VT.SetTitle(&this, pwszTitle);
+				return VT.SetTitle(ref this, pwszTitle);
 			}
-			public HRESULT GetTitle(uint16* pwTitleSize, char16* pwszTitle) mut
+			public HRESULT GetTitle(out uint16 pwTitleSize, char16* pwszTitle) mut
 			{
-				return VT.GetTitle(&this, pwTitleSize, pwszTitle);
+				return VT.GetTitle(ref this, out pwTitleSize, pwszTitle);
 			}
-			public HRESULT SetDescriptor(TOC_ENTRY_DESCRIPTOR* pDescriptor) mut
+			public HRESULT SetDescriptor(out TOC_ENTRY_DESCRIPTOR pDescriptor) mut
 			{
-				return VT.SetDescriptor(&this, pDescriptor);
+				return VT.SetDescriptor(ref this, out pDescriptor);
 			}
-			public HRESULT GetDescriptor(TOC_ENTRY_DESCRIPTOR* pDescriptor) mut
+			public HRESULT GetDescriptor(out TOC_ENTRY_DESCRIPTOR pDescriptor) mut
 			{
-				return VT.GetDescriptor(&this, pDescriptor);
+				return VT.GetDescriptor(ref this, out pDescriptor);
 			}
-			public HRESULT SetSubEntries(uint32 dwNumSubEntries, uint16* pwSubEntryIndices) mut
+			public HRESULT SetSubEntries(uint32 dwNumSubEntries, out uint16 pwSubEntryIndices) mut
 			{
-				return VT.SetSubEntries(&this, dwNumSubEntries, pwSubEntryIndices);
+				return VT.SetSubEntries(ref this, dwNumSubEntries, out pwSubEntryIndices);
 			}
-			public HRESULT GetSubEntries(uint32* pdwNumSubEntries, uint16* pwSubEntryIndices) mut
+			public HRESULT GetSubEntries(out uint32 pdwNumSubEntries, out uint16 pwSubEntryIndices) mut
 			{
-				return VT.GetSubEntries(&this, pdwNumSubEntries, pwSubEntryIndices);
+				return VT.GetSubEntries(ref this, out pdwNumSubEntries, out pwSubEntryIndices);
 			}
-			public HRESULT SetDescriptionData(uint32 dwDescriptionDataSize, uint8* pbtDescriptionData, Guid* pguidType) mut
+			public HRESULT SetDescriptionData(uint32 dwDescriptionDataSize, out uint8 pbtDescriptionData, out Guid pguidType) mut
 			{
-				return VT.SetDescriptionData(&this, dwDescriptionDataSize, pbtDescriptionData, pguidType);
+				return VT.SetDescriptionData(ref this, dwDescriptionDataSize, out pbtDescriptionData, out pguidType);
 			}
-			public HRESULT GetDescriptionData(uint32* pdwDescriptionDataSize, uint8* pbtDescriptionData, Guid* pGuidType) mut
+			public HRESULT GetDescriptionData(out uint32 pdwDescriptionDataSize, out uint8 pbtDescriptionData, out Guid pGuidType) mut
 			{
-				return VT.GetDescriptionData(&this, pdwDescriptionDataSize, pbtDescriptionData, pGuidType);
+				return VT.GetDescriptionData(ref this, out pdwDescriptionDataSize, out pbtDescriptionData, out pGuidType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITocEntry *self, PWSTR pwszTitle) SetTitle;
-				public new function HRESULT(ITocEntry *self, uint16* pwTitleSize, char16* pwszTitle) GetTitle;
-				public new function HRESULT(ITocEntry *self, TOC_ENTRY_DESCRIPTOR* pDescriptor) SetDescriptor;
-				public new function HRESULT(ITocEntry *self, TOC_ENTRY_DESCRIPTOR* pDescriptor) GetDescriptor;
-				public new function HRESULT(ITocEntry *self, uint32 dwNumSubEntries, uint16* pwSubEntryIndices) SetSubEntries;
-				public new function HRESULT(ITocEntry *self, uint32* pdwNumSubEntries, uint16* pwSubEntryIndices) GetSubEntries;
-				public new function HRESULT(ITocEntry *self, uint32 dwDescriptionDataSize, uint8* pbtDescriptionData, Guid* pguidType) SetDescriptionData;
-				public new function HRESULT(ITocEntry *self, uint32* pdwDescriptionDataSize, uint8* pbtDescriptionData, Guid* pGuidType) GetDescriptionData;
+				public new function HRESULT(ref ITocEntry self, PWSTR pwszTitle) SetTitle;
+				public new function HRESULT(ref ITocEntry self, out uint16 pwTitleSize, char16* pwszTitle) GetTitle;
+				public new function HRESULT(ref ITocEntry self, out TOC_ENTRY_DESCRIPTOR pDescriptor) SetDescriptor;
+				public new function HRESULT(ref ITocEntry self, out TOC_ENTRY_DESCRIPTOR pDescriptor) GetDescriptor;
+				public new function HRESULT(ref ITocEntry self, uint32 dwNumSubEntries, out uint16 pwSubEntryIndices) SetSubEntries;
+				public new function HRESULT(ref ITocEntry self, out uint32 pdwNumSubEntries, out uint16 pwSubEntryIndices) GetSubEntries;
+				public new function HRESULT(ref ITocEntry self, uint32 dwDescriptionDataSize, out uint8 pbtDescriptionData, out Guid pguidType) SetDescriptionData;
+				public new function HRESULT(ref ITocEntry self, out uint32 pdwDescriptionDataSize, out uint8 pbtDescriptionData, out Guid pGuidType) GetDescriptionData;
 			}
 		}
 		[CRepr]
@@ -9810,34 +9810,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEntryCount(uint32* pdwEntryCount) mut
+			public HRESULT GetEntryCount(out uint32 pdwEntryCount) mut
 			{
-				return VT.GetEntryCount(&this, pdwEntryCount);
+				return VT.GetEntryCount(ref this, out pdwEntryCount);
 			}
-			public HRESULT GetEntryByIndex(uint32 dwEntryIndex, ITocEntry** ppEntry) mut
+			public HRESULT GetEntryByIndex(uint32 dwEntryIndex, out ITocEntry* ppEntry) mut
 			{
-				return VT.GetEntryByIndex(&this, dwEntryIndex, ppEntry);
+				return VT.GetEntryByIndex(ref this, dwEntryIndex, out ppEntry);
 			}
-			public HRESULT AddEntry(ITocEntry* pEntry, uint32* pdwEntryIndex) mut
+			public HRESULT AddEntry(ref ITocEntry pEntry, out uint32 pdwEntryIndex) mut
 			{
-				return VT.AddEntry(&this, pEntry, pdwEntryIndex);
+				return VT.AddEntry(ref this, ref pEntry, out pdwEntryIndex);
 			}
-			public HRESULT AddEntryByIndex(uint32 dwEntryIndex, ITocEntry* pEntry) mut
+			public HRESULT AddEntryByIndex(uint32 dwEntryIndex, ref ITocEntry pEntry) mut
 			{
-				return VT.AddEntryByIndex(&this, dwEntryIndex, pEntry);
+				return VT.AddEntryByIndex(ref this, dwEntryIndex, ref pEntry);
 			}
 			public HRESULT RemoveEntryByIndex(uint32 dwEntryIndex) mut
 			{
-				return VT.RemoveEntryByIndex(&this, dwEntryIndex);
+				return VT.RemoveEntryByIndex(ref this, dwEntryIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITocEntryList *self, uint32* pdwEntryCount) GetEntryCount;
-				public new function HRESULT(ITocEntryList *self, uint32 dwEntryIndex, ITocEntry** ppEntry) GetEntryByIndex;
-				public new function HRESULT(ITocEntryList *self, ITocEntry* pEntry, uint32* pdwEntryIndex) AddEntry;
-				public new function HRESULT(ITocEntryList *self, uint32 dwEntryIndex, ITocEntry* pEntry) AddEntryByIndex;
-				public new function HRESULT(ITocEntryList *self, uint32 dwEntryIndex) RemoveEntryByIndex;
+				public new function HRESULT(ref ITocEntryList self, out uint32 pdwEntryCount) GetEntryCount;
+				public new function HRESULT(ref ITocEntryList self, uint32 dwEntryIndex, out ITocEntry* ppEntry) GetEntryByIndex;
+				public new function HRESULT(ref ITocEntryList self, ref ITocEntry pEntry, out uint32 pdwEntryIndex) AddEntry;
+				public new function HRESULT(ref ITocEntryList self, uint32 dwEntryIndex, ref ITocEntry pEntry) AddEntryByIndex;
+				public new function HRESULT(ref ITocEntryList self, uint32 dwEntryIndex) RemoveEntryByIndex;
 			}
 		}
 		[CRepr]
@@ -9847,64 +9847,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDescriptor(TOC_DESCRIPTOR* pDescriptor) mut
+			public HRESULT SetDescriptor(out TOC_DESCRIPTOR pDescriptor) mut
 			{
-				return VT.SetDescriptor(&this, pDescriptor);
+				return VT.SetDescriptor(ref this, out pDescriptor);
 			}
-			public HRESULT GetDescriptor(TOC_DESCRIPTOR* pDescriptor) mut
+			public HRESULT GetDescriptor(out TOC_DESCRIPTOR pDescriptor) mut
 			{
-				return VT.GetDescriptor(&this, pDescriptor);
+				return VT.GetDescriptor(ref this, out pDescriptor);
 			}
 			public HRESULT SetDescription(PWSTR pwszDescription) mut
 			{
-				return VT.SetDescription(&this, pwszDescription);
+				return VT.SetDescription(ref this, pwszDescription);
 			}
-			public HRESULT GetDescription(uint16* pwDescriptionSize, char16* pwszDescription) mut
+			public HRESULT GetDescription(out uint16 pwDescriptionSize, char16* pwszDescription) mut
 			{
-				return VT.GetDescription(&this, pwDescriptionSize, pwszDescription);
+				return VT.GetDescription(ref this, out pwDescriptionSize, pwszDescription);
 			}
-			public HRESULT SetContext(uint32 dwContextSize, uint8* pbtContext) mut
+			public HRESULT SetContext(uint32 dwContextSize, out uint8 pbtContext) mut
 			{
-				return VT.SetContext(&this, dwContextSize, pbtContext);
+				return VT.SetContext(ref this, dwContextSize, out pbtContext);
 			}
-			public HRESULT GetContext(uint32* pdwContextSize, uint8* pbtContext) mut
+			public HRESULT GetContext(out uint32 pdwContextSize, out uint8 pbtContext) mut
 			{
-				return VT.GetContext(&this, pdwContextSize, pbtContext);
+				return VT.GetContext(ref this, out pdwContextSize, out pbtContext);
 			}
-			public HRESULT GetEntryListCount(uint16* pwCount) mut
+			public HRESULT GetEntryListCount(out uint16 pwCount) mut
 			{
-				return VT.GetEntryListCount(&this, pwCount);
+				return VT.GetEntryListCount(ref this, out pwCount);
 			}
-			public HRESULT GetEntryListByIndex(uint16 wEntryListIndex, ITocEntryList** ppEntryList) mut
+			public HRESULT GetEntryListByIndex(uint16 wEntryListIndex, out ITocEntryList* ppEntryList) mut
 			{
-				return VT.GetEntryListByIndex(&this, wEntryListIndex, ppEntryList);
+				return VT.GetEntryListByIndex(ref this, wEntryListIndex, out ppEntryList);
 			}
-			public HRESULT AddEntryList(ITocEntryList* pEntryList, uint16* pwEntryListIndex) mut
+			public HRESULT AddEntryList(ref ITocEntryList pEntryList, out uint16 pwEntryListIndex) mut
 			{
-				return VT.AddEntryList(&this, pEntryList, pwEntryListIndex);
+				return VT.AddEntryList(ref this, ref pEntryList, out pwEntryListIndex);
 			}
-			public HRESULT AddEntryListByIndex(uint16 wEntryListIndex, ITocEntryList* pEntryList) mut
+			public HRESULT AddEntryListByIndex(uint16 wEntryListIndex, ref ITocEntryList pEntryList) mut
 			{
-				return VT.AddEntryListByIndex(&this, wEntryListIndex, pEntryList);
+				return VT.AddEntryListByIndex(ref this, wEntryListIndex, ref pEntryList);
 			}
 			public HRESULT RemoveEntryListByIndex(uint16 wEntryListIndex) mut
 			{
-				return VT.RemoveEntryListByIndex(&this, wEntryListIndex);
+				return VT.RemoveEntryListByIndex(ref this, wEntryListIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IToc *self, TOC_DESCRIPTOR* pDescriptor) SetDescriptor;
-				public new function HRESULT(IToc *self, TOC_DESCRIPTOR* pDescriptor) GetDescriptor;
-				public new function HRESULT(IToc *self, PWSTR pwszDescription) SetDescription;
-				public new function HRESULT(IToc *self, uint16* pwDescriptionSize, char16* pwszDescription) GetDescription;
-				public new function HRESULT(IToc *self, uint32 dwContextSize, uint8* pbtContext) SetContext;
-				public new function HRESULT(IToc *self, uint32* pdwContextSize, uint8* pbtContext) GetContext;
-				public new function HRESULT(IToc *self, uint16* pwCount) GetEntryListCount;
-				public new function HRESULT(IToc *self, uint16 wEntryListIndex, ITocEntryList** ppEntryList) GetEntryListByIndex;
-				public new function HRESULT(IToc *self, ITocEntryList* pEntryList, uint16* pwEntryListIndex) AddEntryList;
-				public new function HRESULT(IToc *self, uint16 wEntryListIndex, ITocEntryList* pEntryList) AddEntryListByIndex;
-				public new function HRESULT(IToc *self, uint16 wEntryListIndex) RemoveEntryListByIndex;
+				public new function HRESULT(ref IToc self, out TOC_DESCRIPTOR pDescriptor) SetDescriptor;
+				public new function HRESULT(ref IToc self, out TOC_DESCRIPTOR pDescriptor) GetDescriptor;
+				public new function HRESULT(ref IToc self, PWSTR pwszDescription) SetDescription;
+				public new function HRESULT(ref IToc self, out uint16 pwDescriptionSize, char16* pwszDescription) GetDescription;
+				public new function HRESULT(ref IToc self, uint32 dwContextSize, out uint8 pbtContext) SetContext;
+				public new function HRESULT(ref IToc self, out uint32 pdwContextSize, out uint8 pbtContext) GetContext;
+				public new function HRESULT(ref IToc self, out uint16 pwCount) GetEntryListCount;
+				public new function HRESULT(ref IToc self, uint16 wEntryListIndex, out ITocEntryList* ppEntryList) GetEntryListByIndex;
+				public new function HRESULT(ref IToc self, ref ITocEntryList pEntryList, out uint16 pwEntryListIndex) AddEntryList;
+				public new function HRESULT(ref IToc self, uint16 wEntryListIndex, ref ITocEntryList pEntryList) AddEntryListByIndex;
+				public new function HRESULT(ref IToc self, uint16 wEntryListIndex) RemoveEntryListByIndex;
 			}
 		}
 		[CRepr]
@@ -9914,34 +9914,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEntryCount(uint32* pdwEntryCount) mut
+			public HRESULT GetEntryCount(out uint32 pdwEntryCount) mut
 			{
-				return VT.GetEntryCount(&this, pdwEntryCount);
+				return VT.GetEntryCount(ref this, out pdwEntryCount);
 			}
-			public HRESULT GetEntryByIndex(uint32 dwEntryIndex, IToc** ppToc) mut
+			public HRESULT GetEntryByIndex(uint32 dwEntryIndex, out IToc* ppToc) mut
 			{
-				return VT.GetEntryByIndex(&this, dwEntryIndex, ppToc);
+				return VT.GetEntryByIndex(ref this, dwEntryIndex, out ppToc);
 			}
-			public HRESULT AddEntry(IToc* pToc, uint32* pdwEntryIndex) mut
+			public HRESULT AddEntry(ref IToc pToc, out uint32 pdwEntryIndex) mut
 			{
-				return VT.AddEntry(&this, pToc, pdwEntryIndex);
+				return VT.AddEntry(ref this, ref pToc, out pdwEntryIndex);
 			}
-			public HRESULT AddEntryByIndex(uint32 dwEntryIndex, IToc* pToc) mut
+			public HRESULT AddEntryByIndex(uint32 dwEntryIndex, ref IToc pToc) mut
 			{
-				return VT.AddEntryByIndex(&this, dwEntryIndex, pToc);
+				return VT.AddEntryByIndex(ref this, dwEntryIndex, ref pToc);
 			}
 			public HRESULT RemoveEntryByIndex(uint32 dwEntryIndex) mut
 			{
-				return VT.RemoveEntryByIndex(&this, dwEntryIndex);
+				return VT.RemoveEntryByIndex(ref this, dwEntryIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITocCollection *self, uint32* pdwEntryCount) GetEntryCount;
-				public new function HRESULT(ITocCollection *self, uint32 dwEntryIndex, IToc** ppToc) GetEntryByIndex;
-				public new function HRESULT(ITocCollection *self, IToc* pToc, uint32* pdwEntryIndex) AddEntry;
-				public new function HRESULT(ITocCollection *self, uint32 dwEntryIndex, IToc* pToc) AddEntryByIndex;
-				public new function HRESULT(ITocCollection *self, uint32 dwEntryIndex) RemoveEntryByIndex;
+				public new function HRESULT(ref ITocCollection self, out uint32 pdwEntryCount) GetEntryCount;
+				public new function HRESULT(ref ITocCollection self, uint32 dwEntryIndex, out IToc* ppToc) GetEntryByIndex;
+				public new function HRESULT(ref ITocCollection self, ref IToc pToc, out uint32 pdwEntryIndex) AddEntry;
+				public new function HRESULT(ref ITocCollection self, uint32 dwEntryIndex, ref IToc pToc) AddEntryByIndex;
+				public new function HRESULT(ref ITocCollection self, uint32 dwEntryIndex) RemoveEntryByIndex;
 			}
 		}
 		[CRepr]
@@ -9953,47 +9953,47 @@ namespace Win32
 			
 			public HRESULT Init(PWSTR pwszFileName) mut
 			{
-				return VT.Init(&this, pwszFileName);
+				return VT.Init(ref this, pwszFileName);
 			}
-			public HRESULT GetTocCount(TOC_POS_TYPE enumTocPosType, uint32* pdwTocCount) mut
+			public HRESULT GetTocCount(TOC_POS_TYPE enumTocPosType, out uint32 pdwTocCount) mut
 			{
-				return VT.GetTocCount(&this, enumTocPosType, pdwTocCount);
+				return VT.GetTocCount(ref this, enumTocPosType, out pdwTocCount);
 			}
-			public HRESULT GetTocByIndex(TOC_POS_TYPE enumTocPosType, uint32 dwTocIndex, IToc** ppToc) mut
+			public HRESULT GetTocByIndex(TOC_POS_TYPE enumTocPosType, uint32 dwTocIndex, out IToc* ppToc) mut
 			{
-				return VT.GetTocByIndex(&this, enumTocPosType, dwTocIndex, ppToc);
+				return VT.GetTocByIndex(ref this, enumTocPosType, dwTocIndex, out ppToc);
 			}
-			public HRESULT GetTocByType(TOC_POS_TYPE enumTocPosType, Guid guidTocType, ITocCollection** ppTocs) mut
+			public HRESULT GetTocByType(TOC_POS_TYPE enumTocPosType, Guid guidTocType, out ITocCollection* ppTocs) mut
 			{
-				return VT.GetTocByType(&this, enumTocPosType, guidTocType, ppTocs);
+				return VT.GetTocByType(ref this, enumTocPosType, guidTocType, out ppTocs);
 			}
-			public HRESULT AddToc(TOC_POS_TYPE enumTocPosType, IToc* pToc, uint32* pdwTocIndex) mut
+			public HRESULT AddToc(TOC_POS_TYPE enumTocPosType, ref IToc pToc, out uint32 pdwTocIndex) mut
 			{
-				return VT.AddToc(&this, enumTocPosType, pToc, pdwTocIndex);
+				return VT.AddToc(ref this, enumTocPosType, ref pToc, out pdwTocIndex);
 			}
 			public HRESULT RemoveTocByIndex(TOC_POS_TYPE enumTocPosType, uint32 dwTocIndex) mut
 			{
-				return VT.RemoveTocByIndex(&this, enumTocPosType, dwTocIndex);
+				return VT.RemoveTocByIndex(ref this, enumTocPosType, dwTocIndex);
 			}
 			public HRESULT RemoveTocByType(TOC_POS_TYPE enumTocPosType, Guid guidTocType) mut
 			{
-				return VT.RemoveTocByType(&this, enumTocPosType, guidTocType);
+				return VT.RemoveTocByType(ref this, enumTocPosType, guidTocType);
 			}
 			public HRESULT Commit() mut
 			{
-				return VT.Commit(&this);
+				return VT.Commit(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITocParser *self, PWSTR pwszFileName) Init;
-				public new function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, uint32* pdwTocCount) GetTocCount;
-				public new function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, uint32 dwTocIndex, IToc** ppToc) GetTocByIndex;
-				public new function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, Guid guidTocType, ITocCollection** ppTocs) GetTocByType;
-				public new function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, IToc* pToc, uint32* pdwTocIndex) AddToc;
-				public new function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, uint32 dwTocIndex) RemoveTocByIndex;
-				public new function HRESULT(ITocParser *self, TOC_POS_TYPE enumTocPosType, Guid guidTocType) RemoveTocByType;
-				public new function HRESULT(ITocParser *self) Commit;
+				public new function HRESULT(ref ITocParser self, PWSTR pwszFileName) Init;
+				public new function HRESULT(ref ITocParser self, TOC_POS_TYPE enumTocPosType, out uint32 pdwTocCount) GetTocCount;
+				public new function HRESULT(ref ITocParser self, TOC_POS_TYPE enumTocPosType, uint32 dwTocIndex, out IToc* ppToc) GetTocByIndex;
+				public new function HRESULT(ref ITocParser self, TOC_POS_TYPE enumTocPosType, Guid guidTocType, out ITocCollection* ppTocs) GetTocByType;
+				public new function HRESULT(ref ITocParser self, TOC_POS_TYPE enumTocPosType, ref IToc pToc, out uint32 pdwTocIndex) AddToc;
+				public new function HRESULT(ref ITocParser self, TOC_POS_TYPE enumTocPosType, uint32 dwTocIndex) RemoveTocByIndex;
+				public new function HRESULT(ref ITocParser self, TOC_POS_TYPE enumTocPosType, Guid guidTocType) RemoveTocByType;
+				public new function HRESULT(ref ITocParser self) Commit;
 			}
 		}
 		[CRepr]
@@ -10005,57 +10005,57 @@ namespace Win32
 			
 			public HRESULT Initialize(FILE_ACCESSMODE eAccessMode, FILE_OPENMODE eOpenMode, PWSTR pwszFileName) mut
 			{
-				return VT.Initialize(&this, eAccessMode, eOpenMode, pwszFileName);
+				return VT.Initialize(ref this, eAccessMode, eOpenMode, pwszFileName);
 			}
-			public HRESULT GetLength(uint64* pqwLength) mut
+			public HRESULT GetLength(out uint64 pqwLength) mut
 			{
-				return VT.GetLength(&this, pqwLength);
+				return VT.GetLength(ref this, out pqwLength);
 			}
 			public HRESULT SetLength(uint64 qwLength) mut
 			{
-				return VT.SetLength(&this, qwLength);
+				return VT.SetLength(ref this, qwLength);
 			}
-			public HRESULT GetCurrentPosition(uint64* pqwPosition) mut
+			public HRESULT GetCurrentPosition(out uint64 pqwPosition) mut
 			{
-				return VT.GetCurrentPosition(&this, pqwPosition);
+				return VT.GetCurrentPosition(ref this, out pqwPosition);
 			}
 			public HRESULT SetCurrentPosition(uint64 qwPosition) mut
 			{
-				return VT.SetCurrentPosition(&this, qwPosition);
+				return VT.SetCurrentPosition(ref this, qwPosition);
 			}
-			public HRESULT IsEndOfStream(BOOL* pbEndOfStream) mut
+			public HRESULT IsEndOfStream(out BOOL pbEndOfStream) mut
 			{
-				return VT.IsEndOfStream(&this, pbEndOfStream);
+				return VT.IsEndOfStream(ref this, out pbEndOfStream);
 			}
-			public HRESULT Read(uint8* pbt, uint32 ul, uint32* pulRead) mut
+			public HRESULT Read(out uint8 pbt, uint32 ul, out uint32 pulRead) mut
 			{
-				return VT.Read(&this, pbt, ul, pulRead);
+				return VT.Read(ref this, out pbt, ul, out pulRead);
 			}
-			public HRESULT Write(uint8* pbt, uint32 ul, uint32* pulWritten) mut
+			public HRESULT Write(out uint8 pbt, uint32 ul, out uint32 pulWritten) mut
 			{
-				return VT.Write(&this, pbt, ul, pulWritten);
+				return VT.Write(ref this, out pbt, ul, out pulWritten);
 			}
-			public HRESULT Seek(SEEK_ORIGIN eSeekOrigin, uint64 qwSeekOffset, uint32 dwSeekFlags, uint64* pqwCurrentPosition) mut
+			public HRESULT Seek(SEEK_ORIGIN eSeekOrigin, uint64 qwSeekOffset, uint32 dwSeekFlags, out uint64 pqwCurrentPosition) mut
 			{
-				return VT.Seek(&this, eSeekOrigin, qwSeekOffset, dwSeekFlags, pqwCurrentPosition);
+				return VT.Seek(ref this, eSeekOrigin, qwSeekOffset, dwSeekFlags, out pqwCurrentPosition);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IFileIo *self, FILE_ACCESSMODE eAccessMode, FILE_OPENMODE eOpenMode, PWSTR pwszFileName) Initialize;
-				public new function HRESULT(IFileIo *self, uint64* pqwLength) GetLength;
-				public new function HRESULT(IFileIo *self, uint64 qwLength) SetLength;
-				public new function HRESULT(IFileIo *self, uint64* pqwPosition) GetCurrentPosition;
-				public new function HRESULT(IFileIo *self, uint64 qwPosition) SetCurrentPosition;
-				public new function HRESULT(IFileIo *self, BOOL* pbEndOfStream) IsEndOfStream;
-				public new function HRESULT(IFileIo *self, uint8* pbt, uint32 ul, uint32* pulRead) Read;
-				public new function HRESULT(IFileIo *self, uint8* pbt, uint32 ul, uint32* pulWritten) Write;
-				public new function HRESULT(IFileIo *self, SEEK_ORIGIN eSeekOrigin, uint64 qwSeekOffset, uint32 dwSeekFlags, uint64* pqwCurrentPosition) Seek;
-				public new function HRESULT(IFileIo *self) Close;
+				public new function HRESULT(ref IFileIo self, FILE_ACCESSMODE eAccessMode, FILE_OPENMODE eOpenMode, PWSTR pwszFileName) Initialize;
+				public new function HRESULT(ref IFileIo self, out uint64 pqwLength) GetLength;
+				public new function HRESULT(ref IFileIo self, uint64 qwLength) SetLength;
+				public new function HRESULT(ref IFileIo self, out uint64 pqwPosition) GetCurrentPosition;
+				public new function HRESULT(ref IFileIo self, uint64 qwPosition) SetCurrentPosition;
+				public new function HRESULT(ref IFileIo self, out BOOL pbEndOfStream) IsEndOfStream;
+				public new function HRESULT(ref IFileIo self, out uint8 pbt, uint32 ul, out uint32 pulRead) Read;
+				public new function HRESULT(ref IFileIo self, out uint8 pbt, uint32 ul, out uint32 pulWritten) Write;
+				public new function HRESULT(ref IFileIo self, SEEK_ORIGIN eSeekOrigin, uint64 qwSeekOffset, uint32 dwSeekFlags, out uint64 pqwCurrentPosition) Seek;
+				public new function HRESULT(ref IFileIo self) Close;
 			}
 		}
 		[CRepr]
@@ -10065,24 +10065,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObjectDiskSize(uint64* pqwSize) mut
+			public HRESULT GetObjectDiskSize(out uint64 pqwSize) mut
 			{
-				return VT.GetObjectDiskSize(&this, pqwSize);
+				return VT.GetObjectDiskSize(ref this, out pqwSize);
 			}
-			public HRESULT Write(IFileIo* pFio) mut
+			public HRESULT Write(ref IFileIo pFio) mut
 			{
-				return VT.Write(&this, pFio);
+				return VT.Write(ref this, ref pFio);
 			}
-			public HRESULT Read(IFileIo* pFio) mut
+			public HRESULT Read(ref IFileIo pFio) mut
 			{
-				return VT.Read(&this, pFio);
+				return VT.Read(ref this, ref pFio);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IFileClient *self, uint64* pqwSize) GetObjectDiskSize;
-				public new function HRESULT(IFileClient *self, IFileIo* pFio) Write;
-				public new function HRESULT(IFileClient *self, IFileIo* pFio) Read;
+				public new function HRESULT(ref IFileClient self, out uint64 pqwSize) GetObjectDiskSize;
+				public new function HRESULT(ref IFileClient self, ref IFileIo pFio) Write;
+				public new function HRESULT(ref IFileClient self, ref IFileIo pFio) Read;
 			}
 		}
 		[CRepr]
@@ -10094,17 +10094,17 @@ namespace Win32
 			
 			public HRESULT Initialize(uint16 wBaseEntryLevel, uint16 wClusterEntryLevel) mut
 			{
-				return VT.Initialize(&this, wBaseEntryLevel, wClusterEntryLevel);
+				return VT.Initialize(ref this, wBaseEntryLevel, wClusterEntryLevel);
 			}
-			public HRESULT Detect(uint32 dwMaxNumClusters, float fMinClusterDuration, float fMaxClusterDuration, IToc* pSrcToc, IToc** ppDstToc) mut
+			public HRESULT Detect(uint32 dwMaxNumClusters, float fMinClusterDuration, float fMaxClusterDuration, ref IToc pSrcToc, out IToc* ppDstToc) mut
 			{
-				return VT.Detect(&this, dwMaxNumClusters, fMinClusterDuration, fMaxClusterDuration, pSrcToc, ppDstToc);
+				return VT.Detect(ref this, dwMaxNumClusters, fMinClusterDuration, fMaxClusterDuration, ref pSrcToc, out ppDstToc);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IClusterDetector *self, uint16 wBaseEntryLevel, uint16 wClusterEntryLevel) Initialize;
-				public new function HRESULT(IClusterDetector *self, uint32 dwMaxNumClusters, float fMinClusterDuration, float fMaxClusterDuration, IToc* pSrcToc, IToc** ppDstToc) Detect;
+				public new function HRESULT(ref IClusterDetector self, uint16 wBaseEntryLevel, uint16 wClusterEntryLevel) Initialize;
+				public new function HRESULT(ref IClusterDetector self, uint32 dwMaxNumClusters, float fMinClusterDuration, float fMaxClusterDuration, ref IToc pSrcToc, out IToc* ppDstToc) Detect;
 			}
 		}
 		[CRepr]
@@ -10116,47 +10116,47 @@ namespace Win32
 			
 			public HRESULT CreateVideoSurface(uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, uint32 Usage, DXVAHD_SURFACE_TYPE Type, uint32 NumSurfaces, IDirect3DSurface9** ppSurfaces, HANDLE* pSharedHandle) mut
 			{
-				return VT.CreateVideoSurface(&this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandle);
+				return VT.CreateVideoSurface(ref this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandle);
 			}
-			public HRESULT GetVideoProcessorDeviceCaps(DXVAHD_VPDEVCAPS* pCaps) mut
+			public HRESULT GetVideoProcessorDeviceCaps(out DXVAHD_VPDEVCAPS pCaps) mut
 			{
-				return VT.GetVideoProcessorDeviceCaps(&this, pCaps);
+				return VT.GetVideoProcessorDeviceCaps(ref this, out pCaps);
 			}
 			public HRESULT GetVideoProcessorOutputFormats(uint32 Count, D3DFORMAT* pFormats) mut
 			{
-				return VT.GetVideoProcessorOutputFormats(&this, Count, pFormats);
+				return VT.GetVideoProcessorOutputFormats(ref this, Count, pFormats);
 			}
 			public HRESULT GetVideoProcessorInputFormats(uint32 Count, D3DFORMAT* pFormats) mut
 			{
-				return VT.GetVideoProcessorInputFormats(&this, Count, pFormats);
+				return VT.GetVideoProcessorInputFormats(ref this, Count, pFormats);
 			}
 			public HRESULT GetVideoProcessorCaps(uint32 Count, DXVAHD_VPCAPS* pCaps) mut
 			{
-				return VT.GetVideoProcessorCaps(&this, Count, pCaps);
+				return VT.GetVideoProcessorCaps(ref this, Count, pCaps);
 			}
-			public HRESULT GetVideoProcessorCustomRates(Guid* pVPGuid, uint32 Count, DXVAHD_CUSTOM_RATE_DATA* pRates) mut
+			public HRESULT GetVideoProcessorCustomRates(in Guid pVPGuid, uint32 Count, DXVAHD_CUSTOM_RATE_DATA* pRates) mut
 			{
-				return VT.GetVideoProcessorCustomRates(&this, pVPGuid, Count, pRates);
+				return VT.GetVideoProcessorCustomRates(ref this, pVPGuid, Count, pRates);
 			}
-			public HRESULT GetVideoProcessorFilterRange(DXVAHD_FILTER Filter, DXVAHD_FILTER_RANGE_DATA* pRange) mut
+			public HRESULT GetVideoProcessorFilterRange(DXVAHD_FILTER Filter, out DXVAHD_FILTER_RANGE_DATA pRange) mut
 			{
-				return VT.GetVideoProcessorFilterRange(&this, Filter, pRange);
+				return VT.GetVideoProcessorFilterRange(ref this, Filter, out pRange);
 			}
-			public HRESULT CreateVideoProcessor(Guid* pVPGuid, IDXVAHD_VideoProcessor** ppVideoProcessor) mut
+			public HRESULT CreateVideoProcessor(in Guid pVPGuid, out IDXVAHD_VideoProcessor* ppVideoProcessor) mut
 			{
-				return VT.CreateVideoProcessor(&this, pVPGuid, ppVideoProcessor);
+				return VT.CreateVideoProcessor(ref this, pVPGuid, out ppVideoProcessor);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDXVAHD_Device *self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, uint32 Usage, DXVAHD_SURFACE_TYPE Type, uint32 NumSurfaces, IDirect3DSurface9** ppSurfaces, HANDLE* pSharedHandle) CreateVideoSurface;
-				public new function HRESULT(IDXVAHD_Device *self, DXVAHD_VPDEVCAPS* pCaps) GetVideoProcessorDeviceCaps;
-				public new function HRESULT(IDXVAHD_Device *self, uint32 Count, D3DFORMAT* pFormats) GetVideoProcessorOutputFormats;
-				public new function HRESULT(IDXVAHD_Device *self, uint32 Count, D3DFORMAT* pFormats) GetVideoProcessorInputFormats;
-				public new function HRESULT(IDXVAHD_Device *self, uint32 Count, DXVAHD_VPCAPS* pCaps) GetVideoProcessorCaps;
-				public new function HRESULT(IDXVAHD_Device *self, Guid* pVPGuid, uint32 Count, DXVAHD_CUSTOM_RATE_DATA* pRates) GetVideoProcessorCustomRates;
-				public new function HRESULT(IDXVAHD_Device *self, DXVAHD_FILTER Filter, DXVAHD_FILTER_RANGE_DATA* pRange) GetVideoProcessorFilterRange;
-				public new function HRESULT(IDXVAHD_Device *self, Guid* pVPGuid, IDXVAHD_VideoProcessor** ppVideoProcessor) CreateVideoProcessor;
+				public new function HRESULT(ref IDXVAHD_Device self, uint32 Width, uint32 Height, D3DFORMAT Format, D3DPOOL Pool, uint32 Usage, DXVAHD_SURFACE_TYPE Type, uint32 NumSurfaces, IDirect3DSurface9** ppSurfaces, HANDLE* pSharedHandle) CreateVideoSurface;
+				public new function HRESULT(ref IDXVAHD_Device self, out DXVAHD_VPDEVCAPS pCaps) GetVideoProcessorDeviceCaps;
+				public new function HRESULT(ref IDXVAHD_Device self, uint32 Count, D3DFORMAT* pFormats) GetVideoProcessorOutputFormats;
+				public new function HRESULT(ref IDXVAHD_Device self, uint32 Count, D3DFORMAT* pFormats) GetVideoProcessorInputFormats;
+				public new function HRESULT(ref IDXVAHD_Device self, uint32 Count, DXVAHD_VPCAPS* pCaps) GetVideoProcessorCaps;
+				public new function HRESULT(ref IDXVAHD_Device self, in Guid pVPGuid, uint32 Count, DXVAHD_CUSTOM_RATE_DATA* pRates) GetVideoProcessorCustomRates;
+				public new function HRESULT(ref IDXVAHD_Device self, DXVAHD_FILTER Filter, out DXVAHD_FILTER_RANGE_DATA pRange) GetVideoProcessorFilterRange;
+				public new function HRESULT(ref IDXVAHD_Device self, in Guid pVPGuid, out IDXVAHD_VideoProcessor* ppVideoProcessor) CreateVideoProcessor;
 			}
 		}
 		[CRepr]
@@ -10168,32 +10168,32 @@ namespace Win32
 			
 			public HRESULT SetVideoProcessBltState(DXVAHD_BLT_STATE State, uint32 DataSize, void* pData) mut
 			{
-				return VT.SetVideoProcessBltState(&this, State, DataSize, pData);
+				return VT.SetVideoProcessBltState(ref this, State, DataSize, pData);
 			}
 			public HRESULT GetVideoProcessBltState(DXVAHD_BLT_STATE State, uint32 DataSize, void* pData) mut
 			{
-				return VT.GetVideoProcessBltState(&this, State, DataSize, pData);
+				return VT.GetVideoProcessBltState(ref this, State, DataSize, pData);
 			}
 			public HRESULT SetVideoProcessStreamState(uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData) mut
 			{
-				return VT.SetVideoProcessStreamState(&this, StreamNumber, State, DataSize, pData);
+				return VT.SetVideoProcessStreamState(ref this, StreamNumber, State, DataSize, pData);
 			}
 			public HRESULT GetVideoProcessStreamState(uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData) mut
 			{
-				return VT.GetVideoProcessStreamState(&this, StreamNumber, State, DataSize, pData);
+				return VT.GetVideoProcessStreamState(ref this, StreamNumber, State, DataSize, pData);
 			}
-			public HRESULT VideoProcessBltHD(IDirect3DSurface9* pOutputSurface, uint32 OutputFrame, uint32 StreamCount, DXVAHD_STREAM_DATA* pStreams) mut
+			public HRESULT VideoProcessBltHD(ref IDirect3DSurface9 pOutputSurface, uint32 OutputFrame, uint32 StreamCount, DXVAHD_STREAM_DATA* pStreams) mut
 			{
-				return VT.VideoProcessBltHD(&this, pOutputSurface, OutputFrame, StreamCount, pStreams);
+				return VT.VideoProcessBltHD(ref this, ref pOutputSurface, OutputFrame, StreamCount, pStreams);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDXVAHD_VideoProcessor *self, DXVAHD_BLT_STATE State, uint32 DataSize, void* pData) SetVideoProcessBltState;
-				public new function HRESULT(IDXVAHD_VideoProcessor *self, DXVAHD_BLT_STATE State, uint32 DataSize, void* pData) GetVideoProcessBltState;
-				public new function HRESULT(IDXVAHD_VideoProcessor *self, uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData) SetVideoProcessStreamState;
-				public new function HRESULT(IDXVAHD_VideoProcessor *self, uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData) GetVideoProcessStreamState;
-				public new function HRESULT(IDXVAHD_VideoProcessor *self, IDirect3DSurface9* pOutputSurface, uint32 OutputFrame, uint32 StreamCount, DXVAHD_STREAM_DATA* pStreams) VideoProcessBltHD;
+				public new function HRESULT(ref IDXVAHD_VideoProcessor self, DXVAHD_BLT_STATE State, uint32 DataSize, void* pData) SetVideoProcessBltState;
+				public new function HRESULT(ref IDXVAHD_VideoProcessor self, DXVAHD_BLT_STATE State, uint32 DataSize, void* pData) GetVideoProcessBltState;
+				public new function HRESULT(ref IDXVAHD_VideoProcessor self, uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData) SetVideoProcessStreamState;
+				public new function HRESULT(ref IDXVAHD_VideoProcessor self, uint32 StreamNumber, DXVAHD_STREAM_STATE State, uint32 DataSize, void* pData) GetVideoProcessStreamState;
+				public new function HRESULT(ref IDXVAHD_VideoProcessor self, ref IDirect3DSurface9 pOutputSurface, uint32 OutputFrame, uint32 StreamCount, DXVAHD_STREAM_DATA* pStreams) VideoProcessBltHD;
 			}
 		}
 		[CRepr]
@@ -10203,44 +10203,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ResetDevice(IDirect3DDevice9* pDevice, uint32 resetToken) mut
+			public HRESULT ResetDevice(ref IDirect3DDevice9 pDevice, uint32 resetToken) mut
 			{
-				return VT.ResetDevice(&this, pDevice, resetToken);
+				return VT.ResetDevice(ref this, ref pDevice, resetToken);
 			}
-			public HRESULT OpenDeviceHandle(HANDLE* phDevice) mut
+			public HRESULT OpenDeviceHandle(out HANDLE phDevice) mut
 			{
-				return VT.OpenDeviceHandle(&this, phDevice);
+				return VT.OpenDeviceHandle(ref this, out phDevice);
 			}
 			public HRESULT CloseDeviceHandle(HANDLE hDevice) mut
 			{
-				return VT.CloseDeviceHandle(&this, hDevice);
+				return VT.CloseDeviceHandle(ref this, hDevice);
 			}
 			public HRESULT TestDevice(HANDLE hDevice) mut
 			{
-				return VT.TestDevice(&this, hDevice);
+				return VT.TestDevice(ref this, hDevice);
 			}
-			public HRESULT LockDevice(HANDLE hDevice, IDirect3DDevice9** ppDevice, BOOL fBlock) mut
+			public HRESULT LockDevice(HANDLE hDevice, out IDirect3DDevice9* ppDevice, BOOL fBlock) mut
 			{
-				return VT.LockDevice(&this, hDevice, ppDevice, fBlock);
+				return VT.LockDevice(ref this, hDevice, out ppDevice, fBlock);
 			}
 			public HRESULT UnlockDevice(HANDLE hDevice, BOOL fSaveState) mut
 			{
-				return VT.UnlockDevice(&this, hDevice, fSaveState);
+				return VT.UnlockDevice(ref this, hDevice, fSaveState);
 			}
-			public HRESULT GetVideoService(HANDLE hDevice, Guid* riid, void** ppService) mut
+			public HRESULT GetVideoService(HANDLE hDevice, in Guid riid, void** ppService) mut
 			{
-				return VT.GetVideoService(&this, hDevice, riid, ppService);
+				return VT.GetVideoService(ref this, hDevice, riid, ppService);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirect3DDeviceManager9 *self, IDirect3DDevice9* pDevice, uint32 resetToken) ResetDevice;
-				public new function HRESULT(IDirect3DDeviceManager9 *self, HANDLE* phDevice) OpenDeviceHandle;
-				public new function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice) CloseDeviceHandle;
-				public new function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice) TestDevice;
-				public new function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice, IDirect3DDevice9** ppDevice, BOOL fBlock) LockDevice;
-				public new function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice, BOOL fSaveState) UnlockDevice;
-				public new function HRESULT(IDirect3DDeviceManager9 *self, HANDLE hDevice, Guid* riid, void** ppService) GetVideoService;
+				public new function HRESULT(ref IDirect3DDeviceManager9 self, ref IDirect3DDevice9 pDevice, uint32 resetToken) ResetDevice;
+				public new function HRESULT(ref IDirect3DDeviceManager9 self, out HANDLE phDevice) OpenDeviceHandle;
+				public new function HRESULT(ref IDirect3DDeviceManager9 self, HANDLE hDevice) CloseDeviceHandle;
+				public new function HRESULT(ref IDirect3DDeviceManager9 self, HANDLE hDevice) TestDevice;
+				public new function HRESULT(ref IDirect3DDeviceManager9 self, HANDLE hDevice, out IDirect3DDevice9* ppDevice, BOOL fBlock) LockDevice;
+				public new function HRESULT(ref IDirect3DDeviceManager9 self, HANDLE hDevice, BOOL fSaveState) UnlockDevice;
+				public new function HRESULT(ref IDirect3DDeviceManager9 self, HANDLE hDevice, in Guid riid, void** ppService) GetVideoService;
 			}
 		}
 		[CRepr]
@@ -10250,14 +10250,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSurface(uint32 Width, uint32 Height, uint32 BackBuffers, D3DFORMAT Format, D3DPOOL Pool, uint32 Usage, DXVA2_VideoRenderTargetType DxvaType, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle) mut
+			public HRESULT CreateSurface(uint32 Width, uint32 Height, uint32 BackBuffers, D3DFORMAT Format, D3DPOOL Pool, uint32 Usage, DXVA2_VideoRenderTargetType DxvaType, out IDirect3DSurface9* ppSurface, HANDLE* pSharedHandle) mut
 			{
-				return VT.CreateSurface(&this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandle);
+				return VT.CreateSurface(ref this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, out ppSurface, pSharedHandle);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectXVideoAccelerationService *self, uint32 Width, uint32 Height, uint32 BackBuffers, D3DFORMAT Format, D3DPOOL Pool, uint32 Usage, DXVA2_VideoRenderTargetType DxvaType, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle) CreateSurface;
+				public new function HRESULT(ref IDirectXVideoAccelerationService self, uint32 Width, uint32 Height, uint32 BackBuffers, D3DFORMAT Format, D3DPOOL Pool, uint32 Usage, DXVA2_VideoRenderTargetType DxvaType, out IDirect3DSurface9* ppSurface, HANDLE* pSharedHandle) CreateSurface;
 			}
 		}
 		[CRepr]
@@ -10267,29 +10267,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDecoderDeviceGuids(uint32* pCount, Guid** pGuids) mut
+			public HRESULT GetDecoderDeviceGuids(out uint32 pCount, Guid** pGuids) mut
 			{
-				return VT.GetDecoderDeviceGuids(&this, pCount, pGuids);
+				return VT.GetDecoderDeviceGuids(ref this, out pCount, pGuids);
 			}
-			public HRESULT GetDecoderRenderTargets(Guid* Guid, uint32* pCount, D3DFORMAT** pFormats) mut
+			public HRESULT GetDecoderRenderTargets(in Guid Guid, out uint32 pCount, D3DFORMAT** pFormats) mut
 			{
-				return VT.GetDecoderRenderTargets(&this, Guid, pCount, pFormats);
+				return VT.GetDecoderRenderTargets(ref this, Guid, out pCount, pFormats);
 			}
-			public HRESULT GetDecoderConfigurations(Guid* Guid, DXVA2_VideoDesc* pVideoDesc, void* pReserved, uint32* pCount, DXVA2_ConfigPictureDecode** ppConfigs) mut
+			public HRESULT GetDecoderConfigurations(in Guid Guid, in DXVA2_VideoDesc pVideoDesc, void* pReserved, out uint32 pCount, DXVA2_ConfigPictureDecode** ppConfigs) mut
 			{
-				return VT.GetDecoderConfigurations(&this, Guid, pVideoDesc, pReserved, pCount, ppConfigs);
+				return VT.GetDecoderConfigurations(ref this, Guid, pVideoDesc, pReserved, out pCount, ppConfigs);
 			}
-			public HRESULT CreateVideoDecoder(Guid* Guid, DXVA2_VideoDesc* pVideoDesc, DXVA2_ConfigPictureDecode* pConfig, IDirect3DSurface9** ppDecoderRenderTargets, uint32 NumRenderTargets, IDirectXVideoDecoder** ppDecode) mut
+			public HRESULT CreateVideoDecoder(in Guid Guid, in DXVA2_VideoDesc pVideoDesc, in DXVA2_ConfigPictureDecode pConfig, IDirect3DSurface9** ppDecoderRenderTargets, uint32 NumRenderTargets, out IDirectXVideoDecoder* ppDecode) mut
 			{
-				return VT.CreateVideoDecoder(&this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
+				return VT.CreateVideoDecoder(ref this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, out ppDecode);
 			}
 			[CRepr]
 			public struct VTable : IDirectXVideoAccelerationService.VTable
 			{
-				public new function HRESULT(IDirectXVideoDecoderService *self, uint32* pCount, Guid** pGuids) GetDecoderDeviceGuids;
-				public new function HRESULT(IDirectXVideoDecoderService *self, Guid* Guid, uint32* pCount, D3DFORMAT** pFormats) GetDecoderRenderTargets;
-				public new function HRESULT(IDirectXVideoDecoderService *self, Guid* Guid, DXVA2_VideoDesc* pVideoDesc, void* pReserved, uint32* pCount, DXVA2_ConfigPictureDecode** ppConfigs) GetDecoderConfigurations;
-				public new function HRESULT(IDirectXVideoDecoderService *self, Guid* Guid, DXVA2_VideoDesc* pVideoDesc, DXVA2_ConfigPictureDecode* pConfig, IDirect3DSurface9** ppDecoderRenderTargets, uint32 NumRenderTargets, IDirectXVideoDecoder** ppDecode) CreateVideoDecoder;
+				public new function HRESULT(ref IDirectXVideoDecoderService self, out uint32 pCount, Guid** pGuids) GetDecoderDeviceGuids;
+				public new function HRESULT(ref IDirectXVideoDecoderService self, in Guid Guid, out uint32 pCount, D3DFORMAT** pFormats) GetDecoderRenderTargets;
+				public new function HRESULT(ref IDirectXVideoDecoderService self, in Guid Guid, in DXVA2_VideoDesc pVideoDesc, void* pReserved, out uint32 pCount, DXVA2_ConfigPictureDecode** ppConfigs) GetDecoderConfigurations;
+				public new function HRESULT(ref IDirectXVideoDecoderService self, in Guid Guid, in DXVA2_VideoDesc pVideoDesc, in DXVA2_ConfigPictureDecode pConfig, IDirect3DSurface9** ppDecoderRenderTargets, uint32 NumRenderTargets, out IDirectXVideoDecoder* ppDecode) CreateVideoDecoder;
 			}
 		}
 		[CRepr]
@@ -10301,47 +10301,47 @@ namespace Win32
 			
 			public HRESULT RegisterVideoProcessorSoftwareDevice(void* pCallbacks) mut
 			{
-				return VT.RegisterVideoProcessorSoftwareDevice(&this, pCallbacks);
+				return VT.RegisterVideoProcessorSoftwareDevice(ref this, pCallbacks);
 			}
-			public HRESULT GetVideoProcessorDeviceGuids(DXVA2_VideoDesc* pVideoDesc, uint32* pCount, Guid** pGuids) mut
+			public HRESULT GetVideoProcessorDeviceGuids(in DXVA2_VideoDesc pVideoDesc, out uint32 pCount, Guid** pGuids) mut
 			{
-				return VT.GetVideoProcessorDeviceGuids(&this, pVideoDesc, pCount, pGuids);
+				return VT.GetVideoProcessorDeviceGuids(ref this, pVideoDesc, out pCount, pGuids);
 			}
-			public HRESULT GetVideoProcessorRenderTargets(Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, uint32* pCount, D3DFORMAT** pFormats) mut
+			public HRESULT GetVideoProcessorRenderTargets(in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, out uint32 pCount, D3DFORMAT** pFormats) mut
 			{
-				return VT.GetVideoProcessorRenderTargets(&this, VideoProcDeviceGuid, pVideoDesc, pCount, pFormats);
+				return VT.GetVideoProcessorRenderTargets(ref this, VideoProcDeviceGuid, pVideoDesc, out pCount, pFormats);
 			}
-			public HRESULT GetVideoProcessorSubStreamFormats(Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32* pCount, D3DFORMAT** pFormats) mut
+			public HRESULT GetVideoProcessorSubStreamFormats(in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, out uint32 pCount, D3DFORMAT** pFormats) mut
 			{
-				return VT.GetVideoProcessorSubStreamFormats(&this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, pCount, pFormats);
+				return VT.GetVideoProcessorSubStreamFormats(ref this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, out pCount, pFormats);
 			}
-			public HRESULT GetVideoProcessorCaps(Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, DXVA2_VideoProcessorCaps* pCaps) mut
+			public HRESULT GetVideoProcessorCaps(in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, out DXVA2_VideoProcessorCaps pCaps) mut
 			{
-				return VT.GetVideoProcessorCaps(&this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, pCaps);
+				return VT.GetVideoProcessorCaps(ref this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, out pCaps);
 			}
-			public HRESULT GetProcAmpRange(Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 ProcAmpCap, DXVA2_ValueRange* pRange) mut
+			public HRESULT GetProcAmpRange(in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 ProcAmpCap, out DXVA2_ValueRange pRange) mut
 			{
-				return VT.GetProcAmpRange(&this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, ProcAmpCap, pRange);
+				return VT.GetProcAmpRange(ref this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, ProcAmpCap, out pRange);
 			}
-			public HRESULT GetFilterPropertyRange(Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 FilterSetting, DXVA2_ValueRange* pRange) mut
+			public HRESULT GetFilterPropertyRange(in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 FilterSetting, out DXVA2_ValueRange pRange) mut
 			{
-				return VT.GetFilterPropertyRange(&this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, FilterSetting, pRange);
+				return VT.GetFilterPropertyRange(ref this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, FilterSetting, out pRange);
 			}
-			public HRESULT CreateVideoProcessor(Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess) mut
+			public HRESULT CreateVideoProcessor(in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 MaxNumSubStreams, out IDirectXVideoProcessor* ppVidProcess) mut
 			{
-				return VT.CreateVideoProcessor(&this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, MaxNumSubStreams, ppVidProcess);
+				return VT.CreateVideoProcessor(ref this, VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, MaxNumSubStreams, out ppVidProcess);
 			}
 			[CRepr]
 			public struct VTable : IDirectXVideoAccelerationService.VTable
 			{
-				public new function HRESULT(IDirectXVideoProcessorService *self, void* pCallbacks) RegisterVideoProcessorSoftwareDevice;
-				public new function HRESULT(IDirectXVideoProcessorService *self, DXVA2_VideoDesc* pVideoDesc, uint32* pCount, Guid** pGuids) GetVideoProcessorDeviceGuids;
-				public new function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, uint32* pCount, D3DFORMAT** pFormats) GetVideoProcessorRenderTargets;
-				public new function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32* pCount, D3DFORMAT** pFormats) GetVideoProcessorSubStreamFormats;
-				public new function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, DXVA2_VideoProcessorCaps* pCaps) GetVideoProcessorCaps;
-				public new function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 ProcAmpCap, DXVA2_ValueRange* pRange) GetProcAmpRange;
-				public new function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 FilterSetting, DXVA2_ValueRange* pRange) GetFilterPropertyRange;
-				public new function HRESULT(IDirectXVideoProcessorService *self, Guid* VideoProcDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess) CreateVideoProcessor;
+				public new function HRESULT(ref IDirectXVideoProcessorService self, void* pCallbacks) RegisterVideoProcessorSoftwareDevice;
+				public new function HRESULT(ref IDirectXVideoProcessorService self, in DXVA2_VideoDesc pVideoDesc, out uint32 pCount, Guid** pGuids) GetVideoProcessorDeviceGuids;
+				public new function HRESULT(ref IDirectXVideoProcessorService self, in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, out uint32 pCount, D3DFORMAT** pFormats) GetVideoProcessorRenderTargets;
+				public new function HRESULT(ref IDirectXVideoProcessorService self, in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, out uint32 pCount, D3DFORMAT** pFormats) GetVideoProcessorSubStreamFormats;
+				public new function HRESULT(ref IDirectXVideoProcessorService self, in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, out DXVA2_VideoProcessorCaps pCaps) GetVideoProcessorCaps;
+				public new function HRESULT(ref IDirectXVideoProcessorService self, in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 ProcAmpCap, out DXVA2_ValueRange pRange) GetProcAmpRange;
+				public new function HRESULT(ref IDirectXVideoProcessorService self, in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 FilterSetting, out DXVA2_ValueRange pRange) GetFilterPropertyRange;
+				public new function HRESULT(ref IDirectXVideoProcessorService self, in Guid VideoProcDeviceGuid, in DXVA2_VideoDesc pVideoDesc, D3DFORMAT RenderTargetFormat, uint32 MaxNumSubStreams, out IDirectXVideoProcessor* ppVidProcess) CreateVideoProcessor;
 			}
 		}
 		[CRepr]
@@ -10351,44 +10351,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVideoDecoderService(IDirectXVideoDecoderService** ppService) mut
+			public HRESULT GetVideoDecoderService(out IDirectXVideoDecoderService* ppService) mut
 			{
-				return VT.GetVideoDecoderService(&this, ppService);
+				return VT.GetVideoDecoderService(ref this, out ppService);
 			}
 			public HRESULT GetCreationParameters(Guid* pDeviceGuid, DXVA2_VideoDesc* pVideoDesc, DXVA2_ConfigPictureDecode* pConfig, IDirect3DSurface9*** pDecoderRenderTargets, uint32* pNumSurfaces) mut
 			{
-				return VT.GetCreationParameters(&this, pDeviceGuid, pVideoDesc, pConfig, pDecoderRenderTargets, pNumSurfaces);
+				return VT.GetCreationParameters(ref this, pDeviceGuid, pVideoDesc, pConfig, pDecoderRenderTargets, pNumSurfaces);
 			}
-			public HRESULT GetBuffer(DXVA2_BufferfType BufferType, void** ppBuffer, uint32* pBufferSize) mut
+			public HRESULT GetBuffer(DXVA2_BufferfType BufferType, void** ppBuffer, out uint32 pBufferSize) mut
 			{
-				return VT.GetBuffer(&this, BufferType, ppBuffer, pBufferSize);
+				return VT.GetBuffer(ref this, BufferType, ppBuffer, out pBufferSize);
 			}
 			public HRESULT ReleaseBuffer(uint32 BufferType) mut
 			{
-				return VT.ReleaseBuffer(&this, BufferType);
+				return VT.ReleaseBuffer(ref this, BufferType);
 			}
-			public HRESULT BeginFrame(IDirect3DSurface9* pRenderTarget, void* pvPVPData) mut
+			public HRESULT BeginFrame(ref IDirect3DSurface9 pRenderTarget, void* pvPVPData) mut
 			{
-				return VT.BeginFrame(&this, pRenderTarget, pvPVPData);
+				return VT.BeginFrame(ref this, ref pRenderTarget, pvPVPData);
 			}
 			public HRESULT EndFrame(HANDLE* pHandleComplete) mut
 			{
-				return VT.EndFrame(&this, pHandleComplete);
+				return VT.EndFrame(ref this, pHandleComplete);
 			}
-			public HRESULT Execute(DXVA2_DecodeExecuteParams* pExecuteParams) mut
+			public HRESULT Execute(in DXVA2_DecodeExecuteParams pExecuteParams) mut
 			{
-				return VT.Execute(&this, pExecuteParams);
+				return VT.Execute(ref this, pExecuteParams);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectXVideoDecoder *self, IDirectXVideoDecoderService** ppService) GetVideoDecoderService;
-				public new function HRESULT(IDirectXVideoDecoder *self, Guid* pDeviceGuid, DXVA2_VideoDesc* pVideoDesc, DXVA2_ConfigPictureDecode* pConfig, IDirect3DSurface9*** pDecoderRenderTargets, uint32* pNumSurfaces) GetCreationParameters;
-				public new function HRESULT(IDirectXVideoDecoder *self, DXVA2_BufferfType BufferType, void** ppBuffer, uint32* pBufferSize) GetBuffer;
-				public new function HRESULT(IDirectXVideoDecoder *self, uint32 BufferType) ReleaseBuffer;
-				public new function HRESULT(IDirectXVideoDecoder *self, IDirect3DSurface9* pRenderTarget, void* pvPVPData) BeginFrame;
-				public new function HRESULT(IDirectXVideoDecoder *self, HANDLE* pHandleComplete) EndFrame;
-				public new function HRESULT(IDirectXVideoDecoder *self, DXVA2_DecodeExecuteParams* pExecuteParams) Execute;
+				public new function HRESULT(ref IDirectXVideoDecoder self, out IDirectXVideoDecoderService* ppService) GetVideoDecoderService;
+				public new function HRESULT(ref IDirectXVideoDecoder self, Guid* pDeviceGuid, DXVA2_VideoDesc* pVideoDesc, DXVA2_ConfigPictureDecode* pConfig, IDirect3DSurface9*** pDecoderRenderTargets, uint32* pNumSurfaces) GetCreationParameters;
+				public new function HRESULT(ref IDirectXVideoDecoder self, DXVA2_BufferfType BufferType, void** ppBuffer, out uint32 pBufferSize) GetBuffer;
+				public new function HRESULT(ref IDirectXVideoDecoder self, uint32 BufferType) ReleaseBuffer;
+				public new function HRESULT(ref IDirectXVideoDecoder self, ref IDirect3DSurface9 pRenderTarget, void* pvPVPData) BeginFrame;
+				public new function HRESULT(ref IDirectXVideoDecoder self, HANDLE* pHandleComplete) EndFrame;
+				public new function HRESULT(ref IDirectXVideoDecoder self, in DXVA2_DecodeExecuteParams pExecuteParams) Execute;
 			}
 		}
 		[CRepr]
@@ -10398,39 +10398,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetVideoProcessorService(IDirectXVideoProcessorService** ppService) mut
+			public HRESULT GetVideoProcessorService(out IDirectXVideoProcessorService* ppService) mut
 			{
-				return VT.GetVideoProcessorService(&this, ppService);
+				return VT.GetVideoProcessorService(ref this, out ppService);
 			}
 			public HRESULT GetCreationParameters(Guid* pDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT* pRenderTargetFormat, uint32* pMaxNumSubStreams) mut
 			{
-				return VT.GetCreationParameters(&this, pDeviceGuid, pVideoDesc, pRenderTargetFormat, pMaxNumSubStreams);
+				return VT.GetCreationParameters(ref this, pDeviceGuid, pVideoDesc, pRenderTargetFormat, pMaxNumSubStreams);
 			}
-			public HRESULT GetVideoProcessorCaps(DXVA2_VideoProcessorCaps* pCaps) mut
+			public HRESULT GetVideoProcessorCaps(out DXVA2_VideoProcessorCaps pCaps) mut
 			{
-				return VT.GetVideoProcessorCaps(&this, pCaps);
+				return VT.GetVideoProcessorCaps(ref this, out pCaps);
 			}
-			public HRESULT GetProcAmpRange(uint32 ProcAmpCap, DXVA2_ValueRange* pRange) mut
+			public HRESULT GetProcAmpRange(uint32 ProcAmpCap, out DXVA2_ValueRange pRange) mut
 			{
-				return VT.GetProcAmpRange(&this, ProcAmpCap, pRange);
+				return VT.GetProcAmpRange(ref this, ProcAmpCap, out pRange);
 			}
-			public HRESULT GetFilterPropertyRange(uint32 FilterSetting, DXVA2_ValueRange* pRange) mut
+			public HRESULT GetFilterPropertyRange(uint32 FilterSetting, out DXVA2_ValueRange pRange) mut
 			{
-				return VT.GetFilterPropertyRange(&this, FilterSetting, pRange);
+				return VT.GetFilterPropertyRange(ref this, FilterSetting, out pRange);
 			}
-			public HRESULT VideoProcessBlt(IDirect3DSurface9* pRenderTarget, DXVA2_VideoProcessBltParams* pBltParams, DXVA2_VideoSample* pSamples, uint32 NumSamples, HANDLE* pHandleComplete) mut
+			public HRESULT VideoProcessBlt(ref IDirect3DSurface9 pRenderTarget, in DXVA2_VideoProcessBltParams pBltParams, DXVA2_VideoSample* pSamples, uint32 NumSamples, HANDLE* pHandleComplete) mut
 			{
-				return VT.VideoProcessBlt(&this, pRenderTarget, pBltParams, pSamples, NumSamples, pHandleComplete);
+				return VT.VideoProcessBlt(ref this, ref pRenderTarget, pBltParams, pSamples, NumSamples, pHandleComplete);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectXVideoProcessor *self, IDirectXVideoProcessorService** ppService) GetVideoProcessorService;
-				public new function HRESULT(IDirectXVideoProcessor *self, Guid* pDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT* pRenderTargetFormat, uint32* pMaxNumSubStreams) GetCreationParameters;
-				public new function HRESULT(IDirectXVideoProcessor *self, DXVA2_VideoProcessorCaps* pCaps) GetVideoProcessorCaps;
-				public new function HRESULT(IDirectXVideoProcessor *self, uint32 ProcAmpCap, DXVA2_ValueRange* pRange) GetProcAmpRange;
-				public new function HRESULT(IDirectXVideoProcessor *self, uint32 FilterSetting, DXVA2_ValueRange* pRange) GetFilterPropertyRange;
-				public new function HRESULT(IDirectXVideoProcessor *self, IDirect3DSurface9* pRenderTarget, DXVA2_VideoProcessBltParams* pBltParams, DXVA2_VideoSample* pSamples, uint32 NumSamples, HANDLE* pHandleComplete) VideoProcessBlt;
+				public new function HRESULT(ref IDirectXVideoProcessor self, out IDirectXVideoProcessorService* ppService) GetVideoProcessorService;
+				public new function HRESULT(ref IDirectXVideoProcessor self, Guid* pDeviceGuid, DXVA2_VideoDesc* pVideoDesc, D3DFORMAT* pRenderTargetFormat, uint32* pMaxNumSubStreams) GetCreationParameters;
+				public new function HRESULT(ref IDirectXVideoProcessor self, out DXVA2_VideoProcessorCaps pCaps) GetVideoProcessorCaps;
+				public new function HRESULT(ref IDirectXVideoProcessor self, uint32 ProcAmpCap, out DXVA2_ValueRange pRange) GetProcAmpRange;
+				public new function HRESULT(ref IDirectXVideoProcessor self, uint32 FilterSetting, out DXVA2_ValueRange pRange) GetFilterPropertyRange;
+				public new function HRESULT(ref IDirectXVideoProcessor self, ref IDirect3DSurface9 pRenderTarget, in DXVA2_VideoProcessBltParams pBltParams, DXVA2_VideoSample* pSamples, uint32 NumSamples, HANDLE* pHandleComplete) VideoProcessBlt;
 			}
 		}
 		[CRepr]
@@ -10440,19 +10440,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAvailableSurfaceTypeByIndex(uint32 dwTypeIndex, DXVA2_SurfaceType* pdwType) mut
+			public HRESULT GetAvailableSurfaceTypeByIndex(uint32 dwTypeIndex, out DXVA2_SurfaceType pdwType) mut
 			{
-				return VT.GetAvailableSurfaceTypeByIndex(&this, dwTypeIndex, pdwType);
+				return VT.GetAvailableSurfaceTypeByIndex(ref this, dwTypeIndex, out pdwType);
 			}
 			public HRESULT SetSurfaceType(DXVA2_SurfaceType dwType) mut
 			{
-				return VT.SetSurfaceType(&this, dwType);
+				return VT.SetSurfaceType(ref this, dwType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IDirectXVideoMemoryConfiguration *self, uint32 dwTypeIndex, DXVA2_SurfaceType* pdwType) GetAvailableSurfaceTypeByIndex;
-				public new function HRESULT(IDirectXVideoMemoryConfiguration *self, DXVA2_SurfaceType dwType) SetSurfaceType;
+				public new function HRESULT(ref IDirectXVideoMemoryConfiguration self, uint32 dwTypeIndex, out DXVA2_SurfaceType pdwType) GetAvailableSurfaceTypeByIndex;
+				public new function HRESULT(ref IDirectXVideoMemoryConfiguration self, DXVA2_SurfaceType dwType) SetSurfaceType;
 			}
 		}
 		[CRepr]
@@ -10462,34 +10462,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT StartInitialization(OPM_RANDOM_NUMBER* prnRandomNumber, uint8** ppbCertificate, uint32* pulCertificateLength) mut
+			public HRESULT StartInitialization(out OPM_RANDOM_NUMBER prnRandomNumber, out uint8* ppbCertificate, out uint32 pulCertificateLength) mut
 			{
-				return VT.StartInitialization(&this, prnRandomNumber, ppbCertificate, pulCertificateLength);
+				return VT.StartInitialization(ref this, out prnRandomNumber, out ppbCertificate, out pulCertificateLength);
 			}
-			public HRESULT FinishInitialization(OPM_ENCRYPTED_INITIALIZATION_PARAMETERS* pParameters) mut
+			public HRESULT FinishInitialization(in OPM_ENCRYPTED_INITIALIZATION_PARAMETERS pParameters) mut
 			{
-				return VT.FinishInitialization(&this, pParameters);
+				return VT.FinishInitialization(ref this, pParameters);
 			}
-			public HRESULT GetInformation(OPM_GET_INFO_PARAMETERS* pParameters, OPM_REQUESTED_INFORMATION* pRequestedInformation) mut
+			public HRESULT GetInformation(in OPM_GET_INFO_PARAMETERS pParameters, out OPM_REQUESTED_INFORMATION pRequestedInformation) mut
 			{
-				return VT.GetInformation(&this, pParameters, pRequestedInformation);
+				return VT.GetInformation(ref this, pParameters, out pRequestedInformation);
 			}
-			public HRESULT COPPCompatibleGetInformation(OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS* pParameters, OPM_REQUESTED_INFORMATION* pRequestedInformation) mut
+			public HRESULT COPPCompatibleGetInformation(in OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS pParameters, out OPM_REQUESTED_INFORMATION pRequestedInformation) mut
 			{
-				return VT.COPPCompatibleGetInformation(&this, pParameters, pRequestedInformation);
+				return VT.COPPCompatibleGetInformation(ref this, pParameters, out pRequestedInformation);
 			}
-			public HRESULT Configure(OPM_CONFIGURE_PARAMETERS* pParameters, uint32 ulAdditionalParametersSize, uint8* pbAdditionalParameters) mut
+			public HRESULT Configure(in OPM_CONFIGURE_PARAMETERS pParameters, uint32 ulAdditionalParametersSize, uint8* pbAdditionalParameters) mut
 			{
-				return VT.Configure(&this, pParameters, ulAdditionalParametersSize, pbAdditionalParameters);
+				return VT.Configure(ref this, pParameters, ulAdditionalParametersSize, pbAdditionalParameters);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IOPMVideoOutput *self, OPM_RANDOM_NUMBER* prnRandomNumber, uint8** ppbCertificate, uint32* pulCertificateLength) StartInitialization;
-				public new function HRESULT(IOPMVideoOutput *self, OPM_ENCRYPTED_INITIALIZATION_PARAMETERS* pParameters) FinishInitialization;
-				public new function HRESULT(IOPMVideoOutput *self, OPM_GET_INFO_PARAMETERS* pParameters, OPM_REQUESTED_INFORMATION* pRequestedInformation) GetInformation;
-				public new function HRESULT(IOPMVideoOutput *self, OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS* pParameters, OPM_REQUESTED_INFORMATION* pRequestedInformation) COPPCompatibleGetInformation;
-				public new function HRESULT(IOPMVideoOutput *self, OPM_CONFIGURE_PARAMETERS* pParameters, uint32 ulAdditionalParametersSize, uint8* pbAdditionalParameters) Configure;
+				public new function HRESULT(ref IOPMVideoOutput self, out OPM_RANDOM_NUMBER prnRandomNumber, out uint8* ppbCertificate, out uint32 pulCertificateLength) StartInitialization;
+				public new function HRESULT(ref IOPMVideoOutput self, in OPM_ENCRYPTED_INITIALIZATION_PARAMETERS pParameters) FinishInitialization;
+				public new function HRESULT(ref IOPMVideoOutput self, in OPM_GET_INFO_PARAMETERS pParameters, out OPM_REQUESTED_INFORMATION pRequestedInformation) GetInformation;
+				public new function HRESULT(ref IOPMVideoOutput self, in OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS pParameters, out OPM_REQUESTED_INFORMATION pRequestedInformation) COPPCompatibleGetInformation;
+				public new function HRESULT(ref IOPMVideoOutput self, in OPM_CONFIGURE_PARAMETERS pParameters, uint32 ulAdditionalParametersSize, uint8* pbAdditionalParameters) Configure;
 			}
 		}
 		[CRepr]
@@ -10499,159 +10499,159 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetItem(Guid* guidKey, PROPVARIANT* pValue) mut
+			public HRESULT GetItem(in Guid guidKey, PROPVARIANT* pValue) mut
 			{
-				return VT.GetItem(&this, guidKey, pValue);
+				return VT.GetItem(ref this, guidKey, pValue);
 			}
-			public HRESULT GetItemType(Guid* guidKey, MF_ATTRIBUTE_TYPE* pType) mut
+			public HRESULT GetItemType(in Guid guidKey, out MF_ATTRIBUTE_TYPE pType) mut
 			{
-				return VT.GetItemType(&this, guidKey, pType);
+				return VT.GetItemType(ref this, guidKey, out pType);
 			}
-			public HRESULT CompareItem(Guid* guidKey, PROPVARIANT* Value, BOOL* pbResult) mut
+			public HRESULT CompareItem(in Guid guidKey, in PROPVARIANT Value, out BOOL pbResult) mut
 			{
-				return VT.CompareItem(&this, guidKey, Value, pbResult);
+				return VT.CompareItem(ref this, guidKey, Value, out pbResult);
 			}
-			public HRESULT Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, BOOL* pbResult) mut
+			public HRESULT Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, out BOOL pbResult) mut
 			{
-				return VT.Compare(&this, pTheirs, MatchType, pbResult);
+				return VT.Compare(ref this, pTheirs, MatchType, out pbResult);
 			}
-			public HRESULT GetUINT32(Guid* guidKey, uint32* punValue) mut
+			public HRESULT GetUINT32(in Guid guidKey, out uint32 punValue) mut
 			{
-				return VT.GetUINT32(&this, guidKey, punValue);
+				return VT.GetUINT32(ref this, guidKey, out punValue);
 			}
-			public HRESULT GetUINT64(Guid* guidKey, uint64* punValue) mut
+			public HRESULT GetUINT64(in Guid guidKey, out uint64 punValue) mut
 			{
-				return VT.GetUINT64(&this, guidKey, punValue);
+				return VT.GetUINT64(ref this, guidKey, out punValue);
 			}
-			public HRESULT GetDouble(Guid* guidKey, double* pfValue) mut
+			public HRESULT GetDouble(in Guid guidKey, out double pfValue) mut
 			{
-				return VT.GetDouble(&this, guidKey, pfValue);
+				return VT.GetDouble(ref this, guidKey, out pfValue);
 			}
-			public HRESULT GetGUID(Guid* guidKey, Guid* pguidValue) mut
+			public HRESULT GetGUID(in Guid guidKey, out Guid pguidValue) mut
 			{
-				return VT.GetGUID(&this, guidKey, pguidValue);
+				return VT.GetGUID(ref this, guidKey, out pguidValue);
 			}
-			public HRESULT GetStringLength(Guid* guidKey, uint32* pcchLength) mut
+			public HRESULT GetStringLength(in Guid guidKey, out uint32 pcchLength) mut
 			{
-				return VT.GetStringLength(&this, guidKey, pcchLength);
+				return VT.GetStringLength(ref this, guidKey, out pcchLength);
 			}
-			public HRESULT GetString(Guid* guidKey, char16* pwszValue, uint32 cchBufSize, uint32* pcchLength) mut
+			public HRESULT GetString(in Guid guidKey, char16* pwszValue, uint32 cchBufSize, uint32* pcchLength) mut
 			{
-				return VT.GetString(&this, guidKey, pwszValue, cchBufSize, pcchLength);
+				return VT.GetString(ref this, guidKey, pwszValue, cchBufSize, pcchLength);
 			}
-			public HRESULT GetAllocatedString(Guid* guidKey, PWSTR* ppwszValue, uint32* pcchLength) mut
+			public HRESULT GetAllocatedString(in Guid guidKey, out PWSTR ppwszValue, out uint32 pcchLength) mut
 			{
-				return VT.GetAllocatedString(&this, guidKey, ppwszValue, pcchLength);
+				return VT.GetAllocatedString(ref this, guidKey, out ppwszValue, out pcchLength);
 			}
-			public HRESULT GetBlobSize(Guid* guidKey, uint32* pcbBlobSize) mut
+			public HRESULT GetBlobSize(in Guid guidKey, out uint32 pcbBlobSize) mut
 			{
-				return VT.GetBlobSize(&this, guidKey, pcbBlobSize);
+				return VT.GetBlobSize(ref this, guidKey, out pcbBlobSize);
 			}
-			public HRESULT GetBlob(Guid* guidKey, uint8* pBuf, uint32 cbBufSize, uint32* pcbBlobSize) mut
+			public HRESULT GetBlob(in Guid guidKey, uint8* pBuf, uint32 cbBufSize, uint32* pcbBlobSize) mut
 			{
-				return VT.GetBlob(&this, guidKey, pBuf, cbBufSize, pcbBlobSize);
+				return VT.GetBlob(ref this, guidKey, pBuf, cbBufSize, pcbBlobSize);
 			}
-			public HRESULT GetAllocatedBlob(Guid* guidKey, uint8** ppBuf, uint32* pcbSize) mut
+			public HRESULT GetAllocatedBlob(in Guid guidKey, uint8** ppBuf, out uint32 pcbSize) mut
 			{
-				return VT.GetAllocatedBlob(&this, guidKey, ppBuf, pcbSize);
+				return VT.GetAllocatedBlob(ref this, guidKey, ppBuf, out pcbSize);
 			}
-			public HRESULT GetUnknown(Guid* guidKey, Guid* riid, void** ppv) mut
+			public HRESULT GetUnknown(in Guid guidKey, in Guid riid, void** ppv) mut
 			{
-				return VT.GetUnknown(&this, guidKey, riid, ppv);
+				return VT.GetUnknown(ref this, guidKey, riid, ppv);
 			}
-			public HRESULT SetItem(Guid* guidKey, PROPVARIANT* Value) mut
+			public HRESULT SetItem(in Guid guidKey, in PROPVARIANT Value) mut
 			{
-				return VT.SetItem(&this, guidKey, Value);
+				return VT.SetItem(ref this, guidKey, Value);
 			}
-			public HRESULT DeleteItem(Guid* guidKey) mut
+			public HRESULT DeleteItem(in Guid guidKey) mut
 			{
-				return VT.DeleteItem(&this, guidKey);
+				return VT.DeleteItem(ref this, guidKey);
 			}
 			public HRESULT DeleteAllItems() mut
 			{
-				return VT.DeleteAllItems(&this);
+				return VT.DeleteAllItems(ref this);
 			}
-			public HRESULT SetUINT32(Guid* guidKey, uint32 unValue) mut
+			public HRESULT SetUINT32(in Guid guidKey, uint32 unValue) mut
 			{
-				return VT.SetUINT32(&this, guidKey, unValue);
+				return VT.SetUINT32(ref this, guidKey, unValue);
 			}
-			public HRESULT SetUINT64(Guid* guidKey, uint64 unValue) mut
+			public HRESULT SetUINT64(in Guid guidKey, uint64 unValue) mut
 			{
-				return VT.SetUINT64(&this, guidKey, unValue);
+				return VT.SetUINT64(ref this, guidKey, unValue);
 			}
-			public HRESULT SetDouble(Guid* guidKey, double fValue) mut
+			public HRESULT SetDouble(in Guid guidKey, double fValue) mut
 			{
-				return VT.SetDouble(&this, guidKey, fValue);
+				return VT.SetDouble(ref this, guidKey, fValue);
 			}
-			public HRESULT SetGUID(Guid* guidKey, Guid* guidValue) mut
+			public HRESULT SetGUID(in Guid guidKey, in Guid guidValue) mut
 			{
-				return VT.SetGUID(&this, guidKey, guidValue);
+				return VT.SetGUID(ref this, guidKey, guidValue);
 			}
-			public HRESULT SetString(Guid* guidKey, PWSTR wszValue) mut
+			public HRESULT SetString(in Guid guidKey, PWSTR wszValue) mut
 			{
-				return VT.SetString(&this, guidKey, wszValue);
+				return VT.SetString(ref this, guidKey, wszValue);
 			}
-			public HRESULT SetBlob(Guid* guidKey, uint8* pBuf, uint32 cbBufSize) mut
+			public HRESULT SetBlob(in Guid guidKey, uint8* pBuf, uint32 cbBufSize) mut
 			{
-				return VT.SetBlob(&this, guidKey, pBuf, cbBufSize);
+				return VT.SetBlob(ref this, guidKey, pBuf, cbBufSize);
 			}
-			public HRESULT SetUnknown(Guid* guidKey, IUnknown* pUnknown) mut
+			public HRESULT SetUnknown(in Guid guidKey, ref IUnknown pUnknown) mut
 			{
-				return VT.SetUnknown(&this, guidKey, pUnknown);
+				return VT.SetUnknown(ref this, guidKey, ref pUnknown);
 			}
 			public HRESULT LockStore() mut
 			{
-				return VT.LockStore(&this);
+				return VT.LockStore(ref this);
 			}
 			public HRESULT UnlockStore() mut
 			{
-				return VT.UnlockStore(&this);
+				return VT.UnlockStore(ref this);
 			}
-			public HRESULT GetCount(uint32* pcItems) mut
+			public HRESULT GetCount(out uint32 pcItems) mut
 			{
-				return VT.GetCount(&this, pcItems);
+				return VT.GetCount(ref this, out pcItems);
 			}
-			public HRESULT GetItemByIndex(uint32 unIndex, Guid* pguidKey, PROPVARIANT* pValue) mut
+			public HRESULT GetItemByIndex(uint32 unIndex, out Guid pguidKey, PROPVARIANT* pValue) mut
 			{
-				return VT.GetItemByIndex(&this, unIndex, pguidKey, pValue);
+				return VT.GetItemByIndex(ref this, unIndex, out pguidKey, pValue);
 			}
-			public HRESULT CopyAllItems(IMFAttributes* pDest) mut
+			public HRESULT CopyAllItems(ref IMFAttributes pDest) mut
 			{
-				return VT.CopyAllItems(&this, pDest);
+				return VT.CopyAllItems(ref this, ref pDest);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, PROPVARIANT* pValue) GetItem;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, MF_ATTRIBUTE_TYPE* pType) GetItemType;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, PROPVARIANT* Value, BOOL* pbResult) CompareItem;
-				public new function HRESULT(IMFAttributes *self, IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, BOOL* pbResult) Compare;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, uint32* punValue) GetUINT32;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, uint64* punValue) GetUINT64;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, double* pfValue) GetDouble;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, Guid* pguidValue) GetGUID;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, uint32* pcchLength) GetStringLength;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, char16* pwszValue, uint32 cchBufSize, uint32* pcchLength) GetString;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, PWSTR* ppwszValue, uint32* pcchLength) GetAllocatedString;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, uint32* pcbBlobSize) GetBlobSize;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, uint8* pBuf, uint32 cbBufSize, uint32* pcbBlobSize) GetBlob;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, uint8** ppBuf, uint32* pcbSize) GetAllocatedBlob;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, Guid* riid, void** ppv) GetUnknown;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, PROPVARIANT* Value) SetItem;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey) DeleteItem;
-				public new function HRESULT(IMFAttributes *self) DeleteAllItems;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, uint32 unValue) SetUINT32;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, uint64 unValue) SetUINT64;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, double fValue) SetDouble;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, Guid* guidValue) SetGUID;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, PWSTR wszValue) SetString;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, uint8* pBuf, uint32 cbBufSize) SetBlob;
-				public new function HRESULT(IMFAttributes *self, Guid* guidKey, IUnknown* pUnknown) SetUnknown;
-				public new function HRESULT(IMFAttributes *self) LockStore;
-				public new function HRESULT(IMFAttributes *self) UnlockStore;
-				public new function HRESULT(IMFAttributes *self, uint32* pcItems) GetCount;
-				public new function HRESULT(IMFAttributes *self, uint32 unIndex, Guid* pguidKey, PROPVARIANT* pValue) GetItemByIndex;
-				public new function HRESULT(IMFAttributes *self, IMFAttributes* pDest) CopyAllItems;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, PROPVARIANT* pValue) GetItem;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, out MF_ATTRIBUTE_TYPE pType) GetItemType;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, in PROPVARIANT Value, out BOOL pbResult) CompareItem;
+				public new function HRESULT(ref IMFAttributes self, IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, out BOOL pbResult) Compare;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, out uint32 punValue) GetUINT32;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, out uint64 punValue) GetUINT64;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, out double pfValue) GetDouble;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, out Guid pguidValue) GetGUID;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, out uint32 pcchLength) GetStringLength;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, char16* pwszValue, uint32 cchBufSize, uint32* pcchLength) GetString;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, out PWSTR ppwszValue, out uint32 pcchLength) GetAllocatedString;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, out uint32 pcbBlobSize) GetBlobSize;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, uint8* pBuf, uint32 cbBufSize, uint32* pcbBlobSize) GetBlob;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, uint8** ppBuf, out uint32 pcbSize) GetAllocatedBlob;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, in Guid riid, void** ppv) GetUnknown;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, in PROPVARIANT Value) SetItem;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey) DeleteItem;
+				public new function HRESULT(ref IMFAttributes self) DeleteAllItems;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, uint32 unValue) SetUINT32;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, uint64 unValue) SetUINT64;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, double fValue) SetDouble;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, in Guid guidValue) SetGUID;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, PWSTR wszValue) SetString;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, uint8* pBuf, uint32 cbBufSize) SetBlob;
+				public new function HRESULT(ref IMFAttributes self, in Guid guidKey, ref IUnknown pUnknown) SetUnknown;
+				public new function HRESULT(ref IMFAttributes self) LockStore;
+				public new function HRESULT(ref IMFAttributes self) UnlockStore;
+				public new function HRESULT(ref IMFAttributes self, out uint32 pcItems) GetCount;
+				public new function HRESULT(ref IMFAttributes self, uint32 unIndex, out Guid pguidKey, PROPVARIANT* pValue) GetItemByIndex;
+				public new function HRESULT(ref IMFAttributes self, ref IMFAttributes pDest) CopyAllItems;
 			}
 		}
 		[CRepr]
@@ -10661,34 +10661,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Lock(uint8** ppbBuffer, uint32* pcbMaxLength, uint32* pcbCurrentLength) mut
+			public HRESULT Lock(out uint8* ppbBuffer, uint32* pcbMaxLength, uint32* pcbCurrentLength) mut
 			{
-				return VT.Lock(&this, ppbBuffer, pcbMaxLength, pcbCurrentLength);
+				return VT.Lock(ref this, out ppbBuffer, pcbMaxLength, pcbCurrentLength);
 			}
 			public HRESULT Unlock() mut
 			{
-				return VT.Unlock(&this);
+				return VT.Unlock(ref this);
 			}
-			public HRESULT GetCurrentLength(uint32* pcbCurrentLength) mut
+			public HRESULT GetCurrentLength(out uint32 pcbCurrentLength) mut
 			{
-				return VT.GetCurrentLength(&this, pcbCurrentLength);
+				return VT.GetCurrentLength(ref this, out pcbCurrentLength);
 			}
 			public HRESULT SetCurrentLength(uint32 cbCurrentLength) mut
 			{
-				return VT.SetCurrentLength(&this, cbCurrentLength);
+				return VT.SetCurrentLength(ref this, cbCurrentLength);
 			}
-			public HRESULT GetMaxLength(uint32* pcbMaxLength) mut
+			public HRESULT GetMaxLength(out uint32 pcbMaxLength) mut
 			{
-				return VT.GetMaxLength(&this, pcbMaxLength);
+				return VT.GetMaxLength(ref this, out pcbMaxLength);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaBuffer *self, uint8** ppbBuffer, uint32* pcbMaxLength, uint32* pcbCurrentLength) Lock;
-				public new function HRESULT(IMFMediaBuffer *self) Unlock;
-				public new function HRESULT(IMFMediaBuffer *self, uint32* pcbCurrentLength) GetCurrentLength;
-				public new function HRESULT(IMFMediaBuffer *self, uint32 cbCurrentLength) SetCurrentLength;
-				public new function HRESULT(IMFMediaBuffer *self, uint32* pcbMaxLength) GetMaxLength;
+				public new function HRESULT(ref IMFMediaBuffer self, out uint8* ppbBuffer, uint32* pcbMaxLength, uint32* pcbCurrentLength) Lock;
+				public new function HRESULT(ref IMFMediaBuffer self) Unlock;
+				public new function HRESULT(ref IMFMediaBuffer self, out uint32 pcbCurrentLength) GetCurrentLength;
+				public new function HRESULT(ref IMFMediaBuffer self, uint32 cbCurrentLength) SetCurrentLength;
+				public new function HRESULT(ref IMFMediaBuffer self, out uint32 pcbMaxLength) GetMaxLength;
 			}
 		}
 		[CRepr]
@@ -10698,79 +10698,79 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSampleFlags(uint32* pdwSampleFlags) mut
+			public HRESULT GetSampleFlags(out uint32 pdwSampleFlags) mut
 			{
-				return VT.GetSampleFlags(&this, pdwSampleFlags);
+				return VT.GetSampleFlags(ref this, out pdwSampleFlags);
 			}
 			public HRESULT SetSampleFlags(uint32 dwSampleFlags) mut
 			{
-				return VT.SetSampleFlags(&this, dwSampleFlags);
+				return VT.SetSampleFlags(ref this, dwSampleFlags);
 			}
-			public HRESULT GetSampleTime(int64* phnsSampleTime) mut
+			public HRESULT GetSampleTime(out int64 phnsSampleTime) mut
 			{
-				return VT.GetSampleTime(&this, phnsSampleTime);
+				return VT.GetSampleTime(ref this, out phnsSampleTime);
 			}
 			public HRESULT SetSampleTime(int64 hnsSampleTime) mut
 			{
-				return VT.SetSampleTime(&this, hnsSampleTime);
+				return VT.SetSampleTime(ref this, hnsSampleTime);
 			}
-			public HRESULT GetSampleDuration(int64* phnsSampleDuration) mut
+			public HRESULT GetSampleDuration(out int64 phnsSampleDuration) mut
 			{
-				return VT.GetSampleDuration(&this, phnsSampleDuration);
+				return VT.GetSampleDuration(ref this, out phnsSampleDuration);
 			}
 			public HRESULT SetSampleDuration(int64 hnsSampleDuration) mut
 			{
-				return VT.SetSampleDuration(&this, hnsSampleDuration);
+				return VT.SetSampleDuration(ref this, hnsSampleDuration);
 			}
-			public HRESULT GetBufferCount(uint32* pdwBufferCount) mut
+			public HRESULT GetBufferCount(out uint32 pdwBufferCount) mut
 			{
-				return VT.GetBufferCount(&this, pdwBufferCount);
+				return VT.GetBufferCount(ref this, out pdwBufferCount);
 			}
-			public HRESULT GetBufferByIndex(uint32 dwIndex, IMFMediaBuffer** ppBuffer) mut
+			public HRESULT GetBufferByIndex(uint32 dwIndex, out IMFMediaBuffer* ppBuffer) mut
 			{
-				return VT.GetBufferByIndex(&this, dwIndex, ppBuffer);
+				return VT.GetBufferByIndex(ref this, dwIndex, out ppBuffer);
 			}
-			public HRESULT ConvertToContiguousBuffer(IMFMediaBuffer** ppBuffer) mut
+			public HRESULT ConvertToContiguousBuffer(out IMFMediaBuffer* ppBuffer) mut
 			{
-				return VT.ConvertToContiguousBuffer(&this, ppBuffer);
+				return VT.ConvertToContiguousBuffer(ref this, out ppBuffer);
 			}
-			public HRESULT AddBuffer(IMFMediaBuffer* pBuffer) mut
+			public HRESULT AddBuffer(ref IMFMediaBuffer pBuffer) mut
 			{
-				return VT.AddBuffer(&this, pBuffer);
+				return VT.AddBuffer(ref this, ref pBuffer);
 			}
 			public HRESULT RemoveBufferByIndex(uint32 dwIndex) mut
 			{
-				return VT.RemoveBufferByIndex(&this, dwIndex);
+				return VT.RemoveBufferByIndex(ref this, dwIndex);
 			}
 			public HRESULT RemoveAllBuffers() mut
 			{
-				return VT.RemoveAllBuffers(&this);
+				return VT.RemoveAllBuffers(ref this);
 			}
-			public HRESULT GetTotalLength(uint32* pcbTotalLength) mut
+			public HRESULT GetTotalLength(out uint32 pcbTotalLength) mut
 			{
-				return VT.GetTotalLength(&this, pcbTotalLength);
+				return VT.GetTotalLength(ref this, out pcbTotalLength);
 			}
-			public HRESULT CopyToBuffer(IMFMediaBuffer* pBuffer) mut
+			public HRESULT CopyToBuffer(ref IMFMediaBuffer pBuffer) mut
 			{
-				return VT.CopyToBuffer(&this, pBuffer);
+				return VT.CopyToBuffer(ref this, ref pBuffer);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFSample *self, uint32* pdwSampleFlags) GetSampleFlags;
-				public new function HRESULT(IMFSample *self, uint32 dwSampleFlags) SetSampleFlags;
-				public new function HRESULT(IMFSample *self, int64* phnsSampleTime) GetSampleTime;
-				public new function HRESULT(IMFSample *self, int64 hnsSampleTime) SetSampleTime;
-				public new function HRESULT(IMFSample *self, int64* phnsSampleDuration) GetSampleDuration;
-				public new function HRESULT(IMFSample *self, int64 hnsSampleDuration) SetSampleDuration;
-				public new function HRESULT(IMFSample *self, uint32* pdwBufferCount) GetBufferCount;
-				public new function HRESULT(IMFSample *self, uint32 dwIndex, IMFMediaBuffer** ppBuffer) GetBufferByIndex;
-				public new function HRESULT(IMFSample *self, IMFMediaBuffer** ppBuffer) ConvertToContiguousBuffer;
-				public new function HRESULT(IMFSample *self, IMFMediaBuffer* pBuffer) AddBuffer;
-				public new function HRESULT(IMFSample *self, uint32 dwIndex) RemoveBufferByIndex;
-				public new function HRESULT(IMFSample *self) RemoveAllBuffers;
-				public new function HRESULT(IMFSample *self, uint32* pcbTotalLength) GetTotalLength;
-				public new function HRESULT(IMFSample *self, IMFMediaBuffer* pBuffer) CopyToBuffer;
+				public new function HRESULT(ref IMFSample self, out uint32 pdwSampleFlags) GetSampleFlags;
+				public new function HRESULT(ref IMFSample self, uint32 dwSampleFlags) SetSampleFlags;
+				public new function HRESULT(ref IMFSample self, out int64 phnsSampleTime) GetSampleTime;
+				public new function HRESULT(ref IMFSample self, int64 hnsSampleTime) SetSampleTime;
+				public new function HRESULT(ref IMFSample self, out int64 phnsSampleDuration) GetSampleDuration;
+				public new function HRESULT(ref IMFSample self, int64 hnsSampleDuration) SetSampleDuration;
+				public new function HRESULT(ref IMFSample self, out uint32 pdwBufferCount) GetBufferCount;
+				public new function HRESULT(ref IMFSample self, uint32 dwIndex, out IMFMediaBuffer* ppBuffer) GetBufferByIndex;
+				public new function HRESULT(ref IMFSample self, out IMFMediaBuffer* ppBuffer) ConvertToContiguousBuffer;
+				public new function HRESULT(ref IMFSample self, ref IMFMediaBuffer pBuffer) AddBuffer;
+				public new function HRESULT(ref IMFSample self, uint32 dwIndex) RemoveBufferByIndex;
+				public new function HRESULT(ref IMFSample self) RemoveAllBuffers;
+				public new function HRESULT(ref IMFSample self, out uint32 pcbTotalLength) GetTotalLength;
+				public new function HRESULT(ref IMFSample self, ref IMFMediaBuffer pBuffer) CopyToBuffer;
 			}
 		}
 		[CRepr]
@@ -10780,44 +10780,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Lock2D(uint8** ppbScanline0, int32* plPitch) mut
+			public HRESULT Lock2D(out uint8* ppbScanline0, out int32 plPitch) mut
 			{
-				return VT.Lock2D(&this, ppbScanline0, plPitch);
+				return VT.Lock2D(ref this, out ppbScanline0, out plPitch);
 			}
 			public HRESULT Unlock2D() mut
 			{
-				return VT.Unlock2D(&this);
+				return VT.Unlock2D(ref this);
 			}
-			public HRESULT GetScanline0AndPitch(uint8** pbScanline0, int32* plPitch) mut
+			public HRESULT GetScanline0AndPitch(out uint8* pbScanline0, out int32 plPitch) mut
 			{
-				return VT.GetScanline0AndPitch(&this, pbScanline0, plPitch);
+				return VT.GetScanline0AndPitch(ref this, out pbScanline0, out plPitch);
 			}
-			public HRESULT IsContiguousFormat(BOOL* pfIsContiguous) mut
+			public HRESULT IsContiguousFormat(out BOOL pfIsContiguous) mut
 			{
-				return VT.IsContiguousFormat(&this, pfIsContiguous);
+				return VT.IsContiguousFormat(ref this, out pfIsContiguous);
 			}
-			public HRESULT GetContiguousLength(uint32* pcbLength) mut
+			public HRESULT GetContiguousLength(out uint32 pcbLength) mut
 			{
-				return VT.GetContiguousLength(&this, pcbLength);
+				return VT.GetContiguousLength(ref this, out pcbLength);
 			}
-			public HRESULT ContiguousCopyTo(uint8* pbDestBuffer, uint32 cbDestBuffer) mut
+			public HRESULT ContiguousCopyTo(out uint8 pbDestBuffer, uint32 cbDestBuffer) mut
 			{
-				return VT.ContiguousCopyTo(&this, pbDestBuffer, cbDestBuffer);
+				return VT.ContiguousCopyTo(ref this, out pbDestBuffer, cbDestBuffer);
 			}
-			public HRESULT ContiguousCopyFrom(uint8* pbSrcBuffer, uint32 cbSrcBuffer) mut
+			public HRESULT ContiguousCopyFrom(in uint8 pbSrcBuffer, uint32 cbSrcBuffer) mut
 			{
-				return VT.ContiguousCopyFrom(&this, pbSrcBuffer, cbSrcBuffer);
+				return VT.ContiguousCopyFrom(ref this, pbSrcBuffer, cbSrcBuffer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMF2DBuffer *self, uint8** ppbScanline0, int32* plPitch) Lock2D;
-				public new function HRESULT(IMF2DBuffer *self) Unlock2D;
-				public new function HRESULT(IMF2DBuffer *self, uint8** pbScanline0, int32* plPitch) GetScanline0AndPitch;
-				public new function HRESULT(IMF2DBuffer *self, BOOL* pfIsContiguous) IsContiguousFormat;
-				public new function HRESULT(IMF2DBuffer *self, uint32* pcbLength) GetContiguousLength;
-				public new function HRESULT(IMF2DBuffer *self, uint8* pbDestBuffer, uint32 cbDestBuffer) ContiguousCopyTo;
-				public new function HRESULT(IMF2DBuffer *self, uint8* pbSrcBuffer, uint32 cbSrcBuffer) ContiguousCopyFrom;
+				public new function HRESULT(ref IMF2DBuffer self, out uint8* ppbScanline0, out int32 plPitch) Lock2D;
+				public new function HRESULT(ref IMF2DBuffer self) Unlock2D;
+				public new function HRESULT(ref IMF2DBuffer self, out uint8* pbScanline0, out int32 plPitch) GetScanline0AndPitch;
+				public new function HRESULT(ref IMF2DBuffer self, out BOOL pfIsContiguous) IsContiguousFormat;
+				public new function HRESULT(ref IMF2DBuffer self, out uint32 pcbLength) GetContiguousLength;
+				public new function HRESULT(ref IMF2DBuffer self, out uint8 pbDestBuffer, uint32 cbDestBuffer) ContiguousCopyTo;
+				public new function HRESULT(ref IMF2DBuffer self, in uint8 pbSrcBuffer, uint32 cbSrcBuffer) ContiguousCopyFrom;
 			}
 		}
 		[CRepr]
@@ -10827,19 +10827,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Lock2DSize(MF2DBuffer_LockFlags lockFlags, uint8** ppbScanline0, int32* plPitch, uint8** ppbBufferStart, uint32* pcbBufferLength) mut
+			public HRESULT Lock2DSize(MF2DBuffer_LockFlags lockFlags, out uint8* ppbScanline0, out int32 plPitch, out uint8* ppbBufferStart, out uint32 pcbBufferLength) mut
 			{
-				return VT.Lock2DSize(&this, lockFlags, ppbScanline0, plPitch, ppbBufferStart, pcbBufferLength);
+				return VT.Lock2DSize(ref this, lockFlags, out ppbScanline0, out plPitch, out ppbBufferStart, out pcbBufferLength);
 			}
-			public HRESULT Copy2DTo(IMF2DBuffer2* pDestBuffer) mut
+			public HRESULT Copy2DTo(ref IMF2DBuffer2 pDestBuffer) mut
 			{
-				return VT.Copy2DTo(&this, pDestBuffer);
+				return VT.Copy2DTo(ref this, ref pDestBuffer);
 			}
 			[CRepr]
 			public struct VTable : IMF2DBuffer.VTable
 			{
-				public new function HRESULT(IMF2DBuffer2 *self, MF2DBuffer_LockFlags lockFlags, uint8** ppbScanline0, int32* plPitch, uint8** ppbBufferStart, uint32* pcbBufferLength) Lock2DSize;
-				public new function HRESULT(IMF2DBuffer2 *self, IMF2DBuffer2* pDestBuffer) Copy2DTo;
+				public new function HRESULT(ref IMF2DBuffer2 self, MF2DBuffer_LockFlags lockFlags, out uint8* ppbScanline0, out int32 plPitch, out uint8* ppbBufferStart, out uint32 pcbBufferLength) Lock2DSize;
+				public new function HRESULT(ref IMF2DBuffer2 self, ref IMF2DBuffer2 pDestBuffer) Copy2DTo;
 			}
 		}
 		[CRepr]
@@ -10849,29 +10849,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetResource(Guid* riid, void** ppvObject) mut
+			public HRESULT GetResource(in Guid riid, void** ppvObject) mut
 			{
-				return VT.GetResource(&this, riid, ppvObject);
+				return VT.GetResource(ref this, riid, ppvObject);
 			}
-			public HRESULT GetSubresourceIndex(uint32* puSubresource) mut
+			public HRESULT GetSubresourceIndex(out uint32 puSubresource) mut
 			{
-				return VT.GetSubresourceIndex(&this, puSubresource);
+				return VT.GetSubresourceIndex(ref this, out puSubresource);
 			}
-			public HRESULT GetUnknown(Guid* guid, Guid* riid, void** ppvObject) mut
+			public HRESULT GetUnknown(in Guid guid, in Guid riid, void** ppvObject) mut
 			{
-				return VT.GetUnknown(&this, guid, riid, ppvObject);
+				return VT.GetUnknown(ref this, guid, riid, ppvObject);
 			}
-			public HRESULT SetUnknown(Guid* guid, IUnknown* pUnkData) mut
+			public HRESULT SetUnknown(in Guid guid, IUnknown* pUnkData) mut
 			{
-				return VT.SetUnknown(&this, guid, pUnkData);
+				return VT.SetUnknown(ref this, guid, pUnkData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFDXGIBuffer *self, Guid* riid, void** ppvObject) GetResource;
-				public new function HRESULT(IMFDXGIBuffer *self, uint32* puSubresource) GetSubresourceIndex;
-				public new function HRESULT(IMFDXGIBuffer *self, Guid* guid, Guid* riid, void** ppvObject) GetUnknown;
-				public new function HRESULT(IMFDXGIBuffer *self, Guid* guid, IUnknown* pUnkData) SetUnknown;
+				public new function HRESULT(ref IMFDXGIBuffer self, in Guid riid, void** ppvObject) GetResource;
+				public new function HRESULT(ref IMFDXGIBuffer self, out uint32 puSubresource) GetSubresourceIndex;
+				public new function HRESULT(ref IMFDXGIBuffer self, in Guid guid, in Guid riid, void** ppvObject) GetUnknown;
+				public new function HRESULT(ref IMFDXGIBuffer self, in Guid guid, IUnknown* pUnkData) SetUnknown;
 			}
 		}
 		[CRepr]
@@ -10881,34 +10881,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMajorType(Guid* pguidMajorType) mut
+			public HRESULT GetMajorType(out Guid pguidMajorType) mut
 			{
-				return VT.GetMajorType(&this, pguidMajorType);
+				return VT.GetMajorType(ref this, out pguidMajorType);
 			}
-			public HRESULT IsCompressedFormat(BOOL* pfCompressed) mut
+			public HRESULT IsCompressedFormat(out BOOL pfCompressed) mut
 			{
-				return VT.IsCompressedFormat(&this, pfCompressed);
+				return VT.IsCompressedFormat(ref this, out pfCompressed);
 			}
-			public HRESULT IsEqual(IMFMediaType* pIMediaType, uint32* pdwFlags) mut
+			public HRESULT IsEqual(ref IMFMediaType pIMediaType, out uint32 pdwFlags) mut
 			{
-				return VT.IsEqual(&this, pIMediaType, pdwFlags);
+				return VT.IsEqual(ref this, ref pIMediaType, out pdwFlags);
 			}
 			public HRESULT GetRepresentation(Guid guidRepresentation, void** ppvRepresentation) mut
 			{
-				return VT.GetRepresentation(&this, guidRepresentation, ppvRepresentation);
+				return VT.GetRepresentation(ref this, guidRepresentation, ppvRepresentation);
 			}
 			public HRESULT FreeRepresentation(Guid guidRepresentation, void* pvRepresentation) mut
 			{
-				return VT.FreeRepresentation(&this, guidRepresentation, pvRepresentation);
+				return VT.FreeRepresentation(ref this, guidRepresentation, pvRepresentation);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFMediaType *self, Guid* pguidMajorType) GetMajorType;
-				public new function HRESULT(IMFMediaType *self, BOOL* pfCompressed) IsCompressedFormat;
-				public new function HRESULT(IMFMediaType *self, IMFMediaType* pIMediaType, uint32* pdwFlags) IsEqual;
-				public new function HRESULT(IMFMediaType *self, Guid guidRepresentation, void** ppvRepresentation) GetRepresentation;
-				public new function HRESULT(IMFMediaType *self, Guid guidRepresentation, void* pvRepresentation) FreeRepresentation;
+				public new function HRESULT(ref IMFMediaType self, out Guid pguidMajorType) GetMajorType;
+				public new function HRESULT(ref IMFMediaType self, out BOOL pfCompressed) IsCompressedFormat;
+				public new function HRESULT(ref IMFMediaType self, ref IMFMediaType pIMediaType, out uint32 pdwFlags) IsEqual;
+				public new function HRESULT(ref IMFMediaType self, Guid guidRepresentation, void** ppvRepresentation) GetRepresentation;
+				public new function HRESULT(ref IMFMediaType self, Guid guidRepresentation, void* pvRepresentation) FreeRepresentation;
 			}
 		}
 		[CRepr]
@@ -10920,12 +10920,12 @@ namespace Win32
 			
 			public WAVEFORMATEX* GetAudioFormat() mut
 			{
-				return VT.GetAudioFormat(&this);
+				return VT.GetAudioFormat(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaType.VTable
 			{
-				public new function WAVEFORMATEX*(IMFAudioMediaType *self) GetAudioFormat;
+				public new function WAVEFORMATEX*(ref IMFAudioMediaType self) GetAudioFormat;
 			}
 		}
 		[CRepr]
@@ -10937,17 +10937,17 @@ namespace Win32
 			
 			public MFVIDEOFORMAT* GetVideoFormat() mut
 			{
-				return VT.GetVideoFormat(&this);
+				return VT.GetVideoFormat(ref this);
 			}
 			public HRESULT GetVideoRepresentation(Guid guidRepresentation, void** ppvRepresentation, int32 lStride) mut
 			{
-				return VT.GetVideoRepresentation(&this, guidRepresentation, ppvRepresentation, lStride);
+				return VT.GetVideoRepresentation(ref this, guidRepresentation, ppvRepresentation, lStride);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaType.VTable
 			{
-				public new function MFVIDEOFORMAT*(IMFVideoMediaType *self) GetVideoFormat;
-				public new function HRESULT(IMFVideoMediaType *self, Guid guidRepresentation, void** ppvRepresentation, int32 lStride) GetVideoRepresentation;
+				public new function MFVIDEOFORMAT*(ref IMFVideoMediaType self) GetVideoFormat;
+				public new function HRESULT(ref IMFVideoMediaType self, Guid guidRepresentation, void** ppvRepresentation, int32 lStride) GetVideoRepresentation;
 			}
 		}
 		[CRepr]
@@ -10957,34 +10957,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetState(IUnknown** ppunkState) mut
+			public HRESULT GetState(out IUnknown* ppunkState) mut
 			{
-				return VT.GetState(&this, ppunkState);
+				return VT.GetState(ref this, out ppunkState);
 			}
 			public HRESULT GetStatus() mut
 			{
-				return VT.GetStatus(&this);
+				return VT.GetStatus(ref this);
 			}
 			public HRESULT SetStatus(HRESULT hrStatus) mut
 			{
-				return VT.SetStatus(&this, hrStatus);
+				return VT.SetStatus(ref this, hrStatus);
 			}
-			public HRESULT GetObject(IUnknown** ppObject) mut
+			public HRESULT GetObject(out IUnknown* ppObject) mut
 			{
-				return VT.GetObject(&this, ppObject);
+				return VT.GetObject(ref this, out ppObject);
 			}
 			public IUnknown* GetStateNoAddRef() mut
 			{
-				return VT.GetStateNoAddRef(&this);
+				return VT.GetStateNoAddRef(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFAsyncResult *self, IUnknown** ppunkState) GetState;
-				public new function HRESULT(IMFAsyncResult *self) GetStatus;
-				public new function HRESULT(IMFAsyncResult *self, HRESULT hrStatus) SetStatus;
-				public new function HRESULT(IMFAsyncResult *self, IUnknown** ppObject) GetObject;
-				public new function IUnknown*(IMFAsyncResult *self) GetStateNoAddRef;
+				public new function HRESULT(ref IMFAsyncResult self, out IUnknown* ppunkState) GetState;
+				public new function HRESULT(ref IMFAsyncResult self) GetStatus;
+				public new function HRESULT(ref IMFAsyncResult self, HRESULT hrStatus) SetStatus;
+				public new function HRESULT(ref IMFAsyncResult self, out IUnknown* ppObject) GetObject;
+				public new function IUnknown*(ref IMFAsyncResult self) GetStateNoAddRef;
 			}
 		}
 		[CRepr]
@@ -10994,19 +10994,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetParameters(uint32* pdwFlags, uint32* pdwQueue) mut
+			public HRESULT GetParameters(out uint32 pdwFlags, out uint32 pdwQueue) mut
 			{
-				return VT.GetParameters(&this, pdwFlags, pdwQueue);
+				return VT.GetParameters(ref this, out pdwFlags, out pdwQueue);
 			}
-			public HRESULT Invoke(IMFAsyncResult* pAsyncResult) mut
+			public HRESULT Invoke(ref IMFAsyncResult pAsyncResult) mut
 			{
-				return VT.Invoke(&this, pAsyncResult);
+				return VT.Invoke(ref this, ref pAsyncResult);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFAsyncCallback *self, uint32* pdwFlags, uint32* pdwQueue) GetParameters;
-				public new function HRESULT(IMFAsyncCallback *self, IMFAsyncResult* pAsyncResult) Invoke;
+				public new function HRESULT(ref IMFAsyncCallback self, out uint32 pdwFlags, out uint32 pdwQueue) GetParameters;
+				public new function HRESULT(ref IMFAsyncCallback self, ref IMFAsyncResult pAsyncResult) Invoke;
 			}
 		}
 		[CRepr]
@@ -11018,17 +11018,17 @@ namespace Win32
 			
 			public void* GetObjectPointer() mut
 			{
-				return VT.GetObjectPointer(&this);
+				return VT.GetObjectPointer(ref this);
 			}
 			public uint32 GetObjectTag() mut
 			{
-				return VT.GetObjectTag(&this);
+				return VT.GetObjectTag(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFAsyncCallback.VTable
 			{
-				public new function void*(IMFAsyncCallbackLogging *self) GetObjectPointer;
-				public new function uint32(IMFAsyncCallbackLogging *self) GetObjectTag;
+				public new function void*(ref IMFAsyncCallbackLogging self) GetObjectPointer;
+				public new function uint32(ref IMFAsyncCallbackLogging self) GetObjectTag;
 			}
 		}
 		[CRepr]
@@ -11038,29 +11038,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetType(uint32* pmet) mut
+			public HRESULT ComGetType(out uint32 pmet) mut
 			{
-				return VT.ComGetType(&this, pmet);
+				return VT.ComGetType(ref this, out pmet);
 			}
-			public HRESULT GetExtendedType(Guid* pguidExtendedType) mut
+			public HRESULT GetExtendedType(out Guid pguidExtendedType) mut
 			{
-				return VT.GetExtendedType(&this, pguidExtendedType);
+				return VT.GetExtendedType(ref this, out pguidExtendedType);
 			}
-			public HRESULT GetStatus(HRESULT* phrStatus) mut
+			public HRESULT GetStatus(out HRESULT phrStatus) mut
 			{
-				return VT.GetStatus(&this, phrStatus);
+				return VT.GetStatus(ref this, out phrStatus);
 			}
-			public HRESULT GetValue(PROPVARIANT* pvValue) mut
+			public HRESULT GetValue(out PROPVARIANT pvValue) mut
 			{
-				return VT.GetValue(&this, pvValue);
+				return VT.GetValue(ref this, out pvValue);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFMediaEvent *self, uint32* pmet) ComGetType;
-				public new function HRESULT(IMFMediaEvent *self, Guid* pguidExtendedType) GetExtendedType;
-				public new function HRESULT(IMFMediaEvent *self, HRESULT* phrStatus) GetStatus;
-				public new function HRESULT(IMFMediaEvent *self, PROPVARIANT* pvValue) GetValue;
+				public new function HRESULT(ref IMFMediaEvent self, out uint32 pmet) ComGetType;
+				public new function HRESULT(ref IMFMediaEvent self, out Guid pguidExtendedType) GetExtendedType;
+				public new function HRESULT(ref IMFMediaEvent self, out HRESULT phrStatus) GetStatus;
+				public new function HRESULT(ref IMFMediaEvent self, out PROPVARIANT pvValue) GetValue;
 			}
 		}
 		[CRepr]
@@ -11070,29 +11070,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEvent(MEDIA_EVENT_GENERATOR_GET_EVENT_FLAGS dwFlags, IMFMediaEvent** ppEvent) mut
+			public HRESULT GetEvent(MEDIA_EVENT_GENERATOR_GET_EVENT_FLAGS dwFlags, out IMFMediaEvent* ppEvent) mut
 			{
-				return VT.GetEvent(&this, dwFlags, ppEvent);
+				return VT.GetEvent(ref this, dwFlags, out ppEvent);
 			}
-			public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginGetEvent(ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginGetEvent(&this, pCallback, punkState);
+				return VT.BeginGetEvent(ref this, ref pCallback, ref punkState);
 			}
-			public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent) mut
+			public HRESULT EndGetEvent(ref IMFAsyncResult pResult, out IMFMediaEvent* ppEvent) mut
 			{
-				return VT.EndGetEvent(&this, pResult, ppEvent);
+				return VT.EndGetEvent(ref this, ref pResult, out ppEvent);
 			}
-			public HRESULT QueueEvent(uint32 met, Guid* guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue) mut
+			public HRESULT QueueEvent(uint32 met, in Guid guidExtendedType, HRESULT hrStatus, in PROPVARIANT pvValue) mut
 			{
-				return VT.QueueEvent(&this, met, guidExtendedType, hrStatus, pvValue);
+				return VT.QueueEvent(ref this, met, guidExtendedType, hrStatus, pvValue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEventGenerator *self, MEDIA_EVENT_GENERATOR_GET_EVENT_FLAGS dwFlags, IMFMediaEvent** ppEvent) GetEvent;
-				public new function HRESULT(IMFMediaEventGenerator *self, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginGetEvent;
-				public new function HRESULT(IMFMediaEventGenerator *self, IMFAsyncResult* pResult, IMFMediaEvent** ppEvent) EndGetEvent;
-				public new function HRESULT(IMFMediaEventGenerator *self, uint32 met, Guid* guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue) QueueEvent;
+				public new function HRESULT(ref IMFMediaEventGenerator self, MEDIA_EVENT_GENERATOR_GET_EVENT_FLAGS dwFlags, out IMFMediaEvent* ppEvent) GetEvent;
+				public new function HRESULT(ref IMFMediaEventGenerator self, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginGetEvent;
+				public new function HRESULT(ref IMFMediaEventGenerator self, ref IMFAsyncResult pResult, out IMFMediaEvent* ppEvent) EndGetEvent;
+				public new function HRESULT(ref IMFMediaEventGenerator self, uint32 met, in Guid guidExtendedType, HRESULT hrStatus, in PROPVARIANT pvValue) QueueEvent;
 			}
 		}
 		[CRepr]
@@ -11102,14 +11102,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Invoke(HRESULT hr, IUnknown* pRemoteResult) mut
+			public HRESULT Invoke(HRESULT hr, ref IUnknown pRemoteResult) mut
 			{
-				return VT.Invoke(&this, hr, pRemoteResult);
+				return VT.Invoke(ref this, hr, ref pRemoteResult);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFRemoteAsyncCallback *self, HRESULT hr, IUnknown* pRemoteResult) Invoke;
+				public new function HRESULT(ref IMFRemoteAsyncCallback self, HRESULT hr, ref IUnknown pRemoteResult) Invoke;
 			}
 		}
 		[CRepr]
@@ -11119,84 +11119,84 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCapabilities(uint32* pdwCapabilities) mut
+			public HRESULT GetCapabilities(out uint32 pdwCapabilities) mut
 			{
-				return VT.GetCapabilities(&this, pdwCapabilities);
+				return VT.GetCapabilities(ref this, out pdwCapabilities);
 			}
-			public HRESULT GetLength(uint64* pqwLength) mut
+			public HRESULT GetLength(out uint64 pqwLength) mut
 			{
-				return VT.GetLength(&this, pqwLength);
+				return VT.GetLength(ref this, out pqwLength);
 			}
 			public HRESULT SetLength(uint64 qwLength) mut
 			{
-				return VT.SetLength(&this, qwLength);
+				return VT.SetLength(ref this, qwLength);
 			}
-			public HRESULT GetCurrentPosition(uint64* pqwPosition) mut
+			public HRESULT GetCurrentPosition(out uint64 pqwPosition) mut
 			{
-				return VT.GetCurrentPosition(&this, pqwPosition);
+				return VT.GetCurrentPosition(ref this, out pqwPosition);
 			}
 			public HRESULT SetCurrentPosition(uint64 qwPosition) mut
 			{
-				return VT.SetCurrentPosition(&this, qwPosition);
+				return VT.SetCurrentPosition(ref this, qwPosition);
 			}
-			public HRESULT IsEndOfStream(BOOL* pfEndOfStream) mut
+			public HRESULT IsEndOfStream(out BOOL pfEndOfStream) mut
 			{
-				return VT.IsEndOfStream(&this, pfEndOfStream);
+				return VT.IsEndOfStream(ref this, out pfEndOfStream);
 			}
-			public HRESULT Read(uint8* pb, uint32 cb, uint32* pcbRead) mut
+			public HRESULT Read(uint8* pb, uint32 cb, out uint32 pcbRead) mut
 			{
-				return VT.Read(&this, pb, cb, pcbRead);
+				return VT.Read(ref this, pb, cb, out pcbRead);
 			}
-			public HRESULT BeginRead(uint8* pb, uint32 cb, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginRead(out uint8 pb, uint32 cb, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginRead(&this, pb, cb, pCallback, punkState);
+				return VT.BeginRead(ref this, out pb, cb, ref pCallback, ref punkState);
 			}
-			public HRESULT EndRead(IMFAsyncResult* pResult, uint32* pcbRead) mut
+			public HRESULT EndRead(ref IMFAsyncResult pResult, out uint32 pcbRead) mut
 			{
-				return VT.EndRead(&this, pResult, pcbRead);
+				return VT.EndRead(ref this, ref pResult, out pcbRead);
 			}
-			public HRESULT Write(uint8* pb, uint32 cb, uint32* pcbWritten) mut
+			public HRESULT Write(uint8* pb, uint32 cb, out uint32 pcbWritten) mut
 			{
-				return VT.Write(&this, pb, cb, pcbWritten);
+				return VT.Write(ref this, pb, cb, out pcbWritten);
 			}
-			public HRESULT BeginWrite(uint8* pb, uint32 cb, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginWrite(in uint8 pb, uint32 cb, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginWrite(&this, pb, cb, pCallback, punkState);
+				return VT.BeginWrite(ref this, pb, cb, ref pCallback, ref punkState);
 			}
-			public HRESULT EndWrite(IMFAsyncResult* pResult, uint32* pcbWritten) mut
+			public HRESULT EndWrite(ref IMFAsyncResult pResult, out uint32 pcbWritten) mut
 			{
-				return VT.EndWrite(&this, pResult, pcbWritten);
+				return VT.EndWrite(ref this, ref pResult, out pcbWritten);
 			}
-			public HRESULT Seek(MFBYTESTREAM_SEEK_ORIGIN SeekOrigin, int64 llSeekOffset, uint32 dwSeekFlags, uint64* pqwCurrentPosition) mut
+			public HRESULT Seek(MFBYTESTREAM_SEEK_ORIGIN SeekOrigin, int64 llSeekOffset, uint32 dwSeekFlags, out uint64 pqwCurrentPosition) mut
 			{
-				return VT.Seek(&this, SeekOrigin, llSeekOffset, dwSeekFlags, pqwCurrentPosition);
+				return VT.Seek(ref this, SeekOrigin, llSeekOffset, dwSeekFlags, out pqwCurrentPosition);
 			}
 			public HRESULT Flush() mut
 			{
-				return VT.Flush(&this);
+				return VT.Flush(ref this);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFByteStream *self, uint32* pdwCapabilities) GetCapabilities;
-				public new function HRESULT(IMFByteStream *self, uint64* pqwLength) GetLength;
-				public new function HRESULT(IMFByteStream *self, uint64 qwLength) SetLength;
-				public new function HRESULT(IMFByteStream *self, uint64* pqwPosition) GetCurrentPosition;
-				public new function HRESULT(IMFByteStream *self, uint64 qwPosition) SetCurrentPosition;
-				public new function HRESULT(IMFByteStream *self, BOOL* pfEndOfStream) IsEndOfStream;
-				public new function HRESULT(IMFByteStream *self, uint8* pb, uint32 cb, uint32* pcbRead) Read;
-				public new function HRESULT(IMFByteStream *self, uint8* pb, uint32 cb, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginRead;
-				public new function HRESULT(IMFByteStream *self, IMFAsyncResult* pResult, uint32* pcbRead) EndRead;
-				public new function HRESULT(IMFByteStream *self, uint8* pb, uint32 cb, uint32* pcbWritten) Write;
-				public new function HRESULT(IMFByteStream *self, uint8* pb, uint32 cb, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginWrite;
-				public new function HRESULT(IMFByteStream *self, IMFAsyncResult* pResult, uint32* pcbWritten) EndWrite;
-				public new function HRESULT(IMFByteStream *self, MFBYTESTREAM_SEEK_ORIGIN SeekOrigin, int64 llSeekOffset, uint32 dwSeekFlags, uint64* pqwCurrentPosition) Seek;
-				public new function HRESULT(IMFByteStream *self) Flush;
-				public new function HRESULT(IMFByteStream *self) Close;
+				public new function HRESULT(ref IMFByteStream self, out uint32 pdwCapabilities) GetCapabilities;
+				public new function HRESULT(ref IMFByteStream self, out uint64 pqwLength) GetLength;
+				public new function HRESULT(ref IMFByteStream self, uint64 qwLength) SetLength;
+				public new function HRESULT(ref IMFByteStream self, out uint64 pqwPosition) GetCurrentPosition;
+				public new function HRESULT(ref IMFByteStream self, uint64 qwPosition) SetCurrentPosition;
+				public new function HRESULT(ref IMFByteStream self, out BOOL pfEndOfStream) IsEndOfStream;
+				public new function HRESULT(ref IMFByteStream self, uint8* pb, uint32 cb, out uint32 pcbRead) Read;
+				public new function HRESULT(ref IMFByteStream self, out uint8 pb, uint32 cb, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginRead;
+				public new function HRESULT(ref IMFByteStream self, ref IMFAsyncResult pResult, out uint32 pcbRead) EndRead;
+				public new function HRESULT(ref IMFByteStream self, uint8* pb, uint32 cb, out uint32 pcbWritten) Write;
+				public new function HRESULT(ref IMFByteStream self, in uint8 pb, uint32 cb, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginWrite;
+				public new function HRESULT(ref IMFByteStream self, ref IMFAsyncResult pResult, out uint32 pcbWritten) EndWrite;
+				public new function HRESULT(ref IMFByteStream self, MFBYTESTREAM_SEEK_ORIGIN SeekOrigin, int64 llSeekOffset, uint32 dwSeekFlags, out uint64 pqwCurrentPosition) Seek;
+				public new function HRESULT(ref IMFByteStream self) Flush;
+				public new function HRESULT(ref IMFByteStream self) Close;
 			}
 		}
 		[CRepr]
@@ -11206,14 +11206,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateByteStreamProxy(IMFByteStream* pByteStream, IMFAttributes* pAttributes, Guid* riid, void** ppvObject) mut
+			public HRESULT CreateByteStreamProxy(ref IMFByteStream pByteStream, ref IMFAttributes pAttributes, in Guid riid, void** ppvObject) mut
 			{
-				return VT.CreateByteStreamProxy(&this, pByteStream, pAttributes, riid, ppvObject);
+				return VT.CreateByteStreamProxy(ref this, ref pByteStream, ref pAttributes, riid, ppvObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFByteStreamProxyClassFactory *self, IMFByteStream* pByteStream, IMFAttributes* pAttributes, Guid* riid, void** ppvObject) CreateByteStreamProxy;
+				public new function HRESULT(ref IMFByteStreamProxyClassFactory self, ref IMFByteStream pByteStream, ref IMFAttributes pAttributes, in Guid riid, void** ppvObject) CreateByteStreamProxy;
 			}
 		}
 		[CRepr]
@@ -11223,24 +11223,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginWriteSample(IMFSample* pSample, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginWriteSample(ref IMFSample pSample, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginWriteSample(&this, pSample, pCallback, punkState);
+				return VT.BeginWriteSample(ref this, ref pSample, ref pCallback, ref punkState);
 			}
-			public HRESULT EndWriteSample(IMFAsyncResult* pResult) mut
+			public HRESULT EndWriteSample(ref IMFAsyncResult pResult) mut
 			{
-				return VT.EndWriteSample(&this, pResult);
+				return VT.EndWriteSample(ref this, ref pResult);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSampleOutputStream *self, IMFSample* pSample, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginWriteSample;
-				public new function HRESULT(IMFSampleOutputStream *self, IMFAsyncResult* pResult) EndWriteSample;
-				public new function HRESULT(IMFSampleOutputStream *self) Close;
+				public new function HRESULT(ref IMFSampleOutputStream self, ref IMFSample pSample, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginWriteSample;
+				public new function HRESULT(ref IMFSampleOutputStream self, ref IMFAsyncResult pResult) EndWriteSample;
+				public new function HRESULT(ref IMFSampleOutputStream self) Close;
 			}
 		}
 		[CRepr]
@@ -11250,39 +11250,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetElementCount(uint32* pcElements) mut
+			public HRESULT GetElementCount(out uint32 pcElements) mut
 			{
-				return VT.GetElementCount(&this, pcElements);
+				return VT.GetElementCount(ref this, out pcElements);
 			}
-			public HRESULT GetElement(uint32 dwElementIndex, IUnknown** ppUnkElement) mut
+			public HRESULT GetElement(uint32 dwElementIndex, out IUnknown* ppUnkElement) mut
 			{
-				return VT.GetElement(&this, dwElementIndex, ppUnkElement);
+				return VT.GetElement(ref this, dwElementIndex, out ppUnkElement);
 			}
-			public HRESULT AddElement(IUnknown* pUnkElement) mut
+			public HRESULT AddElement(ref IUnknown pUnkElement) mut
 			{
-				return VT.AddElement(&this, pUnkElement);
+				return VT.AddElement(ref this, ref pUnkElement);
 			}
-			public HRESULT RemoveElement(uint32 dwElementIndex, IUnknown** ppUnkElement) mut
+			public HRESULT RemoveElement(uint32 dwElementIndex, out IUnknown* ppUnkElement) mut
 			{
-				return VT.RemoveElement(&this, dwElementIndex, ppUnkElement);
+				return VT.RemoveElement(ref this, dwElementIndex, out ppUnkElement);
 			}
-			public HRESULT InsertElementAt(uint32 dwIndex, IUnknown* pUnknown) mut
+			public HRESULT InsertElementAt(uint32 dwIndex, ref IUnknown pUnknown) mut
 			{
-				return VT.InsertElementAt(&this, dwIndex, pUnknown);
+				return VT.InsertElementAt(ref this, dwIndex, ref pUnknown);
 			}
 			public HRESULT RemoveAllElements() mut
 			{
-				return VT.RemoveAllElements(&this);
+				return VT.RemoveAllElements(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCollection *self, uint32* pcElements) GetElementCount;
-				public new function HRESULT(IMFCollection *self, uint32 dwElementIndex, IUnknown** ppUnkElement) GetElement;
-				public new function HRESULT(IMFCollection *self, IUnknown* pUnkElement) AddElement;
-				public new function HRESULT(IMFCollection *self, uint32 dwElementIndex, IUnknown** ppUnkElement) RemoveElement;
-				public new function HRESULT(IMFCollection *self, uint32 dwIndex, IUnknown* pUnknown) InsertElementAt;
-				public new function HRESULT(IMFCollection *self) RemoveAllElements;
+				public new function HRESULT(ref IMFCollection self, out uint32 pcElements) GetElementCount;
+				public new function HRESULT(ref IMFCollection self, uint32 dwElementIndex, out IUnknown* ppUnkElement) GetElement;
+				public new function HRESULT(ref IMFCollection self, ref IUnknown pUnkElement) AddElement;
+				public new function HRESULT(ref IMFCollection self, uint32 dwElementIndex, out IUnknown* ppUnkElement) RemoveElement;
+				public new function HRESULT(ref IMFCollection self, uint32 dwIndex, ref IUnknown pUnknown) InsertElementAt;
+				public new function HRESULT(ref IMFCollection self) RemoveAllElements;
 			}
 		}
 		[CRepr]
@@ -11292,44 +11292,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEvent(uint32 dwFlags, IMFMediaEvent** ppEvent) mut
+			public HRESULT GetEvent(uint32 dwFlags, out IMFMediaEvent* ppEvent) mut
 			{
-				return VT.GetEvent(&this, dwFlags, ppEvent);
+				return VT.GetEvent(ref this, dwFlags, out ppEvent);
 			}
-			public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginGetEvent(ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginGetEvent(&this, pCallback, punkState);
+				return VT.BeginGetEvent(ref this, ref pCallback, ref punkState);
 			}
-			public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent) mut
+			public HRESULT EndGetEvent(ref IMFAsyncResult pResult, out IMFMediaEvent* ppEvent) mut
 			{
-				return VT.EndGetEvent(&this, pResult, ppEvent);
+				return VT.EndGetEvent(ref this, ref pResult, out ppEvent);
 			}
-			public HRESULT QueueEvent(IMFMediaEvent* pEvent) mut
+			public HRESULT QueueEvent(ref IMFMediaEvent pEvent) mut
 			{
-				return VT.QueueEvent(&this, pEvent);
+				return VT.QueueEvent(ref this, ref pEvent);
 			}
-			public HRESULT QueueEventParamVar(uint32 met, Guid* guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue) mut
+			public HRESULT QueueEventParamVar(uint32 met, in Guid guidExtendedType, HRESULT hrStatus, in PROPVARIANT pvValue) mut
 			{
-				return VT.QueueEventParamVar(&this, met, guidExtendedType, hrStatus, pvValue);
+				return VT.QueueEventParamVar(ref this, met, guidExtendedType, hrStatus, pvValue);
 			}
-			public HRESULT QueueEventParamUnk(uint32 met, Guid* guidExtendedType, HRESULT hrStatus, IUnknown* pUnk) mut
+			public HRESULT QueueEventParamUnk(uint32 met, in Guid guidExtendedType, HRESULT hrStatus, ref IUnknown pUnk) mut
 			{
-				return VT.QueueEventParamUnk(&this, met, guidExtendedType, hrStatus, pUnk);
+				return VT.QueueEventParamUnk(ref this, met, guidExtendedType, hrStatus, ref pUnk);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEventQueue *self, uint32 dwFlags, IMFMediaEvent** ppEvent) GetEvent;
-				public new function HRESULT(IMFMediaEventQueue *self, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginGetEvent;
-				public new function HRESULT(IMFMediaEventQueue *self, IMFAsyncResult* pResult, IMFMediaEvent** ppEvent) EndGetEvent;
-				public new function HRESULT(IMFMediaEventQueue *self, IMFMediaEvent* pEvent) QueueEvent;
-				public new function HRESULT(IMFMediaEventQueue *self, uint32 met, Guid* guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue) QueueEventParamVar;
-				public new function HRESULT(IMFMediaEventQueue *self, uint32 met, Guid* guidExtendedType, HRESULT hrStatus, IUnknown* pUnk) QueueEventParamUnk;
-				public new function HRESULT(IMFMediaEventQueue *self) Shutdown;
+				public new function HRESULT(ref IMFMediaEventQueue self, uint32 dwFlags, out IMFMediaEvent* ppEvent) GetEvent;
+				public new function HRESULT(ref IMFMediaEventQueue self, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginGetEvent;
+				public new function HRESULT(ref IMFMediaEventQueue self, ref IMFAsyncResult pResult, out IMFMediaEvent* ppEvent) EndGetEvent;
+				public new function HRESULT(ref IMFMediaEventQueue self, ref IMFMediaEvent pEvent) QueueEvent;
+				public new function HRESULT(ref IMFMediaEventQueue self, uint32 met, in Guid guidExtendedType, HRESULT hrStatus, in PROPVARIANT pvValue) QueueEventParamVar;
+				public new function HRESULT(ref IMFMediaEventQueue self, uint32 met, in Guid guidExtendedType, HRESULT hrStatus, ref IUnknown pUnk) QueueEventParamUnk;
+				public new function HRESULT(ref IMFMediaEventQueue self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -11339,24 +11339,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ActivateObject(Guid* riid, void** ppv) mut
+			public HRESULT ActivateObject(in Guid riid, void** ppv) mut
 			{
-				return VT.ActivateObject(&this, riid, ppv);
+				return VT.ActivateObject(ref this, riid, ppv);
 			}
 			public HRESULT ShutdownObject() mut
 			{
-				return VT.ShutdownObject(&this);
+				return VT.ShutdownObject(ref this);
 			}
 			public HRESULT DetachObject() mut
 			{
-				return VT.DetachObject(&this);
+				return VT.DetachObject(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFActivate *self, Guid* riid, void** ppv) ActivateObject;
-				public new function HRESULT(IMFActivate *self) ShutdownObject;
-				public new function HRESULT(IMFActivate *self) DetachObject;
+				public new function HRESULT(ref IMFActivate self, in Guid riid, void** ppv) ActivateObject;
+				public new function HRESULT(ref IMFActivate self) ShutdownObject;
+				public new function HRESULT(ref IMFActivate self) DetachObject;
 			}
 		}
 		[CRepr]
@@ -11366,39 +11366,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPreferredClsid(uint32 pluginType, PWSTR selector, Guid* clsid) mut
+			public HRESULT GetPreferredClsid(uint32 pluginType, PWSTR selector, out Guid clsid) mut
 			{
-				return VT.GetPreferredClsid(&this, pluginType, selector, clsid);
+				return VT.GetPreferredClsid(ref this, pluginType, selector, out clsid);
 			}
-			public HRESULT GetPreferredClsidByIndex(uint32 pluginType, uint32 index, PWSTR* selector, Guid* clsid) mut
+			public HRESULT GetPreferredClsidByIndex(uint32 pluginType, uint32 index, out PWSTR selector, out Guid clsid) mut
 			{
-				return VT.GetPreferredClsidByIndex(&this, pluginType, index, selector, clsid);
+				return VT.GetPreferredClsidByIndex(ref this, pluginType, index, out selector, out clsid);
 			}
 			public HRESULT SetPreferredClsid(uint32 pluginType, PWSTR selector, Guid* clsid) mut
 			{
-				return VT.SetPreferredClsid(&this, pluginType, selector, clsid);
+				return VT.SetPreferredClsid(ref this, pluginType, selector, clsid);
 			}
-			public HRESULT IsDisabled(uint32 pluginType, Guid* clsid) mut
+			public HRESULT IsDisabled(uint32 pluginType, in Guid clsid) mut
 			{
-				return VT.IsDisabled(&this, pluginType, clsid);
+				return VT.IsDisabled(ref this, pluginType, clsid);
 			}
-			public HRESULT GetDisabledByIndex(uint32 pluginType, uint32 index, Guid* clsid) mut
+			public HRESULT GetDisabledByIndex(uint32 pluginType, uint32 index, out Guid clsid) mut
 			{
-				return VT.GetDisabledByIndex(&this, pluginType, index, clsid);
+				return VT.GetDisabledByIndex(ref this, pluginType, index, out clsid);
 			}
-			public HRESULT SetDisabled(uint32 pluginType, Guid* clsid, BOOL disabled) mut
+			public HRESULT SetDisabled(uint32 pluginType, in Guid clsid, BOOL disabled) mut
 			{
-				return VT.SetDisabled(&this, pluginType, clsid, disabled);
+				return VT.SetDisabled(ref this, pluginType, clsid, disabled);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFPluginControl *self, uint32 pluginType, PWSTR selector, Guid* clsid) GetPreferredClsid;
-				public new function HRESULT(IMFPluginControl *self, uint32 pluginType, uint32 index, PWSTR* selector, Guid* clsid) GetPreferredClsidByIndex;
-				public new function HRESULT(IMFPluginControl *self, uint32 pluginType, PWSTR selector, Guid* clsid) SetPreferredClsid;
-				public new function HRESULT(IMFPluginControl *self, uint32 pluginType, Guid* clsid) IsDisabled;
-				public new function HRESULT(IMFPluginControl *self, uint32 pluginType, uint32 index, Guid* clsid) GetDisabledByIndex;
-				public new function HRESULT(IMFPluginControl *self, uint32 pluginType, Guid* clsid, BOOL disabled) SetDisabled;
+				public new function HRESULT(ref IMFPluginControl self, uint32 pluginType, PWSTR selector, out Guid clsid) GetPreferredClsid;
+				public new function HRESULT(ref IMFPluginControl self, uint32 pluginType, uint32 index, out PWSTR selector, out Guid clsid) GetPreferredClsidByIndex;
+				public new function HRESULT(ref IMFPluginControl self, uint32 pluginType, PWSTR selector, Guid* clsid) SetPreferredClsid;
+				public new function HRESULT(ref IMFPluginControl self, uint32 pluginType, in Guid clsid) IsDisabled;
+				public new function HRESULT(ref IMFPluginControl self, uint32 pluginType, uint32 index, out Guid clsid) GetDisabledByIndex;
+				public new function HRESULT(ref IMFPluginControl self, uint32 pluginType, in Guid clsid, BOOL disabled) SetDisabled;
 			}
 		}
 		[CRepr]
@@ -11410,12 +11410,12 @@ namespace Win32
 			
 			public HRESULT SetPolicy(MF_PLUGIN_CONTROL_POLICY policy) mut
 			{
-				return VT.SetPolicy(&this, policy);
+				return VT.SetPolicy(ref this, policy);
 			}
 			[CRepr]
 			public struct VTable : IMFPluginControl.VTable
 			{
-				public new function HRESULT(IMFPluginControl2 *self, MF_PLUGIN_CONTROL_POLICY policy) SetPolicy;
+				public new function HRESULT(ref IMFPluginControl2 self, MF_PLUGIN_CONTROL_POLICY policy) SetPolicy;
 			}
 		}
 		[CRepr]
@@ -11427,42 +11427,42 @@ namespace Win32
 			
 			public HRESULT CloseDeviceHandle(HANDLE hDevice) mut
 			{
-				return VT.CloseDeviceHandle(&this, hDevice);
+				return VT.CloseDeviceHandle(ref this, hDevice);
 			}
-			public HRESULT GetVideoService(HANDLE hDevice, Guid* riid, void** ppService) mut
+			public HRESULT GetVideoService(HANDLE hDevice, in Guid riid, void** ppService) mut
 			{
-				return VT.GetVideoService(&this, hDevice, riid, ppService);
+				return VT.GetVideoService(ref this, hDevice, riid, ppService);
 			}
-			public HRESULT LockDevice(HANDLE hDevice, Guid* riid, void** ppUnkDevice, BOOL fBlock) mut
+			public HRESULT LockDevice(HANDLE hDevice, in Guid riid, void** ppUnkDevice, BOOL fBlock) mut
 			{
-				return VT.LockDevice(&this, hDevice, riid, ppUnkDevice, fBlock);
+				return VT.LockDevice(ref this, hDevice, riid, ppUnkDevice, fBlock);
 			}
-			public HRESULT OpenDeviceHandle(HANDLE* phDevice) mut
+			public HRESULT OpenDeviceHandle(out HANDLE phDevice) mut
 			{
-				return VT.OpenDeviceHandle(&this, phDevice);
+				return VT.OpenDeviceHandle(ref this, out phDevice);
 			}
-			public HRESULT ResetDevice(IUnknown* pUnkDevice, uint32 resetToken) mut
+			public HRESULT ResetDevice(ref IUnknown pUnkDevice, uint32 resetToken) mut
 			{
-				return VT.ResetDevice(&this, pUnkDevice, resetToken);
+				return VT.ResetDevice(ref this, ref pUnkDevice, resetToken);
 			}
 			public HRESULT TestDevice(HANDLE hDevice) mut
 			{
-				return VT.TestDevice(&this, hDevice);
+				return VT.TestDevice(ref this, hDevice);
 			}
 			public HRESULT UnlockDevice(HANDLE hDevice, BOOL fSaveState) mut
 			{
-				return VT.UnlockDevice(&this, hDevice, fSaveState);
+				return VT.UnlockDevice(ref this, hDevice, fSaveState);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice) CloseDeviceHandle;
-				public new function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice, Guid* riid, void** ppService) GetVideoService;
-				public new function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice, Guid* riid, void** ppUnkDevice, BOOL fBlock) LockDevice;
-				public new function HRESULT(IMFDXGIDeviceManager *self, HANDLE* phDevice) OpenDeviceHandle;
-				public new function HRESULT(IMFDXGIDeviceManager *self, IUnknown* pUnkDevice, uint32 resetToken) ResetDevice;
-				public new function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice) TestDevice;
-				public new function HRESULT(IMFDXGIDeviceManager *self, HANDLE hDevice, BOOL fSaveState) UnlockDevice;
+				public new function HRESULT(ref IMFDXGIDeviceManager self, HANDLE hDevice) CloseDeviceHandle;
+				public new function HRESULT(ref IMFDXGIDeviceManager self, HANDLE hDevice, in Guid riid, void** ppService) GetVideoService;
+				public new function HRESULT(ref IMFDXGIDeviceManager self, HANDLE hDevice, in Guid riid, void** ppUnkDevice, BOOL fBlock) LockDevice;
+				public new function HRESULT(ref IMFDXGIDeviceManager self, out HANDLE phDevice) OpenDeviceHandle;
+				public new function HRESULT(ref IMFDXGIDeviceManager self, ref IUnknown pUnkDevice, uint32 resetToken) ResetDevice;
+				public new function HRESULT(ref IMFDXGIDeviceManager self, HANDLE hDevice) TestDevice;
+				public new function HRESULT(ref IMFDXGIDeviceManager self, HANDLE hDevice, BOOL fSaveState) UnlockDevice;
 			}
 		}
 		[CRepr]
@@ -11472,19 +11472,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamCount(uint32* pdwMuxStreamCount) mut
+			public HRESULT GetStreamCount(out uint32 pdwMuxStreamCount) mut
 			{
-				return VT.GetStreamCount(&this, pdwMuxStreamCount);
+				return VT.GetStreamCount(ref this, out pdwMuxStreamCount);
 			}
-			public HRESULT GetAttributes(uint32 dwMuxStreamIndex, IMFAttributes** ppStreamAttributes) mut
+			public HRESULT GetAttributes(uint32 dwMuxStreamIndex, out IMFAttributes* ppStreamAttributes) mut
 			{
-				return VT.GetAttributes(&this, dwMuxStreamIndex, ppStreamAttributes);
+				return VT.GetAttributes(ref this, dwMuxStreamIndex, out ppStreamAttributes);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMuxStreamAttributesManager *self, uint32* pdwMuxStreamCount) GetStreamCount;
-				public new function HRESULT(IMFMuxStreamAttributesManager *self, uint32 dwMuxStreamIndex, IMFAttributes** ppStreamAttributes) GetAttributes;
+				public new function HRESULT(ref IMFMuxStreamAttributesManager self, out uint32 pdwMuxStreamCount) GetStreamCount;
+				public new function HRESULT(ref IMFMuxStreamAttributesManager self, uint32 dwMuxStreamIndex, out IMFAttributes* ppStreamAttributes) GetAttributes;
 			}
 		}
 		[CRepr]
@@ -11494,39 +11494,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamCount(uint32* pdwMuxStreamCount) mut
+			public HRESULT GetStreamCount(out uint32 pdwMuxStreamCount) mut
 			{
-				return VT.GetStreamCount(&this, pdwMuxStreamCount);
+				return VT.GetStreamCount(ref this, out pdwMuxStreamCount);
 			}
-			public HRESULT GetMediaType(uint32 dwMuxStreamIndex, IMFMediaType** ppMediaType) mut
+			public HRESULT GetMediaType(uint32 dwMuxStreamIndex, out IMFMediaType* ppMediaType) mut
 			{
-				return VT.GetMediaType(&this, dwMuxStreamIndex, ppMediaType);
+				return VT.GetMediaType(ref this, dwMuxStreamIndex, out ppMediaType);
 			}
-			public HRESULT GetStreamConfigurationCount(uint32* pdwCount) mut
+			public HRESULT GetStreamConfigurationCount(out uint32 pdwCount) mut
 			{
-				return VT.GetStreamConfigurationCount(&this, pdwCount);
+				return VT.GetStreamConfigurationCount(ref this, out pdwCount);
 			}
 			public HRESULT AddStreamConfiguration(uint64 ullStreamMask) mut
 			{
-				return VT.AddStreamConfiguration(&this, ullStreamMask);
+				return VT.AddStreamConfiguration(ref this, ullStreamMask);
 			}
 			public HRESULT RemoveStreamConfiguration(uint64 ullStreamMask) mut
 			{
-				return VT.RemoveStreamConfiguration(&this, ullStreamMask);
+				return VT.RemoveStreamConfiguration(ref this, ullStreamMask);
 			}
-			public HRESULT GetStreamConfiguration(uint32 ulIndex, uint64* pullStreamMask) mut
+			public HRESULT GetStreamConfiguration(uint32 ulIndex, out uint64 pullStreamMask) mut
 			{
-				return VT.GetStreamConfiguration(&this, ulIndex, pullStreamMask);
+				return VT.GetStreamConfiguration(ref this, ulIndex, out pullStreamMask);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMuxStreamMediaTypeManager *self, uint32* pdwMuxStreamCount) GetStreamCount;
-				public new function HRESULT(IMFMuxStreamMediaTypeManager *self, uint32 dwMuxStreamIndex, IMFMediaType** ppMediaType) GetMediaType;
-				public new function HRESULT(IMFMuxStreamMediaTypeManager *self, uint32* pdwCount) GetStreamConfigurationCount;
-				public new function HRESULT(IMFMuxStreamMediaTypeManager *self, uint64 ullStreamMask) AddStreamConfiguration;
-				public new function HRESULT(IMFMuxStreamMediaTypeManager *self, uint64 ullStreamMask) RemoveStreamConfiguration;
-				public new function HRESULT(IMFMuxStreamMediaTypeManager *self, uint32 ulIndex, uint64* pullStreamMask) GetStreamConfiguration;
+				public new function HRESULT(ref IMFMuxStreamMediaTypeManager self, out uint32 pdwMuxStreamCount) GetStreamCount;
+				public new function HRESULT(ref IMFMuxStreamMediaTypeManager self, uint32 dwMuxStreamIndex, out IMFMediaType* ppMediaType) GetMediaType;
+				public new function HRESULT(ref IMFMuxStreamMediaTypeManager self, out uint32 pdwCount) GetStreamConfigurationCount;
+				public new function HRESULT(ref IMFMuxStreamMediaTypeManager self, uint64 ullStreamMask) AddStreamConfiguration;
+				public new function HRESULT(ref IMFMuxStreamMediaTypeManager self, uint64 ullStreamMask) RemoveStreamConfiguration;
+				public new function HRESULT(ref IMFMuxStreamMediaTypeManager self, uint32 ulIndex, out uint64 pullStreamMask) GetStreamConfiguration;
 			}
 		}
 		[CRepr]
@@ -11536,24 +11536,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamCount(uint32* pdwMuxStreamCount) mut
+			public HRESULT GetStreamCount(out uint32 pdwMuxStreamCount) mut
 			{
-				return VT.GetStreamCount(&this, pdwMuxStreamCount);
+				return VT.GetStreamCount(ref this, out pdwMuxStreamCount);
 			}
-			public HRESULT GetSample(uint32 dwMuxStreamIndex, IMFSample** ppSample) mut
+			public HRESULT GetSample(uint32 dwMuxStreamIndex, out IMFSample* ppSample) mut
 			{
-				return VT.GetSample(&this, dwMuxStreamIndex, ppSample);
+				return VT.GetSample(ref this, dwMuxStreamIndex, out ppSample);
 			}
 			public uint64 GetStreamConfiguration() mut
 			{
-				return VT.GetStreamConfiguration(&this);
+				return VT.GetStreamConfiguration(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMuxStreamSampleManager *self, uint32* pdwMuxStreamCount) GetStreamCount;
-				public new function HRESULT(IMFMuxStreamSampleManager *self, uint32 dwMuxStreamIndex, IMFSample** ppSample) GetSample;
-				public new function uint64(IMFMuxStreamSampleManager *self) GetStreamConfiguration;
+				public new function HRESULT(ref IMFMuxStreamSampleManager self, out uint32 pdwMuxStreamCount) GetStreamCount;
+				public new function HRESULT(ref IMFMuxStreamSampleManager self, uint32 dwMuxStreamIndex, out IMFSample* ppSample) GetSample;
+				public new function uint64(ref IMFMuxStreamSampleManager self) GetStreamConfiguration;
 			}
 		}
 		[CRepr]
@@ -11563,14 +11563,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetIdentifier(Guid* pGuidIdentifier) mut
+			public HRESULT GetIdentifier(out Guid pGuidIdentifier) mut
 			{
-				return VT.GetIdentifier(&this, pGuidIdentifier);
+				return VT.GetIdentifier(ref this, out pGuidIdentifier);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSecureBuffer *self, Guid* pGuidIdentifier) GetIdentifier;
+				public new function HRESULT(ref IMFSecureBuffer self, out Guid pGuidIdentifier) GetIdentifier;
 			}
 		}
 		[CRepr]
@@ -11580,124 +11580,124 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamLimits(uint32* pdwInputMinimum, uint32* pdwInputMaximum, uint32* pdwOutputMinimum, uint32* pdwOutputMaximum) mut
+			public HRESULT GetStreamLimits(out uint32 pdwInputMinimum, out uint32 pdwInputMaximum, out uint32 pdwOutputMinimum, out uint32 pdwOutputMaximum) mut
 			{
-				return VT.GetStreamLimits(&this, pdwInputMinimum, pdwInputMaximum, pdwOutputMinimum, pdwOutputMaximum);
+				return VT.GetStreamLimits(ref this, out pdwInputMinimum, out pdwInputMaximum, out pdwOutputMinimum, out pdwOutputMaximum);
 			}
-			public HRESULT GetStreamCount(uint32* pcInputStreams, uint32* pcOutputStreams) mut
+			public HRESULT GetStreamCount(out uint32 pcInputStreams, out uint32 pcOutputStreams) mut
 			{
-				return VT.GetStreamCount(&this, pcInputStreams, pcOutputStreams);
+				return VT.GetStreamCount(ref this, out pcInputStreams, out pcOutputStreams);
 			}
 			public HRESULT GetStreamIDs(uint32 dwInputIDArraySize, uint32* pdwInputIDs, uint32 dwOutputIDArraySize, uint32* pdwOutputIDs) mut
 			{
-				return VT.GetStreamIDs(&this, dwInputIDArraySize, pdwInputIDs, dwOutputIDArraySize, pdwOutputIDs);
+				return VT.GetStreamIDs(ref this, dwInputIDArraySize, pdwInputIDs, dwOutputIDArraySize, pdwOutputIDs);
 			}
-			public HRESULT GetInputStreamInfo(uint32 dwInputStreamID, MFT_INPUT_STREAM_INFO* pStreamInfo) mut
+			public HRESULT GetInputStreamInfo(uint32 dwInputStreamID, out MFT_INPUT_STREAM_INFO pStreamInfo) mut
 			{
-				return VT.GetInputStreamInfo(&this, dwInputStreamID, pStreamInfo);
+				return VT.GetInputStreamInfo(ref this, dwInputStreamID, out pStreamInfo);
 			}
-			public HRESULT GetOutputStreamInfo(uint32 dwOutputStreamID, MFT_OUTPUT_STREAM_INFO* pStreamInfo) mut
+			public HRESULT GetOutputStreamInfo(uint32 dwOutputStreamID, out MFT_OUTPUT_STREAM_INFO pStreamInfo) mut
 			{
-				return VT.GetOutputStreamInfo(&this, dwOutputStreamID, pStreamInfo);
+				return VT.GetOutputStreamInfo(ref this, dwOutputStreamID, out pStreamInfo);
 			}
-			public HRESULT GetAttributes(IMFAttributes** pAttributes) mut
+			public HRESULT GetAttributes(out IMFAttributes* pAttributes) mut
 			{
-				return VT.GetAttributes(&this, pAttributes);
+				return VT.GetAttributes(ref this, out pAttributes);
 			}
-			public HRESULT GetInputStreamAttributes(uint32 dwInputStreamID, IMFAttributes** pAttributes) mut
+			public HRESULT GetInputStreamAttributes(uint32 dwInputStreamID, out IMFAttributes* pAttributes) mut
 			{
-				return VT.GetInputStreamAttributes(&this, dwInputStreamID, pAttributes);
+				return VT.GetInputStreamAttributes(ref this, dwInputStreamID, out pAttributes);
 			}
-			public HRESULT GetOutputStreamAttributes(uint32 dwOutputStreamID, IMFAttributes** pAttributes) mut
+			public HRESULT GetOutputStreamAttributes(uint32 dwOutputStreamID, out IMFAttributes* pAttributes) mut
 			{
-				return VT.GetOutputStreamAttributes(&this, dwOutputStreamID, pAttributes);
+				return VT.GetOutputStreamAttributes(ref this, dwOutputStreamID, out pAttributes);
 			}
 			public HRESULT DeleteInputStream(uint32 dwStreamID) mut
 			{
-				return VT.DeleteInputStream(&this, dwStreamID);
+				return VT.DeleteInputStream(ref this, dwStreamID);
 			}
-			public HRESULT AddInputStreams(uint32 cStreams, uint32* adwStreamIDs) mut
+			public HRESULT AddInputStreams(uint32 cStreams, ref uint32 adwStreamIDs) mut
 			{
-				return VT.AddInputStreams(&this, cStreams, adwStreamIDs);
+				return VT.AddInputStreams(ref this, cStreams, ref adwStreamIDs);
 			}
-			public HRESULT GetInputAvailableType(uint32 dwInputStreamID, uint32 dwTypeIndex, IMFMediaType** ppType) mut
+			public HRESULT GetInputAvailableType(uint32 dwInputStreamID, uint32 dwTypeIndex, out IMFMediaType* ppType) mut
 			{
-				return VT.GetInputAvailableType(&this, dwInputStreamID, dwTypeIndex, ppType);
+				return VT.GetInputAvailableType(ref this, dwInputStreamID, dwTypeIndex, out ppType);
 			}
-			public HRESULT GetOutputAvailableType(uint32 dwOutputStreamID, uint32 dwTypeIndex, IMFMediaType** ppType) mut
+			public HRESULT GetOutputAvailableType(uint32 dwOutputStreamID, uint32 dwTypeIndex, out IMFMediaType* ppType) mut
 			{
-				return VT.GetOutputAvailableType(&this, dwOutputStreamID, dwTypeIndex, ppType);
+				return VT.GetOutputAvailableType(ref this, dwOutputStreamID, dwTypeIndex, out ppType);
 			}
-			public HRESULT SetInputType(uint32 dwInputStreamID, IMFMediaType* pType, uint32 dwFlags) mut
+			public HRESULT SetInputType(uint32 dwInputStreamID, ref IMFMediaType pType, uint32 dwFlags) mut
 			{
-				return VT.SetInputType(&this, dwInputStreamID, pType, dwFlags);
+				return VT.SetInputType(ref this, dwInputStreamID, ref pType, dwFlags);
 			}
-			public HRESULT SetOutputType(uint32 dwOutputStreamID, IMFMediaType* pType, uint32 dwFlags) mut
+			public HRESULT SetOutputType(uint32 dwOutputStreamID, ref IMFMediaType pType, uint32 dwFlags) mut
 			{
-				return VT.SetOutputType(&this, dwOutputStreamID, pType, dwFlags);
+				return VT.SetOutputType(ref this, dwOutputStreamID, ref pType, dwFlags);
 			}
-			public HRESULT GetInputCurrentType(uint32 dwInputStreamID, IMFMediaType** ppType) mut
+			public HRESULT GetInputCurrentType(uint32 dwInputStreamID, out IMFMediaType* ppType) mut
 			{
-				return VT.GetInputCurrentType(&this, dwInputStreamID, ppType);
+				return VT.GetInputCurrentType(ref this, dwInputStreamID, out ppType);
 			}
-			public HRESULT GetOutputCurrentType(uint32 dwOutputStreamID, IMFMediaType** ppType) mut
+			public HRESULT GetOutputCurrentType(uint32 dwOutputStreamID, out IMFMediaType* ppType) mut
 			{
-				return VT.GetOutputCurrentType(&this, dwOutputStreamID, ppType);
+				return VT.GetOutputCurrentType(ref this, dwOutputStreamID, out ppType);
 			}
-			public HRESULT GetInputStatus(uint32 dwInputStreamID, uint32* pdwFlags) mut
+			public HRESULT GetInputStatus(uint32 dwInputStreamID, out uint32 pdwFlags) mut
 			{
-				return VT.GetInputStatus(&this, dwInputStreamID, pdwFlags);
+				return VT.GetInputStatus(ref this, dwInputStreamID, out pdwFlags);
 			}
-			public HRESULT GetOutputStatus(uint32* pdwFlags) mut
+			public HRESULT GetOutputStatus(out uint32 pdwFlags) mut
 			{
-				return VT.GetOutputStatus(&this, pdwFlags);
+				return VT.GetOutputStatus(ref this, out pdwFlags);
 			}
 			public HRESULT SetOutputBounds(int64 hnsLowerBound, int64 hnsUpperBound) mut
 			{
-				return VT.SetOutputBounds(&this, hnsLowerBound, hnsUpperBound);
+				return VT.SetOutputBounds(ref this, hnsLowerBound, hnsUpperBound);
 			}
-			public HRESULT ProcessEvent(uint32 dwInputStreamID, IMFMediaEvent* pEvent) mut
+			public HRESULT ProcessEvent(uint32 dwInputStreamID, ref IMFMediaEvent pEvent) mut
 			{
-				return VT.ProcessEvent(&this, dwInputStreamID, pEvent);
+				return VT.ProcessEvent(ref this, dwInputStreamID, ref pEvent);
 			}
 			public HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, uint ulParam) mut
 			{
-				return VT.ProcessMessage(&this, eMessage, ulParam);
+				return VT.ProcessMessage(ref this, eMessage, ulParam);
 			}
-			public HRESULT ProcessInput(uint32 dwInputStreamID, IMFSample* pSample, uint32 dwFlags) mut
+			public HRESULT ProcessInput(uint32 dwInputStreamID, ref IMFSample pSample, uint32 dwFlags) mut
 			{
-				return VT.ProcessInput(&this, dwInputStreamID, pSample, dwFlags);
+				return VT.ProcessInput(ref this, dwInputStreamID, ref pSample, dwFlags);
 			}
-			public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSamples, uint32* pdwStatus) mut
+			public HRESULT ProcessOutput(uint32 dwFlags, uint32 cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSamples, out uint32 pdwStatus) mut
 			{
-				return VT.ProcessOutput(&this, dwFlags, cOutputBufferCount, pOutputSamples, pdwStatus);
+				return VT.ProcessOutput(ref this, dwFlags, cOutputBufferCount, pOutputSamples, out pdwStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTransform *self, uint32* pdwInputMinimum, uint32* pdwInputMaximum, uint32* pdwOutputMinimum, uint32* pdwOutputMaximum) GetStreamLimits;
-				public new function HRESULT(IMFTransform *self, uint32* pcInputStreams, uint32* pcOutputStreams) GetStreamCount;
-				public new function HRESULT(IMFTransform *self, uint32 dwInputIDArraySize, uint32* pdwInputIDs, uint32 dwOutputIDArraySize, uint32* pdwOutputIDs) GetStreamIDs;
-				public new function HRESULT(IMFTransform *self, uint32 dwInputStreamID, MFT_INPUT_STREAM_INFO* pStreamInfo) GetInputStreamInfo;
-				public new function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, MFT_OUTPUT_STREAM_INFO* pStreamInfo) GetOutputStreamInfo;
-				public new function HRESULT(IMFTransform *self, IMFAttributes** pAttributes) GetAttributes;
-				public new function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFAttributes** pAttributes) GetInputStreamAttributes;
-				public new function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, IMFAttributes** pAttributes) GetOutputStreamAttributes;
-				public new function HRESULT(IMFTransform *self, uint32 dwStreamID) DeleteInputStream;
-				public new function HRESULT(IMFTransform *self, uint32 cStreams, uint32* adwStreamIDs) AddInputStreams;
-				public new function HRESULT(IMFTransform *self, uint32 dwInputStreamID, uint32 dwTypeIndex, IMFMediaType** ppType) GetInputAvailableType;
-				public new function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, uint32 dwTypeIndex, IMFMediaType** ppType) GetOutputAvailableType;
-				public new function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFMediaType* pType, uint32 dwFlags) SetInputType;
-				public new function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, IMFMediaType* pType, uint32 dwFlags) SetOutputType;
-				public new function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFMediaType** ppType) GetInputCurrentType;
-				public new function HRESULT(IMFTransform *self, uint32 dwOutputStreamID, IMFMediaType** ppType) GetOutputCurrentType;
-				public new function HRESULT(IMFTransform *self, uint32 dwInputStreamID, uint32* pdwFlags) GetInputStatus;
-				public new function HRESULT(IMFTransform *self, uint32* pdwFlags) GetOutputStatus;
-				public new function HRESULT(IMFTransform *self, int64 hnsLowerBound, int64 hnsUpperBound) SetOutputBounds;
-				public new function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFMediaEvent* pEvent) ProcessEvent;
-				public new function HRESULT(IMFTransform *self, MFT_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
-				public new function HRESULT(IMFTransform *self, uint32 dwInputStreamID, IMFSample* pSample, uint32 dwFlags) ProcessInput;
-				public new function HRESULT(IMFTransform *self, uint32 dwFlags, uint32 cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSamples, uint32* pdwStatus) ProcessOutput;
+				public new function HRESULT(ref IMFTransform self, out uint32 pdwInputMinimum, out uint32 pdwInputMaximum, out uint32 pdwOutputMinimum, out uint32 pdwOutputMaximum) GetStreamLimits;
+				public new function HRESULT(ref IMFTransform self, out uint32 pcInputStreams, out uint32 pcOutputStreams) GetStreamCount;
+				public new function HRESULT(ref IMFTransform self, uint32 dwInputIDArraySize, uint32* pdwInputIDs, uint32 dwOutputIDArraySize, uint32* pdwOutputIDs) GetStreamIDs;
+				public new function HRESULT(ref IMFTransform self, uint32 dwInputStreamID, out MFT_INPUT_STREAM_INFO pStreamInfo) GetInputStreamInfo;
+				public new function HRESULT(ref IMFTransform self, uint32 dwOutputStreamID, out MFT_OUTPUT_STREAM_INFO pStreamInfo) GetOutputStreamInfo;
+				public new function HRESULT(ref IMFTransform self, out IMFAttributes* pAttributes) GetAttributes;
+				public new function HRESULT(ref IMFTransform self, uint32 dwInputStreamID, out IMFAttributes* pAttributes) GetInputStreamAttributes;
+				public new function HRESULT(ref IMFTransform self, uint32 dwOutputStreamID, out IMFAttributes* pAttributes) GetOutputStreamAttributes;
+				public new function HRESULT(ref IMFTransform self, uint32 dwStreamID) DeleteInputStream;
+				public new function HRESULT(ref IMFTransform self, uint32 cStreams, ref uint32 adwStreamIDs) AddInputStreams;
+				public new function HRESULT(ref IMFTransform self, uint32 dwInputStreamID, uint32 dwTypeIndex, out IMFMediaType* ppType) GetInputAvailableType;
+				public new function HRESULT(ref IMFTransform self, uint32 dwOutputStreamID, uint32 dwTypeIndex, out IMFMediaType* ppType) GetOutputAvailableType;
+				public new function HRESULT(ref IMFTransform self, uint32 dwInputStreamID, ref IMFMediaType pType, uint32 dwFlags) SetInputType;
+				public new function HRESULT(ref IMFTransform self, uint32 dwOutputStreamID, ref IMFMediaType pType, uint32 dwFlags) SetOutputType;
+				public new function HRESULT(ref IMFTransform self, uint32 dwInputStreamID, out IMFMediaType* ppType) GetInputCurrentType;
+				public new function HRESULT(ref IMFTransform self, uint32 dwOutputStreamID, out IMFMediaType* ppType) GetOutputCurrentType;
+				public new function HRESULT(ref IMFTransform self, uint32 dwInputStreamID, out uint32 pdwFlags) GetInputStatus;
+				public new function HRESULT(ref IMFTransform self, out uint32 pdwFlags) GetOutputStatus;
+				public new function HRESULT(ref IMFTransform self, int64 hnsLowerBound, int64 hnsUpperBound) SetOutputBounds;
+				public new function HRESULT(ref IMFTransform self, uint32 dwInputStreamID, ref IMFMediaEvent pEvent) ProcessEvent;
+				public new function HRESULT(ref IMFTransform self, MFT_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
+				public new function HRESULT(ref IMFTransform self, uint32 dwInputStreamID, ref IMFSample pSample, uint32 dwFlags) ProcessInput;
+				public new function HRESULT(ref IMFTransform self, uint32 dwFlags, uint32 cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSamples, out uint32 pdwStatus) ProcessOutput;
 			}
 		}
 		[CRepr]
@@ -11707,59 +11707,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTopology(uint32 dwSetTopologyFlags, IMFTopology* pTopology) mut
+			public HRESULT SetTopology(uint32 dwSetTopologyFlags, ref IMFTopology pTopology) mut
 			{
-				return VT.SetTopology(&this, dwSetTopologyFlags, pTopology);
+				return VT.SetTopology(ref this, dwSetTopologyFlags, ref pTopology);
 			}
 			public HRESULT ClearTopologies() mut
 			{
-				return VT.ClearTopologies(&this);
+				return VT.ClearTopologies(ref this);
 			}
-			public HRESULT Start(Guid* pguidTimeFormat, PROPVARIANT* pvarStartPosition) mut
+			public HRESULT Start(in Guid pguidTimeFormat, in PROPVARIANT pvarStartPosition) mut
 			{
-				return VT.Start(&this, pguidTimeFormat, pvarStartPosition);
+				return VT.Start(ref this, pguidTimeFormat, pvarStartPosition);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
-			public HRESULT GetClock(IMFClock** ppClock) mut
+			public HRESULT GetClock(out IMFClock* ppClock) mut
 			{
-				return VT.GetClock(&this, ppClock);
+				return VT.GetClock(ref this, out ppClock);
 			}
-			public HRESULT GetSessionCapabilities(uint32* pdwCaps) mut
+			public HRESULT GetSessionCapabilities(out uint32 pdwCaps) mut
 			{
-				return VT.GetSessionCapabilities(&this, pdwCaps);
+				return VT.GetSessionCapabilities(ref this, out pdwCaps);
 			}
-			public HRESULT GetFullTopology(uint32 dwGetFullTopologyFlags, uint64 TopoId, IMFTopology** ppFullTopology) mut
+			public HRESULT GetFullTopology(uint32 dwGetFullTopologyFlags, uint64 TopoId, out IMFTopology* ppFullTopology) mut
 			{
-				return VT.GetFullTopology(&this, dwGetFullTopologyFlags, TopoId, ppFullTopology);
+				return VT.GetFullTopology(ref this, dwGetFullTopologyFlags, TopoId, out ppFullTopology);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaEventGenerator.VTable
 			{
-				public new function HRESULT(IMFMediaSession *self, uint32 dwSetTopologyFlags, IMFTopology* pTopology) SetTopology;
-				public new function HRESULT(IMFMediaSession *self) ClearTopologies;
-				public new function HRESULT(IMFMediaSession *self, Guid* pguidTimeFormat, PROPVARIANT* pvarStartPosition) Start;
-				public new function HRESULT(IMFMediaSession *self) Pause;
-				public new function HRESULT(IMFMediaSession *self) Stop;
-				public new function HRESULT(IMFMediaSession *self) Close;
-				public new function HRESULT(IMFMediaSession *self) Shutdown;
-				public new function HRESULT(IMFMediaSession *self, IMFClock** ppClock) GetClock;
-				public new function HRESULT(IMFMediaSession *self, uint32* pdwCaps) GetSessionCapabilities;
-				public new function HRESULT(IMFMediaSession *self, uint32 dwGetFullTopologyFlags, uint64 TopoId, IMFTopology** ppFullTopology) GetFullTopology;
+				public new function HRESULT(ref IMFMediaSession self, uint32 dwSetTopologyFlags, ref IMFTopology pTopology) SetTopology;
+				public new function HRESULT(ref IMFMediaSession self) ClearTopologies;
+				public new function HRESULT(ref IMFMediaSession self, in Guid pguidTimeFormat, in PROPVARIANT pvarStartPosition) Start;
+				public new function HRESULT(ref IMFMediaSession self) Pause;
+				public new function HRESULT(ref IMFMediaSession self) Stop;
+				public new function HRESULT(ref IMFMediaSession self) Close;
+				public new function HRESULT(ref IMFMediaSession self) Shutdown;
+				public new function HRESULT(ref IMFMediaSession self, out IMFClock* ppClock) GetClock;
+				public new function HRESULT(ref IMFMediaSession self, out uint32 pdwCaps) GetSessionCapabilities;
+				public new function HRESULT(ref IMFMediaSession self, uint32 dwGetFullTopologyFlags, uint64 TopoId, out IMFTopology* ppFullTopology) GetFullTopology;
 			}
 		}
 		[CRepr]
@@ -11769,44 +11769,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateObjectFromURL(PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) mut
+			public HRESULT CreateObjectFromURL(PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) mut
 			{
-				return VT.CreateObjectFromURL(&this, pwszURL, dwFlags, pProps, pObjectType, ppObject);
+				return VT.CreateObjectFromURL(ref this, pwszURL, dwFlags, ref pProps, out pObjectType, out ppObject);
 			}
-			public HRESULT CreateObjectFromByteStream(IMFByteStream* pByteStream, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) mut
+			public HRESULT CreateObjectFromByteStream(ref IMFByteStream pByteStream, PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) mut
 			{
-				return VT.CreateObjectFromByteStream(&this, pByteStream, pwszURL, dwFlags, pProps, pObjectType, ppObject);
+				return VT.CreateObjectFromByteStream(ref this, ref pByteStream, pwszURL, dwFlags, ref pProps, out pObjectType, out ppObject);
 			}
-			public HRESULT BeginCreateObjectFromURL(PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginCreateObjectFromURL(PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, IUnknown** ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginCreateObjectFromURL(&this, pwszURL, dwFlags, pProps, ppIUnknownCancelCookie, pCallback, punkState);
+				return VT.BeginCreateObjectFromURL(ref this, pwszURL, dwFlags, ref pProps, ppIUnknownCancelCookie, ref pCallback, ref punkState);
 			}
-			public HRESULT EndCreateObjectFromURL(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) mut
+			public HRESULT EndCreateObjectFromURL(ref IMFAsyncResult pResult, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) mut
 			{
-				return VT.EndCreateObjectFromURL(&this, pResult, pObjectType, ppObject);
+				return VT.EndCreateObjectFromURL(ref this, ref pResult, out pObjectType, out ppObject);
 			}
-			public HRESULT BeginCreateObjectFromByteStream(IMFByteStream* pByteStream, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginCreateObjectFromByteStream(ref IMFByteStream pByteStream, PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, IUnknown** ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginCreateObjectFromByteStream(&this, pByteStream, pwszURL, dwFlags, pProps, ppIUnknownCancelCookie, pCallback, punkState);
+				return VT.BeginCreateObjectFromByteStream(ref this, ref pByteStream, pwszURL, dwFlags, ref pProps, ppIUnknownCancelCookie, ref pCallback, ref punkState);
 			}
-			public HRESULT EndCreateObjectFromByteStream(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) mut
+			public HRESULT EndCreateObjectFromByteStream(ref IMFAsyncResult pResult, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) mut
 			{
-				return VT.EndCreateObjectFromByteStream(&this, pResult, pObjectType, ppObject);
+				return VT.EndCreateObjectFromByteStream(ref this, ref pResult, out pObjectType, out ppObject);
 			}
-			public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie) mut
+			public HRESULT CancelObjectCreation(ref IUnknown pIUnknownCancelCookie) mut
 			{
-				return VT.CancelObjectCreation(&this, pIUnknownCancelCookie);
+				return VT.CancelObjectCreation(ref this, ref pIUnknownCancelCookie);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSourceResolver *self, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) CreateObjectFromURL;
-				public new function HRESULT(IMFSourceResolver *self, IMFByteStream* pByteStream, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) CreateObjectFromByteStream;
-				public new function HRESULT(IMFSourceResolver *self, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObjectFromURL;
-				public new function HRESULT(IMFSourceResolver *self, IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) EndCreateObjectFromURL;
-				public new function HRESULT(IMFSourceResolver *self, IMFByteStream* pByteStream, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObjectFromByteStream;
-				public new function HRESULT(IMFSourceResolver *self, IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) EndCreateObjectFromByteStream;
-				public new function HRESULT(IMFSourceResolver *self, IUnknown* pIUnknownCancelCookie) CancelObjectCreation;
+				public new function HRESULT(ref IMFSourceResolver self, PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) CreateObjectFromURL;
+				public new function HRESULT(ref IMFSourceResolver self, ref IMFByteStream pByteStream, PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) CreateObjectFromByteStream;
+				public new function HRESULT(ref IMFSourceResolver self, PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, IUnknown** ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginCreateObjectFromURL;
+				public new function HRESULT(ref IMFSourceResolver self, ref IMFAsyncResult pResult, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) EndCreateObjectFromURL;
+				public new function HRESULT(ref IMFSourceResolver self, ref IMFByteStream pByteStream, PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, IUnknown** ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginCreateObjectFromByteStream;
+				public new function HRESULT(ref IMFSourceResolver self, ref IMFAsyncResult pResult, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) EndCreateObjectFromByteStream;
+				public new function HRESULT(ref IMFSourceResolver self, ref IUnknown pIUnknownCancelCookie) CancelObjectCreation;
 			}
 		}
 		[CRepr]
@@ -11816,39 +11816,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCharacteristics(uint32* pdwCharacteristics) mut
+			public HRESULT GetCharacteristics(out uint32 pdwCharacteristics) mut
 			{
-				return VT.GetCharacteristics(&this, pdwCharacteristics);
+				return VT.GetCharacteristics(ref this, out pdwCharacteristics);
 			}
-			public HRESULT CreatePresentationDescriptor(IMFPresentationDescriptor** ppPresentationDescriptor) mut
+			public HRESULT CreatePresentationDescriptor(out IMFPresentationDescriptor* ppPresentationDescriptor) mut
 			{
-				return VT.CreatePresentationDescriptor(&this, ppPresentationDescriptor);
+				return VT.CreatePresentationDescriptor(ref this, out ppPresentationDescriptor);
 			}
-			public HRESULT Start(IMFPresentationDescriptor* pPresentationDescriptor, Guid* pguidTimeFormat, PROPVARIANT* pvarStartPosition) mut
+			public HRESULT Start(ref IMFPresentationDescriptor pPresentationDescriptor, in Guid pguidTimeFormat, in PROPVARIANT pvarStartPosition) mut
 			{
-				return VT.Start(&this, pPresentationDescriptor, pguidTimeFormat, pvarStartPosition);
+				return VT.Start(ref this, ref pPresentationDescriptor, pguidTimeFormat, pvarStartPosition);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaEventGenerator.VTable
 			{
-				public new function HRESULT(IMFMediaSource *self, uint32* pdwCharacteristics) GetCharacteristics;
-				public new function HRESULT(IMFMediaSource *self, IMFPresentationDescriptor** ppPresentationDescriptor) CreatePresentationDescriptor;
-				public new function HRESULT(IMFMediaSource *self, IMFPresentationDescriptor* pPresentationDescriptor, Guid* pguidTimeFormat, PROPVARIANT* pvarStartPosition) Start;
-				public new function HRESULT(IMFMediaSource *self) Stop;
-				public new function HRESULT(IMFMediaSource *self) Pause;
-				public new function HRESULT(IMFMediaSource *self) Shutdown;
+				public new function HRESULT(ref IMFMediaSource self, out uint32 pdwCharacteristics) GetCharacteristics;
+				public new function HRESULT(ref IMFMediaSource self, out IMFPresentationDescriptor* ppPresentationDescriptor) CreatePresentationDescriptor;
+				public new function HRESULT(ref IMFMediaSource self, ref IMFPresentationDescriptor pPresentationDescriptor, in Guid pguidTimeFormat, in PROPVARIANT pvarStartPosition) Start;
+				public new function HRESULT(ref IMFMediaSource self) Stop;
+				public new function HRESULT(ref IMFMediaSource self) Pause;
+				public new function HRESULT(ref IMFMediaSource self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -11858,24 +11858,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSourceAttributes(IMFAttributes** ppAttributes) mut
+			public HRESULT GetSourceAttributes(out IMFAttributes* ppAttributes) mut
 			{
-				return VT.GetSourceAttributes(&this, ppAttributes);
+				return VT.GetSourceAttributes(ref this, out ppAttributes);
 			}
-			public HRESULT GetStreamAttributes(uint32 dwStreamIdentifier, IMFAttributes** ppAttributes) mut
+			public HRESULT GetStreamAttributes(uint32 dwStreamIdentifier, out IMFAttributes* ppAttributes) mut
 			{
-				return VT.GetStreamAttributes(&this, dwStreamIdentifier, ppAttributes);
+				return VT.GetStreamAttributes(ref this, dwStreamIdentifier, out ppAttributes);
 			}
-			public HRESULT SetD3DManager(IUnknown* pManager) mut
+			public HRESULT SetD3DManager(ref IUnknown pManager) mut
 			{
-				return VT.SetD3DManager(&this, pManager);
+				return VT.SetD3DManager(ref this, ref pManager);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaSource.VTable
 			{
-				public new function HRESULT(IMFMediaSourceEx *self, IMFAttributes** ppAttributes) GetSourceAttributes;
-				public new function HRESULT(IMFMediaSourceEx *self, uint32 dwStreamIdentifier, IMFAttributes** ppAttributes) GetStreamAttributes;
-				public new function HRESULT(IMFMediaSourceEx *self, IUnknown* pManager) SetD3DManager;
+				public new function HRESULT(ref IMFMediaSourceEx self, out IMFAttributes* ppAttributes) GetSourceAttributes;
+				public new function HRESULT(ref IMFMediaSourceEx self, uint32 dwStreamIdentifier, out IMFAttributes* ppAttributes) GetStreamAttributes;
+				public new function HRESULT(ref IMFMediaSourceEx self, ref IUnknown pManager) SetD3DManager;
 			}
 		}
 		[CRepr]
@@ -11885,19 +11885,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPresentationClock(IMFPresentationClock* pPresentationClock) mut
+			public HRESULT SetPresentationClock(ref IMFPresentationClock pPresentationClock) mut
 			{
-				return VT.SetPresentationClock(&this, pPresentationClock);
+				return VT.SetPresentationClock(ref this, ref pPresentationClock);
 			}
-			public HRESULT GetPresentationClock(IMFPresentationClock** ppPresentationClock) mut
+			public HRESULT GetPresentationClock(out IMFPresentationClock* ppPresentationClock) mut
 			{
-				return VT.GetPresentationClock(&this, ppPresentationClock);
+				return VT.GetPresentationClock(ref this, out ppPresentationClock);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFClockConsumer *self, IMFPresentationClock* pPresentationClock) SetPresentationClock;
-				public new function HRESULT(IMFClockConsumer *self, IMFPresentationClock** ppPresentationClock) GetPresentationClock;
+				public new function HRESULT(ref IMFClockConsumer self, ref IMFPresentationClock pPresentationClock) SetPresentationClock;
+				public new function HRESULT(ref IMFClockConsumer self, out IMFPresentationClock* ppPresentationClock) GetPresentationClock;
 			}
 		}
 		[CRepr]
@@ -11907,24 +11907,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMediaSource(IMFMediaSource** ppMediaSource) mut
+			public HRESULT GetMediaSource(out IMFMediaSource* ppMediaSource) mut
 			{
-				return VT.GetMediaSource(&this, ppMediaSource);
+				return VT.GetMediaSource(ref this, out ppMediaSource);
 			}
-			public HRESULT GetStreamDescriptor(IMFStreamDescriptor** ppStreamDescriptor) mut
+			public HRESULT GetStreamDescriptor(out IMFStreamDescriptor* ppStreamDescriptor) mut
 			{
-				return VT.GetStreamDescriptor(&this, ppStreamDescriptor);
+				return VT.GetStreamDescriptor(ref this, out ppStreamDescriptor);
 			}
-			public HRESULT RequestSample(IUnknown* pToken) mut
+			public HRESULT RequestSample(ref IUnknown pToken) mut
 			{
-				return VT.RequestSample(&this, pToken);
+				return VT.RequestSample(ref this, ref pToken);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaEventGenerator.VTable
 			{
-				public new function HRESULT(IMFMediaStream *self, IMFMediaSource** ppMediaSource) GetMediaSource;
-				public new function HRESULT(IMFMediaStream *self, IMFStreamDescriptor** ppStreamDescriptor) GetStreamDescriptor;
-				public new function HRESULT(IMFMediaStream *self, IUnknown* pToken) RequestSample;
+				public new function HRESULT(ref IMFMediaStream self, out IMFMediaSource* ppMediaSource) GetMediaSource;
+				public new function HRESULT(ref IMFMediaStream self, out IMFStreamDescriptor* ppStreamDescriptor) GetStreamDescriptor;
+				public new function HRESULT(ref IMFMediaStream self, ref IUnknown pToken) RequestSample;
 			}
 		}
 		[CRepr]
@@ -11934,54 +11934,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCharacteristics(uint32* pdwCharacteristics) mut
+			public HRESULT GetCharacteristics(out uint32 pdwCharacteristics) mut
 			{
-				return VT.GetCharacteristics(&this, pdwCharacteristics);
+				return VT.GetCharacteristics(ref this, out pdwCharacteristics);
 			}
-			public HRESULT AddStreamSink(uint32 dwStreamSinkIdentifier, IMFMediaType* pMediaType, IMFStreamSink** ppStreamSink) mut
+			public HRESULT AddStreamSink(uint32 dwStreamSinkIdentifier, ref IMFMediaType pMediaType, out IMFStreamSink* ppStreamSink) mut
 			{
-				return VT.AddStreamSink(&this, dwStreamSinkIdentifier, pMediaType, ppStreamSink);
+				return VT.AddStreamSink(ref this, dwStreamSinkIdentifier, ref pMediaType, out ppStreamSink);
 			}
 			public HRESULT RemoveStreamSink(uint32 dwStreamSinkIdentifier) mut
 			{
-				return VT.RemoveStreamSink(&this, dwStreamSinkIdentifier);
+				return VT.RemoveStreamSink(ref this, dwStreamSinkIdentifier);
 			}
-			public HRESULT GetStreamSinkCount(uint32* pcStreamSinkCount) mut
+			public HRESULT GetStreamSinkCount(out uint32 pcStreamSinkCount) mut
 			{
-				return VT.GetStreamSinkCount(&this, pcStreamSinkCount);
+				return VT.GetStreamSinkCount(ref this, out pcStreamSinkCount);
 			}
-			public HRESULT GetStreamSinkByIndex(uint32 dwIndex, IMFStreamSink** ppStreamSink) mut
+			public HRESULT GetStreamSinkByIndex(uint32 dwIndex, out IMFStreamSink* ppStreamSink) mut
 			{
-				return VT.GetStreamSinkByIndex(&this, dwIndex, ppStreamSink);
+				return VT.GetStreamSinkByIndex(ref this, dwIndex, out ppStreamSink);
 			}
-			public HRESULT GetStreamSinkById(uint32 dwStreamSinkIdentifier, IMFStreamSink** ppStreamSink) mut
+			public HRESULT GetStreamSinkById(uint32 dwStreamSinkIdentifier, out IMFStreamSink* ppStreamSink) mut
 			{
-				return VT.GetStreamSinkById(&this, dwStreamSinkIdentifier, ppStreamSink);
+				return VT.GetStreamSinkById(ref this, dwStreamSinkIdentifier, out ppStreamSink);
 			}
-			public HRESULT SetPresentationClock(IMFPresentationClock* pPresentationClock) mut
+			public HRESULT SetPresentationClock(ref IMFPresentationClock pPresentationClock) mut
 			{
-				return VT.SetPresentationClock(&this, pPresentationClock);
+				return VT.SetPresentationClock(ref this, ref pPresentationClock);
 			}
-			public HRESULT GetPresentationClock(IMFPresentationClock** ppPresentationClock) mut
+			public HRESULT GetPresentationClock(out IMFPresentationClock* ppPresentationClock) mut
 			{
-				return VT.GetPresentationClock(&this, ppPresentationClock);
+				return VT.GetPresentationClock(ref this, out ppPresentationClock);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaSink *self, uint32* pdwCharacteristics) GetCharacteristics;
-				public new function HRESULT(IMFMediaSink *self, uint32 dwStreamSinkIdentifier, IMFMediaType* pMediaType, IMFStreamSink** ppStreamSink) AddStreamSink;
-				public new function HRESULT(IMFMediaSink *self, uint32 dwStreamSinkIdentifier) RemoveStreamSink;
-				public new function HRESULT(IMFMediaSink *self, uint32* pcStreamSinkCount) GetStreamSinkCount;
-				public new function HRESULT(IMFMediaSink *self, uint32 dwIndex, IMFStreamSink** ppStreamSink) GetStreamSinkByIndex;
-				public new function HRESULT(IMFMediaSink *self, uint32 dwStreamSinkIdentifier, IMFStreamSink** ppStreamSink) GetStreamSinkById;
-				public new function HRESULT(IMFMediaSink *self, IMFPresentationClock* pPresentationClock) SetPresentationClock;
-				public new function HRESULT(IMFMediaSink *self, IMFPresentationClock** ppPresentationClock) GetPresentationClock;
-				public new function HRESULT(IMFMediaSink *self) Shutdown;
+				public new function HRESULT(ref IMFMediaSink self, out uint32 pdwCharacteristics) GetCharacteristics;
+				public new function HRESULT(ref IMFMediaSink self, uint32 dwStreamSinkIdentifier, ref IMFMediaType pMediaType, out IMFStreamSink* ppStreamSink) AddStreamSink;
+				public new function HRESULT(ref IMFMediaSink self, uint32 dwStreamSinkIdentifier) RemoveStreamSink;
+				public new function HRESULT(ref IMFMediaSink self, out uint32 pcStreamSinkCount) GetStreamSinkCount;
+				public new function HRESULT(ref IMFMediaSink self, uint32 dwIndex, out IMFStreamSink* ppStreamSink) GetStreamSinkByIndex;
+				public new function HRESULT(ref IMFMediaSink self, uint32 dwStreamSinkIdentifier, out IMFStreamSink* ppStreamSink) GetStreamSinkById;
+				public new function HRESULT(ref IMFMediaSink self, ref IMFPresentationClock pPresentationClock) SetPresentationClock;
+				public new function HRESULT(ref IMFMediaSink self, out IMFPresentationClock* ppPresentationClock) GetPresentationClock;
+				public new function HRESULT(ref IMFMediaSink self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -11991,39 +11991,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMediaSink(IMFMediaSink** ppMediaSink) mut
+			public HRESULT GetMediaSink(out IMFMediaSink* ppMediaSink) mut
 			{
-				return VT.GetMediaSink(&this, ppMediaSink);
+				return VT.GetMediaSink(ref this, out ppMediaSink);
 			}
-			public HRESULT GetIdentifier(uint32* pdwIdentifier) mut
+			public HRESULT GetIdentifier(out uint32 pdwIdentifier) mut
 			{
-				return VT.GetIdentifier(&this, pdwIdentifier);
+				return VT.GetIdentifier(ref this, out pdwIdentifier);
 			}
-			public HRESULT GetMediaTypeHandler(IMFMediaTypeHandler** ppHandler) mut
+			public HRESULT GetMediaTypeHandler(out IMFMediaTypeHandler* ppHandler) mut
 			{
-				return VT.GetMediaTypeHandler(&this, ppHandler);
+				return VT.GetMediaTypeHandler(ref this, out ppHandler);
 			}
-			public HRESULT ProcessSample(IMFSample* pSample) mut
+			public HRESULT ProcessSample(ref IMFSample pSample) mut
 			{
-				return VT.ProcessSample(&this, pSample);
+				return VT.ProcessSample(ref this, ref pSample);
 			}
-			public HRESULT PlaceMarker(MFSTREAMSINK_MARKER_TYPE eMarkerType, PROPVARIANT* pvarMarkerValue, PROPVARIANT* pvarContextValue) mut
+			public HRESULT PlaceMarker(MFSTREAMSINK_MARKER_TYPE eMarkerType, in PROPVARIANT pvarMarkerValue, in PROPVARIANT pvarContextValue) mut
 			{
-				return VT.PlaceMarker(&this, eMarkerType, pvarMarkerValue, pvarContextValue);
+				return VT.PlaceMarker(ref this, eMarkerType, pvarMarkerValue, pvarContextValue);
 			}
 			public HRESULT Flush() mut
 			{
-				return VT.Flush(&this);
+				return VT.Flush(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaEventGenerator.VTable
 			{
-				public new function HRESULT(IMFStreamSink *self, IMFMediaSink** ppMediaSink) GetMediaSink;
-				public new function HRESULT(IMFStreamSink *self, uint32* pdwIdentifier) GetIdentifier;
-				public new function HRESULT(IMFStreamSink *self, IMFMediaTypeHandler** ppHandler) GetMediaTypeHandler;
-				public new function HRESULT(IMFStreamSink *self, IMFSample* pSample) ProcessSample;
-				public new function HRESULT(IMFStreamSink *self, MFSTREAMSINK_MARKER_TYPE eMarkerType, PROPVARIANT* pvarMarkerValue, PROPVARIANT* pvarContextValue) PlaceMarker;
-				public new function HRESULT(IMFStreamSink *self) Flush;
+				public new function HRESULT(ref IMFStreamSink self, out IMFMediaSink* ppMediaSink) GetMediaSink;
+				public new function HRESULT(ref IMFStreamSink self, out uint32 pdwIdentifier) GetIdentifier;
+				public new function HRESULT(ref IMFStreamSink self, out IMFMediaTypeHandler* ppHandler) GetMediaTypeHandler;
+				public new function HRESULT(ref IMFStreamSink self, ref IMFSample pSample) ProcessSample;
+				public new function HRESULT(ref IMFStreamSink self, MFSTREAMSINK_MARKER_TYPE eMarkerType, in PROPVARIANT pvarMarkerValue, in PROPVARIANT pvarContextValue) PlaceMarker;
+				public new function HRESULT(ref IMFStreamSink self) Flush;
 			}
 		}
 		[CRepr]
@@ -12033,29 +12033,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDirectXManager(IUnknown* pManager) mut
+			public HRESULT SetDirectXManager(ref IUnknown pManager) mut
 			{
-				return VT.SetDirectXManager(&this, pManager);
+				return VT.SetDirectXManager(ref this, ref pManager);
 			}
 			public HRESULT UninitializeSampleAllocator() mut
 			{
-				return VT.UninitializeSampleAllocator(&this);
+				return VT.UninitializeSampleAllocator(ref this);
 			}
-			public HRESULT InitializeSampleAllocator(uint32 cRequestedFrames, IMFMediaType* pMediaType) mut
+			public HRESULT InitializeSampleAllocator(uint32 cRequestedFrames, ref IMFMediaType pMediaType) mut
 			{
-				return VT.InitializeSampleAllocator(&this, cRequestedFrames, pMediaType);
+				return VT.InitializeSampleAllocator(ref this, cRequestedFrames, ref pMediaType);
 			}
-			public HRESULT AllocateSample(IMFSample** ppSample) mut
+			public HRESULT AllocateSample(out IMFSample* ppSample) mut
 			{
-				return VT.AllocateSample(&this, ppSample);
+				return VT.AllocateSample(ref this, out ppSample);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoSampleAllocator *self, IUnknown* pManager) SetDirectXManager;
-				public new function HRESULT(IMFVideoSampleAllocator *self) UninitializeSampleAllocator;
-				public new function HRESULT(IMFVideoSampleAllocator *self, uint32 cRequestedFrames, IMFMediaType* pMediaType) InitializeSampleAllocator;
-				public new function HRESULT(IMFVideoSampleAllocator *self, IMFSample** ppSample) AllocateSample;
+				public new function HRESULT(ref IMFVideoSampleAllocator self, ref IUnknown pManager) SetDirectXManager;
+				public new function HRESULT(ref IMFVideoSampleAllocator self) UninitializeSampleAllocator;
+				public new function HRESULT(ref IMFVideoSampleAllocator self, uint32 cRequestedFrames, ref IMFMediaType pMediaType) InitializeSampleAllocator;
+				public new function HRESULT(ref IMFVideoSampleAllocator self, out IMFSample* ppSample) AllocateSample;
 			}
 		}
 		[CRepr]
@@ -12067,12 +12067,12 @@ namespace Win32
 			
 			public HRESULT NotifyRelease() mut
 			{
-				return VT.NotifyRelease(&this);
+				return VT.NotifyRelease(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoSampleAllocatorNotify *self) NotifyRelease;
+				public new function HRESULT(ref IMFVideoSampleAllocatorNotify self) NotifyRelease;
 			}
 		}
 		[CRepr]
@@ -12082,14 +12082,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NotifyPrune(IMFSample* __MIDL__IMFVideoSampleAllocatorNotifyEx0000) mut
+			public HRESULT NotifyPrune(ref IMFSample __MIDL__IMFVideoSampleAllocatorNotifyEx0000) mut
 			{
-				return VT.NotifyPrune(&this, __MIDL__IMFVideoSampleAllocatorNotifyEx0000);
+				return VT.NotifyPrune(ref this, ref __MIDL__IMFVideoSampleAllocatorNotifyEx0000);
 			}
 			[CRepr]
 			public struct VTable : IMFVideoSampleAllocatorNotify.VTable
 			{
-				public new function HRESULT(IMFVideoSampleAllocatorNotifyEx *self, IMFSample* __MIDL__IMFVideoSampleAllocatorNotifyEx0000) NotifyPrune;
+				public new function HRESULT(ref IMFVideoSampleAllocatorNotifyEx self, ref IMFSample __MIDL__IMFVideoSampleAllocatorNotifyEx0000) NotifyPrune;
 			}
 		}
 		[CRepr]
@@ -12099,19 +12099,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetCallback(IMFVideoSampleAllocatorNotify* pNotify) mut
+			public HRESULT SetCallback(ref IMFVideoSampleAllocatorNotify pNotify) mut
 			{
-				return VT.SetCallback(&this, pNotify);
+				return VT.SetCallback(ref this, ref pNotify);
 			}
-			public HRESULT GetFreeSampleCount(int32* plSamples) mut
+			public HRESULT GetFreeSampleCount(out int32 plSamples) mut
 			{
-				return VT.GetFreeSampleCount(&this, plSamples);
+				return VT.GetFreeSampleCount(ref this, out plSamples);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoSampleAllocatorCallback *self, IMFVideoSampleAllocatorNotify* pNotify) SetCallback;
-				public new function HRESULT(IMFVideoSampleAllocatorCallback *self, int32* plSamples) GetFreeSampleCount;
+				public new function HRESULT(ref IMFVideoSampleAllocatorCallback self, ref IMFVideoSampleAllocatorNotify pNotify) SetCallback;
+				public new function HRESULT(ref IMFVideoSampleAllocatorCallback self, out int32 plSamples) GetFreeSampleCount;
 			}
 		}
 		[CRepr]
@@ -12121,14 +12121,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeSampleAllocatorEx(uint32 cInitialSamples, uint32 cMaximumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType) mut
+			public HRESULT InitializeSampleAllocatorEx(uint32 cInitialSamples, uint32 cMaximumSamples, IMFAttributes* pAttributes, ref IMFMediaType pMediaType) mut
 			{
-				return VT.InitializeSampleAllocatorEx(&this, cInitialSamples, cMaximumSamples, pAttributes, pMediaType);
+				return VT.InitializeSampleAllocatorEx(ref this, cInitialSamples, cMaximumSamples, pAttributes, ref pMediaType);
 			}
 			[CRepr]
 			public struct VTable : IMFVideoSampleAllocator.VTable
 			{
-				public new function HRESULT(IMFVideoSampleAllocatorEx *self, uint32 cInitialSamples, uint32 cMaximumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType) InitializeSampleAllocatorEx;
+				public new function HRESULT(ref IMFVideoSampleAllocatorEx self, uint32 cInitialSamples, uint32 cMaximumSamples, IMFAttributes* pAttributes, ref IMFMediaType pMediaType) InitializeSampleAllocatorEx;
 			}
 		}
 		[CRepr]
@@ -12138,14 +12138,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetManager(IMFDXGIDeviceManager** ppManager) mut
+			public HRESULT GetManager(out IMFDXGIDeviceManager* ppManager) mut
 			{
-				return VT.GetManager(&this, ppManager);
+				return VT.GetManager(ref this, out ppManager);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFDXGIDeviceManagerSource *self, IMFDXGIDeviceManager** ppManager) GetManager;
+				public new function HRESULT(ref IMFDXGIDeviceManagerSource self, out IMFDXGIDeviceManager* ppManager) GetManager;
 			}
 		}
 		[CRepr]
@@ -12157,37 +12157,37 @@ namespace Win32
 			
 			public HRESULT SetBorderColor(MFARGB* pBorderColor) mut
 			{
-				return VT.SetBorderColor(&this, pBorderColor);
+				return VT.SetBorderColor(ref this, pBorderColor);
 			}
 			public HRESULT SetSourceRectangle(RECT* pSrcRect) mut
 			{
-				return VT.SetSourceRectangle(&this, pSrcRect);
+				return VT.SetSourceRectangle(ref this, pSrcRect);
 			}
 			public HRESULT SetDestinationRectangle(RECT* pDstRect) mut
 			{
-				return VT.SetDestinationRectangle(&this, pDstRect);
+				return VT.SetDestinationRectangle(ref this, pDstRect);
 			}
 			public HRESULT SetMirror(MF_VIDEO_PROCESSOR_MIRROR eMirror) mut
 			{
-				return VT.SetMirror(&this, eMirror);
+				return VT.SetMirror(ref this, eMirror);
 			}
 			public HRESULT SetRotation(MF_VIDEO_PROCESSOR_ROTATION eRotation) mut
 			{
-				return VT.SetRotation(&this, eRotation);
+				return VT.SetRotation(ref this, eRotation);
 			}
 			public HRESULT SetConstrictionSize(SIZE* pConstrictionSize) mut
 			{
-				return VT.SetConstrictionSize(&this, pConstrictionSize);
+				return VT.SetConstrictionSize(ref this, pConstrictionSize);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoProcessorControl *self, MFARGB* pBorderColor) SetBorderColor;
-				public new function HRESULT(IMFVideoProcessorControl *self, RECT* pSrcRect) SetSourceRectangle;
-				public new function HRESULT(IMFVideoProcessorControl *self, RECT* pDstRect) SetDestinationRectangle;
-				public new function HRESULT(IMFVideoProcessorControl *self, MF_VIDEO_PROCESSOR_MIRROR eMirror) SetMirror;
-				public new function HRESULT(IMFVideoProcessorControl *self, MF_VIDEO_PROCESSOR_ROTATION eRotation) SetRotation;
-				public new function HRESULT(IMFVideoProcessorControl *self, SIZE* pConstrictionSize) SetConstrictionSize;
+				public new function HRESULT(ref IMFVideoProcessorControl self, MFARGB* pBorderColor) SetBorderColor;
+				public new function HRESULT(ref IMFVideoProcessorControl self, RECT* pSrcRect) SetSourceRectangle;
+				public new function HRESULT(ref IMFVideoProcessorControl self, RECT* pDstRect) SetDestinationRectangle;
+				public new function HRESULT(ref IMFVideoProcessorControl self, MF_VIDEO_PROCESSOR_MIRROR eMirror) SetMirror;
+				public new function HRESULT(ref IMFVideoProcessorControl self, MF_VIDEO_PROCESSOR_ROTATION eRotation) SetRotation;
+				public new function HRESULT(ref IMFVideoProcessorControl self, SIZE* pConstrictionSize) SetConstrictionSize;
 			}
 		}
 		[CRepr]
@@ -12199,22 +12199,22 @@ namespace Win32
 			
 			public HRESULT SetRotationOverride(uint32 uiRotation) mut
 			{
-				return VT.SetRotationOverride(&this, uiRotation);
+				return VT.SetRotationOverride(ref this, uiRotation);
 			}
 			public HRESULT EnableHardwareEffects(BOOL fEnabled) mut
 			{
-				return VT.EnableHardwareEffects(&this, fEnabled);
+				return VT.EnableHardwareEffects(ref this, fEnabled);
 			}
-			public HRESULT GetSupportedHardwareEffects(uint32* puiSupport) mut
+			public HRESULT GetSupportedHardwareEffects(out uint32 puiSupport) mut
 			{
-				return VT.GetSupportedHardwareEffects(&this, puiSupport);
+				return VT.GetSupportedHardwareEffects(ref this, out puiSupport);
 			}
 			[CRepr]
 			public struct VTable : IMFVideoProcessorControl.VTable
 			{
-				public new function HRESULT(IMFVideoProcessorControl2 *self, uint32 uiRotation) SetRotationOverride;
-				public new function HRESULT(IMFVideoProcessorControl2 *self, BOOL fEnabled) EnableHardwareEffects;
-				public new function HRESULT(IMFVideoProcessorControl2 *self, uint32* puiSupport) GetSupportedHardwareEffects;
+				public new function HRESULT(ref IMFVideoProcessorControl2 self, uint32 uiRotation) SetRotationOverride;
+				public new function HRESULT(ref IMFVideoProcessorControl2 self, BOOL fEnabled) EnableHardwareEffects;
+				public new function HRESULT(ref IMFVideoProcessorControl2 self, out uint32 puiSupport) GetSupportedHardwareEffects;
 			}
 		}
 		[CRepr]
@@ -12224,29 +12224,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNaturalOutputType(IMFMediaType** ppType) mut
+			public HRESULT GetNaturalOutputType(out IMFMediaType* ppType) mut
 			{
-				return VT.GetNaturalOutputType(&this, ppType);
+				return VT.GetNaturalOutputType(ref this, out ppType);
 			}
 			public HRESULT EnableSphericalVideoProcessing(BOOL fEnable, MFVideoSphericalFormat eFormat, MFVideoSphericalProjectionMode eProjectionMode) mut
 			{
-				return VT.EnableSphericalVideoProcessing(&this, fEnable, eFormat, eProjectionMode);
+				return VT.EnableSphericalVideoProcessing(ref this, fEnable, eFormat, eProjectionMode);
 			}
 			public HRESULT SetSphericalVideoProperties(float X, float Y, float Z, float W, float fieldOfView) mut
 			{
-				return VT.SetSphericalVideoProperties(&this, X, Y, Z, W, fieldOfView);
+				return VT.SetSphericalVideoProperties(ref this, X, Y, Z, W, fieldOfView);
 			}
-			public HRESULT SetOutputDevice(IUnknown* pOutputDevice) mut
+			public HRESULT SetOutputDevice(ref IUnknown pOutputDevice) mut
 			{
-				return VT.SetOutputDevice(&this, pOutputDevice);
+				return VT.SetOutputDevice(ref this, ref pOutputDevice);
 			}
 			[CRepr]
 			public struct VTable : IMFVideoProcessorControl2.VTable
 			{
-				public new function HRESULT(IMFVideoProcessorControl3 *self, IMFMediaType** ppType) GetNaturalOutputType;
-				public new function HRESULT(IMFVideoProcessorControl3 *self, BOOL fEnable, MFVideoSphericalFormat eFormat, MFVideoSphericalProjectionMode eProjectionMode) EnableSphericalVideoProcessing;
-				public new function HRESULT(IMFVideoProcessorControl3 *self, float X, float Y, float Z, float W, float fieldOfView) SetSphericalVideoProperties;
-				public new function HRESULT(IMFVideoProcessorControl3 *self, IUnknown* pOutputDevice) SetOutputDevice;
+				public new function HRESULT(ref IMFVideoProcessorControl3 self, out IMFMediaType* ppType) GetNaturalOutputType;
+				public new function HRESULT(ref IMFVideoProcessorControl3 self, BOOL fEnable, MFVideoSphericalFormat eFormat, MFVideoSphericalProjectionMode eProjectionMode) EnableSphericalVideoProcessing;
+				public new function HRESULT(ref IMFVideoProcessorControl3 self, float X, float Y, float Z, float W, float fieldOfView) SetSphericalVideoProperties;
+				public new function HRESULT(ref IMFVideoProcessorControl3 self, ref IUnknown pOutputDevice) SetOutputDevice;
 			}
 		}
 		[CRepr]
@@ -12256,14 +12256,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnAppServiceConnectionEstablished(IUnknown* pAppServiceConnection) mut
+			public HRESULT OnAppServiceConnectionEstablished(ref IUnknown pAppServiceConnection) mut
 			{
-				return VT.OnAppServiceConnectionEstablished(&this, pAppServiceConnection);
+				return VT.OnAppServiceConnectionEstablished(ref this, ref pAppServiceConnection);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoRendererEffectControl *self, IUnknown* pAppServiceConnection) OnAppServiceConnectionEstablished;
+				public new function HRESULT(ref IMFVideoRendererEffectControl self, ref IUnknown pAppServiceConnection) OnAppServiceConnectionEstablished;
 			}
 		}
 		[CRepr]
@@ -12273,59 +12273,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTopologyID(uint64* pID) mut
+			public HRESULT GetTopologyID(out uint64 pID) mut
 			{
-				return VT.GetTopologyID(&this, pID);
+				return VT.GetTopologyID(ref this, out pID);
 			}
-			public HRESULT AddNode(IMFTopologyNode* pNode) mut
+			public HRESULT AddNode(ref IMFTopologyNode pNode) mut
 			{
-				return VT.AddNode(&this, pNode);
+				return VT.AddNode(ref this, ref pNode);
 			}
-			public HRESULT RemoveNode(IMFTopologyNode* pNode) mut
+			public HRESULT RemoveNode(ref IMFTopologyNode pNode) mut
 			{
-				return VT.RemoveNode(&this, pNode);
+				return VT.RemoveNode(ref this, ref pNode);
 			}
-			public HRESULT GetNodeCount(uint16* pwNodes) mut
+			public HRESULT GetNodeCount(out uint16 pwNodes) mut
 			{
-				return VT.GetNodeCount(&this, pwNodes);
+				return VT.GetNodeCount(ref this, out pwNodes);
 			}
-			public HRESULT GetNode(uint16 wIndex, IMFTopologyNode** ppNode) mut
+			public HRESULT GetNode(uint16 wIndex, out IMFTopologyNode* ppNode) mut
 			{
-				return VT.GetNode(&this, wIndex, ppNode);
+				return VT.GetNode(ref this, wIndex, out ppNode);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
-			public HRESULT CloneFrom(IMFTopology* pTopology) mut
+			public HRESULT CloneFrom(ref IMFTopology pTopology) mut
 			{
-				return VT.CloneFrom(&this, pTopology);
+				return VT.CloneFrom(ref this, ref pTopology);
 			}
-			public HRESULT GetNodeByID(uint64 qwTopoNodeID, IMFTopologyNode** ppNode) mut
+			public HRESULT GetNodeByID(uint64 qwTopoNodeID, out IMFTopologyNode* ppNode) mut
 			{
-				return VT.GetNodeByID(&this, qwTopoNodeID, ppNode);
+				return VT.GetNodeByID(ref this, qwTopoNodeID, out ppNode);
 			}
-			public HRESULT GetSourceNodeCollection(IMFCollection** ppCollection) mut
+			public HRESULT GetSourceNodeCollection(out IMFCollection* ppCollection) mut
 			{
-				return VT.GetSourceNodeCollection(&this, ppCollection);
+				return VT.GetSourceNodeCollection(ref this, out ppCollection);
 			}
-			public HRESULT GetOutputNodeCollection(IMFCollection** ppCollection) mut
+			public HRESULT GetOutputNodeCollection(out IMFCollection* ppCollection) mut
 			{
-				return VT.GetOutputNodeCollection(&this, ppCollection);
+				return VT.GetOutputNodeCollection(ref this, out ppCollection);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFTopology *self, uint64* pID) GetTopologyID;
-				public new function HRESULT(IMFTopology *self, IMFTopologyNode* pNode) AddNode;
-				public new function HRESULT(IMFTopology *self, IMFTopologyNode* pNode) RemoveNode;
-				public new function HRESULT(IMFTopology *self, uint16* pwNodes) GetNodeCount;
-				public new function HRESULT(IMFTopology *self, uint16 wIndex, IMFTopologyNode** ppNode) GetNode;
-				public new function HRESULT(IMFTopology *self) Clear;
-				public new function HRESULT(IMFTopology *self, IMFTopology* pTopology) CloneFrom;
-				public new function HRESULT(IMFTopology *self, uint64 qwTopoNodeID, IMFTopologyNode** ppNode) GetNodeByID;
-				public new function HRESULT(IMFTopology *self, IMFCollection** ppCollection) GetSourceNodeCollection;
-				public new function HRESULT(IMFTopology *self, IMFCollection** ppCollection) GetOutputNodeCollection;
+				public new function HRESULT(ref IMFTopology self, out uint64 pID) GetTopologyID;
+				public new function HRESULT(ref IMFTopology self, ref IMFTopologyNode pNode) AddNode;
+				public new function HRESULT(ref IMFTopology self, ref IMFTopologyNode pNode) RemoveNode;
+				public new function HRESULT(ref IMFTopology self, out uint16 pwNodes) GetNodeCount;
+				public new function HRESULT(ref IMFTopology self, uint16 wIndex, out IMFTopologyNode* ppNode) GetNode;
+				public new function HRESULT(ref IMFTopology self) Clear;
+				public new function HRESULT(ref IMFTopology self, ref IMFTopology pTopology) CloneFrom;
+				public new function HRESULT(ref IMFTopology self, uint64 qwTopoNodeID, out IMFTopologyNode* ppNode) GetNodeByID;
+				public new function HRESULT(ref IMFTopology self, out IMFCollection* ppCollection) GetSourceNodeCollection;
+				public new function HRESULT(ref IMFTopology self, out IMFCollection* ppCollection) GetOutputNodeCollection;
 			}
 		}
 		[CRepr]
@@ -12335,89 +12335,89 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetObject(IUnknown* pObject) mut
+			public HRESULT SetObject(ref IUnknown pObject) mut
 			{
-				return VT.SetObject(&this, pObject);
+				return VT.SetObject(ref this, ref pObject);
 			}
-			public HRESULT GetObject(IUnknown** ppObject) mut
+			public HRESULT GetObject(out IUnknown* ppObject) mut
 			{
-				return VT.GetObject(&this, ppObject);
+				return VT.GetObject(ref this, out ppObject);
 			}
-			public HRESULT GetNodeType(MF_TOPOLOGY_TYPE* pType) mut
+			public HRESULT GetNodeType(out MF_TOPOLOGY_TYPE pType) mut
 			{
-				return VT.GetNodeType(&this, pType);
+				return VT.GetNodeType(ref this, out pType);
 			}
-			public HRESULT GetTopoNodeID(uint64* pID) mut
+			public HRESULT GetTopoNodeID(out uint64 pID) mut
 			{
-				return VT.GetTopoNodeID(&this, pID);
+				return VT.GetTopoNodeID(ref this, out pID);
 			}
 			public HRESULT SetTopoNodeID(uint64 ullTopoID) mut
 			{
-				return VT.SetTopoNodeID(&this, ullTopoID);
+				return VT.SetTopoNodeID(ref this, ullTopoID);
 			}
-			public HRESULT GetInputCount(uint32* pcInputs) mut
+			public HRESULT GetInputCount(out uint32 pcInputs) mut
 			{
-				return VT.GetInputCount(&this, pcInputs);
+				return VT.GetInputCount(ref this, out pcInputs);
 			}
-			public HRESULT GetOutputCount(uint32* pcOutputs) mut
+			public HRESULT GetOutputCount(out uint32 pcOutputs) mut
 			{
-				return VT.GetOutputCount(&this, pcOutputs);
+				return VT.GetOutputCount(ref this, out pcOutputs);
 			}
-			public HRESULT ConnectOutput(uint32 dwOutputIndex, IMFTopologyNode* pDownstreamNode, uint32 dwInputIndexOnDownstreamNode) mut
+			public HRESULT ConnectOutput(uint32 dwOutputIndex, ref IMFTopologyNode pDownstreamNode, uint32 dwInputIndexOnDownstreamNode) mut
 			{
-				return VT.ConnectOutput(&this, dwOutputIndex, pDownstreamNode, dwInputIndexOnDownstreamNode);
+				return VT.ConnectOutput(ref this, dwOutputIndex, ref pDownstreamNode, dwInputIndexOnDownstreamNode);
 			}
 			public HRESULT DisconnectOutput(uint32 dwOutputIndex) mut
 			{
-				return VT.DisconnectOutput(&this, dwOutputIndex);
+				return VT.DisconnectOutput(ref this, dwOutputIndex);
 			}
-			public HRESULT GetInput(uint32 dwInputIndex, IMFTopologyNode** ppUpstreamNode, uint32* pdwOutputIndexOnUpstreamNode) mut
+			public HRESULT GetInput(uint32 dwInputIndex, out IMFTopologyNode* ppUpstreamNode, out uint32 pdwOutputIndexOnUpstreamNode) mut
 			{
-				return VT.GetInput(&this, dwInputIndex, ppUpstreamNode, pdwOutputIndexOnUpstreamNode);
+				return VT.GetInput(ref this, dwInputIndex, out ppUpstreamNode, out pdwOutputIndexOnUpstreamNode);
 			}
-			public HRESULT GetOutput(uint32 dwOutputIndex, IMFTopologyNode** ppDownstreamNode, uint32* pdwInputIndexOnDownstreamNode) mut
+			public HRESULT GetOutput(uint32 dwOutputIndex, out IMFTopologyNode* ppDownstreamNode, out uint32 pdwInputIndexOnDownstreamNode) mut
 			{
-				return VT.GetOutput(&this, dwOutputIndex, ppDownstreamNode, pdwInputIndexOnDownstreamNode);
+				return VT.GetOutput(ref this, dwOutputIndex, out ppDownstreamNode, out pdwInputIndexOnDownstreamNode);
 			}
-			public HRESULT SetOutputPrefType(uint32 dwOutputIndex, IMFMediaType* pType) mut
+			public HRESULT SetOutputPrefType(uint32 dwOutputIndex, ref IMFMediaType pType) mut
 			{
-				return VT.SetOutputPrefType(&this, dwOutputIndex, pType);
+				return VT.SetOutputPrefType(ref this, dwOutputIndex, ref pType);
 			}
-			public HRESULT GetOutputPrefType(uint32 dwOutputIndex, IMFMediaType** ppType) mut
+			public HRESULT GetOutputPrefType(uint32 dwOutputIndex, out IMFMediaType* ppType) mut
 			{
-				return VT.GetOutputPrefType(&this, dwOutputIndex, ppType);
+				return VT.GetOutputPrefType(ref this, dwOutputIndex, out ppType);
 			}
-			public HRESULT SetInputPrefType(uint32 dwInputIndex, IMFMediaType* pType) mut
+			public HRESULT SetInputPrefType(uint32 dwInputIndex, ref IMFMediaType pType) mut
 			{
-				return VT.SetInputPrefType(&this, dwInputIndex, pType);
+				return VT.SetInputPrefType(ref this, dwInputIndex, ref pType);
 			}
-			public HRESULT GetInputPrefType(uint32 dwInputIndex, IMFMediaType** ppType) mut
+			public HRESULT GetInputPrefType(uint32 dwInputIndex, out IMFMediaType* ppType) mut
 			{
-				return VT.GetInputPrefType(&this, dwInputIndex, ppType);
+				return VT.GetInputPrefType(ref this, dwInputIndex, out ppType);
 			}
-			public HRESULT CloneFrom(IMFTopologyNode* pNode) mut
+			public HRESULT CloneFrom(ref IMFTopologyNode pNode) mut
 			{
-				return VT.CloneFrom(&this, pNode);
+				return VT.CloneFrom(ref this, ref pNode);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFTopologyNode *self, IUnknown* pObject) SetObject;
-				public new function HRESULT(IMFTopologyNode *self, IUnknown** ppObject) GetObject;
-				public new function HRESULT(IMFTopologyNode *self, MF_TOPOLOGY_TYPE* pType) GetNodeType;
-				public new function HRESULT(IMFTopologyNode *self, uint64* pID) GetTopoNodeID;
-				public new function HRESULT(IMFTopologyNode *self, uint64 ullTopoID) SetTopoNodeID;
-				public new function HRESULT(IMFTopologyNode *self, uint32* pcInputs) GetInputCount;
-				public new function HRESULT(IMFTopologyNode *self, uint32* pcOutputs) GetOutputCount;
-				public new function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex, IMFTopologyNode* pDownstreamNode, uint32 dwInputIndexOnDownstreamNode) ConnectOutput;
-				public new function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex) DisconnectOutput;
-				public new function HRESULT(IMFTopologyNode *self, uint32 dwInputIndex, IMFTopologyNode** ppUpstreamNode, uint32* pdwOutputIndexOnUpstreamNode) GetInput;
-				public new function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex, IMFTopologyNode** ppDownstreamNode, uint32* pdwInputIndexOnDownstreamNode) GetOutput;
-				public new function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex, IMFMediaType* pType) SetOutputPrefType;
-				public new function HRESULT(IMFTopologyNode *self, uint32 dwOutputIndex, IMFMediaType** ppType) GetOutputPrefType;
-				public new function HRESULT(IMFTopologyNode *self, uint32 dwInputIndex, IMFMediaType* pType) SetInputPrefType;
-				public new function HRESULT(IMFTopologyNode *self, uint32 dwInputIndex, IMFMediaType** ppType) GetInputPrefType;
-				public new function HRESULT(IMFTopologyNode *self, IMFTopologyNode* pNode) CloneFrom;
+				public new function HRESULT(ref IMFTopologyNode self, ref IUnknown pObject) SetObject;
+				public new function HRESULT(ref IMFTopologyNode self, out IUnknown* ppObject) GetObject;
+				public new function HRESULT(ref IMFTopologyNode self, out MF_TOPOLOGY_TYPE pType) GetNodeType;
+				public new function HRESULT(ref IMFTopologyNode self, out uint64 pID) GetTopoNodeID;
+				public new function HRESULT(ref IMFTopologyNode self, uint64 ullTopoID) SetTopoNodeID;
+				public new function HRESULT(ref IMFTopologyNode self, out uint32 pcInputs) GetInputCount;
+				public new function HRESULT(ref IMFTopologyNode self, out uint32 pcOutputs) GetOutputCount;
+				public new function HRESULT(ref IMFTopologyNode self, uint32 dwOutputIndex, ref IMFTopologyNode pDownstreamNode, uint32 dwInputIndexOnDownstreamNode) ConnectOutput;
+				public new function HRESULT(ref IMFTopologyNode self, uint32 dwOutputIndex) DisconnectOutput;
+				public new function HRESULT(ref IMFTopologyNode self, uint32 dwInputIndex, out IMFTopologyNode* ppUpstreamNode, out uint32 pdwOutputIndexOnUpstreamNode) GetInput;
+				public new function HRESULT(ref IMFTopologyNode self, uint32 dwOutputIndex, out IMFTopologyNode* ppDownstreamNode, out uint32 pdwInputIndexOnDownstreamNode) GetOutput;
+				public new function HRESULT(ref IMFTopologyNode self, uint32 dwOutputIndex, ref IMFMediaType pType) SetOutputPrefType;
+				public new function HRESULT(ref IMFTopologyNode self, uint32 dwOutputIndex, out IMFMediaType* ppType) GetOutputPrefType;
+				public new function HRESULT(ref IMFTopologyNode self, uint32 dwInputIndex, ref IMFMediaType pType) SetInputPrefType;
+				public new function HRESULT(ref IMFTopologyNode self, uint32 dwInputIndex, out IMFMediaType* ppType) GetInputPrefType;
+				public new function HRESULT(ref IMFTopologyNode self, ref IMFTopologyNode pNode) CloneFrom;
 			}
 		}
 		[CRepr]
@@ -12427,14 +12427,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetService(Guid* guidService, Guid* riid, void** ppvObject) mut
+			public HRESULT GetService(in Guid guidService, in Guid riid, void** ppvObject) mut
 			{
-				return VT.GetService(&this, guidService, riid, ppvObject);
+				return VT.GetService(ref this, guidService, riid, ppvObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFGetService *self, Guid* guidService, Guid* riid, void** ppvObject) GetService;
+				public new function HRESULT(ref IMFGetService self, in Guid guidService, in Guid riid, void** ppvObject) GetService;
 			}
 		}
 		[CRepr]
@@ -12444,34 +12444,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClockCharacteristics(uint32* pdwCharacteristics) mut
+			public HRESULT GetClockCharacteristics(out uint32 pdwCharacteristics) mut
 			{
-				return VT.GetClockCharacteristics(&this, pdwCharacteristics);
+				return VT.GetClockCharacteristics(ref this, out pdwCharacteristics);
 			}
-			public HRESULT GetCorrelatedTime(uint32 dwReserved, int64* pllClockTime, int64* phnsSystemTime) mut
+			public HRESULT GetCorrelatedTime(uint32 dwReserved, out int64 pllClockTime, out int64 phnsSystemTime) mut
 			{
-				return VT.GetCorrelatedTime(&this, dwReserved, pllClockTime, phnsSystemTime);
+				return VT.GetCorrelatedTime(ref this, dwReserved, out pllClockTime, out phnsSystemTime);
 			}
-			public HRESULT GetContinuityKey(uint32* pdwContinuityKey) mut
+			public HRESULT GetContinuityKey(out uint32 pdwContinuityKey) mut
 			{
-				return VT.GetContinuityKey(&this, pdwContinuityKey);
+				return VT.GetContinuityKey(ref this, out pdwContinuityKey);
 			}
-			public HRESULT GetState(uint32 dwReserved, MFCLOCK_STATE* peClockState) mut
+			public HRESULT GetState(uint32 dwReserved, out MFCLOCK_STATE peClockState) mut
 			{
-				return VT.GetState(&this, dwReserved, peClockState);
+				return VT.GetState(ref this, dwReserved, out peClockState);
 			}
-			public HRESULT GetProperties(MFCLOCK_PROPERTIES* pClockProperties) mut
+			public HRESULT GetProperties(out MFCLOCK_PROPERTIES pClockProperties) mut
 			{
-				return VT.GetProperties(&this, pClockProperties);
+				return VT.GetProperties(ref this, out pClockProperties);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFClock *self, uint32* pdwCharacteristics) GetClockCharacteristics;
-				public new function HRESULT(IMFClock *self, uint32 dwReserved, int64* pllClockTime, int64* phnsSystemTime) GetCorrelatedTime;
-				public new function HRESULT(IMFClock *self, uint32* pdwContinuityKey) GetContinuityKey;
-				public new function HRESULT(IMFClock *self, uint32 dwReserved, MFCLOCK_STATE* peClockState) GetState;
-				public new function HRESULT(IMFClock *self, MFCLOCK_PROPERTIES* pClockProperties) GetProperties;
+				public new function HRESULT(ref IMFClock self, out uint32 pdwCharacteristics) GetClockCharacteristics;
+				public new function HRESULT(ref IMFClock self, uint32 dwReserved, out int64 pllClockTime, out int64 phnsSystemTime) GetCorrelatedTime;
+				public new function HRESULT(ref IMFClock self, out uint32 pdwContinuityKey) GetContinuityKey;
+				public new function HRESULT(ref IMFClock self, uint32 dwReserved, out MFCLOCK_STATE peClockState) GetState;
+				public new function HRESULT(ref IMFClock self, out MFCLOCK_PROPERTIES pClockProperties) GetProperties;
 			}
 		}
 		[CRepr]
@@ -12481,49 +12481,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTimeSource(IMFPresentationTimeSource* pTimeSource) mut
+			public HRESULT SetTimeSource(ref IMFPresentationTimeSource pTimeSource) mut
 			{
-				return VT.SetTimeSource(&this, pTimeSource);
+				return VT.SetTimeSource(ref this, ref pTimeSource);
 			}
-			public HRESULT GetTimeSource(IMFPresentationTimeSource** ppTimeSource) mut
+			public HRESULT GetTimeSource(out IMFPresentationTimeSource* ppTimeSource) mut
 			{
-				return VT.GetTimeSource(&this, ppTimeSource);
+				return VT.GetTimeSource(ref this, out ppTimeSource);
 			}
-			public HRESULT GetTime(int64* phnsClockTime) mut
+			public HRESULT GetTime(out int64 phnsClockTime) mut
 			{
-				return VT.GetTime(&this, phnsClockTime);
+				return VT.GetTime(ref this, out phnsClockTime);
 			}
-			public HRESULT AddClockStateSink(IMFClockStateSink* pStateSink) mut
+			public HRESULT AddClockStateSink(ref IMFClockStateSink pStateSink) mut
 			{
-				return VT.AddClockStateSink(&this, pStateSink);
+				return VT.AddClockStateSink(ref this, ref pStateSink);
 			}
-			public HRESULT RemoveClockStateSink(IMFClockStateSink* pStateSink) mut
+			public HRESULT RemoveClockStateSink(ref IMFClockStateSink pStateSink) mut
 			{
-				return VT.RemoveClockStateSink(&this, pStateSink);
+				return VT.RemoveClockStateSink(ref this, ref pStateSink);
 			}
 			public HRESULT Start(int64 llClockStartOffset) mut
 			{
-				return VT.Start(&this, llClockStartOffset);
+				return VT.Start(ref this, llClockStartOffset);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFClock.VTable
 			{
-				public new function HRESULT(IMFPresentationClock *self, IMFPresentationTimeSource* pTimeSource) SetTimeSource;
-				public new function HRESULT(IMFPresentationClock *self, IMFPresentationTimeSource** ppTimeSource) GetTimeSource;
-				public new function HRESULT(IMFPresentationClock *self, int64* phnsClockTime) GetTime;
-				public new function HRESULT(IMFPresentationClock *self, IMFClockStateSink* pStateSink) AddClockStateSink;
-				public new function HRESULT(IMFPresentationClock *self, IMFClockStateSink* pStateSink) RemoveClockStateSink;
-				public new function HRESULT(IMFPresentationClock *self, int64 llClockStartOffset) Start;
-				public new function HRESULT(IMFPresentationClock *self) Stop;
-				public new function HRESULT(IMFPresentationClock *self) Pause;
+				public new function HRESULT(ref IMFPresentationClock self, ref IMFPresentationTimeSource pTimeSource) SetTimeSource;
+				public new function HRESULT(ref IMFPresentationClock self, out IMFPresentationTimeSource* ppTimeSource) GetTimeSource;
+				public new function HRESULT(ref IMFPresentationClock self, out int64 phnsClockTime) GetTime;
+				public new function HRESULT(ref IMFPresentationClock self, ref IMFClockStateSink pStateSink) AddClockStateSink;
+				public new function HRESULT(ref IMFPresentationClock self, ref IMFClockStateSink pStateSink) RemoveClockStateSink;
+				public new function HRESULT(ref IMFPresentationClock self, int64 llClockStartOffset) Start;
+				public new function HRESULT(ref IMFPresentationClock self) Stop;
+				public new function HRESULT(ref IMFPresentationClock self) Pause;
 			}
 		}
 		[CRepr]
@@ -12533,14 +12533,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetUnderlyingClock(IMFClock** ppClock) mut
+			public HRESULT GetUnderlyingClock(out IMFClock* ppClock) mut
 			{
-				return VT.GetUnderlyingClock(&this, ppClock);
+				return VT.GetUnderlyingClock(ref this, out ppClock);
 			}
 			[CRepr]
 			public struct VTable : IMFClock.VTable
 			{
-				public new function HRESULT(IMFPresentationTimeSource *self, IMFClock** ppClock) GetUnderlyingClock;
+				public new function HRESULT(ref IMFPresentationTimeSource self, out IMFClock* ppClock) GetUnderlyingClock;
 			}
 		}
 		[CRepr]
@@ -12552,32 +12552,32 @@ namespace Win32
 			
 			public HRESULT OnClockStart(int64 hnsSystemTime, int64 llClockStartOffset) mut
 			{
-				return VT.OnClockStart(&this, hnsSystemTime, llClockStartOffset);
+				return VT.OnClockStart(ref this, hnsSystemTime, llClockStartOffset);
 			}
 			public HRESULT OnClockStop(int64 hnsSystemTime) mut
 			{
-				return VT.OnClockStop(&this, hnsSystemTime);
+				return VT.OnClockStop(ref this, hnsSystemTime);
 			}
 			public HRESULT OnClockPause(int64 hnsSystemTime) mut
 			{
-				return VT.OnClockPause(&this, hnsSystemTime);
+				return VT.OnClockPause(ref this, hnsSystemTime);
 			}
 			public HRESULT OnClockRestart(int64 hnsSystemTime) mut
 			{
-				return VT.OnClockRestart(&this, hnsSystemTime);
+				return VT.OnClockRestart(ref this, hnsSystemTime);
 			}
 			public HRESULT OnClockSetRate(int64 hnsSystemTime, float flRate) mut
 			{
-				return VT.OnClockSetRate(&this, hnsSystemTime, flRate);
+				return VT.OnClockSetRate(ref this, hnsSystemTime, flRate);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime, int64 llClockStartOffset) OnClockStart;
-				public new function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime) OnClockStop;
-				public new function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime) OnClockPause;
-				public new function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime) OnClockRestart;
-				public new function HRESULT(IMFClockStateSink *self, int64 hnsSystemTime, float flRate) OnClockSetRate;
+				public new function HRESULT(ref IMFClockStateSink self, int64 hnsSystemTime, int64 llClockStartOffset) OnClockStart;
+				public new function HRESULT(ref IMFClockStateSink self, int64 hnsSystemTime) OnClockStop;
+				public new function HRESULT(ref IMFClockStateSink self, int64 hnsSystemTime) OnClockPause;
+				public new function HRESULT(ref IMFClockStateSink self, int64 hnsSystemTime) OnClockRestart;
+				public new function HRESULT(ref IMFClockStateSink self, int64 hnsSystemTime, float flRate) OnClockSetRate;
 			}
 		}
 		[CRepr]
@@ -12587,34 +12587,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamDescriptorCount(uint32* pdwDescriptorCount) mut
+			public HRESULT GetStreamDescriptorCount(out uint32 pdwDescriptorCount) mut
 			{
-				return VT.GetStreamDescriptorCount(&this, pdwDescriptorCount);
+				return VT.GetStreamDescriptorCount(ref this, out pdwDescriptorCount);
 			}
-			public HRESULT GetStreamDescriptorByIndex(uint32 dwIndex, BOOL* pfSelected, IMFStreamDescriptor** ppDescriptor) mut
+			public HRESULT GetStreamDescriptorByIndex(uint32 dwIndex, out BOOL pfSelected, out IMFStreamDescriptor* ppDescriptor) mut
 			{
-				return VT.GetStreamDescriptorByIndex(&this, dwIndex, pfSelected, ppDescriptor);
+				return VT.GetStreamDescriptorByIndex(ref this, dwIndex, out pfSelected, out ppDescriptor);
 			}
 			public HRESULT SelectStream(uint32 dwDescriptorIndex) mut
 			{
-				return VT.SelectStream(&this, dwDescriptorIndex);
+				return VT.SelectStream(ref this, dwDescriptorIndex);
 			}
 			public HRESULT DeselectStream(uint32 dwDescriptorIndex) mut
 			{
-				return VT.DeselectStream(&this, dwDescriptorIndex);
+				return VT.DeselectStream(ref this, dwDescriptorIndex);
 			}
-			public HRESULT Clone(IMFPresentationDescriptor** ppPresentationDescriptor) mut
+			public HRESULT Clone(out IMFPresentationDescriptor* ppPresentationDescriptor) mut
 			{
-				return VT.Clone(&this, ppPresentationDescriptor);
+				return VT.Clone(ref this, out ppPresentationDescriptor);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFPresentationDescriptor *self, uint32* pdwDescriptorCount) GetStreamDescriptorCount;
-				public new function HRESULT(IMFPresentationDescriptor *self, uint32 dwIndex, BOOL* pfSelected, IMFStreamDescriptor** ppDescriptor) GetStreamDescriptorByIndex;
-				public new function HRESULT(IMFPresentationDescriptor *self, uint32 dwDescriptorIndex) SelectStream;
-				public new function HRESULT(IMFPresentationDescriptor *self, uint32 dwDescriptorIndex) DeselectStream;
-				public new function HRESULT(IMFPresentationDescriptor *self, IMFPresentationDescriptor** ppPresentationDescriptor) Clone;
+				public new function HRESULT(ref IMFPresentationDescriptor self, out uint32 pdwDescriptorCount) GetStreamDescriptorCount;
+				public new function HRESULT(ref IMFPresentationDescriptor self, uint32 dwIndex, out BOOL pfSelected, out IMFStreamDescriptor* ppDescriptor) GetStreamDescriptorByIndex;
+				public new function HRESULT(ref IMFPresentationDescriptor self, uint32 dwDescriptorIndex) SelectStream;
+				public new function HRESULT(ref IMFPresentationDescriptor self, uint32 dwDescriptorIndex) DeselectStream;
+				public new function HRESULT(ref IMFPresentationDescriptor self, out IMFPresentationDescriptor* ppPresentationDescriptor) Clone;
 			}
 		}
 		[CRepr]
@@ -12624,19 +12624,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamIdentifier(uint32* pdwStreamIdentifier) mut
+			public HRESULT GetStreamIdentifier(out uint32 pdwStreamIdentifier) mut
 			{
-				return VT.GetStreamIdentifier(&this, pdwStreamIdentifier);
+				return VT.GetStreamIdentifier(ref this, out pdwStreamIdentifier);
 			}
-			public HRESULT GetMediaTypeHandler(IMFMediaTypeHandler** ppMediaTypeHandler) mut
+			public HRESULT GetMediaTypeHandler(out IMFMediaTypeHandler* ppMediaTypeHandler) mut
 			{
-				return VT.GetMediaTypeHandler(&this, ppMediaTypeHandler);
+				return VT.GetMediaTypeHandler(ref this, out ppMediaTypeHandler);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFStreamDescriptor *self, uint32* pdwStreamIdentifier) GetStreamIdentifier;
-				public new function HRESULT(IMFStreamDescriptor *self, IMFMediaTypeHandler** ppMediaTypeHandler) GetMediaTypeHandler;
+				public new function HRESULT(ref IMFStreamDescriptor self, out uint32 pdwStreamIdentifier) GetStreamIdentifier;
+				public new function HRESULT(ref IMFStreamDescriptor self, out IMFMediaTypeHandler* ppMediaTypeHandler) GetMediaTypeHandler;
 			}
 		}
 		[CRepr]
@@ -12646,39 +12646,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsMediaTypeSupported(IMFMediaType* pMediaType, IMFMediaType** ppMediaType) mut
+			public HRESULT IsMediaTypeSupported(ref IMFMediaType pMediaType, IMFMediaType** ppMediaType) mut
 			{
-				return VT.IsMediaTypeSupported(&this, pMediaType, ppMediaType);
+				return VT.IsMediaTypeSupported(ref this, ref pMediaType, ppMediaType);
 			}
-			public HRESULT GetMediaTypeCount(uint32* pdwTypeCount) mut
+			public HRESULT GetMediaTypeCount(out uint32 pdwTypeCount) mut
 			{
-				return VT.GetMediaTypeCount(&this, pdwTypeCount);
+				return VT.GetMediaTypeCount(ref this, out pdwTypeCount);
 			}
-			public HRESULT GetMediaTypeByIndex(uint32 dwIndex, IMFMediaType** ppType) mut
+			public HRESULT GetMediaTypeByIndex(uint32 dwIndex, out IMFMediaType* ppType) mut
 			{
-				return VT.GetMediaTypeByIndex(&this, dwIndex, ppType);
+				return VT.GetMediaTypeByIndex(ref this, dwIndex, out ppType);
 			}
-			public HRESULT SetCurrentMediaType(IMFMediaType* pMediaType) mut
+			public HRESULT SetCurrentMediaType(ref IMFMediaType pMediaType) mut
 			{
-				return VT.SetCurrentMediaType(&this, pMediaType);
+				return VT.SetCurrentMediaType(ref this, ref pMediaType);
 			}
-			public HRESULT GetCurrentMediaType(IMFMediaType** ppMediaType) mut
+			public HRESULT GetCurrentMediaType(out IMFMediaType* ppMediaType) mut
 			{
-				return VT.GetCurrentMediaType(&this, ppMediaType);
+				return VT.GetCurrentMediaType(ref this, out ppMediaType);
 			}
-			public HRESULT GetMajorType(Guid* pguidMajorType) mut
+			public HRESULT GetMajorType(out Guid pguidMajorType) mut
 			{
-				return VT.GetMajorType(&this, pguidMajorType);
+				return VT.GetMajorType(ref this, out pguidMajorType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaTypeHandler *self, IMFMediaType* pMediaType, IMFMediaType** ppMediaType) IsMediaTypeSupported;
-				public new function HRESULT(IMFMediaTypeHandler *self, uint32* pdwTypeCount) GetMediaTypeCount;
-				public new function HRESULT(IMFMediaTypeHandler *self, uint32 dwIndex, IMFMediaType** ppType) GetMediaTypeByIndex;
-				public new function HRESULT(IMFMediaTypeHandler *self, IMFMediaType* pMediaType) SetCurrentMediaType;
-				public new function HRESULT(IMFMediaTypeHandler *self, IMFMediaType** ppMediaType) GetCurrentMediaType;
-				public new function HRESULT(IMFMediaTypeHandler *self, Guid* pguidMajorType) GetMajorType;
+				public new function HRESULT(ref IMFMediaTypeHandler self, ref IMFMediaType pMediaType, IMFMediaType** ppMediaType) IsMediaTypeSupported;
+				public new function HRESULT(ref IMFMediaTypeHandler self, out uint32 pdwTypeCount) GetMediaTypeCount;
+				public new function HRESULT(ref IMFMediaTypeHandler self, uint32 dwIndex, out IMFMediaType* ppType) GetMediaTypeByIndex;
+				public new function HRESULT(ref IMFMediaTypeHandler self, ref IMFMediaType pMediaType) SetCurrentMediaType;
+				public new function HRESULT(ref IMFMediaTypeHandler self, out IMFMediaType* ppMediaType) GetCurrentMediaType;
+				public new function HRESULT(ref IMFMediaTypeHandler self, out Guid pguidMajorType) GetMajorType;
 			}
 		}
 		[CRepr]
@@ -12688,19 +12688,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTimer(uint32 dwFlags, int64 llClockTime, IMFAsyncCallback* pCallback, IUnknown* punkState, IUnknown** ppunkKey) mut
+			public HRESULT SetTimer(uint32 dwFlags, int64 llClockTime, ref IMFAsyncCallback pCallback, ref IUnknown punkState, out IUnknown* ppunkKey) mut
 			{
-				return VT.SetTimer(&this, dwFlags, llClockTime, pCallback, punkState, ppunkKey);
+				return VT.SetTimer(ref this, dwFlags, llClockTime, ref pCallback, ref punkState, out ppunkKey);
 			}
-			public HRESULT CancelTimer(IUnknown* punkKey) mut
+			public HRESULT CancelTimer(ref IUnknown punkKey) mut
 			{
-				return VT.CancelTimer(&this, punkKey);
+				return VT.CancelTimer(ref this, ref punkKey);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimer *self, uint32 dwFlags, int64 llClockTime, IMFAsyncCallback* pCallback, IUnknown* punkState, IUnknown** ppunkKey) SetTimer;
-				public new function HRESULT(IMFTimer *self, IUnknown* punkKey) CancelTimer;
+				public new function HRESULT(ref IMFTimer self, uint32 dwFlags, int64 llClockTime, ref IMFAsyncCallback pCallback, ref IUnknown punkState, out IUnknown* ppunkKey) SetTimer;
+				public new function HRESULT(ref IMFTimer self, ref IUnknown punkKey) CancelTimer;
 			}
 		}
 		[CRepr]
@@ -12712,17 +12712,17 @@ namespace Win32
 			
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
-			public HRESULT GetShutdownStatus(MFSHUTDOWN_STATUS* pStatus) mut
+			public HRESULT GetShutdownStatus(out MFSHUTDOWN_STATUS pStatus) mut
 			{
-				return VT.GetShutdownStatus(&this, pStatus);
+				return VT.GetShutdownStatus(ref this, out pStatus);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFShutdown *self) Shutdown;
-				public new function HRESULT(IMFShutdown *self, MFSHUTDOWN_STATUS* pStatus) GetShutdownStatus;
+				public new function HRESULT(ref IMFShutdown self) Shutdown;
+				public new function HRESULT(ref IMFShutdown self, out MFSHUTDOWN_STATUS pStatus) GetShutdownStatus;
 			}
 		}
 		[CRepr]
@@ -12732,14 +12732,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Load(IMFTopology* pInputTopo, IMFTopology** ppOutputTopo, IMFTopology* pCurrentTopo) mut
+			public HRESULT Load(ref IMFTopology pInputTopo, out IMFTopology* ppOutputTopo, ref IMFTopology pCurrentTopo) mut
 			{
-				return VT.Load(&this, pInputTopo, ppOutputTopo, pCurrentTopo);
+				return VT.Load(ref this, ref pInputTopo, out ppOutputTopo, ref pCurrentTopo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTopoLoader *self, IMFTopology* pInputTopo, IMFTopology** ppOutputTopo, IMFTopology* pCurrentTopo) Load;
+				public new function HRESULT(ref IMFTopoLoader self, ref IMFTopology pInputTopo, out IMFTopology* ppOutputTopo, ref IMFTopology pCurrentTopo) Load;
 			}
 		}
 		[CRepr]
@@ -12749,19 +12749,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginEnableContent(IMFActivate* pEnablerActivate, IMFTopology* pTopo, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginEnableContent(ref IMFActivate pEnablerActivate, ref IMFTopology pTopo, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginEnableContent(&this, pEnablerActivate, pTopo, pCallback, punkState);
+				return VT.BeginEnableContent(ref this, ref pEnablerActivate, ref pTopo, ref pCallback, ref punkState);
 			}
-			public HRESULT EndEnableContent(IMFAsyncResult* pResult) mut
+			public HRESULT EndEnableContent(ref IMFAsyncResult pResult) mut
 			{
-				return VT.EndEnableContent(&this, pResult);
+				return VT.EndEnableContent(ref this, ref pResult);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFContentProtectionManager *self, IMFActivate* pEnablerActivate, IMFTopology* pTopo, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginEnableContent;
-				public new function HRESULT(IMFContentProtectionManager *self, IMFAsyncResult* pResult) EndEnableContent;
+				public new function HRESULT(ref IMFContentProtectionManager self, ref IMFActivate pEnablerActivate, ref IMFTopology pTopo, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginEnableContent;
+				public new function HRESULT(ref IMFContentProtectionManager self, ref IMFAsyncResult pResult) EndEnableContent;
 			}
 		}
 		[CRepr]
@@ -12771,44 +12771,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetEnableType(Guid* pType) mut
+			public HRESULT GetEnableType(out Guid pType) mut
 			{
-				return VT.GetEnableType(&this, pType);
+				return VT.GetEnableType(ref this, out pType);
 			}
-			public HRESULT GetEnableURL(PWSTR* ppwszURL, uint32* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus) mut
+			public HRESULT GetEnableURL(PWSTR* ppwszURL, out uint32 pcchURL, out MF_URL_TRUST_STATUS pTrustStatus) mut
 			{
-				return VT.GetEnableURL(&this, ppwszURL, pcchURL, pTrustStatus);
+				return VT.GetEnableURL(ref this, ppwszURL, out pcchURL, out pTrustStatus);
 			}
-			public HRESULT GetEnableData(uint8** ppbData, uint32* pcbData) mut
+			public HRESULT GetEnableData(uint8** ppbData, out uint32 pcbData) mut
 			{
-				return VT.GetEnableData(&this, ppbData, pcbData);
+				return VT.GetEnableData(ref this, ppbData, out pcbData);
 			}
-			public HRESULT IsAutomaticSupported(BOOL* pfAutomatic) mut
+			public HRESULT IsAutomaticSupported(out BOOL pfAutomatic) mut
 			{
-				return VT.IsAutomaticSupported(&this, pfAutomatic);
+				return VT.IsAutomaticSupported(ref this, out pfAutomatic);
 			}
 			public HRESULT AutomaticEnable() mut
 			{
-				return VT.AutomaticEnable(&this);
+				return VT.AutomaticEnable(ref this);
 			}
 			public HRESULT MonitorEnable() mut
 			{
-				return VT.MonitorEnable(&this);
+				return VT.MonitorEnable(ref this);
 			}
 			public HRESULT Cancel() mut
 			{
-				return VT.Cancel(&this);
+				return VT.Cancel(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFContentEnabler *self, Guid* pType) GetEnableType;
-				public new function HRESULT(IMFContentEnabler *self, PWSTR* ppwszURL, uint32* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus) GetEnableURL;
-				public new function HRESULT(IMFContentEnabler *self, uint8** ppbData, uint32* pcbData) GetEnableData;
-				public new function HRESULT(IMFContentEnabler *self, BOOL* pfAutomatic) IsAutomaticSupported;
-				public new function HRESULT(IMFContentEnabler *self) AutomaticEnable;
-				public new function HRESULT(IMFContentEnabler *self) MonitorEnable;
-				public new function HRESULT(IMFContentEnabler *self) Cancel;
+				public new function HRESULT(ref IMFContentEnabler self, out Guid pType) GetEnableType;
+				public new function HRESULT(ref IMFContentEnabler self, PWSTR* ppwszURL, out uint32 pcchURL, out MF_URL_TRUST_STATUS pTrustStatus) GetEnableURL;
+				public new function HRESULT(ref IMFContentEnabler self, uint8** ppbData, out uint32 pcbData) GetEnableData;
+				public new function HRESULT(ref IMFContentEnabler self, out BOOL pfAutomatic) IsAutomaticSupported;
+				public new function HRESULT(ref IMFContentEnabler self) AutomaticEnable;
+				public new function HRESULT(ref IMFContentEnabler self) MonitorEnable;
+				public new function HRESULT(ref IMFContentEnabler self) Cancel;
 			}
 		}
 		[CRepr]
@@ -12820,42 +12820,42 @@ namespace Win32
 			
 			public HRESULT SetLanguage(PWSTR pwszRFC1766) mut
 			{
-				return VT.SetLanguage(&this, pwszRFC1766);
+				return VT.SetLanguage(ref this, pwszRFC1766);
 			}
-			public HRESULT GetLanguage(PWSTR* ppwszRFC1766) mut
+			public HRESULT GetLanguage(out PWSTR ppwszRFC1766) mut
 			{
-				return VT.GetLanguage(&this, ppwszRFC1766);
+				return VT.GetLanguage(ref this, out ppwszRFC1766);
 			}
-			public HRESULT GetAllLanguages(PROPVARIANT* ppvLanguages) mut
+			public HRESULT GetAllLanguages(out PROPVARIANT ppvLanguages) mut
 			{
-				return VT.GetAllLanguages(&this, ppvLanguages);
+				return VT.GetAllLanguages(ref this, out ppvLanguages);
 			}
-			public HRESULT SetProperty(PWSTR pwszName, PROPVARIANT* ppvValue) mut
+			public HRESULT SetProperty(PWSTR pwszName, in PROPVARIANT ppvValue) mut
 			{
-				return VT.SetProperty(&this, pwszName, ppvValue);
+				return VT.SetProperty(ref this, pwszName, ppvValue);
 			}
-			public HRESULT GetProperty(PWSTR pwszName, PROPVARIANT* ppvValue) mut
+			public HRESULT GetProperty(PWSTR pwszName, out PROPVARIANT ppvValue) mut
 			{
-				return VT.GetProperty(&this, pwszName, ppvValue);
+				return VT.GetProperty(ref this, pwszName, out ppvValue);
 			}
 			public HRESULT DeleteProperty(PWSTR pwszName) mut
 			{
-				return VT.DeleteProperty(&this, pwszName);
+				return VT.DeleteProperty(ref this, pwszName);
 			}
-			public HRESULT GetAllPropertyNames(PROPVARIANT* ppvNames) mut
+			public HRESULT GetAllPropertyNames(out PROPVARIANT ppvNames) mut
 			{
-				return VT.GetAllPropertyNames(&this, ppvNames);
+				return VT.GetAllPropertyNames(ref this, out ppvNames);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMetadata *self, PWSTR pwszRFC1766) SetLanguage;
-				public new function HRESULT(IMFMetadata *self, PWSTR* ppwszRFC1766) GetLanguage;
-				public new function HRESULT(IMFMetadata *self, PROPVARIANT* ppvLanguages) GetAllLanguages;
-				public new function HRESULT(IMFMetadata *self, PWSTR pwszName, PROPVARIANT* ppvValue) SetProperty;
-				public new function HRESULT(IMFMetadata *self, PWSTR pwszName, PROPVARIANT* ppvValue) GetProperty;
-				public new function HRESULT(IMFMetadata *self, PWSTR pwszName) DeleteProperty;
-				public new function HRESULT(IMFMetadata *self, PROPVARIANT* ppvNames) GetAllPropertyNames;
+				public new function HRESULT(ref IMFMetadata self, PWSTR pwszRFC1766) SetLanguage;
+				public new function HRESULT(ref IMFMetadata self, out PWSTR ppwszRFC1766) GetLanguage;
+				public new function HRESULT(ref IMFMetadata self, out PROPVARIANT ppvLanguages) GetAllLanguages;
+				public new function HRESULT(ref IMFMetadata self, PWSTR pwszName, in PROPVARIANT ppvValue) SetProperty;
+				public new function HRESULT(ref IMFMetadata self, PWSTR pwszName, out PROPVARIANT ppvValue) GetProperty;
+				public new function HRESULT(ref IMFMetadata self, PWSTR pwszName) DeleteProperty;
+				public new function HRESULT(ref IMFMetadata self, out PROPVARIANT ppvNames) GetAllPropertyNames;
 			}
 		}
 		[CRepr]
@@ -12865,14 +12865,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMFMetadata(IMFPresentationDescriptor* pPresentationDescriptor, uint32 dwStreamIdentifier, uint32 dwFlags, IMFMetadata** ppMFMetadata) mut
+			public HRESULT GetMFMetadata(ref IMFPresentationDescriptor pPresentationDescriptor, uint32 dwStreamIdentifier, uint32 dwFlags, out IMFMetadata* ppMFMetadata) mut
 			{
-				return VT.GetMFMetadata(&this, pPresentationDescriptor, dwStreamIdentifier, dwFlags, ppMFMetadata);
+				return VT.GetMFMetadata(ref this, ref pPresentationDescriptor, dwStreamIdentifier, dwFlags, out ppMFMetadata);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMetadataProvider *self, IMFPresentationDescriptor* pPresentationDescriptor, uint32 dwStreamIdentifier, uint32 dwFlags, IMFMetadata** ppMFMetadata) GetMFMetadata;
+				public new function HRESULT(ref IMFMetadataProvider self, ref IMFPresentationDescriptor pPresentationDescriptor, uint32 dwStreamIdentifier, uint32 dwFlags, out IMFMetadata* ppMFMetadata) GetMFMetadata;
 			}
 		}
 		[CRepr]
@@ -12882,24 +12882,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSlowestRate(MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate) mut
+			public HRESULT GetSlowestRate(MFRATE_DIRECTION eDirection, BOOL fThin, out float pflRate) mut
 			{
-				return VT.GetSlowestRate(&this, eDirection, fThin, pflRate);
+				return VT.GetSlowestRate(ref this, eDirection, fThin, out pflRate);
 			}
-			public HRESULT GetFastestRate(MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate) mut
+			public HRESULT GetFastestRate(MFRATE_DIRECTION eDirection, BOOL fThin, out float pflRate) mut
 			{
-				return VT.GetFastestRate(&this, eDirection, fThin, pflRate);
+				return VT.GetFastestRate(ref this, eDirection, fThin, out pflRate);
 			}
-			public HRESULT IsRateSupported(BOOL fThin, float flRate, float* pflNearestSupportedRate) mut
+			public HRESULT IsRateSupported(BOOL fThin, float flRate, out float pflNearestSupportedRate) mut
 			{
-				return VT.IsRateSupported(&this, fThin, flRate, pflNearestSupportedRate);
+				return VT.IsRateSupported(ref this, fThin, flRate, out pflNearestSupportedRate);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFRateSupport *self, MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate) GetSlowestRate;
-				public new function HRESULT(IMFRateSupport *self, MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate) GetFastestRate;
-				public new function HRESULT(IMFRateSupport *self, BOOL fThin, float flRate, float* pflNearestSupportedRate) IsRateSupported;
+				public new function HRESULT(ref IMFRateSupport self, MFRATE_DIRECTION eDirection, BOOL fThin, out float pflRate) GetSlowestRate;
+				public new function HRESULT(ref IMFRateSupport self, MFRATE_DIRECTION eDirection, BOOL fThin, out float pflRate) GetFastestRate;
+				public new function HRESULT(ref IMFRateSupport self, BOOL fThin, float flRate, out float pflNearestSupportedRate) IsRateSupported;
 			}
 		}
 		[CRepr]
@@ -12911,17 +12911,17 @@ namespace Win32
 			
 			public HRESULT SetRate(BOOL fThin, float flRate) mut
 			{
-				return VT.SetRate(&this, fThin, flRate);
+				return VT.SetRate(ref this, fThin, flRate);
 			}
-			public HRESULT GetRate(BOOL* pfThin, float* pflRate) mut
+			public HRESULT GetRate(out BOOL pfThin, out float pflRate) mut
 			{
-				return VT.GetRate(&this, pfThin, pflRate);
+				return VT.GetRate(ref this, out pfThin, out pflRate);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFRateControl *self, BOOL fThin, float flRate) SetRate;
-				public new function HRESULT(IMFRateControl *self, BOOL* pfThin, float* pflRate) GetRate;
+				public new function HRESULT(ref IMFRateControl self, BOOL fThin, float flRate) SetRate;
+				public new function HRESULT(ref IMFRateControl self, out BOOL pfThin, out float pflRate) GetRate;
 			}
 		}
 		[CRepr]
@@ -12931,29 +12931,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginConvertTimecodeToHNS(PROPVARIANT* pPropVarTimecode, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginConvertTimecodeToHNS(in PROPVARIANT pPropVarTimecode, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginConvertTimecodeToHNS(&this, pPropVarTimecode, pCallback, punkState);
+				return VT.BeginConvertTimecodeToHNS(ref this, pPropVarTimecode, ref pCallback, ref punkState);
 			}
-			public HRESULT EndConvertTimecodeToHNS(IMFAsyncResult* pResult, int64* phnsTime) mut
+			public HRESULT EndConvertTimecodeToHNS(ref IMFAsyncResult pResult, out int64 phnsTime) mut
 			{
-				return VT.EndConvertTimecodeToHNS(&this, pResult, phnsTime);
+				return VT.EndConvertTimecodeToHNS(ref this, ref pResult, out phnsTime);
 			}
-			public HRESULT BeginConvertHNSToTimecode(int64 hnsTime, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginConvertHNSToTimecode(int64 hnsTime, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginConvertHNSToTimecode(&this, hnsTime, pCallback, punkState);
+				return VT.BeginConvertHNSToTimecode(ref this, hnsTime, ref pCallback, ref punkState);
 			}
-			public HRESULT EndConvertHNSToTimecode(IMFAsyncResult* pResult, PROPVARIANT* pPropVarTimecode) mut
+			public HRESULT EndConvertHNSToTimecode(ref IMFAsyncResult pResult, out PROPVARIANT pPropVarTimecode) mut
 			{
-				return VT.EndConvertHNSToTimecode(&this, pResult, pPropVarTimecode);
+				return VT.EndConvertHNSToTimecode(ref this, ref pResult, out pPropVarTimecode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimecodeTranslate *self, PROPVARIANT* pPropVarTimecode, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginConvertTimecodeToHNS;
-				public new function HRESULT(IMFTimecodeTranslate *self, IMFAsyncResult* pResult, int64* phnsTime) EndConvertTimecodeToHNS;
-				public new function HRESULT(IMFTimecodeTranslate *self, int64 hnsTime, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginConvertHNSToTimecode;
-				public new function HRESULT(IMFTimecodeTranslate *self, IMFAsyncResult* pResult, PROPVARIANT* pPropVarTimecode) EndConvertHNSToTimecode;
+				public new function HRESULT(ref IMFTimecodeTranslate self, in PROPVARIANT pPropVarTimecode, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginConvertTimecodeToHNS;
+				public new function HRESULT(ref IMFTimecodeTranslate self, ref IMFAsyncResult pResult, out int64 phnsTime) EndConvertTimecodeToHNS;
+				public new function HRESULT(ref IMFTimecodeTranslate self, int64 hnsTime, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginConvertHNSToTimecode;
+				public new function HRESULT(ref IMFTimecodeTranslate self, ref IMFAsyncResult pResult, out PROPVARIANT pPropVarTimecode) EndConvertHNSToTimecode;
 			}
 		}
 		[CRepr]
@@ -12963,14 +12963,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNearestKeyFrames(Guid* pguidTimeFormat, PROPVARIANT* pvarStartPosition, PROPVARIANT* pvarPreviousKeyFrame, PROPVARIANT* pvarNextKeyFrame) mut
+			public HRESULT GetNearestKeyFrames(in Guid pguidTimeFormat, in PROPVARIANT pvarStartPosition, out PROPVARIANT pvarPreviousKeyFrame, out PROPVARIANT pvarNextKeyFrame) mut
 			{
-				return VT.GetNearestKeyFrames(&this, pguidTimeFormat, pvarStartPosition, pvarPreviousKeyFrame, pvarNextKeyFrame);
+				return VT.GetNearestKeyFrames(ref this, pguidTimeFormat, pvarStartPosition, out pvarPreviousKeyFrame, out pvarNextKeyFrame);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSeekInfo *self, Guid* pguidTimeFormat, PROPVARIANT* pvarStartPosition, PROPVARIANT* pvarPreviousKeyFrame, PROPVARIANT* pvarNextKeyFrame) GetNearestKeyFrames;
+				public new function HRESULT(ref IMFSeekInfo self, in Guid pguidTimeFormat, in PROPVARIANT pvarStartPosition, out PROPVARIANT pvarPreviousKeyFrame, out PROPVARIANT pvarNextKeyFrame) GetNearestKeyFrames;
 			}
 		}
 		[CRepr]
@@ -12982,27 +12982,27 @@ namespace Win32
 			
 			public HRESULT SetMasterVolume(float fLevel) mut
 			{
-				return VT.SetMasterVolume(&this, fLevel);
+				return VT.SetMasterVolume(ref this, fLevel);
 			}
-			public HRESULT GetMasterVolume(float* pfLevel) mut
+			public HRESULT GetMasterVolume(out float pfLevel) mut
 			{
-				return VT.GetMasterVolume(&this, pfLevel);
+				return VT.GetMasterVolume(ref this, out pfLevel);
 			}
 			public HRESULT SetMute(BOOL bMute) mut
 			{
-				return VT.SetMute(&this, bMute);
+				return VT.SetMute(ref this, bMute);
 			}
-			public HRESULT GetMute(BOOL* pbMute) mut
+			public HRESULT GetMute(out BOOL pbMute) mut
 			{
-				return VT.GetMute(&this, pbMute);
+				return VT.GetMute(ref this, out pbMute);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSimpleAudioVolume *self, float fLevel) SetMasterVolume;
-				public new function HRESULT(IMFSimpleAudioVolume *self, float* pfLevel) GetMasterVolume;
-				public new function HRESULT(IMFSimpleAudioVolume *self, BOOL bMute) SetMute;
-				public new function HRESULT(IMFSimpleAudioVolume *self, BOOL* pbMute) GetMute;
+				public new function HRESULT(ref IMFSimpleAudioVolume self, float fLevel) SetMasterVolume;
+				public new function HRESULT(ref IMFSimpleAudioVolume self, out float pfLevel) GetMasterVolume;
+				public new function HRESULT(ref IMFSimpleAudioVolume self, BOOL bMute) SetMute;
+				public new function HRESULT(ref IMFSimpleAudioVolume self, out BOOL pbMute) GetMute;
 			}
 		}
 		[CRepr]
@@ -13012,34 +13012,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetChannelCount(uint32* pdwCount) mut
+			public HRESULT GetChannelCount(out uint32 pdwCount) mut
 			{
-				return VT.GetChannelCount(&this, pdwCount);
+				return VT.GetChannelCount(ref this, out pdwCount);
 			}
 			public HRESULT SetChannelVolume(uint32 dwIndex, float fLevel) mut
 			{
-				return VT.SetChannelVolume(&this, dwIndex, fLevel);
+				return VT.SetChannelVolume(ref this, dwIndex, fLevel);
 			}
-			public HRESULT GetChannelVolume(uint32 dwIndex, float* pfLevel) mut
+			public HRESULT GetChannelVolume(uint32 dwIndex, out float pfLevel) mut
 			{
-				return VT.GetChannelVolume(&this, dwIndex, pfLevel);
+				return VT.GetChannelVolume(ref this, dwIndex, out pfLevel);
 			}
 			public HRESULT SetAllVolumes(uint32 dwCount, float* pfVolumes) mut
 			{
-				return VT.SetAllVolumes(&this, dwCount, pfVolumes);
+				return VT.SetAllVolumes(ref this, dwCount, pfVolumes);
 			}
 			public HRESULT GetAllVolumes(uint32 dwCount, float* pfVolumes) mut
 			{
-				return VT.GetAllVolumes(&this, dwCount, pfVolumes);
+				return VT.GetAllVolumes(ref this, dwCount, pfVolumes);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFAudioStreamVolume *self, uint32* pdwCount) GetChannelCount;
-				public new function HRESULT(IMFAudioStreamVolume *self, uint32 dwIndex, float fLevel) SetChannelVolume;
-				public new function HRESULT(IMFAudioStreamVolume *self, uint32 dwIndex, float* pfLevel) GetChannelVolume;
-				public new function HRESULT(IMFAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) SetAllVolumes;
-				public new function HRESULT(IMFAudioStreamVolume *self, uint32 dwCount, float* pfVolumes) GetAllVolumes;
+				public new function HRESULT(ref IMFAudioStreamVolume self, out uint32 pdwCount) GetChannelCount;
+				public new function HRESULT(ref IMFAudioStreamVolume self, uint32 dwIndex, float fLevel) SetChannelVolume;
+				public new function HRESULT(ref IMFAudioStreamVolume self, uint32 dwIndex, out float pfLevel) GetChannelVolume;
+				public new function HRESULT(ref IMFAudioStreamVolume self, uint32 dwCount, float* pfVolumes) SetAllVolumes;
+				public new function HRESULT(ref IMFAudioStreamVolume self, uint32 dwCount, float* pfVolumes) GetAllVolumes;
 			}
 		}
 		[CRepr]
@@ -13049,39 +13049,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetGroupingParam(Guid* rguidClass) mut
+			public HRESULT SetGroupingParam(in Guid rguidClass) mut
 			{
-				return VT.SetGroupingParam(&this, rguidClass);
+				return VT.SetGroupingParam(ref this, rguidClass);
 			}
-			public HRESULT GetGroupingParam(Guid* pguidClass) mut
+			public HRESULT GetGroupingParam(out Guid pguidClass) mut
 			{
-				return VT.GetGroupingParam(&this, pguidClass);
+				return VT.GetGroupingParam(ref this, out pguidClass);
 			}
 			public HRESULT SetDisplayName(PWSTR pszName) mut
 			{
-				return VT.SetDisplayName(&this, pszName);
+				return VT.SetDisplayName(ref this, pszName);
 			}
-			public HRESULT GetDisplayName(PWSTR* pszName) mut
+			public HRESULT GetDisplayName(out PWSTR pszName) mut
 			{
-				return VT.GetDisplayName(&this, pszName);
+				return VT.GetDisplayName(ref this, out pszName);
 			}
 			public HRESULT SetIconPath(PWSTR pszPath) mut
 			{
-				return VT.SetIconPath(&this, pszPath);
+				return VT.SetIconPath(ref this, pszPath);
 			}
-			public HRESULT GetIconPath(PWSTR* pszPath) mut
+			public HRESULT GetIconPath(out PWSTR pszPath) mut
 			{
-				return VT.GetIconPath(&this, pszPath);
+				return VT.GetIconPath(ref this, out pszPath);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFAudioPolicy *self, Guid* rguidClass) SetGroupingParam;
-				public new function HRESULT(IMFAudioPolicy *self, Guid* pguidClass) GetGroupingParam;
-				public new function HRESULT(IMFAudioPolicy *self, PWSTR pszName) SetDisplayName;
-				public new function HRESULT(IMFAudioPolicy *self, PWSTR* pszName) GetDisplayName;
-				public new function HRESULT(IMFAudioPolicy *self, PWSTR pszPath) SetIconPath;
-				public new function HRESULT(IMFAudioPolicy *self, PWSTR* pszPath) GetIconPath;
+				public new function HRESULT(ref IMFAudioPolicy self, in Guid rguidClass) SetGroupingParam;
+				public new function HRESULT(ref IMFAudioPolicy self, out Guid pguidClass) GetGroupingParam;
+				public new function HRESULT(ref IMFAudioPolicy self, PWSTR pszName) SetDisplayName;
+				public new function HRESULT(ref IMFAudioPolicy self, out PWSTR pszName) GetDisplayName;
+				public new function HRESULT(ref IMFAudioPolicy self, PWSTR pszPath) SetIconPath;
+				public new function HRESULT(ref IMFAudioPolicy self, out PWSTR pszPath) GetIconPath;
 			}
 		}
 		[CRepr]
@@ -13091,24 +13091,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSetPresentationClock(IMFPresentationClock* pPresentationClock) mut
+			public HRESULT OnSetPresentationClock(ref IMFPresentationClock pPresentationClock) mut
 			{
-				return VT.OnSetPresentationClock(&this, pPresentationClock);
+				return VT.OnSetPresentationClock(ref this, ref pPresentationClock);
 			}
-			public HRESULT OnProcessSample(Guid* guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, uint8* pSampleBuffer, uint32 dwSampleSize) mut
+			public HRESULT OnProcessSample(in Guid guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, in uint8 pSampleBuffer, uint32 dwSampleSize) mut
 			{
-				return VT.OnProcessSample(&this, guidMajorMediaType, dwSampleFlags, llSampleTime, llSampleDuration, pSampleBuffer, dwSampleSize);
+				return VT.OnProcessSample(ref this, guidMajorMediaType, dwSampleFlags, llSampleTime, llSampleDuration, pSampleBuffer, dwSampleSize);
 			}
 			public HRESULT OnShutdown() mut
 			{
-				return VT.OnShutdown(&this);
+				return VT.OnShutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFClockStateSink.VTable
 			{
-				public new function HRESULT(IMFSampleGrabberSinkCallback *self, IMFPresentationClock* pPresentationClock) OnSetPresentationClock;
-				public new function HRESULT(IMFSampleGrabberSinkCallback *self, Guid* guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, uint8* pSampleBuffer, uint32 dwSampleSize) OnProcessSample;
-				public new function HRESULT(IMFSampleGrabberSinkCallback *self) OnShutdown;
+				public new function HRESULT(ref IMFSampleGrabberSinkCallback self, ref IMFPresentationClock pPresentationClock) OnSetPresentationClock;
+				public new function HRESULT(ref IMFSampleGrabberSinkCallback self, in Guid guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, in uint8 pSampleBuffer, uint32 dwSampleSize) OnProcessSample;
+				public new function HRESULT(ref IMFSampleGrabberSinkCallback self) OnShutdown;
 			}
 		}
 		[CRepr]
@@ -13118,14 +13118,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnProcessSampleEx(Guid* guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, uint8* pSampleBuffer, uint32 dwSampleSize, IMFAttributes* pAttributes) mut
+			public HRESULT OnProcessSampleEx(in Guid guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, in uint8 pSampleBuffer, uint32 dwSampleSize, ref IMFAttributes pAttributes) mut
 			{
-				return VT.OnProcessSampleEx(&this, guidMajorMediaType, dwSampleFlags, llSampleTime, llSampleDuration, pSampleBuffer, dwSampleSize, pAttributes);
+				return VT.OnProcessSampleEx(ref this, guidMajorMediaType, dwSampleFlags, llSampleTime, llSampleDuration, pSampleBuffer, dwSampleSize, ref pAttributes);
 			}
 			[CRepr]
 			public struct VTable : IMFSampleGrabberSinkCallback.VTable
 			{
-				public new function HRESULT(IMFSampleGrabberSinkCallback2 *self, Guid* guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, uint8* pSampleBuffer, uint32 dwSampleSize, IMFAttributes* pAttributes) OnProcessSampleEx;
+				public new function HRESULT(ref IMFSampleGrabberSinkCallback2 self, in Guid guidMajorMediaType, uint32 dwSampleFlags, int64 llSampleTime, int64 llSampleDuration, in uint8 pSampleBuffer, uint32 dwSampleSize, ref IMFAttributes pAttributes) OnProcessSampleEx;
 			}
 		}
 		[CRepr]
@@ -13135,69 +13135,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginRegisterTopologyWorkQueuesWithMMCSS(IMFAsyncCallback* pCallback, IUnknown* pState) mut
+			public HRESULT BeginRegisterTopologyWorkQueuesWithMMCSS(ref IMFAsyncCallback pCallback, ref IUnknown pState) mut
 			{
-				return VT.BeginRegisterTopologyWorkQueuesWithMMCSS(&this, pCallback, pState);
+				return VT.BeginRegisterTopologyWorkQueuesWithMMCSS(ref this, ref pCallback, ref pState);
 			}
-			public HRESULT EndRegisterTopologyWorkQueuesWithMMCSS(IMFAsyncResult* pResult) mut
+			public HRESULT EndRegisterTopologyWorkQueuesWithMMCSS(ref IMFAsyncResult pResult) mut
 			{
-				return VT.EndRegisterTopologyWorkQueuesWithMMCSS(&this, pResult);
+				return VT.EndRegisterTopologyWorkQueuesWithMMCSS(ref this, ref pResult);
 			}
-			public HRESULT BeginUnregisterTopologyWorkQueuesWithMMCSS(IMFAsyncCallback* pCallback, IUnknown* pState) mut
+			public HRESULT BeginUnregisterTopologyWorkQueuesWithMMCSS(ref IMFAsyncCallback pCallback, ref IUnknown pState) mut
 			{
-				return VT.BeginUnregisterTopologyWorkQueuesWithMMCSS(&this, pCallback, pState);
+				return VT.BeginUnregisterTopologyWorkQueuesWithMMCSS(ref this, ref pCallback, ref pState);
 			}
-			public HRESULT EndUnregisterTopologyWorkQueuesWithMMCSS(IMFAsyncResult* pResult) mut
+			public HRESULT EndUnregisterTopologyWorkQueuesWithMMCSS(ref IMFAsyncResult pResult) mut
 			{
-				return VT.EndUnregisterTopologyWorkQueuesWithMMCSS(&this, pResult);
+				return VT.EndUnregisterTopologyWorkQueuesWithMMCSS(ref this, ref pResult);
 			}
-			public HRESULT GetTopologyWorkQueueMMCSSClass(uint32 dwTopologyWorkQueueId, char16* pwszClass, uint32* pcchClass) mut
+			public HRESULT GetTopologyWorkQueueMMCSSClass(uint32 dwTopologyWorkQueueId, char16* pwszClass, out uint32 pcchClass) mut
 			{
-				return VT.GetTopologyWorkQueueMMCSSClass(&this, dwTopologyWorkQueueId, pwszClass, pcchClass);
+				return VT.GetTopologyWorkQueueMMCSSClass(ref this, dwTopologyWorkQueueId, pwszClass, out pcchClass);
 			}
-			public HRESULT GetTopologyWorkQueueMMCSSTaskId(uint32 dwTopologyWorkQueueId, uint32* pdwTaskId) mut
+			public HRESULT GetTopologyWorkQueueMMCSSTaskId(uint32 dwTopologyWorkQueueId, out uint32 pdwTaskId) mut
 			{
-				return VT.GetTopologyWorkQueueMMCSSTaskId(&this, dwTopologyWorkQueueId, pdwTaskId);
+				return VT.GetTopologyWorkQueueMMCSSTaskId(ref this, dwTopologyWorkQueueId, out pdwTaskId);
 			}
-			public HRESULT BeginRegisterPlatformWorkQueueWithMMCSS(uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, IMFAsyncCallback* pCallback, IUnknown* pState) mut
+			public HRESULT BeginRegisterPlatformWorkQueueWithMMCSS(uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, ref IMFAsyncCallback pCallback, ref IUnknown pState) mut
 			{
-				return VT.BeginRegisterPlatformWorkQueueWithMMCSS(&this, dwPlatformWorkQueue, wszClass, dwTaskId, pCallback, pState);
+				return VT.BeginRegisterPlatformWorkQueueWithMMCSS(ref this, dwPlatformWorkQueue, wszClass, dwTaskId, ref pCallback, ref pState);
 			}
-			public HRESULT EndRegisterPlatformWorkQueueWithMMCSS(IMFAsyncResult* pResult, uint32* pdwTaskId) mut
+			public HRESULT EndRegisterPlatformWorkQueueWithMMCSS(ref IMFAsyncResult pResult, out uint32 pdwTaskId) mut
 			{
-				return VT.EndRegisterPlatformWorkQueueWithMMCSS(&this, pResult, pdwTaskId);
+				return VT.EndRegisterPlatformWorkQueueWithMMCSS(ref this, ref pResult, out pdwTaskId);
 			}
-			public HRESULT BeginUnregisterPlatformWorkQueueWithMMCSS(uint32 dwPlatformWorkQueue, IMFAsyncCallback* pCallback, IUnknown* pState) mut
+			public HRESULT BeginUnregisterPlatformWorkQueueWithMMCSS(uint32 dwPlatformWorkQueue, ref IMFAsyncCallback pCallback, ref IUnknown pState) mut
 			{
-				return VT.BeginUnregisterPlatformWorkQueueWithMMCSS(&this, dwPlatformWorkQueue, pCallback, pState);
+				return VT.BeginUnregisterPlatformWorkQueueWithMMCSS(ref this, dwPlatformWorkQueue, ref pCallback, ref pState);
 			}
-			public HRESULT EndUnregisterPlatformWorkQueueWithMMCSS(IMFAsyncResult* pResult) mut
+			public HRESULT EndUnregisterPlatformWorkQueueWithMMCSS(ref IMFAsyncResult pResult) mut
 			{
-				return VT.EndUnregisterPlatformWorkQueueWithMMCSS(&this, pResult);
+				return VT.EndUnregisterPlatformWorkQueueWithMMCSS(ref this, ref pResult);
 			}
-			public HRESULT GetPlaftormWorkQueueMMCSSClass(uint32 dwPlatformWorkQueueId, char16* pwszClass, uint32* pcchClass) mut
+			public HRESULT GetPlaftormWorkQueueMMCSSClass(uint32 dwPlatformWorkQueueId, char16* pwszClass, out uint32 pcchClass) mut
 			{
-				return VT.GetPlaftormWorkQueueMMCSSClass(&this, dwPlatformWorkQueueId, pwszClass, pcchClass);
+				return VT.GetPlaftormWorkQueueMMCSSClass(ref this, dwPlatformWorkQueueId, pwszClass, out pcchClass);
 			}
-			public HRESULT GetPlatformWorkQueueMMCSSTaskId(uint32 dwPlatformWorkQueueId, uint32* pdwTaskId) mut
+			public HRESULT GetPlatformWorkQueueMMCSSTaskId(uint32 dwPlatformWorkQueueId, out uint32 pdwTaskId) mut
 			{
-				return VT.GetPlatformWorkQueueMMCSSTaskId(&this, dwPlatformWorkQueueId, pdwTaskId);
+				return VT.GetPlatformWorkQueueMMCSSTaskId(ref this, dwPlatformWorkQueueId, out pdwTaskId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFWorkQueueServices *self, IMFAsyncCallback* pCallback, IUnknown* pState) BeginRegisterTopologyWorkQueuesWithMMCSS;
-				public new function HRESULT(IMFWorkQueueServices *self, IMFAsyncResult* pResult) EndRegisterTopologyWorkQueuesWithMMCSS;
-				public new function HRESULT(IMFWorkQueueServices *self, IMFAsyncCallback* pCallback, IUnknown* pState) BeginUnregisterTopologyWorkQueuesWithMMCSS;
-				public new function HRESULT(IMFWorkQueueServices *self, IMFAsyncResult* pResult) EndUnregisterTopologyWorkQueuesWithMMCSS;
-				public new function HRESULT(IMFWorkQueueServices *self, uint32 dwTopologyWorkQueueId, char16* pwszClass, uint32* pcchClass) GetTopologyWorkQueueMMCSSClass;
-				public new function HRESULT(IMFWorkQueueServices *self, uint32 dwTopologyWorkQueueId, uint32* pdwTaskId) GetTopologyWorkQueueMMCSSTaskId;
-				public new function HRESULT(IMFWorkQueueServices *self, uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, IMFAsyncCallback* pCallback, IUnknown* pState) BeginRegisterPlatformWorkQueueWithMMCSS;
-				public new function HRESULT(IMFWorkQueueServices *self, IMFAsyncResult* pResult, uint32* pdwTaskId) EndRegisterPlatformWorkQueueWithMMCSS;
-				public new function HRESULT(IMFWorkQueueServices *self, uint32 dwPlatformWorkQueue, IMFAsyncCallback* pCallback, IUnknown* pState) BeginUnregisterPlatformWorkQueueWithMMCSS;
-				public new function HRESULT(IMFWorkQueueServices *self, IMFAsyncResult* pResult) EndUnregisterPlatformWorkQueueWithMMCSS;
-				public new function HRESULT(IMFWorkQueueServices *self, uint32 dwPlatformWorkQueueId, char16* pwszClass, uint32* pcchClass) GetPlaftormWorkQueueMMCSSClass;
-				public new function HRESULT(IMFWorkQueueServices *self, uint32 dwPlatformWorkQueueId, uint32* pdwTaskId) GetPlatformWorkQueueMMCSSTaskId;
+				public new function HRESULT(ref IMFWorkQueueServices self, ref IMFAsyncCallback pCallback, ref IUnknown pState) BeginRegisterTopologyWorkQueuesWithMMCSS;
+				public new function HRESULT(ref IMFWorkQueueServices self, ref IMFAsyncResult pResult) EndRegisterTopologyWorkQueuesWithMMCSS;
+				public new function HRESULT(ref IMFWorkQueueServices self, ref IMFAsyncCallback pCallback, ref IUnknown pState) BeginUnregisterTopologyWorkQueuesWithMMCSS;
+				public new function HRESULT(ref IMFWorkQueueServices self, ref IMFAsyncResult pResult) EndUnregisterTopologyWorkQueuesWithMMCSS;
+				public new function HRESULT(ref IMFWorkQueueServices self, uint32 dwTopologyWorkQueueId, char16* pwszClass, out uint32 pcchClass) GetTopologyWorkQueueMMCSSClass;
+				public new function HRESULT(ref IMFWorkQueueServices self, uint32 dwTopologyWorkQueueId, out uint32 pdwTaskId) GetTopologyWorkQueueMMCSSTaskId;
+				public new function HRESULT(ref IMFWorkQueueServices self, uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, ref IMFAsyncCallback pCallback, ref IUnknown pState) BeginRegisterPlatformWorkQueueWithMMCSS;
+				public new function HRESULT(ref IMFWorkQueueServices self, ref IMFAsyncResult pResult, out uint32 pdwTaskId) EndRegisterPlatformWorkQueueWithMMCSS;
+				public new function HRESULT(ref IMFWorkQueueServices self, uint32 dwPlatformWorkQueue, ref IMFAsyncCallback pCallback, ref IUnknown pState) BeginUnregisterPlatformWorkQueueWithMMCSS;
+				public new function HRESULT(ref IMFWorkQueueServices self, ref IMFAsyncResult pResult) EndUnregisterPlatformWorkQueueWithMMCSS;
+				public new function HRESULT(ref IMFWorkQueueServices self, uint32 dwPlatformWorkQueueId, char16* pwszClass, out uint32 pcchClass) GetPlaftormWorkQueueMMCSSClass;
+				public new function HRESULT(ref IMFWorkQueueServices self, uint32 dwPlatformWorkQueueId, out uint32 pdwTaskId) GetPlatformWorkQueueMMCSSTaskId;
 			}
 		}
 		[CRepr]
@@ -13207,24 +13207,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTopologyWorkQueueMMCSSPriority(uint32 dwTopologyWorkQueueId, int32* plPriority) mut
+			public HRESULT GetTopologyWorkQueueMMCSSPriority(uint32 dwTopologyWorkQueueId, out int32 plPriority) mut
 			{
-				return VT.GetTopologyWorkQueueMMCSSPriority(&this, dwTopologyWorkQueueId, plPriority);
+				return VT.GetTopologyWorkQueueMMCSSPriority(ref this, dwTopologyWorkQueueId, out plPriority);
 			}
-			public HRESULT BeginRegisterPlatformWorkQueueWithMMCSSEx(uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, int32 lPriority, IMFAsyncCallback* pCallback, IUnknown* pState) mut
+			public HRESULT BeginRegisterPlatformWorkQueueWithMMCSSEx(uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, int32 lPriority, ref IMFAsyncCallback pCallback, ref IUnknown pState) mut
 			{
-				return VT.BeginRegisterPlatformWorkQueueWithMMCSSEx(&this, dwPlatformWorkQueue, wszClass, dwTaskId, lPriority, pCallback, pState);
+				return VT.BeginRegisterPlatformWorkQueueWithMMCSSEx(ref this, dwPlatformWorkQueue, wszClass, dwTaskId, lPriority, ref pCallback, ref pState);
 			}
-			public HRESULT GetPlatformWorkQueueMMCSSPriority(uint32 dwPlatformWorkQueueId, int32* plPriority) mut
+			public HRESULT GetPlatformWorkQueueMMCSSPriority(uint32 dwPlatformWorkQueueId, out int32 plPriority) mut
 			{
-				return VT.GetPlatformWorkQueueMMCSSPriority(&this, dwPlatformWorkQueueId, plPriority);
+				return VT.GetPlatformWorkQueueMMCSSPriority(ref this, dwPlatformWorkQueueId, out plPriority);
 			}
 			[CRepr]
 			public struct VTable : IMFWorkQueueServices.VTable
 			{
-				public new function HRESULT(IMFWorkQueueServicesEx *self, uint32 dwTopologyWorkQueueId, int32* plPriority) GetTopologyWorkQueueMMCSSPriority;
-				public new function HRESULT(IMFWorkQueueServicesEx *self, uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, int32 lPriority, IMFAsyncCallback* pCallback, IUnknown* pState) BeginRegisterPlatformWorkQueueWithMMCSSEx;
-				public new function HRESULT(IMFWorkQueueServicesEx *self, uint32 dwPlatformWorkQueueId, int32* plPriority) GetPlatformWorkQueueMMCSSPriority;
+				public new function HRESULT(ref IMFWorkQueueServicesEx self, uint32 dwTopologyWorkQueueId, out int32 plPriority) GetTopologyWorkQueueMMCSSPriority;
+				public new function HRESULT(ref IMFWorkQueueServicesEx self, uint32 dwPlatformWorkQueue, PWSTR wszClass, uint32 dwTaskId, int32 lPriority, ref IMFAsyncCallback pCallback, ref IUnknown pState) BeginRegisterPlatformWorkQueueWithMMCSSEx;
+				public new function HRESULT(ref IMFWorkQueueServicesEx self, uint32 dwPlatformWorkQueueId, out int32 plPriority) GetPlatformWorkQueueMMCSSPriority;
 			}
 		}
 		[CRepr]
@@ -13234,39 +13234,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NotifyTopology(IMFTopology* pTopology) mut
+			public HRESULT NotifyTopology(ref IMFTopology pTopology) mut
 			{
-				return VT.NotifyTopology(&this, pTopology);
+				return VT.NotifyTopology(ref this, ref pTopology);
 			}
-			public HRESULT NotifyPresentationClock(IMFPresentationClock* pClock) mut
+			public HRESULT NotifyPresentationClock(ref IMFPresentationClock pClock) mut
 			{
-				return VT.NotifyPresentationClock(&this, pClock);
+				return VT.NotifyPresentationClock(ref this, ref pClock);
 			}
-			public HRESULT NotifyProcessInput(IMFTopologyNode* pNode, int32 lInputIndex, IMFSample* pSample) mut
+			public HRESULT NotifyProcessInput(ref IMFTopologyNode pNode, int32 lInputIndex, ref IMFSample pSample) mut
 			{
-				return VT.NotifyProcessInput(&this, pNode, lInputIndex, pSample);
+				return VT.NotifyProcessInput(ref this, ref pNode, lInputIndex, ref pSample);
 			}
-			public HRESULT NotifyProcessOutput(IMFTopologyNode* pNode, int32 lOutputIndex, IMFSample* pSample) mut
+			public HRESULT NotifyProcessOutput(ref IMFTopologyNode pNode, int32 lOutputIndex, ref IMFSample pSample) mut
 			{
-				return VT.NotifyProcessOutput(&this, pNode, lOutputIndex, pSample);
+				return VT.NotifyProcessOutput(ref this, ref pNode, lOutputIndex, ref pSample);
 			}
-			public HRESULT NotifyQualityEvent(IUnknown* pObject, IMFMediaEvent* pEvent) mut
+			public HRESULT NotifyQualityEvent(ref IUnknown pObject, ref IMFMediaEvent pEvent) mut
 			{
-				return VT.NotifyQualityEvent(&this, pObject, pEvent);
+				return VT.NotifyQualityEvent(ref this, ref pObject, ref pEvent);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFQualityManager *self, IMFTopology* pTopology) NotifyTopology;
-				public new function HRESULT(IMFQualityManager *self, IMFPresentationClock* pClock) NotifyPresentationClock;
-				public new function HRESULT(IMFQualityManager *self, IMFTopologyNode* pNode, int32 lInputIndex, IMFSample* pSample) NotifyProcessInput;
-				public new function HRESULT(IMFQualityManager *self, IMFTopologyNode* pNode, int32 lOutputIndex, IMFSample* pSample) NotifyProcessOutput;
-				public new function HRESULT(IMFQualityManager *self, IUnknown* pObject, IMFMediaEvent* pEvent) NotifyQualityEvent;
-				public new function HRESULT(IMFQualityManager *self) Shutdown;
+				public new function HRESULT(ref IMFQualityManager self, ref IMFTopology pTopology) NotifyTopology;
+				public new function HRESULT(ref IMFQualityManager self, ref IMFPresentationClock pClock) NotifyPresentationClock;
+				public new function HRESULT(ref IMFQualityManager self, ref IMFTopologyNode pNode, int32 lInputIndex, ref IMFSample pSample) NotifyProcessInput;
+				public new function HRESULT(ref IMFQualityManager self, ref IMFTopologyNode pNode, int32 lOutputIndex, ref IMFSample pSample) NotifyProcessOutput;
+				public new function HRESULT(ref IMFQualityManager self, ref IUnknown pObject, ref IMFMediaEvent pEvent) NotifyQualityEvent;
+				public new function HRESULT(ref IMFQualityManager self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -13278,32 +13278,32 @@ namespace Win32
 			
 			public HRESULT SetDropMode(MF_QUALITY_DROP_MODE eDropMode) mut
 			{
-				return VT.SetDropMode(&this, eDropMode);
+				return VT.SetDropMode(ref this, eDropMode);
 			}
 			public HRESULT SetQualityLevel(MF_QUALITY_LEVEL eQualityLevel) mut
 			{
-				return VT.SetQualityLevel(&this, eQualityLevel);
+				return VT.SetQualityLevel(ref this, eQualityLevel);
 			}
-			public HRESULT GetDropMode(MF_QUALITY_DROP_MODE* peDropMode) mut
+			public HRESULT GetDropMode(out MF_QUALITY_DROP_MODE peDropMode) mut
 			{
-				return VT.GetDropMode(&this, peDropMode);
+				return VT.GetDropMode(ref this, out peDropMode);
 			}
-			public HRESULT GetQualityLevel(MF_QUALITY_LEVEL* peQualityLevel) mut
+			public HRESULT GetQualityLevel(out MF_QUALITY_LEVEL peQualityLevel) mut
 			{
-				return VT.GetQualityLevel(&this, peQualityLevel);
+				return VT.GetQualityLevel(ref this, out peQualityLevel);
 			}
 			public HRESULT DropTime(int64 hnsAmountToDrop) mut
 			{
-				return VT.DropTime(&this, hnsAmountToDrop);
+				return VT.DropTime(ref this, hnsAmountToDrop);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFQualityAdvise *self, MF_QUALITY_DROP_MODE eDropMode) SetDropMode;
-				public new function HRESULT(IMFQualityAdvise *self, MF_QUALITY_LEVEL eQualityLevel) SetQualityLevel;
-				public new function HRESULT(IMFQualityAdvise *self, MF_QUALITY_DROP_MODE* peDropMode) GetDropMode;
-				public new function HRESULT(IMFQualityAdvise *self, MF_QUALITY_LEVEL* peQualityLevel) GetQualityLevel;
-				public new function HRESULT(IMFQualityAdvise *self, int64 hnsAmountToDrop) DropTime;
+				public new function HRESULT(ref IMFQualityAdvise self, MF_QUALITY_DROP_MODE eDropMode) SetDropMode;
+				public new function HRESULT(ref IMFQualityAdvise self, MF_QUALITY_LEVEL eQualityLevel) SetQualityLevel;
+				public new function HRESULT(ref IMFQualityAdvise self, out MF_QUALITY_DROP_MODE peDropMode) GetDropMode;
+				public new function HRESULT(ref IMFQualityAdvise self, out MF_QUALITY_LEVEL peQualityLevel) GetQualityLevel;
+				public new function HRESULT(ref IMFQualityAdvise self, int64 hnsAmountToDrop) DropTime;
 			}
 		}
 		[CRepr]
@@ -13313,14 +13313,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT NotifyQualityEvent(IMFMediaEvent* pEvent, uint32* pdwFlags) mut
+			public HRESULT NotifyQualityEvent(ref IMFMediaEvent pEvent, out uint32 pdwFlags) mut
 			{
-				return VT.NotifyQualityEvent(&this, pEvent, pdwFlags);
+				return VT.NotifyQualityEvent(ref this, ref pEvent, out pdwFlags);
 			}
 			[CRepr]
 			public struct VTable : IMFQualityAdvise.VTable
 			{
-				public new function HRESULT(IMFQualityAdvise2 *self, IMFMediaEvent* pEvent, uint32* pdwFlags) NotifyQualityEvent;
+				public new function HRESULT(ref IMFQualityAdvise2 self, ref IMFMediaEvent pEvent, out uint32 pdwFlags) NotifyQualityEvent;
 			}
 		}
 		[CRepr]
@@ -13330,19 +13330,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMaximumDropMode(MF_QUALITY_DROP_MODE* peDropMode) mut
+			public HRESULT GetMaximumDropMode(out MF_QUALITY_DROP_MODE peDropMode) mut
 			{
-				return VT.GetMaximumDropMode(&this, peDropMode);
+				return VT.GetMaximumDropMode(ref this, out peDropMode);
 			}
-			public HRESULT GetMinimumQualityLevel(MF_QUALITY_LEVEL* peQualityLevel) mut
+			public HRESULT GetMinimumQualityLevel(out MF_QUALITY_LEVEL peQualityLevel) mut
 			{
-				return VT.GetMinimumQualityLevel(&this, peQualityLevel);
+				return VT.GetMinimumQualityLevel(ref this, out peQualityLevel);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFQualityAdviseLimits *self, MF_QUALITY_DROP_MODE* peDropMode) GetMaximumDropMode;
-				public new function HRESULT(IMFQualityAdviseLimits *self, MF_QUALITY_LEVEL* peQualityLevel) GetMinimumQualityLevel;
+				public new function HRESULT(ref IMFQualityAdviseLimits self, out MF_QUALITY_DROP_MODE peDropMode) GetMaximumDropMode;
+				public new function HRESULT(ref IMFQualityAdviseLimits self, out MF_QUALITY_LEVEL peQualityLevel) GetMinimumQualityLevel;
 			}
 		}
 		[CRepr]
@@ -13354,22 +13354,22 @@ namespace Win32
 			
 			public HRESULT RegisterThreads(uint32 dwTaskIndex, PWSTR wszClass) mut
 			{
-				return VT.RegisterThreads(&this, dwTaskIndex, wszClass);
+				return VT.RegisterThreads(ref this, dwTaskIndex, wszClass);
 			}
 			public HRESULT UnregisterThreads() mut
 			{
-				return VT.UnregisterThreads(&this);
+				return VT.UnregisterThreads(ref this);
 			}
 			public HRESULT SetWorkQueue(uint32 dwWorkQueueId) mut
 			{
-				return VT.SetWorkQueue(&this, dwWorkQueueId);
+				return VT.SetWorkQueue(ref this, dwWorkQueueId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFRealTimeClient *self, uint32 dwTaskIndex, PWSTR wszClass) RegisterThreads;
-				public new function HRESULT(IMFRealTimeClient *self) UnregisterThreads;
-				public new function HRESULT(IMFRealTimeClient *self, uint32 dwWorkQueueId) SetWorkQueue;
+				public new function HRESULT(ref IMFRealTimeClient self, uint32 dwTaskIndex, PWSTR wszClass) RegisterThreads;
+				public new function HRESULT(ref IMFRealTimeClient self) UnregisterThreads;
+				public new function HRESULT(ref IMFRealTimeClient self, uint32 dwWorkQueueId) SetWorkQueue;
 			}
 		}
 		[CRepr]
@@ -13379,24 +13379,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT RegisterThreadsEx(uint32* pdwTaskIndex, PWSTR wszClassName, int32 lBasePriority) mut
+			public HRESULT RegisterThreadsEx(out uint32 pdwTaskIndex, PWSTR wszClassName, int32 lBasePriority) mut
 			{
-				return VT.RegisterThreadsEx(&this, pdwTaskIndex, wszClassName, lBasePriority);
+				return VT.RegisterThreadsEx(ref this, out pdwTaskIndex, wszClassName, lBasePriority);
 			}
 			public HRESULT UnregisterThreads() mut
 			{
-				return VT.UnregisterThreads(&this);
+				return VT.UnregisterThreads(ref this);
 			}
 			public HRESULT SetWorkQueueEx(uint32 dwMultithreadedWorkQueueId, int32 lWorkItemBasePriority) mut
 			{
-				return VT.SetWorkQueueEx(&this, dwMultithreadedWorkQueueId, lWorkItemBasePriority);
+				return VT.SetWorkQueueEx(ref this, dwMultithreadedWorkQueueId, lWorkItemBasePriority);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFRealTimeClientEx *self, uint32* pdwTaskIndex, PWSTR wszClassName, int32 lBasePriority) RegisterThreadsEx;
-				public new function HRESULT(IMFRealTimeClientEx *self) UnregisterThreads;
-				public new function HRESULT(IMFRealTimeClientEx *self, uint32 dwMultithreadedWorkQueueId, int32 lWorkItemBasePriority) SetWorkQueueEx;
+				public new function HRESULT(ref IMFRealTimeClientEx self, out uint32 pdwTaskIndex, PWSTR wszClassName, int32 lBasePriority) RegisterThreadsEx;
+				public new function HRESULT(ref IMFRealTimeClientEx self) UnregisterThreads;
+				public new function HRESULT(ref IMFRealTimeClientEx self, uint32 dwMultithreadedWorkQueueId, int32 lWorkItemBasePriority) SetWorkQueueEx;
 			}
 		}
 		[CRepr]
@@ -13406,34 +13406,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AppendTopology(IMFTopology* pTopology, uint32 dwFlags, uint32* pdwId) mut
+			public HRESULT AppendTopology(ref IMFTopology pTopology, uint32 dwFlags, out uint32 pdwId) mut
 			{
-				return VT.AppendTopology(&this, pTopology, dwFlags, pdwId);
+				return VT.AppendTopology(ref this, ref pTopology, dwFlags, out pdwId);
 			}
 			public HRESULT DeleteTopology(uint32 dwId) mut
 			{
-				return VT.DeleteTopology(&this, dwId);
+				return VT.DeleteTopology(ref this, dwId);
 			}
-			public HRESULT GetPresentationContext(IMFPresentationDescriptor* pPD, uint32* pId, IMFTopology** ppTopology) mut
+			public HRESULT GetPresentationContext(ref IMFPresentationDescriptor pPD, uint32* pId, IMFTopology** ppTopology) mut
 			{
-				return VT.GetPresentationContext(&this, pPD, pId, ppTopology);
+				return VT.GetPresentationContext(ref this, ref pPD, pId, ppTopology);
 			}
-			public HRESULT UpdateTopology(uint32 dwId, IMFTopology* pTopology) mut
+			public HRESULT UpdateTopology(uint32 dwId, ref IMFTopology pTopology) mut
 			{
-				return VT.UpdateTopology(&this, dwId, pTopology);
+				return VT.UpdateTopology(ref this, dwId, ref pTopology);
 			}
 			public HRESULT UpdateTopologyFlags(uint32 dwId, uint32 dwFlags) mut
 			{
-				return VT.UpdateTopologyFlags(&this, dwId, dwFlags);
+				return VT.UpdateTopologyFlags(ref this, dwId, dwFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSequencerSource *self, IMFTopology* pTopology, uint32 dwFlags, uint32* pdwId) AppendTopology;
-				public new function HRESULT(IMFSequencerSource *self, uint32 dwId) DeleteTopology;
-				public new function HRESULT(IMFSequencerSource *self, IMFPresentationDescriptor* pPD, uint32* pId, IMFTopology** ppTopology) GetPresentationContext;
-				public new function HRESULT(IMFSequencerSource *self, uint32 dwId, IMFTopology* pTopology) UpdateTopology;
-				public new function HRESULT(IMFSequencerSource *self, uint32 dwId, uint32 dwFlags) UpdateTopologyFlags;
+				public new function HRESULT(ref IMFSequencerSource self, ref IMFTopology pTopology, uint32 dwFlags, out uint32 pdwId) AppendTopology;
+				public new function HRESULT(ref IMFSequencerSource self, uint32 dwId) DeleteTopology;
+				public new function HRESULT(ref IMFSequencerSource self, ref IMFPresentationDescriptor pPD, uint32* pId, IMFTopology** ppTopology) GetPresentationContext;
+				public new function HRESULT(ref IMFSequencerSource self, uint32 dwId, ref IMFTopology pTopology) UpdateTopology;
+				public new function HRESULT(ref IMFSequencerSource self, uint32 dwId, uint32 dwFlags) UpdateTopologyFlags;
 			}
 		}
 		[CRepr]
@@ -13443,14 +13443,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMediaSourceTopology(IMFPresentationDescriptor* pPresentationDescriptor, IMFTopology** ppTopology) mut
+			public HRESULT GetMediaSourceTopology(ref IMFPresentationDescriptor pPresentationDescriptor, out IMFTopology* ppTopology) mut
 			{
-				return VT.GetMediaSourceTopology(&this, pPresentationDescriptor, ppTopology);
+				return VT.GetMediaSourceTopology(ref this, ref pPresentationDescriptor, out ppTopology);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaSourceTopologyProvider *self, IMFPresentationDescriptor* pPresentationDescriptor, IMFTopology** ppTopology) GetMediaSourceTopology;
+				public new function HRESULT(ref IMFMediaSourceTopologyProvider self, ref IMFPresentationDescriptor pPresentationDescriptor, out IMFTopology* ppTopology) GetMediaSourceTopology;
 			}
 		}
 		[CRepr]
@@ -13460,14 +13460,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ForceEndOfPresentation(IMFPresentationDescriptor* pPresentationDescriptor) mut
+			public HRESULT ForceEndOfPresentation(ref IMFPresentationDescriptor pPresentationDescriptor) mut
 			{
-				return VT.ForceEndOfPresentation(&this, pPresentationDescriptor);
+				return VT.ForceEndOfPresentation(ref this, ref pPresentationDescriptor);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaSourcePresentationProvider *self, IMFPresentationDescriptor* pPresentationDescriptor) ForceEndOfPresentation;
+				public new function HRESULT(ref IMFMediaSourcePresentationProvider self, ref IMFPresentationDescriptor pPresentationDescriptor) ForceEndOfPresentation;
 			}
 		}
 		[CRepr]
@@ -13479,12 +13479,12 @@ namespace Win32
 			
 			public HRESULT UpdateNodeAttributes(uint64 TopoId, uint32 cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates) mut
 			{
-				return VT.UpdateNodeAttributes(&this, TopoId, cUpdates, pUpdates);
+				return VT.UpdateNodeAttributes(ref this, TopoId, cUpdates, pUpdates);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTopologyNodeAttributeEditor *self, uint64 TopoId, uint32 cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates) UpdateNodeAttributes;
+				public new function HRESULT(ref IMFTopologyNodeAttributeEditor self, uint64 TopoId, uint32 cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates) UpdateNodeAttributes;
 			}
 		}
 		[CRepr]
@@ -13494,24 +13494,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetBufferingParams(MFBYTESTREAM_BUFFERING_PARAMS* pParams) mut
+			public HRESULT SetBufferingParams(ref MFBYTESTREAM_BUFFERING_PARAMS pParams) mut
 			{
-				return VT.SetBufferingParams(&this, pParams);
+				return VT.SetBufferingParams(ref this, ref pParams);
 			}
 			public HRESULT EnableBuffering(BOOL fEnable) mut
 			{
-				return VT.EnableBuffering(&this, fEnable);
+				return VT.EnableBuffering(ref this, fEnable);
 			}
 			public HRESULT StopBuffering() mut
 			{
-				return VT.StopBuffering(&this);
+				return VT.StopBuffering(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFByteStreamBuffering *self, MFBYTESTREAM_BUFFERING_PARAMS* pParams) SetBufferingParams;
-				public new function HRESULT(IMFByteStreamBuffering *self, BOOL fEnable) EnableBuffering;
-				public new function HRESULT(IMFByteStreamBuffering *self) StopBuffering;
+				public new function HRESULT(ref IMFByteStreamBuffering self, ref MFBYTESTREAM_BUFFERING_PARAMS pParams) SetBufferingParams;
+				public new function HRESULT(ref IMFByteStreamBuffering self, BOOL fEnable) EnableBuffering;
+				public new function HRESULT(ref IMFByteStreamBuffering self) StopBuffering;
 			}
 		}
 		[CRepr]
@@ -13523,12 +13523,12 @@ namespace Win32
 			
 			public HRESULT StopBackgroundTransfer() mut
 			{
-				return VT.StopBackgroundTransfer(&this);
+				return VT.StopBackgroundTransfer(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFByteStreamCacheControl *self) StopBackgroundTransfer;
+				public new function HRESULT(ref IMFByteStreamCacheControl self) StopBackgroundTransfer;
 			}
 		}
 		[CRepr]
@@ -13538,24 +13538,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsTimeSeekSupported(BOOL* pfTimeSeekIsSupported) mut
+			public HRESULT IsTimeSeekSupported(out BOOL pfTimeSeekIsSupported) mut
 			{
-				return VT.IsTimeSeekSupported(&this, pfTimeSeekIsSupported);
+				return VT.IsTimeSeekSupported(ref this, out pfTimeSeekIsSupported);
 			}
 			public HRESULT TimeSeek(uint64 qwTimePosition) mut
 			{
-				return VT.TimeSeek(&this, qwTimePosition);
+				return VT.TimeSeek(ref this, qwTimePosition);
 			}
-			public HRESULT GetTimeSeekResult(uint64* pqwStartTime, uint64* pqwStopTime, uint64* pqwDuration) mut
+			public HRESULT GetTimeSeekResult(out uint64 pqwStartTime, out uint64 pqwStopTime, out uint64 pqwDuration) mut
 			{
-				return VT.GetTimeSeekResult(&this, pqwStartTime, pqwStopTime, pqwDuration);
+				return VT.GetTimeSeekResult(ref this, out pqwStartTime, out pqwStopTime, out pqwDuration);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFByteStreamTimeSeek *self, BOOL* pfTimeSeekIsSupported) IsTimeSeekSupported;
-				public new function HRESULT(IMFByteStreamTimeSeek *self, uint64 qwTimePosition) TimeSeek;
-				public new function HRESULT(IMFByteStreamTimeSeek *self, uint64* pqwStartTime, uint64* pqwStopTime, uint64* pqwDuration) GetTimeSeekResult;
+				public new function HRESULT(ref IMFByteStreamTimeSeek self, out BOOL pfTimeSeekIsSupported) IsTimeSeekSupported;
+				public new function HRESULT(ref IMFByteStreamTimeSeek self, uint64 qwTimePosition) TimeSeek;
+				public new function HRESULT(ref IMFByteStreamTimeSeek self, out uint64 pqwStartTime, out uint64 pqwStopTime, out uint64 pqwDuration) GetTimeSeekResult;
 			}
 		}
 		[CRepr]
@@ -13565,24 +13565,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetByteRanges(uint32* pcRanges, MF_BYTE_STREAM_CACHE_RANGE** ppRanges) mut
+			public HRESULT GetByteRanges(out uint32 pcRanges, MF_BYTE_STREAM_CACHE_RANGE** ppRanges) mut
 			{
-				return VT.GetByteRanges(&this, pcRanges, ppRanges);
+				return VT.GetByteRanges(ref this, out pcRanges, ppRanges);
 			}
 			public HRESULT SetCacheLimit(uint64 qwBytes) mut
 			{
-				return VT.SetCacheLimit(&this, qwBytes);
+				return VT.SetCacheLimit(ref this, qwBytes);
 			}
-			public HRESULT IsBackgroundTransferActive(BOOL* pfActive) mut
+			public HRESULT IsBackgroundTransferActive(out BOOL pfActive) mut
 			{
-				return VT.IsBackgroundTransferActive(&this, pfActive);
+				return VT.IsBackgroundTransferActive(ref this, out pfActive);
 			}
 			[CRepr]
 			public struct VTable : IMFByteStreamCacheControl.VTable
 			{
-				public new function HRESULT(IMFByteStreamCacheControl2 *self, uint32* pcRanges, MF_BYTE_STREAM_CACHE_RANGE** ppRanges) GetByteRanges;
-				public new function HRESULT(IMFByteStreamCacheControl2 *self, uint64 qwBytes) SetCacheLimit;
-				public new function HRESULT(IMFByteStreamCacheControl2 *self, BOOL* pfActive) IsBackgroundTransferActive;
+				public new function HRESULT(ref IMFByteStreamCacheControl2 self, out uint32 pcRanges, MF_BYTE_STREAM_CACHE_RANGE** ppRanges) GetByteRanges;
+				public new function HRESULT(ref IMFByteStreamCacheControl2 self, uint64 qwBytes) SetCacheLimit;
+				public new function HRESULT(ref IMFByteStreamCacheControl2 self, out BOOL pfActive) IsBackgroundTransferActive;
 			}
 		}
 		[CRepr]
@@ -13592,34 +13592,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetUser(uint8* pbData, uint32 cbData, BOOL fDataIsEncrypted) mut
+			public HRESULT SetUser(ref uint8 pbData, uint32 cbData, BOOL fDataIsEncrypted) mut
 			{
-				return VT.SetUser(&this, pbData, cbData, fDataIsEncrypted);
+				return VT.SetUser(ref this, ref pbData, cbData, fDataIsEncrypted);
 			}
-			public HRESULT SetPassword(uint8* pbData, uint32 cbData, BOOL fDataIsEncrypted) mut
+			public HRESULT SetPassword(ref uint8 pbData, uint32 cbData, BOOL fDataIsEncrypted) mut
 			{
-				return VT.SetPassword(&this, pbData, cbData, fDataIsEncrypted);
+				return VT.SetPassword(ref this, ref pbData, cbData, fDataIsEncrypted);
 			}
-			public HRESULT GetUser(uint8* pbData, uint32* pcbData, BOOL fEncryptData) mut
+			public HRESULT GetUser(uint8* pbData, out uint32 pcbData, BOOL fEncryptData) mut
 			{
-				return VT.GetUser(&this, pbData, pcbData, fEncryptData);
+				return VT.GetUser(ref this, pbData, out pcbData, fEncryptData);
 			}
-			public HRESULT GetPassword(uint8* pbData, uint32* pcbData, BOOL fEncryptData) mut
+			public HRESULT GetPassword(uint8* pbData, out uint32 pcbData, BOOL fEncryptData) mut
 			{
-				return VT.GetPassword(&this, pbData, pcbData, fEncryptData);
+				return VT.GetPassword(ref this, pbData, out pcbData, fEncryptData);
 			}
-			public HRESULT LoggedOnUser(BOOL* pfLoggedOnUser) mut
+			public HRESULT LoggedOnUser(out BOOL pfLoggedOnUser) mut
 			{
-				return VT.LoggedOnUser(&this, pfLoggedOnUser);
+				return VT.LoggedOnUser(ref this, out pfLoggedOnUser);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFNetCredential *self, uint8* pbData, uint32 cbData, BOOL fDataIsEncrypted) SetUser;
-				public new function HRESULT(IMFNetCredential *self, uint8* pbData, uint32 cbData, BOOL fDataIsEncrypted) SetPassword;
-				public new function HRESULT(IMFNetCredential *self, uint8* pbData, uint32* pcbData, BOOL fEncryptData) GetUser;
-				public new function HRESULT(IMFNetCredential *self, uint8* pbData, uint32* pcbData, BOOL fEncryptData) GetPassword;
-				public new function HRESULT(IMFNetCredential *self, BOOL* pfLoggedOnUser) LoggedOnUser;
+				public new function HRESULT(ref IMFNetCredential self, ref uint8 pbData, uint32 cbData, BOOL fDataIsEncrypted) SetUser;
+				public new function HRESULT(ref IMFNetCredential self, ref uint8 pbData, uint32 cbData, BOOL fDataIsEncrypted) SetPassword;
+				public new function HRESULT(ref IMFNetCredential self, uint8* pbData, out uint32 pcbData, BOOL fEncryptData) GetUser;
+				public new function HRESULT(ref IMFNetCredential self, uint8* pbData, out uint32 pcbData, BOOL fEncryptData) GetPassword;
+				public new function HRESULT(ref IMFNetCredential self, out BOOL pfLoggedOnUser) LoggedOnUser;
 			}
 		}
 		[CRepr]
@@ -13629,24 +13629,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginGetCredentials(MFNetCredentialManagerGetParam* pParam, IMFAsyncCallback* pCallback, IUnknown* pState) mut
+			public HRESULT BeginGetCredentials(ref MFNetCredentialManagerGetParam pParam, ref IMFAsyncCallback pCallback, ref IUnknown pState) mut
 			{
-				return VT.BeginGetCredentials(&this, pParam, pCallback, pState);
+				return VT.BeginGetCredentials(ref this, ref pParam, ref pCallback, ref pState);
 			}
-			public HRESULT EndGetCredentials(IMFAsyncResult* pResult, IMFNetCredential** ppCred) mut
+			public HRESULT EndGetCredentials(ref IMFAsyncResult pResult, out IMFNetCredential* ppCred) mut
 			{
-				return VT.EndGetCredentials(&this, pResult, ppCred);
+				return VT.EndGetCredentials(ref this, ref pResult, out ppCred);
 			}
-			public HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood) mut
+			public HRESULT SetGood(ref IMFNetCredential pCred, BOOL fGood) mut
 			{
-				return VT.SetGood(&this, pCred, fGood);
+				return VT.SetGood(ref this, ref pCred, fGood);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFNetCredentialManager *self, MFNetCredentialManagerGetParam* pParam, IMFAsyncCallback* pCallback, IUnknown* pState) BeginGetCredentials;
-				public new function HRESULT(IMFNetCredentialManager *self, IMFAsyncResult* pResult, IMFNetCredential** ppCred) EndGetCredentials;
-				public new function HRESULT(IMFNetCredentialManager *self, IMFNetCredential* pCred, BOOL fGood) SetGood;
+				public new function HRESULT(ref IMFNetCredentialManager self, ref MFNetCredentialManagerGetParam pParam, ref IMFAsyncCallback pCallback, ref IUnknown pState) BeginGetCredentials;
+				public new function HRESULT(ref IMFNetCredentialManager self, ref IMFAsyncResult pResult, out IMFNetCredential* ppCred) EndGetCredentials;
+				public new function HRESULT(ref IMFNetCredentialManager self, ref IMFNetCredential pCred, BOOL fGood) SetGood;
 			}
 		}
 		[CRepr]
@@ -13656,24 +13656,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCredential(PWSTR pszUrl, PWSTR pszRealm, uint32 dwAuthenticationFlags, IMFNetCredential** ppCred, uint32* pdwRequirementsFlags) mut
+			public HRESULT GetCredential(PWSTR pszUrl, PWSTR pszRealm, uint32 dwAuthenticationFlags, out IMFNetCredential* ppCred, out uint32 pdwRequirementsFlags) mut
 			{
-				return VT.GetCredential(&this, pszUrl, pszRealm, dwAuthenticationFlags, ppCred, pdwRequirementsFlags);
+				return VT.GetCredential(ref this, pszUrl, pszRealm, dwAuthenticationFlags, out ppCred, out pdwRequirementsFlags);
 			}
-			public HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood) mut
+			public HRESULT SetGood(ref IMFNetCredential pCred, BOOL fGood) mut
 			{
-				return VT.SetGood(&this, pCred, fGood);
+				return VT.SetGood(ref this, ref pCred, fGood);
 			}
-			public HRESULT SetUserOptions(IMFNetCredential* pCred, uint32 dwOptionsFlags) mut
+			public HRESULT SetUserOptions(ref IMFNetCredential pCred, uint32 dwOptionsFlags) mut
 			{
-				return VT.SetUserOptions(&this, pCred, dwOptionsFlags);
+				return VT.SetUserOptions(ref this, ref pCred, dwOptionsFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFNetCredentialCache *self, PWSTR pszUrl, PWSTR pszRealm, uint32 dwAuthenticationFlags, IMFNetCredential** ppCred, uint32* pdwRequirementsFlags) GetCredential;
-				public new function HRESULT(IMFNetCredentialCache *self, IMFNetCredential* pCred, BOOL fGood) SetGood;
-				public new function HRESULT(IMFNetCredentialCache *self, IMFNetCredential* pCred, uint32 dwOptionsFlags) SetUserOptions;
+				public new function HRESULT(ref IMFNetCredentialCache self, PWSTR pszUrl, PWSTR pszRealm, uint32 dwAuthenticationFlags, out IMFNetCredential* ppCred, out uint32 pdwRequirementsFlags) GetCredential;
+				public new function HRESULT(ref IMFNetCredentialCache self, ref IMFNetCredential pCred, BOOL fGood) SetGood;
+				public new function HRESULT(ref IMFNetCredentialCache self, ref IMFNetCredential pCred, uint32 dwOptionsFlags) SetUserOptions;
 			}
 		}
 		[CRepr]
@@ -13683,34 +13683,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetClientCertificate(PWSTR pszURL, uint8** ppbData, uint32* pcbData) mut
+			public HRESULT GetClientCertificate(PWSTR pszURL, out uint8* ppbData, out uint32 pcbData) mut
 			{
-				return VT.GetClientCertificate(&this, pszURL, ppbData, pcbData);
+				return VT.GetClientCertificate(ref this, pszURL, out ppbData, out pcbData);
 			}
-			public HRESULT BeginGetClientCertificate(PWSTR pszURL, IMFAsyncCallback* pCallback, IUnknown* pState) mut
+			public HRESULT BeginGetClientCertificate(PWSTR pszURL, ref IMFAsyncCallback pCallback, ref IUnknown pState) mut
 			{
-				return VT.BeginGetClientCertificate(&this, pszURL, pCallback, pState);
+				return VT.BeginGetClientCertificate(ref this, pszURL, ref pCallback, ref pState);
 			}
-			public HRESULT EndGetClientCertificate(IMFAsyncResult* pResult, uint8** ppbData, uint32* pcbData) mut
+			public HRESULT EndGetClientCertificate(ref IMFAsyncResult pResult, out uint8* ppbData, out uint32 pcbData) mut
 			{
-				return VT.EndGetClientCertificate(&this, pResult, ppbData, pcbData);
+				return VT.EndGetClientCertificate(ref this, ref pResult, out ppbData, out pcbData);
 			}
-			public HRESULT GetCertificatePolicy(PWSTR pszURL, BOOL* pfOverrideAutomaticCheck, BOOL* pfClientCertificateAvailable) mut
+			public HRESULT GetCertificatePolicy(PWSTR pszURL, out BOOL pfOverrideAutomaticCheck, out BOOL pfClientCertificateAvailable) mut
 			{
-				return VT.GetCertificatePolicy(&this, pszURL, pfOverrideAutomaticCheck, pfClientCertificateAvailable);
+				return VT.GetCertificatePolicy(ref this, pszURL, out pfOverrideAutomaticCheck, out pfClientCertificateAvailable);
 			}
-			public HRESULT OnServerCertificate(PWSTR pszURL, uint8* pbData, uint32 cbData, BOOL* pfIsGood) mut
+			public HRESULT OnServerCertificate(PWSTR pszURL, ref uint8 pbData, uint32 cbData, out BOOL pfIsGood) mut
 			{
-				return VT.OnServerCertificate(&this, pszURL, pbData, cbData, pfIsGood);
+				return VT.OnServerCertificate(ref this, pszURL, ref pbData, cbData, out pfIsGood);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSSLCertificateManager *self, PWSTR pszURL, uint8** ppbData, uint32* pcbData) GetClientCertificate;
-				public new function HRESULT(IMFSSLCertificateManager *self, PWSTR pszURL, IMFAsyncCallback* pCallback, IUnknown* pState) BeginGetClientCertificate;
-				public new function HRESULT(IMFSSLCertificateManager *self, IMFAsyncResult* pResult, uint8** ppbData, uint32* pcbData) EndGetClientCertificate;
-				public new function HRESULT(IMFSSLCertificateManager *self, PWSTR pszURL, BOOL* pfOverrideAutomaticCheck, BOOL* pfClientCertificateAvailable) GetCertificatePolicy;
-				public new function HRESULT(IMFSSLCertificateManager *self, PWSTR pszURL, uint8* pbData, uint32 cbData, BOOL* pfIsGood) OnServerCertificate;
+				public new function HRESULT(ref IMFSSLCertificateManager self, PWSTR pszURL, out uint8* ppbData, out uint32 pcbData) GetClientCertificate;
+				public new function HRESULT(ref IMFSSLCertificateManager self, PWSTR pszURL, ref IMFAsyncCallback pCallback, ref IUnknown pState) BeginGetClientCertificate;
+				public new function HRESULT(ref IMFSSLCertificateManager self, ref IMFAsyncResult pResult, out uint8* ppbData, out uint32 pcbData) EndGetClientCertificate;
+				public new function HRESULT(ref IMFSSLCertificateManager self, PWSTR pszURL, out BOOL pfOverrideAutomaticCheck, out BOOL pfClientCertificateAvailable) GetCertificatePolicy;
+				public new function HRESULT(ref IMFSSLCertificateManager self, PWSTR pszURL, ref uint8 pbData, uint32 cbData, out BOOL pfIsGood) OnServerCertificate;
 			}
 		}
 		[CRepr]
@@ -13720,19 +13720,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnRedirect(PWSTR pszUrl, int16* pvbCancel) mut
+			public HRESULT OnRedirect(PWSTR pszUrl, out int16 pvbCancel) mut
 			{
-				return VT.OnRedirect(&this, pszUrl, pvbCancel);
+				return VT.OnRedirect(ref this, pszUrl, out pvbCancel);
 			}
 			public HRESULT OnSendingRequest(PWSTR pszUrl) mut
 			{
-				return VT.OnSendingRequest(&this, pszUrl);
+				return VT.OnSendingRequest(ref this, pszUrl);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFNetResourceFilter *self, PWSTR pszUrl, int16* pvbCancel) OnRedirect;
-				public new function HRESULT(IMFNetResourceFilter *self, PWSTR pszUrl) OnSendingRequest;
+				public new function HRESULT(ref IMFNetResourceFilter self, PWSTR pszUrl, out int16 pvbCancel) OnRedirect;
+				public new function HRESULT(ref IMFNetResourceFilter self, PWSTR pszUrl) OnSendingRequest;
 			}
 		}
 		[CRepr]
@@ -13742,14 +13742,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSourceEvent(IMFMediaEvent* pEvent) mut
+			public HRESULT OnSourceEvent(ref IMFMediaEvent pEvent) mut
 			{
-				return VT.OnSourceEvent(&this, pEvent);
+				return VT.OnSourceEvent(ref this, ref pEvent);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSourceOpenMonitor *self, IMFMediaEvent* pEvent) OnSourceEvent;
+				public new function HRESULT(ref IMFSourceOpenMonitor self, ref IMFMediaEvent pEvent) OnSourceEvent;
 			}
 		}
 		[CRepr]
@@ -13761,32 +13761,32 @@ namespace Win32
 			
 			public HRESULT FindFirstProxy(PWSTR pszHost, PWSTR pszUrl, BOOL fReserved) mut
 			{
-				return VT.FindFirstProxy(&this, pszHost, pszUrl, fReserved);
+				return VT.FindFirstProxy(ref this, pszHost, pszUrl, fReserved);
 			}
 			public HRESULT FindNextProxy() mut
 			{
-				return VT.FindNextProxy(&this);
+				return VT.FindNextProxy(ref this);
 			}
 			public HRESULT RegisterProxyResult(HRESULT hrOp) mut
 			{
-				return VT.RegisterProxyResult(&this, hrOp);
+				return VT.RegisterProxyResult(ref this, hrOp);
 			}
-			public HRESULT GetCurrentProxy(char16* pszStr, uint32* pcchStr) mut
+			public HRESULT GetCurrentProxy(char16* pszStr, out uint32 pcchStr) mut
 			{
-				return VT.GetCurrentProxy(&this, pszStr, pcchStr);
+				return VT.GetCurrentProxy(ref this, pszStr, out pcchStr);
 			}
-			public HRESULT Clone(IMFNetProxyLocator** ppProxyLocator) mut
+			public HRESULT Clone(out IMFNetProxyLocator* ppProxyLocator) mut
 			{
-				return VT.Clone(&this, ppProxyLocator);
+				return VT.Clone(ref this, out ppProxyLocator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFNetProxyLocator *self, PWSTR pszHost, PWSTR pszUrl, BOOL fReserved) FindFirstProxy;
-				public new function HRESULT(IMFNetProxyLocator *self) FindNextProxy;
-				public new function HRESULT(IMFNetProxyLocator *self, HRESULT hrOp) RegisterProxyResult;
-				public new function HRESULT(IMFNetProxyLocator *self, char16* pszStr, uint32* pcchStr) GetCurrentProxy;
-				public new function HRESULT(IMFNetProxyLocator *self, IMFNetProxyLocator** ppProxyLocator) Clone;
+				public new function HRESULT(ref IMFNetProxyLocator self, PWSTR pszHost, PWSTR pszUrl, BOOL fReserved) FindFirstProxy;
+				public new function HRESULT(ref IMFNetProxyLocator self) FindNextProxy;
+				public new function HRESULT(ref IMFNetProxyLocator self, HRESULT hrOp) RegisterProxyResult;
+				public new function HRESULT(ref IMFNetProxyLocator self, char16* pszStr, out uint32 pcchStr) GetCurrentProxy;
+				public new function HRESULT(ref IMFNetProxyLocator self, out IMFNetProxyLocator* ppProxyLocator) Clone;
 			}
 		}
 		[CRepr]
@@ -13796,14 +13796,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateProxyLocator(PWSTR pszProtocol, IMFNetProxyLocator** ppProxyLocator) mut
+			public HRESULT CreateProxyLocator(PWSTR pszProtocol, out IMFNetProxyLocator* ppProxyLocator) mut
 			{
-				return VT.CreateProxyLocator(&this, pszProtocol, ppProxyLocator);
+				return VT.CreateProxyLocator(ref this, pszProtocol, out ppProxyLocator);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFNetProxyLocatorFactory *self, PWSTR pszProtocol, IMFNetProxyLocator** ppProxyLocator) CreateProxyLocator;
+				public new function HRESULT(ref IMFNetProxyLocatorFactory self, PWSTR pszProtocol, out IMFNetProxyLocator* ppProxyLocator) CreateProxyLocator;
 			}
 		}
 		[CRepr]
@@ -13813,29 +13813,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState) mut
+			public HRESULT BeginSave(ref IMFByteStream pStream, ref IMFAsyncCallback pCallback, ref IUnknown pState) mut
 			{
-				return VT.BeginSave(&this, pStream, pCallback, pState);
+				return VT.BeginSave(ref this, ref pStream, ref pCallback, ref pState);
 			}
-			public HRESULT EndSave(IMFAsyncResult* pResult) mut
+			public HRESULT EndSave(ref IMFAsyncResult pResult) mut
 			{
-				return VT.EndSave(&this, pResult);
+				return VT.EndSave(ref this, ref pResult);
 			}
 			public HRESULT CancelSave() mut
 			{
-				return VT.CancelSave(&this);
+				return VT.CancelSave(ref this);
 			}
-			public HRESULT GetProgress(uint32* pdwPercentComplete) mut
+			public HRESULT GetProgress(out uint32 pdwPercentComplete) mut
 			{
-				return VT.GetProgress(&this, pdwPercentComplete);
+				return VT.GetProgress(ref this, out pdwPercentComplete);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSaveJob *self, IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState) BeginSave;
-				public new function HRESULT(IMFSaveJob *self, IMFAsyncResult* pResult) EndSave;
-				public new function HRESULT(IMFSaveJob *self) CancelSave;
-				public new function HRESULT(IMFSaveJob *self, uint32* pdwPercentComplete) GetProgress;
+				public new function HRESULT(ref IMFSaveJob self, ref IMFByteStream pStream, ref IMFAsyncCallback pCallback, ref IUnknown pState) BeginSave;
+				public new function HRESULT(ref IMFSaveJob self, ref IMFAsyncResult pResult) EndSave;
+				public new function HRESULT(ref IMFSaveJob self) CancelSave;
+				public new function HRESULT(ref IMFSaveJob self, out uint32 pdwPercentComplete) GetProgress;
 			}
 		}
 		[CRepr]
@@ -13845,24 +13845,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNumberOfSupportedProtocols(uint32* pcProtocols) mut
+			public HRESULT GetNumberOfSupportedProtocols(out uint32 pcProtocols) mut
 			{
-				return VT.GetNumberOfSupportedProtocols(&this, pcProtocols);
+				return VT.GetNumberOfSupportedProtocols(ref this, out pcProtocols);
 			}
-			public HRESULT GetSupportedProtocolType(uint32 nProtocolIndex, MFNETSOURCE_PROTOCOL_TYPE* pnProtocolType) mut
+			public HRESULT GetSupportedProtocolType(uint32 nProtocolIndex, out MFNETSOURCE_PROTOCOL_TYPE pnProtocolType) mut
 			{
-				return VT.GetSupportedProtocolType(&this, nProtocolIndex, pnProtocolType);
+				return VT.GetSupportedProtocolType(ref this, nProtocolIndex, out pnProtocolType);
 			}
 			public HRESULT ResetProtocolRolloverSettings() mut
 			{
-				return VT.ResetProtocolRolloverSettings(&this);
+				return VT.ResetProtocolRolloverSettings(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFNetSchemeHandlerConfig *self, uint32* pcProtocols) GetNumberOfSupportedProtocols;
-				public new function HRESULT(IMFNetSchemeHandlerConfig *self, uint32 nProtocolIndex, MFNETSOURCE_PROTOCOL_TYPE* pnProtocolType) GetSupportedProtocolType;
-				public new function HRESULT(IMFNetSchemeHandlerConfig *self) ResetProtocolRolloverSettings;
+				public new function HRESULT(ref IMFNetSchemeHandlerConfig self, out uint32 pcProtocols) GetNumberOfSupportedProtocols;
+				public new function HRESULT(ref IMFNetSchemeHandlerConfig self, uint32 nProtocolIndex, out MFNETSOURCE_PROTOCOL_TYPE pnProtocolType) GetSupportedProtocolType;
+				public new function HRESULT(ref IMFNetSchemeHandlerConfig self) ResetProtocolRolloverSettings;
 			}
 		}
 		[CRepr]
@@ -13872,24 +13872,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginCreateObject(PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginCreateObject(PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, IUnknown** ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginCreateObject(&this, pwszURL, dwFlags, pProps, ppIUnknownCancelCookie, pCallback, punkState);
+				return VT.BeginCreateObject(ref this, pwszURL, dwFlags, ref pProps, ppIUnknownCancelCookie, ref pCallback, ref punkState);
 			}
-			public HRESULT EndCreateObject(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) mut
+			public HRESULT EndCreateObject(ref IMFAsyncResult pResult, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) mut
 			{
-				return VT.EndCreateObject(&this, pResult, pObjectType, ppObject);
+				return VT.EndCreateObject(ref this, ref pResult, out pObjectType, out ppObject);
 			}
-			public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie) mut
+			public HRESULT CancelObjectCreation(ref IUnknown pIUnknownCancelCookie) mut
 			{
-				return VT.CancelObjectCreation(&this, pIUnknownCancelCookie);
+				return VT.CancelObjectCreation(ref this, ref pIUnknownCancelCookie);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSchemeHandler *self, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObject;
-				public new function HRESULT(IMFSchemeHandler *self, IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) EndCreateObject;
-				public new function HRESULT(IMFSchemeHandler *self, IUnknown* pIUnknownCancelCookie) CancelObjectCreation;
+				public new function HRESULT(ref IMFSchemeHandler self, PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, IUnknown** ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginCreateObject;
+				public new function HRESULT(ref IMFSchemeHandler self, ref IMFAsyncResult pResult, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) EndCreateObject;
+				public new function HRESULT(ref IMFSchemeHandler self, ref IUnknown pIUnknownCancelCookie) CancelObjectCreation;
 			}
 		}
 		[CRepr]
@@ -13899,29 +13899,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginCreateObject(IMFByteStream* pByteStream, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginCreateObject(ref IMFByteStream pByteStream, PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, IUnknown** ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginCreateObject(&this, pByteStream, pwszURL, dwFlags, pProps, ppIUnknownCancelCookie, pCallback, punkState);
+				return VT.BeginCreateObject(ref this, ref pByteStream, pwszURL, dwFlags, ref pProps, ppIUnknownCancelCookie, ref pCallback, ref punkState);
 			}
-			public HRESULT EndCreateObject(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) mut
+			public HRESULT EndCreateObject(ref IMFAsyncResult pResult, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) mut
 			{
-				return VT.EndCreateObject(&this, pResult, pObjectType, ppObject);
+				return VT.EndCreateObject(ref this, ref pResult, out pObjectType, out ppObject);
 			}
-			public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie) mut
+			public HRESULT CancelObjectCreation(ref IUnknown pIUnknownCancelCookie) mut
 			{
-				return VT.CancelObjectCreation(&this, pIUnknownCancelCookie);
+				return VT.CancelObjectCreation(ref this, ref pIUnknownCancelCookie);
 			}
-			public HRESULT GetMaxNumberOfBytesRequiredForResolution(uint64* pqwBytes) mut
+			public HRESULT GetMaxNumberOfBytesRequiredForResolution(out uint64 pqwBytes) mut
 			{
-				return VT.GetMaxNumberOfBytesRequiredForResolution(&this, pqwBytes);
+				return VT.GetMaxNumberOfBytesRequiredForResolution(ref this, out pqwBytes);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFByteStreamHandler *self, IMFByteStream* pByteStream, PWSTR pwszURL, uint32 dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObject;
-				public new function HRESULT(IMFByteStreamHandler *self, IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject) EndCreateObject;
-				public new function HRESULT(IMFByteStreamHandler *self, IUnknown* pIUnknownCancelCookie) CancelObjectCreation;
-				public new function HRESULT(IMFByteStreamHandler *self, uint64* pqwBytes) GetMaxNumberOfBytesRequiredForResolution;
+				public new function HRESULT(ref IMFByteStreamHandler self, ref IMFByteStream pByteStream, PWSTR pwszURL, uint32 dwFlags, ref IPropertyStore pProps, IUnknown** ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginCreateObject;
+				public new function HRESULT(ref IMFByteStreamHandler self, ref IMFAsyncResult pResult, out MF_OBJECT_TYPE pObjectType, out IUnknown* ppObject) EndCreateObject;
+				public new function HRESULT(ref IMFByteStreamHandler self, ref IUnknown pIUnknownCancelCookie) CancelObjectCreation;
+				public new function HRESULT(ref IMFByteStreamHandler self, out uint64 pqwBytes) GetMaxNumberOfBytesRequiredForResolution;
 			}
 		}
 		[CRepr]
@@ -13931,14 +13931,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInputTrustAuthority(uint32 dwStreamID, Guid* riid, IUnknown** ppunkObject) mut
+			public HRESULT GetInputTrustAuthority(uint32 dwStreamID, in Guid riid, out IUnknown* ppunkObject) mut
 			{
-				return VT.GetInputTrustAuthority(&this, dwStreamID, riid, ppunkObject);
+				return VT.GetInputTrustAuthority(ref this, dwStreamID, riid, out ppunkObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTrustedInput *self, uint32 dwStreamID, Guid* riid, IUnknown** ppunkObject) GetInputTrustAuthority;
+				public new function HRESULT(ref IMFTrustedInput self, uint32 dwStreamID, in Guid riid, out IUnknown* ppunkObject) GetInputTrustAuthority;
 			}
 		}
 		[CRepr]
@@ -13948,39 +13948,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDecrypter(Guid* riid, void** ppv) mut
+			public HRESULT GetDecrypter(in Guid riid, void** ppv) mut
 			{
-				return VT.GetDecrypter(&this, riid, ppv);
+				return VT.GetDecrypter(ref this, riid, ppv);
 			}
-			public HRESULT RequestAccess(MFPOLICYMANAGER_ACTION Action, IMFActivate** ppContentEnablerActivate) mut
+			public HRESULT RequestAccess(MFPOLICYMANAGER_ACTION Action, out IMFActivate* ppContentEnablerActivate) mut
 			{
-				return VT.RequestAccess(&this, Action, ppContentEnablerActivate);
+				return VT.RequestAccess(ref this, Action, out ppContentEnablerActivate);
 			}
-			public HRESULT GetPolicy(MFPOLICYMANAGER_ACTION Action, IMFOutputPolicy** ppPolicy) mut
+			public HRESULT GetPolicy(MFPOLICYMANAGER_ACTION Action, out IMFOutputPolicy* ppPolicy) mut
 			{
-				return VT.GetPolicy(&this, Action, ppPolicy);
+				return VT.GetPolicy(ref this, Action, out ppPolicy);
 			}
-			public HRESULT BindAccess(MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam) mut
+			public HRESULT BindAccess(ref MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS pParam) mut
 			{
-				return VT.BindAccess(&this, pParam);
+				return VT.BindAccess(ref this, ref pParam);
 			}
-			public HRESULT UpdateAccess(MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam) mut
+			public HRESULT UpdateAccess(ref MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS pParam) mut
 			{
-				return VT.UpdateAccess(&this, pParam);
+				return VT.UpdateAccess(ref this, ref pParam);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFInputTrustAuthority *self, Guid* riid, void** ppv) GetDecrypter;
-				public new function HRESULT(IMFInputTrustAuthority *self, MFPOLICYMANAGER_ACTION Action, IMFActivate** ppContentEnablerActivate) RequestAccess;
-				public new function HRESULT(IMFInputTrustAuthority *self, MFPOLICYMANAGER_ACTION Action, IMFOutputPolicy** ppPolicy) GetPolicy;
-				public new function HRESULT(IMFInputTrustAuthority *self, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam) BindAccess;
-				public new function HRESULT(IMFInputTrustAuthority *self, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam) UpdateAccess;
-				public new function HRESULT(IMFInputTrustAuthority *self) Reset;
+				public new function HRESULT(ref IMFInputTrustAuthority self, in Guid riid, void** ppv) GetDecrypter;
+				public new function HRESULT(ref IMFInputTrustAuthority self, MFPOLICYMANAGER_ACTION Action, out IMFActivate* ppContentEnablerActivate) RequestAccess;
+				public new function HRESULT(ref IMFInputTrustAuthority self, MFPOLICYMANAGER_ACTION Action, out IMFOutputPolicy* ppPolicy) GetPolicy;
+				public new function HRESULT(ref IMFInputTrustAuthority self, ref MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS pParam) BindAccess;
+				public new function HRESULT(ref IMFInputTrustAuthority self, ref MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS pParam) UpdateAccess;
+				public new function HRESULT(ref IMFInputTrustAuthority self) Reset;
 			}
 		}
 		[CRepr]
@@ -13990,24 +13990,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOutputTrustAuthorityCount(uint32* pcOutputTrustAuthorities) mut
+			public HRESULT GetOutputTrustAuthorityCount(out uint32 pcOutputTrustAuthorities) mut
 			{
-				return VT.GetOutputTrustAuthorityCount(&this, pcOutputTrustAuthorities);
+				return VT.GetOutputTrustAuthorityCount(ref this, out pcOutputTrustAuthorities);
 			}
-			public HRESULT GetOutputTrustAuthorityByIndex(uint32 dwIndex, IMFOutputTrustAuthority** ppauthority) mut
+			public HRESULT GetOutputTrustAuthorityByIndex(uint32 dwIndex, out IMFOutputTrustAuthority* ppauthority) mut
 			{
-				return VT.GetOutputTrustAuthorityByIndex(&this, dwIndex, ppauthority);
+				return VT.GetOutputTrustAuthorityByIndex(ref this, dwIndex, out ppauthority);
 			}
-			public HRESULT IsFinal(BOOL* pfIsFinal) mut
+			public HRESULT IsFinal(out BOOL pfIsFinal) mut
 			{
-				return VT.IsFinal(&this, pfIsFinal);
+				return VT.IsFinal(ref this, out pfIsFinal);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTrustedOutput *self, uint32* pcOutputTrustAuthorities) GetOutputTrustAuthorityCount;
-				public new function HRESULT(IMFTrustedOutput *self, uint32 dwIndex, IMFOutputTrustAuthority** ppauthority) GetOutputTrustAuthorityByIndex;
-				public new function HRESULT(IMFTrustedOutput *self, BOOL* pfIsFinal) IsFinal;
+				public new function HRESULT(ref IMFTrustedOutput self, out uint32 pcOutputTrustAuthorities) GetOutputTrustAuthorityCount;
+				public new function HRESULT(ref IMFTrustedOutput self, uint32 dwIndex, out IMFOutputTrustAuthority* ppauthority) GetOutputTrustAuthorityByIndex;
+				public new function HRESULT(ref IMFTrustedOutput self, out BOOL pfIsFinal) IsFinal;
 			}
 		}
 		[CRepr]
@@ -14017,19 +14017,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAction(MFPOLICYMANAGER_ACTION* pAction) mut
+			public HRESULT GetAction(out MFPOLICYMANAGER_ACTION pAction) mut
 			{
-				return VT.GetAction(&this, pAction);
+				return VT.GetAction(ref this, out pAction);
 			}
 			public HRESULT SetPolicy(IMFOutputPolicy** ppPolicy, uint32 nPolicy, uint8** ppbTicket, uint32* pcbTicket) mut
 			{
-				return VT.SetPolicy(&this, ppPolicy, nPolicy, ppbTicket, pcbTicket);
+				return VT.SetPolicy(ref this, ppPolicy, nPolicy, ppbTicket, pcbTicket);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFOutputTrustAuthority *self, MFPOLICYMANAGER_ACTION* pAction) GetAction;
-				public new function HRESULT(IMFOutputTrustAuthority *self, IMFOutputPolicy** ppPolicy, uint32 nPolicy, uint8** ppbTicket, uint32* pcbTicket) SetPolicy;
+				public new function HRESULT(ref IMFOutputTrustAuthority self, out MFPOLICYMANAGER_ACTION pAction) GetAction;
+				public new function HRESULT(ref IMFOutputTrustAuthority self, IMFOutputPolicy** ppPolicy, uint32 nPolicy, uint8** ppbTicket, uint32* pcbTicket) SetPolicy;
 			}
 		}
 		[CRepr]
@@ -14039,24 +14039,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GenerateRequiredSchemas(uint32 dwAttributes, Guid guidOutputSubType, Guid* rgGuidProtectionSchemasSupported, uint32 cProtectionSchemasSupported, IMFCollection** ppRequiredProtectionSchemas) mut
+			public HRESULT GenerateRequiredSchemas(uint32 dwAttributes, Guid guidOutputSubType, ref Guid rgGuidProtectionSchemasSupported, uint32 cProtectionSchemasSupported, out IMFCollection* ppRequiredProtectionSchemas) mut
 			{
-				return VT.GenerateRequiredSchemas(&this, dwAttributes, guidOutputSubType, rgGuidProtectionSchemasSupported, cProtectionSchemasSupported, ppRequiredProtectionSchemas);
+				return VT.GenerateRequiredSchemas(ref this, dwAttributes, guidOutputSubType, ref rgGuidProtectionSchemasSupported, cProtectionSchemasSupported, out ppRequiredProtectionSchemas);
 			}
-			public HRESULT GetOriginatorID(Guid* pguidOriginatorID) mut
+			public HRESULT GetOriginatorID(out Guid pguidOriginatorID) mut
 			{
-				return VT.GetOriginatorID(&this, pguidOriginatorID);
+				return VT.GetOriginatorID(ref this, out pguidOriginatorID);
 			}
-			public HRESULT GetMinimumGRLVersion(uint32* pdwMinimumGRLVersion) mut
+			public HRESULT GetMinimumGRLVersion(out uint32 pdwMinimumGRLVersion) mut
 			{
-				return VT.GetMinimumGRLVersion(&this, pdwMinimumGRLVersion);
+				return VT.GetMinimumGRLVersion(ref this, out pdwMinimumGRLVersion);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFOutputPolicy *self, uint32 dwAttributes, Guid guidOutputSubType, Guid* rgGuidProtectionSchemasSupported, uint32 cProtectionSchemasSupported, IMFCollection** ppRequiredProtectionSchemas) GenerateRequiredSchemas;
-				public new function HRESULT(IMFOutputPolicy *self, Guid* pguidOriginatorID) GetOriginatorID;
-				public new function HRESULT(IMFOutputPolicy *self, uint32* pdwMinimumGRLVersion) GetMinimumGRLVersion;
+				public new function HRESULT(ref IMFOutputPolicy self, uint32 dwAttributes, Guid guidOutputSubType, ref Guid rgGuidProtectionSchemasSupported, uint32 cProtectionSchemasSupported, out IMFCollection* ppRequiredProtectionSchemas) GenerateRequiredSchemas;
+				public new function HRESULT(ref IMFOutputPolicy self, out Guid pguidOriginatorID) GetOriginatorID;
+				public new function HRESULT(ref IMFOutputPolicy self, out uint32 pdwMinimumGRLVersion) GetMinimumGRLVersion;
 			}
 		}
 		[CRepr]
@@ -14066,24 +14066,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSchemaType(Guid* pguidSchemaType) mut
+			public HRESULT GetSchemaType(out Guid pguidSchemaType) mut
 			{
-				return VT.GetSchemaType(&this, pguidSchemaType);
+				return VT.GetSchemaType(ref this, out pguidSchemaType);
 			}
-			public HRESULT GetConfigurationData(uint32* pdwVal) mut
+			public HRESULT GetConfigurationData(out uint32 pdwVal) mut
 			{
-				return VT.GetConfigurationData(&this, pdwVal);
+				return VT.GetConfigurationData(ref this, out pdwVal);
 			}
-			public HRESULT GetOriginatorID(Guid* pguidOriginatorID) mut
+			public HRESULT GetOriginatorID(out Guid pguidOriginatorID) mut
 			{
-				return VT.GetOriginatorID(&this, pguidOriginatorID);
+				return VT.GetOriginatorID(ref this, out pguidOriginatorID);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFOutputSchema *self, Guid* pguidSchemaType) GetSchemaType;
-				public new function HRESULT(IMFOutputSchema *self, uint32* pdwVal) GetConfigurationData;
-				public new function HRESULT(IMFOutputSchema *self, Guid* pguidOriginatorID) GetOriginatorID;
+				public new function HRESULT(ref IMFOutputSchema self, out Guid pguidSchemaType) GetSchemaType;
+				public new function HRESULT(ref IMFOutputSchema self, out uint32 pdwVal) GetConfigurationData;
+				public new function HRESULT(ref IMFOutputSchema self, out Guid pguidOriginatorID) GetOriginatorID;
 			}
 		}
 		[CRepr]
@@ -14093,19 +14093,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCertificate(uint8** ppCert, uint32* pcbCert) mut
+			public HRESULT GetCertificate(out uint8* ppCert, out uint32 pcbCert) mut
 			{
-				return VT.GetCertificate(&this, ppCert, pcbCert);
+				return VT.GetCertificate(ref this, out ppCert, out pcbCert);
 			}
-			public HRESULT SetupSession(uint8* pbEncryptedSessionKey, uint32 cbSessionKey) mut
+			public HRESULT SetupSession(ref uint8 pbEncryptedSessionKey, uint32 cbSessionKey) mut
 			{
-				return VT.SetupSession(&this, pbEncryptedSessionKey, cbSessionKey);
+				return VT.SetupSession(ref this, ref pbEncryptedSessionKey, cbSessionKey);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSecureChannel *self, uint8** ppCert, uint32* pcbCert) GetCertificate;
-				public new function HRESULT(IMFSecureChannel *self, uint8* pbEncryptedSessionKey, uint32 cbSessionKey) SetupSession;
+				public new function HRESULT(ref IMFSecureChannel self, out uint8* ppCert, out uint32 pcbCert) GetCertificate;
+				public new function HRESULT(ref IMFSecureChannel self, ref uint8 pbEncryptedSessionKey, uint32 cbSessionKey) SetupSession;
 			}
 		}
 		[CRepr]
@@ -14115,34 +14115,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetInputProtectionVersion(uint32* pdwVersion) mut
+			public HRESULT GetInputProtectionVersion(out uint32 pdwVersion) mut
 			{
-				return VT.GetInputProtectionVersion(&this, pdwVersion);
+				return VT.GetInputProtectionVersion(ref this, out pdwVersion);
 			}
-			public HRESULT GetOutputProtectionVersion(uint32* pdwVersion) mut
+			public HRESULT GetOutputProtectionVersion(out uint32 pdwVersion) mut
 			{
-				return VT.GetOutputProtectionVersion(&this, pdwVersion);
+				return VT.GetOutputProtectionVersion(ref this, out pdwVersion);
 			}
-			public HRESULT GetProtectionCertificate(uint32 dwVersion, uint8** ppCert, uint32* pcbCert) mut
+			public HRESULT GetProtectionCertificate(uint32 dwVersion, out uint8* ppCert, out uint32 pcbCert) mut
 			{
-				return VT.GetProtectionCertificate(&this, dwVersion, ppCert, pcbCert);
+				return VT.GetProtectionCertificate(ref this, dwVersion, out ppCert, out pcbCert);
 			}
-			public HRESULT InitOutputProtection(uint32 dwVersion, uint32 dwOutputId, uint8* pbCert, uint32 cbCert, uint8** ppbSeed, uint32* pcbSeed) mut
+			public HRESULT InitOutputProtection(uint32 dwVersion, uint32 dwOutputId, ref uint8 pbCert, uint32 cbCert, out uint8* ppbSeed, out uint32 pcbSeed) mut
 			{
-				return VT.InitOutputProtection(&this, dwVersion, dwOutputId, pbCert, cbCert, ppbSeed, pcbSeed);
+				return VT.InitOutputProtection(ref this, dwVersion, dwOutputId, ref pbCert, cbCert, out ppbSeed, out pcbSeed);
 			}
-			public HRESULT InitInputProtection(uint32 dwVersion, uint32 dwInputId, uint8* pbSeed, uint32 cbSeed) mut
+			public HRESULT InitInputProtection(uint32 dwVersion, uint32 dwInputId, ref uint8 pbSeed, uint32 cbSeed) mut
 			{
-				return VT.InitInputProtection(&this, dwVersion, dwInputId, pbSeed, cbSeed);
+				return VT.InitInputProtection(ref this, dwVersion, dwInputId, ref pbSeed, cbSeed);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSampleProtection *self, uint32* pdwVersion) GetInputProtectionVersion;
-				public new function HRESULT(IMFSampleProtection *self, uint32* pdwVersion) GetOutputProtectionVersion;
-				public new function HRESULT(IMFSampleProtection *self, uint32 dwVersion, uint8** ppCert, uint32* pcbCert) GetProtectionCertificate;
-				public new function HRESULT(IMFSampleProtection *self, uint32 dwVersion, uint32 dwOutputId, uint8* pbCert, uint32 cbCert, uint8** ppbSeed, uint32* pcbSeed) InitOutputProtection;
-				public new function HRESULT(IMFSampleProtection *self, uint32 dwVersion, uint32 dwInputId, uint8* pbSeed, uint32 cbSeed) InitInputProtection;
+				public new function HRESULT(ref IMFSampleProtection self, out uint32 pdwVersion) GetInputProtectionVersion;
+				public new function HRESULT(ref IMFSampleProtection self, out uint32 pdwVersion) GetOutputProtectionVersion;
+				public new function HRESULT(ref IMFSampleProtection self, uint32 dwVersion, out uint8* ppCert, out uint32 pcbCert) GetProtectionCertificate;
+				public new function HRESULT(ref IMFSampleProtection self, uint32 dwVersion, uint32 dwOutputId, ref uint8 pbCert, uint32 cbCert, out uint8* ppbSeed, out uint32 pcbSeed) InitOutputProtection;
+				public new function HRESULT(ref IMFSampleProtection self, uint32 dwVersion, uint32 dwInputId, ref uint8 pbSeed, uint32 cbSeed) InitInputProtection;
 			}
 		}
 		[CRepr]
@@ -14154,12 +14154,12 @@ namespace Win32
 			
 			public HRESULT NotifyPreroll(int64 hnsUpcomingStartTime) mut
 			{
-				return VT.NotifyPreroll(&this, hnsUpcomingStartTime);
+				return VT.NotifyPreroll(ref this, hnsUpcomingStartTime);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaSinkPreroll *self, int64 hnsUpcomingStartTime) NotifyPreroll;
+				public new function HRESULT(ref IMFMediaSinkPreroll self, int64 hnsUpcomingStartTime) NotifyPreroll;
 			}
 		}
 		[CRepr]
@@ -14169,19 +14169,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginFinalize(IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginFinalize(ref IMFAsyncCallback pCallback, ref IUnknown punkState) mut
 			{
-				return VT.BeginFinalize(&this, pCallback, punkState);
+				return VT.BeginFinalize(ref this, ref pCallback, ref punkState);
 			}
-			public HRESULT EndFinalize(IMFAsyncResult* pResult) mut
+			public HRESULT EndFinalize(ref IMFAsyncResult pResult) mut
 			{
-				return VT.EndFinalize(&this, pResult);
+				return VT.EndFinalize(ref this, ref pResult);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaSink.VTable
 			{
-				public new function HRESULT(IMFFinalizableMediaSink *self, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginFinalize;
-				public new function HRESULT(IMFFinalizableMediaSink *self, IMFAsyncResult* pResult) EndFinalize;
+				public new function HRESULT(ref IMFFinalizableMediaSink self, ref IMFAsyncCallback pCallback, ref IUnknown punkState) BeginFinalize;
+				public new function HRESULT(ref IMFFinalizableMediaSink self, ref IMFAsyncResult pResult) EndFinalize;
 			}
 		}
 		[CRepr]
@@ -14193,12 +14193,12 @@ namespace Win32
 			
 			public HRESULT StartStreaming(BOOL fSeekOffsetIsByteOffset, uint64 qwSeekOffset) mut
 			{
-				return VT.StartStreaming(&this, fSeekOffsetIsByteOffset, qwSeekOffset);
+				return VT.StartStreaming(ref this, fSeekOffsetIsByteOffset, qwSeekOffset);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFStreamingSinkConfig *self, BOOL fSeekOffsetIsByteOffset, uint64 qwSeekOffset) StartStreaming;
+				public new function HRESULT(ref IMFStreamingSinkConfig self, BOOL fSeekOffsetIsByteOffset, uint64 qwSeekOffset) StartStreaming;
 			}
 		}
 		[CRepr]
@@ -14208,19 +14208,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRemoteObject(Guid* riid, void** ppv) mut
+			public HRESULT GetRemoteObject(in Guid riid, void** ppv) mut
 			{
-				return VT.GetRemoteObject(&this, riid, ppv);
+				return VT.GetRemoteObject(ref this, riid, ppv);
 			}
-			public HRESULT GetRemoteHost(Guid* riid, void** ppv) mut
+			public HRESULT GetRemoteHost(in Guid riid, void** ppv) mut
 			{
-				return VT.GetRemoteHost(&this, riid, ppv);
+				return VT.GetRemoteHost(ref this, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFRemoteProxy *self, Guid* riid, void** ppv) GetRemoteObject;
-				public new function HRESULT(IMFRemoteProxy *self, Guid* riid, void** ppv) GetRemoteHost;
+				public new function HRESULT(ref IMFRemoteProxy self, in Guid riid, void** ppv) GetRemoteObject;
+				public new function HRESULT(ref IMFRemoteProxy self, in Guid riid, void** ppv) GetRemoteHost;
 			}
 		}
 		[CRepr]
@@ -14230,19 +14230,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SaveReference(Guid* riid, IUnknown* pUnk) mut
+			public HRESULT SaveReference(in Guid riid, ref IUnknown pUnk) mut
 			{
-				return VT.SaveReference(&this, riid, pUnk);
+				return VT.SaveReference(ref this, riid, ref pUnk);
 			}
-			public HRESULT LoadReference(Guid* riid, void** ppv) mut
+			public HRESULT LoadReference(in Guid riid, void** ppv) mut
 			{
-				return VT.LoadReference(&this, riid, ppv);
+				return VT.LoadReference(ref this, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFObjectReferenceStream *self, Guid* riid, IUnknown* pUnk) SaveReference;
-				public new function HRESULT(IMFObjectReferenceStream *self, Guid* riid, void** ppv) LoadReference;
+				public new function HRESULT(ref IMFObjectReferenceStream self, in Guid riid, ref IUnknown pUnk) SaveReference;
+				public new function HRESULT(ref IMFObjectReferenceStream self, in Guid riid, void** ppv) LoadReference;
 			}
 		}
 		[CRepr]
@@ -14254,22 +14254,22 @@ namespace Win32
 			
 			public HRESULT LockProcess() mut
 			{
-				return VT.LockProcess(&this);
+				return VT.LockProcess(ref this);
 			}
 			public HRESULT UnlockProcess() mut
 			{
-				return VT.UnlockProcess(&this);
+				return VT.UnlockProcess(ref this);
 			}
-			public HRESULT CreateObjectByCLSID(Guid* clsid, IStream* pStream, Guid* riid, void** ppv) mut
+			public HRESULT CreateObjectByCLSID(in Guid clsid, ref IStream pStream, in Guid riid, void** ppv) mut
 			{
-				return VT.CreateObjectByCLSID(&this, clsid, pStream, riid, ppv);
+				return VT.CreateObjectByCLSID(ref this, clsid, ref pStream, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFPMPHost *self) LockProcess;
-				public new function HRESULT(IMFPMPHost *self) UnlockProcess;
-				public new function HRESULT(IMFPMPHost *self, Guid* clsid, IStream* pStream, Guid* riid, void** ppv) CreateObjectByCLSID;
+				public new function HRESULT(ref IMFPMPHost self) LockProcess;
+				public new function HRESULT(ref IMFPMPHost self) UnlockProcess;
+				public new function HRESULT(ref IMFPMPHost self, in Guid clsid, ref IStream pStream, in Guid riid, void** ppv) CreateObjectByCLSID;
 			}
 		}
 		[CRepr]
@@ -14279,14 +14279,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPMPHost(IMFPMPHost* pPMPHost) mut
+			public HRESULT SetPMPHost(ref IMFPMPHost pPMPHost) mut
 			{
-				return VT.SetPMPHost(&this, pPMPHost);
+				return VT.SetPMPHost(ref this, ref pPMPHost);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFPMPClient *self, IMFPMPHost* pPMPHost) SetPMPHost;
+				public new function HRESULT(ref IMFPMPClient self, ref IMFPMPHost pPMPHost) SetPMPHost;
 			}
 		}
 		[CRepr]
@@ -14298,22 +14298,22 @@ namespace Win32
 			
 			public HRESULT LockProcess() mut
 			{
-				return VT.LockProcess(&this);
+				return VT.LockProcess(ref this);
 			}
 			public HRESULT UnlockProcess() mut
 			{
-				return VT.UnlockProcess(&this);
+				return VT.UnlockProcess(ref this);
 			}
-			public HRESULT CreateObjectByCLSID(Guid* clsid, Guid* riid, void** ppObject) mut
+			public HRESULT CreateObjectByCLSID(in Guid clsid, in Guid riid, void** ppObject) mut
 			{
-				return VT.CreateObjectByCLSID(&this, clsid, riid, ppObject);
+				return VT.CreateObjectByCLSID(ref this, clsid, riid, ppObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFPMPServer *self) LockProcess;
-				public new function HRESULT(IMFPMPServer *self) UnlockProcess;
-				public new function HRESULT(IMFPMPServer *self, Guid* clsid, Guid* riid, void** ppObject) CreateObjectByCLSID;
+				public new function HRESULT(ref IMFPMPServer self) LockProcess;
+				public new function HRESULT(ref IMFPMPServer self) UnlockProcess;
+				public new function HRESULT(ref IMFPMPServer self, in Guid clsid, in Guid riid, void** ppObject) CreateObjectByCLSID;
 			}
 		}
 		[CRepr]
@@ -14323,14 +14323,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT UpdateTopology(IMFTopology* pTopology) mut
+			public HRESULT UpdateTopology(out IMFTopology pTopology) mut
 			{
-				return VT.UpdateTopology(&this, pTopology);
+				return VT.UpdateTopology(ref this, out pTopology);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFRemoteDesktopPlugin *self, IMFTopology* pTopology) UpdateTopology;
+				public new function HRESULT(ref IMFRemoteDesktopPlugin self, out IMFTopology pTopology) UpdateTopology;
 			}
 		}
 		[CRepr]
@@ -14340,29 +14340,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStyleCount(uint32* pdwCount) mut
+			public HRESULT GetStyleCount(out uint32 pdwCount) mut
 			{
-				return VT.GetStyleCount(&this, pdwCount);
+				return VT.GetStyleCount(ref this, out pdwCount);
 			}
-			public HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray) mut
+			public HRESULT GetStyles(out PROPVARIANT pPropVarStyleArray) mut
 			{
-				return VT.GetStyles(&this, pPropVarStyleArray);
+				return VT.GetStyles(ref this, out pPropVarStyleArray);
 			}
 			public HRESULT SetSelectedStyle(PWSTR pwszStyle) mut
 			{
-				return VT.SetSelectedStyle(&this, pwszStyle);
+				return VT.SetSelectedStyle(ref this, pwszStyle);
 			}
-			public HRESULT GetSelectedStyle(PWSTR* ppwszStyle) mut
+			public HRESULT GetSelectedStyle(out PWSTR ppwszStyle) mut
 			{
-				return VT.GetSelectedStyle(&this, ppwszStyle);
+				return VT.GetSelectedStyle(ref this, out ppwszStyle);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSAMIStyle *self, uint32* pdwCount) GetStyleCount;
-				public new function HRESULT(IMFSAMIStyle *self, PROPVARIANT* pPropVarStyleArray) GetStyles;
-				public new function HRESULT(IMFSAMIStyle *self, PWSTR pwszStyle) SetSelectedStyle;
-				public new function HRESULT(IMFSAMIStyle *self, PWSTR* ppwszStyle) GetSelectedStyle;
+				public new function HRESULT(ref IMFSAMIStyle self, out uint32 pdwCount) GetStyleCount;
+				public new function HRESULT(ref IMFSAMIStyle self, out PROPVARIANT pPropVarStyleArray) GetStyles;
+				public new function HRESULT(ref IMFSAMIStyle self, PWSTR pwszStyle) SetSelectedStyle;
+				public new function HRESULT(ref IMFSAMIStyle self, out PWSTR ppwszStyle) GetSelectedStyle;
 			}
 		}
 		[CRepr]
@@ -14374,37 +14374,37 @@ namespace Win32
 			
 			public HRESULT SetAudioAttributes(IMFAttributes* pAttrs) mut
 			{
-				return VT.SetAudioAttributes(&this, pAttrs);
+				return VT.SetAudioAttributes(ref this, pAttrs);
 			}
 			public HRESULT GetAudioAttributes(IMFAttributes** ppAttrs) mut
 			{
-				return VT.GetAudioAttributes(&this, ppAttrs);
+				return VT.GetAudioAttributes(ref this, ppAttrs);
 			}
 			public HRESULT SetVideoAttributes(IMFAttributes* pAttrs) mut
 			{
-				return VT.SetVideoAttributes(&this, pAttrs);
+				return VT.SetVideoAttributes(ref this, pAttrs);
 			}
 			public HRESULT GetVideoAttributes(IMFAttributes** ppAttrs) mut
 			{
-				return VT.GetVideoAttributes(&this, ppAttrs);
+				return VT.GetVideoAttributes(ref this, ppAttrs);
 			}
 			public HRESULT SetContainerAttributes(IMFAttributes* pAttrs) mut
 			{
-				return VT.SetContainerAttributes(&this, pAttrs);
+				return VT.SetContainerAttributes(ref this, pAttrs);
 			}
 			public HRESULT GetContainerAttributes(IMFAttributes** ppAttrs) mut
 			{
-				return VT.GetContainerAttributes(&this, ppAttrs);
+				return VT.GetContainerAttributes(ref this, ppAttrs);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTranscodeProfile *self, IMFAttributes* pAttrs) SetAudioAttributes;
-				public new function HRESULT(IMFTranscodeProfile *self, IMFAttributes** ppAttrs) GetAudioAttributes;
-				public new function HRESULT(IMFTranscodeProfile *self, IMFAttributes* pAttrs) SetVideoAttributes;
-				public new function HRESULT(IMFTranscodeProfile *self, IMFAttributes** ppAttrs) GetVideoAttributes;
-				public new function HRESULT(IMFTranscodeProfile *self, IMFAttributes* pAttrs) SetContainerAttributes;
-				public new function HRESULT(IMFTranscodeProfile *self, IMFAttributes** ppAttrs) GetContainerAttributes;
+				public new function HRESULT(ref IMFTranscodeProfile self, IMFAttributes* pAttrs) SetAudioAttributes;
+				public new function HRESULT(ref IMFTranscodeProfile self, IMFAttributes** ppAttrs) GetAudioAttributes;
+				public new function HRESULT(ref IMFTranscodeProfile self, IMFAttributes* pAttrs) SetVideoAttributes;
+				public new function HRESULT(ref IMFTranscodeProfile self, IMFAttributes** ppAttrs) GetVideoAttributes;
+				public new function HRESULT(ref IMFTranscodeProfile self, IMFAttributes* pAttrs) SetContainerAttributes;
+				public new function HRESULT(ref IMFTranscodeProfile self, IMFAttributes** ppAttrs) GetContainerAttributes;
 			}
 		}
 		[CRepr]
@@ -14416,27 +14416,27 @@ namespace Win32
 			
 			public HRESULT SetOutputFile(PWSTR pwszFileName) mut
 			{
-				return VT.SetOutputFile(&this, pwszFileName);
+				return VT.SetOutputFile(ref this, pwszFileName);
 			}
-			public HRESULT SetOutputByteStream(IMFActivate* pByteStreamActivate) mut
+			public HRESULT SetOutputByteStream(ref IMFActivate pByteStreamActivate) mut
 			{
-				return VT.SetOutputByteStream(&this, pByteStreamActivate);
+				return VT.SetOutputByteStream(ref this, ref pByteStreamActivate);
 			}
-			public HRESULT SetProfile(IMFTranscodeProfile* pProfile) mut
+			public HRESULT SetProfile(ref IMFTranscodeProfile pProfile) mut
 			{
-				return VT.SetProfile(&this, pProfile);
+				return VT.SetProfile(ref this, ref pProfile);
 			}
-			public HRESULT GetSinkInfo(MF_TRANSCODE_SINK_INFO* pSinkInfo) mut
+			public HRESULT GetSinkInfo(out MF_TRANSCODE_SINK_INFO pSinkInfo) mut
 			{
-				return VT.GetSinkInfo(&this, pSinkInfo);
+				return VT.GetSinkInfo(ref this, out pSinkInfo);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTranscodeSinkInfoProvider *self, PWSTR pwszFileName) SetOutputFile;
-				public new function HRESULT(IMFTranscodeSinkInfoProvider *self, IMFActivate* pByteStreamActivate) SetOutputByteStream;
-				public new function HRESULT(IMFTranscodeSinkInfoProvider *self, IMFTranscodeProfile* pProfile) SetProfile;
-				public new function HRESULT(IMFTranscodeSinkInfoProvider *self, MF_TRANSCODE_SINK_INFO* pSinkInfo) GetSinkInfo;
+				public new function HRESULT(ref IMFTranscodeSinkInfoProvider self, PWSTR pwszFileName) SetOutputFile;
+				public new function HRESULT(ref IMFTranscodeSinkInfoProvider self, ref IMFActivate pByteStreamActivate) SetOutputByteStream;
+				public new function HRESULT(ref IMFTranscodeSinkInfoProvider self, ref IMFTranscodeProfile pProfile) SetProfile;
+				public new function HRESULT(ref IMFTranscodeSinkInfoProvider self, out MF_TRANSCODE_SINK_INFO pSinkInfo) GetSinkInfo;
 			}
 		}
 		[CRepr]
@@ -14446,14 +14446,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Unlock(IUnknown* pUnkMFT) mut
+			public HRESULT Unlock(ref IUnknown pUnkMFT) mut
 			{
-				return VT.Unlock(&this, pUnkMFT);
+				return VT.Unlock(ref this, ref pUnkMFT);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFFieldOfUseMFTUnlock *self, IUnknown* pUnkMFT) Unlock;
+				public new function HRESULT(ref IMFFieldOfUseMFTUnlock self, ref IUnknown pUnkMFT) Unlock;
 			}
 		}
 		[CRepr]
@@ -14465,12 +14465,12 @@ namespace Win32
 			
 			public HRESULT RegisterMFTs(MFT_REGISTRATION_INFO* pMFTs, uint32 cMFTs) mut
 			{
-				return VT.RegisterMFTs(&this, pMFTs, cMFTs);
+				return VT.RegisterMFTs(ref this, pMFTs, cMFTs);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFLocalMFTRegistration *self, MFT_REGISTRATION_INFO* pMFTs, uint32 cMFTs) RegisterMFTs;
+				public new function HRESULT(ref IMFLocalMFTRegistration self, MFT_REGISTRATION_INFO* pMFTs, uint32 cMFTs) RegisterMFTs;
 			}
 		}
 		[CRepr]
@@ -14480,24 +14480,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPhotoConfirmationCallback(IMFAsyncCallback* pNotificationCallback) mut
+			public HRESULT SetPhotoConfirmationCallback(ref IMFAsyncCallback pNotificationCallback) mut
 			{
-				return VT.SetPhotoConfirmationCallback(&this, pNotificationCallback);
+				return VT.SetPhotoConfirmationCallback(ref this, ref pNotificationCallback);
 			}
 			public HRESULT SetPixelFormat(Guid subtype) mut
 			{
-				return VT.SetPixelFormat(&this, subtype);
+				return VT.SetPixelFormat(ref this, subtype);
 			}
-			public HRESULT GetPixelFormat(Guid* subtype) mut
+			public HRESULT GetPixelFormat(out Guid subtype) mut
 			{
-				return VT.GetPixelFormat(&this, subtype);
+				return VT.GetPixelFormat(ref this, out subtype);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCapturePhotoConfirmation *self, IMFAsyncCallback* pNotificationCallback) SetPhotoConfirmationCallback;
-				public new function HRESULT(IMFCapturePhotoConfirmation *self, Guid subtype) SetPixelFormat;
-				public new function HRESULT(IMFCapturePhotoConfirmation *self, Guid* subtype) GetPixelFormat;
+				public new function HRESULT(ref IMFCapturePhotoConfirmation self, ref IMFAsyncCallback pNotificationCallback) SetPhotoConfirmationCallback;
+				public new function HRESULT(ref IMFCapturePhotoConfirmation self, Guid subtype) SetPixelFormat;
+				public new function HRESULT(ref IMFCapturePhotoConfirmation self, out Guid subtype) GetPixelFormat;
 			}
 		}
 		[CRepr]
@@ -14509,22 +14509,22 @@ namespace Win32
 			
 			public HRESULT LockProcess() mut
 			{
-				return VT.LockProcess(&this);
+				return VT.LockProcess(ref this);
 			}
 			public HRESULT UnlockProcess() mut
 			{
-				return VT.UnlockProcess(&this);
+				return VT.UnlockProcess(ref this);
 			}
-			public HRESULT ActivateClassById(PWSTR id, IStream* pStream, Guid* riid, void** ppv) mut
+			public HRESULT ActivateClassById(PWSTR id, ref IStream pStream, in Guid riid, void** ppv) mut
 			{
-				return VT.ActivateClassById(&this, id, pStream, riid, ppv);
+				return VT.ActivateClassById(ref this, id, ref pStream, riid, ppv);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFPMPHostApp *self) LockProcess;
-				public new function HRESULT(IMFPMPHostApp *self) UnlockProcess;
-				public new function HRESULT(IMFPMPHostApp *self, PWSTR id, IStream* pStream, Guid* riid, void** ppv) ActivateClassById;
+				public new function HRESULT(ref IMFPMPHostApp self) LockProcess;
+				public new function HRESULT(ref IMFPMPHostApp self) UnlockProcess;
+				public new function HRESULT(ref IMFPMPHostApp self, PWSTR id, ref IStream pStream, in Guid riid, void** ppv) ActivateClassById;
 			}
 		}
 		[CRepr]
@@ -14534,14 +14534,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetPMPHost(IMFPMPHostApp* pPMPHost) mut
+			public HRESULT SetPMPHost(ref IMFPMPHostApp pPMPHost) mut
 			{
-				return VT.SetPMPHost(&this, pPMPHost);
+				return VT.SetPMPHost(ref this, ref pPMPHost);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFPMPClientApp *self, IMFPMPHostApp* pPMPHost) SetPMPHost;
+				public new function HRESULT(ref IMFPMPClientApp self, ref IMFPMPHostApp pPMPHost) SetPMPHost;
 			}
 		}
 		[CRepr]
@@ -14551,14 +14551,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSample(IMFSample* value) mut
+			public HRESULT SetSample(ref IMFSample value) mut
 			{
-				return VT.SetSample(&this, value);
+				return VT.SetSample(ref this, ref value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaStreamSourceSampleRequest *self, IMFSample* value) SetSample;
+				public new function HRESULT(ref IMFMediaStreamSourceSampleRequest self, ref IMFSample value) SetSample;
 			}
 		}
 		[CRepr]
@@ -14568,14 +14568,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAllocator(IMFAsyncCallback* pSampleAllocator, IUnknown* pUnkState) mut
+			public HRESULT SetAllocator(ref IMFAsyncCallback pSampleAllocator, ref IUnknown pUnkState) mut
 			{
-				return VT.SetAllocator(&this, pSampleAllocator, pUnkState);
+				return VT.SetAllocator(ref this, ref pSampleAllocator, ref pUnkState);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTrackedSample *self, IMFAsyncCallback* pSampleAllocator, IUnknown* pUnkState) SetAllocator;
+				public new function HRESULT(ref IMFTrackedSample self, ref IMFAsyncCallback pSampleAllocator, ref IUnknown pUnkState) SetAllocator;
 			}
 		}
 		[CRepr]
@@ -14585,19 +14585,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Call(uint32 inputLength, uint8* input, uint32 outputLength, uint8* output) mut
+			public HRESULT Call(uint32 inputLength, in uint8 input, uint32 outputLength, out uint8 output) mut
 			{
-				return VT.Call(&this, inputLength, input, outputLength, output);
+				return VT.Call(ref this, inputLength, input, outputLength, out output);
 			}
-			public HRESULT ReadGRL(uint32* outputLength, uint8** output) mut
+			public HRESULT ReadGRL(out uint32 outputLength, out uint8* output) mut
 			{
-				return VT.ReadGRL(&this, outputLength, output);
+				return VT.ReadGRL(ref this, out outputLength, out output);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFProtectedEnvironmentAccess *self, uint32 inputLength, uint8* input, uint32 outputLength, uint8* output) Call;
-				public new function HRESULT(IMFProtectedEnvironmentAccess *self, uint32* outputLength, uint8** output) ReadGRL;
+				public new function HRESULT(ref IMFProtectedEnvironmentAccess self, uint32 inputLength, in uint8 input, uint32 outputLength, out uint8 output) Call;
+				public new function HRESULT(ref IMFProtectedEnvironmentAccess self, out uint32 outputLength, out uint8* output) ReadGRL;
 			}
 		}
 		[CRepr]
@@ -14609,12 +14609,12 @@ namespace Win32
 			
 			public HRESULT GetProcedureAddress(PSTR name, void** address) mut
 			{
-				return VT.GetProcedureAddress(&this, name, address);
+				return VT.GetProcedureAddress(ref this, name, address);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSignedLibrary *self, PSTR name, void** address) GetProcedureAddress;
+				public new function HRESULT(ref IMFSignedLibrary self, PSTR name, void** address) GetProcedureAddress;
 			}
 		}
 		[CRepr]
@@ -14624,19 +14624,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetData(uint32* size, uint8** data) mut
+			public HRESULT GetData(out uint32 size, out uint8* data) mut
 			{
-				return VT.GetData(&this, size, data);
+				return VT.GetData(ref this, out size, out data);
 			}
-			public HRESULT Setup(uint32 stage, uint32 cbIn, uint8* pbIn, uint32* pcbOut, uint8** ppbOut) mut
+			public HRESULT Setup(uint32 stage, uint32 cbIn, in uint8 pbIn, out uint32 pcbOut, out uint8* ppbOut) mut
 			{
-				return VT.Setup(&this, stage, cbIn, pbIn, pcbOut, ppbOut);
+				return VT.Setup(ref this, stage, cbIn, pbIn, out pcbOut, out ppbOut);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSystemId *self, uint32* size, uint8** data) GetData;
-				public new function HRESULT(IMFSystemId *self, uint32 stage, uint32 cbIn, uint8* pbIn, uint32* pcbOut, uint8** ppbOut) Setup;
+				public new function HRESULT(ref IMFSystemId self, out uint32 size, out uint8* data) GetData;
+				public new function HRESULT(ref IMFSystemId self, uint32 stage, uint32 cbIn, in uint8 pbIn, out uint32 pcbOut, out uint8* ppbOut) Setup;
 			}
 		}
 		[CRepr]
@@ -14646,19 +14646,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InvokeFunction(uint32 FunctionId, uint32 InputBufferByteCount, uint8* InputBuffer, uint32* OutputBufferByteCount, uint8* OutputBuffer) mut
+			public HRESULT InvokeFunction(uint32 FunctionId, uint32 InputBufferByteCount, in uint8 InputBuffer, out uint32 OutputBufferByteCount, out uint8 OutputBuffer) mut
 			{
-				return VT.InvokeFunction(&this, FunctionId, InputBufferByteCount, InputBuffer, OutputBufferByteCount, OutputBuffer);
+				return VT.InvokeFunction(ref this, FunctionId, InputBufferByteCount, InputBuffer, out OutputBufferByteCount, out OutputBuffer);
 			}
-			public HRESULT GetPrivateDataByteCount(uint32* PrivateInputByteCount, uint32* PrivateOutputByteCount) mut
+			public HRESULT GetPrivateDataByteCount(out uint32 PrivateInputByteCount, out uint32 PrivateOutputByteCount) mut
 			{
-				return VT.GetPrivateDataByteCount(&this, PrivateInputByteCount, PrivateOutputByteCount);
+				return VT.GetPrivateDataByteCount(ref this, out PrivateInputByteCount, out PrivateOutputByteCount);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFContentProtectionDevice *self, uint32 FunctionId, uint32 InputBufferByteCount, uint8* InputBuffer, uint32* OutputBufferByteCount, uint8* OutputBuffer) InvokeFunction;
-				public new function HRESULT(IMFContentProtectionDevice *self, uint32* PrivateInputByteCount, uint32* PrivateOutputByteCount) GetPrivateDataByteCount;
+				public new function HRESULT(ref IMFContentProtectionDevice self, uint32 FunctionId, uint32 InputBufferByteCount, in uint8 InputBuffer, out uint32 OutputBufferByteCount, out uint8 OutputBuffer) InvokeFunction;
+				public new function HRESULT(ref IMFContentProtectionDevice self, out uint32 PrivateInputByteCount, out uint32 PrivateOutputByteCount) GetPrivateDataByteCount;
 			}
 		}
 		[CRepr]
@@ -14668,14 +14668,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeHardwareKey(uint32 InputPrivateDataByteCount, void* InputPrivateData, uint64* OutputPrivateData) mut
+			public HRESULT InitializeHardwareKey(uint32 InputPrivateDataByteCount, void* InputPrivateData, out uint64 OutputPrivateData) mut
 			{
-				return VT.InitializeHardwareKey(&this, InputPrivateDataByteCount, InputPrivateData, OutputPrivateData);
+				return VT.InitializeHardwareKey(ref this, InputPrivateDataByteCount, InputPrivateData, out OutputPrivateData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFContentDecryptorContext *self, uint32 InputPrivateDataByteCount, void* InputPrivateData, uint64* OutputPrivateData) InitializeHardwareKey;
+				public new function HRESULT(ref IMFContentDecryptorContext self, uint32 InputPrivateDataByteCount, void* InputPrivateData, out uint64 OutputPrivateData) InitializeHardwareKey;
 			}
 		}
 		[CRepr]
@@ -14685,24 +14685,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCrossOriginPolicy(MF_CROSS_ORIGIN_POLICY* pPolicy) mut
+			public HRESULT GetCrossOriginPolicy(out MF_CROSS_ORIGIN_POLICY pPolicy) mut
 			{
-				return VT.GetCrossOriginPolicy(&this, pPolicy);
+				return VT.GetCrossOriginPolicy(ref this, out pPolicy);
 			}
-			public HRESULT GetSourceOrigin(PWSTR* wszSourceOrigin) mut
+			public HRESULT GetSourceOrigin(out PWSTR wszSourceOrigin) mut
 			{
-				return VT.GetSourceOrigin(&this, wszSourceOrigin);
+				return VT.GetSourceOrigin(ref this, out wszSourceOrigin);
 			}
-			public HRESULT IsSameOrigin(PWSTR wszURL, BOOL* pfIsSameOrigin) mut
+			public HRESULT IsSameOrigin(PWSTR wszURL, out BOOL pfIsSameOrigin) mut
 			{
-				return VT.IsSameOrigin(&this, wszURL, pfIsSameOrigin);
+				return VT.IsSameOrigin(ref this, wszURL, out pfIsSameOrigin);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFNetCrossOriginSupport *self, MF_CROSS_ORIGIN_POLICY* pPolicy) GetCrossOriginPolicy;
-				public new function HRESULT(IMFNetCrossOriginSupport *self, PWSTR* wszSourceOrigin) GetSourceOrigin;
-				public new function HRESULT(IMFNetCrossOriginSupport *self, PWSTR wszURL, BOOL* pfIsSameOrigin) IsSameOrigin;
+				public new function HRESULT(ref IMFNetCrossOriginSupport self, out MF_CROSS_ORIGIN_POLICY pPolicy) GetCrossOriginPolicy;
+				public new function HRESULT(ref IMFNetCrossOriginSupport self, out PWSTR wszSourceOrigin) GetSourceOrigin;
+				public new function HRESULT(ref IMFNetCrossOriginSupport self, PWSTR wszURL, out BOOL pfIsSameOrigin) IsSameOrigin;
 			}
 		}
 		[CRepr]
@@ -14714,87 +14714,87 @@ namespace Win32
 			
 			public HRESULT AddHeader(PWSTR szHeader) mut
 			{
-				return VT.AddHeader(&this, szHeader);
+				return VT.AddHeader(ref this, szHeader);
 			}
-			public HRESULT BeginSendRequest(uint8* pbPayload, uint32 cbPayload, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginSendRequest(uint8* pbPayload, uint32 cbPayload, ref IMFAsyncCallback pCallback, IUnknown* punkState) mut
 			{
-				return VT.BeginSendRequest(&this, pbPayload, cbPayload, pCallback, punkState);
+				return VT.BeginSendRequest(ref this, pbPayload, cbPayload, ref pCallback, punkState);
 			}
-			public HRESULT EndSendRequest(IMFAsyncResult* pResult) mut
+			public HRESULT EndSendRequest(ref IMFAsyncResult pResult) mut
 			{
-				return VT.EndSendRequest(&this, pResult);
+				return VT.EndSendRequest(ref this, ref pResult);
 			}
-			public HRESULT BeginReceiveResponse(IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginReceiveResponse(ref IMFAsyncCallback pCallback, IUnknown* punkState) mut
 			{
-				return VT.BeginReceiveResponse(&this, pCallback, punkState);
+				return VT.BeginReceiveResponse(ref this, ref pCallback, punkState);
 			}
-			public HRESULT EndReceiveResponse(IMFAsyncResult* pResult) mut
+			public HRESULT EndReceiveResponse(ref IMFAsyncResult pResult) mut
 			{
-				return VT.EndReceiveResponse(&this, pResult);
+				return VT.EndReceiveResponse(ref this, ref pResult);
 			}
-			public HRESULT BeginReadPayload(uint8* pb, uint32 cb, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginReadPayload(uint8* pb, uint32 cb, ref IMFAsyncCallback pCallback, IUnknown* punkState) mut
 			{
-				return VT.BeginReadPayload(&this, pb, cb, pCallback, punkState);
+				return VT.BeginReadPayload(ref this, pb, cb, ref pCallback, punkState);
 			}
-			public HRESULT EndReadPayload(IMFAsyncResult* pResult, uint64* pqwOffset, uint32* pcbRead) mut
+			public HRESULT EndReadPayload(ref IMFAsyncResult pResult, out uint64 pqwOffset, out uint32 pcbRead) mut
 			{
-				return VT.EndReadPayload(&this, pResult, pqwOffset, pcbRead);
+				return VT.EndReadPayload(ref this, ref pResult, out pqwOffset, out pcbRead);
 			}
-			public HRESULT QueryHeader(PWSTR szHeaderName, uint32 dwIndex, PWSTR* ppszHeaderValue) mut
+			public HRESULT QueryHeader(PWSTR szHeaderName, uint32 dwIndex, out PWSTR ppszHeaderValue) mut
 			{
-				return VT.QueryHeader(&this, szHeaderName, dwIndex, ppszHeaderValue);
+				return VT.QueryHeader(ref this, szHeaderName, dwIndex, out ppszHeaderValue);
 			}
-			public HRESULT GetURL(PWSTR* ppszURL) mut
+			public HRESULT GetURL(out PWSTR ppszURL) mut
 			{
-				return VT.GetURL(&this, ppszURL);
+				return VT.GetURL(ref this, out ppszURL);
 			}
-			public HRESULT HasNullSourceOrigin(BOOL* pfNullSourceOrigin) mut
+			public HRESULT HasNullSourceOrigin(out BOOL pfNullSourceOrigin) mut
 			{
-				return VT.HasNullSourceOrigin(&this, pfNullSourceOrigin);
+				return VT.HasNullSourceOrigin(ref this, out pfNullSourceOrigin);
 			}
-			public HRESULT GetTimeSeekResult(uint64* pqwStartTime, uint64* pqwStopTime, uint64* pqwDuration) mut
+			public HRESULT GetTimeSeekResult(out uint64 pqwStartTime, out uint64 pqwStopTime, out uint64 pqwDuration) mut
 			{
-				return VT.GetTimeSeekResult(&this, pqwStartTime, pqwStopTime, pqwDuration);
+				return VT.GetTimeSeekResult(ref this, out pqwStartTime, out pqwStopTime, out pqwDuration);
 			}
-			public HRESULT GetHttpStatus(uint32* pdwHttpStatus) mut
+			public HRESULT GetHttpStatus(out uint32 pdwHttpStatus) mut
 			{
-				return VT.GetHttpStatus(&this, pdwHttpStatus);
+				return VT.GetHttpStatus(ref this, out pdwHttpStatus);
 			}
-			public HRESULT GetAtEndOfPayload(BOOL* pfAtEndOfPayload) mut
+			public HRESULT GetAtEndOfPayload(out BOOL pfAtEndOfPayload) mut
 			{
-				return VT.GetAtEndOfPayload(&this, pfAtEndOfPayload);
+				return VT.GetAtEndOfPayload(ref this, out pfAtEndOfPayload);
 			}
-			public HRESULT GetTotalLength(uint64* pqwTotalLength) mut
+			public HRESULT GetTotalLength(out uint64 pqwTotalLength) mut
 			{
-				return VT.GetTotalLength(&this, pqwTotalLength);
+				return VT.GetTotalLength(ref this, out pqwTotalLength);
 			}
-			public HRESULT GetRangeEndOffset(uint64* pqwRangeEnd) mut
+			public HRESULT GetRangeEndOffset(out uint64 pqwRangeEnd) mut
 			{
-				return VT.GetRangeEndOffset(&this, pqwRangeEnd);
+				return VT.GetRangeEndOffset(ref this, out pqwRangeEnd);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFHttpDownloadRequest *self, PWSTR szHeader) AddHeader;
-				public new function HRESULT(IMFHttpDownloadRequest *self, uint8* pbPayload, uint32 cbPayload, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginSendRequest;
-				public new function HRESULT(IMFHttpDownloadRequest *self, IMFAsyncResult* pResult) EndSendRequest;
-				public new function HRESULT(IMFHttpDownloadRequest *self, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginReceiveResponse;
-				public new function HRESULT(IMFHttpDownloadRequest *self, IMFAsyncResult* pResult) EndReceiveResponse;
-				public new function HRESULT(IMFHttpDownloadRequest *self, uint8* pb, uint32 cb, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginReadPayload;
-				public new function HRESULT(IMFHttpDownloadRequest *self, IMFAsyncResult* pResult, uint64* pqwOffset, uint32* pcbRead) EndReadPayload;
-				public new function HRESULT(IMFHttpDownloadRequest *self, PWSTR szHeaderName, uint32 dwIndex, PWSTR* ppszHeaderValue) QueryHeader;
-				public new function HRESULT(IMFHttpDownloadRequest *self, PWSTR* ppszURL) GetURL;
-				public new function HRESULT(IMFHttpDownloadRequest *self, BOOL* pfNullSourceOrigin) HasNullSourceOrigin;
-				public new function HRESULT(IMFHttpDownloadRequest *self, uint64* pqwStartTime, uint64* pqwStopTime, uint64* pqwDuration) GetTimeSeekResult;
-				public new function HRESULT(IMFHttpDownloadRequest *self, uint32* pdwHttpStatus) GetHttpStatus;
-				public new function HRESULT(IMFHttpDownloadRequest *self, BOOL* pfAtEndOfPayload) GetAtEndOfPayload;
-				public new function HRESULT(IMFHttpDownloadRequest *self, uint64* pqwTotalLength) GetTotalLength;
-				public new function HRESULT(IMFHttpDownloadRequest *self, uint64* pqwRangeEnd) GetRangeEndOffset;
-				public new function HRESULT(IMFHttpDownloadRequest *self) Close;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, PWSTR szHeader) AddHeader;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, uint8* pbPayload, uint32 cbPayload, ref IMFAsyncCallback pCallback, IUnknown* punkState) BeginSendRequest;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, ref IMFAsyncResult pResult) EndSendRequest;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, ref IMFAsyncCallback pCallback, IUnknown* punkState) BeginReceiveResponse;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, ref IMFAsyncResult pResult) EndReceiveResponse;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, uint8* pb, uint32 cb, ref IMFAsyncCallback pCallback, IUnknown* punkState) BeginReadPayload;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, ref IMFAsyncResult pResult, out uint64 pqwOffset, out uint32 pcbRead) EndReadPayload;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, PWSTR szHeaderName, uint32 dwIndex, out PWSTR ppszHeaderValue) QueryHeader;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, out PWSTR ppszURL) GetURL;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, out BOOL pfNullSourceOrigin) HasNullSourceOrigin;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, out uint64 pqwStartTime, out uint64 pqwStopTime, out uint64 pqwDuration) GetTimeSeekResult;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, out uint32 pdwHttpStatus) GetHttpStatus;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, out BOOL pfAtEndOfPayload) GetAtEndOfPayload;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, out uint64 pqwTotalLength) GetTotalLength;
+				public new function HRESULT(ref IMFHttpDownloadRequest self, out uint64 pqwRangeEnd) GetRangeEndOffset;
+				public new function HRESULT(ref IMFHttpDownloadRequest self) Close;
 			}
 		}
 		[CRepr]
@@ -14806,22 +14806,22 @@ namespace Win32
 			
 			public HRESULT SetServer(PWSTR szServerName, uint32 nPort) mut
 			{
-				return VT.SetServer(&this, szServerName, nPort);
+				return VT.SetServer(ref this, szServerName, nPort);
 			}
-			public HRESULT CreateRequest(PWSTR szObjectName, BOOL fBypassProxyCache, BOOL fSecure, PWSTR szVerb, PWSTR szReferrer, IMFHttpDownloadRequest** ppRequest) mut
+			public HRESULT CreateRequest(PWSTR szObjectName, BOOL fBypassProxyCache, BOOL fSecure, PWSTR szVerb, PWSTR szReferrer, out IMFHttpDownloadRequest* ppRequest) mut
 			{
-				return VT.CreateRequest(&this, szObjectName, fBypassProxyCache, fSecure, szVerb, szReferrer, ppRequest);
+				return VT.CreateRequest(ref this, szObjectName, fBypassProxyCache, fSecure, szVerb, szReferrer, out ppRequest);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFHttpDownloadSession *self, PWSTR szServerName, uint32 nPort) SetServer;
-				public new function HRESULT(IMFHttpDownloadSession *self, PWSTR szObjectName, BOOL fBypassProxyCache, BOOL fSecure, PWSTR szVerb, PWSTR szReferrer, IMFHttpDownloadRequest** ppRequest) CreateRequest;
-				public new function HRESULT(IMFHttpDownloadSession *self) Close;
+				public new function HRESULT(ref IMFHttpDownloadSession self, PWSTR szServerName, uint32 nPort) SetServer;
+				public new function HRESULT(ref IMFHttpDownloadSession self, PWSTR szObjectName, BOOL fBypassProxyCache, BOOL fSecure, PWSTR szVerb, PWSTR szReferrer, out IMFHttpDownloadRequest* ppRequest) CreateRequest;
+				public new function HRESULT(ref IMFHttpDownloadSession self) Close;
 			}
 		}
 		[CRepr]
@@ -14831,14 +14831,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateHttpDownloadSession(PWSTR wszScheme, IMFHttpDownloadSession** ppDownloadSession) mut
+			public HRESULT CreateHttpDownloadSession(PWSTR wszScheme, out IMFHttpDownloadSession* ppDownloadSession) mut
 			{
-				return VT.CreateHttpDownloadSession(&this, wszScheme, ppDownloadSession);
+				return VT.CreateHttpDownloadSession(ref this, wszScheme, out ppDownloadSession);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFHttpDownloadSessionProvider *self, PWSTR wszScheme, IMFHttpDownloadSession** ppDownloadSession) CreateHttpDownloadSession;
+				public new function HRESULT(ref IMFHttpDownloadSessionProvider self, PWSTR wszScheme, out IMFHttpDownloadSession* ppDownloadSession) CreateHttpDownloadSession;
 			}
 		}
 		[CRepr]
@@ -14848,14 +14848,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetMediaType(uint32 dwStreamID, IMFMediaType* pMediaType) mut
+			public HRESULT SetMediaType(uint32 dwStreamID, ref IMFMediaType pMediaType) mut
 			{
-				return VT.SetMediaType(&this, dwStreamID, pMediaType);
+				return VT.SetMediaType(ref this, dwStreamID, ref pMediaType);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaSourceEx.VTable
 			{
-				public new function HRESULT(IMFMediaSource2 *self, uint32 dwStreamID, IMFMediaType* pMediaType) SetMediaType;
+				public new function HRESULT(ref IMFMediaSource2 self, uint32 dwStreamID, ref IMFMediaType pMediaType) SetMediaType;
 			}
 		}
 		[CRepr]
@@ -14867,17 +14867,17 @@ namespace Win32
 			
 			public HRESULT SetStreamState(MF_STREAM_STATE value) mut
 			{
-				return VT.SetStreamState(&this, value);
+				return VT.SetStreamState(ref this, value);
 			}
-			public HRESULT GetStreamState(MF_STREAM_STATE* value) mut
+			public HRESULT GetStreamState(out MF_STREAM_STATE value) mut
 			{
-				return VT.GetStreamState(&this, value);
+				return VT.GetStreamState(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaStream.VTable
 			{
-				public new function HRESULT(IMFMediaStream2 *self, MF_STREAM_STATE value) SetStreamState;
-				public new function HRESULT(IMFMediaStream2 *self, MF_STREAM_STATE* value) GetStreamState;
+				public new function HRESULT(ref IMFMediaStream2 self, MF_STREAM_STATE value) SetStreamState;
+				public new function HRESULT(ref IMFMediaStream2 self, out MF_STREAM_STATE value) GetStreamState;
 			}
 		}
 		[CRepr]
@@ -14887,54 +14887,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceId(uint64* pDeviceId) mut
+			public HRESULT GetDeviceId(out uint64 pDeviceId) mut
 			{
-				return VT.GetDeviceId(&this, pDeviceId);
+				return VT.GetDeviceId(ref this, out pDeviceId);
 			}
-			public HRESULT GetDeviceType(MFSensorDeviceType* pType) mut
+			public HRESULT GetDeviceType(out MFSensorDeviceType pType) mut
 			{
-				return VT.GetDeviceType(&this, pType);
+				return VT.GetDeviceType(ref this, out pType);
 			}
-			public HRESULT ComGetFlags(uint64* pFlags) mut
+			public HRESULT ComGetFlags(out uint64 pFlags) mut
 			{
-				return VT.ComGetFlags(&this, pFlags);
+				return VT.ComGetFlags(ref this, out pFlags);
 			}
-			public HRESULT GetSymbolicLink(char16* SymbolicLink, int32 cchSymbolicLink, int32* pcchWritten) mut
+			public HRESULT GetSymbolicLink(char16* SymbolicLink, int32 cchSymbolicLink, out int32 pcchWritten) mut
 			{
-				return VT.GetSymbolicLink(&this, SymbolicLink, cchSymbolicLink, pcchWritten);
+				return VT.GetSymbolicLink(ref this, SymbolicLink, cchSymbolicLink, out pcchWritten);
 			}
 			public HRESULT GetDeviceAttributes(IMFAttributes** ppAttributes) mut
 			{
-				return VT.GetDeviceAttributes(&this, ppAttributes);
+				return VT.GetDeviceAttributes(ref this, ppAttributes);
 			}
-			public HRESULT GetStreamAttributesCount(MFSensorStreamType eType, uint32* pdwCount) mut
+			public HRESULT GetStreamAttributesCount(MFSensorStreamType eType, out uint32 pdwCount) mut
 			{
-				return VT.GetStreamAttributesCount(&this, eType, pdwCount);
+				return VT.GetStreamAttributesCount(ref this, eType, out pdwCount);
 			}
-			public HRESULT GetStreamAttributes(MFSensorStreamType eType, uint32 dwIndex, IMFAttributes** ppAttributes) mut
+			public HRESULT GetStreamAttributes(MFSensorStreamType eType, uint32 dwIndex, out IMFAttributes* ppAttributes) mut
 			{
-				return VT.GetStreamAttributes(&this, eType, dwIndex, ppAttributes);
+				return VT.GetStreamAttributes(ref this, eType, dwIndex, out ppAttributes);
 			}
 			public HRESULT SetSensorDeviceMode(MFSensorDeviceMode eMode) mut
 			{
-				return VT.SetSensorDeviceMode(&this, eMode);
+				return VT.SetSensorDeviceMode(ref this, eMode);
 			}
-			public HRESULT GetSensorDeviceMode(MFSensorDeviceMode* peMode) mut
+			public HRESULT GetSensorDeviceMode(out MFSensorDeviceMode peMode) mut
 			{
-				return VT.GetSensorDeviceMode(&this, peMode);
+				return VT.GetSensorDeviceMode(ref this, out peMode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSensorDevice *self, uint64* pDeviceId) GetDeviceId;
-				public new function HRESULT(IMFSensorDevice *self, MFSensorDeviceType* pType) GetDeviceType;
-				public new function HRESULT(IMFSensorDevice *self, uint64* pFlags) ComGetFlags;
-				public new function HRESULT(IMFSensorDevice *self, char16* SymbolicLink, int32 cchSymbolicLink, int32* pcchWritten) GetSymbolicLink;
-				public new function HRESULT(IMFSensorDevice *self, IMFAttributes** ppAttributes) GetDeviceAttributes;
-				public new function HRESULT(IMFSensorDevice *self, MFSensorStreamType eType, uint32* pdwCount) GetStreamAttributesCount;
-				public new function HRESULT(IMFSensorDevice *self, MFSensorStreamType eType, uint32 dwIndex, IMFAttributes** ppAttributes) GetStreamAttributes;
-				public new function HRESULT(IMFSensorDevice *self, MFSensorDeviceMode eMode) SetSensorDeviceMode;
-				public new function HRESULT(IMFSensorDevice *self, MFSensorDeviceMode* peMode) GetSensorDeviceMode;
+				public new function HRESULT(ref IMFSensorDevice self, out uint64 pDeviceId) GetDeviceId;
+				public new function HRESULT(ref IMFSensorDevice self, out MFSensorDeviceType pType) GetDeviceType;
+				public new function HRESULT(ref IMFSensorDevice self, out uint64 pFlags) ComGetFlags;
+				public new function HRESULT(ref IMFSensorDevice self, char16* SymbolicLink, int32 cchSymbolicLink, out int32 pcchWritten) GetSymbolicLink;
+				public new function HRESULT(ref IMFSensorDevice self, IMFAttributes** ppAttributes) GetDeviceAttributes;
+				public new function HRESULT(ref IMFSensorDevice self, MFSensorStreamType eType, out uint32 pdwCount) GetStreamAttributesCount;
+				public new function HRESULT(ref IMFSensorDevice self, MFSensorStreamType eType, uint32 dwIndex, out IMFAttributes* ppAttributes) GetStreamAttributes;
+				public new function HRESULT(ref IMFSensorDevice self, MFSensorDeviceMode eMode) SetSensorDeviceMode;
+				public new function HRESULT(ref IMFSensorDevice self, out MFSensorDeviceMode peMode) GetSensorDeviceMode;
 			}
 		}
 		[CRepr]
@@ -14944,49 +14944,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSymbolicLink(char16* SymbolicLink, int32 cchSymbolicLink, int32* pcchWritten) mut
+			public HRESULT GetSymbolicLink(char16* SymbolicLink, int32 cchSymbolicLink, out int32 pcchWritten) mut
 			{
-				return VT.GetSymbolicLink(&this, SymbolicLink, cchSymbolicLink, pcchWritten);
+				return VT.GetSymbolicLink(ref this, SymbolicLink, cchSymbolicLink, out pcchWritten);
 			}
-			public HRESULT ComGetFlags(uint64* pFlags) mut
+			public HRESULT ComGetFlags(out uint64 pFlags) mut
 			{
-				return VT.ComGetFlags(&this, pFlags);
+				return VT.ComGetFlags(ref this, out pFlags);
 			}
 			public HRESULT GetSensorGroupAttributes(IMFAttributes** ppAttributes) mut
 			{
-				return VT.GetSensorGroupAttributes(&this, ppAttributes);
+				return VT.GetSensorGroupAttributes(ref this, ppAttributes);
 			}
-			public HRESULT GetSensorDeviceCount(uint32* pdwCount) mut
+			public HRESULT GetSensorDeviceCount(out uint32 pdwCount) mut
 			{
-				return VT.GetSensorDeviceCount(&this, pdwCount);
+				return VT.GetSensorDeviceCount(ref this, out pdwCount);
 			}
-			public HRESULT GetSensorDevice(uint32 dwIndex, IMFSensorDevice** ppDevice) mut
+			public HRESULT GetSensorDevice(uint32 dwIndex, out IMFSensorDevice* ppDevice) mut
 			{
-				return VT.GetSensorDevice(&this, dwIndex, ppDevice);
+				return VT.GetSensorDevice(ref this, dwIndex, out ppDevice);
 			}
 			public HRESULT SetDefaultSensorDeviceIndex(uint32 dwIndex) mut
 			{
-				return VT.SetDefaultSensorDeviceIndex(&this, dwIndex);
+				return VT.SetDefaultSensorDeviceIndex(ref this, dwIndex);
 			}
-			public HRESULT GetDefaultSensorDeviceIndex(uint32* pdwIndex) mut
+			public HRESULT GetDefaultSensorDeviceIndex(out uint32 pdwIndex) mut
 			{
-				return VT.GetDefaultSensorDeviceIndex(&this, pdwIndex);
+				return VT.GetDefaultSensorDeviceIndex(ref this, out pdwIndex);
 			}
-			public HRESULT CreateMediaSource(IMFMediaSource** ppSource) mut
+			public HRESULT CreateMediaSource(out IMFMediaSource* ppSource) mut
 			{
-				return VT.CreateMediaSource(&this, ppSource);
+				return VT.CreateMediaSource(ref this, out ppSource);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSensorGroup *self, char16* SymbolicLink, int32 cchSymbolicLink, int32* pcchWritten) GetSymbolicLink;
-				public new function HRESULT(IMFSensorGroup *self, uint64* pFlags) ComGetFlags;
-				public new function HRESULT(IMFSensorGroup *self, IMFAttributes** ppAttributes) GetSensorGroupAttributes;
-				public new function HRESULT(IMFSensorGroup *self, uint32* pdwCount) GetSensorDeviceCount;
-				public new function HRESULT(IMFSensorGroup *self, uint32 dwIndex, IMFSensorDevice** ppDevice) GetSensorDevice;
-				public new function HRESULT(IMFSensorGroup *self, uint32 dwIndex) SetDefaultSensorDeviceIndex;
-				public new function HRESULT(IMFSensorGroup *self, uint32* pdwIndex) GetDefaultSensorDeviceIndex;
-				public new function HRESULT(IMFSensorGroup *self, IMFMediaSource** ppSource) CreateMediaSource;
+				public new function HRESULT(ref IMFSensorGroup self, char16* SymbolicLink, int32 cchSymbolicLink, out int32 pcchWritten) GetSymbolicLink;
+				public new function HRESULT(ref IMFSensorGroup self, out uint64 pFlags) ComGetFlags;
+				public new function HRESULT(ref IMFSensorGroup self, IMFAttributes** ppAttributes) GetSensorGroupAttributes;
+				public new function HRESULT(ref IMFSensorGroup self, out uint32 pdwCount) GetSensorDeviceCount;
+				public new function HRESULT(ref IMFSensorGroup self, uint32 dwIndex, out IMFSensorDevice* ppDevice) GetSensorDevice;
+				public new function HRESULT(ref IMFSensorGroup self, uint32 dwIndex) SetDefaultSensorDeviceIndex;
+				public new function HRESULT(ref IMFSensorGroup self, out uint32 pdwIndex) GetDefaultSensorDeviceIndex;
+				public new function HRESULT(ref IMFSensorGroup self, out IMFMediaSource* ppSource) CreateMediaSource;
 			}
 		}
 		[CRepr]
@@ -14996,24 +14996,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMediaTypeCount(uint32* pdwCount) mut
+			public HRESULT GetMediaTypeCount(out uint32 pdwCount) mut
 			{
-				return VT.GetMediaTypeCount(&this, pdwCount);
+				return VT.GetMediaTypeCount(ref this, out pdwCount);
 			}
-			public HRESULT GetMediaType(uint32 dwIndex, IMFMediaType** ppMediaType) mut
+			public HRESULT GetMediaType(uint32 dwIndex, out IMFMediaType* ppMediaType) mut
 			{
-				return VT.GetMediaType(&this, dwIndex, ppMediaType);
+				return VT.GetMediaType(ref this, dwIndex, out ppMediaType);
 			}
-			public HRESULT CloneSensorStream(IMFSensorStream** ppStream) mut
+			public HRESULT CloneSensorStream(out IMFSensorStream* ppStream) mut
 			{
-				return VT.CloneSensorStream(&this, ppStream);
+				return VT.CloneSensorStream(ref this, out ppStream);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFSensorStream *self, uint32* pdwCount) GetMediaTypeCount;
-				public new function HRESULT(IMFSensorStream *self, uint32 dwIndex, IMFMediaType** ppMediaType) GetMediaType;
-				public new function HRESULT(IMFSensorStream *self, IMFSensorStream** ppStream) CloneSensorStream;
+				public new function HRESULT(ref IMFSensorStream self, out uint32 pdwCount) GetMediaTypeCount;
+				public new function HRESULT(ref IMFSensorStream self, uint32 dwIndex, out IMFMediaType* ppMediaType) GetMediaType;
+				public new function HRESULT(ref IMFSensorStream self, out IMFSensorStream* ppStream) CloneSensorStream;
 			}
 		}
 		[CRepr]
@@ -15023,34 +15023,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFactoryAttributes(IMFAttributes** ppAttributes) mut
+			public HRESULT GetFactoryAttributes(out IMFAttributes* ppAttributes) mut
 			{
-				return VT.GetFactoryAttributes(&this, ppAttributes);
+				return VT.GetFactoryAttributes(ref this, out ppAttributes);
 			}
-			public HRESULT InitializeFactory(uint32 dwMaxTransformCount, IMFCollection* pSensorDevices, IMFAttributes* pAttributes) mut
+			public HRESULT InitializeFactory(uint32 dwMaxTransformCount, ref IMFCollection pSensorDevices, IMFAttributes* pAttributes) mut
 			{
-				return VT.InitializeFactory(&this, dwMaxTransformCount, pSensorDevices, pAttributes);
+				return VT.InitializeFactory(ref this, dwMaxTransformCount, ref pSensorDevices, pAttributes);
 			}
-			public HRESULT GetTransformCount(uint32* pdwCount) mut
+			public HRESULT GetTransformCount(out uint32 pdwCount) mut
 			{
-				return VT.GetTransformCount(&this, pdwCount);
+				return VT.GetTransformCount(ref this, out pdwCount);
 			}
-			public HRESULT GetTransformInformation(uint32 TransformIndex, Guid* pguidTransformId, IMFAttributes** ppAttributes, IMFCollection** ppStreamInformation) mut
+			public HRESULT GetTransformInformation(uint32 TransformIndex, out Guid pguidTransformId, IMFAttributes** ppAttributes, out IMFCollection* ppStreamInformation) mut
 			{
-				return VT.GetTransformInformation(&this, TransformIndex, pguidTransformId, ppAttributes, ppStreamInformation);
+				return VT.GetTransformInformation(ref this, TransformIndex, out pguidTransformId, ppAttributes, out ppStreamInformation);
 			}
-			public HRESULT CreateTransform(Guid* guidSensorTransformID, IMFAttributes* pAttributes, IMFDeviceTransform** ppDeviceMFT) mut
+			public HRESULT CreateTransform(in Guid guidSensorTransformID, IMFAttributes* pAttributes, out IMFDeviceTransform* ppDeviceMFT) mut
 			{
-				return VT.CreateTransform(&this, guidSensorTransformID, pAttributes, ppDeviceMFT);
+				return VT.CreateTransform(ref this, guidSensorTransformID, pAttributes, out ppDeviceMFT);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSensorTransformFactory *self, IMFAttributes** ppAttributes) GetFactoryAttributes;
-				public new function HRESULT(IMFSensorTransformFactory *self, uint32 dwMaxTransformCount, IMFCollection* pSensorDevices, IMFAttributes* pAttributes) InitializeFactory;
-				public new function HRESULT(IMFSensorTransformFactory *self, uint32* pdwCount) GetTransformCount;
-				public new function HRESULT(IMFSensorTransformFactory *self, uint32 TransformIndex, Guid* pguidTransformId, IMFAttributes** ppAttributes, IMFCollection** ppStreamInformation) GetTransformInformation;
-				public new function HRESULT(IMFSensorTransformFactory *self, Guid* guidSensorTransformID, IMFAttributes* pAttributes, IMFDeviceTransform** ppDeviceMFT) CreateTransform;
+				public new function HRESULT(ref IMFSensorTransformFactory self, out IMFAttributes* ppAttributes) GetFactoryAttributes;
+				public new function HRESULT(ref IMFSensorTransformFactory self, uint32 dwMaxTransformCount, ref IMFCollection pSensorDevices, IMFAttributes* pAttributes) InitializeFactory;
+				public new function HRESULT(ref IMFSensorTransformFactory self, out uint32 pdwCount) GetTransformCount;
+				public new function HRESULT(ref IMFSensorTransformFactory self, uint32 TransformIndex, out Guid pguidTransformId, IMFAttributes** ppAttributes, out IMFCollection* ppStreamInformation) GetTransformInformation;
+				public new function HRESULT(ref IMFSensorTransformFactory self, in Guid guidSensorTransformID, IMFAttributes* pAttributes, out IMFDeviceTransform* ppDeviceMFT) CreateTransform;
 			}
 		}
 		[CRepr]
@@ -15060,29 +15060,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProfileId(SENSORPROFILEID* pId) mut
+			public HRESULT GetProfileId(out SENSORPROFILEID pId) mut
 			{
-				return VT.GetProfileId(&this, pId);
+				return VT.GetProfileId(ref this, out pId);
 			}
 			public HRESULT AddProfileFilter(uint32 StreamId, PWSTR wzFilterSetString) mut
 			{
-				return VT.AddProfileFilter(&this, StreamId, wzFilterSetString);
+				return VT.AddProfileFilter(ref this, StreamId, wzFilterSetString);
 			}
-			public HRESULT IsMediaTypeSupported(uint32 StreamId, IMFMediaType* pMediaType, BOOL* pfSupported) mut
+			public HRESULT IsMediaTypeSupported(uint32 StreamId, ref IMFMediaType pMediaType, out BOOL pfSupported) mut
 			{
-				return VT.IsMediaTypeSupported(&this, StreamId, pMediaType, pfSupported);
+				return VT.IsMediaTypeSupported(ref this, StreamId, ref pMediaType, out pfSupported);
 			}
 			public HRESULT AddBlockedControl(PWSTR wzBlockedControl) mut
 			{
-				return VT.AddBlockedControl(&this, wzBlockedControl);
+				return VT.AddBlockedControl(ref this, wzBlockedControl);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSensorProfile *self, SENSORPROFILEID* pId) GetProfileId;
-				public new function HRESULT(IMFSensorProfile *self, uint32 StreamId, PWSTR wzFilterSetString) AddProfileFilter;
-				public new function HRESULT(IMFSensorProfile *self, uint32 StreamId, IMFMediaType* pMediaType, BOOL* pfSupported) IsMediaTypeSupported;
-				public new function HRESULT(IMFSensorProfile *self, PWSTR wzBlockedControl) AddBlockedControl;
+				public new function HRESULT(ref IMFSensorProfile self, out SENSORPROFILEID pId) GetProfileId;
+				public new function HRESULT(ref IMFSensorProfile self, uint32 StreamId, PWSTR wzFilterSetString) AddProfileFilter;
+				public new function HRESULT(ref IMFSensorProfile self, uint32 StreamId, ref IMFMediaType pMediaType, out BOOL pfSupported) IsMediaTypeSupported;
+				public new function HRESULT(ref IMFSensorProfile self, PWSTR wzBlockedControl) AddBlockedControl;
 			}
 		}
 		[CRepr]
@@ -15094,37 +15094,37 @@ namespace Win32
 			
 			public uint32 GetProfileCount() mut
 			{
-				return VT.GetProfileCount(&this);
+				return VT.GetProfileCount(ref this);
 			}
-			public HRESULT GetProfile(uint32 Index, IMFSensorProfile** ppProfile) mut
+			public HRESULT GetProfile(uint32 Index, out IMFSensorProfile* ppProfile) mut
 			{
-				return VT.GetProfile(&this, Index, ppProfile);
+				return VT.GetProfile(ref this, Index, out ppProfile);
 			}
-			public HRESULT AddProfile(IMFSensorProfile* pProfile) mut
+			public HRESULT AddProfile(ref IMFSensorProfile pProfile) mut
 			{
-				return VT.AddProfile(&this, pProfile);
+				return VT.AddProfile(ref this, ref pProfile);
 			}
-			public HRESULT FindProfile(SENSORPROFILEID* ProfileId, IMFSensorProfile** ppProfile) mut
+			public HRESULT FindProfile(ref SENSORPROFILEID ProfileId, out IMFSensorProfile* ppProfile) mut
 			{
-				return VT.FindProfile(&this, ProfileId, ppProfile);
+				return VT.FindProfile(ref this, ref ProfileId, out ppProfile);
 			}
 			public void RemoveProfileByIndex(uint32 Index) mut
 			{
-				VT.RemoveProfileByIndex(&this, Index);
+				VT.RemoveProfileByIndex(ref this, Index);
 			}
-			public void RemoveProfile(SENSORPROFILEID* ProfileId) mut
+			public void RemoveProfile(ref SENSORPROFILEID ProfileId) mut
 			{
-				VT.RemoveProfile(&this, ProfileId);
+				VT.RemoveProfile(ref this, ref ProfileId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(IMFSensorProfileCollection *self) GetProfileCount;
-				public new function HRESULT(IMFSensorProfileCollection *self, uint32 Index, IMFSensorProfile** ppProfile) GetProfile;
-				public new function HRESULT(IMFSensorProfileCollection *self, IMFSensorProfile* pProfile) AddProfile;
-				public new function HRESULT(IMFSensorProfileCollection *self, SENSORPROFILEID* ProfileId, IMFSensorProfile** ppProfile) FindProfile;
-				public new function void(IMFSensorProfileCollection *self, uint32 Index) RemoveProfileByIndex;
-				public new function void(IMFSensorProfileCollection *self, SENSORPROFILEID* ProfileId) RemoveProfile;
+				public new function uint32(ref IMFSensorProfileCollection self) GetProfileCount;
+				public new function HRESULT(ref IMFSensorProfileCollection self, uint32 Index, out IMFSensorProfile* ppProfile) GetProfile;
+				public new function HRESULT(ref IMFSensorProfileCollection self, ref IMFSensorProfile pProfile) AddProfile;
+				public new function HRESULT(ref IMFSensorProfileCollection self, ref SENSORPROFILEID ProfileId, out IMFSensorProfile* ppProfile) FindProfile;
+				public new function void(ref IMFSensorProfileCollection self, uint32 Index) RemoveProfileByIndex;
+				public new function void(ref IMFSensorProfileCollection self, ref SENSORPROFILEID ProfileId) RemoveProfile;
 			}
 		}
 		[CRepr]
@@ -15134,29 +15134,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetProcessId(uint32* pPID) mut
+			public HRESULT GetProcessId(out uint32 pPID) mut
 			{
-				return VT.GetProcessId(&this, pPID);
+				return VT.GetProcessId(ref this, out pPID);
 			}
-			public HRESULT GetStreamingState(BOOL* pfStreaming) mut
+			public HRESULT GetStreamingState(out BOOL pfStreaming) mut
 			{
-				return VT.GetStreamingState(&this, pfStreaming);
+				return VT.GetStreamingState(ref this, out pfStreaming);
 			}
-			public HRESULT GetStreamingMode(MFSensorDeviceMode* pMode) mut
+			public HRESULT GetStreamingMode(out MFSensorDeviceMode pMode) mut
 			{
-				return VT.GetStreamingMode(&this, pMode);
+				return VT.GetStreamingMode(ref this, out pMode);
 			}
-			public HRESULT GetReportTime(FILETIME* pft) mut
+			public HRESULT GetReportTime(out FILETIME pft) mut
 			{
-				return VT.GetReportTime(&this, pft);
+				return VT.GetReportTime(ref this, out pft);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSensorProcessActivity *self, uint32* pPID) GetProcessId;
-				public new function HRESULT(IMFSensorProcessActivity *self, BOOL* pfStreaming) GetStreamingState;
-				public new function HRESULT(IMFSensorProcessActivity *self, MFSensorDeviceMode* pMode) GetStreamingMode;
-				public new function HRESULT(IMFSensorProcessActivity *self, FILETIME* pft) GetReportTime;
+				public new function HRESULT(ref IMFSensorProcessActivity self, out uint32 pPID) GetProcessId;
+				public new function HRESULT(ref IMFSensorProcessActivity self, out BOOL pfStreaming) GetStreamingState;
+				public new function HRESULT(ref IMFSensorProcessActivity self, out MFSensorDeviceMode pMode) GetStreamingMode;
+				public new function HRESULT(ref IMFSensorProcessActivity self, out FILETIME pft) GetReportTime;
 			}
 		}
 		[CRepr]
@@ -15166,29 +15166,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetFriendlyName(char16* FriendlyName, uint32 cchFriendlyName, uint32* pcchWritten) mut
+			public HRESULT GetFriendlyName(char16* FriendlyName, uint32 cchFriendlyName, out uint32 pcchWritten) mut
 			{
-				return VT.GetFriendlyName(&this, FriendlyName, cchFriendlyName, pcchWritten);
+				return VT.GetFriendlyName(ref this, FriendlyName, cchFriendlyName, out pcchWritten);
 			}
-			public HRESULT GetSymbolicLink(char16* SymbolicLink, uint32 cchSymbolicLink, uint32* pcchWritten) mut
+			public HRESULT GetSymbolicLink(char16* SymbolicLink, uint32 cchSymbolicLink, out uint32 pcchWritten) mut
 			{
-				return VT.GetSymbolicLink(&this, SymbolicLink, cchSymbolicLink, pcchWritten);
+				return VT.GetSymbolicLink(ref this, SymbolicLink, cchSymbolicLink, out pcchWritten);
 			}
-			public HRESULT GetProcessCount(uint32* pcCount) mut
+			public HRESULT GetProcessCount(out uint32 pcCount) mut
 			{
-				return VT.GetProcessCount(&this, pcCount);
+				return VT.GetProcessCount(ref this, out pcCount);
 			}
-			public HRESULT GetProcessActivity(uint32 Index, IMFSensorProcessActivity** ppProcessActivity) mut
+			public HRESULT GetProcessActivity(uint32 Index, out IMFSensorProcessActivity* ppProcessActivity) mut
 			{
-				return VT.GetProcessActivity(&this, Index, ppProcessActivity);
+				return VT.GetProcessActivity(ref this, Index, out ppProcessActivity);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSensorActivityReport *self, char16* FriendlyName, uint32 cchFriendlyName, uint32* pcchWritten) GetFriendlyName;
-				public new function HRESULT(IMFSensorActivityReport *self, char16* SymbolicLink, uint32 cchSymbolicLink, uint32* pcchWritten) GetSymbolicLink;
-				public new function HRESULT(IMFSensorActivityReport *self, uint32* pcCount) GetProcessCount;
-				public new function HRESULT(IMFSensorActivityReport *self, uint32 Index, IMFSensorProcessActivity** ppProcessActivity) GetProcessActivity;
+				public new function HRESULT(ref IMFSensorActivityReport self, char16* FriendlyName, uint32 cchFriendlyName, out uint32 pcchWritten) GetFriendlyName;
+				public new function HRESULT(ref IMFSensorActivityReport self, char16* SymbolicLink, uint32 cchSymbolicLink, out uint32 pcchWritten) GetSymbolicLink;
+				public new function HRESULT(ref IMFSensorActivityReport self, out uint32 pcCount) GetProcessCount;
+				public new function HRESULT(ref IMFSensorActivityReport self, uint32 Index, out IMFSensorProcessActivity* ppProcessActivity) GetProcessActivity;
 			}
 		}
 		[CRepr]
@@ -15198,24 +15198,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCount(uint32* pcCount) mut
+			public HRESULT GetCount(out uint32 pcCount) mut
 			{
-				return VT.GetCount(&this, pcCount);
+				return VT.GetCount(ref this, out pcCount);
 			}
-			public HRESULT GetActivityReport(uint32 Index, IMFSensorActivityReport** sensorActivityReport) mut
+			public HRESULT GetActivityReport(uint32 Index, out IMFSensorActivityReport* sensorActivityReport) mut
 			{
-				return VT.GetActivityReport(&this, Index, sensorActivityReport);
+				return VT.GetActivityReport(ref this, Index, out sensorActivityReport);
 			}
-			public HRESULT GetActivityReportByDeviceName(PWSTR SymbolicName, IMFSensorActivityReport** sensorActivityReport) mut
+			public HRESULT GetActivityReportByDeviceName(PWSTR SymbolicName, out IMFSensorActivityReport* sensorActivityReport) mut
 			{
-				return VT.GetActivityReportByDeviceName(&this, SymbolicName, sensorActivityReport);
+				return VT.GetActivityReportByDeviceName(ref this, SymbolicName, out sensorActivityReport);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSensorActivitiesReport *self, uint32* pcCount) GetCount;
-				public new function HRESULT(IMFSensorActivitiesReport *self, uint32 Index, IMFSensorActivityReport** sensorActivityReport) GetActivityReport;
-				public new function HRESULT(IMFSensorActivitiesReport *self, PWSTR SymbolicName, IMFSensorActivityReport** sensorActivityReport) GetActivityReportByDeviceName;
+				public new function HRESULT(ref IMFSensorActivitiesReport self, out uint32 pcCount) GetCount;
+				public new function HRESULT(ref IMFSensorActivitiesReport self, uint32 Index, out IMFSensorActivityReport* sensorActivityReport) GetActivityReport;
+				public new function HRESULT(ref IMFSensorActivitiesReport self, PWSTR SymbolicName, out IMFSensorActivityReport* sensorActivityReport) GetActivityReportByDeviceName;
 			}
 		}
 		[CRepr]
@@ -15225,14 +15225,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnActivitiesReport(IMFSensorActivitiesReport* sensorActivitiesReport) mut
+			public HRESULT OnActivitiesReport(ref IMFSensorActivitiesReport sensorActivitiesReport) mut
 			{
-				return VT.OnActivitiesReport(&this, sensorActivitiesReport);
+				return VT.OnActivitiesReport(ref this, ref sensorActivitiesReport);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSensorActivitiesReportCallback *self, IMFSensorActivitiesReport* sensorActivitiesReport) OnActivitiesReport;
+				public new function HRESULT(ref IMFSensorActivitiesReportCallback self, ref IMFSensorActivitiesReport sensorActivitiesReport) OnActivitiesReport;
 			}
 		}
 		[CRepr]
@@ -15244,17 +15244,17 @@ namespace Win32
 			
 			public HRESULT Start() mut
 			{
-				return VT.Start(&this);
+				return VT.Start(ref this);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSensorActivityMonitor *self) Start;
-				public new function HRESULT(IMFSensorActivityMonitor *self) Stop;
+				public new function HRESULT(ref IMFSensorActivityMonitor self) Start;
+				public new function HRESULT(ref IMFSensorActivityMonitor self) Stop;
 			}
 		}
 		[CRepr]
@@ -15264,24 +15264,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetModel(MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel) mut
+			public HRESULT GetModel(out MFExtendedCameraIntrinsic_IntrinsicModel pIntrinsicModel) mut
 			{
-				return VT.GetModel(&this, pIntrinsicModel);
+				return VT.GetModel(ref this, out pIntrinsicModel);
 			}
-			public HRESULT SetModel(MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel) mut
+			public HRESULT SetModel(in MFExtendedCameraIntrinsic_IntrinsicModel pIntrinsicModel) mut
 			{
-				return VT.SetModel(&this, pIntrinsicModel);
+				return VT.SetModel(ref this, pIntrinsicModel);
 			}
-			public HRESULT GetDistortionModelType(MFCameraIntrinsic_DistortionModelType* pDistortionModelType) mut
+			public HRESULT GetDistortionModelType(out MFCameraIntrinsic_DistortionModelType pDistortionModelType) mut
 			{
-				return VT.GetDistortionModelType(&this, pDistortionModelType);
+				return VT.GetDistortionModelType(ref this, out pDistortionModelType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFExtendedCameraIntrinsicModel *self, MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel) GetModel;
-				public new function HRESULT(IMFExtendedCameraIntrinsicModel *self, MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel) SetModel;
-				public new function HRESULT(IMFExtendedCameraIntrinsicModel *self, MFCameraIntrinsic_DistortionModelType* pDistortionModelType) GetDistortionModelType;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsicModel self, out MFExtendedCameraIntrinsic_IntrinsicModel pIntrinsicModel) GetModel;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsicModel self, in MFExtendedCameraIntrinsic_IntrinsicModel pIntrinsicModel) SetModel;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsicModel self, out MFCameraIntrinsic_DistortionModelType pDistortionModelType) GetDistortionModelType;
 			}
 		}
 		[CRepr]
@@ -15291,19 +15291,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDistortionModel(MFCameraIntrinsic_DistortionModel6KT* pDistortionModel) mut
+			public HRESULT GetDistortionModel(out MFCameraIntrinsic_DistortionModel6KT pDistortionModel) mut
 			{
-				return VT.GetDistortionModel(&this, pDistortionModel);
+				return VT.GetDistortionModel(ref this, out pDistortionModel);
 			}
-			public HRESULT SetDistortionModel(MFCameraIntrinsic_DistortionModel6KT* pDistortionModel) mut
+			public HRESULT SetDistortionModel(in MFCameraIntrinsic_DistortionModel6KT pDistortionModel) mut
 			{
-				return VT.SetDistortionModel(&this, pDistortionModel);
+				return VT.SetDistortionModel(ref this, pDistortionModel);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFExtendedCameraIntrinsicsDistortionModel6KT *self, MFCameraIntrinsic_DistortionModel6KT* pDistortionModel) GetDistortionModel;
-				public new function HRESULT(IMFExtendedCameraIntrinsicsDistortionModel6KT *self, MFCameraIntrinsic_DistortionModel6KT* pDistortionModel) SetDistortionModel;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsicsDistortionModel6KT self, out MFCameraIntrinsic_DistortionModel6KT pDistortionModel) GetDistortionModel;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsicsDistortionModel6KT self, in MFCameraIntrinsic_DistortionModel6KT pDistortionModel) SetDistortionModel;
 			}
 		}
 		[CRepr]
@@ -15313,19 +15313,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDistortionModel(MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel) mut
+			public HRESULT GetDistortionModel(out MFCameraIntrinsic_DistortionModelArcTan pDistortionModel) mut
 			{
-				return VT.GetDistortionModel(&this, pDistortionModel);
+				return VT.GetDistortionModel(ref this, out pDistortionModel);
 			}
-			public HRESULT SetDistortionModel(MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel) mut
+			public HRESULT SetDistortionModel(in MFCameraIntrinsic_DistortionModelArcTan pDistortionModel) mut
 			{
-				return VT.SetDistortionModel(&this, pDistortionModel);
+				return VT.SetDistortionModel(ref this, pDistortionModel);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFExtendedCameraIntrinsicsDistortionModelArcTan *self, MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel) GetDistortionModel;
-				public new function HRESULT(IMFExtendedCameraIntrinsicsDistortionModelArcTan *self, MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel) SetDistortionModel;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsicsDistortionModelArcTan self, out MFCameraIntrinsic_DistortionModelArcTan pDistortionModel) GetDistortionModel;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsicsDistortionModelArcTan self, in MFCameraIntrinsic_DistortionModelArcTan pDistortionModel) SetDistortionModel;
 			}
 		}
 		[CRepr]
@@ -15335,39 +15335,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeFromBuffer(uint8* pbBuffer, uint32 dwBufferSize) mut
+			public HRESULT InitializeFromBuffer(ref uint8 pbBuffer, uint32 dwBufferSize) mut
 			{
-				return VT.InitializeFromBuffer(&this, pbBuffer, dwBufferSize);
+				return VT.InitializeFromBuffer(ref this, ref pbBuffer, dwBufferSize);
 			}
-			public HRESULT GetBufferSize(uint32* pdwBufferSize) mut
+			public HRESULT GetBufferSize(out uint32 pdwBufferSize) mut
 			{
-				return VT.GetBufferSize(&this, pdwBufferSize);
+				return VT.GetBufferSize(ref this, out pdwBufferSize);
 			}
-			public HRESULT SerializeToBuffer(uint8* pbBuffer, uint32* pdwBufferSize) mut
+			public HRESULT SerializeToBuffer(out uint8 pbBuffer, out uint32 pdwBufferSize) mut
 			{
-				return VT.SerializeToBuffer(&this, pbBuffer, pdwBufferSize);
+				return VT.SerializeToBuffer(ref this, out pbBuffer, out pdwBufferSize);
 			}
-			public HRESULT GetIntrinsicModelCount(uint32* pdwCount) mut
+			public HRESULT GetIntrinsicModelCount(out uint32 pdwCount) mut
 			{
-				return VT.GetIntrinsicModelCount(&this, pdwCount);
+				return VT.GetIntrinsicModelCount(ref this, out pdwCount);
 			}
-			public HRESULT GetIntrinsicModelByIndex(uint32 dwIndex, IMFExtendedCameraIntrinsicModel** ppIntrinsicModel) mut
+			public HRESULT GetIntrinsicModelByIndex(uint32 dwIndex, out IMFExtendedCameraIntrinsicModel* ppIntrinsicModel) mut
 			{
-				return VT.GetIntrinsicModelByIndex(&this, dwIndex, ppIntrinsicModel);
+				return VT.GetIntrinsicModelByIndex(ref this, dwIndex, out ppIntrinsicModel);
 			}
-			public HRESULT AddIntrinsicModel(IMFExtendedCameraIntrinsicModel* pIntrinsicModel) mut
+			public HRESULT AddIntrinsicModel(ref IMFExtendedCameraIntrinsicModel pIntrinsicModel) mut
 			{
-				return VT.AddIntrinsicModel(&this, pIntrinsicModel);
+				return VT.AddIntrinsicModel(ref this, ref pIntrinsicModel);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFExtendedCameraIntrinsics *self, uint8* pbBuffer, uint32 dwBufferSize) InitializeFromBuffer;
-				public new function HRESULT(IMFExtendedCameraIntrinsics *self, uint32* pdwBufferSize) GetBufferSize;
-				public new function HRESULT(IMFExtendedCameraIntrinsics *self, uint8* pbBuffer, uint32* pdwBufferSize) SerializeToBuffer;
-				public new function HRESULT(IMFExtendedCameraIntrinsics *self, uint32* pdwCount) GetIntrinsicModelCount;
-				public new function HRESULT(IMFExtendedCameraIntrinsics *self, uint32 dwIndex, IMFExtendedCameraIntrinsicModel** ppIntrinsicModel) GetIntrinsicModelByIndex;
-				public new function HRESULT(IMFExtendedCameraIntrinsics *self, IMFExtendedCameraIntrinsicModel* pIntrinsicModel) AddIntrinsicModel;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsics self, ref uint8 pbBuffer, uint32 dwBufferSize) InitializeFromBuffer;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsics self, out uint32 pdwBufferSize) GetBufferSize;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsics self, out uint8 pbBuffer, out uint32 pdwBufferSize) SerializeToBuffer;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsics self, out uint32 pdwCount) GetIntrinsicModelCount;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsics self, uint32 dwIndex, out IMFExtendedCameraIntrinsicModel* ppIntrinsicModel) GetIntrinsicModelByIndex;
+				public new function HRESULT(ref IMFExtendedCameraIntrinsics self, ref IMFExtendedCameraIntrinsicModel pIntrinsicModel) AddIntrinsicModel;
 			}
 		}
 		[CRepr]
@@ -15379,37 +15379,37 @@ namespace Win32
 			
 			public uint64 GetCapabilities() mut
 			{
-				return VT.GetCapabilities(&this);
+				return VT.GetCapabilities(ref this);
 			}
 			public HRESULT SetFlags(uint64 ulFlags) mut
 			{
-				return VT.SetFlags(&this, ulFlags);
+				return VT.SetFlags(ref this, ulFlags);
 			}
 			public uint64 ComGetFlags() mut
 			{
-				return VT.ComGetFlags(&this);
+				return VT.ComGetFlags(ref this);
 			}
-			public HRESULT LockPayload(uint8** ppPayload, uint32* pulPayload) mut
+			public HRESULT LockPayload(out uint8* ppPayload, out uint32 pulPayload) mut
 			{
-				return VT.LockPayload(&this, ppPayload, pulPayload);
+				return VT.LockPayload(ref this, out ppPayload, out pulPayload);
 			}
 			public HRESULT UnlockPayload() mut
 			{
-				return VT.UnlockPayload(&this);
+				return VT.UnlockPayload(ref this);
 			}
 			public HRESULT CommitSettings() mut
 			{
-				return VT.CommitSettings(&this);
+				return VT.CommitSettings(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint64(IMFExtendedCameraControl *self) GetCapabilities;
-				public new function HRESULT(IMFExtendedCameraControl *self, uint64 ulFlags) SetFlags;
-				public new function uint64(IMFExtendedCameraControl *self) ComGetFlags;
-				public new function HRESULT(IMFExtendedCameraControl *self, uint8** ppPayload, uint32* pulPayload) LockPayload;
-				public new function HRESULT(IMFExtendedCameraControl *self) UnlockPayload;
-				public new function HRESULT(IMFExtendedCameraControl *self) CommitSettings;
+				public new function uint64(ref IMFExtendedCameraControl self) GetCapabilities;
+				public new function HRESULT(ref IMFExtendedCameraControl self, uint64 ulFlags) SetFlags;
+				public new function uint64(ref IMFExtendedCameraControl self) ComGetFlags;
+				public new function HRESULT(ref IMFExtendedCameraControl self, out uint8* ppPayload, out uint32 pulPayload) LockPayload;
+				public new function HRESULT(ref IMFExtendedCameraControl self) UnlockPayload;
+				public new function HRESULT(ref IMFExtendedCameraControl self) CommitSettings;
 			}
 		}
 		[CRepr]
@@ -15419,14 +15419,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetExtendedCameraControl(uint32 dwStreamIndex, uint32 ulPropertyId, IMFExtendedCameraControl** ppControl) mut
+			public HRESULT GetExtendedCameraControl(uint32 dwStreamIndex, uint32 ulPropertyId, out IMFExtendedCameraControl* ppControl) mut
 			{
-				return VT.GetExtendedCameraControl(&this, dwStreamIndex, ulPropertyId, ppControl);
+				return VT.GetExtendedCameraControl(ref this, dwStreamIndex, ulPropertyId, out ppControl);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFExtendedCameraController *self, uint32 dwStreamIndex, uint32 ulPropertyId, IMFExtendedCameraControl** ppControl) GetExtendedCameraControl;
+				public new function HRESULT(ref IMFExtendedCameraController self, uint32 dwStreamIndex, uint32 ulPropertyId, out IMFExtendedCameraControl* ppControl) GetExtendedCameraControl;
 			}
 		}
 		[CRepr]
@@ -15436,14 +15436,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRelativePanel(uint32* panel) mut
+			public HRESULT GetRelativePanel(out uint32 panel) mut
 			{
-				return VT.GetRelativePanel(&this, panel);
+				return VT.GetRelativePanel(ref this, out panel);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFRelativePanelReport *self, uint32* panel) GetRelativePanel;
+				public new function HRESULT(ref IMFRelativePanelReport self, out uint32 panel) GetRelativePanel;
 			}
 		}
 		[CRepr]
@@ -15453,24 +15453,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT BeginGetReport(IMFAsyncCallback* pCallback, IUnknown* pState) mut
+			public HRESULT BeginGetReport(ref IMFAsyncCallback pCallback, IUnknown* pState) mut
 			{
-				return VT.BeginGetReport(&this, pCallback, pState);
+				return VT.BeginGetReport(ref this, ref pCallback, pState);
 			}
-			public HRESULT EndGetReport(IMFAsyncResult* pResult, IMFRelativePanelReport** ppRelativePanelReport) mut
+			public HRESULT EndGetReport(ref IMFAsyncResult pResult, out IMFRelativePanelReport* ppRelativePanelReport) mut
 			{
-				return VT.EndGetReport(&this, pResult, ppRelativePanelReport);
+				return VT.EndGetReport(ref this, ref pResult, out ppRelativePanelReport);
 			}
-			public HRESULT GetReport(IMFRelativePanelReport** ppRelativePanelReport) mut
+			public HRESULT GetReport(out IMFRelativePanelReport* ppRelativePanelReport) mut
 			{
-				return VT.GetReport(&this, ppRelativePanelReport);
+				return VT.GetReport(ref this, out ppRelativePanelReport);
 			}
 			[CRepr]
 			public struct VTable : IMFShutdown.VTable
 			{
-				public new function HRESULT(IMFRelativePanelWatcher *self, IMFAsyncCallback* pCallback, IUnknown* pState) BeginGetReport;
-				public new function HRESULT(IMFRelativePanelWatcher *self, IMFAsyncResult* pResult, IMFRelativePanelReport** ppRelativePanelReport) EndGetReport;
-				public new function HRESULT(IMFRelativePanelWatcher *self, IMFRelativePanelReport** ppRelativePanelReport) GetReport;
+				public new function HRESULT(ref IMFRelativePanelWatcher self, ref IMFAsyncCallback pCallback, IUnknown* pState) BeginGetReport;
+				public new function HRESULT(ref IMFRelativePanelWatcher self, ref IMFAsyncResult pResult, out IMFRelativePanelReport* ppRelativePanelReport) EndGetReport;
+				public new function HRESULT(ref IMFRelativePanelWatcher self, out IMFRelativePanelReport* ppRelativePanelReport) GetReport;
 			}
 		}
 		[CRepr]
@@ -15480,14 +15480,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOcclusionState(uint32* occlusionState) mut
+			public HRESULT GetOcclusionState(out uint32 occlusionState) mut
 			{
-				return VT.GetOcclusionState(&this, occlusionState);
+				return VT.GetOcclusionState(ref this, out occlusionState);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCameraOcclusionStateReport *self, uint32* occlusionState) GetOcclusionState;
+				public new function HRESULT(ref IMFCameraOcclusionStateReport self, out uint32 occlusionState) GetOcclusionState;
 			}
 		}
 		[CRepr]
@@ -15497,14 +15497,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnOcclusionStateReport(IMFCameraOcclusionStateReport* occlusionStateReport) mut
+			public HRESULT OnOcclusionStateReport(ref IMFCameraOcclusionStateReport occlusionStateReport) mut
 			{
-				return VT.OnOcclusionStateReport(&this, occlusionStateReport);
+				return VT.OnOcclusionStateReport(ref this, ref occlusionStateReport);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCameraOcclusionStateReportCallback *self, IMFCameraOcclusionStateReport* occlusionStateReport) OnOcclusionStateReport;
+				public new function HRESULT(ref IMFCameraOcclusionStateReportCallback self, ref IMFCameraOcclusionStateReport occlusionStateReport) OnOcclusionStateReport;
 			}
 		}
 		[CRepr]
@@ -15516,22 +15516,22 @@ namespace Win32
 			
 			public HRESULT Start() mut
 			{
-				return VT.Start(&this);
+				return VT.Start(ref this);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public uint32 GetSupportedStates() mut
 			{
-				return VT.GetSupportedStates(&this);
+				return VT.GetSupportedStates(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCameraOcclusionStateMonitor *self) Start;
-				public new function HRESULT(IMFCameraOcclusionStateMonitor *self) Stop;
-				public new function uint32(IMFCameraOcclusionStateMonitor *self) GetSupportedStates;
+				public new function HRESULT(ref IMFCameraOcclusionStateMonitor self) Start;
+				public new function HRESULT(ref IMFCameraOcclusionStateMonitor self) Stop;
+				public new function uint32(ref IMFCameraOcclusionStateMonitor self) GetSupportedStates;
 			}
 		}
 		[CRepr]
@@ -15541,14 +15541,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitializeCaptureSampleAllocator(uint32 cbSampleSize, uint32 cbCaptureMetadataSize, uint32 cbAlignment, uint32 cMinimumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType) mut
+			public HRESULT InitializeCaptureSampleAllocator(uint32 cbSampleSize, uint32 cbCaptureMetadataSize, uint32 cbAlignment, uint32 cMinimumSamples, IMFAttributes* pAttributes, ref IMFMediaType pMediaType) mut
 			{
-				return VT.InitializeCaptureSampleAllocator(&this, cbSampleSize, cbCaptureMetadataSize, cbAlignment, cMinimumSamples, pAttributes, pMediaType);
+				return VT.InitializeCaptureSampleAllocator(ref this, cbSampleSize, cbCaptureMetadataSize, cbAlignment, cMinimumSamples, pAttributes, ref pMediaType);
 			}
 			[CRepr]
 			public struct VTable : IMFVideoSampleAllocator.VTable
 			{
-				public new function HRESULT(IMFVideoCaptureSampleAllocator *self, uint32 cbSampleSize, uint32 cbCaptureMetadataSize, uint32 cbAlignment, uint32 cMinimumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType) InitializeCaptureSampleAllocator;
+				public new function HRESULT(ref IMFVideoCaptureSampleAllocator self, uint32 cbSampleSize, uint32 cbCaptureMetadataSize, uint32 cbAlignment, uint32 cMinimumSamples, IMFAttributes* pAttributes, ref IMFMediaType pMediaType) InitializeCaptureSampleAllocator;
 			}
 		}
 		[CRepr]
@@ -15558,19 +15558,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDefaultAllocator(uint32 dwOutputStreamID, IUnknown* pAllocator) mut
+			public HRESULT SetDefaultAllocator(uint32 dwOutputStreamID, ref IUnknown pAllocator) mut
 			{
-				return VT.SetDefaultAllocator(&this, dwOutputStreamID, pAllocator);
+				return VT.SetDefaultAllocator(ref this, dwOutputStreamID, ref pAllocator);
 			}
-			public HRESULT GetAllocatorUsage(uint32 dwOutputStreamID, uint32* pdwInputStreamID, MFSampleAllocatorUsage* peUsage) mut
+			public HRESULT GetAllocatorUsage(uint32 dwOutputStreamID, out uint32 pdwInputStreamID, out MFSampleAllocatorUsage peUsage) mut
 			{
-				return VT.GetAllocatorUsage(&this, dwOutputStreamID, pdwInputStreamID, peUsage);
+				return VT.GetAllocatorUsage(ref this, dwOutputStreamID, out pdwInputStreamID, out peUsage);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSampleAllocatorControl *self, uint32 dwOutputStreamID, IUnknown* pAllocator) SetDefaultAllocator;
-				public new function HRESULT(IMFSampleAllocatorControl *self, uint32 dwOutputStreamID, uint32* pdwInputStreamID, MFSampleAllocatorUsage* peUsage) GetAllocatorUsage;
+				public new function HRESULT(ref IMFSampleAllocatorControl self, uint32 dwOutputStreamID, ref IUnknown pAllocator) SetDefaultAllocator;
+				public new function HRESULT(ref IMFSampleAllocatorControl self, uint32 dwOutputStreamID, out uint32 pdwInputStreamID, out MFSampleAllocatorUsage peUsage) GetAllocatorUsage;
 			}
 		}
 		[CRepr]
@@ -15580,44 +15580,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetHeaderSize(IMFMediaBuffer* pIStartOfContent, uint64* cbHeaderSize) mut
+			public HRESULT GetHeaderSize(ref IMFMediaBuffer pIStartOfContent, out uint64 cbHeaderSize) mut
 			{
-				return VT.GetHeaderSize(&this, pIStartOfContent, cbHeaderSize);
+				return VT.GetHeaderSize(ref this, ref pIStartOfContent, out cbHeaderSize);
 			}
-			public HRESULT ParseHeader(IMFMediaBuffer* pIHeaderBuffer, uint64 cbOffsetWithinHeader) mut
+			public HRESULT ParseHeader(ref IMFMediaBuffer pIHeaderBuffer, uint64 cbOffsetWithinHeader) mut
 			{
-				return VT.ParseHeader(&this, pIHeaderBuffer, cbOffsetWithinHeader);
+				return VT.ParseHeader(ref this, ref pIHeaderBuffer, cbOffsetWithinHeader);
 			}
-			public HRESULT GenerateHeader(IMFMediaBuffer* pIHeader, uint32* pcbHeader) mut
+			public HRESULT GenerateHeader(out IMFMediaBuffer pIHeader, out uint32 pcbHeader) mut
 			{
-				return VT.GenerateHeader(&this, pIHeader, pcbHeader);
+				return VT.GenerateHeader(ref this, out pIHeader, out pcbHeader);
 			}
-			public HRESULT GetProfile(IMFASFProfile** ppIProfile) mut
+			public HRESULT GetProfile(out IMFASFProfile* ppIProfile) mut
 			{
-				return VT.GetProfile(&this, ppIProfile);
+				return VT.GetProfile(ref this, out ppIProfile);
 			}
-			public HRESULT SetProfile(IMFASFProfile* pIProfile) mut
+			public HRESULT SetProfile(ref IMFASFProfile pIProfile) mut
 			{
-				return VT.SetProfile(&this, pIProfile);
+				return VT.SetProfile(ref this, ref pIProfile);
 			}
-			public HRESULT GeneratePresentationDescriptor(IMFPresentationDescriptor** ppIPresentationDescriptor) mut
+			public HRESULT GeneratePresentationDescriptor(out IMFPresentationDescriptor* ppIPresentationDescriptor) mut
 			{
-				return VT.GeneratePresentationDescriptor(&this, ppIPresentationDescriptor);
+				return VT.GeneratePresentationDescriptor(ref this, out ppIPresentationDescriptor);
 			}
-			public HRESULT GetEncodingConfigurationPropertyStore(uint16 wStreamNumber, IPropertyStore** ppIStore) mut
+			public HRESULT GetEncodingConfigurationPropertyStore(uint16 wStreamNumber, out IPropertyStore* ppIStore) mut
 			{
-				return VT.GetEncodingConfigurationPropertyStore(&this, wStreamNumber, ppIStore);
+				return VT.GetEncodingConfigurationPropertyStore(ref this, wStreamNumber, out ppIStore);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFASFContentInfo *self, IMFMediaBuffer* pIStartOfContent, uint64* cbHeaderSize) GetHeaderSize;
-				public new function HRESULT(IMFASFContentInfo *self, IMFMediaBuffer* pIHeaderBuffer, uint64 cbOffsetWithinHeader) ParseHeader;
-				public new function HRESULT(IMFASFContentInfo *self, IMFMediaBuffer* pIHeader, uint32* pcbHeader) GenerateHeader;
-				public new function HRESULT(IMFASFContentInfo *self, IMFASFProfile** ppIProfile) GetProfile;
-				public new function HRESULT(IMFASFContentInfo *self, IMFASFProfile* pIProfile) SetProfile;
-				public new function HRESULT(IMFASFContentInfo *self, IMFPresentationDescriptor** ppIPresentationDescriptor) GeneratePresentationDescriptor;
-				public new function HRESULT(IMFASFContentInfo *self, uint16 wStreamNumber, IPropertyStore** ppIStore) GetEncodingConfigurationPropertyStore;
+				public new function HRESULT(ref IMFASFContentInfo self, ref IMFMediaBuffer pIStartOfContent, out uint64 cbHeaderSize) GetHeaderSize;
+				public new function HRESULT(ref IMFASFContentInfo self, ref IMFMediaBuffer pIHeaderBuffer, uint64 cbOffsetWithinHeader) ParseHeader;
+				public new function HRESULT(ref IMFASFContentInfo self, out IMFMediaBuffer pIHeader, out uint32 pcbHeader) GenerateHeader;
+				public new function HRESULT(ref IMFASFContentInfo self, out IMFASFProfile* ppIProfile) GetProfile;
+				public new function HRESULT(ref IMFASFContentInfo self, ref IMFASFProfile pIProfile) SetProfile;
+				public new function HRESULT(ref IMFASFContentInfo self, out IMFPresentationDescriptor* ppIPresentationDescriptor) GeneratePresentationDescriptor;
+				public new function HRESULT(ref IMFASFContentInfo self, uint16 wStreamNumber, out IPropertyStore* ppIStore) GetEncodingConfigurationPropertyStore;
 			}
 		}
 		[CRepr]
@@ -15627,89 +15627,89 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamCount(uint32* pcStreams) mut
+			public HRESULT GetStreamCount(out uint32 pcStreams) mut
 			{
-				return VT.GetStreamCount(&this, pcStreams);
+				return VT.GetStreamCount(ref this, out pcStreams);
 			}
-			public HRESULT GetStream(uint32 dwStreamIndex, uint16* pwStreamNumber, IMFASFStreamConfig** ppIStream) mut
+			public HRESULT GetStream(uint32 dwStreamIndex, out uint16 pwStreamNumber, out IMFASFStreamConfig* ppIStream) mut
 			{
-				return VT.GetStream(&this, dwStreamIndex, pwStreamNumber, ppIStream);
+				return VT.GetStream(ref this, dwStreamIndex, out pwStreamNumber, out ppIStream);
 			}
-			public HRESULT GetStreamByNumber(uint16 wStreamNumber, IMFASFStreamConfig** ppIStream) mut
+			public HRESULT GetStreamByNumber(uint16 wStreamNumber, out IMFASFStreamConfig* ppIStream) mut
 			{
-				return VT.GetStreamByNumber(&this, wStreamNumber, ppIStream);
+				return VT.GetStreamByNumber(ref this, wStreamNumber, out ppIStream);
 			}
-			public HRESULT SetStream(IMFASFStreamConfig* pIStream) mut
+			public HRESULT SetStream(ref IMFASFStreamConfig pIStream) mut
 			{
-				return VT.SetStream(&this, pIStream);
+				return VT.SetStream(ref this, ref pIStream);
 			}
 			public HRESULT RemoveStream(uint16 wStreamNumber) mut
 			{
-				return VT.RemoveStream(&this, wStreamNumber);
+				return VT.RemoveStream(ref this, wStreamNumber);
 			}
-			public HRESULT CreateStream(IMFMediaType* pIMediaType, IMFASFStreamConfig** ppIStream) mut
+			public HRESULT CreateStream(ref IMFMediaType pIMediaType, out IMFASFStreamConfig* ppIStream) mut
 			{
-				return VT.CreateStream(&this, pIMediaType, ppIStream);
+				return VT.CreateStream(ref this, ref pIMediaType, out ppIStream);
 			}
-			public HRESULT GetMutualExclusionCount(uint32* pcMutexs) mut
+			public HRESULT GetMutualExclusionCount(out uint32 pcMutexs) mut
 			{
-				return VT.GetMutualExclusionCount(&this, pcMutexs);
+				return VT.GetMutualExclusionCount(ref this, out pcMutexs);
 			}
-			public HRESULT GetMutualExclusion(uint32 dwMutexIndex, IMFASFMutualExclusion** ppIMutex) mut
+			public HRESULT GetMutualExclusion(uint32 dwMutexIndex, out IMFASFMutualExclusion* ppIMutex) mut
 			{
-				return VT.GetMutualExclusion(&this, dwMutexIndex, ppIMutex);
+				return VT.GetMutualExclusion(ref this, dwMutexIndex, out ppIMutex);
 			}
-			public HRESULT AddMutualExclusion(IMFASFMutualExclusion* pIMutex) mut
+			public HRESULT AddMutualExclusion(ref IMFASFMutualExclusion pIMutex) mut
 			{
-				return VT.AddMutualExclusion(&this, pIMutex);
+				return VT.AddMutualExclusion(ref this, ref pIMutex);
 			}
 			public HRESULT RemoveMutualExclusion(uint32 dwMutexIndex) mut
 			{
-				return VT.RemoveMutualExclusion(&this, dwMutexIndex);
+				return VT.RemoveMutualExclusion(ref this, dwMutexIndex);
 			}
-			public HRESULT CreateMutualExclusion(IMFASFMutualExclusion** ppIMutex) mut
+			public HRESULT CreateMutualExclusion(out IMFASFMutualExclusion* ppIMutex) mut
 			{
-				return VT.CreateMutualExclusion(&this, ppIMutex);
+				return VT.CreateMutualExclusion(ref this, out ppIMutex);
 			}
-			public HRESULT GetStreamPrioritization(IMFASFStreamPrioritization** ppIStreamPrioritization) mut
+			public HRESULT GetStreamPrioritization(out IMFASFStreamPrioritization* ppIStreamPrioritization) mut
 			{
-				return VT.GetStreamPrioritization(&this, ppIStreamPrioritization);
+				return VT.GetStreamPrioritization(ref this, out ppIStreamPrioritization);
 			}
-			public HRESULT AddStreamPrioritization(IMFASFStreamPrioritization* pIStreamPrioritization) mut
+			public HRESULT AddStreamPrioritization(ref IMFASFStreamPrioritization pIStreamPrioritization) mut
 			{
-				return VT.AddStreamPrioritization(&this, pIStreamPrioritization);
+				return VT.AddStreamPrioritization(ref this, ref pIStreamPrioritization);
 			}
 			public HRESULT RemoveStreamPrioritization() mut
 			{
-				return VT.RemoveStreamPrioritization(&this);
+				return VT.RemoveStreamPrioritization(ref this);
 			}
-			public HRESULT CreateStreamPrioritization(IMFASFStreamPrioritization** ppIStreamPrioritization) mut
+			public HRESULT CreateStreamPrioritization(out IMFASFStreamPrioritization* ppIStreamPrioritization) mut
 			{
-				return VT.CreateStreamPrioritization(&this, ppIStreamPrioritization);
+				return VT.CreateStreamPrioritization(ref this, out ppIStreamPrioritization);
 			}
-			public HRESULT Clone(IMFASFProfile** ppIProfile) mut
+			public HRESULT Clone(out IMFASFProfile* ppIProfile) mut
 			{
-				return VT.Clone(&this, ppIProfile);
+				return VT.Clone(ref this, out ppIProfile);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFASFProfile *self, uint32* pcStreams) GetStreamCount;
-				public new function HRESULT(IMFASFProfile *self, uint32 dwStreamIndex, uint16* pwStreamNumber, IMFASFStreamConfig** ppIStream) GetStream;
-				public new function HRESULT(IMFASFProfile *self, uint16 wStreamNumber, IMFASFStreamConfig** ppIStream) GetStreamByNumber;
-				public new function HRESULT(IMFASFProfile *self, IMFASFStreamConfig* pIStream) SetStream;
-				public new function HRESULT(IMFASFProfile *self, uint16 wStreamNumber) RemoveStream;
-				public new function HRESULT(IMFASFProfile *self, IMFMediaType* pIMediaType, IMFASFStreamConfig** ppIStream) CreateStream;
-				public new function HRESULT(IMFASFProfile *self, uint32* pcMutexs) GetMutualExclusionCount;
-				public new function HRESULT(IMFASFProfile *self, uint32 dwMutexIndex, IMFASFMutualExclusion** ppIMutex) GetMutualExclusion;
-				public new function HRESULT(IMFASFProfile *self, IMFASFMutualExclusion* pIMutex) AddMutualExclusion;
-				public new function HRESULT(IMFASFProfile *self, uint32 dwMutexIndex) RemoveMutualExclusion;
-				public new function HRESULT(IMFASFProfile *self, IMFASFMutualExclusion** ppIMutex) CreateMutualExclusion;
-				public new function HRESULT(IMFASFProfile *self, IMFASFStreamPrioritization** ppIStreamPrioritization) GetStreamPrioritization;
-				public new function HRESULT(IMFASFProfile *self, IMFASFStreamPrioritization* pIStreamPrioritization) AddStreamPrioritization;
-				public new function HRESULT(IMFASFProfile *self) RemoveStreamPrioritization;
-				public new function HRESULT(IMFASFProfile *self, IMFASFStreamPrioritization** ppIStreamPrioritization) CreateStreamPrioritization;
-				public new function HRESULT(IMFASFProfile *self, IMFASFProfile** ppIProfile) Clone;
+				public new function HRESULT(ref IMFASFProfile self, out uint32 pcStreams) GetStreamCount;
+				public new function HRESULT(ref IMFASFProfile self, uint32 dwStreamIndex, out uint16 pwStreamNumber, out IMFASFStreamConfig* ppIStream) GetStream;
+				public new function HRESULT(ref IMFASFProfile self, uint16 wStreamNumber, out IMFASFStreamConfig* ppIStream) GetStreamByNumber;
+				public new function HRESULT(ref IMFASFProfile self, ref IMFASFStreamConfig pIStream) SetStream;
+				public new function HRESULT(ref IMFASFProfile self, uint16 wStreamNumber) RemoveStream;
+				public new function HRESULT(ref IMFASFProfile self, ref IMFMediaType pIMediaType, out IMFASFStreamConfig* ppIStream) CreateStream;
+				public new function HRESULT(ref IMFASFProfile self, out uint32 pcMutexs) GetMutualExclusionCount;
+				public new function HRESULT(ref IMFASFProfile self, uint32 dwMutexIndex, out IMFASFMutualExclusion* ppIMutex) GetMutualExclusion;
+				public new function HRESULT(ref IMFASFProfile self, ref IMFASFMutualExclusion pIMutex) AddMutualExclusion;
+				public new function HRESULT(ref IMFASFProfile self, uint32 dwMutexIndex) RemoveMutualExclusion;
+				public new function HRESULT(ref IMFASFProfile self, out IMFASFMutualExclusion* ppIMutex) CreateMutualExclusion;
+				public new function HRESULT(ref IMFASFProfile self, out IMFASFStreamPrioritization* ppIStreamPrioritization) GetStreamPrioritization;
+				public new function HRESULT(ref IMFASFProfile self, ref IMFASFStreamPrioritization pIStreamPrioritization) AddStreamPrioritization;
+				public new function HRESULT(ref IMFASFProfile self) RemoveStreamPrioritization;
+				public new function HRESULT(ref IMFASFProfile self, out IMFASFStreamPrioritization* ppIStreamPrioritization) CreateStreamPrioritization;
+				public new function HRESULT(ref IMFASFProfile self, out IMFASFProfile* ppIProfile) Clone;
 			}
 		}
 		[CRepr]
@@ -15719,59 +15719,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamType(Guid* pguidStreamType) mut
+			public HRESULT GetStreamType(out Guid pguidStreamType) mut
 			{
-				return VT.GetStreamType(&this, pguidStreamType);
+				return VT.GetStreamType(ref this, out pguidStreamType);
 			}
 			public uint16 GetStreamNumber() mut
 			{
-				return VT.GetStreamNumber(&this);
+				return VT.GetStreamNumber(ref this);
 			}
 			public HRESULT SetStreamNumber(uint16 wStreamNum) mut
 			{
-				return VT.SetStreamNumber(&this, wStreamNum);
+				return VT.SetStreamNumber(ref this, wStreamNum);
 			}
-			public HRESULT GetMediaType(IMFMediaType** ppIMediaType) mut
+			public HRESULT GetMediaType(out IMFMediaType* ppIMediaType) mut
 			{
-				return VT.GetMediaType(&this, ppIMediaType);
+				return VT.GetMediaType(ref this, out ppIMediaType);
 			}
-			public HRESULT SetMediaType(IMFMediaType* pIMediaType) mut
+			public HRESULT SetMediaType(ref IMFMediaType pIMediaType) mut
 			{
-				return VT.SetMediaType(&this, pIMediaType);
+				return VT.SetMediaType(ref this, ref pIMediaType);
 			}
-			public HRESULT GetPayloadExtensionCount(uint16* pcPayloadExtensions) mut
+			public HRESULT GetPayloadExtensionCount(out uint16 pcPayloadExtensions) mut
 			{
-				return VT.GetPayloadExtensionCount(&this, pcPayloadExtensions);
+				return VT.GetPayloadExtensionCount(ref this, out pcPayloadExtensions);
 			}
-			public HRESULT GetPayloadExtension(uint16 wPayloadExtensionNumber, Guid* pguidExtensionSystemID, uint16* pcbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32* pcbExtensionSystemInfo) mut
+			public HRESULT GetPayloadExtension(uint16 wPayloadExtensionNumber, out Guid pguidExtensionSystemID, out uint16 pcbExtensionDataSize, out uint8 pbExtensionSystemInfo, out uint32 pcbExtensionSystemInfo) mut
 			{
-				return VT.GetPayloadExtension(&this, wPayloadExtensionNumber, pguidExtensionSystemID, pcbExtensionDataSize, pbExtensionSystemInfo, pcbExtensionSystemInfo);
+				return VT.GetPayloadExtension(ref this, wPayloadExtensionNumber, out pguidExtensionSystemID, out pcbExtensionDataSize, out pbExtensionSystemInfo, out pcbExtensionSystemInfo);
 			}
 			public HRESULT AddPayloadExtension(Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) mut
 			{
-				return VT.AddPayloadExtension(&this, guidExtensionSystemID, cbExtensionDataSize, pbExtensionSystemInfo, cbExtensionSystemInfo);
+				return VT.AddPayloadExtension(ref this, guidExtensionSystemID, cbExtensionDataSize, pbExtensionSystemInfo, cbExtensionSystemInfo);
 			}
 			public HRESULT RemoveAllPayloadExtensions() mut
 			{
-				return VT.RemoveAllPayloadExtensions(&this);
+				return VT.RemoveAllPayloadExtensions(ref this);
 			}
-			public HRESULT Clone(IMFASFStreamConfig** ppIStreamConfig) mut
+			public HRESULT Clone(out IMFASFStreamConfig* ppIStreamConfig) mut
 			{
-				return VT.Clone(&this, ppIStreamConfig);
+				return VT.Clone(ref this, out ppIStreamConfig);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFASFStreamConfig *self, Guid* pguidStreamType) GetStreamType;
-				public new function uint16(IMFASFStreamConfig *self) GetStreamNumber;
-				public new function HRESULT(IMFASFStreamConfig *self, uint16 wStreamNum) SetStreamNumber;
-				public new function HRESULT(IMFASFStreamConfig *self, IMFMediaType** ppIMediaType) GetMediaType;
-				public new function HRESULT(IMFASFStreamConfig *self, IMFMediaType* pIMediaType) SetMediaType;
-				public new function HRESULT(IMFASFStreamConfig *self, uint16* pcPayloadExtensions) GetPayloadExtensionCount;
-				public new function HRESULT(IMFASFStreamConfig *self, uint16 wPayloadExtensionNumber, Guid* pguidExtensionSystemID, uint16* pcbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32* pcbExtensionSystemInfo) GetPayloadExtension;
-				public new function HRESULT(IMFASFStreamConfig *self, Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) AddPayloadExtension;
-				public new function HRESULT(IMFASFStreamConfig *self) RemoveAllPayloadExtensions;
-				public new function HRESULT(IMFASFStreamConfig *self, IMFASFStreamConfig** ppIStreamConfig) Clone;
+				public new function HRESULT(ref IMFASFStreamConfig self, out Guid pguidStreamType) GetStreamType;
+				public new function uint16(ref IMFASFStreamConfig self) GetStreamNumber;
+				public new function HRESULT(ref IMFASFStreamConfig self, uint16 wStreamNum) SetStreamNumber;
+				public new function HRESULT(ref IMFASFStreamConfig self, out IMFMediaType* ppIMediaType) GetMediaType;
+				public new function HRESULT(ref IMFASFStreamConfig self, ref IMFMediaType pIMediaType) SetMediaType;
+				public new function HRESULT(ref IMFASFStreamConfig self, out uint16 pcPayloadExtensions) GetPayloadExtensionCount;
+				public new function HRESULT(ref IMFASFStreamConfig self, uint16 wPayloadExtensionNumber, out Guid pguidExtensionSystemID, out uint16 pcbExtensionDataSize, out uint8 pbExtensionSystemInfo, out uint32 pcbExtensionSystemInfo) GetPayloadExtension;
+				public new function HRESULT(ref IMFASFStreamConfig self, Guid guidExtensionSystemID, uint16 cbExtensionDataSize, uint8* pbExtensionSystemInfo, uint32 cbExtensionSystemInfo) AddPayloadExtension;
+				public new function HRESULT(ref IMFASFStreamConfig self) RemoveAllPayloadExtensions;
+				public new function HRESULT(ref IMFASFStreamConfig self, out IMFASFStreamConfig* ppIStreamConfig) Clone;
 			}
 		}
 		[CRepr]
@@ -15781,54 +15781,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ComGetType(Guid* pguidType) mut
+			public HRESULT ComGetType(out Guid pguidType) mut
 			{
-				return VT.ComGetType(&this, pguidType);
+				return VT.ComGetType(ref this, out pguidType);
 			}
-			public HRESULT SetType(Guid* guidType) mut
+			public HRESULT SetType(in Guid guidType) mut
 			{
-				return VT.SetType(&this, guidType);
+				return VT.SetType(ref this, guidType);
 			}
-			public HRESULT GetRecordCount(uint32* pdwRecordCount) mut
+			public HRESULT GetRecordCount(out uint32 pdwRecordCount) mut
 			{
-				return VT.GetRecordCount(&this, pdwRecordCount);
+				return VT.GetRecordCount(ref this, out pdwRecordCount);
 			}
-			public HRESULT GetStreamsForRecord(uint32 dwRecordNumber, uint16* pwStreamNumArray, uint32* pcStreams) mut
+			public HRESULT GetStreamsForRecord(uint32 dwRecordNumber, out uint16 pwStreamNumArray, out uint32 pcStreams) mut
 			{
-				return VT.GetStreamsForRecord(&this, dwRecordNumber, pwStreamNumArray, pcStreams);
+				return VT.GetStreamsForRecord(ref this, dwRecordNumber, out pwStreamNumArray, out pcStreams);
 			}
 			public HRESULT AddStreamForRecord(uint32 dwRecordNumber, uint16 wStreamNumber) mut
 			{
-				return VT.AddStreamForRecord(&this, dwRecordNumber, wStreamNumber);
+				return VT.AddStreamForRecord(ref this, dwRecordNumber, wStreamNumber);
 			}
 			public HRESULT RemoveStreamFromRecord(uint32 dwRecordNumber, uint16 wStreamNumber) mut
 			{
-				return VT.RemoveStreamFromRecord(&this, dwRecordNumber, wStreamNumber);
+				return VT.RemoveStreamFromRecord(ref this, dwRecordNumber, wStreamNumber);
 			}
 			public HRESULT RemoveRecord(uint32 dwRecordNumber) mut
 			{
-				return VT.RemoveRecord(&this, dwRecordNumber);
+				return VT.RemoveRecord(ref this, dwRecordNumber);
 			}
-			public HRESULT AddRecord(uint32* pdwRecordNumber) mut
+			public HRESULT AddRecord(out uint32 pdwRecordNumber) mut
 			{
-				return VT.AddRecord(&this, pdwRecordNumber);
+				return VT.AddRecord(ref this, out pdwRecordNumber);
 			}
-			public HRESULT Clone(IMFASFMutualExclusion** ppIMutex) mut
+			public HRESULT Clone(out IMFASFMutualExclusion* ppIMutex) mut
 			{
-				return VT.Clone(&this, ppIMutex);
+				return VT.Clone(ref this, out ppIMutex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFASFMutualExclusion *self, Guid* pguidType) ComGetType;
-				public new function HRESULT(IMFASFMutualExclusion *self, Guid* guidType) SetType;
-				public new function HRESULT(IMFASFMutualExclusion *self, uint32* pdwRecordCount) GetRecordCount;
-				public new function HRESULT(IMFASFMutualExclusion *self, uint32 dwRecordNumber, uint16* pwStreamNumArray, uint32* pcStreams) GetStreamsForRecord;
-				public new function HRESULT(IMFASFMutualExclusion *self, uint32 dwRecordNumber, uint16 wStreamNumber) AddStreamForRecord;
-				public new function HRESULT(IMFASFMutualExclusion *self, uint32 dwRecordNumber, uint16 wStreamNumber) RemoveStreamFromRecord;
-				public new function HRESULT(IMFASFMutualExclusion *self, uint32 dwRecordNumber) RemoveRecord;
-				public new function HRESULT(IMFASFMutualExclusion *self, uint32* pdwRecordNumber) AddRecord;
-				public new function HRESULT(IMFASFMutualExclusion *self, IMFASFMutualExclusion** ppIMutex) Clone;
+				public new function HRESULT(ref IMFASFMutualExclusion self, out Guid pguidType) ComGetType;
+				public new function HRESULT(ref IMFASFMutualExclusion self, in Guid guidType) SetType;
+				public new function HRESULT(ref IMFASFMutualExclusion self, out uint32 pdwRecordCount) GetRecordCount;
+				public new function HRESULT(ref IMFASFMutualExclusion self, uint32 dwRecordNumber, out uint16 pwStreamNumArray, out uint32 pcStreams) GetStreamsForRecord;
+				public new function HRESULT(ref IMFASFMutualExclusion self, uint32 dwRecordNumber, uint16 wStreamNumber) AddStreamForRecord;
+				public new function HRESULT(ref IMFASFMutualExclusion self, uint32 dwRecordNumber, uint16 wStreamNumber) RemoveStreamFromRecord;
+				public new function HRESULT(ref IMFASFMutualExclusion self, uint32 dwRecordNumber) RemoveRecord;
+				public new function HRESULT(ref IMFASFMutualExclusion self, out uint32 pdwRecordNumber) AddRecord;
+				public new function HRESULT(ref IMFASFMutualExclusion self, out IMFASFMutualExclusion* ppIMutex) Clone;
 			}
 		}
 		[CRepr]
@@ -15838,34 +15838,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamCount(uint32* pdwStreamCount) mut
+			public HRESULT GetStreamCount(out uint32 pdwStreamCount) mut
 			{
-				return VT.GetStreamCount(&this, pdwStreamCount);
+				return VT.GetStreamCount(ref this, out pdwStreamCount);
 			}
-			public HRESULT GetStream(uint32 dwStreamIndex, uint16* pwStreamNumber, uint16* pwStreamFlags) mut
+			public HRESULT GetStream(uint32 dwStreamIndex, out uint16 pwStreamNumber, out uint16 pwStreamFlags) mut
 			{
-				return VT.GetStream(&this, dwStreamIndex, pwStreamNumber, pwStreamFlags);
+				return VT.GetStream(ref this, dwStreamIndex, out pwStreamNumber, out pwStreamFlags);
 			}
 			public HRESULT AddStream(uint16 wStreamNumber, uint16 wStreamFlags) mut
 			{
-				return VT.AddStream(&this, wStreamNumber, wStreamFlags);
+				return VT.AddStream(ref this, wStreamNumber, wStreamFlags);
 			}
 			public HRESULT RemoveStream(uint32 dwStreamIndex) mut
 			{
-				return VT.RemoveStream(&this, dwStreamIndex);
+				return VT.RemoveStream(ref this, dwStreamIndex);
 			}
-			public HRESULT Clone(IMFASFStreamPrioritization** ppIStreamPrioritization) mut
+			public HRESULT Clone(out IMFASFStreamPrioritization* ppIStreamPrioritization) mut
 			{
-				return VT.Clone(&this, ppIStreamPrioritization);
+				return VT.Clone(ref this, out ppIStreamPrioritization);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFASFStreamPrioritization *self, uint32* pdwStreamCount) GetStreamCount;
-				public new function HRESULT(IMFASFStreamPrioritization *self, uint32 dwStreamIndex, uint16* pwStreamNumber, uint16* pwStreamFlags) GetStream;
-				public new function HRESULT(IMFASFStreamPrioritization *self, uint16 wStreamNumber, uint16 wStreamFlags) AddStream;
-				public new function HRESULT(IMFASFStreamPrioritization *self, uint32 dwStreamIndex) RemoveStream;
-				public new function HRESULT(IMFASFStreamPrioritization *self, IMFASFStreamPrioritization** ppIStreamPrioritization) Clone;
+				public new function HRESULT(ref IMFASFStreamPrioritization self, out uint32 pdwStreamCount) GetStreamCount;
+				public new function HRESULT(ref IMFASFStreamPrioritization self, uint32 dwStreamIndex, out uint16 pwStreamNumber, out uint16 pwStreamFlags) GetStream;
+				public new function HRESULT(ref IMFASFStreamPrioritization self, uint16 wStreamNumber, uint16 wStreamFlags) AddStream;
+				public new function HRESULT(ref IMFASFStreamPrioritization self, uint32 dwStreamIndex) RemoveStream;
+				public new function HRESULT(ref IMFASFStreamPrioritization self, out IMFASFStreamPrioritization* ppIStreamPrioritization) Clone;
 			}
 		}
 		[CRepr]
@@ -15877,72 +15877,72 @@ namespace Win32
 			
 			public HRESULT SetFlags(uint32 dwFlags) mut
 			{
-				return VT.SetFlags(&this, dwFlags);
+				return VT.SetFlags(ref this, dwFlags);
 			}
-			public HRESULT ComGetFlags(uint32* pdwFlags) mut
+			public HRESULT ComGetFlags(out uint32 pdwFlags) mut
 			{
-				return VT.ComGetFlags(&this, pdwFlags);
+				return VT.ComGetFlags(ref this, out pdwFlags);
 			}
-			public HRESULT Initialize(IMFASFContentInfo* pIContentInfo) mut
+			public HRESULT Initialize(ref IMFASFContentInfo pIContentInfo) mut
 			{
-				return VT.Initialize(&this, pIContentInfo);
+				return VT.Initialize(ref this, ref pIContentInfo);
 			}
-			public HRESULT GetIndexPosition(IMFASFContentInfo* pIContentInfo, uint64* pcbIndexOffset) mut
+			public HRESULT GetIndexPosition(ref IMFASFContentInfo pIContentInfo, out uint64 pcbIndexOffset) mut
 			{
-				return VT.GetIndexPosition(&this, pIContentInfo, pcbIndexOffset);
+				return VT.GetIndexPosition(ref this, ref pIContentInfo, out pcbIndexOffset);
 			}
-			public HRESULT SetIndexByteStreams(IMFByteStream** ppIByteStreams, uint32 cByteStreams) mut
+			public HRESULT SetIndexByteStreams(ref IMFByteStream* ppIByteStreams, uint32 cByteStreams) mut
 			{
-				return VT.SetIndexByteStreams(&this, ppIByteStreams, cByteStreams);
+				return VT.SetIndexByteStreams(ref this, ref ppIByteStreams, cByteStreams);
 			}
-			public HRESULT GetIndexByteStreamCount(uint32* pcByteStreams) mut
+			public HRESULT GetIndexByteStreamCount(out uint32 pcByteStreams) mut
 			{
-				return VT.GetIndexByteStreamCount(&this, pcByteStreams);
+				return VT.GetIndexByteStreamCount(ref this, out pcByteStreams);
 			}
-			public HRESULT GetIndexStatus(ASF_INDEX_IDENTIFIER* pIndexIdentifier, BOOL* pfIsIndexed, uint8* pbIndexDescriptor, uint32* pcbIndexDescriptor) mut
+			public HRESULT GetIndexStatus(ref ASF_INDEX_IDENTIFIER pIndexIdentifier, out BOOL pfIsIndexed, out uint8 pbIndexDescriptor, out uint32 pcbIndexDescriptor) mut
 			{
-				return VT.GetIndexStatus(&this, pIndexIdentifier, pfIsIndexed, pbIndexDescriptor, pcbIndexDescriptor);
+				return VT.GetIndexStatus(ref this, ref pIndexIdentifier, out pfIsIndexed, out pbIndexDescriptor, out pcbIndexDescriptor);
 			}
-			public HRESULT SetIndexStatus(uint8* pbIndexDescriptor, uint32 cbIndexDescriptor, BOOL fGenerateIndex) mut
+			public HRESULT SetIndexStatus(ref uint8 pbIndexDescriptor, uint32 cbIndexDescriptor, BOOL fGenerateIndex) mut
 			{
-				return VT.SetIndexStatus(&this, pbIndexDescriptor, cbIndexDescriptor, fGenerateIndex);
+				return VT.SetIndexStatus(ref this, ref pbIndexDescriptor, cbIndexDescriptor, fGenerateIndex);
 			}
-			public HRESULT GetSeekPositionForValue(PROPVARIANT* pvarValue, ASF_INDEX_IDENTIFIER* pIndexIdentifier, uint64* pcbOffsetWithinData, int64* phnsApproxTime, uint32* pdwPayloadNumberOfStreamWithinPacket) mut
+			public HRESULT GetSeekPositionForValue(in PROPVARIANT pvarValue, ref ASF_INDEX_IDENTIFIER pIndexIdentifier, out uint64 pcbOffsetWithinData, out int64 phnsApproxTime, out uint32 pdwPayloadNumberOfStreamWithinPacket) mut
 			{
-				return VT.GetSeekPositionForValue(&this, pvarValue, pIndexIdentifier, pcbOffsetWithinData, phnsApproxTime, pdwPayloadNumberOfStreamWithinPacket);
+				return VT.GetSeekPositionForValue(ref this, pvarValue, ref pIndexIdentifier, out pcbOffsetWithinData, out phnsApproxTime, out pdwPayloadNumberOfStreamWithinPacket);
 			}
-			public HRESULT GenerateIndexEntries(IMFSample* pIASFPacketSample) mut
+			public HRESULT GenerateIndexEntries(ref IMFSample pIASFPacketSample) mut
 			{
-				return VT.GenerateIndexEntries(&this, pIASFPacketSample);
+				return VT.GenerateIndexEntries(ref this, ref pIASFPacketSample);
 			}
-			public HRESULT CommitIndex(IMFASFContentInfo* pIContentInfo) mut
+			public HRESULT CommitIndex(ref IMFASFContentInfo pIContentInfo) mut
 			{
-				return VT.CommitIndex(&this, pIContentInfo);
+				return VT.CommitIndex(ref this, ref pIContentInfo);
 			}
-			public HRESULT GetIndexWriteSpace(uint64* pcbIndexWriteSpace) mut
+			public HRESULT GetIndexWriteSpace(out uint64 pcbIndexWriteSpace) mut
 			{
-				return VT.GetIndexWriteSpace(&this, pcbIndexWriteSpace);
+				return VT.GetIndexWriteSpace(ref this, out pcbIndexWriteSpace);
 			}
-			public HRESULT GetCompletedIndex(IMFMediaBuffer* pIIndexBuffer, uint64 cbOffsetWithinIndex) mut
+			public HRESULT GetCompletedIndex(ref IMFMediaBuffer pIIndexBuffer, uint64 cbOffsetWithinIndex) mut
 			{
-				return VT.GetCompletedIndex(&this, pIIndexBuffer, cbOffsetWithinIndex);
+				return VT.GetCompletedIndex(ref this, ref pIIndexBuffer, cbOffsetWithinIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFASFIndexer *self, uint32 dwFlags) SetFlags;
-				public new function HRESULT(IMFASFIndexer *self, uint32* pdwFlags) ComGetFlags;
-				public new function HRESULT(IMFASFIndexer *self, IMFASFContentInfo* pIContentInfo) Initialize;
-				public new function HRESULT(IMFASFIndexer *self, IMFASFContentInfo* pIContentInfo, uint64* pcbIndexOffset) GetIndexPosition;
-				public new function HRESULT(IMFASFIndexer *self, IMFByteStream** ppIByteStreams, uint32 cByteStreams) SetIndexByteStreams;
-				public new function HRESULT(IMFASFIndexer *self, uint32* pcByteStreams) GetIndexByteStreamCount;
-				public new function HRESULT(IMFASFIndexer *self, ASF_INDEX_IDENTIFIER* pIndexIdentifier, BOOL* pfIsIndexed, uint8* pbIndexDescriptor, uint32* pcbIndexDescriptor) GetIndexStatus;
-				public new function HRESULT(IMFASFIndexer *self, uint8* pbIndexDescriptor, uint32 cbIndexDescriptor, BOOL fGenerateIndex) SetIndexStatus;
-				public new function HRESULT(IMFASFIndexer *self, PROPVARIANT* pvarValue, ASF_INDEX_IDENTIFIER* pIndexIdentifier, uint64* pcbOffsetWithinData, int64* phnsApproxTime, uint32* pdwPayloadNumberOfStreamWithinPacket) GetSeekPositionForValue;
-				public new function HRESULT(IMFASFIndexer *self, IMFSample* pIASFPacketSample) GenerateIndexEntries;
-				public new function HRESULT(IMFASFIndexer *self, IMFASFContentInfo* pIContentInfo) CommitIndex;
-				public new function HRESULT(IMFASFIndexer *self, uint64* pcbIndexWriteSpace) GetIndexWriteSpace;
-				public new function HRESULT(IMFASFIndexer *self, IMFMediaBuffer* pIIndexBuffer, uint64 cbOffsetWithinIndex) GetCompletedIndex;
+				public new function HRESULT(ref IMFASFIndexer self, uint32 dwFlags) SetFlags;
+				public new function HRESULT(ref IMFASFIndexer self, out uint32 pdwFlags) ComGetFlags;
+				public new function HRESULT(ref IMFASFIndexer self, ref IMFASFContentInfo pIContentInfo) Initialize;
+				public new function HRESULT(ref IMFASFIndexer self, ref IMFASFContentInfo pIContentInfo, out uint64 pcbIndexOffset) GetIndexPosition;
+				public new function HRESULT(ref IMFASFIndexer self, ref IMFByteStream* ppIByteStreams, uint32 cByteStreams) SetIndexByteStreams;
+				public new function HRESULT(ref IMFASFIndexer self, out uint32 pcByteStreams) GetIndexByteStreamCount;
+				public new function HRESULT(ref IMFASFIndexer self, ref ASF_INDEX_IDENTIFIER pIndexIdentifier, out BOOL pfIsIndexed, out uint8 pbIndexDescriptor, out uint32 pcbIndexDescriptor) GetIndexStatus;
+				public new function HRESULT(ref IMFASFIndexer self, ref uint8 pbIndexDescriptor, uint32 cbIndexDescriptor, BOOL fGenerateIndex) SetIndexStatus;
+				public new function HRESULT(ref IMFASFIndexer self, in PROPVARIANT pvarValue, ref ASF_INDEX_IDENTIFIER pIndexIdentifier, out uint64 pcbOffsetWithinData, out int64 phnsApproxTime, out uint32 pdwPayloadNumberOfStreamWithinPacket) GetSeekPositionForValue;
+				public new function HRESULT(ref IMFASFIndexer self, ref IMFSample pIASFPacketSample) GenerateIndexEntries;
+				public new function HRESULT(ref IMFASFIndexer self, ref IMFASFContentInfo pIContentInfo) CommitIndex;
+				public new function HRESULT(ref IMFASFIndexer self, out uint64 pcbIndexWriteSpace) GetIndexWriteSpace;
+				public new function HRESULT(ref IMFASFIndexer self, ref IMFMediaBuffer pIIndexBuffer, uint64 cbOffsetWithinIndex) GetCompletedIndex;
 			}
 		}
 		[CRepr]
@@ -15952,54 +15952,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IMFASFContentInfo* pIContentInfo) mut
+			public HRESULT Initialize(ref IMFASFContentInfo pIContentInfo) mut
 			{
-				return VT.Initialize(&this, pIContentInfo);
+				return VT.Initialize(ref this, ref pIContentInfo);
 			}
 			public HRESULT SetFlags(uint32 dwFlags) mut
 			{
-				return VT.SetFlags(&this, dwFlags);
+				return VT.SetFlags(ref this, dwFlags);
 			}
-			public HRESULT ComGetFlags(uint32* pdwFlags) mut
+			public HRESULT ComGetFlags(out uint32 pdwFlags) mut
 			{
-				return VT.ComGetFlags(&this, pdwFlags);
+				return VT.ComGetFlags(ref this, out pdwFlags);
 			}
-			public HRESULT SelectStreams(uint16* pwStreamNumbers, uint16 wNumStreams) mut
+			public HRESULT SelectStreams(ref uint16 pwStreamNumbers, uint16 wNumStreams) mut
 			{
-				return VT.SelectStreams(&this, pwStreamNumbers, wNumStreams);
+				return VT.SelectStreams(ref this, ref pwStreamNumbers, wNumStreams);
 			}
-			public HRESULT GetSelectedStreams(uint16* pwStreamNumbers, uint16* pwNumStreams) mut
+			public HRESULT GetSelectedStreams(out uint16 pwStreamNumbers, out uint16 pwNumStreams) mut
 			{
-				return VT.GetSelectedStreams(&this, pwStreamNumbers, pwNumStreams);
+				return VT.GetSelectedStreams(ref this, out pwStreamNumbers, out pwNumStreams);
 			}
-			public HRESULT ParseData(IMFMediaBuffer* pIBuffer, uint32 cbBufferOffset, uint32 cbLength) mut
+			public HRESULT ParseData(ref IMFMediaBuffer pIBuffer, uint32 cbBufferOffset, uint32 cbLength) mut
 			{
-				return VT.ParseData(&this, pIBuffer, cbBufferOffset, cbLength);
+				return VT.ParseData(ref this, ref pIBuffer, cbBufferOffset, cbLength);
 			}
-			public HRESULT GetNextSample(ASF_STATUSFLAGS* pdwStatusFlags, uint16* pwStreamNumber, IMFSample** ppISample) mut
+			public HRESULT GetNextSample(out ASF_STATUSFLAGS pdwStatusFlags, out uint16 pwStreamNumber, out IMFSample* ppISample) mut
 			{
-				return VT.GetNextSample(&this, pdwStatusFlags, pwStreamNumber, ppISample);
+				return VT.GetNextSample(ref this, out pdwStatusFlags, out pwStreamNumber, out ppISample);
 			}
 			public HRESULT Flush() mut
 			{
-				return VT.Flush(&this);
+				return VT.Flush(ref this);
 			}
-			public HRESULT GetLastSendTime(uint32* pdwLastSendTime) mut
+			public HRESULT GetLastSendTime(out uint32 pdwLastSendTime) mut
 			{
-				return VT.GetLastSendTime(&this, pdwLastSendTime);
+				return VT.GetLastSendTime(ref this, out pdwLastSendTime);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFASFSplitter *self, IMFASFContentInfo* pIContentInfo) Initialize;
-				public new function HRESULT(IMFASFSplitter *self, uint32 dwFlags) SetFlags;
-				public new function HRESULT(IMFASFSplitter *self, uint32* pdwFlags) ComGetFlags;
-				public new function HRESULT(IMFASFSplitter *self, uint16* pwStreamNumbers, uint16 wNumStreams) SelectStreams;
-				public new function HRESULT(IMFASFSplitter *self, uint16* pwStreamNumbers, uint16* pwNumStreams) GetSelectedStreams;
-				public new function HRESULT(IMFASFSplitter *self, IMFMediaBuffer* pIBuffer, uint32 cbBufferOffset, uint32 cbLength) ParseData;
-				public new function HRESULT(IMFASFSplitter *self, ASF_STATUSFLAGS* pdwStatusFlags, uint16* pwStreamNumber, IMFSample** ppISample) GetNextSample;
-				public new function HRESULT(IMFASFSplitter *self) Flush;
-				public new function HRESULT(IMFASFSplitter *self, uint32* pdwLastSendTime) GetLastSendTime;
+				public new function HRESULT(ref IMFASFSplitter self, ref IMFASFContentInfo pIContentInfo) Initialize;
+				public new function HRESULT(ref IMFASFSplitter self, uint32 dwFlags) SetFlags;
+				public new function HRESULT(ref IMFASFSplitter self, out uint32 pdwFlags) ComGetFlags;
+				public new function HRESULT(ref IMFASFSplitter self, ref uint16 pwStreamNumbers, uint16 wNumStreams) SelectStreams;
+				public new function HRESULT(ref IMFASFSplitter self, out uint16 pwStreamNumbers, out uint16 pwNumStreams) GetSelectedStreams;
+				public new function HRESULT(ref IMFASFSplitter self, ref IMFMediaBuffer pIBuffer, uint32 cbBufferOffset, uint32 cbLength) ParseData;
+				public new function HRESULT(ref IMFASFSplitter self, out ASF_STATUSFLAGS pdwStatusFlags, out uint16 pwStreamNumber, out IMFSample* ppISample) GetNextSample;
+				public new function HRESULT(ref IMFASFSplitter self) Flush;
+				public new function HRESULT(ref IMFASFSplitter self, out uint32 pdwLastSendTime) GetLastSendTime;
 			}
 		}
 		[CRepr]
@@ -16009,54 +16009,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IMFASFContentInfo* pIContentInfo) mut
+			public HRESULT Initialize(ref IMFASFContentInfo pIContentInfo) mut
 			{
-				return VT.Initialize(&this, pIContentInfo);
+				return VT.Initialize(ref this, ref pIContentInfo);
 			}
 			public HRESULT SetFlags(uint32 dwFlags) mut
 			{
-				return VT.SetFlags(&this, dwFlags);
+				return VT.SetFlags(ref this, dwFlags);
 			}
-			public HRESULT ComGetFlags(uint32* pdwFlags) mut
+			public HRESULT ComGetFlags(out uint32 pdwFlags) mut
 			{
-				return VT.ComGetFlags(&this, pdwFlags);
+				return VT.ComGetFlags(ref this, out pdwFlags);
 			}
-			public HRESULT ProcessSample(uint16 wStreamNumber, IMFSample* pISample, int64 hnsTimestampAdjust) mut
+			public HRESULT ProcessSample(uint16 wStreamNumber, ref IMFSample pISample, int64 hnsTimestampAdjust) mut
 			{
-				return VT.ProcessSample(&this, wStreamNumber, pISample, hnsTimestampAdjust);
+				return VT.ProcessSample(ref this, wStreamNumber, ref pISample, hnsTimestampAdjust);
 			}
-			public HRESULT GetNextPacket(uint32* pdwStatusFlags, IMFSample** ppIPacket) mut
+			public HRESULT GetNextPacket(out uint32 pdwStatusFlags, out IMFSample* ppIPacket) mut
 			{
-				return VT.GetNextPacket(&this, pdwStatusFlags, ppIPacket);
+				return VT.GetNextPacket(ref this, out pdwStatusFlags, out ppIPacket);
 			}
 			public HRESULT Flush() mut
 			{
-				return VT.Flush(&this);
+				return VT.Flush(ref this);
 			}
-			public HRESULT End(IMFASFContentInfo* pIContentInfo) mut
+			public HRESULT End(out IMFASFContentInfo pIContentInfo) mut
 			{
-				return VT.End(&this, pIContentInfo);
+				return VT.End(ref this, out pIContentInfo);
 			}
-			public HRESULT GetStatistics(uint16 wStreamNumber, ASF_MUX_STATISTICS* pMuxStats) mut
+			public HRESULT GetStatistics(uint16 wStreamNumber, out ASF_MUX_STATISTICS pMuxStats) mut
 			{
-				return VT.GetStatistics(&this, wStreamNumber, pMuxStats);
+				return VT.GetStatistics(ref this, wStreamNumber, out pMuxStats);
 			}
 			public HRESULT SetSyncTolerance(uint32 msSyncTolerance) mut
 			{
-				return VT.SetSyncTolerance(&this, msSyncTolerance);
+				return VT.SetSyncTolerance(ref this, msSyncTolerance);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFASFMultiplexer *self, IMFASFContentInfo* pIContentInfo) Initialize;
-				public new function HRESULT(IMFASFMultiplexer *self, uint32 dwFlags) SetFlags;
-				public new function HRESULT(IMFASFMultiplexer *self, uint32* pdwFlags) ComGetFlags;
-				public new function HRESULT(IMFASFMultiplexer *self, uint16 wStreamNumber, IMFSample* pISample, int64 hnsTimestampAdjust) ProcessSample;
-				public new function HRESULT(IMFASFMultiplexer *self, uint32* pdwStatusFlags, IMFSample** ppIPacket) GetNextPacket;
-				public new function HRESULT(IMFASFMultiplexer *self) Flush;
-				public new function HRESULT(IMFASFMultiplexer *self, IMFASFContentInfo* pIContentInfo) End;
-				public new function HRESULT(IMFASFMultiplexer *self, uint16 wStreamNumber, ASF_MUX_STATISTICS* pMuxStats) GetStatistics;
-				public new function HRESULT(IMFASFMultiplexer *self, uint32 msSyncTolerance) SetSyncTolerance;
+				public new function HRESULT(ref IMFASFMultiplexer self, ref IMFASFContentInfo pIContentInfo) Initialize;
+				public new function HRESULT(ref IMFASFMultiplexer self, uint32 dwFlags) SetFlags;
+				public new function HRESULT(ref IMFASFMultiplexer self, out uint32 pdwFlags) ComGetFlags;
+				public new function HRESULT(ref IMFASFMultiplexer self, uint16 wStreamNumber, ref IMFSample pISample, int64 hnsTimestampAdjust) ProcessSample;
+				public new function HRESULT(ref IMFASFMultiplexer self, out uint32 pdwStatusFlags, out IMFSample* ppIPacket) GetNextPacket;
+				public new function HRESULT(ref IMFASFMultiplexer self) Flush;
+				public new function HRESULT(ref IMFASFMultiplexer self, out IMFASFContentInfo pIContentInfo) End;
+				public new function HRESULT(ref IMFASFMultiplexer self, uint16 wStreamNumber, out ASF_MUX_STATISTICS pMuxStats) GetStatistics;
+				public new function HRESULT(ref IMFASFMultiplexer self, uint32 msSyncTolerance) SetSyncTolerance;
 			}
 		}
 		[CRepr]
@@ -16066,79 +16066,79 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamCount(uint32* pcStreams) mut
+			public HRESULT GetStreamCount(out uint32 pcStreams) mut
 			{
-				return VT.GetStreamCount(&this, pcStreams);
+				return VT.GetStreamCount(ref this, out pcStreams);
 			}
-			public HRESULT GetOutputCount(uint32* pcOutputs) mut
+			public HRESULT GetOutputCount(out uint32 pcOutputs) mut
 			{
-				return VT.GetOutputCount(&this, pcOutputs);
+				return VT.GetOutputCount(ref this, out pcOutputs);
 			}
-			public HRESULT GetOutputStreamCount(uint32 dwOutputNum, uint32* pcStreams) mut
+			public HRESULT GetOutputStreamCount(uint32 dwOutputNum, out uint32 pcStreams) mut
 			{
-				return VT.GetOutputStreamCount(&this, dwOutputNum, pcStreams);
+				return VT.GetOutputStreamCount(ref this, dwOutputNum, out pcStreams);
 			}
-			public HRESULT GetOutputStreamNumbers(uint32 dwOutputNum, uint16* rgwStreamNumbers) mut
+			public HRESULT GetOutputStreamNumbers(uint32 dwOutputNum, out uint16 rgwStreamNumbers) mut
 			{
-				return VT.GetOutputStreamNumbers(&this, dwOutputNum, rgwStreamNumbers);
+				return VT.GetOutputStreamNumbers(ref this, dwOutputNum, out rgwStreamNumbers);
 			}
-			public HRESULT GetOutputFromStream(uint16 wStreamNum, uint32* pdwOutput) mut
+			public HRESULT GetOutputFromStream(uint16 wStreamNum, out uint32 pdwOutput) mut
 			{
-				return VT.GetOutputFromStream(&this, wStreamNum, pdwOutput);
+				return VT.GetOutputFromStream(ref this, wStreamNum, out pdwOutput);
 			}
-			public HRESULT GetOutputOverride(uint32 dwOutputNum, ASF_SELECTION_STATUS* pSelection) mut
+			public HRESULT GetOutputOverride(uint32 dwOutputNum, out ASF_SELECTION_STATUS pSelection) mut
 			{
-				return VT.GetOutputOverride(&this, dwOutputNum, pSelection);
+				return VT.GetOutputOverride(ref this, dwOutputNum, out pSelection);
 			}
 			public HRESULT SetOutputOverride(uint32 dwOutputNum, ASF_SELECTION_STATUS Selection) mut
 			{
-				return VT.SetOutputOverride(&this, dwOutputNum, Selection);
+				return VT.SetOutputOverride(ref this, dwOutputNum, Selection);
 			}
-			public HRESULT GetOutputMutexCount(uint32 dwOutputNum, uint32* pcMutexes) mut
+			public HRESULT GetOutputMutexCount(uint32 dwOutputNum, out uint32 pcMutexes) mut
 			{
-				return VT.GetOutputMutexCount(&this, dwOutputNum, pcMutexes);
+				return VT.GetOutputMutexCount(ref this, dwOutputNum, out pcMutexes);
 			}
-			public HRESULT GetOutputMutex(uint32 dwOutputNum, uint32 dwMutexNum, IUnknown** ppMutex) mut
+			public HRESULT GetOutputMutex(uint32 dwOutputNum, uint32 dwMutexNum, out IUnknown* ppMutex) mut
 			{
-				return VT.GetOutputMutex(&this, dwOutputNum, dwMutexNum, ppMutex);
+				return VT.GetOutputMutex(ref this, dwOutputNum, dwMutexNum, out ppMutex);
 			}
 			public HRESULT SetOutputMutexSelection(uint32 dwOutputNum, uint32 dwMutexNum, uint16 wSelectedRecord) mut
 			{
-				return VT.SetOutputMutexSelection(&this, dwOutputNum, dwMutexNum, wSelectedRecord);
+				return VT.SetOutputMutexSelection(ref this, dwOutputNum, dwMutexNum, wSelectedRecord);
 			}
-			public HRESULT GetBandwidthStepCount(uint32* pcStepCount) mut
+			public HRESULT GetBandwidthStepCount(out uint32 pcStepCount) mut
 			{
-				return VT.GetBandwidthStepCount(&this, pcStepCount);
+				return VT.GetBandwidthStepCount(ref this, out pcStepCount);
 			}
-			public HRESULT GetBandwidthStep(uint32 dwStepNum, uint32* pdwBitrate, uint16* rgwStreamNumbers, ASF_SELECTION_STATUS* rgSelections) mut
+			public HRESULT GetBandwidthStep(uint32 dwStepNum, out uint32 pdwBitrate, out uint16 rgwStreamNumbers, out ASF_SELECTION_STATUS rgSelections) mut
 			{
-				return VT.GetBandwidthStep(&this, dwStepNum, pdwBitrate, rgwStreamNumbers, rgSelections);
+				return VT.GetBandwidthStep(ref this, dwStepNum, out pdwBitrate, out rgwStreamNumbers, out rgSelections);
 			}
-			public HRESULT BitrateToStepNumber(uint32 dwBitrate, uint32* pdwStepNum) mut
+			public HRESULT BitrateToStepNumber(uint32 dwBitrate, out uint32 pdwStepNum) mut
 			{
-				return VT.BitrateToStepNumber(&this, dwBitrate, pdwStepNum);
+				return VT.BitrateToStepNumber(ref this, dwBitrate, out pdwStepNum);
 			}
 			public HRESULT SetStreamSelectorFlags(uint32 dwStreamSelectorFlags) mut
 			{
-				return VT.SetStreamSelectorFlags(&this, dwStreamSelectorFlags);
+				return VT.SetStreamSelectorFlags(ref this, dwStreamSelectorFlags);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFASFStreamSelector *self, uint32* pcStreams) GetStreamCount;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32* pcOutputs) GetOutputCount;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint32* pcStreams) GetOutputStreamCount;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint16* rgwStreamNumbers) GetOutputStreamNumbers;
-				public new function HRESULT(IMFASFStreamSelector *self, uint16 wStreamNum, uint32* pdwOutput) GetOutputFromStream;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, ASF_SELECTION_STATUS* pSelection) GetOutputOverride;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, ASF_SELECTION_STATUS Selection) SetOutputOverride;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint32* pcMutexes) GetOutputMutexCount;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint32 dwMutexNum, IUnknown** ppMutex) GetOutputMutex;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwOutputNum, uint32 dwMutexNum, uint16 wSelectedRecord) SetOutputMutexSelection;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32* pcStepCount) GetBandwidthStepCount;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwStepNum, uint32* pdwBitrate, uint16* rgwStreamNumbers, ASF_SELECTION_STATUS* rgSelections) GetBandwidthStep;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwBitrate, uint32* pdwStepNum) BitrateToStepNumber;
-				public new function HRESULT(IMFASFStreamSelector *self, uint32 dwStreamSelectorFlags) SetStreamSelectorFlags;
+				public new function HRESULT(ref IMFASFStreamSelector self, out uint32 pcStreams) GetStreamCount;
+				public new function HRESULT(ref IMFASFStreamSelector self, out uint32 pcOutputs) GetOutputCount;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwOutputNum, out uint32 pcStreams) GetOutputStreamCount;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwOutputNum, out uint16 rgwStreamNumbers) GetOutputStreamNumbers;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint16 wStreamNum, out uint32 pdwOutput) GetOutputFromStream;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwOutputNum, out ASF_SELECTION_STATUS pSelection) GetOutputOverride;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwOutputNum, ASF_SELECTION_STATUS Selection) SetOutputOverride;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwOutputNum, out uint32 pcMutexes) GetOutputMutexCount;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwOutputNum, uint32 dwMutexNum, out IUnknown* ppMutex) GetOutputMutex;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwOutputNum, uint32 dwMutexNum, uint16 wSelectedRecord) SetOutputMutexSelection;
+				public new function HRESULT(ref IMFASFStreamSelector self, out uint32 pcStepCount) GetBandwidthStepCount;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwStepNum, out uint32 pdwBitrate, out uint16 rgwStreamNumbers, out ASF_SELECTION_STATUS rgSelections) GetBandwidthStep;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwBitrate, out uint32 pdwStepNum) BitrateToStepNumber;
+				public new function HRESULT(ref IMFASFStreamSelector self, uint32 dwStreamSelectorFlags) SetStreamSelectorFlags;
 			}
 		}
 		[CRepr]
@@ -16148,19 +16148,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ProcessLicenseRequest(uint8* pLicenseRequest, uint32 cbLicenseRequest, uint8** ppLicenseResponse, uint32* pcbLicenseResponse, BSTR* pbstrKID) mut
+			public HRESULT ProcessLicenseRequest(uint8* pLicenseRequest, uint32 cbLicenseRequest, uint8** ppLicenseResponse, out uint32 pcbLicenseResponse, out BSTR pbstrKID) mut
 			{
-				return VT.ProcessLicenseRequest(&this, pLicenseRequest, cbLicenseRequest, ppLicenseResponse, pcbLicenseResponse, pbstrKID);
+				return VT.ProcessLicenseRequest(ref this, pLicenseRequest, cbLicenseRequest, ppLicenseResponse, out pcbLicenseResponse, out pbstrKID);
 			}
-			public HRESULT GetChainedLicenseResponse(uint8** ppLicenseResponse, uint32* pcbLicenseResponse) mut
+			public HRESULT GetChainedLicenseResponse(uint8** ppLicenseResponse, out uint32 pcbLicenseResponse) mut
 			{
-				return VT.GetChainedLicenseResponse(&this, ppLicenseResponse, pcbLicenseResponse);
+				return VT.GetChainedLicenseResponse(ref this, ppLicenseResponse, out pcbLicenseResponse);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFDRMNetHelper *self, uint8* pLicenseRequest, uint32 cbLicenseRequest, uint8** ppLicenseResponse, uint32* pcbLicenseResponse, BSTR* pbstrKID) ProcessLicenseRequest;
-				public new function HRESULT(IMFDRMNetHelper *self, uint8** ppLicenseResponse, uint32* pcbLicenseResponse) GetChainedLicenseResponse;
+				public new function HRESULT(ref IMFDRMNetHelper self, uint8* pLicenseRequest, uint32 cbLicenseRequest, uint8** ppLicenseResponse, out uint32 pcbLicenseResponse, out BSTR pbstrKID) ProcessLicenseRequest;
+				public new function HRESULT(ref IMFDRMNetHelper self, uint8** ppLicenseResponse, out uint32 pcbLicenseResponse) GetChainedLicenseResponse;
 			}
 		}
 		[CRepr]
@@ -16170,14 +16170,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnEvent(IMFMediaEvent* pEvent) mut
+			public HRESULT OnEvent(ref IMFMediaEvent pEvent) mut
 			{
-				return VT.OnEvent(&this, pEvent);
+				return VT.OnEvent(ref this, ref pEvent);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCaptureEngineOnEventCallback *self, IMFMediaEvent* pEvent) OnEvent;
+				public new function HRESULT(ref IMFCaptureEngineOnEventCallback self, ref IMFMediaEvent pEvent) OnEvent;
 			}
 		}
 		[CRepr]
@@ -16189,12 +16189,12 @@ namespace Win32
 			
 			public HRESULT OnSample(IMFSample* pSample) mut
 			{
-				return VT.OnSample(&this, pSample);
+				return VT.OnSample(ref this, pSample);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCaptureEngineOnSampleCallback *self, IMFSample* pSample) OnSample;
+				public new function HRESULT(ref IMFCaptureEngineOnSampleCallback self, IMFSample* pSample) OnSample;
 			}
 		}
 		[CRepr]
@@ -16206,32 +16206,32 @@ namespace Win32
 			
 			public HRESULT GetOutputMediaType(uint32 dwSinkStreamIndex, IMFMediaType** ppMediaType) mut
 			{
-				return VT.GetOutputMediaType(&this, dwSinkStreamIndex, ppMediaType);
+				return VT.GetOutputMediaType(ref this, dwSinkStreamIndex, ppMediaType);
 			}
-			public HRESULT GetService(uint32 dwSinkStreamIndex, Guid* rguidService, Guid* riid, IUnknown** ppUnknown) mut
+			public HRESULT GetService(uint32 dwSinkStreamIndex, in Guid rguidService, in Guid riid, IUnknown** ppUnknown) mut
 			{
-				return VT.GetService(&this, dwSinkStreamIndex, rguidService, riid, ppUnknown);
+				return VT.GetService(ref this, dwSinkStreamIndex, rguidService, riid, ppUnknown);
 			}
-			public HRESULT AddStream(uint32 dwSourceStreamIndex, IMFMediaType* pMediaType, IMFAttributes* pAttributes, uint32* pdwSinkStreamIndex) mut
+			public HRESULT AddStream(uint32 dwSourceStreamIndex, ref IMFMediaType pMediaType, IMFAttributes* pAttributes, uint32* pdwSinkStreamIndex) mut
 			{
-				return VT.AddStream(&this, dwSourceStreamIndex, pMediaType, pAttributes, pdwSinkStreamIndex);
+				return VT.AddStream(ref this, dwSourceStreamIndex, ref pMediaType, pAttributes, pdwSinkStreamIndex);
 			}
 			public HRESULT Prepare() mut
 			{
-				return VT.Prepare(&this);
+				return VT.Prepare(ref this);
 			}
 			public HRESULT RemoveAllStreams() mut
 			{
-				return VT.RemoveAllStreams(&this);
+				return VT.RemoveAllStreams(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCaptureSink *self, uint32 dwSinkStreamIndex, IMFMediaType** ppMediaType) GetOutputMediaType;
-				public new function HRESULT(IMFCaptureSink *self, uint32 dwSinkStreamIndex, Guid* rguidService, Guid* riid, IUnknown** ppUnknown) GetService;
-				public new function HRESULT(IMFCaptureSink *self, uint32 dwSourceStreamIndex, IMFMediaType* pMediaType, IMFAttributes* pAttributes, uint32* pdwSinkStreamIndex) AddStream;
-				public new function HRESULT(IMFCaptureSink *self) Prepare;
-				public new function HRESULT(IMFCaptureSink *self) RemoveAllStreams;
+				public new function HRESULT(ref IMFCaptureSink self, uint32 dwSinkStreamIndex, IMFMediaType** ppMediaType) GetOutputMediaType;
+				public new function HRESULT(ref IMFCaptureSink self, uint32 dwSinkStreamIndex, in Guid rguidService, in Guid riid, IUnknown** ppUnknown) GetService;
+				public new function HRESULT(ref IMFCaptureSink self, uint32 dwSourceStreamIndex, ref IMFMediaType pMediaType, IMFAttributes* pAttributes, uint32* pdwSinkStreamIndex) AddStream;
+				public new function HRESULT(ref IMFCaptureSink self) Prepare;
+				public new function HRESULT(ref IMFCaptureSink self) RemoveAllStreams;
 			}
 		}
 		[CRepr]
@@ -16241,39 +16241,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOutputByteStream(IMFByteStream* pByteStream, Guid* guidContainerType) mut
+			public HRESULT SetOutputByteStream(ref IMFByteStream pByteStream, in Guid guidContainerType) mut
 			{
-				return VT.SetOutputByteStream(&this, pByteStream, guidContainerType);
+				return VT.SetOutputByteStream(ref this, ref pByteStream, guidContainerType);
 			}
 			public HRESULT SetOutputFileName(PWSTR fileName) mut
 			{
-				return VT.SetOutputFileName(&this, fileName);
+				return VT.SetOutputFileName(ref this, fileName);
 			}
-			public HRESULT SetSampleCallback(uint32 dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback) mut
+			public HRESULT SetSampleCallback(uint32 dwStreamSinkIndex, ref IMFCaptureEngineOnSampleCallback pCallback) mut
 			{
-				return VT.SetSampleCallback(&this, dwStreamSinkIndex, pCallback);
+				return VT.SetSampleCallback(ref this, dwStreamSinkIndex, ref pCallback);
 			}
-			public HRESULT SetCustomSink(IMFMediaSink* pMediaSink) mut
+			public HRESULT SetCustomSink(ref IMFMediaSink pMediaSink) mut
 			{
-				return VT.SetCustomSink(&this, pMediaSink);
+				return VT.SetCustomSink(ref this, ref pMediaSink);
 			}
-			public HRESULT GetRotation(uint32 dwStreamIndex, uint32* pdwRotationValue) mut
+			public HRESULT GetRotation(uint32 dwStreamIndex, out uint32 pdwRotationValue) mut
 			{
-				return VT.GetRotation(&this, dwStreamIndex, pdwRotationValue);
+				return VT.GetRotation(ref this, dwStreamIndex, out pdwRotationValue);
 			}
 			public HRESULT SetRotation(uint32 dwStreamIndex, uint32 dwRotationValue) mut
 			{
-				return VT.SetRotation(&this, dwStreamIndex, dwRotationValue);
+				return VT.SetRotation(ref this, dwStreamIndex, dwRotationValue);
 			}
 			[CRepr]
 			public struct VTable : IMFCaptureSink.VTable
 			{
-				public new function HRESULT(IMFCaptureRecordSink *self, IMFByteStream* pByteStream, Guid* guidContainerType) SetOutputByteStream;
-				public new function HRESULT(IMFCaptureRecordSink *self, PWSTR fileName) SetOutputFileName;
-				public new function HRESULT(IMFCaptureRecordSink *self, uint32 dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback) SetSampleCallback;
-				public new function HRESULT(IMFCaptureRecordSink *self, IMFMediaSink* pMediaSink) SetCustomSink;
-				public new function HRESULT(IMFCaptureRecordSink *self, uint32 dwStreamIndex, uint32* pdwRotationValue) GetRotation;
-				public new function HRESULT(IMFCaptureRecordSink *self, uint32 dwStreamIndex, uint32 dwRotationValue) SetRotation;
+				public new function HRESULT(ref IMFCaptureRecordSink self, ref IMFByteStream pByteStream, in Guid guidContainerType) SetOutputByteStream;
+				public new function HRESULT(ref IMFCaptureRecordSink self, PWSTR fileName) SetOutputFileName;
+				public new function HRESULT(ref IMFCaptureRecordSink self, uint32 dwStreamSinkIndex, ref IMFCaptureEngineOnSampleCallback pCallback) SetSampleCallback;
+				public new function HRESULT(ref IMFCaptureRecordSink self, ref IMFMediaSink pMediaSink) SetCustomSink;
+				public new function HRESULT(ref IMFCaptureRecordSink self, uint32 dwStreamIndex, out uint32 pdwRotationValue) GetRotation;
+				public new function HRESULT(ref IMFCaptureRecordSink self, uint32 dwStreamIndex, uint32 dwRotationValue) SetRotation;
 			}
 		}
 		[CRepr]
@@ -16285,52 +16285,52 @@ namespace Win32
 			
 			public HRESULT SetRenderHandle(HANDLE handle) mut
 			{
-				return VT.SetRenderHandle(&this, handle);
+				return VT.SetRenderHandle(ref this, handle);
 			}
-			public HRESULT SetRenderSurface(IUnknown* pSurface) mut
+			public HRESULT SetRenderSurface(ref IUnknown pSurface) mut
 			{
-				return VT.SetRenderSurface(&this, pSurface);
+				return VT.SetRenderSurface(ref this, ref pSurface);
 			}
 			public HRESULT UpdateVideo(MFVideoNormalizedRect* pSrc, RECT* pDst, uint32* pBorderClr) mut
 			{
-				return VT.UpdateVideo(&this, pSrc, pDst, pBorderClr);
+				return VT.UpdateVideo(ref this, pSrc, pDst, pBorderClr);
 			}
-			public HRESULT SetSampleCallback(uint32 dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback) mut
+			public HRESULT SetSampleCallback(uint32 dwStreamSinkIndex, ref IMFCaptureEngineOnSampleCallback pCallback) mut
 			{
-				return VT.SetSampleCallback(&this, dwStreamSinkIndex, pCallback);
+				return VT.SetSampleCallback(ref this, dwStreamSinkIndex, ref pCallback);
 			}
-			public HRESULT GetMirrorState(BOOL* pfMirrorState) mut
+			public HRESULT GetMirrorState(out BOOL pfMirrorState) mut
 			{
-				return VT.GetMirrorState(&this, pfMirrorState);
+				return VT.GetMirrorState(ref this, out pfMirrorState);
 			}
 			public HRESULT SetMirrorState(BOOL fMirrorState) mut
 			{
-				return VT.SetMirrorState(&this, fMirrorState);
+				return VT.SetMirrorState(ref this, fMirrorState);
 			}
-			public HRESULT GetRotation(uint32 dwStreamIndex, uint32* pdwRotationValue) mut
+			public HRESULT GetRotation(uint32 dwStreamIndex, out uint32 pdwRotationValue) mut
 			{
-				return VT.GetRotation(&this, dwStreamIndex, pdwRotationValue);
+				return VT.GetRotation(ref this, dwStreamIndex, out pdwRotationValue);
 			}
 			public HRESULT SetRotation(uint32 dwStreamIndex, uint32 dwRotationValue) mut
 			{
-				return VT.SetRotation(&this, dwStreamIndex, dwRotationValue);
+				return VT.SetRotation(ref this, dwStreamIndex, dwRotationValue);
 			}
-			public HRESULT SetCustomSink(IMFMediaSink* pMediaSink) mut
+			public HRESULT SetCustomSink(ref IMFMediaSink pMediaSink) mut
 			{
-				return VT.SetCustomSink(&this, pMediaSink);
+				return VT.SetCustomSink(ref this, ref pMediaSink);
 			}
 			[CRepr]
 			public struct VTable : IMFCaptureSink.VTable
 			{
-				public new function HRESULT(IMFCapturePreviewSink *self, HANDLE handle) SetRenderHandle;
-				public new function HRESULT(IMFCapturePreviewSink *self, IUnknown* pSurface) SetRenderSurface;
-				public new function HRESULT(IMFCapturePreviewSink *self, MFVideoNormalizedRect* pSrc, RECT* pDst, uint32* pBorderClr) UpdateVideo;
-				public new function HRESULT(IMFCapturePreviewSink *self, uint32 dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback) SetSampleCallback;
-				public new function HRESULT(IMFCapturePreviewSink *self, BOOL* pfMirrorState) GetMirrorState;
-				public new function HRESULT(IMFCapturePreviewSink *self, BOOL fMirrorState) SetMirrorState;
-				public new function HRESULT(IMFCapturePreviewSink *self, uint32 dwStreamIndex, uint32* pdwRotationValue) GetRotation;
-				public new function HRESULT(IMFCapturePreviewSink *self, uint32 dwStreamIndex, uint32 dwRotationValue) SetRotation;
-				public new function HRESULT(IMFCapturePreviewSink *self, IMFMediaSink* pMediaSink) SetCustomSink;
+				public new function HRESULT(ref IMFCapturePreviewSink self, HANDLE handle) SetRenderHandle;
+				public new function HRESULT(ref IMFCapturePreviewSink self, ref IUnknown pSurface) SetRenderSurface;
+				public new function HRESULT(ref IMFCapturePreviewSink self, MFVideoNormalizedRect* pSrc, RECT* pDst, uint32* pBorderClr) UpdateVideo;
+				public new function HRESULT(ref IMFCapturePreviewSink self, uint32 dwStreamSinkIndex, ref IMFCaptureEngineOnSampleCallback pCallback) SetSampleCallback;
+				public new function HRESULT(ref IMFCapturePreviewSink self, out BOOL pfMirrorState) GetMirrorState;
+				public new function HRESULT(ref IMFCapturePreviewSink self, BOOL fMirrorState) SetMirrorState;
+				public new function HRESULT(ref IMFCapturePreviewSink self, uint32 dwStreamIndex, out uint32 pdwRotationValue) GetRotation;
+				public new function HRESULT(ref IMFCapturePreviewSink self, uint32 dwStreamIndex, uint32 dwRotationValue) SetRotation;
+				public new function HRESULT(ref IMFCapturePreviewSink self, ref IMFMediaSink pMediaSink) SetCustomSink;
 			}
 		}
 		[CRepr]
@@ -16342,22 +16342,22 @@ namespace Win32
 			
 			public HRESULT SetOutputFileName(PWSTR fileName) mut
 			{
-				return VT.SetOutputFileName(&this, fileName);
+				return VT.SetOutputFileName(ref this, fileName);
 			}
-			public HRESULT SetSampleCallback(IMFCaptureEngineOnSampleCallback* pCallback) mut
+			public HRESULT SetSampleCallback(ref IMFCaptureEngineOnSampleCallback pCallback) mut
 			{
-				return VT.SetSampleCallback(&this, pCallback);
+				return VT.SetSampleCallback(ref this, ref pCallback);
 			}
-			public HRESULT SetOutputByteStream(IMFByteStream* pByteStream) mut
+			public HRESULT SetOutputByteStream(ref IMFByteStream pByteStream) mut
 			{
-				return VT.SetOutputByteStream(&this, pByteStream);
+				return VT.SetOutputByteStream(ref this, ref pByteStream);
 			}
 			[CRepr]
 			public struct VTable : IMFCaptureSink.VTable
 			{
-				public new function HRESULT(IMFCapturePhotoSink *self, PWSTR fileName) SetOutputFileName;
-				public new function HRESULT(IMFCapturePhotoSink *self, IMFCaptureEngineOnSampleCallback* pCallback) SetSampleCallback;
-				public new function HRESULT(IMFCapturePhotoSink *self, IMFByteStream* pByteStream) SetOutputByteStream;
+				public new function HRESULT(ref IMFCapturePhotoSink self, PWSTR fileName) SetOutputFileName;
+				public new function HRESULT(ref IMFCapturePhotoSink self, ref IMFCaptureEngineOnSampleCallback pCallback) SetSampleCallback;
+				public new function HRESULT(ref IMFCapturePhotoSink self, ref IMFByteStream pByteStream) SetOutputByteStream;
 			}
 		}
 		[CRepr]
@@ -16369,77 +16369,77 @@ namespace Win32
 			
 			public HRESULT GetCaptureDeviceSource(MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFMediaSource** ppMediaSource) mut
 			{
-				return VT.GetCaptureDeviceSource(&this, mfCaptureEngineDeviceType, ppMediaSource);
+				return VT.GetCaptureDeviceSource(ref this, mfCaptureEngineDeviceType, ppMediaSource);
 			}
 			public HRESULT GetCaptureDeviceActivate(MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFActivate** ppActivate) mut
 			{
-				return VT.GetCaptureDeviceActivate(&this, mfCaptureEngineDeviceType, ppActivate);
+				return VT.GetCaptureDeviceActivate(ref this, mfCaptureEngineDeviceType, ppActivate);
 			}
-			public HRESULT GetService(Guid* rguidService, Guid* riid, IUnknown** ppUnknown) mut
+			public HRESULT GetService(in Guid rguidService, in Guid riid, IUnknown** ppUnknown) mut
 			{
-				return VT.GetService(&this, rguidService, riid, ppUnknown);
+				return VT.GetService(ref this, rguidService, riid, ppUnknown);
 			}
-			public HRESULT AddEffect(uint32 dwSourceStreamIndex, IUnknown* pUnknown) mut
+			public HRESULT AddEffect(uint32 dwSourceStreamIndex, ref IUnknown pUnknown) mut
 			{
-				return VT.AddEffect(&this, dwSourceStreamIndex, pUnknown);
+				return VT.AddEffect(ref this, dwSourceStreamIndex, ref pUnknown);
 			}
-			public HRESULT RemoveEffect(uint32 dwSourceStreamIndex, IUnknown* pUnknown) mut
+			public HRESULT RemoveEffect(uint32 dwSourceStreamIndex, ref IUnknown pUnknown) mut
 			{
-				return VT.RemoveEffect(&this, dwSourceStreamIndex, pUnknown);
+				return VT.RemoveEffect(ref this, dwSourceStreamIndex, ref pUnknown);
 			}
 			public HRESULT RemoveAllEffects(uint32 dwSourceStreamIndex) mut
 			{
-				return VT.RemoveAllEffects(&this, dwSourceStreamIndex);
+				return VT.RemoveAllEffects(ref this, dwSourceStreamIndex);
 			}
 			public HRESULT GetAvailableDeviceMediaType(uint32 dwSourceStreamIndex, uint32 dwMediaTypeIndex, IMFMediaType** ppMediaType) mut
 			{
-				return VT.GetAvailableDeviceMediaType(&this, dwSourceStreamIndex, dwMediaTypeIndex, ppMediaType);
+				return VT.GetAvailableDeviceMediaType(ref this, dwSourceStreamIndex, dwMediaTypeIndex, ppMediaType);
 			}
-			public HRESULT SetCurrentDeviceMediaType(uint32 dwSourceStreamIndex, IMFMediaType* pMediaType) mut
+			public HRESULT SetCurrentDeviceMediaType(uint32 dwSourceStreamIndex, ref IMFMediaType pMediaType) mut
 			{
-				return VT.SetCurrentDeviceMediaType(&this, dwSourceStreamIndex, pMediaType);
+				return VT.SetCurrentDeviceMediaType(ref this, dwSourceStreamIndex, ref pMediaType);
 			}
-			public HRESULT GetCurrentDeviceMediaType(uint32 dwSourceStreamIndex, IMFMediaType** ppMediaType) mut
+			public HRESULT GetCurrentDeviceMediaType(uint32 dwSourceStreamIndex, out IMFMediaType* ppMediaType) mut
 			{
-				return VT.GetCurrentDeviceMediaType(&this, dwSourceStreamIndex, ppMediaType);
+				return VT.GetCurrentDeviceMediaType(ref this, dwSourceStreamIndex, out ppMediaType);
 			}
-			public HRESULT GetDeviceStreamCount(uint32* pdwStreamCount) mut
+			public HRESULT GetDeviceStreamCount(out uint32 pdwStreamCount) mut
 			{
-				return VT.GetDeviceStreamCount(&this, pdwStreamCount);
+				return VT.GetDeviceStreamCount(ref this, out pdwStreamCount);
 			}
-			public HRESULT GetDeviceStreamCategory(uint32 dwSourceStreamIndex, MF_CAPTURE_ENGINE_STREAM_CATEGORY* pStreamCategory) mut
+			public HRESULT GetDeviceStreamCategory(uint32 dwSourceStreamIndex, out MF_CAPTURE_ENGINE_STREAM_CATEGORY pStreamCategory) mut
 			{
-				return VT.GetDeviceStreamCategory(&this, dwSourceStreamIndex, pStreamCategory);
+				return VT.GetDeviceStreamCategory(ref this, dwSourceStreamIndex, out pStreamCategory);
 			}
-			public HRESULT GetMirrorState(uint32 dwStreamIndex, BOOL* pfMirrorState) mut
+			public HRESULT GetMirrorState(uint32 dwStreamIndex, out BOOL pfMirrorState) mut
 			{
-				return VT.GetMirrorState(&this, dwStreamIndex, pfMirrorState);
+				return VT.GetMirrorState(ref this, dwStreamIndex, out pfMirrorState);
 			}
 			public HRESULT SetMirrorState(uint32 dwStreamIndex, BOOL fMirrorState) mut
 			{
-				return VT.SetMirrorState(&this, dwStreamIndex, fMirrorState);
+				return VT.SetMirrorState(ref this, dwStreamIndex, fMirrorState);
 			}
-			public HRESULT GetStreamIndexFromFriendlyName(uint32 uifriendlyName, uint32* pdwActualStreamIndex) mut
+			public HRESULT GetStreamIndexFromFriendlyName(uint32 uifriendlyName, out uint32 pdwActualStreamIndex) mut
 			{
-				return VT.GetStreamIndexFromFriendlyName(&this, uifriendlyName, pdwActualStreamIndex);
+				return VT.GetStreamIndexFromFriendlyName(ref this, uifriendlyName, out pdwActualStreamIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCaptureSource *self, MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFMediaSource** ppMediaSource) GetCaptureDeviceSource;
-				public new function HRESULT(IMFCaptureSource *self, MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFActivate** ppActivate) GetCaptureDeviceActivate;
-				public new function HRESULT(IMFCaptureSource *self, Guid* rguidService, Guid* riid, IUnknown** ppUnknown) GetService;
-				public new function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, IUnknown* pUnknown) AddEffect;
-				public new function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, IUnknown* pUnknown) RemoveEffect;
-				public new function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex) RemoveAllEffects;
-				public new function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, uint32 dwMediaTypeIndex, IMFMediaType** ppMediaType) GetAvailableDeviceMediaType;
-				public new function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, IMFMediaType* pMediaType) SetCurrentDeviceMediaType;
-				public new function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, IMFMediaType** ppMediaType) GetCurrentDeviceMediaType;
-				public new function HRESULT(IMFCaptureSource *self, uint32* pdwStreamCount) GetDeviceStreamCount;
-				public new function HRESULT(IMFCaptureSource *self, uint32 dwSourceStreamIndex, MF_CAPTURE_ENGINE_STREAM_CATEGORY* pStreamCategory) GetDeviceStreamCategory;
-				public new function HRESULT(IMFCaptureSource *self, uint32 dwStreamIndex, BOOL* pfMirrorState) GetMirrorState;
-				public new function HRESULT(IMFCaptureSource *self, uint32 dwStreamIndex, BOOL fMirrorState) SetMirrorState;
-				public new function HRESULT(IMFCaptureSource *self, uint32 uifriendlyName, uint32* pdwActualStreamIndex) GetStreamIndexFromFriendlyName;
+				public new function HRESULT(ref IMFCaptureSource self, MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFMediaSource** ppMediaSource) GetCaptureDeviceSource;
+				public new function HRESULT(ref IMFCaptureSource self, MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFActivate** ppActivate) GetCaptureDeviceActivate;
+				public new function HRESULT(ref IMFCaptureSource self, in Guid rguidService, in Guid riid, IUnknown** ppUnknown) GetService;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 dwSourceStreamIndex, ref IUnknown pUnknown) AddEffect;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 dwSourceStreamIndex, ref IUnknown pUnknown) RemoveEffect;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 dwSourceStreamIndex) RemoveAllEffects;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 dwSourceStreamIndex, uint32 dwMediaTypeIndex, IMFMediaType** ppMediaType) GetAvailableDeviceMediaType;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 dwSourceStreamIndex, ref IMFMediaType pMediaType) SetCurrentDeviceMediaType;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 dwSourceStreamIndex, out IMFMediaType* ppMediaType) GetCurrentDeviceMediaType;
+				public new function HRESULT(ref IMFCaptureSource self, out uint32 pdwStreamCount) GetDeviceStreamCount;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 dwSourceStreamIndex, out MF_CAPTURE_ENGINE_STREAM_CATEGORY pStreamCategory) GetDeviceStreamCategory;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 dwStreamIndex, out BOOL pfMirrorState) GetMirrorState;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 dwStreamIndex, BOOL fMirrorState) SetMirrorState;
+				public new function HRESULT(ref IMFCaptureSource self, uint32 uifriendlyName, out uint32 pdwActualStreamIndex) GetStreamIndexFromFriendlyName;
 			}
 		}
 		[CRepr]
@@ -16449,49 +16449,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IMFCaptureEngineOnEventCallback* pEventCallback, IMFAttributes* pAttributes, IUnknown* pAudioSource, IUnknown* pVideoSource) mut
+			public HRESULT Initialize(ref IMFCaptureEngineOnEventCallback pEventCallback, IMFAttributes* pAttributes, IUnknown* pAudioSource, IUnknown* pVideoSource) mut
 			{
-				return VT.Initialize(&this, pEventCallback, pAttributes, pAudioSource, pVideoSource);
+				return VT.Initialize(ref this, ref pEventCallback, pAttributes, pAudioSource, pVideoSource);
 			}
 			public HRESULT StartPreview() mut
 			{
-				return VT.StartPreview(&this);
+				return VT.StartPreview(ref this);
 			}
 			public HRESULT StopPreview() mut
 			{
-				return VT.StopPreview(&this);
+				return VT.StopPreview(ref this);
 			}
 			public HRESULT StartRecord() mut
 			{
-				return VT.StartRecord(&this);
+				return VT.StartRecord(ref this);
 			}
 			public HRESULT StopRecord(BOOL bFinalize, BOOL bFlushUnprocessedSamples) mut
 			{
-				return VT.StopRecord(&this, bFinalize, bFlushUnprocessedSamples);
+				return VT.StopRecord(ref this, bFinalize, bFlushUnprocessedSamples);
 			}
 			public HRESULT TakePhoto() mut
 			{
-				return VT.TakePhoto(&this);
+				return VT.TakePhoto(ref this);
 			}
-			public HRESULT GetSink(MF_CAPTURE_ENGINE_SINK_TYPE mfCaptureEngineSinkType, IMFCaptureSink** ppSink) mut
+			public HRESULT GetSink(MF_CAPTURE_ENGINE_SINK_TYPE mfCaptureEngineSinkType, out IMFCaptureSink* ppSink) mut
 			{
-				return VT.GetSink(&this, mfCaptureEngineSinkType, ppSink);
+				return VT.GetSink(ref this, mfCaptureEngineSinkType, out ppSink);
 			}
-			public HRESULT GetSource(IMFCaptureSource** ppSource) mut
+			public HRESULT GetSource(out IMFCaptureSource* ppSource) mut
 			{
-				return VT.GetSource(&this, ppSource);
+				return VT.GetSource(ref this, out ppSource);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCaptureEngine *self, IMFCaptureEngineOnEventCallback* pEventCallback, IMFAttributes* pAttributes, IUnknown* pAudioSource, IUnknown* pVideoSource) Initialize;
-				public new function HRESULT(IMFCaptureEngine *self) StartPreview;
-				public new function HRESULT(IMFCaptureEngine *self) StopPreview;
-				public new function HRESULT(IMFCaptureEngine *self) StartRecord;
-				public new function HRESULT(IMFCaptureEngine *self, BOOL bFinalize, BOOL bFlushUnprocessedSamples) StopRecord;
-				public new function HRESULT(IMFCaptureEngine *self) TakePhoto;
-				public new function HRESULT(IMFCaptureEngine *self, MF_CAPTURE_ENGINE_SINK_TYPE mfCaptureEngineSinkType, IMFCaptureSink** ppSink) GetSink;
-				public new function HRESULT(IMFCaptureEngine *self, IMFCaptureSource** ppSource) GetSource;
+				public new function HRESULT(ref IMFCaptureEngine self, ref IMFCaptureEngineOnEventCallback pEventCallback, IMFAttributes* pAttributes, IUnknown* pAudioSource, IUnknown* pVideoSource) Initialize;
+				public new function HRESULT(ref IMFCaptureEngine self) StartPreview;
+				public new function HRESULT(ref IMFCaptureEngine self) StopPreview;
+				public new function HRESULT(ref IMFCaptureEngine self) StartRecord;
+				public new function HRESULT(ref IMFCaptureEngine self, BOOL bFinalize, BOOL bFlushUnprocessedSamples) StopRecord;
+				public new function HRESULT(ref IMFCaptureEngine self) TakePhoto;
+				public new function HRESULT(ref IMFCaptureEngine self, MF_CAPTURE_ENGINE_SINK_TYPE mfCaptureEngineSinkType, out IMFCaptureSink* ppSink) GetSink;
+				public new function HRESULT(ref IMFCaptureEngine self, out IMFCaptureSource* ppSource) GetSource;
 			}
 		}
 		[CRepr]
@@ -16501,14 +16501,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstance(Guid* clsid, Guid* riid, void** ppvObject) mut
+			public HRESULT CreateInstance(in Guid clsid, in Guid riid, void** ppvObject) mut
 			{
-				return VT.CreateInstance(&this, clsid, riid, ppvObject);
+				return VT.CreateInstance(ref this, clsid, riid, ppvObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCaptureEngineClassFactory *self, Guid* clsid, Guid* riid, void** ppvObject) CreateInstance;
+				public new function HRESULT(ref IMFCaptureEngineClassFactory self, in Guid clsid, in Guid riid, void** ppvObject) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -16518,14 +16518,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT OnSynchronizedEvent(IMFMediaEvent* pEvent) mut
+			public HRESULT OnSynchronizedEvent(ref IMFMediaEvent pEvent) mut
 			{
-				return VT.OnSynchronizedEvent(&this, pEvent);
+				return VT.OnSynchronizedEvent(ref this, ref pEvent);
 			}
 			[CRepr]
 			public struct VTable : IMFCaptureEngineOnSampleCallback.VTable
 			{
-				public new function HRESULT(IMFCaptureEngineOnSampleCallback2 *self, IMFMediaEvent* pEvent) OnSynchronizedEvent;
+				public new function HRESULT(ref IMFCaptureEngineOnSampleCallback2 self, ref IMFMediaEvent pEvent) OnSynchronizedEvent;
 			}
 		}
 		[CRepr]
@@ -16535,14 +16535,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetOutputMediaType(uint32 dwStreamIndex, IMFMediaType* pMediaType, IMFAttributes* pEncodingAttributes) mut
+			public HRESULT SetOutputMediaType(uint32 dwStreamIndex, ref IMFMediaType pMediaType, IMFAttributes* pEncodingAttributes) mut
 			{
-				return VT.SetOutputMediaType(&this, dwStreamIndex, pMediaType, pEncodingAttributes);
+				return VT.SetOutputMediaType(ref this, dwStreamIndex, ref pMediaType, pEncodingAttributes);
 			}
 			[CRepr]
 			public struct VTable : IMFCaptureSink.VTable
 			{
-				public new function HRESULT(IMFCaptureSink2 *self, uint32 dwStreamIndex, IMFMediaType* pMediaType, IMFAttributes* pEncodingAttributes) SetOutputMediaType;
+				public new function HRESULT(ref IMFCaptureSink2 self, uint32 dwStreamIndex, ref IMFMediaType pMediaType, IMFAttributes* pEncodingAttributes) SetOutputMediaType;
 			}
 		}
 		[CRepr]
@@ -16552,29 +16552,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnqueueResourceReady(ID3D12CommandQueue* pProducerCommandQueue) mut
+			public HRESULT EnqueueResourceReady(ref ID3D12CommandQueue pProducerCommandQueue) mut
 			{
-				return VT.EnqueueResourceReady(&this, pProducerCommandQueue);
+				return VT.EnqueueResourceReady(ref this, ref pProducerCommandQueue);
 			}
-			public HRESULT EnqueueResourceReadyWait(ID3D12CommandQueue* pConsumerCommandQueue) mut
+			public HRESULT EnqueueResourceReadyWait(ref ID3D12CommandQueue pConsumerCommandQueue) mut
 			{
-				return VT.EnqueueResourceReadyWait(&this, pConsumerCommandQueue);
+				return VT.EnqueueResourceReadyWait(ref this, ref pConsumerCommandQueue);
 			}
 			public HRESULT SignalEventOnResourceReady(HANDLE hEvent) mut
 			{
-				return VT.SignalEventOnResourceReady(&this, hEvent);
+				return VT.SignalEventOnResourceReady(ref this, hEvent);
 			}
-			public HRESULT EnqueueResourceRelease(ID3D12CommandQueue* pConsumerCommandQueue) mut
+			public HRESULT EnqueueResourceRelease(ref ID3D12CommandQueue pConsumerCommandQueue) mut
 			{
-				return VT.EnqueueResourceRelease(&this, pConsumerCommandQueue);
+				return VT.EnqueueResourceRelease(ref this, ref pConsumerCommandQueue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFD3D12SynchronizationObjectCommands *self, ID3D12CommandQueue* pProducerCommandQueue) EnqueueResourceReady;
-				public new function HRESULT(IMFD3D12SynchronizationObjectCommands *self, ID3D12CommandQueue* pConsumerCommandQueue) EnqueueResourceReadyWait;
-				public new function HRESULT(IMFD3D12SynchronizationObjectCommands *self, HANDLE hEvent) SignalEventOnResourceReady;
-				public new function HRESULT(IMFD3D12SynchronizationObjectCommands *self, ID3D12CommandQueue* pConsumerCommandQueue) EnqueueResourceRelease;
+				public new function HRESULT(ref IMFD3D12SynchronizationObjectCommands self, ref ID3D12CommandQueue pProducerCommandQueue) EnqueueResourceReady;
+				public new function HRESULT(ref IMFD3D12SynchronizationObjectCommands self, ref ID3D12CommandQueue pConsumerCommandQueue) EnqueueResourceReadyWait;
+				public new function HRESULT(ref IMFD3D12SynchronizationObjectCommands self, HANDLE hEvent) SignalEventOnResourceReady;
+				public new function HRESULT(ref IMFD3D12SynchronizationObjectCommands self, ref ID3D12CommandQueue pConsumerCommandQueue) EnqueueResourceRelease;
 			}
 		}
 		[CRepr]
@@ -16586,17 +16586,17 @@ namespace Win32
 			
 			public HRESULT SignalEventOnFinalResourceRelease(HANDLE hEvent) mut
 			{
-				return VT.SignalEventOnFinalResourceRelease(&this, hEvent);
+				return VT.SignalEventOnFinalResourceRelease(ref this, hEvent);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFD3D12SynchronizationObject *self, HANDLE hEvent) SignalEventOnFinalResourceRelease;
-				public new function HRESULT(IMFD3D12SynchronizationObject *self) Reset;
+				public new function HRESULT(ref IMFD3D12SynchronizationObject self, HANDLE hEvent) SignalEventOnFinalResourceRelease;
+				public new function HRESULT(ref IMFD3D12SynchronizationObject self) Reset;
 			}
 		}
 		[CRepr]
@@ -16618,27 +16618,27 @@ namespace Win32
 			
 			public uint16 GetErrorCode() mut
 			{
-				return VT.GetErrorCode(&this);
+				return VT.GetErrorCode(ref this);
 			}
 			public HRESULT GetExtendedErrorCode() mut
 			{
-				return VT.GetExtendedErrorCode(&this);
+				return VT.GetExtendedErrorCode(ref this);
 			}
 			public HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error) mut
 			{
-				return VT.SetErrorCode(&this, error);
+				return VT.SetErrorCode(ref this, error);
 			}
 			public HRESULT SetExtendedErrorCode(HRESULT error) mut
 			{
-				return VT.SetExtendedErrorCode(&this, error);
+				return VT.SetExtendedErrorCode(ref this, error);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint16(IMFMediaError *self) GetErrorCode;
-				public new function HRESULT(IMFMediaError *self) GetExtendedErrorCode;
-				public new function HRESULT(IMFMediaError *self, MF_MEDIA_ENGINE_ERR error) SetErrorCode;
-				public new function HRESULT(IMFMediaError *self, HRESULT error) SetExtendedErrorCode;
+				public new function uint16(ref IMFMediaError self) GetErrorCode;
+				public new function HRESULT(ref IMFMediaError self) GetExtendedErrorCode;
+				public new function HRESULT(ref IMFMediaError self, MF_MEDIA_ENGINE_ERR error) SetErrorCode;
+				public new function HRESULT(ref IMFMediaError self, HRESULT error) SetExtendedErrorCode;
 			}
 		}
 		[CRepr]
@@ -16650,37 +16650,37 @@ namespace Win32
 			
 			public uint32 GetLength() mut
 			{
-				return VT.GetLength(&this);
+				return VT.GetLength(ref this);
 			}
-			public HRESULT GetStart(uint32 index, double* pStart) mut
+			public HRESULT GetStart(uint32 index, out double pStart) mut
 			{
-				return VT.GetStart(&this, index, pStart);
+				return VT.GetStart(ref this, index, out pStart);
 			}
-			public HRESULT GetEnd(uint32 index, double* pEnd) mut
+			public HRESULT GetEnd(uint32 index, out double pEnd) mut
 			{
-				return VT.GetEnd(&this, index, pEnd);
+				return VT.GetEnd(ref this, index, out pEnd);
 			}
 			public BOOL ContainsTime(double time) mut
 			{
-				return VT.ContainsTime(&this, time);
+				return VT.ContainsTime(ref this, time);
 			}
 			public HRESULT AddRange(double startTime, double endTime) mut
 			{
-				return VT.AddRange(&this, startTime, endTime);
+				return VT.AddRange(ref this, startTime, endTime);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(IMFMediaTimeRange *self) GetLength;
-				public new function HRESULT(IMFMediaTimeRange *self, uint32 index, double* pStart) GetStart;
-				public new function HRESULT(IMFMediaTimeRange *self, uint32 index, double* pEnd) GetEnd;
-				public new function BOOL(IMFMediaTimeRange *self, double time) ContainsTime;
-				public new function HRESULT(IMFMediaTimeRange *self, double startTime, double endTime) AddRange;
-				public new function HRESULT(IMFMediaTimeRange *self) Clear;
+				public new function uint32(ref IMFMediaTimeRange self) GetLength;
+				public new function HRESULT(ref IMFMediaTimeRange self, uint32 index, out double pStart) GetStart;
+				public new function HRESULT(ref IMFMediaTimeRange self, uint32 index, out double pEnd) GetEnd;
+				public new function BOOL(ref IMFMediaTimeRange self, double time) ContainsTime;
+				public new function HRESULT(ref IMFMediaTimeRange self, double startTime, double endTime) AddRange;
+				public new function HRESULT(ref IMFMediaTimeRange self) Clear;
 			}
 		}
 		[CRepr]
@@ -16692,12 +16692,12 @@ namespace Win32
 			
 			public HRESULT EventNotify(uint32 event, uint param1, uint32 param2) mut
 			{
-				return VT.EventNotify(&this, event, param1, param2);
+				return VT.EventNotify(ref this, event, param1, param2);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineNotify *self, uint32 event, uint param1, uint32 param2) EventNotify;
+				public new function HRESULT(ref IMFMediaEngineNotify self, uint32 event, uint param1, uint32 param2) EventNotify;
 			}
 		}
 		[CRepr]
@@ -16709,37 +16709,37 @@ namespace Win32
 			
 			public uint32 GetLength() mut
 			{
-				return VT.GetLength(&this);
+				return VT.GetLength(ref this);
 			}
-			public HRESULT GetURL(uint32 index, BSTR* pURL) mut
+			public HRESULT GetURL(uint32 index, out BSTR pURL) mut
 			{
-				return VT.GetURL(&this, index, pURL);
+				return VT.GetURL(ref this, index, out pURL);
 			}
-			public HRESULT ComGetType(uint32 index, BSTR* pType) mut
+			public HRESULT ComGetType(uint32 index, out BSTR pType) mut
 			{
-				return VT.ComGetType(&this, index, pType);
+				return VT.ComGetType(ref this, index, out pType);
 			}
-			public HRESULT GetMedia(uint32 index, BSTR* pMedia) mut
+			public HRESULT GetMedia(uint32 index, out BSTR pMedia) mut
 			{
-				return VT.GetMedia(&this, index, pMedia);
+				return VT.GetMedia(ref this, index, out pMedia);
 			}
 			public HRESULT AddElement(BSTR pURL, BSTR pType, BSTR pMedia) mut
 			{
-				return VT.AddElement(&this, pURL, pType, pMedia);
+				return VT.AddElement(ref this, pURL, pType, pMedia);
 			}
 			public HRESULT RemoveAllElements() mut
 			{
-				return VT.RemoveAllElements(&this);
+				return VT.RemoveAllElements(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(IMFMediaEngineSrcElements *self) GetLength;
-				public new function HRESULT(IMFMediaEngineSrcElements *self, uint32 index, BSTR* pURL) GetURL;
-				public new function HRESULT(IMFMediaEngineSrcElements *self, uint32 index, BSTR* pType) ComGetType;
-				public new function HRESULT(IMFMediaEngineSrcElements *self, uint32 index, BSTR* pMedia) GetMedia;
-				public new function HRESULT(IMFMediaEngineSrcElements *self, BSTR pURL, BSTR pType, BSTR pMedia) AddElement;
-				public new function HRESULT(IMFMediaEngineSrcElements *self) RemoveAllElements;
+				public new function uint32(ref IMFMediaEngineSrcElements self) GetLength;
+				public new function HRESULT(ref IMFMediaEngineSrcElements self, uint32 index, out BSTR pURL) GetURL;
+				public new function HRESULT(ref IMFMediaEngineSrcElements self, uint32 index, out BSTR pType) ComGetType;
+				public new function HRESULT(ref IMFMediaEngineSrcElements self, uint32 index, out BSTR pMedia) GetMedia;
+				public new function HRESULT(ref IMFMediaEngineSrcElements self, BSTR pURL, BSTR pType, BSTR pMedia) AddElement;
+				public new function HRESULT(ref IMFMediaEngineSrcElements self) RemoveAllElements;
 			}
 		}
 		[CRepr]
@@ -16749,219 +16749,219 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetError(IMFMediaError** ppError) mut
+			public HRESULT GetError(out IMFMediaError* ppError) mut
 			{
-				return VT.GetError(&this, ppError);
+				return VT.GetError(ref this, out ppError);
 			}
 			public HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error) mut
 			{
-				return VT.SetErrorCode(&this, error);
+				return VT.SetErrorCode(ref this, error);
 			}
-			public HRESULT SetSourceElements(IMFMediaEngineSrcElements* pSrcElements) mut
+			public HRESULT SetSourceElements(ref IMFMediaEngineSrcElements pSrcElements) mut
 			{
-				return VT.SetSourceElements(&this, pSrcElements);
+				return VT.SetSourceElements(ref this, ref pSrcElements);
 			}
 			public HRESULT SetSource(BSTR pUrl) mut
 			{
-				return VT.SetSource(&this, pUrl);
+				return VT.SetSource(ref this, pUrl);
 			}
-			public HRESULT GetCurrentSource(BSTR* ppUrl) mut
+			public HRESULT GetCurrentSource(out BSTR ppUrl) mut
 			{
-				return VT.GetCurrentSource(&this, ppUrl);
+				return VT.GetCurrentSource(ref this, out ppUrl);
 			}
 			public uint16 GetNetworkState() mut
 			{
-				return VT.GetNetworkState(&this);
+				return VT.GetNetworkState(ref this);
 			}
 			public MF_MEDIA_ENGINE_PRELOAD GetPreload() mut
 			{
-				return VT.GetPreload(&this);
+				return VT.GetPreload(ref this);
 			}
 			public HRESULT SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload) mut
 			{
-				return VT.SetPreload(&this, Preload);
+				return VT.SetPreload(ref this, Preload);
 			}
-			public HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered) mut
+			public HRESULT GetBuffered(out IMFMediaTimeRange* ppBuffered) mut
 			{
-				return VT.GetBuffered(&this, ppBuffered);
+				return VT.GetBuffered(ref this, out ppBuffered);
 			}
 			public HRESULT Load() mut
 			{
-				return VT.Load(&this);
+				return VT.Load(ref this);
 			}
-			public HRESULT CanPlayType(BSTR type, MF_MEDIA_ENGINE_CANPLAY* pAnswer) mut
+			public HRESULT CanPlayType(BSTR type, out MF_MEDIA_ENGINE_CANPLAY pAnswer) mut
 			{
-				return VT.CanPlayType(&this, type, pAnswer);
+				return VT.CanPlayType(ref this, type, out pAnswer);
 			}
 			public uint16 GetReadyState() mut
 			{
-				return VT.GetReadyState(&this);
+				return VT.GetReadyState(ref this);
 			}
 			public BOOL IsSeeking() mut
 			{
-				return VT.IsSeeking(&this);
+				return VT.IsSeeking(ref this);
 			}
 			public double GetCurrentTime() mut
 			{
-				return VT.GetCurrentTime(&this);
+				return VT.GetCurrentTime(ref this);
 			}
 			public HRESULT SetCurrentTime(double seekTime) mut
 			{
-				return VT.SetCurrentTime(&this, seekTime);
+				return VT.SetCurrentTime(ref this, seekTime);
 			}
 			public double GetStartTime() mut
 			{
-				return VT.GetStartTime(&this);
+				return VT.GetStartTime(ref this);
 			}
 			public double GetDuration() mut
 			{
-				return VT.GetDuration(&this);
+				return VT.GetDuration(ref this);
 			}
 			public BOOL IsPaused() mut
 			{
-				return VT.IsPaused(&this);
+				return VT.IsPaused(ref this);
 			}
 			public double GetDefaultPlaybackRate() mut
 			{
-				return VT.GetDefaultPlaybackRate(&this);
+				return VT.GetDefaultPlaybackRate(ref this);
 			}
 			public HRESULT SetDefaultPlaybackRate(double Rate) mut
 			{
-				return VT.SetDefaultPlaybackRate(&this, Rate);
+				return VT.SetDefaultPlaybackRate(ref this, Rate);
 			}
 			public double GetPlaybackRate() mut
 			{
-				return VT.GetPlaybackRate(&this);
+				return VT.GetPlaybackRate(ref this);
 			}
 			public HRESULT SetPlaybackRate(double Rate) mut
 			{
-				return VT.SetPlaybackRate(&this, Rate);
+				return VT.SetPlaybackRate(ref this, Rate);
 			}
-			public HRESULT GetPlayed(IMFMediaTimeRange** ppPlayed) mut
+			public HRESULT GetPlayed(out IMFMediaTimeRange* ppPlayed) mut
 			{
-				return VT.GetPlayed(&this, ppPlayed);
+				return VT.GetPlayed(ref this, out ppPlayed);
 			}
-			public HRESULT GetSeekable(IMFMediaTimeRange** ppSeekable) mut
+			public HRESULT GetSeekable(out IMFMediaTimeRange* ppSeekable) mut
 			{
-				return VT.GetSeekable(&this, ppSeekable);
+				return VT.GetSeekable(ref this, out ppSeekable);
 			}
 			public BOOL IsEnded() mut
 			{
-				return VT.IsEnded(&this);
+				return VT.IsEnded(ref this);
 			}
 			public BOOL GetAutoPlay() mut
 			{
-				return VT.GetAutoPlay(&this);
+				return VT.GetAutoPlay(ref this);
 			}
 			public HRESULT SetAutoPlay(BOOL AutoPlay) mut
 			{
-				return VT.SetAutoPlay(&this, AutoPlay);
+				return VT.SetAutoPlay(ref this, AutoPlay);
 			}
 			public BOOL GetLoop() mut
 			{
-				return VT.GetLoop(&this);
+				return VT.GetLoop(ref this);
 			}
 			public HRESULT SetLoop(BOOL Loop) mut
 			{
-				return VT.SetLoop(&this, Loop);
+				return VT.SetLoop(ref this, Loop);
 			}
 			public HRESULT Play() mut
 			{
-				return VT.Play(&this);
+				return VT.Play(ref this);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public BOOL GetMuted() mut
 			{
-				return VT.GetMuted(&this);
+				return VT.GetMuted(ref this);
 			}
 			public HRESULT SetMuted(BOOL Muted) mut
 			{
-				return VT.SetMuted(&this, Muted);
+				return VT.SetMuted(ref this, Muted);
 			}
 			public double GetVolume() mut
 			{
-				return VT.GetVolume(&this);
+				return VT.GetVolume(ref this);
 			}
 			public HRESULT SetVolume(double Volume) mut
 			{
-				return VT.SetVolume(&this, Volume);
+				return VT.SetVolume(ref this, Volume);
 			}
 			public BOOL HasVideo() mut
 			{
-				return VT.HasVideo(&this);
+				return VT.HasVideo(ref this);
 			}
 			public BOOL HasAudio() mut
 			{
-				return VT.HasAudio(&this);
+				return VT.HasAudio(ref this);
 			}
 			public HRESULT GetNativeVideoSize(uint32* cx, uint32* cy) mut
 			{
-				return VT.GetNativeVideoSize(&this, cx, cy);
+				return VT.GetNativeVideoSize(ref this, cx, cy);
 			}
 			public HRESULT GetVideoAspectRatio(uint32* cx, uint32* cy) mut
 			{
-				return VT.GetVideoAspectRatio(&this, cx, cy);
+				return VT.GetVideoAspectRatio(ref this, cx, cy);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
-			public HRESULT TransferVideoFrame(IUnknown* pDstSurf, MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr) mut
+			public HRESULT TransferVideoFrame(ref IUnknown pDstSurf, MFVideoNormalizedRect* pSrc, in RECT pDst, MFARGB* pBorderClr) mut
 			{
-				return VT.TransferVideoFrame(&this, pDstSurf, pSrc, pDst, pBorderClr);
+				return VT.TransferVideoFrame(ref this, ref pDstSurf, pSrc, pDst, pBorderClr);
 			}
-			public HRESULT OnVideoStreamTick(int64* pPts) mut
+			public HRESULT OnVideoStreamTick(out int64 pPts) mut
 			{
-				return VT.OnVideoStreamTick(&this, pPts);
+				return VT.OnVideoStreamTick(ref this, out pPts);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngine *self, IMFMediaError** ppError) GetError;
-				public new function HRESULT(IMFMediaEngine *self, MF_MEDIA_ENGINE_ERR error) SetErrorCode;
-				public new function HRESULT(IMFMediaEngine *self, IMFMediaEngineSrcElements* pSrcElements) SetSourceElements;
-				public new function HRESULT(IMFMediaEngine *self, BSTR pUrl) SetSource;
-				public new function HRESULT(IMFMediaEngine *self, BSTR* ppUrl) GetCurrentSource;
-				public new function uint16(IMFMediaEngine *self) GetNetworkState;
-				public new function MF_MEDIA_ENGINE_PRELOAD(IMFMediaEngine *self) GetPreload;
-				public new function HRESULT(IMFMediaEngine *self, MF_MEDIA_ENGINE_PRELOAD Preload) SetPreload;
-				public new function HRESULT(IMFMediaEngine *self, IMFMediaTimeRange** ppBuffered) GetBuffered;
-				public new function HRESULT(IMFMediaEngine *self) Load;
-				public new function HRESULT(IMFMediaEngine *self, BSTR type, MF_MEDIA_ENGINE_CANPLAY* pAnswer) CanPlayType;
-				public new function uint16(IMFMediaEngine *self) GetReadyState;
-				public new function BOOL(IMFMediaEngine *self) IsSeeking;
-				public new function double(IMFMediaEngine *self) GetCurrentTime;
-				public new function HRESULT(IMFMediaEngine *self, double seekTime) SetCurrentTime;
-				public new function double(IMFMediaEngine *self) GetStartTime;
-				public new function double(IMFMediaEngine *self) GetDuration;
-				public new function BOOL(IMFMediaEngine *self) IsPaused;
-				public new function double(IMFMediaEngine *self) GetDefaultPlaybackRate;
-				public new function HRESULT(IMFMediaEngine *self, double Rate) SetDefaultPlaybackRate;
-				public new function double(IMFMediaEngine *self) GetPlaybackRate;
-				public new function HRESULT(IMFMediaEngine *self, double Rate) SetPlaybackRate;
-				public new function HRESULT(IMFMediaEngine *self, IMFMediaTimeRange** ppPlayed) GetPlayed;
-				public new function HRESULT(IMFMediaEngine *self, IMFMediaTimeRange** ppSeekable) GetSeekable;
-				public new function BOOL(IMFMediaEngine *self) IsEnded;
-				public new function BOOL(IMFMediaEngine *self) GetAutoPlay;
-				public new function HRESULT(IMFMediaEngine *self, BOOL AutoPlay) SetAutoPlay;
-				public new function BOOL(IMFMediaEngine *self) GetLoop;
-				public new function HRESULT(IMFMediaEngine *self, BOOL Loop) SetLoop;
-				public new function HRESULT(IMFMediaEngine *self) Play;
-				public new function HRESULT(IMFMediaEngine *self) Pause;
-				public new function BOOL(IMFMediaEngine *self) GetMuted;
-				public new function HRESULT(IMFMediaEngine *self, BOOL Muted) SetMuted;
-				public new function double(IMFMediaEngine *self) GetVolume;
-				public new function HRESULT(IMFMediaEngine *self, double Volume) SetVolume;
-				public new function BOOL(IMFMediaEngine *self) HasVideo;
-				public new function BOOL(IMFMediaEngine *self) HasAudio;
-				public new function HRESULT(IMFMediaEngine *self, uint32* cx, uint32* cy) GetNativeVideoSize;
-				public new function HRESULT(IMFMediaEngine *self, uint32* cx, uint32* cy) GetVideoAspectRatio;
-				public new function HRESULT(IMFMediaEngine *self) Shutdown;
-				public new function HRESULT(IMFMediaEngine *self, IUnknown* pDstSurf, MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr) TransferVideoFrame;
-				public new function HRESULT(IMFMediaEngine *self, int64* pPts) OnVideoStreamTick;
+				public new function HRESULT(ref IMFMediaEngine self, out IMFMediaError* ppError) GetError;
+				public new function HRESULT(ref IMFMediaEngine self, MF_MEDIA_ENGINE_ERR error) SetErrorCode;
+				public new function HRESULT(ref IMFMediaEngine self, ref IMFMediaEngineSrcElements pSrcElements) SetSourceElements;
+				public new function HRESULT(ref IMFMediaEngine self, BSTR pUrl) SetSource;
+				public new function HRESULT(ref IMFMediaEngine self, out BSTR ppUrl) GetCurrentSource;
+				public new function uint16(ref IMFMediaEngine self) GetNetworkState;
+				public new function MF_MEDIA_ENGINE_PRELOAD(ref IMFMediaEngine self) GetPreload;
+				public new function HRESULT(ref IMFMediaEngine self, MF_MEDIA_ENGINE_PRELOAD Preload) SetPreload;
+				public new function HRESULT(ref IMFMediaEngine self, out IMFMediaTimeRange* ppBuffered) GetBuffered;
+				public new function HRESULT(ref IMFMediaEngine self) Load;
+				public new function HRESULT(ref IMFMediaEngine self, BSTR type, out MF_MEDIA_ENGINE_CANPLAY pAnswer) CanPlayType;
+				public new function uint16(ref IMFMediaEngine self) GetReadyState;
+				public new function BOOL(ref IMFMediaEngine self) IsSeeking;
+				public new function double(ref IMFMediaEngine self) GetCurrentTime;
+				public new function HRESULT(ref IMFMediaEngine self, double seekTime) SetCurrentTime;
+				public new function double(ref IMFMediaEngine self) GetStartTime;
+				public new function double(ref IMFMediaEngine self) GetDuration;
+				public new function BOOL(ref IMFMediaEngine self) IsPaused;
+				public new function double(ref IMFMediaEngine self) GetDefaultPlaybackRate;
+				public new function HRESULT(ref IMFMediaEngine self, double Rate) SetDefaultPlaybackRate;
+				public new function double(ref IMFMediaEngine self) GetPlaybackRate;
+				public new function HRESULT(ref IMFMediaEngine self, double Rate) SetPlaybackRate;
+				public new function HRESULT(ref IMFMediaEngine self, out IMFMediaTimeRange* ppPlayed) GetPlayed;
+				public new function HRESULT(ref IMFMediaEngine self, out IMFMediaTimeRange* ppSeekable) GetSeekable;
+				public new function BOOL(ref IMFMediaEngine self) IsEnded;
+				public new function BOOL(ref IMFMediaEngine self) GetAutoPlay;
+				public new function HRESULT(ref IMFMediaEngine self, BOOL AutoPlay) SetAutoPlay;
+				public new function BOOL(ref IMFMediaEngine self) GetLoop;
+				public new function HRESULT(ref IMFMediaEngine self, BOOL Loop) SetLoop;
+				public new function HRESULT(ref IMFMediaEngine self) Play;
+				public new function HRESULT(ref IMFMediaEngine self) Pause;
+				public new function BOOL(ref IMFMediaEngine self) GetMuted;
+				public new function HRESULT(ref IMFMediaEngine self, BOOL Muted) SetMuted;
+				public new function double(ref IMFMediaEngine self) GetVolume;
+				public new function HRESULT(ref IMFMediaEngine self, double Volume) SetVolume;
+				public new function BOOL(ref IMFMediaEngine self) HasVideo;
+				public new function BOOL(ref IMFMediaEngine self) HasAudio;
+				public new function HRESULT(ref IMFMediaEngine self, uint32* cx, uint32* cy) GetNativeVideoSize;
+				public new function HRESULT(ref IMFMediaEngine self, uint32* cx, uint32* cy) GetVideoAspectRatio;
+				public new function HRESULT(ref IMFMediaEngine self) Shutdown;
+				public new function HRESULT(ref IMFMediaEngine self, ref IUnknown pDstSurf, MFVideoNormalizedRect* pSrc, in RECT pDst, MFARGB* pBorderClr) TransferVideoFrame;
+				public new function HRESULT(ref IMFMediaEngine self, out int64 pPts) OnVideoStreamTick;
 			}
 		}
 		[CRepr]
@@ -16971,194 +16971,194 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSourceFromByteStream(IMFByteStream* pByteStream, BSTR pURL) mut
+			public HRESULT SetSourceFromByteStream(ref IMFByteStream pByteStream, BSTR pURL) mut
 			{
-				return VT.SetSourceFromByteStream(&this, pByteStream, pURL);
+				return VT.SetSourceFromByteStream(ref this, ref pByteStream, pURL);
 			}
-			public HRESULT GetStatistics(MF_MEDIA_ENGINE_STATISTIC StatisticID, PROPVARIANT* pStatistic) mut
+			public HRESULT GetStatistics(MF_MEDIA_ENGINE_STATISTIC StatisticID, out PROPVARIANT pStatistic) mut
 			{
-				return VT.GetStatistics(&this, StatisticID, pStatistic);
+				return VT.GetStatistics(ref this, StatisticID, out pStatistic);
 			}
 			public HRESULT UpdateVideoStream(MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr) mut
 			{
-				return VT.UpdateVideoStream(&this, pSrc, pDst, pBorderClr);
+				return VT.UpdateVideoStream(ref this, pSrc, pDst, pBorderClr);
 			}
 			public double GetBalance() mut
 			{
-				return VT.GetBalance(&this);
+				return VT.GetBalance(ref this);
 			}
 			public HRESULT SetBalance(double balance) mut
 			{
-				return VT.SetBalance(&this, balance);
+				return VT.SetBalance(ref this, balance);
 			}
 			public BOOL IsPlaybackRateSupported(double rate) mut
 			{
-				return VT.IsPlaybackRateSupported(&this, rate);
+				return VT.IsPlaybackRateSupported(ref this, rate);
 			}
 			public HRESULT FrameStep(BOOL Forward) mut
 			{
-				return VT.FrameStep(&this, Forward);
+				return VT.FrameStep(ref this, Forward);
 			}
-			public HRESULT GetResourceCharacteristics(uint32* pCharacteristics) mut
+			public HRESULT GetResourceCharacteristics(out uint32 pCharacteristics) mut
 			{
-				return VT.GetResourceCharacteristics(&this, pCharacteristics);
+				return VT.GetResourceCharacteristics(ref this, out pCharacteristics);
 			}
-			public HRESULT GetPresentationAttribute(Guid* guidMFAttribute, PROPVARIANT* pvValue) mut
+			public HRESULT GetPresentationAttribute(in Guid guidMFAttribute, out PROPVARIANT pvValue) mut
 			{
-				return VT.GetPresentationAttribute(&this, guidMFAttribute, pvValue);
+				return VT.GetPresentationAttribute(ref this, guidMFAttribute, out pvValue);
 			}
-			public HRESULT GetNumberOfStreams(uint32* pdwStreamCount) mut
+			public HRESULT GetNumberOfStreams(out uint32 pdwStreamCount) mut
 			{
-				return VT.GetNumberOfStreams(&this, pdwStreamCount);
+				return VT.GetNumberOfStreams(ref this, out pdwStreamCount);
 			}
-			public HRESULT GetStreamAttribute(uint32 dwStreamIndex, Guid* guidMFAttribute, PROPVARIANT* pvValue) mut
+			public HRESULT GetStreamAttribute(uint32 dwStreamIndex, in Guid guidMFAttribute, out PROPVARIANT pvValue) mut
 			{
-				return VT.GetStreamAttribute(&this, dwStreamIndex, guidMFAttribute, pvValue);
+				return VT.GetStreamAttribute(ref this, dwStreamIndex, guidMFAttribute, out pvValue);
 			}
-			public HRESULT GetStreamSelection(uint32 dwStreamIndex, BOOL* pEnabled) mut
+			public HRESULT GetStreamSelection(uint32 dwStreamIndex, out BOOL pEnabled) mut
 			{
-				return VT.GetStreamSelection(&this, dwStreamIndex, pEnabled);
+				return VT.GetStreamSelection(ref this, dwStreamIndex, out pEnabled);
 			}
 			public HRESULT SetStreamSelection(uint32 dwStreamIndex, BOOL Enabled) mut
 			{
-				return VT.SetStreamSelection(&this, dwStreamIndex, Enabled);
+				return VT.SetStreamSelection(ref this, dwStreamIndex, Enabled);
 			}
 			public HRESULT ApplyStreamSelections() mut
 			{
-				return VT.ApplyStreamSelections(&this);
+				return VT.ApplyStreamSelections(ref this);
 			}
-			public HRESULT IsProtected(BOOL* pProtected) mut
+			public HRESULT IsProtected(out BOOL pProtected) mut
 			{
-				return VT.IsProtected(&this, pProtected);
+				return VT.IsProtected(ref this, out pProtected);
 			}
-			public HRESULT InsertVideoEffect(IUnknown* pEffect, BOOL fOptional) mut
+			public HRESULT InsertVideoEffect(ref IUnknown pEffect, BOOL fOptional) mut
 			{
-				return VT.InsertVideoEffect(&this, pEffect, fOptional);
+				return VT.InsertVideoEffect(ref this, ref pEffect, fOptional);
 			}
-			public HRESULT InsertAudioEffect(IUnknown* pEffect, BOOL fOptional) mut
+			public HRESULT InsertAudioEffect(ref IUnknown pEffect, BOOL fOptional) mut
 			{
-				return VT.InsertAudioEffect(&this, pEffect, fOptional);
+				return VT.InsertAudioEffect(ref this, ref pEffect, fOptional);
 			}
 			public HRESULT RemoveAllEffects() mut
 			{
-				return VT.RemoveAllEffects(&this);
+				return VT.RemoveAllEffects(ref this);
 			}
 			public HRESULT SetTimelineMarkerTimer(double timeToFire) mut
 			{
-				return VT.SetTimelineMarkerTimer(&this, timeToFire);
+				return VT.SetTimelineMarkerTimer(ref this, timeToFire);
 			}
-			public HRESULT GetTimelineMarkerTimer(double* pTimeToFire) mut
+			public HRESULT GetTimelineMarkerTimer(out double pTimeToFire) mut
 			{
-				return VT.GetTimelineMarkerTimer(&this, pTimeToFire);
+				return VT.GetTimelineMarkerTimer(ref this, out pTimeToFire);
 			}
 			public HRESULT CancelTimelineMarkerTimer() mut
 			{
-				return VT.CancelTimelineMarkerTimer(&this);
+				return VT.CancelTimelineMarkerTimer(ref this);
 			}
 			public BOOL IsStereo3D() mut
 			{
-				return VT.IsStereo3D(&this);
+				return VT.IsStereo3D(ref this);
 			}
-			public HRESULT GetStereo3DFramePackingMode(MF_MEDIA_ENGINE_S3D_PACKING_MODE* packMode) mut
+			public HRESULT GetStereo3DFramePackingMode(out MF_MEDIA_ENGINE_S3D_PACKING_MODE packMode) mut
 			{
-				return VT.GetStereo3DFramePackingMode(&this, packMode);
+				return VT.GetStereo3DFramePackingMode(ref this, out packMode);
 			}
 			public HRESULT SetStereo3DFramePackingMode(MF_MEDIA_ENGINE_S3D_PACKING_MODE packMode) mut
 			{
-				return VT.SetStereo3DFramePackingMode(&this, packMode);
+				return VT.SetStereo3DFramePackingMode(ref this, packMode);
 			}
-			public HRESULT GetStereo3DRenderMode(MF3DVideoOutputType* outputType) mut
+			public HRESULT GetStereo3DRenderMode(out MF3DVideoOutputType outputType) mut
 			{
-				return VT.GetStereo3DRenderMode(&this, outputType);
+				return VT.GetStereo3DRenderMode(ref this, out outputType);
 			}
 			public HRESULT SetStereo3DRenderMode(MF3DVideoOutputType outputType) mut
 			{
-				return VT.SetStereo3DRenderMode(&this, outputType);
+				return VT.SetStereo3DRenderMode(ref this, outputType);
 			}
 			public HRESULT EnableWindowlessSwapchainMode(BOOL fEnable) mut
 			{
-				return VT.EnableWindowlessSwapchainMode(&this, fEnable);
+				return VT.EnableWindowlessSwapchainMode(ref this, fEnable);
 			}
-			public HRESULT GetVideoSwapchainHandle(HANDLE* phSwapchain) mut
+			public HRESULT GetVideoSwapchainHandle(out HANDLE phSwapchain) mut
 			{
-				return VT.GetVideoSwapchainHandle(&this, phSwapchain);
+				return VT.GetVideoSwapchainHandle(ref this, out phSwapchain);
 			}
 			public HRESULT EnableHorizontalMirrorMode(BOOL fEnable) mut
 			{
-				return VT.EnableHorizontalMirrorMode(&this, fEnable);
+				return VT.EnableHorizontalMirrorMode(ref this, fEnable);
 			}
-			public HRESULT GetAudioStreamCategory(uint32* pCategory) mut
+			public HRESULT GetAudioStreamCategory(out uint32 pCategory) mut
 			{
-				return VT.GetAudioStreamCategory(&this, pCategory);
+				return VT.GetAudioStreamCategory(ref this, out pCategory);
 			}
 			public HRESULT SetAudioStreamCategory(uint32 category) mut
 			{
-				return VT.SetAudioStreamCategory(&this, category);
+				return VT.SetAudioStreamCategory(ref this, category);
 			}
-			public HRESULT GetAudioEndpointRole(uint32* pRole) mut
+			public HRESULT GetAudioEndpointRole(out uint32 pRole) mut
 			{
-				return VT.GetAudioEndpointRole(&this, pRole);
+				return VT.GetAudioEndpointRole(ref this, out pRole);
 			}
 			public HRESULT SetAudioEndpointRole(uint32 role) mut
 			{
-				return VT.SetAudioEndpointRole(&this, role);
+				return VT.SetAudioEndpointRole(ref this, role);
 			}
-			public HRESULT GetRealTimeMode(BOOL* pfEnabled) mut
+			public HRESULT GetRealTimeMode(out BOOL pfEnabled) mut
 			{
-				return VT.GetRealTimeMode(&this, pfEnabled);
+				return VT.GetRealTimeMode(ref this, out pfEnabled);
 			}
 			public HRESULT SetRealTimeMode(BOOL fEnable) mut
 			{
-				return VT.SetRealTimeMode(&this, fEnable);
+				return VT.SetRealTimeMode(ref this, fEnable);
 			}
 			public HRESULT SetCurrentTimeEx(double seekTime, MF_MEDIA_ENGINE_SEEK_MODE seekMode) mut
 			{
-				return VT.SetCurrentTimeEx(&this, seekTime, seekMode);
+				return VT.SetCurrentTimeEx(ref this, seekTime, seekMode);
 			}
 			public HRESULT EnableTimeUpdateTimer(BOOL fEnableTimer) mut
 			{
-				return VT.EnableTimeUpdateTimer(&this, fEnableTimer);
+				return VT.EnableTimeUpdateTimer(ref this, fEnableTimer);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaEngine.VTable
 			{
-				public new function HRESULT(IMFMediaEngineEx *self, IMFByteStream* pByteStream, BSTR pURL) SetSourceFromByteStream;
-				public new function HRESULT(IMFMediaEngineEx *self, MF_MEDIA_ENGINE_STATISTIC StatisticID, PROPVARIANT* pStatistic) GetStatistics;
-				public new function HRESULT(IMFMediaEngineEx *self, MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr) UpdateVideoStream;
-				public new function double(IMFMediaEngineEx *self) GetBalance;
-				public new function HRESULT(IMFMediaEngineEx *self, double balance) SetBalance;
-				public new function BOOL(IMFMediaEngineEx *self, double rate) IsPlaybackRateSupported;
-				public new function HRESULT(IMFMediaEngineEx *self, BOOL Forward) FrameStep;
-				public new function HRESULT(IMFMediaEngineEx *self, uint32* pCharacteristics) GetResourceCharacteristics;
-				public new function HRESULT(IMFMediaEngineEx *self, Guid* guidMFAttribute, PROPVARIANT* pvValue) GetPresentationAttribute;
-				public new function HRESULT(IMFMediaEngineEx *self, uint32* pdwStreamCount) GetNumberOfStreams;
-				public new function HRESULT(IMFMediaEngineEx *self, uint32 dwStreamIndex, Guid* guidMFAttribute, PROPVARIANT* pvValue) GetStreamAttribute;
-				public new function HRESULT(IMFMediaEngineEx *self, uint32 dwStreamIndex, BOOL* pEnabled) GetStreamSelection;
-				public new function HRESULT(IMFMediaEngineEx *self, uint32 dwStreamIndex, BOOL Enabled) SetStreamSelection;
-				public new function HRESULT(IMFMediaEngineEx *self) ApplyStreamSelections;
-				public new function HRESULT(IMFMediaEngineEx *self, BOOL* pProtected) IsProtected;
-				public new function HRESULT(IMFMediaEngineEx *self, IUnknown* pEffect, BOOL fOptional) InsertVideoEffect;
-				public new function HRESULT(IMFMediaEngineEx *self, IUnknown* pEffect, BOOL fOptional) InsertAudioEffect;
-				public new function HRESULT(IMFMediaEngineEx *self) RemoveAllEffects;
-				public new function HRESULT(IMFMediaEngineEx *self, double timeToFire) SetTimelineMarkerTimer;
-				public new function HRESULT(IMFMediaEngineEx *self, double* pTimeToFire) GetTimelineMarkerTimer;
-				public new function HRESULT(IMFMediaEngineEx *self) CancelTimelineMarkerTimer;
-				public new function BOOL(IMFMediaEngineEx *self) IsStereo3D;
-				public new function HRESULT(IMFMediaEngineEx *self, MF_MEDIA_ENGINE_S3D_PACKING_MODE* packMode) GetStereo3DFramePackingMode;
-				public new function HRESULT(IMFMediaEngineEx *self, MF_MEDIA_ENGINE_S3D_PACKING_MODE packMode) SetStereo3DFramePackingMode;
-				public new function HRESULT(IMFMediaEngineEx *self, MF3DVideoOutputType* outputType) GetStereo3DRenderMode;
-				public new function HRESULT(IMFMediaEngineEx *self, MF3DVideoOutputType outputType) SetStereo3DRenderMode;
-				public new function HRESULT(IMFMediaEngineEx *self, BOOL fEnable) EnableWindowlessSwapchainMode;
-				public new function HRESULT(IMFMediaEngineEx *self, HANDLE* phSwapchain) GetVideoSwapchainHandle;
-				public new function HRESULT(IMFMediaEngineEx *self, BOOL fEnable) EnableHorizontalMirrorMode;
-				public new function HRESULT(IMFMediaEngineEx *self, uint32* pCategory) GetAudioStreamCategory;
-				public new function HRESULT(IMFMediaEngineEx *self, uint32 category) SetAudioStreamCategory;
-				public new function HRESULT(IMFMediaEngineEx *self, uint32* pRole) GetAudioEndpointRole;
-				public new function HRESULT(IMFMediaEngineEx *self, uint32 role) SetAudioEndpointRole;
-				public new function HRESULT(IMFMediaEngineEx *self, BOOL* pfEnabled) GetRealTimeMode;
-				public new function HRESULT(IMFMediaEngineEx *self, BOOL fEnable) SetRealTimeMode;
-				public new function HRESULT(IMFMediaEngineEx *self, double seekTime, MF_MEDIA_ENGINE_SEEK_MODE seekMode) SetCurrentTimeEx;
-				public new function HRESULT(IMFMediaEngineEx *self, BOOL fEnableTimer) EnableTimeUpdateTimer;
+				public new function HRESULT(ref IMFMediaEngineEx self, ref IMFByteStream pByteStream, BSTR pURL) SetSourceFromByteStream;
+				public new function HRESULT(ref IMFMediaEngineEx self, MF_MEDIA_ENGINE_STATISTIC StatisticID, out PROPVARIANT pStatistic) GetStatistics;
+				public new function HRESULT(ref IMFMediaEngineEx self, MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr) UpdateVideoStream;
+				public new function double(ref IMFMediaEngineEx self) GetBalance;
+				public new function HRESULT(ref IMFMediaEngineEx self, double balance) SetBalance;
+				public new function BOOL(ref IMFMediaEngineEx self, double rate) IsPlaybackRateSupported;
+				public new function HRESULT(ref IMFMediaEngineEx self, BOOL Forward) FrameStep;
+				public new function HRESULT(ref IMFMediaEngineEx self, out uint32 pCharacteristics) GetResourceCharacteristics;
+				public new function HRESULT(ref IMFMediaEngineEx self, in Guid guidMFAttribute, out PROPVARIANT pvValue) GetPresentationAttribute;
+				public new function HRESULT(ref IMFMediaEngineEx self, out uint32 pdwStreamCount) GetNumberOfStreams;
+				public new function HRESULT(ref IMFMediaEngineEx self, uint32 dwStreamIndex, in Guid guidMFAttribute, out PROPVARIANT pvValue) GetStreamAttribute;
+				public new function HRESULT(ref IMFMediaEngineEx self, uint32 dwStreamIndex, out BOOL pEnabled) GetStreamSelection;
+				public new function HRESULT(ref IMFMediaEngineEx self, uint32 dwStreamIndex, BOOL Enabled) SetStreamSelection;
+				public new function HRESULT(ref IMFMediaEngineEx self) ApplyStreamSelections;
+				public new function HRESULT(ref IMFMediaEngineEx self, out BOOL pProtected) IsProtected;
+				public new function HRESULT(ref IMFMediaEngineEx self, ref IUnknown pEffect, BOOL fOptional) InsertVideoEffect;
+				public new function HRESULT(ref IMFMediaEngineEx self, ref IUnknown pEffect, BOOL fOptional) InsertAudioEffect;
+				public new function HRESULT(ref IMFMediaEngineEx self) RemoveAllEffects;
+				public new function HRESULT(ref IMFMediaEngineEx self, double timeToFire) SetTimelineMarkerTimer;
+				public new function HRESULT(ref IMFMediaEngineEx self, out double pTimeToFire) GetTimelineMarkerTimer;
+				public new function HRESULT(ref IMFMediaEngineEx self) CancelTimelineMarkerTimer;
+				public new function BOOL(ref IMFMediaEngineEx self) IsStereo3D;
+				public new function HRESULT(ref IMFMediaEngineEx self, out MF_MEDIA_ENGINE_S3D_PACKING_MODE packMode) GetStereo3DFramePackingMode;
+				public new function HRESULT(ref IMFMediaEngineEx self, MF_MEDIA_ENGINE_S3D_PACKING_MODE packMode) SetStereo3DFramePackingMode;
+				public new function HRESULT(ref IMFMediaEngineEx self, out MF3DVideoOutputType outputType) GetStereo3DRenderMode;
+				public new function HRESULT(ref IMFMediaEngineEx self, MF3DVideoOutputType outputType) SetStereo3DRenderMode;
+				public new function HRESULT(ref IMFMediaEngineEx self, BOOL fEnable) EnableWindowlessSwapchainMode;
+				public new function HRESULT(ref IMFMediaEngineEx self, out HANDLE phSwapchain) GetVideoSwapchainHandle;
+				public new function HRESULT(ref IMFMediaEngineEx self, BOOL fEnable) EnableHorizontalMirrorMode;
+				public new function HRESULT(ref IMFMediaEngineEx self, out uint32 pCategory) GetAudioStreamCategory;
+				public new function HRESULT(ref IMFMediaEngineEx self, uint32 category) SetAudioStreamCategory;
+				public new function HRESULT(ref IMFMediaEngineEx self, out uint32 pRole) GetAudioEndpointRole;
+				public new function HRESULT(ref IMFMediaEngineEx self, uint32 role) SetAudioEndpointRole;
+				public new function HRESULT(ref IMFMediaEngineEx self, out BOOL pfEnabled) GetRealTimeMode;
+				public new function HRESULT(ref IMFMediaEngineEx self, BOOL fEnable) SetRealTimeMode;
+				public new function HRESULT(ref IMFMediaEngineEx self, double seekTime, MF_MEDIA_ENGINE_SEEK_MODE seekMode) SetCurrentTimeEx;
+				public new function HRESULT(ref IMFMediaEngineEx self, BOOL fEnableTimer) EnableTimeUpdateTimer;
 			}
 		}
 		[CRepr]
@@ -17170,17 +17170,17 @@ namespace Win32
 			
 			public HRESULT SetAudioEndpointId(PWSTR pszEndpointId) mut
 			{
-				return VT.SetAudioEndpointId(&this, pszEndpointId);
+				return VT.SetAudioEndpointId(ref this, pszEndpointId);
 			}
-			public HRESULT GetAudioEndpointId(PWSTR* ppszEndpointId) mut
+			public HRESULT GetAudioEndpointId(out PWSTR ppszEndpointId) mut
 			{
-				return VT.GetAudioEndpointId(&this, ppszEndpointId);
+				return VT.GetAudioEndpointId(ref this, out ppszEndpointId);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineAudioEndpointId *self, PWSTR pszEndpointId) SetAudioEndpointId;
-				public new function HRESULT(IMFMediaEngineAudioEndpointId *self, PWSTR* ppszEndpointId) GetAudioEndpointId;
+				public new function HRESULT(ref IMFMediaEngineAudioEndpointId self, PWSTR pszEndpointId) SetAudioEndpointId;
+				public new function HRESULT(ref IMFMediaEngineAudioEndpointId self, out PWSTR ppszEndpointId) GetAudioEndpointId;
 			}
 		}
 		[CRepr]
@@ -17190,29 +17190,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CanPlayType(BOOL AudioOnly, BSTR MimeType, MF_MEDIA_ENGINE_CANPLAY* pAnswer) mut
+			public HRESULT CanPlayType(BOOL AudioOnly, BSTR MimeType, out MF_MEDIA_ENGINE_CANPLAY pAnswer) mut
 			{
-				return VT.CanPlayType(&this, AudioOnly, MimeType, pAnswer);
+				return VT.CanPlayType(ref this, AudioOnly, MimeType, out pAnswer);
 			}
-			public HRESULT BeginCreateObject(BSTR bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) mut
+			public HRESULT BeginCreateObject(BSTR bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, out IUnknown* ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, IUnknown* punkState) mut
 			{
-				return VT.BeginCreateObject(&this, bstrURL, pByteStream, type, ppIUnknownCancelCookie, pCallback, punkState);
+				return VT.BeginCreateObject(ref this, bstrURL, pByteStream, type, out ppIUnknownCancelCookie, ref pCallback, punkState);
 			}
-			public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie) mut
+			public HRESULT CancelObjectCreation(ref IUnknown pIUnknownCancelCookie) mut
 			{
-				return VT.CancelObjectCreation(&this, pIUnknownCancelCookie);
+				return VT.CancelObjectCreation(ref this, ref pIUnknownCancelCookie);
 			}
-			public HRESULT EndCreateObject(IMFAsyncResult* pResult, IUnknown** ppObject) mut
+			public HRESULT EndCreateObject(ref IMFAsyncResult pResult, out IUnknown* ppObject) mut
 			{
-				return VT.EndCreateObject(&this, pResult, ppObject);
+				return VT.EndCreateObject(ref this, ref pResult, out ppObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineExtension *self, BOOL AudioOnly, BSTR MimeType, MF_MEDIA_ENGINE_CANPLAY* pAnswer) CanPlayType;
-				public new function HRESULT(IMFMediaEngineExtension *self, BSTR bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState) BeginCreateObject;
-				public new function HRESULT(IMFMediaEngineExtension *self, IUnknown* pIUnknownCancelCookie) CancelObjectCreation;
-				public new function HRESULT(IMFMediaEngineExtension *self, IMFAsyncResult* pResult, IUnknown** ppObject) EndCreateObject;
+				public new function HRESULT(ref IMFMediaEngineExtension self, BOOL AudioOnly, BSTR MimeType, out MF_MEDIA_ENGINE_CANPLAY pAnswer) CanPlayType;
+				public new function HRESULT(ref IMFMediaEngineExtension self, BSTR bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, out IUnknown* ppIUnknownCancelCookie, ref IMFAsyncCallback pCallback, IUnknown* punkState) BeginCreateObject;
+				public new function HRESULT(ref IMFMediaEngineExtension self, ref IUnknown pIUnknownCancelCookie) CancelObjectCreation;
+				public new function HRESULT(ref IMFMediaEngineExtension self, ref IMFAsyncResult pResult, out IUnknown* ppObject) EndCreateObject;
 			}
 		}
 		[CRepr]
@@ -17222,39 +17222,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShareResources(IUnknown* pUnkDeviceContext) mut
+			public HRESULT ShareResources(ref IUnknown pUnkDeviceContext) mut
 			{
-				return VT.ShareResources(&this, pUnkDeviceContext);
+				return VT.ShareResources(ref this, ref pUnkDeviceContext);
 			}
-			public HRESULT GetRequiredProtections(uint32* pFrameProtectionFlags) mut
+			public HRESULT GetRequiredProtections(out uint32 pFrameProtectionFlags) mut
 			{
-				return VT.GetRequiredProtections(&this, pFrameProtectionFlags);
+				return VT.GetRequiredProtections(ref this, out pFrameProtectionFlags);
 			}
 			public HRESULT SetOPMWindow(HWND hwnd) mut
 			{
-				return VT.SetOPMWindow(&this, hwnd);
+				return VT.SetOPMWindow(ref this, hwnd);
 			}
-			public HRESULT TransferVideoFrame(IUnknown* pDstSurf, MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr, uint32* pFrameProtectionFlags) mut
+			public HRESULT TransferVideoFrame(ref IUnknown pDstSurf, MFVideoNormalizedRect* pSrc, in RECT pDst, MFARGB* pBorderClr, out uint32 pFrameProtectionFlags) mut
 			{
-				return VT.TransferVideoFrame(&this, pDstSurf, pSrc, pDst, pBorderClr, pFrameProtectionFlags);
+				return VT.TransferVideoFrame(ref this, ref pDstSurf, pSrc, pDst, pBorderClr, out pFrameProtectionFlags);
 			}
 			public HRESULT SetContentProtectionManager(IMFContentProtectionManager* pCPM) mut
 			{
-				return VT.SetContentProtectionManager(&this, pCPM);
+				return VT.SetContentProtectionManager(ref this, pCPM);
 			}
-			public HRESULT SetApplicationCertificate(uint8* pbBlob, uint32 cbBlob) mut
+			public HRESULT SetApplicationCertificate(in uint8 pbBlob, uint32 cbBlob) mut
 			{
-				return VT.SetApplicationCertificate(&this, pbBlob, cbBlob);
+				return VT.SetApplicationCertificate(ref this, pbBlob, cbBlob);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineProtectedContent *self, IUnknown* pUnkDeviceContext) ShareResources;
-				public new function HRESULT(IMFMediaEngineProtectedContent *self, uint32* pFrameProtectionFlags) GetRequiredProtections;
-				public new function HRESULT(IMFMediaEngineProtectedContent *self, HWND hwnd) SetOPMWindow;
-				public new function HRESULT(IMFMediaEngineProtectedContent *self, IUnknown* pDstSurf, MFVideoNormalizedRect* pSrc, RECT* pDst, MFARGB* pBorderClr, uint32* pFrameProtectionFlags) TransferVideoFrame;
-				public new function HRESULT(IMFMediaEngineProtectedContent *self, IMFContentProtectionManager* pCPM) SetContentProtectionManager;
-				public new function HRESULT(IMFMediaEngineProtectedContent *self, uint8* pbBlob, uint32 cbBlob) SetApplicationCertificate;
+				public new function HRESULT(ref IMFMediaEngineProtectedContent self, ref IUnknown pUnkDeviceContext) ShareResources;
+				public new function HRESULT(ref IMFMediaEngineProtectedContent self, out uint32 pFrameProtectionFlags) GetRequiredProtections;
+				public new function HRESULT(ref IMFMediaEngineProtectedContent self, HWND hwnd) SetOPMWindow;
+				public new function HRESULT(ref IMFMediaEngineProtectedContent self, ref IUnknown pDstSurf, MFVideoNormalizedRect* pSrc, in RECT pDst, MFARGB* pBorderClr, out uint32 pFrameProtectionFlags) TransferVideoFrame;
+				public new function HRESULT(ref IMFMediaEngineProtectedContent self, IMFContentProtectionManager* pCPM) SetContentProtectionManager;
+				public new function HRESULT(ref IMFMediaEngineProtectedContent self, in uint8 pbBlob, uint32 cbBlob) SetApplicationCertificate;
 			}
 		}
 		[CRepr]
@@ -17264,14 +17264,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ProvideInput(uint32 dwSampleCount, uint32* pdwChannelCount, float* pInterleavedAudioData) mut
+			public HRESULT ProvideInput(uint32 dwSampleCount, out uint32 pdwChannelCount, float* pInterleavedAudioData) mut
 			{
-				return VT.ProvideInput(&this, dwSampleCount, pdwChannelCount, pInterleavedAudioData);
+				return VT.ProvideInput(ref this, dwSampleCount, out pdwChannelCount, pInterleavedAudioData);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAudioSourceProvider *self, uint32 dwSampleCount, uint32* pdwChannelCount, float* pInterleavedAudioData) ProvideInput;
+				public new function HRESULT(ref IAudioSourceProvider self, uint32 dwSampleCount, out uint32 pdwChannelCount, float* pInterleavedAudioData) ProvideInput;
 			}
 		}
 		[CRepr]
@@ -17283,22 +17283,22 @@ namespace Win32
 			
 			public BOOL ShouldDelayTheLoadEvent() mut
 			{
-				return VT.ShouldDelayTheLoadEvent(&this);
+				return VT.ShouldDelayTheLoadEvent(ref this);
 			}
-			public HRESULT ConnectWebAudio(uint32 dwSampleRate, IAudioSourceProvider** ppSourceProvider) mut
+			public HRESULT ConnectWebAudio(uint32 dwSampleRate, out IAudioSourceProvider* ppSourceProvider) mut
 			{
-				return VT.ConnectWebAudio(&this, dwSampleRate, ppSourceProvider);
+				return VT.ConnectWebAudio(ref this, dwSampleRate, out ppSourceProvider);
 			}
 			public HRESULT DisconnectWebAudio() mut
 			{
-				return VT.DisconnectWebAudio(&this);
+				return VT.DisconnectWebAudio(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function BOOL(IMFMediaEngineWebSupport *self) ShouldDelayTheLoadEvent;
-				public new function HRESULT(IMFMediaEngineWebSupport *self, uint32 dwSampleRate, IAudioSourceProvider** ppSourceProvider) ConnectWebAudio;
-				public new function HRESULT(IMFMediaEngineWebSupport *self) DisconnectWebAudio;
+				public new function BOOL(ref IMFMediaEngineWebSupport self) ShouldDelayTheLoadEvent;
+				public new function HRESULT(ref IMFMediaEngineWebSupport self, uint32 dwSampleRate, out IAudioSourceProvider* ppSourceProvider) ConnectWebAudio;
+				public new function HRESULT(ref IMFMediaEngineWebSupport self) DisconnectWebAudio;
 			}
 		}
 		[CRepr]
@@ -17310,22 +17310,22 @@ namespace Win32
 			
 			public void OnSourceOpen() mut
 			{
-				VT.OnSourceOpen(&this);
+				VT.OnSourceOpen(ref this);
 			}
 			public void OnSourceEnded() mut
 			{
-				VT.OnSourceEnded(&this);
+				VT.OnSourceEnded(ref this);
 			}
 			public void OnSourceClose() mut
 			{
-				VT.OnSourceClose(&this);
+				VT.OnSourceClose(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IMFMediaSourceExtensionNotify *self) OnSourceOpen;
-				public new function void(IMFMediaSourceExtensionNotify *self) OnSourceEnded;
-				public new function void(IMFMediaSourceExtensionNotify *self) OnSourceClose;
+				public new function void(ref IMFMediaSourceExtensionNotify self) OnSourceOpen;
+				public new function void(ref IMFMediaSourceExtensionNotify self) OnSourceEnded;
+				public new function void(ref IMFMediaSourceExtensionNotify self) OnSourceClose;
 			}
 		}
 		[CRepr]
@@ -17337,17 +17337,17 @@ namespace Win32
 			
 			public void OnAddSourceBuffer() mut
 			{
-				VT.OnAddSourceBuffer(&this);
+				VT.OnAddSourceBuffer(ref this);
 			}
 			public void OnRemoveSourceBuffer() mut
 			{
-				VT.OnRemoveSourceBuffer(&this);
+				VT.OnRemoveSourceBuffer(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IMFBufferListNotify *self) OnAddSourceBuffer;
-				public new function void(IMFBufferListNotify *self) OnRemoveSourceBuffer;
+				public new function void(ref IMFBufferListNotify self) OnAddSourceBuffer;
+				public new function void(ref IMFBufferListNotify self) OnRemoveSourceBuffer;
 			}
 		}
 		[CRepr]
@@ -17359,32 +17359,32 @@ namespace Win32
 			
 			public void OnUpdateStart() mut
 			{
-				VT.OnUpdateStart(&this);
+				VT.OnUpdateStart(ref this);
 			}
 			public void OnAbort() mut
 			{
-				VT.OnAbort(&this);
+				VT.OnAbort(ref this);
 			}
 			public void OnError(HRESULT hr) mut
 			{
-				VT.OnError(&this, hr);
+				VT.OnError(ref this, hr);
 			}
 			public void OnUpdate() mut
 			{
-				VT.OnUpdate(&this);
+				VT.OnUpdate(ref this);
 			}
 			public void OnUpdateEnd() mut
 			{
-				VT.OnUpdateEnd(&this);
+				VT.OnUpdateEnd(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IMFSourceBufferNotify *self) OnUpdateStart;
-				public new function void(IMFSourceBufferNotify *self) OnAbort;
-				public new function void(IMFSourceBufferNotify *self, HRESULT hr) OnError;
-				public new function void(IMFSourceBufferNotify *self) OnUpdate;
-				public new function void(IMFSourceBufferNotify *self) OnUpdateEnd;
+				public new function void(ref IMFSourceBufferNotify self) OnUpdateStart;
+				public new function void(ref IMFSourceBufferNotify self) OnAbort;
+				public new function void(ref IMFSourceBufferNotify self, HRESULT hr) OnError;
+				public new function void(ref IMFSourceBufferNotify self) OnUpdate;
+				public new function void(ref IMFSourceBufferNotify self) OnUpdateEnd;
 			}
 		}
 		[CRepr]
@@ -17396,67 +17396,67 @@ namespace Win32
 			
 			public BOOL GetUpdating() mut
 			{
-				return VT.GetUpdating(&this);
+				return VT.GetUpdating(ref this);
 			}
-			public HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered) mut
+			public HRESULT GetBuffered(out IMFMediaTimeRange* ppBuffered) mut
 			{
-				return VT.GetBuffered(&this, ppBuffered);
+				return VT.GetBuffered(ref this, out ppBuffered);
 			}
 			public double GetTimeStampOffset() mut
 			{
-				return VT.GetTimeStampOffset(&this);
+				return VT.GetTimeStampOffset(ref this);
 			}
 			public HRESULT SetTimeStampOffset(double offset) mut
 			{
-				return VT.SetTimeStampOffset(&this, offset);
+				return VT.SetTimeStampOffset(ref this, offset);
 			}
 			public double GetAppendWindowStart() mut
 			{
-				return VT.GetAppendWindowStart(&this);
+				return VT.GetAppendWindowStart(ref this);
 			}
 			public HRESULT SetAppendWindowStart(double time) mut
 			{
-				return VT.SetAppendWindowStart(&this, time);
+				return VT.SetAppendWindowStart(ref this, time);
 			}
 			public double GetAppendWindowEnd() mut
 			{
-				return VT.GetAppendWindowEnd(&this);
+				return VT.GetAppendWindowEnd(ref this);
 			}
 			public HRESULT SetAppendWindowEnd(double time) mut
 			{
-				return VT.SetAppendWindowEnd(&this, time);
+				return VT.SetAppendWindowEnd(ref this, time);
 			}
-			public HRESULT Append(uint8* pData, uint32 len) mut
+			public HRESULT Append(in uint8 pData, uint32 len) mut
 			{
-				return VT.Append(&this, pData, len);
+				return VT.Append(ref this, pData, len);
 			}
-			public HRESULT AppendByteStream(IMFByteStream* pStream, uint64* pMaxLen) mut
+			public HRESULT AppendByteStream(ref IMFByteStream pStream, uint64* pMaxLen) mut
 			{
-				return VT.AppendByteStream(&this, pStream, pMaxLen);
+				return VT.AppendByteStream(ref this, ref pStream, pMaxLen);
 			}
 			public HRESULT Abort() mut
 			{
-				return VT.Abort(&this);
+				return VT.Abort(ref this);
 			}
 			public HRESULT Remove(double start, double end) mut
 			{
-				return VT.Remove(&this, start, end);
+				return VT.Remove(ref this, start, end);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function BOOL(IMFSourceBuffer *self) GetUpdating;
-				public new function HRESULT(IMFSourceBuffer *self, IMFMediaTimeRange** ppBuffered) GetBuffered;
-				public new function double(IMFSourceBuffer *self) GetTimeStampOffset;
-				public new function HRESULT(IMFSourceBuffer *self, double offset) SetTimeStampOffset;
-				public new function double(IMFSourceBuffer *self) GetAppendWindowStart;
-				public new function HRESULT(IMFSourceBuffer *self, double time) SetAppendWindowStart;
-				public new function double(IMFSourceBuffer *self) GetAppendWindowEnd;
-				public new function HRESULT(IMFSourceBuffer *self, double time) SetAppendWindowEnd;
-				public new function HRESULT(IMFSourceBuffer *self, uint8* pData, uint32 len) Append;
-				public new function HRESULT(IMFSourceBuffer *self, IMFByteStream* pStream, uint64* pMaxLen) AppendByteStream;
-				public new function HRESULT(IMFSourceBuffer *self) Abort;
-				public new function HRESULT(IMFSourceBuffer *self, double start, double end) Remove;
+				public new function BOOL(ref IMFSourceBuffer self) GetUpdating;
+				public new function HRESULT(ref IMFSourceBuffer self, out IMFMediaTimeRange* ppBuffered) GetBuffered;
+				public new function double(ref IMFSourceBuffer self) GetTimeStampOffset;
+				public new function HRESULT(ref IMFSourceBuffer self, double offset) SetTimeStampOffset;
+				public new function double(ref IMFSourceBuffer self) GetAppendWindowStart;
+				public new function HRESULT(ref IMFSourceBuffer self, double time) SetAppendWindowStart;
+				public new function double(ref IMFSourceBuffer self) GetAppendWindowEnd;
+				public new function HRESULT(ref IMFSourceBuffer self, double time) SetAppendWindowEnd;
+				public new function HRESULT(ref IMFSourceBuffer self, in uint8 pData, uint32 len) Append;
+				public new function HRESULT(ref IMFSourceBuffer self, ref IMFByteStream pStream, uint64* pMaxLen) AppendByteStream;
+				public new function HRESULT(ref IMFSourceBuffer self) Abort;
+				public new function HRESULT(ref IMFSourceBuffer self, double start, double end) Remove;
 			}
 		}
 		[CRepr]
@@ -17468,17 +17468,17 @@ namespace Win32
 			
 			public MF_MSE_APPEND_MODE GetAppendMode() mut
 			{
-				return VT.GetAppendMode(&this);
+				return VT.GetAppendMode(ref this);
 			}
 			public HRESULT SetAppendMode(MF_MSE_APPEND_MODE mode) mut
 			{
-				return VT.SetAppendMode(&this, mode);
+				return VT.SetAppendMode(ref this, mode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function MF_MSE_APPEND_MODE(IMFSourceBufferAppendMode *self) GetAppendMode;
-				public new function HRESULT(IMFSourceBufferAppendMode *self, MF_MSE_APPEND_MODE mode) SetAppendMode;
+				public new function MF_MSE_APPEND_MODE(ref IMFSourceBufferAppendMode self) GetAppendMode;
+				public new function HRESULT(ref IMFSourceBufferAppendMode self, MF_MSE_APPEND_MODE mode) SetAppendMode;
 			}
 		}
 		[CRepr]
@@ -17490,17 +17490,17 @@ namespace Win32
 			
 			public uint32 GetLength() mut
 			{
-				return VT.GetLength(&this);
+				return VT.GetLength(ref this);
 			}
 			public IMFSourceBuffer* GetSourceBuffer(uint32 index) mut
 			{
-				return VT.GetSourceBuffer(&this, index);
+				return VT.GetSourceBuffer(ref this, index);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(IMFSourceBufferList *self) GetLength;
-				public new function IMFSourceBuffer*(IMFSourceBufferList *self, uint32 index) GetSourceBuffer;
+				public new function uint32(ref IMFSourceBufferList self) GetLength;
+				public new function IMFSourceBuffer*(ref IMFSourceBufferList self, uint32 index) GetSourceBuffer;
 			}
 		}
 		[CRepr]
@@ -17512,57 +17512,57 @@ namespace Win32
 			
 			public IMFSourceBufferList* GetSourceBuffers() mut
 			{
-				return VT.GetSourceBuffers(&this);
+				return VT.GetSourceBuffers(ref this);
 			}
 			public IMFSourceBufferList* GetActiveSourceBuffers() mut
 			{
-				return VT.GetActiveSourceBuffers(&this);
+				return VT.GetActiveSourceBuffers(ref this);
 			}
 			public MF_MSE_READY GetReadyState() mut
 			{
-				return VT.GetReadyState(&this);
+				return VT.GetReadyState(ref this);
 			}
 			public double GetDuration() mut
 			{
-				return VT.GetDuration(&this);
+				return VT.GetDuration(ref this);
 			}
 			public HRESULT SetDuration(double duration) mut
 			{
-				return VT.SetDuration(&this, duration);
+				return VT.SetDuration(ref this, duration);
 			}
-			public HRESULT AddSourceBuffer(BSTR type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer) mut
+			public HRESULT AddSourceBuffer(BSTR type, ref IMFSourceBufferNotify pNotify, out IMFSourceBuffer* ppSourceBuffer) mut
 			{
-				return VT.AddSourceBuffer(&this, type, pNotify, ppSourceBuffer);
+				return VT.AddSourceBuffer(ref this, type, ref pNotify, out ppSourceBuffer);
 			}
-			public HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer) mut
+			public HRESULT RemoveSourceBuffer(ref IMFSourceBuffer pSourceBuffer) mut
 			{
-				return VT.RemoveSourceBuffer(&this, pSourceBuffer);
+				return VT.RemoveSourceBuffer(ref this, ref pSourceBuffer);
 			}
 			public HRESULT SetEndOfStream(MF_MSE_ERROR error) mut
 			{
-				return VT.SetEndOfStream(&this, error);
+				return VT.SetEndOfStream(ref this, error);
 			}
 			public BOOL IsTypeSupported(BSTR type) mut
 			{
-				return VT.IsTypeSupported(&this, type);
+				return VT.IsTypeSupported(ref this, type);
 			}
 			public IMFSourceBuffer* GetSourceBuffer(uint32 dwStreamIndex) mut
 			{
-				return VT.GetSourceBuffer(&this, dwStreamIndex);
+				return VT.GetSourceBuffer(ref this, dwStreamIndex);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function IMFSourceBufferList*(IMFMediaSourceExtension *self) GetSourceBuffers;
-				public new function IMFSourceBufferList*(IMFMediaSourceExtension *self) GetActiveSourceBuffers;
-				public new function MF_MSE_READY(IMFMediaSourceExtension *self) GetReadyState;
-				public new function double(IMFMediaSourceExtension *self) GetDuration;
-				public new function HRESULT(IMFMediaSourceExtension *self, double duration) SetDuration;
-				public new function HRESULT(IMFMediaSourceExtension *self, BSTR type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer) AddSourceBuffer;
-				public new function HRESULT(IMFMediaSourceExtension *self, IMFSourceBuffer* pSourceBuffer) RemoveSourceBuffer;
-				public new function HRESULT(IMFMediaSourceExtension *self, MF_MSE_ERROR error) SetEndOfStream;
-				public new function BOOL(IMFMediaSourceExtension *self, BSTR type) IsTypeSupported;
-				public new function IMFSourceBuffer*(IMFMediaSourceExtension *self, uint32 dwStreamIndex) GetSourceBuffer;
+				public new function IMFSourceBufferList*(ref IMFMediaSourceExtension self) GetSourceBuffers;
+				public new function IMFSourceBufferList*(ref IMFMediaSourceExtension self) GetActiveSourceBuffers;
+				public new function MF_MSE_READY(ref IMFMediaSourceExtension self) GetReadyState;
+				public new function double(ref IMFMediaSourceExtension self) GetDuration;
+				public new function HRESULT(ref IMFMediaSourceExtension self, double duration) SetDuration;
+				public new function HRESULT(ref IMFMediaSourceExtension self, BSTR type, ref IMFSourceBufferNotify pNotify, out IMFSourceBuffer* ppSourceBuffer) AddSourceBuffer;
+				public new function HRESULT(ref IMFMediaSourceExtension self, ref IMFSourceBuffer pSourceBuffer) RemoveSourceBuffer;
+				public new function HRESULT(ref IMFMediaSourceExtension self, MF_MSE_ERROR error) SetEndOfStream;
+				public new function BOOL(ref IMFMediaSourceExtension self, BSTR type) IsTypeSupported;
+				public new function IMFSourceBuffer*(ref IMFMediaSourceExtension self, uint32 dwStreamIndex) GetSourceBuffer;
 			}
 		}
 		[CRepr]
@@ -17574,17 +17574,17 @@ namespace Win32
 			
 			public HRESULT SetLiveSeekableRange(double start, double end) mut
 			{
-				return VT.SetLiveSeekableRange(&this, start, end);
+				return VT.SetLiveSeekableRange(ref this, start, end);
 			}
 			public HRESULT ClearLiveSeekableRange() mut
 			{
-				return VT.ClearLiveSeekableRange(&this);
+				return VT.ClearLiveSeekableRange(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaSourceExtensionLiveSeekableRange *self, double start, double end) SetLiveSeekableRange;
-				public new function HRESULT(IMFMediaSourceExtensionLiveSeekableRange *self) ClearLiveSeekableRange;
+				public new function HRESULT(ref IMFMediaSourceExtensionLiveSeekableRange self, double start, double end) SetLiveSeekableRange;
+				public new function HRESULT(ref IMFMediaSourceExtensionLiveSeekableRange self) ClearLiveSeekableRange;
 			}
 		}
 		[CRepr]
@@ -17596,17 +17596,17 @@ namespace Win32
 			
 			public HRESULT get_Keys(IMFMediaKeys** keys) mut
 			{
-				return VT.get_Keys(&this, keys);
+				return VT.get_Keys(ref this, keys);
 			}
 			public HRESULT SetMediaKeys(IMFMediaKeys* keys) mut
 			{
-				return VT.SetMediaKeys(&this, keys);
+				return VT.SetMediaKeys(ref this, keys);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineEME *self, IMFMediaKeys** keys) get_Keys;
-				public new function HRESULT(IMFMediaEngineEME *self, IMFMediaKeys* keys) SetMediaKeys;
+				public new function HRESULT(ref IMFMediaEngineEME self, IMFMediaKeys** keys) get_Keys;
+				public new function HRESULT(ref IMFMediaEngineEME self, IMFMediaKeys* keys) SetMediaKeys;
 			}
 		}
 		[CRepr]
@@ -17618,17 +17618,17 @@ namespace Win32
 			
 			public HRESULT AddElementEx(BSTR pURL, BSTR pType, BSTR pMedia, BSTR keySystem) mut
 			{
-				return VT.AddElementEx(&this, pURL, pType, pMedia, keySystem);
+				return VT.AddElementEx(ref this, pURL, pType, pMedia, keySystem);
 			}
 			public HRESULT GetKeySystem(uint32 index, BSTR* pType) mut
 			{
-				return VT.GetKeySystem(&this, index, pType);
+				return VT.GetKeySystem(ref this, index, pType);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaEngineSrcElements.VTable
 			{
-				public new function HRESULT(IMFMediaEngineSrcElementsEx *self, BSTR pURL, BSTR pType, BSTR pMedia, BSTR keySystem) AddElementEx;
-				public new function HRESULT(IMFMediaEngineSrcElementsEx *self, uint32 index, BSTR* pType) GetKeySystem;
+				public new function HRESULT(ref IMFMediaEngineSrcElementsEx self, BSTR pURL, BSTR pType, BSTR pMedia, BSTR keySystem) AddElementEx;
+				public new function HRESULT(ref IMFMediaEngineSrcElementsEx self, uint32 index, BSTR* pType) GetKeySystem;
 			}
 		}
 		[CRepr]
@@ -17640,12 +17640,12 @@ namespace Win32
 			
 			public void NeedKey(uint8* initData, uint32 cb) mut
 			{
-				VT.NeedKey(&this, initData, cb);
+				VT.NeedKey(ref this, initData, cb);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IMFMediaEngineNeedKeyNotify *self, uint8* initData, uint32 cb) NeedKey;
+				public new function void(ref IMFMediaEngineNeedKeyNotify self, uint8* initData, uint32 cb) NeedKey;
 			}
 		}
 		[CRepr]
@@ -17655,29 +17655,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSession(BSTR mimeType, uint8* initData, uint32 cb, uint8* customData, uint32 cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession) mut
+			public HRESULT CreateSession(BSTR mimeType, uint8* initData, uint32 cb, uint8* customData, uint32 cbCustomData, ref IMFMediaKeySessionNotify notify, out IMFMediaKeySession* ppSession) mut
 			{
-				return VT.CreateSession(&this, mimeType, initData, cb, customData, cbCustomData, notify, ppSession);
+				return VT.CreateSession(ref this, mimeType, initData, cb, customData, cbCustomData, ref notify, out ppSession);
 			}
-			public HRESULT get_KeySystem(BSTR* keySystem) mut
+			public HRESULT get_KeySystem(out BSTR keySystem) mut
 			{
-				return VT.get_KeySystem(&this, keySystem);
+				return VT.get_KeySystem(ref this, out keySystem);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
-			public HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify) mut
+			public HRESULT GetSuspendNotify(out IMFCdmSuspendNotify* notify) mut
 			{
-				return VT.GetSuspendNotify(&this, notify);
+				return VT.GetSuspendNotify(ref this, out notify);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaKeys *self, BSTR mimeType, uint8* initData, uint32 cb, uint8* customData, uint32 cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession) CreateSession;
-				public new function HRESULT(IMFMediaKeys *self, BSTR* keySystem) get_KeySystem;
-				public new function HRESULT(IMFMediaKeys *self) Shutdown;
-				public new function HRESULT(IMFMediaKeys *self, IMFCdmSuspendNotify** notify) GetSuspendNotify;
+				public new function HRESULT(ref IMFMediaKeys self, BSTR mimeType, uint8* initData, uint32 cb, uint8* customData, uint32 cbCustomData, ref IMFMediaKeySessionNotify notify, out IMFMediaKeySession* ppSession) CreateSession;
+				public new function HRESULT(ref IMFMediaKeys self, out BSTR keySystem) get_KeySystem;
+				public new function HRESULT(ref IMFMediaKeys self) Shutdown;
+				public new function HRESULT(ref IMFMediaKeys self, out IMFCdmSuspendNotify* notify) GetSuspendNotify;
 			}
 		}
 		[CRepr]
@@ -17687,34 +17687,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetError(uint16* code, uint32* systemCode) mut
+			public HRESULT GetError(out uint16 code, out uint32 systemCode) mut
 			{
-				return VT.GetError(&this, code, systemCode);
+				return VT.GetError(ref this, out code, out systemCode);
 			}
-			public HRESULT get_KeySystem(BSTR* keySystem) mut
+			public HRESULT get_KeySystem(out BSTR keySystem) mut
 			{
-				return VT.get_KeySystem(&this, keySystem);
+				return VT.get_KeySystem(ref this, out keySystem);
 			}
-			public HRESULT get_SessionId(BSTR* sessionId) mut
+			public HRESULT get_SessionId(out BSTR sessionId) mut
 			{
-				return VT.get_SessionId(&this, sessionId);
+				return VT.get_SessionId(ref this, out sessionId);
 			}
-			public HRESULT Update(uint8* key, uint32 cb) mut
+			public HRESULT Update(in uint8 key, uint32 cb) mut
 			{
-				return VT.Update(&this, key, cb);
+				return VT.Update(ref this, key, cb);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaKeySession *self, uint16* code, uint32* systemCode) GetError;
-				public new function HRESULT(IMFMediaKeySession *self, BSTR* keySystem) get_KeySystem;
-				public new function HRESULT(IMFMediaKeySession *self, BSTR* sessionId) get_SessionId;
-				public new function HRESULT(IMFMediaKeySession *self, uint8* key, uint32 cb) Update;
-				public new function HRESULT(IMFMediaKeySession *self) Close;
+				public new function HRESULT(ref IMFMediaKeySession self, out uint16 code, out uint32 systemCode) GetError;
+				public new function HRESULT(ref IMFMediaKeySession self, out BSTR keySystem) get_KeySystem;
+				public new function HRESULT(ref IMFMediaKeySession self, out BSTR sessionId) get_SessionId;
+				public new function HRESULT(ref IMFMediaKeySession self, in uint8 key, uint32 cb) Update;
+				public new function HRESULT(ref IMFMediaKeySession self) Close;
 			}
 		}
 		[CRepr]
@@ -17724,24 +17724,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void KeyMessage(BSTR destinationURL, uint8* message, uint32 cb) mut
+			public void KeyMessage(BSTR destinationURL, in uint8 message, uint32 cb) mut
 			{
-				VT.KeyMessage(&this, destinationURL, message, cb);
+				VT.KeyMessage(ref this, destinationURL, message, cb);
 			}
 			public void KeyAdded() mut
 			{
-				VT.KeyAdded(&this);
+				VT.KeyAdded(ref this);
 			}
 			public void KeyError(uint16 code, uint32 systemCode) mut
 			{
-				VT.KeyError(&this, code, systemCode);
+				VT.KeyError(ref this, code, systemCode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IMFMediaKeySessionNotify *self, BSTR destinationURL, uint8* message, uint32 cb) KeyMessage;
-				public new function void(IMFMediaKeySessionNotify *self) KeyAdded;
-				public new function void(IMFMediaKeySessionNotify *self, uint16 code, uint32 systemCode) KeyError;
+				public new function void(ref IMFMediaKeySessionNotify self, BSTR destinationURL, in uint8 message, uint32 cb) KeyMessage;
+				public new function void(ref IMFMediaKeySessionNotify self) KeyAdded;
+				public new function void(ref IMFMediaKeySessionNotify self, uint16 code, uint32 systemCode) KeyError;
 			}
 		}
 		[CRepr]
@@ -17753,17 +17753,17 @@ namespace Win32
 			
 			public HRESULT Begin() mut
 			{
-				return VT.Begin(&this);
+				return VT.Begin(ref this);
 			}
 			public HRESULT End() mut
 			{
-				return VT.End(&this);
+				return VT.End(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCdmSuspendNotify *self) Begin;
-				public new function HRESULT(IMFCdmSuspendNotify *self) End;
+				public new function HRESULT(ref IMFCdmSuspendNotify self) Begin;
+				public new function HRESULT(ref IMFCdmSuspendNotify self) End;
 			}
 		}
 		[CRepr]
@@ -17773,19 +17773,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Query(MF_HDCP_STATUS* pStatus, BOOL* pfStatus) mut
+			public HRESULT Query(out MF_HDCP_STATUS pStatus, out BOOL pfStatus) mut
 			{
-				return VT.Query(&this, pStatus, pfStatus);
+				return VT.Query(ref this, out pStatus, out pfStatus);
 			}
 			public HRESULT Set(MF_HDCP_STATUS status) mut
 			{
-				return VT.Set(&this, status);
+				return VT.Set(ref this, status);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFHDCPStatus *self, MF_HDCP_STATUS* pStatus, BOOL* pfStatus) Query;
-				public new function HRESULT(IMFHDCPStatus *self, MF_HDCP_STATUS status) Set;
+				public new function HRESULT(ref IMFHDCPStatus self, out MF_HDCP_STATUS pStatus, out BOOL pfStatus) Query;
+				public new function HRESULT(ref IMFHDCPStatus self, MF_HDCP_STATUS status) Set;
 			}
 		}
 		[CRepr]
@@ -17795,14 +17795,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetOPMInfo(MF_MEDIA_ENGINE_OPM_STATUS* pStatus, BOOL* pConstricted) mut
+			public HRESULT GetOPMInfo(out MF_MEDIA_ENGINE_OPM_STATUS pStatus, out BOOL pConstricted) mut
 			{
-				return VT.GetOPMInfo(&this, pStatus, pConstricted);
+				return VT.GetOPMInfo(ref this, out pStatus, out pConstricted);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineOPMInfo *self, MF_MEDIA_ENGINE_OPM_STATUS* pStatus, BOOL* pConstricted) GetOPMInfo;
+				public new function HRESULT(ref IMFMediaEngineOPMInfo self, out MF_MEDIA_ENGINE_OPM_STATUS pStatus, out BOOL pConstricted) GetOPMInfo;
 			}
 		}
 		[CRepr]
@@ -17812,24 +17812,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstance(uint32 dwFlags, IMFAttributes* pAttr, IMFMediaEngine** ppPlayer) mut
+			public HRESULT CreateInstance(uint32 dwFlags, ref IMFAttributes pAttr, out IMFMediaEngine* ppPlayer) mut
 			{
-				return VT.CreateInstance(&this, dwFlags, pAttr, ppPlayer);
+				return VT.CreateInstance(ref this, dwFlags, ref pAttr, out ppPlayer);
 			}
-			public HRESULT CreateTimeRange(IMFMediaTimeRange** ppTimeRange) mut
+			public HRESULT CreateTimeRange(out IMFMediaTimeRange* ppTimeRange) mut
 			{
-				return VT.CreateTimeRange(&this, ppTimeRange);
+				return VT.CreateTimeRange(ref this, out ppTimeRange);
 			}
-			public HRESULT CreateError(IMFMediaError** ppError) mut
+			public HRESULT CreateError(out IMFMediaError* ppError) mut
 			{
-				return VT.CreateError(&this, ppError);
+				return VT.CreateError(ref this, out ppError);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineClassFactory *self, uint32 dwFlags, IMFAttributes* pAttr, IMFMediaEngine** ppPlayer) CreateInstance;
-				public new function HRESULT(IMFMediaEngineClassFactory *self, IMFMediaTimeRange** ppTimeRange) CreateTimeRange;
-				public new function HRESULT(IMFMediaEngineClassFactory *self, IMFMediaError** ppError) CreateError;
+				public new function HRESULT(ref IMFMediaEngineClassFactory self, uint32 dwFlags, ref IMFAttributes pAttr, out IMFMediaEngine* ppPlayer) CreateInstance;
+				public new function HRESULT(ref IMFMediaEngineClassFactory self, out IMFMediaTimeRange* ppTimeRange) CreateTimeRange;
+				public new function HRESULT(ref IMFMediaEngineClassFactory self, out IMFMediaError* ppError) CreateError;
 			}
 		}
 		[CRepr]
@@ -17839,24 +17839,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateMediaSourceExtension(uint32 dwFlags, IMFAttributes* pAttr, IMFMediaSourceExtension** ppMSE) mut
+			public HRESULT CreateMediaSourceExtension(uint32 dwFlags, ref IMFAttributes pAttr, out IMFMediaSourceExtension* ppMSE) mut
 			{
-				return VT.CreateMediaSourceExtension(&this, dwFlags, pAttr, ppMSE);
+				return VT.CreateMediaSourceExtension(ref this, dwFlags, ref pAttr, out ppMSE);
 			}
-			public HRESULT CreateMediaKeys(BSTR keySystem, BSTR cdmStorePath, IMFMediaKeys** ppKeys) mut
+			public HRESULT CreateMediaKeys(BSTR keySystem, BSTR cdmStorePath, out IMFMediaKeys* ppKeys) mut
 			{
-				return VT.CreateMediaKeys(&this, keySystem, cdmStorePath, ppKeys);
+				return VT.CreateMediaKeys(ref this, keySystem, cdmStorePath, out ppKeys);
 			}
-			public HRESULT IsTypeSupported(BSTR type, BSTR keySystem, BOOL* isSupported) mut
+			public HRESULT IsTypeSupported(BSTR type, BSTR keySystem, out BOOL isSupported) mut
 			{
-				return VT.IsTypeSupported(&this, type, keySystem, isSupported);
+				return VT.IsTypeSupported(ref this, type, keySystem, out isSupported);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaEngineClassFactory.VTable
 			{
-				public new function HRESULT(IMFMediaEngineClassFactoryEx *self, uint32 dwFlags, IMFAttributes* pAttr, IMFMediaSourceExtension** ppMSE) CreateMediaSourceExtension;
-				public new function HRESULT(IMFMediaEngineClassFactoryEx *self, BSTR keySystem, BSTR cdmStorePath, IMFMediaKeys** ppKeys) CreateMediaKeys;
-				public new function HRESULT(IMFMediaEngineClassFactoryEx *self, BSTR type, BSTR keySystem, BOOL* isSupported) IsTypeSupported;
+				public new function HRESULT(ref IMFMediaEngineClassFactoryEx self, uint32 dwFlags, ref IMFAttributes pAttr, out IMFMediaSourceExtension* ppMSE) CreateMediaSourceExtension;
+				public new function HRESULT(ref IMFMediaEngineClassFactoryEx self, BSTR keySystem, BSTR cdmStorePath, out IMFMediaKeys* ppKeys) CreateMediaKeys;
+				public new function HRESULT(ref IMFMediaEngineClassFactoryEx self, BSTR type, BSTR keySystem, out BOOL isSupported) IsTypeSupported;
 			}
 		}
 		[CRepr]
@@ -17866,14 +17866,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateMediaKeys2(BSTR keySystem, BSTR defaultCdmStorePath, BSTR inprivateCdmStorePath, IMFMediaKeys** ppKeys) mut
+			public HRESULT CreateMediaKeys2(BSTR keySystem, BSTR defaultCdmStorePath, BSTR inprivateCdmStorePath, out IMFMediaKeys* ppKeys) mut
 			{
-				return VT.CreateMediaKeys2(&this, keySystem, defaultCdmStorePath, inprivateCdmStorePath, ppKeys);
+				return VT.CreateMediaKeys2(ref this, keySystem, defaultCdmStorePath, inprivateCdmStorePath, out ppKeys);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineClassFactory2 *self, BSTR keySystem, BSTR defaultCdmStorePath, BSTR inprivateCdmStorePath, IMFMediaKeys** ppKeys) CreateMediaKeys2;
+				public new function HRESULT(ref IMFMediaEngineClassFactory2 self, BSTR keySystem, BSTR defaultCdmStorePath, BSTR inprivateCdmStorePath, out IMFMediaKeys* ppKeys) CreateMediaKeys2;
 			}
 		}
 		[CRepr]
@@ -17883,14 +17883,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsTypeSupportedEx(BSTR type, BSTR keySystem, MF_MEDIA_ENGINE_CANPLAY* pAnswer) mut
+			public HRESULT IsTypeSupportedEx(BSTR type, BSTR keySystem, out MF_MEDIA_ENGINE_CANPLAY pAnswer) mut
 			{
-				return VT.IsTypeSupportedEx(&this, type, keySystem, pAnswer);
+				return VT.IsTypeSupportedEx(ref this, type, keySystem, out pAnswer);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFExtendedDRMTypeSupport *self, BSTR type, BSTR keySystem, MF_MEDIA_ENGINE_CANPLAY* pAnswer) IsTypeSupportedEx;
+				public new function HRESULT(ref IMFExtendedDRMTypeSupport self, BSTR type, BSTR keySystem, out MF_MEDIA_ENGINE_CANPLAY pAnswer) IsTypeSupportedEx;
 			}
 		}
 		[CRepr]
@@ -17900,24 +17900,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT ShouldTransferSource(BOOL* pfShouldTransfer) mut
+			public HRESULT ShouldTransferSource(out BOOL pfShouldTransfer) mut
 			{
-				return VT.ShouldTransferSource(&this, pfShouldTransfer);
+				return VT.ShouldTransferSource(ref this, out pfShouldTransfer);
 			}
-			public HRESULT DetachMediaSource(IMFByteStream** ppByteStream, IMFMediaSource** ppMediaSource, IMFMediaSourceExtension** ppMSE) mut
+			public HRESULT DetachMediaSource(out IMFByteStream* ppByteStream, out IMFMediaSource* ppMediaSource, out IMFMediaSourceExtension* ppMSE) mut
 			{
-				return VT.DetachMediaSource(&this, ppByteStream, ppMediaSource, ppMSE);
+				return VT.DetachMediaSource(ref this, out ppByteStream, out ppMediaSource, out ppMSE);
 			}
-			public HRESULT AttachMediaSource(IMFByteStream* pByteStream, IMFMediaSource* pMediaSource, IMFMediaSourceExtension* pMSE) mut
+			public HRESULT AttachMediaSource(IMFByteStream* pByteStream, ref IMFMediaSource pMediaSource, IMFMediaSourceExtension* pMSE) mut
 			{
-				return VT.AttachMediaSource(&this, pByteStream, pMediaSource, pMSE);
+				return VT.AttachMediaSource(ref this, pByteStream, ref pMediaSource, pMSE);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineSupportsSourceTransfer *self, BOOL* pfShouldTransfer) ShouldTransferSource;
-				public new function HRESULT(IMFMediaEngineSupportsSourceTransfer *self, IMFByteStream** ppByteStream, IMFMediaSource** ppMediaSource, IMFMediaSourceExtension** ppMSE) DetachMediaSource;
-				public new function HRESULT(IMFMediaEngineSupportsSourceTransfer *self, IMFByteStream* pByteStream, IMFMediaSource* pMediaSource, IMFMediaSourceExtension* pMSE) AttachMediaSource;
+				public new function HRESULT(ref IMFMediaEngineSupportsSourceTransfer self, out BOOL pfShouldTransfer) ShouldTransferSource;
+				public new function HRESULT(ref IMFMediaEngineSupportsSourceTransfer self, out IMFByteStream* ppByteStream, out IMFMediaSource* ppMediaSource, out IMFMediaSourceExtension* ppMSE) DetachMediaSource;
+				public new function HRESULT(ref IMFMediaEngineSupportsSourceTransfer self, IMFByteStream* pByteStream, ref IMFMediaSource pMediaSource, IMFMediaSourceExtension* pMSE) AttachMediaSource;
 			}
 		}
 		[CRepr]
@@ -17927,14 +17927,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT TransferSourceToMediaEngine(IMFMediaEngine* destination) mut
+			public HRESULT TransferSourceToMediaEngine(ref IMFMediaEngine destination) mut
 			{
-				return VT.TransferSourceToMediaEngine(&this, destination);
+				return VT.TransferSourceToMediaEngine(ref this, ref destination);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineTransferSource *self, IMFMediaEngine* destination) TransferSourceToMediaEngine;
+				public new function HRESULT(ref IMFMediaEngineTransferSource self, ref IMFMediaEngine destination) TransferSourceToMediaEngine;
 			}
 		}
 		[CRepr]
@@ -17946,77 +17946,77 @@ namespace Win32
 			
 			public HRESULT RegisterNotifications(IMFTimedTextNotify* notify) mut
 			{
-				return VT.RegisterNotifications(&this, notify);
+				return VT.RegisterNotifications(ref this, notify);
 			}
 			public HRESULT SelectTrack(uint32 trackId, BOOL selected) mut
 			{
-				return VT.SelectTrack(&this, trackId, selected);
+				return VT.SelectTrack(ref this, trackId, selected);
 			}
-			public HRESULT AddDataSource(IMFByteStream* byteStream, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, uint32* trackId) mut
+			public HRESULT AddDataSource(ref IMFByteStream byteStream, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, out uint32 trackId) mut
 			{
-				return VT.AddDataSource(&this, byteStream, label, language, kind, isDefault, trackId);
+				return VT.AddDataSource(ref this, ref byteStream, label, language, kind, isDefault, out trackId);
 			}
-			public HRESULT AddDataSourceFromUrl(PWSTR url, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, uint32* trackId) mut
+			public HRESULT AddDataSourceFromUrl(PWSTR url, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, out uint32 trackId) mut
 			{
-				return VT.AddDataSourceFromUrl(&this, url, label, language, kind, isDefault, trackId);
+				return VT.AddDataSourceFromUrl(ref this, url, label, language, kind, isDefault, out trackId);
 			}
-			public HRESULT AddTrack(PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, IMFTimedTextTrack** track) mut
+			public HRESULT AddTrack(PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, out IMFTimedTextTrack* track) mut
 			{
-				return VT.AddTrack(&this, label, language, kind, track);
+				return VT.AddTrack(ref this, label, language, kind, out track);
 			}
-			public HRESULT RemoveTrack(IMFTimedTextTrack* track) mut
+			public HRESULT RemoveTrack(ref IMFTimedTextTrack track) mut
 			{
-				return VT.RemoveTrack(&this, track);
+				return VT.RemoveTrack(ref this, ref track);
 			}
-			public HRESULT GetCueTimeOffset(double* offset) mut
+			public HRESULT GetCueTimeOffset(out double offset) mut
 			{
-				return VT.GetCueTimeOffset(&this, offset);
+				return VT.GetCueTimeOffset(ref this, out offset);
 			}
 			public HRESULT SetCueTimeOffset(double offset) mut
 			{
-				return VT.SetCueTimeOffset(&this, offset);
+				return VT.SetCueTimeOffset(ref this, offset);
 			}
-			public HRESULT GetTracks(IMFTimedTextTrackList** tracks) mut
+			public HRESULT GetTracks(out IMFTimedTextTrackList* tracks) mut
 			{
-				return VT.GetTracks(&this, tracks);
+				return VT.GetTracks(ref this, out tracks);
 			}
-			public HRESULT GetActiveTracks(IMFTimedTextTrackList** activeTracks) mut
+			public HRESULT GetActiveTracks(out IMFTimedTextTrackList* activeTracks) mut
 			{
-				return VT.GetActiveTracks(&this, activeTracks);
+				return VT.GetActiveTracks(ref this, out activeTracks);
 			}
-			public HRESULT GetTextTracks(IMFTimedTextTrackList** textTracks) mut
+			public HRESULT GetTextTracks(out IMFTimedTextTrackList* textTracks) mut
 			{
-				return VT.GetTextTracks(&this, textTracks);
+				return VT.GetTextTracks(ref this, out textTracks);
 			}
-			public HRESULT GetMetadataTracks(IMFTimedTextTrackList** metadataTracks) mut
+			public HRESULT GetMetadataTracks(out IMFTimedTextTrackList* metadataTracks) mut
 			{
-				return VT.GetMetadataTracks(&this, metadataTracks);
+				return VT.GetMetadataTracks(ref this, out metadataTracks);
 			}
 			public HRESULT SetInBandEnabled(BOOL enabled) mut
 			{
-				return VT.SetInBandEnabled(&this, enabled);
+				return VT.SetInBandEnabled(ref this, enabled);
 			}
 			public BOOL IsInBandEnabled() mut
 			{
-				return VT.IsInBandEnabled(&this);
+				return VT.IsInBandEnabled(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimedText *self, IMFTimedTextNotify* notify) RegisterNotifications;
-				public new function HRESULT(IMFTimedText *self, uint32 trackId, BOOL selected) SelectTrack;
-				public new function HRESULT(IMFTimedText *self, IMFByteStream* byteStream, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, uint32* trackId) AddDataSource;
-				public new function HRESULT(IMFTimedText *self, PWSTR url, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, uint32* trackId) AddDataSourceFromUrl;
-				public new function HRESULT(IMFTimedText *self, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, IMFTimedTextTrack** track) AddTrack;
-				public new function HRESULT(IMFTimedText *self, IMFTimedTextTrack* track) RemoveTrack;
-				public new function HRESULT(IMFTimedText *self, double* offset) GetCueTimeOffset;
-				public new function HRESULT(IMFTimedText *self, double offset) SetCueTimeOffset;
-				public new function HRESULT(IMFTimedText *self, IMFTimedTextTrackList** tracks) GetTracks;
-				public new function HRESULT(IMFTimedText *self, IMFTimedTextTrackList** activeTracks) GetActiveTracks;
-				public new function HRESULT(IMFTimedText *self, IMFTimedTextTrackList** textTracks) GetTextTracks;
-				public new function HRESULT(IMFTimedText *self, IMFTimedTextTrackList** metadataTracks) GetMetadataTracks;
-				public new function HRESULT(IMFTimedText *self, BOOL enabled) SetInBandEnabled;
-				public new function BOOL(IMFTimedText *self) IsInBandEnabled;
+				public new function HRESULT(ref IMFTimedText self, IMFTimedTextNotify* notify) RegisterNotifications;
+				public new function HRESULT(ref IMFTimedText self, uint32 trackId, BOOL selected) SelectTrack;
+				public new function HRESULT(ref IMFTimedText self, ref IMFByteStream byteStream, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, out uint32 trackId) AddDataSource;
+				public new function HRESULT(ref IMFTimedText self, PWSTR url, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, out uint32 trackId) AddDataSourceFromUrl;
+				public new function HRESULT(ref IMFTimedText self, PWSTR label, PWSTR language, MF_TIMED_TEXT_TRACK_KIND kind, out IMFTimedTextTrack* track) AddTrack;
+				public new function HRESULT(ref IMFTimedText self, ref IMFTimedTextTrack track) RemoveTrack;
+				public new function HRESULT(ref IMFTimedText self, out double offset) GetCueTimeOffset;
+				public new function HRESULT(ref IMFTimedText self, double offset) SetCueTimeOffset;
+				public new function HRESULT(ref IMFTimedText self, out IMFTimedTextTrackList* tracks) GetTracks;
+				public new function HRESULT(ref IMFTimedText self, out IMFTimedTextTrackList* activeTracks) GetActiveTracks;
+				public new function HRESULT(ref IMFTimedText self, out IMFTimedTextTrackList* textTracks) GetTextTracks;
+				public new function HRESULT(ref IMFTimedText self, out IMFTimedTextTrackList* metadataTracks) GetMetadataTracks;
+				public new function HRESULT(ref IMFTimedText self, BOOL enabled) SetInBandEnabled;
+				public new function BOOL(ref IMFTimedText self) IsInBandEnabled;
 			}
 		}
 		[CRepr]
@@ -18028,42 +18028,42 @@ namespace Win32
 			
 			public void TrackAdded(uint32 trackId) mut
 			{
-				VT.TrackAdded(&this, trackId);
+				VT.TrackAdded(ref this, trackId);
 			}
 			public void TrackRemoved(uint32 trackId) mut
 			{
-				VT.TrackRemoved(&this, trackId);
+				VT.TrackRemoved(ref this, trackId);
 			}
 			public void TrackSelected(uint32 trackId, BOOL selected) mut
 			{
-				VT.TrackSelected(&this, trackId, selected);
+				VT.TrackSelected(ref this, trackId, selected);
 			}
 			public void TrackReadyStateChanged(uint32 trackId) mut
 			{
-				VT.TrackReadyStateChanged(&this, trackId);
+				VT.TrackReadyStateChanged(ref this, trackId);
 			}
 			public void Error(MF_TIMED_TEXT_ERROR_CODE errorCode, HRESULT extendedErrorCode, uint32 sourceTrackId) mut
 			{
-				VT.Error(&this, errorCode, extendedErrorCode, sourceTrackId);
+				VT.Error(ref this, errorCode, extendedErrorCode, sourceTrackId);
 			}
 			public void Cue(MF_TIMED_TEXT_CUE_EVENT cueEvent, double currentTime, IMFTimedTextCue* cue) mut
 			{
-				VT.Cue(&this, cueEvent, currentTime, cue);
+				VT.Cue(ref this, cueEvent, currentTime, cue);
 			}
 			public void Reset() mut
 			{
-				VT.Reset(&this);
+				VT.Reset(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IMFTimedTextNotify *self, uint32 trackId) TrackAdded;
-				public new function void(IMFTimedTextNotify *self, uint32 trackId) TrackRemoved;
-				public new function void(IMFTimedTextNotify *self, uint32 trackId, BOOL selected) TrackSelected;
-				public new function void(IMFTimedTextNotify *self, uint32 trackId) TrackReadyStateChanged;
-				public new function void(IMFTimedTextNotify *self, MF_TIMED_TEXT_ERROR_CODE errorCode, HRESULT extendedErrorCode, uint32 sourceTrackId) Error;
-				public new function void(IMFTimedTextNotify *self, MF_TIMED_TEXT_CUE_EVENT cueEvent, double currentTime, IMFTimedTextCue* cue) Cue;
-				public new function void(IMFTimedTextNotify *self) Reset;
+				public new function void(ref IMFTimedTextNotify self, uint32 trackId) TrackAdded;
+				public new function void(ref IMFTimedTextNotify self, uint32 trackId) TrackRemoved;
+				public new function void(ref IMFTimedTextNotify self, uint32 trackId, BOOL selected) TrackSelected;
+				public new function void(ref IMFTimedTextNotify self, uint32 trackId) TrackReadyStateChanged;
+				public new function void(ref IMFTimedTextNotify self, MF_TIMED_TEXT_ERROR_CODE errorCode, HRESULT extendedErrorCode, uint32 sourceTrackId) Error;
+				public new function void(ref IMFTimedTextNotify self, MF_TIMED_TEXT_CUE_EVENT cueEvent, double currentTime, IMFTimedTextCue* cue) Cue;
+				public new function void(ref IMFTimedTextNotify self) Reset;
 			}
 		}
 		[CRepr]
@@ -18075,72 +18075,72 @@ namespace Win32
 			
 			public uint32 GetId() mut
 			{
-				return VT.GetId(&this);
+				return VT.GetId(ref this);
 			}
-			public HRESULT GetLabel(PWSTR* label) mut
+			public HRESULT GetLabel(out PWSTR label) mut
 			{
-				return VT.GetLabel(&this, label);
+				return VT.GetLabel(ref this, out label);
 			}
 			public HRESULT SetLabel(PWSTR label) mut
 			{
-				return VT.SetLabel(&this, label);
+				return VT.SetLabel(ref this, label);
 			}
-			public HRESULT GetLanguage(PWSTR* language) mut
+			public HRESULT GetLanguage(out PWSTR language) mut
 			{
-				return VT.GetLanguage(&this, language);
+				return VT.GetLanguage(ref this, out language);
 			}
 			public MF_TIMED_TEXT_TRACK_KIND GetTrackKind() mut
 			{
-				return VT.GetTrackKind(&this);
+				return VT.GetTrackKind(ref this);
 			}
 			public BOOL IsInBand() mut
 			{
-				return VT.IsInBand(&this);
+				return VT.IsInBand(ref this);
 			}
-			public HRESULT GetInBandMetadataTrackDispatchType(PWSTR* dispatchType) mut
+			public HRESULT GetInBandMetadataTrackDispatchType(out PWSTR dispatchType) mut
 			{
-				return VT.GetInBandMetadataTrackDispatchType(&this, dispatchType);
+				return VT.GetInBandMetadataTrackDispatchType(ref this, out dispatchType);
 			}
 			public BOOL IsActive() mut
 			{
-				return VT.IsActive(&this);
+				return VT.IsActive(ref this);
 			}
 			public MF_TIMED_TEXT_ERROR_CODE GetErrorCode() mut
 			{
-				return VT.GetErrorCode(&this);
+				return VT.GetErrorCode(ref this);
 			}
 			public HRESULT GetExtendedErrorCode() mut
 			{
-				return VT.GetExtendedErrorCode(&this);
+				return VT.GetExtendedErrorCode(ref this);
 			}
-			public HRESULT GetDataFormat(Guid* format) mut
+			public HRESULT GetDataFormat(out Guid format) mut
 			{
-				return VT.GetDataFormat(&this, format);
+				return VT.GetDataFormat(ref this, out format);
 			}
 			public MF_TIMED_TEXT_TRACK_READY_STATE GetReadyState() mut
 			{
-				return VT.GetReadyState(&this);
+				return VT.GetReadyState(ref this);
 			}
-			public HRESULT GetCueList(IMFTimedTextCueList** cues) mut
+			public HRESULT GetCueList(out IMFTimedTextCueList* cues) mut
 			{
-				return VT.GetCueList(&this, cues);
+				return VT.GetCueList(ref this, out cues);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(IMFTimedTextTrack *self) GetId;
-				public new function HRESULT(IMFTimedTextTrack *self, PWSTR* label) GetLabel;
-				public new function HRESULT(IMFTimedTextTrack *self, PWSTR label) SetLabel;
-				public new function HRESULT(IMFTimedTextTrack *self, PWSTR* language) GetLanguage;
-				public new function MF_TIMED_TEXT_TRACK_KIND(IMFTimedTextTrack *self) GetTrackKind;
-				public new function BOOL(IMFTimedTextTrack *self) IsInBand;
-				public new function HRESULT(IMFTimedTextTrack *self, PWSTR* dispatchType) GetInBandMetadataTrackDispatchType;
-				public new function BOOL(IMFTimedTextTrack *self) IsActive;
-				public new function MF_TIMED_TEXT_ERROR_CODE(IMFTimedTextTrack *self) GetErrorCode;
-				public new function HRESULT(IMFTimedTextTrack *self) GetExtendedErrorCode;
-				public new function HRESULT(IMFTimedTextTrack *self, Guid* format) GetDataFormat;
-				public new function MF_TIMED_TEXT_TRACK_READY_STATE(IMFTimedTextTrack *self) GetReadyState;
-				public new function HRESULT(IMFTimedTextTrack *self, IMFTimedTextCueList** cues) GetCueList;
+				public new function uint32(ref IMFTimedTextTrack self) GetId;
+				public new function HRESULT(ref IMFTimedTextTrack self, out PWSTR label) GetLabel;
+				public new function HRESULT(ref IMFTimedTextTrack self, PWSTR label) SetLabel;
+				public new function HRESULT(ref IMFTimedTextTrack self, out PWSTR language) GetLanguage;
+				public new function MF_TIMED_TEXT_TRACK_KIND(ref IMFTimedTextTrack self) GetTrackKind;
+				public new function BOOL(ref IMFTimedTextTrack self) IsInBand;
+				public new function HRESULT(ref IMFTimedTextTrack self, out PWSTR dispatchType) GetInBandMetadataTrackDispatchType;
+				public new function BOOL(ref IMFTimedTextTrack self) IsActive;
+				public new function MF_TIMED_TEXT_ERROR_CODE(ref IMFTimedTextTrack self) GetErrorCode;
+				public new function HRESULT(ref IMFTimedTextTrack self) GetExtendedErrorCode;
+				public new function HRESULT(ref IMFTimedTextTrack self, out Guid format) GetDataFormat;
+				public new function MF_TIMED_TEXT_TRACK_READY_STATE(ref IMFTimedTextTrack self) GetReadyState;
+				public new function HRESULT(ref IMFTimedTextTrack self, out IMFTimedTextCueList* cues) GetCueList;
 			}
 		}
 		[CRepr]
@@ -18152,22 +18152,22 @@ namespace Win32
 			
 			public uint32 GetLength() mut
 			{
-				return VT.GetLength(&this);
+				return VT.GetLength(ref this);
 			}
-			public HRESULT GetTrack(uint32 index, IMFTimedTextTrack** track) mut
+			public HRESULT GetTrack(uint32 index, out IMFTimedTextTrack* track) mut
 			{
-				return VT.GetTrack(&this, index, track);
+				return VT.GetTrack(ref this, index, out track);
 			}
-			public HRESULT GetTrackById(uint32 trackId, IMFTimedTextTrack** track) mut
+			public HRESULT GetTrackById(uint32 trackId, out IMFTimedTextTrack* track) mut
 			{
-				return VT.GetTrackById(&this, trackId, track);
+				return VT.GetTrackById(ref this, trackId, out track);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(IMFTimedTextTrackList *self) GetLength;
-				public new function HRESULT(IMFTimedTextTrackList *self, uint32 index, IMFTimedTextTrack** track) GetTrack;
-				public new function HRESULT(IMFTimedTextTrackList *self, uint32 trackId, IMFTimedTextTrack** track) GetTrackById;
+				public new function uint32(ref IMFTimedTextTrackList self) GetLength;
+				public new function HRESULT(ref IMFTimedTextTrackList self, uint32 index, out IMFTimedTextTrack* track) GetTrack;
+				public new function HRESULT(ref IMFTimedTextTrackList self, uint32 trackId, out IMFTimedTextTrack* track) GetTrackById;
 			}
 		}
 		[CRepr]
@@ -18179,62 +18179,62 @@ namespace Win32
 			
 			public uint32 GetId() mut
 			{
-				return VT.GetId(&this);
+				return VT.GetId(ref this);
 			}
-			public HRESULT GetOriginalId(PWSTR* originalId) mut
+			public HRESULT GetOriginalId(out PWSTR originalId) mut
 			{
-				return VT.GetOriginalId(&this, originalId);
+				return VT.GetOriginalId(ref this, out originalId);
 			}
 			public MF_TIMED_TEXT_TRACK_KIND GetCueKind() mut
 			{
-				return VT.GetCueKind(&this);
+				return VT.GetCueKind(ref this);
 			}
 			public double GetStartTime() mut
 			{
-				return VT.GetStartTime(&this);
+				return VT.GetStartTime(ref this);
 			}
 			public double GetDuration() mut
 			{
-				return VT.GetDuration(&this);
+				return VT.GetDuration(ref this);
 			}
 			public uint32 GetTrackId() mut
 			{
-				return VT.GetTrackId(&this);
+				return VT.GetTrackId(ref this);
 			}
 			public HRESULT GetData(IMFTimedTextBinary** data) mut
 			{
-				return VT.GetData(&this, data);
+				return VT.GetData(ref this, data);
 			}
 			public HRESULT GetRegion(IMFTimedTextRegion** region) mut
 			{
-				return VT.GetRegion(&this, region);
+				return VT.GetRegion(ref this, region);
 			}
 			public HRESULT GetStyle(IMFTimedTextStyle** style) mut
 			{
-				return VT.GetStyle(&this, style);
+				return VT.GetStyle(ref this, style);
 			}
 			public uint32 GetLineCount() mut
 			{
-				return VT.GetLineCount(&this);
+				return VT.GetLineCount(ref this);
 			}
-			public HRESULT GetLine(uint32 index, IMFTimedTextFormattedText** line) mut
+			public HRESULT GetLine(uint32 index, out IMFTimedTextFormattedText* line) mut
 			{
-				return VT.GetLine(&this, index, line);
+				return VT.GetLine(ref this, index, out line);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(IMFTimedTextCue *self) GetId;
-				public new function HRESULT(IMFTimedTextCue *self, PWSTR* originalId) GetOriginalId;
-				public new function MF_TIMED_TEXT_TRACK_KIND(IMFTimedTextCue *self) GetCueKind;
-				public new function double(IMFTimedTextCue *self) GetStartTime;
-				public new function double(IMFTimedTextCue *self) GetDuration;
-				public new function uint32(IMFTimedTextCue *self) GetTrackId;
-				public new function HRESULT(IMFTimedTextCue *self, IMFTimedTextBinary** data) GetData;
-				public new function HRESULT(IMFTimedTextCue *self, IMFTimedTextRegion** region) GetRegion;
-				public new function HRESULT(IMFTimedTextCue *self, IMFTimedTextStyle** style) GetStyle;
-				public new function uint32(IMFTimedTextCue *self) GetLineCount;
-				public new function HRESULT(IMFTimedTextCue *self, uint32 index, IMFTimedTextFormattedText** line) GetLine;
+				public new function uint32(ref IMFTimedTextCue self) GetId;
+				public new function HRESULT(ref IMFTimedTextCue self, out PWSTR originalId) GetOriginalId;
+				public new function MF_TIMED_TEXT_TRACK_KIND(ref IMFTimedTextCue self) GetCueKind;
+				public new function double(ref IMFTimedTextCue self) GetStartTime;
+				public new function double(ref IMFTimedTextCue self) GetDuration;
+				public new function uint32(ref IMFTimedTextCue self) GetTrackId;
+				public new function HRESULT(ref IMFTimedTextCue self, IMFTimedTextBinary** data) GetData;
+				public new function HRESULT(ref IMFTimedTextCue self, IMFTimedTextRegion** region) GetRegion;
+				public new function HRESULT(ref IMFTimedTextCue self, IMFTimedTextStyle** style) GetStyle;
+				public new function uint32(ref IMFTimedTextCue self) GetLineCount;
+				public new function HRESULT(ref IMFTimedTextCue self, uint32 index, out IMFTimedTextFormattedText* line) GetLine;
 			}
 		}
 		[CRepr]
@@ -18246,22 +18246,22 @@ namespace Win32
 			
 			public HRESULT GetText(PWSTR* text) mut
 			{
-				return VT.GetText(&this, text);
+				return VT.GetText(ref this, text);
 			}
 			public uint32 GetSubformattingCount() mut
 			{
-				return VT.GetSubformattingCount(&this);
+				return VT.GetSubformattingCount(ref this);
 			}
-			public HRESULT GetSubformatting(uint32 index, uint32* firstChar, uint32* charLength, IMFTimedTextStyle** style) mut
+			public HRESULT GetSubformatting(uint32 index, out uint32 firstChar, out uint32 charLength, IMFTimedTextStyle** style) mut
 			{
-				return VT.GetSubformatting(&this, index, firstChar, charLength, style);
+				return VT.GetSubformatting(ref this, index, out firstChar, out charLength, style);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimedTextFormattedText *self, PWSTR* text) GetText;
-				public new function uint32(IMFTimedTextFormattedText *self) GetSubformattingCount;
-				public new function HRESULT(IMFTimedTextFormattedText *self, uint32 index, uint32* firstChar, uint32* charLength, IMFTimedTextStyle** style) GetSubformatting;
+				public new function HRESULT(ref IMFTimedTextFormattedText self, PWSTR* text) GetText;
+				public new function uint32(ref IMFTimedTextFormattedText self) GetSubformattingCount;
+				public new function HRESULT(ref IMFTimedTextFormattedText self, uint32 index, out uint32 firstChar, out uint32 charLength, IMFTimedTextStyle** style) GetSubformatting;
 			}
 		}
 		[CRepr]
@@ -18271,74 +18271,74 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(PWSTR* name) mut
+			public HRESULT GetName(out PWSTR name) mut
 			{
-				return VT.GetName(&this, name);
+				return VT.GetName(ref this, out name);
 			}
 			public BOOL IsExternal() mut
 			{
-				return VT.IsExternal(&this);
+				return VT.IsExternal(ref this);
 			}
-			public HRESULT GetFontFamily(PWSTR* fontFamily) mut
+			public HRESULT GetFontFamily(out PWSTR fontFamily) mut
 			{
-				return VT.GetFontFamily(&this, fontFamily);
+				return VT.GetFontFamily(ref this, out fontFamily);
 			}
-			public HRESULT GetFontSize(double* fontSize, MF_TIMED_TEXT_UNIT_TYPE* unitType) mut
+			public HRESULT GetFontSize(out double fontSize, out MF_TIMED_TEXT_UNIT_TYPE unitType) mut
 			{
-				return VT.GetFontSize(&this, fontSize, unitType);
+				return VT.GetFontSize(ref this, out fontSize, out unitType);
 			}
-			public HRESULT GetColor(MFARGB* color) mut
+			public HRESULT GetColor(out MFARGB color) mut
 			{
-				return VT.GetColor(&this, color);
+				return VT.GetColor(ref this, out color);
 			}
-			public HRESULT GetBackgroundColor(MFARGB* bgColor) mut
+			public HRESULT GetBackgroundColor(out MFARGB bgColor) mut
 			{
-				return VT.GetBackgroundColor(&this, bgColor);
+				return VT.GetBackgroundColor(ref this, out bgColor);
 			}
-			public HRESULT GetShowBackgroundAlways(BOOL* showBackgroundAlways) mut
+			public HRESULT GetShowBackgroundAlways(out BOOL showBackgroundAlways) mut
 			{
-				return VT.GetShowBackgroundAlways(&this, showBackgroundAlways);
+				return VT.GetShowBackgroundAlways(ref this, out showBackgroundAlways);
 			}
-			public HRESULT GetFontStyle(MF_TIMED_TEXT_FONT_STYLE* fontStyle) mut
+			public HRESULT GetFontStyle(out MF_TIMED_TEXT_FONT_STYLE fontStyle) mut
 			{
-				return VT.GetFontStyle(&this, fontStyle);
+				return VT.GetFontStyle(ref this, out fontStyle);
 			}
-			public HRESULT GetBold(BOOL* bold) mut
+			public HRESULT GetBold(out BOOL bold) mut
 			{
-				return VT.GetBold(&this, bold);
+				return VT.GetBold(ref this, out bold);
 			}
-			public HRESULT GetRightToLeft(BOOL* rightToLeft) mut
+			public HRESULT GetRightToLeft(out BOOL rightToLeft) mut
 			{
-				return VT.GetRightToLeft(&this, rightToLeft);
+				return VT.GetRightToLeft(ref this, out rightToLeft);
 			}
-			public HRESULT GetTextAlignment(MF_TIMED_TEXT_ALIGNMENT* textAlign) mut
+			public HRESULT GetTextAlignment(out MF_TIMED_TEXT_ALIGNMENT textAlign) mut
 			{
-				return VT.GetTextAlignment(&this, textAlign);
+				return VT.GetTextAlignment(ref this, out textAlign);
 			}
-			public HRESULT GetTextDecoration(uint32* textDecoration) mut
+			public HRESULT GetTextDecoration(out uint32 textDecoration) mut
 			{
-				return VT.GetTextDecoration(&this, textDecoration);
+				return VT.GetTextDecoration(ref this, out textDecoration);
 			}
-			public HRESULT GetTextOutline(MFARGB* color, double* thickness, double* blurRadius, MF_TIMED_TEXT_UNIT_TYPE* unitType) mut
+			public HRESULT GetTextOutline(out MFARGB color, out double thickness, out double blurRadius, out MF_TIMED_TEXT_UNIT_TYPE unitType) mut
 			{
-				return VT.GetTextOutline(&this, color, thickness, blurRadius, unitType);
+				return VT.GetTextOutline(ref this, out color, out thickness, out blurRadius, out unitType);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimedTextStyle *self, PWSTR* name) GetName;
-				public new function BOOL(IMFTimedTextStyle *self) IsExternal;
-				public new function HRESULT(IMFTimedTextStyle *self, PWSTR* fontFamily) GetFontFamily;
-				public new function HRESULT(IMFTimedTextStyle *self, double* fontSize, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetFontSize;
-				public new function HRESULT(IMFTimedTextStyle *self, MFARGB* color) GetColor;
-				public new function HRESULT(IMFTimedTextStyle *self, MFARGB* bgColor) GetBackgroundColor;
-				public new function HRESULT(IMFTimedTextStyle *self, BOOL* showBackgroundAlways) GetShowBackgroundAlways;
-				public new function HRESULT(IMFTimedTextStyle *self, MF_TIMED_TEXT_FONT_STYLE* fontStyle) GetFontStyle;
-				public new function HRESULT(IMFTimedTextStyle *self, BOOL* bold) GetBold;
-				public new function HRESULT(IMFTimedTextStyle *self, BOOL* rightToLeft) GetRightToLeft;
-				public new function HRESULT(IMFTimedTextStyle *self, MF_TIMED_TEXT_ALIGNMENT* textAlign) GetTextAlignment;
-				public new function HRESULT(IMFTimedTextStyle *self, uint32* textDecoration) GetTextDecoration;
-				public new function HRESULT(IMFTimedTextStyle *self, MFARGB* color, double* thickness, double* blurRadius, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetTextOutline;
+				public new function HRESULT(ref IMFTimedTextStyle self, out PWSTR name) GetName;
+				public new function BOOL(ref IMFTimedTextStyle self) IsExternal;
+				public new function HRESULT(ref IMFTimedTextStyle self, out PWSTR fontFamily) GetFontFamily;
+				public new function HRESULT(ref IMFTimedTextStyle self, out double fontSize, out MF_TIMED_TEXT_UNIT_TYPE unitType) GetFontSize;
+				public new function HRESULT(ref IMFTimedTextStyle self, out MFARGB color) GetColor;
+				public new function HRESULT(ref IMFTimedTextStyle self, out MFARGB bgColor) GetBackgroundColor;
+				public new function HRESULT(ref IMFTimedTextStyle self, out BOOL showBackgroundAlways) GetShowBackgroundAlways;
+				public new function HRESULT(ref IMFTimedTextStyle self, out MF_TIMED_TEXT_FONT_STYLE fontStyle) GetFontStyle;
+				public new function HRESULT(ref IMFTimedTextStyle self, out BOOL bold) GetBold;
+				public new function HRESULT(ref IMFTimedTextStyle self, out BOOL rightToLeft) GetRightToLeft;
+				public new function HRESULT(ref IMFTimedTextStyle self, out MF_TIMED_TEXT_ALIGNMENT textAlign) GetTextAlignment;
+				public new function HRESULT(ref IMFTimedTextStyle self, out uint32 textDecoration) GetTextDecoration;
+				public new function HRESULT(ref IMFTimedTextStyle self, out MFARGB color, out double thickness, out double blurRadius, out MF_TIMED_TEXT_UNIT_TYPE unitType) GetTextOutline;
 			}
 		}
 		[CRepr]
@@ -18348,69 +18348,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetName(PWSTR* name) mut
+			public HRESULT GetName(out PWSTR name) mut
 			{
-				return VT.GetName(&this, name);
+				return VT.GetName(ref this, out name);
 			}
-			public HRESULT GetPosition(double* pX, double* pY, MF_TIMED_TEXT_UNIT_TYPE* unitType) mut
+			public HRESULT GetPosition(out double pX, out double pY, out MF_TIMED_TEXT_UNIT_TYPE unitType) mut
 			{
-				return VT.GetPosition(&this, pX, pY, unitType);
+				return VT.GetPosition(ref this, out pX, out pY, out unitType);
 			}
-			public HRESULT GetExtent(double* pWidth, double* pHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType) mut
+			public HRESULT GetExtent(out double pWidth, out double pHeight, out MF_TIMED_TEXT_UNIT_TYPE unitType) mut
 			{
-				return VT.GetExtent(&this, pWidth, pHeight, unitType);
+				return VT.GetExtent(ref this, out pWidth, out pHeight, out unitType);
 			}
-			public HRESULT GetBackgroundColor(MFARGB* bgColor) mut
+			public HRESULT GetBackgroundColor(out MFARGB bgColor) mut
 			{
-				return VT.GetBackgroundColor(&this, bgColor);
+				return VT.GetBackgroundColor(ref this, out bgColor);
 			}
-			public HRESULT GetWritingMode(MF_TIMED_TEXT_WRITING_MODE* writingMode) mut
+			public HRESULT GetWritingMode(out MF_TIMED_TEXT_WRITING_MODE writingMode) mut
 			{
-				return VT.GetWritingMode(&this, writingMode);
+				return VT.GetWritingMode(ref this, out writingMode);
 			}
-			public HRESULT GetDisplayAlignment(MF_TIMED_TEXT_DISPLAY_ALIGNMENT* displayAlign) mut
+			public HRESULT GetDisplayAlignment(out MF_TIMED_TEXT_DISPLAY_ALIGNMENT displayAlign) mut
 			{
-				return VT.GetDisplayAlignment(&this, displayAlign);
+				return VT.GetDisplayAlignment(ref this, out displayAlign);
 			}
-			public HRESULT GetLineHeight(double* pLineHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType) mut
+			public HRESULT GetLineHeight(out double pLineHeight, out MF_TIMED_TEXT_UNIT_TYPE unitType) mut
 			{
-				return VT.GetLineHeight(&this, pLineHeight, unitType);
+				return VT.GetLineHeight(ref this, out pLineHeight, out unitType);
 			}
-			public HRESULT GetClipOverflow(BOOL* clipOverflow) mut
+			public HRESULT GetClipOverflow(out BOOL clipOverflow) mut
 			{
-				return VT.GetClipOverflow(&this, clipOverflow);
+				return VT.GetClipOverflow(ref this, out clipOverflow);
 			}
-			public HRESULT GetPadding(double* before, double* start, double* after, double* end, MF_TIMED_TEXT_UNIT_TYPE* unitType) mut
+			public HRESULT GetPadding(out double before, out double start, out double after, out double end, out MF_TIMED_TEXT_UNIT_TYPE unitType) mut
 			{
-				return VT.GetPadding(&this, before, start, after, end, unitType);
+				return VT.GetPadding(ref this, out before, out start, out after, out end, out unitType);
 			}
-			public HRESULT GetWrap(BOOL* wrap) mut
+			public HRESULT GetWrap(out BOOL wrap) mut
 			{
-				return VT.GetWrap(&this, wrap);
+				return VT.GetWrap(ref this, out wrap);
 			}
-			public HRESULT GetZIndex(int32* zIndex) mut
+			public HRESULT GetZIndex(out int32 zIndex) mut
 			{
-				return VT.GetZIndex(&this, zIndex);
+				return VT.GetZIndex(ref this, out zIndex);
 			}
-			public HRESULT GetScrollMode(MF_TIMED_TEXT_SCROLL_MODE* scrollMode) mut
+			public HRESULT GetScrollMode(out MF_TIMED_TEXT_SCROLL_MODE scrollMode) mut
 			{
-				return VT.GetScrollMode(&this, scrollMode);
+				return VT.GetScrollMode(ref this, out scrollMode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimedTextRegion *self, PWSTR* name) GetName;
-				public new function HRESULT(IMFTimedTextRegion *self, double* pX, double* pY, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetPosition;
-				public new function HRESULT(IMFTimedTextRegion *self, double* pWidth, double* pHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetExtent;
-				public new function HRESULT(IMFTimedTextRegion *self, MFARGB* bgColor) GetBackgroundColor;
-				public new function HRESULT(IMFTimedTextRegion *self, MF_TIMED_TEXT_WRITING_MODE* writingMode) GetWritingMode;
-				public new function HRESULT(IMFTimedTextRegion *self, MF_TIMED_TEXT_DISPLAY_ALIGNMENT* displayAlign) GetDisplayAlignment;
-				public new function HRESULT(IMFTimedTextRegion *self, double* pLineHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetLineHeight;
-				public new function HRESULT(IMFTimedTextRegion *self, BOOL* clipOverflow) GetClipOverflow;
-				public new function HRESULT(IMFTimedTextRegion *self, double* before, double* start, double* after, double* end, MF_TIMED_TEXT_UNIT_TYPE* unitType) GetPadding;
-				public new function HRESULT(IMFTimedTextRegion *self, BOOL* wrap) GetWrap;
-				public new function HRESULT(IMFTimedTextRegion *self, int32* zIndex) GetZIndex;
-				public new function HRESULT(IMFTimedTextRegion *self, MF_TIMED_TEXT_SCROLL_MODE* scrollMode) GetScrollMode;
+				public new function HRESULT(ref IMFTimedTextRegion self, out PWSTR name) GetName;
+				public new function HRESULT(ref IMFTimedTextRegion self, out double pX, out double pY, out MF_TIMED_TEXT_UNIT_TYPE unitType) GetPosition;
+				public new function HRESULT(ref IMFTimedTextRegion self, out double pWidth, out double pHeight, out MF_TIMED_TEXT_UNIT_TYPE unitType) GetExtent;
+				public new function HRESULT(ref IMFTimedTextRegion self, out MFARGB bgColor) GetBackgroundColor;
+				public new function HRESULT(ref IMFTimedTextRegion self, out MF_TIMED_TEXT_WRITING_MODE writingMode) GetWritingMode;
+				public new function HRESULT(ref IMFTimedTextRegion self, out MF_TIMED_TEXT_DISPLAY_ALIGNMENT displayAlign) GetDisplayAlignment;
+				public new function HRESULT(ref IMFTimedTextRegion self, out double pLineHeight, out MF_TIMED_TEXT_UNIT_TYPE unitType) GetLineHeight;
+				public new function HRESULT(ref IMFTimedTextRegion self, out BOOL clipOverflow) GetClipOverflow;
+				public new function HRESULT(ref IMFTimedTextRegion self, out double before, out double start, out double after, out double end, out MF_TIMED_TEXT_UNIT_TYPE unitType) GetPadding;
+				public new function HRESULT(ref IMFTimedTextRegion self, out BOOL wrap) GetWrap;
+				public new function HRESULT(ref IMFTimedTextRegion self, out int32 zIndex) GetZIndex;
+				public new function HRESULT(ref IMFTimedTextRegion self, out MF_TIMED_TEXT_SCROLL_MODE scrollMode) GetScrollMode;
 			}
 		}
 		[CRepr]
@@ -18420,14 +18420,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetData(uint8** data, uint32* length) mut
+			public HRESULT GetData(out uint8* data, out uint32 length) mut
 			{
-				return VT.GetData(&this, data, length);
+				return VT.GetData(ref this, out data, out length);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimedTextBinary *self, uint8** data, uint32* length) GetData;
+				public new function HRESULT(ref IMFTimedTextBinary self, out uint8* data, out uint32 length) GetData;
 			}
 		}
 		[CRepr]
@@ -18439,42 +18439,42 @@ namespace Win32
 			
 			public uint32 GetLength() mut
 			{
-				return VT.GetLength(&this);
+				return VT.GetLength(ref this);
 			}
-			public HRESULT GetCueByIndex(uint32 index, IMFTimedTextCue** cue) mut
+			public HRESULT GetCueByIndex(uint32 index, out IMFTimedTextCue* cue) mut
 			{
-				return VT.GetCueByIndex(&this, index, cue);
+				return VT.GetCueByIndex(ref this, index, out cue);
 			}
-			public HRESULT GetCueById(uint32 id, IMFTimedTextCue** cue) mut
+			public HRESULT GetCueById(uint32 id, out IMFTimedTextCue* cue) mut
 			{
-				return VT.GetCueById(&this, id, cue);
+				return VT.GetCueById(ref this, id, out cue);
 			}
-			public HRESULT GetCueByOriginalId(PWSTR originalId, IMFTimedTextCue** cue) mut
+			public HRESULT GetCueByOriginalId(PWSTR originalId, out IMFTimedTextCue* cue) mut
 			{
-				return VT.GetCueByOriginalId(&this, originalId, cue);
+				return VT.GetCueByOriginalId(ref this, originalId, out cue);
 			}
 			public HRESULT AddTextCue(double start, double duration, PWSTR text, IMFTimedTextCue** cue) mut
 			{
-				return VT.AddTextCue(&this, start, duration, text, cue);
+				return VT.AddTextCue(ref this, start, duration, text, cue);
 			}
-			public HRESULT AddDataCue(double start, double duration, uint8* data, uint32 dataSize, IMFTimedTextCue** cue) mut
+			public HRESULT AddDataCue(double start, double duration, in uint8 data, uint32 dataSize, IMFTimedTextCue** cue) mut
 			{
-				return VT.AddDataCue(&this, start, duration, data, dataSize, cue);
+				return VT.AddDataCue(ref this, start, duration, data, dataSize, cue);
 			}
-			public HRESULT RemoveCue(IMFTimedTextCue* cue) mut
+			public HRESULT RemoveCue(ref IMFTimedTextCue cue) mut
 			{
-				return VT.RemoveCue(&this, cue);
+				return VT.RemoveCue(ref this, ref cue);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function uint32(IMFTimedTextCueList *self) GetLength;
-				public new function HRESULT(IMFTimedTextCueList *self, uint32 index, IMFTimedTextCue** cue) GetCueByIndex;
-				public new function HRESULT(IMFTimedTextCueList *self, uint32 id, IMFTimedTextCue** cue) GetCueById;
-				public new function HRESULT(IMFTimedTextCueList *self, PWSTR originalId, IMFTimedTextCue** cue) GetCueByOriginalId;
-				public new function HRESULT(IMFTimedTextCueList *self, double start, double duration, PWSTR text, IMFTimedTextCue** cue) AddTextCue;
-				public new function HRESULT(IMFTimedTextCueList *self, double start, double duration, uint8* data, uint32 dataSize, IMFTimedTextCue** cue) AddDataCue;
-				public new function HRESULT(IMFTimedTextCueList *self, IMFTimedTextCue* cue) RemoveCue;
+				public new function uint32(ref IMFTimedTextCueList self) GetLength;
+				public new function HRESULT(ref IMFTimedTextCueList self, uint32 index, out IMFTimedTextCue* cue) GetCueByIndex;
+				public new function HRESULT(ref IMFTimedTextCueList self, uint32 id, out IMFTimedTextCue* cue) GetCueById;
+				public new function HRESULT(ref IMFTimedTextCueList self, PWSTR originalId, out IMFTimedTextCue* cue) GetCueByOriginalId;
+				public new function HRESULT(ref IMFTimedTextCueList self, double start, double duration, PWSTR text, IMFTimedTextCue** cue) AddTextCue;
+				public new function HRESULT(ref IMFTimedTextCueList self, double start, double duration, in uint8 data, uint32 dataSize, IMFTimedTextCue** cue) AddDataCue;
+				public new function HRESULT(ref IMFTimedTextCueList self, ref IMFTimedTextCue cue) RemoveCue;
 			}
 		}
 		[CRepr]
@@ -18484,29 +18484,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetRubyText(PWSTR* rubyText) mut
+			public HRESULT GetRubyText(out PWSTR rubyText) mut
 			{
-				return VT.GetRubyText(&this, rubyText);
+				return VT.GetRubyText(ref this, out rubyText);
 			}
-			public HRESULT GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value) mut
+			public HRESULT GetRubyPosition(out MF_TIMED_TEXT_RUBY_POSITION value) mut
 			{
-				return VT.GetRubyPosition(&this, value);
+				return VT.GetRubyPosition(ref this, out value);
 			}
-			public HRESULT GetRubyAlign(MF_TIMED_TEXT_RUBY_ALIGN* value) mut
+			public HRESULT GetRubyAlign(out MF_TIMED_TEXT_RUBY_ALIGN value) mut
 			{
-				return VT.GetRubyAlign(&this, value);
+				return VT.GetRubyAlign(ref this, out value);
 			}
-			public HRESULT GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value) mut
+			public HRESULT GetRubyReserve(out MF_TIMED_TEXT_RUBY_RESERVE value) mut
 			{
-				return VT.GetRubyReserve(&this, value);
+				return VT.GetRubyReserve(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimedTextRuby *self, PWSTR* rubyText) GetRubyText;
-				public new function HRESULT(IMFTimedTextRuby *self, MF_TIMED_TEXT_RUBY_POSITION* value) GetRubyPosition;
-				public new function HRESULT(IMFTimedTextRuby *self, MF_TIMED_TEXT_RUBY_ALIGN* value) GetRubyAlign;
-				public new function HRESULT(IMFTimedTextRuby *self, MF_TIMED_TEXT_RUBY_RESERVE* value) GetRubyReserve;
+				public new function HRESULT(ref IMFTimedTextRuby self, out PWSTR rubyText) GetRubyText;
+				public new function HRESULT(ref IMFTimedTextRuby self, out MF_TIMED_TEXT_RUBY_POSITION value) GetRubyPosition;
+				public new function HRESULT(ref IMFTimedTextRuby self, out MF_TIMED_TEXT_RUBY_ALIGN value) GetRubyAlign;
+				public new function HRESULT(ref IMFTimedTextRuby self, out MF_TIMED_TEXT_RUBY_RESERVE value) GetRubyReserve;
 			}
 		}
 		[CRepr]
@@ -18516,24 +18516,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetBoutenType(MF_TIMED_TEXT_BOUTEN_TYPE* value) mut
+			public HRESULT GetBoutenType(out MF_TIMED_TEXT_BOUTEN_TYPE value) mut
 			{
-				return VT.GetBoutenType(&this, value);
+				return VT.GetBoutenType(ref this, out value);
 			}
-			public HRESULT GetBoutenColor(MFARGB* value) mut
+			public HRESULT GetBoutenColor(out MFARGB value) mut
 			{
-				return VT.GetBoutenColor(&this, value);
+				return VT.GetBoutenColor(ref this, out value);
 			}
-			public HRESULT GetBoutenPosition(MF_TIMED_TEXT_BOUTEN_POSITION* value) mut
+			public HRESULT GetBoutenPosition(out MF_TIMED_TEXT_BOUTEN_POSITION value) mut
 			{
-				return VT.GetBoutenPosition(&this, value);
+				return VT.GetBoutenPosition(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimedTextBouten *self, MF_TIMED_TEXT_BOUTEN_TYPE* value) GetBoutenType;
-				public new function HRESULT(IMFTimedTextBouten *self, MFARGB* value) GetBoutenColor;
-				public new function HRESULT(IMFTimedTextBouten *self, MF_TIMED_TEXT_BOUTEN_POSITION* value) GetBoutenPosition;
+				public new function HRESULT(ref IMFTimedTextBouten self, out MF_TIMED_TEXT_BOUTEN_TYPE value) GetBoutenType;
+				public new function HRESULT(ref IMFTimedTextBouten self, out MFARGB value) GetBoutenColor;
+				public new function HRESULT(ref IMFTimedTextBouten self, out MF_TIMED_TEXT_BOUTEN_POSITION value) GetBoutenPosition;
 			}
 		}
 		[CRepr]
@@ -18545,27 +18545,27 @@ namespace Win32
 			
 			public HRESULT GetRuby(IMFTimedTextRuby** ruby) mut
 			{
-				return VT.GetRuby(&this, ruby);
+				return VT.GetRuby(ref this, ruby);
 			}
 			public HRESULT GetBouten(IMFTimedTextBouten** bouten) mut
 			{
-				return VT.GetBouten(&this, bouten);
+				return VT.GetBouten(ref this, bouten);
 			}
-			public HRESULT IsTextCombined(BOOL* value) mut
+			public HRESULT IsTextCombined(out BOOL value) mut
 			{
-				return VT.IsTextCombined(&this, value);
+				return VT.IsTextCombined(ref this, out value);
 			}
-			public HRESULT GetFontAngleInDegrees(double* value) mut
+			public HRESULT GetFontAngleInDegrees(out double value) mut
 			{
-				return VT.GetFontAngleInDegrees(&this, value);
+				return VT.GetFontAngleInDegrees(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTimedTextStyle2 *self, IMFTimedTextRuby** ruby) GetRuby;
-				public new function HRESULT(IMFTimedTextStyle2 *self, IMFTimedTextBouten** bouten) GetBouten;
-				public new function HRESULT(IMFTimedTextStyle2 *self, BOOL* value) IsTextCombined;
-				public new function HRESULT(IMFTimedTextStyle2 *self, double* value) GetFontAngleInDegrees;
+				public new function HRESULT(ref IMFTimedTextStyle2 self, IMFTimedTextRuby** ruby) GetRuby;
+				public new function HRESULT(ref IMFTimedTextStyle2 self, IMFTimedTextBouten** bouten) GetBouten;
+				public new function HRESULT(ref IMFTimedTextStyle2 self, out BOOL value) IsTextCombined;
+				public new function HRESULT(ref IMFTimedTextStyle2 self, out double value) GetFontAngleInDegrees;
 			}
 		}
 		[CRepr]
@@ -18577,17 +18577,17 @@ namespace Win32
 			
 			public void Encrypted(uint8* pbInitData, uint32 cb, BSTR bstrInitDataType) mut
 			{
-				VT.Encrypted(&this, pbInitData, cb, bstrInitDataType);
+				VT.Encrypted(ref this, pbInitData, cb, bstrInitDataType);
 			}
 			public void WaitingForKey() mut
 			{
-				VT.WaitingForKey(&this);
+				VT.WaitingForKey(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IMFMediaEngineEMENotify *self, uint8* pbInitData, uint32 cb, BSTR bstrInitDataType) Encrypted;
-				public new function void(IMFMediaEngineEMENotify *self) WaitingForKey;
+				public new function void(ref IMFMediaEngineEMENotify self, uint8* pbInitData, uint32 cb, BSTR bstrInitDataType) Encrypted;
+				public new function void(ref IMFMediaEngineEMENotify self) WaitingForKey;
 			}
 		}
 		[CRepr]
@@ -18597,19 +18597,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void KeyMessage2(MF_MEDIAKEYSESSION_MESSAGETYPE eMessageType, BSTR destinationURL, uint8* pbMessage, uint32 cbMessage) mut
+			public void KeyMessage2(MF_MEDIAKEYSESSION_MESSAGETYPE eMessageType, BSTR destinationURL, in uint8 pbMessage, uint32 cbMessage) mut
 			{
-				VT.KeyMessage2(&this, eMessageType, destinationURL, pbMessage, cbMessage);
+				VT.KeyMessage2(ref this, eMessageType, destinationURL, pbMessage, cbMessage);
 			}
 			public void KeyStatusChange() mut
 			{
-				VT.KeyStatusChange(&this);
+				VT.KeyStatusChange(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaKeySessionNotify.VTable
 			{
-				public new function void(IMFMediaKeySessionNotify2 *self, MF_MEDIAKEYSESSION_MESSAGETYPE eMessageType, BSTR destinationURL, uint8* pbMessage, uint32 cbMessage) KeyMessage2;
-				public new function void(IMFMediaKeySessionNotify2 *self) KeyStatusChange;
+				public new function void(ref IMFMediaKeySessionNotify2 self, MF_MEDIAKEYSESSION_MESSAGETYPE eMessageType, BSTR destinationURL, in uint8 pbMessage, uint32 cbMessage) KeyMessage2;
+				public new function void(ref IMFMediaKeySessionNotify2 self) KeyStatusChange;
 			}
 		}
 		[CRepr]
@@ -18619,24 +18619,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateMediaKeys(IPropertyStore* pCdmCustomConfig, IMFMediaKeys2** ppKeys) mut
+			public HRESULT CreateMediaKeys(IPropertyStore* pCdmCustomConfig, out IMFMediaKeys2* ppKeys) mut
 			{
-				return VT.CreateMediaKeys(&this, pCdmCustomConfig, ppKeys);
+				return VT.CreateMediaKeys(ref this, pCdmCustomConfig, out ppKeys);
 			}
-			public HRESULT get_SupportedConfiguration(IPropertyStore** ppSupportedConfiguration) mut
+			public HRESULT get_SupportedConfiguration(out IPropertyStore* ppSupportedConfiguration) mut
 			{
-				return VT.get_SupportedConfiguration(&this, ppSupportedConfiguration);
+				return VT.get_SupportedConfiguration(ref this, out ppSupportedConfiguration);
 			}
-			public HRESULT get_KeySystem(BSTR* pKeySystem) mut
+			public HRESULT get_KeySystem(out BSTR pKeySystem) mut
 			{
-				return VT.get_KeySystem(&this, pKeySystem);
+				return VT.get_KeySystem(ref this, out pKeySystem);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaKeySystemAccess *self, IPropertyStore* pCdmCustomConfig, IMFMediaKeys2** ppKeys) CreateMediaKeys;
-				public new function HRESULT(IMFMediaKeySystemAccess *self, IPropertyStore** ppSupportedConfiguration) get_SupportedConfiguration;
-				public new function HRESULT(IMFMediaKeySystemAccess *self, BSTR* pKeySystem) get_KeySystem;
+				public new function HRESULT(ref IMFMediaKeySystemAccess self, IPropertyStore* pCdmCustomConfig, out IMFMediaKeys2* ppKeys) CreateMediaKeys;
+				public new function HRESULT(ref IMFMediaKeySystemAccess self, out IPropertyStore* ppSupportedConfiguration) get_SupportedConfiguration;
+				public new function HRESULT(ref IMFMediaKeySystemAccess self, out BSTR pKeySystem) get_KeySystem;
 			}
 		}
 		[CRepr]
@@ -18646,14 +18646,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateMediaKeySystemAccess(BSTR keySystem, IPropertyStore** ppSupportedConfigurationsArray, uint32 uSize, IMFMediaKeySystemAccess** ppKeyAccess) mut
+			public HRESULT CreateMediaKeySystemAccess(BSTR keySystem, IPropertyStore** ppSupportedConfigurationsArray, uint32 uSize, out IMFMediaKeySystemAccess* ppKeyAccess) mut
 			{
-				return VT.CreateMediaKeySystemAccess(&this, keySystem, ppSupportedConfigurationsArray, uSize, ppKeyAccess);
+				return VT.CreateMediaKeySystemAccess(ref this, keySystem, ppSupportedConfigurationsArray, uSize, out ppKeyAccess);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineClassFactory3 *self, BSTR keySystem, IPropertyStore** ppSupportedConfigurationsArray, uint32 uSize, IMFMediaKeySystemAccess** ppKeyAccess) CreateMediaKeySystemAccess;
+				public new function HRESULT(ref IMFMediaEngineClassFactory3 self, BSTR keySystem, IPropertyStore** ppSupportedConfigurationsArray, uint32 uSize, out IMFMediaKeySystemAccess* ppKeyAccess) CreateMediaKeySystemAccess;
 			}
 		}
 		[CRepr]
@@ -18663,24 +18663,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateSession2(MF_MEDIAKEYSESSION_TYPE eSessionType, IMFMediaKeySessionNotify2* pMFMediaKeySessionNotify2, IMFMediaKeySession2** ppSession) mut
+			public HRESULT CreateSession2(MF_MEDIAKEYSESSION_TYPE eSessionType, ref IMFMediaKeySessionNotify2 pMFMediaKeySessionNotify2, out IMFMediaKeySession2* ppSession) mut
 			{
-				return VT.CreateSession2(&this, eSessionType, pMFMediaKeySessionNotify2, ppSession);
+				return VT.CreateSession2(ref this, eSessionType, ref pMFMediaKeySessionNotify2, out ppSession);
 			}
 			public HRESULT SetServerCertificate(uint8* pbServerCertificate, uint32 cb) mut
 			{
-				return VT.SetServerCertificate(&this, pbServerCertificate, cb);
+				return VT.SetServerCertificate(ref this, pbServerCertificate, cb);
 			}
-			public HRESULT GetDOMException(HRESULT systemCode, HRESULT* code) mut
+			public HRESULT GetDOMException(HRESULT systemCode, out HRESULT code) mut
 			{
-				return VT.GetDOMException(&this, systemCode, code);
+				return VT.GetDOMException(ref this, systemCode, out code);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaKeys.VTable
 			{
-				public new function HRESULT(IMFMediaKeys2 *self, MF_MEDIAKEYSESSION_TYPE eSessionType, IMFMediaKeySessionNotify2* pMFMediaKeySessionNotify2, IMFMediaKeySession2** ppSession) CreateSession2;
-				public new function HRESULT(IMFMediaKeys2 *self, uint8* pbServerCertificate, uint32 cb) SetServerCertificate;
-				public new function HRESULT(IMFMediaKeys2 *self, HRESULT systemCode, HRESULT* code) GetDOMException;
+				public new function HRESULT(ref IMFMediaKeys2 self, MF_MEDIAKEYSESSION_TYPE eSessionType, ref IMFMediaKeySessionNotify2 pMFMediaKeySessionNotify2, out IMFMediaKeySession2* ppSession) CreateSession2;
+				public new function HRESULT(ref IMFMediaKeys2 self, uint8* pbServerCertificate, uint32 cb) SetServerCertificate;
+				public new function HRESULT(ref IMFMediaKeys2 self, HRESULT systemCode, out HRESULT code) GetDOMException;
 			}
 		}
 		[CRepr]
@@ -18690,39 +18690,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_KeyStatuses(MFMediaKeyStatus** pKeyStatusesArray, uint32* puSize) mut
+			public HRESULT get_KeyStatuses(out MFMediaKeyStatus* pKeyStatusesArray, out uint32 puSize) mut
 			{
-				return VT.get_KeyStatuses(&this, pKeyStatusesArray, puSize);
+				return VT.get_KeyStatuses(ref this, out pKeyStatusesArray, out puSize);
 			}
-			public HRESULT Load(BSTR bstrSessionId, BOOL* pfLoaded) mut
+			public HRESULT Load(BSTR bstrSessionId, out BOOL pfLoaded) mut
 			{
-				return VT.Load(&this, bstrSessionId, pfLoaded);
+				return VT.Load(ref this, bstrSessionId, out pfLoaded);
 			}
-			public HRESULT GenerateRequest(BSTR initDataType, uint8* pbInitData, uint32 cb) mut
+			public HRESULT GenerateRequest(BSTR initDataType, in uint8 pbInitData, uint32 cb) mut
 			{
-				return VT.GenerateRequest(&this, initDataType, pbInitData, cb);
+				return VT.GenerateRequest(ref this, initDataType, pbInitData, cb);
 			}
-			public HRESULT get_Expiration(double* dblExpiration) mut
+			public HRESULT get_Expiration(out double dblExpiration) mut
 			{
-				return VT.get_Expiration(&this, dblExpiration);
+				return VT.get_Expiration(ref this, out dblExpiration);
 			}
 			public HRESULT Remove() mut
 			{
-				return VT.Remove(&this);
+				return VT.Remove(ref this);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaKeySession.VTable
 			{
-				public new function HRESULT(IMFMediaKeySession2 *self, MFMediaKeyStatus** pKeyStatusesArray, uint32* puSize) get_KeyStatuses;
-				public new function HRESULT(IMFMediaKeySession2 *self, BSTR bstrSessionId, BOOL* pfLoaded) Load;
-				public new function HRESULT(IMFMediaKeySession2 *self, BSTR initDataType, uint8* pbInitData, uint32 cb) GenerateRequest;
-				public new function HRESULT(IMFMediaKeySession2 *self, double* dblExpiration) get_Expiration;
-				public new function HRESULT(IMFMediaKeySession2 *self) Remove;
-				public new function HRESULT(IMFMediaKeySession2 *self) Shutdown;
+				public new function HRESULT(ref IMFMediaKeySession2 self, out MFMediaKeyStatus* pKeyStatusesArray, out uint32 puSize) get_KeyStatuses;
+				public new function HRESULT(ref IMFMediaKeySession2 self, BSTR bstrSessionId, out BOOL pfLoaded) Load;
+				public new function HRESULT(ref IMFMediaKeySession2 self, BSTR initDataType, in uint8 pbInitData, uint32 cb) GenerateRequest;
+				public new function HRESULT(ref IMFMediaKeySession2 self, out double dblExpiration) get_Expiration;
+				public new function HRESULT(ref IMFMediaKeySession2 self) Remove;
+				public new function HRESULT(ref IMFMediaKeySession2 self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -18732,14 +18732,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateContentDecryptionModuleFactory(PWSTR keySystem, Guid* riid, void** ppvObject) mut
+			public HRESULT CreateContentDecryptionModuleFactory(PWSTR keySystem, in Guid riid, void** ppvObject) mut
 			{
-				return VT.CreateContentDecryptionModuleFactory(&this, keySystem, riid, ppvObject);
+				return VT.CreateContentDecryptionModuleFactory(ref this, keySystem, riid, ppvObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaEngineClassFactory4 *self, PWSTR keySystem, Guid* riid, void** ppvObject) CreateContentDecryptionModuleFactory;
+				public new function HRESULT(ref IMFMediaEngineClassFactory4 self, PWSTR keySystem, in Guid riid, void** ppvObject) CreateContentDecryptionModuleFactory;
 			}
 		}
 		[CRepr]
@@ -18749,14 +18749,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Initialize(IMFByteStream* pByteStream, BOOL fPal) mut
+			public HRESULT Initialize(ref IMFByteStream pByteStream, BOOL fPal) mut
 			{
-				return VT.Initialize(&this, pByteStream, fPal);
+				return VT.Initialize(ref this, ref pByteStream, fPal);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFDLNASinkInit *self, IMFByteStream* pByteStream, BOOL fPal) Initialize;
+				public new function HRESULT(ref IMFDLNASinkInit self, ref IMFByteStream pByteStream, BOOL fPal) Initialize;
 			}
 		}
 		[CRepr]
@@ -18766,19 +18766,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstanceFromURL(Guid* clsid, PWSTR pwszURL, IMFAttributes* pAttributes, Guid* riid, void** ppvObject) mut
+			public HRESULT CreateInstanceFromURL(in Guid clsid, PWSTR pwszURL, IMFAttributes* pAttributes, in Guid riid, void** ppvObject) mut
 			{
-				return VT.CreateInstanceFromURL(&this, clsid, pwszURL, pAttributes, riid, ppvObject);
+				return VT.CreateInstanceFromURL(ref this, clsid, pwszURL, pAttributes, riid, ppvObject);
 			}
-			public HRESULT CreateInstanceFromObject(Guid* clsid, IUnknown* punkObject, IMFAttributes* pAttributes, Guid* riid, void** ppvObject) mut
+			public HRESULT CreateInstanceFromObject(in Guid clsid, ref IUnknown punkObject, IMFAttributes* pAttributes, in Guid riid, void** ppvObject) mut
 			{
-				return VT.CreateInstanceFromObject(&this, clsid, punkObject, pAttributes, riid, ppvObject);
+				return VT.CreateInstanceFromObject(ref this, clsid, ref punkObject, pAttributes, riid, ppvObject);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFReadWriteClassFactory *self, Guid* clsid, PWSTR pwszURL, IMFAttributes* pAttributes, Guid* riid, void** ppvObject) CreateInstanceFromURL;
-				public new function HRESULT(IMFReadWriteClassFactory *self, Guid* clsid, IUnknown* punkObject, IMFAttributes* pAttributes, Guid* riid, void** ppvObject) CreateInstanceFromObject;
+				public new function HRESULT(ref IMFReadWriteClassFactory self, in Guid clsid, PWSTR pwszURL, IMFAttributes* pAttributes, in Guid riid, void** ppvObject) CreateInstanceFromURL;
+				public new function HRESULT(ref IMFReadWriteClassFactory self, in Guid clsid, ref IUnknown punkObject, IMFAttributes* pAttributes, in Guid riid, void** ppvObject) CreateInstanceFromObject;
 			}
 		}
 		[CRepr]
@@ -18788,59 +18788,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetStreamSelection(uint32 dwStreamIndex, BOOL* pfSelected) mut
+			public HRESULT GetStreamSelection(uint32 dwStreamIndex, out BOOL pfSelected) mut
 			{
-				return VT.GetStreamSelection(&this, dwStreamIndex, pfSelected);
+				return VT.GetStreamSelection(ref this, dwStreamIndex, out pfSelected);
 			}
 			public HRESULT SetStreamSelection(uint32 dwStreamIndex, BOOL fSelected) mut
 			{
-				return VT.SetStreamSelection(&this, dwStreamIndex, fSelected);
+				return VT.SetStreamSelection(ref this, dwStreamIndex, fSelected);
 			}
-			public HRESULT GetNativeMediaType(uint32 dwStreamIndex, uint32 dwMediaTypeIndex, IMFMediaType** ppMediaType) mut
+			public HRESULT GetNativeMediaType(uint32 dwStreamIndex, uint32 dwMediaTypeIndex, out IMFMediaType* ppMediaType) mut
 			{
-				return VT.GetNativeMediaType(&this, dwStreamIndex, dwMediaTypeIndex, ppMediaType);
+				return VT.GetNativeMediaType(ref this, dwStreamIndex, dwMediaTypeIndex, out ppMediaType);
 			}
-			public HRESULT GetCurrentMediaType(uint32 dwStreamIndex, IMFMediaType** ppMediaType) mut
+			public HRESULT GetCurrentMediaType(uint32 dwStreamIndex, out IMFMediaType* ppMediaType) mut
 			{
-				return VT.GetCurrentMediaType(&this, dwStreamIndex, ppMediaType);
+				return VT.GetCurrentMediaType(ref this, dwStreamIndex, out ppMediaType);
 			}
-			public HRESULT SetCurrentMediaType(uint32 dwStreamIndex, uint32* pdwReserved, IMFMediaType* pMediaType) mut
+			public HRESULT SetCurrentMediaType(uint32 dwStreamIndex, out uint32 pdwReserved, ref IMFMediaType pMediaType) mut
 			{
-				return VT.SetCurrentMediaType(&this, dwStreamIndex, pdwReserved, pMediaType);
+				return VT.SetCurrentMediaType(ref this, dwStreamIndex, out pdwReserved, ref pMediaType);
 			}
-			public HRESULT SetCurrentPosition(Guid* guidTimeFormat, PROPVARIANT* varPosition) mut
+			public HRESULT SetCurrentPosition(in Guid guidTimeFormat, in PROPVARIANT varPosition) mut
 			{
-				return VT.SetCurrentPosition(&this, guidTimeFormat, varPosition);
+				return VT.SetCurrentPosition(ref this, guidTimeFormat, varPosition);
 			}
 			public HRESULT ReadSample(uint32 dwStreamIndex, uint32 dwControlFlags, uint32* pdwActualStreamIndex, uint32* pdwStreamFlags, int64* pllTimestamp, IMFSample** ppSample) mut
 			{
-				return VT.ReadSample(&this, dwStreamIndex, dwControlFlags, pdwActualStreamIndex, pdwStreamFlags, pllTimestamp, ppSample);
+				return VT.ReadSample(ref this, dwStreamIndex, dwControlFlags, pdwActualStreamIndex, pdwStreamFlags, pllTimestamp, ppSample);
 			}
 			public HRESULT Flush(uint32 dwStreamIndex) mut
 			{
-				return VT.Flush(&this, dwStreamIndex);
+				return VT.Flush(ref this, dwStreamIndex);
 			}
-			public HRESULT GetServiceForStream(uint32 dwStreamIndex, Guid* guidService, Guid* riid, void** ppvObject) mut
+			public HRESULT GetServiceForStream(uint32 dwStreamIndex, in Guid guidService, in Guid riid, void** ppvObject) mut
 			{
-				return VT.GetServiceForStream(&this, dwStreamIndex, guidService, riid, ppvObject);
+				return VT.GetServiceForStream(ref this, dwStreamIndex, guidService, riid, ppvObject);
 			}
-			public HRESULT GetPresentationAttribute(uint32 dwStreamIndex, Guid* guidAttribute, PROPVARIANT* pvarAttribute) mut
+			public HRESULT GetPresentationAttribute(uint32 dwStreamIndex, in Guid guidAttribute, out PROPVARIANT pvarAttribute) mut
 			{
-				return VT.GetPresentationAttribute(&this, dwStreamIndex, guidAttribute, pvarAttribute);
+				return VT.GetPresentationAttribute(ref this, dwStreamIndex, guidAttribute, out pvarAttribute);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, BOOL* pfSelected) GetStreamSelection;
-				public new function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, BOOL fSelected) SetStreamSelection;
-				public new function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, uint32 dwMediaTypeIndex, IMFMediaType** ppMediaType) GetNativeMediaType;
-				public new function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, IMFMediaType** ppMediaType) GetCurrentMediaType;
-				public new function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, uint32* pdwReserved, IMFMediaType* pMediaType) SetCurrentMediaType;
-				public new function HRESULT(IMFSourceReader *self, Guid* guidTimeFormat, PROPVARIANT* varPosition) SetCurrentPosition;
-				public new function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, uint32 dwControlFlags, uint32* pdwActualStreamIndex, uint32* pdwStreamFlags, int64* pllTimestamp, IMFSample** ppSample) ReadSample;
-				public new function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex) Flush;
-				public new function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, Guid* guidService, Guid* riid, void** ppvObject) GetServiceForStream;
-				public new function HRESULT(IMFSourceReader *self, uint32 dwStreamIndex, Guid* guidAttribute, PROPVARIANT* pvarAttribute) GetPresentationAttribute;
+				public new function HRESULT(ref IMFSourceReader self, uint32 dwStreamIndex, out BOOL pfSelected) GetStreamSelection;
+				public new function HRESULT(ref IMFSourceReader self, uint32 dwStreamIndex, BOOL fSelected) SetStreamSelection;
+				public new function HRESULT(ref IMFSourceReader self, uint32 dwStreamIndex, uint32 dwMediaTypeIndex, out IMFMediaType* ppMediaType) GetNativeMediaType;
+				public new function HRESULT(ref IMFSourceReader self, uint32 dwStreamIndex, out IMFMediaType* ppMediaType) GetCurrentMediaType;
+				public new function HRESULT(ref IMFSourceReader self, uint32 dwStreamIndex, out uint32 pdwReserved, ref IMFMediaType pMediaType) SetCurrentMediaType;
+				public new function HRESULT(ref IMFSourceReader self, in Guid guidTimeFormat, in PROPVARIANT varPosition) SetCurrentPosition;
+				public new function HRESULT(ref IMFSourceReader self, uint32 dwStreamIndex, uint32 dwControlFlags, uint32* pdwActualStreamIndex, uint32* pdwStreamFlags, int64* pllTimestamp, IMFSample** ppSample) ReadSample;
+				public new function HRESULT(ref IMFSourceReader self, uint32 dwStreamIndex) Flush;
+				public new function HRESULT(ref IMFSourceReader self, uint32 dwStreamIndex, in Guid guidService, in Guid riid, void** ppvObject) GetServiceForStream;
+				public new function HRESULT(ref IMFSourceReader self, uint32 dwStreamIndex, in Guid guidAttribute, out PROPVARIANT pvarAttribute) GetPresentationAttribute;
 			}
 		}
 		[CRepr]
@@ -18850,29 +18850,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetNativeMediaType(uint32 dwStreamIndex, IMFMediaType* pMediaType, uint32* pdwStreamFlags) mut
+			public HRESULT SetNativeMediaType(uint32 dwStreamIndex, IMFMediaType* pMediaType, out uint32 pdwStreamFlags) mut
 			{
-				return VT.SetNativeMediaType(&this, dwStreamIndex, pMediaType, pdwStreamFlags);
+				return VT.SetNativeMediaType(ref this, dwStreamIndex, pMediaType, out pdwStreamFlags);
 			}
-			public HRESULT AddTransformForStream(uint32 dwStreamIndex, IUnknown* pTransformOrActivate) mut
+			public HRESULT AddTransformForStream(uint32 dwStreamIndex, ref IUnknown pTransformOrActivate) mut
 			{
-				return VT.AddTransformForStream(&this, dwStreamIndex, pTransformOrActivate);
+				return VT.AddTransformForStream(ref this, dwStreamIndex, ref pTransformOrActivate);
 			}
 			public HRESULT RemoveAllTransformsForStream(uint32 dwStreamIndex) mut
 			{
-				return VT.RemoveAllTransformsForStream(&this, dwStreamIndex);
+				return VT.RemoveAllTransformsForStream(ref this, dwStreamIndex);
 			}
-			public HRESULT GetTransformForStream(uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform) mut
+			public HRESULT GetTransformForStream(uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, out IMFTransform* ppTransform) mut
 			{
-				return VT.GetTransformForStream(&this, dwStreamIndex, dwTransformIndex, pGuidCategory, ppTransform);
+				return VT.GetTransformForStream(ref this, dwStreamIndex, dwTransformIndex, pGuidCategory, out ppTransform);
 			}
 			[CRepr]
 			public struct VTable : IMFSourceReader.VTable
 			{
-				public new function HRESULT(IMFSourceReaderEx *self, uint32 dwStreamIndex, IMFMediaType* pMediaType, uint32* pdwStreamFlags) SetNativeMediaType;
-				public new function HRESULT(IMFSourceReaderEx *self, uint32 dwStreamIndex, IUnknown* pTransformOrActivate) AddTransformForStream;
-				public new function HRESULT(IMFSourceReaderEx *self, uint32 dwStreamIndex) RemoveAllTransformsForStream;
-				public new function HRESULT(IMFSourceReaderEx *self, uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform) GetTransformForStream;
+				public new function HRESULT(ref IMFSourceReaderEx self, uint32 dwStreamIndex, IMFMediaType* pMediaType, out uint32 pdwStreamFlags) SetNativeMediaType;
+				public new function HRESULT(ref IMFSourceReaderEx self, uint32 dwStreamIndex, ref IUnknown pTransformOrActivate) AddTransformForStream;
+				public new function HRESULT(ref IMFSourceReaderEx self, uint32 dwStreamIndex) RemoveAllTransformsForStream;
+				public new function HRESULT(ref IMFSourceReaderEx self, uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, out IMFTransform* ppTransform) GetTransformForStream;
 			}
 		}
 		[CRepr]
@@ -18884,22 +18884,22 @@ namespace Win32
 			
 			public HRESULT OnReadSample(HRESULT hrStatus, uint32 dwStreamIndex, uint32 dwStreamFlags, int64 llTimestamp, IMFSample* pSample) mut
 			{
-				return VT.OnReadSample(&this, hrStatus, dwStreamIndex, dwStreamFlags, llTimestamp, pSample);
+				return VT.OnReadSample(ref this, hrStatus, dwStreamIndex, dwStreamFlags, llTimestamp, pSample);
 			}
 			public HRESULT OnFlush(uint32 dwStreamIndex) mut
 			{
-				return VT.OnFlush(&this, dwStreamIndex);
+				return VT.OnFlush(ref this, dwStreamIndex);
 			}
-			public HRESULT OnEvent(uint32 dwStreamIndex, IMFMediaEvent* pEvent) mut
+			public HRESULT OnEvent(uint32 dwStreamIndex, ref IMFMediaEvent pEvent) mut
 			{
-				return VT.OnEvent(&this, dwStreamIndex, pEvent);
+				return VT.OnEvent(ref this, dwStreamIndex, ref pEvent);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSourceReaderCallback *self, HRESULT hrStatus, uint32 dwStreamIndex, uint32 dwStreamFlags, int64 llTimestamp, IMFSample* pSample) OnReadSample;
-				public new function HRESULT(IMFSourceReaderCallback *self, uint32 dwStreamIndex) OnFlush;
-				public new function HRESULT(IMFSourceReaderCallback *self, uint32 dwStreamIndex, IMFMediaEvent* pEvent) OnEvent;
+				public new function HRESULT(ref IMFSourceReaderCallback self, HRESULT hrStatus, uint32 dwStreamIndex, uint32 dwStreamFlags, int64 llTimestamp, IMFSample* pSample) OnReadSample;
+				public new function HRESULT(ref IMFSourceReaderCallback self, uint32 dwStreamIndex) OnFlush;
+				public new function HRESULT(ref IMFSourceReaderCallback self, uint32 dwStreamIndex, ref IMFMediaEvent pEvent) OnEvent;
 			}
 		}
 		[CRepr]
@@ -18911,17 +18911,17 @@ namespace Win32
 			
 			public HRESULT OnTransformChange() mut
 			{
-				return VT.OnTransformChange(&this);
+				return VT.OnTransformChange(ref this);
 			}
 			public HRESULT OnStreamError(uint32 dwStreamIndex, HRESULT hrStatus) mut
 			{
-				return VT.OnStreamError(&this, dwStreamIndex, hrStatus);
+				return VT.OnStreamError(ref this, dwStreamIndex, hrStatus);
 			}
 			[CRepr]
 			public struct VTable : IMFSourceReaderCallback.VTable
 			{
-				public new function HRESULT(IMFSourceReaderCallback2 *self) OnTransformChange;
-				public new function HRESULT(IMFSourceReaderCallback2 *self, uint32 dwStreamIndex, HRESULT hrStatus) OnStreamError;
+				public new function HRESULT(ref IMFSourceReaderCallback2 self) OnTransformChange;
+				public new function HRESULT(ref IMFSourceReaderCallback2 self, uint32 dwStreamIndex, HRESULT hrStatus) OnStreamError;
 			}
 		}
 		[CRepr]
@@ -18931,64 +18931,64 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddStream(IMFMediaType* pTargetMediaType, uint32* pdwStreamIndex) mut
+			public HRESULT AddStream(ref IMFMediaType pTargetMediaType, out uint32 pdwStreamIndex) mut
 			{
-				return VT.AddStream(&this, pTargetMediaType, pdwStreamIndex);
+				return VT.AddStream(ref this, ref pTargetMediaType, out pdwStreamIndex);
 			}
-			public HRESULT SetInputMediaType(uint32 dwStreamIndex, IMFMediaType* pInputMediaType, IMFAttributes* pEncodingParameters) mut
+			public HRESULT SetInputMediaType(uint32 dwStreamIndex, ref IMFMediaType pInputMediaType, IMFAttributes* pEncodingParameters) mut
 			{
-				return VT.SetInputMediaType(&this, dwStreamIndex, pInputMediaType, pEncodingParameters);
+				return VT.SetInputMediaType(ref this, dwStreamIndex, ref pInputMediaType, pEncodingParameters);
 			}
 			public HRESULT BeginWriting() mut
 			{
-				return VT.BeginWriting(&this);
+				return VT.BeginWriting(ref this);
 			}
-			public HRESULT WriteSample(uint32 dwStreamIndex, IMFSample* pSample) mut
+			public HRESULT WriteSample(uint32 dwStreamIndex, ref IMFSample pSample) mut
 			{
-				return VT.WriteSample(&this, dwStreamIndex, pSample);
+				return VT.WriteSample(ref this, dwStreamIndex, ref pSample);
 			}
 			public HRESULT SendStreamTick(uint32 dwStreamIndex, int64 llTimestamp) mut
 			{
-				return VT.SendStreamTick(&this, dwStreamIndex, llTimestamp);
+				return VT.SendStreamTick(ref this, dwStreamIndex, llTimestamp);
 			}
 			public HRESULT PlaceMarker(uint32 dwStreamIndex, void* pvContext) mut
 			{
-				return VT.PlaceMarker(&this, dwStreamIndex, pvContext);
+				return VT.PlaceMarker(ref this, dwStreamIndex, pvContext);
 			}
 			public HRESULT NotifyEndOfSegment(uint32 dwStreamIndex) mut
 			{
-				return VT.NotifyEndOfSegment(&this, dwStreamIndex);
+				return VT.NotifyEndOfSegment(ref this, dwStreamIndex);
 			}
 			public HRESULT Flush(uint32 dwStreamIndex) mut
 			{
-				return VT.Flush(&this, dwStreamIndex);
+				return VT.Flush(ref this, dwStreamIndex);
 			}
 			public HRESULT Finalize() mut
 			{
-				return VT.Finalize(&this);
+				return VT.Finalize(ref this);
 			}
-			public HRESULT GetServiceForStream(uint32 dwStreamIndex, Guid* guidService, Guid* riid, void** ppvObject) mut
+			public HRESULT GetServiceForStream(uint32 dwStreamIndex, in Guid guidService, in Guid riid, void** ppvObject) mut
 			{
-				return VT.GetServiceForStream(&this, dwStreamIndex, guidService, riid, ppvObject);
+				return VT.GetServiceForStream(ref this, dwStreamIndex, guidService, riid, ppvObject);
 			}
-			public HRESULT GetStatistics(uint32 dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats) mut
+			public HRESULT GetStatistics(uint32 dwStreamIndex, out MF_SINK_WRITER_STATISTICS pStats) mut
 			{
-				return VT.GetStatistics(&this, dwStreamIndex, pStats);
+				return VT.GetStatistics(ref this, dwStreamIndex, out pStats);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSinkWriter *self, IMFMediaType* pTargetMediaType, uint32* pdwStreamIndex) AddStream;
-				public new function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, IMFMediaType* pInputMediaType, IMFAttributes* pEncodingParameters) SetInputMediaType;
-				public new function HRESULT(IMFSinkWriter *self) BeginWriting;
-				public new function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, IMFSample* pSample) WriteSample;
-				public new function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, int64 llTimestamp) SendStreamTick;
-				public new function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, void* pvContext) PlaceMarker;
-				public new function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex) NotifyEndOfSegment;
-				public new function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex) Flush;
-				public new function HRESULT(IMFSinkWriter *self) Finalize;
-				public new function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, Guid* guidService, Guid* riid, void** ppvObject) GetServiceForStream;
-				public new function HRESULT(IMFSinkWriter *self, uint32 dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats) GetStatistics;
+				public new function HRESULT(ref IMFSinkWriter self, ref IMFMediaType pTargetMediaType, out uint32 pdwStreamIndex) AddStream;
+				public new function HRESULT(ref IMFSinkWriter self, uint32 dwStreamIndex, ref IMFMediaType pInputMediaType, IMFAttributes* pEncodingParameters) SetInputMediaType;
+				public new function HRESULT(ref IMFSinkWriter self) BeginWriting;
+				public new function HRESULT(ref IMFSinkWriter self, uint32 dwStreamIndex, ref IMFSample pSample) WriteSample;
+				public new function HRESULT(ref IMFSinkWriter self, uint32 dwStreamIndex, int64 llTimestamp) SendStreamTick;
+				public new function HRESULT(ref IMFSinkWriter self, uint32 dwStreamIndex, void* pvContext) PlaceMarker;
+				public new function HRESULT(ref IMFSinkWriter self, uint32 dwStreamIndex) NotifyEndOfSegment;
+				public new function HRESULT(ref IMFSinkWriter self, uint32 dwStreamIndex) Flush;
+				public new function HRESULT(ref IMFSinkWriter self) Finalize;
+				public new function HRESULT(ref IMFSinkWriter self, uint32 dwStreamIndex, in Guid guidService, in Guid riid, void** ppvObject) GetServiceForStream;
+				public new function HRESULT(ref IMFSinkWriter self, uint32 dwStreamIndex, out MF_SINK_WRITER_STATISTICS pStats) GetStatistics;
 			}
 		}
 		[CRepr]
@@ -18998,14 +18998,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTransformForStream(uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform) mut
+			public HRESULT GetTransformForStream(uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, out IMFTransform* ppTransform) mut
 			{
-				return VT.GetTransformForStream(&this, dwStreamIndex, dwTransformIndex, pGuidCategory, ppTransform);
+				return VT.GetTransformForStream(ref this, dwStreamIndex, dwTransformIndex, pGuidCategory, out ppTransform);
 			}
 			[CRepr]
 			public struct VTable : IMFSinkWriter.VTable
 			{
-				public new function HRESULT(IMFSinkWriterEx *self, uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform) GetTransformForStream;
+				public new function HRESULT(ref IMFSinkWriterEx self, uint32 dwStreamIndex, uint32 dwTransformIndex, Guid* pGuidCategory, out IMFTransform* ppTransform) GetTransformForStream;
 			}
 		}
 		[CRepr]
@@ -19015,19 +19015,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTargetMediaType(uint32 dwStreamIndex, IMFMediaType* pTargetMediaType, IMFAttributes* pEncodingParameters) mut
+			public HRESULT SetTargetMediaType(uint32 dwStreamIndex, ref IMFMediaType pTargetMediaType, IMFAttributes* pEncodingParameters) mut
 			{
-				return VT.SetTargetMediaType(&this, dwStreamIndex, pTargetMediaType, pEncodingParameters);
+				return VT.SetTargetMediaType(ref this, dwStreamIndex, ref pTargetMediaType, pEncodingParameters);
 			}
-			public HRESULT PlaceEncodingParameters(uint32 dwStreamIndex, IMFAttributes* pEncodingParameters) mut
+			public HRESULT PlaceEncodingParameters(uint32 dwStreamIndex, ref IMFAttributes pEncodingParameters) mut
 			{
-				return VT.PlaceEncodingParameters(&this, dwStreamIndex, pEncodingParameters);
+				return VT.PlaceEncodingParameters(ref this, dwStreamIndex, ref pEncodingParameters);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSinkWriterEncoderConfig *self, uint32 dwStreamIndex, IMFMediaType* pTargetMediaType, IMFAttributes* pEncodingParameters) SetTargetMediaType;
-				public new function HRESULT(IMFSinkWriterEncoderConfig *self, uint32 dwStreamIndex, IMFAttributes* pEncodingParameters) PlaceEncodingParameters;
+				public new function HRESULT(ref IMFSinkWriterEncoderConfig self, uint32 dwStreamIndex, ref IMFMediaType pTargetMediaType, IMFAttributes* pEncodingParameters) SetTargetMediaType;
+				public new function HRESULT(ref IMFSinkWriterEncoderConfig self, uint32 dwStreamIndex, ref IMFAttributes pEncodingParameters) PlaceEncodingParameters;
 			}
 		}
 		[CRepr]
@@ -19039,17 +19039,17 @@ namespace Win32
 			
 			public HRESULT OnFinalize(HRESULT hrStatus) mut
 			{
-				return VT.OnFinalize(&this, hrStatus);
+				return VT.OnFinalize(ref this, hrStatus);
 			}
 			public HRESULT OnMarker(uint32 dwStreamIndex, void* pvContext) mut
 			{
-				return VT.OnMarker(&this, dwStreamIndex, pvContext);
+				return VT.OnMarker(ref this, dwStreamIndex, pvContext);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSinkWriterCallback *self, HRESULT hrStatus) OnFinalize;
-				public new function HRESULT(IMFSinkWriterCallback *self, uint32 dwStreamIndex, void* pvContext) OnMarker;
+				public new function HRESULT(ref IMFSinkWriterCallback self, HRESULT hrStatus) OnFinalize;
+				public new function HRESULT(ref IMFSinkWriterCallback self, uint32 dwStreamIndex, void* pvContext) OnMarker;
 			}
 		}
 		[CRepr]
@@ -19061,17 +19061,17 @@ namespace Win32
 			
 			public HRESULT OnTransformChange() mut
 			{
-				return VT.OnTransformChange(&this);
+				return VT.OnTransformChange(ref this);
 			}
 			public HRESULT OnStreamError(uint32 dwStreamIndex, HRESULT hrStatus) mut
 			{
-				return VT.OnStreamError(&this, dwStreamIndex, hrStatus);
+				return VT.OnStreamError(ref this, dwStreamIndex, hrStatus);
 			}
 			[CRepr]
 			public struct VTable : IMFSinkWriterCallback.VTable
 			{
-				public new function HRESULT(IMFSinkWriterCallback2 *self) OnTransformChange;
-				public new function HRESULT(IMFSinkWriterCallback2 *self, uint32 dwStreamIndex, HRESULT hrStatus) OnStreamError;
+				public new function HRESULT(ref IMFSinkWriterCallback2 self) OnTransformChange;
+				public new function HRESULT(ref IMFSinkWriterCallback2 self, uint32 dwStreamIndex, HRESULT hrStatus) OnStreamError;
 			}
 		}
 		[CRepr]
@@ -19081,14 +19081,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT MapOutputCoordinateToInputStream(float xOut, float yOut, uint32 dwOutputStreamIndex, uint32 dwInputStreamIndex, float* pxIn, float* pyIn) mut
+			public HRESULT MapOutputCoordinateToInputStream(float xOut, float yOut, uint32 dwOutputStreamIndex, uint32 dwInputStreamIndex, out float pxIn, out float pyIn) mut
 			{
-				return VT.MapOutputCoordinateToInputStream(&this, xOut, yOut, dwOutputStreamIndex, dwInputStreamIndex, pxIn, pyIn);
+				return VT.MapOutputCoordinateToInputStream(ref this, xOut, yOut, dwOutputStreamIndex, dwInputStreamIndex, out pxIn, out pyIn);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoPositionMapper *self, float xOut, float yOut, uint32 dwOutputStreamIndex, uint32 dwInputStreamIndex, float* pxIn, float* pyIn) MapOutputCoordinateToInputStream;
+				public new function HRESULT(ref IMFVideoPositionMapper self, float xOut, float yOut, uint32 dwOutputStreamIndex, uint32 dwInputStreamIndex, out float pxIn, out float pyIn) MapOutputCoordinateToInputStream;
 			}
 		}
 		[CRepr]
@@ -19098,14 +19098,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDeviceID(Guid* pDeviceID) mut
+			public HRESULT GetDeviceID(out Guid pDeviceID) mut
 			{
-				return VT.GetDeviceID(&this, pDeviceID);
+				return VT.GetDeviceID(ref this, out pDeviceID);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoDeviceID *self, Guid* pDeviceID) GetDeviceID;
+				public new function HRESULT(ref IMFVideoDeviceID self, out Guid pDeviceID) GetDeviceID;
 			}
 		}
 		[CRepr]
@@ -19115,89 +19115,89 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetNativeVideoSize(SIZE* pszVideo, SIZE* pszARVideo) mut
+			public HRESULT GetNativeVideoSize(out SIZE pszVideo, out SIZE pszARVideo) mut
 			{
-				return VT.GetNativeVideoSize(&this, pszVideo, pszARVideo);
+				return VT.GetNativeVideoSize(ref this, out pszVideo, out pszARVideo);
 			}
-			public HRESULT GetIdealVideoSize(SIZE* pszMin, SIZE* pszMax) mut
+			public HRESULT GetIdealVideoSize(out SIZE pszMin, out SIZE pszMax) mut
 			{
-				return VT.GetIdealVideoSize(&this, pszMin, pszMax);
+				return VT.GetIdealVideoSize(ref this, out pszMin, out pszMax);
 			}
-			public HRESULT SetVideoPosition(MFVideoNormalizedRect* pnrcSource, RECT* prcDest) mut
+			public HRESULT SetVideoPosition(in MFVideoNormalizedRect pnrcSource, in RECT prcDest) mut
 			{
-				return VT.SetVideoPosition(&this, pnrcSource, prcDest);
+				return VT.SetVideoPosition(ref this, pnrcSource, prcDest);
 			}
-			public HRESULT GetVideoPosition(MFVideoNormalizedRect* pnrcSource, RECT* prcDest) mut
+			public HRESULT GetVideoPosition(out MFVideoNormalizedRect pnrcSource, out RECT prcDest) mut
 			{
-				return VT.GetVideoPosition(&this, pnrcSource, prcDest);
+				return VT.GetVideoPosition(ref this, out pnrcSource, out prcDest);
 			}
 			public HRESULT SetAspectRatioMode(uint32 dwAspectRatioMode) mut
 			{
-				return VT.SetAspectRatioMode(&this, dwAspectRatioMode);
+				return VT.SetAspectRatioMode(ref this, dwAspectRatioMode);
 			}
-			public HRESULT GetAspectRatioMode(uint32* pdwAspectRatioMode) mut
+			public HRESULT GetAspectRatioMode(out uint32 pdwAspectRatioMode) mut
 			{
-				return VT.GetAspectRatioMode(&this, pdwAspectRatioMode);
+				return VT.GetAspectRatioMode(ref this, out pdwAspectRatioMode);
 			}
 			public HRESULT SetVideoWindow(HWND hwndVideo) mut
 			{
-				return VT.SetVideoWindow(&this, hwndVideo);
+				return VT.SetVideoWindow(ref this, hwndVideo);
 			}
-			public HRESULT GetVideoWindow(HWND* phwndVideo) mut
+			public HRESULT GetVideoWindow(out HWND phwndVideo) mut
 			{
-				return VT.GetVideoWindow(&this, phwndVideo);
+				return VT.GetVideoWindow(ref this, out phwndVideo);
 			}
 			public HRESULT RepaintVideo() mut
 			{
-				return VT.RepaintVideo(&this);
+				return VT.RepaintVideo(ref this);
 			}
-			public HRESULT GetCurrentImage(BITMAPINFOHEADER* pBih, uint8** pDib, uint32* pcbDib, int64* pTimeStamp) mut
+			public HRESULT GetCurrentImage(out BITMAPINFOHEADER pBih, uint8** pDib, out uint32 pcbDib, out int64 pTimeStamp) mut
 			{
-				return VT.GetCurrentImage(&this, pBih, pDib, pcbDib, pTimeStamp);
+				return VT.GetCurrentImage(ref this, out pBih, pDib, out pcbDib, out pTimeStamp);
 			}
 			public HRESULT SetBorderColor(uint32 Clr) mut
 			{
-				return VT.SetBorderColor(&this, Clr);
+				return VT.SetBorderColor(ref this, Clr);
 			}
-			public HRESULT GetBorderColor(uint32* pClr) mut
+			public HRESULT GetBorderColor(out uint32 pClr) mut
 			{
-				return VT.GetBorderColor(&this, pClr);
+				return VT.GetBorderColor(ref this, out pClr);
 			}
 			public HRESULT SetRenderingPrefs(uint32 dwRenderFlags) mut
 			{
-				return VT.SetRenderingPrefs(&this, dwRenderFlags);
+				return VT.SetRenderingPrefs(ref this, dwRenderFlags);
 			}
-			public HRESULT GetRenderingPrefs(uint32* pdwRenderFlags) mut
+			public HRESULT GetRenderingPrefs(out uint32 pdwRenderFlags) mut
 			{
-				return VT.GetRenderingPrefs(&this, pdwRenderFlags);
+				return VT.GetRenderingPrefs(ref this, out pdwRenderFlags);
 			}
 			public HRESULT SetFullscreen(BOOL fFullscreen) mut
 			{
-				return VT.SetFullscreen(&this, fFullscreen);
+				return VT.SetFullscreen(ref this, fFullscreen);
 			}
-			public HRESULT GetFullscreen(BOOL* pfFullscreen) mut
+			public HRESULT GetFullscreen(out BOOL pfFullscreen) mut
 			{
-				return VT.GetFullscreen(&this, pfFullscreen);
+				return VT.GetFullscreen(ref this, out pfFullscreen);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoDisplayControl *self, SIZE* pszVideo, SIZE* pszARVideo) GetNativeVideoSize;
-				public new function HRESULT(IMFVideoDisplayControl *self, SIZE* pszMin, SIZE* pszMax) GetIdealVideoSize;
-				public new function HRESULT(IMFVideoDisplayControl *self, MFVideoNormalizedRect* pnrcSource, RECT* prcDest) SetVideoPosition;
-				public new function HRESULT(IMFVideoDisplayControl *self, MFVideoNormalizedRect* pnrcSource, RECT* prcDest) GetVideoPosition;
-				public new function HRESULT(IMFVideoDisplayControl *self, uint32 dwAspectRatioMode) SetAspectRatioMode;
-				public new function HRESULT(IMFVideoDisplayControl *self, uint32* pdwAspectRatioMode) GetAspectRatioMode;
-				public new function HRESULT(IMFVideoDisplayControl *self, HWND hwndVideo) SetVideoWindow;
-				public new function HRESULT(IMFVideoDisplayControl *self, HWND* phwndVideo) GetVideoWindow;
-				public new function HRESULT(IMFVideoDisplayControl *self) RepaintVideo;
-				public new function HRESULT(IMFVideoDisplayControl *self, BITMAPINFOHEADER* pBih, uint8** pDib, uint32* pcbDib, int64* pTimeStamp) GetCurrentImage;
-				public new function HRESULT(IMFVideoDisplayControl *self, uint32 Clr) SetBorderColor;
-				public new function HRESULT(IMFVideoDisplayControl *self, uint32* pClr) GetBorderColor;
-				public new function HRESULT(IMFVideoDisplayControl *self, uint32 dwRenderFlags) SetRenderingPrefs;
-				public new function HRESULT(IMFVideoDisplayControl *self, uint32* pdwRenderFlags) GetRenderingPrefs;
-				public new function HRESULT(IMFVideoDisplayControl *self, BOOL fFullscreen) SetFullscreen;
-				public new function HRESULT(IMFVideoDisplayControl *self, BOOL* pfFullscreen) GetFullscreen;
+				public new function HRESULT(ref IMFVideoDisplayControl self, out SIZE pszVideo, out SIZE pszARVideo) GetNativeVideoSize;
+				public new function HRESULT(ref IMFVideoDisplayControl self, out SIZE pszMin, out SIZE pszMax) GetIdealVideoSize;
+				public new function HRESULT(ref IMFVideoDisplayControl self, in MFVideoNormalizedRect pnrcSource, in RECT prcDest) SetVideoPosition;
+				public new function HRESULT(ref IMFVideoDisplayControl self, out MFVideoNormalizedRect pnrcSource, out RECT prcDest) GetVideoPosition;
+				public new function HRESULT(ref IMFVideoDisplayControl self, uint32 dwAspectRatioMode) SetAspectRatioMode;
+				public new function HRESULT(ref IMFVideoDisplayControl self, out uint32 pdwAspectRatioMode) GetAspectRatioMode;
+				public new function HRESULT(ref IMFVideoDisplayControl self, HWND hwndVideo) SetVideoWindow;
+				public new function HRESULT(ref IMFVideoDisplayControl self, out HWND phwndVideo) GetVideoWindow;
+				public new function HRESULT(ref IMFVideoDisplayControl self) RepaintVideo;
+				public new function HRESULT(ref IMFVideoDisplayControl self, out BITMAPINFOHEADER pBih, uint8** pDib, out uint32 pcbDib, out int64 pTimeStamp) GetCurrentImage;
+				public new function HRESULT(ref IMFVideoDisplayControl self, uint32 Clr) SetBorderColor;
+				public new function HRESULT(ref IMFVideoDisplayControl self, out uint32 pClr) GetBorderColor;
+				public new function HRESULT(ref IMFVideoDisplayControl self, uint32 dwRenderFlags) SetRenderingPrefs;
+				public new function HRESULT(ref IMFVideoDisplayControl self, out uint32 pdwRenderFlags) GetRenderingPrefs;
+				public new function HRESULT(ref IMFVideoDisplayControl self, BOOL fFullscreen) SetFullscreen;
+				public new function HRESULT(ref IMFVideoDisplayControl self, out BOOL pfFullscreen) GetFullscreen;
 			}
 		}
 		[CRepr]
@@ -19209,17 +19209,17 @@ namespace Win32
 			
 			public HRESULT ProcessMessage(MFVP_MESSAGE_TYPE eMessage, uint ulParam) mut
 			{
-				return VT.ProcessMessage(&this, eMessage, ulParam);
+				return VT.ProcessMessage(ref this, eMessage, ulParam);
 			}
-			public HRESULT GetCurrentMediaType(IMFVideoMediaType** ppMediaType) mut
+			public HRESULT GetCurrentMediaType(out IMFVideoMediaType* ppMediaType) mut
 			{
-				return VT.GetCurrentMediaType(&this, ppMediaType);
+				return VT.GetCurrentMediaType(ref this, out ppMediaType);
 			}
 			[CRepr]
 			public struct VTable : IMFClockStateSink.VTable
 			{
-				public new function HRESULT(IMFVideoPresenter *self, MFVP_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
-				public new function HRESULT(IMFVideoPresenter *self, IMFVideoMediaType** ppMediaType) GetCurrentMediaType;
+				public new function HRESULT(ref IMFVideoPresenter self, MFVP_MESSAGE_TYPE eMessage, uint ulParam) ProcessMessage;
+				public new function HRESULT(ref IMFVideoPresenter self, out IMFVideoMediaType* ppMediaType) GetCurrentMediaType;
 			}
 		}
 		[CRepr]
@@ -19229,24 +19229,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDesiredSampleTimeAndDuration(int64* phnsSampleTime, int64* phnsSampleDuration) mut
+			public HRESULT GetDesiredSampleTimeAndDuration(out int64 phnsSampleTime, out int64 phnsSampleDuration) mut
 			{
-				return VT.GetDesiredSampleTimeAndDuration(&this, phnsSampleTime, phnsSampleDuration);
+				return VT.GetDesiredSampleTimeAndDuration(ref this, out phnsSampleTime, out phnsSampleDuration);
 			}
 			public void SetDesiredSampleTimeAndDuration(int64 hnsSampleTime, int64 hnsSampleDuration) mut
 			{
-				VT.SetDesiredSampleTimeAndDuration(&this, hnsSampleTime, hnsSampleDuration);
+				VT.SetDesiredSampleTimeAndDuration(ref this, hnsSampleTime, hnsSampleDuration);
 			}
 			public void Clear() mut
 			{
-				VT.Clear(&this);
+				VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFDesiredSample *self, int64* phnsSampleTime, int64* phnsSampleDuration) GetDesiredSampleTimeAndDuration;
-				public new function void(IMFDesiredSample *self, int64 hnsSampleTime, int64 hnsSampleDuration) SetDesiredSampleTimeAndDuration;
-				public new function void(IMFDesiredSample *self) Clear;
+				public new function HRESULT(ref IMFDesiredSample self, out int64 phnsSampleTime, out int64 phnsSampleDuration) GetDesiredSampleTimeAndDuration;
+				public new function void(ref IMFDesiredSample self, int64 hnsSampleTime, int64 hnsSampleDuration) SetDesiredSampleTimeAndDuration;
+				public new function void(ref IMFDesiredSample self) Clear;
 			}
 		}
 		[CRepr]
@@ -19258,27 +19258,27 @@ namespace Win32
 			
 			public HRESULT SetStreamZOrder(uint32 dwStreamID, uint32 dwZ) mut
 			{
-				return VT.SetStreamZOrder(&this, dwStreamID, dwZ);
+				return VT.SetStreamZOrder(ref this, dwStreamID, dwZ);
 			}
-			public HRESULT GetStreamZOrder(uint32 dwStreamID, uint32* pdwZ) mut
+			public HRESULT GetStreamZOrder(uint32 dwStreamID, out uint32 pdwZ) mut
 			{
-				return VT.GetStreamZOrder(&this, dwStreamID, pdwZ);
+				return VT.GetStreamZOrder(ref this, dwStreamID, out pdwZ);
 			}
-			public HRESULT SetStreamOutputRect(uint32 dwStreamID, MFVideoNormalizedRect* pnrcOutput) mut
+			public HRESULT SetStreamOutputRect(uint32 dwStreamID, in MFVideoNormalizedRect pnrcOutput) mut
 			{
-				return VT.SetStreamOutputRect(&this, dwStreamID, pnrcOutput);
+				return VT.SetStreamOutputRect(ref this, dwStreamID, pnrcOutput);
 			}
-			public HRESULT GetStreamOutputRect(uint32 dwStreamID, MFVideoNormalizedRect* pnrcOutput) mut
+			public HRESULT GetStreamOutputRect(uint32 dwStreamID, out MFVideoNormalizedRect pnrcOutput) mut
 			{
-				return VT.GetStreamOutputRect(&this, dwStreamID, pnrcOutput);
+				return VT.GetStreamOutputRect(ref this, dwStreamID, out pnrcOutput);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoMixerControl *self, uint32 dwStreamID, uint32 dwZ) SetStreamZOrder;
-				public new function HRESULT(IMFVideoMixerControl *self, uint32 dwStreamID, uint32* pdwZ) GetStreamZOrder;
-				public new function HRESULT(IMFVideoMixerControl *self, uint32 dwStreamID, MFVideoNormalizedRect* pnrcOutput) SetStreamOutputRect;
-				public new function HRESULT(IMFVideoMixerControl *self, uint32 dwStreamID, MFVideoNormalizedRect* pnrcOutput) GetStreamOutputRect;
+				public new function HRESULT(ref IMFVideoMixerControl self, uint32 dwStreamID, uint32 dwZ) SetStreamZOrder;
+				public new function HRESULT(ref IMFVideoMixerControl self, uint32 dwStreamID, out uint32 pdwZ) GetStreamZOrder;
+				public new function HRESULT(ref IMFVideoMixerControl self, uint32 dwStreamID, in MFVideoNormalizedRect pnrcOutput) SetStreamOutputRect;
+				public new function HRESULT(ref IMFVideoMixerControl self, uint32 dwStreamID, out MFVideoNormalizedRect pnrcOutput) GetStreamOutputRect;
 			}
 		}
 		[CRepr]
@@ -19290,17 +19290,17 @@ namespace Win32
 			
 			public HRESULT SetMixingPrefs(uint32 dwMixFlags) mut
 			{
-				return VT.SetMixingPrefs(&this, dwMixFlags);
+				return VT.SetMixingPrefs(ref this, dwMixFlags);
 			}
-			public HRESULT GetMixingPrefs(uint32* pdwMixFlags) mut
+			public HRESULT GetMixingPrefs(out uint32 pdwMixFlags) mut
 			{
-				return VT.GetMixingPrefs(&this, pdwMixFlags);
+				return VT.GetMixingPrefs(ref this, out pdwMixFlags);
 			}
 			[CRepr]
 			public struct VTable : IMFVideoMixerControl.VTable
 			{
-				public new function HRESULT(IMFVideoMixerControl2 *self, uint32 dwMixFlags) SetMixingPrefs;
-				public new function HRESULT(IMFVideoMixerControl2 *self, uint32* pdwMixFlags) GetMixingPrefs;
+				public new function HRESULT(ref IMFVideoMixerControl2 self, uint32 dwMixFlags) SetMixingPrefs;
+				public new function HRESULT(ref IMFVideoMixerControl2 self, out uint32 pdwMixFlags) GetMixingPrefs;
 			}
 		}
 		[CRepr]
@@ -19312,12 +19312,12 @@ namespace Win32
 			
 			public HRESULT InitializeRenderer(IMFTransform* pVideoMixer, IMFVideoPresenter* pVideoPresenter) mut
 			{
-				return VT.InitializeRenderer(&this, pVideoMixer, pVideoPresenter);
+				return VT.InitializeRenderer(ref this, pVideoMixer, pVideoPresenter);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoRenderer *self, IMFTransform* pVideoMixer, IMFVideoPresenter* pVideoPresenter) InitializeRenderer;
+				public new function HRESULT(ref IMFVideoRenderer self, IMFTransform* pVideoMixer, IMFVideoPresenter* pVideoPresenter) InitializeRenderer;
 			}
 		}
 		[CRepr]
@@ -19329,17 +19329,17 @@ namespace Win32
 			
 			public HRESULT SetNumberOfStreams(uint32 dwMaxStreams) mut
 			{
-				return VT.SetNumberOfStreams(&this, dwMaxStreams);
+				return VT.SetNumberOfStreams(ref this, dwMaxStreams);
 			}
-			public HRESULT GetNumberOfStreams(uint32* pdwMaxStreams) mut
+			public HRESULT GetNumberOfStreams(out uint32 pdwMaxStreams) mut
 			{
-				return VT.GetNumberOfStreams(&this, pdwMaxStreams);
+				return VT.GetNumberOfStreams(ref this, out pdwMaxStreams);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEVRFilterConfig *self, uint32 dwMaxStreams) SetNumberOfStreams;
-				public new function HRESULT(IEVRFilterConfig *self, uint32* pdwMaxStreams) GetNumberOfStreams;
+				public new function HRESULT(ref IEVRFilterConfig self, uint32 dwMaxStreams) SetNumberOfStreams;
+				public new function HRESULT(ref IEVRFilterConfig self, out uint32 pdwMaxStreams) GetNumberOfStreams;
 			}
 		}
 		[CRepr]
@@ -19351,17 +19351,17 @@ namespace Win32
 			
 			public HRESULT SetConfigPrefs(uint32 dwConfigFlags) mut
 			{
-				return VT.SetConfigPrefs(&this, dwConfigFlags);
+				return VT.SetConfigPrefs(ref this, dwConfigFlags);
 			}
-			public HRESULT GetConfigPrefs(uint32* pdwConfigFlags) mut
+			public HRESULT GetConfigPrefs(out uint32 pdwConfigFlags) mut
 			{
-				return VT.GetConfigPrefs(&this, pdwConfigFlags);
+				return VT.GetConfigPrefs(ref this, out pdwConfigFlags);
 			}
 			[CRepr]
 			public struct VTable : IEVRFilterConfig.VTable
 			{
-				public new function HRESULT(IEVRFilterConfigEx *self, uint32 dwConfigFlags) SetConfigPrefs;
-				public new function HRESULT(IEVRFilterConfigEx *self, uint32* pdwConfigFlags) GetConfigPrefs;
+				public new function HRESULT(ref IEVRFilterConfigEx self, uint32 dwConfigFlags) SetConfigPrefs;
+				public new function HRESULT(ref IEVRFilterConfigEx self, out uint32 pdwConfigFlags) GetConfigPrefs;
 			}
 		}
 		[CRepr]
@@ -19371,14 +19371,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT LookupService(MF_SERVICE_LOOKUP_TYPE Type, uint32 dwIndex, Guid* guidService, Guid* riid, void** ppvObjects, uint32* pnObjects) mut
+			public HRESULT LookupService(MF_SERVICE_LOOKUP_TYPE Type, uint32 dwIndex, in Guid guidService, in Guid riid, void** ppvObjects, out uint32 pnObjects) mut
 			{
-				return VT.LookupService(&this, Type, dwIndex, guidService, riid, ppvObjects, pnObjects);
+				return VT.LookupService(ref this, Type, dwIndex, guidService, riid, ppvObjects, out pnObjects);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTopologyServiceLookup *self, MF_SERVICE_LOOKUP_TYPE Type, uint32 dwIndex, Guid* guidService, Guid* riid, void** ppvObjects, uint32* pnObjects) LookupService;
+				public new function HRESULT(ref IMFTopologyServiceLookup self, MF_SERVICE_LOOKUP_TYPE Type, uint32 dwIndex, in Guid guidService, in Guid riid, void** ppvObjects, out uint32 pnObjects) LookupService;
 			}
 		}
 		[CRepr]
@@ -19388,19 +19388,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT InitServicePointers(IMFTopologyServiceLookup* pLookup) mut
+			public HRESULT InitServicePointers(ref IMFTopologyServiceLookup pLookup) mut
 			{
-				return VT.InitServicePointers(&this, pLookup);
+				return VT.InitServicePointers(ref this, ref pLookup);
 			}
 			public HRESULT ReleaseServicePointers() mut
 			{
-				return VT.ReleaseServicePointers(&this);
+				return VT.ReleaseServicePointers(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFTopologyServiceLookupClient *self, IMFTopologyServiceLookup* pLookup) InitServicePointers;
-				public new function HRESULT(IMFTopologyServiceLookupClient *self) ReleaseServicePointers;
+				public new function HRESULT(ref IMFTopologyServiceLookupClient self, ref IMFTopologyServiceLookup pLookup) InitServicePointers;
+				public new function HRESULT(ref IMFTopologyServiceLookupClient self) ReleaseServicePointers;
 			}
 		}
 		[CRepr]
@@ -19410,29 +19410,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT IsInTrustedVideoMode(BOOL* pYes) mut
+			public HRESULT IsInTrustedVideoMode(out BOOL pYes) mut
 			{
-				return VT.IsInTrustedVideoMode(&this, pYes);
+				return VT.IsInTrustedVideoMode(ref this, out pYes);
 			}
-			public HRESULT CanConstrict(BOOL* pYes) mut
+			public HRESULT CanConstrict(out BOOL pYes) mut
 			{
-				return VT.CanConstrict(&this, pYes);
+				return VT.CanConstrict(ref this, out pYes);
 			}
 			public HRESULT SetConstriction(uint32 dwKPix) mut
 			{
-				return VT.SetConstriction(&this, dwKPix);
+				return VT.SetConstriction(ref this, dwKPix);
 			}
 			public HRESULT DisableImageExport(BOOL bDisable) mut
 			{
-				return VT.DisableImageExport(&this, bDisable);
+				return VT.DisableImageExport(ref this, bDisable);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEVRTrustedVideoPlugin *self, BOOL* pYes) IsInTrustedVideoMode;
-				public new function HRESULT(IEVRTrustedVideoPlugin *self, BOOL* pYes) CanConstrict;
-				public new function HRESULT(IEVRTrustedVideoPlugin *self, uint32 dwKPix) SetConstriction;
-				public new function HRESULT(IEVRTrustedVideoPlugin *self, BOOL bDisable) DisableImageExport;
+				public new function HRESULT(ref IEVRTrustedVideoPlugin self, out BOOL pYes) IsInTrustedVideoMode;
+				public new function HRESULT(ref IEVRTrustedVideoPlugin self, out BOOL pYes) CanConstrict;
+				public new function HRESULT(ref IEVRTrustedVideoPlugin self, uint32 dwKPix) SetConstriction;
+				public new function HRESULT(ref IEVRTrustedVideoPlugin self, BOOL bDisable) DisableImageExport;
 			}
 		}
 		[CRepr]
@@ -19444,187 +19444,187 @@ namespace Win32
 			
 			public HRESULT Play() mut
 			{
-				return VT.Play(&this);
+				return VT.Play(ref this);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT FrameStep() mut
 			{
-				return VT.FrameStep(&this);
+				return VT.FrameStep(ref this);
 			}
-			public HRESULT SetPosition(Guid* guidPositionType, PROPVARIANT* pvPositionValue) mut
+			public HRESULT SetPosition(in Guid guidPositionType, in PROPVARIANT pvPositionValue) mut
 			{
-				return VT.SetPosition(&this, guidPositionType, pvPositionValue);
+				return VT.SetPosition(ref this, guidPositionType, pvPositionValue);
 			}
-			public HRESULT GetPosition(Guid* guidPositionType, PROPVARIANT* pvPositionValue) mut
+			public HRESULT GetPosition(in Guid guidPositionType, out PROPVARIANT pvPositionValue) mut
 			{
-				return VT.GetPosition(&this, guidPositionType, pvPositionValue);
+				return VT.GetPosition(ref this, guidPositionType, out pvPositionValue);
 			}
-			public HRESULT GetDuration(Guid* guidPositionType, PROPVARIANT* pvDurationValue) mut
+			public HRESULT GetDuration(in Guid guidPositionType, out PROPVARIANT pvDurationValue) mut
 			{
-				return VT.GetDuration(&this, guidPositionType, pvDurationValue);
+				return VT.GetDuration(ref this, guidPositionType, out pvDurationValue);
 			}
 			public HRESULT SetRate(float flRate) mut
 			{
-				return VT.SetRate(&this, flRate);
+				return VT.SetRate(ref this, flRate);
 			}
-			public HRESULT GetRate(float* pflRate) mut
+			public HRESULT GetRate(out float pflRate) mut
 			{
-				return VT.GetRate(&this, pflRate);
+				return VT.GetRate(ref this, out pflRate);
 			}
-			public HRESULT GetSupportedRates(BOOL fForwardDirection, float* pflSlowestRate, float* pflFastestRate) mut
+			public HRESULT GetSupportedRates(BOOL fForwardDirection, out float pflSlowestRate, out float pflFastestRate) mut
 			{
-				return VT.GetSupportedRates(&this, fForwardDirection, pflSlowestRate, pflFastestRate);
+				return VT.GetSupportedRates(ref this, fForwardDirection, out pflSlowestRate, out pflFastestRate);
 			}
-			public HRESULT GetState(MFP_MEDIAPLAYER_STATE* peState) mut
+			public HRESULT GetState(out MFP_MEDIAPLAYER_STATE peState) mut
 			{
-				return VT.GetState(&this, peState);
+				return VT.GetState(ref this, out peState);
 			}
 			public HRESULT CreateMediaItemFromURL(PWSTR pwszURL, BOOL fSync, uint dwUserData, IMFPMediaItem** ppMediaItem) mut
 			{
-				return VT.CreateMediaItemFromURL(&this, pwszURL, fSync, dwUserData, ppMediaItem);
+				return VT.CreateMediaItemFromURL(ref this, pwszURL, fSync, dwUserData, ppMediaItem);
 			}
-			public HRESULT CreateMediaItemFromObject(IUnknown* pIUnknownObj, BOOL fSync, uint dwUserData, IMFPMediaItem** ppMediaItem) mut
+			public HRESULT CreateMediaItemFromObject(ref IUnknown pIUnknownObj, BOOL fSync, uint dwUserData, IMFPMediaItem** ppMediaItem) mut
 			{
-				return VT.CreateMediaItemFromObject(&this, pIUnknownObj, fSync, dwUserData, ppMediaItem);
+				return VT.CreateMediaItemFromObject(ref this, ref pIUnknownObj, fSync, dwUserData, ppMediaItem);
 			}
-			public HRESULT SetMediaItem(IMFPMediaItem* pIMFPMediaItem) mut
+			public HRESULT SetMediaItem(ref IMFPMediaItem pIMFPMediaItem) mut
 			{
-				return VT.SetMediaItem(&this, pIMFPMediaItem);
+				return VT.SetMediaItem(ref this, ref pIMFPMediaItem);
 			}
 			public HRESULT ClearMediaItem() mut
 			{
-				return VT.ClearMediaItem(&this);
+				return VT.ClearMediaItem(ref this);
 			}
-			public HRESULT GetMediaItem(IMFPMediaItem** ppIMFPMediaItem) mut
+			public HRESULT GetMediaItem(out IMFPMediaItem* ppIMFPMediaItem) mut
 			{
-				return VT.GetMediaItem(&this, ppIMFPMediaItem);
+				return VT.GetMediaItem(ref this, out ppIMFPMediaItem);
 			}
-			public HRESULT GetVolume(float* pflVolume) mut
+			public HRESULT GetVolume(out float pflVolume) mut
 			{
-				return VT.GetVolume(&this, pflVolume);
+				return VT.GetVolume(ref this, out pflVolume);
 			}
 			public HRESULT SetVolume(float flVolume) mut
 			{
-				return VT.SetVolume(&this, flVolume);
+				return VT.SetVolume(ref this, flVolume);
 			}
-			public HRESULT GetBalance(float* pflBalance) mut
+			public HRESULT GetBalance(out float pflBalance) mut
 			{
-				return VT.GetBalance(&this, pflBalance);
+				return VT.GetBalance(ref this, out pflBalance);
 			}
 			public HRESULT SetBalance(float flBalance) mut
 			{
-				return VT.SetBalance(&this, flBalance);
+				return VT.SetBalance(ref this, flBalance);
 			}
-			public HRESULT GetMute(BOOL* pfMute) mut
+			public HRESULT GetMute(out BOOL pfMute) mut
 			{
-				return VT.GetMute(&this, pfMute);
+				return VT.GetMute(ref this, out pfMute);
 			}
 			public HRESULT SetMute(BOOL fMute) mut
 			{
-				return VT.SetMute(&this, fMute);
+				return VT.SetMute(ref this, fMute);
 			}
 			public HRESULT GetNativeVideoSize(SIZE* pszVideo, SIZE* pszARVideo) mut
 			{
-				return VT.GetNativeVideoSize(&this, pszVideo, pszARVideo);
+				return VT.GetNativeVideoSize(ref this, pszVideo, pszARVideo);
 			}
 			public HRESULT GetIdealVideoSize(SIZE* pszMin, SIZE* pszMax) mut
 			{
-				return VT.GetIdealVideoSize(&this, pszMin, pszMax);
+				return VT.GetIdealVideoSize(ref this, pszMin, pszMax);
 			}
-			public HRESULT SetVideoSourceRect(MFVideoNormalizedRect* pnrcSource) mut
+			public HRESULT SetVideoSourceRect(in MFVideoNormalizedRect pnrcSource) mut
 			{
-				return VT.SetVideoSourceRect(&this, pnrcSource);
+				return VT.SetVideoSourceRect(ref this, pnrcSource);
 			}
-			public HRESULT GetVideoSourceRect(MFVideoNormalizedRect* pnrcSource) mut
+			public HRESULT GetVideoSourceRect(out MFVideoNormalizedRect pnrcSource) mut
 			{
-				return VT.GetVideoSourceRect(&this, pnrcSource);
+				return VT.GetVideoSourceRect(ref this, out pnrcSource);
 			}
 			public HRESULT SetAspectRatioMode(uint32 dwAspectRatioMode) mut
 			{
-				return VT.SetAspectRatioMode(&this, dwAspectRatioMode);
+				return VT.SetAspectRatioMode(ref this, dwAspectRatioMode);
 			}
-			public HRESULT GetAspectRatioMode(uint32* pdwAspectRatioMode) mut
+			public HRESULT GetAspectRatioMode(out uint32 pdwAspectRatioMode) mut
 			{
-				return VT.GetAspectRatioMode(&this, pdwAspectRatioMode);
+				return VT.GetAspectRatioMode(ref this, out pdwAspectRatioMode);
 			}
-			public HRESULT GetVideoWindow(HWND* phwndVideo) mut
+			public HRESULT GetVideoWindow(out HWND phwndVideo) mut
 			{
-				return VT.GetVideoWindow(&this, phwndVideo);
+				return VT.GetVideoWindow(ref this, out phwndVideo);
 			}
 			public HRESULT UpdateVideo() mut
 			{
-				return VT.UpdateVideo(&this);
+				return VT.UpdateVideo(ref this);
 			}
 			public HRESULT SetBorderColor(uint32 Clr) mut
 			{
-				return VT.SetBorderColor(&this, Clr);
+				return VT.SetBorderColor(ref this, Clr);
 			}
-			public HRESULT GetBorderColor(uint32* pClr) mut
+			public HRESULT GetBorderColor(out uint32 pClr) mut
 			{
-				return VT.GetBorderColor(&this, pClr);
+				return VT.GetBorderColor(ref this, out pClr);
 			}
-			public HRESULT InsertEffect(IUnknown* pEffect, BOOL fOptional) mut
+			public HRESULT InsertEffect(ref IUnknown pEffect, BOOL fOptional) mut
 			{
-				return VT.InsertEffect(&this, pEffect, fOptional);
+				return VT.InsertEffect(ref this, ref pEffect, fOptional);
 			}
-			public HRESULT RemoveEffect(IUnknown* pEffect) mut
+			public HRESULT RemoveEffect(ref IUnknown pEffect) mut
 			{
-				return VT.RemoveEffect(&this, pEffect);
+				return VT.RemoveEffect(ref this, ref pEffect);
 			}
 			public HRESULT RemoveAllEffects() mut
 			{
-				return VT.RemoveAllEffects(&this);
+				return VT.RemoveAllEffects(ref this);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFPMediaPlayer *self) Play;
-				public new function HRESULT(IMFPMediaPlayer *self) Pause;
-				public new function HRESULT(IMFPMediaPlayer *self) Stop;
-				public new function HRESULT(IMFPMediaPlayer *self) FrameStep;
-				public new function HRESULT(IMFPMediaPlayer *self, Guid* guidPositionType, PROPVARIANT* pvPositionValue) SetPosition;
-				public new function HRESULT(IMFPMediaPlayer *self, Guid* guidPositionType, PROPVARIANT* pvPositionValue) GetPosition;
-				public new function HRESULT(IMFPMediaPlayer *self, Guid* guidPositionType, PROPVARIANT* pvDurationValue) GetDuration;
-				public new function HRESULT(IMFPMediaPlayer *self, float flRate) SetRate;
-				public new function HRESULT(IMFPMediaPlayer *self, float* pflRate) GetRate;
-				public new function HRESULT(IMFPMediaPlayer *self, BOOL fForwardDirection, float* pflSlowestRate, float* pflFastestRate) GetSupportedRates;
-				public new function HRESULT(IMFPMediaPlayer *self, MFP_MEDIAPLAYER_STATE* peState) GetState;
-				public new function HRESULT(IMFPMediaPlayer *self, PWSTR pwszURL, BOOL fSync, uint dwUserData, IMFPMediaItem** ppMediaItem) CreateMediaItemFromURL;
-				public new function HRESULT(IMFPMediaPlayer *self, IUnknown* pIUnknownObj, BOOL fSync, uint dwUserData, IMFPMediaItem** ppMediaItem) CreateMediaItemFromObject;
-				public new function HRESULT(IMFPMediaPlayer *self, IMFPMediaItem* pIMFPMediaItem) SetMediaItem;
-				public new function HRESULT(IMFPMediaPlayer *self) ClearMediaItem;
-				public new function HRESULT(IMFPMediaPlayer *self, IMFPMediaItem** ppIMFPMediaItem) GetMediaItem;
-				public new function HRESULT(IMFPMediaPlayer *self, float* pflVolume) GetVolume;
-				public new function HRESULT(IMFPMediaPlayer *self, float flVolume) SetVolume;
-				public new function HRESULT(IMFPMediaPlayer *self, float* pflBalance) GetBalance;
-				public new function HRESULT(IMFPMediaPlayer *self, float flBalance) SetBalance;
-				public new function HRESULT(IMFPMediaPlayer *self, BOOL* pfMute) GetMute;
-				public new function HRESULT(IMFPMediaPlayer *self, BOOL fMute) SetMute;
-				public new function HRESULT(IMFPMediaPlayer *self, SIZE* pszVideo, SIZE* pszARVideo) GetNativeVideoSize;
-				public new function HRESULT(IMFPMediaPlayer *self, SIZE* pszMin, SIZE* pszMax) GetIdealVideoSize;
-				public new function HRESULT(IMFPMediaPlayer *self, MFVideoNormalizedRect* pnrcSource) SetVideoSourceRect;
-				public new function HRESULT(IMFPMediaPlayer *self, MFVideoNormalizedRect* pnrcSource) GetVideoSourceRect;
-				public new function HRESULT(IMFPMediaPlayer *self, uint32 dwAspectRatioMode) SetAspectRatioMode;
-				public new function HRESULT(IMFPMediaPlayer *self, uint32* pdwAspectRatioMode) GetAspectRatioMode;
-				public new function HRESULT(IMFPMediaPlayer *self, HWND* phwndVideo) GetVideoWindow;
-				public new function HRESULT(IMFPMediaPlayer *self) UpdateVideo;
-				public new function HRESULT(IMFPMediaPlayer *self, uint32 Clr) SetBorderColor;
-				public new function HRESULT(IMFPMediaPlayer *self, uint32* pClr) GetBorderColor;
-				public new function HRESULT(IMFPMediaPlayer *self, IUnknown* pEffect, BOOL fOptional) InsertEffect;
-				public new function HRESULT(IMFPMediaPlayer *self, IUnknown* pEffect) RemoveEffect;
-				public new function HRESULT(IMFPMediaPlayer *self) RemoveAllEffects;
-				public new function HRESULT(IMFPMediaPlayer *self) Shutdown;
+				public new function HRESULT(ref IMFPMediaPlayer self) Play;
+				public new function HRESULT(ref IMFPMediaPlayer self) Pause;
+				public new function HRESULT(ref IMFPMediaPlayer self) Stop;
+				public new function HRESULT(ref IMFPMediaPlayer self) FrameStep;
+				public new function HRESULT(ref IMFPMediaPlayer self, in Guid guidPositionType, in PROPVARIANT pvPositionValue) SetPosition;
+				public new function HRESULT(ref IMFPMediaPlayer self, in Guid guidPositionType, out PROPVARIANT pvPositionValue) GetPosition;
+				public new function HRESULT(ref IMFPMediaPlayer self, in Guid guidPositionType, out PROPVARIANT pvDurationValue) GetDuration;
+				public new function HRESULT(ref IMFPMediaPlayer self, float flRate) SetRate;
+				public new function HRESULT(ref IMFPMediaPlayer self, out float pflRate) GetRate;
+				public new function HRESULT(ref IMFPMediaPlayer self, BOOL fForwardDirection, out float pflSlowestRate, out float pflFastestRate) GetSupportedRates;
+				public new function HRESULT(ref IMFPMediaPlayer self, out MFP_MEDIAPLAYER_STATE peState) GetState;
+				public new function HRESULT(ref IMFPMediaPlayer self, PWSTR pwszURL, BOOL fSync, uint dwUserData, IMFPMediaItem** ppMediaItem) CreateMediaItemFromURL;
+				public new function HRESULT(ref IMFPMediaPlayer self, ref IUnknown pIUnknownObj, BOOL fSync, uint dwUserData, IMFPMediaItem** ppMediaItem) CreateMediaItemFromObject;
+				public new function HRESULT(ref IMFPMediaPlayer self, ref IMFPMediaItem pIMFPMediaItem) SetMediaItem;
+				public new function HRESULT(ref IMFPMediaPlayer self) ClearMediaItem;
+				public new function HRESULT(ref IMFPMediaPlayer self, out IMFPMediaItem* ppIMFPMediaItem) GetMediaItem;
+				public new function HRESULT(ref IMFPMediaPlayer self, out float pflVolume) GetVolume;
+				public new function HRESULT(ref IMFPMediaPlayer self, float flVolume) SetVolume;
+				public new function HRESULT(ref IMFPMediaPlayer self, out float pflBalance) GetBalance;
+				public new function HRESULT(ref IMFPMediaPlayer self, float flBalance) SetBalance;
+				public new function HRESULT(ref IMFPMediaPlayer self, out BOOL pfMute) GetMute;
+				public new function HRESULT(ref IMFPMediaPlayer self, BOOL fMute) SetMute;
+				public new function HRESULT(ref IMFPMediaPlayer self, SIZE* pszVideo, SIZE* pszARVideo) GetNativeVideoSize;
+				public new function HRESULT(ref IMFPMediaPlayer self, SIZE* pszMin, SIZE* pszMax) GetIdealVideoSize;
+				public new function HRESULT(ref IMFPMediaPlayer self, in MFVideoNormalizedRect pnrcSource) SetVideoSourceRect;
+				public new function HRESULT(ref IMFPMediaPlayer self, out MFVideoNormalizedRect pnrcSource) GetVideoSourceRect;
+				public new function HRESULT(ref IMFPMediaPlayer self, uint32 dwAspectRatioMode) SetAspectRatioMode;
+				public new function HRESULT(ref IMFPMediaPlayer self, out uint32 pdwAspectRatioMode) GetAspectRatioMode;
+				public new function HRESULT(ref IMFPMediaPlayer self, out HWND phwndVideo) GetVideoWindow;
+				public new function HRESULT(ref IMFPMediaPlayer self) UpdateVideo;
+				public new function HRESULT(ref IMFPMediaPlayer self, uint32 Clr) SetBorderColor;
+				public new function HRESULT(ref IMFPMediaPlayer self, out uint32 pClr) GetBorderColor;
+				public new function HRESULT(ref IMFPMediaPlayer self, ref IUnknown pEffect, BOOL fOptional) InsertEffect;
+				public new function HRESULT(ref IMFPMediaPlayer self, ref IUnknown pEffect) RemoveEffect;
+				public new function HRESULT(ref IMFPMediaPlayer self) RemoveAllEffects;
+				public new function HRESULT(ref IMFPMediaPlayer self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -19634,104 +19634,104 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetMediaPlayer(IMFPMediaPlayer** ppMediaPlayer) mut
+			public HRESULT GetMediaPlayer(out IMFPMediaPlayer* ppMediaPlayer) mut
 			{
-				return VT.GetMediaPlayer(&this, ppMediaPlayer);
+				return VT.GetMediaPlayer(ref this, out ppMediaPlayer);
 			}
-			public HRESULT GetURL(PWSTR* ppwszURL) mut
+			public HRESULT GetURL(out PWSTR ppwszURL) mut
 			{
-				return VT.GetURL(&this, ppwszURL);
+				return VT.GetURL(ref this, out ppwszURL);
 			}
-			public HRESULT GetObject(IUnknown** ppIUnknown) mut
+			public HRESULT GetObject(out IUnknown* ppIUnknown) mut
 			{
-				return VT.GetObject(&this, ppIUnknown);
+				return VT.GetObject(ref this, out ppIUnknown);
 			}
-			public HRESULT GetUserData(uint* pdwUserData) mut
+			public HRESULT GetUserData(out uint pdwUserData) mut
 			{
-				return VT.GetUserData(&this, pdwUserData);
+				return VT.GetUserData(ref this, out pdwUserData);
 			}
 			public HRESULT SetUserData(uint dwUserData) mut
 			{
-				return VT.SetUserData(&this, dwUserData);
+				return VT.SetUserData(ref this, dwUserData);
 			}
 			public HRESULT GetStartStopPosition(Guid* pguidStartPositionType, PROPVARIANT* pvStartValue, Guid* pguidStopPositionType, PROPVARIANT* pvStopValue) mut
 			{
-				return VT.GetStartStopPosition(&this, pguidStartPositionType, pvStartValue, pguidStopPositionType, pvStopValue);
+				return VT.GetStartStopPosition(ref this, pguidStartPositionType, pvStartValue, pguidStopPositionType, pvStopValue);
 			}
 			public HRESULT SetStartStopPosition(Guid* pguidStartPositionType, PROPVARIANT* pvStartValue, Guid* pguidStopPositionType, PROPVARIANT* pvStopValue) mut
 			{
-				return VT.SetStartStopPosition(&this, pguidStartPositionType, pvStartValue, pguidStopPositionType, pvStopValue);
+				return VT.SetStartStopPosition(ref this, pguidStartPositionType, pvStartValue, pguidStopPositionType, pvStopValue);
 			}
 			public HRESULT HasVideo(BOOL* pfHasVideo, BOOL* pfSelected) mut
 			{
-				return VT.HasVideo(&this, pfHasVideo, pfSelected);
+				return VT.HasVideo(ref this, pfHasVideo, pfSelected);
 			}
 			public HRESULT HasAudio(BOOL* pfHasAudio, BOOL* pfSelected) mut
 			{
-				return VT.HasAudio(&this, pfHasAudio, pfSelected);
+				return VT.HasAudio(ref this, pfHasAudio, pfSelected);
 			}
-			public HRESULT IsProtected(BOOL* pfProtected) mut
+			public HRESULT IsProtected(out BOOL pfProtected) mut
 			{
-				return VT.IsProtected(&this, pfProtected);
+				return VT.IsProtected(ref this, out pfProtected);
 			}
-			public HRESULT GetDuration(Guid* guidPositionType, PROPVARIANT* pvDurationValue) mut
+			public HRESULT GetDuration(in Guid guidPositionType, out PROPVARIANT pvDurationValue) mut
 			{
-				return VT.GetDuration(&this, guidPositionType, pvDurationValue);
+				return VT.GetDuration(ref this, guidPositionType, out pvDurationValue);
 			}
-			public HRESULT GetNumberOfStreams(uint32* pdwStreamCount) mut
+			public HRESULT GetNumberOfStreams(out uint32 pdwStreamCount) mut
 			{
-				return VT.GetNumberOfStreams(&this, pdwStreamCount);
+				return VT.GetNumberOfStreams(ref this, out pdwStreamCount);
 			}
-			public HRESULT GetStreamSelection(uint32 dwStreamIndex, BOOL* pfEnabled) mut
+			public HRESULT GetStreamSelection(uint32 dwStreamIndex, out BOOL pfEnabled) mut
 			{
-				return VT.GetStreamSelection(&this, dwStreamIndex, pfEnabled);
+				return VT.GetStreamSelection(ref this, dwStreamIndex, out pfEnabled);
 			}
 			public HRESULT SetStreamSelection(uint32 dwStreamIndex, BOOL fEnabled) mut
 			{
-				return VT.SetStreamSelection(&this, dwStreamIndex, fEnabled);
+				return VT.SetStreamSelection(ref this, dwStreamIndex, fEnabled);
 			}
-			public HRESULT GetStreamAttribute(uint32 dwStreamIndex, Guid* guidMFAttribute, PROPVARIANT* pvValue) mut
+			public HRESULT GetStreamAttribute(uint32 dwStreamIndex, in Guid guidMFAttribute, out PROPVARIANT pvValue) mut
 			{
-				return VT.GetStreamAttribute(&this, dwStreamIndex, guidMFAttribute, pvValue);
+				return VT.GetStreamAttribute(ref this, dwStreamIndex, guidMFAttribute, out pvValue);
 			}
-			public HRESULT GetPresentationAttribute(Guid* guidMFAttribute, PROPVARIANT* pvValue) mut
+			public HRESULT GetPresentationAttribute(in Guid guidMFAttribute, out PROPVARIANT pvValue) mut
 			{
-				return VT.GetPresentationAttribute(&this, guidMFAttribute, pvValue);
+				return VT.GetPresentationAttribute(ref this, guidMFAttribute, out pvValue);
 			}
-			public HRESULT GetCharacteristics(uint32* pCharacteristics) mut
+			public HRESULT GetCharacteristics(out uint32 pCharacteristics) mut
 			{
-				return VT.GetCharacteristics(&this, pCharacteristics);
+				return VT.GetCharacteristics(ref this, out pCharacteristics);
 			}
 			public HRESULT SetStreamSink(uint32 dwStreamIndex, IUnknown* pMediaSink) mut
 			{
-				return VT.SetStreamSink(&this, dwStreamIndex, pMediaSink);
+				return VT.SetStreamSink(ref this, dwStreamIndex, pMediaSink);
 			}
-			public HRESULT GetMetadata(IPropertyStore** ppMetadataStore) mut
+			public HRESULT GetMetadata(out IPropertyStore* ppMetadataStore) mut
 			{
-				return VT.GetMetadata(&this, ppMetadataStore);
+				return VT.GetMetadata(ref this, out ppMetadataStore);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFPMediaItem *self, IMFPMediaPlayer** ppMediaPlayer) GetMediaPlayer;
-				public new function HRESULT(IMFPMediaItem *self, PWSTR* ppwszURL) GetURL;
-				public new function HRESULT(IMFPMediaItem *self, IUnknown** ppIUnknown) GetObject;
-				public new function HRESULT(IMFPMediaItem *self, uint* pdwUserData) GetUserData;
-				public new function HRESULT(IMFPMediaItem *self, uint dwUserData) SetUserData;
-				public new function HRESULT(IMFPMediaItem *self, Guid* pguidStartPositionType, PROPVARIANT* pvStartValue, Guid* pguidStopPositionType, PROPVARIANT* pvStopValue) GetStartStopPosition;
-				public new function HRESULT(IMFPMediaItem *self, Guid* pguidStartPositionType, PROPVARIANT* pvStartValue, Guid* pguidStopPositionType, PROPVARIANT* pvStopValue) SetStartStopPosition;
-				public new function HRESULT(IMFPMediaItem *self, BOOL* pfHasVideo, BOOL* pfSelected) HasVideo;
-				public new function HRESULT(IMFPMediaItem *self, BOOL* pfHasAudio, BOOL* pfSelected) HasAudio;
-				public new function HRESULT(IMFPMediaItem *self, BOOL* pfProtected) IsProtected;
-				public new function HRESULT(IMFPMediaItem *self, Guid* guidPositionType, PROPVARIANT* pvDurationValue) GetDuration;
-				public new function HRESULT(IMFPMediaItem *self, uint32* pdwStreamCount) GetNumberOfStreams;
-				public new function HRESULT(IMFPMediaItem *self, uint32 dwStreamIndex, BOOL* pfEnabled) GetStreamSelection;
-				public new function HRESULT(IMFPMediaItem *self, uint32 dwStreamIndex, BOOL fEnabled) SetStreamSelection;
-				public new function HRESULT(IMFPMediaItem *self, uint32 dwStreamIndex, Guid* guidMFAttribute, PROPVARIANT* pvValue) GetStreamAttribute;
-				public new function HRESULT(IMFPMediaItem *self, Guid* guidMFAttribute, PROPVARIANT* pvValue) GetPresentationAttribute;
-				public new function HRESULT(IMFPMediaItem *self, uint32* pCharacteristics) GetCharacteristics;
-				public new function HRESULT(IMFPMediaItem *self, uint32 dwStreamIndex, IUnknown* pMediaSink) SetStreamSink;
-				public new function HRESULT(IMFPMediaItem *self, IPropertyStore** ppMetadataStore) GetMetadata;
+				public new function HRESULT(ref IMFPMediaItem self, out IMFPMediaPlayer* ppMediaPlayer) GetMediaPlayer;
+				public new function HRESULT(ref IMFPMediaItem self, out PWSTR ppwszURL) GetURL;
+				public new function HRESULT(ref IMFPMediaItem self, out IUnknown* ppIUnknown) GetObject;
+				public new function HRESULT(ref IMFPMediaItem self, out uint pdwUserData) GetUserData;
+				public new function HRESULT(ref IMFPMediaItem self, uint dwUserData) SetUserData;
+				public new function HRESULT(ref IMFPMediaItem self, Guid* pguidStartPositionType, PROPVARIANT* pvStartValue, Guid* pguidStopPositionType, PROPVARIANT* pvStopValue) GetStartStopPosition;
+				public new function HRESULT(ref IMFPMediaItem self, Guid* pguidStartPositionType, PROPVARIANT* pvStartValue, Guid* pguidStopPositionType, PROPVARIANT* pvStopValue) SetStartStopPosition;
+				public new function HRESULT(ref IMFPMediaItem self, BOOL* pfHasVideo, BOOL* pfSelected) HasVideo;
+				public new function HRESULT(ref IMFPMediaItem self, BOOL* pfHasAudio, BOOL* pfSelected) HasAudio;
+				public new function HRESULT(ref IMFPMediaItem self, out BOOL pfProtected) IsProtected;
+				public new function HRESULT(ref IMFPMediaItem self, in Guid guidPositionType, out PROPVARIANT pvDurationValue) GetDuration;
+				public new function HRESULT(ref IMFPMediaItem self, out uint32 pdwStreamCount) GetNumberOfStreams;
+				public new function HRESULT(ref IMFPMediaItem self, uint32 dwStreamIndex, out BOOL pfEnabled) GetStreamSelection;
+				public new function HRESULT(ref IMFPMediaItem self, uint32 dwStreamIndex, BOOL fEnabled) SetStreamSelection;
+				public new function HRESULT(ref IMFPMediaItem self, uint32 dwStreamIndex, in Guid guidMFAttribute, out PROPVARIANT pvValue) GetStreamAttribute;
+				public new function HRESULT(ref IMFPMediaItem self, in Guid guidMFAttribute, out PROPVARIANT pvValue) GetPresentationAttribute;
+				public new function HRESULT(ref IMFPMediaItem self, out uint32 pCharacteristics) GetCharacteristics;
+				public new function HRESULT(ref IMFPMediaItem self, uint32 dwStreamIndex, IUnknown* pMediaSink) SetStreamSink;
+				public new function HRESULT(ref IMFPMediaItem self, out IPropertyStore* ppMetadataStore) GetMetadata;
 			}
 		}
 		[CRepr]
@@ -19741,14 +19741,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public void OnMediaPlayerEvent(MFP_EVENT_HEADER* pEventHeader) mut
+			public void OnMediaPlayerEvent(ref MFP_EVENT_HEADER pEventHeader) mut
 			{
-				VT.OnMediaPlayerEvent(&this, pEventHeader);
+				VT.OnMediaPlayerEvent(ref this, ref pEventHeader);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function void(IMFPMediaPlayerCallback *self, MFP_EVENT_HEADER* pEventHeader) OnMediaPlayerEvent;
+				public new function void(ref IMFPMediaPlayerCallback self, ref MFP_EVENT_HEADER pEventHeader) OnMediaPlayerEvent;
 			}
 		}
 		[CRepr]
@@ -19758,14 +19758,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstance(uint32 dwFlags, IMFAttributes* pAttr, IUnknown** ppEngine) mut
+			public HRESULT CreateInstance(uint32 dwFlags, IMFAttributes* pAttr, out IUnknown* ppEngine) mut
 			{
-				return VT.CreateInstance(&this, dwFlags, pAttr, ppEngine);
+				return VT.CreateInstance(ref this, dwFlags, pAttr, out ppEngine);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFSharingEngineClassFactory *self, uint32 dwFlags, IMFAttributes* pAttr, IUnknown** ppEngine) CreateInstance;
+				public new function HRESULT(ref IMFSharingEngineClassFactory self, uint32 dwFlags, IMFAttributes* pAttr, out IUnknown* ppEngine) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -19775,14 +19775,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDevice(DEVICE_INFO* pDevice) mut
+			public HRESULT GetDevice(out DEVICE_INFO pDevice) mut
 			{
-				return VT.GetDevice(&this, pDevice);
+				return VT.GetDevice(ref this, out pDevice);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaEngine.VTable
 			{
-				public new function HRESULT(IMFMediaSharingEngine *self, DEVICE_INFO* pDevice) GetDevice;
+				public new function HRESULT(ref IMFMediaSharingEngine self, out DEVICE_INFO pDevice) GetDevice;
 			}
 		}
 		[CRepr]
@@ -19792,14 +19792,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstance(uint32 dwFlags, IMFAttributes* pAttr, IMFMediaSharingEngine** ppEngine) mut
+			public HRESULT CreateInstance(uint32 dwFlags, ref IMFAttributes pAttr, out IMFMediaSharingEngine* ppEngine) mut
 			{
-				return VT.CreateInstance(&this, dwFlags, pAttr, ppEngine);
+				return VT.CreateInstance(ref this, dwFlags, ref pAttr, out ppEngine);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFMediaSharingEngineClassFactory *self, uint32 dwFlags, IMFAttributes* pAttr, IMFMediaSharingEngine** ppEngine) CreateInstance;
+				public new function HRESULT(ref IMFMediaSharingEngineClassFactory self, uint32 dwFlags, ref IMFAttributes pAttr, out IMFMediaSharingEngine* ppEngine) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -19809,24 +19809,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetSource(IUnknown* pStream) mut
+			public HRESULT SetSource(ref IUnknown pStream) mut
 			{
-				return VT.SetSource(&this, pStream);
+				return VT.SetSource(ref this, ref pStream);
 			}
-			public HRESULT GetDevice(DEVICE_INFO* pDevice) mut
+			public HRESULT GetDevice(out DEVICE_INFO pDevice) mut
 			{
-				return VT.GetDevice(&this, pDevice);
+				return VT.GetDevice(ref this, out pDevice);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFImageSharingEngine *self, IUnknown* pStream) SetSource;
-				public new function HRESULT(IMFImageSharingEngine *self, DEVICE_INFO* pDevice) GetDevice;
-				public new function HRESULT(IMFImageSharingEngine *self) Shutdown;
+				public new function HRESULT(ref IMFImageSharingEngine self, ref IUnknown pStream) SetSource;
+				public new function HRESULT(ref IMFImageSharingEngine self, out DEVICE_INFO pDevice) GetDevice;
+				public new function HRESULT(ref IMFImageSharingEngine self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -19836,14 +19836,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstanceFromUDN(BSTR pUniqueDeviceName, IMFImageSharingEngine** ppEngine) mut
+			public HRESULT CreateInstanceFromUDN(BSTR pUniqueDeviceName, out IMFImageSharingEngine* ppEngine) mut
 			{
-				return VT.CreateInstanceFromUDN(&this, pUniqueDeviceName, ppEngine);
+				return VT.CreateInstanceFromUDN(ref this, pUniqueDeviceName, out ppEngine);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFImageSharingEngineClassFactory *self, BSTR pUniqueDeviceName, IMFImageSharingEngine** ppEngine) CreateInstanceFromUDN;
+				public new function HRESULT(ref IMFImageSharingEngineClassFactory self, BSTR pUniqueDeviceName, out IMFImageSharingEngine* ppEngine) CreateInstanceFromUDN;
 			}
 		}
 		[CRepr]
@@ -19853,19 +19853,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Connect(IMFSharingEngineClassFactory* pFactory) mut
+			public HRESULT Connect(ref IMFSharingEngineClassFactory pFactory) mut
 			{
-				return VT.Connect(&this, pFactory);
+				return VT.Connect(ref this, ref pFactory);
 			}
 			public HRESULT Disconnect() mut
 			{
-				return VT.Disconnect(&this);
+				return VT.Disconnect(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPlayToControl *self, IMFSharingEngineClassFactory* pFactory) Connect;
-				public new function HRESULT(IPlayToControl *self) Disconnect;
+				public new function HRESULT(ref IPlayToControl self, ref IMFSharingEngineClassFactory pFactory) Connect;
+				public new function HRESULT(ref IPlayToControl self) Disconnect;
 			}
 		}
 		[CRepr]
@@ -19875,14 +19875,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetCapabilities(PLAYTO_SOURCE_CREATEFLAGS* pCapabilities) mut
+			public HRESULT GetCapabilities(out PLAYTO_SOURCE_CREATEFLAGS pCapabilities) mut
 			{
-				return VT.GetCapabilities(&this, pCapabilities);
+				return VT.GetCapabilities(ref this, out pCapabilities);
 			}
 			[CRepr]
 			public struct VTable : IPlayToControl.VTable
 			{
-				public new function HRESULT(IPlayToControlWithCapabilities *self, PLAYTO_SOURCE_CREATEFLAGS* pCapabilities) GetCapabilities;
+				public new function HRESULT(ref IPlayToControlWithCapabilities self, out PLAYTO_SOURCE_CREATEFLAGS pCapabilities) GetCapabilities;
 			}
 		}
 		[CRepr]
@@ -19892,14 +19892,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateInstance(uint32 dwFlags, IPlayToControl* pControl, IInspectable** ppSource) mut
+			public HRESULT CreateInstance(uint32 dwFlags, ref IPlayToControl pControl, out IInspectable* ppSource) mut
 			{
-				return VT.CreateInstance(&this, dwFlags, pControl, ppSource);
+				return VT.CreateInstance(ref this, dwFlags, ref pControl, out ppSource);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IPlayToSourceClassFactory *self, uint32 dwFlags, IPlayToControl* pControl, IInspectable** ppSource) CreateInstance;
+				public new function HRESULT(ref IPlayToSourceClassFactory self, uint32 dwFlags, ref IPlayToControl pControl, out IInspectable* ppSource) CreateInstance;
 			}
 		}
 		[CRepr]
@@ -19911,17 +19911,17 @@ namespace Win32
 			
 			public HRESULT SetStreamActiveState(BOOL fActive) mut
 			{
-				return VT.SetStreamActiveState(&this, fActive);
+				return VT.SetStreamActiveState(ref this, fActive);
 			}
-			public HRESULT GetStreamActiveState(BOOL* lpfActive) mut
+			public HRESULT GetStreamActiveState(out BOOL lpfActive) mut
 			{
-				return VT.GetStreamActiveState(&this, lpfActive);
+				return VT.GetStreamActiveState(ref this, out lpfActive);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEVRVideoStreamControl *self, BOOL fActive) SetStreamActiveState;
-				public new function HRESULT(IEVRVideoStreamControl *self, BOOL* lpfActive) GetStreamActiveState;
+				public new function HRESULT(ref IEVRVideoStreamControl self, BOOL fActive) SetStreamActiveState;
+				public new function HRESULT(ref IEVRVideoStreamControl self, out BOOL lpfActive) GetStreamActiveState;
 			}
 		}
 		[CRepr]
@@ -19931,69 +19931,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAvailableVideoProcessorModes(uint32* lpdwNumProcessingModes, Guid** ppVideoProcessingModes) mut
+			public HRESULT GetAvailableVideoProcessorModes(out uint32 lpdwNumProcessingModes, Guid** ppVideoProcessingModes) mut
 			{
-				return VT.GetAvailableVideoProcessorModes(&this, lpdwNumProcessingModes, ppVideoProcessingModes);
+				return VT.GetAvailableVideoProcessorModes(ref this, out lpdwNumProcessingModes, ppVideoProcessingModes);
 			}
-			public HRESULT GetVideoProcessorCaps(Guid* lpVideoProcessorMode, DXVA2_VideoProcessorCaps* lpVideoProcessorCaps) mut
+			public HRESULT GetVideoProcessorCaps(ref Guid lpVideoProcessorMode, out DXVA2_VideoProcessorCaps lpVideoProcessorCaps) mut
 			{
-				return VT.GetVideoProcessorCaps(&this, lpVideoProcessorMode, lpVideoProcessorCaps);
+				return VT.GetVideoProcessorCaps(ref this, ref lpVideoProcessorMode, out lpVideoProcessorCaps);
 			}
-			public HRESULT GetVideoProcessorMode(Guid* lpMode) mut
+			public HRESULT GetVideoProcessorMode(out Guid lpMode) mut
 			{
-				return VT.GetVideoProcessorMode(&this, lpMode);
+				return VT.GetVideoProcessorMode(ref this, out lpMode);
 			}
-			public HRESULT SetVideoProcessorMode(Guid* lpMode) mut
+			public HRESULT SetVideoProcessorMode(ref Guid lpMode) mut
 			{
-				return VT.SetVideoProcessorMode(&this, lpMode);
+				return VT.SetVideoProcessorMode(ref this, ref lpMode);
 			}
-			public HRESULT GetProcAmpRange(uint32 dwProperty, DXVA2_ValueRange* pPropRange) mut
+			public HRESULT GetProcAmpRange(uint32 dwProperty, out DXVA2_ValueRange pPropRange) mut
 			{
-				return VT.GetProcAmpRange(&this, dwProperty, pPropRange);
+				return VT.GetProcAmpRange(ref this, dwProperty, out pPropRange);
 			}
-			public HRESULT GetProcAmpValues(uint32 dwFlags, DXVA2_ProcAmpValues* Values) mut
+			public HRESULT GetProcAmpValues(uint32 dwFlags, out DXVA2_ProcAmpValues Values) mut
 			{
-				return VT.GetProcAmpValues(&this, dwFlags, Values);
+				return VT.GetProcAmpValues(ref this, dwFlags, out Values);
 			}
-			public HRESULT SetProcAmpValues(uint32 dwFlags, DXVA2_ProcAmpValues* pValues) mut
+			public HRESULT SetProcAmpValues(uint32 dwFlags, ref DXVA2_ProcAmpValues pValues) mut
 			{
-				return VT.SetProcAmpValues(&this, dwFlags, pValues);
+				return VT.SetProcAmpValues(ref this, dwFlags, ref pValues);
 			}
-			public HRESULT GetFilteringRange(uint32 dwProperty, DXVA2_ValueRange* pPropRange) mut
+			public HRESULT GetFilteringRange(uint32 dwProperty, out DXVA2_ValueRange pPropRange) mut
 			{
-				return VT.GetFilteringRange(&this, dwProperty, pPropRange);
+				return VT.GetFilteringRange(ref this, dwProperty, out pPropRange);
 			}
-			public HRESULT GetFilteringValue(uint32 dwProperty, DXVA2_Fixed32* pValue) mut
+			public HRESULT GetFilteringValue(uint32 dwProperty, out DXVA2_Fixed32 pValue) mut
 			{
-				return VT.GetFilteringValue(&this, dwProperty, pValue);
+				return VT.GetFilteringValue(ref this, dwProperty, out pValue);
 			}
-			public HRESULT SetFilteringValue(uint32 dwProperty, DXVA2_Fixed32* pValue) mut
+			public HRESULT SetFilteringValue(uint32 dwProperty, ref DXVA2_Fixed32 pValue) mut
 			{
-				return VT.SetFilteringValue(&this, dwProperty, pValue);
+				return VT.SetFilteringValue(ref this, dwProperty, ref pValue);
 			}
-			public HRESULT GetBackgroundColor(uint32* lpClrBkg) mut
+			public HRESULT GetBackgroundColor(out uint32 lpClrBkg) mut
 			{
-				return VT.GetBackgroundColor(&this, lpClrBkg);
+				return VT.GetBackgroundColor(ref this, out lpClrBkg);
 			}
 			public HRESULT SetBackgroundColor(uint32 ClrBkg) mut
 			{
-				return VT.SetBackgroundColor(&this, ClrBkg);
+				return VT.SetBackgroundColor(ref this, ClrBkg);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoProcessor *self, uint32* lpdwNumProcessingModes, Guid** ppVideoProcessingModes) GetAvailableVideoProcessorModes;
-				public new function HRESULT(IMFVideoProcessor *self, Guid* lpVideoProcessorMode, DXVA2_VideoProcessorCaps* lpVideoProcessorCaps) GetVideoProcessorCaps;
-				public new function HRESULT(IMFVideoProcessor *self, Guid* lpMode) GetVideoProcessorMode;
-				public new function HRESULT(IMFVideoProcessor *self, Guid* lpMode) SetVideoProcessorMode;
-				public new function HRESULT(IMFVideoProcessor *self, uint32 dwProperty, DXVA2_ValueRange* pPropRange) GetProcAmpRange;
-				public new function HRESULT(IMFVideoProcessor *self, uint32 dwFlags, DXVA2_ProcAmpValues* Values) GetProcAmpValues;
-				public new function HRESULT(IMFVideoProcessor *self, uint32 dwFlags, DXVA2_ProcAmpValues* pValues) SetProcAmpValues;
-				public new function HRESULT(IMFVideoProcessor *self, uint32 dwProperty, DXVA2_ValueRange* pPropRange) GetFilteringRange;
-				public new function HRESULT(IMFVideoProcessor *self, uint32 dwProperty, DXVA2_Fixed32* pValue) GetFilteringValue;
-				public new function HRESULT(IMFVideoProcessor *self, uint32 dwProperty, DXVA2_Fixed32* pValue) SetFilteringValue;
-				public new function HRESULT(IMFVideoProcessor *self, uint32* lpClrBkg) GetBackgroundColor;
-				public new function HRESULT(IMFVideoProcessor *self, uint32 ClrBkg) SetBackgroundColor;
+				public new function HRESULT(ref IMFVideoProcessor self, out uint32 lpdwNumProcessingModes, Guid** ppVideoProcessingModes) GetAvailableVideoProcessorModes;
+				public new function HRESULT(ref IMFVideoProcessor self, ref Guid lpVideoProcessorMode, out DXVA2_VideoProcessorCaps lpVideoProcessorCaps) GetVideoProcessorCaps;
+				public new function HRESULT(ref IMFVideoProcessor self, out Guid lpMode) GetVideoProcessorMode;
+				public new function HRESULT(ref IMFVideoProcessor self, ref Guid lpMode) SetVideoProcessorMode;
+				public new function HRESULT(ref IMFVideoProcessor self, uint32 dwProperty, out DXVA2_ValueRange pPropRange) GetProcAmpRange;
+				public new function HRESULT(ref IMFVideoProcessor self, uint32 dwFlags, out DXVA2_ProcAmpValues Values) GetProcAmpValues;
+				public new function HRESULT(ref IMFVideoProcessor self, uint32 dwFlags, ref DXVA2_ProcAmpValues pValues) SetProcAmpValues;
+				public new function HRESULT(ref IMFVideoProcessor self, uint32 dwProperty, out DXVA2_ValueRange pPropRange) GetFilteringRange;
+				public new function HRESULT(ref IMFVideoProcessor self, uint32 dwProperty, out DXVA2_Fixed32 pValue) GetFilteringValue;
+				public new function HRESULT(ref IMFVideoProcessor self, uint32 dwProperty, ref DXVA2_Fixed32 pValue) SetFilteringValue;
+				public new function HRESULT(ref IMFVideoProcessor self, out uint32 lpClrBkg) GetBackgroundColor;
+				public new function HRESULT(ref IMFVideoProcessor self, uint32 ClrBkg) SetBackgroundColor;
 			}
 		}
 		[CRepr]
@@ -20003,29 +20003,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetAlphaBitmap(MFVideoAlphaBitmap* pBmpParms) mut
+			public HRESULT SetAlphaBitmap(in MFVideoAlphaBitmap pBmpParms) mut
 			{
-				return VT.SetAlphaBitmap(&this, pBmpParms);
+				return VT.SetAlphaBitmap(ref this, pBmpParms);
 			}
 			public HRESULT ClearAlphaBitmap() mut
 			{
-				return VT.ClearAlphaBitmap(&this);
+				return VT.ClearAlphaBitmap(ref this);
 			}
-			public HRESULT UpdateAlphaBitmapParameters(MFVideoAlphaBitmapParams* pBmpParms) mut
+			public HRESULT UpdateAlphaBitmapParameters(in MFVideoAlphaBitmapParams pBmpParms) mut
 			{
-				return VT.UpdateAlphaBitmapParameters(&this, pBmpParms);
+				return VT.UpdateAlphaBitmapParameters(ref this, pBmpParms);
 			}
-			public HRESULT GetAlphaBitmapParameters(MFVideoAlphaBitmapParams* pBmpParms) mut
+			public HRESULT GetAlphaBitmapParameters(out MFVideoAlphaBitmapParams pBmpParms) mut
 			{
-				return VT.GetAlphaBitmapParameters(&this, pBmpParms);
+				return VT.GetAlphaBitmapParameters(ref this, out pBmpParms);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFVideoMixerBitmap *self, MFVideoAlphaBitmap* pBmpParms) SetAlphaBitmap;
-				public new function HRESULT(IMFVideoMixerBitmap *self) ClearAlphaBitmap;
-				public new function HRESULT(IMFVideoMixerBitmap *self, MFVideoAlphaBitmapParams* pBmpParms) UpdateAlphaBitmapParameters;
-				public new function HRESULT(IMFVideoMixerBitmap *self, MFVideoAlphaBitmapParams* pBmpParms) GetAlphaBitmapParameters;
+				public new function HRESULT(ref IMFVideoMixerBitmap self, in MFVideoAlphaBitmap pBmpParms) SetAlphaBitmap;
+				public new function HRESULT(ref IMFVideoMixerBitmap self) ClearAlphaBitmap;
+				public new function HRESULT(ref IMFVideoMixerBitmap self, in MFVideoAlphaBitmapParams pBmpParms) UpdateAlphaBitmapParameters;
+				public new function HRESULT(ref IMFVideoMixerBitmap self, out MFVideoAlphaBitmapParams pBmpParms) GetAlphaBitmapParameters;
 			}
 		}
 		[CRepr]
@@ -20035,14 +20035,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetDirectxDeviceManager(IMFDXGIDeviceManager* value) mut
+			public HRESULT SetDirectxDeviceManager(ref IMFDXGIDeviceManager value) mut
 			{
-				return VT.SetDirectxDeviceManager(&this, value);
+				return VT.SetDirectxDeviceManager(ref this, ref value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAdvancedMediaCaptureInitializationSettings *self, IMFDXGIDeviceManager* value) SetDirectxDeviceManager;
+				public new function HRESULT(ref IAdvancedMediaCaptureInitializationSettings self, ref IMFDXGIDeviceManager value) SetDirectxDeviceManager;
 			}
 		}
 		[CRepr]
@@ -20052,14 +20052,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetDirectxDeviceManager(IMFDXGIDeviceManager** value) mut
+			public HRESULT GetDirectxDeviceManager(out IMFDXGIDeviceManager* value) mut
 			{
-				return VT.GetDirectxDeviceManager(&this, value);
+				return VT.GetDirectxDeviceManager(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAdvancedMediaCaptureSettings *self, IMFDXGIDeviceManager** value) GetDirectxDeviceManager;
+				public new function HRESULT(ref IAdvancedMediaCaptureSettings self, out IMFDXGIDeviceManager* value) GetDirectxDeviceManager;
 			}
 		}
 		[CRepr]
@@ -20069,14 +20069,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetAdvancedMediaCaptureSettings(IAdvancedMediaCaptureSettings** value) mut
+			public HRESULT GetAdvancedMediaCaptureSettings(out IAdvancedMediaCaptureSettings* value) mut
 			{
-				return VT.GetAdvancedMediaCaptureSettings(&this, value);
+				return VT.GetAdvancedMediaCaptureSettings(ref this, out value);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IAdvancedMediaCapture *self, IAdvancedMediaCaptureSettings** value) GetAdvancedMediaCaptureSettings;
+				public new function HRESULT(ref IAdvancedMediaCapture self, out IAdvancedMediaCaptureSettings* value) GetAdvancedMediaCaptureSettings;
 			}
 		}
 		[CRepr]
@@ -20088,32 +20088,32 @@ namespace Win32
 			
 			public HRESULT SetID(uint32 u32ID) mut
 			{
-				return VT.SetID(&this, u32ID);
+				return VT.SetID(ref this, u32ID);
 			}
-			public HRESULT GetID(uint32* pu32ID) mut
+			public HRESULT GetID(out uint32 pu32ID) mut
 			{
-				return VT.GetID(&this, pu32ID);
+				return VT.GetID(ref this, out pu32ID);
 			}
 			public HRESULT SetType(AudioObjectType type) mut
 			{
-				return VT.SetType(&this, type);
+				return VT.SetType(ref this, type);
 			}
-			public HRESULT ComGetType(AudioObjectType* pType) mut
+			public HRESULT ComGetType(out AudioObjectType pType) mut
 			{
-				return VT.ComGetType(&this, pType);
+				return VT.ComGetType(ref this, out pType);
 			}
-			public HRESULT GetMetadataItems(ISpatialAudioMetadataItems** ppMetadataItems) mut
+			public HRESULT GetMetadataItems(out ISpatialAudioMetadataItems* ppMetadataItems) mut
 			{
-				return VT.GetMetadataItems(&this, ppMetadataItems);
+				return VT.GetMetadataItems(ref this, out ppMetadataItems);
 			}
 			[CRepr]
 			public struct VTable : IMFMediaBuffer.VTable
 			{
-				public new function HRESULT(IMFSpatialAudioObjectBuffer *self, uint32 u32ID) SetID;
-				public new function HRESULT(IMFSpatialAudioObjectBuffer *self, uint32* pu32ID) GetID;
-				public new function HRESULT(IMFSpatialAudioObjectBuffer *self, AudioObjectType type) SetType;
-				public new function HRESULT(IMFSpatialAudioObjectBuffer *self, AudioObjectType* pType) ComGetType;
-				public new function HRESULT(IMFSpatialAudioObjectBuffer *self, ISpatialAudioMetadataItems** ppMetadataItems) GetMetadataItems;
+				public new function HRESULT(ref IMFSpatialAudioObjectBuffer self, uint32 u32ID) SetID;
+				public new function HRESULT(ref IMFSpatialAudioObjectBuffer self, out uint32 pu32ID) GetID;
+				public new function HRESULT(ref IMFSpatialAudioObjectBuffer self, AudioObjectType type) SetType;
+				public new function HRESULT(ref IMFSpatialAudioObjectBuffer self, out AudioObjectType pType) ComGetType;
+				public new function HRESULT(ref IMFSpatialAudioObjectBuffer self, out ISpatialAudioMetadataItems* ppMetadataItems) GetMetadataItems;
 			}
 		}
 		[CRepr]
@@ -20123,24 +20123,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetObjectCount(uint32* pdwObjectCount) mut
+			public HRESULT GetObjectCount(out uint32 pdwObjectCount) mut
 			{
-				return VT.GetObjectCount(&this, pdwObjectCount);
+				return VT.GetObjectCount(ref this, out pdwObjectCount);
 			}
-			public HRESULT AddSpatialAudioObject(IMFSpatialAudioObjectBuffer* pAudioObjBuffer) mut
+			public HRESULT AddSpatialAudioObject(ref IMFSpatialAudioObjectBuffer pAudioObjBuffer) mut
 			{
-				return VT.AddSpatialAudioObject(&this, pAudioObjBuffer);
+				return VT.AddSpatialAudioObject(ref this, ref pAudioObjBuffer);
 			}
-			public HRESULT GetSpatialAudioObjectByIndex(uint32 dwIndex, IMFSpatialAudioObjectBuffer** ppAudioObjBuffer) mut
+			public HRESULT GetSpatialAudioObjectByIndex(uint32 dwIndex, out IMFSpatialAudioObjectBuffer* ppAudioObjBuffer) mut
 			{
-				return VT.GetSpatialAudioObjectByIndex(&this, dwIndex, ppAudioObjBuffer);
+				return VT.GetSpatialAudioObjectByIndex(ref this, dwIndex, out ppAudioObjBuffer);
 			}
 			[CRepr]
 			public struct VTable : IMFSample.VTable
 			{
-				public new function HRESULT(IMFSpatialAudioSample *self, uint32* pdwObjectCount) GetObjectCount;
-				public new function HRESULT(IMFSpatialAudioSample *self, IMFSpatialAudioObjectBuffer* pAudioObjBuffer) AddSpatialAudioObject;
-				public new function HRESULT(IMFSpatialAudioSample *self, uint32 dwIndex, IMFSpatialAudioObjectBuffer** ppAudioObjBuffer) GetSpatialAudioObjectByIndex;
+				public new function HRESULT(ref IMFSpatialAudioSample self, out uint32 pdwObjectCount) GetObjectCount;
+				public new function HRESULT(ref IMFSpatialAudioSample self, ref IMFSpatialAudioObjectBuffer pAudioObjBuffer) AddSpatialAudioObject;
+				public new function HRESULT(ref IMFSpatialAudioSample self, uint32 dwIndex, out IMFSpatialAudioObjectBuffer* ppAudioObjBuffer) GetSpatialAudioObjectByIndex;
 			}
 		}
 		[CRepr]
@@ -20150,49 +20150,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetSessionId(PWSTR* sessionId) mut
+			public HRESULT GetSessionId(out PWSTR sessionId) mut
 			{
-				return VT.GetSessionId(&this, sessionId);
+				return VT.GetSessionId(ref this, out sessionId);
 			}
-			public HRESULT GetExpiration(double* expiration) mut
+			public HRESULT GetExpiration(out double expiration) mut
 			{
-				return VT.GetExpiration(&this, expiration);
+				return VT.GetExpiration(ref this, out expiration);
 			}
-			public HRESULT GetKeyStatuses(MFMediaKeyStatus** keyStatuses, uint32* numKeyStatuses) mut
+			public HRESULT GetKeyStatuses(MFMediaKeyStatus** keyStatuses, out uint32 numKeyStatuses) mut
 			{
-				return VT.GetKeyStatuses(&this, keyStatuses, numKeyStatuses);
+				return VT.GetKeyStatuses(ref this, keyStatuses, out numKeyStatuses);
 			}
-			public HRESULT Load(PWSTR sessionId, BOOL* loaded) mut
+			public HRESULT Load(PWSTR sessionId, out BOOL loaded) mut
 			{
-				return VT.Load(&this, sessionId, loaded);
+				return VT.Load(ref this, sessionId, out loaded);
 			}
 			public HRESULT GenerateRequest(PWSTR initDataType, uint8* initData, uint32 initDataSize) mut
 			{
-				return VT.GenerateRequest(&this, initDataType, initData, initDataSize);
+				return VT.GenerateRequest(ref this, initDataType, initData, initDataSize);
 			}
 			public HRESULT Update(uint8* response, uint32 responseSize) mut
 			{
-				return VT.Update(&this, response, responseSize);
+				return VT.Update(ref this, response, responseSize);
 			}
 			public HRESULT Close() mut
 			{
-				return VT.Close(&this);
+				return VT.Close(ref this);
 			}
 			public HRESULT Remove() mut
 			{
-				return VT.Remove(&this);
+				return VT.Remove(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFContentDecryptionModuleSession *self, PWSTR* sessionId) GetSessionId;
-				public new function HRESULT(IMFContentDecryptionModuleSession *self, double* expiration) GetExpiration;
-				public new function HRESULT(IMFContentDecryptionModuleSession *self, MFMediaKeyStatus** keyStatuses, uint32* numKeyStatuses) GetKeyStatuses;
-				public new function HRESULT(IMFContentDecryptionModuleSession *self, PWSTR sessionId, BOOL* loaded) Load;
-				public new function HRESULT(IMFContentDecryptionModuleSession *self, PWSTR initDataType, uint8* initData, uint32 initDataSize) GenerateRequest;
-				public new function HRESULT(IMFContentDecryptionModuleSession *self, uint8* response, uint32 responseSize) Update;
-				public new function HRESULT(IMFContentDecryptionModuleSession *self) Close;
-				public new function HRESULT(IMFContentDecryptionModuleSession *self) Remove;
+				public new function HRESULT(ref IMFContentDecryptionModuleSession self, out PWSTR sessionId) GetSessionId;
+				public new function HRESULT(ref IMFContentDecryptionModuleSession self, out double expiration) GetExpiration;
+				public new function HRESULT(ref IMFContentDecryptionModuleSession self, MFMediaKeyStatus** keyStatuses, out uint32 numKeyStatuses) GetKeyStatuses;
+				public new function HRESULT(ref IMFContentDecryptionModuleSession self, PWSTR sessionId, out BOOL loaded) Load;
+				public new function HRESULT(ref IMFContentDecryptionModuleSession self, PWSTR initDataType, uint8* initData, uint32 initDataSize) GenerateRequest;
+				public new function HRESULT(ref IMFContentDecryptionModuleSession self, uint8* response, uint32 responseSize) Update;
+				public new function HRESULT(ref IMFContentDecryptionModuleSession self) Close;
+				public new function HRESULT(ref IMFContentDecryptionModuleSession self) Remove;
 			}
 		}
 		[CRepr]
@@ -20204,17 +20204,17 @@ namespace Win32
 			
 			public HRESULT KeyMessage(MF_MEDIAKEYSESSION_MESSAGETYPE messageType, uint8* message, uint32 messageSize, PWSTR destinationURL) mut
 			{
-				return VT.KeyMessage(&this, messageType, message, messageSize, destinationURL);
+				return VT.KeyMessage(ref this, messageType, message, messageSize, destinationURL);
 			}
 			public HRESULT KeyStatusChanged() mut
 			{
-				return VT.KeyStatusChanged(&this);
+				return VT.KeyStatusChanged(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFContentDecryptionModuleSessionCallbacks *self, MF_MEDIAKEYSESSION_MESSAGETYPE messageType, uint8* message, uint32 messageSize, PWSTR destinationURL) KeyMessage;
-				public new function HRESULT(IMFContentDecryptionModuleSessionCallbacks *self) KeyStatusChanged;
+				public new function HRESULT(ref IMFContentDecryptionModuleSessionCallbacks self, MF_MEDIAKEYSESSION_MESSAGETYPE messageType, uint8* message, uint32 messageSize, PWSTR destinationURL) KeyMessage;
+				public new function HRESULT(ref IMFContentDecryptionModuleSessionCallbacks self) KeyStatusChanged;
 			}
 		}
 		[CRepr]
@@ -20224,44 +20224,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetContentEnabler(IMFContentEnabler* contentEnabler, IMFAsyncResult* result) mut
+			public HRESULT SetContentEnabler(ref IMFContentEnabler contentEnabler, ref IMFAsyncResult result) mut
 			{
-				return VT.SetContentEnabler(&this, contentEnabler, result);
+				return VT.SetContentEnabler(ref this, ref contentEnabler, ref result);
 			}
-			public HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify) mut
+			public HRESULT GetSuspendNotify(out IMFCdmSuspendNotify* notify) mut
 			{
-				return VT.GetSuspendNotify(&this, notify);
+				return VT.GetSuspendNotify(ref this, out notify);
 			}
-			public HRESULT SetPMPHostApp(IMFPMPHostApp* pmpHostApp) mut
+			public HRESULT SetPMPHostApp(ref IMFPMPHostApp pmpHostApp) mut
 			{
-				return VT.SetPMPHostApp(&this, pmpHostApp);
+				return VT.SetPMPHostApp(ref this, ref pmpHostApp);
 			}
-			public HRESULT CreateSession(MF_MEDIAKEYSESSION_TYPE sessionType, IMFContentDecryptionModuleSessionCallbacks* callbacks, IMFContentDecryptionModuleSession** session) mut
+			public HRESULT CreateSession(MF_MEDIAKEYSESSION_TYPE sessionType, ref IMFContentDecryptionModuleSessionCallbacks callbacks, out IMFContentDecryptionModuleSession* session) mut
 			{
-				return VT.CreateSession(&this, sessionType, callbacks, session);
+				return VT.CreateSession(ref this, sessionType, ref callbacks, out session);
 			}
 			public HRESULT SetServerCertificate(uint8* certificate, uint32 certificateSize) mut
 			{
-				return VT.SetServerCertificate(&this, certificate, certificateSize);
+				return VT.SetServerCertificate(ref this, certificate, certificateSize);
 			}
-			public HRESULT CreateTrustedInput(uint8* contentInitData, uint32 contentInitDataSize, IMFTrustedInput** trustedInput) mut
+			public HRESULT CreateTrustedInput(uint8* contentInitData, uint32 contentInitDataSize, out IMFTrustedInput* trustedInput) mut
 			{
-				return VT.CreateTrustedInput(&this, contentInitData, contentInitDataSize, trustedInput);
+				return VT.CreateTrustedInput(ref this, contentInitData, contentInitDataSize, out trustedInput);
 			}
-			public HRESULT GetProtectionSystemIds(Guid** systemIds, uint32* count) mut
+			public HRESULT GetProtectionSystemIds(Guid** systemIds, out uint32 count) mut
 			{
-				return VT.GetProtectionSystemIds(&this, systemIds, count);
+				return VT.GetProtectionSystemIds(ref this, systemIds, out count);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFContentDecryptionModule *self, IMFContentEnabler* contentEnabler, IMFAsyncResult* result) SetContentEnabler;
-				public new function HRESULT(IMFContentDecryptionModule *self, IMFCdmSuspendNotify** notify) GetSuspendNotify;
-				public new function HRESULT(IMFContentDecryptionModule *self, IMFPMPHostApp* pmpHostApp) SetPMPHostApp;
-				public new function HRESULT(IMFContentDecryptionModule *self, MF_MEDIAKEYSESSION_TYPE sessionType, IMFContentDecryptionModuleSessionCallbacks* callbacks, IMFContentDecryptionModuleSession** session) CreateSession;
-				public new function HRESULT(IMFContentDecryptionModule *self, uint8* certificate, uint32 certificateSize) SetServerCertificate;
-				public new function HRESULT(IMFContentDecryptionModule *self, uint8* contentInitData, uint32 contentInitDataSize, IMFTrustedInput** trustedInput) CreateTrustedInput;
-				public new function HRESULT(IMFContentDecryptionModule *self, Guid** systemIds, uint32* count) GetProtectionSystemIds;
+				public new function HRESULT(ref IMFContentDecryptionModule self, ref IMFContentEnabler contentEnabler, ref IMFAsyncResult result) SetContentEnabler;
+				public new function HRESULT(ref IMFContentDecryptionModule self, out IMFCdmSuspendNotify* notify) GetSuspendNotify;
+				public new function HRESULT(ref IMFContentDecryptionModule self, ref IMFPMPHostApp pmpHostApp) SetPMPHostApp;
+				public new function HRESULT(ref IMFContentDecryptionModule self, MF_MEDIAKEYSESSION_TYPE sessionType, ref IMFContentDecryptionModuleSessionCallbacks callbacks, out IMFContentDecryptionModuleSession* session) CreateSession;
+				public new function HRESULT(ref IMFContentDecryptionModule self, uint8* certificate, uint32 certificateSize) SetServerCertificate;
+				public new function HRESULT(ref IMFContentDecryptionModule self, uint8* contentInitData, uint32 contentInitDataSize, out IMFTrustedInput* trustedInput) CreateTrustedInput;
+				public new function HRESULT(ref IMFContentDecryptionModule self, Guid** systemIds, out uint32 count) GetProtectionSystemIds;
 			}
 		}
 		[CRepr]
@@ -20271,24 +20271,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateContentDecryptionModule(IPropertyStore* contentDecryptionModuleProperties, IMFContentDecryptionModule** contentDecryptionModule) mut
+			public HRESULT CreateContentDecryptionModule(ref IPropertyStore contentDecryptionModuleProperties, out IMFContentDecryptionModule* contentDecryptionModule) mut
 			{
-				return VT.CreateContentDecryptionModule(&this, contentDecryptionModuleProperties, contentDecryptionModule);
+				return VT.CreateContentDecryptionModule(ref this, ref contentDecryptionModuleProperties, out contentDecryptionModule);
 			}
-			public HRESULT GetConfiguration(IPropertyStore** configuration) mut
+			public HRESULT GetConfiguration(out IPropertyStore* configuration) mut
 			{
-				return VT.GetConfiguration(&this, configuration);
+				return VT.GetConfiguration(ref this, out configuration);
 			}
-			public HRESULT GetKeySystem(PWSTR* keySystem) mut
+			public HRESULT GetKeySystem(out PWSTR keySystem) mut
 			{
-				return VT.GetKeySystem(&this, keySystem);
+				return VT.GetKeySystem(ref this, out keySystem);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFContentDecryptionModuleAccess *self, IPropertyStore* contentDecryptionModuleProperties, IMFContentDecryptionModule** contentDecryptionModule) CreateContentDecryptionModule;
-				public new function HRESULT(IMFContentDecryptionModuleAccess *self, IPropertyStore** configuration) GetConfiguration;
-				public new function HRESULT(IMFContentDecryptionModuleAccess *self, PWSTR* keySystem) GetKeySystem;
+				public new function HRESULT(ref IMFContentDecryptionModuleAccess self, ref IPropertyStore contentDecryptionModuleProperties, out IMFContentDecryptionModule* contentDecryptionModule) CreateContentDecryptionModule;
+				public new function HRESULT(ref IMFContentDecryptionModuleAccess self, out IPropertyStore* configuration) GetConfiguration;
+				public new function HRESULT(ref IMFContentDecryptionModuleAccess self, out PWSTR keySystem) GetKeySystem;
 			}
 		}
 		[CRepr]
@@ -20300,17 +20300,17 @@ namespace Win32
 			
 			public BOOL IsTypeSupported(PWSTR keySystem, PWSTR contentType) mut
 			{
-				return VT.IsTypeSupported(&this, keySystem, contentType);
+				return VT.IsTypeSupported(ref this, keySystem, contentType);
 			}
-			public HRESULT CreateContentDecryptionModuleAccess(PWSTR keySystem, IPropertyStore** configurations, uint32 numConfigurations, IMFContentDecryptionModuleAccess** contentDecryptionModuleAccess) mut
+			public HRESULT CreateContentDecryptionModuleAccess(PWSTR keySystem, IPropertyStore** configurations, uint32 numConfigurations, out IMFContentDecryptionModuleAccess* contentDecryptionModuleAccess) mut
 			{
-				return VT.CreateContentDecryptionModuleAccess(&this, keySystem, configurations, numConfigurations, contentDecryptionModuleAccess);
+				return VT.CreateContentDecryptionModuleAccess(ref this, keySystem, configurations, numConfigurations, out contentDecryptionModuleAccess);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function BOOL(IMFContentDecryptionModuleFactory *self, PWSTR keySystem, PWSTR contentType) IsTypeSupported;
-				public new function HRESULT(IMFContentDecryptionModuleFactory *self, PWSTR keySystem, IPropertyStore** configurations, uint32 numConfigurations, IMFContentDecryptionModuleAccess** contentDecryptionModuleAccess) CreateContentDecryptionModuleAccess;
+				public new function BOOL(ref IMFContentDecryptionModuleFactory self, PWSTR keySystem, PWSTR contentType) IsTypeSupported;
+				public new function HRESULT(ref IMFContentDecryptionModuleFactory self, PWSTR keySystem, IPropertyStore** configurations, uint32 numConfigurations, out IMFContentDecryptionModuleAccess* contentDecryptionModuleAccess) CreateContentDecryptionModuleAccess;
 			}
 		}
 		[CRepr]
@@ -20322,17 +20322,17 @@ namespace Win32
 			
 			public HRESULT WaitOnSignal(uint32 timeOutInMs) mut
 			{
-				return VT.WaitOnSignal(&this, timeOutInMs);
+				return VT.WaitOnSignal(ref this, timeOutInMs);
 			}
 			public void Shutdown() mut
 			{
-				VT.Shutdown(&this);
+				VT.Shutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IMFCameraSyncObject *self, uint32 timeOutInMs) WaitOnSignal;
-				public new function void(IMFCameraSyncObject *self) Shutdown;
+				public new function HRESULT(ref IMFCameraSyncObject self, uint32 timeOutInMs) WaitOnSignal;
+				public new function void(ref IMFCameraSyncObject self) Shutdown;
 			}
 		}
 		[CRepr]
@@ -20344,269 +20344,269 @@ namespace Win32
 			
 			public HRESULT AddDeviceSourceInfo(PWSTR DeviceSourceInfo) mut
 			{
-				return VT.AddDeviceSourceInfo(&this, DeviceSourceInfo);
+				return VT.AddDeviceSourceInfo(ref this, DeviceSourceInfo);
 			}
-			public HRESULT AddProperty(DEVPROPKEY* pKey, uint32 Type, uint8* pbData, uint32 cbData) mut
+			public HRESULT AddProperty(in DEVPROPKEY pKey, uint32 Type, in uint8 pbData, uint32 cbData) mut
 			{
-				return VT.AddProperty(&this, pKey, Type, pbData, cbData);
+				return VT.AddProperty(ref this, pKey, Type, pbData, cbData);
 			}
-			public HRESULT AddRegistryEntry(PWSTR EntryName, PWSTR SubkeyPath, uint32 dwRegType, uint8* pbData, uint32 cbData) mut
+			public HRESULT AddRegistryEntry(PWSTR EntryName, PWSTR SubkeyPath, uint32 dwRegType, in uint8 pbData, uint32 cbData) mut
 			{
-				return VT.AddRegistryEntry(&this, EntryName, SubkeyPath, dwRegType, pbData, cbData);
+				return VT.AddRegistryEntry(ref this, EntryName, SubkeyPath, dwRegType, pbData, cbData);
 			}
 			public HRESULT Start(IMFAsyncCallback* pCallback) mut
 			{
-				return VT.Start(&this, pCallback);
+				return VT.Start(ref this, pCallback);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT Remove() mut
 			{
-				return VT.Remove(&this);
+				return VT.Remove(ref this);
 			}
-			public HRESULT GetMediaSource(IMFMediaSource** ppMediaSource) mut
+			public HRESULT GetMediaSource(out IMFMediaSource* ppMediaSource) mut
 			{
-				return VT.GetMediaSource(&this, ppMediaSource);
+				return VT.GetMediaSource(ref this, out ppMediaSource);
 			}
-			public HRESULT SendCameraProperty(Guid* propertySet, uint32 propertyId, uint32 propertyFlags, void* propertyPayload, uint32 propertyPayloadLength, void* data, uint32 dataLength, uint32* dataWritten) mut
+			public HRESULT SendCameraProperty(in Guid propertySet, uint32 propertyId, uint32 propertyFlags, void* propertyPayload, uint32 propertyPayloadLength, void* data, uint32 dataLength, out uint32 dataWritten) mut
 			{
-				return VT.SendCameraProperty(&this, propertySet, propertyId, propertyFlags, propertyPayload, propertyPayloadLength, data, dataLength, dataWritten);
+				return VT.SendCameraProperty(ref this, propertySet, propertyId, propertyFlags, propertyPayload, propertyPayloadLength, data, dataLength, out dataWritten);
 			}
-			public HRESULT CreateSyncEvent(Guid* kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE eventHandle, IMFCameraSyncObject** cameraSyncObject) mut
+			public HRESULT CreateSyncEvent(in Guid kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE eventHandle, out IMFCameraSyncObject* cameraSyncObject) mut
 			{
-				return VT.CreateSyncEvent(&this, kseventSet, kseventId, kseventFlags, eventHandle, cameraSyncObject);
+				return VT.CreateSyncEvent(ref this, kseventSet, kseventId, kseventFlags, eventHandle, out cameraSyncObject);
 			}
-			public HRESULT CreateSyncSemaphore(Guid* kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE semaphoreHandle, int32 semaphoreAdjustment, IMFCameraSyncObject** cameraSyncObject) mut
+			public HRESULT CreateSyncSemaphore(in Guid kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE semaphoreHandle, int32 semaphoreAdjustment, out IMFCameraSyncObject* cameraSyncObject) mut
 			{
-				return VT.CreateSyncSemaphore(&this, kseventSet, kseventId, kseventFlags, semaphoreHandle, semaphoreAdjustment, cameraSyncObject);
+				return VT.CreateSyncSemaphore(ref this, kseventSet, kseventId, kseventFlags, semaphoreHandle, semaphoreAdjustment, out cameraSyncObject);
 			}
 			public HRESULT Shutdown() mut
 			{
-				return VT.Shutdown(&this);
+				return VT.Shutdown(ref this);
 			}
 			[CRepr]
 			public struct VTable : IMFAttributes.VTable
 			{
-				public new function HRESULT(IMFVirtualCamera *self, PWSTR DeviceSourceInfo) AddDeviceSourceInfo;
-				public new function HRESULT(IMFVirtualCamera *self, DEVPROPKEY* pKey, uint32 Type, uint8* pbData, uint32 cbData) AddProperty;
-				public new function HRESULT(IMFVirtualCamera *self, PWSTR EntryName, PWSTR SubkeyPath, uint32 dwRegType, uint8* pbData, uint32 cbData) AddRegistryEntry;
-				public new function HRESULT(IMFVirtualCamera *self, IMFAsyncCallback* pCallback) Start;
-				public new function HRESULT(IMFVirtualCamera *self) Stop;
-				public new function HRESULT(IMFVirtualCamera *self) Remove;
-				public new function HRESULT(IMFVirtualCamera *self, IMFMediaSource** ppMediaSource) GetMediaSource;
-				public new function HRESULT(IMFVirtualCamera *self, Guid* propertySet, uint32 propertyId, uint32 propertyFlags, void* propertyPayload, uint32 propertyPayloadLength, void* data, uint32 dataLength, uint32* dataWritten) SendCameraProperty;
-				public new function HRESULT(IMFVirtualCamera *self, Guid* kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE eventHandle, IMFCameraSyncObject** cameraSyncObject) CreateSyncEvent;
-				public new function HRESULT(IMFVirtualCamera *self, Guid* kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE semaphoreHandle, int32 semaphoreAdjustment, IMFCameraSyncObject** cameraSyncObject) CreateSyncSemaphore;
-				public new function HRESULT(IMFVirtualCamera *self) Shutdown;
+				public new function HRESULT(ref IMFVirtualCamera self, PWSTR DeviceSourceInfo) AddDeviceSourceInfo;
+				public new function HRESULT(ref IMFVirtualCamera self, in DEVPROPKEY pKey, uint32 Type, in uint8 pbData, uint32 cbData) AddProperty;
+				public new function HRESULT(ref IMFVirtualCamera self, PWSTR EntryName, PWSTR SubkeyPath, uint32 dwRegType, in uint8 pbData, uint32 cbData) AddRegistryEntry;
+				public new function HRESULT(ref IMFVirtualCamera self, IMFAsyncCallback* pCallback) Start;
+				public new function HRESULT(ref IMFVirtualCamera self) Stop;
+				public new function HRESULT(ref IMFVirtualCamera self) Remove;
+				public new function HRESULT(ref IMFVirtualCamera self, out IMFMediaSource* ppMediaSource) GetMediaSource;
+				public new function HRESULT(ref IMFVirtualCamera self, in Guid propertySet, uint32 propertyId, uint32 propertyFlags, void* propertyPayload, uint32 propertyPayloadLength, void* data, uint32 dataLength, out uint32 dataWritten) SendCameraProperty;
+				public new function HRESULT(ref IMFVirtualCamera self, in Guid kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE eventHandle, out IMFCameraSyncObject* cameraSyncObject) CreateSyncEvent;
+				public new function HRESULT(ref IMFVirtualCamera self, in Guid kseventSet, uint32 kseventId, uint32 kseventFlags, HANDLE semaphoreHandle, int32 semaphoreAdjustment, out IMFCameraSyncObject* cameraSyncObject) CreateSyncSemaphore;
+				public new function HRESULT(ref IMFVirtualCamera self) Shutdown;
 			}
 		}
 		
 		// --- Functions ---
 		
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DXVAHD_CreateDevice(IDirect3DDevice9Ex* pD3DDevice, DXVAHD_CONTENT_DESC* pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, IDXVAHD_Device** ppDevice);
+		public static extern HRESULT DXVAHD_CreateDevice(ref IDirect3DDevice9Ex pD3DDevice, in DXVAHD_CONTENT_DESC pContentDesc, DXVAHD_DEVICE_USAGE Usage, PDXVAHDSW_Plugin pPlugin, out IDXVAHD_Device* ppDevice);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DXVA2CreateDirect3DDeviceManager9(uint32* pResetToken, IDirect3DDeviceManager9** ppDeviceManager);
+		public static extern HRESULT DXVA2CreateDirect3DDeviceManager9(out uint32 pResetToken, out IDirect3DDeviceManager9* ppDeviceManager);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT DXVA2CreateVideoService(IDirect3DDevice9* pDD, Guid* riid, void** ppService);
+		public static extern HRESULT DXVA2CreateVideoService(ref IDirect3DDevice9 pDD, in Guid riid, void** ppService);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OPMGetVideoOutputsFromHMONITOR(HMONITOR hMonitor, OPM_VIDEO_OUTPUT_SEMANTICS vos, uint32* pulNumVideoOutputs, IOPMVideoOutput*** pppOPMVideoOutputArray);
+		public static extern HRESULT OPMGetVideoOutputsFromHMONITOR(HMONITOR hMonitor, OPM_VIDEO_OUTPUT_SEMANTICS vos, out uint32 pulNumVideoOutputs, out IOPMVideoOutput** pppOPMVideoOutputArray);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OPMGetVideoOutputForTarget(LUID* pAdapterLuid, uint32 VidPnTarget, OPM_VIDEO_OUTPUT_SEMANTICS vos, IOPMVideoOutput** ppOPMVideoOutput);
+		public static extern HRESULT OPMGetVideoOutputForTarget(ref LUID pAdapterLuid, uint32 VidPnTarget, OPM_VIDEO_OUTPUT_SEMANTICS vos, out IOPMVideoOutput* ppOPMVideoOutput);
 		[Import("dxva2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(IDirect3DDevice9* pDirect3DDevice9, OPM_VIDEO_OUTPUT_SEMANTICS vos, uint32* pulNumVideoOutputs, IOPMVideoOutput*** pppOPMVideoOutputArray);
+		public static extern HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(ref IDirect3DDevice9 pDirect3DDevice9, OPM_VIDEO_OUTPUT_SEMANTICS vos, out uint32 pulNumVideoOutputs, out IOPMVideoOutput** pppOPMVideoOutputArray);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFSerializeAttributesToStream(IMFAttributes* pAttr, uint32 dwOptions, IStream* pStm);
+		public static extern HRESULT MFSerializeAttributesToStream(ref IMFAttributes pAttr, uint32 dwOptions, ref IStream pStm);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFDeserializeAttributesFromStream(IMFAttributes* pAttr, uint32 dwOptions, IStream* pStm);
+		public static extern HRESULT MFDeserializeAttributesFromStream(ref IMFAttributes pAttr, uint32 dwOptions, ref IStream pStm);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTransformActivate(IMFActivate** ppActivate);
+		public static extern HRESULT MFCreateTransformActivate(out IMFActivate* ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaSession(IMFAttributes* pConfiguration, IMFMediaSession** ppMediaSession);
+		public static extern HRESULT MFCreateMediaSession(ref IMFAttributes pConfiguration, out IMFMediaSession* ppMediaSession);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePMPMediaSession(uint32 dwCreationFlags, IMFAttributes* pConfiguration, IMFMediaSession** ppMediaSession, IMFActivate** ppEnablerActivate);
+		public static extern HRESULT MFCreatePMPMediaSession(uint32 dwCreationFlags, ref IMFAttributes pConfiguration, out IMFMediaSession* ppMediaSession, IMFActivate** ppEnablerActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSourceResolver(IMFSourceResolver** ppISourceResolver);
+		public static extern HRESULT MFCreateSourceResolver(out IMFSourceResolver* ppISourceResolver);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreatePropertyStore(IPropertyStore** ppStore);
+		public static extern HRESULT CreatePropertyStore(out IPropertyStore* ppStore);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetSupportedSchemes(PROPVARIANT* pPropVarSchemeArray);
+		public static extern HRESULT MFGetSupportedSchemes(out PROPVARIANT pPropVarSchemeArray);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetSupportedMimeTypes(PROPVARIANT* pPropVarMimeTypeArray);
+		public static extern HRESULT MFGetSupportedMimeTypes(out PROPVARIANT pPropVarMimeTypeArray);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTopology(IMFTopology** ppTopo);
+		public static extern HRESULT MFCreateTopology(out IMFTopology* ppTopo);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTopologyNode(MF_TOPOLOGY_TYPE NodeType, IMFTopologyNode** ppNode);
+		public static extern HRESULT MFCreateTopologyNode(MF_TOPOLOGY_TYPE NodeType, out IMFTopologyNode* ppNode);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetTopoNodeCurrentType(IMFTopologyNode* pNode, uint32 dwStreamIndex, BOOL fOutput, IMFMediaType** ppType);
+		public static extern HRESULT MFGetTopoNodeCurrentType(ref IMFTopologyNode pNode, uint32 dwStreamIndex, BOOL fOutput, out IMFMediaType* ppType);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetService(IUnknown* punkObject, Guid* guidService, Guid* riid, void** ppvObject);
+		public static extern HRESULT MFGetService(ref IUnknown punkObject, in Guid guidService, in Guid riid, void** ppvObject);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int64 MFGetSystemTime();
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePresentationClock(IMFPresentationClock** ppPresentationClock);
+		public static extern HRESULT MFCreatePresentationClock(out IMFPresentationClock* ppPresentationClock);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSystemTimeSource(IMFPresentationTimeSource** ppSystemTimeSource);
+		public static extern HRESULT MFCreateSystemTimeSource(out IMFPresentationTimeSource* ppSystemTimeSource);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePresentationDescriptor(uint32 cStreamDescriptors, IMFStreamDescriptor** apStreamDescriptors, IMFPresentationDescriptor** ppPresentationDescriptor);
+		public static extern HRESULT MFCreatePresentationDescriptor(uint32 cStreamDescriptors, IMFStreamDescriptor** apStreamDescriptors, out IMFPresentationDescriptor* ppPresentationDescriptor);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFRequireProtectedEnvironment(IMFPresentationDescriptor* pPresentationDescriptor);
+		public static extern HRESULT MFRequireProtectedEnvironment(ref IMFPresentationDescriptor pPresentationDescriptor);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFSerializePresentationDescriptor(IMFPresentationDescriptor* pPD, uint32* pcbData, uint8** ppbData);
+		public static extern HRESULT MFSerializePresentationDescriptor(ref IMFPresentationDescriptor pPD, out uint32 pcbData, out uint8* ppbData);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFDeserializePresentationDescriptor(uint32 cbData, uint8* pbData, IMFPresentationDescriptor** ppPD);
+		public static extern HRESULT MFDeserializePresentationDescriptor(uint32 cbData, uint8* pbData, out IMFPresentationDescriptor* ppPD);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateStreamDescriptor(uint32 dwStreamIdentifier, uint32 cMediaTypes, IMFMediaType** apMediaTypes, IMFStreamDescriptor** ppDescriptor);
+		public static extern HRESULT MFCreateStreamDescriptor(uint32 dwStreamIdentifier, uint32 cMediaTypes, IMFMediaType** apMediaTypes, out IMFStreamDescriptor* ppDescriptor);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSimpleTypeHandler(IMFMediaTypeHandler** ppHandler);
+		public static extern HRESULT MFCreateSimpleTypeHandler(out IMFMediaTypeHandler* ppHandler);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFShutdownObject(IUnknown* pUnk);
+		public static extern HRESULT MFShutdownObject(ref IUnknown pUnk);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAudioRenderer(IMFAttributes* pAudioAttributes, IMFMediaSink** ppSink);
+		public static extern HRESULT MFCreateAudioRenderer(ref IMFAttributes pAudioAttributes, out IMFMediaSink* ppSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAudioRendererActivate(IMFActivate** ppActivate);
+		public static extern HRESULT MFCreateAudioRendererActivate(out IMFActivate* ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoRendererActivate(HWND hwndVideo, IMFActivate** ppActivate);
+		public static extern HRESULT MFCreateVideoRendererActivate(HWND hwndVideo, out IMFActivate* ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
+		public static extern HRESULT MFCreateMPEG4MediaSink(ref IMFByteStream pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, out IMFMediaSink* ppIMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreate3GPMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
+		public static extern HRESULT MFCreate3GPMediaSink(ref IMFByteStream pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, out IMFMediaSink* ppIMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMP3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaSink** ppMediaSink);
+		public static extern HRESULT MFCreateMP3MediaSink(ref IMFByteStream pTargetByteStream, out IMFMediaSink* ppMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAC3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
+		public static extern HRESULT MFCreateAC3MediaSink(ref IMFByteStream pTargetByteStream, ref IMFMediaType pAudioMediaType, out IMFMediaSink* ppMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateADTSMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
+		public static extern HRESULT MFCreateADTSMediaSink(ref IMFByteStream pTargetByteStream, ref IMFMediaType pAudioMediaType, out IMFMediaSink* ppMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMuxSink(Guid guidOutputSubType, IMFAttributes* pOutputAttributes, IMFByteStream* pOutputByteStream, IMFMediaSink** ppMuxSink);
+		public static extern HRESULT MFCreateMuxSink(Guid guidOutputSubType, IMFAttributes* pOutputAttributes, IMFByteStream* pOutputByteStream, out IMFMediaSink* ppMuxSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateFMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
+		public static extern HRESULT MFCreateFMPEG4MediaSink(ref IMFByteStream pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, out IMFMediaSink* ppIMediaSink);
 		[Import("mfsrcsnk.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAVIMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
+		public static extern HRESULT MFCreateAVIMediaSink(ref IMFByteStream pIByteStream, ref IMFMediaType pVideoMediaType, IMFMediaType* pAudioMediaType, out IMFMediaSink* ppIMediaSink);
 		[Import("mfsrcsnk.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWAVEMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
+		public static extern HRESULT MFCreateWAVEMediaSink(ref IMFByteStream pTargetByteStream, ref IMFMediaType pAudioMediaType, out IMFMediaSink* ppMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTopoLoader(IMFTopoLoader** ppObj);
+		public static extern HRESULT MFCreateTopoLoader(out IMFTopoLoader* ppObj);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSampleGrabberSinkActivate(IMFMediaType* pIMFMediaType, IMFSampleGrabberSinkCallback* pIMFSampleGrabberSinkCallback, IMFActivate** ppIActivate);
+		public static extern HRESULT MFCreateSampleGrabberSinkActivate(ref IMFMediaType pIMFMediaType, ref IMFSampleGrabberSinkCallback pIMFSampleGrabberSinkCallback, out IMFActivate* ppIActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateStandardQualityManager(IMFQualityManager** ppQualityManager);
+		public static extern HRESULT MFCreateStandardQualityManager(out IMFQualityManager* ppQualityManager);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSequencerSource(IUnknown* pReserved, IMFSequencerSource** ppSequencerSource);
+		public static extern HRESULT MFCreateSequencerSource(ref IUnknown pReserved, out IMFSequencerSource* ppSequencerSource);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSequencerSegmentOffset(uint32 dwId, int64 hnsOffset, PROPVARIANT* pvarSegmentOffset);
+		public static extern HRESULT MFCreateSequencerSegmentOffset(uint32 dwId, int64 hnsOffset, out PROPVARIANT pvarSegmentOffset);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAggregateSource(IMFCollection* pSourceCollection, IMFMediaSource** ppAggSource);
+		public static extern HRESULT MFCreateAggregateSource(ref IMFCollection pSourceCollection, out IMFMediaSource* ppAggSource);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateCredentialCache(IMFNetCredentialCache** ppCache);
+		public static extern HRESULT MFCreateCredentialCache(out IMFNetCredentialCache* ppCache);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateProxyLocator(PWSTR pszProtocol, IPropertyStore* pProxyConfig, IMFNetProxyLocator** ppProxyLocator);
+		public static extern HRESULT MFCreateProxyLocator(PWSTR pszProtocol, ref IPropertyStore pProxyConfig, out IMFNetProxyLocator* ppProxyLocator);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateNetSchemePlugin(Guid* riid, void** ppvHandler);
+		public static extern HRESULT MFCreateNetSchemePlugin(in Guid riid, void** ppvHandler);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePMPServer(uint32 dwCreationFlags, IMFPMPServer** ppPMPServer);
+		public static extern HRESULT MFCreatePMPServer(uint32 dwCreationFlags, out IMFPMPServer* ppPMPServer);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateRemoteDesktopPlugin(IMFRemoteDesktopPlugin** ppPlugin);
+		public static extern HRESULT MFCreateRemoteDesktopPlugin(out IMFRemoteDesktopPlugin* ppPlugin);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT CreateNamedPropertyStore(INamedPropertyStore** ppStore);
+		public static extern HRESULT CreateNamedPropertyStore(out INamedPropertyStore* ppStore);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSampleCopierMFT(IMFTransform** ppCopierMFT);
+		public static extern HRESULT MFCreateSampleCopierMFT(out IMFTransform* ppCopierMFT);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTranscodeProfile(IMFTranscodeProfile** ppTranscodeProfile);
+		public static extern HRESULT MFCreateTranscodeProfile(out IMFTranscodeProfile* ppTranscodeProfile);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTranscodeTopology(IMFMediaSource* pSrc, PWSTR pwszOutputFilePath, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
+		public static extern HRESULT MFCreateTranscodeTopology(ref IMFMediaSource pSrc, PWSTR pwszOutputFilePath, ref IMFTranscodeProfile pProfile, out IMFTopology* ppTranscodeTopo);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTranscodeTopologyFromByteStream(IMFMediaSource* pSrc, IMFByteStream* pOutputStream, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
+		public static extern HRESULT MFCreateTranscodeTopologyFromByteStream(ref IMFMediaSource pSrc, ref IMFByteStream pOutputStream, ref IMFTranscodeProfile pProfile, out IMFTopology* ppTranscodeTopo);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes(Guid* guidSubType, uint32 dwMFTFlags, IMFAttributes* pCodecConfig, IMFCollection** ppAvailableTypes);
+		public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes(in Guid guidSubType, uint32 dwMFTFlags, IMFAttributes* pCodecConfig, out IMFCollection* ppAvailableTypes);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTranscodeSinkActivate(IMFActivate** ppActivate);
+		public static extern HRESULT MFCreateTranscodeSinkActivate(out IMFActivate* ppActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTrackedSample(IMFTrackedSample** ppMFSample);
+		public static extern HRESULT MFCreateTrackedSample(out IMFTrackedSample* ppMFSample);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMFByteStreamOnStream(IStream* pStream, IMFByteStream** ppByteStream);
+		public static extern HRESULT MFCreateMFByteStreamOnStream(ref IStream pStream, out IMFByteStream* ppByteStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateStreamOnMFByteStream(IMFByteStream* pByteStream, IStream** ppStream);
+		public static extern HRESULT MFCreateStreamOnMFByteStream(ref IMFByteStream pByteStream, out IStream* ppStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMFByteStreamOnStreamEx(IUnknown* punkStream, IMFByteStream** ppByteStream);
+		public static extern HRESULT MFCreateMFByteStreamOnStreamEx(ref IUnknown punkStream, out IMFByteStream* ppByteStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateStreamOnMFByteStreamEx(IMFByteStream* pByteStream, Guid* riid, void** ppv);
+		public static extern HRESULT MFCreateStreamOnMFByteStreamEx(ref IMFByteStream pByteStream, in Guid riid, void** ppv);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaTypeFromProperties(IUnknown* punkStream, IMFMediaType** ppMediaType);
+		public static extern HRESULT MFCreateMediaTypeFromProperties(ref IUnknown punkStream, out IMFMediaType* ppMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePropertiesFromMediaType(IMFMediaType* pMediaType, Guid* riid, void** ppv);
+		public static extern HRESULT MFCreatePropertiesFromMediaType(ref IMFMediaType pMediaType, in Guid riid, void** ppv);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFEnumDeviceSources(IMFAttributes* pAttributes, IMFActivate*** pppSourceActivate, uint32* pcSourceActivate);
+		public static extern HRESULT MFEnumDeviceSources(ref IMFAttributes pAttributes, out IMFActivate** pppSourceActivate, out uint32 pcSourceActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDeviceSource(IMFAttributes* pAttributes, IMFMediaSource** ppSource);
+		public static extern HRESULT MFCreateDeviceSource(ref IMFAttributes pAttributes, out IMFMediaSource* ppSource);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDeviceSourceActivate(IMFAttributes* pAttributes, IMFActivate** ppActivate);
+		public static extern HRESULT MFCreateDeviceSourceActivate(ref IMFAttributes pAttributes, out IMFActivate* ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateProtectedEnvironmentAccess(IMFProtectedEnvironmentAccess** ppAccess);
+		public static extern HRESULT MFCreateProtectedEnvironmentAccess(out IMFProtectedEnvironmentAccess* ppAccess);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFLoadSignedLibrary(PWSTR pszName, IMFSignedLibrary** ppLib);
+		public static extern HRESULT MFLoadSignedLibrary(PWSTR pszName, out IMFSignedLibrary* ppLib);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetSystemId(IMFSystemId** ppId);
+		public static extern HRESULT MFGetSystemId(out IMFSystemId* ppId);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetLocalId(uint8* verifier, uint32 size, PWSTR* id);
+		public static extern HRESULT MFGetLocalId(in uint8 verifier, uint32 size, out PWSTR id);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateContentProtectionDevice(Guid* ProtectionSystemId, IMFContentProtectionDevice** ContentProtectionDevice);
+		public static extern HRESULT MFCreateContentProtectionDevice(in Guid ProtectionSystemId, out IMFContentProtectionDevice* ContentProtectionDevice);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFIsContentProtectionDeviceSupported(Guid* ProtectionSystemId, BOOL* isSupported);
+		public static extern HRESULT MFIsContentProtectionDeviceSupported(in Guid ProtectionSystemId, out BOOL isSupported);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateContentDecryptorContext(Guid* guidMediaProtectionSystemId, IMFDXGIDeviceManager* pD3DManager, IMFContentProtectionDevice* pContentProtectionDevice, IMFContentDecryptorContext** ppContentDecryptorContext);
+		public static extern HRESULT MFCreateContentDecryptorContext(in Guid guidMediaProtectionSystemId, IMFDXGIDeviceManager* pD3DManager, ref IMFContentProtectionDevice pContentProtectionDevice, out IMFContentDecryptorContext* ppContentDecryptorContext);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorGroup(PWSTR SensorGroupSymbolicLink, IMFSensorGroup** ppSensorGroup);
+		public static extern HRESULT MFCreateSensorGroup(PWSTR SensorGroupSymbolicLink, out IMFSensorGroup* ppSensorGroup);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorStream(uint32 StreamId, IMFAttributes* pAttributes, IMFCollection* pMediaTypeCollection, IMFSensorStream** ppStream);
+		public static extern HRESULT MFCreateSensorStream(uint32 StreamId, IMFAttributes* pAttributes, ref IMFCollection pMediaTypeCollection, out IMFSensorStream* ppStream);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorProfile(Guid* ProfileType, uint32 ProfileIndex, PWSTR Constraints, IMFSensorProfile** ppProfile);
+		public static extern HRESULT MFCreateSensorProfile(in Guid ProfileType, uint32 ProfileIndex, PWSTR Constraints, out IMFSensorProfile* ppProfile);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorProfileCollection(IMFSensorProfileCollection** ppSensorProfile);
+		public static extern HRESULT MFCreateSensorProfileCollection(out IMFSensorProfileCollection* ppSensorProfile);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSensorActivityMonitor(IMFSensorActivitiesReportCallback* pCallback, IMFSensorActivityMonitor** ppActivityMonitor);
+		public static extern HRESULT MFCreateSensorActivityMonitor(ref IMFSensorActivitiesReportCallback pCallback, out IMFSensorActivityMonitor* ppActivityMonitor);
 		[Import("mfcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateExtendedCameraIntrinsics(IMFExtendedCameraIntrinsics** ppExtendedCameraIntrinsics);
+		public static extern HRESULT MFCreateExtendedCameraIntrinsics(out IMFExtendedCameraIntrinsics* ppExtendedCameraIntrinsics);
 		[Import("mfcore.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateExtendedCameraIntrinsicModel(MFCameraIntrinsic_DistortionModelType distortionModelType, IMFExtendedCameraIntrinsicModel** ppExtendedCameraIntrinsicModel);
+		public static extern HRESULT MFCreateExtendedCameraIntrinsicModel(MFCameraIntrinsic_DistortionModelType distortionModelType, out IMFExtendedCameraIntrinsicModel* ppExtendedCameraIntrinsicModel);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateRelativePanelWatcher(PWSTR videoDeviceId, PWSTR displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);
+		public static extern HRESULT MFCreateRelativePanelWatcher(PWSTR videoDeviceId, PWSTR displayMonitorDeviceId, out IMFRelativePanelWatcher* ppRelativePanelWatcher);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateCameraOcclusionStateMonitor(PWSTR symbolicLink, IMFCameraOcclusionStateReportCallback* callback, IMFCameraOcclusionStateMonitor** occlusionStateMonitor);
+		public static extern HRESULT MFCreateCameraOcclusionStateMonitor(PWSTR symbolicLink, ref IMFCameraOcclusionStateReportCallback callback, out IMFCameraOcclusionStateMonitor* occlusionStateMonitor);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFContentInfo(IMFASFContentInfo** ppIContentInfo);
+		public static extern HRESULT MFCreateASFContentInfo(out IMFASFContentInfo* ppIContentInfo);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFIndexer(IMFASFIndexer** ppIIndexer);
+		public static extern HRESULT MFCreateASFIndexer(out IMFASFIndexer* ppIIndexer);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFIndexerByteStream(IMFByteStream* pIContentByteStream, uint64 cbIndexStartOffset, IMFByteStream** pIIndexByteStream);
+		public static extern HRESULT MFCreateASFIndexerByteStream(ref IMFByteStream pIContentByteStream, uint64 cbIndexStartOffset, out IMFByteStream* pIIndexByteStream);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFSplitter(IMFASFSplitter** ppISplitter);
+		public static extern HRESULT MFCreateASFSplitter(out IMFASFSplitter* ppISplitter);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFProfile(IMFASFProfile** ppIProfile);
+		public static extern HRESULT MFCreateASFProfile(out IMFASFProfile* ppIProfile);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFProfileFromPresentationDescriptor(IMFPresentationDescriptor* pIPD, IMFASFProfile** ppIProfile);
+		public static extern HRESULT MFCreateASFProfileFromPresentationDescriptor(ref IMFPresentationDescriptor pIPD, out IMFASFProfile* ppIProfile);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreatePresentationDescriptorFromASFProfile(IMFASFProfile* pIProfile, IMFPresentationDescriptor** ppIPD);
+		public static extern HRESULT MFCreatePresentationDescriptorFromASFProfile(ref IMFASFProfile pIProfile, out IMFPresentationDescriptor* ppIPD);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFMultiplexer(IMFASFMultiplexer** ppIMultiplexer);
+		public static extern HRESULT MFCreateASFMultiplexer(out IMFASFMultiplexer* ppIMultiplexer);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFStreamSelector(IMFASFProfile* pIASFProfile, IMFASFStreamSelector** ppSelector);
+		public static extern HRESULT MFCreateASFStreamSelector(ref IMFASFProfile pIASFProfile, out IMFASFStreamSelector* ppSelector);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFMediaSink(IMFByteStream* pIByteStream, IMFMediaSink** ppIMediaSink);
+		public static extern HRESULT MFCreateASFMediaSink(ref IMFByteStream pIByteStream, out IMFMediaSink* ppIMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFMediaSinkActivate(PWSTR pwszFileName, IMFASFContentInfo* pContentInfo, IMFActivate** ppIActivate);
+		public static extern HRESULT MFCreateASFMediaSinkActivate(PWSTR pwszFileName, ref IMFASFContentInfo pContentInfo, out IMFActivate* ppIActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWMVEncoderActivate(IMFMediaType* pMediaType, IPropertyStore* pEncodingConfigurationProperties, IMFActivate** ppActivate);
+		public static extern HRESULT MFCreateWMVEncoderActivate(ref IMFMediaType pMediaType, ref IPropertyStore pEncodingConfigurationProperties, out IMFActivate* ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWMAEncoderActivate(IMFMediaType* pMediaType, IPropertyStore* pEncodingConfigurationProperties, IMFActivate** ppActivate);
+		public static extern HRESULT MFCreateWMAEncoderActivate(ref IMFMediaType pMediaType, ref IPropertyStore pEncodingConfigurationProperties, out IMFActivate* ppActivate);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFStreamingMediaSink(IMFByteStream* pIByteStream, IMFMediaSink** ppIMediaSink);
+		public static extern HRESULT MFCreateASFStreamingMediaSink(ref IMFByteStream pIByteStream, out IMFMediaSink* ppIMediaSink);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateASFStreamingMediaSinkActivate(IMFActivate* pByteStreamActivate, IMFASFContentInfo* pContentInfo, IMFActivate** ppIActivate);
+		public static extern HRESULT MFCreateASFStreamingMediaSinkActivate(ref IMFActivate pByteStreamActivate, ref IMFASFContentInfo pContentInfo, out IMFActivate* ppIActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateD3D12SynchronizationObject(ID3D12Device* pDevice, Guid* riid, void** ppvSyncObject);
+		public static extern HRESULT MFCreateD3D12SynchronizationObject(ref ID3D12Device pDevice, in Guid riid, void** ppvSyncObject);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFStartup(uint32 Version, uint32 dwFlags);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
@@ -20616,231 +20616,231 @@ namespace Win32
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFUnlockPlatform();
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWorkItem(uint32 dwQueue, IMFAsyncCallback* pCallback, IUnknown* pState);
+		public static extern HRESULT MFPutWorkItem(uint32 dwQueue, ref IMFAsyncCallback pCallback, ref IUnknown pState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWorkItem2(uint32 dwQueue, int32 Priority, IMFAsyncCallback* pCallback, IUnknown* pState);
+		public static extern HRESULT MFPutWorkItem2(uint32 dwQueue, int32 Priority, ref IMFAsyncCallback pCallback, IUnknown* pState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWorkItemEx(uint32 dwQueue, IMFAsyncResult* pResult);
+		public static extern HRESULT MFPutWorkItemEx(uint32 dwQueue, ref IMFAsyncResult pResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWorkItemEx2(uint32 dwQueue, int32 Priority, IMFAsyncResult* pResult);
+		public static extern HRESULT MFPutWorkItemEx2(uint32 dwQueue, int32 Priority, ref IMFAsyncResult pResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFPutWaitingWorkItem(HANDLE hEvent, int32 Priority, IMFAsyncResult* pResult, uint64* pKey);
+		public static extern HRESULT MFPutWaitingWorkItem(HANDLE hEvent, int32 Priority, ref IMFAsyncResult pResult, uint64* pKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFAllocateSerialWorkQueue(uint32 dwWorkQueue, uint32* pdwWorkQueue);
+		public static extern HRESULT MFAllocateSerialWorkQueue(uint32 dwWorkQueue, out uint32 pdwWorkQueue);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFScheduleWorkItemEx(IMFAsyncResult* pResult, int64 Timeout, uint64* pKey);
+		public static extern HRESULT MFScheduleWorkItemEx(ref IMFAsyncResult pResult, int64 Timeout, uint64* pKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFScheduleWorkItem(IMFAsyncCallback* pCallback, IUnknown* pState, int64 Timeout, uint64* pKey);
+		public static extern HRESULT MFScheduleWorkItem(ref IMFAsyncCallback pCallback, ref IUnknown pState, int64 Timeout, uint64* pKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFCancelWorkItem(uint64 Key);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetTimerPeriodicity(uint32* Periodicity);
+		public static extern HRESULT MFGetTimerPeriodicity(out uint32 Periodicity);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFAddPeriodicCallback(MFPERIODICCALLBACK Callback, IUnknown* pContext, uint32* pdwKey);
+		public static extern HRESULT MFAddPeriodicCallback(MFPERIODICCALLBACK Callback, ref IUnknown pContext, uint32* pdwKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFRemovePeriodicCallback(uint32 dwKey);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFAllocateWorkQueueEx(MFASYNC_WORKQUEUE_TYPE WorkQueueType, uint32* pdwWorkQueue);
+		public static extern HRESULT MFAllocateWorkQueueEx(MFASYNC_WORKQUEUE_TYPE WorkQueueType, out uint32 pdwWorkQueue);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFAllocateWorkQueue(uint32* pdwWorkQueue);
+		public static extern HRESULT MFAllocateWorkQueue(out uint32 pdwWorkQueue);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFLockWorkQueue(uint32 dwWorkQueue);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFUnlockWorkQueue(uint32 dwWorkQueue);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS(uint32 dwWorkQueueId, PWSTR wszClass, uint32 dwTaskId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
+		public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS(uint32 dwWorkQueueId, PWSTR wszClass, uint32 dwTaskId, ref IMFAsyncCallback pDoneCallback, ref IUnknown pDoneState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSSEx(uint32 dwWorkQueueId, PWSTR wszClass, uint32 dwTaskId, int32 lPriority, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
+		public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSSEx(uint32 dwWorkQueueId, PWSTR wszClass, uint32 dwTaskId, int32 lPriority, ref IMFAsyncCallback pDoneCallback, ref IUnknown pDoneState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFEndRegisterWorkQueueWithMMCSS(IMFAsyncResult* pResult, uint32* pdwTaskId);
+		public static extern HRESULT MFEndRegisterWorkQueueWithMMCSS(ref IMFAsyncResult pResult, out uint32 pdwTaskId);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFBeginUnregisterWorkQueueWithMMCSS(uint32 dwWorkQueueId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
+		public static extern HRESULT MFBeginUnregisterWorkQueueWithMMCSS(uint32 dwWorkQueueId, ref IMFAsyncCallback pDoneCallback, ref IUnknown pDoneState);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFEndUnregisterWorkQueueWithMMCSS(IMFAsyncResult* pResult);
+		public static extern HRESULT MFEndUnregisterWorkQueueWithMMCSS(ref IMFAsyncResult pResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetWorkQueueMMCSSClass(uint32 dwWorkQueueId, char16* pwszClass, uint32* pcchClass);
+		public static extern HRESULT MFGetWorkQueueMMCSSClass(uint32 dwWorkQueueId, char16* pwszClass, out uint32 pcchClass);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetWorkQueueMMCSSTaskId(uint32 dwWorkQueueId, uint32* pdwTaskId);
+		public static extern HRESULT MFGetWorkQueueMMCSSTaskId(uint32 dwWorkQueueId, out uint32 pdwTaskId);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFRegisterPlatformWithMMCSS(PWSTR wszClass, uint32* pdwTaskId, int32 lPriority);
+		public static extern HRESULT MFRegisterPlatformWithMMCSS(PWSTR wszClass, out uint32 pdwTaskId, int32 lPriority);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFUnregisterPlatformFromMMCSS();
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFLockSharedWorkQueue(PWSTR wszClass, int32 BasePriority, uint32* pdwTaskId, uint32* pID);
+		public static extern HRESULT MFLockSharedWorkQueue(PWSTR wszClass, int32 BasePriority, out uint32 pdwTaskId, out uint32 pID);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetWorkQueueMMCSSPriority(uint32 dwWorkQueueId, int32* lPriority);
+		public static extern HRESULT MFGetWorkQueueMMCSSPriority(uint32 dwWorkQueueId, out int32 lPriority);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAsyncResult(IUnknown* punkObject, IMFAsyncCallback* pCallback, IUnknown* punkState, IMFAsyncResult** ppAsyncResult);
+		public static extern HRESULT MFCreateAsyncResult(ref IUnknown punkObject, ref IMFAsyncCallback pCallback, ref IUnknown punkState, out IMFAsyncResult* ppAsyncResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInvokeCallback(IMFAsyncResult* pAsyncResult);
+		public static extern HRESULT MFInvokeCallback(ref IMFAsyncResult pAsyncResult);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, PWSTR pwszFileURL, IMFByteStream** ppIByteStream);
+		public static extern HRESULT MFCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, PWSTR pwszFileURL, out IMFByteStream* ppIByteStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateTempFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, IMFByteStream** ppIByteStream);
+		public static extern HRESULT MFCreateTempFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, out IMFByteStream* ppIByteStream);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFBeginCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, PWSTR pwszFilePath, IMFAsyncCallback* pCallback, IUnknown* pState, IUnknown** ppCancelCookie);
+		public static extern HRESULT MFBeginCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, PWSTR pwszFilePath, ref IMFAsyncCallback pCallback, ref IUnknown pState, out IUnknown* ppCancelCookie);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFEndCreateFile(IMFAsyncResult* pResult, IMFByteStream** ppFile);
+		public static extern HRESULT MFEndCreateFile(ref IMFAsyncResult pResult, out IMFByteStream* ppFile);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCancelCreateFile(IUnknown* pCancelCookie);
+		public static extern HRESULT MFCancelCreateFile(ref IUnknown pCancelCookie);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMemoryBuffer(uint32 cbMaxLength, IMFMediaBuffer** ppBuffer);
+		public static extern HRESULT MFCreateMemoryBuffer(uint32 cbMaxLength, out IMFMediaBuffer* ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaBufferWrapper(IMFMediaBuffer* pBuffer, uint32 cbOffset, uint32 dwLength, IMFMediaBuffer** ppBuffer);
+		public static extern HRESULT MFCreateMediaBufferWrapper(ref IMFMediaBuffer pBuffer, uint32 cbOffset, uint32 dwLength, out IMFMediaBuffer* ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(IMFSample* pSample, IMFMediaBuffer* pMFMediaBuffer, uint32 cbOffset, IMediaBuffer** ppMediaBuffer);
+		public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(IMFSample* pSample, ref IMFMediaBuffer pMFMediaBuffer, uint32 cbOffset, out IMediaBuffer* ppMediaBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern DXGI_FORMAT MFMapDX9FormatToDXGIFormat(uint32 dx9);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MFMapDXGIFormatToDX9Format(DXGI_FORMAT dx11);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFLockDXGIDeviceManager(uint32* pResetToken, IMFDXGIDeviceManager** ppManager);
+		public static extern HRESULT MFLockDXGIDeviceManager(uint32* pResetToken, out IMFDXGIDeviceManager* ppManager);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFUnlockDXGIDeviceManager();
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDXSurfaceBuffer(Guid* riid, IUnknown* punkSurface, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
+		public static extern HRESULT MFCreateDXSurfaceBuffer(in Guid riid, ref IUnknown punkSurface, BOOL fBottomUpWhenLinear, out IMFMediaBuffer* ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWICBitmapBuffer(Guid* riid, IUnknown* punkSurface, IMFMediaBuffer** ppBuffer);
+		public static extern HRESULT MFCreateWICBitmapBuffer(in Guid riid, ref IUnknown punkSurface, out IMFMediaBuffer* ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDXGISurfaceBuffer(Guid* riid, IUnknown* punkSurface, uint32 uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
+		public static extern HRESULT MFCreateDXGISurfaceBuffer(in Guid riid, ref IUnknown punkSurface, uint32 uSubresourceIndex, BOOL fBottomUpWhenLinear, out IMFMediaBuffer* ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoSampleAllocatorEx(Guid* riid, void** ppSampleAllocator);
+		public static extern HRESULT MFCreateVideoSampleAllocatorEx(in Guid riid, void** ppSampleAllocator);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateDXGIDeviceManager(uint32* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
+		public static extern HRESULT MFCreateDXGIDeviceManager(out uint32 resetToken, out IMFDXGIDeviceManager* ppDeviceManager);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAlignedMemoryBuffer(uint32 cbMaxLength, uint32 cbAligment, IMFMediaBuffer** ppBuffer);
+		public static extern HRESULT MFCreateAlignedMemoryBuffer(uint32 cbMaxLength, uint32 cbAligment, out IMFMediaBuffer* ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaEvent(uint32 met, Guid* guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue, IMFMediaEvent** ppEvent);
+		public static extern HRESULT MFCreateMediaEvent(uint32 met, in Guid guidExtendedType, HRESULT hrStatus, PROPVARIANT* pvValue, out IMFMediaEvent* ppEvent);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateEventQueue(IMFMediaEventQueue** ppMediaEventQueue);
+		public static extern HRESULT MFCreateEventQueue(out IMFMediaEventQueue* ppMediaEventQueue);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSample(IMFSample** ppIMFSample);
+		public static extern HRESULT MFCreateSample(out IMFSample* ppIMFSample);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAttributes(IMFAttributes** ppMFAttributes, uint32 cInitialSize);
+		public static extern HRESULT MFCreateAttributes(out IMFAttributes* ppMFAttributes, uint32 cInitialSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitAttributesFromBlob(IMFAttributes* pAttributes, uint8* pBuf, uint32 cbBufSize);
+		public static extern HRESULT MFInitAttributesFromBlob(ref IMFAttributes pAttributes, in uint8 pBuf, uint32 cbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetAttributesAsBlobSize(IMFAttributes* pAttributes, uint32* pcbBufSize);
+		public static extern HRESULT MFGetAttributesAsBlobSize(ref IMFAttributes pAttributes, out uint32 pcbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetAttributesAsBlob(IMFAttributes* pAttributes, uint8* pBuf, uint32 cbBufSize);
+		public static extern HRESULT MFGetAttributesAsBlob(ref IMFAttributes pAttributes, out uint8 pBuf, uint32 cbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFTRegister(Guid clsidMFT, Guid guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes* pAttributes);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFTUnregister(Guid clsidMFT);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTRegisterLocal(IClassFactory* pClassFactory, Guid* guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes);
+		public static extern HRESULT MFTRegisterLocal(ref IClassFactory pClassFactory, in Guid guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFTUnregisterLocal(IClassFactory* pClassFactory);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTRegisterLocalByCLSID(Guid* clisdMFT, Guid* guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes);
+		public static extern HRESULT MFTRegisterLocalByCLSID(in Guid clisdMFT, in Guid guidCategory, PWSTR pszName, uint32 Flags, uint32 cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, uint32 cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFTUnregisterLocalByCLSID(Guid clsidMFT);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTEnum(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, Guid** ppclsidMFT, uint32* pcMFTs);
+		public static extern HRESULT MFTEnum(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, out Guid* ppclsidMFT, out uint32 pcMFTs);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTEnumEx(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFActivate*** pppMFTActivate, uint32* pnumMFTActivate);
+		public static extern HRESULT MFTEnumEx(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, out IMFActivate** pppMFTActivate, out uint32 pnumMFTActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFTEnum2(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, IMFActivate*** pppMFTActivate, uint32* pnumMFTActivate);
+		public static extern HRESULT MFTEnum2(Guid guidCategory, uint32 Flags, MFT_REGISTER_TYPE_INFO* pInputType, MFT_REGISTER_TYPE_INFO* pOutputType, IMFAttributes* pAttributes, out IMFActivate** pppMFTActivate, out uint32 pnumMFTActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFTGetInfo(Guid clsidMFT, PWSTR* pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, uint32* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, uint32* pcOutputTypes, IMFAttributes** ppAttributes);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetPluginControl(IMFPluginControl** ppPluginControl);
+		public static extern HRESULT MFGetPluginControl(out IMFPluginControl* ppPluginControl);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetMFTMerit(IUnknown* pMFT, uint32 cbVerifier, uint8* verifier, uint32* merit);
+		public static extern HRESULT MFGetMFTMerit(out IUnknown pMFT, uint32 cbVerifier, in uint8 verifier, out uint32 merit);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFRegisterLocalSchemeHandler(PWSTR szScheme, IMFActivate* pActivate);
+		public static extern HRESULT MFRegisterLocalSchemeHandler(PWSTR szScheme, ref IMFActivate pActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFRegisterLocalByteStreamHandler(PWSTR szFileExtension, PWSTR szMimeType, IMFActivate* pActivate);
+		public static extern HRESULT MFRegisterLocalByteStreamHandler(PWSTR szFileExtension, PWSTR szMimeType, ref IMFActivate pActivate);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMFByteStreamWrapper(IMFByteStream* pStream, IMFByteStream** ppStreamWrapper);
+		public static extern HRESULT MFCreateMFByteStreamWrapper(ref IMFByteStream pStream, out IMFByteStream* ppStreamWrapper);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaExtensionActivate(PWSTR szActivatableClassId, IUnknown* pConfiguration, Guid* riid, void** ppvObject);
+		public static extern HRESULT MFCreateMediaExtensionActivate(PWSTR szActivatableClassId, IUnknown* pConfiguration, in Guid riid, void** ppvObject);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMuxStreamAttributes(IMFCollection* pAttributesToMux, IMFAttributes** ppMuxAttribs);
+		public static extern HRESULT MFCreateMuxStreamAttributes(ref IMFCollection pAttributesToMux, out IMFAttributes* ppMuxAttribs);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMuxStreamMediaType(IMFCollection* pMediaTypesToMux, IMFMediaType** ppMuxMediaType);
+		public static extern HRESULT MFCreateMuxStreamMediaType(ref IMFCollection pMediaTypesToMux, out IMFMediaType* ppMuxMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMuxStreamSample(IMFCollection* pSamplesToMux, IMFSample** ppMuxSample);
+		public static extern HRESULT MFCreateMuxStreamSample(ref IMFCollection pSamplesToMux, out IMFSample* ppMuxSample);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFValidateMediaTypeSize(Guid FormatType, uint8* pBlock, uint32 cbSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaType(IMFMediaType** ppMFType);
+		public static extern HRESULT MFCreateMediaType(out IMFMediaType* ppMFType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMFVideoFormatFromMFMediaType(IMFMediaType* pMFType, MFVIDEOFORMAT** ppMFVF, uint32* pcbSize);
+		public static extern HRESULT MFCreateMFVideoFormatFromMFMediaType(ref IMFMediaType pMFType, out MFVIDEOFORMAT* ppMFVF, uint32* pcbSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateWaveFormatExFromMFMediaType(IMFMediaType* pMFType, WAVEFORMATEX** ppWF, uint32* pcbSize, uint32 Flags);
+		public static extern HRESULT MFCreateWaveFormatExFromMFMediaType(ref IMFMediaType pMFType, out WAVEFORMATEX* ppWF, uint32* pcbSize, uint32 Flags);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader(IMFMediaType* pMFType, VIDEOINFOHEADER* pVIH, uint32 cbBufSize, Guid* pSubtype);
+		public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader(ref IMFMediaType pMFType, in VIDEOINFOHEADER pVIH, uint32 cbBufSize, Guid* pSubtype);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader2(IMFMediaType* pMFType, VIDEOINFOHEADER2* pVIH2, uint32 cbBufSize, Guid* pSubtype);
+		public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader2(ref IMFMediaType pMFType, in VIDEOINFOHEADER2 pVIH2, uint32 cbBufSize, Guid* pSubtype);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromMPEG1VideoInfo(IMFMediaType* pMFType, MPEG1VIDEOINFO* pMP1VI, uint32 cbBufSize, Guid* pSubtype);
+		public static extern HRESULT MFInitMediaTypeFromMPEG1VideoInfo(ref IMFMediaType pMFType, in MPEG1VIDEOINFO pMP1VI, uint32 cbBufSize, Guid* pSubtype);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromMPEG2VideoInfo(IMFMediaType* pMFType, MPEG2VIDEOINFO* pMP2VI, uint32 cbBufSize, Guid* pSubtype);
+		public static extern HRESULT MFInitMediaTypeFromMPEG2VideoInfo(ref IMFMediaType pMFType, in MPEG2VIDEOINFO pMP2VI, uint32 cbBufSize, Guid* pSubtype);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCalculateBitmapImageSize(BITMAPINFOHEADER* pBMIH, uint32 cbBufSize, uint32* pcbImageSize, BOOL* pbKnown);
+		public static extern HRESULT MFCalculateBitmapImageSize(in BITMAPINFOHEADER pBMIH, uint32 cbBufSize, out uint32 pcbImageSize, BOOL* pbKnown);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCalculateImageSize(Guid* guidSubtype, uint32 unWidth, uint32 unHeight, uint32* pcbImageSize);
+		public static extern HRESULT MFCalculateImageSize(in Guid guidSubtype, uint32 unWidth, uint32 unHeight, out uint32 pcbImageSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFFrameRateToAverageTimePerFrame(uint32 unNumerator, uint32 unDenominator, uint64* punAverageTimePerFrame);
+		public static extern HRESULT MFFrameRateToAverageTimePerFrame(uint32 unNumerator, uint32 unDenominator, out uint64 punAverageTimePerFrame);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFAverageTimePerFrameToFrameRate(uint64 unAverageTimePerFrame, uint32* punNumerator, uint32* punDenominator);
+		public static extern HRESULT MFAverageTimePerFrameToFrameRate(uint64 unAverageTimePerFrame, out uint32 punNumerator, out uint32 punDenominator);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromMFVideoFormat(IMFMediaType* pMFType, MFVIDEOFORMAT* pMFVF, uint32 cbBufSize);
+		public static extern HRESULT MFInitMediaTypeFromMFVideoFormat(ref IMFMediaType pMFType, in MFVIDEOFORMAT pMFVF, uint32 cbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromWaveFormatEx(IMFMediaType* pMFType, WAVEFORMATEX* pWaveFormat, uint32 cbBufSize);
+		public static extern HRESULT MFInitMediaTypeFromWaveFormatEx(ref IMFMediaType pMFType, in WAVEFORMATEX pWaveFormat, uint32 cbBufSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitMediaTypeFromAMMediaType(IMFMediaType* pMFType, AM_MEDIA_TYPE* pAMType);
+		public static extern HRESULT MFInitMediaTypeFromAMMediaType(ref IMFMediaType pMFType, in AM_MEDIA_TYPE pAMType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE* pAMType);
+		public static extern HRESULT MFInitAMMediaTypeFromMFMediaType(ref IMFMediaType pMFType, Guid guidFormatBlockType, out AM_MEDIA_TYPE pAMType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAMMediaTypeFromMFMediaType(IMFMediaType* pMFType, Guid guidFormatBlockType, AM_MEDIA_TYPE** ppAMType);
+		public static extern HRESULT MFCreateAMMediaTypeFromMFMediaType(ref IMFMediaType pMFType, Guid guidFormatBlockType, out AM_MEDIA_TYPE* ppAMType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL MFCompareFullToPartialMediaType(IMFMediaType* pMFTypeFull, IMFMediaType* pMFTypePartial);
+		public static extern BOOL MFCompareFullToPartialMediaType(ref IMFMediaType pMFTypeFull, ref IMFMediaType pMFTypePartial);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFWrapMediaType(IMFMediaType* pOrig, Guid* MajorType, Guid* SubType, IMFMediaType** ppWrap);
+		public static extern HRESULT MFWrapMediaType(ref IMFMediaType pOrig, in Guid MajorType, in Guid SubType, out IMFMediaType* ppWrap);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFUnwrapMediaType(IMFMediaType* pWrap, IMFMediaType** ppOrig);
+		public static extern HRESULT MFUnwrapMediaType(ref IMFMediaType pWrap, out IMFMediaType* ppOrig);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMediaType(MFVIDEOFORMAT* pVideoFormat, IMFVideoMediaType** ppIVideoMediaType);
+		public static extern HRESULT MFCreateVideoMediaType(in MFVIDEOFORMAT pVideoFormat, out IMFVideoMediaType* ppIVideoMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMediaTypeFromSubtype(Guid* pAMSubtype, IMFVideoMediaType** ppIVideoMediaType);
+		public static extern HRESULT MFCreateVideoMediaTypeFromSubtype(in Guid pAMSubtype, out IMFVideoMediaType* ppIVideoMediaType);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL MFIsFormatYUV(uint32 Format);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader(BITMAPINFOHEADER* pbmihBitMapInfoHeader, uint32 dwPixelAspectRatioX, uint32 dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, uint64 VideoFlags, uint64 qwFramesPerSecondNumerator, uint64 qwFramesPerSecondDenominator, uint32 dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
+		public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader(in BITMAPINFOHEADER pbmihBitMapInfoHeader, uint32 dwPixelAspectRatioX, uint32 dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, uint64 VideoFlags, uint64 qwFramesPerSecondNumerator, uint64 qwFramesPerSecondDenominator, uint32 dwMaxBitRate, out IMFVideoMediaType* ppIVideoMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetStrideForBitmapInfoHeader(uint32 format, uint32 dwWidth, int32* pStride);
+		public static extern HRESULT MFGetStrideForBitmapInfoHeader(uint32 format, uint32 dwWidth, out int32 pStride);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetPlaneSize(uint32 format, uint32 dwWidth, uint32 dwHeight, uint32* pdwPlaneSize);
+		public static extern HRESULT MFGetPlaneSize(uint32 format, uint32 dwWidth, uint32 dwHeight, out uint32 pdwPlaneSize);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx(BITMAPINFOHEADER* pbmihBitMapInfoHeader, uint32 cbBitMapInfoHeader, uint32 dwPixelAspectRatioX, uint32 dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, uint64 VideoFlags, uint32 dwFramesPerSecondNumerator, uint32 dwFramesPerSecondDenominator, uint32 dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
+		public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx(in BITMAPINFOHEADER pbmihBitMapInfoHeader, uint32 cbBitMapInfoHeader, uint32 dwPixelAspectRatioX, uint32 dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, uint64 VideoFlags, uint32 dwFramesPerSecondNumerator, uint32 dwFramesPerSecondDenominator, uint32 dwMaxBitRate, out IMFVideoMediaType* ppIVideoMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaTypeFromRepresentation(Guid guidRepresentation, void* pvRepresentation, IMFMediaType** ppIMediaType);
+		public static extern HRESULT MFCreateMediaTypeFromRepresentation(Guid guidRepresentation, void* pvRepresentation, out IMFMediaType* ppIMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateAudioMediaType(WAVEFORMATEX* pAudioFormat, IMFAudioMediaType** ppIAudioMediaType);
+		public static extern HRESULT MFCreateAudioMediaType(in WAVEFORMATEX pAudioFormat, out IMFAudioMediaType* ppIAudioMediaType);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 MFGetUncompressedVideoFormat(MFVIDEOFORMAT* pVideoFormat);
+		public static extern uint32 MFGetUncompressedVideoFormat(in MFVIDEOFORMAT pVideoFormat);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitVideoFormat(MFVIDEOFORMAT* pVideoFormat, MFStandardVideoFormat type);
+		public static extern HRESULT MFInitVideoFormat(ref MFVIDEOFORMAT pVideoFormat, MFStandardVideoFormat type);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFInitVideoFormat_RGB(MFVIDEOFORMAT* pVideoFormat, uint32 dwWidth, uint32 dwHeight, uint32 D3Dfmt);
+		public static extern HRESULT MFInitVideoFormat_RGB(ref MFVIDEOFORMAT pVideoFormat, uint32 dwWidth, uint32 dwHeight, uint32 D3Dfmt);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFConvertColorInfoToDXVA(uint32* pdwToDXVA, MFVIDEOFORMAT* pFromFormat);
+		public static extern HRESULT MFConvertColorInfoToDXVA(out uint32 pdwToDXVA, in MFVIDEOFORMAT pFromFormat);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFConvertColorInfoFromDXVA(MFVIDEOFORMAT* pToFormat, uint32 dwFromDXVA);
+		public static extern HRESULT MFConvertColorInfoFromDXVA(out MFVIDEOFORMAT pToFormat, uint32 dwFromDXVA);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCopyImage(uint8* pDest, int32 lDestStride, uint8* pSrc, int32 lSrcStride, uint32 dwWidthInBytes, uint32 dwLines);
+		public static extern HRESULT MFCopyImage(out uint8 pDest, int32 lDestStride, in uint8 pSrc, int32 lSrcStride, uint32 dwWidthInBytes, uint32 dwLines);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFConvertFromFP16Array(float* pDest, uint16* pSrc, uint32 dwCount);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFConvertToFP16Array(uint16* pDest, float* pSrc, uint32 dwCount);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreate2DMediaBuffer(uint32 dwWidth, uint32 dwHeight, uint32 dwFourCC, BOOL fBottomUp, IMFMediaBuffer** ppBuffer);
+		public static extern HRESULT MFCreate2DMediaBuffer(uint32 dwWidth, uint32 dwHeight, uint32 dwFourCC, BOOL fBottomUp, out IMFMediaBuffer* ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateMediaBufferFromMediaType(IMFMediaType* pMediaType, int64 llDuration, uint32 dwMinLength, uint32 dwMinAlignment, IMFMediaBuffer** ppBuffer);
+		public static extern HRESULT MFCreateMediaBufferFromMediaType(ref IMFMediaType pMediaType, int64 llDuration, uint32 dwMinLength, uint32 dwMinAlignment, out IMFMediaBuffer* ppBuffer);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateCollection(IMFCollection** ppIMFCollection);
+		public static extern HRESULT MFCreateCollection(out IMFCollection* ppIMFCollection);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void* MFHeapAlloc(uint nSize, uint32 dwFlags, PSTR pszFile, int32 line, EAllocationType eat);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
@@ -20848,47 +20848,47 @@ namespace Win32
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern int64 MFllMulDiv(int64 a, int64 b, int64 c, int64 d);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFGetContentProtectionSystemCLSID(Guid* guidProtectionSystemID, Guid* pclsid);
+		public static extern HRESULT MFGetContentProtectionSystemCLSID(in Guid guidProtectionSystemID, out Guid pclsid);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCombineSamples(IMFSample* pSample, IMFSample* pSampleToAdd, uint32 dwMaxMergedDurationInMS, BOOL* pMerged);
+		public static extern HRESULT MFCombineSamples(ref IMFSample pSample, ref IMFSample pSampleToAdd, uint32 dwMaxMergedDurationInMS, out BOOL pMerged);
 		[Import("mfplat.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFSplitSample(IMFSample* pSample, IMFSample** pOutputSamples, uint32 dwOutputSampleMaxCount, uint32* pdwOutputSampleCount);
+		public static extern HRESULT MFSplitSample(ref IMFSample pSample, IMFSample** pOutputSamples, uint32 dwOutputSampleMaxCount, out uint32 pdwOutputSampleCount);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSourceReaderFromURL(PWSTR pwszURL, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
+		public static extern HRESULT MFCreateSourceReaderFromURL(PWSTR pwszURL, IMFAttributes* pAttributes, out IMFSourceReader* ppSourceReader);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSourceReaderFromByteStream(IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
+		public static extern HRESULT MFCreateSourceReaderFromByteStream(ref IMFByteStream pByteStream, IMFAttributes* pAttributes, out IMFSourceReader* ppSourceReader);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSourceReaderFromMediaSource(IMFMediaSource* pMediaSource, IMFAttributes* pAttributes, IMFSourceReader** ppSourceReader);
+		public static extern HRESULT MFCreateSourceReaderFromMediaSource(ref IMFMediaSource pMediaSource, IMFAttributes* pAttributes, out IMFSourceReader* ppSourceReader);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSinkWriterFromURL(PWSTR pwszOutputURL, IMFByteStream* pByteStream, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
+		public static extern HRESULT MFCreateSinkWriterFromURL(PWSTR pwszOutputURL, IMFByteStream* pByteStream, IMFAttributes* pAttributes, out IMFSinkWriter* ppSinkWriter);
 		[Import("mfreadwrite.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateSinkWriterFromMediaSink(IMFMediaSink* pMediaSink, IMFAttributes* pAttributes, IMFSinkWriter** ppSinkWriter);
+		public static extern HRESULT MFCreateSinkWriterFromMediaSink(ref IMFMediaSink pMediaSink, IMFAttributes* pAttributes, out IMFSinkWriter* ppSinkWriter);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoPresenter(IUnknown* pOwner, Guid* riidDevice, Guid* riid, void** ppVideoPresenter);
+		public static extern HRESULT MFCreateVideoPresenter(IUnknown* pOwner, in Guid riidDevice, in Guid riid, void** ppVideoPresenter);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMixer(IUnknown* pOwner, Guid* riidDevice, Guid* riid, void** ppv);
+		public static extern HRESULT MFCreateVideoMixer(IUnknown* pOwner, in Guid riidDevice, in Guid riid, void** ppv);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoMixerAndPresenter(IUnknown* pMixerOwner, IUnknown* pPresenterOwner, Guid* riidMixer, void** ppvVideoMixer, Guid* riidPresenter, void** ppvVideoPresenter);
+		public static extern HRESULT MFCreateVideoMixerAndPresenter(IUnknown* pMixerOwner, IUnknown* pPresenterOwner, in Guid riidMixer, void** ppvVideoMixer, in Guid riidPresenter, void** ppvVideoPresenter);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoRenderer(Guid* riidRenderer, void** ppVideoRenderer);
+		public static extern HRESULT MFCreateVideoRenderer(in Guid riidRenderer, void** ppVideoRenderer);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoSampleFromSurface(IUnknown* pUnkSurface, IMFSample** ppSample);
+		public static extern HRESULT MFCreateVideoSampleFromSurface(ref IUnknown pUnkSurface, out IMFSample* ppSample);
 		[Import("evr.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVideoSampleAllocator(Guid* riid, void** ppSampleAllocator);
+		public static extern HRESULT MFCreateVideoSampleAllocator(in Guid riid, void** ppSampleAllocator);
 		[Import("mfplay.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT MFPCreateMediaPlayer(PWSTR pwszURL, BOOL fStartPlayback, MFP_CREATION_OPTIONS creationOptions, IMFPMediaPlayerCallback* pCallback, HWND hWnd, IMFPMediaPlayer** ppMediaPlayer);
 		[Import("mf.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateEncryptedMediaExtensionsStoreActivate(IMFPMPHostApp* pmpHost, IStream* objectStream, PWSTR classId, IMFActivate** activate);
+		public static extern HRESULT MFCreateEncryptedMediaExtensionsStoreActivate(ref IMFPMPHostApp pmpHost, ref IStream objectStream, PWSTR classId, out IMFActivate* activate);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFCreateVirtualCamera(__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001 type, __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0002 lifetime, __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0003 access, PWSTR friendlyName, PWSTR sourceId, Guid* categories, uint32 categoryCount, IMFVirtualCamera** virtualCamera);
+		public static extern HRESULT MFCreateVirtualCamera(__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001 type, __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0002 lifetime, __MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0003 access, PWSTR friendlyName, PWSTR sourceId, Guid* categories, uint32 categoryCount, out IMFVirtualCamera* virtualCamera);
 		[Import("mfsensorgroup.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT MFIsVirtualCameraTypeSupported(__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001 type, BOOL* supported);
+		public static extern HRESULT MFIsVirtualCameraTypeSupported(__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001 type, out BOOL supported);
 		[Import("opmxbox.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HRESULT OPMXboxEnableHDCP(OPM_HDCP_TYPE HDCPType);
 		[Import("opmxbox.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OPMXboxGetHDCPStatus(OPM_HDCP_STATUS* pHDCPStatus);
+		public static extern HRESULT OPMXboxGetHDCPStatus(out OPM_HDCP_STATUS pHDCPStatus);
 		[Import("opmxbox.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern HRESULT OPMXboxGetHDCPStatusAndType(OPM_HDCP_STATUS* pHDCPStatus, OPM_HDCP_TYPE* pHDCPType);
+		public static extern HRESULT OPMXboxGetHDCPStatusAndType(out OPM_HDCP_STATUS pHDCPStatus, out OPM_HDCP_TYPE pHDCPType);
 		
 	}
 }

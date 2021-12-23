@@ -95,9 +95,9 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsDisposeRuntime(void* runtime);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsGetRuntimeMemoryUsage(void* runtime, uint* memoryUsage);
+		public static extern JsErrorCode JsGetRuntimeMemoryUsage(void* runtime, out uint memoryUsage);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsGetRuntimeMemoryLimit(void* runtime, uint* memoryLimit);
+		public static extern JsErrorCode JsGetRuntimeMemoryLimit(void* runtime, out uint memoryLimit);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsSetRuntimeMemoryLimit(void* runtime, uint memoryLimit);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -109,7 +109,7 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsRelease(void* @ref, uint32* count);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsCreateContext(void* runtime, IDebugApplication64* debugApplication, void** newContext);
+		public static extern JsErrorCode JsCreateContext(void* runtime, ref IDebugApplication64 debugApplication, void** newContext);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetCurrentContext(void** currentContext);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -117,7 +117,7 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetRuntime(void* context, void** runtime);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsStartDebugging(IDebugApplication64* debugApplication);
+		public static extern JsErrorCode JsStartDebugging(ref IDebugApplication64 debugApplication);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsIdle(uint32* nextIdleTick);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -125,15 +125,15 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsRunScript(PWSTR script, uint sourceContext, PWSTR sourceUrl, void** result);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsSerializeScript(PWSTR script, uint8* buffer, uint32* bufferSize);
+		public static extern JsErrorCode JsSerializeScript(PWSTR script, uint8* buffer, out uint32 bufferSize);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsParseSerializedScript(PWSTR script, uint8* buffer, uint sourceContext, PWSTR sourceUrl, void** result);
+		public static extern JsErrorCode JsParseSerializedScript(PWSTR script, ref uint8 buffer, uint sourceContext, PWSTR sourceUrl, void** result);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsRunSerializedScript(PWSTR script, uint8* buffer, uint sourceContext, PWSTR sourceUrl, void** result);
+		public static extern JsErrorCode JsRunSerializedScript(PWSTR script, ref uint8 buffer, uint sourceContext, PWSTR sourceUrl, void** result);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetPropertyIdFromName(PWSTR name, void** propertyId);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsGetPropertyNameFromId(void* propertyId, uint16** name);
+		public static extern JsErrorCode JsGetPropertyNameFromId(void* propertyId, out uint16* name);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetUndefinedValue(void** undefinedValue);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -145,31 +145,31 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsBoolToBoolean(uint8 value, void** booleanValue);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsBooleanToBool(void* value, Boolean* boolValue);
+		public static extern JsErrorCode JsBooleanToBool(void* value, out Boolean boolValue);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsConvertValueToBoolean(void* value, void** booleanValue);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsGetValueType(void* value, JsValueType* type);
+		public static extern JsErrorCode JsGetValueType(void* value, out JsValueType type);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsDoubleToNumber(double doubleValue, void** value);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsIntToNumber(int32 intValue, void** value);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsNumberToDouble(void* value, double* doubleValue);
+		public static extern JsErrorCode JsNumberToDouble(void* value, out double doubleValue);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsConvertValueToNumber(void* value, void** numberValue);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsGetStringLength(void* stringValue, int32* length);
+		public static extern JsErrorCode JsGetStringLength(void* stringValue, out int32 length);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsPointerToString(char16* stringValue, uint stringLength, void** value);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsStringToPointer(void* value, uint16** stringValue, uint* stringLength);
+		public static extern JsErrorCode JsStringToPointer(void* value, out uint16* stringValue, out uint stringLength);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsConvertValueToString(void* value, void** stringValue);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsVariantToValue(VARIANT* variant, void** value);
+		public static extern JsErrorCode JsVariantToValue(ref VARIANT variant, void** value);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsValueToVariant(void* object, VARIANT* variant);
+		public static extern JsErrorCode JsValueToVariant(void* object, out VARIANT variant);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetGlobalObject(void** globalObject);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -183,7 +183,7 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsSetPrototype(void* object, void* prototypeObject);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsGetExtensionAllowed(void* object, Boolean* value);
+		public static extern JsErrorCode JsGetExtensionAllowed(void* object, out Boolean value);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsPreventExtension(void* object);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -195,13 +195,13 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsSetProperty(void* object, void* propertyId, void* value, uint8 useStrictRules);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsHasProperty(void* object, void* propertyId, Boolean* hasProperty);
+		public static extern JsErrorCode JsHasProperty(void* object, void* propertyId, out Boolean hasProperty);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsDeleteProperty(void* object, void* propertyId, uint8 useStrictRules, void** result);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsDefineProperty(void* object, void* propertyId, void* propertyDescriptor, Boolean* result);
+		public static extern JsErrorCode JsDefineProperty(void* object, void* propertyId, void* propertyDescriptor, out Boolean result);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsHasIndexedProperty(void* object, void* index, Boolean* result);
+		public static extern JsErrorCode JsHasIndexedProperty(void* object, void* index, out Boolean result);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetIndexedProperty(void* object, void* index, void** result);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -209,11 +209,11 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsDeleteIndexedProperty(void* object, void* index);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsEquals(void* object1, void* object2, Boolean* result);
+		public static extern JsErrorCode JsEquals(void* object1, void* object2, out Boolean result);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsStrictEquals(void* object1, void* object2, Boolean* result);
+		public static extern JsErrorCode JsStrictEquals(void* object1, void* object2, out Boolean result);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsHasExternalData(void* object, Boolean* value);
+		public static extern JsErrorCode JsHasExternalData(void* object, out Boolean value);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetExternalData(void* object, void** externalData);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -239,7 +239,7 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsCreateURIError(void* message, void** error);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsHasException(Boolean* hasException);
+		public static extern JsErrorCode JsHasException(out Boolean hasException);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsGetAndClearException(void** exception);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
@@ -249,15 +249,15 @@ namespace Win32
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsEnableRuntimeExecution(void* runtime);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsIsRuntimeExecutionDisabled(void* runtime, Boolean* isDisabled);
+		public static extern JsErrorCode JsIsRuntimeExecutionDisabled(void* runtime, out Boolean isDisabled);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsStartProfiling(IActiveScriptProfilerCallback* callback, PROFILER_EVENT_MASK eventMask, uint32 context);
+		public static extern JsErrorCode JsStartProfiling(ref IActiveScriptProfilerCallback callback, PROFILER_EVENT_MASK eventMask, uint32 context);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern JsErrorCode JsStopProfiling(HRESULT reason);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsEnumerateHeap(IActiveScriptProfilerHeapEnum** enumerator);
+		public static extern JsErrorCode JsEnumerateHeap(out IActiveScriptProfilerHeapEnum* enumerator);
 		[Import("chakra.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern JsErrorCode JsIsEnumeratingHeap(Boolean* isEnumeratingHeap);
+		public static extern JsErrorCode JsIsEnumeratingHeap(out Boolean isEnumeratingHeap);
 		
 	}
 }

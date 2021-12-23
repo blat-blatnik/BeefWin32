@@ -241,24 +241,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT SetTrigger(TASK_TRIGGER* pTrigger) mut
+			public HRESULT SetTrigger(in TASK_TRIGGER pTrigger) mut
 			{
-				return VT.SetTrigger(&this, pTrigger);
+				return VT.SetTrigger(ref this, pTrigger);
 			}
-			public HRESULT GetTrigger(TASK_TRIGGER* pTrigger) mut
+			public HRESULT GetTrigger(out TASK_TRIGGER pTrigger) mut
 			{
-				return VT.GetTrigger(&this, pTrigger);
+				return VT.GetTrigger(ref this, out pTrigger);
 			}
-			public HRESULT GetTriggerString(PWSTR* ppwszTrigger) mut
+			public HRESULT GetTriggerString(out PWSTR ppwszTrigger) mut
 			{
-				return VT.GetTriggerString(&this, ppwszTrigger);
+				return VT.GetTriggerString(ref this, out ppwszTrigger);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITaskTrigger *self, TASK_TRIGGER* pTrigger) SetTrigger;
-				public new function HRESULT(ITaskTrigger *self, TASK_TRIGGER* pTrigger) GetTrigger;
-				public new function HRESULT(ITaskTrigger *self, PWSTR* ppwszTrigger) GetTriggerString;
+				public new function HRESULT(ref ITaskTrigger self, in TASK_TRIGGER pTrigger) SetTrigger;
+				public new function HRESULT(ref ITaskTrigger self, out TASK_TRIGGER pTrigger) GetTrigger;
+				public new function HRESULT(ref ITaskTrigger self, out PWSTR ppwszTrigger) GetTriggerString;
 			}
 		}
 		[CRepr]
@@ -268,154 +268,154 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT CreateTrigger(uint16* piNewTrigger, ITaskTrigger** ppTrigger) mut
+			public HRESULT CreateTrigger(out uint16 piNewTrigger, out ITaskTrigger* ppTrigger) mut
 			{
-				return VT.CreateTrigger(&this, piNewTrigger, ppTrigger);
+				return VT.CreateTrigger(ref this, out piNewTrigger, out ppTrigger);
 			}
 			public HRESULT DeleteTrigger(uint16 iTrigger) mut
 			{
-				return VT.DeleteTrigger(&this, iTrigger);
+				return VT.DeleteTrigger(ref this, iTrigger);
 			}
-			public HRESULT GetTriggerCount(uint16* pwCount) mut
+			public HRESULT GetTriggerCount(out uint16 pwCount) mut
 			{
-				return VT.GetTriggerCount(&this, pwCount);
+				return VT.GetTriggerCount(ref this, out pwCount);
 			}
-			public HRESULT GetTrigger(uint16 iTrigger, ITaskTrigger** ppTrigger) mut
+			public HRESULT GetTrigger(uint16 iTrigger, out ITaskTrigger* ppTrigger) mut
 			{
-				return VT.GetTrigger(&this, iTrigger, ppTrigger);
+				return VT.GetTrigger(ref this, iTrigger, out ppTrigger);
 			}
-			public HRESULT GetTriggerString(uint16 iTrigger, PWSTR* ppwszTrigger) mut
+			public HRESULT GetTriggerString(uint16 iTrigger, out PWSTR ppwszTrigger) mut
 			{
-				return VT.GetTriggerString(&this, iTrigger, ppwszTrigger);
+				return VT.GetTriggerString(ref this, iTrigger, out ppwszTrigger);
 			}
-			public HRESULT GetRunTimes(SYSTEMTIME* pstBegin, SYSTEMTIME* pstEnd, uint16* pCount, SYSTEMTIME** rgstTaskTimes) mut
+			public HRESULT GetRunTimes(in SYSTEMTIME pstBegin, in SYSTEMTIME pstEnd, out uint16 pCount, out SYSTEMTIME* rgstTaskTimes) mut
 			{
-				return VT.GetRunTimes(&this, pstBegin, pstEnd, pCount, rgstTaskTimes);
+				return VT.GetRunTimes(ref this, pstBegin, pstEnd, out pCount, out rgstTaskTimes);
 			}
-			public HRESULT GetNextRunTime(SYSTEMTIME* pstNextRun) mut
+			public HRESULT GetNextRunTime(out SYSTEMTIME pstNextRun) mut
 			{
-				return VT.GetNextRunTime(&this, pstNextRun);
+				return VT.GetNextRunTime(ref this, out pstNextRun);
 			}
 			public HRESULT SetIdleWait(uint16 wIdleMinutes, uint16 wDeadlineMinutes) mut
 			{
-				return VT.SetIdleWait(&this, wIdleMinutes, wDeadlineMinutes);
+				return VT.SetIdleWait(ref this, wIdleMinutes, wDeadlineMinutes);
 			}
-			public HRESULT GetIdleWait(uint16* pwIdleMinutes, uint16* pwDeadlineMinutes) mut
+			public HRESULT GetIdleWait(out uint16 pwIdleMinutes, out uint16 pwDeadlineMinutes) mut
 			{
-				return VT.GetIdleWait(&this, pwIdleMinutes, pwDeadlineMinutes);
+				return VT.GetIdleWait(ref this, out pwIdleMinutes, out pwDeadlineMinutes);
 			}
 			public HRESULT Run() mut
 			{
-				return VT.Run(&this);
+				return VT.Run(ref this);
 			}
 			public HRESULT Terminate() mut
 			{
-				return VT.Terminate(&this);
+				return VT.Terminate(ref this);
 			}
 			public HRESULT EditWorkItem(HWND hParent, uint32 dwReserved) mut
 			{
-				return VT.EditWorkItem(&this, hParent, dwReserved);
+				return VT.EditWorkItem(ref this, hParent, dwReserved);
 			}
-			public HRESULT GetMostRecentRunTime(SYSTEMTIME* pstLastRun) mut
+			public HRESULT GetMostRecentRunTime(out SYSTEMTIME pstLastRun) mut
 			{
-				return VT.GetMostRecentRunTime(&this, pstLastRun);
+				return VT.GetMostRecentRunTime(ref this, out pstLastRun);
 			}
-			public HRESULT GetStatus(HRESULT* phrStatus) mut
+			public HRESULT GetStatus(out HRESULT phrStatus) mut
 			{
-				return VT.GetStatus(&this, phrStatus);
+				return VT.GetStatus(ref this, out phrStatus);
 			}
-			public HRESULT GetExitCode(uint32* pdwExitCode) mut
+			public HRESULT GetExitCode(out uint32 pdwExitCode) mut
 			{
-				return VT.GetExitCode(&this, pdwExitCode);
+				return VT.GetExitCode(ref this, out pdwExitCode);
 			}
 			public HRESULT SetComment(PWSTR pwszComment) mut
 			{
-				return VT.SetComment(&this, pwszComment);
+				return VT.SetComment(ref this, pwszComment);
 			}
-			public HRESULT GetComment(PWSTR* ppwszComment) mut
+			public HRESULT GetComment(out PWSTR ppwszComment) mut
 			{
-				return VT.GetComment(&this, ppwszComment);
+				return VT.GetComment(ref this, out ppwszComment);
 			}
 			public HRESULT SetCreator(PWSTR pwszCreator) mut
 			{
-				return VT.SetCreator(&this, pwszCreator);
+				return VT.SetCreator(ref this, pwszCreator);
 			}
-			public HRESULT GetCreator(PWSTR* ppwszCreator) mut
+			public HRESULT GetCreator(out PWSTR ppwszCreator) mut
 			{
-				return VT.GetCreator(&this, ppwszCreator);
+				return VT.GetCreator(ref this, out ppwszCreator);
 			}
-			public HRESULT SetWorkItemData(uint16 cbData, uint8* rgbData) mut
+			public HRESULT SetWorkItemData(uint16 cbData, ref uint8 rgbData) mut
 			{
-				return VT.SetWorkItemData(&this, cbData, rgbData);
+				return VT.SetWorkItemData(ref this, cbData, ref rgbData);
 			}
-			public HRESULT GetWorkItemData(uint16* pcbData, uint8** prgbData) mut
+			public HRESULT GetWorkItemData(out uint16 pcbData, out uint8* prgbData) mut
 			{
-				return VT.GetWorkItemData(&this, pcbData, prgbData);
+				return VT.GetWorkItemData(ref this, out pcbData, out prgbData);
 			}
 			public HRESULT SetErrorRetryCount(uint16 wRetryCount) mut
 			{
-				return VT.SetErrorRetryCount(&this, wRetryCount);
+				return VT.SetErrorRetryCount(ref this, wRetryCount);
 			}
-			public HRESULT GetErrorRetryCount(uint16* pwRetryCount) mut
+			public HRESULT GetErrorRetryCount(out uint16 pwRetryCount) mut
 			{
-				return VT.GetErrorRetryCount(&this, pwRetryCount);
+				return VT.GetErrorRetryCount(ref this, out pwRetryCount);
 			}
 			public HRESULT SetErrorRetryInterval(uint16 wRetryInterval) mut
 			{
-				return VT.SetErrorRetryInterval(&this, wRetryInterval);
+				return VT.SetErrorRetryInterval(ref this, wRetryInterval);
 			}
-			public HRESULT GetErrorRetryInterval(uint16* pwRetryInterval) mut
+			public HRESULT GetErrorRetryInterval(out uint16 pwRetryInterval) mut
 			{
-				return VT.GetErrorRetryInterval(&this, pwRetryInterval);
+				return VT.GetErrorRetryInterval(ref this, out pwRetryInterval);
 			}
 			public HRESULT SetFlags(uint32 dwFlags) mut
 			{
-				return VT.SetFlags(&this, dwFlags);
+				return VT.SetFlags(ref this, dwFlags);
 			}
-			public HRESULT ComGetFlags(uint32* pdwFlags) mut
+			public HRESULT ComGetFlags(out uint32 pdwFlags) mut
 			{
-				return VT.ComGetFlags(&this, pdwFlags);
+				return VT.ComGetFlags(ref this, out pdwFlags);
 			}
 			public HRESULT SetAccountInformation(PWSTR pwszAccountName, PWSTR pwszPassword) mut
 			{
-				return VT.SetAccountInformation(&this, pwszAccountName, pwszPassword);
+				return VT.SetAccountInformation(ref this, pwszAccountName, pwszPassword);
 			}
-			public HRESULT GetAccountInformation(PWSTR* ppwszAccountName) mut
+			public HRESULT GetAccountInformation(out PWSTR ppwszAccountName) mut
 			{
-				return VT.GetAccountInformation(&this, ppwszAccountName);
+				return VT.GetAccountInformation(ref this, out ppwszAccountName);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IScheduledWorkItem *self, uint16* piNewTrigger, ITaskTrigger** ppTrigger) CreateTrigger;
-				public new function HRESULT(IScheduledWorkItem *self, uint16 iTrigger) DeleteTrigger;
-				public new function HRESULT(IScheduledWorkItem *self, uint16* pwCount) GetTriggerCount;
-				public new function HRESULT(IScheduledWorkItem *self, uint16 iTrigger, ITaskTrigger** ppTrigger) GetTrigger;
-				public new function HRESULT(IScheduledWorkItem *self, uint16 iTrigger, PWSTR* ppwszTrigger) GetTriggerString;
-				public new function HRESULT(IScheduledWorkItem *self, SYSTEMTIME* pstBegin, SYSTEMTIME* pstEnd, uint16* pCount, SYSTEMTIME** rgstTaskTimes) GetRunTimes;
-				public new function HRESULT(IScheduledWorkItem *self, SYSTEMTIME* pstNextRun) GetNextRunTime;
-				public new function HRESULT(IScheduledWorkItem *self, uint16 wIdleMinutes, uint16 wDeadlineMinutes) SetIdleWait;
-				public new function HRESULT(IScheduledWorkItem *self, uint16* pwIdleMinutes, uint16* pwDeadlineMinutes) GetIdleWait;
-				public new function HRESULT(IScheduledWorkItem *self) Run;
-				public new function HRESULT(IScheduledWorkItem *self) Terminate;
-				public new function HRESULT(IScheduledWorkItem *self, HWND hParent, uint32 dwReserved) EditWorkItem;
-				public new function HRESULT(IScheduledWorkItem *self, SYSTEMTIME* pstLastRun) GetMostRecentRunTime;
-				public new function HRESULT(IScheduledWorkItem *self, HRESULT* phrStatus) GetStatus;
-				public new function HRESULT(IScheduledWorkItem *self, uint32* pdwExitCode) GetExitCode;
-				public new function HRESULT(IScheduledWorkItem *self, PWSTR pwszComment) SetComment;
-				public new function HRESULT(IScheduledWorkItem *self, PWSTR* ppwszComment) GetComment;
-				public new function HRESULT(IScheduledWorkItem *self, PWSTR pwszCreator) SetCreator;
-				public new function HRESULT(IScheduledWorkItem *self, PWSTR* ppwszCreator) GetCreator;
-				public new function HRESULT(IScheduledWorkItem *self, uint16 cbData, uint8* rgbData) SetWorkItemData;
-				public new function HRESULT(IScheduledWorkItem *self, uint16* pcbData, uint8** prgbData) GetWorkItemData;
-				public new function HRESULT(IScheduledWorkItem *self, uint16 wRetryCount) SetErrorRetryCount;
-				public new function HRESULT(IScheduledWorkItem *self, uint16* pwRetryCount) GetErrorRetryCount;
-				public new function HRESULT(IScheduledWorkItem *self, uint16 wRetryInterval) SetErrorRetryInterval;
-				public new function HRESULT(IScheduledWorkItem *self, uint16* pwRetryInterval) GetErrorRetryInterval;
-				public new function HRESULT(IScheduledWorkItem *self, uint32 dwFlags) SetFlags;
-				public new function HRESULT(IScheduledWorkItem *self, uint32* pdwFlags) ComGetFlags;
-				public new function HRESULT(IScheduledWorkItem *self, PWSTR pwszAccountName, PWSTR pwszPassword) SetAccountInformation;
-				public new function HRESULT(IScheduledWorkItem *self, PWSTR* ppwszAccountName) GetAccountInformation;
+				public new function HRESULT(ref IScheduledWorkItem self, out uint16 piNewTrigger, out ITaskTrigger* ppTrigger) CreateTrigger;
+				public new function HRESULT(ref IScheduledWorkItem self, uint16 iTrigger) DeleteTrigger;
+				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pwCount) GetTriggerCount;
+				public new function HRESULT(ref IScheduledWorkItem self, uint16 iTrigger, out ITaskTrigger* ppTrigger) GetTrigger;
+				public new function HRESULT(ref IScheduledWorkItem self, uint16 iTrigger, out PWSTR ppwszTrigger) GetTriggerString;
+				public new function HRESULT(ref IScheduledWorkItem self, in SYSTEMTIME pstBegin, in SYSTEMTIME pstEnd, out uint16 pCount, out SYSTEMTIME* rgstTaskTimes) GetRunTimes;
+				public new function HRESULT(ref IScheduledWorkItem self, out SYSTEMTIME pstNextRun) GetNextRunTime;
+				public new function HRESULT(ref IScheduledWorkItem self, uint16 wIdleMinutes, uint16 wDeadlineMinutes) SetIdleWait;
+				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pwIdleMinutes, out uint16 pwDeadlineMinutes) GetIdleWait;
+				public new function HRESULT(ref IScheduledWorkItem self) Run;
+				public new function HRESULT(ref IScheduledWorkItem self) Terminate;
+				public new function HRESULT(ref IScheduledWorkItem self, HWND hParent, uint32 dwReserved) EditWorkItem;
+				public new function HRESULT(ref IScheduledWorkItem self, out SYSTEMTIME pstLastRun) GetMostRecentRunTime;
+				public new function HRESULT(ref IScheduledWorkItem self, out HRESULT phrStatus) GetStatus;
+				public new function HRESULT(ref IScheduledWorkItem self, out uint32 pdwExitCode) GetExitCode;
+				public new function HRESULT(ref IScheduledWorkItem self, PWSTR pwszComment) SetComment;
+				public new function HRESULT(ref IScheduledWorkItem self, out PWSTR ppwszComment) GetComment;
+				public new function HRESULT(ref IScheduledWorkItem self, PWSTR pwszCreator) SetCreator;
+				public new function HRESULT(ref IScheduledWorkItem self, out PWSTR ppwszCreator) GetCreator;
+				public new function HRESULT(ref IScheduledWorkItem self, uint16 cbData, ref uint8 rgbData) SetWorkItemData;
+				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pcbData, out uint8* prgbData) GetWorkItemData;
+				public new function HRESULT(ref IScheduledWorkItem self, uint16 wRetryCount) SetErrorRetryCount;
+				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pwRetryCount) GetErrorRetryCount;
+				public new function HRESULT(ref IScheduledWorkItem self, uint16 wRetryInterval) SetErrorRetryInterval;
+				public new function HRESULT(ref IScheduledWorkItem self, out uint16 pwRetryInterval) GetErrorRetryInterval;
+				public new function HRESULT(ref IScheduledWorkItem self, uint32 dwFlags) SetFlags;
+				public new function HRESULT(ref IScheduledWorkItem self, out uint32 pdwFlags) ComGetFlags;
+				public new function HRESULT(ref IScheduledWorkItem self, PWSTR pwszAccountName, PWSTR pwszPassword) SetAccountInformation;
+				public new function HRESULT(ref IScheduledWorkItem self, out PWSTR ppwszAccountName) GetAccountInformation;
 			}
 		}
 		[CRepr]
@@ -427,67 +427,67 @@ namespace Win32
 			
 			public HRESULT SetApplicationName(PWSTR pwszApplicationName) mut
 			{
-				return VT.SetApplicationName(&this, pwszApplicationName);
+				return VT.SetApplicationName(ref this, pwszApplicationName);
 			}
-			public HRESULT GetApplicationName(PWSTR* ppwszApplicationName) mut
+			public HRESULT GetApplicationName(out PWSTR ppwszApplicationName) mut
 			{
-				return VT.GetApplicationName(&this, ppwszApplicationName);
+				return VT.GetApplicationName(ref this, out ppwszApplicationName);
 			}
 			public HRESULT SetParameters(PWSTR pwszParameters) mut
 			{
-				return VT.SetParameters(&this, pwszParameters);
+				return VT.SetParameters(ref this, pwszParameters);
 			}
-			public HRESULT GetParameters(PWSTR* ppwszParameters) mut
+			public HRESULT GetParameters(out PWSTR ppwszParameters) mut
 			{
-				return VT.GetParameters(&this, ppwszParameters);
+				return VT.GetParameters(ref this, out ppwszParameters);
 			}
 			public HRESULT SetWorkingDirectory(PWSTR pwszWorkingDirectory) mut
 			{
-				return VT.SetWorkingDirectory(&this, pwszWorkingDirectory);
+				return VT.SetWorkingDirectory(ref this, pwszWorkingDirectory);
 			}
-			public HRESULT GetWorkingDirectory(PWSTR* ppwszWorkingDirectory) mut
+			public HRESULT GetWorkingDirectory(out PWSTR ppwszWorkingDirectory) mut
 			{
-				return VT.GetWorkingDirectory(&this, ppwszWorkingDirectory);
+				return VT.GetWorkingDirectory(ref this, out ppwszWorkingDirectory);
 			}
 			public HRESULT SetPriority(uint32 dwPriority) mut
 			{
-				return VT.SetPriority(&this, dwPriority);
+				return VT.SetPriority(ref this, dwPriority);
 			}
-			public HRESULT GetPriority(uint32* pdwPriority) mut
+			public HRESULT GetPriority(out uint32 pdwPriority) mut
 			{
-				return VT.GetPriority(&this, pdwPriority);
+				return VT.GetPriority(ref this, out pdwPriority);
 			}
 			public HRESULT SetTaskFlags(uint32 dwFlags) mut
 			{
-				return VT.SetTaskFlags(&this, dwFlags);
+				return VT.SetTaskFlags(ref this, dwFlags);
 			}
-			public HRESULT GetTaskFlags(uint32* pdwFlags) mut
+			public HRESULT GetTaskFlags(out uint32 pdwFlags) mut
 			{
-				return VT.GetTaskFlags(&this, pdwFlags);
+				return VT.GetTaskFlags(ref this, out pdwFlags);
 			}
 			public HRESULT SetMaxRunTime(uint32 dwMaxRunTimeMS) mut
 			{
-				return VT.SetMaxRunTime(&this, dwMaxRunTimeMS);
+				return VT.SetMaxRunTime(ref this, dwMaxRunTimeMS);
 			}
-			public HRESULT GetMaxRunTime(uint32* pdwMaxRunTimeMS) mut
+			public HRESULT GetMaxRunTime(out uint32 pdwMaxRunTimeMS) mut
 			{
-				return VT.GetMaxRunTime(&this, pdwMaxRunTimeMS);
+				return VT.GetMaxRunTime(ref this, out pdwMaxRunTimeMS);
 			}
 			[CRepr]
 			public struct VTable : IScheduledWorkItem.VTable
 			{
-				public new function HRESULT(ITask *self, PWSTR pwszApplicationName) SetApplicationName;
-				public new function HRESULT(ITask *self, PWSTR* ppwszApplicationName) GetApplicationName;
-				public new function HRESULT(ITask *self, PWSTR pwszParameters) SetParameters;
-				public new function HRESULT(ITask *self, PWSTR* ppwszParameters) GetParameters;
-				public new function HRESULT(ITask *self, PWSTR pwszWorkingDirectory) SetWorkingDirectory;
-				public new function HRESULT(ITask *self, PWSTR* ppwszWorkingDirectory) GetWorkingDirectory;
-				public new function HRESULT(ITask *self, uint32 dwPriority) SetPriority;
-				public new function HRESULT(ITask *self, uint32* pdwPriority) GetPriority;
-				public new function HRESULT(ITask *self, uint32 dwFlags) SetTaskFlags;
-				public new function HRESULT(ITask *self, uint32* pdwFlags) GetTaskFlags;
-				public new function HRESULT(ITask *self, uint32 dwMaxRunTimeMS) SetMaxRunTime;
-				public new function HRESULT(ITask *self, uint32* pdwMaxRunTimeMS) GetMaxRunTime;
+				public new function HRESULT(ref ITask self, PWSTR pwszApplicationName) SetApplicationName;
+				public new function HRESULT(ref ITask self, out PWSTR ppwszApplicationName) GetApplicationName;
+				public new function HRESULT(ref ITask self, PWSTR pwszParameters) SetParameters;
+				public new function HRESULT(ref ITask self, out PWSTR ppwszParameters) GetParameters;
+				public new function HRESULT(ref ITask self, PWSTR pwszWorkingDirectory) SetWorkingDirectory;
+				public new function HRESULT(ref ITask self, out PWSTR ppwszWorkingDirectory) GetWorkingDirectory;
+				public new function HRESULT(ref ITask self, uint32 dwPriority) SetPriority;
+				public new function HRESULT(ref ITask self, out uint32 pdwPriority) GetPriority;
+				public new function HRESULT(ref ITask self, uint32 dwFlags) SetTaskFlags;
+				public new function HRESULT(ref ITask self, out uint32 pdwFlags) GetTaskFlags;
+				public new function HRESULT(ref ITask self, uint32 dwMaxRunTimeMS) SetMaxRunTime;
+				public new function HRESULT(ref ITask self, out uint32 pdwMaxRunTimeMS) GetMaxRunTime;
 			}
 		}
 		[CRepr]
@@ -497,29 +497,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT Next(uint32 celt, PWSTR** rgpwszNames, uint32* pceltFetched) mut
+			public HRESULT Next(uint32 celt, out PWSTR* rgpwszNames, out uint32 pceltFetched) mut
 			{
-				return VT.Next(&this, celt, rgpwszNames, pceltFetched);
+				return VT.Next(ref this, celt, out rgpwszNames, out pceltFetched);
 			}
 			public HRESULT Skip(uint32 celt) mut
 			{
-				return VT.Skip(&this, celt);
+				return VT.Skip(ref this, celt);
 			}
 			public HRESULT Reset() mut
 			{
-				return VT.Reset(&this);
+				return VT.Reset(ref this);
 			}
-			public HRESULT Clone(IEnumWorkItems** ppEnumWorkItems) mut
+			public HRESULT Clone(out IEnumWorkItems* ppEnumWorkItems) mut
 			{
-				return VT.Clone(&this, ppEnumWorkItems);
+				return VT.Clone(ref this, out ppEnumWorkItems);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IEnumWorkItems *self, uint32 celt, PWSTR** rgpwszNames, uint32* pceltFetched) Next;
-				public new function HRESULT(IEnumWorkItems *self, uint32 celt) Skip;
-				public new function HRESULT(IEnumWorkItems *self) Reset;
-				public new function HRESULT(IEnumWorkItems *self, IEnumWorkItems** ppEnumWorkItems) Clone;
+				public new function HRESULT(ref IEnumWorkItems self, uint32 celt, out PWSTR* rgpwszNames, out uint32 pceltFetched) Next;
+				public new function HRESULT(ref IEnumWorkItems self, uint32 celt) Skip;
+				public new function HRESULT(ref IEnumWorkItems self) Reset;
+				public new function HRESULT(ref IEnumWorkItems self, out IEnumWorkItems* ppEnumWorkItems) Clone;
 			}
 		}
 		[CRepr]
@@ -531,47 +531,47 @@ namespace Win32
 			
 			public HRESULT SetTargetComputer(PWSTR pwszComputer) mut
 			{
-				return VT.SetTargetComputer(&this, pwszComputer);
+				return VT.SetTargetComputer(ref this, pwszComputer);
 			}
-			public HRESULT GetTargetComputer(PWSTR* ppwszComputer) mut
+			public HRESULT GetTargetComputer(out PWSTR ppwszComputer) mut
 			{
-				return VT.GetTargetComputer(&this, ppwszComputer);
+				return VT.GetTargetComputer(ref this, out ppwszComputer);
 			}
-			public HRESULT Enum(IEnumWorkItems** ppEnumWorkItems) mut
+			public HRESULT Enum(out IEnumWorkItems* ppEnumWorkItems) mut
 			{
-				return VT.Enum(&this, ppEnumWorkItems);
+				return VT.Enum(ref this, out ppEnumWorkItems);
 			}
-			public HRESULT Activate(PWSTR pwszName, Guid* riid, IUnknown** ppUnk) mut
+			public HRESULT Activate(PWSTR pwszName, in Guid riid, out IUnknown* ppUnk) mut
 			{
-				return VT.Activate(&this, pwszName, riid, ppUnk);
+				return VT.Activate(ref this, pwszName, riid, out ppUnk);
 			}
 			public HRESULT Delete(PWSTR pwszName) mut
 			{
-				return VT.Delete(&this, pwszName);
+				return VT.Delete(ref this, pwszName);
 			}
-			public HRESULT NewWorkItem(PWSTR pwszTaskName, Guid* rclsid, Guid* riid, IUnknown** ppUnk) mut
+			public HRESULT NewWorkItem(PWSTR pwszTaskName, in Guid rclsid, in Guid riid, out IUnknown* ppUnk) mut
 			{
-				return VT.NewWorkItem(&this, pwszTaskName, rclsid, riid, ppUnk);
+				return VT.NewWorkItem(ref this, pwszTaskName, rclsid, riid, out ppUnk);
 			}
-			public HRESULT AddWorkItem(PWSTR pwszTaskName, IScheduledWorkItem* pWorkItem) mut
+			public HRESULT AddWorkItem(PWSTR pwszTaskName, ref IScheduledWorkItem pWorkItem) mut
 			{
-				return VT.AddWorkItem(&this, pwszTaskName, pWorkItem);
+				return VT.AddWorkItem(ref this, pwszTaskName, ref pWorkItem);
 			}
-			public HRESULT IsOfType(PWSTR pwszName, Guid* riid) mut
+			public HRESULT IsOfType(PWSTR pwszName, in Guid riid) mut
 			{
-				return VT.IsOfType(&this, pwszName, riid);
+				return VT.IsOfType(ref this, pwszName, riid);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITaskScheduler *self, PWSTR pwszComputer) SetTargetComputer;
-				public new function HRESULT(ITaskScheduler *self, PWSTR* ppwszComputer) GetTargetComputer;
-				public new function HRESULT(ITaskScheduler *self, IEnumWorkItems** ppEnumWorkItems) Enum;
-				public new function HRESULT(ITaskScheduler *self, PWSTR pwszName, Guid* riid, IUnknown** ppUnk) Activate;
-				public new function HRESULT(ITaskScheduler *self, PWSTR pwszName) Delete;
-				public new function HRESULT(ITaskScheduler *self, PWSTR pwszTaskName, Guid* rclsid, Guid* riid, IUnknown** ppUnk) NewWorkItem;
-				public new function HRESULT(ITaskScheduler *self, PWSTR pwszTaskName, IScheduledWorkItem* pWorkItem) AddWorkItem;
-				public new function HRESULT(ITaskScheduler *self, PWSTR pwszName, Guid* riid) IsOfType;
+				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszComputer) SetTargetComputer;
+				public new function HRESULT(ref ITaskScheduler self, out PWSTR ppwszComputer) GetTargetComputer;
+				public new function HRESULT(ref ITaskScheduler self, out IEnumWorkItems* ppEnumWorkItems) Enum;
+				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszName, in Guid riid, out IUnknown* ppUnk) Activate;
+				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszName) Delete;
+				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszTaskName, in Guid rclsid, in Guid riid, out IUnknown* ppUnk) NewWorkItem;
+				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszTaskName, ref IScheduledWorkItem pWorkItem) AddWorkItem;
+				public new function HRESULT(ref ITaskScheduler self, PWSTR pwszName, in Guid riid) IsOfType;
 			}
 		}
 		[CRepr]
@@ -581,14 +581,14 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPage(TASKPAGE tpType, BOOL fPersistChanges, HPROPSHEETPAGE* phPage) mut
+			public HRESULT GetPage(TASKPAGE tpType, BOOL fPersistChanges, out HPROPSHEETPAGE phPage) mut
 			{
-				return VT.GetPage(&this, tpType, fPersistChanges, phPage);
+				return VT.GetPage(ref this, tpType, fPersistChanges, out phPage);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(IProvideTaskPage *self, TASKPAGE tpType, BOOL fPersistChanges, HPROPSHEETPAGE* phPage) GetPage;
+				public new function HRESULT(ref IProvideTaskPage self, TASKPAGE tpType, BOOL fPersistChanges, out HPROPSHEETPAGE phPage) GetPage;
 			}
 		}
 		[CRepr]
@@ -598,24 +598,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* pCount) mut
+			public HRESULT get_Count(out int32 pCount) mut
 			{
-				return VT.get_Count(&this, pCount);
+				return VT.get_Count(ref this, out pCount);
 			}
 			public HRESULT get_Item(VARIANT index, ITaskFolder** ppFolder) mut
 			{
-				return VT.get_Item(&this, index, ppFolder);
+				return VT.get_Item(ref this, index, ppFolder);
 			}
 			public HRESULT get__NewEnum(IUnknown** ppEnum) mut
 			{
-				return VT.get__NewEnum(&this, ppEnum);
+				return VT.get__NewEnum(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITaskFolderCollection *self, int32* pCount) get_Count;
-				public new function HRESULT(ITaskFolderCollection *self, VARIANT index, ITaskFolder** ppFolder) get_Item;
-				public new function HRESULT(ITaskFolderCollection *self, IUnknown** ppEnum) get__NewEnum;
+				public new function HRESULT(ref ITaskFolderCollection self, out int32 pCount) get_Count;
+				public new function HRESULT(ref ITaskFolderCollection self, VARIANT index, ITaskFolder** ppFolder) get_Item;
+				public new function HRESULT(ref ITaskFolderCollection self, IUnknown** ppEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -627,52 +627,52 @@ namespace Win32
 			
 			public HRESULT GetFolder(BSTR path, ITaskFolder** ppFolder) mut
 			{
-				return VT.GetFolder(&this, path, ppFolder);
+				return VT.GetFolder(ref this, path, ppFolder);
 			}
 			public HRESULT GetRunningTasks(int32 flags, IRunningTaskCollection** ppRunningTasks) mut
 			{
-				return VT.GetRunningTasks(&this, flags, ppRunningTasks);
+				return VT.GetRunningTasks(ref this, flags, ppRunningTasks);
 			}
 			public HRESULT NewTask(uint32 flags, ITaskDefinition** ppDefinition) mut
 			{
-				return VT.NewTask(&this, flags, ppDefinition);
+				return VT.NewTask(ref this, flags, ppDefinition);
 			}
 			public HRESULT Connect(VARIANT serverName, VARIANT user, VARIANT domain, VARIANT password) mut
 			{
-				return VT.Connect(&this, serverName, user, domain, password);
+				return VT.Connect(ref this, serverName, user, domain, password);
 			}
-			public HRESULT get_Connected(int16* pConnected) mut
+			public HRESULT get_Connected(out int16 pConnected) mut
 			{
-				return VT.get_Connected(&this, pConnected);
+				return VT.get_Connected(ref this, out pConnected);
 			}
 			public HRESULT get_TargetServer(BSTR* pServer) mut
 			{
-				return VT.get_TargetServer(&this, pServer);
+				return VT.get_TargetServer(ref this, pServer);
 			}
 			public HRESULT get_ConnectedUser(BSTR* pUser) mut
 			{
-				return VT.get_ConnectedUser(&this, pUser);
+				return VT.get_ConnectedUser(ref this, pUser);
 			}
 			public HRESULT get_ConnectedDomain(BSTR* pDomain) mut
 			{
-				return VT.get_ConnectedDomain(&this, pDomain);
+				return VT.get_ConnectedDomain(ref this, pDomain);
 			}
-			public HRESULT get_HighestVersion(uint32* pVersion) mut
+			public HRESULT get_HighestVersion(out uint32 pVersion) mut
 			{
-				return VT.get_HighestVersion(&this, pVersion);
+				return VT.get_HighestVersion(ref this, out pVersion);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITaskService *self, BSTR path, ITaskFolder** ppFolder) GetFolder;
-				public new function HRESULT(ITaskService *self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetRunningTasks;
-				public new function HRESULT(ITaskService *self, uint32 flags, ITaskDefinition** ppDefinition) NewTask;
-				public new function HRESULT(ITaskService *self, VARIANT serverName, VARIANT user, VARIANT domain, VARIANT password) Connect;
-				public new function HRESULT(ITaskService *self, int16* pConnected) get_Connected;
-				public new function HRESULT(ITaskService *self, BSTR* pServer) get_TargetServer;
-				public new function HRESULT(ITaskService *self, BSTR* pUser) get_ConnectedUser;
-				public new function HRESULT(ITaskService *self, BSTR* pDomain) get_ConnectedDomain;
-				public new function HRESULT(ITaskService *self, uint32* pVersion) get_HighestVersion;
+				public new function HRESULT(ref ITaskService self, BSTR path, ITaskFolder** ppFolder) GetFolder;
+				public new function HRESULT(ref ITaskService self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetRunningTasks;
+				public new function HRESULT(ref ITaskService self, uint32 flags, ITaskDefinition** ppDefinition) NewTask;
+				public new function HRESULT(ref ITaskService self, VARIANT serverName, VARIANT user, VARIANT domain, VARIANT password) Connect;
+				public new function HRESULT(ref ITaskService self, out int16 pConnected) get_Connected;
+				public new function HRESULT(ref ITaskService self, BSTR* pServer) get_TargetServer;
+				public new function HRESULT(ref ITaskService self, BSTR* pUser) get_ConnectedUser;
+				public new function HRESULT(ref ITaskService self, BSTR* pDomain) get_ConnectedDomain;
+				public new function HRESULT(ref ITaskService self, out uint32 pVersion) get_HighestVersion;
 			}
 		}
 		[CRepr]
@@ -684,27 +684,27 @@ namespace Win32
 			
 			public HRESULT Start(IUnknown* pHandlerServices, BSTR data) mut
 			{
-				return VT.Start(&this, pHandlerServices, data);
+				return VT.Start(ref this, pHandlerServices, data);
 			}
-			public HRESULT Stop(HRESULT* pRetCode) mut
+			public HRESULT Stop(out HRESULT pRetCode) mut
 			{
-				return VT.Stop(&this, pRetCode);
+				return VT.Stop(ref this, out pRetCode);
 			}
 			public HRESULT Pause() mut
 			{
-				return VT.Pause(&this);
+				return VT.Pause(ref this);
 			}
 			public HRESULT Resume() mut
 			{
-				return VT.Resume(&this);
+				return VT.Resume(ref this);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITaskHandler *self, IUnknown* pHandlerServices, BSTR data) Start;
-				public new function HRESULT(ITaskHandler *self, HRESULT* pRetCode) Stop;
-				public new function HRESULT(ITaskHandler *self) Pause;
-				public new function HRESULT(ITaskHandler *self) Resume;
+				public new function HRESULT(ref ITaskHandler self, IUnknown* pHandlerServices, BSTR data) Start;
+				public new function HRESULT(ref ITaskHandler self, out HRESULT pRetCode) Stop;
+				public new function HRESULT(ref ITaskHandler self) Pause;
+				public new function HRESULT(ref ITaskHandler self) Resume;
 			}
 		}
 		[CRepr]
@@ -716,17 +716,17 @@ namespace Win32
 			
 			public HRESULT UpdateStatus(int16 percentComplete, BSTR statusMessage) mut
 			{
-				return VT.UpdateStatus(&this, percentComplete, statusMessage);
+				return VT.UpdateStatus(ref this, percentComplete, statusMessage);
 			}
 			public HRESULT TaskCompleted(HRESULT taskErrCode) mut
 			{
-				return VT.TaskCompleted(&this, taskErrCode);
+				return VT.TaskCompleted(ref this, taskErrCode);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITaskHandlerStatus *self, int16 percentComplete, BSTR statusMessage) UpdateStatus;
-				public new function HRESULT(ITaskHandlerStatus *self, HRESULT taskErrCode) TaskCompleted;
+				public new function HRESULT(ref ITaskHandlerStatus self, int16 percentComplete, BSTR statusMessage) UpdateStatus;
+				public new function HRESULT(ref ITaskHandlerStatus self, HRESULT taskErrCode) TaskCompleted;
 			}
 		}
 		[CRepr]
@@ -738,22 +738,22 @@ namespace Win32
 			
 			public HRESULT GetInput(BSTR* pInput) mut
 			{
-				return VT.GetInput(&this, pInput);
+				return VT.GetInput(ref this, pInput);
 			}
 			public HRESULT SetOutput(BSTR input) mut
 			{
-				return VT.SetOutput(&this, input);
+				return VT.SetOutput(ref this, input);
 			}
 			public HRESULT GetContext(BSTR* pContext) mut
 			{
-				return VT.GetContext(&this, pContext);
+				return VT.GetContext(ref this, pContext);
 			}
 			[CRepr]
 			public struct VTable : IUnknown.VTable
 			{
-				public new function HRESULT(ITaskVariables *self, BSTR* pInput) GetInput;
-				public new function HRESULT(ITaskVariables *self, BSTR input) SetOutput;
-				public new function HRESULT(ITaskVariables *self, BSTR* pContext) GetContext;
+				public new function HRESULT(ref ITaskVariables self, BSTR* pInput) GetInput;
+				public new function HRESULT(ref ITaskVariables self, BSTR input) SetOutput;
+				public new function HRESULT(ref ITaskVariables self, BSTR* pContext) GetContext;
 			}
 		}
 		[CRepr]
@@ -763,29 +763,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* pName) mut
+			public HRESULT get_Name(out BSTR pName) mut
 			{
-				return VT.get_Name(&this, pName);
+				return VT.get_Name(ref this, out pName);
 			}
 			public HRESULT put_Name(BSTR name) mut
 			{
-				return VT.put_Name(&this, name);
+				return VT.put_Name(ref this, name);
 			}
-			public HRESULT get_Value(BSTR* pValue) mut
+			public HRESULT get_Value(out BSTR pValue) mut
 			{
-				return VT.get_Value(&this, pValue);
+				return VT.get_Value(ref this, out pValue);
 			}
 			public HRESULT put_Value(BSTR value) mut
 			{
-				return VT.put_Value(&this, value);
+				return VT.put_Value(ref this, value);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITaskNamedValuePair *self, BSTR* pName) get_Name;
-				public new function HRESULT(ITaskNamedValuePair *self, BSTR name) put_Name;
-				public new function HRESULT(ITaskNamedValuePair *self, BSTR* pValue) get_Value;
-				public new function HRESULT(ITaskNamedValuePair *self, BSTR value) put_Value;
+				public new function HRESULT(ref ITaskNamedValuePair self, out BSTR pName) get_Name;
+				public new function HRESULT(ref ITaskNamedValuePair self, BSTR name) put_Name;
+				public new function HRESULT(ref ITaskNamedValuePair self, out BSTR pValue) get_Value;
+				public new function HRESULT(ref ITaskNamedValuePair self, BSTR value) put_Value;
 			}
 		}
 		[CRepr]
@@ -795,39 +795,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* pCount) mut
+			public HRESULT get_Count(out int32 pCount) mut
 			{
-				return VT.get_Count(&this, pCount);
+				return VT.get_Count(ref this, out pCount);
 			}
-			public HRESULT get_Item(int32 index, ITaskNamedValuePair** ppPair) mut
+			public HRESULT get_Item(int32 index, out ITaskNamedValuePair* ppPair) mut
 			{
-				return VT.get_Item(&this, index, ppPair);
+				return VT.get_Item(ref this, index, out ppPair);
 			}
-			public HRESULT get__NewEnum(IUnknown** ppEnum) mut
+			public HRESULT get__NewEnum(out IUnknown* ppEnum) mut
 			{
-				return VT.get__NewEnum(&this, ppEnum);
+				return VT.get__NewEnum(ref this, out ppEnum);
 			}
-			public HRESULT Create(BSTR name, BSTR value, ITaskNamedValuePair** ppPair) mut
+			public HRESULT Create(BSTR name, BSTR value, out ITaskNamedValuePair* ppPair) mut
 			{
-				return VT.Create(&this, name, value, ppPair);
+				return VT.Create(ref this, name, value, out ppPair);
 			}
 			public HRESULT Remove(int32 index) mut
 			{
-				return VT.Remove(&this, index);
+				return VT.Remove(ref this, index);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITaskNamedValueCollection *self, int32* pCount) get_Count;
-				public new function HRESULT(ITaskNamedValueCollection *self, int32 index, ITaskNamedValuePair** ppPair) get_Item;
-				public new function HRESULT(ITaskNamedValueCollection *self, IUnknown** ppEnum) get__NewEnum;
-				public new function HRESULT(ITaskNamedValueCollection *self, BSTR name, BSTR value, ITaskNamedValuePair** ppPair) Create;
-				public new function HRESULT(ITaskNamedValueCollection *self, int32 index) Remove;
-				public new function HRESULT(ITaskNamedValueCollection *self) Clear;
+				public new function HRESULT(ref ITaskNamedValueCollection self, out int32 pCount) get_Count;
+				public new function HRESULT(ref ITaskNamedValueCollection self, int32 index, out ITaskNamedValuePair* ppPair) get_Item;
+				public new function HRESULT(ref ITaskNamedValueCollection self, out IUnknown* ppEnum) get__NewEnum;
+				public new function HRESULT(ref ITaskNamedValueCollection self, BSTR name, BSTR value, out ITaskNamedValuePair* ppPair) Create;
+				public new function HRESULT(ref ITaskNamedValueCollection self, int32 index) Remove;
+				public new function HRESULT(ref ITaskNamedValueCollection self) Clear;
 			}
 		}
 		[CRepr]
@@ -839,47 +839,47 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* pName) mut
 			{
-				return VT.get_Name(&this, pName);
+				return VT.get_Name(ref this, pName);
 			}
 			public HRESULT get_InstanceGuid(BSTR* pGuid) mut
 			{
-				return VT.get_InstanceGuid(&this, pGuid);
+				return VT.get_InstanceGuid(ref this, pGuid);
 			}
 			public HRESULT get_Path(BSTR* pPath) mut
 			{
-				return VT.get_Path(&this, pPath);
+				return VT.get_Path(ref this, pPath);
 			}
-			public HRESULT get_State(TASK_STATE* pState) mut
+			public HRESULT get_State(out TASK_STATE pState) mut
 			{
-				return VT.get_State(&this, pState);
+				return VT.get_State(ref this, out pState);
 			}
 			public HRESULT get_CurrentAction(BSTR* pName) mut
 			{
-				return VT.get_CurrentAction(&this, pName);
+				return VT.get_CurrentAction(ref this, pName);
 			}
 			public HRESULT Stop() mut
 			{
-				return VT.Stop(&this);
+				return VT.Stop(ref this);
 			}
 			public HRESULT Refresh() mut
 			{
-				return VT.Refresh(&this);
+				return VT.Refresh(ref this);
 			}
-			public HRESULT get_EnginePID(uint32* pPID) mut
+			public HRESULT get_EnginePID(out uint32 pPID) mut
 			{
-				return VT.get_EnginePID(&this, pPID);
+				return VT.get_EnginePID(ref this, out pPID);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRunningTask *self, BSTR* pName) get_Name;
-				public new function HRESULT(IRunningTask *self, BSTR* pGuid) get_InstanceGuid;
-				public new function HRESULT(IRunningTask *self, BSTR* pPath) get_Path;
-				public new function HRESULT(IRunningTask *self, TASK_STATE* pState) get_State;
-				public new function HRESULT(IRunningTask *self, BSTR* pName) get_CurrentAction;
-				public new function HRESULT(IRunningTask *self) Stop;
-				public new function HRESULT(IRunningTask *self) Refresh;
-				public new function HRESULT(IRunningTask *self, uint32* pPID) get_EnginePID;
+				public new function HRESULT(ref IRunningTask self, BSTR* pName) get_Name;
+				public new function HRESULT(ref IRunningTask self, BSTR* pGuid) get_InstanceGuid;
+				public new function HRESULT(ref IRunningTask self, BSTR* pPath) get_Path;
+				public new function HRESULT(ref IRunningTask self, out TASK_STATE pState) get_State;
+				public new function HRESULT(ref IRunningTask self, BSTR* pName) get_CurrentAction;
+				public new function HRESULT(ref IRunningTask self) Stop;
+				public new function HRESULT(ref IRunningTask self) Refresh;
+				public new function HRESULT(ref IRunningTask self, out uint32 pPID) get_EnginePID;
 			}
 		}
 		[CRepr]
@@ -889,24 +889,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* pCount) mut
+			public HRESULT get_Count(out int32 pCount) mut
 			{
-				return VT.get_Count(&this, pCount);
+				return VT.get_Count(ref this, out pCount);
 			}
 			public HRESULT get_Item(VARIANT index, IRunningTask** ppRunningTask) mut
 			{
-				return VT.get_Item(&this, index, ppRunningTask);
+				return VT.get_Item(ref this, index, ppRunningTask);
 			}
 			public HRESULT get__NewEnum(IUnknown** ppEnum) mut
 			{
-				return VT.get__NewEnum(&this, ppEnum);
+				return VT.get__NewEnum(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRunningTaskCollection *self, int32* pCount) get_Count;
-				public new function HRESULT(IRunningTaskCollection *self, VARIANT index, IRunningTask** ppRunningTask) get_Item;
-				public new function HRESULT(IRunningTaskCollection *self, IUnknown** ppEnum) get__NewEnum;
+				public new function HRESULT(ref IRunningTaskCollection self, out int32 pCount) get_Count;
+				public new function HRESULT(ref IRunningTaskCollection self, VARIANT index, IRunningTask** ppRunningTask) get_Item;
+				public new function HRESULT(ref IRunningTaskCollection self, IUnknown** ppEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -918,97 +918,97 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* pName) mut
 			{
-				return VT.get_Name(&this, pName);
+				return VT.get_Name(ref this, pName);
 			}
 			public HRESULT get_Path(BSTR* pPath) mut
 			{
-				return VT.get_Path(&this, pPath);
+				return VT.get_Path(ref this, pPath);
 			}
-			public HRESULT get_State(TASK_STATE* pState) mut
+			public HRESULT get_State(out TASK_STATE pState) mut
 			{
-				return VT.get_State(&this, pState);
+				return VT.get_State(ref this, out pState);
 			}
-			public HRESULT get_Enabled(int16* pEnabled) mut
+			public HRESULT get_Enabled(out int16 pEnabled) mut
 			{
-				return VT.get_Enabled(&this, pEnabled);
+				return VT.get_Enabled(ref this, out pEnabled);
 			}
 			public HRESULT put_Enabled(int16 enabled) mut
 			{
-				return VT.put_Enabled(&this, enabled);
+				return VT.put_Enabled(ref this, enabled);
 			}
 			public HRESULT Run(VARIANT @params, IRunningTask** ppRunningTask) mut
 			{
-				return VT.Run(&this, @params, ppRunningTask);
+				return VT.Run(ref this, @params, ppRunningTask);
 			}
 			public HRESULT RunEx(VARIANT @params, int32 flags, int32 sessionID, BSTR user, IRunningTask** ppRunningTask) mut
 			{
-				return VT.RunEx(&this, @params, flags, sessionID, user, ppRunningTask);
+				return VT.RunEx(ref this, @params, flags, sessionID, user, ppRunningTask);
 			}
 			public HRESULT GetInstances(int32 flags, IRunningTaskCollection** ppRunningTasks) mut
 			{
-				return VT.GetInstances(&this, flags, ppRunningTasks);
+				return VT.GetInstances(ref this, flags, ppRunningTasks);
 			}
-			public HRESULT get_LastRunTime(double* pLastRunTime) mut
+			public HRESULT get_LastRunTime(out double pLastRunTime) mut
 			{
-				return VT.get_LastRunTime(&this, pLastRunTime);
+				return VT.get_LastRunTime(ref this, out pLastRunTime);
 			}
-			public HRESULT get_LastTaskResult(int32* pLastTaskResult) mut
+			public HRESULT get_LastTaskResult(out int32 pLastTaskResult) mut
 			{
-				return VT.get_LastTaskResult(&this, pLastTaskResult);
+				return VT.get_LastTaskResult(ref this, out pLastTaskResult);
 			}
-			public HRESULT get_NumberOfMissedRuns(int32* pNumberOfMissedRuns) mut
+			public HRESULT get_NumberOfMissedRuns(out int32 pNumberOfMissedRuns) mut
 			{
-				return VT.get_NumberOfMissedRuns(&this, pNumberOfMissedRuns);
+				return VT.get_NumberOfMissedRuns(ref this, out pNumberOfMissedRuns);
 			}
-			public HRESULT get_NextRunTime(double* pNextRunTime) mut
+			public HRESULT get_NextRunTime(out double pNextRunTime) mut
 			{
-				return VT.get_NextRunTime(&this, pNextRunTime);
+				return VT.get_NextRunTime(ref this, out pNextRunTime);
 			}
 			public HRESULT get_Definition(ITaskDefinition** ppDefinition) mut
 			{
-				return VT.get_Definition(&this, ppDefinition);
+				return VT.get_Definition(ref this, ppDefinition);
 			}
 			public HRESULT get_Xml(BSTR* pXml) mut
 			{
-				return VT.get_Xml(&this, pXml);
+				return VT.get_Xml(ref this, pXml);
 			}
 			public HRESULT GetSecurityDescriptor(int32 securityInformation, BSTR* pSddl) mut
 			{
-				return VT.GetSecurityDescriptor(&this, securityInformation, pSddl);
+				return VT.GetSecurityDescriptor(ref this, securityInformation, pSddl);
 			}
 			public HRESULT SetSecurityDescriptor(BSTR sddl, int32 flags) mut
 			{
-				return VT.SetSecurityDescriptor(&this, sddl, flags);
+				return VT.SetSecurityDescriptor(ref this, sddl, flags);
 			}
 			public HRESULT Stop(int32 flags) mut
 			{
-				return VT.Stop(&this, flags);
+				return VT.Stop(ref this, flags);
 			}
-			public HRESULT GetRunTimes(SYSTEMTIME* pstStart, SYSTEMTIME* pstEnd, uint32* pCount, SYSTEMTIME** pRunTimes) mut
+			public HRESULT GetRunTimes(in SYSTEMTIME pstStart, in SYSTEMTIME pstEnd, out uint32 pCount, SYSTEMTIME** pRunTimes) mut
 			{
-				return VT.GetRunTimes(&this, pstStart, pstEnd, pCount, pRunTimes);
+				return VT.GetRunTimes(ref this, pstStart, pstEnd, out pCount, pRunTimes);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRegisteredTask *self, BSTR* pName) get_Name;
-				public new function HRESULT(IRegisteredTask *self, BSTR* pPath) get_Path;
-				public new function HRESULT(IRegisteredTask *self, TASK_STATE* pState) get_State;
-				public new function HRESULT(IRegisteredTask *self, int16* pEnabled) get_Enabled;
-				public new function HRESULT(IRegisteredTask *self, int16 enabled) put_Enabled;
-				public new function HRESULT(IRegisteredTask *self, VARIANT @params, IRunningTask** ppRunningTask) Run;
-				public new function HRESULT(IRegisteredTask *self, VARIANT @params, int32 flags, int32 sessionID, BSTR user, IRunningTask** ppRunningTask) RunEx;
-				public new function HRESULT(IRegisteredTask *self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetInstances;
-				public new function HRESULT(IRegisteredTask *self, double* pLastRunTime) get_LastRunTime;
-				public new function HRESULT(IRegisteredTask *self, int32* pLastTaskResult) get_LastTaskResult;
-				public new function HRESULT(IRegisteredTask *self, int32* pNumberOfMissedRuns) get_NumberOfMissedRuns;
-				public new function HRESULT(IRegisteredTask *self, double* pNextRunTime) get_NextRunTime;
-				public new function HRESULT(IRegisteredTask *self, ITaskDefinition** ppDefinition) get_Definition;
-				public new function HRESULT(IRegisteredTask *self, BSTR* pXml) get_Xml;
-				public new function HRESULT(IRegisteredTask *self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
-				public new function HRESULT(IRegisteredTask *self, BSTR sddl, int32 flags) SetSecurityDescriptor;
-				public new function HRESULT(IRegisteredTask *self, int32 flags) Stop;
-				public new function HRESULT(IRegisteredTask *self, SYSTEMTIME* pstStart, SYSTEMTIME* pstEnd, uint32* pCount, SYSTEMTIME** pRunTimes) GetRunTimes;
+				public new function HRESULT(ref IRegisteredTask self, BSTR* pName) get_Name;
+				public new function HRESULT(ref IRegisteredTask self, BSTR* pPath) get_Path;
+				public new function HRESULT(ref IRegisteredTask self, out TASK_STATE pState) get_State;
+				public new function HRESULT(ref IRegisteredTask self, out int16 pEnabled) get_Enabled;
+				public new function HRESULT(ref IRegisteredTask self, int16 enabled) put_Enabled;
+				public new function HRESULT(ref IRegisteredTask self, VARIANT @params, IRunningTask** ppRunningTask) Run;
+				public new function HRESULT(ref IRegisteredTask self, VARIANT @params, int32 flags, int32 sessionID, BSTR user, IRunningTask** ppRunningTask) RunEx;
+				public new function HRESULT(ref IRegisteredTask self, int32 flags, IRunningTaskCollection** ppRunningTasks) GetInstances;
+				public new function HRESULT(ref IRegisteredTask self, out double pLastRunTime) get_LastRunTime;
+				public new function HRESULT(ref IRegisteredTask self, out int32 pLastTaskResult) get_LastTaskResult;
+				public new function HRESULT(ref IRegisteredTask self, out int32 pNumberOfMissedRuns) get_NumberOfMissedRuns;
+				public new function HRESULT(ref IRegisteredTask self, out double pNextRunTime) get_NextRunTime;
+				public new function HRESULT(ref IRegisteredTask self, ITaskDefinition** ppDefinition) get_Definition;
+				public new function HRESULT(ref IRegisteredTask self, BSTR* pXml) get_Xml;
+				public new function HRESULT(ref IRegisteredTask self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
+				public new function HRESULT(ref IRegisteredTask self, BSTR sddl, int32 flags) SetSecurityDescriptor;
+				public new function HRESULT(ref IRegisteredTask self, int32 flags) Stop;
+				public new function HRESULT(ref IRegisteredTask self, in SYSTEMTIME pstStart, in SYSTEMTIME pstEnd, out uint32 pCount, SYSTEMTIME** pRunTimes) GetRunTimes;
 			}
 		}
 		[CRepr]
@@ -1018,74 +1018,74 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Type(TASK_TRIGGER_TYPE2* pType) mut
+			public HRESULT get_Type(out TASK_TRIGGER_TYPE2 pType) mut
 			{
-				return VT.get_Type(&this, pType);
+				return VT.get_Type(ref this, out pType);
 			}
-			public HRESULT get_Id(BSTR* pId) mut
+			public HRESULT get_Id(out BSTR pId) mut
 			{
-				return VT.get_Id(&this, pId);
+				return VT.get_Id(ref this, out pId);
 			}
 			public HRESULT put_Id(BSTR id) mut
 			{
-				return VT.put_Id(&this, id);
+				return VT.put_Id(ref this, id);
 			}
-			public HRESULT get_Repetition(IRepetitionPattern** ppRepeat) mut
+			public HRESULT get_Repetition(out IRepetitionPattern* ppRepeat) mut
 			{
-				return VT.get_Repetition(&this, ppRepeat);
+				return VT.get_Repetition(ref this, out ppRepeat);
 			}
-			public HRESULT put_Repetition(IRepetitionPattern* pRepeat) mut
+			public HRESULT put_Repetition(ref IRepetitionPattern pRepeat) mut
 			{
-				return VT.put_Repetition(&this, pRepeat);
+				return VT.put_Repetition(ref this, ref pRepeat);
 			}
-			public HRESULT get_ExecutionTimeLimit(BSTR* pTimeLimit) mut
+			public HRESULT get_ExecutionTimeLimit(out BSTR pTimeLimit) mut
 			{
-				return VT.get_ExecutionTimeLimit(&this, pTimeLimit);
+				return VT.get_ExecutionTimeLimit(ref this, out pTimeLimit);
 			}
 			public HRESULT put_ExecutionTimeLimit(BSTR timelimit) mut
 			{
-				return VT.put_ExecutionTimeLimit(&this, timelimit);
+				return VT.put_ExecutionTimeLimit(ref this, timelimit);
 			}
-			public HRESULT get_StartBoundary(BSTR* pStart) mut
+			public HRESULT get_StartBoundary(out BSTR pStart) mut
 			{
-				return VT.get_StartBoundary(&this, pStart);
+				return VT.get_StartBoundary(ref this, out pStart);
 			}
 			public HRESULT put_StartBoundary(BSTR start) mut
 			{
-				return VT.put_StartBoundary(&this, start);
+				return VT.put_StartBoundary(ref this, start);
 			}
-			public HRESULT get_EndBoundary(BSTR* pEnd) mut
+			public HRESULT get_EndBoundary(out BSTR pEnd) mut
 			{
-				return VT.get_EndBoundary(&this, pEnd);
+				return VT.get_EndBoundary(ref this, out pEnd);
 			}
 			public HRESULT put_EndBoundary(BSTR end) mut
 			{
-				return VT.put_EndBoundary(&this, end);
+				return VT.put_EndBoundary(ref this, end);
 			}
-			public HRESULT get_Enabled(int16* pEnabled) mut
+			public HRESULT get_Enabled(out int16 pEnabled) mut
 			{
-				return VT.get_Enabled(&this, pEnabled);
+				return VT.get_Enabled(ref this, out pEnabled);
 			}
 			public HRESULT put_Enabled(int16 enabled) mut
 			{
-				return VT.put_Enabled(&this, enabled);
+				return VT.put_Enabled(ref this, enabled);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITrigger *self, TASK_TRIGGER_TYPE2* pType) get_Type;
-				public new function HRESULT(ITrigger *self, BSTR* pId) get_Id;
-				public new function HRESULT(ITrigger *self, BSTR id) put_Id;
-				public new function HRESULT(ITrigger *self, IRepetitionPattern** ppRepeat) get_Repetition;
-				public new function HRESULT(ITrigger *self, IRepetitionPattern* pRepeat) put_Repetition;
-				public new function HRESULT(ITrigger *self, BSTR* pTimeLimit) get_ExecutionTimeLimit;
-				public new function HRESULT(ITrigger *self, BSTR timelimit) put_ExecutionTimeLimit;
-				public new function HRESULT(ITrigger *self, BSTR* pStart) get_StartBoundary;
-				public new function HRESULT(ITrigger *self, BSTR start) put_StartBoundary;
-				public new function HRESULT(ITrigger *self, BSTR* pEnd) get_EndBoundary;
-				public new function HRESULT(ITrigger *self, BSTR end) put_EndBoundary;
-				public new function HRESULT(ITrigger *self, int16* pEnabled) get_Enabled;
-				public new function HRESULT(ITrigger *self, int16 enabled) put_Enabled;
+				public new function HRESULT(ref ITrigger self, out TASK_TRIGGER_TYPE2 pType) get_Type;
+				public new function HRESULT(ref ITrigger self, out BSTR pId) get_Id;
+				public new function HRESULT(ref ITrigger self, BSTR id) put_Id;
+				public new function HRESULT(ref ITrigger self, out IRepetitionPattern* ppRepeat) get_Repetition;
+				public new function HRESULT(ref ITrigger self, ref IRepetitionPattern pRepeat) put_Repetition;
+				public new function HRESULT(ref ITrigger self, out BSTR pTimeLimit) get_ExecutionTimeLimit;
+				public new function HRESULT(ref ITrigger self, BSTR timelimit) put_ExecutionTimeLimit;
+				public new function HRESULT(ref ITrigger self, out BSTR pStart) get_StartBoundary;
+				public new function HRESULT(ref ITrigger self, BSTR start) put_StartBoundary;
+				public new function HRESULT(ref ITrigger self, out BSTR pEnd) get_EndBoundary;
+				public new function HRESULT(ref ITrigger self, BSTR end) put_EndBoundary;
+				public new function HRESULT(ref ITrigger self, out int16 pEnabled) get_Enabled;
+				public new function HRESULT(ref ITrigger self, int16 enabled) put_Enabled;
 			}
 		}
 		[CRepr]
@@ -1107,29 +1107,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Delay(BSTR* pDelay) mut
+			public HRESULT get_Delay(out BSTR pDelay) mut
 			{
-				return VT.get_Delay(&this, pDelay);
+				return VT.get_Delay(ref this, out pDelay);
 			}
 			public HRESULT put_Delay(BSTR delay) mut
 			{
-				return VT.put_Delay(&this, delay);
+				return VT.put_Delay(ref this, delay);
 			}
-			public HRESULT get_UserId(BSTR* pUser) mut
+			public HRESULT get_UserId(out BSTR pUser) mut
 			{
-				return VT.get_UserId(&this, pUser);
+				return VT.get_UserId(ref this, out pUser);
 			}
 			public HRESULT put_UserId(BSTR user) mut
 			{
-				return VT.put_UserId(&this, user);
+				return VT.put_UserId(ref this, user);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ILogonTrigger *self, BSTR* pDelay) get_Delay;
-				public new function HRESULT(ILogonTrigger *self, BSTR delay) put_Delay;
-				public new function HRESULT(ILogonTrigger *self, BSTR* pUser) get_UserId;
-				public new function HRESULT(ILogonTrigger *self, BSTR user) put_UserId;
+				public new function HRESULT(ref ILogonTrigger self, out BSTR pDelay) get_Delay;
+				public new function HRESULT(ref ILogonTrigger self, BSTR delay) put_Delay;
+				public new function HRESULT(ref ILogonTrigger self, out BSTR pUser) get_UserId;
+				public new function HRESULT(ref ILogonTrigger self, BSTR user) put_UserId;
 			}
 		}
 		[CRepr]
@@ -1139,39 +1139,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Delay(BSTR* pDelay) mut
+			public HRESULT get_Delay(out BSTR pDelay) mut
 			{
-				return VT.get_Delay(&this, pDelay);
+				return VT.get_Delay(ref this, out pDelay);
 			}
 			public HRESULT put_Delay(BSTR delay) mut
 			{
-				return VT.put_Delay(&this, delay);
+				return VT.put_Delay(ref this, delay);
 			}
-			public HRESULT get_UserId(BSTR* pUser) mut
+			public HRESULT get_UserId(out BSTR pUser) mut
 			{
-				return VT.get_UserId(&this, pUser);
+				return VT.get_UserId(ref this, out pUser);
 			}
 			public HRESULT put_UserId(BSTR user) mut
 			{
-				return VT.put_UserId(&this, user);
+				return VT.put_UserId(ref this, user);
 			}
-			public HRESULT get_StateChange(TASK_SESSION_STATE_CHANGE_TYPE* pType) mut
+			public HRESULT get_StateChange(out TASK_SESSION_STATE_CHANGE_TYPE pType) mut
 			{
-				return VT.get_StateChange(&this, pType);
+				return VT.get_StateChange(ref this, out pType);
 			}
 			public HRESULT put_StateChange(TASK_SESSION_STATE_CHANGE_TYPE type) mut
 			{
-				return VT.put_StateChange(&this, type);
+				return VT.put_StateChange(ref this, type);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ISessionStateChangeTrigger *self, BSTR* pDelay) get_Delay;
-				public new function HRESULT(ISessionStateChangeTrigger *self, BSTR delay) put_Delay;
-				public new function HRESULT(ISessionStateChangeTrigger *self, BSTR* pUser) get_UserId;
-				public new function HRESULT(ISessionStateChangeTrigger *self, BSTR user) put_UserId;
-				public new function HRESULT(ISessionStateChangeTrigger *self, TASK_SESSION_STATE_CHANGE_TYPE* pType) get_StateChange;
-				public new function HRESULT(ISessionStateChangeTrigger *self, TASK_SESSION_STATE_CHANGE_TYPE type) put_StateChange;
+				public new function HRESULT(ref ISessionStateChangeTrigger self, out BSTR pDelay) get_Delay;
+				public new function HRESULT(ref ISessionStateChangeTrigger self, BSTR delay) put_Delay;
+				public new function HRESULT(ref ISessionStateChangeTrigger self, out BSTR pUser) get_UserId;
+				public new function HRESULT(ref ISessionStateChangeTrigger self, BSTR user) put_UserId;
+				public new function HRESULT(ref ISessionStateChangeTrigger self, out TASK_SESSION_STATE_CHANGE_TYPE pType) get_StateChange;
+				public new function HRESULT(ref ISessionStateChangeTrigger self, TASK_SESSION_STATE_CHANGE_TYPE type) put_StateChange;
 			}
 		}
 		[CRepr]
@@ -1181,39 +1181,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Subscription(BSTR* pQuery) mut
+			public HRESULT get_Subscription(out BSTR pQuery) mut
 			{
-				return VT.get_Subscription(&this, pQuery);
+				return VT.get_Subscription(ref this, out pQuery);
 			}
 			public HRESULT put_Subscription(BSTR query) mut
 			{
-				return VT.put_Subscription(&this, query);
+				return VT.put_Subscription(ref this, query);
 			}
-			public HRESULT get_Delay(BSTR* pDelay) mut
+			public HRESULT get_Delay(out BSTR pDelay) mut
 			{
-				return VT.get_Delay(&this, pDelay);
+				return VT.get_Delay(ref this, out pDelay);
 			}
 			public HRESULT put_Delay(BSTR delay) mut
 			{
-				return VT.put_Delay(&this, delay);
+				return VT.put_Delay(ref this, delay);
 			}
-			public HRESULT get_ValueQueries(ITaskNamedValueCollection** ppNamedXPaths) mut
+			public HRESULT get_ValueQueries(out ITaskNamedValueCollection* ppNamedXPaths) mut
 			{
-				return VT.get_ValueQueries(&this, ppNamedXPaths);
+				return VT.get_ValueQueries(ref this, out ppNamedXPaths);
 			}
-			public HRESULT put_ValueQueries(ITaskNamedValueCollection* pNamedXPaths) mut
+			public HRESULT put_ValueQueries(ref ITaskNamedValueCollection pNamedXPaths) mut
 			{
-				return VT.put_ValueQueries(&this, pNamedXPaths);
+				return VT.put_ValueQueries(ref this, ref pNamedXPaths);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(IEventTrigger *self, BSTR* pQuery) get_Subscription;
-				public new function HRESULT(IEventTrigger *self, BSTR query) put_Subscription;
-				public new function HRESULT(IEventTrigger *self, BSTR* pDelay) get_Delay;
-				public new function HRESULT(IEventTrigger *self, BSTR delay) put_Delay;
-				public new function HRESULT(IEventTrigger *self, ITaskNamedValueCollection** ppNamedXPaths) get_ValueQueries;
-				public new function HRESULT(IEventTrigger *self, ITaskNamedValueCollection* pNamedXPaths) put_ValueQueries;
+				public new function HRESULT(ref IEventTrigger self, out BSTR pQuery) get_Subscription;
+				public new function HRESULT(ref IEventTrigger self, BSTR query) put_Subscription;
+				public new function HRESULT(ref IEventTrigger self, out BSTR pDelay) get_Delay;
+				public new function HRESULT(ref IEventTrigger self, BSTR delay) put_Delay;
+				public new function HRESULT(ref IEventTrigger self, out ITaskNamedValueCollection* ppNamedXPaths) get_ValueQueries;
+				public new function HRESULT(ref IEventTrigger self, ref ITaskNamedValueCollection pNamedXPaths) put_ValueQueries;
 			}
 		}
 		[CRepr]
@@ -1223,19 +1223,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_RandomDelay(BSTR* pRandomDelay) mut
+			public HRESULT get_RandomDelay(out BSTR pRandomDelay) mut
 			{
-				return VT.get_RandomDelay(&this, pRandomDelay);
+				return VT.get_RandomDelay(ref this, out pRandomDelay);
 			}
 			public HRESULT put_RandomDelay(BSTR randomDelay) mut
 			{
-				return VT.put_RandomDelay(&this, randomDelay);
+				return VT.put_RandomDelay(ref this, randomDelay);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(ITimeTrigger *self, BSTR* pRandomDelay) get_RandomDelay;
-				public new function HRESULT(ITimeTrigger *self, BSTR randomDelay) put_RandomDelay;
+				public new function HRESULT(ref ITimeTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function HRESULT(ref ITimeTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -1245,29 +1245,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DaysInterval(int16* pDays) mut
+			public HRESULT get_DaysInterval(out int16 pDays) mut
 			{
-				return VT.get_DaysInterval(&this, pDays);
+				return VT.get_DaysInterval(ref this, out pDays);
 			}
 			public HRESULT put_DaysInterval(int16 days) mut
 			{
-				return VT.put_DaysInterval(&this, days);
+				return VT.put_DaysInterval(ref this, days);
 			}
-			public HRESULT get_RandomDelay(BSTR* pRandomDelay) mut
+			public HRESULT get_RandomDelay(out BSTR pRandomDelay) mut
 			{
-				return VT.get_RandomDelay(&this, pRandomDelay);
+				return VT.get_RandomDelay(ref this, out pRandomDelay);
 			}
 			public HRESULT put_RandomDelay(BSTR randomDelay) mut
 			{
-				return VT.put_RandomDelay(&this, randomDelay);
+				return VT.put_RandomDelay(ref this, randomDelay);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(IDailyTrigger *self, int16* pDays) get_DaysInterval;
-				public new function HRESULT(IDailyTrigger *self, int16 days) put_DaysInterval;
-				public new function HRESULT(IDailyTrigger *self, BSTR* pRandomDelay) get_RandomDelay;
-				public new function HRESULT(IDailyTrigger *self, BSTR randomDelay) put_RandomDelay;
+				public new function HRESULT(ref IDailyTrigger self, out int16 pDays) get_DaysInterval;
+				public new function HRESULT(ref IDailyTrigger self, int16 days) put_DaysInterval;
+				public new function HRESULT(ref IDailyTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function HRESULT(ref IDailyTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -1277,39 +1277,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DaysOfWeek(int16* pDays) mut
+			public HRESULT get_DaysOfWeek(out int16 pDays) mut
 			{
-				return VT.get_DaysOfWeek(&this, pDays);
+				return VT.get_DaysOfWeek(ref this, out pDays);
 			}
 			public HRESULT put_DaysOfWeek(int16 days) mut
 			{
-				return VT.put_DaysOfWeek(&this, days);
+				return VT.put_DaysOfWeek(ref this, days);
 			}
-			public HRESULT get_WeeksInterval(int16* pWeeks) mut
+			public HRESULT get_WeeksInterval(out int16 pWeeks) mut
 			{
-				return VT.get_WeeksInterval(&this, pWeeks);
+				return VT.get_WeeksInterval(ref this, out pWeeks);
 			}
 			public HRESULT put_WeeksInterval(int16 weeks) mut
 			{
-				return VT.put_WeeksInterval(&this, weeks);
+				return VT.put_WeeksInterval(ref this, weeks);
 			}
-			public HRESULT get_RandomDelay(BSTR* pRandomDelay) mut
+			public HRESULT get_RandomDelay(out BSTR pRandomDelay) mut
 			{
-				return VT.get_RandomDelay(&this, pRandomDelay);
+				return VT.get_RandomDelay(ref this, out pRandomDelay);
 			}
 			public HRESULT put_RandomDelay(BSTR randomDelay) mut
 			{
-				return VT.put_RandomDelay(&this, randomDelay);
+				return VT.put_RandomDelay(ref this, randomDelay);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(IWeeklyTrigger *self, int16* pDays) get_DaysOfWeek;
-				public new function HRESULT(IWeeklyTrigger *self, int16 days) put_DaysOfWeek;
-				public new function HRESULT(IWeeklyTrigger *self, int16* pWeeks) get_WeeksInterval;
-				public new function HRESULT(IWeeklyTrigger *self, int16 weeks) put_WeeksInterval;
-				public new function HRESULT(IWeeklyTrigger *self, BSTR* pRandomDelay) get_RandomDelay;
-				public new function HRESULT(IWeeklyTrigger *self, BSTR randomDelay) put_RandomDelay;
+				public new function HRESULT(ref IWeeklyTrigger self, out int16 pDays) get_DaysOfWeek;
+				public new function HRESULT(ref IWeeklyTrigger self, int16 days) put_DaysOfWeek;
+				public new function HRESULT(ref IWeeklyTrigger self, out int16 pWeeks) get_WeeksInterval;
+				public new function HRESULT(ref IWeeklyTrigger self, int16 weeks) put_WeeksInterval;
+				public new function HRESULT(ref IWeeklyTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function HRESULT(ref IWeeklyTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -1319,49 +1319,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DaysOfMonth(int32* pDays) mut
+			public HRESULT get_DaysOfMonth(out int32 pDays) mut
 			{
-				return VT.get_DaysOfMonth(&this, pDays);
+				return VT.get_DaysOfMonth(ref this, out pDays);
 			}
 			public HRESULT put_DaysOfMonth(int32 days) mut
 			{
-				return VT.put_DaysOfMonth(&this, days);
+				return VT.put_DaysOfMonth(ref this, days);
 			}
-			public HRESULT get_MonthsOfYear(int16* pMonths) mut
+			public HRESULT get_MonthsOfYear(out int16 pMonths) mut
 			{
-				return VT.get_MonthsOfYear(&this, pMonths);
+				return VT.get_MonthsOfYear(ref this, out pMonths);
 			}
 			public HRESULT put_MonthsOfYear(int16 months) mut
 			{
-				return VT.put_MonthsOfYear(&this, months);
+				return VT.put_MonthsOfYear(ref this, months);
 			}
-			public HRESULT get_RunOnLastDayOfMonth(int16* pLastDay) mut
+			public HRESULT get_RunOnLastDayOfMonth(out int16 pLastDay) mut
 			{
-				return VT.get_RunOnLastDayOfMonth(&this, pLastDay);
+				return VT.get_RunOnLastDayOfMonth(ref this, out pLastDay);
 			}
 			public HRESULT put_RunOnLastDayOfMonth(int16 lastDay) mut
 			{
-				return VT.put_RunOnLastDayOfMonth(&this, lastDay);
+				return VT.put_RunOnLastDayOfMonth(ref this, lastDay);
 			}
-			public HRESULT get_RandomDelay(BSTR* pRandomDelay) mut
+			public HRESULT get_RandomDelay(out BSTR pRandomDelay) mut
 			{
-				return VT.get_RandomDelay(&this, pRandomDelay);
+				return VT.get_RandomDelay(ref this, out pRandomDelay);
 			}
 			public HRESULT put_RandomDelay(BSTR randomDelay) mut
 			{
-				return VT.put_RandomDelay(&this, randomDelay);
+				return VT.put_RandomDelay(ref this, randomDelay);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(IMonthlyTrigger *self, int32* pDays) get_DaysOfMonth;
-				public new function HRESULT(IMonthlyTrigger *self, int32 days) put_DaysOfMonth;
-				public new function HRESULT(IMonthlyTrigger *self, int16* pMonths) get_MonthsOfYear;
-				public new function HRESULT(IMonthlyTrigger *self, int16 months) put_MonthsOfYear;
-				public new function HRESULT(IMonthlyTrigger *self, int16* pLastDay) get_RunOnLastDayOfMonth;
-				public new function HRESULT(IMonthlyTrigger *self, int16 lastDay) put_RunOnLastDayOfMonth;
-				public new function HRESULT(IMonthlyTrigger *self, BSTR* pRandomDelay) get_RandomDelay;
-				public new function HRESULT(IMonthlyTrigger *self, BSTR randomDelay) put_RandomDelay;
+				public new function HRESULT(ref IMonthlyTrigger self, out int32 pDays) get_DaysOfMonth;
+				public new function HRESULT(ref IMonthlyTrigger self, int32 days) put_DaysOfMonth;
+				public new function HRESULT(ref IMonthlyTrigger self, out int16 pMonths) get_MonthsOfYear;
+				public new function HRESULT(ref IMonthlyTrigger self, int16 months) put_MonthsOfYear;
+				public new function HRESULT(ref IMonthlyTrigger self, out int16 pLastDay) get_RunOnLastDayOfMonth;
+				public new function HRESULT(ref IMonthlyTrigger self, int16 lastDay) put_RunOnLastDayOfMonth;
+				public new function HRESULT(ref IMonthlyTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function HRESULT(ref IMonthlyTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -1371,59 +1371,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DaysOfWeek(int16* pDays) mut
+			public HRESULT get_DaysOfWeek(out int16 pDays) mut
 			{
-				return VT.get_DaysOfWeek(&this, pDays);
+				return VT.get_DaysOfWeek(ref this, out pDays);
 			}
 			public HRESULT put_DaysOfWeek(int16 days) mut
 			{
-				return VT.put_DaysOfWeek(&this, days);
+				return VT.put_DaysOfWeek(ref this, days);
 			}
-			public HRESULT get_WeeksOfMonth(int16* pWeeks) mut
+			public HRESULT get_WeeksOfMonth(out int16 pWeeks) mut
 			{
-				return VT.get_WeeksOfMonth(&this, pWeeks);
+				return VT.get_WeeksOfMonth(ref this, out pWeeks);
 			}
 			public HRESULT put_WeeksOfMonth(int16 weeks) mut
 			{
-				return VT.put_WeeksOfMonth(&this, weeks);
+				return VT.put_WeeksOfMonth(ref this, weeks);
 			}
-			public HRESULT get_MonthsOfYear(int16* pMonths) mut
+			public HRESULT get_MonthsOfYear(out int16 pMonths) mut
 			{
-				return VT.get_MonthsOfYear(&this, pMonths);
+				return VT.get_MonthsOfYear(ref this, out pMonths);
 			}
 			public HRESULT put_MonthsOfYear(int16 months) mut
 			{
-				return VT.put_MonthsOfYear(&this, months);
+				return VT.put_MonthsOfYear(ref this, months);
 			}
-			public HRESULT get_RunOnLastWeekOfMonth(int16* pLastWeek) mut
+			public HRESULT get_RunOnLastWeekOfMonth(out int16 pLastWeek) mut
 			{
-				return VT.get_RunOnLastWeekOfMonth(&this, pLastWeek);
+				return VT.get_RunOnLastWeekOfMonth(ref this, out pLastWeek);
 			}
 			public HRESULT put_RunOnLastWeekOfMonth(int16 lastWeek) mut
 			{
-				return VT.put_RunOnLastWeekOfMonth(&this, lastWeek);
+				return VT.put_RunOnLastWeekOfMonth(ref this, lastWeek);
 			}
-			public HRESULT get_RandomDelay(BSTR* pRandomDelay) mut
+			public HRESULT get_RandomDelay(out BSTR pRandomDelay) mut
 			{
-				return VT.get_RandomDelay(&this, pRandomDelay);
+				return VT.get_RandomDelay(ref this, out pRandomDelay);
 			}
 			public HRESULT put_RandomDelay(BSTR randomDelay) mut
 			{
-				return VT.put_RandomDelay(&this, randomDelay);
+				return VT.put_RandomDelay(ref this, randomDelay);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(IMonthlyDOWTrigger *self, int16* pDays) get_DaysOfWeek;
-				public new function HRESULT(IMonthlyDOWTrigger *self, int16 days) put_DaysOfWeek;
-				public new function HRESULT(IMonthlyDOWTrigger *self, int16* pWeeks) get_WeeksOfMonth;
-				public new function HRESULT(IMonthlyDOWTrigger *self, int16 weeks) put_WeeksOfMonth;
-				public new function HRESULT(IMonthlyDOWTrigger *self, int16* pMonths) get_MonthsOfYear;
-				public new function HRESULT(IMonthlyDOWTrigger *self, int16 months) put_MonthsOfYear;
-				public new function HRESULT(IMonthlyDOWTrigger *self, int16* pLastWeek) get_RunOnLastWeekOfMonth;
-				public new function HRESULT(IMonthlyDOWTrigger *self, int16 lastWeek) put_RunOnLastWeekOfMonth;
-				public new function HRESULT(IMonthlyDOWTrigger *self, BSTR* pRandomDelay) get_RandomDelay;
-				public new function HRESULT(IMonthlyDOWTrigger *self, BSTR randomDelay) put_RandomDelay;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, out int16 pDays) get_DaysOfWeek;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, int16 days) put_DaysOfWeek;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, out int16 pWeeks) get_WeeksOfMonth;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, int16 weeks) put_WeeksOfMonth;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, out int16 pMonths) get_MonthsOfYear;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, int16 months) put_MonthsOfYear;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, out int16 pLastWeek) get_RunOnLastWeekOfMonth;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, int16 lastWeek) put_RunOnLastWeekOfMonth;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, out BSTR pRandomDelay) get_RandomDelay;
+				public new function HRESULT(ref IMonthlyDOWTrigger self, BSTR randomDelay) put_RandomDelay;
 			}
 		}
 		[CRepr]
@@ -1433,19 +1433,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Delay(BSTR* pDelay) mut
+			public HRESULT get_Delay(out BSTR pDelay) mut
 			{
-				return VT.get_Delay(&this, pDelay);
+				return VT.get_Delay(ref this, out pDelay);
 			}
 			public HRESULT put_Delay(BSTR delay) mut
 			{
-				return VT.put_Delay(&this, delay);
+				return VT.put_Delay(ref this, delay);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(IBootTrigger *self, BSTR* pDelay) get_Delay;
-				public new function HRESULT(IBootTrigger *self, BSTR delay) put_Delay;
+				public new function HRESULT(ref IBootTrigger self, out BSTR pDelay) get_Delay;
+				public new function HRESULT(ref IBootTrigger self, BSTR delay) put_Delay;
 			}
 		}
 		[CRepr]
@@ -1455,19 +1455,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Delay(BSTR* pDelay) mut
+			public HRESULT get_Delay(out BSTR pDelay) mut
 			{
-				return VT.get_Delay(&this, pDelay);
+				return VT.get_Delay(ref this, out pDelay);
 			}
 			public HRESULT put_Delay(BSTR delay) mut
 			{
-				return VT.put_Delay(&this, delay);
+				return VT.put_Delay(ref this, delay);
 			}
 			[CRepr]
 			public struct VTable : ITrigger.VTable
 			{
-				public new function HRESULT(IRegistrationTrigger *self, BSTR* pDelay) get_Delay;
-				public new function HRESULT(IRegistrationTrigger *self, BSTR delay) put_Delay;
+				public new function HRESULT(ref IRegistrationTrigger self, out BSTR pDelay) get_Delay;
+				public new function HRESULT(ref IRegistrationTrigger self, BSTR delay) put_Delay;
 			}
 		}
 		[CRepr]
@@ -1477,24 +1477,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Id(BSTR* pId) mut
+			public HRESULT get_Id(out BSTR pId) mut
 			{
-				return VT.get_Id(&this, pId);
+				return VT.get_Id(ref this, out pId);
 			}
 			public HRESULT put_Id(BSTR Id) mut
 			{
-				return VT.put_Id(&this, Id);
+				return VT.put_Id(ref this, Id);
 			}
-			public HRESULT get_Type(TASK_ACTION_TYPE* pType) mut
+			public HRESULT get_Type(out TASK_ACTION_TYPE pType) mut
 			{
-				return VT.get_Type(&this, pType);
+				return VT.get_Type(ref this, out pType);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IAction *self, BSTR* pId) get_Id;
-				public new function HRESULT(IAction *self, BSTR Id) put_Id;
-				public new function HRESULT(IAction *self, TASK_ACTION_TYPE* pType) get_Type;
+				public new function HRESULT(ref IAction self, out BSTR pId) get_Id;
+				public new function HRESULT(ref IAction self, BSTR Id) put_Id;
+				public new function HRESULT(ref IAction self, out TASK_ACTION_TYPE pType) get_Type;
 			}
 		}
 		[CRepr]
@@ -1504,39 +1504,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Path(BSTR* pPath) mut
+			public HRESULT get_Path(out BSTR pPath) mut
 			{
-				return VT.get_Path(&this, pPath);
+				return VT.get_Path(ref this, out pPath);
 			}
 			public HRESULT put_Path(BSTR path) mut
 			{
-				return VT.put_Path(&this, path);
+				return VT.put_Path(ref this, path);
 			}
-			public HRESULT get_Arguments(BSTR* pArgument) mut
+			public HRESULT get_Arguments(out BSTR pArgument) mut
 			{
-				return VT.get_Arguments(&this, pArgument);
+				return VT.get_Arguments(ref this, out pArgument);
 			}
 			public HRESULT put_Arguments(BSTR argument) mut
 			{
-				return VT.put_Arguments(&this, argument);
+				return VT.put_Arguments(ref this, argument);
 			}
-			public HRESULT get_WorkingDirectory(BSTR* pWorkingDirectory) mut
+			public HRESULT get_WorkingDirectory(out BSTR pWorkingDirectory) mut
 			{
-				return VT.get_WorkingDirectory(&this, pWorkingDirectory);
+				return VT.get_WorkingDirectory(ref this, out pWorkingDirectory);
 			}
 			public HRESULT put_WorkingDirectory(BSTR workingDirectory) mut
 			{
-				return VT.put_WorkingDirectory(&this, workingDirectory);
+				return VT.put_WorkingDirectory(ref this, workingDirectory);
 			}
 			[CRepr]
 			public struct VTable : IAction.VTable
 			{
-				public new function HRESULT(IExecAction *self, BSTR* pPath) get_Path;
-				public new function HRESULT(IExecAction *self, BSTR path) put_Path;
-				public new function HRESULT(IExecAction *self, BSTR* pArgument) get_Arguments;
-				public new function HRESULT(IExecAction *self, BSTR argument) put_Arguments;
-				public new function HRESULT(IExecAction *self, BSTR* pWorkingDirectory) get_WorkingDirectory;
-				public new function HRESULT(IExecAction *self, BSTR workingDirectory) put_WorkingDirectory;
+				public new function HRESULT(ref IExecAction self, out BSTR pPath) get_Path;
+				public new function HRESULT(ref IExecAction self, BSTR path) put_Path;
+				public new function HRESULT(ref IExecAction self, out BSTR pArgument) get_Arguments;
+				public new function HRESULT(ref IExecAction self, BSTR argument) put_Arguments;
+				public new function HRESULT(ref IExecAction self, out BSTR pWorkingDirectory) get_WorkingDirectory;
+				public new function HRESULT(ref IExecAction self, BSTR workingDirectory) put_WorkingDirectory;
 			}
 		}
 		[CRepr]
@@ -1546,19 +1546,19 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_HideAppWindow(int16* pHideAppWindow) mut
+			public HRESULT get_HideAppWindow(out int16 pHideAppWindow) mut
 			{
-				return VT.get_HideAppWindow(&this, pHideAppWindow);
+				return VT.get_HideAppWindow(ref this, out pHideAppWindow);
 			}
 			public HRESULT put_HideAppWindow(int16 hideAppWindow) mut
 			{
-				return VT.put_HideAppWindow(&this, hideAppWindow);
+				return VT.put_HideAppWindow(ref this, hideAppWindow);
 			}
 			[CRepr]
 			public struct VTable : IExecAction.VTable
 			{
-				public new function HRESULT(IExecAction2 *self, int16* pHideAppWindow) get_HideAppWindow;
-				public new function HRESULT(IExecAction2 *self, int16 hideAppWindow) put_HideAppWindow;
+				public new function HRESULT(ref IExecAction2 self, out int16 pHideAppWindow) get_HideAppWindow;
+				public new function HRESULT(ref IExecAction2 self, int16 hideAppWindow) put_HideAppWindow;
 			}
 		}
 		[CRepr]
@@ -1568,29 +1568,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Title(BSTR* pTitle) mut
+			public HRESULT get_Title(out BSTR pTitle) mut
 			{
-				return VT.get_Title(&this, pTitle);
+				return VT.get_Title(ref this, out pTitle);
 			}
 			public HRESULT put_Title(BSTR title) mut
 			{
-				return VT.put_Title(&this, title);
+				return VT.put_Title(ref this, title);
 			}
-			public HRESULT get_MessageBody(BSTR* pMessageBody) mut
+			public HRESULT get_MessageBody(out BSTR pMessageBody) mut
 			{
-				return VT.get_MessageBody(&this, pMessageBody);
+				return VT.get_MessageBody(ref this, out pMessageBody);
 			}
 			public HRESULT put_MessageBody(BSTR messageBody) mut
 			{
-				return VT.put_MessageBody(&this, messageBody);
+				return VT.put_MessageBody(ref this, messageBody);
 			}
 			[CRepr]
 			public struct VTable : IAction.VTable
 			{
-				public new function HRESULT(IShowMessageAction *self, BSTR* pTitle) get_Title;
-				public new function HRESULT(IShowMessageAction *self, BSTR title) put_Title;
-				public new function HRESULT(IShowMessageAction *self, BSTR* pMessageBody) get_MessageBody;
-				public new function HRESULT(IShowMessageAction *self, BSTR messageBody) put_MessageBody;
+				public new function HRESULT(ref IShowMessageAction self, out BSTR pTitle) get_Title;
+				public new function HRESULT(ref IShowMessageAction self, BSTR title) put_Title;
+				public new function HRESULT(ref IShowMessageAction self, out BSTR pMessageBody) get_MessageBody;
+				public new function HRESULT(ref IShowMessageAction self, BSTR messageBody) put_MessageBody;
 			}
 		}
 		[CRepr]
@@ -1600,29 +1600,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ClassId(BSTR* pClsid) mut
+			public HRESULT get_ClassId(out BSTR pClsid) mut
 			{
-				return VT.get_ClassId(&this, pClsid);
+				return VT.get_ClassId(ref this, out pClsid);
 			}
 			public HRESULT put_ClassId(BSTR clsid) mut
 			{
-				return VT.put_ClassId(&this, clsid);
+				return VT.put_ClassId(ref this, clsid);
 			}
-			public HRESULT get_Data(BSTR* pData) mut
+			public HRESULT get_Data(out BSTR pData) mut
 			{
-				return VT.get_Data(&this, pData);
+				return VT.get_Data(ref this, out pData);
 			}
 			public HRESULT put_Data(BSTR data) mut
 			{
-				return VT.put_Data(&this, data);
+				return VT.put_Data(ref this, data);
 			}
 			[CRepr]
 			public struct VTable : IAction.VTable
 			{
-				public new function HRESULT(IComHandlerAction *self, BSTR* pClsid) get_ClassId;
-				public new function HRESULT(IComHandlerAction *self, BSTR clsid) put_ClassId;
-				public new function HRESULT(IComHandlerAction *self, BSTR* pData) get_Data;
-				public new function HRESULT(IComHandlerAction *self, BSTR data) put_Data;
+				public new function HRESULT(ref IComHandlerAction self, out BSTR pClsid) get_ClassId;
+				public new function HRESULT(ref IComHandlerAction self, BSTR clsid) put_ClassId;
+				public new function HRESULT(ref IComHandlerAction self, out BSTR pData) get_Data;
+				public new function HRESULT(ref IComHandlerAction self, BSTR data) put_Data;
 			}
 		}
 		[CRepr]
@@ -1632,109 +1632,109 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Server(BSTR* pServer) mut
+			public HRESULT get_Server(out BSTR pServer) mut
 			{
-				return VT.get_Server(&this, pServer);
+				return VT.get_Server(ref this, out pServer);
 			}
 			public HRESULT put_Server(BSTR server) mut
 			{
-				return VT.put_Server(&this, server);
+				return VT.put_Server(ref this, server);
 			}
-			public HRESULT get_Subject(BSTR* pSubject) mut
+			public HRESULT get_Subject(out BSTR pSubject) mut
 			{
-				return VT.get_Subject(&this, pSubject);
+				return VT.get_Subject(ref this, out pSubject);
 			}
 			public HRESULT put_Subject(BSTR subject) mut
 			{
-				return VT.put_Subject(&this, subject);
+				return VT.put_Subject(ref this, subject);
 			}
-			public HRESULT get_To(BSTR* pTo) mut
+			public HRESULT get_To(out BSTR pTo) mut
 			{
-				return VT.get_To(&this, pTo);
+				return VT.get_To(ref this, out pTo);
 			}
 			public HRESULT put_To(BSTR to) mut
 			{
-				return VT.put_To(&this, to);
+				return VT.put_To(ref this, to);
 			}
-			public HRESULT get_Cc(BSTR* pCc) mut
+			public HRESULT get_Cc(out BSTR pCc) mut
 			{
-				return VT.get_Cc(&this, pCc);
+				return VT.get_Cc(ref this, out pCc);
 			}
 			public HRESULT put_Cc(BSTR cc) mut
 			{
-				return VT.put_Cc(&this, cc);
+				return VT.put_Cc(ref this, cc);
 			}
-			public HRESULT get_Bcc(BSTR* pBcc) mut
+			public HRESULT get_Bcc(out BSTR pBcc) mut
 			{
-				return VT.get_Bcc(&this, pBcc);
+				return VT.get_Bcc(ref this, out pBcc);
 			}
 			public HRESULT put_Bcc(BSTR bcc) mut
 			{
-				return VT.put_Bcc(&this, bcc);
+				return VT.put_Bcc(ref this, bcc);
 			}
-			public HRESULT get_ReplyTo(BSTR* pReplyTo) mut
+			public HRESULT get_ReplyTo(out BSTR pReplyTo) mut
 			{
-				return VT.get_ReplyTo(&this, pReplyTo);
+				return VT.get_ReplyTo(ref this, out pReplyTo);
 			}
 			public HRESULT put_ReplyTo(BSTR replyTo) mut
 			{
-				return VT.put_ReplyTo(&this, replyTo);
+				return VT.put_ReplyTo(ref this, replyTo);
 			}
-			public HRESULT get_From(BSTR* pFrom) mut
+			public HRESULT get_From(out BSTR pFrom) mut
 			{
-				return VT.get_From(&this, pFrom);
+				return VT.get_From(ref this, out pFrom);
 			}
 			public HRESULT put_From(BSTR from) mut
 			{
-				return VT.put_From(&this, from);
+				return VT.put_From(ref this, from);
 			}
-			public HRESULT get_HeaderFields(ITaskNamedValueCollection** ppHeaderFields) mut
+			public HRESULT get_HeaderFields(out ITaskNamedValueCollection* ppHeaderFields) mut
 			{
-				return VT.get_HeaderFields(&this, ppHeaderFields);
+				return VT.get_HeaderFields(ref this, out ppHeaderFields);
 			}
-			public HRESULT put_HeaderFields(ITaskNamedValueCollection* pHeaderFields) mut
+			public HRESULT put_HeaderFields(ref ITaskNamedValueCollection pHeaderFields) mut
 			{
-				return VT.put_HeaderFields(&this, pHeaderFields);
+				return VT.put_HeaderFields(ref this, ref pHeaderFields);
 			}
-			public HRESULT get_Body(BSTR* pBody) mut
+			public HRESULT get_Body(out BSTR pBody) mut
 			{
-				return VT.get_Body(&this, pBody);
+				return VT.get_Body(ref this, out pBody);
 			}
 			public HRESULT put_Body(BSTR body) mut
 			{
-				return VT.put_Body(&this, body);
+				return VT.put_Body(ref this, body);
 			}
-			public HRESULT get_Attachments(SAFEARRAY** pAttachements) mut
+			public HRESULT get_Attachments(out SAFEARRAY* pAttachements) mut
 			{
-				return VT.get_Attachments(&this, pAttachements);
+				return VT.get_Attachments(ref this, out pAttachements);
 			}
-			public HRESULT put_Attachments(SAFEARRAY* pAttachements) mut
+			public HRESULT put_Attachments(out SAFEARRAY pAttachements) mut
 			{
-				return VT.put_Attachments(&this, pAttachements);
+				return VT.put_Attachments(ref this, out pAttachements);
 			}
 			[CRepr]
 			public struct VTable : IAction.VTable
 			{
-				public new function HRESULT(IEmailAction *self, BSTR* pServer) get_Server;
-				public new function HRESULT(IEmailAction *self, BSTR server) put_Server;
-				public new function HRESULT(IEmailAction *self, BSTR* pSubject) get_Subject;
-				public new function HRESULT(IEmailAction *self, BSTR subject) put_Subject;
-				public new function HRESULT(IEmailAction *self, BSTR* pTo) get_To;
-				public new function HRESULT(IEmailAction *self, BSTR to) put_To;
-				public new function HRESULT(IEmailAction *self, BSTR* pCc) get_Cc;
-				public new function HRESULT(IEmailAction *self, BSTR cc) put_Cc;
-				public new function HRESULT(IEmailAction *self, BSTR* pBcc) get_Bcc;
-				public new function HRESULT(IEmailAction *self, BSTR bcc) put_Bcc;
-				public new function HRESULT(IEmailAction *self, BSTR* pReplyTo) get_ReplyTo;
-				public new function HRESULT(IEmailAction *self, BSTR replyTo) put_ReplyTo;
-				public new function HRESULT(IEmailAction *self, BSTR* pFrom) get_From;
-				public new function HRESULT(IEmailAction *self, BSTR from) put_From;
-				public new function HRESULT(IEmailAction *self, ITaskNamedValueCollection** ppHeaderFields) get_HeaderFields;
-				public new function HRESULT(IEmailAction *self, ITaskNamedValueCollection* pHeaderFields) put_HeaderFields;
-				public new function HRESULT(IEmailAction *self, BSTR* pBody) get_Body;
-				public new function HRESULT(IEmailAction *self, BSTR body) put_Body;
-				public new function HRESULT(IEmailAction *self, SAFEARRAY** pAttachements) get_Attachments;
-				public new function HRESULT(IEmailAction *self, SAFEARRAY* pAttachements) put_Attachments;
+				public new function HRESULT(ref IEmailAction self, out BSTR pServer) get_Server;
+				public new function HRESULT(ref IEmailAction self, BSTR server) put_Server;
+				public new function HRESULT(ref IEmailAction self, out BSTR pSubject) get_Subject;
+				public new function HRESULT(ref IEmailAction self, BSTR subject) put_Subject;
+				public new function HRESULT(ref IEmailAction self, out BSTR pTo) get_To;
+				public new function HRESULT(ref IEmailAction self, BSTR to) put_To;
+				public new function HRESULT(ref IEmailAction self, out BSTR pCc) get_Cc;
+				public new function HRESULT(ref IEmailAction self, BSTR cc) put_Cc;
+				public new function HRESULT(ref IEmailAction self, out BSTR pBcc) get_Bcc;
+				public new function HRESULT(ref IEmailAction self, BSTR bcc) put_Bcc;
+				public new function HRESULT(ref IEmailAction self, out BSTR pReplyTo) get_ReplyTo;
+				public new function HRESULT(ref IEmailAction self, BSTR replyTo) put_ReplyTo;
+				public new function HRESULT(ref IEmailAction self, out BSTR pFrom) get_From;
+				public new function HRESULT(ref IEmailAction self, BSTR from) put_From;
+				public new function HRESULT(ref IEmailAction self, out ITaskNamedValueCollection* ppHeaderFields) get_HeaderFields;
+				public new function HRESULT(ref IEmailAction self, ref ITaskNamedValueCollection pHeaderFields) put_HeaderFields;
+				public new function HRESULT(ref IEmailAction self, out BSTR pBody) get_Body;
+				public new function HRESULT(ref IEmailAction self, BSTR body) put_Body;
+				public new function HRESULT(ref IEmailAction self, out SAFEARRAY* pAttachements) get_Attachments;
+				public new function HRESULT(ref IEmailAction self, out SAFEARRAY pAttachements) put_Attachments;
 			}
 		}
 		[CRepr]
@@ -1744,39 +1744,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* pCount) mut
+			public HRESULT get_Count(out int32 pCount) mut
 			{
-				return VT.get_Count(&this, pCount);
+				return VT.get_Count(ref this, out pCount);
 			}
-			public HRESULT get_Item(int32 index, ITrigger** ppTrigger) mut
+			public HRESULT get_Item(int32 index, out ITrigger* ppTrigger) mut
 			{
-				return VT.get_Item(&this, index, ppTrigger);
+				return VT.get_Item(ref this, index, out ppTrigger);
 			}
-			public HRESULT get__NewEnum(IUnknown** ppEnum) mut
+			public HRESULT get__NewEnum(out IUnknown* ppEnum) mut
 			{
-				return VT.get__NewEnum(&this, ppEnum);
+				return VT.get__NewEnum(ref this, out ppEnum);
 			}
-			public HRESULT Create(TASK_TRIGGER_TYPE2 type, ITrigger** ppTrigger) mut
+			public HRESULT Create(TASK_TRIGGER_TYPE2 type, out ITrigger* ppTrigger) mut
 			{
-				return VT.Create(&this, type, ppTrigger);
+				return VT.Create(ref this, type, out ppTrigger);
 			}
 			public HRESULT Remove(VARIANT index) mut
 			{
-				return VT.Remove(&this, index);
+				return VT.Remove(ref this, index);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITriggerCollection *self, int32* pCount) get_Count;
-				public new function HRESULT(ITriggerCollection *self, int32 index, ITrigger** ppTrigger) get_Item;
-				public new function HRESULT(ITriggerCollection *self, IUnknown** ppEnum) get__NewEnum;
-				public new function HRESULT(ITriggerCollection *self, TASK_TRIGGER_TYPE2 type, ITrigger** ppTrigger) Create;
-				public new function HRESULT(ITriggerCollection *self, VARIANT index) Remove;
-				public new function HRESULT(ITriggerCollection *self) Clear;
+				public new function HRESULT(ref ITriggerCollection self, out int32 pCount) get_Count;
+				public new function HRESULT(ref ITriggerCollection self, int32 index, out ITrigger* ppTrigger) get_Item;
+				public new function HRESULT(ref ITriggerCollection self, out IUnknown* ppEnum) get__NewEnum;
+				public new function HRESULT(ref ITriggerCollection self, TASK_TRIGGER_TYPE2 type, out ITrigger* ppTrigger) Create;
+				public new function HRESULT(ref ITriggerCollection self, VARIANT index) Remove;
+				public new function HRESULT(ref ITriggerCollection self) Clear;
 			}
 		}
 		[CRepr]
@@ -1786,59 +1786,59 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* pCount) mut
+			public HRESULT get_Count(out int32 pCount) mut
 			{
-				return VT.get_Count(&this, pCount);
+				return VT.get_Count(ref this, out pCount);
 			}
-			public HRESULT get_Item(int32 index, IAction** ppAction) mut
+			public HRESULT get_Item(int32 index, out IAction* ppAction) mut
 			{
-				return VT.get_Item(&this, index, ppAction);
+				return VT.get_Item(ref this, index, out ppAction);
 			}
-			public HRESULT get__NewEnum(IUnknown** ppEnum) mut
+			public HRESULT get__NewEnum(out IUnknown* ppEnum) mut
 			{
-				return VT.get__NewEnum(&this, ppEnum);
+				return VT.get__NewEnum(ref this, out ppEnum);
 			}
-			public HRESULT get_XmlText(BSTR* pText) mut
+			public HRESULT get_XmlText(out BSTR pText) mut
 			{
-				return VT.get_XmlText(&this, pText);
+				return VT.get_XmlText(ref this, out pText);
 			}
 			public HRESULT put_XmlText(BSTR text) mut
 			{
-				return VT.put_XmlText(&this, text);
+				return VT.put_XmlText(ref this, text);
 			}
-			public HRESULT Create(TASK_ACTION_TYPE type, IAction** ppAction) mut
+			public HRESULT Create(TASK_ACTION_TYPE type, out IAction* ppAction) mut
 			{
-				return VT.Create(&this, type, ppAction);
+				return VT.Create(ref this, type, out ppAction);
 			}
 			public HRESULT Remove(VARIANT index) mut
 			{
-				return VT.Remove(&this, index);
+				return VT.Remove(ref this, index);
 			}
 			public HRESULT Clear() mut
 			{
-				return VT.Clear(&this);
+				return VT.Clear(ref this);
 			}
-			public HRESULT get_Context(BSTR* pContext) mut
+			public HRESULT get_Context(out BSTR pContext) mut
 			{
-				return VT.get_Context(&this, pContext);
+				return VT.get_Context(ref this, out pContext);
 			}
 			public HRESULT put_Context(BSTR context) mut
 			{
-				return VT.put_Context(&this, context);
+				return VT.put_Context(ref this, context);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IActionCollection *self, int32* pCount) get_Count;
-				public new function HRESULT(IActionCollection *self, int32 index, IAction** ppAction) get_Item;
-				public new function HRESULT(IActionCollection *self, IUnknown** ppEnum) get__NewEnum;
-				public new function HRESULT(IActionCollection *self, BSTR* pText) get_XmlText;
-				public new function HRESULT(IActionCollection *self, BSTR text) put_XmlText;
-				public new function HRESULT(IActionCollection *self, TASK_ACTION_TYPE type, IAction** ppAction) Create;
-				public new function HRESULT(IActionCollection *self, VARIANT index) Remove;
-				public new function HRESULT(IActionCollection *self) Clear;
-				public new function HRESULT(IActionCollection *self, BSTR* pContext) get_Context;
-				public new function HRESULT(IActionCollection *self, BSTR context) put_Context;
+				public new function HRESULT(ref IActionCollection self, out int32 pCount) get_Count;
+				public new function HRESULT(ref IActionCollection self, int32 index, out IAction* ppAction) get_Item;
+				public new function HRESULT(ref IActionCollection self, out IUnknown* ppEnum) get__NewEnum;
+				public new function HRESULT(ref IActionCollection self, out BSTR pText) get_XmlText;
+				public new function HRESULT(ref IActionCollection self, BSTR text) put_XmlText;
+				public new function HRESULT(ref IActionCollection self, TASK_ACTION_TYPE type, out IAction* ppAction) Create;
+				public new function HRESULT(ref IActionCollection self, VARIANT index) Remove;
+				public new function HRESULT(ref IActionCollection self) Clear;
+				public new function HRESULT(ref IActionCollection self, out BSTR pContext) get_Context;
+				public new function HRESULT(ref IActionCollection self, BSTR context) put_Context;
 			}
 		}
 		[CRepr]
@@ -1848,69 +1848,69 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Id(BSTR* pId) mut
+			public HRESULT get_Id(out BSTR pId) mut
 			{
-				return VT.get_Id(&this, pId);
+				return VT.get_Id(ref this, out pId);
 			}
 			public HRESULT put_Id(BSTR Id) mut
 			{
-				return VT.put_Id(&this, Id);
+				return VT.put_Id(ref this, Id);
 			}
-			public HRESULT get_DisplayName(BSTR* pName) mut
+			public HRESULT get_DisplayName(out BSTR pName) mut
 			{
-				return VT.get_DisplayName(&this, pName);
+				return VT.get_DisplayName(ref this, out pName);
 			}
 			public HRESULT put_DisplayName(BSTR name) mut
 			{
-				return VT.put_DisplayName(&this, name);
+				return VT.put_DisplayName(ref this, name);
 			}
-			public HRESULT get_UserId(BSTR* pUser) mut
+			public HRESULT get_UserId(out BSTR pUser) mut
 			{
-				return VT.get_UserId(&this, pUser);
+				return VT.get_UserId(ref this, out pUser);
 			}
 			public HRESULT put_UserId(BSTR user) mut
 			{
-				return VT.put_UserId(&this, user);
+				return VT.put_UserId(ref this, user);
 			}
-			public HRESULT get_LogonType(TASK_LOGON_TYPE* pLogon) mut
+			public HRESULT get_LogonType(out TASK_LOGON_TYPE pLogon) mut
 			{
-				return VT.get_LogonType(&this, pLogon);
+				return VT.get_LogonType(ref this, out pLogon);
 			}
 			public HRESULT put_LogonType(TASK_LOGON_TYPE logon) mut
 			{
-				return VT.put_LogonType(&this, logon);
+				return VT.put_LogonType(ref this, logon);
 			}
-			public HRESULT get_GroupId(BSTR* pGroup) mut
+			public HRESULT get_GroupId(out BSTR pGroup) mut
 			{
-				return VT.get_GroupId(&this, pGroup);
+				return VT.get_GroupId(ref this, out pGroup);
 			}
 			public HRESULT put_GroupId(BSTR group) mut
 			{
-				return VT.put_GroupId(&this, group);
+				return VT.put_GroupId(ref this, group);
 			}
-			public HRESULT get_RunLevel(TASK_RUNLEVEL_TYPE* pRunLevel) mut
+			public HRESULT get_RunLevel(out TASK_RUNLEVEL_TYPE pRunLevel) mut
 			{
-				return VT.get_RunLevel(&this, pRunLevel);
+				return VT.get_RunLevel(ref this, out pRunLevel);
 			}
 			public HRESULT put_RunLevel(TASK_RUNLEVEL_TYPE runLevel) mut
 			{
-				return VT.put_RunLevel(&this, runLevel);
+				return VT.put_RunLevel(ref this, runLevel);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrincipal *self, BSTR* pId) get_Id;
-				public new function HRESULT(IPrincipal *self, BSTR Id) put_Id;
-				public new function HRESULT(IPrincipal *self, BSTR* pName) get_DisplayName;
-				public new function HRESULT(IPrincipal *self, BSTR name) put_DisplayName;
-				public new function HRESULT(IPrincipal *self, BSTR* pUser) get_UserId;
-				public new function HRESULT(IPrincipal *self, BSTR user) put_UserId;
-				public new function HRESULT(IPrincipal *self, TASK_LOGON_TYPE* pLogon) get_LogonType;
-				public new function HRESULT(IPrincipal *self, TASK_LOGON_TYPE logon) put_LogonType;
-				public new function HRESULT(IPrincipal *self, BSTR* pGroup) get_GroupId;
-				public new function HRESULT(IPrincipal *self, BSTR group) put_GroupId;
-				public new function HRESULT(IPrincipal *self, TASK_RUNLEVEL_TYPE* pRunLevel) get_RunLevel;
-				public new function HRESULT(IPrincipal *self, TASK_RUNLEVEL_TYPE runLevel) put_RunLevel;
+				public new function HRESULT(ref IPrincipal self, out BSTR pId) get_Id;
+				public new function HRESULT(ref IPrincipal self, BSTR Id) put_Id;
+				public new function HRESULT(ref IPrincipal self, out BSTR pName) get_DisplayName;
+				public new function HRESULT(ref IPrincipal self, BSTR name) put_DisplayName;
+				public new function HRESULT(ref IPrincipal self, out BSTR pUser) get_UserId;
+				public new function HRESULT(ref IPrincipal self, BSTR user) put_UserId;
+				public new function HRESULT(ref IPrincipal self, out TASK_LOGON_TYPE pLogon) get_LogonType;
+				public new function HRESULT(ref IPrincipal self, TASK_LOGON_TYPE logon) put_LogonType;
+				public new function HRESULT(ref IPrincipal self, out BSTR pGroup) get_GroupId;
+				public new function HRESULT(ref IPrincipal self, BSTR group) put_GroupId;
+				public new function HRESULT(ref IPrincipal self, out TASK_RUNLEVEL_TYPE pRunLevel) get_RunLevel;
+				public new function HRESULT(ref IPrincipal self, TASK_RUNLEVEL_TYPE runLevel) put_RunLevel;
 			}
 		}
 		[CRepr]
@@ -1920,34 +1920,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_ProcessTokenSidType(TASK_PROCESSTOKENSID_TYPE* pProcessTokenSidType) mut
+			public HRESULT get_ProcessTokenSidType(out TASK_PROCESSTOKENSID_TYPE pProcessTokenSidType) mut
 			{
-				return VT.get_ProcessTokenSidType(&this, pProcessTokenSidType);
+				return VT.get_ProcessTokenSidType(ref this, out pProcessTokenSidType);
 			}
 			public HRESULT put_ProcessTokenSidType(TASK_PROCESSTOKENSID_TYPE processTokenSidType) mut
 			{
-				return VT.put_ProcessTokenSidType(&this, processTokenSidType);
+				return VT.put_ProcessTokenSidType(ref this, processTokenSidType);
 			}
-			public HRESULT get_RequiredPrivilegeCount(int32* pCount) mut
+			public HRESULT get_RequiredPrivilegeCount(out int32 pCount) mut
 			{
-				return VT.get_RequiredPrivilegeCount(&this, pCount);
+				return VT.get_RequiredPrivilegeCount(ref this, out pCount);
 			}
-			public HRESULT get_RequiredPrivilege(int32 index, BSTR* pPrivilege) mut
+			public HRESULT get_RequiredPrivilege(int32 index, out BSTR pPrivilege) mut
 			{
-				return VT.get_RequiredPrivilege(&this, index, pPrivilege);
+				return VT.get_RequiredPrivilege(ref this, index, out pPrivilege);
 			}
 			public HRESULT AddRequiredPrivilege(BSTR privilege) mut
 			{
-				return VT.AddRequiredPrivilege(&this, privilege);
+				return VT.AddRequiredPrivilege(ref this, privilege);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IPrincipal2 *self, TASK_PROCESSTOKENSID_TYPE* pProcessTokenSidType) get_ProcessTokenSidType;
-				public new function HRESULT(IPrincipal2 *self, TASK_PROCESSTOKENSID_TYPE processTokenSidType) put_ProcessTokenSidType;
-				public new function HRESULT(IPrincipal2 *self, int32* pCount) get_RequiredPrivilegeCount;
-				public new function HRESULT(IPrincipal2 *self, int32 index, BSTR* pPrivilege) get_RequiredPrivilege;
-				public new function HRESULT(IPrincipal2 *self, BSTR privilege) AddRequiredPrivilege;
+				public new function HRESULT(ref IPrincipal2 self, out TASK_PROCESSTOKENSID_TYPE pProcessTokenSidType) get_ProcessTokenSidType;
+				public new function HRESULT(ref IPrincipal2 self, TASK_PROCESSTOKENSID_TYPE processTokenSidType) put_ProcessTokenSidType;
+				public new function HRESULT(ref IPrincipal2 self, out int32 pCount) get_RequiredPrivilegeCount;
+				public new function HRESULT(ref IPrincipal2 self, int32 index, out BSTR pPrivilege) get_RequiredPrivilege;
+				public new function HRESULT(ref IPrincipal2 self, BSTR privilege) AddRequiredPrivilege;
 			}
 		}
 		[CRepr]
@@ -1957,99 +1957,99 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Description(BSTR* pDescription) mut
+			public HRESULT get_Description(out BSTR pDescription) mut
 			{
-				return VT.get_Description(&this, pDescription);
+				return VT.get_Description(ref this, out pDescription);
 			}
 			public HRESULT put_Description(BSTR description) mut
 			{
-				return VT.put_Description(&this, description);
+				return VT.put_Description(ref this, description);
 			}
-			public HRESULT get_Author(BSTR* pAuthor) mut
+			public HRESULT get_Author(out BSTR pAuthor) mut
 			{
-				return VT.get_Author(&this, pAuthor);
+				return VT.get_Author(ref this, out pAuthor);
 			}
 			public HRESULT put_Author(BSTR author) mut
 			{
-				return VT.put_Author(&this, author);
+				return VT.put_Author(ref this, author);
 			}
-			public HRESULT get_Version(BSTR* pVersion) mut
+			public HRESULT get_Version(out BSTR pVersion) mut
 			{
-				return VT.get_Version(&this, pVersion);
+				return VT.get_Version(ref this, out pVersion);
 			}
 			public HRESULT put_Version(BSTR version) mut
 			{
-				return VT.put_Version(&this, version);
+				return VT.put_Version(ref this, version);
 			}
-			public HRESULT get_Date(BSTR* pDate) mut
+			public HRESULT get_Date(out BSTR pDate) mut
 			{
-				return VT.get_Date(&this, pDate);
+				return VT.get_Date(ref this, out pDate);
 			}
 			public HRESULT put_Date(BSTR date) mut
 			{
-				return VT.put_Date(&this, date);
+				return VT.put_Date(ref this, date);
 			}
-			public HRESULT get_Documentation(BSTR* pDocumentation) mut
+			public HRESULT get_Documentation(out BSTR pDocumentation) mut
 			{
-				return VT.get_Documentation(&this, pDocumentation);
+				return VT.get_Documentation(ref this, out pDocumentation);
 			}
 			public HRESULT put_Documentation(BSTR documentation) mut
 			{
-				return VT.put_Documentation(&this, documentation);
+				return VT.put_Documentation(ref this, documentation);
 			}
-			public HRESULT get_XmlText(BSTR* pText) mut
+			public HRESULT get_XmlText(out BSTR pText) mut
 			{
-				return VT.get_XmlText(&this, pText);
+				return VT.get_XmlText(ref this, out pText);
 			}
 			public HRESULT put_XmlText(BSTR text) mut
 			{
-				return VT.put_XmlText(&this, text);
+				return VT.put_XmlText(ref this, text);
 			}
-			public HRESULT get_URI(BSTR* pUri) mut
+			public HRESULT get_URI(out BSTR pUri) mut
 			{
-				return VT.get_URI(&this, pUri);
+				return VT.get_URI(ref this, out pUri);
 			}
 			public HRESULT put_URI(BSTR uri) mut
 			{
-				return VT.put_URI(&this, uri);
+				return VT.put_URI(ref this, uri);
 			}
-			public HRESULT get_SecurityDescriptor(VARIANT* pSddl) mut
+			public HRESULT get_SecurityDescriptor(out VARIANT pSddl) mut
 			{
-				return VT.get_SecurityDescriptor(&this, pSddl);
+				return VT.get_SecurityDescriptor(ref this, out pSddl);
 			}
 			public HRESULT put_SecurityDescriptor(VARIANT sddl) mut
 			{
-				return VT.put_SecurityDescriptor(&this, sddl);
+				return VT.put_SecurityDescriptor(ref this, sddl);
 			}
-			public HRESULT get_Source(BSTR* pSource) mut
+			public HRESULT get_Source(out BSTR pSource) mut
 			{
-				return VT.get_Source(&this, pSource);
+				return VT.get_Source(ref this, out pSource);
 			}
 			public HRESULT put_Source(BSTR source) mut
 			{
-				return VT.put_Source(&this, source);
+				return VT.put_Source(ref this, source);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRegistrationInfo *self, BSTR* pDescription) get_Description;
-				public new function HRESULT(IRegistrationInfo *self, BSTR description) put_Description;
-				public new function HRESULT(IRegistrationInfo *self, BSTR* pAuthor) get_Author;
-				public new function HRESULT(IRegistrationInfo *self, BSTR author) put_Author;
-				public new function HRESULT(IRegistrationInfo *self, BSTR* pVersion) get_Version;
-				public new function HRESULT(IRegistrationInfo *self, BSTR version) put_Version;
-				public new function HRESULT(IRegistrationInfo *self, BSTR* pDate) get_Date;
-				public new function HRESULT(IRegistrationInfo *self, BSTR date) put_Date;
-				public new function HRESULT(IRegistrationInfo *self, BSTR* pDocumentation) get_Documentation;
-				public new function HRESULT(IRegistrationInfo *self, BSTR documentation) put_Documentation;
-				public new function HRESULT(IRegistrationInfo *self, BSTR* pText) get_XmlText;
-				public new function HRESULT(IRegistrationInfo *self, BSTR text) put_XmlText;
-				public new function HRESULT(IRegistrationInfo *self, BSTR* pUri) get_URI;
-				public new function HRESULT(IRegistrationInfo *self, BSTR uri) put_URI;
-				public new function HRESULT(IRegistrationInfo *self, VARIANT* pSddl) get_SecurityDescriptor;
-				public new function HRESULT(IRegistrationInfo *self, VARIANT sddl) put_SecurityDescriptor;
-				public new function HRESULT(IRegistrationInfo *self, BSTR* pSource) get_Source;
-				public new function HRESULT(IRegistrationInfo *self, BSTR source) put_Source;
+				public new function HRESULT(ref IRegistrationInfo self, out BSTR pDescription) get_Description;
+				public new function HRESULT(ref IRegistrationInfo self, BSTR description) put_Description;
+				public new function HRESULT(ref IRegistrationInfo self, out BSTR pAuthor) get_Author;
+				public new function HRESULT(ref IRegistrationInfo self, BSTR author) put_Author;
+				public new function HRESULT(ref IRegistrationInfo self, out BSTR pVersion) get_Version;
+				public new function HRESULT(ref IRegistrationInfo self, BSTR version) put_Version;
+				public new function HRESULT(ref IRegistrationInfo self, out BSTR pDate) get_Date;
+				public new function HRESULT(ref IRegistrationInfo self, BSTR date) put_Date;
+				public new function HRESULT(ref IRegistrationInfo self, out BSTR pDocumentation) get_Documentation;
+				public new function HRESULT(ref IRegistrationInfo self, BSTR documentation) put_Documentation;
+				public new function HRESULT(ref IRegistrationInfo self, out BSTR pText) get_XmlText;
+				public new function HRESULT(ref IRegistrationInfo self, BSTR text) put_XmlText;
+				public new function HRESULT(ref IRegistrationInfo self, out BSTR pUri) get_URI;
+				public new function HRESULT(ref IRegistrationInfo self, BSTR uri) put_URI;
+				public new function HRESULT(ref IRegistrationInfo self, out VARIANT pSddl) get_SecurityDescriptor;
+				public new function HRESULT(ref IRegistrationInfo self, VARIANT sddl) put_SecurityDescriptor;
+				public new function HRESULT(ref IRegistrationInfo self, out BSTR pSource) get_Source;
+				public new function HRESULT(ref IRegistrationInfo self, BSTR source) put_Source;
 			}
 		}
 		[CRepr]
@@ -2059,79 +2059,79 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_RegistrationInfo(IRegistrationInfo** ppRegistrationInfo) mut
+			public HRESULT get_RegistrationInfo(out IRegistrationInfo* ppRegistrationInfo) mut
 			{
-				return VT.get_RegistrationInfo(&this, ppRegistrationInfo);
+				return VT.get_RegistrationInfo(ref this, out ppRegistrationInfo);
 			}
-			public HRESULT put_RegistrationInfo(IRegistrationInfo* pRegistrationInfo) mut
+			public HRESULT put_RegistrationInfo(ref IRegistrationInfo pRegistrationInfo) mut
 			{
-				return VT.put_RegistrationInfo(&this, pRegistrationInfo);
+				return VT.put_RegistrationInfo(ref this, ref pRegistrationInfo);
 			}
-			public HRESULT get_Triggers(ITriggerCollection** ppTriggers) mut
+			public HRESULT get_Triggers(out ITriggerCollection* ppTriggers) mut
 			{
-				return VT.get_Triggers(&this, ppTriggers);
+				return VT.get_Triggers(ref this, out ppTriggers);
 			}
-			public HRESULT put_Triggers(ITriggerCollection* pTriggers) mut
+			public HRESULT put_Triggers(ref ITriggerCollection pTriggers) mut
 			{
-				return VT.put_Triggers(&this, pTriggers);
+				return VT.put_Triggers(ref this, ref pTriggers);
 			}
-			public HRESULT get_Settings(ITaskSettings** ppSettings) mut
+			public HRESULT get_Settings(out ITaskSettings* ppSettings) mut
 			{
-				return VT.get_Settings(&this, ppSettings);
+				return VT.get_Settings(ref this, out ppSettings);
 			}
-			public HRESULT put_Settings(ITaskSettings* pSettings) mut
+			public HRESULT put_Settings(ref ITaskSettings pSettings) mut
 			{
-				return VT.put_Settings(&this, pSettings);
+				return VT.put_Settings(ref this, ref pSettings);
 			}
-			public HRESULT get_Data(BSTR* pData) mut
+			public HRESULT get_Data(out BSTR pData) mut
 			{
-				return VT.get_Data(&this, pData);
+				return VT.get_Data(ref this, out pData);
 			}
 			public HRESULT put_Data(BSTR data) mut
 			{
-				return VT.put_Data(&this, data);
+				return VT.put_Data(ref this, data);
 			}
-			public HRESULT get_Principal(IPrincipal** ppPrincipal) mut
+			public HRESULT get_Principal(out IPrincipal* ppPrincipal) mut
 			{
-				return VT.get_Principal(&this, ppPrincipal);
+				return VT.get_Principal(ref this, out ppPrincipal);
 			}
-			public HRESULT put_Principal(IPrincipal* pPrincipal) mut
+			public HRESULT put_Principal(ref IPrincipal pPrincipal) mut
 			{
-				return VT.put_Principal(&this, pPrincipal);
+				return VT.put_Principal(ref this, ref pPrincipal);
 			}
-			public HRESULT get_Actions(IActionCollection** ppActions) mut
+			public HRESULT get_Actions(out IActionCollection* ppActions) mut
 			{
-				return VT.get_Actions(&this, ppActions);
+				return VT.get_Actions(ref this, out ppActions);
 			}
-			public HRESULT put_Actions(IActionCollection* pActions) mut
+			public HRESULT put_Actions(ref IActionCollection pActions) mut
 			{
-				return VT.put_Actions(&this, pActions);
+				return VT.put_Actions(ref this, ref pActions);
 			}
-			public HRESULT get_XmlText(BSTR* pXml) mut
+			public HRESULT get_XmlText(out BSTR pXml) mut
 			{
-				return VT.get_XmlText(&this, pXml);
+				return VT.get_XmlText(ref this, out pXml);
 			}
 			public HRESULT put_XmlText(BSTR xml) mut
 			{
-				return VT.put_XmlText(&this, xml);
+				return VT.put_XmlText(ref this, xml);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITaskDefinition *self, IRegistrationInfo** ppRegistrationInfo) get_RegistrationInfo;
-				public new function HRESULT(ITaskDefinition *self, IRegistrationInfo* pRegistrationInfo) put_RegistrationInfo;
-				public new function HRESULT(ITaskDefinition *self, ITriggerCollection** ppTriggers) get_Triggers;
-				public new function HRESULT(ITaskDefinition *self, ITriggerCollection* pTriggers) put_Triggers;
-				public new function HRESULT(ITaskDefinition *self, ITaskSettings** ppSettings) get_Settings;
-				public new function HRESULT(ITaskDefinition *self, ITaskSettings* pSettings) put_Settings;
-				public new function HRESULT(ITaskDefinition *self, BSTR* pData) get_Data;
-				public new function HRESULT(ITaskDefinition *self, BSTR data) put_Data;
-				public new function HRESULT(ITaskDefinition *self, IPrincipal** ppPrincipal) get_Principal;
-				public new function HRESULT(ITaskDefinition *self, IPrincipal* pPrincipal) put_Principal;
-				public new function HRESULT(ITaskDefinition *self, IActionCollection** ppActions) get_Actions;
-				public new function HRESULT(ITaskDefinition *self, IActionCollection* pActions) put_Actions;
-				public new function HRESULT(ITaskDefinition *self, BSTR* pXml) get_XmlText;
-				public new function HRESULT(ITaskDefinition *self, BSTR xml) put_XmlText;
+				public new function HRESULT(ref ITaskDefinition self, out IRegistrationInfo* ppRegistrationInfo) get_RegistrationInfo;
+				public new function HRESULT(ref ITaskDefinition self, ref IRegistrationInfo pRegistrationInfo) put_RegistrationInfo;
+				public new function HRESULT(ref ITaskDefinition self, out ITriggerCollection* ppTriggers) get_Triggers;
+				public new function HRESULT(ref ITaskDefinition self, ref ITriggerCollection pTriggers) put_Triggers;
+				public new function HRESULT(ref ITaskDefinition self, out ITaskSettings* ppSettings) get_Settings;
+				public new function HRESULT(ref ITaskDefinition self, ref ITaskSettings pSettings) put_Settings;
+				public new function HRESULT(ref ITaskDefinition self, out BSTR pData) get_Data;
+				public new function HRESULT(ref ITaskDefinition self, BSTR data) put_Data;
+				public new function HRESULT(ref ITaskDefinition self, out IPrincipal* ppPrincipal) get_Principal;
+				public new function HRESULT(ref ITaskDefinition self, ref IPrincipal pPrincipal) put_Principal;
+				public new function HRESULT(ref ITaskDefinition self, out IActionCollection* ppActions) get_Actions;
+				public new function HRESULT(ref ITaskDefinition self, ref IActionCollection pActions) put_Actions;
+				public new function HRESULT(ref ITaskDefinition self, out BSTR pXml) get_XmlText;
+				public new function HRESULT(ref ITaskDefinition self, BSTR xml) put_XmlText;
 			}
 		}
 		[CRepr]
@@ -2141,209 +2141,209 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_AllowDemandStart(int16* pAllowDemandStart) mut
+			public HRESULT get_AllowDemandStart(out int16 pAllowDemandStart) mut
 			{
-				return VT.get_AllowDemandStart(&this, pAllowDemandStart);
+				return VT.get_AllowDemandStart(ref this, out pAllowDemandStart);
 			}
 			public HRESULT put_AllowDemandStart(int16 allowDemandStart) mut
 			{
-				return VT.put_AllowDemandStart(&this, allowDemandStart);
+				return VT.put_AllowDemandStart(ref this, allowDemandStart);
 			}
-			public HRESULT get_RestartInterval(BSTR* pRestartInterval) mut
+			public HRESULT get_RestartInterval(out BSTR pRestartInterval) mut
 			{
-				return VT.get_RestartInterval(&this, pRestartInterval);
+				return VT.get_RestartInterval(ref this, out pRestartInterval);
 			}
 			public HRESULT put_RestartInterval(BSTR restartInterval) mut
 			{
-				return VT.put_RestartInterval(&this, restartInterval);
+				return VT.put_RestartInterval(ref this, restartInterval);
 			}
-			public HRESULT get_RestartCount(int32* pRestartCount) mut
+			public HRESULT get_RestartCount(out int32 pRestartCount) mut
 			{
-				return VT.get_RestartCount(&this, pRestartCount);
+				return VT.get_RestartCount(ref this, out pRestartCount);
 			}
 			public HRESULT put_RestartCount(int32 restartCount) mut
 			{
-				return VT.put_RestartCount(&this, restartCount);
+				return VT.put_RestartCount(ref this, restartCount);
 			}
-			public HRESULT get_MultipleInstances(TASK_INSTANCES_POLICY* pPolicy) mut
+			public HRESULT get_MultipleInstances(out TASK_INSTANCES_POLICY pPolicy) mut
 			{
-				return VT.get_MultipleInstances(&this, pPolicy);
+				return VT.get_MultipleInstances(ref this, out pPolicy);
 			}
 			public HRESULT put_MultipleInstances(TASK_INSTANCES_POLICY policy) mut
 			{
-				return VT.put_MultipleInstances(&this, policy);
+				return VT.put_MultipleInstances(ref this, policy);
 			}
-			public HRESULT get_StopIfGoingOnBatteries(int16* pStopIfOnBatteries) mut
+			public HRESULT get_StopIfGoingOnBatteries(out int16 pStopIfOnBatteries) mut
 			{
-				return VT.get_StopIfGoingOnBatteries(&this, pStopIfOnBatteries);
+				return VT.get_StopIfGoingOnBatteries(ref this, out pStopIfOnBatteries);
 			}
 			public HRESULT put_StopIfGoingOnBatteries(int16 stopIfOnBatteries) mut
 			{
-				return VT.put_StopIfGoingOnBatteries(&this, stopIfOnBatteries);
+				return VT.put_StopIfGoingOnBatteries(ref this, stopIfOnBatteries);
 			}
-			public HRESULT get_DisallowStartIfOnBatteries(int16* pDisallowStart) mut
+			public HRESULT get_DisallowStartIfOnBatteries(out int16 pDisallowStart) mut
 			{
-				return VT.get_DisallowStartIfOnBatteries(&this, pDisallowStart);
+				return VT.get_DisallowStartIfOnBatteries(ref this, out pDisallowStart);
 			}
 			public HRESULT put_DisallowStartIfOnBatteries(int16 disallowStart) mut
 			{
-				return VT.put_DisallowStartIfOnBatteries(&this, disallowStart);
+				return VT.put_DisallowStartIfOnBatteries(ref this, disallowStart);
 			}
-			public HRESULT get_AllowHardTerminate(int16* pAllowHardTerminate) mut
+			public HRESULT get_AllowHardTerminate(out int16 pAllowHardTerminate) mut
 			{
-				return VT.get_AllowHardTerminate(&this, pAllowHardTerminate);
+				return VT.get_AllowHardTerminate(ref this, out pAllowHardTerminate);
 			}
 			public HRESULT put_AllowHardTerminate(int16 allowHardTerminate) mut
 			{
-				return VT.put_AllowHardTerminate(&this, allowHardTerminate);
+				return VT.put_AllowHardTerminate(ref this, allowHardTerminate);
 			}
-			public HRESULT get_StartWhenAvailable(int16* pStartWhenAvailable) mut
+			public HRESULT get_StartWhenAvailable(out int16 pStartWhenAvailable) mut
 			{
-				return VT.get_StartWhenAvailable(&this, pStartWhenAvailable);
+				return VT.get_StartWhenAvailable(ref this, out pStartWhenAvailable);
 			}
 			public HRESULT put_StartWhenAvailable(int16 startWhenAvailable) mut
 			{
-				return VT.put_StartWhenAvailable(&this, startWhenAvailable);
+				return VT.put_StartWhenAvailable(ref this, startWhenAvailable);
 			}
-			public HRESULT get_XmlText(BSTR* pText) mut
+			public HRESULT get_XmlText(out BSTR pText) mut
 			{
-				return VT.get_XmlText(&this, pText);
+				return VT.get_XmlText(ref this, out pText);
 			}
 			public HRESULT put_XmlText(BSTR text) mut
 			{
-				return VT.put_XmlText(&this, text);
+				return VT.put_XmlText(ref this, text);
 			}
-			public HRESULT get_RunOnlyIfNetworkAvailable(int16* pRunOnlyIfNetworkAvailable) mut
+			public HRESULT get_RunOnlyIfNetworkAvailable(out int16 pRunOnlyIfNetworkAvailable) mut
 			{
-				return VT.get_RunOnlyIfNetworkAvailable(&this, pRunOnlyIfNetworkAvailable);
+				return VT.get_RunOnlyIfNetworkAvailable(ref this, out pRunOnlyIfNetworkAvailable);
 			}
 			public HRESULT put_RunOnlyIfNetworkAvailable(int16 runOnlyIfNetworkAvailable) mut
 			{
-				return VT.put_RunOnlyIfNetworkAvailable(&this, runOnlyIfNetworkAvailable);
+				return VT.put_RunOnlyIfNetworkAvailable(ref this, runOnlyIfNetworkAvailable);
 			}
-			public HRESULT get_ExecutionTimeLimit(BSTR* pExecutionTimeLimit) mut
+			public HRESULT get_ExecutionTimeLimit(out BSTR pExecutionTimeLimit) mut
 			{
-				return VT.get_ExecutionTimeLimit(&this, pExecutionTimeLimit);
+				return VT.get_ExecutionTimeLimit(ref this, out pExecutionTimeLimit);
 			}
 			public HRESULT put_ExecutionTimeLimit(BSTR executionTimeLimit) mut
 			{
-				return VT.put_ExecutionTimeLimit(&this, executionTimeLimit);
+				return VT.put_ExecutionTimeLimit(ref this, executionTimeLimit);
 			}
-			public HRESULT get_Enabled(int16* pEnabled) mut
+			public HRESULT get_Enabled(out int16 pEnabled) mut
 			{
-				return VT.get_Enabled(&this, pEnabled);
+				return VT.get_Enabled(ref this, out pEnabled);
 			}
 			public HRESULT put_Enabled(int16 enabled) mut
 			{
-				return VT.put_Enabled(&this, enabled);
+				return VT.put_Enabled(ref this, enabled);
 			}
-			public HRESULT get_DeleteExpiredTaskAfter(BSTR* pExpirationDelay) mut
+			public HRESULT get_DeleteExpiredTaskAfter(out BSTR pExpirationDelay) mut
 			{
-				return VT.get_DeleteExpiredTaskAfter(&this, pExpirationDelay);
+				return VT.get_DeleteExpiredTaskAfter(ref this, out pExpirationDelay);
 			}
 			public HRESULT put_DeleteExpiredTaskAfter(BSTR expirationDelay) mut
 			{
-				return VT.put_DeleteExpiredTaskAfter(&this, expirationDelay);
+				return VT.put_DeleteExpiredTaskAfter(ref this, expirationDelay);
 			}
-			public HRESULT get_Priority(int32* pPriority) mut
+			public HRESULT get_Priority(out int32 pPriority) mut
 			{
-				return VT.get_Priority(&this, pPriority);
+				return VT.get_Priority(ref this, out pPriority);
 			}
 			public HRESULT put_Priority(int32 priority) mut
 			{
-				return VT.put_Priority(&this, priority);
+				return VT.put_Priority(ref this, priority);
 			}
-			public HRESULT get_Compatibility(TASK_COMPATIBILITY* pCompatLevel) mut
+			public HRESULT get_Compatibility(out TASK_COMPATIBILITY pCompatLevel) mut
 			{
-				return VT.get_Compatibility(&this, pCompatLevel);
+				return VT.get_Compatibility(ref this, out pCompatLevel);
 			}
 			public HRESULT put_Compatibility(TASK_COMPATIBILITY compatLevel) mut
 			{
-				return VT.put_Compatibility(&this, compatLevel);
+				return VT.put_Compatibility(ref this, compatLevel);
 			}
-			public HRESULT get_Hidden(int16* pHidden) mut
+			public HRESULT get_Hidden(out int16 pHidden) mut
 			{
-				return VT.get_Hidden(&this, pHidden);
+				return VT.get_Hidden(ref this, out pHidden);
 			}
 			public HRESULT put_Hidden(int16 hidden) mut
 			{
-				return VT.put_Hidden(&this, hidden);
+				return VT.put_Hidden(ref this, hidden);
 			}
-			public HRESULT get_IdleSettings(IIdleSettings** ppIdleSettings) mut
+			public HRESULT get_IdleSettings(out IIdleSettings* ppIdleSettings) mut
 			{
-				return VT.get_IdleSettings(&this, ppIdleSettings);
+				return VT.get_IdleSettings(ref this, out ppIdleSettings);
 			}
-			public HRESULT put_IdleSettings(IIdleSettings* pIdleSettings) mut
+			public HRESULT put_IdleSettings(ref IIdleSettings pIdleSettings) mut
 			{
-				return VT.put_IdleSettings(&this, pIdleSettings);
+				return VT.put_IdleSettings(ref this, ref pIdleSettings);
 			}
-			public HRESULT get_RunOnlyIfIdle(int16* pRunOnlyIfIdle) mut
+			public HRESULT get_RunOnlyIfIdle(out int16 pRunOnlyIfIdle) mut
 			{
-				return VT.get_RunOnlyIfIdle(&this, pRunOnlyIfIdle);
+				return VT.get_RunOnlyIfIdle(ref this, out pRunOnlyIfIdle);
 			}
 			public HRESULT put_RunOnlyIfIdle(int16 runOnlyIfIdle) mut
 			{
-				return VT.put_RunOnlyIfIdle(&this, runOnlyIfIdle);
+				return VT.put_RunOnlyIfIdle(ref this, runOnlyIfIdle);
 			}
-			public HRESULT get_WakeToRun(int16* pWake) mut
+			public HRESULT get_WakeToRun(out int16 pWake) mut
 			{
-				return VT.get_WakeToRun(&this, pWake);
+				return VT.get_WakeToRun(ref this, out pWake);
 			}
 			public HRESULT put_WakeToRun(int16 wake) mut
 			{
-				return VT.put_WakeToRun(&this, wake);
+				return VT.put_WakeToRun(ref this, wake);
 			}
-			public HRESULT get_NetworkSettings(INetworkSettings** ppNetworkSettings) mut
+			public HRESULT get_NetworkSettings(out INetworkSettings* ppNetworkSettings) mut
 			{
-				return VT.get_NetworkSettings(&this, ppNetworkSettings);
+				return VT.get_NetworkSettings(ref this, out ppNetworkSettings);
 			}
-			public HRESULT put_NetworkSettings(INetworkSettings* pNetworkSettings) mut
+			public HRESULT put_NetworkSettings(ref INetworkSettings pNetworkSettings) mut
 			{
-				return VT.put_NetworkSettings(&this, pNetworkSettings);
+				return VT.put_NetworkSettings(ref this, ref pNetworkSettings);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITaskSettings *self, int16* pAllowDemandStart) get_AllowDemandStart;
-				public new function HRESULT(ITaskSettings *self, int16 allowDemandStart) put_AllowDemandStart;
-				public new function HRESULT(ITaskSettings *self, BSTR* pRestartInterval) get_RestartInterval;
-				public new function HRESULT(ITaskSettings *self, BSTR restartInterval) put_RestartInterval;
-				public new function HRESULT(ITaskSettings *self, int32* pRestartCount) get_RestartCount;
-				public new function HRESULT(ITaskSettings *self, int32 restartCount) put_RestartCount;
-				public new function HRESULT(ITaskSettings *self, TASK_INSTANCES_POLICY* pPolicy) get_MultipleInstances;
-				public new function HRESULT(ITaskSettings *self, TASK_INSTANCES_POLICY policy) put_MultipleInstances;
-				public new function HRESULT(ITaskSettings *self, int16* pStopIfOnBatteries) get_StopIfGoingOnBatteries;
-				public new function HRESULT(ITaskSettings *self, int16 stopIfOnBatteries) put_StopIfGoingOnBatteries;
-				public new function HRESULT(ITaskSettings *self, int16* pDisallowStart) get_DisallowStartIfOnBatteries;
-				public new function HRESULT(ITaskSettings *self, int16 disallowStart) put_DisallowStartIfOnBatteries;
-				public new function HRESULT(ITaskSettings *self, int16* pAllowHardTerminate) get_AllowHardTerminate;
-				public new function HRESULT(ITaskSettings *self, int16 allowHardTerminate) put_AllowHardTerminate;
-				public new function HRESULT(ITaskSettings *self, int16* pStartWhenAvailable) get_StartWhenAvailable;
-				public new function HRESULT(ITaskSettings *self, int16 startWhenAvailable) put_StartWhenAvailable;
-				public new function HRESULT(ITaskSettings *self, BSTR* pText) get_XmlText;
-				public new function HRESULT(ITaskSettings *self, BSTR text) put_XmlText;
-				public new function HRESULT(ITaskSettings *self, int16* pRunOnlyIfNetworkAvailable) get_RunOnlyIfNetworkAvailable;
-				public new function HRESULT(ITaskSettings *self, int16 runOnlyIfNetworkAvailable) put_RunOnlyIfNetworkAvailable;
-				public new function HRESULT(ITaskSettings *self, BSTR* pExecutionTimeLimit) get_ExecutionTimeLimit;
-				public new function HRESULT(ITaskSettings *self, BSTR executionTimeLimit) put_ExecutionTimeLimit;
-				public new function HRESULT(ITaskSettings *self, int16* pEnabled) get_Enabled;
-				public new function HRESULT(ITaskSettings *self, int16 enabled) put_Enabled;
-				public new function HRESULT(ITaskSettings *self, BSTR* pExpirationDelay) get_DeleteExpiredTaskAfter;
-				public new function HRESULT(ITaskSettings *self, BSTR expirationDelay) put_DeleteExpiredTaskAfter;
-				public new function HRESULT(ITaskSettings *self, int32* pPriority) get_Priority;
-				public new function HRESULT(ITaskSettings *self, int32 priority) put_Priority;
-				public new function HRESULT(ITaskSettings *self, TASK_COMPATIBILITY* pCompatLevel) get_Compatibility;
-				public new function HRESULT(ITaskSettings *self, TASK_COMPATIBILITY compatLevel) put_Compatibility;
-				public new function HRESULT(ITaskSettings *self, int16* pHidden) get_Hidden;
-				public new function HRESULT(ITaskSettings *self, int16 hidden) put_Hidden;
-				public new function HRESULT(ITaskSettings *self, IIdleSettings** ppIdleSettings) get_IdleSettings;
-				public new function HRESULT(ITaskSettings *self, IIdleSettings* pIdleSettings) put_IdleSettings;
-				public new function HRESULT(ITaskSettings *self, int16* pRunOnlyIfIdle) get_RunOnlyIfIdle;
-				public new function HRESULT(ITaskSettings *self, int16 runOnlyIfIdle) put_RunOnlyIfIdle;
-				public new function HRESULT(ITaskSettings *self, int16* pWake) get_WakeToRun;
-				public new function HRESULT(ITaskSettings *self, int16 wake) put_WakeToRun;
-				public new function HRESULT(ITaskSettings *self, INetworkSettings** ppNetworkSettings) get_NetworkSettings;
-				public new function HRESULT(ITaskSettings *self, INetworkSettings* pNetworkSettings) put_NetworkSettings;
+				public new function HRESULT(ref ITaskSettings self, out int16 pAllowDemandStart) get_AllowDemandStart;
+				public new function HRESULT(ref ITaskSettings self, int16 allowDemandStart) put_AllowDemandStart;
+				public new function HRESULT(ref ITaskSettings self, out BSTR pRestartInterval) get_RestartInterval;
+				public new function HRESULT(ref ITaskSettings self, BSTR restartInterval) put_RestartInterval;
+				public new function HRESULT(ref ITaskSettings self, out int32 pRestartCount) get_RestartCount;
+				public new function HRESULT(ref ITaskSettings self, int32 restartCount) put_RestartCount;
+				public new function HRESULT(ref ITaskSettings self, out TASK_INSTANCES_POLICY pPolicy) get_MultipleInstances;
+				public new function HRESULT(ref ITaskSettings self, TASK_INSTANCES_POLICY policy) put_MultipleInstances;
+				public new function HRESULT(ref ITaskSettings self, out int16 pStopIfOnBatteries) get_StopIfGoingOnBatteries;
+				public new function HRESULT(ref ITaskSettings self, int16 stopIfOnBatteries) put_StopIfGoingOnBatteries;
+				public new function HRESULT(ref ITaskSettings self, out int16 pDisallowStart) get_DisallowStartIfOnBatteries;
+				public new function HRESULT(ref ITaskSettings self, int16 disallowStart) put_DisallowStartIfOnBatteries;
+				public new function HRESULT(ref ITaskSettings self, out int16 pAllowHardTerminate) get_AllowHardTerminate;
+				public new function HRESULT(ref ITaskSettings self, int16 allowHardTerminate) put_AllowHardTerminate;
+				public new function HRESULT(ref ITaskSettings self, out int16 pStartWhenAvailable) get_StartWhenAvailable;
+				public new function HRESULT(ref ITaskSettings self, int16 startWhenAvailable) put_StartWhenAvailable;
+				public new function HRESULT(ref ITaskSettings self, out BSTR pText) get_XmlText;
+				public new function HRESULT(ref ITaskSettings self, BSTR text) put_XmlText;
+				public new function HRESULT(ref ITaskSettings self, out int16 pRunOnlyIfNetworkAvailable) get_RunOnlyIfNetworkAvailable;
+				public new function HRESULT(ref ITaskSettings self, int16 runOnlyIfNetworkAvailable) put_RunOnlyIfNetworkAvailable;
+				public new function HRESULT(ref ITaskSettings self, out BSTR pExecutionTimeLimit) get_ExecutionTimeLimit;
+				public new function HRESULT(ref ITaskSettings self, BSTR executionTimeLimit) put_ExecutionTimeLimit;
+				public new function HRESULT(ref ITaskSettings self, out int16 pEnabled) get_Enabled;
+				public new function HRESULT(ref ITaskSettings self, int16 enabled) put_Enabled;
+				public new function HRESULT(ref ITaskSettings self, out BSTR pExpirationDelay) get_DeleteExpiredTaskAfter;
+				public new function HRESULT(ref ITaskSettings self, BSTR expirationDelay) put_DeleteExpiredTaskAfter;
+				public new function HRESULT(ref ITaskSettings self, out int32 pPriority) get_Priority;
+				public new function HRESULT(ref ITaskSettings self, int32 priority) put_Priority;
+				public new function HRESULT(ref ITaskSettings self, out TASK_COMPATIBILITY pCompatLevel) get_Compatibility;
+				public new function HRESULT(ref ITaskSettings self, TASK_COMPATIBILITY compatLevel) put_Compatibility;
+				public new function HRESULT(ref ITaskSettings self, out int16 pHidden) get_Hidden;
+				public new function HRESULT(ref ITaskSettings self, int16 hidden) put_Hidden;
+				public new function HRESULT(ref ITaskSettings self, out IIdleSettings* ppIdleSettings) get_IdleSettings;
+				public new function HRESULT(ref ITaskSettings self, ref IIdleSettings pIdleSettings) put_IdleSettings;
+				public new function HRESULT(ref ITaskSettings self, out int16 pRunOnlyIfIdle) get_RunOnlyIfIdle;
+				public new function HRESULT(ref ITaskSettings self, int16 runOnlyIfIdle) put_RunOnlyIfIdle;
+				public new function HRESULT(ref ITaskSettings self, out int16 pWake) get_WakeToRun;
+				public new function HRESULT(ref ITaskSettings self, int16 wake) put_WakeToRun;
+				public new function HRESULT(ref ITaskSettings self, out INetworkSettings* ppNetworkSettings) get_NetworkSettings;
+				public new function HRESULT(ref ITaskSettings self, ref INetworkSettings pNetworkSettings) put_NetworkSettings;
 			}
 		}
 		[CRepr]
@@ -2353,29 +2353,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DisallowStartOnRemoteAppSession(int16* pDisallowStart) mut
+			public HRESULT get_DisallowStartOnRemoteAppSession(out int16 pDisallowStart) mut
 			{
-				return VT.get_DisallowStartOnRemoteAppSession(&this, pDisallowStart);
+				return VT.get_DisallowStartOnRemoteAppSession(ref this, out pDisallowStart);
 			}
 			public HRESULT put_DisallowStartOnRemoteAppSession(int16 disallowStart) mut
 			{
-				return VT.put_DisallowStartOnRemoteAppSession(&this, disallowStart);
+				return VT.put_DisallowStartOnRemoteAppSession(ref this, disallowStart);
 			}
-			public HRESULT get_UseUnifiedSchedulingEngine(int16* pUseUnifiedEngine) mut
+			public HRESULT get_UseUnifiedSchedulingEngine(out int16 pUseUnifiedEngine) mut
 			{
-				return VT.get_UseUnifiedSchedulingEngine(&this, pUseUnifiedEngine);
+				return VT.get_UseUnifiedSchedulingEngine(ref this, out pUseUnifiedEngine);
 			}
 			public HRESULT put_UseUnifiedSchedulingEngine(int16 useUnifiedEngine) mut
 			{
-				return VT.put_UseUnifiedSchedulingEngine(&this, useUnifiedEngine);
+				return VT.put_UseUnifiedSchedulingEngine(ref this, useUnifiedEngine);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITaskSettings2 *self, int16* pDisallowStart) get_DisallowStartOnRemoteAppSession;
-				public new function HRESULT(ITaskSettings2 *self, int16 disallowStart) put_DisallowStartOnRemoteAppSession;
-				public new function HRESULT(ITaskSettings2 *self, int16* pUseUnifiedEngine) get_UseUnifiedSchedulingEngine;
-				public new function HRESULT(ITaskSettings2 *self, int16 useUnifiedEngine) put_UseUnifiedSchedulingEngine;
+				public new function HRESULT(ref ITaskSettings2 self, out int16 pDisallowStart) get_DisallowStartOnRemoteAppSession;
+				public new function HRESULT(ref ITaskSettings2 self, int16 disallowStart) put_DisallowStartOnRemoteAppSession;
+				public new function HRESULT(ref ITaskSettings2 self, out int16 pUseUnifiedEngine) get_UseUnifiedSchedulingEngine;
+				public new function HRESULT(ref ITaskSettings2 self, int16 useUnifiedEngine) put_UseUnifiedSchedulingEngine;
 			}
 		}
 		[CRepr]
@@ -2385,54 +2385,54 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_DisallowStartOnRemoteAppSession(int16* pDisallowStart) mut
+			public HRESULT get_DisallowStartOnRemoteAppSession(out int16 pDisallowStart) mut
 			{
-				return VT.get_DisallowStartOnRemoteAppSession(&this, pDisallowStart);
+				return VT.get_DisallowStartOnRemoteAppSession(ref this, out pDisallowStart);
 			}
 			public HRESULT put_DisallowStartOnRemoteAppSession(int16 disallowStart) mut
 			{
-				return VT.put_DisallowStartOnRemoteAppSession(&this, disallowStart);
+				return VT.put_DisallowStartOnRemoteAppSession(ref this, disallowStart);
 			}
-			public HRESULT get_UseUnifiedSchedulingEngine(int16* pUseUnifiedEngine) mut
+			public HRESULT get_UseUnifiedSchedulingEngine(out int16 pUseUnifiedEngine) mut
 			{
-				return VT.get_UseUnifiedSchedulingEngine(&this, pUseUnifiedEngine);
+				return VT.get_UseUnifiedSchedulingEngine(ref this, out pUseUnifiedEngine);
 			}
 			public HRESULT put_UseUnifiedSchedulingEngine(int16 useUnifiedEngine) mut
 			{
-				return VT.put_UseUnifiedSchedulingEngine(&this, useUnifiedEngine);
+				return VT.put_UseUnifiedSchedulingEngine(ref this, useUnifiedEngine);
 			}
-			public HRESULT get_MaintenanceSettings(IMaintenanceSettings** ppMaintenanceSettings) mut
+			public HRESULT get_MaintenanceSettings(out IMaintenanceSettings* ppMaintenanceSettings) mut
 			{
-				return VT.get_MaintenanceSettings(&this, ppMaintenanceSettings);
+				return VT.get_MaintenanceSettings(ref this, out ppMaintenanceSettings);
 			}
-			public HRESULT put_MaintenanceSettings(IMaintenanceSettings* pMaintenanceSettings) mut
+			public HRESULT put_MaintenanceSettings(ref IMaintenanceSettings pMaintenanceSettings) mut
 			{
-				return VT.put_MaintenanceSettings(&this, pMaintenanceSettings);
+				return VT.put_MaintenanceSettings(ref this, ref pMaintenanceSettings);
 			}
-			public HRESULT CreateMaintenanceSettings(IMaintenanceSettings** ppMaintenanceSettings) mut
+			public HRESULT CreateMaintenanceSettings(out IMaintenanceSettings* ppMaintenanceSettings) mut
 			{
-				return VT.CreateMaintenanceSettings(&this, ppMaintenanceSettings);
+				return VT.CreateMaintenanceSettings(ref this, out ppMaintenanceSettings);
 			}
-			public HRESULT get_Volatile(int16* pVolatile) mut
+			public HRESULT get_Volatile(out int16 pVolatile) mut
 			{
-				return VT.get_Volatile(&this, pVolatile);
+				return VT.get_Volatile(ref this, out pVolatile);
 			}
 			public HRESULT put_Volatile(int16 Volatile) mut
 			{
-				return VT.put_Volatile(&this, Volatile);
+				return VT.put_Volatile(ref this, Volatile);
 			}
 			[CRepr]
 			public struct VTable : ITaskSettings.VTable
 			{
-				public new function HRESULT(ITaskSettings3 *self, int16* pDisallowStart) get_DisallowStartOnRemoteAppSession;
-				public new function HRESULT(ITaskSettings3 *self, int16 disallowStart) put_DisallowStartOnRemoteAppSession;
-				public new function HRESULT(ITaskSettings3 *self, int16* pUseUnifiedEngine) get_UseUnifiedSchedulingEngine;
-				public new function HRESULT(ITaskSettings3 *self, int16 useUnifiedEngine) put_UseUnifiedSchedulingEngine;
-				public new function HRESULT(ITaskSettings3 *self, IMaintenanceSettings** ppMaintenanceSettings) get_MaintenanceSettings;
-				public new function HRESULT(ITaskSettings3 *self, IMaintenanceSettings* pMaintenanceSettings) put_MaintenanceSettings;
-				public new function HRESULT(ITaskSettings3 *self, IMaintenanceSettings** ppMaintenanceSettings) CreateMaintenanceSettings;
-				public new function HRESULT(ITaskSettings3 *self, int16* pVolatile) get_Volatile;
-				public new function HRESULT(ITaskSettings3 *self, int16 Volatile) put_Volatile;
+				public new function HRESULT(ref ITaskSettings3 self, out int16 pDisallowStart) get_DisallowStartOnRemoteAppSession;
+				public new function HRESULT(ref ITaskSettings3 self, int16 disallowStart) put_DisallowStartOnRemoteAppSession;
+				public new function HRESULT(ref ITaskSettings3 self, out int16 pUseUnifiedEngine) get_UseUnifiedSchedulingEngine;
+				public new function HRESULT(ref ITaskSettings3 self, int16 useUnifiedEngine) put_UseUnifiedSchedulingEngine;
+				public new function HRESULT(ref ITaskSettings3 self, out IMaintenanceSettings* ppMaintenanceSettings) get_MaintenanceSettings;
+				public new function HRESULT(ref ITaskSettings3 self, ref IMaintenanceSettings pMaintenanceSettings) put_MaintenanceSettings;
+				public new function HRESULT(ref ITaskSettings3 self, out IMaintenanceSettings* ppMaintenanceSettings) CreateMaintenanceSettings;
+				public new function HRESULT(ref ITaskSettings3 self, out int16 pVolatile) get_Volatile;
+				public new function HRESULT(ref ITaskSettings3 self, int16 Volatile) put_Volatile;
 			}
 		}
 		[CRepr]
@@ -2444,37 +2444,37 @@ namespace Win32
 			
 			public HRESULT put_Period(BSTR value) mut
 			{
-				return VT.put_Period(&this, value);
+				return VT.put_Period(ref this, value);
 			}
-			public HRESULT get_Period(BSTR* target) mut
+			public HRESULT get_Period(out BSTR target) mut
 			{
-				return VT.get_Period(&this, target);
+				return VT.get_Period(ref this, out target);
 			}
 			public HRESULT put_Deadline(BSTR value) mut
 			{
-				return VT.put_Deadline(&this, value);
+				return VT.put_Deadline(ref this, value);
 			}
-			public HRESULT get_Deadline(BSTR* target) mut
+			public HRESULT get_Deadline(out BSTR target) mut
 			{
-				return VT.get_Deadline(&this, target);
+				return VT.get_Deadline(ref this, out target);
 			}
 			public HRESULT put_Exclusive(int16 value) mut
 			{
-				return VT.put_Exclusive(&this, value);
+				return VT.put_Exclusive(ref this, value);
 			}
-			public HRESULT get_Exclusive(int16* target) mut
+			public HRESULT get_Exclusive(out int16 target) mut
 			{
-				return VT.get_Exclusive(&this, target);
+				return VT.get_Exclusive(ref this, out target);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IMaintenanceSettings *self, BSTR value) put_Period;
-				public new function HRESULT(IMaintenanceSettings *self, BSTR* target) get_Period;
-				public new function HRESULT(IMaintenanceSettings *self, BSTR value) put_Deadline;
-				public new function HRESULT(IMaintenanceSettings *self, BSTR* target) get_Deadline;
-				public new function HRESULT(IMaintenanceSettings *self, int16 value) put_Exclusive;
-				public new function HRESULT(IMaintenanceSettings *self, int16* target) get_Exclusive;
+				public new function HRESULT(ref IMaintenanceSettings self, BSTR value) put_Period;
+				public new function HRESULT(ref IMaintenanceSettings self, out BSTR target) get_Period;
+				public new function HRESULT(ref IMaintenanceSettings self, BSTR value) put_Deadline;
+				public new function HRESULT(ref IMaintenanceSettings self, out BSTR target) get_Deadline;
+				public new function HRESULT(ref IMaintenanceSettings self, int16 value) put_Exclusive;
+				public new function HRESULT(ref IMaintenanceSettings self, out int16 target) get_Exclusive;
 			}
 		}
 		[CRepr]
@@ -2484,24 +2484,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* pCount) mut
+			public HRESULT get_Count(out int32 pCount) mut
 			{
-				return VT.get_Count(&this, pCount);
+				return VT.get_Count(ref this, out pCount);
 			}
 			public HRESULT get_Item(VARIANT index, IRegisteredTask** ppRegisteredTask) mut
 			{
-				return VT.get_Item(&this, index, ppRegisteredTask);
+				return VT.get_Item(ref this, index, ppRegisteredTask);
 			}
 			public HRESULT get__NewEnum(IUnknown** ppEnum) mut
 			{
-				return VT.get__NewEnum(&this, ppEnum);
+				return VT.get__NewEnum(ref this, ppEnum);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRegisteredTaskCollection *self, int32* pCount) get_Count;
-				public new function HRESULT(IRegisteredTaskCollection *self, VARIANT index, IRegisteredTask** ppRegisteredTask) get_Item;
-				public new function HRESULT(IRegisteredTaskCollection *self, IUnknown** ppEnum) get__NewEnum;
+				public new function HRESULT(ref IRegisteredTaskCollection self, out int32 pCount) get_Count;
+				public new function HRESULT(ref IRegisteredTaskCollection self, VARIANT index, IRegisteredTask** ppRegisteredTask) get_Item;
+				public new function HRESULT(ref IRegisteredTaskCollection self, IUnknown** ppEnum) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -2513,72 +2513,72 @@ namespace Win32
 			
 			public HRESULT get_Name(BSTR* pName) mut
 			{
-				return VT.get_Name(&this, pName);
+				return VT.get_Name(ref this, pName);
 			}
 			public HRESULT get_Path(BSTR* pPath) mut
 			{
-				return VT.get_Path(&this, pPath);
+				return VT.get_Path(ref this, pPath);
 			}
 			public HRESULT GetFolder(BSTR path, ITaskFolder** ppFolder) mut
 			{
-				return VT.GetFolder(&this, path, ppFolder);
+				return VT.GetFolder(ref this, path, ppFolder);
 			}
 			public HRESULT GetFolders(int32 flags, ITaskFolderCollection** ppFolders) mut
 			{
-				return VT.GetFolders(&this, flags, ppFolders);
+				return VT.GetFolders(ref this, flags, ppFolders);
 			}
 			public HRESULT CreateFolder(BSTR subFolderName, VARIANT sddl, ITaskFolder** ppFolder) mut
 			{
-				return VT.CreateFolder(&this, subFolderName, sddl, ppFolder);
+				return VT.CreateFolder(ref this, subFolderName, sddl, ppFolder);
 			}
 			public HRESULT DeleteFolder(BSTR subFolderName, int32 flags) mut
 			{
-				return VT.DeleteFolder(&this, subFolderName, flags);
+				return VT.DeleteFolder(ref this, subFolderName, flags);
 			}
 			public HRESULT GetTask(BSTR path, IRegisteredTask** ppTask) mut
 			{
-				return VT.GetTask(&this, path, ppTask);
+				return VT.GetTask(ref this, path, ppTask);
 			}
 			public HRESULT GetTasks(int32 flags, IRegisteredTaskCollection** ppTasks) mut
 			{
-				return VT.GetTasks(&this, flags, ppTasks);
+				return VT.GetTasks(ref this, flags, ppTasks);
 			}
 			public HRESULT DeleteTask(BSTR name, int32 flags) mut
 			{
-				return VT.DeleteTask(&this, name, flags);
+				return VT.DeleteTask(ref this, name, flags);
 			}
 			public HRESULT RegisterTask(BSTR path, BSTR xmlText, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) mut
 			{
-				return VT.RegisterTask(&this, path, xmlText, flags, userId, password, logonType, sddl, ppTask);
+				return VT.RegisterTask(ref this, path, xmlText, flags, userId, password, logonType, sddl, ppTask);
 			}
 			public HRESULT RegisterTaskDefinition(BSTR path, ITaskDefinition* pDefinition, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) mut
 			{
-				return VT.RegisterTaskDefinition(&this, path, pDefinition, flags, userId, password, logonType, sddl, ppTask);
+				return VT.RegisterTaskDefinition(ref this, path, pDefinition, flags, userId, password, logonType, sddl, ppTask);
 			}
 			public HRESULT GetSecurityDescriptor(int32 securityInformation, BSTR* pSddl) mut
 			{
-				return VT.GetSecurityDescriptor(&this, securityInformation, pSddl);
+				return VT.GetSecurityDescriptor(ref this, securityInformation, pSddl);
 			}
 			public HRESULT SetSecurityDescriptor(BSTR sddl, int32 flags) mut
 			{
-				return VT.SetSecurityDescriptor(&this, sddl, flags);
+				return VT.SetSecurityDescriptor(ref this, sddl, flags);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ITaskFolder *self, BSTR* pName) get_Name;
-				public new function HRESULT(ITaskFolder *self, BSTR* pPath) get_Path;
-				public new function HRESULT(ITaskFolder *self, BSTR path, ITaskFolder** ppFolder) GetFolder;
-				public new function HRESULT(ITaskFolder *self, int32 flags, ITaskFolderCollection** ppFolders) GetFolders;
-				public new function HRESULT(ITaskFolder *self, BSTR subFolderName, VARIANT sddl, ITaskFolder** ppFolder) CreateFolder;
-				public new function HRESULT(ITaskFolder *self, BSTR subFolderName, int32 flags) DeleteFolder;
-				public new function HRESULT(ITaskFolder *self, BSTR path, IRegisteredTask** ppTask) GetTask;
-				public new function HRESULT(ITaskFolder *self, int32 flags, IRegisteredTaskCollection** ppTasks) GetTasks;
-				public new function HRESULT(ITaskFolder *self, BSTR name, int32 flags) DeleteTask;
-				public new function HRESULT(ITaskFolder *self, BSTR path, BSTR xmlText, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTask;
-				public new function HRESULT(ITaskFolder *self, BSTR path, ITaskDefinition* pDefinition, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTaskDefinition;
-				public new function HRESULT(ITaskFolder *self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
-				public new function HRESULT(ITaskFolder *self, BSTR sddl, int32 flags) SetSecurityDescriptor;
+				public new function HRESULT(ref ITaskFolder self, BSTR* pName) get_Name;
+				public new function HRESULT(ref ITaskFolder self, BSTR* pPath) get_Path;
+				public new function HRESULT(ref ITaskFolder self, BSTR path, ITaskFolder** ppFolder) GetFolder;
+				public new function HRESULT(ref ITaskFolder self, int32 flags, ITaskFolderCollection** ppFolders) GetFolders;
+				public new function HRESULT(ref ITaskFolder self, BSTR subFolderName, VARIANT sddl, ITaskFolder** ppFolder) CreateFolder;
+				public new function HRESULT(ref ITaskFolder self, BSTR subFolderName, int32 flags) DeleteFolder;
+				public new function HRESULT(ref ITaskFolder self, BSTR path, IRegisteredTask** ppTask) GetTask;
+				public new function HRESULT(ref ITaskFolder self, int32 flags, IRegisteredTaskCollection** ppTasks) GetTasks;
+				public new function HRESULT(ref ITaskFolder self, BSTR name, int32 flags) DeleteTask;
+				public new function HRESULT(ref ITaskFolder self, BSTR path, BSTR xmlText, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTask;
+				public new function HRESULT(ref ITaskFolder self, BSTR path, ITaskDefinition* pDefinition, int32 flags, VARIANT userId, VARIANT password, TASK_LOGON_TYPE logonType, VARIANT sddl, IRegisteredTask** ppTask) RegisterTaskDefinition;
+				public new function HRESULT(ref ITaskFolder self, int32 securityInformation, BSTR* pSddl) GetSecurityDescriptor;
+				public new function HRESULT(ref ITaskFolder self, BSTR sddl, int32 flags) SetSecurityDescriptor;
 			}
 		}
 		[CRepr]
@@ -2588,49 +2588,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_IdleDuration(BSTR* pDelay) mut
+			public HRESULT get_IdleDuration(out BSTR pDelay) mut
 			{
-				return VT.get_IdleDuration(&this, pDelay);
+				return VT.get_IdleDuration(ref this, out pDelay);
 			}
 			public HRESULT put_IdleDuration(BSTR delay) mut
 			{
-				return VT.put_IdleDuration(&this, delay);
+				return VT.put_IdleDuration(ref this, delay);
 			}
-			public HRESULT get_WaitTimeout(BSTR* pTimeout) mut
+			public HRESULT get_WaitTimeout(out BSTR pTimeout) mut
 			{
-				return VT.get_WaitTimeout(&this, pTimeout);
+				return VT.get_WaitTimeout(ref this, out pTimeout);
 			}
 			public HRESULT put_WaitTimeout(BSTR timeout) mut
 			{
-				return VT.put_WaitTimeout(&this, timeout);
+				return VT.put_WaitTimeout(ref this, timeout);
 			}
-			public HRESULT get_StopOnIdleEnd(int16* pStop) mut
+			public HRESULT get_StopOnIdleEnd(out int16 pStop) mut
 			{
-				return VT.get_StopOnIdleEnd(&this, pStop);
+				return VT.get_StopOnIdleEnd(ref this, out pStop);
 			}
 			public HRESULT put_StopOnIdleEnd(int16 stop) mut
 			{
-				return VT.put_StopOnIdleEnd(&this, stop);
+				return VT.put_StopOnIdleEnd(ref this, stop);
 			}
-			public HRESULT get_RestartOnIdle(int16* pRestart) mut
+			public HRESULT get_RestartOnIdle(out int16 pRestart) mut
 			{
-				return VT.get_RestartOnIdle(&this, pRestart);
+				return VT.get_RestartOnIdle(ref this, out pRestart);
 			}
 			public HRESULT put_RestartOnIdle(int16 restart) mut
 			{
-				return VT.put_RestartOnIdle(&this, restart);
+				return VT.put_RestartOnIdle(ref this, restart);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IIdleSettings *self, BSTR* pDelay) get_IdleDuration;
-				public new function HRESULT(IIdleSettings *self, BSTR delay) put_IdleDuration;
-				public new function HRESULT(IIdleSettings *self, BSTR* pTimeout) get_WaitTimeout;
-				public new function HRESULT(IIdleSettings *self, BSTR timeout) put_WaitTimeout;
-				public new function HRESULT(IIdleSettings *self, int16* pStop) get_StopOnIdleEnd;
-				public new function HRESULT(IIdleSettings *self, int16 stop) put_StopOnIdleEnd;
-				public new function HRESULT(IIdleSettings *self, int16* pRestart) get_RestartOnIdle;
-				public new function HRESULT(IIdleSettings *self, int16 restart) put_RestartOnIdle;
+				public new function HRESULT(ref IIdleSettings self, out BSTR pDelay) get_IdleDuration;
+				public new function HRESULT(ref IIdleSettings self, BSTR delay) put_IdleDuration;
+				public new function HRESULT(ref IIdleSettings self, out BSTR pTimeout) get_WaitTimeout;
+				public new function HRESULT(ref IIdleSettings self, BSTR timeout) put_WaitTimeout;
+				public new function HRESULT(ref IIdleSettings self, out int16 pStop) get_StopOnIdleEnd;
+				public new function HRESULT(ref IIdleSettings self, int16 stop) put_StopOnIdleEnd;
+				public new function HRESULT(ref IIdleSettings self, out int16 pRestart) get_RestartOnIdle;
+				public new function HRESULT(ref IIdleSettings self, int16 restart) put_RestartOnIdle;
 			}
 		}
 		[CRepr]
@@ -2640,29 +2640,29 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Name(BSTR* pName) mut
+			public HRESULT get_Name(out BSTR pName) mut
 			{
-				return VT.get_Name(&this, pName);
+				return VT.get_Name(ref this, out pName);
 			}
 			public HRESULT put_Name(BSTR name) mut
 			{
-				return VT.put_Name(&this, name);
+				return VT.put_Name(ref this, name);
 			}
-			public HRESULT get_Id(BSTR* pId) mut
+			public HRESULT get_Id(out BSTR pId) mut
 			{
-				return VT.get_Id(&this, pId);
+				return VT.get_Id(ref this, out pId);
 			}
 			public HRESULT put_Id(BSTR id) mut
 			{
-				return VT.put_Id(&this, id);
+				return VT.put_Id(ref this, id);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(INetworkSettings *self, BSTR* pName) get_Name;
-				public new function HRESULT(INetworkSettings *self, BSTR name) put_Name;
-				public new function HRESULT(INetworkSettings *self, BSTR* pId) get_Id;
-				public new function HRESULT(INetworkSettings *self, BSTR id) put_Id;
+				public new function HRESULT(ref INetworkSettings self, out BSTR pName) get_Name;
+				public new function HRESULT(ref INetworkSettings self, BSTR name) put_Name;
+				public new function HRESULT(ref INetworkSettings self, out BSTR pId) get_Id;
+				public new function HRESULT(ref INetworkSettings self, BSTR id) put_Id;
 			}
 		}
 		[CRepr]
@@ -2672,39 +2672,39 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Interval(BSTR* pInterval) mut
+			public HRESULT get_Interval(out BSTR pInterval) mut
 			{
-				return VT.get_Interval(&this, pInterval);
+				return VT.get_Interval(ref this, out pInterval);
 			}
 			public HRESULT put_Interval(BSTR interval) mut
 			{
-				return VT.put_Interval(&this, interval);
+				return VT.put_Interval(ref this, interval);
 			}
-			public HRESULT get_Duration(BSTR* pDuration) mut
+			public HRESULT get_Duration(out BSTR pDuration) mut
 			{
-				return VT.get_Duration(&this, pDuration);
+				return VT.get_Duration(ref this, out pDuration);
 			}
 			public HRESULT put_Duration(BSTR duration) mut
 			{
-				return VT.put_Duration(&this, duration);
+				return VT.put_Duration(ref this, duration);
 			}
-			public HRESULT get_StopAtDurationEnd(int16* pStop) mut
+			public HRESULT get_StopAtDurationEnd(out int16 pStop) mut
 			{
-				return VT.get_StopAtDurationEnd(&this, pStop);
+				return VT.get_StopAtDurationEnd(ref this, out pStop);
 			}
 			public HRESULT put_StopAtDurationEnd(int16 stop) mut
 			{
-				return VT.put_StopAtDurationEnd(&this, stop);
+				return VT.put_StopAtDurationEnd(ref this, stop);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(IRepetitionPattern *self, BSTR* pInterval) get_Interval;
-				public new function HRESULT(IRepetitionPattern *self, BSTR interval) put_Interval;
-				public new function HRESULT(IRepetitionPattern *self, BSTR* pDuration) get_Duration;
-				public new function HRESULT(IRepetitionPattern *self, BSTR duration) put_Duration;
-				public new function HRESULT(IRepetitionPattern *self, int16* pStop) get_StopAtDurationEnd;
-				public new function HRESULT(IRepetitionPattern *self, int16 stop) put_StopAtDurationEnd;
+				public new function HRESULT(ref IRepetitionPattern self, out BSTR pInterval) get_Interval;
+				public new function HRESULT(ref IRepetitionPattern self, BSTR interval) put_Interval;
+				public new function HRESULT(ref IRepetitionPattern self, out BSTR pDuration) get_Duration;
+				public new function HRESULT(ref IRepetitionPattern self, BSTR duration) put_Duration;
+				public new function HRESULT(ref IRepetitionPattern self, out int16 pStop) get_StopAtDurationEnd;
+				public new function HRESULT(ref IRepetitionPattern self, int16 stop) put_StopAtDurationEnd;
 			}
 		}
 		

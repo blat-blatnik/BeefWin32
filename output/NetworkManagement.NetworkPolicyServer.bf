@@ -733,10 +733,10 @@ namespace Win32
 		
 		public function uint32 PRADIUS_EXTENSION_INIT();
 		public function void PRADIUS_EXTENSION_TERM();
-		public function uint32 PRADIUS_EXTENSION_PROCESS(RADIUS_ATTRIBUTE* pAttrs, RADIUS_ACTION* pfAction);
-		public function uint32 PRADIUS_EXTENSION_PROCESS_EX(RADIUS_ATTRIBUTE* pInAttrs, RADIUS_ATTRIBUTE** pOutAttrs, RADIUS_ACTION* pfAction);
-		public function void PRADIUS_EXTENSION_FREE_ATTRIBUTES(RADIUS_ATTRIBUTE* pAttrs);
-		public function uint32 PRADIUS_EXTENSION_PROCESS_2(RADIUS_EXTENSION_CONTROL_BLOCK* pECB);
+		public function uint32 PRADIUS_EXTENSION_PROCESS(in RADIUS_ATTRIBUTE pAttrs, out RADIUS_ACTION pfAction);
+		public function uint32 PRADIUS_EXTENSION_PROCESS_EX(in RADIUS_ATTRIBUTE pInAttrs, out RADIUS_ATTRIBUTE* pOutAttrs, out RADIUS_ACTION pfAction);
+		public function void PRADIUS_EXTENSION_FREE_ATTRIBUTES(out RADIUS_ATTRIBUTE pAttrs);
+		public function uint32 PRADIUS_EXTENSION_PROCESS_2(out RADIUS_EXTENSION_CONTROL_BLOCK pECB);
 		
 		// --- Structs ---
 		
@@ -761,7 +761,7 @@ namespace Win32
 			public uint8[4] VendorId;
 			public uint8 VendorType;
 			public uint8 VendorLength;
-			public uint8[] AttributeSpecific;
+			public uint8[0] AttributeSpecific;
 		}
 		[CRepr]
 		public struct RADIUS_ATTRIBUTE_ARRAY
@@ -802,52 +802,52 @@ namespace Win32
 			
 			public HRESULT Attach(BSTR bstrComputerName) mut
 			{
-				return VT.Attach(&this, bstrComputerName);
+				return VT.Attach(ref this, bstrComputerName);
 			}
-			public HRESULT GetDictionarySDO(IUnknown** ppDictionarySDO) mut
+			public HRESULT GetDictionarySDO(out IUnknown* ppDictionarySDO) mut
 			{
-				return VT.GetDictionarySDO(&this, ppDictionarySDO);
+				return VT.GetDictionarySDO(ref this, out ppDictionarySDO);
 			}
-			public HRESULT GetServiceSDO(IASDATASTORE eDataStore, BSTR bstrServiceName, IUnknown** ppServiceSDO) mut
+			public HRESULT GetServiceSDO(IASDATASTORE eDataStore, BSTR bstrServiceName, out IUnknown* ppServiceSDO) mut
 			{
-				return VT.GetServiceSDO(&this, eDataStore, bstrServiceName, ppServiceSDO);
+				return VT.GetServiceSDO(ref this, eDataStore, bstrServiceName, out ppServiceSDO);
 			}
-			public HRESULT GetUserSDO(IASDATASTORE eDataStore, BSTR bstrUserName, IUnknown** ppUserSDO) mut
+			public HRESULT GetUserSDO(IASDATASTORE eDataStore, BSTR bstrUserName, out IUnknown* ppUserSDO) mut
 			{
-				return VT.GetUserSDO(&this, eDataStore, bstrUserName, ppUserSDO);
+				return VT.GetUserSDO(ref this, eDataStore, bstrUserName, out ppUserSDO);
 			}
-			public HRESULT GetOSType(IASOSTYPE* eOSType) mut
+			public HRESULT GetOSType(out IASOSTYPE eOSType) mut
 			{
-				return VT.GetOSType(&this, eOSType);
+				return VT.GetOSType(ref this, out eOSType);
 			}
-			public HRESULT GetDomainType(IASDOMAINTYPE* eDomainType) mut
+			public HRESULT GetDomainType(out IASDOMAINTYPE eDomainType) mut
 			{
-				return VT.GetDomainType(&this, eDomainType);
+				return VT.GetDomainType(ref this, out eDomainType);
 			}
-			public HRESULT IsDirectoryAvailable(int16* boolDirectoryAvailable) mut
+			public HRESULT IsDirectoryAvailable(out int16 boolDirectoryAvailable) mut
 			{
-				return VT.IsDirectoryAvailable(&this, boolDirectoryAvailable);
+				return VT.IsDirectoryAvailable(ref this, out boolDirectoryAvailable);
 			}
-			public HRESULT GetAttachedComputer(BSTR* bstrComputerName) mut
+			public HRESULT GetAttachedComputer(out BSTR bstrComputerName) mut
 			{
-				return VT.GetAttachedComputer(&this, bstrComputerName);
+				return VT.GetAttachedComputer(ref this, out bstrComputerName);
 			}
-			public HRESULT GetSDOSchema(IUnknown** ppSDOSchema) mut
+			public HRESULT GetSDOSchema(out IUnknown* ppSDOSchema) mut
 			{
-				return VT.GetSDOSchema(&this, ppSDOSchema);
+				return VT.GetSDOSchema(ref this, out ppSDOSchema);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISdoMachine *self, BSTR bstrComputerName) Attach;
-				public new function HRESULT(ISdoMachine *self, IUnknown** ppDictionarySDO) GetDictionarySDO;
-				public new function HRESULT(ISdoMachine *self, IASDATASTORE eDataStore, BSTR bstrServiceName, IUnknown** ppServiceSDO) GetServiceSDO;
-				public new function HRESULT(ISdoMachine *self, IASDATASTORE eDataStore, BSTR bstrUserName, IUnknown** ppUserSDO) GetUserSDO;
-				public new function HRESULT(ISdoMachine *self, IASOSTYPE* eOSType) GetOSType;
-				public new function HRESULT(ISdoMachine *self, IASDOMAINTYPE* eDomainType) GetDomainType;
-				public new function HRESULT(ISdoMachine *self, int16* boolDirectoryAvailable) IsDirectoryAvailable;
-				public new function HRESULT(ISdoMachine *self, BSTR* bstrComputerName) GetAttachedComputer;
-				public new function HRESULT(ISdoMachine *self, IUnknown** ppSDOSchema) GetSDOSchema;
+				public new function HRESULT(ref ISdoMachine self, BSTR bstrComputerName) Attach;
+				public new function HRESULT(ref ISdoMachine self, out IUnknown* ppDictionarySDO) GetDictionarySDO;
+				public new function HRESULT(ref ISdoMachine self, IASDATASTORE eDataStore, BSTR bstrServiceName, out IUnknown* ppServiceSDO) GetServiceSDO;
+				public new function HRESULT(ref ISdoMachine self, IASDATASTORE eDataStore, BSTR bstrUserName, out IUnknown* ppUserSDO) GetUserSDO;
+				public new function HRESULT(ref ISdoMachine self, out IASOSTYPE eOSType) GetOSType;
+				public new function HRESULT(ref ISdoMachine self, out IASDOMAINTYPE eDomainType) GetDomainType;
+				public new function HRESULT(ref ISdoMachine self, out int16 boolDirectoryAvailable) IsDirectoryAvailable;
+				public new function HRESULT(ref ISdoMachine self, out BSTR bstrComputerName) GetAttachedComputer;
+				public new function HRESULT(ref ISdoMachine self, out IUnknown* ppSDOSchema) GetSDOSchema;
 			}
 		}
 		[CRepr]
@@ -857,34 +857,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetTemplatesSDO(BSTR bstrServiceName, IUnknown** ppTemplatesSDO) mut
+			public HRESULT GetTemplatesSDO(BSTR bstrServiceName, out IUnknown* ppTemplatesSDO) mut
 			{
-				return VT.GetTemplatesSDO(&this, bstrServiceName, ppTemplatesSDO);
+				return VT.GetTemplatesSDO(ref this, bstrServiceName, out ppTemplatesSDO);
 			}
 			public HRESULT EnableTemplates() mut
 			{
-				return VT.EnableTemplates(&this);
+				return VT.EnableTemplates(ref this);
 			}
-			public HRESULT SyncConfigAgainstTemplates(BSTR bstrServiceName, IUnknown** ppConfigRoot, IUnknown** ppTemplatesRoot, int16 bForcedSync) mut
+			public HRESULT SyncConfigAgainstTemplates(BSTR bstrServiceName, out IUnknown* ppConfigRoot, out IUnknown* ppTemplatesRoot, int16 bForcedSync) mut
 			{
-				return VT.SyncConfigAgainstTemplates(&this, bstrServiceName, ppConfigRoot, ppTemplatesRoot, bForcedSync);
+				return VT.SyncConfigAgainstTemplates(ref this, bstrServiceName, out ppConfigRoot, out ppTemplatesRoot, bForcedSync);
 			}
 			public HRESULT ImportRemoteTemplates(IUnknown* pLocalTemplatesRoot, BSTR bstrRemoteMachineName) mut
 			{
-				return VT.ImportRemoteTemplates(&this, pLocalTemplatesRoot, bstrRemoteMachineName);
+				return VT.ImportRemoteTemplates(ref this, pLocalTemplatesRoot, bstrRemoteMachineName);
 			}
 			public HRESULT Reload() mut
 			{
-				return VT.Reload(&this);
+				return VT.Reload(ref this);
 			}
 			[CRepr]
 			public struct VTable : ISdoMachine.VTable
 			{
-				public new function HRESULT(ISdoMachine2 *self, BSTR bstrServiceName, IUnknown** ppTemplatesSDO) GetTemplatesSDO;
-				public new function HRESULT(ISdoMachine2 *self) EnableTemplates;
-				public new function HRESULT(ISdoMachine2 *self, BSTR bstrServiceName, IUnknown** ppConfigRoot, IUnknown** ppTemplatesRoot, int16 bForcedSync) SyncConfigAgainstTemplates;
-				public new function HRESULT(ISdoMachine2 *self, IUnknown* pLocalTemplatesRoot, BSTR bstrRemoteMachineName) ImportRemoteTemplates;
-				public new function HRESULT(ISdoMachine2 *self) Reload;
+				public new function HRESULT(ref ISdoMachine2 self, BSTR bstrServiceName, out IUnknown* ppTemplatesSDO) GetTemplatesSDO;
+				public new function HRESULT(ref ISdoMachine2 self) EnableTemplates;
+				public new function HRESULT(ref ISdoMachine2 self, BSTR bstrServiceName, out IUnknown* ppConfigRoot, out IUnknown* ppTemplatesRoot, int16 bForcedSync) SyncConfigAgainstTemplates;
+				public new function HRESULT(ref ISdoMachine2 self, IUnknown* pLocalTemplatesRoot, BSTR bstrRemoteMachineName) ImportRemoteTemplates;
+				public new function HRESULT(ref ISdoMachine2 self) Reload;
 			}
 		}
 		[CRepr]
@@ -896,27 +896,27 @@ namespace Win32
 			
 			public HRESULT StartService() mut
 			{
-				return VT.StartService(&this);
+				return VT.StartService(ref this);
 			}
 			public HRESULT StopService() mut
 			{
-				return VT.StopService(&this);
+				return VT.StopService(ref this);
 			}
-			public HRESULT GetServiceStatus(int32* status) mut
+			public HRESULT GetServiceStatus(out int32 status) mut
 			{
-				return VT.GetServiceStatus(&this, status);
+				return VT.GetServiceStatus(ref this, out status);
 			}
 			public HRESULT ResetService() mut
 			{
-				return VT.ResetService(&this);
+				return VT.ResetService(ref this);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISdoServiceControl *self) StartService;
-				public new function HRESULT(ISdoServiceControl *self) StopService;
-				public new function HRESULT(ISdoServiceControl *self, int32* status) GetServiceStatus;
-				public new function HRESULT(ISdoServiceControl *self) ResetService;
+				public new function HRESULT(ref ISdoServiceControl self) StartService;
+				public new function HRESULT(ref ISdoServiceControl self) StopService;
+				public new function HRESULT(ref ISdoServiceControl self, out int32 status) GetServiceStatus;
+				public new function HRESULT(ref ISdoServiceControl self) ResetService;
 			}
 		}
 		[CRepr]
@@ -926,44 +926,44 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT GetPropertyInfo(int32 Id, IUnknown** ppPropertyInfo) mut
+			public HRESULT GetPropertyInfo(int32 Id, out IUnknown* ppPropertyInfo) mut
 			{
-				return VT.GetPropertyInfo(&this, Id, ppPropertyInfo);
+				return VT.GetPropertyInfo(ref this, Id, out ppPropertyInfo);
 			}
-			public HRESULT GetProperty(int32 Id, VARIANT* pValue) mut
+			public HRESULT GetProperty(int32 Id, out VARIANT pValue) mut
 			{
-				return VT.GetProperty(&this, Id, pValue);
+				return VT.GetProperty(ref this, Id, out pValue);
 			}
-			public HRESULT PutProperty(int32 Id, VARIANT* pValue) mut
+			public HRESULT PutProperty(int32 Id, ref VARIANT pValue) mut
 			{
-				return VT.PutProperty(&this, Id, pValue);
+				return VT.PutProperty(ref this, Id, ref pValue);
 			}
 			public HRESULT ResetProperty(int32 Id) mut
 			{
-				return VT.ResetProperty(&this, Id);
+				return VT.ResetProperty(ref this, Id);
 			}
 			public HRESULT Apply() mut
 			{
-				return VT.Apply(&this);
+				return VT.Apply(ref this);
 			}
 			public HRESULT Restore() mut
 			{
-				return VT.Restore(&this);
+				return VT.Restore(ref this);
 			}
-			public HRESULT get__NewEnum(IUnknown** ppEnumVARIANT) mut
+			public HRESULT get__NewEnum(out IUnknown* ppEnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, ppEnumVARIANT);
+				return VT.get__NewEnum(ref this, out ppEnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISdo *self, int32 Id, IUnknown** ppPropertyInfo) GetPropertyInfo;
-				public new function HRESULT(ISdo *self, int32 Id, VARIANT* pValue) GetProperty;
-				public new function HRESULT(ISdo *self, int32 Id, VARIANT* pValue) PutProperty;
-				public new function HRESULT(ISdo *self, int32 Id) ResetProperty;
-				public new function HRESULT(ISdo *self) Apply;
-				public new function HRESULT(ISdo *self) Restore;
-				public new function HRESULT(ISdo *self, IUnknown** ppEnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISdo self, int32 Id, out IUnknown* ppPropertyInfo) GetPropertyInfo;
+				public new function HRESULT(ref ISdo self, int32 Id, out VARIANT pValue) GetProperty;
+				public new function HRESULT(ref ISdo self, int32 Id, ref VARIANT pValue) PutProperty;
+				public new function HRESULT(ref ISdo self, int32 Id) ResetProperty;
+				public new function HRESULT(ref ISdo self) Apply;
+				public new function HRESULT(ref ISdo self) Restore;
+				public new function HRESULT(ref ISdo self, out IUnknown* ppEnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -973,49 +973,49 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT get_Count(int32* pCount) mut
+			public HRESULT get_Count(out int32 pCount) mut
 			{
-				return VT.get_Count(&this, pCount);
+				return VT.get_Count(ref this, out pCount);
 			}
-			public HRESULT Add(BSTR bstrName, IDispatch** ppItem) mut
+			public HRESULT Add(BSTR bstrName, out IDispatch* ppItem) mut
 			{
-				return VT.Add(&this, bstrName, ppItem);
+				return VT.Add(ref this, bstrName, out ppItem);
 			}
-			public HRESULT Remove(IDispatch* pItem) mut
+			public HRESULT Remove(ref IDispatch pItem) mut
 			{
-				return VT.Remove(&this, pItem);
+				return VT.Remove(ref this, ref pItem);
 			}
 			public HRESULT RemoveAll() mut
 			{
-				return VT.RemoveAll(&this);
+				return VT.RemoveAll(ref this);
 			}
 			public HRESULT Reload() mut
 			{
-				return VT.Reload(&this);
+				return VT.Reload(ref this);
 			}
-			public HRESULT IsNameUnique(BSTR bstrName, int16* pBool) mut
+			public HRESULT IsNameUnique(BSTR bstrName, out int16 pBool) mut
 			{
-				return VT.IsNameUnique(&this, bstrName, pBool);
+				return VT.IsNameUnique(ref this, bstrName, out pBool);
 			}
-			public HRESULT Item(VARIANT* Name, IDispatch** pItem) mut
+			public HRESULT Item(ref VARIANT Name, out IDispatch* pItem) mut
 			{
-				return VT.Item(&this, Name, pItem);
+				return VT.Item(ref this, ref Name, out pItem);
 			}
-			public HRESULT get__NewEnum(IUnknown** ppEnumVARIANT) mut
+			public HRESULT get__NewEnum(out IUnknown* ppEnumVARIANT) mut
 			{
-				return VT.get__NewEnum(&this, ppEnumVARIANT);
+				return VT.get__NewEnum(ref this, out ppEnumVARIANT);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISdoCollection *self, int32* pCount) get_Count;
-				public new function HRESULT(ISdoCollection *self, BSTR bstrName, IDispatch** ppItem) Add;
-				public new function HRESULT(ISdoCollection *self, IDispatch* pItem) Remove;
-				public new function HRESULT(ISdoCollection *self) RemoveAll;
-				public new function HRESULT(ISdoCollection *self) Reload;
-				public new function HRESULT(ISdoCollection *self, BSTR bstrName, int16* pBool) IsNameUnique;
-				public new function HRESULT(ISdoCollection *self, VARIANT* Name, IDispatch** pItem) Item;
-				public new function HRESULT(ISdoCollection *self, IUnknown** ppEnumVARIANT) get__NewEnum;
+				public new function HRESULT(ref ISdoCollection self, out int32 pCount) get_Count;
+				public new function HRESULT(ref ISdoCollection self, BSTR bstrName, out IDispatch* ppItem) Add;
+				public new function HRESULT(ref ISdoCollection self, ref IDispatch pItem) Remove;
+				public new function HRESULT(ref ISdoCollection self) RemoveAll;
+				public new function HRESULT(ref ISdoCollection self) Reload;
+				public new function HRESULT(ref ISdoCollection self, BSTR bstrName, out int16 pBool) IsNameUnique;
+				public new function HRESULT(ref ISdoCollection self, ref VARIANT Name, out IDispatch* pItem) Item;
+				public new function HRESULT(ref ISdoCollection self, out IUnknown* ppEnumVARIANT) get__NewEnum;
 			}
 		}
 		[CRepr]
@@ -1025,24 +1025,24 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT AddToCollection(BSTR bstrName, IDispatch* pCollection, IDispatch** ppItem) mut
+			public HRESULT AddToCollection(BSTR bstrName, ref IDispatch pCollection, out IDispatch* ppItem) mut
 			{
-				return VT.AddToCollection(&this, bstrName, pCollection, ppItem);
+				return VT.AddToCollection(ref this, bstrName, ref pCollection, out ppItem);
 			}
-			public HRESULT AddToSdo(BSTR bstrName, IDispatch* pSdoTarget, IDispatch** ppItem) mut
+			public HRESULT AddToSdo(BSTR bstrName, ref IDispatch pSdoTarget, out IDispatch* ppItem) mut
 			{
-				return VT.AddToSdo(&this, bstrName, pSdoTarget, ppItem);
+				return VT.AddToSdo(ref this, bstrName, ref pSdoTarget, out ppItem);
 			}
-			public HRESULT AddToSdoAsProperty(IDispatch* pSdoTarget, int32 id) mut
+			public HRESULT AddToSdoAsProperty(ref IDispatch pSdoTarget, int32 id) mut
 			{
-				return VT.AddToSdoAsProperty(&this, pSdoTarget, id);
+				return VT.AddToSdoAsProperty(ref this, ref pSdoTarget, id);
 			}
 			[CRepr]
 			public struct VTable : ISdo.VTable
 			{
-				public new function HRESULT(ITemplateSdo *self, BSTR bstrName, IDispatch* pCollection, IDispatch** ppItem) AddToCollection;
-				public new function HRESULT(ITemplateSdo *self, BSTR bstrName, IDispatch* pSdoTarget, IDispatch** ppItem) AddToSdo;
-				public new function HRESULT(ITemplateSdo *self, IDispatch* pSdoTarget, int32 id) AddToSdoAsProperty;
+				public new function HRESULT(ref ITemplateSdo self, BSTR bstrName, ref IDispatch pCollection, out IDispatch* ppItem) AddToCollection;
+				public new function HRESULT(ref ITemplateSdo self, BSTR bstrName, ref IDispatch pSdoTarget, out IDispatch* ppItem) AddToSdo;
+				public new function HRESULT(ref ITemplateSdo self, ref IDispatch pSdoTarget, int32 id) AddToSdoAsProperty;
 			}
 		}
 		[CRepr]
@@ -1052,34 +1052,34 @@ namespace Win32
 			
 			public new VTable* VT { get => (.)vt; }
 			
-			public HRESULT EnumAttributes(VARIANT* Id, VARIANT* pValues) mut
+			public HRESULT EnumAttributes(out VARIANT Id, out VARIANT pValues) mut
 			{
-				return VT.EnumAttributes(&this, Id, pValues);
+				return VT.EnumAttributes(ref this, out Id, out pValues);
 			}
-			public HRESULT GetAttributeInfo(ATTRIBUTEID Id, VARIANT* pInfoIDs, VARIANT* pInfoValues) mut
+			public HRESULT GetAttributeInfo(ATTRIBUTEID Id, ref VARIANT pInfoIDs, out VARIANT pInfoValues) mut
 			{
-				return VT.GetAttributeInfo(&this, Id, pInfoIDs, pInfoValues);
+				return VT.GetAttributeInfo(ref this, Id, ref pInfoIDs, out pInfoValues);
 			}
-			public HRESULT EnumAttributeValues(ATTRIBUTEID Id, VARIANT* pValueIds, VARIANT* pValuesDesc) mut
+			public HRESULT EnumAttributeValues(ATTRIBUTEID Id, out VARIANT pValueIds, out VARIANT pValuesDesc) mut
 			{
-				return VT.EnumAttributeValues(&this, Id, pValueIds, pValuesDesc);
+				return VT.EnumAttributeValues(ref this, Id, out pValueIds, out pValuesDesc);
 			}
-			public HRESULT CreateAttribute(ATTRIBUTEID Id, IDispatch** ppAttributeObject) mut
+			public HRESULT CreateAttribute(ATTRIBUTEID Id, out IDispatch* ppAttributeObject) mut
 			{
-				return VT.CreateAttribute(&this, Id, ppAttributeObject);
+				return VT.CreateAttribute(ref this, Id, out ppAttributeObject);
 			}
-			public HRESULT GetAttributeID(BSTR bstrAttributeName, ATTRIBUTEID* pId) mut
+			public HRESULT GetAttributeID(BSTR bstrAttributeName, out ATTRIBUTEID pId) mut
 			{
-				return VT.GetAttributeID(&this, bstrAttributeName, pId);
+				return VT.GetAttributeID(ref this, bstrAttributeName, out pId);
 			}
 			[CRepr]
 			public struct VTable : IDispatch.VTable
 			{
-				public new function HRESULT(ISdoDictionaryOld *self, VARIANT* Id, VARIANT* pValues) EnumAttributes;
-				public new function HRESULT(ISdoDictionaryOld *self, ATTRIBUTEID Id, VARIANT* pInfoIDs, VARIANT* pInfoValues) GetAttributeInfo;
-				public new function HRESULT(ISdoDictionaryOld *self, ATTRIBUTEID Id, VARIANT* pValueIds, VARIANT* pValuesDesc) EnumAttributeValues;
-				public new function HRESULT(ISdoDictionaryOld *self, ATTRIBUTEID Id, IDispatch** ppAttributeObject) CreateAttribute;
-				public new function HRESULT(ISdoDictionaryOld *self, BSTR bstrAttributeName, ATTRIBUTEID* pId) GetAttributeID;
+				public new function HRESULT(ref ISdoDictionaryOld self, out VARIANT Id, out VARIANT pValues) EnumAttributes;
+				public new function HRESULT(ref ISdoDictionaryOld self, ATTRIBUTEID Id, ref VARIANT pInfoIDs, out VARIANT pInfoValues) GetAttributeInfo;
+				public new function HRESULT(ref ISdoDictionaryOld self, ATTRIBUTEID Id, out VARIANT pValueIds, out VARIANT pValuesDesc) EnumAttributeValues;
+				public new function HRESULT(ref ISdoDictionaryOld self, ATTRIBUTEID Id, out IDispatch* ppAttributeObject) CreateAttribute;
+				public new function HRESULT(ref ISdoDictionaryOld self, BSTR bstrAttributeName, out ATTRIBUTEID pId) GetAttributeID;
 			}
 		}
 		

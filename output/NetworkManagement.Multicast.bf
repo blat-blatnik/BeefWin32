@@ -66,19 +66,19 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 McastApiStartup(uint32* Version);
+		public static extern uint32 McastApiStartup(out uint32 Version);
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern void McastApiCleanup();
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 McastGenUID(MCAST_CLIENT_UID* pRequestID);
+		public static extern uint32 McastGenUID(out MCAST_CLIENT_UID pRequestID);
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 McastEnumerateScopes(uint16 AddrFamily, BOOL ReQuery, MCAST_SCOPE_ENTRY* pScopeList, uint32* pScopeLen, uint32* pScopeCount);
+		public static extern uint32 McastEnumerateScopes(uint16 AddrFamily, BOOL ReQuery, out MCAST_SCOPE_ENTRY pScopeList, out uint32 pScopeLen, out uint32 pScopeCount);
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 McastRequestAddress(uint16 AddrFamily, MCAST_CLIENT_UID* pRequestID, MCAST_SCOPE_CTX* pScopeCtx, MCAST_LEASE_REQUEST* pAddrRequest, MCAST_LEASE_RESPONSE* pAddrResponse);
+		public static extern uint32 McastRequestAddress(uint16 AddrFamily, out MCAST_CLIENT_UID pRequestID, out MCAST_SCOPE_CTX pScopeCtx, out MCAST_LEASE_REQUEST pAddrRequest, out MCAST_LEASE_RESPONSE pAddrResponse);
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 McastRenewAddress(uint16 AddrFamily, MCAST_CLIENT_UID* pRequestID, MCAST_LEASE_REQUEST* pRenewRequest, MCAST_LEASE_RESPONSE* pRenewResponse);
+		public static extern uint32 McastRenewAddress(uint16 AddrFamily, out MCAST_CLIENT_UID pRequestID, out MCAST_LEASE_REQUEST pRenewRequest, out MCAST_LEASE_RESPONSE pRenewResponse);
 		[Import("dhcpcsvc.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 McastReleaseAddress(uint16 AddrFamily, MCAST_CLIENT_UID* pRequestID, MCAST_LEASE_REQUEST* pReleaseRequest);
+		public static extern uint32 McastReleaseAddress(uint16 AddrFamily, out MCAST_CLIENT_UID pRequestID, out MCAST_LEASE_REQUEST pReleaseRequest);
 		
 	}
 }

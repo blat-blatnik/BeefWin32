@@ -453,7 +453,7 @@ namespace Win32
 		{
 			public VK_TO_BIT* pVkToBit;
 			public uint16 wMaxModBits;
-			public uint8[] ModNumber;
+			public uint8[0] ModNumber;
 		}
 		[CRepr]
 		public struct VSC_VK
@@ -472,7 +472,7 @@ namespace Win32
 		{
 			public uint8 VirtualKey;
 			public uint8 Attributes;
-			public char16[] wch;
+			public char16[0] wch;
 		}
 		[CRepr]
 		public struct VK_TO_WCHARS2
@@ -556,7 +556,7 @@ namespace Win32
 		{
 			public uint8 VirtualKey;
 			public uint16 ModificationNumber;
-			public char16[] wch;
+			public char16[0] wch;
 		}
 		[CRepr]
 		public struct LIGATURE2
@@ -724,7 +724,7 @@ namespace Win32
 		// --- Functions ---
 		
 		[Import("comctl32.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL _TrackMouseEvent(TRACKMOUSEEVENT* lpEventTrack);
+		public static extern BOOL _TrackMouseEvent(out TRACKMOUSEEVENT lpEventTrack);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HKL LoadKeyboardLayoutA(PSTR pwszKLID, ACTIVATE_KEYBOARD_LAYOUT_FLAGS Flags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -744,9 +744,9 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern HKL GetKeyboardLayout(uint32 idThread);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 GetMouseMovePointsEx(uint32 cbSize, MOUSEMOVEPOINT* lppt, MOUSEMOVEPOINT* lpptBuf, int32 nBufPoints, GET_MOUSE_MOVE_POINTS_EX_RESOLUTION resolution);
+		public static extern int32 GetMouseMovePointsEx(uint32 cbSize, ref MOUSEMOVEPOINT lppt, MOUSEMOVEPOINT* lpptBuf, int32 nBufPoints, GET_MOUSE_MOVE_POINTS_EX_RESOLUTION resolution);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL TrackMouseEvent(TRACKMOUSEEVENT* lpEventTrack);
+		public static extern BOOL TrackMouseEvent(out TRACKMOUSEEVENT lpEventTrack);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL RegisterHotKey(HWND hWnd, int32 id, HOT_KEY_MODIFIERS fsModifiers, uint32 vk);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -780,9 +780,9 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 GetKeyboardType(int32 nTypeFlag);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ToAscii(uint32 uVirtKey, uint32 uScanCode, uint8* lpKeyState, uint16* lpChar, uint32 uFlags);
+		public static extern int32 ToAscii(uint32 uVirtKey, uint32 uScanCode, uint8* lpKeyState, out uint16 lpChar, uint32 uFlags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern int32 ToAsciiEx(uint32 uVirtKey, uint32 uScanCode, uint8* lpKeyState, uint16* lpChar, uint32 uFlags, HKL dwhkl);
+		public static extern int32 ToAsciiEx(uint32 uVirtKey, uint32 uScanCode, uint8* lpKeyState, out uint16 lpChar, uint32 uFlags, HKL dwhkl);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern int32 ToUnicode(uint32 wVirtKey, uint32 wScanCode, uint8* lpKeyState, char16* pwszBuff, int32 cchBuff, uint32 wFlags);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
@@ -802,7 +802,7 @@ namespace Win32
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 SendInput(uint32 cInputs, INPUT* pInputs, int32 cbSize);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetLastInputInfo(LASTINPUTINFO* plii);
+		public static extern BOOL GetLastInputInfo(out LASTINPUTINFO plii);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern uint32 MapVirtualKeyA(uint32 uCode, uint32 uMapType);
 		[Import("user32.lib"), CLink, CallingConvention(.Stdcall)]

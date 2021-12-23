@@ -219,7 +219,7 @@ namespace Win32
 			public uint32 dwModemOptions;
 			public uint32 dwMaxDTERate;
 			public uint32 dwMaxDCERate;
-			public uint8[] abVariablePortion;
+			public uint8[0] abVariablePortion;
 		}
 		[CRepr]
 		public struct MODEMSETTINGS
@@ -235,7 +235,7 @@ namespace Win32
 			public uint32 dwPreferredModemOptions;
 			public uint32 dwNegotiatedModemOptions;
 			public uint32 dwNegotiatedDCERate;
-			public uint8[] abVariablePortion;
+			public uint8[0] abVariablePortion;
 		}
 		[CRepr]
 		public struct COMMPROP
@@ -257,7 +257,7 @@ namespace Win32
 			public uint32 dwCurrentRxQueue;
 			public uint32 dwProvSpec1;
 			public uint32 dwProvSpec2;
-			public char16[] wcProvChar;
+			public char16[0] wcProvChar;
 		}
 		[CRepr]
 		public struct COMSTAT
@@ -304,7 +304,7 @@ namespace Win32
 			public uint32 dwProviderSubType;
 			public uint32 dwProviderOffset;
 			public uint32 dwProviderSize;
-			public char16[] wcProviderData;
+			public char16[0] wcProviderData;
 		}
 		
 		// --- Functions ---
@@ -318,57 +318,57 @@ namespace Win32
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL EscapeCommFunction(HANDLE hFile, ESCAPE_COMM_FUNCTION dwFunc);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetCommConfig(HANDLE hCommDev, COMMCONFIG* lpCC, uint32* lpdwSize);
+		public static extern BOOL GetCommConfig(HANDLE hCommDev, COMMCONFIG* lpCC, out uint32 lpdwSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetCommMask(HANDLE hFile, COMM_EVENT_MASK* lpEvtMask);
+		public static extern BOOL GetCommMask(HANDLE hFile, out COMM_EVENT_MASK lpEvtMask);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetCommProperties(HANDLE hFile, COMMPROP* lpCommProp);
+		public static extern BOOL GetCommProperties(HANDLE hFile, out COMMPROP lpCommProp);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetCommModemStatus(HANDLE hFile, MODEM_STATUS_FLAGS* lpModemStat);
+		public static extern BOOL GetCommModemStatus(HANDLE hFile, out MODEM_STATUS_FLAGS lpModemStat);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetCommState(HANDLE hFile, DCB* lpDCB);
+		public static extern BOOL GetCommState(HANDLE hFile, out DCB lpDCB);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetCommTimeouts(HANDLE hFile, COMMTIMEOUTS* lpCommTimeouts);
+		public static extern BOOL GetCommTimeouts(HANDLE hFile, out COMMTIMEOUTS lpCommTimeouts);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL PurgeComm(HANDLE hFile, PURGE_COMM_FLAGS dwFlags);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetCommBreak(HANDLE hFile);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetCommConfig(HANDLE hCommDev, COMMCONFIG* lpCC, uint32 dwSize);
+		public static extern BOOL SetCommConfig(HANDLE hCommDev, ref COMMCONFIG lpCC, uint32 dwSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL SetCommMask(HANDLE hFile, COMM_EVENT_MASK dwEvtMask);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetCommState(HANDLE hFile, DCB* lpDCB);
+		public static extern BOOL SetCommState(HANDLE hFile, ref DCB lpDCB);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetCommTimeouts(HANDLE hFile, COMMTIMEOUTS* lpCommTimeouts);
+		public static extern BOOL SetCommTimeouts(HANDLE hFile, ref COMMTIMEOUTS lpCommTimeouts);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
 		public static extern BOOL TransmitCommChar(HANDLE hFile, CHAR cChar);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL WaitCommEvent(HANDLE hFile, COMM_EVENT_MASK* lpEvtMask, OVERLAPPED* lpOverlapped);
+		public static extern BOOL WaitCommEvent(HANDLE hFile, out COMM_EVENT_MASK lpEvtMask, OVERLAPPED* lpOverlapped);
 		[Import("api-ms-win-core-comm-l1-1-1.dll"), CLink, CallingConvention(.Stdcall)]
 		public static extern HANDLE OpenCommPort(uint32 uPortNumber, uint32 dwDesiredAccess, uint32 dwFlagsAndAttributes);
 		[Import("api-ms-win-core-comm-l1-1-2.dll"), CLink, CallingConvention(.Stdcall)]
-		public static extern uint32 GetCommPorts(uint32* lpPortNumbers, uint32 uPortNumbersCount, uint32* puPortNumbersFound);
+		public static extern uint32 GetCommPorts(uint32* lpPortNumbers, uint32 uPortNumbersCount, out uint32 puPortNumbersFound);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL BuildCommDCBA(PSTR lpDef, DCB* lpDCB);
+		public static extern BOOL BuildCommDCBA(PSTR lpDef, out DCB lpDCB);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL BuildCommDCBW(PWSTR lpDef, DCB* lpDCB);
+		public static extern BOOL BuildCommDCBW(PWSTR lpDef, out DCB lpDCB);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL BuildCommDCBAndTimeoutsA(PSTR lpDef, DCB* lpDCB, COMMTIMEOUTS* lpCommTimeouts);
+		public static extern BOOL BuildCommDCBAndTimeoutsA(PSTR lpDef, out DCB lpDCB, out COMMTIMEOUTS lpCommTimeouts);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL BuildCommDCBAndTimeoutsW(PWSTR lpDef, DCB* lpDCB, COMMTIMEOUTS* lpCommTimeouts);
+		public static extern BOOL BuildCommDCBAndTimeoutsW(PWSTR lpDef, out DCB lpDCB, out COMMTIMEOUTS lpCommTimeouts);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CommConfigDialogA(PSTR lpszName, HWND hWnd, COMMCONFIG* lpCC);
+		public static extern BOOL CommConfigDialogA(PSTR lpszName, HWND hWnd, out COMMCONFIG lpCC);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL CommConfigDialogW(PWSTR lpszName, HWND hWnd, COMMCONFIG* lpCC);
+		public static extern BOOL CommConfigDialogW(PWSTR lpszName, HWND hWnd, out COMMCONFIG lpCC);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetDefaultCommConfigA(PSTR lpszName, COMMCONFIG* lpCC, uint32* lpdwSize);
+		public static extern BOOL GetDefaultCommConfigA(PSTR lpszName, out COMMCONFIG lpCC, out uint32 lpdwSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL GetDefaultCommConfigW(PWSTR lpszName, COMMCONFIG* lpCC, uint32* lpdwSize);
+		public static extern BOOL GetDefaultCommConfigW(PWSTR lpszName, out COMMCONFIG lpCC, out uint32 lpdwSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetDefaultCommConfigA(PSTR lpszName, COMMCONFIG* lpCC, uint32 dwSize);
+		public static extern BOOL SetDefaultCommConfigA(PSTR lpszName, ref COMMCONFIG lpCC, uint32 dwSize);
 		[Import("kernel32.lib"), CLink, CallingConvention(.Stdcall)]
-		public static extern BOOL SetDefaultCommConfigW(PWSTR lpszName, COMMCONFIG* lpCC, uint32 dwSize);
+		public static extern BOOL SetDefaultCommConfigW(PWSTR lpszName, ref COMMCONFIG lpCC, uint32 dwSize);
 		
 	}
 }
