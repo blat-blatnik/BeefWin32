@@ -9858,30 +9858,10 @@ namespace Win32
 			}
 		}
 		[CRepr]
-		public struct HSPRITE__
-		{
-			public int32 unused;
-		}
-		[CRepr]
-		public struct HLSURF__
-		{
-			public int32 unused;
-		}
-		[CRepr]
-		public struct HSTR__
-		{
-			public int32 unused;
-		}
-		[CRepr]
 		public struct FILETIME
 		{
 			public uint32 dwLowDateTime;
 			public uint32 dwHighDateTime;
-		}
-		[CRepr]
-		public struct HUMPD__
-		{
-			public int32 unused;
 		}
 		[CRepr]
 		public struct RECT

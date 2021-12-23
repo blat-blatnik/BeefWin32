@@ -111,6 +111,14 @@ CONFLICTING_NAME_REPLACEMENTS = {
     'System.TpmBaseServices.GetDeviceID' : 'GetDeviceIDAlt', # conflicts with Media.Audio.DirectSound.GetDeviceID
 }
 
+# These are structs and unions that aren't referenced anywhere. We don't need to generate them.
+UNREFERENCED_TYPES = {
+    'HSPRITE__',
+    'HLSURF__',
+    'HSTR__',
+    'HUMPD__',
+}
+
 def replace_name(name: str, namespace: str = '') -> str:
     qualified_name = f'{namespace}.{name}'
     if qualified_name in CONFLICTING_NAME_REPLACEMENTS:
@@ -216,12 +224,12 @@ def get_param_type(param: dict) -> str:
     else:
         return type_name
 
-def remove_duplicate_names(objects: list[dict]) -> list[dict]:
+def remove_duplicate_and_unreferenced_names(objects: list[dict], unreferenced: set[str] = set()) -> list[dict]:
     existing_names = set()
     result = []
     for object in objects:
         name = object['Name']
-        if name not in existing_names:
+        if name not in existing_names and name not in unreferenced:
             existing_names.add(name)
             result.append(object)
     return result
@@ -299,14 +307,14 @@ for filename in filenames:
 
             # Aparently sometimes the same symbols are present twice in the same interface - and they are exactly the same
             # So we manually de-duplicate them...
-            constants          = remove_duplicate_names(constants)
-            functions          = remove_duplicate_names(functions)
-            typedefs           = remove_duplicate_names(typedefs)
-            function_pointers  = remove_duplicate_names(function_pointers)
-            enums              = remove_duplicate_names(enums)
-            structs_and_unions = remove_duplicate_names(structs_and_unions)
-            com_interfaces     = remove_duplicate_names(com_interfaces)
-            com_class_ids      = remove_duplicate_names(com_class_ids)
+            constants          = remove_duplicate_and_unreferenced_names(constants)
+            functions          = remove_duplicate_and_unreferenced_names(functions)
+            typedefs           = remove_duplicate_and_unreferenced_names(typedefs)
+            function_pointers  = remove_duplicate_and_unreferenced_names(function_pointers)
+            enums              = remove_duplicate_and_unreferenced_names(enums)
+            structs_and_unions = remove_duplicate_and_unreferenced_names(structs_and_unions, UNREFERENCED_TYPES)
+            com_interfaces     = remove_duplicate_and_unreferenced_names(com_interfaces)
+            com_class_ids      = remove_duplicate_and_unreferenced_names(com_class_ids)
 
             if len(constants) > 0:
                 output.write(f'{indent}// --- Constants ---\n')
